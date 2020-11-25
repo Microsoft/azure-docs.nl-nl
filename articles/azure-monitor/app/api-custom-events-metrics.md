@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 05/11/2020
 ms.custom: devx-track-js, devx-track-csharp
 ms.openlocfilehash: e9f175e2585a5254922c9e859cf5ece2afbbc3e3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91264130"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011338"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>Application Insights-API voor aangepaste gebeurtenissen en metrische gegevens
 
@@ -165,7 +165,7 @@ Als u metrische gegevens naar Application Insights wilt verzenden, kunt u de `Tr
 
 * Enkele waarde. Telkens wanneer u een meting in uw toepassing uitvoert, verzendt u de overeenkomstige waarde naar Application Insights. Stel dat u een metriek hebt met een beschrijving van het aantal items in een container. Tijdens een bepaalde periode plaatst u eerst drie items in de container en verwijdert u vervolgens twee items. Daarom zou u `TrackMetric` twee maal aanroepen: eerst de waarde `3` en vervolgens de waarde door geven `-2` . Application Insights namens u beide waarden opslaat.
 
-* Aggregatie. Bij het werken met metrische gegevens is elke meting altijd van belang. In plaats daarvan is een samen vatting van wat er is gebeurd tijdens een bepaalde periode belang rijk. Een dergelijke samen vatting wordt _aggregatie_genoemd. In het bovenstaande voor beeld is de som van de cumulatieve metrische gegevens voor die tijds periode `1` en het aantal meet waarden `2` . Wanneer u de aggregatie aanpak gebruikt, moet u `TrackMetric` één keer per periode aanroepen en de cumulatieve waarden verzenden. Dit is de aanbevolen benadering, omdat het de kosten en de prestaties aanzienlijk kan verminderen door minder gegevens punten naar Application Insights te verzenden, terwijl alle relevante informatie wordt verzameld.
+* Aggregatie. Bij het werken met metrische gegevens is elke meting altijd van belang. In plaats daarvan is een samen vatting van wat er is gebeurd tijdens een bepaalde periode belang rijk. Een dergelijke samen vatting wordt _aggregatie_ genoemd. In het bovenstaande voor beeld is de som van de cumulatieve metrische gegevens voor die tijds periode `1` en het aantal meet waarden `2` . Wanneer u de aggregatie aanpak gebruikt, moet u `TrackMetric` één keer per periode aanroepen en de cumulatieve waarden verzenden. Dit is de aanbevolen benadering, omdat het de kosten en de prestaties aanzienlijk kan verminderen door minder gegevens punten naar Application Insights te verzenden, terwijl alle relevante informatie wordt verzameld.
 
 ### <a name="examples"></a>Voorbeelden
 
@@ -690,7 +690,7 @@ Als uw app gebruikers in accounts groepeert, kunt u ook een id voor het account 
 appInsights.setAuthenticatedUserContext(validatedId, accountId);
 ```
 
-In [Metrics Explorer](../platform/metrics-charts.md)kunt u een grafiek maken waarin **gebruikers, geverifieerde**en **gebruikers accounts**worden geteld.
+In [Metrics Explorer](../platform/metrics-charts.md)kunt u een grafiek maken waarin **gebruikers, geverifieerde** en **gebruikers accounts** worden geteld.
 
 U kunt ook [zoeken](./diagnostic-search.md) naar client gegevens punten met specifieke gebruikers namen en accounts.
 
@@ -918,9 +918,9 @@ gameTelemetry.TrackEvent({name: "WinGame"});
 
 Afzonderlijke telemetrie-aanroepen kunnen de standaard waarden in de bijbehorende eigenschappen woordenlijsten onderdrukken.
 
-Gebruik *voor Java script-webclients*java script-telemetrie-initialisatie functies.
+Gebruik *voor Java script-webclients* java script-telemetrie-initialisatie functies.
 
-*Om eigenschappen toe te voegen aan alle telemetrie*, met inbegrip van de gegevens uit de standaard verzamelings modules, [implementeert `ITelemetryInitializer` ](./api-filtering-sampling.md#add-properties).
+*Om eigenschappen toe te voegen aan alle telemetrie*, met inbegrip van de gegevens uit de standaard verzamelings modules, [implementeert `ITelemetryInitializer`](./api-filtering-sampling.md#add-properties).
 
 ## <a name="sampling-filtering-and-processing-telemetry"></a>Telemetrie bemonsteren, filteren en verwerken
 

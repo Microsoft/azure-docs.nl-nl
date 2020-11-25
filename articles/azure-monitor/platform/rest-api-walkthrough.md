@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 03/19/2018
 ms.custom: has-adal-ref
 ms.openlocfilehash: 500d5242d5185a8014283918c1f3a22c5c22cf48
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87325590"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012013"
 ---
 # <a name="azure-monitoring-rest-api-walkthrough"></a>Azure Monitoring REST API-overzicht
 
@@ -582,7 +582,7 @@ De resulterende hoofd tekst van het JSON-antwoord zou er ongeveer uitzien als in
 Een extra aanpak is het gebruik van [ARMClient](https://github.com/projectkudu/armclient) op de Windows-computer. ARMClient verwerkt de Azure AD-verificatie (en de resulterende JWT-token) automatisch. De volgende stappen beschrijven het gebruik van ARMClient voor het ophalen van metrische gegevens:
 
 1. Installeer [chocolade](https://chocolatey.org/) en [ARMClient](https://github.com/projectkudu/armclient).
-2. Typ *armclient.exe login*in een Terminal venster. U wordt dan gevraagd u aan te melden bij Azure.
+2. Typ *armclient.exe login* in een Terminal venster. U wordt dan gevraagd u aan te melden bij Azure.
 3. Typ *ARMCLIENT Get [your_resource_id]/providers/Microsoft.Insights/metricdefinitions? API-Version = 2016-03-01*
 4. Typ *ARMCLIENT Get [your_resource_id]/providers/Microsoft.Insights/Metrics? API-Version = 2016-09-01*
 

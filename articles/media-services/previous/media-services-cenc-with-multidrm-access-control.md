@@ -16,11 +16,11 @@ ms.author: willzhan
 ms.reviewer: kilroyh;yanmf;juliako
 ms.custom: devx-track-csharp
 ms.openlocfilehash: b98b66d8f0350c32e89d62d776ee1288d9271712
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91841149"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010908"
 ---
 # <a name="design-of-a-content-protection-system-with-access-control-using-azure-media-services"></a>Ontwerp van een inhouds beschermings systeem met toegangs beheer met Azure Media Services
 
@@ -349,7 +349,7 @@ Als u de pointer-app in azure AD wilt registreren en configureren, voert u de vo
 
 3. Werk het manifest bestand van de app bij zodat de eigenschap groupMembershipClaims de waarde "groupMembershipClaims": "all" heeft.
 
-4. Voeg in de Azure AD-app die verwijst naar de Web-App van de speler, in de sectie **machtigingen voor andere toepassingen**, de resource-app toe die is toegevoegd in stap 1. Onder **gedelegeerde machtiging**selecteert u **toegang [RESOURCE_NAME]**. Met deze optie geeft u de Web-App toestemming om toegangs tokens te maken die toegang hebben tot de resource-app. Doe dit voor zowel de lokale als de geïmplementeerde versie van de web-app als u ontwikkelt met Visual Studio en de Azure-web-app.
+4. Voeg in de Azure AD-app die verwijst naar de Web-App van de speler, in de sectie **machtigingen voor andere toepassingen**, de resource-app toe die is toegevoegd in stap 1. Onder **gedelegeerde machtiging** selecteert u **toegang [RESOURCE_NAME]**. Met deze optie geeft u de Web-App toestemming om toegangs tokens te maken die toegang hebben tot de resource-app. Doe dit voor zowel de lokale als de geïmplementeerde versie van de web-app als u ontwikkelt met Visual Studio en de Azure-web-app.
 
 De JWT die is uitgegeven door Azure AD is het toegangs token dat wordt gebruikt om toegang te krijgen tot de pointer-resource.
 

@@ -12,11 +12,11 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: caedcf313ab809e9607907545f26ca1b62bbeca7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "76720041"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012404"
 ---
 # <a name="tasks-to-prepare-data-for-enhanced-machine-learning"></a>Taken om gegevens voor te bereiden voor verbeterde Machine Learning
 Gegevens voorafgaand aan verwerking en reiniging zijn belang rijke taken die moeten worden uitgevoerd voordat een gegevensset kan worden gebruikt voor model training. Onbewerkte gegevens zijn vaak ruis en onbetrouwbaar, en mogelijk ontbreken waarden. Het gebruik van dergelijke gegevens voor model lering kan misleidende resultaten opleveren. Deze taken maken deel uit van het team data Science process (TDSP) en volgen doorgaans een eerste onderzoek van een gegevensset die wordt gebruikt voor het detecteren en plannen van de vereiste vooraf-verwerking. Zie de stappen die worden beschreven in het [team data Science process](overview.md)voor meer gedetailleerde instructies voor het TDSP-proces.

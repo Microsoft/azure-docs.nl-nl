@@ -9,11 +9,11 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/21/2020
 ms.openlocfilehash: 58f1c2621165a7074c04752832c6560b2fd3e423
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88935429"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011962"
 ---
 # <a name="example-create-a-form-recognizer-custom-skill"></a>Voor beeld: een aangepaste vaardigheid voor het herkennen van een formulier maken
 
@@ -111,7 +111,7 @@ Er wordt een antwoord weer gegeven dat vergelijkbaar is met het volgende voor be
 
 Wanneer u tevreden bent met het functie gedrag, kunt u het publiceren.
 
-1. Klik in de **Solution Explorer** in Visual Studio met de rechter muisknop op het project en selecteer **publiceren**. Kies **nieuwe**  >  **publicatie**maken.
+1. Klik in de **Solution Explorer** in Visual Studio met de rechter muisknop op het project en selecteer **publiceren**. Kies **nieuwe**  >  **publicatie** maken.
 1. Als u Visual Studio nog niet hebt verbonden met uw Azure-account, selecteert u **een account toevoegen....**
 1. Volg de aanwijzingen op het scherm. Geef een unieke naam op voor uw app service, het Azure-abonnement, de resource groep, het hosting plan en het opslag account dat u wilt gebruiken. U kunt een nieuwe resource groep, een nieuw hosting plan en een nieuw opslag account maken als u deze nog niet hebt. Wanneer u klaar bent, selecteert u **maken**.
 1. Nadat de implementatie is voltooid, ziet u de URL van de site. Deze URL is het adres van uw functie-app in Azure. Sla het bestand op een tijdelijke locatie op.

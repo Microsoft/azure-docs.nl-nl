@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 11/21/2019
 ms.openlocfilehash: 13959c4a3c798656efdc72b5c8e5f96e4fb2392a
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94375343"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011894"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-linux"></a>Problemen met de Log Analytics-agent voor Linux oplossen 
 
@@ -92,9 +92,9 @@ We hebben gezien dat een schone herinstallatie van de agent de meeste problemen 
 | NOT_DEFINED | Omdat de benodigde afhankelijkheden niet zijn geïnstalleerd, wordt de auoms-invoeg toepassing voor controle niet geïnstalleerd | De installatie van auoms is mislukt, de installatie van het pakket is gecontroleerd. |
 | 2 | Er is een ongeldige optie aan de shell-bundel door gegeven. Uitvoeren `sudo sh ./omsagent-*.universal*.sh --help` voor gebruik |
 | 3 | Er is geen optie aan de shell-bundel door gegeven. Uitvoeren `sudo sh ./omsagent-*.universal*.sh --help` voor gebruik. |
-| 4 | Ongeldig pakket type of ongeldige proxy instellingen. omsagent- *rpm*. sh-pakketten kunnen alleen worden geïnstalleerd op installaties op basis van rpm en omsagent- *deb*. sh-pakketten kunnen alleen worden geïnstalleerd op Debian-systemen. Het is raadzaam om het universele installatie programma van de [meest recente release](../learn/quick-collect-linux-computer.md#install-the-agent-for-linux)te gebruiken. Controleer ook de verificatie van uw proxy-instellingen. |
+| 4 | Ongeldig pakket type of ongeldige proxy instellingen. omsagent-*rpm*. sh-pakketten kunnen alleen worden geïnstalleerd op installaties op basis van rpm en omsagent-*deb*. sh-pakketten kunnen alleen worden geïnstalleerd op Debian-systemen. Het is raadzaam om het universele installatie programma van de [meest recente release](../learn/quick-collect-linux-computer.md#install-the-agent-for-linux)te gebruiken. Controleer ook de verificatie van uw proxy-instellingen. |
 | 5 | De shell bundel moet worden uitgevoerd als root of er is een 403-fout geretourneerd tijdens het onboarden. Voer de opdracht uit met `sudo` . |
-| 6 | Ongeldige pakket architectuur of er is een fout opgetreden 200 fout opgetreden tijdens het voorbereiden; omsagent- *x64.sh-pakketten kunnen alleen worden geïnstalleerd op 64-bits systemen en omsagent-x86.sh-* pakketten kunnen alleen worden geïnstalleerd op 32-bits systemen. Down load het juiste pakket voor uw architectuur vanuit de [nieuwste versie](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/latest). |
+| 6 | Ongeldige pakket architectuur of er is een fout opgetreden 200 fout opgetreden tijdens het voorbereiden; omsagent-*x64.sh-pakketten kunnen alleen worden geïnstalleerd op 64-bits systemen en omsagent-x86.sh-* pakketten kunnen alleen worden geïnstalleerd op 32-bits systemen. Down load het juiste pakket voor uw architectuur vanuit de [nieuwste versie](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/latest). |
 | 17 | Installatie van het OMS-pakket is mislukt. Bekijk de uitvoer van de opdracht voor de hoofd fout. |
 | 19 | Installatie van OMI-pakket is mislukt. Bekijk de uitvoer van de opdracht voor de hoofd fout. |
 | 20 | Installatie van het SCX-pakket is mislukt. Bekijk de uitvoer van de opdracht voor de hoofd fout. |

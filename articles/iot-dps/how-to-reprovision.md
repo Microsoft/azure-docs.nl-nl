@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 ms.openlocfilehash: e5cc5b557aa4dff793f7e87093eeb65028da4f8c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91839789"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010942"
 ---
 # <a name="how-to-reprovision-devices"></a>Apparaten opnieuw inrichten
 
@@ -20,7 +20,7 @@ Tijdens de levens cyclus van een IoT-oplossing is het gebruikelijk om apparaten 
 
 * **Geolocatie**: wanneer een apparaat tussen locaties wordt verplaatst, wordt de netwerk latentie verbeterd doordat het apparaat dichter op elke locatie naar een IOT-hub wordt gemigreerd.
 
-* **Multitenancy: een**apparaat kan worden gebruikt binnen dezelfde IOT-oplossing, maar kan worden toegewezen aan of geleasd aan een nieuwe klant of klant site. Deze nieuwe klant kan worden verwerkt met behulp van een andere IoT-hub.
+* **Multitenancy: een** apparaat kan worden gebruikt binnen dezelfde IOT-oplossing, maar kan worden toegewezen aan of geleasd aan een nieuwe klant of klant site. Deze nieuwe klant kan worden verwerkt met behulp van een andere IoT-hub.
 
 * **Oplossings wijziging**: een apparaat kan worden verplaatst naar een nieuwe of bijgewerkte IOT-oplossing. Deze opnieuw toewijzen kan vereisen dat het apparaat communiceert met een nieuwe IoT-hub die is verbonden met andere back-uponderdelen. 
 
@@ -37,7 +37,7 @@ Met de volgende stappen configureert u het toewijzings beleid voor de inschrijvi
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) en navigeer naar uw Device Provisioning service-exemplaar.
 
-2. Klik op **inschrijvingen beheren**en klik op de registratie groep of de individuele inschrijving die u wilt configureren voor opnieuw inrichten. 
+2. Klik op **inschrijvingen beheren** en klik op de registratie groep of de individuele inschrijving die u wilt configureren voor opnieuw inrichten. 
 
 3. Selecteer onder **Selecteer hoe u apparaten aan hubs wilt toewijzen**, een van de volgende toewijzings beleidsregels:
 
@@ -55,7 +55,7 @@ Met de volgende stappen configureert u het toewijzings beleid voor de inschrijvi
 
     Selecteer met het **statische configuratie** toewijzings beleid de IOT-hub waaraan apparaten moeten worden toegewezen.
 
-4. Klik op **Opslaan**of ga door naar de volgende sectie om het beleid voor opnieuw inrichten in te stellen.
+4. Klik op **Opslaan** of ga door naar de volgende sectie om het beleid voor opnieuw inrichten in te stellen.
 
     ![Toewijzings beleid voor inschrijving selecteren](./media/how-to-reprovision/enrollment-allocation-policy.png)
 
@@ -65,7 +65,7 @@ Met de volgende stappen configureert u het toewijzings beleid voor de inschrijvi
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) en navigeer naar uw Device Provisioning service-exemplaar.
 
-2. Klik op **inschrijvingen beheren**en klik op de registratie groep of de individuele inschrijving die u wilt configureren voor opnieuw inrichten.
+2. Klik op **inschrijvingen beheren** en klik op de registratie groep of de individuele inschrijving die u wilt configureren voor opnieuw inrichten.
 
 3. Onder **Selecteer hoe u wilt dat apparaatgegevens worden verwerkt bij het opnieuw inrichten naar een andere IOT-hub**, kiest u een van de volgende beleids regels voor opnieuw inrichten:
 

@@ -4,11 +4,11 @@ description: Meer informatie over hoe u extern verbinding maakt met een exemplaa
 ms.topic: conceptual
 ms.date: 03/23/2018
 ms.openlocfilehash: 98d573af4fc2026134e75d4caf24a09e57e52c87
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91268091"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012541"
 ---
 # <a name="remote-connect-to-a-virtual-machine-scale-set-instance-or-a-cluster-node"></a>Externe verbinding maken met een virtuele-machine Scale set-exemplaar of een cluster knooppunt
 In een Service Fabric cluster dat in azure wordt uitgevoerd, stelt elk type cluster knooppunt dat u definieert [een afzonderlijke schaal in voor een virtuele machine](service-fabric-cluster-nodetypes.md).  U kunt externe verbinding maken met specifieke instanties van de schaalset (cluster knooppunten).  In tegens telling tot Vm's met één exemplaar hebben instanties van een schaalset niet hun eigen virtuele IP-adressen. Dit kan lastig zijn wanneer u zoekt naar een IP-adres en poort die u kunt gebruiken om extern verbinding te maken met een specifiek exemplaar.

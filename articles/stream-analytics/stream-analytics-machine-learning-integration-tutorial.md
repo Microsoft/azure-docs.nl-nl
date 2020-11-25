@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.date: 08/12/2020
 ms.custom: seodec18
 ms.openlocfilehash: 9b08b59090d9dd23405f8a0ba86ce608e3a64902
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93123758"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011384"
 ---
 # <a name="do-sentiment-analysis-with-azure-stream-analytics-and-azure-machine-learning-studio-classic"></a>Sentiment analyse met Azure Stream Analytics en Azure Machine Learning Studio (klassiek)
 
@@ -43,7 +43,7 @@ Zorg ervoor dat u het volgende hebt voordat u begint:
 
 In deze stap uploadt u een CSV-bestand naar uw opslag container.
 
-1. Selecteer in de Azure Portal **een resource** -  >  **opslag**  >  **account** maken.
+1. Selecteer in de Azure Portal **een resource**-  >  **opslag**  >  **account** maken.
 
 2. Vul de volgende gegevens in op het tabblad *basis principes* en behoud de standaard waarden voor de resterende velden:
 
@@ -57,17 +57,17 @@ In deze stap uploadt u een CSV-bestand naar uw opslag container.
 
    ![Details van opslag account opgeven](./media/stream-analytics-machine-learning-integration-tutorial/create-storage-account1.png)
 
-3. Selecteer **Controleren + maken** . Selecteer vervolgens **maken** om uw opslag account te implementeren.
+3. Selecteer **Controleren + maken**. Selecteer vervolgens **maken** om uw opslag account te implementeren.
 
-4. Wanneer de implementatie is voltooid, gaat u naar uw opslag account. Klik onder **Blob service** op **Containers** . Selecteer vervolgens **+ container** om een nieuwe container te maken.
+4. Wanneer de implementatie is voltooid, gaat u naar uw opslag account. Klik onder **Blob service** op **Containers**. Selecteer vervolgens **+ container** om een nieuwe container te maken.
 
    ![BLOB storage-container maken voor invoer](./media/stream-analytics-machine-learning-integration-tutorial/create-storage-account2.png)
 
-5. Geef een naam op voor de container en controleer of het **niveau voor open bare toegang** is ingesteld op **privé** . Als u gereed bent, selecteert u **Maken** .
+5. Geef een naam op voor de container en controleer of het **niveau voor open bare toegang** is ingesteld op **privé**. Als u gereed bent, selecteert u **Maken**.
 
    ![Details van BLOB-container opgeven](./media/stream-analytics-machine-learning-integration-tutorial/create-storage-account3.png)
 
-6. Navigeer naar de zojuist gemaakte container en selecteer **uploaden** . Upload het **sampleinput.csv** bestand dat u eerder hebt gedownload.
+6. Navigeer naar de zojuist gemaakte container en selecteer **uploaden**. Upload het **sampleinput.csv** bestand dat u eerder hebt gedownload.
 
    ![De knop uploaden voor een container](./media/stream-analytics-machine-learning-integration-tutorial/create-sa-upload-button.png)
 
@@ -77,7 +77,7 @@ Nu de voorbeeld gegevens zich in een BLOB bevindt, kunt u het sentiment-analyse 
 
 1. Ga naar de pagina [Predictive sentiment Analytics model](https://gallery.cortanaintelligence.com/Experiment/Predictive-Mini-Twitter-sentiment-analysis-Experiment-1) in de Cortana Intelligence Gallery.  
 
-2. Selecteer **openen in Studio (klassiek)** .  
+2. Selecteer **openen in Studio (klassiek)**.  
    
    ![Open Studio (klassiek) Stream Analytics Azure Machine Learning Studio (klassiek)](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-open-ml-studio.png)  
 
@@ -115,7 +115,7 @@ Ga naar de [Azure Portal](https://portal.azure.com) en maak een stream Analytics
 
 De taak haalt de invoer op uit het CSV-bestand dat u eerder hebt geüpload naar de Blob-opslag.
 
-1. Ga naar de Stream Analytics-taak. Selecteer de optie **invoer** onder **taak topologie** . Selecteer **Stream-invoer**  > **Blob-opslag** toevoegen.
+1. Ga naar de Stream Analytics-taak. Selecteer de optie **invoer** onder **taak topologie**. Selecteer **Stream-invoer**  > **Blob-opslag** toevoegen.
 
 2. Vul de **Blob Storage** gegevens in met de volgende waarden:
 
@@ -127,13 +127,13 @@ De taak haalt de invoer op uit het CSV-bestand dat u eerder hebt geüpload naar 
    |Container|Selecteer de container die u in de vorige stap hebt gemaakt.|
    |Serialisatie-indeling voor gebeurtenissen|CSV|
 
-3. Selecteer **Opslaan** .
+3. Selecteer **Opslaan**.
 
 ### <a name="configure-the-job-output"></a>De taak uitvoer configureren
 
 De taak verzendt resultaten naar dezelfde Blob-opslag waar de invoer wordt ingevoerd.
 
-1. Ga naar de Stream Analytics-taak. Selecteer de optie **uitvoer** onder **taak topologie** . Selecteer **Add**  >  **Blob-opslag** toevoegen.
+1. Ga naar de Stream Analytics-taak. Selecteer de optie **uitvoer** onder **taak topologie**. Selecteer **Add**  >  **Blob-opslag** toevoegen.
 
 2. Vul het **Blob Storage** formulier in met de volgende waarden:
 
@@ -145,7 +145,7 @@ De taak verzendt resultaten naar dezelfde Blob-opslag waar de invoer wordt ingev
    |Container|Selecteer de container die u in de vorige stap hebt gemaakt.|
    |Serialisatie-indeling voor gebeurtenissen|CSV|
 
-3. Selecteer **Opslaan** .
+3. Selecteer **Opslaan**.
 
 ### <a name="add-the-studio-classic-function"></a>De functie Studio (klassiek) toevoegen
 
@@ -161,11 +161,11 @@ In deze sectie definieert u een functie in de analyse taak voor streams. De func
 
    |Veld  |Waarde  |
    |---------|---------|
-   | Functiealias | Gebruik de naam `sentiment` en selecteer **Azure machine learning functie-instellingen hand matig opgeven** , waarmee u de URL en de sleutel kunt invoeren.      |
+   | Functiealias | Gebruik de naam `sentiment` en selecteer **Azure machine learning functie-instellingen hand matig opgeven**, waarmee u de URL en de sleutel kunt invoeren.      |
    | URL| Plak de URL van de webservice.|
    |Sleutel | Plak de API-sleutel. |
 
-4. selecteer **Opslaan** .
+4. selecteer **Opslaan**.
 
 ### <a name="create-a-query-to-transform-the-data"></a>Een query maken om de gegevens te transformeren
 
@@ -173,7 +173,7 @@ Stream Analytics maakt gebruik van een declaratieve SQL-query om de invoer te co
 
 1. Ga terug naar het overzicht van de Stream Analytics-taak.
 
-2. Selecteer **Query** onder **Taaktopologie** .
+2. Selecteer **Query** onder **Taaktopologie**.
 
 3. Voer de volgende query in:
 
@@ -211,7 +211,7 @@ U kunt nu de Stream Analytics-taak starten.
 2. Als u een hulp programma hebt dat u normaal gesp roken gebruikt om de inhoud van de Blob-opslag te controleren, gebruikt u dat hulp programma om de container te onderzoeken. U kunt ook de volgende stappen uitvoeren in de Azure Portal:
 
       1. Ga in het Azure Portal naar uw opslag account en zoek de container in het account. U ziet twee bestanden in de container: het bestand met het voor beeld-tweets en een CSV-bestand dat door de Stream Analytics-taak wordt gegenereerd.
-      2. Klik met de rechter muisknop op het gegenereerde bestand en selecteer vervolgens **downloaden** .
+      2. Klik met de rechter muisknop op het gegenereerde bestand en selecteer vervolgens **downloaden**.
 
 3. Open het gegenereerde CSV-bestand. U ziet iets zoals in het volgende voor beeld:  
 

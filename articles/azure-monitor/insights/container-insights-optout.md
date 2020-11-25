@@ -4,12 +4,12 @@ description: In dit artikel wordt beschreven hoe u de bewaking van uw Azure AKS-
 ms.topic: conceptual
 ms.date: 08/19/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: af5f49dfe5e668f39f105a62ad20858e273b34cb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 15ec102632258870745f510a98773f70242118be
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87489483"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96011639"
 ---
 # <a name="how-to-stop-monitoring-your-azure-kubernetes-service-aks-with-azure-monitor-for-containers"></a>Stoppen met controleren van Azure Kubernetes Service (AKS) met Azure Monitor voor containers
 
@@ -35,7 +35,7 @@ Als u niet bekend bent met het concept van het implementeren van resources met b
 * [Resources implementeren met Resource Manager-sjablonen en Azure CLI](../../azure-resource-manager/templates/deploy-cli.md)
 
 >[!NOTE]
->De sjabloon moet worden geïmplementeerd in dezelfde resource groep van het cluster. Als u andere eigenschappen of invoeg toepassingen weglaat wanneer u deze sjabloon gebruikt, kan dit leiden tot verwijdering van het cluster. Bijvoorbeeld *enableRBAC* voor RBAC-beleid dat is geïmplementeerd in uw cluster of *aksResourceTagValues* als er labels zijn opgegeven voor het AKS-cluster.  
+>De sjabloon moet worden geïmplementeerd in dezelfde resource groep van het cluster. Als u andere eigenschappen of invoeg toepassingen weglaat wanneer u deze sjabloon gebruikt, kan dit leiden tot verwijdering van het cluster. Bijvoorbeeld *enableRBAC* for Kubernetes RBAC-beleid dat is geïmplementeerd in uw cluster of *aksResourceTagValues* als er labels zijn opgegeven voor het AKS-cluster.  
 >
 
 Als u ervoor kiest om de Azure CLI te gebruiken, moet u de CLI eerst lokaal installeren en gebruiken. U moet de Azure CLI-versie 2.0.27 of hoger uitvoeren. Voer uit om uw versie te identificeren `az --version` . Als u de Azure CLI wilt installeren of upgraden, raadpleegt u [de Azure cli installeren](/cli/azure/install-azure-cli).

@@ -4,11 +4,11 @@ description: In dit artikel wordt beschreven hoe u de prestaties van een Kuberne
 ms.topic: conceptual
 ms.date: 03/26/2020
 ms.openlocfilehash: de61e8e5b2716a3ca212a0a830a4d48b8bd2c3ef
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92368754"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011078"
 ---
 # <a name="monitor-your-kubernetes-cluster-performance-with-azure-monitor-for-containers"></a>Uw Kubernetes-cluster prestaties bewaken met Azure Monitor voor containers
 
@@ -62,7 +62,7 @@ De volgende statussen zijn opgenomen:
 * Onjuist **geconfigureerd**: Azure monitor voor containers is niet juist geconfigureerd in de opgegeven werk ruimte.
 * **Geen gegevens**: de gegevens zijn gedurende de laatste 30 minuten niet gerapporteerd aan de werk ruimte.
 
-Met de status wordt de algehele cluster status berekend als het *slechtste van* de drie statussen met één uitzonde ring. Als een van de drie statussen onbekend is, wordt de status van het algehele cluster **onbekend**weer gegeven.
+Met de status wordt de algehele cluster status berekend als het *slechtste van* de drie statussen met één uitzonde ring. Als een van de drie statussen onbekend is, wordt de status van het algehele cluster **onbekend** weer gegeven.
 
 De volgende tabel bevat een uitsplitsing van de berekening waarmee de statussen voor een bewaakt cluster in de multi-cluster weergave worden beheerd.
 
@@ -104,8 +104,8 @@ De standaard pagina wordt geopend en er worden vier lijn prestatie grafieken wee
 
 In de prestatie grafieken worden vier prestatie gegevens weer gegeven:
 
-- **CPU- &nbsp; % gebruik van knoop punt**: een geaggregeerd perspectief van CPU-gebruik voor het hele cluster. Als u de resultaten voor het tijds bereik wilt filteren, selecteert u **AVG**, **min**, **50e**, **negen**, **95e**of **Max** in de selectie van percentielen boven de grafiek. U kunt de filters afzonderlijk of gecombineerd gebruiken.
-- **Geheugen gebruik &nbsp; % van knoop punt**: een geaggregeerd perspectief van geheugen gebruik voor het hele cluster. Als u de resultaten voor het tijds bereik wilt filteren, selecteert u **AVG**, **min**, **50e**, **negen**, **95e**of **Max** in de selectie van percentielen boven de grafiek. U kunt de filters afzonderlijk of gecombineerd gebruiken.
+- **CPU- &nbsp; % gebruik van knoop punt**: een geaggregeerd perspectief van CPU-gebruik voor het hele cluster. Als u de resultaten voor het tijds bereik wilt filteren, selecteert u **AVG**, **min**, **50e**, **negen**, **95e** of **Max** in de selectie van percentielen boven de grafiek. U kunt de filters afzonderlijk of gecombineerd gebruiken.
+- **Geheugen gebruik &nbsp; % van knoop punt**: een geaggregeerd perspectief van geheugen gebruik voor het hele cluster. Als u de resultaten voor het tijds bereik wilt filteren, selecteert u **AVG**, **min**, **50e**, **negen**, **95e** of **Max** in de selectie van percentielen boven de grafiek. U kunt de filters afzonderlijk of gecombineerd gebruiken.
 - **Aantal knoop punten**: het aantal knoop punten en de status van Kubernetes. Statussen van de cluster knooppunten worden weer gegeven in totaal, gereed en niet gereed. Ze kunnen afzonderlijk worden gefilterd of gecombineerd in de selector boven de grafiek.
 - **Aantal actieve pod**: een pod-aantal en-status van Kubernetes. De statussen van het Peul worden weer gegeven in totaal, in behandeling, actief, onbekend, geslaagd of mislukt. Ze kunnen afzonderlijk worden gefilterd of gecombineerd in de selector boven de grafiek.
 
@@ -117,7 +117,7 @@ Azure Monitor voor containers biedt ook ondersteuning voor Azure Monitor [Metric
 
 In Metrics Explorer kunt u geaggregeerde gegevens over knoop punt-en pod-gebruik weer geven van Azure Monitor voor containers. De volgende tabel bevat een overzicht van de Details om u te helpen begrijpen hoe u de metrische grafieken kunt gebruiken voor het visualiseren van metrische gegevens over containers.
 
-|Naamruimte | Gegevens | Beschrijving |
+|Naamruimte | Metrisch | Beschrijving |
 |----------|--------|-------------|
 | inzichten. container/knoop punten | |
 | | cpuUsageMillicores | Cumulatieve meting van het CPU-gebruik in het cluster. Het is een CPU-kern die is gesplitst in 1000 eenheden (milli = 1000). Wordt gebruikt om het gebruik van kern geheugens in een container te bepalen waar veel toepassingen één kern geheugen gebruiken.|
@@ -132,18 +132,18 @@ In Metrics Explorer kunt u geaggregeerde gegevens over knoop punt-en pod-gebruik
 
 U kunt een metriek [splitsen](../platform/metrics-charts.md#apply-splitting-to-a-chart) om deze per dimensie weer te geven en te visualiseren hoe verschillende segmenten van de IT met elkaar worden vergeleken. Voor een knoop punt kunt u de grafiek door de dimensie *host* segmenteren. Vanuit een pod kunt u deze segmenteren op basis van de volgende dimensies:
 
-* Regelaar
+* Controller
 * Kubernetes-naam ruimte
 * Knooppunt
 * Fase
 
 ## <a name="analyze-nodes-controllers-and-container-health"></a>Knoop punten, controllers en container status analyseren
 
-Wanneer u overschakelt naar de tabbladen **knoop punten**, **controllers**en **containers** , wordt er automatisch een eigenschappen venster weer gegeven aan de rechter kant van de pagina. Hierin worden de eigenschappen van het geselecteerde item weer gegeven, inclusief de labels die u hebt gedefinieerd om Kubernetes-objecten te organiseren. Wanneer een Linux-knoop punt is geselecteerd, worden in het gedeelte capaciteit van de **lokale schijf** ook de beschik bare schijf ruimte en het percentage weer gegeven voor elke schijf die aan het knoop punt wordt weer gegeven. Selecteer de **>>** koppeling in het deel venster om het deel venster weer te geven of te verbergen.
+Wanneer u overschakelt naar de tabbladen **knoop punten**, **controllers** en **containers** , wordt er automatisch een eigenschappen venster weer gegeven aan de rechter kant van de pagina. Hierin worden de eigenschappen van het geselecteerde item weer gegeven, inclusief de labels die u hebt gedefinieerd om Kubernetes-objecten te organiseren. Wanneer een Linux-knoop punt is geselecteerd, worden in het gedeelte capaciteit van de **lokale schijf** ook de beschik bare schijf ruimte en het percentage weer gegeven voor elke schijf die aan het knoop punt wordt weer gegeven. Selecteer de **>>** koppeling in het deel venster om het deel venster weer te geven of te verbergen.
 
 Wanneer u de objecten in de hiërarchie uitvouwt, wordt het deel venster Eigenschappen bijgewerkt op basis van het geselecteerde object. In het deel venster kunt u ook Kubernetes-container Logboeken (stdout/stderr), gebeurtenissen en pod metrische gegevens weer geven door de koppeling **Live data weer geven (preview)** boven aan het deel venster te selecteren. Zie voor meer informatie over de configuratie die is vereist voor het verlenen en beheren van de toegang tot de weer gave van deze gegevens [de instelling live data (preview)](container-insights-livedata-setup.md). Terwijl u cluster bronnen bekijkt, kunt u deze gegevens in realtime zien in de container. Zie [Kubernetes-logboeken, gebeurtenissen en pod-gegevens in realtime weer geven](container-insights-livedata-overview.md)voor meer informatie over deze functie. Als u wilt weer geven welke Kubernetes-logboek gegevens zijn opgeslagen in uw werk ruimte op basis van vooraf gedefinieerde logboek zoekopdrachten, selecteert u **container logboeken weer geven** in de vervolg keuzelijst **weer gave in analyse** . Zie [zoeken naar Logboeken](container-insights-log-search.md#search-logs-to-analyze-data)voor het analyseren van gegevens voor meer informatie over dit onderwerp.
 
-Gebruik de **+ filter optie toevoegen** boven aan de pagina om de resultaten voor de weer gave per **service**, **knoop punt**, **naam ruimte**of **knooppunt groep**te filteren. Nadat u het filter bereik hebt geselecteerd, selecteert u een van de waarden die worden weer gegeven in het veld **waarde selecteren (s)** . Nadat het filter is geconfigureerd, wordt het globaal toegepast terwijl er een perspectief van het AKS-cluster wordt weer gegeven. De formule ondersteunt alleen het gelijkteken. U kunt extra filters boven op het eerste toevoegen om uw resultaten verder te verfijnen. Als u bijvoorbeeld een filter per **knoop punt**opgeeft, kunt u alleen de **service** of de **naam ruimte** voor het tweede filter selecteren.
+Gebruik de **+ filter optie toevoegen** boven aan de pagina om de resultaten voor de weer gave per **service**, **knoop punt**, **naam ruimte** of **knooppunt groep** te filteren. Nadat u het filter bereik hebt geselecteerd, selecteert u een van de waarden die worden weer gegeven in het veld **waarde selecteren (s)** . Nadat het filter is geconfigureerd, wordt het globaal toegepast terwijl er een perspectief van het AKS-cluster wordt weer gegeven. De formule ondersteunt alleen het gelijkteken. U kunt extra filters boven op het eerste toevoegen om uw resultaten verder te verfijnen. Als u bijvoorbeeld een filter per **knoop punt** opgeeft, kunt u alleen de **service** of de **naam ruimte** voor het tweede filter selecteren.
 
 Het opgeven van een filter op één tabblad blijft actief wanneer u een ander selecteert. Het wordt verwijderd nadat u het **x** -symbool hebt geselecteerd naast het opgegeven filter.
 
@@ -163,7 +163,7 @@ Vanuit een uitgevouwen knoop punt kunt u inzoomen op de Pod of container die op 
 
 ![Scherm afbeelding toont het inzoomen van het knoop punt naar de controller in de prestatie weergave](./media/container-insights-analyze/drill-down-node-controller.png)
 
-Selecteer controllers of containers boven aan de pagina om de status en het resource gebruik voor die objecten te controleren. Als u het geheugen gebruik wilt controleren, selecteert u in de vervolg keuzelijst **metriek** de optie **geheugen RSS** of **Geheugen werkset**. **Geheugen-RSS** wordt alleen ondersteund voor Kubernetes-versie 1,8 en hoger. Anders bekijkt u waarden voor **min &nbsp; % ** als *Nan &nbsp; % *. Dit is een numeriek gegevens type waarde die een niet-gedefinieerde of onvertegenwoordigde waarde vertegenwoordigt.
+Selecteer controllers of containers boven aan de pagina om de status en het resource gebruik voor die objecten te controleren. Als u het geheugen gebruik wilt controleren, selecteert u in de vervolg keuzelijst **metriek** de optie **geheugen RSS** of **Geheugen werkset**. **Geheugen-RSS** wordt alleen ondersteund voor Kubernetes-versie 1,8 en hoger. Anders bekijkt u waarden voor **min &nbsp; %** als *Nan &nbsp; %*. Dit is een numeriek gegevens type waarde die een niet-gedefinieerde of onvertegenwoordigde waarde vertegenwoordigt.
 
 ![Prestatie weergave container knooppunten](./media/container-insights-analyze/containers-node-metric-dropdown.png)
 
@@ -173,7 +173,7 @@ De **werkset geheugen** bevat zowel het residente geheugen als het virtuele gehe
 
 - Virtueel geheugen is gereserveerde ruimte op de vaste schijf (cache) die door het besturings systeem wordt gebruikt om gegevens van het geheugen naar de schijf te wisselen wanneer deze onder geheugen wordt druk en vervolgens weer terug te halen naar het geheugen, indien nodig.
 
-Standaard zijn de prestatie gegevens gebaseerd op de laatste zes uur, maar u kunt het venster wijzigen met de optie **time Range** in de linkerbovenhoek. U kunt de resultaten ook filteren binnen het tijds bereik door **min**, **Gem**, **50e**, **negen**, **95e**en **Max** te selecteren in de percentiel kiezer.
+Standaard zijn de prestatie gegevens gebaseerd op de laatste zes uur, maar u kunt het venster wijzigen met de optie **time Range** in de linkerbovenhoek. U kunt de resultaten ook filteren binnen het tijds bereik door **min**, **Gem**, **50e**, **negen**, **95e** en **Max** te selecteren in de percentiel kiezer.
 
 ![Percentiel selectie voor gegevens filtering](./media/container-insights-analyze/containers-metric-percentile-filter.png)
 
@@ -191,16 +191,16 @@ De informatie die wordt weer gegeven wanneer u het tabblad **knoop punten** beki
 
 | Kolom | Beschrijving |
 |--------|-------------|
-| Naam | De naam van de host. |
+| Name | De naam van de host. |
 | Status | De weer gave Kubernetes van de knooppunt status. |
 | Min &nbsp; .%, Gem. &nbsp; %, 50e &nbsp; %, negen tigste &nbsp; %, 95e &nbsp; %, Max&nbsp;%  | Gemiddeld knooppunt percentage op basis van percentiel tijdens de geselecteerde duur. |
 | Min, Gem, 50e, negen tigste, 95e, Max | De gemiddelde werkelijke waarde van knoop punten op basis van percentiel tijdens de geselecteerde tijds duur. De gemiddelde waarde wordt gemeten vanaf de CPU/geheugen limiet die is ingesteld voor een knoop punt. Voor peulen en containers is het de gemiddelde waarde die wordt gerapporteerd door de host. |
 | Containers | Aantal containers. |
 | Uptime | Vertegenwoordigt de tijd sinds een knoop punt is gestart of opnieuw is opgestart. |
-| Regelaar | Alleen voor containers en peulen. Hier wordt weer gegeven in welke controller het zich bevindt. Niet alle peulen bevinden zich in een controller, waardoor er mogelijk niet meer dan **n.v.t.** kan worden weer gegeven. |
+| Controller | Alleen voor containers en peulen. Hier wordt weer gegeven in welke controller het zich bevindt. Niet alle peulen bevinden zich in een controller, waardoor er mogelijk niet meer dan **n.v.t.** kan worden weer gegeven. |
 | Min &nbsp; . trend%, Gem. &nbsp; %, 50e &nbsp; %, negen tigste &nbsp; %, 95e &nbsp; %, Max&nbsp;% | De trend van een staaf diagram geeft het gemiddelde percentage van de percentiel waarde van de controller aan. |
 
-U kunt een werk belasting opmerken nadat u een knoop punt met de naam **ander proces**hebt uitgebreid. Het bevat niet-container processen die worden uitgevoerd op uw knoop punt, en omvat:
+U kunt een werk belasting opmerken nadat u een knoop punt met de naam **ander proces** hebt uitgebreid. Het bevat niet-container processen die worden uitgevoerd op uw knoop punt, en omvat:
 
 * Zelf-beheerde of beheerde Kubernetes-processen die geen container zijn
 
@@ -234,8 +234,8 @@ De informatie die wordt weer gegeven wanneer u controllers bekijkt, wordt beschr
 
 | Kolom | Beschrijving |
 |--------|-------------|
-| Naam | De naam van de controller.|
-| Status | De rollup-status van de containers nadat deze is uitgevoerd met de status *OK*, *beëindigd*, *mislukt*, *gestopt*of *onderbroken*. Als de container actief is, maar de status niet correct wordt weer gegeven of niet is opgehaald door de agent en al meer dan 30 minuten niet heeft gereageerd, is de status *onbekend*. Meer informatie over het status pictogram vindt u in de volgende tabel.|
+| Name | De naam van de controller.|
+| Status | De rollup-status van de containers nadat deze is uitgevoerd met de status *OK*, *beëindigd*, *mislukt*, *gestopt* of *onderbroken*. Als de container actief is, maar de status niet correct wordt weer gegeven of niet is opgehaald door de agent en al meer dan 30 minuten niet heeft gereageerd, is de status *onbekend*. Meer informatie over het status pictogram vindt u in de volgende tabel.|
 | Min &nbsp; .%, Gem. &nbsp; %, 50e &nbsp; %, negen tigste &nbsp; %, 95e &nbsp; %, Max&nbsp;%| Rollup gemiddelde van het gemiddelde percentage van elke entiteit voor de geselecteerde metriek en percentiel. |
 | Min, Gem, 50e, negen tigste, 95e, Max  | Rollup van de gemiddelde CPU-millicore of geheugen prestaties van de container voor het geselecteerde percentiel. De gemiddelde waarde wordt gemeten vanaf de CPU/geheugen limiet die is ingesteld voor een pod. |
 | Containers | Het totale aantal containers voor de controller of het pod. |
@@ -271,7 +271,7 @@ De informatie die wordt weer gegeven wanneer u containers bekijkt, wordt beschre
 
 | Kolom | Beschrijving |
 |--------|-------------|
-| Naam | De naam van de controller.|
+| Name | De naam van de controller.|
 | Status | De status van de containers, indien van toepassing. Meer informatie over het status pictogram vindt u in de volgende tabel.|
 | Min &nbsp; .%, Gem. &nbsp; %, 50e &nbsp; %, negen tigste &nbsp; %, 95e &nbsp; %, Max&nbsp;% | De rollup van het gemiddelde percentage van elke entiteit voor de geselecteerde metriek en percentiel. |
 | Min, Gem, 50e, negen tigste, 95e, Max | De rollup van de gemiddelde CPU-millicore of-geheugen prestaties van de container voor het geselecteerde percentiel. De gemiddelde waarde wordt gemeten vanaf de CPU/geheugen limiet die is ingesteld voor een pod. |

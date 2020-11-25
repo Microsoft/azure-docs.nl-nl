@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 07/23/2018
 ms.author: genli
 ms.openlocfilehash: c4497805e64ef303c9d7340c48a49027b3a26bef
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92144679"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011015"
 ---
 # <a name="configuration-and-management-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Configuratie-en beheer problemen voor Azure Cloud Services: veelgestelde vragen (FAQ)
 
@@ -196,7 +196,7 @@ Windows 10 en Windows Server 2016 worden geleverd met ondersteuning voor HTTP/2 
 3. Maak een nieuwe DWORD-waarde met de naam **DuoEnabled**.
 4. Stel de waarde in op 1.
 5. Start de server opnieuw op.
-6. Ga naar de **standaard website** en maak onder **bindingen**een nieuwe TLS-binding met het zelfondertekende certificaat dat zojuist is gemaakt. 
+6. Ga naar de **standaard website** en maak onder **bindingen** een nieuwe TLS-binding met het zelfondertekende certificaat dat zojuist is gemaakt. 
 
 Zie voor meer informatie:
 

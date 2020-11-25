@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 08/01/2020
 ms.custom: references_regions
 ms.openlocfilehash: f314394d3a0ac453d525079e096162d8739f67cf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91314703"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011792"
 ---
 # <a name="security-in-azure-cognitive-search---overview"></a>Beveiliging in azure Cognitive Search-overzicht
 
@@ -62,7 +62,7 @@ In azure Cognitive Search is dubbele versleuteling een uitbrei ding van CMK. Het
 
 Dubbele versleuteling is momenteel beschikbaar op nieuwe services die na 1 augustus zijn gemaakt in deze regio's:
 
-+ West US 2
++ VS - west 2
 + VS - oost
 + VS - zuid-centraal
 + VS (overheid) - Virginia
@@ -94,7 +94,7 @@ Verificatie is vereist voor elke aanvraag, waarbij elke aanvraag bestaat uit een
 
 Als u de toegang tot uw zoek service verder wilt beheren, kunt u binnenkomende firewall regels maken die toegang tot een specifiek IP-adres of een bereik van IP-adressen toestaan. Alle client verbindingen moeten worden gemaakt via een toegestaan IP-adres of de verbinding wordt geweigerd.
 
-:::image type="content" source="media/search-security-overview/inbound-firewall-ip-restrictions.png" alt-text="diagram waarin verschillende soorten beveiliging op elk niveau van service betrokkenheid worden weer gegeven":::
+:::image type="content" source="media/search-security-overview/inbound-firewall-ip-restrictions.png" alt-text="voor beeld van een architectuur diagram voor beperkte toegang met IP":::
 
 U kunt de portal gebruiken om [inkomende toegang te configureren](service-configure-firewall.md).
 
@@ -106,7 +106,7 @@ Een [persoonlijk eind punt](../private-link/private-endpoint-overview.md) voor A
 
 Het persoonlijke eind punt gebruikt een IP-adres uit de adres ruimte van het virtuele netwerk voor verbindingen met uw zoek service. Netwerk verkeer tussen de client en de zoek service gaat over het virtuele netwerk en een privé koppeling op het micro soft-backbone-netwerk, waardoor de bloot stelling van het open bare Internet wordt geëlimineerd. Met een VNET kan beveiligde communicatie tussen bronnen worden gewaarborgd, met uw on-premises netwerk en via internet.
 
-:::image type="content" source="media/search-security-overview/inbound-private-link-azure-cog-search.png" alt-text="diagram waarin verschillende soorten beveiliging op elk niveau van service betrokkenheid worden weer gegeven":::
+:::image type="content" source="media/search-security-overview/inbound-private-link-azure-cog-search.png" alt-text="voor beeld van een architectuur diagram voor toegang tot privé-eind punten":::
 
 Hoewel deze oplossing het veiligst is, is het gebruik van aanvullende services een extra kost prijs. Zorg er dus voor dat u een duidelijk beeld hebt van de voor delen voordat u zich kunt voordoen. Zie de [pagina met prijzen](https://azure.microsoft.com/pricing/details/private-link/)voor meer informatie over de kosten. Bekijk de video boven aan dit artikel voor meer informatie over hoe deze onderdelen samen werken. De optie dekking van het privé-eind punt begint bij 5:48 in de video. Zie [een persoonlijk eind punt maken voor Azure Cognitive Search](service-create-private-endpoint.md)voor instructies over het instellen van het eind punt.
 
@@ -126,7 +126,7 @@ Hoe een gebruiker toegang heeft tot een index en andere objecten, wordt bepaald 
 
 Als u nauw keuriger controle per gebruiker met de zoek resultaten nodig hebt, kunt u beveiligings filters voor uw query's maken en documenten retour neren die zijn gekoppeld aan een bepaalde beveiligings identiteit. In plaats van vooraf gedefinieerde rollen en roltoewijzingen, wordt toegangs beheer op basis van een id geïmplementeerd als een *filter* waarmee Zoek resultaten van documenten en inhoud worden verkleind op basis van identiteiten. In de volgende tabel worden twee benaderingen beschreven waarmee Zoek resultaten van niet-geautoriseerde inhoud worden bijgesneden.
 
-| Methode | Beschrijving |
+| Methode | Description |
 |----------|-------------|
 |[Beveiligings beperking op basis van identiteits filters](search-security-trimming-for-azure-search.md)  | Documenteert de basis werk stroom voor het implementeren van toegangs beheer voor gebruikers identiteit. Het onderwerp bevat het toevoegen van beveiligings-id's aan een index en legt vervolgens een overzicht van de filtering uit voor dat veld om de resultaten van verboden inhoud te kunnen knippen. |
 |[Beveiligings beperking op basis van Azure Active Directory-identiteiten](search-security-trimming-for-azure-search-with-aad.md)  | In dit artikel wordt het vorige artikel uitgebreid met stappen voor het ophalen van identiteiten van Azure Active Directory (Azure AD), een van de [gratis services](https://azure.microsoft.com/free/) in het Azure-Cloud platform. |
@@ -142,7 +142,7 @@ Beheerders rechten voor inhoud die in de service wordt gehost, zoals de mogelijk
 
 ## <a name="certifications-and-compliance"></a>Certificering en compliance
 
-Azure Cognitive Search is gecertificeerd voor meerdere globale, regionale en branchespecifieke standaarden voor zowel de open bare Cloud als Azure Government. Voor de volledige lijst downloadt u de [ **Microsoft Azure compliance-aanbod** ](https://azure.microsoft.com/resources/microsoft-azure-compliance-offerings/) van het technisch document op de pagina officiële controle rapporten.
+Azure Cognitive Search is gecertificeerd voor meerdere globale, regionale en branchespecifieke standaarden voor zowel de open bare Cloud als Azure Government. Voor de volledige lijst downloadt u de [ **Microsoft Azure compliance-aanbod**](https://azure.microsoft.com/resources/microsoft-azure-compliance-offerings/) van het technisch document op de pagina officiële controle rapporten.
 
 Voor naleving kunt u [Azure Policy](../governance/policy/overview.md) gebruiken om de aanbevolen procedures voor beveiliging van [Azure Security](../security/benchmarks/introduction.md)te implementeren. Azure Security Bench Mark is een verzameling beveiligings aanbevelingen die zijn samengevoegd in beveiligings mechanismen die worden toegewezen aan belang rijke acties die u moet uitvoeren om bedreigingen voor services en gegevens te beperken. Er zijn momenteel 11 beveiligings controles, waaronder [netwerk beveiliging](../security/benchmarks/security-control-network-security.md), [logboek registratie en controle](../security/benchmarks/security-control-logging-monitoring.md), en [gegevens beveiliging](../security/benchmarks/security-control-data-protection.md) om een paar te noemen.
 

@@ -13,11 +13,11 @@ ms.topic: article
 ms.date: 04/22/2020
 ms.author: apimpm
 ms.openlocfilehash: 81ded79ee72fb7c2d89898595602cb3e6d7ae5e2
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93146974"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011061"
 ---
 # <a name="import-soap-api"></a>SOAP API importeren
 
@@ -39,11 +39,11 @@ Voltooi de volgende quickstart: [Een Azure API Management-exemplaar maken](get-s
 ## <a name="import-and-publish-a-back-end-api"></a><a name="create-api"> </a>Een back-end-API importeren en publiceren
 
 1. Navigeer naar uw API Management-service in de Azure Portal en selecteer **API's** in het menu.
-2. Selecteer **WSDL** uit de lijst **Nieuwe API toevoegen** .
+2. Selecteer **WSDL** uit de lijst **Nieuwe API toevoegen**.
 
     ![SOAP API](./media/import-soap-api/wsdl-api.png)
 3. Geef in de **WSDL-specificatie** de URL op waar de SOAP API is opgeslagen.
-4. Het **SOAP pass-through** -keuzerondje is standaard geselecteerd. Met deze selectie zal de API worden weergegeven als SOAP. De consument moet SOAP-regels gebruiken. Als u van de API een REST API wilt maken, volg dan de stappen in [Import a SOAP API and convert it to REST](restify-soap-api.md) (Een SOAP API importeren en converteren naar REST).
+4. Het **SOAP pass-through**-keuzerondje is standaard geselecteerd. Met deze selectie zal de API worden weergegeven als SOAP. De consument moet SOAP-regels gebruiken. Als u van de API een REST API wilt maken, volg dan de stappen in [Import a SOAP API and convert it to REST](restify-soap-api.md) (Een SOAP API importeren en converteren naar REST).
 
     ![Schermopname toont het dialoogvenster Maken op basis van een W S D L waarin u een W S D L-specificatie kunt invoeren.](./media/import-soap-api/pass-through.png)
 5. Druk op tab.
@@ -59,18 +59,18 @@ Voltooi de volgende quickstart: [Een Azure API Management-exemplaar maken](get-s
     * **Starter**
     * **Onbeperkt**   
 8. Voer andere API-instellingen in. U kunt de waarden instellen tijdens het maken of later configureren door naar het tabblad **Instellingen** te gaan. De instellingen worden beschreven in de zelfstudie [Uw eerste API importeren en publiceren](import-and-publish.md#import-and-publish-a-backend-api).
-9. Selecteer **Maken** .
+9. Selecteer **Maken**.
 
 ### <a name="test-the-new-api-in-the-administrative-portal"></a>De nieuwe API testen in de administratieve portal
 
 Bewerkingen kunnen rechtstreeks vanuit de administratieve portal worden aangeroepen. Dit is een handige manier om de bewerkingen van een API te bekijken en te testen.  
 
 1. Selecteer de API die u in de vorige stap hebt gemaakt.
-2. Druk op het tabblad **Testen** .
+2. Druk op het tabblad **Testen**.
 3. Selecteer een willekeurige bewerking.
 
     De pagina geeft velden weer voor queryparameters en velden voor de headers. Een van de headers is Ocp-Apim-Subscription-Key voor de abonnementssleutel van het product dat is gekoppeld aan deze API. Als u het API Management-exemplaar hebt gemaakt, bent u al een beheerder en wordt de sleutel dus automatisch ingevuld. 
-1. Druk op **Verzenden** .
+1. Druk op **Verzenden**.
 
     Back-end reageert met **200 OK** en enkele gegevens.
 

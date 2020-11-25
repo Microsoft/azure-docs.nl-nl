@@ -6,11 +6,11 @@ ms.topic: include
 ms.date: 10/22/2020
 ms.author: baanders
 ms.openlocfilehash: 35643370d6fd313d42f954a578b73befc025c040
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94329595"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011248"
 ---
 ### <a name="set-up-local-azure-credentials"></a>Lokale Azure-referenties instellen
 

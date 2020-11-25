@@ -8,11 +8,11 @@ ms.date: 11/02/2020
 ms.topic: tutorial
 ms.service: digital-twins
 ms.openlocfilehash: 3225fff1c82822dee990804f934ada86068841e8
-ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93280264"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011251"
 ---
 # <a name="tutorial-coding-with-the-azure-digital-twins-apis"></a>Zelfstudie: Coderen met de Azure Digital Twins-API's
 
@@ -43,7 +43,7 @@ U gaat als volgt aan de slag:
 
 Wanneer u klaar bent om met uw Azure Digital Twins-exemplaar, moet u het client-app-project instellen. 
 
-Open een opdrachtprompt of een ander consolevenster op uw computer en maak een lege projectmap waarin u uw werk wilt opslaan tijdens deze zelfstudie. Geef de map een willekeurige naam (bijvoorbeeld *DigitalTwinsCodeTutorial* ).
+Open een opdrachtprompt of een ander consolevenster op uw computer en maak een lege projectmap waarin u uw werk wilt opslaan tijdens deze zelfstudie. Geef de map een willekeurige naam (bijvoorbeeld *DigitalTwinsCodeTutorial*).
 
 Navigeer naar de nieuwe map.
 
@@ -103,7 +103,7 @@ Vervolgens voegt u code toe aan dit bestand om een deel van de functionaliteit i
 
 Het eerste wat uw app moet doen, is verifiëren op basis van de Azure Digital Twins-service. Vervolgens kunt u een service-clientklasse maken voor toegang tot de SDK-functies.
 
-Voor de verificatie hebt u de *hostName* -waarde van uw Azure Digital Twins-exemplaar nodig.
+Voor de verificatie hebt u de *hostName*-waarde van uw Azure Digital Twins-exemplaar nodig.
 
 Plak de volgende code in *Program.cs* onder de regel "Hello World!" in de `Main` methode. Stel de waarde van `adtInstanceUrl` in op die van *hostName* van uw exemplaar van Azure Digital Twins.
 
@@ -132,7 +132,7 @@ Azure Digital Twins heeft geen intrinsieke domeinwoordenlijst. De typen elemente
 
 De eerste stap bij het maken van een Azure Digital Twins-oplossing is het definiëren van ten minste een model in een DTDL-bestand.
 
-Maak in de map waar u het project hebt gemaakt een nieuw *.json* -bestand met de naam *SampleModel.json*. Plak in de volgende hoofdtekst van het bestand: 
+Maak in de map waar u het project hebt gemaakt een nieuw *.json*-bestand met de naam *SampleModel.json*. Plak in de volgende hoofdtekst van het bestand: 
 
 ```json
 {
@@ -213,7 +213,7 @@ await foreach (DigitalTwinsModelData md in modelDataList)
 }
 ```
 
-**Voordat u het programma opnieuw uitvoert om deze nieuwe code te testen** , moet u even terug denken aan de laatste keer dat u het programma hebt uitgevoerd. U hebt uw model toen al geüpload. Met Azure Digital Twins kunt u hetzelfde model niet twee keer uploaden, dus als u probeert hetzelfde model nogmaals te uploaden, moet het programma een uitzondering genereren.
+**Voordat u het programma opnieuw uitvoert om deze nieuwe code te testen**, moet u even terug denken aan de laatste keer dat u het programma hebt uitgevoerd. U hebt uw model toen al geüpload. Met Azure Digital Twins kunt u hetzelfde model niet twee keer uploaden, dus als u probeert hetzelfde model nogmaals te uploaden, moet het programma een uitzondering genereren.
 
 Voer, met dit in gedachten, in het opdrachtvenster het programma uit met de volgende opdracht:
 
@@ -267,11 +267,11 @@ for(int i=0; i<3; i++) {
 }
 ```
 
-Voer in het opdrachtvenster de programma uit met `dotnet run`. Zoek in de uitvoer naar de weergaveberichten die melden dat *sampleTwin-0* , *sampleTwin-1* en *sampleTwin-2* zijn gemaakt. 
+Voer in het opdrachtvenster de programma uit met `dotnet run`. Zoek in de uitvoer naar de weergaveberichten die melden dat *sampleTwin-0*, *sampleTwin-1* en *sampleTwin-2* zijn gemaakt. 
 
 Voer vervolgens het programma opnieuw uit. 
 
-U ziet dat er geen fout wordt gegenereerd wanneer de tweelingen de tweede keer worden gemaakt, zelfs als de tweeling al bestaan na de eerste uitvoering. In tegenstelling tot het maken van een model, is het maken van tweelingen op het REST-niveau een *PUT* -aanroep met *upsert* -semantiek. Dit betekent dat als er al een tweeling bestaat, er door een poging om dezelfde tweeling nog een keer te maken, de oorspronkelijke tweeling gewoon wordt vervangen. Er wordt geen fout gegenereerd.
+U ziet dat er geen fout wordt gegenereerd wanneer de tweelingen de tweede keer worden gemaakt, zelfs als de tweeling al bestaan na de eerste uitvoering. In tegenstelling tot het maken van een model, is het maken van tweelingen op het REST-niveau een *PUT*-aanroep met *upsert*-semantiek. Dit betekent dat als er al een tweeling bestaat, er door een poging om dezelfde tweeling nog een keer te maken, de oorspronkelijke tweeling gewoon wordt vervangen. Er wordt geen fout gegenereerd.
 
 ### <a name="create-relationships"></a>Relaties maken
 

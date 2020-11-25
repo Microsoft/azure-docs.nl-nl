@@ -8,11 +8,11 @@ ms.workload: infrastructure-services
 ms.date: 04/24/2020
 ms.author: cynthn
 ms.openlocfilehash: 6a14e2bd7385430c3d0fbec06259a876af556e38
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82190398"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010721"
 ---
 # <a name="create-a-proximity-placement-group-using-the-portal"></a>Een nabijheidsplaatsingsgroep maken met behulp van de portal
 
@@ -31,7 +31,7 @@ Een proximity-plaatsings groep is een logische groepering die wordt gebruikt om 
 1. Typ **proximity placement Group** in de zoek opdracht.
 1. Selecteer onder **Services** in de zoek resultaten **proximity placement groups**.
 1. Selecteer op de pagina **proximity placement groups** de optie **toevoegen**.
-1. Controleer op het tabblad **basis beginselen** onder **Project Details**of het juiste abonnement is geselecteerd.
+1. Controleer op het tabblad **basis beginselen** onder **Project Details** of het juiste abonnement is geselecteerd.
 1. Selecteer in **resource groep** de optie **nieuwe maken** om een nieuwe groep te maken of selecteer een lege resource groep die al bestaat uit de vervolg keuzelijst. 
 1. Selecteer in **regio** de locatie waar u de Proximity-plaatsings groep wilt maken.
 1. Typ in **proximity-naam voor plaatsings groep** een naam en selecteer vervolgens **controleren + maken**.
@@ -59,7 +59,7 @@ Als de virtuele machine deel uitmaakt van de Beschikbaarheidsset, moet u de besc
 1. Stop\deallocate elke virtuele machine in de beschikbaarheidsset door de virtuele machine te selecteren, vervolgens op de pagina voor de virtuele machine **stoppen** te selecteren en vervolgens **OK** te selecteren om de virtuele machine te stoppen.
 1. Controleer op de pagina voor uw beschikbaarheidsset of alle virtuele machines de **status** **gestopt hebben (toewijzing opgeheven)**.
 1. Selecteer **Configuratie** in het menu aan de linkerkant.
-1. Selecteer in de vervolg keuzelijst **proximity-plaatsings**groep een plaatsings groep en selecteer vervolgens **Opslaan**.
+1. Selecteer in de vervolg keuzelijst **proximity-plaatsings** groep een plaatsings groep en selecteer vervolgens **Opslaan**.
 1. Selecteer **overzicht** in het menu links om de lijst met vm's opnieuw weer te geven. 
 1. Selecteer elke virtuele machine in de beschikbaarheidsset en selecteer vervolgens **Start** op de pagina voor elke virtuele machine. 
 
@@ -68,8 +68,8 @@ Als de virtuele machine deel uitmaakt van de Beschikbaarheidsset, moet u de besc
 
 
 1. Selecteer op de pagina voor de virtuele machine **stoppen**.
-1. Zodra de status van de virtuele machine is **gestopt (toewijzing**ongedaan gemaakt), selecteert u **configuratie** in het menu links.
-1. Selecteer in de vervolg keuzelijst **proximity-plaatsings**groep een plaatsings groep en selecteer vervolgens **Opslaan**.
+1. Zodra de status van de virtuele machine is **gestopt (toewijzing** ongedaan gemaakt), selecteert u **configuratie** in het menu links.
+1. Selecteer in de vervolg keuzelijst **proximity-plaatsings** groep een plaatsings groep en selecteer vervolgens **Opslaan**.
 1. Selecteer **overzicht** in het linkermenu en selecteer vervolgens **Start** om de virtuele machine opnieuw op te starten.
 
  

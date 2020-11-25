@@ -13,11 +13,11 @@ ms.author: srbozovi
 ms.reviewer: sstein, bonova
 ms.date: 02/22/2019
 ms.openlocfilehash: 156a4c74eea24b20c28df88be85cb32c0ebe2981
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91617635"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012444"
 ---
 # <a name="determine-required-subnet-size--range-for-azure-sql-managed-instance"></a>Vereiste subnet grootte bepalen & bereik voor Azure SQL Managed instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -48,18 +48,18 @@ Grootte van uw subnet op basis van de toekomstige implementatie en schaal aanpas
 - Elk beheerd exemplaar gebruikt het aantal adressen dat afhankelijk is van de prijs categorie en de generatie van hardware
 
 > [!IMPORTANT]
-> Het is niet mogelijk om het adres bereik van het subnet te wijzigen als er een resource in het subnet bestaat. Het is ook niet mogelijk om beheerde exemplaren van het ene subnet naar het andere te verplaatsen. Als dat mogelijk is, kunt u grotere subnetten gebruiken in plaats van kleiner om problemen in de toekomst te voor komen.
+> Het is niet mogelijk om het adresbereik van het subnet te wijzigen als er een resource in het subnet bestaat. Het is ook niet mogelijk om beheerde exemplaren van het ene subnet naar het andere te verplaatsen. Als dat mogelijk is, kunt u grotere subnetten gebruiken in plaats van kleiner om problemen in de toekomst te voor komen.
 
 GP = algemeen gebruik; BC = bedrijfs kritiek; VC = virtueel cluster
 
-| **Hardware-gen** | **Prijscategorie** | **Azure-gebruik** | **Gebruik van VC** | **Exemplaar gebruik** | **Eind*** |
+| **Hardware-gen** | **Prijscategorie** | **Azure-gebruik** | **Gebruik van VC** | **Exemplaar gebruik** | **Totaal** _ |
 | --- | --- | --- | --- | --- | --- |
 | Gen4 | GP | 5 | 1 | 5 | 11 |
 | Gen4 | BC | 5 | 1 | 5 | 11 |
 | GEN5 | GP | 5 | 6 | 3 | 14 |
 | GEN5 | BC | 5 | 6 | 5 | 16 |
 
-  \* In het kolom totaal wordt het aantal adressen weer gegeven dat moet worden genomen wanneer één exemplaar in het subnet wordt geïmplementeerd. Elk extra exemplaar in het subnet voegt het aantal adressen toe dat wordt weer gegeven in de kolom exemplaar gebruik. Adressen die worden weer gegeven met de Azure-gebruiks kolom worden gedeeld door meerdere virtuele clusters, terwijl adressen die worden weer gegeven met de kolom VC Usage worden gedeeld tussen instanties die in dat virtuele cluster worden geplaatst.
+  \_ In het kolom totaal wordt het aantal adressen weer gegeven dat moet worden genomen wanneer één exemplaar in het subnet wordt geïmplementeerd. Elk extra exemplaar in het subnet voegt het aantal adressen toe dat wordt weer gegeven in de kolom exemplaar gebruik. Adressen die worden weer gegeven met de Azure-gebruiks kolom worden gedeeld door meerdere virtuele clusters, terwijl adressen die worden weer gegeven met de kolom VC Usage worden gedeeld tussen instanties die in dat virtuele cluster worden geplaatst.
 
 Voor de update bewerking moet de grootte van het virtuele cluster doorgaans worden gewijzigd. In sommige gevallen is het maken van een virtueel cluster vereist voor een update bewerking (Zie het [artikel beheer bewerkingen](sql-managed-instance-paas-overview.md#management-operations)voor meer informatie). In het geval van het maken van een virtueel cluster is het aantal vereiste extra adressen gelijk aan het aantal adressen dat wordt weer gegeven door de kolom VC usage, die is vereist voor instanties die worden geplaatst in dat virtuele cluster (kolom exemplaar gebruik).
 
@@ -74,12 +74,12 @@ Zoals hierboven vermeld, moet u in sommige gevallen een virtueel cluster maken v
 
 Bij het schalen van bewerkings instanties is er tijdelijk extra IP-capaciteit vereist die afhankelijk is van de prijs categorie en het genereren van hardware
 
-| **Hardware-gen** | **Prijscategorie** | **Scenario** | **Aanvullende adressen*** |
+| **Hardware-gen** | **Prijscategorie** | **Scenario** | **Aanvullende adressen** _ |
 | --- | --- | --- | --- |
 | Gen4 | GP of BC | VCores schalen | 5 |
 | Gen4 | GP of BC | Opslag ruimte schalen | 5 |
 | Gen4 | GP of BC | Overschakelen van GP naar BC of BC naar GP | 5 |
-| Gen4 | GP | Overschakelen naar GEN5 * | 9 |
+| Gen4 | GP | Overschakelen naar Gen5_ | 9 |
 | Gen4 | BC | Overschakelen naar GEN5 * | 11 |
 | GEN5 | GP | VCores schalen | 3 |
 | GEN5 | GP | Opslag ruimte schalen | 0 |

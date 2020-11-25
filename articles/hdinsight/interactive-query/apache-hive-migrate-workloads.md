@@ -8,11 +8,11 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 11/13/2019
 ms.openlocfilehash: bcc0faa8fdbd61ab3e3e0886256f7c796e5a98e2
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92534682"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011503"
 ---
 # <a name="migrate-azure-hdinsight-36-hive-workloads-to-hdinsight-40"></a>Azure HDInsight 3,6 Hive-workloads migreren naar HDInsight 4,0
 
@@ -39,12 +39,12 @@ Maak een nieuwe kopie van uw externe meta Store. Als u een externe meta Store ge
 ### <a name="3-upgrade-metastore-schema"></a>3. het meta Store-schema bijwerken
 Zodra de meta Store- **kopie** is voltooid, voert u een schema-upgrade script uit in [script actie](../hdinsight-hadoop-customize-cluster-linux.md) op het bestaande HDInsight 3,6-cluster om de nieuwe Meta Store naar Hive 3-schema bij te werken. (Voor deze stap is het niet nodig om de nieuwe Meta Store te koppelen aan een cluster.) Hierdoor kan de Data Base worden gekoppeld als HDInsight 4,0-meta Store.
 
-Gebruik de waarden in de tabel hieronder. Vervang door `SQLSERVERNAME DATABASENAME USERNAME PASSWORD` de juiste waarden voor de Hive-metastore **kopie** , gescheiden door spaties. Neem '. database.windows.net ' niet op bij het opgeven van de naam van de SQL-Server.
+Gebruik de waarden in de tabel hieronder. Vervang door `SQLSERVERNAME DATABASENAME USERNAME PASSWORD` de juiste waarden voor de Hive-metastore **kopie**, gescheiden door spaties. Neem '. database.windows.net ' niet op bij het opgeven van de naam van de SQL-Server.
 
 |Eigenschap | Waarde |
 |---|---|
 |Scripttype|- Aangepast|
-|Naam|Hive-upgrade|
+|Name|Hive-upgrade|
 |Bash-script-URI|`https://hdiconfigactions.blob.core.windows.net/hivemetastoreschemaupgrade/launch-schema-upgrade.sh`|
 |Knooppunttype(n)|Head|
 |Parameters|GEBRUIKERS NAAM DATABASENAME DATA BASE WACHT WOORD|

@@ -9,11 +9,11 @@ ms.service: iot-dps
 services: iot-dps
 manager: eliotgra
 ms.openlocfilehash: 6ec146a05df1b896f8ca594d29cf13341b70765a
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94954559"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010959"
 ---
 # <a name="how-to-manage-device-enrollments-with-azure-portal"></a>Inschrijvingen van apparaten beheren met Azure Portal
 
@@ -40,7 +40,7 @@ Er zijn twee manieren waarop u uw apparaten kunt inschrijven bij de inrichtings 
      
         [![Een registratie groep toevoegen aan de portal](./media/how-to-manage-enrollments/group-enrollment.png)](./media/how-to-manage-enrollments/group-enrollment.png#lightbox)
         
-        | Veld | Beschrijving |
+        | Veld | Description |
         | :--- | :--- |
         | **Groepsnaam** | De vereiste naam voor uw groep apparaten. |
         | **Type verklaring** | Klik op **certificaat** of **symmetrische sleutel** voor het Attestation-type, afhankelijk van de Attestation-methode die uw apparaten zullen gebruiken. |
@@ -64,7 +64,7 @@ Er zijn twee manieren waarop u uw apparaten kunt inschrijven bij de inrichtings 
      
         [![Afzonderlijke inschrijving in de portal](./media/how-to-manage-enrollments/individual-enrollment.png)](./media/how-to-manage-enrollments/individual-enrollment.png#lightbox)
     
-        | Veld | Beschrijving |
+        | Veld | Description |
         | :--- | :--- |
         | **Mechanisme** | Selecteer **X. 509**, **TPM** of **symmetrische sleutel** voor het Attestation-mechanisme dat moet worden gebruikt, afhankelijk van de Attestation-methode die uw apparaten gebruiken. |
         | Attestation-instellingen | Voor stapsgewijze instructies over het maken en gebruiken van afzonderlijke inschrijvingen met symmetrische sleutels of X. 509-certificaten, zie een van de [richt lijnen voor een symmetrisch apparaat](quick-create-simulated-device-symmetric-key-java.md#create-a-device-enrollment) of het [inrichten van een X. 509-certificaat apparaat](quick-create-simulated-device-x509-java.md#create-a-self-signed-x509-device-certificate-and-individual-enrollment-entry) Quick starts.<br><br>Zie een van de voor beelden van [een gesimuleerd TPM-apparaat](quick-create-simulated-device-tpm-java.md#create-a-device-enrollment-entry) voor stapsgewijze instructies voor het maken en gebruiken van afzonderlijke inschrijvingen met behulp van TPM-Attestation.|

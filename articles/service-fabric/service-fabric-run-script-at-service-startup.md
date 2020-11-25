@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 03/21/2018
 ms.author: atsenthi
 ms.openlocfilehash: a25f16f08ab8ae9564363f179d19d4b30c5315fa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75464284"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012524"
 ---
 # <a name="run-a-service-startup-script-as-a-local-user-or-system-account"></a>Het opstartscript van een service uitvoeren als lokale gebruiker of systeemaccount
 Voordat een uitvoer bare Service Fabric-service wordt gestart, kan het nodig zijn om een configuratie of installatie uit te voeren.  Zo kunt u omgevings variabelen configureren. U kunt opgeven dat een script moet worden uitgevoerd voordat het uitvoer bare bestand van de service wordt gestart in het service manifest voor de service. Door een runas-beleid voor het toegangs punt voor de service-instelling te configureren, kunt u het account wijzigen waarmee het uitvoer bare installatie programma wordt uitgevoerd.  Met een afzonderlijk installatie-ingangs punt kunt u een configuratie met hoge bevoegdheden uitvoeren voor een korte periode, zodat het uitvoer bare bestand van de servicehost niet langer hoeft te worden uitgevoerd met hoge bevoegdheden voor langere Peri Oden.
@@ -131,7 +131,7 @@ Vaak is het raadzaam om het opstart script uit te voeren met een lokaal systeem 
 ```
 
 > [!NOTE]
-> Voor Linux-clusters kunt u een service of het toegangs punt voor Setup als **root**uitvoeren door het  **account** type op te geven als **LocalSystem**.
+> Voor Linux-clusters kunt u een service of het toegangs punt voor Setup als **root** uitvoeren door het  **account** type op te geven als **LocalSystem**.
 
 ## <a name="run-a-script-from-the-setup-entry-point"></a>Een script uitvoeren vanuit het installatie toegangs punt
 Voeg nu een opstart script toe aan het project om uit te voeren onder Administrator bevoegdheden. 
@@ -161,7 +161,7 @@ PS C:\ [Environment]::GetEnvironmentVariable("TestVariable","Machine")
 MyValue
 ```
 
-Noteer vervolgens de naam van het knoop punt waarop de service is geïmplementeerd en start in [service Fabric Explorer](service-fabric-visualizing-your-cluster.md). Bijvoorbeeld, knoop punt 2. Ga vervolgens naar de map werk van het toepassings exemplaar om het out.txt bestand te vinden waarin de waarde van **TestVariable**wordt weer gegeven. Als deze service bijvoorbeeld is geïmplementeerd op knoop punt 2, kunt u naar dit pad gaan voor de **MyApplicationType**:
+Noteer vervolgens de naam van het knoop punt waarop de service is geïmplementeerd en start in [service Fabric Explorer](service-fabric-visualizing-your-cluster.md). Bijvoorbeeld, knoop punt 2. Ga vervolgens naar de map werk van het toepassings exemplaar om het out.txt bestand te vinden waarin de waarde van **TestVariable** wordt weer gegeven. Als deze service bijvoorbeeld is geïmplementeerd op knoop punt 2, kunt u naar dit pad gaan voor de **MyApplicationType**:
 
 ```
 C:\SfDevCluster\Data\_App\Node.2\MyApplicationType_App\work\out.txt

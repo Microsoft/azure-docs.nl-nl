@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 10/21/2020
 ms.openlocfilehash: 109e96f862ec2f3ddf879bccba114c44aecfe3c8
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92440600"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012592"
 ---
 # <a name="collect-windows-event-log-data-sources-with-log-analytics-agent"></a>Gegevens bronnen van Windows-gebeurtenis logboeken verzamelen met Log Analytics-agent
 Windows-gebeurtenis logboeken zijn een van de meest voorkomende [gegevens bronnen](agent-data-sources.md) voor log Analytics-agents op virtuele Windows-machines, omdat veel toepassingen naar het Windows-gebeurtenis logboek schrijven.  U kunt gebeurtenissen uit standaard logboeken, zoals systeem en toepassing, verzamelen naast het opgeven van aangepaste logboeken die zijn gemaakt door toepassingen die u wilt bewaken.
@@ -33,7 +33,7 @@ Wanneer u de naam van een gebeurtenis logboek typt, geeft Azure Monitor suggesti
 > [!NOTE]
 > Kritieke gebeurtenissen van het Windows-gebeurtenis logboek hebben de ernst fout in Azure Monitor Logboeken.
 
-## <a name="data-collection"></a>Gegevens verzamelen
+## <a name="data-collection"></a>Gegevensverzameling
 Azure Monitor verzamelt elke gebeurtenis die overeenkomt met een bepaalde ernst van een bewaakt gebeurtenis logboek wanneer de gebeurtenis wordt gemaakt.  De agent legt de locatie vast in elk gebeurtenis logboek dat wordt verzameld van.  Als de agent gedurende een bepaalde tijd offline gaat, worden er gebeurtenissen verzameld van waar deze voor het laatst is uitgeschakeld, zelfs als deze gebeurtenissen zijn gemaakt terwijl de agent offline was.  Deze gebeurtenissen kunnen niet worden verzameld als het gebeurtenis logboek vastloopt met niet-verzamelde gebeurtenissen die worden overschreven terwijl de agent offline is.
 
 >[!NOTE]
@@ -63,7 +63,7 @@ Windows-gebeurtenis records hebben een type **gebeurtenis** en hebben de eigensc
 ## <a name="log-queries-with-windows-events"></a>Query's vastleggen in Logboeken met Windows-gebeurtenissen
 De volgende tabel bevat verschillende voor beelden van logboek query's waarmee Windows-gebeurtenis records worden opgehaald.
 
-| Query’s uitvoeren | Beschrijving |
+| Query | Description |
 |:---|:---|
 | Gebeurtenis |Alle Windows-gebeurtenissen. |
 | Gebeurtenis &#124; waarbij EventLevelName = = "Error" |Alle Windows-gebeurtenissen met de ernst van de fout. |

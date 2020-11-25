@@ -7,11 +7,11 @@ ms.topic: how-to
 ms.date: 01/16/2018
 ms.author: alkohli
 ms.openlocfilehash: 6af095c7abdb9aa61e57d543ff2ab2f9192dadc8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91743570"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011435"
 ---
 # <a name="change-a-blob-path-from-the-default-path"></a>Het standaardpad van een blob wijzigen
 
@@ -31,26 +31,26 @@ Voer de volgende stappen uit om een Azure-functie te maken:
 
     ![Typ ' functie-app ' in het zoekvak](./media/storsimple-data-manager-change-default-blob-path/search-function-app.png)
 
-3. Klik op **Maken**.
+3. Klik op **Create**.
 
     ![De knop ' maken ' van het functie-app venster](./media/storsimple-data-manager-change-default-blob-path/create-function-app.png)
 
 4. Voer de volgende stappen uit op de Blade **functie-app** configuratie:
 
-    1. Geef een unieke **app-naam**op.
-    2. Selecteer het **abonnement**in de vervolg keuzelijst. Dit abonnement moet gelijk zijn aan de versie die is gekoppeld aan uw StorSimple Data Manager service.
+    1. Geef een unieke **app-naam** op.
+    2. Selecteer het **abonnement** in de vervolg keuzelijst. Dit abonnement moet gelijk zijn aan de versie die is gekoppeld aan uw StorSimple Data Manager service.
     3. Selecteer **nieuwe** resource groep maken.
-    4. Selecteer **verbruiks abonnement**voor de vervolg keuzelijst **hosting plan** .
+    4. Selecteer **verbruiks abonnement** voor de vervolg keuzelijst **hosting plan** .
     5. Geef een locatie op waar de functie wordt uitgevoerd. U wilt dezelfde regio plaatsen waar de StorSimple Data Manager-service en het opslag account die aan de taak definitie zijn gekoppeld, zich bevinden.
     6. Selecteer een bestaand opslagaccount of maak een nieuw opslagaccount. Een opslag account wordt intern gebruikt voor de functie.
 
         ![Nieuwe functie-app configuratie gegevens invoeren](./media/storsimple-data-manager-change-default-blob-path/function-app-parameters.png)
 
-    7. Klik op **Maken**. De functie-app is gemaakt.
+    7. Klik op **Create**. De functie-app is gemaakt.
      
         ![functie-app gemaakt](./media/storsimple-data-manager-change-default-blob-path/function-app-created.png)
 
-5. Selecteer **functies**en klik op **+ nieuwe functie**.
+5. Selecteer **functies** en klik op **+ nieuwe functie**.
 
     ![Klik op + nieuwe functie](./media/storsimple-data-manager-change-default-blob-path/create-new-function.png)
 
@@ -60,11 +60,11 @@ Voer de volgende stappen uit om een Azure-functie te maken:
 
     1. Voer een **naam** in voor de functie.
     2. In het vak **wachtrij naam** typt u de naam van de taak voor gegevens transformatie.
-    3. Klik onder **verbinding met opslag account**op **Nieuw**. Selecteer in de lijst met opslag accounts het account dat is gekoppeld aan de taak definitie. Noteer de naam van de verbinding (gemarkeerd). De naam is later vereist in de functie Azure.
+    3. Klik onder **verbinding met opslag account** op **Nieuw**. Selecteer in de lijst met opslag accounts het account dat is gekoppeld aan de taak definitie. Noteer de naam van de verbinding (gemarkeerd). De naam is later vereist in de functie Azure.
 
         ![Een nieuwe C#-functie maken](./media/storsimple-data-manager-change-default-blob-path/new-function-parameters.png)
 
-    4. Klik op **Maken**. De **functie** wordt gemaakt.
+    4. Klik op **Create**. De **functie** wordt gemaakt.
 
      
 10. Voer in het functie venster het bestand _. CSX_ uit.
@@ -193,7 +193,7 @@ Voer de volgende stappen uit om een Azure-functie te maken:
         
         ![Nieuwe functie toevoegen bestand toevoegen](./media/storsimple-data-manager-change-default-blob-path/new-function-add-file.png)
     
-    3. Typ **project.jsop**en druk op **Enter**. Plak de volgende code in de **project.jsin** het bestand:
+    3. Typ **project.jsop** en druk op **Enter**. Plak de volgende code in de **project.jsin** het bestand:
 
         ```
         {

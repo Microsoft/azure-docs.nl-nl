@@ -11,11 +11,11 @@ ms.workload: infrastructure-services
 ms.date: 05/15/2018
 ms.author: rohink
 ms.openlocfilehash: 2d3989b3c477a35d602f1ccf3e45d6f597f5d78d
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92737393"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011559"
 ---
 # <a name="manage-dns-records-and-recordsets-in-azure-dns-using-the-azure-cli"></a>DNS-records en-record sets beheren in Azure DNS met behulp van de Azure CLI
 
@@ -28,7 +28,7 @@ In dit artikel wordt beschreven hoe u DNS-records voor uw DNS-zone beheert met b
 
 In de voor beelden in dit artikel wordt ervan uitgegaan dat u [de Azure cli al hebt geïnstalleerd en dat u bent aangemeld, en een DNS-zone hebt gemaakt](dns-operations-dnszones-cli.md).
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Voordat u DNS-records in DNS Azure maakt, leest u eerst hoe Azure DNS DNS-records organiseert in DNS-recordsets.
 
@@ -46,7 +46,7 @@ Als de recordset nog niet bestaat, maakt u er met deze opdracht een. Als de reco
 
 Als er een nieuwe recordset wordt gemaakt, wordt een standaard time-to-live (TTL) van 3600 gebruikt. Zie [een DNS-recordset maken](#create-a-dns-record-set)voor instructies over het gebruik van verschillende TTLS.
 
-In het volgende voorbeeld maakt u een A-record met de naam *www* in de zone *contoso.com* in de resourcegroep *MyResourceGroup* . Het IP-adres van de A-record is *1.2.3.4* .
+In het volgende voorbeeld maakt u een A-record met de naam *www* in de zone *contoso.com* in de resourcegroep *MyResourceGroup*. Het IP-adres van de A-record is *1.2.3.4*.
 
 ```azurecli
 az network dns record-set a add-record --resource-group myresourcegroup --zone-name contoso.com --record-set-name www --ipv4-address 1.2.3.4
@@ -193,7 +193,7 @@ Met deze opdracht wordt een DNS-record uit een recordset verwijderd. Als de laat
 
 U moet de record opgeven die moet worden verwijderd en de zone waarvan deze moet worden verwijderd, met dezelfde para meters als bij het maken van een record met `az network dns record-set <record-type> add-record` . Deze para meters worden beschreven in [een DNS-record maken](#create-a-dns-record) en [records van andere typen maken](#create-records-of-other-types) .
 
-In het volgende voor beeld wordt de A-record met de waarde 1.2.3.4 verwijderd uit de recordset met de naam ' *www* ' in de zone *contoso.com* in de resource groep *MyResourceGroup* .
+In het volgende voor beeld wordt de A-record met de waarde 1.2.3.4 verwijderd uit de recordset met de naam ' *www* ' in de zone *contoso.com* in de resource groep *MyResourceGroup*.
 
 ```azurecli
 az network dns record-set a remove-record --resource-group myresourcegroup --zone-name contoso.com --record-set-name "www" --ipv4-address 1.2.3.4

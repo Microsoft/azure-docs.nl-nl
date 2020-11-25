@@ -8,19 +8,19 @@ ms.date: 09/15/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: a35c34a08dba625b16940d7ec5fb870952dba36b
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: e60ba773c5ef750f027c2e0b1528409c71eeb4b8
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630240"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011697"
 ---
 # <a name="planning-for-an-azure-files-deployment"></a>Planning voor de implementatie van Azure Files
 [Azure files](storage-files-introduction.md) kunnen op twee manieren worden geïmplementeerd: door de Serverloze Azure-bestands shares rechtstreeks te koppelen of door Azure-bestands shares on-premises in de cache op te maken met behulp van Azure file sync. Welke implementatie optie u kiest, wijzigt de dingen die u moet overwegen bij het plannen van uw implementatie. 
 
-- **Directe koppeling van een Azure-bestands share** : omdat Azure files Server Message Block (SMB) of NFS-toegang (Network File System) hebt, kunt u Azure-bestands shares on-premises of in de Cloud koppelen met behulp van de standaard SMB-of NFS-clients die beschikbaar zijn in uw besturings systeem. Omdat Azure-bestands shares serverloos zijn, is voor het implementeren van productie scenario's geen bestands server of een NAS-apparaat nodig. Dit betekent dat u geen software patches hoeft toe te passen of fysieke schijven hoeft uit te wisselen. 
+- **Directe koppeling van een Azure-bestands share**: omdat Azure files Server Message Block (SMB) of NFS-toegang (Network File System) hebt, kunt u Azure-bestands shares on-premises of in de Cloud koppelen met behulp van de standaard SMB-of NFS-clients die beschikbaar zijn in uw besturings systeem. Omdat Azure-bestands shares serverloos zijn, is voor het implementeren van productie scenario's geen bestands server of een NAS-apparaat nodig. Dit betekent dat u geen software patches hoeft toe te passen of fysieke schijven hoeft uit te wisselen. 
 
-- **Azure-bestands share op locatie opslaan in de cache met Azure file sync** : Azure File Sync kunt u de bestands shares van uw organisatie in azure files centraliseren en tegelijkertijd de flexibiliteit, prestaties en compatibiliteit van een on-premises Bestands server behouden. Azure File Sync transformeert een on-premises Windows-Server (of Cloud) naar een snelle cache van uw Azure SMB-bestands share. 
+- **Azure-bestands share op locatie opslaan in de cache met Azure file sync**: Azure File Sync kunt u de bestands shares van uw organisatie in azure files centraliseren en tegelijkertijd de flexibiliteit, prestaties en compatibiliteit van een on-premises Bestands server behouden. Azure File Sync transformeert een on-premises Windows-Server (of Cloud) naar een snelle cache van uw Azure SMB-bestands share. 
 
 Dit artikel heeft voornamelijk betrekking op implementatie overwegingen voor het implementeren van een Azure-bestands share om rechtstreeks te worden gekoppeld door een on-premises of cloud-client. Zie [planning voor een implementatie van een Azure file sync](storage-sync-files-planning.md)om een Azure file sync implementatie te plannen.
 
@@ -44,9 +44,9 @@ Wanneer u Azure-bestands shares in opslag accounts implementeert, kunt u het vol
 
 ## <a name="identity"></a>Identiteit
 Om toegang te krijgen tot een Azure-bestands share, moet de gebruiker van de bestands share worden geverifieerd en moeten ze toegang hebben tot de share. Dit wordt gedaan op basis van de identiteit van de gebruiker die toegang heeft tot de bestands share. Azure Files integreert met drie belangrijkste id-providers:
-- **On-premises Active Directory Domain Services (AD DS, of on-premises AD DS)** : Azure Storage-accounts kunnen lid zijn van een domein dat eigendom is van een klant Active Directory Domain Services, net als een Windows Server-Bestands server of een NAS-apparaat. U kunt een domein controller on-premises, in een Azure-VM of zelfs als een virtuele machine in een andere Cloud provider implementeren. Azure Files is neutraal waar uw domein controller wordt gehost. Als een opslag account is toegevoegd aan een domein, kan de eind gebruiker een bestands share koppelen met het gebruikers account waarmee ze zijn aangemeld bij hun PC. Op AD gebaseerde verificatie maakt gebruik van het Kerberos-verificatie protocol.
-- **Azure Active Directory Domain Services (azure AD DS)** : Azure AD DS biedt een door micro soft beheerde domein controller die kan worden gebruikt voor Azure-resources. Een domein dat wordt toegevoegd aan uw opslag account voor Azure AD DS biedt vergelijk bare voor delen als het domein wordt toegevoegd aan een Active Directory van een klant. Deze implementatie optie is het nuttigst voor toepassingen die zijn gebaseerd op AD-machtigingen. Omdat Azure AD DS op AD gebaseerde verificatie biedt, gebruikt deze optie ook het Kerberos-verificatie protocol.
-- **Azure Storage-account sleutel** : Azure-bestands shares kunnen ook worden gekoppeld met een Azure Storage-account sleutel. Als u een bestands share op deze manier wilt koppelen, wordt de naam van het opslag account gebruikt als de gebruikers naam en de sleutel voor het opslag account als wacht woord. Het gebruik van de sleutel van het opslag account voor het koppelen van de Azure-bestands share is in feite een beheerders bewerking, omdat de gekoppelde bestands share volledige machtigingen heeft voor alle bestanden en mappen op de share, zelfs als deze Acl's hebben. Wanneer u de sleutel voor het opslag account gebruikt om te koppelen via SMB, wordt het NTLMv2-verificatie protocol gebruikt.
+- **On-premises Active Directory Domain Services (AD DS, of on-premises AD DS)**: Azure Storage-accounts kunnen lid zijn van een domein dat eigendom is van een klant Active Directory Domain Services, net als een Windows Server-Bestands server of een NAS-apparaat. U kunt een domein controller on-premises, in een Azure-VM of zelfs als een virtuele machine in een andere Cloud provider implementeren. Azure Files is neutraal waar uw domein controller wordt gehost. Als een opslag account is toegevoegd aan een domein, kan de eind gebruiker een bestands share koppelen met het gebruikers account waarmee ze zijn aangemeld bij hun PC. Op AD gebaseerde verificatie maakt gebruik van het Kerberos-verificatie protocol.
+- **Azure Active Directory Domain Services (azure AD DS)**: Azure AD DS biedt een door micro soft beheerde domein controller die kan worden gebruikt voor Azure-resources. Een domein dat wordt toegevoegd aan uw opslag account voor Azure AD DS biedt vergelijk bare voor delen als het domein wordt toegevoegd aan een Active Directory van een klant. Deze implementatie optie is het nuttigst voor toepassingen die zijn gebaseerd op AD-machtigingen. Omdat Azure AD DS op AD gebaseerde verificatie biedt, gebruikt deze optie ook het Kerberos-verificatie protocol.
+- **Azure Storage-account sleutel**: Azure-bestands shares kunnen ook worden gekoppeld met een Azure Storage-account sleutel. Als u een bestands share op deze manier wilt koppelen, wordt de naam van het opslag account gebruikt als de gebruikers naam en de sleutel voor het opslag account als wacht woord. Het gebruik van de sleutel van het opslag account voor het koppelen van de Azure-bestands share is in feite een beheerders bewerking, omdat de gekoppelde bestands share volledige machtigingen heeft voor alle bestanden en mappen op de share, zelfs als deze Acl's hebben. Wanneer u de sleutel voor het opslag account gebruikt om te koppelen via SMB, wordt het NTLMv2-verificatie protocol gebruikt.
 
 Voor klanten die migreren van on-premises bestands servers of het maken van nieuwe bestands shares in Azure Files bedoeld om te fungeren als Windows-bestands servers of NAS-apparaten, is het domein dat wordt toegevoegd aan de door de **klant Active Directory** de aanbevolen optie. Zie [Azure Files Active Directory Overview](storage-files-active-directory-overview.md)voor meer informatie over het toevoegen van uw opslag account aan een Active Directory van de klant.
 
@@ -63,9 +63,9 @@ Als u de toegang tot uw Azure-bestands share wilt blok keren, hebt u twee belang
 
 Hoewel het vanuit een technisch perspectief aanzienlijk eenvoudiger is om uw Azure-bestands shares te koppelen via het open bare eind punt, zullen de meeste klanten ervoor kiezen hun Azure-bestands shares te koppelen via een ExpressRoute of een VPN-verbinding. Het koppelen met deze opties is mogelijk met zowel SMB-als NFS-shares. Hiervoor moet u het volgende configureren voor uw omgeving:  
 
-- **Netwerk tunneling met behulp van ExpressRoute, site-naar-site-of punt-naar-site-VPN** : tunneling naar een virtueel netwerk maakt toegang tot Azure-bestands shares van on-premises mogelijk, zelfs als poort 445 wordt geblokkeerd.
-- **Persoonlijke eind punten** : persoonlijke eind punten geven uw opslag account een toegewezen IP-adres binnen de adres ruimte van het virtuele netwerk. Hierdoor kan netwerk tunneling worden ingeschakeld zonder dat u on-premises netwerken hoeft te openen tot alle IP-adresbereiken die eigendom zijn van de Azure Storage-clusters. 
-- **Door sturen via DNS** : Configureer uw on-premises DNS om de naam van uw opslag account ( `storageaccount.file.core.windows.net` bijvoorbeeld voor de open bare Cloud regio's) om te zetten in het IP-adres van uw privé-eind punten.
+- **Netwerk tunneling met behulp van ExpressRoute, site-naar-site-of punt-naar-site-VPN**: tunneling naar een virtueel netwerk maakt toegang tot Azure-bestands shares van on-premises mogelijk, zelfs als poort 445 wordt geblokkeerd.
+- **Persoonlijke eind punten**: persoonlijke eind punten geven uw opslag account een toegewezen IP-adres binnen de adres ruimte van het virtuele netwerk. Hierdoor kan netwerk tunneling worden ingeschakeld zonder dat u on-premises netwerken hoeft te openen tot alle IP-adresbereiken die eigendom zijn van de Azure Storage-clusters. 
+- **Door sturen via DNS**: Configureer uw on-premises DNS om de naam van uw opslag account ( `storageaccount.file.core.windows.net` bijvoorbeeld voor de open bare Cloud regio's) om te zetten in het IP-adres van uw privé-eind punten.
 
 Zie [Azure files netwerk overwegingen](storage-files-networking-overview.md)voor het plannen van de netwerken die zijn gekoppeld aan de implementatie van een Azure-bestands share.
 
@@ -133,16 +133,16 @@ Over het algemeen zijn Azure Files functies en interoperabiliteit met andere ser
 Als een bestands share is gemaakt als een Premium-of een standaard bestands share, kunt u deze niet automatisch converteren naar de andere laag. Als u wilt overschakelen naar de andere laag, moet u een nieuwe bestands share in die laag maken en de gegevens van de oorspronkelijke share hand matig kopiëren naar de nieuwe share die u hebt gemaakt. `robocopy`U kunt het beste voor Windows of `rsync` voor MacOS en Linux gebruiken om die kopie uit te voeren.
 
 ### <a name="understanding-provisioning-for-premium-file-shares"></a>Informatie over het inrichten voor Premium-bestands shares
-Premium-bestands shares worden ingericht op basis van een vaste GiB/IOPS/doorvoer ratio. Voor elke GiB die is ingericht, wordt de share één IOPS en 0,1 MiB/s-door Voer verleend tot het maximum aantal limieten per share. De mini maal toegestane inrichting is 100 GiB met een minimale IOPS/door voer.
+Premium-bestands shares worden ingericht op basis van een vaste GiB/IOPS/doorvoer ratio. De grootte van alle shares wordt Mini maal volgens basis lijn/door Voer en toegestaan voor burst. Voor elke GiB-inrichting wordt de share minimale IOPS/door Voer en een IOPS-en 0,1-door Voer tot Maxi maal maximum aantal limieten per share verleend. De mini maal toegestane inrichting is 100 GiB met minimale IOPS/door voer. 
 
-Op basis van de beste inspanningen kunnen alle shares Maxi maal drie IOPS per GiB aan ingerichte opslag gedurende 60 minuten of langer, afhankelijk van de grootte van de share. Nieuwe shares beginnen met het volledige burst-tegoed op basis van de ingerichte capaciteit.
+Alle Premium-shares worden gratis bursting aangeboden op basis van de beste inspanningen. De grootte van alle shares kan Maxi maal 4.000 IOPS of Maxi maal drie IOPS per ingerichte GiB burst, afhankelijk van wat een grotere burst-IOPS voor de share vormt. Alle shares ondersteunen bursting voor een maximale duur van 60 minuten bij een piek burst-limiet. Nieuwe shares beginnen met het volledige burst-tegoed op basis van de ingerichte capaciteit.
 
 Shares moeten worden ingericht in 1 GiB-stappen. De minimale grootte is 100 GiB, de volgende grootte is 101 GiB, enzovoort.
 
 > [!TIP]
-> Basis lijn IOPS = 1 * ingerichte GiB. (Maxi maal 100.000 IOPS).
+> Basis lijn IOPS = 400 + 1 * ingerichte GiB. (Maxi maal 100.000 IOPS).
 >
-> Burst-limiet = 3 * IOPS basis lijn. (Maxi maal 100.000 IOPS).
+> Burst-limiet = MAX (4.000, 3 * limiet voor IOPS) van basis lijn. (welke limiet groter is, Maxi maal 100.000 IOPS).
 >
 > uitgangs bedrag = 60 MiB/s + 0,06 * ingerichte GiB
 >
@@ -156,33 +156,29 @@ In de volgende tabel ziet u enkele voor beelden van deze formules voor de ingeri
 
 |Capaciteit (GiB) | IOPS basis lijn | Burst IOPS | Uitgang (MiB/s) | Ingangs (MiB/s) |
 |---------|---------|---------|---------|---------|
-|100         | 100     | Maxi maal 300     | 66   | 44   |
-|500         | 500     | Maxi maal 1.500   | 90   | 60   |
-|1\.024       | 1\.024   | Maxi maal 3.072   | 122   | 81   |
-|5.120       | 5.120   | Maxi maal 15.360  | 368   | 245   |
-|10.240      | 10.240  | Maxi maal 30.720  | 675 | 450   |
-|33.792      | 33.792  | Maxi maal 100.000 | 2.088 | 1.392   |
-|51.200      | 51.200  | Maxi maal 100.000 | 3.132 | 2.088   |
+|100         | 500     | Maximaal 4000     | 66   | 44   |
+|500         | 900     | Maximaal 4000  | 90   | 60   |
+|1\.024       | 1.424   | Maximaal 4000   | 122   | 81   |
+|5.120       | 5.520   | Maxi maal 15.360  | 368   | 245   |
+|10.240      | 10.640  | Maxi maal 30.720  | 675   | 450   |
+|33.792      | 34.192  | Maxi maal 100.000 | 2.088 | 1.392   |
+|51.200      | 51.600  | Maxi maal 100.000 | 3.132 | 2.088   |
 |102.400     | 100.000 | Maxi maal 100.000 | 6.204 | 4.136   |
 
-> [!NOTE]
-> De prestaties van bestands shares zijn afhankelijk van de netwerk limieten van de computer, de beschik bare netwerk bandbreedte, i/o-grootte, de parallelle uitvoering, onder andere factoren. Een voor beeld: op basis van een interne test met 8 KiB i/o-schrijf grootten, kan één virtuele Windows-machine, *standaard F16s_v2* , die is verbonden met Premium file share over SMB, 20.000 Read IOPS en Maxi maal 15.000 schrijf-IOPS behaalt. Met 512 MiB lees/schrijf-i/o-groottes kan dezelfde virtuele machine 1,1 GiB/s uitgaand worden gemaakt en 370 MiB/s door voer. U kunt de maximale prestaties schalen door de belasting over meerdere virtuele machines uit te breiden. Raadpleeg de [gids voor probleem oplossing](storage-troubleshooting-files-performance.md) voor enkele veelvoorkomende prestatie problemen en tijdelijke oplossingen.
+Het is belang rijk te weten dat de prestaties van efficiënte bestands shares afhankelijk zijn van de netwerk limieten van de computer, de beschik bare netwerk bandbreedte, i/o-grootte, parallellisme, onder vele andere factoren. Bijvoorbeeld, op basis van een interne test met 8 KiB i/o-schrijf grootten, kan één virtuele Windows-machine zonder SMB meerdere kanalen, *standaard F16s_v2*, die is verbonden met Premium file share via SMB, 20.000 Read IOPS en een Maxi maal 15.000 schrijf-IOPS behaalt. Met 512 MiB lees/schrijf-i/o-groottes kan dezelfde virtuele machine 1,1 GiB/s uitgaand worden gemaakt en 370 MiB/s door voer. Dezelfde client kan tot \~ 3x prestaties leiden als SMB meerdere kanalen is ingeschakeld op de Premium-shares. Als u maximale prestaties wilt schalen, [schakelt u SMB meerdere kanalen](storage-files-enable-smb-multichannel.md) in en verspreidt u de belasting over verschillende vm's. Raadpleeg de [hand leiding](storage-troubleshooting-files-performance.md) voor het oplossen van problemen met [SMB meerdere kanalen](storage-files-smb-multichannel-performance.md) voor een aantal veelvoorkomende prestatie problemen en tijdelijke oplossingen.
 
 #### <a name="bursting"></a>Toepassingen
-Premium-bestands shares kunnen de IOPS opbursten tot een factor van drie. Bursting wordt geautomatiseerd en werkt op basis van een tegoed systeem. Bursting werkt op basis van de beste inspanningen en de burst-limiet is geen garantie. bestands shares *kunnen de limiet* overschrijden.
+Als uw werk belasting de extra prestaties nodig heeft om aan de piek vraag te voldoen, kan uw aandeel burst-tegoed gebruiken om de limiet van de share basislijn te halen om de share prestaties te bieden die nodig zijn om te voldoen aan de vraag. Premium-bestands shares kunnen de IOPS opburstren tot 4.000 of tot een factor van drie, afhankelijk van wat een hogere waarde is. Bursting wordt geautomatiseerd en werkt op basis van een tegoed systeem. Bursting werkt op basis van de beste inspanningen en de burst-limiet is geen garantie. bestands shares *kunnen de limiet* voor een maximale duur van 60 minuten oplopen.
 
-De tegoeden worden in een burst-Bucket verzameld wanneer het verkeer voor uw bestands share onder IOPS voor de basis lijn valt. Een GiB-share van 100 heeft bijvoorbeeld 100 Baseline IOPS. Als het werkelijke verkeer op de share 40 IOPS is voor een specifiek interval van 1 seconde, worden 60 de ongebruikte IOPS gecrediteerd op een burst-Bucket. Deze tegoeden worden vervolgens later gebruikt wanneer bewerkingen de basis lijn van IOPs overschrijden.
+De tegoeden worden in een burst-Bucket verzameld wanneer het verkeer voor uw bestands share onder IOPS voor de basis lijn valt. Een GiB-share van 100 heeft bijvoorbeeld 500 Baseline IOPS. Als het werkelijke verkeer op de share 100 IOPS is voor een specifiek interval van 1 seconde, worden 400 de ongebruikte IOPS gecrediteerd op een burst-Bucket. Op dezelfde manier, een niet-actieve TiB-share, accumuleert burst tegoed bij 1.424 IOPS. Deze tegoeden worden vervolgens later gebruikt wanneer bewerkingen de basis lijn van IOPS overschrijden.
 
-> [!TIP]
-> Grootte van de burst Bucket = basislijn IOPS * 2 * 3600.
-
-Wanneer een share de limiet van de basis lijn overschrijdt en er tegoed in een burst-Bucket staat, wordt deze gesplitst. Shares kunnen blijven worden opgedeeld zolang de tegoeden resteren, terwijl de shares die kleiner zijn dan 50 TiB alleen tot een uur in de burst-limiet blijven. Shares groter dan 50 TiB kan technisch deze limiet van één uur overschrijden, tot twee uur, maar dit is gebaseerd op het aantal burst-tegoeden dat is samengevoegd. Elke i/o-limiet van meer dan Baseline IOPS maakt gebruik van één tegoed en wanneer alle tegoeden worden verbruikt, wordt de share teruggestuurd naar de limiet van de basis lijn
+Wanneer een share de limiet van de basis lijn overschrijdt en over een tegoed in een burst-Bucket beschikt, wordt het maximum voor de Maxi maal toegestane piek burst-snelheid gesplitst. Shares kunnen blijven worden opgedeeld zolang de tegoeden resteren, Maxi maal 60 minuten duren, maar dit is gebaseerd op het aantal burst-tegoeden dat is samengevoegd. Elke i/o-limiet van meer dan Baseline IOPS maakt gebruik van één tegoed en zodra alle tegoeden zijn verbruikt, wordt de share teruggestuurd naar de IOPS van de basis lijn.
 
 Aandelen tegoeden hebben drie statussen:
 
 - Samen, wanneer de bestands share minder dan de basis lijn voor IOPS gebruikt.
-- Weigeren, wanneer de bestands share bursting is.
-- De resterende constante wanneer er geen tegoeden of basis-IOPS in gebruik zijn.
+- Weigeren, wanneer de bestands share meer dan de basis lijn voor IOPS en de bursting-modus gebruikt.
+- Een constante is dat de bestands share precies de basis voor het aantal IOPS gebruikt. er zijn geen tegoeden die zijn samengevoegd of gebruikt.
 
 Nieuwe bestands shares beginnen met het volledige aantal tegoeden in de burst-Bucket. Burst-tegoed wordt niet in rekening gebracht als de delen IOPS onder de basis lijn IOPS vallen vanwege het beperken van de server.
 

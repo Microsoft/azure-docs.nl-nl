@@ -15,11 +15,11 @@ ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: b-juche
 ms.openlocfilehash: 62bf154c1dbf1a0d3f12e2cef916b37059ce985b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91325501"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012473"
 ---
 # <a name="resize-a-capacity-pool-or-a-volume"></a>Het formaat van een capaciteitspool of volume wijzigen
 U kunt de grootte van een capaciteits groep of een volume zo nodig wijzigen. 

@@ -9,12 +9,12 @@ ms.date: 10/02/2020
 ms.author: normesta
 ms.subservice: logs
 ms.custom: monitoring
-ms.openlocfilehash: 8caa39bea2d0d835a94bc95a747f1f870bae3b12
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: d33c368c271c4d1809834e2eeac8c4b5c0ba0441
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94357535"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011128"
 ---
 # <a name="azure-blob-storage-monitoring-data-reference"></a>Naslag informatie voor Azure Blob Storage-bewakings gegevens
 
@@ -36,12 +36,12 @@ Azure Storage biedt de volgende metrische gegevens over capaciteit in Azure Moni
 
 #### <a name="blob-storage"></a>Blob Storage
 
-In deze tabel worden [metrische gegevens voor Blob-opslag](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported#microsoftstoragestorageaccountsblobservices)weer gegeven.
+In deze tabel worden [metrische gegevens voor Blob-opslag](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccountsblobservices)weer gegeven.
 
-| Gegevens | Beschrijving |
+| Metrisch | Beschrijving |
 | ------------------- | ----------------- |
-| BlobCapacity | Het totaal van de Blob-opslag die in het opslag account wordt gebruikt. <br/><br/> Eenheid: bytes <br/> Aggregatie type: gemiddeld <br/> Waarde-voor beeld: 1024 <br/> Dimensies: **BlobType** en **BlobTier** ( [definitie](#metrics-dimensions)) |
-| BlobCount    | Het aantal BLOB-objecten dat is opgeslagen in het opslag account. <br/><br/> Eenheid: aantal <br/> Aggregatie type: gemiddeld <br/> Waarde-voor beeld: 1024 <br/> Dimensies: **BlobType** en **BlobTier** ( [definitie](#metrics-dimensions)) |
+| BlobCapacity | Het totaal van de Blob-opslag die in het opslag account wordt gebruikt. <br/><br/> Eenheid: bytes <br/> Aggregatie type: gemiddeld <br/> Waarde-voor beeld: 1024 <br/> Dimensies: **BlobType** en **BlobTier** ([definitie](#metrics-dimensions)) |
+| BlobCount    | Het aantal BLOB-objecten dat is opgeslagen in het opslag account. <br/><br/> Eenheid: aantal <br/> Aggregatie type: gemiddeld <br/> Waarde-voor beeld: 1024 <br/> Dimensies: **BlobType** en **BlobTier** ([definitie](#metrics-dimensions)) |
 | BlobProvisionedSize | De hoeveelheid opslag die is ingericht in het opslag account. Deze metriek geldt alleen voor Premium Storage-accounts. <br/><br/> Eenheid: bytes <br/> Aggregatie type: gemiddeld |
 | ContainerCount    | Het aantal containers in het opslag account. <br/><br/> Eenheid: aantal <br/> Aggregatie type: gemiddeld <br/> Waarde-voor beeld: 1024 |
 | IndexCapacity     | De hoeveelheid opslag die wordt gebruikt door ADLS Gen2 hiërarchische index <br/><br/> Eenheid: bytes <br/> Aggregatie type: gemiddeld <br/> Waarde-voor beeld: 1024 |
@@ -64,10 +64,10 @@ Azure Storage ondersteunt de volgende dimensies voor metrische gegevens in Azure
 
 ### <a name="dimensions-specific-to-blob-storage"></a>Dimensies die specifiek zijn voor Blob Storage
 
-| Dimensie naam | Beschrijving |
+| Dimensie naam | Description |
 | ------------------- | ----------------- |
-| **BlobType** | Het type BLOB voor alleen metrische gegevens van blobs. De ondersteunde waarden zijn **BlockBlob** , **PageBlob** en **Azure data Lake Storage**. Toevoeg-blobs zijn opgenomen in **BlockBlob**. |
-| **BlobTier** | Azure Storage biedt verschillende toegangs lagen, waarmee u gegevens van blob-objecten op de meest rendabele manier kunt opslaan. Meer weer geven in [Azure Storage BLOB-laag](../blobs/storage-blob-storage-tiers.md). De ondersteunde waarden zijn onder andere: <br/> <li>**Warm** : warme laag</li> <li>**Cool** : cool-laag</li> <li>**Archief** : laag van archief</li> <li>**Premium** : Premium-laag voor blok-BLOB</li> <li>**P4/P6/P10/P15/P20/P30/P40/P50/P60** : laag typen voor Premium-pagina-BLOB</li> <li>**Standaard** : laag type voor de standaard pagina-BLOB</li> <li>**Ongetierd** : laag type voor algemeen gebruik v1-opslag account</li> |
+| **BlobType** | Het type BLOB voor alleen metrische gegevens van blobs. De ondersteunde waarden zijn **BlockBlob**, **PageBlob** en **Azure data Lake Storage**. Toevoeg-blobs zijn opgenomen in **BlockBlob**. |
+| **BlobTier** | Azure Storage biedt verschillende toegangs lagen, waarmee u gegevens van blob-objecten op de meest rendabele manier kunt opslaan. Meer weer geven in [Azure Storage BLOB-laag](../blobs/storage-blob-storage-tiers.md). De ondersteunde waarden zijn onder andere: <br/> <li>**Warm**: warme laag</li> <li>**Cool**: cool-laag</li> <li>**Archief**: laag van archief</li> <li>**Premium**: Premium-laag voor blok-BLOB</li> <li>**P4/P6/P10/P15/P20/P30/P40/P50/P60**: laag typen voor Premium-pagina-BLOB</li> <li>**Standaard**: laag type voor de standaard pagina-BLOB</li> <li>**Ongetierd**: laag type voor algemeen gebruik v1-opslag account</li> |
 
 Voor de metrische gegevens die maat staven ondersteunen, moet u de dimensie waarde opgeven om de bijbehorende metrische waarden weer te geven. Als u bijvoorbeeld de  **transactie** waarde voor geslaagde reacties bekijkt, moet u de **ResponseType** -dimensie filteren op **geslaagd**. Als u de **BlobCount** -waarde voor blok-BLOB bekijkt, moet u de dimensie **BlobType** filteren met **BlockBlob**.
 

@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 06/25/2019
 ms.subservice: alerts
 ms.openlocfilehash: 9a074be9bcc62d8c20635400f462f52fb796d2fe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91294305"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012319"
 ---
 # <a name="webhook-actions-for-log-alert-rules"></a>Webhook-acties voor waarschuwingsregels voor logboeken
 
@@ -46,7 +46,7 @@ Standaard eigenschappen van de webhook-actie en hun aangepaste JSON-parameter na
 | *Tijd in zoek interval* |#searchintervalstarttimeutc |Begin tijd voor de query in UTC met de notatie mm/dd/jjjj uu: mm: SS AM/PM. 
 | *Search query* |#searchquery |Zoek query in logboek die wordt gebruikt door de waarschuwings regel. |
 | *SearchResults* |"IncludeSearchResults": True|Records die worden geretourneerd door de query als een JSON-tabel, beperkt tot de eerste 1.000 records. "IncludeSearchResults": True wordt toegevoegd aan een aangepaste JSON-webhook-definitie als eigenschap op het hoogste niveau. |
-| *Dimensies* |"IncludeDimensions": True|Combi Naties van dimensie waarden die de waarschuwing hebben geactiveerd als JSON-gedeelte. "IncludeDimensions": True wordt toegevoegd aan een aangepaste JSON-webhook-definitie als eigenschap op het hoogste niveau. |
+| *Afmetingen* |"IncludeDimensions": True|Combi Naties van dimensie waarden die de waarschuwing hebben geactiveerd als JSON-gedeelte. "IncludeDimensions": True wordt toegevoegd aan een aangepaste JSON-webhook-definitie als eigenschap op het hoogste niveau. |
 | *Waarschuwings type*| #alerttype | Het type waarschuwings regel voor het logboek dat is geconfigureerd als [metrische meet waarde of aantal resultaten](alerts-unified-log.md#measure).|
 | *WorkspaceID* |#workspaceid |ID van uw Log Analytics-werk ruimte. |
 | *Toepassings-id* |#applicationid |ID van uw Application Insights-app. |
@@ -55,7 +55,7 @@ Standaard eigenschappen van de webhook-actie en hun aangepaste JSON-parameter na
 ## <a name="custom-webhook-payload-definition"></a>Definitie van de aangepaste webhook-nettolading
 
 U kunt de **aangepaste JSON-Payload voor webhook insluiten** gebruiken om een aangepaste JSON-nettolading op te halen met behulp van de bovenstaande para meters. U kunt ook extra eigenschappen genereren.
-U kunt bijvoorbeeld de volgende aangepaste nettolading opgeven die een enkele para meter met de naam *Text*bevat. Deze para meter wordt verwacht door de service die deze webhook aanroept:
+U kunt bijvoorbeeld de volgende aangepaste nettolading opgeven die een enkele para meter met de naam *Text* bevat. Deze para meter wordt verwacht door de service die deze webhook aanroept:
 
 ```json
 

@@ -6,11 +6,11 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 03/18/2020
 ms.openlocfilehash: 890b555703f922168a820a0535296b9f55218752
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91777734"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011044"
 ---
 # <a name="create-knowledge-base-and-manage-settings"></a>Knowledge Base maken en instellingen beheren
 
@@ -38,7 +38,7 @@ Met QnA Maker kunt u uw kennis grondslagen beheren door toegang te bieden tot de
 
    ![Schermopname van het selecteren van een knowledge base in de QnA Maker-service](../media/qnamaker-quickstart-kb/qnaservice-selection.png)
 
-1. In **stap 3**moet u de naam van uw kennis database noemen `My Sample QnA KB` .
+1. In **stap 3** moet u de naam van uw kennis database noemen `My Sample QnA KB` .
 
 1. Configureer in **Stap 4** de instellingen met de volgende tabel:
 
@@ -67,12 +67,12 @@ Met QnA Maker kunt u uw kennis grondslagen beheren door toegang te bieden tot de
 
 1.  Selecteer **Instellingen**. De volgende lijst bevat velden die u kunt wijzigen.
 
-       |Doel|Bewerking|
+       |Doel|Actie|
        |--|--|
        |URL toevoegen|U kunt nieuwe Url's toevoegen om nieuwe veelgestelde vragen over inhoud toe te voegen aan de Knowledge Base door te klikken op **Knowledge Base beheren-> koppeling + URL toevoegen** .|
        |URL verwijderen|U kunt bestaande Url's verwijderen door het pictogram verwijderen te selecteren, de prullenbak kan.|
        |Inhoud vernieuwen|Als u de meest recente inhoud van bestaande Url's door de Knowledge Base wilt laten verkennen, selecteert u het selectie vakje **vernieuwen** . Hiermee wordt de Knowledge Base één keer bijgewerkt met de nieuwste URL-inhoud. Dit is niet een regel matig schema van updates.|
-       |Bestand toevoegen|U kunt een ondersteund bestands document toevoegen om deel uit te maken van een Knowledge Base door **Knowledge Base beheren**te selecteren en vervolgens **+ bestand toevoegen** te selecteren|
+       |Bestand toevoegen|U kunt een ondersteund bestands document toevoegen om deel uit te maken van een Knowledge Base door **Knowledge Base beheren** te selecteren en vervolgens **+ bestand toevoegen** te selecteren|
     |Importeren|U kunt ook een bestaande Knowledge Base importeren door de knop **kennis basis importeren** te selecteren. |
     |Bijwerken|Het bijwerken van de kennis basis is afhankelijk van de **prijs categorie voor beheer** die wordt gebruikt bij het maken van QnA Maker-service die aan uw Knowledge Base is gekoppeld. U kunt de beheer laag ook bijwerken vanuit Azure Portal, indien nodig.
 
@@ -81,7 +81,7 @@ Met QnA Maker kunt u uw kennis grondslagen beheren door toegang te bieden tot de
        ![Opslaan en trainen](../media/qnamaker-how-to-edit-kb/save-and-train.png)
 
        >[!CAUTION]
-       >Als u de pagina verlaat voordat u **opslaan en trainen**selecteert, gaan alle wijzigingen verloren.
+       >Als u de pagina verlaat voordat u **opslaan en trainen** selecteert, gaan alle wijzigingen verloren.
 
 
 

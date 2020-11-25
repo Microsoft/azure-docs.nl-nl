@@ -6,11 +6,11 @@ ms.topic: include
 ms.date: 10/22/2020
 ms.author: baanders
 ms.openlocfilehash: 3cb053f9673532ac19e2098678ec341f2f676486
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94329570"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011247"
 ---
 Met `DefaultAzureCredential` zoekt het voorbeeld naar referenties in uw lokale omgeving, zoals een Azure-aanmelding in een lokale [Azure-CLI](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) of in Visual Studio of Visual Studio Code. Daarom moet u zich *lokaal aanmelden bij Azure* via een van deze mechanismen om referenties in te stellen voor het voorbeeld.
 

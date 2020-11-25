@@ -9,11 +9,11 @@ services: iot-accelerators
 ms.date: 10/10/2018
 ms.topic: conceptual
 ms.openlocfilehash: 34222f396ed3c43932371aa9f64a459bb2a5dd0e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "61442936"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012285"
 ---
 # <a name="import-an-iot-edge-package-into-your-remote-monitoring-solution-accelerator"></a>Een IoT Edge-pakket importeren in de verbetering voor de externe bewakingsoplossing
 
@@ -45,7 +45,7 @@ Volg de onderstaande stappen om een Edge-implementatie manifest te importeren al
 
 1. Ga naar de pagina **pakketten** op de pagina externe bewaking webinterface:  ![ pakketten](media/iot-accelerators-remote-monitoring-import-edge-package/packagespage.png)
 
-1. Klik op **+ nieuw pakket**, kies **Edge-manifest** als het pakket type en klik op **Bladeren** om dedeploymentmanifest.jste selecteren ** voor** het bestand dat u in de vorige sectie hebt opgeslagen:  ![ manifest selecteren](media/iot-accelerators-remote-monitoring-import-edge-package/selectmanifest.png)
+1. Klik op **+ nieuw pakket**, kies **Edge-manifest** als het pakket type en klik op **Bladeren** om dedeploymentmanifest.jste selecteren **voor** het bestand dat u in de vorige sectie hebt opgeslagen:  ![ manifest selecteren](media/iot-accelerators-remote-monitoring-import-edge-package/selectmanifest.png)
 
 1. Klik op **uploaden** om het pakket toe te voegen aan uw oplossing voor controle op afstand:  ![ geüpload pakket](media/iot-accelerators-remote-monitoring-import-edge-package/uploadedpackage.png)
 

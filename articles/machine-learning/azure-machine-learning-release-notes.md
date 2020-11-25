@@ -10,11 +10,11 @@ ms.author: jmartens
 author: j-martens
 ms.date: 09/10/2020
 ms.openlocfilehash: 53a30f92adaf25d87897e98834cda2d5f92b874c
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965830"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012268"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
@@ -94,11 +94,11 @@ Meer informatie over de [segmentatie van afbeeldings instanties](how-to-label-im
     + Ondersteuning voor de client labels van de omgeving. De gebruiker kan een label omgeving geven en ernaar verwijzen.
   + **azureml-dataprep**
     + Er is een beter fout bericht bij het gebruik van momenteel niet-ondersteunde Spark met scala 2,12.
-  + **azureml-uitleg-model**
+  + **azureml-explain-model**
     + Het pakket voor de azureml-uitleg-model is officieel afgeschaft
   + **azureml-mlflow**
     + Er is een fout opgelost in mlflow. projects. kan niet worden uitgevoerd op de azureml-back-end, waarbij de voltooiings status niet correct is verwerkt.
-  + **azureml-pijp lijn-kern**
+  + **azureml-pipeline-core**
     + Voeg ondersteuning toe voor het maken, weer geven en ophalen van een pipeline-eind punt op basis van een pijplijn.
     +  De documentatie van PipelineData.as_dataset is verbeterd met een ongeldig gebruik voor beeld: als u PipelineData.as_dataset onjuist gebruikt, wordt er nu een ValueException gegenereerd
     + De HyperDriveStep pipelines-notebook is gewijzigd om het beste model binnen een PipelineStep te registreren, direct nadat de HyperDriveStep is uitgevoerd.
@@ -162,7 +162,7 @@ Meer informatie over de [segmentatie van afbeeldings instanties](how-to-label-im
     + Run. Cancel () is bijgewerkt, zodat een lokale uitvoering van een andere computer kan worden geannuleerd.
   + **azureml-dataprep**
     +  Problemen met time-out bij het koppelen van vaste gegevensset.
-  + **azureml-uitleg-model**
+  + **azureml-explain-model**
     + pypi-pakket beschrijvingen voor azureml interpreteren, azureml-uitleggen-model, azureml-contrib-interpreteren en azureml-tensorboard
   + **azureml-interpret**
     + het visualisatie dashboard is verwijderd uit het contrib-pakket, de uitleg-client is verplaatst naar het pakket voor de azureml-interpreter en afgeschaft in het pakket en de notebooks die zijn bijgewerkt met een verbeterde API
@@ -247,7 +247,7 @@ Meer informatie over de [segmentatie van afbeeldings instanties](how-to-label-im
     + Geüpgraded AutoML-afhankelijkheden: `scikit-learn` (nu 0.22.1), `pandas` (nu 0.25.1), `numpy` (nu 1.18.2).
   + **azureml-contrib-fairness**
     + Geef een korte beschrijving op voor azureml-contrib-verdeling.
-  + **azureml-contrib-pijp lijn-stappen**
+  + **azureml-contrib-pipeline-steps**
     + Er is een bericht toegevoegd dat dit pakket wordt afgeschaft en de gebruiker moet in plaats daarvan gebruikmaken van de stappen voor azureml-pipeline.
   + **azureml-core**
     + De lijst met opdracht sleutels voor de werk ruimte is toegevoegd.
@@ -435,7 +435,7 @@ Meer informatie over de [segmentatie van afbeeldings instanties](how-to-label-im
     + _With_auth param uit ws.get_mlflow_tracking_uri ()
   + **azureml-opendatasets**
     + Recent gepubliceerde Covid-19 tracking-gegevens sets zijn nu beschikbaar met de SDK
-  + **azureml-pijp lijn-kern**
+  + **azureml-pipeline-core**
     + Waarschuwing voor afmelden als ' azureml-defaults ' niet is opgenomen als onderdeel van PIP-afhankelijkheid
     + De weer gave van notities verbeteren.
     + Er is ondersteuning toegevoegd voor geciteerde regel einden bij het parseren van bestanden met scheidings tekens in PipelineOutputFileDataset.
@@ -500,7 +500,7 @@ Meer informatie over de [segmentatie van afbeeldings instanties](how-to-label-im
     + Voegt ondersteuning toe voor het AML-model register met MLFlow.
   + **azureml-opendatasets**
     + Ondersteuning toegevoegd voor python 3,8
-  + **azureml-pijp lijn-kern**
+  + **azureml-pipeline-core**
     + `PipelineDataset`De documentatie is bijgewerkt om er een interne klasse van te maken.
     + ParallelRunStep-updates om meerdere waarden voor één argument te accepteren, bijvoorbeeld: '--group_column_names ', ' Kol1 ', ' col2 ', ' Col3 '
     + De passthru_automl_config vereiste voor het gebruik van tussenliggende gegevens met AutoMLStep in pijp lijnen is verwijderd.
@@ -568,7 +568,7 @@ Meer informatie over de [segmentatie van afbeeldings instanties](how-to-label-im
     + Kleine aanpassingen aan notebooks, voor hulp bij fout opsporing
   + **azureml-opendatasets**
     + voor azureml-opendatapreps is de versie 1.4.0 of hoger van azureml vereist. Er is een waarschuwing toegevoegd als een lagere versie wordt gedetecteerd
-  + **azureml-pijp lijn-kern**
+  + **azureml-pipeline-core**
     + Met deze wijziging kan de gebruiker een optioneel runconfig opgeven voor de moduleVersion bij het aanroepen van de module. Publish_python_script.
     + Het inschakelen van knooppunt accounts kan een pijplijn parameter zijn in ParallelRunStep in azureml. pipeline. stappen
   + **azureml-pipeline-steps**
@@ -640,7 +640,7 @@ Meer informatie over de [segmentatie van afbeeldings instanties](how-to-label-im
   + **azureml-contrib-Mir**
     + Er is ondersteuning toegevoegd voor Windows-Services in ManagedInferencing
     + Oude MIR-werk stromen verwijderen, zoals MIR Compute koppelen, SingleModelMirWebservice klasse-opschonen model Profiler geplaatst in contrib-Mir-pakket
-  + **azureml-contrib-pijp lijn-stappen**
+  + **azureml-contrib-pipeline-steps**
     + Kleine oplossing voor YAML-ondersteuning
     + ParallelRunStep wordt uitgebracht voor algemene Beschik baarheid-azureml. contrib. pipeline. stappen hebben een kennisgeving van afschaffing en worden verplaatst naar azureml. pipeline. stappen
   + **azureml-contrib-reinforcementlearning**
@@ -663,7 +663,7 @@ Meer informatie over de [segmentatie van afbeeldings instanties](how-to-label-im
   + **azureml-opendatasets**
     + Geen retour waarde wanneer er geen gegevens zijn geretourneerd.
     + Verbeter de prestaties van to_pandas_dataframe.
-  + **azureml-pijp lijn-kern**
+  + **azureml-pipeline-core**
     + Snelle oplossing voor ParallelRunStep, waarbij het laden van YAML is verbroken
     + ParallelRunStep wordt uitgebracht voor algemene Beschik baarheid-azureml. contrib. pipeline. stappen hebben een kennisgeving met betrekking tot de afschaffing. pijp lijn. stappen: nieuwe functies zijn: 1. Gegevens sets als PipelineParameter 2. Nieuwe para meter run_max_retry 3. Configureer bare append_row uitvoer bestands naam
   + **azureml-pipeline-steps**
@@ -759,7 +759,7 @@ Meer informatie over de [segmentatie van afbeeldings instanties](how-to-label-im
     + Bugfix voor zeldzame uitleg gemaakt met behulp van een lineair surrogaat model met de gesimuleerde uitleger.
   + **azureml-opendatasets**
     + Het oplossen van het probleem van de kolommen van de MNIST wordt geparseerd als teken reeks, die int moet zijn.
-  + **azureml-pijp lijn-kern**
+  + **azureml-pipeline-core**
     + De optie voor het regenerate_outputs van het gebruik van een module die is inge sloten in een ModuleStep.
   + **azureml-train-automl-client**
     + Afgeschafte tensor flow-modellen voor AutoML.
@@ -797,7 +797,7 @@ U kunt nu machine learning-notitie blokken en bestanden rechtstreeks maken, bewe
 
 Toegang tot de volgende webgebaseerde hulp middelen voor ontwerpen vanuit Studio:
     
-| Webgebaseerd hulp programma  |     Beschrijving  |
+| Webgebaseerd hulp programma  |     Description  |
 |---|---|
 | Azure ML Studio-notebooks   |     Eerste in-class ontwerpen voor notebook-bestanden en biedt ondersteuning voor alle bewerkingen die beschikbaar zijn in de Azure ML python SDK. | 
 
@@ -824,7 +824,7 @@ Toegang tot de volgende webgebaseerde hulp middelen voor ontwerpen vanuit Studio
     + Er is een bovengrens voor de bestands grootte van de visualisatie gegevens op geüploade uitleg toegevoegd.
   + **azureml-train-automl-client**
     + Expliciet controleren op label_column_name & weight_column_name para meters voor AutoMLConfig is van het type teken reeks.
-  + **azureml-contrib-pijp lijn-stappen**
+  + **azureml-contrib-pipeline-steps**
     + ParallelRunStep ondersteunt nu dataset als pijplijn parameter. De gebruiker kan een pijp lijn maken met de voorbeeld gegevensset en kan de invoer gegevensset van hetzelfde type (bestand of tabellaire) wijzigen voor een nieuwe pijplijn uitvoering.
 
   
@@ -845,7 +845,7 @@ Toegang tot de volgende webgebaseerde hulp middelen voor ontwerpen vanuit Studio
     + Parametrisatie aanpassing van het kolom doel voor de prognose van taken door parametrisatie config. De numerieke en categorische als kolom doel voor prognose taken worden nu ondersteund.
     + Ingeschakelde drop column parametrisatie aanpassing voor prognose taken door parametrisatie config.
     + Aanpassing van de toerekening ingeschakeld voor prognose taken door parametrisatie config. De toewijzing van constante waarden voor de doel kolom en gemiddelde, mediaan, most_frequent en constante waarde toerekening voor trainings gegevens wordt nu ondersteund.
-  + **azureml-contrib-pijp lijn-stappen**
+  + **azureml-contrib-pipeline-steps**
     + Teken reeks Compute-namen accepteren die moeten worden door gegeven aan ParallelRunConfig
   + **azureml-core**
     +  API (Environment. kloon) (new_name) is toegevoegd voor het maken van een kopie van een omgevings object
@@ -950,7 +950,7 @@ Toegang tot de volgende webgebaseerde hulp middelen voor ontwerpen vanuit Studio
     + Voegt functionaliteit toe aan de klasse MirWebservice om het toegangs token op te halen
     + Token verificatie voor MirWebservice standaard gebruiken tijdens MirWebservice. run () alleen-aanroep vernieuwen als de aanroep mislukt
     + Voor de implementatie van de Mir-webservice zijn nu de juiste Sku's [Standard_DS2_v2, Standard_F16, Standard_A2_v2] vereist in plaats van respectievelijk [Ds2v2, A2v2 en F16].
-  + **azureml-contrib-pijp lijn-stappen**
+  + **azureml-contrib-pipeline-steps**
     + Optionele para meter side_inputs toegevoegd aan ParallelRunStep. Deze para meter kan worden gebruikt om de map in de container te koppelen. De momenteel ondersteunde typen zijn DataReference en PipelineData.
     + Para meters die in ParallelRunConfig worden door gegeven, kunnen worden overschreven door de pijplijn parameters nu door te geven. Nieuwe pijplijn parameters die worden ondersteund aml_mini_batch_size, aml_error_threshold, aml_logging_level, aml_run_invocation_timeout (aml_node_count en aml_process_count_per_node maken al deel uit van een eerdere versie).
   + **azureml-core**
@@ -1063,7 +1063,7 @@ Toegang tot de volgende webgebaseerde hulp middelen voor ontwerpen vanuit Studio
     + Pipeline batch Score notebook maakt nu gebruik van ParallelRunStep
   + **azureml-pipeline-steps**
     + De `AutoMLStep` in het pakket is verplaatst `azureml-pipeline-steps` . Afgeschaft `AutoMLStep` in `azureml-train-automl-runtime` .
-  + **azureml-contrib-pijp lijn-stappen**
+  + **azureml-contrib-pipeline-steps**
     + Optionele para meter side_inputs toegevoegd aan ParallelRunStep. Deze para meter kan worden gebruikt om de map in de container te koppelen. De momenteel ondersteunde typen zijn DataReference en PipelineData.
   + **azureml-tensorboard**
     + update voor azureml-tensorboard om tensor Flow 2,0 te ondersteunen
@@ -1105,7 +1105,7 @@ Toegang tot de volgende webgebaseerde hulp middelen voor ontwerpen vanuit Studio
   + **azureml-core**
     + Het huidige kern gebruik en de quotum limiet voor AmlCompute-resources in een bepaalde werk ruimte en een abonnement ophalen
   
-  + **azureml-contrib-pijp lijn-stappen**
+  + **azureml-contrib-pipeline-steps**
     + Gebruikers toestaan om tabellaire gegevensset door te geven als een tussentijds resultaat van de vorige stap naar parallelrunstep
 
 + **Oplossingen en verbeteringen voor oplossingen**
@@ -1125,7 +1125,7 @@ Toegang tot de volgende webgebaseerde hulp middelen voor ontwerpen vanuit Studio
     + De bestaande methode get_token () in AksWebservice is afgeschaft, omdat alle informatie die deze methode retourneert, wordt geretourneerd.
     + Gewijzigde uitvoer van AZ ml service Get-access-token opdracht. De naam van het token is gewijzigd in accessToken en refreshBy naar refreshAfter. De eigenschappen expiryOn en Token type zijn toegevoegd.
     + Vaste get_active_runs
-  + **azureml-uitleg-model**
+  + **azureml-explain-model**
     + Shap bijgewerkt naar 0.33.0 en interpreteert-community naar 0,4. *
   + **azureml-interpret**
     + Shap bijgewerkt naar 0.33.0 en interpreteert-community naar 0,4. *
@@ -1174,7 +1174,7 @@ Toegang tot de volgende webgebaseerde hulp middelen voor ontwerpen vanuit Studio
     + Fixed ContainerImage. run (), die de HTTP-poort van de docker-container niet juist heeft ingesteld.
     + `azureml-dataprep`Optioneel maken voor `az ml dataset register` cli-opdracht
     + Er is een fout opgelost waarbij een probleem `TabularDataset.to_pandas_dataframe` niet meer wordt weer gegeven in een alternatieve lezer en een waarschuwing wordt afgedrukt.
-  + **azureml-uitleg-model**
+  + **azureml-explain-model**
     + Shap-afhankelijkheid uitstellen om te interpreteren-community van azureml-interpret
   + **azureml-pipeline-core**
     + Nieuwe stap voor de pijp lijn toegevoegd `NotebookRunnerStep` voor het uitvoeren van een lokaal notitie blok als een stap in de pijp lijn.
@@ -1309,7 +1309,7 @@ Vanuit de Studio kunt u Azure Machine Learning assets trainen, testen, implement
 
 Toegang tot de volgende webgebaseerde hulp middelen voor ontwerpen vanuit Studio:
 
-| Webgebaseerd hulp programma | Beschrijving | 
+| Webgebaseerd hulp programma | Description | 
 |-|-|-|
 | VM van notebook (preview-versie) | Volledig beheerd werk station in de Cloud | 
 | [Automatische machine learning](tutorial-first-experiment-automated-ml.md) (preview-versie) | Geen code-ervaring voor het automatiseren van de ontwikkeling van machine learning modellen | 
@@ -1421,7 +1421,7 @@ Azure Machine Learning is nu een resource provider voor Event Grid, kunt u machi
     + Ondersteuning voor wekelijkse en maandelijkse monitor planning, naast dagelijks voor gegevensset-monitors.
     + Ondersteuning voor backfill voor het analyseren van historische gegevens voor gegevensset-monitors.
     + Verschillende oplossingen voor oplossingen
-  + [**azureml-pijp lijn-kern**](/python/api/azureml-pipeline-core)
+  + [**azureml-pipeline-core**](/python/api/azureml-pipeline-core)
     + azureml-dataprep is niet meer nodig om een Azure Machine Learning pijp lijn uit te voeren vanuit het pijplijn `yaml` bestand.
   + [**azureml-Train-automl**](/python/api/azureml-train-automl-runtime/)
     + Voeg de standaard waarden van azureml toe aan automatisch gegenereerde Conda env om het model implementatie fout op te lossen
@@ -1488,7 +1488,7 @@ Azure Machine Learning is nu een resource provider voor Event Grid, kunt u machi
       + Als er specifieke start_time en/of end_time worden opgegeven, worden alleen de resultaten van geplande uitvoeringen geretourneerd.
       + De para meter daily_latest_only is afgeschaft.
     + Ondersteuning bij het ophalen van op gegevensset gebaseerde gegevens-drift-uitvoer.
-  + **azureml-uitleg-model**
+  + **azureml-explain-model**
     + De naam van het pakket voor AzureML-uitleggen-model wordt gewijzigd in AzureML-interpreteren, waarbij het oude pakket wordt gehandhaafd voor achterwaartse compatibiliteit voor nu
     + Er is een opgeloste `automl` bug met onbewerkte uitleg ingesteld op de classificatie taak in plaats van regressie standaard bij het downloaden van ExplanationClient
     + Voeg ondersteuning toe voor `ScoringExplainer` om direct te worden gemaakt met `MimicWrapper`
@@ -1527,7 +1527,7 @@ Azure Machine Learning is nu een resource provider voor Event Grid, kunt u machi
       + Als er specifieke start_time en/of end_time worden opgegeven, worden alleen de resultaten van geplande uitvoeringen geretourneerd.
       + De para meter daily_latest_only is afgeschaft.
     + Ondersteuning bij het ophalen van op gegevensset gebaseerde gegevens-drift-uitvoer.
-  + **azureml-uitleg-model**
+  + **azureml-explain-model**
     + Voeg ondersteuning toe voor [ScoringExplainer](/python/api/azureml-interpret/azureml.interpret.scoring.scoring_explainer.scoringexplainer?view=azure-ml-py&preserve-view=true) die rechtstreeks worden gemaakt met behulp van MimicWrapper
   + **[azureml-pipeline-core](/python/api/azureml-pipeline-core)**
     + Verbeterde prestaties voor het maken van grote pijp lijnen.
@@ -1594,7 +1594,7 @@ Het tabblad experiment in de [nieuwe werkruimte Portal](https://ml.azure.com) is
     + Er zijn extra VM-grootte velden (besturingssysteem schijf, aantal Gpu's) toegevoegd aan de functie supported_vmsizes ()
     + Er zijn extra velden toegevoegd aan de functie list_nodes () om de uitvoering, het persoonlijke en het open bare IP-adres, de poort, enzovoort weer te geven.
     + De mogelijkheid om tijdens het inrichten van het cluster een nieuw veld op te geven: remotelogin_port_public_access dat kan worden ingesteld op ingeschakeld of uitgeschakeld, afhankelijk van of u de SSH-poort open of gesloten wilt laten op het moment van het maken van het cluster. Als u deze niet opgeeft, wordt de poort slim geopend of gesloten, afhankelijk van het feit of u het cluster in een VNet implementeert.
-  + **azureml-uitleg-model**
+  + **azureml-explain-model**
   + **[azureml-core](/python/api/azureml-core/azureml.core)**
     + De mogelijkheid om SAS-URL op te halen in het model-object wordt toegevoegd aan de opslag. Ex: model. [get_sas_url ()](/python/api/azureml-core/azureml.core.model.model#get-sas-urls--)
     + Voer uit om uit te voeren. [get_details](/python/api/azureml-core/azureml.core.run%28class%29#get-details--)[' gegevens sets '] ophalen van gegevens sets die zijn gekoppeld aan de ingediende uitvoering
@@ -1602,7 +1602,7 @@ Het tabblad experiment in de [nieuwe werkruimte Portal](https://ml.azure.com) is
     + Er zijn extra VM-grootte velden (besturingssysteem schijf, aantal Gpu's) toegevoegd aan de functie [supported_vmsizes ()](/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute#supported-vmsizes-workspace--location-none-)
     + Er zijn extra velden toegevoegd aan de functie [list_nodes ()](/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute#list-nodes--) om de uitvoering, de privé en het open bare IP-adres, de poort, enzovoort weer te geven.
     + De mogelijkheid om tijdens het maken van het cluster een nieuw veld op te geven tijdens het [inrichten](/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute#provisioning-configuration-vm-size-----vm-priority--dedicated---min-nodes-0--max-nodes-none--idle-seconds-before-scaledown-none--admin-username-none--admin-user-password-none--admin-user-ssh-key-none--vnet-resourcegroup-name-none--vnet-name-none--subnet-name-none--tags-none--description-none--remote-login-port-public-access--notspecified--)  van een cluster dat kan worden ingesteld op ingeschakeld of uitgeschakeld, afhankelijk van of u de SSH-poort open of gesloten wilt laten. Als u deze niet opgeeft, wordt de poort slim geopend of gesloten, afhankelijk van het feit of u het cluster in een VNet implementeert.
-  + **azureml-uitleg-model**
+  + **azureml-explain-model**
     + Verbeterde documentatie voor uitleg over uitvoer in het classificatie scenario.
     + De mogelijkheid voor het uploaden van de voorspelde y-waarden is toegevoegd voor de uitleg voor de evaluatie voorbeelden. Hiermee ontgrendelt u nuttige visualisaties.
     + Er is een uitleg eigenschap toegevoegd aan MimicWrapper om het ophalen van de onderliggende MimicExplainer in te scha kelen.
@@ -1653,7 +1653,7 @@ Het tabblad experiment in de [nieuwe werkruimte Portal](https://ml.azure.com) is
     + Er wordt een uitzonde ring gegenereerd wanneer een ruwe korrel of een verfijnde time stamp-kolom wordt verwijderd met de melding dat de gebruiker die het object verwijdert, kan worden uitgevoerd na een time stamp-kolom in de lijst of with_time_stamp met geen waarde voor het vrijgeven van Time Stamp-kolommen
     + Er wordt een uitzonde ring gegenereerd wanneer een ruwe korrel of een verfijnde time stamp-kolom niet is opgenomen in de lijst kolommen behouden, met vermelding van de gebruiker die kan worden uitgevoerd na het opnemen van de time stamp-kolom in de kolom lijst behouden of with_time_stamp met geen waarde voor het vrijgeven van Time Stamp-kolommen.
     + Logboek registratie toegevoegd voor de grootte van een geregistreerd model.
-  + **azureml-uitleg-model**
+  + **azureml-explain-model**
     + Er is een vaste waarschuwing afgedrukt op de console wanneer het python-pakket ' Pack ' niet is geïnstalleerd: ' ouder dan de ondersteunde versie van lightgbm, een upgrade uitvoeren naar een versie die groter is dan 2.2.1 '
     + Verklaring van een vast Download model met sharding voor globale uitleg met veel functies
     + Er ontbreken voor beelden van de initialisatie van een vaste naimiteerer voor de uitvoer uitleg
@@ -1743,7 +1743,7 @@ Op het moment van deze release worden de volgende browsers ondersteund: Chrome, 
     + Met deze release worden de uitvoerings prestaties van automatische machine learning lokale uitvoeringen verbeterd.
     + Gebruikers kunnen metrische gegevens opvragen uit de uitvoerings geschiedenis op naam.
     + De logboek registratie is verbeterd door aangepaste uitzonde ringen te gebruiken in plaats van algemeen in de prognose taken.
-  + **azureml-uitleg-model**
+  + **azureml-explain-model**
     + Feature_maps para meter toegevoegd aan de nieuwe MimicWrapper, zodat gebruikers de onbewerkte functie verklaringen kunnen ophalen.
     + Gegevensset-uploads zijn nu standaard uitgeschakeld voor het uploaden van uitleg en kunnen opnieuw worden ingeschakeld met upload_datasets = True
     + De para meters voor ' is_law ' zijn toegevoegd aan de uitleg lijst en de functies worden gedownload.
@@ -1805,14 +1805,14 @@ Op het moment van deze release worden de volgende browsers ondersteund: Chrome, 
     + De methode Workspace. Setup () is afgeschaft. Er wordt een waarschuwings bericht weer gegeven aan gebruikers met de suggesties Create () of Get ()/from_config ().
     + Er zijn Environment.add_private_pip_wheel () toegevoegd, waarmee u persoonlijke aangepaste Python-pakketten kunt uploaden `whl` naar de werk ruimte en deze veilig kunt gebruiken om de omgeving te bouwen/realiseren.
     + U kunt nu het TLS/SSL-certificaat bijwerken voor het Score-eind punt dat is geïmplementeerd op het AKS-cluster, zowel voor het micro soft-certificaat dat is gegenereerd als voor klanten.
-  + **azureml-uitleg-model**
+  + **azureml-explain-model**
     + Para meter toegevoegd om een model-ID toe te voegen aan uitleg bij het uploaden.
     + Labels zijn toegevoegd `is_raw` aan uitleg in het geheugen en uploads.
     + Er zijn pytorch-ondersteuning en tests toegevoegd voor het pakket voor de azureml-uitleg-model.
   + **azureml-opendatasets**
     + Ondersteuning voor het detecteren en registreren van automatische test omgevingen.
     + U hebt klassen toegevoegd om Amerikaanse populatie per regio en post te krijgen.
-  + **azureml-pijp lijn-kern**
+  + **azureml-pipeline-core**
     + De eigenschap label is toegevoegd aan de definitie van de invoer-en uitvoer poort.
   + **azureml-telemetry**
     + Er is een onjuiste telemetrie-configuratie hersteld.
@@ -1875,7 +1875,7 @@ Op het moment van deze release worden de volgende browsers ondersteund: Chrome, 
     + Save_to_directory-en load_from_directory-methoden toegevoegd aan azureml. core. Environment. Environment.
     + De opdrachten "AZ ml Environment down load" en "AZ ml Environment REGI ster" zijn toegevoegd aan de CLI.
     + Environment.add_private_pip_wheel methode is toegevoegd.
-  + **azureml-uitleg-model**
+  + **azureml-explain-model**
     + Het bijhouden van gegevensset is toegevoegd aan uitleg met behulp van de DataSet-service (preview).
     + De standaard Batch grootte is verminderd bij het streamen van globale uitleg van 10k tot 100.
     + Er is model_task markering toegevoegd aan uitlegers, zodat de gebruiker de standaard logica voor automatische interferentie voor het model type kan onderdrukken.
@@ -1952,7 +1952,7 @@ Op het moment van deze release worden de volgende browsers ondersteund: Chrome, 
     + De model beschrijving kan nu na de registratie op de juiste wijze worden bijgewerkt
     + Het model en de installatie kopie bieden nu meer informatie over de upstream-objecten die hiervan afhankelijk zijn, waardoor de verwijdering mislukt
     + Het resource gebruik van externe uitvoeringen verbeteren met behulp van azureml. mlflow.
-  + **azureml-uitleg-model**
+  + **azureml-explain-model**
     + Argument voor vaste trans formaties voor de licht gewicht uitleg van de onbewerkte functie in het contrib-uitleg-model pakket
     + scipy sparse-ondersteuning voor LimeExplainer toevoegen
     + vorm van lineaire uitleg weergave is toegevoegd, evenals een ander niveau voor de uitleg over lineaire modellen in tabel vorm
@@ -2026,7 +2026,7 @@ Op het moment van deze release worden de volgende browsers ondersteund: Chrome, 
     + Azureml-contrib-opendatasets is verplaatst naar azureml-opendatasets.
     + Toegestane open gegevensset-klassen moeten worden geregistreerd voor Azure Machine Learning werk ruimte en kunnen naadloos gebruikmaken van de functies van AML-gegevensset.
     + Verbeterde NoaaIsdWeather-verrijkings prestaties in een niet-SPARK-versie aanzienlijk.
-  + **azureml-uitleg-model**
+  + **azureml-explain-model**
     + Bijgewerkte online documentatie voor Objects voor interpretaties.
     + Toegevoegd `batch_size` om uitleg te geven wanneer `include_local=False` , voor het streamen van globale toelichtingen in batches, voor het verbeteren van de uitvoerings tijd van DecisionTreeExplainableModel voor de bibliotheek voor de uitleg van modellen.
     + Het probleem opgelost waarbij `explanation.expected_values` soms een float retourneert in plaats van een lijst met een zwevend item.

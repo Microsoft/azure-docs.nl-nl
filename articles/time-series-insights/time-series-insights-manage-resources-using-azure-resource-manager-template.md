@@ -11,19 +11,19 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 09/30/2020
 ms.custom: seodec18
-ms.openlocfilehash: ee4d3957403e169d41fb9e3befa0d62e4b0d9075
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 493750e69b1fdc935b04d6dc705cfd046b6b086e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91597862"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96011656"
 ---
 # <a name="create-azure-time-series-insights-gen-1-resources-using-azure-resource-manager-templates"></a>Azure Time Series Insights gen 1-resources maken met behulp van Azure Resource Manager sjablonen
 
 > [!CAUTION]
 > Dit is een Gen1-artikel.
 
-In dit artikel wordt beschreven hoe u Azure Time Series Insights-resources maakt en implementeert met behulp van [Azure Resource Manager sjablonen](https://docs.microsoft.com/azure/azure-resource-manager/), Power shell en de resource provider van Azure time series Insights.
+In dit artikel wordt beschreven hoe u Azure Time Series Insights-resources maakt en implementeert met behulp van [Azure Resource Manager sjablonen](../azure-resource-manager/index.yml), Power shell en de resource provider van Azure time series Insights.
 
 Azure Time Series Insights ondersteunt de volgende bronnen:
 
@@ -32,7 +32,7 @@ Azure Time Series Insights ondersteunt de volgende bronnen:
    | Omgeving | Een Azure Time Series Insights omgeving is een logische groepering van gebeurtenissen die worden gelezen vanuit gebeurtenis-Brokers, opgeslagen en beschikbaar worden gesteld voor query's. Lees [uw Azure time series Insights-omgeving plannen](time-series-insights-environment-planning.md) voor meer informatie |
    | Bron van gebeurtenis | Een gebeurtenis bron is een verbinding met een gebeurtenis-Broker van waaruit Azure Time Series Insights gebeurtenissen in de omgeving leest en opneemt. De momenteel ondersteunde gebeurtenis bronnen zijn IoT Hub en Event hub. |
    | Gegevensset voor referentie | Referentie gegevens sets bevatten meta gegevens over de gebeurtenissen in de omgeving. Meta gegevens in de referentie gegevens sets worden samengevoegd met gebeurtenissen tijdens de ingang. Referentie gegevens sets worden als resources gedefinieerd op basis van hun gebeurtenis sleutel eigenschappen. De daad werkelijke meta gegevens waaruit de referentie gegevensverzameling bestaat, worden geüpload of gewijzigd via data plan-Api's. |
-   | Toegangs beleid | Toegangs beleid verleent machtigingen voor het uitgeven van gegevens query's, het bewerken van referentie gegevens in de omgeving en het delen van opgeslagen query's en perspectieven die aan de omgeving zijn gekoppeld. Lees [granting Data Access to a Azure time series Insights environment using Azure Portal](time-series-insights-data-access.md) voor meer informatie. |
+   | Toegangs beleid | Toegangs beleid verleent machtigingen voor het uitgeven van gegevens query's, het bewerken van referentie gegevens in de omgeving en het delen van opgeslagen query's en perspectieven die aan de omgeving zijn gekoppeld. Lees [granting Data Access to a Azure time series Insights environment using Azure Portal](./concepts-access-policies.md) voor meer informatie. |
 
 Een resource manager-sjabloon is een JSON-bestand dat de infra structuur en configuratie van resources in een resource groep definieert. De volgende documenten beschrijven sjabloon bestanden in meer detail:
 
@@ -48,7 +48,7 @@ De Quick Start-sjabloon [201-timeseriesinsights-met-eventhub](https://github.com
 
 In de volgende procedure wordt beschreven hoe u Power shell gebruikt om een Azure Resource Manager sjabloon te implementeren waarmee een Azure Time Series Insights omgeving wordt gemaakt, een onderliggende gebeurtenis bron die is geconfigureerd voor het gebruik van gebeurtenissen van een event hub en toegangs beleid waarmee toegang wordt verleend tot de gegevens van de omgeving. Als er geen bestaande Event hub wordt opgegeven, wordt er een gemaakt met de implementatie.
 
-1. Installeer Azure PowerShell door de instructies in aan de slag te volgen [met Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
+1. Installeer Azure PowerShell door de instructies in aan de slag te volgen [met Azure PowerShell](/powershell/azure/get-started-azureps).
 
 1. Kloon of kopieer de sjabloon [201-timeseriesinsights-with-eventhub](https://github.com/Azure/azure-quickstart-templates/blob/master/201-timeseriesinsights-environment-with-eventhub/azuredeploy.json) van github.
 
@@ -127,7 +127,7 @@ In de volgende procedure wordt beschreven hoe u Power shell gebruikt om een Azur
 ## <a name="deploy-the-quickstart-template-locally-using-powershell"></a>De Quick Start-sjabloon lokaal implementeren met Power shell
 
 > [!IMPORTANT]
-> Met de volgende opdracht regel bewerkingen wordt de [AZ Power shell-module](https://docs.microsoft.com/powershell/azure/)beschreven.
+> Met de volgende opdracht regel bewerkingen wordt de [AZ Power shell-module](/powershell/azure/)beschreven.
 
 1. Meld u in Power shell aan bij uw Azure-account.
 
@@ -255,4 +255,4 @@ In de volgende procedure wordt beschreven hoe u Power shell gebruikt om een Azur
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Lees [Azure time series Insights Management](https://docs.microsoft.com/rest/api/time-series-insights-management/)voor informatie over het programmatisch beheren van Azure time series Insights-resources met behulp van rest-api's.
+- Lees [Azure time series Insights Management](/rest/api/time-series-insights-management/)voor informatie over het programmatisch beheren van Azure time series Insights-resources met behulp van rest-api's.

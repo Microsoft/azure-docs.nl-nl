@@ -6,11 +6,11 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 02/16/2020
 ms.openlocfilehash: 110d4a3219b4898fa6f138e29f1112d7134f674c
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92340084"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96012336"
 ---
 # <a name="metric-alerts-with-dynamic-thresholds-in-azure-monitor"></a>Metrische waarschuwingen met dynamische drempel waarden in Azure Monitor
 
@@ -110,13 +110,13 @@ De volgende items zijn aanbevolen procedures voor het configureren van waarschuw
     > [!TIP]
     > De meeste resource-Blades hebben ook **waarschuwingen** in het resource menu onder **bewaking**, u kunt hier ook waarschuwingen van maken.
 
-3. Klik op **doel selecteren**in het context deel venster dat wordt geladen, selecteer een doel resource waarop u een waarschuwing wilt ontvangen. Gebruik het **abonnement** en de vervolg keuzelijst **virtual machines resource type** om de resource te vinden die u wilt bewaken. U kunt ook de zoek balk gebruiken om uw bron te vinden.
+3. Klik op **doel selecteren** in het context deel venster dat wordt geladen, selecteer een doel resource waarop u een waarschuwing wilt ontvangen. Gebruik het **abonnement** en de vervolg keuzelijst **virtual machines resource type** om de resource te vinden die u wilt bewaken. U kunt ook de zoek balk gebruiken om uw bron te vinden.
 
 4. Wanneer u een doel resource hebt geselecteerd, klikt u op **voor waarde toevoegen**.
 
 5. Selecteer het **CPU-percentage**.
 
-6. U kunt de metriek eventueel verfijnen door de **periode** en **aggregatie**aan te passen. Het wordt afgeraden om het aggregatie type ' maximum ' te gebruiken voor dit metrische type omdat het minder representatief is voor het gedrag. De statische drempel waarde voor het aggregatie type ' maximum ' kan wellicht beter overeenkomen.
+6. U kunt de metriek eventueel verfijnen door de **periode** en **aggregatie** aan te passen. Het wordt afgeraden om het aggregatie type ' maximum ' te gebruiken voor dit metrische type omdat het minder representatief is voor het gedrag. De statische drempel waarde voor het aggregatie type ' maximum ' kan wellicht beter overeenkomen.
 
 7. Er wordt een grafiek weer gegeven met de metrische gegevens voor de afgelopen zes uur. Definieer de waarschuwings parameters:
     1. **Voorwaarde type** : Kies optie Dynamic.
@@ -129,7 +129,7 @@ De volgende items zijn aanbevolen procedures voor het configureren van waarschuw
 
 9. Klik op **Gereed**.
 
-10. Vul de **waarschuwings Details** in, zoals de naam, **Beschrijving**en **Ernst**van de **waarschuwings regel**.
+10. Vul de **waarschuwings Details** in, zoals de naam, **Beschrijving** en **Ernst** van de **waarschuwings regel**.
 
 11. Voeg een actie groep toe aan de waarschuwing door een bestaande actie groep te selecteren of een nieuwe actie groep te maken.
 
@@ -147,13 +147,13 @@ De volgende items zijn aanbevolen procedures voor het configureren van waarschuw
     > [!TIP]
     > De meeste resource-Blades hebben ook **waarschuwingen** in het resource menu onder **bewaking**, u kunt hier ook waarschuwingen van maken.
 
-3. Klik op **doel selecteren**in het context deel venster dat wordt geladen, selecteer een doel resource waarop u een waarschuwing wilt ontvangen. Gebruik het **abonnement** en de vervolg keuzelijst **Application Insights resource type** om de resource te vinden die u wilt bewaken. U kunt ook de zoek balk gebruiken om uw bron te vinden.
+3. Klik op **doel selecteren** in het context deel venster dat wordt geladen, selecteer een doel resource waarop u een waarschuwing wilt ontvangen. Gebruik het **abonnement** en de vervolg keuzelijst **Application Insights resource type** om de resource te vinden die u wilt bewaken. U kunt ook de zoek balk gebruiken om uw bron te vinden.
 
 4. Wanneer u een doel resource hebt geselecteerd, klikt u op **voor waarde toevoegen**.
 
 5. Selecteer de **uitvoerings tijd van de HTTP-aanvraag**.
 
-6. U kunt de metriek eventueel verfijnen door de **periode** en **aggregatie**aan te passen. Het wordt afgeraden om het aggregatie type ' maximum ' te gebruiken voor dit metrische type omdat het minder representatief is voor het gedrag. De statische drempel waarde voor het aggregatie type ' maximum ' kan wellicht beter overeenkomen.
+6. U kunt de metriek eventueel verfijnen door de **periode** en **aggregatie** aan te passen. Het wordt afgeraden om het aggregatie type ' maximum ' te gebruiken voor dit metrische type omdat het minder representatief is voor het gedrag. De statische drempel waarde voor het aggregatie type ' maximum ' kan wellicht beter overeenkomen.
 
 7. Er wordt een grafiek weer gegeven met de metrische gegevens voor de afgelopen zes uur. Definieer de waarschuwings parameters:
     1. **Voorwaarde type** : Kies optie Dynamic.
@@ -164,7 +164,7 @@ De volgende items zijn aanbevolen procedures voor het configureren van waarschuw
 
 9. Klik op **Gereed**.
 
-10. Vul de **waarschuwings Details** in, zoals de naam, **Beschrijving**en **Ernst**van de **waarschuwings regel**.
+10. Vul de **waarschuwings Details** in, zoals de naam, **Beschrijving** en **Ernst** van de **waarschuwings regel**.
 
 11. Voeg een actie groep toe aan de waarschuwing door een bestaande actie groep te selecteren of een nieuwe actie groep te maken.
 

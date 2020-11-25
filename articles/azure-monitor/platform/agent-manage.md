@@ -6,11 +6,11 @@ author: bwren
 ms.author: bwren
 ms.date: 06/14/2019
 ms.openlocfilehash: 4d0ceacd37748e9761903d02fd7e052d70b10e15
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91871895"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96011877"
 ---
 # <a name="managing-and-maintaining-the-log-analytics-agent-for-windows-and-linux"></a>De Log Analytics-agent voor Windows en Linux beheren en onderhouden
 
@@ -38,7 +38,7 @@ U kunt de nieuwste versie van de Windows-agent downloaden van uw Log Analytics-w
 
 3. Selecteer de werk ruimte in de lijst met Log Analytics-werk ruimten.
 
-4. Selecteer in de werk ruimte Log Analytics **Geavanceerde instellingen**, selecteer **verbonden bronnen**en tenslotte Windows- **servers**.
+4. Selecteer in de werk ruimte Log Analytics **Geavanceerde instellingen**, selecteer **verbonden bronnen** en tenslotte Windows- **servers**.
 
 5. Selecteer op de pagina **Windows-servers** de juiste versie van de **Windows-agent** die u wilt downloaden, afhankelijk van de processor architectuur van het Windows-besturings systeem.
 
@@ -231,9 +231,9 @@ Gebruik een van de volgende procedures om de Windows-of Linux-agent te verwijder
 #### <a name="uninstall-from-control-panel"></a>Verwijderen in het configuratie scherm
 1. Meld u aan bij de computer met een account met beheerders rechten.
 
-2. Klik in **het configuratie scherm**op **Program ma's en onderdelen**.
+2. Klik in **het configuratie scherm** op **Program ma's en onderdelen**.
 
-3. Klik in **Program ma's en onderdelen**op **micro soft Monitoring Agent**, klik op **verwijderen**en vervolgens op **Ja**.
+3. Klik in **Program ma's en onderdelen** op **micro soft Monitoring Agent**, klik op **verwijderen** en vervolgens op **Ja**.
 
 >[!NOTE]
 >U kunt de wizard Setup van agent ook uitvoeren door te dubbel klikken op **MMASetup- \<platform\> . exe**, dat kan worden gedownload via een werk ruimte in de Azure Portal.
@@ -275,7 +275,7 @@ Voer de volgende stappen uit om de Log Analytics-agent voor Windows te configure
 
 8. Typ in het veld **beheer server poort** het TCP-poort nummer.
 
-9. Kies in het **actie-account**van de agent het lokale systeem account of een lokaal domein account.
+9. Kies in het **actie-account** van de agent het lokale systeem account of een lokaal domein account.
 
 10. Klik op **OK** om het dialoog venster **een beheer groep toevoegen** te sluiten en klik vervolgens op **OK** om het dialoog venster **Eigenschappen van micro soft Monitoring Agent** te sluiten.
 

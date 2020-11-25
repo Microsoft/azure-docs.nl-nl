@@ -3,12 +3,12 @@ title: Veelgestelde vragen over Azure Service Bus | Microsoft Docs
 description: In dit artikel vindt u antwoorden op enkele veelgestelde vragen over Azure Service Bus.
 ms.topic: article
 ms.date: 09/16/2020
-ms.openlocfilehash: 38745d1cc2b1961da10a0c9e9f2c90c3b7dc48a7
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: acd741101928f5a2dfd72eab1598af6e4556a3d1
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92899532"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96022133"
 ---
 # <a name="azure-service-bus---frequently-asked-questions-faq"></a>Azure Service Bus-Veelgestelde vragen (FAQ)
 
@@ -26,7 +26,7 @@ Een [naam ruimte](service-bus-create-namespace-portal.md) biedt een bereik conta
 Een [Service Bus wachtrij](service-bus-queues-topics-subscriptions.md) is een entiteit waarin berichten worden opgeslagen. Wacht rijen zijn handig wanneer u meerdere toepassingen hebt of meerdere delen van een gedistribueerde toepassing die met elkaar moeten communiceren. De wachtrij is vergelijkbaar met een distributie centrum waarin meerdere producten (berichten) worden ontvangen en vervolgens vanaf die locatie worden verzonden.
 
 ### <a name="what-are-azure-service-bus-topics-and-subscriptions"></a>Wat zijn Azure Service Bus onderwerpen en abonnementen?
-Een onderwerp kan worden gevisualiseerd als een wachtrij en wanneer meerdere abonnementen worden gebruikt, wordt het een rijkere berichten model. in wezen een een-op-veel-communicatie hulpprogramma. Dit model voor publiceren/abonneren (of *pub/sub* ) maakt het mogelijk dat een toepassing die een bericht verzendt naar een onderwerp met meerdere abonnementen, het bericht ontvangt dat door meerdere toepassingen wordt ontvangen.
+Een onderwerp kan worden gevisualiseerd als een wachtrij en wanneer meerdere abonnementen worden gebruikt, wordt het een rijkere berichten model. in wezen een een-op-veel-communicatie hulpprogramma. Dit model voor publiceren/abonneren (of *pub/sub*) maakt het mogelijk dat een toepassing die een bericht verzendt naar een onderwerp met meerdere abonnementen, het bericht ontvangt dat door meerdere toepassingen wordt ontvangen.
 
 ### <a name="what-is-a-partitioned-entity"></a>Wat is een gepartitioneerde entiteit?
 Een conventionele wachtrij of onderwerp wordt verwerkt door één Message Broker en opgeslagen in één berichten archief. Wordt alleen ondersteund in de lagen basis en standaard berichten, een [gepartitioneerde wachtrij of een onderwerp](service-bus-partitioning.md) wordt verwerkt door meerdere bericht brokers en opgeslagen in meerdere berichten archieven. Deze functie houdt in dat de algemene door Voer van een gepartitioneerde wachtrij of onderwerp niet langer wordt beperkt door de prestaties van één bericht Broker of berichten archief. Een tijdelijke onderbreking van een berichten archief kan ook geen gepartitioneerde wachtrij of onderwerp niet beschikbaar genereren.
@@ -53,14 +53,9 @@ Zie de volgende tabel voor de uitgaande TCP-poorten die u moet openen om deze pr
 
 De HTTPS-poort is over het algemeen vereist voor uitgaande communicatie, ook wanneer AMQP wordt gebruikt via poort 5671, omdat verschillende beheer bewerkingen die worden uitgevoerd door de client-Sdk's en het verkrijgen van tokens van Azure Active Directory (indien gebruikt) via HTTPS worden uitgevoerd. 
 
-De officiële Azure-Sdk's gebruiken meestal het AMQP-protocol voor het verzenden en ontvangen van berichten van Service Bus. De optie AMQP-over-websockets wordt via poort TCP 443 uitgevoerd, net als de HTTP-API, maar is op een andere manier hetzelfde als gewone AMQP. Deze optie heeft een hogere latentie van de eerste verbinding vanwege extra Handshake-retour wegen en iets meer naarmate er meer overhead is voor het delen van de HTTPS-poort. Als deze modus is ingeschakeld, is de TCP-poort 443 voldoende voor communicatie. Met de volgende opties kunt u de modus voor de AMQP of AMQP-websockets inschakelen:
+De officiële Azure-Sdk's gebruiken meestal het AMQP-protocol voor het verzenden en ontvangen van berichten van Service Bus. 
 
-| Taal | Optie   |
-| -------- | ----- |
-| .NET     | Eigenschap [ServiceBusConnection. transport type](/dotnet/api/microsoft.azure.servicebus.servicebusconnection.transporttype?view=azure-dotnet) met [transport type. AMQP](/dotnet/api/microsoft.azure.servicebus.transporttype?view=azure-dotnet) of [transport type. AmqpWebSockets](/dotnet/api/microsoft.azure.servicebus.transporttype?view=azure-dotnet) |
-| Java     | [com. micro soft. Azure. servicebus. ClientSettings](/java/api/com.microsoft.azure.servicebus.clientsettings.clientsettings?view=azure-java-stable) met [com. micro soft. Azure. servicebus. primitieven. transport type. AMQP](/java/api/com.microsoft.azure.servicebus.primitives.transporttype?view=azure-java-stable) of [com.Microsoft.Azure.servicebus.Primitives.TransportType.AMQP_WEB_SOCKETS](/java/api/com.microsoft.azure.servicebus.primitives.transporttype?view=azure-java-stable) |
-| Knooppunt  | [ServiceBusClientOptions](/javascript/api/@azure/service-bus/servicebusclientoptions?view=azure-node-latest) heeft een `webSocket` constructor-argument. |
-| Python | [ServiceBusClient.transport_type](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-servicebus/latest/azure.servicebus.html#azure.servicebus.ServiceBusClient) met [transport type. AMQP](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-servicebus/latest/azure.servicebus.html#azure.servicebus.TransportType) of [transport type. AmqpOverWebSocket](https://azuresdkdocs.blob.core.windows.net/$web/python/azure-servicebus/latest/azure.servicebus.html#azure.servicebus.TransportType) |
+[!INCLUDE [service-bus-websockets-options](../../includes/service-bus-websockets-options.md)]
 
 Het oudere WindowsAzure. ServiceBus-pakket voor de .NET Framework heeft een optie voor het gebruik van het verouderde ' Service Bus Messa ging Protocol ' (SBMP), ook wel ' netmessa ging ' genoemd. Dit protocol maakt gebruik van TCP-poorten 9350-9354. De standaard modus voor dit pakket is om automatisch te detecteren of deze poorten beschikbaar zijn voor communicatie en om over te scha kelen naar websockets met TLS via poort 443, als dat niet het geval is. U kunt deze instelling negeren en deze modus afdwingen door de `Https` [ConnectivityMode](/dotnet/api/microsoft.servicebus.connectivitymode?view=azure-dotnet) in te stellen voor de [`ServiceBusEnvironment.SystemConnectivity`](/dotnet/api/microsoft.servicebus.servicebusenvironment.systemconnectivity?view=azure-dotnet) instelling, die wereld wijd van toepassing is op de toepassing.
 

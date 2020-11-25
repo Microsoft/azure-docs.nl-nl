@@ -14,11 +14,11 @@ ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 15bce219b96268124729de2f475e33fc386348a8
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92631730"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021211"
 ---
 # <a name="tutorial-copy-data-from-blob-storage-to-sql-database-using-data-factory"></a>Zelf studie: gegevens kopiëren van Blob Storage naar SQL Database met behulp van Data Factory
 > [!div class="op_single_selector"]
@@ -45,20 +45,20 @@ Met Copy Activity wordt de gegevensverplaatsing in Azure Data Factory uitgevoerd
 ## <a name="prerequisites-for-the-tutorial"></a>Vereisten voor de zelf studie
 Voordat u met deze zelfstudie begint, moet u aan de volgende vereisten voldoen:
 
-* **Azure-abonnement** .  Als u geen abonnement hebt, kunt u binnen een paar minuten een gratis proefaccount maken. Raadpleeg het artikel over de [gratis proef versie](https://azure.microsoft.com/pricing/free-trial/) voor meer informatie.
-* **Azure Storage-account** . In deze zelf studie gebruikt u de Blob-opslag als een **brongegevens** opslag. Als u geen Azure Storage-account hebt, raadpleegt u het artikel [een opslag account maken](../../storage/common/storage-account-create.md) voor de stappen om er een te maken.
-* **Azure SQL-database** . In deze zelf studie gebruikt u Azure SQL Database als **doel** gegevens opslag. Als u geen data base in Azure SQL Database hebt die u in de zelf studie kunt gebruiken, raadpleegt u [een Data Base maken en configureren in Azure SQL database](../../azure-sql/database/single-database-create-quickstart.md) om er een te maken.
-* **SQL Server 2012/2014 of Visual Studio 2013** . U gebruikt SQL Server Management Studio of Visual Studio om een voorbeeld database te maken en om de resultaat gegevens in de-Data Base weer te geven.  
+* **Azure-abonnement**.  Als u geen abonnement hebt, kunt u binnen een paar minuten een gratis proefaccount maken. Raadpleeg het artikel over de [gratis proef versie](https://azure.microsoft.com/pricing/free-trial/) voor meer informatie.
+* **Azure Storage-account**. In deze zelf studie gebruikt u de Blob-opslag als een **brongegevens** opslag. Als u geen Azure Storage-account hebt, raadpleegt u het artikel [een opslag account maken](../../storage/common/storage-account-create.md) voor de stappen om er een te maken.
+* **Azure SQL-database**. In deze zelf studie gebruikt u Azure SQL Database als **doel** gegevens opslag. Als u geen data base in Azure SQL Database hebt die u in de zelf studie kunt gebruiken, raadpleegt u [een Data Base maken en configureren in Azure SQL database](../../azure-sql/database/single-database-create-quickstart.md) om er een te maken.
+* **SQL Server 2012/2014 of Visual Studio 2013**. U gebruikt SQL Server Management Studio of Visual Studio om een voorbeeld database te maken en om de resultaat gegevens in de-Data Base weer te geven.  
 
 ## <a name="collect-blob-storage-account-name-and-key"></a>Naam en sleutel van het Blob-opslag account verzamelen
 U hebt de account naam en de account sleutel van uw Azure Storage-account nodig om deze zelf studie uit te voeren. Noteer de **account naam** en de **account sleutel** voor uw Azure Storage-account.
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
-2. Klik op **alle services** in het linkermenu en selecteer **opslag accounts** .
+2. Klik op **alle services** in het linkermenu en selecteer **opslag accounts**.
 
     ![Bladeren-opslag accounts](media/data-factory-copy-data-from-azure-blob-storage-to-sql-database/browse-storage-accounts.png)
 3. Selecteer op de Blade **opslag accounts** het **Azure Storage-account** dat u in deze zelf studie wilt gebruiken.
-4. Selecteer **toegangs toetsen** koppeling onder **instellingen** .
+4. Selecteer **toegangs toetsen** koppeling onder **instellingen**.
 5. Klik op de knop **kopiëren** (afbeelding) naast het tekstvak naam van het **opslag account** en sla deze ergens op (bijvoorbeeld: in een tekst bestand).
 6. Herhaal de vorige stap om de **key1** te kopiëren of te noteren.
 
@@ -66,20 +66,20 @@ U hebt de account naam en de account sleutel van uw Azure Storage-account nodig 
 7. Sluit alle Blades door op **X** te klikken.
 
 ## <a name="collect-sql-server-database-user-names"></a>SQL Server, Data Base, gebruikers namen verzamelen
-U hebt de namen van de logische SQL-Server,-data base en-gebruiker nodig om deze zelf studie uit te voeren. Noteer de namen van de **Server** , de **Data Base** en de **gebruiker** voor Azure SQL database.
+U hebt de namen van de logische SQL-Server,-data base en-gebruiker nodig om deze zelf studie uit te voeren. Noteer de namen van de **Server**, de **Data Base** en de **gebruiker** voor Azure SQL database.
 
-1. Klik in het **Azure Portal** op **alle services** aan de linkerkant en selecteer **SQL-data bases** .
-2. Selecteer in de **Blade SQL-data bases** de **Data Base** die u wilt gebruiken in deze zelf studie. Noteer de naam van de **Data Base** .  
-3. Klik op de Blade **SQL database** op **Eigenschappen** onder **instellingen** .
-4. Noteer de waarden voor de **Server naam** en de **aanmeldings gegevens van de server beheerder** .
+1. Klik in het **Azure Portal** op **alle services** aan de linkerkant en selecteer **SQL-data bases**.
+2. Selecteer in de **Blade SQL-data bases** de **Data Base** die u wilt gebruiken in deze zelf studie. Noteer de naam van de **Data Base**.  
+3. Klik op de Blade **SQL database** op **Eigenschappen** onder **instellingen**.
+4. Noteer de waarden voor de **Server naam** en de **aanmeldings gegevens van de server beheerder**.
 5. Sluit alle Blades door op **X** te klikken.
 
 ## <a name="allow-azure-services-to-access-sql-server"></a>Azure-Services toegang geven tot SQL Server
 Zorg ervoor dat **toegang tot de Azure-Services** -instelling voor uw server is ingeschakeld, zodat de Data Factory-service toegang heeft tot uw server. **ON** Voer de volgende stappen uit om dit te controleren en de instelling in te schakelen:
 
-1. Klik op **alle services** hub aan de linkerkant en klik op **SQL-servers** .
-2. Selecteer uw server en klik op **Firewall** onder **INSTELLINGEN** .
-3. In de blade **Firewallinstellingen** schakelt u **Toegang tot Azure-services toestaan** **in** .
+1. Klik op **alle services** hub aan de linkerkant en klik op **SQL-servers**.
+2. Selecteer uw server en klik op **Firewall** onder **INSTELLINGEN**.
+3. In de blade **Firewallinstellingen** schakelt u **Toegang tot Azure-services toestaan** **in**.
 4. Sluit alle Blades door op **X** te klikken.
 
 ## <a name="prepare-blob-storage-and-sql-database"></a>Blob Storage en SQL Database voorbereiden

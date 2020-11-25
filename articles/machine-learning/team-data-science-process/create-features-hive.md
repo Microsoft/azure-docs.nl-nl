@@ -12,11 +12,11 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 30c0a02c2cbc11002f8e0bf0295dab91de5d0365
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93323678"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020582"
 ---
 # <a name="create-features-for-data-in-a-hadoop-cluster-using-hive-queries"></a>Functies maken voor gegevens in een Hadoop-cluster met behulp van Hive-query's
 In dit document wordt beschreven hoe u functies maakt voor gegevens die zijn opgeslagen in een Azure HDInsight Hadoop cluster met behulp van Hive-query's. Deze Hive-query's maken gebruik van Inge sloten Hive User-Defined functions (UDFs), de scripts waarvoor wordt voorzien.
@@ -124,7 +124,7 @@ from <databasename>.<tablename>;
 ### <a name="calculate-distances-between-sets-of-gps-coordinates"></a><a name="hive-gpsdistance"></a>De afstanden tussen sets van GPS-coördinaten berekenen
 De query die in deze sectie wordt gegeven, kan rechtstreeks worden toegepast op de NYC-gegevens van de taxi-reis. Het doel van deze query is om te laten zien hoe een Inge sloten wiskundige functie in Hive moet worden toegepast om functies te genereren.
 
-De velden die in deze query worden gebruikt, zijn de GPS-coördinaten van pickup-en dropoff-locaties, de naam van de *ophaal \_ lengte* , *afhalen \_ breedte* graad, *dropoff- \_ lengte graad* en *dropoff \_ breedte graad*. De query's die de directe afstand berekenen tussen de coördinaten voor ophalen en dropoff zijn:
+De velden die in deze query worden gebruikt, zijn de GPS-coördinaten van pickup-en dropoff-locaties, de naam van de *ophaal \_ lengte*, *afhalen \_ breedte* graad, *dropoff- \_ lengte graad* en *dropoff \_ breedte graad*. De query's die de directe afstand berekenen tussen de coördinaten voor ophalen en dropoff zijn:
 
 ```hiveql
 set R=3959;
@@ -153,7 +153,7 @@ Een volledige lijst met Inge sloten Hive-Udf's vindt u in de sectie **ingebouwde
 ## <a name="advanced-topics-tune-hive-parameters-to-improve-query-speed"></a><a name="tuning"></a> Geavanceerde onderwerpen: Hive-para meters afstemmen om de query snelheid te verbeteren
 De standaard parameter instellingen van het Hive-cluster zijn mogelijk niet geschikt voor de Hive-query's en de gegevens die door de query's worden verwerkt. In deze sectie worden enkele para meters beschreven die gebruikers kunnen afstemmen om de prestaties van Hive-query's te verbeteren. Gebruikers moeten de para meters voor het afstemmen van query's toevoegen vóór de query's voor het verwerken van gegevens.
 
-1. **Java-heapruimte** : voor query's waarbij grote gegevens sets worden samengevoegd of waarmee lange **records worden verwerkt, is een** van de meest voorkomende fouten opgetreden. Deze fout kan worden vermeden door het instellen van de para meters *MapReduce. map. java. kiest* en *MapReduce. Task. io.* . Hier volgt een voorbeeld:
+1. **Java-heapruimte**: voor query's waarbij grote gegevens sets worden samengevoegd of waarmee lange **records worden verwerkt, is een** van de meest voorkomende fouten opgetreden. Deze fout kan worden vermeden door het instellen van de para meters *MapReduce. map. java. kiest* en *MapReduce. Task. io.* . Hier volgt een voorbeeld:
    
     ```hiveql
     set mapreduce.map.java.opts=-Xmx4096m;
@@ -162,20 +162,20 @@ De standaard parameter instellingen van het Hive-cluster zijn mogelijk niet gesc
 
     Met deze para meter wordt er 4 GB geheugen toegewezen aan de opslag ruimte voor Java-heaps, en wordt het sorteren efficiënter door meer geheugen toe te wijzen. Het is een goed idee om met deze toewijzingen af te spelen als er sprake is van fout fouten met betrekking tot de heap-ruimte.
 
-1. **Grootte van DFS-blok** : met deze para meter wordt de kleinste eenheid van gegevens ingesteld die het bestands systeem opslaat. Als de grootte van het DFS-blok bijvoorbeeld 128 MB is, worden gegevens met een grootte van minder dan en Maxi maal 128 MB opgeslagen in één blok. Gegevens die groter zijn dan 128 MB, worden toegewezen aan extra blokken. 
+1. **Grootte van DFS-blok**: met deze para meter wordt de kleinste eenheid van gegevens ingesteld die het bestands systeem opslaat. Als de grootte van het DFS-blok bijvoorbeeld 128 MB is, worden gegevens met een grootte van minder dan en Maxi maal 128 MB opgeslagen in één blok. Gegevens die groter zijn dan 128 MB, worden toegewezen aan extra blokken. 
 2. Het kiezen van een kleine blok grootte leidt tot grote overhead in Hadoop omdat het naam knooppunt veel meer aanvragen moet verwerken om het relevante blok dat bij het bestand hoort te vinden. Een aanbevolen instelling voor het omgaan met gigabytes (of grotere) gegevens is:
 
     ```hiveql
     set dfs.block.size=128m;
     ```
 
-2. De **samenvoegings bewerking in de Hive wordt geoptimaliseerd** : Hoewel samen voegingen in het Framework van de kaart of het raam werk normaal gesp roken plaatsvinden in de reductie fase, kunnen enorm winsten worden gerealiseerd door het plannen van samen voegingen in de kaart fase (ook wel ' mapjoins ' genoemd). Stel deze optie in:
+2. De **samenvoegings bewerking in de Hive wordt geoptimaliseerd**: Hoewel samen voegingen in het Framework van de kaart of het raam werk normaal gesp roken plaatsvinden in de reductie fase, kunnen enorm winsten worden gerealiseerd door het plannen van samen voegingen in de kaart fase (ook wel ' mapjoins ' genoemd). Stel deze optie in:
    
     ```hiveql
     set hive.auto.convert.join=true;
     ```
 
-3. **Opgeven van het aantal mappers naar Hive** : Hoewel Hadoop de gebruiker in staat stelt het aantal verminderers in te stellen, wordt het aantal mappers doorgaans niet ingesteld door de gebruiker. Een slag waarmee u rekening moet houden met een zekere mate van controle op dit nummer is het kiezen van de Hadoop-variabelen *mapred. min. split. size* en *mapred. max. split. size* als de grootte van elke kaart taak wordt bepaald door:
+3. **Opgeven van het aantal mappers naar Hive**: Hoewel Hadoop de gebruiker in staat stelt het aantal verminderers in te stellen, wordt het aantal mappers doorgaans niet ingesteld door de gebruiker. Een slag waarmee u rekening moet houden met een zekere mate van controle op dit nummer is het kiezen van de Hadoop-variabelen *mapred. min. split. size* en *mapred. max. split. size* als de grootte van elke kaart taak wordt bepaald door:
    
     ```hiveql
     num_maps = max(mapred.min.split.size, min(mapred.max.split.size, dfs.block.size))

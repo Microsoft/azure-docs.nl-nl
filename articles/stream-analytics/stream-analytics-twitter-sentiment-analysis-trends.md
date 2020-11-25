@@ -9,11 +9,11 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 02/10/2020
 ms.openlocfilehash: 0941e3d5141b5b8841f5d37e3db0d0b1b1474547
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130269"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019817"
 ---
 # <a name="real-time-twitter-sentiment-analysis-in-azure-stream-analytics"></a>Analyse van realtime Twitter-gevoel in Azure Stream Analytics
 
@@ -48,34 +48,34 @@ De voorbeeld toepassing genereert gebeurtenissen en duwt deze naar een Azure-Eve
 ### <a name="create-an-event-hub-namespace-and-event-hub"></a>Een Event Hub naam ruimte en Event Hub maken
 In deze sectie maakt u een Event Hub naam ruimte en voegt u een Event Hub toe aan die naam ruimte. Event hub-naam ruimten worden gebruikt om gerelateerde exemplaren van de gebeurtenis-bus logisch te groeperen. 
 
-1. Meld u aan bij de Azure Portal en selecteer **een resource maken** . Kies. Zoek naar **Event hubs** en selecteer **maken** .
+1. Meld u aan bij de Azure Portal en selecteer **een resource maken**. Kies. Zoek naar **Event hubs** en selecteer **maken**.
 
 2. Voer op de pagina **naam ruimte maken** een naam in voor de naam ruimte. U kunt een wille keurige naam voor de naam ruimte gebruiken, maar de naam moet geldig zijn voor een URL en moet uniek zijn binnen Azure. 
     
-3. Selecteer een prijs categorie en een abonnement en maak of kies een resource groep. Kies vervolgens een locatie en selecteer **maken** . 
+3. Selecteer een prijs categorie en een abonnement en maak of kies een resource groep. Kies vervolgens een locatie en selecteer **maken**. 
  
 4. Wanneer de implementatie van de naam ruimte is voltooid, gaat u naar de resource groep en zoekt u de Event Hub naam ruimte in de lijst met Azure-resources. 
 
-5. Selecteer in de nieuwe naam ruimte **+ &nbsp; Event hub** . 
+5. Selecteer in de nieuwe naam ruimte **+ &nbsp; Event hub**. 
 
-6. Geef de nieuwe Event Hub *socialtwitter-eh* . U kunt ook een andere naam gebruiken. Als u dat wel doet, noteert u deze, omdat u de naam later nodig hebt. U hoeft geen andere opties voor de Event Hub in te stellen.
+6. Geef de nieuwe Event Hub *socialtwitter-eh*. U kunt ook een andere naam gebruiken. Als u dat wel doet, noteert u deze, omdat u de naam later nodig hebt. U hoeft geen andere opties voor de Event Hub in te stellen.
  
-7. Selecteer **Maken** .
+7. Selecteer **Maken**.
 
 ### <a name="grant-access-to-the-event-hub"></a>Toegang verlenen tot de Event Hub
 
 Voordat een proces gegevens naar een Event Hub kan verzenden, heeft de Event Hub een beleid nodig waarmee toegang is toegestaan. Het toegangsbeleid genereert een verbindingsreeks die autorisatiegegevens bevat.
 
-1.  Selecteer in de navigatie balk aan de linkerkant van uw event hubs-naam ruimte de optie **Event hubs** . Deze bevindt zich in de sectie **entities** . Selecteer vervolgens de Event Hub die u zojuist hebt gemaakt.
+1.  Selecteer in de navigatie balk aan de linkerkant van uw event hubs-naam ruimte de optie **Event hubs**. Deze bevindt zich in de sectie **entities** . Selecteer vervolgens de Event Hub die u zojuist hebt gemaakt.
 
-2.  Selecteer in de navigatie balk aan de linkerkant de optie **beleid voor gedeelde toegang** onder **instellingen** .
+2.  Selecteer in de navigatie balk aan de linkerkant de optie **beleid voor gedeelde toegang** onder **instellingen**.
 
     >[!NOTE]
     >Er is een optie voor gedeeld toegangs beleid onder voor de naam ruimte Event Hub en voor de Event Hub. Zorg ervoor dat u werkt in de context van uw Event Hub en niet de algemene Event Hub naam ruimte.
 
-3.  Selecteer op de pagina toegangs beleid **+ toevoegen** . Voer vervolgens *socialtwitter-Access* in voor de naam van het **beleid** en schakel het selectie vakje **beheren** in.
+3.  Selecteer op de pagina toegangs beleid **+ toevoegen**. Voer vervolgens *socialtwitter-Access* in voor de naam van het **beleid** en schakel het selectie vakje **beheren** in.
  
-4.  Selecteer **Maken** .
+4.  Selecteer **Maken**.
 
 5.  Nadat het beleid is geïmplementeerd, selecteert u het beleid in de lijst met beleid voor gedeelde toegang.
 
@@ -104,15 +104,15 @@ Als u nog geen Twitter-toepassing hebt die u voor deze hand leiding kunt gebruik
 > [!NOTE]
 > Het exacte proces in Twitter voor het maken van een toepassing en het ophalen van de sleutels, geheimen en token kan veranderen. Als deze instructies niet overeenkomen met wat u ziet op de Twitter-site, raadpleegt u de Twitter-ontwikkelaars documentatie.
 
-1. Ga in een webbrowser naar [Twitter voor ontwikkel aars](https://developer.twitter.com/en/apps), maak een ontwikkelaars account en selecteer **een app maken** . Mogelijk wordt er een bericht weergegeven met de mededeling dat u een Twitter-ontwikkelaarsaccount moet aanvragen. U kunt dit doen en nadat uw toepassing is goedgekeurd, ziet u een bevestigings-e-mail. Het kan enkele dagen duren voordat de aanvraag voor een ontwikkelaarsaccount wordt goedgekeurd.
+1. Ga in een webbrowser naar [Twitter voor ontwikkel aars](https://developer.twitter.com/en/apps), maak een ontwikkelaars account en selecteer **een app maken**. Mogelijk wordt er een bericht weergegeven met de mededeling dat u een Twitter-ontwikkelaarsaccount moet aanvragen. U kunt dit doen en nadat uw toepassing is goedgekeurd, ziet u een bevestigings-e-mail. Het kan enkele dagen duren voordat de aanvraag voor een ontwikkelaarsaccount wordt goedgekeurd.
 
    ![Scherm afbeelding toont de knop een app maken.](./media/stream-analytics-twitter-sentiment-analysis-trends/provide-twitter-app-details.png "Details van Twitter-toepassing")
 
-2. Voer op de pagina **Create an application** de gegevens voor de nieuwe app in en selecteer **Create your Twitter application** .
+2. Voer op de pagina **Create an application** de gegevens voor de nieuwe app in en selecteer **Create your Twitter application**.
 
    ![Scherm afbeelding toont het deel venster app-Details waarin u waarden voor uw app kunt invoeren.](./media/stream-analytics-twitter-sentiment-analysis-trends/provide-twitter-app-details-create.png "Details van Twitter-toepassing")
 
-3. Selecteer op de toepassingspagina het tabblad **Keys and Tokens** en kopieer de waarden voor **Consumer API Key** en **Consumer API Secret Key** . Selecteer ook **Create** onder **Access Token and Access Token Secret** om de toegangstokens te genereren. Kopieer de waarden voor **Access Token** en **Access Token Secret** .
+3. Selecteer op de toepassingspagina het tabblad **Keys and Tokens** en kopieer de waarden voor **Consumer API Key** en **Consumer API Secret Key**. Selecteer ook **Create** onder **Access Token and Access Token Secret** om de toegangstokens te genereren. Kopieer de waarden voor **Access Token** en **Access Token Secret**.
 
    Sla de waarden op die u hebt opgehaald voor de Twitter-toepassing. U hebt de waarden later nodig.
 
@@ -142,29 +142,29 @@ Voordat de toepassing wordt uitgevoerd, hebt u bepaalde gegevens van u nodig, zo
 
 Nu Tweet-gebeurtenissen in realtime worden gestreamd vanuit Twitter, kunt u een Stream Analytics taak instellen om deze gebeurtenissen in realtime te analyseren.
 
-1. Navigeer in het Azure Portal naar de resource groep en selecteer **+ toevoegen** . Zoek vervolgens naar **Stream Analytics-taak** en selecteer **maken** .
+1. Navigeer in het Azure Portal naar de resource groep en selecteer **+ toevoegen**. Zoek vervolgens naar **Stream Analytics-taak** en selecteer **maken**.
 
 2. Noem de taak `socialtwitter-sa-job` en geef een abonnement, resource groep en locatie op.
 
     Het is een goed idee om de taak en de Event Hub in dezelfde regio te plaatsen voor de beste prestaties en om ervoor te zorgen dat u niet betaalt voor het overdragen van gegevens tussen regio's.
 
-3. Selecteer **Maken** . Ga vervolgens naar uw taak wanneer de implementatie is voltooid.
+3. Selecteer **Maken**. Ga vervolgens naar uw taak wanneer de implementatie is voltooid.
 
 ## <a name="specify-the-job-input"></a>De taak invoer opgeven
 
-1. Selecteer in uw Stream Analytics-taak de optie **invoer** in het menu links onder **taak topologie** .
+1. Selecteer in uw Stream Analytics-taak de optie **invoer** in het menu links onder **taak topologie**.
 
-2. Selecteer **+ &nbsp; add Stream Input**  >  **Event hub** . Vul het **nieuwe invoer** formulier in met de volgende informatie:
+2. Selecteer **+ &nbsp; add Stream Input**  >  **Event hub**. Vul het **nieuwe invoer** formulier in met de volgende informatie:
 
    |**Instelling**  |**Voorgestelde waarde**  |**Beschrijving**  |
    |---------|---------|---------|
    |Invoeralias| *TwitterStream* | Voer een alias in voor de invoer. |
    |Abonnement  | \<Your subscription\> |  Selecteer het Azure-abonnement dat u wilt gebruiken. |
    |Event hub-naamruimte | *ASA-Twitter-eventhub* |
-   |Event Hub-naam | *socialtwitter-eh* | Kies *bestaande gebruiken* . Selecteer vervolgens de Event hub die u hebt gemaakt.|
+   |Event Hub-naam | *socialtwitter-eh* | Kies *bestaande gebruiken*. Selecteer vervolgens de Event hub die u hebt gemaakt.|
    |Gebeurteniscompressietype| GZip | Het type gegevens compressie.|
 
-   Wijzig de resterende standaard waarden en selecteer **Opslaan** .
+   Wijzig de resterende standaard waarden en selecteer **Opslaan**.
 
 ## <a name="specify-the-job-query"></a>De taak query opgeven
 
@@ -181,11 +181,11 @@ Als u het aantal vermeldingen tussen de onderwerpen wilt vergelijken, kunt u een
    FROM TwitterStream
    ```
 
-3. Gebeurtenis gegevens uit de berichten moeten worden weer gegeven in het venster **invoer voorbeeld** onder uw query. Zorg ervoor dat de **weer gave** is ingesteld op **JSON** . Als u geen gegevens ziet, zorg er dan voor dat uw gegevens Generator gebeurtenissen naar uw Event Hub verzendt en dat u **gzip** hebt geselecteerd als het compressie type voor de invoer.
+3. Gebeurtenis gegevens uit de berichten moeten worden weer gegeven in het venster **invoer voorbeeld** onder uw query. Zorg ervoor dat de **weer gave** is ingesteld op **JSON**. Als u geen gegevens ziet, zorg er dan voor dat uw gegevens Generator gebeurtenissen naar uw Event Hub verzendt en dat u **gzip** hebt geselecteerd als het compressie type voor de invoer.
 
 4. Selecteer **test query** en Bekijk de resultaten in het venster **test resultaten** onder uw query.
 
-5. Wijzig de query in de code-editor naar de volgende en selecteer **test query** :
+5. Wijzig de query in de code-editor naar de volgende en selecteer **test query**:
 
    ```sql
    SELECT System.Timestamp as Time, text
@@ -203,16 +203,16 @@ In deze hand leiding schrijft u de geaggregeerde Tweet-gebeurtenissen van de taa
 
 ## <a name="specify-the-job-output"></a>De taak uitvoer opgeven
 
-1. Selecteer in het gedeelte **taak topologie** in het navigatie menu links de optie **uitvoer** . 
+1. Selecteer in het gedeelte **taak topologie** in het navigatie menu links de optie **uitvoer**. 
 
-2. Klik op de pagina **uitvoer** op **+ &nbsp; toevoegen** en **Blob Storage/Data Lake Storage Gen2** :
+2. Klik op de pagina **uitvoer** op **+ &nbsp; toevoegen** en **Blob Storage/Data Lake Storage Gen2**:
 
-   * **Uitvoer alias** : gebruik de naam `TwitterStream-Output` . 
-   * **Opties voor importeren** : Selecteer **opslag selecteren bij uw abonnementen** .
-   * **Opslag account** . Selecteer uw opslagaccount.
-   * **Container** . Selecteer **nieuwe maken** en invoeren `socialtwitter` .
+   * **Uitvoer alias**: gebruik de naam `TwitterStream-Output` . 
+   * **Opties voor importeren**: Selecteer **opslag selecteren bij uw abonnementen**.
+   * **Opslag account**. Selecteer uw opslagaccount.
+   * **Container**. Selecteer **nieuwe maken** en invoeren `socialtwitter` .
    
-4. Selecteer **Opslaan** .   
+4. Selecteer **Opslaan**.   
 
 ## <a name="start-the-job"></a>Taak starten
 
@@ -222,7 +222,7 @@ Er zijn een invoer-, query-en uitvoer taak opgegeven. U bent klaar om de Stream 
 
 2. Selecteer **Start** in het taak overzicht.
 
-3. Selecteer op de pagina **taak starten** voor de **Start tijd van de taak uitvoer** de optie **nu** en selecteer vervolgens **starten** .
+3. Selecteer op de pagina **taak starten** voor de **Start tijd van de taak uitvoer** de optie **nu** en selecteer vervolgens **starten**.
 
 ## <a name="get-support"></a>Ondersteuning krijgen
 Probeer voor meer hulp onze [micro soft Q&een vraag pagina voor Azure stream Analytics](/answers/topics/azure-stream-analytics.html).

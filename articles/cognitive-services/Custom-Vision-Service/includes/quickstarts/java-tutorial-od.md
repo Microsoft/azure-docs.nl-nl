@@ -5,11 +5,11 @@ ms.author: pafarley
 ms.service: cognitive-services
 ms.date: 10/13/2020
 ms.openlocfilehash: f0dbe64d6a44d7712d83c018c4db72fac871a838
-ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94625287"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021264"
 ---
 Ga aan de slag met de Custom Vision-clientbibliotheek voor Java om een objectdetectiemodel te bouwen. Volg deze stappen om het pakket te installeren en de voorbeeldcode voor basistaken uit te proberen. Gebruik dit voorbeeld als een sjabloon om uw eigen beeldherkennings-app te maken.
 

@@ -7,11 +7,11 @@ ms.topic: how-to
 ms.date: 10/23/2017
 ms.author: alkohli
 ms.openlocfilehash: b5f2a86fb7c776436ea707ef293a66c033014c33
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966323"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021075"
 ---
 # <a name="use-azure-automation-runbooks-to-manage-storsimple-devices"></a>Azure Automation runbooks gebruiken voor het beheren van StorSimple-apparaten
 

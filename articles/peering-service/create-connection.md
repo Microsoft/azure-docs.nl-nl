@@ -9,11 +9,11 @@ ms.date: 05/2/2020
 ms.author: derekol
 Customer intent: With Azure Peering service enhancing the customer connectivity to Microsoft cloud services .
 ms.openlocfilehash: f8f0ee71a8dd00498d868bb6dc11b3fa083df766
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91530211"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021092"
 ---
 # <a name="tutorial-create-a-peering-service-connection"></a>Zelfstudie: Een Peering Service-verbinding maken
 

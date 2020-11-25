@@ -5,11 +5,11 @@ ms.topic: article
 ms.date: 06/28/2018
 ms.custom: seodec18
 ms.openlocfilehash: dcfe11bcab25f6267a557de5faf7befab467bc29
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81535720"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020956"
 ---
 # <a name="how-to-prepare-for-an-ssl-ip-address-change"></a>Voor bereiding voor het wijzigen van een SSL-IP-adres
 
@@ -17,9 +17,9 @@ Als u een melding hebt ontvangen dat het SSL-IP-adres van uw Azure App Service-a
 
 ## <a name="release-ssl-ip-addresses-and-assign-new-ones"></a>SSL-IP-adressen vrijgeven en nieuwe toewijzen
 
-1.  Open [Azure Portal](https://portal.azure.com).
+1.  Open de [Azure Portal](https://portal.azure.com).
 
-2.  Selecteer **app Services**in het navigatie menu aan de linkerkant.
+2.  Selecteer **app Services** in het navigatie menu aan de linkerkant.
 
 3.  Selecteer uw App Service-app in de lijst.
 
@@ -35,7 +35,7 @@ Als u een melding hebt ontvangen dat het SSL-IP-adres van uw Azure App Service-a
 
 1.  Wacht enkele minuten en open vervolgens de [Azure Portal](https://portal.azure.com).
 
-2.  Selecteer **app Services**in het navigatie menu aan de linkerkant.
+2.  Selecteer **app Services** in het navigatie menu aan de linkerkant.
 
 3.  Selecteer uw App Service-app in de lijst.
 

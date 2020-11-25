@@ -5,11 +5,11 @@ ms.date: 09/05/2019
 ms.topic: conceptual
 ms.reviewer: brendal
 ms.openlocfilehash: 1fff70ef2eeb1dc27d33769fd48fe5923f56717b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87049169"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021602"
 ---
 # <a name="azure-blockchain-workbench-architecture"></a>Architectuur van Azure Blockchain Workbench
 
@@ -78,7 +78,7 @@ De opslag verbruiker neemt berichten van Service Bus en pusht gegevens naar een 
 
 ## <a name="transaction-builder-and-signer"></a>Trans actie Builder en ondertekenaar
 
-Als een bericht in de binnenkomende Message Broker moet worden geschreven naar de Block Chain, wordt dit verwerkt door de DLT-Consumer. De DLT-Consumer is een service waarmee het bericht wordt opgehaald dat meta gegevens bevat voor een gewenste trans actie om uit te voeren en vervolgens de gegevens naar de *opbouw functie en ondertekenaar van de trans actie*te verzenden. De *trans actie-opbouw functie en ondertekenaar* assembleert een Block Chain-trans actie op basis van de gegevens en de gewenste Block Chain-bestemming. Na de assembly is de trans actie ondertekend. Persoonlijke sleutels worden opgeslagen in Azure Key Vault.
+Als een bericht in de binnenkomende Message Broker moet worden geschreven naar de Block Chain, wordt dit verwerkt door de DLT-Consumer. De DLT-Consumer is een service waarmee het bericht wordt opgehaald dat meta gegevens bevat voor een gewenste trans actie om uit te voeren en vervolgens de gegevens naar de *opbouw functie en ondertekenaar van de trans actie* te verzenden. De *trans actie-opbouw functie en ondertekenaar* assembleert een Block Chain-trans actie op basis van de gegevens en de gewenste Block Chain-bestemming. Na de assembly is de trans actie ondertekend. Persoonlijke sleutels worden opgeslagen in Azure Key Vault.
 
  Block Chain Workbench haalt de juiste persoonlijke sleutel op uit Key Vault en ondertekent de trans actie buiten Key Vault. Eenmaal ondertekend, wordt de trans actie verzonden naar transactie routers en groot boeken.
 

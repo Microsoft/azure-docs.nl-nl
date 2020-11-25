@@ -4,11 +4,11 @@ description: In dit artikel vindt u informatie over het herstellen van SAP HANA-
 ms.topic: conceptual
 ms.date: 11/7/2019
 ms.openlocfilehash: c502b7741acd343baefe5e2bf8b95cfc02e46688
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90986117"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021670"
 ---
 # <a name="restore-sap-hana-databases-on-azure-vms"></a>SAP HANA data bases herstellen op virtuele Azure-machines
 
@@ -38,7 +38,7 @@ Let op het volgende voordat u een Data Base herstelt:
 
   1. Open de kluis waarin het doel SAP HANA exemplaar is geregistreerd.
 
-  1. Kies **back-up**in het kluis dashboard, onder **aan**de slag.
+  1. Kies **back-up** in het kluis dashboard, onder **aan** de slag.
 
       ![Back-up in het kluis dashboard](media/sap-hana-db-restore/getting-started-backup.png)
 
@@ -46,7 +46,7 @@ Let op het volgende voordat u een Data Base herstelt:
 
       ![SAP HANA kiezen in een Azure-VM](media/sap-hana-db-restore/sap-hana-backup.png)
 
-  1. Selecteer **Details weer geven**onder **Db's detecteren in vm's**.
+  1. Selecteer **Details weer geven** onder **Db's detecteren in vm's**.
 
       ![Details weergeven](media/sap-hana-db-restore/view-details.png)
 
@@ -120,7 +120,7 @@ Als u wilt herstellen, hebt u de volgende machtigingen nodig:
 
 ### <a name="restore-and-overwrite"></a>Herstellen en overschrijven
 
-1. Selecteer in het menu **configuratie herstellen** onder **herstel van herstellen**de optie **Data Base overschrijven**  >  **OK**.
+1. Selecteer in het menu **configuratie herstellen** onder **herstel van herstellen** de optie **Data Base overschrijven**  >  **OK**.
 
     ![DB overschrijven](media/sap-hana-db-restore/overwrite-db.png)
 
@@ -130,9 +130,9 @@ Als u wilt herstellen, hebt u de volgende machtigingen nodig:
 
 Als u de back-upgegevens wilt herstellen als bestanden in plaats van een Data Base, kiest u **herstellen als bestanden**. Zodra de bestanden zijn gedumpt naar een opgegeven pad, kunt u deze bestanden naar elke SAP HANA-machine overbrengen waarop u deze als een database wilt herstellen. Omdat u deze bestanden naar een willekeurige machine kunt verplaatsen, kunt u de gegevens nu in abonnementen en regio's herstellen.
 
-1. Selecteer in het menu **configuratie herstellen** onder **waar en hoe u kunt herstellen**de optie **herstellen als bestanden**.
+1. Selecteer in het menu **configuratie herstellen** onder **waar en hoe u kunt herstellen** de optie **herstellen als bestanden**.
 1. Selecteer de **host** /Hana-server naam waarnaar u de back-upbestanden wilt herstellen.
-1. Voer in het doelpad **op de server**het mappad in op de server die u hebt geselecteerd in stap 2. Dit is de locatie waar de service alle benodigde back-upbestanden zal dumpen.
+1. Voer in het doelpad **op de server** het mappad in op de server die u hebt geselecteerd in stap 2. Dit is de locatie waar de service alle benodigde back-upbestanden zal dumpen.
 
     De bestanden die worden gedumpt zijn:
 

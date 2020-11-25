@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 07/17/2019
 ms.author: inhenkel
 ms.openlocfilehash: a3b32110a7236d47946c3a1f901aaedf51b47775
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89253978"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022214"
 ---
 # <a name="playback-with-azure-media-player"></a>Afspelen met Azure Media Player
 
@@ -33,7 +33,7 @@ Met Microsoft Azure Media Services kan inhoud worden geleverd met HLS, DASH, Smo
 
 U kunt de [Azure Media Player-demo pagina](https://aka.ms/azuremediaplayer) gebruiken om Azure Media Services-voor beelden of uw eigen stream af te spelen.  
 
-Plak een andere URL en druk op **bijwerken**om een nieuwe video af te spelen.
+Plak een andere URL en druk op **bijwerken** om een nieuwe video af te spelen.
 
 Als u verschillende afspeel opties wilt configureren (bijvoorbeeld Tech, taal of versleuteling), drukt u op **Geavanceerde opties**.
 
@@ -47,7 +47,7 @@ U kunt de [Azure Media Player-demo pagina](https://aka.ms/azuremediaplayer) gebr
 
 ## <a name="set-up-azure-media-player-in-your-html"></a>Azure Media Player in uw HTML instellen
 
-Azure Media Player eenvoudig in te stellen. Het kan even duren voordat de media-inhoud wordt afgespeeld vanuit uw Media Services-account. Raadpleeg de [Azure Media Player-documentatie](../azure-media-player/azure-media-player-overview.md) voor meer informatie over het instellen en configureren van Azure Media Player.
+Azure Media Player is eenvoudig in te stellen. Het kan even duren voordat de media-inhoud wordt afgespeeld vanuit uw Media Services-account. Raadpleeg de [Azure Media Player-documentatie](../azure-media-player/azure-media-player-overview.md) voor meer informatie over het instellen en configureren van Azure Media Player.
 
 ## <a name="additional-notes"></a>Aanvullende opmerkingen
 

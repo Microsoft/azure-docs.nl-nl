@@ -7,15 +7,15 @@ ms.service: data-catalog
 ms.topic: how-to
 ms.date: 08/01/2019
 ms.openlocfilehash: f91728435b885f3b4d9415bc81e18fdaaea0148f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86537745"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021942"
 ---
 # <a name="set-up-the-business-glossary-for-governed-tagging"></a>De zakelijke woorden lijst instellen voor de onderhevige labels
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Azure Data Catalog maakt detectie van gegevens bronnen mogelijk, zodat u de gegevens bronnen die u nodig hebt om analyses uit te voeren en beslissingen te nemen, gemakkelijk kunt ontdekken en begrijpen. Deze mogelijkheden maken het grootste effect wanneer u het breedste bereik van beschik bare gegevens bronnen kunt vinden en begrijpen.
 

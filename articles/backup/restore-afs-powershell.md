@@ -4,11 +4,11 @@ description: In dit artikel leert u hoe u Azure Files kunt herstellen met behulp
 ms.topic: conceptual
 ms.date: 1/27/2020
 ms.openlocfilehash: 60c9848e12de80bcafe4553a9e8f3e27e8876d41
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88826494"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021381"
 ---
 # <a name="restore-azure-files-with-powershell"></a>Azure Files herstellen met Power shell
 
@@ -92,7 +92,7 @@ Gebruik [Restore-AzRecoveryServicesBackupItem](/powershell/module/az.recoveryser
 * **TargetFileShareName**: de bestands shares binnen het doel Storage-account waarnaar de inhoud van de back-up wordt teruggezet.
 * **TargetFolder**: de map onder de bestands share waarop de gegevens worden teruggezet. Als de inhoud waarvan een back-up is gemaakt, moet worden hersteld naar een hoofdmap, geeft u de waarden van de doelmap op als een lege teken reeks.
 * **SourceFilePath**: het absolute pad van het bestand dat in de bestands share moet worden hersteld, als een teken reeks. Dit pad is hetzelfde pad dat wordt gebruikt in de Power shell **-cmdlet Get-AzStorageFile** .
-* **SourceFileType**: Hiermee wordt aangegeven of een map of een bestand is geselecteerd. De **map** of het **bestand**wordt geaccepteerd.
+* **SourceFileType**: Hiermee wordt aangegeven of een map of een bestand is geselecteerd. De **map** of het **bestand** wordt geaccepteerd.
 * **ResolveConflict**: instructie als er een conflict is met de herstelde gegevens. Accepteert **overschrijven** of **overs Laan**.
 
 De aanvullende para meters (SourceFilePath en SourceFileType) zijn alleen gerelateerd aan het afzonderlijke bestand dat u wilt herstellen.

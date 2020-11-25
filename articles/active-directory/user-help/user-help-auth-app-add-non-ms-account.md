@@ -12,11 +12,11 @@ ms.date: 01/24/2019
 ms.author: curtand
 ms.reviewer: olhaun
 ms.openlocfilehash: cba8837fc738884fc187b13083487c2ab62d25f0
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93392574"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020089"
 ---
 # <a name="add-non-microsoft-accounts-to-the-microsoft-authenticator-app"></a>Niet-micro soft-accounts toevoegen aan de app Microsoft Authenticator
 
@@ -159,7 +159,7 @@ Voeg uw Amazon-account toe door twee ledige verificatie in te scha kelen en het 
 
 1. Open op uw computer Amazon, selecteer de vervolg keuzelijst **Account & lijsten** en selecteer vervolgens **uw account**.
 
-2. Selecteer **aanmelden & beveiliging** , Meld u aan bij uw Amazon-account en selecteer vervolgens **bewerken** in het gebied **Geavanceerde beveiligings instellingen** .
+2. Selecteer **aanmelden & beveiliging**, Meld u aan bij uw Amazon-account en selecteer vervolgens **bewerken** in het gebied **Geavanceerde beveiligings instellingen** .
 
     De pagina **Geavanceerde beveiligings instellingen** wordt weer gegeven.
 

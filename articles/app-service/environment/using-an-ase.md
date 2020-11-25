@@ -8,11 +8,11 @@ ms.date: 5/10/2020
 ms.author: ccompy
 ms.custom: seodec18, devx-track-azurecli
 ms.openlocfilehash: 86d0569d95df18924ed47682b75d7491c71d4483
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94833551"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021024"
 ---
 # <a name="use-an-app-service-environment"></a>Een App Service-omgeving gebruiken
 
@@ -185,7 +185,7 @@ U kunt uw ASE integreren met Azure Monitor voor het verzenden van logboeken over
 Logboek registratie inschakelen voor uw ASE:
 
 1. Ga in de portal naar **Diagnostische instellingen**.
-1. Selecteer **Diagnostische instelling toevoegen**.
+1. Selecteer **Diagnostische instellingen toevoegen**.
 1. Geef een naam op voor de logboek integratie.
 1. Selecteer en configureer de gewenste logboek doelen.
 1. Selecteer **AppServiceEnvironmentPlatformLogs**.

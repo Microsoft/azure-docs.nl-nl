@@ -16,11 +16,11 @@ ms.date: 03/14/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 9b616b03698e83d256a7b81e4548edbf21dba058
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89264637"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021126"
 ---
 # <a name="how-to-build-a-smooth-streaming-windows-store-application"></a>Een Smooth Streaming Windows Store-toepassing bouwen
 
@@ -66,14 +66,14 @@ Zie voor meer informatie over het ontwikkelen van Windows Store-toepassing [fant
 ### <a name="to-create-a-windows-store-project"></a>Een Windows Store-project maken
 
 1. Visual Studio uitvoeren; versies 2012 tot en met 2015 worden ondersteund.
-1. Klik in het menu **bestand** op **Nieuw**en klik vervolgens op **project**.
+1. Klik in het menu **bestand** op **Nieuw** en klik vervolgens op **project**.
 1. Typ of Selecteer in het dialoog venster Nieuw project de volgende waarden:
 
-    | Naam | Waarde |
+    | Name | Waarde |
     | --- | --- |
     | Sjabloon groep |Geïnstalleerd/templates/Visual C#/Windows Store |
-    | Template |Lege app (XAML) |
-    | Naam |SSPlayer |
+    | Sjabloon |Lege app (XAML) |
+    | Name |SSPlayer |
     | Locatie |C:\SSTutorials |
     | Naam van de oplossing |SSPlayer |
     | Map maken voor oplossing |(geselecteerd) |
@@ -82,13 +82,13 @@ Zie voor meer informatie over het ontwikkelen van Windows Store-toepassing [fant
 
 ### <a name="to-add-a-reference-to-the-smooth-streaming-client-sdk"></a>Een verwijzing naar de Smooth Streaming client-SDK toevoegen
 
-1. Klik in Solution Explorer met de rechter muisknop op **SSPlayer**en klik vervolgens op **verwijzing toevoegen**.
+1. Klik in Solution Explorer met de rechter muisknop op **SSPlayer** en klik vervolgens op **verwijzing toevoegen**.
 1. Typ of selecteer de volgende waarden:
 
-    | Naam | Waarde |
+    | Name | Waarde |
     | --- | --- |
     | Verwijzings groep |Windows/uitbrei dingen |
-    | Naslaginformatie |Selecteer micro soft Smooth Streaming client SDK voor Windows 8 en micro soft Visual C++ runtime-pakket |
+    | Referentie |Selecteer micro soft Smooth Streaming client SDK voor Windows 8 en micro soft Visual C++ runtime-pakket |
 
 1. Klik op **OK**. 
 
@@ -97,7 +97,7 @@ Nadat u de verwijzingen hebt toegevoegd, moet u het doel platform (x64 of x86) s
 ### <a name="to-design-the-player-user-interface"></a>De gebruikers interface van de speler ontwerpen
 
 1. Dubbel klik in Solution Explorer op **MainPage. xaml** om deze te openen in de ontwerp weergave.
-2. Zoek het ** &lt; raster &gt; ** en ** &lt; /grid &gt; ** labels het XAML-bestand en plak de volgende code tussen de twee Tags:
+2. Zoek het **&lt; raster &gt;** en **&lt; /grid &gt;** labels het XAML-bestand en plak de volgende code tussen de twee Tags:
 
    ```xml
          <Grid.RowDefinitions>
@@ -152,7 +152,7 @@ Sommige gebeurtenis-handlers zijn in dit XAML-bestand gekoppeld aan de besturing
 
 ### <a name="to-modify-the-code-behind-file"></a>De code achter het bestand wijzigen
 
-1. Klik in Solution Explorer met de rechter muisknop op **MainPage. xaml**en klik vervolgens op **code weer geven**.
+1. Klik in Solution Explorer met de rechter muisknop op **MainPage. xaml** en klik vervolgens op **code weer geven**.
 2. Voeg boven aan het bestand de volgende instructie toe met behulp van:
 
     ```csharp
@@ -253,7 +253,7 @@ Deze les bevat de volgende procedures:
 
 ### <a name="to-register-the-smooth-streaming-byte-stream-handler-and-pass-the-propertyset"></a>De Smooth Streaming byte-stream-handler registreren en de eigenschappenset door geven
 
-1. Klik in Solution Explorer met de rechter muisknop op **MainPage. xaml**en klik vervolgens op **code weer geven**.
+1. Klik in Solution Explorer met de rechter muisknop op **MainPage. xaml** en klik vervolgens op **code weer geven**.
 2. Voeg aan het begin van het bestand de volgende instructie toe met behulp van:
 
    ```csharp
@@ -298,7 +298,7 @@ Deze les bevat de volgende procedures:
 
 ### <a name="to-add-the-adaptive-source-manager-level-event-handler"></a>De gebeurtenis afhandeling voor het adaptieve bron beheer niveau toevoegen
 
-1. Klik in Solution Explorer met de rechter muisknop op **MainPage. xaml**en klik vervolgens op **code weer geven**.
+1. Klik in Solution Explorer met de rechter muisknop op **MainPage. xaml** en klik vervolgens op **code weer geven**.
 2. Voeg in de klasse **Mainpage** het volgende gegevenslid toe:
 
    ```csharp
@@ -326,7 +326,7 @@ Deze les bevat de volgende procedures:
 
 ### <a name="to-add-adaptive-source-level-event-handlers"></a>Voor het toevoegen van een adaptieve bron niveau gebeurtenis-handlers
 
-1. Klik in Solution Explorer met de rechter muisknop op **MainPage. xaml**en klik vervolgens op **code weer geven**.
+1. Klik in Solution Explorer met de rechter muisknop op **MainPage. xaml** en klik vervolgens op **code weer geven**.
 2. Voeg in de klasse **Mainpage** het volgende gegevenslid toe:
 
    ```csharp
@@ -377,7 +377,7 @@ Dezelfde gebeurtenissen zijn ook beschikbaar op het niveau van het adaptieve bro
 
 ### <a name="to-add-media-element-event-handlers"></a>Gebeurtenis-handlers voor media elementen toevoegen
 
-1. Klik in Solution Explorer met de rechter muisknop op **MainPage. xaml**en klik vervolgens op **code weer geven**.
+1. Klik in Solution Explorer met de rechter muisknop op **MainPage. xaml** en klik vervolgens op **code weer geven**.
 2. Voeg aan het einde van de **Mainpage** -klasse de volgende gebeurtenis-handlers toe:
 
    ```csharp
@@ -413,7 +413,7 @@ Dezelfde gebeurtenissen zijn ook beschikbaar op het niveau van het adaptieve bro
 
 ### <a name="to-add-slider-bar-related-code"></a>Aan de schuif balk gerelateerde code toevoegen
 
-1. Klik in Solution Explorer met de rechter muisknop op **MainPage. xaml**en klik vervolgens op **code weer geven**.
+1. Klik in Solution Explorer met de rechter muisknop op **MainPage. xaml** en klik vervolgens op **code weer geven**.
 2. Voeg aan het begin van het bestand de volgende instructie toe met behulp van:
 
    ```csharp
@@ -563,7 +563,7 @@ Smooth Streaming is in staat om inhoud te streamen met meerdere audio sporen in 
 
 ### <a name="to-modify-the-xaml-file"></a>Het XAML-bestand wijzigen
 
-1. Klik vanuit Solution Explorer met de rechter muisknop op **MainPage. xaml**en klik vervolgens op **Designer weer geven**.
+1. Klik vanuit Solution Explorer met de rechter muisknop op **MainPage. xaml** en klik vervolgens op **Designer weer geven**.
 2. Zoek &lt; grid. RowDefinitions &gt; en wijzig de RowDefinitions zodat ze er als volgt uitzien:
 
    ```xml
@@ -606,7 +606,7 @@ Smooth Streaming is in staat om inhoud te streamen met meerdere audio sporen in 
 
 ### <a name="to-modify-the-code-behind-file"></a>De code achter het bestand wijzigen
 
-1. Klik in Solution Explorer met de rechter muisknop op **MainPage. xaml**en klik vervolgens op **code weer geven**.
+1. Klik in Solution Explorer met de rechter muisknop op **MainPage. xaml** en klik vervolgens op **code weer geven**.
 2. Voeg in de naam ruimte SSPlayer een nieuwe klasse toe:
 
    ```csharp
@@ -841,7 +841,7 @@ Een Smooth Streaming presentatie kan meerdere video bestanden bevatten die zijn 
 
 ### <a name="to-modify-the-xaml-file"></a>Het XAML-bestand wijzigen
 
-1. Klik vanuit Solution Explorer met de rechter muisknop op **MainPage. xaml**en klik vervolgens op **Designer weer geven**.
+1. Klik vanuit Solution Explorer met de rechter muisknop op **MainPage. xaml** en klik vervolgens op **Designer weer geven**.
 2. Zoek de &lt; grid &gt; -tag met de naam **gridStreamAndBitrateSelection**, voeg de volgende code toe aan het einde van de tag:
    ```xml
          <StackPanel Name="spBitRateSelection" Grid.Row="1" Grid.Column="1">
@@ -863,7 +863,7 @@ Een Smooth Streaming presentatie kan meerdere video bestanden bevatten die zijn 
 
 ### <a name="to-modify-the-code-behind-file"></a>De code achter het bestand wijzigen
 
-1. Klik in Solution Explorer met de rechter muisknop op **MainPage. xaml**en klik vervolgens op **code weer geven**.
+1. Klik in Solution Explorer met de rechter muisknop op **MainPage. xaml** en klik vervolgens op **code weer geven**.
 2. Voeg in de naam ruimte SSPlayer een nieuwe klasse toe:
    ```csharp
         #region class Track

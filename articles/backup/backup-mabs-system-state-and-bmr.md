@@ -4,11 +4,11 @@ description: Gebruik Azure Backup Server om een back-up te maken van uw systeem 
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.openlocfilehash: c5096158ca0e76ca03577347d8dd3e1419a33ca0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86538697"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021619"
 ---
 # <a name="back-up-system-state-and-restore-to-bare-metal-by-using-azure-backup-server"></a>Maak een back-up van de systeem status en herstel op bare-metal computers met behulp van Azure Backup Server
 
@@ -87,9 +87,9 @@ Wanneer de back-up is voltooid, wordt het bestand overgebracht naar de back-upse
   * U kunt de grootte van het replica volume niet verkleinen tot minder dan 15 GB.
   * De back-upserver berekent niet de grootte van de BMR-gegevens bron. Hierbij wordt uitgegaan van 30 GB voor alle servers. Wijzig de waarde op basis van de grootte van de BMR-back-ups die u in uw omgeving verwacht. U kunt de grootte van een BMR-back-up berekenen als de som van de gebruikte ruimte op alle essentiële volumes. Essentiële volumes = opstart volume + systeem volume + volume dat als host fungeert voor systeem status gegevens, zoals Active Directory.
 
-* Als u van systeem status beveiliging naar BMR-beveiliging overschakelt, is voor BMR-beveiliging minder ruimte op het *herstel punt volume*nodig. De extra ruimte op het volume wordt echter niet vrijgemaakt. U kunt de volume grootte hand matig verkleinen op de pagina **schijf toewijzing wijzigen** van de wizard beveiligings groep wijzigen. U kunt ook de Power shell-cmdlets Get-DatasourceDiskAllocation en Set-DatasourceDiskAllocation gebruiken.
+* Als u van systeem status beveiliging naar BMR-beveiliging overschakelt, is voor BMR-beveiliging minder ruimte op het *herstel punt volume* nodig. De extra ruimte op het volume wordt echter niet vrijgemaakt. U kunt de volume grootte hand matig verkleinen op de pagina **schijf toewijzing wijzigen** van de wizard beveiligings groep wijzigen. U kunt ook de Power shell-cmdlets Get-DatasourceDiskAllocation en Set-DatasourceDiskAllocation gebruiken.
 
-    Als u van systeem status beveiliging naar BMR-beveiliging overschakelt, is voor BMR-beveiliging meer ruimte op het *replica volume*nodig. Het volume wordt automatisch uitgebreid. Als u de standaard ruimte toewijzingen wilt wijzigen, gebruikt u de Modify-DiskAllocation Power shell-cmdlet.
+    Als u van systeem status beveiliging naar BMR-beveiliging overschakelt, is voor BMR-beveiliging meer ruimte op het *replica volume* nodig. Het volume wordt automatisch uitgebreid. Als u de standaard ruimte toewijzingen wilt wijzigen, gebruikt u de Modify-DiskAllocation Power shell-cmdlet.
 
 * Als u van BMR-beveiliging naar systeem status beveiliging overschakelt, hebt u meer ruimte nodig op het herstel punt volume. De back-upserver probeert het volume mogelijk automatisch te verg Roten. Als er onvoldoende ruimte beschikbaar is in de opslag groep, treedt er een fout op.
 
@@ -103,7 +103,7 @@ Wanneer de back-up is voltooid, wordt het bestand overgebracht naar de back-upse
 
 1. **Opslag instellen**. U kunt back-upgegevens opslaan op schijf, op tape en in de Cloud met Azure. Zie voor meer informatie [voorbereiden van gegevens opslag](/system-center/dpm/plan-long-and-short-term-data-storage).
 
-1. **Stel de beveiligings agent**in. Installeer de beveiligings agent op de computer waarvan u een back-up wilt maken. Zie [de DPM-beveiligings agent implementeren](/system-center/dpm/deploy-dpm-protection-agent)voor meer informatie.
+1. **Stel de beveiligings agent** in. Installeer de beveiligings agent op de computer waarvan u een back-up wilt maken. Zie [de DPM-beveiligings agent implementeren](/system-center/dpm/deploy-dpm-protection-agent)voor meer informatie.
 
 ## <a name="back-up-system-state-and-bare-metal"></a>Systeemstatus- en bare metalback-ups
 
@@ -111,7 +111,7 @@ Back-ups maken van de systeem status en Bare Metal:
 
 1. Als u de wizard nieuwe beveiligingsgroep maken wilt openen, selecteert u in de Administrator-console van de back-upserver de optie **beveiligings**  >  **acties**  >  **beveiligings groep maken**.
 
-1. Selecteer op de pagina **type beveiligings groep selecteren** de optie **servers**en selecteer vervolgens **volgende**.
+1. Selecteer op de pagina **type beveiligings groep selecteren** de optie **servers** en selecteer vervolgens **volgende**.
 
 1. Op de pagina **groeps leden selecteren** vouwt u de computer uit en selecteert u vervolgens **BMR** of **systeem status**.
 
@@ -122,11 +122,11 @@ Back-ups maken van de systeem status en Bare Metal:
     Back-ups op korte termijn zijn altijd eerst op schijf, met de optie om een back-up van de schijf naar Azure te maken met behulp van Azure Backup (korte termijn of lange termijn). Een alternatief voor lange termijn back-up naar de Cloud is het instellen van back-ups op lange termijn naar een zelfstandig tape apparaat of een tape wisselaar die is verbonden met de back-upserver.
 
 1. Kies op de pagina **Short-Term doelen selecteren** hoe u een back-up wilt maken naar kortetermijnbeveiliging op schijf:
-    * Kies voor **Bewaar termijn**hoe lang de gegevens op de schijf bewaard moeten blijven.
-    * Kies voor **synchronisatie frequentie**hoe vaak een incrementele back-up naar schijf moet worden uitgevoerd. Als u geen back-upinterval wilt instellen, kunt u **net voor een herstel punt**selecteren. De back-upserver voert een snelle volledige back-up uit, net voordat elk herstel punt is gepland.
+    * Kies voor **Bewaar termijn** hoe lang de gegevens op de schijf bewaard moeten blijven.
+    * Kies voor **synchronisatie frequentie** hoe vaak een incrementele back-up naar schijf moet worden uitgevoerd. Als u geen back-upinterval wilt instellen, kunt u **net voor een herstel punt** selecteren. De back-upserver voert een snelle volledige back-up uit, net voordat elk herstel punt is gepland.
 
 1. Als u gegevens op tape wilt opslaan voor lange termijn opslag, kiest u op de pagina **Long-Term doelstellingen opgeven** hoe lang u tape gegevens wilt bewaren (1 tot 99 jaar).
-    1. Kies voor **frequentie van back-ups**hoe vaak u een back-up op tape wilt uitvoeren. De frequentie is gebaseerd op de Bewaar termijn die u hebt geselecteerd:
+    1. Kies voor **frequentie van back-ups** hoe vaak u een back-up op tape wilt uitvoeren. De frequentie is gebaseerd op de Bewaar termijn die u hebt geselecteerd:
         * Wanneer de Bewaar termijn 1 tot 99 jaar is, kunt u een back-up maken van dagelijks, wekelijks, twee wekelijks, maandelijks, elk kwar taal, halfjaarlijks of jaarlijks.
         * Wanneer de Bewaar termijn is ingesteld op 1 tot 11 maanden, kunt u een back-up maken van dagelijks, wekelijks, twee wekelijks of maandelijks.
         * Wanneer de Bewaar termijn 1 tot 4 weken is, kunt u dagelijks of wekelijks een back-up maken.
@@ -159,7 +159,7 @@ Back-ups maken van de systeem status en Bare Metal:
 
     U kunt via het netwerk repliceren of een back-up maken van offline (offline seeding). Een offline back-up maakt gebruik van de Azure import-functie. Zie [offline back-upwerk stroom in azure backup](offline-backup-azure-data-box.md)voor meer informatie.
 
-1. Controleer uw instellingen op de pagina  **samen vatting** . Nadat u **groep maken**hebt geselecteerd, vindt de initiële replicatie van de gegevens plaats. Wanneer de gegevens replicatie is voltooid, is de status van de beveiligings groep op de pagina **status** **OK**. Back-ups worden vervolgens uitgevoerd volgens de instellingen van de beveiligings groep.
+1. Controleer uw instellingen op de pagina  **samen vatting** . Nadat u **groep maken** hebt geselecteerd, vindt de initiële replicatie van de gegevens plaats. Wanneer de gegevens replicatie is voltooid, is de status van de beveiligings groep op de pagina **status** **OK**. Back-ups worden vervolgens uitgevoerd volgens de instellingen van de beveiligings groep.
 
 ## <a name="recover-system-state-or-bmr"></a>Systeemstatus of BMR herstellen
 
@@ -173,7 +173,7 @@ Herstel uitvoeren op de back-upserver computer:
 
 1. Beschikbare herstelpunten worden vet weergegeven in de kalender. Selecteer de datum en tijd voor het herstel punt dat u wilt gebruiken.
 
-1. Selecteer op de pagina  **type herstel bewerking selecteren** de optie **kopiëren naar een**netwerkmap.
+1. Selecteer op de pagina  **type herstel bewerking selecteren** de optie **kopiëren naar een** netwerkmap.
 
 1. Selecteer op de pagina **bestemming opgeven** de bestemming voor de gekopieerde gegevens.
 
@@ -203,11 +203,11 @@ Het systeem herstellen:
 
 1. Selecteer op de pagina **Opties voor systeem herstel** **de optie uw computer herstellen met een systeem installatie kopie die u eerder hebt gemaakt**.
 
-1. Selecteer op de pagina **Selecteer een systeem kopie back-up** de optie **Selecteer een systeem**kopie  >  **Geavanceerd**  >  **zoeken naar een systeem installatie kopie op het netwerk**. Als er een waarschuwing wordt weer gegeven, selecteert u **Ja**. Ga naar het pad naar de share, voer de referenties in en selecteer het herstel punt. Het systeem zoekt naar specifieke back-ups die in dat herstel punt beschikbaar zijn. Selecteer het herstel punt dat u wilt gebruiken.
+1. Selecteer op de pagina **Selecteer een systeem kopie back-up** de optie **Selecteer een systeem** kopie  >  **Geavanceerd**  >  **zoeken naar een systeem installatie kopie op het netwerk**. Als er een waarschuwing wordt weer gegeven, selecteert u **Ja**. Ga naar het pad naar de share, voer de referenties in en selecteer het herstel punt. Het systeem zoekt naar specifieke back-ups die in dat herstel punt beschikbaar zijn. Selecteer het herstel punt dat u wilt gebruiken.
 
 1. Selecteer op de pagina **Kies hoe u de back-upbewerking wilt herstellen de** optie **schijven Format teren en opnieuw partitioneren**. Controleer de instellingen op de volgende pagina.
 
-1. Selecteer **volt ooien**om de herstel bewerking te starten. De computer moet opnieuw worden opgestart.
+1. Selecteer **volt ooien** om de herstel bewerking te starten. De computer moet opnieuw worden opgestart.
 
 ### <a name="restore-system-state"></a>Systeemstatus herstellen
 
@@ -217,7 +217,7 @@ Herstel uitvoeren op de back-upserver:
 
 1. Beschikbare herstelpunten worden vet weergegeven in de kalender. Selecteer de datum en tijd voor het herstel punt dat u wilt gebruiken.
 
-1. Selecteer op de pagina **type herstel bewerking selecteren** de optie **kopiëren naar een**netwerkmap.
+1. Selecteer op de pagina **type herstel bewerking selecteren** de optie **kopiëren naar een** netwerkmap.
 
 1. Selecteer op de pagina **bestemming opgeven** waar u de gegevens wilt kopiëren.
 
@@ -233,7 +233,7 @@ Herstel uitvoeren op de back-upserver:
 
 Windows Server Back-up uitvoeren:
 
-1. Selecteer **acties**  >  **Recover**  >  **deze server**herstellen  >  **volgende**.
+1. Selecteer **acties**  >  **Recover**  >  **deze server** herstellen  >  **volgende**.
 
 1. Selecteer **een andere server**, selecteer de pagina **type locatie opgeven** en selecteer vervolgens **externe gedeelde map**. Geef het pad op naar de map die het herstel punt bevat.
 

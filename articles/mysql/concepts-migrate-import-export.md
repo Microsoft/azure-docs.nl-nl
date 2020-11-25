@@ -7,11 +7,11 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 10/30/2020
 ms.openlocfilehash: af9f0f65e01a786d478fac0adde6174b8f03b2fd
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94537897"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019890"
 ---
 # <a name="migrate-your-mysql-database-by-using-import-and-export"></a>Uw MySQL-data base migreren met behulp van importeren en exporteren
 [!INCLUDE[applies-to-single-flexible-server](includes/applies-to-single-flexible-server.md)]

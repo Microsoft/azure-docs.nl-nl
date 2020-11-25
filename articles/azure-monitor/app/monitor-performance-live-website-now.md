@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 08/26/2019
 ms.custom: devx-track-dotnet
 ms.openlocfilehash: 6c27c78bf8e3f3b8af342a14a38c9be3821d781a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91758660"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020922"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-codeless-attach"></a>Web-apps tijdens runtime instrumenteren met Application Insights zonder code koppelen
 
@@ -41,7 +41,7 @@ Hier volgt een samenvatting van wat elke route u biedt:
 |  | Tijdens het bouwen | Tijdens het gebruik |
 | --- | --- | --- |
 | **& uitzonde ringen aanvragen** |Ja |Ja |
-| **[Meer gedetailleerde uitzonde ringen](./asp-net-exceptions.md)** | |Ja |
+| **[Meer gedetailleerde uitzonde ringen](./asp-net-exceptions.md)** | |Yes |
 | **[Afhankelijkheids diagnostiek](./asp-net-dependencies.md)** |Op .NET 4.6+, maar minder details |Ja, volledige details: resultaatcodes, SQL-opdrachttekst, HTTP-woord|
 | **[Systeemprestatiemeteritems](./performance-counters.md)** |Ja |Ja |
 | **[API voor aangepaste telemetrie][api]** |Ja |Nee |

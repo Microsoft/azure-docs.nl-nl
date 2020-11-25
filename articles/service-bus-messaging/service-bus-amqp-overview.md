@@ -3,12 +3,12 @@ title: Overzicht van AMQP 1,0 in Azure Service Bus
 description: Lees hoe Azure Service Bus Advanced Message Queueing Protocol (AMQP) ondersteunt, een open standaard protocol.
 ms.topic: article
 ms.date: 11/20/2020
-ms.openlocfilehash: a643869d7d89b287e899b1eab89c5b9ec11856e5
-ms.sourcegitcommit: 1d366d72357db47feaea20c54004dc4467391364
+ms.openlocfilehash: 85943344fd8f20cf3a73af5d637b65676584f93f
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95396804"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96022168"
 ---
 # <a name="amqp-10-support-in-service-bus"></a>Ondersteuning voor AMQP 1,0 in Service Bus
 De Azure Service Bus-Cloud service maakt gebruik van het [Advanced Message queueing Protocol (AMQP) 1,0](http://docs.oasis-open.org/amqp/core/v1.0/amqp-core-overview-v1.0.html) als het belangrijkste communicatie middel. Micro soft heeft partners in de branche, zowel klanten als leveranciers van concurrerende Messa ging-makelaars, ontwikkeld om AMQP in het afgelopen decennium te ontwikkelen en ontwikkelen, met nieuwe uitbrei dingen die worden ontwikkeld in het [Oasis AMQP Technical Committee](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=amqp). AMQP 1,0 is een ISO-en IEC-norm ([iso 19464:20149](https://www.iso.org/standard/64955.html)). 
@@ -70,20 +70,11 @@ Alle ondersteunde Service Bus-client bibliotheken die beschikbaar zijn via de Az
 - [Azure Service Bus-modules voor Java script en type script](https://docs.microsoft.com/javascript/api/overview/azure/service-bus?view=azure-node-latest&preserve-view=true)
 - [Azure Service Bus bibliotheken voor python](https://docs.microsoft.com/python/api/overview/azure/servicebus?view=azure-python&preserve-view=true)
 
+[!INCLUDE [service-bus-websockets-options](../../includes/service-bus-websockets-options.md)]
+
 Daarnaast kunt u Service Bus gebruiken vanuit elke AMQP 1,0 compatibele protocol stack:
 
-| Taal | Bibliotheek |
-| --- | --- |
-| Java | [Apache Qpid Proton-J](https://qpid.apache.org/proton/index.html) |
-| C/C++ |[Azure UAMQP C](https://github.com/azure/azure-uamqp-c/), [Apache Qpid Proton-C](https://qpid.apache.org/proton/index.html) |
-| Python |[Azure uAMQP voor python](https://github.com/azure/azure-uamqp-python/), [Apache Qpid Proton python](https://qpid.apache.org/releases/qpid-proton-0.32.0/proton/python/docs/overview.html) |
-| PHP | [Azure-uAMQP voor PHP](https://github.com/vsouz4/azure-uamqp-php/) |
-| Ruby | [Apache Qpid Proton ruby](https://github.com/apache/qpid-proton/tree/master/ruby) |
-| Aan de slag | [Azure go AMQP](https://github.com/Azure/go-amqp), [Apache Qpid Proton go](https://github.com/apache/qpid-proton/tree/master/go/examples)
-| C#/F #/VB | [AMQP .net Lite](https://github.com/Azure/amqpnetlite), [Apache NMS AMQP](https://github.com/apache/activemq-nms-amqp)|
-| Java script/knoop punt | [Rhea](https://github.com/grs/rhea) |
-
-**Afbeelding 2: tabel met AMQP 1,0-client bibliotheken**
+[!INCLUDE [messaging-oss-amqp-stacks.md](../../includes/messaging-oss-amqp-stacks.md)]
 
 ## <a name="summary"></a>Samenvatting
 * AMQP 1,0 is een open, betrouw bare berichten protocol dat u kunt gebruiken voor het bouwen van platformoverschrijdende, hybride toepassingen. AMQP 1,0 is een OASIS-standaard.

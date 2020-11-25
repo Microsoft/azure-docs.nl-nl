@@ -5,11 +5,11 @@ ms.service: cognitive-services
 ms.date: 10/26/2020
 ms.custom: devx-track-js
 ms.openlocfilehash: 0c6c80849f48cb4f859bcbaaeb4f072eb575ba74
-ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94625408"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021262"
 ---
 Deze handleiding biedt informatie en voorbeeldcode om u op weg te helpen met de Custom Vision-clientbibliotheek voor Node.js om een objectdetectiemodel te maken. U maakt een project, voegt tags toe, traint het project en gebruikt de voorspellingseindpunt-URL van het project om het programmatisch te testen. Gebruik dit voorbeeld als een sjabloon om uw eigen beeldherkennings-app te maken.
 

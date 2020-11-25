@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 07/07/2017
 ms.subservice: autoscale
 ms.openlocfilehash: 543ecc80abeb9a437a895224de6ade679698c4d7
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94565633"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020905"
 ---
 # <a name="get-started-with-autoscale-in-azure"></a>Aan de slag met automatisch schalen in azure
 In dit artikel wordt beschreven hoe u uw instellingen voor automatisch schalen instelt voor uw resource in de Microsoft Azure-portal.
@@ -32,9 +32,9 @@ U kunt het filter deel venster bovenaan het bereik van de lijst gebruiken om res
 
 Voor elke resource vindt u het aantal huidige instanties en de status automatisch schalen. De status voor automatisch schalen kan zijn:
 
-- **Niet geconfigureerd** : u hebt automatisch schalen nog niet ingeschakeld voor deze resource.
-- **Ingeschakeld** : u hebt automatisch schalen ingeschakeld voor deze resource.
-- **Uitgeschakeld** : u hebt automatisch schalen uitgeschakeld voor deze resource.
+- **Niet geconfigureerd**: u hebt automatisch schalen nog niet ingeschakeld voor deze resource.
+- **Ingeschakeld**: u hebt automatisch schalen ingeschakeld voor deze resource.
+- **Uitgeschakeld**: u hebt automatisch schalen uitgeschakeld voor deze resource.
 
 ## <a name="create-your-first-autoscale-setting"></a>Uw eerste instelling voor automatisch schalen maken
 
@@ -121,7 +121,7 @@ Als u de functie wilt inschakelen met ARM-sjablonen, stelt `healthcheckpath` u d
 
 ### <a name="health-check-path"></a>Pad voor status controle
 
-Het pad moet binnen één minuut reageren met een status code tussen 200 en 299 (inclusief). Als het pad niet binnen één minuut reageert of een status code buiten het bereik retourneert, wordt het exemplaar als ' beschadigd ' beschouwd. App Service volgt niet 302 omleidingen op het Health Check-pad. Status controle kan worden geïntegreerd met de functies voor verificatie en autorisatie van App Service. het systeem bereikt het eind punt zelfs als deze secuity-functies zijn ingeschakeld. Als u uw eigen verificatie systeem gebruikt, moet het Health Check-pad anonieme toegang toestaan. Als de site HTTP **s** -only heeft ingeschakeld, wordt de status controle-aanvraag verzonden via http **s**.
+Het pad moet binnen één minuut reageren met een status code tussen 200 en 299 (inclusief). Als het pad niet binnen één minuut reageert of een status code buiten het bereik retourneert, wordt het exemplaar als ' beschadigd ' beschouwd. App Service volgt niet 302 omleidingen op het Health Check-pad. Status controle kan worden geïntegreerd met de functies voor verificatie en autorisatie van App Service. het systeem bereikt het eind punt zelfs als deze secuity-functies zijn ingeschakeld. Als u uw eigen verificatie systeem gebruikt, moet het Health Check-pad anonieme toegang toestaan. Als de site HTTP **s**-only heeft ingeschakeld, wordt de status controle-aanvraag verzonden via http **s**.
 
 Het controle traject voor de status moet de essentiële onderdelen van uw toepassing controleren. Als uw toepassing bijvoorbeeld afhankelijk is van een Data Base en een berichten systeem, moet het eind punt van de status controle verbinding maken met deze onderdelen. Als de toepassing geen verbinding kan maken met een kritiek onderdeel, moet het pad een respons code op 500-niveau retour neren om aan te geven dat de app een slechte status heeft.
 

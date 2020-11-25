@@ -12,11 +12,11 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: e6eb0be4d9946907dc5bb2f22b27530a27a37aec
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321261"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021449"
 ---
 # <a name="scalable-data-science-with-azure-data-lake-an-end-to-end-walkthrough"></a>Schaal bare gegevens wetenschap met Azure Data Lake: een end-to-end-procedure
 In dit scenario ziet u hoe u Azure Data Lake kunt gebruiken om gegevens te verkennen en binaire classificatie taken uit te voeren op basis van een steek proef van de NYC taxi en de ritbedrag-gegevensset om te voors pellen of een tip wordt betaald door een tarief. U wordt begeleid bij de stappen van het [team data Science process](./index.yml), end-to-end, van data acquisition to model training en vervolgens naar de implementatie van een webservice die het model publiceert.
@@ -143,7 +143,7 @@ De gegevens verwerkings taken die in deze sectie worden geïllustreerd, zijn opn
 
 De U-SQL-scripts worden hier beschreven en opgenomen in een afzonderlijk bestand. U kunt de volledige **u-SQL-scripts** downloaden van [github](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/AzureDataLakeWalkthrough).
 
-Om U-SQL uit te voeren, opent U Visual Studio, klikt u op **bestand--> nieuw--> project** , kiest **U-SQL project** , naam en slaat u het op in een map.
+Om U-SQL uit te voeren, opent U Visual Studio, klikt u op **bestand--> nieuw--> project**, kiest **U-SQL project**, naam en slaat u het op in een map.
 
 ![8](./media/data-lake-walkthrough/8-create-USQL-project.PNG)
 
@@ -461,7 +461,7 @@ USING Outputters.Csv();
 ```
 
 ### <a name="run-u-sql-jobs"></a><a name="run"></a>U-SQL-taken uitvoeren
-Nadat u-SQL-scripts hebt bewerkt, kunt u deze naar de server verzenden met uw Azure Data Lake Analytics-account. Klik op **Data Lake** , **taak verzenden** , selecteer uw **Analytics-account** , kies **parallellisme** en klik op **verzenden** .
+Nadat u-SQL-scripts hebt bewerkt, kunt u deze naar de server verzenden met uw Azure Data Lake Analytics-account. Klik op **Data Lake**, **taak verzenden**, selecteer uw **Analytics-account**, kies **parallellisme** en klik op **verzenden** .
 
  ![12](./media/data-lake-walkthrough/12-submit-USQL.PNG)
 
@@ -671,7 +671,7 @@ Een HDInsight-cluster (Linux) maken op basis van de [Azure Portal](https://porta
  ![18](./media/data-lake-walkthrough/18-create_HDI_cluster.PNG)
 
 ### <a name="create-hive-table-in-hdinsight"></a>Hive-tabel maken in HDInsight
-U maakt nu Hive-tabellen die worden gebruikt in Azure Machine Learning Studio (klassiek) in het HDInsight-cluster met behulp van de gegevens die zijn opgeslagen in Azure Data Lake Storage in de vorige stap. Ga naar het HDInsight-cluster dat u hebt gemaakt. Klik op **instellingen**  -->  **Eigenschappen**  -->  **cluster Aad-identiteit**  -->  **ADLS toegang** , Controleer of uw Azure data Lake Storage account is toegevoegd in de lijst met rechten voor lezen, schrijven en uitvoeren.
+U maakt nu Hive-tabellen die worden gebruikt in Azure Machine Learning Studio (klassiek) in het HDInsight-cluster met behulp van de gegevens die zijn opgeslagen in Azure Data Lake Storage in de vorige stap. Ga naar het HDInsight-cluster dat u hebt gemaakt. Klik op **instellingen**  -->  **Eigenschappen**  -->  **cluster Aad-identiteit**  -->  **ADLS toegang**, Controleer of uw Azure data Lake Storage account is toegevoegd in de lijst met rechten voor lezen, schrijven en uitvoeren.
 
  ![19](./media/data-lake-walkthrough/19-HDI-cluster-add-ADLS.PNG)
 

@@ -10,16 +10,16 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 04/01/2020
 ms.author: aahi
-ms.openlocfilehash: ecb0b6a6577161a5349d9d701dd6c116f69411f0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b734f54f39b0f442f398a60ad25a846b0f9a6322
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80876072"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96021806"
 ---
 # <a name="deploy-the-computer-vision-container-to-azure-container-instances"></a>De Computer Vision-container implementeren op Azure Container Instances
 
-Meer informatie over het implementeren van de Cognitive Services [Computer Vision](computer-vision-how-to-install-containers.md) -container in azure [container instances](https://docs.microsoft.com/azure/container-instances/). Met deze procedure wordt het maken van de Computer Vision resource gedemonstreerd. Vervolgens bespreken we het verzamelen van de bijbehorende container installatie kopie. Ten slotte markeren we de mogelijkheid om de indeling van de twee uit een browser uit te oefenen. Door gebruik te maken van containers kan de aandacht van de ontwikkel aars van de infra structuur afnemen in plaats van de ontwikkeling van toepassingen te richten.
+Meer informatie over het implementeren van de Cognitive Services [Computer Vision](computer-vision-how-to-install-containers.md) -container in azure [container instances](../../container-instances/index.yml). Met deze procedure wordt het maken van de Computer Vision resource gedemonstreerd. Vervolgens bespreken we het verzamelen van de bijbehorende container installatie kopie. Ten slotte markeren we de mogelijkheid om de indeling van de twee uit een browser uit te oefenen. Door gebruik te maken van containers kan de aandacht van de ontwikkel aars van de infra structuur afnemen in plaats van de ontwikkeling van toepassingen te richten.
 
 [!INCLUDE [Prerequisites](../containers/includes/container-preview-prerequisites.md)]
 

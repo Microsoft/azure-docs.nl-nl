@@ -12,11 +12,11 @@ ms.workload: infrastructure-services
 ms.date: 07/22/2017
 ms.author: ningk
 ms.openlocfilehash: fde0afcd37cd464b0b87e5ccd257d4a7a684eeb0
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93040768"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021585"
 ---
 # <a name="deploy-azure-log-analytics-nozzle-for-cloud-foundry-system-monitoring"></a>Azure Log Analytics-spuit voor Cloud Foundry systeem bewaking implementeren
 
@@ -61,11 +61,11 @@ U kunt de Log Analytics-werk ruimte hand matig of met behulp van een sjabloon ma
 1. Zoek in de Azure Portal de lijst met Services in de Azure Marketplace en selecteer vervolgens Log Analytics werk ruimten.
 2. Selecteer **Maken** en geef uw keuze aan voor de volgende items:
 
-   * **Log Analytics werk ruimte** : Typ een naam voor uw werk ruimte.
-   * **Abonnement** : als u meerdere abonnementen hebt, kiest u de optie die gelijk is aan uw CF-implementatie.
-   * **Resource groep** : u kunt een nieuwe resource groep maken of dezelfde gebruiken met uw CF-implementatie.
-   * **Locatie** : Voer de locatie in.
-   * **Prijs categorie** : Selecteer **OK** om te volt ooien.
+   * **Log Analytics werk ruimte**: Typ een naam voor uw werk ruimte.
+   * **Abonnement**: als u meerdere abonnementen hebt, kiest u de optie die gelijk is aan uw CF-implementatie.
+   * **Resource groep**: u kunt een nieuwe resource groep maken of dezelfde gebruiken met uw CF-implementatie.
+   * **Locatie**: Voer de locatie in.
+   * **Prijs categorie**: Selecteer **OK** om te volt ooien.
 
 Zie [aan de slag met Azure monitor-logboeken](../azure-monitor/overview.md)voor meer informatie.
 
@@ -76,13 +76,13 @@ Zie [aan de slag met Azure monitor-logboeken](../azure-monitor/overview.md)voor 
 1. Typ ' Cloud Foundry ' in het venster zoeken, selecteer Cloud Foundry bewakings oplossing.
 1. De voor pagina met de Cloud Foundry monitoring-oplossings sjabloon is geladen, klikt u op maken om de Blade sjabloon te starten.
 1. Voer de vereiste para meters in:
-    * **Abonnement** : Selecteer een Azure-abonnement voor de log Analytics-werk ruimte, meestal hetzelfde als bij Cloud Foundry-implementatie.
-    * **Resource groep** : Selecteer een bestaande resource groep of maak een nieuwe voor de log Analytics-werk ruimte.
-    * **Locatie van de resource groep** : Selecteer de locatie van de resource groep.
-    * **OMS_Workspace_Name** : Voer de naam van een werk ruimte in als de werk ruimte niet bestaat, wordt er een nieuwe gemaakt.
-    * **OMS_Workspace_Region** : Selecteer de locatie voor de werk ruimte.
-    * **OMS_Workspace_Pricing_Tier** : selecteer de log Analytics WORKSPACE-SKU. Zie de [richt lijnen voor prijzen](https://azure.microsoft.com/pricing/details/log-analytics/) voor naslag informatie.
-    * **Juridische voor waarden** : Klik op juridische voor waarden en klik vervolgens op maken om de juridische termijn te accepteren.
+    * **Abonnement**: Selecteer een Azure-abonnement voor de log Analytics-werk ruimte, meestal hetzelfde als bij Cloud Foundry-implementatie.
+    * **Resource groep**: Selecteer een bestaande resource groep of maak een nieuwe voor de log Analytics-werk ruimte.
+    * **Locatie van de resource groep**: Selecteer de locatie van de resource groep.
+    * **OMS_Workspace_Name**: Voer de naam van een werk ruimte in als de werk ruimte niet bestaat, wordt er een nieuwe gemaakt.
+    * **OMS_Workspace_Region**: Selecteer de locatie voor de werk ruimte.
+    * **OMS_Workspace_Pricing_Tier**: selecteer de log Analytics WORKSPACE-SKU. Zie de [richt lijnen voor prijzen](https://azure.microsoft.com/pricing/details/log-analytics/) voor naslag informatie.
+    * **Juridische voor waarden**: Klik op juridische voor waarden en klik vervolgens op maken om de juridische termijn te accepteren.
 1. Nadat alle para meters zijn opgegeven, klikt u op maken om de sjabloon te implementeren. Wanneer de implementatie is voltooid, wordt de status weer gegeven op het tabblad melding.
 
 
@@ -185,7 +185,7 @@ Als u de werk ruimte Log Analytics hand matig hebt gemaakt, volgt u de onderstaa
 
 Blader vanuit de OMS-Portal naar **weer gave Designer**  >  **import**  >  **Browse** en selecteer een van de omsview-bestanden. Selecteer bijvoorbeeld *Cloud Foundry. omsview* en sla de weer gave op. Er wordt nu een tegel op de pagina **overzicht** weer gegeven. Selecteer deze optie om gevisualiseerde metrische gegevens weer te geven.
 
-U kunt deze weer gaven aanpassen of nieuwe weer gaven maken met behulp van de **weer gave Designer** .
+U kunt deze weer gaven aanpassen of nieuwe weer gaven maken met behulp van de **weer gave Designer**.
 
 De *' Cloud Foundry. omsview '* is een preview-versie van de Cloud Foundry OMS-weergave sjabloon. Dit is een volledig geconfigureerde standaard sjabloon. Als u suggesties of feedback over de sjabloon hebt, verzendt u deze naar de [sectie probleem](https://github.com/Azure/oms-log-analytics-firehose-nozzle/issues).
 
@@ -193,7 +193,7 @@ De *' Cloud Foundry. omsview '* is een preview-versie van de Cloud Foundry OMS-w
 
 U kunt [de waarschuwingen maken](../azure-monitor/platform/alerts-overview.md)en zo nodig de query's en drempel waarden aanpassen. De volgende waarschuwingen worden aanbevolen:
 
-| Zoekquery                                                                  | Waarschuwing genereren op basis van | Beschrijving                                                                       |
+| Zoekquery                                                                  | Waarschuwing genereren op basis van | Description                                                                       |
 | ----------------------------------------------------------------------------- | ----------------------- | --------------------------------------------------------------------------------- |
 | Type = CF_ValueMetric_CL Origin_s = BBS Name_s = "domein. CF-apps"                   | Aantal resultaten < 1   | **BBS. Domain.cf: apps** geeft aan of het CF-Apps-domein up-to-date is. Dit betekent dat CF-app-aanvragen van de Cloud controller zijn gesynchroniseerd met BBS. LRPsDesired (Diego-gewenste AIs) voor uitvoering. Geen gegevens ontvangen betekent dat het CF-Apps-domein niet up-to-date is in het opgegeven tijd venster. |
 | Type = CF_ValueMetric_CL Origin_s = rep Name_s = UnhealthyCell Value_d>1            | Aantal resultaten > 0   | Voor Diego-cellen betekent 0 dat ze in orde zijn, en 1 betekent een slechte status. Stel de waarschuwing in als er meerdere beschadigde Diego-cellen worden gedetecteerd in het opgegeven tijd venster. |

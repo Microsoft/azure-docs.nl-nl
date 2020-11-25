@@ -6,18 +6,18 @@ services: container-service
 ms.topic: article
 ms.date: 09/21/2020
 ms.openlocfilehash: ad51bfdf8c494e763921de880926b839cdb7be62
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92900746"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021636"
 ---
 # <a name="dynamically-create-and-use-a-persistent-volume-with-azure-disks-in-azure-kubernetes-service-aks"></a>Dynamisch een permanent volume maken en gebruiken met Azure-schijven in azure Kubernetes service (AKS)
 
 Een permanent volume vertegenwoordigt een opslag ruimte die is ingericht voor gebruik met Kubernetes peul. Een permanent volume kan worden gebruikt door een of meer peulen en kan dynamisch of statisch worden ingericht. In dit artikel wordt beschreven hoe u dynamisch permanente volumes maakt met Azure-schijven voor gebruik door één pod in een Azure Kubernetes service-cluster (AKS).
 
 > [!NOTE]
-> Een Azure-schijf kan alleen worden gekoppeld met de *toegangs modus* type *ReadWriteOnce* , zodat deze beschikbaar is voor één knoop punt in AKS. Als u een permanent volume op meerdere knoop punten wilt delen, gebruikt u [Azure files][azure-files-pvc].
+> Een Azure-schijf kan alleen worden gekoppeld met de *toegangs modus* type *ReadWriteOnce*, zodat deze beschikbaar is voor één knoop punt in AKS. Als u een permanent volume op meerdere knoop punten wilt delen, gebruikt u [Azure files][azure-files-pvc].
 
 Zie [opslag opties voor toepassingen in AKS][concepts-storage]voor meer informatie over Kubernetes-volumes.
 
@@ -78,7 +78,7 @@ spec:
 ```
 
 > [!TIP]
-> Als u een schijf wilt maken die gebruikmaakt van standaard opslag, gebruikt u `storageClassName: default` in plaats van *Managed-Premium* .
+> Als u een schijf wilt maken die gebruikmaakt van standaard opslag, gebruikt u `storageClassName: default` in plaats van *Managed-Premium*.
 
 Maak de permanente volume claim met de opdracht [kubectl apply][kubectl-apply] en geef het bestand *Azure-Premium. yaml* op:
 
@@ -90,7 +90,7 @@ persistentvolumeclaim/azure-managed-disk created
 
 ## <a name="use-the-persistent-volume"></a>Het permanente volume gebruiken
 
-Als de permanente volume claim is gemaakt en de schijf is ingericht, kan een pod worden gemaakt met toegang tot de schijf. In het volgende manifest wordt een eenvoudige NGINX-pod gemaakt die gebruikmaakt van de permanente volume claim met de naam *Azure-Managed-Disk* om de Azure-schijf te koppelen aan het pad `/mnt/azure` . Voor Windows Server-containers geeft u een *mountPath* op met behulp van de Windows Path-Conventie, zoals *":"* .
+Als de permanente volume claim is gemaakt en de schijf is ingericht, kan een pod worden gemaakt met toegang tot de schijf. In het volgende manifest wordt een eenvoudige NGINX-pod gemaakt die gebruikmaakt van de permanente volume claim met de naam *Azure-Managed-Disk* om de Azure-schijf te koppelen aan het pad `/mnt/azure` . Voor Windows Server-containers geeft u een *mountPath* op met behulp van de Windows Path-Conventie, zoals *":"*.
 
 Maak een bestand `azure-pvc-disk.yaml` met de naam en kopieer het in het volgende manifest.
 
@@ -159,7 +159,7 @@ Zie [Ultra schijven gebruiken op Azure Kubernetes service (AKS)](use-ultra-disks
 
 Als u een back-up wilt maken van de gegevens in uw permanente volume, maakt u een moment opname van de beheerde schijf voor het volume. U kunt deze moment opname vervolgens gebruiken om een herstelde schijf te maken en te koppelen aan een manier om de gegevens te herstellen.
 
-Haal eerst de volume naam op met de `kubectl get pvc` opdracht, bijvoorbeeld voor het PVC met de naam *Azure-Managed-Disk* :
+Haal eerst de volume naam op met de `kubectl get pvc` opdracht, bijvoorbeeld voor het PVC met de naam *Azure-Managed-Disk*:
 
 ```console
 $ kubectl get pvc azure-managed-disk
@@ -176,7 +176,7 @@ $ az disk list --query '[].id | [?contains(@,`pvc-faf0f176-8b8d-11e8-923b-deb28c
 /subscriptions/<guid>/resourceGroups/MC_MYRESOURCEGROUP_MYAKSCLUSTER_EASTUS/providers/MicrosoftCompute/disks/kubernetes-dynamic-pvc-faf0f176-8b8d-11e8-923b-deb28c58d242
 ```
 
-Gebruik de schijf-ID om een momentopname schijf te maken met [AZ snap shot Create][az-snapshot-create]. In het volgende voor beeld wordt een moment opname gemaakt met de naam *pvcSnapshot* in dezelfde resource groep als de AKS-cluster ( *MC_myResourceGroup_myAKSCluster_eastus* ). U kunt problemen met de machtigingen ondervinden als u moment opnamen maakt en schijven herstelt in resource groepen waartoe het AKS-cluster geen toegang heeft.
+Gebruik de schijf-ID om een momentopname schijf te maken met [AZ snap shot Create][az-snapshot-create]. In het volgende voor beeld wordt een moment opname gemaakt met de naam *pvcSnapshot* in dezelfde resource groep als de AKS-cluster (*MC_myResourceGroup_myAKSCluster_eastus*). U kunt problemen met de machtigingen ondervinden als u moment opnamen maakt en schijven herstelt in resource groepen waartoe het AKS-cluster geen toegang heeft.
 
 ```azurecli-interactive
 $ az snapshot create \
@@ -189,7 +189,7 @@ Afhankelijk van de hoeveelheid gegevens op uw schijf kan het enkele minuten dure
 
 ## <a name="restore-and-use-a-snapshot"></a>Een moment opname herstellen en gebruiken
 
-Als u de schijf wilt herstellen en wilt gebruiken met een Kubernetes-Pod, gebruikt u de moment opname als bron bij het maken van een schijf met [AZ Disk Create][az-disk-create]. Met deze bewerking wordt de oorspronkelijke resource behouden als u vervolgens toegang moet hebben tot de oorspronkelijke gegevens momentopname. In het volgende voor beeld wordt een schijf met de naam *pvcRestored* gemaakt in de moment opname met de naam *pvcSnapshot* :
+Als u de schijf wilt herstellen en wilt gebruiken met een Kubernetes-Pod, gebruikt u de moment opname als bron bij het maken van een schijf met [AZ Disk Create][az-disk-create]. Met deze bewerking wordt de oorspronkelijke resource behouden als u vervolgens toegang moet hebben tot de oorspronkelijke gegevens momentopname. In het volgende voor beeld wordt een schijf met de naam *pvcRestored* gemaakt in de moment opname met de naam *pvcSnapshot*:
 
 ```azurecli-interactive
 az disk create --resource-group MC_myResourceGroup_myAKSCluster_eastus --name pvcRestored --source pvcSnapshot
@@ -201,7 +201,7 @@ Als u de herstelde schijf wilt gebruiken met een Pod, geeft u de ID van de schij
 az disk show --resource-group MC_myResourceGroup_myAKSCluster_eastus --name pvcRestored --query id -o tsv
 ```
 
-Maak een pod-manifest `azure-restored.yaml` met de naam en geef de schijf-URI op die in de vorige stap is verkregen. In het volgende voor beeld wordt een eenvoudige NGINX-webserver gemaakt, waarbij de herstelde schijf is gekoppeld als een volume op */mnt/Azure* :
+Maak een pod-manifest `azure-restored.yaml` met de naam en geef de schijf-URI op die in de vorige stap is verkregen. In het volgende voor beeld wordt een eenvoudige NGINX-webserver gemaakt, waarbij de herstelde schijf is gekoppeld als een volume op */mnt/Azure*:
 
 ```yaml
 kind: Pod

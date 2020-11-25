@@ -15,11 +15,11 @@ ms.topic: how-to
 ms.date: 05/01/2018
 ms.author: allensu
 ms.openlocfilehash: ed5768e89482d32bb140e9ba7064de2d20809892
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148717"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020718"
 ---
 # <a name="large-file-download-optimization-with-azure-cdn"></a>Optimalisatie van grote bestanden downloaden met Azure CDN
 
@@ -87,7 +87,7 @@ U kunt uw **Azure CDN-standaard configureren vanaf Akamai** -eind punt om de lev
 
     ![Nieuw eind punt](./media/cdn-large-file-optimization/cdn-new-akamai-endpoint.png)    
  
-2. Selecteer **grote bestanden downloaden**in de vervolg keuzelijst **geoptimaliseerd voor** .
+2. Selecteer **grote bestanden downloaden** in de vervolg keuzelijst **geoptimaliseerd voor** .
 
     ![Optimalisatie van grote bestanden geselecteerd](./media/cdn-large-file-optimization/cdn-large-file-select.png)
 

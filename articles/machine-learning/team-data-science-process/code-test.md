@@ -12,11 +12,11 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=weig, previous-ms.author=weig
 ms.openlocfilehash: bcebc568db4a0d2b4b287045ba0a67c88d9b8c92
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93312686"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020599"
 ---
 # <a name="data-science-code-testing-on-azure-with-the-team-data-science-process-and-azure-devops-services"></a>Gegevens wetenschappen code testen op Azure met het team data Science process en Azure DevOps Services
 Dit artikel bevat voorlopige richt lijnen voor het testen van code in een Data Science-werk stroom. Dergelijke tests bieden gegevens wetenschappers een systematische en efficiënte manier om de kwaliteit en het verwachte resultaat van hun code te controleren. We gebruiken een team data Science process (TDSP)- [project dat gebruikmaakt van de gegevensset van de ICB volwassene voor volwassenen](https://github.com/Azure/MachineLearningSamples-TDSPUCIAdultIncome) die eerder is gepubliceerd om te laten zien hoe code tests kunnen worden uitgevoerd. 
@@ -26,7 +26,7 @@ Dit artikel bevat voorlopige richt lijnen voor het testen van code in een Data S
 
 * Gegevensvoorbereiding
 * Kwaliteits onderzoek van gegevens
-* Modelleren
+* Modellen maken
 * Modelimplementatie 
 
 In dit artikel wordt de term ' eenheid testen ' vervangen door ' code testen '. Er wordt gerefereerd aan het testen als de functies die helpen te beoordelen of de code voor een bepaalde stap van een levens cyclus van een data technologie de resultaten levert zoals verwacht. De persoon die de test schrijft, definieert wat er wordt verwacht, afhankelijk van het resultaat van de functie, bijvoorbeeld gegevens kwaliteit controleren of model leren.
@@ -89,7 +89,7 @@ Gebruik de volgende stappen voor het instellen en uitvoeren van code testen en e
 
       ![Code voor het controleren van voorspellings waarden](./media/code-test/check_prediction_values.PNG)
 
-1. Plaats alle test functies samen in een python-script met de naam **test_funcs. py** :
+1. Plaats alle test functies samen in een python-script met de naam **test_funcs. py**:
 
     ![Python-script voor test functies](./media/code-test/create_file_test_func.PNG)
 
@@ -154,7 +154,7 @@ Als waarschuwingen correct zijn ingesteld, ontvangt u een melding in het e-mail 
 * Raadpleeg de [opslag plaats](https://github.com/Azure/MachineLearningSamples-TDSPUCIAdultIncome) voor de uitkering van icb's voor concrete voor beelden van eenheids tests voor data Science-scenario's.
 * Volg de voor gaande overzichten en voor beelden van het scenario van de ICB-baten prognose in uw eigen data Science-projecten.
 
-## <a name="references"></a>Verwijzingen
+## <a name="references"></a>Referenties
 * [Team Data Science Process](./index.yml)
 * [Hulpprogram Ma's voor het testen van Visual Studio](https://www.visualstudio.com/vs/features/testing-tools/)
 * [Azure DevOps-test bronnen](https://www.visualstudio.com/team-services/)

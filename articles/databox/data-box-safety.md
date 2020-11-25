@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 08/13/2019
 ms.author: alkohli
 ms.openlocfilehash: f4a0739eb1ab14155a98b17e2427c5b08c9db788
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90564420"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020667"
 ---
 # <a name="safely-install-and-operate-your-azure-data-box"></a>Uw Azure Data Box veilig installeren en uitvoeren
 ![Pictogram waarschuwings pictogram ](./media/data-box-safety/warning_icon.png)
@@ -24,7 +24,7 @@ Lees alle veiligheids informatie in dit artikel voordat u Azure Data Box gebruik
 ## <a name="safety-icon-conventions"></a>Conventies voor veiligheids pictogrammen
 Hier vindt u de pictogrammen die u zult vinden wanneer u de veiligheids maatregelen controleert die moeten worden waargenomen bij het instellen en uitvoeren van uw Data Box.
 
-| Pictogram | Beschrijving |
+| Pictogram | Description |
 |:--- |:--- |
 | ![Gevaar voor risico pictogram ](./media/data-box-safety/warning_icon.png) **!** |Duidt op een gevaarlijke situatie die, indien dat niet wordt vermeden, leidt tot dood of ernstige schade. Dit signaal Word is beperkt tot de meest extreme situaties. |
 | ![Waarschuwing voor waarschuwings pictogram ](./media/data-box-safety/warning_icon.png) **.** |Duidt op een gevaarlijke situatie die, indien dat niet wordt vermeden, kan leiden tot overlijden of ernstige schade. |

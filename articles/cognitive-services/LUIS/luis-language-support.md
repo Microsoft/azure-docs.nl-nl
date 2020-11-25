@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 12/09/2019
-ms.openlocfilehash: e377f910e1c1ddda864ea312b40fe3608c166376
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1da43d0ef208d61ced6c8ca8dbc7603e0ef51155
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91541387"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96021568"
 ---
 # <a name="language-and-region-support-for-luis"></a>Taal-en regio ondersteuning voor LUIS
 
@@ -28,7 +28,7 @@ Als u een LUIS-client toepassing met meerdere talen nodig hebt, zoals een chatbo
 
 LUIS begrijpt uitingen in de volgende talen:
 
-| Taal |Landinstelling  |  Vooraf gebouwd domein | Vooraf gebouwde entiteit | Aanbevelingen voor woordgroepen lijst | **[Tekst analyse](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages)<br>(Sentiment en<br>Woord|
+| Taal |Landinstelling  |  Vooraf gebouwd domein | Vooraf gebouwde entiteit | Aanbevelingen voor woordgroepen lijst | **[Tekst analyse](../text-analytics/language-support.md)<br>(Sentiment en<br>Woord|
 |--|--|:--:|:--:|:--:|:--:|
 | Engels (Verenigde Staten) |`en-US` | ✔ | ✔  |✔|✔|
 | Arabisch (preview-modern Standard-Arabisch) |`ar-AR`|-|-|-|-|
@@ -69,7 +69,7 @@ Taal ondersteuning is afhankelijk van [vooraf gemaakte entiteiten](luis-referenc
 Zie spraak [ondersteunde talen](../speech-service/speech-to-text.md) voor talen voor spraak herkenning.
 
 ### <a name="bing-spell-check-supported-languages"></a>Bing Spellingcontrole ondersteunde talen
-Zie Bing Spellingcontrole [ondersteunde talen](https://docs.microsoft.com/azure/cognitive-services/bing-spell-check/bing-spell-check-supported-languages) voor een lijst met ondersteunde talen en status.
+Zie Bing Spellingcontrole [ondersteunde talen](../bing-spell-check/language-support.md) voor een lijst met ondersteunde talen en status.
 
 ## <a name="rare-or-foreign-words-in-an-application"></a>Zeldzame of afwijkende woorden in een toepassing
 In de `en-us` cultuur leert Luis om de meeste Engelse woorden, waaronder slang, te onderscheiden. In de `zh-cn` cultuur leert Luis om de meeste Chinese tekens te onderscheiden. Als u een zeldzaam woord in `en-us` of teken in gebruikt `zh-cn` , en u ziet dat Luis niet kan worden onderscheiden van dat woord of teken, kunt u dat woord of teken toevoegen aan een [lijst functie van woord groepen](luis-how-to-add-features.md). Bijvoorbeeld: woorden buiten de cultuur van de toepassing, dat wil zeggen afwijkende woorden--moeten worden toegevoegd aan een woordgroepen lijst functie.

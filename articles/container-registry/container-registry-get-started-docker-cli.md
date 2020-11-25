@@ -5,11 +5,11 @@ ms.topic: article
 ms.date: 01/23/2019
 ms.custom: seodec18, H1Hack27Feb2017, devx-track-azurecli
 ms.openlocfilehash: 067b5749332c2c41b86d22e7de60083d5f61a442
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746631"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020055"
 ---
 # <a name="push-your-first-image-to-a-private-docker-container-registry-using-the-docker-cli"></a>Uw eerste installatiekopie naar een Docker-containerregister pushen met de Docker-CLI
 
@@ -19,12 +19,12 @@ In de volgende stappen downloadt u een officiële [nginx-installatie kopie](http
 
 ## <a name="prerequisites"></a>Vereisten
 
-* **Azure-containerregister** : maak een containerregister in uw Azure-abonnement. Gebruik bijvoorbeeld de [Azure Portal](container-registry-get-started-portal.md) of de [Azure cli](container-registry-get-started-azure-cli.md).
+* **Azure-containerregister**: maak een containerregister in uw Azure-abonnement. Gebruik bijvoorbeeld de [Azure Portal](container-registry-get-started-portal.md) of de [Azure cli](container-registry-get-started-azure-cli.md).
 * **Docker cli** : u moet ook docker lokaal hebben geïnstalleerd. Docker biedt pakketten die eenvoudig Docker configureren op elk [macOS][docker-mac]-, [Windows][docker-windows]- of [Linux][docker-linux]-systeem.
 
 ## <a name="log-in-to-a-registry"></a>Aanmelden bij een register
 
-Er zijn [verschillende manieren om te verifiëren](container-registry-authentication.md) bij uw persoonlijke container register. De aanbevolen methode voor het werken op een opdracht regel is met de Azure CLI-opdracht [AZ ACR login](/cli/azure/acr?view=azure-cli-latest#az-acr-login). Als u zich bijvoorbeeld wilt aanmelden bij een REGI ster met de naam *myregistry* :
+Er zijn [verschillende manieren om te verifiëren](container-registry-authentication.md) bij uw persoonlijke container register. De aanbevolen methode voor het werken op een opdracht regel is met de Azure CLI-opdracht [AZ ACR login](/cli/azure/acr?view=azure-cli-latest#az-acr-login). Als u zich bijvoorbeeld wilt aanmelden bij een REGI ster met de naam *myregistry*:
 
 ```azurecli
 az acr login --name myregistry
@@ -39,7 +39,7 @@ docker login myregistry.azurecr.io
 Beide opdrachten retour neren `Login Succeeded` eenmaal voltooid.
 
 > [!TIP]
-> Geef altijd de volledig gekwalificeerde register naam op (alle kleine letters) wanneer u gebruikt `docker login` en wanneer u afbeeldingen labelt voor het naar uw REGI ster pushen. In de voor beelden in dit artikel is de volledig gekwalificeerde naam *myregistry.azurecr.io* .
+> Geef altijd de volledig gekwalificeerde register naam op (alle kleine letters) wanneer u gebruikt `docker login` en wanneer u afbeeldingen labelt voor het naar uw REGI ster pushen. In de voor beelden in dit artikel is de volledig gekwalificeerde naam *myregistry.azurecr.io*.
 
 ## <a name="pull-the-official-nginx-image"></a>De officiële nginx-installatie kopie ophalen
 

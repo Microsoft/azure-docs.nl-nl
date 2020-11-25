@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.custom: devx-track-csharp, 80e4ff38-5174-43
 ms.openlocfilehash: 3cf495ca0687e6fa37f619615fb1529659a462dc
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94920216"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020342"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Werken met Azure Functions Core Tools
 
@@ -309,7 +309,7 @@ Writing C:\myfunctions\myMyFunctionProj\MyQueueTrigger\function.json
 
 U kunt deze opties ook opgeven in de opdracht met behulp van de volgende argumenten:
 
-| Argument     | Beschrijving                            |
+| Argument     | Description                            |
 | ------------------------------------------ | -------------------------------------- |
 | **`--csx`** | (Versie 2. x en hoger.) Genereert dezelfde C# script-sjablonen (. CSX) die worden gebruikt in versie 1. x en in de portal. |
 | **`--language`**, **`-l`**| De programmeer taal van de sjabloon, zoals C#, F # of Java script. Deze optie is vereist in versie 1. x. In versie 2. x en hoger gebruikt u deze optie niet of kiest u een taal die overeenkomt met de runtime van de werk nemer. |
@@ -593,7 +593,7 @@ Meer informatie over het ontwikkelen, testen en publiceren van Azure Functions m
 <!-- LINKS -->
 
 [Azure Functions Core Tools]: https://www.npmjs.com/package/azure-functions-core-tools
-[Azure-portal]: https://portal.azure.com 
+[Azure Portal]: https://portal.azure.com 
 [Node.js]: https://docs.npmjs.com/getting-started/installing-node#osx-or-windows
 [`FUNCTIONS_WORKER_RUNTIME`]: functions-app-settings.md#functions_worker_runtime
 ['AzureWebJobsStorage']: functions-app-settings.md#azurewebjobsstorage

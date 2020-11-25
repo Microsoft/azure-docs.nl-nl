@@ -7,11 +7,11 @@ ms.service: mariadb
 ms.topic: troubleshooting
 ms.date: 3/18/2020
 ms.openlocfilehash: b9a670472529dccd51cbfa71e385151bc63cff9b
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94539376"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020735"
 ---
 # <a name="troubleshoot-connection-issues-to-azure-database-for-mariadb"></a>Verbindingsproblemen met Azure Database for MariaDB oplossen
 

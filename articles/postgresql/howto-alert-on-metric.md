@@ -7,11 +7,11 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 5/6/2019
 ms.openlocfilehash: f37dcc1d092de10c51c0492bbc8671047e4a90a3
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546616"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020106"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-postgresql---single-server"></a>Gebruik de Azure Portal om waarschuwingen in te stellen voor de Azure Database for PostgreSQL-één-server
 
@@ -40,19 +40,19 @@ U kunt informatie over waarschuwings regels configureren en ophalen met behulp v
 
 4. De pagina **regel maken** wordt geopend, zoals hieronder wordt weer gegeven. Vul de vereiste gegevens in:
 
-   :::image type="content" source="./media/howto-alert-on-metric/4-add-rule-form.png" alt-text="Waarschuwings regels selecteren":::
+   :::image type="content" source="./media/howto-alert-on-metric/4-add-rule-form.png" alt-text="Formulier voor metrische waarschuwing toevoegen":::
 
 5. Selecteer **voor waarde toevoegen** in de sectie **voor waarde** .
 
 6. Selecteer een waarde in de lijst met signalen waarop u wilt worden gewaarschuwd. In dit voor beeld selecteert u ' opslag percentage '.
    
-   :::image type="content" source="./media/howto-alert-on-metric/6-configure-signal-logic.png" alt-text="Waarschuwings regels selecteren":::
+   :::image type="content" source="./media/howto-alert-on-metric/6-configure-signal-logic.png" alt-text="Metrische waarde selecteren":::
 
-7. Configureer de waarschuwings logica met inbegrip van de **voor waarde** (bijvoorbeeld ' Groter dan '), **drempel waarde** (bijvoorbeeld 85 procent), **tijd aggregatie** , **periode waarbinnen** de metrische regel moet worden voldaan voordat de waarschuwingen worden geactiveerd (bijvoorbeeld ' In de afgelopen 30 minuten ') en **frequentie** .
+7. Configureer de waarschuwings logica met inbegrip van de **voor waarde** (bijvoorbeeld ' Groter dan '), **drempel waarde** (bijvoorbeeld 85 procent), **tijd aggregatie**, **periode waarbinnen** de metrische regel moet worden voldaan voordat de waarschuwingen worden geactiveerd (bijvoorbeeld ' In de afgelopen 30 minuten ') en **frequentie**.
    
    Selecteer **gereed** wanneer u klaar bent.
 
-   :::image type="content" source="./media/howto-alert-on-metric/7-set-threshold-time.png" alt-text="Waarschuwings regels selecteren":::
+   :::image type="content" source="./media/howto-alert-on-metric/7-set-threshold-time.png" alt-text="Scherm afbeelding die de sectie waarschuwings logica en de knop gereed markeert.":::
 
 8. Selecteer in de sectie **actie groepen** de optie **nieuwe maken** om een nieuwe groep te maken voor het ontvangen van meldingen over de waarschuwing.
 
@@ -66,11 +66,11 @@ U kunt informatie over waarschuwings regels configureren en ophalen met behulp v
 
     Selecteer **OK** wanneer u klaar bent.
 
-    :::image type="content" source="./media/howto-alert-on-metric/10-action-group-type.png" alt-text="Waarschuwings regels selecteren":::
+    :::image type="content" source="./media/howto-alert-on-metric/10-action-group-type.png" alt-text="Scherm afbeelding die laat zien hoe u een nieuwe actie groep kunt toevoegen.":::
 
 11. Geef een naam, beschrijving en ernst voor de waarschuwings regel op.
 
-    :::image type="content" source="./media/howto-alert-on-metric/11-name-description-severity.png" alt-text="Waarschuwings regels selecteren"::: 
+    :::image type="content" source="./media/howto-alert-on-metric/11-name-description-severity.png" alt-text="Actiegroep"::: 
 
 12. Selecteer **waarschuwings regel maken** om de waarschuwing te maken.
 

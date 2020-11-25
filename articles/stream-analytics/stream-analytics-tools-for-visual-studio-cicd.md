@@ -8,11 +8,11 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 05/15/2019
 ms.openlocfilehash: c05db2d9ba184da89665a236994c851355cc2644
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93127430"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019851"
 ---
 # <a name="use-the-azure-stream-analytics-cicd-nuget-package-for-integration-and-development"></a>Het NuGet-pakket voor de Azure Stream Analytics CI/CD gebruiken voor integratie en ontwikkeling 
 In dit artikel wordt beschreven hoe u het Azure Stream Analytics CI/CD NuGet-pakket gebruikt om een doorlopend integratie-en implementatie proces in te stellen.
@@ -60,7 +60,7 @@ Als u beheerde identiteit voor Azure Data Lake Store gen1 als uitvoer Sink wilt 
 ## <a name="command-line-tool"></a>Opdracht regel programma
 
 ### <a name="build-the-project"></a>Het project bouwen
-Het NuGet-pakket heeft een opdracht regel programma met de naam **SA.exe** . Het ondersteunt project build en lokale tests op een wille keurige computer, die u kunt gebruiken in uw continue integratie en doorlopend leverings proces. 
+Het NuGet-pakket heeft een opdracht regel programma met de naam **SA.exe**. Het ondersteunt project build en lokale tests op een wille keurige computer, die u kunt gebruiken in uw continue integratie en doorlopend leverings proces. 
 
 De implementatie bestanden worden standaard in de huidige map geplaatst. U kunt het uitvoerpad opgeven met behulp van de volgende para meter-OutputPath:
 

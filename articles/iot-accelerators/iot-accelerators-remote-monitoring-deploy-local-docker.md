@@ -9,11 +9,11 @@ services: iot-accelerators
 ms.date: 10/25/2018
 ms.topic: conceptual
 ms.openlocfilehash: 32b47d9d6d45ff471961f55f8159dbe85eae2dce
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "73888823"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020234"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-locally---docker"></a>De externe controle oplossings versneller implementeren lokaal-docker
 
@@ -63,7 +63,7 @@ De micro services die worden uitgevoerd in de lokale docker-containers, moeten t
 docker run --rm -ti library/alpine ping google.com
 ```
 
-Als u de oplossings versneller wilt uitvoeren, gaat u naar de ** \\ \\ lokale map Services-scripts** in uw opdracht regel omgeving en voert u de volgende opdracht uit:
+Als u de oplossings versneller wilt uitvoeren, gaat u naar de **\\ \\ lokale map Services-scripts** in uw opdracht regel omgeving en voert u de volgende opdracht uit:
 
 ```cmd/sh
 docker-compose up

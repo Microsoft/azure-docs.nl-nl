@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/03/2020
 ms.author: trbye
-ms.openlocfilehash: ad26fe0d869a2e892a419b1732727c3ff1d1e9a2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9356cbb6eb210d6745d90e8ad001917e73592cd3
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88870711"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96021980"
 ---
 # <a name="about-the-speech-sdk"></a>Info over de Speech-SDK
 
@@ -29,7 +29,7 @@ De Speech-SDK maakt veel functies van de speech-service beschikbaar, maar niet a
 
 ### <a name="speech-to-text"></a>Spraak naar tekst
 
-Met [spraak naar tekst](speech-to-text.md) (ook wel *spraak herkenning*genoemd) worden audio stromen getranscribeerd naar tekst die uw toepassingen, hulpprogram ma's of apparaten kunnen gebruiken of weer geven. Gebruik spraak-naar-tekst met [Language Understanding (LUIS)](../luis/index.yml) om gebruikersintentie af te leiden uit getranscribeerde spraak en om te reageren op spraakopdrachten. Gebruik [spraak omzetting](speech-translation.md) om spraak invoer te vertalen naar een andere taal met één aanroep. Zie [basis beginselen van spraak naar tekst](speech-to-text-basics.md)voor meer informatie.
+Met [spraak naar tekst](speech-to-text.md) (ook wel *spraak herkenning* genoemd) worden audio stromen getranscribeerd naar tekst die uw toepassingen, hulpprogram ma's of apparaten kunnen gebruiken of weer geven. Gebruik spraak-naar-tekst met [Language Understanding (LUIS)](../luis/index.yml) om gebruikersintentie af te leiden uit getranscribeerde spraak en om te reageren op spraakopdrachten. Gebruik [spraak omzetting](speech-translation.md) om spraak invoer te vertalen naar een andere taal met één aanroep. Zie [basis beginselen van spraak naar tekst](./get-started-speech-to-text.md)voor meer informatie.
 
 De **spraak herkenning (SR), woordgroepen lijst, intentie, vertaling en on-premises containers** zijn beschikbaar op de volgende platformen:
 
@@ -44,7 +44,7 @@ De **spraak herkenning (SR), woordgroepen lijst, intentie, vertaling en on-premi
 
 ### <a name="text-to-speech"></a>Tekst naar spraak
 
-[Tekst-naar-spraak](text-to-speech.md) (ook wel *spraak-synthese*genoemd) converteert tekst naar humane-achtige gesynthesizerde spraak. De invoer tekst is letterlijke teken reeksen of het gebruik van de [SSML (Speech synthese Markup Language)](speech-synthesis-markup.md). Zie voor meer informatie over de standaard-of Neural stemmen [tekst-naar-spraak-taal en spraak ondersteuning](language-support.md#text-to-speech).
+[Tekst-naar-spraak](text-to-speech.md) (ook wel *spraak-synthese* genoemd) converteert tekst naar humane-achtige gesynthesizerde spraak. De invoer tekst is letterlijke teken reeksen of het gebruik van de [SSML (Speech synthese Markup Language)](speech-synthesis-markup.md). Zie voor meer informatie over de standaard-of Neural stemmen [tekst-naar-spraak-taal en spraak ondersteuning](language-support.md#text-to-speech).
 
 **Tekst-naar-spraak (TTS)** is beschikbaar op de volgende platformen:
 
@@ -68,7 +68,7 @@ Op de volgende platforms is **spraak assistenten** beschikbaar:
 
 #### <a name="keyword-spotting"></a>Tref woord herkennen
 
-Het concept van [trefwoord herkennen](speech-devices-sdk-create-kws.md) wordt ondersteund in de Speech SDK. Trefwoord herkennen is de handeling van het identificeren van een sleutel woord in spraak, gevolgd door een actie na het horen van het sleutel woord. Bijvoorbeeld: "Hey Cortana" zou de Cortana-assistent activeren.
+Het concept van [trefwoord herkennen](./custom-keyword-basics.md) wordt ondersteund in de Speech SDK. Trefwoord herkennen is de handeling van het identificeren van een sleutel woord in spraak, gevolgd door een actie na het horen van het sleutel woord. Bijvoorbeeld: "Hey Cortana" zou de Cortana-assistent activeren.
 
 **Trefwoord herkennen (KWS)** is beschikbaar op de volgende platformen:
 
@@ -129,7 +129,7 @@ Hoewel de spraak-SDK een groot aantal functies van de spraak service omvat, kunt
 
 [Batch transcriptie](batch-transcription.md) maakt asynchrone spraak-naar-tekst-transcriptie met grote hoeveel heden gegevens mogelijk. Batch-transcriptie is alleen mogelijk vanuit het REST API. Met batch spraak naar tekst kunt u niet alleen spraak-audio omzetten naar tekst, maar ook diarization-en sentiment-analyses.
 
-## <a name="customization"></a>Aanpassen
+## <a name="customization"></a>Aanpassing
 
 De speech-service biedt uitstekende functionaliteit met de standaard modellen voor spraak naar tekst, tekst naar spraak en spraak omzetting. Soms wilt u mogelijk de basislijn prestaties verhogen zodat deze nog beter werken met uw unieke gebruiks case. De speech-service beschikt over een aantal hulpprogram ma's waarmee u geen code kunt aanpassen en waarmee u een competitief voor deel kunt maken met aangepaste modellen op basis van uw eigen gegevens. Deze modellen zijn alleen beschikbaar voor u en uw organisatie.
 
@@ -180,4 +180,4 @@ Aangepaste tekst-naar-spraak, ook wel bekend als aangepaste spraak, is een set o
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Een gratis Azure-account maken](https://azure.microsoft.com/free/cognitive-services/)
-* [Zie spraak herkennen in C #](quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-csharp&tabs=dotnet)
+* [Zie spraak herkennen in C #](./get-started-speech-to-text.md?pivots=programming-language-csharp&tabs=dotnet)

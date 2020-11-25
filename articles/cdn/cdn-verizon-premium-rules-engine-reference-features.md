@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 06/02/2020
 ms.author: allensu
 ms.openlocfilehash: 0ea4f167b992ccfbc4156ac06c8f636d2ef4a355
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84343197"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020412"
 ---
 # <a name="azure-cdn-from-verizon-premium-rules-engine-features"></a>Azure CDN van de functies van de functie van Verizon Premium-regels
 
@@ -59,7 +59,7 @@ Deze functies zijn ontworpen om aan te passen wanneer en hoe inhoud in de cache 
 | [Bandbreedte regeling](https://docs.vdms.com/cdn/Content/HRE/F/Bandwidth-Throttling.htm) | Beperkt de band breedte voor de reactie die wordt gegeven door onze edge-servers. |
 | [Cache overs Laan](https://docs.vdms.com/cdn/Content/HRE/F/Bypass-Cache.htm) | Hiermee wordt bepaald of de aanvraag kan gebruikmaken van onze cache technologie. |
 | [Cache-controle header verwerking](https://docs.vdms.com/cdn/Content/HRE/F/Cache-Control-Header-Treatment.htm) |  Hiermee beheert u de generatie van Cache-Control headers door de Edge-server wanneer de functie externe Max-Age actief is. |
-| [Cache sleutel query reeks](https://docs.vdms.com/cdn/Content/HRE/F/Cache-Key-Query-String.htm) | Hiermee wordt bepaald of de **cache-Key*** query teken reeks parameters die zijn gekoppeld aan een aanvraag, moet opnemen of uitsluiten. <br> _* Een relatief pad dat een unieke identificatie vormt van een Asset voor het opslaan in de cache.  Onze edge-servers gebruiken dit relatieve pad bij het controleren op inhoud in de cache.  Een cache sleutel bevat standaard geen query teken reeks parameters._ |
+| [Cache sleutel query reeks](https://docs.vdms.com/cdn/Content/HRE/F/Cache-Key-Query-String.htm) | Hiermee wordt bepaald of de **cache sleutel** _ query teken reeks parameters die zijn gekoppeld aan een aanvraag, wilt opnemen of uitsluiten. <br> __ Een relatief pad met een unieke identificatie van een Asset voor het opslaan in de cache.  Onze edge-servers gebruiken dit relatieve pad bij het controleren op inhoud in de cache.  Standaard bevat een cache sleutel geen query teken reeks parameters._ |
 | [Cache sleutel opnieuw schrijven](https://docs.vdms.com/cdn/Content/HRE/F/Cache-Key-Rewrite.htm) | Hiermee wordt de cache sleutel die is gekoppeld aan een aanvraag, opnieuw geschreven. |
 | [Volledige cache opvulling](https://docs.vdms.com/cdn/Content/HRE/F/Complete-Cache-Fill.htm) | Hiermee wordt bepaald wat er gebeurt wanneer een aanvraag resulteert in een gedeeltelijk cache geheugen op een Edge-server. |
 | [Bestands typen comprimeren](https://docs.vdms.com/cdn/Content/HRE/F/Compress-File-Types.htm) | Hiermee definieert u de bestands indelingen die worden gecomprimeerd op de server. | 

@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 11/09/2020
 ms.custom: devx-track-js, devx-track-csharp
 ms.openlocfilehash: 85abefc8437936ffaedc4811bdd9bed0be32786f
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94375500"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020684"
 ---
 # <a name="get-an-answer-with-the-generateanswer-api-and-metadata"></a>Een antwoord krijgen met de GenerateAnswer-API en meta gegevens
 
@@ -50,11 +50,11 @@ U kunt als volgt uw eindpunt Details ophalen:
     ![Scherm opname van mijn Knowledge bases](../media/qnamaker-how-to-metadata-usage/my-knowledge-bases.png)
 1. Haal de details van uw GenerateAnswer-eind punt op.
 
-    # <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele versie)](#tab/v1)
+    # <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 
     ![Scherm opname van eindpunt Details](../media/qnamaker-how-to-metadata-usage/view-code.png)
 
-    # <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-versie)](#tab/v2)
+    # <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
     ![Scherm afbeelding van beheerde eindpunt gegevens](../media/qnamaker-how-to-metadata-usage/view-code-managed.png)
 

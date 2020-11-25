@@ -7,11 +7,11 @@ ms.service: mariadb
 ms.topic: how-to
 ms.date: 3/18/2020
 ms.openlocfilehash: 895c8e51e16cb0b82ebf3edcf954dabe62b08ff4
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94537128"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021772"
 ---
 # <a name="create-and-manage-azure-database-for-mariadb-firewall-rules-by-using-the-azure-portal"></a>Azure Database for MariaDB firewall regels maken en beheren met behulp van de Azure Portal
 Firewall regels op server niveau kunnen worden gebruikt voor het beheren van toegang tot een Azure Database for MariaDB server vanaf een opgegeven IP-adres of een bereik van IP-adressen.
@@ -50,7 +50,7 @@ Azure-verbindingen moeten zijn ingeschakeld om toepassingen van Azure toe te sta
 ## <a name="manage-existing-firewall-rules-in-the-azure-portal"></a>Bestaande firewall regels beheren in de Azure Portal
 Herhaal de stappen voor het beheren van de firewall regels.
 * Als u de huidige computer wilt toevoegen, klikt u op **+ Mijn IP toevoegen**. Klik op **Opslaan** om de wijzigingen op te slaan.
-* Als u extra IP-adressen wilt toevoegen, typt u de naam van de **regel** , het **eerste IP-** adres en het **laatste IP-** adres. Klik op **Opslaan** om de wijzigingen op te slaan.
+* Als u extra IP-adressen wilt toevoegen, typt u de naam van de **regel**, het **eerste IP-** adres en het **laatste IP-** adres. Klik op **Opslaan** om de wijzigingen op te slaan.
 * Als u een bestaande regel wilt wijzigen, klikt u op een van de velden in de regel en wijzigt u vervolgens. Klik op **Opslaan** om de wijzigingen op te slaan.
 * Als u een bestaande regel wilt verwijderen, klikt u op het weglatings teken [...] en klikt u vervolgens op **verwijderen**. Klik op **Opslaan** om de wijzigingen op te slaan.
 

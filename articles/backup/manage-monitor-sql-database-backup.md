@@ -4,11 +4,11 @@ description: In dit artikel wordt beschreven hoe u SQL Server-data bases die wor
 ms.topic: conceptual
 ms.date: 09/11/2019
 ms.openlocfilehash: b0df22002521c8148cac1200e79aeb0ae5a60546
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89146518"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021500"
 ---
 # <a name="manage-and-monitor-backed-up-sql-server-databases"></a>Back-ups van SQL Server-databases beheren en bewaken
 
@@ -34,9 +34,9 @@ Omdat logboek back-ups om de 15 minuten worden uitgevoerd, kan het lastig zijn o
 
 Database back-upwaarschuwingen bewaken:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
-2. Selecteer **waarschuwingen en gebeurtenissen**op het kluis dashboard.
+2. Selecteer **waarschuwingen en gebeurtenissen** op het kluis dashboard.
 
    ![Waarschuwingen en gebeurtenissen selecteren](./media/backup-azure-sql-database/vault-menu-alerts-events.png)
 
@@ -59,9 +59,9 @@ Houd rekening met het volgende als u ervoor kiest de herstelpunten intact te lat
 
 Ga als volgt te werk om de beveiliging van een database te stoppen:
 
-1. Selecteer **Back-upitems**op het kluis dashboard.
+1. Selecteer **Back-upitems** op het kluis dashboard.
 
-2. Onder **type back-upbeheer**selecteert u **SQL in azure VM**.
+2. Onder **type back-upbeheer** selecteert u **SQL in azure VM**.
 
     ![SQL in Azure VM selecteren](./media/backup-azure-sql-database/sql-restore-backup-items.png)
 
@@ -69,7 +69,7 @@ Ga als volgt te werk om de beveiliging van een database te stoppen:
 
     ![De database selecteren waarvoor u de beveiliging wilt stoppen](./media/backup-azure-sql-database/sql-restore-sql-in-vm.png)
 
-4. Selecteer **back-up stoppen**in het menu Data Base.
+4. Selecteer **back-up stoppen** in het menu Data Base.
 
     ![Back-up stoppen selecteren](./media/backup-azure-sql-database/stop-db-button.png)
 
@@ -120,7 +120,7 @@ Wijzig het beleid om de back-upfrequentie of het Bewaar bereik te wijzigen.
 > [!NOTE]
 > Elke wijziging in de retentie periode wordt retro actief toegepast op alle oudere herstel punten, naast de nieuwe.
 
-Ga in het kluis dashboard naar beleid voor het **beheren**van  >  **back-ups** en kies het beleid dat u wilt bewerken.
+Ga in het kluis dashboard naar beleid voor het **beheren** van  >  **back-ups** en kies het beleid dat u wilt bewerken.
 
   ![Back-upbeleid beheren](./media/backup-azure-sql-database/modify-backup-policy.png)
 
@@ -142,7 +142,7 @@ U kunt de beleids versie voor alle betrokken items met één klik oplossen:
 
 Hef de registratie van een SQL Server-exemplaar op nadat u de beveiliging hebt uitgeschakeld, maar voordat u de kluis verwijdert:
 
-1. Selecteer op het kluis dashboard onder **beheren**de optie **back-upinfrastructuur**.  
+1. Selecteer op het kluis dashboard onder **beheren** de optie **back-upinfrastructuur**.  
 
    ![Back-upinfrastructuur selecteren](./media/backup-azure-sql-database/backup-infrastructure-button.png)
 
@@ -150,7 +150,7 @@ Hef de registratie van een SQL Server-exemplaar op nadat u de beveiliging hebt u
 
    ![Beveiligde servers selecteren](./media/backup-azure-sql-database/protected-servers.png)
 
-3. Selecteer in **beveiligde servers**de server die u wilt verwijderen. Als u de kluis wilt verwijderen, moet u de registratie van alle servers ongedaan maken.
+3. Selecteer in **beveiligde servers** de server die u wilt verwijderen. Als u de kluis wilt verwijderen, moet u de registratie van alle servers ongedaan maken.
 
 4. Klik met de rechter muisknop op de beveiligde server en selecteer **registratie ongedaan maken**.
 

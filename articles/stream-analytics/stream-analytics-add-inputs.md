@@ -8,11 +8,11 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 10/29/2020
 ms.openlocfilehash: b344e9e24d15189b805f586227c7253395e8448e
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348981"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022061"
 ---
 # <a name="understand-inputs-for-azure-stream-analytics"></a>Wat is invoer van Azure Stream Analytics?
 

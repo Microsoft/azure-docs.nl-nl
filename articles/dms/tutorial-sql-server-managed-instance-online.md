@@ -13,11 +13,11 @@ ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 08/04/2020
 ms.openlocfilehash: 3674c6a0579eb901cc490d08bb8a4893296884c4
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94954899"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020650"
 ---
 # <a name="tutorial-migrate-sql-server-to-an-azure-sql-managed-instance-online-using-dms"></a>Zelfstudie: SQL Server online migreren naar een Azure SQL Managed Instance met behulp van DMS
 

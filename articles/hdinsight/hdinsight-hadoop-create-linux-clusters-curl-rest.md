@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.custom: hdinsightactive, devx-track-azurecli
 ms.date: 12/10/2019
 ms.openlocfilehash: 3ce104e9340c3e93d64b68dcab6f5bd6d2f62493
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748739"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020621"
 ---
 # <a name="create-apache-hadoop-clusters-using-the-azure-rest-api"></a>Apache Hadoop clusters maken met behulp van de Azure-REST API
 
@@ -242,13 +242,13 @@ Volg de stappen in [aan de slag met Azure cli](/cli/azure/get-started-with-az-cl
 
    De waarde die door deze opdracht wordt geretourneerd, is de __App-ID__ voor de nieuwe toepassing. Sla deze waarde op.
 
-3. Gebruik de volgende opdracht om een service-principal te maken met behulp van de **App-ID** .
+3. Gebruik de volgende opdracht om een service-principal te maken met behulp van de **App-ID**.
 
    ```azurecli
    az ad sp create --id <App ID> --query 'objectId'
    ```
 
-     De waarde die door deze opdracht wordt geretourneerd, is de __object-id__ . Sla deze waarde op.
+     De waarde die door deze opdracht wordt geretourneerd, is de __object-id__. Sla deze waarde op.
 
 4. Wijs de rol **eigenaar** toe aan de service-principal met behulp van de **object-id-** waarde. Gebruik de **abonnements-id** die u eerder hebt verkregen.
 
@@ -274,7 +274,7 @@ Stel `$TENANTID` , `$APPID` , en `$PASSWORD` op de waarden die u eerder hebt ver
 
 Als deze aanvraag is voltooid, ontvangt u een respons van 200-series en bevat de antwoord tekst een JSON-document.
 
-Het JSON-document dat door deze aanvraag wordt geretourneerd bevat een element met de naam **access_token** . De waarde van **access_token** wordt gebruikt voor het verifiëren van aanvragen voor de rest API.
+Het JSON-document dat door deze aanvraag wordt geretourneerd bevat een element met de naam **access_token**. De waarde van **access_token** wordt gebruikt voor het verifiëren van aanvragen voor de rest API.
 
 ```json
 {

@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 07/05/2017
 ms.author: tagore
 ms.openlocfilehash: f2417389de98f9998c189e7cbbbcdae77fbb8840
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075056"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020701"
 ---
 # <a name="how-to-configure-and-run-startup-tasks-for-a-cloud-service"></a>Opstart taken voor een Cloud service configureren en uitvoeren
 U kunt opstart taken gebruiken om bewerkingen uit te voeren voordat een rol wordt gestart. Bewerkingen die u mogelijk wilt uitvoeren, zijn onder andere het installeren van een onderdeel, het registreren van COM-onderdelen, het instellen van register sleutels of het starten van een langlopend proces.

@@ -9,11 +9,11 @@ ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 06/13/2019
 ms.openlocfilehash: 6abdb3cc6981a4fbdd52b88a75457c37709597f5
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92534325"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020786"
 ---
 # <a name="use-hdinsight-spark-cluster-to-analyze-data-in-data-lake-storage-gen1"></a>HDInsight Spark-cluster gebruiken voor het analyseren van gegevens in Data Lake Storage Gen1
 
@@ -58,30 +58,30 @@ Als u een HDInsight-cluster hebt gemaakt met Data Lake Storage als extra opslag 
     Copy Completed. 1 file copied.
     ```
 
-    Het gegevens bestand ( **HVAC.csv** ) wordt gekopieerd onder een map **/hvac** in het data Lake Storage-account.
+    Het gegevens bestand (**HVAC.csv**) wordt gekopieerd onder een map **/hvac** in het data Lake Storage-account.
 
 ## <a name="use-an-hdinsight-spark-cluster-with-data-lake-storage-gen1"></a>Een HDInsight Spark-cluster gebruiken met Data Lake Storage Gen1
 
-1. Klik vanuit het [Azure Portal](https://portal.azure.com/), in het start Board, op de tegel voor uw Apache Spark cluster (als u het hebt vastgemaakt aan de start Board). U kunt ook naar uw cluster navigeren onder **Bladeren in alle**  >  **HDInsight-clusters** .
+1. Klik vanuit het [Azure Portal](https://portal.azure.com/), in het start Board, op de tegel voor uw Apache Spark cluster (als u het hebt vastgemaakt aan de start Board). U kunt ook naar uw cluster navigeren onder **Bladeren in alle**  >  **HDInsight-clusters**.
 
-2. Klik vanuit de blade Spark-cluster op **Snelkoppelingen** . Klik vervolgens vanuit het **Cluster-dashboard** op **Jupyter Notebook** . Voer de beheerdersreferenties voor het cluster in als u daarom wordt gevraagd.
+2. Klik vanuit de blade Spark-cluster op **Snelkoppelingen**. Klik vervolgens vanuit het **Cluster-dashboard** op **Jupyter Notebook**. Voer de beheerdersreferenties voor het cluster in als u daarom wordt gevraagd.
 
    > [!NOTE]  
    > Mogelijk bereikt u de Jupyter-notebook voor uw cluster ook door de volgende URL in uw browser te openen. Vervang **CLUSTERNAME** door de naam van uw cluster.
    >
    > `https://CLUSTERNAME.azurehdinsight.net/jupyter`
 
-3. Maak een nieuwe notebook. Klik op **Nieuw** en klik vervolgens op **PySpark** .
+3. Maak een nieuwe notebook. Klik op **Nieuw** en klik vervolgens op **PySpark**.
 
     ![Een nieuwe Jupyter-notebook maken](./media/apache-spark-use-with-data-lake-store/hdinsight-create-jupyter-notebook.png "Een nieuwe Jupyter-notebook maken")
 
-4. Omdat u de notebook met behulp van de PySpark-kernel hebt gemaakt, hoeft u niet expliciet contexten te maken. De Spark- en Hive-contexten worden automatisch voor u gemaakt tijdens het uitvoeren van de eerste codecel. Als eerste stap importeert u de typen die voor dit scenario zijn vereist. Plak hiertoe het volgende codefragment in een cel en druk op **SHIFT + ENTER** .
+4. Omdat u de notebook met behulp van de PySpark-kernel hebt gemaakt, hoeft u niet expliciet contexten te maken. De Spark- en Hive-contexten worden automatisch voor u gemaakt tijdens het uitvoeren van de eerste codecel. Als eerste stap importeert u de typen die voor dit scenario zijn vereist. Plak hiertoe het volgende codefragment in een cel en druk op **SHIFT + ENTER**.
 
     ```scala
     from pyspark.sql.types import *
     ```
 
-    Telkens wanneer u een taak in Jupyter uitvoert, toont de venstertitel van uw webbrowser de status **(Bezet)** samen met de notebooktitel. Ook ziet u een gevulde cirkel naast de **PySpark** -tekst in de rechterbovenhoek. Nadat de taak is voltooid, verandert deze in een lege cirkel.
+    Telkens wanneer u een taak in Jupyter uitvoert, toont de venstertitel van uw webbrowser de status **(Bezet)** samen met de notebooktitel. Ook ziet u een gevulde cirkel naast de **PySpark**-tekst in de rechterbovenhoek. Nadat de taak is voltooid, verandert deze in een lege cirkel.
 
      ![Status van een Jupyter-notebooktaak](./media/apache-spark-use-with-data-lake-store/hdinsight-jupyter-job-status.png "Status van een Jupyter-notebooktaak")
 
@@ -105,7 +105,7 @@ Als u een HDInsight-cluster hebt gemaakt met Data Lake Storage als extra opslag 
         adl://<data_lake_store_name>.azuredatalakestore.net/<path_to_file>
         ```
 
-     Plak het volgende code voorbeeld in een lege cel, vervang **MYDATALAKESTORE** door de naam van uw data Lake Storage-account en druk op **SHIFT + ENTER** . Dit codevoorbeeld registreert de gegevens in een tijdelijke tabel genaamd **hvac** .
+     Plak het volgende code voorbeeld in een lege cel, vervang **MYDATALAKESTORE** door de naam van uw data Lake Storage-account en druk op **SHIFT + ENTER**. Dit codevoorbeeld registreert de gegevens in een tijdelijke tabel genaamd **hvac**.
 
       ```scala
       # Load the data. The path below assumes Data Lake Storage is   default storage for the Spark cluster
@@ -124,7 +124,7 @@ Als u een HDInsight-cluster hebt gemaakt met Data Lake Storage als extra opslag 
       hvacdf.registerTempTable("hvac")
       ```
 
-6. Omdat u een PySpark-kernel gebruikt, kunt u nu rechtstreeks een SQL-query uitvoeren op de tijdelijke tabel **hvac** , die u zojuist hebt gemaakt met behulp van de `%%sql`-magic. `%%sql`Zie [kernels die beschikbaar zijn op Jupyter-notebooks met Apache Spark HDInsight-clusters](apache-spark-jupyter-notebook-kernels.md#parameters-supported-with-the-sql-magic)voor meer informatie over het Magic, evenals andere magics die beschikbaar zijn in de PySpark-kernel.
+6. Omdat u een PySpark-kernel gebruikt, kunt u nu rechtstreeks een SQL-query uitvoeren op de tijdelijke tabel **hvac**, die u zojuist hebt gemaakt met behulp van de `%%sql`-magic. `%%sql`Zie [kernels die beschikbaar zijn op Jupyter-notebooks met Apache Spark HDInsight-clusters](apache-spark-jupyter-notebook-kernels.md#parameters-supported-with-the-sql-magic)voor meer informatie over het Magic, evenals andere magics die beschikbaar zijn in de PySpark-kernel.
 
     ```sql
     %%sql
@@ -138,7 +138,7 @@ Als u een HDInsight-cluster hebt gemaakt met Data Lake Storage als extra opslag 
 
      ![Gebiedsgrafiek van het queryresultaat](./media/apache-spark-use-with-data-lake-store/jupyter-area-output1.png "Gebiedsgrafiek van het queryresultaat")
 
-8. Wanneer u klaar bent met het uitvoeren van de toepassing, moet u de notebook afsluiten om de resources vrij te geven. Dit doet u door in het menu **Bestand** in de notebook te klikken op **Sluiten en stoppen** . Hiermee wordt de notebook afgesloten.
+8. Wanneer u klaar bent met het uitvoeren van de toepassing, moet u de notebook afsluiten om de resources vrij te geven. Dit doet u door in het menu **Bestand** in de notebook te klikken op **Sluiten en stoppen**. Hiermee wordt de notebook afgesloten.
 
 
 ## <a name="next-steps"></a>Volgende stappen

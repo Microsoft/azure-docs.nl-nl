@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/23/2020
 ms.author: trbye
-ms.openlocfilehash: c7c43e02e6bdf75c9551ccdbb9dd8f75bf37a806
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 77a8321ba8bac0ecaf577bce6c3c05d10508128e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91534978"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96020157"
 ---
 # <a name="text-to-speech-rest-api"></a>REST API voor tekst-naar-spraak
 
@@ -34,7 +34,7 @@ Voordat u deze API gebruikt, moet u het volgende weten:
 * De tekst-naar-spraak-REST API vereist een autorisatie-header. Dit betekent dat u een token uitwisseling moet volt ooien om toegang te krijgen tot de service. Zie [Verificatie](#authentication) voor meer informatie.
 
 > [!TIP]
-> Zie de [documentatie](https://docs.microsoft.com/azure/azure-government/compare-azure-government-global-azure) van Azure Government voor Government Cloud (FairFax)-eind punten.
+> Zie de [documentatie](../../azure-government/compare-azure-government-global-azure.md) van Azure Government voor Government Cloud (FairFax)-eind punten.
 
 [!INCLUDE [](../../../includes/cognitive-services-speech-service-rest-auth.md)]
 
@@ -49,17 +49,17 @@ Voordat u deze API gebruikt, moet u het volgende weten:
 | Australië - oost | `https://australiaeast.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Brazilië - zuid | `https://brazilsouth.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Canada - midden | `https://canadacentral.tts.speech.microsoft.com/cognitiveservices/voices/list` |
-| VS - centraal | `https://centralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
+| Central US | `https://centralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Azië - oost | `https://eastasia.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | VS - oost | `https://eastus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | VS - oost 2 | `https://eastus2.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Frankrijk - centraal | `https://francecentral.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | India - centraal | `https://centralindia.tts.speech.microsoft.com/cognitiveservices/voices/list` |
-| Japan East | `https://japaneast.tts.speech.microsoft.com/cognitiveservices/voices/list` |
+| Japan - oost | `https://japaneast.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Korea - centraal | `https://koreacentral.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | VS - noord-centraal | `https://northcentralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Europa - noord | `https://northeurope.tts.speech.microsoft.com/cognitiveservices/voices/list` |
-| South Central US | `https://southcentralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
+| VS - zuid-centraal | `https://southcentralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Azië - zuidoost | `https://southeastasia.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Verenigd Koninkrijk Zuid | `https://uksouth.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Europa -west | `https://westeurope.tts.speech.microsoft.com/cognitiveservices/voices/list` |
@@ -70,7 +70,7 @@ Voordat u deze API gebruikt, moet u het volgende weten:
 
 In deze tabel vindt u de vereiste en optionele kopteksten voor tekst-naar-spraak-aanvragen.
 
-| Koptekst | Beschrijving | Vereist/optioneel |
+| Header | Description | Vereist/optioneel |
 |--------|-------------|---------------------|
 | `Authorization` | Een autorisatie token dat wordt voorafgegaan door het woord `Bearer` . Zie [Verificatie](#authentication) voor meer informatie. | Vereist |
 
@@ -170,7 +170,7 @@ Deze regio's worden ondersteund voor tekst naar spraak met behulp van de REST AP
 
 In deze tabel vindt u de vereiste en optionele kopteksten voor tekst-naar-spraak-aanvragen.
 
-| Koptekst | Beschrijving | Vereist/optioneel |
+| Header | Description | Vereist/optioneel |
 |--------|-------------|---------------------|
 | `Authorization` | Een autorisatie token dat wordt voorafgegaan door het woord `Bearer` . Zie [Verificatie](#authentication) voor meer informatie. | Vereist |
 | `Content-Type` | Hiermee geeft u het type inhoud op voor de opgegeven tekst. Geaccepteerde waarde: `application/ssml+xml` . | Vereist |
@@ -222,9 +222,9 @@ Authorization: Bearer [Base64 access_token]
 
 Bekijk onze Quick starts voor taalspecifieke voor beelden:
 
-* [.NET core, C #](~/articles/cognitive-services/Speech-Service/quickstarts/text-to-speech.md?pivots=programming-language-csharp&tabs=dotnetcore)
-* [Python](~/articles/cognitive-services/Speech-Service/quickstarts/text-to-speech.md?pivots=programming-language-python)
-* [Node.js](quickstart-nodejs-text-to-speech.md)
+* [.NET core, C #](./get-started-text-to-speech.md?pivots=programming-language-csharp&tabs=dotnetcore)
+* [Python](./get-started-text-to-speech.md?pivots=programming-language-python)
+* [Node.js](./get-started-text-to-speech.md)
 
 ### <a name="http-status-codes"></a>HTTP-statuscode
 
@@ -245,5 +245,5 @@ Als de HTTP-status is `200 OK` , bevat de hoofd tekst van het antwoord een audio
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Een gratis Azure-account maken](https://azure.microsoft.com/free/cognitive-services/)
-- [Asynchrone synthese voor lange-vorm audio](quickstarts/text-to-speech/async-synthesis-long-form-audio.md)
+- [Asynchrone synthese voor lange-vorm audio](./long-audio-api.md)
 - [Aan de slag met Custom Voice](how-to-custom-voice.md)

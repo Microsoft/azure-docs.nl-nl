@@ -7,11 +7,11 @@ ms.author: karler
 ms.topic: how-to
 ms.date: 04/08/2020
 ms.openlocfilehash: 48a732e3935d78bdbf8b81fe989b59be1fbe2203
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422804"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020429"
 ---
 # <a name="use-java-and-gradle-to-create-and-publish-a-function-to-azure"></a>Java en Gradle gebruiken voor het maken en publiceren van een functie in azure
 
@@ -127,7 +127,7 @@ Hiermee maakt u de volgende resources in azure, op basis van de waarden in het b
 + Resourcegroep. Met de naam van de _resourceGroup_ die u hebt opgegeven.
 + Opslagaccount. Vereist door Funtions. De naam wordt willekeurig gegenereerd op basis van de vereisten van het opslagaccount.
 + App Service plan. Serverloze verbruiks plan dat als host fungeert voor uw functie-app in de opgegeven _appRegion_. De naam wordt wille keurig gegenereerd.
-+ Functie-app. Een functie-app is de implementatie- en uitvoeringseenheid voor uw functies. De naam is uw _AppName_ , die wordt toegevoegd met een wille keurig gegenereerd nummer. 
++ Functie-app. Een functie-app is de implementatie- en uitvoeringseenheid voor uw functies. De naam is uw _AppName_, die wordt toegevoegd met een wille keurig gegenereerd nummer. 
 
 De implementatie verpakt de project bestanden ook en implementeert deze in de nieuwe functie-app met behulp van [zip-implementatie](functions-deployment-technologies.md#zip-deploy), waarbij de modus uitvoeren vanaf pakket is ingeschakeld.
 
@@ -142,7 +142,7 @@ U kunt de URL ophalen die is vereist om uw functie te activeren, met de functie 
 
 1. Blader naar de [Azure Portal], Meld u aan, typ de _AppName_ van uw functie-app in **zoeken** boven aan de pagina en druk op ENTER.
  
-1. Selecteer in de functie-app **functies** , kies uw functie en klik vervolgens op **</> functie-URL rechtsboven weer** geven. 
+1. Selecteer in de functie-app **functies**, kies uw functie en klik vervolgens op **</> functie-URL rechtsboven weer** geven. 
 
     :::image type="content" source="./media/functions-create-first-java-gradle/get-function-url-portal.png" alt-text="De functie-URL vanuit Azure Portal kopiëren":::
 
@@ -175,5 +175,5 @@ U hebt een Java-functies project gemaakt met een door HTTP geactiveerde functie,
 > [Een Azure Storage wachtrij-uitvoer binding toevoegen](functions-add-output-binding-storage-queue-java.md)
 
 
-[Azure-CLI]: /cli/azure
+[Azure CLI]: /cli/azure
 [Azure-portal]: https://portal.azure.com

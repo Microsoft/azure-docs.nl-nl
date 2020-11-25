@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 02/08/2017
 ms.author: alkohli
 ms.openlocfilehash: dc0cf718ee51e23fb749bdf57d5344977de009d8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88182218"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021857"
 ---
 # <a name="deploy-storsimple-virtual-array-for-cloud-solution-provider-program"></a>StorSimple Virtual array implementeren voor het Cloud Solution Provider-programma
 
@@ -64,7 +64,7 @@ Als u een klant toevoegt, wordt er automatisch een abonnement gemaakt. Als u een
 
     ![Zoeken naar de klant](./media/storsimple-partner-csp-deploy/image6.png)  
 
-7. Selecteer **Service beheer**in het linkerdeel venster. Klik in het rechterdeel venster onder **Services beheren**op **Microsoft Azure Management Portal** om u aan te melden als een Azure-beheerder voor uw klant.
+7. Selecteer **Service beheer** in het linkerdeel venster. Klik in het rechterdeel venster onder **Services beheren** op **Microsoft Azure Management Portal** om u aan te melden als een Azure-beheerder voor uw klant.
 
     ![Aanmelden bij Azure Portal](./media/storsimple-partner-csp-deploy/image9.png)
 
@@ -83,7 +83,7 @@ In sommige gevallen hebt u mogelijk een bestaande klant en moet u een abonnement
                               
 2. Klik in het linkerdeel venster op **klanten**. Zoek of navigeer naar de klant aan wie u een abonnement wilt toevoegen. Klik op het pictogram ![ Selectie uitvouwen ](./media/storsimple-partner-csp-deploy/expand_pane_icon.png) om de rij voor de bedrijfs naam voor uw klant uit te vouwen. Klik in de details op **abonnementen toevoegen**.
 
-    ![Klanten](./media/storsimple-partner-csp-deploy/image10.png)
+    ![Customers](./media/storsimple-partner-csp-deploy/image10.png)
 
 3. Controleer **Microsoft Azure** voor de **beste aanbiedingen** in het abonnement en klik op **verzenden**. Hiermee maakt u een nieuw abonnement.
 
@@ -93,7 +93,7 @@ In sommige gevallen hebt u mogelijk een bestaande klant en moet u een abonnement
 
     ![Zoeken naar de klant](./media/storsimple-partner-csp-deploy/image6.png)  
 
-7. Selecteer **Service beheer**in het linkerdeel venster. Klik in het rechterdeel venster onder **Services beheren**op **Microsoft Azure Management Portal** om u aan te melden als een Azure-beheerder voor uw klant.
+7. Selecteer **Service beheer** in het linkerdeel venster. Klik in het rechterdeel venster onder **Services beheren** op **Microsoft Azure Management Portal** om u aan te melden als een Azure-beheerder voor uw klant.
 
     ![Aanmelden bij Azure Portal](./media/storsimple-partner-csp-deploy/image9.png)
 

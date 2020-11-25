@@ -11,11 +11,11 @@ ms.workload: identity
 ms.date: 08/05/2020
 ms.author: chmutali
 ms.openlocfilehash: a62943c1a808424ded1a5e46ed115cda332bf7d5
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358725"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020752"
 ---
 # <a name="tutorial-configure-sap-successfactors-to-azure-ad-user-provisioning"></a>Zelfstudie: SAP SuccessFactors configureren voor het inrichten van gebruikers in Active Directory
 Het doel van deze zelfstudie is het laten zien van de stappen die nodig zijn om gegevens van werknemers vanuit SuccessFactors Employee Central in te richten in Azure Active Directory, met optionele write-back van e-mailadressen naar SuccessFactors. 

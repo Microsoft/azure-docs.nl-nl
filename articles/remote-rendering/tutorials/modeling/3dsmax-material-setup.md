@@ -6,11 +6,11 @@ ms.author: flborn
 ms.date: 06/16/2020
 ms.topic: tutorial
 ms.openlocfilehash: 12407d6344c69c747230e9db6fa4d53b4520dc82
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91331808"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020276"
 ---
 # <a name="tutorial-set-up-physically-based-rendering-materials-in-3ds-max"></a>Zelfstudie: PBT-materialen instellen in 3ds Max
 
@@ -75,7 +75,7 @@ Nu de scène wat objecten bevat, in dit geval een aantal kubussen, kunnen we sta
 
     In de materiaaleditor kunt u kiezen uit een brede selectie materiaaltypen, afhankelijk van uw behoeften. Normaal gesproken wordt het type materiaal standaard ingesteld op **Standaard**. Dit materiaal is een basismateriaal dat niet geschikt is voor het instellen van PBR. Daarom moeten we het materiaaltype wijzigen in een PBR-materiaal. Het 3ds Max-voorkeursmateriaal voor Azure Remote Rendering-projecten is het fysieke materiaal.
 
-1. Selecteer in de materiaaleditor het tabblad **Standaard**. Selecteer in de **Materiaal-/kaartenbrowser** de optie **Fysiek materiaal**. Met deze actie wordt het toegewezen **Standaard**materiaal geconverteerd naar een fysiek PBR-materiaal.
+1. Selecteer in de materiaaleditor het tabblad **Standaard**. Selecteer in de **Materiaal-/kaartenbrowser** de optie **Fysiek materiaal**. Met deze actie wordt het toegewezen **Standaard** materiaal geconverteerd naar een fysiek PBR-materiaal.
 
    ![Schermopname waarin wordt weergegeven hoe u materiaal toewijst.](media/3dsmax/physical-material.jpg)
 

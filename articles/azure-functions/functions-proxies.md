@@ -4,11 +4,11 @@ description: Overzicht van het gebruik van Azure Functions-proxy's
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.openlocfilehash: 3e08b9cf633162cc7015f47774b043cf58c115a0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87385871"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020395"
 ---
 # <a name="work-with-azure-functions-proxies"></a>Werken met Azure Functions-proxy's
 
@@ -24,11 +24,11 @@ In dit artikel wordt uitgelegd hoe u Azure Functions-proxy's kunt configureren e
 In deze sectie wordt beschreven hoe u een proxy maakt in de functions-Portal.
 
 1. Open de [Azure Portal]en ga vervolgens naar uw functie-app.
-2. Selecteer **nieuwe proxy**in het linkerdeel venster.
+2. Selecteer **nieuwe proxy** in het linkerdeel venster.
 3. Geef een naam op voor uw proxy.
-4. Configureer het eind punt dat wordt weer gegeven in deze functie-app door de **route sjabloon** en **http-methoden**op te geven. Deze para meters gedragen zich op basis van de regels voor [http-triggers].
+4. Configureer het eind punt dat wordt weer gegeven in deze functie-app door de **route sjabloon** en **http-methoden** op te geven. Deze para meters gedragen zich op basis van de regels voor [http-triggers].
 5. Stel de **back-end-URL** in op een ander eind punt. Dit eind punt kan een functie zijn in een andere functie-app of een andere API. De waarde hoeft niet statisch te zijn en kan verwijzen naar [Toepassings instellingen] en- [para meters van de oorspronkelijke client aanvraag].
-6. Klik op **Maken**.
+6. Klik op **Create**.
 
 Uw proxy bestaat nu als een nieuw eind punt in uw functie-app. Vanuit een client perspectief is het gelijk aan een http trigger in Azure Functions. U kunt de nieuwe proxy proberen door de proxy-URL te kopiëren en deze te testen met uw favoriete HTTP-client.
 
@@ -111,7 +111,7 @@ Schakel traceringen samen uit door toe `"debug":false` te voegen aan een bepaald
 De proxy's die u configureert, worden opgeslagen in een *proxies.js* in het bestand, dat zich in de hoofdmap van een functie-app-map bevindt. U kunt dit bestand hand matig bewerken en implementeren als onderdeel van uw app wanneer u een van de [implementatie methoden](./functions-continuous-deployment.md) gebruikt die door functies worden ondersteund. 
 
 > [!TIP] 
-> Als u een van de implementatie methoden niet hebt ingesteld, kunt u ook werken met de *proxies.js* in het bestand in de portal. Ga naar uw functie-app, selecteer **platform functies**en selecteer vervolgens **app service-editor**. Op die manier kunt u de volledige bestands structuur van de functie-app bekijken en vervolgens wijzigingen aanbrengen.
+> Als u een van de implementatie methoden niet hebt ingesteld, kunt u ook werken met de *proxies.js* in het bestand in de portal. Ga naar uw functie-app, selecteer **platform functies** en selecteer vervolgens **app service-editor**. Op die manier kunt u de volledige bestands structuur van de functie-app bekijken en vervolgens wijzigingen aanbrengen.
 
 *Proxies.jsop* is gedefinieerd door een proxy object, dat bestaat uit benoemde proxy's en hun definities. Als uw editor dit ondersteunt, kunt u ook verwijzen naar een [JSON-schema](http://json.schemastore.org/proxies) voor het volt ooien van de code. Een voorbeeld bestand kan er als volgt uitzien:
 
@@ -215,7 +215,7 @@ Het requestOverrides-object definieert wijzigingen die worden aangebracht in het
 * **Response. code status**: de HTTP-status code die wordt geretourneerd naar de client.
 * **Response. statusReason**: de woord groep met de http-reden die moet worden geretourneerd naar de client.
 * **Response. Body**: de teken reeks representatie van de hoofd tekst die wordt geretourneerd naar de client.
-* **Response. headers. \<HeaderName\> **: een header die kan worden ingesteld voor de reactie op de client. Vervang door *\<HeaderName\>* de naam van de koptekst die u wilt instellen. Als u de lege teken reeks opgeeft, wordt de header niet in het antwoord opgenomen.
+* **Response. headers. \<HeaderName\>**: een header die kan worden ingesteld voor de reactie op de client. Vervang door *\<HeaderName\>* de naam van de koptekst die u wilt instellen. Als u de lege teken reeks opgeeft, wordt de header niet in het antwoord opgenomen.
 
 Waarden kunnen verwijzen naar toepassings instellingen, para meters van de oorspronkelijke client aanvraag en para meters uit het back-end-antwoord.
 
@@ -241,7 +241,7 @@ Een voorbeeld configuratie kan er als volgt uitzien:
 > [!NOTE] 
 > In dit voor beeld wordt de hoofd tekst van de reactie direct ingesteld, zodat er geen `backendUri` eigenschap nodig is. In het voor beeld ziet u hoe u Azure Functions-proxy's kunt gebruiken om Api's te model leren.
 
-[Azure-portal]: https://portal.azure.com
+[Azure Portal]: https://portal.azure.com
 [HTTP-triggers]: ./functions-bindings-http-webhook.md
 [Modify the back-end request]: #modify-backend-request
 [Modify the response]: #modify-response

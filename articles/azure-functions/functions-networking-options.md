@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 10/27/2020
 ms.author: jehollan
 ms.openlocfilehash: bed76a6f3a17332f9a1e411ff1d4efb52703f3e1
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94636466"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020983"
 ---
 # <a name="azure-functions-networking-options"></a>Netwerkopties van Azure Functions
 
@@ -128,7 +128,7 @@ Op dit moment kunt u niet-HTTP-trigger functies vanuit een virtueel netwerk op t
 
 ### <a name="premium-plan-with-virtual-network-triggers"></a>Premium-abonnement met virtuele netwerk triggers
 
-Wanneer u een Premium-abonnement uitvoert, kunt u niet-HTTP-trigger functies verbinden met services die binnen een virtueel netwerk worden uitgevoerd. Hiervoor moet u ondersteuning voor virtuele netwerk triggers inschakelen voor uw functie-app. De instelling **runtime schaal bewaking** vindt u in de [Azure Portal](https://portal.azure.com) onder runtime-instellingen voor de **configuratie** -  >  **functie**.
+Wanneer u een Premium-abonnement uitvoert, kunt u niet-HTTP-trigger functies verbinden met services die binnen een virtueel netwerk worden uitgevoerd. Hiervoor moet u ondersteuning voor virtuele netwerk triggers inschakelen voor uw functie-app. De instelling **runtime schaal bewaking** vindt u in de [Azure Portal](https://portal.azure.com) onder runtime-instellingen voor de **configuratie**-  >  **functie**.
 
 :::image type="content" source="media/functions-networking-options/virtual-network-trigger-toggle.png" alt-text="VNETToggle":::
 
@@ -180,8 +180,8 @@ Wanneer u een functie-app integreert in een Premium-abonnement of een App Servic
 ## <a name="automation"></a>Automation
 Met de volgende Api's kunt u via programma code regionale virtuele netwerk integraties beheren:
 
-+ **Azure cli** : gebruik de [`az functionapp vnet-integration`](/cli/azure/functionapp/vnet-integration) opdrachten om een regionale virtuele netwerk integratie toe te voegen, weer te geven of te verwijderen.  
-+ **Arm-sjablonen** : regionale integratie van virtuele netwerken kan worden ingeschakeld met behulp van een Azure Resource Manager sjabloon. Voor een volledig voor beeld raadpleegt u [de Quick Start-sjabloon van deze functies](https://azure.microsoft.com/resources/templates/101-function-premium-vnet-integration/).
++ **Azure cli**: gebruik de [`az functionapp vnet-integration`](/cli/azure/functionapp/vnet-integration) opdrachten om een regionale virtuele netwerk integratie toe te voegen, weer te geven of te verwijderen.  
++ **Arm-sjablonen**: regionale integratie van virtuele netwerken kan worden ingeschakeld met behulp van een Azure Resource Manager sjabloon. Voor een volledig voor beeld raadpleegt u [de Quick Start-sjabloon van deze functies](https://azure.microsoft.com/resources/templates/101-function-premium-vnet-integration/).
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 

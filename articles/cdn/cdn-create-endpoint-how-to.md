@@ -15,11 +15,11 @@ ms.date: 06/12/2018
 ms.author: allensu
 ms.custom: mvc
 ms.openlocfilehash: 43718f8ebc851f27035f2999bfb4ff3ec12ca5b4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84887729"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021959"
 ---
 # <a name="create-an-azure-cdn-endpoint"></a>Een Azure CDN-eind punt maken
 In dit artikel worden alle instellingen beschreven voor het maken van een [Azure Content Delivery Network (CDN)-](cdn-overview.md) eind punt in een bestaand CDN-profiel. Nadat u een profiel en een eind punt hebt gemaakt, kunt u beginnen met het leveren van inhoud aan uw klanten. Voor een Snelstartgids voor het maken van een profiel en een eind punt, Zie [Quick Start: een Azure CDN profiel en een eind punt maken](cdn-create-new-endpoint.md).
@@ -46,7 +46,7 @@ Meld u met uw Azure-account aan bij het [Azure Portal](https://portal.azure.com)
 
 3. Voer voor **Naam** een unieke naam voor het nieuwe CDN-eindpunt in. Deze naam wordt gebruikt om toegang te krijgen tot uw resources in de cache in het domein _\<endpointname>_ . azureedge.net.
 
-4. Kies voor **type oorsprong**een van de volgende oorsprongs typen: 
+4. Kies voor **type oorsprong** een van de volgende oorsprongs typen: 
    - **Opslag** voor Azure Storage
    - **Cloud service** voor Azure Cloud Services
    - Web Apps van **Web-app** voor Azure
@@ -54,7 +54,7 @@ Meld u met uw Azure-account aan bij het [Azure Portal](https://portal.azure.com)
 
 5. Selecteer of typ uw bron-Server domein voor de **oorsprongs hostnaam**. De vervolg keuzelijst bevat alle beschik bare originele servers van het type dat u in stap 4 hebt opgegeven. Als u **aangepaste oorsprong** als uw oorsprongs type hebt geselecteerd, voert u het domein van de aangepaste oorspronkelijke server in.
     
-6. Voer bij **bronpad**het pad in naar de resources die u wilt opslaan in de cache. Als u caching wilt toestaan van alle resources in het domein dat u in stap 5 hebt opgegeven, laat u deze instelling leeg.
+6. Voer bij **bronpad** het pad in naar de resources die u wilt opslaan in de cache. Als u caching wilt toestaan van alle resources in het domein dat u in stap 5 hebt opgegeven, laat u deze instelling leeg.
     
 7. Geef bij **Host-header van oorsprong** de host-header op die voor elke aanvraag door Azure CDN moet worden verzonden of laat de standaardinstelling staan.
    
@@ -62,7 +62,7 @@ Meld u met uw Azure-account aan bij het [Azure Portal](https://portal.azure.com)
    > Bepaalde oorsprongtypen, zoals Azure Storage en Web Apps, vereisen dat de hostheader overeenkomt met het domein van de oorsprong. Tenzij u een oorsprong hebt waarvoor een andere host-header is vereist dan die van het domein, laat u de standaardwaarde ongewijzigd.
    > 
     
-8. Geef voor **protocol** en **poort van oorsprong**de protocollen en poorten op die moeten worden gebruikt voor toegang tot uw resources op de oorspronkelijke server. Er moet minimaal één protocol (HTTP of HTTPS) worden geselecteerd. Gebruik het door CDN verschafte domein ( _\<endpointname>_ . azureedge.net) voor toegang tot HTTPS-inhoud. 
+8. Geef voor **protocol** en **poort van oorsprong** de protocollen en poorten op die moeten worden gebruikt voor toegang tot uw resources op de oorspronkelijke server. Er moet minimaal één protocol (HTTP of HTTPS) worden geselecteerd. Gebruik het door CDN verschafte domein ( _\<endpointname>_ . azureedge.net) voor toegang tot HTTPS-inhoud. 
    
    > [!NOTE]
    > De **poort waarde oorsprong** bepaalt alleen de poort die door het eind punt wordt gebruikt om informatie op te halen van de oorspronkelijke server. Het eindpunt zelf is alleen beschikbaar voor eindclients op de standaard-HTTP- en -HTTPS-poorten (80 en 443), ongeacht de waarde voor **Poort van oorsprong**.  
@@ -71,7 +71,7 @@ Meld u met uw Azure-account aan bij het [Azure Portal](https://portal.azure.com)
    > 
    > HTTPS-ondersteuning voor Azure CDN aangepaste domeinen wordt niet ondersteund op **Azure CDN van Akamai** -producten. Zie [HTTPS op een aangepast Azure CDN-domein configureren](cdn-custom-ssl.md) voor meer informatie.
     
-9. Selecteer voor **geoptimaliseerd voor**een optimalisatie type dat het beste overeenkomt met het scenario en type inhoud dat door het eind punt moet worden geleverd. Zie voor meer informatie [Optimize Azure CDN voor het type content delivery](cdn-optimization-overview.md).
+9. Selecteer voor **geoptimaliseerd voor** een optimalisatie type dat het beste overeenkomt met het scenario en type inhoud dat door het eind punt moet worden geleverd. Zie voor meer informatie [Optimize Azure CDN voor het type content delivery](cdn-optimization-overview.md).
 
     De volgende optimalisatie type-instellingen worden ondersteund, afhankelijk van het profiel type:
     - **Azure CDN standaard van micro soft** -profielen:

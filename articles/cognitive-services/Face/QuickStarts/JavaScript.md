@@ -9,14 +9,14 @@ ms.custom: devx-track-js
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: quickstart
-ms.date: 08/05/2020
+ms.date: 11/23/2020
 ms.author: pafarley
-ms.openlocfilehash: 06aa840c3cf33c9d1b70b800d45b9b455c4d61ed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f302000529e0dbf7ecce69ac9bebe77af59561ee
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91858333"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96020837"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-rest-api-and-javascript"></a>Quickstart: Gezichten in een afbeelding detecteren met de REST API en JavaScript
 

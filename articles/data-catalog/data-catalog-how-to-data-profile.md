@@ -7,15 +7,15 @@ ms.service: data-catalog
 ms.topic: how-to
 ms.date: 08/01/2019
 ms.openlocfilehash: b27ff631ce13d70d15a6fd2b6dd5ad5bccaf5450
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89442068"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021908"
 ---
 # <a name="how-to-data-profile-data-sources-in-azure-data-catalog"></a>Hoe gegevens bronnen voor gegevens profielen in Azure Data Catalog
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 **Microsoft Azure Data Catalog** is een volledig beheerde Cloud service die fungeert als registratie systeem en detectie systeem voor zakelijke gegevens bronnen. Met andere woorden, het **Azure Data Catalog** is alles wat helpt mensen bij het detecteren, begrijpen en gebruiken van gegevens bronnen, en helpt organisaties bij het verkrijgen van meer waarde dan hun bestaande gegevens. Wanneer een gegevens bron wordt geregistreerd bij **Azure Data Catalog**, worden de meta gegevens gekopieerd en geïndexeerd door de service, maar het artikel eindigt daar niet.
 
@@ -74,7 +74,7 @@ Een gegevens profiel in **Azure Data Catalog** bevat tabel-en kolom profiel info
 ### <a name="object-data-profile"></a>Object gegevens profiel
 
 * Aantal rijen
-* Tabel grootte
+* Tabelgrootte
 * Wanneer het object voor het laatst is bijgewerkt
 
 ### <a name="column-data-profile"></a>Kolom gegevens profiel

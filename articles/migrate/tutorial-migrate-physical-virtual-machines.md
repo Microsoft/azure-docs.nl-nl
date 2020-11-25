@@ -5,11 +5,11 @@ ms.topic: tutorial
 ms.date: 04/15/2020
 ms.custom: MVC
 ms.openlocfilehash: 67ea5800885b4edb16581f22c199d139053af495
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93337809"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018933"
 ---
 # <a name="migrate-machines-as-physical-servers-to-azure"></a>Machines als fysieke servers migreren naar Azure
 
@@ -59,7 +59,7 @@ Bereid Azure voor op een migratie met Server Migration.
 ### <a name="assign-permissions-to-create-project"></a>Machtigingen toewijzen voor het maken van een project
 
 1. Open in de Azure-portal het abonnement en selecteer **Toegangsbeheer (IAM)** .
-2. In **Toegang controleren** , zoekt u het relevante account en klikt u hierop om machtigingen weer te geven.
+2. In **Toegang controleren**, zoekt u het relevante account en klikt u hierop om machtigingen weer te geven.
 3. U moet de machtigingen **Inzender** of **Eigenaar** hebben.
     - Als u net pas een gratis Azure-account hebt gemaakt, bent u de eigenaar van uw abonnement.
     - Als u niet de eigenaar van het abonnement bent, kunt u met de eigenaar samenwerken om de rol toe te wijzen.
@@ -98,8 +98,8 @@ Controleer of de machines aan de vereisten voor migratie naar Azure voldoen.
 
 Azure Migrate:Server Migration gebruikt het replicatieapparaat om machines naar Azure te repliceren. Met het replicatieapparaat worden de volgende onderdelen uitgevoerd.
 
-- **Configuratieserver** : De configuratieserver coördineert de communicatie tussen on-premises en Azure, en beheert de gegevensreplicatie.
-- **Processerver** : De processerver fungeert als replicatiegateway. Deze ontvangt replicatiegegevens, optimaliseert de gegevens met caching, compressie en versleuteling, en verzendt ze naar het account voor cacheopslag in Azure. 
+- **Configuratieserver**: De configuratieserver coördineert de communicatie tussen on-premises en Azure, en beheert de gegevensreplicatie.
+- **Processerver**: De processerver fungeert als replicatiegateway. Deze ontvangt replicatiegegevens, optimaliseert de gegevens met caching, compressie en versleuteling, en verzendt ze naar het account voor cacheopslag in Azure. 
 
 Bereid de implementatie van het apparaat als volgt voor:
 
@@ -140,7 +140,7 @@ De eerste stap van de migratie is het instellen van het replicatieapparaat. Als 
 
 ### <a name="download-the-replication-appliance-installer"></a>Het installatieprogramma voor het replicatieapparaat downloaden
 
-1. In het Azure Migrate-project > **Servers** , in **Azure Migrate: Server Migration** , klikt u op **Ontdekken**.
+1. In het Azure Migrate-project > **Servers**, in **Azure Migrate: Server Migration**, klikt u op **Ontdekken**.
 
     ![VM's detecteren](./media/tutorial-migrate-physical-virtual-machines/migrate-discover.png)
 
@@ -160,7 +160,7 @@ De eerste stap van de migratie is het instellen van het replicatieapparaat. Als 
 10. Kopieer het installatiebestand voor het apparaat en het sleutelbestand naar de Windows Server 2016-machine die u hebt gemaakt voor het apparaat.
 11. Wanneer de installatie is voltooid, wordt de wizard Apparaat configureren automatisch gestart (u kunt de wizard ook handmatig starten met behulp van de cspsconfigtool-snelkoppeling die op het bureaublad van het apparaat is gemaakt). Gebruik het tabblad Accounts beheren van de wizard om accountgegevens toe te voegen die moeten worden gebruikt voor de push-installatie van de Mobility-service. In deze zelfstudie wordt de Mobility-service handmatig geïnstalleerd op de te repliceren bron-VM's. Daarom moet u in deze stap een dummyaccount maken en doorgaan. U kunt de volgende gegevens opgeven voor het maken van het dummy-account: 'guest' als de beschrijvende naam, 'username' als de gebruikersnaam en 'password' als het wachtwoord voor het account. U gebruikt dit dummy-account in de fase waarin u de replicatie gaat inschakelen. 
 
-12. Nadat het apparaat na de installatie opnieuw is opgestart in **Machines detecteren** , selecteert u het nieuwe apparaat in **Configuratieserver selecteren** en klikt u op **Registratie voltooien**. Bij het voltooien van de registratie worden enkele laatste taken uitgevoerd om het replicatieapparaat voor te bereiden.
+12. Nadat het apparaat na de installatie opnieuw is opgestart in **Machines detecteren**, selecteert u het nieuwe apparaat in **Configuratieserver selecteren** en klikt u op **Registratie voltooien**. Bij het voltooien van de registratie worden enkele laatste taken uitgevoerd om het replicatieapparaat voor te bereiden.
 
     ![Registratie voltooien](./media/tutorial-migrate-physical-virtual-machines/finalize-registration.png)
 
@@ -226,7 +226,7 @@ Selecteer nu machines voor de migratie.
 > [!NOTE]
 > U kunt maximaal 10 machines tegelijk repliceren. Als u meer wilt repliceren, repliceert u ze in batches van 10.
 
-1. In het Azure Migrate-project > **Servers** , **Azure Migrate: Servermigratie** klikt u op **Repliceren**.
+1. In het Azure Migrate-project > **Servers**, **Azure Migrate: Servermigratie** klikt u op **Repliceren**.
 
     ![Schermopname van het venster Servers van Azure Migrate met de knop Repliceren geselecteerd in Azure Migrate: Servermigratie onder Hulpprogramma’s voor migratie.](./media/tutorial-migrate-physical-virtual-machines/select-replicate.png)
 
@@ -245,11 +245,11 @@ Selecteer nu machines voor de migratie.
 
 9. Selecteer in **Doelinstellingen** het abonnement en de doelregio waarnaar u migreert en geef de resourcegroep op waarin de Azure-VM's na de migratie moeten worden geplaatst.
 10. Selecteer in **Virtual Network** het Azure VNet/subnet waaraan de Azure-VM's na migratie worden toegevoegd.
-11. Selecteer in **Beschikbaarheidsopties** :
+11. Selecteer in **Beschikbaarheidsopties**:
     -  Beschikbaarheidszone, om de gemigreerde computer vast te maken aan een specifieke beschikbaarheidszone in de regio. Gebruik deze optie om servers te distribueren die een toepassingslaag met meerdere knooppunten in de beschikbaarheidszones vormen. Als u deze optie selecteert, moet u op het tabblad Compute de beschikbaarheidszone opgeven die moet worden gebruikt voor elk van de geselecteerde computers. Deze optie is alleen beschikbaar als de doelregio die voor de migratie is geselecteerd, ondersteuning biedt voor beschikbaarheidszones
     -  Beschikbaarheidsset, om de gemigreerde machine in een beschikbaarheidsset te plaatsen. De doelresourcegroep die is geselecteerd, moet een of meer beschikbaarheidssets bevatten om deze optie te kunnen gebruiken.
     - Er is geen optie voor infrastructuurredundantie vereist als u geen van deze beschikbaarheidsconfiguraties nodig hebt voor de gemigreerde computers.
-12. In **Azure Hybrid Benefit** :
+12. In **Azure Hybrid Benefit**:
 
     - Selecteer **Nee** als u Azure Hybrid Benefit niet wilt toepassen. Klik op **Volgende**.
     - Selecteer **Ja** als u Windows Server-computers hebt die worden gedekt met actieve softwareverzekering of Windows Server-abonnementen en u het voordeel wilt toepassen op de machines die u migreert. Klik op **Volgende**.
@@ -258,10 +258,10 @@ Selecteer nu machines voor de migratie.
 
 13. Controleer bij **Compute** naam, grootte, type besturingssysteemschijf en beschikbaarheidsconfiguratie van de VM (indien geselecteerd in de vorige stap). VM's moeten voldoen aan de [Azure-vereisten](migrate-support-matrix-physical-migration.md#azure-vm-requirements).
 
-    - **VM-grootte** : Als u evaluatie-aanbevelingen gebruikt, bevat het vervolgkeuzemenu voor de VM-grootte de aanbevolen grootte. Anders kiest Azure Migrate een grootte op basis van de dichtstbijzijnde overeenkomst in het Azure-abonnement. U kunt ook handmatig een grootte kiezen in **Azure VM-grootte**.
-    - **Besturingssysteemschijf** : Geef de besturingssysteemschijf (opstarten) voor de VM op. De besturingssysteemschijf is de schijf die de bootloader en het installatieprogramma van het besturingssysteem bevat.
-    - **Beschikbaarheidszone** : Geef de beschikbaarheidszone op die moet worden gebruikt.
-    - **Beschikbaarheidsset** : Geef de beschikbaarheidsset op die moet worden gebruikt.
+    - **VM-grootte**: Als u evaluatie-aanbevelingen gebruikt, bevat het vervolgkeuzemenu voor de VM-grootte de aanbevolen grootte. Anders kiest Azure Migrate een grootte op basis van de dichtstbijzijnde overeenkomst in het Azure-abonnement. U kunt ook handmatig een grootte kiezen in **Azure VM-grootte**.
+    - **Besturingssysteemschijf**: Geef de besturingssysteemschijf (opstarten) voor de VM op. De besturingssysteemschijf is de schijf die de bootloader en het installatieprogramma van het besturingssysteem bevat.
+    - **Beschikbaarheidszone**: Geef de beschikbaarheidszone op die moet worden gebruikt.
+    - **Beschikbaarheidsset**: Geef de beschikbaarheidsset op die moet worden gebruikt.
 
 > [!NOTE]
 > Als u een andere beschikbaarheidsoptie wilt selecteren voor een set virtuele machines, gaat u naar stap 1 en herhaalt u de stappen door andere beschikbaarheidsopties te selecteren na het starten van de replicatie voor één set virtuele machines.

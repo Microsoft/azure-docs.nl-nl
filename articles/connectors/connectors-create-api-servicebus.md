@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 10/22/2020
 tags: connectors
 ms.openlocfilehash: b6276ff940d8b156a671cb5386ce53ede30dd879
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426651"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019703"
 ---
 # <a name="exchange-messages-in-the-cloud-by-using-azure-logic-apps-and-azure-service-bus"></a>Berichten uitwisselen in de Cloud met behulp van Azure Logic Apps en Azure Service Bus
 
@@ -47,13 +47,13 @@ Controleer of uw logische app machtigingen heeft om toegang te krijgen tot uw Se
 
 1. Meld u aan bij uw Azure-account in het [Azure Portal](https://portal.azure.com).
 
-1. Ga naar uw Service Bus *naam ruimte*. Selecteer op de pagina naam ruimte onder **instellingen**de optie **beleid voor gedeelde toegang**. Onder **claims**controleert u of u machtigingen voor het **beheren** van die naam ruimte hebt.
+1. Ga naar uw Service Bus *naam ruimte*. Selecteer op de pagina naam ruimte onder **instellingen** de optie **beleid voor gedeelde toegang**. Onder **claims** controleert u of u machtigingen voor het **beheren** van die naam ruimte hebt.
 
    ![Machtigingen voor Service Bus naam ruimte beheren](./media/connectors-create-api-azure-service-bus/azure-service-bus-namespace.png)
 
 1. Haal de connection string voor uw Service Bus naam ruimte op. U hebt deze teken reeks nodig wanneer u de verbindings gegevens in uw logische app opgeeft.
 
-   1. Selecteer **RootManageSharedAccessKey**in het deel venster **Shared Access policies** .
+   1. Selecteer **RootManageSharedAccessKey** in het deel venster **Shared Access policies** .
 
    1. Selecteer de knop kopiëren naast uw primaire connection string. Sla de connection string op voor later gebruik.
 
@@ -119,7 +119,7 @@ Controleer of uw logische app machtigingen heeft om toegang te krijgen tot uw Se
 
 1. Open in de [Azure Portal](https://portal.azure.com)uw logische app in de ontwerp functie voor logische apps.
 
-1. Selecteer **nieuwe stap**onder de stap waar u een actie wilt toevoegen.
+1. Selecteer **nieuwe stap** onder de stap waar u een actie wilt toevoegen.
 
    Als u een actie tussen stappen wilt toevoegen, plaatst u de muis aanwijzer op de pijl tussen de stappen. Selecteer het plus teken ( **+** ) dat wordt weer gegeven en selecteer **een actie toevoegen**.
 

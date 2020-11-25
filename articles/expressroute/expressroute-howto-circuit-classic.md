@@ -9,11 +9,11 @@ ms.date: 11/05/2019
 ms.author: duau
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: be45d49d3f445810c7ac6a38e3e12abe178a4bed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89396281"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018149"
 ---
 # <a name="modify-an-expressroute-circuit-using-powershell-classic"></a>Een ExpressRoute-circuit wijzigen met behulp van Power shell (klassiek)
 
@@ -40,7 +40,7 @@ Dit artikel begeleidt u stapsgewijs door de stappen voor het controleren van de 
 
 ## <a name="get-the-status-of-a-circuit"></a>De status van een circuit ophalen
 
-U kunt deze informatie op elk gewenst moment ophalen met behulp van de- `Get-AzureCircuit` cmdlet. Als u de aanroep zonder para meters, worden alle circuits vermeld.
+U kunt deze informatie op elk gewenst moment opvragen met behulp van de cmdlet `Get-AzureCircuit`. Als u de aanroep zonder para meters, worden alle circuits vermeld.
 
 ```powershell
 Get-AzureDedicatedCircuit
@@ -89,9 +89,9 @@ get-help get-azurededicatedcircuit -detailed
 
 U kunt bepaalde eigenschappen van een ExpressRoute-circuit wijzigen zonder dat dit van invloed is op de connectiviteit.
 
-U kunt de volgende taken zonder uitval tijd doen:
+U kunt de volgende taken uitvoeren zonder dat dit resulteert in downtime:
 
-* Een ExpressRoute Premium-invoeg toepassing voor uw ExpressRoute-circuit in-of uitschakelen.
+* Een ExpressRoute Premium-invoegtoepassing in- of uitschakelen voor uw ExpressRoute-circuit.
 * Verg root de band breedte van uw ExpressRoute-circuit, op voor waarde dat er capaciteit beschikbaar is op de poort. Verminderen van de bandbreedte van een circuit wordt niet ondersteund.
 * Het verbruiksabonnement wijzigen van Datalimiet in Onbeperkte data. Wijzigen van het verbruiksabonnement van Onbeperkte data in Datalimiet wordt niet ondersteund.
 * U kunt *klassieke bewerkingen toestaan* in- en uitschakelen.
@@ -120,7 +120,7 @@ Uw circuit heeft nu de ExpressRoute Premium-invoeg toepassingen ingeschakeld. Zo
 ### <a name="disable-the-expressroute-premium-add-on"></a>De Premium-invoeg toepassing voor ExpressRoute uitschakelen
 
 > [!IMPORTANT]
-> Deze bewerking kan mislukken als u resources gebruikt die groter zijn dan is toegestaan voor het standaard circuit.
+> Deze bewerking kan mislukken als u resources gebruikt die groter zijn dan wat is toegestaan voor het Standard-circuit.
 >
 >
 
@@ -128,7 +128,7 @@ Uw circuit heeft nu de ExpressRoute Premium-invoeg toepassingen ingeschakeld. Zo
 
 * Zorg ervoor dat het aantal virtuele netwerken dat is gekoppeld aan het circuit kleiner is dan 10 voordat u een downgrade uitvoert van Premium naar Standard. Als u dit niet doet, mislukt de update aanvraag en worden de Premium-tarieven in rekening gebracht.
 * U moet alle virtuele netwerken in andere geopolitieke regio's ontkoppelen. Als u dit niet doet, mislukt de update aanvraag en worden de Premium-tarieven in rekening gebracht.
-* De route tabel moet kleiner zijn dan 4.000 routes voor privé-peering. Als uw route tabel groter is dan 4.000 routes, wordt de BGP-sessie verbroken en wordt deze niet opnieuw ingeschakeld totdat het aantal aangekondigde voor voegsels onder 4.000 komt.
+* De routetabel moet kleiner zijn dan 4.000 routes voor persoonlijke peering. Als uw route tabel groter is dan 4.000 routes, wordt de BGP-sessie verbroken en wordt deze niet opnieuw ingeschakeld totdat het aantal aangekondigde voor voegsels onder 4.000 komt.
 
 #### <a name="to-disable-the-premium-add-on"></a>De Premium-invoeg toepassing uitschakelen
 
@@ -155,7 +155,7 @@ Raadpleeg de [Veelgestelde vragen over ExpressRoute](expressroute-faqs.md) voor 
 > [!IMPORTANT]
 > Mogelijk moet u het ExpressRoute-circuit opnieuw maken als er onvoldoende capaciteit is op de bestaande poort. U kunt het circuit niet upgraden als er geen extra capaciteit beschikbaar is op de betreffende locatie.
 >
-> U kunt de band breedte van een ExpressRoute-circuit zonder onderbreking niet verkleinen. Voor het verminderen van de bandbreedte moet u de inrichting van het ExpressRoute-circuit ongedaan maken, en vervolgens een nieuw ExpressRoute-circuit inrichten.
+> Het is niet mogelijk om de bandbreedte van een ExpressRoute-circuit zonder onderbreking te verminderen. Voor het verminderen van de bandbreedte moet u de inrichting van het ExpressRoute-circuit ongedaan maken, en vervolgens een nieuw ExpressRoute-circuit inrichten.
 >
 >
 
@@ -200,7 +200,7 @@ At line:1 char:1
 
 #### <a name="delete-a-circuit"></a>Een circuit verwijderen
 
-U kunt het ExpressRoute-circuit verwijderen door de volgende opdracht uit te voeren:
+U kunt uw ExpressRoute-circuit verwijderen door de volgende opdracht uit te voeren:
 
 ```powershell
 Remove-AzureDedicatedCircuit -ServiceKey "*********************************"

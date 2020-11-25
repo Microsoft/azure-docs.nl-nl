@@ -8,11 +8,11 @@ author: bwren
 ms.author: bwren
 ms.date: 03/13/2020
 ms.openlocfilehash: d06501abe69ce9b06656cfa8949c42bb53a03983
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91439251"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019035"
 ---
 # <a name="azure-monitor-logs-connector-for-logic-apps-and-power-automate"></a>Azure Monitor logs connector voor Logic Apps en energie automatisering
 Met [Azure Logic apps](../../logic-apps/index.yml) en [energie automatisering](https://flow.microsoft.com) kunt u geautomatiseerde werk stromen maken met honderden acties voor diverse services. Met de Azure Monitor logs connector kunt u werk stromen bouwen waarmee gegevens worden opgehaald uit een Log Analytics-werk ruimte of een Application Insights-toepassing in Azure Monitor. In dit artikel worden de acties beschreven die zijn opgenomen in de connector en vindt u een overzicht van het maken van een werk stroom met behulp van deze gegevens.
@@ -35,7 +35,7 @@ In de volgende tabel worden de acties beschreven die zijn opgenomen in de Azure 
 > De Azure Monitor logs connector vervangt de [Azure log Analytics-connector](/connectors/azureloganalytics/) en de [Azure-toepassing Insights-connector](/connectors/applicationinsights/). Deze connector biedt dezelfde functionaliteit als de andere, en is de voorkeurs methode voor het uitvoeren van een query op een Log Analytics-werk ruimte of een Application Insights-toepassing.
 
 
-| Bewerking | Beschrijving |
+| Actie | Beschrijving |
 |:---|:---|
 | [Query-en Lijst resultaten uitvoeren](/connectors/azuremonitorlogs/#run-query-and-list-results) | Retourneert elke rij als een eigen object. Gebruik deze actie als u met elke rij afzonderlijk in de rest van de werk stroom wilt werken. De actie wordt doorgaans gevolgd door een [voor elke activiteit](../../logic-apps/logic-apps-control-flow-loops.md#foreach-loop). |
 | [Query's uitvoeren en resultaten visualiseren](/connectors/azuremonitorlogs/#run-query-and-visualize-results) | Retourneert alle rijen in de resultatenset als een enkel opgemaakt object. Gebruik deze actie wanneer u de resultatenset samen in de rest van de werk stroom wilt gebruiken, zoals het verzenden van de resultaten in een e-mail.  |
@@ -46,15 +46,15 @@ De volgende zelf studies illustreren het gebruik van de Azure Monitor-connectors
 
 ### <a name="create-a-logic-app"></a>Een logische app maken
 
-Ga naar **Logic apps** in het Azure Portal en klik op **toevoegen**. Selecteer een **abonnement**, **resource groep**en **regio** om de nieuwe logische app op te slaan en geef deze een unieke naam. U kunt **log Analytics** instelling inschakelen om informatie over runtime gegevens en-gebeurtenissen te verzamelen, zoals wordt beschreven in [Azure monitor logboeken instellen en diagnostische gegevens verzamelen voor Azure Logic apps](../../logic-apps/monitor-logic-apps-log-analytics.md). Deze instelling is niet vereist voor het gebruik van de Azure Monitor logs connector.
+Ga naar **Logic apps** in het Azure Portal en klik op **toevoegen**. Selecteer een **abonnement**, **resource groep** en **regio** om de nieuwe logische app op te slaan en geef deze een unieke naam. U kunt **log Analytics** instelling inschakelen om informatie over runtime gegevens en-gebeurtenissen te verzamelen, zoals wordt beschreven in [Azure monitor logboeken instellen en diagnostische gegevens verzamelen voor Azure Logic apps](../../logic-apps/monitor-logic-apps-log-analytics.md). Deze instelling is niet vereist voor het gebruik van de Azure Monitor logs connector.
 
 ![Logische app maken](media/logicapp-flow-connector/create-logic-app.png)
 
 
-Klik op **beoordeling + maken** en vervolgens op **maken**. Wanneer de implementatie is voltooid, klikt u op **Ga naar resource** om de **Logic apps Designer**te openen.
+Klik op **beoordeling + maken** en vervolgens op **maken**. Wanneer de implementatie is voltooid, klikt u op **Ga naar resource** om de **Logic apps Designer** te openen.
 
 ### <a name="create-a-trigger-for-the-logic-app"></a>Een trigger maken voor de logische app
-Selecteer onder **beginnen met een gemeen schappelijke trigger de**optie **terugkeer patroon**. Hiermee maakt u een logische app die automatisch met een regel matig interval wordt uitgevoerd. In het vak **frequentie** van de actie selecteert u **dag** en voert u in het vak **interval** **1** in om de werk stroom eenmaal per dag uit te voeren.
+Selecteer onder **beginnen met een gemeen schappelijke trigger de** optie **terugkeer patroon**. Hiermee maakt u een logische app die automatisch met een regel matig interval wordt uitgevoerd. In het vak **frequentie** van de actie selecteert u **dag** en voert u in het vak **interval** **1** in om de werk stroom eenmaal per dag uit te voeren.
 
 ![Herhalings actie](media/logicapp-flow-connector/recurrence-action.png)
 
@@ -93,7 +93,7 @@ Het e-mail bericht wordt verzonden door het account dat is gekoppeld aan de huid
 
 ### <a name="add-email-action"></a>E-mail actie toevoegen
 
-Klik op **+ nieuwe stap**en vervolgens op **+ een actie toevoegen**. Onder **Kies een actie**, typt u **Outlook** en selecteert u vervolgens **Office 365 Outlook**.
+Klik op **+ nieuwe stap** en vervolgens op **+ een actie toevoegen**. Onder **Kies een actie**, typt u **Outlook** en selecteert u vervolgens **Office 365 Outlook**.
 
 ![Outlook-Connector selecteren](media/logicapp-flow-connector/select-outlook-connector.png)
 

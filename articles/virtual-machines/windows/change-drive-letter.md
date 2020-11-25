@@ -10,11 +10,11 @@ ms.topic: how-to
 ms.date: 01/02/2018
 ms.author: cynthn
 ms.openlocfilehash: cae29954211e62601debb35d76f938fb6a92779e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87284605"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019800"
 ---
 # <a name="use-the-d-drive-as-a-data-drive-on-a-windows-vm"></a>Het D: station gebruiken als gegevens station op een Windows-VM
 Als uw toepassing het D-station moet gebruiken om gegevens op te slaan, volgt u deze instructies om een andere stationsletter voor de tijdelijke schijf te gebruiken. Gebruik nooit de tijdelijke schijf om gegevens op te slaan die u wilt bewaren.
@@ -32,7 +32,7 @@ Eerst moet u de gegevens schijf aan de virtuele machine koppelen. Zie [een behee
 3. Selecteer in het menu aan de linkerkant **geavanceerde systeem instellingen**.
 4. Selecteer in de sectie **prestaties** de optie **instellingen**.
 5. Klik op het tabblad **Geavanceerd**.
-6. Selecteer **wijzigen**in het gedeelte **virtueel geheugen** .
+6. Selecteer **wijzigen** in het gedeelte **virtueel geheugen** .
 7. Selecteer station **C** en klik vervolgens op door **systeem beheerde grootte** en klik vervolgens op **instellen**.
 8. Selecteer het station **D** en klik vervolgens op **geen wissel bestand** en klik vervolgens op **instellen**.
 9. Klik op Toepassen. Er wordt een waarschuwing weer gegeven dat de computer opnieuw moet worden opgestart om de wijzigingen van kracht te laten worden.
@@ -51,7 +51,7 @@ Eerst moet u de gegevens schijf aan de virtuele machine koppelen. Zie [een behee
 2. Selecteer in het menu aan de linkerkant **geavanceerde systeem instellingen**.
 3. Selecteer in de sectie **prestaties** de optie **instellingen**.
 4. Klik op het tabblad **Geavanceerd**.
-5. Selecteer **wijzigen**in het gedeelte **virtueel geheugen** .
+5. Selecteer **wijzigen** in het gedeelte **virtueel geheugen** .
 6. Selecteer het OS-station **C** en klik op **geen wissel bestand** en klik vervolgens op **instellen**.
 7. Selecteer het tijdelijke opslag station **T** en klik vervolgens op door **systeem beheerde grootte** en klik vervolgens op **instellen**.
 8. Klik op **Toepassen**. Er wordt een waarschuwing weer gegeven dat de computer opnieuw moet worden opgestart om de wijzigingen van kracht te laten worden.

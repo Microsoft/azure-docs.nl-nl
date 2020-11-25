@@ -12,15 +12,15 @@ ms.workload: infrastructure-services
 ms.date: 09/28/2020
 ms.author: duau
 ms.openlocfilehash: 50e047325ad17710794b1640715ab1938373fe85
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91542169"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019460"
 ---
 # <a name="load-balancing-with-azures-application-delivery-suite"></a>Taakverdeling realiseren met de Azure-suite voor toepassingslevering
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 Microsoft Azure biedt diverse wereld wijde en regionale Services voor het beheren van de manier waarop uw netwerk verkeer wordt gedistribueerd en taak verdeling: 
 
 * Application Gateway
@@ -82,7 +82,7 @@ Daarnaast moet de standaard-VM-groep met de dynamische inhoud communiceren met e
 
 In het volgende diagram ziet u de architectuur van dit scenario:
 
-:::image type="content" source="./media/front-door-lb-with-azure-app-delivery-suite/application-delivery-figure2.png" alt-text="Application Delivery Suite":::
+:::image type="content" source="./media/front-door-lb-with-azure-app-delivery-suite/application-delivery-figure2.png" alt-text="Gedetailleerde architectuur van Application Delivery Suite":::
 
 > [!NOTE]
 > Dit voor beeld is slechts een van de vele mogelijke configuraties van de taakverdelings services die Azure biedt. Traffic Manager, front deur, Application Gateway en Load Balancer kunnen worden gecombineerd en afgestemd op uw behoeften voor taak verdeling. Als bijvoorbeeld TLS/SSL-offload of Layer 7-verwerking niet nodig is, kan Load Balancer worden gebruikt in plaats van Application Gateway.

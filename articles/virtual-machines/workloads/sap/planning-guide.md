@@ -12,12 +12,12 @@ ms.workload: infrastructure-services
 ms.date: 08/17/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017, devx-track-azurecli
-ms.openlocfilehash: c186e7beeed3a1729560d7deb002d573e0014508
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: bd45b0e1070efae7ae69a74ad96e1fa94a136006
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94950955"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96019392"
 ---
 # <a name="azure-virtual-machines-planning-and-implementation-for-sap-netweaver"></a>Azure Virtual Machines planning en implementatie voor SAP net-Weaver
 
@@ -891,7 +891,7 @@ In dit geval willen we een VHD uploaden, hetzij met ofwel zonder een besturings 
 * Een nieuwe virtuele machine maken op basis van de configuratie van de virtuele machine met *New-AzVM* -Zie <https://docs.microsoft.com/powershell/module/az.compute/new-Azvm>
 * Een gegevens schijf toevoegen aan een nieuwe virtuele machine met *add-AzVMDataDisk* -Zie <https://docs.microsoft.com/powershell/module/az.compute/add-Azvmdatadisk>
 
-**Azure-CLI**
+**Azure CLI**
 
 * Meld u aan bij uw abonnement met *AZ login*
 * Selecteer uw abonnement met *AZ account set--Subscription `<subscription name or id` >*
@@ -919,7 +919,7 @@ Als u een bestaande virtuele machine of VHD vanuit het on-premises netwerk wilt 
   * Beheerde schijf installatie kopie *instellen-AzVMSourceImage* -Zie <https://docs.microsoft.com/powershell/module/az.compute/set-Azvmsourceimage>
 * Een nieuwe virtuele machine maken op basis van de configuratie van de virtuele machine met *New-AzVM* -Zie <https://docs.microsoft.com/powershell/module/az.compute/new-Azvm>
 
-**Azure-CLI**
+**Azure CLI**
 
 * Gebruik *Sysprep* op Windows of *waagent-deprovisioning* in Linux om uw VM te generaliseren: Zie [technische Naslag informatie over Sysprep](/previous-versions/windows/it-pro/windows-vista/cc766049(v=ws.10)) voor Windows of [hoe u een virtuele Linux-machine vastlegt voor gebruik als Resource Manager-sjabloon][capture-image-linux-step-2-create-vm-image] voor Linux
 * Meld u aan bij uw abonnement met *AZ login*
@@ -1951,7 +1951,7 @@ De offline back-up vereist in principe dat de virtuele machine wordt afgesloten 
 
 
 Een herstel bewerking van die staat bestaat uit het verwijderen van de basis-VM, evenals de oorspronkelijke schijven van de basis-VM en gekoppelde schijven, waarbij de opgeslagen schijven naar het oorspronkelijke opslag account of de resource groep voor beheerde schijven worden gekopieerd en het systeem vervolgens opnieuw kan implementeren.
-In dit artikel wordt een voor beeld gegeven van het script voor dit proces in Power shell: <http://www.westerndevs.com/azure-snapshots/>
+In dit artikel wordt een voor beeld gegeven van het script voor dit proces in Power shell: <https://www.westerndevs.com/_/azure-snapshots/>
 
 Zorg ervoor dat u een nieuwe SAP-licentie installeert, omdat u een VM-back-up herstelt zoals hierboven is beschreven. Hiermee maakt u een nieuwe hardware-sleutel.
 

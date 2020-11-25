@@ -8,11 +8,11 @@ ms.date: 09/12/2018
 ms.author: glenga
 ms.custom: include file
 ms.openlocfilehash: 5f5f682c8c31c17f1a645bcdacdc78f32bd5c001
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77205692"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018418"
 ---
 De code voor alle functies in een specifieke functie-app bevinden zich in een hoofdmap die een hostconfiguratiebestand en een of meer submappen bevat. Elke submap bevat de code voor een afzonderlijke functie. De mapstructuur wordt weergegeven in de volgende weergave:
 

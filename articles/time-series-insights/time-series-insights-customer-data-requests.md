@@ -9,12 +9,12 @@ ms.service: time-series-insights
 services: time-series-insights
 ms.date: 10/02/2020
 ms.custom: seodec18
-ms.openlocfilehash: 5565dd43689d0420fbb9b73f088f24a38a2d54db
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b5ecbabe4a5c3458c77d145fbce1281550470e00
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91665902"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96019069"
 ---
 # <a name="summary-of-customer-data-request-features"></a>Samenvatting van functies voor gegevensaanvragen van klanten
 
@@ -34,7 +34,7 @@ Een Tenant beheerder kan klant gegevens verwijderen met behulp van de Azure Port
 
 [!INCLUDE [gdpr-dsr-and-stp-note](../../includes/gdpr-dsr-and-stp-note.md)]
 
-Voordat u echter klant gegevens verwijdert via de portal, moet u het toegangs beleid van de gebruiker verwijderen uit de Time Series Insights omgeving binnen de Azure Portal. Lees [granting Data Access to a time series Insights environment using Azure Portal](time-series-insights-data-access.md)voor meer informatie.
+Voordat u echter klant gegevens verwijdert via de portal, moet u het toegangs beleid van de gebruiker verwijderen uit de Time Series Insights omgeving binnen de Azure Portal. Lees [granting Data Access to a time series Insights environment using Azure Portal](./concepts-access-policies.md)voor meer informatie.
 
 U kunt ook delete-bewerkingen uitvoeren op toegangs beleid met behulp van de REST API. Lees voor meer informatie, [toegangs beleid-verwijderen](/rest/api/time-series-insights/management(gen1/gen2)/accesspolicies/delete).
 
@@ -46,7 +46,7 @@ Net als bij het verwijderen van gegevens kan een Tenant beheerder gegevens die z
 
 [!INCLUDE [gdpr-dsr-and-stp-note](../../includes/gdpr-dsr-and-stp-note.md)]
 
-Als u een Tenant beheerder bent, kunt u het beleid voor gegevens toegang weer geven in de Time Series Insights omgeving van de Azure Portal. Lees [granting Data Access to a time series Insights environment using Azure Portal](time-series-insights-data-access.md)voor meer informatie.
+Als u een Tenant beheerder bent, kunt u het beleid voor gegevens toegang weer geven in de Time Series Insights omgeving van de Azure Portal. Lees [granting Data Access to a time series Insights environment using Azure Portal](./concepts-access-policies.md)voor meer informatie.
 
 Het is ook mogelijk om export bewerkingen uit te voeren op toegangs beleid met behulp van de bewerking ' lijst op omgeving ' in de gegeven REST API. Lees voor meer informatie [het toegangs beleid-lijst per omgeving](/rest/api/time-series-insights/management(gen1/gen2)/accesspolicies/listbyenvironment).
 
@@ -68,7 +68,7 @@ Lees voor meer informatie het [configureren van Bewaar periode in time series In
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over [het verlenen van toegang tot gegevens aan uw Azure time series Insights-omgeving](./time-series-insights-data-access.md).
+* Meer informatie over [het verlenen van toegang tot gegevens aan uw Azure time series Insights-omgeving](./concepts-access-policies.md).
 
 * Bekijk de [Azure time series Insights Explorer](time-series-insights-explorer.md).
 

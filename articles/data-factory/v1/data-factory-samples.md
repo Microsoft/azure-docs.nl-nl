@@ -12,11 +12,11 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.openlocfilehash: ed63d148afa6f5674d36cc50c18351b2a06966eb
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636830"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019613"
 ---
 # <a name="azure-data-factory---samples"></a>Azure Data Factory-voor beelden
 > [!NOTE]
@@ -79,37 +79,37 @@ U kunt de tegel **voorbeeld pijplijnen** gebruiken op de start pagina van uw Dat
 De volgende zaken moeten op uw computer zijn geïnstalleerd:
 
 * Visual Studio 2013 of Visual Studio 2015
-* Download de Azure SDK voor Visual Studio 2013 of Visual Studio 2015. Ga naar de [Azure-downloadpagina](https://azure.microsoft.com/downloads/) en klik in het gedeelte **.NET** op **VS 2013** of **VS 2015** .
-* Download de nieuwste Azure Data Factory-invoegtoepassing voor Visual Studio: [VS 2013](https://visualstudiogallery.msdn.microsoft.com/754d998c-8f92-4aa7-835b-e89c8c954aa5) of [VS 2015](https://visualstudiogallery.msdn.microsoft.com/371a4cf9-0093-40fa-b7dd-be3c74f49005). Als u Visual Studio 2013 gebruikt, kunt u de invoeg toepassing ook bijwerken door de volgende stappen uit te voeren: Klik in het menu op **extra**  ->  **extensies en updates**  ->  **online**  ->  **Visual Studio-galerie**  ->  **Microsoft Azure Data Factory Tools for Visual Studio**  ->  **Update** .
+* Download de Azure SDK voor Visual Studio 2013 of Visual Studio 2015. Ga naar de [Azure-downloadpagina](https://azure.microsoft.com/downloads/) en klik in het gedeelte **.NET** op **VS 2013** of **VS 2015**.
+* Download de nieuwste Azure Data Factory-invoegtoepassing voor Visual Studio: [VS 2013](https://visualstudiogallery.msdn.microsoft.com/754d998c-8f92-4aa7-835b-e89c8c954aa5) of [VS 2015](https://visualstudiogallery.msdn.microsoft.com/371a4cf9-0093-40fa-b7dd-be3c74f49005). Als u Visual Studio 2013 gebruikt, kunt u de invoeg toepassing ook bijwerken door de volgende stappen uit te voeren: Klik in het menu op **extra**  ->  **extensies en updates**  ->  **online**  ->  **Visual Studio-galerie**  ->  **Microsoft Azure Data Factory Tools for Visual Studio**  ->  **Update**.
 
 ### <a name="use-data-factory-templates"></a>Data Factory sjablonen gebruiken
-1. Klik op **bestand** in het menu, wijs **Nieuw** aan en klik op **project** .
+1. Klik op **bestand** in het menu, wijs **Nieuw** aan en klik op **project**.
 2. Voer in het dialoogvenster **Nieuw project** de volgende stappen uit:
 
-   1. Selecteer **DataFactory** onder **Templates** .
+   1. Selecteer **DataFactory** onder **Templates**.
    2. Selecteer **Data Factory sjablonen** in het rechterdeel venster.
    3. Voer een **naam** in voor het project.
    4. Selecteer een **locatie** voor het project.
-   5. Klik op **OK** .
+   5. Klik op **OK**.
 
       ![Het dialoogvenster New Project](./media/data-factory-samples/vs-new-project-adf-templates.png)
-3. Selecteer in het dialoog venster **Data Factory sjablonen** de voorbeeld sjabloon in de sectie **use-case-sjablonen** en klik op **volgende** . De volgende stappen begeleiden u bij het gebruik van de sjabloon voor **klant profilering** . De stappen zijn vergelijkbaar voor de andere voor beelden.
+3. Selecteer in het dialoog venster **Data Factory sjablonen** de voorbeeld sjabloon in de sectie **use-case-sjablonen** en klik op **volgende**. De volgende stappen begeleiden u bij het gebruik van de sjabloon voor **klant profilering** . De stappen zijn vergelijkbaar voor de andere voor beelden.
 
     ![Het dialoog venster Data Factory sjablonen](./media/data-factory-samples/vs-data-factory-templates-dialog.png)
 4. Klik in het dialoog venster **Data Factory configuratie** op **volgende** op de pagina **Data Factory Basics** .
 5. Voer de volgende stappen uit op de pagina **Data Factory configureren** :
-   1. Selecteer **nieuwe Data Factory maken** . U kunt ook **bestaande Data Factory gebruiken** selecteren.
+   1. Selecteer **nieuwe Data Factory maken**. U kunt ook **bestaande Data Factory gebruiken** selecteren.
    2. Voer een **naam** in voor de Data Factory.
    3. Selecteer het **Azure-abonnement** waarin u de Data Factory wilt maken.
    4. Selecteer de **resource groep** voor de Data Factory.
-   5. Selecteer **VS-West** , **VS-Oost** of **Europa-Noord** voor de **regio** .
-   6. Klik op **Volgende** .
+   5. Selecteer **VS-West**, **VS-Oost** of **Europa-Noord** voor de **regio**.
+   6. Klik op **Volgende**.
 6. Geef op de pagina **gegevens archieven configureren** een bestaande **Data base op in Azure SQL database** en **Azure Storage-account** (of) data base/opslag maken en klik op volgende.
-7. Selecteer op de pagina **Compute configureren** de optie standaard instellingen en klik op **volgende** .
-8. Controleer op de pagina **samen vatting** alle instellingen en klik op **volgende** .
-9. Wacht tot de implementatie is voltooid op de pagina **Implementatie status** en klik op **volt ooien** .
-10. Klik met de rechtermuisknop op het project in Solution Explorer. Klik vervolgens op **Publish** .
-11. Als u het dialoogvenster **Sign in to your Microsoft account** ziet, voert u uw referenties in voor het account met het Azure-abonnement en klikt u op **Sign in** .
+7. Selecteer op de pagina **Compute configureren** de optie standaard instellingen en klik op **volgende**.
+8. Controleer op de pagina **samen vatting** alle instellingen en klik op **volgende**.
+9. Wacht tot de implementatie is voltooid op de pagina **Implementatie status** en klik op **volt ooien**.
+10. Klik met de rechtermuisknop op het project in Solution Explorer. Klik vervolgens op **Publish**.
+11. Als u het dialoogvenster **Sign in to your Microsoft account** ziet, voert u uw referenties in voor het account met het Azure-abonnement en klikt u op **Sign in**.
 12. Het volgende dialoogvenster wordt weergegeven:
 
     ![Het dialoogvenster Publish](./media/data-factory-build-your-first-pipeline-using-vs/publish.png)
@@ -117,8 +117,8 @@ De volgende zaken moeten op uw computer zijn geïnstalleerd:
 
     1. Controleer of de optie **bestaande Data Factory gebruiken** .
     2. Selecteer de **Data Factory** die u hebt geselecteerd bij het gebruik van de sjabloon.
-    3. Klik op **Next** om over te schakelen naar de pagina **Publish Items** . (Druk op **TAB** als u het veld Naam wilt verlaten, maar de knop **Next** is uitgeschakeld.)
-14. Op de pagina **Publish Items** controleert u of alle Data Factory-entiteiten zijn geselecteerd en klikt u op **Next** om over te schakelen naar de pagina **Summary** .     
+    3. Klik op **Next** om over te schakelen naar de pagina **Publish Items**. (Druk op **TAB** als u het veld Naam wilt verlaten, maar de knop **Next** is uitgeschakeld.)
+14. Op de pagina **Publish Items** controleert u of alle Data Factory-entiteiten zijn geselecteerd en klikt u op **Next** om over te schakelen naar de pagina **Summary**.     
 15. Controleer de samenvatting en klik op **Next** om te beginnen met het implementatieproces en om de **implementatiestatus** te bekijken.
 16. Op de pagina **Deployment Status** ziet u de status van het implementatieproces. Klik op Finish wanneer de implementatie is uitgevoerd.
 

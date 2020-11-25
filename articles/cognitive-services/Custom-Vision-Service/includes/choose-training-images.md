@@ -6,11 +6,11 @@ ms.topic: include
 ms.date: 07/17/2019
 ms.author: pafarley
 ms.openlocfilehash: ce67062f83ad10703dfb1f0ee1f3741e698fb450
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "70130076"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018352"
 ---
 U wordt ten zeerste aangeraden minimaal dertig afbeeldingen per tag in de eerste trainingsset te gebruiken. U dient ook een paar extra afbeeldingen te verzamelen om uw model te testen zodra het is getraind.
 

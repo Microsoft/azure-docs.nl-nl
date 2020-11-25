@@ -7,11 +7,11 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 10/14/2020
 ms.openlocfilehash: c70e4a097a56b76089a26510bcf33b4c7c24c266
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94535143"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018712"
 ---
 # <a name="azure-database-for-mysql-pricing-tiers"></a>Azure Database for MySQL prijs Categorieën
 
@@ -97,7 +97,7 @@ Het schalen van de opslag en het wijzigen van de Bewaar periode voor back-ups is
 
 ## <a name="pricing"></a>Prijzen
 
-Zie de [pagina met prijzen](https://azure.microsoft.com/pricing/details/mysql/)voor services voor de meest actuele prijs informatie. Als u de kosten voor de gewenste configuratie wilt zien, geeft de [Azure Portal](https://portal.azure.com/#create/Microsoft.MySQLServer) de maandelijkse kosten op het tabblad **prijs categorie** weer op basis van de opties die u selecteert. Als u geen Azure-abonnement hebt, kunt u de Azure-prijs calculator gebruiken om een geschatte prijs te krijgen. Selecteer op de website [Azure-prijs calculator](https://azure.microsoft.com/pricing/calculator/) de optie **items toevoegen** , vouw de categorie **data bases** uit en kies **Azure database for MySQL** om de opties aan te passen.
+Zie de [pagina met prijzen](https://azure.microsoft.com/pricing/details/mysql/)voor services voor de meest actuele prijs informatie. Als u de kosten voor de gewenste configuratie wilt zien, geeft de [Azure Portal](https://portal.azure.com/#create/Microsoft.MySQLServer) de maandelijkse kosten op het tabblad **prijs categorie** weer op basis van de opties die u selecteert. Als u geen Azure-abonnement hebt, kunt u de Azure-prijs calculator gebruiken om een geschatte prijs te krijgen. Selecteer op de website [Azure-prijs calculator](https://azure.microsoft.com/pricing/calculator/) de optie **items toevoegen**, vouw de categorie **data bases** uit en kies **Azure database for MySQL** om de opties aan te passen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

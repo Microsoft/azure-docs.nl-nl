@@ -9,11 +9,11 @@ ms.topic: tutorial
 ms.date: 06/08/2020
 ms.custom: mvc, devx-track-azurepowershell
 ms.openlocfilehash: 70edf224494fdf1395d59d1c591d0369b9b20557
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93332999"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018083"
 ---
 # <a name="tutorial-design-an-azure-database-for-postgresql---single-server-using-powershell"></a>Zelfstudie: Een Azure Database for PostgreSQL-single server ontwerpen met behulp van PowerShell
 
@@ -82,7 +82,7 @@ De parameterwaarde voor de **SKU** volgt de conventie **prijscategorie\_compute-
 - `-Sku GP_Gen5_32` komt overeen met Algemeen gebruik, Gen 5 en 32 vCores.
 - `-Sku MO_Gen5_2` komt overeen met Geoptimaliseerd voor geheugen, Gen 5 en 2 vCores.
 
-Voor meer informatie over geldige **SKU** -waarden per regio en voor categorieën gaat u naar [Prijscategorieën voor Azure Database for PostgreSQL](./concepts-pricing-tiers.md).
+Voor meer informatie over geldige **SKU**-waarden per regio en voor categorieën gaat u naar [Prijscategorieën voor Azure Database for PostgreSQL](./concepts-pricing-tiers.md).
 
 Overweeg het gebruik van de prijscategorie Basic als lichte reken- en I/O-capaciteit voldoende is voor uw workload.
 
@@ -142,7 +142,7 @@ Als op uw clientcomputer PostgreSQL is geïnstalleerd, kunt u een lokale instant
    CREATE DATABASE mypgsqldb;
    ```
 
-1. Voer na de prompt de volgende opdracht uit om verbinding te maken met de zojuist gemaakte database **mypgsqldb** :
+1. Voer na de prompt de volgende opdracht uit om verbinding te maken met de zojuist gemaakte database **mypgsqldb**:
 
    ```sql
    \c mypgsqldb

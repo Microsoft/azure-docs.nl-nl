@@ -7,11 +7,11 @@ ms.date: 09/17/2018
 ms.author: masnider
 ms.custom: sfrev
 ms.openlocfilehash: 7b2f1a170a792e0b4d069258264407c121dab3ae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86260239"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018831"
 ---
 # <a name="service-fabric-terminology-overview"></a>Overzicht van Service Fabric terminologie
 
@@ -21,7 +21,7 @@ Azure Service Fabric is een gedistribueerde systemen platform waarmee u gemakkel
 
 **Cluster**: een met het netwerk verbonden reeks virtuele of fysieke machines waarop uw micro services worden geïmplementeerd en beheerd.  Clusters kunnen naar duizenden machines worden geschaald.
 
-**Knoop punt**: een computer of virtuele machine die deel uitmaakt van een cluster, wordt een *knoop punt*genoemd. Elk knoop punt krijgt een knooppunt naam (teken reeks) toegewezen. Knoop punten hebben kenmerken, zoals plaatsings eigenschappen. Elke machine of VM heeft een Windows-service die automatisch wordt gestart, en `FabricHost.exe` die start op het moment dat de computer wordt opgestart en twee uitvoer bare bestanden worden gestart: `Fabric.exe` en `FabricGateway.exe` . Deze twee uitvoer bare bestanden vormen het knoop punt. Voor het testen van scenario's kunt u meerdere knoop punten op één computer of virtuele machine hosten door meerdere exemplaren van en uit te voeren `Fabric.exe` `FabricGateway.exe` .
+**Knoop punt**: een computer of virtuele machine die deel uitmaakt van een cluster, wordt een *knoop punt* genoemd. Elk knoop punt krijgt een knooppunt naam (teken reeks) toegewezen. Knoop punten hebben kenmerken, zoals plaatsings eigenschappen. Elke machine of VM heeft een Windows-service die automatisch wordt gestart, en `FabricHost.exe` die start op het moment dat de computer wordt opgestart en twee uitvoer bare bestanden worden gestart: `Fabric.exe` en `FabricGateway.exe` . Deze twee uitvoer bare bestanden vormen het knoop punt. Voor het testen van scenario's kunt u meerdere knoop punten op één computer of virtuele machine hosten door meerdere exemplaren van en uit te voeren `Fabric.exe` `FabricGateway.exe` .
 
 ## <a name="application-and-service-concepts"></a>Toepassings-en service concepten
 
@@ -82,7 +82,7 @@ Er zijn twee soorten services:
 **Code pakket**: een schijf Directory met de uitvoer bare bestanden van het Service type, doorgaans exe/DLL-bestanden. Er wordt naar de bestanden in de map code pakket verwezen door het bestand van het Service type `ServiceManifest.xml` . Wanneer u een benoemde service maakt, wordt het code pakket gekopieerd naar het knoop punt of de knoop punten die zijn geselecteerd om de genoemde service uit te voeren. Vervolgens wordt de code uitgevoerd. Er zijn twee soorten code pakket uitvoer bare bestanden:
 
 * **Uitvoer bare bestanden voor gasten**: uitvoer bare bestanden die worden uitgevoerd als op het hostbesturingssysteem (Windows of Linux). Deze uitvoer bare bestanden zijn niet gekoppeld aan of verwijzen naar Service Fabric runtime-bestanden en gebruiken daarom geen Service Fabric-programmeer modellen. Deze uitvoer bare bestanden kunnen sommige Service Fabric functies niet gebruiken, zoals de naamgevings service voor eindpunt detectie. Uitvoer bare bestanden voor gasten kunnen geen belasting gegevens rapporteren die specifiek zijn voor elk service-exemplaar.
-* **Uitvoer bare bestanden**van de servicehost: uitvoer bare bestanden die gebruikmaken van service Fabric-programmeer modellen door te koppelen aan service Fabric runtime-bestanden, waardoor service Fabric functies worden ingeschakeld. Een benoemd service-exemplaar kan bijvoorbeeld eind punten registreren bij de Naming Service van Service Fabric en kan ook belasting gegevens rapporteren.
+* **Uitvoer bare bestanden** van de servicehost: uitvoer bare bestanden die gebruikmaken van service Fabric-programmeer modellen door te koppelen aan service Fabric runtime-bestanden, waardoor service Fabric functies worden ingeschakeld. Een benoemd service-exemplaar kan bijvoorbeeld eind punten registreren bij de Naming Service van Service Fabric en kan ook belasting gegevens rapporteren.
 
 **Gegevens pakket**: een schijf Directory met de statische, alleen-lezen gegevens bestanden van het Service type, doorgaans foto-, geluids-en video bestanden. Er wordt naar de bestanden in de map van het gegevens pakket verwezen door het bestand van het Service type `ServiceManifest.xml` . Wanneer u een benoemde service maakt, wordt het gegevens pakket gekopieerd naar het knoop punt of de knoop punten die zijn geselecteerd om de genoemde service uit te voeren. De code wordt uitgevoerd en heeft nu toegang tot de gegevens bestanden.
 

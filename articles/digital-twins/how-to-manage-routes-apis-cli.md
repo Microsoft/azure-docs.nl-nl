@@ -4,15 +4,15 @@ titleSuffix: Azure Digital Twins
 description: Zie eind punten en gebeurtenis routes instellen en beheren voor Azure Digital Apparaatdubbels-gegevens.
 author: alexkarcher-msft
 ms.author: alkarche
-ms.date: 10/12/2020
+ms.date: 11/18/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 0b8bd9006482daf7c9218f0f3dbb16d2e08359bf
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: b836038aa2f8f60e25c51d1d5674d22497b3ce44
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94533749"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96018954"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-apis-and-cli"></a>Eind punten en routes beheren in azure Digital Apparaatdubbels (Api's en CLI)
 
@@ -64,15 +64,15 @@ Zodra u het onderwerp hebt gemaakt, kunt u dit koppelen aan Azure Digital Appara
 az dt endpoint create eventgrid --endpoint-name <Event-Grid-endpoint-name> --eventgrid-resource-group <Event-Grid-resource-group-name> --eventgrid-topic <your-Event-Grid-topic-name> -n <your-Azure-Digital-Twins-instance-name>
 ```
 
-Het onderwerp Event grid is nu beschikbaar als een eind punt in azure Digital Apparaatdubbels, onder de naam die is opgegeven met het `--endpoint-name` argument. Normaal gesp roken gebruikt u die naam als het doel van een **gebeurtenis route** , die u [later in dit artikel](#create-an-event-route) maakt met behulp van de Azure Digital apparaatdubbels Service-API.
+Het onderwerp Event grid is nu beschikbaar als een eind punt in azure Digital Apparaatdubbels, onder de naam die is opgegeven met het `--endpoint-name` argument. Normaal gesp roken gebruikt u die naam als het doel van een **gebeurtenis route**, die u [later in dit artikel](#create-an-event-route) maakt met behulp van de Azure Digital apparaatdubbels Service-API.
 
 ### <a name="create-an-event-hubs-or-service-bus-endpoint"></a>Een Event Hubs-of Service Bus-eind punt maken
 
 Het proces voor het maken van Event Hubs-of Service Bus-eind punten is vergelijkbaar met het hierboven weer gegeven Event Grid proces.
 
 Maak eerst uw resources die u als eind punt gaat gebruiken. Wat is er vereist:
-* Service Bus: _Service Bus naam ruimte_ , _Service Bus onderwerp_ , _autorisatie regel_
-* Event Hubs: _Event hubs naam ruimte_ , _Event hub_ , _autorisatie regel_
+* Service Bus: _Service Bus naam ruimte_, _Service Bus onderwerp_, _autorisatie regel_
+* Event Hubs: _Event hubs naam ruimte_, _Event hub_, _autorisatie regel_
 
 Gebruik vervolgens de volgende opdrachten om de eind punten in azure Digital Apparaatdubbels te maken: 
 
@@ -158,8 +158,8 @@ In de voor beelden in deze sectie wordt de [.net (C#) SDK](/dotnet/api/overview/
 
 Voor **waarde: u** moet eind punten maken zoals eerder in dit artikel wordt beschreven voordat u kunt verdergaan om een route te maken. U kunt door gaan met het maken van een gebeurtenis route wanneer de eind punten zijn ingesteld.
 
->[!NOTE]
->Als u onlangs uw eind punten hebt geïmplementeerd, controleert u of de implementatie is voltooid **voordat** u deze voor een nieuwe gebeurtenis route probeert te gebruiken. Als de implementatie van de route mislukt omdat de eind punten niet gereed zijn, wacht u enkele minuten en probeert u het opnieuw.
+> [!NOTE]
+> Als u onlangs uw eind punten hebt geïmplementeerd, controleert u of de implementatie is voltooid **voordat** u deze voor een nieuwe gebeurtenis route probeert te gebruiken. Als de implementatie van de route mislukt omdat de eind punten niet gereed zijn, wacht u enkele minuten en probeert u het opnieuw.
 >
 > Als u deze stroom bijwerkt, kunt u hiervoor het beste een account maken van 2-3 minuten wacht tijd voor de eindpunt service om de implementatie te volt ooien voordat u doorgaat met de installatie van.
 
@@ -229,7 +229,7 @@ Als u geen filtert, ontvangen eind punten diverse gebeurtenissen van Azure Digit
 
 U kunt de verzonden gebeurtenissen beperken door een **filter** voor een eind punt toe te voegen aan de route van uw gebeurtenis.
 
-Als u een filter wilt toevoegen, kunt u een PUT-aanvraag naar *https://{YourHost}/EventRoutes/myNewRoute? API-Version = 2020-10-31* gebruiken met de volgende hoofd tekst:
+Als u een filter wilt toevoegen, kunt u een PUT-aanvraag gebruiken voor *https://{uw-Azure-Digital-apparaatdubbels-hostname}/eventRoutes/{Event-route-name}? API-Version = 2020-10-31* met de volgende hoofd tekst:
 
 ```json  
 {
@@ -237,7 +237,6 @@ Als u een filter wilt toevoegen, kunt u een PUT-aanvraag naar *https://{YourHost
     "filter": "<filter-text>"
 }
 ``` 
-
 Dit zijn de ondersteunde route filters. Gebruik de details in de kolom *filter tekst schema* om de `<filter-text>` tijdelijke aanduiding te vervangen in de hoofd tekst van de aanvraag.
 
 [!INCLUDE [digital-twins-route-filters](../../includes/digital-twins-route-filters.md)]

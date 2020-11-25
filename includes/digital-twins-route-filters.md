@@ -6,13 +6,13 @@ ms.topic: include
 ms.date: 11/18/2020
 ms.author: baanders
 ms.openlocfilehash: 261c5fa47cddcc527e7c0a18fbd18aad9320ed4b
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95555691"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018955"
 ---
-| Bestandsnaam | Beschrijving | Filter tekst schema | Ondersteunde waarden | 
+| Bestandsnaam | Description | Filter tekst schema | Ondersteunde waarden | 
 | --- | --- | --- | --- |
 | Waar/onwaar | Hiermee kunt u een route maken zonder te filteren, of een route uitschakelen zodat er geen gebeurtenissen worden verzonden | `<true/false>` | `true` = route is ingeschakeld zonder filtering <br> `false` = route is uitgeschakeld |
 | Type | Het [type gebeurtenis dat](../articles/digital-twins/concepts-route-events.md#types-of-event-messages) door uw digitale dubbele instantie wordt doorlopend | `type = '<eventType>'` | Dit zijn de mogelijke gebeurtenis type waarden: <br>`Microsoft.DigitalTwins.Twin.Create` <br> `Microsoft.DigitalTwins.Twin.Delete` <br> `Microsoft.DigitalTwins.Twin.Update`<br>`Microsoft.DigitalTwins.Relationship.Create`<br>`Microsoft.DigitalTwins.Relationship.Update`<br> `Microsoft.DigitalTwins.Relationship.Delete` <br> `microsoft.iot.telemetry`  |

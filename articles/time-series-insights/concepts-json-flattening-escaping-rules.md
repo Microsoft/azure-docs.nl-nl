@@ -10,11 +10,11 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 09/28/2020
 ms.openlocfilehash: 0839d2c734418824952f37cb177490e56e1133c5
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023306"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017964"
 ---
 # <a name="json-flattening-escaping-and-array-handling"></a>JSON-platmaken, escapen en matrixafhandeling
 

@@ -7,17 +7,17 @@ ms.topic: how-to
 ms.date: 08/31/2019
 ms.author: allensu
 ms.openlocfilehash: 04abc051cec8a6fb38ce6aa8f5347ae06cb8bd1d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84688446"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019749"
 ---
 # <a name="move-azure-network-security-group-nsg-to-another-region-using-azure-powershell"></a>Een Azure-netwerk beveiligings groep (NSG) verplaatsen naar een andere regio met behulp van Azure PowerShell
 
 Er zijn verschillende scenario's waarin u uw bestaande Nsg's van de ene naar de andere regio wilt verplaatsen. U kunt bijvoorbeeld een NSG maken met dezelfde configuratie-en beveiligings regels om te testen. Het is ook mogelijk dat u een NSG naar een andere regio wilt verplaatsen als onderdeel van de planning voor nood herstel.
 
-Azure-beveiligings groepen kunnen niet worden verplaatst van de ene regio naar een andere. U kunt echter een Azure Resource Manager sjabloon gebruiken om de bestaande configuratie-en beveiligings regels van een NSG te exporteren.  U kunt de resource vervolgens in een andere regio zetten door de NSG naar een sjabloon te exporteren, de para meters te wijzigen zodat deze overeenkomen met de doel regio en vervolgens de sjabloon te implementeren in de nieuwe regio.  Zie [resource groepen exporteren naar sjablonen](https://docs.microsoft.com/azure/azure-resource-manager/manage-resource-groups-powershell#export-resource-groups-to-templates)voor meer informatie over Resource Manager en sjablonen.
+Azure-beveiligingsgroepen kunnen niet worden verplaatst van de ene regio naar een andere. U kunt echter een Azure Resource Manager sjabloon gebruiken om de bestaande configuratie-en beveiligings regels van een NSG te exporteren.  U kunt de resource vervolgens in een andere regio zetten door de NSG naar een sjabloon te exporteren, de para meters te wijzigen zodat deze overeenkomen met de doel regio en vervolgens de sjabloon te implementeren in de nieuwe regio.  Zie [resource groepen exporteren naar sjablonen](https://docs.microsoft.com/azure/azure-resource-manager/manage-resource-groups-powershell#export-resource-groups-to-templates)voor meer informatie over Resource Manager en sjablonen.
 
 
 ## <a name="prerequisites"></a>Vereisten
@@ -61,7 +61,7 @@ De volgende stappen laten zien hoe u de netwerk beveiligings groep voorbereidt v
    Export-AzResourceGroup -ResourceGroupName <source-resource-group-name> -Resource $sourceNSGID -IncludeParameterDefaultValue
    ```
 
-4. Het bestand dat u hebt gedownload krijgt de naam van de resource groep waaruit de resource is geëxporteerd.  Zoek het bestand dat is geëxporteerd uit de opdracht met de naam ** \<resource-group-name> . json** en open het in een editor naar keuze:
+4. Het bestand dat u hebt gedownload krijgt de naam van de resource groep waaruit de resource is geëxporteerd.  Zoek het bestand dat is geëxporteerd uit de opdracht met de naam **\<resource-group-name> . json** en open het in een editor naar keuze:
    
    ```azurepowershell
    notepad <source-resource-group-name>.json
@@ -106,9 +106,9 @@ De volgende stappen laten zien hoe u de netwerk beveiligings groep voorbereidt v
     Get-AzLocation | format-table
     
     ```
-8. U kunt ook andere para meters in de ** \<resource-group-name> . json** wijzigen als u ervoor kiest en zijn optioneel, afhankelijk van uw vereisten:
+8. U kunt ook andere para meters in de **\<resource-group-name> . json** wijzigen als u ervoor kiest en zijn optioneel, afhankelijk van uw vereisten:
 
-    * **Beveiligings regels** : u kunt bewerken welke regels in de doel-NSG worden geïmplementeerd door regels toe te voegen aan of te verwijderen uit de sectie **securityRules** in het ** \<resource-group-name> JSON** -bestand:
+    * **Beveiligings regels** : u kunt bewerken welke regels in de doel-NSG worden geïmplementeerd door regels toe te voegen aan of te verwijderen uit de sectie **securityRules** in het **\<resource-group-name> JSON** -bestand:
 
         ```json
            "resources": [
@@ -144,7 +144,7 @@ De volgende stappen laten zien hoe u de netwerk beveiligings groep voorbereidt v
             
         ```
 
-        Voor het volt ooien van de toevoeging of het verwijderen van de regels in de doel-NSG moet u ook de aangepaste regel typen aan het einde van het ** \<resource-group-name> JSON** -bestand bewerken in de indeling van het voor beeld hieronder:
+        Voor het volt ooien van de toevoeging of het verwijderen van de regels in de doel-NSG moet u ook de aangepaste regel typen aan het einde van het **\<resource-group-name> JSON** -bestand bewerken in de indeling van het voor beeld hieronder:
 
         ```json
            {
@@ -171,7 +171,7 @@ De volgende stappen laten zien hoe u de netwerk beveiligings groep voorbereidt v
             }
         ```
 
-9. Sla het ** \<resource-group-name> JSON** -bestand op.
+9. Sla het **\<resource-group-name> JSON** -bestand op.
 
 10. Maak een resource groep in de doel regio voor de doel-NSG die moet worden geïmplementeerd met [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup?view=azps-2.6.0):
     
@@ -179,7 +179,7 @@ De volgende stappen laten zien hoe u de netwerk beveiligings groep voorbereidt v
     New-AzResourceGroup -Name <target-resource-group-name> -location <target-region>
     ```
     
-11. Implementeer het bewerkte ** \<resource-group-name> . json** -bestand in de resource groep die u in de vorige stap hebt gemaakt met behulp van [New-AzResourceGroupDeployment](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0):
+11. Implementeer het bewerkte **\<resource-group-name> . json** -bestand in de resource groep die u in de vorige stap hebt gemaakt met behulp van [New-AzResourceGroupDeployment](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0):
 
     ```azurepowershell-interactive
 

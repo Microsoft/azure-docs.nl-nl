@@ -15,11 +15,11 @@ ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18, devx-track-csharp
 ms.openlocfilehash: 09068064f24594ef35a8a1bf64213b48d83873ca
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89296860"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018729"
 ---
 # <a name="apple-fairplay-license-requirements-and-configuration"></a>Vereisten voor en configuratie van Apple FairPlay-licenties
 

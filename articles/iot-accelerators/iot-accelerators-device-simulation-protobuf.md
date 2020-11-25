@@ -10,11 +10,11 @@ ms.custom: mvc, amqp, devx-track-csharp
 ms.date: 11/06/2018
 ms.author: dobett
 ms.openlocfilehash: 12aa18c966745b450b3c9aa55e87e576b0c3f99b
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075957"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018525"
 ---
 # <a name="serialize-telemetry-using-protocol-buffers"></a>Telemetrie serialiseren met protocol buffers
 
@@ -227,7 +227,7 @@ Zorg ervoor dat de micro service Device simulatie niet wordt uitgevoerd in dit e
 
 In deze sectie gebruikt u de Azure CLI om een gebeurtenis controle in te stellen voor het weer geven van de telemetrie die is verzonden vanaf de apparaten die zijn verbonden met uw IoT-hub.
 
-In het volgende script wordt ervan uitgegaan dat de naam van uw IoT hub **apparaat-simulatie-test**is.
+In het volgende script wordt ervan uitgegaan dat de naam van uw IoT hub **apparaat-simulatie-test** is.
 
 ```azurecli-interactive
 # Install the IoT extension if it's not already installed
@@ -267,7 +267,7 @@ Als u de simulatie wilt stoppen, selecteert u de aanvraag voor het stoppen van d
 
 ### <a name="clean-up-resources"></a>Resources opschonen
 
-U kunt de twee lokaal uitgevoerde micro Services in hun Visual Studio code-instanties stoppen (fouten opsporen** \> Stop fout opsporing**).
+U kunt de twee lokaal uitgevoerde micro Services in hun Visual Studio code-instanties stoppen (fouten opsporen **\> Stop fout opsporing**).
 
 Als u de IoT Hub en Cosmos DB instanties niet meer nodig hebt, verwijdert u deze uit uw Azure-abonnement om overbodige kosten te voor komen.
 

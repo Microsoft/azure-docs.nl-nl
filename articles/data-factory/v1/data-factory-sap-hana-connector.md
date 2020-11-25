@@ -13,11 +13,11 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 361b98a1cde8ee5dee99a370b46d8fc8e0f5af28
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84707137"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019562"
 ---
 # <a name="move-data-from-sap-hana-using-azure-data-factory"></a>Gegevens verplaatsen van SAP HANA met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -42,7 +42,7 @@ Als u de verbinding met het SAP HANA-exemplaar wilt inschakelen, installeert u d
 U kunt een pijp lijn maken met een Kopieer activiteit die gegevens verplaatst van een on-premises SAP HANA gegevens opslag met behulp van verschillende hulpprogram ma's/Api's. 
 
 - De eenvoudigste manier om een pijp lijn te maken, is met behulp van de **wizard kopiëren**. Zie [zelf studie: een pijp lijn maken met behulp van de wizard kopiëren](data-factory-copy-data-wizard-tutorial.md) voor een snelle walkthrough over het maken van een pijp lijn met behulp van de wizard gegevens kopiëren. 
-- U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio**, **Azure PowerShell**, **Azure Resource Manager sjabloon**, **.net API**en **rest API**. Zie [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit. 
+- U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio**, **Azure PowerShell**, **Azure Resource Manager sjabloon**, **.net API** en **rest API**. Zie [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit. 
 
 Ongeacht of u de hulpprogram ma's of Api's gebruikt, voert u de volgende stappen uit om een pijp lijn te maken waarmee gegevens uit een brongegevens archief naar een Sink-gegevens archief worden verplaatst:
 
@@ -59,11 +59,11 @@ In de volgende tabel vindt u een beschrijving van de JSON-elementen die specifie
 
 Eigenschap | Beschrijving | Toegestane waarden | Vereist
 -------- | ----------- | -------------- | --------
-server | De naam van de server waarop het SAP HANA-exemplaar zich bevindt. Als op uw server een aangepaste poort wordt gebruikt, geeft u op `server:port` . | tekenreeks | Ja
-authenticationType | Type verificatie. | tekenreeksexpressie. "Basic" of "Windows" | Ja 
-gebruikersnaam | Naam van de gebruiker die toegang heeft tot de SAP-server | tekenreeks | Ja
-wachtwoord | Het wachtwoord voor de gebruiker. | tekenreeks | Ja
-gatewayName | De naam van de gateway die de Data Factory-service moet gebruiken om verbinding te maken met het on-premises SAP HANA exemplaar. | tekenreeks | Ja
+server | De naam van de server waarop het SAP HANA-exemplaar zich bevindt. Als op uw server een aangepaste poort wordt gebruikt, geeft u op `server:port` . | tekenreeks | Yes
+authenticationType | Type verificatie. | tekenreeksexpressie. "Basic" of "Windows" | Yes 
+gebruikersnaam | Naam van de gebruiker die toegang heeft tot de SAP-server | tekenreeks | Yes
+wachtwoord | Het wachtwoord voor de gebruiker. | tekenreeks | Yes
+gatewayName | De naam van de gateway die de Data Factory-service moet gebruiken om verbinding te maken met het on-premises SAP HANA exemplaar. | tekenreeks | Yes
 encryptedCredential | De versleutelde referentie teken reeks. | tekenreeks | No
 
 ## <a name="dataset-properties"></a>Eigenschappen van gegevensset
@@ -81,7 +81,7 @@ Wanneer de bron in de Kopieer activiteit van het type **RelationalSource** is (i
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| query | Hiermee geeft u de SQL-query voor het lezen van gegevens uit het SAP HANA-exemplaar. | SQL-query. | Ja |
+| query | Hiermee geeft u de SQL-query voor het lezen van gegevens uit het SAP HANA-exemplaar. | SQL-query. | Yes |
 
 ## <a name="json-example-copy-data-from-sap-hana-to-azure-blob"></a>JSON-voor beeld: gegevens kopiëren van SAP HANA naar Azure Blob
 Het volgende voor beeld geeft een voor beeld van JSON-definities die u kunt gebruiken om een pijp lijn te maken met behulp van [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) of [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). In dit voor beeld ziet u hoe u gegevens van een on-premises SAP HANA kopieert naar een Azure Blob Storage. Gegevens kunnen echter **rechtstreeks** naar een van de hieronder vermelde sinks worden gekopieerd met behulp [van de](data-factory-data-movement-activities.md#supported-data-stores-and-formats) Kopieer activiteit in azure Data Factory.  
@@ -288,9 +288,9 @@ SMALLINT | Int16
 INT | Int32
 BIGINT | Int64
 REAL | Enkelvoudig
-DUBBELKLIK | Enkelvoudig
-KOMMA | Decimaal
-True | Byte
+DOUBLE | Enkelvoudig
+DECIMAL | Decimaal
+BOOLEAN | Byte
 VARCHAR | Tekenreeks
 NVARCHAR | Tekenreeks
 CLOB | Byte []

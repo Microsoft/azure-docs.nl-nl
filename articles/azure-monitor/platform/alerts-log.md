@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 07/29/2019
 ms.subservice: alerts
 ms.openlocfilehash: 0842efe304faa9a0d94fbf71075f1bc16ff34014
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92217555"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018202"
 ---
 # <a name="create-view-and-manage-log-alerts-using-azure-monitor"></a>Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor
 
@@ -34,7 +34,7 @@ U kunt ook waarschuwings regels voor logboeken maken met behulp van Azure Resour
 Hier volgen de stappen om aan de slag te gaan met het schrijven van query's voor waarschuwingen:
 
 1. Ga naar de resource waarvoor u een waarschuwing wilt ontvangen.
-1. Onder **monitor**selecteert u **Logboeken**.
+1. Onder **monitor** selecteert u **Logboeken**.
 1. Voer een query uit op de logboekgegevens die het probleem kunnen aanduiden. U kunt het [onderwerp voor beelden van waarschuwings query's](../log-query/saved-queries.md) gebruiken om te begrijpen wat u kunt detecteren of [aan de slag gaat met het schrijven van uw eigen query](../log-query/get-started-portal.md). U kunt ook [leren hoe u geoptimaliseerde waarschuwingsquery's maakt](alerts-log-query.md).
 1. Druk op de knop + nieuwe waarschuwings regel om de stroom voor het maken van waarschuwingen te starten.
 
@@ -81,7 +81,7 @@ Hier volgen de stappen om aan de slag te gaan met het schrijven van query's voor
 
 1. Selecteer **Gereed**. 
 
-1. Definieer de **naam van de waarschuwings regel**, **Beschrijving**en selecteer de **Ernst**van de waarschuwing. Deze details worden in alle waarschuwings acties gebruikt. Daarnaast kunt u ervoor kiezen om de waarschuwings regel niet te activeren bij het maken door **regel inschakelen bij het maken**te selecteren.
+1. Definieer de **naam van de waarschuwings regel**, **Beschrijving** en selecteer de **Ernst** van de waarschuwing. Deze details worden in alle waarschuwings acties gebruikt. Daarnaast kunt u ervoor kiezen om de waarschuwings regel niet te activeren bij het maken door **regel inschakelen bij het maken** te selecteren.
 
 1. Kies of u regel acties wilt onderdrukken voor een tijd nadat een waarschuwing is geactiveerd, gebruikt u de optie [**waarschuwingen onderdrukken**](alerts-unified-log.md#state-and-resolving-alerts) . De regel wordt nog steeds uitgevoerd en er worden geen waarschuwingen gemaakt, maar er worden geen acties geactiveerd om ruis te voor komen. De waarde voor dempen moet groter zijn dan de frequentie van de waarschuwing om effectief te zijn.
 
@@ -126,7 +126,7 @@ Hier volgen de stappen om aan de slag te gaan met het schrijven van query's voor
 
     ![Regel maken](media/alerts-log/AlertsPreviewAdd.png)
 
-1. Druk op de knop **resource selecteren** . Filter door het *abonnement*, het *resource type*te kiezen en een resource te selecteren. Controleer of er logboeken beschikbaar zijn voor de resource.
+1. Druk op de knop **resource selecteren** . Filter door het *abonnement*, het *resource type* te kiezen en een resource te selecteren. Controleer of er logboeken beschikbaar zijn voor de resource.
 
    ![Resource selecteren](media/alerts-log/Alert-SelectResourceLog.png)
 
@@ -164,7 +164,7 @@ Hier volgen de stappen om aan de slag te gaan met het schrijven van query's voor
 
         ![Voorbeeld grafiek](media/alerts-log/preview-chart.png)
 
-    1. Stel vervolgens op basis van de voorbeeld gegevens de logica van de **waarschuwing**in. [ **Operator**, **drempel waarde**](alerts-unified-log.md#threshold-and-operator)en [**frequentie**](alerts-unified-log.md#frequency).
+    1. Stel vervolgens op basis van de voorbeeld gegevens de logica van de **waarschuwing** in. [ **Operator**, **drempel waarde**](alerts-unified-log.md#threshold-and-operator)en [**frequentie**](alerts-unified-log.md#frequency).
 
         ![Voorbeeld grafiek met drempel en waarschuwings logica](media/alerts-log/chart-and-alert-logic.png)
 
@@ -176,7 +176,7 @@ Hier volgen de stappen om aan de slag te gaan met het schrijven van query's voor
 
     ![Tabblad acties](media/alerts-log/actions-tab.png)
 
-1. Definieer de details van de **waarschuwings regel**en **Project Details**op het tabblad **Details** . U kunt desgewenst instellen of u nu niet wilt starten of [**acties dempen**](alerts-unified-log.md#state-and-resolving-alerts) voor een periode nadat de waarschuwings regel **wordt**geactiveerd.
+1. Definieer de details van de **waarschuwings regel** en **Project Details** op het tabblad **Details** . U kunt desgewenst instellen of u nu niet wilt starten of [**acties dempen**](alerts-unified-log.md#state-and-resolving-alerts) voor een periode nadat de waarschuwings regel **wordt** geactiveerd.
 
     > [!NOTE]
     > Waarschuwings regels voor logboeken zijn momenteel stateless en elke keer dat er een waarschuwing wordt gemaakt een actie wordt geactiveerd, tenzij dempen is gedefinieerd.

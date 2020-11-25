@@ -9,11 +9,11 @@ ms.service: iot-dps
 services: iot-dps
 manager: eliotga
 ms.openlocfilehash: b9fc37c6589cdd0bc6a5cdce7b7ebebe2c6e9a85
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90531607"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019443"
 ---
 # <a name="iot-hub-device-provisioning-service-dps-terminology"></a>Terminologie van IoT Hub Device Provisioning Service (DPS)
 
@@ -46,7 +46,7 @@ De instelling op service niveau die bepaalt hoe Device Provisioning Service appa
 
 * **Statische configuratie via de registratie lijst**: specificatie van de gewenste IOT-hub in de registratie lijst heeft voor rang op het toewijzings beleid op service niveau.
 
-* **Aangepast (Azure function gebruiken): met**een aangepast toewijzings beleid hebt u meer controle over hoe apparaten worden toegewezen aan een IOT-hub. Dit wordt bereikt door gebruik te maken van aangepaste code in een Azure-functie om apparaten toe te wijzen aan een IoT-hub. De Device Provisioning Service roept de code van uw Azure-functie aan om alle relevante informatie over het apparaat en de inschrijving van uw code op te geven. De functiecode wordt uitgevoerd en retourneert de gegevens van de IoT-hub die worden gebruikt om het apparaat in te richten.
+* **Aangepast (Azure function gebruiken): met** een aangepast toewijzings beleid hebt u meer controle over hoe apparaten worden toegewezen aan een IOT-hub. Dit wordt bereikt door gebruik te maken van aangepaste code in een Azure-functie om apparaten toe te wijzen aan een IoT-hub. De Device Provisioning Service roept de code van uw Azure-functie aan om alle relevante informatie over het apparaat en de inschrijving van uw code op te geven. De functiecode wordt uitgevoerd en retourneert de gegevens van de IoT-hub die worden gebruikt om het apparaat in te richten.
 
 ## <a name="enrollment"></a>Inschrijving
 

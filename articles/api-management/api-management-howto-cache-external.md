@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 04/26/2020
 ms.author: apimpm
 ms.openlocfilehash: 6288a10e111e42629abf5e09b84a6a7791dcfe95
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93095931"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018219"
 ---
 # <a name="use-an-external-redis-compatible-cache-in-azure-api-management"></a>Een extern met redis compatibele cache gebruiken in azure API Management
 
@@ -65,36 +65,36 @@ Volg de onderstaande stappen als u een externe Azure-cache voor Redis wilt toevo
 > [!NOTE]
 > De instelling **gebruiken vanuit** geeft een Azure-regio of een zelf-hostende gateway locatie op die de geconfigureerde cache gebruikt. De caches die zijn geconfigureerd als **standaard** , worden overschreven door caches met een specifieke overeenkomende regio of locatie waarde.
 >
-> Bijvoorbeeld, als API Management wordt gehost in de regio's VS - oost, Azië - zuidoost en Europa - west, en er twee caches zijn geconfigureerd, één voor **Default** en één voor **Azië - zuidoost** , dan zal API Management in **Azië - zuidoost** een eigen cache gebruiken, terwijl de andere twee regio's de cachevermelding **Standaard** gebruiken.
+> Bijvoorbeeld, als API Management wordt gehost in de regio's VS - oost, Azië - zuidoost en Europa - west, en er twee caches zijn geconfigureerd, één voor **Default** en één voor **Azië - zuidoost**, dan zal API Management in **Azië - zuidoost** een eigen cache gebruiken, terwijl de andere twee regio's de cachevermelding **Standaard** gebruiken.
 
 ### <a name="add-an-azure-cache-for-redis-from-the-same-subscription"></a>Een Azure-cache voor Redis toevoegen uit hetzelfde abonnement
 
 1. Blader naar uw API Management-exemplaar in de Azure-portal.
 2. Selecteer het tabblad **Externe cache** in het menu aan de linkerkant.
-3. Klik op de knop **+ Toevoegen** .
-4. Selecteer uw cache in de vervolgkeuzelijst **Cache-instantie** .
+3. Klik op de knop **+ Toevoegen**.
+4. Selecteer uw cache in de vervolgkeuzelijst **Cache-instantie**.
 5. Selecteer **standaard** of geef de gewenste regio op in het veld **gebruiken vanuit** vervolg keuzelijst.
-6. Klik op **Opslaan** .
+6. Klik op **Opslaan**.
 
 ### <a name="add-an-azure-cache-for-redis-hosted-outside-of-the-current-azure-subscription-or-azure-in-general"></a>Een Azure-cache voor Redis toevoegen dat wordt gehost buiten het huidige Azure-abonnement of Azure in het algemeen
 
 1. Blader naar uw API Management-exemplaar in de Azure-portal.
 2. Selecteer het tabblad **Externe cache** in het menu aan de linkerkant.
-3. Klik op de knop **+ Toevoegen** .
-4. Selecteer **Aangepast** in de vervolgkeuzelijst **Cache-instantie** .
+3. Klik op de knop **+ Toevoegen**.
+4. Selecteer **Aangepast** in de vervolgkeuzelijst **Cache-instantie**.
 5. Selecteer **standaard** of geef de gewenste regio op in het veld **gebruiken vanuit** vervolg keuzelijst.
-6. Geef de verbindingsreeks van uw Azure-cache voor Redis op in het veld **Verbindingsreeks** .
-7. Klik op **Opslaan** .
+6. Geef de verbindingsreeks van uw Azure-cache voor Redis op in het veld **Verbindingsreeks**.
+7. Klik op **Opslaan**.
 
 ### <a name="add-a-redis-cache-to-a-self-hosted-gateway"></a>Een redis-cache toevoegen aan een zelf-hostende gateway
 
 1. Blader naar uw API Management-exemplaar in de Azure-portal.
 2. Selecteer het tabblad **Externe cache** in het menu aan de linkerkant.
-3. Klik op de knop **+ Toevoegen** .
-4. Selecteer **Aangepast** in de vervolgkeuzelijst **Cache-instantie** .
+3. Klik op de knop **+ Toevoegen**.
+4. Selecteer **Aangepast** in de vervolgkeuzelijst **Cache-instantie**.
 5. Geef de gewenste zelf-hostende gateway locatie of **standaard** op in het veld **gebruiken vanuit** vervolg keuzelijst.
-6. Geef de verbindingsreeks van uw Redis-cache op in het veld **Verbindingsreeks** .
-7. Klik op **Opslaan** .
+6. Geef de verbindingsreeks van uw Redis-cache op in het veld **Verbindingsreeks**.
+7. Klik op **Opslaan**.
 
 ## <a name="use-the-external-cache"></a>De externe cache gebruiken
 

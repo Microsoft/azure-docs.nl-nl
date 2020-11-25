@@ -12,11 +12,11 @@ ms.date: 11/16/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperfq1, devx-track-azurecli
 ms.openlocfilehash: 03d10f71b585090157eff164cc98246f50608fe1
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94695364"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018780"
 ---
 # <a name="set-up-a-python-development-environment-for-azure-machine-learning"></a>Stel een python-ontwikkel omgeving in voor Azure Machine Learning
 
@@ -127,7 +127,7 @@ Raadpleeg de [opslag plaats Azure machine learning notitie blokken](https://gith
 > [!NOTE]
 > Een door de community gestuurde opslagplaats met voorbeelden vindt u op https://github.com/Azure/azureml-examples.
 
-### <a name="visual-studio-code"></a><a id="vscode"></a>Visual Studio code
+### <a name="visual-studio-code"></a><a id="vscode"></a>Visual Studio Code
 
 Visual Studio code gebruiken voor ontwikkeling:
 

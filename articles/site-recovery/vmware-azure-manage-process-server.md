@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 04/28/2019
 ms.author: ramamill
 ms.openlocfilehash: a547a874c42d06d8453b154847561d8b5f0dabb8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91361382"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019180"
 ---
 # <a name="manage-process-servers"></a>Processervers beheren
 
@@ -37,7 +37,7 @@ Wanneer u een proces server on-premises implementeert of als een Azure-VM voor f
 
 U kunt als volgt de belasting verdelen door Vm's tussen twee proces servers te verplaatsen:
 
-1. Klik in de kluis onder **beheren** op **site Recovery-infra structuur**. Klik onder **voor VMware & fysieke machines**op **configuratie servers**.
+1. Klik in de kluis onder **beheren** op **site Recovery-infra structuur**. Klik onder **voor VMware & fysieke machines** op **configuratie servers**.
 2. Klik op de configuratie server waarmee de proces servers zijn geregistreerd.
 3. Klik op de proces server waarvoor u het verkeer wilt verdelen.
 
@@ -47,7 +47,7 @@ U kunt als volgt de belasting verdelen door Vm's tussen twee proces servers te v
 
     ![Scherm afbeelding toont het deel venster taak verdeling met de optie doel proces server selecteren geselecteerd.](media/vmware-azure-manage-process-server/LoadPS.PNG)
 
-2. Klik op **machines selecteren**en kies de computers die u van de huidige naar de doel proces server wilt verplaatsen. Details van de gemiddelde gegevens wijziging worden voor elke virtuele machine weer gegeven. Klik vervolgens op **OK**. 
+2. Klik op **machines selecteren** en kies de computers die u van de huidige naar de doel proces server wilt verplaatsen. Details van de gemiddelde gegevens wijziging worden voor elke virtuele machine weer gegeven. Klik vervolgens op **OK**. 
 3. Controleer in de kluis de voortgang van de taak onder **bewaking**  >  **site Recovery taken**.
 
 Het duurt ongeveer 15 minuten voordat wijzigingen worden weer gegeven in de portal. [Vernieuw de configuratie server](vmware-azure-manage-configuration-server.md#refresh-configuration-server)voor een snellere werking.
@@ -56,7 +56,7 @@ Het duurt ongeveer 15 minuten voordat wijzigingen worden weer gegeven in de port
 
 Verplaats de hele werk belasting die door een proces server wordt verwerkt, als volgt naar een andere proces server:
 
-1. Klik in de kluis onder **beheren** op **site Recovery-infra structuur**. Klik onder **voor VMware & fysieke machines**op **configuratie servers**.
+1. Klik in de kluis onder **beheren** op **site Recovery-infra structuur**. Klik onder **voor VMware & fysieke machines** op **configuratie servers**.
 2. Klik op de configuratie server waarmee de proces servers zijn geregistreerd.
 3. Klik op de proces server van waaruit u de werk belasting wilt wijzigen.
 4. Klik op **Switch**, selecteer de doel proces server waarnaar u de werk belasting wilt verplaatsen. Klik vervolgens op **OK**
@@ -69,7 +69,7 @@ Het duurt ongeveer 15 minuten voordat wijzigingen worden weer gegeven in de port
 
 ## <a name="register-a-master-target-server"></a>Een hoofddoel server registreren
 
-De hoofddoel server bevindt zich op de configuratie server en scale-out proces servers. Het moet zijn geregistreerd bij de configuratie server. Als er een fout is opgetreden in deze registratie, kan dit van invloed zijn op de status van beveiligde items. Als u de Master doel server wilt registreren bij de configuratie server, meldt u zich aan bij de specifieke configuratie server/scale-out proces server waarop de registratie is vereist. Navigeer naar map **%PROGRAMDATA%\ASR\Agent**en voer het volgende uit op de opdracht prompt van de Administrator.
+De hoofddoel server bevindt zich op de configuratie server en scale-out proces servers. Het moet zijn geregistreerd bij de configuratie server. Als er een fout is opgetreden in deze registratie, kan dit van invloed zijn op de status van beveiligde items. Als u de Master doel server wilt registreren bij de configuratie server, meldt u zich aan bij de specifieke configuratie server/scale-out proces server waarop de registratie is vereist. Navigeer naar map **%PROGRAMDATA%\ASR\Agent** en voer het volgende uit op de opdracht prompt van de Administrator.
 
    ```
    cmd
@@ -91,7 +91,7 @@ Registreer een proces server die on-premises of op een virtuele machine van Azur
 Nadat u de instellingen hebt opgeslagen, gaat u als volgt te werk:
 
 1. Open een beheerders opdracht prompt op de proces server.
-2. Blader naar map **%PROGRAMDATA%\ASR\Agent**en voer de volgende opdracht uit:
+2. Blader naar map **%PROGRAMDATA%\ASR\Agent** en voer de volgende opdracht uit:
 
     ```
     cdpcli.exe --registermt
@@ -111,7 +111,7 @@ Als een on-premises proces server een proxy gebruikt om verbinding te maken met 
    net stop obengine
    net start obengine
    ```
-2. Blader naar map **%PROGRAMDATA%\ASR\Agent**en voer deze opdracht uit:
+2. Blader naar map **%PROGRAMDATA%\ASR\Agent** en voer deze opdracht uit:
    ```
    cmd
    cdpcli.exe --registermt

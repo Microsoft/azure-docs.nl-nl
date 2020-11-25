@@ -13,11 +13,11 @@ ms.custom:
 - mqtt
 - devx-track-js
 ms.openlocfilehash: 78600b7b57a7c30fc609434a700f13fa21e079ce
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94659638"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019256"
 ---
 # <a name="connect-a-downstream-device-to-an-azure-iot-edge-gateway"></a>Een downstreamapparaat verbinden met een Azure IoT Edge-gateway
 

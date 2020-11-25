@@ -4,11 +4,11 @@ description: Meer informatie over het gebruik van Dash boards voor een leslokaal
 ms.topic: article
 ms.date: 06/26/2020
 ms.openlocfilehash: 3834e6910faea38e87489d1ad0075d4bd9b8c6c6
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93376949"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018304"
 ---
 # <a name="dashboard-for-classroom-labs"></a>Dash board voor klassikale Labs
 In dit artikel wordt de dashboard weergave van een leslokaal Lab in Azure Lab Services beschreven. 

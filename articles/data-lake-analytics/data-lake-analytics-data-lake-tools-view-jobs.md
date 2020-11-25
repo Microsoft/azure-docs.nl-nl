@@ -5,11 +5,11 @@ ms.service: data-lake-analytics
 ms.topic: how-to
 ms.date: 08/02/2017
 ms.openlocfilehash: a1e9a9df4c2ec57dfeec8cf5ddd5348228b9cc3e
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92218677"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018559"
 ---
 # <a name="use-job-browser-and-job-view-for-azure-data-lake-analytics"></a>Taakbrowser en taakweergave gebruiken voor Azure Data Lake Analytics
 De Azure Data Lake Analytics-Service archiveert taken in een query-archief. In dit artikel leert u hoe u taak browser en taak weergave kunt gebruiken in Azure Data Lake-Hulpprogram Ma's voor Visual Studio om de historische taak gegevens te vinden. 

@@ -15,15 +15,15 @@ ms.topic: how-to
 ms.date: 06/11/2018
 ms.author: allensu
 ms.openlocfilehash: 1521d08ef9d431bbe8b3fd3a578297d440ed56b3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84887219"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018576"
 ---
 # <a name="control-azure-cdn-caching-behavior-with-query-strings---standard-tier"></a>Het gedrag van Azure CDN caching bepalen met query reeksen-Standard-laag
 > [!div class="op_single_selector"]
-> * [De servicelaag Standard](cdn-query-string.md)
+> * [Standaardlaag](cdn-query-string.md)
 > * [Premium-laag](cdn-query-string-premium.md)
 > 
 
@@ -31,7 +31,7 @@ ms.locfileid: "84887219"
 Met Azure Content Delivery Network (CDN) kunt u bepalen hoe bestanden in de cache worden opgeslagen voor een webaanvraag die een query reeks bevat. In een webaanvraag met een query reeks is de query reeks het gedeelte van de aanvraag dat wordt uitgevoerd na een vraag teken (?). Een query reeks kan een of meer sleutel-waardeparen bevatten, waarbij de veld naam en de waarde ervan gescheiden worden door een gelijkteken (=). Elk sleutel-waardepaar wordt gescheiden door een en-teken (&). Bijvoorbeeld http: \/ /www.contoso.com/content.mov?field1=value1&veld2 = waarde2. Als er meer dan één sleutel/waarde-paar in een query reeks van een aanvraag is, is de volg orde hiervan niet van belang. 
 
 > [!IMPORTANT]
-> De Azure CDN Standard-en Premium-producten bieden dezelfde cache functionaliteit voor de query reeks, maar de gebruikers interface wijkt af. In dit artikel wordt de interface voor **Azure CDN Standard van micro soft**beschreven, **Azure CDN Standard van Akamai** en **Azure CDN Standard van Verizon**. Zie [Azure CDN gedrag in cache opslaan met query reeksen-Premium-laag voor het](cdn-query-string-premium.md)opslaan van de query reeks met **Azure CDN Premium van Verizon**.
+> De Azure CDN Standard-en Premium-producten bieden dezelfde cache functionaliteit voor de query reeks, maar de gebruikers interface wijkt af. In dit artikel wordt de interface voor **Azure CDN Standard van micro soft** beschreven, **Azure CDN Standard van Akamai** en **Azure CDN Standard van Verizon**. Zie [Azure CDN gedrag in cache opslaan met query reeksen-Premium-laag voor het](cdn-query-string-premium.md)opslaan van de query reeks met **Azure CDN Premium van Verizon**.
 
 Er zijn drie modi voor de query reeks beschikbaar:
 

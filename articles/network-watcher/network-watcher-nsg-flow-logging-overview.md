@@ -13,15 +13,15 @@ ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
 ms.openlocfilehash: 792908236c4f240db64bd3899474d779d5b0570c
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966510"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018100"
 ---
 # <a name="introduction-to-flow-logging-for-network-security-groups"></a>Introductie van stroomlogboeken voor netwerkbeveiligingsgroepen
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Stroom logboeken voor [netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md#security-rules) (NSG) is een functie van Azure Network Watcher waarmee u informatie kunt vastleggen over IP-verkeer dat wordt doorgelopen via een NSG. Stroom gegevens worden verzonden naar Azure Storage accounts van waaruit u toegang hebt, en deze kunt u exporteren naar een wille keurig visualisatie programma, SIEM of ID'S van uw keuze.
 
@@ -305,7 +305,7 @@ Verstroom Tuples van een TCP-conversatie tussen 185.170.185.105:35370 en 10.2.0.
 Voor voortzetting _C_ en de laatste _E_ stroom status zijn de aantallen voor bytes en pakketten cumulatief van de tijd van de vorige record in de stroom tupel. Verwijzen naar het vorige voor beeld van de conversatie is het totale aantal overgedragen pakketten 1021 + 52 + 8005 + 47 = 9125. Het totale aantal overgebrachte bytes is 588096 + 29952 + 4610880 + 27072 = 5256000.
 
 
-## <a name="enabling-nsg-flow-logs"></a>NSG-stroom logboeken inschakelen
+## <a name="enabling-nsg-flow-logs"></a>NSG-stroomlogboeken inschakelen
 
 Gebruik de relevante koppeling hieronder voor hulp lijnen voor het inschakelen van stroom Logboeken.
 
@@ -317,7 +317,7 @@ Gebruik de relevante koppeling hieronder voor hulp lijnen voor het inschakelen v
 
 ## <a name="updating-parameters"></a>Para meters bijwerken
 
-**Azure-portal**
+**Azure Portal**
 
 Ga in het Azure Portal naar de sectie NSG-stroom Logboeken in Network Watcher. Klik vervolgens op de naam van de NSG. Hiermee wordt het deel venster instellingen voor het stroom logboek weer gegeven. Wijzig de gewenste para meters en druk op **Opslaan** om de wijzigingen te implementeren.
 

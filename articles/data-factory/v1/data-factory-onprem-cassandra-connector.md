@@ -13,11 +13,11 @@ ms.date: 06/07/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 0f96680f1ea91434c84d6606e3637c68c1cb5a84
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80991498"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019630"
 ---
 # <a name="move-data-from-an-on-premises-cassandra-database-using-azure-data-factory"></a>Gegevens verplaatsen van een on-premises Cassandra-data base met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -48,7 +48,7 @@ Wanneer u de gateway installeert, wordt automatisch een micro soft Cassandra ODB
 U kunt een pijp lijn maken met een Kopieer activiteit die gegevens verplaatst van een on-premises Cassandra-gegevens opslag met behulp van verschillende hulpprogram ma's/Api's.
 
 - De eenvoudigste manier om een pijp lijn te maken, is met behulp van de **wizard kopiëren**. Zie [zelf studie: een pijp lijn maken met behulp van de wizard kopiëren](data-factory-copy-data-wizard-tutorial.md) voor een snelle walkthrough over het maken van een pijp lijn met behulp van de wizard gegevens kopiëren.
-- U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio**, **Azure PowerShell**, **Azure Resource Manager sjabloon**, **.net API**en **rest API**. Zie [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit.
+- U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio**, **Azure PowerShell**, **Azure Resource Manager sjabloon**, **.net API** en **rest API**. Zie [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit.
 
 Ongeacht of u de hulpprogram ma's of Api's gebruikt, voert u de volgende stappen uit om een pijp lijn te maken waarmee gegevens uit een brongegevens archief naar een Sink-gegevens archief worden verplaatst:
 
@@ -65,14 +65,14 @@ In de volgende tabel vindt u een beschrijving van de JSON-elementen die specifie
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| type |De eigenschap type moet worden ingesteld op: **OnPremisesCassandra** |Ja |
-| host |Een of meer IP-adressen of hostnamen van Cassandra-servers.<br/><br/>Geef een door komma's gescheiden lijst met IP-adressen of hostnamen op om gelijktijdig verbinding te maken met alle servers. |Ja |
+| type |De eigenschap type moet worden ingesteld op: **OnPremisesCassandra** |Yes |
+| host |Een of meer IP-adressen of hostnamen van Cassandra-servers.<br/><br/>Geef een door komma's gescheiden lijst met IP-adressen of hostnamen op om gelijktijdig verbinding te maken met alle servers. |Yes |
 | poort |De TCP-poort die de Cassandra-server gebruikt om te Luis teren naar client verbindingen. |Nee, standaard waarde: 9042 |
-| authenticationType |Basic of anoniem |Ja |
+| authenticationType |Basic of anoniem |Yes |
 | gebruikersnaam |Geef de gebruikers naam voor het gebruikers account op. |Ja, als authenticationType is ingesteld op Basic. |
 | wachtwoord |Geef het wacht woord voor het gebruikers account op. |Ja, als authenticationType is ingesteld op Basic. |
-| gatewayName |De naam van de gateway die wordt gebruikt om verbinding te maken met de on-premises Cassandra-data base. |Ja |
-| encryptedCredential |Referentie versleuteld door de gateway. |Nee |
+| gatewayName |De naam van de gateway die wordt gebruikt om verbinding te maken met de on-premises Cassandra-data base. |Yes |
+| encryptedCredential |Referentie versleuteld door de gateway. |No |
 
 >[!NOTE]
 >Momenteel wordt geen verbinding met Cassandra met behulp van TLS ondersteund.
@@ -92,7 +92,7 @@ Zie het artikel [pijp lijnen maken](data-factory-create-pipelines.md) voor een v
 
 Terwijl de eigenschappen die beschikbaar zijn in de sectie typeProperties van de activiteit, verschillen per activiteitstype. Voor kopieer activiteiten zijn ze afhankelijk van de typen bronnen en Sinks.
 
-Wanneer bron van het type **CassandraSource**is, zijn de volgende eigenschappen beschikbaar in de sectie typeProperties:
+Wanneer bron van het type **CassandraSource** is, zijn de volgende eigenschappen beschikbaar in de sectie typeProperties:
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
@@ -264,16 +264,16 @@ Zie [Eigenschappen van het type RelationalSource](#copy-activity-properties) voo
 | ASCII |Tekenreeks |
 | BIGINT |Int64 |
 | BLOBCACHE |Byte [] |
-| True |Booleaans |
-| KOMMA |Decimaal |
-| DUBBELKLIK |Dubbel |
+| BOOLEAN |Booleaans |
+| DECIMAL |Decimaal |
+| DOUBLE |Dubbel |
 | FLOAT |Enkelvoudig |
 | INET |Tekenreeks |
 | INT |Int32 |
 | TEXT |Tekenreeks |
 | Neem |DateTime |
 | TIMEUUID |Guid |
-| MEE |Guid |
+| UUID |Guid |
 | VARCHAR |Tekenreeks |
 | VARINT |Decimaal |
 
@@ -289,7 +289,7 @@ Zie [Eigenschappen van het type RelationalSource](#copy-activity-properties) voo
 ## <a name="work-with-collections-using-virtual-table"></a>Werken met verzamelingen met virtuele tabel
 Azure Data Factory maakt gebruik van een ingebouwd ODBC-stuur programma om verbinding te maken met gegevens uit uw Cassandra-data base en deze te kopiëren. Voor verzamelings typen, waaronder kaart, set en lijst, worden de gegevens in de bijbehorende virtuele tabellen opnieuw genormaliseerd door het stuur programma. Met name als een tabel verzamelings kolommen bevat, worden de volgende virtuele tabellen door het stuur programma gegenereerd:
 
-* Een **basis tabel**met dezelfde gegevens als de echte tabel, met uitzonde ring van de verzamelings kolommen. Voor de basis tabel wordt dezelfde naam gebruikt als voor de echte tabel die deze vertegenwoordigt.
+* Een **basis tabel** met dezelfde gegevens als de echte tabel, met uitzonde ring van de verzamelings kolommen. Voor de basis tabel wordt dezelfde naam gebruikt als voor de echte tabel die deze vertegenwoordigt.
 * Een **virtuele tabel** voor elke verzamelings kolom, waarmee de geneste gegevens worden uitgevouwen. De virtuele tabellen die verzamelingen vertegenwoordigen, krijgen een naam met de naam van de tabel Real, een scheidings teken '*VT*' en de naam van de kolom.
 
 Virtuele tabellen verwijzen naar de gegevens in de tabel Real, waardoor het stuur programma toegang kan krijgen tot de Gedenormaliseerde gegevens. Zie de sectie voor beeld voor meer informatie. U hebt toegang tot de inhoud van Cassandra-verzamelingen door de virtuele tabellen te doorzoeken en aan elkaar te koppelen.

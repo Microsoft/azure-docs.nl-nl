@@ -13,11 +13,11 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 95f92d4e5616d7754c355610685701a8e089b84e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85847573"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019647"
 ---
 # <a name="move-data-from-an-odata-source-using-azure-data-factory"></a>Gegevens verplaatsen vanuit een OData-bron met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -45,7 +45,7 @@ U kunt een pijp lijn maken met een Kopieer activiteit die gegevens verplaatst va
 
 De eenvoudigste manier om een pijp lijn te maken, is met behulp van de **wizard kopiëren**. Zie [zelf studie: een pijp lijn maken met behulp van de wizard kopiëren](data-factory-copy-data-wizard-tutorial.md) voor een snelle walkthrough over het maken van een pijp lijn met behulp van de wizard gegevens kopiëren.
 
-U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio**, **Azure PowerShell**, **Azure Resource Manager sjabloon**, **.net API**en **rest API**. Zie [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit.
+U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio**, **Azure PowerShell**, **Azure Resource Manager sjabloon**, **.net API** en **rest API**. Zie [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit.
 
 Ongeacht of u de hulpprogram ma's of Api's gebruikt, voert u de volgende stappen uit om een pijp lijn te maken waarmee gegevens uit een brongegevens archief naar een Sink-gegevens archief worden verplaatst:
 
@@ -62,13 +62,13 @@ De volgende tabel bevat een beschrijving van de JSON-elementen die specifiek zij
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| type |De eigenschap type moet worden ingesteld op: **OData** |Ja |
-| url |De URL van de OData-service. |Ja |
-| authenticationType |Type verificatie dat wordt gebruikt om verbinding te maken met de OData-bron. <br/><br/> Voor Cloud OData zijn mogelijke waarden anoniem, basis en OAuth (Opmerking Azure Data Factory momenteel alleen op Azure Active Directory gebaseerde OAuth). <br/><br/> Voor on-premises OData zijn mogelijke waarden anoniem, basis en Windows. |Ja |
+| type |De eigenschap type moet worden ingesteld op: **OData** |Yes |
+| url |De URL van de OData-service. |Yes |
+| authenticationType |Type verificatie dat wordt gebruikt om verbinding te maken met de OData-bron. <br/><br/> Voor Cloud OData zijn mogelijke waarden anoniem, basis en OAuth (Opmerking Azure Data Factory momenteel alleen op Azure Active Directory gebaseerde OAuth). <br/><br/> Voor on-premises OData zijn mogelijke waarden anoniem, basis en Windows. |Yes |
 | gebruikersnaam |Geef de gebruikers naam op als u basis verificatie gebruikt. |Ja (alleen als u basis verificatie gebruikt) |
 | wachtwoord |Geef het wacht woord op voor het gebruikers account dat u hebt opgegeven voor de gebruikers naam. |Ja (alleen als u basis verificatie gebruikt) |
 | authorizedCredential |Als u OAuth gebruikt, klikt u op de knop **machtigen** in de wizard Data Factory kopiëren of de editor en voert u uw referenties in. vervolgens wordt de waarde van deze eigenschap automatisch gegenereerd. |Ja (alleen als u OAuth-verificatie gebruikt) |
-| gatewayName |De naam van de gateway die de Data Factory-service moet gebruiken om verbinding te maken met de on-premises OData-service. Geef alleen op als u gegevens kopieert uit on-premises OData-bron. |Nee |
+| gatewayName |De naam van de gateway die de Data Factory-service moet gebruiken om verbinding te maken met de on-premises OData-service. Geef alleen op als u gegevens kopieert uit on-premises OData-bron. |No |
 
 ### <a name="using-basic-authentication"></a>Basis verificatie gebruiken
 ```json
@@ -147,7 +147,7 @@ De sectie **typeProperties** verschilt voor elk type gegevensset en bevat inform
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| leertraject |Pad naar de OData-resource |Nee |
+| leertraject |Pad naar de OData-resource |No |
 
 ## <a name="copy-activity-properties"></a>Eigenschappen van de kopieeractiviteit
 Zie het artikel [pijp lijnen maken](data-factory-create-pipelines.md) voor een volledige lijst met secties & eigenschappen die beschikbaar zijn voor het definiëren van activiteiten. Eigenschappen zoals naam, beschrijving, invoer-en uitvoer tabellen en beleid zijn beschikbaar voor alle typen activiteiten.
@@ -158,7 +158,7 @@ Wanneer bron van het type **RelationalSource** (inclusief OData), zijn de volgen
 
 | Eigenschap | Beschrijving | Voorbeeld | Vereist |
 | --- | --- | --- | --- |
-| query |Gebruik de aangepaste query om gegevens te lezen. |"? $select = naam, beschrijving&$top = 5" |Nee |
+| query |Gebruik de aangepaste query om gegevens te lezen. |"? $select = naam, beschrijving&$top = 5" |No |
 
 ## <a name="type-mapping-for-odata"></a>Type toewijzing voor OData
 Zoals vermeld in het artikel [activiteiten voor gegevens verplaatsing](data-factory-data-movement-activities.md) voert Kopieer activiteit automatisch type conversies uit van bron typen naar Sink-typen met de volgende twee stappen.

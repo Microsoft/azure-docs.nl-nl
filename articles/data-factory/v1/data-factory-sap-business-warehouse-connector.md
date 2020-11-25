@@ -13,11 +13,11 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 108bdf057cd375e28b10a6838ec5c8c6f57749a8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84707273"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019579"
 ---
 # <a name="move-data-from-sap-business-warehouse-using-azure-data-factory"></a>Gegevens verplaatsen van SAP Business Warehouse met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -46,7 +46,7 @@ Als u de verbinding met het SAP BW-exemplaar wilt inschakelen, installeert u de 
 U kunt een pijp lijn maken met een Kopieer activiteit die gegevens verplaatst van een on-premises Cassandra-gegevens opslag met behulp van verschillende hulpprogram ma's/Api's. 
 
 - De eenvoudigste manier om een pijp lijn te maken, is met behulp van de **wizard kopiëren**. Zie [zelf studie: een pijp lijn maken met behulp van de wizard kopiëren](data-factory-copy-data-wizard-tutorial.md) voor een snelle walkthrough over het maken van een pijp lijn met behulp van de wizard gegevens kopiëren. 
-- U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio**, **Azure PowerShell**, **Azure Resource Manager sjabloon**, **.net API**en **rest API**. Zie [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit. 
+- U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio**, **Azure PowerShell**, **Azure Resource Manager sjabloon**, **.net API** en **rest API**. Zie [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit. 
 
 Ongeacht of u de hulpprogram ma's of Api's gebruikt, voert u de volgende stappen uit om een pijp lijn te maken waarmee gegevens uit een brongegevens archief naar een Sink-gegevens archief worden verplaatst:
 
@@ -63,12 +63,12 @@ In de volgende tabel vindt u een beschrijving van de JSON-elementen die specifie
 
 Eigenschap | Beschrijving | Toegestane waarden | Vereist
 -------- | ----------- | -------------- | --------
-server | De naam van de server waarop het SAP BW-exemplaar zich bevindt. | tekenreeks | Ja
-systemNumber | Systeem nummer van het SAP BW systeem. | Decimaal getal van twee cijfers dat wordt weer gegeven als een teken reeks. | Ja
-clientId | Client-ID van de client in het SAP W-systeem. | Decimaal getal met drie cijfers dat wordt weer gegeven als een teken reeks. | Ja
-gebruikersnaam | Naam van de gebruiker die toegang heeft tot de SAP-server | tekenreeks | Ja
-wachtwoord | Het wachtwoord voor de gebruiker. | tekenreeks | Ja
-gatewayName | De naam van de gateway die de Data Factory-service moet gebruiken om verbinding te maken met het on-premises SAP BW exemplaar. | tekenreeks | Ja
+server | De naam van de server waarop het SAP BW-exemplaar zich bevindt. | tekenreeks | Yes
+systemNumber | Systeem nummer van het SAP BW systeem. | Decimaal getal van twee cijfers dat wordt weer gegeven als een teken reeks. | Yes
+clientId | Client-ID van de client in het SAP W-systeem. | Decimaal getal met drie cijfers dat wordt weer gegeven als een teken reeks. | Yes
+gebruikersnaam | Naam van de gebruiker die toegang heeft tot de SAP-server | tekenreeks | Yes
+wachtwoord | Het wachtwoord voor de gebruiker. | tekenreeks | Yes
+gatewayName | De naam van de gateway die de Data Factory-service moet gebruiken om verbinding te maken met het on-premises SAP BW exemplaar. | tekenreeks | Yes
 encryptedCredential | De versleutelde referentie teken reeks. | tekenreeks | No
 
 ## <a name="dataset-properties"></a>Eigenschappen van gegevensset
@@ -86,7 +86,7 @@ Wanneer de bron in de Kopieer activiteit van het type **RelationalSource** is (i
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| query | Hiermee geeft u de MDX-query op die gegevens uit het SAP BW exemplaar moet lezen. | MDX-query. | Ja |
+| query | Hiermee geeft u de MDX-query op die gegevens uit het SAP BW exemplaar moet lezen. | MDX-query. | Yes |
 
 
 ## <a name="json-example-copy-data-from-sap-business-warehouse-to-azure-blob"></a>JSON-voor beeld: gegevens kopiëren van SAP Business Warehouse naar Azure Blob
@@ -307,7 +307,7 @@ PREC | Int16
 QUAN | Decimaal
 UITGANG | Byte []
 RAWSTRING | Byte []
-TEKENREEKSEXPRESSIE | Tekenreeks
+STRING | Tekenreeks
 TELEENHEID | Tekenreeks
 DATS | Tekenreeks
 NUMC | Tekenreeks

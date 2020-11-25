@@ -10,11 +10,11 @@ ms.service: genomics
 ms.topic: troubleshooting
 ms.date: 12/07/2017
 ms.openlocfilehash: e8806bc4f761214e6740a22093b7e18030fdf881
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "76986033"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018321"
 ---
 # <a name="microsoft-genomics-common-questions"></a>Microsoft Genomics: algemene vragen
 
@@ -48,10 +48,10 @@ De meest gebruikte opdrachten zijn argumenten voor de `msgen` client:
  |`cancel`             |Hiermee wordt een aanvraag verzonden om de verwerking te annuleren van de werk stroom die is opgegeven door `--workflow-id` . Zie ook `msgen help cancel` . |
 
 ## <a name="where-do-i-get-the-value-for---api-url-base"></a>Waar vind ik de waarde voor `--api-url-base` ?
-Ga naar Azure Portal en open uw Genomics-account pagina. Kies **toegangs sleutels**onder de kop **beheer** . Daar vindt u de API-URL en de toegangs sleutels.
+Ga naar Azure Portal en open uw Genomics-account pagina. Kies **toegangs sleutels** onder de kop **beheer** . Daar vindt u de API-URL en de toegangs sleutels.
 
 ## <a name="where-do-i-get-the-value-for---access-key"></a>Waar vind ik de waarde voor `--access-key` ?
-Ga naar Azure Portal en open uw Genomics-account pagina. Kies **toegangs sleutels**onder de kop **beheer** . Daar vindt u de API-URL en de toegangs sleutels.
+Ga naar Azure Portal en open uw Genomics-account pagina. Kies **toegangs sleutels** onder de kop **beheer** . Daar vindt u de API-URL en de toegangs sleutels.
 
 ## <a name="why-do-i-need-two-access-keys"></a>Waarom heb ik twee toegangs sleutels nodig?
 U hebt twee toegangs sleutels nodig voor het geval u deze wilt bijwerken (opnieuw genereren) zonder het gebruik van de service te onderbreken. Als u bijvoorbeeld de eerste sleutel wilt bijwerken, moet u voor alle nieuwe werk stromen de tweede sleutel gebruiken. Wacht vervolgens op alle werk stromen met behulp van de eerste sleutel om te volt ooien voordat u de eerste sleutel bijwerkt.
@@ -63,7 +63,7 @@ De sleutel van uw opslag account wordt gebruikt om toegangs tokens voor de korte
 
 Deze verwijzingen worden ondersteund:
 
- |Naslaginformatie              | Waarde van `-pa/--process-args` |
+ |Referentie              | Waarde van `-pa/--process-args` |
  |:-------------         |:-------------                 |
  |b37                    | `R=b37m1`                     |
  |hg38                   | `R=hg38m1`                    |      
@@ -87,6 +87,6 @@ msgen begrijpt configuratie bestanden in de volgende indeling:
 ## <a name="next-steps"></a>Volgende stappen
 
 Gebruik de volgende bronnen om aan de slag te gaan met Microsoft Genomics:
-- Ga aan de slag door uw eerste werk stroom uit te voeren via de Microsoft Genomics-service. [Een werkstroom uitvoeren via de Microsoft Genomics-service](quickstart-run-genomics-workflow-portal.md)
-- Uw eigen gegevens verzenden voor verwerking door de Microsoft Genomics-service: [gekoppelde FASTQ](quickstart-input-pair-FASTQ.md)  |  [BAM](quickstart-input-BAM.md)  |  [meerdere FASTQ of BAM](quickstart-input-multiple.md) 
+- Ga aan de slag door uw eerste werkstroom uit te voeren via de Microsoft Genomics-service. [Een werkstroom uitvoeren via de Microsoft Genomics-service](quickstart-run-genomics-workflow-portal.md)
+- Verzend uw eigen gegevens voor verwerking door de Microsoft Genomics-service: [gekoppelde FASTQ](quickstart-input-pair-FASTQ.md) | [BAM](quickstart-input-BAM.md) | [meerdere FASTQ of BAM](quickstart-input-multiple.md) 
 

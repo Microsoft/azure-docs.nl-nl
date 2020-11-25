@@ -4,11 +4,11 @@ description: Gebruik de implementatie faciliteiten van het zip-bestand van de ku
 ms.topic: conceptual
 ms.date: 08/12/2018
 ms.openlocfilehash: e104661dcdf1f6c6fd6dd5eb1024748980e7931f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85833049"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018421"
 ---
 # <a name="zip-deployment-for-azure-functions"></a>Zip-implementatie voor Azure Functions
 
@@ -46,7 +46,7 @@ U hebt uw functies mogelijk wel gemaakt met behulp van de editor in de Azure Por
 
   1. Meld u aan bij de [Azure Portal](https://portal.azure.com)en ga vervolgens naar uw functie-app.
 
-  2. Selecteer **app-inhoud downloaden**op het tabblad **overzicht** . Selecteer de download opties en selecteer vervolgens **downloaden**.
+  2. Selecteer **app-inhoud downloaden** op het tabblad **overzicht** . Selecteer de download opties en selecteer vervolgens **downloaden**.
 
       ![Down load het project van de functie-app](./media/deployment-zip-push/download-project.png)
 

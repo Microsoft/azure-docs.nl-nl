@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: how-to
 ms.date: 09/16/2019
 ms.author: allensu
-ms.openlocfilehash: e0b9ac3f16a170bb14925b555e8894cb10080488
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: cfffafaab2e2d4ef6b165ef03beb827342c94608
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95026179"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96018049"
 ---
 # <a name="create-a-private-link-service-using-azure-cli"></a>Een persoonlijke koppelings service maken met behulp van Azure CLI
 In dit artikel wordt beschreven hoe u een persoonlijke koppelings service maakt in azure met behulp van Azure CLI.
@@ -50,7 +50,7 @@ az network lb create --resource-group myResourceGroup --name myILB --sku standar
 
 ### <a name="create-a-load-balancer-health-probe"></a>Een load balancer-statustest maken
 
-Een statustest controleert alle exemplaren van de virtuele machines om ervoor te zorgen dat deze netwerkverkeer kunnen ontvangen. Het exemplaar van een virtuele machine met mislukte testcontroles wordt uit de load balancer verwijderd totdat deze weer online komt en een testcontrole bepaalt of deze in orde is. Maak met [az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest) een statustest om de status van de virtuele machines te bewaken. 
+Een statustest controleert alle exemplaren van de virtuele machines om ervoor te zorgen dat deze netwerkverkeer kunnen ontvangen. Het exemplaar van een virtuele machine met mislukte testcontroles wordt uit de load balancer verwijderd totdat deze weer online komt en een testcontrole bepaalt of deze in orde is. Maak met [az network lb probe create](/cli/azure/network/lb/probe?view=azure-cli-latest) een statustest om de status van de virtuele machines te bewaken. 
 
 ```azurecli-interactive
   az network lb probe create \
@@ -63,7 +63,7 @@ Een statustest controleert alle exemplaren van de virtuele machines om ervoor te
 
 ### <a name="create-a-load-balancer-rule"></a>Een load balancer-regel maken
 
-Een load balancer-regel definieert de front-end-IP-configuratie voor het binnenkomende verkeer en de back-end-IP-pool om het verkeer te ontvangen, samen met de gewenste bron- en doelpoort. Maak met [az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest) de regel *myHTTPRule* voor het luisteren naar poort 80 in de front-endgroep *myFrontEnd* en het verzenden van netwerkverkeer met gelijke taakverdeling naar de back-endadresgroep *myBackEndPool* waarbij ook van poort 80 gebruik wordt gemaakt. 
+Een load balancer-regel definieert de front-end-IP-configuratie voor het binnenkomende verkeer en de back-end-IP-pool om het verkeer te ontvangen, samen met de gewenste bron- en doelpoort. Maak met [az network lb rule create](/cli/azure/network/lb/rule?view=azure-cli-latest) de regel *myHTTPRule* voor het luisteren naar poort 80 in de front-endgroep *myFrontEnd* en het verzenden van netwerkverkeer met gelijke taakverdeling naar de back-endadresgroep *myBackEndPool* waarbij ook van poort 80 gebruik wordt gemaakt. 
 
 ```azurecli-interactive
   az network lb rule create \
@@ -79,7 +79,7 @@ Een load balancer-regel definieert de front-end-IP-configuratie voor het binnenk
 ```
 ### <a name="create-backend-servers"></a>Back-endservers maken
 
-In dit voor beeld hebben we geen betrekking op het maken van virtuele machines. U kunt de stappen in Quick Start volgen [: Maak een interne Load Balancer voor het laden van vm's met behulp van Azure cli](/azure/load-balancer/quickstart-load-balancer-standard-internal-cli) om twee virtuele machines te maken die moeten worden gebruikt als back-endservers voor de Load Balancer. 
+In dit voor beeld hebben we geen betrekking op het maken van virtuele machines. U kunt de stappen in Quick Start volgen [: Maak een interne Load Balancer voor het laden van vm's met behulp van Azure cli](../load-balancer/quickstart-load-balancer-standard-internal-cli.md) om twee virtuele machines te maken die moeten worden gebruikt als back-endservers voor de Load Balancer. 
 
 
 ### <a name="disable-private-link-service-network-policies-on-subnet"></a>Particuliere koppeling service-netwerk beleid op subnet uitschakelen 
@@ -163,4 +163,3 @@ az network private-link-service show --resource-group myResourceGroup --name myP
 ```
 ## <a name="next-steps"></a>Volgende stappen
 - Meer informatie over [Azure Private Link service](private-link-service-overview.md)
- 

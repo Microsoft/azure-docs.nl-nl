@@ -10,11 +10,11 @@ ms.author: tamram
 ms.subservice: tables
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 20e776e649d13e435a7bc9215802fcd89efe0867
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93307461"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019222"
 ---
 # <a name="table-design-patterns"></a>Tabelontwerppatronen
 In dit artikel worden enkele patronen beschreven die geschikt zijn voor gebruik met Table service oplossingen. U zult ook zien hoe u een aantal van de problemen en commerciële benadert die worden besproken in andere ontwerp artikelen van Table-opslag. In het volgende diagram ziet u een overzicht van de relaties tussen de verschillende patronen:  
@@ -35,7 +35,7 @@ De Table service indexeert automatisch entiteiten met behulp van de waarden **Pa
 Als u ook een werknemers entiteit wilt kunnen vinden op basis van de waarde van een andere eigenschap, zoals e-mail adres, moet u een minder efficiënte partitie Scan gebruiken om een overeenkomst te vinden. Dit komt doordat de Table service geen secundaire indexen biedt. Daarnaast is er geen optie voor het aanvragen van een lijst met werk nemers die in een andere volg orde zijn gesorteerd dan **RowKey** order.  
 
 ### <a name="solution"></a>Oplossing
-Om het ontbreken van secundaire indexen te omzeilen, kunt u meerdere exemplaren van elke entiteit met elk exemplaar opslaan met behulp van een andere **RowKey** -waarde. Als u een entiteit met de hieronder weer gegeven structuren opslaat, kunt u op efficiënte wijze werknemers entiteiten ophalen op basis van het e-mail adres of de werk nemer-ID. Met de voorvoegsel waarden voor de **RowKey** , empid_ en email_ kunt u een query uitvoeren voor één werk nemer of een bereik van werk nemers met behulp van een reeks e-mail adressen of werk nemer-id's.  
+Om het ontbreken van secundaire indexen te omzeilen, kunt u meerdere exemplaren van elke entiteit met elk exemplaar opslaan met behulp van een andere **RowKey** -waarde. Als u een entiteit met de hieronder weer gegeven structuren opslaat, kunt u op efficiënte wijze werknemers entiteiten ophalen op basis van het e-mail adres of de werk nemer-ID. Met de voorvoegsel waarden voor de **RowKey**, empid_ en email_ kunt u een query uitvoeren voor één werk nemer of een bereik van werk nemers met behulp van een reeks e-mail adressen of werk nemer-id's.  
 
 ![Werknemers entiteiten](media/storage-table-design-guide/storage-table-design-IMAGE07.png)
 
@@ -90,7 +90,7 @@ Als u ook een werknemers entiteit wilt kunnen vinden op basis van de waarde van 
 U verwacht een groot aantal trans acties voor deze entiteiten en wilt het risico van de Table service beperking van uw client tot een minimum beperken.  
 
 ### <a name="solution"></a>Oplossing
-Om het ontbreken van secundaire indexen te omzeilen, kunt u meerdere exemplaren van elke entiteit met elk exemplaar opslaan met behulp van verschillende **PartitionKey** -en **RowKey** -waarden. Als u een entiteit met de hieronder weer gegeven structuren opslaat, kunt u op efficiënte wijze werknemers entiteiten ophalen op basis van het e-mail adres of de werk nemer-ID. Met de voorvoegsel waarden voor de **PartitionKey** , empid_ en email_ kunt u bepalen welke index u wilt gebruiken voor een query.  
+Om het ontbreken van secundaire indexen te omzeilen, kunt u meerdere exemplaren van elke entiteit met elk exemplaar opslaan met behulp van verschillende **PartitionKey** -en **RowKey** -waarden. Als u een entiteit met de hieronder weer gegeven structuren opslaat, kunt u op efficiënte wijze werknemers entiteiten ophalen op basis van het e-mail adres of de werk nemer-ID. Met de voorvoegsel waarden voor de **PartitionKey**, empid_ en email_ kunt u bepalen welke index u wilt gebruiken voor een query.  
 
 ![Primaire index en secundaire index](media/storage-table-design-guide/storage-table-design-IMAGE10.png)
 
@@ -185,7 +185,7 @@ De volgende patronen en richtlijnen zijn mogelijk ook relevant bij de implementa
 Behoud index entiteiten om efficiënte Zoek opdrachten in te scha kelen waarmee lijsten met entiteiten worden geretourneerd.  
 
 ### <a name="context-and-problem"></a>Context en probleem
-De Table service indexeert automatisch entiteiten met behulp van de waarden **PartitionKey** en **RowKey** . Hiermee kan een client toepassing een entiteit efficiënt ophalen met behulp van een Point-query. Met de tabel structuur die hieronder wordt weer gegeven, kan een client toepassing bijvoorbeeld een afzonderlijke werknemers entiteit ophalen met behulp van de afdelings naam en de werk nemer-ID (de **PartitionKey** en **RowKey** ).  
+De Table service indexeert automatisch entiteiten met behulp van de waarden **PartitionKey** en **RowKey** . Hiermee kan een client toepassing een entiteit efficiënt ophalen met behulp van een Point-query. Met de tabel structuur die hieronder wordt weer gegeven, kan een client toepassing bijvoorbeeld een afzonderlijke werknemers entiteit ophalen met behulp van de afdelings naam en de werk nemer-ID (de **PartitionKey** en **RowKey**).  
 
 ![Entiteit werk nemer](media/storage-table-design-guide/storage-table-design-IMAGE13.png)
 
@@ -213,7 +213,7 @@ De eigenschap **EmployeeIDs** bevat een lijst met werk nemer-id's voor werk neme
 De volgende stappen beschrijven het proces dat u moet volgen wanneer u een nieuwe werk nemer toevoegt als u de tweede optie gebruikt. In dit voor beeld voegen we een werk nemer met de ID 000152 en een achternaam Jansen toe op de verkoop afdeling:  
 
 1. Haal de index entiteit op met de **PartitionKey** -waarde "Sales" en de **RowKey** -waarde "Jansen". Sla de ETag van deze entiteit op die u in stap 2 wilt gebruiken.  
-2. Maak een trans actie voor een entiteits groep (dat wil zeggen een batch bewerking) die de nieuwe werknemers entiteit ( **PartitionKey** waarde "Sales" en **RowKey** value "000152") invoegt en de index entiteit ( **PartitionKey** waarde "Sales" en **RowKey** value Jansen ") BIJwerkt door de nieuwe werknemers-id toe te voegen aan de lijst in het veld EmployeeIDs. Zie trans acties voor entiteits groepen voor meer informatie over entiteits groeps transacties.  
+2. Maak een trans actie voor een entiteits groep (dat wil zeggen een batch bewerking) die de nieuwe werknemers entiteit (**PartitionKey** waarde "Sales" en **RowKey** value "000152") invoegt en de index entiteit (**PartitionKey** waarde "Sales" en **RowKey** value Jansen ") BIJwerkt door de nieuwe werknemers-id toe te voegen aan de lijst in het veld EmployeeIDs. Zie trans acties voor entiteits groepen voor meer informatie over entiteits groeps transacties.  
 3. Als de trans actie van de entiteits groep mislukt als gevolg van een optimistische gelijktijdigheids fout (iemand anders heeft zojuist de index entiteit gewijzigd), moet u opnieuw beginnen met stap 1.  
 
 U kunt een soort gelijke aanpak gebruiken om een werk nemer te verwijderen als u de tweede optie gebruikt. Het wijzigen van de achternaam van een werk nemer is iets ingewik kelder omdat u de trans actie van een entiteits groep moet uitvoeren die drie entiteiten bijwerkt: de werknemers entiteit, de index entiteit voor de oude achternaam en de index entiteit voor de nieuwe achternaam. U moet elke entiteit ophalen voordat u wijzigingen aanbrengt om de ETag-waarden op te halen die u vervolgens kunt gebruiken om de updates uit te voeren met optimistische gelijktijdigheid.  
@@ -372,7 +372,7 @@ Schakel het verwijderen van een groot aantal entiteiten in door alle entiteiten 
 ### <a name="context-and-problem"></a>Context en probleem
 Veel toepassingen verwijderen oude gegevens die niet meer beschikbaar zijn voor een client toepassing of die de toepassing heeft gearchiveerd naar een ander opslag medium. Normaal gesp roken identificeert u gegevens met een datum: u hebt bijvoorbeeld een vereiste om records te verwijderen van alle aanmeldings aanvragen die meer dan 60 dagen oud zijn.  
 
-Een mogelijk ontwerp is het gebruik van de datum en tijd van de aanmeldings aanvraag in de **RowKey** :  
+Een mogelijk ontwerp is het gebruik van de datum en tijd van de aanmeldings aanvraag in de **RowKey**:  
 
 ![Datum en tijd waarop de aanmeldings poging is gedaan](media/storage-table-design-guide/storage-table-design-IMAGE21.png)
 
@@ -686,7 +686,7 @@ employeeQuery.TakeCount = 50;
 ```
 
 ### <a name="server-side-projection"></a>Projectie aan server zijde
-Eén entiteit kan Maxi maal 255 eigenschappen hebben en kan Maxi maal 1 MB groot zijn. Wanneer u een query uitvoert op de tabel en entiteiten ophaalt, hebt u mogelijk niet alle eigenschappen nodig en kunt u voor komen dat gegevens onnodig worden overgedragen (om latentie en kosten te beperken). U kunt projectie aan server zijde gebruiken om alleen de eigenschappen over te dragen die u nodig hebt. In het volgende voor beeld wordt alleen de **e-mail** eigenschap (samen met **PartitionKey** , **RowKey** , **Time Stamp** en **ETAG** ) opgehaald uit de entiteiten die zijn geselecteerd door de query.  
+Eén entiteit kan Maxi maal 255 eigenschappen hebben en kan Maxi maal 1 MB groot zijn. Wanneer u een query uitvoert op de tabel en entiteiten ophaalt, hebt u mogelijk niet alle eigenschappen nodig en kunt u voor komen dat gegevens onnodig worden overgedragen (om latentie en kosten te beperken). U kunt projectie aan server zijde gebruiken om alleen de eigenschappen over te dragen die u nodig hebt. In het volgende voor beeld wordt alleen de **e-mail** eigenschap (samen met **PartitionKey**, **RowKey**, **Time Stamp** en **ETAG**) opgehaald uit de entiteiten die zijn geselecteerd door de query.  
 
 ```csharp
 string filter = TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "Sales");
@@ -711,7 +711,7 @@ Uitzonde ringen die worden gegenereerd wanneer de Storage-client bibliotheek een
 U moet ook overwegen hoe uw ontwerp van invloed is op de manier waarop uw client toepassing gelijktijdig valuta's en update bewerkingen verwerkt.  
 
 ### <a name="managing-concurrency"></a>Gelijktijdigheid beheren
-De tabel service implementeert standaard optimistische gelijktijdigheid controles op het niveau van afzonderlijke entiteiten voor **Insert** -, **Merge** -en **Delete** -bewerkingen, hoewel het mogelijk is dat een client de Table-service afdwingt deze controles over te slaan. Zie voor meer informatie over hoe de tabel service gelijktijdigheid beheert,  [gelijktijdigheid beheren in Microsoft Azure Storage](../../storage/common/storage-concurrency.md).  
+De tabel service implementeert standaard optimistische gelijktijdigheid controles op het niveau van afzonderlijke entiteiten voor **Insert**-, **Merge**-en **Delete** -bewerkingen, hoewel het mogelijk is dat een client de Table-service afdwingt deze controles over te slaan. Zie voor meer informatie over hoe de tabel service gelijktijdigheid beheert,  [gelijktijdigheid beheren in Microsoft Azure Storage](../../storage/common/storage-concurrency.md).  
 
 ### <a name="merge-or-replace"></a>Samen voegen of vervangen
 De methode **replace** van de klasse **TableOperation** vervangt altijd de volledige entiteit in de Table service. Als u in de aanvraag geen eigenschap opneemt wanneer die eigenschap in de opgeslagen entiteit bestaat, wordt die eigenschap door de aanvraag uit de opgeslagen entiteit verwijderd. Tenzij u een eigenschap expliciet van een opgeslagen entiteit wilt verwijderen, moet u elke eigenschap in de aanvraag toevoegen.  
@@ -743,7 +743,7 @@ De Table service is een tabel archief met *schema-minder* . Dit betekent dat een
 <th>FirstName</th>
 <th>LastName</th>
 <th>Leeftijd</th>
-<th>Email</th>
+<th>E-mail</th>
 </tr>
 <tr>
 <td></td>
@@ -763,7 +763,7 @@ De Table service is een tabel archief met *schema-minder* . Dit betekent dat een
 <th>FirstName</th>
 <th>LastName</th>
 <th>Leeftijd</th>
-<th>Email</th>
+<th>E-mail</th>
 </tr>
 <tr>
 <td></td>
@@ -800,7 +800,7 @@ De Table service is een tabel archief met *schema-minder* . Dit betekent dat een
 <th>FirstName</th>
 <th>LastName</th>
 <th>Leeftijd</th>
-<th>Email</th>
+<th>E-mail</th>
 </tr>
 <tr>
 <td></td>
@@ -813,9 +813,9 @@ De Table service is een tabel archief met *schema-minder* . Dit betekent dat een
 </tr>
 </table>
 
-Elke entiteit moet nog steeds waarden voor **PartitionKey** , **RowKey** en **Time Stamp** hebben, maar kan een set eigenschappen hebben. Bovendien is er niets om het type van een entiteit aan te geven, tenzij u ervoor kiest om die informatie ergens op te slaan. Er zijn twee opties voor het identificeren van het entiteits type:  
+Elke entiteit moet nog steeds waarden voor **PartitionKey**, **RowKey** en **Time Stamp** hebben, maar kan een set eigenschappen hebben. Bovendien is er niets om het type van een entiteit aan te geven, tenzij u ervoor kiest om die informatie ergens op te slaan. Er zijn twee opties voor het identificeren van het entiteits type:  
 
-* Laten voorafgaan door het entiteits type naar de **RowKey** (of mogelijk de **PartitionKey** ). Bijvoorbeeld **EMPLOYEE_000123** of **DEPARTMENT_SALES** als **RowKey** -waarden.  
+* Laten voorafgaan door het entiteits type naar de **RowKey** (of mogelijk de **PartitionKey**). Bijvoorbeeld **EMPLOYEE_000123** of **DEPARTMENT_SALES** als **RowKey** -waarden.  
 * Gebruik een afzonderlijke eigenschap om het entiteits type vast te leggen, zoals wordt weer gegeven in de onderstaande tabel.  
 
 <table>
@@ -836,7 +836,7 @@ Elke entiteit moet nog steeds waarden voor **PartitionKey** , **RowKey** en **Ti
 <th>FirstName</th>
 <th>LastName</th>
 <th>Leeftijd</th>
-<th>Email</th>
+<th>E-mail</th>
 </tr>
 <tr>
 <td>Werknemer</td>
@@ -858,7 +858,7 @@ Elke entiteit moet nog steeds waarden voor **PartitionKey** , **RowKey** en **Ti
 <th>FirstName</th>
 <th>LastName</th>
 <th>Leeftijd</th>
-<th>Email</th>
+<th>E-mail</th>
 </tr>
 <tr>
 <td>Werknemer</td>
@@ -899,7 +899,7 @@ Elke entiteit moet nog steeds waarden voor **PartitionKey** , **RowKey** en **Ti
 <th>FirstName</th>
 <th>LastName</th>
 <th>Leeftijd</th>
-<th>Email</th>
+<th>E-mail</th>
 </tr>
 <tr>
 <td>Werknemer</td>
@@ -913,7 +913,7 @@ Elke entiteit moet nog steeds waarden voor **PartitionKey** , **RowKey** en **Ti
 </tr>
 </table>
 
-De eerste optie, in afwachting van het entiteits type op de **RowKey** , is handig als er sprake is van een mogelijkheid dat twee entiteiten van verschillende typen dezelfde sleutel waarde hebben. Het groepeert ook entiteiten van hetzelfde type samen in de partitie.  
+De eerste optie, in afwachting van het entiteits type op de **RowKey**, is handig als er sprake is van een mogelijkheid dat twee entiteiten van verschillende typen dezelfde sleutel waarde hebben. Het groepeert ook entiteiten van hetzelfde type samen in de partitie.  
 
 De technieken die in deze sectie worden beschreven, zijn met name relevant voor de relaties van de discussie [overname](table-storage-design-modeling.md#inheritance-relationships) eerder in deze hand leiding in de artikel [modellerings relaties](table-storage-design-modeling.md).  
 

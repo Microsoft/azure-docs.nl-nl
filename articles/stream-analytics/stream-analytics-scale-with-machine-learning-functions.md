@@ -8,11 +8,11 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 03/16/2020
 ms.openlocfilehash: feeb709f67a0e75f5980ec0520b95feb7edd5960
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93124404"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018814"
 ---
 # <a name="scale-your-stream-analytics-job-with-azure-machine-learning-studio-classic-functions"></a>Uw Stream Analytics-taak schalen met de functies Azure Machine Learning Studio (klassiek)
 
@@ -52,7 +52,7 @@ Voor het verwerken van 200.000 gebeurtenissen per seconde, is voor de Stream Ana
 
 ![Stream Analytics schalen met Studio (klassiek) functions twee taak voorbeeld](./media/stream-analytics-scale-with-ml-functions/stream-analytics-scale-with-ml-functions-00.png "Stream Analytics schalen met Studio (klassiek) functions twee taak voorbeeld")
 
-In het algemeen geldt dat * *_B_* _ voor Batch grootte, _*_L_*_ voor de latentie van de webservice bij Batch grootte B in milliseconden, de door Voer van een stream Analytics-taak met _*_N_*_ SUs:
+In het algemeen geldt dat **_B_* _ voor Batch grootte, _*_L_*_ voor de latentie van de webservice bij Batch grootte B in milliseconden, de door Voer van een stream Analytics-taak met _*_N_*_ SUs:
 
 ![De formule Stream Analytics schalen met Studio (klassiek)](./media/stream-analytics-scale-with-ml-functions/stream-analytics-scale-with-ml-functions-02.png "De formule Stream Analytics schalen met Studio (klassiek)")
 
@@ -63,7 +63,7 @@ Raadpleeg het artikel over het [schalen van de webservices voor machine learning
 ## <a name="example--sentiment-analysis"></a>Voor beeld – Sentimentanalyse
 Het volgende voor beeld bevat een Stream Analytics-taak met de functie sentiment Analysis Studio (Classic), zoals beschreven in de [zelf studie over de integratie van Stream Analytics machine learning Studio (klassiek)](stream-analytics-machine-learning-integration-tutorial.md).
 
-De query is een eenvoudige, volledig gepartitioneerde query, gevolgd door de functie _ *sentiment* *, zoals wordt weer gegeven in het volgende voor beeld:
+De query is een eenvoudige, volledig gepartitioneerde query, gevolgd door de functie _ *sentiment**, zoals wordt weer gegeven in het volgende voor beeld:
 
 ```SQL
     WITH subquery AS (
@@ -88,7 +88,7 @@ Als de invoer gebeurtenis frequentie toeneemt door 100x, moet de Stream Analytic
 
 Met de eerste optie neemt de taak **latentie** toe.
 
-Met de tweede optie moet u meer SUs inrichten voor meer gelijktijdige Studio-aanvragen (klassieke webservices). Dit grotere aantal SUs verhoogt de taak **kosten** .
+Met de tweede optie moet u meer SUs inrichten voor meer gelijktijdige Studio-aanvragen (klassieke webservices). Dit grotere aantal SUs verhoogt de taak **kosten**.
 
 Laten we de schaal bekijken met behulp van de volgende latentie metingen voor elke batch grootte:
 
@@ -99,7 +99,7 @@ Laten we de schaal bekijken met behulp van de volgende latentie metingen voor el
 | 300 MS | 10.000-gebeurtenis batches |
 | 500 ms | 25.000-gebeurtenis batches |
 
-1. Met de eerste optie ( **niet** meer SUs inrichten). De Batch grootte kan worden verhoogd naar **25.000** . Door de Batch-grootte op deze manier te verg Roten, kan de taak 1.000.000 gebeurtenissen verwerken met 20 gelijktijdige verbindingen met de Studio-webservice (klassiek) (met een latentie van 500 MS per aanroep). De extra latentie van de Stream Analytics taak als gevolg van de sentiment-functie aanvragen voor de Studio-aanvragen van de web-service, wordt dus verhoogd van **200 MS** tot **500 MS** . Batch grootte kan echter **niet** oneindig worden verhoogd omdat de Studio (klassieke) webservices vereist dat de payload-grootte van een aanvraag 4 MB of kleiner is en time-out voor webservice-aanvragen na 100 seconden van de bewerking.
+1. Met de eerste optie (**niet** meer SUs inrichten). De Batch grootte kan worden verhoogd naar **25.000**. Door de Batch-grootte op deze manier te verg Roten, kan de taak 1.000.000 gebeurtenissen verwerken met 20 gelijktijdige verbindingen met de Studio-webservice (klassiek) (met een latentie van 500 MS per aanroep). De extra latentie van de Stream Analytics taak als gevolg van de sentiment-functie aanvragen voor de Studio-aanvragen van de web-service, wordt dus verhoogd van **200 MS** tot **500 MS**. Batch grootte kan echter **niet** oneindig worden verhoogd omdat de Studio (klassieke) webservices vereist dat de payload-grootte van een aanvraag 4 MB of kleiner is en time-out voor webservice-aanvragen na 100 seconden van de bewerking.
 1. Als u de tweede optie gebruikt, wordt de Batch grootte op 1000, met een latentie van 200 MS-webservice, elke 20 gelijktijdige verbindingen met de webservice kunnen verwerken 1000 * 20 * 5 gebeurtenissen = 100.000 per seconde. Voor het verwerken van 1.000.000 gebeurtenissen per seconde zou de taak 60 SUs nodig hebben. Vergeleken met de eerste optie, neemt Stream Analytics taak meer batch aanvragen voor webservices op, zodat er meer kosten in rekening worden gebracht.
 
 Hieronder ziet u een tabel voor de door Voer van de Stream Analytics-taak voor verschillende SUs-en batch grootten (in aantal gebeurtenissen per seconde).
@@ -120,17 +120,17 @@ Nu moet u al een goed beeld hebben van de functies van Studio (klassiek) in Stre
 Normaal gesp roken zijn de batch-groottes voor studio-functies (klassiek) niet exact deelbaar door het aantal gebeurtenissen dat elke Stream Analytics taak pull heeft geretourneerd. Als dit gebeurt, wordt de Studio-webservice (Classic) aangeroepen met ' gedeeltelijke ' batches. Door gedeeltelijke batches te gebruiken, voor komt u extra taak latentie overhead in samenvoegings gebeurtenissen van pull-to-pull.
 
 ## <a name="new-function-related-monitoring-metrics"></a>Nieuwe functionele metrische bewakings gegevens
-In het bewakings gebied van een Stream Analytics-taak zijn er drie extra metrische gegevens over de functie toegevoegd. Ze zijn **functie aanvragen** , **functie gebeurtenissen** en **mislukte functie aanvragen** , zoals wordt weer gegeven in de onderstaande afbeelding.
+In het bewakings gebied van een Stream Analytics-taak zijn er drie extra metrische gegevens over de functie toegevoegd. Ze zijn **functie aanvragen**, **functie gebeurtenissen** en **mislukte functie aanvragen**, zoals wordt weer gegeven in de onderstaande afbeelding.
 
 ![Stream Analytics schalen met de functies van Studio (klassiek)](./media/stream-analytics-scale-with-ml-functions/stream-analytics-scale-with-ml-functions-01.png "Stream Analytics schalen met de functies van Studio (klassiek)")
 
 De zijn als volgt gedefinieerd:
 
-**Functie-aanvragen** : het aantal functie aanvragen.
+**Functie-aanvragen**: het aantal functie aanvragen.
 
-**Functie gebeurtenissen** : de aantal gebeurtenissen in de functie aanvragen.
+**Functie gebeurtenissen**: de aantal gebeurtenissen in de functie aanvragen.
 
-**MISLUKTE functie aanvragen** : het aantal mislukte functie aanvragen.
+**MISLUKTE functie aanvragen**: het aantal mislukte functie aanvragen.
 
 ## <a name="key-takeaways"></a>Key Takeaways
 

@@ -15,17 +15,17 @@ ms.topic: how-to
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: f7edf790e526329dd285d03a31137a26220e52ee
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92778928"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018644"
 ---
 # <a name="using-azure-cdn-with-cors"></a>Azure CDN gebruiken met CORS
 ## <a name="what-is-cors"></a>Wat is CORS?
 CORS (Cross-Origin Resource Sharing) is een HTTP-functie waarmee een webtoepassing die wordt uitgevoerd onder één domein, toegang kan krijgen tot resources in een ander domein. Om de kans op cross-site scripting aanvallen te verminderen, implementeren alle moderne webbrowsers een beveiligings beperking die bekend staat als [hetzelfde-Origin-beleid](https://www.w3.org/Security/wiki/Same_Origin_Policy).  Hiermee wordt voor komen dat een webpagina Api's in een ander domein aanroept.  CORS biedt een veilige manier om één oorsprong (het oorspronkelijke domein) toe te staan om Api's in een andere oorsprong aan te roepen.
 
-## <a name="how-it-works"></a>Hoe het werkt
+## <a name="how-it-works"></a>Uitleg
 Er zijn twee typen CORS-aanvragen, *eenvoudige aanvragen* en *complexe aanvragen.*
 
 ### <a name="for-simple-requests"></a>Voor eenvoudige aanvragen:
@@ -69,7 +69,7 @@ In Azure CDN standaard van micro soft kunt u een regel maken in de [standaard re
 ![Voor beeld van regels met standaard regels-engine](./media/cdn-cors/cdn-standard-cors.png)
 
 > [!TIP]
-> U kunt extra acties aan uw regel toevoegen om extra antwoord headers te wijzigen, zoals **Access-Control-Allow-methoden** .
+> U kunt extra acties aan uw regel toevoegen om extra antwoord headers te wijzigen, zoals **Access-Control-Allow-methoden**.
 > 
 
 Op **Azure CDN standaard van Akamai** is het enige mechanisme voor het toestaan van meerdere oorsprongen zonder het gebruik van de oorsprong van de Joker [teken reeks cache](cdn-query-string.md)gebruik te gebruiken. Schakel de query teken reeks instelling voor het CDN-eind punt in en gebruik vervolgens een unieke query reeks voor aanvragen van elk toegestaan domein. Dit leidt ertoe dat de CDN een afzonderlijk object in de cache opslaat voor elke unieke query reeks. Deze methode is echter niet ideaal, omdat deze ertoe leidt dat meerdere kopieën van hetzelfde bestand in het cache geheugen van de CDN worden opgeslagen.  
@@ -91,7 +91,7 @@ https?:\/\/(www\.contoso\.com|contoso\.com|www\.microsoft\.com|microsoft.com\.co
 > 
 > 
 
-Als de reguliere expressie overeenkomt, vervangt uw regel de header **Access-Control-Allow-Origin** (indien van toepassing) van de oorsprong met de oorsprong die de aanvraag heeft verzonden.  U kunt ook extra CORS-headers toevoegen, zoals **Access-Control-Allow-methoden** .
+Als de reguliere expressie overeenkomt, vervangt uw regel de header **Access-Control-Allow-Origin** (indien van toepassing) van de oorsprong met de oorsprong die de aanvraag heeft verzonden.  U kunt ook extra CORS-headers toevoegen, zoals **Access-Control-Allow-methoden**.
 
 ![Voor beeld van regels met reguliere expressie](./media/cdn-cors/cdn-cors-regex.png)
 

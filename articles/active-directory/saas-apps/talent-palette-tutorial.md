@@ -12,11 +12,11 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.openlocfilehash: 6e1064e4362175b3de5187ce050f1719ede56bd5
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92516423"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018746"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-talent-palette"></a>Zelfstudie: Azure Active Directory-integratie met Talent Palette
 
@@ -50,7 +50,7 @@ Als u de integratie van Talent Palette in Azure AD wilt configureren, moet u Tal
 
 **Voer de volgende stappen uit om Talent Palette vanuit de galerie toe te voegen:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select_azuread.png)
 
@@ -74,10 +74,10 @@ Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure 
 Als u Azure AD-eenmalige aanmelding wilt configureren en testen met Talent Palette, hebt u de volgende bouwstenen nodig:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Talent Palette-eenmalige aanmelding configureren](#configure-talent-palette-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de clientzijde wil configureren.
+2. **[Talent Palette-eenmalige aanmelding configureren](#configure-talent-palette-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de clientzijde wil configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Talent Palette-testgebruiker maken](#create-talent-palette-test-user)** : als u een equivalent van Britta Simon in Talent Palette wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
+5. **[Talent Palette-testgebruiker maken](#create-talent-palette-test-user)**: als u een equivalent van Britta Simon in Talent Palette wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -129,13 +129,13 @@ Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding met Talent Pale
 
 ### <a name="configure-talent-palette-single-sign-on"></a>Talent Palette-eenmalige aanmelding configureren
 
-Als u eenmalige aanmelding aan de **Talent Palette** -zijde wilt configureren, moet u het gedownloade **Certificaat (Raw)** en de correcte van de Azure-portal gekopieerde URL's naar het [Talent Palette-ondersteuningsteam](mailto:talent-support@pa-consul.co.jp) verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding aan de **Talent Palette**-zijde wilt configureren, moet u het gedownloade **Certificaat (Raw)** en de correcte van de Azure-portal gekopieerde URL's naar het [Talent Palette-ondersteuningsteam](mailto:talent-support@pa-consul.co.jp) verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -160,7 +160,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In deze sectie gaat u Britta Simon in staat stellen om gebruik te maken van Azure-eenmalige aanmelding door haar toegang te verlenen tot Talent Palette.
 
-1. Selecteer in de Azure-portal, **Bedrijfstoepassingen** , selecteer **Alle toepassingen** en selecteer vervolgens **Talent Palette**.
+1. Selecteer in de Azure-portal, **Bedrijfstoepassingen**, selecteer **Alle toepassingen** en selecteer vervolgens **Talent Palette**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise_applications.png)
 

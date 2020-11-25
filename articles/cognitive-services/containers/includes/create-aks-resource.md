@@ -10,11 +10,11 @@ ms.topic: include
 ms.date: 04/01/2020
 ms.author: aahi
 ms.openlocfilehash: e7f5b6f3685a94b5497784360f8f12b22fb95012
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87298829"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017845"
 ---
 ## <a name="create-an-azure-kubernetes-service-cluster-resource"></a>Een Azure Kubernetes service-cluster resource maken
 
@@ -39,10 +39,10 @@ ms.locfileid: "87298829"
 
     |Instelling|Waarde|
     |--|--|
-    |Routering van HTTP-toepassing|Nee|
+    |Routering van HTTP-toepassing|No|
     |Netwerkconfiguratie|Basic|
 
-1. Controleer op het tabblad **integraties** of de **container controle** is ingesteld op **ingeschakeld**en laat **log Analytics werk ruimte** staan als de standaard waarde.
+1. Controleer op het tabblad **integraties** of de **container controle** is ingesteld op **ingeschakeld** en laat **log Analytics werk ruimte** staan als de standaard waarde.
 1. Laat op het tabblad **Tags** de naam/waarde-paren voor nu leeg.
 1. Selecteer **controleren en maken**.
 1. Nadat de validatie is geslaagd, selecteert u **maken**.

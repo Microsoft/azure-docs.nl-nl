@@ -9,11 +9,11 @@ manager: gwallace
 description: Meer informatie over het instellen van continue integratie/continue implementatie met Azure DevOps met Azure dev Spaces
 keywords: Docker, Kubernetes, azure, AKS, Azure Container Service, containers
 ms.openlocfilehash: de409aa060034c9ba0faaaa56ce21f904b02cdac
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91960385"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017777"
 ---
 # <a name="use-cicd-with-azure-dev-spaces"></a>CI/CD gebruiken met Azure Dev Spaces
 
@@ -59,7 +59,7 @@ In het bovenstaande voor beeld is het achtervoegsel van de host _fedcba098.Eus.a
 De _ontwikkel_ ruimte bevat altijd de laatste status van de opslag plaats, een basis lijn, zodat ontwikkel aars _onderliggende ruimten_ kunnen maken op basis van _dev_ om hun geïsoleerde wijzigingen in de context van de grotere app te testen. Dit concept wordt gedetailleerd beschreven in de zelf studies over ontwikkel ruimten.
 
 ## <a name="creating-the-build-definition"></a>De build-definitie maken
-Open uw Azure DevOps-team project in een webbrowser en navigeer naar de sectie _pijp lijnen_ . Klik eerst op de foto van uw profiel in de rechter bovenhoek van de Azure DevOps-site, open het deel venster preview-functies en schakel de _nieuwe ervaring voor het maken van yaml-pijp lijnen_uit:
+Open uw Azure DevOps-team project in een webbrowser en navigeer naar de sectie _pijp lijnen_ . Klik eerst op de foto van uw profiel in de rechter bovenhoek van de Azure DevOps-site, open het deel venster preview-functies en schakel de _nieuwe ervaring voor het maken van yaml-pijp lijnen_ uit:
 
 ![Deel venster preview-functies openen](../media/common/preview-feature-open.png)
 
@@ -78,7 +78,7 @@ Een pijp lijn maken op basis van dit bestand:
 1. Navigeer op de hoofd pagina van uw DevOps-project naar pijp lijnen > builds.
 1. Selecteer de optie om een **nieuwe** build-pijp lijn te maken.
 1. Selecteer **github** als bron, autoriseer met uw github-account, indien nodig, en selecteer de _azds_updates_ vertakking uit de gesplitste versie van de opslag plaats van de voorbeeld toepassing voor _ontwikkel ruimten_ .
-1. Selecteer **configuratie als code**of **yaml**als sjabloon.
+1. Selecteer **configuratie als code** of **yaml** als sjabloon.
 1. Er wordt nu een configuratie pagina weer gegeven voor uw build-pijp lijn. Zoals hierboven wordt beschreven, navigeert u naar het taalspecifiek pad voor het **yaml** met behulp van de knop **...** . Bijvoorbeeld `samples/dotnetcore/getting-started/azure-pipelines.dotnet.yml`.
 1. Ga naar het tabblad **variabelen** .
 1. Voeg _dockerId_ hand matig toe als een variabele. Dit is de gebruikers naam van uw [Azure container Registry-beheerders account](../../container-registry/container-registry-authentication.md#admin-account). (Vermeld in de artikel vereisten)
@@ -98,17 +98,17 @@ U hebt nu een CI-oplossing die automatisch *mywebapi* en Webfront- *End* bouwt v
 1. Klik op **OK**. U ziet dat het deel venster pijp lijn is geladen met de pagina voor het bewerken van de release definitie. U ziet ook een aantal rode waarschuwings pictogrammen die cluster-specifieke details aangeven die nog moeten worden geconfigureerd.
 1. Klik aan de linkerkant van het deel venster pijp lijn op de Bel **een artefact toevoegen** .
 1. Selecteer in de vervolg keuzelijst **bron** de build-pijp lijn die u eerder hebt gemaakt.
-1. Voor de **standaard versie**kiest u **meest recent in de standaard vertakking build pijplijn met Tags**.
+1. Voor de **standaard versie** kiest u **meest recent in de standaard vertakking build pijplijn met Tags**.
 1. Laat **labels** leeg.
 1. Stel de **bron alias** in op `drop` . De waarde van de **bron alias** wordt gebruikt door de vooraf gedefinieerde release taken zodat deze moet worden ingesteld.
 1. Klik op **Add**.
 1. Klik nu op het pictogram bliksem flits op de zojuist gemaakte `drop` artefact bron, zoals hieronder wordt weer gegeven:
 
     ![Setup van continue implementatie van release artefact](../media/common/release-artifact-cd-setup.png)
-1. Schakel de **trigger voor continue implementatie**in.
+1. Schakel de **trigger voor continue implementatie** in.
 1. Beweeg de muis aanwijzer over het tabblad **taken** naast **pijp lijn** en klik op _dev_ om de taken voor de _ontwikkelings_ fase te bewerken.
 1. Controleer of **Azure Resource Manager** is geselecteerd onder **verbindings type.** en u ziet dat de drie vervolg keuzelijst besturings elementen rood zijn gemarkeerd: ![ release definitie instellen](../media/common/release-setup-tasks.png)
-1. Selecteer het Azure-abonnement dat u wilt gebruiken met Azure dev Spaces. Mogelijk moet u ook op **autoriseren**klikken.
+1. Selecteer het Azure-abonnement dat u wilt gebruiken met Azure dev Spaces. Mogelijk moet u ook op **autoriseren** klikken.
 1. Selecteer de resource groep en het cluster dat u wilt gebruiken met Azure dev Spaces.
 1. Klik op **Agent taak**.
 1. Selecteer **gehoste Ubuntu 1604** onder **groep van agent**.
@@ -120,7 +120,7 @@ U hebt nu een CI-oplossing die automatisch *mywebapi* en Webfront- *End* bouwt v
 1. Werk de waarde van **DevSpacesHostSuffix** bij van **UPDATE_ME** naar het achtervoegsel van de host. Het achtervoegsel van de host wordt weer gegeven wanneer u de `azds show-context` opdracht eerder hebt uitgevoerd.
 1. Klik op **Opslaan** in de rechter bovenhoek en **OK**.
 1. Klik op **+ release** (naast de knop Opslaan) en **Maak een release**.
-1. Controleer onder **artefacten**de meest recente build van uw build-pijp lijn is geselecteerd.
+1. Controleer onder **artefacten** de meest recente build van uw build-pijp lijn is geselecteerd.
 1. Klik op **Create**.
 
 Er wordt nu een geautomatiseerd release proces gestart, waarbij de *mywebapi* -en Webfront- *End* grafieken worden geïmplementeerd in uw Kubernetes-cluster in de _ontwikkel_ ruimte op het hoogste niveau. U kunt de voortgang van uw release bewaken in de Azure DevOps-webportal:

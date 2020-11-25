@@ -11,11 +11,11 @@ ms.topic: include
 ms.date: 04/01/2020
 ms.author: aahi
 ms.openlocfilehash: ca8d4d725ff25687d1005ddab1964316a147c730
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91779732"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017847"
 ---
 ### <a name="deploy-the-sentiment-analysis-container-to-an-aks-cluster"></a>De Sentimentanalyse-container implementeren in een AKS-cluster
 
@@ -49,7 +49,7 @@ ms.locfileid: "91779732"
     code .
     ```
 
-1. Maak in de tekst editor een nieuw bestand met de naam *sentiment. yaml*en plak de volgende YAML hierin. Vervang `billing/value` en door `apikey/value` uw eigen gegevens.
+1. Maak in de tekst editor een nieuw bestand met de naam *sentiment. yaml* en plak de volgende YAML hierin. Vervang `billing/value` en door `apikey/value` uw eigen gegevens.
 
     ```yaml
     apiVersion: apps/v1beta1

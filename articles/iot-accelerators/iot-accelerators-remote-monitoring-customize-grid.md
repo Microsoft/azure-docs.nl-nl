@@ -10,11 +10,11 @@ ms.date: 10/04/2018
 ms.topic: conceptual
 ms.custom: devx-track-js
 ms.openlocfilehash: 7fc878e0c9e099b201264c1c3981c603668214d3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91318378"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017760"
 ---
 # <a name="add-a-custom-grid-to-the-remote-monitoring-solution-accelerator-web-ui"></a>Een aangepast raster toevoegen aan de webgebruikersinterface van de oplossings versneller voor externe controle
 
@@ -248,7 +248,7 @@ Als een gebruiker op hetzelfde moment op meerdere rijen moet handelen, gebruikt 
 
 Als de gebruiker alleen op één rij moet reageren, configureert u een tijdelijke koppeling voor een of meer kolommen in de **columnDefs**.
 
-1. Voeg **SoftSelectLinkRenderer** in **exampleGridConfig.js**toe als de **cellRendererFramework** voor een **columnDef**.
+1. Voeg **SoftSelectLinkRenderer** in **exampleGridConfig.js** toe als de **cellRendererFramework** voor een **columnDef**.
 
     ```js
     export const exampleColumnDefs = {

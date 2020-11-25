@@ -9,11 +9,11 @@ ms.topic: troubleshooting
 ms.date: 08/22/2019
 ms.custom: seodec18
 ms.openlocfilehash: 9e60903aaa61cae63d406d459937d33317eee394
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545630"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022248"
 ---
 # <a name="troubleshoot-apache-spark-by-using-azure-hdinsight"></a>Probleem met Apache Spark oplossen met behulp van Azure HDInsight
 
@@ -25,31 +25,31 @@ Spark-configuratie waarden kunnen worden afgestemd om een Apache Spark toepassin
 
 1. Meld u aan bij Ambari `https://CLUSTERNAME.azurehdidnsight.net` met uw cluster referenties. In het eerste scherm wordt een overzichts dashboard weer gegeven. Er zijn geringe cosmetische verschillen tussen HDInsight 3,6 en 4,0.
 
-1. Ga naar **Spark2** -  >  **configuraties** .
+1. Ga naar **Spark2**-  >  **configuraties**.
 
     ![Selecteer het tabblad Configuratie.](./media/apache-troubleshoot-spark/apache-spark-ambari-config2.png)
 
-1. Selecteer in de lijst met configuraties de **Opties Custom-spark2-defaults** .
+1. Selecteer in de lijst met configuraties de **Opties Custom-spark2-defaults**.
 
-1. Zoek naar de waarde-instelling die u moet aanpassen, zoals **spark.executor. Memory** . In dit geval is de waarde van **9728m** te hoog.
+1. Zoek naar de waarde-instelling die u moet aanpassen, zoals **spark.executor. Memory**. In dit geval is de waarde van **9728m** te hoog.
 
     ![Aangepaste Spark-standaard selecteren](./media/apache-troubleshoot-spark/apache-spark-ambari-config4.png)
 
 1. Stel de waarde in op de aanbevolen instelling. De waarde **2048m** wordt aanbevolen voor deze instelling.
 
-1. Sla de waarde op en sla de configuratie op. Selecteer **Opslaan** .
+1. Sla de waarde op en sla de configuratie op. Selecteer **Opslaan**.
 
     ![Waarde wijzigen in 2048m](./media/apache-troubleshoot-spark/apache-spark-ambari-config6a.png)
 
-    Schrijf een opmerking over de configuratie wijzigingen en selecteer vervolgens **Opslaan** .
+    Schrijf een opmerking over de configuratie wijzigingen en selecteer vervolgens **Opslaan**.
 
     ![Voer een opmerking in over de wijzigingen die u hebt aangebracht](./media/apache-troubleshoot-spark/apache-spark-ambari-config6c.png)
 
-    U ontvangt een melding als er configuraties zijn die aandacht vereisen. Noteer de items en selecteer vervolgens **door gaan** .
+    U ontvangt een melding als er configuraties zijn die aandacht vereisen. Noteer de items en selecteer vervolgens **door gaan**.
 
     ![Selecteer toch door gaan](./media/apache-troubleshoot-spark/apache-spark-ambari-config6b.png)
 
-1. Wanneer een configuratie wordt opgeslagen, wordt u gevraagd de service opnieuw te starten. Selecteer **opnieuw opstarten** .
+1. Wanneer een configuratie wordt opgeslagen, wordt u gevraagd de service opnieuw te starten. Selecteer **opnieuw opstarten**.
 
     ![Selecteer opnieuw opstarten](./media/apache-troubleshoot-spark/apache-spark-ambari-config7a.png)
 
@@ -61,13 +61,13 @@ Spark-configuratie waarden kunnen worden afgestemd om een Apache Spark toepassin
 
     ![Actieve processen controleren](./media/apache-troubleshoot-spark/apache-spark-ambari-config7c.png)
 
-1. U kunt configuraties toevoegen. Selecteer in de lijst met configuraties de **Opties aangepast-spark2-standaard** en selecteer vervolgens **eigenschap toevoegen** .
+1. U kunt configuraties toevoegen. Selecteer in de lijst met configuraties de **Opties aangepast-spark2-standaard** en selecteer vervolgens **eigenschap toevoegen**.
 
     ![Eigenschap toevoegen selecteren](./media/apache-troubleshoot-spark/apache-spark-ambari-config8.png)
 
 1. Definieer een nieuwe eigenschap. U kunt één eigenschap definiëren met behulp van een dialoog venster voor specifieke instellingen, zoals het gegevens type. U kunt ook meerdere eigenschappen definiëren door één definitie per regel te gebruiken.
 
-    In dit voor beeld is de eigenschap **Spark. drivers. Memory** gedefinieerd met de waarde **4G** .
+    In dit voor beeld is de eigenschap **Spark. drivers. Memory** gedefinieerd met de waarde **4G**.
 
     ![Nieuwe eigenschap definiëren](./media/apache-troubleshoot-spark/apache-spark-ambari-config9.png)
 

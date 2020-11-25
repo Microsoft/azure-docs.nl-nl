@@ -6,13 +6,13 @@ ms.topic: conceptual
 ms.author: makromer
 ms.service: data-factory
 ms.custom: seo-lt-2019
-ms.date: 08/12/2020
-ms.openlocfilehash: 055cdf7b6cec12eb8c3e7fde891d155b831a6523
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.date: 11/24/2020
+ms.openlocfilehash: cc06f12317f5e30721452e07bd4dc5f50dfdb7ec
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637867"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022357"
 ---
 # <a name="mapping-data-flows-performance-and-tuning-guide"></a>Gegevens stromen toewijzen prestaties en afstemmings handleiding
 
@@ -87,6 +87,12 @@ Als u een goed beeld hebt van de kardinaliteit van uw gegevens, is het mogelijk 
 > [!TIP]
 > Als u het partitie schema hand matig instelt, worden de gegevens in een andere volg orde gezet en kunnen de voor delen van de Spark-Optimizer worden verrekend. Een best practice moet de partitie pas hand matig instellen, tenzij u dat nodig hebt.
 
+## <a name="logging-level"></a>Logboek registratie niveau
+
+Als u niet elke pijplijn uitvoering van uw gegevens stroom activiteiten nodig hebt om alle uitgebreide telemetriegegevens logboeken volledig te registreren, kunt u desgewenst uw logboek registratie niveau instellen op basis of geen. Bij het uitvoeren van uw gegevens stromen in de modus ' uitgebreid ' (standaard), vraagt u om de automatische logboek activiteit voor elk afzonderlijke partitie niveau bij de gegevens transformatie. Dit kan een dure bewerking zijn, zodat u alleen uitgebreide informatie kunt inschakelen als u problemen met het oplossen van gegevens stroom en de prestaties van de pijp lijn verbetert. In de modus standaard worden alleen transformatie duur vastgelegd terwijl ' geen ' een samen vatting van de duur geeft.
+
+![Logboek registratie niveau](media/data-flow/logging.png "Niveau van logboek registratie instellen")
+
 ## <a name="optimizing-the-azure-integration-runtime"></a><a name="ir"></a> De Azure Integration Runtime optimaliseren
 
 Gegevens stromen worden uitgevoerd op Spark-clusters die tijdens runtime actief zijn. De configuratie voor het gebruikte cluster wordt gedefinieerd in de Integration runtime (IR) van de activiteit. Er zijn drie prestatie overwegingen die u moet aanbrengen bij het definiëren van de Integration runtime: cluster type, cluster grootte en time to Live.
@@ -109,7 +115,7 @@ Gegevens stromen distribueren de gegevens verwerking over verschillende knoop pu
 
 De standaard cluster grootte is vier Stuur knooppunten en vier werk knooppunten.  Bij het verwerken van meer gegevens worden grotere clusters aanbevolen. Hieronder ziet u de mogelijke opties voor de grootte:
 
-| Kernen van werk nemers | Kern geheugens van Stuur Programma's | Totaal aantal cores | Opmerkingen |
+| Kernen van werk nemers | Kern geheugens van Stuur Programma's | Totaal aantal cores | Notities |
 | ------------ | ------------ | ----------- | ----- |
 | 4 | 4 | 8 | Niet beschikbaar voor berekenings optimalisatie |
 | 8 | 8 | 16 | |
@@ -155,7 +161,7 @@ Azure SQL Database heeft een unieke partitionering-optie met de naam bron partit
 
 #### <a name="isolation-level"></a>Isolatie niveau
 
-Het isolatie niveau van de Lees bewerking op een Azure SQL-bron systeem heeft invloed op de prestaties. Als u ' niet doorgevoerd ' kiest, worden de snelste prestaties geboden en kunnen er geen database vergrendelingen worden uitgevoerd. Zie informatie over [isolatie niveaus](/sql/connect/jdbc/understanding-isolation-levels?view=sql-server-ver15)voor meer informatie over SQL-isolatie niveaus.
+Het isolatie niveau van de Lees bewerking op een Azure SQL-bron systeem heeft invloed op de prestaties. Als u ' niet doorgevoerd ' kiest, worden de snelste prestaties geboden en kunnen er geen database vergrendelingen worden uitgevoerd. Zie informatie over [isolatie niveaus](https://docs.microsoft.com/sql/connect/jdbc/understanding-isolation-levels)voor meer informatie over SQL-isolatie niveaus.
 
 #### <a name="read-using-query"></a>Lezen met behulp van query
 
@@ -163,7 +169,7 @@ U kunt lezen van Azure SQL Database met behulp van een tabel of een SQL-query. A
 
 ### <a name="azure-synapse-analytics-sources"></a>Azure Synapse Analytics-bronnen
 
-Wanneer u Azure Synapse Analytics gebruikt, is een instelling met de naam **fase ring inschakelen** aanwezig in de bron opties. Dit maakt het mogelijk om ADF te lezen van Synapse met [poly base](/sql/relational-databases/polybase/polybase-guide?view=sql-server-ver15), waardoor de Lees prestaties aanzienlijk worden verbeterd. Als u poly base inschakelt, moet u een Azure Blob Storage of Azure Data Lake Storage Gen2 faserings locatie opgeven in de instellingen voor de gegevens stroom activiteit.
+Wanneer u Azure Synapse Analytics gebruikt, is een instelling met de naam **fase ring inschakelen** aanwezig in de bron opties. Dit maakt het mogelijk om ADF te lezen van Synapse met ```Polybase``` , waardoor de Lees prestaties aanzienlijk worden verbeterd. ```Polybase```Als u inschakelen hebt, moet u een Azure Blob Storage of Azure data Lake Storage Gen2 tijdelijke locatie opgeven in de instellingen voor de gegevens stroom activiteit.
 
 ![Faseringsmodus inschakelen](media/data-flow/enable-staging.png "Faseringsmodus inschakelen")
 
@@ -183,6 +189,10 @@ Wanneer gegevens worden wegge schreven naar sinks, worden aangepaste partities d
 
 Met Azure SQL Database zou de standaard partitionering in de meeste gevallen moeten werken. Er is een kans dat uw Sink te veel partities heeft om uw SQL database te kunnen verwerken. Als u hier werkt, vermindert u het aantal partities dat wordt gegenereerd door uw SQL Database sink.
 
+#### <a name="impact-of-error-row-handling-to-performance"></a>Impact van de verwerking van de fout rijen op de prestaties
+
+Wanneer u het verwerken van de fout rijen (' door gaan bij fout ') inschakelt in de Sink-trans formatie, neemt de ADF een extra stap voordat de compatibele rijen naar de doel tabel worden geschreven. Deze extra stap heeft een geringe prestatie vermindering die binnen het bereik van 5% is toegevoegd voor deze stap, met een extra kleine prestatie treffer die ook wordt toegevoegd als u de optie instelt op ook met de niet-compatibele rijen naar een logboek bestand.
+
 #### <a name="disabling-indexes-using-a-sql-script"></a>Indexen uitschakelen met behulp van een SQL-script
 
 Als u indexen uitschakelt voordat een belasting in een SQL database, kan de prestaties van het schrijven naar de tabel aanzienlijk worden verbeterd. Voer de onderstaande opdracht uit voordat u naar de SQL-Sink schrijft.
@@ -198,7 +208,7 @@ Deze kunnen zowel als systeem eigen worden uitgevoerd met scripts van vóór en 
 ![Indexen uitschakelen](media/data-flow/disable-indexes-sql.png "Indexen uitschakelen")
 
 > [!WARNING]
-> Wanneer u indexen uitschakelt, wordt de controle over een data base in feite uitgevoerd en zijn query's waarschijnlijk op dit moment niet mogelijk. Als gevolg hiervan worden veel ETL-taken in het midden van de nacht geactiveerd om dit conflict te voor komen. Meer informatie over de beperkingen voor het [uitschakelen van indexen](/sql/relational-databases/indexes/disable-indexes-and-constraints?view=sql-server-ver15)
+> Wanneer u indexen uitschakelt, wordt de controle over een data base in feite uitgevoerd en zijn query's waarschijnlijk op dit moment niet mogelijk. Als gevolg hiervan worden veel ETL-taken in het midden van de nacht geactiveerd om dit conflict te voor komen. Meer informatie over de beperkingen voor het [uitschakelen van indexen](https://docs.microsoft.com/sql/relational-databases/indexes/disable-indexes-and-constraints)
 
 #### <a name="scaling-up-your-database"></a>Uw data base omhoog schalen
 
@@ -226,7 +236,7 @@ Als u de **standaard** optie selecteert, wordt het snelst geschreven. Elke parti
 
 Als u een naamgevings **patroon** instelt, wordt de naam van elk partitie bestand gewijzigd in een gebruiks vriendelijke, beschrijvende namen. Deze bewerking treedt op na schrijven en is iets langzamer dan de standaard waarde kiezen. Per partitie kunt u elke afzonderlijke partitie hand matig benoemen.
 
-Als een kolom overeenkomt met de manier waarop u de gegevens wilt uitvoeren, kunt u **als gegevens selecteren in kolom** . Dit heeft gevolgen voor de gegevens en kan invloed hebben op de prestaties als de kolommen niet gelijkmatig worden gedistribueerd.
+Als een kolom overeenkomt met de manier waarop u de gegevens wilt uitvoeren, kunt u **als gegevens selecteren in kolom**. Dit heeft gevolgen voor de gegevens en kan invloed hebben op de prestaties als de kolommen niet gelijkmatig worden gedistribueerd.
 
 **Met uitvoer naar één bestand worden** alle gegevens gecombineerd tot één partitie. Dit leidt tot lange schrijf tijden, met name voor grote gegevens sets. Het Azure Data Factory Team raadt met klem aan deze optie **niet** te kiezen, tenzij er een expliciete zakelijke reden is om dit te doen.
 
@@ -239,7 +249,6 @@ Wanneer u naar CosmosDB schrijft, kunt u de prestaties verbeteren door de door V
 **Door Voer:** Stel hier een hogere doorvoer instelling in zodat documenten sneller naar CosmosDB kunnen schrijven. Houd de hogere RU-kosten in acht op basis van een instelling voor hoge door voer.
 
 **Budget voor schrijf doorvoer:** Gebruik een waarde die kleiner is dan het totaal van RUs per minuut. Als u een gegevens stroom hebt met een groot aantal Spark-partities, is het instellen van een budget doorvoer meer evenwicht over die partities.
-
 
 ## <a name="optimizing-transformations"></a>Trans formaties optimaliseren
 

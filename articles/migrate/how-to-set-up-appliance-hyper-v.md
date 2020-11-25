@@ -4,11 +4,11 @@ description: Meer informatie over het instellen van een Azure Migrate apparaat o
 ms.topic: article
 ms.date: 03/23/2020
 ms.openlocfilehash: a12785ea3791366badb907498796a73c2c993623
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92314173"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008307"
 ---
 # <a name="set-up-an-appliance-for-hyper-v-vms"></a>Een apparaat instellen voor virtuele Hyper-V-machines
 

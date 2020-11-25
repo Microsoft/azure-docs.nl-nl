@@ -7,11 +7,11 @@ ms.date: 03/18/2020
 ms.author: azfuncdf
 zone_pivot_groups: code-editors-set-one
 ms.openlocfilehash: d5b6ecc12cee983cee0772da8b6f8f26a3b5a8ae
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92890272"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008167"
 ---
 # <a name="create-your-first-durable-function-in-c"></a>Uw eerste Durable Function maken in C\#
 
@@ -86,7 +86,7 @@ In de volgende stappen wordt een sjabloon gebruikt om de code van de Durable Fun
     | Een resourcegroep selecteren | *unieke naam* | Naam van de resourcegroep die moet worden gemaakt |
     | Selecteer een locatie | *regio* | Kies een regio bij u in de buurt |
 
-Een klasse die de nieuwe functies bevat, wordt aan het project toegevoegd. VS Code voegt ook de verbindingstekenreeks van het opslagaccount toe aan *local.settings.json* en een verwijzing aan het [`Microsoft.Azure.WebJobs.Extensions.DurableTask`](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DurableTask) NuGet-pakket naar het *.csproj* -projectbestand.
+Een klasse die de nieuwe functies bevat, wordt aan het project toegevoegd. VS Code voegt ook de verbindingstekenreeks van het opslagaccount toe aan *local.settings.json* en een verwijzing aan het [`Microsoft.Azure.WebJobs.Extensions.DurableTask`](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DurableTask) NuGet-pakket naar het *.csproj*-projectbestand.
 
 Open het nieuwe bestand *HelloOrchestration.cs* om de inhoud weer te geven. Deze Durable Function is een eenvoudig voorbeeld van het koppelen van functies met behulp van de volgende methoden:  
 
@@ -183,7 +183,7 @@ De Azure Functions-sjabloon maakt een project dat kan worden gepubliceerd in een
 
 1. Selecteer **Nieuw** > **Project** in het menu **Bestand** in Visual Studio.
 
-1. Zoek in het dialoogvenster **Een nieuw project maken** naar `functions`, kies de **Azure Functions** -sjabloon en selecteer **Volgende**. 
+1. Zoek in het dialoogvenster **Een nieuw project maken** naar `functions`, kies de **Azure Functions**-sjabloon en selecteer **Volgende**. 
 
     ![Het dialoogvenster Nieuw project om een functie in Visual Studio te maken](./media/durable-functions-create-first-csharp/functions-vs-new-project.png)
 

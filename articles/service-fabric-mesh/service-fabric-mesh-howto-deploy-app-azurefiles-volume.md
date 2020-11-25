@@ -7,11 +7,11 @@ ms.date: 11/21/2018
 ms.author: gwallace
 ms.custom: mvc, devcenter , devx-track-azurecli
 ms.openlocfilehash: 00addbe992bc113c67df08f73414107d51b3bce5
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748211"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96007389"
 ---
 # <a name="mount-an-azure-files-based-volume-in-a-service-fabric-mesh-application"></a>Een op Azure Files gebaseerd volume koppelen in een Service Fabric mesh-toepassing 
 
@@ -75,9 +75,9 @@ az storage account keys list --account-name <storageAccountName> --query "[?keyN
 ```
 
 U kunt deze waarden ook vinden in de [Azure Portal](https://portal.azure.com):
-* `<storageAccountName>` -Onder **opslag accounts** , de naam van het opslag account dat wordt gebruikt voor het maken van de bestands share.
-* `<storageAccountKey>` -Selecteer uw opslag account onder **opslag accounts** en selecteer vervolgens **toegangs sleutels** en gebruik de waarde onder **key1** .
-* `<fileShareName>` -Selecteer uw opslag account onder  **opslag accounts** en selecteer vervolgens **bestanden** . De naam die u moet gebruiken, is de naam van de bestands share die u hebt gemaakt.
+* `<storageAccountName>` -Onder **opslag accounts**, de naam van het opslag account dat wordt gebruikt voor het maken van de bestands share.
+* `<storageAccountKey>` -Selecteer uw opslag account onder **opslag accounts** en selecteer vervolgens **toegangs sleutels** en gebruik de waarde onder **key1**.
+* `<fileShareName>` -Selecteer uw opslag account onder  **opslag accounts** en selecteer vervolgens **bestanden**. De naam die u moet gebruiken, is de naam van de bestands share die u hebt gemaakt.
 
 ## <a name="declare-a-volume-resource-and-update-the-service-resource-json"></a>Een volume resource declareren en de service resource (JSON) bijwerken
 

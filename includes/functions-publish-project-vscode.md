@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 09/28/2020
 ms.author: glenga
 ms.openlocfilehash: a525d1e14e642a64235c263ba29bf7a181bf9e30
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93420985"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008165"
 ---
 ## <a name="publish-the-project-to-azure"></a>Het project naar Azure publiceren
 
@@ -25,15 +25,15 @@ In deze sectie maakt u een functie-app en de bijbehorende resources in uw Azure-
 
 1. Geef de volgende informatie op bij de prompts:
 
-    - **Selecteer map** : Kies een map in uw werkruimte of blader naar een map die de functie-app bevat. Dit wordt niet weergegeven als u al een geldige functie-app hebt geopend.
+    - **Selecteer map**: Kies een map in uw werkruimte of blader naar een map die de functie-app bevat. Dit wordt niet weergegeven als u al een geldige functie-app hebt geopend.
 
-    - **Selecteer abonnement** : Kies het abonnement dat u wilt gebruiken. Dit ziet u niet als u maar één abonnement hebt.
+    - **Selecteer abonnement**: Kies het abonnement dat u wilt gebruiken. Dit ziet u niet als u maar één abonnement hebt.
 
-    - **Selecteer functie-app in Azure** : Kies `- Create new Function App`. (Kies niet de optie `Advanced` die niet in dit artikel wordt behandeld.)
+    - **Selecteer functie-app in Azure**: Kies `- Create new Function App`. (Kies niet de optie `Advanced` die niet in dit artikel wordt behandeld.)
       
-    - **Voer een globaal unieke naam in voor de functie-app** : Typ een naam die geldig is in een URL-pad. De naam die u typt, wordt gevalideerd om er zeker van te zijn dat deze uniek is in Azure Functions.
+    - **Voer een globaal unieke naam in voor de functie-app**: Typ een naam die geldig is in een URL-pad. De naam die u typt, wordt gevalideerd om er zeker van te zijn dat deze uniek is in Azure Functions.
     
-    - **Selecteer een locatie voor nieuwe resources** :  Kies voor betere prestaties een [regio](https://azure.microsoft.com/regions/) bij u in de buurt. 
+    - **Selecteer een locatie voor nieuwe resources**:  Kies voor betere prestaties een [regio](https://azure.microsoft.com/regions/) bij u in de buurt. 
     
 1.  Wanneer dit is voltooid, worden de volgende Azure-resources in uw abonnement gemaakt met behulp van namen op basis van de naam van uw functie-app:
     

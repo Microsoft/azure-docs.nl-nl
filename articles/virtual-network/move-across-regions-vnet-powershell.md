@@ -7,11 +7,11 @@ ms.topic: how-to
 ms.date: 08/26/2019
 ms.author: allensu
 ms.openlocfilehash: e13164c3ec6049a8ae3954528a02d20e313dd883
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84711456"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008120"
 ---
 # <a name="move-an-azure-virtual-network-to-another-region-by-using-azure-powershell"></a>Een virtueel Azure-netwerk verplaatsen naar een andere regio met behulp van Azure PowerShell
 
@@ -60,7 +60,7 @@ Ga als volgt te werk om het virtuele netwerk te exporteren en het virtuele doel 
    Export-AzResourceGroup -ResourceGroupName <source-resource-group-name> -Resource $sourceVNETID -IncludeParameterDefaultValue
    ```
 
-1. Het gedownloade bestand heeft dezelfde naam als de resource groep waaruit de resource is geëxporteerd. Zoek het * \<resource-group-name> JSON* -bestand, dat u met de opdracht hebt geëxporteerd, en open het in uw editor:
+1. Het gedownloade bestand heeft dezelfde naam als de resource groep waaruit de resource is geëxporteerd. Zoek het *\<resource-group-name> JSON* -bestand, dat u met de opdracht hebt geëxporteerd, en open het in uw editor:
    
    ```azurepowershell
    notepad <source-resource-group-name>.json
@@ -105,7 +105,7 @@ Ga als volgt te werk om het virtuele netwerk te exporteren en het virtuele doel 
     Get-AzLocation | format-table
     ```
 
-1. Beschrijving U kunt ook andere para meters in het * \<resource-group-name> JSON* -bestand wijzigen, afhankelijk van uw vereisten:
+1. Beschrijving U kunt ook andere para meters in het *\<resource-group-name> JSON* -bestand wijzigen, afhankelijk van uw vereisten:
 
     * **Adres ruimte**: voordat u het bestand opslaat, kunt u de adres ruimte van het virtuele netwerk wijzigen door de sectie **resources**  >  **addressSpace** te wijzigen en de eigenschap **addressPrefixes** te wijzigen:
 
@@ -193,7 +193,7 @@ Ga als volgt te werk om het virtuele netwerk te exporteren en het virtuele doel 
          ]
         ```
 
-1. Sla het * \<resource-group-name> JSON* -bestand op.
+1. Sla het *\<resource-group-name> JSON* -bestand op.
 
 1. Maak een resource groep in de doel regio voor het virtuele doel netwerk dat moet worden geïmplementeerd met behulp van [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup?view=azps-2.6.0):
     
@@ -201,7 +201,7 @@ Ga als volgt te werk om het virtuele netwerk te exporteren en het virtuele doel 
     New-AzResourceGroup -Name <target-resource-group-name> -location <target-region>
     ```
     
-1. Implementeer het bewerkte * \<resource-group-name> . json* -bestand in de resource groep die u in de vorige stap hebt gemaakt met behulp van [New-AzResourceGroupDeployment](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0):
+1. Implementeer het bewerkte *\<resource-group-name> . json* -bestand in de resource groep die u in de vorige stap hebt gemaakt met behulp van [New-AzResourceGroupDeployment](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroupdeployment?view=azps-2.6.0):
 
     ```azurepowershell-interactive
 

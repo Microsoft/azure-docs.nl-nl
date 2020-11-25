@@ -12,11 +12,11 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 580181aaaea975ee07bcec8108297079c5373b92
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93320420"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96007406"
 ---
 # <a name="the-team-data-science-process-in-action-using-sql-server"></a>Het proces van de team data Science in actie: met behulp van SQL Server
 In deze zelf studie doorloopt u het proces van het bouwen en implementeren van een machine learning model met behulp van SQL Server en een openbaar beschik bare gegevensset, de NYC-gegevensset voor de [taxi-trips](https://www.andresmh.com/nyctaxitrips/) . De procedure volgt een standaard werk stroom voor data technologie: de gegevens opnemen en verkennen, functies van de engineer om leren te vergemakkelijken, en vervolgens een model bouwen en implementeren.
@@ -55,7 +55,7 @@ De NYC-gegevens over de taxi zijn ongeveer 20 GB aan gecomprimeerde CSV-bestande
 De unieke sleutel voor deelname aan reis \_ gegevens en reis \_ tarief bestaat uit de velden: Medallion, Hack- \_ licentie en \_ datum/tijd van ophalen.
 
 ## <a name="examples-of-prediction-tasks"></a><a name="mltasks"></a>Voor beelden van voorspellings taken
-We zullen drie Voorspellings problemen formuleren op basis van de *Tip- \_ hoeveelheid* , namelijk:
+We zullen drie Voorspellings problemen formuleren op basis van de *Tip- \_ hoeveelheid*, namelijk:
 
 * Binaire classificatie: voor spelt of er voor een reis een tip is betaald, dat wil zeggen *een \_ fooiwaarde* van meer dan $0 is een positief voor beeld, terwijl een *tip- \_ bedrag* van $0 een negatief voor beeld is.
 * Classificatie met verschillende klassen: om het bereik van fooien voor de reis te voors pellen. We delen het *fooien \_ bedrag* in vijf bakken of klassen:
@@ -258,7 +258,7 @@ AND   pickup_longitude != '0' AND dropoff_longitude != '0'
 ```
 
 #### <a name="feature-engineering-in-sql-queries"></a>Functie techniek in SQL-Query's
-De query's voor het genereren van labels en geografie conversie kunnen ook worden gebruikt voor het genereren van labels/functies door het onderdeel tellen te verwijderen. Aanvullende technische SQL-voor beelden voor functies vindt u in de sectie [gegevens verkennen en functie in IPython notebook](#ipnb) . Het is efficiënter om de query's voor het genereren van functies uit te voeren op de volledige gegevensset of een grote subset hiervan met behulp van SQL-query's die rechtstreeks worden uitgevoerd op het SQL Server Data Base-exemplaar. De query's kunnen worden uitgevoerd in **SQL Server Management Studio** , IPython notebook of een ontwikkel hulpprogramma of omgeving dat lokaal of op afstand toegang heeft tot de data base.
+De query's voor het genereren van labels en geografie conversie kunnen ook worden gebruikt voor het genereren van labels/functies door het onderdeel tellen te verwijderen. Aanvullende technische SQL-voor beelden voor functies vindt u in de sectie [gegevens verkennen en functie in IPython notebook](#ipnb) . Het is efficiënter om de query's voor het genereren van functies uit te voeren op de volledige gegevensset of een grote subset hiervan met behulp van SQL-query's die rechtstreeks worden uitgevoerd op het SQL Server Data Base-exemplaar. De query's kunnen worden uitgevoerd in **SQL Server Management Studio**, IPython notebook of een ontwikkel hulpprogramma of omgeving dat lokaal of op afstand toegang heeft tot de data base.
 
 #### <a name="preparing-data-for-model-building"></a>Gegevens voorbereiden voor het maken van modellen
 Met de volgende query wordt de **nyctaxi- \_ reis** -en **nyctaxi- \_ ritbedrag** tabellen toegevoegd, wordt een binaire classificatie label met een classificatie **\_ klasse** met meerdere klassen **gekanteld** en wordt een wille keurige steek proef van 1% geëxtraheerd uit de verzameling met volledige joins. Deze query kan worden gekopieerd en vervolgens rechtstreeks in de module [Azure machine learning Studio](https://studio.azureml.net) [gegevens importeren][import-data] worden geplakt voor directe gegevens opname vanuit het SQL Server Data Base-exemplaar in Azure. De query sluit records met onjuiste (0, 0) coördinaten toe.
@@ -437,7 +437,7 @@ Wanneer u gegevens voorbereidt voor het maken van modellen in [Azure machine lea
 In deze sectie maakt u een nieuwe tabel voor de bemonsterde en engineerde gegevens. Een voor beeld van een rechtstreekse SQL-query voor het maken van modellen is te vinden in de sectie [voor het verkennen van gegevens en functies in SQL Server](#dbexplore) .
 
 #### <a name="create-a-sample-table-and-populate-with-1-of-the-joined-tables-drop-table-first-if-it-exists"></a>Maak een voorbeeld tabel en vul 1% van de gekoppelde tabellen in. Verwijder eerst de tabel als deze bestaat.
-In deze sectie voegen we de **nyctaxi- \_ reis** -en **nyctaxi- \_ ritbedrag** van de tabellen toe, extraheert u een wille keurig voor beeld van 1% en bewaart u de voorbeeld gegevens in een nieuwe tabel naam **nyctaxi \_ een \_ percentage** :
+In deze sectie voegen we de **nyctaxi- \_ reis** -en **nyctaxi- \_ ritbedrag** van de tabellen toe, extraheert u een wille keurig voor beeld van 1% en bewaart u de voorbeeld gegevens in een nieuwe tabel naam **nyctaxi \_ een \_ percentage**:
 
 ```sql
 cursor = conn.cursor()
@@ -661,7 +661,7 @@ Een voor beeld van een experiment met binaire classificatie voor het lezen van g
 ![Azure Machine Learning Train][10]
 
 > [!IMPORTANT]
-> In de voor beelden van model gegevens extractie en bemonsterings query's in de vorige secties **zijn alle labels voor de drie model oefeningen opgenomen in de query**. Een belang rijke (vereiste) stap in elk van de modellerings oefeningen is het **uitsluiten** van de overbodige labels voor de andere twee problemen en eventuele andere **doel lekkages**. Als u bijvoorbeeld een binaire classificatie gebruikt, gebruikt u **het label en** sluit u de velden **Tip- \_ klasse** , **Tip- \_ hoeveelheid** en **totaal \_ bedrag** uit. Deze laatste zijn doelwit lekkages, omdat ze de fooi hebben betaald.
+> In de voor beelden van model gegevens extractie en bemonsterings query's in de vorige secties **zijn alle labels voor de drie model oefeningen opgenomen in de query**. Een belang rijke (vereiste) stap in elk van de modellerings oefeningen is het **uitsluiten** van de overbodige labels voor de andere twee problemen en eventuele andere **doel lekkages**. Als u bijvoorbeeld een binaire classificatie gebruikt, gebruikt u **het label en** sluit u de velden **Tip- \_ klasse**, **Tip- \_ hoeveelheid** en **totaal \_ bedrag** uit. Deze laatste zijn doelwit lekkages, omdat ze de fooi hebben betaald.
 > 
 > Als u onnodige kolommen en/of doel lekkages wilt uitsluiten, kunt u de module [kolommen selecteren in gegevensset][select-columns] of de [meta gegevens bewerken][edit-metadata]gebruiken. Zie [kolommen selecteren in gegevensset][select-columns] en referentie pagina's voor [meta gegevens bewerken][edit-metadata] voor meer informatie.
 > 
@@ -696,7 +696,7 @@ In deze walkthrough-zelf studie hebt u een Azure data Science-omgeving gemaakt m
 ### <a name="license-information"></a>Licentie gegevens
 Deze voorbeeld walkthrough en de bijbehorende scripts en IPython-Notebook (s) worden door micro soft gedeeld onder de MIT-licentie. Controleer het LICENSE.txt-bestand in de map van de voorbeeld code op GitHub voor meer informatie.
 
-### <a name="references"></a>Verwijzingen
+### <a name="references"></a>Referenties
 •    [Download pagina voor Andrés Monroy NYCe taxi](https://www.andresmh.com/nyctaxitrips/)  
 •    [De taxi-reis gegevens van NYC door Chris Whong te folie](https://chriswhong.com/open-data/foil_nyc_taxi/)   
 • [NYC van de taxi en limousine](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page) van de Commissie

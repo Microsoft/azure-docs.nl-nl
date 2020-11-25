@@ -6,11 +6,11 @@ manager: rochakm
 ms.topic: troubleshooting
 ms.date: 04/03/2020
 ms.openlocfilehash: dc14334668b76ee8cbb81e48abfe1eecf17fa138
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86130405"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96007355"
 ---
 # <a name="troubleshoot-replication-in-azure-vm-disaster-recovery"></a>Problemen met replicatie in nood herstel voor Azure VM oplossen
 
@@ -35,7 +35,7 @@ U ziet de **wijzigings frequentie voor gebeurtenis gegevens die groter is dan de
 
 Als u de gebeurtenis selecteert, ziet u de exacte schijf gegevens:
 
-:::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/data_change_event2.png" alt-text="Azure Site Recovery pagina met een hoge wijzigings frequentie voor gegevens die te hoog is.":::
+:::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/data_change_event2.png" alt-text="Pagina waarop de details van de gegevens wijzigings frequentie worden weer gegeven.":::
 
 ### <a name="azure-site-recovery-limits"></a>Azure Site Recovery-limieten
 
@@ -54,11 +54,11 @@ Premium P20 of P30 of P40 of P50 schijf | 16 kB of meer |20 MB/s | 1684 GB per s
 
 ### <a name="solution"></a>Oplossing
 
-Azure Site Recovery heeft limieten voor de wijzigings snelheid van gegevens, afhankelijk van het type schijf. Als u wilt zien of dit probleem terugkerend of tijdelijk is, zoekt u de gegevens wijzigings frequentie van de betreffende virtuele machine. Ga naar de virtuele bron machine, zoek de metrische gegevens onder **bewaking**en voeg de metrische gegevens toe zoals in deze scherm opname wordt weer gegeven:
+Azure Site Recovery heeft limieten voor de wijzigings snelheid van gegevens, afhankelijk van het type schijf. Als u wilt zien of dit probleem terugkerend of tijdelijk is, zoekt u de gegevens wijzigings frequentie van de betreffende virtuele machine. Ga naar de virtuele bron machine, zoek de metrische gegevens onder **bewaking** en voeg de metrische gegevens toe zoals in deze scherm opname wordt weer gegeven:
 
-:::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/churn.png" alt-text="Azure Site Recovery pagina met een hoge wijzigings frequentie voor gegevens die te hoog is.":::
+:::image type="content" source="./media/site-recovery-azure-to-azure-troubleshoot/churn.png" alt-text="Pagina met het proces met drie stappen voor het zoeken van de gegevens wijzigings frequentie.":::
 
-1. Selecteer **metrische gegevens toevoegen**en voeg de **besturingssysteem schijf toe geschreven bytes per seconde** en **geschreven bytes per seconde voor de gegevens schijf**.
+1. Selecteer **metrische gegevens toevoegen** en voeg de **besturingssysteem schijf toe geschreven bytes per seconde** en **geschreven bytes per seconde voor de gegevens schijf**.
 1. De piek bewaken, zoals weer gegeven in de scherm opname.
 1. Bekijk het totale aantal schrijf bewerkingen dat wordt uitgevoerd op de schijven van het besturings systeem en alle gegevens schijven gecombineerd. Deze metrische gegevens geven mogelijk geen informatie op het niveau per schijf, maar geven het totale patroon van het verloop van gegevens aan.
 

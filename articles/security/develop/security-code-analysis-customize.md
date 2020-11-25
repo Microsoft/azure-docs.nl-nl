@@ -14,11 +14,11 @@ ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.openlocfilehash: 4016e1dd055b45f9cd59a172d0e71ef95fec1c40
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94517203"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008681"
 ---
 # <a name="configure-and-customize-the-build-tasks"></a>De build-taken configureren en aanpassen
 
@@ -95,20 +95,20 @@ Details van taak configuratie worden weer gegeven in de volgende scherm afbeeldi
 ![De taak voor het maken van referentie scanner configureren](./media/security-tools/3-taskdetails.png)
 
 Beschikbare opties zijn onder meer:
-  - **Weergave naam** : naam van de Azure DevOps-taak. De standaard waarde is referentie scanner uitvoeren
-  - **Primaire versie van hulp programma** : beschik bare waarden zijn **CredScan v2** , **CredScan v1**. Klanten wordt aangeraden de versie van **CredScan v2** te gebruiken.
-  - **Uitvoer indeling** : beschik bare waarden zijn **TSV** , **CSV** , **SARIF** en **PREfast**.
-  - **Versie van het hulp programma** : we raden u aan om **nieuwste** te selecteren.
-  - **Map scannen** : de map van de opslag plaats die moet worden gescand.
-  - **Zoek functies bestands type** : de opties voor het zoeken naar het Zoek bestand dat wordt gebruikt voor het scannen.
-  - **Onderdrukkings bestand** : een [JSON](https://json.org/) -bestand kan problemen in het uitvoer logboek onderdrukken. Zie de sectie Veelgestelde vragen van dit artikel voor meer informatie over onderdrukkings scenario's.
-  - **Uitgebreide uitvoer** : zelf uitleg.
-  - **Batch grootte** : het aantal gelijktijdige threads dat wordt gebruikt om de referentie scanner uit te voeren. De standaard waarde is 20. Mogelijke waarden variëren van 1 tot en met 2.147.483.647.
-  - **Overeenkomende time-out** : de hoeveelheid tijd in seconden die nodig is om een zoek opdracht uit te voeren voordat de controle wordt afgebroken.
-  - **Grootte van Lees buffer voor bestands scan** : de grootte in bytes van de buffer die wordt gebruikt terwijl de inhoud wordt gelezen. De standaard waarde is 524.288.  
-  - **Maximale Lees bytes van bestands scan** : het maximum aantal bytes dat moet worden gelezen uit een bestand tijdens inhouds analyse. De standaard waarde is 104.857.600.
-  - **Beheer opties**  >  **Deze taak uitvoeren** : Hiermee geeft u op wanneer de taak wordt uitgevoerd. Selecteer **aangepaste voor waarden** om complexere voor waarden op te geven.
-  - **Versie** : de versie van de build-taak in azure DevOps. Deze optie wordt niet regel matig gebruikt.
+  - **Weergave naam**: naam van de Azure DevOps-taak. De standaard waarde is referentie scanner uitvoeren
+  - **Primaire versie van hulp programma**: beschik bare waarden zijn **CredScan v2**, **CredScan v1**. Klanten wordt aangeraden de versie van **CredScan v2** te gebruiken.
+  - **Uitvoer indeling**: beschik bare waarden zijn **TSV**, **CSV**, **SARIF** en **PREfast**.
+  - **Versie van het hulp programma**: we raden u aan om **nieuwste** te selecteren.
+  - **Map scannen**: de map van de opslag plaats die moet worden gescand.
+  - **Zoek functies bestands type**: de opties voor het zoeken naar het Zoek bestand dat wordt gebruikt voor het scannen.
+  - **Onderdrukkings bestand**: een [JSON](https://json.org/) -bestand kan problemen in het uitvoer logboek onderdrukken. Zie de sectie Veelgestelde vragen van dit artikel voor meer informatie over onderdrukkings scenario's.
+  - **Uitgebreide uitvoer**: zelf uitleg.
+  - **Batch grootte**: het aantal gelijktijdige threads dat wordt gebruikt om de referentie scanner uit te voeren. De standaard waarde is 20. Mogelijke waarden variëren van 1 tot en met 2.147.483.647.
+  - **Overeenkomende time-out**: de hoeveelheid tijd in seconden die nodig is om een zoek opdracht uit te voeren voordat de controle wordt afgebroken.
+  - **Grootte van Lees buffer voor bestands scan**: de grootte in bytes van de buffer die wordt gebruikt terwijl de inhoud wordt gelezen. De standaard waarde is 524.288.  
+  - **Maximale Lees bytes van bestands scan**: het maximum aantal bytes dat moet worden gelezen uit een bestand tijdens inhouds analyse. De standaard waarde is 104.857.600.
+  - **Beheer opties**  >  **Deze taak uitvoeren**: Hiermee geeft u op wanneer de taak wordt uitgevoerd. Selecteer **aangepaste voor waarden** om complexere voor waarden op te geven.
+  - **Versie**: de versie van de build-taak in azure DevOps. Deze optie wordt niet regel matig gebruikt.
 
 Voor informatie over YAML-configuratie voor deze taak raadpleegt u de opties voor de [yaml voor referentie scanner](yaml-configuration.md#credential-scanner-task)
 
@@ -124,10 +124,10 @@ Details van taak configuratie worden weer gegeven in de volgende lijst en opmerk
 
 Beschikbare opties zijn onder meer:
 
-- **RuleSet** : waarden zijn **sdl vereist** , **SDL wordt aanbevolen** of uw eigen aangepaste regelset.
+- **RuleSet**: waarden zijn **sdl vereist**, **SDL wordt aanbevolen** of uw eigen aangepaste regelset.
 - **Versie van analyse** functies: u kunt het beste **meest recente** selecteren.
-- **Onderdrukkings bestand voor waarschuwingen van compiler** : een tekst bestand met een lijst met waarschuwingen die worden onderdrukt.
-- **Beheer opties**  >  **Deze taak uitvoeren** : Hiermee geeft u op wanneer de taak wordt uitgevoerd. Kies **aangepaste voor waarden** om complexere voor waarden op te geven.
+- **Onderdrukkings bestand voor waarschuwingen van compiler**: een tekst bestand met een lijst met waarschuwingen die worden onderdrukt.
+- **Beheer opties**  >  **Deze taak uitvoeren**: Hiermee geeft u op wanneer de taak wordt uitgevoerd. Kies **aangepaste voor waarden** om complexere voor waarden op te geven.
 
 > [!NOTE]
 >
@@ -164,9 +164,9 @@ Details van taak configuratie worden weer gegeven in de volgende scherm afbeeldi
 
 ![De taak voor het maken van Logboeken voor het publiceren van beveiligings analyses configureren](./media/security-tools/9-publish-security-analsis-logs600.png)  
 
-- **Artefact naam** : wille keurige teken reeks-id.
-- **Type artefact** : afhankelijk van uw selectie kunt u Logboeken publiceren naar uw Azure DevOps server of naar een gedeeld bestand dat toegankelijk is voor de build-agent.
-- **Hulpprogram ma's** : u kunt ervoor kiezen om logboeken voor specifieke hulpprogram ma's te bewaren of u kunt **alle hulpprogram ma's** selecteren om alle logboeken te bewaren.
+- **Artefact naam**: wille keurige teken reeks-id.
+- **Type artefact**: afhankelijk van uw selectie kunt u Logboeken publiceren naar uw Azure DevOps server of naar een gedeeld bestand dat toegankelijk is voor de build-agent.
+- **Hulpprogram ma's**: u kunt ervoor kiezen om logboeken voor specifieke hulpprogram ma's te bewaren of u kunt **alle hulpprogram ma's** selecteren om alle logboeken te bewaren.
 
 Voor informatie over YAML-configuratie voor deze taak raadpleegt u de [beveiligings logboeken](yaml-configuration.md#publish-security-analysis-logs-task) van de yaml-opties voor publiceren
 
@@ -176,10 +176,10 @@ Details van de configuratie van het beveiligings rapport worden weer gegeven in 
 
 ![De taak voor het maken van beveiligings rapporten configureren](./media/security-tools/4-createsecurityanalysisreport600.png)
 
-- **Rapporten** : Selecteer een van de **pijplijn console** , het **TSV-bestand** en de **HTML-bestands** indelingen. Voor elke geselecteerde indeling wordt één rapport bestand gemaakt.
-- **Hulp middelen** : Selecteer de hulpprogram ma's in de build-definitie waarvoor u een overzicht van de gedetecteerde problemen wilt. Voor elk geselecteerd hulp programma kunt u ook kiezen of u alleen fouten wilt weer geven of fouten en waarschuwingen in het samenvattings rapport wilt weer geven.
-- **Geavanceerde opties** : als er geen logboeken voor een van de hulpprogram ma's zijn geselecteerd, kunt u ervoor kiezen om een waarschuwing of een fout te registreren. Als u een fout registreert, mislukt de taak.
-- **Basis logboeken map** : u kunt de map basis logboeken aanpassen waarin de logboeken moeten worden gevonden. Deze optie wordt meestal niet gebruikt.
+- **Rapporten**: Selecteer een van de **pijplijn console**, het **TSV-bestand** en de **HTML-bestands** indelingen. Voor elke geselecteerde indeling wordt één rapport bestand gemaakt.
+- **Hulp middelen**: Selecteer de hulpprogram ma's in de build-definitie waarvoor u een overzicht van de gedetecteerde problemen wilt. Voor elk geselecteerd hulp programma kunt u ook kiezen of u alleen fouten wilt weer geven of fouten en waarschuwingen in het samenvattings rapport wilt weer geven.
+- **Geavanceerde opties**: als er geen logboeken voor een van de hulpprogram ma's zijn geselecteerd, kunt u ervoor kiezen om een waarschuwing of een fout te registreren. Als u een fout registreert, mislukt de taak.
+- **Basis logboeken map**: u kunt de map basis logboeken aanpassen waarin de logboeken moeten worden gevonden. Deze optie wordt meestal niet gebruikt.
 
 Voor informatie over YAML-configuratie voor deze taak raadpleegt u de [yaml-opties voor beveiligings rapporten](yaml-configuration.md#security-report-task)
 
@@ -189,9 +189,9 @@ Details van taak configuratie worden weer gegeven in de volgende scherm afbeeldi
 
 ![De taak voor het maken van een post-analyse configureren](./media/security-tools/a-post-analysis600.png)
 
-- **Hulp middelen** : Selecteer de hulpprogram ma's in de build-definitie waarvoor u een build-afbreek actie voorwaardelijk wilt injecteren. Voor elk geselecteerd hulp programma kunt u een optie selecteren om te bepalen of u alleen op fouten wilt onderbreken of op fouten en waarschuwingen.
-- **Rapport** : u kunt desgewenst de resultaten schrijven die de build-afbreek bewerking veroorzaken. De resultaten worden geschreven naar het venster en het logboek bestand van de Azure DevOps-console.
-- **Geavanceerde opties** : als er geen logboeken voor een van de hulpprogram ma's zijn geselecteerd, kunt u ervoor kiezen om een waarschuwing of een fout te registreren. Als u een fout registreert, mislukt de taak.
+- **Hulp middelen**: Selecteer de hulpprogram ma's in de build-definitie waarvoor u een build-afbreek actie voorwaardelijk wilt injecteren. Voor elk geselecteerd hulp programma kunt u een optie selecteren om te bepalen of u alleen op fouten wilt onderbreken of op fouten en waarschuwingen.
+- **Rapport**: u kunt desgewenst de resultaten schrijven die de build-afbreek bewerking veroorzaken. De resultaten worden geschreven naar het venster en het logboek bestand van de Azure DevOps-console.
+- **Geavanceerde opties**: als er geen logboeken voor een van de hulpprogram ma's zijn geselecteerd, kunt u ervoor kiezen om een waarschuwing of een fout te registreren. Als u een fout registreert, mislukt de taak.
 
 Voor informatie over de YAML-configuratie voor deze taak raadpleegt u onze [Opties voor yaml post-analyse](yaml-configuration.md#post-analysis-task)
 

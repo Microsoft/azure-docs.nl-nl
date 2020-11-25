@@ -12,11 +12,11 @@ ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
 ms.openlocfilehash: 511166e156591562b2120b58cc420f3fccd1d8c4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84804903"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008924"
 ---
 # <a name="client-side-encryption-with-python"></a>Versleuteling aan client zijde met python
 
@@ -54,7 +54,7 @@ Ontsleuteling via de envelop techniek werkt op de volgende manier:
 De Storage-client bibliotheek gebruikt [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) om gebruikers gegevens te versleutelen. Met name de [CBC-modus (Cipher Block Chaining)](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher-block_chaining_.28CBC.29) met AES. Elke service werkt enigszins anders, dus we bespreken deze hier.
 
 ### <a name="blobs"></a>Blobs
-De client bibliotheek ondersteunt momenteel alleen versleuteling van hele blobs. Versleuteling wordt met name ondersteund wanneer gebruikers de methoden **Create*** gebruiken. Voor down loads worden zowel volledige als bereik downloads ondersteund en parallel Lise ring van uploaden en downloaden beschikbaar.
+De client bibliotheek ondersteunt momenteel alleen versleuteling van hele blobs. Versleuteling wordt met name ondersteund wanneer gebruikers de methoden **Create** _ gebruiken. Voor down loads worden zowel volledige als bereik downloads ondersteund en parallel Lise ring van uploaden en downloaden beschikbaar.
 
 Tijdens het versleutelen genereert de client bibliotheek een wille keurige initialisatie vector (IV) van 16 bytes, samen met een wille keurige inhouds versleutelings sleutel (CEK) van 32 bytes en voert u een envelop versleuteling van de BLOB-gegevens uit met deze gegevens. De verpakte CEK en andere versleutelings-meta gegevens worden vervolgens opgeslagen als blob-meta gegevens, samen met de versleutelde Blob in de service.
 
@@ -63,9 +63,9 @@ Tijdens het versleutelen genereert de client bibliotheek een wille keurige initi
 > 
 > 
 
-Het downloaden van een versleutelde BLOB bestaat uit het ophalen van de inhoud van de volledige blob met behulp van de methoden **Get***. De ingepakte CEK is gewrappt en gebruikt samen met de IV (opgeslagen als blob-meta gegevens in dit geval) om de ontsleutelde gegevens te retour neren aan de gebruikers.
+Voor het downloaden van een versleutelde BLOB moet u de inhoud van de hele BLOB ophalen met behulp van de methoden voor het _*ophalen* *_ van de methode. De ingepakte CEK is gewrappt en gebruikt samen met de IV (opgeslagen als blob-meta gegevens in dit geval) om de ontsleutelde gegevens te retour neren aan de gebruikers.
 
-Bij het downloaden van een wille keurig bereik (**Get***-methoden met de para meters van het bereik dat is door gegeven in) in de versleutelde blob, moet u het bereik dat door de gebruikers wordt verstrekt aanpassen om een klein aantal extra gegevens te krijgen dat kan worden gebruikt om het gevraagde bereik te ontsleutelen
+Bij het downloaden van een wille keurig bereik (_*Get* *_ -methoden met bereik parameters in) in de versleutelde BLOB moet u het bereik dat door de gebruikers wordt verstrekt, aanpassen om een klein aantal extra gegevens te krijgen dat kan worden gebruikt om het aangevraagde bereik te ontsleutelen.
 
 Blok-blobs en pagina-blobs kunnen alleen worden versleuteld/ontsleuteld met dit schema. Er is momenteel geen ondersteuning voor het versleutelen van toevoeg-blobs.
 
@@ -114,7 +114,7 @@ Houd er rekening mee dat entiteiten worden versleuteld wanneer ze worden ingevoe
 > [!IMPORTANT]
 > Houd rekening met de volgende belang rijke punten wanneer versleuteling aan de client zijde wordt gebruikt:
 > 
-> * Bij het lezen van of schrijven naar een versleutelde BLOB gebruikt u hele BLOB-upload opdrachten en bereik/hele BLOB-Download opdrachten. Vermijd het schrijven naar een versleutelde blob met behulp van protocol bewerkingen zoals put blok keren, blokkerings lijst plaatsen, schrijf pagina's of pagina's wissen; anders is het mogelijk dat u de versleutelde BLOB beschadigd en onleesbaar maakt.
+> _ Bij het lezen van of schrijven naar een versleutelde BLOB gebruikt u hele BLOB-upload opdrachten en bereik/hele BLOB-Download opdrachten. Vermijd het schrijven naar een versleutelde blob met behulp van protocol bewerkingen zoals put blok keren, blokkerings lijst plaatsen, schrijf pagina's of pagina's wissen; anders is het mogelijk dat u de versleutelde BLOB beschadigd en onleesbaar maakt.
 > * Voor tabellen bestaat een soort gelijke beperking. Zorg ervoor dat u geen versleutelde eigenschappen bijwerkt zonder de versleutelings meta gegevens bij te werken.
 > * Als u meta gegevens op de versleutelde BLOB instelt, kunt u de meta gegevens voor versleuteling overschrijven die vereist zijn voor ontsleuteling, omdat het instellen van meta gegevens geen additief is. Dit geldt ook voor moment opnamen. Vermijd het opgeven van meta gegevens tijdens het maken van een moment opname van een versleutelde blob. Als meta gegevens moeten worden ingesteld, moet u eerst de **get_blob_metadata** methode aanroepen om de huidige versleutelings-meta gegevens op te halen en voor komen dat er gelijktijdige schrijf bewerkingen worden uitgevoerd terwijl de meta gegevens worden ingesteld.
 > * Schakel de vlag **require_encryption** in op het Service object voor gebruikers die alleen moeten werken met versleutelde gegevens. Zie hieronder voor meer informatie.
@@ -197,7 +197,7 @@ retrieved_message_list = my_queue_service.get_messages(queue_name)
 ```
 
 ### <a name="table-service-encryption"></a>Versleuteling Table service
-Naast het maken van een versleutelings beleid en het instellen ervan op aanvraag opties, moet u een **encryption_resolver_function** op de **tableservice**opgeven of het kenmerk Encryption op de EntityProperty instellen.
+Naast het maken van een versleutelings beleid en het instellen ervan op aanvraag opties, moet u een **encryption_resolver_function** op de **tableservice** opgeven of het kenmerk Encryption op de EntityProperty instellen.
 
 ### <a name="using-the-resolver"></a>De resolver gebruiken
 

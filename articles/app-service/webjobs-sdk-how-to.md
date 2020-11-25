@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
 ms.openlocfilehash: b97ae5d4ba4295ebbb51c960e4cbb76c53dc88a8
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148067"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009672"
 ---
 # <a name="how-to-use-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>De Azure WebJobs SDK gebruiken voor gebeurtenisgestuurde verwerking op de achtergrond
 
@@ -24,13 +24,13 @@ Dit zijn de belangrijkste verschillen tussen versie 3. *x* en versie 2. *x* van 
 
 * Versie 3. *x* voegt ondersteuning toe voor .net core.
 * In versie 3. *x*, moet u de opslag bindings uitbreiding expliciet installeren die is vereist voor de webjobs SDK. In versie 2. *x*, zijn de opslag bindingen opgenomen in de SDK.
-* Visual Studio-hulp programma voor .NET core (3.* x*)-projecten wijken af van hulp middelen voor .NET Framework (2.* x*)-projecten. Zie [Webjobs ontwikkelen en implementeren met behulp van Visual Studio-Azure app service](webjobs-dotnet-deploy-vs.md)voor meer informatie.
+* Visual Studio-hulp programma voor .NET core (3.*x*)-projecten wijken af van hulp middelen voor .NET Framework (2.*x*)-projecten. Zie [Webjobs ontwikkelen en implementeren met behulp van Visual Studio-Azure app service](webjobs-dotnet-deploy-vs.md)voor meer informatie.
 
 Indien mogelijk zijn er voor beelden beschikbaar voor versie 3. *x* en versie 2. *x*.
 
 > [!NOTE]
 > [Azure functions](../azure-functions/functions-overview.md) is gebaseerd op de webjobs SDK en dit artikel bevat koppelingen naar Azure functions documentatie voor sommige onderwerpen. Houd rekening met de volgende verschillen tussen functies en de webjobs SDK:
-> * Azure Functions versie 2. *x* komt overeen met webjobs SDK versie 3. *x*en Azure functions 1. *x* komt overeen met webjobs SDK 2. *x*. Bron code opslagplaatsen gebruiken de webjobs SDK-nummering.
+> * Azure Functions versie 2. *x* komt overeen met webjobs SDK versie 3. *x* en Azure functions 1. *x* komt overeen met webjobs SDK 2. *x*. Bron code opslagplaatsen gebruiken de webjobs SDK-nummering.
 > * Voorbeeld code voor Azure Functions C#-klassen bibliotheken is vergelijkbaar met de SDK-code van webjobs, behalve dat u geen `FunctionName` kenmerk hebt in een Webjobs SDK-project.
 > * Sommige typen bindingen worden alleen ondersteund in functies, zoals HTTP (webhooks) en Event Grid (dat is gebaseerd op HTTP).
 >
@@ -38,7 +38,7 @@ Indien mogelijk zijn er voor beelden beschikbaar voor versie 3. *x* en versie 2.
 
 ## <a name="webjobs-host"></a>Webjobs-host
 
-De host is een runtime container voor functions.  Het luistert naar triggers en aanroepen-functies. In versie 3. *x*, de host is een implementatie van `IHost` . In versie 2. *x*gebruikt u het- `JobHost` object. U maakt een exemplaar van een host in uw code en schrijft code om het gedrag aan te passen.
+De host is een runtime container voor functions.  Het luistert naar triggers en aanroepen-functies. In versie 3. *x*, de host is een implementatie van `IHost` . In versie 2. *x* gebruikt u het- `JobHost` object. U maakt een exemplaar van een host in uw code en schrijft code om het gedrag aan te passen.
 
 Dit is een belang rijk verschil tussen het rechtstreeks gebruiken van de webjobs SDK en het indirect via Azure Functions. In Azure Functions beheert de service de host en u kunt de host niet aanpassen door code te schrijven. Met Azure Functions kunt u het gedrag van de host aanpassen via instellingen in de host.jsvoor het bestand. Deze instellingen zijn teken reeksen, geen code en Hiermee worden de soorten aanpassingen beperkt die u kunt uitvoeren.
 
@@ -120,11 +120,11 @@ static void Main()
 }
 ```
 
-### <a name="managing-concurrent-connections-version-2x"></a><a name="jobhost-servicepointmanager-settings"></a>Gelijktijdige verbindingen beheren (versie 2.* x*)
+### <a name="managing-concurrent-connections-version-2x"></a><a name="jobhost-servicepointmanager-settings"></a>Gelijktijdige verbindingen beheren (versie 2.*x*)
 
 In versie 3. *x*, de verbindings limiet wordt standaard ingesteld op oneindige verbindingen. Als u deze limiet om een of andere reden moet wijzigen, kunt u de [`MaxConnectionsPerServer`](/dotnet/api/system.net.http.winhttphandler.maxconnectionsperserver) eigenschap van de [`WinHttpHandler`](/dotnet/api/system.net.http.winhttphandler) klasse gebruiken.
 
-In versie 2. *x*, bepaalt u het aantal gelijktijdige verbindingen met een host met behulp van de API [ServicePointManager. DefaultConnectionLimit](/dotnet/api/system.net.servicepointmanager.defaultconnectionlimit#System_Net_ServicePointManager_DefaultConnectionLimit) . In 2. *x*moet u deze waarde verhogen van de standaard instelling van 2 voordat u de host voor webjobs start.
+In versie 2. *x*, bepaalt u het aantal gelijktijdige verbindingen met een host met behulp van de API [ServicePointManager. DefaultConnectionLimit](/dotnet/api/system.net.servicepointmanager.defaultconnectionlimit#System_Net_ServicePointManager_DefaultConnectionLimit) . In 2. *x* moet u deze waarde verhogen van de standaard instelling van 2 voordat u de host voor webjobs start.
 
 Alle uitgaande HTTP-aanvragen die u vanuit een functie hebt gemaakt met behulp van `HttpClient` flow through `ServicePointManager` . Nadat u de waarde in hebt ingesteld in, wordt het in de `DefaultConnectionLimit` `ServicePointManager` wachtrij plaatsen van aanvragen gestart voordat ze worden verzonden. Stel dat je `DefaultConnectionLimit` is ingesteld op 2 en dat je code 1.000 HTTP-aanvragen maakt. In eerste instantie worden slechts twee aanvragen toegestaan via het besturings systeem. De andere 998 worden in de wachtrij geplaatst totdat er ruimte is. Dit betekent dat `HttpClient` er mogelijk een time-out optreedt omdat het lijkt alsof de aanvraag is gedaan, maar de aanvraag werd nooit verzonden door het besturings systeem naar de doel server. Het is dus mogelijk dat u het gedrag ziet dat niet duidelijk lijkt: uw lokale bewerking `HttpClient` neemt 10 seconden in beslag om een aanvraag te volt ooien, maar uw service retourneert elke aanvraag in 200 MS. 
 
@@ -369,7 +369,7 @@ U kunt de volgende bindingen configureren:
 * [SendGrid-binding](#sendgrid-binding-configuration-version-3x)
 * [Service Bus trigger](#service-bus-trigger-configuration-version-3x)
 
-### <a name="azure-cosmosdb-trigger-configuration-version-3x"></a>Configuratie van trigger voor Azure CosmosDB (versie 3.* x*)
+### <a name="azure-cosmosdb-trigger-configuration-version-3x"></a>Configuratie van trigger voor Azure CosmosDB (versie 3.*x*)
 
 In dit voor beeld ziet u hoe u de Azure Cosmos DB trigger configureert:
 
@@ -398,7 +398,7 @@ static async Task Main()
 
 Zie het artikel over [Azure CosmosDB-binding](../azure-functions/functions-bindings-cosmosdb-v2-output.md#hostjson-settings) voor meer informatie.
 
-### <a name="event-hubs-trigger-configuration-version-3x"></a>Configuratie van Event Hubs trigger (versie 3.* x*)
+### <a name="event-hubs-trigger-configuration-version-3x"></a>Configuratie van Event Hubs trigger (versie 3.*x*)
 
 In dit voor beeld ziet u hoe u de Event Hubs trigger configureert:
 
@@ -473,7 +473,7 @@ static void Main(string[] args)
 
 Zie de [ Naslag informatie overhost.jsvan v1. x](../azure-functions/functions-host-json-v1.md#queues)voor meer informatie.
 
-### <a name="sendgrid-binding-configuration-version-3x"></a>Configuratie van SendGrid-binding (versie 3.* x*)
+### <a name="sendgrid-binding-configuration-version-3x"></a>Configuratie van SendGrid-binding (versie 3.*x*)
 
 In dit voor beeld ziet u hoe u de SendGrid-uitvoer binding kunt configureren:
 
@@ -500,7 +500,7 @@ static async Task Main()
 
 Zie het [SendGrid-bindings](../azure-functions/functions-bindings-sendgrid.md#hostjson-settings) artikel voor meer informatie.
 
-### <a name="service-bus-trigger-configuration-version-3x"></a>Configuratie van Service Bus trigger (versie 3.* x*)
+### <a name="service-bus-trigger-configuration-version-3x"></a>Configuratie van Service Bus trigger (versie 3.*x*)
 
 In dit voor beeld ziet u hoe u de Service Bus trigger configureert:
 
@@ -847,7 +847,7 @@ Versie 3. *x* van de SDK is afhankelijk van de filters die zijn ingebouwd in .ne
 using Microsoft.Azure.WebJobs.Logging; 
 ```
 
-In het volgende voor beeld wordt een filter gebouwd dat standaard alle logboeken op het niveau filtert `Warning` . De `Function` `results` Categorieën en (equivalent met `Host.Results` in versie 2).* x*) worden gefilterd op het `Error` niveau. Het filter vergelijkt de huidige categorie met alle geregistreerde niveaus in het `LogCategories` exemplaar en kiest de langste overeenkomst. Dit betekent dat het `Debug` niveau is geregistreerd voor `Host.Triggers` overeenkomsten `Host.Triggers.Queue` of `Host.Triggers.Blob` . Zo kunt u grotere categorieën beheren zonder dat u deze hoeft toe te voegen.
+In het volgende voor beeld wordt een filter gebouwd dat standaard alle logboeken op het niveau filtert `Warning` . De `Function` `results` Categorieën en (equivalent met `Host.Results` in versie 2).*x*) worden gefilterd op het `Error` niveau. Het filter vergelijkt de huidige categorie met alle geregistreerde niveaus in het `LogCategories` exemplaar en kiest de langste overeenkomst. Dit betekent dat het `Debug` niveau is geregistreerd voor `Host.Triggers` overeenkomsten `Host.Triggers.Queue` of `Host.Triggers.Blob` . Zo kunt u grotere categorieën beheren zonder dat u deze hoeft toe te voegen.
 
 ```cs
 static async Task Main(string[] args)
@@ -878,7 +878,7 @@ static async Task Main(string[] args)
 
 In versie 2. *x* van de SDK gebruikt u de `LogCategoryFilter` klasse om de filtering te beheren. De `LogCategoryFilter` heeft een `Default` eigenschap met de aanvankelijke waarde van `Information` , wat inhoudt dat alle berichten in de `Information` ,, `Warning` `Error` , of `Critical` niveaus worden geregistreerd, maar dat er berichten `Debug` `Trace` worden gefilterd.
 
-Net als bij `LogCategories` versie 3.* x* `CategoryLevels` kunt u met de eigenschap logboek niveaus opgeven voor specifieke categorieën, zodat u de uitvoer van logboek registratie kunt aanpassen. Als er geen overeenkomst wordt gevonden in de `CategoryLevels` woorden lijst, wordt het filter terugvallen op de `Default` waarde wanneer u beslist of het bericht moet worden gefilterd.
+Net als bij `LogCategories` versie 3.*x* `CategoryLevels` kunt u met de eigenschap logboek niveaus opgeven voor specifieke categorieën, zodat u de uitvoer van logboek registratie kunt aanpassen. Als er geen overeenkomst wordt gevonden in de `CategoryLevels` woorden lijst, wordt het filter terugvallen op de `Default` waarde wanneer u beslist of het bericht moet worden gefilterd.
 
 In het volgende voor beeld wordt een filter gemaakt dat standaard alle logboeken op het niveau filtert `Warning` . De  `Function` `Host.Results` Categorieën en worden op het niveau gefilterd `Error` . De `LogCategoryFilter` huidige categorie vergelijkt met alle geregistreerde `CategoryLevels` en kiest de langste overeenkomst. Het `Debug` niveau dat is geregistreerd voor `Host.Triggers` zal overeenkomen met `Host.Triggers.Queue` of `Host.Triggers.Blob` . Zo kunt u grotere categorieën beheren zonder dat u deze hoeft toe te voegen.
 

@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/12/2017
 ms.openlocfilehash: 3af38f4cae53807c7268f00017f02f1325116fb6
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637051"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008749"
 ---
 # <a name="powershell-script---transform-data-in-cloud-using-azure-data-factory"></a>Power shell-script: gegevens transformeren in de Cloud met behulp van Azure Data Factory
 
@@ -26,7 +26,7 @@ Met dit Power shell-voorbeeld script maakt u een pijp lijn waarmee gegevens in d
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install-no-ssh-az.md)]
 
 ## <a name="prerequisites"></a>Vereisten
-* **Een Azure Storage-account** . Maak een python-script en een invoer bestand en upload deze naar de Azure-opslag. De uitvoer van het Spark-programma wordt opgeslagen in dit opslagaccount. Het Spark-cluster op aanvraag gebruikt hetzelfde opslagaccount als de primaire opslag.  
+* **Een Azure Storage-account**. Maak een python-script en een invoer bestand en upload deze naar de Azure-opslag. De uitvoer van het Spark-programma wordt opgeslagen in dit opslagaccount. Het Spark-cluster op aanvraag gebruikt hetzelfde opslagaccount als de primaire opslag.  
 
 ### <a name="upload-python-script-to-your-blob-storage-account"></a>Python-script uploaden naar het Blob-opslagaccount
 1. Maak een Python-bestand met de naam **WordCount_Spark.py** met de volgende inhoud: 
@@ -56,9 +56,9 @@ Met dit Power shell-voorbeeld script maakt u een pijp lijn waarmee gegevens in d
     ```
 2. Vervang **&lt;storageaccountname&gt;** door de naam van uw Azure Storage-account. Sla het bestand vervolgens op. 
 3. Maak in de Azure Blob-opslag een container met de naam **adftutorial** als deze nog niet bestaat. 
-4. Maak een map met de naam **spark** .
-5. Maak in de map **spark** een submap met de naam **script** . 
-6. Upload het bestand **WordCount_Spark.py** naar de submap **script** . 
+4. Maak een map met de naam **spark**.
+5. Maak in de map **spark** een submap met de naam **script**. 
+6. Upload het bestand **WordCount_Spark.py** naar de submap **script**. 
 
 
 ### <a name="upload-the-input-file"></a>Invoerbestand uploaden

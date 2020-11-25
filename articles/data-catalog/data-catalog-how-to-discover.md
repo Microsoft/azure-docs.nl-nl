@@ -7,15 +7,15 @@ ms.service: data-catalog
 ms.topic: how-to
 ms.date: 08/01/2019
 ms.openlocfilehash: 4eb689b17df8236a00b5914912d1927804944f25
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87081199"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009412"
 ---
 # <a name="how-to-discover-data-sources-in-azure-data-catalog"></a>Gegevens bronnen in Azure Data Catalog ontdekken
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Azure Data Catalog is een volledig beheerde Cloud service die fungeert als een systeem van registratie en detectie voor zakelijke gegevens bronnen. Met andere woorden, Data Catalog helpt mensen bij het ontdekken, begrijpen en gebruiken van gegevens bronnen. Het helpt organisaties meer waarde te verkrijgen dan hun bestaande gegevens. Nadat een gegevens bron is geregistreerd met Data Catalog, worden de meta gegevens ervan geïndexeerd door de service, zodat u gemakkelijk kunt zoeken naar de gegevens die u nodig hebt.
 
@@ -39,7 +39,7 @@ Hoewel de standaard zoek functie voor vrije tekst eenvoudig en intuïtief is, ku
 | Bereik van eigenschap |Alleen gegevens bronnen retour neren waarbij de zoek term overeenkomt met de opgegeven eigenschap. |`name:finance` |
 | Booleaanse operatoren |Een zoek opdracht uitbreiden of beperken met behulp van Boole-bewerkingen. |`finance NOT corporate` |
 | Groeperen met haakjes |Gebruik haakjes om delen van de query te groeperen voor logische isolatie, met name in combi natie met Booleaanse Opera tors. |`name:finance AND (tags:Q1 OR tags:Q2)` |
-| Vergelijkingsoperators |Gebruik andere vergelijkingen dan gelijkheid voor eigenschappen die de gegevens typen numeriek en datum hebben. |`modifiedTime > "11/05/2014"` |
+| Vergelijkingsoperatoren |Gebruik andere vergelijkingen dan gelijkheid voor eigenschappen die de gegevens typen numeriek en datum hebben. |`modifiedTime > "11/05/2014"` |
 
 Zie het [Azure Data Catalog](/rest/api/datacatalog/#search-syntax-reference) artikel voor meer informatie over het zoeken naar Data Catalog.
 

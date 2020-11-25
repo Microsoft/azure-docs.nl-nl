@@ -4,11 +4,11 @@ description: Meer informatie over basis installatie kopieën voor installatie ko
 ms.topic: article
 ms.date: 01/22/2019
 ms.openlocfilehash: 74e5fb81e3ef6f75b5ee2872ee44b99aae096fd8
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93025762"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009820"
 ---
 # <a name="about-base-image-updates-for-acr-tasks"></a>Over updates van basis installatie kopieën voor ACR-taken
 
@@ -16,7 +16,7 @@ Dit artikel bevat achtergrond informatie over updates voor de basis installatie 
 
 ## <a name="what-are-base-images"></a>Wat zijn basis installatie kopieën?
 
-Dockerfiles het definiëren van de meeste container installatie kopieën geven een bovenliggende installatie kopie op van waaruit de installatie kopie is gebaseerd, dikwijls aangeduid met de *basis installatie kopie* . Basisinstallatiekopieën bevatten doorgaans het besturingssysteem, bijvoorbeeld [Alpine Linux][base-alpine] of [Windows Nano Server][base-windows], waarop de overige lagen van de container worden toegepast. Ook kunnen basisinstallatiekopieën toepassingsframeworks zoals [Node.js][base-node] of [.NET Core][base-dotnet] bevatten. Deze basis installatie kopieën zijn gewoonlijk gebaseerd op open bare upstream-installatie kopieën. Diverse installatie kopieën van uw toepassing kunnen een gemeen schappelijke basis installatie kopie delen.
+Dockerfiles het definiëren van de meeste container installatie kopieën geven een bovenliggende installatie kopie op van waaruit de installatie kopie is gebaseerd, dikwijls aangeduid met de *basis installatie kopie*. Basisinstallatiekopieën bevatten doorgaans het besturingssysteem, bijvoorbeeld [Alpine Linux][base-alpine] of [Windows Nano Server][base-windows], waarop de overige lagen van de container worden toegepast. Ook kunnen basisinstallatiekopieën toepassingsframeworks zoals [Node.js][base-node] of [.NET Core][base-dotnet] bevatten. Deze basis installatie kopieën zijn gewoonlijk gebaseerd op open bare upstream-installatie kopieën. Diverse installatie kopieën van uw toepassing kunnen een gemeen schappelijke basis installatie kopie delen.
 
 Een basisinstallatiekopie wordt vaak door de installatiekopie-maintainer bijgewerkt om nieuwe functies of verbeteringen toe te voegen aan het besturingssysteem of framework in de installatiekopie. Beveiligingspatches zijn een andere veelvoorkomende oorzaak van een update van de basisinstallatiekopie. Wanneer deze upstream-updates worden uitgevoerd, moet u ook uw basis installatie kopieën bijwerken om de essentiële oplossing op te nemen. Elke toepassings installatie kopie moet vervolgens ook opnieuw worden opgebouwd om deze upstream-oplossingen op te nemen die nu zijn opgenomen in uw basis installatie kopie.
 
@@ -52,7 +52,7 @@ De tijd tussen het moment dat een basis installatie kopie wordt bijgewerkt en wa
 
 ## <a name="additional-considerations"></a>Aanvullende overwegingen
 
-* **Basis installatie kopieën voor toepassings installatie** kopieën: op dit moment wordt met een ACR-taak alleen de basis installatie kopieën van updates voor de toepassing ( *runtime* ) bijgehouden. Updates voor tussenliggende installatie kopieën ( *buildtime* ) die worden gebruikt in de multi-fase Dockerfiles, worden niet bijgehouden.  
+* **Basis installatie kopieën voor toepassings installatie** kopieën: op dit moment wordt met een ACR-taak alleen de basis installatie kopieën van updates voor de toepassing (*runtime*) bijgehouden. Updates voor tussenliggende installatie kopieën (*buildtime*) die worden gebruikt in de multi-fase Dockerfiles, worden niet bijgehouden.  
 
 * **Standaard ingeschakeld** : wanneer u een ACR-taak maakt met de opdracht [AZ ACR Task Create][az-acr-task-create] , wordt de taak standaard *ingeschakeld* voor trigger door een update van de basis installatie kopie. Dat wil zeggen, de `base-image-trigger-enabled` eigenschap is ingesteld op True. Als u dit gedrag in een taak wilt uitschakelen, werkt u de eigenschap bij op ONWAAR. Voer bijvoorbeeld de volgende opdracht [AZ ACR Task update][az-acr-task-update] uit:
 

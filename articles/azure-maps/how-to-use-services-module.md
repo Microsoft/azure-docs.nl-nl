@@ -10,15 +10,15 @@ services: azure-maps
 manager: cpendleton
 ms.custom: devx-track-js
 ms.openlocfilehash: 2e07b614e87ed5dad94cf9bc5994e78071187839
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895423"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008596"
 ---
 # <a name="use-the-azure-maps-services-module"></a>De Azure Maps Services-module gebruiken
 
-De Azure Maps Web-SDK biedt een *Services-module* . Deze module is een helper-bibliotheek waarmee u gemakkelijk de Azure Maps REST-services in web-of Node.js toepassingen kunt gebruiken met behulp van Java script of type script.
+De Azure Maps Web-SDK biedt een *Services-module*. Deze module is een helper-bibliotheek waarmee u gemakkelijk de Azure Maps REST-services in web-of Node.js toepassingen kunt gebruiken met behulp van Java script of type script.
 
 ## <a name="use-the-services-module-in-a-webpage"></a>De Services-module op een webpagina gebruiken
 
@@ -30,7 +30,7 @@ De Azure Maps Web-SDK biedt een *Services-module* . Deze module is een helper-bi
         <script src="https://atlas.microsoft.com/sdk/javascript/service/2/atlas-service.min.js"></script>
         ```
 
-    - U kunt ook de Services-module voor de Azure Maps Web SDK-bron code lokaal laden met behulp van het [Azure-Maps-rest NPM-](https://www.npmjs.com/package/azure-maps-rest) pakket en dit vervolgens hosten met uw app. Dit pakket bevat ook TypeScript-definities. Gebruik deze opdracht:
+    - U kunt ook de Services-module voor de Azure Maps Web SDK-bron code lokaal laden met behulp van het [Azure-Maps-rest NPM-](https://www.npmjs.com/package/azure-maps-rest) pakket en dit vervolgens hosten met uw app. Dit pakket bevat ook TypeScript-definities. Gebruik hiervoor deze opdracht:
     
         > **npm install azure-maps-rest**
     

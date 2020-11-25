@@ -4,11 +4,11 @@ description: Dit artikel heeft betrekking op enkele veelvoorkomende problemen bi
 ms.topic: conceptual
 ms.date: 2/23/2018
 ms.openlocfilehash: d462f2c2482e0fbb4d252967754a9675ed362674
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75377919"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009344"
 ---
 # <a name="troubleshoot-application-upgrades"></a>Problemen met toepassingsupgrades oplossen
 
@@ -26,7 +26,7 @@ Deze informatie is beschikbaar wanneer Service Fabric de fout detecteert, ongeac
 
 ### <a name="identify-the-failure-type"></a>Het type fout identificeren
 
-In de uitvoer van **Get-ServiceFabricApplicationUpgrade**identificeert **FailureTimestampUtc** de TIJDS tempel (in UTC) waarop een upgrade fout is gedetecteerd door service Fabric en **FailureAction** is geactiveerd. **FailureReason** identificeert een van de volgende drie mogelijke oorzaken van de fout op hoog niveau:
+In de uitvoer van **Get-ServiceFabricApplicationUpgrade** identificeert **FailureTimestampUtc** de TIJDS tempel (in UTC) waarop een upgrade fout is gedetecteerd door service Fabric en **FailureAction** is geactiveerd. **FailureReason** identificeert een van de volgende drie mogelijke oorzaken van de fout op hoog niveau:
 
 1. UpgradeDomainTimeout: geeft aan dat het volt ooien van een bepaald upgrade domein te lang duurde en **UpgradeDomainTimeout** verlopen.
 2. OverallUpgradeTimeout: geeft aan dat de algehele upgrade te lang duurde en **UpgradeTimeout** is verlopen.
@@ -148,7 +148,7 @@ De upgrade is onderbroken tijdens het mislukken door een **FailureAction** van d
 
 ### <a name="recover-from-a-suspended-upgrade"></a>Herstellen van een onderbroken upgrade
 
-Met een rollback- **FailureAction**is het niet nodig om een herstel uit te voeren nadat de upgrade is mislukt. Met een hand matige **FailureAction**zijn er verschillende herstel opties:
+Met een rollback- **FailureAction** is het niet nodig om een herstel uit te voeren nadat de upgrade is mislukt. Met een hand matige **FailureAction** zijn er verschillende herstel opties:
 
 1.  een terugdraai actie activeren
 2. De rest van de upgrade hand matig door lopen
@@ -156,7 +156,7 @@ Met een rollback- **FailureAction**is het niet nodig om een herstel uit te voere
 
 De **Start-ServiceFabricApplicationRollback** opdracht kan op elk gewenst moment worden gebruikt om de toepassing terug te draaien. Zodra de opdracht met succes is geretourneerd, is de terugdraai aanvraag geregistreerd in het systeem en wordt u vervolgens binnenkort gestart.
 
-De opdracht **Resume-ServiceFabricApplicationUpgrade** kan worden gebruikt om de rest van de upgrade hand matig te door lopen, één upgrade domein per keer. In deze modus worden alleen veiligheids controles uitgevoerd door het systeem. Er worden niet meer status controles uitgevoerd. Deze opdracht kan alleen worden gebruikt wanneer de *UpgradeState* *RollingForwardPending*toont, wat betekent dat het huidige upgrade domein is bijgewerkt, maar dat het volgende niet is gestart (in behandeling).
+De opdracht **Resume-ServiceFabricApplicationUpgrade** kan worden gebruikt om de rest van de upgrade hand matig te door lopen, één upgrade domein per keer. In deze modus worden alleen veiligheids controles uitgevoerd door het systeem. Er worden niet meer status controles uitgevoerd. Deze opdracht kan alleen worden gebruikt wanneer de *UpgradeState* *RollingForwardPending* toont, wat betekent dat het huidige upgrade domein is bijgewerkt, maar dat het volgende niet is gestart (in behandeling).
 
 De opdracht **Update-ServiceFabricApplicationUpgrade** kan worden gebruikt om de bewaakte upgrade te hervatten met de veiligheids-en status controles die worden uitgevoerd.
 

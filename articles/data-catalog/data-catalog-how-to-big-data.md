@@ -7,15 +7,15 @@ ms.service: data-catalog
 ms.topic: how-to
 ms.date: 08/01/2019
 ms.openlocfilehash: e79e5e16b300fd02b9c9124f9677747834f22813
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89443140"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009429"
 ---
 # <a name="how-to-catalog-big-data-in-azure-data-catalog"></a>big data catalogiseren in Azure Data Catalog
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 **Microsoft Azure Data Catalog** is een volledig beheerde Cloud service die fungeert als registratie systeem en detectie systeem voor zakelijke gegevens bronnen. Het helpt mensen bij het detecteren, begrijpen en gebruiken van gegevens bronnen, en helpt organisaties bij het verkrijgen van meer waarde dan hun bestaande gegevens bronnen, waaronder big data.
 
@@ -60,11 +60,11 @@ Een voor beeld van dit patroon is:
 
 Wanneer een analist of gegevens wetenschapper werkt met de gegevens in de grotere mapstructuren, kunnen de gegevens in deze referentie bestanden worden gebruikt om meer gedetailleerde informatie te geven over entiteiten waarnaar wordt verwezen door de naam of ID in de grotere gegevensset.
 
-In dit patroon is het zinvol om de afzonderlijke referentie gegevensbestand bestanden met **Azure Data Catalog**te registreren. Elk bestand vertegenwoordigt een gegevensset, en elke naam kan afzonderlijk worden aantekend en gedetecteerd.
+In dit patroon is het zinvol om de afzonderlijke referentie gegevensbestand bestanden met **Azure Data Catalog** te registreren. Elk bestand vertegenwoordigt een gegevensset, en elke naam kan afzonderlijk worden aantekend en gedetecteerd.
 
 ## <a name="alternate-patterns"></a>Alternatieve patronen
 
-De patronen die in de voor gaande sectie zijn beschreven, zijn twee mogelijke manieren waarop een big data archief kan worden georganiseerd, maar elke implementatie verschilt. Ongeacht hoe uw gegevens bronnen zijn gestructureerd, kunt u bij het registreren van big data bronnen met **Azure Data Catalog**zich richten op het registreren van de bestanden en mappen die de gegevens sets vertegenwoordigen die van waarde zijn voor anderen binnen uw organisatie. Het registreren van alle bestanden en mappen kan de catalogus opruimen, zodat gebruikers moeilijker kunnen vinden wat ze nodig hebben.
+De patronen die in de voor gaande sectie zijn beschreven, zijn twee mogelijke manieren waarop een big data archief kan worden georganiseerd, maar elke implementatie verschilt. Ongeacht hoe uw gegevens bronnen zijn gestructureerd, kunt u bij het registreren van big data bronnen met **Azure Data Catalog** zich richten op het registreren van de bestanden en mappen die de gegevens sets vertegenwoordigen die van waarde zijn voor anderen binnen uw organisatie. Het registreren van alle bestanden en mappen kan de catalogus opruimen, zodat gebruikers moeilijker kunnen vinden wat ze nodig hebben.
 
 ## <a name="summary"></a>Samenvatting
 

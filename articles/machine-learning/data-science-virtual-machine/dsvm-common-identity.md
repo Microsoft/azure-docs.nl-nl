@@ -11,11 +11,11 @@ ms.author: vijetaj
 ms.topic: conceptual
 ms.date: 05/08/2018
 ms.openlocfilehash: 3dc6fb64f6e8695d84e292322293998e2f4cb0a3
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324777"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009225"
 ---
 # <a name="set-up-a-common-identity-on-a-data-science-virtual-machine"></a>Stel een gemeen schappelijke identiteit in op een Data Science Virtual Machine
 
@@ -49,9 +49,9 @@ Azure AD DS maakt het eenvoudig om uw identiteiten te beheren door een volledig 
     
    1. Kopieer of noteer het gegenereerde gebruikerswachtwoord zodat u dit aan de gebruiker kunt doorgeven nadat dit proces is voltooid.
     
-   1. U kunt er ook voor kiezen om de informatie bij **Profiel** , **Groepen** of **Directory-rol** in te vullen voor de gebruiker. 
+   1. U kunt er ook voor kiezen om de informatie bij **Profiel**, **Groepen** of **Directory-rol** in te vullen voor de gebruiker. 
     
-   1. Onder **gebruiker** , selecteert u **maken**.
+   1. Onder **gebruiker**, selecteert u **maken**.
     
    1. Het gegenereerde wacht woord veilig distribueren naar de nieuwe gebruiker zodat deze zich kan aanmelden.
 

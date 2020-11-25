@@ -12,11 +12,11 @@ ms.topic: tutorial
 ms.date: 04/21/2020
 ms.author: jeedes
 ms.openlocfilehash: b76c41787d7a35fb3024fa18c0122bc966243bbc
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92514534"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008392"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-trend-micro-web-security-tmws"></a>Zelfstudie: Integratie van eenmalige aanmelding tussen Azure Active Directory en Trend Micro Web Security (TMWS)
 
@@ -114,9 +114,9 @@ In dit gedeelte gaat u een testgebruiker met de naam B.Simon maken in de Azure-p
 
 1. Selecteer in de Azure-portal aan de linkerkant **Azure Active Directory**. Selecteer **Gebruikers** en daarna **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het vak **Naam** `B.Simon`in.  
-   1. Voer in het vak **Gebruikersnaam** * *_gebruikersnaam_@* bedrijfsdomein *.* extensie*** in. Bijvoorbeeld `B.Simon@contoso.com`.
+   1. Voer in het vak **Gebruikersnaam** **_gebruikersnaam_@* bedrijfsdomein *.* extensie*** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
    1. Selecteer **Maken**.
 
@@ -126,7 +126,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 1. Selecteer in de Azure-portal **Bedrijfstoepassingen** en selecteer **Alle toepassingen**.
 1. Selecteer **Trend Micro Web Security (TMWS)** in de lijst met toepassingen.
-1. Ga op de overzichtspagina van de app naar de sectie **Beheren** en selecteer **Gebruikers en groepen** :
+1. Ga op de overzichtspagina van de app naar de sectie **Beheren** en selecteer **Gebruikers en groepen**:
 
    ![Gebruikers en groepen selecteren](common/users-groups-blade.png)
 
@@ -186,7 +186,7 @@ Voltooi deze stappen om eenmalige aanmelding bij TMWS te configureren aan de kan
     > [!NOTE]
     > Gebruikers die niet zijn gesynchroniseerd vanuit Azure AD kunnen alleen worden geverifieerd via bekende TMWS-gateways of de toegewezen poort voor uw organisatie.
 
-1. Voer de volgende stappen uit op de pagina **Id-providerinstellingen** :
+1. Voer de volgende stappen uit op de pagina **Id-providerinstellingen**:
 
     a. Typ in het vak **Service-URL** de waarde voor **Aanmeldings-URL** die u hebt gekopieerd uit Azure Portal.
 
@@ -194,7 +194,7 @@ Voltooi deze stappen om eenmalige aanmelding bij TMWS te configureren aan de kan
 
     c. Ga naar het vak **Openbaar SSL-certificaat** en gebruik het **Certificaat (Base64)** dat u vanuit Azure Portal hebt gedownload.
 
-1. Voer de volgende stappen uit op de pagina **Synchronisatie-instellingen** :
+1. Voer de volgende stappen uit op de pagina **Synchronisatie-instellingen**:
 
     a. Voer in het vak **Tenant** de **Map-id (tenant) in** of de waarde voor de **Aangepaste domeinnaam** vanuit Azure Portal.
 
@@ -224,7 +224,7 @@ Nadat u de Azure AD-service hebt geconfigureerd en Azure AD hebt opgegeven als d
 
 1. Ga naar een website. TMWS leidt u naar de TMWS-portal.
 
-1. Geef een Active Directory-account (indeling: *domein*\\*sAMAccountName* of *sAMAccountName*@*domein* ), e-mailadres of UPN op en selecteer vervolgens **Aanmelden**. TMWS stuurt u naar het aanmeldingsvenster van Azure AD.
+1. Geef een Active Directory-account (indeling: *domein*\\*sAMAccountName* of *sAMAccountName*@*domein*), e-mailadres of UPN op en selecteer vervolgens **Aanmelden**. TMWS stuurt u naar het aanmeldingsvenster van Azure AD.
 
 1. Voer in het aanmeldingsvenster van Azure AD uw Azure AD-accountreferenties in. U bent nu aangemeld bij TMWS.
 

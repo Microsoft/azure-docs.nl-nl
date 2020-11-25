@@ -12,11 +12,11 @@ ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: jeedes
 ms.openlocfilehash: 161348f7566ff64858d563f34ad8f3f4c7511adf
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92459098"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009157"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-f5"></a>Zelfstudie: Integratie van eenmalige aanmelding via Azure Active Directory met F5
 
@@ -168,9 +168,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
@@ -285,7 +285,7 @@ U configureert een Active Directory AAA-server in Access Policy Manager (APM) om
 
 4. Typ in het veld **Domain Name** de naam van het Windows-domein.
 
-5. Selecteer een van de volgende opties voor de instelling **Server Connection** :
+5. Selecteer een van de volgende opties voor de instelling **Server Connection**:
 
    * Selecteer **Use Pool** om hoge beschikbaarheid in te stellen voor de AAA-server.
 
@@ -360,18 +360,18 @@ U configureert een Active Directory AAA-server in Access Policy Manager (APM) om
 
      ![Schermopname van het venster 'Edit SAML IdPs that use this SP' (SAML IdP's bewerken die deze SP gebruiken) met de knop 'Add New Row' (Nieuwe rij toevoegen) geselecteerd.](./media/kerbf5-tutorial/configure28.png)
 
-1. Voor het configureren van eenmalige aanmelding met Kerberos navigeert u naar **Access > Single Sign-on > Kerberos** , vult u de gegevens in en klikt u op **Finished**.
+1. Voor het configureren van eenmalige aanmelding met Kerberos navigeert u naar **Access > Single Sign-on > Kerberos**, vult u de gegevens in en klikt u op **Finished**.
 
     >[!Note]
     > U moet het Kerberos-delegatieaccount maken en opgeven. Verwijzen naar KCD-sectie (verwijzen naar bijlage voor referenties voor variabelen)
 
-    * **Username Source** : session.saml.last.attr.name.http:\//schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname
+    * **Username Source**: session.saml.last.attr.name.http:\//schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname
 
-    * **User Realm Source** : session.logon.last.domain
+    * **User Realm Source**: session.logon.last.domain
 
         ![Schermopname van de pagina Single Sign-On - Properties met de tekstvakken Username Source en User Realm Source geselecteerd.](./media/kerbf5-tutorial/configure29.png)
 
-1. Voor het configureren van het toegangsprofiel navigeert u naar **Access > Profile/Policies > Access Profile (per session policies)** , klikt u op **Create** , vult u de volgende informatie in en klikt u op **Finished**.
+1. Voor het configureren van het toegangsprofiel navigeert u naar **Access > Profile/Policies > Access Profile (per session policies)** , klikt u op **Create**, vult u de volgende informatie in en klikt u op **Finished**.
 
     * Naam: KerbApp200
     * Profile Type: Alle
@@ -414,7 +414,7 @@ U configureert een Active Directory AAA-server in Access Policy Manager (APM) om
     * **mcget {session.logon.last.username}**
     * **mcget {session.logon.last.password**
 
-1. Voor het toevoegen van een nieuw knooppunt navigeert u naar **Local Traffic > Nodes > Node List, klikt u op Create** , voert u de volgende gegevens in en klikt u op **Finished**.
+1. Voor het toevoegen van een nieuw knooppunt navigeert u naar **Local Traffic > Nodes > Node List, klikt u op Create**, voert u de volgende gegevens in en klikt u op **Finished**.
 
     * Naam: KerbApp200
     * Beschrijving: KerbApp200
@@ -422,7 +422,7 @@ U configureert een Active Directory AAA-server in Access Policy Manager (APM) om
 
         ![Schermopname van de pagina New Node met de tekstvakken Name, Description en Address gemarkeerd en de knop Finished geselecteerd.](./media/kerbf5-tutorial/configure39.png)
 
-1. Voor het maken van een nieuwe pool navigeert u naar **Local Traffic > Pools > Pool List, klikt u op Create** , voert u de volgende gegevens in en klikt u op **Finished**.
+1. Voor het maken van een nieuwe pool navigeert u naar **Local Traffic > Pools > Pool List, klikt u op Create**, voert u de volgende gegevens in en klikt u op **Finished**.
 
     * Naam: KerbApp200-Pool
     * Beschrijving: KerbApp200-Pool

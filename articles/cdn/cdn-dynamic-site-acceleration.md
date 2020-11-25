@@ -15,11 +15,11 @@ ms.topic: how-to
 ms.date: 03/25/2019
 ms.author: allensu
 ms.openlocfilehash: 5387fdc224cd77ee5273767df5033a51dc27608c
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92778860"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008358"
 ---
 # <a name="dynamic-site-acceleration-via-azure-cdn"></a>Dynamische site versnelling via Azure CDN
 
@@ -40,13 +40,13 @@ Als u een CDN-eind punt wilt configureren om de levering van dynamische bestande
 
 **Een CDN-eind punt voor DSA-optimalisatie configureren met behulp van de Azure Portal:**
 
-1. Selecteer op de pagina **CDN-profiel** de optie **eind punt** .
+1. Selecteer op de pagina **CDN-profiel** de optie **eind punt**.
 
    ![Een nieuw CDN-eind punt toevoegen](./media/cdn-dynamic-site-acceleration/cdn-endpoint-profile.png) 
 
    Het deelvenster **Een eindpunt toevoegen** wordt weergegeven.
 
-2. Selecteer onder **geoptimaliseerd voor** **dynamische site versnelling** .
+2. Selecteer onder **geoptimaliseerd voor** **dynamische site versnelling**.
 
     ![Een nieuw CDN-eind punt maken met DSA](./media/cdn-dynamic-site-acceleration/cdn-endpoint-dsa.png)
 
@@ -54,7 +54,7 @@ Als u een CDN-eind punt wilt configureren om de levering van dynamische bestande
 
     Probe is een functie die specifiek is voor DSA en een geldig pad is vereist voor het maken van. DSA gebruikt een klein *probe Path* -bestand dat op de oorspronkelijke server is geplaatst om de configuratie van netwerk routering voor het CDN te optimaliseren. Voor het pad naar het probe-bestand kunt u het voorbeeld bestand downloaden en uploaden naar uw site, of een bestaand activum op uw oorsprong gebruiken dat ongeveer 10 KB groot is.
 
-4. Voer de andere vereiste eindpunt opties in (Zie [een nieuw CDN-eind punt maken](cdn-create-new-endpoint.md#create-a-new-cdn-endpoint)voor meer informatie) en selecteer vervolgens **toevoegen** .
+4. Voer de andere vereiste eindpunt opties in (Zie [een nieuw CDN-eind punt maken](cdn-create-new-endpoint.md#create-a-new-cdn-endpoint)voor meer informatie) en selecteer vervolgens **toevoegen**.
 
    Nadat het CDN-eind punt is gemaakt, worden de DSA-optimalisaties toegepast voor alle bestanden die aan bepaalde criteria voldoen. 
 
@@ -67,7 +67,7 @@ Als u een CDN-eind punt wilt configureren om de levering van dynamische bestande
 
    De pagina **optimalisatie** wordt weer gegeven.
 
-3. Selecteer onder **geoptimaliseerd voor** **dynamische site versnelling** en selecteer vervolgens **Opslaan** .
+3. Selecteer onder **geoptimaliseerd voor** **dynamische site versnelling** en selecteer vervolgens **Opslaan**.
 
 > [!Note]
 > DSA brengt extra kosten met zich mee. Zie [Content Delivery Network prijzen](https://azure.microsoft.com/pricing/details/cdn/)voor meer informatie.
@@ -157,7 +157,7 @@ Voor **Azure CDN Standard van Verizon** en **Azure CDN Standard van Akamai** -pr
 
 Voor toegang tot de regels voor opslaan in cache:
 
-1. Selecteer op de pagina **CDN-profiel** onder instellingen de optie **cache regels** .  
+1. Selecteer op de pagina **CDN-profiel** onder instellingen de optie **cache regels**.  
     
     ![Knop Regels voor CDN-caching](./media/cdn-dynamic-site-acceleration/cdn-caching-rules-btn.png)
 
@@ -169,13 +169,13 @@ Voor **Azure CDN Premium van Verizon** -profielen, kunt u caching voor specifiek
 
 Voor toegang tot de regel Engine:
     
-1. Selecteer op de pagina **CDN-profiel** de optie **beheren** .  
+1. Selecteer op de pagina **CDN-profiel** de optie **beheren**.  
     
     ![Beheer knop voor CDN-profiel](./media/cdn-dynamic-site-acceleration/cdn-manage-btn.png)
 
     De CDN-beheer portal wordt geopend.
 
-2. Selecteer **ADN** in de CDN-beheer Portal en selecteer vervolgens **regel engine** . 
+2. Selecteer **ADN** in de CDN-beheer Portal en selecteer vervolgens **regel engine**. 
 
     ![Regel engine voor DSA](./media/cdn-dynamic-site-acceleration/cdn-dsa-rules-engine.png)
 

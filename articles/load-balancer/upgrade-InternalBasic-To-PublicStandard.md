@@ -8,11 +8,11 @@ ms.topic: how-to
 ms.date: 01/23/2020
 ms.author: irenehua
 ms.openlocfilehash: d1c69f528328d5ff983c7de9d7fad052a7c41285
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94696248"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009293"
 ---
 # <a name="upgrade-azure-internal-load-balancer---outbound-connection-required"></a>Upgrade uitvoeren voor interne Load Balancer van Azure-uitgaande verbinding vereist
 [Azure Standard Load Balancer](load-balancer-overview.md) biedt een uitgebreide set functionaliteit en hoge Beschik baarheid via zone redundantie. Zie [vergelijkings tabel](./skus.md#skus)voor meer informatie over Load Balancer SKU. Aangezien standaard interne Load Balancer geen uitgaande verbinding biedt, bieden we een oplossing om in plaats daarvan een open bare standaard Load Balancer te maken.

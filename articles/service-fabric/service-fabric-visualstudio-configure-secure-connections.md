@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 8/04/2017
 ms.author: cawa
 ms.openlocfilehash: d4d6b781d97d481793e69cf2ca97cca5b93ce432
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86256090"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008528"
 ---
 # <a name="configure-secure-connections-to-a-service-fabric-cluster-from-visual-studio"></a>Beveiligde verbindingen met een Service Fabric-cluster configureren vanuit Visual Studio
 Meer informatie over hoe u Visual Studio kunt gebruiken om veilig toegang te krijgen tot een Azure Service Fabric-cluster met beleids regels voor toegangs beheer die zijn geconfigureerd.
@@ -21,7 +21,7 @@ Er worden twee typen verbindingen ondersteund door het Azure Service Fabric-clus
 De Visual Studio Service Fabric-hulpprogram ma's ondersteunen alle verificatie typen voor het maken van verbinding met een cluster voor publicatie. Zie [een service Fabric cluster instellen vanuit de Azure Portal](service-fabric-cluster-creation-via-portal.md) voor instructies over het instellen van een beveiligd service Fabric-cluster.
 
 ## <a name="configure-cluster-connections-in-publish-profiles"></a>Cluster verbindingen configureren in publicatie profielen
-Als u een Service Fabric project publiceert vanuit Visual Studio, gebruikt u het dialoog venster **service Fabric toepassing publiceren** om een Azure service Fabric-cluster te kiezen. Onder **verbindings eindpunt**selecteert u een bestaand cluster onder uw abonnement.
+Als u een Service Fabric project publiceert vanuit Visual Studio, gebruikt u het dialoog venster **service Fabric toepassing publiceren** om een Azure service Fabric-cluster te kiezen. Onder **verbindings eindpunt** selecteert u een bestaand cluster onder uw abonnement.
 
 ![Het dialoog venster * * Service Fabric toepassing publiceren * * wordt gebruikt om een Service Fabric verbinding te configureren.][publishdialog]
 

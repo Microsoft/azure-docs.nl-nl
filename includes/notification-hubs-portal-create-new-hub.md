@@ -9,19 +9,19 @@ ms.date: 01/17/2019
 ms.author: jowargo
 ms.custom: include file
 ms.openlocfilehash: 2ec602f056b339a1b1dcb78d6b8d7583aeaf0434
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93376016"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009098"
 ---
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
-1. Selecteer **Alle services** in het menu aan de linkerkant en selecteer **Notification Hubs** in de sectie **Mobiel**. Selecteer het sterpictogram naast de servicenaam om de service toe te voegen aan de sectie **FAVORIETEN** in het menu aan de linkerkant. Nadat u **Notification Hubs** hebt toegevoegd aan **FAVORIETEN** , selecteert u dit in het linkermenu.
+1. Selecteer **Alle services** in het menu aan de linkerkant en selecteer **Notification Hubs** in de sectie **Mobiel**. Selecteer het sterpictogram naast de servicenaam om de service toe te voegen aan de sectie **FAVORIETEN** in het menu aan de linkerkant. Nadat u **Notification Hubs** hebt toegevoegd aan **FAVORIETEN**, selecteert u dit in het linkermenu.
 
       ![Azure Portal - Notification Hubs selecteren](./media/notification-hubs-portal-create-new-hub/all-services-select-notification-hubs.png)
 
-1. Op de **Notification Hubs** -pagina selecteert u **Toevoegen** op de werkbalk.
+1. Op de **Notification Hubs**-pagina selecteert u **Toevoegen** op de werkbalk.
 
       ![Toevoegen van Notification Hubs - knop op de werkbalk](./media/notification-hubs-portal-create-new-hub/add-toolbar-button.png)
 

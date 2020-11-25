@@ -10,12 +10,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: ecb066c7269217af3f8cc84e0f59ab29b4b39a9e
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: 45ebd793d96ed8cf0edf88d5631353fb6cd6a982
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331468"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96008766"
 ---
 # <a name="visually-monitor-azure-data-factory"></a>Azure Data Factory visueel bewaken
 
@@ -40,7 +40,7 @@ Het raster pijp lijn uitvoeren bevat de volgende kolommen:
 | Einde van de uitvoering | Eind datum en-tijd voor de pijplijn uitvoering (MM/DD/JJJJ, uu: MM: SS AM/PM) |
 | Duur | Uitvoerings duur (UU: MM: SS) |
 | Geactiveerd door | De naam van de trigger die de pijp lijn heeft gestart |
-| Status | **Mislukt** , **geslaagd** , **in behandeling** , **geannuleerd** of in **wachtrij** |
+| Status | **Mislukt**, **geslaagd**, **in behandeling**, **geannuleerd** of in **wachtrij** |
 | Aantekeningen | Filter bare labels die zijn gekoppeld aan een pijp lijn  |
 | Parameters | Para meters voor de pijp lijn run (naam/waarde-paren) |
 | Fout | Als de pijp lijn is mislukt, wordt de uitvoerings fout |
@@ -62,16 +62,16 @@ Klik op de naam van de pijp lijn voor een gedetailleerde weer gave van de uitvoe
 
 In de lijst weergave worden de uitvoeringen van activiteiten weer gegeven die overeenkomen met elke pijplijn uitvoering. Beweeg de muis aanwijzer over de specifieke uitvoering van de activiteit om toepassingsspecifieke informatie op te halen, zoals de JSON-invoer, JSON-uitvoer en gedetailleerde bewakings ervaringen met activiteiten.
 
-![Lijst weergave voor uitvoeringen van bewakings activiteiten](media/monitor-visually/activity-runs.png)
+![Er is informatie over SalesAnalyticsMLPipeline, gevolgd door een lijst met uitvoeringen van de activiteit.](media/monitor-visually/activity-runs.png)
 
 | **Kolomnaam** | **Beschrijving** |
 | --- | --- |
 | Activiteitsnaam | De naam van de activiteit in de pijp lijn |
-| Type activiteit | Type activiteit, zoals **copy** , **ExecuteDataFlow** of **AzureMLExecutePipeline** |
+| Type activiteit | Type activiteit, zoals **copy**, **ExecuteDataFlow** of **AzureMLExecutePipeline** |
 | Acties | Pictogrammen waarmee u JSON-invoer gegevens, JSON-uitvoer gegevens of gedetailleerde activiteiten voor bewaking kunt weer geven | 
 | Start uitvoeren | Begin datum en-tijd voor de uitvoering van de activiteit (MM/DD/JJJJ, uu: MM: SS AM/PM) |
 | Duur | Uitvoerings duur (UU: MM: SS) |
-| Status | **Mislukt** , **geslaagd** , **in uitvoering** of **geannuleerd** |
+| Status | **Mislukt**, **geslaagd**, **in uitvoering** of **geannuleerd** |
 | Integration Runtime | Waarop Integration Runtime de activiteit is uitgevoerd |
 | Gebruikerseigenschappen | Door de gebruiker gedefinieerde eigenschappen van de activiteit |
 | Fout | Als de activiteit is mislukt, wordt de uitvoerings fout |
@@ -79,7 +79,7 @@ In de lijst weergave worden de uitvoeringen van activiteiten weer gegeven die ov
 
 Als een activiteit is mislukt, kunt u het gedetailleerde fout bericht zien door te klikken op het pictogram in de kolom fout. 
 
-![Lijst weergave voor uitvoeringen van bewakings activiteiten](media/monitor-visually/activity-run-error.png)
+![Er wordt een melding weer gegeven met fout details, waaronder fout code, fout type en fout Details.](media/monitor-visually/activity-run-error.png)
 
 ### <a name="promote-user-properties-to-monitor"></a>Gebruikers eigenschappen promo veren om te bewaken
 

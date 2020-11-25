@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 11/02/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 2b99d032b953caecfca2b34d5eadafe94f45f307
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87809370"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009531"
 ---
 # <a name="manage-instances-in-durable-functions-in-azure"></a>Instanties in Durable Functions in azure beheren
 
@@ -158,11 +158,11 @@ async def main(req: func.HttpRequest, starter: str) -> func.HttpResponse:
 
 U kunt een exemplaar ook rechtstreeks starten met behulp van de [Azure functions core tools](../functions-run-local.md) `durable start-new` opdracht. Hierbij worden de volgende para meters gebruikt:
 
-* ** `function-name` (vereist)**: de naam van de functie die moet worden gestart.
-* ** `input` (optioneel)**: de invoer voor de functie, hetzij inline of via een JSON-bestand. Voor bestanden voegt u een voor voegsel toe aan het pad naar het bestand met `@` , zoals `@path/to/file.json` .
-* ** `id` (optioneel)**: id van het Orchestration-exemplaar. Als u deze para meter niet opgeeft, gebruikt de opdracht een wille keurige GUID.
-* ** `connection-string-setting` (optioneel)**: de naam van de toepassings instelling met de opslag Connection String die moet worden gebruikt. De standaard waarde is AzureWebJobsStorage.
-* ** `task-hub-name` (optioneel)**: de naam van de Durable functions taak-hub die moet worden gebruikt. De standaard waarde is DurableFunctionsHub. U kunt dit ook instellen in [host.jsop](durable-functions-bindings.md#host-json) met behulp van DurableTask: HubName.
+* **`function-name` (vereist)**: de naam van de functie die moet worden gestart.
+* **`input` (optioneel)**: de invoer voor de functie, hetzij inline of via een JSON-bestand. Voor bestanden voegt u een voor voegsel toe aan het pad naar het bestand met `@` , zoals `@path/to/file.json` .
+* **`id` (optioneel)**: id van het Orchestration-exemplaar. Als u deze para meter niet opgeeft, gebruikt de opdracht een wille keurige GUID.
+* **`connection-string-setting` (optioneel)**: de naam van de toepassings instelling met de opslag Connection String die moet worden gebruikt. De standaard waarde is AzureWebJobsStorage.
+* **`task-hub-name` (optioneel)**: de naam van de Durable functions taak-hub die moet worden gebruikt. De standaard waarde is DurableFunctionsHub. U kunt dit ook instellen in [host.jsop](durable-functions-bindings.md#host-json) met behulp van DurableTask: HubName.
 
 > [!NOTE]
 > In de kern Hulpprogramma's opdrachten wordt ervan uitgegaan dat u ze uitvoert vanuit de hoofdmap van een functie-app. Als u de `connection-string-setting` `task-hub-name` para meters en expliciet opgeeft, kunt u de opdrachten vanuit elke directory uitvoeren. Hoewel u deze opdrachten kunt uitvoeren zonder dat er een functie-app wordt uitgevoerd, is het mogelijk dat u niet kunt zien wat sommige gevolgen hebben, tenzij de host wordt uitgevoerd. De `start-new` opdracht in bijvoorbeeld een start bericht naar de doel taak hub, maar de indeling wordt niet daad werkelijk uitgevoerd, tenzij er een functie-app-hostproces wordt uitgevoerd die het bericht kan verwerken.
@@ -255,11 +255,11 @@ async def main(req: func.HttpRequest, starter: str, instance_id: str) -> func.Ht
 
 Het is ook mogelijk om de status van een indelings exemplaar rechtstreeks op te halen met behulp van de [Azure functions core tools](../functions-run-local.md) `durable get-runtime-status` opdracht. Hierbij worden de volgende para meters gebruikt:
 
-* ** `id` (vereist)**: id van het Orchestration-exemplaar.
-* ** `show-input` (optioneel)**: als `true` deze is ingesteld op, bevat het antwoord de invoer van de functie. De standaardwaarde is `false`.
-* ** `show-output` (optioneel)**: als `true` deze is ingesteld op, bevat het antwoord de uitvoer van de functie. De standaardwaarde is `false`.
-* ** `connection-string-setting` (optioneel)**: de naam van de toepassings instelling met de opslag Connection String die moet worden gebruikt. De standaardwaarde is `AzureWebJobsStorage`.
-* ** `task-hub-name` (optioneel)**: de naam van de Durable functions taak-hub die moet worden gebruikt. De standaardwaarde is `DurableFunctionsHub`. Het kan ook worden ingesteld in [host.jsop](durable-functions-bindings.md#host-json), met behulp van DurableTask: HubName.
+* **`id` (vereist)**: id van het Orchestration-exemplaar.
+* **`show-input` (optioneel)**: als `true` deze is ingesteld op, bevat het antwoord de invoer van de functie. De standaardwaarde is `false`.
+* **`show-output` (optioneel)**: als `true` deze is ingesteld op, bevat het antwoord de uitvoer van de functie. De standaardwaarde is `false`.
+* **`connection-string-setting` (optioneel)**: de naam van de toepassings instelling met de opslag Connection String die moet worden gebruikt. De standaardwaarde is `AzureWebJobsStorage`.
+* **`task-hub-name` (optioneel)**: de naam van de Durable functions taak-hub die moet worden gebruikt. De standaardwaarde is `DurableFunctionsHub`. Het kan ook worden ingesteld in [host.jsop](durable-functions-bindings.md#host-json), met behulp van DurableTask: HubName.
 
 Met de volgende opdracht wordt de status (inclusief invoer en uitvoer) opgehaald van een exemplaar met een indelings exemplaar-ID van 0ab8c55a66644d68a3a8b220b12d209c. Hierbij wordt ervan uitgegaan dat u de `func` opdracht uitvoert vanuit de hoofdmap van de functie-app:
 
@@ -269,9 +269,9 @@ func durable get-runtime-status --id 0ab8c55a66644d68a3a8b220b12d209c --show-inp
 
 U kunt de `durable get-history` opdracht gebruiken om de geschiedenis van een Orchestration-exemplaar op te halen. Hierbij worden de volgende para meters gebruikt:
 
-* ** `id` (vereist)**: id van het Orchestration-exemplaar.
-* ** `connection-string-setting` (optioneel)**: de naam van de toepassings instelling met de opslag Connection String die moet worden gebruikt. De standaardwaarde is `AzureWebJobsStorage`.
-* ** `task-hub-name` (optioneel)**: de naam van de Durable functions taak-hub die moet worden gebruikt. De standaardwaarde is `DurableFunctionsHub`. Het kan ook worden ingesteld in host.jsop, met behulp van durableTask: HubName.
+* **`id` (vereist)**: id van het Orchestration-exemplaar.
+* **`connection-string-setting` (optioneel)**: de naam van de toepassings instelling met de opslag Connection String die moet worden gebruikt. De standaardwaarde is `AzureWebJobsStorage`.
+* **`task-hub-name` (optioneel)**: de naam van de Durable functions taak-hub die moet worden gebruikt. De standaardwaarde is `DurableFunctionsHub`. Het kan ook worden ingesteld in host.jsop, met behulp van durableTask: HubName.
 
 ```bash
 func durable get-history --id 0ab8c55a66644d68a3a8b220b12d209c
@@ -347,10 +347,10 @@ Zie [begin instanties](#javascript-function-json) voor de function.jsbij de conf
 
 Het is ook mogelijk rechtstreeks een query uit te zoeken op instanties met behulp van de [Azure functions core tools](../functions-run-local.md) `durable get-instances` opdracht. Hierbij worden de volgende para meters gebruikt:
 
-* ** `top` (optioneel)**: deze opdracht ondersteunt paginering. Deze para meter komt overeen met het aantal exemplaren dat per aanvraag wordt opgehaald. De standaard waarde is 10.
-* ** `continuation-token` (optioneel)**: een token om aan te geven welke pagina of sectie met instanties moet worden opgehaald. Elke `get-instances` uitvoering retourneert een token naar de volgende set exemplaren.
-* ** `connection-string-setting` (optioneel)**: de naam van de toepassings instelling met de opslag Connection String die moet worden gebruikt. De standaardwaarde is `AzureWebJobsStorage`.
-* ** `task-hub-name` (optioneel)**: de naam van de Durable functions taak-hub die moet worden gebruikt. De standaardwaarde is `DurableFunctionsHub`. Het kan ook worden ingesteld in [host.jsop](durable-functions-bindings.md#host-json), met behulp van DurableTask: HubName.
+* **`top` (optioneel)**: deze opdracht ondersteunt paginering. Deze para meter komt overeen met het aantal exemplaren dat per aanvraag wordt opgehaald. De standaard waarde is 10.
+* **`continuation-token` (optioneel)**: een token om aan te geven welke pagina of sectie met instanties moet worden opgehaald. Elke `get-instances` uitvoering retourneert een token naar de volgende set exemplaren.
+* **`connection-string-setting` (optioneel)**: de naam van de toepassings instelling met de opslag Connection String die moet worden gebruikt. De standaardwaarde is `AzureWebJobsStorage`.
+* **`task-hub-name` (optioneel)**: de naam van de Durable functions taak-hub die moet worden gebruikt. De standaardwaarde is `DurableFunctionsHub`. Het kan ook worden ingesteld in [host.jsop](durable-functions-bindings.md#host-json), met behulp van DurableTask: HubName.
 
 ```bash
 func durable get-instances
@@ -453,13 +453,13 @@ async def main(req: func.HttpRequest, starter: str) -> func.HttpResponse:
 
 In de Azure Functions Core Tools kunt u ook de `durable get-instances` opdracht met filters gebruiken. Naast de voor noemde `top` ,, `continuation-token` `connection-string-setting` , en `task-hub-name` -para meters kunt u drie filter parameters ( `created-after` , `created-before` en) gebruiken `runtime-status` .
 
-* ** `created-after` (optioneel)**: de instanties ophalen die zijn gemaakt na deze datum/tijd (UTC). ISO 8601 ingedeelde datum/tijd geaccepteerd.
-* ** `created-before` (optioneel)**: de instanties ophalen die zijn gemaakt voor deze datum/tijd (UTC). ISO 8601 ingedeelde datum/tijd geaccepteerd.
-* ** `runtime-status` (optioneel)**: de instanties met een bepaalde status ophalen (bijvoorbeeld uitgevoerd of voltooid). Kan meerdere (spaties gescheiden) statussen bieden.
-* ** `top` (optioneel)**: aantal opgehaalde exemplaren per aanvraag. De standaard waarde is 10.
-* ** `continuation-token` (optioneel)**: een token om aan te geven welke pagina of sectie met instanties moet worden opgehaald. Elke `get-instances` uitvoering retourneert een token naar de volgende set exemplaren.
-* ** `connection-string-setting` (optioneel)**: de naam van de toepassings instelling met de opslag Connection String die moet worden gebruikt. De standaardwaarde is `AzureWebJobsStorage`.
-* ** `task-hub-name` (optioneel)**: de naam van de Durable functions taak-hub die moet worden gebruikt. De standaardwaarde is `DurableFunctionsHub`. Het kan ook worden ingesteld in [host.jsop](durable-functions-bindings.md#host-json), met behulp van DurableTask: HubName.
+* **`created-after` (optioneel)**: de instanties ophalen die zijn gemaakt na deze datum/tijd (UTC). ISO 8601 ingedeelde datum/tijd geaccepteerd.
+* **`created-before` (optioneel)**: de instanties ophalen die zijn gemaakt voor deze datum/tijd (UTC). ISO 8601 ingedeelde datum/tijd geaccepteerd.
+* **`runtime-status` (optioneel)**: de instanties met een bepaalde status ophalen (bijvoorbeeld uitgevoerd of voltooid). Kan meerdere (spaties gescheiden) statussen bieden.
+* **`top` (optioneel)**: aantal opgehaalde exemplaren per aanvraag. De standaard waarde is 10.
+* **`continuation-token` (optioneel)**: een token om aan te geven welke pagina of sectie met instanties moet worden opgehaald. Elke `get-instances` uitvoering retourneert een token naar de volgende set exemplaren.
+* **`connection-string-setting` (optioneel)**: de naam van de toepassings instelling met de opslag Connection String die moet worden gebruikt. De standaardwaarde is `AzureWebJobsStorage`.
+* **`task-hub-name` (optioneel)**: de naam van de Durable functions taak-hub die moet worden gebruikt. De standaardwaarde is `DurableFunctionsHub`. Het kan ook worden ingesteld in [host.jsop](durable-functions-bindings.md#host-json), met behulp van DurableTask: HubName.
 
 Als u geen filters ( `created-after` , `created-before` , of) opgeeft `runtime-status` , wordt met de opdracht simpelweg `top` instanties opgehaald, zonder rekening te houden met de runtime status of de aanmaak tijd.
 
@@ -528,10 +528,10 @@ Een beëindigde instantie wordt uiteindelijk overgezet naar de `Terminated` stat
 
 U kunt een Orchestration-exemplaar ook rechtstreeks beëindigen met behulp van de [Azure functions core tools](../functions-run-local.md) `durable terminate` opdracht. Hierbij worden de volgende para meters gebruikt:
 
-* ** `id` (vereist)**: id van het te beëindigen Orchestrator-exemplaar.
-* ** `reason` (optioneel)**: reden voor beëindiging.
-* ** `connection-string-setting` (optioneel)**: de naam van de toepassings instelling met de opslag Connection String die moet worden gebruikt. De standaardwaarde is `AzureWebJobsStorage`.
-* ** `task-hub-name` (optioneel)**: de naam van de Durable functions taak-hub die moet worden gebruikt. De standaardwaarde is `DurableFunctionsHub`. Het kan ook worden ingesteld in [host.jsop](durable-functions-bindings.md#host-json), met behulp van DurableTask: HubName.
+* **`id` (vereist)**: id van het te beëindigen Orchestrator-exemplaar.
+* **`reason` (optioneel)**: reden voor beëindiging.
+* **`connection-string-setting` (optioneel)**: de naam van de toepassings instelling met de opslag Connection String die moet worden gebruikt. De standaardwaarde is `AzureWebJobsStorage`.
+* **`task-hub-name` (optioneel)**: de naam van de Durable functions taak-hub die moet worden gebruikt. De standaardwaarde is `DurableFunctionsHub`. Het kan ook worden ingesteld in [host.jsop](durable-functions-bindings.md#host-json), met behulp van DurableTask: HubName.
 
 Met de volgende opdracht wordt een Orchestrator-exemplaar met de ID 0ab8c55a66644d68a3a8b220b12d209c beëindigd:
 
@@ -604,11 +604,11 @@ async def main(req: func.HttpRequest, starter: str, instance_id: str) -> func.Ht
 
 U kunt ook rechtstreeks een gebeurtenis naar een Orchestration-instantie verhogen met behulp van de [Azure functions core tools](../functions-run-local.md) `durable raise-event` opdracht. Hierbij worden de volgende para meters gebruikt:
 
-* ** `id` (vereist)**: id van het Orchestration-exemplaar.
+* **`id` (vereist)**: id van het Orchestration-exemplaar.
 * **`event-name`**: De naam van de gebeurtenis die moet worden verhoogd.
-* ** `event-data` (optioneel)**: gegevens om te verzenden naar het indelings exemplaar. Dit kan het pad naar een JSON-bestand zijn, of u kunt de gegevens rechtstreeks op de opdracht regel opgeven.
-* ** `connection-string-setting` (optioneel)**: de naam van de toepassings instelling met de opslag Connection String die moet worden gebruikt. De standaardwaarde is `AzureWebJobsStorage`.
-* ** `task-hub-name` (optioneel)**: de naam van de Durable functions taak-hub die moet worden gebruikt. De standaardwaarde is `DurableFunctionsHub`. Het kan ook worden ingesteld in [host.jsop](durable-functions-bindings.md#host-json), met behulp van DurableTask: HubName.
+* **`event-data` (optioneel)**: gegevens om te verzenden naar het indelings exemplaar. Dit kan het pad naar een JSON-bestand zijn, of u kunt de gegevens rechtstreeks op de opdracht regel opgeven.
+* **`connection-string-setting` (optioneel)**: de naam van de toepassings instelling met de opslag Connection String die moet worden gebruikt. De standaardwaarde is `AzureWebJobsStorage`.
+* **`task-hub-name` (optioneel)**: de naam van de Durable functions taak-hub die moet worden gebruikt. De standaardwaarde is `DurableFunctionsHub`. Het kan ook worden ingesteld in [host.jsop](durable-functions-bindings.md#host-json), met behulp van DurableTask: HubName.
 
 ```bash
 func durable raise-event --id 0ab8c55a66644d68a3a8b220b12d209c --event-name MyEvent --event-data @eventdata.json
@@ -860,10 +860,10 @@ async def main(req: func.HttpRequest, starter: str, instance_id: str) -> func.Ht
 
 U kunt een Orchestration-exemplaar ook rechtstreeks terugspoelen met behulp van de [Azure functions core tools](../functions-run-local.md) `durable rewind` opdracht. Hierbij worden de volgende para meters gebruikt:
 
-* ** `id` (vereist)**: id van het Orchestration-exemplaar.
-* ** `reason` (optioneel)**: reden voor het terugspoelen van het Orchestration-exemplaar.
-* ** `connection-string-setting` (optioneel)**: de naam van de toepassings instelling met de opslag Connection String die moet worden gebruikt. De standaardwaarde is `AzureWebJobsStorage`.
-* ** `task-hub-name` (optioneel)**: de naam van de Durable functions taak-hub die moet worden gebruikt. Standaard wordt de naam van de taak-hub in de [host.jsin](durable-functions-bindings.md#host-json) het bestand gebruikt.
+* **`id` (vereist)**: id van het Orchestration-exemplaar.
+* **`reason` (optioneel)**: reden voor het terugspoelen van het Orchestration-exemplaar.
+* **`connection-string-setting` (optioneel)**: de naam van de toepassings instelling met de opslag Connection String die moet worden gebruikt. De standaardwaarde is `AzureWebJobsStorage`.
+* **`task-hub-name` (optioneel)**: de naam van de Durable functions taak-hub die moet worden gebruikt. Standaard wordt de naam van de taak-hub in de [host.jsin](durable-functions-bindings.md#host-json) het bestand gebruikt.
 
 ```bash
 func durable rewind --id 0ab8c55a66644d68a3a8b220b12d209c --reason "Orchestrator failed and needs to be revived."
@@ -997,17 +997,17 @@ async def main(req: func.HttpRequest, starter: str, instance_id: str) -> func.Ht
 ---
 
 > [!NOTE]
-> De runtime status van het doel exemplaar kan alleen worden **voltooid**, **beëindigd**of **mislukt**als de bewerking geschiedenis opschonen is geslaagd.
+> De runtime status van het doel exemplaar kan alleen worden **voltooid**, **beëindigd** of **mislukt** als de bewerking geschiedenis opschonen is geslaagd.
 
 ### <a name="azure-functions-core-tools"></a>Azure Functions Core Tools
 
 U kunt de geschiedenis van een Orchestrator-exemplaar opschonen met behulp van de [Azure functions core tools](../functions-run-local.md) `durable purge-history` opdracht. Net als bij het tweede C#-voor beeld in de voor gaande sectie, wordt de geschiedenis van alle Orchestration-instanties die tijdens een opgegeven tijds interval zijn gemaakt, verwijderd. U kunt opschoonde instanties verder filteren op runtime status. De opdracht heeft verschillende para meters:
 
-* ** `created-after` (optioneel)**: Hiermee verwijdert u de geschiedenis van exemplaren die zijn gemaakt na deze datum/tijd (UTC). ISO 8601 ingedeelde datum/tijd geaccepteerd.
-* ** `created-before` (optioneel)**: Hiermee verwijdert u de geschiedenis van exemplaren die zijn gemaakt voor deze datum/tijd (UTC). ISO 8601 ingedeelde datum/tijd geaccepteerd.
-* ** `runtime-status` (optioneel)**: de geschiedenis van instanties met een bepaalde status opschonen (bijvoorbeeld uitgevoerd of voltooid). Kan meerdere (spaties gescheiden) statussen bieden.
-* ** `connection-string-setting` (optioneel)**: de naam van de toepassings instelling met de opslag Connection String die moet worden gebruikt. De standaardwaarde is `AzureWebJobsStorage`.
-* ** `task-hub-name` (optioneel)**: de naam van de Durable functions taak-hub die moet worden gebruikt. Standaard wordt de naam van de taak-hub in de [host.jsin](durable-functions-bindings.md#host-json) het bestand gebruikt.
+* **`created-after` (optioneel)**: Hiermee verwijdert u de geschiedenis van exemplaren die zijn gemaakt na deze datum/tijd (UTC). ISO 8601 ingedeelde datum/tijd geaccepteerd.
+* **`created-before` (optioneel)**: Hiermee verwijdert u de geschiedenis van exemplaren die zijn gemaakt voor deze datum/tijd (UTC). ISO 8601 ingedeelde datum/tijd geaccepteerd.
+* **`runtime-status` (optioneel)**: de geschiedenis van instanties met een bepaalde status opschonen (bijvoorbeeld uitgevoerd of voltooid). Kan meerdere (spaties gescheiden) statussen bieden.
+* **`connection-string-setting` (optioneel)**: de naam van de toepassings instelling met de opslag Connection String die moet worden gebruikt. De standaardwaarde is `AzureWebJobsStorage`.
+* **`task-hub-name` (optioneel)**: de naam van de Durable functions taak-hub die moet worden gebruikt. Standaard wordt de naam van de taak-hub in de [host.jsin](durable-functions-bindings.md#host-json) het bestand gebruikt.
 
 Met de volgende opdracht wordt de geschiedenis van alle mislukte instanties verwijderd die zijn gemaakt vóór 14 november 2018 om 7:35 uur (UTC).
 
@@ -1019,8 +1019,8 @@ func durable purge-history --created-before 2018-11-14T19:35:00.0000000Z --runti
 
 Met de [Azure functions core tools](../functions-run-local.md) `durable delete-task-hub` opdracht kunt u alle opslag artefacten verwijderen die zijn gekoppeld aan een bepaalde taak hub, waaronder Azure Storage-tabellen,-wacht rijen en-blobs. De opdracht heeft twee para meters:
 
-* ** `connection-string-setting` (optioneel)**: de naam van de toepassings instelling met de opslag Connection String die moet worden gebruikt. De standaardwaarde is `AzureWebJobsStorage`.
-* ** `task-hub-name` (optioneel)**: de naam van de Durable functions taak-hub die moet worden gebruikt. Standaard wordt de naam van de taak-hub in de [host.jsin](durable-functions-bindings.md#host-json) het bestand gebruikt.
+* **`connection-string-setting` (optioneel)**: de naam van de toepassings instelling met de opslag Connection String die moet worden gebruikt. De standaardwaarde is `AzureWebJobsStorage`.
+* **`task-hub-name` (optioneel)**: de naam van de Durable functions taak-hub die moet worden gebruikt. Standaard wordt de naam van de taak-hub in de [host.jsin](durable-functions-bindings.md#host-json) het bestand gebruikt.
 
 Met de volgende opdracht worden alle Azure Storage-gegevens verwijderd die zijn gekoppeld aan de `UserTest` taak hub.
 

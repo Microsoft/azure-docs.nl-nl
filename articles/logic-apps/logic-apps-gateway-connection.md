@@ -7,11 +7,11 @@ ms.reviewer: arthii, divswa, logicappspm
 ms.topic: article
 ms.date: 08/18/2020
 ms.openlocfilehash: 2dd086ccc45458299cf6b8a7ad83d023055c96ae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88661194"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009247"
 ---
 # <a name="connect-to-on-premises-data-sources-from-azure-logic-apps"></a>Verbinding maken met on-premises gegevensbronnen vanuit Azure Logic Apps
 
@@ -72,11 +72,11 @@ Nadat u de gateway op een lokale computer hebt geïnstalleerd, maakt u de Azure-
 
    ![On-premises gegevens gateway zoeken](./media/logic-apps-gateway-connection/search-for-on-premises-data-gateway.png)
 
-1. Selecteer **toevoegen**onder **on-premises gegevens gateways**.
+1. Selecteer **toevoegen** onder **on-premises gegevens gateways**.
 
    ![Nieuwe Azure-resource toevoegen voor gegevens gateway](./media/logic-apps-gateway-connection/add-azure-data-gateway-resource.png)
 
-1. Geef onder **verbindings gateway maken**deze informatie voor uw gateway bron op. Als u gereed bent, selecteert u **Maken**.
+1. Geef onder **verbindings gateway maken** deze informatie voor uw gateway bron op. Als u gereed bent, selecteert u **Maken**.
 
    | Eigenschap | Beschrijving |
    |----------|-------------|
@@ -103,7 +103,7 @@ Nadat u de gateway resource hebt gemaakt en uw Azure-abonnement aan deze resourc
 
 1. Selecteer **verbinding via on-premises gegevens gateway**.
 
-1. Selecteer in de lijst **abonnementen** onder **gateways**uw Azure-abonnement met de gateway resource die u wilt.
+1. Selecteer in de lijst **abonnementen** onder **gateways** uw Azure-abonnement met de gateway resource die u wilt.
 
    Als u toegang hebt tot een abonnement, kunt u kiezen uit verschillende Azure-abonnementen die elk zijn gekoppeld aan een andere gateway resource. Uw logische app en gateway resource hoeven niet te bestaan in hetzelfde Azure-abonnement.
 
@@ -128,7 +128,7 @@ Uw gateway verbinding is nu klaar voor gebruik door uw logische app.
 
 Als u de instellingen voor een gateway verbinding wilt bijwerken, kunt u de verbinding bewerken.
 
-1. Als u alle API-verbindingen voor uw logische app wilt vinden, selecteert u in het menu van de logische app onder **ontwikkelingsprogram ma's**de optie **API-verbindingen**.
+1. Als u alle API-verbindingen voor uw logische app wilt vinden, selecteert u in het menu van de logische app onder **ontwikkelingsprogram ma's** de optie **API-verbindingen**.
 
    ![Selecteer API-verbindingen in het menu van de logische app.](./media/logic-apps-gateway-connection/logic-app-api-connections.png)
 
@@ -140,7 +140,7 @@ Als u de instellingen voor een gateway verbinding wilt bijwerken, kunt u de verb
 Om te zoeken naar alle API-verbindingen die zijn gekoppeld aan uw Azure-abonnement:
 
 * Selecteer in het menu Azure Portal **alle services**  >  **Web**  >  **API-verbindingen**.
-* U kunt ook **alle resources**in het menu Azure Portal selecteren. Stel het **type** filter in op **API-verbinding**.
+* U kunt ook **alle resources** in het menu Azure Portal selecteren. Stel het **type** filter in op **API-verbinding**.
 
 <a name="change-delete-gateway-resource"></a>
 
@@ -150,7 +150,7 @@ Als u een andere gateway bron wilt maken, koppelt u de gateway-installatie aan e
 
 1. Selecteer in het menu Azure Portal **alle resources**, of zoek **alle resources** op een wille keurige pagina en selecteer deze. Zoek en selecteer de bron van de gateway.
 
-1. Als dit nog niet is geselecteerd, selecteert u in het menu van de gateway resource de optie **on-premises gegevens gateway**. Selecteer **verwijderen**op de werk balk van de gateway resource.
+1. Als dit nog niet is geselecteerd, selecteert u in het menu van de gateway resource de optie **on-premises gegevens gateway**. Selecteer **verwijderen** op de werk balk van de gateway resource.
 
    Bijvoorbeeld:
 

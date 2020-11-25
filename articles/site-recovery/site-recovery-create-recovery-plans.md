@@ -4,11 +4,11 @@ description: Meer informatie over het maken en aanpassen van herstel plannen voo
 ms.topic: how-to
 ms.date: 01/23/2020
 ms.openlocfilehash: 0dcde98e8dcaef12896c18c25429f0ba7b1b27d4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84485326"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009718"
 ---
 # <a name="create-and-customize-recovery-plans"></a>Herstelplannen maken en aanpassen
 
@@ -17,10 +17,10 @@ In dit artikel wordt beschreven hoe u een herstel plan voor failover kunt maken 
 ## <a name="create-a-recovery-plan"></a>Een herstelplan maken
 
 1. Selecteer in de Recovery Services kluis **herstel plannen (site Recovery)**  >  **+ herstel plan**.
-2. In **herstel plan maken**geeft u een naam op voor het plan.
+2. In **herstel plan maken** geeft u een naam op voor het plan.
 3. Kies een bron en doel op basis van de computers in het plan en selecteer **Resource Manager** voor het implementatie model. De bron locatie moet machines hebben die zijn ingeschakeld voor failover en herstel. 
 
-    **Cluster** | **Bron** | **Doel** 
+    **Failover** | **Bron** | **Doel** 
    --- | --- | ---
    Azure naar Azure | De Azure-regio selecteren | De Azure-regio selecteren
    VMware naar Azure | De configuratie server selecteren | Azure selecteren
@@ -28,14 +28,14 @@ In dit artikel wordt beschreven hoe u een herstel plan voor failover kunt maken 
    Hyper-V naar Azure | De naam van de Hyper-V-site selecteren | Azure selecteren
    Hyper-V (beheerd door VMM) naar Azure  | De VMM-server selecteren | Azure selecteren
   
-    Houd rekening met het volgende:
+    en let op het volgende:
     - U kunt een herstel plan gebruiken voor zowel failover naar Azure als failback vanuit Azure.
     - De bron locatie moet machines hebben die zijn ingeschakeld voor failover en herstel.
     - Een herstel plan kan machines met dezelfde bron en hetzelfde doel bevatten.
     - U kunt virtuele VMware-machines en virtuele Hyper-V-machines die worden beheerd door VMM, in hetzelfde abonnement toevoegen.
     - Virtuele VMware-machines en fysieke servers kunnen zich in hetzelfde abonnement bevindt.
 
-4. Selecteer in **virtuele machines voor items selecteren**de machines (of replicatie groep) die u aan het plan wilt toevoegen. Klik vervolgens op **OK**.
+4. Selecteer in **virtuele machines voor items selecteren** de machines (of replicatie groep) die u aan het plan wilt toevoegen. Klik vervolgens op **OK**.
     - Computers zijn standaard groep (groep 1) toegevoegd in het plan. Na een failover starten alle computers in deze groep op hetzelfde moment.
     - U kunt alleen computers selecteren in de bron-en doel locatie die u hebt opgegeven. 
 5. Klik op **OK** om het plan te maken.
@@ -44,9 +44,9 @@ In dit artikel wordt beschreven hoe u een herstel plan voor failover kunt maken 
 
 U maakt extra groepen en voegt machines toe aan verschillende groepen, zodat u per groep verschillende gedrag kunt opgeven. U kunt bijvoorbeeld opgeven wanneer computers in een groep moeten beginnen na een failover, of aangepaste acties per groep opgeven.
 
-1. Klik in **herstel plannen**met de rechter muisknop op het abonnement dat > **aanpassen**. Nadat u een plan hebt gemaakt, bevinden alle machines die u hebt toegevoegd, zich standaard in de standaard groep 1.
+1. Klik in **herstel plannen** met de rechter muisknop op het abonnement dat > **aanpassen**. Nadat u een plan hebt gemaakt, bevinden alle machines die u hebt toegevoegd, zich standaard in de standaard groep 1.
 2. Klik op **+ groep**. Een nieuwe groep wordt standaard genummerd in de volg orde waarin deze is toegevoegd. U kunt Maxi maal zeven groepen hebben.
-3. Selecteer de computer die u naar de nieuwe groep wilt verplaatsen, klik op **groep wijzigen**en selecteer vervolgens de nieuwe groep. U kunt ook met de rechter muisknop op de groeps naam > **beveiligde items**klikken en machines toevoegen aan de groep. Een computer of replicatie groep kan slechts deel uitmaken van één groep in een herstel plan.
+3. Selecteer de computer die u naar de nieuwe groep wilt verplaatsen, klik op **groep wijzigen** en selecteer vervolgens de nieuwe groep. U kunt ook met de rechter muisknop op de groeps naam > **beveiligde items** klikken en machines toevoegen aan de groep. Een computer of replicatie groep kan slechts deel uitmaken van één groep in een herstel plan.
 
 
 ## <a name="add-a-script-or-manual-action"></a>Een script of hand matige actie toevoegen
@@ -60,7 +60,7 @@ U kunt een herstel plan aanpassen door een script of hand matige actie toe te vo
 - Volg de instructies in [dit artikel](hyper-v-vmm-recovery-script.md)om een script te maken op de VMM-server.
 - Scripts kunnen worden toegepast tijdens de failover naar de secundaire site en tijdens het failback van de secundaire site naar de primaire locatie. Ondersteuning is afhankelijk van uw replicatie scenario:
     
-    **Scenario** | **Cluster** | **Herstel**
+    **Scenario** | **Failover** | **Herstel**
     --- | --- | --- 
     Azure naar Azure  | Runbook | Runbook
     VMware naar Azure | Runbook | NA 
@@ -71,12 +71,12 @@ U kunt een herstel plan aanpassen door een script of hand matige actie toe te vo
 1. Klik in het herstel plan op de stap waaraan de actie moet worden toegevoegd en geef op wanneer de actie moet worden uitgevoerd:
     1. Als u wilt dat de actie wordt uitgevoerd voordat de computers in de groep na een failover worden gestart, selecteert u voor **actie toevoegen**.
     1. Als u wilt dat de actie wordt uitgevoerd nadat de computers in de groep na een failover zijn gestart, selecteert u **post actie toevoegen**. Als u de positie van de actie wilt verplaatsen, selecteert u de knoppen **omhoog** of **omlaag** .
-2. Selecteer in **actie invoegen**de optie **script** of **hand matige actie**.
+2. Selecteer in **actie invoegen** de optie **script** of **hand matige actie**.
 3. Als u een hand matige actie wilt toevoegen, gaat u als volgt te werk:
     1. Typ een naam voor de actie en voer de actie-instructies in. De persoon die de failover uitvoert, ziet deze instructies.
     1. Geef op of u de hand matige actie wilt toevoegen voor alle typen failover (testen, failover, geplande failover (indien van toepassing)). Klik vervolgens op **OK**.
 4. Als u een script wilt toevoegen, gaat u als volgt te werk:
-    1. Als u een VMM-script wilt toevoegen, selecteert u **failover naar VMM-script**en typt u bij **pad naar script** het relatieve pad naar de share. Als de share zich bijvoorbeeld op \MSSCVMMLibrary\RPScripts bevindt \\ \<VMMServerName> , geeft u het pad op: \RPScripts\RPScript.PS1.
+    1. Als u een VMM-script wilt toevoegen, selecteert u **failover naar VMM-script** en typt u bij **pad naar script** het relatieve pad naar de share. Als de share zich bijvoorbeeld op \MSSCVMMLibrary\RPScripts bevindt \\ \<VMMServerName> , geeft u het pad op: \RPScripts\RPScript.PS1.
     1. Als u een Azure Automation-boek wilt toevoegen, geeft u het **Azure Automation account** op waarin het runbook zich bevindt en selecteert u het juiste **Azure-runbook-script**.
 5. Voer een testfailover van het herstel plan uit om ervoor te zorgen dat het script werkt zoals verwacht.
 

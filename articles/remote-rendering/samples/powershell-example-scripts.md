@@ -7,11 +7,11 @@ ms.date: 02/12/2020
 ms.topic: sample
 ms.custom: devx-track-azurepowershell
 ms.openlocfilehash: cb8cc98a020cb382a6941c1e410eab4543594629
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92279004"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009752"
 ---
 # <a name="example-powershell-scripts"></a>PowerShell-voorbeeldscripts
 
@@ -127,13 +127,13 @@ Een **alternatief configuratiebestand** gebruiken:
 .\RenderingSession.ps1 -ConfigFile D:\arr\myotherconfigFile.json
 ```
 
-U kunt de **afzonderlijke instellingen van het configuratiebestand overschrijven** :
+U kunt de **afzonderlijke instellingen van het configuratiebestand overschrijven**:
 
 ```PowerShell
 .\RenderingSession.ps1 -Region <region> -VmSize <vmsize> -MaxLeaseTime <hh:mm:ss>
 ```
 
-Als u alleen **een sessie wilt starten zonder polling** , kunt u het volgende gebruiken:
+Als u alleen **een sessie wilt starten zonder polling**, kunt u het volgende gebruiken:
 
 ```PowerShell
 .\RenderingSession.ps1 -CreateSession
@@ -225,13 +225,13 @@ Een **alternatief configuratiebestand** gebruiken:
 .\Conversion.ps1 -ConfigFile D:\arr\myotherconfigFile.json
 ```
 
-Als u alleen **een modelconversie wilt starten zonder polling** , kunt u het volgende gebruiken:
+Als u alleen **een modelconversie wilt starten zonder polling**, kunt u het volgende gebruiken:
 
 ```PowerShell
 .\Conversion.ps1 -ConvertAsset
 ```
 
-Met de volgende opdrachtregelopties kunt u de **afzonderlijke instellingen uit het configuratiebestand overschrijven** :
+Met de volgende opdrachtregelopties kunt u de **afzonderlijke instellingen uit het configuratiebestand overschrijven**:
 
 * **Id:** ConversionId gebruikt met GetConversionStatus
 * **ArrAccountId:** arrAccountId van accountSettings
@@ -262,7 +262,7 @@ Alleen gegevens uit het opgegeven LocalAssetDirectoryPath uploaden.
 .\Conversion.ps1 -Upload
 ```
 
-Het conversieproces van een model dat al is geüpload naar blobopslag alleen starten (niet Upload uitvoeren, niet de conversiestatus pollen). Het script retourneert een *conversionId* .
+Het conversieproces van een model dat al is geüpload naar blobopslag alleen starten (niet Upload uitvoeren, niet de conversiestatus pollen). Het script retourneert een *conversionId*.
 
 ```PowerShell
 .\Conversion.ps1 -ConvertAsset

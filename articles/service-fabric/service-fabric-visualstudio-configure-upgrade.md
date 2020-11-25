@@ -6,11 +6,11 @@ ms.topic: conceptual
 ms.date: 06/29/2017
 ms.author: mikhegn
 ms.openlocfilehash: 1db6cea0af229664b07e88463e279b2a64d7e267
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86256047"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008511"
 ---
 # <a name="configure-the-upgrade-of-a-service-fabric-application-in-visual-studio"></a>De upgrade van een Service Fabric-toepassing in Visual Studio configureren
 Visual Studio Tools voor Azure Service Fabric bieden upgrade ondersteuning voor het publiceren naar lokale of externe clusters. Er zijn drie scenario's waarin u uw toepassing wilt bijwerken naar een nieuwere versie in plaats van de toepassing te vervangen tijdens het testen en fout opsporing:
@@ -22,7 +22,7 @@ Visual Studio Tools voor Azure Service Fabric bieden upgrade ondersteuning voor 
 ## <a name="parameters-needed-to-upgrade"></a>Vereiste para meters voor upgrade
 U kunt kiezen uit twee typen implementatie: standaard of upgrade. Bij een reguliere implementatie worden alle eerdere implementatie-informatie en-gegevens op het cluster gewist, terwijl de implementatie van een upgrade wordt behouden. Wanneer u een Service Fabric-toepassing in Visual Studio bijwerkt, moet u de para meters voor de toepassings upgrade en het status controlebeleid opgeven. De para meters voor de upgrade van de toepassing helpen de upgrade te beheren, terwijl het status controlebeleid bepaalt of de upgrade is geslaagd. Zie [service Fabric Application upgrade: upgrade-para meters](service-fabric-application-upgrade-parameters.md) voor meer informatie.
 
-Er zijn drie upgrade modi: *bewaakt*, *UnmonitoredAuto*en *UnmonitoredManual*.
+Er zijn drie upgrade modi: *bewaakt*, *UnmonitoredAuto* en *UnmonitoredManual*.
 
 * Met een bewaakte upgrade wordt de upgrade en de status controle van de toepassing geautomatiseerd.
 * Met een UnmonitoredAuto-upgrade wordt de upgrade geautomatiseerd, maar wordt de status controle van de toepassing overgeslagen.

@@ -7,11 +7,11 @@ ms.date: 07/08/2020
 ms.reviewer: mahender
 ms.custom: seodec18, fasttrack-edit, has-adal-ref
 ms.openlocfilehash: 09460e4e38ea1842d58ecf3a9b3cd00a072c271e
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93286900"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008443"
 ---
 # <a name="authentication-and-authorization-in-azure-app-service-and-azure-functions"></a>Verificatie en autorisatie in Azure App Service en Azure Functions
 
@@ -33,7 +33,7 @@ Voor beveiligde verificatie en autorisatie is grondige inzichten van beveiliging
 
 Zie [gebruikers verificatie en autorisatie voor mobiele apps met Azure app service](/previous-versions/azure/app-service-mobile/app-service-mobile-auth)voor meer informatie over systeem eigen mobiele apps.
 
-## <a name="how-it-works"></a>Hoe werkt het?
+## <a name="how-it-works"></a>Uitleg
 
 ### <a name="on-windows"></a>In Windows
 
@@ -90,7 +90,7 @@ App Service maakt gebruik van [federatieve identiteiten](https://en.wikipedia.or
 | Provider | Aanmeldings eindpunt |
 | - | - |
 | [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md) | `/.auth/login/aad` |
-| [Micro soft-account](../active-directory/develop/v2-overview.md) | `/.auth/login/microsoftaccount` |
+| [Microsoft-account](../active-directory/develop/v2-overview.md) | `/.auth/login/microsoftaccount` |
 | [Facebook](https://developers.facebook.com/docs/facebook-login) | `/.auth/login/facebook` |
 | [Google](https://developers.google.com/identity/choose-auth) | `/.auth/login/google` |
 | [Twitter](https://developer.twitter.com/en/docs/basics/authentication) | `/.auth/login/twitter` |

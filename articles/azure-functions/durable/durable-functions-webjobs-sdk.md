@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 04/25/2018
 ms.author: azfuncdf
 ms.openlocfilehash: 826e475eb71563b52d687903aeac4ec936e267f6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87092997"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009497"
 ---
 # <a name="how-to-run-durable-functions-as-webjobs"></a>Durable Functions uitvoeren als webjobs
 
@@ -19,7 +19,7 @@ Durable Functions maakt standaard gebruik van de Azure Functions runtime voor he
 
 In versie 3. x van de webjobs SDK is de host een implementatie van `IHost` en in versie 2. x gebruikt u het- `JobHost` object.
 
-Het voor beeld van koppelen Durable Functions is beschikbaar in een webjobs SDK 2. x-versie: down load of kloon de [Durable functions opslagplaats](https://github.com/azure/azure-functions-durable-extension/)en check *v1* -vertakking uit en ga naar de map met voor *beelden van \\ webjobssdk \\ * -koppeling.
+Het voor beeld van koppelen Durable Functions is beschikbaar in een webjobs SDK 2. x-versie: down load of kloon de [Durable functions opslagplaats](https://github.com/azure/azure-functions-durable-extension/)en check *v1* -vertakking uit en ga naar de map met voor *beelden van \\ webjobssdk \\* -koppeling.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -33,7 +33,7 @@ Als u de stappen in dit artikel wilt uitvoeren:
 
 * [Installeer Visual Studio 2019](/visualstudio/install/) met de werk belasting van **Azure Development** .
 
-  Als u Visual Studio al hebt, maar deze werk belasting niet hebt, voegt u de werk belasting toe door **extra**hulp  >  **middelen en functies**te selecteren.
+  Als u Visual Studio al hebt, maar deze werk belasting niet hebt, voegt u de werk belasting toe door **extra** hulp  >  **middelen en functies** te selecteren.
 
   (In plaats daarvan kunt u [Visual Studio code](https://code.visualstudio.com/) gebruiken, maar sommige instructies zijn specifiek voor Visual Studio.)
 

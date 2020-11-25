@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 08/28/2019
 ms.openlocfilehash: 20d55de7ef0f7b7f49b922409f8cb61874fae0f6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91448154"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008970"
 ---
 # <a name="connect-configuration-manager-to-azure-monitor"></a>Configuration Manager verbinden met Azure Monitor
 U kunt uw micro soft endpoint Configuration Manager-omgeving verbinden met Azure Monitor om gegevens van de apparaatgegevens te synchroniseren en naar deze verzamelingen te verwijzen in Azure Monitor en Azure Automation.  
@@ -98,17 +98,17 @@ Raadpleeg het artikel [Windows-computers verbinden met Azure monitor in azure](a
 
     3. Geef de naam van de toepassing op voor de **toepassings** naam.
 
-    4. Geef voor **client-id**de toepassings-id op van de gemaakte Azure AD-app die u eerder hebt gemaakt.
+    4. Geef voor **client-id** de toepassings-id op van de gemaakte Azure AD-app die u eerder hebt gemaakt.
 
-    5. Geef voor **geheime sleutel**de geheime sleutel van de client op van de Azure AD-app die u hebt gemaakt.
+    5. Geef voor **geheime sleutel** de geheime sleutel van de client op van de Azure AD-app die u hebt gemaakt.
 
     6. Geef de verval datum van de sleutel op voor het verlopen van een **geheime sleutel**.
 
-    7. Geef de App-ID-URI op van de **URI**van de app die u eerder hebt gemaakt.
+    7. Geef de App-ID-URI op van de **URI** van de app die u eerder hebt gemaakt.
 
     8. Selecteer **controleren** en rechts de resultaten moeten **zijn geverifieerd**.
 
-8. Controleer op de pagina **configuratie** de informatie voor het controleren van de velden **Azure-abonnementen**, **Azure-resource groep**en **Operations Management Suite-werk ruimte** , die aangeven dat de Azure AD-toepassing voldoende machtigingen heeft in de resource groep. Als de velden leeg zijn, duidt dit erop dat uw toepassing niet over de vereiste rechten beschikt. Selecteer de apparaat-verzamelingen die u wilt verzamelen en door sturen naar de werk ruimte en selecteer vervolgens **toevoegen**.
+8. Controleer op de pagina **configuratie** de informatie voor het controleren van de velden **Azure-abonnementen**, **Azure-resource groep** en **Operations Management Suite-werk ruimte** , die aangeven dat de Azure AD-toepassing voldoende machtigingen heeft in de resource groep. Als de velden leeg zijn, duidt dit erop dat uw toepassing niet over de vereiste rechten beschikt. Selecteer de apparaat-verzamelingen die u wilt verzamelen en door sturen naar de werk ruimte en selecteer vervolgens **toevoegen**.
 
 9. Bekijk de opties op de pagina **Bevestig de instellingen** en selecteer **volgende** om te beginnen met het maken en configureren van de verbinding.
 
@@ -121,7 +121,7 @@ Nadat u Configuration Manager aan Azure Monitor hebt gekoppeld, kunt u verzameli
 Als een wacht woord of geheime sleutel van de client verloopt of verloren is gegaan, moet u de Log Analytics verbindings eigenschappen hand matig bijwerken.
 
 1. Selecteer in de werk ruimte **beheer** van Configuration Manager **Cloud Services** en selecteer vervolgens **OMS-connector** om de **Eigenschappen** pagina van OMS-verbinding te openen.
-2. Klik op deze pagina op het tabblad **Azure Active Directory** om uw **Tenant**, **client-id**, **verval datum van client geheim**te bekijken. **Controleer** de **geheime sleutel** van uw client als deze is verlopen.
+2. Klik op deze pagina op het tabblad **Azure Active Directory** om uw **Tenant**, **client-id**, **verval datum van client geheim** te bekijken. **Controleer** de **geheime sleutel** van uw client als deze is verlopen.
 
 ## <a name="import-collections"></a>Verzamelingen importeren
 

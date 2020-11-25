@@ -2,27 +2,28 @@
 title: Azure Media Services v3-accounts beheren | Microsoft Docs
 description: Als u media-inhoud in azure wilt beheren, versleutelen, coderen, analyseren en streamen, moet u een Media Services-account maken. In dit artikel wordt uitgelegd hoe u Azure Media Services v3-accounts beheert.
 services: media-services
-documentationcenter: ''
 author: IngridAtMicrosoft
 manager: femila
 editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: conceptual
-ms.date: 08/31/2020
+ms.date: 11/05/2020
 ms.author: inhenkel
-ms.openlocfilehash: 7c2cbaaf4866edc20f9745abe6759861db7834c3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 77453aa2d8989a0542beffb1c88ebe7ee53d1506
+ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89291327"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "96008324"
 ---
 # <a name="manage-azure-media-services-v3-accounts"></a>Azure Media Services v3-accounts beheren
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
 Als u media-inhoud in azure wilt beheren, versleutelen, coderen, analyseren en streamen, moet u een Media Services-account maken. Als u een Media Services-account gaat maken, moet u de naam van een Azure Storage-accountresource opgeven. Het opgegeven opslagaccount wordt gekoppeld aan uw Media Services-account. Het Media Services-account en alle gekoppelde opslagaccounts moeten zich in hetzelfde Azure-abonnement bevinden. Zie [opslag accounts](storage-account-concept.md)voor meer informatie.
+
+[!INCLUDE [account creation note](./includes/note-2020-05-01-account-creation.md)]
 
 ## <a name="moving-a-media-services-account-between-subscriptions"></a>Een Media Services account verplaatsen tussen abonnementen 
 
@@ -39,7 +40,7 @@ Als u een Media Services account naar een nieuw abonnement wilt verplaatsen, moe
 > [!IMPORTANT]
 > Start het streaming-eind punt niet voordat de verplaatsing is voltooid.
 
-### <a name="troubleshoot"></a>Problemen oplossen 
+### <a name="troubleshoot"></a>Problemen oplossen
 
 Als een Media Services account of een gekoppeld Azure Storage account wordt ' losgekoppeld ' nadat de resource groep is verplaatst, roteert u de sleutels van het opslag account. Als door het draaien van de sleutels van het opslag account de status ' verbinding verbroken ' van het Media Services account niet wordt opgelost, wordt er een nieuwe ondersteunings aanvraag in het menu ' ondersteuning en probleem oplossing ' in het Media Services account opgeslagen.  
 

@@ -8,11 +8,11 @@ ms.date: 09/16/2020
 ms.author: ccompy
 ms.custom: mvc, seodec18
 ms.openlocfilehash: 27c9198558a730d0af49077d6f5baa6db4789416
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92503518"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009548"
 ---
 # <a name="create-and-use-an-internal-load-balancer-app-service-environment"></a>Een App Service-omgeving voor een interne load balancer maken en gebruiken 
 
@@ -96,7 +96,7 @@ Het maken van een app in een ILB AS-omgeving werkt hetzelfde als het maken van e
 
 ### <a name="web-jobs-functions-and-the-ilb-ase"></a>WebJobs, Functions en de ILB AS-omgeving 
 
-Een ILB AS-omgeving biedt ondersteuning voor zowel Functions als WebJobs. Als u echter met deze wilt werken via de portal, hebt u netwerktoegang tot de SCM-site nodig.  Dit betekent dat de host van de browser zich in het virtuele netwerk moet bevinden of ermee moet zijn verbonden. Als uw ILB-AS-omgeving een domeinnaam heeft die niet eindigt op *appserviceenvironment.net* , moet u uw browser vragen het HTTPS-certificaat te vertrouwen dat wordt gebruikt door uw SCM-site.
+Een ILB AS-omgeving biedt ondersteuning voor zowel Functions als WebJobs. Als u echter met deze wilt werken via de portal, hebt u netwerktoegang tot de SCM-site nodig.  Dit betekent dat de host van de browser zich in het virtuele netwerk moet bevinden of ermee moet zijn verbonden. Als uw ILB-AS-omgeving een domeinnaam heeft die niet eindigt op *appserviceenvironment.net*, moet u uw browser vragen het HTTPS-certificaat te vertrouwen dat wordt gebruikt door uw SCM-site.
 
 ## <a name="dns-configuration"></a>DNS-configuratie 
 
@@ -125,11 +125,11 @@ De zone met de naam &lt;ASE-naam&gt;.appserviceenvironment.net is wereldwijd uni
 
 Elke app die wordt gemaakt, heeft twee eindpunten. In een ILB ASE-omgeving hebt u *&lt;app-naam&gt;.&lt;Domein voor ILB AS-omgeving&gt;* en *&lt;app-naam&gt;.scm.&lt;Domein voor ILB AS-omgeving&gt;* . 
 
-De SCM-sitenaam leidt naar de Kudu-console, genaamd de **Geavanceerde portal** , binnen Azure Portal. Met behulp van de Kudu-console kunt u omgevingsvariabelen bekijken, de schijf verkennen, een console gebruiken, en nog veel meer. Zie [Kudu-console voor Azure App Service][Kudu] voor meer informatie. 
+De SCM-sitenaam leidt naar de Kudu-console, genaamd de **Geavanceerde portal**, binnen Azure Portal. Met behulp van de Kudu-console kunt u omgevingsvariabelen bekijken, de schijf verkennen, een console gebruiken, en nog veel meer. Zie [Kudu-console voor Azure App Service][Kudu] voor meer informatie. 
 
 Op internet gebaseerde CI-systemen, zoals GitHub en Azure DevOps, werken nog steeds met een ILB AS-omgeving, als de buildagent toegankelijk is via internet en zich op hetzelfde netwerk bevindt als de ILB AS-omgeving. Als de buildagent dus, in het geval van Azure DevOps, is gemaakt in hetzelfde VNET als de ILB AS-omgeving (verschillende subnetten vormen geen probleem), kan met deze agent code worden opgehaald uit Azure DevOps-git en worden geïmplementeerd in de ILB AS-omgeving. Als u niet zelf een buildagent wilt maken, moet u een CI-systeem met een pull-model gebruiken, zoals Dropbox.
 
-De publicatie-eindpunten voor apps in een ILB AS-omgeving maken gebruik van het domein waarmee de ILB AS-omgeving is gemaakt. Dit domein wordt weergegeven in het publicatieprofiel van de app en in de portalblade van de app ( **Overzicht** > **Essentials** en ook **Eigenschappen** ). Als u een ILB-AS-omgeving met het domeinachtervoegsel *&lt;ASE name&gt;. appserviceenvironment.net* en een app met de naam *mytest* hebt, gebruikt u *mytest.&lt;ASE name&gt;. appserviceenvironment.net* voor FTP en *mytest.scm.contoso.net* voor webimplementatie.
+De publicatie-eindpunten voor apps in een ILB AS-omgeving maken gebruik van het domein waarmee de ILB AS-omgeving is gemaakt. Dit domein wordt weergegeven in het publicatieprofiel van de app en in de portalblade van de app (**Overzicht** > **Essentials** en ook **Eigenschappen**). Als u een ILB-AS-omgeving met het domeinachtervoegsel *&lt;ASE name&gt;. appserviceenvironment.net* en een app met de naam *mytest* hebt, gebruikt u *mytest.&lt;ASE name&gt;. appserviceenvironment.net* voor FTP en *mytest.scm.contoso.net* voor webimplementatie.
 
 ## <a name="configure-an-ilb-ase-with-a-waf-device"></a>Een ILB AS-omgeving configureren met een WAF-apparaat ##
 

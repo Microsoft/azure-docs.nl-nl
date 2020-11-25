@@ -10,16 +10,16 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/03/2020
 ms.author: aahi
-ms.openlocfilehash: 5a85086ea8d969dc70f4cd24b25a00765da285eb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9b77474d63cb47b561f9913ff06be5718aba4152
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89425803"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96009637"
 ---
 # <a name="deploy-the-speech-service-container-to-azure-container-instances"></a>De speech service-container implementeren op Azure Container Instances
 
-Meer informatie over het implementeren van de Cognitive Services [Speech Service](speech-container-howto.md) -container in azure [container instances](https://docs.microsoft.com/azure/container-instances/). Deze procedure illustreert het maken van een Azure Speech Service-Resource. Vervolgens bespreken we het verzamelen van de bijbehorende container installatie kopie. Ten slotte markeren we de mogelijkheid om de indeling van de twee uit een browser uit te oefenen. Door gebruik te maken van containers kan de aandacht van de ontwikkel aars van de infra structuur afnemen in plaats van de ontwikkeling van toepassingen te richten.
+Meer informatie over het implementeren van de Cognitive Services [Speech Service](speech-container-howto.md) -container in azure [container instances](../../container-instances/index.yml). Deze procedure illustreert het maken van een Azure Speech Service-Resource. Vervolgens bespreken we het verzamelen van de bijbehorende container installatie kopie. Ten slotte markeren we de mogelijkheid om de indeling van de twee uit een browser uit te oefenen. Door gebruik te maken van containers kan de aandacht van de ontwikkel aars van de infra structuur afnemen in plaats van de ontwikkeling van toepassingen te richten.
 
 [!INCLUDE [Prerequisites](../containers/includes/container-preview-prerequisites.md)]
 

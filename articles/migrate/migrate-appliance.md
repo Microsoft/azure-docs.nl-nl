@@ -4,11 +4,11 @@ description: Biedt een samen vatting van de ondersteuning voor het Azure Migrate
 ms.topic: conceptual
 ms.date: 05/04/2020
 ms.openlocfilehash: ac3c90f1c09d290d5112a0e0d7abc5218788caf7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91450039"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008698"
 ---
 # <a name="azure-migrate-appliance"></a>Azure Migrate-apparaat
 
@@ -69,8 +69,8 @@ De volgende tabel bevat een overzicht van de Azure Migrate vereisten voor VMware
 **Detectie limieten** | Een apparaat kan tot 5000 Hyper-V-Vm's detecteren.<br/> Een apparaat kan verbinding maken met Maxi maal 300 Hyper-V-hosts.
 **VHD-sjabloon** | Gezipte map inclusief VHD. Downloaden van de portal of [hier](https://go.microsoft.com/fwlink/?linkid=2140422).<br/><br/> De download grootte is 8,91 GB.<br/><br/> De sjabloon voor het gedownloade apparaat wordt geleverd met een Windows Server 2016-evaluatie licentie, die voor 180 dagen geldig is. Als de evaluatie periode bijna is verlopen, raden wij aan dat u een nieuw apparaat downloadt en implementeert, of dat u de licentie voor het besturings systeem van de apparaat-VM activeert.
 **PowerShell-script** | Raadpleeg dit [artikel](./deploy-appliance-script.md#set-up-the-appliance-for-hyper-v).<br/><br/> 
-**Software/hardware***   |  Het apparaat moet worden uitgevoerd op de computer met Windows Server 2016, 16 GB RAM, 8 Vcpu's, ongeveer 80 GB aan schijf opslag en een externe virtuele switch.<br/> Het apparaat heeft een statisch of dynamisch IP-adres nodig en vereist Internet toegang, hetzij rechtstreeks hetzij via een proxy.<br/><br/> Als u het apparaat als een Hyper-V-VM uitvoert, hebt u voldoende resources op de Hyper-V-host nodig om hardwarevereisten toe te wijzen.<br/><br/> Als u het apparaat op een fysieke computer uitvoert, moet u ervoor zorgen dat Windows Server 2016 wordt uitgevoerd en voldoet aan de hardwarevereisten. 
-**Vereisten voor Hyper-V** | Als u het apparaat met de VHD-sjabloon implementeert, is de virtuele machine van het apparaat van Azure Migrate Hyper-V VM versie 5,0.<br/><br/> Op de Hyper-V-host moet Windows Server 2012 R2 of later worden uitgevoerd. 
+**Software/hardware** _   |  Het apparaat moet worden uitgevoerd op de computer met Windows Server 2016, 16 GB RAM, 8 Vcpu's, ongeveer 80 GB aan schijf opslag en een externe virtuele switch.<br/> Het apparaat heeft een statisch of dynamisch IP-adres nodig en vereist Internet toegang, hetzij rechtstreeks hetzij via een proxy.<br/><br/> Als u het apparaat als een Hyper-V-VM uitvoert, hebt u voldoende resources op de Hyper-V-host nodig om hardwarevereisten toe te wijzen.<br/><br/> Als u het apparaat op een fysieke computer uitvoert, moet u ervoor zorgen dat Windows Server 2016 wordt uitgevoerd en voldoet aan de hardwarevereisten. 
+_ *Vereisten voor Hyper-V** | Als u het apparaat met de VHD-sjabloon implementeert, is de virtuele machine van het apparaat van Azure Migrate Hyper-V VM versie 5,0.<br/><br/> Op de Hyper-V-host moet Windows Server 2012 R2 of later worden uitgevoerd. 
 **Hashwaarde-VHD** | [Verifiëren](tutorial-discover-hyper-v.md#verify-security) Hash-waarden van VHD-sjabloon.
 **Hash-waarde-Power shell-script** | [Controleer](deploy-appliance-script.md#verify-file-security) de hash-waarden van het Power shell-script.
 
@@ -152,8 +152,8 @@ VM-id | vm.Config. InstanceUuid
 VM-naam | vm.Config. Naam
 vCenter Server-ID | VMwareClient. instance. uuid
 VM-beschrijving | vm.Summary.Config. Aantekening
-Licentie product naam | VM. Client. ServiceContent. about. LicenseProductName
-Besturingssysteemtype | VM. SummaryConfig.GuestFullName
+Licentie product naam | VM. client. ServiceContent. about. LicenseProductName
+Besturingssysteemtype | VM. SummaryConfig. GuestFullName
 Opstarttype | vm.Config. Firmware
 Aantal kerngeheugens | vm.Config. Hardware. NumCPU
 Geheugen (MB) | vm.Config. Hardware. MemoryMB
@@ -175,12 +175,12 @@ Schrijf doorvoer (MB per seconde) | virtualDisk. write. Average
 **Details van de NIC** | 
 Naam van netwerk adapter | adapter. Prestatie
 MAC-adres | ((VirtualEthernetCard) NIC). MacAddress
-IPv4-adressen | VM. Guest.Net
-IPv6-adressen | VM. Guest.Net
+IPv4-adressen | vm.Guest.Net
+IPv6-adressen | vm.Guest.Net
 Lees doorvoer (MB per seconde) | net. received. Average
 Schrijf doorvoer (MB per seconde) | net. verzonden. gemiddeld
 **Details van configuratiepad** | 
-Naam | verpakking. GetType (). Naam
+Name | verpakking. GetType (). Naam
 Type onderliggend object | verpakking. ChildType
 Referentie Details | verpakking. MoRef
 Details van bovenliggend item | Container. Parent
@@ -227,7 +227,7 @@ Dit zijn de functies die het apparaat verzamelt van elke virtuele machine die is
 
 **Gegevens**  | **Power shell-cmdlet** | **Eigenschap**
 --- | --- | ---
-Naam  | Get-WindowsFeature  | Naam
+Name  | Get-WindowsFeature  | Name
 Onderdeel type | Get-WindowsFeature  | FeatureType
 Bovenliggend  | Get-WindowsFeature  | Bovenliggend
 
@@ -237,7 +237,7 @@ Dit zijn de SQL Server-meta gegevens die het apparaat verzamelt van Vm's waarop 
 
 **Gegevens**  | **Registerlocatie**  | **Sleutel**
 --- | --- | ---
-Naam  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL  | installedInstance
+Name  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL  | installedInstance
 Editie  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \Setup  | Editie 
 Service Pack  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \Setup  | SP
 Versie  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \Setup  | Versie 
@@ -248,7 +248,7 @@ Hier ziet u de gegevens van het besturings systeem die door het apparaat worden 
 
 Gegevens  | WMI-klasse  | WMI-klasse-eigenschap
 --- | --- | ---
-Naam  | Win32_operatingsystem  | Caption
+Name  | Win32_operatingsystem  | Caption
 Versie  | Win32_operatingsystem  | Versie
 Architectuur  | Win32_operatingsystem  | OSArchitecture
 
@@ -258,7 +258,7 @@ Hier zijn de geïnstalleerde toepassings gegevens die het apparaat verzamelt van
 
 Gegevens  | Opdracht
 --- | --- 
-Naam | rpm, met dpkg-query, uitlijnen
+Name | rpm, met dpkg-query, uitlijnen
 Versie | rpm, met dpkg-query, uitlijnen
 Provider | rpm, met dpkg-query, uitlijnen
 
@@ -268,7 +268,7 @@ Hier ziet u de gegevens van het besturings systeem die door het apparaat worden 
 
 **Gegevens**  | **Opdracht** 
 --- | --- | ---
-Naam <br/> versie | Verzameld van een of meer van de volgende bestanden:<br/> <br/>/etc/os-release  <br> /usr/lib/os-release  <br> /etc/enterprise-release  <br> /etc/redhat-release  <br> /etc/oracle-release  <br> /etc/SuSE-release  <br> /etc/lsb-release  <br> /etc/debian_version 
+Name <br/> versie | Verzameld van een of meer van de volgende bestanden:<br/> <br/>/etc/os-release  <br> /usr/lib/os-release  <br> /etc/enterprise-release  <br> /etc/redhat-release  <br> /etc/oracle-release  <br> /etc/SuSE-release  <br> /etc/lsb-release  <br> /etc/debian_version 
 Architectuur | uname
 
 
@@ -386,7 +386,7 @@ FQDN | Win32_ComputerSystem | Domein, naam, PartOfDomain
 Aantal processor kernen | Win32_PRocessor | NumberOfCores
 Toegewezen geheugen | Win32_ComputerSystem | TotalPhysicalMemory
 BIOS-serie nummer | Win32_ComputerSystemProduct | Nummer
-BIOS-GUID | Win32_ComputerSystemProduct | MEE
+BIOS-GUID | Win32_ComputerSystemProduct | UUID
 Opstarttype | Win32_DiskPartition | Controleren op partitie met type = **GPT: systeem** voor EFI/BIOS
 Naam van besturingssysteem | Win32_OperatingSystem | Caption
 Besturingssysteemversie |Win32_OperatingSystem | Versie
@@ -471,7 +471,7 @@ De register sleutel verwijderen:
 
 1. Open de REGI ster-editor op de computer waarop het apparaat wordt uitgevoerd.
 2. Navigeer naar **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AzureAppliance**.
-3. Verwijder de register sleutel auto **Update**die eerder is gemaakt om automatisch bijwerken uit te scha kelen.
+3. Verwijder de register sleutel auto **Update** die eerder is gemaakt om automatisch bijwerken uit te scha kelen.
 
 Als u van apparaat Configuration Manager wilt inschakelen, nadat de detectie is voltooid:
 
@@ -485,7 +485,7 @@ Als u van apparaat Configuration Manager wilt inschakelen, nadat de detectie is 
 U kunt de versie van het toestel nummer controleren aan de hand van een van de volgende methoden:
 
 - Ga in configuratie beheer voor apparaten naar het paneel **vereisten instellen** .
-- Op de apparaatapparaat, in **Control Panel**  >  **Program ma's en onderdelen**van het configuratie scherm.
+- Op de apparaatapparaat, in **Control Panel**  >  **Program ma's en onderdelen** van het configuratie scherm.
 
 Controleren van de configuratie manager van het toestel:
 
@@ -518,7 +518,7 @@ Als u een oudere versie voor een van de onderdelen uitvoert, moet u de service v
 
 5. Controleer of de uitvoer van de opdracht overeenkomt met de invoer van de hashwaarde voor de service in het bestand (bijvoorbeeld de bovenstaande MD5-hash-waarde).
 6. Voer nu het MSI-bestand uit om de service te installeren. Het is een stille installatie en het installatie venster wordt gesloten nadat het is uitgevoerd.
-7. Nadat de installatie is voltooid, controleert u de versie van de **Control panel**service in de  >  **Program ma's en onderdelen**van het configuratie scherm. De service versie moet nu worden bijgewerkt naar de meest recente weer gave in het JSON-bestand.
+7. Nadat de installatie is voltooid, controleert u de versie van de **Control panel** service in de  >  **Program ma's en onderdelen** van het configuratie scherm. De service versie moet nu worden bijgewerkt naar de meest recente weer gave in het JSON-bestand.
 
 
 

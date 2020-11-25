@@ -7,15 +7,15 @@ ms.reviewer: logicappspm
 ms.topic: article
 ms.date: 11/06/2020
 ms.openlocfilehash: 4070f373175f3497156ced011a57e2ed7bd6e770
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94364255"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009769"
 ---
 # <a name="overview-automate-deployment-for-azure-logic-apps-by-using-azure-resource-manager-templates"></a>Overzicht: de implementatie voor Azure Logic Apps automatiseren met behulp van Azure Resource Manager sjablonen
 
-Wanneer u klaar bent om het maken en implementeren van uw logische app te automatiseren, kunt u de onderliggende werk stroom definitie van uw logische app uitbreiden naar een [Azure Resource Manager sjabloon](../azure-resource-manager/management/overview.md). Met deze sjabloon worden de infra structuur, bronnen, para meters en andere gegevens gedefinieerd voor het inrichten en implementeren van uw logische app. Door para meters te definiëren voor waarden die variëren tijdens de implementatie, ook wel bekend als *parameterizing* , kunt u regel matig Logic Apps implementeren op basis van verschillende implementatie behoeften.
+Wanneer u klaar bent om het maken en implementeren van uw logische app te automatiseren, kunt u de onderliggende werk stroom definitie van uw logische app uitbreiden naar een [Azure Resource Manager sjabloon](../azure-resource-manager/management/overview.md). Met deze sjabloon worden de infra structuur, bronnen, para meters en andere gegevens gedefinieerd voor het inrichten en implementeren van uw logische app. Door para meters te definiëren voor waarden die variëren tijdens de implementatie, ook wel bekend als *parameterizing*, kunt u regel matig Logic Apps implementeren op basis van verschillende implementatie behoeften.
 
 Als u bijvoorbeeld in omgevingen implementeert voor ontwikkeling, testen en productie, gebruikt u waarschijnlijk verschillende verbindings reeksen voor elke omgeving. U kunt sjabloon parameters declareren die verschillende verbindings reeksen accepteren en deze teken reeksen vervolgens opslaan in een afzonderlijk [parameter bestand](../azure-resource-manager/templates/parameter-files.md). Op die manier kunt u deze waarden wijzigen zonder dat u de sjabloon hoeft bij te werken en opnieuw te implementeren. Voor scenario's waarbij u parameter waarden hebt die gevoelig zijn of moeten worden beveiligd, zoals wacht woorden en geheimen, kunt u deze waarden opslaan in [Azure Key Vault](../azure-resource-manager/templates/key-vault-parameter.md) en uw para meters bestand laten ophalen die waarden bevatten. In deze scenario's zou u echter opnieuw implementeren om de huidige waarden op te halen.
 
@@ -331,11 +331,11 @@ Dit zijn de kenmerken die specifiek zijn voor de resource definitie van de logis
 | Kenmerk | Vereist | Type | Beschrijving |
 |-----------|----------|------|-------------|
 | `state` | Ja | Tekenreeks | De status van uw logische app bij implementatie waarbij `Enabled` uw logische app Live is en `Disabled` betekent dat uw logische app niet actief is. Als u bijvoorbeeld niet klaar bent voor uw logische app om live te gaan, maar een concept versie wilt implementeren, kunt u de optie gebruiken `Disabled` . |
-| `integrationAccount` | Nee | Object | Als uw logische app een integratie account gebruikt dat artefacten voor Business-to-Business-scenario's (B2B) opslaat, bevat dit object het `id` kenmerk, waarmee de id voor het integratie account wordt opgegeven. |
+| `integrationAccount` | No | Object | Als uw logische app een integratie account gebruikt dat artefacten voor Business-to-Business-scenario's (B2B) opslaat, bevat dit object het `id` kenmerk, waarmee de id voor het integratie account wordt opgegeven. |
 | `definition` | Ja | Object | De onderliggende werk stroom definitie van uw logische app, die hetzelfde is als het object dat wordt weer gegeven in de code weergave, en dat volledig wordt beschreven in het onderwerp [schema verwijzing voor werk stroom definitie taal](../logic-apps/logic-apps-workflow-definition-language.md) . In deze werk stroom definitie `parameters` declareert het object para meters voor de waarden die moeten worden gebruikt in de runtime van de logische app. Zie [werk stroom definitie en-para meters](#workflow-definition-parameters)voor meer informatie. <p><p>Als u de kenmerken in de werk stroom definitie van de logische app wilt weer geven, schakelt u over naar de code weergave in de Azure Portal of Visual Studio of gebruikt u een hulp programma zoals [Azure resource Explorer](https://resources.azure.com). |
-| `parameters` | Nee | Object | De [waarden van de werk stroom definitie parameter](#workflow-definition-parameters) die moeten worden gebruikt tijdens de runtime van de logische app. De parameter definities voor deze waarden worden weer gegeven in het [Parameter object van uw werk stroom definitie](#workflow-definition-parameters). Als uw logische app [beheerde connectors](../connectors/apis-list.md) gebruikt voor toegang tot andere services en systemen, bevat dit object ook een `$connections` object waarmee de verbindings waarden worden ingesteld die tijdens runtime worden gebruikt. |
-| `accessControl` | Nee | Object | Voor het opgeven van beveiligings kenmerken voor uw logische app, zoals het beperken van IP-toegang tot het aanvragen van triggers of het uitvoeren van de invoer en uitvoer van de geschiedenis. Zie [veilige toegang tot Logic apps](../logic-apps/logic-apps-securing-a-logic-app.md)voor meer informatie. |
-| `runtimeConfiguration` | Nee | Object | Voor het opgeven van `operationOptions` eigenschappen die bepalen hoe uw logische app zich tijdens runtime bevindt. U kunt bijvoorbeeld uw logische app uitvoeren in de [modus voor hoge door Voer](../logic-apps/logic-apps-limits-and-config.md#run-high-throughput-mode). |
+| `parameters` | No | Object | De [waarden van de werk stroom definitie parameter](#workflow-definition-parameters) die moeten worden gebruikt tijdens de runtime van de logische app. De parameter definities voor deze waarden worden weer gegeven in het [Parameter object van uw werk stroom definitie](#workflow-definition-parameters). Als uw logische app [beheerde connectors](../connectors/apis-list.md) gebruikt voor toegang tot andere services en systemen, bevat dit object ook een `$connections` object waarmee de verbindings waarden worden ingesteld die tijdens runtime worden gebruikt. |
+| `accessControl` | No | Object | Voor het opgeven van beveiligings kenmerken voor uw logische app, zoals het beperken van IP-toegang tot het aanvragen van triggers of het uitvoeren van de invoer en uitvoer van de geschiedenis. Zie [veilige toegang tot Logic apps](../logic-apps/logic-apps-securing-a-logic-app.md)voor meer informatie. |
+| `runtimeConfiguration` | No | Object | Voor het opgeven van `operationOptions` eigenschappen die bepalen hoe uw logische app zich tijdens runtime bevindt. U kunt bijvoorbeeld uw logische app uitvoeren in de [modus voor hoge door Voer](../logic-apps/logic-apps-limits-and-config.md#run-high-throughput-mode). |
 |||||
 
 Zie [resource typen micro soft. Logic](/azure/templates/microsoft.logic/allversions)voor meer informatie over resource definities voor deze Logic apps-objecten:
@@ -1047,7 +1047,7 @@ Zie de volgende onderwerpen voor meer informatie over het werken met Service-pri
 
 ## <a name="references-to-parameters"></a>Verwijzingen naar para meters
 
-Als u wilt verwijzen naar sjabloon parameters, kunt u sjabloon expressies gebruiken met [sjabloon functies](../azure-resource-manager/templates/template-functions.md), die tijdens de implementatie worden geëvalueerd. Sjabloon expressies gebruiken vier Kante haken ( **[]** ):
+Als u wilt verwijzen naar sjabloon parameters, kunt u sjabloon expressies gebruiken met [sjabloon functies](../azure-resource-manager/templates/template-functions.md), die tijdens de implementatie worden geëvalueerd. Sjabloon expressies gebruiken vier Kante haken (**[]**):
 
 `"<attribute-name>": "[parameters('<template-parameter-name>')]"`
 

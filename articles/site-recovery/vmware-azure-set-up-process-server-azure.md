@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 10/21/2019
 ms.author: ramamill
 ms.openlocfilehash: 16214fa07b14c8db2f32fa2c69739b7fa3dc1907
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74083954"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008470"
 ---
 # <a name="set-up-a-process-server-in-azure-for-failback"></a>Een processerver voor failback in Azure instellen
 
@@ -28,14 +28,14 @@ Meer informatie over het proces voor opnieuw [beveiligen](vmware-azure-reprotect
 
 ## <a name="deploy-a-process-server-in-azure"></a>Een proces server in azure implementeren
 
-1. Selecteer de configuratie server in de kluis > **site Recovery-infra structuur** >  **Manage**  >  **configuratie servers**beheren.
+1. Selecteer de configuratie server in de kluis > **site Recovery-infra structuur** >  **Manage**  >  **configuratie servers** beheren.
 2. Klik op de pagina Server op **+ proces server**
 3. Op de pagina **proces server toevoegen** en selecteer om de proces server in azure te implementeren.
 4. Geef de Azure-instellingen op, waaronder het abonnement dat wordt gebruikt voor failover, een resource groep, de Azure-regio die wordt gebruikt voor failover en het virtuele netwerk waarin de Azure-Vm's zich bevinden. Als u meerdere Azure-netwerken hebt gebruikt, hebt u een proces server in elk bestand nodig.
 
    ![Galerie-item proces server toevoegen](./media/vmware-azure-set-up-process-server-azure/add-ps-page-1.png)
 
-4. In **Server naam**, **gebruikers naam**en **wacht woord**, geeft u een naam op voor de proces server en referenties waaraan beheerders machtigingen op de server worden toegewezen.
+4. In **Server naam**, **gebruikers naam** en **wacht woord**, geeft u een naam op voor de proces server en referenties waaraan beheerders machtigingen op de server worden toegewezen.
 5. Geef een opslag account op dat moet worden gebruikt voor de VM-schijven van de server, het subnet waarin de virtuele machine van de proces server zich bevindt en het IP-adres van de server dat wordt toegewezen wanneer de virtuele machine wordt gestart.
 6. Klik op de knop **OK** om te beginnen met de implementatie van de proces Server-VM. De proces server wordt geïmplementeerd op Standard_A8_v2 SKU. Zorg ervoor dat deze VM-SKU beschikbaar is voor uw abonnement.
 

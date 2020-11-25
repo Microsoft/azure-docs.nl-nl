@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 12/24/2019
 ms.openlocfilehash: dc4d1b852b0a498de0834731b2b1cd1225b9748b
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92107773"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008851"
 ---
 # <a name="connect-computers-without-internet-access-by-using-the-log-analytics-gateway-in-azure-monitor"></a>Computers zonder Internet toegang verbinden met behulp van de Log Analytics-gateway in Azure Monitor
 
@@ -109,14 +109,14 @@ Voer de volgende stappen uit om de Log Analytics-gateway op te halen uit de Azur
 1. Blader door de lijst met Services en selecteer vervolgens **log Analytics**. 
 1. Selecteer een werkruimte.
 1. Selecteer in de Blade van de werk ruimte onder **algemeen** **Quick Start**. 
-1. Selecteer **computers**onder **een gegevens bron kiezen om verbinding te maken met de werk ruimte**.
+1. Selecteer **computers** onder **een gegevens bron kiezen om verbinding te maken met de werk ruimte**.
 1. Selecteer op de Blade **direct-agent** de optie **log Analytics gateway downloaden**.
  
    ![Scherm afbeelding van de stappen voor het downloaden van de Log Analytics-gateway](./media/gateway/download-gateway.png)
 
 of 
 
-1. Selecteer in de Blade van de werk ruimte onder **instellingen**de optie **Geavanceerde instellingen**.
+1. Selecteer in de Blade van de werk ruimte onder **instellingen** de optie **Geavanceerde instellingen**.
 1. Ga naar **verbonden bronnen**  >  **Windows-servers** en selecteer **log Analytics gateway downloaden**.
 
 ## <a name="install-log-analytics-gateway-using-setup-wizard"></a>Log Analytics gateway installeren met de wizard Setup
@@ -142,7 +142,7 @@ Voer de volgende stappen uit als u een gateway wilt installeren met de wizard Se
 
 1. Als Microsoft Update niet is ingeschakeld, wordt de pagina Microsoft Update weer gegeven en kunt u ervoor kiezen om deze in te scha kelen. Maak een selectie en selecteer **volgende**. Anders gaat u verder met de volgende stap.
 1. Accepteer op de pagina **doelmap** de standaardmap C:\Program Files\OMS gateway of voer de locatie in waar u de gateway wilt installeren. Selecteer vervolgens **Volgende**.
-1. Selecteer **installeren**op de pagina **gereed voor installatie** . Selecteer **Ja**als u wilt dat Gebruikersaccountbeheer toestemming heeft om te installeren.
+1. Selecteer **installeren** op de pagina **gereed voor installatie** . Selecteer **Ja** als u wilt dat Gebruikersaccountbeheer toestemming heeft om te installeren.
 1. Nadat de installatie is voltooid, selecteert u **volt ooien**. Als u wilt controleren of de service wordt uitgevoerd, opent u de module Services. msc en controleert u of de **OMS-gateway** wordt weer gegeven in de lijst met Services en of de status wordt **uitgevoerd**.
 
    ![Scherm opname van lokale services, met de uitvoering van de OMS-gateway](./media/gateway/gateway-service.png)
@@ -192,8 +192,8 @@ U kunt de gateway configureren voor maximale Beschik baarheid met behulp van Net
 Zie [Network Load Balancing](/windows-server/networking/technologies/network-load-balancing)voor meer informatie over het ontwerpen en implementeren van een Windows Server 2016 Network Load Balancing-cluster. In de volgende stappen wordt beschreven hoe u een micro soft Network Load Balancing-cluster configureert.  
 
 1. Meld u aan bij de Windows-Server die lid is van het NLB-cluster met een Administrator-account.  
-2. Open beheer van netwerk taakverdeling in Serverbeheer, klik op **extra**en klik vervolgens op **beheer van netwerk**taakverdeling.
-3. Klik met de rechter muisknop op het IP-adres van het cluster en klik vervolgens op **host toevoegen aan cluster**om verbinding te maken met een log Analytics Gateway server waarop micro soft monitoring agent is geïnstalleerd. 
+2. Open beheer van netwerk taakverdeling in Serverbeheer, klik op **extra** en klik vervolgens op **beheer van netwerk** taakverdeling.
+3. Klik met de rechter muisknop op het IP-adres van het cluster en klik vervolgens op **host toevoegen aan cluster** om verbinding te maken met een log Analytics Gateway server waarop micro soft monitoring agent is geïnstalleerd. 
 
     ![Beheer van netwerk taakverdeling – host aan cluster toevoegen](./media/gateway/nlb02.png)
  
@@ -262,7 +262,7 @@ Als u de integratie wilt configureren, werkt u de systeem proxy configuratie bij
 
 Nadat de integratie met Log Analytics is voltooid, verwijdert u de wijziging door uit te voeren `netsh winhttp reset proxy` . Gebruik vervolgens de optie **proxy server configureren** in de operations-console om de log Analytics Gateway server op te geven. 
 
-1. Selecteer in de Operations Manager-console, onder **Operations Management Suite**, de optie **verbinding**en selecteer vervolgens **proxy server configureren**.
+1. Selecteer in de Operations Manager-console, onder **Operations Management Suite**, de optie **verbinding** en selecteer vervolgens **proxy server configureren**.
 
    ![Scherm opname van Operations Manager, met de selectie proxy server configureren](./media/gateway/scom01.png)
 
@@ -294,7 +294,7 @@ Specifieke servers of groepen configureren voor het gebruik van de Log Analytics
     > U hoeft de regel niet in te scha kelen. Het wordt al automatisch beheerd met een onderdrukking in de beveiligings onderdrukking van micro soft System Center Advisor management pack die gericht is op de micro soft System Center Advisor monitoring Server-groep.
     > 
 
-1. Selecteer een management pack in de lijst **doel Management Pack selecteren** of maak een nieuw niet-verzegeld Management Pack door **Nieuw**te selecteren. 
+1. Selecteer een management pack in de lijst **doel Management Pack selecteren** of maak een nieuw niet-verzegeld Management Pack door **Nieuw** te selecteren. 
 1. Selecteer **OK** wanneer u klaar bent. 
 
 ### <a name="configure-for-automation-hybrid-runbook-workers"></a>Configureren voor Hybrid Automation-Runbook Workers
@@ -350,7 +350,7 @@ Als u gebeurtenissen wilt verzamelen die door de gateway worden geregistreerd, m
 
 In de volgende tabel worden de gebeurtenis-Id's en beschrijvingen voor Log Analytics-gateway logboek gebeurtenissen weer gegeven.
 
-| **ID** | **Beschrijving** |
+| **Id** | **Beschrijving** |
 | --- | --- |
 | 400 |Een toepassings fout die geen specifieke ID heeft. |
 | 401 |Onjuiste configuratie. Bijvoorbeeld, listenPort = "text" in plaats van een geheel getal. |

@@ -8,11 +8,11 @@ ms.date: 09/24/2018
 ms.author: ancav
 ms.subservice: metrics
 ms.openlocfilehash: b80f27e490dd3b1890eab7740fb4650ba4280abb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88207802"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96008987"
 ---
 # <a name="collect-custom-metrics-for-a-linux-vm-with-the-influxdata-telegraf-agent"></a>Aangepaste metrische gegevens verzamelen voor een virtuele Linux-machine met de InfluxData-Telegraf-agent
 
@@ -31,10 +31,10 @@ U kunt met behulp van Azure Monitor aangepaste metrische gegevens verzamelen via
 
 Voor deze zelf studie implementeren we een virtuele Linux-machine waarop het Ubuntu 16,04 LTS-besturings systeem wordt uitgevoerd. De telegrafie-agent wordt ondersteund voor de meeste Linux-besturings systemen. Zowel de Debian-als de RPM-pakketten zijn beschikbaar in combi natie met niet-verpakkende Linux-bestanden op de [InfluxData-Download Portal](https://portal.influxdata.com/downloads). Zie deze [telegrafi-installatie handleiding](https://docs.influxdata.com/telegraf/v1.8/introduction/installation/) voor aanvullende installatie-instructies en-opties. 
 
-Meld u aan bij [Azure Portal](https://portal.azure.com).
+Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
 > [!NOTE]  
-> Als u de klassieke waarschuwings regels wilt migreren en een bestaande virtuele Linux-machine wilt gebruiken, moet u ervoor zorgen dat aan de virtueel-machine een **door**het systeem toegewezen identiteit is ingesteld op on.
+> Als u de klassieke waarschuwings regels wilt migreren en een bestaande virtuele Linux-machine wilt gebruiken, moet u ervoor zorgen dat aan de virtueel-machine een **door** het systeem toegewezen identiteit is ingesteld op on.
 
 Een nieuwe virtuele Linux-machine maken: 
 
@@ -42,8 +42,8 @@ Een nieuwe virtuele Linux-machine maken:
 1. Zoek naar de **virtuele machine**.  
 1. Selecteer **Ubuntu 16,04 LTS** en selecteer **maken**. 
 1. Geef een VM-naam op, bijvoorbeeld **MyTelegrafVM**.  
-1. Zorg ervoor dat het schijf type is ingesteld op **SSD**. Geef vervolgens een **gebruikers naam**op, bijvoorbeeld **azureuser**. 
-1. Selecteer **wacht woord**bij **verificatie type**. Voer vervolgens een wacht woord in dat u later wilt gebruiken voor SSH in deze VM. 
+1. Zorg ervoor dat het schijf type is ingesteld op **SSD**. Geef vervolgens een **gebruikers naam** op, bijvoorbeeld **azureuser**. 
+1. Selecteer **wacht woord** bij **verificatie type**. Voer vervolgens een wacht woord in dat u later wilt gebruiken voor SSH in deze VM. 
 1. Kies voor het maken van een **nieuwe resource groep**. Geef vervolgens een naam op, bijvoorbeeld **myResourceGroup**. Kies uw **locatie**. Selecteer vervolgens **OK**. 
 
     ![Maken van een Ubuntu-VM](./media/collect-custom-metrics-linux-telegraf/create-vm.png)
@@ -68,7 +68,7 @@ Maak een SSH-verbinding met de VM. Selecteer de knop **Verbinden** op de overzic
 
 ![Overzichts pagina telegrafi VM](./media/collect-custom-metrics-linux-telegraf/connect-VM-button2.png)
 
-Laat op de pagina **Verbinding maken met virtuele machine** de standaardopties staan om verbinding te maken met de DNS-naam via poort 22. Bij **Aanmelden met een lokaal VM-account**wordt een verbindings opdracht weer gegeven. Selecteer de knop om de opdracht te kopiëren. Het volgende voorbeeld laat zien hoe de SSH-verbindingsopdracht eruitziet: 
+Laat op de pagina **Verbinding maken met virtuele machine** de standaardopties staan om verbinding te maken met de DNS-naam via poort 22. Bij **Aanmelden met een lokaal VM-account** wordt een verbindings opdracht weer gegeven. Selecteer de knop om de opdracht te kopiëren. Het volgende voorbeeld laat zien hoe de SSH-verbindingsopdracht eruitziet: 
 
 ```cmd
 ssh azureuser@XXXX.XX.XXX 
@@ -111,7 +111,7 @@ De agent verzamelt nu metrische gegevens uit elk van de opgegeven invoer-invoeg 
 
 ## <a name="plot-your-telegraf-metrics-in-the-azure-portal"></a>Uw telegrafeer metrische gegevens in de Azure Portal afzetten 
 
-1. Open [Azure Portal](https://portal.azure.com). 
+1. Open de [Azure Portal](https://portal.azure.com). 
 
 1. Ga naar het tabblad nieuwe **monitor** . Selecteer vervolgens **metrische gegevens**.  
 

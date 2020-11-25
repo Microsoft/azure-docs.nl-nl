@@ -16,11 +16,11 @@ ms.reviewer: jowargo
 ms.lastreviewed: 06/19/2019
 ms.custom: devx-track-java, devx-track-csharp
 ms.openlocfilehash: 13b05c17cc621660576913c08a1fdbc389365a53
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89003963"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96009099"
 ---
 # <a name="get-started-with-notification-hubs-using-baidu"></a>Aan de slag met Azure Notification Hubs die gebruikmaken van Baidu
 
@@ -427,7 +427,7 @@ Hier zijn verschillende methoden om meldingen te verzenden:
 
 * **REST-interface**: u kunt meldingen op elk back-endplatform ondersteunen met de [REST-interface](/previous-versions/azure/reference/dn223264(v=azure.100)).
 * **Microsoft Azure Notification Hubs .NET SDK**: in NuGet Package Manager voor Visual Studio voert u [Install-Package Microsoft.Azure.NotificationHubs](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/) uit.
-* **Node.js**: [Notification hubs van Node.jsgebruiken ](notification-hubs-nodejs-push-notification-tutorial.md).
+* **Node.js**: [Notification hubs van Node.jsgebruiken](notification-hubs-nodejs-push-notification-tutorial.md).
 * **Mobile Apps**: zie [Pushmeldingen toevoegen voor mobiele apps](/previous-versions/azure/app-service-mobile/app-service-mobile-windows-store-dotnet-get-started-push) voor een voorbeeld van hoe u meldingen verzendt vanuit een Azure App Service Mobile Apps-backend die is geïntegreerd met Notification Hubs.
 * **Java/PHP**: zie 'Notification Hubs gebruiken vanuit Java/PHP' voor een voorbeeld van hoe u meldingen verzendt met de REST API's ([Java](notification-hubs-java-push-notification-tutorial.md) | [PHP](notification-hubs-php-push-notification-tutorial.md)).
 

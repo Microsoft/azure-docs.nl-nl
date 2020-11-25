@@ -11,11 +11,11 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 05/29/2019
 ms.openlocfilehash: 664c4289cbfa1f6ce2fce9f9f83b0240bd2d592c
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92912868"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001997"
 ---
 # <a name="moderate-text-from-the-api-console"></a>Tekst met gemiddelde van de API-console
 
@@ -43,14 +43,14 @@ Voor **open API-test console** selecteert u de regio die uw locatie het meest be
 
 ### <a name="parameters"></a>Parameters
 
-Selecteer de query parameters die u wilt gebruiken in het tekst scherm. Voor dit voor beeld gebruikt u de standaard waarde voor **taal** . U kunt deze waarde ook leeg laten, omdat de waarschijnlijke taal door de bewerking automatisch wordt gedetecteerd als onderdeel van de uitvoering.
+Selecteer de query parameters die u wilt gebruiken in het tekst scherm. Voor dit voor beeld gebruikt u de standaard waarde voor **taal**. U kunt deze waarde ook leeg laten, omdat de waarschijnlijke taal door de bewerking automatisch wordt gedetecteerd als onderdeel van de uitvoering.
 
 > [!NOTE]
-> Voor de para meter **taal** wijst `eng` of laat u het leeg om de door de machine ondersteunde **classificatie** te zien (preview-functie). **Deze functie ondersteunt alleen Engels** .
+> Voor de para meter **taal** wijst `eng` of laat u het leeg om de door de machine ondersteunde **classificatie** te zien (preview-functie). **Deze functie ondersteunt alleen Engels**.
 >
 > Gebruik de [ISO 639-3-code](http://www-01.sil.org/iso639-3/codes.asp) **van de** ondersteunde talen die in dit artikel worden vermeld, of laat het leeg.
 
-Selecteer **waar** voor **auto correctie** , **PII** en **classificeren (preview)** . Laat het veld **ListID** leeg.
+Selecteer **waar** voor **auto correctie**, **PII** en **classificeren (preview)**. Laat het veld **ListID** leeg.
 
   ![Query parameters voor de console tekst scherm](images/text-api-console-inputs.PNG)
 

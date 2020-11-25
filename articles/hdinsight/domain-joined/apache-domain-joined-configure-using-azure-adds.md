@@ -10,11 +10,11 @@ ms.topic: how-to
 ms.custom: seodec18,seoapr2020, contperfq2
 ms.date: 10/30/2020
 ms.openlocfilehash: 4c0d12e4c37476b9ae71962251105ef92aa39120
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94845200"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004276"
 ---
 # <a name="configure-hdinsight-clusters-for-active-directory-integration-with-enterprise-security-package"></a>HDInsight-clusters configureren voor integratie met Active Directory met Enterprise Security Package
 

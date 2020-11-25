@@ -9,12 +9,12 @@ ms.topic: include
 ms.date: 10/18/2018
 ms.author: dacurwin
 ms.custom: include file
-ms.openlocfilehash: c111752dcca03781dfb2a11fb100dafc4bad90f7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 69259023484457249acd4c7b4a65c4cbe3e660ca
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91400997"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002852"
 ---
 ## <a name="create-a-recovery-services-vault"></a>Een Recovery Services-kluis maken
 
@@ -65,4 +65,4 @@ Voer de volgende stappen uit om een Recovery Services-kluis te maken.
      ![De lijst met back-upkluizen vernieuwen](./media/backup-create-rs-vault/refresh-button.png)
 
 >[!IMPORTANT]
-> We raden u ten zeerste aan de standaardinstellingen voor **Type opslagreplicatie** en **Beveiligingsinstellingen** te controleren voordat u back-ups in de kluis configureert. Zie de sectie [Opslagredundantie instellen](https://docs.microsoft.com/azure/backup/backup-create-rs-vault#set-storage-redundancy) voor meer informatie.
+> We raden u ten zeerste aan de standaardinstellingen voor **Type opslagreplicatie** en **Beveiligingsinstellingen** te controleren voordat u back-ups in de kluis configureert. Zie de sectie [Opslagredundantie instellen](../articles/backup/backup-create-rs-vault.md#set-storage-redundancy) voor meer informatie.

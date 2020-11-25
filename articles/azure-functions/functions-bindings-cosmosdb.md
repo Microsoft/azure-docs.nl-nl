@@ -7,11 +7,11 @@ ms.topic: reference
 ms.date: 11/21/2017
 ms.custom: devx-track-csharp, seodec18
 ms.openlocfilehash: 524df7805207ce517c7ae805fb17de1b041a2248
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91876036"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002104"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-1x"></a>Azure Cosmos DB bindingen voor Azure Functions 1. x
 
@@ -1477,9 +1477,9 @@ Wanneer u in uw functie naar de uitvoer parameter schrijft, wordt er standaard e
 > [!Note]
 > Wanneer u de ID van een bestaand document opgeeft, wordt dit overschreven door het nieuwe uitvoer document.
 
-## <a name="exceptions-and-return-codes"></a>Uitzonde ringen en retour codes
+## <a name="exceptions-and-return-codes"></a>Uitzonderingen en retourcodes
 
-| Binding | Naslaginformatie |
+| Binding | Referentie |
 |---|---|
 | Cosmos DB | [CosmosDB-fout codes](/rest/api/cosmos-db/http-status-codes-for-cosmosdb) |
 

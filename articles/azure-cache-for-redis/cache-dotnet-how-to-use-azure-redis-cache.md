@@ -9,11 +9,11 @@ ms.topic: quickstart
 ms.custom: devx-track-csharp, mvc
 ms.date: 06/18/2020
 ms.openlocfilehash: 762fdf0aab0077cfbf8beceeb432dc85695e4176
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93077061"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002449"
 ---
 # <a name="quickstart-use-azure-cache-for-redis-in-net-framework"></a>Quickstart: Azure Cache voor Redis in .NET Framework gebruiken
 
@@ -63,7 +63,7 @@ Klik in Visual Studio op **Tools** > **NuGet Package Manager** > **Package Manag
 Install-Package StackExchange.Redis
 ```
 
-Zodra de installatie is voltooid, kan de *StackExchange.Redis* -cacheclient met uw project worden gebruikt.
+Zodra de installatie is voltooid, kan de *StackExchange.Redis*-cacheclient met uw project worden gebruikt.
 
 
 ## <a name="connect-to-the-cache"></a>Verbinding maken met de cache
@@ -83,7 +83,7 @@ Open in Visual Studio het bestand *App.config* en voeg een kenmerk `appSettings`
 
 Klik in Solution Explorer met de rechtermuisknop op **References** en klik op **Add a reference**. Voeg een verwijzing naar de assembly **System.Configuration** toe.
 
-Voeg de volgende `using`-instructies toe aan *Program.cs* :
+Voeg de volgende `using`-instructies toe aan *Program.cs*:
 
 ```csharp
 using StackExchange.Redis;
@@ -192,13 +192,13 @@ Klik in Visual Studio op **Tools** > **NuGet Package Manager** > **Package Manag
 Install-Package Newtonsoft.Json
 ```
 
-Voeg de volgende `using`-instructie toe aan *Program.cs* :
+Voeg de volgende `using`-instructie toe aan *Program.cs*:
 
 ```csharp
 using Newtonsoft.Json;
 ```
 
-Voeg de volgende `Employee`-klassedefinitie toe aan *Program.cs* :
+Voeg de volgende `Employee`-klassedefinitie toe aan *Program.cs*:
 
 ```csharp
 class Employee

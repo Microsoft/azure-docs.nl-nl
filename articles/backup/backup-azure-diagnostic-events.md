@@ -4,17 +4,17 @@ description: In dit artikel wordt beschreven hoe u de oude en nieuwe diagnostisc
 ms.topic: conceptual
 ms.date: 10/30/2019
 ms.openlocfilehash: 3d10053bae5148f33dba6d1207a81bdb16c37577
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89182595"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002882"
 ---
 # <a name="use-diagnostics-settings-for-recovery-services-vaults"></a>Diagnostische instellingen voor Recovery Services kluizen gebruiken
 
 Azure Backup verzendt diagnostische gebeurtenissen die kunnen worden verzameld en gebruikt voor analyse, waarschuwingen en rapportage.
 
-U kunt Diagnostische instellingen voor een Recovery Services kluis configureren via de Azure Portal door naar de kluis te gaan en **Diagnostische instellingen**te selecteren. Als u de **instelling diagnostische gegevens toevoegen** selecteert, kunt u een of meer diagnostische gebeurtenissen verzenden naar een opslag account, een event hub of een log Analytics-werk ruimte.
+U kunt Diagnostische instellingen voor een Recovery Services kluis configureren via de Azure Portal door naar de kluis te gaan en **Diagnostische instellingen** te selecteren. Als u de **instelling diagnostische gegevens toevoegen** selecteert, kunt u een of meer diagnostische gebeurtenissen verzenden naar een opslag account, een event hub of een log Analytics-werk ruimte.
 
 ![Het deelvenster Diagnostische instellingen](./media/backup-azure-diagnostics-events/diagnostics-settings-blade.png)
 
@@ -44,7 +44,7 @@ De diagnostische gegevens van uw kluis naar Log Analytics verzenden:
 1. Ga naar uw kluis en selecteer **Diagnostische instellingen**. Selecteer **+ Diagnostische instelling toevoegen**.
 1. Geef een naam op voor de diagnostische instelling.
 1. Schakel het selectie vakje **verzenden naar log Analytics** in en selecteer een log Analytics werk ruimte.
-1. Selecteer **resource specifiek** in de wissel knop en selecteer de volgende zes gebeurtenissen: **CoreAzureBackup**, **AddonAzureBackupJobs**, **AddonAzureBackupAlerts**, **AddonAzureBackupPolicy**, **AddonAzureBackupStorage**en **AddonAzureBackupProtectedInstance**.
+1. Selecteer **resource specifiek** in de wissel knop en selecteer de volgende zes gebeurtenissen: **CoreAzureBackup**, **AddonAzureBackupJobs**, **AddonAzureBackupAlerts**, **AddonAzureBackupPolicy**, **AddonAzureBackupStorage** en **AddonAzureBackupProtectedInstance**.
 1. Selecteer **Opslaan**.
 
    ![Resource-specifieke modus](./media/backup-azure-diagnostics-events/resource-specific-blade.png)
@@ -110,19 +110,19 @@ U kunt ervoor kiezen om afzonderlijke diagnostische instellingen voor AzureBacku
 > De gebeurtenis AzureBackupReport wordt *alleen* ondersteund in de diagnostische modus van Azure. *Als u gegevens voor deze gebeurtenis wilt verzenden in de resource-specifieke modus, worden er geen gegevens naar de Log Analytics werk ruimte verzonden.*
 
 > [!NOTE]
-> De wissel knop voor **Azure Diagnostics** of **resource specific** wordt alleen weer gegeven als de gebruiker **Send to log Analytics**selecteert. Als u gegevens naar een opslag account of een Event Hub wilt verzenden, selecteert de gebruiker de vereiste bestemming en selecteert de selectie vakjes voor elk van de gewenste gebeurtenissen, zonder extra invoer. Het is ook raadzaam om de verouderde gebeurtenis AzureBackupReport niet te kiezen.
+> De wissel knop voor **Azure Diagnostics** of **resource specific** wordt alleen weer gegeven als de gebruiker **Send to log Analytics** selecteert. Als u gegevens naar een opslag account of een Event Hub wilt verzenden, selecteert de gebruiker de vereiste bestemming en selecteert de selectie vakjes voor elk van de gewenste gebeurtenissen, zonder extra invoer. Het is ook raadzaam om de verouderde gebeurtenis AzureBackupReport niet te kiezen.
 
 ## <a name="send-azure-site-recovery-events-to-log-analytics"></a>Azure Site Recovery gebeurtenissen verzenden naar Log Analytics
 
-Azure Backup-en Azure Site Recovery-gebeurtenissen worden vanaf dezelfde Recovery Services kluis verzonden. Azure Site Recovery is momenteel niet beschikbaar voor resource-specifieke tabellen. Gebruikers die Azure Site Recovery gebeurtenissen naar Log Analytics willen verzenden, zijn *alleen bedoeld*voor het gebruik van de diagnostische modus van Azure, zoals wordt weer gegeven in de afbeelding. *Als u de resource-specifieke modus voor Azure site Recovery gebeurtenissen kiest, voor komt u dat de vereiste gegevens worden verzonden naar de log Analytics-werk ruimte*.
+Azure Backup-en Azure Site Recovery-gebeurtenissen worden vanaf dezelfde Recovery Services kluis verzonden. Azure Site Recovery is momenteel niet beschikbaar voor resource-specifieke tabellen. Gebruikers die Azure Site Recovery gebeurtenissen naar Log Analytics willen verzenden, zijn *alleen bedoeld* voor het gebruik van de diagnostische modus van Azure, zoals wordt weer gegeven in de afbeelding. *Als u de resource-specifieke modus voor Azure site Recovery gebeurtenissen kiest, voor komt u dat de vereiste gegevens worden verzonden naar de log Analytics-werk ruimte*.
 
 ![Site Recovery gebeurtenissen](./media/backup-azure-diagnostics-events/site-recovery-settings.png)
 
 Samenvatting:
 
 * Als u al Log Analytics diagnostische gegevens hebt ingesteld met Azure Diagnostics en aangepaste query's bovenop deze hebt geschreven, houdt u die instelling *intact* totdat u uw query's migreert voor het gebruik van gegevens uit de nieuwe gebeurtenissen.
-* Als u ook op nieuwe tabellen wilt worden geadviseerd, maakt u een **nieuwe** diagnostische instelling, selecteert u **resource specifiek**en selecteert u de zes nieuwe gebeurtenissen.
-* Als u momenteel Azure Site Recovery gebeurtenissen verzendt naar Log Analytics, moet u de resource-specifieke modus voor deze gebeurtenissen *niet* kiezen. Als dat niet het geval is, worden de gegevens voor deze gebeurtenissen niet in uw Log Analytics-werk ruimte geplaatst. Maak in plaats daarvan een extra diagnostische instelling, selecteer **Azure Diagnostics**en selecteer de relevante Azure site Recovery gebeurtenissen.
+* Als u ook op nieuwe tabellen wilt worden geadviseerd, maakt u een **nieuwe** diagnostische instelling, selecteert u **resource specifiek** en selecteert u de zes nieuwe gebeurtenissen.
+* Als u momenteel Azure Site Recovery gebeurtenissen verzendt naar Log Analytics, moet u de resource-specifieke modus voor deze gebeurtenissen *niet* kiezen. Als dat niet het geval is, worden de gegevens voor deze gebeurtenissen niet in uw Log Analytics-werk ruimte geplaatst. Maak in plaats daarvan een extra diagnostische instelling, selecteer **Azure Diagnostics** en selecteer de relevante Azure site Recovery gebeurtenissen.
 
 In de volgende afbeelding ziet u een voor beeld van een gebruiker die drie Diagnostische instellingen voor een kluis heeft. Met de eerste instelling, met de naam **Setting1**, worden gegevens van een AzureBackupReport-gebeurtenis verzonden naar een log Analytics-werk ruimte in de diagnostische modus van Azure. Met de tweede instelling, met de naam **Setting2**, worden gegevens van de zes nieuwe Azure backup gebeurtenissen naar een log Analytics werk ruimte in de resource-specifieke modus verzonden. Met de derde instelling, met de naam **Setting3**, worden gegevens van de Azure site Recovery gebeurtenissen verzonden naar een log Analytics-werk ruimte in de Azure Diagnostics-modus.
 

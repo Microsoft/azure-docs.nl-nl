@@ -6,11 +6,11 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.custom: seodec18
 ms.openlocfilehash: 949e408544e25cb55622cf2a1b1d2dddb92350a6
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150162"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001504"
 ---
 # <a name="operating-system-functionality-on-azure-app-service"></a>Functionaliteit van het besturings systeem op Azure App Service
 In dit artikel wordt de algemene besturingssysteem functionaliteit beschreven die beschikbaar is voor alle Windows-apps die worden uitgevoerd op [Azure app service](./overview.md). Deze functionaliteit omvat bestands-, netwerk-en register toegang, en Diagnostische logboeken en-gebeurtenissen. 
@@ -65,7 +65,7 @@ Een van de unieke aspecten van App Service die het implementeren en onderhouden 
 
 Binnen App Service is er een aantal UNC-shares gemaakt in elk Data Center. Een percentage van de gebruikers inhoud voor alle klanten in elk Data Center wordt toegewezen aan elke UNC-share. Daarnaast wordt alle bestands inhoud voor één abonnement van een klant altijd op dezelfde UNC-share geplaatst. 
 
-Als gevolg van de werking van Azure-Services, wordt de specifieke virtuele machine die verantwoordelijk is voor het hosten van een UNC-share na verloop van tijd gewijzigd. Het is gegarandeerd dat UNC-shares worden gekoppeld door verschillende virtuele machines, omdat deze worden weer binnengebracht tijdens de normale loop periode van Azure-bewerkingen. Daarom moeten apps geen hardcoded veronderstellingen maken dat de computer gegevens in een UNC-bestandspad in de loop van de tijd stabiel blijven. In plaats daarvan moeten ze gebruikmaken van het handige *faux* absolute pad **D:\home\site** dat app service biedt. Dit faux absolute pad biedt een draag bare neutraal-methode voor het verwijzen naar een eigen app. Door **D:\home\site**te gebruiken, kunt u gedeelde bestanden van de app naar de app overdragen zonder dat u een nieuw absoluut pad hoeft te configureren voor elke overdracht.
+Als gevolg van de werking van Azure-Services, wordt de specifieke virtuele machine die verantwoordelijk is voor het hosten van een UNC-share na verloop van tijd gewijzigd. Het is gegarandeerd dat UNC-shares worden gekoppeld door verschillende virtuele machines, omdat deze worden weer binnengebracht tijdens de normale loop periode van Azure-bewerkingen. Daarom moeten apps geen hardcoded veronderstellingen maken dat de computer gegevens in een UNC-bestandspad in de loop van de tijd stabiel blijven. In plaats daarvan moeten ze gebruikmaken van het handige *faux* absolute pad **D:\home\site** dat app service biedt. Dit faux absolute pad biedt een draag bare neutraal-methode voor het verwijzen naar een eigen app. Door **D:\home\site** te gebruiken, kunt u gedeelde bestanden van de app naar de app overdragen zonder dat u een nieuw absoluut pad hoeft te configureren voor elke overdracht.
 
 <a id="TypesOfFileAccess"></a>
 

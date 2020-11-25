@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: how-to
-ms.date: 09/10/2020
+ms.date: 11/23/2020
 ms.author: alkohli
-ms.openlocfilehash: ad8a5a23361e721fd5d8d55d3555f51def94e768
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: b132368982e0013bfe6f3ffd52e7aacb7b1274eb
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94442018"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96003181"
 ---
 # <a name="tutorial-create-export-order-for-azure-data-box-preview"></a>Zelf studie: export volgorde voor Azure Data Box maken (preview)
 
@@ -80,7 +80,7 @@ Voer de volgende stappen uit in de Azure-portal om een apparaat te bestellen.
 
    ![Data Box capaciteit selecteren](media/data-box-deploy-export-ordered/azure-data-box-export-order-capacity.png)
 
-6. In **volg orde** geeft u de details van de **basis** order op. Voer de volgende gegevens in of selecteer deze en selecteer **Volgende**.
+6. In **volg orde** geeft u de details van de **basis** order op. Voer de volgende informatie in of selecteer deze.
 
     |Instelling  |Waarde  |
     |---------|---------|
@@ -88,13 +88,13 @@ Voer de volgende stappen uit in de Azure-portal om een apparaat te bestellen.
     |Resourcegroep | De resourcegroep die u eerder hebt geselecteerd. |
     |Naam van de export volgorde     |  Geef een beschrijvende naam op om de bestelling te volgen. <br> De naam kan tussen 3 en 24 tekens bevatten (letters, cijfers en afbreekstreepjes). <br> De naam moet beginnen en eindigen met een letter of cijfer.      |
 
-    ![Basis principes van export volgorde](media/data-box-deploy-export-ordered/azure-data-box-export-order-storage-account-export-type.png)
+    ![Basis principes van export volgorde](media/data-box-deploy-export-ordered/azure-data-box-export-order-basics-order-name.png)
 
     Selecteer **volgende: gegevens selectie** om door te gaan.
 
 7. Selecteer bij **gegevens selectie** de optie **opslag account en export type toevoegen**.
 
-    ![Opslag account en export type toevoegen](media/data-box-deploy-export-ordered/azure-data-box-export-order-basics.png)
+    ![Opslag account en export type toevoegen](media/data-box-deploy-export-ordered/azure-data-box-export-order-basics-add-storage.png)
 
 8. Geef bij **export optie selecteren** de optie Details van de export op. Voer de volgende informatie in of Selecteer deze en selecteer **toevoegen**.
 
@@ -102,7 +102,7 @@ Voer de volgende stappen uit in de Azure-portal om een apparaat te bestellen.
     |---------|---------|
     |Opslagaccount     | Het Azure Storage account van waaruit u gegevens wilt exporteren. |
     |Export type     | Hiermee geeft u het type gegevens op dat van **alle objecten** moet worden geëxporteerd en het **XML-bestand moet worden gebruikt**.<ul><li> **Alle objecten** : Hiermee geeft u op dat de taak alle gegevens exporteert, afhankelijk van uw selectie voor de **overdrachts opties**.</li><li> **XML-bestand gebruiken** : Hiermee geeft u een XML-bestand op dat een set paden en voor voegsels bevat voor blobs en/of bestanden die uit het opslag account moeten worden geëxporteerd. Het XML-bestand moet zich in de container van het geselecteerde opslag account bevinden en er wordt momenteel geen ondersteuning voor het selecteren van bestands shares ondersteund. Het bestand moet een niet-leeg XML-bestand zijn.</li></ul>        |
-    |Overdrachts opties     |  Hiermee geeft u de opties voor gegevens overdracht van **Alles selecteren** , **alle blobs** en **alle bestanden**. <ul><li> **Alles selecteren** : Hiermee geeft u op dat alle blobs en Azure files worden geëxporteerd. Als u een opslag account gebruikt dat alleen blobs (Blob Storage-account) ondersteunt, kan de optie **alle bestanden** niet worden geselecteerd.</li><li> **Alle blobs** : Hiermee geeft u op dat alleen blok-en pagina-blobs worden geëxporteerd.</li><li> **Alle bestanden** : Hiermee geeft u op dat alle bestanden met uitzonde ring van blobs worden geëxporteerd. Het type opslag account dat u hebt (GPv1-en GPv2-, Premium-opslag of Blob-opslag) bepaalt de typen gegevens die u kunt exporteren. Zie [ondersteunde opslag accounts voor export](../storage/common/storage-import-export-requirements.md#supported-storage-types)voor meer informatie.</li></ul>         |
+    |Overdrachts opties     |  Hiermee geeft u de opties voor gegevens overdracht van **Alles selecteren**, **alle blobs** en **alle bestanden**. <ul><li> **Alles selecteren** : Hiermee geeft u op dat alle blobs en Azure files worden geëxporteerd. Als u een opslag account gebruikt dat alleen blobs (Blob Storage-account) ondersteunt, kan de optie **alle bestanden** niet worden geselecteerd.</li><li> **Alle blobs** : Hiermee geeft u op dat alleen blok-en pagina-blobs worden geëxporteerd.</li><li> **Alle bestanden** : Hiermee geeft u op dat alle bestanden met uitzonde ring van blobs worden geëxporteerd. Het type opslag account dat u hebt (GPv1-en GPv2-, Premium-opslag of Blob-opslag) bepaalt de typen gegevens die u kunt exporteren. Zie [ondersteunde opslag accounts voor export](../storage/common/storage-import-export-requirements.md#supported-storage-types)voor meer informatie.</li></ul>         |
     |Uitgebreid logboek opnemen     | Hiermee wordt aangegeven of u een uitgebreid logboek bestand wilt met een lijst met alle bestanden die zijn geëxporteerd.        |
 
     > [!NOTE]
@@ -115,15 +115,88 @@ Voer de volgende stappen uit in de Azure-portal om een apparaat te bestellen.
 
    Voor een voor beeld van de XML-invoer raadpleegt u [XML-voor beeld-invoer](data-box-deploy-export-ordered.md#sample-xml-file)
 
-9. Controleer de instellingen in **gegevens selectie** en selecteer **volgende: beveiligings>**.
+9. Controleer in **gegevens selectie** uw instellingen en selecteer **volgende: beveiliging>** om door te gaan.
 
    ![Export volgorde, gegevens selectie](media/data-box-deploy-export-ordered/azure-data-box-export-order-data-selection.png)
 
-10. Als u dubbele versleuteling op basis van software wilt inschakelen, selecteert u onder **Beveiliging** de optie **Dubbele versleuteling inschakelen voor de volgorde**. 
+    In het scherm **beveiliging** kunt u uw eigen versleutelings sleutel gebruiken en dubbele versleuteling gebruiken.
+
+    Alle instellingen op het scherm **Beveiliging** zijn optioneel. Als u geen instellingen wijzigt, worden de standaardinstellingen toegepast.
+
+    ![Het scherm Beveiliging van de wizard Data Box-importorder](media/data-box-deploy-export-ordered/data-box-export-security-01.png)
+
+10. Als u uw eigen door de klant beheerde sleutel wilt gebruiken om de ontgrendelings sleutel voor uw nieuwe resource te beveiligen, vouwt u het **versleutelings type** uit.
+
+    Het configureren van een door de klant beheerde sleutel voor uw Azure Data Box is optioneel. Data Box maakt standaard gebruik van een door micro soft beheerde sleutel om de ontgrendelings sleutel te beveiligen.
+
+    Een door de klant beheerde sleutel is niet van invloed op hoe gegevens op het apparaat zijn versleuteld. De sleutel wordt alleen gebruikt voor het versleutelen van de ontgrendelings sleutel voor het apparaat.
+
+    Als u geen door de klant beheerde sleutel wilt gebruiken, gaat u verder met stap 16.
+
+    ![Beveiligings scherm met instellingen voor het versleutelings type](./media/data-box-deploy-export-ordered/customer-managed-key-01.png)
+
+11. Selecteer door de **klant beheerde sleutel** als het sleutel type. Selecteer vervolgens **een sleutel kluis en sleutel selecteren**.
+   
+    ![Beveiligings scherm, instellingen voor een door de klant beheerde sleutel](./media/data-box-deploy-export-ordered/customer-managed-key-02.png)
+
+12. Het abonnement wordt automatisch ingevuld op het scherm **sleutel selecteren in azure Key Vault** .
+
+    - Voor **sleutel kluis** kunt u een bestaande sleutel kluis selecteren in de vervolg keuzelijst.
+
+      ![Sleutel selecteren in Azure Key Vault scherm](./media/data-box-deploy-export-ordered/customer-managed-key-03.png)
+
+    - U kunt ook **nieuwe maken** selecteren om een nieuwe sleutel kluis te maken. Voer in het scherm **sleutel kluis maken** de resource groep en de naam van de sleutel kluis in. Zorg ervoor dat de beveiliging voor **voorlopig verwijderen** en **leegmaken** is ingeschakeld. Accepteer alle overige standaard waarden en selecteer **controleren + maken**.
+
+      ![Een nieuwe Azure Key Vault-instellingen maken](./media/data-box-deploy-export-ordered/customer-managed-key-04.png)
+
+      Controleer de informatie voor uw sleutel kluis en selecteer **maken**. Wacht enkele minuten tot het maken van de sleutel kluis is voltooid.
+
+      ![Nieuw Azure Key Vault controle scherm](./media/data-box-deploy-export-ordered/customer-managed-key-05.png)
+
+13. U kunt in het scherm **sleutel selecteren van Azure Key Vault** een bestaande sleutel selecteren in de sleutel kluis.
+
+    ![Bestaande sleutel van Azure Key Vault selecteren](./media/data-box-deploy-export-ordered/customer-managed-key-06.png)
+
+    Als u een nieuwe sleutel wilt maken, selecteert u **nieuwe maken**. U moet een RSA-sleutel gebruiken. De grootte kan 2048 of hoger zijn. Voer een naam in voor de nieuwe sleutel, accepteer de andere standaard waarden en selecteer **maken**.
+
+      ![Een nieuwe sleutel optie maken](./media/data-box-deploy-export-ordered/customer-managed-key-07.png)
+
+      U krijgt een melding wanneer de sleutel in uw sleutel kluis is gemaakt.
+
+14. Selecteer de **versie** van de sleutel die u wilt gebruiken en kies vervolgens **selecteren**.
+
+      ![Nieuwe sleutel gemaakt in sleutel kluis](./media/data-box-deploy-export-ordered/customer-managed-key-08.png)
+
+    Als u een nieuwe sleutel versie wilt maken, selecteert u **nieuwe maken**.
+
+    ![Een dialoog venster openen voor het maken van een nieuwe sleutel versie](./media/data-box-deploy-export-ordered/customer-managed-key-08-a.png)
+
+    Kies in het scherm **nieuwe sleutel maken** de optie instellingen voor de nieuwe sleutel versie en selecteer **maken**.
+
+    ![Een nieuwe sleutel versie maken](./media/data-box-deploy-export-ordered/customer-managed-key-08-b.png)
+
+    De instellingen voor het **versleutelings type** in het **beveiligings** scherm tonen uw sleutel kluis en sleutel.
+
+    ![Sleutel en sleutel kluis voor een door de klant beheerde sleutel](./media/data-box-deploy-export-ordered/customer-managed-key-09.png)
+
+15. Selecteer een gebruikers-id die u gaat gebruiken voor het beheren van de toegang tot deze bron. Kies **een gebruikers identiteit selecteren**. Selecteer in het deel venster aan de rechter kant het abonnement en de beheerde identiteit die u wilt gebruiken. Kies vervolgens **Selecteren**.
+
+    Een door de gebruiker toegewezen beheerde identiteit is een zelfstandige Azure-resource die kan worden gebruikt voor het beheren van meerdere resources. Zie [beheerde identiteits typen](/azure/active-directory/managed-identities-azure-resources/overview)voor meer informatie.  
+
+    Als u een nieuwe beheerde identiteit wilt maken, volgt u de richt lijnen in [maken, lijst, verwijderen of een rol toewijzen aan een door de gebruiker toegewezen beheerde identiteit met behulp van de Azure Portal](../../articles/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md).
+    
+    ![Een gebruikers identiteit selecteren](./media/data-box-deploy-export-ordered/customer-managed-key-10.png)
+
+    De gebruikers-id wordt weer gegeven in de instellingen van het **versleutelings type** .
+
+    U kunt de instellingen voor het **versleutelings type** nu samen vouwen.
+
+    ![Een geselecteerde gebruikers-id die wordt weer gegeven in de instellingen voor versleutelings type](./media/data-box-deploy-export-ordered/customer-managed-key-11.png)
+
+16. Als u dubbele versleuteling op basis van software wilt inschakelen, vouwt u **Double Encryption (voor omgevingen met een hoog beveiligings niveau)** en selecteert u **dubbele versleuteling inschakelen voor de order**. 
 
     De op software gebaseerde versleuteling wordt uitgevoerd naast de AES-256-bits versleuteling van de gegevens op de Data Box.
 
-   
     > [!NOTE]
     > Als u deze optie inschakelt, kan verwerking van de opdracht en het kopiëren van gegevens langer duren. U kunt deze optie niet wijzigen nadat u uw opdracht hebt gemaakt.
 
@@ -259,7 +332,7 @@ Enkele belang rijke punten ten opzichte van XML-bestanden:
 
 De volgende tabel bevat voor beelden van geldige BLOB-paden:
 
-   | Kiezer | BLOB-pad | Beschrijving |
+   | Kiezer | BLOB-pad | Description |
    | --- | --- | --- |
    | Begint met |/ |Exporteert alle blobs in het opslag account |
    | Begint met |/$root/ |Exporteert alle blobs in de basis container |

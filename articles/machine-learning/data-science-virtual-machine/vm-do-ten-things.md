@@ -11,11 +11,11 @@ ms.author: laobri
 ms.topic: conceptual
 ms.date: 05/08/2020
 ms.openlocfilehash: 766da55f2589e2a8eb09e0f1b1c9a0a5027c8c3c
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93320947"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002762"
 ---
 # <a name="data-science-with-a-windows-data-science-virtual-machine"></a>Data Wetenschappen met een Windows-Data Science Virtual Machine
 
@@ -75,7 +75,7 @@ Voor R kunt u een IDE gebruiken zoals RStudio die u kunt vinden in het menu Star
 
 Voor python kunt u een IDE gebruiken zoals de versie van Visual Studio Community, waarop de uitbrei ding Python Tools for Visual Studio (PTVS) vooraf is geïnstalleerd. Standaard wordt alleen python 3,6, de hoofd-Conda-omgeving, geconfigureerd op PTVS. Voer de volgende stappen uit om Anaconda python 2,7 in te scha kelen:
 
-1. Maak aangepaste omgevingen voor elke versie door naar **hulpprogram ma's**  >  **python tools** python  >  - **omgevingen** te gaan en vervolgens **+ Custom** te selecteren in de versie van Visual Studio community.
+1. Maak aangepaste omgevingen voor elke versie door naar **hulpprogram ma's**  >  **python tools** python  >  -**omgevingen** te gaan en vervolgens **+ Custom** te selecteren in de versie van Visual Studio community.
 1. Geef een beschrijving en stel het pad voor het voor voegsel van de omgeving in als **c:\anaconda\envs\python2** voor anaconda python 2,7.
 1. Selecteer **Automatische detectie**  >  **Toep assen** om de omgeving op te slaan.
 
@@ -197,7 +197,7 @@ Nadat u de AzCopy-opdracht hebt uitgevoerd om naar een Azure-Blob te kopiëren, 
 U kunt ook gegevens uit het lokale bestand in uw virtuele machine uploaden met behulp van Azure Storage Explorer:
 
 * Als u gegevens wilt uploaden naar een container, selecteert u de doel container en selecteert u de knop **uploaden** . ![ Scherm afbeelding van de knop uploaden in Azure Storage Explorer](./media/vm-do-ten-things/storage-accounts.png)
-* Selecteer het beletsel teken ( **...** ) rechts van het vak **bestanden** , selecteer een of meer bestanden die u wilt uploaden uit het bestands systeem en selecteer **uploaden** om te beginnen met het uploaden van de bestanden. ![ Scherm afbeelding van het dialoog venster bestanden uploaden](./media/vm-do-ten-things/upload-files-to-blob.png)
+* Selecteer het beletsel teken (**...**) rechts van het vak **bestanden** , selecteer een of meer bestanden die u wilt uploaden uit het bestands systeem en selecteer **uploaden** om te beginnen met het uploaden van de bestanden. ![ Scherm afbeelding van het dialoog venster bestanden uploaden](./media/vm-do-ten-things/upload-files-to-blob.png)
 
 #### <a name="read-data-from-an-azure-blob-python-odbc"></a>Gegevens lezen uit een Azure-Blob: python ODBC
 

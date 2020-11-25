@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: jingwang
 ms.openlocfilehash: 37917e0ed663675677f1d0452b5796120ca2694e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75468764"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001720"
 ---
 ### <a name="azure-storage-linked-service"></a>Een gekoppelde Azure Storage-service
 Met de **Azure Storage-gekoppelde service** kunt u een Azure Storage-account aan een Azure-data factory koppelen met behulp van de **accountsleutel**, waarmee u de data factory kunt openen met wereldwijde toegang tot de Azure Storage. In de volgende tabel vindt u een beschrijving van de JSON-elementen die specifiek zijn voor Azure Storage-gekoppelde service.

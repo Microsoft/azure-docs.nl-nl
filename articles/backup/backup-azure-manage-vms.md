@@ -3,12 +3,12 @@ title: Back-ups van Azure-VM'S beheren en bewaken
 description: Meer informatie over het beheren en bewaken van back-ups van Azure-VM'S met behulp van de Azure Backup-service.
 ms.topic: conceptual
 ms.date: 08/02/2020
-ms.openlocfilehash: 2052d80428af89862b5348943b446f1b800ab36f
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: a56f13afa23a81b9cd2b34d34e1ca302c0c667f0
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92174088"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "96002903"
 ---
 # <a name="manage-azure-vm-backups-with-azure-backup-service"></a>Back-ups van Azure-VM'S beheren met Azure Backup-Service
 
@@ -66,7 +66,7 @@ Vm's op het kluis dashboard weer geven:
 Een bestaand back-upbeleid wijzigen:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/). Open het kluis dashboard.
-2. Selecteer in **> back-upbeleid beheren**het back-upbeleid voor het type **Azure virtual machine**.
+2. Selecteer in **> back-upbeleid beheren** het back-upbeleid voor het type **Azure virtual machine**.
 3. Selecteer **wijzigen** en wijzig de instellingen.
 
 ### <a name="switch-backup-policy"></a>Scha kelen tussen back-upbeleid
@@ -101,11 +101,11 @@ U kunt een back-up op aanvraag uitvoeren van een virtuele machine nadat u de bev
 
 Een back-up op aanvraag activeren:
 
-1. Selecteer **back-upitem**onder **beveiligd item**op het [kluis-item dashboard](#view-vms-on-the-dashboard).
+1. Selecteer **back-upitem** onder **beveiligd item** op het [kluis-item dashboard](#view-vms-on-the-dashboard).
 
     ![De optie nu back-up maken](./media/backup-azure-manage-vms/backup-now-button.png)
 
-2. Selecteer **Azure virtual machine**in het **type back-upbeheer**. Het deel venster **back-upitem (virtuele machine van Azure)** wordt weer gegeven.
+2. Selecteer **Azure virtual machine** in het **type back-upbeheer**. Het deel venster **back-upitem (virtuele machine van Azure)** wordt weer gegeven.
 3. Selecteer een virtuele machine en selecteer **Nu back-up** om een back-up op aanvraag te maken. Het deel venster **Nu back-up** wordt weer gegeven.
 4. Geef in het veld **Backup-kassa bewaren** een datum op voor de back-up die moet worden bewaard.
 
@@ -131,7 +131,7 @@ Er zijn twee manieren om het beveiligen van een virtuele machine te stoppen:
 De beveiliging stoppen en gegevens van een virtuele machine behouden:
 
 1. Op het [dash board van het kluis item](#view-vms-on-the-dashboard)selecteert u **back-up stoppen**.
-2. Kies **back-upgegevens behouden**en bevestig uw selectie als dat nodig is. Voeg een opmerking toe als u wilt. Als u niet zeker weet wat de naam van het item is, houdt u de muis aanwijzer boven het uitroep teken om de naam weer te geven.
+2. Kies **back-upgegevens behouden** en bevestig uw selectie als dat nodig is. Voeg een opmerking toe als u wilt. Als u niet zeker weet wat de naam van het item is, houdt u de muis aanwijzer boven het uitroep teken om de naam weer te geven.
 
     ![Back-upgegevens behouden](./media/backup-azure-manage-vms/retain-backup-data.png)
 
@@ -142,16 +142,16 @@ Een melding laat u weten dat de back-uptaken zijn gestopt.
 De beveiliging stoppen en gegevens van een virtuele machine verwijderen:
 
 1. Op het [dash board van het kluis item](#view-vms-on-the-dashboard)selecteert u **back-up stoppen**.
-2. Kies **back-upgegevens verwijderen**en bevestig uw selectie als dat nodig is. Voer de naam van het back-upitem in en voeg indien gewenst een opmerking toe.
+2. Kies **back-upgegevens verwijderen** en bevestig uw selectie als dat nodig is. Voer de naam van het back-upitem in en voeg indien gewenst een opmerking toe.
 
-    ![Back-upgegevens verwijderen](./media/backup-azure-manage-vms/delete-backup-data1.png)
+    ![Back-upgegevens verwijderen](./media/backup-azure-manage-vms/delete-backup-data.png)
 
 > [!NOTE]
 > Na het volt ooien van de Verwijder bewerking worden de gegevens waarvan een back-up is gemaakt 14 dagen in de [modus voorlopig verwijderd](./soft-delete-virtual-machines.md)bewaard. <br>Daarnaast kunt u [voorlopig verwijderen ook in-of uitschakelen](./backup-azure-security-feature-cloud.md#enabling-and-disabling-soft-delete).
 
 ## <a name="resume-protection-of-a-vm"></a>De beveiliging van een virtuele machine hervatten
 
-Als u de optie [beveiliging stoppen en back-upgegevens behouden](#stop-protection-and-retain-backup-data) hebt gekozen tijdens het stoppen van de beveiliging van de virtuele machine, kunt u **back-up hervatten**gebruiken. Deze optie is niet beschikbaar als u de optie [beveiliging stoppen en back-upgegevens verwijderen](#stop-protection-and-delete-backup-data) kiest of [back-upgegevens verwijdert](#delete-backup-data).
+Als u de optie [beveiliging stoppen en back-upgegevens behouden](#stop-protection-and-retain-backup-data) hebt gekozen tijdens het stoppen van de beveiliging van de virtuele machine, kunt u **back-up hervatten** gebruiken. Deze optie is niet beschikbaar als u de optie [beveiliging stoppen en back-upgegevens verwijderen](#stop-protection-and-delete-backup-data) kiest of [back-upgegevens verwijdert](#delete-backup-data).
 
 De beveiliging van een virtuele machine hervatten:
 
@@ -174,12 +174,12 @@ Er zijn twee manieren om de back-upgegevens van een VM te verwijderen:
 
   ![Selecteer back-up verwijderen](./media/backup-azure-manage-vms/delete-backup-button.png)
 
-  * Selecteer **back-upgegevens verwijderen**op het [kluis-item dashboard](#view-vms-on-the-dashboard).
+  * Selecteer **back-upgegevens verwijderen** op het [kluis-item dashboard](#view-vms-on-the-dashboard).
   * Typ de naam van het back-upitem om te bevestigen dat u de herstel punten wilt verwijderen.
 
-    ![Back-upgegevens verwijderen](./media/backup-azure-manage-vms/delete-backup-data1.png)
+    ![Back-upgegevens verwijderen](./media/backup-azure-manage-vms/delete-backup-data.png)
 
-  * Selecteer **verwijderen**als u de back-upgegevens voor het item wilt verwijderen. Een meldings bericht laat u weten dat de back-upgegevens zijn verwijderd.
+  * Selecteer **verwijderen** als u de back-upgegevens voor het item wilt verwijderen. Een meldings bericht laat u weten dat de back-upgegevens zijn verwijderd.
 
 Voor het beveiligen van uw gegevens bevat Azure Backup de functie voor voorlopig verwijderen. Met zacht verwijderen, zelfs nadat de back-up (alle herstel punten) van een virtuele machine is verwijderd, worden de back-upgegevens 14 extra dagen bewaard. Zie [de documentatie voor voorlopig verwijderen](./backup-azure-security-feature-cloud.md)voor meer informatie.
 
@@ -190,7 +190,7 @@ Voor het beveiligen van uw gegevens bevat Azure Backup de functie voor voorlopig
 
 * Als Azure-Vm's die zijn geconfigureerd voor Azure Backup, worden verwijderd of verplaatst zonder de beveiliging te stoppen, zullen zowel geplande back-uptaken als op aanvraag (ad-hoc) back-uptaken mislukken met de fout UserErrorVmNotFoundV2. De pre-controle van de back-up wordt alleen als kritiek weer gegeven voor mislukte back-uptaken op aanvraag (mislukte geplande taken worden niet weer gegeven).
 * Deze back-upitems blijven actief in het systeem dat voldoet aan het back-up-en bewaar beleid dat door de gebruiker is ingesteld. De back-upgegevens voor deze Azure-Vm's worden bewaard volgens het Bewaar beleid. De verlopen herstel punten (met uitzonde ring van het meest recente herstel punt) worden gereinigd op basis van de Bewaar termijn die in het back-upbeleid is ingesteld.
-* We raden u aan om de back-upitems te verwijderen waar de primaire gegevens bron niet meer bestaat om extra kosten te voor komen. als het back-upbestand/de gegevens voor de verwijderings resources niet langer vereist zijn omdat het meest recente herstel punt permanent wordt bewaard en de gebruiker wordt in rekening gebracht op basis van de back-upprijs van toepassing.
+* Om extra kosten te voor komen, is het raadzaam om de back-upitems te verwijderen waarin de primaire gegevens bron niet meer bestaat. Dit is een scenario waarbij het back-upitem/de gegevens voor de verwijderde bronnen niet meer nodig zijn, omdat het meest recente herstel punt permanent wordt bewaard en er kosten in rekening worden gebracht op basis van de toepasselijke prijzen voor back-ups.
 
 ## <a name="next-steps"></a>Volgende stappen
 

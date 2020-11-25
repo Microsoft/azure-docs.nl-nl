@@ -7,11 +7,11 @@ ms.topic: how-to
 ms.date: 01/13/2020
 ms.author: rohogue
 ms.openlocfilehash: c17d3c7cd2cf6fe5bca725cf94344b2d2cb50bf2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88271138"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001521"
 ---
 # <a name="configure-storage"></a>Opslag configureren
 
@@ -49,7 +49,7 @@ Voer de volgende stappen uit om een NAS-kern bestand toe te voegen:
 
 1. Klik op **core filer**  >  **kern bestanden beheren** aan de linkerkant.
 
-1. Klik op **Maken**.
+1. Klik op **Create**.
 
    ![Scherm afbeelding van de pagina nieuwe kern bestand toevoegen met een cursor boven de knop maken](media/avere-vfxt-add-core-filer-start.png)
 
@@ -119,7 +119,7 @@ Voer de volgende stappen uit om Blob-opslag toe te voegen na het maken van het c
 
    ![Azure Portal GUI voor het kopiëren van de sleutel](media/avere-vfxt-copy-storage-key.png)
 
-1. Open het configuratie scherm van AVERE voor uw cluster. Klik op **instellingen**en open **Cluster**vervolgens  >  de referenties van de cluster-**Cloud** in het navigatie deel venster aan de linkerkant. Klik op de pagina Cloud referenties op **referentie toevoegen**.
+1. Open het configuratie scherm van AVERE voor uw cluster. Klik op **instellingen** en open **Cluster** vervolgens  >  de referenties van de cluster-**Cloud** in het navigatie deel venster aan de linkerkant. Klik op de pagina Cloud referenties op **referentie toevoegen**.
 
    ![Klik op de knop referentie toevoegen op de pagina configuratie van Cloud referenties](media/avere-vfxt-new-credential-button.png)
 
@@ -143,10 +143,10 @@ Voer de volgende stappen uit om Blob-opslag toe te voegen na het maken van het c
 
 1. Vul de wizard in:
 
-   * Selecteer de **Cloud**van het type filer.
+   * Selecteer de **Cloud** van het type filer.
    * Geef de nieuwe kern bestand een naam en klik op **volgende**.
    * Accepteer het standaard cache beleid en ga door naar de derde pagina.
-   * Kies in **Service type**de optie **Azure Storage**.
+   * Kies in **Service type** de optie **Azure Storage**.
    * Kies de referentie die u eerder hebt gemaakt.
    * **Bucket inhoud** instellen op **leeg**
    * **Certificaat verificatie** wijzigen in **uitgeschakeld**

@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 01/02/2020
 ms.openlocfilehash: 1ef52d74f7ae6e7e0d8c58e3b1972a0a1227c6b5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85962200"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001917"
 ---
 # <a name="enable-heap-dumps-for-apache-hadoop-services-on-linux-based-hdinsight"></a>Heap-dumps inschakelen voor Apache Hadoop Services op HDInsight op basis van Linux
 
@@ -37,7 +37,7 @@ U kunt ook heap-dumps inschakelen voor de kaart en processen verminderen die doo
 
 Heap-dumps worden ingeschakeld door de opties voor het door geven (ook wel "kiest of para meters" genoemd) aan de JVM toe te staan wanneer een service wordt gestart. Voor de meeste [Apache Hadoop](https://hadoop.apache.org/) Services kunt u het shell script dat wordt gebruikt om de service te starten, zodanig wijzigen dat deze opties worden door gegeven.
 
-In elk script is er een export voor ** \* \_ kiest**, die de opties bevat die zijn door gegeven aan de JVM. In het script **Hadoop-env.sh** bevat bijvoorbeeld de regel die begint met `export HADOOP_NAMENODE_OPTS=` de opties voor de NameNode-service.
+In elk script is er een export voor **\* \_ kiest**, die de opties bevat die zijn door gegeven aan de JVM. In het script **Hadoop-env.sh** bevat bijvoorbeeld de regel die begint met `export HADOOP_NAMENODE_OPTS=` de opties voor de NameNode-service.
 
 Het toewijzen en verminderen van processen is iets anders, omdat deze bewerkingen een onderliggend proces van de MapReduce-service zijn. Elke kaart of vermindert proces wordt uitgevoerd in een onderliggende container en er zijn twee vermeldingen die de JVM-opties bevatten. Beide bevinden zich in **mapred-site.xml**:
 
@@ -68,7 +68,7 @@ Als u bijvoorbeeld gebruikt, `-XX:HeapDumpPath=/tmp` worden de dumps opgeslagen 
 
 ### <a name="scripts"></a>Scripts
 
-U kunt ook een script activeren als er een **OutOfMemoryError** optreedt. U kunt bijvoorbeeld een melding activeren, zodat u weet dat de fout is opgetreden. Gebruik de volgende optie om een script op een __OutOfMemoryError__te starten:
+U kunt ook een script activeren als er een **OutOfMemoryError** optreedt. U kunt bijvoorbeeld een melding activeren, zodat u weet dat de fout is opgetreden. Gebruik de volgende optie om een script op een __OutOfMemoryError__ te starten:
 
 `-XX:OnOutOfMemoryError=/path/to/script`
 

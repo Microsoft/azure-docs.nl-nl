@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: alkohli
 ms.openlocfilehash: 5f94564c5e769d3cf0e0abbe92a309a1ee2117a1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90055075"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96003868"
 ---
 # <a name="deploy-the-storsimple-snapshot-manager-mmc-snap-in"></a>De StorSimple Snapshot Manager MMC-module implementeren
 
@@ -121,7 +121,7 @@ Gebruik de volgende stappen om StorSimple Snapshot Manager te verbinden met een 
 4. StorSimple Snapshot Manager zoekt naar het apparaat dat u hebt geïdentificeerd. Als het apparaat beschikbaar is, wordt door StorSimple Snapshot Manager een verbinding toegevoegd. U kunt [de verbinding met het apparaat controleren](#to-verify-the-connection) om te bevestigen dat de verbinding is toegevoegd.
    
     Als het apparaat om de een of andere reden niet beschikbaar is, retourneert StorSimple Snapshot Manager een fout bericht. Klik op **OK** om het fout bericht te sluiten en klik vervolgens op **Annuleren** om het dialoog venster **een apparaat configureren** te sluiten.
-5. Wanneer verbinding wordt gemaakt met een apparaat, wordt door StorSimple Snapshot Manager elke volume groep geïmporteerd die voor dat apparaat is geconfigureerd, op voor waarde dat aan de volume groep Back-ups zijn gekoppeld. Volume groepen waaraan geen back-ups zijn gekoppeld, worden niet geïmporteerd. Daarnaast worden back-upbeleiden die zijn gemaakt voor een volume groep niet geïmporteerd. Als u de geïmporteerde groepen wilt zien, klikt u met de rechter muisknop op het knoop punt bovenste **volume groepen** in het deel venster **bereik** en klikt u op **geïmporteerde groepen**in-/uitschakelen.
+5. Wanneer verbinding wordt gemaakt met een apparaat, wordt door StorSimple Snapshot Manager elke volume groep geïmporteerd die voor dat apparaat is geconfigureerd, op voor waarde dat aan de volume groep Back-ups zijn gekoppeld. Volume groepen waaraan geen back-ups zijn gekoppeld, worden niet geïmporteerd. Daarnaast worden back-upbeleiden die zijn gemaakt voor een volume groep niet geïmporteerd. Als u de geïmporteerde groepen wilt zien, klikt u met de rechter muisknop op het knoop punt bovenste **volume groepen** in het deel venster **bereik** en klikt u op **geïmporteerde groepen** in-/uitschakelen.
 
 ### <a name="step-3-verify-the-connection-to-the-device"></a>Stap 3: de verbinding met het apparaat controleren
 Gebruik de volgende stappen om te controleren of StorSimple Snapshot Manager is aangesloten op het StorSimple-apparaat.
@@ -151,13 +151,13 @@ Volg deze stappen als u een upgrade uitvoert of StorSimple Snapshot Manager opni
 Gebruik de volgende stappen om StorSimple Snapshot Manager te verwijderen.
 
 #### <a name="to-uninstall-storsimple-snapshot-manager"></a>StorSimple verwijderen Snapshot Manager
-1. Open het **configuratie scherm**op de hostcomputer, klik op **Program ma's**en klik vervolgens op **Program ma's en onderdelen**.
+1. Open het **configuratie scherm** op de hostcomputer, klik op **Program ma's** en klik vervolgens op **Program ma's en onderdelen**.
 2. Klik in het linkerdeel venster op **verwijderen of wijzigen van een programma**.
-3. Klik met de rechter muisknop op **StorSimple Snapshot Manager**en klik vervolgens op **verwijderen**.
-4. Hiermee start u het installatie programma voor StorSimple Snapshot Manager. Klik op **instellingen wijzigen**en klik vervolgens op **verwijderen**.
+3. Klik met de rechter muisknop op **StorSimple Snapshot Manager** en klik vervolgens op **verwijderen**.
+4. Hiermee start u het installatie programma voor StorSimple Snapshot Manager. Klik op **instellingen wijzigen** en klik vervolgens op **verwijderen**.
    
    > [!NOTE]
-   > Als er MMC-processen worden uitgevoerd op de achtergrond, zoals StorSimple Snapshot Manager of schijf beheer, mislukt de verwijdering en ontvangt u een bericht dat alle exemplaren van MMC worden gesloten voordat u het programma probeert te verwijderen. Selecteer **toepassingen automatisch sluiten en probeer deze opnieuw op te starten nadat de installatie is voltooid**en klik vervolgens op **OK**.
+   > Als er MMC-processen worden uitgevoerd op de achtergrond, zoals StorSimple Snapshot Manager of schijf beheer, mislukt de verwijdering en ontvangt u een bericht dat alle exemplaren van MMC worden gesloten voordat u het programma probeert te verwijderen. Selecteer **toepassingen automatisch sluiten en probeer deze opnieuw op te starten nadat de installatie is voltooid** en klik vervolgens op **OK**.
    > 
    > 
 5. Wanneer het verwijderings proces is voltooid, wordt het bericht **Setup** is voltooid weer gegeven. Klik op **Sluiten**.
@@ -169,9 +169,9 @@ Voer de volgende stappen uit om een kopie van de StorSimple-Snapshot Manager-Dat
 1. Stop de micro soft StorSimple Management-service:
    
    1. Start Serverbeheer.
-   2. Selecteer op het Serverbeheer-dash board de optie **Services**in het menu **extra** .
-   3. Selecteer **micro soft StorSimple Management service**op de pagina **Services** .
-   4. Klik in het rechterdeel venster onder **micro soft StorSimple Management service**op **de service stoppen**.
+   2. Selecteer op het Serverbeheer-dash board de optie **Services** in het menu **extra** .
+   3. Selecteer **micro soft StorSimple Management service** op de pagina **Services** .
+   4. Klik in het rechterdeel venster onder **micro soft StorSimple Management service** op **de service stoppen**.
       
         ![De StorSimple-Apparaatbeheer-service stoppen](./media/storsimple-snapshot-manager-deployment/HCS_SSM_stop_service.png)
 2. Bladeren naar C:\ProgramData\Microsoft\StorSimple\BACatalog. 
@@ -184,9 +184,9 @@ Voer de volgende stappen uit om een kopie van de StorSimple-Snapshot Manager-Dat
     ![StorSimple back-catalogus bestand](./media/storsimple-snapshot-manager-deployment/HCS_SSM_bacatalog.png)
 4. Start de micro soft StorSimple Management-service opnieuw: 
    
-   1. Selecteer op het Serverbeheer-dash board de optie **Services**in het menu **extra** .
+   1. Selecteer op het Serverbeheer-dash board de optie **Services** in het menu **extra** .
    2. Selecteer op de pagina **Services** de **micro soft StorSimple Management-service**.
-   3. Klik in het rechterdeel venster onder **micro soft StorSimple Management service**op **Start de service opnieuw**. 
+   3. Klik in het rechterdeel venster onder **micro soft StorSimple Management service** op **Start de service opnieuw**. 
 
 ### <a name="step-3-reinstall-storsimple-snapshot-manager-and-restore-the-database"></a>Stap 3: StorSimple Snapshot Manager opnieuw installeren en de data base herstellen
 Als u StorSimple opnieuw wilt installeren Snapshot Manager, volgt u de stappen in [een nieuwe StorSimple installeren Snapshot Manager](#install-a-new-storsimple-snapshot-manager). Gebruik vervolgens de volgende procedure om de StorSimple-Snapshot Manager-Data Base te herstellen.
@@ -195,9 +195,9 @@ Als u StorSimple opnieuw wilt installeren Snapshot Manager, volgt u de stappen i
 1. Stop de micro soft StorSimple Management-service:
    
    1. Start Serverbeheer.
-   2. Selecteer op het Serverbeheer-dash board de optie **Services**in het menu **extra** .
-   3. Selecteer **micro soft StorSimple Management service**op de pagina **Services** .
-   4. Klik in het rechterdeel venster onder **micro soft StorSimple Management service**op **de service stoppen**.
+   2. Selecteer op het Serverbeheer-dash board de optie **Services** in het menu **extra** .
+   3. Selecteer **micro soft StorSimple Management service** op de pagina **Services** .
+   4. Klik in het rechterdeel venster onder **micro soft StorSimple Management service** op **de service stoppen**.
 2. Bladeren naar C:\ProgramData\Microsoft\StorSimple\BACatalog.
    
    > [!NOTE]
@@ -207,9 +207,9 @@ Als u StorSimple opnieuw wilt installeren Snapshot Manager, volgt u de stappen i
 3. Verwijder het XML-bestand van de catalogus en vervang dit door de versie die u eerder hebt opgeslagen.
 4. Start de micro soft StorSimple Management-service opnieuw: 
    
-   1. Selecteer op het Serverbeheer-dash board de optie **Services**in het menu **extra** .
-   2. Selecteer **micro soft StorSimple Management service**op de pagina **Services** .
-   3. Klik in het rechterdeel venster onder **micro soft StorSimple Management service**op **Start de service opnieuw**.
+   1. Selecteer op het Serverbeheer-dash board de optie **Services** in het menu **extra** .
+   2. Selecteer **micro soft StorSimple Management service** op de pagina **Services** .
+   3. Klik in het rechterdeel venster onder **micro soft StorSimple Management service** op **Start de service opnieuw**.
 
 ## <a name="next-steps"></a>Volgende stappen
 * Ga naar [Wat is StorSimple Snapshot Manager](storsimple-what-is-snapshot-manager.md)voor meer informatie over StorSimple-Snapshot Manager?.

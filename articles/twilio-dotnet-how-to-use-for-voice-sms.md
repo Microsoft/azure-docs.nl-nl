@@ -14,11 +14,11 @@ ms.date: 04/24/2015
 ms.author: gwallace
 ms.custom: devx-track-dotnet
 ms.openlocfilehash: 104f969f5e27ef36ad43eb10e19176a4bcfd6648
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89021133"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96003753"
 ---
 # <a name="how-to-use-twilio-for-voice-and-sms-capabilities-from-azure"></a>Twilio gebruiken voor spraak-en SMS-mogelijkheden van Azure
 In deze hand leiding wordt gedemonstreerd hoe u veelvoorkomende programmeer taken uitvoert met de Twilio API-service in Azure. De besproken scenario's zijn onder andere het maken van een telefoon oproep en het verzenden van een SMS-bericht (Short Message Service). Zie de sectie [volgende stappen](#NextSteps) voor meer informatie over Twilio en het gebruik van spraak en SMS in uw toepassingen.
@@ -39,7 +39,7 @@ De Twilio-API is een resterende API die spraak-en SMS-functionaliteit biedt voor
 De belangrijkste aspecten van de Twilio-API zijn Twilio-werk woorden en Twilio Markup Language (TwiML).
 
 ### <a name="twilio-verbs"></a><a id="Verbs"></a>Twilio-werk woorden
-De API maakt gebruik van Twilio-werk woorden. de term ** &lt; zeg &gt; ** geeft bijvoorbeeld Twilio aan audibly een bericht te verzenden bij een aanroep.
+De API maakt gebruik van Twilio-werk woorden. de term **&lt; zeg &gt;** geeft bijvoorbeeld Twilio aan audibly een bericht te verzenden bij een aanroep.
 
 Hier volgt een lijst met Twilio-werk woorden.  Meer informatie over de andere bewerkingen en mogelijkheden via [documentatie voor Twilio Markup Language](https://www.twilio.com/docs/api/twiml).
 
@@ -111,7 +111,7 @@ Micro soft Visual Studio 2010 installeert standaard versie 1,2 van NuGet. Voor h
 2. Klik met de rechter muisknop op **verwijzingen**.
 3. Klik op **NuGet-pakketten beheren...**
 4. Klik op **online**.
-5. Typ *twilio*in het vak online zoeken.
+5. Typ *twilio* in het vak online zoeken.
 6. Klik op **installeren** in het Twilio-pakket.
 
 ## <a name="how-to-make-an-outgoing-call"></a><a id="howto_make_call"></a>Procedure: een uitgaande oproep doen

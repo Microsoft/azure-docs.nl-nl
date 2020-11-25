@@ -14,11 +14,11 @@ ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
 ms.openlocfilehash: f49ae5139dc92ec1448e5dea05be8c8c216ef91e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91361344"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002660"
 ---
 # <a name="how-to-use-perfinsights-in-azure"></a>PerfInsights gebruiken in azure
 
@@ -118,15 +118,15 @@ Informatie over Windows VM, schijven of opslag groepen configuratie, prestatie m
 | SQL Server-configuratie          | Ja                        | Ja                                | Ja                      | Ja                  | Ja                  |
 | Traceringen van prestatie diagnostiek *  | Ja                        | Ja                                | Ja                      | Ja                  | Ja                  |
 | Tracering van prestatie meter items * *      |                            |                                    | Ja                      |                      | Ja                  |
-| Tracering SMB-teller * *              |                            |                                    |                          | Ja                  |                      |
+| Tracering SMB-teller * *              |                            |                                    |                          | Yes                  |                      |
 | Teller tracering SQL Server * *       |                            |                                    | Ja                      |                      | Ja                  |
-| Xperf tracering                       |                            |                                    |                          |                      | Ja                  |
-| StorPort-tracering                    |                            |                                    |                          |                      | Ja                  |
+| Xperf tracering                       |                            |                                    |                          |                      | Yes                  |
+| StorPort-tracering                    |                            |                                    |                          |                      | Yes                  |
 | Netwerk tracering                     |                            |                                    |                          | Ja                  | Ja                  |
-| Diskspd-Bench Mark-tracering * * *       |                            | Ja                                |                          |                      |                      |
+| Diskspd-Bench Mark-tracering * * _       |                            | Yes                                |                          |                      |                      |
 |       |                            |                         |                                                   |                      |                      |
 
-### <a name="performance-diagnostics-trace-"></a>Prestatie diagnostiek tracering (*)
+### <a name="performance-diagnostics-trace-_"></a>Prestatie diagnostiek tracering (_)
 
 Voert een op regels gebaseerde engine op de achtergrond uit om gegevens te verzamelen en doorlopende prestatie problemen vast te stellen. De volgende regels worden momenteel ondersteund:
 
@@ -154,7 +154,7 @@ Verzamelt de volgende prestatie meter items:
 #### <a name="for-azure-files"></a>Voor Azure Files
 \SMB-client shares
 
-### <a name="diskspd-benchmark-trace-"></a>Diskspd Bench Mark-tracering (* * *)
+### <a name="diskspd-benchmark-trace-_"></a>Diskspd Bench Mark-tracering (* * _)
 Diskspd I/O-workload testen (besturingssysteem schijf [schrijven] en groeps stations [lezen/schrijven])
 
 ## <a name="run-the-perfinsights-tool-on-your-vm"></a>Het PerfInsights-hulp programma uitvoeren op uw VM
@@ -165,8 +165,7 @@ Diskspd I/O-workload testen (besturingssysteem schijf [schrijven] en groeps stat
 
 -  Dit hulp programma moet worden uitgevoerd op de VM met het prestatie probleem. 
 
--  De volgende besturingssystemen worden ondersteund:
-   * Windows Server 2019
+-  De volgende besturings systemen worden ondersteund: _ Windows Server 2019
    * Windows Server 2016
    * Windows Server 2012 R2
    * Windows Server 2012
@@ -198,7 +197,7 @@ Voer de volgende stappen uit om het PerfInsights-hulp programma uit te voeren:
 
 1. Down load [PerfInsights.zip](https://aka.ms/perfinsightsdownload).
 
-2. Deblokkeren van het PerfInsights.zip-bestand. U doet dit door met de rechter muisknop op het PerfInsights.zip bestand te klikken en **Eigenschappen**te selecteren. Selecteer op het tabblad **Algemeen** de optie **blok kering opheffen**en selecteer vervolgens **OK**. Dit zorgt ervoor dat het hulp programma wordt uitgevoerd zonder dat er extra beveiligings aanwijzingen zijn.  
+2. Deblokkeren van het PerfInsights.zip-bestand. U doet dit door met de rechter muisknop op het PerfInsights.zip bestand te klikken en **Eigenschappen** te selecteren. Selecteer op het tabblad **Algemeen** de optie **blok kering opheffen** en selecteer vervolgens **OK**. Dit zorgt ervoor dat het hulp programma wordt uitgevoerd zonder dat er extra beveiligings aanwijzingen zijn.  
 
     ![Scherm opname van PerfInsights-eigenschappen, waarbij de blok kering is gemarkeerd](media/how-to-use-perfInsights/pi-unlock-file.png)
 

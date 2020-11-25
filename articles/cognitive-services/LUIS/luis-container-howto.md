@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 09/28/2020
 ms.author: aahi
 keywords: on-premises, docker, container
-ms.openlocfilehash: c65a81d9daed85b5bf056d24949e36ec227c19c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 778fe388ae3db68d836384299a8a1c7c06e31f41
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91460982"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96001797"
 ---
 # <a name="install-and-run-docker-containers-for-luis"></a>Docker-containers voor LUIS installeren en uitvoeren
 
@@ -39,9 +39,9 @@ Als u de LUIS-container wilt uitvoeren, moet u rekening houden met de volgende v
 
 |Vereist|Doel|
 |--|--|
-|Docker-engine| De docker-engine moet zijn geïnstalleerd op een [hostcomputer](#the-host-computer). Docker biedt pakketten waarmee de Docker-omgeving op [MacOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) en [Linux](https://docs.docker.com/engine/installation/#supported-platforms) kan worden geconfigureerd. Zie het [Docker-overzicht](https://docs.docker.com/engine/docker-overview/) voor een inleiding tot de basisprincipes van Docker en containers.<br><br> Docker moet worden geconfigureerd zodat de containers verbinding kunnen maken met en facturerings gegevens kunnen verzenden naar Azure. <br><br> **In Windows**moet docker ook worden geconfigureerd voor de ondersteuning van Linux-containers.<br><br>|
+|Docker-engine| De docker-engine moet zijn geïnstalleerd op een [hostcomputer](#the-host-computer). Docker biedt pakketten waarmee de Docker-omgeving op [MacOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) en [Linux](https://docs.docker.com/engine/installation/#supported-platforms) kan worden geconfigureerd. Zie het [Docker-overzicht](https://docs.docker.com/engine/docker-overview/) voor een inleiding tot de basisprincipes van Docker en containers.<br><br> Docker moet worden geconfigureerd zodat de containers verbinding kunnen maken met en facturerings gegevens kunnen verzenden naar Azure. <br><br> **In Windows** moet docker ook worden geconfigureerd voor de ondersteuning van Linux-containers.<br><br>|
 |Vertrouwd met docker | U moet een basis kennis hebben van docker-concepten, zoals registers, opslag plaatsen, containers en container installatie kopieën, en kennis van basis `docker` opdrachten.|
-|App-bestand voor Azure- `Cognitive Services` resource en Luis- [pakket](luis-how-to-start-new-app.md) |Als u de container wilt gebruiken, hebt u het volgende nodig:<br><br>* Een _Cognitive Services_ Azure-resource en de gekoppelde facturerings sleutel de URI van het facturerings eindpunt. Beide waarden zijn beschikbaar op de pagina overzicht en sleutels voor de resource en zijn vereist om de container te starten. <br>* Een getrainde of gepubliceerde app is verpakt als gekoppelde invoer voor de container met de bijbehorende App-ID. U kunt het verpakte bestand ophalen uit de LUIS-portal of de ontwerp-Api's. Als u een LUIS-app-pakket van de [ontwerp-api's](#authoring-apis-for-package-file)krijgt, hebt u ook uw _ontwerp sleutel_nodig.<br><br>Deze vereisten worden gebruikt om opdracht regel argumenten door te geven aan de volgende variabelen:<br><br>**{AUTHORING_KEY}**: deze sleutel wordt gebruikt om de verpakte app uit de Luis-service in de Cloud op te halen en uploadt de query logboeken terug naar de Cloud. De indeling is `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.<br><br>**{APP_ID}**: deze id wordt gebruikt om de app te selecteren. De indeling is `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.<br><br>**{API_KEY}**: deze sleutel wordt gebruikt om de container te starten. U kunt de eindpunt sleutel op twee plaatsen vinden. De eerste is de Azure Portal in de lijst sleutels van de _Cognitive Services_ resource. De eindpunt sleutel is ook beschikbaar in de LUIS-Portal op de pagina sleutels en eindpunt instellingen. Gebruik niet de start sleutel.<br><br>**{ENDPOINT_URI}**: het eind punt op de pagina overzicht.<br><br>De [ontwerp sleutel en de eindpunt sleutel](luis-limits.md#key-limits) hebben verschillende doel einden. Gebruik deze niet om te zetten. |
+|App-bestand voor Azure- `Cognitive Services` resource en Luis- [pakket](luis-how-to-start-new-app.md) |Als u de container wilt gebruiken, hebt u het volgende nodig:<br><br>* Een _Cognitive Services_ Azure-resource en de gekoppelde facturerings sleutel de URI van het facturerings eindpunt. Beide waarden zijn beschikbaar op de pagina overzicht en sleutels voor de resource en zijn vereist om de container te starten. <br>* Een getrainde of gepubliceerde app is verpakt als gekoppelde invoer voor de container met de bijbehorende App-ID. U kunt het verpakte bestand ophalen uit de LUIS-portal of de ontwerp-Api's. Als u een LUIS-app-pakket van de [ontwerp-api's](#authoring-apis-for-package-file)krijgt, hebt u ook uw _ontwerp sleutel_ nodig.<br><br>Deze vereisten worden gebruikt om opdracht regel argumenten door te geven aan de volgende variabelen:<br><br>**{AUTHORING_KEY}**: deze sleutel wordt gebruikt om de verpakte app uit de Luis-service in de Cloud op te halen en uploadt de query logboeken terug naar de Cloud. De indeling is `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.<br><br>**{APP_ID}**: deze id wordt gebruikt om de app te selecteren. De indeling is `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.<br><br>**{API_KEY}**: deze sleutel wordt gebruikt om de container te starten. U kunt de eindpunt sleutel op twee plaatsen vinden. De eerste is de Azure Portal in de lijst sleutels van de _Cognitive Services_ resource. De eindpunt sleutel is ook beschikbaar in de LUIS-Portal op de pagina sleutels en eindpunt instellingen. Gebruik niet de start sleutel.<br><br>**{ENDPOINT_URI}**: het eind punt op de pagina overzicht.<br><br>De [ontwerp sleutel en de eindpunt sleutel](luis-limits.md#key-limits) hebben verschillende doel einden. Gebruik deze niet om te zetten. |
 
 [!INCLUDE [Gathering required container parameters](../containers/includes/container-gathering-required-parameters.md)]
 
@@ -108,12 +108,12 @@ Plaats het pakket bestand in een map en verwijs naar deze map als de invoer kopp
 
 ### <a name="package-types"></a>Pakket typen
 
-De map invoer koppeling kan de modellen **productie**, **fase ring**en **versie** van de app tegelijkertijd bevatten. Alle pakketten zijn gekoppeld.
+De map invoer koppeling kan de modellen **productie**, **fase ring** en **versie** van de app tegelijkertijd bevatten. Alle pakketten zijn gekoppeld.
 
 |Pakket type|Query eind punt-API|Beschik baarheid van query's|Bestands naam indeling pakket|
 |--|--|--|--|
 |Versie|GET, POST|Alleen container|`{APP_ID}_v{APP_VERSION}.gz`|
-|Faseren|GET, POST|Azure en container|`{APP_ID}_STAGING.gz`|
+|Staging|GET, POST|Azure en container|`{APP_ID}_STAGING.gz`|
 |Productie|GET, POST|Azure en container|`{APP_ID}_PRODUCTION.gz`|
 
 > [!IMPORTANT]
@@ -281,7 +281,7 @@ De query parameters configureren hoe en wat wordt geretourneerd in de query-antw
 |`staging`|booleaans|Retourneert een query van de resultaten van de faserings omgeving indien ingesteld op waar. |
 |`log`|booleaans|Registreert query's die later kunnen worden gebruikt voor [actief leren](luis-how-to-review-endpoint-utterances.md). De standaardwaarde is true.|
 
-***
+**_
 
 ### <a name="query-the-luis-app"></a>Query's uitvoeren op de LUIS-app
 
@@ -299,7 +299,7 @@ curl -G \
 "http://localhost:5000/luis/v3.0/apps/{APP_ID}/slots/production/predict"
 ```
 
-Als u query's wilt uitvoeren naar de **faserings** omgeving, vervangt u `production` in de route door `staging` :
+Als u query's wilt uitvoeren naar de _ *staging**-omgeving, vervangt u `production` in de route door `staging` :
 
 `http://localhost:5000/luis/v3.0/apps/{APP_ID}/slots/staging/predict`
 
@@ -335,7 +335,7 @@ curl -X GET \
 ```
 De versie naam mag Maxi maal 10 tekens bevatten en bevat alleen tekens die in een URL zijn toegestaan.
 
-***
+**_
 
 ## <a name="import-the-endpoint-logs-for-active-learning"></a>De eindpunt logboeken voor actief leren importeren
 
@@ -346,11 +346,11 @@ Op de volgende locatie wordt de geneste mapstructuur voor de logboek bestanden v
 /output/luis/{INSTANCE_ID}/
 ```
 
-Selecteer uw app in de LUIS-Portal en selecteer vervolgens **eindpunt logboeken importeren** om deze logboeken te uploaden.
+Selecteer uw app in de LUIS-Portal en selecteer vervolgens *eind punt-logboeken importeren** als u deze logboeken wilt uploaden.
 
 ![De logboek bestanden van de container importeren voor actief leren](./media/luis-container-how-to/upload-endpoint-log-files.png)
 
-Nadat het logboek is geüpload, [controleert u het eind punt](https://docs.microsoft.com/azure/cognitive-services/luis/luis-concept-review-endpoint-utterances) uitingen in de Luis-Portal.
+Nadat het logboek is geüpload, [controleert u het eind punt](./luis-concept-review-endpoint-utterances.md) uitingen in de Luis-Portal.
 
 <!--  ## Validate container is running -->
 

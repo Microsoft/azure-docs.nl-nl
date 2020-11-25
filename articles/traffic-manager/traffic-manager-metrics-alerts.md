@@ -11,11 +11,11 @@ ms.workload: infrastructure-services
 ms.date: 06/11/2018
 ms.author: duau
 ms.openlocfilehash: 997e2e97161e6db7cdca04c1b79f5149a2e4c409
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89392847"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96003528"
 ---
 # <a name="traffic-manager-metrics-and-alerts"></a>Metrische gegevens en waarschuwingen Traffic Manager
 

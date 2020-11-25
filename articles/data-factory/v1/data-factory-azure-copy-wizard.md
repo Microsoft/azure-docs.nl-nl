@@ -14,11 +14,11 @@ ms.date: 10/26/2020
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 55a27dbb6c2ec3569bae9d6fb96fcd8087f08daf
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637663"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001674"
 ---
 # <a name="azure-data-factory-copy-wizard"></a>Wizard Azure Data Factory kopiëren
 
@@ -63,7 +63,7 @@ De volgende scherm afbeelding toont een SQL-query met behulp van de `Text.Format
 ![Expressies valideren](./media/data-factory-copy-wizard/validate-expressions.png)
 
 ### <a name="filtering-of-data-in-an-azure-blob-folder"></a>Filteren van gegevens in een Azure Blob-map
-U kunt variabelen in het mappad gebruiken om gegevens te kopiëren uit een map die wordt bepaald tijdens runtime op basis van [systeem variabelen](data-factory-functions-variables.md#data-factory-system-variables). De ondersteunde variabelen zijn: **{Year}** , **{Month}** , **{Day}** , **{Hour}** , **{Minute}** en **{Custom}** . Bijvoorbeeld: inputfolder/{year}/{month}/{Day}.
+U kunt variabelen in het mappad gebruiken om gegevens te kopiëren uit een map die wordt bepaald tijdens runtime op basis van [systeem variabelen](data-factory-functions-variables.md#data-factory-system-variables). De ondersteunde variabelen zijn: **{Year}**, **{Month}**, **{Day}**, **{Hour}**, **{Minute}** en **{Custom}**. Bijvoorbeeld: inputfolder/{year}/{month}/{Day}.
 
 Stel dat u een invoer mappen hebt met de volgende indeling:
 
@@ -74,7 +74,7 @@ Stel dat u een invoer mappen hebt met de volgende indeling:
 ...
 ```
 
-Klik op de knop **Bladeren** voor **bestand of map** , blader naar een van deze mappen (bijvoorbeeld 2016->03->01->02) en klik op **kiezen** . U ziet `2016/03/01/02` in het tekstvak. Vervang nu **2016** door **{Year}** , **03** met **{Month}** , **01** met **{Day}** en **02** met **{Hour}** en druk op de **Tab** -toets. Er moeten vervolg keuzelijsten worden weer gegeven om de indeling voor deze vier variabelen te selecteren:
+Klik op de knop **Bladeren** voor **bestand of map**, blader naar een van deze mappen (bijvoorbeeld 2016->03->01->02) en klik op **kiezen**. U ziet `2016/03/01/02` in het tekstvak. Vervang nu **2016** door **{Year}**, **03** met **{Month}**, **01** met **{Day}** en **02** met **{Hour}** en druk op de **Tab** -toets. Er moeten vervolg keuzelijsten worden weer gegeven om de indeling voor deze vier variabelen te selecteren:
 
 ![Systeem variabelen gebruiken](./media/data-factory-copy-wizard/blob-standard-variables-in-folder-path.png)   
 
@@ -98,25 +98,25 @@ In deze sectie worden algemene probleemoplossings methoden voor de wizard kopië
 
 ### <a name="error-code-unable-to-validate-in-copy-wizard"></a>Fout code: kan niet valideren in wizard kopiëren
 
-- **Symptomen** : in de eerste stap van de wizard kopiëren wordt het volgende waarschuwings bericht over ' kan niet valideren ' aangetroffen.
-- **Oorzaken** : dit kan gebeuren wanneer alle cookies van derden zijn uitgeschakeld.
-- **Oplossing** : 
+- **Symptomen**: in de eerste stap van de wizard kopiëren wordt het volgende waarschuwings bericht over ' kan niet valideren ' aangetroffen.
+- **Oorzaken**: dit kan gebeuren wanneer alle cookies van derden zijn uitgeschakeld.
+- **Oplossing**: 
     - Gebruik Internet Explorer of micro soft Edge-browser.
     - Als u Chrome browser gebruikt, volgt u de onderstaande instructies om een uitzonde ring voor cookies voor *microsoftonline.com* en *Windows.net* toe te voegen.
         1.  Open de Chrome-browser.
         2.  Klik op de moersleutel of drie regels aan de rechter kant (Google Chrome aanpassen en beheren).
-        3.  Klik op **Instellingen** .
+        3.  Klik op **Instellingen**.
         4.  Zoek **cookies** of ga naar **Privacy** onder Geavanceerde instellingen.
-        5.  Selecteer **inhouds instellingen** .    
-        6.  Cookies moeten worden ingesteld zodat **lokale gegevens kunnen worden ingesteld (aanbevolen)** .
-        7.  Klik op **uitzonde ringen beheren** . Onder het- **hostname-patroon** voert u het volgende in en zorgt u ervoor dat het gedrag is ingesteld op **toestaan** .
+        5.  Selecteer **inhouds instellingen**.    
+        6.  Cookies moeten worden ingesteld zodat **lokale gegevens kunnen worden ingesteld (aanbevolen)**.
+        7.  Klik op **uitzonde ringen beheren**. Onder het- **hostname-patroon** voert u het volgende in en zorgt u ervoor dat het gedrag is ingesteld op **toestaan** .
             - login.microsoftonline.com
             - login.windows.net
         8.  Sluit de browser en start opnieuw.
     - Als u de Firefox-browser gebruikt, volgt u de onderstaande instructies om een uitzonde ring voor cookies toe te voegen.
-        1. Ga in het menu van Firefox naar **extra**  >  **Opties** .
-        2. Onder **Privacy**  >  **geschiedenis** van privacy ziet u mogelijk dat de huidige instelling **aangepaste instellingen voor geschiedenis gebruikt** .
-        3. In **cookies** van derden accepteren is uw huidige instelling mogelijk **nooit** . Klik vervolgens op **uitzonde ringen** aan de rechter kant om de volgende sites toe te voegen.
+        1. Ga in het menu van Firefox naar **extra**  >  **Opties**.
+        2. Onder **Privacy**  >  **geschiedenis** van privacy ziet u mogelijk dat de huidige instelling **aangepaste instellingen voor geschiedenis gebruikt**.
+        3. In **cookies** van derden accepteren is uw huidige instelling mogelijk **nooit**. Klik vervolgens op **uitzonde ringen** aan de rechter kant om de volgende sites toe te voegen.
             - https://login.microsoftonline.com
             - https://login.windows.net
         4.  Sluit de browser en start opnieuw. 
@@ -124,9 +124,9 @@ In deze sectie worden algemene probleemoplossings methoden voor de wizard kopië
 
 ### <a name="error-code-unable-to-open-login-page-and-enter-password"></a>Fout code: kan aanmeldings pagina niet openen en wacht woord invoeren
 
-- **Symptomen** : door de wizard kopiëren wordt u omgeleid naar de aanmeldings pagina, maar de aanmeldings pagina wordt niet correct weer gegeven.
-- **Oorzaken** : dit probleem kan zich voordoen als u de netwerk omgeving van het bedrijfs netwerk hebt gewijzigd in het thuis netwerk. Browsers bevatten enkele caches. 
-- **Oplossing** : 
+- **Symptomen**: door de wizard kopiëren wordt u omgeleid naar de aanmeldings pagina, maar de aanmeldings pagina wordt niet correct weer gegeven.
+- **Oorzaken**: dit probleem kan zich voordoen als u de netwerk omgeving van het bedrijfs netwerk hebt gewijzigd in het thuis netwerk. Browsers bevatten enkele caches. 
+- **Oplossing**: 
     1.  Sluit de browser en probeer het opnieuw. Ga naar de volgende stap als het probleem zich nog steeds voordoet.   
     2.  Als u Internet Explorer browser gebruikt, probeert u het te openen in de privé modus (druk op CTRL + SHIFT + P). Als u Chrome browser gebruikt, probeert u het te openen in de Incognito-modus (druk op CTRL + SHIFT + N). Ga naar de volgende stap als het probleem zich nog steeds voordoet. 
     3.  Probeer een andere browser te gebruiken. 

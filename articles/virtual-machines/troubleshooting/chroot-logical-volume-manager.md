@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 11/24/2019
 ms.author: vilibert
 ms.openlocfilehash: 390443874ea63a8661ef8baea627015fcf679719
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92167913"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002694"
 ---
 # <a name="troubleshooting-a-linux-vm-when-there-is-no-access-to-the-azure-serial-console-and-the-disk-layout-is-using-lvm-logical-volume-manager"></a>Problemen met een virtuele Linux-machine oplossen wanneer er geen toegang is tot de Azure-seriële console en de schijf indeling gebruikmaakt van LVM (Logical Volume Manager)
 
@@ -65,9 +65,9 @@ In de meeste gevallen wordt de gekoppelde schijf met moment opnamen gezien als *
 
 ![Uitvoert](./media/chroot-logical-volume-manager/fdisk-output-sdc.png)
 
-Het **\*** duidt op een opstart partitie, beide partities moeten worden gekoppeld.
+De * *\** _ duidt op een opstart partitie, beide partities moeten worden gekoppeld.
 
-Voer de opdracht **lsblk** uit om de LVMs van de betrokken VM te bekijken
+Voer de opdracht _ *lsblk** uit om de LVMs van de betrokken VM te bekijken
 
 `lsblk`
 
@@ -75,7 +75,7 @@ Voer de opdracht **lsblk** uit om de LVMs van de betrokken VM te bekijken
 
 
 Controleer of de LVMs van de betrokken VM worden weer gegeven.
-Als dat niet het geval is, gebruikt u de onderstaande opdrachten om deze in te scha kelen en voert u **lsblk**opnieuw uit
+Als dat niet het geval is, gebruikt u de onderstaande opdrachten om deze in te scha kelen en voert u **lsblk** opnieuw uit
 Zorg ervoor dat de LVMs van de gekoppelde schijf zichtbaar is voordat u doorgaat.
 
 ```
@@ -259,7 +259,7 @@ Sla de wijzigingen op en ![ Sla de koppeling op](./media/chroot-logical-volume-m
 
 De schijf wordt nu beschikbaar zodat deze kan worden omgewisseld met de oorspronkelijke besturingssysteem schijf van de betrokken VM.
 
-Navigeer in het Azure Portal naar de mislukte VM en selecteer **schijven**  ->  **wisselen**schijf 
+Navigeer in het Azure Portal naar de mislukte VM en selecteer **schijven**  ->  **wisselen** schijf 
  ![ swap schijf](./media/chroot-logical-volume-manager/swap-disk.png) 
 
 Vul de velden **op de schijf kiezen** is de momentopname schijf die u in de vorige stap hebt losgekoppeld. De VM-naam van de betrokken VM is ook vereist en vervolgens **OK** selecteren

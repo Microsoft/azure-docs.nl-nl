@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 02/21/2020
 ms.author: cshoe
-ms.openlocfilehash: 78836ca4e51875be4237267b3bb9256cc4541fe2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 11ad3bdcaa40c479c9358fd623edf0e6fdafa0d6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81791628"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002069"
 ---
 Gebruik de Event Hubs-uitvoerbinding om gebeurtenissen naar een gebeurtenisstroom te schrijven. U moet een verzendmachtiging voor een Event Hub hebben om er gebeurtenissen naar te kunnen schrijven.
 
@@ -235,7 +235,7 @@ Kenmerken worden niet ondersteund door Python.
 
 # <a name="java"></a>[Java](#tab/java)
 
-Gebruik in de [Java-functies-runtimebibliotheek](https://docs.microsoft.com/java/api/overview/azure/functions/runtime) de aantekening [EventHubOutput](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.eventhuboutput) voor parameters waarvan de waarde gepubliceerd zou worden naar Event Hub. Deze parameter zou van het type `OutputBinding<T>` moeten zijn, waarbij `T` een POJO of een systeemeigen Java-type is.
+Gebruik in de [Java-functies-runtimebibliotheek](/java/api/overview/azure/functions/runtime) de aantekening [EventHubOutput](/java/api/com.microsoft.azure.functions.annotation.eventhuboutput) voor parameters waarvan de waarde gepubliceerd zou worden naar Event Hub. Deze parameter zou van het type `OutputBinding<T>` moeten zijn, waarbij `T` een POJO of een systeemeigen Java-type is.
 
 ---
 
@@ -274,15 +274,15 @@ Er zijn twee opties voor het uitvoeren van een Event Hub-bericht van een functie
 
 - **Retourwaarde**: stel de eigenschap `name` in *function. json* in op `$return`. Met deze configuratie wordt de retourwaarde van de functie persistent gemaakt als een Event Hub-bericht.
 
-- **Imperatief**: geef een waarde door aan de methode [set](https://docs.microsoft.com/python/api/azure-functions/azure.functions.out?view=azure-python#set-val--t-----none) voor de parameter die is gedeclareerd als een type [Out](https://docs.microsoft.com/python/api/azure-functions/azure.functions.out?view=azure-python). De waarde die aan `set` is doorgegeven, wordt persistent gemaakt als een Event Hub-bericht.
+- **Imperatief**: geef een waarde door aan de methode [set](/python/api/azure-functions/azure.functions.out?view=azure-python#set-val--t-----none) voor de parameter die is gedeclareerd als een type [Out](/python/api/azure-functions/azure.functions.out?view=azure-python). De waarde die aan `set` is doorgegeven, wordt persistent gemaakt als een Event Hub-bericht.
 
 # <a name="java"></a>[Java](#tab/java)
 
-Er zijn twee opties voor het uitvoeren van een Event Hub-bericht van een functie met behulp van de aantekening [EventHubOutput](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.annotation.eventhuboutput):
+Er zijn twee opties voor het uitvoeren van een Event Hub-bericht van een functie met behulp van de aantekening [EventHubOutput](/java/api/com.microsoft.azure.functions.annotation.eventhuboutput):
 
 - **Retourwaarde**: Door de aantekening toe te passen op de functie zelf, wordt de retourwaarde van de functie persistent gemaakt als een Event Hub-bericht.
 
-- **Imperatief**: Als u de berichtwaarde expliciet wilt instellen, past u de aantekening toe op een specifieke parameter van het type [`OutputBinding<T>`](https://docs.microsoft.com/java/api/com.microsoft.azure.functions.OutputBinding), waarbij `T` een POJO of een systeemeigen Java-type is. Met deze configuratie wordt door het doorgeven van een waarde aan de methode `setValue` de waarde persistent gemaakt als een Event Hub-bericht.
+- **Imperatief**: Als u de berichtwaarde expliciet wilt instellen, past u de aantekening toe op een specifieke parameter van het type [`OutputBinding<T>`](/java/api/com.microsoft.azure.functions.OutputBinding), waarbij `T` een POJO of een systeemeigen Java-type is. Met deze configuratie wordt door het doorgeven van een waarde aan de methode `setValue` de waarde persistent gemaakt als een Event Hub-bericht.
 
 ---
 
@@ -290,4 +290,4 @@ Er zijn twee opties voor het uitvoeren van een Event Hub-bericht van een functie
 
 | Binding | Referentie |
 |---|---|
-| Event Hub | [Operations Guide](https://docs.microsoft.com/rest/api/eventhub/publisher-policy-operations) (Bedieningshandleiding) |
+| Event Hub | [Operations Guide](/rest/api/eventhub/publisher-policy-operations) (Bedieningshandleiding) |

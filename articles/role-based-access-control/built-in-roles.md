@@ -10,11 +10,11 @@ ms.author: rolyon
 ms.date: 11/18/2020
 ms.custom: generated
 ms.openlocfilehash: e18dc7e16eb0b114bd279d53b7dcc895bd62f338
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94980855"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002728"
 ---
 # <a name="azure-built-in-roles"></a>Ingebouwde Azure-rollen
 
@@ -123,11 +123,11 @@ De volgende tabel bevat een korte beschrijving en de unieke ID van elke ingebouw
 > | [Lezer van schemaregisters (preview)](#schema-registry-reader-preview) | Schemaregistergroepen en schema's lezen en weergeven. | 2c56ea50-c6b3-40a6-83c0-9d98858bc7d2 |
 > | **Blockchain** |  |  |
 > | [Toegang tot Block Chain-leden knooppunt (preview-versie)](#blockchain-member-node-access-preview) | Hiermee wordt toegang tot Block Chain-leden knooppunten toegestaan | 31a002a1-acaf-453e-8a5b-297c9ca1ea24 |
-> | **AI + machine learning** |  |  |
+> | **AI en machine learning** |  |  |
 > | [Inzender Cognitive Services](#cognitive-services-contributor) | Hiermee kunt u sleutels van Cognitive Services maken, lezen, bijwerken, verwijderen en beheren. | 25fbc0a9-bd7c-42a3-aa1a-3b75d497ee68 |
 > | [Cognitive Services gegevens lezer (preview-versie)](#cognitive-services-data-reader-preview) | Hiermee kunt u Cognitive Services gegevens lezen. | b59867f0-fa02-499b-be73-45a86b5b3e1c |
 > | [Cognitive Services gebruiker](#cognitive-services-user) | Hiermee kunt u de sleutels van Cognitive Services lezen en weer geven. | a97b65f3-24c7-4388-baec-2e87135dc908 |
-> | **Gemengde realiteit** |  |  |
+> | **Mixed reality** |  |  |
 > | [Externe rendering-beheerder](#remote-rendering-administrator) | Biedt gebruikers de mogelijkheid om de mogelijkheden voor het omzetten van sessies, rendering en diagnose te beheren voor externe rendering in azure | 3df8b902-2a6f-47c7-8cc5-360e9b272a7e |
 > | [Client voor externe Rendering](#remote-rendering-client) | Biedt gebruikers de mogelijkheid om sessie, rendering en diagnose te beheren voor de externe rendering van Azure. | d39065c4-c120-43c9-ab0a-63eed9795f0a |
 > | [Inzender voor ruimtelijke ankers](#spatial-anchors-account-contributor) | Hiermee kunt u ruimtelijke ankers in uw account beheren, maar niet verwijderen | 8bbe83f1-e2a6-4df7-8cb4-4e04d4e5c827 |
@@ -5012,7 +5012,7 @@ Hiermee krijgt u toegang tot de Block Chain-leden knooppunten [meer informatie](
 }
 ```
 
-## <a name="ai--machine-learning"></a>AI + machine learning
+## <a name="ai--machine-learning"></a>AI en machine learning
 
 
 ### <a name="cognitive-services-contributor"></a>Inzender Cognitive Services
@@ -7630,7 +7630,7 @@ Met kunt u nieuwe Labs maken onder uw Azure Lab-accounts. [Meer informatie](../l
 }
 ```
 
-## <a name="monitor"></a>Controleren
+## <a name="monitor"></a>Monitor
 
 
 ### <a name="application-insights-component-contributor"></a>Inzender voor Application Insights onderdelen
@@ -9503,7 +9503,7 @@ Hiermee kunt u tags op entiteiten beheren zonder dat u toegang hebt tot de entit
 }
 ```
 
-## <a name="other"></a>Overige
+## <a name="other"></a>Anders
 
 
 ### <a name="azure-digital-twins-data-owner"></a>Azure Digital Apparaatdubbels-gegevens eigenaar

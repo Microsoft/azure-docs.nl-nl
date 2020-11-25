@@ -7,12 +7,12 @@ ms.date: 08/11/2020
 ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 3b7c9b51bad45bb348f70c8b0e433404b49b5aac
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6e6c090c02798103a30cc68f2ca28e8c4f7f2f17
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91761359"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96004259"
 ---
 # <a name="set-up-your-environment-for-the-iot-plug-and-play-quickstarts-and-tutorials"></a>Uw omgeving instellen voor de Snelstartgids en zelf studies voor IoT Plug en Play
 
@@ -20,7 +20,7 @@ Voordat u een van de IoT Plug en Play-Quick starts en zelf studies kunt volt ooi
 
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
-Om te voor komen dat u de Azure CLI lokaal installeert, kunt u de Azure Cloud Shell gebruiken om de Cloud Services in te stellen.
+Om de vereiste van het lokaal installeren van de Azure CLI te vermijden, kunt u de Azure Cloud Shell gebruiken om de cloudservices in te stellen.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -126,7 +126,7 @@ In de Quick starts en zelf studies wordt het hulp programma **Azure IOT Explorer
 
 De eerste keer dat u het hulp programma uitvoert, wordt u gevraagd om de IoT hub-connection string. Gebruik de connection string u eerder een notitie hebt gemaakt.
 
-Configureer het hulp programma voor het gebruik van de model bestanden die u eerder hebt gedownload. Selecteer op de start pagina van het hulp programma **IoT Plug en Play-instellingen**en vervolgens op **> lokale map toevoegen**. Selecteer de map *modellen* die u eerder hebt gemaakt. Selecteer vervolgens **Opslaan** om de instellingen op te slaan.
+Configureer het hulp programma voor het gebruik van de model bestanden die u eerder hebt gedownload. Selecteer op de start pagina van het hulp programma **IoT Plug en Play-instellingen** en vervolgens op **> lokale map toevoegen**. Selecteer de map *modellen* die u eerder hebt gemaakt. Selecteer vervolgens **Opslaan** om de instellingen op te slaan.
 
 Zie [Azure IoT Explorer installeren en gebruiken](howto-use-iot-explorer.md) voor meer informatie.
 
@@ -143,4 +143,4 @@ az group delete --name my-pnp-resourcegroup
 Nu u uw omgeving hebt ingesteld, kunt u een van de Quick starts of zelf studies volgen, zoals:
 
 > [!div class="nextstepaction"]
-> [Een voor beeld van een IoT Plug en Play Device Application koppelen aan IoT Hub (Node.js)](quickstart-connect-device-node.md)
+> [Een voor beeld van een IoT-Plug en Play apparaat-toepassing verbinden met IoT Hub](quickstart-connect-device.md)

@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 07/03/2019
 ms.author: ramamill
 ms.openlocfilehash: 327e995a8fe2f66903548fba054804768d2538ab
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92534291"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001546"
 ---
 # <a name="set-up-the-configuration-server-for-disaster-recovery-of-physical-servers-to-azure"></a>De configuratieserver instellen voor herstel na noodgeval van fysieke servers naar Azure
 
@@ -39,7 +39,7 @@ De volgende tabel bevat de minimale hardware-, software-en netwerk vereisten voo
 2. Klik in het menu **resource** van de kluis op **aan de slag**  >  **site Recovery**  >  **stap 1: infrastructuur**  >  **beveiliging** voorbereiden.
 
     ![Scherm afbeelding die laat zien waar het beveiligings doel moet worden geselecteerd.](./media/physical-azure-set-up-source/choose-goals.png)
-3. In **beveiligings doel** selecteert **u naar Azure** en **niet gevirtualiseerd/Overig** en klikt u vervolgens op **OK** .
+3. In **beveiligings doel** selecteert **u naar Azure** en **niet gevirtualiseerd/Overig** en klikt u vervolgens op **OK**.
 
     ![Doelstellingen kiezen](./media/physical-azure-set-up-source/physical-protection-goal.png)
 
@@ -48,7 +48,7 @@ De volgende tabel bevat de minimale hardware-, software-en netwerk vereisten voo
 1. Als u geen configuratie server hebt, klikt u in **bron voorbereiden** op **+ configuratie** server om er een toe te voegen.
 
    ![Scherm afbeelding die laat zien hoe u de configuratie server selecteert.](./media/physical-azure-set-up-source/plus-config-srv.png)
-2. Controleer op de Blade **server toevoegen** of de **Configuratie server** wordt weer gegeven bij **server type** .
+2. Controleer op de Blade **server toevoegen** of de **Configuratie server** wordt weer gegeven bij **server type**.
 4. Download het installatiebestand voor de Geïntegreerde Setup van Site Recovery.
 5. Download de registratiesleutel voor de kluis. U hebt de registratie sleutel nodig wanneer u Unified Setup uitvoert. De sleutel blijft vijf dagen na het genereren ervan geldig.
 

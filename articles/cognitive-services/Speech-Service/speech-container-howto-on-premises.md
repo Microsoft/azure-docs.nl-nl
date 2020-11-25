@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 10/30/2020
 ms.author: aahi
-ms.openlocfilehash: 277a3c1c53564d7c5dff6a87381680a7f41606de
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: c3791a9049a3eab3ddd6fc70073629c38830dbc7
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93131595"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96002264"
 ---
 # <a name="use-speech-service-containers-with-kubernetes-and-helm"></a>Speech Service-containers gebruiken met Kubernetes en helm
 
@@ -27,11 +27,11 @@ De volgende vereisten voordat u een on-premises spraak container gebruikt:
 
 | Vereist | Doel |
 |----------|---------|
-| Azure-account | Als u nog geen Azure-abonnement hebt, maakt u een [gratis account][free-azure-account] voordat u begint. |
+| Azure-account | Als u nog geen abonnement op Azure hebt, maak dan een [gratis account][free-azure-account] aan voordat u begint. |
 | Toegang Container Registry | Om ervoor te zorgen dat Kubernetes de docker-installatie kopieën in het cluster kan ophalen, moet u toegang hebben tot het container register. |
 | Kubernetes CLI | De [KUBERNETES cli][kubernetes-cli] is vereist voor het beheren van de gedeelde referenties in het container register. Kubernetes is ook vereist voordat helm, de Kubernetes Package Manager. |
 | Helm CLI | Installeer de [helm cli][helm-install], die wordt gebruikt om een helm-grafiek (container Package Definition) te installeren. |
-|Spraak resource |Als u deze containers wilt gebruiken, hebt u het volgende nodig:<br><br>Een _spraak_ -Azure-resource om de gekoppelde facturerings sleutel en de URI van het facturerings eindpunt op te halen. Beide waarden zijn beschikbaar op het **spraak** overzicht van de Azure Portal en de pagina sleutels en zijn vereist om de container te starten.<br><br>**{API_KEY}** : resource sleutel<br><br>**{ENDPOINT_URI}** : voor beeld van een eind punt-URI is: `https://westus.api.cognitive.microsoft.com/sts/v1.0`|
+|Spraak resource |Als u deze containers wilt gebruiken, hebt u het volgende nodig:<br><br>Een _spraak_ -Azure-resource om de gekoppelde facturerings sleutel en de URI van het facturerings eindpunt op te halen. Beide waarden zijn beschikbaar op het **spraak** overzicht van de Azure Portal en de pagina sleutels en zijn vereist om de container te starten.<br><br>**{API_KEY}**: resource sleutel<br><br>**{ENDPOINT_URI}**: voor beeld van een eind punt-URI is: `https://westus.api.cognitive.microsoft.com/sts/v1.0`|
 
 ## <a name="the-recommended-host-computer-configuration"></a>De aanbevolen configuratie van de hostcomputer
 
@@ -48,13 +48,13 @@ Er wordt naar verwachting een beschik bare Kubernetes-cluster op de hostcomputer
 
 ## <a name="configure-helm-chart-values-for-deployment"></a>Helm-grafiek waarden voor implementatie configureren
 
-Ga naar de [micro soft helm hub][ms-helm-hub] voor alle openbaar beschik bare helm-grafieken die door micro soft worden aangeboden. Vanuit de micro soft helm Hub vindt u de **on-premises grafiek van Cognitive Services speech** . De **Cognitive Services spraak on-premises** is de grafiek die we installeren, maar we moeten eerst een `config-values.yaml` bestand met expliciete configuraties maken. Laten we beginnen door de micro soft-opslag plaats toe te voegen aan ons helm-exemplaar.
+Ga naar de [micro soft helm hub][ms-helm-hub] voor alle openbaar beschik bare helm-grafieken die door micro soft worden aangeboden. Vanuit de micro soft helm Hub vindt u de **on-premises grafiek van Cognitive Services speech**. De **Cognitive Services spraak on-premises** is de grafiek die we installeren, maar we moeten eerst een `config-values.yaml` bestand met expliciete configuraties maken. Laten we beginnen door de micro soft-opslag plaats toe te voegen aan ons helm-exemplaar.
 
 ```console
 helm repo add microsoft https://microsoft.github.io/charts/repo
 ```
 
-Nu gaan we onze helm-grafiek waarden configureren. Kopieer en plak de volgende YAML in een bestand met de naam `config-values.yaml` . Zie [helm-grafieken aanpassen](#customize-helm-charts)voor meer informatie over het aanpassen van het **helm-diagram van Cognitive Services speech** . Vervang de `# {ENDPOINT_URI}` opmerkingen en door `# {API_KEY}` uw eigen waarden.
+Nu gaan we onze helm-grafiek waarden configureren. Kopieer en plak de volgende YAML in een bestand met de naam `config-values.yaml` . Zie [helm-grafieken aanpassen](#customize-helm-charts)voor meer informatie over het aanpassen van het **helm-diagram van Cognitive Services speech**. Vervang de `# {ENDPOINT_URI}` opmerkingen en door `# {API_KEY}` uw eigen waarden.
 
 ```yaml
 # These settings are deployment specific and users can provide customizations
@@ -229,7 +229,7 @@ Meer informatie over het installeren van toepassingen met helm in azure Kubernet
 <!-- LINKS - external -->
 [free-azure-account]: https://azure.microsoft.com/free
 [git-download]: https://git-scm.com/downloads
-[azure-cli]: https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest
+[azure-cli]: /cli/azure/install-azure-cli?view=azure-cli-latest
 [docker-engine]: https://www.docker.com/products/docker-engine
 [kubernetes-cli]: https://kubernetes.io/docs/tasks/tools/install-kubectl
 [helm-install]: https://helm.sh/docs/intro/install/

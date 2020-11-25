@@ -13,11 +13,11 @@ ms.date: 01/05/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: a77a4808390f816bc3a6646520f4b542bee89d4c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89438514"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001723"
 ---
 # <a name="copy-data-to-or-from-azure-blob-storage-using-azure-data-factory"></a>Gegevens kopiëren naar of van Azure Blob Storage met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -54,7 +54,7 @@ U kunt een pijp lijn maken met een Kopieer activiteit die gegevens verplaatst va
 
 De eenvoudigste manier om een pijp lijn te maken, is met behulp van de **wizard kopiëren**. Dit artikel bevat een [overzicht](#walkthrough-use-copy-wizard-to-copy-data-tofrom-blob-storage) van het maken van een pijp lijn voor het kopiëren van gegevens van een Azure Blob Storage locatie naar een andere locatie van Azure Blob Storage. Zie [zelf studie: een pijp lijn maken met de wizard kopiëren](data-factory-copy-data-wizard-tutorial.md)voor een zelf studie over het maken van een pijp lijn om gegevens te kopiëren van een Azure-Blob Storage naar Azure SQL database.
 
-U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio**, **Azure PowerShell**, **Azure Resource Manager sjabloon**, **.net API**en **rest API**. Zie [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit.
+U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio**, **Azure PowerShell**, **Azure Resource Manager sjabloon**, **.net API** en **rest API**. Zie [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit.
 
 Ongeacht of u de hulpprogram ma's of Api's gebruikt, voert u de volgende stappen uit om een pijp lijn te maken waarmee gegevens uit een brongegevens archief naar een Sink-gegevens archief worden verplaatst:
 
@@ -83,11 +83,11 @@ De sectie **typeProperties** verschilt voor elk type gegevensset en bevat inform
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| folderPath |Pad naar de container en de map in de Blob-opslag. Voor beeld: myblobcontainer\myblobfolder\ |Ja |
-| fileName |De naam van de blob. Bestands naam is optioneel en hoofdletter gevoelig.<br/><br/>Als u een bestands naam opgeeft, werkt de activiteit (inclusief kopie) voor de specifieke blob.<br/><br/>Als er geen bestands naam is opgegeven, wordt met Copy alle blobs in de folderPath voor invoer gegevensset opgenomen.<br/><br/>Als er geen **Bestands naam** is opgegeven voor een uitvoer-gegevensset en **preserveHierarchy** niet is opgegeven in de activiteit sink, zou de naam van het gegenereerde bestand de volgende indeling hebben: `Data.<Guid>.txt` (bijvoorbeeld:: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt |Nee |
-| partitionedBy |partitionedBy is een optionele eigenschap. U kunt deze gebruiken om een dynamische folderPath en een bestands naam op te geven voor time series-gegevens. Zo kan folderPath voor elk uur aan gegevens worden para meters. Zie de [sectie partitionedBy eigenschap gebruiken](#using-partitionedby-property) voor meer informatie en voor beelden. |Nee |
-| indeling | De volgende indelings typen worden ondersteund: **TextFormat**, **JsonFormat**, **Avro Format**, **OrcFormat**, **ParquetFormat**. Stel de eigenschap **type** onder indeling in op een van deze waarden. Zie voor meer informatie secties [tekst indeling](data-factory-supported-file-and-compression-formats.md#text-format), [JSON-indeling](data-factory-supported-file-and-compression-formats.md#json-format), [Avro](data-factory-supported-file-and-compression-formats.md#avro-format)-indeling, [Orc-indeling](data-factory-supported-file-and-compression-formats.md#orc-format)en Parquet- [indeling](data-factory-supported-file-and-compression-formats.md#parquet-format) . <br><br> Als u bestanden wilt **kopiëren als-zich bevindt** tussen archieven op basis van bestanden (binaire kopie), slaat u de sectie indeling in de gegevensset voor invoer en uitvoer over. |Nee |
-| compressie | Geef het type en compressie niveau voor de gegevens op. Ondersteunde typen zijn: **gzip**, **Deflate**, **bzip2**en **ZipDeflate**. Ondersteunde niveaus zijn: **optimaal** en **snelst**. Zie [Bestands-en compressie-indelingen in azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support)voor meer informatie. |Nee |
+| folderPath |Pad naar de container en de map in de Blob-opslag. Voor beeld: myblobcontainer\myblobfolder\ |Yes |
+| fileName |De naam van de blob. Bestands naam is optioneel en hoofdletter gevoelig.<br/><br/>Als u een bestands naam opgeeft, werkt de activiteit (inclusief kopie) voor de specifieke blob.<br/><br/>Als er geen bestands naam is opgegeven, wordt met Copy alle blobs in de folderPath voor invoer gegevensset opgenomen.<br/><br/>Als er geen **Bestands naam** is opgegeven voor een uitvoer-gegevensset en **preserveHierarchy** niet is opgegeven in de activiteit sink, zou de naam van het gegenereerde bestand de volgende indeling hebben: `Data.<Guid>.txt` (bijvoorbeeld:: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt |No |
+| partitionedBy |partitionedBy is een optionele eigenschap. U kunt deze gebruiken om een dynamische folderPath en een bestands naam op te geven voor time series-gegevens. Zo kan folderPath voor elk uur aan gegevens worden para meters. Zie de [sectie partitionedBy eigenschap gebruiken](#using-partitionedby-property) voor meer informatie en voor beelden. |No |
+| indeling | De volgende indelings typen worden ondersteund: **TextFormat**, **JsonFormat**, **Avro Format**, **OrcFormat**, **ParquetFormat**. Stel de eigenschap **type** onder indeling in op een van deze waarden. Zie voor meer informatie secties [tekst indeling](data-factory-supported-file-and-compression-formats.md#text-format), [JSON-indeling](data-factory-supported-file-and-compression-formats.md#json-format), [Avro](data-factory-supported-file-and-compression-formats.md#avro-format)-indeling, [Orc-indeling](data-factory-supported-file-and-compression-formats.md#orc-format)en Parquet- [indeling](data-factory-supported-file-and-compression-formats.md#parquet-format) . <br><br> Als u bestanden wilt **kopiëren als-zich bevindt** tussen archieven op basis van bestanden (binaire kopie), slaat u de sectie indeling in de gegevensset voor invoer en uitvoer over. |No |
+| compressie | Geef het type en compressie niveau voor de gegevens op. Ondersteunde typen zijn: **gzip**, **Deflate**, **bzip2** en **ZipDeflate**. Ondersteunde niveaus zijn: **optimaal** en **snelst**. Zie [Bestands-en compressie-indelingen in azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support)voor meer informatie. |No |
 
 ### <a name="using-partitionedby-property"></a>De eigenschap partitionedBy gebruiken
 Zoals vermeld in de vorige sectie, kunt u een dynamische folderPath en-bestands naam opgeven voor tijdreeks gegevens met de eigenschap **partitionedBy** , [Data Factory functies en de systeem variabelen](data-factory-functions-variables.md).
@@ -129,13 +129,13 @@ Zie het artikel [pijp lijnen maken](data-factory-create-pipelines.md) voor een v
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| recursieve |Geeft aan of de gegevens recursief worden gelezen uit de submappen of alleen vanuit de opgegeven map. |True (standaard waarde), False |Nee |
+| recursieve |Geeft aan of de gegevens recursief worden gelezen uit de submappen of alleen vanuit de opgegeven map. |True (standaard waarde), False |No |
 
 **BlobSink** ondersteunt de volgende eigenschappen **typeProperties** sectie:
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| copyBehavior |Hiermee wordt het Kopieer gedrag gedefinieerd wanneer de bron BlobSource of File System is. |<b>PreserveHierarchy</b>: behoudt de bestands hiërarchie in de doelmap. Het relatieve pad van het bron bestand naar de bronmap is identiek aan het relatieve pad van het doel bestand naar de doelmap.<br/><br/><b>FlattenHierarchy</b>: alle bestanden in de bronmap bevinden zich in het eerste niveau van de doelmap. De doel bestanden hebben een automatisch gegenereerde naam. <br/><br/><b>MergeFiles</b>: alle bestanden van de bronmap worden samengevoegd met één bestand. Als de naam van het bestand of de blob is opgegeven, is de naam van het samengevoegde bestand de opgegeven naam. anders wordt de bestands naam automatisch gegenereerd. |Nee |
+| copyBehavior |Hiermee wordt het Kopieer gedrag gedefinieerd wanneer de bron BlobSource of File System is. |<b>PreserveHierarchy</b>: behoudt de bestands hiërarchie in de doelmap. Het relatieve pad van het bron bestand naar de bronmap is identiek aan het relatieve pad van het doel bestand naar de doelmap.<br/><br/><b>FlattenHierarchy</b>: alle bestanden in de bronmap bevinden zich in het eerste niveau van de doelmap. De doel bestanden hebben een automatisch gegenereerde naam. <br/><br/><b>MergeFiles</b>: alle bestanden van de bronmap worden samengevoegd met één bestand. Als de naam van het bestand of de blob is opgegeven, is de naam van het samengevoegde bestand de opgegeven naam. anders wordt de bestands naam automatisch gegenereerd. |No |
 
 **BlobSource** ondersteunt ook deze twee eigenschappen voor achterwaartse compatibiliteit.
 
@@ -163,9 +163,9 @@ In deze sectie wordt het resulterende gedrag van de Kopieer bewerking voor versc
 
 | recursieve | copyBehavior | Resulterend gedrag |
 | --- | --- | --- |
-| true |preserveHierarchy |Voor een bronmap Map1 met de volgende structuur: <br/><br/>Map1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Subfolder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File5<br/><br/>de doelmap Map1 wordt gemaakt met dezelfde structuur als de bron<br/><br/>Map1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Subfolder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File5. |
-| true |flattenHierarchy |Voor een bronmap Map1 met de volgende structuur: <br/><br/>Map1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Subfolder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File5<br/><br/>de doel-Map1 is gemaakt met de volgende structuur: <br/><br/>Map1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch gegenereerde naam voor bestand1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch gegenereerde naam voor Bestand2<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch gegenereerde naam voor File3<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch gegenereerde naam voor File4<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch gegenereerde naam voor File5 |
-| true |mergeFiles |Voor een bronmap Map1 met de volgende structuur: <br/><br/>Map1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Subfolder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File5<br/><br/>de doel-Map1 is gemaakt met de volgende structuur: <br/><br/>Map1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand1 + Bestand2 + File3 + File4 + inhoud van bestand 5 worden samengevoegd in één bestand met automatisch gegenereerde bestands naam |
+| waar |preserveHierarchy |Voor een bronmap Map1 met de volgende structuur: <br/><br/>Map1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Subfolder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File5<br/><br/>de doelmap Map1 wordt gemaakt met dezelfde structuur als de bron<br/><br/>Map1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Subfolder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File5. |
+| waar |flattenHierarchy |Voor een bronmap Map1 met de volgende structuur: <br/><br/>Map1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Subfolder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File5<br/><br/>de doel-Map1 is gemaakt met de volgende structuur: <br/><br/>Map1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch gegenereerde naam voor bestand1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch gegenereerde naam voor Bestand2<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch gegenereerde naam voor File3<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch gegenereerde naam voor File4<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch gegenereerde naam voor File5 |
+| waar |mergeFiles |Voor een bronmap Map1 met de volgende structuur: <br/><br/>Map1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Subfolder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File5<br/><br/>de doel-Map1 is gemaakt met de volgende structuur: <br/><br/>Map1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand1 + Bestand2 + File3 + File4 + inhoud van bestand 5 worden samengevoegd in één bestand met automatisch gegenereerde bestands naam |
 | onjuist |preserveHierarchy |Voor een bronmap Map1 met de volgende structuur: <br/><br/>Map1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Subfolder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File5<br/><br/>de doelmap Map1 is gemaakt met de volgende structuur<br/><br/>Map1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand2<br/><br/><br/>Subfolder1 met File3, File4 en File5 worden niet opgehaald. |
 | onjuist |flattenHierarchy |Voor een bronmap Map1 met de volgende structuur:<br/><br/>Map1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Subfolder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File5<br/><br/>de doelmap Map1 is gemaakt met de volgende structuur<br/><br/>Map1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch gegenereerde naam voor bestand1<br/>&nbsp;&nbsp;&nbsp;&nbsp;automatisch gegenereerde naam voor Bestand2<br/><br/><br/>Subfolder1 met File3, File4 en File5 worden niet opgehaald. |
 | onjuist |mergeFiles |Voor een bronmap Map1 met de volgende structuur:<br/><br/>Map1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand1<br/>&nbsp;&nbsp;&nbsp;&nbsp;Bestand2<br/>&nbsp;&nbsp;&nbsp;&nbsp;Subfolder1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File3<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File4<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File5<br/><br/>de doelmap Map1 is gemaakt met de volgende structuur<br/><br/>Map1<br/>&nbsp;&nbsp;&nbsp;&nbsp;De inhoud van bestand1 + Bestand2 wordt samengevoegd met een bestand met een automatisch gegenereerde bestands naam. automatisch gegenereerde naam voor bestand1<br/><br/>Subfolder1 met File3, File4 en File5 worden niet opgehaald. |
@@ -184,8 +184,8 @@ Laten we eens kijken hoe u snel gegevens kopieert naar/van een Azure Blob-opslag
     ```
 
 ### <a name="create-the-data-factory"></a>De data factory maken
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-2. Klik op **een resource maken** in de linkerbovenhoek, klik op **Intelligence en analytische**gegevens en klik op **Data Factory**.
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+2. Klik op **een resource maken** in de linkerbovenhoek, klik op **Intelligence en analytische** gegevens en klik op **Data Factory**.
 3. In het deel venster **nieuw Data Factory** :  
     1. Voer **ADFBlobConnectorDF** in als **naam**. De naam van de Azure-gegevensfactory moet wereldwijd uniek zijn. Als het volgende fout bericht wordt weer gegeven: `*Data factory name “ADFBlobConnectorDF” is not available` , wijzigt u de naam van de Data Factory (bijvoorbeeld yournameADFBlobConnectorDF) en probeert u het opnieuw. Raadpleeg het onderwerp [Data Factory - Naamgevingsregels](data-factory-naming-rules.md) voor meer informatie over naamgevingsregels voor Data Factory-artefacten.
     2. Selecteer uw Azure-**abonnement**.
@@ -203,7 +203,7 @@ Laten we eens kijken hoe u snel gegevens kopieert naar/van een Azure Blob-opslag
 2. Op de pagina **Eigenschappen**:
     1. Voer **CopyPipeline** in als **taak naam**. De taak naam is de naam van de pijp lijn in uw data factory.
     2. Voer een **Beschrijving** voor de taak in (optioneel).
-    3. Houd voor **taak uitgebracht of taak planning**de optie **regel matig uitvoeren op schema** . Als u deze taak slechts eenmaal wilt uitvoeren in plaats van herhaaldelijk uitvoeren volgens een planning, selecteert u **nu eenmaal uitvoeren**. Als u de optie **nu uitvoeren** selecteert, wordt er een [eenmalige pijp lijn](data-factory-create-pipelines.md#onetime-pipeline) gemaakt.
+    3. Houd voor **taak uitgebracht of taak planning** de optie **regel matig uitvoeren op schema** . Als u deze taak slechts eenmaal wilt uitvoeren in plaats van herhaaldelijk uitvoeren volgens een planning, selecteert u **nu eenmaal uitvoeren**. Als u de optie **nu uitvoeren** selecteert, wordt er een [eenmalige pijp lijn](data-factory-create-pipelines.md#onetime-pipeline) gemaakt.
     4. Behoud de instellingen voor het **terugkerende patroon**. Deze taak wordt dagelijks uitgevoerd tussen de begin-en eind tijd die u in de volgende stap opgeeft.
     5. Wijzig de **begin datum** en-tijd in **04/21/2017**.
     6. Wijzig de **eind datum** en-tijd in **04/25/2017**. Mogelijk wilt u de datum typen in plaats van bladeren door de kalender.
@@ -220,11 +220,11 @@ Laten we eens kijken hoe u snel gegevens kopieert naar/van een Azure Blob-opslag
         ![Hulpprogramma voor kopiëren - Het Azure Blob Storage-account opgeven](./media/data-factory-azure-blob-connector/copy-tool-specify-azure-blob-storage-account.png)
 5. Op de pagina **Het invoerbestand of de invoermap kiezen**:
     1. Dubbel klik op **adfblobcontainer**.
-    2. Selecteer **invoer**en klik op **kiezen**. In dit overzicht selecteert u de map invoer. U kunt ook in plaats daarvan het emp.txt bestand in de map selecteren.
+    2. Selecteer **invoer** en klik op **kiezen**. In dit overzicht selecteert u de map invoer. U kunt ook in plaats daarvan het emp.txt bestand in de map selecteren.
         ![Hulp programma voor kopiëren: Kies het invoer bestand of de map 1](./media/data-factory-azure-blob-connector/copy-tool-choose-input-file-or-folder.png)
 6. Klik op de pagina **het invoer bestand of de map kiezen** :
     1. Controleer of het **bestand of de map** is ingesteld op **adfblobconnector/input**. Als de bestanden zich in submappen bevinden, bijvoorbeeld 2017/04/01, 2017/04/02, enzovoort, voert u adfblobconnector/input/{year}/{month}/{Day} in voor het bestand of de map. Wanneer u op TAB drukt vanuit het tekstvak, ziet u drie vervolg keuzelijsten om de notatie voor jaar (jjjj), maand (MM) en dag (DD) te selecteren.
-    2. Stel bestand niet **recursief kopiëren**in. Selecteer deze optie om recursief door mappen te bladeren voor bestanden die naar de bestemming moeten worden gekopieerd.
+    2. Stel bestand niet **recursief kopiëren** in. Selecteer deze optie om recursief door mappen te bladeren voor bestanden die naar de bestemming moeten worden gekopieerd.
     3. Gebruik niet de optie voor **binaire kopieën** . Selecteer deze optie om een binaire kopie van het bron bestand naar de bestemming uit te voeren. Selecteer deze procedure niet zodat u meer opties kunt zien op de volgende pagina's.
     4. Controleer of het **compressie type** is ingesteld op **geen**. Selecteer een waarde voor deze optie als uw bron bestanden zijn gecomprimeerd in een van de ondersteunde indelingen.
     5. Klik op **Volgende**.
@@ -242,7 +242,7 @@ Laten we eens kijken hoe u snel gegevens kopieert naar/van een Azure Blob-opslag
     4. Klik op het tabblad **schema** onderaan om het schema te zien dat de wizard Copy heeft uitgesteld door de gegevens in het bron bestand te bekijken.
     5. Klik op **Volgende** nadat u de scheidingstekens hebt gecontroleerd en een voorbeeld van de gegevens hebt bekeken.
     ![Hulpprogramma voor kopiëren - Bestandsindelingsinstellingen](./media/data-factory-azure-blob-connector/copy-tool-file-format-settings.png)
-8. Selecteer op de **pagina doel gegevens archief**de optie **Azure Blob Storage**en klik op **volgende**. U gebruikt de Azure Blob Storage als de bron-en doel gegevens archieven in dit overzicht.  
+8. Selecteer op de **pagina doel gegevens archief** de optie **Azure Blob Storage** en klik op **volgende**. U gebruikt de Azure Blob Storage als de bron-en doel gegevens archieven in dit overzicht.  
     ![Hulp programma voor kopiëren-doel gegevens archief selecteren](media/data-factory-azure-blob-connector/select-destination-data-store.png)
 9. Op **de pagina Azure Blob Storage-account opgeven** :  
     1. Voer **AzureStorageLinkedService** in voor het veld **verbindings naam** .
@@ -251,17 +251,17 @@ Laten we eens kijken hoe u snel gegevens kopieert naar/van een Azure Blob-opslag
     4. Selecteer uw Azure Storage-account.
     5. Klik op **Volgende**.
 10. Klik op de pagina **het uitvoer bestand of de map kiezen** :  
-    1. **pad naar map** opgeven als **adfblobconnector/output/{year}/{month}/{Day}**. **Tabblad**invoeren.
+    1. **pad naar map** opgeven als **adfblobconnector/output/{year}/{month}/{Day}**. **Tabblad** invoeren.
     1. Selecteer voor het **jaar** **jjjj**.
-    1. Bevestig voor de **maand**dat deze is ingesteld op **mm**.
-    1. Bevestig voor de **dag**dat deze is ingesteld op **dd**.
+    1. Bevestig voor de **maand** dat deze is ingesteld op **mm**.
+    1. Bevestig voor de **dag** dat deze is ingesteld op **dd**.
     1. Controleer of het **compressie type** is ingesteld op **geen**.
     1. Controleer of het **Kopieer gedrag** is ingesteld op het **samen voegen van bestanden**. Als er al een uitvoer bestand met dezelfde naam bestaat, wordt de nieuwe inhoud aan het einde aan het bestand toegevoegd.
     1. Klik op **Volgende**.
        ![Hulp programma voor kopiëren-een uitvoer bestand of-map kiezen](media/data-factory-azure-blob-connector/choose-the-output-file-or-folder.png)
 11. Controleer de instellingen op de pagina **instellingen voor bestands indeling** en klik op **volgende**. Een van de volgende extra opties is om een koptekst toe te voegen aan het uitvoer bestand. Als u deze optie selecteert, wordt er een veldnamenrij toegevoegd met namen van de kolommen uit het schema van de bron. U kunt de naam van de standaard kolom namen wijzigen bij het weer geven van het schema voor de bron. U kunt bijvoorbeeld de eerste kolom wijzigen in voor naam en tweede kolom in achternaam. Vervolgens wordt het uitvoer bestand gegenereerd met een kop met deze namen als kolom namen.
     ![Hulp programma voor kopiëren-instellingen voor bestands indeling voor doel](media/data-factory-azure-blob-connector/file-format-destination.png)
-12. Controleer op de pagina **prestatie-instellingen** of de **Cloud eenheden** en **parallelle kopieën** zijn ingesteld op **automatisch**en klik op volgende. Zie de [hand leiding Copy activity Performance and Tuning (Engelstalig](data-factory-copy-activity-performance.md#parallel-copy)) voor meer informatie over deze instellingen.
+12. Controleer op de pagina **prestatie-instellingen** of de **Cloud eenheden** en **parallelle kopieën** zijn ingesteld op **automatisch** en klik op volgende. Zie de [hand leiding Copy activity Performance and Tuning (Engelstalig](data-factory-copy-activity-performance.md#parallel-copy)) voor meer informatie over deze instellingen.
     ![Hulp programma voor kopiëren-prestatie-instellingen](media/data-factory-azure-blob-connector/copy-performance-settings.png)
 14. Controleer op de pagina **samen vatting** alle instellingen (taak eigenschappen, instellingen voor bron en doel en Kopieer instellingen) en klik op **volgende**.
     ![Hulp programma voor kopiëren-overzichts pagina](media/data-factory-azure-blob-connector/copy-tool-summary-page.png)

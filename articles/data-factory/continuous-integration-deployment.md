@@ -11,12 +11,12 @@ ms.reviewer: maghan
 manager: jroth
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: b31931af7b8d1442a66333622a23d017ab7fb5a9
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 93aeb088f82cae6dde215792e399997b592a5c14
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658686"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96003970"
 ---
 # <a name="continuous-integration-and-delivery-in-azure-data-factory"></a>Continue integratie en levering in Azure Data Factory
 
@@ -636,6 +636,14 @@ Als u een Factory implementeert voor productie en beseft dat er een fout is die 
 Zie de video onder een gedetailleerde video zelf studie over het dynamisch oplossen van uw omgevingen. 
 
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4I7fi]
+
+## <a name="exposure-control-and-feature-flags"></a>Belichtings controle en functie vlaggen
+
+Wanneer u aan een team werkt, zijn er exemplaren waar u wijzigingen kunt samen voegen, maar niet wilt dat ze worden uitgevoerd in verhoogde omgevingen zoals PROD en QA. Voor het afhandelen van dit scenario beveelt het ADF-team [het DevOps-concept van het gebruik van functie vlaggen](https://docs.microsoft.com/azure/devops/migrate/phase-features-with-feature-flags?view=azure-devops)aan. In ADF kunt u [globale para meters](author-global-parameters.md) combi neren en de [if-voorwaarde activiteit](control-flow-if-condition-activity.md) om sets van logica te verbergen op basis van deze omgevings vlaggen.
+
+Zie de onderstaande video-zelf studie voor meer informatie over het instellen van een functie vlag:
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4IxdW]
 
 ## <a name="best-practices-for-cicd"></a>Aanbevolen procedures voor CI/CD
 

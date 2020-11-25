@@ -9,11 +9,11 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.openlocfilehash: c9b732bd25e7ef8aa084c98d5b059d422f86a4b0
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895406"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96003511"
 ---
 # <a name="view-azure-maps-api-usage-metrics"></a>Metrische gegevens over het gebruik van Azure Maps-API weergeven
 
@@ -21,7 +21,7 @@ In dit artikel wordt beschreven hoe u de metrische gegevens over het gebruik van
 
 ## <a name="view-metric-snapshot"></a>Moment opname van metrische gegevens weer geven
 
-Op de pagina **overzicht** van uw Maps-account ziet u enkele algemene metrische gegevens. Het bevat momenteel *Totaal aantal aanvragen* , *Totaal aantal fouten* en *Beschik baarheid* gedurende een Selecteer bare tijds duur.
+Op de pagina **overzicht** van uw Maps-account ziet u enkele algemene metrische gegevens. Het bevat momenteel *Totaal aantal aanvragen*, *Totaal aantal fouten* en *Beschik baarheid* gedurende een Selecteer bare tijds duur.
 
 ![Overzicht van metrische gegevens over Azure Maps gebruik](media/how-to-view-api-usage/portal-overview.png)
 
@@ -31,7 +31,7 @@ Ga door naar de volgende sectie als u deze grafieken voor uw specifieke analyse 
 
 1. Meld u aan bij uw Azure-abonnement in de [Portal](https://portal.azure.com).
 
-2. Klik op het menu-item **alle resources** aan de linkerkant en navigeer naar uw *Azure Maps-account* .
+2. Klik op het menu-item **alle resources** aan de linkerkant en navigeer naar uw *Azure Maps-account*.
 
 3. Zodra uw Maps-account is geopend, klikt u op het menu **metrische gegevens** aan de linkerkant.
 
@@ -42,7 +42,7 @@ Ga door naar de volgende sectie als u deze grafieken voor uw specifieke analyse 
 
       ![Deel venster metrische gegevens over Azure Maps gebruik](media/how-to-view-api-usage/portal-metrics.png)
 
-5. Daarna kunt u het *tijds bereik* selecteren door te klikken op de **laatste 24 uur (automatisch)** . Het tijds bereik is standaard ingesteld op 24 uur. Nadat u op hebt geklikt, ziet u alle geselecteerde Peri Oden. U kunt de *tijd granulatie* selecteren en ervoor kiezen om de tijd weer te geven als *lokaal* of *GMT* in dezelfde vervolg keuzelijst. Klik op **Toepassen** .
+5. Daarna kunt u het *tijds bereik* selecteren door te klikken op de **laatste 24 uur (automatisch)**. Het tijds bereik is standaard ingesteld op 24 uur. Nadat u op hebt geklikt, ziet u alle geselecteerde Peri Oden. U kunt de *tijd granulatie* selecteren en ervoor kiezen om de tijd weer te geven als *lokaal* of *GMT* in dezelfde vervolg keuzelijst. Klik op **Toepassen**.
 
     ![Tijds bereik voor Azure Maps meet waarden](media/how-to-view-api-usage/time-range.png)
 

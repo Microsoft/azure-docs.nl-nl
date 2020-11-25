@@ -9,11 +9,11 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: 50a1656fcb92d9777d4a9476ef2a4c1fd2f2efc6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91329479"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002745"
 ---
 # <a name="full-text-search-in-azure-cognitive-search"></a>Zoeken in volledige tekst in azure Cognitive Search
 
@@ -286,7 +286,7 @@ De index voor het veld **Beschrijving** is als volgt:
 | eland | 2
 | spacious | 1
 | het | 1, 2
-| in op | 1
+| tot | 1
 | weergave | 1, 2, 3
 | Walking | 1
 | wordt uitgevoerd met | 3
@@ -351,7 +351,7 @@ search=Spacious, air-condition* +"Ocean view"
 }
 ```
 
-Document 1 komt overeen met de query aanbevolen omdat zowel de term *spacious* als de vereiste woordgroepen Oceaan in het veld Beschrijving worden *weer gegeven* . De volgende twee documenten komen alleen overeen met de *weer gave*van de woordgroepen Oceaan. Mogelijk is het verrassende dat de relevantie score voor document 2 en 3 afwijkt, ook al zijn ze op dezelfde manier overeenkomen met de query. De Score formule bevat meer onderdelen dan alleen TF/IDF. In dit geval is document 3 een iets hogere score toegewezen, omdat de beschrijving korter is. Meer informatie over de [praktische Score formule van Lucene](https://lucene.apache.org/core/6_6_1/core/org/apache/lucene/search/similarities/TFIDFSimilarity.html) om te begrijpen hoe veld lengte en andere factoren van invloed kunnen zijn op de relevantie score.
+Document 1 komt overeen met de query aanbevolen omdat zowel de term *spacious* als de vereiste woordgroepen Oceaan in het veld Beschrijving worden *weer gegeven* . De volgende twee documenten komen alleen overeen met de *weer gave* van de woordgroepen Oceaan. Mogelijk is het verrassende dat de relevantie score voor document 2 en 3 afwijkt, ook al zijn ze op dezelfde manier overeenkomen met de query. De Score formule bevat meer onderdelen dan alleen TF/IDF. In dit geval is document 3 een iets hogere score toegewezen, omdat de beschrijving korter is. Meer informatie over de [praktische Score formule van Lucene](https://lucene.apache.org/core/6_6_1/core/org/apache/lucene/search/similarities/TFIDFSimilarity.html) om te begrijpen hoe veld lengte en andere factoren van invloed kunnen zijn op de relevantie score.
 
 Sommige query typen (joker tekens, voor voegsel, regex) dragen altijd bij aan een constante score voor de algehele document Score. Dit maakt het mogelijk om overeenkomsten te vinden in de resultaten van de query uitbreiding, maar zonder dat dit van invloed is op de rang schikking. 
 
@@ -397,9 +397,9 @@ In dit artikel wordt gezocht in volledige tekst in de context van Azure Cognitiv
 
 [REST API voor documenten zoeken](/rest/api/searchservice/search-documents) 
 
-[Vereenvoudigde querysyntaxis](/rest/api/searchservice/simple-query-syntax-in-azure-search) 
+[Eenvoudige query syntaxis](/rest/api/searchservice/simple-query-syntax-in-azure-search) 
 
-[Volledige Lucene-querysyntaxis](/rest/api/searchservice/lucene-query-syntax-in-azure-search) 
+[Volledige lucene-query syntaxis](/rest/api/searchservice/lucene-query-syntax-in-azure-search) 
 
 [Zoekresultaten verwerken](./search-pagination-page-layout.md)
 

@@ -8,11 +8,11 @@ ms.reviewer: spelluru
 ms.date: 07/08/2020
 ms.topic: article
 ms.openlocfilehash: f38e23a3af1e2c81ee012a4f3c268cbff3fc1bee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86171462"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002814"
 ---
 # <a name="persist-state-in-windows"></a>Status voor persistent in Windows
 
@@ -73,8 +73,8 @@ In dit artikel worden de stappen beschreven die nodig zijn om Event Grid module 
     1. Klik met de rechter muisknop en selecteer **Eigenschappen**.
     1. Selecteer **Beveiliging**.
     1. Selecteer onder * groeps-of gebruikers namen de optie **bewerken**.
-    1. Selecteer **toevoegen**, invoeren `Users` , selecteer **Namen controleren**en selecteer **OK**.
-    1. Selecteer onder *machtigingen voor gebruikers* **wijzigen**en selecteer **OK**.
+    1. Selecteer **toevoegen**, invoeren `Users` , selecteer **Namen controleren** en selecteer **OK**.
+    1. Selecteer onder *machtigingen voor gebruikers* **wijzigen** en selecteer **OK**.
 1. Gebruik **bindingen** om dit volume te koppelen en Event grid module opnieuw te implementeren vanuit Azure Portal
 
    Bijvoorbeeld:
@@ -110,7 +110,7 @@ In dit artikel worden de stappen beschreven die nodig zijn om Event Grid module 
     ```
 
    >[!IMPORTANT]
-   >Wijzig het tweede deel van de bindings waarde niet. Deze verwijst naar een specifieke locatie in de module. Voor Event Grid module op Windows moet **C: \\ app \\ metadataDb**zijn.
+   >Wijzig het tweede deel van de bindings waarde niet. Deze verwijst naar een specifieke locatie in de module. Voor Event Grid module op Windows moet **C: \\ app \\ metadataDb** zijn.
 
 
     Bijvoorbeeld:
@@ -174,7 +174,7 @@ In plaats van een volume te koppelen, kunt u een map op het hostsysteem maken en
     ```
 
     >[!IMPORTANT]
-    >Wijzig het tweede deel van de bindings waarde niet. Deze verwijst naar een specifieke locatie in de module. Voor de module Event Grid in Windows moet **C: \\ app \\ metadataDb**zijn.
+    >Wijzig het tweede deel van de bindings waarde niet. Deze verwijst naar een specifieke locatie in de module. Voor de module Event Grid in Windows moet **C: \\ app \\ metadataDb** zijn.
 
     Bijvoorbeeld:
 

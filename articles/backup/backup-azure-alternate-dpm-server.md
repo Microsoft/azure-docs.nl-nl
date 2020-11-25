@@ -4,11 +4,11 @@ description: Herstel de gegevens die u hebt beveiligd met een Recovery Services 
 ms.topic: conceptual
 ms.date: 07/09/2019
 ms.openlocfilehash: 0cce45fbaaedad4cfcee0cda768aae2fa294312b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89378063"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002967"
 ---
 # <a name="recover-data-from-azure-backup-server"></a>Gegevens herstellen vanaf Azure Backup Server
 
@@ -51,7 +51,7 @@ Gegevens herstellen vanaf een Azure Backup Server:
 7. Selecteer **herstellen naar een andere locatie**. **Blader** naar de juiste locatie voor het herstel.
 
     ![Alternatieve locatie voor externe DPM-herstel bewerking](./media/backup-azure-alternate-dpm-server/external-dpm-recovery-alternate-location.png)
-8. Kies de optie met betrekking tot het maken van een **kopie**, **overs Laan**of **overschrijven**.
+8. Kies de optie met betrekking tot het maken van een **kopie**, **overs Laan** of **overschrijven**.
 
    * **Kopie maken** : maakt een kopie van het bestand als er sprake is van een naam conflict.
    * **Overs Laan** : als er sprake is van een naam conflict, wordt het bestand niet hersteld, waardoor het oorspronkelijke bestand blijft.
@@ -62,7 +62,7 @@ Gegevens herstellen vanaf een Azure Backup Server:
      Hiermee wordt aangegeven of een **melding** wordt verzonden wanneer het herstel is voltooid.
 
      ![Externe DPM-herstel meldingen](./media/backup-azure-alternate-dpm-server/external-dpm-recovery-notifications.png)
-9. In het scherm **samen vatting** worden de opties weer gegeven die tot nu toe zijn gekozen. Wanneer u **herstellen**selecteert, worden de gegevens hersteld naar de juiste on-premises locatie.
+9. In het scherm **samen vatting** worden de opties weer gegeven die tot nu toe zijn gekozen. Wanneer u **herstellen** selecteert, worden de gegevens hersteld naar de juiste on-premises locatie.
 
     ![Samen vatting van externe DPM-herstel opties](./media/backup-azure-alternate-dpm-server/external-dpm-recovery-options-summary.png)
 

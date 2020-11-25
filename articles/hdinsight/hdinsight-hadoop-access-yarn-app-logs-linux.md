@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/23/2020
 ms.openlocfilehash: 726cf362e62f0ef914dfaea090a08c224bd5d8d6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82192498"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001946"
 ---
 # <a name="access-apache-hadoop-yarn-application-logs-on-linux-based-hdinsight"></a>Toegang tot Apache Hadoop GARENs van toepassings logboeken op HDInsight op basis van Linux
 
@@ -21,7 +21,7 @@ Meer informatie over toegang tot de logboeken voor [Apache HADOOP garens](https:
 
 ## <a name="what-is-apache-yarn"></a>Wat is Apache GARENs?
 
-GARENs ondersteunt meerdere programmeer modellen (Apache Hadoop MapReduce zijn) door het ontkoppelen van resource beheer vanuit toepassings planning/-bewaking. GARENs maakt gebruik van een Global *`ResourceManager`* (RM), per worker-knoop punt *NodeManagers* (NMs) en per toepassing *ApplicationMasters* (AMS). De per-toepassing onderhandelt bronnen (CPU, geheugen, schijf, netwerk) voor het uitvoeren van uw toepassing met de RM. De RM werkt met NMs voor het verlenen van deze resources, die als *containers*worden verleend. De AM is verantwoordelijk voor het volgen van de voortgang van de containers die hieraan zijn toegewezen door de RM. Een toepassing kan veel containers vereisen, afhankelijk van de aard van de toepassing.
+GARENs ondersteunt meerdere programmeer modellen (Apache Hadoop MapReduce zijn) door het ontkoppelen van resource beheer vanuit toepassings planning/-bewaking. GARENs maakt gebruik van een Global *`ResourceManager`* (RM), per worker-knoop punt *NodeManagers* (NMs) en per toepassing *ApplicationMasters* (AMS). De per-toepassing onderhandelt bronnen (CPU, geheugen, schijf, netwerk) voor het uitvoeren van uw toepassing met de RM. De RM werkt met NMs voor het verlenen van deze resources, die als *containers* worden verleend. De AM is verantwoordelijk voor het volgen van de voortgang van de containers die hieraan zijn toegewezen door de RM. Een toepassing kan veel containers vereisen, afhankelijk van de aard van de toepassing.
 
 Elke toepassing kan bestaan uit meerdere *toepassings pogingen*. Als een toepassing mislukt, wordt deze mogelijk opnieuw geprobeerd als een nieuwe poging. Elke poging wordt uitgevoerd in een container. In een zin bevat een container de context voor de basis eenheid van het werk dat door een garen toepassing wordt uitgevoerd. Alle werkzaamheden die in de context van een container worden uitgevoerd, worden uitgevoerd op het knoop punt voor één werk nemer waarop de container is opgegeven. Zie [Hadoop: garens schrijven](https://hadoop.apache.org/docs/r2.7.4/hadoop-yarn/hadoop-yarn-site/WritingYarnApplications.html)of [Apache Hadoop garens](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html) voor meer informatie.
 

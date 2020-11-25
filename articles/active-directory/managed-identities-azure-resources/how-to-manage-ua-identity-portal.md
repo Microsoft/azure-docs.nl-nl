@@ -16,11 +16,11 @@ ms.date: 08/26/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7ad91c916a6134f2507e74df6e87478421a00f43
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91977422"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96003001"
 ---
 # <a name="create-list-delete-or-assign-a-role-to-a-user-assigned-managed-identity-using-the-azure-portal"></a>Een rol maken, weer geven, verwijderen of toewijzen aan een door de gebruiker toegewezen beheerde identiteit met behulp van de Azure Portal
 
@@ -38,7 +38,7 @@ In dit artikel leert u hoe u een rol kunt maken, weer geven, verwijderen of toew
 Als u een door de gebruiker toegewezen beheerde identiteit wilt maken, moet uw account beschikken over de rol toewijzing [beheerde identiteits bijdrage](../../role-based-access-control/built-in-roles.md#managed-identity-contributor) .
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) met behulp van een account dat is gekoppeld aan het Azure-abonnement om de door de gebruiker toegewezen beheerde identiteit te maken.
-2. Typ *beheerde identiteiten*in het zoekvak en klik onder **Services**op **beheerde identiteiten**.
+2. Typ *beheerde identiteiten* in het zoekvak en klik onder **Services** op **beheerde identiteiten**.
 3. Klik op **toevoegen** en voer waarden in de volgende velden in het deel venster door **gebruiker toegewezen beheerde identiteit maken** in:
     - **Abonnement**: Kies het abonnement om de door de gebruiker toegewezen beheerde identiteit onder te maken.
     - **Resource groep**: Kies een resource groep voor het maken van de door de gebruiker toegewezen beheerde identiteit in of klik op **Nieuw maken** om een nieuwe resource groep te maken.
@@ -53,7 +53,7 @@ Als u een door de gebruiker toegewezen beheerde identiteit wilt maken, moet uw a
 Als u een door de gebruiker toegewezen beheerde identiteit wilt weer geven/lezen, moet uw account beschikken over de rol [Managed Identity](../../role-based-access-control/built-in-roles.md#managed-identity-operator) of [Managed id contributor](../../role-based-access-control/built-in-roles.md#managed-identity-contributor) .
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) met behulp van een account dat is gekoppeld aan het Azure-abonnement om de door de gebruiker toegewezen beheerde identiteiten weer te geven.
-2. Typ *beheerde identiteiten*in het zoekvak en klik onder Services op **beheerde identiteiten**.
+2. Typ *beheerde identiteiten* in het zoekvak en klik onder Services op **beheerde identiteiten**.
 3. Er wordt een lijst geretourneerd met de door de gebruiker toegewezen beheerde identiteiten voor uw abonnement.  Als u de details van een door de gebruiker toegewezen beheerde identiteit wilt bekijken, klikt u op de naam.
 
 ![Door de gebruiker toegewezen beheerde identiteit weer geven](./media/how-to-manage-ua-identity-portal/list-user-assigned-managed-identity-portal.png)
@@ -66,7 +66,7 @@ Als u een door de gebruiker toegewezen identiteit verwijdert, wordt deze niet ve
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) met behulp van een account dat is gekoppeld aan het Azure-abonnement om een door de gebruiker toegewezen beheerde identiteit te verwijderen.
 2. Selecteer de door de gebruiker toegewezen beheerde identiteit en klik op **verwijderen**.
-3. Kies **Ja**in het bevestigings venster.
+3. Kies **Ja** in het bevestigings venster.
 
 ![Door de gebruiker toegewezen beheerde identiteit verwijderen](./media/how-to-manage-ua-identity-portal/delete-user-assigned-managed-identity-portal.png)
 
@@ -75,7 +75,7 @@ Als u een door de gebruiker toegewezen identiteit verwijdert, wordt deze niet ve
 Als u een rol wilt toewijzen aan een door de gebruiker toegewezen beheerde identiteit, moet uw account beschikken over de toewijzing van de rol beheerder van de [gebruiker](../../role-based-access-control/built-in-roles.md#user-access-administrator) .
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) met behulp van een account dat is gekoppeld aan het Azure-abonnement om de door de gebruiker toegewezen beheerde identiteiten weer te geven.
-2. Typ *beheerde identiteiten*in het zoekvak en klik onder Services op **beheerde identiteiten**.
+2. Typ *beheerde identiteiten* in het zoekvak en klik onder Services op **beheerde identiteiten**.
 3. Er wordt een lijst geretourneerd met de door de gebruiker toegewezen beheerde identiteiten voor uw abonnement.  Selecteer de door de gebruiker toegewezen beheerde identiteit waaraan u een rol wilt toewijzen.
 4. Selecteer **Toegangsbeheer (IAM)** en selecteer vervolgens **Roltoewijzing toevoegen**.
 

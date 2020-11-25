@@ -7,11 +7,11 @@ ms.subservice: shared-capabilities
 ms.date: 07/21/2020
 ms.topic: conceptual
 ms.openlocfilehash: efdb195ad41b036f7f470884b3a441de1db7f7f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91716160"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96003698"
 ---
 # <a name="manage-role-permissions-and-security"></a>Rolmachtigingen en beveiliging beheren
 
@@ -261,7 +261,7 @@ In de volgende secties worden de minimale vereiste machtigingen beschreven die n
 
 Update beheer bereikt meerdere services voor het leveren van de service. De volgende tabel bevat de machtigingen die nodig zijn voor het beheren van implementaties van update beheer:
 
-|**Resource**  |**Role**  |**Bereik**  |
+|**Resource**  |**Role**  |**Scope**  |
 |---------|---------|---------|
 |Automation-account     | Inzender van Log Analytics       | Automation-account        |
 |Automation-account    | Inzender voor virtuele machines        | Resource groep voor het account        |
@@ -421,7 +421,7 @@ New-AzRoleAssignment -ObjectId $userId -RoleDefinitionName "Automation Job Opera
 New-AzRoleAssignment -ObjectId $userId -RoleDefinitionName "Automation Runbook Operator" -Scope $rb.ResourceId
 ```
 
-Zodra het script is uitgevoerd, moet de gebruiker zich aanmelden bij de Azure Portal en **alle resources**selecteren. De gebruiker kan in de lijst het runbook zien waarvoor hij/zij is toegevoegd als een Automation-Runbook-operator.
+Zodra het script is uitgevoerd, moet de gebruiker zich aanmelden bij de Azure Portal en **alle resources** selecteren. De gebruiker kan in de lijst het runbook zien waarvoor hij/zij is toegevoegd als een Automation-Runbook-operator.
 
 ![Runbook Azure RBAC in de portal](./media/automation-role-based-access-control/runbook-rbac.png)
 

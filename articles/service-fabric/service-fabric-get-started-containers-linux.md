@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 1/4/2019
 ms.custom: devx-track-python
 ms.openlocfilehash: d085f8704850cdbb03e21b15b3cca7c8998b96fb
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93092939"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004225"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-linux"></a>Uw eerste Service Fabric-containertoepassing maken in Linux
 > [!div class="op_single_selector"]
@@ -64,7 +64,7 @@ CMD ["python", "app.py"]
 Lees het [Dockerfile-referentiemateriaal](https://docs.docker.com/engine/reference/builder/) voor meer informatie.
 
 ## <a name="create-a-basic-web-application"></a>Algemene webtoepassing maken
-Maak een Flask-toepassing die luistert op poort 80 en 'Hallo Wereld!' retourneert. Maak in dezelfde map het bestand *requirements.txt* . Voeg het volgende toe en sla de wijzigingen op:
+Maak een Flask-toepassing die luistert op poort 80 en 'Hallo Wereld!' retourneert. Maak in dezelfde map het bestand *requirements.txt*. Voeg het volgende toe en sla de wijzigingen op:
 ```
 Flask
 ```
@@ -88,7 +88,7 @@ if __name__ == "__main__":
 ```
 
 ## <a name="build-the-image"></a>De installatiekopie bouwen
-Voer de opdracht `docker build` uit om de installatiekopie te maken waarmee de webtoepassing wordt uitgevoerd. Open een PowerShell-venster en ga naar *c:\temp\helloworldapp* . Voer de volgende opdracht uit:
+Voer de opdracht `docker build` uit om de installatiekopie te maken waarmee de webtoepassing wordt uitgevoerd. Open een PowerShell-venster en ga naar *c:\temp\helloworldapp*. Voer de volgende opdracht uit:
 
 ```bash
 docker build -t helloworldapp .
@@ -156,7 +156,7 @@ docker push myregistry.azurecr.io/samples/helloworldapp
 ```
 
 ## <a name="package-the-docker-image-with-yeoman"></a>De Docker-installatiekopie inpakken met Yeoman
-De Service Fabric-SDK voor Linux bevat een [Yeoman](https://yeoman.io/)-generator waarmee u gemakkelijk uw eerste toepassing kunt maken en een containerinstallatiekopie kunt toevoegen. We gebruiken Yeoman om een toepassing te maken met een enkele Docker-container genaamd *SimpleContainerApp* .
+De Service Fabric-SDK voor Linux bevat een [Yeoman](https://yeoman.io/)-generator waarmee u gemakkelijk uw eerste toepassing kunt maken en een containerinstallatiekopie kunt toevoegen. We gebruiken Yeoman om een toepassing te maken met een enkele Docker-container genaamd *SimpleContainerApp*.
 
 Om een Service Fabric-containertoepassing te maken, opent u een terminalvenster en voert u `yo azuresfcontainer` uit. 
 
@@ -221,7 +221,7 @@ De **status controle** -instructie die verwijst naar de daad werkelijke controle
 
 ![HealthCheckUnhealthyDsp][3]
 
-U kunt het gedrag van de **STATUSCONTROLE** voor elke container configureren door **HealthConfig** -opties op te geven als onderdeel van **ContainerHostPolicies** in ApplicationManifest.
+U kunt het gedrag van de **STATUSCONTROLE** voor elke container configureren door **HealthConfig**-opties op te geven als onderdeel van **ContainerHostPolicies** in ApplicationManifest.
 
 ```xml
 <ServiceManifestImport>
@@ -235,13 +235,13 @@ U kunt het gedrag van de **STATUSCONTROLE** voor elke container configureren doo
     </Policies>
 </ServiceManifestImport>
 ```
-*IncludeDockerHealthStatusInSystemHealthReport* is standaard ingesteld op **True** , *RestartContainerOnUnhealthyDockerHealthStatus* is ingesteld op **False** en *TreatContainerUnhealthyStatusAsError* is ingesteld op **False** . 
+*IncludeDockerHealthStatusInSystemHealthReport* is standaard ingesteld op **True**, *RestartContainerOnUnhealthyDockerHealthStatus* is ingesteld op **False** en *TreatContainerUnhealthyStatusAsError* is ingesteld op **False**. 
 
-Als *RestartContainerOnUnhealthyDockerHealthStatus* is ingesteld op **true** , wordt een herhaaldelijk niet goed werkende container opnieuw opgestart (mogelijk op andere knooppunten).
+Als *RestartContainerOnUnhealthyDockerHealthStatus* is ingesteld op **true**, wordt een herhaaldelijk niet goed werkende container opnieuw opgestart (mogelijk op andere knooppunten).
 
-Als *TreatContainerUnhealthyStatusAsError* is ingesteld op **True** , worden **fouten** rapporten weer gegeven wanneer de *health_status* van de container *beschadigd* is.
+Als *TreatContainerUnhealthyStatusAsError* is ingesteld op **True**, worden **fouten** rapporten weer gegeven wanneer de *health_status* van de container *beschadigd* is.
 
-Als u de integratie van **STATUSCONTROLE** wilt uitschakelen voor de hele Service Fabric-cluster, moet u [EnableDockerHealthCheckIntegration](service-fabric-cluster-fabric-settings.md) instellen op **onwaar** .
+Als u de integratie van **STATUSCONTROLE** wilt uitschakelen voor de hele Service Fabric-cluster, moet u [EnableDockerHealthCheckIntegration](service-fabric-cluster-fabric-settings.md) instellen op **onwaar**.
 
 ## <a name="deploy-the-application"></a>De toepassing implementeren
 Als de toepassing is gemaakt, kunt u deze met behulp van de Service Fabric-CLI implementeren in het lokale cluster.
@@ -442,7 +442,7 @@ De Service Fabric-runtime wijst 20 minuten toe om containerinstallatiekopieën t
 
 ## <a name="set-container-retention-policy"></a>Bewaarbeleid voor containers instellen
 
-Om gemakkelijker opstartfouten bij containers te analyseren, ondersteunt Service Fabric (versie 6.1 of hoger) het bewaren van containers die zijn gestopt of niet kunnen starten. Dit beleid kan worden ingesteld in het bestand **ApplicationManifest.xml** , zoals u in het volgende fragment ziet:
+Om gemakkelijker opstartfouten bij containers te analyseren, ondersteunt Service Fabric (versie 6.1 of hoger) het bewaren van containers die zijn gestopt of niet kunnen starten. Dit beleid kan worden ingesteld in het bestand **ApplicationManifest.xml**, zoals u in het volgende fragment ziet:
 
 ```xml
  <ContainerHostPolicies CodePackageRef="NodeService.Code" Isolation="process" ContainersRetentionCount="2"  RunInteractive="true"> 
@@ -452,7 +452,7 @@ De instelling **ContainersRetentionCount** geeft aan hoeveel containers er moete
 
 ## <a name="start-the-docker-daemon-with-custom-arguments"></a>De Docker-daemon met aangepaste argumenten starten
 
-Met versie 6.2 of hoger van de Service Fabric-runtime kunt u de Docker-daemon met aangepaste argumenten starten. Wanneer er aangepaste argumenten zijn opgegeven, geeft Service Fabric geen andere argumenten aan de docker-engine door, behalve het argument `--pidfile`. Daarom moet `--pidfile` niet als een argument worden doorgegeven. Bovendien moet het argument de docker-daemon nog steeds laten luisteren op de standaard benoemde pipe voor Windows (of unix-domeinsocket voor Linux) zodat Service Fabric met de daemon kan communiceren. De aangepaste argumenten worden opgegeven in het clustermanifest onder de sectie **Hosting** onder **ContainerServiceArguments** . In het volgende fragment ziet u een voorbeeld: 
+Met versie 6.2 of hoger van de Service Fabric-runtime kunt u de Docker-daemon met aangepaste argumenten starten. Wanneer er aangepaste argumenten zijn opgegeven, geeft Service Fabric geen andere argumenten aan de docker-engine door, behalve het argument `--pidfile`. Daarom moet `--pidfile` niet als een argument worden doorgegeven. Bovendien moet het argument de docker-daemon nog steeds laten luisteren op de standaard benoemde pipe voor Windows (of unix-domeinsocket voor Linux) zodat Service Fabric met de daemon kan communiceren. De aangepaste argumenten worden opgegeven in het clustermanifest onder de sectie **Hosting** onder **ContainerServiceArguments**. In het volgende fragment ziet u een voorbeeld: 
  
 
 ```json

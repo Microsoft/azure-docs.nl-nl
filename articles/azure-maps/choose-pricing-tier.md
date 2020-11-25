@@ -9,11 +9,11 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: 3603a4f5d103987b25bd5f976b89f943f98565a8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88163982"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96003681"
 ---
 # <a name="choose-the-right-pricing-tier-in-azure-maps"></a>De juiste prijscategorie kiezen in Azure Maps
 
@@ -21,7 +21,7 @@ Azure Maps biedt twee prijs Categorieën: S0 en S1. Het doel van dit artikel is 
 
 ## <a name="how-many-concurrent-users-do-i-plan-to-support"></a>Hoeveel gelijktijdige gebruikers wilt u ondersteunen?
 
-De prijs categorieën S0 en S1 verwerken verschillende hoeveel heden gegevens doorvoer. De prijs categorie S0 verwerkt Maxi maal **50 query's per seconde**. Terwijl de S1-laag **meer dan 50 query's per seconde**verwerkt.
+De prijs categorieën S0 en S1 verwerken verschillende hoeveel heden gegevens doorvoer. De prijs categorie S0 verwerkt Maxi maal **50 query's per seconde**. Terwijl de S1-laag **meer dan 50 query's per seconde** verwerkt.
 
 ## <a name="what-geospatial-capabilities-do-i-plan-to-use"></a>Welke georuimtelijke mogelijkheden moet ik gebruiken?
 

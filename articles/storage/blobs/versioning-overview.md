@@ -10,12 +10,12 @@ ms.date: 11/09/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 48078ed06e36a33b10ee2d761a249159d14c6220
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: e2d74519b9adf9a74e5af180a3da28918a9a8dab
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94444500"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96001878"
 ---
 # <a name="blob-versioning"></a>BLOB-versie beheer
 
@@ -128,7 +128,7 @@ In het volgende diagram ziet u hoe het wijzigen van een BLOB nadat versie beheer
 
 ## <a name="blob-versioning-and-soft-delete"></a>BLOB-versie en zacht verwijderen
 
-BLOB-versie beheer en dynamische BLOB-verwijdering werken samen om u te voorzien van optimale gegevens beveiliging. Wanneer u zacht verwijderen inschakelt, geeft u op hoe lang Azure Storage een voorlopig verwijderde BLOB moet bewaren. Een met Soft verwijderde BLOB-versie blijft in het systeem en kan worden verwijderd binnen de tijdelijke verwijderings periode. Zie voor meer informatie over het verwijderen van blobs [voorlopig verwijderen voor Azure Storage-blobs](storage-blob-soft-delete.md).
+BLOB-versie beheer en dynamische BLOB-verwijdering werken samen om u te voorzien van optimale gegevens beveiliging. Wanneer u zacht verwijderen inschakelt, geeft u op hoe lang Azure Storage een voorlopig verwijderde BLOB moet bewaren. Een met Soft verwijderde BLOB-versie blijft in het systeem en kan worden verwijderd binnen de tijdelijke verwijderings periode. Zie voor meer informatie over het verwijderen van blobs [voorlopig verwijderen voor Azure Storage-blobs](./soft-delete-blob-overview.md).
 
 ### <a name="deleting-a-blob-or-version"></a>Een BLOB of versie verwijderen
 
@@ -187,7 +187,7 @@ BLOB-versie beheer is ontworpen om uw gegevens te beschermen tegen onbedoeld of 
 
 In de volgende tabel ziet u welke Azure RBAC-acties ondersteuning bieden voor het verwijderen van een BLOB of een BLOB-versie.
 
-| Beschrijving | Blob service bewerking | Azure RBAC-gegevens actie vereist | Ondersteuning voor ingebouwde rollen van Azure |
+| Description | Blob service bewerking | Azure RBAC-gegevens actie vereist | Ondersteuning voor ingebouwde rollen van Azure |
 |----------------------------------------------|------------------------|---------------------------------------------------------------------------------------|-------------------------------|
 | De huidige versie van de BLOB verwijderen | BLOB verwijderen | **Micro soft. Storage/Storage accounts/blobServices/containers/blobs/verwijderen** | Inzender voor Storage Blob-gegevens |
 | Een versie verwijderen | BLOB verwijderen | **Micro soft. Storage/Storage accounts/blobServices/containers/blobs/deleteBlobVersion/Action** | Eigenaar van opslagblobgegevens |
@@ -297,4 +297,4 @@ In de volgende tabel wordt het facturerings gedrag voor een verwijderde BLOB bes
 
 - [BLOB-versie beheer inschakelen en beheren](versioning-enable.md)
 - [Een moment opname van een BLOB maken](/rest/api/storageservices/creating-a-snapshot-of-a-blob)
-- [Zacht verwijderen voor Azure Storage-blobs](storage-blob-soft-delete.md)
+- [Zacht verwijderen voor Azure Storage-blobs](./soft-delete-blob-overview.md)

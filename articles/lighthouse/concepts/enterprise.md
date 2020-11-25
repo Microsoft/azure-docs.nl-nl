@@ -4,11 +4,11 @@ description: De mogelijkheden van Azure Lighthouse kunnen worden gebruikt voor h
 ms.date: 08/12/2020
 ms.topic: conceptual
 ms.openlocfilehash: 3f452e6810fa6809b5ba1b83b664f8b38d82a895
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88167346"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004242"
 ---
 # <a name="azure-lighthouse-in-enterprise-scenarios"></a>Azure Lighthouse in zakelijke scenario's
 
@@ -24,7 +24,7 @@ In gevallen waarin een architectuur met meerdere tenants is vereist, kunt u met 
 
 Als u Azure Lighthouse in een onderneming wilt gebruiken, moet u bepalen welke Tenant de gebruikers bevat die beheer bewerkingen uitvoeren op de andere tenants. Met andere woorden, u moet bepalen welke Tenant het beheer van de Tenant voor de andere tenants is.
 
-Stel bijvoorbeeld dat uw organisatie een enkele Tenant heeft die *Tenant a*oproept. Uw organisatie verwerft vervolgens *Tenant B* en *Tenant C*, en u hebt zakelijke redenen die u nodig hebben om ze te onderhouden als afzonderlijke tenants.
+Stel bijvoorbeeld dat uw organisatie een enkele Tenant heeft die *Tenant a* oproept. Uw organisatie verwerft vervolgens *Tenant B* en *Tenant C*, en u hebt zakelijke redenen die u nodig hebben om ze te onderhouden als afzonderlijke tenants.
 
 Uw organisatie wil dezelfde beleids definities, back-upprocedures en beveiligings processen voor alle tenants gebruiken. Aangezien Tenant A al gebruikers bevat die verantwoordelijk zijn voor deze taken, kunt u abonnementen opvolgen binnen Tenant B en Tenant C, zodat dezelfde gebruikers in Tenant A deze taken kunnen uitvoeren.
 

@@ -9,11 +9,11 @@ ms.date: 04/02/2020
 ms.author: rogarana
 ms.custom: include file
 ms.openlocfilehash: de0cf260207747f4acb02a377819a13de8b8ba22
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80628425"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002512"
 ---
 [!INCLUDE [virtual-machines-disks-incremental-snapshots-description](virtual-machines-disks-incremental-snapshots-description.md)]
 
@@ -35,11 +35,11 @@ ms.locfileid: "80628425"
 1. Selecteer de resource groep die u wilt gebruiken en voer een naam in.
 1. Selecteer **stapsgewijs** en selecteer **controleren + maken**
 
-    :::image type="content" source="media/virtual-machines-disks-incremental-snapshots-portal/incremental-snapshot-create-snapshot-blade.png" alt-text="Afdruk. De Blade van uw schijf, met * * + moment opname maken * * gemarkeerd, zoals u moet selecteren.":::
+    :::image type="content" source="media/virtual-machines-disks-incremental-snapshots-portal/incremental-snapshot-create-snapshot-blade.png" alt-text="Afdruk. Maak een Blade voor de moment opname, vul de naam in en selecteer stapsgewijs en maak uw moment opname.":::
 
 1. Selecteer **Maken**
 
-    :::image type="content" source="media/virtual-machines-disks-incremental-snapshots-portal/create-incremental-snapshot-validation.png" alt-text="Afdruk. De Blade van uw schijf, met * * + moment opname maken * * gemarkeerd, zoals u moet selecteren.":::
+    :::image type="content" source="media/virtual-machines-disks-incremental-snapshots-portal/create-incremental-snapshot-validation.png" alt-text="Afdruk. Validatie pagina voor uw moment opname, bevestig uw selecties en maak de moment opname.":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

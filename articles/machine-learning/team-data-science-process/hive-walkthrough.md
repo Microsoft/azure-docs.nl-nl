@@ -12,11 +12,11 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 53f50e98bcec4b8ace342808f0bcfd96770834b0
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93312353"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002218"
 ---
 # <a name="the-team-data-science-process-in-action-use-azure-hdinsight-hadoop-clusters"></a>Het proces van de team data Science in actie: Azure HDInsight Hadoop clusters gebruiken
 In dit scenario gebruiken we het [team data Science process (TDSP)](overview.md) in een end-to-end-scenario. We gebruiken een [Azure HDInsight Hadoop-cluster](https://azure.microsoft.com/services/hdinsight/) om gegevens op te slaan, te verkennen en te onderbouwen vanuit de openbaar beschik bare NYC van de [taxi](https://www.andresmh.com/nyctaxitrips/) en om de gegevens voor te bereiden. Voor het afhandelen van binaire en multiklasse-classificatie en regressie taken, maken we modellen van de gegevens met Azure Machine Learning. 
@@ -59,9 +59,9 @@ De NYC-gegevens over de taxi zijn ongeveer 20 GB aan gecomprimeerde bestanden me
 De unieke sleutel voor deelname aan reis \_ gegevens en reis \_ tarief bestaat uit de velden: Medallion, Hack \_ License en \_ datum/tijd van ophalen. Om alle informatie te verkrijgen die relevant is voor een bepaalde reis, is het voldoende om deel te nemen aan deze drie sleutels.
 
 ## <a name="examples-of-prediction-tasks"></a><a name="mltasks"></a>Voor beelden van voorspellings taken
-Bepaal het soort voor spellingen dat u wilt maken op basis van gegevens analyse, zodat u de vereiste proces taken kunt verduidelijken. Hier vindt u drie voor beelden van voorspellings problemen die we in deze walkthrough verpakken, allemaal op basis van het *fooien \_ bedrag* :
+Bepaal het soort voor spellingen dat u wilt maken op basis van gegevens analyse, zodat u de vereiste proces taken kunt verduidelijken. Hier vindt u drie voor beelden van voorspellings problemen die we in deze walkthrough verpakken, allemaal op basis van het *fooien \_ bedrag*:
 
-- **Binaire classificatie** : voor spelt of er een tip voor een reis is betaald. Dat wil zeggen dat een *Tip- \_ bedrag* dat groter is dan $0 een positief voor beeld is, terwijl een *tip- \_ bedrag* van $0 een negatief voor beeld is.
+- **Binaire classificatie**: voor spelt of er een tip voor een reis is betaald. Dat wil zeggen dat een *Tip- \_ bedrag* dat groter is dan $0 een positief voor beeld is, terwijl een *tip- \_ bedrag* van $0 een negatief voor beeld is.
 
   - Klasse 0: tip_amount = $0
   - Klasse 1: tip_amount > $0
@@ -74,7 +74,7 @@ Bepaal het soort voor spellingen dat u wilt maken op basis van gegevens analyse,
   - Klasse 3: tip_amount > $10 en tip_amount <= $20
   - Klasse 4: tip_amount > $20
 
-- **Regressie taak** : voor spelt u het aantal fooien dat voor een reis is betaald.  
+- **Regressie taak**: voor spelt u het aantal fooien dat voor een reis is betaald.  
 
 ## <a name="set-up-an-hdinsight-hadoop-cluster-for-advanced-analytics"></a><a name="setup"></a>Een HDInsight Hadoop-cluster instellen voor geavanceerde analyse
 > [!NOTE]
@@ -130,7 +130,7 @@ Met deze opdracht worden de reis gegevens geüpload naar de map _*_nyctaxitripra
 "C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy\azcopy" /Source:<path_to_unzipped_data_files> /Dest:https://<storage account name of Hadoop cluster>.blob.core.windows.net/<default container of Hadoop cluster>/nyctaxitripraw /DestKey:<storage account key> /S /Pattern:trip_data__.csv
 ```
 
-Met deze opdracht worden de ritbedrag gegevens geüpload naar de map * **nyctaxifareraw** _ in de standaard container van het Hadoop-cluster.
+Met deze opdracht worden de ritbedrag gegevens geüpload naar de map ***nyctaxifareraw** _ in de standaard container van het Hadoop-cluster.
 
 ```console
 "C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy\azcopy" /Source:<path_to_unzipped_data_files> /Dest:https://<storage account name of Hadoop cluster>.blob.core.windows.net/<default container of Hadoop cluster>/nyctaxifareraw /DestKey:<storage account key> /S /Pattern:trip_fare__.csv
@@ -156,7 +156,7 @@ set script='https://raw.githubusercontent.com/Azure/Azure-MachineLearning-DataSc
 @powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString(%script%))"
 ```
 
-Deze twee opdrachten downloaden alle '. HQL-bestanden die in dit overzicht nodig zijn voor de lokale map * **C:\temp&#92;** _ in het hoofd knooppunt.
+Deze twee opdrachten downloaden alle '. HQL-bestanden die in dit overzicht nodig zijn voor de lokale map ***C:\temp&#92;** _ in het hoofd knooppunt.
 
 ## <a name="create-hive-database-and-tables-partitioned-by-month"></a><a name="#hive-db-tables"></a>Hive-data base en tabellen gepartitioneerd per maand maken
 > [!NOTE]
@@ -182,7 +182,7 @@ Voer de volgende opdracht uit in de opdracht regel van het Hive-bericht van het 
 hive -f "C:\temp\sample_hive_create_db_and_tables.hql"
 ```
 
-Dit is de inhoud van de *C:\temp\sample- \_ component \_ Create \_ DB \_ and \_ Tables. HQL* * file waarmee de Hive-data **Base nyctaxidb** wordt gemaakt en de tabel **reis** en **ritbedrag**.
+Dit is de inhoud van de *C:\temp\sample- \_ component \_ Create \_ DB \_ and \_ Tables. HQL** file waarmee de Hive-data **Base nyctaxidb** wordt gemaakt en de tabel **reis** en **ritbedrag**.
 
 ```hiveql
 create database if not exists nyctaxidb;
@@ -447,7 +447,7 @@ Het totale aantal records in beide tabellen is ook hetzelfde, waardoor een tweed
 > 
 > 
 
-In dit voor beeld wordt het Medallions (taxi nummer) geïdentificeerd dat groter is dan 100 trips binnen een bepaalde tijds periode. De query heeft voor delen van de gepartitioneerde tabel toegang, omdat deze wordt voor bereid op de partitie variabele **Month**. De query resultaten worden geschreven naar een lokaal bestand, **queryoutput. TSV** , in `C:\temp` op het hoofd knooppunt.
+In dit voor beeld wordt het Medallions (taxi nummer) geïdentificeerd dat groter is dan 100 trips binnen een bepaalde tijds periode. De query heeft voor delen van de gepartitioneerde tabel toegang, omdat deze wordt voor bereid op de partitie variabele **Month**. De query resultaten worden geschreven naar een lokaal bestand, **queryoutput. TSV**, in `C:\temp` op het hoofd knooppunt.
 
 ```console
 hive -f "C:\temp\sample_hive_trip_count_by_medallion.hql" > C:\temp\queryoutput.tsv
@@ -639,7 +639,7 @@ hdfs dfs -mkdir wasb:///queryoutputdir
 hive -f "C:\temp\sample_hive_trip_direct_distance.hql"
 ```
 
-De query resultaten worden geschreven naar negen Azure-blobs ( **queryoutputdir/000000 \_ 0** to  **queryoutputdir/000008 \_ 0** ), onder de standaard container van het Hadoop-cluster.
+De query resultaten worden geschreven naar negen Azure-blobs (**queryoutputdir/000000 \_ 0** to  **queryoutputdir/000008 \_ 0**), onder de standaard container van het Hadoop-cluster.
 
 Als u de grootte van de afzonderlijke blobs wilt zien, voert u de volgende opdracht uit vanaf de Hive-prompt:
 
@@ -647,7 +647,7 @@ Als u de grootte van de afzonderlijke blobs wilt zien, voert u de volgende opdra
 hdfs dfs -ls wasb:///queryoutputdir
 ```
 
-Als u de inhoud van een bepaald bestand wilt bekijken, zegt u **000000 \_ 0** , gebruikt u de `copyToLocal` opdracht Hadoop.
+Als u de inhoud van een bepaald bestand wilt bekijken, zegt u **000000 \_ 0**, gebruikt u de `copyToLocal` opdracht Hadoop.
 
 ```hiveql
 hdfs dfs -copyToLocal wasb:///queryoutputdir/000000_0 C:\temp\tempfile
@@ -669,7 +669,7 @@ Een belang rijk voor deel van het gebruik van deze gegevens bevindt zich in een 
 Na de experimentele gegevens analyse fase zijn we nu klaar om de gegevens voor het bouwen van modellen in Machine Learning voor te bereiden. In deze sectie laten we zien hoe u een Hive-query gebruikt om de gegevens te bemonsteren. Machine Learning opent deze vervolgens vanuit de module [gegevens importeren][import-data] .
 
 ### <a name="down-sampling-the-data"></a>Down sampling van de gegevens
-Er zijn twee stappen in deze procedure. Eerst voegen we de tabellen **nyctaxidb. trip** en **nyctaxidb. ritbedrag** toe op drie sleutels die aanwezig zijn in alle records: **Medallion** , **Hack \_ License** en **\_ datum/tijd van ophalen**. We genereren vervolgens een label met een binaire classificatie, **gekanteld** en een classificatie label met een klasse, **Tip- \_ klasse**.
+Er zijn twee stappen in deze procedure. Eerst voegen we de tabellen **nyctaxidb. trip** en **nyctaxidb. ritbedrag** toe op drie sleutels die aanwezig zijn in alle records: **Medallion**, **Hack \_ License** en **\_ datum/tijd van ophalen**. We genereren vervolgens een label met een binaire classificatie, **gekanteld** en een classificatie label met een klasse, **Tip- \_ klasse**.
 
 Als u de gegevens van de voor gaande steek proef rechtstreeks vanuit de module [gegevens importeren][import-data] in machine learning wilt gebruiken, moet u de resultaten van de vorige query opslaan in een interne Hive-tabel. In de volgende stappen maken we een interne Hive-tabel en vullen ze de inhoud ervan met de gekoppelde en bemonsterde gegevens.
 
@@ -813,24 +813,24 @@ Deze query uit te voeren vanuit de prompt van de Hive-map:
 hive -f "C:\temp\sample_hive_prepare_for_aml_full.hql"
 ```
 
-We hebben nu een interne tabel, **nyctaxidb.nyctaxi_downsampled_dataset** , die toegankelijk is via de module [gegevens importeren][import-data] van machine learning. Daarnaast kunnen we deze gegevensset gebruiken om Machine Learning modellen te bouwen.  
+We hebben nu een interne tabel, **nyctaxidb.nyctaxi_downsampled_dataset**, die toegankelijk is via de module [gegevens importeren][import-data] van machine learning. Daarnaast kunnen we deze gegevensset gebruiken om Machine Learning modellen te bouwen.  
 
 ### <a name="use-the-import-data-module-in-machine-learning-to-access-the-down-sampled-data"></a>De module gegevens importeren in Machine Learning gebruiken om toegang te krijgen tot de omlaag gesamplede gegevens
 Als u Hive-query's wilt uitgeven in de module [gegevens importeren][import-data] van machine learning, moet u toegang hebben tot een machine learning-werk ruimte. U hebt ook toegang tot de referenties van het cluster en het bijbehorende opslag account nodig.
 
 Hier volgen enkele details over de module [gegevens importeren][import-data] en de para meters die moeten worden ingevoerd:
 
-**URI van HCatalog-server** : als de cluster naam **abc123** is, gebruikt u: https: \/ /abc123.azurehdinsight.net.
+**URI van HCatalog-server**: als de cluster naam **abc123** is, gebruikt u: https: \/ /abc123.azurehdinsight.net.
 
-**Hadoop-gebruikers accountnaam** : de gebruikers naam die voor het cluster is gekozen (niet de gebruikers naam voor externe toegang).
+**Hadoop-gebruikers accountnaam**: de gebruikers naam die voor het cluster is gekozen (niet de gebruikers naam voor externe toegang).
 
-**Hadoop-gebruikers account voor wacht woord** : het wacht woord dat u hebt gekozen voor het cluster (niet het wacht woord voor externe toegang).
+**Hadoop-gebruikers account voor wacht woord**: het wacht woord dat u hebt gekozen voor het cluster (niet het wacht woord voor externe toegang).
 
-**Locatie van uitvoer gegevens** : gekozen als Azure.
+**Locatie van uitvoer gegevens**: gekozen als Azure.
 
-**Azure Storage account naam** : de naam van het standaard opslag account dat aan het cluster is gekoppeld.
+**Azure Storage account naam**: de naam van het standaard opslag account dat aan het cluster is gekoppeld.
 
-**Azure-container naam** : de standaard container naam voor het cluster en is doorgaans hetzelfde als de naam van het cluster. Voor een cluster met de naam **abc123** is abc123.
+**Azure-container naam**: de standaard container naam voor het cluster en is doorgaans hetzelfde als de naam van het cluster. Voor een cluster met de naam **abc123** is abc123.
 
 > [!IMPORTANT]
 > Elke tabel die u wilt opvragen met behulp van de module [gegevens importeren][import-data] in machine learning moet een interne tabel zijn.
@@ -858,11 +858,11 @@ De gegevensset kan nu worden gebruikt als uitgangs punt voor het bouwen van Mach
 ### <a name="build-models-in-machine-learning"></a><a name="mlmodel"></a>Modellen maken in Machine Learning
 U kunt nu door gaan met het model leren van het bouwen en model implementeren in [machine learning](https://studio.azureml.net). De gegevens kunnen worden gebruikt om de voorspelde problemen op te lossen die eerder zijn geïdentificeerd:
 
-- **Binaire classificatie** : om te voors pellen of er al dan niet een tip voor een reis is betaald.
+- **Binaire classificatie**: om te voors pellen of er al dan niet een tip voor een reis is betaald.
 
   **Gebruikte informatieer:** Logistiek regressie met twee klassen
 
-  a. Voor dit probleem wordt het doel label (of klasse) **gekanteld**. De oorspronkelijke voor beeld van een gegevensset bevat enkele kolommen met een doel lekkage voor dit classificatie experiment. Met name **Tip \_ Class** , **Tip- \_ hoeveelheid** en **totaal \_ bedrag** geven informatie weer over het doel label dat niet beschikbaar is op het moment van testen. We verwijderen deze kolommen van overweging met behulp van de module [select columns in dataset][select-columns] .
+  a. Voor dit probleem wordt het doel label (of klasse) **gekanteld**. De oorspronkelijke voor beeld van een gegevensset bevat enkele kolommen met een doel lekkage voor dit classificatie experiment. Met name **Tip \_ Class**, **Tip- \_ hoeveelheid** en **totaal \_ bedrag** geven informatie weer over het doel label dat niet beschikbaar is op het moment van testen. We verwijderen deze kolommen van overweging met behulp van de module [select columns in dataset][select-columns] .
 
   In het volgende diagram ziet u het experiment om te voors pellen of er voor een bepaalde reis een tip is betaald:
 
@@ -882,7 +882,7 @@ U kunt nu door gaan met het model leren van het bouwen en model implementeren in
 
   **Gebruikte informatieer:** Multiklasse-logistieke regressie
 
-  a. Voor dit probleem is ons doel label (of klasse) een **Tip- \_ klasse** , die een van de vijf waarden kan hebben (0, 1, 2, 3, 4). Net als bij het binaire classificatie geval hebben we een aantal kolommen met een doel lekkage voor dit experiment. Met name, **gekanteld** , aantal **fooien \_** en **totaal \_ bedrag** wordt informatie weer geven over het doel label dat niet beschikbaar is tijdens de test tijd. Deze kolommen worden verwijderd met behulp van de module [select columns in dataset][select-columns] .
+  a. Voor dit probleem is ons doel label (of klasse) een **Tip- \_ klasse**, die een van de vijf waarden kan hebben (0, 1, 2, 3, 4). Net als bij het binaire classificatie geval hebben we een aantal kolommen met een doel lekkage voor dit experiment. Met name, **gekanteld**, aantal **fooien \_** en **totaal \_ bedrag** wordt informatie weer geven over het doel label dat niet beschikbaar is tijdens de test tijd. Deze kolommen worden verwijderd met behulp van de module [select columns in dataset][select-columns] .
 
   In het volgende diagram ziet u het experiment waarbij wordt voor speld dat bin een tip waarschijnlijk zal vallen. De bakken zijn: klasse 0: Tip = $0, klasse 1: Tip > $0 en tip <= $5, klasse 2: Tip > $5 en tip <= $10, klasse 3: Tip > $10 en tip <= $20 en Class 4: Tip > $20.
 
@@ -898,11 +898,11 @@ U kunt nu door gaan met het model leren van het bouwen en model implementeren in
 
   Hoewel de klasse keurigheden op de voorgangte klassen goed is, heeft het model geen goede taak van ' learning ' in de rarer-klassen.
 
-- **Regressie taak** : voor het voors pellen van de hoeveelheid fooien die voor een reis wordt betaald.
+- **Regressie taak**: voor het voors pellen van de hoeveelheid fooien die voor een reis wordt betaald.
 
   **Gebruikte informatieer:** Versterkte beslissings structuur
 
-  a. Voor dit probleem is het doel label (of klasse) een **Tip- \_ hoeveelheid**. De doel lekken in dit geval zijn: **gekanteld** , **Tip- \_ klasse** en **totaal \_ bedrag**. Al deze variabelen geven informatie over het fooie bedrag dat doorgaans niet beschikbaar is tijdens het testen. Deze kolommen worden verwijderd met behulp van de module [select columns in dataset][select-columns] .
+  a. Voor dit probleem is het doel label (of klasse) een **Tip- \_ hoeveelheid**. De doel lekken in dit geval zijn: **gekanteld**, **Tip- \_ klasse** en **totaal \_ bedrag**. Al deze variabelen geven informatie over het fooie bedrag dat doorgaans niet beschikbaar is tijdens het testen. Deze kolommen worden verwijderd met behulp van de module [select columns in dataset][select-columns] .
 
   Het volgende diagram toont het experiment om de hoeveelheid van de gegeven tip te voors pellen:
 
@@ -922,7 +922,7 @@ U kunt nu door gaan met het model leren van het bouwen en model implementeren in
 ## <a name="license-information"></a>Licentie gegevens
 Dit voorbeeld scenario en de bijbehorende scripts worden gedeeld door micro soft onder de MIT-licentie. Zie het **LICENSE.txt** -bestand in de map van de voorbeeld code op github voor meer informatie.
 
-## <a name="references"></a>Verwijzingen
+## <a name="references"></a>Referenties
 •    [Download pagina voor Andrés Monroy NYCe taxi](https://www.andresmh.com/nyctaxitrips/)  
 •    [De taxi-reis gegevens van NYC door Chris Whong te folie](https://chriswhong.com/open-data/foil_nyc_taxi/)   
 • [NYC van de taxi en limousine](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page) van de Commissie

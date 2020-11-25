@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 08/21/2018
 ms.assetid: e54750b4-4518-4262-8f23-ca2f0c7c0439
 ms.openlocfilehash: a37808548ec58977b7d6af16c75b94b7b5efe446
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91271593"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002933"
 ---
 # <a name="create-azure-recovery-services-vault-using-rest-api"></a>Azure Recovery Services-kluis maken met behulp van REST API
 
@@ -38,10 +38,10 @@ Zie [onderdelen van een rest API aanvraag/antwoord](/rest/api/azure/#components-
 
 De volgende algemene definities worden gebruikt voor het bouwen van een aanvraag tekst:
 
-|Naam  |Vereist  |Type  |Beschrijving  |
+|Name  |Vereist  |Type  |Description  |
 |---------|---------|---------|---------|
 |eTag     |         |   Tekenreeks      |  Optionele eTag       |
-|location     |  true       |Tekenreeks         |   Resourcelocatie      |
+|location     |  waar       |Tekenreeks         |   Resourcelocatie      |
 |properties     |         | [VaultProperties](/rest/api/recoveryservices/vaults/createorupdate#vaultproperties)        |  Eigenschappen van de kluis       |
 |sku     |         |  [SKU](/rest/api/recoveryservices/vaults/createorupdate#sku)       |    Identificeert de unieke systeem-id voor elke Azure-resource     |
 |tags     |         | Object        |     Resourcetags    |
@@ -66,7 +66,7 @@ De volgende voorbeeld tekst wordt gebruikt voor het maken van een kluis in ' vs-
 
 Er zijn twee geslaagde reacties voor de bewerking om een Recovery Services kluis te maken of bij te werken:
 
-|Naam  |Type  |Beschrijving  |
+|Naam  |Type  |Description  |
 |---------|---------|---------|
 |200 OK     |   [Kluis](/rest/api/recoveryservices/vaults/createorupdate#vault)      | OK        |
 |201 gemaakt     | [Kluis](/rest/api/recoveryservices/vaults/createorupdate#vault)        |   Gemaakt      |

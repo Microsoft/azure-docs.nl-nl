@@ -6,11 +6,11 @@ ms.topic: tutorial
 ms.date: 09/30/2020
 ms.custom: mvc, devx-track-azurecli
 ms.openlocfilehash: 2e9af5dcc00d8cadd0528d56ee73bc6aeba149d7
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747726"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002031"
 ---
 # <a name="tutorial-upgrade-kubernetes-in-azure-kubernetes-service-aks"></a>Zelfstudie: Kubernetes bijwerken in AKS (Azure Kubernetes Service)
 
@@ -37,7 +37,7 @@ Voordat u een cluster bijwerkt, gebruikt u de opdracht [az aks get-upgrades][] o
 az aks get-upgrades --resource-group myResourceGroup --name myAKSCluster
 ```
 
-In het volgende voorbeeld is de huidige versie *1.15.11* en worden de beschikbare versies weergegeven onder *Upgrades* .
+In het volgende voorbeeld is de huidige versie *1.15.11* en worden de beschikbare versies weergegeven onder *Upgrades*.
 
 ```json
 {
@@ -80,9 +80,9 @@ az aks upgrade \
 ```
 
 > [!NOTE]
-> U kunt slechts één secundaire versie per keer bijwerken. U kunt bijvoorbeeld een upgrade uitvoeren van *1.14.x* naar *1.15.x* , maar niet rechtstreeks van *1.14.x* naar *1.16.x* . Als u een upgrade wilt uitvoeren van *1.14.x* naar *1.16.x* , moet u eerst een upgrade uitvoeren van *1.14.x* naar *1.15.x* en vervolgens van *1.15.x* naar *1.16.x* .
+> U kunt slechts één secundaire versie per keer bijwerken. U kunt bijvoorbeeld een upgrade uitvoeren van *1.14.x* naar *1.15.x*, maar niet rechtstreeks van *1.14.x* naar *1.16.x*. Als u een upgrade wilt uitvoeren van *1.14.x* naar *1.16.x*, moet u eerst een upgrade uitvoeren van *1.14.x* naar *1.15.x* en vervolgens van *1.15.x* naar *1.16.x*.
 
-In de volgende verkorte voorbeelduitvoer ziet u het resultaat van de upgrade naar *1.16.8* . U ziet dat bij *kubernetesVersion* nu *1.16.8* wordt aangegeven:
+In de volgende verkorte voorbeelduitvoer ziet u het resultaat van de upgrade naar *1.16.8*. U ziet dat bij *kubernetesVersion* nu *1.16.8* wordt aangegeven:
 
 ```json
 {

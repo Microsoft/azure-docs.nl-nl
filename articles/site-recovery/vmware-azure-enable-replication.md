@@ -7,11 +7,11 @@ ms.date: 04/01/2020
 ms.topic: conceptual
 ms.author: ramamill
 ms.openlocfilehash: 74870d10348421bf726b9bdc58504a74cf4105a9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86129919"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004208"
 ---
 # <a name="enable-replication-to-azure-for-vmware-vms"></a>Replicatie inschakelen naar Azure voor VMware-VM's
 
@@ -57,53 +57,53 @@ Lees de volgende informatie voordat u de stappen in deze sectie uitvoert:
 
 Voer de volgende stappen uit om replicatie in te scha kelen:
 
-1. Ga naar **stap 2: toepassings**  >  **bron**repliceren. Nadat u replicatie voor de eerste keer hebt ingeschakeld, selecteert u **+ repliceren** in de kluis om replicatie in te scha kelen voor aanvullende virtuele machines.
+1. Ga naar **stap 2: toepassings**  >  **bron** repliceren. Nadat u replicatie voor de eerste keer hebt ingeschakeld, selecteert u **+ repliceren** in de kluis om replicatie in te scha kelen voor aanvullende virtuele machines.
 1. Selecteer de configuratie server in de **bron** pagina > **bron**.
 1. Selecteer bij **computer type** **virtual machines** of **fysieke machines**.
 1. Selecteer in **vCenter/vSphere-hypervisor** de vCenter-server waarmee de vSphere-host wordt beheerd, of selecteer de host. Deze instelling is niet relevant als u fysieke computers repliceert.
-1. Selecteer de proces server. Als er geen extra proces servers zijn gemaakt, is de inbouw proces server van de configuratie server beschikbaar in de vervolg keuzelijst. De integriteits status van elke proces server wordt aangegeven volgens de aanbevolen limieten en andere para meters. Kies een integriteitsprocesserver. Er kan geen [essentiële](vmware-physical-azure-monitor-process-server.md#process-server-alerts) proces server worden gekozen. U kunt [problemen oplossen en de fouten ](vmware-physical-azure-troubleshoot-process-server.md) corrigeren **of** een [scale-out processerver ](vmware-azure-set-up-process-server-scale.md) instellen.
+1. Selecteer de proces server. Als er geen extra proces servers zijn gemaakt, is de inbouw proces server van de configuratie server beschikbaar in de vervolg keuzelijst. De integriteits status van elke proces server wordt aangegeven volgens de aanbevolen limieten en andere para meters. Kies een integriteitsprocesserver. Er kan geen [essentiële](vmware-physical-azure-monitor-process-server.md#process-server-alerts) proces server worden gekozen. U kunt [problemen oplossen en de fouten](vmware-physical-azure-troubleshoot-process-server.md) corrigeren **of** een [scale-out processerver](vmware-azure-set-up-process-server-scale.md) instellen.
 
    :::image type="content" source="./media/vmware-azure-enable-replication/ps-selection.png" alt-text="Het venster replicatie bron inschakelen":::
 
    > [!NOTE]
    > Vanaf [versie 9,24](site-recovery-whats-new.md)worden er aanvullende waarschuwingen geïntroduceerd om de status waarschuwingen van de proces server te verbeteren. Voer een upgrade uit voor de Site Recovery onderdelen naar versie 9,24 of hoger voor alle waarschuwingen die moeten worden gegenereerd.
 
-1. Selecteer bij **doel**het abonnement en de resource groep waarin u de virtuele machines waarvoor een failover is uitgevoerd wilt maken. Kies het implementatie model dat u wilt gebruiken in azure voor de virtuele machines waarvoor een failover is uitgevoerd.
+1. Selecteer bij **doel** het abonnement en de resource groep waarin u de virtuele machines waarvoor een failover is uitgevoerd wilt maken. Kies het implementatie model dat u wilt gebruiken in azure voor de virtuele machines waarvoor een failover is uitgevoerd.
 1. Selecteer het Azure-netwerk en-subnet waarmee de Azure-Vm's verbinding maken na een failover. Het netwerk moet zich in dezelfde regio bevinden als de Site Recovery service-kluis.
 
    Selecteer **nu configureren voor geselecteerde machines** om de netwerk instelling toe te passen op alle virtuele machines die u voor beveiliging selecteert. Selecteer **later configureren** om het Azure-netwerk per virtuele machine te selecteren. Als u geen netwerk hebt, moet u er een maken. Als u een netwerk wilt maken met behulp van Azure Resource Manager, selecteert u **nieuwe maken**. Selecteer een subnet, indien van toepassing, en selecteer vervolgens **OK**.
 
-   :::image type="content" source="./media/vmware-azure-enable-replication/enable-rep3.png" alt-text="Het venster replicatie bron inschakelen":::
+   :::image type="content" source="./media/vmware-azure-enable-replication/enable-rep3.png" alt-text="Venster replicatie doel inschakelen":::
 
 1. Voor **virtuele machines**  >  **selecteert u virtuele machines**, selecteert u elke virtuele machine die u wilt repliceren. U kunt alleen virtuele machines selecteren waarvoor replicatie kan worden ingeschakeld. Selecteer vervolgens **OK**. Als u een bepaalde virtuele machine niet kunt zien of selecteren, Zie [bron machine wordt niet vermeld in de Azure Portal](vmware-azure-troubleshoot-replication.md#step-3-troubleshoot-source-machines-that-arent-available-for-replication) om het probleem op te lossen.
 
-   :::image type="content" source="./media/vmware-azure-enable-replication/enable-replication5.png" alt-text="Het venster replicatie bron inschakelen":::
+   :::image type="content" source="./media/vmware-azure-enable-replication/enable-replication5.png" alt-text="Replicatie inschakelen voor het venster virtuele machines selecteren":::
 
-1. Selecteer voor **Eigenschappen**  >  **eigenschappen configureren**het account dat door de proces server wordt gebruikt om automatisch de site Recovery Mobility-service op de VM te installeren. Kies ook het type doel-beheerde schijf dat moet worden gebruikt voor replicatie op basis van uw gegevens verloop patronen.
+1. Selecteer voor **Eigenschappen**  >  **eigenschappen configureren** het account dat door de proces server wordt gebruikt om automatisch de site Recovery Mobility-service op de VM te installeren. Kies ook het type doel-beheerde schijf dat moet worden gebruikt voor replicatie op basis van uw gegevens verloop patronen.
 1. Standaard worden alle schijven van een bron-VM gerepliceerd. Als u schijven wilt uitsluiten van replicatie, schakelt u het selectie vakje **opnemen** uit voor schijven die u niet wilt repliceren. Selecteer vervolgens **OK**. Later kunt u eventueel extra eigenschappen instellen. Meer [informatie](vmware-azure-exclude-disk.md) over het uitsluiten van schijven.
 
-   :::image type="content" source="./media/vmware-azure-enable-replication/enable-replication6.png" alt-text="Het venster replicatie bron inschakelen":::
+   :::image type="content" source="./media/vmware-azure-enable-replication/enable-replication6.png" alt-text="Het venster Eigenschappen voor replicatie configureren inschakelen":::
 
-1. **Replication settings**  >  Controleer of het juiste replicatie beleid is geselecteerd in replicatie-instellingen**replicatie-instellingen configureren**. U kunt de instellingen voor het replicatie beleid wijzigen bij **instellingen**  >  **replicatie beleid**  >  _beleids naam_  >  **Instellingen bewerken**. Wijzigingen die worden toegepast op een beleid, zijn ook van toepassing op replicatie en nieuwe virtuele machines.
-1. Als u virtuele machines in een replicatie groep wilt verzamelen, schakelt u **consistentie tussen meerdere vm's**in. Geef een naam op voor de groep en selecteer **OK**.
+1. **Replication settings**  >  Controleer of het juiste replicatie beleid is geselecteerd in replicatie-instellingen **replicatie-instellingen configureren**. U kunt de instellingen voor het replicatie beleid wijzigen bij **instellingen**  >  **replicatie beleid**  >  _beleids naam_  >  **Instellingen bewerken**. Wijzigingen die worden toegepast op een beleid, zijn ook van toepassing op replicatie en nieuwe virtuele machines.
+1. Als u virtuele machines in een replicatie groep wilt verzamelen, schakelt u **consistentie tussen meerdere vm's** in. Geef een naam op voor de groep en selecteer **OK**.
 
    > [!NOTE]
    > - Virtuele machines in een replicatie groep worden samen gerepliceerd en hebben gedeelde crash-consistente en toepassings consistente herstel punten wanneer ze een failover uitvoeren.
    > - Verzamel Vm's en fysieke servers samen zodat ze uw workloads spie gelen. Het inschakelen van multi-VM-consistentie kan de prestaties van de werk belasting beïnvloeden. Doe dit alleen als de virtuele machines dezelfde werk belasting uitvoeren en u consistentie nodig hebt.
 
-   :::image type="content" source="./media/vmware-azure-enable-replication/enable-replication7.png" alt-text="Het venster replicatie bron inschakelen":::
+   :::image type="content" source="./media/vmware-azure-enable-replication/enable-replication7.png" alt-text="Replicatie venster inschakelen":::
 
-1. Selecteer **Replicatie inschakelen**. U kunt de voortgang van de taak **beveiliging inschakelen** bij **instellingen**  >  **taken**  >  **site Recovery taken**volgen. Nadat de taak **beveiliging volt ooien** is uitgevoerd, is de virtuele machine klaar voor failover.
+1. Selecteer **Replicatie inschakelen**. U kunt de voortgang van de taak **beveiliging inschakelen** bij **instellingen**  >  **taken**  >  **site Recovery taken** volgen. Nadat de taak **beveiliging volt ooien** is uitgevoerd, is de virtuele machine klaar voor failover.
 
 ## <a name="view-and-manage-vm-properties"></a>Eigenschappen van virtuele machines weergeven en beheren
 
 Controleer vervolgens de eigenschappen van de virtuele bron machine. Houd er rekening mee dat de Azure VM-naam moet voldoen aan de vereisten van de [virtuele Azure-machine](vmware-physical-azure-support-matrix.md#replicated-machines).
 
-1. Ga naar **instellingen**  >  **gerepliceerde items**en selecteer de virtuele machine. Op de pagina **Essentials** vindt u informatie over de instellingen en status van de virtuele machine.
-1. In **Eigenschappen**kunt u de replicatie-en failover-informatie voor de virtuele machine weer geven.
-1. In **Compute-en Network**  >  **compute properties**kunt u meerdere VM-eigenschappen wijzigen.
+1. Ga naar **instellingen**  >  **gerepliceerde items** en selecteer de virtuele machine. Op de pagina **Essentials** vindt u informatie over de instellingen en status van de virtuele machine.
+1. In **Eigenschappen** kunt u de replicatie-en failover-informatie voor de virtuele machine weer geven.
+1. In **Compute-en Network**  >  **compute properties** kunt u meerdere VM-eigenschappen wijzigen.
 
-   :::image type="content" source="./media/vmware-azure-enable-replication/vmproperties.png" alt-text="Het venster replicatie bron inschakelen":::
+   :::image type="content" source="./media/vmware-azure-enable-replication/vmproperties.png" alt-text="Venster Eigenschappen van Compute en netwerk":::
 
    - **Azure VM-naam**: Wijzig de naam zo nodig om aan de vereisten van Azure te voldoen.
    - **Grootte van de doel-VM of het VM-type**: de standaard grootte voor de virtuele machine wordt gekozen op basis van para meters die het aantal schijven, het aantal nic's, het CPU-aantal, het geheugen en de beschik bare VM-rollen in de Azure-doel regio bevatten. Azure Site Recovery kiest de eerste beschik bare VM-grootte die voldoet aan alle criteria. U kunt op elk gewenst moment een andere VM-grootte selecteren op basis van uw behoeften voordat de failover wordt uitgevoerd. De grootte van de VM-schijf is ook gebaseerd op de grootte van de bron schijf en kan alleen worden gewijzigd na een failover. Meer informatie over schijf grootten en IOPS-tarieven bij [schaal baarheid en prestatie doelen voor VM-schijven in Windows](../virtual-machines/windows/disk-scalability-targets.md).
@@ -114,7 +114,7 @@ Controleer vervolgens de eigenschappen van de virtuele bron machine. Houd er rek
      - Alleen virtuele machines met dezelfde grootte kunnen deel uitmaken van een beschikbaarheidsset.
 
 1. U kunt ook informatie toevoegen over het doelnet werken, het subnet en het IP-adres dat is toegewezen aan de Azure VM.
-1. In **schijven**ziet u het besturings systeem en de gegevens schijven op de virtuele machine die worden gerepliceerd.
+1. In **schijven** ziet u het besturings systeem en de gegevens schijven op de virtuele machine die worden gerepliceerd.
 
 ### <a name="configure-networks-and-ip-addresses"></a>Netwerken en IP-adressen configureren
 

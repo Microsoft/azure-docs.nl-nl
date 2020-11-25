@@ -13,11 +13,11 @@ ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
 ms.openlocfilehash: b8d05293359cff16bb6d8c9a629a1fbf68104365
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896031"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96003613"
 ---
 # <a name="data-management-gateway---high-availability-and-scalability-preview"></a>Data Management Gateway-hoge Beschik baarheid en schaal baarheid (preview-versie)
 > [!NOTE]
@@ -29,7 +29,7 @@ Dit artikel helpt u bij het configureren van een oplossing met hoge Beschik baar
 > [!NOTE]
 > In dit artikel wordt ervan uitgegaan dat u al bekend bent met de basis principes van Integration Runtime (eerder Data Management Gateway). Als dat niet het geval is, raadpleegt u [Data Management Gateway](data-factory-data-management-gateway.md).
 > 
-> **Deze preview-functie wordt officieel ondersteund in Data Management Gateway versie 2.12. xxxx. x en hoger** . Zorg ervoor dat u versie 2.12. xxxx. x of hoger gebruikt. Down load [hier](https://www.microsoft.com/download/details.aspx?id=39717)de nieuwste versie van Data Management Gateway.
+> **Deze preview-functie wordt officieel ondersteund in Data Management Gateway versie 2.12. xxxx. x en hoger**. Zorg ervoor dat u versie 2.12. xxxx. x of hoger gebruikt. Down load [hier](https://www.microsoft.com/download/details.aspx?id=39717)de nieuwste versie van Data Management Gateway.
 
 ## <a name="overview"></a>Overzicht
 U kunt Data Management gateways die zijn geïnstalleerd op meerdere on-premises machines koppelen aan één logische gateway vanuit de portal. Deze computers worden **knoop punten** genoemd. U kunt Maxi maal **vier knoop punten** koppelen aan een logische gateway. De voor delen van het gebruik van meerdere knoop punten (on-premises machines met Gateway geïnstalleerd) voor een logische gateway zijn:  
@@ -49,7 +49,7 @@ In het volgende diagram vindt u een overzicht van de architectuur van de functie
 
 Een **logische gateway** is de gateway die u toevoegt aan een Data Factory in het Azure Portal. Eerder kunt u slechts één on-premises Windows-machine koppelen met Data Management Gateway geïnstalleerd met een logische gateway. Deze on-premises gateway computer wordt een knoop punt genoemd. U kunt nu Maxi maal **vier fysieke knoop punten** koppelen aan een logische gateway. Een logische gateway met meerdere knoop punten wordt een **multi-knoop punt gateway** genoemd.  
 
-Al deze knoop punten zijn **actief** . Ze kunnen gegevens verplaatsings taken verwerken om gegevens te verplaatsen tussen on-premises en gegevens opslag in de Cloud. Een van de knoop punten fungeert als zowel de verzender als de werk nemer. Andere knoop punten in de groepen zijn worker-knoop punten. Een **dispatcher** -knoop punt haalt taken/taken voor gegevens verplaatsing op uit de Cloud service en verzendt deze naar werk knooppunten (waaronder zichzelf). Een **worker** -knoop punt voert gegevens verplaatsings taken uit om gegevens te verplaatsen tussen on-premises en gegevens opslag in de Cloud. Alle knoop punten zijn werk nemers. Er kan slechts één knoop punt worden verzonden en worker.    
+Al deze knoop punten zijn **actief**. Ze kunnen gegevens verplaatsings taken verwerken om gegevens te verplaatsen tussen on-premises en gegevens opslag in de Cloud. Een van de knoop punten fungeert als zowel de verzender als de werk nemer. Andere knoop punten in de groepen zijn worker-knoop punten. Een **dispatcher** -knoop punt haalt taken/taken voor gegevens verplaatsing op uit de Cloud service en verzendt deze naar werk knooppunten (waaronder zichzelf). Een **worker** -knoop punt voert gegevens verplaatsings taken uit om gegevens te verplaatsen tussen on-premises en gegevens opslag in de Cloud. Alle knoop punten zijn werk nemers. Er kan slechts één knoop punt worden verzonden en worker.    
 
 U kunt normaal gesp roken beginnen met één knoop punt en uitschalen om meer knoop punten toe te voegen, omdat het bestaande knoop punt (en) **verouderd** blijven met de belasting voor het verplaatsen van gegevens. U kunt ook de capaciteit van gegevens verplaatsing van een gateway knooppunt **opschalen** door het aantal gelijktijdige taken dat op het knoop punt mag worden uitgevoerd, te verhogen. Deze mogelijkheid is ook beschikbaar met een gateway met één knoop punt (zelfs wanneer de functie voor schaal baarheid en beschik baarheid niet is ingeschakeld). 
 
@@ -106,7 +106,7 @@ In deze sectie wordt ervan uitgegaan dat u de volgende twee artikelen hebt door 
         > [!NOTE]
         > Als u de gateway op een virtuele Azure-machine inricht, kunt u [deze Azure Resource Manager sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/101-mutiple-vms-with-data-management-gateway)gebruiken. Met dit script maakt u een logische gateway, stelt u Vm's in waarop Data Management Gateway software is geïnstalleerd en registreert u deze bij de logische gateway. 
 6. Start de pagina **Gateway** in azure portal: 
-    1. Klik op de start pagina van data factory in de portal op **gekoppelde services** .
+    1. Klik op de start pagina van data factory in de portal op **gekoppelde services**.
     
         ![Scherm afbeelding die de tegel gekoppelde services markeert.](media/data-factory-data-management-gateway-high-availability-scalability/data-factory-home-page.png)
     2. Selecteer de **Gateway** om de pagina **Gateway** weer te geven:
@@ -144,7 +144,7 @@ U kunt een bestaande gateway bijwerken voor gebruik van de functie hoge Beschik 
 
     > [!NOTE]
     > Tijdens de upgrade is de naam van het eerste knoop punt de naam van de computer. 
-3. Voeg nu een knoop punt toe. Klik op de pagina **Gateway** op **knoop punt toevoegen** .  
+3. Voeg nu een knoop punt toe. Klik op de pagina **Gateway** op **knoop punt toevoegen**.  
 
     ![Data Management Gateway-menu knoop punt toevoegen](media/data-factory-data-management-gateway-high-availability-scalability/data-factory-gateway-add-node-menu.png)
 
@@ -164,7 +164,7 @@ Hier volgen de vereisten voor het TLS/SSL-certificaat dat wordt gebruikt voor he
 - Elk knoop punt voor Integration runtime moet dit certificaat vertrouwen, evenals de client computer waarop de toepassing Credential Manager wordt uitgevoerd. 
   > [!NOTE]
   > Credential Manager-toepassing wordt gebruikt bij het veilig instellen van de referentie van de wizard kopiëren/Azure Portal. En dit kan worden gestart vanaf elke computer binnen hetzelfde netwerk als de on-premises/persoonlijke gegevens opslag.
-- Joker tekens worden ondersteund. Als de FQDN-naam **node1.domain.contoso.com** is, kunt u * *_. domain.contoso.com_* als onderwerpnaam van het certificaat gebruiken.
+- Joker tekens worden ondersteund. Als de FQDN-naam **node1.domain.contoso.com** is, kunt u **_. domain.contoso.com_* als onderwerpnaam van het certificaat gebruiken.
 - SAN-certificaten worden niet aanbevolen omdat alleen het laatste item van de alternatieve namen voor het onderwerp wordt gebruikt en alle andere worden genegeerd vanwege de huidige beperking. Bijvoorbeeld u hebt een SAN-certificaat waarvan het SAN **node1.domain.contoso.com** en **node2.domain.contoso.com** is. u kunt dit certificaat alleen gebruiken op de computer waarvan de FQDN **node2.domain.contoso.com** is.
 - Ondersteunt elke sleutel grootte die wordt ondersteund door Windows Server 2012 R2 voor TLS/SSL-certificaten.
 - Certificaten met CNG-sleutels worden niet ondersteund.
@@ -181,7 +181,7 @@ In de Azure Portal kunt u bijna realtime een moment opname van het resource gebr
 
 ![Data Management Gateway-bewaking van meerdere knoop punten](media/data-factory-data-management-gateway-high-availability-scalability/data-factory-gateway-multi-node-monitoring.png)
 
-U kunt **Geavanceerde instellingen** inschakelen op de **pagina gateway** om geavanceerde metrische gegevens weer te geven, zoals **netwerk** (in/uitgaand), **functie & referentie status** , die nuttig is in fout opsporing voor gateway problemen en **gelijktijdige taken** (uitvoeren/beperken) die dienovereenkomstig kunnen worden gewijzigd of gewijzigd tijdens het afstemmen van de prestaties. De volgende tabel bevat beschrijvingen van de kolommen in de lijst met **Gateway knooppunten** :  
+U kunt **Geavanceerde instellingen** inschakelen op de **pagina gateway** om geavanceerde metrische gegevens weer te geven, zoals **netwerk**(in/uitgaand), **functie & referentie status**, die nuttig is in fout opsporing voor gateway problemen en **gelijktijdige taken** (uitvoeren/beperken) die dienovereenkomstig kunnen worden gewijzigd of gewijzigd tijdens het afstemmen van de prestaties. De volgende tabel bevat beschrijvingen van de kolommen in de lijst met **Gateway knooppunten** :  
 
 Bewakings eigenschap | Beschrijving
 :------------------ | :---------- 
@@ -198,7 +198,7 @@ Rol | Er zijn twee soorten rollen: dispatcher en worker. Alle knoop punten zijn 
 
 ### <a name="gateway-status"></a>Gateway status
 
-De volgende tabel bevat mogelijke statussen van een **Gateway knooppunt** : 
+De volgende tabel bevat mogelijke statussen van een **Gateway knooppunt**: 
 
 Status  | Opmerkingen/Scenario's
 :------- | :------------------
@@ -209,7 +209,7 @@ Beperkt | Vanwege een connectiviteits probleem. Wordt mogelijk veroorzaakt door 
 Niet-actief | Het knoop punt bevindt zich in een configuratie die verschilt van de configuratie van andere hoofd knooppunten.<br/><br/> Een knoop punt kan inactief zijn wanneer er geen verbinding kan worden gemaakt met andere knoop punten. 
 
 
-De volgende tabel bevat mogelijke statussen van een **logische gateway** . De status van de gateway is afhankelijk van de status van de gateway-knoop punten. 
+De volgende tabel bevat mogelijke statussen van een **logische gateway**. De status van de gateway is afhankelijk van de status van de gateway-knoop punten. 
 
 Status | Opmerkingen
 :----- | :-------
@@ -228,7 +228,7 @@ De Azure Portal biedt een pipeline-bewakings ervaring met gedetailleerde Details
 ## <a name="scale-considerations"></a>Schaal overwegingen
 
 ### <a name="scale-out"></a>Uitschalen
-Wanneer het **beschik bare geheugen laag is** en het **CPU-gebruik hoog is** , kan het toevoegen van een nieuw knoop punt het laden van de belasting over machines opschalen. Als er een fout optreedt in het mislukken van de activiteiten omdat een time-out of gateway knooppunt offline is, is het handig als u een knoop punt aan de gateway toevoegt.
+Wanneer het **beschik bare geheugen laag is** en het **CPU-gebruik hoog is**, kan het toevoegen van een nieuw knoop punt het laden van de belasting over machines opschalen. Als er een fout optreedt in het mislukken van de activiteiten omdat een time-out of gateway knooppunt offline is, is het handig als u een knoop punt aan de gateway toevoegt.
  
 ### <a name="scale-up"></a>Omhoog schalen
 Wanneer het beschik bare geheugen en de CPU niet goed worden gebruikt, maar de niet-actieve capaciteit 0 is, moet u omhoog schalen door het aantal gelijktijdige taken dat op een knoop punt kan worden uitgevoerd, te verhogen. Het kan ook zijn dat u wilt opschalen wanneer activiteiten uitvallen omdat de gateway overbelast is. Zoals in de volgende afbeelding wordt weer gegeven, kunt u de maximale capaciteit voor een knoop punt verhogen. We raden u aan om te beginnen met.  

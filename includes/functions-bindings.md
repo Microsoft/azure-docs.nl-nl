@@ -6,11 +6,11 @@ ms.date: 09/04/2018
 ms.author: glenga
 ms.custom: fasttrack-edit
 ms.openlocfilehash: 574544df1ad89b277f2e07103b02b9b591fb3924
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91936074"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002380"
 ---
 Dit tabel geeft de bindingen weer die worden ondersteund in de belangrijkste versies van de Azure Functions-runtime:
 

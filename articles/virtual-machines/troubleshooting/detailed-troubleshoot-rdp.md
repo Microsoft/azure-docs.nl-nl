@@ -16,11 +16,11 @@ ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
 ms.openlocfilehash: 91f15e32866cca008553286f7585247909d9a4ba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87009863"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002677"
 ---
 # <a name="detailed-troubleshooting-steps-for-remote-desktop-connection-issues-to-windows-vms-in-azure"></a>Gedetailleerde stappen voor probleemoplossing voor problemen met Extern bureaublad met Windows-VM's in Azure
 In dit artikel vindt u gedetailleerde stappen voor het oplossen van problemen bij het vaststellen en oplossen van complexe Extern bureaublad fouten voor Azure virtual machines op basis van Windows.
@@ -193,7 +193,7 @@ Exit-PSSession
 
 Controleer of het Extern bureaublad-eind punt voor de virtuele machine van Azure ook TCP-poort 3398 als interne poort gebruikt. Start de Azure-VM opnieuw op en probeer opnieuw verbinding te Extern bureaublad.
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="additional-resources"></a>Aanvullende bronnen
 [Het opnieuw instellen van een wacht woord of de Extern bureaublad-service voor virtuele Windows-machines](./reset-rdp.md)
 
 [Azure PowerShell installeren en configureren](/powershell/azure/)

@@ -10,11 +10,11 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/11/2020
 ms.openlocfilehash: aed1aa03527481014a63c636181725b91b17a1e8
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94697302"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96003885"
 ---
 # <a name="how-to-index-cosmos-db-data-using-an-indexer-in-azure-cognitive-search"></a>Cosmos DB-gegevens indexeren met behulp van een indexeerfunctie in Azure Cognitive Search 
 
@@ -391,7 +391,7 @@ In het volgende voor beeld wordt een gegevens bron gemaakt met een voorlopig ver
 
 ## <a name="next-steps"></a><a name="NextSteps"></a>Volgende stappen
 
-Gefeliciteerd. U hebt geleerd hoe u Azure Cosmos DB met Azure Cognitive Search integreert met behulp van een Indexeer functie.
+Gefeliciteerd U hebt geleerd hoe u Azure Cosmos DB met Azure Cognitive Search integreert met behulp van een Indexeer functie.
 
 * Zie de [pagina Azure Cosmos DB Service](https://azure.microsoft.com/services/cosmos-db/)voor meer informatie over Azure Cosmos db.
 * Zie de [pagina zoek service](https://azure.microsoft.com/services/search/)voor meer informatie over Azure Cognitive Search.

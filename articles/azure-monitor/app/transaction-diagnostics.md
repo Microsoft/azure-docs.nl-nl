@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 01/19/2018
 ms.reviewer: sdash
 ms.openlocfilehash: 552e80d6c90a18180ab41dce72e995b6804a91bc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87318909"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002048"
 ---
 # <a name="unified-cross-component-transaction-diagnostics"></a>Unified cross-component Trans Action Diagnostics
 

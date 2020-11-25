@@ -8,11 +8,11 @@ ms.topic: how-to
 ms.date: 10/02/2019
 ms.author: sngun
 ms.openlocfilehash: e7d6a67f5322c5bb640430f66ccb0917f6faada1
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93339781"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96003494"
 ---
 # <a name="connect-to-azure-cosmos-db-using-bi-analytics-tools-with-the-odbc-driver"></a>Met het ODBC-stuur programma verbinding maken met Azure Cosmos DB met behulp van BI Analytics-hulpprogram ma's
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -59,17 +59,17 @@ Laten we aan de slag met het ODBC-stuur programma.
 1. Vul in **Azure Cosmos DB het venster Sdn-configuratie van ODBC-stuur programma** de volgende gegevens in: 
 
     :::image type="content" source="./media/odbc-driver/odbc-driver-dsn-setup.png" alt-text="Configuratie venster voor Azure Cosmos DB ODBC-stuur programma-DSN":::
-    - **Naam van gegevens bron** : uw eigen beschrijvende naam voor de ODBC-DSN. Deze naam is uniek voor uw Azure Cosmos DB-account, dus geef het de juiste naam als u meerdere accounts hebt.
-    - **Beschrijving** : een korte beschrijving van de gegevens bron.
-    - **Host** : URI voor uw Azure Cosmos DB-account. U kunt dit ophalen op de pagina Azure Cosmos DB sleutels in de Azure Portal, zoals wordt weer gegeven in de volgende scherm afbeelding. 
-    - **Toegangs sleutel** : de primaire of secundaire, alleen-lezen of alleen-lezen sleutel van de pagina Azure Cosmos DB sleutels in de Azure Portal, zoals weer gegeven in de volgende scherm afbeelding. U wordt aangeraden de alleen-lezen sleutel te gebruiken als de DSN wordt gebruikt voor alleen-lezen gegevens verwerking en-rapportage.
+    - **Naam van gegevens bron**: uw eigen beschrijvende naam voor de ODBC-DSN. Deze naam is uniek voor uw Azure Cosmos DB-account, dus geef het de juiste naam als u meerdere accounts hebt.
+    - **Beschrijving**: een korte beschrijving van de gegevens bron.
+    - **Host**: URI voor uw Azure Cosmos DB-account. U kunt dit ophalen op de pagina Azure Cosmos DB sleutels in de Azure Portal, zoals wordt weer gegeven in de volgende scherm afbeelding. 
+    - **Toegangs sleutel**: de primaire of secundaire, alleen-lezen of alleen-lezen sleutel van de pagina Azure Cosmos DB sleutels in de Azure Portal, zoals weer gegeven in de volgende scherm afbeelding. U wordt aangeraden de alleen-lezen sleutel te gebruiken als de DSN wordt gebruikt voor alleen-lezen gegevens verwerking en-rapportage.
     :::image type="content" source="./media/odbc-driver/odbc-cosmos-account-keys.png" alt-text="Pagina Azure Cosmos DB sleutels":::
-    - **Toegangs sleutel versleutelen voor** : Selecteer de beste keuze op basis van de gebruikers van deze computer. 
+    - **Toegangs sleutel versleutelen voor**: Selecteer de beste keuze op basis van de gebruikers van deze computer. 
     
 1. Klik op de knop **testen** om te controleren of u verbinding kunt maken met uw Azure Cosmos DB-account. 
 
 1.  Klik op **Geavanceerde opties** en stel de volgende waarden in:
-    *  **Rest API versie** : selecteer de [rest API versie](/rest/api/cosmos-db/) voor uw bewerkingen. De standaard waarde is 2015-12-16. Als u containers met [grote partitie sleutels](large-partition-keys.md) hebt en REST API versie 2018-12-31 hebt vereist:
+    *  **Rest API versie**: selecteer de [rest API versie](/rest/api/cosmos-db/) voor uw bewerkingen. De standaard waarde is 2015-12-16. Als u containers met [grote partitie sleutels](large-partition-keys.md) hebt en REST API versie 2018-12-31 hebt vereist:
         - Typ **2018-12-31** voor rest API versie
         - Typ ' regedit ' in het menu **Start** om de toepassing **REGI ster-editor** te zoeken en te openen.
         - Navigeer in de REGI ster-editor naar het pad: **Computer\HKEY_LOCAL_MACHINE\SOFTWARE\ODBC\ODBC.INI**
@@ -79,11 +79,11 @@ Laten we aan de slag met het ODBC-stuur programma.
             - Waardenaam: **IgnoreSessionToken**
             - Waardegegevens: **1** 
              :::image type="content" source="./media/odbc-driver/cosmos-odbc-edit-registry.png" alt-text="REGI ster-editor-instellingen":::
-    - **Consistentie van query's** : Selecteer het [consistentie niveau](consistency-levels.md) voor uw bewerkingen. De standaard waarde is Session.
-    - **Aantal nieuwe pogingen** : Geef het aantal keren op dat een bewerking opnieuw moet worden uitgevoerd als de eerste aanvraag niet is voltooid als gevolg van de service limiet.
-    - **Schema bestand** : u hebt hier een aantal opties.
+    - **Consistentie van query's**: Selecteer het [consistentie niveau](consistency-levels.md) voor uw bewerkingen. De standaard waarde is Session.
+    - **Aantal nieuwe pogingen**: Geef het aantal keren op dat een bewerking opnieuw moet worden uitgevoerd als de eerste aanvraag niet is voltooid als gevolg van de service limiet.
+    - **Schema bestand**: u hebt hier een aantal opties.
         - Standaard wordt de eerste pagina met gegevens voor alle containers door het stuur programma gecontroleerd om het schema van elke container te bepalen. Dit staat bekend als container toewijzing. Zonder dat er een schema bestand is gedefinieerd, moet het stuur programma de scan uitvoeren voor elke stuur programma-sessie en kan dit leiden tot een hogere opstart tijd van een toepassing die de DSN gebruikt. U wordt aangeraden altijd een schema bestand voor een DSN te koppelen.
-        - Als u al een schema bestand hebt (mogelijk een dat u hebt gemaakt met de schema-editor), klikt u op **Bladeren** , navigeert u naar het bestand, klikt u op **Opslaan** en klikt u vervolgens op **OK**.
+        - Als u al een schema bestand hebt (mogelijk een dat u hebt gemaakt met de schema-editor), klikt u op **Bladeren**, navigeert u naar het bestand, klikt u op **Opslaan** en klikt u vervolgens op **OK**.
         - Als u een nieuw schema wilt maken, klikt u op **OK** en klikt u vervolgens in het hoofd venster op **schema-editor** . Ga vervolgens verder met de informatie over de schema-editor. Nadat u het nieuwe schema bestand hebt gemaakt, gaat u terug naar het venster **Geavanceerde opties** om het zojuist gemaakte schema bestand op te slaan.
 
 1. Zodra u Azure Cosmos DB het venster **Setup van ODBC-stuur programma-DSN** hebt voltooid en gesloten, wordt de nieuwe gebruikers-DSN toegevoegd aan het tabblad gebruikers-DSN.
@@ -107,7 +107,7 @@ Er zijn twee soorten bemonsterings methoden die u kunt gebruiken: **container to
     - U kunt de **kolom verbergen** instellen op **True** als u die kolom wilt uitsluiten van query resultaten. Kolommen die zijn gemarkeerd voor kolom verbergen = True, worden niet geretourneerd voor selectie en projectie, hoewel ze nog steeds deel uitmaken van het schema. U kunt bijvoorbeeld alle vereiste eigenschappen van Azure Cosmos DB systeem die beginnen met ' _ ' verbergen.
     - De kolom **id** is het enige veld dat niet kan worden verborgen omdat het wordt gebruikt als primaire sleutel in het genormaliseerde schema. 
 
-1. Wanneer u klaar bent met het definiëren van het schema, klikt u op **bestand**  |  **Opslaan** , gaat u naar de Directory om het schema op te slaan en klikt u vervolgens op **Opslaan**.
+1. Wanneer u klaar bent met het definiëren van het schema, klikt u op **bestand**  |  **Opslaan**, gaat u naar de Directory om het schema op te slaan en klikt u vervolgens op **Opslaan**.
 
 1. Als u dit schema met een DSN wilt gebruiken, opent u het **venster Azure Cosmos DB ODBC driver DSN Setup** (via de ODBC-gegevens bron beheerder), klikt u op **Geavanceerde opties** en navigeert u in het vak **schema bestand** naar het opgeslagen schema. Als u een schema bestand opslaat in een bestaande DSN, wijzigt de DSN-verbinding met de scope naar de gegevens en structuur die door schema zijn gedefinieerd.
 
@@ -137,7 +137,7 @@ Met de volgende stappen maakt u een schema voor de gegevens in een of meer conta
     - U kunt de **kolom verbergen** instellen op **True** als u die kolom wilt uitsluiten van query resultaten. Kolommen die zijn gemarkeerd voor kolom verbergen = True, worden niet geretourneerd voor selectie en projectie, hoewel ze nog steeds deel uitmaken van het schema. U kunt bijvoorbeeld alle vereiste eigenschappen van het Azure Cosmos DB systeem verbergen, te beginnen met `_` .
     - De kolom **id** is het enige veld dat niet kan worden verborgen omdat het wordt gebruikt als primaire sleutel in het genormaliseerde schema. 
 
-1. Wanneer u klaar bent met het definiëren van het schema, klikt u op **bestand**  |  **Opslaan** , gaat u naar de Directory om het schema op te slaan en klikt u vervolgens op **Opslaan**.
+1. Wanneer u klaar bent met het definiëren van het schema, klikt u op **bestand**  |  **Opslaan**, gaat u naar de Directory om het schema op te slaan en klikt u vervolgens op **Opslaan**.
 
 1. Klik in Azure Cosmos DB het venster **Setup van ODBC-stuur programma-DSN** op **Geavanceerde opties**. Ga vervolgens naar het opgeslagen schema bestand in het vak **schema bestand** en klik op **OK**. Klik nogmaals op **OK** om de DSN op te slaan. Hiermee wordt het schema opgeslagen dat u hebt gemaakt in de DSN. 
 
@@ -203,7 +203,7 @@ Als u een weer gave voor uw gegevens wilt maken, klikt u in het venster **schema
 
 Ga vervolgens als volgt te werk in het venster **weergave definities** :
 
-1. Klik op **Nieuw** , voer een naam in voor de weer gave, bijvoorbeeld EmployeesfromSeattleView, en klik vervolgens op **OK**.
+1. Klik op **Nieuw**, voer een naam in voor de weer gave, bijvoorbeeld EmployeesfromSeattleView, en klik vervolgens op **OK**.
 
 1. Voer in het venster **weer gave bewerken** een Azure Cosmos DB query in. Dit moet een [Azure Cosmos DB SQL-query](./sql-query-getting-started.md)zijn, bijvoorbeeld `SELECT c.City, c.EmployeeName, c.Level, c.Age, c.Manager FROM c WHERE c.City = "Seattle"` en klik vervolgens op **OK**.
 

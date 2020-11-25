@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.custom: devx-track-csharp
 ms.openlocfilehash: c9dce90b0dc563fb0fa7ecaaa0882167eef444a0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89019892"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96003630"
 ---
 # <a name="create-monitor-and-manage-azure-data-factories-using-azure-data-factory-net-sdk"></a>Azure-gegevens fabrieken maken, bewaken en beheren met behulp van Azure Data Factory .NET SDK
 > [!NOTE]
@@ -138,7 +138,7 @@ Met Copy Activity wordt de gegevensverplaatsing in Azure Data Factory uitgevoerd
         </appSettings>
     </configuration>
     ```
-5. In het App.Config bestand werkt u de waarden voor de ** &lt; toepassings- &gt; id**, het ** &lt; wacht woord &gt; **, de ** &lt; abonnements-id &gt; **en de ** &lt; Tenant-id &gt; ** bij uw eigen waarden bij.
+5. In het App.Config bestand werkt u de waarden voor de **&lt; toepassings- &gt; id**, het **&lt; wacht woord &gt;**, de **&lt; abonnements-id &gt;** en de **&lt; Tenant-id &gt;** bij uw eigen waarden bij.
 6. Voeg de volgende **using** -instructies toe aan het **Program.cs** -bestand in het project.
 
     ```csharp
@@ -446,7 +446,7 @@ Met Copy Activity wordt de gegevensverplaatsing in Azure Data Factory uitgevoerd
     }
     ```
 
-15. Vouw in het Solution Explorer het project uit: **DataFactoryAPITestApp**, klik met de rechter muisknop op **verwijzingen**en klik op **referentie toevoegen**. Schakel het selectie vakje voor de `System.Configuration` Assembly in en klik op **OK**.
+15. Vouw in het Solution Explorer het project uit: **DataFactoryAPITestApp**, klik met de rechter muisknop op **verwijzingen** en klik op **referentie toevoegen**. Schakel het selectie vakje voor de `System.Configuration` Assembly in en klik op **OK**.
 15. Bouw de consoletoepassing. Klik op **Build** in het menu en klik op **Build Solution**.
 16. Controleer of er ten minste één bestand in de adftutorial-container in uw Azure Blob Storage staat. Als dit niet het geval is, maakt u in Kladblok het Emp.txt-bestand met de volgende inhoud en uploadt u het bestand naar de adftutorial-container.
 

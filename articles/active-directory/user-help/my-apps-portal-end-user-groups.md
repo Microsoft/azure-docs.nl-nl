@@ -13,11 +13,11 @@ ms.author: curtand
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
 ms.openlocfilehash: cff1298f12d26b1260213d75701c282e0a82511d
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93124149"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004145"
 ---
 # <a name="update-your-groups-info-on-the-my-apps-portal"></a>Uw groeps gegevens bijwerken op de portal mijn apps
 
@@ -88,7 +88,7 @@ Als uw beheerder u toestemming heeft gegeven om de tegel **groepen** weer te gev
 
     - **Groeps beleid.** Kies ofwel om iedereen toe te staan lid te worden van de groep of om alleen leden toe te voegen aan de eigenaar van de groep.
 
-3. Selecteer **Maken** .
+3. Selecteer **Maken**.
 
     De nieuwe groep wordt met u gemaakt als de eigenaar en deze wordt weer gegeven in uw **groep mijn eigen** lijst. Omdat u de eigenaar bent, wordt deze groep ook weer gegeven in de lijst **groepen die ik** bevindt.
 
@@ -100,7 +100,7 @@ Nadat u een groep hebt gemaakt, kunt u de details ervan bewerken, inclusief het 
 
     Het vak **Details bewerken** wordt weer gegeven en u kunt de informatie bijwerken die u hebt toegevoegd tijdens de eerste keer dat u de groep hebt gemaakt.
 
-2. Breng al uw wijzigingen aan en selecteer vervolgens **bijwerken** .
+2. Breng al uw wijzigingen aan en selecteer vervolgens **bijwerken**.
 
 ## <a name="add-or-remove-a-member"></a>Een lid toevoegen of verwijderen
 
@@ -110,7 +110,7 @@ U kunt leden toevoegen aan of verwijderen uit elke groep waarvan u eigenaar bent
 
     ![Een groepslid toevoegen met +-teken gemarkeerd](media/my-apps-portal/my-apps-portal-add-member-link.png)
 
-2. Zoek naar het lid dat u wilt toevoegen, in het vak **leden toevoegen** en selecteer vervolgens **toevoegen** .
+2. Zoek naar het lid dat u wilt toevoegen, in het vak **leden toevoegen** en selecteer vervolgens **toevoegen**.
 
     ![Vak leden toevoegen, met nieuw lid dat moet worden toegevoegd](media/my-apps-portal/my-apps-portal-add-member-page.png)
 
@@ -124,7 +124,7 @@ U kunt leden toevoegen aan of verwijderen uit elke groep waarvan u eigenaar bent
 
 Als uw organisatie dit toestaat, kunt u een Office 365-groep vernieuwen en de verval datum verlengen.
 
-1. Selecteer de Office 365-groep die u wilt verlengen en selecteer vervolgens **groep vernieuwen** .
+1. Selecteer de Office 365-groep die u wilt verlengen en selecteer vervolgens **groep vernieuwen**.
 
     ![Een Office 365-groep vernieuwen en de verval datum verlengen](media/my-apps-portal/my-apps-portal-renew-group-link.png)
 
@@ -154,7 +154,7 @@ U kunt een bestaande groep toevoegen aan of laten staan op de pagina **groepen**
 
     ![De pagina lid worden van groepen, met de knop toevoegen aan groep gemarkeerd](media/my-apps-portal/my-apps-portal-join-group-link.png)
 
-2. Selecteer op de pagina **lid worden van groepen** de naam van de groep die u wilt toevoegen, Bekijk de details van de bijbehorende groep en selecteer als de groep beschikbaar is, de optie **lid worden van groep** .
+2. Selecteer op de pagina **lid worden van groepen** de naam van de groep die u wilt toevoegen, Bekijk de details van de bijbehorende groep en selecteer als de groep beschikbaar is, de optie **lid worden van groep**.
 
     Als de groep de eigenaar van de groep nodig heeft om het lidmaatschap goed te keuren, wordt u gevraagd om een zakelijke reden op te geven voor de reden waarom u lid moet worden van de groep en vervolgens **aanvraag** te selecteren. Als voor de groep geen goed keuring is vereist, wordt u onmiddellijk toegevoegd als lid en de groep wordt weer gegeven in uw **groepen die ik in** de lijst bevindt.
 

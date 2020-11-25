@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 09/30/2020
 ms.custom: seodec18
 ms.openlocfilehash: d80d97a609aa3a464b9b114439fe7f4058e287c3
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95020143"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001827"
 ---
 # <a name="create-a-reference-data-set-for-your-azure-time-series-insights-gen1-environment-using-the-azure-portal"></a>Maak een set referentie gegevens voor uw Azure Time Series Insights gen1-omgeving met behulp van de Azure Portal
 

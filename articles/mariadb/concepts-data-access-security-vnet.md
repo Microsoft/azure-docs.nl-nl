@@ -7,11 +7,11 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 7/17/2020
 ms.openlocfilehash: 0863ccda9f292f3da9f7064a78ba700ab5962eb2
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94533460"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014632"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-mariadb"></a>Service-eindpunten en -regels voor virtuele netwerken gebruiken voor Azure Database for MariaDB
 
@@ -34,7 +34,7 @@ U kunt ook een [persoonlijke koppeling](concepts-data-access-security-private-li
 
 **Subnet:** Een virtueel netwerk bevat **subnetten**. Alle Azure virtual machines (Vm's) die u hebt toegewezen aan subnetten. Eén subnet kan meerdere Vm's of andere reken knooppunten bevatten. Reken knooppunten die zich buiten uw virtuele netwerk bevinden, hebben geen toegang tot het virtuele netwerk tenzij u de beveiliging zo configureert dat toegang wordt toegestaan.
 
-**Service-eind punt Virtual Network:** Een [Virtual Network Service-eind punt][vm-virtual-network-service-endpoints-overview-649d] is een subnet waarvan de eigenschaps waarden een of meer formele namen van Azure-service typen bevatten. In dit artikel bent u geïnteresseerd in de type naam van **micro soft. SQL** , die verwijst naar de Azure-service met de naam SQL database. Deze servicetag is ook van toepassing op de Azure Database for MariaDB-, MySQL-en PostgreSQL-Services. Het is belang rijk te weten wanneer u de code van de **micro soft. SQL** -service toepast op een VNet-service-eind punt Hiermee wordt service-eindpunt verkeer geconfigureerd voor alle Azure SQL Database, Azure Database for MariaDB, Azure Database for MySQL en Azure database for PostgreSQL servers in het subnet.
+**Service-eind punt Virtual Network:** Een [Virtual Network Service-eind punt][vm-virtual-network-service-endpoints-overview-649d] is een subnet waarvan de eigenschaps waarden een of meer formele namen van Azure-service typen bevatten. In dit artikel bent u geïnteresseerd in de type naam van **micro soft. SQL**, die verwijst naar de Azure-service met de naam SQL database. Deze servicetag is ook van toepassing op de Azure Database for MariaDB-, MySQL-en PostgreSQL-Services. Het is belang rijk te weten wanneer u de code van de **micro soft. SQL** -service toepast op een VNet-service-eind punt Hiermee wordt service-eindpunt verkeer geconfigureerd voor alle Azure SQL Database, Azure Database for MariaDB, Azure Database for MySQL en Azure database for PostgreSQL servers in het subnet.
 
 **Regel voor virtueel netwerk:** Een regel voor het virtuele netwerk voor uw Azure Database for MariaDB-server is een subnet dat wordt vermeld in de toegangs beheer lijst (ACL) van uw Azure Database for MariaDB-server. Het subnet moet de naam van het **micro soft. SQL** -type bevatten in de ACL voor uw Azure database for MariaDB-server.
 

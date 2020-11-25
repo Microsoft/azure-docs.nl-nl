@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 11/19/2020
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 81bcfdf5e63d49280fb798773559310cbd912a26
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94980521"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013578"
 ---
 # <a name="create-a-suggester-to-enable-autocomplete-and-suggested-results-in-a-query"></a>Een suggestie maken om automatisch aanvullen en voorgestelde resultaten in een query in te scha kelen
 

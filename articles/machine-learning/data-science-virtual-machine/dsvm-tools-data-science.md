@@ -11,11 +11,11 @@ ms.author: laobri
 ms.topic: conceptual
 ms.date: 12/12/2019
 ms.openlocfilehash: 087679c49c3cc025268e6f895757ae5f5c47c917
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93309120"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014207"
 ---
 # <a name="machine-learning-and-data-science-tools-on-azure-data-science-virtual-machines"></a>Machine learning-en data Science-hulpprogram ma's op Azure data Science Virtual Machines
 Azure data Science Virtual Machines (Dsvm) beschikt over een uitgebreide set hulpprogram ma's en bibliotheken voor machine learning die beschikbaar zijn in populaire talen, zoals python, R en Julia.

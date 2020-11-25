@@ -9,11 +9,11 @@ ms.service: azure-vmware-cloudsimple
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: ee3029de9826aee17dc76d0e69f08b3c1068423b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85847160"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014498"
 ---
 # <a name="create-a-virtual-machine-in-azure-using-vm-templates-on-the-vmware-infrastructure"></a>Een virtuele machine maken in azure met behulp van VM-sjablonen op de VMware-infra structuur
 
@@ -43,7 +43,7 @@ Meld u aan bij de [Azure-portal](https://portal.azure.com).
     | Veld | Beschrijving |
     | ------------ | ------------- |
     | Abonnement | Het Azure-abonnement dat is gekoppeld aan uw Privécloud.  |
-    | Resource Group | De resource groep waaraan de virtuele machine wordt toegewezen. U kunt een bestaande groep selecteren of een nieuwe maken. |
+    | Resourcegroep | De resource groep waaraan de virtuele machine wordt toegewezen. U kunt een bestaande groep selecteren of een nieuwe maken. |
     | Name | Naam voor het identificeren van de virtuele machine.  |
     | Locatie | De Azure-regio waarin deze VM wordt gehost.  |
     | Privécloud | CloudSimple de Privécloud waar u de virtuele machine wilt maken. |

@@ -9,16 +9,16 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.openlocfilehash: b44186d783a249192a8c13ee97063034ee319df7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88036756"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013136"
 ---
 # <a name="consumption-model"></a>Verbruiksmodel
 
 De Routing-service voorziet in een set para meters voor een gedetailleerde beschrijving van het model voor het specifieke verbruik van het Voer tuig.
-Afhankelijk van de waarde van **vehicleEngineType**worden twee hoofd verbruiks modellen ondersteund: _verbranding_ en _elektrisch_. Het is niet juist om para meters op te geven die bij verschillende modellen horen in dezelfde aanvraag. De para meters voor verbruiks model kunnen niet worden gebruikt met de volgende **travelMode** -waarden: _fiets_ en _voetgangers_.
+Afhankelijk van de waarde van **vehicleEngineType** worden twee hoofd verbruiks modellen ondersteund: _verbranding_ en _elektrisch_. Het is niet juist om para meters op te geven die bij verschillende modellen horen in dezelfde aanvraag. De para meters voor verbruiks model kunnen niet worden gebruikt met de volgende **travelMode** -waarden: _fiets_ en _voetgangers_.
 
 ## <a name="parameter-constraints-for-consumption-model"></a>Parameter beperkingen voor verbruiks model
 

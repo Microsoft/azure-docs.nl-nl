@@ -15,11 +15,11 @@ ms.date: 12/16/2019
 ms.author: lcozzens
 ms.custom: mvc, devx-track-java, devx-track-azurecli
 ms.openlocfilehash: 921c3b8afdb6b196e001cdb7c190529e6238c1f7
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93127090"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014258"
 ---
 # <a name="tutorial-use-key-vault-references-in-a-java-spring-app"></a>Zelfstudie: Key Vault-referenties gebruiken in een Java Spring-app
 

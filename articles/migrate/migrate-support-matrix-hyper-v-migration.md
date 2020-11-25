@@ -4,11 +4,11 @@ description: Meer informatie over ondersteuning voor Hyper-V-migratie met Azure 
 ms.topic: conceptual
 ms.date: 04/15/2020
 ms.openlocfilehash: 4ba8b8cea784167ad045c5635ce512a68b48d897
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91442310"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014190"
 ---
 # <a name="support-matrix-for-hyper-v-migration"></a>Ondersteunings matrix voor Hyper-V-migratie
 
@@ -43,7 +43,7 @@ U kunt Maxi maal 10 Vm's tegelijk selecteren voor replicatie. Als u meer compute
 | **Linux-opstart**                 | Als/boot zich op een toegewezen partitie bevindt, moet deze zich op de besturingssysteem schijf bevinden en niet over meerdere schijven worden verspreid.<br/> Als/boot deel uitmaakt van de hoofd partitie (/), moet de partitie '/' zich op de besturingssysteem schijf bevindt en niet over andere schijven beschikken. |
 | **UEFI-opstart**                  | Ondersteund. Vm's op basis van UEFI worden gemigreerd naar virtuele machines van Azure Generation 2.  |
 | **UEFI-beveiligd opstarten**         | Niet ondersteund voor migratie.|
-| **Schijf grootte**                  | 2 TB voor de besturingssysteem schijf (BIOS-opstart), 4 TB voor de besturingssysteem schijf (UEFI-opstart), 4 TB voor de gegevens schijven.|
+| **Schijfgrootte**                  | 2 TB voor de besturingssysteem schijf (BIOS-opstart), 4 TB voor de besturingssysteem schijf (UEFI-opstart), 4 TB voor de gegevens schijven.|
 | **Schijf nummer** | Maxi maal 16 schijven per VM.|
 | **Versleutelde schijven/volumes**    | Niet ondersteund voor migratie.|
 | **RDM/passthrough-schijven**      | Niet ondersteund voor migratie.|

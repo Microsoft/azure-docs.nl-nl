@@ -12,11 +12,11 @@ ms.topic: tutorial
 ms.date: 02/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 3b26b7d95f4a6d01d81a2916403ab3a630370fc8
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92520823"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014751"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pexip"></a>Zelfstudie: Azure Active Directory-integratie met Pexip
 
@@ -49,7 +49,7 @@ Voor het configureren van de integratie van Pexip in Azure AD moet u Pexip vanui
 
 **Als u Pexip wilt toevoegen vanuit de galerie, voert u de volgende stappen uit:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -61,7 +61,7 @@ Voor het configureren van de integratie van Pexip in Azure AD moet u Pexip vanui
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Pexip** , selecteer **Pexip** in het resultaatvenster en klik op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Pexip**, selecteer **Pexip** in het resultaatvenster en klik op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![Pexip in de lijst met resultaten](common/search-new-app.png)
 
@@ -73,10 +73,10 @@ Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure 
 Om Azure AD-eenmalige aanmelding te configureren en testen met Pexip, moet u de volgende bouwstenen voltooien:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding bij Pexip configureren](#configure-pexip-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de clientzijde wilt configureren.
+2. **[Eenmalige aanmelding bij Pexip configureren](#configure-pexip-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de clientzijde wilt configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Testgebruiker voor Pexip maken](#create-pexip-test-user)** : als u een tegenhanger van Britta Simon in Pexip wilt hebben die gekoppeld is aan de Azure AD-weergave van de gebruiker.
+5. **[Testgebruiker voor Pexip maken](#create-pexip-test-user)**: als u een tegenhanger van Britta Simon in Pexip wilt hebben die gekoppeld is aan de Azure AD-weergave van de gebruiker.
 6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
@@ -125,7 +125,7 @@ Als u eenmalige aanmelding aan de zijde van **Pexip** wilt configureren, moet u 
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 

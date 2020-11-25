@@ -11,11 +11,11 @@ ms.topic: how-to
 ms.date: 11/11/2019
 ms.author: mbaldwin
 ms.openlocfilehash: 9c522d870a25b3df34ab6a0cf1c1e944a6462685
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93284494"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013986"
 ---
 # <a name="use-logic-apps-to-receive-email-about-status-changes-of-key-vault-secrets"></a>Logic Apps gebruiken om een e-mail te ontvangen over statuswijzigingen van sleutelkluisgeheimen
 
@@ -45,7 +45,7 @@ Volg de volgende stappen als u een Azure Event Grid-abonnement wilt maken:
  
     ![Logic App Designer - verbinding](../media/eventgrid-logicappdesigner1.png)
 
-1. Ga als volgt te werk op het scherm **Wanneer een resourcegebeurtenis zich voordoet** :
+1. Ga als volgt te werk op het scherm **Wanneer een resourcegebeurtenis zich voordoet**:
     - Laat **Abonnement** en **Resourcenaam** op de standaardwaarde staan.
     - Selecteer **Microsoft.KeyVault.vaults** voor het **Resourcetype**.
     - Selecteer **Microsoft.KeyVault.SecretNewVersionCreated** voor **Gebeurtenistype-item - 1**.
@@ -60,7 +60,7 @@ Volg de volgende stappen als u een Azure Event Grid-abonnement wilt maken:
 
 1. Stel de e-mailsjabloon samen:
     - **Aan:** Voer het e-mailadres in waarop u de e-mailmeldingen wilt ontvangen. Voor deze zelfstudie gebruikt u een e-mailaccount dat u kunt gebruiken voor het testen.
-    - **Onderwerp** en **Hoofdtekst** : typ hier het onderwerp en de tekst voor uw e-mail. Selecteer de JSON-eigenschappen van het selector-hulpprogramma om dynamische inhoud op basis van gebeurtenisgegevens toe te voegen. U kunt de gegevens van de gebeurtenis ophalen met `@{triggerBody()?['Data']}`.
+    - **Onderwerp** en **Hoofdtekst**: typ hier het onderwerp en de tekst voor uw e-mail. Selecteer de JSON-eigenschappen van het selector-hulpprogramma om dynamische inhoud op basis van gebeurtenisgegevens toe te voegen. U kunt de gegevens van de gebeurtenis ophalen met `@{triggerBody()?['Data']}`.
 
     Uw e-mailsjabloon ziet er nu misschien uit als in dit voorbeeld.
 

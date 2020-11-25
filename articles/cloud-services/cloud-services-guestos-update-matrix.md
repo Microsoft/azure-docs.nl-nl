@@ -13,11 +13,11 @@ ms.workload: tbd
 ms.date: 11/17/2020
 ms.author: yohaddad
 ms.openlocfilehash: a5cc0fdf0473cb8ceafd164a34df6f0bd66dd6d3
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94737435"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013697"
 ---
 # <a name="azure-guest-os-releases-and-sdk-compatibility-matrix"></a>Azure Guest OS releases en SDK Compatibility Matrix
 Voorziet in actuele informatie over de nieuwste versies van het Azure-gast besturingssysteem voor Cloud Services. Deze informatie helpt u bij het plannen van het upgradepad voordat een gast besturingssysteem wordt uitgeschakeld. Als u uw rollen configureert voor het gebruik van *automatische* updates van gast besturingssystemen zoals beschreven in de update-instellingen van het [Azure-gast besturingssysteem][Azure Guest OS Update Settings], is het niet belang rijk dat u deze pagina leest.

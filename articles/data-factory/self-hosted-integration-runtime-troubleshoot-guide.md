@@ -2,17 +2,17 @@
 title: Problemen met een zelf-hostende Integration runtime in Azure Data Factory oplossen
 description: Meer informatie over het oplossen van problemen met zelf-hostende Integration runtime in Azure Data Factory.
 services: data-factory
-author: nabhishek
+author: lrtoyou1223
 ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 11/17/2020
 ms.author: lle
-ms.openlocfilehash: e3a517497a480995b8ce63d36d0427e3bfadfe43
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 93c35828444ec93a974769ed3a2f1981c0ec4368
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844055"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96013443"
 ---
 # <a name="troubleshoot-self-hosted-integration-runtime"></a>Problemen met zelf-hostende Integration runtime oplossen
 
@@ -320,7 +320,7 @@ Als de fout wordt weer gegeven zoals boven *UnauthorizedAccessException*, volgt 
         1. Verwijder de huidige zelf-hostende IR.
         1. Installeer de zelf-hostende IR-bits.
         1. Volg de onderstaande instructies om het service account te wijzigen: 
-            1. Ga naar de installatiemap van selfhosted IR, ga naar de map: *micro soft Integration Runtime\4.0\Shared*.
+            1. Ga naar de installatiemap van de zelf-hostende IR. Ga naar de map: *micro soft Integration Runtime\4.0\Shared*.
             1. Start een opdracht regel met verhoogde bevoegdheden. Vervang *\<user>* en *\<password>* door uw eigen gebruikers naam en wacht woord en voer de volgende opdracht uit:
                        
                 ```
@@ -731,7 +731,7 @@ Twee mogelijke redenen voor dit probleem:
 - De basis-CA van het ADF-service Server certificaat wordt niet vertrouwd op de computer waarop de SHIR is geïnstalleerd. 
 - U gebruikt proxy in uw-omgeving en het server certificaat van de ADF-service wordt vervangen door de proxy, terwijl het vervangen server certificaat niet wordt vertrouwd door de computer waarop de SHIR is geïnstalleerd.
 
-#### <a name="solution"></a>Oplossing
+#### <a name="resolution"></a>Oplossing
 
 - Zorg er daarom voor dat het ADF-server certificaat en de bijbehorende certificaat keten worden vertrouwd door de computer waarop de SHIR is geïnstalleerd.
 - Voor de reden 2 vertrouwt u de vervangen basis-CA op de SHIR-machine of configureert u de proxy niet om het ADF server-certificaat te vervangen.
@@ -744,6 +744,7 @@ We implementeren een nieuw SSL-certificaat dat is ondertekend vanuit DigiCert. C
   ![DigiCert Global Root G2](media/self-hosted-integration-runtime-troubleshoot-guide/trusted-root-ca-check.png)
 
 Als dat niet het geval is, kunt u dit [hier](http://cacerts.digicert.com/DigiCertGlobalRootG2.crt )downloaden. 
+
 
 ## <a name="self-hosted-ir-sharing"></a>Zelf-hostende IR-deling
 
@@ -764,7 +765,7 @@ Voor meer informatie over het oplossen van problemen kunt u de volgende bronnen 
 
 *  [Data Factory Blog](https://azure.microsoft.com/blog/tag/azure-data-factory/)
 *  [Data Factory functie aanvragen](https://feedback.azure.com/forums/270578-data-factory)
-*  [Azure-Video's](https://azure.microsoft.com/resources/videos/index/?sort=newest&services=data-factory)
+*  [Azure-video's](https://azure.microsoft.com/resources/videos/index/?sort=newest&services=data-factory)
 *  [Microsoft Q&A-vragenpagina](/answers/topics/azure-data-factory.html)
 *  [Stack overflow-forum voor Data Factory](https://stackoverflow.com/questions/tagged/azure-data-factory)
 *  [Twitter-informatie over Data Factory](https://twitter.com/hashtag/DataFactory)

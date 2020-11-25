@@ -6,11 +6,11 @@ ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 04/30/2018
 ms.openlocfilehash: ba69098f32e131714a15923aef64c3f6ba17e18f
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92219493"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013306"
 ---
 # <a name="manage-azure-data-lake-analytics-using-account-policies"></a>Azure Data Lake Analytics beheren met account beleid
 
@@ -26,7 +26,7 @@ Het aantal AUs voor uw Data Lake Analytics account wijzigen:
 
 1. Ga in het Azure Portal naar uw Data Lake Analytics-account.
 2. Klik op **limieten en beleids regels**.
-3. Verplaats onder **Maxi maal AUs**de schuif regelaar om een waarde te selecteren of voer de waarde in het tekstvak in.
+3. Verplaats onder **Maxi maal AUs** de schuif regelaar om een waarde te selecteren of voer de waarde in het tekstvak in.
 4. Klik op **Opslaan**.
 
    > [!NOTE]
@@ -40,7 +40,7 @@ Wijzigen van het aantal taken dat tegelijkertijd kan worden uitgevoerd:
 
 1. Ga in het Azure Portal naar uw Data Lake Analytics-account.
 2. Klik op **limieten en beleids regels**.
-3. Verplaats onder **maximum aantal actieve taken**de schuif regelaar om een waarde te selecteren of voer de waarde in het tekstvak in.
+3. Verplaats onder **maximum aantal actieve taken** de schuif regelaar om een waarde te selecteren of voer de waarde in het tekstvak in.
 4. Klik op **Opslaan**.
 
    > [!NOTE]
@@ -54,7 +54,7 @@ Instellen hoe lang de meta gegevens en resources van de taak moeten worden bewaa
 
 1. Ga in het Azure Portal naar uw Data Lake Analytics-account.
 2. Klik op **limieten en beleids regels**.
-3. Verplaats onder **dagen om taak query's te bewaren**de schuif regelaar om een waarde te selecteren of voer de waarde in het tekstvak in.  
+3. Verplaats onder **dagen om taak query's te bewaren** de schuif regelaar om een waarde te selecteren of voer de waarde in het tekstvak in.  
 4. Klik op **Opslaan**.
 
 ## <a name="job-level-policies"></a>Beleids regels op taak niveau
@@ -78,7 +78,7 @@ Er is een standaard beleid ingesteld voor elk account. Het standaard beleid is v
 
 2. Klik op **limieten en beleids regels**.
 
-3. Klik onder **limieten voor taak indiening**op de knop **beleid toevoegen** . Selecteer of voer de volgende instellingen in:
+3. Klik onder **limieten voor taak indiening** op de knop **beleid toevoegen** . Selecteer of voer de volgende instellingen in:
 
    1. **Naam van reken beleid**: Voer een beleids naam in om u te herinneren over het doel van het beleid.
 
@@ -86,7 +86,7 @@ Er is een standaard beleid ingesteld voor elk account. Het standaard beleid is v
 
    3. **De limiet voor taak-au instellen**: Stel de limiet voor au in die van toepassing is op de geselecteerde gebruiker of groep.
 
-   4. **Stel de prioriteits limiet**in: Stel de prioriteits limiet in die van toepassing is op de geselecteerde gebruiker of groep.
+   4. **Stel de prioriteits limiet** in: Stel de prioriteits limiet in die van toepassing is op de geselecteerde gebruiker of groep.
 
 4. Klik op **OK**.
 
@@ -98,7 +98,7 @@ Er is een standaard beleid ingesteld voor elk account. Het standaard beleid is v
 
 2. Klik op **limieten en beleids regels**.
 
-3. Zoek onder **limieten voor taak inzending**het beleid dat u wilt bewerken.
+3. Zoek onder **limieten voor taak inzending** het beleid dat u wilt bewerken.
 
 4. Als u de opties voor **verwijderen** en **bewerken** wilt zien, klikt u in de kolom uiterst rechts van de tabel op `...` . # # extra resources voor taak beleid
 

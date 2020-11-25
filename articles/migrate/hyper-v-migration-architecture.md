@@ -7,11 +7,11 @@ ms.topic: conceptual
 ms.date: 11/19/2019
 ms.author: raynew
 ms.openlocfilehash: 390a8a49e9a47ee5e6845d85fe4fe02f514708e8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91362194"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013612"
 ---
 # <a name="how-does-hyper-v-replication-work"></a>Hoe werkt Hyper-V-replicatie?
 
@@ -70,9 +70,9 @@ U kunt de hoeveelheid band breedte die wordt gebruikt voor het uploaden van gege
 
 
 1. Meld u aan bij de Hyper-V-host of het cluster knooppunt.
-2. Voer **C:\Program Files\Microsoft Azure Recovery Services Agent\bin\wabadmin.msc**uit om de MMC-module Windows Azure backup te openen.
+2. Voer **C:\Program Files\Microsoft Azure Recovery Services Agent\bin\wabadmin.msc** uit om de MMC-module Windows Azure backup te openen.
 3. Selecteer in de module **Eigenschappen wijzigen**.
-4. Selecteer in **beperking**de optie **beperking van Internet bandbreedte gebruik inschakelen voor back-upbewerkingen**. Stel de limieten voor werk-en niet-werk uren in. Geldige bereiken zijn van 512 Kbps tot 1.023 Mbps.
+4. Selecteer in **beperking** de optie **beperking van Internet bandbreedte gebruik inschakelen voor back-upbewerkingen**. Stel de limieten voor werk-en niet-werk uren in. Geldige bereiken zijn van 512 Kbps tot 1.023 Mbps.
 I
 
 ### <a name="influence-upload-efficiency"></a>Invloed op Upload efficiëntie

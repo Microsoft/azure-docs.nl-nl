@@ -8,11 +8,11 @@ ms.workload: infrastructure-services
 ms.date: 05/29/2017
 ms.author: rohink
 ms.openlocfilehash: 6a0aebc727233cdd838f3e1bf8eeb5cd247b9836
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92489673"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014020"
 ---
 # <a name="host-reverse-dns-lookup-zones-in-azure-dns"></a>Reverse DNS lookup zones in Azure DNS
 
@@ -28,8 +28,8 @@ Dit artikel begeleidt u stapsgewijs door de stappen voor het maken van uw eerste
 
 ## <a name="create-a-reverse-lookup-dns-zone"></a>Een DNS-zone voor reverse lookup maken
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-1. Selecteer in het menu **hub** **nieuwe**  >  **netwerken**en selecteer vervolgens **DNS-zone**.
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Selecteer in het menu **hub** **nieuwe**  >  **netwerken** en selecteer vervolgens **DNS-zone**.
 
    ![De selectie van de DNS-zone](./media/dns-reverse-dns-hosting/figure1.png)
 
@@ -123,7 +123,7 @@ In het volgende voor beeld wordt u begeleid bij het proces van het maken van een
 
    In dit voor beeld zijn de eerste drie octetten al ingevuld als onderdeel van de zone naam (. 2.0.192). Daarom wordt alleen het laatste octet opgegeven in het vak **naam** . U kunt bijvoorbeeld een naam opgeven voor de Recordset **15** voor een resource waarvan het IP-adres 192.0.2.15 is.  
 1. Selecteer voor **type** **PTR**.  
-1. Voer bij **domein naam**de Fully QUALIFIED domain name (FQDN) in van de bron die gebruikmaakt van het IP-adres.
+1. Voer bij **domein naam** de Fully QUALIFIED domain name (FQDN) in van de bron die gebruikmaakt van het IP-adres.
 1. Selecteer **OK** onder aan het deel venster om de DNS-record te maken.
 
    ![Het deel venster recordset toevoegen, waarbij vakken zijn ingevuld](./media/dns-reverse-dns-hosting/figure5.png)
@@ -159,7 +159,7 @@ In het volgende voor beeld wordt het proces voor het maken van een nieuwe PTR-re
 
    In dit voor beeld zijn de eerste 64 bits van de IPv6 al ingevuld als onderdeel van de zone naam (0.0.0.0. c. d. b. a. 8. b. d. 0.1.0.0.2. ip6. arpa). Daarom worden alleen de laatste 64 bits opgegeven in het vak **naam** . De laatste 64 bits van het IP-adres worden in omgekeerde volg orde ingevoerd, met een punt als scheidings teken tussen elk hexadecimaal getal. U kunt bijvoorbeeld uw recordset **e. 5.0.4.9. f. a. 1. c. b. 0.1.4.2.5. f** noemen voor een resource waarvan het IP-adres 2001 is: 0db8: abdc: 0000: f524:10BC: 1af9:405e.  
 3. Selecteer voor **type** **PTR**.  
-4. Voer bij **domein naam**de FQDN in van de bron die gebruikmaakt van het IP-adres.
+4. Voer bij **domein naam** de FQDN in van de bron die gebruikmaakt van het IP-adres.
 5. Selecteer **OK** onder aan het deel venster om de DNS-record te maken.
 
 ![Scherm opname van het deel venster record sets toevoegen met een pijl die verwijst naar de waarde in het veld type.](./media/dns-reverse-dns-hosting/figure7.png)

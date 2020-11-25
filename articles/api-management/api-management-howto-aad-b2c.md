@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 11/04/2019
 ms.author: apimpm
 ms.openlocfilehash: 7b586edd7adce8bcea61419005a3ce8cfc814fb3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86254938"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013537"
 ---
 # <a name="how-to-authorize-developer-accounts-by-using-azure-active-directory-b2c-in-azure-api-management"></a>Ontwikkelaarsaccounts autoriseren met behulp van Azure Active Directory B2C in Azure API Management
 
@@ -56,7 +56,7 @@ Azure Active Directory B2C is een oplossing voor het beheer van Cloud identiteit
 
    ![Een nieuwe toepassing registreren 2][api-management-howto-aad-b2c-add-button]
 
-1. Voer op de Blade **nieuwe toepassing** een naam in voor de toepassing. Kies **Ja** onder **Web-app/Web-API**en kies **Ja** onder **impliciete stroom toestaan**. Plak vervolgens de **omleidings-URL** die u in stap 3 hebt gekopieerd in het tekstvak **antwoord-URL** .
+1. Voer op de Blade **nieuwe toepassing** een naam in voor de toepassing. Kies **Ja** onder **Web-app/Web-API** en kies **Ja** onder **impliciete stroom toestaan**. Plak vervolgens de **omleidings-URL** die u in stap 3 hebt gekopieerd in het tekstvak **antwoord-URL** .
 
    ![Een nieuwe toepassing registreren 3][api-management-howto-aad-b2c-app-details]
 
@@ -74,7 +74,7 @@ Azure Active Directory B2C is een oplossing voor het beheer van Cloud identiteit
 
 1. Ga terug naar het API Management deel venster id- **provider toevoegen** en plak de id in het tekstvak **client-id** .
     
-1.  Ga terug naar de registratie van de B2C-app, klik op de knop **sleutels** en klik vervolgens op **sleutel genereren**. Klik op **Opslaan** om de configuratie op te slaan en de **app-sleutel**weer te geven. Kopieer de sleutel naar het klem bord.
+1.  Ga terug naar de registratie van de B2C-app, klik op de knop **sleutels** en klik vervolgens op **sleutel genereren**. Klik op **Opslaan** om de configuratie op te slaan en de **app-sleutel** weer te geven. Kopieer de sleutel naar het klem bord.
 
     ![App-sleutel 1][api-management-howto-aad-b2c-app-key]
 
@@ -84,7 +84,7 @@ Azure Active Directory B2C is een oplossing voor het beheer van Cloud identiteit
 
 1.  Met het veld **Authority** kunt u de AANMELDINGS-URL van Azure AD B2C voor gebruik beheren. Stel de waarde in op **<your_b2c_tenant_name>. b2clogin.com**.
 
-1. Geef het **aanmeldings beleid** en het aanmeldings **beleid** op uit het Tenant beleid voor B2C. U kunt eventueel ook het beleid voor het **bewerken van profielen** en het beleid voor het **opnieuw instellen van wacht woorden**opgeven.
+1. Geef het **aanmeldings beleid** en het aanmeldings **beleid** op uit het Tenant beleid voor B2C. U kunt eventueel ook het beleid voor het **bewerken van profielen** en het beleid voor het **opnieuw instellen van wacht woorden** opgeven.
 
 1. Nadat u de gewenste configuratie hebt opgegeven, klikt u op **Opslaan**.
 

@@ -8,11 +8,11 @@ ms.service: postgresql
 ms.topic: how-to
 ms.date: 5/6/2019
 ms.openlocfilehash: bff930153dc8941fbfe561edf963d5b1c1e7811f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91708013"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014615"
 ---
 # <a name="troubleshoot-connection-issues-to-azure-database-for-postgresql---single-server"></a>Verbindings problemen met Azure Database for PostgreSQL-één server oplossen
 
@@ -48,7 +48,7 @@ Als de toepassing permanent geen verbinding kan maken met Azure Database for Pos
 
 * Server firewall configuratie: Zorg ervoor dat de firewall van de Azure Database for PostgreSQL-server zo is geconfigureerd dat verbindingen van uw client worden toegestaan, inclusief proxy servers en gateways.
 * Firewall configuratie van de client: de firewall op uw client moet verbindingen met uw database server toestaan. IP-adressen en poorten van de server die u niet wilt toestaan en toepassings namen als PostgreSQL in sommige firewalls.
-* Gebruikers fout: mogelijk hebt u een type verbindings parameter, zoals de server naam in de connection string of een ontbrekend * \@ Server* achtervoegsel in de gebruikers naam.
+* Gebruikers fout: mogelijk hebt u een type verbindings parameter, zoals de server naam in de connection string of een ontbrekend *\@ Server* achtervoegsel in de gebruikers naam.
 * Als de fout _server niet is geconfigureerd voor het toestaan van IPv6-verbindingen_, ziet u dat de laag basis geen ondersteuning biedt voor VNet-service-eind punten. U moet het micro soft. SQL-eind punt verwijderen uit het subnet dat probeert verbinding te maken met de basis server.
 * Als de verbindings fout _sslmode waarde "* * *" ongeldig is wanneer SSL-ondersteuning niet is gecompileerd_ , betekent dit dat uw postgresql-client geen ondersteuning biedt voor SSL. Waarschijnlijk is de libpq aan de client zijde niet gecompileerd met de vlag---with-openssl. Probeer verbinding te maken met een PostgreSQL-client met SSL-ondersteuning. 
 

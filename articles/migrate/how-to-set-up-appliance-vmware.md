@@ -4,11 +4,11 @@ description: Meer informatie over het instellen van een Azure Migrate apparaat o
 ms.topic: article
 ms.date: 04/16/2020
 ms.openlocfilehash: f20bb77c29d98ab4e3549bfed43d47d1f1f7dc0c
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92318205"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013629"
 ---
 # <a name="set-up-an-appliance-for-vmware-vms"></a>Een apparaat instellen voor VMware-Vm's
 
@@ -131,7 +131,7 @@ Het apparaat moet verbinding maken met vCenter Server om de configuratie- en pre
 1. In **Stap 2: vCenter Server-gegevens opgeven**, klikt u op **Detectiebron toevoegen** om de beschrijvende naam voor referenties te selecteren in de vervolgkeuzelijst en geeft u het **IP-adres/FQDN** van de vCenter Server-instantie op. U kunt **Poort** op 443 laten staan (de standaardinstelling) of een aangepaste poort opgeven waarop vCenter Server luistert en op **Opslaan** klikken.
 1. Wanneer u op Opslaan klikt, probeert het apparaat de verbinding met vCenter Server te valideren met de opgegeven referenties en wordt de **validatiestatus** in de tabel weergegeven voor het IP-adres of de FQDN van vCenter Server.
 1. Voordat u de detectie start, kunt u de connectiviteit met vCenter Server altijd **opnieuw valideren**.
-1. In **stap 3: VM-referenties opgeven voor het detecteren van geïnstalleerde toepassingen en voor het uitvoeren van afhankelijkheidstoewijzing zonder agent** klikt u op **Referenties toevoegen**en geeft u het besturingssysteem op waarvoor de referenties zijn opgegeven, evenals een beschrijvende naam voor de referenties en een **gebruikersnaam** en **wachtwoord**. Klik vervolgens op **Opslaan**.
+1. In **stap 3: VM-referenties opgeven voor het detecteren van geïnstalleerde toepassingen en voor het uitvoeren van afhankelijkheidstoewijzing zonder agent** klikt u op **Referenties toevoegen** en geeft u het besturingssysteem op waarvoor de referenties zijn opgegeven, evenals een beschrijvende naam voor de referenties en een **gebruikersnaam** en **wachtwoord**. Klik vervolgens op **Opslaan**.
 
     - U kunt hier eventueel referenties toevoegen als u een account hebt gemaakt dat u wilt gebruiken voor de functie voor [toepassingsdetectie](how-to-discover-applications.md) of de [functie voor analyse van afhankelijkheden zonder agent](how-to-create-group-machine-dependencies-agentless.md).
     - Als u deze functies niet wilt gebruiken, klikt u op de schuifregelaar om de stap over te slaan. U kunt de intentie op elk gewenst moment ongedaan maken.

@@ -8,11 +8,11 @@ ms.date: 07/19/2018
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 194b0f2ff94197fe11c189e97dbc65c9d0367932
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630580"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013918"
 ---
 # <a name="manage-registered-servers-with-azure-file-sync"></a>Geregistreerde servers beheren met Azure File Sync
 Met Azure File Sync kunt u bestandsshares van uw organisatie in Azure Files centraliseren zonder in te leveren op de flexibiliteit, prestaties en compatibiliteit van een on-premises bestandsserver. Dit doet u door uw Windows-servers te transformeren naar een snelle cache van uw Azure-bestands share. U kunt elk protocol dat beschikbaar is in Windows Server gebruiken voor lokale toegang tot uw gegevens (inclusief SMB, NFS en FTPS) en u kunt zoveel caches hebben als waar ook ter wereld u nodig hebt.
@@ -58,7 +58,7 @@ Als u een server wilt registreren bij een opslag synchronisatie service, moet u 
 ```    
 
 ### <a name="register-a-server-with-storage-sync-service"></a>Een server met de opslag synchronisatie service registreren
-Voordat een server kan worden gebruikt als een *Server eindpunt* in een Azure file sync *synchronisatie groep* , moet deze zijn geregistreerd bij een *opslag synchronisatie service*. Een server kan slechts met één opslag synchronisatie service tegelijk worden geregistreerd.
+Voordat een server kan worden gebruikt als een *Server eindpunt* in een Azure file sync *synchronisatie groep*, moet deze zijn geregistreerd bij een *opslag synchronisatie service*. Een server kan slechts met één opslag synchronisatie service tegelijk worden geregistreerd.
 
 #### <a name="install-the-azure-file-sync-agent"></a>Azure File Sync-agent installeren
 1. [Down load de Azure file sync-agent](https://go.microsoft.com/fwlink/?linkid=858257).

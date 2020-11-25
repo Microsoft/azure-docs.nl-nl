@@ -4,12 +4,12 @@ description: Azure direct Restore-mogelijkheid en veelgestelde vragen over VM-ba
 ms.reviewer: sogup
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: 95de22d8493181f098e480afc4f319c44c633e42
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 147fadc92429157ed2f9ba3eb68297a3e1d08d24
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92173916"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96014445"
 ---
 # <a name="get-improved-backup-and-restore-performance-with-azure-backup-instant-restore-capability"></a>Profiteer van verbeterde prestaties voor back-up en herstel met Azure Backup functie voor direct terugzetten
 
@@ -117,3 +117,8 @@ Als het herstel punt een moment opname heeft en het meest recente herstel punt b
 ### <a name="i-dont-need-instant-restore-functionality-can-it-be-disabled"></a>Ik heb niet de functionaliteit voor direct terugzetten nodig. Kan deze worden uitgeschakeld?
 
 De functie voor direct terugzetten is ingeschakeld voor iedereen en kan niet worden uitgeschakeld. U kunt de retentie van de moment opname beperken tot een minimum van één dag.
+
+### <a name="is-it-safe-to-restart-the-vm-during-the-transfer-process-which-can-take-many-hours-will-restarting-the-vm-interrupt-or-slow-down-the-transfer"></a>Is het veilig om de virtuele machine opnieuw op te starten tijdens het overdrachts proces (dit kan veel uren duren)? Wordt de VM-interrupt opnieuw gestart of wordt de overdracht vertraagd?
+
+Ja, dat is veilig en er is geen invloed op de snelheid van de gegevens overdracht.
+

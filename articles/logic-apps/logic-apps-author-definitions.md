@@ -7,11 +7,11 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 01/01/2018
 ms.openlocfilehash: 9163071237041d7c8510a644c573e3763434bb0c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87060661"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014394"
 ---
 # <a name="create-edit-or-extend-json-for-logic-app-workflow-definitions-in-azure-logic-apps"></a>JSON maken, bewerken of uitbreiden voor werkstroomdefinities voor logische apps in Azure Logic Apps
 
@@ -28,12 +28,12 @@ Als u geen ervaring hebt met Logic apps, lees dan [hoe u uw eerste logische app 
 
 ## <a name="edit-json---azure-portal"></a>JSON-Azure Portal bewerken
 
-1. Meld u aan bij <a href="https://portal.azure.com" target="_blank">Azure Portal</a>.
+1. Meld u aan bij de <a href="https://portal.azure.com" target="_blank">Azure-portal</a>.
 
 2. Kies in het menu links **alle services**.
 Zoek in het zoekvak ' Logic apps ' en selecteer vervolgens de logische app in de resultaten.
 
-3. Selecteer in het menu van de logische app onder **ontwikkelingsprogram ma's**de optie **Logic app-code weergave**.
+3. Selecteer in het menu van de logische app onder **ontwikkelingsprogram ma's** de optie **Logic app-code weergave**.
 
    De code weergave-editor wordt geopend en toont de definitie van de logische app in JSON-indeling.
 
@@ -67,7 +67,7 @@ Selecteer **Openen met Logic App-ontwerpfunctie**.
 
 De levens cyclus van de implementatie heeft doorgaans verschillende omgevingen voor ontwikkeling, testen, faseren en productie. Wanneer u waarden hebt die u opnieuw wilt gebruiken in uw logische app zonder hardcoding of die variëren afhankelijk van uw implementatie behoeften, kunt u een [Azure Resource Manager sjabloon](../azure-resource-manager/management/overview.md) maken voor uw werk stroom definitie, zodat u ook de implementatie van logische apps kunt automatiseren.
 
-Volg deze algemene stappen voor het *para meters*of definiëren en gebruiken van para meters voor deze waarden. U kunt vervolgens de waarden opgeven in een afzonderlijk parameter bestand dat deze waarden doorgeeft aan uw sjabloon. Op die manier kunt u deze waarden gemakkelijker wijzigen zonder dat u uw logische app hoeft bij te werken en opnieuw te implementeren. Zie [overzicht: de implementatie voor Logic apps automatiseren met Azure Resource Manager sjablonen](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md)voor meer informatie.
+Volg deze algemene stappen voor het *para meters* of definiëren en gebruiken van para meters voor deze waarden. U kunt vervolgens de waarden opgeven in een afzonderlijk parameter bestand dat deze waarden doorgeeft aan uw sjabloon. Op die manier kunt u deze waarden gemakkelijker wijzigen zonder dat u uw logische app hoeft bij te werken en opnieuw te implementeren. Zie [overzicht: de implementatie voor Logic apps automatiseren met Azure Resource Manager sjablonen](../logic-apps/logic-apps-azure-resource-manager-templates-overview.md)voor meer informatie.
 
 1. Definieer in uw sjabloon sjabloon parameters en para meters voor de werk stroom definitie voor het accepteren van de waarden die moeten worden gebruikt in respectievelijk de implementatie en runtime.
 

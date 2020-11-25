@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 12/17/2019
 ms.author: azfuncdf
 ms.openlocfilehash: 899bc3fdc94b8232acd3edf3e0cbab3c481ff8f2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87081845"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013719"
 ---
 # <a name="bindings-for-durable-functions-azure-functions"></a>Bindingen voor Durable Functions (Azure Functions)
 
@@ -303,7 +303,7 @@ public static Task Run(
 
 ### <a name="client-sample-not-visual-studio"></a>Client-voor beeld (niet Visual Studio)
 
-Als u Visual Studio niet gebruikt voor ontwikkeling, kunt u de volgendefunction.jsmaken * in* het bestand. In dit voor beeld ziet u hoe u een functie die door een wachtrij wordt geactiveerd, configureert die gebruikmaakt van de duurzame Orchestration-client binding:
+Als u Visual Studio niet gebruikt voor ontwikkeling, kunt u de volgendefunction.jsmaken *in* het bestand. In dit voor beeld ziet u hoe u een functie die door een wachtrij wordt geactiveerd, configureert die gebruikmaakt van de duurzame Orchestration-client binding:
 
 ```json
 {
@@ -533,7 +533,7 @@ Als u script talen (bijvoorbeeld *. CSX* -of *. js* -bestanden) gebruikt voor on
 
 In .NET functions maakt u doorgaans een binding aan `IDurableEntityClient` . Dit biedt volledige toegang tot alle client-api's die door duurzame entiteiten worden ondersteund. U kunt ook een binding maken met de `IDurableOrchestrationClient` Interface, waarmee u toegang hebt tot client-api's voor zowel entiteiten als Orchestration. Api's op het client object zijn onder andere:
 
-* **ReadEntityStateAsync \<T> **: Hiermee wordt de status van een entiteit gelezen. Het retourneert een antwoord dat aangeeft of de doel entiteit bestaat en zo ja, wat de status is.
+* **ReadEntityStateAsync \<T>**: Hiermee wordt de status van een entiteit gelezen. Het retourneert een antwoord dat aangeeft of de doel entiteit bestaat en zo ja, wat de status is.
 * **SignalEntityAsync**: Hiermee verzendt u een bericht in één richting naar een entiteit, waarna wordt gewacht tot deze in de wachtrij is geplaatst.
 * **ListEntitiesAsync**: query's voor de status van meerdere entiteiten. Entiteiten kunnen worden opgevraagd met behulp van de *naam* en de tijd van de *laatste bewerking*.
 

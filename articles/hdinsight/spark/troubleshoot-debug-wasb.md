@@ -8,11 +8,11 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 02/18/2020
 ms.openlocfilehash: 85e974d51f49bbb6742683ed253c077bb3ff69de
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545545"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014649"
 ---
 # <a name="debug-wasb-file-operations-in-azure-hdinsight"></a>Fouten opsporen in WASB-Bestands bewerkingen in azure HDInsight
 
@@ -28,13 +28,13 @@ Een geproduceerd logboek ziet er ongeveer als volgt uit:
 
 1. Ga in een webbrowser naar `https://CLUSTERNAME.azurehdinsight.net/#/main/services/SPARK2/configs` , waarbij `CLUSTERNAME` de naam van uw Spark-cluster is.
 
-1. Ga naar **Geavanceerde spark2-log4j-Properties** .
+1. Ga naar **Geavanceerde spark2-log4j-Properties**.
 
     1. Wijzigen `log4j.appender.console.Threshold=INFO` in `log4j.appender.console.Threshold=DEBUG` .
 
     1. Toevoegen `log4j.logger.org.apache.hadoop.fs.azure.NativeAzureFileSystem=DEBUG` .
 
-1. Ga naar **Geavanceerde livy2-log4j-Properties** .
+1. Ga naar **Geavanceerde livy2-log4j-Properties**.
 
     Toevoegen `log4j.logger.org.apache.hadoop.fs.azure.NativeAzureFileSystem=DEBUG` .
 

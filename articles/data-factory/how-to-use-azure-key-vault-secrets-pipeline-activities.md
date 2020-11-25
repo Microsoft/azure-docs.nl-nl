@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 10/31/2019
 ms.author: chlound
 ms.openlocfilehash: 1766705e73afab5d15cdb5aa2c5bb1487ad3d7c5
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92634280"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013884"
 ---
 # <a name="use-azure-key-vault-secrets-in-pipeline-activities"></a>Azure Key Vault-geheimen gebruiken in pijplijnactiviteiten
 
@@ -39,7 +39,7 @@ Deze functie is afhankelijk van de data factory beheerde identiteit.  Meer infor
 
     ![Toegangs beleid Key Vault](media/how-to-use-azure-key-vault-secrets-pipeline-activities/akvaccesspolicies-2.png)
 
-    Klik op **toevoegen** en vervolgens op **Opslaan** .
+    Klik op **toevoegen** en vervolgens op **Opslaan**.
 
 3. Navigeer naar uw Key Vault Secret en kopieer de geheime id.
 
@@ -51,7 +51,7 @@ Deze functie is afhankelijk van de data factory beheerde identiteit.  Meer infor
 
     |Eigenschap  |Waarde  |
     |---------|---------|
-    |Beveiligde uitvoer     |Waar         |
+    |Beveiligde uitvoer     |True         |
     |URL     |[Uw geheime URI-waarde]? API-Version = 7.0         |
     |Methode     |GET         |
     |Verificatie     |MSI         |
@@ -65,7 +65,7 @@ Deze functie is afhankelijk van de data factory beheerde identiteit.  Meer infor
     > [!CAUTION]
     > Stel de optie voor beveiligde uitvoer in op True om te voor komen dat de geheime waarde wordt geregistreerd als tekst zonder opmaak.  Voor verdere activiteiten waarvoor deze waarde wordt gebruikt, moet de optie voor beveiligde invoer zijn ingesteld op waar.
 
-5. Als u de waarde in een andere activiteit wilt gebruiken, gebruikt u de volgende code-expressie **@activity (' web1 '). output. Value** .
+5. Als u de waarde in een andere activiteit wilt gebruiken, gebruikt u de volgende code-expressie **@activity (' web1 '). output. Value**.
 
     ![Code-expressie](media/how-to-use-azure-key-vault-secrets-pipeline-activities/usewebactivity.png)
 

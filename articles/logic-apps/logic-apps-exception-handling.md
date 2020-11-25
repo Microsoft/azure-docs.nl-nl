@@ -9,11 +9,11 @@ ms.reviewer: klam, estfan, logicappspm
 ms.date: 01/11/2020
 ms.topic: article
 ms.openlocfilehash: 73b116117530e5a2103b604efbf757d691006508
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84704519"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014734"
 ---
 # <a name="handle-errors-and-exceptions-in-azure-logic-apps"></a>Fouten en uitzonderingen in Azure Logic Apps afhandelen
 
@@ -27,9 +27,9 @@ Voor de meest eenvoudige uitzonde ring en fout afhandeling kunt u een *beleid vo
 
 Dit zijn de beleids typen voor opnieuw proberen:
 
-| Type | Beschrijving |
+| Type | Description |
 |------|-------------|
-| **Prijs** | Met dit beleid worden Maxi maal vier nieuwe pogingen verzonden met *exponentieel toenemende* intervallen. deze worden geschaald op 7,5 seconden, maar worden tussen 5 en 45 seconden gelimiteerd. |
+| **Standaard** | Met dit beleid worden Maxi maal vier nieuwe pogingen verzonden met *exponentieel toenemende* intervallen. deze worden geschaald op 7,5 seconden, maar worden tussen 5 en 45 seconden gelimiteerd. |
 | **Exponentieel interval**  | Dit beleid wacht een wille keurig interval dat is geselecteerd uit een exponentieel groeiend bereik voordat de volgende aanvraag wordt verzonden. |
 | **Vast interval**  | Met dit beleid wordt het opgegeven interval gewacht voordat de volgende aanvraag wordt verzonden. |
 | **Geen**  | De aanvraag niet opnieuw verzenden. |
@@ -69,7 +69,7 @@ Of u kunt het beleid voor opnieuw proberen hand matig opgeven in de `inputs` sec
 
 *Vereist*
 
-| Waarde | Type | Beschrijving |
+| Waarde | Type | Description |
 |-------|------|-------------|
 | <*opnieuw proberen-beleid-type*> | Tekenreeks | Het type beleid voor opnieuw proberen dat u wilt gebruiken: `default` , `none` , `fixed` , of `exponential` |
 | <*nieuwe poging-interval*> | Tekenreeks | Het interval voor nieuwe pogingen waarbij de waarde de [ISO 8601-notatie](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations)moet gebruiken. Het minimale standaard interval is `PT5S` en het maximum interval `PT1D` . Wanneer u het beleid voor exponentiële intervallen gebruikt, kunt u verschillende minimum-en maximum waarden opgeven. |
@@ -78,7 +78,7 @@ Of u kunt het beleid voor opnieuw proberen hand matig opgeven in de `inputs` sec
 
 *Optioneel*
 
-| Waarde | Type | Beschrijving |
+| Waarde | Type | Description |
 |-------|------|-------------|
 | <*minimum-interval*> | Tekenreeks | Voor het beleid voor exponentiële intervallen wordt het kleinste interval voor het wille keurig geselecteerde interval in [ISO 8601-indeling](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) |
 | <*maximum-interval*> | Tekenreeks | Voor het beleid voor exponentiële intervallen is het grootste interval voor het wille keurig geselecteerde interval in [ISO 8601-indeling](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) |

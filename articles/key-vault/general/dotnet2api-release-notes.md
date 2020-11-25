@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 05/02/2017
 ms.author: mbaldwin
 ms.openlocfilehash: 018570019b306dced76760fefa4441ee7d86ad2a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88189836"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013952"
 ---
 # <a name="azure-key-vault-net-20---release-notes-and-migration-guide"></a>Azure Key Vault .NET 2,0-opmerkingen bij de release en de migratie handleiding
 De volgende informatie helpt u bij het migreren naar de 2,0-versie van de Azure Key Vault-bibliotheek voor C# en .NET.  Apps die zijn geschreven voor eerdere versies moeten worden bijgewerkt ter ondersteuning van de nieuwste versie.  Deze wijzigingen zijn nodig om nieuwe en verbeterde functies, zoals **Key Vault certificaten**, volledig te ondersteunen.
@@ -54,7 +54,7 @@ Key Vault certificaten x509-certificaten beheren en ondersteunt het volgende ged
 
 ## <a name="return-types"></a>Retour typen
 
-* De **lijst** met **SecretList** en de *IPage \<T> * retourneert nu in plaats van *ListKeysResponseMessage*
+* De **lijst** met **SecretList** en de *IPage \<T>* retourneert nu in plaats van *ListKeysResponseMessage*
 * De gegenereerde **BackupKeyAsync** retourneert nu *BackupKeyResult*, met de *waarde* (back-upblob). Voorheen werd de methode ingepakt en alleen de waarde geretourneerd.
 
 ## <a name="exceptions"></a>Uitzonderingen
@@ -99,7 +99,7 @@ Wanneer een client een Key Vault afhankelijkheid verwerkt, worden de volgende pa
 
 ## <a name="microsoftazuremanagementkeyvault-nuget"></a>Micro soft. Azure. Management. NuGet.
 
-* Voor de bewerkingen die een *kluis*hebben geretourneerd, was het retour type een klasse die een **kluis** eigenschap bevat. Het retour type is nu *kluis*.
+* Voor de bewerkingen die een *kluis* hebben geretourneerd, was het retour type een klasse die een **kluis** eigenschap bevat. Het retour type is nu *kluis*.
 * *PermissionsToKeys* en *PermissionsToSecrets* zijn nu *machtigingen. sleutels* en *machtigingen. geheimen*
 * Bepaalde typen wijzigingen van de retour nering zijn ook van toepassing op het besturings vlak.
 

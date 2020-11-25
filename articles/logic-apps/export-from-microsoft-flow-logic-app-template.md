@@ -7,11 +7,11 @@ ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 06/03/2020
 ms.openlocfilehash: 1c2f0a2c54be7adbc7b8babd596f18e08c67a024
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91269553"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014411"
 ---
 # <a name="export-flows-from-power-automate-and-deploy-to-azure-logic-apps"></a>Stromen exporteren vanuit Power Automate en implementeren in Azure Logic Apps
 
@@ -48,7 +48,7 @@ Zie [groeien tot Azure Logic apps](https://flow.microsoft.com/blog/grow-up-to-lo
 
    ![Zoek en selecteer ' Sjabloonimlementatie '](./media/export-from-microsoft-flow-logic-app-template/select-template-deployment.png)
 
-1. Onder **aangepaste implementatie**selecteert u **uw eigen sjabloon bouwen in de editor**.
+1. Onder **aangepaste implementatie** selecteert u **uw eigen sjabloon bouwen in de editor**.
 
    ![Selecteer ' uw eigen sjabloon bouwen in de editor '](./media/export-from-microsoft-flow-logic-app-template/build-template-in-editor.png)
 
@@ -58,7 +58,7 @@ Zie [groeien tot Azure Logic apps](https://flow.microsoft.com/blog/grow-up-to-lo
 
 1. Blader naar de locatie waar u het JSON-sjabloon bestand hebt opgeslagen dat u hebt geëxporteerd uit het automatiseren van de stroom. Selecteer het sjabloon bestand dat > **geopend**.
 
-1. Selecteer **Opslaan**nadat de JSON, para meters en resources in uw sjabloon zijn weer gegeven in de editor.
+1. Selecteer **Opslaan** nadat de JSON, para meters en resources in uw sjabloon zijn weer gegeven in de editor.
 
    ![Sjabloon opslaan](./media/export-from-microsoft-flow-logic-app-template/save-template.png)
 
@@ -102,7 +102,7 @@ Zie [groeien tot Azure Logic apps](https://flow.microsoft.com/blog/grow-up-to-lo
 
    1. Nadat u uw verbindingen hebt bijgewerkt, selecteert u op de werk balk ontwerpen de optie **Opslaan**.
 
-1. Wanneer u klaar bent om uw logische app te activeren, selecteert u **overzicht**in het menu van de logische app en selecteert u vervolgens **inschakelen**.
+1. Wanneer u klaar bent om uw logische app te activeren, selecteert u **overzicht** in het menu van de logische app en selecteert u vervolgens **inschakelen**.
 
    ![Logische app inschakelen](./media/export-from-microsoft-flow-logic-app-template/enable-logic-app.png)
 
@@ -146,7 +146,7 @@ Als u Visual Studio hebt ingesteld met de [vereisten](../logic-apps/quickstart-c
 
    1. Sla uw oplossing op voordat u de logische app implementeert.
 
-1. Open in Solution Explorer het snelmenu project en selecteer **Deploy**  >  **nieuwe**implementeren. Meld u aan met uw Azure-account als u daarom wordt gevraagd.
+1. Open in Solution Explorer het snelmenu project en selecteer **Deploy**  >  **nieuwe** implementeren. Meld u aan met uw Azure-account als u daarom wordt gevraagd.
 
 1. Wanneer u hierom wordt gevraagd, bevestigt u het Azure-abonnement, de Azure-resource groep en alle andere instellingen die u wilt gebruiken voor implementatie, zoals een [parameter bestand](../azure-resource-manager/templates/parameter-files.md) dat moet worden gebruikt voor het door geven van sjabloon parameter waarden, en selecteer vervolgens **implementeren**.
 
@@ -166,7 +166,7 @@ Als u Visual Studio hebt ingesteld met de [vereisten](../logic-apps/quickstart-c
 
    Nadat de implementatie is voltooid, wordt uw logische app gepubliceerd, maar wordt deze niet geactiveerd in de Azure Portal.
 
-1. Wanneer u klaar bent om uw logische app te activeren in de Azure Portal, kunt u uw logische app zoeken en openen in de ontwerp functie voor logische apps. Selecteer **overzicht**in het menu van de logische app en selecteer vervolgens **inschakelen**.
+1. Wanneer u klaar bent om uw logische app te activeren in de Azure Portal, kunt u uw logische app zoeken en openen in de ontwerp functie voor logische apps. Selecteer **overzicht** in het menu van de logische app en selecteer vervolgens **inschakelen**.
 
 1. Om te voor komen dat dubbele werk stromen worden uitgevoerd, moet u ervoor zorgen dat u de oorspronkelijke stroom deactiveert of verwijdert.
 

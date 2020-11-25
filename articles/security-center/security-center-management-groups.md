@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 12/19/2018
 ms.author: memildin
 ms.openlocfilehash: 7252a6ccd77212f75f5db54e5f3fcad7aa2df50a
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92339727"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013799"
 ---
 # <a name="gain-tenant-wide-visibility-for-azure-security-center"></a>Zicht baarheid voor de hele Tenant verkrijgen voor Azure Security Center
 In dit artikel wordt uitgelegd hoe u de beveiligings postuur van uw organisatie op schaal kunt beheren door beveiligings beleid toe te passen op alle Azure-abonnementen die zijn gekoppeld aan uw Azure Active Directory-Tenant.
@@ -49,7 +49,7 @@ U kunt abonnementen indelen in beheer groepen en uw beheer beleid Toep assen op 
     - Het veld Weergavenaam is de naam die wordt weergegeven in de Azure-portal. Een afzonderlijke weergavenaam is een optioneel veld bij het maken van de beheergroep en kan op elk gewenst moment worden gewijzigd.  
 
       ![Maken](./media/security-center-management-groups/create_context_menu.png)  
-5.  Selecteer **Opslaan**
+5.  Selecteer **Opslaan**.
 
 ### <a name="view-management-groups-in-the-azure-portal"></a>Beheer groepen weer geven in de Azure Portal
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
@@ -72,7 +72,7 @@ Een Azure Active Directory Tenant beheerder heeft geen rechtstreekse toegang tot
 
    ![Eigenschappen van Azure AD-scherm opname](./media/security-center-management-groups/aad-properties.png)
 
-3. Stel onder **toegangs beheer voor Azure-resources**de schakel optie in op **Ja**.
+3. Stel onder **toegangs beheer voor Azure-resources** de schakel optie in op **Ja**.
 
    ![Toegangs beheer voor Azure-resources-scherm afbeelding](./media/security-center-management-groups/aad-properties-global-admin-setting.png)
 
@@ -146,7 +146,7 @@ Zodra u toegang hebt tot verhoogde bevoegdheden, opent of vernieuwt u Azure Secu
     ![Scherm opname van de abonnements kiezer](./media/security-center-management-groups/subscription-selector.png)
 
 1. Selecteer **alle services** onder het hoofd menu van Azure en selecteer vervolgens **Security Center**.
-2. In het **overzicht**is er een dekkings grafiek voor abonnementen.
+2. In het **overzicht** is er een dekkings grafiek voor abonnementen.
 
     ![Scherm opname van de abonnements dekkings grafiek](./media/security-center-management-groups/security-center-subscription-coverage.png)
 
@@ -161,7 +161,7 @@ Zodra de Azure-functies aan de gebruikers zijn toegewezen, moet de Tenant beheer
 
 2. Klik in de navigatie lijst op **Azure Active Directory** en klik vervolgens op **Eigenschappen**.
 
-3. Stel onder **toegangs beheer voor Azure-resources**de schakel optie in op **Nee**.
+3. Stel onder **toegangs beheer voor Azure-resources** de schakel optie in op **Nee**.
 
 4. Klik op **Opslaan** om de instelling op te slaan.
 
@@ -170,7 +170,7 @@ Zodra de Azure-functies aan de gebruikers zijn toegewezen, moet de Tenant beheer
 ## <a name="adding-subscriptions-to-a-management-group"></a>Abonnementen aan een beheer groep toevoegen
 U kunt abonnementen toevoegen aan de beheer groep die u hebt gemaakt. Deze stappen zijn niet verplicht voor het verkrijgen van zicht baarheid op Tenant niveau en globaal beleid en toegangs beheer.
 
-1. Selecteer onder **beheergroepen**een beheer groep waaraan u uw abonnement wilt toevoegen.
+1. Selecteer onder **beheergroepen** een beheer groep waaraan u uw abonnement wilt toevoegen.
 
     ![Selecteer een beheer groep om een abonnement toe te voegen aan](./media/security-center-management-groups/management-group-subscriptions.png)
 

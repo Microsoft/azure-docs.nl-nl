@@ -7,11 +7,11 @@ author: bwren
 ms.author: bwren
 ms.date: 05/01/2020
 ms.openlocfilehash: 8eb163c95fb1426ebae8956d50f6d8f6aec6fd7f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91612079"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013646"
 ---
 # <a name="perform-log-query-in-azure-monitor-that-span-across-workspaces-and-apps"></a>Een logboek query uitvoeren in Azure Monitor die betrekking hebben op alle werk ruimten en apps
 
@@ -40,7 +40,7 @@ In de volgende voor beelden ziet u query's over Log Analytics werk ruimten voor 
 
 Het identificeren van een werk ruimte kan op een van de volgende manieren worden uitgevoerd:
 
-* Resource naam: is een door een mens lees bare naam van de werk ruimte, ook wel *onderdeel naam*genoemd. 
+* Resource naam: is een door een mens lees bare naam van de werk ruimte, ook wel *onderdeel naam* genoemd. 
 
     `workspace("contosoretail-it").Update | count`
 
@@ -68,7 +68,7 @@ De volgende voor beelden geven een samen vatting van het aantal aanvragen dat is
 
 Het identificeren van een toepassing in Application Insights kan worden uitgevoerd met de *app-expressie (id)* .  Met het argument *id* geeft u de app op met behulp van een van de volgende opties:
 
-* Resource naam: is een door de mens lees bare naam van de app, ook wel de naam van het *onderdeel*genoemd.  
+* Resource naam: is een door de mens lees bare naam van de app, ook wel de naam van het *onderdeel* genoemd.  
 
     `app("fabrikamapp")`
 

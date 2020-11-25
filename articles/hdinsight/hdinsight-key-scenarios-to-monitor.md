@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 03/09/2020
 ms.openlocfilehash: 1da86e36cf20dc15152aea74be6c43a4cb43d3b4
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92539765"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014241"
 ---
 # <a name="monitor-cluster-performance-in-azure-hdinsight"></a>Cluster prestaties in azure HDInsight bewaken
 
@@ -27,7 +27,7 @@ Hadoop-clusters kunnen de meest optimale prestaties leveren wanneer de belasting
 
 Meld u aan bij de [Ambari-webgebruikersinterface](hdinsight-hadoop-manage-ambari.md)en selecteer vervolgens het tabblad **hosts** om een hoog niveau te krijgen voor de knoop punten van uw cluster en het laden ervan. Uw hosts worden weer gegeven op basis van de volledig gekwalificeerde domein namen. De operationele status van elke host wordt weer gegeven met een gekleurde status indicator:
 
-| Kleur | Description |
+| Color | Description |
 | --- | --- |
 | Rood | Ten minste één hoofd onderdeel op de host is niet beschikbaar. Beweeg de muis aanwijzer om een knop Info weer te geven waarin de betrokken onderdelen worden weer gegeven. |
 | Oranje | Ten minste één secundair onderdeel op de host is niet beschikbaar. Beweeg de muis aanwijzer om een knop Info weer te geven waarin de betrokken onderdelen worden weer gegeven. |
@@ -66,13 +66,13 @@ Voor een gedetailleerdere weer gave van uw wacht rijen, in het Ambari-dash board
 
 ![Koppelingen in het Resource Manager-menu van de gebruikers interface](./media/hdinsight-key-scenarios-to-monitor/resource-manager-ui-menu-link.png)
 
-Selecteer in de gebruikers interface van Resource Manager **scheduler** in het menu aan de linkerkant. U ziet een lijst met uw wacht rijen onder *toepassings wachtrijen* . Hier ziet u de capaciteit die voor elk van uw wacht rijen wordt gebruikt, hoe goed de taken worden gedistribueerd en of alle taken zijn beperkt tot een resource.
+Selecteer in de gebruikers interface van Resource Manager **scheduler** in het menu aan de linkerkant. U ziet een lijst met uw wacht rijen onder *toepassings wachtrijen*. Hier ziet u de capaciteit die voor elk van uw wacht rijen wordt gebruikt, hoe goed de taken worden gedistribueerd en of alle taken zijn beperkt tot een resource.
 
 ![Menu van Apache HAdoop Resource Manager-gebruikers interface](./media/hdinsight-key-scenarios-to-monitor/resource-manager-ui-menu.png)
 
 ## <a name="storage-throttling"></a>Opslagbeperking
 
-Het prestatie knelpunt van een cluster kan zich voordoen op het opslag niveau. Dit type bottleneck is vaak het gevolg van het *blok keren* van i/o-bewerkingen (invoer/uitvoer), wat er gebeurt wanneer uw actieve taken meer io verzenden dan de opslag service kan verwerken. Deze blok kering maakt een wachtrij met i/o-aanvragen die nog moeten worden verwerkt totdat de huidige IOs is verwerkt. De blokken zijn vanwege *opslag beperking* , wat geen fysieke limiet is, maar een limiet die door de opslag service wordt opgelegd door een Service Level Agreement (Sla). Deze limiet zorgt ervoor dat er geen enkele client of Tenant de service in beslag kan nemen. De SLA beperkt het aantal IOs per seconde (IOPS) voor Azure Storage-Zie [schaalbaarheids-en prestatie doelen voor standaard opslag accounts](../storage/common/scalability-targets-standard-account.md)voor meer informatie.
+Het prestatie knelpunt van een cluster kan zich voordoen op het opslag niveau. Dit type bottleneck is vaak het gevolg van het *blok keren* van i/o-bewerkingen (invoer/uitvoer), wat er gebeurt wanneer uw actieve taken meer io verzenden dan de opslag service kan verwerken. Deze blok kering maakt een wachtrij met i/o-aanvragen die nog moeten worden verwerkt totdat de huidige IOs is verwerkt. De blokken zijn vanwege *opslag beperking*, wat geen fysieke limiet is, maar een limiet die door de opslag service wordt opgelegd door een Service Level Agreement (Sla). Deze limiet zorgt ervoor dat er geen enkele client of Tenant de service in beslag kan nemen. De SLA beperkt het aantal IOs per seconde (IOPS) voor Azure Storage-Zie [schaalbaarheids-en prestatie doelen voor standaard opslag accounts](../storage/common/scalability-targets-standard-account.md)voor meer informatie.
 
 Als u Azure Storage gebruikt, raadpleegt u voor meer informatie over het bewaken van problemen met betrekking tot opslag, zoals beperking, het [controleren, diagnosticeren en probleem oplossing van Microsoft Azure Storage](../storage/common/storage-monitoring-diagnosing-troubleshooting.md).
 

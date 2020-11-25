@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 12/06/2017
 ms.custom: devx-track-js
 ms.openlocfilehash: dfd1fe9db54925bc17a53a7686fa34d5ea53cd5a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91614101"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013595"
 ---
 # <a name="host-a-nodejs-application-on-azure-service-fabric"></a>Een Node.js-toepassing hosten in Azure Service Fabric
 
@@ -98,13 +98,13 @@ Selecteer het doelprofiel **PublishProfiles\Cloud.xml**.
 
 Kies een Azure-account waarnaar u wilt implementeren als u dit nog niet hebt gedaan. Als u er nog geen hebt, [meldt u zich er voor een aan][create-account].
 
-Selecteer onder **Verbindingseindpunt** het Service Fabric-cluster waarin u wilt implementeren. Als u er nog geen hebt, selecteert u ** &lt; Nieuw cluster maken. &gt; ..** Hiermee opent u het browser venster voor de Azure Portal. Zie [Een cluster maken in de portal](service-fabric-cluster-creation-via-portal.md#create-cluster-in-the-azure-portal) voor meer informatie. 
+Selecteer onder **Verbindingseindpunt** het Service Fabric-cluster waarin u wilt implementeren. Als u er nog geen hebt, selecteert u **&lt; Nieuw cluster maken. &gt; ..** Hiermee opent u het browser venster voor de Azure Portal. Zie [Een cluster maken in de portal](service-fabric-cluster-creation-via-portal.md#create-cluster-in-the-azure-portal) voor meer informatie. 
 
 Wanneer u de Service Fabric-cluster maakt, zorg er dan voor dat u de **Aangepaste eindpunten** instelt op **80**.
 
 ![Service Fabric-knooppuntconfiguratie met aangepast eindpunt][custom-endpoint]
 
-Het maken van een nieuw Service Fabric-cluster neemt enige tijd in beslag. Zodra de app is gemaakt, gaat u terug naar het dialoog venster publiceren en selecteert u ** &lt; Vernieuwen &gt; **. Het nieuwe cluster wordt vermeld in de vervolgkeuzelijst; selecteer het.
+Het maken van een nieuw Service Fabric-cluster neemt enige tijd in beslag. Zodra de app is gemaakt, gaat u terug naar het dialoog venster publiceren en selecteert u **&lt; Vernieuwen &gt;**. Het nieuwe cluster wordt vermeld in de vervolgkeuzelijst; selecteer het.
 
 Druk op **Publiceren** en wacht tot de implementatie is voltooid.
 

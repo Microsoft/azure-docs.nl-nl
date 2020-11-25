@@ -9,11 +9,11 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/19/2020
 ms.openlocfilehash: 043020abd44bc1f8e671cf386149d6a818136de9
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94700151"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014360"
 ---
 # <a name="create-a-private-endpoint-for-a-secure-connection-to-azure-cognitive-search"></a>Een persoonlijk eind punt maken voor een beveiligde verbinding met Azure Cognitive Search
 
@@ -46,7 +46,7 @@ In deze sectie maakt u een virtueel netwerk en een subnet voor het hosten van de
     | ------- | ----- |
     | Abonnement | Selecteer uw abonnement|
     | Resourcegroep | Selecteer **nieuwe maken**, Voer *myResourceGroup* in en selecteer **OK** . |
-    | Naam | *MyVirtualNetwork* invoeren |
+    | Name | *MyVirtualNetwork* invoeren |
     | Regio | Selecteer de gewenste regio |
     |||
 

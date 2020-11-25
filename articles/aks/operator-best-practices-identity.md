@@ -8,11 +8,11 @@ ms.date: 07/07/2020
 ms.author: jpalma
 author: palma21
 ms.openlocfilehash: a63a756448f9c7202c79c3b4625fc99d4a90dc52
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94682686"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014054"
 ---
 # <a name="best-practices-for-authentication-and-authorization-in-azure-kubernetes-service-aks"></a>Aanbevolen procedures voor verificatie en autorisatie in azure Kubernetes service (AKS)
 

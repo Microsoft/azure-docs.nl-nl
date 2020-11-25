@@ -7,14 +7,14 @@ ms.date: 10/21/2020
 ms.topic: how-to
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 2471a19cf795d969644cb92e23b7a2926f2ee1a9
-ms.sourcegitcommit: 65d518d1ccdbb7b7e1b1de1c387c382edf037850
+ms.openlocfilehash: a5d66e43485ec66b6297ef11ed382e8fb82b7cb3
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94372605"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96014568"
 ---
-# <a name="use-azure-defender-for-container-registries-to-scan-your-images-for-vulnerabilities"></a>Azure Defender gebruiken voor container registers om uw installatie kopieën te scannen op beveiligings problemen
+# <a name="use-azure-defender-for-container-registries-to-scan-your-images-for-vulnerabilities"></a>Azure Defender gebruiken voor containerregisters, om uw installatiekopieën te scannen op beveiligingsproblemen
 
 Op deze pagina wordt uitgelegd hoe u de ingebouwde beveiligings scanner gebruikt om de container installatie kopieën te scannen die zijn opgeslagen in uw op Azure Resource Manager gebaseerde Azure Container Registry.
 
@@ -22,17 +22,7 @@ Wanneer **Azure Defender voor containerregisters** is ingeschakeld, wordt elke i
 
 Wanneer de scanner beveiligings Security Center problemen meldt, Security Center de bevindingen en gerelateerde informatie als aanbevelingen. Daarnaast bevatten de bevindingen gerelateerde informatie zoals herbemiddelings tappen, relevante CVEs, CVSS-scores en meer. U kunt de geïdentificeerde beveiligings problemen weer geven voor een of meer abonnementen of voor een specifiek REGI ster.
 
-## <a name="availability"></a>Beschikbaarheid
-
-|Aspect|Details|
-|----|:----|
-|Releasestatus:|Algemeen verkrijgbaar (GA)|
-|Prijzen:|**Azure Defender voor container registers** wordt gefactureerd, zoals wordt weer gegeven op [de pagina met prijzen](security-center-pricing.md)|
-|Ondersteunde registers en installatie kopieën:|Linux-installatie kopieën in ACR-registers die toegankelijk zijn via het open bare Internet en toegang tot de shell|
-|Niet-ondersteunde registers en installatie kopieën:|Windows-installatie kopieën<br>Persoonlijke registers<br>Registers met toegang beperkt tot een firewall, een service-eind punt of een persoonlijk eind punt, zoals een persoonlijke Azure-koppeling<br>Afbeeldingen met een minimale installatie, zoals [docker](https://hub.docker.com/_/scratch/) -werk afbeeldingen of ' Distroless-installatie kopieën die alleen een toepassing en de runtime-afhankelijkheden bevatten zonder pakket beheer, shell of besturings systeem|
-|Vereiste rollen en machtigingen:|Rol van **beveiligings lezer** en [Azure container Registry lezer](../container-registry/container-registry-roles.md)|
-|Clouds:|![Ja ](./media/icons/yes-icon.png) commerciële Clouds<br>![Ja ](./media/icons/yes-icon.png) US gov alleen de functie scan op push wordt momenteel ondersteund. Meer informatie in [Wanneer worden afbeeldingen gescand?](defender-for-container-registries-introduction.md#when-are-images-scanned)<br>![Geen ](./media/icons/no-icon.png) China gov, andere gov|
-|||
+[!INCLUDE [Defender for container registries availability info](../../includes/security-center-availability-defender-for-container-registries.md)]
 
 
 ## <a name="identify-vulnerabilities-in-images-in-azure-container-registries"></a>Beveiligingsproblemen met installatiekopieën in Azure-containerregisters identificeren 

@@ -12,11 +12,11 @@ ms.topic: tutorial
 ms.date: 06/28/2019
 ms.author: zhchia
 ms.openlocfilehash: b88e618da3f8a23c0517aaeb251e54bf559fc468
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358470"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014513"
 ---
 # <a name="tutorial-configure-dialpad-for-automatic-user-provisioning"></a>Zelfstudie: Dialpad configureren voor automatische gebruikersinrichting
 

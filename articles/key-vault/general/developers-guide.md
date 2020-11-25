@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.date: 10/05/2020
 ms.author: mbaldwin
 ms.openlocfilehash: 596de459b888bb9973aca1c7d72f2f9e24c966eb
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445129"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013969"
 ---
 # <a name="azure-key-vault-developers-guide"></a>Gids voor Azure Key Vault-ontwikkelaars
 
@@ -56,11 +56,11 @@ Key Vault maakt gebruik van Azure AD-verificatie waarvoor Azure AD security prin
 Het is raadzaam beheerde identiteit te gebruiken voor toepassingen die zijn geïmplementeerd in Azure. Als u Azure-Services gebruikt die geen beheerde identiteit ondersteunen of als toepassingen op locatie worden geïmplementeerd, is de [Service-Principal met een certificaat](../../active-directory/develop/howto-create-service-principal-portal.md) een mogelijk alternatief. In dat scenario moet het certificaat worden opgeslagen in Key Vault en vaak worden gedraaid. Service-principals met geheim kunnen worden gebruikt voor ontwikkel-en test omgevingen, en lokaal of in Cloud Shell het gebruik van User Principal wordt aanbevolen.
 
 Aanbevolen beveiligings-principals per omgeving:
-- **Productie omgeving** :
+- **Productie omgeving**:
   - Beheerde identiteit of Service-Principal met een certificaat
-- **Test-en ontwikkelings omgevingen** :
+- **Test-en ontwikkelings omgevingen**:
   - Beheerde identiteit, Service-Principal met certificaat of Service-Principal met geheim
-- **Lokale ontwikkeling** :
+- **Lokale ontwikkeling**:
   - Gebruikers principal of Service-Principal met geheim
 
 De bovenstaande verificaties scenario's worden ondersteund door de **Azure Identity client-bibliotheek** en geïntegreerd met Key Vault sdk's. Azure Identity Library kan worden gebruikt in verschillende omgevingen en platformen zonder uw code te wijzigen. Met Azure-identiteit wordt ook automatisch een verificatie token opgehaald van aangemeld bij Azure-gebruiker met Azure CLI, Visual Studio, Visual Studio code en anderen. 

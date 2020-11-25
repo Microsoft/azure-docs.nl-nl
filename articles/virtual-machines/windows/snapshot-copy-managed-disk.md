@@ -10,11 +10,11 @@ ms.date: 10/08/2018
 ms.author: rogarana
 ms.subservice: disks
 ms.openlocfilehash: c0fddca70ca09f0a3abb3c84672e20a42551ecd5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89322310"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014309"
 ---
 # <a name="create-a-snapshot-using-the-portal-or-powershell"></a>Een moment opname maken met behulp van de portal of Power shell
 
@@ -25,13 +25,13 @@ Als u de moment opname wilt gebruiken om een nieuwe virtuele machine te maken, k
 ## <a name="use-the-azure-portal"></a>Azure Portal gebruiken 
 
 Voer de volgende stappen uit om een moment opname te maken: 
-1.  Selecteer **een resource maken**op de [Azure Portal](https://portal.azure.com).
+1.  Selecteer **een resource maken** op de [Azure Portal](https://portal.azure.com).
 2. Zoek en selecteer de **moment opname**.
 3. Selecteer in het venster **moment opname** **maken**. Het venster **moment opname maken** wordt weer gegeven.
 4. Voer een **naam** in voor de moment opname.
 5. Selecteer een bestaande [resource groep](../../azure-resource-manager/management/overview.md#resource-groups) of voer de naam van een nieuwe in. 
 6. Selecteer de **Locatie** van een Azure-datacenter.  
-7. Voor de **bron schijf**selecteert u de beheerde schijf voor de moment opname.
+7. Voor de **bron schijf** selecteert u de beheerde schijf voor de moment opname.
 8. Het **account type** selecteren dat moet worden gebruikt voor het opslaan van de moment opname. Selecteer **Standard_HDD**, tenzij u wilt dat de moment opname wordt opgeslagen op een hoogwaardige schijf.
 9. Selecteer **Maken**.
 

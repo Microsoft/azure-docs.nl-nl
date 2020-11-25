@@ -6,11 +6,11 @@ ms.topic: conceptual
 description: Hierin worden de procedures beschreven voor het uitvoeren van uw code in azure Kubernetes service met Azure dev Spaces
 keywords: azds. yaml, Azure dev Spaces, dev Spaces, docker, Kubernetes, azure, AKS, Azure Kubernetes service, containers
 ms.openlocfilehash: 1cace325f9415d46210636e5c04cc2d75589cc11
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91975464"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014428"
 ---
 # <a name="how-running-your-code-with-azure-dev-spaces-works"></a>Hoe u uw code uitvoert met Azure dev Spaces werkt
 
@@ -64,13 +64,13 @@ Terwijl een service wordt uitgevoerd, kunnen Azure dev Spaces de service bijwerk
 
 Bepaalde project bestanden met statische activa, zoals HTML-, CSS-en cshtml-bestanden, kunnen rechtstreeks in de container van de toepassing worden bijgewerkt zonder dat er iets opnieuw hoeft te worden opgestart. Als een statisch activum wordt gewijzigd, wordt het nieuwe bestand gesynchroniseerd met de ontwikkel ruimte en vervolgens gebruikt door de container die wordt uitgevoerd.
 
-Wijzigingen in bestanden zoals bron code-of toepassings configuratie bestanden kunnen worden toegepast door het proces van de toepassing opnieuw te starten binnen de container die wordt uitgevoerd. Zodra deze bestanden zijn gesynchroniseerd, wordt het proces van de toepassing opnieuw gestart binnen de container die wordt uitgevoerd met behulp van het *devhostagent* -proces. Bij het maken van de container van de toepassing vervangt de controller de opstart opdracht voor de toepassing met een ander proces met de naam *devhostagent*. Het daad werkelijke proces van de toepassing wordt vervolgens als een onderliggend proces uitgevoerd onder *devhostagent*en de uitvoer ervan wordt door gegeven met behulp van de uitvoer van *devhostagent*. Het *devhostagent* -proces maakt ook deel uit van dev Spaces en kan opdrachten uitvoeren in de container die wordt uitgevoerd namens ontwikkel ruimten. Bij het opnieuw opstarten *devhostagent*:
+Wijzigingen in bestanden zoals bron code-of toepassings configuratie bestanden kunnen worden toegepast door het proces van de toepassing opnieuw te starten binnen de container die wordt uitgevoerd. Zodra deze bestanden zijn gesynchroniseerd, wordt het proces van de toepassing opnieuw gestart binnen de container die wordt uitgevoerd met behulp van het *devhostagent* -proces. Bij het maken van de container van de toepassing vervangt de controller de opstart opdracht voor de toepassing met een ander proces met de naam *devhostagent*. Het daad werkelijke proces van de toepassing wordt vervolgens als een onderliggend proces uitgevoerd onder *devhostagent* en de uitvoer ervan wordt door gegeven met behulp van de uitvoer van *devhostagent*. Het *devhostagent* -proces maakt ook deel uit van dev Spaces en kan opdrachten uitvoeren in de container die wordt uitgevoerd namens ontwikkel ruimten. Bij het opnieuw opstarten *devhostagent*:
 
 * Stopt het huidige proces of de processen die zijn gekoppeld aan de toepassing
 * De toepassing opnieuw samen stellen
 * Hiermee worden de processen die zijn gekoppeld aan de toepassing opnieuw gestart
 
-De manier waarop *devhostagent* de voor gaande stappen uitvoert, wordt [geconfigureerd in `azds.yaml` ][azds-yaml-section].
+De manier waarop *devhostagent* de voor gaande stappen uitvoert, wordt [geconfigureerd in `azds.yaml`][azds-yaml-section].
 
 Voor updates voor Project bestanden zoals Dockerfiles, csproj-bestanden of een deel van de helm-grafiek moet de container van de toepassing opnieuw worden opgebouwd en geïmplementeerd. Wanneer een van deze bestanden wordt gesynchroniseerd met de dev-ruimte, voert de controller de [helm-upgrade opdracht uit][helm-upgrade] en wordt de container van de toepassing opnieuw opgebouwd en geïmplementeerd.
 
@@ -132,11 +132,11 @@ Met de eigenschap *install. set* kunt u een of meer waarden configureren die u w
 
 In het bovenstaande voor beeld vertelt de eigenschap *install. set. replicaCount* aan de controller hoeveel exemplaren van uw toepassing moeten worden uitgevoerd in uw dev-ruimte. Afhankelijk van uw scenario kunt u deze waarde verg Roten, maar dit heeft gevolgen voor het koppelen van een fout opsporingsprogramma aan de pod van uw toepassing. Zie het [artikel over probleem oplossing][troubleshooting]voor meer informatie.
 
-In de gegenereerde helm-grafiek is de container installatie kopie ingesteld op *{{. Values. image. repository}}: {{. Values. image. tag}}*. In het bestand wordt de `azds.yaml` eigenschap *install. set. image. tag* gedefinieerd als *$ (tag)* standaard, die wordt gebruikt als de waarde voor *{{. Values. image. tag}}*. Door de eigenschap *install. set. image. tag* op deze manier in te stellen, kan de container installatie kopie voor uw toepassing op een unieke manier worden gelabeld wanneer Azure-ontwikkel ruimten worden uitgevoerd. In dit specifieke geval wordt de afbeelding gelabeld als * \<value from image.repository> : $ (tag)*. U moet de variabele *$ (tag)* gebruiken als de waarde   *install. set. image. tag* , zodat ontwikkel ruimten de container herkennen en vinden in het AKS-cluster.
+In de gegenereerde helm-grafiek is de container installatie kopie ingesteld op *{{. Values. image. repository}}: {{. Values. image. tag}}*. In het bestand wordt de `azds.yaml` eigenschap *install. set. image. tag* gedefinieerd als *$ (tag)* standaard, die wordt gebruikt als de waarde voor *{{. Values. image. tag}}*. Door de eigenschap *install. set. image. tag* op deze manier in te stellen, kan de container installatie kopie voor uw toepassing op een unieke manier worden gelabeld wanneer Azure-ontwikkel ruimten worden uitgevoerd. In dit specifieke geval wordt de afbeelding gelabeld als *\<value from image.repository> : $ (tag)*. U moet de variabele *$ (tag)* gebruiken als de waarde   *install. set. image. tag* , zodat ontwikkel ruimten de container herkennen en vinden in het AKS-cluster.
 
 In het bovenstaande voor beeld `azds.yaml` definieert u *install. set. ingress. hosts*. De eigenschap *install. set. ingress. hosts* definieert een indeling voor de hostnaam voor open bare eind punten. Deze eigenschap gebruikt ook *$ (spacePrefix)*, *$ (rootSpacePrefix)* en *$ (hostSuffix)*. Dit zijn de waarden die door de controller worden verschaft.
 
-*$ (SpacePrefix)* is de naam van de onderliggende dev-ruimte, waarbij de notatie Space naam *. s*wordt gebruikt. *$ (RootSpacePrefix)* is de naam van de bovenliggende ruimte. Als *azureuser* bijvoorbeeld een onderliggend gebied *is, is*de waarde voor *$ (rootSpacePrefix)* *standaard* en is de waarde van *$ (spacePrefix)* *azureuser. s*. Als de ruimte geen onderliggende ruimte is, *$ (spacePrefix)* is leeg. Als de *standaard* ruimte bijvoorbeeld geen bovenliggende ruimte heeft, is de waarde voor *$ (rootSpacePrefix)* *standaard* en is de waarde van *$ (spacePrefix)* leeg. *$ (HostSuffix)* is een DNS-achtervoegsel dat verwijst naar de Azure dev Spaces-controller die wordt uitgevoerd in uw AKS-cluster. Dit DNS-achtervoegsel komt bijvoorbeeld overeen met een DNS-vermelding met Joker tekens * \* . RANDOM_VALUE. Eus. azds. io*, dat is gemaakt toen de Azure dev Spaces-controller werd toegevoegd aan uw AKS-cluster.
+*$ (SpacePrefix)* is de naam van de onderliggende dev-ruimte, waarbij de notatie Space naam *. s* wordt gebruikt. *$ (RootSpacePrefix)* is de naam van de bovenliggende ruimte. Als *azureuser* bijvoorbeeld een onderliggend gebied *is, is* de waarde voor *$ (rootSpacePrefix)* *standaard* en is de waarde van *$ (spacePrefix)* *azureuser. s*. Als de ruimte geen onderliggende ruimte is, *$ (spacePrefix)* is leeg. Als de *standaard* ruimte bijvoorbeeld geen bovenliggende ruimte heeft, is de waarde voor *$ (rootSpacePrefix)* *standaard* en is de waarde van *$ (spacePrefix)* leeg. *$ (HostSuffix)* is een DNS-achtervoegsel dat verwijst naar de Azure dev Spaces-controller die wordt uitgevoerd in uw AKS-cluster. Dit DNS-achtervoegsel komt bijvoorbeeld overeen met een DNS-vermelding met Joker tekens *\* . RANDOM_VALUE. Eus. azds. io*, dat is gemaakt toen de Azure dev Spaces-controller werd toegevoegd aan uw AKS-cluster.
 
 In het bovenstaande `azds.yaml` bestand kunt u ook *install. set. ingress. hosts* bijwerken om de hostnaam van uw toepassing te wijzigen. Bijvoorbeeld, als u de hostnaam van uw toepassing wilt vereenvoudigen van *$ (spacePrefix) $ (rootSpacePrefix) webfrontend $ (hostSuffix)* naar $ ( *spacePrefix) $ (rootSpacePrefix) Web $ (hostSuffix*).
 

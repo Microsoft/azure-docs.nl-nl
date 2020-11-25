@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 11/21/2016
 ms.author: manuaery
 ms.openlocfilehash: 79e3ce8c1605e5d68ff44901f53854d2f5f10abc
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93129946"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014377"
 ---
 # <a name="use-storsimple-device-manager-service-to-manage-volumes-on-the-storsimple-virtual-array"></a>Gebruik de StorSimple-apparaatbeheerfunctie om volumes te beheren in de virtuele StorSimple-matrix
 
@@ -33,8 +33,8 @@ De StorSimple-Apparaatbeheer-service is een uitbrei ding in de Azure Portal waar
 
 StorSimple volumes kunnen zijn:
 
-* **Lokaal vastgemaakt** : gegevens in deze volumes blijven te allen tijde op de matrix en worden niet overgelopen naar de Cloud.
-* **Gelaagd** : gegevens in deze volumes kunnen overlopen naar de Cloud. Wanneer u een gelaagd volume maakt, wordt ongeveer 10% van de ruimte ingericht op de lokale laag en wordt 90% van de ruimte ingericht in de Cloud. Als u bijvoorbeeld een volume van 1 TB hebt ingericht, bevindt 100 GB zich in de lokale ruimte en wordt 900 GB in de Cloud gebruikt wanneer de gegevens lagen. Dit houdt in dat als u alle lokale ruimte op het apparaat uitvoert, u geen gelaagd volume kunt inrichten (omdat de 10% vereiste voor de lokale laag niet beschikbaar is).
+* **Lokaal vastgemaakt**: gegevens in deze volumes blijven te allen tijde op de matrix en worden niet overgelopen naar de Cloud.
+* **Gelaagd**: gegevens in deze volumes kunnen overlopen naar de Cloud. Wanneer u een gelaagd volume maakt, wordt ongeveer 10% van de ruimte ingericht op de lokale laag en wordt 90% van de ruimte ingericht in de Cloud. Als u bijvoorbeeld een volume van 1 TB hebt ingericht, bevindt 100 GB zich in de lokale ruimte en wordt 900 GB in de Cloud gebruikt wanneer de gegevens lagen. Dit houdt in dat als u alle lokale ruimte op het apparaat uitvoert, u geen gelaagd volume kunt inrichten (omdat de 10% vereiste voor de lokale laag niet beschikbaar is).
 
 ### <a name="provisioned-capacity"></a>Ingerichte capaciteit
 Raadpleeg de volgende tabel voor de maximale ingerichte capaciteit voor elk volume type.
@@ -55,7 +55,7 @@ Een volume bestaat uit een reeks kenmerken:
 
 * **Volume naam** : een beschrijvende naam die uniek moet zijn en het volume kan identificeren.
 * **Status** : kan online of offline zijn. Als een volume offline is, is het niet zichtbaar voor initia tors (servers) die toegang hebben tot het gebruik van het volume.
-* **Type** – geeft aan of het volume wordt **gelaagd** (de standaard instelling) of **lokaal is vastgemaakt** .
+* **Type** – geeft aan of het volume wordt **gelaagd** (de standaard instelling) of **lokaal is vastgemaakt**.
 * **Capaciteit** – Hiermee geeft u de hoeveelheid gegevens die wordt gebruikt in vergelijking met de totale hoeveelheid gegevens die kan worden opgeslagen door de initiator (Server).
 * **Back-up** : in het geval van de virtuele matrix StorSimple worden alle volumes automatisch ingeschakeld voor back-up.
 * **Verbonden hosts** : Hiermee geeft u de initia tors (servers) op die toegang tot dit volume hebben.
@@ -77,13 +77,13 @@ Volg de instructies in deze zelf studie om de volgende taken uit te voeren:
 2. Ga als volgt te werk op de Blade **volume toevoegen** :
    
    * Voer in het veld **volume naam** een unieke naam in voor het volume. De naam moet een teken reeks zijn die tussen de 3 en 127 tekens bevat.
-   * Geef in de vervolg keuzelijst **type** de keuze aan of u een **gelaagd** of **lokaal vastgemaakt** volume wilt maken. Voor werk belastingen waarvoor lokale garanties, lage latenties en hogere prestaties zijn vereist, selecteert u **lokaal vastgemaakt volume** . Voor alle andere gegevens selecteert u **gelaagd** volume.
+   * Geef in de vervolg keuzelijst **type** de keuze aan of u een **gelaagd** of **lokaal vastgemaakt** volume wilt maken. Voor werk belastingen waarvoor lokale garanties, lage latenties en hogere prestaties zijn vereist, selecteert u **lokaal vastgemaakt volume**. Voor alle andere gegevens selecteert u **gelaagd** volume.
    * Geef in het veld **capaciteit** de grootte van het volume op. Een gelaagd volume moet tussen 500 GB en 5 TB liggen en een lokaal vastgemaakt volume moet tussen 50 GB en 500 GB liggen.
-   * * Klik op **verbonden hosts** , selecteer een Access Control record (ACR) dat overeenkomt met de iSCSI-initiator die u wilt verbinden met dit volume en klik vervolgens op **selecteren** .
-3. Als u een nieuwe verbonden host wilt toevoegen, klikt u op **Nieuw toevoegen** , voert u een naam in voor de host en de iSCSI QUALIFIED name (IQN), en klikt u vervolgens op **toevoegen** .
+   * * Klik op **verbonden hosts**, selecteer een Access Control record (ACR) dat overeenkomt met de iSCSI-initiator die u wilt verbinden met dit volume en klik vervolgens op **selecteren**.
+3. Als u een nieuwe verbonden host wilt toevoegen, klikt u op **Nieuw toevoegen**, voert u een naam in voor de host en de iSCSI QUALIFIED name (IQN), en klikt u vervolgens op **toevoegen**.
    
     ![Scherm afbeelding toont het deel venster verbonden hosts waar u nieuwe kunt toevoegen.](./media/storsimple-virtual-array-manage-volumes/volume-add-acr.png)
-4. Wanneer u klaar bent met het configureren van het volume, klikt u op **maken** . Er wordt een volume gemaakt met de opgegeven instellingen en er wordt een melding weer gegeven over het maken van dezelfde. Standaard wordt back-up ingeschakeld voor het volume.
+4. Wanneer u klaar bent met het configureren van het volume, klikt u op **maken**. Er wordt een volume gemaakt met de opgegeven instellingen en er wordt een melding weer gegeven over het maken van dezelfde. Standaard wordt back-up ingeschakeld voor het volume.
 5. Ga naar de Blade **volumes** om te controleren of het volume is gemaakt. Het volume wordt weer gegeven.
    
     ![Volume maken is voltooid](./media/storsimple-virtual-array-manage-volumes/volume-success.png)
@@ -135,7 +135,7 @@ Voer de volgende stappen uit om een volume te verwijderen.
    
     ![Volume verwijderen](./media/storsimple-virtual-array-manage-volumes/volume-delete.png)
 3. Controleer de status van het volume dat u wilt verwijderen. Als het volume dat u wilt verwijderen niet offline is, moet u het eerst offline halen. Volg hiervoor de stappen in [een volume offline halen](#take-a-volume-offline).
-4. Wanneer u wordt gevraagd om bevestiging op de Blade **verwijderen** , accepteert u de bevestiging en klikt u op **verwijderen** . Het volume wordt nu verwijderd en op de Blade **volumes** wordt de bijgewerkte lijst met volumes binnen de virtuele matrix weer gegeven.
+4. Wanneer u wordt gevraagd om bevestiging op de Blade **verwijderen** , accepteert u de bevestiging en klikt u op **verwijderen**. Het volume wordt nu verwijderd en op de Blade **volumes** wordt de bijgewerkte lijst met volumes binnen de virtuele matrix weer gegeven.
 
 ## <a name="next-steps"></a>Volgende stappen
 

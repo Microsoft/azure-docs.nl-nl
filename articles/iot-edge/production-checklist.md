@@ -12,11 +12,11 @@ ms.custom:
 - amqp
 - mqtt
 ms.openlocfilehash: 7cabae837656611813d44017ce2e1112f06066ef
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89669601"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013289"
 ---
 # <a name="prepare-to-deploy-your-iot-edge-solution-in-production"></a>De implementatie van uw IoT Edge oplossing in productie voorbereiden
 
@@ -132,7 +132,7 @@ De standaard waarde van de para meter timeToLiveSecs is 7200 seconden, die twee 
 
 ### <a name="do-not-use-debug-versions-of-module-images"></a>Geen debug-versies van module-installatie kopieën gebruiken
 
-Wanneer u overstapt van test scenario's naar productie scenario's, moet u de configuraties voor fout opsporing verwijderen uit implementatie manifesten. Controleer of geen enkele module installatie kopieën in de implementatie manifesten het achtervoegsel ** \. debug** hebben. Als u opties voor het maken hebt toegevoegd om poorten in de modules voor fout opsporing weer te geven, moet u deze opties voor maken ook verwijderen.
+Wanneer u overstapt van test scenario's naar productie scenario's, moet u de configuraties voor fout opsporing verwijderen uit implementatie manifesten. Controleer of geen enkele module installatie kopieën in de implementatie manifesten het achtervoegsel **\. debug** hebben. Als u opties voor het maken hebt toegevoegd om poorten in de modules voor fout opsporing weer te geven, moet u deze opties voor maken ook verwijderen.
 
 ## <a name="container-management"></a>Containerbeheer
 
@@ -163,7 +163,7 @@ Als u wilt verifiëren met een Service-Principal, geeft u de Service-Principal-I
 * Geef voor het wacht woord of client geheim het wacht woord voor de Service-Principal op.
 
 > [!NOTE]
-> Nadat u een verbeterde beveiligings verificatie hebt geïmplementeerd, schakelt u de **gebruikers instelling beheerder** uit zodat de standaard gebruikers naam en het wacht woord niet meer beschikbaar zijn. Selecteer in het container register in de Azure Portal in het linkerdeel venster onder **instellingen**de optie **toegangs sleutels**.
+> Nadat u een verbeterde beveiligings verificatie hebt geïmplementeerd, schakelt u de **gebruikers instelling beheerder** uit zodat de standaard gebruikers naam en het wacht woord niet meer beschikbaar zijn. Selecteer in het container register in de Azure Portal in het linkerdeel venster onder **instellingen** de optie **toegangs sleutels**.
 
 ### <a name="use-tags-to-manage-versions"></a>Tags gebruiken om versies te beheren
 

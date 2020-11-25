@@ -6,11 +6,11 @@ ms.topic: include
 ms.date: 02/12/2020
 ms.author: mimart
 ms.openlocfilehash: d43b879057001d62ea72bd2e011ad52957d47470
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "78189010"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95990875"
 ---
 ## <a name="sample-templates"></a>Voorbeeldsjablonen
 U kunt hier voorbeeld sjablonen voor UI-aanpassing vinden:

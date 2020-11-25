@@ -5,12 +5,12 @@ ms.subservice: B2C
 ms.topic: include
 ms.date: 03/19/2020
 ms.author: mimart
-ms.openlocfilehash: 9b660bf20c90a84780175e70573c96a0ce1b0b7d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4cb4cdef227c786b12790903037fdc02649592e3
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91377531"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95990873"
 ---
 ## <a name="use-custom-page-content"></a>Aangepaste pagina-inhoud gebruiken
 
@@ -46,7 +46,7 @@ In plaats van uw aangepaste pagina-inhoud helemaal zelf te maken, kunt u de stan
 
 De volgende tabel bevat de standaard pagina-inhoud die wordt verschaft door Azure AD B2C. Down load de bestanden en gebruik deze als uitgangs punt voor het maken van uw eigen aangepaste pagina's.
 
-| Standaard pagina | Beschrijving | ID van de inhouds definitie<br/>(alleen aangepast beleid) |
+| Standaard pagina | Description | ID van de inhouds definitie<br/>(alleen aangepast beleid) |
 |:-----------------------|:--------|-------------|
 | [exception.html](https://login.microsoftonline.com/static/tenant/default/exception.cshtml) | **Fout pagina**. Deze pagina wordt weer gegeven wanneer er een uitzonde ring of een fout wordt aangetroffen. | *API. error* |
 | [selfasserted.html](https://login.microsoftonline.com/static/tenant/default/selfAsserted.cshtml) |  **Zelfbevestigende pagina**. Gebruik dit bestand als aangepaste pagina-inhoud voor een aanmeldings pagina voor een sociaal account, een aanmeldings pagina voor een lokaal account, een aanmeldings pagina voor het lokale account, het opnieuw instellen van wacht woorden en meer. Het formulier kan verschillende invoer besturings elementen bevatten, zoals een tekstinvoervak, een vak voor het invoeren van een wacht woord, een keuze rondje, vervolg keuze vakjes en meervoudige selectie vakjes. | *API. localaccountsignin*, *API. localaccountsignup*, *API. localaccountpasswordreset*, *API. selfasserted* |
@@ -56,7 +56,7 @@ De volgende tabel bevat de standaard pagina-inhoud die wordt verschaft door Azur
 
 ## <a name="hosting-the-page-content"></a>De pagina-inhoud hosten
 
-Wanneer u uw eigen HTML-en CSS-bestanden gebruikt om de gebruikers interface aan te passen, moet u de inhoud van de gebruikers interface hosten op een openbaar beschikbaar HTTPS-eind punt dat CORS ondersteunt. Bijvoorbeeld [Azure Blob Storage](../articles/storage/blobs/storage-blobs-introduction.md), [Azure-app Services](/azure/app-service/), webservers, cdn's, AWS S3 of bestands share systemen.
+Wanneer u uw eigen HTML-en CSS-bestanden gebruikt om de gebruikers interface aan te passen, moet u de inhoud van de gebruikers interface hosten op een openbaar beschikbaar HTTPS-eind punt dat CORS ondersteunt. Bijvoorbeeld [Azure Blob Storage](../articles/storage/blobs/storage-blobs-introduction.md), [Azure-app Services](../articles/app-service/index.yml), webservers, cdn's, AWS S3 of bestands share systemen.
 
 ## <a name="guidelines-for-using-custom-page-content"></a>Richt lijnen voor het gebruik van aangepaste pagina-inhoud
 
@@ -114,17 +114,17 @@ In dit artikel gebruiken we Azure Blob-opslag om onze inhoud te hosten. U kunt e
 
 Als u uw HTML-inhoud in Blob Storage wilt hosten, voert u de volgende stappen uit:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Selecteer in het **hub** -menu de optie **Nieuw**  >  **opslag**  >  **opslag account**.
 1. Selecteer een **abonnement** voor uw opslag account.
 1. Maak een **resource groep** of selecteer een bestaande.
 1. Voer een unieke **naam** in voor uw opslag account.
 1. Selecteer de **geografische locatie** voor uw opslag account.
-1. **Implementatie model** kan **Resource Manager**blijven.
-1. **Prestaties** kunnen **standaard**blijven.
+1. **Implementatie model** kan **Resource Manager** blijven.
+1. **Prestaties** kunnen **standaard** blijven.
 1. Wijzig het **type account** in **Blob Storage**.
-1. **Replicatie** kan **Ra-GRS**blijven.
-1. De **toegangs laag** kan **Hot**blijven.
+1. **Replicatie** kan **Ra-GRS** blijven.
+1. De **toegangs laag** kan **Hot** blijven.
 1. Selecteer **controleren + maken** om het opslag account te maken.
     Nadat de implementatie is voltooid, wordt de pagina **opslag account** automatisch geopend.
 
@@ -134,8 +134,8 @@ Als u een open bare container in Blob Storage wilt maken, voert u de volgende st
 
 1. Onder **BLOB service** in het linkermenu selecteert u **blobs**.
 1. Selecteer **+ container**.
-1. Voer *basis*in bij **naam**. De naam kan een naam zijn van uw keuze, bijvoorbeeld *Contoso*, maar in dit voor beeld wordt het *hoofd* gebruikt voor eenvoud.
-1. Selecteer **BLOB**voor **openbaar toegangs niveau**en klik vervolgens op **OK**.
+1. Voer *basis* in bij **naam**. De naam kan een naam zijn van uw keuze, bijvoorbeeld *Contoso*, maar in dit voor beeld wordt het *hoofd* gebruikt voor eenvoud.
+1. Selecteer **BLOB** voor **openbaar toegangs niveau** en klik vervolgens op **OK**.
 1. Selecteer **hoofd** om de nieuwe container te openen.
 
 #### <a name="22-upload-your-custom-page-content-files"></a>2,2 uw aangepaste pagina met inhouds bestanden uploaden
@@ -143,7 +143,7 @@ Als u een open bare container in Blob Storage wilt maken, voert u de volgende st
 1. Selecteer **Uploaden**.
 1. Selecteer het mappictogram naast **een bestand selecteren**.
 1. Navigeer naar en selecteer **customize-ui.html**, die u eerder hebt gemaakt in de sectie UI-aanpassing van de pagina.
-1. Als u wilt uploaden naar een submap, vouwt u **Geavanceerd** uit en voert u de naam van een map in **uploaden naar map**in.
+1. Als u wilt uploaden naar een submap, vouwt u **Geavanceerd** uit en voert u de naam van een map in **uploaden naar map** in.
 1. Selecteer **Uploaden**.
 1. Selecteer de **customize-ui.html** -blob die u hebt geüpload.
 1. Selecteer rechts van het tekstvak **URL** het pictogram **kopiëren naar klem bord** om de URL naar het klem bord te kopiëren.
@@ -155,7 +155,7 @@ Configureer de Blob-opslag voor cross-Origin-resource delen door de volgende sta
 
 1. Selecteer in het menu de optie **CORS**.
 1. Geef `https://your-tenant-name.b2clogin.com` op bij **Toegestane oorsprongen**. Vervang `your-tenant-name` door de naam van uw Azure AD B2C-tenant. Bijvoorbeeld `https://fabrikam.b2clogin.com`. Gebruik alleen kleine letters bij het invoeren van de naam van uw Tenant.
-1. Voor **toegestane methoden**selecteert u beide `GET` en `OPTIONS` .
+1. Voor **toegestane methoden** selecteert u beide `GET` en `OPTIONS` .
 1. Voer bij **Toegestane headers** een asterisk (*) in.
 1. Voer bij **Zichtbare headers** een asterisk (*) in.
 1. Voer bij **Maximumleeftijd** 200 in.

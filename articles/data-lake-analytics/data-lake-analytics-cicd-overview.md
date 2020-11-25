@@ -8,11 +8,11 @@ ms.service: data-lake-analytics
 ms.topic: how-to
 ms.date: 09/14/2018
 ms.openlocfilehash: 95b638b85e0746d2995488f2a28a5fb2512b1063
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92219323"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96015261"
 ---
 # <a name="how-to-set-up-a-cicd-pipeline-for-azure-data-lake-analytics"></a>Een CI/CD-pijp lijn voor Azure Data Lake Analytics instellen  
 
@@ -83,7 +83,7 @@ De argumenten definitie en waarden zijn als volgt:
 
   - **SyntaxCheck**. In de SyntaxCheck-modus worden code-behind-bestanden eerst samengevoegd in het U-SQL-script. Vervolgens compileert het U-SQL-script om uw code te valideren.
 
-- **Data root = \<DataRoot path> **. Data root is alleen nodig voor de modus SyntaxCheck. Wanneer het script wordt gebouwd met de modus SyntaxCheck, controleert MSBuild de verwijzingen naar database objecten in het script. Voordat U bouwt, stelt U een overeenkomende lokale omgeving in die de objecten bevat waarnaar wordt verwezen vanuit de U-SQL database in de map Data root van de computer bouwen. U kunt deze database afhankelijkheden ook beheren door te [verwijzen naar een U-SQL database-project](data-lake-analytics-data-lake-tools-develop-usql-database.md#reference-a-u-sql-database-project). MSBuild controleert alleen database object verwijzingen, geen bestanden.
+- **Data root = \<DataRoot path>**. Data root is alleen nodig voor de modus SyntaxCheck. Wanneer het script wordt gebouwd met de modus SyntaxCheck, controleert MSBuild de verwijzingen naar database objecten in het script. Voordat U bouwt, stelt U een overeenkomende lokale omgeving in die de objecten bevat waarnaar wordt verwezen vanuit de U-SQL database in de map Data root van de computer bouwen. U kunt deze database afhankelijkheden ook beheren door te [verwijzen naar een U-SQL database-project](data-lake-analytics-data-lake-tools-develop-usql-database.md#reference-a-u-sql-database-project). MSBuild controleert alleen database object verwijzingen, geen bestanden.
 
 - **EnableDeployment = True** of **False**. EnableDeployment geeft aan of het is toegestaan om U-SQL-data bases te implementeren tijdens het bouw proces. Als u verwijst naar een U-SQL database project en de database objecten in uw U-SQL-script gebruikt, stelt u deze para meter in op **waar**.
 
@@ -463,9 +463,9 @@ Voer de volgende stappen uit om een implementatie taak voor een data base in te 
 | Parameter | Beschrijving | Standaardwaarde | Vereist |
 |---------|-----------|-------------|--------|
 |Pakket|Het pad van het U-SQL database implementatie pakket dat moet worden geïmplementeerd.|null|true|
-|Database|De naam van de data base die moet worden geïmplementeerd of gemaakt.|model|false|
+|Database|De naam van de data base die moet worden geïmplementeerd of gemaakt.|model|onjuist|
 |Logbestand|Het pad van het bestand voor logboek registratie. Standaard ingesteld op standaard waarde (console).|null|false|
-|Logniveau|Logboek niveau: uitgebreid, normaal, waarschuwing of fout.|LogLevel. Normal|false|
+|Logniveau|Logboek niveau: uitgebreid, normaal, waarschuwing of fout.|LogLevel. Normal|onjuist|
 
 #### <a name="parameter-for-local-deployment"></a>Para meter voor lokale implementatie
 
@@ -482,12 +482,12 @@ Voer de volgende stappen uit om een implementatie taak voor een data base in te 
 |SubscriptionId|De Azure-abonnements-ID voor het Azure Data Lake Analytics-account.|null|true|
 |Tenant|De naam van de Tenant is de domein naam van de Azure Active Directory (Azure AD). Zoek het op de pagina abonnements beheer in het Azure Portal.|null|true|
 |AzureSDKPath|Het pad voor het zoeken naar afhankelijke assembly's in de Azure SDK.|null|true|
-|Interactief|Hiermee wordt aangegeven of interactieve modus moet worden gebruikt voor verificatie.|false|false|
+|Interactief|Hiermee wordt aangegeven of interactieve modus moet worden gebruikt voor verificatie.|onjuist|onjuist|
 |ClientId|De Azure AD-toepassings-ID die is vereist voor niet-interactieve verificatie.|null|Vereist voor niet-interactieve verificatie.|
 |Geheim|Het geheim of het wacht woord voor niet-interactieve verificatie. Deze moet alleen worden gebruikt in een vertrouwde en beveiligde omgeving.|null|Vereist voor niet-interactieve verificatie, of gebruik SecreteFile.|
 |SecreteFile|Het bestand slaat het geheim of het wacht woord voor niet-interactieve verificatie op. Zorg ervoor dat het alleen leesbaar is voor de huidige gebruiker.|null|Vereist voor niet-interactieve verificatie, of gebruik geheim.|
 |CERT|Het bestand bespaart X. 509-certificering voor niet-interactieve verificatie. De standaard instelling is het gebruik van verificatie van client geheim.|null|false|
-| JobPrefix | Het voor voegsel voor de implementatie van de data base van een U-SQL DDL-taak. | Deploy_ + DateTime. nu | false |
+| JobPrefix | Het voor voegsel voor de implementatie van de data base van een U-SQL DDL-taak. | Deploy_ + DateTime. nu | onjuist |
 
 ## <a name="next-steps"></a>Volgende stappen
 

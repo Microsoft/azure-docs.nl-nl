@@ -10,11 +10,11 @@ author: likebupt
 ms.author: keli19
 ms.date: 09/09/2019
 ms.openlocfilehash: 99fb41542dff28997438881abad71da11e927a78
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90898804"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014887"
 ---
 # <a name="clip-values"></a>Waarden inperken
 
@@ -34,9 +34,9 @@ Als u knip methoden of andere criteria op sommige kolommen wilt Toep assen, moet
 
 1.  Voeg de module **clip values** toe aan de pijp lijn en verbind deze met de gegevensset die u wilt wijzigen. U kunt deze module vinden onder **gegevens transformatie**, in de categorie **schalen en verminderen** . 
   
-1.  Gebruik in de **lijst met kolommen**de kolom kiezer om de kolommen te kiezen waarop **clip waarden** worden toegepast.  
+1.  Gebruik in de **lijst met kolommen** de kolom kiezer om de kolommen te kiezen waarop **clip waarden** worden toegepast.  
   
-1.  Kies een van de volgende opties in de vervolg keuzelijst om **drempel waarden**in te stellen. Deze opties bepalen hoe u de boven-en ondergrens instelt voor acceptabele waarden versus waarden die moeten worden afgekapt.  
+1.  Kies een van de volgende opties in de vervolg keuzelijst om **drempel waarden** in te stellen. Deze opties bepalen hoe u de boven-en ondergrens instelt voor acceptabele waarden versus waarden die moeten worden afgekapt.  
   
     - **ClipPeaks**: wanneer u waarden bijsnijden op pieken, geeft u alleen een bovenste grens op. Waarden die groter zijn dan die grens waarde worden vervangen.
   
@@ -52,11 +52,11 @@ Als u knip methoden of andere criteria op sommige kolommen wilt Toep assen, moet
 
     Kies voor elk type drempel een **constante** of een **percentiel**.
 
-1. Als u **constant**selecteert, typt u de maximum-of minimum waarde in het tekstvak. Stel dat u weet dat de waarde 999 is gebruikt als een tijdelijke aanduiding. U kunt een **constante** kiezen voor de bovenste drempel waarde, en 999 invoeren in **constantewaarde voor bovengrens**.
+1. Als u **constant** selecteert, typt u de maximum-of minimum waarde in het tekstvak. Stel dat u weet dat de waarde 999 is gebruikt als een tijdelijke aanduiding. U kunt een **constante** kiezen voor de bovenste drempel waarde, en 999 invoeren in **constantewaarde voor bovengrens**.
   
-1. Als u **percentiel**kiest, beperkt u de kolom waarden tot een percentiel bereik. 
+1. Als u **percentiel** kiest, beperkt u de kolom waarden tot een percentiel bereik. 
 
-    Stel bijvoorbeeld dat u alleen de waarden in het bereik van 10-80 percentiel wilt blijven gebruiken en alle andere wilt vervangen. Kies **percentiel**en typ vervolgens 10 voor **percentiel waarde voor onderste drempel**en typ 80 voor **percentiel waarde voor hoogste drempel**. 
+    Stel bijvoorbeeld dat u alleen de waarden in het bereik van 10-80 percentiel wilt blijven gebruiken en alle andere wilt vervangen. Kies **percentiel** en typ vervolgens 10 voor **percentiel waarde voor onderste drempel** en typ 80 voor **percentiel waarde voor hoogste drempel**. 
 
     Zie de sectie over [percentielen](#examples-for-clipping-using-percentiles) voor een aantal voor beelden van het gebruik van percentiel bereiken.  
   
@@ -86,7 +86,7 @@ Als u knip methoden of andere criteria op sommige kolommen wilt Toep assen, moet
   
 1.  Verzend de pijp lijn.  
   
-    Klik met de rechter muisknop op de module **clip waarden** , selecteer **visualiseren** of selecteer de module en schakel over naar het tabblad **uitvoer** in het rechterdeel venster, klik op het histogram pictogram in de **poort uitvoer**om de waarden te controleren en ervoor te zorgen dat de knip bewerking aan uw verwachtingen voldoet.  
+    Klik met de rechter muisknop op de module **clip waarden** , selecteer **visualiseren** of selecteer de module en schakel over naar het tabblad **uitvoer** in het rechterdeel venster, klik op het histogram pictogram in de **poort uitvoer** om de waarden te controleren en ervoor te zorgen dat de knip bewerking aan uw verwachtingen voldoet.  
  
 ### <a name="examples-for-clipping-using-percentiles"></a>Voor beelden voor knippen met behulp van percentielen
 
@@ -96,17 +96,17 @@ Als u wilt weten hoe knippen door percentielen werkt, kunt u een gegevensset met
   
 - Als u percentiel als de laagste drempel waarde gebruikt, op het tiende percentiel, moet 10 procent van alle waarden in de gegevensset kleiner zijn dan die waarde.  
   
-1.  Kies **ClipPeaksAndSubPeaks**voor **set met drempel waarden**.  
+1.  Kies **ClipPeaksAndSubPeaks** voor **set met drempel waarden**.  
   
-1.  Voor **bovenste drempel waarde**kiest u **percentiel**en voor **percentiel nummer**, typt u 90.  
+1.  Voor **bovenste drempel waarde** kiest u **percentiel** en voor **percentiel nummer**, typt u 90.  
   
-1.  Kies **ontbrekende waarde**voor **bovenste vervangende waarde**.  
+1.  Kies **ontbrekende waarde** voor **bovenste vervangende waarde**.  
   
-1.  Voor een **lagere drempel waarde**kiest u **percentiel**en voor **percentiel nummer**, type 10.  
+1.  Voor een **lagere drempel waarde** kiest u **percentiel** en voor **percentiel nummer**, type 10.  
   
-1.  Kies **ontbrekende waarde**voor **lagere vervangende waarde**.  
+1.  Kies **ontbrekende waarde** voor **lagere vervangende waarde**.  
   
-1.  Schakel de optie **overschrijvings vlag**uit en selecteer de optie de **kolom indicator toevoegen**.  
+1.  Schakel de optie **overschrijvings vlag** uit en selecteer de optie de **kolom indicator toevoegen**.  
   
 Probeer nu dezelfde pijp lijn te 60 gebruiken als de bovenste percentiel drempel en 30 als de laagste percentiel drempel en gebruik de drempel waarde als de vervangings waarde. De volgende tabel vergelijkt deze twee resultaten:  
   

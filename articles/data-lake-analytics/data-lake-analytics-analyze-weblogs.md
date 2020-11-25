@@ -6,11 +6,11 @@ ms.service: data-lake-analytics
 ms.topic: how-to
 ms.date: 12/05/2016
 ms.openlocfilehash: d2764e5e3994eb7b80a8e7cf62fb7f437323c97e
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92219391"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96015295"
 ---
 # <a name="analyze-website-logs-using-azure-data-lake-analytics"></a>Websitelogboeken analyseren met Azure Data Lake Analytics
 Meer informatie over het analyseren van website logboeken met behulp van Data Lake Analytics, met name voor het vinden van de verwijzende functies bij het bezoeken van de website.
@@ -35,12 +35,12 @@ Voordat u u-SQL-scripts kunt bouwen en testen, moet u eerst verbinding maken met
 
 1. Open Visual Studio.
 2. Klik op **Data Lake > opties en instellingen**.
-3. Klik op **Aanmelden**of **Wijzig de gebruiker** als iemand zich heeft aangemeld en volg de instructies.
+3. Klik op **Aanmelden** of **Wijzig de gebruiker** als iemand zich heeft aangemeld en volg de instructies.
 4. Klik op **OK** om het dialoog venster Opties en instellingen te sluiten.
 
 ### <a name="to-browse-your-data-lake-analytics-accounts"></a>Door uw Data Lake Analytics-accounts bladeren
 
-1. Open in Visual Studio **Server Explorer** door op **CTRL + ALT + S**te drukken.
+1. Open in Visual Studio **Server Explorer** door op **CTRL + ALT + S** te drukken.
 2. Vouw in **Server Explorer** achtereenvolgens **Azure** en **Data Lake Analytics** uit. U ziet een lijst met uw Data Lake Analytics-accounts, als u die hebt. U kunt geen Data Lake Analytics accounts maken vanuit Studio. Als u een account wilt maken, raadpleegt u aan de [slag met Azure data Lake Analytics met behulp van Azure Portal](data-lake-analytics-get-started-portal.md) of [aan de slag met Azure data Lake Analytics met behulp van Azure PowerShell](data-lake-analytics-get-started-powershell.md).
 
 ## <a name="develop-u-sql-application"></a>U-SQL-toepassing ontwikkelen

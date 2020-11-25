@@ -1,17 +1,17 @@
 ---
 title: Ingebouwde beleidsdefinities voor aanbieders van aangepaste Azure-resources
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor aanbieders van aangepaste Azure-resources. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 10/20/2020
+ms.date: 11/20/2020
 ms.topic: reference
 author: jjbfour
 ms.author: jobreen
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 6b5570e1e2ccc0162dea5e016d76a3c8cf020ee7
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 1dba6c13a283dc0bde488e954972c477bab97b90
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92315548"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96015091"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-custom-resource-providers"></a>Ingebouwde Azure Policy-definities voor aanbieders van aangepaste Azure-resources
 

@@ -5,11 +5,11 @@ ms.topic: conceptual
 ms.date: 05/19/2018
 ms.subservice: alerts
 ms.openlocfilehash: c7dfbd60b7a668b849c3150bb16e40285c345634
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87844110"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96015346"
 ---
 # <a name="what-are-classic-alerts-in-microsoft-azure"></a>Wat zijn klassieke waarschuwingen in Microsoft Azure?
 
@@ -68,7 +68,7 @@ Azure gebruikt de volgende termen om klassieke waarschuwingen en de bijbehorende
 ## <a name="how-do-i-receive-a-notification-from-an-azure-monitor-classic-alert"></a>Hoe kan ik een melding ontvangen van een Azure Monitor klassieke waarschuwing?
 In het verleden hebben Azure-waarschuwingen van verschillende services hun eigen ingebouwde meldings methoden gebruikt. 
 
-Azure Monitor een herbruikbare meldings groepering met de naam *actie groepen*gemaakt. Actie groepen geven een set ontvangers op voor een melding. Telkens wanneer een waarschuwing wordt geactiveerd die verwijst naar de actie groep, ontvangen alle ontvangers deze melding. Met actie groepen kunt u een groep van ontvangers (bijvoorbeeld uw lijst met technici op aanroepen) opnieuw gebruiken voor verschillende waarschuwings objecten. Actie groepen bieden ondersteuning voor meldingen door te posten naar een webhook-URL naast e-mail adressen, SMS-nummers en een aantal andere acties.  Zie [actie groepen](./action-groups.md)voor meer informatie. 
+Azure Monitor een herbruikbare meldings groepering met de naam *actie groepen* gemaakt. Actie groepen geven een set ontvangers op voor een melding. Telkens wanneer een waarschuwing wordt geactiveerd die verwijst naar de actie groep, ontvangen alle ontvangers deze melding. Met actie groepen kunt u een groep van ontvangers (bijvoorbeeld uw lijst met technici op aanroepen) opnieuw gebruiken voor verschillende waarschuwings objecten. Actie groepen bieden ondersteuning voor meldingen door te posten naar een webhook-URL naast e-mail adressen, SMS-nummers en een aantal andere acties.  Zie [actie groepen](./action-groups.md)voor meer informatie. 
 
 Eerdere waarschuwingen voor klassieke activiteiten Logboeken gebruiken actie groepen.
 

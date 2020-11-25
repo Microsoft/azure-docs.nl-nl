@@ -4,11 +4,11 @@ description: Hierin worden de eigenschappen beschreven die worden gegeven voor M
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.openlocfilehash: c1c5953cae7364131eefcec97d3375404c85e963
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86105928"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96015210"
 ---
 # <a name="azure-media-services-as-an-event-grid-source"></a>Azure Media Services als Event Grid bron
 
@@ -124,7 +124,7 @@ In het volgende voor beeld ziet u het schema van de gebeurtenis **JobStateChange
 
 Het gegevens object heeft de volgende eigenschappen:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
 | previousState | tekenreeks | De status van de taak vóór de gebeurtenis. |
 | staat | tekenreeks | De nieuwe status van de taak die wordt gewaarschuwd bij deze gebeurtenis. Bijvoorbeeld ' gepland: de taak is gereed om te beginnen ' of ' voltooid: de taak is voltooid '.|
@@ -194,7 +194,7 @@ Voor elke definitieve wijziging van de taak status (zoals JobFinished, JobCancel
 
 Het gegevens object heeft de volgende eigenschappen:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
 | uitvoer | Matrix | Hiermee haalt u de taak uitvoer op.|
 
@@ -310,7 +310,7 @@ In het volgende voor beeld ziet u het schema van de gebeurtenis **LiveEventConne
 
 Het gegevens object heeft de volgende eigenschappen:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
 | streamId | tekenreeks | De id van de stroom of de verbinding. Encoder of klant is verantwoordelijk voor het toevoegen van deze ID in de opname-URL. |  
 | ingestUrl | tekenreeks | De opname-URL die wordt verschaft door de live gebeurtenis. |  
@@ -346,7 +346,7 @@ In het volgende voor beeld ziet u het schema van de gebeurtenis **LiveEventEncod
 
 Het gegevens object heeft de volgende eigenschappen:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
 | streamId | tekenreeks | De id van de stroom of de verbinding. Encoder of klant is verantwoordelijk voor het opgeven van deze ID in de opname-URL. |
 | ingestUrl | tekenreeks | De opname-URL die wordt verschaft door de live gebeurtenis. |
@@ -380,7 +380,7 @@ In het volgende voor beeld ziet u het schema van de gebeurtenis **LiveEventEncod
 
 Het gegevens object heeft de volgende eigenschappen:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
 | streamId | tekenreeks | De id van de stroom of de verbinding. Encoder of klant is verantwoordelijk voor het toevoegen van deze ID in de opname-URL. |  
 | ingestUrl | tekenreeks | De opname-URL die wordt verschaft door de live gebeurtenis. |  
@@ -392,7 +392,7 @@ U kunt de fout codes vinden in [fouten met fout codes voor Live-gebeurtenissen](
 
 De resultaten van de gevolgde verbrekings verbinding zijn:
 
-| Resultaatcode | Beschrijving |
+| Resultaatcode | Description |
 | ----------- | ----------- |
 | S_OK | Het coderings programma is verbroken. |
 | MPE_CLIENT_TERMINATED_SESSION | Het coderings programma is verbroken (RTMP). |
@@ -430,7 +430,7 @@ In het volgende voor beeld ziet u het schema van de gebeurtenis **LiveEventIncom
 
 Het gegevens object heeft de volgende eigenschappen:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
 | trackType | tekenreeks | Het type van het spoor (audio/video). |
 | nummer bijhouden | tekenreeks | De naam van het spoor. |
@@ -470,7 +470,7 @@ In het volgende voor beeld ziet u het schema van de gebeurtenis **LiveEventIncom
 
 Het gegevens object heeft de volgende eigenschappen:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
 | trackType | tekenreeks | Het type van het spoor (audio/video). |
 | nummer bijhouden | tekenreeks | De naam van het spoor (dat wordt gegeven door de encoder of, in het geval van RTMP, wordt door de server gegenereerd in *TrackType_Bitrate* -indeling). |
@@ -509,7 +509,7 @@ In het volgende voor beeld ziet u het schema van de gebeurtenis **LiveEventIncom
 
 Het gegevens object heeft de volgende eigenschappen:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
 | minLastTimestamp | tekenreeks | Mini maal aantal laatste tijds tempels tussen alle sporen (audio of video). |
 | typeOfTrackWithMinLastTimestamp | tekenreeks | Het type van het spoor (audio of video) met de minimale laatste tijds tempel. |
@@ -545,7 +545,7 @@ In het volgende voor beeld ziet u het schema van de gebeurtenis **LiveEventIncom
 
 Het gegevens object heeft de volgende eigenschappen:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
 | firstTimestamp | tekenreeks | Er is een tijds tempel ontvangen voor een van de typen video tracks/kwaliteit. |
 | firstDuration | tekenreeks | De duur van het gegevens segment met de eerste time stamp. |
@@ -587,7 +587,7 @@ In het volgende voor beeld ziet u het schema van de gebeurtenis **LiveEventInges
 
 Het gegevens object heeft de volgende eigenschappen:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
 | trackType | tekenreeks | Het type van het spoor (audio/video). |
 | nummer bijhouden | tekenreeks | De naam van het spoor (dat wordt gegeven door de encoder of, in het geval van RTMP, wordt door de server gegenereerd in *TrackType_Bitrate* -indeling). |
@@ -631,7 +631,7 @@ In het volgende voor beeld ziet u het schema van de gebeurtenis **LiveEventTrack
 
 Het gegevens object heeft de volgende eigenschappen:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
 | trackType | tekenreeks | Het type van het spoor (audio/video). |
 | nummer bijhouden | tekenreeks | De naam van het spoor (dat wordt gegeven door de encoder of, in het geval van RTMP, wordt door de server gegenereerd in *TrackType_Bitrate* -indeling). |
@@ -645,7 +645,7 @@ Het gegevens object heeft de volgende eigenschappen:
 
 Een gebeurtenis heeft de volgende gegevens op het hoogste niveau:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
 | onderwerp | tekenreeks | Het onderwerp EventGrid. Deze eigenschap heeft de resource-ID voor het Media Services-account. |
 | Onderwerp | tekenreeks | Het bronpad voor het Media Services kanaal onder het Media Services-account. Als u het onderwerp en onderwerp samenvoegt, geeft u de resource-ID voor de taak. |

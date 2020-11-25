@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 10/30/2020
+ms.date: 11/23/2020
 ms.author: aahi
-ms.openlocfilehash: 1e77b5ea2bbd5bae79295a5680fa6e143efa5e99
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: dce8893cac156ce2941652e32409357cb8ec3b1a
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93131527"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96015312"
 ---
 # <a name="use-computer-vision-container-with-kubernetes-and-helm"></a>Computer Vision-container gebruiken met Kubernetes en helm
 
@@ -27,10 +27,10 @@ De volgende vereisten voordat u Computer Vision containers on-premises gebruikt:
 
 | Vereist | Doel |
 |----------|---------|
-| Azure-account | Als u nog geen Azure-abonnement hebt, maakt u een [gratis account][free-azure-account] voordat u begint. |
+| Azure-account | Als u nog geen abonnement op Azure hebt, maak dan een [gratis account][free-azure-account] aan voordat u begint. |
 | Kubernetes CLI | De [KUBERNETES cli][kubernetes-cli] is vereist voor het beheren van de gedeelde referenties in het container register. Kubernetes is ook vereist voordat helm, de Kubernetes Package Manager. |
 | Helm CLI | Installeer de [helm cli][helm-install], die wordt gebruikt om een helm-grafiek (container Package Definition) te installeren. |
-| Computer Vision resource |Als u de container wilt gebruiken, hebt u het volgende nodig:<br><br>Een Azure **Computer Vision** -resource en de bijbehorende API-sleutel de EINDPUNT-URI. Beide waarden zijn beschikbaar op de pagina overzicht en sleutels voor de resource en zijn vereist om de container te starten.<br><br>**{API_KEY}** : een van de twee beschik bare bron sleutels op de pagina **sleutels**<br><br>**{ENDPOINT_URI}** : het eind punt op de pagina **overzicht**|
+| Computer Vision resource |Als u de container wilt gebruiken, hebt u het volgende nodig:<br><br>Een Azure **Computer Vision** -resource en de bijbehorende API-sleutel de EINDPUNT-URI. Beide waarden zijn beschikbaar op de pagina overzicht en sleutels voor de resource en zijn vereist om de container te starten.<br><br>**{API_KEY}**: een van de twee beschik bare bron sleutels op de pagina **sleutels**<br><br>**{ENDPOINT_URI}**: het eind punt op de pagina **overzicht**|
 
 [!INCLUDE [Gathering required parameters](../containers/includes/container-gathering-required-parameters.md)]
 
@@ -48,7 +48,7 @@ Er wordt naar verwachting een beschik bare Kubernetes-cluster op de hostcomputer
 
 ## <a name="configure-helm-chart-values-for-deployment"></a>Helm-grafiek waarden voor implementatie configureren
 
-Maak eerst een map met de naam *Read* . Plak vervolgens de volgende YAML-inhoud in een nieuw bestand met de naam `chart.yaml` :
+Maak eerst een map met de naam *Read*. Plak vervolgens de volgende YAML-inhoud in een nieuw bestand met de naam `chart.yaml` :
 
 ```yaml
 apiVersion: v2
@@ -76,7 +76,7 @@ read:
     name: cognitive-services-read
     registry:  mcr.microsoft.com/
     repository: azure-cognitive-services/vision/read
-    tag: 3.1-preview
+    tag: 3.2-preview.1
     args:
       eula: accept
       billing: # {ENDPOINT_URI}
@@ -105,7 +105,7 @@ read:
 > [!IMPORTANT]
 > - Als de `billing` `apikey` waarden en niet zijn opgenomen, verlopen de Services na 15 minuten. De verificatie mislukt ook omdat de services niet beschikbaar zijn.
 > 
-> - Als u meerdere Lees containers achter een load balancer implementeert, bijvoorbeeld onder docker opstellen of Kubernetes, moet u een externe cache hebben. Omdat de verwerkings container en de container voor GET-aanvragen mogelijk niet hetzelfde zijn, worden de resultaten door een externe cache opgeslagen en gedeeld in containers. Zie [Computer Vision docker-containers configureren](https://docs.microsoft.com/azure/cognitive-services/computer-vision/computer-vision-resource-container-config)voor meer informatie over de cache-instellingen.
+> - Als u meerdere Lees containers achter een load balancer implementeert, bijvoorbeeld onder docker opstellen of Kubernetes, moet u een externe cache hebben. Omdat de verwerkings container en de container voor GET-aanvragen mogelijk niet hetzelfde zijn, worden de resultaten door een externe cache opgeslagen en gedeeld in containers. Zie [Computer Vision docker-containers configureren](./computer-vision-resource-container-config.md)voor meer informatie over de cache-instellingen.
 >
 
 Maak een map *sjablonen* onder de map *lezen* . Kopieer en plak de volgende YAML in een bestand met de naam `deployment.yaml` . Het `deployment.yaml` bestand moet worden gebruikt als een helm-sjabloon.
@@ -243,6 +243,106 @@ deployment.apps/read   1/1     1            1           17s
 NAME                              DESIRED   CURRENT   READY   AGE
 replicaset.apps/read-57cb76bcf7   1         1         1       17s
 ```
+
+## <a name="deploy-multiple-v3-containers-on-the-kubernetes-cluster"></a>Meerdere v3-containers implementeren op het Kubernetes-cluster
+
+Vanaf v3 van de container kunt u de containers parallel op zowel een taak-als pagina niveau gebruiken.
+
+Elke V3-container heeft standaard een verzender en een erkennings medewerker. De verzender is verantwoordelijk voor het splitsen van een taak met meerdere pagina's in meerdere subtaken van één pagina. De herkennings medewerker is geoptimaliseerd voor het herkennen van één pagina document. Implementeer meerdere v3-containers achter een load balancer en laat de containers een universele opslag en wachtrij delen om de parallelle beveiliging op pagina niveau te garanderen. 
+
+> [!NOTE] 
+> Momenteel worden alleen Azure Storage en Azure-wachtrij ondersteund. 
+
+De container die de aanvraag ontvangt, kan de taak in subtaken van één pagina splitsen en toevoegen aan de universele wachtrij. Elke herkennings medewerker van een minder drukke container kan gebruikmaken van enkele pagina subtaken uit de wachtrij, het uitvoeren van de herkenning en het uploaden van het resultaat naar de opslag. De door Voer kan worden verbeterd `n` , afhankelijk van het aantal geïmplementeerde containers.
+
+Kopieer en plak de volgende YAML in een bestand met de naam `deployment.yaml` . Vervang de `# {ENDPOINT_URI}` opmerkingen en door `# {API_KEY}` uw eigen waarden. Vervang de `# {AZURE_STORAGE_CONNECTION_STRING}` Opmerking door uw Azure Storage verbindings reeks. Configureer `replicas` de gewenste waarde `3` in het volgende voor beeld.
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: read
+  labels:
+    app: read-deployment
+spec:
+  selector:
+    matchLabels:
+      app: read-app
+  replicas: # {NUMBER_OF_READ_CONTAINERS}
+  template:
+    metadata:
+      labels:
+        app: read-app
+    spec:
+      containers:
+      - name: cognitive-services-read
+        image: mcr.microsoft.com/azure-cognitive-services/vision/read
+        ports:
+        - containerPort: 5000
+        env:
+        - name: EULA
+          value: accept
+        - name: billing
+          value: # {ENDPOINT_URI}
+        - name: apikey
+          value: # {API_KEY}
+        - name: Storage__ObjectStore__AzureBlob__ConnectionString
+          value: # {AZURE_STORAGE_CONNECTION_STRING}
+        - name: Queue__Azure__ConnectionString
+          value: # {AZURE_STORAGE_CONNECTION_STRING}
+--- 
+apiVersion: v1
+kind: Service
+metadata:
+  name: azure-cognitive-service-read
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 5000
+    targetPort: 5000
+  selector:
+    app: read-app
+```
+
+Voer de volgende opdracht uit. 
+
+```console
+kubectl apply -f deployment.yaml
+```
+
+Hieronder ziet u een voor beeld van een uitvoer van een geslaagde implementatie:
+
+```console
+deployment.apps/read created
+service/azure-cognitive-service-read created
+```
+
+Het volt ooien van de implementatie van Kubernetes kan enkele minuten duren. Voer de volgende opdracht uit om te controleren of zowel de peulen als de services goed zijn geïmplementeerd en beschikbaar zijn:
+
+```console
+kubectl get all
+```
+
+De console-uitvoer ziet er ongeveer als volgt uit:
+
+```console
+kubectl get all
+NAME                       READY   STATUS    RESTARTS   AGE
+pod/read-6cbbb6678-58s9t   1/1     Running   0          3s
+pod/read-6cbbb6678-kz7v4   1/1     Running   0          3s
+pod/read-6cbbb6678-s2pct   1/1     Running   0          3s
+
+NAME                                   TYPE           CLUSTER-IP   EXTERNAL-IP    PORT(S)          AGE
+service/azure-cognitive-service-read   LoadBalancer   10.0.134.0   <none>         5000:30846/TCP   17h
+service/kubernetes                     ClusterIP      10.0.0.1     <none>         443/TCP          78d
+
+NAME                   READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/read   3/3     3            3           3s
+
+NAME                             DESIRED   CURRENT   READY   AGE
+replicaset.apps/read-6cbbb6678   3         3         3       3s
+```
+
 <!--  ## Validate container is running -->
 
 [!INCLUDE [Container's API documentation](../../../includes/cognitive-services-containers-api-documentation.md)]
@@ -257,7 +357,7 @@ Meer informatie over het installeren van toepassingen met helm in azure Kubernet
 <!-- LINKS - external -->
 [free-azure-account]: https://azure.microsoft.com/free
 [git-download]: https://git-scm.com/downloads
-[azure-cli]: https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest
+[azure-cli]: /cli/azure/install-azure-cli?view=azure-cli-latest
 [docker-engine]: https://www.docker.com/products/docker-engine
 [kubernetes-cli]: https://kubernetes.io/docs/tasks/tools/install-kubectl
 [helm-install]: https://helm.sh/docs/using_helm/#installing-helm

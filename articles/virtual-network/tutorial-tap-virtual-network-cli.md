@@ -17,11 +17,11 @@ ms.date: 03/18/2018
 ms.author: kaanan
 ms.custom: devx-track-azurecli
 ms.openlocfilehash: 8e3a56e4a6eb1fb6eb633021178ef78f8ac7287d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87488836"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96014785"
 ---
 # <a name="work-with-a-virtual-network-tap-using-the-azure-cli"></a>Een virtueel netwerk gebruiken Tik op de Azure CLI
 
@@ -109,7 +109,7 @@ Lees de [vereisten](virtual-network-tap-overview.md#prerequisites) voordat u een
 
 ## <a name="add-a-tap-configuration-to-a-network-interface"></a>Een tik-configuratie toevoegen aan een netwerk interface
 
-1. Haal de ID op van een bestaand virtueel netwerk Tik op resource. In het volgende voor beeld wordt een virtueel netwerk met de naam *myTap* in een resource groep met de naam *myResourceGroup*opgehaald:
+1. Haal de ID op van een bestaand virtueel netwerk Tik op resource. In het volgende voor beeld wordt een virtueel netwerk met de naam *myTap* in een resource groep met de naam *myResourceGroup* opgehaald:
 
    ```azurecli-interactive
    tapId=$(az network vnet tap show \

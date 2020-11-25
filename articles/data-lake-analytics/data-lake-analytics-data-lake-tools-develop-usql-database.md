@@ -8,11 +8,11 @@ ms.service: data-lake-analytics
 ms.topic: how-to
 ms.date: 07/03/2018
 ms.openlocfilehash: 706457a602e20dd37e64e5f389948b351ac8ebcf
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92219238"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96015244"
 ---
 # <a name="use-a-u-sql-database-project-to-develop-a-u-sql-database-for-azure-data-lake"></a>Gebruik een U-SQL database project om een U-SQL database te ontwikkelen voor Azure Data Lake
 
@@ -68,13 +68,13 @@ U kunt een U-SQL database implementeren via een U-SQL database-project of een. u
 
 1. Klik met de rechter muisknop op het U-SQL database project en selecteer vervolgens **implementeren**.
 
-1. Selecteer in de wizard voor het **implementeren van u-SQL database**het **ADLA-account** waarnaar u de Data Base wilt implementeren. Zowel lokale accounts als ADLA-accounts worden ondersteund.
+1. Selecteer in de wizard voor het **implementeren van u-SQL database** het **ADLA-account** waarnaar u de Data Base wilt implementeren. Zowel lokale accounts als ADLA-accounts worden ondersteund.
 
 1. De **Data Base** wordt automatisch ingevuld en verwijst naar het. usqldbpack-pakket in de map build uitvoermap van het project.
 
 1. Voer een naam in de naam van de **Data Base** in om een Data Base te maken. Als er al een Data Base met dezelfde naam bestaat in het doel Azure Data Lake Analytics account, worden alle objecten die in het database project zijn gedefinieerd, gemaakt zonder de data base opnieuw te maken.
 
-1. Selecteer **verzenden**om de U-SQL database te implementeren. Alle resources (assembly's en aanvullende bestanden) worden geüpload en een U-SQL-taak die alle DDL-instructies bevat, wordt verzonden.
+1. Selecteer **verzenden** om de U-SQL database te implementeren. Alle resources (assembly's en aanvullende bestanden) worden geüpload en een U-SQL-taak die alle DDL-instructies bevat, wordt verzonden.
 
    ![Data Lake-Hulpprogram Ma's voor Visual Studio--Implementeer U-SQL database project](./media/data-lake-analytics-data-lake-tools-develop-usql-database/data-lake-tools-deploy-usql-database-project.png)
 
@@ -84,7 +84,7 @@ U kunt een U-SQL database implementeren via een U-SQL database-project of een. u
 
 1. Open **Server Explorer**. Vouw vervolgens het **Azure data Lake Analytics account** uit waarop u de Data Base wilt implementeren.
 
-1. Klik met de rechter muisknop op **U-SQL-data bases**en kies vervolgens **Data Base implementeren**.
+1. Klik met de rechter muisknop op **U-SQL-data bases** en kies vervolgens **Data Base implementeren**.
 
 1. Stel de **database bron** in op het pad naar U-SQL database-implementatie pakket (. usqldbpack-bestand).
 
@@ -109,7 +109,7 @@ Een U-SQL-project kan verwijzen naar een U-SQL database-project. De verwijzing i
 
 ### <a name="how-to-add-a-u-sql-database-reference"></a>Een U-SQL database-verwijzing toevoegen
 
-1. Klik met de rechter muisknop op het U-SQL-project in **Solution Explorer**en kies vervolgens **toevoegen U-SQL database verwijzing...**.
+1. Klik met de rechter muisknop op het U-SQL-project in **Solution Explorer** en kies vervolgens **toevoegen U-SQL database verwijzing...**.
 
     ![Data Lake-Hulpprogram Ma's voor Visual Studio--data base-project referentie toevoegen](./media/data-lake-analytics-data-lake-tools-develop-usql-database/data-lake-tools-add-database-project-reference.png)
 

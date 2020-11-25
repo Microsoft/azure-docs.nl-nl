@@ -8,11 +8,11 @@ ms.service: data-lake-analytics
 ms.topic: how-to
 ms.date: 08/30/2019
 ms.openlocfilehash: 7310c67ef20a4134d4f613ea969c96802958bf62
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92219204"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96015227"
 ---
 # <a name="test-your-azure-data-lake-analytics-code"></a>Uw Azure Data Lake Analytics-code testen
 
@@ -34,7 +34,7 @@ Met Azure Data Lake-Hulpprogram Ma's voor Visual Studio kunt u test cases voor U
 
 ### <a name="manage-the-test-data-source"></a>De test gegevens bron beheren
 
-Wanneer u u-SQL-scripts test, moet u invoer bestanden testen. Als u de test gegevens wilt beheren, klikt u in **Solution Explorer**met de rechter muisknop op het U-SQL-project en selecteert u **Eigenschappen**. U kunt een bron invoeren in de **test gegevens bron**.
+Wanneer u u-SQL-scripts test, moet u invoer bestanden testen. Als u de test gegevens wilt beheren, klikt u in **Solution Explorer** met de rechter muisknop op het U-SQL-project en selecteert u **Eigenschappen**. U kunt een bron invoeren in de **test gegevens bron**.
 
 ![Data Lake-Hulpprogram Ma's voor Visual Studio--test gegevens bron project configureren](./media/data-lake-analytics-cicd-test/data-lake-tools-configure-project-test-data-source.png)
 
@@ -52,7 +52,7 @@ De `Run()` interface retourneert een resultaat van de taak uitvoering. *0* betek
 
 ### <a name="run-test-cases-in-visual-studio"></a>Test cases uitvoeren in Visual Studio
 
-Een U-SQL-script test project is gebouwd op basis van een C#-eenheids test-framework. Nadat u het project hebt gemaakt, **Test**selecteert u test Verkenner van  >  **Windows**testen  >  **Test Explorer**. U kunt test cases uitvoeren vanuit **test Explorer**. U kunt ook met de rechter muisknop op het. CS-bestand in de eenheids test klikken en **tests uitvoeren**selecteren.
+Een U-SQL-script test project is gebouwd op basis van een C#-eenheids test-framework. Nadat u het project hebt gemaakt, **Test** selecteert u test Verkenner van  >  **Windows** testen  >  **Test Explorer**. U kunt test cases uitvoeren vanuit **test Explorer**. U kunt ook met de rechter muisknop op het. CS-bestand in de eenheids test klikken en **tests uitvoeren** selecteren.
 
 ## <a name="test-c-udos"></a>C# Udo's testen
 
@@ -62,7 +62,7 @@ U kunt een test raamwerk voor C#-eenheden gebruiken om uw door de gebruiker gede
 
 Er zijn twee manieren om een **IRowset** -object te maken:
 
-- Gegevens uit een bestand laden om **IRowset**te maken:
+- Gegevens uit een bestand laden om **IRowset** te maken:
 
     ```csharp
     //Schema: "a:int, b:int"
@@ -78,7 +78,7 @@ Er zijn twee manieren om een **IRowset** -object te maken:
     IRowset rowset = UnitTestHelper.GetRowsetFromFile(@"processor.txt", schema, output.AsReadOnly(), discardAdditionalColumns: true, rowDelimiter: null, columnSeparator: '\t');
     ```
 
-- Gegevens uit een gegevens verzameling gebruiken om **IRowset**te maken:
+- Gegevens uit een gegevens verzameling gebruiken om **IRowset** te maken:
 
     ```csharp
     //Schema: "a:int, b:int"
@@ -105,7 +105,7 @@ Nadat u de UDO-functies hebt aangeroepen, kunt u de resultaten controleren via d
 
 ### <a name="run-test-cases-in-visual-studio"></a>Test cases uitvoeren in Visual Studio
 
-Nadat u het project hebt gemaakt, **Test**selecteert u test Verkenner van  >  **Windows**testen  >  **Test Explorer**. U kunt test cases uitvoeren vanuit **test Explorer**. U kunt ook met de rechter muisknop op het. CS-bestand in de eenheids test klikken en **tests uitvoeren**selecteren.
+Nadat u het project hebt gemaakt, **Test** selecteert u test Verkenner van  >  **Windows** testen  >  **Test Explorer**. U kunt test cases uitvoeren vanuit **test Explorer**. U kunt ook met de rechter muisknop op het. CS-bestand in de eenheids test klikken en **tests uitvoeren** selecteren.
 
 ## <a name="run-test-cases-in-azure-pipelines"></a>Test cases uitvoeren in azure-pijp lijnen<a name="run-test-cases-in-azure-devops"></a>
 

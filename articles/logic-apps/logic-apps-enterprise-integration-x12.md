@@ -9,11 +9,11 @@ ms.reviewer: jonfan, estfan, logicappspm
 ms.topic: article
 ms.date: 04/29/2020
 ms.openlocfilehash: 61f3f2af61bc24f76d061de672a3eaacd54f7f0e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87066114"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96015193"
 ---
 # <a name="exchange-x12-messages-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>Exchange X12-berichten voor B2B Enter prise integration in Azure Logic Apps met Enterprise Integration Pack
 
@@ -39,7 +39,7 @@ Als u wilt werken met X12-berichten in Azure Logic Apps, kunt u de X12-connector
 
 Nadat u de eigenschappen van de overeenkomst hebt ingesteld, kunt u configureren hoe deze overeenkomst inkomende berichten identificeert en verwerkt die u van uw partner ontvangt via deze overeenkomst.
 
-1. Onder **toevoegen**selecteert u **instellingen voor ontvangen**.
+1. Onder **toevoegen** selecteert u **instellingen voor ontvangen**.
 
 1. Configureer deze eigenschappen op basis van uw overeenkomst met de partner die berichten met u uitwisselt. De **Receive-instellingen** zijn ingedeeld in de volgende secties:
 
@@ -53,7 +53,7 @@ Nadat u de eigenschappen van de overeenkomst hebt ingesteld, kunt u configureren
 
    Zie voor beschrijvingen van eigenschappen de tabellen in deze sectie.
 
-1. Wanneer u klaar bent, moet u de instellingen opslaan door **OK**te selecteren.
+1. Wanneer u klaar bent, moet u de instellingen opslaan door **OK** te selecteren.
 
 <a name="inbound-identifiers"></a>
 
@@ -161,7 +161,7 @@ De **standaard** rij bevat de validatie regels die worden gebruikt voor een EDI-
 
 Nadat u de eigenschappen van de overeenkomst hebt ingesteld, kunt u configureren hoe deze overeenkomst uitgaande berichten identificeert en verwerkt die u via deze overeenkomst naar uw partner verzendt.
 
-1. Onder **toevoegen**selecteert u **instellingen verzenden**.
+1. Onder **toevoegen** selecteert u **instellingen verzenden**.
 
 1. Configureer deze eigenschappen op basis van uw overeenkomst met de partner die berichten met u uitwisselt. Zie voor beschrijvingen van eigenschappen de tabellen in deze sectie.
 
@@ -176,7 +176,7 @@ Nadat u de eigenschappen van de overeenkomst hebt ingesteld, kunt u configureren
    * [Teken sets en scheidings tekens](#outbound-character-sets-separators)
    * [Validatie](#outbound-validation)
 
-1. Wanneer u klaar bent, moet u de instellingen opslaan door **OK**te selecteren.
+1. Wanneer u klaar bent, moet u de instellingen opslaan door **OK** te selecteren.
 
 <a name="outbound-identifiers"></a>
 
@@ -247,7 +247,7 @@ Selecteer voor deze sectie een [schema](../logic-apps/logic-apps-enterprise-inte
 | **GS2** | Optioneel, geef de afzender van de toepassing op. |
 | **GS3** | Optioneel, geef de ontvanger van de toepassing op. |
 | **GS4** | Optioneel, selecteer **CCYYMMDD** of **JJMMDD**. |
-| **GS5** | Optioneel, selecteer **HHMM**, **hhmmss**of **HHMMSSdd**. |
+| **GS5** | Optioneel, selecteer **HHMM**, **hhmmss** of **HHMMSSdd**. |
 | **GS7** | Optioneel, selecteer een waarde voor het verantwoordelijke instituut. |
 | **GS8** | Optioneel, de versie van het schema document opgeven. |
 |||
@@ -278,7 +278,7 @@ De **standaard** rij toont de tekenset die wordt gebruikt als scheidings teken v
 
 | Eigenschap | Beschrijving |
 |----------|-------------|
-| **Tekenset die moet worden gebruikt** | De X12-tekenset, een **Basic**, **Extended**of **utf8**. |
+| **Tekenset die moet worden gebruikt** | De X12-tekenset, een **Basic**, **Extended** of **utf8**. |
 | **Schema** | Het schema dat u wilt gebruiken. Nadat u het schema hebt geselecteerd, selecteert u de tekenset die u wilt gebruiken, op basis van de onderstaande scheidings tekens. |
 | **Invoer type** | Het invoer type voor de tekenset |
 | **Onderdeel scheidings teken** | Eén teken waarmee samengestelde gegevens elementen worden gescheiden |
@@ -316,7 +316,7 @@ Wanneer u werkt met HIPAA-schema's en de 277-of 837-bericht typen, moet u een pa
 
 Deze tabel bevat de betrokken bericht typen, varianten en de document versie nummers die zijn toegewezen aan deze bericht typen:
 
-| Bericht type of-variant |  Beschrijving | Document versie nummer (GS8) |
+| Bericht type of-variant |  Description | Document versie nummer (GS8) |
 |-------------------------|--------------|-------------------------------|
 | 277 | Melding van status van informatie over gezondheids zorg | 005010X212 |
 | 837_I | Gezondheids zorg claim institutionele | 004010X096A1 <br>005010X223A1 <br>005010X223A2 |

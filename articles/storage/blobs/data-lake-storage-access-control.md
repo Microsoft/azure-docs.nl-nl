@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/16/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 03117b9f0c3cbaea22f36703f689264549b851e8
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 485b23d9b7ebac4f7d183239d035fbd53b09f4ee
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94959132"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017666"
 ---
 # <a name="access-control-lists-acls-in-azure-data-lake-storage-gen2"></a>Toegangs beheer lijsten (Acl's) in Azure Data Lake Storage Gen2
 
@@ -23,7 +23,7 @@ Azure Data Lake Storage Gen2 implementeert een model voor toegangs beheer dat zo
 
 ## <a name="about-acls"></a>Over Acl's
 
-U kunt een [beveiligingsprincipal](https://docs.microsoft.com/azure/role-based-access-control/overview#security-principal) koppelen aan een toegangs niveau voor bestanden en mappen. Deze koppelingen worden vastgelegd in een *toegangs beheer lijst (ACL)*. Elk bestand en elke map in uw opslag account heeft een toegangs beheer lijst. Wanneer een beveiligings-principal een bewerking probeert uit te voeren op een bestand of map, bepaalt een ACL-controle of de beveiligingsprincipal (gebruiker, groep, Service-Principal of beheerde identiteit) het juiste machtigings niveau heeft om de bewerking te kunnen uitvoeren.
+U kunt een [beveiligingsprincipal](../../role-based-access-control/overview.md#security-principal) koppelen aan een toegangs niveau voor bestanden en mappen. Deze koppelingen worden vastgelegd in een *toegangs beheer lijst (ACL)*. Elk bestand en elke map in uw opslag account heeft een toegangs beheer lijst. Wanneer een beveiligings-principal een bewerking probeert uit te voeren op een bestand of map, bepaalt een ACL-controle of de beveiligingsprincipal (gebruiker, groep, Service-Principal of beheerde identiteit) het juiste machtigings niveau heeft om de bewerking te kunnen uitvoeren.
 
 > [!NOTE]
 > Acl's zijn alleen van toepassing op beveiligings-principals in dezelfde Tenant en zijn niet van toepassing op gebruikers die gebruikmaken van een gedeelde sleutel of SAS-token verificatie (Shared Access Signature). Dat komt doordat er geen identiteit aan de oproepende functie is gekoppeld en daarom de autorisatie op basis van machtigingen voor beveiliging niet kan worden uitgevoerd.  
@@ -34,13 +34,13 @@ Zie een van de volgende artikelen voor het instellen van machtigingen voor besta
 
 | Omgeving | Artikel |
 |--------|-----------|
-|Azure Storage Explorer |[Azure Storage Explorer gebruiken voor het beheren van adreslijsten, bestanden en ACL's in Azure Data Lake Storage Gen2](data-lake-storage-explorer.md#managing-access)|
+|Azure Opslagverkenner |[Azure Storage Explorer gebruiken voor het beheren van adreslijsten, bestanden en ACL's in Azure Data Lake Storage Gen2](data-lake-storage-explorer.md#managing-access)|
 |.NET |[.NET gebruiken voor het beheren van mappen, bestanden en Acl's in Azure Data Lake Storage Gen2](data-lake-storage-directory-file-acl-dotnet.md#manage-access-control-lists-acls)|
 |Java|[Java gebruiken voor het beheren van mappen, bestanden en Acl's in Azure Data Lake Storage Gen2](data-lake-storage-directory-file-acl-java.md#manage-access-control-lists-acls)|
 |Python|[Python gebruiken voor het beheren van mappen, bestanden en Acl's in Azure Data Lake Storage Gen2](data-lake-storage-directory-file-acl-python.md#manage-access-control-lists-acls)|
 |PowerShell|[Power shell gebruiken voor het beheren van mappen, bestanden en Acl's in Azure Data Lake Storage Gen2](data-lake-storage-directory-file-acl-powershell.md#manage-access-control-lists-acls)|
 |Azure CLI|[Azure CLI gebruiken voor het beheren van mappen, bestanden en Acl's in Azure Data Lake Storage Gen2](data-lake-storage-directory-file-acl-cli.md#manage-access-control-lists-acls)|
-|REST-API |[Pad-bijwerken](https://docs.microsoft.com/rest/api/storageservices/datalakestoragegen2/path/update)|
+|REST-API |[Pad-bijwerken](/rest/api/storageservices/datalakestoragegen2/path/update)|
 
 > [!IMPORTANT]
 > Als de beveiligingsprincipal een *service* -principal is, is het belang rijk dat u de object-id van de Service-Principal gebruikt en niet de object-id van de gerelateerde app-registratie. Als u de object-ID van de Service-Principal wilt ophalen, opent u de Azure CLI en gebruikt u deze opdracht: `az ad sp show --id <Your App ID> --query objectId` . Zorg ervoor dat u de `<Your App ID>` tijdelijke aanduiding vervangt door de app-id van de app-registratie.
@@ -92,7 +92,8 @@ In de volgende tabel ziet u de ACL-vermeldingen die zijn vereist voor het inscha
 
 In deze tabel ziet u een kolom van elk niveau van een fictieve Directory-hiërarchie. Er is een kolom voor de hoofd directory van de container ( `\` ), een submap met de naam **Oregon**, een submap van de Oregon-map met de naam **Rotterdam** en een tekst bestand in de map Rotterdam met de naam **Data.txt**. 
 
-> [! IMPORANT] in deze tabel wordt ervan uitgegaan dat u **alleen** acl's gebruikt zonder toewijzingen van Azure-functies. Zie [machtigingen tabel: combi neren van Azure RBAC en ACL](data-lake-storage-access-control-model.md#permissions-table-combining-azure-rbac-and-acl)voor een vergelijk bare tabel waarin Azure RBAC samen met acl's wordt gecombineerd.
+> [!IMPORTANT]
+> In deze tabel wordt ervan uitgegaan dat u **alleen** acl's gebruikt zonder toewijzingen van Azure-functies. Zie [machtigingen tabel: combi neren van Azure RBAC en ACL](data-lake-storage-access-control-model.md#permissions-table-combining-azure-rbac-and-acl)voor een vergelijk bare tabel waarin Azure RBAC samen met acl's wordt gecombineerd.
 
 |    Bewerking             |    /    | Oregon | Port land | Data.txt     |
 |--------------------------|---------|----------|-----------|--------------|
@@ -203,7 +204,7 @@ Voor een nieuwe Data Lake Storage Gen2-container wordt het masker voor de toegan
 |--|--|--|
 |Gebruiker die eigenaar is|`rwx`|`r-w`|
 |Groep die eigenaar is|`r-x`|`r--`|
-|Overige|`---`|`---`|
+|Anders|`---`|`---`|
 
 Bestanden ontvangen niet de X-bit omdat deze niet van toepassing is op bestanden in een alleen-opslag systeem. 
 
@@ -330,7 +331,7 @@ Wanneer u de juiste OID voor de Service-Principal hebt, gaat u naar de Storage E
 
 Nee. Een container heeft geen ACL. U kunt echter de ACL van de hoofdmap van de container instellen. Elke container heeft een hoofdmap en deelt dezelfde naam als de container. Als de naam van de container bijvoorbeeld heet `my-container` , heet de hoofdmap `myContainer/` . 
 
-Het Azure Storage REST API bevat een bewerking met de naam [set-container-ACL](https://docs.microsoft.com/rest/api/storageservices/set-container-acl), maar deze bewerking kan niet worden gebruikt om de ACL van een container of de hoofdmap van een container in te stellen. In plaats daarvan wordt deze bewerking gebruikt om aan te geven of blobs in een container [openbaar mogen worden geopend](anonymous-read-access-configure.md). 
+Het Azure Storage REST API bevat een bewerking met de naam [set-container-ACL](/rest/api/storageservices/set-container-acl), maar deze bewerking kan niet worden gebruikt om de ACL van een container of de hoofdmap van een container in te stellen. In plaats daarvan wordt deze bewerking gebruikt om aan te geven of blobs in een container [openbaar mogen worden geopend](anonymous-read-access-configure.md). 
 
 ### <a name="where-can-i-learn-more-about-posix-access-control-model"></a>Waar kan ik meer informatie over het POSIX-model voor toegangsbeheer?
 

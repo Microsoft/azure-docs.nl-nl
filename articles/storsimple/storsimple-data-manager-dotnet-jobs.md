@@ -7,11 +7,11 @@ ms.topic: how-to
 ms.date: 01/16/2018
 ms.author: alkohli
 ms.openlocfilehash: b18627d2806662d6d966af95d51873d5623b2393
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94961121"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96015533"
 ---
 # <a name="use-the-net-sdk-to-initiate-data-transformation"></a>De .NET SDK gebruiken om de gegevenstransformatie te initiëren
 

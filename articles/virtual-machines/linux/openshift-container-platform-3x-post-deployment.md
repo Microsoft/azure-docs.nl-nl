@@ -11,11 +11,11 @@ ms.date: 10/14/2019
 ms.author: haroldw
 ms.custom: devx-track-ansible, devx-track-azurecli
 ms.openlocfilehash: dd967ad08b628f9073edfe548033f7e97845d047
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92735111"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96016060"
 ---
 # <a name="post-deployment-tasks"></a>Taken na de implementatie
 
@@ -70,23 +70,23 @@ Noteer de eigenschap appId die wordt geretourneerd door de opdracht voor een lat
 
 In Azure Portal:
 
-1. Selecteer **Azure Active Directory**  >  **app-registratie** .
+1. Selecteer **Azure Active Directory**  >  **app-registratie**.
 2. Zoek naar de registratie van uw app (bijvoorbeeld OCPAzureAD).
 3. Klik in de resultaten op de app-registratie.
-4. Selecteer onder **instellingen** de optie **vereiste machtigingen** .
-5. Selecteer **toevoegen** onder **vereiste machtigingen** .
+4. Selecteer onder **instellingen** de optie **vereiste machtigingen**.
+5. Selecteer **toevoegen** onder **vereiste machtigingen**.
 
    ![App-registratie](media/openshift-post-deployment/app-registration.png)
 
-6. Klik op stap 1: Selecteer API en klik vervolgens op **Windows Azure Active Directory (Microsoft. Azure. ActiveDirectory)** . Klik onderaan op **selecteren** .
+6. Klik op stap 1: Selecteer API en klik vervolgens op **Windows Azure Active Directory (Microsoft. Azure. ActiveDirectory)**. Klik onderaan op **selecteren** .
 
    ![App-registratie selecteren-API](media/openshift-post-deployment/app-registration-select-api.png)
 
-7. Selecteer bij stap 2: machtigingen selecteren, **Aanmelden en gebruikers profiel lezen** onder **gedelegeerde machtigingen** en klik vervolgens op **selecteren** .
+7. Selecteer bij stap 2: machtigingen selecteren, **Aanmelden en gebruikers profiel lezen** onder **gedelegeerde machtigingen** en klik vervolgens op **selecteren**.
 
    ![App-registratie toegang](media/openshift-post-deployment/app-registration-access.png)
 
-8. Selecteer **Gereed** .
+8. Selecteer **Gereed**.
 
 ### <a name="configure-openshift-for-azure-ad-authentication"></a>Open Shift configureren voor Azure AD-verificatie
 

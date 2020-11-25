@@ -9,12 +9,12 @@ ms.topic: include
 ms.date: 09/03/2018
 ms.author: raynew
 ms.custom: include file
-ms.openlocfilehash: afeae4af9b41bf434b26833a3bd927118a4697ae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3a8a7be6f437687a4de31ce8e0ac62588f64e2eb
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67176261"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96016897"
 ---
 **Vereisten voor de configuratie/proces server voor de replicatie van de fysieke server**
 
@@ -31,8 +31,8 @@ Vrije schijfruimte (bewaarschijf) | 600 GB
 Besturingssysteem | Windows Server 2012 R2 <br> Windows Server 2016
 Landinstelling van het besturingssysteem | Engels (en-us)
 Windows Server-functies | Deze rollen niet inschakelen: <br> - Active Directory Domain Services <br>- Internet Information Services <br> - Hyper-V 
-Groepsbeleidsregels | Deze groepsbeleidsregels niet inschakelen: <br> - Toegang tot de opdrachtprompt voorkomen. <br> - Toegang tot registerbewerkingsprogramma's voorkomen. <br> - Op logica vertrouwen voor bestandsbijlagen. <br> - Uitvoering van script inschakelen. <br> [Meer informatie](https://technet.microsoft.com/library/gg176671(v=ws.10).aspx)
-IIS | -Geen vooraf bestaande standaard website <br> -Geen bestaande website/toepassing die luistert op poort 443 <br>- [Anonieme verificatie](https://technet.microsoft.com/library/cc731244(v=ws.10).aspx) inschakelen <br> - [Fastcgi](https://technet.microsoft.com/library/cc753077(v=ws.10).aspx) -instelling inschakelen.
+Groepsbeleidsregels | Deze groepsbeleidsregels niet inschakelen: <br> - Toegang tot de opdrachtprompt voorkomen. <br> - Toegang tot registerbewerkingsprogramma's voorkomen. <br> - Op logica vertrouwen voor bestandsbijlagen. <br> - Uitvoering van script inschakelen. <br> [Meer informatie](/previous-versions/windows/it-pro/windows-7/gg176671(v=ws.10))
+IIS | -Geen vooraf bestaande standaard website <br> -Geen bestaande website/toepassing die luistert op poort 443 <br>- [Anonieme verificatie](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc731244(v=ws.10)) inschakelen <br> - [Fastcgi](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753077(v=ws.10)) -instelling inschakelen.
 Type IP-adres | Statisch 
 | 
 **TOEGANGS INSTELLINGEN** | 
@@ -49,4 +49,3 @@ Poorten | 443 toestaan (indeling van besturings kanaal)<br/><br/> 9443 toestaan 
 8 vCPU's<br/><br/> 2 sockets * 4 kernen \@ 2,5 GHz | Maxi | 300 GB | 500 GB of minder | < 100 computers
 12 vCPU's<br/><br/> 2 sockets * 6 kernen \@ 2,5 GHz | 18 GB | 600 GB | 500 GB - 1 TB | 100 - 150 computers
 16 vCPU's<br/><br/> 2 sockets * 8 kernen \@ 2,5 GHz | 32 GB | 1 TB | 1-2 TB | 150 - 200 computers
-

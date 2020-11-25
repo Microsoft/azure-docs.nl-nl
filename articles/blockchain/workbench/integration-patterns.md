@@ -5,11 +5,11 @@ ms.date: 11/20/2019
 ms.topic: conceptual
 ms.reviewer: mmercuri
 ms.openlocfilehash: dae63e16356e825d3be31380df1648749e59d8bd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86538323"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96015499"
 ---
 # <a name="smart-contract-integration-patterns"></a>Integratiepatronen voor slimme contracten
 
@@ -75,7 +75,7 @@ In dit scenario treedt er een gebeurtenis op in een slim contract, bijvoorbeeld 
 
 Een voor beeld van dit scenario is dat wanneer een trans actie wordt uitgevoerd, een consument wordt gewaarschuwd en actie kan ondernemen, zoals het vastleggen van de gegevens in een SQL-data base of de Common Data Service. Dit scenario is hetzelfde patroon dat Workbench volgt om de SQL-Data Base *uit de buiten keten* te vullen.
 
-Een ander zou zijn als een slimme contract overgang naar een bepaalde status, bijvoorbeeld wanneer een contract in een *OutOfCompliance*gaat. Wanneer deze status wijziging optreedt, kan een waarschuwing worden gegenereerd om te worden verzonden naar de mobiele telefoon van de beheerder.
+Een ander zou zijn als een slimme contract overgang naar een bepaalde status, bijvoorbeeld wanneer een contract in een *OutOfCompliance* gaat. Wanneer deze status wijziging optreedt, kan een waarschuwing worden gegenereerd om te worden verzonden naar de mobiele telefoon van de beheerder.
 
 ![Eenrichtings gebeurtenis levering](./media/integration-patterns/one-way-event-delivery.png)
 

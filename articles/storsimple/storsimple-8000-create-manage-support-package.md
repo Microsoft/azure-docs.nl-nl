@@ -7,11 +7,11 @@ ms.topic: troubleshooting
 ms.date: 01/09/2018
 ms.author: alkohli
 ms.openlocfilehash: 4a847b273472ecc9d2aaa3993ec9d88aa46f2e7f
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91973866"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017165"
 ---
 # <a name="create-and-manage-a-support-package-for-storsimple-8000-series"></a>Een ondersteunings pakket voor de StorSimple 8000-serie maken en beheren
 
@@ -71,7 +71,7 @@ U kunt de volgende para meters gebruiken met de cmdlet Export-HcsSupportPackage.
 | `-Credential` |Optioneel |Gebruiken om toegangs referenties op te geven voor de gedeelde netwerkmap. |
 | `-Force` |Optioneel |Gebruik om de stap voor het bevestigen van de wachtwoord code voor versleuteling over te slaan. |
 | `-PackageTag` |Optioneel |Gebruik om een map op te geven onder het *pad* waarin het ondersteunings pakket wordt geplaatst. De standaard waarde is [apparaatnaam]-[huidige datum en tijd: JJJJ-MM-DD-uu-mm-SS]. |
-| `-Scope` |Optioneel |Geef als **cluster** (standaard) op om een ondersteunings pakket voor beide controllers te maken. Als u een pakket alleen voor de huidige controller wilt maken, geeft u **controller**op. |
+| `-Scope` |Optioneel |Geef als **cluster** (standaard) op om een ondersteunings pakket voor beide controllers te maken. Als u een pakket alleen voor de huidige controller wilt maken, geeft u **controller** op. |
 
 ## <a name="edit-a-support-package"></a>Een ondersteunings pakket bewerken
 

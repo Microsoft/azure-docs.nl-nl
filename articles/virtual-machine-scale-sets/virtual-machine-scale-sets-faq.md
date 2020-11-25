@@ -10,11 +10,11 @@ ms.date: 06/30/2020
 ms.reviewer: jushiman
 ms.custom: mimckitt
 ms.openlocfilehash: 8170cfcbbf200c6ba5030aff5716f46b537d8c97
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87080468"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96016706"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Veelgestelde vragen over schaalsets voor virtuele Azure-machines
 
@@ -224,9 +224,9 @@ U kunt open bare SSH-sleutels in tekst zonder opmaak opgeven wanneer u een virtu
 }
 ```
 
-linuxConfiguration element naam | Vereist | Type | Beschrijving
+linuxConfiguration element naam | Vereist | Type | Description
 --- | --- | --- | ---
-SSH | Nee | Verzameling | Hiermee geeft u de configuratie van de SSH-sleutel voor een Linux-besturings systeem op
+SSH | No | Verzameling | Hiermee geeft u de configuratie van de SSH-sleutel voor een Linux-besturings systeem op
 leertraject | Ja | Tekenreeks | Hiermee geeft u het pad naar het Linux-bestand op waar de SSH-sleutels of het certificaat zich bevinden
 Gegevens | Ja | Tekenreeks | Hiermee geeft u een open bare SSH-sleutel met base64-code ring op
 
@@ -652,7 +652,7 @@ az vmss extension set --name MicrosoftMonitoringAgent --publisher Microsoft.Ente
 U kunt de vereiste workspaceId en workspaceKey vinden in de werk ruimte Log Analytics van Azure Portal. Klik op de pagina overzicht op de tegel instellingen. Klik op het tabblad verbonden bronnen bovenaan.
 
 > [!NOTE]
-> Als uw schaalset _upgrade Policy_ is ingesteld op hand matig, moet u de uitbrei ding Toep assen op alle virtuele machines in de set door de upgrade hiervoor aan te roepen. In CLI zou dit _AZ vmss update-instances_zijn.
+> Als uw schaalset _upgrade Policy_ is ingesteld op hand matig, moet u de uitbrei ding Toep assen op alle virtuele machines in de set door de upgrade hiervoor aan te roepen. In CLI zou dit _AZ vmss update-instances_ zijn.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -660,7 +660,7 @@ U kunt de vereiste workspaceId en workspaceKey vinden in de werk ruimte Log Anal
 
 ### <a name="how-do-i-turn-on-boot-diagnostics"></a>Diagnostische gegevens over opstarten Hoe kan ik inschakelen?
 
-Als u Diagnostische gegevens over opstarten wilt inschakelen, moet u eerst een opslag account maken. Plaats vervolgens dit JSON-blok in uw virtuele- **virtualMachineProfile**en werk de schaalset voor virtuele machines bij:
+Als u Diagnostische gegevens over opstarten wilt inschakelen, moet u eerst een opslag account maken. Plaats vervolgens dit JSON-blok in uw virtuele- **virtualMachineProfile** en werk de schaalset voor virtuele machines bij:
 
 ```json
 "diagnosticsProfile": {

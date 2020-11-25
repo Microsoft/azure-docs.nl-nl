@@ -1,64 +1,31 @@
 ---
-title: De prestaties van Azure Managed disks wijzigen
-description: Meer informatie over prestatie lagen voor Managed disks en informatie over het wijzigen van prestatie lagen voor bestaande beheerde schijven met behulp van de Azure PowerShell-module of de Azure CLI.
+title: De prestaties van Azure Managed disks wijzigen-CLI/Power shell
+description: Meer informatie over het wijzigen van prestatie lagen voor bestaande beheerde schijven met behulp van de Azure PowerShell-module of de Azure CLI.
 author: roygara
 ms.service: virtual-machines
 ms.topic: how-to
-ms.date: 11/11/2020
+ms.date: 11/19/2020
 ms.author: rogarana
 ms.subservice: disks
-ms.custom: references_regions
-ms.openlocfilehash: 923c5970183bd192ac1a2f20fb775d96dcc06865
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.custom: references_regions, devx-track-azurecli
+ms.openlocfilehash: 8a21a78bf27847b41c0af7bc4361f7c6c8071949
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94540634"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "96016510"
 ---
-# <a name="performance-tiers-for-managed-disks-preview"></a>Prestatie lagen voor beheerde schijven (preview-versie)
+# <a name="change-your-performance-tier-using-the-azure-powershell-module-or-the-azure-cli"></a>Uw prestatie niveau wijzigen met behulp van de Azure PowerShell-module of de Azure CLI
 
-Azure Disk Storage biedt ingebouwde burst-mogelijkheden om betere prestaties te bieden voor het verwerken van onverwacht verkeer op korte termijn. Premium-Ssd's hebben de flexibiliteit om de schijf prestaties te verbeteren zonder de daad werkelijke schijf grootte te verg Roten. Met deze mogelijkheid kunt u voldoen aan de prestatie behoeften van uw werk belasting en de kosten verlagen. 
-
-> [!NOTE]
-> Deze functie is momenteel beschikbaar als preview-product. 
-
-Deze functie is ideaal voor gebeurtenissen waarvoor tijdelijk een consistent hoger prestatie niveau is vereist, zoals het kopen van vakantie dagen, het testen van prestaties of het uitvoeren van een trainings omgeving. Als u deze gebeurtenissen wilt verwerken, kunt u een hogere prestatie laag gebruiken, zolang u deze nodig hebt. U kunt vervolgens terugkeren naar de oorspronkelijke laag wanneer u de extra prestaties niet meer nodig hebt.
-
-## <a name="how-it-works"></a>Uitleg
-
-Wanneer u een schijf voor het eerst implementeert of inricht, wordt de basislijn prestatie laag voor die schijf ingesteld op basis van de ingerichte schijf grootte. U kunt een hogere prestatie niveau gebruiken om te voldoen aan de hogere vraag. Wanneer u dat prestatie niveau niet meer nodig hebt, kunt u teruggaan naar de initiële prestatie laag van de basis lijn.
-
-Uw facturering wordt gewijzigd wanneer de laag wordt gewijzigd. Als u bijvoorbeeld een P10-schijf inricht (128 GiB), wordt de laag voor basislijn prestaties ingesteld op P10 (500 IOPS en 100 MBps). U wordt gefactureerd tegen het P10ings bedrag. U kunt de laag bijwerken zodat deze overeenkomt met de prestaties van P50 (7.500 IOPS en 250 MBps) zonder de schijf grootte te verg Roten. Tijdens de upgrade wordt u gefactureerd tegen het P50ings bedrag. Wanneer u de hogere prestaties niet meer nodig hebt, kunt u teruggaan naar de P10-laag. De schijf wordt opnieuw gefactureerd tegen het P10ings bedrag.
-
-| Schijfgrootte | Prestatie niveau basis lijn | Kan worden bijgewerkt naar |
-|----------------|-----|-------------------------------------|
-| 4 GiB | P1 | P2, P3, P4, P6, P10, P15, P20, P30, P40, P50 |
-| 8 GiB | P2 | P3, P4, P6, P10, P15, P20, P30, P40, P50 |
-| 16 GiB | P3 | P4, P6, P10, P15, P20, P30, P40, P50 | 
-| 32 GiB | P4 | P6, P10, P15, P20, P30, P40, P50 |
-| 64 GiB | P6 | P10, P15, P20, P30, P40, P50 |
-| 128 GiB | P10 | P15, P20, P30, P40, P50 |
-| 256 GiB | P15 | P20, P30, P40, P50 |
-| 512 GiB | P20 | P30, P40, P50 |
-| 1 TiB | P30 | P40, P50 |
-| 2 TiB | P40 | P50 |
-| 4 TiB | P50 | Geen |
-| 8 TiB | P60 |  P70, P80 |
-| 16 TiB | P70 | P80 |
-| 32 TiB | P80 | Geen |
-
-Zie [prijzen voor beheerde schijven](https://azure.microsoft.com/pricing/details/managed-disks/)voor informatie over facturering.
+[!INCLUDE [virtual-machines-disks-performance-tiers-intro](../../includes/virtual-machines-disks-performance-tiers-intro.md)]
 
 ## <a name="restrictions"></a>Beperkingen
 
-- Deze functie wordt momenteel alleen ondersteund voor Premium-Ssd's.
-- U moet de toewijzing van de virtuele machine ongedaan maken of de schijf loskoppelen van een actieve virtuele machine voordat u de laag van de schijf kunt wijzigen.
-- Het gebruik van de P60-, P70-en P80-prestatie lagen is beperkt tot schijven van 4.096 GiB of hoger.
-- De prestatie-laag van een schijf kan slechts eenmaal per 24 uur worden gedowngraded.
+[!INCLUDE [virtual-machines-disks-performance-tiers-restrictions](../../includes/virtual-machines-disks-performance-tiers-restrictions.md)]
 
 ## <a name="create-an-empty-data-disk-with-a-tier-higher-than-the-baseline-tier"></a>Een lege gegevens schijf maken met een hogere laag dan de basislijn laag
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli
 subscriptionId=<yourSubscriptionIDHere>
@@ -108,7 +75,7 @@ New-AzDisk -DiskName $diskName -Disk $diskConfig -ResourceGroupName $resourceGro
 
 ## <a name="update-the-tier-of-a-disk"></a>De laag van een schijf bijwerken
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli
 resourceGroupName=<yourResourceGroupNameHere>
@@ -133,7 +100,7 @@ Update-AzDisk -ResourceGroupName $resourceGroupName -DiskName $diskName -DiskUpd
 
 ## <a name="show-the-tier-of-a-disk"></a>De laag van een schijf weer geven
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli
 az disk show -n $diskName -g $resourceGroupName --query [tier] -o tsv

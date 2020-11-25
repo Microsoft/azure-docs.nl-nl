@@ -8,11 +8,11 @@ ms.workload: infrastructure
 ms.date: 06/28/2018
 ms.author: cynthn
 ms.openlocfilehash: 6a5d4f388d9e5f47a13812687489525590c520c3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87085483"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96016094"
 ---
 # <a name="mount-azure-file-storage-on-linux-vms-using-smb"></a>Azure File Storage koppelen aan linux-Vm's met behulp van SMB
 
@@ -35,7 +35,7 @@ az group create --name myResourceGroup --location eastus
 
 ## <a name="create-a-storage-account"></a>Create a storage account
 
-Maak een nieuw opslag account in de resource groep die u hebt gemaakt met [AZ Storage account create](/cli/azure/storage/account). In dit voor beeld wordt een opslag account gemaakt met de naam *mySTORAGEACCT \<random number> * en wordt de naam van dat opslag account in de variabele **STORAGEACCT**geplaatst. Namen van opslag accounts moeten uniek zijn, waarbij `$RANDOM` een getal wordt toegevoegd aan het einde om het uniek te maken.
+Maak een nieuw opslag account in de resource groep die u hebt gemaakt met [AZ Storage account create](/cli/azure/storage/account). In dit voor beeld wordt een opslag account gemaakt met de naam *mySTORAGEACCT \<random number>* en wordt de naam van dat opslag account in de variabele **STORAGEACCT** geplaatst. Namen van opslag accounts moeten uniek zijn, waarbij `$RANDOM` een getal wordt toegevoegd aan het einde om het uniek te maken.
 
 ```azurecli
 STORAGEACCT=$(az storage account create \

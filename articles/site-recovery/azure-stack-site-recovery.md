@@ -4,11 +4,11 @@ description: Meer informatie over het instellen van herstel na nood gevallen voo
 ms.topic: conceptual
 ms.date: 08/05/2019
 ms.openlocfilehash: 36e11bfe5354644f9ef6603ffe20cb2e86074323
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370522"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96016898"
 ---
 # <a name="replicate-azure-stack-vms-to-azure"></a>Virtuele Azure-machines repliceren naar Azure
 
@@ -26,9 +26,9 @@ In dit artikel leert u het volgende:
 
 > [!div class="checklist"]
 > * **Stap 1: virtuele Azure stack-Vm's voorbereiden voor replicatie**. Controleer of de Vm's voldoen aan de Site Recovery vereisten en bereid u voor op de installatie van de Site Recovery Mobility-service. Deze service wordt geïnstalleerd op elke virtuele machine die u wilt repliceren.
-> * **Stap 2: Stel een Recovery Services kluis**in. Stel een kluis in voor Site Recovery en geef op wat u wilt repliceren. Site Recovery onderdelen en acties worden geconfigureerd en beheerd in de kluis.
+> * **Stap 2: Stel een Recovery Services kluis** in. Stel een kluis in voor Site Recovery en geef op wat u wilt repliceren. Site Recovery onderdelen en acties worden geconfigureerd en beheerd in de kluis.
 > * **Stap 3: de bron replicatie omgeving instellen**. Stel een Site Recovery configuratie server in. De configuratie server is een enkele Azure Stack VM waarop alle onderdelen worden uitgevoerd die nodig zijn voor Site Recovery. Nadat u de configuratie server hebt ingesteld, registreert u deze in de kluis.
-> * **Stap 4: Stel de doel replicatie omgeving**in. Selecteer uw Azure-account en het Azure-opslag account en het netwerk dat u wilt gebruiken. Tijdens de replicatie worden VM-gegevens gekopieerd naar Azure Storage. Na een failover worden virtuele Azure-machines toegevoegd aan het opgegeven netwerk.
+> * **Stap 4: Stel de doel replicatie omgeving** in. Selecteer uw Azure-account en het Azure-opslag account en het netwerk dat u wilt gebruiken. Tijdens de replicatie worden VM-gegevens gekopieerd naar Azure Storage. Na een failover worden virtuele Azure-machines toegevoegd aan het opgegeven netwerk.
 > * **Stap 5: replicatie inschakelen**. Configureer replicatie-instellingen en Schakel replicatie in voor Vm's. De Mobility-service wordt geïnstalleerd op een virtuele machine wanneer replicatie is ingeschakeld. Site Recovery voert een initiële replicatie van de virtuele machine uit, waarna de replicatie wordt gestart.
 > * **Stap 6: een nood herstel analyse uitvoeren**: nadat de replicatie is uitgevoerd, controleert u of de failover werkt zoals verwacht door een analyse uit te voeren. Als u de analyse wilt initiëren, voert u een testfailover uit in Site Recovery. De testfailover heeft geen invloed op uw productie omgeving.
 
@@ -101,7 +101,7 @@ Op elke VM die u wilt repliceren, moet de Mobility-service zijn geïnstalleerd. 
         - Stel de waarde in op 1.
         - Als u dit wilt doen vanaf de opdracht prompt, typt u het volgende: **REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System/V LocalAccountTokenFilterPolicy/t REG_DWORD/d 1**.
 - In de Windows Firewall op de virtuele machine die u wilt repliceren, kunt u bestands-en printer deling en WMI toestaan.
-    - U doet dit door **WF. msc** uit te voeren om de Windows Firewall-console te openen. Klik met de rechter muisknop op **inkomende regels**  >  **nieuwe regel**. Selecteer **vooraf gedefinieerd**en kies **Bestands-en printer deling** in de lijst. Voltooi de wizard en selecteer deze om de verbinding toe > **volt ooien**.
+    - U doet dit door **WF. msc** uit te voeren om de Windows Firewall-console te openen. Klik met de rechter muisknop op **inkomende regels**  >  **nieuwe regel**. Selecteer **vooraf gedefinieerd** en kies **Bestands-en printer deling** in de lijst. Voltooi de wizard en selecteer deze om de verbinding toe > **volt ooien**.
     - Voor domein computers kunt u een groeps beleidsobject gebruiken om dit te doen.
 
 
@@ -137,10 +137,10 @@ Voor elke computer die u wilt repliceren, zoekt u het IP-adres:
 
 ## <a name="step-2-create-a-vault-and-select-a-replication-goal"></a>Stap 2: een kluis maken en een replicatie doel selecteren
 
-1. Selecteer in de Azure Portal **een**  >  back-up van resource**beheer tools**maken  >  **en site Recovery**.
+1. Selecteer in de Azure Portal **een**  >  back-up van resource **beheer tools** maken  >  **en site Recovery**.
 2. Voer in **Naam** een beschrijvende naam in om de kluis aan te duiden.
 3. Maak of selecteer een resource groep in **resource groep**. We gebruiken **contosoRG**.
-4. Voer in **locatie**de Azure-regio in. gebruiken we **Europa - west**.
+4. Voer in **locatie** de Azure-regio in. gebruiken we **Europa - west**.
 5. Voor snelle toegang tot de kluis vanuit het dashboard, selecteert u **Aan dashboard vastmaken** > **Maken**.
 
    ![Een nieuwe kluis maken](./media/azure-stack-site-recovery/new-vault-settings.png)
@@ -161,7 +161,7 @@ Voor elke computer die u wilt repliceren, zoekt u het IP-adres:
 
 Stel de configuratie server machine in, Registreer deze in de kluis en ontdek de computers die u wilt repliceren.
 
-1. Klik op **infra structuur**  >  **bron**voorbereiden.
+1. Klik op **infra structuur**  >  **bron** voorbereiden.
 2. Klik in **Bron voorbereiden** op **+Configuratieserver**.
 
     ![Scherm afbeelding van het dialoog venster + Configuratie server met het bericht "Klik op + Configuratie server in de opdracht balk hierboven om een..." te installeren.](./media/azure-stack-site-recovery/plus-config-srv.png)
@@ -186,13 +186,13 @@ Installeer nu de configuratie server:
 > [!NOTE]
 > De configuratie server kan ook worden geïnstalleerd vanaf de opdracht regel. [Meer informatie](physical-manage-configuration-server.md#install-from-the-command-line).
 >
-> Het duurt 15 minuten of langer voordat de accountnaam wordt weergegeven in de portal. Als u onmiddellijk wilt bijwerken, selecteert u **configuratie servers**  >  **_Server naam_*_ > _* server vernieuwen**.
+> Het duurt 15 minuten of langer voordat de accountnaam wordt weergegeven in de portal. Selecteer **Configuratieservers** > **_servernaam_ *_ > _* Server vernieuwen**.
 
 ## <a name="step-4-set-up-the-target-environment"></a>Stap 4: de doel omgeving instellen
 
 Selecteer en controleer doelbronnen.
 
-1. Selecteer in **infrastructuur**  >  **doel**voorbereiden het Azure-abonnement dat u wilt gebruiken.
+1. Selecteer in **infrastructuur**  >  **doel** voorbereiden het Azure-abonnement dat u wilt gebruiken.
 2. Geef het doelimplementatiemodel op.
 3. Site Recovery controleert of u een of meer compatibele Azure-opslagaccounts en -netwerken hebt. Als deze niet worden gevonden, moet u ten minste één opslag account en een virtueel netwerk maken om de wizard te volt ooien.
 
@@ -201,13 +201,13 @@ Selecteer en controleer doelbronnen.
 
 ### <a name="create-a-replication-policy"></a>Een replicatiebeleid maken
 
-1. Klik op **infra structuur**  >  **replicatie-instellingen**voorbereiden.
+1. Klik op **infra structuur**  >  **replicatie-instellingen** voorbereiden.
 2. Geef in **Replicatiebeleid maken** een beleidsnaam op.
 3. Geef in **RPO-drempelwaarde** de limiet van de Recovery Point Objective (RPO) op.
     - Herstel punten voor gerepliceerde gegevens worden gemaakt op basis van de tijd die is ingesteld.
     - Deze instelling heeft geen invloed op replicatie, die doorlopend is. Er wordt alleen een waarschuwing gegenereerd als de drempel waarde is bereikt zonder dat er een herstel punt wordt gemaakt.
-4. Geef bij **Bewaar periode van het herstel punt**op hoe lang elk herstel punt moet worden bewaard. Gerepliceerde Vm's kunnen worden hersteld naar elk gewenst punt in het opgegeven tijd venster.
-5. Geef in de frequentie van de **app-consistente moment opname**op hoe vaak toepassings consistente moment opnamen worden gemaakt.
+4. Geef bij **Bewaar periode van het herstel punt** op hoe lang elk herstel punt moet worden bewaard. Gerepliceerde Vm's kunnen worden hersteld naar elk gewenst punt in het opgegeven tijd venster.
+5. Geef in de frequentie van de **app-consistente moment opname** op hoe vaak toepassings consistente moment opnamen worden gemaakt.
 
     - Een app-consistente moment opname is een tijdgebonden moment opname van de app-gegevens in de virtuele machine.
     - Volume Shadow Copy Service (VSS) zorgt ervoor dat apps op de virtuele machine een consistente status hebben wanneer de moment opname wordt gemaakt.
@@ -228,17 +228,17 @@ Zorg ervoor dat u alle taken in [stap 1: computer voorbereiden](#step-1-prepare-
 2. Selecteer in **Bron** de configuratieserver.
 3. Selecteer bij **Type machine** de optie **Fysieke machines**.
 4. Selecteer de processerver (configuratieserver). Klik vervolgens op **OK**.
-5. Selecteer in **doel**het abonnement en de resource groep waarin u de vm's wilt maken na een failover. Kies het implementatie model dat u wilt gebruiken voor de virtuele machines waarvoor failover is uitgevoerd.
+5. Selecteer in **doel** het abonnement en de resource groep waarin u de vm's wilt maken na een failover. Kies het implementatie model dat u wilt gebruiken voor de virtuele machines waarvoor failover is uitgevoerd.
 6. Selecteer het Azure-opslag account waarin u de gerepliceerde gegevens wilt opslaan.
 7. Selecteer het Azure-netwerk en -subnet waarmee virtuele Azure-machines verbinding maken wanneer ze na een failover worden gemaakt.
 8. Selecteer **nu configureren voor geselecteerde machines** om de netwerk instelling toe te passen op alle machines die u voor beveiliging selecteert. Selecteer **later configureren** als u het Azure-netwerk voor elke machine afzonderlijk wilt selecteren.
-9. Klik op **fysieke computers**op **+ fysieke machine**. Geef de naam, het IP-adres en het type besturings systeem op van elke computer die u wilt repliceren.
+9. Klik op **fysieke computers** op **+ fysieke machine**. Geef de naam, het IP-adres en het type besturings systeem op van elke computer die u wilt repliceren.
 
     - Gebruik het interne IP-adres van de computer.
     - Als u het open bare IP-adres opgeeft, werkt de replicatie mogelijk niet zoals verwacht.
 
-10. Selecteer in **Eigenschappen**  >  **eigenschappen configureren**het account dat door de proces server wordt gebruikt om de Mobility-service automatisch op de computer te installeren.
-11. Controleer in **replicatie-instellingen**  >  **replicatie-instellingen configureren**of het juiste replicatie beleid is geselecteerd.
+10. Selecteer in **Eigenschappen**  >  **eigenschappen configureren** het account dat door de proces server wordt gebruikt om de Mobility-service automatisch op de computer te installeren.
+11. Controleer in **replicatie-instellingen**  >  **replicatie-instellingen configureren** of het juiste replicatie beleid is geselecteerd.
 12. Klik op **Replicatie inschakelen**.
 13. Volg de voortgang van de taak **beveiliging inschakelen** in **instellingen**  >  **taken**  >  **site Recovery taken**. Nadat de taak **Beveiliging voltooien** is uitgevoerd, is de machine klaar voor een mogelijke failover.
 
@@ -260,11 +260,11 @@ Controleer voordat u een testfailover uitvoert de computer eigenschappen en zorg
 
 1. Klik in **Beveiligde items** op **Gerepliceerde items** > VM.
 2. In het deelvenster **Gerepliceerd item** bevindt zich een overzicht van VM-informatie, status, en de laatste beschikbare herstelpunten. Klik op **Eigenschappen** om meer details te bekijken.
-3. Wijzig in **Compute en netwerk**de instellingen naar wens.
+3. Wijzig in **Compute en netwerk** de instellingen naar wens.
 
     - U kunt de naam van de Azure-VM, de resource groep, de doel grootte, [beschikbaarheidsset](../virtual-machines/windows/tutorial-availability-sets.md)en de instellingen voor beheerde schijven wijzigen.
     - U kunt ook netwerk instellingen weer geven en wijzigen. Hieronder vallen het netwerk/subnet waaraan de Azure-VM is gekoppeld na een failover, en het IP-adres dat aan de virtuele machine wordt toegewezen.
-1. Bekijk op **schijven**informatie over het besturings systeem en de gegevens schijven op de virtuele machine.
+1. Bekijk op **schijven** informatie over het besturings systeem en de gegevens schijven op de virtuele machine.
 
 
 ### <a name="run-a-test-failover"></a>Een testfailover uitvoeren
@@ -284,12 +284,12 @@ Voer als volgt een testfailover uit voor een virtuele machine:
 
 1. Klik in **Instellingen** > **Gerepliceerde items** op de VM **+Failover testen**.
 2. Voor dit scenario selecteren we het **meest recente verwerkte** herstel punt.
-3. Selecteer in **failover testen**het doel-Azure-netwerk.
+3. Selecteer in **failover testen** het doel-Azure-netwerk.
 4. Klik op **OK** om te beginnen met de failover.
 5. Houd de voortgang bij door te klikken op de virtuele machine om de eigenschappen te openen. U kunt ook op de taak **failover testen** in *kluis naam*  >  **instellingen**  >  **taken**  > **site Recovery taken**.
 6. Nadat de failover is voltooid, wordt de replica-Azure-VM weergegeven in Azure Portal > **Virtuele machines**. Controleer of de virtuele machine de juiste grootte heeft, is verbonden met het juiste netwerk en wordt uitgevoerd.
 7. Nu moet u verbinding maken met de gerepliceerde virtuele machine in Azure. [Meer informatie](site-recovery-test-failover-to-azure.md#prepare-to-connect-to-azure-vms-after-failover).
-8. Als u VM's van Azure wilt verwijderen die tijdens de failovertest zijn gemaakt, klikt u in de VM op **Failovertest opschonen**. Sla in **notities**alle opmerkingen op die zijn gekoppeld aan de testfailover.
+8. Als u VM's van Azure wilt verwijderen die tijdens de failovertest zijn gemaakt, klikt u in de VM op **Failovertest opschonen**. Sla in **notities** alle opmerkingen op die zijn gekoppeld aan de testfailover.
 
 ## <a name="fail-over-and-fail-back"></a>Failover en failback
 
@@ -300,9 +300,9 @@ Als u na de failover een failover wilt uitvoeren, moet u eerst [verbinding maken
 Voer een failover als volgt uit:
 
 
-1. Klik in **instellingen**  >  **gerepliceerde items**op de machine > **failover**.
+1. Klik in **instellingen**  >  **gerepliceerde items** op de machine > **failover**.
 2. Selecteer het herstel punt dat u wilt gebruiken.
-3. Selecteer in **failover testen**het doel-Azure-netwerk.
+3. Selecteer in **failover testen** het doel-Azure-netwerk.
 4. Selecteer **Sluit de computer af voordat de failover wordt gestart**. Met deze instelling probeert Site Recovery de bron machine af te sluiten voordat de failover wordt gestart. Failover wordt echter voortgezet, zelfs als afsluiten mislukt.
 5. Klik op **OK** om te beginnen met de failover. U kunt de voortgang van de failover volgen op de pagina **Taken**.
 6. Nadat de failover is voltooid, wordt de replica-Azure-VM weergegeven in Azure Portal > **Virtuele machines**. Als u hebt voor bereid om verbinding te maken na een failover, controleert u of de virtuele machine de juiste grootte heeft, is verbonden met het juiste netwerk en wordt uitgevoerd.

@@ -7,14 +7,14 @@ ms.service: data-catalog
 ms.topic: how-to
 ms.date: 08/01/2019
 ms.openlocfilehash: 9d035417b613c81487c493bde90cdcc461f04412
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87081148"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017284"
 ---
 # <a name="manage-data-assets-in-azure-data-catalog"></a>Gegevensassets beheren in Azure Data Catalog
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 Azure Data Catalog is ontworpen voor detectie van gegevens bronnen, zodat u de gegevens bronnen die u nodig hebt om analyses uit te voeren en beslissingen te nemen, eenvoudig kunt ontdekken en begrijpen. Deze detectie mogelijkheden maken de grootste invloed op het moment dat u en andere gebruikers het breedste bereik aan beschik bare gegevens bronnen kunnen vinden en begrijpen. Met deze elementen in dit geval is het standaard gedrag van Data Catalog voor alle geregistreerde gegevens bronnen voor weer gave en detectie door alle catalogus gebruikers.
 
 Data Catalog geeft u geen toegang tot de gegevens zelf. De gegevens toegang wordt bepaald door de eigenaar van de gegevens bron. Met Data Catalog kunt u gegevens bronnen detecteren en de meta gegevens bekijken die gerelateerd zijn aan de bronnen die in de catalogus zijn geregistreerd.

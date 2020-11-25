@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/05/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: cbd6f821326c86983ceb3ae5b90969e522c187fe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4bdeef537556db94338ed50fcfa6e9d88431f25a
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82204561"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96016251"
 ---
 [!INCLUDE [virtual-machines-disks-incremental-snapshots-description](virtual-machines-disks-incremental-snapshots-description.md)]
 
@@ -29,9 +29,9 @@ In Windows wordt met de volgende opdracht de bestaande installatie geïnstalleer
 ```PowerShell
 Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'
 ```
-In Linux is de CLI-installatie afhankelijk van de versie van het besturings systeem.  Zie [de Azure cli installeren](https://docs.microsoft.com/cli/azure/install-azure-cli) voor uw specifieke Linux-versie.
+In Linux is de CLI-installatie afhankelijk van de versie van het besturings systeem.  Zie [de Azure cli installeren](/cli/azure/install-azure-cli) voor uw specifieke Linux-versie.
 
-Als u een incrementele moment opname wilt maken, gebruikt u [AZ snap shot Create](https://docs.microsoft.com/cli/azure/snapshot?view=azure-cli-latest#az-snapshot-create) met de `--incremental` para meter.
+Als u een incrementele moment opname wilt maken, gebruikt u [AZ snap shot Create](/cli/azure/snapshot?view=azure-cli-latest#az-snapshot-create) met de `--incremental` para meter.
 
 In het volgende voor beeld wordt een incrementele moment opname gemaakt, vervangen `<yourDesiredSnapShotNameHere>` , `<yourResourceGroupNameHere>` , `<exampleDiskName>` , en `<exampleLocation>` met uw eigen waarden, waarna u het voor beeld uitvoert:
 

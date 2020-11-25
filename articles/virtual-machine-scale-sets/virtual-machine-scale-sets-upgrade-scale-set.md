@@ -10,11 +10,11 @@ ms.date: 03/10/2020
 ms.reviewer: mimckitt
 ms.custom: mimckitt, devx-track-azurecli
 ms.openlocfilehash: 7577c8510746d1140c1f8b70081f600d992ae512
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92745828"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96016672"
 ---
 # <a name="modify-a-virtual-machine-scale-set"></a>Een virtuele-machineschaalset wijzigen
 
@@ -354,7 +354,7 @@ Sommige eigenschappen kunnen worden gewijzigd, met uitzonde ring van de huidige 
 ### <a name="properties-that-require-deallocation-to-change"></a>Eigenschappen waarvan de toewijzing moet worden gewijzigd
 Sommige eigenschappen kunnen alleen worden gewijzigd in bepaalde waarden als de toewijzing van de virtuele machines in de schaalset ongedaan wordt gemaakt. Deze eigenschappen zijn onder andere:
 
-- **SKU-naam** : als de nieuwe VM-SKU niet wordt ondersteund op de hardware waarop de schaalset momenteel is ingeschakeld, moet u de toewijzing van de vm's in de schaalset ongedaan maken voordat u de naam van de SKU wijzigt. Zie [het formaat van een Azure VM wijzigen](../virtual-machines/windows/resize-vm.md)voor meer informatie.
+- **SKU-naam**: als de nieuwe VM-SKU niet wordt ondersteund op de hardware waarop de schaalset momenteel is ingeschakeld, moet u de toewijzing van de vm's in de schaalset ongedaan maken voordat u de naam van de SKU wijzigt. Zie [het formaat van een Azure VM wijzigen](../virtual-machines/windows/resize-vm.md)voor meer informatie.
 
 
 ## <a name="vm-specific-updates"></a>VM-specifieke updates
@@ -364,7 +364,7 @@ Bepaalde wijzigingen kunnen worden toegepast op specifieke Vm's in plaats van de
 ## <a name="scenarios"></a>Scenario's
 
 ### <a name="application-updates"></a>Toepassings updates
-Als een toepassing wordt geïmplementeerd naar een schaalset via uitbrei dingen, zorgt een update voor de configuratie van de extensie ervoor dat de toepassing wordt bijgewerkt volgens het upgrade beleid. Als u bijvoorbeeld een nieuwe versie van een script hebt dat in een aangepaste script extensie moet worden uitgevoerd, kunt u de eigenschap *fileUris* bijwerken om naar het nieuwe script te verwijzen. In sommige gevallen wilt u mogelijk een update forceren, ook al is de configuratie van de extensie ongewijzigd (bijvoorbeeld omdat u het script hebt bijgewerkt zonder een wijziging in de URI van het script). In dergelijke gevallen kunt u de *updatetag* wijzigen om een update af te dwingen. Het Azure-platform interpreteert deze eigenschap niet. Als u de waarde wijzigt, heeft dit geen effect op de uitvoering van de uitbrei ding. Door een wijziging wordt de uitbrei ding gewoon geforceerd opnieuw uitgevoerd. Zie de [rest API-documentatie voor uitbrei dingen](/rest/api/compute/virtualmachineextensions/createorupdate)voor meer informatie over de *updatetag* . Houd er rekening mee dat de *updatetag* kan worden gebruikt met alle uitbrei dingen, niet alleen de aangepaste script extensie.
+Als een toepassing wordt geïmplementeerd naar een schaalset via uitbrei dingen, zorgt een update voor de configuratie van de extensie ervoor dat de toepassing wordt bijgewerkt volgens het upgrade beleid. Als u bijvoorbeeld een nieuwe versie van een script hebt dat in een aangepaste script extensie moet worden uitgevoerd, kunt u de eigenschap *fileUris* bijwerken om naar het nieuwe script te verwijzen. In sommige gevallen wilt u mogelijk een update forceren, ook al is de configuratie van de extensie ongewijzigd (bijvoorbeeld omdat u het script hebt bijgewerkt zonder een wijziging in de URI van het script). In dergelijke gevallen kunt u de *updatetag* wijzigen om een update af te dwingen. Het Azure-platform interpreteert deze eigenschap niet. Als u de waarde wijzigt, heeft dit geen effect op de uitvoering van de uitbrei ding. Door een wijziging wordt de uitbrei ding gewoon geforceerd opnieuw uitgevoerd. Zie de [rest API-documentatie voor uitbrei dingen](/rest/api/compute/virtualmachineextensions/createorupdate)voor meer informatie over de *updatetag*. Houd er rekening mee dat de *updatetag* kan worden gebruikt met alle uitbrei dingen, niet alleen de aangepaste script extensie.
 
 Het is ook gebruikelijk dat toepassingen worden geïmplementeerd via een aangepaste installatie kopie. Dit scenario wordt behandeld in de volgende sectie.
 
@@ -379,7 +379,7 @@ Als u aangepaste installatie kopieën gebruikt, kunt u de installatie kopie bijw
 ## <a name="examples"></a>Voorbeelden
 
 ### <a name="update-the-os-image-for-your-scale-set"></a>De installatie kopie van het besturings systeem voor uw schaalset bijwerken
-Mogelijk hebt u een schaalset waarop een oude versie van Ubuntu LTS 16,04 wordt uitgevoerd. U wilt bijwerken naar een nieuwere versie van Ubuntu LTS 16,04, zoals versie *16.04.201801090* . De eigenschap versie van de afbeeldings verwijzing maakt geen deel uit van een lijst, dus u kunt deze eigenschappen rechtstreeks wijzigen met een van de volgende opdrachten:
+Mogelijk hebt u een schaalset waarop een oude versie van Ubuntu LTS 16,04 wordt uitgevoerd. U wilt bijwerken naar een nieuwere versie van Ubuntu LTS 16,04, zoals versie *16.04.201801090*. De eigenschap versie van de afbeeldings verwijzing maakt geen deel uit van een lijst, dus u kunt deze eigenschappen rechtstreeks wijzigen met een van de volgende opdrachten:
 
 - Azure PowerShell met [Update-AzVmss](/powershell/module/az.compute/update-azvmss) als volgt:
 

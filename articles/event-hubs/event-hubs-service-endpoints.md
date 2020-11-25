@@ -4,11 +4,11 @@ description: Dit artikel bevat informatie over het toevoegen van een service-ein
 ms.topic: article
 ms.date: 07/29/2020
 ms.openlocfilehash: 029338e3835d03b1a66ff6629e872c84113b0ff2
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427192"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96015572"
 ---
 # <a name="allow-access-to-azure-event-hubs-namespaces-from-specific-virtual-networks"></a>Toegang tot Azure Event Hubs-naam ruimten van specifieke virtuele netwerken toestaan 
 
@@ -55,7 +55,7 @@ In deze sectie wordt beschreven hoe u Azure Portal kunt gebruiken om een service
 
     ![Optie Firewall: alle netwerken geselecteerd](./media/event-hubs-firewall/firewall-all-networks-selected.png)
 1. Als u de toegang tot specifieke netwerken wilt beperken, selecteert u de optie **geselecteerde netwerken** boven aan de pagina als deze nog niet is geselecteerd.
-2. Selecteer in de sectie **Virtual Network** van de pagina **+ bestaand virtueel netwerk toevoegen** _. Selecteer _ *+ nieuw virtueel netwerk maken* * als u een nieuw VNet wilt maken. 
+2. Selecteer in de sectie **Virtual Network** van de pagina **+ bestaand virtueel netwerk toevoegen** _. Selecteer _ *+ nieuw virtueel netwerk maken** als u een nieuw VNet wilt maken. 
 
     ![bestaand virtueel netwerk toevoegen](./media/event-hubs-tutorial-vnet-and-firewalls/add-vnet-menu.png)
 3. Selecteer het virtuele netwerk in de lijst met virtuele netwerken en kies vervolgens het **subnet**. U moet het service-eind punt inschakelen voordat u het virtuele netwerk aan de lijst toevoegt. Als het service-eind punt niet is ingeschakeld, wordt u door de portal gevraagd om dit in te scha kelen.
@@ -96,7 +96,7 @@ Sjabloon parameters:
 > ```json
 > "defaultAction": "Allow"
 > ```
-> in op
+> tot
 > ```json
 > "defaultAction": "Deny"
 > ```

@@ -7,11 +7,11 @@ ms.date: 06/05/2020
 ms.author: helohr
 manager: lizross
 ms.openlocfilehash: 6a9f2c62d8e7f17f6ea8377982c79fef3dfbb97c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88002809"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96016825"
 ---
 # <a name="create-a-profile-container-with-azure-netapp-files-and-ad-ds"></a>Een profiel container maken met Azure NetApp Files en AD DS
 
@@ -43,7 +43,7 @@ Voordat u een FSLogix-profiel container voor een hostgroep kunt maken, moet u he
 
 Als u aan de slag wilt gaan, moet u een Azure NetApp Files-account instellen.
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com). Zorg ervoor dat uw account Inzender-of beheerders machtigingen heeft.
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Zorg ervoor dat uw account Inzender-of beheerders machtigingen heeft.
 
 2. Selecteer het **Azure Cloud shell pictogram** rechts van de zoek balk om Azure Cloud shell te openen.
 
@@ -75,10 +75,10 @@ Als u aan de slag wilt gaan, moet u een Azure NetApp Files-account instellen.
 8. Selecteer de knop **Add**.
 9. Wanneer het tabblad **Nieuw NetApp-account** wordt geopend, voert u de volgende waarden in:
 
-    - Voer bij **naam**de naam van uw NetApp-account in.
-    - Selecteer bij **abonnement**het abonnement voor het opslag account dat u in stap 4 hebt ingesteld in de vervolg keuzelijst.
-    - Voor **resource groep**selecteert u een bestaande resource groep in de vervolg keuzelijst of maakt u een nieuwe, door **Nieuw maken**te selecteren.
-    - Selecteer bij **locatie**de regio voor uw NetApp-account in de vervolg keuzelijst. Deze regio moet dezelfde regio zijn als de Vm's van de host van uw sessie.
+    - Voer bij **naam** de naam van uw NetApp-account in.
+    - Selecteer bij **abonnement** het abonnement voor het opslag account dat u in stap 4 hebt ingesteld in de vervolg keuzelijst.
+    - Voor **resource groep** selecteert u een bestaande resource groep in de vervolg keuzelijst of maakt u een nieuwe, door **Nieuw maken** te selecteren.
+    - Selecteer bij **locatie** de regio voor uw NetApp-account in de vervolg keuzelijst. Deze regio moet dezelfde regio zijn als de Vm's van de host van uw sessie.
 
    >[!NOTE]
    >Azure NetApp Files biedt momenteel geen ondersteuning voor het koppelen van een volume in verschillende regio's.
@@ -94,8 +94,8 @@ Maak vervolgens een nieuwe capaciteits groep:
 3. Selecteer **groep toevoegen**.
 4. Wanneer het tabblad **nieuwe capaciteits groep** wordt geopend, voert u de volgende waarden in:
 
-    - Voer bij **naam**een naam in voor de nieuwe capaciteits groep.
-    - Selecteer voor **service niveau**de gewenste waarde in de vervolg keuzelijst. We raden **Premium** aan voor de meeste omgevingen.
+    - Voer bij **naam** een naam in voor de nieuwe capaciteits groep.
+    - Selecteer voor **service niveau** de gewenste waarde in de vervolg keuzelijst. We raden **Premium** aan voor de meeste omgevingen.
        >[!NOTE]
        >De Premium-instelling biedt de minimale door Voer die beschikbaar is voor een Premium-service niveau, 256 MBps. Mogelijk moet u deze door Voer aanpassen voor een productie omgeving. De laatste door Voer is gebaseerd op de relatie die wordt beschreven in de [doorvoer limieten](../azure-netapp-files/azure-netapp-files-service-levels.md).
     - Voer voor **grootte (Tib)** de capaciteits pool grootte in die het beste bij uw behoeften past. De minimale grootte is 4 TiB.
@@ -113,27 +113,27 @@ Daarna moet u lid worden van een Active Directory verbinding.
 
 2. Voer de volgende waarden in op de pagina **lid worden Active Directory** om lid te worden van een verbinding:
 
-    - Voor **primaire DNS**voert u het IP-adres van de DNS-server in uw omgeving in die de domein naam kan omzetten.
+    - Voor **primaire DNS** voert u het IP-adres van de DNS-server in uw omgeving in die de domein naam kan omzetten.
     - Voer uw Fully Qualified Domain Name (FQDN) in voor het **domein**.
     - Voer voor het voor voegsel van de **SMB-server (computer-account)** de teken reeks in die u wilt toevoegen aan de naam van het computer account.
-    - Voer bij **gebruikers naam**de naam in van het account met machtigingen voor het uitvoeren van een domein deelname.
-    - Voer bij **wacht woord**het wacht woord van het account in.
+    - Voer bij **gebruikers naam** de naam in van het account met machtigingen voor het uitvoeren van een domein deelname.
+    - Voer bij **wacht woord** het wacht woord van het account in.
 
 ## <a name="create-a-new-volume"></a>Een nieuw volume maken
 
 Vervolgens moet u een nieuw volume maken.
 
-1. Selecteer **volumes**en selecteer vervolgens **volume toevoegen**.
+1. Selecteer **volumes** en selecteer vervolgens **volume toevoegen**.
 
 2. Wanneer het tabblad **een volume maken** wordt geopend, voert u de volgende waarden in:
 
-    - Voer voor **volume naam**een naam in voor het nieuwe volume.
-    - Voor de **capaciteits pool**selecteert u de capaciteits groep die u zojuist hebt gemaakt in de vervolg keuzelijst.
+    - Voer voor **volume naam** een naam in voor het nieuwe volume.
+    - Voor de **capaciteits pool** selecteert u de capaciteits groep die u zojuist hebt gemaakt in de vervolg keuzelijst.
     - Voer bij **quotum (GIB)** de grootte van het benodigde volume in voor uw omgeving.
-    - Voor **virtueel netwerk**selecteert u een bestaand virtueel netwerk dat is verbonden met de domein controller in de vervolg keuzelijst.
-    - Selecteer onder **subnet**de optie **nieuwe maken**. Houd er rekening mee dat dit subnet wordt gedelegeerd aan Azure NetApp Files.
+    - Voor **virtueel netwerk** selecteert u een bestaand virtueel netwerk dat is verbonden met de domein controller in de vervolg keuzelijst.
+    - Selecteer onder **subnet** de optie **nieuwe maken**. Houd er rekening mee dat dit subnet wordt gedelegeerd aan Azure NetApp Files.
 
-3.  Selecteer **volgende: protocol \> \> ** om het tabblad Protocol te openen en uw volume toegangs parameters in te stellen.
+3.  Selecteer **volgende: protocol \> \>** om het tabblad Protocol te openen en uw volume toegangs parameters in te stellen.
 
 ## <a name="configure-volume-access-parameters"></a>Volume toegangs parameters configureren
 
@@ -160,7 +160,7 @@ Deze sectie is gebaseerd op het [maken van een profiel container voor een hostgr
 
 2. Pak het gedownloade bestand uit.
 
-3. Ga in het bestand naar **x64**-  >  **releases** en voer **FSLogixAppsSetup.exe**uit. Het installatie menu wordt geopend.
+3. Ga in het bestand naar **x64**-  >  **releases** en voer **FSLogixAppsSetup.exe** uit. Het installatie menu wordt geopend.
 
 4.  Als u een product code hebt, voert u deze in het tekstvak product code in.
 

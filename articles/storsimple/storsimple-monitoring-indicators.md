@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 11/03/2017
 ms.author: alkohli
 ms.openlocfilehash: 97209dca7d30de037dbd21f5cc145b2941060e70
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85512971"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96015397"
 ---
 # <a name="use-storsimple-monitoring-indicators-to-manage-your-device"></a>StorSimple-bewakings indicatoren gebruiken om uw apparaat te beheren
 
@@ -48,7 +48,7 @@ Het voor paneel bevat de volgende indica toren:
 4. LED voor logische fout indicator (op rood-geel/uit
 5. Eenheid-ID weer geven  
 
-Het belangrijkste verschil tussen de Led's voor het voor paneel voor het apparaat en die voor de EBOD behuizing is het **identificatie nummer van de systeem eenheid** die wordt weer gegeven op de LED-weer gave. De standaard eenheid-ID die wordt weer gegeven op het apparaat is **00**, terwijl de standaard eenheid-id die wordt weer gegeven in de EBOD Enclosure **01**is. Zo kunt u snel onderscheid maken tussen het apparaat en de EBOD-behuizing wanneer het apparaat is ingeschakeld. Als uw apparaat is uitgeschakeld, gebruikt u de informatie in [inschakelen op een nieuw apparaat](storsimple-turn-device-on-or-off.md#turn-on-a-new-device) om onderscheid te maken tussen het apparaat en de EBOD-behuizing.  
+Het belangrijkste verschil tussen de Led's voor het voor paneel voor het apparaat en die voor de EBOD behuizing is het **identificatie nummer van de systeem eenheid** die wordt weer gegeven op de LED-weer gave. De standaard eenheid-ID die wordt weer gegeven op het apparaat is **00**, terwijl de standaard eenheid-id die wordt weer gegeven in de EBOD Enclosure **01** is. Zo kunt u snel onderscheid maken tussen het apparaat en de EBOD-behuizing wanneer het apparaat is ingeschakeld. Als uw apparaat is uitgeschakeld, gebruikt u de informatie in [inschakelen op een nieuw apparaat](storsimple-turn-device-on-or-off.md#turn-on-a-new-device) om onderscheid te maken tussen het apparaat en de EBOD-behuizing.  
 
 ## <a name="front-panel-led-status"></a>LED-status voor paneel
 Gebruik de volgende tabel om de status te identificeren die wordt aangegeven door de Led's op het voor paneel voor het apparaat of de EBOD-behuizing.  
@@ -136,7 +136,7 @@ De volgende afbeelding helpt u bij het identificeren van de Led's op de primaire
 Gebruik de volgende tabel om te bepalen of de controller module goed werkt.  
 
 ### <a name="controller-indicator-leds"></a>Led's voor controller indicator
-| GELEID | Beschrijving |
+| GELEID | Description |
 | --- | --- |
 | LED voor ID (blauw) |Geeft aan dat de module wordt geïdentificeerd. Als de blauwe LED knippert op een actieve controller, is de controller de actieve controller en de andere is de standby-controller. Zie [de actieve controller op het apparaat identificeren](storsimple-8000-controller-replacement.md#identify-the-active-controller-on-your-device)voor meer informatie. |
 | LED voor fout (geel) |Duidt op een fout in de controller. |
@@ -200,7 +200,7 @@ Een StorSimple-apparaat bevat hoorbare waarschuwingen die zijn gekoppeld aan de 
 In de volgende tabel worden de verschillende alarm Staten beschreven.  
 
 ### <a name="alarm-states"></a>Alarm statussen
-| Waarschuwings status | Bewerking | Actie met dempen knop ingedrukt |
+| Waarschuwings status | Actie | Actie met dempen knop ingedrukt |
 | --- | --- | --- |
 | S0 |Normale modus: stil |Piep pieptoon twee keer |
 | S1 |Fout modus: 1 seconde op/1 seconde uit |Overgang naar S2 of S3 (zie opmerkingen) |

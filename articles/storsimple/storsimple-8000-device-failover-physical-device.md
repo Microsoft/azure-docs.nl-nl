@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 05/03/2017
 ms.author: alkohli
 ms.openlocfilehash: 67d6fb1f3cc359288ed942d915e186542a62b0fc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91803939"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017131"
 ---
 # <a name="fail-over-to-a-storsimple-8000-series-physical-device"></a>Failover naar een fysiek StorSimple-apparaat in de 8000-serie
 

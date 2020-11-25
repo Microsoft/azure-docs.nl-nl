@@ -8,12 +8,12 @@ ms.date: 07/13/2020
 ms.author: jawilley
 ms.topic: troubleshooting
 ms.reviewer: sngun
-ms.openlocfilehash: 782abee06c5ab0f985e8bd90dbbecae18b1dfe02
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 2df401f7871d631ba317fb670783cad086b9a351
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94442324"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "96017556"
 ---
 # <a name="diagnose-and-troubleshoot-azure-cosmos-db-not-found-exceptions"></a>Problemen vaststellen en oplossen Azure Cosmos DB niet-gevonden uitzonde ringen
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -25,6 +25,11 @@ Er zijn veel geldige scenario's waarbij een toepassing een code 404 verwacht en 
 
 ## <a name="a-not-found-exception-was-returned-for-an-item-that-should-exist-or-does-exist"></a>Er is een niet-gevonden uitzonde ring geretourneerd voor een item dat bestaat of bestaat
 Dit zijn de mogelijke redenen waarom de status code 404 wordt geretourneerd als het item bestaat of bestaat.
+
+### <a name="the-read-session-is-not-available-for-the-input-session-token"></a>De leessessie is niet beschikbaar voor het token voor de invoersessie
+
+#### <a name="solution"></a>Oplossing:
+1. Werk uw huidige SDK bij naar de meest recente versie die beschikbaar is. De meest voorkomende oorzaken voor deze specifieke fout zijn opgelost in de nieuwste SDK-versies.
 
 ### <a name="race-condition"></a>Racevoorwaarde
 Er zijn meerdere exemplaren van de SDK-client en het lezen is voorgekomen voordat de schrijf bewerking werd uitgevoerd.

@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/25/2018
 ms.author: gwallace
 ms.openlocfilehash: 3590b8fdb67b25e0d4389e814aefcc4d18b1193c
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92116688"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96015419"
 ---
 Azure-klanten kunnen iedere maand 25.000 gratis e-mails ontgrendelen. Met deze 25.000 gratis maandelijkse e-mails krijgt u toegang tot geavanceerde rapportage en analyse en [alle api's][all APIs] (Web, SMTP, event, parse en meer). Voor informatie over extra diensten die door SendGrid worden aangeboden, gaat u naar de pagina met [SendGrid-oplossingen][SendGrid Solutions].
 
@@ -32,7 +32,7 @@ Azure-klanten kunnen iedere maand 25.000 gratis e-mails ontgrendelen. Met deze 2
 
     ![Scherm afbeelding van het dialoog venster een nieuw SendGrid-account maken met de optie uw prijs categorie kiezen en de prijs categorie gratis geselecteerd.][sendgrid-pricing]
 10. Voer een **promotiecode** in als u er een hebt.
-11. Voer uw **contact gegevens**in.
+11. Voer uw **contact gegevens** in.
 12. Lees en accepteer de **juridische bepalingen**.
 13. Nadat u uw aankoop hebt bevestigd, ziet u een pop-upvenster **implementatie is voltooid** en ziet u uw account in de lijst.
 

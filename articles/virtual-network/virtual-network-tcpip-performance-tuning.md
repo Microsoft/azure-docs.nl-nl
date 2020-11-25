@@ -16,11 +16,11 @@ ms.date: 04/02/2019
 ms.author: rimayber
 ms.reviewer: dgoddard, stegag, steveesp, minale, btalb, prachank
 ms.openlocfilehash: 67b635f09cb9407279e89b5f7b8526dab3c08946
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87068523"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017607"
 ---
 # <a name="tcpip-performance-tuning-for-azure-vms"></a>TCP/IP-prestaties afstemmen voor Azure-Vm's
 
@@ -111,7 +111,7 @@ Houd er rekening mee dat de Mtu's van de bron en bestemming niet de enige factor
 
 MSS wordt onderhandeld, maar kan niet de daad werkelijke MSS aangeven die kan worden gebruikt. De reden hiervoor is dat andere netwerk apparaten in het pad tussen de bron en de bestemming een lagere MTU-waarde hebben dan de bron en bestemming. In dit geval is het apparaat waarvan de MTU kleiner is dan het pakket het pakket verwijdert. Het apparaat ontvangt een ICMP-fragmentatie dat is vereist (type 3, code 4) dat de MTU bevat. Met dit ICMP-bericht kan de bronhost de pad-MTU op de juiste wijze verlagen. Het proces wordt Path MTU Discovery (PMTUD) genoemd.
 
-Het PMTUD-proces is inefficiënt en heeft invloed op de netwerk prestaties. Als pakketten worden verzonden die de MTU van een netwerkpad overschrijden, moeten de pakketten opnieuw worden verzonden met een lagere MSS. Als de afzender het bericht ICMP-fragmentatie dat nodig is, mogelijk niet ontvangt, is het mogelijk dat er een netwerk firewall is in het pad (meestal een *PMTUD-BlackHole*genoemd), de afzender niet het nodig heeft om de MSS te verlagen en het pakket continu opnieuw te verzenden. Daarom raden wij niet aan de MTU van de Azure-VM te verhogen.
+Het PMTUD-proces is inefficiënt en heeft invloed op de netwerk prestaties. Als pakketten worden verzonden die de MTU van een netwerkpad overschrijden, moeten de pakketten opnieuw worden verzonden met een lagere MSS. Als de afzender het bericht ICMP-fragmentatie dat nodig is, mogelijk niet ontvangt, is het mogelijk dat er een netwerk firewall is in het pad (meestal een *PMTUD-BlackHole* genoemd), de afzender niet het nodig heeft om de MSS te verlagen en het pakket continu opnieuw te verzenden. Daarom raden wij niet aan de MTU van de Azure-VM te verhogen.
 
 #### <a name="vpn-and-mtu"></a>VPN en MTU
 

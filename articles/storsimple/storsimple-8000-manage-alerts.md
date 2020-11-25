@@ -7,11 +7,11 @@ ms.topic: how-to
 ms.date: 03/14/2019
 ms.author: alkohli
 ms.openlocfilehash: 36ed87a75d590a8647e5347b3e90e6f5159dc6b5
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91961830"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96016842"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-view-and-manage-storsimple-alerts"></a>De StorSimple Apparaatbeheer-service gebruiken voor het weer geven en beheren van StorSimple-waarschuwingen
 
@@ -58,9 +58,9 @@ Nadat u e-mail meldingen voor een apparaat hebt ingeschakeld, ontvangen leden va
    
 2. Ga op de Blade **algemene instellingen** naar **instellingen voor waarschuwingen** en stel het volgende in:
    
-   1. Selecteer **Ja**in het veld **e-mail melding verzenden** .
+   1. Selecteer **Ja** in het veld **e-mail melding verzenden** .
    2. Selecteer in het veld **e-mail Service Administrators** de optie **Ja** om de service beheerder en alle mede beheerders de waarschuwings meldingen te laten ontvangen.
-   3. Voer in het veld **andere e-mail ontvangers** de e-mail adressen in van alle andere ontvangers die de meldingen moeten ontvangen. Voer de namen in de indeling *iemand \@ somewhere.com*in. Gebruik punt komma's om de e-mail adressen van elkaar te scheiden. U kunt Maxi maal 20 e-mail adressen per apparaat configureren. 
+   3. Voer in het veld **andere e-mail ontvangers** de e-mail adressen in van alle andere ontvangers die de meldingen moeten ontvangen. Voer de namen in de indeling *iemand \@ somewhere.com* in. Gebruik punt komma's om de e-mail adressen van elkaar te scheiden. U kunt Maxi maal 20 e-mail adressen per apparaat configureren. 
       
 3. Als u een melding voor een test bericht wilt verzenden, klikt u op **test bericht verzenden**. In de StorSimple-Apparaatbeheer service worden status berichten weer gegeven wanneer de test melding wordt doorgestuurd.
 
@@ -89,9 +89,9 @@ Als u op een waarschuwing in de lijst klikt, krijgt u extra informatie over de w
 
 ![Voor beeld van hardware-waarschuwing](./media/storsimple-8000-manage-alerts/configure-alerts-email14.png)
 
-U kunt de waarschuwings Details naar een tekst bestand kopiëren als u de informatie naar Microsoft Ondersteuning moet verzenden. Nadat u de aanbeveling hebt gevolgd en de waarschuwings voorwaarde on-premises hebt opgelost, moet u de waarschuwing van het apparaat wissen door de waarschuwing te selecteren op de Blade **waarschuwingen** en op **wissen**te klikken. Als u meerdere waarschuwingen wilt wissen, selecteert u elke waarschuwing, klikt u op een wille keurige kolom, behalve de kolom **waarschuwing** , en klikt u vervolgens op **wissen** nadat u alle waarschuwingen hebt geselecteerd die moeten worden gewist. Houd er rekening mee dat sommige waarschuwingen automatisch worden gewist wanneer het probleem is opgelost of wanneer de waarschuwing door het systeem wordt bijgewerkt met nieuwe gegevens.
+U kunt de waarschuwings Details naar een tekst bestand kopiëren als u de informatie naar Microsoft Ondersteuning moet verzenden. Nadat u de aanbeveling hebt gevolgd en de waarschuwings voorwaarde on-premises hebt opgelost, moet u de waarschuwing van het apparaat wissen door de waarschuwing te selecteren op de Blade **waarschuwingen** en op **wissen** te klikken. Als u meerdere waarschuwingen wilt wissen, selecteert u elke waarschuwing, klikt u op een wille keurige kolom, behalve de kolom **waarschuwing** , en klikt u vervolgens op **wissen** nadat u alle waarschuwingen hebt geselecteerd die moeten worden gewist. Houd er rekening mee dat sommige waarschuwingen automatisch worden gewist wanneer het probleem is opgelost of wanneer de waarschuwing door het systeem wordt bijgewerkt met nieuwe gegevens.
 
-Wanneer u op **wissen**klikt, kunt u opmerkingen over de waarschuwing geven en de stappen die u hebt genomen om het probleem op te lossen. Sommige gebeurtenissen worden door het systeem gewist als een andere gebeurtenis wordt geactiveerd met nieuwe gegevens. In dat geval wordt het volgende bericht weer gegeven.
+Wanneer u op **wissen** klikt, kunt u opmerkingen over de waarschuwing geven en de stappen die u hebt genomen om het probleem op te lossen. Sommige gebeurtenissen worden door het systeem gewist als een andere gebeurtenis wordt geactiveerd met nieuwe gegevens. In dat geval wordt het volgende bericht weer gegeven.
 
 ![Waarschuwings bericht wissen](./media/storsimple-manage-alerts/admin_alerts_system_clear.png)
 

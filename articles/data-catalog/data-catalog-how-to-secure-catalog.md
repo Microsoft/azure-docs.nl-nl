@@ -7,11 +7,11 @@ ms.service: data-catalog
 ms.topic: how-to
 ms.date: 08/01/2019
 ms.openlocfilehash: 6a429c09b6f8082c95e29bcea62d27ec4fb46fd3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86523380"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017301"
 ---
 # <a name="how-to-secure-access-to-data-catalog-and-data-assets"></a>Toegang tot Data Catalog-en gegevensassets beveiligen
 
@@ -40,7 +40,7 @@ Een gebruiker of groep toegang verlenen tot een gegevens catalogus en machtiging
 
 5. Druk op **Enter** of **Tab** uit het tekstvak. 
 
-6. Controleer of alle machtigingen (**aantekeningen**maken, **registreren**en **eigenaar**blijven) standaard worden toegewezen aan deze gebruikers of groepen. Dat wil zeggen dat de gebruiker of groep [gegevens assets kan registreren]( data-catalog-how-to-register.md), gegevensassets kan [aantekeningen]( data-catalog-how-to-annotate.md)maken en [eigenaar van]( data-catalog-how-to-manage.md)gegevensassets kan worden. 
+6. Controleer of alle machtigingen (**aantekeningen** maken, **registreren** en **eigenaar** blijven) standaard worden toegewezen aan deze gebruikers of groepen. Dat wil zeggen dat de gebruiker of groep [gegevens assets kan registreren]( data-catalog-how-to-register.md), gegevensassets kan [aantekeningen]( data-catalog-how-to-annotate.md)maken en [eigenaar van]( data-catalog-how-to-manage.md)gegevensassets kan worden. 
 
    ![Azure Data Catalog gebruikers-standaard machtigingen](media/data-catalog-how-to-secure-catalog/data-catalog-default-permissions.png)
 

@@ -17,14 +17,14 @@ ms.author: erikre
 ms.reviewer: elmer.thomas@sendgrid.com; erika.berkland@sendgrid.com; vibhork
 ms.custom: devx-track-java
 ms.openlocfilehash: 9ff006b74b6202b02a2767aee4d853b1206ce60d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87304476"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96015448"
 ---
 # <a name="how-to-send-email-using-sendgrid-from-java"></a>E-mail verzenden met SendGrid vanuit Java
-In deze hand leiding wordt gedemonstreerd hoe u algemene programmeer taken uitvoert met de SendGrid-e-mail service op Azure. De voor beelden zijn geschreven in Java. De besproken scenario's zijn onder andere het **maken van e-mail**, het **verzenden van e-mail**, het toevoegen van **bijlagen**, het **gebruiken van filters**en het **bijwerken van eigenschappen**. Zie de sectie [volgende stappen](#next-steps) voor meer informatie over het SendGrid en verzenden van e-mail.
+In deze hand leiding wordt gedemonstreerd hoe u algemene programmeer taken uitvoert met de SendGrid-e-mail service op Azure. De voor beelden zijn geschreven in Java. De besproken scenario's zijn onder andere het **maken van e-mail**, het **verzenden van e-mail**, het toevoegen van **bijlagen**, het **gebruiken van filters** en het **bijwerken van eigenschappen**. Zie de sectie [volgende stappen](#next-steps) voor meer informatie over het SendGrid en verzenden van e-mail.
 
 ## <a name="what-is-the-sendgrid-email-service"></a>Wat is de SendGrid-e-mail service?
 SendGrid is een [cloud-gebaseerde e-mail service] die betrouw bare [transactionele e-mail levering], schaal baarheid en real-time analyse biedt, samen met flexibele api's die eenvoudig aangepaste integratie maken. Veelvoorkomende scenario's voor SendGrid-gebruik zijn:
@@ -86,7 +86,7 @@ Zorg ervoor dat u de Java. mail-bibliotheken kunt ophalen, bijvoorbeeld uit <htt
     Authenticator auth = new SMTPAuthenticator();
     Session mailSession = Session.getDefaultInstance(properties, auth);
     ```
-3. Uw bericht maken en toewijzen **aan**waarden, **van**, **onderwerp** en inhoud. Dit wordt weer gegeven in de sectie [procedure: een E-mail maken](#how-to-create-an-email) .
+3. Uw bericht maken en toewijzen **aan** waarden, **van**, **onderwerp** en inhoud. Dit wordt weer gegeven in de sectie [procedure: een E-mail maken](#how-to-create-an-email) .
 4. Het bericht verzenden via een *javax. mail. Trans Port-* object. Dit wordt weer gegeven in de sectie [How to: Send a E-mail] [#how-to-send-a-email].
 
 ## <a name="how-to-create-an-email"></a>Procedure: een e-mail maken

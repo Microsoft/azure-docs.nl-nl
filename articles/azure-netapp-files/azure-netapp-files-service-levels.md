@@ -15,18 +15,18 @@ ms.topic: conceptual
 ms.date: 10/12/2020
 ms.author: b-juche
 ms.openlocfilehash: 7eac6a40476cffe875a03de49c9c9311ffbf4d39
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92016039"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017063"
 ---
 # <a name="service-levels-for-azure-netapp-files"></a>Serviceniveau's voor Azure NetApp Files
 Service niveaus zijn een kenmerk van een capaciteits groep. Service niveaus worden gedefinieerd en onderscheiden van de toegestane maximale door Voer voor een volume in de capaciteits pool op basis van het quotum dat is toegewezen aan het volume.
 
 ## <a name="supported-service-levels"></a>Ondersteunde service niveaus
 
-Azure NetApp Files ondersteunt drie service niveaus: *Ultra*, *Premium*en *Standard*. 
+Azure NetApp Files ondersteunt drie service niveaus: *Ultra*, *Premium* en *Standard*. 
 
 * <a name="Ultra"></a>Ultra Storage
 

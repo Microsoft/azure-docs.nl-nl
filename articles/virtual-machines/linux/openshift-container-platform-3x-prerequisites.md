@@ -10,11 +10,11 @@ ms.workload: infrastructure
 ms.date: 10/23/2019
 ms.author: haroldw
 ms.openlocfilehash: 68bd748e890659e4b79d76e4ccab038f251a937a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87368180"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96016026"
 ---
 # <a name="common-prerequisites-for-deploying-openshift-container-platform-311-in-azure"></a>Algemene vereisten voor het implementeren van open Shift container platform 3,11 in azure
 
@@ -138,7 +138,7 @@ Zie [een Azure-service-principal maken met Azure cli](/cli/azure/create-an-azure
 
 ## <a name="prerequisites-applicable-only-to-resource-manager-template"></a>Vereisten die alleen van toepassing zijn op de Resource Manager-sjabloon
 
-Er moeten geheimen worden gemaakt voor de persoonlijke SSH-sleutel (**sshPrivateKey**), Azure AD client Secret (**aadClientSecret**), open Shift admin password (**OpenshiftPassword**) en Red Hat Subscription manager password of Activation Key (**rhsmPasswordOrActivationKey**).  Als er aangepaste TLS/SSL-certificaten worden gebruikt, moeten er bovendien zes extra geheimen worden gemaakt: **routingcafile**, **routingcertfile**, **routingkeyfile**, **mastercafile**, **mastercertfile**en **masterkeyfile**.  Deze para meters worden uitgebreid beschreven.
+Er moeten geheimen worden gemaakt voor de persoonlijke SSH-sleutel (**sshPrivateKey**), Azure AD client Secret (**aadClientSecret**), open Shift admin password (**OpenshiftPassword**) en Red Hat Subscription manager password of Activation Key (**rhsmPasswordOrActivationKey**).  Als er aangepaste TLS/SSL-certificaten worden gebruikt, moeten er bovendien zes extra geheimen worden gemaakt: **routingcafile**, **routingcertfile**, **routingkeyfile**, **mastercafile**, **mastercertfile** en **masterkeyfile**.  Deze para meters worden uitgebreid beschreven.
 
 De sjabloon verwijst naar specifieke geheime namen, dus u **moet** de vetgedrukte namen gebruiken die hierboven worden vermeld (hoofdletter gevoelig).
 

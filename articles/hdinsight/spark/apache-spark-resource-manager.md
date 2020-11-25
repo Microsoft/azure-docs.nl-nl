@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 12/06/2019
 ms.openlocfilehash: 5427077a4b07917c8852d0a63c815195e776b9de
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86085188"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017029"
 ---
 # <a name="manage-resources-for-apache-spark-cluster-on-azure-hdinsight"></a>Resources voor Apache Spark cluster beheren in azure HDInsight
 
@@ -29,12 +29,12 @@ U kunt de garen-interface gebruiken om toepassingen te bewaken die momenteel wor
 
 1. Open in het [Azure Portal](https://portal.azure.com/)het Spark-cluster. Zie voor meer informatie het [overzicht en weer geven van clusters](../hdinsight-administer-use-portal-linux.md#showClusters).
 
-2. Selecteer in **cluster dashboards**de optie **garens**. Wanneer u hierom wordt gevraagd, voert u de beheerders referenties in voor het Spark-cluster.
+2. Selecteer in **cluster dashboards** de optie **garens**. Wanneer u hierom wordt gevraagd, voert u de beheerders referenties in voor het Spark-cluster.
 
     ![Gebruikers interface van garen starten](./media/apache-spark-resource-manager/azure-portal-dashboard-yarn.png)
 
    > [!TIP]  
-   > U kunt ook de gebruikers interface van garen starten vanuit de Ambari-gebruikers interface. Ga in de Ambari-gebruikers interface **naar de**  >  **snelle koppelingen**van een  >  **actieve**  >  **Resource Manager-gebruikers interface**.
+   > U kunt ook de gebruikers interface van garen starten vanuit de Ambari-gebruikers interface. Ga in de Ambari-gebruikers interface **naar de**  >  **snelle koppelingen** van een  >  **actieve**  >  **Resource Manager-gebruikers interface**.
 
 ## <a name="optimize-clusters-for-spark-applications"></a>Clusters optimaliseren voor Spark-toepassingen
 
@@ -103,13 +103,13 @@ Spark Thrift server maakt gebruik van de toewijzing van de dynamische uitvoerder
 
 Het geheugen van Spark Thrift-Server Stuur Programma's is ingesteld op 25% van de RAM-grootte van het hoofd knooppunt, op voor waarde dat de totale RAM-grootte van het hoofd knooppunt groter is dan 14 GB. U kunt de Ambari-gebruikers interface gebruiken om de geheugen configuratie van het stuur programma te wijzigen, zoals wordt weer gegeven in de volgende scherm afbeelding:
 
-Ga in de Ambari-gebruikers interface naar **Spark2**  >  **configs**  >  **Advanced Spark2-env**. Geef vervolgens de waarde voor **spark_thrift_cmd_opts**op.
+Ga in de Ambari-gebruikers interface naar **Spark2**  >  **configs**  >  **Advanced Spark2-env**. Geef vervolgens de waarde voor **spark_thrift_cmd_opts** op.
 
 ## <a name="reclaim-spark-cluster-resources"></a>Spark-cluster resources vrijmaken
 
 Vanwege de dynamische toewijzing van Spark zijn de resources die worden gebruikt door de Thrift-server, de bronnen voor de twee toepassings Masters. Als u deze resources opnieuw wilt claimen, moet u de Thrift Server-services die worden uitgevoerd op het cluster stoppen.
 
-1. Selecteer **Spark2**in het linkerdeel venster van de Ambari-gebruikers interface.
+1. Selecteer **Spark2** in het linkerdeel venster van de Ambari-gebruikers interface.
 
 2. Selecteer op de volgende pagina **Spark2 Thrift-servers**.
 
@@ -126,7 +126,7 @@ Vanwege de dynamische toewijzing van Spark zijn de resources die worden gebruikt
 
 ## <a name="restart-the-jupyter-service"></a>De Jupyter-service opnieuw starten
 
-Start de Ambari-webgebruikersinterface zoals wordt weer gegeven in het begin van het artikel. Selecteer **Jupyter**in het navigatie deel venster links, selecteer **service acties**en selecteer vervolgens **opnieuw starten**. Hiermee start u de Jupyter-service op alle hoofd knooppunten.
+Start de Ambari-webgebruikersinterface zoals wordt weer gegeven in het begin van het artikel. Selecteer **Jupyter** in het navigatie deel venster links, selecteer **service acties** en selecteer vervolgens **opnieuw starten**. Hiermee start u de Jupyter-service op alle hoofd knooppunten.
 
 ![Jupyter opnieuw starten](./media/apache-spark-resource-manager/apache-ambari-restart-jupyter.png "Jupyter opnieuw starten")
 

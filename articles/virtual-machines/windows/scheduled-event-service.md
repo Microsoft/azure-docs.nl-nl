@@ -8,11 +8,11 @@ ms.date: 08/20/2019
 ms.author: sarn
 ms.topic: how-to
 ms.openlocfilehash: 0806c6e0ed89c2c0f4712ec985599810119fcf89
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86999017"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96015516"
 ---
 # <a name="monitoring-scheduled-events"></a>Bewakings Scheduled Events
 
@@ -110,7 +110,7 @@ We willen nu een Log Analytics-werk ruimte verbinden met de Collector-VM. De wer
     ![Verbinding maken met een virtuele machine als gegevens bron](./media/notifications/connect-to-data-source.png)
 
 1. Zoek en selecteer **myCollectorVM**. 
-1. Selecteer op de pagina nieuw voor **myCollectorVM**de optie **verbinding maken**.
+1. Selecteer op de pagina nieuw voor **myCollectorVM** de optie **verbinding maken**.
 
 Hiermee wordt de [micro soft Monitoring Agent](../extensions/oms-windows.md) op uw virtuele machine geïnstalleerd. Het duurt enkele minuten om uw virtuele machine te verbinden met de werk ruimte en de uitbrei ding te installeren. 
 
@@ -118,11 +118,11 @@ Hiermee wordt de [micro soft Monitoring Agent](../extensions/oms-windows.md) op 
 
 1. Open de pagina voor uw werk ruimte en selecteer **Geavanceerde instellingen**.
 1. Selecteer **gegevens** in het menu links en selecteer vervolgens **Windows-gebeurtenis logboeken**.
-1. In **verzamelen uit de volgende gebeurtenis logboeken**begint u met het typen van de *toepassing* en selecteert u vervolgens **toepassing** in de lijst.
+1. In **verzamelen uit de volgende gebeurtenis logboeken** begint u met het typen van de *toepassing* en selecteert u vervolgens **toepassing** in de lijst.
 
     ![Geavanceerde instellingen selecteren](./media/notifications/advanced.png)
 
-1. Geef **fout**, **waarschuwing**en **informatie** ingeschakeld en selecteer **Opslaan** om de instellingen op te slaan.
+1. Geef **fout**, **waarschuwing** en **informatie** ingeschakeld en selecteer **Opslaan** om de instellingen op te slaan.
 
 
 > [!NOTE]
@@ -150,22 +150,22 @@ Zodra de gebeurtenissen naar Log Analytics zijn gepusht, kunt u de volgende [que
     | project-away RenderedDescription,ReqJson
     ```
 
-1. Selecteer **Opslaan**en typ *logQuery* voor de naam, geef **query** op als type, typ *VMLogs* als de **categorie**en selecteer vervolgens **Opslaan**. 
+1. Selecteer **Opslaan** en typ *logQuery* voor de naam, geef **query** op als type, typ *VMLogs* als de **categorie** en selecteer vervolgens **Opslaan**. 
 
     ![De query opslaan](./media/notifications/save-query.png)
 
 1. Selecteer **Nieuwe waarschuwingsregel**. 
 1. Op de pagina **regel maken** , gaat u `collectorworkspace` naar de **resource**.
-1. Onder **voor waarde**selecteert u de vermelding *wanneer het <login undefined> zoeken naar Logboeken van de klant *. De pagina **signaal logica configureren** wordt geopend.
+1. Onder **voor waarde** selecteert u de vermelding *wanneer het <login undefined> zoeken naar Logboeken van de klant*. De pagina **signaal logica configureren** wordt geopend.
 1. Voer bij **drempel waarde** *0* in en selecteer vervolgens **gereed**.
 1. Onder **acties**, selecteer **actie groep maken**. De pagina **actie groep toevoegen** wordt geopend.
-1. Typ *myActionGroup*in de naam van de **actie groep**.
-1. Typ **myActionGroup**in **short name**.
-1. Selecteer **resourcegroupavailability**in de **resource groep**.
-1. Onder acties, Typ in **actie naam** **e-mail**en selecteer vervolgens **e-mail/SMS/push/Voice**. De pagina **e-mail/SMS/push/Voice** wordt geopend.
+1. Typ *myActionGroup* in de naam van de **actie groep**.
+1. Typ **myActionGroup** in **short name**.
+1. Selecteer **resourcegroupavailability** in de **resource groep**.
+1. Onder acties, Typ in **actie naam** **e-mail** en selecteer vervolgens **e-mail/SMS/push/Voice**. De pagina **e-mail/SMS/push/Voice** wordt geopend.
 1. Selecteer **e-mail**, typ uw e-mail adres en selecteer vervolgens **OK**.
-1. Selecteer **OK**op de pagina **actie groep toevoegen** . 
-1. Typ *myAlert* voor de naam van de **waarschuwings regel**in de pagina **regel maken** **, en**Typ vervolgens *e-mail waarschuwings regel* voor de **Beschrijving**.
+1. Selecteer **OK** op de pagina **actie groep toevoegen** . 
+1. Typ *myAlert* voor de naam van de **waarschuwings regel** in de pagina **regel maken** **, en** Typ vervolgens *e-mail waarschuwings regel* voor de **Beschrijving**.
 1. Wanneer u klaar bent, selecteert u **waarschuwings regel maken**.
 1. Start een van de virtuele machines in de beschikbaarheidsset opnieuw op. Binnen een paar minuten ontvangt u een e-mail bericht dat de waarschuwing is geactiveerd.
 

@@ -8,12 +8,12 @@ ms.service: private-link
 ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: allensu
-ms.openlocfilehash: 734d52dadbb849925303febb0d3d1195bbddb0df
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5cbfd90ca65a1fb75c9cbe5602ac2a69741e378f
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89236685"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96017233"
 ---
 # <a name="use-azure-firewall-to-inspect-traffic-destined-to-a-private-endpoint"></a>Azure Firewall gebruiken om verkeer te controleren dat is bestemd voor een persoonlijk eind punt
 
@@ -55,7 +55,7 @@ Zie de sectie Veelgestelde vragen van de pagina met [prijzen](https://azure.micr
 
 ## <a name="scenario-2-hub-and-spoke-architecture---shared-virtual-network-for-private-endpoints-and-virtual-machines"></a>Scenario 2: een hub-en spoke-architectuur-gedeeld virtueel netwerk voor persoonlijke eind punten en virtuele machines
 
-:::image type="content" source="./media/inspect-traffic-using-azure-firewall/shared-spoke.png" alt-text="Toegewezen Virtual Network voor privé-eind punten" border="true":::
+:::image type="content" source="./media/inspect-traffic-using-azure-firewall/shared-spoke.png" alt-text="Persoonlijke eind punten en Virtual Machines in dezelfde Virtual Network" border="true":::
 
 Dit scenario wordt geïmplementeerd wanneer:
 
@@ -78,7 +78,7 @@ Zie de sectie Veelgestelde vragen van de pagina met [prijzen](https://azure.micr
 
 ## <a name="scenario-3-single-virtual-network"></a>Scenario 3: Eén virtueel netwerk
 
-:::image type="content" source="./media/inspect-traffic-using-azure-firewall/single-vnet.png" alt-text="Toegewezen Virtual Network voor privé-eind punten" border="true":::
+:::image type="content" source="./media/inspect-traffic-using-azure-firewall/single-vnet.png" alt-text="Eén virtueel netwerk" border="true":::
 
 Er zijn enkele beperkingen ten aanzien van de implementatie: een migratie naar een hub-en-spoke-architectuur is niet mogelijk. Dezelfde overwegingen als in scenario 2 zijn van toepassing. In dit scenario zijn de kosten voor peering voor virtuele netwerken niet van toepassing.
 
@@ -87,7 +87,7 @@ Er zijn enkele beperkingen ten aanzien van de implementatie: een migratie naar e
 
 ## <a name="scenario-4-on-premises-traffic-to-private-endpoints"></a>Scenario 4: on-premises verkeer naar privé-eind punten
 
-:::image type="content" source="./media/inspect-traffic-using-azure-firewall/on-premises.png" alt-text="Toegewezen Virtual Network voor privé-eind punten" border="true":::
+:::image type="content" source="./media/inspect-traffic-using-azure-firewall/on-premises.png" alt-text="On-premises verkeer naar privé-eind punten" border="true":::
 
 Deze architectuur kan worden geïmplementeerd als u verbinding met uw on-premises netwerk hebt geconfigureerd met behulp van: 
 
@@ -106,7 +106,7 @@ Dezelfde overwegingen als in scenario 2 hierboven zijn van toepassing. In dit sc
 * Een Azure-abonnement.
 * Een Log Analytics-werkruimte.  
 
-Zie [een log Analytics-werk ruimte maken in de Azure Portal](https://docs.microsoft.com/azure/azure-monitor/learn/quick-create-workspace) om een werk ruimte te maken als u er nog geen hebt in uw abonnement.
+Zie [een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/learn/quick-create-workspace.md) om een werk ruimte te maken als u er nog geen hebt in uw abonnement.
 
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
@@ -132,7 +132,7 @@ Vervang de volgende para meters in de stappen door de onderstaande informatie:
 |-----------------------------|----------------------|
 | **\<resource-group-name>**  | myResourceGroup |
 | **\<virtual-network-name>** | myAzFwVNet          |
-| **\<region-name>**          | South Central US      |
+| **\<region-name>**          | VS - zuid-centraal      |
 | **\<IPv4-address-space>**   | 10.0.0.0/16          |
 | **\<subnet-name>**          | AzureFirewallSubnet        |
 | **\<subnet-address-range>** | 10.0.0.0/24          |
@@ -142,7 +142,7 @@ Vervang de volgende para meters in de stappen door de onderstaande informatie:
 |-----------------------------|----------------------|
 | **\<resource-group-name>**  | myResourceGroup |
 | **\<virtual-network-name>** | myVMVNet          |
-| **\<region-name>**          | South Central US      |
+| **\<region-name>**          | VS - zuid-centraal      |
 | **\<IPv4-address-space>**   | 10.1.0.0/16          |
 | **\<subnet-name>**          | VM      |
 | **\<subnet-address-range>** | 10.1.0.0/24          |
@@ -152,7 +152,7 @@ Vervang de volgende para meters in de stappen door de onderstaande informatie:
 |-----------------------------|----------------------|
 | **\<resource-group-name>**  | myResourceGroup |
 | **\<virtual-network-name>** | myPEVNet         |
-| **\<region-name>**          | South Central US      |
+| **\<region-name>**          | VS - zuid-centraal      |
 | **\<IPv4-address-space>**   | 10.2.0.0/16          |
 | **\<subnet-name>**          | PrivateEndpointSubnet    |        |
 | **\<subnet-address-range>** | 10.2.0.0/24          |
@@ -163,7 +163,7 @@ Vervang de volgende para meters in de stappen door de onderstaande informatie:
 
 ### <a name="create-virtual-machine"></a>Virtuele machine maken
 
-1. Selecteer in de linkerbovenhoek van het scherm in het Azure Portal **een**  >  **Compute**  >  **virtuele machine**voor het berekenen van een resource maken.
+1. Selecteer in de linkerbovenhoek van het scherm in het Azure Portal **een**  >  **Compute**  >  **virtuele machine** voor het berekenen van een resource maken.
 
 2. Typ of selecteer in **Een virtuele machine maken - Basisprincipes** de volgende gegevens:
 
@@ -173,7 +173,7 @@ Vervang de volgende para meters in de stappen door de onderstaande informatie:
     | Abonnement | Selecteer uw abonnement. |
     | Resourcegroep | Selecteer **myResourceGroup**. U hebt deze resourcegroep in de vorige sectie gemaakt.  |
     | **Exemplaardetails** |  |
-    | Naam van de virtuele machine | Voer **myVM**in. |
+    | Naam van de virtuele machine | Voer **myVM** in. |
     | Regio | Selecteer **(VS) Zuid-Centraal VS**. |
     | Beschikbaarheidsopties | Laat de standaardwaarde **Geen infrastructuurredundantie vereist** staan. |
     | Installatiekopie | Selecteer **Ubuntu Server 18,04 LTS-gen1**. |
@@ -222,13 +222,13 @@ Vervang de volgende para meters in de stappen door de onderstaande informatie:
     | Abonnement | Selecteer uw abonnement. |
     | Resourcegroep | Selecteer **myResourceGroup**.  |
     | **Exemplaardetails** |  |
-    | Naam | Voer **myAzureFirewall**in. |
+    | Naam | Voer **myAzureFirewall** in. |
     | Regio | Selecteer **Zuid-Centraal VS**. |
     | Beschikbaarheidszone | Laat de standaardwaarde **Geen** staan. |
     | Een virtueel netwerk kiezen    |    Selecteer **bestaande gebruiken**.    |
     | Virtueel netwerk    |    Selecteer **myAzFwVNet**.    |
-    | Openbaar IP-adres    |    Selecteer **nieuwe toevoegen** en geef **myFirewall-IP**op bij naam.    |
-    | Geforceerde tunneling    | De standaard instelling **uitgeschakeld**laten.    |
+    | Openbaar IP-adres    |    Selecteer **nieuwe toevoegen** en geef **myFirewall-IP** op bij naam.    |
+    | Geforceerde tunneling    | De standaard instelling **uitgeschakeld** laten.    |
     |||
 5. Selecteer **Controleren + maken**. De pagina **Beoordelen en maken** wordt weergegeven, waar uw configuratie wordt gevalideerd in Azure.
 
@@ -246,11 +246,11 @@ In deze sectie schakelt u de logboeken in op de firewall.
 
 4. Selecteer **+ Diagnostische instelling toevoegen** in de diagnostische instellingen.
 
-5. Typ of Selecteer in de **instelling diagnostische**gegevens de volgende informatie:
+5. Typ of Selecteer in de **instelling diagnostische** gegevens de volgende informatie:
 
     | Instelling | Waarde |
     | ------- | ----- |
-    | Naam van diagnostische instelling | Voer **myDiagSetting**in. |
+    | Naam van diagnostische instelling | Voer **myDiagSetting** in. |
     | Categorie Details | |
     | logboek | Selecteer **AzureFirewallApplicationRule** en **AzureFirewallNetworkRule**. |
     | Doel Details | Selecteer **verzenden naar log Analytics**. |
@@ -263,9 +263,9 @@ In deze sectie schakelt u de logboeken in op de firewall.
 
 In deze sectie maakt u een persoonlijke SQL Database.
 
-1. Selecteer in de linkerbovenhoek van het scherm in de Azure Portal **een resource**  >  **databases**maken  >  **SQL database**.
+1. Selecteer in de linkerbovenhoek van het scherm in de Azure Portal **een resource**  >  **databases** maken  >  **SQL database**.
 
-2. Voer in **SQL database basis beginselen maken**de volgende gegevens in of Selecteer deze:
+2. Voer in **SQL database basis beginselen maken** de volgende gegevens in of Selecteer deze:
 
     | Instelling | Waarde |
     | ------- | ----- |
@@ -275,7 +275,7 @@ In deze sectie maakt u een persoonlijke SQL Database.
     | **Databasedetails** |  |
     | Databasenaam  | Voer **mydatabase** in.  |
     | server | Selecteer **nieuwe maken** en voer de onderstaande gegevens in.    |
-    | Servernaam | Voer **mydbserver**in. Voer een unieke naam in als deze naam wordt gebruikt.   |
+    | Servernaam | Voer **mydbserver** in. Voer een unieke naam in als deze naam wordt gebruikt.   |
     | Aanmeldgegevens van serverbeheerder | Voer een naam in voor uw keuze. |
     | Wachtwoord    |    Voer een wachtwoord naar keuze in.    |
     | Wachtwoord bevestigen | Voer het wachtwoord opnieuw in    |
@@ -288,7 +288,7 @@ In deze sectie maakt u een persoonlijke SQL Database.
 
 4. Als u het bericht **Validatie geslaagd** ziet, selecteert u **Maken**.
 
-## <a name="create-private-endpoint"></a>Persoonlijk eind punt maken
+## <a name="create-private-endpoint"></a>Privé-eindpunt maken
 
 In deze sectie maakt u een persoonlijk eind punt voor de Azure-SQL database in de vorige sectie.
 
@@ -308,7 +308,7 @@ In deze sectie maakt u een persoonlijk eind punt voor de Azure-SQL database in d
     | Abonnement | Selecteer uw abonnement. |
     | Resourcegroep | Selecteer **myResourceGroup**. |
     | **Exemplaardetails** | |
-    | Naam | Voer **SQLPrivateEndpoint**in. |
+    | Naam | Voer **SQLPrivateEndpoint** in. |
     | Regio | Selecteer **(VS) Zuid-Centraal vs.** |
 
 6. Selecteer het tabblad **resource** of selecteer **volgende: resource** aan de onderkant van de pagina.
@@ -335,7 +335,7 @@ In deze sectie maakt u een persoonlijk eind punt voor de Azure-SQL database in d
     | **Privé-DNS-integratie** | |
     | Integreren met privé-DNS-zone | Selecteer **Ja**. |
     | Abonnement | Selecteer uw abonnement. |
-    | Privé-DNS zones | De standaard **privatelink.database.Windows.net**behouden. |
+    | Privé-DNS-zones | De standaard **privatelink.database.Windows.net** behouden. |
 
 10. Selecteer het tabblad **controleren + maken** of Selecteer onder aan de pagina **controleren + maken** .
 
@@ -351,7 +351,7 @@ In deze sectie maakt u een persoonlijk eind punt voor de Azure-SQL database in d
 
 In deze sectie worden virtuele netwerken **myVMVNet** en **myPEVNet** met **myAzFwVNet** verbonden met behulp van peering. Er is geen directe verbinding tussen **myVMVNet** en **myPEVNet**.
 
-1. Voer in de zoek balk van de portal **myAzFwVNet**in.
+1. Voer in de zoek balk van de portal **myAzFwVNet** in.
 
 2. Selecteer **peerings** in het menu **instellingen** en selecteer **+ toevoegen**.
 
@@ -413,7 +413,7 @@ De koppeling is vereist voor de virtuele machine en Firewall voor het omzetten v
 >[!NOTE]
 >Als u de virtuele machines van de VM en firewall niet koppelt aan de privé-DNS-zone, kunnen de VM en de firewall de SQL Server FQDN nog wel omzetten. Ze worden omgezet naar het open bare IP-adres.
 
-1. Voer in de zoek balk van de portal **privatelink. data base**in.
+1. Voer in de zoek balk van de portal **privatelink. data base** in.
 
 2. Selecteer **privatelink.database.Windows.net** in de zoek resultaten.
 
@@ -442,7 +442,7 @@ In deze sectie configureert u een toepassings regel voor het toestaan van commun
 
 Deze regel staat communicatie toe via de firewall die we in de vorige stappen hebben gemaakt.
 
-1. Voer in de zoek balk van de portal **myAzureFirewall**in.
+1. Voer in de zoek balk van de portal **myAzureFirewall** in.
 
 2. Selecteer **myAzureFirewall** in de zoek resultaten.
 
@@ -456,21 +456,21 @@ Deze regel staat communicatie toe via de firewall die we in de vorige stappen he
 
     | Instelling | Waarde |
     | ------- | ----- |
-    | Naam | Voer **SQLPrivateEndpoint**in. |
+    | Naam | Voer **SQLPrivateEndpoint** in. |
     | Prioriteit | Voer **100** in. |
-    | Bewerking | Voer **toestaan**in. |
+    | Actie | Voer **toestaan** in. |
     | **Regels** |  |
     | **FQDN-tags** | |
-    | Naam  | Leeg laten.  |
+    | Name  | Leeg laten.  |
     | Brontype | Wijzig het standaard **IP-adres**.    |
     | Bron | Leeg laten. |
-    | FQDN-tags | De standaard instelling **0**behouden. |
+    | FQDN-tags | De standaard instelling **0** behouden. |
     | **Doel-FQDN-naam** | |
-    | Naam | Voer **SQLPrivateEndpoint**in.    |
+    | Name | Voer **SQLPrivateEndpoint** in.    |
     | Brontype | Wijzig het standaard **IP-adres**. |
-    | Bron | Voer **10.1.0.0/16**in. |
-    | Protocol: poort | Voer **MSSQL: 1433**in. |
-    | Doel-FQDN-naam | Voer **mydbserver.database.Windows.net**in. |
+    | Bron | Voer **10.1.0.0/16** in. |
+    | Protocol: poort | Voer **MSSQL: 1433** in. |
+    | Doel-FQDN-naam | Voer **mydbserver.database.Windows.net** in. |
     |||
 
 7. Selecteer **Toevoegen**.
@@ -483,7 +483,7 @@ In deze sectie maakt u een route tabel met een aangepaste route.
 
 De route verzendt verkeer van het **myVM** -subnet naar de adres ruimte van het virtuele netwerk **myPEVNet**, via de Azure firewall.
 
-1. Selecteer in het menu van Azure Portal of op de **startpagina** de optie **Een resource maken**.
+1. Selecteer in het menu van Azure Portal of op de **Startpagina** de optie **Een resource maken**.
 
 2. Typ **route tabel** in het zoekvak en druk op **Enter**.
 
@@ -498,7 +498,7 @@ De route verzendt verkeer van het **myVM** -subnet naar de adres ruimte van het 
     | Resourcegroep | Selecteer **myResourceGroup**.  |
     | **Exemplaardetails** |  |
     | Regio | Selecteer **Zuid-Centraal VS**. |
-    | Naam | Voer **het VM-AzureFirewall in**. |
+    | Name | Voer **het VM-AzureFirewall in**. |
     | Gateway routes door geven | Selecteer **Nee**. |
 
 5. Selecteer **Controleren + maken**. De pagina **Beoordelen en maken** wordt weergegeven, waar uw configuratie wordt gevalideerd in Azure.
@@ -516,9 +516,9 @@ De route verzendt verkeer van het **myVM** -subnet naar de adres ruimte van het 
     | Instelling | Waarde |
     | ------- | ----- |
     | Routenaam | Voer **myVMsubnet-to-privateendpoint in**. |
-    | Adresvoorvoegsel | Voer **10.2.0.0/16**in.  |
+    | Adresvoorvoegsel | Voer **10.2.0.0/16** in.  |
     | Volgend hoptype | Selecteer **Virtueel apparaat**. |
-    | Adres van de volgende hop | Voer **10.0.0.4**in. |
+    | Adres van de volgende hop | Voer **10.0.0.4** in. |
 
 11. Selecteer **OK**.
 
@@ -539,7 +539,7 @@ De route verzendt verkeer van het **myVM** -subnet naar de adres ruimte van het 
 
 Maak als volgt verbinding met de VM **myVm** van Internet:
 
-1. Voer **myVm-IP**in op de zoek balk van de portal.
+1. Voer **myVm-IP** in op de zoek balk van de portal.
 
 2. Selecteer **myVM-IP** in de zoek resultaten.
 
@@ -575,7 +575,7 @@ In deze sectie maakt u een persoonlijke verbinding met de SQL Database met behul
     Address: 10.2.0.4
     ```
 
-2. Installeer [SQL Server opdracht regel Programma's](https://docs.microsoft.com/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver15#tools).
+2. Installeer [SQL Server opdracht regel Programma's](/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver15#tools).
 
 3. Voer de volgende opdracht uit om verbinding te maken met de SQL Server. Gebruik de server beheerder en het wacht woord die u hebt gedefinieerd tijdens het maken van de SQL Server in de vorige stappen.
 
@@ -588,7 +588,7 @@ In deze sectie maakt u een persoonlijke verbinding met de SQL Database met behul
     ```
 4. Er wordt een SQL-opdracht prompt weer gegeven bij een geslaagde aanmelding. Voer **Exit** in om het **Sqlcmd** -hulp programma af te sluiten.
 
-5. Sluit de verbinding met **myVM** door **Afsluiten**in te voeren.
+5. Sluit de verbinding met **myVM** door **Afsluiten** in te voeren.
 
 ## <a name="validate-the-traffic-in-azure-firewall-logs"></a>Het verkeer in Azure Firewall logboeken valideren
 

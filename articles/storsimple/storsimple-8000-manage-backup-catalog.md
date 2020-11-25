@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 06/29/2017
 ms.author: alkohli
 ms.openlocfilehash: 6ab4694159c6269f2f72d3d591147d43aef34a0a
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91961592"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017369"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-manage-your-backup-catalog"></a>De StorSimple Apparaatbeheer-service gebruiken voor het beheren van uw back-upcatalogus
 ## <a name="overview"></a>Overzicht
@@ -97,7 +97,7 @@ Verwijder een back-up wanneer u de gekoppelde gegevens niet meer wilt behouden. 
 
       ![Ga naar back-upcatalogus 4](./media/storsimple-8000-manage-backup-catalog/bucatalog1.png)
 
-1. Selecteer en vouw een back-upset uit. U kunt nu de back-upsets zien die zijn gesplitst op de volumes die het bevat. De opties voor **terugzetten** en **verwijderen** zijn beschikbaar via het context menu (Klik met de rechter muisknop) voor de back-upset. Klik met de rechter muisknop op de geselecteerde back-upset en selecteer **verwijderen**in het context menu.
+1. Selecteer en vouw een back-upset uit. U kunt nu de back-upsets zien die zijn gesplitst op de volumes die het bevat. De opties voor **terugzetten** en **verwijderen** zijn beschikbaar via het context menu (Klik met de rechter muisknop) voor de back-upset. Klik met de rechter muisknop op de geselecteerde back-upset en selecteer **verwijderen** in het context menu.
 
     ![Ga naar back-upcatalogus 5](./media/storsimple-8000-manage-backup-catalog/bucatalog3.png)
 

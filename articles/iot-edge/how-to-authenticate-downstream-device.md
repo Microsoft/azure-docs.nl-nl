@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.openlocfilehash: f2dd7cac8370c261f24f5587e801bd621fbdb0f0
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151385"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96016995"
 ---
 # <a name="authenticate-a-downstream-device-to-azure-iot-hub"></a>Een downstream-apparaat verifiëren voor Azure IoT Hub
 
@@ -144,13 +144,13 @@ Deze sectie is gebaseerd op de instructies in het artikel IoT Hub [X. 509-beveil
 
 2. Volg de instructies in de sectie [509 van CA-certificaten registreren bij uw IOT-hub](../iot-hub/iot-hub-security-x509-get-started.md#register-x509-ca-certificates-to-your-iot-hub) voor het instellen van *X. 509-beveiliging in uw Azure IOT hub*. In deze sectie voert u de volgende stappen uit:
 
-   1. Upload een basis-CA-certificaat. Als u de demo certificaten gebruikt, is de basis-CA ** \<path> /certs/Azure-IOT-test-only.root.ca.cert.pem**.
+   1. Upload een basis-CA-certificaat. Als u de demo certificaten gebruikt, is de basis-CA **\<path> /certs/Azure-IOT-test-only.root.ca.cert.pem**.
 
    2. Controleer of u bent eigenaar van het basis-CA-certificaat.
 
 3. Volg de instructies in het gedeelte [een x. 509-apparaat voor uw IOT-hub maken van de](../iot-hub/iot-hub-security-x509-get-started.md#create-an-x509-device-for-your-iot-hub) *X. 509-beveiliging instellen in uw Azure IOT hub*. In deze sectie voert u de volgende stappen uit:
 
-   1. Een nieuw apparaat toevoegen. Geef een kleine naam op voor de **apparaat-id**en kies het verificatie type **X. 509 certificerings instantie ondertekend**.
+   1. Een nieuw apparaat toevoegen. Geef een kleine naam op voor de **apparaat-id** en kies het verificatie type **X. 509 certificerings instantie ondertekend**.
 
    2. Stel een bovenliggend apparaat in. Selecteer **een bovenliggend apparaat instellen** en kies het IOT Edge gateway apparaat dat de verbinding met IOT hub zal bieden.
 

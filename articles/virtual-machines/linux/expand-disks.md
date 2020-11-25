@@ -8,11 +8,11 @@ ms.date: 10/15/2018
 ms.author: rogarana
 ms.subservice: disks
 ms.openlocfilehash: bbb959b6b1d71c81f7b920b3962f693716041e16
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89181745"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96016230"
 ---
 # <a name="expand-virtual-hard-disks-on-a-linux-vm-with-the-azure-cli"></a>Virtuele harde schijven op een Linux VM uitbreiden met de Azure CLI
 
@@ -28,7 +28,7 @@ Voor dit artikel is een bestaande virtuele machine in azure vereist met ten mins
 
 Vervang in de volgende voor beelden voorbeeld parameter namen zoals *myResourceGroup* en *myVM* met uw eigen waarden.
 
-1. Bewerkingen op virtuele harde schijven kunnen niet worden uitgevoerd als de virtuele machine wordt uitgevoerd. Maak de toewijzing van uw VM ongedaan met [AZ VM deallocate](/cli/azure/vm#az-vm-deallocate). In het volgende voor beeld wordt de toewijzing van de virtuele machine met de naam *myVM* in de resource groep met de naam *myResourceGroup*ongedaan gemaakt:
+1. Bewerkingen op virtuele harde schijven kunnen niet worden uitgevoerd als de virtuele machine wordt uitgevoerd. Maak de toewijzing van uw VM ongedaan met [AZ VM deallocate](/cli/azure/vm#az-vm-deallocate). In het volgende voor beeld wordt de toewijzing van de virtuele machine met de naam *myVM* in de resource groep met de naam *myResourceGroup* ongedaan gemaakt:
 
     ```azurecli
     az vm deallocate --resource-group myResourceGroup --name myVM
@@ -37,7 +37,7 @@ Vervang in de volgende voor beelden voorbeeld parameter namen zoals *myResourceG
     > [!NOTE]
     > De toewijzing van de virtuele harde schijf moet worden opgeheven voor de VM. Als de virtuele machine `az vm stop` wordt gestopt, worden de reken resources niet vrijgegeven. Gebruik om reken resources vrij te geven `az vm deallocate` .
 
-1. Bekijk een lijst met beheerde schijven in een resource groep met [AZ Disk List](/cli/azure/disk#az-disk-list). In het volgende voor beeld wordt een lijst met beheerde schijven in de resource groep met de naam *myResourceGroup*weer gegeven:
+1. Bekijk een lijst met beheerde schijven in een resource groep met [AZ Disk List](/cli/azure/disk#az-disk-list). In het volgende voor beeld wordt een lijst met beheerde schijven in de resource groep met de naam *myResourceGroup* weer gegeven:
 
     ```azurecli
     az disk list \
@@ -58,7 +58,7 @@ Vervang in de volgende voor beelden voorbeeld parameter namen zoals *myResourceG
     > [!NOTE]
     > Wanneer u een beheerde schijf uitbreidt, wordt de bijgewerkte grootte naar boven afgerond naar de dichtstbijzijnde beheerde schijf grootte. Zie [overzicht van Azure Managed disks-prijzen en facturering](../managed-disks-overview.md)voor een tabel met de beschik bare grootten en-lagen voor beheerde schijven.
 
-1. Start uw VM met [AZ VM start](/cli/azure/vm#az-vm-start). In het volgende voor beeld wordt de virtuele machine met de naam *myVM* in de resource groep met de naam *myResourceGroup*gestart:
+1. Start uw VM met [AZ VM start](/cli/azure/vm#az-vm-start). In het volgende voor beeld wordt de virtuele machine met de naam *myVM* in de resource groep met de naam *myResourceGroup* gestart:
 
     ```azurecli
     az vm start --resource-group myResourceGroup --name myVM
@@ -105,7 +105,7 @@ Als u een uitgebreide schijf wilt gebruiken, vouwt u de onderliggende partitie e
         1      0.00B  107GB  107GB  ext4
     ```
 
-    c. Vouw de partitie uit met `resizepart` . Voer het partitie nummer, de *1*en een grootte in voor de nieuwe partitie:
+    c. Vouw de partitie uit met `resizepart` . Voer het partitie nummer, de *1* en een grootte in voor de nieuwe partitie:
 
     ```bash
     (parted) resizepart

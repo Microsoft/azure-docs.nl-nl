@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/11/2019
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 3db9811322d27ab287fa568eeeffcb5f4d57bdf7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6f490b6f25112ed8a10bbd865070bd07ea3ee84f
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86530165"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96016937"
 ---
 ## <a name="create-the-webapi-project"></a>Het WebAPI-project maken
 
@@ -63,7 +63,7 @@ Maak de nieuwe ASP.NET WebAPI-back-end door de volgende acties uit te voeren:
 
 ## <a name="authenticate-clients-to-the-webapi-backend"></a>Clients verifiëren bij de WebAPI-back-end
 
-In deze sectie maakt u een nieuwe berichtenhandlerklasse met de naam **AuthenticationTestHandler** voor de nieuwe back-end. Deze klasse wordt afgeleid van [DelegatingHandler](https://msdn.microsoft.com/library/system.net.http.delegatinghandler.aspx) en toegevoegd als een berichtenhandler zodat deze alle aanvragen die de back-end ontvangt, kan verwerken.
+In deze sectie maakt u een nieuwe berichtenhandlerklasse met de naam **AuthenticationTestHandler** voor de nieuwe back-end. Deze klasse wordt afgeleid van [DelegatingHandler](/previous-versions/visualstudio/hh193679(v=vs.118)) en toegevoegd als een berichtenhandler zodat deze alle aanvragen die de back-end ontvangt, kan verwerken.
 
 1. Klik in Solution Explorer met de rechtermuisknop op het project **AppBackend**, selecteer **Toevoegen** en selecteer vervolgens **Klasse**.
 2. Geef de nieuwe klasse de naam **AuthenticationTestHandler.cs** en selecteer **Toevoegen** om de klasse te genereren. Deze klasse verifieert gebruikers met behulp van *Basisverificatie* om het eenvoudig te houden. Uw app kan een willekeurig verificatieschema gebruiken.
@@ -82,13 +82,13 @@ In deze sectie maakt u een nieuwe berichtenhandlerklasse met de naam **Authentic
 
     Deze handler verifieert de aanvraag wanneer de volgende drie voorwaarden waar zijn:
 
-   * De aanvraag bevat een *autorisatie*header.
-   * De aanvraag maakt gebruik van *basis*verificatie.
+   * De aanvraag bevat een *autorisatie* header.
+   * De aanvraag maakt gebruik van *basis* verificatie.
    * De gebruikersnaamtekenreeks en de wachtwoordtekenreeks zijn dezelfde tekenreeks.
 
    Anders wordt de aanvraag geweigerd. Deze verificatie is geen bestaande benadering op verificatie en autorisatie. Dit is slechts een eenvoudig voorbeeld voor deze zelfstudie.
 
-   Als het aanvraagbericht is geverifieerd en geautoriseerd door `AuthenticationTestHandler`, wordt de basisverificatiegebruiker toegevoegd aan de huidige aanvraag in [HttpContext](https://msdn.microsoft.com/library/system.web.httpcontext.current.aspx). Gebruikersgegevens in HttpContext worden later gebruikt door een andere controller (RegisterController) om een [tag](https://msdn.microsoft.com/library/azure/dn530749.aspx) toe te voegen aan de aanvraag voor meldingen van registraties.
+   Als het aanvraagbericht is geverifieerd en geautoriseerd door `AuthenticationTestHandler`, wordt de basisverificatiegebruiker toegevoegd aan de huidige aanvraag in [HttpContext](/dotnet/api/system.web.httpcontext.current). Gebruikersgegevens in HttpContext worden later gebruikt door een andere controller (RegisterController) om een [tag](/previous-versions/azure/azure-services/dn530749(v=azure.100)) toe te voegen aan de aanvraag voor meldingen van registraties.
 
     ```csharp
     public class AuthenticationTestHandler : DelegatingHandler
@@ -333,7 +333,7 @@ In deze sectie voegt u een nieuwe domeincontroller toe die clientapparaten een m
 
     Met deze code wordt een meldingstype verzonden die is gebaseerd op de `pns`-parameter (Platform Notification Service, PNS). De waarde van `to_tag` wordt gebruikt om de tag *gebruikersnaam* in te stellen in het bericht. Deze tag moet overeenkomen met een gebruikersnaamtag van een actieve notification hub-registratie. Het meldingsbericht wordt opgehaald uit de hoofdtekst van de POST-aanvraag en geformatteerd voor de doel-PNS.
 
-    Afhankelijk van de PNS die uw ondersteunde apparaten gebruiken om meldingen te ontvangen, worden de meldingen met verschillende indelingen ondersteund. Bijvoorbeeld op Windows-apparaten kunt u een [pop-upmelding met WNS](https://msdn.microsoft.com/library/windows/apps/br230849.aspx) gebruiken die niet rechtstreeks wordt ondersteund door een andere PNS. In een dergelijk geval moet uw back-end de melding in een ondersteunde melding indelen voor de PNS van apparaten die u wilt ondersteunen. Gebruik vervolgens de juiste API voor verzending in de [NotificationHubClient-klasse](https://msdn.microsoft.com/library/azure/microsoft.azure.notificationhubs.notificationhubclient_methods.aspx).
+    Afhankelijk van de PNS die uw ondersteunde apparaten gebruiken om meldingen te ontvangen, worden de meldingen met verschillende indelingen ondersteund. Bijvoorbeeld op Windows-apparaten kunt u een [pop-upmelding met WNS](/uwp/schemas/tiles/toastschema/schema-root) gebruiken die niet rechtstreeks wordt ondersteund door een andere PNS. In een dergelijk geval moet uw back-end de melding in een ondersteunde melding indelen voor de PNS van apparaten die u wilt ondersteunen. Gebruik vervolgens de juiste API voor verzending in de [NotificationHubClient-klasse](/dotnet/api/microsoft.azure.notificationhubs.notificationhubclient).
 
     ```csharp
     public async Task<HttpResponseMessage> Post(string pns, [FromBody]string message, string to_tag)

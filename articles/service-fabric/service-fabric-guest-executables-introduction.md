@@ -4,11 +4,11 @@ description: Meer informatie over het verpakken van een bestaande toepassing als
 ms.topic: conceptual
 ms.date: 03/15/2018
 ms.openlocfilehash: 8b808d092001196a4d2150e44d508e031db95554
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86247384"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017743"
 ---
 # <a name="deploy-an-existing-executable-to-service-fabric"></a>Een bestaand uitvoerbaar bestand implementeren naar Service Fabric
 U kunt elk type code, zoals Node.js, Java of C++, uitvoeren in azure Service Fabric als een service. Service Fabric verwijst naar deze typen services als uitvoer bare gast bestanden.
@@ -19,7 +19,7 @@ Uitvoer bare gast bestanden worden behandeld door Service Fabric zoals stateless
 Er zijn verschillende voor delen voor het uitvoeren van een uitvoerbaar gast bestand in een Service Fabric cluster:
 
 * Hoge beschikbaarheid. Toepassingen die in Service Fabric worden uitgevoerd, worden Maxi maal beschikbaar gemaakt. Service Fabric zorgt ervoor dat exemplaren van een toepassing worden uitgevoerd.
-* Status controle. Service Fabric status bewaking detecteert of een toepassing wordt uitgevoerd en bevat diagnostische gegevens als er een fout optreedt.   
+* Statuscontrole. Service Fabric status bewaking detecteert of een toepassing wordt uitgevoerd en bevat diagnostische gegevens als er een fout optreedt.   
 * Beheer van toepassings levenscyclus. Naast het bieden van upgrades zonder downtime, biedt Service Fabric automatisch terugdraaien naar de vorige versie als er een slechte status gebeurtenis is gerapporteerd tijdens een upgrade.    
 * Veebezetting. U kunt meerdere toepassingen uitvoeren in een cluster, waardoor de nood zaak van elke toepassing niet op eigen hardware hoeft te worden uitgevoerd.
 * Vind baarheid: met behulp van REST kunt u de Service Fabric naamgevings service aanroepen om andere services in het cluster te vinden. 

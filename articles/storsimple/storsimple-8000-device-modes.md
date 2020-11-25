@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 06/29/2017
 ms.author: alkohli
 ms.openlocfilehash: c7b0ea489c1d70ab86d677aad666ea6728fa76b4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85511620"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017080"
 ---
 # <a name="change-the-device-mode-on-your-storsimple-device"></a>De modus apparaat op uw StorSimple-apparaat wijzigen
 
@@ -78,7 +78,7 @@ U kunt het StorSimple-apparaat in de onderhouds modus plaatsen (van de normale m
 #### <a name="to-enter-maintenance-mode"></a>Onderhouds modus activeren
 
 1. Meld u aan bij de seriële console van het apparaat door de stappen in [putty gebruiken te volgen om verbinding te maken met de seriële console van het apparaat](storsimple-8000-deployment-walkthrough-u2.md#use-putty-to-connect-to-the-device-serial-console).
-2. Kies in het menu van de seriële console optie 1, **Meld u aan met volledige toegang**. Geef het **beheerders wachtwoord**voor het apparaat op wanneer u hierom wordt gevraagd. Het standaard wachtwoord is: `Password1` .
+2. Kies in het menu van de seriële console optie 1, **Meld u aan met volledige toegang**. Geef het **beheerders wachtwoord** voor het apparaat op wanneer u hierom wordt gevraagd. Het standaard wachtwoord is: `Password1` .
 3. Typ bij de opdracht prompt 
    
     `Enter-HcsMaintenanceMode`

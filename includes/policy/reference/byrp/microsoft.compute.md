@@ -6,11 +6,11 @@ ms.date: 11/20/2020
 ms.author: dacoulte
 ms.custom: generated
 ms.openlocfilehash: 6c618f6fc71adc179aaf27fa83a13853b8f9809c
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94986184"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96016750"
 ---
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|

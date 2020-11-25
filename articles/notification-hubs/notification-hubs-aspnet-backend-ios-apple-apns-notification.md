@@ -15,11 +15,11 @@ ms.author: sethm
 ms.reviewer: thsomasu
 ms.lastreviewed: 01/04/2019
 ms.openlocfilehash: 167c666c536ee33531fd069dbd1edb530331a9f3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91302186"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96016936"
 ---
 # <a name="tutorial-send-push-notifications-to-specific-users-using-azure-notification-hubs"></a>Zelf studie: Push meldingen verzenden naar specifieke gebruikers met behulp van Azure Notification Hubs
 
@@ -56,13 +56,13 @@ Als u Mobile Apps wilt gebruiken als uw back-end-service, raadpleegt u de [Mobil
 
     ![Story Board bewerken in de opbouw functie voor Xcode-interfaces][1]
 
-   * **Gebruikers naam**: een UITextField met plaatsaanduidingstekst, *Voer gebruikers naam*in, direct onder het label resultaten verzenden en beperkt tot de linker-en rechter marge en onder het label resultaten van verzenden.
-   * **Wacht woord**: een UITextField met een tijdelijke tekst, voert u het *wacht woord*in direct onder het tekst veld van de gebruikers naam en beperkt tot de linker-en rechter marge en onder het tekst veld van de gebruikers naam. Controleer de optie voor **beveiligde tekst invoer** in kenmerk controle onder *retour sleutel*.
+   * **Gebruikers naam**: een UITextField met plaatsaanduidingstekst, *Voer gebruikers naam* in, direct onder het label resultaten verzenden en beperkt tot de linker-en rechter marge en onder het label resultaten van verzenden.
+   * **Wacht woord**: een UITextField met een tijdelijke tekst, voert u het *wacht woord* in direct onder het tekst veld van de gebruikers naam en beperkt tot de linker-en rechter marge en onder het tekst veld van de gebruikers naam. Controleer de optie voor **beveiligde tekst invoer** in kenmerk controle onder *retour sleutel*.
    * **Aanmelden**: een UIButton label direct onder het tekst veld voor het wacht woord en schakel de optie **ingeschakeld** in de kenmerkencontrole onder *besturings element-inhoud* uit.
    * **Wns**: label en schakel over om het verzenden van de meldings service voor meldingen in te scha kelen als deze is ingesteld op de hub. Raadpleeg de zelf studie aan de slag met [Windows](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md) .
    * **GCM**: label en schakel over om het verzenden van de melding naar Google Cloud Messaging in te scha kelen als deze is ingesteld op de hub. Zie de zelf studie aan de slag met [Android](notification-hubs-android-push-notification-google-gcm-get-started.md) .
    * **APNS**: label en schakel over om het verzenden van de melding naar de Apple platform Notification Service mogelijk te maken.
-   * **Gebruikers naam van geadresseerde: een** UITextField met plaatsaanduidingstekst, label van de *gebruikers naam*van de geadresseerde, direct onder het label GCM en beperkt tot de linker-en rechter marge en onder het GCM-label.
+   * **Gebruikers naam van geadresseerde: een** UITextField met plaatsaanduidingstekst, label van de *gebruikers naam* van de geadresseerde, direct onder het label GCM en beperkt tot de linker-en rechter marge en onder het GCM-label.
 
      Sommige onderdelen zijn toegevoegd aan de zelf studie [Push meldingen verzenden naar IOS-apps met behulp van Azure notification hubs](ios-sdk-get-started.md) .
 

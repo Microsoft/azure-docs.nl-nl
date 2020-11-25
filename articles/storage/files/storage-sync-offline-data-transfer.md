@@ -8,11 +8,11 @@ ms.date: 02/12/2019
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: 94abb33d39765a19306a013576d43fb2602d1c37
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630223"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017624"
 ---
 # <a name="migrate-bulk-data-to-azure-file-sync-with-azure-databox"></a>Bulkgegevens migreren in Azure File Sync met Azure DataBox
 U kunt op twee manieren bulk gegevens migreren naar Azure File Sync:
@@ -94,7 +94,7 @@ Schakel de offline modus voor gegevens overdracht alleen uit wanneer de status i
 Als u geseede bestanden in een Azure-bestands share hebt op een andere manier dan DataBox, bijvoorbeeld via AzCopy, RoboCopy vanuit een Cloud back-up of een andere methode, moet u nog steeds het [Offline gegevensoverdracht proces](#process-for-offline-data-transfer) volgen dat in dit artikel wordt beschreven. U hoeft DataBox alleen te negeren als de methode die uw bestanden overzetten naar de Cloud. Het is echter van cruciaal belang om ervoor te zorgen dat u nog steeds het proces van het seeden van de bestanden naar een *staging-share* en niet de uiteindelijke, Azure file sync verbonden share.
 
 > [!WARNING]
-> **Volg het proces van het seeden van bestanden naar een staging-share en niet de uiteindelijke** , Azure file sync verbonden share. Als dat niet het geval is, kunnen er bestands conflicten optreden (beide bestands versies worden opgeslagen) en bestanden die op de live server worden verwijderd, kunnen terugkomen als ze nog steeds aanwezig zijn in uw oudere, seeded set bestanden. Daarnaast worden wijzigingen in mappen samen met elkaar samengevoegd, waardoor het zeer moeilijk is om de naam ruimte na een dergelijke fout te scheiden.
+> **Volg het proces van het seeden van bestanden naar een staging-share en niet de uiteindelijke**, Azure file sync verbonden share. Als dat niet het geval is, kunnen er bestands conflicten optreden (beide bestands versies worden opgeslagen) en bestanden die op de live server worden verwijderd, kunnen terugkomen als ze nog steeds aanwezig zijn in uw oudere, seeded set bestanden. Daarnaast worden wijzigingen in mappen samen met elkaar samengevoegd, waardoor het zeer moeilijk is om de naam ruimte na een dergelijke fout te scheiden.
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Een Azure File Sync-implementatie plannen](storage-sync-files-planning.md)

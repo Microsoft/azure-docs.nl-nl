@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 6fb3c9b6dbbab036ddb00edd7e1d5980bb425ebe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 881a7fc915ab986577599b85f8412fa8107f7902
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91326113"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017386"
 ---
 # <a name="encryption-scopes-for-blob-storage-preview"></a>Versleutelings bereik voor Blob-opslag (preview-versie)
 
@@ -52,8 +52,8 @@ Wanneer een versleutelings bereik is uitgeschakeld, wordt dit niet meer in reken
 
 Als uw versleutelings bereik is beveiligd met door de klant beheerde sleutels, kunt u ook de bijbehorende sleutel in de sleutel kluis verwijderen om het versleutelings bereik uit te scha kelen. Houd er rekening mee dat door de klant beheerde sleutels worden beveiligd door zacht verwijderen en de beveiliging op te schonen in de sleutel kluis en dat een verwijderde sleutel onderhevig is aan het gedrag dat is gedefinieerd door die eigenschappen. Zie een van de volgende onderwerpen in de Azure Key Vault-documentatie voor meer informatie:
 
-- [Voorlopig verwijderen gebruiken met PowerShell](../../key-vault/general/soft-delete-powershell.md)
-- [Voorlopig verwijderen gebruiken met CLI](../../key-vault/general/soft-delete-cli.md)
+- [Voorlopig verwijderen gebruiken met PowerShell](../../key-vault/general/key-vault-recovery.md)
+- [Voorlopig verwijderen gebruiken met CLI](../../key-vault/general/key-vault-recovery.md)
 
 > [!NOTE]
 > Het is niet mogelijk om een versleutelings bereik te verwijderen.

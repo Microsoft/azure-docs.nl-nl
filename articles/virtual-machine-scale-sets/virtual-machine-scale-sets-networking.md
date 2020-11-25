@@ -10,11 +10,11 @@ ms.date: 06/25/2020
 ms.reviewer: mimckitt
 ms.custom: mimckitt, devx-track-azurecli
 ms.openlocfilehash: 234834af4fcf4ad809f548d171a4c1c406d85895
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747841"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96016689"
 ---
 # <a name="networking-for-azure-virtual-machine-scale-sets"></a>Netwerken voor virtuele-machineschaalsets in Azure
 
@@ -84,7 +84,7 @@ Als u aangepaste DNS-servers wilt configureren in een Azure-sjabloon, voegt u de
 ```
 
 ### <a name="creating-a-scale-set-with-configurable-virtual-machine-domain-names"></a>Een schaalset maken met de configureerbare domeinnamen van virtuele machines
-Als u een schaalset wilt maken met een aangepaste DNS-naam voor virtuele machines met de CLI, voegt u het argument **--vm-domain-name** toe aan de opdracht **virtual machine scale set create** , gevolgd door een tekenreeks met de domeinnaam.
+Als u een schaalset wilt maken met een aangepaste DNS-naam voor virtuele machines met de CLI, voegt u het argument **--vm-domain-name** toe aan de opdracht **virtual machine scale set create**, gevolgd door een tekenreeks met de domeinnaam.
 
 Als u de domein naam in een Azure-sjabloon wilt instellen, voegt u een eigenschap **dnsSettings** toe aan de sectie Scale set **networkinterfaceconfigurations schaalset** . Bijvoorbeeld:
 
@@ -130,7 +130,7 @@ Virtuele machines in Azure-schaalsets hebben meestal geen eigen openbaar IP-adre
 In sommige gevallen hebben virtuele machines van een schaalset echter hun eigen openbare IP-adressen nodig. Dit is bijvoorbeeld het geval bij games, waarbij een console rechtstreeks verbinding moet maken met een virtuele cloudmachine, die de physics van de game verwerkt. Een ander voorbeeld is de situatie waarbij virtuele machines externe verbindingen met elkaar moeten maken via regio's in een gedistribueerde database.
 
 ### <a name="creating-a-scale-set-with-public-ip-per-virtual-machine"></a>Een schaalset met een openbaar IP-adres per virtuele machine maken
-Als u een schaalset wilt maken waarmee een openbaar IP-adres wordt toegewezen aan elke virtuele machine met de CLI, voegt u de parameter **--public-ip-per-vm** toe aan de opdracht **vmss create** . 
+Als u een schaalset wilt maken waarmee een openbaar IP-adres wordt toegewezen aan elke virtuele machine met de CLI, voegt u de parameter **--public-ip-per-vm** toe aan de opdracht **vmss create**. 
 
 Als u een schaalset wilt maken met behulp van een Azure-sjabloon, moet u ervoor zorgen dat de API-versie van de micro soft. Compute/virtualMachineScaleSets-resource ten minste **2017-03-30** is en een **publicipaddressconfiguration toe** JSON-eigenschap toevoegen aan de sectie ipConfigurations van schaal sets. Bijvoorbeeld:
 
@@ -146,7 +146,7 @@ Als u een schaalset wilt maken met behulp van een Azure-sjabloon, moet u ervoor 
 Voorbeeldsjabloon: [201-vmss-public-ip-linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-public-ip-linux)
 
 ### <a name="querying-the-public-ip-addresses-of-the-virtual-machines-in-a-scale-set"></a>Query’s uitvoeren op de openbare IP-adressen van de virtuele machines in een schaalset
-U kunt de openbare IP-adressen die zijn toegewezen aan de virtuele machines van de schaalset met de CLI in een lijst weergeven met de opdracht **az vmss list-instance-public-ips** .
+U kunt de openbare IP-adressen die zijn toegewezen aan de virtuele machines van de schaalset met de CLI in een lijst weergeven met de opdracht **az vmss list-instance-public-ips**.
 
 Gebruik de opdracht _Get-AzPublicIpAddress_ om openbare IP-adressen voor schaalsets weer te geven met behulp van PowerShell. Bijvoorbeeld:
 
@@ -172,7 +172,7 @@ Ga als volgt te werk om een query uit te voeren op [Azure Resource Explorer](htt
 1. Vouw *micro soft. Compute* uit.
 1. Vouw *virtualMachineScaleSets* uit.
 1. Vouw uw schaalset uit.
-1. Klik op *publicipaddresses* .
+1. Klik op *publicipaddresses*.
 
 Ga als volgt te werk om een query uit te voeren op de Azure REST API:
 

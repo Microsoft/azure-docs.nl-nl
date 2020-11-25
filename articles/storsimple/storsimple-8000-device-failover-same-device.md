@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 06/23/2017
 ms.author: alkohli
 ms.openlocfilehash: 17c116194aa52a82246bcee9114824e8a918ebbd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88184326"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017097"
 ---
 # <a name="fail-over-your-storsimple-physical-device-to-same-device"></a>Failover van het fysieke StorSimple-apparaat naar hetzelfde apparaat
 
@@ -43,7 +43,7 @@ Voer de volgende stappen uit als u een failover naar hetzelfde apparaat moet uit
 
 1. Maak Cloud momentopnamen van alle volumes op het apparaat. Ga voor meer informatie naar [gebruik StorSimple Apparaatbeheer service om back-ups te maken](storsimple-8000-manage-backup-policies-u2.md).
 2. Stel de fabrieks instellingen van uw apparaat opnieuw in. Volg de gedetailleerde instructies voor het [opnieuw instellen van een StorSimple-apparaat op de standaard fabrieks instellingen](storsimple-8000-manage-device-controller.md#reset-the-device-to-factory-default-settings).
-3. Ga naar de StorSimple-Apparaatbeheer service en selecteer vervolgens **apparaten**. Op de Blade **apparaten** moet het oude apparaat als **offline**worden weer gegeven.
+3. Ga naar de StorSimple-Apparaatbeheer service en selecteer vervolgens **apparaten**. Op de Blade **apparaten** moet het oude apparaat als **offline** worden weer gegeven.
 
     ![Bron apparaat is offline](./media/storsimple-8000-device-failover-disaster-recovery/failover-single-dev2.png)
 

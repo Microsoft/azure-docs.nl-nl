@@ -8,11 +8,11 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 06/21/2019
 ms.openlocfilehash: c57a3920dac3e18e248109fafdf61fdfa871c54d
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93123707"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023394"
 ---
 # <a name="anomaly-detection-in-azure-stream-analytics"></a>Anomalie detectie in Azure Stream Analytics
 
@@ -114,9 +114,9 @@ FROM AnomalyDetectionStep
 
 De prestaties van deze modellen zijn afhankelijk van de geschiedenis grootte, de duur van het venster, het laden van gebeurtenissen en of het gebruik van partitionering op functie niveau wordt gebruikt. In deze sectie worden deze configuraties beschreven en vindt u voor beelden voor het opvangen van de opname snelheid van 1K, 5K en 10K-gebeurtenissen per seconde.
 
-* **Geschiedenis formaat** : deze modellen voeren lineair uit met de **geschiedenis grootte** . Hoe langer het geschiedenis formaat, hoe langer het model is om een nieuwe gebeurtenis te beoordelen. Dit komt doordat de modellen de nieuwe gebeurtenis vergelijken met elk van de gebeurtenissen in de geschiedenis buffer.
+* **Geschiedenis formaat** : deze modellen voeren lineair uit met de **geschiedenis grootte**. Hoe langer het geschiedenis formaat, hoe langer het model is om een nieuwe gebeurtenis te beoordelen. Dit komt doordat de modellen de nieuwe gebeurtenis vergelijken met elk van de gebeurtenissen in de geschiedenis buffer.
 * **Duur** van het venster: de duur van het **venster** moet weer geven hoe lang het duurt om zoveel gebeurtenissen te ontvangen als aangegeven door de geschiedenis grootte. Zonder dat er veel gebeurtenissen in het venster zijn, worden in Azure Stream Analytics ontbrekende waarden toegerekend. Daarom is het CPU-verbruik een functie van de geschiedenis grootte.
-* **Gebeurtenis belasting** : hoe groter de **gebeurtenis belasting** , hoe meer werk wordt uitgevoerd door de modellen, waardoor het CPU-verbruik wordt beïnvloed. De taak kan worden uitgeschaald door deze ongeëvenaard parallel te maken, ervan uitgaande dat het zinvol is voor bedrijfs logica om meer invoer partities te gebruiken.
+* **Gebeurtenis belasting** : hoe groter de **gebeurtenis belasting**, hoe meer werk wordt uitgevoerd door de modellen, waardoor het CPU-verbruik wordt beïnvloed. De taak kan worden uitgeschaald door deze ongeëvenaard parallel te maken, ervan uitgaande dat het zinvol is voor bedrijfs logica om meer invoer partities te gebruiken.
 * Partitioneren op functie **niveau**  -  **Partitioneren op functie niveau** wordt uitgevoerd met behulp van ```PARTITION BY``` de functie aanroep van de afwijkings detectie. Dit type partitionering voegt een overhead toe, aangezien de status moet worden bijgehouden voor meerdere modellen tegelijk. Partitioneren op functie niveau wordt gebruikt in scenario's zoals het partitioneren op apparaatniveau.
 
 ### <a name="relationship"></a>Relatie

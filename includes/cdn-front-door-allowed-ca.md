@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/30/2020
 ms.author: sharadag
 ms.custom: include file
-ms.openlocfilehash: 931d9d6da8ac0f8400aa0ec8918901e5e337439f
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: eb3cc6a37e9116b2a28b72fc7a3779aafb2a1e21
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94482806"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96026454"
 ---
 De volgende Ca's zijn toegestaan wanneer u uw eigen certificaat maakt:
 
@@ -55,6 +55,7 @@ De volgende Ca's zijn toegestaan wanneer u uw eigen certificaat maakt:
 - Go Daddy-basis certificerings instantie-G2
 - Go Daddy Secure Certificate Authority-G2
 - De CA-x3 versleutelen
+- Microsec e-Szigno-basis-CA 2009
 - QuoVadis root CA2 G3
 - RapidSSL RSA CA 2018
 - Beveiligings communicatie RootCA1

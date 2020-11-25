@@ -9,11 +9,11 @@ ms.topic: tutorial
 ms.date: 05/26/2020
 ms.custom: mvc, devx-track-azurepowershell
 ms.openlocfilehash: 9b4500df459e4d4ef67f97dc4fa923988f30401b
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542470"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023088"
 ---
 # <a name="tutorial-design-an-azure-database-for-mariadb-using-powershell"></a>Zelfstudie: Een Azure Database for MariaDB ontwerpen met PowerShell
 
@@ -82,7 +82,7 @@ De parameterwaarde voor de **SKU** volgt de conventie **prijscategorie\_compute-
 - `-Sku GP_Gen5_32` komt overeen met Algemeen gebruik, Gen 5 en 32 vCores.
 - `-Sku MO_Gen5_2` komt overeen met Geoptimaliseerd voor geheugen, Gen 5 en 2 vCores.
 
-Voor meer informatie over geldige **SKU** -waarden per regio en voor de categorieën vindt u in [Prijscategorieën voor Azure Database for MariaDB](./concepts-pricing-tiers.md).
+Voor meer informatie over geldige **SKU**-waarden per regio en voor de categorieën vindt u in [Prijscategorieën voor Azure Database for MariaDB](./concepts-pricing-tiers.md).
 
 Overweeg het gebruik van de prijscategorie Basic als lichte reken- en I/O-capaciteit voldoende is voor uw workload.
 
@@ -119,7 +119,7 @@ mydemoserver.mariadb.database.azure.com       myadmin
 
 ## <a name="connect-to-the-server-using-the-mysql-command-line-tool"></a>Verbinding maken met de server met het opdrachtregelprogramma mysql
 
-Maak verbinding met de server met behulp van het opdrachtregelprogramma `mysql`. Zie [MariaDB Community Downloads](https://dev.mysql.com/downloads/shell/) als u het opdrachtregelprogramma wilt downloaden en installeren. U kunt ook een vooraf geïnstalleerde versie openen van het opdrachtregelhulpprogramma `mysql` in Azure Cloud Shell door in een codevoorbeeld in dit artikel de knop **Proberen** te selecteren. Andere manieren om toegang te krijgen tot Azure Cloud Shell zijn de selectie van de knop **> _** in de werkbalk rechtsboven in de Azure Portal of een bezoek aan [shell.azure.com](https://shell.azure.com/).
+Maak verbinding met de server met behulp van het `mysql`opdrachtregelprogramma. Zie [MariaDB Community Downloads](https://dev.mysql.com/downloads/shell/) als u het opdrachtregelprogramma wilt downloaden en installeren. U kunt ook een vooraf geïnstalleerde versie openen van het `mysql` opdrachtregelhulpprogramma in Azure Cloud Shell door de knop **Proberen** in een codevoorbeeld in dit artikel te selecteren. Andere manieren om toegang te krijgen tot Azure Cloud Shell zijn de selectie van de knop **> _** in de werkbalk rechtsboven in de Azure Portal of een bezoek aan [shell.azure.com](https://shell.azure.com/).
 
 ```azurepowershell-interactive
 mysql -h mydemoserver.mariadb.database.azure.com -u myadmin@mydemoserver -p

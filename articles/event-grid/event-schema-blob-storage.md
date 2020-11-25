@@ -4,19 +4,19 @@ description: Hierin worden de eigenschappen beschreven die worden gegeven voor B
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.openlocfilehash: a914edbb6f624617766c77b277d7ee8e6ad08bd9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87458940"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023956"
 ---
 # <a name="azure-blob-storage-as-an-event-grid-source"></a>Azure Blob Storage als Event Grid bron
 
-In dit artikel vindt u de eigenschappen en het schema voor Blob Storage-gebeurtenissen.Zie [Azure Event grid-gebeurtenis schema](event-schema.md)voor een inleiding tot gebeurtenis schema's. Het biedt ook een lijst met snel starten en zelf studies voor het gebruik van Azure Blob Storage als een gebeurtenis bron.
+In dit artikel vindt u de eigenschappen en het schema voor Blob Storage-gebeurtenissen. Zie [Azure Event grid-gebeurtenis schema](event-schema.md)voor een inleiding tot gebeurtenis schema's. Het biedt ook een lijst met snel starten en zelf studies voor het gebruik van Azure Blob Storage als een gebeurtenis bron.
 
 
 >[!NOTE]
-> Alleen opslag accounts van het type **StorageV2 (algemeen gebruik v2)**, **BlockBlobStorage**en **BlobStorage** ondersteunings gebeurtenis integratie. **Storage (algemeen gebruik v1)** biedt *geen* ondersteuning voor integratie met Event grid.
+> Alleen opslag accounts van het type **StorageV2 (algemeen gebruik v2)**, **BlockBlobStorage** en **BlobStorage** ondersteunings gebeurtenis integratie. **Storage (algemeen gebruik v1)** biedt *geen* ondersteuning voor integratie met Event grid.
 
 ## <a name="event-grid-event-schema"></a>Event Grid-gebeurtenisschema
 
@@ -27,7 +27,7 @@ Deze gebeurtenissen worden geactiveerd wanneer een-client een BLOB maakt, vervan
 > [!NOTE]
 > De `$logs` containers en kunnen niet worden `$blobchangefeed` geïntegreerd met Event grid, waardoor de activiteit in deze containers geen gebeurtenissen genereert. Het gebruik van het DFS-eind punt *`(abfss://URI) `* voor niet-hiërarchische naam ruimte ingeschakelde accounts genereert geen gebeurtenissen, maar er worden door het BLOB-eind punt *`(wasb:// URI)`* gebeurtenissen gegenereerd.
 
- |Gebeurtenis naam |Beschrijving|
+ |Gebeurtenis naam |Description|
  |----------|-----------|
  |**Micro soft. storage. BlobCreated** |Wordt geactiveerd wanneer een BLOB wordt gemaakt of vervangen. <br>Deze gebeurtenis wordt met name geactiveerd wanneer clients de `PutBlob` , `PutBlockList` , of bewerkingen gebruiken `CopyBlob` die beschikbaar zijn in de BLOB-rest API.   |
  |**Micro soft. storage. BlobDeleted** |Wordt geactiveerd wanneer een BLOB wordt verwijderd. <br>Deze gebeurtenis wordt met name geactiveerd wanneer clients de bewerking aanroepen `DeleteBlob` die beschikbaar is in de BLOB-rest API. |
@@ -39,7 +39,7 @@ Deze gebeurtenissen worden geactiveerd wanneer een-client een BLOB maakt, vervan
 
 Deze gebeurtenissen worden geactiveerd als u een hiërarchische naam ruimte in het opslag account inschakelt en clients Azure Data Lake Storage Gen2 REST-Api's aanroepen. Zie [Introduction to Azure data Lake Storage Gen2](../storage/blobs/data-lake-storage-introduction.md)voor meer informatie Abou Azure data Lake Storage Gen2.
 
-|Gebeurtenis naam|Beschrijving|
+|Gebeurtenis naam|Description|
 |----------|-----------|
 |**Micro soft. storage. BlobCreated** | Wordt geactiveerd wanneer een BLOB wordt gemaakt of vervangen. <br>Deze gebeurtenis wordt met name geactiveerd wanneer clients de `CreateFile` bewerkingen en gebruiken `FlushWithClose` die beschikbaar zijn in de Azure data Lake Storage Gen2 rest API. |
 |**Micro soft. storage. BlobDeleted** |Wordt geactiveerd wanneer een BLOB wordt verwijderd. <br>Deze gebeurtenis wordt met name ook geactiveerd wanneer clients de bewerking aanroepen `DeleteFile` die beschikbaar is in de Azure Data Lake Storage Gen2 rest API. |
@@ -291,7 +291,7 @@ Als het Blob Storage-account een hiërarchische naam ruimte heeft, zien de gegev
 
 Een gebeurtenis heeft de volgende gegevens op het hoogste niveau:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
 | onderwerp | tekenreeks | Volledige bronpad naar de bron van de gebeurtenis. Dit veld kan niet worden geschreven. Event Grid biedt deze waarde. |
 | onderwerp | tekenreeks | Het door de uitgever gedefinieerde pad naar het gebeurtenisonderwerp. |
@@ -304,7 +304,7 @@ Een gebeurtenis heeft de volgende gegevens op het hoogste niveau:
 
 Het gegevens object heeft de volgende eigenschappen:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 | -------- | ---- | ----------- |
 | api | tekenreeks | De bewerking die de gebeurtenis heeft geactiveerd. |
 | clientRequestId | tekenreeks | een aanvraag-id van de client voor de bewerking van de opslag-API. Deze id kan worden gebruikt om te correleren Azure Storage Diagnostische logboeken met behulp van het veld ' client-request-id ' in de logboeken, en kan worden verschaft in client aanvragen via de header ' x-MS-Client-Request-id '. Zie de [logboek indeling](/rest/api/storageservices/storage-analytics-log-format). |
@@ -316,7 +316,7 @@ Het gegevens object heeft de volgende eigenschappen:
 | contentOffset | getal | De offset in bytes van een schrijf bewerking die wordt uitgevoerd op het punt waar de toepassing die de gebeurtenis heeft geactiveerd, het schrijven naar het bestand heeft voltooid. <br>Wordt alleen weer gegeven voor gebeurtenissen die zijn geactiveerd op Blob Storage-accounts die een hiërarchische naam ruimte hebben.|
 | destinationUrl |tekenreeks | De URL van het bestand dat bestaat nadat de bewerking is voltooid. Als bijvoorbeeld de naam van een bestand wordt gewijzigd, bevat de `destinationUrl` eigenschap de URL van de nieuwe bestands naam. <br>Wordt alleen weer gegeven voor gebeurtenissen die zijn geactiveerd op Blob Storage-accounts die een hiërarchische naam ruimte hebben.|
 | sourceUrl |tekenreeks | De URL van het bestand dat voor de bewerking bestaat. Als bijvoorbeeld de naam van een bestand wordt gewijzigd, bevat de `sourceUrl` URL van de oorspronkelijke bestands naam vóór de bewerking naamswijziging. <br>Wordt alleen weer gegeven voor gebeurtenissen die zijn geactiveerd op Blob Storage-accounts die een hiërarchische naam ruimte hebben. |
-| url | tekenreeks | Het pad naar de blob. <br>Als de client gebruikmaakt van een BLOB-REST API, heeft de URL deze structuur: * \<storage-account-name\> . \<container-name\> / \<file-name\> blob.core.Windows.net/*. <br>Als de client een Data Lake Storage REST API gebruikt, heeft de URL deze structuur: * \<storage-account-name\> . DFS.core.Windows.net/ \<file-system-name\> / \<file-name\> *. |
+| url | tekenreeks | Het pad naar de blob. <br>Als de client gebruikmaakt van een BLOB-REST API, heeft de URL deze structuur: *\<storage-account-name\> . \<container-name\> / \<file-name\> blob.core.Windows.net/*. <br>Als de client een Data Lake Storage REST API gebruikt, heeft de URL deze structuur: *\<storage-account-name\> . DFS.core.Windows.net/ \<file-system-name\> / \<file-name\>*. |
 | recursieve | tekenreeks | `True` de bewerking uitvoeren op alle onderliggende directory's. anders `False` . <br>Wordt alleen weer gegeven voor gebeurtenissen die zijn geactiveerd op Blob Storage-accounts die een hiërarchische naam ruimte hebben. |
 | sequencer | tekenreeks | Een ondoorzichtige teken reeks waarde voor de logische reeks gebeurtenissen voor een bepaalde blobnaam.  Gebruikers kunnen standaard teken reeks vergelijking gebruiken om inzicht te krijgen in de relatieve volg orde van twee gebeurtenissen op dezelfde blobnaam. |
 | storageDiagnostics | object | Diagnostische gegevens die af en toe worden opgenomen door de Azure Storage service. Indien aanwezig, moet worden genegeerd door gebeurtenis verbruikers. |

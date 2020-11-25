@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/20/2020
 ms.openlocfilehash: d979a68f4e3aa0071fb7654647610af1fbf95e90
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86078813"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023973"
 ---
 # <a name="use-hdinsight-spark-cluster-to-read-and-write-data-to-azure-sql-database"></a>HDInsight Spark-cluster gebruiken om gegevens te lezen en te schrijven naar Azure SQL Database
 
@@ -36,7 +36,7 @@ Meer informatie over hoe u met Azure SQL Database verbinding maakt met een Apach
 Maak eerst een Jupyter Notebook dat is gekoppeld aan het Spark-cluster. U gebruikt dit notitie blok om de code fragmenten uit te voeren die in dit artikel worden gebruikt.
 
 1. Open uw cluster vanuit het [Azure Portal](https://portal.azure.com/).
-1. Selecteer **Jupyter notebook** onder **cluster dashboards** aan de rechter kant.  Als **cluster dashboards**niet worden weer gegeven, selecteert u **overzicht** in het menu links. Voer de beheerdersreferenties voor het cluster in als u daarom wordt gevraagd.
+1. Selecteer **Jupyter notebook** onder **cluster dashboards** aan de rechter kant.  Als **cluster dashboards** niet worden weer gegeven, selecteert u **overzicht** in het menu links. Voer de beheerdersreferenties voor het cluster in als u daarom wordt gevraagd.
 
     ![Jupyter notebook op Apache Spark](./media/apache-spark-connect-to-sql-database/hdinsight-spark-cluster-dashboard-jupyter-notebook.png "Jupyter notebook in Spark")
 
@@ -45,7 +45,7 @@ Maak eerst een Jupyter Notebook dat is gekoppeld aan het Spark-cluster. U gebrui
    >
    > `https://CLUSTERNAME.azurehdinsight.net/jupyter`
 
-1. Klik in de rechter bovenhoek van de Jupyter-notebook op **Nieuw**en klik vervolgens op **Spark** om een scala-notebook te maken. Jupyter notebooks in HDInsight Spark-cluster bieden ook de **PySpark** kernel voor Python2-toepassingen en de **PySpark3** -kernel voor Python3-toepassingen. Voor dit artikel maken we een scala-notebook.
+1. Klik in de rechter bovenhoek van de Jupyter-notebook op **Nieuw** en klik vervolgens op **Spark** om een scala-notebook te maken. Jupyter notebooks in HDInsight Spark-cluster bieden ook de **PySpark** kernel voor Python2-toepassingen en de **PySpark3** -kernel voor Python3-toepassingen. Voor dit artikel maken we een scala-notebook.
 
     ![Kernels voor Jupyter notebook in Spark](./media/apache-spark-connect-to-sql-database/kernel-jupyter-notebook-on-spark.png "Kernels voor Jupyter notebook in Spark")
 
@@ -172,7 +172,7 @@ In deze sectie gebruiken we een voor beeld van een CSV-bestand dat op het cluste
 
     ![Verbinding maken met SQL Database met behulp van SSMS1](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms.png "Verbinding maken met SQL Database met behulp van SSMS1")
 
-    b. Vouw vanuit **objectverkenner**de data base en het tabel knooppunt uit om te zien hoe **dbo. hvactable** is gemaakt.
+    b. Vouw vanuit **objectverkenner** de data base en het tabel knooppunt uit om te zien hoe **dbo. hvactable** is gemaakt.
 
     ![Verbinding maken met SQL Database met behulp van SSMS2](./media/apache-spark-connect-to-sql-database/connect-to-sql-db-ssms-locate-table.png "Verbinding maken met SQL Database met behulp van SSMS2")
 

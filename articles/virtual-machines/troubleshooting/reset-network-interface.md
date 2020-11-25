@@ -13,11 +13,11 @@ ms.topic: troubleshooting
 ms.date: 11/16/2018
 ms.author: genli
 ms.openlocfilehash: 6c4e507df0f112934979d4e59778b667743cf623
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87005953"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022901"
 ---
 # <a name="how-to-reset-network-interface-for-azure-windows-vm"></a>Netwerkinterface opnieuw instellen voor virtuele Azure-machine voor Windows 
 
@@ -40,7 +40,7 @@ In dit artikel wordt beschreven hoe u de netwerk interface voor Azure Windows VM
     
 4.  Selecteer **IP-configuraties**.
 5.  Selecteer het IP-adres. 
-6.  Als de **persoonlijke IP-toewijzing**  niet  **statisch**is, wijzigt u deze in **statisch**.
+6.  Als de **persoonlijke IP-toewijzing**  niet  **statisch** is, wijzigt u deze in **statisch**.
 7.  Wijzig het **IP-adres** in een ander IP-adres dat beschikbaar is in het subnet.
 8. De virtuele machine wordt opnieuw opgestart om de nieuwe NIC naar het systeem te initialiseren.
 9.  Probeer RDP naar uw computer. Als u dit hebt gedaan, kunt u het privé-IP-adres opnieuw instellen op het origineel als u dat wilt. Als dat niet het geval is, kunt u deze blijven gebruiken. 
@@ -82,7 +82,7 @@ Voer de volgende stappen uit om de netwerk interface opnieuw in te stellen:
 2.  Selecteer **virtual machines (klassiek)**.
 3.  Selecteer de betreffende virtuele machine.
 4.  Selecteer **IP-adressen**.
-5.  Als de **persoonlijke IP-toewijzing**  niet  **statisch**is, wijzigt u deze in **statisch**.
+5.  Als de **persoonlijke IP-toewijzing**  niet  **statisch** is, wijzigt u deze in **statisch**.
 6.  Wijzig het **IP-adres** in een ander IP-adres dat beschikbaar is in het subnet.
 7.  Selecteer **Opslaan**.
 8.  De virtuele machine wordt opnieuw opgestart om de nieuwe NIC naar het systeem te initialiseren.
@@ -117,7 +117,7 @@ Voer de volgende stappen uit om de netwerk interface opnieuw in te stellen:
 Nadat u extern bureau blad naar de computer kunt, moet u de oude Nic's verwijderen om het potentiële probleem te voor komen:
 
 1.  Open Apparaatbeheer.
-2.  Selecteer **weer**geven  >  **verborgen apparaten**weer geven.
+2.  Selecteer **weer** geven  >  **verborgen apparaten** weer geven.
 3.  Selecteer **netwerk adapters**. 
 4.  Controleer op de adapters met de naam ' Microsoft Hyper-V netwerk adapter '.
 5.  Mogelijk ziet u een niet-beschik bare adapter die grijs wordt weer gegeven. Klik met de rechter muisknop op de adapter en selecteer vervolgens verwijderen.

@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.service: iot-hub
 services: iot-hub
 ms.openlocfilehash: 8a39c2b06ca8a0f852891acb60ba199fc2c6db5c
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92142663"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96024126"
 ---
 # <a name="best-practices-for-device-configuration-within-an-iot-solution"></a>Aanbevolen procedures voor het configureren van apparaten binnen een IoT-oplossing
 
@@ -38,7 +38,7 @@ Automatische Apparaatbeheer omvat de vele voor delen van [apparaatdubbels](iot-h
 
 Hieronder vindt u aanbevolen procedures voor hardwarefabrikanten en integrators die gebruikmaken van Inge sloten software ontwikkeling:
 
-* ** [Apparaatdubbels](iot-hub-devguide-device-twins.md)implementeren:** Met apparaatdubbels kan de gewenste configuratie vanuit de cloud worden gesynchroniseerd en voor de rapportage van de huidige configuratie en de apparaateigenschappen. De beste manier om apparaatdubbels binnen Inge sloten toepassingen te implementeren, is via de [Azure IOT sdk's](https://github.com/Azure/azure-iot-sdks). Apparaatdubbels van apparaten zijn het meest geschikt voor configuratie omdat:
+* **[Apparaatdubbels](iot-hub-devguide-device-twins.md)implementeren:** Met apparaatdubbels kan de gewenste configuratie vanuit de cloud worden gesynchroniseerd en voor de rapportage van de huidige configuratie en de apparaateigenschappen. De beste manier om apparaatdubbels binnen Inge sloten toepassingen te implementeren, is via de [Azure IOT sdk's](https://github.com/Azure/azure-iot-sdks). Apparaatdubbels van apparaten zijn het meest geschikt voor configuratie omdat:
 
     * Ondersteuning voor bidirectionele communicatie.
     * De status van apparaten die zijn verbonden met een apparaat zonder verbinding.
@@ -55,7 +55,7 @@ Hieronder vindt u aanbevolen procedures voor hardwarefabrikanten en integrators 
 
 Hier volgen de aanbevolen procedures voor ontwikkel aars van IoT-oplossingen die systemen maken op basis van Azure:
 
-* ** [Apparaatdubbels](iot-hub-devguide-device-twins.md)implementeren:** Met apparaatdubbels kan de gewenste configuratie vanuit de cloud worden gesynchroniseerd en voor de rapportage van de huidige configuratie en de apparaateigenschappen. De beste manier om apparaatdubbels in Cloud Solutions-toepassingen te implementeren, is via de [Azure IOT sdk's](https://github.com/Azure/azure-iot-sdks). Apparaatdubbels van apparaten zijn het meest geschikt voor configuratie omdat:
+* **[Apparaatdubbels](iot-hub-devguide-device-twins.md)implementeren:** Met apparaatdubbels kan de gewenste configuratie vanuit de cloud worden gesynchroniseerd en voor de rapportage van de huidige configuratie en de apparaateigenschappen. De beste manier om apparaatdubbels in Cloud Solutions-toepassingen te implementeren, is via de [Azure IOT sdk's](https://github.com/Azure/azure-iot-sdks). Apparaatdubbels van apparaten zijn het meest geschikt voor configuratie omdat:
 
     * Ondersteuning voor bidirectionele communicatie.
     * De status van apparaten die zijn verbonden met een apparaat zonder verbinding.
@@ -64,7 +64,7 @@ Hier volgen de aanbevolen procedures voor ontwikkel aars van IoT-oplossingen die
 
 * **Apparaten ordenen met Device-dubbele Tags:** De oplossing moet de operator toestaan kwaliteits ringen of andere sets apparaten te definiëren op basis van verschillende implementatie strategieën zoals Canarische. De organisatie van een apparaat kan worden geïmplementeerd in uw oplossing met behulp van dubbele Tags en [query's](iot-hub-devguide-query-language.md)van het apparaat. De inrichting van het apparaat is nood zakelijk om configuratie-uitrollen veilig en nauw keurig mogelijk te maken.
 
-* ** [Automatische configuraties van apparaten](./iot-hub-automatic-device-management.md)implementeren:** Met automatische apparaatconfiguratie worden configuratie wijzigingen in grote sets van IoT-apparaten geïmplementeerd en gecontroleerd via apparaat apparaatdubbels.
+* **[Automatische configuraties van apparaten](./iot-hub-automatic-device-management.md)implementeren:** Met automatische apparaatconfiguratie worden configuratie wijzigingen in grote sets van IoT-apparaten geïmplementeerd en gecontroleerd via apparaat apparaatdubbels.
 
    Automatische configuraties doel sets van apparaatdubbels via de **doel voorwaarde,** een query op apparaatspecifieke Tags of gerapporteerde eigenschappen van het apparaat. De **doel inhoud** is de set gewenste eigenschappen die worden ingesteld binnen de apparaatdubbels van het doel apparaat. De doel inhoud moet worden uitgelijnd met de dubbele structuur van het apparaat dat is gedefinieerd door de IoT hardware fabrikant/integrator. De **metrische gegevens** zijn query's op dubbele gerapporteerde eigenschappen van het apparaat en moeten ook worden uitgelijnd met de dubbele structuur van het apparaat dat is gedefinieerd door de IOT hardware fabrikant/integrator.
 
@@ -78,7 +78,7 @@ Hieronder vindt u aanbevolen procedures voor IoT-oplossings operators die gebrui
 
 * **Apparaten ordenen voor beheer:** De IoT-oplossing moet bepalen of toestaan dat kwaliteits ringen of andere sets apparaten worden gemaakt op basis van verschillende implementatie strategieën zoals Canarische. De sets apparaten worden gebruikt voor het implementeren van configuratie wijzigingen en voor het uitvoeren van andere beheer bewerkingen voor Apparaatbeheer.
 
-* **Configuratie wijzigingen uitvoeren met behulp van een gefaseerde implementatie:**  Een gefaseerde implementatie is een algemeen proces waarbij een operator wijzigingen implementeert in een uitgebreidere set IoT-apparaten. Het doel is om wijzigingen geleidelijk aan te brengen om het risico te verkleinen dat er grote veranderingen in de omvang ontstaan.De operator moet de interface van de oplossing gebruiken voor het maken van een [automatische apparaatconfiguratie](./iot-hub-automatic-device-management.md) en de doel voorwaarde moet gericht zijn op een eerste set apparaten (zoals een Canarische groep). De operator moet vervolgens de configuratie wijziging valideren in de eerste set apparaten.
+* **Configuratie wijzigingen uitvoeren met behulp van een gefaseerde implementatie:**  Een gefaseerde implementatie is een algemeen proces waarbij een operator wijzigingen implementeert in een uitgebreidere set IoT-apparaten. Het doel is om wijzigingen geleidelijk aan te brengen om het risico te verkleinen dat er grote veranderingen in de omvang ontstaan.  De operator moet de interface van de oplossing gebruiken voor het maken van een [automatische apparaatconfiguratie](./iot-hub-automatic-device-management.md) en de doel voorwaarde moet gericht zijn op een eerste set apparaten (zoals een Canarische groep). De operator moet vervolgens de configuratie wijziging valideren in de eerste set apparaten.
 
    Zodra de validatie is voltooid, wordt de automatische apparaatconfiguratie door de operator bijgewerkt zodat deze een grotere set apparaten bevat. De operator moet de prioriteit voor de configuratie ook instellen op hoger dan andere configuraties die momenteel zijn gericht op die apparaten. De implementatie kan worden bewaakt met behulp van de metrische gegevens die worden gerapporteerd door de automatische apparaatconfiguratie.
 

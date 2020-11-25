@@ -4,11 +4,11 @@ description: Meer informatie over het gebruik van de Azure Policy extensie voor 
 ms.date: 10/20/2020
 ms.topic: how-to
 ms.openlocfilehash: 233c9158c30d6c373dd6147090894dc83b83da3d
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92317620"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022425"
 ---
 # <a name="use-azure-policy-extension-for-visual-studio-code"></a>Azure Policy-extensie voor Visual Studio code gebruiken
 
@@ -34,9 +34,9 @@ Nadat u aan de vereisten hebt voldaan, kunt u Azure Policy extensie voor Visual 
 
 1. Open Visual Studio Code.
 
-1. Ga in de menu balk naar **View**  >  **uitbrei dingen**weer geven.
+1. Ga in de menu balk naar **View**  >  **uitbrei dingen** weer geven.
 
-1. Voer in het zoekvak **Azure Policy**in.
+1. Voer in het zoekvak **Azure Policy** in.
 
 1. Selecteer **Azure Policy** in de zoek resultaten en selecteer vervolgens **installeren**.
 
@@ -64,13 +64,13 @@ Als u resources en lookup-aliassen wilt evalueren, moet u verbinding maken met u
 
      Selecteer in de Azure Policy-extensie **Aanmelden bij Azure**.
 
-     :::image type="content" source="../media/extension-for-vscode/azure-cloud-sign-in-policy-extension.png" alt-text="Scherm opname van het selecteren van de Azure-Cloud aanmelding voor Visual Studio-code." border="false":::
+     :::image type="content" source="../media/extension-for-vscode/azure-cloud-sign-in-policy-extension.png" alt-text="Scherm opname van Visual Studio code en het pictogram voor de uitbrei ding van de Azure Policy." border="false":::
 
    - Opdracht palet
 
-     Ga in de menu balk naar het **View**  >  **opdracht palet**weer geven en voer **Azure in: Meld**u aan.
+     Ga in de menu balk naar het **View**  >  **opdracht palet** weer geven en voer **Azure in: Meld** u aan.
 
-     :::image type="content" source="../media/extension-for-vscode/azure-cloud-sign-in-command-palette.png" alt-text="Scherm opname van het selecteren van de Azure-Cloud aanmelding voor Visual Studio-code." border="false":::
+     :::image type="content" source="../media/extension-for-vscode/azure-cloud-sign-in-command-palette.png" alt-text="Scherm opname van de Azure Cloud-aanmeld opties voor Visual Studio code vanuit het opdracht palet." border="false":::
 
 1. Volg de instructies voor aanmelden om u aan te melden bij Azure. Nadat u verbinding hebt gemaakt, wordt de naam van uw Azure-account weer gegeven op de status balk onder aan het venster Visual Studio code.
 
@@ -82,11 +82,11 @@ Wanneer u zich voor het eerst aanmeldt, worden alleen de standaard-abonnements b
 
    - Opdracht palet: 
 
-     Ga in de menu balk naar het **View** > **opdracht palet**weer geven en voer **Azure in: Selecteer abonnementen**.
+     Ga in de menu balk naar het **View** > **opdracht palet** weer geven en voer **Azure in: Selecteer abonnementen**.
 
    - Venster voet tekst
 
-     Selecteer in de voet tekst van het venster onder aan het scherm het segment dat overeenkomt met **Azure: \<your account\> **.
+     Selecteer in de voet tekst van het venster onder aan het scherm het segment dat overeenkomt met **Azure: \<your account\>**.
 
 1. Gebruik het vak filteren om abonnementen snel op naam te vinden. Controleer of verwijder vervolgens de controle van elk abonnement om de abonnementen in te stellen die worden weer gegeven door de Azure Policy-extensie. Wanneer u klaar bent met het toevoegen of verwijderen van abonnementen om weer te geven, selecteert u **OK**.
 
@@ -111,7 +111,7 @@ Klanten met honderden of duizenden resources in één abonnement kunnen een Door
 
    - Opdracht palet:
 
-     Ga in de menu balk naar het **View** > **opdracht palet**weer geven en voer **resources in: resources zoeken**.
+     Ga in de menu balk naar het **View** > **opdracht palet** weer geven en voer **resources in: resources zoeken**.
 
 1. Als er meer dan één abonnement is geselecteerd voor weer gave, gebruikt u het filter om te selecteren welk abonnement u wilt zoeken.
 
@@ -125,7 +125,7 @@ Wanneer een resource is geselecteerd, hetzij via de Zoek interface, hetzij door 
 
 Zodra een resource is geopend, wordt met de muis aanwijzer over de naam van de Resource Manager-eigenschap of de waarde de Azure Policy alias weer gegeven als er een bestaat. In dit voor beeld is de resource een `Microsoft.Compute/virtualMachines` resource type en de eigenschap **Properties. StorageProfile. imageReference. offer.** Met de muis aanwijzer worden de overeenkomende aliassen weer gegeven.
 
-:::image type="content" source="../media/extension-for-vscode/extension-hover-shows-property-alias.png" alt-text="Scherm opname van het selecteren van de Azure-Cloud aanmelding voor Visual Studio-code." border="false":::
+:::image type="content" source="../media/extension-for-vscode/extension-hover-shows-property-alias.png" alt-text="Scherm afbeelding van de uitbrei ding van de Azure Policy voor Visual Studio code die een eigenschap aanwijst om de alias namen weer te geven." border="false":::
 
 > [!NOTE]
 > De VS Code-extensie geeft alleen de eigenschappen van de Resource Manager-modus weer en geeft geen eigenschappen van de [Resource Provider-modu ](../concepts/definition-structure.md#mode) weer.
@@ -142,7 +142,7 @@ In de uitbrei ding Azure Policy worden beleids typen en beleids toewijzingen wee
 
    - Opdracht palet:
 
-     Ga in de menu balk naar het **View** > **opdracht palet**weer geven en voer **beleid in: Zoek beleid**.
+     Ga in de menu balk naar het **View** > **opdracht palet** weer geven en voer **beleid in: Zoek beleid**.
 
 1. Als er meer dan één abonnement is geselecteerd voor weer gave, gebruikt u het filter om te selecteren welk abonnement u wilt zoeken.
 
@@ -199,7 +199,7 @@ De evaluatie resultaten bevatten informatie over de beleids definitie en beleids
 
 ## <a name="sign-out"></a>Afmelden
 
-Ga in de menu balk naar het **View**  >  **opdracht palet**weer geven en voer **Azure in: Meld**u aan.
+Ga in de menu balk naar het **View**  >  **opdracht palet** weer geven en voer **Azure in: Meld** u aan.
 
 ## <a name="next-steps"></a>Volgende stappen
 

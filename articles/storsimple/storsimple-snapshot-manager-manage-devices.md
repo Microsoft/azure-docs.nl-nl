@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 06/05/2017
 ms.author: alkohli
 ms.openlocfilehash: dbb7e835d110bcb6cb81fd5425a2aafbb578e692
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90054846"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022969"
 ---
 # <a name="use-storsimple-snapshot-manager-to-connect-and-manage-storsimple-devices"></a>StorSimple Snapshot Manager gebruiken om verbinding te maken en StorSimple-apparaten te beheren
 ## <a name="overview"></a>Overzicht
@@ -33,7 +33,7 @@ Afhankelijk van de selecties van uw **weer gave** ziet u in het deel venster met
 
 | Kolom met resultaten | Beschrijving |
 |:--- |:--- |
-| Naam |De naam van het apparaat zoals geconfigureerd in de klassieke Azure-Portal |
+| Name |De naam van het apparaat zoals geconfigureerd in de klassieke Azure-Portal |
 | Modelleren |Het model nummer van het apparaat |
 | Versie |De versie van de software die op het apparaat is geïnstalleerd |
 | Status |Of het apparaat beschikbaar is |
@@ -96,7 +96,7 @@ Gebruik de volgende procedure om verbinding te maken met een StorSimple-apparaat
    
    * Als het apparaat om de een of andere reden niet beschikbaar is, retourneert StorSimple Snapshot Manager een fout bericht. 
    
-   * Als het apparaat beschikbaar is, wordt door StorSimple Snapshot Manager een verbinding toegevoegd. Wanneer u het apparaat selecteert, wordt het weer gegeven in het **resultaten** venster en geeft het veld status aan dat het apparaat **beschikbaar**is. StorSimple Snapshot Manager alle volume groepen die zijn geconfigureerd voor het apparaat worden geïmporteerd, mits de volume groepen gekoppelde back-ups hebben. Het back-upbeleid is niet geïmporteerd. Volume groepen waaraan geen back-ups zijn gekoppeld, worden niet geïmporteerd.
+   * Als het apparaat beschikbaar is, wordt door StorSimple Snapshot Manager een verbinding toegevoegd. Wanneer u het apparaat selecteert, wordt het weer gegeven in het **resultaten** venster en geeft het veld status aan dat het apparaat **beschikbaar** is. StorSimple Snapshot Manager alle volume groepen die zijn geconfigureerd voor het apparaat worden geïmporteerd, mits de volume groepen gekoppelde back-ups hebben. Het back-upbeleid is niet geïmporteerd. Volume groepen waaraan geen back-ups zijn gekoppeld, worden niet geïmporteerd.
 2. Klik op het pictogram bureau blad om StorSimple Snapshot Manager te starten.
 3. Klik met de rechter muisknop op het bovenste knoop punt in het deel venster **bereik** en klik vervolgens op **in-/uitschakelen import weergave**.
    
@@ -110,7 +110,7 @@ Gebruik de volgende procedure om de verbonden StorSimple-apparaten te synchronis
 
 #### <a name="to-refresh-connected-devices"></a>Verbonden apparaten vernieuwen
 1. Klik op het pictogram bureau blad om StorSimple Snapshot Manager te starten.
-2. Klik in het deel venster **bereik** met de rechter muisknop op **apparaten**en klik vervolgens op **apparaten vernieuwen**. Hiermee worden de verbonden apparaten gesynchroniseerd met StorSimple Snapshot Manager zodat u de volume groepen en back-ups kunt weer geven, inclusief eventuele recente toevoegingen. 
+2. Klik in het deel venster **bereik** met de rechter muisknop op **apparaten** en klik vervolgens op **apparaten vernieuwen**. Hiermee worden de verbonden apparaten gesynchroniseerd met StorSimple Snapshot Manager zodat u de volume groepen en back-ups kunt weer geven, inclusief eventuele recente toevoegingen. 
    
     ![De StorSimple-apparaten vernieuwen](./media/storsimple-snapshot-manager-manage-devices/HCS_SSM_Refresh_devices.png)
 
@@ -191,18 +191,18 @@ Als een StorSimple-apparaat mislukt en wordt vervangen door een apparaat voor st
 1. Stop de micro soft StorSimple Management-service:
    
    1. Start Serverbeheer.
-   2. Selecteer op het Serverbeheer-dash board de optie **Services**in het menu **extra** .
-   3. Selecteer de **micro soft StorSimple Management-service**in het venster **Services** .
-   4. Klik in het rechterdeel venster onder **micro soft StorSimple Management service**op **de service stoppen**.
+   2. Selecteer op het Serverbeheer-dash board de optie **Services** in het menu **extra** .
+   3. Selecteer de **micro soft StorSimple Management-service** in het venster **Services** .
+   4. Klik in het rechterdeel venster onder **micro soft StorSimple Management service** op **de service stoppen**.
 2. Verwijder de configuratie-informatie met betrekking tot het oude apparaat:
    
    1. Ga in Verkenner naar C:\ProgramData\Microsoft\StorSimple\BACatalog.
    2. Verwijder de bestanden in de map BACatalog.
 3. Start de micro soft StorSimple Management-service opnieuw:
    
-   1. Selecteer op het Serverbeheer-dash board de optie **Services**in het menu **extra** .
-   2. Selecteer de **micro soft StorSimple Management-service**in het venster **Services** .
-   3. Klik in het rechterdeel venster onder **micro soft StorSimple Management service**op **Start de service opnieuw**.
+   1. Selecteer op het Serverbeheer-dash board de optie **Services** in het menu **extra** .
+   2. Selecteer de **micro soft StorSimple Management-service** in het venster **Services** .
+   3. Klik in het rechterdeel venster onder **micro soft StorSimple Management service** op **Start de service opnieuw**.
 4. Start StorSimple Snapshot Manager.
 5. Als u het nieuwe StorSimple-apparaat wilt configureren, voert u de stappen uit in stap 2: verbinding maken met een StorSimple-apparaat in [Deploy StorSimple Snapshot Manager](storsimple-snapshot-manager-deployment.md).
 6. Klik met de rechter muisknop op het knoop punt op het hoogste niveau in het deel venster **bereik** (StorSimple Snapshot Manager in het voor beeld) en klik vervolgens op **in-/uitschakelen invoer weer geven**. 

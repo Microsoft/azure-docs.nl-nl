@@ -16,16 +16,16 @@ ms.date: 10/30/2014
 ms.author: erikre
 ms.reviewer: elmer.thomas@sendgrid.com; erika.berkland@sendgrid.com; vibhork; matt.bernier@sendgrid.com
 ms.openlocfilehash: b3a9fee09d1eac6fb4d716af83c348cb2c21f7a9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67870916"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023785"
 ---
 # <a name="how-to-use-the-sendgrid-email-service-from-php"></a>De SendGrid-e-mail service van PHP gebruiken
 
 In deze hand leiding wordt gedemonstreerd hoe u algemene programmeer taken uitvoert met de SendGrid-e-mail service op Azure. De voor beelden zijn geschreven in PHP.
-De besproken scenario's zijn onder andere het **samen stellen van e-mail**, het **verzenden van e-mail**en het **toevoegen van bijlagen**. Zie de sectie [volgende stappen](#next-steps) voor meer informatie over het SendGrid en verzenden van e-mail.
+De besproken scenario's zijn onder andere het **samen stellen van e-mail**, het **verzenden van e-mail** en het **toevoegen van bijlagen**. Zie de sectie [volgende stappen](#next-steps) voor meer informatie over het SendGrid en verzenden van e-mail.
 
 ## <a name="what-is-the-sendgrid-email-service"></a>Wat is de SendGrid-e-mail service?
 SendGrid is een [cloud-gebaseerde e-mail service] die betrouw bare [transactionele e-mail levering], schaal baarheid en real-time analyse biedt, samen met flexibele api's die eenvoudig aangepaste integratie maken. Veelvoorkomende scenario's voor SendGrid-gebruik zijn:

@@ -11,11 +11,11 @@ ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: d3f6a48815519499ddc39dcc12cafe0fe95e70e0
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93320227"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023802"
 ---
 # <a name="platforms-and-tools-for-data-science-projects"></a>Platformen en hulpprogram ma's voor data Science-projecten
 
@@ -108,7 +108,7 @@ Het TDSP-team van micro soft heeft twee end-to-end-procedures gepubliceerd die l
 
 ### <a name="install-git-credential-manager-on-windows"></a>Git Credential Manager installeren in Windows
 
-Als u de TDSP in **Windows** volgt, moet u de **Git CREDENTIAL Manager (GCM)** installeren om te communiceren met de Git-opslag plaatsen. Als u GCM wilt installeren, moet u eerst **chocolaty** installeren. Als u chocolaty en GCM wilt installeren, voert u de volgende opdrachten uit in Windows Power shell als **beheerder** :  
+Als u de TDSP in **Windows** volgt, moet u de **Git CREDENTIAL Manager (GCM)** installeren om te communiceren met de Git-opslag plaatsen. Als u GCM wilt installeren, moet u eerst **chocolaty** installeren. Als u chocolaty en GCM wilt installeren, voert u de volgende opdrachten uit in Windows Power shell als **beheerder**:  
 
 ```powershell
 iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex

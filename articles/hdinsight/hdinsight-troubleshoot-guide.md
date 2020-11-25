@@ -8,11 +8,11 @@ ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 08/14/2019
 ms.openlocfilehash: 5ffd688a60f793ffa497cd0d23ed88437e56a07c
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289031"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022680"
 ---
 # <a name="troubleshoot-azure-hdinsight"></a>Problemen met Azure HDInsight oplossen
 

@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/29/2020
 ms.openlocfilehash: 22ce91a81964ed52830fc19dbbbd52e7f170b0d4
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92535396"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022765"
 ---
 # <a name="scale-azure-hdinsight-clusters"></a>Azure HDInsight-clusters schalen
 
@@ -128,9 +128,9 @@ Om te voor komen dat uw actieve taken mislukken tijdens een schaal bare bewerkin
 Als u een lijst met in behandeling zijnde en actieve taken wilt weer geven, kunt u de **gebruikers interface** van het garen gebruiken door de volgende stappen uit te voeren:
 
 1. Selecteer uw cluster in de [Azure Portal](https://portal.azure.com/).  Het cluster wordt geopend op een nieuwe portal-pagina.
-2. Ga in de hoofd weergave naar **cluster dashboards**  >  **Ambari Home** . Voer de referenties voor uw cluster in.
+2. Ga in de hoofd weergave naar **cluster dashboards**  >  **Ambari Home**. Voer de referenties voor uw cluster in.
 3. Selecteer in de Ambari-gebruikers interface de optie **garens** in de lijst met Services in het menu aan de linkerkant.  
-4. Selecteer op de pagina GARENs de optie **snelle koppelingen** en beweeg de muis aanwijzer over het actieve hoofd knooppunt en selecteer vervolgens de **gebruikers interface van Resource Manager** .
+4. Selecteer op de pagina GARENs de optie **snelle koppelingen** en beweeg de muis aanwijzer over het actieve hoofd knooppunt en selecteer vervolgens de **gebruikers interface van Resource Manager**.
 
     ![Resource Manager-gebruikers interface voor Apache Ambari Quick links](./media/hdinsight-scaling-best-practices/resource-manager-ui1.png)
 

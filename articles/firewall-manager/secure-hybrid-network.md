@@ -8,11 +8,11 @@ ms.topic: tutorial
 ms.date: 06/30/2020
 ms.author: victorh
 ms.openlocfilehash: 3d4d1e65c2200aee178abefb46d3e330acbd3108
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85563650"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023683"
 ---
 # <a name="tutorial-secure-your-hub-virtual-network-using-azure-firewall-manager"></a>Zelfstudie: Uw virtuele hubnetwerk beveiligen met Azure Firewall Manager
 
@@ -428,7 +428,7 @@ Nu u hebt geverifieerd dat de firewallregels werken:
 Wijzig vervolgens de verzameling netwerkregels van de firewall in **Weigeren** om te controleren of de regels werken zoals verwacht.
 
 1. Open de resourcegroep **FW-Hybrid-Test** en selecteer het firewallbeleid **Pol-Net01**.
-2. Selecteer **Regels**onder **Instellingen**.
+2. Selecteer **Regels** onder **Instellingen**.
 3. Selecteer onder **Netwerkregels** de regelverzameling **RCNet01**, selecteer de weglatingstekens (...) en selecteer **Bewerken**.
 4. Selecteer bij **Actie regelverzameling** de optie **Weigeren**.
 5. Selecteer **Opslaan**.

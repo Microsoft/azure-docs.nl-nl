@@ -8,11 +8,11 @@ ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: c271107b85e4903153c29b58aadadd37fb051b76
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94626738"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022561"
 ---
 # <a name="use-azure-files-with-linux"></a>Azure Files gebruiken met Linux
 [Azure Files ](storage-files-introduction.md) is het eenvoudig te gebruiken cloudbestandssysteem van Microsoft. Azure-bestands shares kunnen worden gekoppeld in Linux-distributies met behulp van de [SMB-kernel-client](https://wiki.samba.org/index.php/LinuxCIFS). In dit artikel ziet u twee manieren om een Azure-bestands share te koppelen: op aanvraag met de `mount` opdracht en aan-opstarten door een item in te maken `/etc/fstab` .
@@ -47,7 +47,7 @@ uname -r
     sudo apt install cifs-utils
     ```
 
-    Gebruik pakket beheer op **Fedora** , **Red Hat Enterprise Linux 8 +** , en **CentOS 8 +** `dnf` :
+    Gebruik pakket beheer op **Fedora**, **Red Hat Enterprise Linux 8 +**, en **CentOS 8 +** `dnf` :
 
     ```bash
     sudo dnf install cifs-utils
@@ -69,7 +69,7 @@ uname -r
 
 * **De meest recente versie van de Azure-opdracht regel interface (CLI).** Zie [de Azure cli installeren](/cli/azure/install-azure-cli?view=azure-cli-latest) en uw besturings systeem selecteren voor meer informatie over het installeren van de Azure cli. Als u liever de module Azure PowerShell gebruikt in Power shell 6 +, is het mogelijk dat de onderstaande instructies worden weer gegeven voor de Azure CLI.
 
-* **Zorg ervoor dat poort 445 is geopend** : SMB communiceert via TCP-poort 445-Controleer of de firewall TCP-poorten 445 van de client computer niet blokkeert.  Vervang `<your-resource-group>` en `<your-storage-account>` Voer het volgende script uit:
+* **Zorg ervoor dat poort 445 is geopend**: SMB communiceert via TCP-poort 445-Controleer of de firewall TCP-poorten 445 van de client computer niet blokkeert.  Vervang `<your-resource-group>` en `<your-storage-account>` Voer het volgende script uit:
     ```bash
     resourceGroupName="<your-resource-group>"
     storageAccountName="<your-storage-account>"
@@ -99,7 +99,7 @@ Als u een Azure-bestands share met uw Linux-distributie wilt gebruiken, moet u e
 U kunt dezelfde Azure-bestands share indien gewenst koppelen aan meerdere koppel punten.
 
 ### <a name="mount-the-azure-file-share-on-demand-with-mount"></a>De Azure-bestands share on-demand koppelen met `mount`
-1. **Maak een map voor het koppel punt** : Vervang `<your-resource-group>` , `<your-storage-account>` , en `<your-file-share>` door de juiste informatie voor uw omgeving:
+1. **Maak een map voor het koppel punt**: Vervang `<your-resource-group>` , `<your-storage-account>` , en `<your-file-share>` door de juiste informatie voor uw omgeving:
 
     ```bash
     resourceGroupName="<your-resource-group>"
@@ -135,7 +135,7 @@ U kunt dezelfde Azure-bestands share indien gewenst koppelen aan meerdere koppel
 Wanneer u klaar bent met het gebruik van de Azure-bestands share, kunt u gebruiken `sudo umount $mntPath` om de share te ontkoppelen.
 
 ### <a name="create-a-persistent-mount-point-for-the-azure-file-share-with-etcfstab"></a>Een permanent koppel punt maken voor de Azure-bestands share met `/etc/fstab`
-1. **Maak een map voor het koppel punt** : er kan een map voor een koppel punt worden gemaakt op een wille keurige locatie in het bestands systeem, maar dit is een algemene Conventie voor het maken van deze onder/mnt. Met de volgende opdracht maakt u bijvoorbeeld een nieuwe map, vervangt `<your-resource-group>` `<your-storage-account>` u, en `<your-file-share>` met de juiste informatie voor uw omgeving:
+1. **Maak een map voor het koppel punt**: er kan een map voor een koppel punt worden gemaakt op een wille keurige locatie in het bestands systeem, maar dit is een algemene Conventie voor het maken van deze onder/mnt. Met de volgende opdracht maakt u bijvoorbeeld een nieuwe map, vervangt `<your-resource-group>` `<your-storage-account>` u, en `<your-file-share>` met de juiste informatie voor uw omgeving:
 
     ```bash
     resourceGroupName="<your-resource-group>"
@@ -174,7 +174,7 @@ Wanneer u klaar bent met het gebruik van de Azure-bestands share, kunt u gebruik
     sudo chmod 600 $smbCredentialFile
     ```
 
-1. **Gebruik de volgende opdracht om de volgende regel toe te `/etc/fstab` voegen aan** : in het onderstaande voor beeld zijn de machtigingen voor het lokale Linux-bestand en de map standaard 0755, wat betekent dat lezen, schrijven en uitvoeren voor de eigenaar (op basis van de Linux-eigenaar van het bestand of de map), lezen en uitvoeren voor gebruikers in de groep eigenaar en voor anderen op het systeem lezen en uitvoeren U kunt de `uid` Opties en `gid` koppelen gebruiken om de gebruikers-id en groeps-id voor de koppeling in te stellen. U kunt ook gebruiken `dir_mode` `file_mode` om aangepaste machtigingen in te stellen. Zie voor meer informatie over het instellen van machtigingen voor de [UNIX-numerieke notatie](https://en.wikipedia.org/wiki/File_system_permissions#Numeric_notation) op Wikipedia.
+1. **Gebruik de volgende opdracht om de volgende regel toe te `/etc/fstab` voegen aan**: in het onderstaande voor beeld zijn de machtigingen voor het lokale Linux-bestand en de map standaard 0755, wat betekent dat lezen, schrijven en uitvoeren voor de eigenaar (op basis van de Linux-eigenaar van het bestand of de map), lezen en uitvoeren voor gebruikers in de groep eigenaar en voor anderen op het systeem lezen en uitvoeren U kunt de `uid` Opties en `gid` koppelen gebruiken om de gebruikers-id en groeps-id voor de koppeling in te stellen. U kunt ook gebruiken `dir_mode` `file_mode` om aangepaste machtigingen in te stellen. Zie voor meer informatie over het instellen van machtigingen voor de [UNIX-numerieke notatie](https://en.wikipedia.org/wiki/File_system_permissions#Numeric_notation) op Wikipedia.
 
     ```bash
     # This command assumes you have logged in with az login
@@ -207,7 +207,7 @@ Wanneer u klaar bent met het gebruik van de Azure-bestands share, kunt u gebruik
     sudo apt update
     sudo apt install autofs
     ```
-    Gebruik pakket beheer op **Fedora** , **Red Hat Enterprise Linux 8 +** , en **CentOS 8 +** `dnf` :
+    Gebruik pakket beheer op **Fedora**, **Red Hat Enterprise Linux 8 +**, en **CentOS 8 +** `dnf` :
     ```bash
     sudo dnf install autofs
     ```
@@ -219,7 +219,7 @@ Wanneer u klaar bent met het gebruik van de Azure-bestands share, kunt u gebruik
     ```bash
     sudo zypper install autofs
     ```
-2. **Een koppel punt maken voor de share (s)** :
+2. **Een koppel punt maken voor de share (s)**:
    ```bash
     sudo mkdir /fileshares
     ```

@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.date: 11/15/2019
 ms.custom: H1Hack27Feb2017,hdinsightactive, devx-track-python
 ms.openlocfilehash: 0179fd10e75af0ced55b4bb41f9525dc26b3efe5
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92540377"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023071"
 ---
 # <a name="use-python-user-defined-functions-udf-with-apache-hive-and-apache-pig-in-hdinsight"></a>Met python door de gebruiker gedefinieerde functies (UDF) met Apache Hive en Apache varken in HDInsight gebruiken
 
@@ -27,8 +27,8 @@ HDInsight omvat ook jython, een python-implementatie die is geschreven in Java. 
 
 ## <a name="prerequisites"></a>Vereisten
 
-* **Een Hadoop-cluster in HDInsight** . Zie aan de [slag met HDInsight op Linux](apache-hadoop-linux-tutorial-get-started.md).
-* **Een SSH-client** . Zie voor meer informatie [Verbinding maken met HDInsight (Apache Hadoop) via SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
+* **Een Hadoop-cluster in HDInsight**. Zie aan de [slag met HDInsight op Linux](apache-hadoop-linux-tutorial-get-started.md).
+* **Een SSH-client**. Zie voor meer informatie [Verbinding maken met HDInsight (Apache Hadoop) via SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 * Het [URI-schema](../hdinsight-hadoop-linux-information.md#URI-and-scheme) voor de primaire opslag voor uw clusters. Dit is `wasb://` voor Azure Storage voor `abfs://` Azure Data Lake Storage Gen2 of adl://voor Azure data Lake Storage gen1. Als beveiligde overdracht is ingeschakeld voor Azure Storage, zou de URI wasbs://zijn.  Zie ook [beveiligde overdracht](../../storage/common/storage-require-secure-transfer.md).
 * **Mogelijke wijziging van de opslag configuratie.**  Zie [opslag configuratie](#storage-configuration) als u een type opslag account gebruikt `BlobStorage` .
 * Optioneel.  Als u Power shell wilt gebruiken, hebt u de [AZ-module](/powershell/azure/new-azureps-module-az) geïnstalleerd.
@@ -300,8 +300,8 @@ Een python-script kan worden gebruikt als een UDF van varken via de- `GENERATE` 
 
 Als u de Python-interpreter wilt opgeven, gebruikt u `register` bij het verwijzen naar het python-script. De volgende voor beelden registreren scripts met varkens als `myfuncs` :
 
-* **Jython gebruiken** : `register '/path/to/pigudf.py' using jython as myfuncs;`
-* **C Python gebruiken** : `register '/path/to/pigudf.py' using streaming_python as myfuncs;`
+* **Jython gebruiken**: `register '/path/to/pigudf.py' using jython as myfuncs;`
+* **C Python gebruiken**: `register '/path/to/pigudf.py' using streaming_python as myfuncs;`
 
 > [!IMPORTANT]  
 > Wanneer u jython gebruikt, kan het pad naar het pig_jython bestand een lokaal pad of een WASBS://-pad zijn. Bij gebruik van C python moet u echter verwijzen naar een bestand op het lokale bestands systeem van het knoop punt dat u gebruikt om de Pig-taak te verzenden.
@@ -343,7 +343,7 @@ def create_structure(input):
 
 In het Latijnse voor beeld van het varken `LINE` wordt de invoer gedefinieerd als een chararray, omdat er geen consistent schema is voor de invoer. Het python-script transformeert de gegevens naar een consistent schema voor uitvoer.
 
-1. De `@outputSchema` instructie definieert de indeling van de gegevens die worden geretourneerd naar varken. In dit geval is het een **gegevens verzameling** , een Pig-gegevens type. De Bag bevat de volgende velden, die allemaal chararray (teken reeksen) zijn:
+1. De `@outputSchema` instructie definieert de indeling van de gegevens die worden geretourneerd naar varken. In dit geval is het een **gegevens verzameling**, een Pig-gegevens type. De Bag bevat de volgende velden, die allemaal chararray (teken reeksen) zijn:
 
    * datum: de datum waarop de logboek vermelding is gemaakt
    * tijdstip: de tijd waarop de logboek vermelding is gemaakt

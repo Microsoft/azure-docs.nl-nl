@@ -4,12 +4,12 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: 51e1fd18b52d7e215ba43be540156199fb41778e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f08a6b3f7abfc79bff6baff2a339053905612535
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67176069"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96026452"
 ---
 #### <a name="to-attach-the-sas-cables"></a>De SAS-kabels koppelen
 1. De primaire en de EBOD-behuizingen identificeren. U kunt de twee behuizingen identificeren door te kijken naar hun respectieve back-upplannen. Raadpleeg de volgende afbeelding voor hulp. 
@@ -22,7 +22,7 @@ ms.locfileid: "67176069"
    |:--- |:--- |
    | 1 |Primaire behuizing |
    | 2 |EBOD-behuizing |
-2. Zoek de serie nummers op de primaire en de EBOD-behuizingen. De sticker met het serie nummer wordt op de achterkant van elke behuizing aangebracht. De serie nummers moeten op beide behuizingen identiek zijn. [Neem direct contact op met Microsoft ondersteuning](../articles/storsimple/storsimple-contact-microsoft-support.md) als de serie nummers niet overeenkomen. Bekijk de volgende afbeelding om de serie nummers te vinden.
+2. Zoek de serie nummers op de primaire en de EBOD-behuizingen. De sticker met het serie nummer wordt op de achterkant van elke behuizing aangebracht. De serie nummers moeten op beide behuizingen identiek zijn. [Neem direct contact op met Microsoft ondersteuning](../articles/storsimple/storsimple-8000-contact-microsoft-support.md) als de serie nummers niet overeenkomen. Bekijk de volgende afbeelding om de serie nummers te vinden.
    
     ![Achteraanzicht van de behuizing met het serie nummer](./media/storsimple-sas-cable-8600/HCSRearviewofenclosureindicatinglocationofserialnumbersticker.png)
    
@@ -41,7 +41,7 @@ ms.locfileid: "67176069"
       
       **SAS-bekabeling**
       
-      | Label | Beschrijving |
+      | Label | Description |
       |:--- |:--- |
       | A |Primaire behuizing |
       | B |EBOD-behuizing |
@@ -51,4 +51,3 @@ ms.locfileid: "67176069"
       | 4 |EBOD-controller 1 |
       | 5, 6 |SAS-poorten op primaire behuizing (gelabelde EBOD) |
       | 7, 8 |SAS-poorten op EBOD Enclosure (poort A) |
-

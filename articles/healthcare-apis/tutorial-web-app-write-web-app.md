@@ -10,11 +10,11 @@ ms.author: cavoeg
 author: caitlinv39
 ms.date: 01/03/2020
 ms.openlocfilehash: bb9c206a17a11f0cf710ac4ee3ac7ccae0fa9eb9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87848023"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023292"
 ---
 # <a name="write-azure-web-application-to-read-fhir-data"></a>Een Azure-webtoepassing schrijven om FHIR-gegevens te lezen
 Nu u verbinding kunt maken met uw FHIR-server en gegevens kunt plaatsen, bent u klaar om een webtoepassing te schrijven waarmee FHIR-gegevens worden gelezen. In deze laatste stap van de zelfstudie wordt uitgelegd hoe u de webtoepassing gaat schrijven en gebruiken.

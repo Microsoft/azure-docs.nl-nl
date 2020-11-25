@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020, devx-track-azurecli
 ms.date: 04/28/2020
 ms.openlocfilehash: eb8201ea888b98250d452e0b0e1c48f30cbb1efc
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92742048"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022731"
 ---
 # <a name="use-azure-blob-storage-shared-access-signatures-to-restrict-access-to-data-in-hdinsight"></a>Shared Access signatures voor Azure Blob Storage gebruiken om de toegang tot gegevens in HDInsight te beperken
 
@@ -207,7 +207,7 @@ Mogelijk moet u uitvoeren `pip install --upgrade azure-storage` als het fout ber
 
 1. Open de oplossing in Visual Studio.
 
-2. Klik in Solution Explorer met de rechter muisknop op het project **SASExample** en selecteer **Eigenschappen** .
+2. Klik in Solution Explorer met de rechter muisknop op het project **SASExample** en selecteer **Eigenschappen**.
 
 3. Selecteer **instellingen** en voeg waarden toe voor de volgende vermeldingen:
 
@@ -353,27 +353,27 @@ Als u een bestaand cluster hebt, kunt u de SAS toevoegen aan de **kern site** co
 
 1. Open de Ambari-webgebruikersinterface voor uw cluster. Het adres voor deze pagina is `https://YOURCLUSTERNAME.azurehdinsight.net` . Wanneer u hierom wordt gevraagd, moet u zich bij het cluster aanmelden met de beheerders naam (admin) en het wacht woord dat u hebt gebruikt bij het maken van het cluster.
 
-1. Navigeer naar **HDFS**  >  **configs**  >  **Geavanceerde**  >  **aangepaste kern-site** .
+1. Navigeer naar **HDFS**  >  **configs**  >  **Geavanceerde**  >  **aangepaste kern-site**.
 
-1. Vouw de sectie **aangepaste kern site** uit, blader naar het einde en selecteer vervolgens **eigenschap toevoegen...** . Gebruik de volgende waarden voor **sleutel** en **waarde** :
+1. Vouw de sectie **aangepaste kern site** uit, blader naar het einde en selecteer vervolgens **eigenschap toevoegen...**. Gebruik de volgende waarden voor **sleutel** en **waarde**:
 
-    * **Sleutel** : `fs.azure.sas.CONTAINERNAME.STORAGEACCOUNTNAME.blob.core.windows.net`
-    * **Waarde** : de sa's die door een van de eerder uitgevoerde methoden zijn geretourneerd.
+    * **Sleutel**: `fs.azure.sas.CONTAINERNAME.STORAGEACCOUNTNAME.blob.core.windows.net`
+    * **Waarde**: de sa's die door een van de eerder uitgevoerde methoden zijn geretourneerd.
 
     Vervang door `CONTAINERNAME` de naam van de container die u hebt gebruikt in combi natie met de C#-of SAS-toepassing. Vervang door `STORAGEACCOUNTNAME` de naam van het opslag account dat u hebt gebruikt.
 
     Selecteer **toevoegen** om deze sleutel en waarde op te slaan
 
-1. Selecteer de knop **Opslaan** om de configuratie wijzigingen op te slaan. Als hierom wordt gevraagd, voegt u een beschrijving van de wijziging toe (bijvoorbeeld het toevoegen van SAS-opslag toegang) en selecteert u vervolgens **Opslaan** .
+1. Selecteer de knop **Opslaan** om de configuratie wijzigingen op te slaan. Als hierom wordt gevraagd, voegt u een beschrijving van de wijziging toe (bijvoorbeeld het toevoegen van SAS-opslag toegang) en selecteert u vervolgens **Opslaan**.
 
     Selecteer **OK** wanneer de wijzigingen zijn voltooid.
 
    > [!IMPORTANT]  
    > U moet verschillende services opnieuw starten voordat de wijzigingen van kracht worden.
 
-1. Er wordt een vervolg keuzelijst **opnieuw opstarten** weer gegeven. Selecteer in de vervolg keuzelijst **alle betrokken opnieuw opstarten** en __Bevestig opnieuw opstarten__ .
+1. Er wordt een vervolg keuzelijst **opnieuw opstarten** weer gegeven. Selecteer in de vervolg keuzelijst **alle betrokken opnieuw opstarten** en __Bevestig opnieuw opstarten__.
 
-    Herhaal dit proces voor **MapReduce2** en **garens** .
+    Herhaal dit proces voor **MapReduce2** en **garens**.
 
 1. Zodra de services opnieuw zijn opgestart, selecteert u deze en schakelt u de onderhouds modus uit in de vervolg keuzelijst **service acties** .
 
@@ -411,7 +411,7 @@ Gebruik de volgende stappen om te controleren of u alleen items kunt lezen en we
     hdfs dfs -get wasbs://SASCONTAINER@SASACCOUNTNAME.blob.core.windows.net/sample.log testfile.txt
     ```
 
-    Met deze opdracht wordt het bestand gedownload naar een lokaal bestand met de naam **testfile.txt** .
+    Met deze opdracht wordt het bestand gedownload naar een lokaal bestand met de naam **testfile.txt**.
 
 5. Gebruik de volgende opdracht om het lokale bestand te uploaden naar een nieuw bestand met de naam **testupload.txt** op de SAS-opslag:
 

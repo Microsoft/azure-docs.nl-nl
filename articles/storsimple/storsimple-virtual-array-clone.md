@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 11/21/2016
 ms.author: alkohli
 ms.openlocfilehash: b6cc89cb082cd0ed32abd88e3a6683c60a27ba90
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91742176"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023037"
 ---
 # <a name="clone-from-a-backup-of-your-storsimple-virtual-array"></a>Klonen vanuit een back-up van uw virtuele StorSimple-matrix
 
@@ -38,7 +38,7 @@ In dit artikel wordt stapsgewijs beschreven hoe u een back-upset van uw shares o
    ![Een back-up klonen](./media/storsimple-virtual-array-clone/cloneshare1.png)
 2. Klik in de Blade **klon** op **back-up > Selecteer** en doe het volgende: 
    
-   a.    Een back-up op dit apparaat filteren op basis van het tijds bereik. U kunt kiezen uit **afgelopen zeven dagen**, **afgelopen 30 dagen**en **afgelopen jaar**.
+   a.    Een back-up op dit apparaat filteren op basis van het tijds bereik. U kunt kiezen uit **afgelopen zeven dagen**, **afgelopen 30 dagen** en **afgelopen jaar**.
    
    b.    Selecteer in de lijst met gefilterde back-ups een back-up waarvan u wilt klonen.
    
@@ -78,7 +78,7 @@ Als u vanuit een back-up wilt klonen, moet u in het Azure Portal stappen uitvoer
    ![Een volume klonen](./media/storsimple-virtual-array-clone/clonevolume1.png)
 2. Klik op de Blade **klonen** op **back-up** en ga vervolgens als volgt te werk: 
    
-   a.    Een back-up op dit apparaat filteren op basis van het tijds bereik. U kunt kiezen uit **afgelopen zeven dagen**, **afgelopen 30 dagen**en **afgelopen jaar**. 
+   a.    Een back-up op dit apparaat filteren op basis van het tijds bereik. U kunt kiezen uit **afgelopen zeven dagen**, **afgelopen 30 dagen** en **afgelopen jaar**. 
    
    b.    Selecteer in de lijst met gefilterde back-ups een back-up waarvan u wilt klonen.
    
@@ -93,7 +93,7 @@ Als u vanuit een back-up wilt klonen, moet u in het Azure Portal stappen uitvoer
    
    c. Het volume type wordt automatisch ingesteld op het oorspronkelijke volume. Een gelaagd volume wordt gekloond als gelaagd en lokaal vastgemaakt volume als lokaal vastgemaakt.
    
-   d. Klik voor de **verbonden hosts**op **selecteren**.
+   d. Klik voor de **verbonden hosts** op **selecteren**.
    
    ![Een volume klonen 3](./media/storsimple-virtual-array-clone/clonevolume4.png)
 4. Selecteer op de Blade **verbonden hosts** een bestaande ACR of Voeg een nieuwe ACR toe. Als u een nieuwe ACR wilt toevoegen, moet u een ACR-naam en de IQN van de host opgeven. Klik op **Selecteren**.

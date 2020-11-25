@@ -7,11 +7,11 @@ author: mayurigupta13
 ms.topic: conceptual
 ms.author: mayg
 ms.openlocfilehash: 650fb7f0877a98ef53ed3868550f9c084ecb5885
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84710198"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023547"
 ---
 # <a name="retain-ip-addresses-during-failover"></a>IP-adressen behouden tijdens een failover
 
@@ -98,7 +98,7 @@ Voor failover is de architectuur als volgt:
     - **Bron-vnet 2** en **Azure VNet**
     - **Bron-vnet 1** en **bron-vnet 2** zijn verbonden met VPN site-naar-site
 - **Herstel vnet 1** en **herstel-vnet 2** zijn niet verbonden met een andere VNets.
-- **Bedrijf A** configureert VPN-gateways op **herstel Vnet 1** en **Recovery vnet 2**om RTO te verminderen.  
+- **Bedrijf A** configureert VPN-gateways op **herstel Vnet 1** en **Recovery vnet 2** om RTO te verminderen.  
 - De **herstel-VNet1** en de **herstel VNet2** zijn niet verbonden met een ander virtueel netwerk.
 - Om de beoogde herstel tijd (RTO) te verminderen, worden VPN-gateways geconfigureerd op **Recovery VNet1** en **Recovery VNet2** vóór failover.
 
@@ -109,8 +109,8 @@ Voor failover is de architectuur als volgt:
 In het geval van een storing of probleem die van invloed is op één app (in * * source VNet 2 in ons voor beeld), kan bedrijf A de betreffende app als volgt herstellen:
 
 
-- Verbreek de verbinding tussen VPN-verbindingen tussen de **bron-VNet1** en de **bron VNet2**en tussen de **bron VNet2** en **Azure VNet** .
-- VPN-verbindingen tot stand brengen tussen de **bron-VNet1** en de **herstel VNet2**en tussen **herstel VNet2** en **Azure VNet**.
+- Verbreek de verbinding tussen VPN-verbindingen tussen de **bron-VNet1** en de **bron VNet2** en tussen de **bron VNet2** en **Azure VNet** .
+- VPN-verbindingen tot stand brengen tussen de **bron-VNet1** en de **herstel VNet2** en tussen **herstel VNet2** en **Azure VNet**.
 - Failover van virtuele machines in **bron VNet2** naar **Recovery VNet2**.
 
 ![Resources in azure app failover](./media/site-recovery-retain-ip-azure-vm-failover/azure-to-azure-connectivity-isolated-application-after-failover2.png)

@@ -4,12 +4,12 @@ ms.service: storsimple
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
-ms.openlocfilehash: d47cf21e25c89c20a8baa31a80b867b74ada93df
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 746198f87e23cd7aca2a3177c23974917cb4b12a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93360672"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96026086"
 ---
 #### <a name="to-create-a-new-service"></a>Een nieuwe service maken
 
@@ -23,13 +23,13 @@ ms.locfileid: "93360672"
 
     ![StorSimple maken Apparaatbeheer 2](./media/storsimple-8000-create-new-service/createssdevman11.png)
 
-3. Voer de volgende stappen uit op de blade **StorSimple-apparaatbeheerfunctie** :
+3. Voer de volgende stappen uit op de blade **StorSimple-apparaatbeheerfunctie**:
 
    1. Geef een unieke **resourcenaam** voor uw service op. Deze naam is een beschrijvende naam die kan worden gebruikt om de service te identificeren. De naam kan tussen 2 en 50 tekens bevatten (letters, cijfers en afbreekstreepjes). De naam moet beginnen en eindigen met een letter of cijfer.
 
    2. Kies een **abonnement** in de vervolgkeuzelijst. Het abonnement is gekoppeld aan uw factureringsrekening. Dit veld wordt niet weergegeven als u slechts één abonnement hebt.
 
-   3. Gebruik voor **Resourcegroep** de optie **Bestaande groep gebruiken** of **Nieuwe groep maken**. Zie [Azure-resourcegroepen](/azure/azure-resource-manager/management/manage-resource-groups-portal) voor meer informatie.
+   3. Gebruik voor **Resourcegroep** de optie **Bestaande groep gebruiken** of **Nieuwe groep maken**. Zie [Azure-resourcegroepen](../articles/azure-resource-manager/management/manage-resource-groups-portal.md) voor meer informatie.
 
    4. Geef een **locatie** voor uw service op. Kies in het algemeen een locatie die het dichtst bij de geografische regio ligt waar u uw apparaat wilt implementeren. U kunt ook rekening houden met de volgende overwegingen:
 

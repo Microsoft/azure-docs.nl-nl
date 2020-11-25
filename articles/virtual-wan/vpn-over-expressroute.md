@@ -8,11 +8,11 @@ ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: cherylmc
 ms.openlocfilehash: 6c6f71277c276bed603989774637bd95999de333
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92079051"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023518"
 ---
 # <a name="expressroute-encryption-ipsec-over-expressroute-for-virtual-wan"></a>ExpressRoute-versleuteling: IPsec over ExpressRoute voor virtuele WAN
 
@@ -76,7 +76,7 @@ De site bron is hetzelfde als de niet-ExpressRoute VPN-sites voor een virtueel W
 >
 
 1. Ga naar de Azure Portal in uw browser. 
-1. Selecteer de hub die u hebt gemaakt. Selecteer op de pagina virtuele WAN-hub onder **connectiviteit**de optie **VPN-sites**.
+1. Selecteer de hub die u hebt gemaakt. Selecteer op de pagina virtuele WAN-hub onder **connectiviteit** de optie **VPN-sites**.
 1. Selecteer op de pagina **VPN-sites** **+ site maken**.
 1. Vul de volgende velden in op de pagina **Site maken**:
    * **Abonnement**: Controleer het abonnement.
@@ -95,7 +95,7 @@ De site bron is hetzelfde als de niet-ExpressRoute VPN-sites voor een virtueel W
 
    Als BGP is ingeschakeld, wordt dit toegepast op alle verbindingen die zijn gemaakt voor deze site in Azure. Het configureren van BGP op een virtueel WAN is gelijk aan het configureren van BGP op een Azure VPN-gateway. 
    
-   Uw on-premises BGP-peer adres *mag niet* gelijk zijn aan het IP-adres van uw VPN naar het apparaat of de adres ruimte van het virtuele netwerk van de VPN-site. Gebruik een ander IP-adres op het VPN-apparaat voor uw BGP-peer-IP. Het kan een adres zijn dat is toegewezen aan de loopback-interface op het apparaat. Het kan echter *geen* APIPA zijn (169,254.* x*. *x*)-adres. Specificeer dit adres in de bijbehorende lokale netwerk gateway die de locatie vertegenwoordigt. Zie [Over BGP met Azure VPN-gateway](../vpn-gateway/vpn-gateway-bgp-overview.md) voor BGP-vereisten.
+   Uw on-premises BGP-peer adres *mag niet* gelijk zijn aan het IP-adres van uw VPN naar het apparaat of de adres ruimte van het virtuele netwerk van de VPN-site. Gebruik een ander IP-adres op het VPN-apparaat voor uw BGP-peer-IP. Het kan een adres zijn dat is toegewezen aan de loopback-interface op het apparaat. Het kan echter *geen* APIPA zijn (169,254.*x*. *x*)-adres. Specificeer dit adres in de bijbehorende lokale netwerk gateway die de locatie vertegenwoordigt. Zie [Over BGP met Azure VPN-gateway](../vpn-gateway/vpn-gateway-bgp-overview.md) voor BGP-vereisten.
 
 1. Selecteer **volgende: controleren + maken >** om de instellings waarden te controleren en de VPN-site te maken. Als u **hubs** hebt geselecteerd om verbinding te maken, wordt de verbinding tot stand gebracht tussen het on-premises netwerk en de hub VPN-gateway.
 
@@ -105,16 +105,16 @@ Nadat u de VPN-site hebt gemaakt en verbinding maakt met de hub, gebruikt u de v
 
 1. Ga terug naar de virtuele WAN-bron pagina en selecteer de hub-resource. Of navigeer van de VPN-site naar de verbonden hub.
 
-   :::image type="content" source="./media/vpn-over-expressroute/hub-selection.png" alt-text="VPN via ExpressRoute":::
-1. Onder **connectiviteit**selecteert u **VPN (site-naar-site)**.
+   :::image type="content" source="./media/vpn-over-expressroute/hub-selection.png" alt-text="Een hub selecteren":::
+1. Onder **connectiviteit** selecteert u **VPN (site-naar-site)**.
 
-   :::image type="content" source="./media/vpn-over-expressroute/vpn-select.png" alt-text="VPN via ExpressRoute":::
+   :::image type="content" source="./media/vpn-over-expressroute/vpn-select.png" alt-text="VPN selecteren (site-naar-site)":::
 1. Selecteer het beletsel teken (**...**) op de VPN-site via ExpressRoute en selecteer **VPN-verbinding met deze hub bewerken**.
 
-   :::image type="content" source="./media/vpn-over-expressroute/config-menu.png" alt-text="VPN via ExpressRoute":::
-1. Selecteer **Ja**als **u het privé-IP-adres van Azure wilt gebruiken**. Met deze instelling configureert u de hub VPN-gateway voor het gebruik van privé-IP-adressen binnen het hub-adres bereik op de gateway voor deze verbinding, in plaats van de open bare IP-adressen. Dit zorgt ervoor dat het verkeer van het on-premises netwerk het ExpressRoute persoonlijke peering-paden passeert in plaats van het open bare Internet voor deze VPN-verbinding te gebruiken. In de volgende scherm afbeelding ziet u de instelling:
+   :::image type="content" source="./media/vpn-over-expressroute/config-menu.png" alt-text="Configuratie menu invoeren":::
+1. Selecteer **Ja** als **u het privé-IP-adres van Azure wilt gebruiken**. Met deze instelling configureert u de hub VPN-gateway voor het gebruik van privé-IP-adressen binnen het hub-adres bereik op de gateway voor deze verbinding, in plaats van de open bare IP-adressen. Dit zorgt ervoor dat het verkeer van het on-premises netwerk het ExpressRoute persoonlijke peering-paden passeert in plaats van het open bare Internet voor deze VPN-verbinding te gebruiken. In de volgende scherm afbeelding ziet u de instelling:
 
-   :::image type="content" source="./media/vpn-over-expressroute/vpn-link-configuration.png" alt-text="VPN via ExpressRoute" border="false":::
+   :::image type="content" source="./media/vpn-over-expressroute/vpn-link-configuration.png" alt-text="Instelling voor het gebruik van een privé-IP-adres voor de VPN-verbinding" border="false":::
 1. Selecteer **Opslaan**.
 
 Nadat u uw wijzigingen hebt opgeslagen, maakt de hub VPN-gateway gebruik van de privé-IP-adressen op de VPN-gateway om de IPsec/IKE-verbindingen met het on-premises VPN-apparaat via ExpressRoute te maken.

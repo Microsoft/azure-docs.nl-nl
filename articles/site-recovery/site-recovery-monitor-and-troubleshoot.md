@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 07/30/2019
 ms.author: raynew
 ms.openlocfilehash: d441284b265ab11dd5ece42ec3737e455d662435
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545800"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023564"
 ---
 # <a name="monitor-site-recovery"></a>Site Recovery bewaken
 
@@ -30,7 +30,7 @@ U kunt [algemene controle vragen](monitoring-common-questions.md) bekijken voord
 
 ## <a name="monitor-in-the-dashboard"></a>Bewaken in het dash board
 
-1. Klik in de kluis op **overzicht** . Het Recovery Services-dash board consolideert alle bewakings gegevens voor de kluis op één locatie. Er zijn pagina's voor zowel Site Recovery als de Azure Backup-Service, en u kunt hiertussen scha kelen.
+1. Klik in de kluis op **overzicht**. Het Recovery Services-dash board consolideert alle bewakings gegevens voor de kluis op één locatie. Er zijn pagina's voor zowel Site Recovery als de Azure Backup-Service, en u kunt hiertussen scha kelen.
 
     ![Site Recovery dash board](./media/site-recovery-monitor-and-troubleshoot/dashboard.png)
 
@@ -55,7 +55,7 @@ Niet van toepassing | Servers die momenteel niet naar verwachting repliceren. Di
 
 ## <a name="monitor-test-failovers"></a>Testfailover controleren
 
-Controleer de failover-status voor computers in de kluis in de **failover-test** .
+Controleer de failover-status voor computers in de kluis in de **failover-test**.
 
 - We raden u aan om ten minste één keer per zes maanden een testfailover uit te voeren op gerepliceerde machines. Het is een manier om te controleren of failover werkt zoals verwacht, zonder uw productie omgeving te onderbreken. 
 - Een testfailover wordt alleen als geslaagd beschouwd nadat de failover en het opruimen na de failover zijn voltooid.
@@ -109,12 +109,12 @@ Bewaak in **infrastructuur weergave** de infrastructuur onderdelen die bij de re
 
     **Scenario** | **Status**  | **Weer gave beschikbaar?**
     --- |--- | ---
-    **Replicatie tussen on-premises sites** | Alle staten | Nee 
-    **Azure-VM-replicatie tussen Azure-regio's**  | Replicatie ingeschakeld/initiële replicatie wordt uitgevoerd | Ja
-    **Azure-VM-replicatie tussen Azure-regio's** | Failover/failback is voltooid | Nee   
-    **Replicatie van VMware naar Azure** | Replicatie ingeschakeld/initiële replicatie wordt uitgevoerd | Ja     
-    **Replicatie van VMware naar Azure** | Failover/fail-back | Nee      
-    **Hyper-V-replicatie naar Azure** | Failover/fail-back | Nee
+    **Replicatie tussen on-premises sites** | Alle staten | No 
+    **Azure-VM-replicatie tussen Azure-regio's**  | Replicatie ingeschakeld/initiële replicatie wordt uitgevoerd | Yes
+    **Azure-VM-replicatie tussen Azure-regio's** | Failover/failback is voltooid | No   
+    **Replicatie van VMware naar Azure** | Replicatie ingeschakeld/initiële replicatie wordt uitgevoerd | Yes     
+    **Replicatie van VMware naar Azure** | Failover/fail-back | No      
+    **Hyper-V-replicatie naar Azure** | Failover/fail-back | No
 
 - Als u de weer gave van de infra structuur voor één replicerende computer wilt zien, klikt u in het menu kluis op **gerepliceerde items** en selecteert u een server.  
 
@@ -127,7 +127,7 @@ Bewaak in **herstel plannen** het aantal plannen, maak nieuwe plannen en wijzig 
 
 ## <a name="monitor-jobs"></a>Taken controleren
 
-Bewaak de status van Site Recovery bewerkingen in **taken** .
+Bewaak de status van Site Recovery bewerkingen in **taken**.
 
 - De meeste bewerkingen in Azure Site Recovery worden asynchroon uitgevoerd, waarbij een tracerings taak wordt gemaakt en gebruikt om de voortgang van de bewerking bij te houden. 
 - Het taak object bevat alle informatie die u nodig hebt om de status en de voortgang van de bewerking bij te houden. 
@@ -138,7 +138,7 @@ Bewaak taken als volgt:
 2. Klik op **alles weer geven** om alle taken in de afgelopen 24 uur weer te geven.
 
     > [!NOTE]
-    > U kunt taak gegevens ook openen vanuit het menu kluis > **site Recovery taken** . 
+    > U kunt taak gegevens ook openen vanuit het menu kluis > **site Recovery taken**. 
 
 2. In de lijst **site Recovery taken** wordt een lijst met taken weer gegeven. In het bovenste menu kunt u fout gegevens voor een specifieke taken ophalen, de taken lijst filteren op basis van specifieke criteria en de geselecteerde taak details exporteren naar Excel.
 3. U kunt inzoomen op een taak door erop te klikken. 
@@ -153,13 +153,13 @@ Haal in **gerepliceerde items** een lijst met gerepliceerde computers op.
 4. Klik op **filter** om informatie weer te geven op basis van specifieke para meters, zoals replicatie status, of een bepaald replicatie beleid.
 5. Klik met de rechter muisknop op een machine om bewerkingen zoals een testfailover te initiëren of om specifieke fout gegevens weer te geven die eraan zijn gekoppeld.
 6. Klik op een machine om in te zoomen op meer informatie. Details zijn onder andere:
-   - **Replicatie-informatie** : huidige status en status van de computer.
+   - **Replicatie-informatie**: huidige status en status van de computer.
    - **RPO** (Recovery Point Objective): huidige RPO voor de virtuele machine en het tijdstip waarop de RPO het laatst is berekend.
-   - **Herstel punten** : meest recente beschik bare herstel punten voor de machine.
-   - **Failover-gereedheid** : Hiermee geeft u aan of er een testfailover voor de machine wordt uitgevoerd, de agent versie die op de computer wordt uitgevoerd (voor machines met de Mobility-service) en eventuele configuratie problemen.
-   - **Fouten** : de lijst met de replicatie fout symptomen die momenteel op de computer zijn waargenomen en mogelijke oorzaken/acties.
-   - **Gebeurtenissen** : een chronologische lijst met recente gebeurtenissen die van invloed zijn op de computer. Fout Details worden weer gegeven met de momenteel waarneem bare fout symptomen, terwijl gebeurtenissen een historisch overzicht zijn van problemen die van invloed zijn op de computer.
-   - **Infrastructuur weergave** : de status van de infra structuur voor het scenario wordt weer gegeven wanneer machines naar Azure worden gerepliceerd.
+   - **Herstel punten**: meest recente beschik bare herstel punten voor de machine.
+   - **Failover-gereedheid**: Hiermee geeft u aan of er een testfailover voor de machine wordt uitgevoerd, de agent versie die op de computer wordt uitgevoerd (voor machines met de Mobility-service) en eventuele configuratie problemen.
+   - **Fouten**: de lijst met de replicatie fout symptomen die momenteel op de computer zijn waargenomen en mogelijke oorzaken/acties.
+   - **Gebeurtenissen**: een chronologische lijst met recente gebeurtenissen die van invloed zijn op de computer. Fout Details worden weer gegeven met de momenteel waarneem bare fout symptomen, terwijl gebeurtenissen een historisch overzicht zijn van problemen die van invloed zijn op de computer.
+   - **Infrastructuur weergave**: de status van de infra structuur voor het scenario wordt weer gegeven wanneer machines naar Azure worden gerepliceerd.
 
      ![Details van gerepliceerde items Site Recovery/overzicht](./media/site-recovery-monitor-and-troubleshoot/site-recovery-virtual-machine-details.png)
 
@@ -173,8 +173,8 @@ U kunt zich abonneren voor het ontvangen van e-mail meldingen voor deze kritieke
 
 Abonneer u als volgt:
 
-Klik in de sectie kluis > **bewaking** op **site Recovery gebeurtenissen** .
-1. Klik op **E-mailmeldingen** .
+Klik in de sectie kluis > **bewaking** op **site Recovery gebeurtenissen**.
+1. Klik op **E-mailmeldingen**.
 1. Schakel in **e-mail melding** meldingen in en geef aan wie u wilt verzenden. U kunt verzenden naar alle abonnements beheerders die meldingen ontvangen en optioneel specifieke e-mail adressen.
 
     ![E-mailmeldingen](./media/site-recovery-monitor-and-troubleshoot/email.png)

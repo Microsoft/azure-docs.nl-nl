@@ -18,11 +18,11 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 09/11/2019
 ms.openlocfilehash: 870842074bb4a0012a48115586a8ad571275d470
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91281028"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022408"
 ---
 # <a name="tutorial-send-push-notifications-to-specific-android-apps-using-azure-notification-hubs"></a>Zelfstudie: Pushmeldingen verzenden naar specifieke Android-apps met Azure Notification Hubs
 
@@ -151,7 +151,7 @@ De volgende stap is het bijwerken van de Android-toepassing die u hebt gemaakt i
 
     De grafische indeling van `main_activity.xml` ziet er nu uit als in de volgende afbeelding:
 
-    ![Schermafbeelding van een emulator die weergeeft hoe de grafische indeling van main_activity.xml eruit zal zien.][A1]
+    ![Schermopname van een emulator die weergeeft hoe de grafische indeling van de hoofdactiviteit X M L eruit zal zien.][A1]
 3. Maak in hetzelfde pakket als de klasse `MainActivity` een nieuwe klasse met de naam `RegisterClient`. Gebruik de onderstaande code voor het nieuwe klassebestand.
 
     ```java

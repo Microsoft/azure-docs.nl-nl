@@ -9,11 +9,11 @@ ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/24/2020
 ms.openlocfilehash: e66329b93ebd7d90258ab4670b77ca849a28189b
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547993"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96024058"
 ---
 # <a name="visualize-apache-hive-data-with-microsoft-power-bi-using-odbc-in-azure-hdinsight"></a>Apache Hive-gegevens visualiseren met Microsoft Power BI met behulp van ODBC in Azure HDInsight
 
@@ -46,27 +46,27 @@ De **hivesampletable** -Hive-tabel wordt geleverd met alle HDInsight-clusters.
 
 1. Start Power BI Desktop.
 
-1. Ga in het bovenste menu naar **Start**  >  **gegevens ophalen**  >  **meer...** .
+1. Ga in het bovenste menu naar **Start**  >  **gegevens ophalen**  >  **meer...**.
 
     ![HDInsight Excel Power BI gegevens openen](./media/apache-hadoop-connect-hive-power-bi/hdinsight-power-bi-open-odbc.png)
 
 1. Selecteer in het dialoog venster **gegevens ophalen** **andere** links, selecteer **ODBC** aan de rechter kant en selecteer vervolgens **verbinding maken** aan de onderkant.
 
-1. Selecteer in het dialoog venster **vanuit ODBC** de naam van de gegevens bron die u hebt gemaakt in de laatste sectie in de vervolg keuzelijst. Selecteer vervolgens **OK** .
+1. Selecteer in het dialoog venster **vanuit ODBC** de naam van de gegevens bron die u hebt gemaakt in de laatste sectie in de vervolg keuzelijst. Selecteer vervolgens **OK**.
 
 1. Voor het eerste gebruik wordt het dialoog venster **ODBC-stuur programma** geopend. Selecteer **standaard of aangepast** in het menu links. Selecteer vervolgens **verbinding maken** om de **Navigator** te openen.
 
-1. Vouw in het **Navigatie** venster **ODBC-> Hive > standaard** uit, selecteer **hivesampletable** en selecteer vervolgens **laden** .
+1. Vouw in het **Navigatie** venster **ODBC-> Hive > standaard** uit, selecteer **hivesampletable** en selecteer vervolgens **laden**.
 
 ## <a name="visualize-data"></a>Gegevens visualiseren
 
 Door gaan met de laatste procedure.
 
-1. Selecteer in het deel venster visualisaties de optie **kaart** , het pictogram een wereldbol.
+1. Selecteer in het deel venster visualisaties de optie **kaart**, het pictogram een wereldbol.
 
     ![Power BI van HDInsight-rapport aanpassen](./media/apache-hadoop-connect-hive-power-bi/hdinsight-power-bi-customize.png)
 
-1. Selecteer in het deel venster **velden** de optie **land** en **devicemake** . U kunt de gegevens weer geven die zijn getekend op de kaart.
+1. Selecteer in het deel venster **velden** de optie **land** en **devicemake**. U kunt de gegevens weer geven die zijn getekend op de kaart.
 
 1. Vouw de kaart uit.
 

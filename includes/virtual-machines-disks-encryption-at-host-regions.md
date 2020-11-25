@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/07/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: fbf45ff2268c81a45bbbe844ffe8a7a2069793cd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 797d52b43d5e18c29e68311e68bea0d0ccce3b83
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86230970"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96026181"
 ---
 Momenteel alleen beschikbaar in de volgende regio's:
 
@@ -22,5 +22,9 @@ Momenteel alleen beschikbaar in de volgende regio's:
 - VS - oost
 - VS - oost 2
 - VS - zuid-centraal
+- Centraal-Canada 
+- Canada-Oost
+- Centraal-Frank rijk
+- Japan-Oost
 - VS (overheid) - Virginia
 - VS (overheid) - Arizona

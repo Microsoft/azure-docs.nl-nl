@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/17/2020
 ms.author: danlep
 ms.custom: include file
-ms.openlocfilehash: e3234289fe56286cb5ff0791d983dee6ec2aa4d8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a1a94c841632b576eccdfd93545c652b30975203
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91544886"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96025900"
 ---
 > [!NOTE]
-> Azure Security Center kunt op dit moment geen installatie kopie uitvoeren voor het [scannen van beveiligings problemen](../articles/security-center/azure-container-registry-integration.md?toc=/azure/container-registry/toc.json&bc=/azure/container-registry/breadcrumb/toc.json) in een REGI ster waarmee de toegang wordt beperkt tot persoonlijke eind punten, geselecteerde subnetten of IP-adressen. Exemplaren van bepaalde Azure-Services, waaronder Azure DevOps-Services en Azure Container Instances, hebben ook geen toegang tot een container register met een beperkt netwerk.
+> Azure Security Center kunt op dit moment geen installatie kopie uitvoeren voor het [scannen van beveiligings problemen](../articles/security-center/defender-for-container-registries-introduction.md?bc=%252fazure%252fcontainer-registry%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fcontainer-registry%252ftoc.json) in een REGI ster waarmee de toegang wordt beperkt tot persoonlijke eind punten, geselecteerde subnetten of IP-adressen. Exemplaren van bepaalde Azure-Services, waaronder Azure DevOps-Services en Azure Container Instances, hebben ook geen toegang tot een container register met een beperkt netwerk.

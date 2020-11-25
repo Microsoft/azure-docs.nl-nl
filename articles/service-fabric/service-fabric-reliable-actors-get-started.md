@@ -7,11 +7,11 @@ ms.date: 07/10/2019
 ms.author: vturecek
 ms.custom: devx-track-csharp
 ms.openlocfilehash: f775608c6c349c93a43ef4aef26ad50707cd39b7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91743757"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023615"
 ---
 # <a name="getting-started-with-reliable-actors"></a>Aan de slag met Reliable Actors
 > [!div class="op_single_selector"]
@@ -87,7 +87,7 @@ Druk op **CTRL-SHIFT-B** om het project te bouwen en te controleren of alles com
 
 Maak een eenvoudige console toepassing om de actor-service aan te roepen.
 
-1. Klik met de rechter muisknop op de oplossing in **Add**Solution Explorer >  >  **Nieuw project toevoegen...**.
+1. Klik met de rechter muisknop op de oplossing in **Add** Solution Explorer >  >  **Nieuw project toevoegen...**.
 
 2. Kies onder de **.net core** -project typen de optie **console-app (.net core)**.  Geef het project de naam *ActorClient*.
     
@@ -142,7 +142,7 @@ Druk op **F5** om de toepassing lokaal te bouwen, te implementeren en uit te voe
 
 ![Uitvoer venster van Service Fabric fout opsporing][3]
 
-Wanneer de uitvoer de tekst bevat, *de toepassing gereed is, is*het mogelijk om de service te testen met behulp van de ActorClient-toepassing.  Klik in Solution Explorer met de rechter muisknop op het project **ActorClient** en vervolgens op **debug**  >  **Start new instance**.  De opdracht regel toepassing moet de uitvoer van de actor-service weer geven.
+Wanneer de uitvoer de tekst bevat, *de toepassing gereed is, is* het mogelijk om de service te testen met behulp van de ActorClient-toepassing.  Klik in Solution Explorer met de rechter muisknop op het project **ActorClient** en vervolgens op **debug**  >  **Start new instance**.  De opdracht regel toepassing moet de uitvoer van de actor-service weer geven.
 
 ![Toepassingsuitvoer][9]
 

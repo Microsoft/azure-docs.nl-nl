@@ -10,13 +10,13 @@ author: nabhishek
 ms.author: abnarain
 manager: anandsub
 ms.custom: seo-lt-2019
-ms.date: 06/09/2020
-ms.openlocfilehash: 80c837e640ef0d1739c329fb463e173e6c40be31
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.date: 11/25/2020
+ms.openlocfilehash: 22155083a71a9cbf615293a4f86a179aaefce2a9
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331432"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96023347"
 ---
 # <a name="create-and-configure-a-self-hosted-integration-runtime"></a>Zelf-hostende Integration Runtime maken en configureren
 
@@ -150,7 +150,7 @@ Hier volgt een beknopt overzicht van de stappen voor de gegevens stroom voor het
 - Gebruik een zelf-hostende Integration runtime voor de ondersteuning van gegevens integratie binnen een virtueel Azure-netwerk.
 - Behandel uw gegevens bron als een on-premises gegevens bron die zich achter een firewall bevindt, zelfs wanneer u Azure ExpressRoute gebruikt. Gebruik de zelf-hostende Integration runtime om de service te verbinden met de gegevens bron.
 - Gebruik de zelf-hostende Integration runtime, zelfs als het gegevens archief zich in de Cloud bevindt op een virtuele machine met Azure Infrastructure as a Service (IaaS).
-- Taken kunnen mislukken in een zelf-hostende Integration runtime die u hebt geïnstalleerd op een Windows-Server waarvoor FIPS-compatibele versleuteling is ingeschakeld. Om dit probleem te omzeilen, hebt u twee opties: Sla referenties/geheime waarden op in een Azure Key Vault of schakel FIPS-compatibele versleuteling op de server uit. Als u FIPS-compatibele versleuteling wilt uitschakelen, wijzigt u de waarde van de volgende registersubsleutel van 1 (ingeschakeld) in 0 (uitgeschakeld): `HKLM\System\CurrentControlSet\Control\Lsa\FIPSAlgorithmPolicy\Enabled` .
+- Taken kunnen mislukken in een zelf-hostende Integration runtime die u hebt geïnstalleerd op een Windows-Server waarvoor FIPS-compatibele versleuteling is ingeschakeld. Om dit probleem te omzeilen, hebt u twee opties: Sla referenties/geheime waarden op in een Azure Key Vault of schakel FIPS-compatibele versleuteling op de server uit. Als u FIPS-compatibele versleuteling wilt uitschakelen, wijzigt u de waarde van de volgende registersubsleutel van 1 (ingeschakeld) in 0 (uitgeschakeld): `HKLM\System\CurrentControlSet\Control\Lsa\FIPSAlgorithmPolicy\Enabled` . Als u de [zelf-hostende Integration runtime als proxy voor SSIS Integration runtime](https://docs.microsoft.com/azure/data-factory/self-hosted-integration-runtime-proxy-ssis)gebruikt, kan FIPS-compatibele versleuteling worden ingeschakeld en wordt gebruikt bij het verplaatsen van gegevens van on-premises naar Azure Blob Storage als een staging-gebied.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -185,7 +185,7 @@ U kunt de zelf-hostende Integration runtime installeren door een configuratie pa
 ## <a name="install-and-register-a-self-hosted-ir-from-microsoft-download-center"></a>Een zelf-hostende IR installeren en registreren vanuit het micro soft Download centrum
 
 1. Ga naar de [Download pagina voor micro soft Integration runtime](https://www.microsoft.com/download/details.aspx?id=39717).
-1. Selecteer **downloaden** , selecteer de 64-bits versie en selecteer **volgende**. De 32-bits versie wordt niet ondersteund.
+1. Selecteer **downloaden**, selecteer de 64-bits versie en selecteer **volgende**. De 32-bits versie wordt niet ondersteund.
 1. Voer het beheerde ID-bestand rechtstreeks uit of sla het op de vaste schijf op en voer het uit.
 1. Selecteer een taal in het **welkomst** venster en selecteer **volgende**.
 1. Ga akkoord met de licentie voorwaarden voor micro soft-software en selecteer **volgende**.
@@ -264,8 +264,8 @@ Bekijk de volgende video van 12 minuten om een inleiding en demonstratie van dez
 
 ### <a name="terminology"></a>Terminologie
 
-- **Gedeelde IR** : een originele zelf-hostende IR die wordt uitgevoerd op een fysieke infra structuur.  
-- **Gekoppelde IR** : een IR die verwijst naar een andere gedeelde IR. De gekoppelde IR is een logische IR en maakt gebruik van de infra structuur van een andere gedeelde zelf-hostende IR.
+- **Gedeelde IR**: een originele zelf-hostende IR die wordt uitgevoerd op een fysieke infra structuur.  
+- **Gekoppelde IR**: een IR die verwijst naar een andere gedeelde IR. De gekoppelde IR is een logische IR en maakt gebruik van de infra structuur van een andere gedeelde zelf-hostende IR.
 
 ### <a name="methods-to-share-a-self-hosted-integration-runtime"></a>Methoden voor het delen van een zelf-hostende Integration runtime
 
@@ -351,9 +351,9 @@ Wanneer de zelf-hostende Integration runtime de proxy server gebruikt om verbind
 
 Er zijn drie configuratie opties:
 
-- **Geen proxy gebruiken** : de zelf-hostende Integration runtime gebruikt geen proxy om verbinding te maken met Cloud Services.
-- **Systeem proxy gebruiken** : de zelf-hostende Integration runtime maakt gebruik van de proxy-instelling die is geconfigureerd in diahost.exe.config en diawp.exe.config. Als deze bestanden geen proxy configuratie opgeven, maakt de zelf-hostende Integration runtime rechtstreeks verbinding met de Cloud service zonder een proxy te passeren.
-- **Aangepaste proxy gebruiken** : Configureer de http-proxy-instelling die moet worden gebruikt voor de zelf-hostende Integration runtime, in plaats van configuraties te gebruiken in diahost.exe.config en diawp.exe.config. **Adres** -en **poort** waarden zijn vereist. De waarden voor **gebruikers naam** en **wacht woord** zijn optioneel, afhankelijk van de verificatie-instelling van uw proxy. Alle instellingen worden versleuteld met Windows DPAPI op de zelf-hostende Integration runtime en lokaal opgeslagen op de computer.
+- **Geen proxy gebruiken**: de zelf-hostende Integration runtime gebruikt geen proxy om verbinding te maken met Cloud Services.
+- **Systeem proxy gebruiken**: de zelf-hostende Integration runtime maakt gebruik van de proxy-instelling die is geconfigureerd in diahost.exe.config en diawp.exe.config. Als deze bestanden geen proxy configuratie opgeven, maakt de zelf-hostende Integration runtime rechtstreeks verbinding met de Cloud service zonder een proxy te passeren.
+- **Aangepaste proxy gebruiken**: Configureer de http-proxy-instelling die moet worden gebruikt voor de zelf-hostende Integration runtime, in plaats van configuraties te gebruiken in diahost.exe.config en diawp.exe.config. **Adres** -en **poort** waarden zijn vereist. De waarden voor **gebruikers naam** en **wacht woord** zijn optioneel, afhankelijk van de verificatie-instelling van uw proxy. Alle instellingen worden versleuteld met Windows DPAPI op de zelf-hostende Integration runtime en lokaal opgeslagen op de computer.
 
 De integratie runtime host service wordt automatisch opnieuw opgestart nadat u de bijgewerkte proxy-instellingen hebt opgeslagen.
 
@@ -362,7 +362,7 @@ Wanneer u de zelf-hostende Integration runtime hebt geregistreerd en u de proxy-
 1. Open **Microsoft Integration Runtime Configuration Manager**.
 1. Selecteer het tabblad **Instellingen**.
 1. Selecteer onder **http-proxy** de **wijzigings** koppeling om het dialoog venster **http-proxy instellen** te openen.
-1. Selecteer **Volgende**. Vervolgens wordt er een waarschuwing weer gegeven waarin u wordt gevraagd om de proxy instelling op te slaan en de integratie runtime host-service opnieuw te starten.
+1. Selecteer **Next**. Vervolgens wordt er een waarschuwing weer gegeven waarin u wordt gevraagd om de proxy instelling op te slaan en de integratie runtime host-service opnieuw te starten.
 
 U kunt het hulp programma Configuration Manager gebruiken om de HTTP-proxy weer te geven en bij te werken.
 
@@ -416,7 +416,7 @@ U moet er ook voor zorgen dat Microsoft Azure zich in de acceptatie lijst van uw
 Als er fout berichten worden weer geven, zoals de volgende, is de waarschijnlijke oorzaak een onjuiste configuratie van de firewall of proxy server. Met deze configuratie kan de zelf-hostende Integration runtime geen verbinding maken met Data Factory om zichzelf te verifiëren. Raadpleeg de vorige sectie om ervoor te zorgen dat uw firewall en proxy server correct zijn geconfigureerd.
 
 * Wanneer u de zelf-hostende Integration runtime probeert te registreren, wordt het volgende fout bericht weer gegeven: ' kan dit knoop punt niet registreren Integration Runtime. Controleer of de verificatie sleutel geldig is en of de service Integration service host op deze computer wordt uitgevoerd.
-* Wanneer u Integration Runtime Configuration Manager opent, ziet u de status **losgekoppeld** of verbinding **maken**. Wanneer u Windows-gebeurtenis logboeken bekijkt onder **Logboeken**  >  **Logboeken van toepassingen en services**  >  **Microsoft Integration runtime** , worden fout berichten als deze weer gegeven:
+* Wanneer u Integration Runtime Configuration Manager opent, ziet u de status **losgekoppeld** of verbinding **maken**. Wanneer u Windows-gebeurtenis logboeken bekijkt onder **Logboeken**  >  **Logboeken van toepassingen en services**  >  **Microsoft Integration runtime**, worden fout berichten als deze weer gegeven:
 
     ```
     Unable to connect to the remote server

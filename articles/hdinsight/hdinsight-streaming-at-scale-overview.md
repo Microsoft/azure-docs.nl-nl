@@ -9,17 +9,17 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 12/17/2019
 ms.openlocfilehash: a04ce77c7e81a3a73b87eaf5790b383dece35d86
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92535226"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022714"
 ---
 # <a name="streaming-at-scale-in-hdinsight"></a>Schaalbaar streamen in HDInsight
 
 Realtime-big data oplossingen worden toegepast op gegevens die zich in beweging bevindt. Normaal gesp roken zijn deze gegevens het meest waardevol op het moment van aankomst. Als de binnenkomende gegevens stroom groter wordt dan op dat moment kan worden verwerkt, moet u mogelijk resources beperken. Een HDInsight-cluster kan ook omhoog worden geschaald om te voldoen aan uw streaming-oplossing door knoop punten op aanvraag toe te voegen.
 
-In een streaming-toepassing worden er in een of meer gegevens bronnen gebeurtenissen gegenereerd (soms in miljoenen per seconde) die snel moeten worden opgenomen zonder dat er bruikbare informatie hoeft te worden verwijderd. De binnenkomende gebeurtenissen worden verwerkt met behulp van de *stroom buffering* , ook wel *Event Queuing* genoemd, door een service zoals [Apache Kafka](kafka/apache-kafka-introduction.md) of [Event hubs](https://azure.microsoft.com/services/event-hubs/). Nadat u de gebeurtenissen hebt verzameld, kunt u de gegevens analyseren met behulp van een real-time analyse systeem binnen de laag voor *stroom verwerking* , zoals [Apache Storm](storm/apache-storm-overview.md) of [Apache Spark streaming](spark/apache-spark-streaming-overview.md). De verwerkte gegevens kunnen worden opgeslagen in lange termijn opslag systemen, zoals [Azure data Lake Storage](https://azure.microsoft.com/services/storage/data-lake-storage/), en in realtime worden weer gegeven op een Business Intelligence dash board, zoals [Power bi](https://powerbi.microsoft.com), tableau of een aangepaste webpagina.
+In een streaming-toepassing worden er in een of meer gegevens bronnen gebeurtenissen gegenereerd (soms in miljoenen per seconde) die snel moeten worden opgenomen zonder dat er bruikbare informatie hoeft te worden verwijderd. De binnenkomende gebeurtenissen worden verwerkt met behulp van de *stroom buffering*, ook wel *Event Queuing* genoemd, door een service zoals [Apache Kafka](kafka/apache-kafka-introduction.md) of [Event hubs](https://azure.microsoft.com/services/event-hubs/). Nadat u de gebeurtenissen hebt verzameld, kunt u de gegevens analyseren met behulp van een real-time analyse systeem binnen de laag voor *stroom verwerking* , zoals [Apache Storm](storm/apache-storm-overview.md) of [Apache Spark streaming](spark/apache-spark-streaming-overview.md). De verwerkte gegevens kunnen worden opgeslagen in lange termijn opslag systemen, zoals [Azure data Lake Storage](https://azure.microsoft.com/services/storage/data-lake-storage/), en in realtime worden weer gegeven op een Business Intelligence dash board, zoals [Power bi](https://powerbi.microsoft.com), tableau of een aangepaste webpagina.
 
 ![Azure HDInsight-streaming-patronen](./media/hdinsight-streaming-at-scale-overview/HDInsight-streaming-patterns.png)
 

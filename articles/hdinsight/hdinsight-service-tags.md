@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 08/11/2020
 ms.openlocfilehash: 1a90bc6636dcb3aa81f09b0489850c1a95b3256d
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92535243"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022748"
 ---
 # <a name="nsg-service-tags-for-azure-hdinsight"></a>NSG-service tags voor Azure HDInsight
 
@@ -26,7 +26,7 @@ Als u een bepaalde regio wilt gebruiken en de servicetag nog niet is gedocumente
 
 U hebt twee opties voor het gebruik van service tags in uw netwerk beveiligings groepen:
 
-- **Eén algemeen HDInsight-service label gebruiken** : met deze optie wordt het virtuele netwerk geopend op alle IP-adressen die de HDInsight-service gebruikt om clusters in alle regio's te bewaken. Deze optie is de eenvoudigste methode, maar is mogelijk niet geschikt als u strenge beveiligings vereisten hebt.
+- **Eén algemeen HDInsight-service label gebruiken**: met deze optie wordt het virtuele netwerk geopend op alle IP-adressen die de HDInsight-service gebruikt om clusters in alle regio's te bewaken. Deze optie is de eenvoudigste methode, maar is mogelijk niet geschikt als u strenge beveiligings vereisten hebt.
 
 - **Meerdere regionale service tags gebruiken: met** deze optie wordt het virtuele netwerk geopend op alleen de IP-adressen die door HDInsight worden gebruikt in die specifieke regio. Als u echter meerdere regio's gebruikt, moet u meerdere service Tags toevoegen aan het virtuele netwerk.
 
@@ -36,9 +36,9 @@ De eenvoudigste manier om te beginnen met het gebruik van service tags met uw HD
 
 1. Selecteer uw netwerk beveiligings groep in het [Azure Portal](https://portal.azure.com/).
 
-1. Selecteer bij **instellingen** de optie **regels voor binnenkomende beveiliging** en selecteer vervolgens **+ toevoegen** .
+1. Selecteer bij **instellingen** de optie **regels voor binnenkomende beveiliging** en selecteer vervolgens **+ toevoegen**.
 
-1. Selecteer in de vervolg keuzelijst **bron** de optie **service label** .
+1. Selecteer in de vervolg keuzelijst **bron** de optie **service label**.
 
 1. Selecteer **HDInsight** in de vervolg keuzelijst **bron service label** .
 
@@ -64,13 +64,13 @@ Als uw cluster zich bevindt in een regio die in deze tabel wordt vermeld, hoeft 
 | China | China - oost 2 | HDInsight. ChinaEast2 |
 | &nbsp; | China - noord 2 | HDInsight. ChinaNorth2 |
 | Verenigde Staten | VS - noord-centraal | HDInsight. NorthCentralUS |
-| &nbsp; | West US 2 | HDInsight. WestUS2 |
+| &nbsp; | VS - west 2 | HDInsight. WestUS2 |
 | &nbsp; | VS - west-centraal | HDInsight. WestCentralUS |
 | Canada | Canada - oost | HDInsight. CanadaEast |
-| Brazilië | Brazilië - zuid | HDInsight. BrazilSouth |
+| Brazilië | Brazil South | HDInsight. BrazilSouth |
 | Korea | Korea - centraal | HDInsight. KoreaCentral |
 | &nbsp; | Korea - zuid | HDInsight. KoreaSouth |
-| India | Central India | HDInsight. CentralIndia |
+| India | India - centraal | HDInsight. CentralIndia |
 | &nbsp; | India - zuid | HDInsight. SouthIndia |
 | Japan | Japan - west | HDInsight. JapanWest |
 | Frankrijk | Frankrijk - centraal| HDInsight. FranceCentral |
@@ -99,7 +99,7 @@ Als uw cluster bijvoorbeeld in de regio wordt gemaakt `East US 2` , moet u de vo
 | Land | Regio | Servicetag |
 | ---- | ---- | ---- |
 | Verenigde Staten | VS - oost 2 | HDInsight. EastUS2 |
-| &nbsp; | VS - centraal | HDInsight. Centraalus |
+| &nbsp; | Central US | HDInsight. Centraalus |
 | &nbsp; | NorthCentral | HDInsight. NorthCentralUS |
 | &nbsp; | VS - zuid-centraal | HDInsight. SouthCentralUS |
 | &nbsp; | VS - oost | HDInsight. Oostelijkeus |

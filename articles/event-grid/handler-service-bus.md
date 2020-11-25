@@ -3,12 +3,12 @@ title: Service Bus-wacht rijen en-onderwerpen als gebeurtenis-handlers voor Azur
 description: Hierin wordt beschreven hoe u Service Bus-wacht rijen en-onderwerpen kunt gebruiken als gebeurtenis-handlers voor Azure Event Grid-gebeurtenissen.
 ms.topic: conceptual
 ms.date: 09/03/2020
-ms.openlocfilehash: ab219f0dc6009dc01d5915995fc04094e72a88cf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2b18009f8fb31f1a5f057c7395781f63f182847f
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91629502"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "96024211"
 ---
 # <a name="service-bus-queues-and-topics-as-event-handlers-for-azure-event-grid-events"></a>Service Bus-wacht rijen en-onderwerpen als gebeurtenis-handlers voor Azure Event Grid gebeurtenissen
 Een gebeurtenis-handler is de plaats waar de gebeurtenis wordt verzonden. De handler heeft een aantal verdere acties nodig om de gebeurtenis te verwerken. Verschillende Azure-Services worden automatisch geconfigureerd voor het afhandelen van gebeurtenissen en **Azure service bus** is een hiervan. 
@@ -50,18 +50,8 @@ az eventgrid event-subscription create \
     --endpoint /subscriptions/{SubID}/resourceGroups/TestRG/providers/Microsoft.ServiceBus/namespaces/ns1/topics/topic1
 ```
 
-## <a name="message-properties"></a>Bericht eigenschappen
-Als u een **Service Bus onderwerp of wachtrij** als gebeurtenis-handler gebruikt voor gebeurtenissen van Event grid, zijn dit de eigenschappen die u ontvangt in de bericht koppen: 
+[!INCLUDE [event-grid-message-headers](../../includes/event-grid-message-headers.md)]
 
-| Naam van eigenschap | Beschrijving |
-| ------------- | ----------- | 
-| AEG-abonnements naam | De naam van het gebeurtenis abonnement. |
-| AEG-levering | <p>Het aantal pogingen dat is gedaan voor de gebeurtenis.</p> <p>Voor beeld: "1"</p> |
-| AEG-gebeurtenis-type | <p>Het type gebeurtenis.</p><p> Voor beeld: ' micro soft. storage. blobCreated '</p> | 
-| AEG-meta gegevens-versie | <p>De meta gegevens versie van de gebeurtenis.</p> <p>Voor beeld: "1".</p><p> Voor **Event grid-gebeurtenis schema**vertegenwoordigt deze eigenschap de versie van de meta gegevens en voor het **Cloud-gebeurtenis schema**, het vertegenwoordigt de **specificatie versie**. </p>|
-| AEG-gegevens versie | <p>De gegevens versie van de gebeurtenis.</p><p>Voor beeld: "1".</p><p>Voor **Event grid-gebeurtenis schema**vertegenwoordigt deze eigenschap de gegevens versie en voor het **Cloud-gebeurtenis schema**, maar dit is niet van toepassing.</p> |
-
-## <a name="message-headers"></a>Bericht koppen
 Wanneer een gebeurtenis naar een Service Bus wachtrij of onderwerp wordt verzonden als een brokerd bericht, `messageid` is het brokered-bericht een interne systeem-id.
 
 De interne systeem-ID voor het bericht wordt gehandhaafd over de herlevering van de gebeurtenis, zodat u dubbele leveringen kunt voor komen door **Duplicaten detectie** in te scha kelen op de service bus-entiteit. Het is raadzaam om de duur van de duplicaten detectie in te scha kelen op de Service Bus entiteit voor de TTL (time-to-Live) van de gebeurtenis of de maximale nieuwe duur, afhankelijk van wat langer is.

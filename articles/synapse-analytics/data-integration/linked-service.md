@@ -10,11 +10,11 @@ ms.date: 04/15/2020
 ms.author: acomet
 ms.reviewer: jrasnick
 ms.openlocfilehash: feabfe505601276269c2774e3b39dd5cbaa32087
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93359966"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022918"
 ---
 # <a name="secure-a-linked-service-with-private-links"></a>Een gekoppelde service beveiligen met persoonlijke koppelingen
 
@@ -22,14 +22,14 @@ In dit artikel leert u hoe u een gekoppelde service in Synapse kunt beveiligen m
 
 ## <a name="prerequisites"></a>Vereisten
 
-* **Azure-abonnement** : als u nog geen Azure-abonnement hebt, maakt u een [gratis Azure-account](https://azure.microsoft.com/free/) voordat u begint.
-* **Azure Storage account** : u Azure data Lake gen 2 gebruiken als een *brongegevens* opslag. Als u geen opslag account hebt, raadpleegt u [een Azure Storage-account maken](../../storage/blobs/data-lake-storage-quickstart-create-account.md) om er een te maken. Zorg ervoor dat het opslag account de Synapse Studio-IP-filtering heeft voor toegang tot de service en dat u alleen **geselecteerde netwerken** toegang wilt geven tot het opslag account. De instelling onder de Blade **firewalls en virtuele netwerken** moet er ongeveer uitzien als in de onderstaande afbeelding.
+* **Azure-abonnement**: als u nog geen Azure-abonnement hebt, maakt u een [gratis Azure-account](https://azure.microsoft.com/free/) voordat u begint.
+* **Azure Storage account**: u Azure data Lake gen 2 gebruiken als een *brongegevens* opslag. Als u geen opslag account hebt, raadpleegt u [een Azure Storage-account maken](../../storage/blobs/data-lake-storage-quickstart-create-account.md) om er een te maken. Zorg ervoor dat het opslag account de Synapse Studio-IP-filtering heeft voor toegang tot de service en dat u alleen **geselecteerde netwerken** toegang wilt geven tot het opslag account. De instelling onder de Blade **firewalls en virtuele netwerken** moet er ongeveer uitzien als in de onderstaande afbeelding.
 
 ![Account voor beveiligde opslag](./media/secure-storage-account.png)
 
 ## <a name="create-a-linked-service-with-private-links"></a>Een gekoppelde service maken met persoonlijke koppelingen
 
-In azure Synapse Analytics is een gekoppelde service waar u de verbindings gegevens voor andere services definieert. In deze sectie voegt u Azure Synapse Analytics en Azure Data Lake gen 2 toe als gekoppelde services.
+In Azure Synapse Analytics definieert u de verbindingsgegevens voor andere services in een gekoppelde service. In deze sectie voegt u Azure Synapse Analytics en Azure Data Lake gen 2 toe als gekoppelde services.
 
 1. Open Azure Synapse Studio en ga naar het tabblad **beheren** .
 1. Onder **externe verbindingen** selecteert u **gekoppelde services**.
@@ -37,7 +37,7 @@ In azure Synapse Analytics is een gekoppelde service waar u de verbindings gegev
 1. Selecteer de tegel Azure Data Lake Storage Gen2 in de lijst en selecteer **door gaan**.
 1. Zorg ervoor dat u **Interactieve creatie** inschakelt. Het kan ongeveer 1 minuut duren voordat deze is ingeschakeld. 
 1. Voer uw verificatie referenties in. Account sleutel, Service-Principal en beheerde identiteit worden momenteel ondersteunde verificatie typen. Selecteer verbinding testen om te controleren of uw referenties correct zijn.
-1. Selecteer **verbinding testen** , de fout moet mislukken omdat het opslag account geen toegang tot de server inschakelt zonder een persoonlijk eind punt te maken en goed te keuren. In het fout bericht wordt een koppeling weer gegeven om een **persoonlijk eind punt** te maken dat u kunt volgen om naar het volgende deel te gaan. Sla het volgende gedeelte over als u deze koppeling volgt.
+1. Selecteer **verbinding testen**, de fout moet mislukken omdat het opslag account geen toegang tot de server inschakelt zonder een persoonlijk eind punt te maken en goed te keuren. In het fout bericht wordt een koppeling weer gegeven om een **persoonlijk eind punt** te maken dat u kunt volgen om naar het volgende deel te gaan. Sla het volgende gedeelte over als u deze koppeling volgt.
 1. Selecteer **Maken** nadat dit is voltooid.
 
 ## <a name="create-a-managed-private-endpoint"></a>Een beheerd privé-eindpunt maken

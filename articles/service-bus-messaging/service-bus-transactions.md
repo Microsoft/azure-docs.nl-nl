@@ -5,11 +5,11 @@ ms.topic: article
 ms.date: 10/28/2020
 ms.custom: devx-track-csharp
 ms.openlocfilehash: 9162b8578fe4f48cc3740b38d9d84ffaa2f260de
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92927784"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023598"
 ---
 # <a name="overview-of-service-bus-transaction-processing"></a>Overzicht van de verwerking van Service Bus transacties
 
@@ -17,7 +17,7 @@ In dit artikel worden de transactie mogelijkheden van Microsoft Azure Service Bu
 
 ## <a name="transactions-in-service-bus"></a>Trans acties in Service Bus
 
-Met een *trans actie* worden twee of meer bewerkingen gegroepeerd in een *uitvoerings bereik* . Een dergelijke trans actie moet er dus voor zorgen dat alle bewerkingen die tot een bepaalde groep bewerkingen behoren, slagen of mislukken. In dit opzicht fungeren als één eenheid, die vaak *atomisch* wordt genoemd.
+Met een *trans actie* worden twee of meer bewerkingen gegroepeerd in een *uitvoerings bereik*. Een dergelijke trans actie moet er dus voor zorgen dat alle bewerkingen die tot een bepaalde groep bewerkingen behoren, slagen of mislukken. In dit opzicht fungeren als één eenheid, die vaak *atomisch* wordt genoemd.
 
 Service Bus is een transactionele bericht Broker en zorgt voor transactionele integriteit voor alle interne bewerkingen voor de berichten archieven. Alle overdrachten van berichten binnen Service Bus, zoals het verplaatsen van berichten naar een [wachtrij met onbestelbare](service-bus-dead-letter-queues.md) berichten of het [automatisch door sturen](service-bus-auto-forwarding.md) van bericht tussen entiteiten, zijn transactioneel. Als Service Bus een bericht accepteert, is het dus al opgeslagen en voorzien van een label met een Volg nummer. Vanaf dat punt worden alle bericht overdrachten binnen Service Bus gecoördineerde bewerkingen tussen entiteiten. Dit leidt niet tot verlies (de bron slaagt en het doel mislukt) of naar duplicatie (bron mislukt en doel is geslaagd) van het bericht.
 
@@ -27,8 +27,8 @@ Service Bus biedt ondersteuning voor het groeperen van bewerkingen voor één be
 
 De bewerkingen die kunnen worden uitgevoerd binnen een transactie bereik zijn als volgt:
 
-* **[QueueClient](/dotnet/api/microsoft.azure.servicebus.queueclient), [MessageSender](/dotnet/api/microsoft.azure.servicebus.core.messagesender), [TopicClient](/dotnet/api/microsoft.azure.servicebus.topicclient)** : `Send` , `SendAsync` , `SendBatch` ,`SendBatchAsync`
-* **[BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage)** : `Complete` , `CompleteAsync` , `Abandon` , `AbandonAsync` , `Deadletter` , `DeadletterAsync` , `Defer` , `DeferAsync` , `RenewLock` , `RenewLockAsync` 
+* **[QueueClient](/dotnet/api/microsoft.azure.servicebus.queueclient), [MessageSender](/dotnet/api/microsoft.azure.servicebus.core.messagesender), [TopicClient](/dotnet/api/microsoft.azure.servicebus.topicclient)**: `Send` , `SendAsync` , `SendBatch` ,`SendBatchAsync`
+* **[BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage)**: `Complete` , `CompleteAsync` , `Abandon` , `AbandonAsync` , `Deadletter` , `DeadletterAsync` , `Defer` , `DeferAsync` , `RenewLock` , `RenewLockAsync` 
 
 Ontvangst bewerkingen worden niet opgenomen, omdat ervan wordt uitgegaan dat de toepassing berichten ophaalt via de modus [ReceiveMode. PeekLock](/dotnet/api/microsoft.azure.servicebus.receivemode) , in een bepaalde receive-lus of met een [OnMessage](/dotnet/api/microsoft.servicebus.messaging.queueclient.onmessage) -call back, en vervolgens een transactie bereik opent om het bericht te verwerken.
 
@@ -36,7 +36,7 @@ De toestand van het bericht (volledig, afwijzen, onbestelbare letter, defer) wor
 
 ## <a name="transfers-and-send-via"></a>Overdrachten en verzenden via
 
-Om transactionele overdracht van gegevens van een wachtrij of onderwerp naar een processor in te scha kelen en vervolgens naar een andere wachtrij of een ander onderwerp, ondersteunt Service Bus *overdrachten* . Bij een overdrachts bewerking verzendt een afzender eerst een bericht naar een *overdrachts wachtrij of onderwerp* . de overdrachts wachtrij of het onderwerp verplaatst het bericht onmiddellijk naar de beoogde doel wachtrij of het onderwerp met behulp van dezelfde robuuste overdrachts implementatie waarbij de functie voor door sturen gebruikmaakt van. Het bericht wordt nooit doorgevoerd in het logboek van de overdrachts wachtrij of het onderwerp op een manier dat het zichtbaar wordt voor de overdrachts wachtrij of de consumenten van het onderwerp.
+Om transactionele overdracht van gegevens van een wachtrij of onderwerp naar een processor in te scha kelen en vervolgens naar een andere wachtrij of een ander onderwerp, ondersteunt Service Bus *overdrachten*. Bij een overdrachts bewerking verzendt een afzender eerst een bericht naar een *overdrachts wachtrij of onderwerp*. de overdrachts wachtrij of het onderwerp verplaatst het bericht onmiddellijk naar de beoogde doel wachtrij of het onderwerp met behulp van dezelfde robuuste overdrachts implementatie waarbij de functie voor door sturen gebruikmaakt van. Het bericht wordt nooit doorgevoerd in het logboek van de overdrachts wachtrij of het onderwerp op een manier dat het zichtbaar wordt voor de overdrachts wachtrij of de consumenten van het onderwerp.
 
 De kracht van deze transactionele mogelijkheden wordt duidelijk wanneer de overdrachts wachtrij of het onderwerp zelf de bron is van de invoer berichten van de afzender. Met andere woorden, Service Bus kunt het bericht overzetten naar de doel wachtrij of het onderwerp ' via ' de overdrachts wachtrij of het onderwerp, terwijl u een volledige (of defered ' of onbestelbare) bewerking uitvoert op het invoer bericht, allemaal in één atomische bewerking. 
 

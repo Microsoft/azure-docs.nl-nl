@@ -6,11 +6,11 @@ ms.author: jakras
 ms.date: 02/11/2020
 ms.topic: reference
 ms.openlocfilehash: 8313243bf680ea1a1d63f2719b647149a04935a9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88893084"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96024041"
 ---
 # <a name="material-mapping-for-model-formats"></a>Materiaaltoewijzing voor modelindelingen
 
@@ -47,7 +47,7 @@ Elk bitmappatroon in glTF kan een `texCoord` waarde hebben, die ook wordt onders
 
 ### <a name="embedded-textures"></a>Inge sloten structuren
 
-Structuren die zijn Inge sloten in * \* bin* -of * \* GLB* -bestanden worden ondersteund.
+Structuren die zijn Inge sloten in *\* bin* -of *\* GLB* -bestanden worden ondersteund.
 
 ### <a name="supported-gltf-extension"></a>Ondersteunde glTF-extensie
 
@@ -69,7 +69,7 @@ De FBX-indeling definieert een conservatieve benadering voor materialen, maar er
 * *Lambert* : wordt niet vaak al enige tijd gebruikt, maar wordt wel ondersteund door tijdens de conversie naar Phong te converteren.
 * *Phong* -bijna alle materialen en de meeste hulpprogram ma's voor inhoud gebruiken dit type.
 
-Het Phong-model is nauw keuriger en wordt gebruikt als het *enige* model voor FBX-materialen. Hieronder wordt het *FBX-materiaal*genoemd.
+Het Phong-model is nauw keuriger en wordt gebruikt als het *enige* model voor FBX-materialen. Hieronder wordt het *FBX-materiaal* genoemd.
 
 > Maya maakt gebruik van twee aangepaste extensies voor FBX door aangepaste eigenschappen te definiëren voor PBR-en Stingray-typen van een materiaal. Deze gegevens zijn niet opgenomen in de FBX-specificatie, waardoor deze niet wordt ondersteund door Azure remote rendering op dit moment.
 

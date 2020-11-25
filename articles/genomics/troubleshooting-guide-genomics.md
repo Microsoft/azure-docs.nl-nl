@@ -11,11 +11,11 @@ ms.workload: genomics
 ms.topic: troubleshooting
 ms.date: 10/29/2018
 ms.openlocfilehash: c508c10d619cde1a16d89b446c5cfd1a3ce81daf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82100903"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023820"
 ---
 # <a name="troubleshooting-guide"></a>Handleiding voor het oplossen van problemen
 
@@ -42,7 +42,7 @@ Er zijn drie vereiste argumenten:
 
 * URL-de basis-URI voor de API
 * SLEUTEL: de toegangs sleutel voor uw Genomics-account
-    * Als u uw URL en sleutel wilt vinden, gaat u naar Azure Portal en opent u de pagina Microsoft Genomics-account. Kies **toegangs sleutels**onder de kop **beheer** . Daar vindt u de API-URL en de toegangs sleutels.
+    * Als u uw URL en sleutel wilt vinden, gaat u naar Azure Portal en opent u de pagina Microsoft Genomics-account. Kies **toegangs sleutels** onder de kop **beheer** . Daar vindt u de API-URL en de toegangs sleutels.
 
   
 * ID: de werk stroom-ID

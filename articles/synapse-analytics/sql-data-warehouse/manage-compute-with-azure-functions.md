@@ -12,11 +12,11 @@ ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
 ms.openlocfilehash: bc615322c11a456699d2364cf44cad40e086e851
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94517883"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022476"
 ---
 # <a name="use-azure-functions-to-manage-compute-resources-in-azure-synapse-analytics-sql-pool"></a>Azure Functions gebruiken om reken resources te beheren in azure Synapse Analytics SQL-groep
 
@@ -48,7 +48,7 @@ Nadat u de sjabloon hebt geïmplementeerd, moet u drie nieuwe resources vinden: 
 
    ![Functies die met sjabloon zijn geïmplementeerd](./media/manage-compute-with-azure-functions/five-functions.png)
 
-2. Selecteer *DWScaleDownTrigger* of *DWScaleUpTrigger* , afhankelijk van of u de tijd voor omhoog of omlaag schalen wilt wijzigen. Selecteer integreren in de vervolg keuzelijst.
+2. Selecteer *DWScaleDownTrigger* of *DWScaleUpTrigger*, afhankelijk van of u de tijd voor omhoog of omlaag schalen wilt wijzigen. Selecteer integreren in de vervolg keuzelijst.
 
    ![Integreren als functie selecteren](./media/manage-compute-with-azure-functions/select-integrate.png)
 
@@ -70,7 +70,7 @@ Nadat u de sjabloon hebt geïmplementeerd, moet u drie nieuwe resources vinden: 
 
 1. Ga naar de functie-app-service. Als u de sjabloon met de standaardwaarden hebt geïmplementeerd, wordt *DWOperations* de naam van deze service. Als de functie-app is geopend, ziet u dat er vijf functies voor de functie-app-service zijn geïmplementeerd.
 
-2. Selecteer *DWScaleDownTrigger* of *DWScaleUpTrigger* , afhankelijk van of u de rekenwaarde voor omhoog of omlaag schalen wilt wijzigen. Na het selecteren van de functies, moet in het deelvenster het bestand *index.js* te zien zijn.
+2. Selecteer *DWScaleDownTrigger* of *DWScaleUpTrigger*, afhankelijk van of u de rekenwaarde voor omhoog of omlaag schalen wilt wijzigen. Na het selecteren van de functies, moet in het deelvenster het bestand *index.js* te zien zijn.
 
    ![Rekenniveau van functietrigger wijzigen](././media/manage-compute-with-azure-functions/index-js.png)
 

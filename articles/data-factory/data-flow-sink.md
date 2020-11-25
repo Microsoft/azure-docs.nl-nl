@@ -8,12 +8,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/17/2020
-ms.openlocfilehash: d45f5d5d1d61372ed959334519aa865c22d70748
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: fa048473f0f285b793dad88c7defdb6189ca1ccd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94832480"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023003"
 ---
 # <a name="sink-transformation-in-mapping-data-flow"></a>Trans formatie sinken bij toewijzing van gegevens stroom
 
@@ -107,6 +107,10 @@ Standaard worden gegevens in een niet-deterministische volg orde naar meerdere s
 ## <a name="error-row-handling"></a>Verwerking van foutrijen
 
 Bij het schrijven naar data bases kunnen bepaalde gegevens rijen mislukken vanwege beperkingen die zijn ingesteld door de bestemming. Standaard mislukt een uitvoering van de gegevens stroom bij de eerste fout die wordt uitgevoerd. In bepaalde connectors kunt u ervoor kiezen om **door te gaan** met een fout waarmee uw gegevens stroom kan worden voltooid, zelfs als afzonderlijke rijen fouten bevatten. Deze functie is momenteel alleen beschikbaar in Azure SQL Database. Zie voor meer informatie [fout rijen verwerken in Azure SQL DB](connector-azure-sql-database.md#error-row-handling).
+
+Hieronder vindt u een video zelfstudie over het gebruik van database fout rijen automatisch in uw Sink-trans formatie.
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4IWne]
 
 ## <a name="data-preview-in-sink"></a>Voor beeld van gegevens in Sink
 

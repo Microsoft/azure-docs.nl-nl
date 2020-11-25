@@ -7,11 +7,11 @@ ms.date: 10/02/2017
 ms.author: sumukhs
 ms.custom: devx-track-csharp
 ms.openlocfilehash: cda0a9f988afae58a60bff051885a5eec8afe434
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89021966"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023581"
 ---
 # <a name="configure-stateful-reliable-services"></a>Stateful reliable Services configureren
 Er zijn twee sets configuratie-instellingen voor betrouw bare Services. Eén set is globaal voor alle betrouw bare Services in het cluster, terwijl de andere set specifiek is voor een bepaalde betrouw bare service.
@@ -20,7 +20,7 @@ Er zijn twee sets configuratie-instellingen voor betrouw bare Services. Eén set
 De algemene betrouw bare service configuratie is opgegeven in het cluster manifest voor het cluster in het gedeelte KtlLogger. Hiermee kunt u de locatie en grootte van het gedeelde logboek configureren, plus de globale geheugen limieten die door de logboeken worden gebruikt. Het cluster manifest is een enkel XML-bestand met instellingen en configuraties die van toepassing zijn op alle knoop punten en services in het cluster. Het bestand wordt doorgaans ClusterManifest.xml genoemd. U kunt het cluster manifest voor uw cluster zien met behulp van de Get-ServiceFabricClusterManifest Power shell-opdracht.
 
 ### <a name="configuration-names"></a>Configuratie namen
-| Naam | Eenheid | Standaardwaarde | Opmerkingen |
+| Name | Eenheid | Standaardwaarde | Opmerkingen |
 | --- | --- | --- | --- |
 | WriteBufferMemoryPoolMinimumInKB |Kilo bytes |8388608 |Minimum aantal KB dat moet worden toegewezen in de kernelmodus voor de geheugen groep schrijf buffer voor logboek registratie. Deze geheugen groep wordt gebruikt voor het opslaan van de status informatie voordat naar de schijf wordt geschreven. |
 | WriteBufferMemoryPoolMaximumInKB |Kilo bytes |Geen limiet |Maximale grootte van de geheugen groep voor schrijf buffer voor logboek registratie kan worden uitgebreid. |
@@ -103,7 +103,7 @@ ReplicatorConfig
 > 
 
 ### <a name="configuration-names"></a>Configuratie namen
-| Naam | Eenheid | Standaardwaarde | Opmerkingen |
+| Name | Eenheid | Standaardwaarde | Opmerkingen |
 | --- | --- | --- | --- |
 | BatchAcknowledgementInterval |Seconden |0,015 |De periode gedurende welke de Replicator op het secundaire wacht na ontvangst van een bewerking voordat een bevestiging wordt verzonden naar de primaire. Alle andere bevestigingen die moeten worden verzonden voor bewerkingen die binnen dit interval worden verwerkt, worden als één antwoord verzonden. |
 | ReplicatorEndpoint |N.v.t. |Geen standaard-vereiste para meter |Het IP-adres en de poort die door de primaire/secundaire Replicator worden gebruikt om te communiceren met andere replicatie Programma's in de replicaset. Dit moet verwijzen naar een TCP-bron eindpunt in het service manifest. Raadpleeg de [service manifest bronnen](service-fabric-service-manifest-resources.md) voor meer informatie over het definiëren van eindpunt resources in een service manifest. |

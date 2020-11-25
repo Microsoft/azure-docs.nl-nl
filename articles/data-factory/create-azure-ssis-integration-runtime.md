@@ -12,11 +12,11 @@ ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
 ms.openlocfilehash: effa0d3ba9f7098b691605bfbd76bff9ea3d5e66
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94593753"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96023428"
 ---
 # <a name="create-an-azure-ssis-integration-runtime-in-azure-data-factory"></a>Een Azure SSIS Integration runtime in Azure Data Factory maken
 
@@ -186,7 +186,7 @@ Voltooi op de pagina **Pakketarchief toevoegen** de volgende stappen.
    1. Selecteer voor **Gekoppelde service voor pakketarchief** de bestaande gekoppelde service waarin de toegangsgegevens zijn opgeslagen voor het bestandssysteem/Azure Files/Azure SQL Managed Instance waarin uw pakketten zijn geïmplementeerd of maak een nieuwe door **Nieuwe** te selecteren. Voer in het deelvenster **Nieuwe gekoppelde service** de volgende stappen uit.
    
       > [!NOTE]
-      > U kunt een aan **Azure File Storage** of **File System** gekoppelde service gebruiken om toegang te krijgen tot Azure Files. Als u een aan **Azure File Storage** gekoppelde service gebruikt, ondersteunt het Azure-SSIS IR-pakket alleen **Basic** (niet **Accountsleutel** en **SAS URI** ) als verificatiemethode. Als u **Basic-** -verificatie wilt gebruiken voor een aan **Azure File Storage** gekoppelde service, kunt u `?feature.upgradeAzureFileStorage=false` toevoegen aan de URL van de ADF-Portal in uw browser. U kunt in plaats daarvan ook een aan **File System** gekoppelde service gebruiken om toegang te krijgen tot Azure Files. 
+      > U kunt een aan **Azure File Storage** of **File System** gekoppelde service gebruiken om toegang te krijgen tot Azure Files. Als u een aan **Azure File Storage** gekoppelde service gebruikt, ondersteunt het Azure-SSIS IR-pakket alleen **Basic** (niet **Accountsleutel** en **SAS URI**) als verificatiemethode. Als u **Basic-** -verificatie wilt gebruiken voor een aan **Azure File Storage** gekoppelde service, kunt u `?feature.upgradeAzureFileStorage=false` toevoegen aan de URL van de ADF-Portal in uw browser. U kunt in plaats daarvan ook een aan **File System** gekoppelde service gebruiken om toegang te krijgen tot Azure Files. 
 
       ![Implementatie-instellingen voor gekoppelde services](./media/tutorial-create-azure-ssis-runtime-portal/deployment-settings-linked-service.png)
 
@@ -194,7 +194,7 @@ Voltooi op de pagina **Pakketarchief toevoegen** de volgende stappen.
          
       1. Voer bij **Beschrijving** de beschrijving van de gekoppelde service in. 
          
-      1. Voor **Type** selecteert u **Azure File Storage** , **Azure SQL Managed Instance** of **Bestandssysteem**.
+      1. Voor **Type** selecteert u **Azure File Storage**, **Azure SQL Managed Instance** of **Bestandssysteem**.
 
       1. U kunt **Verbinding maken via integratieruntime** negeren omdat we altijd uw Azure-SSIS IR gebruiken om de toegangsgegevens voor pakketarchieven op te halen.
 
@@ -202,9 +202,9 @@ Voltooi op de pagina **Pakketarchief toevoegen** de volgende stappen.
 
          1. Selecteer bij **Accountselectiemethode** de optie **Van Azure-abonnement** of **Handmatig invoeren**.
          
-         1. Als u **Van Azure-abonnement** hebt gekozen, selecteert u het relevante **Azure-abonnement** , **Naam van opslagaccount** en **Bestandsshare**.
+         1. Als u **Van Azure-abonnement** hebt gekozen, selecteert u het relevante **Azure-abonnement**, **Naam van opslagaccount** en **Bestandsshare**.
             
-         1. Als u **Handmatig invoeren** hebt gekozen, voert u `\\<storage account name>.file.core.windows.net\<file share name>` in bij **Host** , `Azure\<storage account name>` bij **Gebruikersnaam** en `<storage account key>` bij **Wachtwoord** , of u selecteert de **Azure Key Vault** waar het wachtwoord is opgeslagen als geheim.
+         1. Als u **Handmatig invoeren** hebt gekozen, voert u `\\<storage account name>.file.core.windows.net\<file share name>` in bij **Host**, `Azure\<storage account name>` bij **Gebruikersnaam** en `<storage account key>` bij **Wachtwoord**, of u selecteert de **Azure Key Vault** waar het wachtwoord is opgeslagen als geheim.
 
       1. Als u **Azure SQL Managed Instance** hebt gekozen, voert u de volgende stappen uit. 
 
@@ -216,7 +216,7 @@ Voltooi op de pagina **Pakketarchief toevoegen** de volgende stappen.
 
             1. Voer bij **Name database** de invoer `msdb` in.
                
-            1. Selecteer **SQL-verificatie** , **Beheerde identiteit** of **Service-principal** bij **Verificatietype**.
+            1. Selecteer **SQL-verificatie**, **Beheerde identiteit** of **Service-principal** bij **Verificatietype**.
 
             1. Als u **SQL-verificatie** hebt gekozen, voert u de relevante **Gebruikersnaam** en het **Wachtwoord** in of selecteer u de **Azure Key Vault** waar het wachtwoord is opgeslagen als geheim.
 
@@ -224,7 +224,7 @@ Voltooi op de pagina **Pakketarchief toevoegen** de volgende stappen.
 
             1. Als u **Service-principal** hebt gekozen, voert u de relevante **Service-principal-id** en de **Service-principal-sleutel** in of selecteert u uw **Azure Key Vault** waar het wachtwoord is opgeslagen als geheim.
 
-      1. Als u **Bestandssysteem** hebt gekozen, voert u het UNC-pad in van de map waarin uw pakketten zijn geïmplementeerd voor **Host** , evenals de relevante **Gebruikersnaam** en het **Wachtwoord** of selecteert u de **Azure Key Vault** waar het wachtwoord is opgeslagen als geheim.
+      1. Als u **Bestandssysteem** hebt gekozen, voert u het UNC-pad in van de map waarin uw pakketten zijn geïmplementeerd voor **Host**, evenals de relevante **Gebruikersnaam** en het **Wachtwoord** of selecteert u de **Azure Key Vault** waar het wachtwoord is opgeslagen als geheim.
 
       1. Selecteer **Verbinding testen** wanneer dit van toepassing is en selecteer **Maken**.
 
@@ -248,7 +248,7 @@ Voer op de pagina **Geavanceerde instellingen** van het deelvenster **Installati
    
       1. Voor de SAS-URI van de **aangepaste installatie container** voert u de SAS-URI in van uw container waarin u scripts en gekoppelde bestanden opslaat voor aangepaste standaard instellingen.
 
-      1. Voor **snelle aangepaste installatie** selecteert u **Nieuw** om het deel venster **snelle aangepaste configuratie toevoegen** te openen en selecteert u vervolgens de gewenste typen onder het vervolg keuzemenu **expliciet aangepaste installatie type** , bijvoorbeeld **opdracht cmdkey** , een **omgevings variabele toevoegen** , **een gelicentieerd onderdeel installeren** , enzovoort.
+      1. Voor **snelle aangepaste installatie** selecteert u **Nieuw** om het deel venster **snelle aangepaste configuratie toevoegen** te openen en selecteert u vervolgens de gewenste typen onder het vervolg keuzemenu **expliciet aangepaste installatie type** , bijvoorbeeld **opdracht cmdkey**, een **omgevings variabele toevoegen**, **een gelicentieerd onderdeel installeren**, enzovoort.
 
          Als u het **onderdeel type licentie installeren** selecteert, kunt u in het vervolg keuzemenu **onderdeel naam** alle geïntegreerde onderdelen van onze ISV-partners selecteren en, indien nodig, de product licentie sleutel invoeren/het productlicentie bestand dat u hebt aangeschaft, uploaden naar het vak licentie **sleutel** / **licentie bestand** .
   

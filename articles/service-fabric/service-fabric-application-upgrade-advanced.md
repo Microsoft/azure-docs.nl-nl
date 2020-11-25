@@ -4,11 +4,11 @@ description: In dit artikel vindt u een aantal geavanceerde onderwerpen met betr
 ms.topic: conceptual
 ms.date: 03/11/2020
 ms.openlocfilehash: cc2fdc8f99b74078bd8d5274cbe52265ab8455ae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86248081"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96022986"
 ---
 # <a name="service-fabric-application-upgrade-advanced-topics"></a>Service Fabric toepassings upgrade: geavanceerde onderwerpen
 
@@ -28,13 +28,13 @@ Om dit te voor komen, moet u de functie *RequestDrain* configureren door een *ve
 
 Er zijn verschillende manieren om de vertraging aan de kant van de service te configureren.
 
- * Geef **bij het maken van een nieuwe service**een `-InstanceCloseDelayDuration` :
+ * Geef **bij het maken van een nieuwe service** een `-InstanceCloseDelayDuration` :
 
     ```powershell
     New-ServiceFabricService -Stateless [-ServiceName] <Uri> -InstanceCloseDelayDuration <TimeSpan>
     ```
 
- * Wijs **tijdens het definiëren van de service in het gedeelte standaard instellingen in het manifest van de toepassing**de `InstanceCloseDelayDurationSeconds` eigenschap toe:
+ * Wijs **tijdens het definiëren van de service in het gedeelte standaard instellingen in het manifest van de toepassing** de `InstanceCloseDelayDurationSeconds` eigenschap toe:
 
     ```xml
           <StatelessService ServiceTypeName="Web1Type" InstanceCount="[Web1_InstanceCount]" InstanceCloseDelayDurationSeconds="15">
@@ -205,7 +205,7 @@ ApplicationParameters  : { "ImportantParameter" = "2"; "NewParameter" = "testAft
 
 ## <a name="roll-back-application-upgrades"></a>Upgrades van toepassingen terugdraaien
 
-Hoewel upgrades kunnen worden doorgevoerd in een van de drie modi (*bewaakt*, *UnmonitoredAuto*of *UnmonitoredManual*), kunnen ze alleen worden teruggedraaid in de modus *UnmonitoredAuto* of *UnmonitoredManual* . Terugdraaien in de *UnmonitoredAuto* -modus werkt op dezelfde manier als met de uitzonde ring dat de standaard waarde van *UpgradeReplicaSetCheckTimeout* verschilt-Zie [para meters](service-fabric-application-upgrade-parameters.md)voor de upgrade van de toepassing. Terugdraaien in de *UnmonitoredManual* -modus werkt op dezelfde manier als vooruit draaien: de terugdraai actie wordt na elke UD onderbroken en moet expliciet worden hervat met behulp van [Resume-ServiceFabricApplicationUpgrade](/powershell/module/servicefabric/resume-servicefabricapplicationupgrade?view=azureservicefabricps) om door te gaan met het terugdraaien.
+Hoewel upgrades kunnen worden doorgevoerd in een van de drie modi (*bewaakt*, *UnmonitoredAuto* of *UnmonitoredManual*), kunnen ze alleen worden teruggedraaid in de modus *UnmonitoredAuto* of *UnmonitoredManual* . Terugdraaien in de *UnmonitoredAuto* -modus werkt op dezelfde manier als met de uitzonde ring dat de standaard waarde van *UpgradeReplicaSetCheckTimeout* verschilt-Zie [para meters](service-fabric-application-upgrade-parameters.md)voor de upgrade van de toepassing. Terugdraaien in de *UnmonitoredManual* -modus werkt op dezelfde manier als vooruit draaien: de terugdraai actie wordt na elke UD onderbroken en moet expliciet worden hervat met behulp van [Resume-ServiceFabricApplicationUpgrade](/powershell/module/servicefabric/resume-servicefabricapplicationupgrade?view=azureservicefabricps) om door te gaan met het terugdraaien.
 
 Terugdraai bewerkingen kunnen automatisch worden geactiveerd wanneer het status beleid van een upgrade in de *bewaakte* modus met een *FailureAction* van het *terugdraaien* is geschonden (Zie [para meters](service-fabric-application-upgrade-parameters.md)voor de upgrade van de toepassing) of expliciet gebruikmaakt van [Start-ServiceFabricApplicationRollback](/powershell/module/servicefabric/start-servicefabricapplicationrollback?view=azureservicefabricps).
 

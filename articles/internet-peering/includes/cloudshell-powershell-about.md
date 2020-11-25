@@ -8,12 +8,12 @@ ms.service: internet-peering
 ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: ee071f2cf6e31d46ccd483935f137f16bcacf337
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 607cb824a50da3778ebe34f184abc0dc97c15961
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86544799"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96025728"
 ---
 Als u de cmdlets wilt uitvoeren, kunt u Azure Cloud Shell gebruiken, een gratis interactieve shell. In deze shell zijn algemene Azure-hulpprogramma's vooraf geïnstalleerd en geconfigureerd voor gebruik met uw account. Selecteer **kopiëren** om de code te kopiëren en plak deze in Cloud shell. Selecteer vervolgens **Enter** om het uit te voeren. Er zijn enkele manieren om Cloud Shell te starten:
 
@@ -25,8 +25,8 @@ Als u de cmdlets wilt uitvoeren, kunt u Azure Cloud Shell gebruiken, een gratis 
 |  |  |
 
 
-Als u Azure Cloud Shell niet wilt gebruiken, kunt u in plaats daarvan lokaal Power Shell installeren. Als u Power shell lokaal wilt installeren en gebruiken, moet u ervoor zorgen dat u de nieuwste versie van de Azure Resource Manager Power shell-cmdlets installeert. Power shell-cmdlets worden regel matig bijgewerkt. Normaal gesp roken moet u de Power shell-cmdlets bijwerken om de nieuwste functie functionaliteit te krijgen. Als dat niet het geval is, kunnen er problemen optreden.
+Als u Azure Cloud Shell niet wilt gebruiken, kunt u in plaats daarvan lokaal Power Shell installeren. Als u Power shell lokaal wilt installeren en gebruiken, moet u ervoor zorgen dat u de nieuwste versie van de Azure Resource Manager Power shell-cmdlets installeert. PowerShell-cmdlets worden regelmatig bijgewerkt. Normaal gesp roken moet u de Power shell-cmdlets bijwerken om de nieuwste functie functionaliteit te krijgen. Als dat niet het geval is, kunnen er problemen optreden.
 
-Als u de versie van Power shell wilt vinden die u lokaal uitvoert, gebruikt u de cmdlet **Get-module-ListAvailable AZ** . Zie [de module Azure PowerShell installeren](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps)om bij te werken. Zie [Azure PowerShell installeren en configureren](https://docs.microsoft.com/powershell/azure/azurerm/overview)voor meer informatie.
+Als u de versie van Power shell wilt vinden die u lokaal uitvoert, gebruikt u de cmdlet **Get-module-ListAvailable AZ** . Zie [de module Azure PowerShell installeren](/powershell/azure/azurerm/install-azurerm-ps)om bij te werken. Zie [Azure PowerShell installeren en configureren](/powershell/azure/azurerm/overview)voor meer informatie.
 
-Als u Power shell op macOS gebruikt, volgt u de stappen in [Power Shell installeren op MacOS.](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6)
+Als u Power shell op macOS gebruikt, volgt u de stappen in [Power Shell installeren op MacOS.](/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6)

@@ -2,14 +2,14 @@
 title: Gebeurtenissen ontvangen van Azure Event Grid naar een HTTP-eind punt
 description: Hierin wordt beschreven hoe u een HTTP-eind punt valideert en vervolgens gebeurtenissen van Azure Event Grid ontvangt en deserialiseren
 ms.topic: conceptual
-ms.date: 07/07/2020
+ms.date: 11/19/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 42cf237f0c2fbe091307625fde70613ab9173b0c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 75c80fb85d39298f1130537971bc700897c039d0
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91326470"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "96023708"
 ---
 # <a name="receive-events-to-an-http-endpoint"></a>Gebeurtenissen op een HTTP-eindpunt ontvangen
 
@@ -140,9 +140,11 @@ Test de validatie antwoord functie door de voorbeeld gebeurtenis te plakken in h
 }]
 ```
 
-Wanneer u op uitvoeren klikt, moet de uitvoer 200 OK en `{"ValidationResponse":"512d38b6-c7b8-40c8-89fe-f46f9e9622b6"}` in de hoofd tekst zijn:
+Wanneer u op uitvoeren klikt, moet de uitvoer 200 OK en `{"validationResponse":"512d38b6-c7b8-40c8-89fe-f46f9e9622b6"}` in de hoofd tekst zijn:
 
-![validatie antwoord](./media/receive-events/validation-response.png)
+:::image type="content" source="./media/receive-events/validation-request.png" alt-text="Validatie aanvraag":::
+
+:::image type="content" source="./media/receive-events/validation-output.png" alt-text="Validatie-uitvoer":::
 
 ## <a name="handle-blob-storage-events"></a>Blob Storage-gebeurtenissen afhandelen
 
@@ -394,6 +396,8 @@ Controleer ten slotte of uw functie uw aangepaste gebeurtenis type nu kan verwer
 ```
 
 U kunt deze functionaliteit ook testen door [een aangepaste gebeurtenis te verzenden met een krul vanuit de portal](./custom-event-quickstart-portal.md) of door [te boeken naar een aangepast onderwerp](./post-to-custom-topic.md)  met behulp van een service of toepassing die kan worden gepost naar een eind punt, zoals een [postman](https://www.getpostman.com/). Maak een aangepast onderwerp en een gebeurtenis abonnement met het eind punt dat is ingesteld als de functie-URL.
+
+[!INCLUDE [event-grid-message-headers](../../includes/event-grid-message-headers.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 

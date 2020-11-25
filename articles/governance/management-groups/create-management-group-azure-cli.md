@@ -4,12 +4,12 @@ description: In deze quickstart gebruikt u de Azure CLI om een beheergroep te ma
 ms.date: 08/31/2020
 ms.topic: quickstart
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: f07ae46c95f9ab9cc1ad973204ac5c50320fdf46
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 54d7afbaa4bfe2799ca0d68927394a38d9845c53
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89236992"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94920658"
 ---
 # <a name="quickstart-create-a-management-group-with-the-azure-cli"></a>Quickstart: Een beheergroep maken met de Azure CLI
 
@@ -29,7 +29,7 @@ Het kan tot vijftien minuten duren voordat de eerste beheergroep die in de map i
 
 ### <a name="create-in-the-azure-cli"></a>Maken in de Azure CLI
 
-Gebruik voor Azure CLI de [az account management-group create](/cli/azure/account/management-group#az-account-management-group-create)-opdracht om een nieuwe beheergroep te maken. In dit voorbeeld wordt de **naam van de beheergroep** _contoso_.
+Gebruik voor Azure CLI de [az account management-group create](/cli/azure/account/management-group#az_account_management_group_create)-opdracht om een nieuwe beheergroep te maken. In dit voorbeeld wordt de **naam van de beheergroep** _contoso_.
 
 ```azurecli-interactive
 az account management-group create --name 'Contoso'
@@ -51,7 +51,7 @@ az account management-group create --name 'ContosoSubGroup' --parent 'Contoso'
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u de eerder gemaakte beheergroep wilt verwijderen, gebruikt u de opdracht [az account management-group delete](/cli/azure/account/management-group#az-account-management-group-delete):
+Als u de eerder gemaakte beheergroep wilt verwijderen, gebruikt u de opdracht [az account management-group delete](/cli/azure/account/management-group#az_account_management_group_delete):
 
 ```azurecli-interactive
 az account management-group delete --name 'Contoso'

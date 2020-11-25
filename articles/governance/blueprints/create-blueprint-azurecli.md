@@ -3,12 +3,12 @@ title: 'Quickstart: Een blauwdruk maken met de Azure CLI'
 description: In deze quickstart gebruikt u Azure Blueprints om artefacten te maken, te definiëren en te implementeren met de Azure CLI.
 ms.date: 10/14/2020
 ms.topic: quickstart
-ms.openlocfilehash: 790e23897a24ea06565572163b8226af88e0bb7c
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: 88ccd3fe6271a79d201007954e7997b68d2dc69b
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92057957"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94920556"
 ---
 # <a name="quickstart-define-and-assign-an-azure-blueprint-with-azure-cli"></a>Quickstart: Een Azure Blueprint definiëren en toewijzen met Azure CLI
 
@@ -51,7 +51,7 @@ De eerste stap bij het definiëren van een standaardpatroon voor naleving bestaa
 > [!NOTE]
 > Wanneer u de Azure CLI gebruikt, wordt het object _blauwdruk_ eerst gemaakt. Voor elk _artefact_ dat wordt toegevoegd en parameters bevat, moeten de parameters vooraf worden gedefinieerd in de eerste _blauwdruk_.
 
-1. Maak het eerste _blauwdruk_object. De parameter **parameters** accepteert een JSON-bestand dat alle blauwdrukparameters bevat. De parameters worden tijdens het toewijzen ingesteld en gebruikt door de artefacten die in latere stappen worden toegevoegd.
+1. Maak het eerste _blauwdruk_ object. De parameter **parameters** accepteert een JSON-bestand dat alle blauwdrukparameters bevat. De parameters worden tijdens het toewijzen ingesteld en gebruikt door de artefacten die in latere stappen worden toegevoegd.
 
    - JSON-bestand - blueprintparms.json
 
@@ -116,7 +116,7 @@ De eerste stap bij het definiëren van een standaardpatroon voor naleving bestaa
 
      > [!NOTE]
      > Gebruik de bestandsnaam _blueprint.json_ bij het importeren van uw blauwdrukdefinities.
-     > Deze bestandsnaam wordt gebruikt bij het aanroepen van [az blueprint import](/cli/azure/ext/blueprint/blueprint#ext-blueprint-az-blueprint-import).
+     > Deze bestandsnaam wordt gebruikt bij het aanroepen van [az blueprint import](/cli/azure/ext/blueprint/blueprint#ext_blueprint_az_blueprint_import).
 
      Het blauwdrukobject wordt standaard gemaakt in het standaardabonnement. Als u de beheergroep wilt opgeven, gebruikt u de parameter **beheergroep**. Als u het abonnement wilt opgeven, gebruikt u de parameter **abonnement**.
 

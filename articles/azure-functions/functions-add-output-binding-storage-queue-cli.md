@@ -5,20 +5,18 @@ ms.date: 02/07/2020
 ms.topic: quickstart
 ms.custom: devx-track-python
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: c7d41d889692856a9818aacd265e67b0c2d3d1ad
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 6d0d559579e841553e04c26bf4dcc78934de3e95
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422860"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94920199"
 ---
 # <a name="connect-azure-functions-to-azure-storage-using-command-line-tools"></a>Azure Functions verbinden met Azure Storage met behulp van opdrachtregelhulpprogramma's
 
 In dit artikel integreert u een Azure Storage-wachtrij met de functie die en het opslagaccount dat u in het vorige quickstart-artikel hebt gemaakt. De integratie wordt mogelijk gemaakt door *uitvoerbinding* die gegevens schrijft van een HTTP-aanvraag naar een bericht in de wachtrij. Het voltooien van dit artikel brengt geen extra kosten met zich mee, behalve de paar dollarcent die tijdens de vorige quickstart zijn uitgegeven. Zie [Concepten van Azure Functions-triggers en -bindingen](functions-triggers-bindings.md) voor meer informatie over bindingen.
 
 ## <a name="configure-your-local-environment"></a>Uw lokale omgeving configureren
-
-Voordat u begint, moet u het volgende artikel voltooien: [Quickstart: een Azure Functions-project maken via de opdrachtregel][previous-quickstart]. Als u de resources na voltooiing van dat artikel al had opgeruimd, doorloopt u de stappen voor het maken van de functie-app en de bijbehorende resources opnieuw in Azure.
 
 ::: zone pivot="programming-language-csharp"  
 Voordat u begint, moet u het volgende artikel voltooien: [Quickstart: een Azure Functions-project maken via de opdrachtregel](create-first-function-cli-csharp.md). Als u de resources na voltooiing van dat artikel al had opgeruimd, doorloopt u de stappen voor het maken van de functie-app en de bijbehorende resources opnieuw in Azure.  

@@ -9,12 +9,12 @@ ms.author: dademath
 ms.date: 07/20/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 8349654650ff0c85fb7c9c1af6ab5dabc4f5c3ac
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: fc757e1310369c48de24c0cc9253c668ca27495c
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92677424"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888569"
 ---
 # <a name="get-started-with-the-group-chat-hero-sample"></a>Aan de slag met het hero-voorbeeld van groeps-chat
 
@@ -36,7 +36,7 @@ In deze quickstart over hero-voorbeelden komt u te weten hoe het voorbeeld werkt
 
 ## <a name="overview"></a>Overzicht
 
-Het voorbeeld heeft zowel een toepassing aan de clientzijde als een toepassing aan de serverzijde. De **toepassing** aan de clientzijde is een React/Redux-webtoepassing die gebruikmaakt van het Fluent UI-framework van Microsoft. Met deze toepassing worden aanvragen verzonden naar een ASP.NET Core- **toepassing aan de serverzijde** zodat de toepassing aan de clientzijde kan worden verbonden met Azure. 
+Het voorbeeld heeft zowel een toepassing aan de clientzijde als een toepassing aan de serverzijde. De **toepassing** aan de clientzijde is een React/Redux-webtoepassing die gebruikmaakt van het Fluent UI-framework van Microsoft. Met deze toepassing worden aanvragen verzonden naar een ASP.NET Core-**toepassing aan de serverzijde** zodat de toepassing aan de clientzijde kan worden verbonden met Azure. 
 
 Het voorbeeld ziet er als volgt uit:
 
@@ -52,9 +52,9 @@ Zodra u uw weergavenaam en emoji hebt geconfigureerd, kunt u deelnemen aan de ch
 
 Onderdelen van het belangrijkste chatscherm:
 
-- **Belangrijkste chatgebied** : Dit is het belangrijkste gebied van een chatsessie, waarin gebruikers berichten kunnen verzenden en ontvangen. Als u berichten wilt verzenden, kunt u daarvoor het invoergebied gebruiken en op Enter drukken (of de verzendknop gebruiken). Ontvangen chatberichten worden gecategoriseerd op afzender met behulp van de juiste naam en emoji. U ziet twee typen meldingen in het chatgebied: 1) Typmeldingen die laten zien dat een gebruiker typt, en 2) meldingen met betrekking tot het verzenden en lezen van berichten.
-- **Header** : Hier ziet de gebruiker de titel van de chatthread en de besturingselementen voor het schakelen tussen zijbalken voor deelnemers en instellingen, evenals een knop om de chatsessie af te sluiten.
-- **Zijbalk** : Hier worden gegevens over de deelnemers en de instellingen weergegeven wanneer u de besturingselementen in de header gebruikt om heen en weer te schakelen. De zijbalk met de deelnemers bevat een lijst met de deelnemers aan de chatsessie en een koppeling om deelnemers uit te nodigen voor de chatsessie. Via de zijbalk voor de instellingen kunt u de titel van de chatthread configureren. 
+- **Belangrijkste chatgebied**: Dit is het belangrijkste gebied van een chatsessie, waarin gebruikers berichten kunnen verzenden en ontvangen. Als u berichten wilt verzenden, kunt u daarvoor het invoergebied gebruiken en op Enter drukken (of de verzendknop gebruiken). Ontvangen chatberichten worden gecategoriseerd op afzender met behulp van de juiste naam en emoji. U ziet twee typen meldingen in het chatgebied: 1) Typmeldingen die laten zien dat een gebruiker typt, en 2) meldingen met betrekking tot het verzenden en lezen van berichten.
+- **Header**: Hier ziet de gebruiker de titel van de chatthread en de besturingselementen voor het schakelen tussen zijbalken voor deelnemers en instellingen, evenals een knop om de chatsessie af te sluiten.
+- **Zijbalk**: Hier worden gegevens over de deelnemers en de instellingen weergegeven wanneer u de besturingselementen in de header gebruikt om heen en weer te schakelen. De zijbalk met de deelnemers bevat een lijst met de deelnemers aan de chatsessie en een koppeling om deelnemers uit te nodigen voor de chatsessie. Via de zijbalk voor de instellingen kunt u de titel van de chatthread configureren. 
 
 Hieronder vindt u meer informatie over de vereisten en stappen voor het instellen van het voorbeeld.
 
@@ -118,4 +118,4 @@ Raadpleeg voor meer informatie de volgende artikelen:
 - [Redux](https://redux.js.org/): statusbeheer op de client
 - [FluentUI](https://aka.ms/fluent-ui): door Microsoft ondersteunde bibliotheek voor de gebruikersinterface
 - [React](https://reactjs.org/): bibliotheek voor het ontwikkelen van gebruikersinterfaces
-- [ASP.NET Core](https://docs.microsoft.com/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1&preserve-view=true): een framework voor het bouwen van webtoepassingen
+- [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core?preserve-view=true&view=aspnetcore-3.1): een framework voor het bouwen van webtoepassingen

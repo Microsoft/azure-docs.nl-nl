@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: csharp
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: 872d1f43f1e9dc180e41a2bf625ca18b74522b40
-ms.sourcegitcommit: b48e8a62a63a6ea99812e0a2279b83102e082b61
+ms.openlocfilehash: 14f17c6716fe98a11d03e8d1021bcdb1058fe671
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91409507"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968108"
 ---
 # <a name="quickstart-enroll-tpm-device-to-iot-hub-device-provisioning-service-using-c-service-sdk"></a>Quickstart: TPM-apparaat inschrijven bij IoT Hub Device Provisioning Service met behulp van de C# service-SDK
 
@@ -47,7 +47,7 @@ Voor het voorbeeld in deze snelstart hebt u de verbindingsreeks voor de inrichti
 
 ## <a name="create-the-individual-enrollment-sample"></a>Het voorbeeld van de afzonderlijke inschrijving maken
 
-In deze sectie wordt beschreven hoe u een .NET Core-console-app maakt, waarmee een afzonderlijke inschrijving voor een TPM-apparaat aan uw inrichtingsservice wordt toegevoegd. Met enkele aanpassingen kunt u deze stappen ook volgen om een [Windows IoT Core](https://developer.microsoft.com/en-us/windows/iot) console-app te maken om aan de afzonderlijke registratie toe te voegen. Zie de [Windows IoT Core-documentatie voor ontwikkelaars](https://docs.microsoft.com/windows/iot-core/) voor meer informatie over ontwikkelen met IoT Core.
+In deze sectie wordt beschreven hoe u een .NET Core-console-app maakt, waarmee een afzonderlijke inschrijving voor een TPM-apparaat aan uw inrichtingsservice wordt toegevoegd. Met enkele aanpassingen kunt u deze stappen ook volgen om een [Windows IoT Core](https://developer.microsoft.com/en-us/windows/iot) console-app te maken om aan de afzonderlijke registratie toe te voegen. Zie de [Windows IoT Core-documentatie voor ontwikkelaars](/windows/iot-core/) voor meer informatie over ontwikkelen met IoT Core.
 
 1. Open Visual Studio en selecteer **Een nieuw project maken**. Kies in **Een nieuw project maken** de projectsjabloon voor C# **Console-app (.NET Core)** en selecteer **Volgende**.
 

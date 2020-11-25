@@ -10,12 +10,12 @@ ms.author: mimart
 author: msmimart
 manager: celested
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 921d9e2138c8aa9c09535a673a7cd2d32e9cddad
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: f4a71740c487896208a3da7bf35bb39899c56937
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89270660"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94952060"
 ---
 # <a name="identity-protection-and-conditional-access-for-azure-ad-b2c"></a>Identiteitsbeveiliging en voorwaardelijke toegang instellen in Azure AD B2C
 
@@ -60,7 +60,7 @@ In Azure AD B2C kunt u voorwaarden voor voorwaardelijke toegang activeren vanuit
 
 ## <a name="microsoft-graph-api"></a>Microsoft Graph API
 
-U kunt beleid voor voorwaardelijke toegang ook beheren in Azure AD B2C met Microsoft Graph API. Zie voor meer informatie de [Documentatie voor voorwaardelijke toegang](../active-directory/conditional-access/overview.md) en de [Microsoft Graph-referentie](https://docs.microsoft.com/graph/api/resources/conditionalaccesspolicy?view=graph-rest-beta.md).
+U kunt beleid voor voorwaardelijke toegang ook beheren in Azure AD B2C met Microsoft Graph API. Zie voor meer informatie de [Documentatie voor voorwaardelijke toegang](../active-directory/conditional-access/overview.md) en de [Microsoft Graph-referentie](/graph/api/resources/conditionalaccesspolicy?view=graph-rest-beta.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

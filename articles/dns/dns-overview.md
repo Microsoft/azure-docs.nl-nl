@@ -6,18 +6,18 @@ ms.service: dns
 ms.topic: overview
 ms.date: 3/21/2019
 ms.author: rohink
-ms.openlocfilehash: d59f166897674e9dcff8086b8f5c906605155ee3
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 5df2c2f686a1993dcd25d5391d5b553f2b42d937
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87924271"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965643"
 ---
 # <a name="what-is-azure-dns"></a>Wat is Azure DNS?
 
 Azure DNS is een hostingservice voor DNS-domeinen die naamomzetting biedt met behulp van Microsoft Azure-infrastructuur. Door uw domeinen in Azure te hosten, kunt u uw DNS-records met dezelfde referenties, API's, hulpprogramma's en facturering beheren als voor uw andere Azure-services.
 
-U kunt Azure DNS niet gebruiken om een ​​domeinnaam te kopen. Tegen een jaarlijkse vergoeding kunt u een domeinnaam kopen met behulp van [App Service-domeinen](https://docs.microsoft.com/azure/app-service/manage-custom-dns-buy-domain#buy-the-domain) of bij een externe domeinnaamregistrar. Uw domeinen kunnen vervolgens worden gehost in Azure DNS voor recordbeheer. Zie [Delegate a domain to Azure DNS](dns-domain-delegation.md) (Een domein aan Azure DNS overdragen) voor meer informatie.
+U kunt Azure DNS niet gebruiken om een ​​domeinnaam te kopen. Tegen een jaarlijkse vergoeding kunt u een domeinnaam kopen met behulp van [App Service-domeinen](../app-service/manage-custom-dns-buy-domain.md#buy-the-domain) of bij een externe domeinnaamregistrar. Uw domeinen kunnen vervolgens worden gehost in Azure DNS voor recordbeheer. Zie [Delegate a domain to Azure DNS](dns-domain-delegation.md) (Een domein aan Azure DNS overdragen) voor meer informatie.
 
 De volgende functies zijn opgenomen in Azure DNS.
 
@@ -29,11 +29,11 @@ DNS-domeinen in Azure DNS worden gehost op het wereldwijde netwerk van Azure DNS
 
  Azure DNS is gebaseerd op Azure Resource Manager, die onder meer de volgende functies biedt:
 
-* [Op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC)](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) om te bepalen wie er toegang heeft tot bepaalde acties voor uw organisatie.
+* [Op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC)](../azure-resource-manager/management/overview.md) om te bepalen wie er toegang heeft tot bepaalde acties voor uw organisatie.
 
-* [Activiteitenlogboeken](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) om te controleren hoe een gebruiker in uw organisatie een resource heeft gewijzigd, of te gebruiken bij het opsporen van fouten.
+* [Activiteitenlogboeken](../azure-resource-manager/management/overview.md) om te controleren hoe een gebruiker in uw organisatie een resource heeft gewijzigd, of te gebruiken bij het opsporen van fouten.
 
-* [vergrendelen van resources](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-lock-resources) om een abonnement, een resourcegroep of een resource te vergrendelen. Met vergrendeling voorkomt u dat andere gebruikers in uw organisatie per ongeluk kritieke bronnen wijzigen of verwijderen.
+* [vergrendelen van resources](../azure-resource-manager/management/lock-resources.md) om een abonnement, een resourcegroep of een resource te vergrendelen. Met vergrendeling voorkomt u dat andere gebruikers in uw organisatie per ongeluk kritieke bronnen wijzigen of verwijderen.
 
 Zie voor meer informatie [DNS-zones en -records beschermen](dns-protect-zones-recordsets.md). 
 
@@ -67,6 +67,6 @@ Zie [Overzicht van Azure DNS-aliasrecords](dns-alias.md) voor meer informatie.
 
 * Zie [Overzicht van DNS-zones en -records](dns-zones-records.md) voor meer informatie over DNS-zones en records.
 
-* Zie [Een DNS-zone maken](./dns-getstarted-create-dnszone-portal.md) voor meer informatie over het maken van een zone in Azure DNS.
+* Zie [Een DNS-zone maken](./dns-getstarted-portal.md) voor meer informatie over het maken van een zone in Azure DNS.
 
 * Zie voor veelgestelde vragen over Azure DNS de [Veelgestelde vragen over Azure DNS](dns-faq.md).

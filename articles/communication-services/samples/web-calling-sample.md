@@ -9,12 +9,12 @@ ms.author: mariusu
 ms.date: 10/15/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: e6fc3441fac5fe037e9a268d26012761d1fece70
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 8faa6533ba4dc7fad61c045278c5504c5f78d900
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92463177"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888960"
 ---
 # <a name="get-started-with-the-web-calling-sample"></a>Aan de slag met het voorbeeld van aanroeping
 
@@ -58,7 +58,7 @@ U bent nu klaar om te beginnen met het plaatsen van oproepen met uw Communicatio
 
 ## <a name="placing-and-receiving-calls"></a>Oproepen plaatsen en ontvangen
 
-De weboproep-SDK van Communication Services maakt de volgende oproepen **1:1** , **1: N** en **groep**.
+De weboproep-SDK van Communication Services maakt de volgende oproepen **1:1**, **1: N** en **groep**.
 
 Voor 1:1 of 1: N uitgaande oproepen kunt u meerdere gebruikersidentiteiten voor Communication Services opgeven om aan te roepen met door komma's gescheiden waarden. U kunt ook traditionele (PSTN) telefoonnummers opgeven om aan te roepen met door komma's gescheiden waarden. 
 
@@ -95,7 +95,7 @@ Raadpleeg voor meer informatie de volgende artikelen:
 
 - Vertrouwd raken met [het gebruik van de clientbibliotheek voor aanroepen](../quickstarts/voice-video-calling/calling-client-samples.md)
 - Meer informatie over [de werking van aanroepen](../concepts/voice-video-calling/about-call-types.md)
-- Controleer de [API-referentiedocumenten](https://docs.microsoft.com/javascript/api/azure-communication-services/@azure/communication-calling/?view=azure-communication-services-js)
+- Controleer de [API-referentiedocumenten](/javascript/api/azure-communication-services/@azure/communication-calling/?view=azure-communication-services-js)
 
 ## <a name="additional-reading"></a>Meer artikelen
 
@@ -103,4 +103,4 @@ Raadpleeg voor meer informatie de volgende artikelen:
 - [Redux](https://redux.js.org/): statusbeheer op de client
 - [FluentUI](https://aka.ms/fluent-ui): door Microsoft ondersteunde bibliotheek voor de gebruikersinterface
 - [React](https://reactjs.org/): bibliotheek voor het ontwikkelen van gebruikersinterfaces
-- [ASP.NET Core](https://docs.microsoft.com/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1&preserve-view=true): een framework voor het bouwen van webtoepassingen
+- [ASP.NET Core](/aspnet/core/introduction-to-aspnet-core?preserve-view=true&view=aspnetcore-3.1): een framework voor het bouwen van webtoepassingen

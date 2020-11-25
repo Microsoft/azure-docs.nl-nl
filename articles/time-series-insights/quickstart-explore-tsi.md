@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.workload: big-data
 ms.custom: mvc seodec18
 ms.date: 10/02/2020
-ms.openlocfilehash: 9cd1a6059360c948229a1da00780cd6cb40b7f35
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 3956f8d91793367f7200d2f349a8713aff3d2f59
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91666531"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95016221"
 ---
 # <a name="quickstart-explore-the-azure-time-series-insights-gen2-demo-environment"></a>Quickstart: De demo-omgeving van Azure Time Series Insights Gen2 verkennen
 
@@ -102,7 +102,7 @@ Door Azure Time Series Insights Gen2 en sensortelemetrie te gebruiken, hebben we
 
 1. U kunt andere gegevenspunten van sensoren toevoegen voor meer context. Hoe meer sensoren er worden weergegeven, hoe beter we het probleem begrijpen. We verwijderen een markering om de werkelijke waarden weer te geven.
 
-    1. Selecteer **Generator Systeem**en selecteer vervolgens drie sensoren: **GridVoltagePhase1**, **GridVoltagePhase2** en **GridVoltagePhase3** toe.
+    1. Selecteer **Generator Systeem** en selecteer vervolgens drie sensoren: **GridVoltagePhase1**, **GridVoltagePhase2** en **GridVoltagePhase3** toe.
     1. Verwijder een markering van het laatste gegevenspunt in het zichtbare gedeelte.
 
        [![Plaats een markering](media/v2-update-quickstart/quick-start-drop-marker.png)](media/v2-update-quickstart/quick-start-drop-marker.png#lightbox)
@@ -127,9 +127,9 @@ Nu u de quickstart hebt voltooid, kunt u de resources die u hebt gemaakt opschon
 U kunt nu uw eigen Azure Time Series Insights Gen2-omgeving gaan maken. Aan de slag:
 
 > [!div class="nextstepaction"]
-> [Uw Azure Time Series Insights Gen2-omgeving plannen](time-series-insights-update-plan.md)
+> [Uw Azure Time Series Insights Gen2-omgeving plannen](./how-to-plan-your-environment.md)
 
 Meer informatie over het gebruik van de demo en de bijbehorende functies:
 
 > [!div class="nextstepaction"]
-> [De Azure Time Series Insights Gen2 Explorer](time-series-insights-update-explorer.md)
+> [De Azure Time Series Insights Gen2 Explorer](./concepts-ux-panels.md)

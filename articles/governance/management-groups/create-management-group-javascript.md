@@ -1,15 +1,15 @@
 ---
 title: 'Quickstart: Een beheergroep maken met JavaScript'
 description: In deze quickstart gebruikt u JavaScript om een beheergroep te maken om uw resources in een resourcehiërarchie in te delen.
-ms.date: 09/30/2020
+ms.date: 11/18/2020
 ms.topic: quickstart
 ms.custom: devx-track-js
-ms.openlocfilehash: 965e4b8f81a26cab8f6e34cab3e51d6a97f5a6a6
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: c1b800f150cebacf8d17785feb1bded5189f1574
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92676227"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886597"
 ---
 # <a name="quickstart-create-a-management-group-with-javascript"></a>Quickstart: Een beheergroep maken met JavaScript
 
@@ -71,7 +71,7 @@ Als u JavaScript wilt inschakelen om een query uit te voeren in Azure Resource G
        const createMG = async () => {
           const credentials = await authenticator.interactiveLogin();
           const client = new managementGroups.ManagementGroupsAPI(credentials);
-          const result = await client.createOrUpdate(
+          const result = await client.managementGroups.createOrUpdate(
              groupId: argv.groupID,
              {
                  displayName: argv.displayName
@@ -90,7 +90,7 @@ Als u JavaScript wilt inschakelen om een query uit te voeren in Azure Resource G
    node index.js --groupID "<NEW_MG_GROUP_ID>" --displayName "<NEW_MG_FRIENDLY_NAME>"
    ```
 
-   Zorg ervoor dat u elk token `<>` tijdelijke aanduiding vervangt door respectievelijk uw _beheergroep-id_ en _beschrijvende naam voor de beheergroep_ .
+   Zorg ervoor dat u elk token `<>` tijdelijke aanduiding vervangt door respectievelijk uw _beheergroep-id_ en _beschrijvende naam voor de beheergroep_.
 
    Wanneer het script probeert te verifiëren, wordt er een bericht weergegeven dat vergelijkbaar is met het volgende bericht in de terminal:
 

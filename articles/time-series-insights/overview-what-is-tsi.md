@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: overview
 ms.date: 10/02/2020
 ms.custom: seodec18
-ms.openlocfilehash: fa0416db440e6433829b8077b6988eeaa6a596ad
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 8fdbb42d06f26849d14e093c340c6d2457ee6ec9
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91667058"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95020092"
 ---
 # <a name="what-is-azure-time-series-insights-gen2"></a>Wat is Azure Time Series Insights Gen2
 
@@ -83,7 +83,7 @@ Met de introductie van deze belangrijke, industriële IoT-functionaliteiten bied
 | Opslag met meerdere lagen voor tijdreeksgegevens op IoT-schaal | Met een pijplijn voor de verwerking van gedeelde gegevens voor het opnemen van gegevens kunt u gegevens opnemen in zowel warme als koude archieven. Gebruik warme opslag voor interactieve query's en koude opslag voor het opslaan van grote hoeveelheden gegevens. Zie [query's](./concepts-query-overview.md) als u wilt profiteren van hoogwaardige, op assets gebaseerde query's. |
 | Time Series-model voor het contextualiseren van onbewerkte telemetriegegevens en het afleiden van inzichten op basis van assets | U kunt het tijdreeksmodel gebruiken om instanties, hiërarchieën, typen en variabelen voor uw tijdreeksgegevens te maken. Zie [Time Series-model](./concepts-model-overview.md) voor meer informatie over het Time Series-model.  |
 | Probleemloze en continue integratie met andere gegevensoplossingen | Gegevens in de koude opslag van Azure Time Series Insights Gen2 worden [opgeslagen](./concepts-storage.md) in opensource Apache Parquet-bestanden. Dit maakt gegevensintegratie mogelijk met andere gegevensoplossingen (intern of extern), voor scenario's met bijvoorbeeld business intelligence, geavanceerde machine learning en predictive analytics. |
-| Gegevens worden bijna in realtime verkend | De [Azure Time Series Insights Gen2](./time-series-insights-update-explorer.md) biedt gebruikers visualisatie voor alle gegevens die door de opnamepijplijn worden geleid. Nadat u verbinding hebt gemaakt met een gebeurtenisbron, kunt u gebeurtenisgegevens bekijken, verkennen en er query's op uitvoeren. Op deze manier kunt u nagaan of een apparaat gegevens naar verwachting verzendt. U kunt IoT-apparaten ook controleren op status, productiviteit en algehele effectiviteit. |
+| Gegevens worden bijna in realtime verkend | De [Azure Time Series Insights Gen2](./concepts-ux-panels.md) biedt gebruikers visualisatie voor alle gegevens die door de opnamepijplijn worden geleid. Nadat u verbinding hebt gemaakt met een gebeurtenisbron, kunt u gebeurtenisgegevens bekijken, verkennen en er query's op uitvoeren. Op deze manier kunt u nagaan of een apparaat gegevens naar verwachting verzendt. U kunt IoT-apparaten ook controleren op status, productiviteit en algehele effectiviteit. |
 | Uitbreidbaarheid en integratie | De Power BI Connector-integratie is via de optie **Exporteren** rechtstreeks beschikbaar in de Time Series Explorer-gebruikerservaring. Hierdoor kunnen klanten de tijdreeksquery's die ze in onze gebruikerservaring maken, rechtstreeks naar het Power BI-bureaublad exporteren en de tijdreeksgrafieken naast andere BI Analytics weergeven. Hiermee wordt een nieuwe klasse van scenario's mogelijk voor industriële IoT-ondernemingen die in Power BI hebben geïnvesteerd door in plaats van analyses afkomstig van verschillende gegevensbronnen één plek te bieden waar alles geïntegreerd is, waaronder IoT-tijdreeksen. |
 | Aangepaste toepassingen gebouwd op het Azure Time Series Insights Gen2-platform | Azure Time Series Insights Gen2 biedt ondersteuning voor de [JavaScript SDK](https://github.com/microsoft/tsiclient/blob/master/docs/API.md). De SDK biedt uitgebreide besturingselementen en vereenvoudigde toegang tot query's. Gebruik de SDK voor het bouwen van aangepaste IoT-toepassingen op basis van Azure Time Series Insights Gen2, die aansluiten op uw zakelijke behoeften. U kunt de [query-API's](./concepts-query-overview.md) van Azure Time Series Insights Gen2 ook rechtstreeks gebruiken om gegevens naar aangepaste IoT-toepassingen te sturen. |
 
@@ -92,9 +92,9 @@ Met de introductie van deze belangrijke, industriële IoT-functionaliteiten bied
 Aan de slag met Azure Time Series Insights Gen2:
 
 > [!div class="nextstepaction"]
-> [Snelstartgids](./time-series-insights-update-quickstart.md)
+> [Snelstartgids](./quickstart-explore-tsi.md)
 
 Informatie over use cases:
 
 > [!div class="nextstepaction"]
-> [Gebruikscases van Azure Time Series Insights Gen2](./time-series-insights-update-use-cases.md)
+> [Gebruikscases van Azure Time Series Insights Gen2](./overview-use-cases.md)

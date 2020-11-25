@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: overview
 ms.date: 09/30/2020
 ms.custom: seodec18
-ms.openlocfilehash: f395f96dfa48567f95a1c50cf5403d3cbb427cb7
-ms.sourcegitcommit: ffa7a269177ea3c9dcefd1dea18ccb6a87c03b70
+ms.openlocfilehash: cebe0e018b4483a9de1771fb3171effbbd5ca59c
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91597816"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95020058"
 ---
 # <a name="what-is-azure-time-series-insights-gen1"></a>Wat is Azure Time Series Insights Gen1?
 
@@ -33,7 +33,7 @@ Azure Time Series Insights heeft vier belangrijke taken:
 - Azure Time Series Insights biedt een out-of-the-box visualisatie via de Azure Time Series Insights Explorer.
 - Azure Time Series Insights biedt een queryservice, zowel in de Azure Time Series Insights Explorer die eenvoudig kunnen worden geïntegreerd voor het insluiten van tijdreeksgegevens in aangepaste toepassingen.
 
-Als u een toepassing bouwt voor intern verbruik of voor gebruik door externe klanten, kunt u Azure Time Series Insights als een back-end gebruiken. U kunt deze gebruiken om tijdreeksgegevens te indexeren, op te slaan en samen te voegen. Om een aangepaste visualisatie en gebruikerservaring samen te stellen, gebruikt u de [Client-SDK](https://github.com/microsoft/tsiclient/blob/master/docs/API.md). Azure Time Series Insights is ook voorzien van verschillende [Query-Api's](how-to-shape-query-json.md) om deze aangepaste scenario's mogelijk te maken.
+Als u een toepassing bouwt voor intern verbruik of voor gebruik door externe klanten, kunt u Azure Time Series Insights als een back-end gebruiken. U kunt deze gebruiken om tijdreeksgegevens te indexeren, op te slaan en samen te voegen. Om een aangepaste visualisatie en gebruikerservaring samen te stellen, gebruikt u de [Client-SDK](https://github.com/microsoft/tsiclient/blob/master/docs/API.md). Azure Time Series Insights is ook voorzien van verschillende [Query-Api's](./concepts-json-flattening-escaping-rules.md) om deze aangepaste scenario's mogelijk te maken.
 
 Tijdreeksgegevens tonen aan hoe een asset of proces verandert in de loop der tijd. Tijdreeksgegevens worden geïndexeerd door timestamps en tijd is de meest relevante as waarmee dergelijke gegevens zijn ingedeeld. Tijdreeksgegevens komen meestal binnen op volgorde en worden daarom doorgaans behandeld als een invoeging in plaats van een update van de database.
 

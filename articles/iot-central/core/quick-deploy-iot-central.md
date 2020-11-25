@@ -3,18 +3,17 @@ title: Snelstart - Een Azure IoT Central-app maken | Microsoft Docs
 description: Snelstart - Een nieuwe Azure IoT Central-app maken. Maak de toepassing met behulp van het gratis abonnement of een van de standaardabonnementen.
 author: viv-liu
 ms.author: viviali
-ms.date: 07/30/2020
+ms.date: 11/16/2020
 ms.topic: quickstart
 ms.service: iot-central
 services: iot-central
-ms.custom: mvc
 manager: corywink
-ms.openlocfilehash: 477da41bab48ee49727ec2a8c029e748d6e7f863
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: afe3e9812271f4b8e049fb2a53efd45fe746e514
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90987379"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94992808"
 ---
 # <a name="quickstart---create-an-azure-iot-central-application"></a>Snelstart - Een Azure IoT Central-app maken
 
@@ -43,11 +42,11 @@ Ga als volgt te werk om een nieuwe Azure IoT Central-toepassing wilt maken op ba
     ![Factureringsgegevens van Azure IoT Central](media/quick-deploy-iot-central/iotcentralcreate-billinginfo.png)
 
     > [!NOTE]
-    > Als u op de vorige pagina **Aangepaste app** hebt gekozen, ziet u een vervolgkeuzelijst voor een **toepassingssjabloon**. In de vervolgkeuzelijst kunnen andere sjablonen worden weergegeven die voor u beschikbaar zijn gesteld door uw organisatie. 
+    > Als u op de vorige pagina **Aangepaste app** hebt gekozen, ziet u een vervolgkeuzelijst voor een **toepassingssjabloon**. In de vervolgkeuzelijst kunnen andere sjablonen worden weergegeven die voor u beschikbaar zijn gesteld door uw organisatie.
 
     >[!IMPORTANT]
-    >De sjabloon **Aangepaste toepassing (verouderd)** (V2) is buiten gebruik gesteld, omdat alle mogelijkheden die eerder beschikbaar waren in de oude toepassingssjabloon, nu beschikbaar zijn in de nieuwe sjabloon **Aangepaste toepassing** (V3). 
-    
+    >De sjabloon **Aangepaste toepassing (verouderd)** (V2) is buiten gebruik gesteld, omdat alle mogelijkheden die eerder beschikbaar waren in de oude toepassingssjabloon, nu beschikbaar zijn in de nieuwe sjabloon **Aangepaste toepassing** (V3).
+
 1. Maak de toepassing met behulp van het gratis 7-daagse abonnement of een van de standaardabonnementen:
 
     - Toepassingen die u maakt met het *gratis* abonnement zijn gratis gedurende zeven dagen en ondersteunen maximaal vijf apparaten. U kunt ze op enig moment voor het aflopen van het abonnement overzetten naar een betaald abonnement.

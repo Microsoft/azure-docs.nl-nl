@@ -5,17 +5,17 @@ ms.author: mikben
 ms.date: 10/10/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 0559a9b763d273579373bb57922606f14ff6e6db
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: ab13e02c9154dbfc1bd28872f1bd6f993019a604
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94573866"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94915285"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
 - Een werkende [App voor bellen met Communication Services](../getting-started-with-calling.md).
-- Een [Teams implementatie](https://docs.microsoft.com/deployoffice/teams-install).
+- Een [Teams implementatie](/deployoffice/teams-install).
 
 ## <a name="enable-teams-interoperability"></a>Interoperabiliteit met Teams inschakelen
 
@@ -98,7 +98,7 @@ meetingButton.addEventListener("click", () => {
 
 ## <a name="get-the-meeting-context"></a>De context van de vergadering ophalen
 
-De context van Teams kan worden opgehaald met behulp van Graph API’s. Dit wordt beschreven in [Graph-documentatie](https://docs.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-beta&tabs=http).
+De context van Teams kan worden opgehaald met behulp van Graph API’s. Dit wordt beschreven in [Graph-documentatie](/graph/api/onlinemeeting-createorget?tabs=http&view=graph-rest-beta).
 
 U kunt ook de vereiste gegevens van de vergadering ophalen van de URL **Deelnemen aan vergadering** in de uitnodiging voor de vergadering zelf.
 
@@ -115,4 +115,3 @@ Open uw browser en ga naar http://localhost:8080/. U ziet nu het volgende:
 :::image type="content" source="../media/javascript/calling-javascript-app.png" alt-text="Schermopname van de voltooide JavaScript-toepassing.":::
 
 Voeg de context van Teams in het tekstvak in en druk op *Deelnemen aan Teams-vergadering* om deel te nemen aan de Teams-vergadering vanuit uw Communication Services-toepassing.
-

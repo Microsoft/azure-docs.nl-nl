@@ -9,18 +9,18 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: csharp
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: 618b2c6acb8792382adb4c067aa8f33003227091
-ms.sourcegitcommit: f5580dd1d1799de15646e195f0120b9f9255617b
+ms.openlocfilehash: 9fc34532818a742ef67e4b2532966874d083199d
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91532581"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959846"
 ---
 # <a name="quickstart-enroll-x509-devices-to-the-device-provisioning-service-using-c"></a>Snelstart: X.509-apparaten registreren bij Device Provisioning Service met behulp van C#
 
 [!INCLUDE [iot-dps-selector-quick-enroll-device-x509](../../includes/iot-dps-selector-quick-enroll-device-x509.md)]
 
-In deze snelstart wordt uitgelegd hoe u met C# programmatisch een [registratiegroep](concepts-service.md#enrollment-group) kunt maken die gebruikmaakt van tussenliggende of hoofd-CA X.509-certificaten. De inschrijvingsgroep wordt gemaakt met behulp van de [Microsoft Azure IoT-SDK voor .NET](https://github.com/Azure/azure-iot-sdk-csharp) en een C# .NET Core-voorbeeldtoepassing. Een registratiegroep beheert de toegang tot de inrichtingsservice voor apparaten die een gemeenschappelijk handtekeningcertificaat in hun certificaatketen delen. Zie [Apparaattoegang tot de inrichtingsservice beheren met X.509-certificaten](./concepts-security.md#controlling-device-access-to-the-provisioning-service-with-x509-certificates) voor meer informatie. Zie [Overzicht van beveiliging op basis van X.509-CA-certificaten](https://docs.microsoft.com/azure/iot-hub/iot-hub-x509ca-overview) voor meer informatie over het gebruik vanop X.509-certificaten gebaseerde Public Key Infrastructure (PKI) met Azure IoT Hub en Device Provisioning Service. 
+In deze snelstart wordt uitgelegd hoe u met C# programmatisch een [registratiegroep](concepts-service.md#enrollment-group) kunt maken die gebruikmaakt van tussenliggende of hoofd-CA X.509-certificaten. De inschrijvingsgroep wordt gemaakt met behulp van de [Microsoft Azure IoT-SDK voor .NET](https://github.com/Azure/azure-iot-sdk-csharp) en een C# .NET Core-voorbeeldtoepassing. Een registratiegroep beheert de toegang tot de inrichtingsservice voor apparaten die een gemeenschappelijk handtekeningcertificaat in hun certificaatketen delen. Zie [Apparaattoegang tot de inrichtingsservice beheren met X.509-certificaten](./concepts-x509-attestation.md#controlling-device-access-to-the-provisioning-service-with-x509-certificates) voor meer informatie. Zie [Overzicht van beveiliging op basis van X.509-CA-certificaten](../iot-hub/iot-hub-x509ca-overview.md) voor meer informatie over het gebruik vanop X.509-certificaten gebaseerde Public Key Infrastructure (PKI) met Azure IoT Hub en Device Provisioning Service. 
 
 Voor deze quickstart wordt aangenomen dat u al een IoT-hub en Device Provisioning Service-instantie hebt gemaakt. Als u deze resources nog niet hebt gemaakt, voert u de quickstart [IoT Hub Device Provisioning Service instellen met Azure Portal](./quick-setup-auto-provision.md) uit voordat u verdergaat met dit artikel.
 
@@ -44,7 +44,7 @@ De [Azure IoT C-SDK](https://github.com/Azure/azure-iot-sdk-c) bevat testhulpmid
 > Gebruik uitsluitend certificaten die zijn gemaakt met de SDK-hulpmiddelen voor ontwikkeltesten.
 > Gebruik deze certificaten niet in een productieomgeving.
 > Ze bevatten in code vastgelegde wachtwoorden, zoals *1234*, die na 30 dagen verlopen.
-> Zie [Een x.509-CA-certificaat ophalen](https://docs.microsoft.com/azure/iot-hub/iot-hub-x509ca-overview#how-to-get-an-x509-ca-certificate) in de documentatie van Azure IoT Hub voor meer informatie over het verkrijgen van certificaten die geschikt zijn voor productiegebruik.
+> Zie [Een x.509-CA-certificaat ophalen](../iot-hub/iot-hub-x509ca-overview.md#how-to-get-an-x509-ca-certificate) in de documentatie van Azure IoT Hub voor meer informatie over het verkrijgen van certificaten die geschikt zijn voor productiegebruik.
 >
 
 Voer de volgende stappen uit om met deze testhulpmiddelen certificaten te genereren:
@@ -79,7 +79,7 @@ Voor het voorbeeld in deze snelstart hebt u de verbindingsreeks voor de inrichti
 
 ## <a name="create-the-enrollment-group-sample"></a>Een voorbeeld van een registratiegroep maken 
 
-In deze sectie wordt beschreven hoe u een .NET Core-console-app maakt waarmee een inschrijvingsgroep aan uw inrichtingsservice wordt toegevoegd. Met enkele aanpassingen kunt u deze stappen ook volgen om een [Windows IoT Core](https://developer.microsoft.com/en-us/windows/iot) console-app te maken om aan de registratiegroep toe te voegen. Zie de [Windows IoT Core-documentatie voor ontwikkelaars](https://docs.microsoft.com/windows/iot-core/) voor meer informatie over ontwikkelen met IoT-Core.
+In deze sectie wordt beschreven hoe u een .NET Core-console-app maakt waarmee een inschrijvingsgroep aan uw inrichtingsservice wordt toegevoegd. Met enkele aanpassingen kunt u deze stappen ook volgen om een [Windows IoT Core](https://developer.microsoft.com/en-us/windows/iot) console-app te maken om aan de registratiegroep toe te voegen. Zie de [Windows IoT Core-documentatie voor ontwikkelaars](/windows/iot-core/) voor meer informatie over ontwikkelen met IoT-Core.
 
 1. Open Visual Studio en selecteer **Een nieuw project maken**. Kies in **Een nieuw project maken** de **Console-app (.NET Core)** voor een C#-projectsjabloon en selecteer **Volgende**.
 

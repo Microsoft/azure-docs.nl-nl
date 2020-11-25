@@ -8,12 +8,12 @@ ms.author: dademath
 ms.date: 07/28/2020
 ms.topic: include
 ms.service: azure-communication-services
-ms.openlocfilehash: d4ef8baa123f805d380b14fa24abff65903cb41d
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: daf2d675bbbee324769b6e1e8d8d34587d37c72f
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90943656"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94886618"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -37,7 +37,7 @@ Zie de documentatie over de concepten [client-serverarchitectuur](../../concepts
 
 ### <a name="azure-functions-set-up"></a>Azure Functions instellen
 
-Eerst gaat u de basisstructuur voor uw Azure-functie instellen. Stapsgewijze instructies voor deze instellingen vindt u hier: [Een functie maken met behulp van Visual Studio Code](https://docs.microsoft.com/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-javascript)
+Eerst gaat u de basisstructuur voor uw Azure-functie instellen. Stapsgewijze instructies voor deze instellingen vindt u hier: [Een functie maken met behulp van Visual Studio Code](../../../azure-functions/create-first-function-vs-code-csharp.md?pivots=programming-language-javascript)
 
 Voor de Azure-functie is de volgende configuratie vereist:
 
@@ -46,7 +46,7 @@ Voor de Azure-functie is de volgende configuratie vereist:
 - Autorisatieniveau: Anoniem (dit kan later worden gewijzigd als u de voorkeur geeft aan een ander autorisatiemodel)
 - Functienaam: Door de gebruiker gedefinieerd
 
-Na het volgen van de [instructies voor Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-javascript) met de bovenstaande configuratie, moet u een project in Visual Studio Code voor de Azure-functie hebben dat een bestand `index.js` heeft dat de functie zelf bevat. De code in dit bestand moet er als volgt uitzien:
+Na het volgen van de [instructies voor Azure Functions](../../../azure-functions/create-first-function-vs-code-csharp.md?pivots=programming-language-javascript) met de bovenstaande configuratie, moet u een project in Visual Studio Code voor de Azure-functie hebben dat een bestand `index.js` heeft dat de functie zelf bevat. De code in dit bestand moet er als volgt uitzien:
 
 ```javascript
 
@@ -128,15 +128,15 @@ Voor bestaande `CommunicationUser` van Communication Services kunt u de stap voo
 
 ## <a name="test-the-azure-function"></a>De Azure-functie testen
 
-Test de Azure-functie lokaal met behulp van `F5`. Hiermee initialiseert u de Azure-functie lokaal en maakt u deze toegankelijk via: `http://localhost:7071/api/FUNCTION_NAME`. Bekijk aanvullende documentatie over [lokaal uitvoeren](https://docs.microsoft.com/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-javascript#run-the-function-locally)
+Test de Azure-functie lokaal met behulp van `F5`. Hiermee initialiseert u de Azure-functie lokaal en maakt u deze toegankelijk via: `http://localhost:7071/api/FUNCTION_NAME`. Bekijk aanvullende documentatie over [lokaal uitvoeren](../../../azure-functions/create-first-function-vs-code-csharp.md?pivots=programming-language-javascript#run-the-function-locally)
 
 Open de URL in uw browser en controleer of er een antwoordtekst wordt weergeven met de gebruikers-id, het token en de vervaltijd van het token voor Communication.
 
-:::image type="content" source="../media/trusted-service-sample-response.png" alt-text="Diagram voor architectuur van een vertrouwde service":::
+:::image type="content" source="../media/trusted-service-sample-response.png" alt-text="Schermopname met een voorbeeldantwoord voor de gemaakte Azure-functie.":::
 
 ## <a name="deploy-the-function-to-azure"></a>De functie implementeren in Azure
 
-Als u uw Azure-functie wilt implementeren, kunt u daarvoor [stapsgewijze instructies volgen](https://docs.microsoft.com/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-javascript#sign-in-to-azure)
+Als u uw Azure-functie wilt implementeren, kunt u daarvoor [stapsgewijze instructies volgen](../../../azure-functions/create-first-function-vs-code-csharp.md?pivots=programming-language-javascript#sign-in-to-azure)
 
 Doorgaans moet u dan het volgende doen:
 1. Meld u vanuit Visual Studio aan bij Azure
@@ -151,4 +151,4 @@ Voer de Azure-functie uit via de URL `http://<function-appn-ame>.azurewebsites.n
 
 U kunt de URL vinden door in Visual Studio Code met de rechtermuisknop op de functie te klikken en de functie-URL te kopiëren.
 
-Meer informatie over het [uitvoeren van uw Azure-functie](https://docs.microsoft.com/azure/azure-functions/functions-create-first-function-vs-code?pivots=programming-language-javascript#run-the-function-in-azure)
+Meer informatie over het [uitvoeren van uw Azure-functie](../../../azure-functions/create-first-function-vs-code-csharp.md?pivots=programming-language-javascript#run-the-function-in-azure)

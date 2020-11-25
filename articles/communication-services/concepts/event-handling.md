@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 67c701946eedf85176b3d14b09d3e723c4c74285
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: e661b99e3c5028f40ea69ddedc22c7ee2895acec
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92072115"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888722"
 ---
 # <a name="event-handling-in-azure-communication-services"></a>Afhandeling van gebeurtenissen in Azure Communication Services
 
@@ -22,13 +22,13 @@ ms.locfileid: "92072115"
 
 Azure Communication Services kan worden geïntegreerd met [Azure Event Grid](https://azure.microsoft.com/services/event-grid/) voor het leveren van real-time gebeurtenismeldingen op een betrouwbare, schaalbare en veilige manier. Het doel van dit artikel is om u te helpen uw toepassingen te configureren om te luisteren naar Communication Services-gebeurtenissen. U kunt bijvoorbeeld een database bijwerken, een werk-item maken en een push-melding verzenden wanneer een SMS-bericht wordt ontvangen door een telefoonnummer dat is gekoppeld aan uw Communication Service-resource.
 
-Azure Event Grid is een volledig beheerde service voor gebeurtenisrouting, die gebruikmaakt van een publicatie/abonnementmodel. Event Grid heeft ingebouwde ondersteuning voor Azure-Services, zoals [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview) en [Azure Logic-apps](https://docs.microsoft.com/azure/azure-functions/functions-overview). Het kan gebeurteniswaarschuwingen leveren aan niet-Azure-Services met behulp van webhooks. Zie [Een inleiding tot Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview) voor een volledige lijst met gebeurtenisverwerkers die Event Grid ondersteunt.
+Azure Event Grid is een volledig beheerde service voor gebeurtenisrouting, die gebruikmaakt van een publicatie/abonnementmodel. Event Grid heeft ingebouwde ondersteuning voor Azure-Services, zoals [Azure Functions](../../azure-functions/functions-overview.md) en [Azure Logic-apps](../../azure-functions/functions-overview.md). Het kan gebeurteniswaarschuwingen leveren aan niet-Azure-Services met behulp van webhooks. Zie [Een inleiding tot Azure Event Grid](../../event-grid/overview.md) voor een volledige lijst met gebeurtenisverwerkers die Event Grid ondersteunt.
 
 :::image type="content" source="https://docs.microsoft.com/azure/event-grid/media/overview/functional-model.png" alt-text="Diagram waarin het gebeurtenismodel van Azure Event Grid wordt weergegeven.":::
 
 ## <a name="events-types"></a>Gebeurtenistypen
 
-Gebeurtenisraster maakt gebruik van [gebeurtenisabonnementen](https://docs.microsoft.com/azure/event-grid/concepts#event-subscriptions) om gebeurtenisberichten te routen naar abonnees. 
+Gebeurtenisraster maakt gebruik van [gebeurtenisabonnementen](../../event-grid/concepts.md#event-subscriptions) om gebeurtenisberichten te routen naar abonnees. 
 
 Azure Communication Services verzendt de volgende gebeurtenistypen:
 
@@ -50,7 +50,7 @@ U kunt de Azure Portal of Azure CLI gebruiken om u te abonneren op gebeurtenisse
 
 ## <a name="event-subjects"></a>Gebeurtenisonderwerpen
 
-Het veld `subject` van alle Communication Services-gebeurtenissen identificeert de gebruiker, het telefoonnummer of de entiteit waarop de gebeurtenis is gericht. Veelgebruikte voorvoegsels worden gebruikt om eenvoudige [Event Grid-filtering](https://docs.microsoft.com/azure/event-grid/event-filtering)toe te staan.
+Het veld `subject` van alle Communication Services-gebeurtenissen identificeert de gebruiker, het telefoonnummer of de entiteit waarop de gebeurtenis is gericht. Veelgebruikte voorvoegsels worden gebruikt om eenvoudige [Event Grid-filtering](../../event-grid/event-filtering.md)toe te staan.
 
 | Onderwerp voorvoegsel                              | Communication Service-entiteit |
 | ------------------------------------------- | ---------------------------- |
@@ -351,6 +351,6 @@ Deze sectie bevat een voorbeeld van hoe de gegevens voor elke gebeurtenis eruitz
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [Wat is Event Grid?](https://docs.microsoft.com/azure/event-grid/overview) voor een inleiding tot Azure Event Grid.
-* Zie voor een inleiding tot Azure Event Grid concepten, de [Concepten in Event Grid?](https://docs.microsoft.com/azure/event-grid/concepts)
-* Voor een inleiding tot Azure Event Grid SystemTopics raadpleegt u [Systeem onderwerpen in Azure Event Grid?](https://docs.microsoft.com/azure/event-grid/system-topics)
+* Zie [Wat is Event Grid?](../../event-grid/overview.md) voor een inleiding tot Azure Event Grid.
+* Zie voor een inleiding tot Azure Event Grid concepten, de [Concepten in Event Grid?](../../event-grid/concepts.md)
+* Voor een inleiding tot Azure Event Grid SystemTopics raadpleegt u [Systeem onderwerpen in Azure Event Grid?](../../event-grid/system-topics.md)

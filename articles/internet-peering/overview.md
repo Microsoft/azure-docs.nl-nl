@@ -8,12 +8,12 @@ ms.service: internet-peering
 ms.topic: overview
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 576bc3e37711851acd7d6c7ac811a10e40080710
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 34d340881e4f612544f4b3d68d3c1f3da598cab3
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "75908921"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023425"
 ---
 # <a name="internet-peering-overview"></a>Overzicht van internetpeering
 
@@ -53,4 +53,4 @@ Zie [Veelgestelde vragen over internetpeering](faqs.md) voor veelgestelde vragen
 
 * Voor meer informatie over de stappen voor het instellen van directe peering met Microsoft, volgt u het [directe peering-scenario](walkthrough-direct-all.md)
 * Voor meer informatie over de stappen voor het instellen van Exchange-peering met Microsoft, volgt u de [kennismaking met Exchange-peering](walkthrough-exchange-all.md)
-* Informatie over enkele van de andere belangrijke [netwerkmogelijkheden](https://docs.microsoft.com/azure/networking/networking-overview) van Azure.
+* Informatie over enkele van de andere belangrijke [netwerkmogelijkheden](../networking/networking-overview.md) van Azure.

@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ab14413de1f999747e5b3fb58b505e0a9258a55
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 7cd2aa5e9ff8cbaeead69f11d2e3de7f760b53ec
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92441212"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96168641"
 ---
 # <a name="saml-authentication-with-azure-active-directory"></a>SAML-verificatie met Azure Active Directory
 
@@ -53,8 +53,8 @@ Hoewel een van de belangrijkste voor beelden van SAML-adressen SSO is, met name 
 
 ## <a name="implement-saml-authentication-with-azure-ad"></a>SAML-verificatie implementeren met Azure AD
 
-* [Zelf studies voor het integreren van SaaS-toepassingen met Azure Active Directory](https://docs.microsoft.com/azure/active-directory/saas-apps/tutorial-list) 
+* [Zelf studies voor het integreren van SaaS-toepassingen met Azure Active Directory](../saas-apps/tutorial-list.md) 
 
-* [Eenmalige aanmelding op basis van SAML configureren voor niet-galerie toepassingen](https://docs.microsoft.com/azure/active-directory/manage-apps/add-non-gallery-app) 
+* [Eenmalige aanmelding op basis van SAML configureren voor niet-galerie toepassingen](../manage-apps/add-application-portal.md) 
 
-* [Hoe Azure Active Directory het SAML-protocol gebruikt](https://docs.microsoft.com/azure/active-directory/develop/active-directory-saml-protocol-reference)
+* [Hoe Azure Active Directory het SAML-protocol gebruikt](../develop/active-directory-saml-protocol-reference.md)

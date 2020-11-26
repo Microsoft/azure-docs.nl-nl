@@ -4,12 +4,12 @@ description: Meer informatie over de verschillende manieren waarop u code kunt i
 ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 04/25/2019
-ms.openlocfilehash: 3988f30d0e6429a8cac450711d4033e4b2603d46
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: 7a75408008a90a2c40553b1f6c5c196775a48e61
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92900172"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96168097"
 ---
 # <a name="deployment-technologies-in-azure-functions"></a>Implementatie technologieën in Azure Functions
 
@@ -86,7 +86,7 @@ Om externe Build op Linux in te scha kelen, moet u de volgende [Toepassings inst
 * `ENABLE_ORYX_BUILD=true`
 * `SCM_DO_BUILD_DURING_DEPLOYMENT=true`
 
-Standaard worden zowel [Azure functions core tools](functions-run-local.md) als de [Azure functions-extensie voor Visual Studio code](functions-create-first-function-vs-code.md#publish-the-project-to-azure) externe builds uitgevoerd bij het implementeren naar Linux. Daarom maken beide hulpprogram ma's deze instellingen automatisch voor u in Azure.
+Standaard worden zowel [Azure functions core tools](functions-run-local.md) als de [Azure functions-extensie voor Visual Studio code](./create-first-function-vs-code-csharp.md#publish-the-project-to-azure) externe builds uitgevoerd bij het implementeren naar Linux. Daarom maken beide hulpprogram ma's deze instellingen automatisch voor u in Azure.
 
 Wanneer apps op afstand zijn gebouwd op Linux, worden ze [uitgevoerd vanuit het implementatie pakket](run-functions-from-deployment-package.md).
 
@@ -185,7 +185,7 @@ In de portal-editor kunt u de bestanden in uw functie-app rechtstreeks bewerken 
 
 >__Wanneer u deze gebruikt:__ De portal is een goede manier om aan de slag te gaan met Azure Functions. Voor een intensere ontwikkel werkzaamheden wordt u aangeraden een van de volgende client hulpprogramma's te gebruiken:
 >
->* [Visual Studio Code](functions-create-first-function-vs-code.md)
+>* [Visual Studio Code](./create-first-function-vs-code-csharp.md)
 >* [Azure Functions Core Tools (opdracht regel)](functions-run-local.md)
 >* [Visual Studio](functions-create-your-first-function-visual-studio.md)
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.subservice: fundamentals
 ms.date: 10/31/2019
 ms.author: martinco
-ms.openlocfilehash: baa0aa01c94c4deb35db8a59f7b4f81224ae1fd3
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 5f529e6148463ae384791985659378cb9d0a5046
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94836985"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96168862"
 ---
 # <a name="azure-active-directory-authentication-management-operations-reference-guide"></a>Naslag Gids voor verificatie beheer van Azure Active Directory
 
@@ -160,7 +160,7 @@ Het bieden van een gestandaardiseerd mechanisme voor eenmalige aanmelding bij de
 > [!NOTE]
 > Als u niet beschikt over een mechanisme voor het detecteren van niet-beheerde toepassingen in uw organisatie, kunt u het beste een detectie proces implementeren met behulp van een Cloud Access Security Broker-oplossing (CASB), zoals [Microsoft Cloud app Security](https://www.microsoft.com/enterprise-mobility-security/cloud-app-security).
 
-Ten slotte, als u een Azure AD-App-galerie hebt en toepassingen gebruikt die ondersteuning bieden voor eenmalige aanmelding met Azure AD, wordt u aangeraden [de toepassing in de app-galerie te vermelden](../azuread-dev/howto-app-gallery-listing.md).
+Ten slotte, als u een Azure AD-App-galerie hebt en toepassingen gebruikt die ondersteuning bieden voor eenmalige aanmelding met Azure AD, wordt u aangeraden [de toepassing in de app-galerie te vermelden](../develop/v2-howto-app-gallery-listing.md).
 
 #### <a name="single-sign-on-recommended-reading"></a>Eenmalige aanmelding aanbevolen lezen
 
@@ -255,7 +255,7 @@ Voorwaardelijke toegang is een essentieel hulp programma voor het verbeteren van
 
 #### <a name="conditional-access-recommended-reading"></a>Voorwaardelijke toegang aanbevolen lezen
 
-- [Aanbevolen procedures voor voorwaardelijke toegang in Azure Active Directory](../conditional-access/best-practices.md)
+- [Aanbevolen procedures voor voorwaardelijke toegang in Azure Active Directory](../conditional-access/overview.md)
 - [Configuraties voor identiteiten en apparaattoegang](/microsoft-365/enterprise/microsoft-365-policies-configurations)
 - [Verwijzing naar de Azure Active Directory-instellingen voor voorwaardelijke toegang](../conditional-access/concept-conditional-access-conditions.md)
 - [Algemeen beleid voor voorwaardelijke toegang](../conditional-access/concept-conditional-access-policy-common.md)

@@ -4,12 +4,12 @@ description: Meer informatie over het ontwikkelen van functies met python
 ms.topic: article
 ms.date: 11/4/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 7d97405a0b75129ddb0da581955728b393bf49ca
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 8254abda68949e6884143316d4b29b07ade129dc
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94539070"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96167842"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Ontwikkelaarshandleiding voor Azure Functions Python
 
@@ -19,7 +19,7 @@ Als een python-ontwikkelaar bent u mogelijk ook geïnteresseerd in een van de vo
 
 | Aan de slag | Concepten| Scenario's/voor beelden |
 | -- | -- | -- | 
-| <ul><li>[Python-functie met Visual Studio code](./functions-create-first-function-vs-code.md?pivots=programming-language-python)</li><li>[Python-functie met Terminal/opdracht prompt](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-python)</li></ul> | <ul><li>[Ontwikkelaarsgids](functions-reference.md)</li><li>[Hostingopties](functions-scale.md)</li><li>[Prestatie &nbsp; overwegingen](functions-best-practices.md)</li></ul> | <ul><li>[Classificatie van afbeeldingen met PyTorch](machine-learning-pytorch.md)</li><li>[Voor beeld van Azure Automation](/samples/azure-samples/azure-functions-python-list-resource-groups/azure-functions-python-sample-list-resource-groups/)</li><li>[Machine Learning met TensorFlow](functions-machine-learning-tensorflow.md)</li><li>[Bladeren door python-voor beelden](/samples/browse/?products=azure-functions&languages=python)</li></ul> |
+| <ul><li>[Python-functie met Visual Studio code](./create-first-function-vs-code-csharp.md?pivots=programming-language-python)</li><li>[Python-functie met Terminal/opdracht prompt](./create-first-function-cli-csharp.md?pivots=programming-language-python)</li></ul> | <ul><li>[Ontwikkelaarsgids](functions-reference.md)</li><li>[Hostingopties](functions-scale.md)</li><li>[Prestatie &nbsp; overwegingen](functions-best-practices.md)</li></ul> | <ul><li>[Classificatie van afbeeldingen met PyTorch](machine-learning-pytorch.md)</li><li>[Voor beeld van Azure Automation](/samples/azure-samples/azure-functions-python-list-resource-groups/azure-functions-python-sample-list-resource-groups/)</li><li>[Machine Learning met TensorFlow](functions-machine-learning-tensorflow.md)</li><li>[Bladeren door python-voor beelden](/samples/browse/?products=azure-functions&languages=python)</li></ul> |
 
 ## <a name="programming-model"></a>Programmeermodel
 
@@ -93,22 +93,22 @@ De aanbevolen mapstructuur voor een python functions-project ziet eruit als in h
 ```
 De hoofdmap van het project (<project_root>) kan de volgende bestanden bevatten:
 
-* *local.settings.jsop* : wordt gebruikt voor het opslaan van app-instellingen en verbindings reeksen wanneer deze lokaal worden uitgevoerd. Dit bestand wordt niet gepubliceerd naar Azure. Zie [Local. settings. File](functions-run-local.md#local-settings-file)voor meer informatie.
-* *requirements.txt* : bevat de lijst met Python-pakketten die door het systeem wordt geïnstalleerd bij het publiceren naar Azure.
-* *host.jsop* : bevat globale configuratie opties die van invloed zijn op alle functies in een functie-app. Dit bestand wordt gepubliceerd naar Azure. Niet alle opties worden ondersteund bij het lokaal uitvoeren. Zie [host.jsvoor](functions-host-json.md)meer informatie.
-* *. vscode/* : (optioneel) bevat de configuratie van Store vscode. Zie [VSCode-instelling](https://code.visualstudio.com/docs/getstarted/settings)voor meer informatie.
-* *. venv/* : (optioneel) bevat een virtuele python-omgeving die wordt gebruikt voor lokale ontwikkeling.
-* *Dockerfile* : (optioneel) gebruikt bij het publiceren van uw project in een [aangepaste container](functions-create-function-linux-custom-image.md).
-* testen */* : (optioneel) bevat de test cases van uw functie-app.
-* *. funcignore* : (optioneel) declareert bestanden die niet naar Azure mogen worden gepubliceerd. Normaal gesp roken bevat dit bestand `.vscode/` het negeren van de instelling van uw editor, het `.venv/` negeren van lokale python virtuele omgeving, het `tests/` negeren van test cases en `local.settings.json` om te voor komen dat lokale app-instellingen worden gepubliceerd.
+* *local.settings.jsop*: wordt gebruikt voor het opslaan van app-instellingen en verbindings reeksen wanneer deze lokaal worden uitgevoerd. Dit bestand wordt niet gepubliceerd naar Azure. Zie [Local. settings. File](functions-run-local.md#local-settings-file)voor meer informatie.
+* *requirements.txt*: bevat de lijst met Python-pakketten die door het systeem wordt geïnstalleerd bij het publiceren naar Azure.
+* *host.jsop*: bevat globale configuratie opties die van invloed zijn op alle functies in een functie-app. Dit bestand wordt gepubliceerd naar Azure. Niet alle opties worden ondersteund bij het lokaal uitvoeren. Zie [host.jsvoor](functions-host-json.md)meer informatie.
+* *. vscode/*: (optioneel) bevat de configuratie van Store vscode. Zie [VSCode-instelling](https://code.visualstudio.com/docs/getstarted/settings)voor meer informatie.
+* *. venv/*: (optioneel) bevat een virtuele python-omgeving die wordt gebruikt voor lokale ontwikkeling.
+* *Dockerfile*: (optioneel) gebruikt bij het publiceren van uw project in een [aangepaste container](functions-create-function-linux-custom-image.md).
+* testen */*: (optioneel) bevat de test cases van uw functie-app.
+* *. funcignore*: (optioneel) declareert bestanden die niet naar Azure mogen worden gepubliceerd. Normaal gesp roken bevat dit bestand `.vscode/` het negeren van de instelling van uw editor, het `.venv/` negeren van lokale python virtuele omgeving, het `tests/` negeren van test cases en `local.settings.json` om te voor komen dat lokale app-instellingen worden gepubliceerd.
 
 Elke functie heeft een eigen code bestand en een bindings configuratie bestand (function.jsaan).
 
-Wanneer u uw project implementeert in een functie-app in azure, moet de volledige inhoud van de map van het hoofd project ( *<project_root>* ) worden opgenomen in het pakket, maar niet in de map zelf. Dit betekent dat u zich `host.json` in de hoofdmap van het pakket moet bevinden. U wordt aangeraden uw tests in een map samen met andere functies te onderhouden, in dit voor beeld `tests/` . Zie [unit testen](#unit-testing)voor meer informatie.
+Wanneer u uw project implementeert in een functie-app in azure, moet de volledige inhoud van de map van het hoofd project (*<project_root>*) worden opgenomen in het pakket, maar niet in de map zelf. Dit betekent dat u zich `host.json` in de hoofdmap van het pakket moet bevinden. U wordt aangeraden uw tests in een map samen met andere functies te onderhouden, in dit voor beeld `tests/` . Zie [unit testen](#unit-testing)voor meer informatie.
 
 ## <a name="import-behavior"></a>Gedrag bij importeren
 
-U kunt modules in uw functie code importeren met behulp van absolute en relatieve verwijzingen. Op basis van de mappen structuur die hierboven wordt weer gegeven, werkt de volgende invoer vanuit het functie bestand *<project_root> \Mijn \_ eerste \_ functie \\ _ \_ init \_ \_ . py* :
+U kunt modules in uw functie code importeren met behulp van absolute en relatieve verwijzingen. Op basis van de mappen structuur die hierboven wordt weer gegeven, werkt de volgende invoer vanuit het functie bestand *<project_root> \Mijn \_ eerste \_ functie \\ _ \_ init \_ \_ . py*:
 
 ```python
 from shared_code import my_first_helper_function #(absolute)
@@ -491,7 +491,7 @@ func azure functionapp publish <APP_NAME>
 
 Vervang door `<APP_NAME>` de naam van uw functie-app in Azure.
 
-Met de [extensie Azure functions voor Visual Studio code](functions-create-first-function-vs-code.md#publish-the-project-to-azure) wordt ook standaard een externe build aangevraagd.
+Met de [extensie Azure functions voor Visual Studio code](./create-first-function-vs-code-csharp.md#publish-the-project-to-azure) wordt ook standaard een externe build aangevraagd.
 
 ### <a name="local-build"></a>Lokale build
 
@@ -533,7 +533,7 @@ func azure functionapp publish <APP_NAME> --no-build
 
 Vervang door `<APP_NAME>` de naam van uw functie-app in Azure.
 
-## <a name="unit-testing"></a>Eenheids tests
+## <a name="unit-testing"></a>Moduletests
 
 Functies die zijn geschreven in python kunnen worden getest als andere python-code met behulp van standaard test raamwerken. Voor de meeste bindingen is het mogelijk om een invoer object voor een model te maken door een instantie van een geschikte klasse te maken vanuit het `azure.functions` pakket. Omdat het [`azure.functions`](https://pypi.org/project/azure-functions/) pakket niet onmiddellijk beschikbaar is, moet u het installeren via uw `requirements.txt` bestand zoals beschreven in de sectie [pakket beheer](#package-management) hierboven.
 

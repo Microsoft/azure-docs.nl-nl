@@ -14,18 +14,18 @@ ms.topic: how-to
 ms.date: 10/15/2020
 ms.author: hahamil
 ms.reviewer: marsma
-ms.openlocfilehash: 7e53e21b6d929e2f0ba9a2e23e4e8e1b2278f828
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 3f5791bfcf6547b7fc4e84bee3d4c1c49453af9c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92209634"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96169491"
 ---
 # <a name="how-to-enable-cross-app-sso-on-android-using-msal"></a>Procedure: cross-app SSO inschakelen op Android met behulp van MSAL
 
 Eenmalige aanmelding (SSO) stelt gebruikers in staat om hun referenties één keer in te voeren en deze referenties automatisch te laten werken in toepassingen.
 
-Met het [micro soft Identity-platform](/azure/active-directory/develop/) en de micro soft Authentication Library (MSAL) kunt u SSO inschakelen in uw eigen app-pakket. Met de functies van de Broker en de verificator kunt u SSO uitbreiden over het hele apparaat.
+Met het [micro soft Identity-platform](./index.yml) en de micro soft Authentication Library (MSAL) kunt u SSO inschakelen in uw eigen app-pakket. Met de functies van de Broker en de verificator kunt u SSO uitbreiden over het hele apparaat.
 
 In deze procedure leert u hoe u de Sdk's kunt configureren die door uw toepassing worden gebruikt om eenmalige aanmelding te bieden aan uw klanten.
 
@@ -33,7 +33,7 @@ In deze procedure leert u hoe u de Sdk's kunt configureren die door uw toepassin
 
 In deze procedure wordt ervan uitgegaan dat u weet hoe u:
 
-- Richt uw app in met behulp van de Azure Portal. Zie de instructies voor het maken van een app in [de Android-zelf studie](https://docs.microsoft.com/azure/active-directory/develop/tutorial-v2-android#create-a-project) voor meer informatie over dit onderwerp.
+- Richt uw app in met behulp van de Azure Portal. Zie de instructies voor het maken van een app in [de Android-zelf studie](./tutorial-v2-android.md#create-a-project) voor meer informatie over dit onderwerp.
 - Integreer uw toepassing met de [micro soft-verificatie bibliotheek voor Android](https://github.com/AzureAD/microsoft-authentication-library-for-android).
 
 ## <a name="methods-for-single-sign-on"></a>Methoden voor eenmalige aanmelding
@@ -120,7 +120,7 @@ keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%\.android\debug.k
 Nadat u een hand tekening-hash hebt gegenereerd met het *hulp programma*, gebruikt u de Azure Portal om de omleidings-URI te genereren:
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) en selecteer uw Android-app in **app-registraties**.
-1. Selecteer **verificatie**  >  **een platform**  >  **Android**toevoegen.
+1. Selecteer **verificatie**  >  **een platform**  >  **Android** toevoegen.
 1. In het deel venster **uw Android-app configureren** dat wordt geopend, voert u de **hand tekening-hash** in die u eerder hebt gegenereerd en een **pakket naam**.
 1. Selecteer de knop **configureren** .
 
@@ -159,7 +159,7 @@ Als er een met de fout code wordt weer geven `MsalClientException` `"BROKER_BIND
 Het is mogelijk niet onmiddellijk duidelijk dat de integratie van de Broker werkt, maar u kunt de volgende stappen gebruiken om te controleren:
 
 1. Voltooi op uw Android-apparaat een aanvraag met behulp van de Broker.
-1. Zoek in de instellingen op uw Android-apparaat naar een nieuw gemaakt account dat overeenkomt met het account waarmee u bent geverifieerd. Het account moet van het type *work-account*zijn.
+1. Zoek in de instellingen op uw Android-apparaat naar een nieuw gemaakt account dat overeenkomt met het account waarmee u bent geverifieerd. Het account moet van het type *work-account* zijn.
 
 U kunt het account uit instellingen verwijderen als u de test wilt herhalen.
 

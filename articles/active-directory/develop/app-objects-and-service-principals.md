@@ -13,19 +13,19 @@ ms.date: 07/22/2020
 ms.author: ryanwi
 ms.custom: aaddev, identityplatformtop40
 ms.reviewer: sureshja
-ms.openlocfilehash: db25e0a9ebe01a45c594fe214efcdd3551cf6c14
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7fe48cf28ab3004087e2b022d7a9eca69a1e58e2
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91449366"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96169627"
 ---
 # <a name="application-and-service-principal-objects-in-azure-active-directory"></a>Toepassings- en service-principal-objecten in Azure Active Directory
 
 In dit artikel worden de registratie van toepassingen, toepassings objecten en service-principals in Azure Active Directory beschreven: wat het zijn, hoe ze worden gebruikt en hoe ze met elkaar zijn verbonden. Er wordt ook een scenario met meerdere tenants weer gegeven ter illustratie van de relatie tussen het toepassings object van een toepassing en de bijbehorende service-principal-objecten.
 
 ## <a name="application-registration"></a>Een toepassing registreren
-Als u identiteits-en toegangs beheer functies wilt overdragen aan Azure AD, moet een toepassing zijn geregistreerd bij een Azure AD- [Tenant](developer-glossary.md#tenant). Wanneer u uw toepassing registreert bij Azure AD, maakt u een identiteits configuratie voor uw toepassing waarmee deze kan worden geïntegreerd met Azure AD. Wanneer u een app registreert in de [Azure Portal][AZURE-Portal], kiest u of deze één Tenant is (alleen toegankelijk in uw Tenant) of multi tenant (toegankelijk voor in andere tenants) en kunt u eventueel een omleidings-URI instellen (waarbij het toegangs token wordt verzonden naar).
+Als u identiteits-en toegangs beheer functies wilt overdragen aan Azure AD, moet een toepassing zijn geregistreerd bij een Azure AD- [Tenant](developer-glossary.md#tenant). Wanneer u uw toepassing registreert bij Azure AD, maakt u een identiteits configuratie voor uw toepassing waarmee deze kan worden geïntegreerd met Azure AD. Wanneer u een app registreert in de [Azure Portal][AZURE-Portal], kiest u of deze één Tenant is (alleen toegankelijk in uw Tenant) of multi tenant (toegankelijk in andere tenants) en kunt u eventueel een omleidings-URI instellen (waarbij het toegangs token wordt verzonden naar).
 
 :::image type="content" source="media/app-objects-and-service-principals/app-registration.png" alt-text="Scherm afbeelding van het Azure Portal een toepassings venster registreren":::
 

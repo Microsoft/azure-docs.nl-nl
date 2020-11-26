@@ -37,6 +37,8 @@
           href: how-to-automatic-language-detection.md
         - name: De API voor transcriptie in batch gebruiken
           href: batch-transcription.md
+        - name: Uitspraak evalueren
+          href: how-to-pronunciation-assessment.md
     - name: Zelfstudies
       items:
         - name: Nauwkeurigheid verbeteren met tenantmodellen

@@ -6,12 +6,12 @@ services: container-service
 ms.topic: quickstart
 ms.date: 10/06/2020
 ms.custom: mvc, seo-javascript-october2019, devx-track-azurecli
-ms.openlocfilehash: 30c00b1dfda3e30f047faf0deed7151aaf8c3fae
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 606de7c07f2760ca678563ccf1900fc1bb915c1a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92745785"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96003715"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-the-azure-portal"></a>Quickstart: Een AKS-cluster (Azure Kubernetes Service) implementeren met Azure Portal
 
@@ -31,33 +31,33 @@ Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azur
 
 Voltooi de volgende stappen om een AKS-cluster te maken:
 
-1. Selecteer in het menu van de Azure-portal of op de **startpagina** de optie **Een resource maken** .
+1. Selecteer in het menu van de Azure-portal of op de **startpagina** de optie **Een resource maken**.
 
-2. Selecteer **Containers** >  **Kubernetes-service** .
+2. Selecteer **Containers** >  **Kubernetes-service**.
 
 3. Configureer op de pagina **Basisprincipes** de volgende opties:
-    - **Projectgegevens** : selecteer een Azure- **abonnement** , en selecteer of maak vervolgens een Azure- **resourcegroep** , zoals *myResourceGroup* .
-    - **Clusterdetails** : Voer een **Kubernetes-clusternaam** in, zoals *myAKSCluster* . Selecteer een **Regio** en **Kubernetes-versie** voor het AKS-cluster.
-    - **Primaire knooppuntgroep** : selecteer een **VM-knooppuntgrootte** voor de AKS-knooppunten. De VM-grootte kan *niet* meer worden gewijzigd als een AKS-cluster eenmaal is geïmplementeerd.
-            Selecteer het aantal knooppunten dat u in het cluster wilt implementeren. Stel voor deze quickstart het **Aantal knooppunten** in op *1* . Het aantal knooppunten kan nog *wel* worden gewijzigd als het cluster is geïmplementeerd.
+    - **Projectgegevens**: selecteer een Azure-**abonnement**, en selecteer of maak vervolgens een Azure-**resourcegroep**, zoals *myResourceGroup*.
+    - **Clusterdetails**: Voer een **Kubernetes-clusternaam** in, zoals *myAKSCluster*. Selecteer een **Regio** en **Kubernetes-versie** voor het AKS-cluster.
+    - **Primaire knooppuntgroep**: selecteer een **VM-knooppuntgrootte** voor de AKS-knooppunten. De VM-grootte kan *niet* meer worden gewijzigd als een AKS-cluster eenmaal is geïmplementeerd.
+            Selecteer het aantal knooppunten dat u in het cluster wilt implementeren. Stel voor deze quickstart het **Aantal knooppunten** in op *1*. Het aantal knooppunten kan nog *wel* worden gewijzigd als het cluster is geïmplementeerd.
     
     ![AKS-cluster maken - basisgegevens opgeven](media/kubernetes-walkthrough-portal/create-cluster-basics.png)
 
     Selecteer **Volgende: knooppuntgroepen** wanneer u klaar bent.
 
-4. Behoud de standaardopties op de pagina **Knooppuntgroepen** . Klik boven aan het venster op **Volgende: Verificatie** .
+4. Behoud de standaardopties op de pagina **Knooppuntgroepen**. Klik boven aan het venster op **Volgende: Verificatie**.
     > [!CAUTION]
     > Het kan enige minuten duren voordat nieuwe AAD-service-principals worden doorgegeven en beschikbaar worden nadat ze zijn gemaakt, en dit kan fouten wegens 'service-principal niet gevonden' en validatiefouten in de Azure-portal veroorzaken. Als dit gebeurt, vindt u [hier](troubleshooting.md#received-an-error-saying-my-service-principal-wasnt-found-or-is-invalid-when-i-try-to-create-a-new-cluster) een oplossing.
 
-5. Configureer de volgende opties op de pagina **Verificatie** :
-    - Maak een nieuwe service-principal door het veld **Service-principal** ingesteld te laten op **(nieuwe) standaardservice-principal** . U kunt ook *Service-principal configureren* kiezen om een bestaande te gebruiken. Als u een bestaande service-principal gebruikt, moet u de SPN-client-id en het geheim opgeven.
-    - Schakel de optie in voor op rollen gebaseerd toegangsbeheer (RBAC) van Kubernetes. Deze bieden een verfijnder beheer van de toegang tot de Kubernetes-resources die zijn geïmplementeerd in het AKS-cluster.
+5. Configureer de volgende opties op de pagina **Verificatie**:
+    - Maak een nieuwe service-principal door het veld **Service-principal** ingesteld te laten op **(nieuwe) standaardservice-principal**. U kunt ook *Service-principal configureren* kiezen om een bestaande te gebruiken. Als u een bestaande service-principal gebruikt, moet u de SPN-client-id en het geheim opgeven.
+    - Schakel de optie voor Kubernetes-RBAC (op rollen gebaseerd toegangsbeheer voor Kubernetes) in. Deze bieden een verfijnder beheer van de toegang tot de Kubernetes-resources die zijn geïmplementeerd in het AKS-cluster.
 
     U kunt ook een beheerde identiteit gebruiken in plaats van een service-principal. Zie [Beheerde identiteiten gebruiken](use-managed-identity.md) voor meer informatie.
 
 Standaard worden *basis* netwerkfuncties gebruikt en Azure Monitor voor containers is ingeschakeld. Klik op **Beoordelen en maken** en vervolgens op **Maken** wanneer de validatie is voltooid.
 
-Het duurt een paar minuten om het AKS-cluster te maken. Klik nadat de implementatie is voltooid op **Ga naar resource** of blader naar de AKS-clusterresourcegroep, zoals *myResourceGroup* , en selecteer de AKS-resource, zoals *myAKSCluster* . Het AKS-clusterdashboard wordt weergegeven, zoals in dit voorbeeld:
+Het duurt een paar minuten om het AKS-cluster te maken. Klik nadat de implementatie is voltooid op **Ga naar resource** of blader naar de AKS-clusterresourcegroep, zoals *myResourceGroup*, en selecteer de AKS-resource, zoals *myAKSCluster*. Het AKS-clusterdashboard wordt weergegeven, zoals in dit voorbeeld:
 
 ![Voorbeeld van AKS-dashboard in de Azure-portal](media/kubernetes-walkthrough-portal/aks-portal-dashboard.png)
 
@@ -69,7 +69,7 @@ Open Cloud Shell met behulp van de knop `>_` boven in de Azure-portal.
 
 ![Open Azure Cloud Shell in de portal](media/kubernetes-walkthrough-portal/aks-cloud-shell.png)
 
-Gebruik de opdracht [az aks get-credentials][az-aks-get-credentials] om `kubectl` zodanig te configureren dat er verbinding wordt gemaakt met het Kubernetes-cluster. Bij deze opdracht worden referenties gedownload en wordt Kubernetes CLI geconfigureerd voor het gebruik van deze referenties. In het volgende voorbeeld worden de referenties opgehaald voor de clusternaam *myAKSCluster* in de resourcegroep met de naam *myResourceGroup* :
+Gebruik de opdracht [az aks get-credentials][az-aks-get-credentials] om `kubectl` zodanig te configureren dat er verbinding wordt gemaakt met het Kubernetes-cluster. Bij deze opdracht worden referenties gedownload en wordt Kubernetes CLI geconfigureerd voor het gebruik van deze referenties. In het volgende voorbeeld worden de referenties opgehaald voor de clusternaam *myAKSCluster* in de resourcegroep met de naam *myResourceGroup*:
 
 ```azurecli
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
@@ -207,14 +207,14 @@ Gebruik de opdracht [kubectl get service][kubectl-get] met het argument `--watch
 kubectl get service azure-vote-front --watch
 ```
 
-Eerst wordt het *EXTERNAL-IP* -adres voor de service *azure-vote-front* weergegeven als *in behandeling* .
+Eerst wordt het *EXTERNAL-IP*-adres voor de service *azure-vote-front* weergegeven als *in behandeling*.
 
 ```output
 NAME               TYPE           CLUSTER-IP   EXTERNAL-IP   PORT(S)        AGE
 azure-vote-front   LoadBalancer   10.0.37.27   <pending>     80:30572/TCP   6s
 ```
 
-Zodra het *EXTERNAL-IP* -adres is gewijzigd van *in behandeling* in een echt openbaar IP-adres, gebruikt u `CTRL-C` om het controleproces van `kubectl` te stoppen. In de volgende voorbeelduitvoer ziet u een geldig openbaar IP-adres dat aan de service is toegewezen:
+Zodra het *EXTERNAL-IP*-adres is gewijzigd van *in behandeling* in een echt openbaar IP-adres, gebruikt u `CTRL-C` om het controleproces van `kubectl` te stoppen. In de volgende voorbeelduitvoer ziet u een geldig openbaar IP-adres dat aan de service is toegewezen:
 
 ```output
 azure-vote-front   LoadBalancer   10.0.37.27   52.179.23.131   80:30572/TCP   2m
@@ -228,12 +228,12 @@ Open een webbrowser naar het externe IP-adres van uw service om de Azure Vote-ap
 
 Toen u het cluster maakte, werd Azure Monitor voor containers ingeschakeld. Deze controlefunctie biedt metrische statusgegevens voor zowel het AKS-cluster als de pods die in het cluster worden uitgevoerd.
 
-Het kan enkele minuten duren voordat deze gegevens in Azure Portal worden ingevuld. Ga terug naar de AKS-resource in de Azure-portal, zoals *myAKSCluster* , om de huidige status, de uptime en het resourcegebruik te zien voor de Azure Vote-pods. Vervolgens kunt u de status als volgt openen:
+Het kan enkele minuten duren voordat deze gegevens in Azure Portal worden ingevuld. Ga terug naar de AKS-resource in de Azure-portal, zoals *myAKSCluster*, om de huidige status, de uptime en het resourcegebruik te zien voor de Azure Vote-pods. Vervolgens kunt u de status als volgt openen:
 
 1. Kies onder **Bewaking** aan de linkerkant de optie **Inzichten**
 1. Kies bovenaan **+ Filter toevoegen**
 1. Selecteer *Naamruimte* als eigenschap en kies vervolgens *\<All but kube-system\>*
-1. Kies de weergave **Containers** .
+1. Kies de weergave **Containers**.
 
 De containers *azure-vote-back* en *azure-vote-front* worden weergegeven, zoals in het volgende voorbeeld:
 

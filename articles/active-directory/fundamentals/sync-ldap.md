@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e617d7ccc14e65c18eb86877b1c7fb1aeef74cd0
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 1f34e734b315c7c05ce77f5e168a452fc1c1c547
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578889"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96168675"
 ---
 # <a name="ldap-synchronization-with-azure-active-directory"></a>LDAP-synchronisatie met Azure Active Directory
 
@@ -34,31 +34,30 @@ U moet identiteits gegevens tussen uw on-premises LDAP v3-directory's en Azure A
 
 ## <a name="components-of-system"></a>Onderdelen van systeem
 
-* **Gebruiker** : heeft toegang tot een toepassing die afhankelijk is van het gebruik van een LDAP v3-Directory voor het sorteren van gebruikers en wacht woorden.
+* **Gebruiker**: heeft toegang tot een toepassing die afhankelijk is van het gebruik van een LDAP v3-Directory voor het sorteren van gebruikers en wacht woorden.
 
-* **Webbrowser** : het onderdeel waarmee de gebruiker communiceert om toegang te krijgen tot de externe URL van de toepassing
+* **Webbrowser**: het onderdeel waarmee de gebruiker communiceert om toegang te krijgen tot de externe URL van de toepassing
 
-* **Web-app** : toepassing met afhankelijkheden op LDAP v3-directory's.
+* **Web-app**: toepassing met afhankelijkheden op LDAP v3-directory's.
 
-* **Azure AD** : Azure AD synchroniseert identiteits gegevens (gebruikers, groepen, wacht woorden) van on-premises LDAP-adres lijsten van de organisatie via Azure AD Connect. 
+* **Azure AD**: Azure AD synchroniseert identiteits gegevens (gebruikers, groepen, wacht woorden) van on-premises LDAP-adres lijsten van de organisatie via Azure AD Connect. 
 
-* **Azure AD Connect** : is een hulp programma voor het verbinden van een on-premises identiteits infrastructuur naar Microsoft Azure AD. De wizard en begeleide ervaringen helpen u bij het implementeren en configureren van vereisten en onderdelen die vereist zijn voor de verbinding. 
+* **Azure AD Connect**: is een hulp programma voor het verbinden van een on-premises identiteits infrastructuur naar Microsoft Azure AD. De wizard en begeleide ervaringen helpen u bij het implementeren en configureren van vereisten en onderdelen die vereist zijn voor de verbinding. 
 
-* **Aangepaste connector** : met een algemene LDAP-connector kunt u de Azure AD Connect-synchronisatie service integreren met een LDAP v3-server. Het is Azure AD Connect.
+* **Aangepaste connector**: met een algemene LDAP-connector kunt u de Azure AD Connect-synchronisatie service integreren met een LDAP v3-server. Het is Azure AD Connect.
 
-* **Active Directory** : Active Directory is een directory service die deel uitmaakt van de meeste Windows Server-besturings systemen. Servers met Active Directory Directory Services worden domein controllers genoemd en kunnen alle gebruikers en computers in een Windows-domein verifiëren en autoriseren.
+* **Active Directory**: Active Directory is een directory service die deel uitmaakt van de meeste Windows Server-besturings systemen. Servers met Active Directory Directory Services worden domein controllers genoemd en kunnen alle gebruikers en computers in een Windows-domein verifiëren en autoriseren.
 
-* **LDAP v3-server** : een LDAP-protocol-compatibele directory waarin zakelijke gebruikers en wacht woorden worden opgeslagen die worden gebruikt voor verificatie van Directory Services.
+* **LDAP v3-server**: een LDAP-protocol-compatibele directory waarin zakelijke gebruikers en wacht woorden worden opgeslagen die worden gebruikt voor verificatie van Directory Services.
 
 ## <a name="implement-ldap-synchronization-with-azure-ad"></a>LDAP-synchronisatie implementeren met Azure AD
 
-* [Hulp middelen voor de integratie van hybride identiteits mappen](https://docs.microsoft.com/azure/active-directory/hybrid/plan-hybrid-identity-design-considerations-tools-comparison) 
+* [Hulp middelen voor de integratie van hybride identiteits mappen](../hybrid/plan-hybrid-identity-design-considerations-tools-comparison.md) 
 
-* [Installatie schema voor Azure AD Connect](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-install-roadmap) 
+* [Installatie schema voor Azure AD Connect](../hybrid/how-to-connect-install-roadmap.md) 
 
-* [Overzicht en maken van een LDAP-connector](https://docs.microsoft.com/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-genericldap) 
+* [Overzicht en maken van een LDAP-connector](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-genericldap) 
 
    > [!NOTE]
    > LDAP-connectors zijn een geavanceerde configuratie waarbij kennis is vereist van Forefront Identity Manager en/of Microsoft Identity Manager. Bij gebruik in productie worden vragen over deze configuratie door [Premier Support](https://support.microsoft.com/premier) of Microsoft Partner Network.
 
- 

@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 08/17/2020
 ms.author: tamram
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: c9797024315a8fdc744d08863a42fba0b0b16420
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: fa502f5ca95b1726da7f00f987b35be362ae865a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660335"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96021755"
 ---
 # <a name="quickstart-create-download-and-list-blobs-with-azure-cli"></a>Quickstart: Blobs maken, downloaden, uploaden en weergeven met Azure CLI
 
@@ -35,7 +35,7 @@ Azure CLI is de nieuwe opdrachtregel van Azure voor het beheren van Azure-resour
 
 U kunt de toegang tot Blob Storage autoriseren via de Azure CLI met behulp van de Azure AD-referenties of door de toegangssleutel voor het opslagaccount te gebruiken. Het wordt aanbevolen om Azure AD-referenties te gebruiken. In dit artikel wordt beschreven hoe u Azure AD gebruikt om Blob Storage-bewerkingen te autoriseren.
 
-Azure CLI-opdrachten voor gegevensbewerkingen voor Blob Storage ondersteunen de parameter `--auth-mode`, waarmee u kunt opgeven hoe een bepaalde bewerking moet worden geautoriseerd. Stel de parameter `--auth-mode` in op `login` om met Azure AD-referenties te autoriseren. Zie [Toegang verlenen tot blob- of wachtrijgegevens met Azure CLI](../common/authorize-data-operations-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) voor meer informatie.
+Azure CLI-opdrachten voor gegevensbewerkingen voor Blob Storage ondersteunen de parameter `--auth-mode`, waarmee u kunt opgeven hoe een bepaalde bewerking moet worden geautoriseerd. Stel de parameter `--auth-mode` in op `login` om met Azure AD-referenties te autoriseren. Zie [Toegang verlenen tot blob- of wachtrijgegevens met Azure CLI](./authorize-data-operations-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) voor meer informatie.
 
 Alleen Blob Storage-gegevensbewerkingen ondersteunen de parameter `--auth-mode`. Bij beheerbewerkingen, zoals het maken van een resourcegroep of opslagaccount worden automatisch Azure AD-referenties gebruikt voor autorisatie.
 
@@ -89,7 +89,7 @@ az storage container create \
 > [!IMPORTANT]
 > Het kan enkele minuten duren voordat Azure-roltoewijzingen worden doorgegeven.
 
-U kunt ook de sleutel voor het opslagaccount gebruiken om de bewerking voor het maken van de container te autoriseren. Zie [Toegang verlenen tot blob- of wachtrijgegevens met Azure CLI](../common/authorize-data-operations-cli.md?toc=/azure/storage/blobs/toc.json) voor meer informatie over het autoriseren van gegevensbewerkingen met Azure CLI.
+U kunt ook de sleutel voor het opslagaccount gebruiken om de bewerking voor het maken van de container te autoriseren. Zie [Toegang verlenen tot blob- of wachtrijgegevens met Azure CLI](./authorize-data-operations-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) voor meer informatie over het autoriseren van gegevensbewerkingen met Azure CLI.
 
 ## <a name="upload-a-blob"></a>Een blob uploaden
 
@@ -169,4 +169,4 @@ az group delete \
 In deze quickstart hebt u geleerd hoe u bestanden kunt overzetten tussen een lokaal bestandssysteem en een container in Azure Blob Storage. Bekijk de Azure CLI-voorbeelden voor Blob Storage voor meer informatie over het gebruik van Blob Storage met behulp van Azure CLI.
 
 > [!div class="nextstepaction"]
-> [Azure CLI-voorbeelden voor Blob Storage](/azure/storage/blobs/storage-samples-blobs-cli?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
+> [Azure CLI-voorbeelden voor Blob Storage](./storage-samples-blobs-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)

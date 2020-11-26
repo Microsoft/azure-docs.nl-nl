@@ -8,12 +8,12 @@ ms.workload: storage
 ms.topic: quickstart
 ms.date: 09/22/2020
 ms.custom: devx-track-azurecli, subject-armqs
-ms.openlocfilehash: 70441c3a1953fa1b6ebd69ef9cdb324d6cc04a5b
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: e31a1cef427062723adf4b45bd47cd8009630128
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93336436"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888807"
 ---
 # <a name="quickstart-set-up-azure-netapp-files-and-create-an-nfs-volume"></a>Quickstart: Azure NetApp Files instellen en een NFS-volume maken
 
@@ -32,8 +32,6 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 > [!IMPORTANT]
 > U moet toegang krijgen tot de Azure NetApp Files-service. Zie de [Azure NetApp Files waitlist submission page](https://aka.ms/azurenetappfiles) om toegang tot de service aan te vragen.  U moet wachten op een officiële bevestigingse-mail van het Azure NetApp Files-team voordat u verdergaat.
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 ---
 
@@ -64,6 +62,10 @@ Voor dit artikel is Azure PowerShell-module Az-versie 2.6.0 of nieuwer vereist. 
     ```
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+Bereid uw omgeving voor op Azure CLI.
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 [!INCLUDE [azure-netapp-files-cloudshell-include](../../includes/azure-netapp-files-azure-cloud-shell-window.md)]
 
@@ -176,7 +178,7 @@ Het volgende code fragment laat zien hoe u een NetApp-account maakt in een Azure
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-1. Selecteer in de beheerblade Azure NetApp Files uw NetApp-account ( **myAccount1** ).
+1. Selecteer in de beheerblade Azure NetApp Files uw NetApp-account (**myAccount1**).
 
     ![NetApp-account selecteren](../media/azure-netapp-files/azure-netapp-files-select-netapp-account.png)
 
@@ -260,7 +262,7 @@ Het volgende codefragment laat zien hoe u een capaciteitspool maakt in een Azure
 
 3. Geef de gegevens op voor het volume in het venster Volume maken:
    1. Voer **myvol1** in als volumenaam.
-   2. Selecteer uw capaciteitspool ( **mypool1** ).
+   2. Selecteer uw capaciteitspool (**mypool1**).
    3. Gebruik de standaardwaarde als quotum.
    4. Klik onder virtueel netwerk op **Nieuw maken** om een nieuw virtueel Azure-netwerk (Vnet) te maken.  Geef de volgende informatie op:
        * Voer **myvnet1** in als Vnet-naam.
@@ -269,7 +271,7 @@ Het volgende codefragment laat zien hoe u een capaciteitspool maakt in een Azure
        * Specificeer het adresbereik van het subnet, bijvoorbeeld: 10.7.0.0/24. U kunt het speciale subnet niet delen met andere bronnen.
        * Selecteer **Microsoft.NetApp/volumes** voor delegatie van het subnet.
        * Klik op **OK** om het Vnet te maken.
-   5. Selecteer in subnet het zojuist gemaakte Vnet ( **myvnet1** ) als gemachtigde subnet.
+   5. Selecteer in subnet het zojuist gemaakte Vnet (**myvnet1**) als gemachtigde subnet.
 
       ![Een volume maken](../media/azure-netapp-files/azure-netapp-files-create-volume-window.png)
 
@@ -278,7 +280,7 @@ Het volgende codefragment laat zien hoe u een capaciteitspool maakt in een Azure
 4. Klik op **Protocol** en voer de volgende acties uit:
     * Selecteer **NFS** als protocoltype voor het volume.
     * Geef **myfilepath1** op als het bestandspad dat wordt gebruikt om het exportpad voor het volume te maken.
-    * Selecteer de NFS-versie ( **NFSv3** of **NFSv4.1** ) voor het volume.
+    * Selecteer de NFS-versie (**NFSv3** of **NFSv4.1**) voor het volume.
       Raadpleeg [opmerkingen](azure-netapp-files-create-volumes.md#considerations) en [best practice](azure-netapp-files-create-volumes.md#best-practice) voor informatie over NFS-versies.
 
     ![NFS-protocol opgeven voor snelstart](../media/azure-netapp-files/azure-netapp-files-quickstart-protocol-nfs.png)

@@ -67,6 +67,10 @@
           href: virtual-wan-ipsec.md
         - name: Meerdere ISP-koppelingen - selectie van Azure-pad
           href: path-selection-multiple-links.md
+    - name: Beveiliging
+      items:
+        - name: Beveiligingsbasislijn
+          href: security-baseline.md
     - name: Prijsconcepten
       href: pricing-concepts.md
     - name: Over NVA in een virtuele hub

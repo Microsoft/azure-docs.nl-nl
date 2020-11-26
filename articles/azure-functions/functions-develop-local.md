@@ -3,12 +3,12 @@ title: Azure Functions lokaal ontwikkelen en uitvoeren
 description: Meer informatie over het coderen en testen van Azure Functions op uw lokale computer voordat u deze uitvoert op Azure Functions.
 ms.topic: conceptual
 ms.date: 09/04/2018
-ms.openlocfilehash: c011dff9f43de59d3f08445a7bbd5387b27563ad
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: 9c37d51abcc8d612b777b845515cf07666369d4f
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94920029"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96168131"
 ---
 # <a name="code-and-test-azure-functions-locally"></a>Code-en test Azure Functions lokaal
 
@@ -18,9 +18,9 @@ U kunt Azure Functions in het [Azure Portal]ontwikkelen en testen, maar veel ont
 
 De manier waarop u functies op uw lokale computer ontwikkelt, is afhankelijk van uw [taal](supported-languages.md) en programma voorkeuren. De omgevingen in de volgende tabel ondersteunen lokale ontwikkeling:
 
-|Omgeving                              |Talen         |Beschrijving|
+|Omgeving                              |Talen         |Description|
 |-----------------------------------------|------------|---|
-|[Visual Studio Code](functions-develop-vs-code.md)| [C# (Class-bibliotheek)](functions-dotnet-class-library.md), [C#-script (. CSX)](functions-reference-csharp.md), [Java script](functions-reference-node.md), [Power shell](./create-first-function-vs-code-powershell.md), [python](functions-reference-python.md) | De [uitbrei ding van de Azure functions voor VS code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) voegt functies ondersteuning toe aan VS code. Vereist de kern Hulpprogramma's. Ondersteunt de ontwikkeling van Linux, MacOS en Windows bij gebruik van versie 2. x van de kern Hulpprogramma's. Zie [uw eerste functie maken met Visual Studio code](functions-create-first-function-vs-code.md)voor meer informatie. |
+|[Visual Studio Code](functions-develop-vs-code.md)| [C# (Class-bibliotheek)](functions-dotnet-class-library.md), [C#-script (. CSX)](functions-reference-csharp.md), [Java script](functions-reference-node.md), [Power shell](./create-first-function-vs-code-powershell.md), [python](functions-reference-python.md) | De [uitbrei ding van de Azure functions voor VS code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) voegt functies ondersteuning toe aan VS code. Vereist de kern Hulpprogramma's. Ondersteunt de ontwikkeling van Linux, MacOS en Windows bij gebruik van versie 2. x van de kern Hulpprogramma's. Zie [uw eerste functie maken met Visual Studio code](./create-first-function-vs-code-csharp.md)voor meer informatie. |
 | [Opdracht prompt of Terminal](functions-run-local.md) | [C# (Class-bibliotheek)](functions-dotnet-class-library.md), [C#-script (. CSX)](functions-reference-csharp.md), [Java script](functions-reference-node.md), [Power shell](functions-reference-powershell.md), [python](functions-reference-python.md) | [Azure functions core tools] biedt de kern runtime en sjablonen voor het maken van functies, waarmee lokale ontwikkeling mogelijk wordt. Versie 2. x ondersteunt de ontwikkeling van Linux, MacOS en Windows. Alle omgevingen zijn afhankelijk van de belangrijkste Hulpprogram Ma's voor de runtime van lokale functies. |
 | [Visual Studio 2019](functions-develop-vs.md) | [C# (klassebibliotheek)](functions-dotnet-class-library.md) | De Azure Functions-hulpprogram ma's zijn opgenomen in de **Azure Development** -werk belasting van [Visual Studio 2019](https://www.visualstudio.com/vs/) en latere versies. Hiermee kunt u functies in een klassen bibliotheek compileren en het dll-bestand publiceren naar Azure. Bevat de belangrijkste Hulpprogram Ma's voor lokale tests. Zie [Azure functions ontwikkelen met Visual Studio](functions-develop-vs.md)voor meer informatie. |
 | [Maven](./create-first-function-cli-java.md) (verschillende) | [Java](functions-reference-java.md) | Kan worden geïntegreerd met kern Hulpprogramma's om de ontwikkeling van Java-functies mogelijk te maken. Versie 2. x ondersteunt de ontwikkeling van Linux, MacOS en Windows. Zie [uw eerste functie maken met Java en Maven](./create-first-function-cli-java.md)voor meer informatie. Biedt ook ondersteuning voor ontwikkeling met het idee van [eclips](functions-create-maven-eclipse.md) en [IntelliJ](functions-create-maven-intellij.md) |

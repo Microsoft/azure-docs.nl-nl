@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bb54410fb314376b68d7297a3452f0990762343d
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 69e87fc919893a544f5d0b1b615a110f25486e57
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94577155"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96168743"
 ---
 # <a name="header-based-authentication-with-azure-active-directory"></a>Verificatie op basis van een header met Azure Active Directory
 
@@ -34,22 +34,22 @@ Externe gebruikers moeten zich op een veilige manier aanmelden voor on-premises 
 
 ## <a name="components-of-system"></a>Onderdelen van systeem
 
-* **Gebruiker** : toegang tot verouderde toepassingen die worden bediend door de toepassings proxy.
+* **Gebruiker**: toegang tot verouderde toepassingen die worden bediend door de toepassings proxy.
 
-* **Webbrowser** : het onderdeel waarmee de gebruiker communiceert om toegang te krijgen tot de externe URL van de toepassing.
+* **Webbrowser**: het onderdeel waarmee de gebruiker communiceert om toegang te krijgen tot de externe URL van de toepassing.
 
-* **Azure AD** : verifieert de gebruiker. 
+* **Azure AD**: verifieert de gebruiker. 
 
-* **Application proxy-service** : fungeert als omgekeerde proxy voor het verzenden van een aanvraag van de gebruiker naar de on-premises toepassing. Het bevindt zich in azure AD en kan ook beleids regels voor voorwaardelijke toegang afdwingen.
+* **Application proxy-service**: fungeert als omgekeerde proxy voor het verzenden van een aanvraag van de gebruiker naar de on-premises toepassing. Het bevindt zich in azure AD en kan ook beleids regels voor voorwaardelijke toegang afdwingen.
 
-* **Application proxy-connector** : on-premises op Windows-servers geïnstalleerd om verbinding te kunnen maken met de toepassingen. Er worden alleen uitgaande verbindingen gebruikt. Retourneert het antwoord naar Azure AD.
+* **Application proxy-connector**: on-premises op Windows-servers geïnstalleerd om verbinding te kunnen maken met de toepassingen. Er worden alleen uitgaande verbindingen gebruikt. Retourneert het antwoord naar Azure AD.
 
-* **Verouderde toepassingen** : toepassingen die gebruikers aanvragen ontvangen van de toepassings proxy. De verouderde toepassing ontvangt de vereiste HTTP-headers voor het instellen van een sessie en het retour neren van een antwoord. 
+* **Verouderde toepassingen**: toepassingen die gebruikers aanvragen ontvangen van de toepassings proxy. De verouderde toepassing ontvangt de vereiste HTTP-headers voor het instellen van een sessie en het retour neren van een antwoord. 
 
 ## <a name="implement-header-based-authentication-with-azure-ad"></a>Op headers gebaseerde verificatie implementeren met Azure AD
 
-* [Een on-premises toepassing toevoegen voor externe toegang via toepassings proxy in azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-add-on-premises-application)  
+* [Een on-premises toepassing toevoegen voor externe toegang via toepassings proxy in azure AD](../manage-apps/application-proxy-add-on-premises-application.md)  
 
-* [Op headers gebaseerde verificatie voor eenmalige aanmelding met de toepassingsproxy en PingAccess](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-configure-single-sign-on-with-ping-access) 
+* [Op headers gebaseerde verificatie voor eenmalige aanmelding met de toepassingsproxy en PingAccess](../manage-apps/application-proxy-configure-single-sign-on-with-headers.md) 
 
-* [Verouderde apps beveiligen met app-leveringscontrollers en -netwerken](https://docs.microsoft.com/azure/active-directory/manage-apps/secure-hybrid-access)
+* [Verouderde apps beveiligen met app-leveringscontrollers en -netwerken](../manage-apps/secure-hybrid-access.md)

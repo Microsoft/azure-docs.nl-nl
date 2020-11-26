@@ -4,12 +4,12 @@
   items:
     - name: 'Azure AD-gebruikers, -groepen, -licenties en -rollen'
       href: directory-overview-user-model.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: Gebruikers toevoegen aan Azure AD
       href: ../fundamentals/add-users-azure-active-directory.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
     - name: Licenties toewijzen aan gebruikers
-      href: /azure/active-directory/fundamentals/license-users-groups?context=%2fazure/active-directory/enterprise-users/context/ugr-context
+      href: ../fundamentals/license-users-groups.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
     - name: Verlooptijd van groepen instellen
       href: groups-quickstart-expiration.md
     - name: Naamgevingsbeleid voor groepen instellen
@@ -57,13 +57,13 @@
         - name: Een account in een niet-beheerde directory sluiten
           href: users-close-account.md
         - name: Gastgebruikers toevoegen
-          href: /azure/active-directory/b2b/what-is-b2b?context=%2fazure/active-directory/enterprise-users/context/ugr-context
+          href: ../external-identities/what-is-b2b.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
         - name: Rol toewijzen aan gastgebruiker
-          href: /azure/active-directory/b2b/add-guest-to-role?context=%2fazure/active-directory/enterprise-users/context/ugr-context
+          href: ../external-identities/add-guest-to-role.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
         - name: Toegang van gastgebruikers beperken
           href: users-restrict-guest-permissions.md
         - name: Dynamische groepen en gasten
-          href: /azure/active-directory/b2b/use-dynamic-groups?context=%2fazure/active-directory/enterprise-users/context/ugr-context
+          href: ../external-identities/use-dynamic-groups.md?context=%2fazure%2factive-directory%2fenterprise-users%2fcontext%2fugr-context
     - name: Uw organisatie beheren
       items:
         - name: Azure AD-organisaties

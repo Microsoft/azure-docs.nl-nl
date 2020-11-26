@@ -5,12 +5,12 @@ ms.assetid: 5b63649c-ec7f-4564-b168-e0a74cb7e0f3
 ms.topic: conceptual
 ms.date: 08/17/2020
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 88e9d16a205df16a2be63e67f45cdbcf9144b30f
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: f41354630f4885a30bd5c036495b216a2cc05599
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92108453"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96167791"
 ---
 # <a name="azure-functions-scale-and-hosting"></a>Schaal en hosting van Azure Functions
 
@@ -97,7 +97,7 @@ Zelfs met Always ingeschakeld, wordt de time-out voor de uitvoering van afzonder
 
 ## <a name="determine-the-hosting-plan-of-an-existing-application"></a>Het hosting plan van een bestaande toepassing bepalen
 
-Zie **app service plan** op het tabblad **overzicht** voor de functie-app in de [Azure Portal](https://portal.azure.com)om het hosting plan te bepalen dat door uw functie-app wordt gebruikt. Als u de prijs categorie wilt zien, selecteert u de naam van het **app service plan**en selecteert u vervolgens **Eigenschappen** in het linkerdeel venster.
+Zie **app service plan** op het tabblad **overzicht** voor de functie-app in de [Azure Portal](https://portal.azure.com)om het hosting plan te bepalen dat door uw functie-app wordt gebruikt. Als u de prijs categorie wilt zien, selecteert u de naam van het **app service plan** en selecteert u vervolgens **Eigenschappen** in het linkerdeel venster.
 
 ![Schaal plan weer geven in de portal](./media/functions-scale/function-app-overview-portal.png)
 
@@ -144,7 +144,7 @@ De eenheid van de schaal voor Azure Functions is de functie-app. Wanneer de func
 
 ### <a name="cold-start"></a>Koude start
 
-Nadat de functie-app gedurende een aantal minuten inactief is, kan het platform het aantal exemplaren waarop uw app wordt uitgevoerd, schalen op nul. De volgende aanvraag heeft de toegevoegde latentie van schalen van nul naar één. Deze latentie wordt een _koude start_genoemd. Het aantal afhankelijkheden dat door uw functie-app moet worden geladen, kan van invloed zijn op de koude start tijd. Koude start is meer een probleem voor synchrone bewerkingen, zoals HTTP-triggers die een antwoord moeten retour neren. Als koude start invloed heeft op uw functies, kunt u overwegen om in een Premium-abonnement of in een speciaal plan te worden uitgevoerd met Always ingeschakeld.   
+Nadat de functie-app gedurende een aantal minuten inactief is, kan het platform het aantal exemplaren waarop uw app wordt uitgevoerd, schalen op nul. De volgende aanvraag heeft de toegevoegde latentie van schalen van nul naar één. Deze latentie wordt een _koude start_ genoemd. Het aantal afhankelijkheden dat door uw functie-app moet worden geladen, kan van invloed zijn op de koude start tijd. Koude start is meer een probleem voor synchrone bewerkingen, zoals HTTP-triggers die een antwoord moeten retour neren. Als koude start invloed heeft op uw functies, kunt u overwegen om in een Premium-abonnement of in een speciaal plan te worden uitgevoerd met Always ingeschakeld.   
 
 ### <a name="understanding-scaling-behaviors"></a>Meer informatie over het schalen van gedrag
 
@@ -257,6 +257,6 @@ In de volgende vergelijkings tabel ziet u alle belang rijke aspecten om het besl
 
 ## <a name="next-steps"></a>Volgende stappen
 
-+ [Snelstartgids: een Azure Functions-project maken met Visual Studio code](functions-create-first-function-vs-code.md)
++ [Snelstartgids: een Azure Functions-project maken met Visual Studio code](./create-first-function-vs-code-csharp.md)
 + [Implementatie technologieën in Azure Functions](functions-deployment-technologies.md) 
 + [Ontwikkelaarshandleiding voor Azure Functions](functions-reference.md)

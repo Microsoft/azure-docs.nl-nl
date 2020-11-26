@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: ryanwi
 ms.reviewer: jeedes
-ms.openlocfilehash: 37f305a7564382b9c6c5a031340d81a22cfedbf2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0df811f4e8b5d6a95868dfebe192e96fbfa80ed9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88120708"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96169253"
 ---
 # <a name="add-a-multitenant-application-to-the-azure-ad-application-gallery"></a>Een toepassing met meerdere tenants toevoegen aan de Azure AD-toepassingsgalerie
 
@@ -29,9 +29,9 @@ Azure Active Directory (Azure AD) is een op de cloud gebaseerde identiteits serv
 ## <a name="if-your-application-supports-saml-or-openidconnect"></a>Als uw toepassing SAML of OpenIDConnect ondersteunt
 Als u een multi tenant-toepassing hebt die u wilt weer geven in de Azure AD-toepassings galerie, moet u er eerst voor zorgen dat uw toepassing ondersteuning biedt voor een van de volgende technologieën voor eenmalige aanmelding:
 
-- **OpenID Connect Connect**: als u uw app wilt weer geven, maakt u de multi tenant-toepassing in azure AD en implementeert u het [Azure AD-instemming raamwerk](./consent-framework.md) voor uw toepassing. Verzend de aanmeldings aanvraag naar een gemeen schappelijk eind punt zodat elke klant toestemming kan geven voor de toepassing. U kunt de toegang van een gebruiker beheren op basis van de Tenant-ID en de UPN van de gebruiker die in het token is ontvangen. Verzend de toepassing met behulp van het proces dat wordt beschreven in [uw toepassing weer geven in de galerie met Azure Active Directory toepassingen](../azuread-dev/howto-app-gallery-listing.md).
+- **OpenID Connect Connect**: als u uw app wilt weer geven, maakt u de multi tenant-toepassing in azure AD en implementeert u het [Azure AD-instemming raamwerk](./consent-framework.md) voor uw toepassing. Verzend de aanmeldings aanvraag naar een gemeen schappelijk eind punt zodat elke klant toestemming kan geven voor de toepassing. U kunt de toegang van een gebruiker beheren op basis van de Tenant-ID en de UPN van de gebruiker die in het token is ontvangen. Verzend de toepassing met behulp van het proces dat wordt beschreven in [uw toepassing weer geven in de galerie met Azure Active Directory toepassingen](./v2-howto-app-gallery-listing.md).
 
-- **SAML**: als uw toepassing SAML 2,0 ondersteunt, kan de app worden weer gegeven in de galerie. Volg de instructies in [uw toepassing weer geven in de galerie met Azure Active Directory toepassingen](../azuread-dev/howto-app-gallery-listing.md).
+- **SAML**: als uw toepassing SAML 2,0 ondersteunt, kan de app worden weer gegeven in de galerie. Volg de instructies in [uw toepassing weer geven in de galerie met Azure Active Directory toepassingen](./v2-howto-app-gallery-listing.md).
 
 ## <a name="if-your-application-does-not-support-saml-or-openidconnect"></a>Als uw toepassing geen ondersteuning biedt voor SAML of OpenIDConnect
 Toepassingen die geen ondersteuning bieden voor SAML of OpenIDConnect, kunnen nog steeds worden geïntegreerd in de app-galerie door middel van eenmalige aanmelding met een wacht woord.
@@ -40,11 +40,11 @@ Met eenmalige aanmelding met een wacht woord, ook wel wachtwoord kluizen genoemd
 
 Als u uw toepassing met deze technologie wilt vermelden:
 1. Maak een webtoepassing met een HTML-aanmeldings pagina voor het configureren [van eenmalige aanmelding met een wacht woord](../manage-apps/what-is-single-sign-on.md). 
-2. Dien de aanvraag in, zoals wordt beschreven in [uw toepassing weer geven in de galerie met Azure Active Directory toepassingen](../azuread-dev/howto-app-gallery-listing.md).
+2. Dien de aanvraag in, zoals wordt beschreven in [uw toepassing weer geven in de galerie met Azure Active Directory toepassingen](./v2-howto-app-gallery-listing.md).
 
 ## <a name="escalations"></a>Escalaties
 
 Voor eventuele escalaties verzendt u een e-mail naar het [Azure AD SSO-integratie team](<mailto:SaaSApplicationIntegrations@service.microsoft.com>) . we gaan zo snel mogelijk contact met u op.
 
 ## <a name="next-steps"></a>Volgende stappen
-Meer informatie over het [weer geven van uw toepassing in de galerie met Azure Active Directory toepassingen](../azuread-dev/howto-app-gallery-listing.md).
+Meer informatie over het [weer geven van uw toepassing in de galerie met Azure Active Directory toepassingen](./v2-howto-app-gallery-listing.md).

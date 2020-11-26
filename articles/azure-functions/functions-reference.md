@@ -4,12 +4,12 @@ description: Meer informatie over de Azure Functions-concepten en-technieken die
 ms.assetid: d8efe41a-bef8-4167-ba97-f3e016fcd39e
 ms.topic: conceptual
 ms.date: 10/12/2017
-ms.openlocfilehash: 9a3c0643f4fc965ff64106758320aeb445aaf9ae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 54bfd770fba9a1766396d66c0c263111c233c9c2
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85921729"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96167876"
 ---
 # <a name="azure-functions-developer-guide"></a>Ontwikkelaarshandleiding voor Azure Functions
 In Azure Functions delen specifieke functies enkele kern technische concepten en onderdelen, ongeacht de taal of binding die u gebruikt. Lees de informatie in dit overzicht die van toepassing is op alle voor waarden, voordat u naar een bepaalde taal of binding gaat gaan.
@@ -61,7 +61,7 @@ Hierboven vindt u de standaard (en aanbevolen) mapstructuur voor een functie-app
 > Als u een pakket hand matig implementeert, moet u ervoor zorgen dat u de _host.jsop_ bestands-en functie mappen rechtstreeks naar de map implementeert `wwwroot` . Neem de map niet `wwwroot` op in uw implementaties. Anders eindigt u met `wwwroot\wwwroot` mappen.
 
 #### <a name="use-local-tools-and-publishing"></a>Lokale hulpprogram ma's en publicatie gebruiken
-Functie-apps kunnen worden gemaakt en gepubliceerd met behulp van verschillende hulpprogram ma's, waaronder [Visual Studio](./functions-develop-vs.md), [Visual Studio code](functions-create-first-function-vs-code.md), [IntelliJ](./functions-create-maven-intellij.md), [eclips](./functions-create-maven-eclipse.md)en de [Azure functions core tools](./functions-develop-local.md). Zie [code en test Azure functions lokaal](./functions-develop-local.md)voor meer informatie.
+Functie-apps kunnen worden gemaakt en gepubliceerd met behulp van verschillende hulpprogram ma's, waaronder [Visual Studio](./functions-develop-vs.md), [Visual Studio code](./create-first-function-vs-code-csharp.md), [IntelliJ](./functions-create-maven-intellij.md), [eclips](./functions-create-maven-eclipse.md)en de [Azure functions core tools](./functions-develop-local.md). Zie [code en test Azure functions lokaal](./functions-develop-local.md)voor meer informatie.
 
 <!--NOTE: I've removed documentation on FTP, because it does not sync triggers on the consumption plan --glenga -->
 
@@ -96,10 +96,10 @@ Ondervindt u problemen met de fouten die afkomstig zijn van de bindingen? Raadpl
 [!INCLUDE [Reporting Issues](../../includes/functions-reporting-issues.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
-Zie de volgende bronnen voor meer informatie:
+Zie de volgende resources voor meer informatie:
 
 * [Azure Functions-triggers en -bindingen](functions-triggers-bindings.md)
-* [Azure-functies lokaal programmeren en testen](./functions-develop-local.md)
+* [Code-en test Azure Functions lokaal](./functions-develop-local.md)
 * [Aanbevolen procedures voor Azure Functions](functions-best-practices.md)
 * [Naslaginformatie over Azure Functions C# voor ontwikkelaars](functions-dotnet-class-library.md)
 * [Azure Functions Node.js Naslag informatie voor ontwikkel aars](functions-reference-node.md)

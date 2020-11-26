@@ -13,12 +13,12 @@ ms.date: 11/22/2019
 ms.author: negoe
 ms.reviewer: nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: 0b54a8227594a81c17dcaaaaa6c599d70217c498
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4d899fe7f84a8708bb8ee32cc008567b272a885c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90705857"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96169372"
 ---
 # <a name="use-msal-in-a-national-cloud-environment"></a>MSAL gebruiken in een nationale cloud omgeving
 
@@ -49,7 +49,7 @@ Nadat u hebt besloten, hebt u een speciale overweging waar u uw app-registratie 
 
 ### <a name="get-an-azure-government-subscription"></a>Een Azure Government-abonnement verkrijgen
 
-Zie [uw abonnement beheren en er verbinding mee maken in azure Government](../../azure-government/documentation-government-manage-subscriptions.md)om een Azure Government-abonnement te krijgen.
+Zie [uw abonnement beheren en er verbinding mee maken in azure Government](../../azure-government/compare-azure-government-global-azure.md)om een Azure Government-abonnement te krijgen.
 
 Als u nog geen abonnement op Azure Government hebt, maakt u een [gratis account](https://azure.microsoft.com/global-infrastructure/government/request/) voordat u begint.
 
@@ -77,7 +77,7 @@ Uw MSAL.js-toepassing voor soevereine Clouds inschakelen:
 1. Als uw account u toegang geeft tot meer dan één Tenant, selecteert u uw account in de rechter bovenhoek en stelt u uw portal sessie in op de gewenste Azure AD-Tenant.
 1. Ga naar de pagina [app-registraties](https://aka.ms/ra/ff) op het micro soft-identiteits platform voor ontwikkel aars.
 1. Wanneer de pagina **Een toepassing registreren** wordt weergegeven, voert u een naam in voor de toepassing.
-1. Onder **ondersteunde account typen**selecteert u **accounts in elke organisatie Directory**.
+1. Onder **ondersteunde account typen** selecteert u **accounts in elke organisatie Directory**.
 1. Selecteer in de sectie de **omleidings-URI** het **webplatform en** Stel de waarde in op de URL van de toepassing op basis van de webserver. Zie de volgende secties voor instructies over het instellen en verkrijgen van de omleidings-URL in Visual Studio en het knoop punt.
 1. Selecteer **Registreren**.
 1. Noteer de waarde **Toepassings-id (client)** op de app-pagina **Overzicht**.
@@ -124,8 +124,8 @@ In die code:
 
 - `Enter_the_Application_Id_here` is de waarde van de **toepassings-id** voor de toepassing die u hebt geregistreerd.
 - `Enter_the_Tenant_Info_Here` is ingesteld op een van de volgende opties:
-    - Als uw toepassing **accounts in deze organisatie Directory**ondersteunt, vervangt u deze waarde door de Tenant-id of Tenant naam (bijvoorbeeld contoso.Microsoft.com).
-    - Als uw toepassing **accounts in een organisatorische Directory**ondersteunt, vervangt u deze waarde door `organizations` .
+    - Als uw toepassing **accounts in deze organisatie Directory** ondersteunt, vervangt u deze waarde door de Tenant-id of Tenant naam (bijvoorbeeld contoso.Microsoft.com).
+    - Als uw toepassing **accounts in een organisatorische Directory** ondersteunt, vervangt u deze waarde door `organizations` .
 
     Zie [Azure AD-verificatie-eind punten](./authentication-national-cloud.md#azure-ad-authentication-endpoints)voor het vinden van verificatie-eind punten voor alle nationale Clouds.
 

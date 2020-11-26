@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f38da0dd2dc2adc8049e2b307c861651a55ed700
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 0e5bf7e51de38d42e64f6737e687c5946a464160
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94576985"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96168658"
 ---
 # <a name="openid-connect-authentication-with-azure-active-directory"></a>OpenID Connect Connect-verificatie met Azure Active Directory
 
@@ -38,24 +38,23 @@ Er is een nood zaak voor toestemming van de gebruiker en voor aanmelden bij het 
 
 ## <a name="components-of-system"></a>Onderdelen van systeem
 
-* **Gebruiker** : vraagt een service aan bij de toepassing.
+* **Gebruiker**: vraagt een service aan bij de toepassing.
 
-* **Vertrouwde agent** : het onderdeel waarmee de gebruiker communiceert. Deze vertrouwde agent is doorgaans een webbrowser.
+* **Vertrouwde agent**: het onderdeel waarmee de gebruiker communiceert. Deze vertrouwde agent is doorgaans een webbrowser.
 
-* **Toepassing** : de toepassing of de resource server is waar de resource of gegevens zich bevinden. Hiermee wordt de ID-provider vertrouwd voor het veilig verifiëren en autoriseren van de vertrouwde agent. 
+* **Toepassing**: de toepassing of de resource server is waar de resource of gegevens zich bevinden. Hiermee wordt de ID-provider vertrouwd voor het veilig verifiëren en autoriseren van de vertrouwde agent. 
 
-* **Azure AD** : de OIDC-provider, ook wel bekend als de ID-provider, beheert veilig alles met de informatie van de gebruiker, hun toegang en de vertrouwens relaties tussen partijen in een stroom. Hiermee wordt de identiteit van de gebruiker geverifieerd, wordt de toegang tot bronnen verleend en ingetrokken en worden tokens uitgegeven. 
+* **Azure AD**: de OIDC-provider, ook wel bekend als de ID-provider, beheert veilig alles met de informatie van de gebruiker, hun toegang en de vertrouwens relaties tussen partijen in een stroom. Hiermee wordt de identiteit van de gebruiker geverifieerd, wordt de toegang tot bronnen verleend en ingetrokken en worden tokens uitgegeven. 
 
 ## <a name="implement-oidc-with-azure-ad"></a>OIDC implementeren met Azure AD
 
-* [Toepassingen integreren met Azure AD](https://docs.microsoft.com/azure/active-directory/saas-apps/tutorial-list) 
+* [Toepassingen integreren met Azure AD](../saas-apps/tutorial-list.md) 
 
-* [OAuth 2,0 en OpenID Connect Connect protocollen op het micro soft Identity-platform](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-protocols) 
+* [OAuth 2,0 en OpenID Connect Connect protocollen op het micro soft Identity-platform](../develop/active-directory-v2-protocols.md) 
 
-* [Micro soft Identity platform en OpenID Connect Connect protocol](https://docs.microsoft.com/azure/active-directory/develop/v2-protocols-oidc) 
+* [Micro soft Identity platform en OpenID Connect Connect protocol](../develop/v2-protocols-oidc.md) 
 
-* [Webaanmelding met OpenID Connect Connect in Azure Active Directory B2C](https://docs.microsoft.com/azure/active-directory-b2c/openid-connect) 
+* [Webaanmelding met OpenID Connect Connect in Azure Active Directory B2C](../../active-directory-b2c/openid-connect.md) 
 
-* [Uw toepassing beveiligen met OpenID Connect en Azure AD](https://docs.microsoft.com/learn/modules/secure-app-with-oidc-and-azure-ad/) 
+* [Uw toepassing beveiligen met OpenID Connect en Azure AD](/learn/modules/secure-app-with-oidc-and-azure-ad/) 
 
- 

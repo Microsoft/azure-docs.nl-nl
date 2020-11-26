@@ -13,12 +13,12 @@ ms.date: 08/28/2019
 ms.author: marsma
 ms.reviewer: oldalton
 ms.custom: aaddev
-ms.openlocfilehash: 4810de772e44be22ee5bd4a9fb6ef0ef756e62f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d8a176fff0da932d0fafd40b9ab895b635acc5f6
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77085206"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96169440"
 ---
 # <a name="how-to-configure-msal-for-ios-and-macos-to-use-different-identity-providers"></a>Procedure: MSAL voor iOS en macOS configureren voor het gebruik van verschillende id-providers
 
@@ -29,7 +29,7 @@ In dit artikel wordt uitgelegd hoe u uw micro soft-verificatie bibliotheek-app v
 `MSALPublicClientApplication` is geconfigureerd met een standaard instantie-URL van `https://login.microsoftonline.com/common` , die geschikt is voor de meeste Azure Active Directory Aad-scenario's. Tenzij u geavanceerde scenario's zoals nationale Clouds implementeert, of als u werkt met B2C, hoeft u deze niet te wijzigen.
 
 > [!NOTE]
-> Moderne authenticatie met Active Directory Federation Services als id-provider (ADFS) wordt niet ondersteund (Zie [ADFS voor ontwikkel aars](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios) voor meer informatie). ADFS wordt ondersteund via Federatie.
+> Moderne authenticatie met Active Directory Federation Services als id-provider (ADFS) wordt niet ondersteund (Zie [ADFS voor ontwikkel aars](/windows-server/identity/ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios) voor meer informatie). ADFS wordt ondersteund via Federatie.
 
 ## <a name="change-the-default-authority"></a>De standaard instantie wijzigen
 

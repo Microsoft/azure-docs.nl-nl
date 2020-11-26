@@ -4,7 +4,7 @@
   items:
     - name: Wat is Video Indexer?
       href: video-indexer-overview.md
-- name: Snelstartgidsen
+- name: Quickstarts
   expanded: true
   items:
     - name: Aan de slag
@@ -54,6 +54,7 @@
     - name: Video Indexer-uitvoer onderzoeken
       href: video-indexer-output-json-v2.md
     - name: Exacte momenten in video's zoeken
+      displayName: search
       href: video-indexer-search.md
     - name: 'Scènes, opnamen en sleutelframes detecteren'
       href: scenes-shots-keyframes.md

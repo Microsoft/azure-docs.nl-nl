@@ -16,12 +16,12 @@ ms.author: ajburnle
 ms.reviewer: dhanyahk
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 71726724e7c018f34b1175f323d0c8e55b604931
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: b763cea18cec42eed2aac3318fc1510de7a017b1
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95973629"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96168409"
 ---
 # <a name="whats-new-in-azure-active-directory"></a>Wat is er nieuw in Azure Active Directory?
 
@@ -65,7 +65,7 @@ Activiteiten door de SCIM- [inrichtings service](../app-provisioning/user-provis
 We bieden een update wanneer een datum is voltooid. Deze afschaffing is niet gepland voor het kalender jaar 2020. 
 
 > [!NOTE]
-> Dit heeft geen invloed op gebeurtenissen in de audit logboeken buiten de synchronisatie gebeurtenissen die door de inrichtings service worden gegenereerd. Gebeurtenissen, zoals het maken van een toepassing, beleid voor voorwaardelijke toegang, een gebruiker in de map, enzovoort, worden in de audit Logboeken opgenomen. [Meer informatie](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs?context=azure/active-directory/app-provisioning/context/app-provisioning-context).
+> Dit heeft geen invloed op gebeurtenissen in de audit logboeken buiten de synchronisatie gebeurtenissen die door de inrichtings service worden gegenereerd. Gebeurtenissen, zoals het maken van een toepassing, beleid voor voorwaardelijke toegang, een gebruiker in de map, enzovoort, worden in de audit Logboeken opgenomen. [Meer informatie](../reports-monitoring/concept-provisioning-logs.md?context=azure%2factive-directory%2fapp-provisioning%2fcontext%2fapp-provisioning-context).
  
 
 ---
@@ -102,7 +102,7 @@ Alle combi Naties van client-server-en browser-server moet TLS 1,2-en moderne co
 
 Betrokken omgevingen zijn:
 - Azure US Gov
-- [Office 365 GCC High & DoD](https://docs.microsoft.com/microsoft-365/compliance/tls-1-2-in-office-365-gcc?view=o365-worldwide)
+- [Office 365 GCC High & DoD](/microsoft-365/compliance/tls-1-2-in-office-365-gcc?view=o365-worldwide)
  
 ---
 
@@ -177,7 +177,7 @@ De ervaring voor de integratie-assistent (preview) is nu beschikbaar voor Azure 
 
 U kunt nu de sjabloon-ID van elke Azure AD-rol weer geven in de Azure Portal. Selecteer in azure AD de  **Beschrijving** van de geselecteerde rol. 
 
-Het is raadzaam om in plaats van de weergave naam rollen sjabloon-Id's te gebruiken in hun Power shell-script en code. De sjabloon-ID van de functie wordt ondersteund voor gebruik in [directoryRoles](https://docs.microsoft.com/graph/api/resources/directoryrole?view=graph-rest-1.0) -en [roleDefinition](https://docs.microsoft.com/graph/api/resources/unifiedroledefinition?view=graph-rest-beta) -objecten. Zie id van de [functie sjabloon](../roles/permissions-reference.md#role-template-ids)voor meer informatie over de id van de functie sjabloon.
+Het is raadzaam om in plaats van de weergave naam rollen sjabloon-Id's te gebruiken in hun Power shell-script en code. De sjabloon-ID van de functie wordt ondersteund voor gebruik in [directoryRoles](/graph/api/resources/directoryrole?view=graph-rest-1.0) -en [roleDefinition](/graph/api/resources/unifiedroledefinition?view=graph-rest-beta) -objecten. Zie id van de [functie sjabloon](../roles/permissions-reference.md#role-template-ids)voor meer informatie over de id van de functie sjabloon.
 
 ---
 
@@ -233,7 +233,7 @@ Op Risico's gebaseerde voorwaardelijke toegang en risico detectie functies van i
  
 In oktober 2020 zijn de volgende 27 nieuwe toepassingen toegevoegd aan de app-galerie met Federatie ondersteuning:
 
-[Sentry](../saas-apps/sentry-tutorial.md), [Bumblebee-Productivity supertoe](https://app.yellowmessenger.com/user/login), [ABBYY FlexiCapture Cloud](../saas-apps/abbyy-flexicapture-cloud-tutorial.md), [EAComposer](../saas-apps/eacomposer-tutorial.md), [Genesys Cloud integratie voor Azure](https://apps.mypurecloud.com/msteams-integration/), [zone technologieën Portal](https://portail.zonetechnologie.com/signin), [beautiful.ai](../saas-apps/beautiful.ai-tutorial.md), [Datawiza Access Broker](https://console.datawiza.com/), [ZOKRI](https://app.zokri.com/), [CheckProof](../saas-apps/checkproof-tutorial.md), [Ecochallenge.org](https://events.ecochallenge.org/users/login), [atSpoke](http://atspoke.com/login), [afspraak herinnering](https://app.appointmentreminder.co.nz/account/login), [Cloud. Market](https://cloud.market/), [TravelPerk](../saas-apps/travelperk-tutorial.md), [greetend](https://app.greetly.com/), [OrgVitality SSO} (. /SaaS-apps/orgvitality-SSO-tutorial.MD), [Web vracht lucht](../saas-apps/web-cargo-air-tutorial.md), [lus flow CRM](../saas-apps/loop-flow-crm-tutorial.md), [Starmind](../saas-apps/starmind-tutorial.md), [Workstem](https://hrm.workstem.com/login), [Retail Zipline](../saas-apps/retail-zipline-tutorial.md), [Hoxhunt](../saas-apps/hoxhunt-tutorial.md), [MEVISIO](../saas-apps/mevisio-tutorial.md), [Samsara](../saas-apps/samsara-tutorial.md), [Nimbus](../saas-apps/nimbus-tutorial.md), [Pulse Secure Virtual Traffic Manager](https://docs.microsoft.com/azure/active-directory/saas-apps/pulse-secure-virtual-traffic-manager-tutorial)
+[Sentry](../saas-apps/sentry-tutorial.md), [Bumblebee-Productivity supertoe](https://app.yellowmessenger.com/user/login), [ABBYY FlexiCapture Cloud](../saas-apps/abbyy-flexicapture-cloud-tutorial.md), [EAComposer](../saas-apps/eacomposer-tutorial.md), [Genesys Cloud integratie voor Azure](https://apps.mypurecloud.com/msteams-integration/), [zone technologieën Portal](https://portail.zonetechnologie.com/signin), [beautiful.ai](../saas-apps/beautiful.ai-tutorial.md), [Datawiza Access Broker](https://console.datawiza.com/), [ZOKRI](https://app.zokri.com/), [CheckProof](../saas-apps/checkproof-tutorial.md), [Ecochallenge.org](https://events.ecochallenge.org/users/login), [atSpoke](http://atspoke.com/login), [afspraak herinnering](https://app.appointmentreminder.co.nz/account/login), [Cloud. Market](https://cloud.market/), [TravelPerk](../saas-apps/travelperk-tutorial.md), [greetend](https://app.greetly.com/), [OrgVitality SSO} (. /SaaS-apps/orgvitality-SSO-tutorial.MD), [Web vracht lucht](../saas-apps/web-cargo-air-tutorial.md), [lus flow CRM](../saas-apps/loop-flow-crm-tutorial.md), [Starmind](../saas-apps/starmind-tutorial.md), [Workstem](https://hrm.workstem.com/login), [Retail Zipline](../saas-apps/retail-zipline-tutorial.md), [Hoxhunt](../saas-apps/hoxhunt-tutorial.md), [MEVISIO](../saas-apps/mevisio-tutorial.md), [Samsara](../saas-apps/samsara-tutorial.md), [Nimbus](../saas-apps/nimbus-tutorial.md), [Pulse Secure Virtual Traffic Manager](../saas-apps/pulse-secure-virtual-traffic-manager-tutorial.md)
 
 U kunt hier ook de documentatie van alle toepassingen vinden https://aka.ms/AppsTutorial
 
@@ -780,7 +780,7 @@ Azure AD-toepassingsproxy ondersteunt nu de Extern bureaublad-services (RDS)-web
  
 Dankzij de vereenvoudigde ervaring voor gebruikers stroom kunt u de functie pariteit gebruiken met preview-functies en is de start voor alle nieuwe functies. Gebruikers kunnen nieuwe functies binnen dezelfde gebruikers stroom inschakelen, waardoor er minder nood zaak is om meerdere versies te maken met elke nieuwe functie versie. Ten slotte vereenvoudigt de nieuwe gebruikers vriendelijke UX de selectie en het maken van gebruikers stromen. Probeer het nu door [een gebruikers stroom te maken](../../active-directory-b2c/tutorial-create-user-flows.md). 
 
-Zie [gebruikers stroom versies in azure Active Directory B2C](../../active-directory-b2c/user-flow-versions.md#:~:text=    User flow  ,account. Usi ...  1 more rows )voor meer informatie over gebruikers stromen.
+Zie [gebruikers stroom versies in azure Active Directory B2C](../../active-directory-b2c/user-flow-versions.md)voor meer informatie over gebruikers stromen.
 
 ---
 

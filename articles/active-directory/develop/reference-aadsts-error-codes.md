@@ -12,12 +12,12 @@ ms.date: 11/09/2020
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 59ed397f3bd54a324f8fa375a3ea870860c31142
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: fa6fc11441811589967ddd7728501b521f9f9155
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410926"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96169270"
 ---
 # <a name="azure-ad-authentication-and-authorization-error-codes"></a>Verificatie- en autorisatiefoutcodes in Azure AD
 
@@ -60,7 +60,7 @@ Hier volgt een voor beeld van een fout bericht:
 
 Het `error` veld heeft verschillende mogelijke waarden: Controleer de koppelingen van de protocol documentatie en de OAuth 2,0-specificaties voor meer informatie over specifieke fouten (bijvoorbeeld `authorization_pending` in de [code stroom](v2-oauth2-device-code.md)van het apparaat) en hoe u deze kunt reageren.  Hier vindt u enkele veelvoorkomende items:
 
-| Foutcode         | Beschrijving        | Client actie    |
+| Foutcode         | Description        | Client actie    |
 |--------------------|--------------------|------------------|
 | `invalid_request`  | Protocol fout, zoals een ontbrekende vereiste para meter. | Corrigeer en verzend de aanvraag opnieuw.|
 | `invalid_grant`    | Sommige van de verificatie materiaal (auth-code, vernieuwings token, toegangs token, PKCE Challenge) is ongeldig, niet-geparseerd, ontbreekt of anderszins onbruikbaar | Probeer een nieuwe aanvraag naar het `/authorize` eind punt uit om een nieuwe autorisatie code op te halen.  Overweeg het gebruik van de protocollen te controleren en te valideren. |
@@ -315,7 +315,7 @@ Als u bijvoorbeeld de fout code ' AADSTS50058 ' hebt ontvangen, voert u een zoek
 | AADSTS700022 | InvalidMultipleResourcesScope: de opgegeven waarde voor het bereik van de invoer parameter is niet geldig omdat deze meer dan één resource bevat. |
 | AADSTS700023 | InvalidResourcelessScope: de opgegeven waarde voor het bereik van de invoer parameter is niet geldig bij het aanvragen van een toegangs token. |
 | AADSTS7000215 | Er is een ongeldig client geheim gegeven. Ontwikkelaars fout: de app probeert zich aan te melden zonder de vereiste of juiste verificatie parameters.|
-| AADSTS7000222 | InvalidClientSecretExpiredKeysProvided-de aangestuurde geheime sleutels van de client zijn verlopen. Ga naar de Azure Portal om nieuwe sleutels voor uw app te maken of overweeg de certificaat referenties te gebruiken voor extra beveiliging: [https://aka.ms/certCreds](https://aka.ms/certCreds) |
+| AADSTS7000222 | InvalidClientSecretExpiredKeysProvided-de aangestuurde geheime sleutels van de client zijn verlopen. Ga naar de Azure Portal om nieuwe sleutels voor uw app te maken of overweeg de certificaat referenties te gebruiken voor extra beveiliging: [https://aka.ms/certCreds](./active-directory-certificate-credentials.md) |
 | AADSTS700005 | De InvalidGrantRedeemAgainstWrongTenant-meegeleverde autorisatie code is bedoeld voor gebruik met andere tenants en daarom afgewezen. De OAuth2-autorisatie code moet worden ingewisseld voor dezelfde Tenant die is verkregen voor (/veelvoorkomende of/{tenant-ID} indien van toepassing) |
 | AADSTS1000000 | UserNotBoundError-voor de BIND-API moet de Azure AD-gebruiker ook worden geverifieerd met een externe IDP, die nog niet heeft plaatsgevonden. |
 | AADSTS1000002 | BindCompleteInterruptError: de binding is voltooid, maar de gebruiker moet hiervan op de hoogte zijn. |

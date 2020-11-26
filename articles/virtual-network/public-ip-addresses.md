@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/28/2020
 ms.author: allensu
-ms.openlocfilehash: 3f2dfb113f4c82dfea422a7c2be1c5fb07ffd60e
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: ef79844cf2f90ce97ea30a1948a441f909255f98
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358164"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96169930"
 ---
 # <a name="public-ip-addresses"></a>Openbare IP-adressen
 
@@ -54,7 +54,7 @@ Standaard-SKU open bare IP-adressen:
 - Hebben een aanpasbare time-out voor inactiviteit van de stroom met inkomende gegevens van 4-30 minuten (de standaardwaarde is vier minuten), en een vaste time-out voor inactiviteit van de stroom met uitgaande gegevens van vier minuten.
 - Standaard beveiligd en gesloten voor binnenkomend verkeer. Lijst met binnenkomend verkeer met een [netwerk beveiligings groep](security-overview.md#network-security-groups)toestaan.
 - Toegewezen aan netwerk interfaces, standaard open bare load balancers of toepassings gateways. Zie voor meer informatie over standaard load balancer [Azure Standard Load Balancer](../load-balancer/load-balancer-standard-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
-- Kan zone-redundant of zonegebonden (kan worden gemaakt zonegebonden en worden gegarandeerd in een specifieke beschikbaarheids zone). Zie [Overzicht van beschikbaarheidszones in Azure](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) en [Standard-load balancer en beschikbaarheidszones](../load-balancer/load-balancer-standard-availability-zones.md?toc=%2fazure%2fvirtual-network%2ftoc.json) voor meer informatie over beschikbaarheidszones.
+- Kan zone-redundante (op te maken van alle drie zones) of zonegebonden (kan worden gemaakt zonegebonden en worden gegarandeerd in een specifieke beschikbaarheids zone). Zie [Overzicht van beschikbaarheidszones in Azure](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) en [Standard-load balancer en beschikbaarheidszones](../load-balancer/load-balancer-standard-availability-zones.md?toc=%2fazure%2fvirtual-network%2ftoc.json) voor meer informatie over beschikbaarheidszones. **Redundante Ip's voor zones kunnen alleen worden gemaakt in [regio's waar drie beschikbaarheids zones](https://docs.microsoft.com/azure/availability-zones/az-region) Live zijn.** IP-adressen die zijn gemaakt voordat zones Live zijn, zijn niet-redundante zones.
  
 > [!NOTE]
 > Inkomende communicatie met een resource uit de Standard-SKU mislukt totdat u een [netwerkbeveiligingsgroep](security-overview.md#network-security-groups) maakt en koppelt en het gewenste binnenkomende verkeer expliciet toestaat.
@@ -98,7 +98,7 @@ Een open bare IP-resource wordt bijvoorbeeld vrijgegeven uit een resource met de
 Het IP-adres wordt vrijgegeven wanneer de toewijzings methode wordt gewijzigd van **statisch** naar **dynamisch**. Om ervoor te zorgen dat het IP-adres voor de gekoppelde resource hetzelfde blijft, stelt u de toewijzings methode expliciet in op **statisch**. Een statisch IP-adres wordt onmiddellijk toegewezen.
 
 > [!NOTE]
-> Ook als u de toewijzingsmethode instelt op **statisch** , kunt u het IP-adres dat aan de openbare IP-adresresource wordt toegewezen, echter niet zelf opgeven. Azure wijst het IP-adres toe vanuit een pool van beschikbare IP-adressen op de Azure-locatie waarin de resource is gemaakt.
+> Ook als u de toewijzingsmethode instelt op **statisch**, kunt u het IP-adres dat aan de openbare IP-adresresource wordt toegewezen, echter niet zelf opgeven. Azure wijst het IP-adres toe vanuit een pool van beschikbare IP-adressen op de Azure-locatie waarin de resource is gemaakt.
 >
 
 Statische openbare IP-adressen worden vaak gebruikt in de volgende scenario's:
@@ -162,7 +162,7 @@ Er wordt een openbaar IP-adres toegewezen aan de VPN Gateway om communicatie met
 
 ## <a name="application-gateways"></a>Toepassingsgateways
 
-U kunt een openbaar IP-adres koppelen aan een Azure- [toepassingsgateway](../application-gateway/application-gateway-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json) door het toe te wijzen aan de **front-end** -configuratie van de gateway. 
+U kunt een openbaar IP-adres koppelen aan een Azure-[toepassingsgateway](../application-gateway/application-gateway-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json) door het toe te wijzen aan de **front-end**-configuratie van de gateway. 
 
 * Wijs een **dynamisch** , algemeen openbaar IP-adres toe aan een Application Gateway v1-front-end-configuratie. 
 * Wijs een **statisch** standaard-SKU-adres toe aan een v2-front-end-configuratie.

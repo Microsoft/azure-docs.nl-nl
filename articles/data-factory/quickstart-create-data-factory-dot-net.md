@@ -1,6 +1,6 @@
 ---
-title: Een data factory in Azure maken met behulp van .NET SDK
-description: Maak een data factory en pijplijn in Azure met .NET SDK om gegevens te kopiëren van de ene locatie in Azure Blob Storage naar de andere.
+title: Een gegevensfactory in Azure maken met behulp van .NET SDK
+description: Maak een Azure-gegevensfactory en pijplijn met .NET SDK om gegevens te kopiëren van de ene locatie in Azure Blob Storage naar de andere.
 services: data-factory
 documentationcenter: ''
 author: linda33wj
@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 06/24/2019
 ms.author: jingwang
-ms.openlocfilehash: e8da3dff39f94d6639471a2d1d96691c9cde614d
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: d564b96807574dd7a275d6959aea085ad16e9e2e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91322849"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013408"
 ---
 # <a name="quickstart-create-a-data-factory-and-pipeline-using-net-sdk"></a>Quickstart: Een data factory en pijplijn maken met behulp van .NET SDK
 
@@ -28,7 +28,7 @@ ms.locfileid: "91322849"
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
-In deze snelstartgids wordt beschreven hoe u .NET SDK kunt gebruiken om een Azure data factory te maken. Met de pijplijn die u in deze data factory maakt, worden gegevens **gekopieerd** van één map naar een andere map in een Azure Blob Storage. Meer informatie over het **transformeren** van gegevens met behulp van Azure Data Factory vindt u in [Zelfstudie: Gegevens transformeren met Spark](tutorial-transform-data-spark-portal.md).
+In deze quickstart wordt beschreven hoe u .NET SDK kunt gebruiken om een Azure-gegevensfactory te maken. Met de pijplijn die u in deze data factory maakt, worden gegevens **gekopieerd** van één map naar een andere map in een Azure Blob Storage. Meer informatie over het **transformeren** van gegevens met behulp van Azure Data Factory vindt u in [Zelfstudie: Gegevens transformeren met Spark](tutorial-transform-data-spark-portal.md).
 
 > [!NOTE]
 > Dit artikel is geen gedetailleerde introductie tot de Data Factory-service. Zie [Inleiding tot Azure Data Factory](introduction.md) voor een inleiding tot Azure Data Factory-service.
@@ -58,7 +58,7 @@ Maak vervolgens een C# .NET-consoletoepassing in Visual Studio:
 
 1. Start **Visual Studio**.
 2. Selecteer in het Startvenster de optie **Een nieuw project maken** > **Console-app (.NET Framework)** . .NET versie 4.5.2 of hoger is vereist.
-3. Voer **ADFv2QuickStart**in bij **Projectnaam**.
+3. Voer **ADFv2QuickStart** in bij **Projectnaam**.
 4. Selecteer **Maken** om het project te maken.
 
 ## <a name="install-nuget-packages"></a>NuGet-pakketten installeren

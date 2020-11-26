@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python, github-actions-azure
-ms.openlocfilehash: a2d5234b3c80456a98fde4547b9665ca1b0a83dd
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 651c1913491952c53af42abec5ce5d5009da06a0
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92913542"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96168063"
 ---
 # <a name="continuous-delivery-by-using-github-action"></a>Continue levering met behulp van GitHub-actie
 
@@ -34,7 +34,7 @@ Voor een Azure Functions werk stroom heeft het bestand drie secties:
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 - Een GitHub-account. Als u er nog geen hebt, kunt u zich [gratis](https://github.com/join)aanmelden.  
 - Een werk functie-app die wordt gehost op Azure met een GitHub-opslag plaats.   
-    - [Snelstart: Een functie maken in Azure met behulp van Visual Studio Code](functions-create-first-function-vs-code.md)
+    - [Snelstart: Een functie maken in Azure met behulp van Visual Studio Code](./create-first-function-vs-code-csharp.md)
 
 ## <a name="generate-deployment-credentials"></a>Genereer implementatiereferenties
 
@@ -46,7 +46,7 @@ Nadat u de referentie voor het publicatie profiel hebt opgeslagen als een [githu
 
 Het publicatie Profiel van uw functie-app downloaden:
 
-1. Selecteer de pagina **overzicht** van de functie-app en selecteer vervolgens **publicatie profiel ophalen** .
+1. Selecteer de pagina **overzicht** van de functie-app en selecteer vervolgens **publicatie profiel ophalen**.
 
    :::image type="content" source="media/functions-how-to-github-actions/get-publish-profile.png" alt-text="Publicatie profiel downloaden":::
 
@@ -55,11 +55,11 @@ Het publicatie Profiel van uw functie-app downloaden:
 
 ### <a name="add-the-github-secret"></a>Het GitHub-geheim toevoegen
 
-1. Blader in [github](https://github.com)naar uw opslag plaats en selecteer **instellingen**  >  **geheimen**  >  **een nieuw geheim toevoegen** .
+1. Blader in [github](https://github.com)naar uw opslag plaats en selecteer **instellingen**  >  **geheimen**  >  **een nieuw geheim toevoegen**.
 
-   :::image type="content" source="media/functions-how-to-github-actions/add-secret.png" alt-text="Publicatie profiel downloaden":::
+   :::image type="content" source="media/functions-how-to-github-actions/add-secret.png" alt-text="Geheim toevoegen":::
 
-1. Voeg een nieuw geheim toe met `AZURE_FUNCTIONAPP_PUBLISH_PROFILE` de **naam** , de inhoud van het publicatie profiel bestand voor **waarde** en selecteer **geheim toevoegen** .
+1. Voeg een nieuw geheim toe met `AZURE_FUNCTIONAPP_PUBLISH_PROFILE` de **naam**, de inhoud van het publicatie profiel bestand voor **waarde** en selecteer **geheim toevoegen**.
 
 GitHub kan nu worden geverifieerd bij uw functie-app in Azure.
 

@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 3b66c962758afc28da3c6be938c13d768c4f2572
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: b239cf6d253c1c2d2e36d213e92e0b218add3f8c
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91666140"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94885985"
 ---
 # <a name="chat-client-library-overview"></a>Overzicht van de chat-clientbibliotheek
 
@@ -52,7 +52,7 @@ De volgende lijst bevat de set van functies die momenteel beschikbaar zijn in de
 | Gebeurtenissen             | Event Grid gebruiken om u te abonneren op gebruikersactiviteiten die zich voordoen in chatgesprekken en om aangepaste meldingsservices of bedrijfslogica te integreren     | ✔️   | ✔️  | ✔️    | ✔️  |
 | Bewaking        | Gebruik (aantal verzonden berichten) bewaken                                                                               | ✔️   | ✔️  | ✔️    | ✔️  |
 |                    | De kwaliteit en status van API-aanvragend or uw app bewaken en waarschuwingen configureren via de portal                                                          | ✔️   | ✔️  | ✔️    | ✔️  |
-|Aanvullende functies | [Cognitive Services-API's](https://docs.microsoft.com/azure/cognitive-services/) gebruiken in combinatie met de chat-clientbibliotheek om intelligente functies in te schakelen: *vertaling en sentimentanalyse van het binnenkomende bericht op een client, spraak-naar-tekst-conversie om een bericht op te stellen wanneer het lid spreekt, enzovoort.*                                                                                         | ✔️   | ✔️  | ✔️    | ✔️  |
+|Aanvullende functies | [Cognitive Services-API's](../../../cognitive-services/index.yml) gebruiken in combinatie met de chat-clientbibliotheek om intelligente functies in te schakelen: *vertaling en sentimentanalyse van het binnenkomende bericht op een client, spraak-naar-tekst-conversie om een bericht op te stellen wanneer het lid spreekt, enzovoort.*                                                                                         | ✔️   | ✔️  | ✔️    | ✔️  |
 
 ## <a name="next-steps"></a>Volgende stappen
 

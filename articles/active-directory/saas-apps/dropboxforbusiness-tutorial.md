@@ -12,11 +12,11 @@ ms.topic: tutorial
 ms.date: 06/23/2020
 ms.author: jeedes
 ms.openlocfilehash: bf86656ff670df19162867d597a869d762a012e8
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92454558"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019341"
 ---
 # <a name="tutorial-integrate-dropbox-business-with-azure-active-directory"></a>Zelfstudie: Dropbox Business integreren met Azure Active Directory
 
@@ -50,15 +50,15 @@ U hebt het volgende nodig om aan de slag te gaan:
 Voor het configureren van de integratie van Dropbox Business in Azure AD moet u Dropbox Business uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ **Dropbox Business** in het zoekvak in het gedeelte **Toevoegen uit de galerie** .
+1. Typ **Dropbox Business** in het zoekvak in het gedeelte **Toevoegen uit de galerie**.
 1. Selecteer **Dropbox Business** in het resultatenvenster en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-Configureer en test Azure AD-eenmalige aanmelding met Dropbox Business met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Dropbox Business.
+Configureer en test Azure AD-eenmalige aanmelding met Dropbox Business met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Dropbox Business.
 
 Gebruik de volgende bouwstenen om Azure AD-eenmalige aanmelding met Dropbox Business te configureren en te testen:
 
@@ -73,8 +73,8 @@ Gebruik de volgende bouwstenen om Azure AD-eenmalige aanmelding met Dropbox Busi
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **Dropbox Business** de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Zoek in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **Dropbox Business** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
@@ -107,31 +107,31 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam Britta Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`Britta Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `BrittaSimon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte hebt u Britta Simon in staat gesteld gebruik te maken van Azure-eenmalige aanmelding door haar toegang te geven tot Dropbox Business.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Dropbox Business** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 
    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
 
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** **Britta Simon** in de lijst Gebruikers en klik op de knop **Selecteren** onder aan het scherm.
 1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-dropbox-business-sso"></a>Eenmalige aanmelding voor Dropbox Business configureren
 
@@ -147,11 +147,11 @@ In dit gedeelte hebt u Britta Simon in staat gesteld gebruik te maken van Azure-
 
     ![Schermopname met de pagina voor het aanmelden bij Dropbox Business.](./media/dropboxforbusiness-tutorial/ic769509.png "Eenmalige aanmelding configureren")
 
-4. Klik op het **Gebruikerspictogram** en selecteer het tabblad **Instellingen** .
+4. Klik op het **Gebruikerspictogram** en selecteer het tabblad **Instellingen**.
 
     ![Schermopname met de actie "USER ICON" en "Settings" geselecteerd.](./media/dropboxforbusiness-tutorial/configure1.png "Eenmalige aanmelding configureren")
 
-5. Klik in het navigatievenster aan de linkerkant op **Beheerconsole** .
+5. Klik in het navigatievenster aan de linkerkant op **Beheerconsole**.
 
     ![Schermopname met "Admin console" geselecteerd.](./media/dropboxforbusiness-tutorial/configure2.png "Eenmalige aanmelding configureren")
 
@@ -159,7 +159,7 @@ In dit gedeelte hebt u Britta Simon in staat gesteld gebruik te maken van Azure-
 
     ![Schermopname met "Settings" geselecteerd.](./media/dropboxforbusiness-tutorial/configure3.png "Eenmalige aanmelding configureren")
 
-7. Selecteer de optie **Eenmalige aanmelding** in het gedeelte **Verificatie** .
+7. Selecteer de optie **Eenmalige aanmelding** in het gedeelte **Verificatie**.
 
     ![Schermopname met de sectie "Authentication" met "Single sign-on" geselecteerd.](./media/dropboxforbusiness-tutorial/configure4.png "Eenmalige aanmelding configureren")
 
@@ -167,9 +167,9 @@ In dit gedeelte hebt u Britta Simon in staat gesteld gebruik te maken van Azure-
 
     ![Schermopname met de configuratie-instellingen voor eenmalige aanmelding.](./media/dropboxforbusiness-tutorial/configure5.png "Eenmalige aanmelding configureren")
 
-    a. Selecteer de optie **Vereist** in de vervolgkeuzelijst voor de **Eenmalige aanmelding** .
+    a. Selecteer de optie **Vereist** in de vervolgkeuzelijst voor de **Eenmalige aanmelding**.
 
-    b. Klik op **Aanmeldings-URL toevoegen** , plak in het tekstvak **Aanmeldings-URL identiteitsprovider** de **Aanmeldings-URL** die u hebt gekopieerd van de Azure-portal en selecteer **Gereed** .
+    b. Klik op **Aanmeldings-URL toevoegen**, plak in het tekstvak **Aanmeldings-URL identiteitsprovider** de **Aanmeldings-URL** die u hebt gekopieerd van de Azure-portal en selecteer **Gereed**.
 
     ![Eenmalige aanmelding configureren](./media/dropboxforbusiness-tutorial/configure6.png "Eenmalige aanmelding configureren")
 
@@ -177,7 +177,7 @@ In dit gedeelte hebt u Britta Simon in staat gesteld gebruik te maken van Azure-
 
     d. Klik op **Koppeling kopiëren** en plak de gekopieerde waarde in het tekstvak **Aanmeldings-URL** van het gedeelte **Domein en URL’s voor Dropbox Business** in Azure Portal.
 
-    e. Klik op **Opslaan** .
+    e. Klik op **Opslaan**.
 
 ### <a name="create-dropbox-business-test-user"></a>Een testgebruiker maken in Dropbox Business
 

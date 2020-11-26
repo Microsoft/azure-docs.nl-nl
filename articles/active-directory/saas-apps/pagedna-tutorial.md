@@ -12,11 +12,11 @@ ms.topic: tutorial
 ms.date: 04/03/2019
 ms.author: jeedes
 ms.openlocfilehash: e1ccd337851f8242526362675a11280e33584082
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92513786"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95993921"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pagedna"></a>Zelfstudie: Integratie van Azure Active Directory met PageDNA
 
@@ -56,7 +56,7 @@ Voor het configureren van de integratie van PageDNA met Azure AD moet u PageDNA 
 
     ![De optie voor Azure Active Directory](common/select-azuread.png)
 
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 
     ![Het deelvenster Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -70,7 +70,7 @@ Voor het configureren van de integratie van PageDNA met Azure AD moet u PageDNA 
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In dit gedeelte gaat u eenmalige aanmelding van Azure AD met PageDNA configureren en testen op basis van een testgebruiker met de naam **Britta Simon** . Eenmalige aanmelding werkt alleen als er een koppeling tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in PageDNA tot stand is gebracht.
+In dit gedeelte gaat u eenmalige aanmelding van Azure AD met PageDNA configureren en testen op basis van een testgebruiker met de naam **Britta Simon**. Eenmalige aanmelding werkt alleen als er een koppeling tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in PageDNA tot stand is gebracht.
 
 Als u eenmalige aanmelding van Azure AD met PageDNA wilt configureren en testen, moet u de volgende bouwstenen uitvoeren:
 
@@ -87,7 +87,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voor het configureren van eenmalige aanmelding bij Azure AD met PageDNA voert u de volgende stappen uit:
 
-1. In [Azure Portal](https://portal.azure.com/) selecteert u op de integratiepagina van de **PageDNA** -toepassing de optie **Eenmalige aanmelding** .
+1. In [Azure Portal](https://portal.azure.com/) selecteert u op de integratiepagina van de **PageDNA**-toepassing de optie **Eenmalige aanmelding**.
 
     ![De optie voor eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -126,7 +126,7 @@ Voor het configureren van eenmalige aanmelding bij Azure AD met PageDNA voert u 
 
     ![De optie voor het downloaden van het certificaat (Raw)](common/certificateraw.png)
 
-1. Kopieer de URL('s) die u nodig hebt in het gedeelte **PageDNA instellen** :
+1. Kopieer de URL('s) die u nodig hebt in het gedeelte **PageDNA instellen**:
 
    * **Aanmeldings-URL**
    * **Azure AD-id**
@@ -142,11 +142,11 @@ Als u eenmalige aanmelding aan de zijde van PageDNA wilt configureren, moet u he
 
 In dit gedeelte gaat u een testgebruiker met de naam Britta Simon maken in de Azure-portal.
 
-1. Selecteer in de Azure-portal aan de linkerkant **Azure Active Directory**   > **Gebruikers** > **Alle gebruikers** .
+1. Selecteer in de Azure-portal aan de linkerkant **Azure Active Directory**   > **Gebruikers** > **Alle gebruikers**.
 
     ![De opties Gebruikers en Alle gebruikers](common/users.png)
 
-1. Selecteer bovenaan het scherm **+ Nieuwe gebruiker** .
+1. Selecteer bovenaan het scherm **+ Nieuwe gebruiker**.
 
     ![De optie Nieuwe gebruiker](common/new-user.png)
 
@@ -156,17 +156,17 @@ In dit gedeelte gaat u een testgebruiker met de naam Britta Simon maken in de Az
 
     1. Voer in het vak **Naam** **Britta Simon** in.
   
-    1. Voer in het vak **Naam** **Britta Simon\@\<yourcompanydomain>.\<extension>** in. Bijvoorbeeld **BrittaSimon\@contoso.com** .
+    1. Voer in het vak **Naam** **Britta Simon\@\<yourcompanydomain>.\<extension>** in. Bijvoorbeeld **BrittaSimon\@contoso.com**.
 
-    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
+    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
 
-    1. Selecteer **Maken** .
+    1. Selecteer **Maken**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte gaat u de gebruiker Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door de gebruiker toegang te geven tot PageDNA.
 
-1. Selecteer in de Azure-portal **Bedrijfstoepassingen** > **Alle toepassingen** > **PageDNA** .
+1. Selecteer in de Azure-portal **Bedrijfstoepassingen** > **Alle toepassingen** > **PageDNA**.
 
     ![Het deelvenster Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -174,11 +174,11 @@ In dit gedeelte gaat u de gebruiker Britta Simon toestemming geven voor gebruik 
 
     ![PageDNA in de lijst met toepassingen](common/all-applications.png)
 
-1. Selecteer in het linkerdeelvenster onder **Beheren** de optie **Gebruikers en groepen** .
+1. Selecteer in het linkerdeelvenster onder **Beheren** de optie **Gebruikers en groepen**.
 
     ![De optie Gebruikers en groepen](common/users-groups-blade.png)
 
-1. Selecteer **+ Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het deelvenster **Toewijzing toevoegen** .
+1. Selecteer **+ Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het deelvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -186,7 +186,7 @@ In dit gedeelte gaat u de gebruiker Britta Simon toestemming geven voor gebruik 
 
 1. Als u een rolwaarde verwacht in de SAML-assertie, selecteert u in het deelvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst. Kies **Selecteren** onder aan het deelvenster.
 
-1. Selecteer **Toewijzen** in het deelvenster **Toewijzing toevoegen** .
+1. Selecteer **Toewijzen** in het deelvenster **Toewijzing toevoegen**.
 
 ### <a name="create-a-pagedna-test-user"></a>Een PageDNA-testgebruiker maken
 

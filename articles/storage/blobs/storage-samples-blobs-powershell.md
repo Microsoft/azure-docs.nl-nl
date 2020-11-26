@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.service: storage
 ms.subservice: blobs
 ms.topic: sample
-ms.openlocfilehash: 05f02fe5bd6d106e7187eea7600ffe0c7fc7e955
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1d343c952f01185d2360d6cf238dd3a7512849fb
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87828163"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95912124"
 ---
 # <a name="azure-powershell-samples-for-azure-blob-storage"></a>Voorbeelden van Azure PowerShell voor Azure Blob Storage
 
@@ -22,7 +22,7 @@ De volgende tabel bevat koppelingen naar voorbeelden van PowerShell-scripts waar
 |---|---|
 |**Opslagaccounts**||
 | [Een opslagaccount maken en de toegangssleutels ophalen/draaien](../scripts/storage-common-rotate-account-keys-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Hier wordt een Azure-opslagaccount gemaakt en een van de toegangssleutels opgehaald en gedraaid. |
-| [Blobs migreren tussen opslagaccounts met behulp van AzCopy in Windows](../scripts/storage-common-transfer-between-storage-accounts.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Hier worden blobs tussen Azure Storage-accounts gemigreerd met behulp van AzCopy in Windows. |
+| [Blobs migreren tussen opslagaccounts met behulp van AzCopy in Windows](/previous-versions/azure/storage/storage-common-transfer-between-storage-accounts?toc=%2fpowershell%2fmodule%2ftoc.json)| Hier worden blobs tussen Azure Storage-accounts gemigreerd met behulp van AzCopy in Windows. |
 |**Blob Storage**||
 | [De totale grootte van een Blob-opslagcontainer berekenen](../scripts/storage-blobs-container-calculate-size-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Hier wordt de totale grootte van een Blob-opslagcontainer berekend. |
 | [De grootte van een Blob-opslagcontainer berekenen ten behoeve van facturering](../scripts/storage-blobs-container-calculate-billing-size-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Hier wordt de grootte van een container in de Blob-opslag berekend voor het schatten van factureringskosten. |

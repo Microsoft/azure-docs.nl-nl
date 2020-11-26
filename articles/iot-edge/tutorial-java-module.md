@@ -12,12 +12,12 @@ ms.custom:
 - mvc
 - mqtt
 - devx-track-java
-ms.openlocfilehash: d68522d92409cfcba38abeb86f2db7c4b78869e6
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 51b7f6e814a9fad286a934466daeb1ffced225c1
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92045598"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968057"
 ---
 # <a name="tutorial-develop-a-java-iot-edge-module-for-linux-devices"></a>Zelfstudie: Een Java IoT Edge-module ontwikkelen voor Linux-apparaten
 
@@ -34,7 +34,7 @@ De IoT Edge-module die u maakt in deze zelfstudie filtert de temperatuurgegevens
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="solution-scope"></a>Oplossingsbereik
+## <a name="prerequisites"></a>Vereisten
 
 Deze zelfstudie laat zien hoe u een module kunt ontwikkelen in **Java** met behulp van **Visual Studio Code** en hoe u deze kunt implementeren op een **Linux-apparaat**. IoT Edge biedt geen ondersteuning voor Java-modules voor Windows-apparaten.
 
@@ -44,8 +44,6 @@ Gebruik de volgende tabel om inzicht te krijgen in de opties voor het ontwikkele
 | - | ------------------ | ------------------ |
 | **Linux AMD64** | ![VS Code gebruiken voor Java-modules op Linux AMD64](./media/tutorial-c-module/green-check.png) |  |
 | **Linux ARM32** | ![VS Code gebruiken voor Java-modules op Linux ARM32](./media/tutorial-c-module/green-check.png) |  |
-
-## <a name="prerequisites"></a>Vereisten
 
 Voordat u met deze zelfstudie begint, moet u de vorige zelfstudie hebben doorlopen om uw ontwikkelomgeving voor Linux-containerontwikkeling in te stellen: [IoT Edge-modules ontwikkelen voor Linux-apparaten](tutorial-develop-for-linux.md). Als u een van deze zelfstudies hebt voltooid, voldoet u aan de volgende vereisten:
 

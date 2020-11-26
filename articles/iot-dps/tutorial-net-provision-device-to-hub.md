@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: csharp
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: 55195949cfaa741389f38deaea69806c568c0ce6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f9a14ee6ee3e10b36d64ec11fc23807efe2bfaf2
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89008264"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966561"
 ---
 # <a name="tutorial-enroll-the-device-to-an-iot-hub-using-the-azure-iot-hub-provisioning-service-client-net"></a>Zelfstudie: Het apparaat registreren bij een IoT-hub met behulp van IoT Hub Device Provisioning Service-client (.NET)
 
@@ -42,12 +42,12 @@ Deze zelfstudie simuleert de periode tijdens of direct na het hardwareproductiep
 In deze stap worden de unieke beveiligingsartefacten van het apparaat toegevoegd aan Device Provisioning Service. Deze beveiligingsartefacten zijn als volgt:
 
 - Voor TPM-apparaten:
-    - De *Goedkeuringssleutel* die uniek is voor elke TPM-chip of simulatie. Lees [TPM-goedkeuringssleutel begrijpen](https://technet.microsoft.com/library/cc770443.aspx) voor meer informatie.
+    - De *Goedkeuringssleutel* die uniek is voor elke TPM-chip of simulatie. Lees [TPM-goedkeuringssleutel begrijpen](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770443(v=ws.11)) voor meer informatie.
     - De *Registratie-id* die wordt gebruikt om een apparaat op unieke wijze te identificeren in de naamruimte of het bereik. Deze mag gelijk zijn aan de apparaat-id, maar dit hoeft niet. De id is verplicht voor elk apparaat. Voor TPM-apparaten kan de registratie-id worden afgeleid van de TPM zelf, bijvoorbeeld een SHA-256-hash van de TPM-goedkeuringssleutel.
 
 - Voor X.509-apparaten:
-    - Het [X.509-certificaat dat is verleend aan het apparaat](https://msdn.microsoft.com/library/windows/desktop/bb540819.aspx), in de vorm van een *PEM*- of *CER*-bestand. Voor een afzonderlijke inschrijving moet u het *leaf certificaat* voor het X.509-systeem gebruiken. Voor registratiegroepen moet u het *basiscertificaat* of een gelijkwaardig *certificaat van ondertekenaar* gebruiken.
-    - De *Registratie-id* die wordt gebruikt om een apparaat op unieke wijze te identificeren in de naamruimte of het bereik. Deze mag gelijk zijn aan de apparaat-id, maar dit hoeft niet. De id is verplicht voor elk apparaat. Voor X.509-apparaten is de registratie-id afgeleid van de algemene naam (CN) van het certificaat. Zie [Device concepts](https://docs.microsoft.com/azure/iot-dps/concepts-device) (Apparaatconcepten) voor meer informatie over deze vereisten.
+    - Het [X.509-certificaat dat is verleend aan het apparaat](/windows/win32/seccertenroll/about-x-509-public-key-certificates), in de vorm van een *PEM*- of *CER*-bestand. Voor een afzonderlijke inschrijving moet u het *leaf certificaat* voor het X.509-systeem gebruiken. Voor registratiegroepen moet u het *basiscertificaat* of een gelijkwaardig *certificaat van ondertekenaar* gebruiken.
+    - De *Registratie-id* die wordt gebruikt om een apparaat op unieke wijze te identificeren in de naamruimte of het bereik. Deze mag gelijk zijn aan de apparaat-id, maar dit hoeft niet. De id is verplicht voor elk apparaat. Voor X.509-apparaten is de registratie-id afgeleid van de algemene naam (CN) van het certificaat. Zie [Device concepts](./concepts-service.md) (Apparaatconcepten) voor meer informatie over deze vereisten.
 
 Er zijn twee manieren om het apparaat te registreren bij Device Provisioning Service:
 
@@ -57,7 +57,7 @@ Er zijn twee manieren om het apparaat te registreren bij Device Provisioning Ser
 
 ### <a name="enroll-the-device-using-individual-enrollments"></a>Het apparaat registreren met Afzonderlijke inschrijvingen
 
-1. Maak in Visual Studio een Visual C#-consoletoepassingsproject met behulp van de projectsjabloon**Consoletoepassing**. Noem het project **DeviceProvisioning**.
+1. Maak in Visual Studio een Visual C#-consoletoepassingsproject met behulp van de projectsjabloon **Consoletoepassing**. Noem het project **DeviceProvisioning**.
     
 1. Klik in Solution Explorer met de rechtermuisknop op het project **DeviceProvisioning** en klik op **NuGet-pakketten beheren...**.
 

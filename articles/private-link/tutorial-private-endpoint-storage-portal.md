@@ -7,12 +7,12 @@ ms.author: allensu
 ms.service: private-link
 ms.topic: tutorial
 ms.date: 9/25/2020
-ms.openlocfilehash: 64856d0c9a06f57eb25a0cbc9279d1c09992f0d3
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 97795b2a693b68d1bd73a00f7b3e5ee3d4679545
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92147597"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95522121"
 ---
 # <a name="tutorial-connect-to-a-storage-account-using-an-azure-private-endpoint"></a>Zelfstudie: Verbinding maken met een opslagaccount met behulp van een privé-eindpunt in Azure
 
@@ -44,13 +44,13 @@ De Bastion-host wordt gebruikt om veilig verbinding te maken met de virtuele mac
 
 1. Selecteer in de linkerbovenhoek van het scherm **Een resource maken > Netwerken > Virtueel netwerk** of zoek naar **Virtueel netwerk** in het zoekvak.
 
-2. Typ of selecteer in **Virtueel netwerk maken** de volgende gegevens op het tabblad **Basisinstellingen** :
+2. Typ of selecteer in **Virtueel netwerk maken** de volgende gegevens op het tabblad **Basisinstellingen**:
 
     | **Instelling**          | **Waarde**                                                           |
     |------------------|-----------------------------------------------------------------|
     | **Projectgegevens**  |                                                                 |
     | Abonnement     | Selecteer uw Azure-abonnement                                  |
-    | Resourcegroep   | Selecteer **myResourceGroup** . |
+    | Resourcegroep   | Selecteer **myResourceGroup**. |
     | **Exemplaardetails** |                                                                 |
     | Naam             | Voer **myVNet** in                                    |
     | Regio           | Selecteer **VS - oost** |
@@ -63,7 +63,7 @@ De Bastion-host wordt gebruikt om veilig verbinding te maken met de virtuele mac
     |--------------------|----------------------------|
     | IPv4-adresruimte | Voer **10.1.0.0/16** in |
 
-5. Onder **Subnetnaam** selecteert u het woord **standaard** .
+5. Onder **Subnetnaam** selecteert u het woord **standaard**.
 
 6. Voer in **Subnet bewerken** deze gegevens in:
 
@@ -72,22 +72,22 @@ De Bastion-host wordt gebruikt om veilig verbinding te maken met de virtuele mac
     | Subnetnaam | Open **mySubnet** |
     | Subnetadresbereik | Voer **10.1.0.0/24** in |
 
-7. Selecteer **Opslaan** .
+7. Selecteer **Opslaan**.
 
-8. Selecteer het tabblad **Beveiliging** .
+8. Selecteer het tabblad **Beveiliging**.
 
-9. Selecteer onder **BastionHost** de optie **Inschakelen** . Voer deze gegevens in:
+9. Selecteer onder **BastionHost** de optie **Inschakelen**. Voer deze gegevens in:
 
     | Instelling            | Waarde                      |
     |--------------------|----------------------------|
     | Bastion-naam | Voer **myBastionHost** in |
     | AzureBastionSubnet-adresruimte | Voer **10.1.1.0/24** in |
-    | Openbaar IP-adres | Selecteer **Nieuw maken** . </br> Voer bij **Naam** de naam **myBastionIP** in. </br> Selecteer **OK** . |
+    | Openbaar IP-adres | Selecteer **Nieuw maken**. </br> Voer bij **Naam** de naam **myBastionIP** in. </br> Selecteer **OK**. |
 
 
-8. Selecteer het tabblad **Controleren + maken** of klik op de knop **Controleren + maken** .
+8. Selecteer het tabblad **Controleren + maken** of klik op de knop **Controleren + maken**.
 
-9. Selecteer **Maken** .
+9. Selecteer **Maken**.
 
 ## <a name="create-a-virtual-machine"></a>Een virtuele machine maken
 
@@ -96,13 +96,13 @@ In deze sectie maakt u een virtuele machine die wordt gebruikt om het persoonlij
 
 1. Selecteer in de linkerbovenhoek van het portaal de optie **Een resource maken** > **Compute** > **Virtuele machine** of zoek naar **Virtuele machine** via het zoekvak.
    
-2. In **Een virtuele machine maken** typt of selecteert u de waarden op het tabblad **Basisinformatie** :
+2. In **Een virtuele machine maken** typt of selecteert u de waarden op het tabblad **Basisinformatie**:
 
     | Instelling | Waarde                                          |
     |-----------------------|----------------------------------|
     | **Projectgegevens** |  |
     | Abonnement | Selecteer uw Azure-abonnement |
-    | Resourcegroep | Selecteer **myResourceGroup** . |
+    | Resourcegroep | Selecteer **myResourceGroup**. |
     | **Exemplaardetails** |  |
     | Naam van de virtuele machine | Open **myVM** |
     | Region | Selecteer **VS - oost** |
@@ -115,7 +115,7 @@ In deze sectie maakt u een virtuele machine die wordt gebruikt om het persoonlij
     | Wachtwoord | Voer een wachtwoord in |
     | Wachtwoord bevestigen | Voer het wachtwoord opnieuw in |
 
-3. Selecteer het tabblad **Netwerken** of selecteer **Volgende: Schijven** en vervolgens **Volgende: Netwerken** .
+3. Selecteer het tabblad **Netwerken** of selecteer **Volgende: Schijven** en vervolgens **Volgende: Netwerken**.
   
 4. Op het tabblad Netwerken selecteert u of voert u het volgende in:
 
@@ -124,27 +124,27 @@ In deze sectie maakt u een virtuele machine die wordt gebruikt om het persoonlij
     | **Netwerkinterface** |  |
     | Virtueel netwerk | **myVNet** |
     | Subnet | **mySubnet** |
-    | Openbare IP | Selecteer **Geen** . |
+    | Openbare IP | Selecteer **Geen**. |
     | NIC-netwerkbeveiligingsgroep | **Basic**|
-    | Openbare poorten voor inkomend verkeer | Selecteer **Geen** . |
+    | Openbare poorten voor inkomend verkeer | Selecteer **Geen**. |
    
-5. Selecteer **Controleren + maken** . 
+5. Selecteer **Controleren + maken**. 
   
-6. Controleer de instellingen en selecteer vervolgens **Maken** .
+6. Controleer de instellingen en selecteer vervolgens **Maken**.
 
 ## <a name="create-storage-account-with-a-private-endpoint"></a>Opslagaccounts maken met een privé-eindpunt
 
 In deze sectie maakt u een opslagaccount en configureert u het privé-eindpunt.
 
-1. Selecteer in het menu aan de linkerkant **Een resource maken** > **Opslag** > **Opslagaccount** , of zoek naar **Opslagaccount** in het zoekvak.
+1. Selecteer in het menu aan de linkerkant **Een resource maken** > **Opslag** > **Opslagaccount**, of zoek naar **Opslagaccount** in het zoekvak.
 
-2. Typ of selecteer de volgende informatie op het tabblad **Basisbeginselen** van de pagina **Opslagaccount maken** .
+2. Typ of selecteer de volgende informatie op het tabblad **Basisbeginselen** van de pagina **Opslagaccount maken**.
 
     | Instelling | Waarde                                          |
     |-----------------------|----------------------------------|
     | **Projectgegevens** |  |
     | Abonnement | Selecteer uw Azure-abonnement |
-    | Resourcegroep | Selecteer **myResourceGroup** . |
+    | Resourcegroep | Selecteer **myResourceGroup**. |
     | **Exemplaardetails** |  |
     | Naam van het opslagaccount | Voer **mystorageaccount** in. Als de naam niet beschikbaar is, voert u een unieke naam in. |
     | Locatie | Selecteer **VS - oost** |
@@ -152,18 +152,18 @@ In deze sectie maakt u een opslagaccount en configureert u het privé-eindpunt.
     | Soort account | Laat de standaardwaarde **Storage (algemeen gebruik v2)** staan. |
     | Replicatie| Laat de standaard **Geografisch redundante opslag met leestoegang (RA-GRS)** staan |
    
-3. Selecteer het tabblad **Netwerken** of selecteer de **Volgende: Knop Netwerken** .
+3. Selecteer het tabblad **Netwerken** of selecteer de **Volgende: Knop Netwerken**.
 
-4. Selecteer op het tabblad **Netwerken** onder **Verbindingsmethode** de optie **privé-eindpunt** .
+4. Selecteer op het tabblad **Netwerken** onder **Verbindingsmethode** de optie **privé-eindpunt**.
 
-5. Selecteer **+ Toevoegen** onder **Privé-eindpunt** .
+5. Selecteer **+ Toevoegen** onder **Privé-eindpunt**.
 
-6. Voer de volgende gegevens in of selecteer deze onder **Privé-eindpunt maken** :
+6. Voer de volgende gegevens in of selecteer deze onder **Privé-eindpunt maken**:
 
     | Instelling | Waarde                                          |
     |-----------------------|----------------------------------|
     | Abonnement | Selecteer uw Azure-abonnement |
-    | Resourcegroep | Selecteer **myResourceGroup** . |
+    | Resourcegroep | Selecteer **myResourceGroup**. |
     | Locatie | Selecteer **VS - oost** |
     | Naam | Voer **myPrivateEndpoint** |
     | Opslagsubresource | Laat de standaard **blob** staan. |
@@ -174,21 +174,21 @@ In deze sectie maakt u een opslagaccount en configureert u het privé-eindpunt.
     | Integreren met privé-DNS-zone | Laat de standaard **Ja** staan. |
     | Privé-DNS-zone | Laat de standaard (Nieuwe) privatelink.blob.core.windows.net staan |
 
-7. Selecteer **OK** .
+7. Selecteer **OK**.
 
-8. Selecteer **Controleren + maken** .
+8. Selecteer **Controleren + maken**.
 
-9. Selecteer **Maken** .
+9. Selecteer **Maken**.
 
 10. Selecteer **Resourcegroepen** in het linkernavigatievenster.
 
-11. Selecteer **myResourceGroup** .
+11. Selecteer **myResourceGroup**.
 
 12. Selecteer het opslagaccount dat u in de vorige stappen hebt gemaakt.
 
-13. In de sectie **Instellingen** van de opslagaccounts selecteert u **Toegangssleutels** .
+13. In de sectie **Instellingen** van de opslagaccounts selecteert u **Toegangssleutels**.
 
-14. Selecteer kopiëren voor de **Verbindingsreeks** voor **key1** .
+14. Selecteer kopiëren voor de **Verbindingsreeks** voor **key1**.
 
 ## <a name="test-connectivity-to-private-endpoint"></a>Privé-eindpuntconnectiviteit testen
 
@@ -196,13 +196,13 @@ In deze sectie gebruikt u de virtuele machine die u in de vorige stap hebt gemaa
 
 1. Selecteer **Resourcegroepen** in het linkernavigatievenster.
 
-2. Selecteer **myResourceGroup** .
+2. Selecteer **myResourceGroup**.
 
-3. Selecteer **myVM** .
+3. Selecteer **myVM**.
 
-4. Selecteer op de overzichtspagina voor **myVM** de optie **Verbinding maken** en daarna **Bastion** .
+4. Selecteer op de overzichtspagina voor **myVM** de optie **Verbinding maken** en daarna **Bastion**.
 
-5. Selecteer de blauwe knop **Bastion gebruiken** .
+5. Selecteer de blauwe knop **Bastion gebruiken**.
 
 6. Voer de gebruikersnaam en het wachtwoord in die u hebt ingevoerd bij het maken van de virtuele machine.
 
@@ -222,25 +222,25 @@ In deze sectie gebruikt u de virtuele machine die u in de vorige stap hebt gemaa
 
     Er wordt een privé-IP-adres van **10.1.0.5** geretourneerd voor de naam van het opslagaccount.  Dit adres bevindt zich in het subnet van het virtuele netwerk dat u eerder hebt gemaakt.
 
-9. Installeer [Microsoft Azure Storage Explorer](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=windows) op de virtuele machine.
+9. Installeer [Microsoft Azure Storage Explorer](../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=windows&toc=%252fazure%252fstorage%252fblobs%252ftoc.json) op de virtuele machine.
 
 10. Selecteer **Voltooien** nadat **Microsoft Azure Storage Explorer** is geïnstalleerd.  Laat het selectievakje aangevinkt om de toepassing te openen.
 
-11. Selecteer **Een verbindingsreeks gebruiken** gebruiken op het scherm **Verbinding maken met Azure Storage** .
+11. Selecteer **Een verbindingsreeks gebruiken** gebruiken op het scherm **Verbinding maken met Azure Storage**.
 
-12. Selecteer **Next** .
+12. Selecteer **Next**.
 
-13. Voer de naam van uw opslagaccount in uit de vorige stappen in **Weergavenaam** .
+13. Voer de naam van uw opslagaccount in uit de vorige stappen in **Weergavenaam**.
 
 14. Plak in het vak onder **Verbindingsreeks** de verbindingsreeks uit het opslagaccount dat u in de vorige stappen hebt gekopieerd.
 
-15. Selecteer **Next** .
+15. Selecteer **Next**.
 
-16. Controleer of de instellingen juist zijn in **Samenvatting van de verbinding** .  
+16. Controleer of de instellingen juist zijn in **Samenvatting van de verbinding**.  
 
-17. Selecteer **Verbinding maken** .
+17. Selecteer **Verbinding maken**.
 
-18. Verbreek de verbinding met **myVM** .
+18. Verbreek de verbinding met **myVM**.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -248,13 +248,13 @@ Als u deze toepassing verder niet gaat gebruiken, verwijder dan het virtueel net
 
 1. Selecteer **Resourcegroepen** in het linkermenu.
 
-2. Selecteer **myResourceGroup** .
+2. Selecteer **myResourceGroup**.
 
-3. Selecteer **Resourcegroep verwijderen** .
+3. Selecteer **Resourcegroep verwijderen**.
 
 4. In **TYPE THE RESOURCE GROUP** voert u **myResourceGroup** in.
 
-5. Selecteer **Verwijderen** .
+5. Selecteer **Verwijderen**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

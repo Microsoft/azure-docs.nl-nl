@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 ms.devlang: java
 ms.custom: mvc, devx-track-java
-ms.openlocfilehash: db5a1a2994a6202f7bbe95716534bfd68e3e1a7d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4cfbfe3e3e3ba620d8292767012c9bb866d8a878
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91316049"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968091"
 ---
 # <a name="tutorial-create-and-provision-a-simulated-x509-device-using-java-device-and-service-sdk-and-group-enrollments-for-iot-hub-device-provisioning-service"></a>Zelfstudie: Een gesimuleerd X.509-apparaat maken en inrichten voor IoT Hub Device Provisioning Service met de SDK voor Java-apparaten en -services en registratiegroepen
 
@@ -25,7 +25,7 @@ Voltooi de stappen in [Set up the IoT Hub Device Provisioning Service with the A
 
 ## <a name="prerequisites"></a>Vereisten
 
-1. Zorg ervoor dat [Java SE Development Kit 8](https://aka.ms/azure-jdks) is geïnstalleerd op de computer.
+1. Zorg ervoor dat [Java SE Development Kit 8](/azure/developer/java/fundamentals/java-jdk-long-term-support) is geïnstalleerd op de computer.
 
 1. Download en installeer [Maven](https://maven.apache.org/install.html).
 
@@ -34,10 +34,10 @@ Voltooi de stappen in [Set up the IoT Hub Device Provisioning Service with the A
 1. Gebruik het volgende [certificaatoverzicht](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md) om uw testcertificaten te maken.
 
     > [!NOTE]
-    > Deze stap vereist [OpenSSL](https://www.openssl.org/), dat ofwel kan worden gebouwd en geïnstalleerd vanuit de bron ofwel via [een externe partij](https://wiki.openssl.org/index.php/Binaries) (zoals [deze](https://sourceforge.net/projects/openssl/)) kan worden gedownload en geïnstalleerd. Als u al het _hoofd_-, _tussen_- en _apparaat_certificaat hebt gemaakt, kunt u deze stap overslaan.
+    > Deze stap vereist [OpenSSL](https://www.openssl.org/), dat ofwel kan worden gebouwd en geïnstalleerd vanuit de bron ofwel via [een externe partij](https://wiki.openssl.org/index.php/Binaries) (zoals [deze](https://sourceforge.net/projects/openssl/)) kan worden gedownload en geïnstalleerd. Als u al het _hoofd_-, _tussen_- en _apparaat_ certificaat hebt gemaakt, kunt u deze stap overslaan.
     >
 
-    1. Voer de eerste twee stappen uit om uw _basis_- en _tussen_certificaat te maken.
+    1. Voer de eerste twee stappen uit om uw _basis_- en _tussen_ certificaat te maken.
 
     1. Meld u aan bij Azure Portal, klik in het linkermenu op de knop **Alle resources** en open uw Provisioning-service.
 

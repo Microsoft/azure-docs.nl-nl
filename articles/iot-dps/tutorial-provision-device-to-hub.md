@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-dps
 services: iot-dps
 ms.custom: mvc
-ms.openlocfilehash: 93cccb1455f7a228cf40d4948cd8579610230db5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 876fd8260b64fba4d3d34a766b4259323c660b76
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90526439"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968074"
 ---
 # <a name="tutorial-provision-the-device-to-an-iot-hub-using-the-azure-iot-hub-device-provisioning-service"></a>Zelfstudie: Het apparaat inrichten in een IoT-hub met behulp van IoT Hub Device Provisioning Service
 
@@ -36,13 +36,13 @@ Als u niet bekend bent met het proces van automatische inrichting, bekijkt u het
 In deze stap worden de unieke beveiligingsartefacten van het apparaat toegevoegd aan Device Provisioning Service. Deze beveiligingsartefacten zijn als volgt gebaseerd op het [Attestation-mechanisme](concepts-service.md#attestation-mechanism) van het apparaat:
 
 - Voor TPM-apparaten hebt u het volgende nodig:
-    - De *Goedkeuringssleutel* die uniek is voor elke TPM-chip of -simulatie en kan worden verkregen bij de TPM-chipfabrikant.  Lees [TPM-goedkeuringssleutel begrijpen](https://technet.microsoft.com/library/cc770443.aspx) voor meer informatie.
+    - De *Goedkeuringssleutel* die uniek is voor elke TPM-chip of -simulatie en kan worden verkregen bij de TPM-chipfabrikant.  Lees [TPM-goedkeuringssleutel begrijpen](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770443(v=ws.11)) voor meer informatie.
     - De *Registratie-id* die wordt gebruikt om een apparaat op unieke wijze te identificeren in de naamruimte of het bereik. Deze id is al dan niet dezelfde id als van het apparaat. De id is verplicht voor elk apparaat. Voor TPM-apparaten kan de registratie-id worden afgeleid van de TPM zelf, bijvoorbeeld een SHA-256-hash van de TPM-goedkeuringssleutel.
 
       [![Inschrijvingsgegevens voor TPM in de portal](./media/tutorial-provision-device-to-hub/tpm-device-enrollment.png)](./media/tutorial-provision-device-to-hub/tpm-device-enrollment.png#lightbox)  
 
 - Voor X.509-apparaten hebt u het volgende nodig:
-    - Het [certificaat dat is verleend aan de X.509](https://msdn.microsoft.com/library/windows/desktop/bb540819.aspx)-chip of -simulatie, in de vorm van een *.pem*- of *.cer*-bestand. Voor een afzonderlijke inschrijving moet u het *ondertekende certificaat* per apparaat voor het X.509-systeem gebruiken, maar voor het inschrijven van groepen, moet u het *hoofdcertificaat* gebruiken. 
+    - Het [certificaat dat is verleend aan de X.509](/windows/win32/seccertenroll/about-x-509-public-key-certificates)-chip of -simulatie, in de vorm van een *.pem*- of *.cer*-bestand. Voor een afzonderlijke inschrijving moet u het *ondertekende certificaat* per apparaat voor het X.509-systeem gebruiken, maar voor het inschrijven van groepen, moet u het *hoofdcertificaat* gebruiken. 
 
       [![Afzonderlijke inschrijving voor X.509-attestation toevoegen in de portal](./media/tutorial-provision-device-to-hub/individual-enrollment.png)](./media/tutorial-provision-device-to-hub/individual-enrollment.png#lightbox)
 
@@ -88,7 +88,7 @@ Nadat het apparaat is opgestart, worden de volgende acties uitgevoerd:
 
     ![Geslaagde verbinding met de hub in de portal](./media/tutorial-provision-device-to-hub/hub-connect-success.png)
 
-Zie het voorbeeld voor het inrichten van de apparaatclient, [prov_dev_client_sample.c](https://github.com/Azure/azure-iot-sdk-c/blob/master/provisioning_client/samples/prov_dev_client_sample/prov_dev_client_sample.c), voor meer informatie. Het voorbeeld demonstreert het inrichten van een gesimuleerd apparaat met TPM, X.509-certificaten en symmetrische sleutels. Raadpleeg de quickstarts voor attestation van [TPM](https://docs.microsoft.com/azure/iot-dps/quick-create-simulated-device), [X.509](https://docs.microsoft.com/azure/iot-dps/quick-create-simulated-device-x509) en [Symmetrische sleutels](https://docs.microsoft.com/azure/iot-dps/quick-create-simulated-device-symm-key) voor stapsgewijze aanwijzingen voor het gebruik van het voorbeeld.
+Zie het voorbeeld voor het inrichten van de apparaatclient, [prov_dev_client_sample.c](https://github.com/Azure/azure-iot-sdk-c/blob/master/provisioning_client/samples/prov_dev_client_sample/prov_dev_client_sample.c), voor meer informatie. Het voorbeeld demonstreert het inrichten van een gesimuleerd apparaat met TPM, X.509-certificaten en symmetrische sleutels. Raadpleeg de quickstarts voor attestation van [TPM](./quick-create-simulated-device.md), [X.509](./quick-create-simulated-device-x509.md) en [Symmetrische sleutels](./quick-create-simulated-device-symm-key.md) voor stapsgewijze aanwijzingen voor het gebruik van het voorbeeld.
 
 ## <a name="next-steps"></a>Volgende stappen
 In deze zelfstudie heeft u het volgende geleerd:

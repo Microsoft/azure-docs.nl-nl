@@ -9,12 +9,12 @@ ms.service: time-series-insights
 ms.topic: tutorial
 ms.date: 10/01/2020
 ms.custom: seodec18
-ms.openlocfilehash: d504cbe9c2ac9046a34187d4a5576385b1f73bbe
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 982ca04237d16979d65260a040f5aed783822ac7
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92518106"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023221"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-gen1-environment"></a>Zelfstudie: Een Azure Time Series Insights Gen1-omgeving maken
 
@@ -101,7 +101,7 @@ Maak vervolgens een Azure Time Series Insights omgeving in uw Azure-abonnement.
 
    Parameter|Beschrijving
    ---|---
-   **Omgevingsnaam** | Kies een unieke naam voor de Azure Time Series Insights-omgeving. De namen worden gebruikt door de Azure Time Series Insights Explorer en de [query-API's](https://docs.microsoft.com/rest/api/time-series-insights/gen1-query).
+   **Omgevingsnaam** | Kies een unieke naam voor de Azure Time Series Insights-omgeving. De namen worden gebruikt door de Azure Time Series Insights Explorer en de [query-API's](/rest/api/time-series-insights/gen1-query).
    **Abonnement** | Abonnementen zijn containers voor Azure-resources. Kies een abonnement voor het maken van de Azure Time Series Insights-omgeving.
    **Resourcegroep** | Een resourcegroep is een container voor Azure-resources. Kies een bestaande resourcegroep voor de Azure Time Series Insights-omgevingsresource of maak een nieuwe.
    **Locatie** | Kies een datacentrumregio voor uw Azure Time Series Insights-omgeving. Als u extra latentie wilt voorkomen, maakt u de Azure Time Series Insights-omgeving in dezelfde regio als andere IoT-resources.
@@ -184,9 +184,9 @@ In deze zelfstudie worden verschillende werkende Azure-services gemaakt om de Az
 
 In het menu aan de linkerkant van de Azure-portal doet u het volgende:
 
-1. Selecteer het pictogram **Resourcegroepen**. Selecteer vervolgens de resourcegroep die u hebt gemaakt voor de Azure Time Series Insights-omgeving. Selecteer bovenaan de pagina **Resourcegroep verwijderen** , voer de naam van de resourcegroep in en selecteer **Verwijderen**.
+1. Selecteer het pictogram **Resourcegroepen**. Selecteer vervolgens de resourcegroep die u hebt gemaakt voor de Azure Time Series Insights-omgeving. Selecteer bovenaan de pagina **Resourcegroep verwijderen**, voer de naam van de resourcegroep in en selecteer **Verwijderen**.
 
-1. Selecteer het pictogram **Resourcegroepen**. Selecteer vervolgens de resourcegroep die is gemaakt met de oplossingsverbetering voor apparaatsimulatie. Selecteer bovenaan de pagina **Resourcegroep verwijderen** , voer de naam van de resourcegroep in en selecteer **Verwijderen**.
+1. Selecteer het pictogram **Resourcegroepen**. Selecteer vervolgens de resourcegroep die is gemaakt met de oplossingsverbetering voor apparaatsimulatie. Selecteer bovenaan de pagina **Resourcegroep verwijderen**, voer de naam van de resourcegroep in en selecteer **Verwijderen**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

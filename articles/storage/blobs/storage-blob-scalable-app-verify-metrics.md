@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 02/20/2018
 ms.author: rogarana
 ms.subservice: blobs
-ms.openlocfilehash: cfc3c445595bec046de4256a57d566067fe3d29e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 708a2369e5ba21f47f3d3fea509654b0385363f7
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82692447"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95912311"
 ---
 # <a name="verify-throughput-and-latency-metrics-for-a-storage-account"></a>Metrische gegevens over doorvoer en latentie voor een opslagaccount controleren
 
@@ -24,7 +24,7 @@ In deel vier van de serie leert u het volgende:
 > * Grafieken configureren in Azure Portal
 > * Metrische gegevens over doorvoer en latentie controleren
 
-[Metrische gegevens van Azure Storage](../common/monitor-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) gebruikt Azure Monitor om een uniform overzicht weer te geven van de prestaties en beschikbaarheid van uw opslagaccount.
+[Metrische gegevens van Azure Storage](./monitor-blob-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) gebruikt Azure Monitor om een uniform overzicht weer te geven van de prestaties en beschikbaarheid van uw opslagaccount.
 
 ## <a name="configure-metrics"></a>Metrische gegevens configureren
 
@@ -52,7 +52,7 @@ Aan grafieken kunnen meerdere metrische gegevens worden toegewezen, maar als er 
 
 ## <a name="dimensions"></a>Dimensies
 
-[Dimensies](../common/monitor-storage-reference.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#metrics-dimensions) worden gebruikt om grafieken diepgaander te bekijken en meer gedetailleerde informatie te krijgen. Verschillende metrische gegevens hebben verschillende dimensies. Een dimensie die beschikbaar is, is de dimensie **API-naam**. Deze dimensie deelt de grafiek op op basis van elke afzonderlijke API-aanroep. De eerste afbeelding hieronder toont een voorbeeld van een grafiek met het totaalaantal transacties voor een opslagaccount. De tweede afbeelding toont dezelfde grafiek maar met de dimensie API-naam geselecteerd. Zoals u ziet, wordt elke transactie vermeld en krijgt u meer details te zien over het aantal aanvragen dat is gemaakt door API-naam.
+[Dimensies](./monitor-blob-storage-reference.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#metrics-dimensions) worden gebruikt om grafieken diepgaander te bekijken en meer gedetailleerde informatie te krijgen. Verschillende metrische gegevens hebben verschillende dimensies. Een dimensie die beschikbaar is, is de dimensie **API-naam**. Deze dimensie deelt de grafiek op op basis van elke afzonderlijke API-aanroep. De eerste afbeelding hieronder toont een voorbeeld van een grafiek met het totaalaantal transacties voor een opslagaccount. De tweede afbeelding toont dezelfde grafiek maar met de dimensie API-naam geselecteerd. Zoals u ziet, wordt elke transactie vermeld en krijgt u meer details te zien over het aantal aanvragen dat is gemaakt door API-naam.
 
 ![Metrische gegevens over opslagaccount - transacties zonder een dimensie](./media/storage-blob-scalable-app-verify-metrics/transactionsnodimensions.png)
 

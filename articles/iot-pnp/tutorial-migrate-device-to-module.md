@@ -7,18 +7,18 @@ ms.date: 9/22/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: dc86340026ec7b85afc9e5208ea8ef8c32d8bac6
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 9ac616ddf1c3475f2ca3b3e8097bb74da72faa77
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93421461"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95500268"
 ---
 # <a name="tutorial-connect-an-iot-plug-and-play-module-c"></a>Zelfstudie: Een IoT Plug en Play-apparaat verbinden (C#)
 
 In deze zelfstudie wordt uitgelegd hoe u een algemene IoT Plug en Play-[module](../iot-hub/iot-hub-devguide-module-twins.md) verbindt.
 
-Een apparaat is een IoT Plug en Play-apparaat als het de eigen model-id publiceert wanneer het verbinding maakt met een IoT-hub en de eigenschappen en methoden implementeert die worden beschreven in het DTDL-model (Digital Twins Definition Language) dat wordt aangeduid door de model-id. Zie [Handleiding voor IoT Plug en Play-ontwikkelaars](./concepts-developer-guide-device-csharp.md) voor meer informatie over de wijze waarop apparaten een DTDL en een model-id gebruiken. Modules maken op dezelfde wijze gebruik van model-id's en DTDL-modellen.
+Een apparaat is een IoT Plug en Play-apparaat als het de eigen model-id publiceert wanneer het verbinding maakt met een IoT-hub en de eigenschappen en methoden implementeert die worden beschreven in het DTDL-model (Digital Twins Definition Language) dat wordt aangeduid door de model-id. Zie [Handleiding voor IoT Plug en Play-ontwikkelaars](./concepts-developer-guide-device.md) voor meer informatie over de wijze waarop apparaten een DTDL en een model-id gebruiken. Modules maken op dezelfde wijze gebruik van model-id's en DTDL-modellen.
 
 In deze zelfstudie wordt uitgelegd hoe u de C#-voorbeeldcode voor apparaten voor een thermostaat converteert naar een algemene module om te laten zien hoe u een IoT Plug en Play-module implementeert.
 
@@ -238,4 +238,4 @@ U kunt met de Azure IoT-verkenner het volgende bekijken:
 In deze zelfstudie hebt u geleerd hoe u een IoT Plug en Play-apparaat met modules verbindt met een IoT-hub. Voor meer informatie over IoT Plug and Play-apparaatmodellen raadpleegt u:
 
 > [!div class="nextstepaction"]
-> [Handleiding voor ontwikkelaars van IoT Plug en Play-modellen](./concepts-developer-guide-device-csharp.md)
+> [Handleiding voor ontwikkelaars van IoT Plug en Play-modellen](./concepts-developer-guide-device.md)

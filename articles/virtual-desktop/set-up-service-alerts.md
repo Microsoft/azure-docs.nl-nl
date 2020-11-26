@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 06/11/2019
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 0391102683ebafba63c429072c8afa9f24223955
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 66617afee11b02eae0ba5e36d9ff91cbdf21911f
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88009423"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95023102"
 ---
 # <a name="tutorial-set-up-service-alerts"></a>Zelfstudie: Servicewaarschuwingen instellen
 
@@ -25,7 +25,7 @@ In deze zelfstudie leert u het volgende:
 > [!div class="checklist"]
 > * servicewaarschuwingen maken en configureren.
 
-Bekijk de [documentatie over Azure Health](https://docs.microsoft.com/azure/service-health/) voor meer informatie over Azure Service Health.
+Bekijk de [documentatie over Azure Health](../service-health/index.yml) voor meer informatie over Azure Service Health.
 
 ## <a name="create-service-alerts"></a>Servicewaarschuwingen maken
 
@@ -46,7 +46,7 @@ Om servicewaarschuwingen te configureren:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 2. Selecteer **Service Health.**
-3. Volg de instructies in [Waarschuwingen voor activiteitenlogboeken maken met servicemeldingen](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-activity-log-service-notifications?toc=%2Fazure%2Fservice-health%2Ftoc.json#alert-and-new-action-group-using-azure-portal) om uw waarschuwingen en meldingen in te stellen.
+3. Volg de instructies in [Waarschuwingen voor activiteitenlogboeken maken met servicemeldingen](../service-health/alerts-activity-log-service-notifications-portal.md?toc=%2fazure%2fservice-health%2ftoc.json) om uw waarschuwingen en meldingen in te stellen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
 ms.custom: devx-track-python
-ms.openlocfilehash: 6a113b3a3df475853f3690a0e932378bc0e2ab02
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b4455f21ae7243ab7a15e8d746d6674289f9fdb5
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87844623"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953012"
 ---
 # <a name="tutorial-enable-authentication-in-a-python-web-application-with-azure-ad-b2c"></a>Zelfstudie: Verificatie inschakelen in een Python-webtoepassing met Azure AD B2C
 
@@ -49,7 +49,7 @@ Daarnaast hebt u het volgende nodig voor uw lokale ontwikkelomgeving:
 
 In de tweede zelfstudie die u als onderdeel van de vereisten hebt voltooid, hebt u een webtoepassing geregistreerd in Azure AD B2C. Als u communicatie wilt inschakelen voor het codevoorbeeld in deze zelfstudie, voegt u een antwoord-URL (ook wel een omleidings-URL genoemd) toe aan de registratie van de toepassing.
 
-Als u een toepassing wilt bijwerken in de Azure AD B2C-tenant, kunt u de nieuwe uniforme ervaring voor **App-registraties** of de verouderde ervaring **Toepassingen (verouderd)** gebruiken. [Meer informatie over de nieuwe ervaring](https://aka.ms/b2cappregtraining).
+Als u een toepassing wilt bijwerken in de Azure AD B2C-tenant, kunt u de nieuwe uniforme ervaring voor **App-registraties** of de verouderde ervaring **Toepassingen (verouderd)** gebruiken. [Meer informatie over de nieuwe ervaring](./app-registrations-training-guide.md).
 
 #### <a name="app-registrations"></a>[App-registraties](#tab/app-reg-ga/)
 
@@ -162,13 +162,13 @@ Deze voorbeeldtoepassing ondersteunt registreren, aanmelden en wachtwoorden opni
 
     Gebruik een geldig e-mailadres en voer de verificatie uit met de verificatiecode. Stel een wachtwoord in. Geef waarden voor de aangevraagde kenmerken op.
 
-    :::image type="content" source="media/tutorial-web-app-python/python-flask-web-app-02.png" alt-text="Webbrowser met Python Flask-webtoepassing die lokaal wordt uitgevoerd":::
+    :::image type="content" source="media/tutorial-web-app-python/python-flask-web-app-02.png" alt-text="Registratiepagina die wordt weergegeven door de Azure AD B2C-gebruikersstroom":::
 
 1. Selecteer **Maken** om een lokaal account te maken in de Azure AD B2C-directory.
 
-Wanneer u **Maken**selecteert, wordt de naam van de aangemelde gebruiker weergegeven in de toepassing.
+Wanneer u **Maken** selecteert, wordt de naam van de aangemelde gebruiker weergegeven in de toepassing.
 
-:::image type="content" source="media/tutorial-web-app-python/python-flask-web-app-03.png" alt-text="Webbrowser met Python Flask-webtoepassing die lokaal wordt uitgevoerd":::
+:::image type="content" source="media/tutorial-web-app-python/python-flask-web-app-03.png" alt-text="Webbrowser met Python Flask-webtoepassing met aangemelde gebruiker":::
 
 Als u het aanmelden wilt testen, selecteert u achtereenvolgens de koppeling **Afmelden** en de optie **Aanmelden** en meldt u zich aan met het e-mailadres en het wachtwoord dat u hebt ingevoerd tijdens de geregistratie.
 

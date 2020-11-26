@@ -7,11 +7,11 @@ ms.date: 01/15/2020
 ms.author: antchu
 ms.custom: mvc, devx-track-python, devx-track-azurepowershell
 ms.openlocfilehash: ca9ce27583168dfee1a597fce559afad38a3a8c7
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422923"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95994601"
 ---
 # <a name="tutorial-apply-machine-learning-models-in-azure-functions-with-python-and-tensorflow"></a>Zelfstudie: Machine learning-modellen toepassen in Azure Functions met Python en TensorFlow
 
@@ -56,7 +56,7 @@ In dit artikel leert y hoe u Python, TensorFlow en Azure Functions gebruikt met 
     
 ## <a name="create-and-activate-a-python-virtual-environment"></a>Een virtuele Python-omgeving maken en activeren
 
-Ga naar de *start* -folder en voer de volgende opdrachten uit om een virtuele omgeving met de naam `.venv` te maken en te activeren. Zorg ervoor dat u Python 3.7 gebruikt, die wordt ondersteund door Azure Functions.
+Ga naar de *start*-folder en voer de volgende opdrachten uit om een virtuele omgeving met de naam `.venv` te maken en te activeren. Zorg ervoor dat u Python 3.7 gebruikt, die wordt ondersteund door Azure Functions.
 
 
 # <a name="bash"></a>[bash](#tab/bash)
@@ -133,12 +133,12 @@ In Azure Functions is een functieproject een container voor een of meer afzonder
     func new --name classify --template "HTTP trigger"
     ```
 
-    Met deze opdracht maakt u een map die overeenkomt met de naam van de functie, *classify*. In die map zijn twee bestanden: *\_\_init\_\_.py* , die de functiecode bevat en *function.json-* , waarmee de trigger van de functie en de bijbehorende invoer- en uitvoerbindingen worden beschreven. Zie [De inhoud van het bestand controleren](./create-first-function-cli-python.md#optional-examine-the-file-contents) in de quickstart voor Python voor meer informatie over de inhoud van deze bestanden.
+    Met deze opdracht maakt u een map die overeenkomt met de naam van de functie, *classify*. In die map zijn twee bestanden: *\_\_init\_\_.py*, die de functiecode bevat en *function.json-* , waarmee de trigger van de functie en de bijbehorende invoer- en uitvoerbindingen worden beschreven. Zie [De inhoud van het bestand controleren](./create-first-function-cli-python.md#optional-examine-the-file-contents) in de quickstart voor Python voor meer informatie over de inhoud van deze bestanden.
 
 
 ## <a name="run-the-function-locally"></a>De functie lokaal uitvoeren
 
-1. Start de functie door de lokale Azure Functions runtime host te starten in de map *start* :
+1. Start de functie door de lokale Azure Functions runtime host te starten in de map *start*:
 
     ```
     func start
@@ -182,7 +182,7 @@ Als u uw eigen model wilt bouwen met behulp van de gratis laag van de Custom Vis
     
 1. Controleer of de map *classify* de bestanden bevat met de naam *model.pb* en *labels.txt*. Als dat niet het geval is, controleert u of u de opdracht hebt uitgevoerd in de map *start*.
 
-1. Voer in de map *start* de volgende opdracht uit om een bestand met de helpercode te kopiëren naar de map *classify* :
+1. Voer in de map *start* de volgende opdracht uit om een bestand met de helpercode te kopiëren naar de map *classify*:
 
     # <a name="bash"></a>[bash](#tab/bash)
     

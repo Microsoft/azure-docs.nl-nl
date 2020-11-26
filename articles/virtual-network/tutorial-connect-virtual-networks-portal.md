@@ -14,11 +14,11 @@ ms.date: 01/22/2020
 ms.author: kumud
 ms.custom: ''
 ms.openlocfilehash: e95441aab6c8ce7de37ba5f6b08d5f7d54e13347
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77201295"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96017913"
 ---
 # <a name="tutorial-connect-virtual-networks-with-virtual-network-peering-using-the-azure-portal"></a>Zelfstudie: virtuele netwerken verbinden met virtueel-netwerkpeering met behulp van Azure Portal
 
@@ -132,7 +132,7 @@ Het maken van de VM's duurt enkele minuten. Ga niet verder met de overige stappe
 ## <a name="communicate-between-vms"></a>Communiceren tussen VM's
 
 1. Begin in het vak *Zoeken* bovenaan de portal *myVm1* te typen. Wanneer **myVm1** wordt weergegeven in de zoekresultaten, selecteert u deze.
-2. Maak een externe bureaubladverbinding met *myVm1 * door **Verbinding maken** te kiezen, zoals in de volgende afbeelding:
+2. Maak een externe bureaubladverbinding met *myVm1* door **Verbinding maken** te kiezen, zoals in de volgende afbeelding:
 
     ![Verbinding maken met de virtuele machine](./media/tutorial-connect-virtual-networks-portal/connect-to-virtual-machine.png)  
 

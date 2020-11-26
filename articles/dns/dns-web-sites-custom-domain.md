@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: tutorial
 ms.date: 10/20/2020
 ms.author: rohink
-ms.openlocfilehash: 151d5f083fe0e945b330d65095c908be93e3330f
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 369c7dab174f0269797b10635882a6821ade8311
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92316402"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94952893"
 ---
 # <a name="tutorial-create-dns-records-in-a-custom-domain-for-a-web-app"></a>Zelfstudie: DNS-records voor een web-app in een aangepast domein maken 
 
@@ -49,7 +49,7 @@ Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://az
 
 * Maak een DNS-zone in Azure DNS en delegeer de zone in uw registrar naar Azure DNS.
 
-   1. Volg de stappen in [Een DNS-zone maken](dns-getstarted-create-dnszone.md) om een DNS-zone te maken.
+   1. Volg de stappen in [Een DNS-zone maken](./dns-getstarted-powershell.md) om een DNS-zone te maken.
    2. Volg de stappen in [DNS domain delegation](dns-delegate-domain-azure-dns.md) (Delegering van DNS-domeinen) om uw zone naar Azure DNS te delegeren.
 
 Nadat u een zone hebt gemaakt en deze naar Azure DNS hebt gedelegeerd, kunt u records voor uw aangepaste domein maken.

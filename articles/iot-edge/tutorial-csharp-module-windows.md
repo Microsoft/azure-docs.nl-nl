@@ -9,12 +9,12 @@ ms.date: 08/03/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, amqp, devx-track-csharp
-ms.openlocfilehash: e1e34bacb905bf48fc5f7cd44e66cf4a4326de91
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: d6bc11f4f468b784b957ded954dc9a1720e89bfd
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92044646"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964436"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-windows-devices"></a>Zelfstudie: Een C#-module ontwikkelen voor Windows-apparaten met IoT Edge
 
@@ -33,7 +33,7 @@ De IoT Edge-module die u maakt in deze zelfstudie filtert de temperatuurgegevens
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="solution-scope"></a>Oplossingsbereik
+## <a name="prerequisites"></a>Vereisten
 
 Deze zelfstudie laat zien hoe u een module kunt ontwikkelen in **C#** met behulp van **Visual Studio 2019** en hoe u deze kunt implementeren op een **Windows-apparaat**. Als u modules voor Linux-apparaten ontwikkelt, gaat u naar [Een C#-module ontwikkelen voor Linux-apparaten met IoT Edge](tutorial-csharp-module.md).
 
@@ -43,8 +43,6 @@ Gebruik de volgende tabel om inzicht te krijgen in de opties voor het ontwikkele
 | -- | ------------------ | ------------------ |
 | **Windows AMD64 ontwikkelen** | ![C#-modules ontwikkelen voor WinAMD64 in VS Code](./media/tutorial-c-module/green-check.png) | ![C#-modules ontwikkelen voor WinAMD64 in Visual Studio](./media/tutorial-c-module/green-check.png) |
 | **Windows AMD64 fouten opsporen** |   | ![Fouten opsporen in C#-modules voor WinAMD64 in Visual Studio](./media/tutorial-c-module/green-check.png) |
-
-## <a name="prerequisites"></a>Vereisten
 
 Voordat u met deze zelfstudie begint, moet u de vorige zelfstudie hebben doorlopen om uw ontwikkelomgeving in te stellen: [Een IoT Edge-module ontwikkelen voor een Windows-apparaat](tutorial-develop-for-windows.md). Na voltooiing van die zelfstudie moet u de volgende vereisten al hebben:
 

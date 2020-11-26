@@ -12,11 +12,11 @@ ms.topic: tutorial
 ms.date: 03/15/2019
 ms.author: jeedes
 ms.openlocfilehash: 3225aa9eaff5c3cd0acca99261935feb9774810f
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92520673"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96010262"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rolepoint"></a>Zelfstudie: Azure Active Directory-integratie met RolePoint
 
@@ -48,11 +48,11 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 Voor het instellen van de integratie van RolePoint met Azure AD moet u RolePoint vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-1. In de [Azure-portal](https://portal.azure.com), selecteert u in het linkerdeelvenster **Azure Active Directory** :
+1. In de [Azure-portal](https://portal.azure.com), selecteert u in het linkerdeelvenster **Azure Active Directory**:
 
     ![Selecteer Azure Active Directory](common/select-azuread.png)
 
-2. Ga naar **Bedrijfstoepassingen** > **Alle toepassingen** :
+2. Ga naar **Bedrijfstoepassingen** > **Alle toepassingen**:
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -84,7 +84,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Als u eenmalige aanmelding van Azure AD met RolePoint wilt configureren, voert u de volgende stappen uit:
 
-1. Selecteer in [Azure Portal](https://portal.azure.com/) op de pagina voor toepassingsintegratie voor RolePoint **Eenmalige aanmelding** :
+1. Selecteer in [Azure Portal](https://portal.azure.com/) op de pagina voor toepassingsintegratie voor RolePoint **Eenmalige aanmelding**:
 
     ![Eenmalige aanmelding selecteren](common/select-sso.png)
 
@@ -111,7 +111,7 @@ Als u eenmalige aanmelding van Azure AD met RolePoint wilt configureren, voert u
     > [!NOTE]
     > Deze waarden zijn tijdelijke aanduidingen. Hiervoor moet u de werkelijke aanmeldings-URL en id gebruiken. Het wordt aanbevolen om een unieke tekenreekswaarde in de id te gebruiken. Neem contact op met het [ondersteuningsteam van RolePoint](mailto:info@rolepoint.com) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in het dialoogvenster **Standaard SAML-configuratie** in de Azure-portal.
 
-5. Selecteer op de pagina **Eenmalige aanmelding met SAML instellen** , in de sectie **SAML-handtekeningcertificaat** , de koppeling **Downloaden** naast **XML-bestand met federatieve metagegevens** overeenkomstig uw behoeften, en sla het bestand op uw computer op.
+5. Selecteer op de pagina **Eenmalige aanmelding met SAML instellen**, in de sectie **SAML-handtekeningcertificaat**, de koppeling **Downloaden** naast **XML-bestand met federatieve metagegevens** overeenkomstig uw behoeften, en sla het bestand op uw computer op.
 
     ![De koppeling om het certificaat te downloaden](common/metadataxml.png)
 
@@ -134,7 +134,7 @@ Als u eenmalige aanmelding aan RolePoint-zijde wilt instellen, moet u samenwerke
 
 In deze sectie gaat u een testgebruiker met de naam Britta Simon maken in de Azure-portal.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** :
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**:
 
     ![Selecteer Alle gebruikers](common/users.png)
 
@@ -158,7 +158,7 @@ In deze sectie gaat u een testgebruiker met de naam Britta Simon maken in de Azu
 
 In deze sectie stelt u Britta Simon in staat om eenmalige aanmelding van Azure te gebruiken door haar toegang te verlenen tot RolePoint.
 
-1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **RolePoint**.
+1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **RolePoint**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -166,7 +166,7 @@ In deze sectie stelt u Britta Simon in staat om eenmalige aanmelding van Azure t
 
     ![Lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het linkerdeelvenster **Gebruikers en groepen** :
+3. Selecteer in het linkerdeelvenster **Gebruikers en groepen**:
 
     ![Gebruikers en groepen selecteren](common/users-groups-blade.png)
 

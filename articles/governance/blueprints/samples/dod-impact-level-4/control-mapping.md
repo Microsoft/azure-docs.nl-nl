@@ -4,17 +4,17 @@ description: Beheeropties toewijzen voor het DoD Impact Level 4-blauwdrukvoorbee
 ms.date: 10/26/2020
 ms.topic: sample
 ms.openlocfilehash: 376ddd68373026a93eaf08774cee0a1f8ce06bec
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675730"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96019528"
 ---
 # <a name="control-mapping-of-the-dod-impact-level-4-blueprint-sample"></a>Beheeropties toewijzen voor het DoD Impact Level 4-blauwdrukvoorbeeld
 
 Het volgende artikel bevat informatie over de manier waarop de Azure Blueprints Department of Defense Impact Level 4 (DoD IL4) blauwdrukvoorbeelden toewijst aan de beheeropties voor DoD Impact Level 4. Zie voor meer informatie over de beheeropties [DoD Cloud Computing Security Requirements Guide (SRG)](https://dl.dod.cyber.mil/wp-content/uploads/cloud/pdf/Cloud_Computing_SRG_v1r3.pdf). De Defense Information Systems Agency (DISA) is een instantie van het Amerikaanse ministerie van defensie dat verantwoordelijk is voor het ontwikkelen en onderhouden van de DoD Cloud Computing Security Requirements Guide (SRG). De SRG definieert de basisbeveiligingsvereisten voor cloudserviceproviders (CSP's) die als host dienen voor DoD-informatie, systemen en toepassingen, en voor het gebruik van cloudservices door DoD.  
 
-De volgende toewijzingen zijn voor de **DoD Impact Level 4** -beheeropties. Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifieke beheeroptie te gaan. Veel van de toegewezen beheeropties worden geïmplementeerd met een [Azure Policy](../../../policy/overview.md)-initiatief. Als u het complete initiatief wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities** . Zoek en selecteer vervolgens de **\[Preview\]: DoD Impact Level 4** ingebouwd beleidsinitiatief.
+De volgende toewijzingen zijn voor de **DoD Impact Level 4**-beheeropties. Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifieke beheeroptie te gaan. Veel van de toegewezen beheeropties worden geïmplementeerd met een [Azure Policy](../../../policy/overview.md)-initiatief. Als u het complete initiatief wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities**. Zoek en selecteer vervolgens de **\[Preview\]: DoD Impact Level 4** ingebouwd beleidsinitiatief.
 
 > [!IMPORTANT]
 > Elke beheeroptie hieronder is gekoppeld aan een of meer [Azure Policy](../../../policy/overview.md)-definities. Met deze beleidsregels kunt u de [compliance beoordelen](../../../policy/how-to/get-compliance-data.md) met de beheeroptie. Er is echter vaak geen één-op-één- of volledige overeenkomst tussen een beheeroptie en een of meer beleidsregels. Als zodanig verwijst de term **Conform** in Azure Policy alleen naar de beleidsregels zelf. Dit garandeert niet dat u volledig conform bent met alle vereisten van een beheeroptie. Daarnaast bevat de compliance standaard beheeropties die op dit moment nog niet worden beschreven door Azure Policy-definities. Daarom is compliance in Azure Policy slechts een gedeeltelijke weergave van uw algemene compliancestatus. De koppelingen tussen de beheeropties en Azure Policy definities voor dit blauwdrukvoorbeeld voor compliance kunnen na verloop van tijd veranderen. Als u de wijzigingsgeschiedenis wilt bekijken, raadpleegt u de [GitHub Commit-geschiedenis](https://github.com/MicrosoftDocs/azure-docs/commits/master/articles/governance/blueprints/samples/dod-impact-level-4/control-mapping.md).

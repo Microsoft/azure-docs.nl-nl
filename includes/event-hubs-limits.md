@@ -8,16 +8,16 @@ ms.topic: include
 ms.date: 09/10/2020
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 1b5905046fdde4d5574fd4d39f40dce1bbf11e32
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 262783e83bdb846a3ea7e3015212c01048a00125
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: HT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/25/2020
-ms.locfileid: "96026188"
+ms.locfileid: "96152715"
 ---
 De volgende tabellen bevatten quota en limieten die specifiek zijn voor [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs/). Zie [Prijzen voor Event Hubs](https://azure.microsoft.com/pricing/details/event-hubs/) voor prijsinformatie over Event Hubs.
 
-## <a name="common-limits-for-all-tiers"></a>Algemene limieten voor alle lagen
+### <a name="common-limits-for-all-tiers"></a>Algemene limieten voor alle lagen
 De volgende limieten gelden in alle lagen. 
 
 | Limiet |  Notities | Waarde |
@@ -33,7 +33,7 @@ De volgende limieten gelden in alle lagen.
 | Aantal virtuele netwerken (VNet) en IP-configuratieregels | - | 128 | 
 
 
-## <a name="basic-vs-standard-tiers"></a>Basic- vs. Standard-lagen
+### <a name="basic-vs-standard-tiers"></a>Basic- vs. Standard-lagen
 De volgende tabel geeft de limieten weer die mogelijk anders zijn voor basic- en standard-lagen. 
 
 | Limiet | Notities | Basic | Standard |
@@ -44,7 +44,7 @@ De volgende tabel geeft de limieten weer die mogelijk anders zijn voor basic- en
 | Maximale bewaartermijn van gebeurtenisgegevens | &nbsp; |1 dag |1-7 dagen |
 | Maximum aantal doorvoereenheden |Wanneer deze limiet wordt overschreden, worden uw gegevens beperkt en wordt een [server bezet-uitzondering](/dotnet/api/microsoft.servicebus.messaging.serverbusyexception) gegenereerd. U kunt een groter aantal doorvoereenheden voor een Standard-laag aanvragen door een [ondersteuningsaanvraag](../articles/azure-portal/supportability/how-to-create-azure-support-request.md) in te dienen. [Extra doorvoereenheden](../articles/event-hubs/event-hubs-auto-inflate.md) zijn beschikbaar in blokken van 20 op basis van een vaste aankoop. |20 | 20 | 
 
-## <a name="dedicated-tier-vs-standard-tier"></a>Toegewezen laag vs. Standard-laag
+### <a name="dedicated-tier-vs-standard-tier"></a>Toegewezen laag vs. Standard-laag
 De Event Hubs Dedicated-aanbieding wordt gefactureerd tegen een vaste maandelijkse prijs, met een minimum van 4 uur gebruik. De Dedicated-laag biedt alle functies van het Standard-abonnement, maar met schaalcapaciteit voor grote bedrijven en limieten voor klanten met veeleisende werkbelastingen. 
 
 Raadpleeg dit [document](../articles/event-hubs/event-hubs-dedicated-cluster-create-portal.md) voor meer informatie over hoe u toegewezen Event Hubs-clusters maakt met Azure-portal.
@@ -63,11 +63,11 @@ Raadpleeg dit [document](../articles/event-hubs/event-hubs-dedicated-cluster-cre
 | Vastleggen | Betalen per uur | Inbegrepen |
 
 
-## <a name="schema-registry-limitations"></a>Beperkingen voor schemaregisters
+### <a name="schema-registry-limitations"></a>Beperkingen voor schemaregisters
 
-### <a name="limits-that-are-the-same-for-standard-and-dedicated-tiers"></a>Limieten die dezelfde zijn voor **standard** en **toegewezen**-lagen 
+#### <a name="limits-that-are-the-same-for-standard-and-dedicated-tiers"></a>Limieten die dezelfde zijn voor standard en toegewezen-lagen 
 | Functie | Limiet | 
-|---|---|--|
+|---|---|
 | Maximumlengte van een schemagroepnaam | 50 |  
 | Maximumlengte van een schemanaam | 100 |    
 | Grootte in bytes per schema | 1 MB |   
@@ -76,10 +76,10 @@ Raadpleeg dit [document](../articles/event-hubs/event-hubs-dedicated-cluster-cre
 | Grootte in bytes per groepeigenschapswaarde | 1024 | 
 
 
-### <a name="limits-that-are-different-for-standard-and-dedicated-tiers"></a>Limieten die anders zijn voor **standard** en **toegewezen**-lagen 
+#### <a name="limits-that-are-different-for-standard-and-dedicated-tiers"></a>Limieten die anders zijn voor standard en toegewezen-lagen 
 
 | Limiet | Standard | Toegewezen | 
-|---|---|--|---|
+|---|---|--|
 | Grootte van het schemaregister (naamruimte) in megabytes | 25 |  1024 |
 | Aantal schemagroepen in een schemaregister of naamruimte | 1 - exclusief de standaardgroep | 1000 |
 | Aantal schemaversies in alle themagroepen | 25 | 10.000 |

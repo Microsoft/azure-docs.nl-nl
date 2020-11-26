@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 8ebfbeeb4533f21bc0fa10a5fee7b88ef069c262
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8eca6297a704e1ef478c09baf227cf622d6890bb
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84298841"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953148"
 ---
 # <a name="tutorial-grant-access-to-a-nodejs-web-api-from-a-desktop-app-using-azure-active-directory-b2c"></a>Zelfstudie: Toegang verlenen aan een web-API van Node.js vanuit een desktop-app met behulp van Azure Active Directory B2C
 
@@ -51,7 +51,7 @@ Als u een beveiligde web-API wilt aanroepen vanuit een systeemeigen clienttoepas
 
 In de zelfstudie met vereisten hebt u een systeemeigen clienttoepassing geregistreerd met de naam *nativeapp1*. Met de volgende stappen wordt de registratie van de systeemeigen toepassing geconfigureerd bij de API-bereiken die u in de vorige sectie hebt gemaakt voor *webapi1*. Hierdoor kan de bureaubladtoepassing een toegangstoken verkrijgen uit Azure AD B2C die de web-API kan gebruiken om bereiktoegang te controleren en te bieden voor de bijbehorende resources. Later in de zelfstudie gaat u zowel de bureaubladtoepassing als de web-API-codevoorbeelden configureren en uitvoeren.
 
-Als u een toepassing wilt registreren in de Azure AD B2C-tenant, kunt u de nieuwe uniforme ervaring voor **App-registraties** of de verouderde ervaring **Toepassingen (verouderd)** gebruiken. [Meer informatie over de nieuwe ervaring](https://aka.ms/b2cappregtraining).
+Als u een toepassing wilt registreren in de Azure AD B2C-tenant, kunt u de nieuwe uniforme ervaring voor **App-registraties** of de verouderde ervaring **Toepassingen (verouderd)** gebruiken. [Meer informatie over de nieuwe ervaring](./app-registrations-training-guide.md).
 
 #### <a name="app-registrations"></a>[App-registraties](#tab/app-reg-ga/)
 

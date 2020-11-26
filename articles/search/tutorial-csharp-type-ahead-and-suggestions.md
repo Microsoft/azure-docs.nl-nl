@@ -10,11 +10,11 @@ ms.topic: tutorial
 ms.date: 10/05/2020
 ms.custom: devx-track-js, devx-track-csharp
 ms.openlocfilehash: 202a7f6b01423045fe7c72db5b42c29ae58f648d
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91739660"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96013833"
 ---
 # <a name="tutorial-add-autocomplete-and-suggestions-using-the-net-sdk"></a>Zelfstudie: Automatisch aanvullen en suggesties toevoegen met de .NET SDK
 
@@ -151,7 +151,7 @@ Laten we beginnen met een eenvoudig geval waarbij we de gebruiker alternatieven 
 
 4. Stel in het weergavescript **&fuzzy** in op waard en voer de app opnieuw uit. Voer nu 'po' in. Merk op dat de zoekopdracht ervan uitgaat dat u één letter verkeerd hebt getypt.
  
-    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-suggest-fuzzy.png" alt-text="Wanneer u *po* typt, worden er twee suggesties weergegeven" border="false":::
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-suggest-fuzzy.png" alt-text="*pa* typen wanneer fuzzy is ingesteld op waar" border="false":::
 
     Indien u dat wenst, kunt u de [Lucene querysyntaxis in Azure Cognitive Search](./query-lucene-syntax.md) bekijken voor meer gedetailleerde informatie over de logica die gebruikt wordt bij fuzzy zoekopdrachten.
 
@@ -196,7 +196,7 @@ We kunnen de weergave van de suggesties voor de gebruiker verbeteren door de par
 
 1. Voer de app opnieuw uit. Normaal gezien ziet u dat uw ingevoerde tekst vetgedrukt staat in de suggesties. Probeer 'pa' te typen.
  
-    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-suggest-highlight.png" alt-text="Wanneer u *po* typt, worden er twee suggesties weergegeven" border="false":::
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-suggest-highlight.png" alt-text="*pa* typen met markering" border="false":::
 
    De logica die gebruikt wordt voor het bovenstaande markeringsscript, is niet onfeilbaar. Als u een term opgeeft die twee keer in dezelfde naam voorkomt, dan zijn de vetgedrukte resultaten niet helemaal wat u wilt. Probeer 'mo' te typen.
 
@@ -255,7 +255,7 @@ Een andere variatie, die lichtjes verschilt van suggesties, is automatisch aanvu
 
 1. Voer de app uit. Merk op dat alle opties die in de vervolgkeuzelijst worden weergegeven, enkele woorden zijn. Probeer woorden te typen die beginnen met 're'. Merk op dat er steeds minder opties zijn wanneer u meer letters typt.
 
-    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-suggest-autocompletebasic.png" alt-text="Wanneer u *po* typt, worden er twee suggesties weergegeven" border="false":::
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-suggest-autocompletebasic.png" alt-text="Typen met eenvoudig automatisch aanvullen" border="false":::
 
     Het script voor suggesties dat u eerder uitvoerde, is waarschijnlijk nuttiger dan dit script voor automatisch aanvullen. Als u automatisch aanvullen gebruikersvriendelijker wilt maken, kunt u het gebruiken met voorgestelde resultaten.
 
@@ -451,7 +451,7 @@ Er zijn bibliotheken die deze functionaliteit bieden. Dit wordt vaak 'Inline aut
 
 1. Voer nu de app uit. Typ 'pa' in het zoekvak. Krijgt u de suggestie 'palace' samen met twee hotels die 'pa' bevatten?
 
-    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-suggest-autocomplete.png" alt-text="Wanneer u *po* typt, worden er twee suggesties weergegeven" border="false":::
+    :::image type="content" source="media/tutorial-csharp-create-first-app/azure-search-suggest-autocomplete.png" alt-text="Typen met inline automatisch aanvullen en suggesties" border="false":::
 
 1. Probeer de tabtoets te gebruiken om de suggestie te accepteren, en probeer suggesties te selecteren met de pijltoetsen en de tabtoets of met de muis. Controleer of het script al deze situaties correct verwerkt.
 

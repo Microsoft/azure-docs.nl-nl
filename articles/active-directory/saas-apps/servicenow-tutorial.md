@@ -12,11 +12,11 @@ ms.topic: tutorial
 ms.date: 09/09/2020
 ms.author: jeedes
 ms.openlocfilehash: 3413e594179cdca0704cb5db7908276b7502e719
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92901135"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96004752"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-servicenow"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met ServiceNow
 
@@ -127,7 +127,7 @@ In deze sectie gaat u een testgebruiker, genaamd B.Simon, maken in de Azure-port
 
 1. Selecteer in het linkerdeelvenster van de Azure-portal **Azure Active Directory** > **Gebruikers** > **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer `B.Simon` in bij **Naam**.  
    1. Voer bij **Gebruikersnaam** de username@companydomain.extension in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Selecteer **Wachtwoord weergeven** en noteer de waarde die in het vak **Wachtwoord** wordt getoond.
@@ -260,7 +260,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
              ![Schermopname van de sectie Identity Provider](./media/servicenow-tutorial/automatic-config.png "Eenmalige aanmelding configureren")
 
-               a. Typ bij **Name** een naam voor uw configuratie (bijvoorbeeld **Microsoft Azure Federated Single Sign-on** ).
+               a. Typ bij **Name** een naam voor uw configuratie (bijvoorbeeld **Microsoft Azure Federated Single Sign-on**).
 
                b. Kopieer de waarde van **ServiceNow Homepage** en plak deze in **Aanmeldings-URL** in de sectie **Standaard SAML-configuratie voor ServiceNow** van de Azure-portal.
 
@@ -288,7 +288,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
              ![Schermopname van de pagina, met Test Connection gemarkeerd](./media/servicenow-tutorial/tutorial-activate-2.png "Invoegtoepassing activeren")
 
              > [!NOTE]
-             > Als de Test Connection mislukt en u deze verbinding niet kunt activeren, biedt ServiceNow de overschrijvingsschakelaar. U moet **Sys_properties.LIST** invoeren in de **zoeknavigatie** , waarna de nieuwe pagina van System Properties wordt geopend. Hier moet u een nieuwe eigenschap maken waarbij u **glide.authenticate.multisso.test.connection.mandatory** als naam opgeeft, **datatype** op **True/False** instelt en **value** op **False** instelt.
+             > Als de Test Connection mislukt en u deze verbinding niet kunt activeren, biedt ServiceNow de overschrijvingsschakelaar. U moet **Sys_properties.LIST** invoeren in de **zoeknavigatie**, waarna de nieuwe pagina van System Properties wordt geopend. Hier moet u een nieuwe eigenschap maken waarbij u **glide.authenticate.multisso.test.connection.mandatory** als naam opgeeft, **datatype** op **True/False** instelt en **value** op **False** instelt.
 
              > ![Schermopname van de pagina Verbinding testen](./media/servicenow-tutorial/test-connection-fail.png "Eenmalige aanmelding configureren")
         
@@ -324,7 +324,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
         ![Schermopname van Identity Provider](./media/servicenow-tutorial/ic7694982.png "Eenmalige aanmelding configureren")
 
-        a. Typ bij **Name** een naam voor uw configuratie (bijvoorbeeld **Microsoft Azure Federated Single Sign-on** ).
+        a. Typ bij **Name** een naam voor uw configuratie (bijvoorbeeld **Microsoft Azure Federated Single Sign-on**).
 
         b. Kopieer de waarde van **ServiceNow Homepage**. Plak deze in **Aanmeldings-URL** in de sectie **Standaard SAML-configuratie voor ServiceNow** van de Azure-portal.
 
@@ -343,7 +343,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
         g. Selecteer **Test Connection** in de rechterbovenhoek van de pagina.
 
         > [!NOTE]
-        > Als de Test Connection mislukt en u deze verbinding niet kunt activeren, biedt ServiceNow de overschrijvingsschakelaar. U moet **Sys_properties.LIST** invoeren in de **zoeknavigatie** , waarna de nieuwe pagina van System Properties wordt geopend. Hier moet u een nieuwe eigenschap maken waarbij u **glide.authenticate.multisso.test.connection.mandatory** als naam opgeeft, **datatype** op **True/False** instelt en **value** op **False** instelt.
+        > Als de Test Connection mislukt en u deze verbinding niet kunt activeren, biedt ServiceNow de overschrijvingsschakelaar. U moet **Sys_properties.LIST** invoeren in de **zoeknavigatie**, waarna de nieuwe pagina van System Properties wordt geopend. Hier moet u een nieuwe eigenschap maken waarbij u **glide.authenticate.multisso.test.connection.mandatory** als naam opgeeft, **datatype** op **True/False** instelt en **value** op **False** instelt.
 
           > ![Schermopname van Verbinding testen](./media/servicenow-tutorial/test-connection-fail.png "Eenmalige aanmelding configureren")
 
@@ -384,7 +384,7 @@ Het doel van deze sectie is het maken van een gebruiker met de naam B.Simon in S
 
     ![Schermopname van het dialoogvenster X.509 Certificates](./media/servicenow-tutorial/ic7694975.png "Eenmalige aanmelding configureren")
 
-    a. Typ bij **Name** een naam voor de configuratie (bijvoorbeeld: **TestSAML2.0** ).
+    a. Typ bij **Name** een naam voor de configuratie (bijvoorbeeld: **TestSAML2.0**).
 
     b. Selecteer **Active**.
 
@@ -404,7 +404,7 @@ Het doel van deze sectie is het maken van een gebruiker met de naam B.Simon in S
 
     ![Schermopname van het dialoogvenster Add New Identity Provider](./media/servicenow-tutorial/ic7694982ex.png "Eenmalige aanmelding configureren")
 
-    a. Typ bij **Name** een naam voor de configuratie (bijvoorbeeld: **SAML 2.0** ).
+    a. Typ bij **Name** een naam voor de configuratie (bijvoorbeeld: **SAML 2.0**).
 
     b. Plak bij **Identity Provider URL** de waarde van de identiteitsprovider-id die u hebt gekopieerd uit de Azure-portal.
 

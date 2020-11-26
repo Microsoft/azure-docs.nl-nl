@@ -11,12 +11,12 @@ ms.date: 05/19/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 77a8e6948b9912061801fefaa63d2f49611014aa
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 6b510464145f434f761cc28ba4e1c1361f983f8b
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94651699"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95237388"
 ---
 # <a name="pilot-cloud-provisioning-for-an-existing-synced-ad-forest"></a>Een proef uitvoeren met cloudinrichting voor een bestaande gesynchroniseerde AD-forest 
 
@@ -126,7 +126,7 @@ Dezelfde stappen moeten worden gevolgd voor alle objecttypen (gebruiker, groep e
 
 4. Zodra deze bewerking is voltooid, wordt de configuratiewizard gestart.  Meld u aan met uw globale beheerdersreferenties voor Azure AD.
 5. Klik in het scherm **Verbinding maken met Active Directory** op **Directory toevoegen** en meld u aan met uw Active Directory-beheerdersaccount.  Met deze bewerking wordt uw on-premises adreslijst toegevoegd.  Klik op **Volgende**.</br>
-![Schermopname van het venster 'Verbinding maken met Active Directory' met een ingevoerde mapwaarde.](media/how-to-install/install-3.png)</br>
+![Schermopname van het venster 'Verbinding maken met Active Directory' met een ingevoerde mapwaarde.](media/how-to-install/install-3a.png)</br>
 
 6. Klik in het scherm **Configuratie voltooid** op **Bevestigen**.  Met deze bewerking wordt de agent geregistreerd en opnieuw gestart.</br>
 ![Schermopname met het scherm Configuratie voltooid met de knop "Bevestigen" geselecteerd.](media/how-to-install/install-4a.png)</br>

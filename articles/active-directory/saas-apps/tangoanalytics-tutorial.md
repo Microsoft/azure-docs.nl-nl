@@ -12,11 +12,11 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: b1f0cbc1b15eec6498b9219b58d4679bf1a854dc
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92515862"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96018763"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tango-analytics"></a>Zelfstudie: Azure Active Directory-integratie met Tango Analytics
 
@@ -49,7 +49,7 @@ Om de integratie van Tango Analytics in Azure AD te configureren, moet u Tango A
 
 **Als u Tango Analytics wilt toevoegen uit de galerie, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -61,7 +61,7 @@ Om de integratie van Tango Analytics in Azure AD te configureren, moet u Tango A
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Tango Analytics** , selecteer **Tango Analytics** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Tango Analytics**, selecteer **Tango Analytics** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![Tango Analytics in de resultatenlijst](common/search-new-app.png)
 
@@ -130,7 +130,7 @@ Als u eenmalige aanmelding aan de zijde van **Tango Analytics** wilt configurere
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -155,7 +155,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Tango Analytics.
 
-1. Selecteer in Azure Portal **Bedrijfstoepassingen** , **Alle toepassingen** en selecteer vervolgens **Tango Analytics**.
+1. Selecteer in Azure Portal **Bedrijfstoepassingen**, **Alle toepassingen** en selecteer vervolgens **Tango Analytics**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

@@ -4,12 +4,12 @@ description: Meer informatie over hoe u gegevens verzameld in de planningsfase k
 ms.topic: tutorial
 ms.author: tredavis
 ms.date: 11/09/2020
-ms.openlocfilehash: 264ad99b21150f391c367eba2da31f0d08f4ab08
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 47fc894fa1d6204a1bc2c912da7fcbb2394627fa
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94336332"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95484216"
 ---
 # <a name="deploy-and-configure-azure-vmware-solution"></a>Azure VMware Solution implementeren en configureren
 
@@ -30,7 +30,7 @@ Gebruik de informatie die u hebt verzameld in het artikel [De implementatie van 
 [!INCLUDE [create-avs-private-cloud-azure-portal](includes/create-private-cloud-azure-portal-steps.md)]
 
 >[!NOTE]
->Bekijk voor een volledig overzicht van deze stap de video [Azure VMware Solution Deployment](https://www.youtube.com/embed/1JLB3L2WDWI). 
+>Bekijk voor een volledig overzicht van deze stap de video [Azure VMware Solution Deployment](https://www.youtube.com/embed/gng7JjxgayI).
 
 ## <a name="create-the-jump-box"></a>De jumpbox maken
 

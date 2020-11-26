@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 10/08/2019
 ms.author: rogarana
 ms.subservice: blobs
-ms.openlocfilehash: dd87e1a9bcff55813dff420976df58351386fb34
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5dc1f8b8a7c46a3d6ad6f62d93bc91753e42c3ae
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75371935"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95545037"
 ---
 # <a name="upload-large-amounts-of-random-data-in-parallel-to-azure-storage"></a>Grote hoeveelheden willekeurige gegevens gelijktijdig uploaden naar Azure Storage
 
@@ -62,7 +62,7 @@ Typ `dotnet run` om de toepassing uit te voeren. De eerste keer dat u `dotnet` u
 dotnet run
 ```
 
-De toepassing maakt vijf containers met willekeurige namen en begint met het uploaden van de bestanden in de staging-map naar het opslagaccount. De toepassing stelt het minimumaantal threads in op 100 en de [DefaultConnectionLimit](https://msdn.microsoft.com/library/system.net.servicepointmanager.defaultconnectionlimit(v=vs.110).aspx) op 100 om ervoor te zorgen dat een groot aantal gelijktijdige verbindingen zijn toegestaan wanneer de toepassing wordt uitgevoerd.
+De toepassing maakt vijf containers met willekeurige namen en begint met het uploaden van de bestanden in de staging-map naar het opslagaccount. De toepassing stelt het minimumaantal threads in op 100 en de [DefaultConnectionLimit](/dotnet/api/system.net.servicepointmanager.defaultconnectionlimit) op 100 om ervoor te zorgen dat een groot aantal gelijktijdige verbindingen zijn toegestaan wanneer de toepassing wordt uitgevoerd.
 
 Naast het instellen van de limietinstellingen voor threads en verbindingen zijn de [BlobRequestOptions](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions) voor de methode [UploadFromStreamAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblockblob.uploadfromstreamasync) geconfigureerd om gebruik te maken van parallelle uitvoering en om validatie van de MD5-hash uit te schakelen. De bestanden worden geüpload in blokken van 100 MB. Deze configuratie biedt betere prestaties maar kan duur zijn als er een slecht presterend netwerk wordt gebruikt, omdat, wanneer er zich een storing voordoet, het gehele blok van 100 MB opnieuw wordt geüpload.
 

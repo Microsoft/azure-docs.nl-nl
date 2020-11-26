@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: tutorial
 ms.date: 09/30/2020
 ms.custom: seodec18
-ms.openlocfilehash: 58da5c73ea2674bbbd1536a163e163aa0ff31d96
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: eeb3de2fc3f0e3e0be9c98002f11e470eaf04f8c
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92521285"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95020926"
 ---
 # <a name="tutorial-set-up-an-azure-time-series-insights-gen2-environment"></a>Zelfstudie: Een Azure Time Series Insights Gen2-omgeving instellen
 
@@ -91,7 +91,7 @@ In deze sectie wordt beschreven hoe u een Azure Time Series Insights Gen2-omgevi
     | **Resourcegroep** | Selecteer een bestaande resourcegroep voor de Azure Time Series Insights Gen2-omgevingsresource of maak een nieuwe. Een resourcegroep is een container voor Azure-resources. Het is een best practice om dezelfde resourcegroep te gebruiken als voor de andere IoT-resources die door de apparaatsimulator worden gemaakt. |
     | **Locatie** | Selecteer een datacentrumregio voor uw Azure Time Series Insights Gen2-omgeving. Om extra latentie te voorkomen, kunt u het beste uw Azure Time Series Insights Gen2-omgeving maken in dezelfde regio als uw IoT-hub die door de apparaatsimulator is gemaakt. |
     | **Laag** |  Selecteer **Gen2(L1)** . Dit is de SKU voor het Azure Time Series Insights Gen2-product. |
-    | **Eigenschapsnaam van tijdreeks-id** | Voer een naam in van een eigenschap die waarden bevat waarmee uw tijdreeks-exemplaren uniek worden geïdentificeerd. De waarde die u invoert in het vak **Eigenschapsnaam** als tijdsreeks-id kan later niet worden gewijzigd. Voor deze zelfstudie gebruiken we * *_iothub-connection-device-id_* _. Lees [Best practices voor het kiezen van een tijdreeks-id](./time-series-insights-update-how-to-id.md) voor meer informatie over de Time Series-id, waaronder een samengestelde tijdsreeks-id. |
+    | **Eigenschapsnaam van tijdreeks-id** | Voer een naam in van een eigenschap die waarden bevat waarmee uw tijdreeks-exemplaren uniek worden geïdentificeerd. De waarde die u invoert in het vak **Eigenschapsnaam** als tijdsreeks-id kan later niet worden gewijzigd. Voor deze zelfstudie gebruiken we **_iothub-connection-device-id_* _. Lees [Best practices voor het kiezen van een tijdreeks-id](./how-to-select-tsid.md) voor meer informatie over de Time Series-id, waaronder een samengestelde tijdsreeks-id. |
     | _ *Naam van opslagaccount** | Voer een wereldwijd unieke naam voor een nieuw opslagaccount in.|
     | **Opslagaccounttype** | Selecteer de opslagtype voor een nieuw opslagaccount. We raden StorageV2 aan|
     | **Replicatie van opslagaccount** | Selecteer de opslagtype voor een nieuw opslagaccount. Op basis van uw locatieselectie kunt u kiezen uit LRS, GRS en ZRS. Voor deze zelfstudie kunt u LRS selecteren|
@@ -116,7 +116,7 @@ In deze sectie wordt beschreven hoe u een Azure Time Series Insights Gen2-omgevi
    | **Abonnement** | Selecteer het abonnement dat u hebt gebruikt voor de apparaatsimulator. |
    | **Naam van de IoT Hub** | Selecteer de naam van de IoT-hub die u hebt gebruikt voor de apparaatsimulator. |
    | **IoT Hub-toegangsbeleid** | Selecteer **iothubowner**. |
-   | **IoT Hub-consumentengroep** | Selecteer **Nieuw** , voer een unieke naam in en selecteer vervolgens **+ Toevoegen**. De consumentengroep moet een unieke waarde zijn in Azure Time Series Insights Gen2. |
+   | **IoT Hub-consumentengroep** | Selecteer **Nieuw**, voer een unieke naam in en selecteer vervolgens **+ Toevoegen**. De consumentengroep moet een unieke waarde zijn in Azure Time Series Insights Gen2. |
    | **Timestamp-eigenschap** | Deze waarde wordt gebruikt om de eigenschap **Timestamp** te identificeren in uw binnenkomende telemetriegegevens. Laat dit vak leeg voor deze zelfstudie. In deze simulator wordt de binnenkomende timestamp van IoT Hub gebruikt waarop Azure Time Series Insights Gen2 standaard is ingesteld. |
 
 1. Selecteer **Controleren + maken**.
@@ -137,13 +137,13 @@ In deze sectie wordt beschreven hoe u een Azure Time Series Insights Gen2-omgevi
 
       [![Selecteer en bekijk uw omgeving.](media/v2-update-provision/verify-tsi-resource-in-group.png)](media/v2-update-provision/verify-tsi-resource-in-group.png#lightbox)
 
-   1. Selecteer op de pagina Azure Time Series Insights Gen2 de optie **Beleid voor gegevenstoegang** :
+   1. Selecteer op de pagina Azure Time Series Insights Gen2 de optie **Beleid voor gegevenstoegang**:
 
       [![Controleer het beleid voor gegevenstoegang.](media/v2-update-provision/tsi-data-access-panel.png)](media/v2-update-provision/tsi-data-access-panel.png#lightbox)
 
    1. Controleer of uw referenties worden vermeld:
 
-      Als uw referenties niet worden weergegeven, moet u uzelf toestemming geven voor toegang tot de omgeving door Toevoegen te selecteren en te zoeken naar uw referenties. Raadpleeg [Gegevenstoegang verlenen](./time-series-insights-data-access.md) voor meer informatie over het instellen van machtigingen.
+      Als uw referenties niet worden weergegeven, moet u uzelf toestemming geven voor toegang tot de omgeving door Toevoegen te selecteren en te zoeken naar uw referenties. Raadpleeg [Gegevenstoegang verlenen](./concepts-access-policies.md) voor meer informatie over het instellen van machtigingen.
 
 ## <a name="stream-data"></a>Gegevens streamen
 
@@ -166,7 +166,7 @@ Nu u uw Azure Time Series Insights Gen2-omgeving hebt geïmplementeerd, begint u
         | **Naam** | Voer een unieke naam voor een simulator in. |
         | **Beschrijving** | Voer een definitie in. |
         | **Simulatieduur** | Stel de simulatieduur in op **Voor onbepaalde tijd uitvoeren**. |
-        | **Apparaatmodel** | Klik op + **Een apparaattype toevoegen** <br />**Naam** : Voer **Lift** in. <br />**Aantal** : Voer **3** in. <br /> Behoud de overige standaardwaarden |
+        | **Apparaatmodel** | Klik op + **Een apparaattype toevoegen** <br />**Naam**: Voer **Lift** in. <br />**Aantal**: Voer **3** in. <br /> Behoud de overige standaardwaarden |
         | **Doel-IoT-hub** | Stel **Vooraf ingerichte IoT-hub gebruiken** in. |
 
         [![Parameters configureren en starten.](media/v2-update-provision/tsi-launch-solution-accelerator.png)](media/v2-update-provision/tsi-launch-solution-accelerator.png#lightbox)
@@ -177,7 +177,7 @@ Nu u uw Azure Time Series Insights Gen2-omgeving hebt geïmplementeerd, begint u
 
 ## <a name="analyze-data"></a>Gegevens analyseren
 
-In deze sectie voert u een eenvoudige analyse uit op uw tijdreeksgegevens met de [verkenner van Azure Time Series Insights Gen2](./time-series-insights-update-explorer.md).
+In deze sectie voert u een eenvoudige analyse uit op uw tijdreeksgegevens met de [verkenner van Azure Time Series Insights Gen2](./concepts-ux-panels.md).
 
 1. Ga naar de verkenner van Azure Time Series Insights Gen2 door de URL te selecteren op de resourcepagina in [Azure Portal](https://portal.azure.com/).
 
@@ -327,7 +327,7 @@ In dit gedeelte past u een model toe om uw gegevens te structureren. U definieer
 
 1. Onder **Pacific Science Center** selecteert u het tijdreeksexemplaar **Lift 2** en selecteert u vervolgens **Gemiddelde temperatuur weergeven**.
 
-1. Selecteer voor hetzelfde exemplaar, **Lift 2** , de optie **Etage weergeven**.
+1. Selecteer voor hetzelfde exemplaar, **Lift 2**, de optie **Etage weergeven**.
 
     Met uw categorische variabele kunt u bepalen hoeveel tijd de lift op de bovenste, onderste en middelste etages was.
 

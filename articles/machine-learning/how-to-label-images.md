@@ -8,12 +8,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 07/27/2020
-ms.openlocfilehash: 4392086146642e18b1fdef28a9e602bdbb5b0b18
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: b138b3eb52a0bfb6dca2ec6fdf0b855223bab698
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542181"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94984444"
 ---
 # <a name="tag-images-in-a-labeling-project"></a>Tags toevoegen aan afbeeldingen in een labelproject 
 
@@ -133,7 +133,7 @@ Als u een project van het type 'Instantiesegmentatie (veelhoek)' heeft, dan voeg
 
 1. Selecteer een tag voor de veelhoek die u wilt maken.
 1. Selecteer de tool **Veelhoekregio tekenen** ![tool Veelhoek tekenen](./media/how-to-label-images/polygon-tool.png) of druk op 'P'.
-3. Klik voor elk punt in de veelhoek.  Wanneer uw vorm af is, dubbelklikt u om te voltooien.
+1. Klik voor elk punt in de veelhoek.  Wanneer uw vorm af is, dubbelklikt u om te voltooien.
 
     :::image type="content" source="media/how-to-label-images/polygon.gif" alt-text="Veelhoeken maken voor kat en hond":::
 
@@ -158,3 +158,5 @@ Wanneer u klaar bent met labelen, selecteert u uw naam in de rechterbovenhoek va
 ## <a name="next-steps"></a>Volgende stappen
 
 * Informatie over [Modellen voor de classificatie van afbeeldingen trainen in Azure](./tutorial-train-models-with-aml.md)
+
+

@@ -12,12 +12,12 @@ ms.date: 04/10/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: d38f10e5a4f2562825ed2374317602b0640894ae
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: 84a3ef7b41b17e85c594213246211d45911ac56a
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92275872"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94953046"
 ---
 # <a name="tutorial-register-a-web-application-in-azure-active-directory-b2c"></a>Zelfstudie: Een webtoepassing registreren in Azure Active Directory B2C
 
@@ -37,15 +37,15 @@ Als u nog geen eigen [Azure AD B2C-tenant](tutorial-create-tenant.md) hebt gemaa
 
 ## <a name="register-a-web-application"></a>Een web-app registreren
 
-Als u een webtoepassing wilt registreren in de Azure AD B2C-tenant, kunt u de nieuwe uniforme ervaring voor **App-registraties** of de verouderde ervaring **Toepassingen (verouderd)** gebruiken. [Meer informatie over de nieuwe ervaring](https://aka.ms/b2cappregtraining).
+Als u een webtoepassing wilt registreren in de Azure AD B2C-tenant, kunt u de nieuwe uniforme ervaring voor **App-registraties** of de verouderde ervaring **Toepassingen (verouderd)** gebruiken. [Meer informatie over de nieuwe ervaring](./app-registrations-training-guide.md).
 
 #### <a name="app-registrations"></a>[App-registraties](#tab/app-reg-ga/)
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Selecteer het pictogram **Map + Abonnement** in de werkbalk van de portal en selecteer vervolgens de map die uw Azure AD B2C-tenant bevat.
 1. Zoek en selecteer **Azure AD B2C** in de Azure-portal.
-1. Selecteer **App-registraties** en selecteer vervolgens **Nieuwe registratie** .
-1. Voer een **naam** in voor de toepassing. Bijvoorbeeld *webapp1* .
+1. Selecteer **App-registraties** en selecteer vervolgens **Nieuwe registratie**.
+1. Voer een **naam** in voor de toepassing. Bijvoorbeeld *webapp1*.
 1. Selecteer onder **Ondersteunde accounttypen** **Accounts in een identiteitsprovider of organisatieadreslijst (voor het verifiëren van gebruikers met gebruikersstromen)** .
 1. Selecteer onder **Omleidings-URI** de optie **Web** en voer vervolgens `https://jwt.ms` in het URL-tekstvak in.
 
@@ -56,17 +56,17 @@ Als u een webtoepassing wilt registreren in de Azure AD B2C-tenant, kunt u de ni
     * De antwoord-URL moet beginnen met het schema `https`.
     * De antwoord-URL is hoofdlettergevoelig. Het hoofdlettergebruik moet overeenkomen met het URL-pad van de actieve toepassing. Als uw toepassing bijvoorbeeld `.../abc/response-oidc` als deel van het pad bevat, geeft u `.../ABC/response-oidc` niet op in de antwoord-URL. Omdat de webbrowser paden als hoofdlettergevoelig behandelt, kunnen cookies die zijn gekoppeld aan `.../abc/response-oidc` worden uitgesloten als ze worden omgeleid naar de qua hoofdlettergebruik niet-overeenkomende URL `.../ABC/response-oidc`.
 
-1. Selecteer in **Machtigingen** het selectievakje *Beheerdersgoedkeuring verlenen aan machtigingen van OpenID en offline_access* .
-1. Selecteer **Registreren** .
+1. Selecteer in **Machtigingen** het selectievakje *Beheerdersgoedkeuring verlenen aan machtigingen van OpenID en offline_access*.
+1. Selecteer **Registreren**.
 
 #### <a name="applications-legacy"></a>[Toepassingen (verouderd)](#tab/applications-legacy/)
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Selecteer het pictogram **Map + Abonnement** in de werkbalk van de portal en selecteer vervolgens de map die uw Azure AD B2C-tenant bevat.
 1. Zoek en selecteer **Azure AD B2C** in de Azure-portal.
-1. Selecteer **Toepassingen (verouderd)** , en selecteer vervolgens **Toevoegen** .
-1. Voer een naam in voor de toepassing. Bijvoorbeeld *webapp1* .
-1. Selecteer **Ja** bij **Web-app / web-API opnemen** .
+1. Selecteer **Toepassingen (verouderd)** , en selecteer vervolgens **Toevoegen**.
+1. Voer een naam in voor de toepassing. Bijvoorbeeld *webapp1*.
+1. Selecteer **Ja** bij **Web-app / web-API opnemen**.
 1. Voer voor de **Antwoord-URL** een eindpunt in waarop Azure AD B2C tokens retourneert die door uw toepassing worden aangevraagd. U kunt dit bijvoorbeeld instellen om lokaal te luisteren op `http://localhost:5000`. U kunt op elk gewenst moment omleidings-URI's toevoegen en wijzigen in uw geregistreerde toepassingen.
 
     De volgende beperkingen zijn van toepassing op omleidings-URI's:
@@ -84,18 +84,18 @@ Voor een webtoepassing moet u een toepassingsgeheim maken. Dit geheim wordt door
 
 #### <a name="app-registrations"></a>[App-registraties](#tab/app-reg-ga/)
 
-1. Selecteer op de pagina **Azure AD B2C - App-registraties** de toepassing die u hebt gemaakt, bijvoorbeeld *webapp1* .
-1. Selecteer in het linkermenu onder **Beheren** de optie **Certificaten en geheimen** .
-1. Selecteer **Nieuw clientgeheim** .
-1. Voer een beschrijving voor het clientgeheim in het vak **Beschrijving** in. Bijvoorbeeld *clientsecret1* .
-1. Selecteer onder **Verloopt** een duur waarvoor het geheim geldig is en selecteer vervolgens **Toevoegen** .
+1. Selecteer op de pagina **Azure AD B2C - App-registraties** de toepassing die u hebt gemaakt, bijvoorbeeld *webapp1*.
+1. Selecteer in het linkermenu onder **Beheren** de optie **Certificaten en geheimen**.
+1. Selecteer **Nieuw clientgeheim**.
+1. Voer een beschrijving voor het clientgeheim in het vak **Beschrijving** in. Bijvoorbeeld *clientsecret1*.
+1. Selecteer onder **Verloopt** een duur waarvoor het geheim geldig is en selecteer vervolgens **Toevoegen**.
 1. Noteer de **Waarde** van het geheim. U gebruikt deze waarde als het toepassingsgeheim in de code van uw toepassing.
 
 #### <a name="applications-legacy"></a>[Toepassingen (verouderd)](#tab/applications-legacy/)
 
-1. Selecteer op de pagina **Azure AD B2C - toepassingen** de toepassing die u hebt gemaakt, bijvoorbeeld *webapp1* .
-1. Selecteer **Sleutels** en selecteer vervolgens **Sleutel genereren** .
-1. Selecteer **Opslaan** om de sleutel weer te geven. Noteer de waarde van **App-sleutel** . U gebruikt deze waarde als het toepassingsgeheim in de code van uw toepassing.
+1. Selecteer op de pagina **Azure AD B2C - toepassingen** de toepassing die u hebt gemaakt, bijvoorbeeld *webapp1*.
+1. Selecteer **Sleutels** en selecteer vervolgens **Sleutel genereren**.
+1. Selecteer **Opslaan** om de sleutel weer te geven. Noteer de waarde van **App-sleutel**. U gebruikt deze waarde als het toepassingsgeheim in de code van uw toepassing.
 
 * * *
 

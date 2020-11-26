@@ -6,12 +6,12 @@ ms.topic: tutorial
 author: bwren
 ms.author: bwren
 ms.date: 10/24/2019
-ms.openlocfilehash: d43a72db385d282ee189c179254cfc270929dbbf
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 8b3b6a41da6e3100739da920472d582711d1e9b1
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207186"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024378"
 ---
 # <a name="get-started-with-log-queries-in-azure-monitor"></a>Aan de slag met logboekquery’s in Azure Monitor
 
@@ -37,7 +37,7 @@ Volg hieronder een videoversie van deze zelfstudie:
 
 ## <a name="writing-a-new-query"></a>Een nieuwe query schrijven
 
-Query's kunnen beginnen met een tabelnaam of de opdracht *search* . U moet beginnen met een tabelnaam omdat deze een duidelijk bereik voor de query definieert en zowel de queryprestaties als relevantie van de resultaten verbetert.
+Query's kunnen beginnen met een tabelnaam of de opdracht *search*. U moet beginnen met een tabelnaam omdat deze een duidelijk bereik voor de query definieert en zowel de queryprestaties als relevantie van de resultaten verbetert.
 
 > [!NOTE]
 > De Kusto-querytaal die door Azure Monitor wordt gebruikt, is hoofdlettergevoelig. Trefwoorden worden meestal in kleine letters geschreven. Als u namen van tabellen of kolommen in een query gebruikt, moet u ervoor zorgen dat u de juiste letters gebruikt, zoals wordt weergegeven in het deelvenster met het schema.
@@ -55,7 +55,7 @@ De query die hierboven wordt weergegeven, retourneert 10 resultaten van de tabel
 
 * De query begint met de tabelnaam *SecurityEvent* - dit onderdeel definieert het bereik van de query.
 * Het sluisteken (|) scheidt opdrachten, dus de uitvoer van de eerste opdracht is de invoer van de volgende opdracht. U kunt elk gewenst aantal sluistekens toevoegen.
-* Na het sluisteken volgt de **take** -opdracht, waarmee een specifiek aantal willekeurige records uit de tabel wordt geretourneerd.
+* Na het sluisteken volgt de **take**-opdracht, waarmee een specifiek aantal willekeurige records uit de tabel wordt geretourneerd.
 
 We kunnen de query ook uitvoeren zonder `| take 10` toe te voegen. Dat is gewoon mogelijk, maar levert maximaal 10.000 resultaten op.
 
@@ -98,7 +98,7 @@ De standaard sorteervolgorde is aflopend. Daarom laten we het argument **desc** 
 ## <a name="where-filtering-on-a-condition"></a>Where: filteren volgens een voorwaarde
 Zoals hun naam al aangeeft, filteren filters de gegevens op een specifieke voorwaarde. Dit is de meest voorkomende manier om de queryresultaten te beperken tot relevante informatie.
 
-Gebruik de **where** -operator, gevolgd door een of meerdere voorwaarden om een filter toe te voegen aan een query. De volgende query retourneert bijvoorbeeld alleen *SecurityEvent* -records waarbij _Niveau_ gelijk is aan _8_ :
+Gebruik de **where**-operator, gevolgd door een of meerdere voorwaarden om een filter toe te voegen aan een query. De volgende query retourneert bijvoorbeeld alleen *SecurityEvent*-records waarbij _Niveau_ gelijk is aan _8_:
 
 ```Kusto
 SecurityEvent
@@ -112,16 +112,16 @@ Wanneer u filtervoorwaarden schrijft, kunt u de volgende expressies gebruiken:
 | == | Gelijkheid controleren<br>(hoofdlettergevoelig) | `Level == 8` |
 | =~ | Gelijkheid controleren<br>(niet hoofdlettergevoelig) | `EventSourceName =~ "microsoft-windows-security-auditing"` |
 | !=, <> | Ongelijkheid controleren<br>(beide expressies zijn identiek) | `Level != 4` |
-| *and* , *or* | Vereist tussen voorwaarden| `Level == 16 or CommandLine != ""` |
+| *and*, *or* | Vereist tussen voorwaarden| `Level == 16 or CommandLine != ""` |
 
-Als u wilt filteren op meerdere voorwaarden, kunt u gebruikmaken van **and** :
+Als u wilt filteren op meerdere voorwaarden, kunt u gebruikmaken van **and**:
 
 ```Kusto
 SecurityEvent
 | where Level == 8 and EventID == 4672
 ```
 
-of meerdere **where** -elementen tussen sluistekens achter elkaar plaatsen:
+of meerdere **where**-elementen tussen sluistekens achter elkaar plaatsen:
 
 ```Kusto
 SecurityEvent
@@ -171,8 +171,8 @@ In het vorige voorbeeld wordt deze uitvoer gegenereerd:
 U kunt **project** ook gebruiken om de namen van kolommen te wijzigen en nieuwe te definiëren. In het volgende voorbeeld wordt project gebruikt om het volgende te doen:
 
 * Alleen de oorspronkelijke kolommen *Computer* en *TimeGenerated* selecteren.
-* De kolom *Activity* weergeven als *EventDetails* .
-* Een nieuwe kolom maken met de naam *EventCode* . De functie **subtekenreeks()** wordt gebruikt om alleen de eerste vier tekens uit het veld Activiteit op te halen.
+* De kolom *Activity* weergeven als *EventDetails*.
+* Een nieuwe kolom maken met de naam *EventCode*. De functie **subtekenreeks()** wordt gebruikt om alleen de eerste vier tekens uit het veld Activiteit op te halen.
 
 
 ```Kusto
@@ -190,9 +190,9 @@ SecurityEvent
 ```
 
 ## <a name="summarize-aggregate-groups-of-rows"></a>Samenvatten: groepen rijen samenvoegen
-Gebruik **summarize** om groepen records te identificeren op basis van een of meer kolommen en daar aggregaties op toe te passen. Het meest voorkomende gebruik van **summarize** is *count* , waarmee het aantal resultaten in elke groep wordt geretourneerd.
+Gebruik **summarize** om groepen records te identificeren op basis van een of meer kolommen en daar aggregaties op toe te passen. Het meest voorkomende gebruik van **summarize** is *count*, waarmee het aantal resultaten in elke groep wordt geretourneerd.
 
-Met de volgende query worden alle *Perf* -records van het afgelopen uur gecontroleerd en gegroepeerd op *ObjectName* . Daarna worden de records in elke groep geteld: 
+Met de volgende query worden alle *Perf*-records van het afgelopen uur gecontroleerd en gegroepeerd op *ObjectName*. Daarna worden de records in elke groep geteld: 
 ```Kusto
 Perf
 | where TimeGenerated > ago(1h)
@@ -215,7 +215,7 @@ Perf
 | summarize avg(CounterValue) by Computer
 ```
 
-Helaas hebben de resultaten van deze query geen betekenis omdat we verschillende prestatiemeters hebben gecombineerd. Om ze meer betekenis te geven, moeten we het gemiddelde berekenen voor elke combinatie van *CounterName* en *Computer* :
+Helaas hebben de resultaten van deze query geen betekenis omdat we verschillende prestatiemeters hebben gecombineerd. Om ze meer betekenis te geven, moeten we het gemiddelde berekenen voor elke combinatie van *CounterName* en *Computer*:
 
 ```Kusto
 Perf
@@ -226,7 +226,7 @@ Perf
 ### <a name="summarize-by-a-time-column"></a>Samenvatten op een tijdkolom
 Het groeperen van resultaten kan ook worden gebaseerd op een tijdkolom of een andere doorlopende waarde. Als u eenvoudigweg samenvat op `by TimeGenerated` worden er groepen gemaakt voor elke milliseconde gedurende het tijdsbereik, omdat dit unieke waarden zijn. 
 
-Als u groepen op basis van continue waarden wilt maken kunt het bereik het beste opsplitsen in beheerbare eenheden door **bin** te gebruiken. Met de volgende query worden *Perf* -records geanalyseerd die het beschikbare geheugen ( *Available MBytes* ) op een specifieke computer meten. De query berekent de gemiddelde waarde van elke periode van 1 uur in de afgelopen 7 dagen:
+Als u groepen op basis van continue waarden wilt maken kunt het bereik het beste opsplitsen in beheerbare eenheden door **bin** te gebruiken. Met de volgende query worden *Perf*-records geanalyseerd die het beschikbare geheugen (*Available MBytes*) op een specifieke computer meten. De query berekent de gemiddelde waarde van elke periode van 1 uur in de afgelopen 7 dagen:
 
 ```Kusto
 Perf 
@@ -244,7 +244,7 @@ Als u de uitvoer helderder wilt maken, selecteert u dat deze moet worden weergeg
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over het gebruik van tekenreeksgegevens in een logboekquery vindt u in [Werken met tekenreeksen in Azure Monitor-logboekquery's](string-operations.md).
-- Meer informatie over het samenvoegen van gegevens in een logboekquery vindt u in [Geavanceerde aggregaties in Azure Monitor-logboekquery's](advanced-aggregations.md).
-- Leer hoe u gegevens uit meerdere tabellen kunt samenvoegen met [Joins in Azure Monitor-logboekquery's](joins.md).
+- Meer informatie over het gebruik van tekenreeksgegevens in een logboekquery vindt u in [Werken met tekenreeksen in Azure Monitor-logboekquery's](/azure/data-explorer/kusto/query/samples?&pivots=azuremonitor#string-operations).
+- Meer informatie over het samenvoegen van gegevens in een logboekquery vindt u in [Geavanceerde aggregaties in Azure Monitor-logboekquery's](/azure/data-explorer/write-queries#advanced-aggregations).
+- Leer hoe u gegevens uit meerdere tabellen kunt samenvoegen met [Joins in Azure Monitor-logboekquery's](/azure/data-explorer/kusto/query/samples?&pivots=azuremonitor#joins).
 - Krijg documentatie over de volledige Kusto-querytaal in de [naslaginformatie over de KQL-taal](/azure/kusto/query/).

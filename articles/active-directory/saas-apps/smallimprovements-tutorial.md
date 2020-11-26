@@ -12,11 +12,11 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 6eced120a05ddaca8d8cf426fd2a977891b3e36b
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92515899"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95997134"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-small-improvements"></a>Zelfstudie: Integratie van Azure Active Directory met Small Improvements
 
@@ -49,11 +49,11 @@ Voor het configureren van de integratie van Small Improvements met Azure AD moet
 
 **Als u Small Improvements wilt toevoegen uit de galerie, voert u de volgende stappen uit:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -61,13 +61,13 @@ Voor het configureren van de integratie van Small Improvements met Azure AD moet
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Small Improvements** , selecteer **Small Improvements** in het resultatenvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Small Improvements**, selecteer **Small Improvements** in het resultatenvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![Small Improvements in de resultatenlijst](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie gaat u Azure AD-eenmalige aanmelding bij Small Improvements configureren en testen op basis van een testgebruiker met de naam **Britta Simon** .
+In deze sectie gaat u Azure AD-eenmalige aanmelding bij Small Improvements configureren en testen op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Small Improvements tot stand is gebracht.
 
 Als u Azure AD-eenmalige aanmelding wilt configureren en testen met Small Improvements, dient u de volgende stappen uit te voeren:
@@ -85,7 +85,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configureren met Small Improvements:
 
-1. In [Azure Portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de toepassing **Small Improvements** .
+1. In [Azure Portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de toepassing **Small Improvements**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -140,7 +140,7 @@ Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configurer
 
     a. Plak in het tekstvak **HTTP Endpoint** (HTTP-eindpunt) de waarde van **Aanmeldings-URL** die u hebt gekopieerd uit de Azure-portal.
 
-    b. Open het gedownloade certificaat in Kladblok, kopieer de inhoud en plak deze in het tekstvak **x509 Certificate** . 
+    b. Open het gedownloade certificaat in Kladblok, kopieer de inhoud en plak deze in het tekstvak **x509 Certificate**. 
 
     c. Als u de optie voor eenmalige aanmelding en aanmelden via formulierverificatie wilt maken voor gebruikers, schakelt u het selectievakje **Enable access via login/password too** in (Ook toegang via aanmelden/wachtwoord inschakelen).  
 
@@ -152,7 +152,7 @@ Voer de volgende stappen uit als u Azure AD-eenmalige aanmelding wilt configurer
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -171,13 +171,13 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Small Improvements.
 
-1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **Small Improvements** .
+1. Selecteer in Azure Portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **Small Improvements**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -185,11 +185,11 @@ In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige 
 
     ![De koppeling Small Improvements in de lijst Toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -197,7 +197,7 @@ In deze sectie gaat u Britta Simon toestemming geven voor gebruik van eenmalige 
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-small-improvements-test-user"></a>Small Improvements-testgebruiker maken
 
@@ -207,13 +207,13 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Small Improvements,
 
 1. Meld u als beheerder aan bij de bedrijfssite van Small Improvements.
 
-1. Ga vanuit de startpagina naar het menu aan de linkerkant en klik op **Beheer** .
+1. Ga vanuit de startpagina naar het menu aan de linkerkant en klik op **Beheer**.
 
-1. Klik in de sectie Gebruikersbeheer op de knop **Adreslijst van gebruikers** .
+1. Klik in de sectie Gebruikersbeheer op de knop **Adreslijst van gebruikers**.
 
     ![Schermopname met Adreslijst van gebruikers geselecteerd in Overzicht beheer.](./media/smallimprovements-tutorial/tutorial_smallimprovements_10.png) 
 
-1. Klik op **Gebruikers toevoegen** .
+1. Klik op **Gebruikers toevoegen**.
 
     ![Schermopname van de knop Gebruikers toevoegen.](./media/smallimprovements-tutorial/tutorial_smallimprovements_11.png) 
 
@@ -221,15 +221,15 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Small Improvements,
 
     ![Schermopname van het dialoogvenster Gebruikers toevoegen waar u de beschreven waarden kunt invoeren.](./media/smallimprovements-tutorial/tutorial_smallimprovements_12.png)
 
-    a. Typ de **voornaam** van de gebruiker als volgt: **Britta** .
+    a. Typ de **voornaam** van de gebruiker als volgt: **Britta**.
 
-    b. Typ de **achternaam** van de gebruiker als volgt: **Simon** .
+    b. Typ de **achternaam** van de gebruiker als volgt: **Simon**.
 
     c. Typ het **e-mailadres** van de gebruiker als volgt **brittasimon@contoso.com** .
 
-    d. U kunt er ook voor kiezen om het persoonlijke bericht in te voeren in het vak **E-mailmelding verzenden** . Schakel dit selectievakje uit als u de melding niet wilt verzenden.
+    d. U kunt er ook voor kiezen om het persoonlijke bericht in te voeren in het vak **E-mailmelding verzenden**. Schakel dit selectievakje uit als u de melding niet wilt verzenden.
 
-    e. Klik op **Gebruikers maken** .
+    e. Klik op **Gebruikers maken**.
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen
 

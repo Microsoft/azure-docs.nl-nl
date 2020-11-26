@@ -9,12 +9,12 @@ ms.date: 07/30/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, devx-track-python, devx-track-js
-ms.openlocfilehash: a4496ba46b486f183136381a51c6a523dd9e1b87
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 5c8918995675cae8e70ca9fc1efb0cf4c7cb233b
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92047978"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959404"
 ---
 # <a name="tutorial-develop-and-deploy-a-nodejs-iot-edge-module-for-linux-devices"></a>Zelfstudie: Een Node.js IoT Edge-module maken en implementeren voor Linux-apparaten
 
@@ -33,7 +33,7 @@ De IoT Edge-module die u maakt in deze zelfstudie filtert de temperatuurgegevens
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="solution-scope"></a>Oplossingsbereik
+## <a name="prerequisites"></a>Vereisten
 
 Deze zelfstudie laat zien hoe u een module kunt ontwikkelen in **Node.js** met behulp van **Visual Studio Code** en hoe u deze kunt implementeren op een **Linux-apparaat**. IoT Edge biedt geen ondersteuning voor Node.js-modules voor Windows-apparaten.
 
@@ -43,8 +43,6 @@ Gebruik de volgende tabel om inzicht te krijgen in de opties voor het ontwikkele
 | - | ------------------ | ------------------ |
 | **Linux AMD64** | ![VS Code gebruiken voor Node.js-modules op Linux AMD64](./media/tutorial-c-module/green-check.png) |  |
 | **Linux ARM32** | ![VS Code gebruiken voor Node.js-modules op Linux ARM32](./media/tutorial-c-module/green-check.png) |  |
-
-## <a name="prerequisites"></a>Vereisten
 
 Voordat u met deze zelfstudie begint, moet u de vorige zelfstudie hebben doorlopen om uw ontwikkelomgeving voor Linux-containerontwikkeling in te stellen: [IoT Edge-modules ontwikkelen voor Linux-apparaten](tutorial-develop-for-linux.md). Als u een van deze zelfstudies hebt voltooid, voldoet u aan de volgende vereisten:
 

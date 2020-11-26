@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 09/09/2020
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: e3e2c9aa42ff3189e90f57d7c6e92b2a71f46639
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9fe43125c83436f89bf93cbe975317efec2beb46
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90061598"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95542810"
 ---
 # <a name="tutorial-move-azure-sql-database-resources-to-another-region"></a>Zelfstudie: Azure SQL Database-resources naar een andere regio verplaatsen
 
@@ -42,23 +42,23 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 -  Controleer of u *Eigenaar*-toegang hebt voor het abonnement dat de resources bevat die u wilt verplaatsen.
     - De eerste keer dat u een resource toevoegt voor een specifiek bron- en doelpaar in een Azure-abonnement maakt Resource Mover een [door het systeem toegewezen beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) (vroeger MSI genoemd (Managed Service Identity)) die door het abonnement wordt vertrouwd.
-    - Om de identiteit te maken en deze de juiste rol toe te wijzen (Inzender of Administrator voor gebruikerstoegang in het bronabonnement), moet het account dat u gebruikt om resources toe te voegen *Eigenaar*smachtigingen hebben voor het abonnement. [Meer informatie](../role-based-access-control/rbac-and-directory-admin-roles.md#azure-roles) over rollen in Azure.
-- Het abonnement moet voldoende quota hebben om de resources die u verplaatst in de doelregio te maken. Als de quota onvoldoende zijn, moet u [hogere limieten aanvragen](/azure/azure-resource-manager/management/azure-subscription-service-limits).
+    - Om de identiteit te maken en deze de juiste rol toe te wijzen (Inzender of Administrator voor gebruikerstoegang in het bronabonnement), moet het account dat u gebruikt om resources toe te voegen *Eigenaar* smachtigingen hebben voor het abonnement. [Meer informatie](../role-based-access-control/rbac-and-directory-admin-roles.md#azure-roles) over rollen in Azure.
+- Het abonnement moet voldoende quota hebben om de resources die u verplaatst in de doelregio te maken. Als de quota onvoldoende zijn, moet u [hogere limieten aanvragen](../azure-resource-manager/management/azure-subscription-service-limits.md).
 - Verifieer prijzen en kosten voor de doelregio waarnaar u resources verplaatst. Gebruik de [prijscalculator](https://azure.microsoft.com/pricing/calculator/) om u daarbij te helpen.
     
 
 ## <a name="check-sql-requirements"></a>SQL-vereisten controleren
 
 1. [Controleer](support-matrix-move-region-sql.md) welke database/elastische pool-functies worden ondersteund voor verplaatsen naar een andere regio.
-2. Maak in de doelregio een doelserver voor elke bronserver. [Meer informatie](/azure/azure-sql/database/active-geo-replication-security-configure#how-to-configure-logins-and-users).
+2. Maak in de doelregio een doelserver voor elke bronserver. [Meer informatie](../azure-sql/database/active-geo-replication-security-configure.md#how-to-configure-logins-and-users).
 4. Als databases zijn versleuteld met TDE (Transparent Data Encryption) en u uw eigen versleutelingssleutel gebruikt in Azure Key Vault, [kunt u hier meer lezen](../key-vault/general/move-region.md) over het verplaatsen van sleutelkluizen naar een andere regio.
 5. Als SQL Data Sync is ingeschakeld, wordt het verplaatsen van liddatabases ondersteund. Na de verplaatsing moet u SQL Data Sync instellen voor de nieuwe doeldatabase.
-6. Verwijder geavanceerde gegevensbeveiligingsinstellingen vóór de verplaatsing. Na de verplaatsing moet u in de doelregio de [instellingen configureren](/azure/sql-database/sql-database-advanced-data-security) op SQL Server-niveau.
-7. Als controle is ingeschakeld, worden beleidsregels na de verplaatsing ingesteld op de standaardwaarden. [Stel de controle](/azure/sql-database/sql-database-auditing) opnieuw in na de verplaatsing.
-7. Het bewaarbeleid voor back-ups van de brondatabase wordt meegenomen naar de doeldatabase. [Meer informatie](/azure/sql-database/sql-database-long-term-backup-retention-configure ) over het wijzigen van instellingen na het verplaatsen.
-8. Verwijder firewallregels op serverniveau vóór de verplaatsing. Firewall regels op databaseniveau worden tijdens de verplaatsing gekopieerd van de bronserver naar de doelserver. Na de verplaatsing moet u [firewallregels instellen](/azure/sql-database/sql-database-server-level-firewall-rule) voor SQL Server in de doelregio.
-9. Verwijder Autotuning-instellingen vóór de verplaatsing. [Stel Autotuning](/azure/sql-database/sql-database-automatic-tuning-enable) na het verplaatsen opnieuw in.
-10. Verwijder waarschuwingsinstellingen voor de database vóór de verplaatsing. [Stel ze opnieuw in](/azure/sql-database/sql-database-insights-alerts-portal) na het verplaatsen.
+6. Verwijder geavanceerde gegevensbeveiligingsinstellingen vóór de verplaatsing. Na de verplaatsing moet u in de doelregio de [instellingen configureren](../azure-sql/database/azure-defender-for-sql.md) op SQL Server-niveau.
+7. Als controle is ingeschakeld, worden beleidsregels na de verplaatsing ingesteld op de standaardwaarden. [Stel de controle](../azure-sql/database/auditing-overview.md) opnieuw in na de verplaatsing.
+7. Het bewaarbeleid voor back-ups van de brondatabase wordt meegenomen naar de doeldatabase. [Meer informatie](../azure-sql/database/long-term-backup-retention-configure.md) over het wijzigen van instellingen na het verplaatsen.
+8. Verwijder firewallregels op serverniveau vóór de verplaatsing. Firewall regels op databaseniveau worden tijdens de verplaatsing gekopieerd van de bronserver naar de doelserver. Na de verplaatsing moet u [firewallregels instellen](../azure-sql/database/firewall-create-server-level-portal-quickstart.md) voor SQL Server in de doelregio.
+9. Verwijder Autotuning-instellingen vóór de verplaatsing. [Stel Autotuning](../azure-sql/database/automatic-tuning-enable.md) na het verplaatsen opnieuw in.
+10. Verwijder waarschuwingsinstellingen voor de database vóór de verplaatsing. [Stel ze opnieuw in](../azure-sql/database/alerts-insights-configure-portal.md) na het verplaatsen.
     
 ## <a name="select-resources"></a>Resources selecteren
 
@@ -71,7 +71,7 @@ Selecteer de resources die u wilt verplaatsen.
 
      ![Zoekresultaten voor resource mover in de Azure-portal](./media/tutorial-move-region-sql/search.png)
 
-2. Klik in **Overzicht**op **Aan de slag**.
+2. Klik in **Overzicht** op **Aan de slag**.
 
     ![Knop voor het toevoegen van naar een andere regio te verplaatsen resources](./media/tutorial-move-region-sql/get-started.png)
 
@@ -111,7 +111,7 @@ Selecteer de resources die u wilt verplaatsen.
 
     ![Knop voor het toevoegen van afhankelijkheden](./media/tutorial-move-region-sql/add-dependencies.png)
    
-3. Selecteer in **Afhankelijkheden toevoegen**de afhankelijke Resources > **Afhankelijkheden toevoegen**. Controleer de voortgang in de meldingen.
+3. Selecteer in **Afhankelijkheden toevoegen** de afhankelijke Resources > **Afhankelijkheden toevoegen**. Controleer de voortgang in de meldingen.
 
 4. Voeg indien nodig extra afhankelijkheden toe en valideer afhankelijkheden opnieuw. 
 
@@ -127,7 +127,7 @@ Wijs een doel-SQL Server toe in de doelregio en voer de verplaatsing door.
 
 ### <a name="assign-a-target-sql-server"></a>Een doel-SQL Server toewijzen
 
-1. Klik in **Tussen regio's**voor de SQL Server-resource in de kolom **Doelconfiguratie** op **Resource niet toegewezen**.
+1. Klik in **Tussen regio's** voor de SQL Server-resource in de kolom **Doelconfiguratie** op **Resource niet toegewezen**.
 2. Selecteer een bestaande SQL Server-resource in de doelregio. 
     
     ![Vermelding met SQL Server-status ingesteld op Verplaatsing doorvoeren in behandeling](./media/tutorial-move-region-sql/sql-server-commit-move-pending.png) 
@@ -159,7 +159,7 @@ Nadat de bron-SQL Server is verplaatst, kunt u het verplaatsen van de andere res
 
     ![Knop voor het voorbereiden van resources](./media/tutorial-move-region-sql/prepare-elastic.png)
 
-2. Klik in **Resources voorbereiden**op **Voorbereiden**.
+2. Klik in **Resources voorbereiden** op **Voorbereiden**.
 3. Wanneer u in de meldingen ziet dat het voorbereidingsproces is geslaagd, klikt u op **Vernieuwen**.
 
 > [!NOTE]
@@ -167,11 +167,11 @@ Nadat de bron-SQL Server is verplaatst, kunt u het verplaatsen van de andere res
 
 ## <a name="prepare-a-single-database"></a>Eén database voorbereiden
 
-1. Selecteer in **Tussen regio's**de ene database (niet in een elastische pool) en klik vervolgens op **Voorbereiden**.
+1. Selecteer in **Tussen regio's** de ene database (niet in een elastische pool) en klik vervolgens op **Voorbereiden**.
 
     ![Knop voor het voorbereiden van geselecteerde resources](./media/tutorial-move-region-sql/prepare-db.png)
 
-2. Klik in **Resources voorbereiden**op **Voorbereiden**.
+2. Klik in **Resources voorbereiden** op **Voorbereiden**.
 3. Wanneer u in de meldingen ziet dat het voorbereidingsproces is geslaagd, klikt u op **Vernieuwen**.
 
 > [!NOTE]
@@ -199,7 +199,7 @@ Om databases in een elastische pool voor te bereiden, moet de elastische pool de
 #### <a name="prepare-database"></a>Database voorbereiden
 
 1. Selecteer in **Tussen regio's** de database (demo-test2-sqldb in de walkthrough) en klik op **Voorbereiden**.
-2. Klik in **Resources voorbereiden**op **Voorbereiden**.
+2. Klik in **Resources voorbereiden** op **Voorbereiden**.
 
     ![Knop voor voorbereiden database in elastische pool](./media/tutorial-move-region-sql/prepare-database-elastic.png) 
 
@@ -226,7 +226,7 @@ Begin met het verplaatsen van de databases.
 Na de eerste verplaatsing kunt u beslissen of u de verplaatsing wilt doorvoeren of verwijderen. 
 
 - **Verwijderen**: Mogelijk wilt u een verplaatsing verwijderen als u een test uitvoert en de bronresource niet echt wilt verplaatsen. Als u de verplaatsing negeert, wordt de resource teruggezet in de status **Initiëren verplaatsing in behandeling**.
-- **Doorvoeren**: Met doorvoeren wordt de verplaatsing naar de doelregio voltooid. Na het doorvoeren heeft een bronresource de status **Verwijderen bron in behandeling**en kunt u besluiten of u deze wilt verwijderen.
+- **Doorvoeren**: Met doorvoeren wordt de verplaatsing naar de doelregio voltooid. Na het doorvoeren heeft een bronresource de status **Verwijderen bron in behandeling** en kunt u besluiten of u deze wilt verwijderen.
 
 
 ## <a name="discard-the-move"></a>De verplaatsing verwijderen 

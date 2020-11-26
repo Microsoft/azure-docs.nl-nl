@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: b247a72b5d7db9892c6a2a763b7b71dc5f972d95
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7640b7a6053532360da4c908089aecfe163bd3de
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86045294"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95912651"
 ---
 # <a name="tutorial-extract-transform-and-load-data-by-using-azure-hdinsight"></a>Zelfstudie: Gegevens extraheren, transformeren en laden met behulp van Azure HDInsight
 
@@ -32,15 +32,15 @@ Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.
 
 * **Een Azure Data Lake Storage Gen2-opslagaccount dat is geconfigureerd voor HDInsight**
 
-    Zie [Azure Data Lake Storage Gen2 gebruiken met Azure HDInsight-clusters](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2).
+    Zie [Azure Data Lake Storage Gen2 gebruiken met Azure HDInsight-clusters](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md).
 
 * **Een Hadoop-cluster op basis van Linux in HDInsight**
 
-    Zie [Quickstart: Aan de slag met Apache Hadoop en Apache Hive in Azure HDInsight met behulp van de Azure-portal](https://docs.microsoft.com/azure/hdinsight/hadoop/apache-hadoop-linux-create-cluster-get-started-portal).
+    Zie [Quickstart: Aan de slag met Apache Hadoop en Apache Hive in Azure HDInsight met behulp van de Azure-portal](../../hdinsight/hadoop/apache-hadoop-linux-create-cluster-get-started-portal.md).
 
-* **Azure SQL Database**: U gebruikt Azure SQL Database als een doelgegevensarchief. Als u geen database in SQL Database hebt, raadpleegt u het artikel [Een database in Azure SQL Database maken in Azure Portal](../../sql-database/sql-database-get-started.md).
+* **Azure SQL Database**: U gebruikt Azure SQL Database als een doelgegevensarchief. Als u geen database in SQL Database hebt, raadpleegt u het artikel [Een database in Azure SQL Database maken in Azure Portal](../../azure-sql/database/single-database-create-quickstart.md).
 
-* **Azure CLI**: Als u de Azure CLI nog niet hebt geïnstalleerd, raadpleegt u [Azure CLI installeren](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+* **Azure CLI**: Als u de Azure CLI nog niet hebt geïnstalleerd, raadpleegt u [Azure CLI installeren](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 * **Een SSH-client (Secure Shell)** : Zie voor meer informatie [Verbinding maken met HDInsight (Hadoop) via SSH](../../hdinsight/hdinsight-hadoop-linux-use-ssh-unix.md).
 
@@ -344,4 +344,4 @@ Alle resources die in deze zelfstudie worden gebruikt, zijn bestaande resources.
 Zie het volgende artikel voor andere manieren om te werken met gegevens in HDInsight:
 
 > [!div class="nextstepaction"]
-> [Azure Data Lake Storage Gen2 gebruiken met Azure HDInsight-clusters](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
+> [Azure Data Lake Storage Gen2 gebruiken met Azure HDInsight-clusters](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)

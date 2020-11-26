@@ -9,12 +9,12 @@ ms.date: 07/30/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 4c2505f210b1a2b52b64c25b4ffa0c26bb30d7ee
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 470f82026cc27431555336570ef6f41063442c1e
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92044680"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964538"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-linux-devices"></a>Zelfstudie: C-module ontwikkelen voor Linux-apparaten met IoT Edge
 
@@ -33,7 +33,7 @@ De IoT Edge-module die u maakt in deze zelfstudie filtert de temperatuurgegevens
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="solution-scope"></a>Oplossingsbereik
+## <a name="prerequisites"></a>Vereisten
 
 Deze zelfstudie laat zien hoe u een module kunt ontwikkelen in **C** met behulp van **Visual Studio Code** en hoe u deze kunt implementeren op een **Linux-apparaat**. Als u modules voor Windows-apparaten ontwikkelt, gaat u naar [Een C-module ontwikkelen voor Windows-apparaten met IoT Edge](tutorial-c-module-windows.md) ontwikkelen.
 
@@ -43,8 +43,6 @@ Gebruik de volgende tabel om inzicht te krijgen in de opties voor het ontwikkele
 | - | ------------------ | ------------- |
 | **Linux AMD64** | ![VS Code gebruiken voor C-modules op Linux AMD64](./media/tutorial-c-module/green-check.png) | ![VS gebruiken voor C-modules op Linux AMD64](./media/tutorial-c-module/green-check.png) |
 | **Linux ARM32** | ![VS Code gebruiken voor C-modules op Linux ARM32](./media/tutorial-c-module/green-check.png) | ![VS gebruiken voor C-modules op Linux ARM32](./media/tutorial-c-module/green-check.png) |
-
-## <a name="prerequisites"></a>Vereisten
 
 Voordat u met deze zelfstudie begint, moet u de vorige zelfstudie hebben doorlopen om uw ontwikkelomgeving voor Linux-containerontwikkeling in te stellen: [IoT Edge-modules ontwikkelen voor Linux-apparaten](tutorial-develop-for-linux.md). Als u die zelfstudie hebt voltooid, hebt u de volgende vereisten klaarstaan:
 

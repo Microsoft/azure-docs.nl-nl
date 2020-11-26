@@ -12,11 +12,11 @@ ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
 ms.openlocfilehash: 3816239798290318404980ded388b726d8134395
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895156"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999787"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-screensteps"></a>Zelfstudie: Azure Active Directory-integratie met ScreenSteps
 
@@ -49,7 +49,7 @@ Voor het configureren van de integratie van ScreenSteps in Azure Active Director
 
 **Als u ScreenSteps wilt toevoegen vanuit de galerie, voert u de volgende stappen uit:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -61,7 +61,7 @@ Voor het configureren van de integratie van ScreenSteps in Azure Active Director
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **ScreenSteps** , selecteer **ScreenSteps** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **ScreenSteps**, selecteer **ScreenSteps** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
      ![ScreenSteps in de lijst met resultaten](common/search-new-app.png)
 
@@ -156,9 +156,9 @@ Voer de volgende stappen uit als u eenmalige aanmelding bij Azure Active Directo
 
     a. Klik op **Nieuw SAML-certificaatbestand uploaden** en upload vervolgens het certificaat dat u heeft gedownload in het Azure-portaal.
 
-    b. Plak de waarde van de **aanmeldings-URL** , die u in de Azure-portal hebt gekopieerd, in het tekstvak **Remote Login URL**.
+    b. Plak de waarde van de **aanmeldings-URL**, die u in de Azure-portal hebt gekopieerd, in het tekstvak **Remote Login URL**.
 
-    c. Plak de waarde van **Afmeldings-URL** , die u heeft gekopieerd in het Azure-portaal in het tekstvak **Afmeldings-URL**.
+    c. Plak de waarde van **Afmeldings-URL**, die u heeft gekopieerd in het Azure-portaal in het tekstvak **Afmeldings-URL**.
 
     d. Selecteer een **Groep** om gebruikers aan toe te wijzen wanneer ze zijn ingericht.
 
@@ -174,7 +174,7 @@ Voer de volgende stappen uit als u eenmalige aanmelding bij Azure Active Directo
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -199,7 +199,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot ScreenSteps.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **ScreenSteps**.
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **ScreenSteps**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

@@ -4,12 +4,12 @@ description: Leer hoe u bedrijfsprocessen kunt aanroepen vanuit uw App Service-a
 ms.topic: tutorial
 ms.date: 04/08/2020
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: 5aa563e55c64893d57522dd1154a64c7e90a1690
-ms.sourcegitcommit: 4313e0d13714559d67d51770b2b9b92e4b0cc629
+ms.openlocfilehash: 8072a941cd89290af3e25cc63c4fccccce705df9
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/27/2020
-ms.locfileid: "91397433"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95014659"
 ---
 # <a name="tutorial-send-email-and-invoke-other-business-processes-from-app-service"></a>Zelfstudie: E-mail verzenden en andere bedrijfsprocessen aanroepen vanuit App Service
 
@@ -296,7 +296,7 @@ Als u deze code test op de voorbeeld-app voor [Zelfstudie: Een Python (Django) w
 
 ### <a name="ruby"></a>[Ruby](#tab/ruby)
 
-In Ruby kunt u het HTTP-bericht eenvoudig verzenden met [JSONClient](https://www.rubydoc.info/gems/httpclient/JSONClient). Bijvoorbeeld:
+In Ruby kunt u het HTTP-bericht eenvoudig verzenden met JSONClient. Bijvoorbeeld:
 
 ```ruby
 clnt = JSONClient.new

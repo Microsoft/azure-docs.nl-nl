@@ -12,11 +12,11 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: f2baeaf72bb77dfe9247380b8b26f3860cbfd5b0
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92459795"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999158"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-iqualify-lms"></a>Zelfstudie: Integratie van Azure Active Directory met iQualify LMS
 
@@ -50,11 +50,11 @@ Om de integratie van iQualify LMS in Azure AD te configureren, moet u iQualify L
 
 **Ga als volgt te werk om iQualify LMS vanuit de galerie toe te voegen:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -68,7 +68,7 @@ Om de integratie van iQualify LMS in Azure AD te configureren, moet u iQualify L
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In dit gedeelte gaat u eenmalige aanmelding van Azure AD met iQualify LMS configureren en testen op basis van een testgebruiker met de naam **Britta Simon** .
+In dit gedeelte gaat u eenmalige aanmelding van Azure AD met iQualify LMS configureren en testen op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in iQualify LMS tot stand is gebracht.
 
 Als u eenmalige aanmelding van Azure AD wilt configureren en testen met iQualify LMS, moet u de volgende procedures uitvoeren:
@@ -86,7 +86,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configureren met iQualify LMS:
 
-1. Ga in [Azure Portal](https://portal.azure.com/) naar de pagina met de integratie van de toepassing **iQualify LMS** en selecteer **Eenmalige aanmelding** .
+1. Ga in [Azure Portal](https://portal.azure.com/) naar de pagina met de integratie van de toepassing **iQualify LMS** en selecteer **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -150,13 +150,13 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configurere
 
     c. Laat **Naamruimte** leeg.
 
-    d. Selecteer Bron bij **Kenmerk** .
+    d. Selecteer Bron bij **Kenmerk**.
 
-    e. Typ de kenmerkwaarde voor die rij in de lijst met **bronkenmerken** .
+    e. Typ de kenmerkwaarde voor die rij in de lijst met **bronkenmerken**.
 
-    f. Klik op **OK** .
+    f. Klik op **OK**.
 
-    g. Klik op **Opslaan** .
+    g. Klik op **Opslaan**.
 
     > [!Note]
     > Het kenmerk **person_id** is **optioneel**
@@ -187,7 +187,7 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configurere
 
     ![INTEGRATIONS](./media/iqualify-tutorial/setting2.png)
 
-1. Klik onder INTEGRATIONS op het pictogram **SAML** .
+1. Klik onder INTEGRATIONS op het pictogram **SAML**.
 
     ![Het pictogram SAML](./media/iqualify-tutorial/setting3.png)
 
@@ -199,19 +199,19 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configurere
 
     b. Plak in het vak **SAML LOGOUT URL** de waarde van de **afmeldings-URL** die is gekopieerd uit het configuratievenster van de Azure AD-toepassing.
 
-    c. Open in Kladblok het certificaatbestand dat u hebt gedownload, kopieer de inhoud en plak deze in het vak **PUBLIC CERTIFICATE** .
+    c. Open in Kladblok het certificaatbestand dat u hebt gedownload, kopieer de inhoud en plak deze in het vak **PUBLIC CERTIFICATE**.
 
     d. Voer in **LOGIN BUTTON LABEL** de naam in van de knop die op de aanmeldingspagina moet worden weergegeven.
 
-    e. Klik op **OPSLAAN** .
+    e. Klik op **OPSLAAN**.
 
-    f. Klik op **UPDATE** .
+    f. Klik op **UPDATE**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -230,13 +230,13 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot iQualify LMS.
 
-1. Selecteer **Bedrijfstoepassingen** in Azure Portal, selecteer **Alle toepassingen** en selecteer vervolgens **iQualify LMS** .
+1. Selecteer **Bedrijfstoepassingen** in Azure Portal, selecteer **Alle toepassingen** en selecteer vervolgens **iQualify LMS**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -244,11 +244,11 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
     ![De koppeling iQualify LMS in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -256,7 +256,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-iqualify-lms-test-user"></a>Een iQualify LMS-testgebruiker maken
 
@@ -270,7 +270,7 @@ Wanneer u in het toegangsvenster op de tegel iQualify LMS klikt, wordt de aanmel
 
    ![aanmeldingspagina](./media/iqualify-tutorial/login.png) 
 
-Klik op de knop **Sign in with Azure AD** . U wordt dan automatisch aangemeld bij uw iQualify LMS-toepassing.
+Klik op de knop **Sign in with Azure AD**. U wordt dan automatisch aangemeld bij uw iQualify LMS-toepassing.
 
 Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster. 
 

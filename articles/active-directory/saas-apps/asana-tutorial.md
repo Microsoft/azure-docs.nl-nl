@@ -12,11 +12,11 @@ ms.topic: tutorial
 ms.date: 12/31/2018
 ms.author: jeedes
 ms.openlocfilehash: 05c89c8628b4d4ce10ca4ba12c720b410b72601f
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92457721"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96005143"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-asana"></a>Zelfstudie: Azure Active Directory-integratie met Asana
 
@@ -51,11 +51,11 @@ Voor het configureren van de integratie van Asana in Azure AD moet u Asana uit d
 
 **Als u Asana uit de galerie wilt toevoegen, moet u de volgende stappen uitvoeren:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -63,19 +63,19 @@ Voor het configureren van de integratie van Asana in Azure AD moet u Asana uit d
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **Asana** , selecteer **Asana** in het deelvenster met resultaten en klik vervolgens op **Toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Asana**, selecteer **Asana** in het deelvenster met resultaten en klik vervolgens op **Toevoegen** om de toepassing toe te voegen.
 
      ![Asana in de lijst met resultaten](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
-In deze sectie configureert en test u Azure AD-eenmalige aanmelding met Asana op basis van een testgebruiker met de naam **Britta Simon** .
+In deze sectie configureert en test u Azure AD-eenmalige aanmelding met Asana op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Asana tot stand is gebracht.
 
 Als u Azure AD-eenmalige aanmelding met Asana wilt configureren en testen, moet u de volgende bouwstenen uitvoeren:
 
 1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Asana-eenmalige aanmelding configureren](#configure-asana-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de clientzijde wilt configureren.
+2. **[Asana-eenmalige aanmelding configureren](#configure-asana-single-sign-on)**: als u de instellingen voor eenmalige aanmelding aan de clientzijde wilt configureren.
 3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
 4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
 5. **[Asana-testgebruiker maken](#create-asana-test-user)** : als u een equivalent wilt hebben van Britta Simon in Asana dat is gekoppeld aan de Azure AD-weergave van de gebruiker.
@@ -87,7 +87,7 @@ In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakel
 
 Voor het configureren van Azure AD-eenmalige aanmelding met Asana moet u de volgende stappen uitvoeren:
 
-1. In [Azure Portal](https://portal.azure.com/) selecteert u op de integratiepagina van de **Asana** -toepassing de optie **Eenmalige aanmelding** .
+1. In [Azure Portal](https://portal.azure.com/) selecteert u op de integratiepagina van de **Asana**-toepassing de optie **Eenmalige aanmelding**.
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
@@ -123,25 +123,25 @@ Voor het configureren van Azure AD-eenmalige aanmelding met Asana moet u de volg
 
 ### <a name="configure-asana-single-sign-on"></a>Asana-eenmalige aanmelding configureren
 
-1. Meld u in een ander browservenster aan bij uw Asana-toepassing. Voor het configureren van Asana-eenmalige aanmelding opent u de instellingen van de werkruimte door op de naam van de werkruimte in de rechterbovenhoek van het scherm te klikken. Klik vervolgens op **\<your workspace name\> Instellingen** .
+1. Meld u in een ander browservenster aan bij uw Asana-toepassing. Voor het configureren van Asana-eenmalige aanmelding opent u de instellingen van de werkruimte door op de naam van de werkruimte in de rechterbovenhoek van het scherm te klikken. Klik vervolgens op **\<your workspace name\> Instellingen**.
 
     ![Instellingen voor Asana-eenmalige aanmelding](./media/asana-tutorial/tutorial_asana_09.png)
 
-2. Klik in het venster **Organisatie-instellingen** op **Beheer** . Klik vervolgens op **Leden moeten zich aanmelden via SAML** om de configuratie voor eenmalige aanmelding in te schakelen. Voer daarna de volgende stappen uit:
+2. Klik in het venster **Organisatie-instellingen** op **Beheer**. Klik vervolgens op **Leden moeten zich aanmelden via SAML** om de configuratie voor eenmalige aanmelding in te schakelen. Voer daarna de volgende stappen uit:
 
     ![Organisatie-instellingen voor eenmalige aanmelding configureren](./media/asana-tutorial/tutorial_asana_10.png)  
 
-    a. Plak in het tekstvak **Aanmeldingspagina-URL** de **Aanmeldings-URL** .
+    a. Plak in het tekstvak **Aanmeldingspagina-URL** de **Aanmeldings-URL**.
 
-    b. Klik met de rechtermuisknop op het certificaat dat is gedownload vanuit Azure Portal en open vervolgens het certificaatbestand in Kladblok of uw favoriete teksteditor. Kopieer de inhoud tussen de begin- en de eindcertificaattitel en plak deze in het tekstvak **X.509-certificaat** .
+    b. Klik met de rechtermuisknop op het certificaat dat is gedownload vanuit Azure Portal en open vervolgens het certificaatbestand in Kladblok of uw favoriete teksteditor. Kopieer de inhoud tussen de begin- en de eindcertificaattitel en plak deze in het tekstvak **X.509-certificaat**.
 
-3. Klik op **Opslaan** . Ga naar [Asana-handleiding voor het instellen van eenmalige aanmelding](https://asana.com/guide/help/premium/authentication#gl-saml) als u meer hulp nodig hebt.
+3. Klik op **Opslaan**. Ga naar [Asana-handleiding voor het instellen van eenmalige aanmelding](https://asana.com/guide/help/premium/authentication#gl-saml) als u meer hulp nodig hebt.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -160,13 +160,13 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
 
-    d. Klik op **Create** .
+    d. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Asana.
 
-1. Selecteer **Bedrijfstoepassingen** in Azure Portal, selecteer **Alle toepassingen** en selecteer vervolgens **Asana** .
+1. Selecteer **Bedrijfstoepassingen** in Azure Portal, selecteer **Alle toepassingen** en selecteer vervolgens **Asana**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -174,11 +174,11 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
     ![De Asana-koppeling in de lijst met toepassingen](common/all-applications.png)
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -186,7 +186,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-asana-test-user"></a>Een Asana-testgebruiker maken
 
@@ -200,9 +200,9 @@ In deze sectie maakt u in Asana een gebruiker met de naam Britta Simon.
 
     ![Een Azure AD-testgebruiker maken](./media/asana-tutorial/tutorial_asana_12.png)
 
-2. Typ het e-mailadres van de gebruiker, bijvoorbeeld **britta.simon\@contoso.com** , in het tekstvak en selecteer vervolgens **Uitnodigen** .
+2. Typ het e-mailadres van de gebruiker, bijvoorbeeld **britta.simon\@contoso.com**, in het tekstvak en selecteer vervolgens **Uitnodigen**.
 
-3. Klik op **Uitnodiging verzenden** . De nieuwe gebruiker ontvangt een e-mailbericht in zijn of haar e-mailaccount. gebruiker moet het account maken en valideren.
+3. Klik op **Uitnodiging verzenden**. De nieuwe gebruiker ontvangt een e-mailbericht in zijn of haar e-mailaccount. gebruiker moet het account maken en valideren.
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen
 

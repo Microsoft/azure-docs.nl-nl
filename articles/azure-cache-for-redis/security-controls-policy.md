@@ -1,18 +1,18 @@
 ---
 title: Besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Cache voor Redis
 description: Toont beschikbare besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Cache voor Redis. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 11/17/2020
+ms.date: 11/20/2020
 ms.topic: sample
 author: yegu-ms
 ms.author: yegu
 ms.service: cache
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 01d6567433bed465aee5e3ee63cc0031a7a66fdd
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 7924d82067e74a2055185384ff324c6bd0325efc
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701672"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94992286"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-cache-for-redis"></a>Besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure Cache voor Redis
 

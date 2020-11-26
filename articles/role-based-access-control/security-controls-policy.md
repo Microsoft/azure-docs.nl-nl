@@ -1,18 +1,18 @@
 ---
 title: Besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure RBAC
 description: Toont beschikbare besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure RBAC (Role-Based Access Control, oftewel op rollen gebaseerd toegangsbeheer). Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 11/17/2020
+ms.date: 11/20/2020
 ms.topic: sample
 author: rolyon
 ms.author: rolyon
 ms.service: role-based-access-control
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: e4a7c712c5527e2bb07be2b53e679a0d4d442098
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 06cb91b317bfc1e9d3b6f03211698f4b0f9f56c6
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94699033"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94988665"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-rbac"></a>Besturingselementen voor Naleving van Azure Policy-regelgeving voor Azure RBAC
 

@@ -12,11 +12,11 @@ ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
 ms.openlocfilehash: 79270f2484cedd81f39d2c393546bd4a1bdd3392
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92459909"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999821"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-intralinks"></a>Zelfstudie: Integratie tussen Azure Active Directory en Intralinks
 
@@ -49,7 +49,7 @@ Voor het configureren van de integratie van Intralinks met Azure Active Director
 
 **Voer de volgende stappen uit om Intralinks toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -128,7 +128,7 @@ Als u eenmalige aanmelding aan de zijde van **Intralinks** wilt configureren, mo
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -153,7 +153,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
 In dit gedeelte stelt u Britta Simon in staat om gebruik te maken van eenmalige aanmelding via Azure door haar toegang te geven tot Intralinks.
 
-1. Selecteer in Azure Portal **Bedrijfstoepassingen** , **Alle toepassingen** en vervolgens **Intralinks**.
+1. Selecteer in Azure Portal **Bedrijfstoepassingen**, **Alle toepassingen** en vervolgens **Intralinks**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 

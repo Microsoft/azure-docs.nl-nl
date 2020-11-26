@@ -9,12 +9,12 @@ ms.date: 07/30/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: b46ce20b868f8756f6ad91795a27328abcb2fbdf
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 71bfc84eb50521aef72f78b482bddda112c00c6c
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92044170"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94964351"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-linux-devices"></a>Zelfstudie: C#-module ontwikkelen voor Linux-apparaten met IoT Edge
 
@@ -33,7 +33,7 @@ De IoT Edge-module die u maakt in deze zelfstudie filtert de temperatuurgegevens
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="solution-scope"></a>Oplossingsbereik
+## <a name="prerequisites"></a>Vereisten
 
 Deze zelfstudie laat zien hoe u een module kunt ontwikkelen in **C#** met behulp van **Visual Studio Code** en hoe u deze kunt implementeren op een **Linux-apparaat**. Als u modules voor Windows-apparaten ontwikkelt, gaat u naar [Een C#-module ontwikkelen voor Windows-apparaten met IoT Edge](tutorial-csharp-module-windows.md).
 
@@ -46,8 +46,6 @@ Gebruik de volgende tabel om inzicht te krijgen in de opties voor het ontwikkele
 
 >[!NOTE]
 >Ondersteuning voor Linux ARM64-apparaten is beschikbaar in [openbare preview](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Zie [ARM64 IoT Edge-modules ontwikkelen in Visual Studio Code en er fouten in opsporen (preview)](https://devblogs.microsoft.com/iotdev/develop-and-debug-arm64-iot-edge-modules-in-visual-studio-code-preview) voor meer informatie.
-
-## <a name="prerequisites"></a>Vereisten
 
 Voordat u met deze zelfstudie begint, moet u de vorige zelfstudie hebben doorlopen om uw ontwikkelomgeving in te stellen: [Een IoT Edge-module ontwikkelen voor een Linux-apparaat](tutorial-develop-for-linux.md). Na voltooiing van die zelfstudie moet u beschikken over de volgende vereisten:
 

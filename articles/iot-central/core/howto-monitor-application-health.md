@@ -7,12 +7,12 @@ ms.date: 05/14/2020
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 66f0846ab8fcfc316c4b40ad9e51b402a37e874d
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: 1fb17d56c546511fee291f30b103a5310c8015cc
+ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92122906"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96122268"
 ---
 # <a name="monitor-the-overall-health-of-the-devices-connected-to-an-iot-central-application"></a>De algemene status van de apparaten die zijn verbonden met een IoT Central-toepassing bewaken
 
@@ -31,7 +31,7 @@ Toepassingen die gebruikmaken van het gratis proef abonnement hebben geen bijbeh
 
 ## <a name="view-metrics-in-the-azure-portal"></a>Metrische gegevens weer geven in de Azure Portal
 
-Bij de volgende stappen wordt ervan uitgegaan dat u een [IOT Central toepassing](./quick-deploy-iot-central.md) hebt met een aantal [verbonden apparaten](./tutorial-connect-device-nodejs.md).
+Bij de volgende stappen wordt ervan uitgegaan dat u een [IOT Central toepassing](./quick-deploy-iot-central.md) hebt met een aantal [verbonden apparaten](./tutorial-connect-device.md).
 
 IoT Central metrische gegevens weer geven in de portal:
 

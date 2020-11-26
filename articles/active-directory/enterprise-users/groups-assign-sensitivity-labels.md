@@ -13,16 +13,16 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 08abd6938990f5300639a56fb487d910bf8000b3
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: f8680c1d24fe3c1ed840def40c1c3abdd2fdaf24
+ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95488858"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96121772"
 ---
 # <a name="assign-sensitivity-labels-to-microsoft-365-groups-in-azure-active-directory"></a>Gevoeligheids labels toewijzen aan Microsoft 365 groepen in Azure Active Directory
 
-Azure Active Directory (Azure AD) ondersteunt het Toep assen van gevoelige labels die door het [Microsoft 365 compliance Center](https://sip.protection.office.com/homepage) worden gepubliceerd om groepen te Microsoft 365. Gevoeligheids labels zijn van toepassing op groepen in verschillende services, zoals Outlook, micro soft teams en share point. Deze functie is momenteel beschikbaar in open bare GA. Zie voor meer informatie over de ondersteuning van Microsoft 365-apps [Microsoft 365 ondersteuning voor gevoeligheids labels](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites#support-for-the-sensitivity-labels).
+Azure Active Directory (Azure AD) ondersteunt het Toep assen van gevoelige labels die door het [Microsoft 365 compliance Center](https://sip.protection.office.com/homepage) worden gepubliceerd om groepen te Microsoft 365. Gevoeligheids labels zijn van toepassing op groepen in verschillende services, zoals Outlook, micro soft teams en share point. Zie voor meer informatie over de ondersteuning van Microsoft 365-apps [Microsoft 365 ondersteuning voor gevoeligheids labels](/microsoft-365/compliance/sensitivity-labels-teams-groups-sites#support-for-the-sensitivity-labels).
 
 > [!IMPORTANT]
 > Als u deze functie wilt configureren, moet er ten minste één actieve Azure Active Directory Premium P1-licentie in uw Azure AD-organisatie zijn.

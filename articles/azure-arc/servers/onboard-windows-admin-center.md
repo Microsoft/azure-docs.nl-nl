@@ -3,12 +3,12 @@ title: Hybride computers verbinden met Azure vanuit het Windows-beheer centrum
 description: In dit artikel leert u hoe u de agent kunt installeren en computers kunt verbinden met Azure met behulp van Azure Arc-servers in het Windows-beheer centrum.
 ms.date: 10/12/2020
 ms.topic: conceptual
-ms.openlocfilehash: d47e3dd4434d719f890b64e4cdfb12a189c0632a
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 8fa118a254689feade2897f083bb3aa2dc9db02c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93133707"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183410"
 ---
 # <a name="connect-hybrid-machines-to-azure-from-windows-admin-center"></a>Hybride computers verbinden met Azure vanuit het Windows-beheer centrum
 
@@ -38,9 +38,9 @@ Voer de volgende stappen uit om de Windows-Server te configureren met servers wa
 
 1. Selecteer **Azure Hybrid Services** in het linkerdeel venster.
 
-1. Selecteer op de pagina **Azure Hybrid Services** de optie **Azure-Services detecteren** .
+1. Selecteer op de pagina **Azure Hybrid Services** de optie **Azure-Services detecteren**.
 
-1. Selecteer op de pagina **Azure-Services detecteren** onder **Azure-beleids regels en oplossingen voor het beheren van uw servers met Azure Arc de** optie **instellen** .
+1. Selecteer op de pagina **Azure-Services detecteren** onder **Azure-beleids regels en oplossingen voor het beheren van uw servers met Azure Arc de** optie **instellen**.
 
 1. Als u wordt gevraagd om te verifiëren bij Azure en vervolgens aan de **slag** gaat, selecteert u op de pagina **Settings\Azure Arc voor servers** .
 
@@ -48,8 +48,8 @@ Voer de volgende stappen uit om de Windows-Server te configureren met servers wa
 
     1. Selecteer in de vervolg keuzelijst **Azure-abonnement** het Azure-abonnement.
     1. Voor **resource groep** selecteert u **Nieuw** om een nieuwe resource groep te maken of selecteert u in de vervolg keuzelijst **resource groep** een bestaande resource groep om de machine te registreren en te beheren.
-    1. Selecteer in de vervolg keuzelijst **regio** de Azure-regio om de meta gegevens van de server op te slaan.
-    1. Als de computer of server communiceert via een proxy server om verbinding te maken met internet, selecteert u de optie **proxy server gebruiken** . Geef het IP-adres van de proxy server of de naam en het poort nummer op dat door de computer wordt gebruikt om te communiceren met de proxy server.
+    1. Selecteer in de vervolg keuzelijst **Regio**, de Azure-regio om de metagegevens van de server op te slaan.
+    1. Als de computer of server communiceert via een proxy server om verbinding te maken met internet, selecteert u de optie **proxy server gebruiken**. Geef het IP-adres van de proxy server of de naam en het poort nummer op dat door de computer wordt gebruikt om te communiceren met de proxy server.
 
 1. Selecteer **instellen** om door te gaan met het configureren van de Windows Server met servers die geschikt zijn voor Azure Arc.
 
@@ -69,4 +69,4 @@ Nadat u de agent hebt geïnstalleerd en geconfigureerd om verbinding te maken me
 
 * Meer informatie over het beheren van uw machine met [Azure Policy](../../governance/policy/overview.md), voor zaken als VM- [gast configuratie](../../governance/policy/concepts/guest-configuration.md), moet u controleren of de computer rapporteert aan de verwachte log Analytics-werk ruimte, de bewaking inschakelen met [Azure monitor met vm's](../../azure-monitor/insights/vminsights-enable-policy.md)en nog veel meer.
 
-* Meer informatie over de [log Analytics-agent](../../azure-monitor/platform/log-analytics-agent.md). De Log Analytics-agent voor Windows en Linux is vereist wanneer u bewakings gegevens van het besturings systeem en werk belasting wilt verzamelen, deze wilt beheren met Automation-runbooks of-functies zoals Updatebeheer, of om andere Azure-Services zoals [Azure Security Center](../../security-center/security-center-intro.md)te gebruiken.
+* Meer informatie over de [log Analytics-agent](../../azure-monitor/platform/log-analytics-agent.md). De Log Analytics-agent voor Windows en Linux is vereist wanneer u bewakings gegevens van het besturings systeem en werk belasting wilt verzamelen, deze wilt beheren met Automation-runbooks of-functies zoals Updatebeheer, of om andere Azure-Services zoals [Azure Security Center](../../security-center/security-center-introduction.md)te gebruiken.

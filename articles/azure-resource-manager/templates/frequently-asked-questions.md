@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 09/17/2020
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: 7f4238035a6fccb0addb9a481287b31732bd2662
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: af6a46e16cd888e3ff6a382be2b1a4264fcc2941
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94744532"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184005"
 ---
 # <a name="frequently-asked-questions-about-arm-templates"></a>Veelgestelde vragen over ARM-sjablonen
 
@@ -68,7 +68,7 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over de sjablonen van A
 
 * **Kan ik een abonnement in een ARM-sjabloon maken?**
 
-  Ja, Zie [programmatisch Azure-abonnementen maken met de nieuwste api's](../../cost-management-billing/manage/programmatically-create-subscription.md)voor meer informatie.
+  Ja, Zie [programmatisch Azure-abonnementen maken met de nieuwste api's](../../cost-management-billing/manage/programmatically-create-subscription-enterprise-agreement.md)voor meer informatie.
 
 * **Hoe kan ik mijn sjabloon testen voordat ik deze implementatie?**
 
@@ -106,7 +106,7 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over de sjablonen van A
 
 * **Hoe kan ik aan de slag met de preview-versie van sjabloon specificaties?**
 
-  Installeer de meest recente versie van Power shell of Azure CLI. Gebruik voor Azure PowerShell [versie 5.0.0 of hoger](/powershell/azure/install-az-ps). Gebruik voor Azure CLI [versie 2.14.2 of hoger](/cli/azure/install-azure-cli).
+  Installeer de meest recente versie van Power shell of Azure CLI. Gebruik voor Azure PowerShell de [versie 5.0.0 of hoger](/powershell/azure/install-az-ps). Gebruik voor Azure CLI de [versie 2.14.2 of hoger](/cli/azure/install-azure-cli).
 
 * **Hoe zijn sjabloon specificaties en Azure-blauw drukken?**
 

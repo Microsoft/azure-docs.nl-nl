@@ -4,12 +4,12 @@ description: Bewaak de prestaties van een website zonder de website opnieuw te i
 ms.topic: conceptual
 ms.date: 08/26/2019
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 6c27c78bf8e3f3b8af342a14a38c9be3821d781a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 53dbcc341fdd4bc194d34d40cdd2a975df496376
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96020922"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186300"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-codeless-attach"></a>Web-apps tijdens runtime instrumenteren met Application Insights zonder code koppelen
 
@@ -93,7 +93,7 @@ Dit zijn enkele stappen die u kunt uitvoeren om te controleren of de installatie
 
 - Controleer of het applicationInsights.config-bestand aanwezig is in de doel-app-map en uw iKey bevat.
 
-- Als u vermoedt dat er gegevens ontbreken, kunt u een query uitvoeren in [Analytics](../log-query/get-started-portal.md) om alle Cloud rollen weer te geven die momenteel telemetrie verzenden.
+- Als u vermoedt dat er gegevens ontbreken, kunt u een query uitvoeren in [Analytics](../log-query/log-analytics-tutorial.md) om alle Cloud rollen weer te geven die momenteel telemetrie verzenden.
   ```Kusto
   union * | summarize count() by cloud_RoleName, cloud_RoleInstance
   ```
@@ -340,4 +340,3 @@ Meer telemetrie toevoegen:
 [qna]: ../faq.md
 [roles]: ./resources-roles-access-control.md
 [usage]: ./javascript.md
-

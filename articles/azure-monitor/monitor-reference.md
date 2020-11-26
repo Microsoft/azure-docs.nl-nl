@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 08/15/2020
-ms.openlocfilehash: 654d7b4ddb332906aba330da20d42a0e16ec79e6
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 5be6a2d73be35b3d637df9364364784d373dabb3
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95021436"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186691"
 ---
 # <a name="what-is-monitored-by-azure-monitor"></a>Wat wordt er bewaakt door Azure Monitor?:
 In dit artikel worden de verschillende toepassingen en services beschreven die door Azure Monitor worden bewaakt. 
@@ -189,14 +189,14 @@ De services en oplossingen in de volgende tabel slaan hun gegevens op in een Log
 
 | Product/service | Description |
 |:---|:---|
-| [Azure Automation](../automation/index.yml) | Updates van het besturings systeem beheren en wijzigingen bijhouden op Windows-en Linux-computers. Zie [Wijzigingen bijhouden](../automation/change-tracking/overview.md) en [updatebeheer](../automation/update-management/update-mgmt-overview.md). |
+| [Azure Automation](../automation/index.yml) | Updates van het besturings systeem beheren en wijzigingen bijhouden op Windows-en Linux-computers. Zie [Wijzigingen bijhouden](../automation/change-tracking/overview.md) en [updatebeheer](../automation/update-management/overview.md). |
 | [Azure Information Protection ](/azure/information-protection/) | U kunt documenten en e-mail berichten classificeren en optioneel beveiligen. Zie [centrale rapportage voor Azure Information Protection](/azure/information-protection/reports-aip#configure-a-log-analytics-workspace-for-the-reports). |
 | [Azure Security Center](../security-center/index.yml) | Verzamelen en analyseren van beveiligings gebeurtenissen en het uitvoeren van bedreigings analyses. [Gegevens verzameling in azure Security Center](../security-center/security-center-enable-data-collection.md) weer geven |
 | [Azure Sentinel](../sentinel/index.yml) | Maakt verbinding met verschillende bronnen, waaronder Office 365 en Amazon Web Services Cloud Trail. Zie [verbinding maken met gegevens bronnen](../sentinel/connect-data-sources.md). |
 | [Microsoft Intune](/intune/) | Een diagnostische instelling maken om logboeken naar Azure Monitor te verzenden. Zie [logboek gegevens naar opslag, Event hubs of log Analytics verzenden in intune (preview)](/intune/fundamentals/review-logs-using-azure-monitor).  |
 | Netwerk  | [Netwerkprestatiemeter](insights/network-performance-monitor.md) -Controleer de netwerk verbinding en prestaties voor service-en toepassings eindpunten.<br>[Azure-toepassing gateway](insights/azure-networking-analytics.md#azure-application-gateway-analytics-solution-in-azure-monitor) -logboeken en metrische gegevens van Azure-toepassing gateway analyseren.<br>[Traffic Analytics](../network-watcher/traffic-analytics.md) -Network Watcher netwerk beveiligings groep (NSG) stroom logboeken analyseren om inzicht te krijgen in de verkeers stroom in uw Azure-Cloud. |
 | [Office 365](insights/solution-office-365.md) | Uw Office 365-omgeving bewaken. Bijgewerkte versie met verbeterde onboarding beschikbaar via Azure Sentinel. |
-| [SQL Analytics](insights/azure-sql.md) | Bewaak de prestaties van Azure SQL-data bases en SQL Managed instances op schaal en op meerdere abonnementen. |
+| [SQL-analyse](insights/azure-sql.md) | Bewaak de prestaties van Azure SQL-data bases en SQL Managed instances op schaal en op meerdere abonnementen. |
 | [Surface Hub](insights/surface-hubs.md) | De status en het gebruik van Surface Hub apparaten bijhouden. |
 | [System Center Operations Manager](/system-center/scom) | Gegevens verzamelen van Operations Manager agents door hun beheer groep te verbinden met Azure Monitor. Zie [Operations Manager verbinding maken met Azure monitor](platform/om-agents.md)<br> Evalueer het risico en de status van uw System Center Operations Manager-beheer groep met [Operations Manager-beoordelings](insights/scom-assessment.md) oplossing. |
 | [Micro soft teams-kamers](/microsoftteams/room-systems/azure-monitor-deploy) | Geïntegreerd, end-to-end-beheer van micro soft teams-apparaten. |
@@ -245,4 +245,3 @@ Azure Monitor kunt gegevens verzamelen van resources buiten Azure met behulp van
 - Voltooi een [zelf studie over het schrijven van een logboek query voor het analyseren van gegevens in azure monitor logboeken](learn/tutorial-resource-logs.md).
 - Voltooi een [zelf studie over het maken van een metrische grafiek voor het analyseren van gegevens in azure monitor meet waarden](learn/tutorial-metrics-explorer.md).
 
- 

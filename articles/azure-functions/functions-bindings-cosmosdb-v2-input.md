@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/24/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 42932d712d6c4a94cad28aec924b88fbc126662b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dec41a5e05d22891aae9d16280ebb6b0c8da3f20
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88212793"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185110"
 ---
 # <a name="azure-cosmos-db-input-binding-for-azure-functions-2x-and-higher"></a>Invoer binding Azure Cosmos DB voor Azure Functions 2. x en hoger
 
@@ -20,7 +20,7 @@ Bij een Azure Cosmos DB-invoerbinding wordt de SQL-API gebruikt voor het ophalen
 Zie het [overzicht](./functions-bindings-cosmosdb-v2.md)voor meer informatie over de installatie-en configuratie details.
 
 > [!NOTE]
-> Als de verzameling is [gepartitioneerd](../cosmos-db/partition-data.md#logical-partitions), moeten opzoek bewerkingen ook de partitie sleutel waarde opgeven.
+> Als de verzameling is [gepartitioneerd](../cosmos-db/partitioning-overview.md#logical-partitions), moeten opzoek bewerkingen ook de partitie sleutel waarde opgeven.
 >
 
 <a id="example" name="example"></a>
@@ -212,7 +212,7 @@ Het volgende voor beeld toont een [C#-functie](functions-dotnet-class-library.md
 In het voor beeld ziet u hoe u een bindings expressie gebruikt in de `SqlQuery` para meter. U kunt route gegevens door geven aan de `SqlQuery` para meter zoals weer gegeven, maar de waarden van de [query reeksen kunnen niet worden door gegeven](https://github.com/Azure/azure-functions-host/issues/2554#issuecomment-392084583).
 
 > [!NOTE]
-> Als u alleen een query wilt uitvoeren op basis van de ID, is het raadzaam om een zoek opdracht te gebruiken, zoals de [voor gaande voor beelden](#http-trigger-look-up-id-from-query-string-c), omdat er minder [aanvraag eenheden](../cosmos-db/request-units.md)worden gebruikt. Lees bewerkingen op punten (GET) zijn [efficiënter](../cosmos-db/optimize-cost-queries.md) dan QUERY'S op id.
+> Als u alleen een query wilt uitvoeren op basis van de ID, is het raadzaam om een zoek opdracht te gebruiken, zoals de [voor gaande voor beelden](#http-trigger-look-up-id-from-query-string-c), omdat er minder [aanvraag eenheden](../cosmos-db/request-units.md)worden gebruikt. Lees bewerkingen op punten (GET) zijn [efficiënter](../cosmos-db/optimize-cost-reads-writes.md) dan QUERY'S op id.
 >
 
 ```cs
@@ -1315,7 +1315,7 @@ public class DocByIdFromRoute {
 In het volgende voor beeld ziet u een Java-functie die één document ophaalt. De functie wordt geactiveerd door een HTTP-aanvraag die gebruikmaakt van een route parameter om de ID op te geven die moet worden gezocht. Deze ID wordt gebruikt om een document op te halen uit de opgegeven Data Base en verzameling, waarbij de resultatenset wordt geconverteerd naar een ```ToDoItem[]``` , omdat er veel documenten kunnen worden geretourneerd, afhankelijk van de query criteria.
 
 > [!NOTE]
-> Als u alleen een query wilt uitvoeren op basis van de ID, is het raadzaam om een zoek opdracht te gebruiken, zoals de [voor gaande voor beelden](#http-trigger-look-up-id-from-query-string---pojo-parameter-java), omdat er minder [aanvraag eenheden](../cosmos-db/request-units.md)worden gebruikt. Lees bewerkingen op punten (GET) zijn [efficiënter](../cosmos-db/optimize-cost-queries.md) dan QUERY'S op id.
+> Als u alleen een query wilt uitvoeren op basis van de ID, is het raadzaam om een zoek opdracht te gebruiken, zoals de [voor gaande voor beelden](#http-trigger-look-up-id-from-query-string---pojo-parameter-java), omdat er minder [aanvraag eenheden](../cosmos-db/request-units.md)worden gebruikt. Lees bewerkingen op punten (GET) zijn [efficiënter](../cosmos-db/optimize-cost-reads-writes.md) dan QUERY'S op id.
 >
 
 ```java
@@ -1442,7 +1442,7 @@ De volgende tabel bevat informatie over de bindingsconfiguratie-eigenschappen di
 |**id**    | **Id** | De ID van het document dat moet worden opgehaald. Deze eigenschap ondersteunt [bindings expressies](./functions-bindings-expressions-patterns.md). Stel de `id` Eigenschappen en **sqlQuery** niet in. Als u er niet een hebt ingesteld, wordt de volledige verzameling opgehaald. |
 |**sqlQuery**  |**SqlQuery**  | Een Azure Cosmos DB SQL-query die wordt gebruikt om meerdere documenten op te halen. De eigenschap ondersteunt runtime bindingen, zoals in dit voor beeld: `SELECT * FROM c where c.departmentId = {departmentId}` . Stel de `id` Eigenschappen en niet in `sqlQuery` . Als u er niet een hebt ingesteld, wordt de volledige verzameling opgehaald.|
 |**connectionStringSetting**     |**ConnectionStringSetting**|De naam van de app-instelling met uw Azure Cosmos DB connection string. |
-|**partitionKey**|**PartitionKey**|Hiermee geeft u de partitie sleutel waarde voor de zoek opdracht op. Kan bindende para meters bevatten. Dit is vereist voor zoek acties in [gepartitioneerde](../cosmos-db/partition-data.md#logical-partitions) verzamelingen.|
+|**partitionKey**|**PartitionKey**|Hiermee geeft u de partitie sleutel waarde voor de zoek opdracht op. Kan bindende para meters bevatten. Dit is vereist voor zoek acties in [gepartitioneerde](../cosmos-db/partitioning-overview.md#logical-partitions) verzamelingen.|
 |**preferredLocations**| **PreferredLocations**| Beschrijving Hiermee worden voorkeurs locaties (regio's) gedefinieerd voor accounts met geo-gerepliceerde data bases in de Azure Cosmos DB-service. De waarden moeten worden gescheiden door komma's. Bijvoorbeeld ' vs-Oost, VS Zuid-Centraal, Europa-noord '. |
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]

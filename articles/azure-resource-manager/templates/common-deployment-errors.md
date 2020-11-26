@@ -4,12 +4,12 @@ description: Hierin wordt beschreven hoe u veelvoorkomende fouten oplost wanneer
 tags: top-support-issue
 ms.topic: troubleshooting
 ms.date: 09/09/2020
-ms.openlocfilehash: fb7e476a5b4416282546d321a5e9a0127b7a4364
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 785a74184cae8523b99da7f647ca87fda53c8648
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96000705"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185824"
 ---
 # <a name="troubleshoot-common-azure-deployment-errors-with-azure-resource-manager"></a>Veelvoorkomende fouten met Azure-implementatie oplossen met Azure Resource Manager
 
@@ -76,10 +76,10 @@ Als u op zoek bent naar informatie over een fout code en deze informatie niet in
 | StorageAccountAlreadyTaken | Geef een unieke naam op voor het opslagaccount. | [Naam van opslag account oplossen](error-storage-account-name.md) |
 | StorageAccountNotFound | Controleer het abonnement, de resource groep en de naam van het opslag account dat u wilt gebruiken. | |
 | SubnetsNotInSameVnet | Een virtuele machine kan slechts één virtueel netwerk hebben. Zorg er bij het implementeren van verschillende Nic's voor dat deze deel uitmaken van hetzelfde virtuele netwerk. | [Meerdere Nic's](../../virtual-machines/windows/multiple-nics.md) |
-| SubscriptionNotFound | Er kan geen toegang worden verkregen tot een opgegeven abonnement voor de implementatie. Het kan zijn dat de abonnements-ID onjuist is. de gebruiker die de sjabloon implementeert, beschikt niet over de vereiste machtigingen om te implementeren voor het abonnement of de abonnements-ID heeft de verkeerde indeling. Wanneer u geneste implementaties gebruikt voor het [implementeren van verschillende bereiken](cross-scope-deployment.md), geeft u de GUID voor het abonnement op. | |
+| SubscriptionNotFound | Er kan geen toegang worden verkregen tot een opgegeven abonnement voor de implementatie. Het kan zijn dat de abonnements-ID onjuist is. de gebruiker die de sjabloon implementeert, beschikt niet over de vereiste machtigingen om te implementeren voor het abonnement of de abonnements-ID heeft de verkeerde indeling. Wanneer u geneste implementaties gebruikt voor het [implementeren van verschillende bereiken](./deploy-to-resource-group.md), geeft u de GUID voor het abonnement op. | |
 | SubscriptionNotRegistered | Bij het implementeren van een resource moet de resource provider zijn geregistreerd voor uw abonnement. Wanneer u een Azure Resource Manager sjabloon voor implementatie gebruikt, wordt de resource provider automatisch geregistreerd in het abonnement. Soms wordt de automatische registratie niet op tijd voltooid. U kunt deze fout voor komen door de resource provider te registreren vóór de implementatie. | [Registratie oplossen](error-register-resource-provider.md) |
 | TemplateResourceCircularDependency | Verwijder overbodige afhankelijkheden. | [Circulaire afhankelijkheden oplossen](error-invalid-template.md#circular-dependency) |
-| TooManyTargetResourceGroups | Verminder het aantal resource groepen voor één implementatie. | [Implementatie op meerdere scopes](cross-scope-deployment.md) |
+| TooManyTargetResourceGroups | Verminder het aantal resource groepen voor één implementatie. | [Implementatie op meerdere scopes](./deploy-to-resource-group.md) |
 
 ## <a name="find-error-code"></a>Fout code zoeken
 

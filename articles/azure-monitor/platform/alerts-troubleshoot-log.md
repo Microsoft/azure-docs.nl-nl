@@ -6,18 +6,18 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.subservice: alerts
 ms.date: 10/29/2018
-ms.openlocfilehash: ec2ffe71a32781a855da258f3621738f1a5f6be4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e9a1bef582053eccdbfef63c2159cf540ffd9bfb
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91294288"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186589"
 ---
 # <a name="troubleshoot-log-alerts-in-azure-monitor"></a>Problemen met logboek waarschuwingen in Azure Monitor oplossen  
 
 In dit artikel wordt beschreven hoe u veelvoorkomende problemen met logboek waarschuwingen in Azure Monitor kunt oplossen. Het bevat ook oplossingen voor veelvoorkomende problemen met de functionaliteit en configuratie van logboek waarschuwingen.
 
-Met logboek waarschuwingen kunnen gebruikers een [log Analytics](../log-query/get-started-portal.md) query gebruiken om resources te evalueren elke ingestelde frequentie, en wordt een waarschuwing gestart op basis van de resultaten. Regels kunnen een of meer acties activeren met behulp van [actie groepen](./action-groups.md). [Meer informatie over de functionaliteit en termen van logboek waarschuwingen](alerts-unified-log.md).
+Met logboek waarschuwingen kunnen gebruikers een [log Analytics](../log-query/log-analytics-tutorial.md) query gebruiken om resources te evalueren elke ingestelde frequentie, en wordt een waarschuwing gestart op basis van de resultaten. Regels kunnen een of meer acties activeren met behulp van [actie groepen](./action-groups.md). [Meer informatie over de functionaliteit en termen van logboek waarschuwingen](alerts-unified-log.md).
 
 > [!NOTE]
 > In dit artikel wordt niet in overweging genomen gevallen waarin de Azure Portal een waarschuwings regel weergeeft en er geen melding wordt uitgevoerd door een gekoppelde actie groep. Zie voor dergelijke gevallen de details over [het oplossen van](./alerts-troubleshoot.md#action-or-notification-on-my-alert-did-not-work-as-expected)problemen.
@@ -36,13 +36,13 @@ Het systeem probeert de evaluatie van waarschuwingen meerdere keren opnieuw uit 
 
 Het tijds bereik voor de query is ingesteld in de definitie van de regel voorwaarde. Dit veld wordt een **periode** genoemd voor werk ruimten en Application Insights, en het **bereik voor opheffen query tijden** voor alle andere resource typen. Net als bij log Analytics beperkt het tijds bereik de query gegevens tot de opgegeven periode. Zelfs als de opdracht **geleden** in de query wordt gebruikt, is het tijds bereik van toepassing. 
 
-Een query scant bijvoorbeeld 60 minuten, wanneer het tijds bereik 60 minuten is, zelfs als de tekst **geleden (1d)** bevat. Het tijds bereik en de filter tijd voor query's moeten overeenkomen. In het voorbeeld geval wordt de **periode**voor het overschrijven van de  /  **query tijd** op één dag gewijzigd. dit werkt zoals verwacht.
+Een query scant bijvoorbeeld 60 minuten, wanneer het tijds bereik 60 minuten is, zelfs als de tekst **geleden (1d)** bevat. Het tijds bereik en de filter tijd voor query's moeten overeenkomen. In het voorbeeld geval wordt de **periode** voor het overschrijven van de  /  **query tijd** op één dag gewijzigd. dit werkt zoals verwacht.
 
 ![Periode](media/alert-log-troubleshoot/LogAlertTimePeriod.png)
 
 ### <a name="actions-are-muted-in-the-alert-rule"></a>Acties zijn gedempt in de waarschuwings regel
 
-Logboek waarschuwingen bieden een optie om het aantal geactiveerde waarschuwings acties voor een bepaalde periode te dempen. Dit veld heet **waarschuwingen onderdrukken** in werk ruimten en Application Insights. In alle andere resource typen wordt **demping-acties**genoemd. 
+Logboek waarschuwingen bieden een optie om het aantal geactiveerde waarschuwings acties voor een bepaalde periode te dempen. Dit veld heet **waarschuwingen onderdrukken** in werk ruimten en Application Insights. In alle andere resource typen wordt **demping-acties** genoemd. 
 
 Een veelvoorkomend probleem is dat u denkt dat de-waarschuwing de acties niet heeft gestart vanwege een service probleem. Zelfs moeilijk is de regel configuratie gedempt.
 

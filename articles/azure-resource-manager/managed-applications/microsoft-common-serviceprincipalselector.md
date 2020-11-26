@@ -5,16 +5,16 @@ author: tfitzmac
 ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: tomfitz
-ms.openlocfilehash: 9d41e41f110e927f436b38d6291719c138defa53
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 2fdbbad467d8c762db485fc7935e9cef78313fd0
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94745759"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184447"
 ---
 # <a name="microsoftcommonserviceprincipalselector-ui-element"></a>Micro soft. common. ServicePrincipalSelector UI-element
 
-Een besturings element waarmee gebruikers een bestaande [Service-Principal](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object) kunnen selecteren of een nieuwe toepassing registreren. Wanneer u **Nieuw maken** selecteert, volgt u de stappen om een nieuwe toepassing te registreren. Wanneer u een bestaande toepassing selecteert, biedt het besturings element een tekstvak voor het invoeren van een wacht woord of vinger afdruk van het certificaat.
+Een besturings element waarmee gebruikers een bestaande [Service-Principal](../../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) kunnen selecteren of een nieuwe toepassing registreren. Wanneer u **Nieuw maken** selecteert, volgt u de stappen om een nieuwe toepassing te registreren. Wanneer u een bestaande toepassing selecteert, biedt het besturings element een tekstvak voor het invoeren van een wacht woord of vinger afdruk van het certificaat.
 
 ## <a name="ui-samples"></a>Voor beelden van gebruikers interface
 
@@ -144,7 +144,7 @@ Hier volgt een voor beeld van het `Microsoft.Common.ServicePrincipalSelector` be
 }
 ```
 
-## <a name="example-output"></a>Voorbeeld uitvoer
+## <a name="example-output"></a>Voorbeelduitvoer
 
 De `appId` is de id van de registratie van de toepassing die u hebt geselecteerd of gemaakt. De `objectId` is een matrix met object-id's voor de service-principals die zijn geconfigureerd voor de registratie van de geselecteerde toepassing.
 

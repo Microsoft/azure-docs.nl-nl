@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 09/08/2020
-ms.openlocfilehash: 85ff3bed2a648f852c311fefa8513622c2a48285
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.openlocfilehash: 4d12a7ec76f3390aabc7b45aeb0cd8cedcc6febd
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94376533"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186470"
 ---
 # <a name="connect-azure-to-itsm-tools-by-using-secure-export"></a>Verbinding maken tussen Azure en ITSM-hulpprogram ma's met behulp van beveiligde export
 
@@ -28,8 +28,8 @@ ITSMC maakt gebruik van gebruikers naam en wacht woord. Beveiligd exporteren hee
 
 De Secure export-architectuur introduceert de volgende nieuwe mogelijkheden:
 
-* **Nieuwe actie groep** : waarschuwingen worden verzonden naar het ITSM-hulp programma via de actie groep van de beveiligde webhook, in plaats van de ITSM actie groep die ITSMC gebruikt.
-* **Azure AD-verificatie** : de verificatie vindt plaats via Azure AD in plaats van de referenties van de gebruikers naam en het wacht woord.
+* **Nieuwe actie groep**: waarschuwingen worden verzonden naar het ITSM-hulp programma via de actie groep van de beveiligde webhook, in plaats van de ITSM actie groep die ITSMC gebruikt.
+* **Azure AD-verificatie**: de verificatie vindt plaats via Azure AD in plaats van de referenties van de gebruikers naam en het wacht woord.
 
 ## <a name="secure-export-data-flow"></a>Gegevens stroom voor beveiligde export
 
@@ -49,9 +49,9 @@ De stappen voor de beveiligde export gegevens stroom zijn:
 
 De belangrijkste voor delen van de integratie zijn:
 
-* **Betere verificatie** : Azure AD biedt een veiligere verificatie zonder de time-outs die zich vaak voordoen in ITSMC.
-* **Waarschuwingen die zijn opgelost in het ITSM-hulp programma** : metrische waarschuwingen implementeren ' fireed ' en ' opgeloste ' statussen. Wanneer aan de voor waarde wordt voldaan, wordt de status van de waarschuwing geactiveerd. Als niet meer aan de voor waarde wordt voldaan, is de waarschuwings status opgelost. In ITSMC kunnen waarschuwingen niet automatisch worden opgelost. Met beveiligde export stromen de omgezette status naar het ITSM-hulp programma en worden deze automatisch bijgewerkt.
-* **[Gebruikelijk waarschuwings schema](./alerts-common-schema.md)** : in ITSMC verschilt het schema van de nettolading van de waarschuwing op basis van het waarschuwings type. Bij beveiligde export is er een gemeen schappelijk schema voor alle waarschuwings typen. Dit algemene schema bevat de CI voor alle waarschuwings typen. Alle waarschuwings typen kunnen hun CI binden met de CMDB.
+* **Betere verificatie**: Azure AD biedt een veiligere verificatie zonder de time-outs die zich vaak voordoen in ITSMC.
+* **Waarschuwingen die zijn opgelost in het ITSM-hulp programma**: metrische waarschuwingen implementeren ' fireed ' en ' opgeloste ' statussen. Wanneer aan de voor waarde wordt voldaan, wordt de status van de waarschuwing geactiveerd. Als niet meer aan de voor waarde wordt voldaan, is de waarschuwings status opgelost. In ITSMC kunnen waarschuwingen niet automatisch worden opgelost. Met beveiligde export stromen de omgezette status naar het ITSM-hulp programma en worden deze automatisch bijgewerkt.
+* **[Gebruikelijk waarschuwings schema](./alerts-common-schema.md)**: in ITSMC verschilt het schema van de nettolading van de waarschuwing op basis van het waarschuwings type. Bij beveiligde export is er een gemeen schappelijk schema voor alle waarschuwings typen. Dit algemene schema bevat de CI voor alle waarschuwings typen. Alle waarschuwings typen kunnen hun CI binden met de CMDB.
 
 Ga met de volgende stappen aan de slag met het ITSM-connector-hulp programma:
 
@@ -60,8 +60,8 @@ Ga met de volgende stappen aan de slag met het ITSM-connector-hulp programma:
 3. Configureer uw partner omgeving. 
 
 Beveiligd exporteren ondersteunt verbindingen met de volgende ITSM-hulpprogram ma's:
-* [ServiceNow](https://docs.microsoft.com/azure/azure-monitor/platform/it-service-management-connector-secure-webhook-connections#connect-servicenow-to-azure-monitor)
-* [BMC Helix](https://docs.microsoft.com/azure/azure-monitor/platform/it-service-management-connector-secure-webhook-connections#connect-bmc-helix-to-azure-monitor)
+* [ServiceNow](#connect-servicenow-to-azure-monitor)
+* [BMC Helix](#connect-bmc-helix-to-azure-monitor)
 
 ## <a name="register-with-azure-active-directory"></a>Registreren bij Azure Active Directory
 
@@ -90,7 +90,7 @@ Volg deze instructies voor beveiligde webhook om een webhook aan een actie toe t
 5. Selecteer **beveiligde webhook**.
 6. Selecteer deze details:
    1. Selecteer de object-ID van de Azure Active Directory instantie die u hebt geregistreerd.
-   2. Plak voor de URI in de webhook-URL die u hebt gekopieerd uit de [ITSM-werk omgeving](https://docs.microsoft.com/azure/azure-monitor/platform/it-service-management-connector-secure-webhook-connections#configure-the-partner-environment).
+   2. Plak voor de URI in de webhook-URL die u hebt gekopieerd uit de [ITSM-werk omgeving](#configure-the-itsm-tool-environment).
    3. Stel **het algemene waarschuwings schema** in op **Ja**. 
 
    In de volgende afbeelding ziet u de configuratie van een voor beeld van een beveiligde webhook-actie:
@@ -156,12 +156,12 @@ Zorg ervoor dat u aan de volgende vereisten voldoet:
    4. Selecteer **configuratie**.
    5. Selecteer de configuratie **nieuwe verbinding toevoegen** .
    6. Vul de informatie in voor de configuratie sectie:
-      - **Name** : Maak uw eigen naam.
-      - **Autorisatie type** : **geen**
-      - **Beschrijving** : Maak uw eigen naam.
-      - **Site** : **Cloud**
-      - **Aantal instanties** : **2** , de standaard waarde.
-      - **Controle** : standaard ingeschakeld om gebruik in te scha kelen.
+      - **Name**: Maak uw eigen naam.
+      - **Autorisatie type**: **geen**
+      - **Beschrijving**: Maak uw eigen naam.
+      - **Site**: **Cloud**
+      - **Aantal instanties**: **2**, de standaard waarde.
+      - **Controle**: standaard ingeschakeld om gebruik in te scha kelen.
       - De Azure-Tenant-ID en de Azure-toepassings-ID zijn afkomstig uit de toepassing die u eerder hebt gedefinieerd.
 
 ![Scherm opname van de BMC-configuratie.](media/it-service-management-connector-secure-webhook-connections/bmc-configuration.png)

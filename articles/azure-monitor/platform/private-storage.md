@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: noakup
 ms.author: noakuper
 ms.date: 09/03/2020
-ms.openlocfilehash: 7cb427c83345a4603c6fe7727c1cc42c1943c456
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f424a2c3102f7b270a64c612a91d645ab71461fc
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95908247"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184090"
 ---
 # <a name="using-customer-managed-storage-accounts-in-azure-monitor-log-analytics"></a>Door de klant beheerde opslag accounts gebruiken in Azure Monitor Log Analytics
 
@@ -64,7 +64,7 @@ Azure Storage versleutelt alle gegevens in rust in een opslag account. Standaard
 Het opslag account en de sleutel kluis moeten zich in dezelfde regio bevinden, maar ze kunnen zich in verschillende abonnementen bevinden. Zie [Azure Storage versleuteling voor Data-at-rest](../../storage/common/storage-service-encryption.md)voor meer informatie over Azure Storage versleuteling en sleutel beheer.
 
 ##### <a name="apply-cmk-to-your-storage-accounts"></a>CMK Toep assen op uw opslag accounts
-Als u uw Azure Storage-account wilt configureren voor het gebruik van door de klant beheerde sleutels met Azure Key Vault, gebruikt u de [Azure Portal](../../storage/common/customer-managed-keys-configure-key-vault.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json), [Power shell](../../storage/common/customer-managed-keys-configure-key-vault.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json) of de [cli](../../storage/common/customer-managed-keys-configure-key-vault.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json). 
+Als u uw Azure Storage-account wilt configureren voor het gebruik van door de klant beheerde sleutels met Azure Key Vault, gebruikt u de [Azure Portal](../../storage/common/customer-managed-keys-configure-key-vault.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json), [Power shell](../../storage/common/customer-managed-keys-configure-key-vault.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) of de [cli](../../storage/common/customer-managed-keys-configure-key-vault.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json). 
 
 ## <a name="managing-linked-storage-accounts"></a>Gekoppelde opslag accounts beheren
 

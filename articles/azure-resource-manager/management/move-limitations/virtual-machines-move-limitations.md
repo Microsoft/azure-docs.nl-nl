@@ -2,13 +2,13 @@
 title: Virtuele Azure-machines verplaatsen naar een nieuw abonnement of een nieuwe resource groep
 description: Gebruik Azure Resource Manager om virtuele machines te verplaatsen naar een nieuwe resource groep of een nieuw abonnement.
 ms.topic: conceptual
-ms.date: 09/21/2020
-ms.openlocfilehash: 219a8b438d2715f6e97085a527b386e51759ec2c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 11/25/2020
+ms.openlocfilehash: ace1fb6bf3944df539ec8f7301357e67d2b315a9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91317103"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184073"
 ---
 # <a name="move-guidance-for-virtual-machines"></a>Richt lijnen voor het verplaatsen van virtuele machines
 
@@ -19,7 +19,6 @@ In dit artikel worden de scenario's beschreven die momenteel niet worden onderst
 De volgende scenario's worden nog niet ondersteund:
 
 * Virtual Machine Scale Sets met een standaard-SKU Load Balancer of een open bare standaard-SKU kan niet worden verplaatst.
-* Virtuele machines die zijn gemaakt op basis van Marketplace-resources waarvoor plannen zijn gekoppeld, kunnen niet worden verplaatst naar abonnementen. De inrichting van de virtuele machine in het huidige abonnement ongedaan maken en de implementatie opnieuw uitvoeren in het nieuwe abonnement.
 * Virtuele machines in een bestaand virtueel netwerk kunnen niet worden verplaatst naar een nieuw abonnement wanneer u niet alle resources in het virtuele netwerk verplaatst.
 * Virtuele machines met lage prioriteit en virtuele-machine schaal sets met lage prioriteit kunnen niet worden verplaatst over resource groepen of-abonnementen.
 * Virtuele machines in een beschikbaarheidsset kunnen niet afzonderlijk worden verplaatst.
@@ -36,6 +35,24 @@ az vm encryption disable --resource-group demoRG --name myVm1
 Disable-AzVMDiskEncryption -ResourceGroupName demoRG -VMName myVm1
 ```
 
+## <a name="virtual-machines-with-marketplace-plans"></a>Virtuele machines met Marketplace-abonnementen
+
+Virtuele machines die zijn gemaakt op basis van Marketplace-resources waarvoor plannen zijn gekoppeld, kunnen niet worden verplaatst naar abonnementen. U kunt deze beperking omzeilen door de inrichting van de virtuele machine in het huidige abonnement ongedaan te maken en deze opnieuw te implementeren in het nieuwe abonnement. De volgende stappen helpen u bij het opnieuw maken van de virtuele machine in het nieuwe abonnement. Ze werken echter mogelijk niet voor alle scenario's. Als het plan niet meer beschikbaar is op Marketplace, zullen deze stappen niet werken.
+
+1. Informatie over het plan kopiëren.
+
+1. Kloon de besturingssysteem schijf naar het doel abonnement of verplaats de oorspronkelijke schijf nadat u de virtuele machine hebt verwijderd van het bron abonnement.
+
+1. Accepteer in het doel abonnement de Marketplace-voor waarden voor uw abonnement. U kunt de voor waarden accepteren door de volgende Power shell-opdracht uit te voeren:
+
+   ```azurepowershell
+   Get-AzMarketplaceTerms -Publisher {publisher} -Product {product/offer} -Name {name/SKU} | Set-AzMarketplaceTerms -Accept
+   ```
+
+   U kunt ook een nieuw exemplaar van een virtuele machine met het plan maken via de portal. U kunt de virtuele machine verwijderen nadat u de voor waarden in het nieuwe abonnement hebt geaccepteerd.
+
+1. Maak in het doel abonnement de virtuele machine opnieuw van de gekloonde besturingssysteem schijf met behulp van Power shell, CLI of een Azure Resource Manager sjabloon. Voeg het Marketplace-abonnement toe dat is gekoppeld aan de schijf. De informatie over het plan moet overeenkomen met het abonnement dat u hebt aangeschaft in het nieuwe abonnement.
+
 ## <a name="virtual-machines-with-azure-backup"></a>Virtuele machines met Azure Backup
 
 Als u virtuele machines wilt verplaatsen die zijn geconfigureerd met Azure Backup, moet u de herstel punten verwijderen uit de kluis.
@@ -44,7 +61,7 @@ Als [voorlopig verwijderen](../../../backup/backup-azure-security-feature-cloud.
 
 ### <a name="portal"></a>Portal
 
-1. De back-up tijdelijk stoppen en back-upgegevens behouden.
+1. De back-up tijdelijk stoppen en back-upgegevens opslaan.
 2. Voer de volgende stappen uit om virtuele machines te verplaatsen die zijn geconfigureerd met Azure Backup:
 
    1. Zoek de locatie van de virtuele machine.

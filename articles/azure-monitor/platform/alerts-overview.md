@@ -4,12 +4,12 @@ description: Overzicht van waarschuwingen in Azure. Waarschuwingen, klassieke wa
 ms.subservice: alerts
 ms.topic: conceptual
 ms.date: 01/28/2018
-ms.openlocfilehash: b8d24eab79bdf16e4d883549be00431bd5372af8
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: d0f71ebf8a7acab6d4b46f59049bf1efd5290284
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95536044"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186640"
 ---
 # <a name="overview-of-alerts-in-microsoft-azure"></a>Overzicht van waarschuwingen in Microsoft Azure 
 
@@ -84,7 +84,7 @@ De volgende waarschuwings statussen worden ondersteund.
 
 De *waarschuwings status* is verschillend en onafhankelijk van de *monitor voorwaarde*. De waarschuwings status wordt ingesteld door de gebruiker. De bewakings voorwaarde is ingesteld door het systeem. Wanneer een waarschuwing wordt geactiveerd, wordt de controle voorwaarde van de waarschuwing ingesteld op *' geactiveerd '* en wanneer de onderliggende voor waarde die de waarschuwing heeft veroorzaakt, is gewist, wordt de monitor voorwaarde ingesteld op *' opgelost '*. 
 
-De status van de waarschuwing wordt niet gewijzigd totdat de gebruiker deze wijzigt. Meer informatie [over het wijzigen van de status van uw waarschuwingen en slimme groepen](./alerts-managing-alert-states.md?toc=%252fazure%252fazure-monitor%252ftoc.json).
+De status van de waarschuwing wordt niet gewijzigd totdat de gebruiker deze wijzigt. Meer informatie [over het wijzigen van de status van uw waarschuwingen en slimme groepen](./alerts-managing-alert-states.md?toc=%2fazure%2fazure-monitor%2ftoc.json).
 
 ## <a name="alerts-experience"></a>Waarschuwings ervaring 
 De pagina standaard waarschuwingen bevat een samen vatting van waarschuwingen die binnen een bepaald tijds bereik zijn gemaakt. Hier worden de totale waarschuwingen voor elke ernst weer gegeven, met kolommen die het totale aantal waarschuwingen in elke status voor elke Ernst identificeren. Selecteer een van de mogelijke ernst om de pagina [alle waarschuwingen](#all-alerts-page) te openen, gefilterd op die ernst.
@@ -204,12 +204,12 @@ Gebruik de [Waarschuwingenbeheer rest API](/rest/api/monitor/alertsmanagement/al
 
 ## <a name="smart-groups"></a>Slimme groepen
 
-Slimme groepen zijn aggregaties van waarschuwingen op basis van machine learning-algoritmen, wat kan bijdragen aan waarschuwings lawaai en hulp bij het oplossen van problemen. Meer [informatie over slimme groepen](./alerts-smartgroups-overview.md?toc=%252fazure%252fazure-monitor%252ftoc.json) en [het beheren van uw slimme groepen](./alerts-managing-smart-groups.md?toc=%252fazure%252fazure-monitor%252ftoc.json).
+Slimme groepen zijn aggregaties van waarschuwingen op basis van machine learning-algoritmen, wat kan bijdragen aan waarschuwings lawaai en hulp bij het oplossen van problemen. Meer [informatie over slimme groepen](./alerts-smartgroups-overview.md?toc=%2fazure%2fazure-monitor%2ftoc.json) en [het beheren van uw slimme groepen](./alerts-managing-smart-groups.md?toc=%2fazure%2fazure-monitor%2ftoc.json).
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Meer informatie over slimme groepen](./alerts-smartgroups-overview.md?toc=%252fazure%252fazure-monitor%252ftoc.json)
+- [Meer informatie over slimme groepen](./alerts-smartgroups-overview.md?toc=%2fazure%2fazure-monitor%2ftoc.json)
 - [Meer informatie over actie groepen](./action-groups.md)
-- [Uw waarschuwings instanties in azure beheren](./alerts-managing-alert-instances.md?toc=%252fazure%252fazure-monitor%252ftoc.json)
-- [Slimme groepen beheren](./alerts-managing-smart-groups.md?toc=%252fazure%252fazure-monitor%252ftoc.json)
+- [Uw waarschuwings instanties in azure beheren](./alerts-managing-alert-instances.md?toc=%2fazure%2fazure-monitor%2ftoc.json)
+- [Slimme groepen beheren](./alerts-managing-smart-groups.md?toc=%2fazure%2fazure-monitor%2ftoc.json)
 - [Meer informatie over prijzen voor Azure-abonnementen](https://azure.microsoft.com/pricing/details/monitor/)

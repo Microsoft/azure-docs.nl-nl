@@ -4,12 +4,12 @@ description: Meer informatie over de ondersteunde services en het gebeurtenis sc
 ms.subservice: logs
 ms.topic: reference
 ms.date: 09/01/2020
-ms.openlocfilehash: 2a66f90043e0f544dd86d2ab1245a3d8cbaff3d5
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 1f8754245e394ecdffbb045d7f4cc96ec8a3ff78
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95534565"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184498"
 ---
 # <a name="common-and-service-specific-schema-for-azure-resource-logs"></a>Algemeen en specifiek service schema voor Azure-resource logboeken
 
@@ -23,7 +23,7 @@ Een combi natie van het resource type (beschikbaar in de `resourceId` eigenschap
 
 ## <a name="top-level-common-schema"></a>Algemeen schema op het hoogste niveau
 
-| Naam | Vereist/optioneel | Beschrijving |
+| Name | Vereist/optioneel | Description |
 |---|---|---|
 | tijd | Vereist | De tijds tempel (UTC) van de gebeurtenis. |
 | resourceId | Vereist | De resource-ID van de resource die de gebeurtenis heeft verzonden. Voor Tenant Services is dit de vorm/tenants/Tenant-id/providers/provider-name. |
@@ -76,7 +76,7 @@ Het schema voor resource logboeken varieert afhankelijk van de categorie resourc
 | Load Balancer |[Logboekanalyse voor Azure Load Balancer](../../load-balancer/load-balancer-monitor-log.md) |
 | Logic Apps |[Aangepast Logic Apps B2B-volgschema](../../logic-apps/logic-apps-track-integration-account-custom-tracking-schema.md) |
 | Netwerkbeveiligingsgroepen |[Logboekanalyses voor netwerkbeveiligingsgroepen (NSG's)](../../virtual-network/virtual-network-nsg-manage-log.md) |
-| DDoS Protection | [Azure DDoS Protection Standard beheren](../../virtual-network/manage-ddos-protection.md) |
+| DDoS Protection | [Azure DDoS Protection Standard beheren](../../ddos-protection/manage-ddos-protection.md) |
 | Power BI Dedicated | [Logboek registratie voor Power BI Embedded in azure](/power-bi/developer/azure-pbie-diag-logs) |
 | Recovery Services | [Gegevens model voor Azure Backup](../../backup/backup-azure-reports-data-model.md)|
 | Zoeken |[Zoek Traffic Analytics inschakelen en gebruiken](../../search/search-traffic-analytics.md) |

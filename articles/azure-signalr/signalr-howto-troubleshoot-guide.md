@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/06/2020
 ms.author: yajin1
-ms.openlocfilehash: 11ea348a80bc226b6a96bea1e7c023ee9c06b13a
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: cc17dcef7a554bee2715c79ba7d0c2356db2c6b3
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94684114"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185654"
 ---
 # <a name="troubleshooting-guide-for-azure-signalr-service-common-issues"></a>Probleemoplossings gids voor veelvoorkomende problemen met de Azure signalerings service
 
@@ -148,7 +148,7 @@ Wanneer de [client verbinding](#client_connection_drop)wordt verbroken, maakt de
 
 Voor **gratis** instanties is de limiet voor het aantal **gelijktijdige** verbindingen voor **standaard** instanties 20. de limiet voor het aantal **gelijktijdige** verbindingen **per eenheid** is 1 K, wat betekent dat Unit100 100-K gelijktijdige verbindingen toestaat.
 
-De verbindingen zijn zowel client-als server verbindingen. [hier](https://docs.microsoft.com/azure/azure-signalr/signalr-concept-messages-and-connections#how-connections-are-counted) kunt u controleren hoe de verbindingen worden geteld.
+De verbindingen zijn zowel client-als server verbindingen. [hier](./signalr-concept-messages-and-connections.md#how-connections-are-counted) kunt u controleren hoe de verbindingen worden geteld.
 
 ## <a name="500-error-when-negotiate-azure-signalr-service-is-not-connected-yet-please-try-again-later"></a>500-fout tijdens de onderhandeling: de Azure signalerings service is nog niet verbonden. Probeer het later opnieuw.
 
@@ -162,7 +162,7 @@ Schakel tracering aan de server zijde in om de fout gegevens te achterhalen wann
 
 #### <a name="enable-server-side-logging-for-aspnet-core-signalr"></a>Logboek registratie aan de server zijde inschakelen voor ASP.NET Core Signaler
 
-Logboek registratie aan de server zijde voor ASP.NET Core Signalr integreert met de `ILogger` [logboek registratie](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1&tabs=aspnetcore2x) op basis van het ASP.net core Framework. U kunt logboek registratie aan de server zijde inschakelen door gebruik te maken van `ConfigureLogging` een voorbeeld gebruik:
+Logboek registratie aan de server zijde voor ASP.NET Core Signalr integreert met de `ILogger` [logboek registratie](/aspnet/core/fundamentals/logging/?tabs=aspnetcore2x&view=aspnetcore-2.1) op basis van het ASP.net core Framework. U kunt logboek registratie aan de server zijde inschakelen door gebruik te maken van `ConfigureLogging` een voorbeeld gebruik:
 ```cs
 .ConfigureLogging((hostingContext, logging) =>
         {

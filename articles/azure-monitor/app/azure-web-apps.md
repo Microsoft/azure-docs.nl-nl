@@ -4,12 +4,12 @@ description: Bewaking van toepassings prestaties voor Azure app Services. Grafie
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.custom: devx-track-js, devx-track-dotnet
-ms.openlocfilehash: f46d00f97dab18b0c7c1d4a5742a87308f814e9e
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: c0ee68659f4729ed8f63b9ea990343adf51513bd
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94832892"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186368"
 ---
 # <a name="monitor-azure-app-service-performance"></a>Azure App Service-prestaties bewaken
 
@@ -372,7 +372,7 @@ Hieronder vindt u stapsgewijze richt lijnen voor het oplossen van problemen met 
 
     * Controleer of er geen vermeldingen zijn voor `AppAlreadyInstrumented` , `AppContainsDiagnosticSourceAssembly` , en `AppContainsAspNetTelemetryCorrelationAssembly` .
         * Als een van deze vermeldingen bestaat, verwijdert u de volgende pakketten uit uw toepassing: `Microsoft.ApplicationInsights` , `System.Diagnostics.DiagnosticSource` en `Microsoft.AspNet.TelemetryCorrelation` .
-        * Alleen voor ASP.NET Core-Apps: voor het geval uw toepassing naar een Application Insights pakket verwijst, bijvoorbeeld als u eerder met de SDK van de [ASP.net core](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core)hebt geinstrumenteerd (of geprobeerd om uw app te instrumenteren), is het inschakelen van de app Service-integratie mogelijk niet van kracht en worden de gegevens mogelijk niet weer gegeven in Application Insights. Om het probleem op te lossen, schakelt u in portal ' interop met Application Insights SDK ' in en gaat u de gegevens in Application Insights bekijken 
+        * Alleen voor ASP.NET Core-Apps: voor het geval uw toepassing naar een Application Insights pakket verwijst, bijvoorbeeld als u eerder met de SDK van de [ASP.net core](./asp-net-core.md)hebt geinstrumenteerd (of geprobeerd om uw app te instrumenteren), is het inschakelen van de app Service-integratie mogelijk niet van kracht en worden de gegevens mogelijk niet weer gegeven in Application Insights. Om het probleem op te lossen, schakelt u in portal ' interop met Application Insights SDK ' in en gaat u de gegevens in Application Insights bekijken 
         > [!IMPORTANT]
         > Deze functionaliteit is beschikbaar als preview-versie 
 
@@ -420,7 +420,7 @@ Als u serverloze servers en bewaking aan client zijde voor ASP.NET of ASP.NET Co
 
 Wanneer bewaking zonder code wordt gebruikt, is alleen de connection string vereist. We raden u echter aan om de instrumentatie sleutel in te stellen om achterwaartse compatibiliteit met oudere versies van de SDK te behouden wanneer hand matige instrumentatie wordt uitgevoerd.
 
-## <a name="release-notes"></a>Releaseopmerkingen
+## <a name="release-notes"></a>Opmerkingen bij de release
 
 [Raadpleeg de opmerkingen bij de release](./web-app-extension-release-notes.md)voor de nieuwste updates en oplossingen voor problemen.
 
@@ -432,4 +432,3 @@ Wanneer bewaking zonder code wordt gebruikt, is alleen de connection string vere
 * [Ontvang waarschuwingsmeldingen](../platform/alerts-overview.md) wanneer er operationele gebeurtenissen plaatsvinden of metrische gegevens een drempelwaarde overschrijden.
 * Gebruik [Application Insights voor JavaScript-apps en -webpagina's](javascript.md) om clienttelemetrie op te halen uit de browsers die een webpagina bezoeken.
 * [Stel webtests voor beschikbaarheid in](monitor-web-app-availability.md) om te worden gewaarschuwd als uw site niet actief is.
-

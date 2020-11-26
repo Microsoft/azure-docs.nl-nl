@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: liud
 ms.reviewer: pimorano
-ms.openlocfilehash: 2f2221ad10a2e07a3443cab9f957c8ec26969a3b
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 7b77a47acba6180df4a067887b79d8cdc0f56df6
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96031297"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185076"
 ---
 # <a name="continuous-integration-and-delivery-for-azure-synapse-workspace"></a>Continue integratie en levering voor Azure Synapse-werk ruimte
 
@@ -25,7 +25,7 @@ Voor de Azure Synapse-werk ruimte, doorlopende integratie en levering (CI/CD) wo
 
 In dit artikel wordt uitgelegd hoe u Azure release-pijp lijn gebruikt om de implementatie van een Synapse-werk ruimte naar meerdere omgevingen te automatiseren.
 
-## <a name="pre-requirements"></a>Vereisten
+## <a name="prerequisites"></a>Vereisten
 
 -   De werk ruimte die wordt gebruikt voor ontwikkeling is geconfigureerd met een Git-opslag plaats in Studio. Zie [broncode beheer in Synapse Studio](source-control.md).
 -   Er is een Azure DevOps-project voor bereid voor het uitvoeren van een release pijplijn.
@@ -82,7 +82,7 @@ Een Azure Resource Manager implementatie taak toevoegen om resources, waaronder 
     
     ![werk ruimte en groepen implementeren](media/pools-resource-deploy.png)
 
-1. Beschrijving Voeg **Azure PowerShell** toe voor de toewijzing van werk ruimte-rollen toekennen en bijwerken. Als u release pijplijn gebruikt voor het maken van een Synapse-werk ruimte, moet de service-principal van de pijp lijn worden toegevoegd als standaard werkruimte beheerder. U kunt Power shell uitvoeren om andere accounts toegang tot de werk ruimte te verlenen. 
+1. Beschrijving Voeg **Azure PowerShell** toe voor de toewijzing van werk ruimte-rollen toekennen en bijwerken. Als u release pijplijn gebruikt voor het maken van een Synapse-werk ruimte, wordt de service-principal van de pijp lijn toegevoegd als standaard-werkruimte beheerder. U kunt Power shell uitvoeren om andere accounts toegang tot de werk ruimte te verlenen. 
     
     ![machtiging verlenen](media/release-creation-grant-permission.png)
 
@@ -115,12 +115,8 @@ Nadat u alle wijzigingen hebt opgeslagen, kunt u **release maken** selecteren om
 Als u gebruik wilt maken van Git-integratie met uw Synapse-werk ruimte en een CI/CD-pijp lijn hebt die uw wijzigingen van de ontwikkeling naar de test verplaatst en vervolgens naar productie, raden we u aan deze aanbevolen procedures te volgen:
 
 -   **Git-integratie**. Configureer alleen uw ontwikkel Synapse-werk ruimte met git-integratie. Wijzigingen in werk ruimten voor testen en productie worden geïmplementeerd via CI/CD en beschikken niet over git-integratie.
--   **Groep voorbereiden voordat artefacten worden gemigreerd**. Als u Pools koppelt aan uw SQL-script of notitie blok in de werk ruimte ontwikkeling, worden dezelfde naam van Pools in verschillende omgevingen verwacht. 
--   **Andere**. Zie [andere aanbevolen procedures](/azure/data-factory/continuous-integration-deployment#best-practices-for-cicd)
+-   **Groep voorbereiden voordat artefacten worden gemigreerd**. Als er een SQL-script of notitie blok is gekoppeld aan Pools in de werk ruimte ontwikkeling, worden dezelfde naam van Pools in verschillende omgevingen verwacht. 
+-   **Infra structuur als code (IaC)**. Beheer van de infra structuur (netwerken, virtuele machines, load balancers en verbindings topologie) in een beschrijvende model, gebruik dezelfde versie als DevOps-team voor de bron code. 
+-   **Andere**. Zie [Aanbevolen procedures voor ADF-artefacten](/azure/data-factory/continuous-integration-deployment#best-practices-for-cicd)
 
-## <a name="unsupported-features"></a>Niet-ondersteunde functies
-
-- Synapse studio staat geen kers toe voor het verzamelen van door voeringen of selectief publiceren van resources. 
-- Synapse Studio biedt geen ondersteuning voor het aanpassen van commit-berichten.
-- Op basis van het ontwerp wordt de Verwijder actie rechtstreeks doorgevoerd in Git
 

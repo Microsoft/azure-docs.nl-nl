@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2020
-ms.openlocfilehash: 391d9562bc73265a10976f485c78e3966aa4fe83
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: b770e4488b6edb1c2d3749066315b552c0b5b40a
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95536282"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186164"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Veelgestelde vragen over Azure Monitor
 
@@ -31,7 +31,7 @@ In september 2018, micro soft gecombineerd Azure Monitor, Log Analytics en Appli
 Functies van Azure Monitor die automatisch worden ingeschakeld, zoals het verzamelen van metrische gegevens en activiteiten logboeken, zijn gratis. Er zijn kosten verbonden aan andere functies, zoals logboek query's en waarschuwingen. Zie de [pagina met prijzen voor Azure monitor](https://azure.microsoft.com/pricing/details/monitor/) voor gedetailleerde prijs informatie.
 
 ### <a name="how-do-i-enable-azure-monitor"></a>Azure Monitor Hoe kan ik inschakelen?
-Azure Monitor is ingeschakeld wanneer u een nieuw Azure-abonnement maakt, het [activiteiten logboek](./platform/platform-logs-overview.md) en de [metrische gegevens](platform/data-platform-metrics.md) van het platform worden automatisch verzameld. Maak [Diagnostische instellingen](platform/diagnostic-settings.md) voor het verzamelen van meer gedetailleerde informatie over de werking van uw Azure-resources en voeg [bewakings oplossingen](insights/solutions.md) en [inzichten](insights/insights-overview.md) toe om extra analyses te bieden op verzamelde gegevens voor bepaalde services. 
+Azure Monitor is ingeschakeld wanneer u een nieuw Azure-abonnement maakt, het [activiteiten logboek](./platform/platform-logs-overview.md) en de [metrische gegevens](platform/data-platform-metrics.md) van het platform worden automatisch verzameld. Maak [Diagnostische instellingen](platform/diagnostic-settings.md) voor het verzamelen van meer gedetailleerde informatie over de werking van uw Azure-resources en voeg [bewakings oplossingen](insights/solutions.md) en [inzichten](./monitor-reference.md) toe om extra analyses te bieden op verzamelde gegevens voor bepaalde services. 
 
 ### <a name="how-do-i-access-azure-monitor"></a>Hoe kan ik toegang tot Azure Monitor?
 Toegang tot alle Azure Monitor-functies en-gegevens via het menu **monitor** in de Azure Portal. De sectie **bewaking** van het menu voor verschillende Azure-Services biedt toegang tot dezelfde hulpprogram ma's als gegevens die zijn gefilterd op een bepaalde resource. Azure Monitor gegevens zijn ook toegankelijk voor diverse scenario's met behulp van CLI, Power shell en een REST API.
@@ -65,7 +65,7 @@ Inzichten en oplossingen bieden een aangepaste ervaring voor het werken met gege
 ## <a name="solutions-and-insights"></a>Oplossingen en inzichten
 
 ### <a name="what-is-an-insight-in-azure-monitor"></a>Wat is een inzicht in Azure Monitor?
-Inzichten bieden een aangepaste bewakings ervaring voor bepaalde Azure-Services. Ze gebruiken dezelfde metrische gegevens en Logboeken als andere functies in Azure Monitor, maar kunnen er ook extra informatie verzamelen en een unieke ervaring bieden in de Azure Portal. Zie [inzichten in azure monitor](insights/insights-overview.md).
+Inzichten bieden een aangepaste bewakings ervaring voor bepaalde Azure-Services. Ze gebruiken dezelfde metrische gegevens en Logboeken als andere functies in Azure Monitor, maar kunnen er ook extra informatie verzamelen en een unieke ervaring bieden in de Azure Portal. Zie [inzichten in azure monitor](./monitor-reference.md).
 
 Als u inzichten wilt weer geven in de Azure Portal, raadpleegt u de sectie **inzichten** in het menu **monitor** of in het gedeelte **bewaking** van het menu van de service.
 
@@ -77,7 +77,7 @@ Als u oplossingen wilt weer geven in de Azure Portal, klikt u op **meer** in het
 ## <a name="logs"></a>Logboeken
 
 ### <a name="whats-the-difference-between-azure-monitor-logs-and-azure-data-explorer"></a>Wat is het verschil tussen Azure Monitor logboeken en Azure Data Explorer?
-Azure Data Explorer is een snelle en zeer schaalbare service voor gegevensverkenning voor telemetrische gegevens en gegevens uit logboeken. Azure Monitor-Logboeken is gebaseerd op Azure Data Explorer en maakt gebruik van dezelfde Kusto query language (KQL) met enkele kleine verschillen. Zie [Azure monitor taal verschillen in de logboek query](log-query/data-explorer-difference.md).
+Azure Data Explorer is een snelle en zeer schaalbare service voor gegevensverkenning voor telemetrische gegevens en gegevens uit logboeken. Azure Monitor-Logboeken is gebaseerd op Azure Data Explorer en maakt gebruik van dezelfde Kusto query language (KQL) met enkele kleine verschillen. Zie [Azure monitor taal verschillen in de logboek query](/azure/data-explorer/kusto/query/).
 
 ### <a name="how-do-i-retrieve-log-data"></a>Hoe kan ik logboek gegevens ophalen?
 Alle gegevens worden opgehaald uit een Log Analytics-werk ruimte met behulp van een logboek query die is geschreven met Kusto query language (KQL). U kunt uw eigen query's schrijven of oplossingen en inzichten gebruiken die logboek query's bevatten voor een bepaalde toepassing of service. Zie [overzicht van logboek query's in azure monitor](log-query/log-query-overview.md).
@@ -224,7 +224,7 @@ De weer gave Designer is alleen beschikbaar voor gebruikers die zijn toegewezen 
 * [Node.js-apps](app/nodejs.md)
 * [Web-apps op Azure](app/azure-web-apps.md)
 * [Cloud Services op Azure](app/cloudservices.md)
-* [App-servers die worden uitgevoerd in docker](app/docker.md)
+* [App-servers die worden uitgevoerd in docker](./azure-monitor-app-hub.yml)
 * [Web-apps met één pagina](app/javascript.md)
 * [SharePoint](app/sharepoint.md)
 * [Windows-bureau blad-app](app/windows-desktop.md)
@@ -401,7 +401,7 @@ Elk item dat wordt verzonden `itemCount` , bevat een eigenschap die laat zien ho
 
 Het verplaatsen van bestaande Application Insights resources van de ene naar de andere regio wordt **momenteel niet ondersteund**. Historische gegevens die u hebt verzameld, kunnen niet naar een nieuwe regio **worden gemigreerd** . De enige gedeeltelijke tijdelijke oplossing is het volgende:
 
-1. Maak een gloed nieuwe Application Insights resource ([klassiek](app/create-new-resource.md) of [werk ruimte gebaseerd](/azure/azure-monitor/app/create-workspace-resource)) in de nieuwe regio.
+1. Maak een gloed nieuwe Application Insights resource ([klassiek](app/create-new-resource.md) of [werk ruimte gebaseerd](./app/create-workspace-resource.md)) in de nieuwe regio.
 2. Maak alle unieke aanpassingen die specifiek zijn voor de oorspronkelijke resource in de nieuwe resource opnieuw.
 3. Wijzig uw toepassing voor gebruik van de nieuwe regio bron [instrumentatie sleutel](app/create-new-resource.md#copy-the-instrumentation-key) of [Connection String](app/sdk-connection-string.md).  
 4. Test om te bevestigen dat alles naar verwachting werkt met uw nieuwe Application Insights-resource. 
@@ -414,7 +414,7 @@ Unieke aanpassingen die vaak hand matig moeten worden gemaakt of moeten worden b
 - Beschikbaarheids waarschuwingen opnieuw maken.
 - Maak alle aangepaste Azure-functies op basis van op rollen gebaseerde toegangs beheer (Azure RBAC) opnieuw die vereist zijn voor uw gebruikers om toegang te krijgen tot de nieuwe resource. 
 - Replicatie-instellingen met betrekking tot opname steekproef, gegevens retentie, dagelijks Cap en aangepaste metrische gegevens activering. Deze instellingen worden bepaald via het deel venster **gebruik en geschatte kosten** .
-- Een integratie die afhankelijk is van API-sleutels zoals [release annotaties](/azure/azure-monitor/app/annotations), [Live Metrics Channel Secure Control](app/live-stream.md#secure-the-control-channel) , enzovoort. U moet nieuwe API-sleutels genereren en de bijbehorende integratie bijwerken. 
+- Een integratie die afhankelijk is van API-sleutels zoals [release annotaties](./app/annotations.md), [Live Metrics Channel Secure Control](app/live-stream.md#secure-the-control-channel) , enzovoort. U moet nieuwe API-sleutels genereren en de bijbehorende integratie bijwerken. 
 - Continue export in klassieke resources moet opnieuw worden geconfigureerd.
 - Diagnostische instellingen in op werk ruimte gebaseerde resources moeten opnieuw worden geconfigureerd.
 

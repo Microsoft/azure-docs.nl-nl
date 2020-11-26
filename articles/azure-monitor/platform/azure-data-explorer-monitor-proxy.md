@@ -7,12 +7,12 @@ ms.reviewer: bwren
 ms.subservice: logs
 ms.topic: conceptual
 ms.date: 10/13/2020
-ms.openlocfilehash: 9b434c426264fcfee0dfe663a7d1b21a354badec
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 2a21d7a06e8a92022b620704d1fb51a303da3ae0
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491253"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185977"
 ---
 # <a name="query-data-in-azure-monitor-using-azure-data-explorer-preview"></a>Query's uitvoeren op gegevens in Azure Monitor met behulp van Azure Data Explorer (preview-versie)
 Met het Azure Data Explorer-proxy cluster kunt u query's uitvoeren tussen Azure Data Explorer, Log Analytics werk ruimten en klassieke Application Insights toepassingen in Azure Monitor. U kunt Log Analytics-werk ruimten in Azure Monitor-of klassieke Application Insights-apps als proxy clusters toewijzen. U kunt vervolgens een query uitvoeren op het proxy cluster met behulp van Azure Data Explorer-hulpprogram ma's en hiernaar verwijzen in een cross-cluster query. In dit artikel wordt beschreven hoe u verbinding maakt met een proxy cluster, een proxy cluster toevoegt aan Azure Data Explorer web-UI en query's uitvoert op uw Log Analytics-werk ruimten of klassieke Application Insights-apps van Azure Data Explorer.
@@ -60,7 +60,7 @@ U kunt de query's uitvoeren met client hulpprogramma's die ondersteuning bieden 
 > * De naam van de data base moet dezelfde naam hebben als de resource die is opgegeven in het proxy cluster. Namen zijn hoofdlettergevoelig.
 > * In query's voor meerdere clusters moet u ervoor zorgen dat de naamgeving van Application Insights-apps en Log Analytics-werk ruimten juist is.
 >     * Als namen speciale tekens bevatten, worden deze vervangen door URL-code ring in de naam van het proxy cluster. 
->     * Als namen tekens bevatten die niet voldoen aan de [KQL-id-naam regels](https://docs.microsoft.com/azure/data-explorer/kusto/query/schema-entities/entity-names), worden deze vervangen door het koppel **-** teken.
+>     * Als namen tekens bevatten die niet voldoen aan de [KQL-id-naam regels](/azure/data-explorer/kusto/query/schema-entities/entity-names), worden deze vervangen door het koppel **-** teken.
 
 ### <a name="direct-query-from-your-log-analytics-or-application-insights-proxy-cluster"></a>Directe query van uw Log Analytics of Application Insights proxy cluster
 
@@ -93,9 +93,9 @@ Query's voor meerdere tenants worden niet ondersteund door Azure Data Explorer p
 
 Als de Azure Data Explorer-bron zich in Tenant A bevindt en Log Analytics werk ruimte zich in de Tenant B bevindt, gebruikt u een van de volgende twee methoden:
 
-- Met Azure Data Explorer kunt u rollen toevoegen voor principals in verschillende tenants. Voeg uw gebruikers-ID in de Tenant ' B ' toe als geautoriseerde gebruiker op het Azure Data Explorer-cluster. Valideer de eigenschap *[' TrustedExternalTenant '](https://docs.microsoft.com/powershell/module/az.kusto/update-azkustocluster)* in het Azure Data Explorer-cluster bevat Tenant ' B '. Voer de Kruis query volledig uit in de Tenant B.
+- Met Azure Data Explorer kunt u rollen toevoegen voor principals in verschillende tenants. Voeg uw gebruikers-ID in de Tenant ' B ' toe als geautoriseerde gebruiker op het Azure Data Explorer-cluster. Valideer de eigenschap *[' TrustedExternalTenant '](/powershell/module/az.kusto/update-azkustocluster)* in het Azure Data Explorer-cluster bevat Tenant ' B '. Voer de Kruis query volledig uit in de Tenant B.
 
-- Gebruik [Lighthouse](/azure/lighthouse/) om de Azure monitor resource te projecteren in Tenant A.
+- Gebruik [Lighthouse](../../lighthouse/index.yml) om de Azure monitor resource te projecteren in Tenant A.
 
 ### <a name="connect-to-azure-data-explorer-clusters-from-different-tenants"></a>Verbinding maken met Azure Data Explorer clusters van verschillende tenants
 
@@ -124,7 +124,7 @@ De volgende syntaxis opties zijn beschikbaar wanneer u de Log Analytics-of Appli
 
 |Syntaxis beschrijving  |Application Insights  |Log Analytics  |
 |----------------|---------|---------|
-| Data base binnen een cluster dat alleen de gedefinieerde resource bevat in dit abonnement ( **Aanbevolen voor query's in meerdere clusters** ) |   cluster ( `https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>').database('<ai-app-name>` ) | cluster ( `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>').database('<workspace-name>` )     |
+| Data base binnen een cluster dat alleen de gedefinieerde resource bevat in dit abonnement (**Aanbevolen voor query's in meerdere clusters**) |   cluster ( `https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>').database('<ai-app-name>` ) | cluster ( `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>').database('<workspace-name>` )     |
 | Cluster dat alle apps/werk ruimten in dit abonnement bevat    |     cluster ( `https://ade.applicationinsights.io/subscriptions/<subscription-id>` )    |    cluster ( `https://ade.loganalytics.io/subscriptions/<subscription-id>` )     |
 |Een cluster dat alle apps/werk ruimten in het abonnement bevat en lid is van deze resource groep    |   cluster ( `https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>` )      |    cluster ( `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>` )      |
 |Een cluster dat alleen de gedefinieerde resource bevat in dit abonnement      |    cluster ( `https://ade.applicationinsights.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.insights/components/<ai-app-name>` )    |  cluster ( `https://ade.loganalytics.io/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>` )     |
@@ -132,4 +132,4 @@ De volgende syntaxis opties zijn beschikbaar wanneer u de Log Analytics-of Appli
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over de [gegevens structuur van log Analytics-werk ruimten en Application Insights](data-platform-logs.md).
-- Meer informatie over het [schrijven van query's in Azure Data Explorer](https://docs.microsoft.com/azure/data-explorer/write-queries).
+- Meer informatie over het [schrijven van query's in Azure Data Explorer](/azure/data-explorer/write-queries).

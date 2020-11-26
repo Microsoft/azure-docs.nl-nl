@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 07/03/2019
 ms.author: vitalyg
 ms.subservice: application-insights
-ms.openlocfilehash: 9ea98df4b6cd8572412e7082b451feac3736919c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5c61287475eb82241aa5c9e1d1649e8b20e3b28c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87327069"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185943"
 ---
 # <a name="application-insights-log-based-metrics"></a>Metrische gegevens op basis van het logboek Application Insights
 
@@ -35,10 +35,10 @@ Wanneer u dezelfde metriek in [Metrics Explorer](metrics-getting-started.md)uitz
 
 - Alle geselecteerde **filter** dimensies worden vertaald in aanvullende *where* -componenten.
 
-- De geselecteerde dimensie voor **gesplitste grafieken** wordt vertaald naar een extra samenvattings eigenschap. Als u bijvoorbeeld uw grafiek op *locatie*splitst en uitgeeft met een tijd granulatie van 5 minuten, wordt *de component samenvatten* samenvatten *... per bak (tijds tempel, 5 m), locatie*.
+- De geselecteerde dimensie voor **gesplitste grafieken** wordt vertaald naar een extra samenvattings eigenschap. Als u bijvoorbeeld uw grafiek op *locatie* splitst en uitgeeft met een tijd granulatie van 5 minuten, wordt *de component samenvatten* samenvatten *... per bak (tijds tempel, 5 m), locatie*.
 
 > [!NOTE]
-> Als u geen ervaring hebt met de Kusto-query taal, kunt u beginnen met het kopiëren en plakken van Kusto-instructies in het query deel venster Log Analytics zonder dat u wijzigingen hoeft aan te brengen. Klik op **uitvoeren** om de basis grafiek weer te geven. U begint met het maken van de syntaxis van de query taal, maar u kunt nu kleine wijzigingen aanbrengen en de gevolgen van de wijziging bekijken. Het verkennen van uw eigen gegevens is een uitstekende manier om te beginnen met het realiseren van de volledige kracht van [log Analytics](../log-query/get-started-portal.md) en [Azure monitor](../overview.md).
+> Als u geen ervaring hebt met de Kusto-query taal, kunt u beginnen met het kopiëren en plakken van Kusto-instructies in het query deel venster Log Analytics zonder dat u wijzigingen hoeft aan te brengen. Klik op **uitvoeren** om de basis grafiek weer te geven. U begint met het maken van de syntaxis van de query taal, maar u kunt nu kleine wijzigingen aanbrengen en de gevolgen van de wijziging bekijken. Het verkennen van uw eigen gegevens is een uitstekende manier om te beginnen met het realiseren van de volledige kracht van [log Analytics](../log-query/log-analytics-tutorial.md) en [Azure monitor](../overview.md).
 
 ## <a name="availability-metrics"></a>Metrische beschikbaarheids gegevens
 
@@ -49,7 +49,7 @@ De metrische *beschikbaarheids* gegevens tonen het percentage van de webtest-run
 
 |Meeteenheid|Ondersteunde aggregaties|Ondersteunde dimensies|
 |---|---|---|---|---|---|
-|Percentage|Average|Uitvoerings locatie, naam van test|
+|Percentage|Gemiddeld|Uitvoerings locatie, naam van test|
 
 ```Kusto
 availabilityResults 
@@ -492,4 +492,3 @@ union traces, requests, pageViews, dependencies, customEvents, availabilityResul
 | summarize dcount(user_AuthenticatedId) by bin(timestamp, 1h)
 | render barchart
 ```
-

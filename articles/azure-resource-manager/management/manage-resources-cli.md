@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 02/11/2019
 ms.author: jgao
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 9111a16a4264c4b225eaf0888fc09bd1bba07ef4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6672fd41dbd199940d663c4f7e1cb7f3b1936ce9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91372116"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185773"
 ---
 # <a name="manage-azure-resources-by-using-azure-cli"></a>Azure-resources beheren met Azure CLI
 
@@ -61,7 +61,7 @@ U kunt een resource groep maken en resources implementeren voor de groep. Zie [r
 
 ## <a name="deploy-resources-to-multiple-subscriptions-or-resource-groups"></a>Resources implementeren voor meerdere abonnementen of resource groepen
 
-Doorgaans implementeert u alle resources in uw sjabloon tot één resource groep. Er zijn echter scenario's waarin u een set resources samen wilt implementeren, maar deze wilt plaatsen in verschillende resource groepen of-abonnementen. Zie [Azure-resources implementeren voor meerdere abonnementen of resource groepen](../templates/cross-scope-deployment.md)voor meer informatie.
+Doorgaans implementeert u alle resources in uw sjabloon tot één resource groep. Er zijn echter scenario's waarin u een set resources samen wilt implementeren, maar deze wilt plaatsen in verschillende resource groepen of-abonnementen. Zie [Azure-resources implementeren voor meerdere abonnementen of resource groepen](../templates/deploy-to-resource-group.md)voor meer informatie.
 
 ## <a name="delete-resources"></a>Resources verwijderen
 

@@ -4,12 +4,12 @@ description: Controleer uw web- en werkrollen op een effectieve manier met Appli
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 09/05/2018
-ms.openlocfilehash: cae2e4e1d5b5e199e772c5263a46d82289f5d6ac
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 29482403358936b95fc5e814b68238cc8c25f7a8
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91992851"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186351"
 ---
 # <a name="application-insights-for-azure-cloud-services"></a>Application Insights voor Azure Cloud Services
 [Application Insights][start] kunt [Azure Cloud service-apps](https://azure.microsoft.com/services/cloud-services/) bewaken voor Beschik baarheid, prestaties, fouten en gebruik door gegevens van Application Insights sdk's te combi neren met [Azure Diagnostics](../platform/diagnostics-extension-overview.md) gegevens uit uw Cloud Services. Op basis van de feedback die u krijgt over de prestaties en de effectiviteit van uw app tijdens het gebruik, kunt u weldoordachte beslissingen nemen over de richting van het ontwerp in elke fase van de ontwikkelingslevenscyclus.
@@ -87,7 +87,7 @@ Stel deze optie in om uw app te controleren met Application Insights. Voor webro
 
 1. Open in Visual Studio Solution Explorer, onder **\<YourCloudService>**  >  **rollen**, de eigenschappen van elke rol.
 
-1. Schakel in **configuratie**het selectie vakje **Diagnostische gegevens verzenden naar Application Insights** in en selecteer vervolgens de Application Insights resource die u eerder hebt gemaakt.
+1. Schakel in **configuratie** het selectie vakje **Diagnostische gegevens verzenden naar Application Insights** in en selecteer vervolgens de Application Insights resource die u eerder hebt gemaakt.
 
 Als u hebt besloten om een afzonderlijke Application Insights-resource voor elke buildconfiguratie te gebruiken, selecteert u eerst de configuratie.
 
@@ -102,9 +102,9 @@ Met deze optie kunt u aangepaste zakelijke telemetrie toevoegen aan elke rol. De
 
 Gebruik Visual Studio om de Application Insights-SDK voor elk cloudtoepassingsproject te configureren.
 
-1. Als u **webrollen**wilt configureren, klikt u met de rechter muisknop op het project en selecteert u vervolgens **Application Insights configureren** of **> Application Insights telemetrie toevoegen**.
+1. Als u **webrollen** wilt configureren, klikt u met de rechter muisknop op het project en selecteert u vervolgens **Application Insights configureren** of **> Application Insights telemetrie toevoegen**.
 
-1. **Werk rollen**configureren: 
+1. **Werk rollen** configureren: 
 
     a. Klik met de rechter muisknop op het project en selecteer vervolgens **NuGet-pakketten beheren**.
 
@@ -191,7 +191,7 @@ Als u prestatie meter items en aantallen gebeurtenissen wilt weer geven, opent u
 
 ![Azure Diagnostics gegevens](./media/cloudservices/23-wad.png)
 
-Als u wilt zoeken in de verschillende traceer logboeken die worden verzonden door Azure Diagnostics, gebruikt u [zoeken](./diagnostic-search.md) of een [Analytics-query](../log-query/get-started-portal.md). Stel bijvoorbeeld dat u een niet-verwerkte uitzonde ring hebt die een rol heeft veroorzaakt door lopen en recyclen. Deze informatie zou worden weergegeven in het toepassingskanaal van het Windows-gebeurtenislogboek. U kunt zoeken gebruiken om de fout in het Windows-gebeurtenis logboek weer te geven en de volledige Stack tracering voor de uitzonde ring op te halen. Dit helpt u om de hoofd oorzaak van het probleem te vinden.
+Als u wilt zoeken in de verschillende traceer logboeken die worden verzonden door Azure Diagnostics, gebruikt u [zoeken](./diagnostic-search.md) of een [Analytics-query](../log-query/log-analytics-tutorial.md). Stel bijvoorbeeld dat u een niet-verwerkte uitzonde ring hebt die een rol heeft veroorzaakt door lopen en recyclen. Deze informatie zou worden weergegeven in het toepassingskanaal van het Windows-gebeurtenislogboek. U kunt zoeken gebruiken om de fout in het Windows-gebeurtenis logboek weer te geven en de volledige Stack tracering voor de uitzonde ring op te halen. Dit helpt u om de hoofd oorzaak van het probleem te vinden.
 
 ![Azure Diagnostics zoeken](./media/cloudservices/25-wad.png)
 

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 07/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: dabe914ffd4e84e8ded5c0e3b519036479fe33ec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a2226f55c829afa4316a92888d16f6dc68e1f931
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90987606"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183597"
 ---
 # <a name="migrate-azure-monitor-logs-update-deployments-to-azure-portal"></a>Update-implementaties van Azure Monitor-logboeken migreren naar Azure Portal
 
@@ -19,7 +19,7 @@ De portal van operations management suite (OMS) wordt [afgeschaft](../azure-moni
 ## <a name="key-information"></a>Belangrijke informatie
 
 * Bestaande implementaties blijven werken. Wanneer u de implementatie opnieuw hebt gemaakt in azure, kunt u de oude implementatie verwijderen.
-* Alle bestaande functies die u in OMS had, zijn beschikbaar in Azure. Zie [updatebeheer Overview](update-management/update-mgmt-overview.md)voor meer informatie over updatebeheer.
+* Alle bestaande functies die u in OMS had, zijn beschikbaar in Azure. Zie [updatebeheer Overview](./update-management/overview.md)voor meer informatie over updatebeheer.
 
 ## <a name="access-the-azure-portal"></a>Naar Azure Portal gaan
 
@@ -31,19 +31,19 @@ De portal van operations management suite (OMS) wordt [afgeschaft](../azure-moni
 
     ![Azure Monitor-logboeken](media/migrate-oms-update-deployments/log-analytics.png)
 
-3. Klik op **updatebeheer**in uw Automation-account.
+3. Klik op **updatebeheer** in uw Automation-account.
 
     :::image type="content" source="media/migrate-oms-update-deployments/azure-automation.png" alt-text="Scherm afbeelding van de pagina voor update beheer.":::
 
 4. Selecteer in de Azure Portal **Automation-accounts** onder **alle services**. 
 
-5. Onder **beheer hulpprogramma's**selecteert u het juiste Automation-account en klikt u op **updatebeheer**.
+5. Onder **beheer hulpprogramma's** selecteert u het juiste Automation-account en klikt u op **updatebeheer**.
 
 ## <a name="recreate-existing-deployments"></a>Bestaande implementaties opnieuw maken
 
 Alle update-implementaties die in de OMS-Portal zijn gemaakt, hebben een [opgeslagen zoek opdracht](../azure-monitor/platform/computer-groups.md) ook wel een computer groep genoemd, met dezelfde naam als de update-implementatie die bestaat. De opgeslagen zoek actie bevat de lijst met computers die zijn gepland in de update-implementatie.
 
-:::image type="content" source="media/migrate-oms-update-deployments/oms-deployment.png" alt-text="Scherm afbeelding van de pagina voor update beheer.":::
+:::image type="content" source="media/migrate-oms-update-deployments/oms-deployment.png" alt-text="Scherm afbeelding van de pagina update-implementaties met de velden naam en servers gemarkeerd.":::
 
 Voer de volgende stappen uit om deze bestaande opgeslagen zoek opdracht te gebruiken:
 
@@ -74,4 +74,4 @@ Voer de volgende stappen uit om deze bestaande opgeslagen zoek opdracht te gebru
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [overzicht van updatebeheer](update-management/update-mgmt-overview.md)voor meer informatie over Updatebeheer in azure Automation.
+Zie [overzicht van updatebeheer](./update-management/overview.md)voor meer informatie over Updatebeheer in azure Automation.

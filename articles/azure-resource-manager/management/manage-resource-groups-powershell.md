@@ -5,12 +5,12 @@ author: mumian
 ms.topic: conceptual
 ms.date: 09/01/2020
 ms.author: jgao
-ms.openlocfilehash: 1e9d44561d79c411bdff167acad4f37c21251e23
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: e5449dc26197a0aa2e2b0da49ad9e5ca4fb19e82
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91951737"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185756"
 ---
 # <a name="manage-azure-resource-manager-resource-groups-by-using-azure-powershell"></a>Azure Resource Manager resource groepen beheren met Azure PowerShell
 
@@ -206,7 +206,7 @@ Als u de- `-SkipResourceNameParameterization` para meter gebruikt bij het export
 
 De functie sjabloon exporteren biedt geen ondersteuning voor het exporteren van Azure Data Factory-resources. Zie [een Data Factory in azure Data Factory kopiëren of klonen](../../data-factory/copy-clone-data-factory.md)voor meer informatie over het exporteren van Data Factory-resources.
 
-Als u resources wilt exporteren die zijn gemaakt via het klassieke implementatie model, moet u [deze migreren naar het Resource Manager-implementatie model](../../virtual-machines/windows/migration-classic-resource-manager-overview.md).
+Als u resources wilt exporteren die zijn gemaakt via het klassieke implementatie model, moet u [deze migreren naar het Resource Manager-implementatie model](../../virtual-machines/migration-classic-resource-manager-overview.md).
 
 Zie voor meer informatie [het exporteren van één en meerdere resources naar sjabloon in azure Portal](../templates/export-template-portal.md).
 

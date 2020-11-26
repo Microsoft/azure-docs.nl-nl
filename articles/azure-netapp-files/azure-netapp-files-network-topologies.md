@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/08/2020
 ms.author: ramakk
-ms.openlocfilehash: 50669dcce044988f2e45acc2a17ae43c140d1ab5
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 96d8ba058a33d408ec2ee2a1adfba9011f393da9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91930302"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184481"
 ---
 # <a name="guidelines-for-azure-netapp-files-network-planning"></a>Richtlijnen voor Azure NetApp Files-netwerkplanning
 
@@ -56,13 +56,13 @@ De volgende tabel beschrijft de netwerktopologieën die door Azure NetApp Files 
 
 |    Topologieën    |    Wordt ondersteund    |     Tijdelijke oplossing    |
 |-------------------------------------------------------------------------------------------------------------------------------|--------------------|-----------------------------------------------------------------------------|
-|    Connectiviteit met volume in een lokaal VNet    |    Ja    |         |
-|    Connectiviteit met volume in een gepeerd VNet (dezelfde regio)    |    Ja    |         |
-|    Connectiviteit met volume in een gepeerd VNet (meerdere regio's of globale peering)    |    Nee    |    Geen    |
-|    Connectiviteit met een volume via de ExpressRoute-gateway    |    Ja    |         |
-|    Connectiviteit van on-premises naar een volume in een spoke-VNet via ExpressRoute gateway en VNet-peering met gateway-door Voer    |    Ja    |        |
-|    Connectiviteit van on-premises naar een volume in een spoke-VNet via een VPN-gateway    |    Ja    |         |
-|    Connectiviteit van on-premises naar een volume in een spoke-VNet via VPN-gateway en VNet-peering met gateway-door Voer    |    Ja    |         |
+|    Connectiviteit met volume in een lokaal VNet    |    Yes    |         |
+|    Connectiviteit met volume in een gepeerd VNet (dezelfde regio)    |    Yes    |         |
+|    Connectiviteit met volume in een gepeerd VNet (meerdere regio's of globale peering)    |    No    |    Geen    |
+|    Connectiviteit met een volume via de ExpressRoute-gateway    |    Yes    |         |
+|    Connectiviteit van on-premises naar een volume in een spoke-VNet via ExpressRoute gateway en VNet-peering met gateway-door Voer    |    Yes    |        |
+|    Connectiviteit van on-premises naar een volume in een spoke-VNet via een VPN-gateway    |    Yes    |         |
+|    Connectiviteit van on-premises naar een volume in een spoke-VNet via VPN-gateway en VNet-peering met gateway-door Voer    |    Yes    |         |
 
 
 ## <a name="virtual-network-for-azure-netapp-files-volumes"></a>Virtueel netwerk voor Azure NetApp Files volumes
@@ -116,7 +116,7 @@ Het volgende diagram illustreert een hybride omgeving:
 
 ![Hybride netwerk omgeving](../media/azure-netapp-files/azure-netapp-files-network-hybrid-environment.png)
 
-In het hybride scenario moeten toepassingen van on-premises data centers toegang hebben tot de resources in Azure.  Dit is het geval: u wilt uw Data Center uitbreiden naar Azure of u wilt Azure native-Services gebruiken of voor herstel na nood gevallen. Zie [VPN gateway plannings opties](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%252fazure%252fvirtual-network%252ftoc.json#planningtable) voor informatie over hoe u meerdere on-premises resources verbindt met resources in azure via een site-naar-site-VPN of een ExpressRoute.
+In het hybride scenario moeten toepassingen van on-premises data centers toegang hebben tot de resources in Azure.  Dit is het geval: u wilt uw Data Center uitbreiden naar Azure of u wilt Azure native-Services gebruiken of voor herstel na nood gevallen. Zie [VPN gateway plannings opties](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fvirtual-network%2ftoc.json#planningtable) voor informatie over hoe u meerdere on-premises resources verbindt met resources in azure via een site-naar-site-VPN of een ExpressRoute.
 
 In een hybride hub-spoke-topologie fungeert de hub VNet in azure als een centraal punt van connectiviteit met uw on-premises netwerk. De spokes zijn VNets gekoppeld aan de hub en ze kunnen worden gebruikt om workloads te isoleren.
 

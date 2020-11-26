@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 11/23/2020
 ms.topic: conceptual
-ms.openlocfilehash: ea2b8deb07a899ab35ddd761df3e3ddb413dd45d
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 7bd9560399a2b2b377cb543a4f829883bcbdf7c8
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95509077"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183767"
 ---
 # <a name="hybrid-runbook-worker-overview"></a>Overzicht van Hybrid Runbook Worker
 
@@ -22,14 +22,14 @@ In de volgende afbeelding ziet u deze functionaliteit:
 
 Er zijn twee soorten Runbook-werk nemers: systeem en gebruiker. In de volgende tabel wordt het verschil tussen de tabellen beschreven.
 
-|Type | Beschrijving |
+|Type | Description |
 |-----|-------------|
 |**Systeem** |Ondersteunt een set verborgen runbooks die worden gebruikt door de Updatebeheer-functie die is ontworpen om door de gebruiker opgegeven updates te installeren op Windows-en Linux-computers.<br> Dit type Hybrid Runbook Worker is geen lid van een Hybrid Runbook Worker groep en voert daarom geen runbooks uit die zijn gericht op een Runbook worker-groep. |
 |**Gebruiker** |Ondersteunt door de gebruiker gedefinieerde runbooks die rechtstreeks worden uitgevoerd op de Windows-en Linux-computer die lid zijn van een of meer Runbook worker-groepen. |
 
 Een Hybrid Runbook Worker kan worden uitgevoerd op het Windows-of Linux-besturings systeem en deze rol is afhankelijk van de [log Analytics agent](../azure-monitor/platform/log-analytics-agent.md) rapportage aan een Azure monitor [log Analytics-werk ruimte](../azure-monitor/platform/design-logs-deployment.md). De werk ruimte is niet alleen om de computer te bewaken voor het ondersteunde besturings systeem, maar ook om de onderdelen te downloaden die nodig zijn om de Hybrid Runbook Worker te installeren.
 
-Als Azure Automation [updatebeheer](update-management/update-mgmt-overview.md) is ingeschakeld, wordt een computer die is verbonden met uw log Analytics-werk ruimte automatisch geconfigureerd als een systeem Hybrid Runbook Worker.
+Als Azure Automation [updatebeheer](./update-management/overview.md) is ingeschakeld, wordt een computer die is verbonden met uw log Analytics-werk ruimte automatisch geconfigureerd als een systeem Hybrid Runbook Worker.
 
 Elke gebruiker Hybrid Runbook Worker is lid van een Hybrid Runbook Worker groep die u opgeeft wanneer u de werk nemer installeert. Een groep kan één werk nemer bevatten, maar u kunt meerdere werk nemers in een groep toevoegen voor maximale Beschik baarheid. Elke machine kan één Hybrid Runbook Worker melden aan één Automation-account. u kunt de Hybrid worker niet registreren in meerdere Automation-accounts. Dit komt doordat een Hybrid worker alleen kan Luis teren naar taken vanuit één Automation-account. Voor computers die als host fungeren voor het systeem Hybrid Runbook worker die wordt beheerd door Updatebeheer, kunnen ze worden toegevoegd aan een Hybrid Runbook Worker groep. Maar u moet hetzelfde Automation-account gebruiken voor zowel Updatebeheer als het lidmaatschap van de Hybrid Runbook Worker groep.
 
@@ -99,7 +99,7 @@ Azure Automation Hybrid Runbook Worker kan worden gebruikt in Azure Government v
 
 ### <a name="update-management-addresses-for-hybrid-runbook-worker"></a>Updatebeheer adressen voor Hybrid Runbook Worker
 
-Naast de standaard adressen en poorten die nodig zijn voor de Hybrid Runbook Worker, heeft Updatebeheer aanvullende vereisten voor de netwerk configuratie beschreven onder het gedeelte [netwerk planning](update-management/update-mgmt-overview.md#ports) .
+Naast de standaard adressen en poorten die nodig zijn voor de Hybrid Runbook Worker, heeft Updatebeheer aanvullende vereisten voor de netwerk configuratie beschreven onder het gedeelte [netwerk planning](./update-management/overview.md#ports) .
 
 ## <a name="azure-automation-state-configuration-on-a-hybrid-runbook-worker"></a>Azure Automation status configuratie op een Hybrid Runbook Worker
 

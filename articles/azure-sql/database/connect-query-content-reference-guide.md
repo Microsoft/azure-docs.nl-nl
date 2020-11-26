@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/29/2020
-ms.openlocfilehash: 4cc345eda8a8d51fb61cbbbd5cf0bf84633ccf0b
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: ec40e209d522daf882b8c704c7de6a1fb6aa29f9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92676086"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183937"
 ---
 # <a name="azure-sql-database-and-azure-sql-managed-instance-connect-and-query-articles"></a>Verbinding maken met Azure SQL Database en Azure SQL Managed Instance en query's uitvoeren voor artikelen
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -29,7 +29,7 @@ Het volgende document bevat koppelingen naar voorbeelden van Azure die laten zie
 | Snelstartgids | Beschrijving |
 |---|---|
 |[SQL Server Management Studio](connect-query-ssms.md)|In deze quickstart wordt uitgelegd hoe u SSMS gebruikt om verbinding te maken met een database en vervolgens Transact-SQL-instructies gebruikt om gegevens in de database te zoeken, in te voegen, bij te werken en te verwijderen.|
-|[Azure Data Studio](/sql/azure-data-studio/quickstart-sql-database?toc=%252fazure%252fsql-database%252ftoc.json)|In deze quickstart wordt uitgelegd hoe u Azure Data Studio gebruikt om verbinding te maken met een database, waarna u met behulp van Transact-SQL-instructies (T-SQL) de TutorialDB maakt die wordt gebruikt in de zelfstudies voor Azure Data Studio.|
+|[Azure Data Studio](/sql/azure-data-studio/quickstart-sql-database?toc=%2fazure%2fsql-database%2ftoc.json)|In deze quickstart wordt uitgelegd hoe u Azure Data Studio gebruikt om verbinding te maken met een database, waarna u met behulp van Transact-SQL-instructies (T-SQL) de TutorialDB maakt die wordt gebruikt in de zelfstudies voor Azure Data Studio.|
 |[Azure-portal](connect-query-portal.md)|In deze quickstart ziet u hoe u de queryeditor gebruikt om verbinding te maken met een database (alleen Azure SQL Database) en vervolgens Transact-SQL-instructies gebruikt om gegevens in de database te zoeken, in te voegen, bij te werken en te verwijderen.|
 |[Visual Studio Code](connect-query-vscode.md)|In deze quickstart ziet u hoe u Visual Studio Code gebruikt om verbinding te maken met een database en vervolgens Transact-SQL-instructies gebruikt om gegevens in de database te zoeken, in te voegen, bij te werken en te verwijderen.|
 |[.NET met Visual Studio](connect-query-dotnet-visual-studio.md)|In deze quickstart wordt uitgelegd hoe u .NET Framework gebruikt om een C#-programma te maken met Visual Studio dat verbinding maakt met een database en hoe u Transact-SQL-instructies gebruikt om gegevens te doorzoeken.|

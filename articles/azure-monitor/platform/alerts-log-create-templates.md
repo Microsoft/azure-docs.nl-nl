@@ -6,16 +6,16 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 08/26/2020
 ms.subservice: alerts
-ms.openlocfilehash: b23f1d455610222ffa5713773a0bfb947f23ce34
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3fb0288d592af8bd23415b31ecf6a6e3448b92ba
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91343777"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186028"
 ---
 # <a name="create-a-log-alert-with-a-resource-manager-template"></a>Een waarschuwing voor een logboek maken met een Resource Manager-sjabloon
 
-Met logboek waarschuwingen kunnen gebruikers een [log Analytics](../log-query/get-started-portal.md) query gebruiken om resources te evalueren elke ingestelde frequentie, en wordt een waarschuwing gestart op basis van de resultaten. Regels kunnen een of meer acties uitvoeren met [actie groepen](./action-groups.md). [Meer informatie over de functionaliteit en termen van logboek waarschuwingen](alerts-unified-log.md).
+Met logboek waarschuwingen kunnen gebruikers een [log Analytics](../log-query/log-analytics-tutorial.md) query gebruiken om resources te evalueren elke ingestelde frequentie, en wordt een waarschuwing gestart op basis van de resultaten. Regels kunnen een of meer acties uitvoeren met [actie groepen](./action-groups.md). [Meer informatie over de functionaliteit en termen van logboek waarschuwingen](alerts-unified-log.md).
 
 In dit artikel wordt beschreven hoe u een [Azure Resource Manager sjabloon](../../azure-resource-manager/templates/template-syntax.md) kunt gebruiken voor het configureren van [logboek waarschuwingen](alerts-unified-log.md) in azure monitor. Met Resource Manager-sjablonen kunt u via programma code waarschuwingen instellen op een consistente en reproduceer bare manier in uw omgevingen. Logboek waarschuwingen worden gemaakt in de `Microsoft.Insights/scheduledQueryRules` resource provider. Zie API-verwijzing voor [geplande query regels-API](/rest/api/monitor/scheduledqueryrules/).
 
@@ -26,7 +26,7 @@ De basis stappen zijn als volgt:
 4. Implementeer de sjabloon met een implementatie methode.
 
 > [!NOTE]
-> Logboek gegevens van een [log Analytics-werk ruimte](../log-query/get-started-portal.md) kunnen worden verzonden naar de Azure monitor metrische gegevens opslag. Waarschuwingen voor metrische gegevens hebben een [ander gedrag](alerts-metric-overview.md), wat wenselijker is, afhankelijk van de data waarmee u werkt. Zie [metrische waarschuwingen voor logboeken](alerts-metric-logs.md)voor meer informatie over hoe en hoe u Logboeken kunt routeren naar metrische gegevens.
+> Logboek gegevens van een [log Analytics-werk ruimte](../log-query/log-analytics-tutorial.md) kunnen worden verzonden naar de Azure monitor metrische gegevens opslag. Waarschuwingen voor metrische gegevens hebben een [ander gedrag](alerts-metric-overview.md), wat wenselijker is, afhankelijk van de data waarmee u werkt. Zie [metrische waarschuwingen voor logboeken](alerts-metric-logs.md)voor meer informatie over hoe en hoe u Logboeken kunt routeren naar metrische gegevens.
 
 > [!NOTE]
 > Logboek waarschuwingen voor Log Analytics die worden beheerd met behulp van de verouderde [log Analytics waarschuwings-API](api-alerts.md) en verouderde sjablonen van [log Analytics opgeslagen Zoek opdrachten en waarschuwingen](../insights/solutions.md). [Meer informatie over overschakelen naar de huidige ScheduledQueryRules-API](alerts-log-api-switch.md).

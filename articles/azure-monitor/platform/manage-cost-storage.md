@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 11/22/2020
 ms.author: bwren
 ms.subservice: ''
-ms.openlocfilehash: 940955c8ace956354a2747f5ad21430620c2a9d1
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: b84d24174771e8395677874c9dac863fa6f27a54
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95744565"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185909"
 ---
 # <a name="manage-usage-and-costs-with-azure-monitor-logs"></a>Gebruik en kosten beheren met Azure Monitor-logboeken    
 
@@ -78,7 +78,7 @@ Log Analytics kosten worden toegevoegd aan uw Azure-factuur. U kunt de details v
 
 ## <a name="viewing-log-analytics-usage-on-your-azure-bill"></a>Log Analytics gebruik op uw Azure-factuur weer geven 
 
-Azure biedt een groot aantal handige functies in de hub [Azure Cost Management en facturering](../../cost-management-billing/costs/quick-acm-cost-analysis.md?toc=%252fazure%252fbilling%252fTOC.json) . Zo kunt u met de functionaliteit ' cost analysis ' uw uitgaven voor Azure-resources weer geven. Voeg eerst een filter toe op resource type (aan micro soft. operationalinsights/Workspace voor Log Analytics en micro soft. operationalinsights/Workspace voor Log Analytics-clusters) zodat u uw Log Analytics uitgaven kunt volgen. Selecteer vervolgens ' groeperen op ' om ' meter categorie ' of ' meter ' te selecteren.  Houd er rekening mee dat andere services, zoals Azure Security Center en Azure-Sentinel, hun gebruik ook voor Log Analytics werkruimte resources kunnen factureren. Als u de toewijzing aan service naam wilt zien, kunt u de tabel weergave selecteren in plaats van een grafiek. 
+Azure biedt een groot aantal handige functies in de hub [Azure Cost Management en facturering](../../cost-management-billing/costs/quick-acm-cost-analysis.md?toc=%2fazure%2fbilling%2fTOC.json) . Zo kunt u met de functionaliteit ' cost analysis ' uw uitgaven voor Azure-resources weer geven. Voeg eerst een filter toe op resource type (aan micro soft. operationalinsights/Workspace voor Log Analytics en micro soft. operationalinsights/Workspace voor Log Analytics-clusters) zodat u uw Log Analytics uitgaven kunt volgen. Selecteer vervolgens ' groeperen op ' om ' meter categorie ' of ' meter ' te selecteren.  Houd er rekening mee dat andere services, zoals Azure Security Center en Azure-Sentinel, hun gebruik ook voor Log Analytics werkruimte resources kunnen factureren. Als u de toewijzing aan service naam wilt zien, kunt u de tabel weergave selecteren in plaats van een grafiek. 
 
 Meer informatie over uw gebruik kan worden verkregen door [uw gebruik te downloaden uit de Azure-portal](../../cost-management-billing/manage/download-azure-invoice-daily-usage-date.md#download-usage-in-azure-portal). In de gedownloade spreadsheet kunt u het gebruik per Azure-resource (bijvoorbeeld Log Analytics-werkruimte) per dag zien. In dit Excel-werk blad kunt u het gebruik van uw Log Analytics-werk ruimten vinden door eerst te filteren op de kolom meter categorie om ' Log Analytics ' weer te geven. inzichten en analyses ' (gebruikt door enkele van de verouderde prijs categorieën) en ' Azure Monitor ' (gebruikt door prijs categorieën voor capaciteits reservering) en voegt vervolgens een filter toe aan de kolom ' instance ID ' die is ingesteld op ' bevat werk ruimte ' of ' contains cluster ' (de laatste voor het toevoegen van Log Analytics cluster gebruik). Het gebruik wordt weer gegeven in de kolom verbruikte hoeveelheid en de eenheid voor elk item wordt weer gegeven in de kolom eenheid.  Er is meer informatie beschikbaar om u te helpen [inzicht te krijgen in uw Microsoft Azure-factuur](../../cost-management-billing/understand/review-individual-bill.md). 
 
@@ -128,7 +128,7 @@ Geen van de verouderde prijs categorieën heeft prijzen op basis van regionaal.
 
 ## <a name="log-analytics-and-security-center"></a>Log Analytics en Security Center
 
-[Azure Security Center](https://docs.microsoft.com/azure/security-center/) facturering is nauw verbonden met log Analytics facturering. Security Center biedt een toewijzing van 500 MB/knoop punten op basis van een set [typen beveiligings gegevens](https://docs.microsoft.com/azure/azure-monitor/reference/tables/tables-category#security) (WindowsEvent, SecurityAlert, Security Baseline baseline, Summary, SecurityDetection, SecurityEvent, WindowsFirewall, MaliciousIPCommunication, LinuxAuditLog, SysmonEvent, ProtectionStatus) en de gegevens typen update en update Summary wanneer de updatebeheer oplossing niet wordt uitgevoerd op de werk ruimte of de doel groep van de oplossing is ingeschakeld. Als de werk ruimte in de prijs categorie verouderd per knoop punt staat, worden de Security Center-en Log Analytics toewijzingen gecombineerd en gezamenlijk toegepast op alle factureer bare opgenomen gegevens.  
+[Azure Security Center](../../security-center/index.yml) facturering is nauw verbonden met log Analytics facturering. Security Center biedt een toewijzing van 500 MB/knoop punten op basis van een set [typen beveiligings gegevens](/azure/azure-monitor/reference/tables/tables-category#security) (WindowsEvent, SecurityAlert, Security Baseline baseline, Summary, SecurityDetection, SecurityEvent, WindowsFirewall, MaliciousIPCommunication, LinuxAuditLog, SysmonEvent, ProtectionStatus) en de gegevens typen update en update Summary wanneer de updatebeheer oplossing niet wordt uitgevoerd op de werk ruimte of de doel groep van de oplossing is ingeschakeld. Als de werk ruimte in de prijs categorie verouderd per knoop punt staat, worden de Security Center-en Log Analytics toewijzingen gecombineerd en gezamenlijk toegepast op alle factureer bare opgenomen gegevens.  
 
 ## <a name="change-the-data-retention-period"></a>De gegevensretentieperiode wijzigen
 
@@ -481,7 +481,7 @@ Hieronder vindt u enkele suggesties voor het verkleinen van het aantal logboeken
 | Prestatiemeteritems       | Wijzig de [Prestatiemeteritemconfiguratie](data-sources-performance-counters.md) in: <br> - Frequentie van het verzamelen van gegevens beperken <br> - Aantal prestatiemeteritems beperken |
 | Gebeurtenislogboeken                 | Wijzig [Configuratie van gebeurtenislogboek](data-sources-windows-events.md) in: <br> - Aantal verzamelde gebeurtenislogboeken beperken <br> - Alleen vereiste gebeurtenisniveaus verzamelen. Bijvoorbeeld, gebeurtenissen op *informatie* niveau niet verzamelen |
 | Syslog                     | Wijzig de [syslog-configuratie](data-sources-syslog.md) in: <br> - Aantal verzamelde installaties beperken <br> - Alleen vereiste gebeurtenisniveaus verzamelen. Bijvoorbeeld, gebeurtenissen op *informatie*- en *foutopsporings* niveau niet verzamelen |
-| AzureDiagnostics           | Wijzig de [resource logboek verzameling](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-settings#create-in-azure-portal) in: <br> - Het aantal resources dat logboeken naar Log Analytics verzendt te verkleinen <br> - Alleen vereiste logboeken te verzamelen |
+| AzureDiagnostics           | Wijzig de [resource logboek verzameling](./diagnostic-settings.md#create-in-azure-portal) in: <br> - Het aantal resources dat logboeken naar Log Analytics verzendt te verkleinen <br> - Alleen vereiste logboeken te verzamelen |
 | Oplossingsgegevens van computers die de oplossing niet nodig hebben | Gebruik een [oplossing als doel](../insights/solution-targeting.md) voor het verzamelen van gegevens van alleen vereiste groepen computers. |
 
 ### <a name="getting-nodes-as-billed-in-the-per-node-pricing-tier"></a>Knoop punten ophalen als gefactureerd in de prijs categorie per knoop punt

@@ -3,12 +3,12 @@ title: Resource providers door Azure-Services
 description: Een lijst met alle naam ruimten van de resource provider voor Azure Resource Manager en toont de Azure-service voor die naam ruimte.
 ms.topic: conceptual
 ms.date: 11/17/2020
-ms.openlocfilehash: c447a08b4422929f042315370b5888f3db0626e4
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 7c8e535978bff38146caee1a3b5177d5befaa6a1
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94697727"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185858"
 ---
 # <a name="resource-providers-for-azure-services"></a>Resource providers for Azure services (Resourceproviders voor Azure-services)
 
@@ -126,7 +126,7 @@ In dit artikel wordt uitgelegd hoe naam ruimten van de resource provider worden 
 | Micro soft. migrate | [Azure Migrate](../../migrate/migrate-services-overview.md) |
 | Micro soft. MixedReality | [Azure Spatial Anchors](../../spatial-anchors/index.yml) |
 | Micro soft. NetApp | [Azure NetApp Files](../../azure-netapp-files/index.yml) |
-| Microsoft.Network | [Application Gateway](../../application-gateway/index.yml)<br />[Azure Bastion](../../bastion/index.yml)<br />[Azure DDoS Protection](../../virtual-network/ddos-protection-overview.md)<br />[Azure DNS](../../dns/index.yml)<br />[Azure ExpressRoute](../../expressroute/index.yml)<br />[Azure Firewall](../../firewall/index.yml)<br />[Azure Front Door Service](../../frontdoor/index.yml)<br />[Azure Private Link](../../private-link/index.yml)<br />[Load Balancer](../../load-balancer/index.yml)<br />[Network Watcher](../../network-watcher/index.yml)<br />[Traffic Manager](../../traffic-manager/index.yml)<br />[Virtual Network](../../virtual-network/index.yml)<br />[Virtual WAN](../../virtual-wan/index.yml)<br />[VPN Gateway](../../vpn-gateway/index.yml)<br /> |
+| Microsoft.Network | [Application Gateway](../../application-gateway/index.yml)<br />[Azure Bastion](../../bastion/index.yml)<br />[Azure DDoS Protection](../../ddos-protection/ddos-protection-overview.md)<br />[Azure DNS](../../dns/index.yml)<br />[Azure ExpressRoute](../../expressroute/index.yml)<br />[Azure Firewall](../../firewall/index.yml)<br />[Azure Front Door Service](../../frontdoor/index.yml)<br />[Azure Private Link](../../private-link/index.yml)<br />[Load Balancer](../../load-balancer/index.yml)<br />[Network Watcher](../../network-watcher/index.yml)<br />[Traffic Manager](../../traffic-manager/index.yml)<br />[Virtual Network](../../virtual-network/index.yml)<br />[Virtual WAN](../../virtual-wan/index.yml)<br />[VPN Gateway](../../vpn-gateway/index.yml)<br /> |
 | Micro soft. notebooks | [Azure Notebooks](https://notebooks.azure.com/help/introduction) |
 | Microsoft.NotificationHubs | [Notification Hubs](../../notification-hubs/index.yml) |
 | Micro soft. ObjectStore | Object opslag |
@@ -135,7 +135,7 @@ In dit artikel wordt uitgelegd hoe naam ruimten van de resource provider worden 
 | Microsoft.OperationsManagement | [Azure Monitor](../../azure-monitor/index.yml) |
 | Micro soft. peering | [Azure Peering Service](../../peering-service/index.yml) |
 | Microsoft.PolicyInsights | [Azure Policy](../../governance/policy/index.yml) |
-| Micro soft. Portal<sup>1</sup> | [Azure Portal](../../azure-portal/index.yml) |
+| Micro soft. Portal<sup>1</sup> | [Azure-portal](../../azure-portal/index.yml) |
 | Micro soft. PowerBI | [Power BI](/power-bi/power-bi-overview) |
 | Micro soft. PowerBIDedicated | [Power BI Embedded](/azure/power-bi-embedded/) |
 | Micro soft. PowerPlatform | [Power Platform](/power-platform/) |

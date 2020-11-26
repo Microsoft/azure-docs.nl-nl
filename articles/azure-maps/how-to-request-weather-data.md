@@ -9,24 +9,24 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 3e0dce10d582006ab8c1dabf6d4b3efc82d8f39f
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: c11f20286c514056d14b8faa941315345fea71f2
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94957109"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186334"
 ---
 # <a name="request-real-time-and-forecasted-weather-data-using-azure-maps-weather-services"></a>Real-time en geraamde weers gegevens aanvragen met behulp van Azure Maps weer Services
 
-De Azure Maps- [weer service](https://docs.microsoft.com/rest/api/maps/weather) is een reeks rest api's waarmee ontwikkel aars zeer dynamische historische, realtime en geraamde weers gegevens en visualisaties in hun oplossingen kunnen integreren. In dit artikel wordt uitgelegd hoe u realtime en geraamde weers gegevens kunt opvragen.
+De Azure Maps- [weer service](/rest/api/maps/weather) is een reeks rest api's waarmee ontwikkel aars zeer dynamische historische, realtime en geraamde weers gegevens en visualisaties in hun oplossingen kunnen integreren. In dit artikel wordt uitgelegd hoe u realtime en geraamde weers gegevens kunt opvragen.
 
 In dit artikel leert u het volgende:
 
-* Vraag real-time (huidige) gegevens weer met de [API voor het ophalen van huidige voor waarden](https://docs.microsoft.com/rest/api/maps/weather/getcurrentconditionspreview).
-* Vraag hevige weers meldingen [aan met de API Get ingrijpende weer waarschuwingen](https://docs.microsoft.com/rest/api/maps/weather/getsevereweatheralertspreview).
-* Vraag dagelijkse prognoses op met behulp van de [down load Daily Forecast API](https://docs.microsoft.com/rest/api/maps/weather/getdailyforecastpreview).
-* Vraag per uur prognoses aan met de API voor het ophalen van een [uur](https://docs.microsoft.com/rest/api/maps/weather/gethourlyforecastpreview).
-* Vraag minuut per minuut prognoses met behulp van de API voor het [ophalen van minuten](https://docs.microsoft.com/rest/api/maps/weather/getminuteforecastpreview).
+* Vraag real-time (huidige) gegevens weer met de [API voor het ophalen van huidige voor waarden](/rest/api/maps/weather/getcurrentconditionspreview).
+* Vraag hevige weers meldingen [aan met de API Get ingrijpende weer waarschuwingen](/rest/api/maps/weather/getsevereweatheralertspreview).
+* Vraag dagelijkse prognoses op met behulp van de [down load Daily Forecast API](/rest/api/maps/weather/getdailyforecastpreview).
+* Vraag per uur prognoses aan met de API voor het ophalen van een [uur](/rest/api/maps/weather/gethourlyforecastpreview).
+* Vraag minuut per minuut prognoses met behulp van de API voor het [ophalen van minuten](/rest/api/maps/weather/getminuteforecastpreview).
 
 In deze video vindt u een overzicht van de weers-Services in de Azure Maps met voor beelden voor REST-oproep.
 
@@ -40,15 +40,15 @@ In deze video vindt u een overzicht van de weers-Services in de Azure Maps met v
 2. [Een primaire sleutel voor een abonnement verkrijgen](quick-demo-map-app.md#get-the-primary-key-for-your-account), ook wel bekend als de primaire sleutel of de abonnementssleutel. Zie [Verificatie beheren in Azure Maps](./how-to-manage-authentication.md) voor meer informatie over verificatie in Azure Maps.
 
     >[!IMPORTANT]
-    >De prijs categorie voor het berekenen van een [minuut](https://docs.microsoft.com/rest/api/maps/weather/getminuteforecastpreview) is vereist voor de sleutel van de prijslaag. Alle andere Api's vereisen een S0 prijs categorie sleutel.
+    >De prijs categorie voor het berekenen van een [minuut](/rest/api/maps/weather/getminuteforecastpreview) is vereist voor de sleutel van de prijslaag. Alle andere Api's vereisen een S0 prijs categorie sleutel.
 
 In deze zelfstudie wordt gebruikgemaakt van de [Postman](https://www.postman.com/)-toepassing, maar u kunt ook een andere API-ontwikkelomgeving kiezen.
 
 ## <a name="request-real-time-weather-data"></a>Real-time gegevens opvragen
 
-De [API voor het ophalen van huidige voor waarden](https://docs.microsoft.com/rest/api/maps/weather/getcurrentconditionspreview) retourneert gedetailleerde weers omstandigheden, zoals precipitatie, Tempe ratuur en wind, voor een bepaalde coördinaten locatie. Ook kunnen waarnemingen van de afgelopen 6 of 24 uur voor een bepaalde locatie worden opgehaald. Het antwoord bevat details, zoals observatie datum en-tijd, een korte beschrijving van de weers omstandigheden, het pictogram weer, de indicator vlaggen voor precipitatie en de Tempe ratuur. RealFeel™ Tempe ratuur-en ultraviolet (UV)-index worden ook geretourneerd.
+De [API voor het ophalen van huidige voor waarden](/rest/api/maps/weather/getcurrentconditionspreview) retourneert gedetailleerde weers omstandigheden, zoals precipitatie, Tempe ratuur en wind, voor een bepaalde coördinaten locatie. Ook kunnen waarnemingen van de afgelopen 6 of 24 uur voor een bepaalde locatie worden opgehaald. Het antwoord bevat details, zoals observatie datum en-tijd, een korte beschrijving van de weers omstandigheden, het pictogram weer, de indicator vlaggen voor precipitatie en de Tempe ratuur. RealFeel™ Tempe ratuur-en ultraviolet (UV)-index worden ook geretourneerd.
 
-In dit voor beeld gebruikt u de [API Get huidige voor waarden](https://docs.microsoft.com/rest/api/maps/weather/getcurrentconditionspreview) om actuele weers omstandigheden op te halen die zich bevinden in Seattle, WA.
+In dit voor beeld gebruikt u de [API Get huidige voor waarden](/rest/api/maps/weather/getcurrentconditionspreview) om actuele weers omstandigheden op te halen die zich bevinden in Seattle, WA.
 
 1. Open de Postman-app. Selecteer **New** (Nieuw) bovenaan de Postman-app. Selecteer **Collection** (Verzameling) in het venster **Create New** (Nieuwe maken).  Geef de verzameling een naam en selecteer de knop **Create** (Maken). U gebruikt deze verzameling voor de rest van de voor beelden in dit document.
 
@@ -235,9 +235,9 @@ In dit voor beeld gebruikt u de [API Get huidige voor waarden](https://docs.micr
 
 ## <a name="request-severe-weather-alerts"></a>Hevige weer Meldingen aanvragen
 
-[Azure Maps ingrijpende weer waarschuwingen API](https://docs.microsoft.com/rest/api/maps/weather/getsevereweatheralertspreview) -bestand retourneert de ernstige weers waarschuwingen die wereld wijd beschikbaar zijn van zowel de officiële overheids instellingen als de wereld wijde waarschuwings providers voor regionale weers omstandigheden. De service kan Details retour neren zoals het type waarschuwing, categorie, niveau en gedetailleerde beschrijvingen van de actieve ernstige waarschuwingen voor de aangevraagde locatie, zoals orkanen, thunderstorms, bliksem, hitte golven of bosbranden. Logistiek managers kunnen bijvoorbeeld ernstige weers omstandigheden op een kaart, samen met bedrijfs locaties en geplande routes, visualiseren en verder coördineren met stuur Programma's en lokale werk rollen.
+[Azure Maps ingrijpende weer waarschuwingen API](/rest/api/maps/weather/getsevereweatheralertspreview) -bestand retourneert de ernstige weers waarschuwingen die wereld wijd beschikbaar zijn van zowel de officiële overheids instellingen als de wereld wijde waarschuwings providers voor regionale weers omstandigheden. De service kan Details retour neren zoals het type waarschuwing, categorie, niveau en gedetailleerde beschrijvingen van de actieve ernstige waarschuwingen voor de aangevraagde locatie, zoals orkanen, thunderstorms, bliksem, hitte golven of bosbranden. Logistiek managers kunnen bijvoorbeeld ernstige weers omstandigheden op een kaart, samen met bedrijfs locaties en geplande routes, visualiseren en verder coördineren met stuur Programma's en lokale werk rollen.
 
-In dit voor beeld gebruikt u de [API Get ingrijpende waarschuwingen](https://docs.microsoft.com/rest/api/maps/weather/getsevereweatheralertspreview) om actuele weers omstandigheden op te halen die zich bevinden in CHEYENNE, WY.
+In dit voor beeld gebruikt u de [API Get ingrijpende waarschuwingen](/rest/api/maps/weather/getsevereweatheralertspreview) om actuele weers omstandigheden op te halen die zich bevinden in CHEYENNE, WY.
 
 >[!NOTE]
 >In dit voor beeld worden ernstige weer Meldingen opgehaald op het moment van schrijven. Waarschijnlijk zijn er geen ernstige weer waarschuwingen meer op de aangevraagde locatie. Als u de werkelijke ernstige waarschuwings gegevens wilt ophalen wanneer u dit voor beeld uitvoert, moet u gegevens op een andere coördinaten locatie ophalen.
@@ -287,12 +287,12 @@ In dit voor beeld gebruikt u de [API Get ingrijpende waarschuwingen](https://doc
 
 ## <a name="request-daily-weather-forecast-data"></a>Dagelijkse weers prognose gegevens aanvragen
 
-De [down load Daily Forecast API](https://docs.microsoft.com/rest/api/maps/weather/getdailyforecastpreview) retourneert gedetailleerde dagelijkse weers voorspelling zoals Tempe ratuur en wind. De aanvraag kan opgeven hoeveel dagen moeten worden geretourneerd: 1, 5, 10, 15, 25 of 45 dagen voor een bepaalde coördinaten locatie. Het antwoord bevat details zoals de Tempe ratuur, wind, precipitatie, lucht kwaliteit en UV-index.  In dit voor beeld vragen we vijf dagen per instelling `duration=5` .
+De [down load Daily Forecast API](/rest/api/maps/weather/getdailyforecastpreview) retourneert gedetailleerde dagelijkse weers voorspelling zoals Tempe ratuur en wind. De aanvraag kan opgeven hoeveel dagen moeten worden geretourneerd: 1, 5, 10, 15, 25 of 45 dagen voor een bepaalde coördinaten locatie. Het antwoord bevat details zoals de Tempe ratuur, wind, precipitatie, lucht kwaliteit en UV-index.  In dit voor beeld vragen we vijf dagen per instelling `duration=5` .
 
 >[!IMPORTANT]
 >In de prijs categorie S0 kunt u een dagelijkse prognose aanvragen voor de volgende 1, 5, 10 en 15 dagen. In de prijs categorie S1 kunt u ook dagelijks een prognose aanvragen voor de volgende 25 dagen en 45 dagen.
 
-In dit voor beeld gebruikt u de [down load Daily Forecast API](https://docs.microsoft.com/rest/api/maps/weather/getdailyforecastpreview) om de weers voorspelling van vijf dagen op te halen voor coördinaten in Seattle, WA.
+In dit voor beeld gebruikt u de [down load Daily Forecast API](/rest/api/maps/weather/getdailyforecastpreview) om de weers voorspelling van vijf dagen op te halen voor coördinaten in Seattle, WA.
 
 1. Open de Postman-app, klik op **Nieuw** en selecteer **aanvraag**. Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Selecteer de verzameling die u hebt gemaakt in de vorige sectie of maak een nieuwe, en selecteer vervolgens **Opslaan**.
 
@@ -535,12 +535,12 @@ In dit voor beeld gebruikt u de [down load Daily Forecast API](https://docs.micr
 
 ## <a name="request-hourly-weather-forecast-data"></a>Gegevens per uur voor weers pellen aanvragen
 
-De [Forecast-API ophalen](https://docs.microsoft.com/rest/api/maps/weather/gethourlyforecastpreview) retourneert een gedetailleerde weers verwachting per uur voor de volgende 1, 12, 24 (1 dag), 72 (3 dagen), 120 (5 dagen) en 240 uur (10 dagen) voor de gegeven coördinaten locatie. De API retourneert details zoals Tempe ratuur, vochtigheids graad, wind, precipitatie en UV-index.
+De [Forecast-API ophalen](/rest/api/maps/weather/gethourlyforecastpreview) retourneert een gedetailleerde weers verwachting per uur voor de volgende 1, 12, 24 (1 dag), 72 (3 dagen), 120 (5 dagen) en 240 uur (10 dagen) voor de gegeven coördinaten locatie. De API retourneert details zoals Tempe ratuur, vochtigheids graad, wind, precipitatie en UV-index.
 
 >[!IMPORTANT]
 >In de prijs categorie S0 kunt u een prognose voor elk uur aanvragen voor de komende 1, 12, 24 uur (1 dag) en 72 uur (3 dagen). In de prijs categorie S1 kunt u ook een uurprognose aanvragen voor de volgende 120 (5 dagen) en 240 uur (10 dagen).
 
-In dit voor beeld gebruikt u de [API ontvang per uur](https://docs.microsoft.com/rest/api/maps/weather/gethourlyforecastpreview) om de weers verwachting per uur op te halen voor de komende 12 uur op coördinaten in Seattle, WA.
+In dit voor beeld gebruikt u de [API ontvang per uur](/rest/api/maps/weather/gethourlyforecastpreview) om de weers verwachting per uur op te halen voor de komende 12 uur op coördinaten in Seattle, WA.
 
 1. Open de Postman-app, klik op **Nieuw** en selecteer **aanvraag**. Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Selecteer de verzameling die u hebt gemaakt in de vorige sectie of maak een nieuwe, en selecteer vervolgens **Opslaan**.
 
@@ -645,9 +645,9 @@ In dit voor beeld gebruikt u de [API ontvang per uur](https://docs.microsoft.com
     ```
 ## <a name="request-minute-by-minute-weather-forecast-data"></a>Een weers verwachting van minuut per minuut om gegevens te voors pellen
 
- De voor waarde van de [prognose Get Minute](https://docs.microsoft.com/rest/api/maps/weather/getminuteforecastpreview) retourneert een aantal minuten per minuut voor een bepaalde locatie voor de komende 120 minuten. Gebruikers kunnen weers verwachtingen aanvragen met intervallen van 1, 5 en 15 minuten. Het antwoord bevat details zoals het soort precipitatie (inclusief regen, sneeuw of een combi natie van beide), begin tijd en waarde voor precipitatie intensiteit (dBZ).
+ De voor waarde van de [prognose Get Minute](/rest/api/maps/weather/getminuteforecastpreview) retourneert een aantal minuten per minuut voor een bepaalde locatie voor de komende 120 minuten. Gebruikers kunnen weers verwachtingen aanvragen met intervallen van 1, 5 en 15 minuten. Het antwoord bevat details zoals het soort precipitatie (inclusief regen, sneeuw of een combi natie van beide), begin tijd en waarde voor precipitatie intensiteit (dBZ).
 
-In dit voor beeld gebruikt u de [API Get Minute](https://docs.microsoft.com/rest/api/maps/weather/getminuteforecastpreview) voor het ophalen van de weers verwachting per minuut op coördinaten in Seattle, WA. De weers voorspelling wordt de komende 120 minuten gegeven. In onze query wordt gevraag dat de prognose wordt weer gegeven met intervallen van 15 minuten, maar u kunt de para meter instellen op 1 of 5 minuten.
+In dit voor beeld gebruikt u de [API Get Minute](/rest/api/maps/weather/getminuteforecastpreview) voor het ophalen van de weers verwachting per minuut op coördinaten in Seattle, WA. De weers voorspelling wordt de komende 120 minuten gegeven. In onze query wordt gevraag dat de prognose wordt weer gegeven met intervallen van 15 minuten, maar u kunt de para meter instellen op 1 of 5 minuten.
 
 1. Open de Postman-app, klik op **Nieuw** en selecteer **aanvraag**. Voer een **Request name** (Aanvraagnaam) in voor de aanvraag. Selecteer de verzameling die u hebt gemaakt in de vorige sectie of maak een nieuwe, en selecteer vervolgens **Opslaan**.
 
@@ -751,8 +751,8 @@ In dit voor beeld gebruikt u de [API Get Minute](https://docs.microsoft.com/rest
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Concepten van Azure Maps weer service](https://docs.microsoft.com/azure/azure-maps/weather-services-concepts)
+> [Concepten van Azure Maps weer service](./weather-services-concepts.md)
 
 > [!div class="nextstepaction"]
-> [Azure Maps weer service REST API](https://docs.microsoft.com/rest/api/maps/weather
+> [Azure Maps weer service REST API](/rest/api/maps/weather
 )

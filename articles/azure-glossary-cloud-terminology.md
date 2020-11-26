@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/16/2017
 ms.author: monicar
-ms.openlocfilehash: 2e183ad8a6e25c12f073f51e9416b4fc0ed9365f
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 33672e90406b94a1b5788803911c072cdc2577f7
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95530400"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186385"
 ---
 # <a name="microsoft-azure-glossary-a-dictionary-of-cloud-terminology-on-the-azure-platform"></a>Microsoft Azure verklarende woorden lijst: een woorden lijst met Cloud terminologie op het Azure-platform
 
@@ -41,12 +41,12 @@ De reken resources die [Azure app service](app-service/overview.md) biedt voor h
 
 ## <a name="availability-set"></a>beschikbaarheidsset
 Een verzameling virtuele machines die samen worden beheerd om de redundantie en betrouw baarheid van toepassingen te bieden. Als u een beschikbaarheidsset gebruikt, zorgt u ervoor dat tijdens een geplande of niet-geplande onderhouds gebeurtenis ten minste één virtuele machine beschikbaar is.  
-Zie [de beschik baarheid van virtuele Windows-machines beheren](./virtual-machines/manage-availability.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json) en [de beschik baarheid van virtuele Linux-machines beheren](./virtual-machines/manage-availability.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json)
+Zie [de beschik baarheid van virtuele Windows-machines beheren](./virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) en [de beschik baarheid van virtuele Linux-machines beheren](./virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 ## <a name="azure-classic-deployment-model"></a><a name="classic-model"></a>Klassieke Azure-implementatie model
 Een van de twee [implementatie modellen](./azure-resource-manager/management/deployment-models.md) die worden gebruikt voor het implementeren van resources in azure (het nieuwe model is Azure Resource Manager). Sommige Azure-Services bieden alleen ondersteuning voor het Resource Manager-implementatie model, sommige ondersteunen alleen het klassieke implementatie model en sommige ondersteunen beide. In de documentatie voor elke Azure-service wordt aangegeven welke model (en) ze ondersteunen.
 
-## <a name="azure-command-line-interface-cli"></a><a name="cli"></a>Azure-opdrachtregelinterface (CLI)
+## <a name="azure-command-line-interface-cli"></a><a name="cli"></a>Azure-opdracht regel interface (CLI)
 Een opdracht regel interface die kan worden gebruikt voor het beheren van Azure-Services vanuit Windows, macOS en Linux.  Sommige services of service functies kunnen alleen worden beheerd via Power shell of de CLI. Zie [Azure cli](/cli/azure)
 
 ## <a name="azure-powershell"></a><a name="powershell"></a>Azure PowerShell
@@ -58,7 +58,7 @@ Een van de twee [implementatie modellen](./azure-resource-manager/management/dep
 
 ## <a name="fault-domain"></a>fout domein
 Het verzamelen van virtuele machines in een beschikbaarheidsset die mogelijk tegelijk kunnen mislukken. Een voor beeld is een groep machines in een rek die een gemeen schappelijke voedings bron en netwerk switch delen. In Azure worden de virtuele machines in een beschikbaarheidsset automatisch gescheiden in meerdere fout domeinen.  
-Zie [de beschik baarheid van virtuele Windows-machines beheren](./virtual-machines/manage-availability.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json) of [de beschik baarheid van virtuele Linux-machines beheren](./virtual-machines/manage-availability.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json)  
+Zie [de beschik baarheid van virtuele Windows-machines beheren](./virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) of [de beschik baarheid van virtuele Linux-machines beheren](./virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)  
 
 ## <a name="geo"></a>geo
 Een gedefinieerde grens voor gegevens locatie die doorgaans twee of meer regio's bevatten. De grenzen kunnen zich binnen of buiten de nationale grenzen bevinden en worden beïnvloed door de belasting verordening. Elke geo heeft ten minste één regio. Voor beelden van geografische gebieden zijn Azië en Stille Oceaan en Japan. Ook wel *geografie* genoemd.  
@@ -135,7 +135,7 @@ Zie [Tags gebruiken om uw Azure-resources te organiseren](./azure-resource-manag
 
 ## <a name="update-domain"></a>domein bijwerken
 De verzameling virtuele machines in een beschikbaarheidsset die tegelijkertijd worden bijgewerkt. Virtuele machines in hetzelfde update domein worden samen opnieuw gestart tijdens gepland onderhoud. Azure start nooit meer dan één update domein per keer opnieuw op. Wordt ook wel een upgrade domein genoemd.  
-Zie [de beschik baarheid van virtuele Windows-machines beheren](./virtual-machines/manage-availability.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json) en [de beschik baarheid van virtuele Linux-machines beheren](./virtual-machines/manage-availability.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json)
+Zie [de beschik baarheid van virtuele Windows-machines beheren](./virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) en [de beschik baarheid van virtuele Linux-machines beheren](./virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 ## <a name="virtual-machine"></a><a name="vm"></a>virtuele machine
 De software-implementatie van een fysieke computer waarop een besturings systeem wordt uitgevoerd. Meerdere virtuele machines kunnen tegelijkertijd op dezelfde hardware worden uitgevoerd. In azure zijn virtuele machines beschikbaar in verschillende grootten.  
@@ -144,7 +144,7 @@ Raadpleeg de [documentatie van virtual machines](https://azure.microsoft.com/doc
 ## <a name="virtual-machine-extension"></a><a name="vm-extension"></a>extensie van virtuele machine
 Een resource die gedrag of functies implementeert die andere Program ma's kunnen gebruiken of waarmee u kunt communiceren met een actieve computer. U kunt bijvoorbeeld de VM-toegangs uitbreiding gebruiken om waarden voor externe toegang op een virtuele Azure-machine opnieuw in te stellen of te wijzigen.
 <!-- This definition seems obscure to me; maybe a list of examples would work better than a conceptual definition? -->
-Zie [over extensies en functies van virtuele machines (Windows)](./virtual-machines/extensions/features-windows.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json) of [over extensies en functies van virtuele machines (Linux)](./virtual-machines/extensions/features-linux.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json)
+Zie [over extensies en functies van virtuele machines (Windows)](./virtual-machines/extensions/features-windows.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) of [over extensies en functies van virtuele machines (Linux)](./virtual-machines/extensions/features-linux.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 ## <a name="virtual-network"></a><a name="vnet"></a>virtueel netwerk
 Een netwerk waarmee u verbinding maakt tussen uw Azure-resources die zijn geïsoleerd van alle andere Azure-tenants. Met een [Azure-VPN gateway](vpn-gateway/vpn-gateway-about-vpngateways.md) kunt u verbindingen tot stand brengen tussen virtuele netwerken en tussen een virtueel netwerk en een on-premises netwerk. U kunt de IP-adres blokken, DNS-instellingen, beveiligings beleid en route tabellen volledig beheren binnen een virtueel netwerk.  

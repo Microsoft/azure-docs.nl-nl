@@ -7,12 +7,12 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
 ms.custom: references_regions
-ms.openlocfilehash: 90a5f0f84c72895a8450a42260b07f6dbea15e37
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: b4e35296a999070a6f536f4a52cfb7c3a1d4f42a
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94428024"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186487"
 ---
 # <a name="connect-azure-to-itsm-tools-by-using-it-service-management-connector"></a>Verbinding maken tussen Azure en ITSM-hulpprogram ma's met behulp van IT Service Management-connector
 
@@ -50,11 +50,11 @@ U kunt ITSMC gaan gebruiken door de volgende stappen uit te voeren:
 
 Voordat u een verbinding kunt maken, moet u ITSMC toevoegen.
 
-1. Selecteer in het Azure Portal **een resource maken** :
+1. Selecteer in het Azure Portal **een resource maken**:
 
    ![Scherm opname van het menu-item een resource maken.](media/itsmc-overview/azure-add-new-resource.png)
 
-2. Zoek naar **IT Service Management-connector** in azure Marketplace. Selecteer **maken** :
+2. Zoek naar **IT Service Management-connector** in azure Marketplace. Selecteer **maken**:
 
    ![Scherm opname waarin de knop maken wordt weer gegeven in azure Marketplace.](media/itsmc-overview/add-itsmc-solution.png)
 
@@ -90,11 +90,11 @@ Op basis van het ITSM-product waarmee u verbinding maakt, selecteert u een van d
 
 Nadat u uw ITSM-hulpprogram ma's hebt bereid, voert u de volgende stappen uit om een verbinding te maken:
 
-1. Zoek in **alle resources** naar **Service Desk ( *de naam van uw werk ruimte* )** :
+1. Zoek in **alle resources** naar **Service Desk (*de naam van uw werk ruimte*)**:
 
    ![Scherm opname van recente resources in het Azure Portal.](media/itsmc-overview/itsm-connections.png)
 
-1. Selecteer onder **gegevens bronnen voor werk ruimte** in het linkerdeel venster **ITSM-verbindingen** :
+1. Selecteer onder **gegevens bronnen voor werk ruimte** in het linkerdeel venster **ITSM-verbindingen**:
 
    ![Scherm opname van het menu-item ITSM-verbindingen.](media/itsmc-overview/add-new-itsm-connection.png)
    Op deze pagina wordt de lijst met verbindingen weer gegeven.
@@ -129,7 +129,7 @@ Actie groepen bieden een modulaire en herbruikbare manier om acties voor uw Azur
 Gebruik de volgende procedure om werk items te maken:
 
 1. Selecteer in de Azure Portal  **waarschuwingen**.
-2. Selecteer in het menu boven aan het scherm **acties beheren** :
+2. Selecteer in het menu boven aan het scherm **acties beheren**:
 
     ![Scherm afbeelding met de menu opdracht acties beheren.](media/itsmc-overview/action-groups-selection-big.png)
 
@@ -145,7 +145,7 @@ Gebruik de volgende procedure om werk items te maken:
 
 7. Selecteer een type **werk item** .
 
-8. Als u velden met vaste waarden wilt invullen, selecteert u **aangepaste sjabloon gebruiken**. Als dat niet het geval is, kiest u een bestaande [sjabloon](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#template-definitions) in de lijst **sjabloon** en voert u de vaste waarden in de sjabloon velden in.
+8. Als u velden met vaste waarden wilt invullen, selecteert u **aangepaste sjabloon gebruiken**. Als dat niet het geval is, kiest u een bestaande [sjabloon](#template-definitions) in de lijst **sjabloon** en voert u de vaste waarden in de sjabloon velden in.
 
 9. Als u **afzonderlijke werk items maken voor elk configuratie-item** selecteert, heeft elk configuratie-item een eigen werk item. Er wordt één werk item per configuratie-item weer. Het wordt bijgewerkt op basis van de waarschuwingen die worden gemaakt.
 
@@ -253,7 +253,7 @@ ServiceDeskWorkItemType_s = "ChangeRequest"
 - Geplande eind datum
 - Begin datum van werk
 - Eind datum van werk
-- Beschrijving
+- Description
 - Computer
 
 ## <a name="output-data-for-a-servicenow-incident"></a>Uitvoer gegevens voor een ServiceNow-incident
@@ -300,7 +300,7 @@ ServiceDeskWorkItemType_s = "ChangeRequest"
 | PlannedEndDate_t  |   Geplande eind datum |
 | WorkStartDate_t  | Werkelijke begin datum |
 | WorkEndDate_t | Werkelijke eind datum|
-| Description_s | Beschrijving |
+| Description_s | Description |
 | Computer  | Configuratie-item |
 
 
@@ -329,4 +329,3 @@ Neem contact met ons op als u query's of feedback over de IT Service Management-
 
 ## <a name="next-steps"></a>Volgende stappen
 [ITSM-producten/-services toevoegen aan IT Service Management-connector](./itsmc-connections.md)
-

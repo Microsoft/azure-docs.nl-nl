@@ -12,12 +12,12 @@ author: sashan
 ms.author: sashan
 ms.reviewer: sstein, sashan
 ms.date: 10/28/2020
-ms.openlocfilehash: c0c925f68e8edbae00f980d9445c59d7213a4b25
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: 6b6ae2ffca420dc126d56c0f1cfed9188dec0e47
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92901304"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185603"
 ---
 # <a name="high-availability-for-azure-sql-database-and-sql-managed-instance"></a>Hoge Beschik baarheid voor Azure SQL Database en SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -94,7 +94,7 @@ De zone redundante versie van de architectuur met hoge Beschik baarheid wordt ge
 
 ## <a name="hyperscale-service-tier-availability"></a>Beschik baarheid van grootschalige-servicelaag
 
-De grootschalige-architectuur van de service tier wordt beschreven in de [architectuur gedistribueerde functies](https://docs.microsoft.com/azure/sql-database/sql-database-service-tier-hyperscale#distributed-functions-architecture) en is momenteel alleen beschikbaar voor SQL database, niet voor SQL beheerd exemplaar.
+De grootschalige-architectuur van de service tier wordt beschreven in de [architectuur gedistribueerde functies](./service-tier-hyperscale.md#distributed-functions-architecture) en is momenteel alleen beschikbaar voor SQL database, niet voor SQL beheerd exemplaar.
 
 ![Functionele architectuur grootschalige](./media/high-availability-sla/hyperscale-architecture.png)
 
@@ -102,12 +102,12 @@ Het beschikbaarheids model in grootschalige bevat vier lagen:
 
 - Een stateless Compute-laag waarmee de `sqlservr.exe` processen worden uitgevoerd en die alleen tijdelijke en in de cache opgeslagen gegevens bevatten, zoals niet-bedekkende RBPEX-cache, tempdb, model database, enzovoort, op de gekoppelde SSD en de plannings cache, buffer groep en de column Store-groep in het geheugen. Deze stateless laag bevat de primaire Compute-replica en optioneel een aantal secundaire Compute-replica's die als failover-doelen kunnen fungeren.
 - Een stateless opslagbus gevormd door pagina servers. Deze laag is de gedistribueerde opslag engine voor de `sqlservr.exe` processen die worden uitgevoerd op de reken replica's. Elke pagina Server bevat alleen tijdelijke en in de cache opgeslagen gegevens, zoals het bedekken van RBPEX cache op de gekoppelde SSD en gegevens pagina's in het cache geheugen. Elke pagina Server heeft een gekoppelde pagina server in een actief/actief-configuratie om taak verdeling, redundantie en hoge Beschik baarheid te bieden.
-- Een stateful opslag laag voor transactie logboeken, gevormd door het reken knooppunt waarop het logboek service proces wordt uitgevoerd, de overloop zone voor het transactie logboek en de lange termijn opslag van transactie Logboeken. Voor de opslag zone en de lange termijn wordt Azure Storage gebruikt. Dit biedt Beschik baarheid en [Redundantie](https://docs.microsoft.com/azure/storage/common/storage-redundancy) voor het transactie logboek en zorgt voor de duurzaamheid van gegevens voor doorgevoerde trans acties.
-- Een stateful gegevensopslag laag met de database bestanden (. MDF/. ndf) die zijn opgeslagen in Azure Storage en worden bijgewerkt door pagina servers. Deze laag maakt gebruik van de functies voor Beschik baarheid en [Redundantie](https://docs.microsoft.com/azure/storage/common/storage-redundancy) van gegevens van Azure Storage. Hiermee wordt gegarandeerd dat elke pagina in een gegevens bestand blijft behouden, zelfs als processen in andere lagen van de grootschalige-architectuur vastlopen of als reken knooppunten mislukken.
+- Een stateful opslag laag voor transactie logboeken, gevormd door het reken knooppunt waarop het logboek service proces wordt uitgevoerd, de overloop zone voor het transactie logboek en de lange termijn opslag van transactie Logboeken. Voor de opslag zone en de lange termijn wordt Azure Storage gebruikt. Dit biedt Beschik baarheid en [Redundantie](../../storage/common/storage-redundancy.md) voor het transactie logboek en zorgt voor de duurzaamheid van gegevens voor doorgevoerde trans acties.
+- Een stateful gegevensopslag laag met de database bestanden (. MDF/. ndf) die zijn opgeslagen in Azure Storage en worden bijgewerkt door pagina servers. Deze laag maakt gebruik van de functies voor Beschik baarheid en [Redundantie](../../storage/common/storage-redundancy.md) van gegevens van Azure Storage. Hiermee wordt gegarandeerd dat elke pagina in een gegevens bestand blijft behouden, zelfs als processen in andere lagen van de grootschalige-architectuur vastlopen of als reken knooppunten mislukken.
 
 Reken knooppunten in alle grootschalige-lagen worden uitgevoerd op Azure Service Fabric, waarmee de status van elk knoop punt wordt gecontroleerd en waar nodig failovers worden uitgevoerd naar beschik bare, gezonde knoop punten.
 
-Zie voor meer informatie over hoge Beschik baarheid in grootschalige [Data Base hoge Beschik baarheid in grootschalige](https://docs.microsoft.com/azure/sql-database/sql-database-service-tier-hyperscale#database-high-availability-in-hyperscale).
+Zie voor meer informatie over hoge Beschik baarheid in grootschalige [Data Base hoge Beschik baarheid in grootschalige](./service-tier-hyperscale.md#database-high-availability-in-hyperscale).
 
 
 ## <a name="accelerated-database-recovery-adr"></a>Versneld database herstel (ADR)

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/02/2020
-ms.openlocfilehash: ed9942fa7b73418e3ef1ddf0651781d32b662995
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 04f1eb0d9db00a2be1a4619cafe38aa18145fc78
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92049787"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185994"
 ---
 # <a name="archive-data-from-log-analytics-workspace-to-azure-storage-using-logic-app"></a>Gegevens archiveren van Log Analytics werk ruimte naar Azure Storage met behulp van Logic app
 In dit artikel wordt een methode beschreven voor het gebruik van [Azure Logic apps](../../logic-apps/index.yml) om gegevens op te vragen uit een log Analytics-werk ruimte in azure monitor en te verzenden naar Azure Storage. Gebruik dit proces wanneer u uw Azure Monitor-logboek gegevens wilt exporteren voor controle-en nalevings scenario's of als u wilt toestaan dat een andere service deze gegevens ophaalt.  
@@ -25,7 +25,7 @@ De methode die in dit artikel wordt beschreven, beschrijft een geplande export v
 - Eenmalig exporteren naar een lokale computer met behulp van Power shell-script. Zie [invoke-AzOperationalInsightsQueryExport]] ( https://www.powershellgallery.com/packages/Invoke-AzOperationalInsightsQueryExport) .
 
 ## <a name="overview"></a>Overzicht
-Deze procedure maakt gebruik van de [Azure monitor logs connector](https://docs.microsoft.com/connectors/azuremonitorlogs/) waarmee u een logboek query kunt uitvoeren vanuit een logische app en de uitvoer ervan kunt gebruiken in andere acties in de werk stroom. De [Azure Blob Storage-connector](https://docs.microsoft.com/connectors/azureblob/) wordt in deze procedure gebruikt om de query-uitvoer naar Azure Storage te verzenden. De andere acties worden beschreven in de volgende secties.
+Deze procedure maakt gebruik van de [Azure monitor logs connector](/connectors/azuremonitorlogs/) waarmee u een logboek query kunt uitvoeren vanuit een logische app en de uitvoer ervan kunt gebruiken in andere acties in de werk stroom. De [Azure Blob Storage-connector](/connectors/azureblob/) wordt in deze procedure gebruikt om de query-uitvoer naar Azure Storage te verzenden. De andere acties worden beschreven in de volgende secties.
 
 ![Overzicht van logische apps](media/logs-export-logicapp/logic-app-overview.png)
 
@@ -61,15 +61,15 @@ Gebruik de procedure in [een container maken](../../storage/blobs/storage-quicks
 
 ## <a name="create-logic-app"></a>Een logische app maken
 
-Ga naar **Logic apps** in het Azure Portal en klik op **toevoegen**. Selecteer een **abonnement**, **resource groep**en **regio** om de nieuwe logische app op te slaan en geef deze een unieke naam. U kunt **log Analytics** instelling inschakelen om informatie over runtime gegevens en-gebeurtenissen te verzamelen, zoals wordt beschreven in [Azure monitor logboeken instellen en diagnostische gegevens verzamelen voor Azure Logic apps](../../logic-apps/monitor-logic-apps-log-analytics.md). Deze instelling is niet vereist voor het gebruik van de Azure Monitor logs connector.
+Ga naar **Logic apps** in het Azure Portal en klik op **toevoegen**. Selecteer een **abonnement**, **resource groep** en **regio** om de nieuwe logische app op te slaan en geef deze een unieke naam. U kunt **log Analytics** instelling inschakelen om informatie over runtime gegevens en-gebeurtenissen te verzamelen, zoals wordt beschreven in [Azure monitor logboeken instellen en diagnostische gegevens verzamelen voor Azure Logic apps](../../logic-apps/monitor-logic-apps-log-analytics.md). Deze instelling is niet vereist voor het gebruik van de Azure Monitor logs connector.
 
 ![Logische app maken](media/logs-export-logicapp/create-logic-app.png)
 
 
-Klik op **beoordeling + maken** en vervolgens op **maken**. Wanneer de implementatie is voltooid, klikt u op **Ga naar resource** om de **Logic apps Designer**te openen.
+Klik op **beoordeling + maken** en vervolgens op **maken**. Wanneer de implementatie is voltooid, klikt u op **Ga naar resource** om de **Logic apps Designer** te openen.
 
 ## <a name="create-a-trigger-for-the-logic-app"></a>Een trigger maken voor de logische app
-Selecteer onder **beginnen met een gemeen schappelijke trigger de**optie **terugkeer patroon**. Hiermee maakt u een logische app die automatisch met een regel matig interval wordt uitgevoerd. In het vak **frequentie** van de actie selecteert u **uur** en voert u in het vak **interval** **1** in om de werk stroom eenmaal per dag uit te voeren.
+Selecteer onder **beginnen met een gemeen schappelijke trigger de** optie **terugkeer patroon**. Hiermee maakt u een logische app die automatisch met een regel matig interval wordt uitgevoerd. In het vak **frequentie** van de actie selecteert u **uur** en voert u in het vak **interval** **1** in om de werk stroom eenmaal per dag uit te voeren.
 
 ![Herhalings actie](media/logs-export-logicapp/recurrence-action.png)
 
@@ -131,7 +131,7 @@ De uitvoer van de actie **query uitvoeren en lijst met resultaten** wordt ingede
 U kunt een JSON-schema opgeven dat de payload beschrijft die u verwacht te ontvangen. De ontwerper parseert JSON-inhoud door gebruik te maken van dit schema en genereert gebruikers vriendelijke tokens die de eigenschappen in uw JSON-inhoud vertegenwoordigen. U kunt deze eigenschappen vervolgens eenvoudig raadplegen en gebruiken in de werk stroom van de logische app. 
 
 
-Klik op **+ nieuwe stap**en vervolgens op **+ een actie toevoegen**. Onder **Kies een actie**, typt u **JSON** en selecteert u **JSON parseren**.
+Klik op **+ nieuwe stap** en vervolgens op **+ een actie toevoegen**. Onder **Kies een actie**, typt u **JSON** en selecteert u **JSON parseren**.
 
 ![JSON-activiteit parseren selecteren](media/logs-export-logicapp/select-parse-json.png)
 
@@ -166,7 +166,7 @@ Klik in het vak **inhoud** om een lijst met waarden uit eerdere activiteiten wee
 ## <a name="add-the-compose-action"></a>De actie opstellen toevoegen
 De actie **opstellen** neemt de geparseerde JSON-uitvoer mee en maakt het object dat u in de BLOB moet opslaan.
 
-Klik op **+ nieuwe stap**en vervolgens op **+ een actie toevoegen**. Onder **Kies een actie**, typt u **opstellen** en selecteert u vervolgens de actie **opstellen** .
+Klik op **+ nieuwe stap** en vervolgens op **+ een actie toevoegen**. Onder **Kies een actie**, typt u **opstellen** en selecteert u vervolgens de actie **opstellen** .
 
 ![Actie voor opstellen selecteren](media/logs-export-logicapp/select-compose.png)
 
@@ -179,7 +179,7 @@ Klik op het vak **invoer** in een lijst met waarden van vorige activiteiten. Sel
 ## <a name="add-the-create-blob-action"></a>De actie Blob maken toevoegen
 De actie Blob maken schrijft de bestaande JSON naar opslag.
 
-Klik op **+ nieuwe stap**en vervolgens op **+ een actie toevoegen**. Onder **Kies een actie**, typt u **BLOB** en selecteert u vervolgens de actie **Blob maken** .
+Klik op **+ nieuwe stap** en vervolgens op **+ een actie toevoegen**. Onder **Kies een actie**, typt u **BLOB** en selecteert u vervolgens de actie **Blob maken** .
 
 ![Selecteer Blob maken](media/logs-export-logicapp/select-create-blob.png)
 

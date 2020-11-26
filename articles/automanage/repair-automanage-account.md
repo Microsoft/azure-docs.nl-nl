@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.topic: conceptual
 ms.date: 11/05/2020
 ms.author: alsin
-ms.openlocfilehash: 226a23bfdacb0f7423c7dafb8cae36af7333699d
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 4694fa679c7bbff309a0452219ff39bacf2488c4
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94681836"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183699"
 ---
 # <a name="repair-an-automanage-account"></a>Een account voor automanage herstellen
 Uw [Azure automanage-account](./automanage-virtual-machines.md#automanage-account) is de beveiligings context of identiteit waaronder de geautomatiseerde bewerkingen plaatsvinden. Als u onlangs een abonnement hebt verplaatst dat een automanage-account bevat naar een nieuwe Tenant, moet u het account opnieuw configureren. Als u het opnieuw wilt configureren, moet u het identiteits type opnieuw instellen en de juiste rollen voor het account toewijzen.
@@ -22,8 +22,8 @@ Uw [Azure automanage-account](./automanage-virtual-machines.md#automanage-accoun
 Stel het identiteits type van het automanage-account opnieuw in met behulp van de volgende Azure Resource Manager (ARM)-sjabloon. Sla het bestand lokaal op als armdeploy.jsop of een vergelijk bare naam. Noteer uw account naam en-locatie voor het automanage, omdat de vereiste para meters in de ARM-sjabloon vereist zijn.
 
 1. Maak een Resource Manager-implementatie met behulp van de volgende sjabloon. Gebruik `identityType = None`.
-    * U kunt de implementatie in de Azure CLI maken met behulp van `az deployment sub create` . Zie [AZ Deployment sub](https://docs.microsoft.com/cli/azure/deployment/sub)(Engelstalig) voor meer informatie.
-    * U kunt de implementatie in Power shell maken met behulp van de `New-AzDeployment` module. Zie [New-AzDeployment](https://docs.microsoft.com/powershell/module/az.resources/new-azdeployment)voor meer informatie.
+    * U kunt de implementatie in de Azure CLI maken met behulp van `az deployment sub create` . Zie [AZ Deployment sub](/cli/azure/deployment/sub)(Engelstalig) voor meer informatie.
+    * U kunt de implementatie in Power shell maken met behulp van de `New-AzDeployment` module. Zie [New-AzDeployment](/powershell/module/az.resources/new-azdeployment)voor meer informatie.
 
 1. Voer dezelfde ARM-sjabloon opnieuw uit met `identityType = SystemAssigned` .
 
@@ -63,7 +63,7 @@ Voor het account voor de functie voor automanaged moet de Inzender-en het resour
 
 Als u een ARM-sjabloon of Azure CLI gebruikt, hebt u de principal-ID (ook wel de object-ID genoemd) van uw automanage-account nodig. (U hebt de ID niet nodig als u de Azure Portal gebruikt.) U kunt deze ID vinden met behulp van de volgende methoden:
 
-- [Azure cli](https://docs.microsoft.com/cli/azure/ad/sp): gebruik de opdracht `az ad sp list --display-name <name of your Automanage Account>` .
+- [Azure cli](/cli/azure/ad/sp): gebruik de opdracht `az ad sp list --display-name <name of your Automanage Account>` .
 
 - Azure Portal: Ga naar **Azure Active Directory** en zoek uw account voor automanage op naam. Selecteer onder **bedrijfs toepassingen** de naam van het automanage-account wanneer het wordt weer gegeven.
 

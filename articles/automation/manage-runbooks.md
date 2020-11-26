@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 10/23/2020
 ms.topic: conceptual
-ms.openlocfilehash: 65451ed99580d9f2d66bd28518f0ec40a21ffe65
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: ed5eda668f6bd52ba144aa664119ab613fdb7742
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93317089"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183580"
 ---
 # <a name="manage-runbooks-in-azure-automation"></a>Runbooks in Azure Automation beheren
 
@@ -45,7 +45,7 @@ New-AzAutomationRunbook -AutomationAccountName MyAccount `
 
 ## <a name="import-a-runbook"></a>Een runbook importeren
 
-U kunt een Power shell-of Power shell workflow-script ( **. ps1** ), een grafisch runbook ( **. graphrunbook** ) of een python 2-script ( **. py** ) importeren om uw eigen runbook te maken. U moet het [type runbook](automation-runbook-types.md) opgeven dat tijdens het importeren wordt gemaakt, waarbij rekening wordt gehouden met de volgende overwegingen.
+U kunt een Power shell-of Power shell workflow-script (**. ps1**), een grafisch runbook (**. graphrunbook**) of een python 2-script (**. py**) importeren om uw eigen runbook te maken. U moet het [type runbook](automation-runbook-types.md) opgeven dat tijdens het importeren wordt gemaakt, waarbij rekening wordt gehouden met de volgende overwegingen.
 
 * U kunt een **. ps1** -bestand importeren dat geen werk stroom bevat in een [Power shell-Runbook](automation-runbook-types.md#powershell-runbooks) of een [Power shell workflow-runbook](automation-runbook-types.md#powershell-workflow-runbooks). Als u deze importeert in een Power shell workflow-runbook, wordt dit geconverteerd naar een werk stroom. In dit geval worden opmerkingen in het runbook opgenomen om de aangebrachte wijzigingen te beschrijven.
 
@@ -223,7 +223,7 @@ Een aangepast script gebruiken:
 
 1. Een Automation-account maken en een [rol voor Inzender](automation-role-based-access-control.md)verkrijgen.
 2. [Koppel het account aan de Azure-werk ruimte](../security-center/security-center-enable-data-collection.md).
-3. Schakel [Hybrid Runbook worker](automation-hybrid-runbook-worker.md), [updatebeheer](update-management/update-mgmt-overview.md)of een andere functie voor automatisering in. 
+3. Schakel [Hybrid Runbook worker](automation-hybrid-runbook-worker.md), [updatebeheer](./update-management/overview.md)of een andere functie voor automatisering in. 
 4. Als u op een Linux-computer beschikt over hoge machtigingen. Meld u aan om [handtekening controles uit te scha kelen](automation-linux-hrw-install.md#turn-off-signature-validation).
 
 ## <a name="test-a-runbook"></a>Een runbook testen

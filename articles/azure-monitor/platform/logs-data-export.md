@@ -7,12 +7,12 @@ ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 10/14/2020
-ms.openlocfilehash: 1813da8a8a812eeded235d71c351ec352c42707c
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: bd929d06bca370ffab53ce2023188bc12a1d8bd1
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94920080"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186436"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics werkruimte gegevens exporteren in Azure Monitor (preview-versie)
 Met Log Analytics werkruimte gegevens exporteren in Azure Monitor kunt u voortdurend gegevens exporteren uit geselecteerde tabellen in uw Log Analytics-werk ruimte naar een Azure Storage-account of Azure-Event Hubs wanneer het wordt verzameld. Dit artikel bevat informatie over deze functie en de stappen voor het configureren van gegevens export in uw werk ruimten.
@@ -68,7 +68,7 @@ Gegevens worden elk uur naar opslag accounts verzonden. De gegevens export confi
 
 Het BLOB-pad van het opslag account is *WorkspaceResourceId =/Subscriptions/Subscription-id/ResourceGroups/ \<resource-group\> /providers/Microsoft.operationalinsights/Workspaces/ \<workspace\> /y = \<four-digit numeric year\> /m = \<two-digit numeric month\> /d = \<two-digit numeric day\> /h = \<two-digit 24-hour clock hour\> /m = 00/PT1H.jsop*. Omdat toevoeg-blobs zijn beperkt tot 50.000-schrijf bewerkingen in opslag, kan het aantal geëxporteerde blobs worden uitgebreid als het aantal toegevoegde waarden hoog is. Het naamgevings patroon voor blobs in zo'n geval zou worden PT1H_ #. json, waarbij # het aantal incrementele blobs is.
 
-De gegevens indeling van het opslag account is [JSON-lijnen](diagnostic-logs-append-blobs.md). Dit betekent dat elke record wordt gescheiden door een nieuwe regel, zonder een matrix van buitenste records en geen komma's tussen JSON-records. 
+De gegevens indeling van het opslag account is [JSON-lijnen](./resource-logs-blob-format.md). Dit betekent dat elke record wordt gescheiden door een nieuwe regel, zonder een matrix van buitenste records en geen komma's tussen JSON-records. 
 
 [![Voorbeeld gegevens voor opslag](media/logs-data-export/storage-data.png)](media/logs-data-export/storage-data.png#lightbox)
 
@@ -78,7 +78,7 @@ Log Analytics gegevens export kan toevoeg-blobs schrijven naar onveranderlijke o
 Gegevens worden bijna in realtime naar uw Event Hub verzonden, omdat deze Azure Monitor bereikt. Er wordt een Event Hub gemaakt voor elk gegevens type dat u exporteert *,* gevolgd door de naam van de tabel. De tabel *SecurityEvent* wordt bijvoorbeeld verzonden naar een event hub met de naam *am-SecurityEvent*. Als u wilt dat de geëxporteerde gegevens een specifieke Event Hub bereiken, of als u een tabel hebt met een naam die groter is dan de limiet van 47 tekens, kunt u uw eigen Event Hub naam opgeven en alle gegevens voor gedefinieerde tabellen naar de groep exporteren.
 
 Overwegingen:
-1. ' Basic ' Event Hub SKU ondersteunt een lagere [limiet](https://docs.microsoft.com/azure/event-hubs/event-hubs-quotas#basic-vs-standard-tiers) voor de grootte van de gebeurtenis en sommige Logboeken in uw werk ruimte kunnen deze overschrijden en worden verwijderd. U wordt aangeraden ' Standard ' of ' dedicated ' te gebruiken Event Hub als export bestemming.
+1. ' Basic ' Event Hub SKU ondersteunt een lagere [limiet](../../event-hubs/event-hubs-quotas.md#basic-vs-standard-tiers) voor de grootte van de gebeurtenis en sommige Logboeken in uw werk ruimte kunnen deze overschrijden en worden verwijderd. U wordt aangeraden ' Standard ' of ' dedicated ' te gebruiken Event Hub als export bestemming.
 2. Het volume van de geëxporteerde gegevens neemt vaak toe in de loop van de tijd en de Event Hub schaal moet worden verhoogd om grotere overdrachts snelheden te verwerken en om te voor komen dat scenario's en gegevens latentie worden beperkt. U moet de functie voor automatisch verg Roten van Event Hubs gebruiken om het aantal doorvoer eenheden automatisch te verg Roten of te verhogen en te voldoen aan de behoeften van het gebruik. Zie [Event hubs doorvoer eenheden van Azure automatisch schalen](../../event-hubs/event-hubs-auto-inflate.md) voor meer informatie.
 
 ## <a name="prerequisites"></a>Vereisten

@@ -3,12 +3,12 @@ title: Resource Manager en klassieke implementatie
 description: Lees hier wat de verschillen zijn tussen het implementatiemodel van Resource Manager en het klassieke implementatiemodel (of Service Management).
 ms.topic: conceptual
 ms.date: 02/06/2020
-ms.openlocfilehash: d9c1a27efc1f474e25d0ed164d106e8f64ba3e96
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: da260db84de0cc8bd092eb95491b7cc38df93a12
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88511402"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185841"
 ---
 # <a name="azure-resource-manager-vs-classic-deployment-understand-deployment-models-and-the-state-of-your-resources"></a>Azure Resource Manager vergeleken met klassieke implementatie: implementatiemodellen en de status van uw resources begrijpen
 
@@ -123,9 +123,9 @@ Zie [Verschillende implementatiemodellen gebruiken om vanuit de portal verbindin
 Als u klaar bent om uw resources te migreren van de klassieke implementatie naar de Resource Manager-implementatie, raadpleegt u:
 
 1. [Technische details over door platforms ondersteunde migratie van klassiek naar Azure Resource Manager](../../virtual-machines/migration-classic-resource-manager-deep-dive.md)
-2. [Platformondersteunde migratie van IaaS-resources van het klassieke implementatiemodel naar Azure Resource Manager](../../virtual-machines/windows/migration-classic-resource-manager-overview.md)
-3. [IaaS-resources migreren van klassiek naar Azure Resource Manager met behulp van Azure PowerShell](../../virtual-machines/windows/migration-classic-resource-manager-ps.md)
-4. [IaaS-resources migreren van klassiek naar Azure Resource Manager met behulp van Azure CLI](../../virtual-machines/linux/migration-classic-resource-manager-cli.md)
+2. [Platformondersteunde migratie van IaaS-resources van het klassieke implementatiemodel naar Azure Resource Manager](../../virtual-machines/migration-classic-resource-manager-overview.md)
+3. [IaaS-resources migreren van klassiek naar Azure Resource Manager met behulp van Azure PowerShell](../../virtual-machines/migration-classic-resource-manager-ps.md)
+4. [IaaS-resources migreren van klassiek naar Azure Resource Manager met behulp van Azure CLI](../../virtual-machines/migration-classic-resource-manager-cli.md)
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
 

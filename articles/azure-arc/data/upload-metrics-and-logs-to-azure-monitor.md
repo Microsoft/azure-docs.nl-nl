@@ -10,12 +10,12 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 zone_pivot_groups: client-operating-system-macos-and-linux-windows-powershell
-ms.openlocfilehash: c333b95ed762c905511ab1d4a84050d50f0e023c
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 66b10efb6ca93bc6b4dd67d700daaf1f9049de68
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371321"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183427"
 ---
 # <a name="upload-usage-data-metrics-and-logs-to-azure-monitor"></a>De gebruiks gegevens, de metrieken en de logboeken uploaden naar Azure Monitor
 
@@ -63,7 +63,7 @@ De service-principal wordt gebruikt voor het uploaden van gebruiks-en metrische 
 Voer deze opdrachten uit om de service-principal voor metrische gegevens te maken:
 
 > [!NOTE]
-> Voor het maken van een Service-Principal zijn [bepaalde machtigingen vereist in azure](/azure/active-directory/develop/howto-create-service-principal-portal#permissions-required-for-registering-an-app).
+> Voor het maken van een Service-Principal zijn [bepaalde machtigingen vereist in azure](../../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app).
 
 Als u een Service-Principal wilt maken, moet u het volgende voor beeld bijwerken. Vervang door `<ServicePrincipalName>` de naam van de Service-Principal en voer de volgende opdracht uit:
 

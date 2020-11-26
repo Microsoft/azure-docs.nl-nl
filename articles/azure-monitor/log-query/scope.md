@@ -6,15 +6,15 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/09/2020
-ms.openlocfilehash: 066e9cf6c63c9f2073ba869e8b40e25bfc993cd8
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: ddb73de87789934aa66893bdbe6519011cf324b3
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491372"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186096"
 ---
 # <a name="log-query-scope-and-time-range-in-azure-monitor-log-analytics"></a>Query bereik en tijds bereik in Azure Monitor vastleggen Log Analytics
-Wanneer u een [logboek query](log-query-overview.md) uitvoert in [Log Analytics in het Azure Portal](get-started-portal.md), is de set gegevens die door de query wordt geëvalueerd, afhankelijk van het bereik en het tijds bereik dat u selecteert. In dit artikel worden de bereik-en tijds periode beschreven en wordt uitgelegd hoe u deze kunt instellen, afhankelijk van uw vereisten. Ook wordt het gedrag van verschillende soorten bereiken beschreven.
+Wanneer u een [logboek query](log-query-overview.md) uitvoert in [Log Analytics in het Azure Portal](./log-analytics-tutorial.md), is de set gegevens die door de query wordt geëvalueerd, afhankelijk van het bereik en het tijds bereik dat u selecteert. In dit artikel worden de bereik-en tijds periode beschreven en wordt uitgelegd hoe u deze kunt instellen, afhankelijk van uw vereisten. Ook wordt het gedrag van verschillende soorten bereiken beschreven.
 
 
 ## <a name="query-scope"></a>Querybereik
@@ -87,5 +87,5 @@ Als de query gebruik maakt van de **app** om gegevens op te halen uit een klassi
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Door loop een [zelf studie over het gebruik van log Analytics in het Azure Portal](get-started-portal.md).
+- Door loop een [zelf studie over het gebruik van log Analytics in het Azure Portal](./log-analytics-tutorial.md).
 - Door loop een [zelf studie over het schrijven van query's](get-started-queries.md).

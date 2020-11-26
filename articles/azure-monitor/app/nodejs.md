@@ -4,12 +4,12 @@ description: Prestaties bewaken en problemen detecteren in Node.js-services met 
 ms.topic: conceptual
 ms.date: 06/01/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 982adf6c6d7cd825d185802321ce30a04bd2f216
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4c350cbfdf92d19a084940941351cf1f028c93d2
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96020888"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186276"
 ---
 # <a name="monitor-your-nodejs-services-and-apps-with-application-insights"></a>Node.js-services en -apps bewaken met Application Insights
 
@@ -416,10 +416,9 @@ Deze eigenschappen zijn specifiek voor de client, zodat u `appInsights.defaultCl
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Uw telemetrie in de portal bewaken](./overview-dashboard.md)
-* [Analysequery’s schrijven over uw telemetrie](../log-query/get-started-portal.md)
+* [Analysequery’s schrijven over uw telemetrie](../log-query/log-analytics-tutorial.md)
 
 <!--references-->
 
 [portal]: https://portal.azure.com/
 [FAQ]: ../faq.md
-

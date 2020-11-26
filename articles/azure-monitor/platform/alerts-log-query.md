@@ -6,19 +6,19 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 02/19/2019
 ms.subservice: alerts
-ms.openlocfilehash: 7f03858b2427b2a2069ebe2c9d06425e7a741e2b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e7c9c76816b5d1ee2eedfb7e54645e056906feef
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91294356"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186623"
 ---
 # <a name="optimizing-log-alert-queries"></a>Logboek waarschuwings query's optimaliseren
 In dit artikel wordt beschreven hoe u [logboek waarschuwings](alerts-unified-log.md) query's schrijft en converteert om optimale prestaties te krijgen. Geoptimaliseerde query's verminderen de latentie en het laden van waarschuwingen, die regel matig worden uitgevoerd.
 
 ## <a name="how-to-start-writing-an-alert-log-query"></a>Beginnen met het schrijven van een query voor een waarschuwings logboek
 
-Waarschuwings query's beginnen met [het uitvoeren van query's in de logboek gegevens in log Analytics](alerts-log.md#create-a-log-alert-rule-with-the-azure-portal) die het probleem aangeven. U kunt het [onderwerp voor beelden van waarschuwings query's](../log-query/saved-queries.md) gebruiken om te begrijpen wat u kunt ontdekken. U kunt ook aan [de slag gaan met het schrijven van uw eigen query](../log-query/get-started-portal.md). 
+Waarschuwings query's beginnen met [het uitvoeren van query's in de logboek gegevens in log Analytics](alerts-log.md#create-a-log-alert-rule-with-the-azure-portal) die het probleem aangeven. U kunt het [onderwerp voor beelden van waarschuwings query's](../log-query/example-queries.md) gebruiken om te begrijpen wat u kunt ontdekken. U kunt ook aan [de slag gaan met het schrijven van uw eigen query](../log-query/log-analytics-tutorial.md). 
 
 ### <a name="queries-that-indicate-the-issue-and-not-the-alert"></a>Query's die het probleem aangeven en niet de waarschuwing
 

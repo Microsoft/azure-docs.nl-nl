@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 04/10/2019
-ms.openlocfilehash: 79e5b1ddde0ff5f0d09dc1c20e3b20ec4de3d925
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 234ef58920a9f896d3e8ebcc561562ea7ceb2708
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95536673"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186419"
 ---
 # <a name="manage-access-to-log-data-and-workspaces-in-azure-monitor"></a>Toegang tot logboekgegevens en werkruimten beheren in Azure Monitor
 
@@ -106,7 +106,7 @@ Aan elke werk ruimte kunnen meerdere accounts worden gekoppeld en elk account ka
 
 Voor de volgende activiteiten zijn ook Azure-machtigingen vereist:
 
-|Actie |Azure-machtigingen nodig |Opmerkingen |
+|Bewerking |Azure-machtigingen nodig |Notities |
 |-------|-------------------------|------|
 | Bewakings oplossingen toevoegen en verwijderen | `Microsoft.Resources/deployments/*` <br> `Microsoft.OperationalInsights/*` <br> `Microsoft.OperationsManagement/*` <br> `Microsoft.Automation/*` <br> `Microsoft.Resources/deployments/*/write` | Deze machtigingen moeten worden toegekend op het niveau van de resourcegroep of het abonnement. |
 | De prijscategorie wijzigen | `Microsoft.OperationalInsights/workspaces/*/write` | |
@@ -137,9 +137,9 @@ De rol van Log Analytics lezer omvat de volgende acties van Azure:
 | Type    | Machtiging | Beschrijving |
 | ------- | ---------- | ----------- |
 | Actie | `*/read`   | De mogelijkheid om alle Azure-resources en-resource configuratie weer te geven. Omvat: <br> Status van de VM-extensie <br> Configuratie van Azure Diagnostics voor resources <br> Alle eigenschappen en instellingen van alle resources. <br> Voor werk ruimten kunnen volledige onbeperkte machtigingen de werk ruimte-instellingen lezen en query's uitvoeren op de gegevens. Bekijk meer gedetailleerde opties hierboven. |
-| Actie | `Microsoft.OperationalInsights/workspaces/analytics/query/action` | Afgeschaft, u hoeft ze niet aan gebruikers toe te wijzen. |
-| Actie | `Microsoft.OperationalInsights/workspaces/search/action` | Afgeschaft, u hoeft ze niet aan gebruikers toe te wijzen. |
-| Actie | `Microsoft.Support/*` | Mogelijkheid ondersteuningsaanvragen te openen |
+| Bewerking | `Microsoft.OperationalInsights/workspaces/analytics/query/action` | Afgeschaft, u hoeft ze niet aan gebruikers toe te wijzen. |
+| Bewerking | `Microsoft.OperationalInsights/workspaces/search/action` | Afgeschaft, u hoeft ze niet aan gebruikers toe te wijzen. |
+| Bewerking | `Microsoft.Support/*` | Mogelijkheid ondersteuningsaanvragen te openen |
 |Geen bewerking | `Microsoft.OperationalInsights/workspaces/sharedKeys/read` | Hiermee wordt voor komen dat de werkruimte sleutel die is vereist voor het gebruik van de gegevensverzamelings-API en agents wordt gelezen. Hiermee wordt voor komen dat de gebruiker nieuwe resources aan de werk ruimte toevoegt |
 
 Leden van de rol *Inzender van Log Analytics* kunnen:
@@ -285,7 +285,7 @@ In de bovenstaande voor beelden wordt een lijst met toegestane tabellen gedefini
 
 ### <a name="custom-logs"></a>Aangepaste logboeken
 
- Aangepaste logboeken worden gemaakt op basis van gegevens bronnen, zoals aangepaste logboeken en HTTP-gegevens verzamelaar-API. De eenvoudigste manier om het type logboek te identificeren, is door de tabellen die worden vermeld onder [aangepaste Logboeken in het logboek schema](../log-query/get-started-portal.md#understand-the-schema)te controleren.
+ Aangepaste logboeken worden gemaakt op basis van gegevens bronnen, zoals aangepaste logboeken en HTTP-gegevens verzamelaar-API. De eenvoudigste manier om het type logboek te identificeren, is door de tabellen die worden vermeld onder [aangepaste Logboeken in het logboek schema](../log-query/log-analytics-tutorial.md#table-schema)te controleren.
 
  U kunt geen toegang verlenen aan afzonderlijke aangepaste logboeken, maar u hebt toegang tot alle aangepaste Logboeken. Als u een rol wilt maken met toegang tot alle aangepaste logboeken, maakt u een aangepaste rol met behulp van de volgende acties:
 

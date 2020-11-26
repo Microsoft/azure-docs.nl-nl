@@ -3,14 +3,14 @@ title: Implementatiemodi
 description: Hierin wordt beschreven hoe u kunt opgeven of u een volledige of incrementele implementatie modus met Azure Resource Manager wilt gebruiken.
 ms.topic: conceptual
 ms.date: 07/22/2020
-ms.openlocfilehash: e584acd4af1dc6adb5f5d383acd5d16da0815f32
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bc499be4185905af7eaf71b3515895de9bee46d3
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87371580"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184039"
 ---
-# <a name="azure-resource-manager-deployment-modes"></a>Implementatie modi Azure Resource Manager
+# <a name="azure-resource-manager-deployment-modes"></a>Azure Resource Manager deployment modes (Implementatiemodi voor Azure Resource Manager)
 
 Wanneer u uw resources implementeert, geeft u op dat de implementatie een incrementele update of een volledige update is. Het verschil tussen deze twee modi is hoe Resource Manager bestaande resources in de resource groep die zich niet in de sjabloon bevinden, afhandelt.
 
@@ -29,7 +29,7 @@ Als uw sjabloon een resource bevat die niet is geïmplementeerd omdat de [voor w
 
 Wees voorzichtig met het gebruik van de volledige modus met [Kopieer lussen](copy-resources.md). Alle resources die niet zijn opgegeven in de sjabloon na het oplossen van de Kopieer-lus, worden verwijderd.
 
-Als u naar [meer dan één resource groep in een sjabloon](cross-scope-deployment.md)implementeert, kunnen resources in de resource groep die zijn opgegeven in de implementatie bewerking worden verwijderd. Resources in de secundaire resource groepen worden niet verwijderd.
+Als u naar [meer dan één resource groep in een sjabloon](./deploy-to-resource-group.md)implementeert, kunnen resources in de resource groep die zijn opgegeven in de implementatie bewerking worden verwijderd. Resources in de secundaire resource groepen worden niet verwijderd.
 
 Er zijn een aantal verschillen in de manier waarop bron typen het verwijderen van de modus volt ooien verwerken. Bovenliggende resources worden automatisch verwijderd als ze niet worden gebruikt in een sjabloon die wordt geïmplementeerd in de modus voltooid. Sommige onderliggende resources worden niet automatisch verwijderd wanneer ze niet in de sjabloon staan. Deze onderliggende resources worden echter verwijderd als de bovenliggende resource wordt verwijderd.
 

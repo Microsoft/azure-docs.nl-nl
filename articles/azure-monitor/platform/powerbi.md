@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/01/2019
-ms.openlocfilehash: 8b9624313716081a039b12c73e54b9f7afc2a323
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 53277f64c3d1b03572732157756da1fececbcd43
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86505309"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184566"
 ---
 # <a name="import-azure-monitor-log-data-into-power-bi"></a>Azure Monitor logboek gegevens importeren in Power BI
 
@@ -28,7 +28,7 @@ Als u gegevens wilt importeren uit een [log Analytics werk ruimte](manage-access
 ## <a name="export-query"></a>Query exporteren
 Maak eerst een [logboek query](../log-query/log-query-overview.md) die de gegevens retourneert die u wilt vullen met de Power bi gegevensset.  Vervolgens exporteert u die query naar de [Power query-taal (M)](/powerquery-m/power-query-m-language-specification) die kan worden gebruikt door Power bi Desktop.
 
-1. [Maak de logboek query in log Analytics](../log-query/get-started-portal.md) om de gegevens voor uw gegevensset uit te pakken.
+1. [Maak de logboek query in log Analytics](../log-query/log-analytics-tutorial.md) om de gegevens voor uw gegevensset uit te pakken.
 2. Selecteer **Export**  >  **Power bi query (M)** exporteren.  Hiermee exporteert u de query naar een tekst bestand met de naam **PowerBIQuery.txt**. 
 
     ![Zoek opdracht in Logboeken exporteren](media/powerbi/export-analytics.png)

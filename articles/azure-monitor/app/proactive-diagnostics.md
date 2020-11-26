@@ -3,12 +3,12 @@ title: Slimme detectie in Azure-toepassing Insights | Microsoft Docs
 description: Application Insights voert een automatische diep gaande analyse van uw app-telemetrie uit en waarschuwt u mogelijke problemen.
 ms.topic: conceptual
 ms.date: 02/07/2019
-ms.openlocfilehash: 24ed8eefb7e07930cbd123fbe4081d555f0c27c3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2b6e9370387bf3bb87555261b3949db2917e9911
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87305870"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186249"
 ---
 # <a name="smart-detection-in-application-insights"></a>Slimme detectie in Application Insights
  Slimme detectie waarschuwt automatisch mogelijke prestatie problemen en fout afwijkingen in uw webtoepassing. Er wordt proactieve analyse uitgevoerd van de telemetrie die uw app naar [Application Insights](./app-insights-overview.md)verzendt. Als er sprake is van een plotselinge toename van de fout frequentie of abnormale patronen in de prestaties van de client of server, ontvangt u een waarschuwing. Deze functie heeft geen configuratie nodig. Het werkt als uw toepassing voldoende telemetrie verzendt.
@@ -40,7 +40,7 @@ Slimme detectie detecteert en waarschuwt over diverse problemen, zoals:
 
 ## <a name="smart-detection-email-notifications"></a>E-mail meldingen voor slimme detectie
 
-Alle regels voor slimme detectie, met uitzonde ring van regels die als _Preview_zijn gemarkeerd, worden standaard geconfigureerd voor het verzenden van e-mail meldingen wanneer detecties worden gevonden.
+Alle regels voor slimme detectie, met uitzonde ring van regels die als _Preview_ zijn gemarkeerd, worden standaard geconfigureerd voor het verzenden van e-mail meldingen wanneer detecties worden gevonden.
 
 Het configureren van e-mail meldingen voor een specifieke detectie regel kan worden uitgevoerd door de Blade Slimme detectie- **instellingen** te openen en de regel te selecteren, waarmee de Blade **regel bewerken** wordt geopend.
 
@@ -55,10 +55,9 @@ Met deze diagnostische hulpprogram ma's kunt u de telemetrie van uw app inspecte
 
 * [Metrische Explorer](../platform/metrics-charts.md)
 * [Zoek Verkenner](./diagnostic-search.md)
-* [Analyse-krachtige query taal](../log-query/get-started-portal.md)
+* [Analyse-krachtige query taal](../log-query/log-analytics-tutorial.md)
 
 Slimme detectie is volledig automatisch. Maar misschien wilt u nog meer waarschuwingen instellen?
 
 * [Hand matig geconfigureerde metrische waarschuwingen](../platform/alerts-log.md)
-* [Webtests voor beschikbaarheid](./monitor-web-app-availability.md) 
-
+* [Webtests voor beschikbaarheid](./monitor-web-app-availability.md)

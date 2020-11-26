@@ -3,12 +3,12 @@ title: Sjabloon exporteren in Azure Portal
 description: Gebruik Azure Portal om een Azure Resource Manager sjabloon te exporteren vanuit resources in uw abonnement.
 ms.topic: conceptual
 ms.date: 07/29/2020
-ms.openlocfilehash: 6d0c9adb121372047336d2753df047f54f1e0fa2
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: ee97953a337bbb7cc9a8d1f042a3beae7bccdcae
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91951754"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185688"
 ---
 # <a name="single-and-multi-resource-export-to-a-template-in-azure-portal"></a>Eén en meerdere resources exporteren naar een sjabloon in Azure Portal
 
@@ -51,7 +51,7 @@ Bij het exporteren vanuit een resource groep of resource wordt de geëxporteerde
 
 De functie sjabloon exporteren biedt geen ondersteuning voor het exporteren van Azure Data Factory-resources. Zie [een Data Factory in azure Data Factory kopiëren of klonen](../../data-factory/copy-clone-data-factory.md)voor meer informatie over het exporteren van Data Factory-resources.
 
-Als u resources wilt exporteren die zijn gemaakt via het klassieke implementatie model, moet u [deze migreren naar het Resource Manager-implementatie model](../../virtual-machines/windows/migration-classic-resource-manager-overview.md).
+Als u resources wilt exporteren die zijn gemaakt via het klassieke implementatie model, moet u [deze migreren naar het Resource Manager-implementatie model](../../virtual-machines/migration-classic-resource-manager-overview.md).
 
 Als er een waarschuwing wordt weer gegeven bij het exporteren van een sjabloon die aangeeft dat een resource type niet is geëxporteerd, kunt u nog steeds de eigenschappen voor die resource detecteren. Zie [Eigenschappen van bronnen ontdekken](view-resources.md)voor meer informatie over de verschillende opties voor het weer geven van resource-eigenschappen. U kunt ook de Azure- [rest API](/rest/api/azure/) voor het resource type bekijken.
 
@@ -63,7 +63,7 @@ Een of meer resources uit een resource groep exporteren:
 
 1. Selecteer de resource groep die de resources bevat die u wilt exporteren.
 
-1. Selecteer een of meer resources door de selectie vakjes in te scha kelen.  Als u alles wilt selecteren, schakelt u het selectie vakje links van **naam**in. De menu opdracht **sjabloon exporteren** wordt alleen ingeschakeld wanneer u ten minste één resource hebt geselecteerd.
+1. Selecteer een of meer resources door de selectie vakjes in te scha kelen.  Als u alles wilt selecteren, schakelt u het selectie vakje links van **naam** in. De menu opdracht **sjabloon exporteren** wordt alleen ingeschakeld wanneer u ten minste één resource hebt geselecteerd.
 
    ![Alle resources exporteren](./media/export-template-portal/select-all-resources.png)
 
@@ -96,7 +96,7 @@ Een resource exporteren:
 
 1. Vul de waarden in voor de nieuwe service.
 
-1. Nadat u de validatie hebt door gegeven, selecteert u **een sjabloon voor Automation downloaden**voordat u de implementatie start.
+1. Nadat u de validatie hebt door gegeven, selecteert u **een sjabloon voor Automation downloaden** voordat u de implementatie start.
 
    ![Een sjabloon downloaden](./media/export-template-portal/download-before-deployment.png)
 

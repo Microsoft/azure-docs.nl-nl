@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: kgremban
-ms.openlocfilehash: 7ab62b04f8bea76c7efb587665f87ccaf123da24
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: a7794bcdfa4f82698fdc5875bc94dcf52b70166e
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92108997"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185093"
 ---
 # <a name="install-or-uninstall-the-azure-iot-edge-runtime"></a>De runtime van Azure IoT Edge installeren of verwijderen
 
@@ -51,7 +51,7 @@ Bereid uw apparaat voor op toegang tot de micro soft-installatie pakketten.
      curl https://packages.microsoft.com/config/ubuntu/18.04/multiarch/prod.list > ./microsoft-prod.list
      ```
 
-   * **Raspbian stretch**:
+   * **Raspberry Pi OS stretch**:
 
      ```bash
      curl https://packages.microsoft.com/config/debian/stretch/multiarch/prod.list > ./microsoft-prod.list
@@ -100,7 +100,7 @@ Azure IoT Edge is afhankelijk van een met OCI compatibele container runtime. Voo
 
 # <a name="linux"></a>[Linux](#tab/linux)
 
-Pakket lijsten bijwerken op het apparaat.
+Pakketlijsten bijwerken op uw apparaat.
 
    ```bash
    sudo apt-get update
@@ -138,7 +138,7 @@ De stappen in deze sectie vertegenwoordigen het gebruikelijke proces voor het in
 
 # <a name="linux"></a>[Linux](#tab/linux)
 
-Pakket lijsten bijwerken op het apparaat.
+Pakketlijsten bijwerken op uw apparaat.
 
    ```bash
    sudo apt-get update

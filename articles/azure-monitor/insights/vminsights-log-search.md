@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/12/2020
-ms.openlocfilehash: 6b3fdf052ce7f0d6a5c3497aa1ac971d9249546a
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 118bdcb6929abfc162ff05e91f1621f087b6c50c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95015586"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186725"
 ---
 # <a name="how-to-query-logs-from-azure-monitor-for-vms"></a>Logboeken van Azure Monitor voor VM's opvragen
 
@@ -473,7 +473,6 @@ De prestatie meter items die momenteel zijn verzameld in de tabel *InsightsMetri
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Als u geen logboek query's in Azure Monitor kunt schrijven, raadpleegt u [hoe u log Analytics](../log-query/get-started-portal.md) in de Azure Portal gebruikt om logboek query's te schrijven.
+* Als u geen logboek query's in Azure Monitor kunt schrijven, raadpleegt u [hoe u log Analytics](../log-query/log-analytics-tutorial.md) in de Azure Portal gebruikt om logboek query's te schrijven.
 
-* Meer informatie over het [schrijven van zoek query's](/azure/azure-monitor/log-query/get-started-queries).
-
+* Meer informatie over het [schrijven van zoek query's](../log-query/get-started-queries.md).

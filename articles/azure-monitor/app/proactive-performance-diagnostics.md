@@ -4,12 +4,12 @@ description: Application Insights voert een slimme analyse uit van de telemetrie
 ms.topic: conceptual
 ms.date: 05/04/2017
 ms.reviewer: antonfr
-ms.openlocfilehash: c817e2c7f609bbbec52eff1b898a8d7c53209a28
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 28a32c714618a3b6b0c3126d8060295f134ddc7c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87321306"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186232"
 ---
 # <a name="smart-detection---performance-anomalies"></a>Slimme detectie-prestatie afwijkingen
 
@@ -175,11 +175,10 @@ Met deze diagnostische hulpprogram ma's kunt u de telemetrie van uw app inspecte
 
 * [Profiler](profiler.md) 
 * [fout opsporing voor moment opnamen](./snapshot-debugger.md)
-* [Analyse](../log-query/get-started-portal.md)
+* [Analyse](../log-query/log-analytics-tutorial.md)
 * [Slimme diagnostische gegevens over analyse](../log-query/log-query-overview.md)
 
 Slimme detecties zijn volledig automatisch. Maar misschien wilt u nog meer waarschuwingen instellen?
 
 * [Hand matig geconfigureerde metrische waarschuwingen](../platform/alerts-log.md)
 * [Webtests voor beschikbaarheid](./monitor-web-app-availability.md)
-

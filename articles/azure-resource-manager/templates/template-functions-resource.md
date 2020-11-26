@@ -3,12 +3,12 @@ title: 'Sjabloon functies: bronnen'
 description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon om waarden over resources op te halen.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: 0d118b80439579b0c8be45fdf1180b9a03b54c1d
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: b7bb726250c6d1ef8a597481b5f7e95f024a56d4
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95994129"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183988"
 ---
 # <a name="resource-functions-for-arm-templates"></a>Resource functies voor ARM-sjablonen
 
@@ -284,7 +284,7 @@ Het mogelijke gebruik van lijst * wordt weer gegeven in de volgende tabel.
 | Micro soft. Network/applicationSecurityGroups | listIpConfigurations |
 | Micro soft. notification hubs/naam ruimten/authorizationRules | [listkeys ophalen](/rest/api/notificationhubs/namespaces/listkeys) |
 | Micro soft. notification hubs/naam ruimten/notification hubs/authorizationRules | [listkeys ophalen](/rest/api/notificationhubs/notificationhubs/listkeys) |
-| Microsoft.OperationalInsights/workspaces | [orderverzamellijst](/rest/api/loganalytics/workspaces/list) |
+| Microsoft.OperationalInsights/workspaces | [list](/rest/api/loganalytics/workspaces/list) |
 | Microsoft.OperationalInsights/workspaces | Listkeys ophalen |
 | Micro soft. PolicyInsights/herstel bewerkingen | [listDeployments](/rest/api/policy-insights/remediations/listdeploymentsatresourcegroup) |
 | Micro soft. RedHatOpenShift/openShiftClusters | [listCredentials](/rest/api/openshift/openshiftclusters/listcredentials) |
@@ -313,15 +313,15 @@ Het mogelijke gebruik van lijst * wordt weer gegeven in de volgende tabel.
 | micro soft. Web/locaties | listwsdlinterfaces |
 | micro soft. Web/apimanagementaccounts/api's/Connections | listconnectionkeys |
 | micro soft. Web/apimanagementaccounts/api's/Connections | listsecrets |
-| micro soft. web/sites/back-ups | [orderverzamellijst](/rest/api/appservice/webapps/listbackups) |
-| Micro soft. web/sites/config | [orderverzamellijst](/rest/api/appservice/webapps/listconfigurations) |
+| micro soft. web/sites/back-ups | [list](/rest/api/appservice/webapps/listbackups) |
+| Micro soft. web/sites/config | [list](/rest/api/appservice/webapps/listconfigurations) |
 | micro soft. web/sites/functies | [listkeys ophalen](/rest/api/appservice/webapps/listfunctionkeys)
 | micro soft. web/sites/functies | [listsecrets](/rest/api/appservice/webapps/listfunctionsecrets) |
 | micro soft. web/sites/hybridconnectionnamespaces/relays | [listkeys ophalen](/rest/api/appservice/appserviceplans/listhybridconnectionkeys) |
 | micro soft. web/sites | [listsyncfunctiontriggerstatus](/rest/api/appservice/webapps/listsyncfunctiontriggers) |
 | micro soft. web/sites/sleuven/functies | [listsecrets](/rest/api/appservice/webapps/listfunctionsecretsslot) |
-| micro soft. web/sites/sleuven/back-ups | [orderverzamellijst](/rest/api/appservice/webapps/listbackupsslot) |
-| Micro soft. web/sites/sleuven/configuratie | [orderverzamellijst](/rest/api/appservice/webapps/listconfigurationsslot) |
+| micro soft. web/sites/sleuven/back-ups | [list](/rest/api/appservice/webapps/listbackupsslot) |
+| Micro soft. web/sites/sleuven/configuratie | [list](/rest/api/appservice/webapps/listconfigurationsslot) |
 | micro soft. web/sites/sleuven/functies | [listsecrets](/rest/api/appservice/webapps/listfunctionsecretsslot) |
 
 Als u wilt bepalen welke resource typen een lijst bewerking hebben, hebt u de volgende opties:
@@ -1030,7 +1030,7 @@ De eigenschap **managedBy** wordt alleen geretourneerd voor resource groepen die
 
 ### <a name="remarks"></a>Opmerkingen
 
-De `resourceGroup()` functie kan niet worden gebruikt in een sjabloon die is [geïmplementeerd op het abonnements niveau](deploy-to-subscription.md). Deze kan alleen worden gebruikt in sjablonen die zijn geïmplementeerd in een resource groep. U kunt de `resourceGroup()` functie gebruiken in een [gekoppelde of geneste sjabloon (met binnenste bereik)](linked-templates.md) die gericht is op een resource groep, zelfs wanneer de bovenliggende sjabloon wordt geïmplementeerd in het abonnement. In dat scenario wordt de gekoppelde of geneste sjabloon geïmplementeerd op het niveau van de resource groep. Zie [Azure-resources implementeren voor meer dan één abonnement of resource groep](cross-scope-deployment.md)voor meer informatie over het richten op een resource groep in een implementatie op abonnements niveau.
+De `resourceGroup()` functie kan niet worden gebruikt in een sjabloon die is [geïmplementeerd op het abonnements niveau](deploy-to-subscription.md). Deze kan alleen worden gebruikt in sjablonen die zijn geïmplementeerd in een resource groep. U kunt de `resourceGroup()` functie gebruiken in een [gekoppelde of geneste sjabloon (met binnenste bereik)](linked-templates.md) die gericht is op een resource groep, zelfs wanneer de bovenliggende sjabloon wordt geïmplementeerd in het abonnement. In dat scenario wordt de gekoppelde of geneste sjabloon geïmplementeerd op het niveau van de resource groep. Zie [Azure-resources implementeren voor meer dan één abonnement of resource groep](./deploy-to-resource-group.md)voor meer informatie over het richten op een resource groep in een implementatie op abonnements niveau.
 
 Een veelvoorkomend gebruik van de functie resourceGroup is het maken van resources op dezelfde locatie als de resource groep. In het volgende voor beeld wordt de locatie van de resource groep gebruikt voor een standaard parameter waarde.
 
@@ -1055,7 +1055,7 @@ param location string = resourceGroup().location
 
 U kunt ook de functie resourceGroup gebruiken om labels van de resource groep toe te passen op een resource. Zie [labels Toep assen op resource groep](../management/tag-resources.md#apply-tags-from-resource-group)voor meer informatie.
 
-Wanneer geneste sjablonen worden gebruikt voor het implementeren van meerdere resource groepen, kunt u het bereik opgeven voor de evaluatie van de functie resourceGroup. Zie [Azure-resources implementeren voor meer dan één abonnement of resource groep](cross-scope-deployment.md)voor meer informatie.
+Wanneer geneste sjablonen worden gebruikt voor het implementeren van meerdere resource groepen, kunt u het bereik opgeven voor de evaluatie van de functie resourceGroup. Zie [Azure-resources implementeren voor meer dan één abonnement of resource groep](./deploy-to-resource-group.md)voor meer informatie.
 
 ### <a name="resource-group-example"></a>Voor beeld van resource groep
 
@@ -1372,7 +1372,7 @@ De functie retourneert de volgende indeling:
 
 ### <a name="remarks"></a>Opmerkingen
 
-Wanneer geneste sjablonen worden gebruikt voor het implementeren van meerdere abonnementen, kunt u het bereik opgeven voor de evaluatie van de abonnements functie. Zie [Azure-resources implementeren voor meer dan één abonnement of resource groep](cross-scope-deployment.md)voor meer informatie.
+Wanneer geneste sjablonen worden gebruikt voor het implementeren van meerdere abonnementen, kunt u het bereik opgeven voor de evaluatie van de abonnements functie. Zie [Azure-resources implementeren voor meer dan één abonnement of resource groep](./deploy-to-resource-group.md)voor meer informatie.
 
 ### <a name="subscription-example"></a>Voor beeld van abonnement
 

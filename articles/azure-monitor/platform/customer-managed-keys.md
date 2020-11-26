@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 11/18/2020
-ms.openlocfilehash: 7bfd951d7cec27e0b8264aaabf9bc3a17875256a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 9715724fc0fbd25198dd3244215ac2c12638d2b8
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96000722"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185960"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Door de klant beheerde sleutel van Azure Monitor 
 
@@ -72,7 +72,7 @@ De volgende regels zijn van toepassing:
 1. Machtigingen verlenen aan uw Key Vault
 1. Log Analytics-werk ruimten koppelen
 
-Customer-Managed-sleutel configuratie wordt niet ondersteund in Azure Portal en het inrichten wordt uitgevoerd via [Power shell](https://docs.microsoft.com/powershell/module/az.operationalinsights/), [cli](https://docs.microsoft.com/cli/azure/monitor/log-analytics) of [rest](https://docs.microsoft.com/rest/api/loganalytics/) -aanvragen.
+Customer-Managed-sleutel configuratie wordt niet ondersteund in Azure Portal en het inrichten wordt uitgevoerd via [Power shell](/powershell/module/az.operationalinsights/), [cli](/cli/azure/monitor/log-analytics) of [rest](/rest/api/loganalytics/) -aanvragen.
 
 ### <a name="asynchronous-operations-and-status-check"></a>Asynchrone bewerkingen en status controle
 
@@ -107,7 +107,7 @@ Deze instellingen kunnen worden bijgewerkt in Key Vault via CLI en Power shell:
 
 ### <a name="create-cluster"></a>Cluster maken
 
-Volg de procedure die wordt geïllustreerd in het [artikel dedicated clusters](https://docs.microsoft.com/azure/azure-monitor/log-query/logs-dedicated-clusters#creating-a-cluster). 
+Volg de procedure die wordt geïllustreerd in het [artikel dedicated clusters](../log-query/logs-dedicated-clusters.md#creating-a-cluster). 
 
 > [!IMPORTANT]
 > Kopieer het antwoord en sla het op, omdat u de details in de volgende stappen nodig hebt.
@@ -212,7 +212,7 @@ U moet schrijf machtigingen hebben voor uw werk ruimte en cluster om deze bewerk
 
 Deze bewerking is asynchroon en kan enige tijd worden voltooid.
 
-Volg de procedure die wordt geïllustreerd in het [artikel dedicated clusters](https://docs.microsoft.com/azure/azure-monitor/log-query/logs-dedicated-clusters#link-a-workspace-to-the-cluster).
+Volg de procedure die wordt geïllustreerd in het [artikel dedicated clusters](../log-query/logs-dedicated-clusters.md#link-a-workspace-to-the-cluster).
 
 ## <a name="key-revocation"></a>Intrekking van sleutel
 

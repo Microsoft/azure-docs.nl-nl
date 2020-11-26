@@ -7,12 +7,12 @@ ms.date: 01/27/2020
 ms.topic: how-to
 ms.service: azure-supportability
 ms.assetid: ce37c848-ddd9-46ab-978e-6a1445728a3b
-ms.openlocfilehash: 7486cee351880dc0465a43b1259a5f07ef31c77b
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 550c011bb9f4aeb99a4dcb8da0e7ae2be4202788
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92173300"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185875"
 ---
 # <a name="quota-increase-requests"></a>Aanvragen voor quotumverhoging
 
@@ -24,7 +24,6 @@ U kunt een toename van de Vcpu's-quotum limiet voor de VM-serie aanvragen van Az
 Wanneer een nieuw abonnement wordt gemaakt, is de standaard regionale Vcpu's mogelijk niet gelijk aan de som van de standaard vCPU-quota voor alle afzonderlijke VM-reeksen. Dit feit kan resulteren in een abonnement met voldoende quota voor elke afzonderlijke VM-reeks die u wilt implementeren. Het kan voldoende quotum voor het totale regionale Vcpu's voor alle implementaties hebben. In dit geval moet u een aanvraag indienen om de limiet voor de totale regionale Vcpu's expliciet te verhogen. De totale limiet van de regionale Vcpu's kan niet groter zijn dan de som van goedgekeurde quota voor alle VM-reeksen voor de regio.
 
 > [!NOTE]
-> Als u de limiet of het quotum boven de standaard limiet wilt verhogen, kunt u gratis [een online klant ondersteuning-aanvraag openen](https://docs.microsoft.com/azure/azure-resource-manager/templates/error-resource-quota#solution).
+> Als u de limiet of het quotum boven de standaard limiet wilt verhogen, kunt u gratis [een online klant ondersteuning-aanvraag openen](../../azure-resource-manager/templates/error-resource-quota.md#solution).
 
 Zie voor meer informatie over quota's [vCPU quota's voor virtuele machines](../../virtual-machines/windows/quotas.md) en [Azure-abonnement en service limieten, quota's en beperkingen](../../azure-resource-manager/management/azure-subscription-service-limits.md).
-

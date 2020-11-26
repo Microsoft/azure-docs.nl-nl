@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 07/29/2019
-ms.openlocfilehash: 727792b110c3bc486d31214096be1934539f6d11
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 392f361f6fe487a15bdd63c2f3281ccc78b2f86d
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790301"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184413"
 ---
 # <a name="getting-started-with-single-databases-in-azure-sql-database"></a>Aan de slag met individuele databases in Azure SQL Database
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -41,7 +41,7 @@ U kunt PowerShell of Azure CLI gebruiken om uw database te maken, configureren e
 
 ## <a name="migrating-to-a-single-database-with-minimal-downtime"></a>Migreren naar een individuele database met minimale downtime
 
-Met de artikelen in deze quickstarts kunt u uw database snel maken of importeren in Azure met een `.bacpac`-bestand. `.bacpac`- en `.dacpac`-bestanden zijn echter ontworpen om snel databases te verplaatsen tussen verschillende versies van SQL Server en binnen Azure SQL of om continue integratie in uw DevOps-pijplijn te implementeren. Deze methode is echter niet ontworpen voor de migratie van uw productiedatabases met minimale downtime, omdat u moet stoppen met het toevoegen van nieuwe gegevens, wachten tot de export van de brondatabase naar een `.bacpac`-bestand voltooid is en vervolgens wachten totdat het importeren in Azure SQL Database voltooid is. Al dit wachten leidt tot downtime van uw toepassing, met name voor grote databases. Als u uw productiedatabase verplaatst, hebt u waarschijnlijk een betere migratiemethode nodig met minimale downtime. Om de database met minimale downtime te migreren, gebruikt u de [Database Migration Service (DMS)](../../dms/tutorial-sql-server-to-azure-sql.md?toc=%252fazure%252fsql-database%252ftoc.json). Dit wordt bereikt doordat DMS de aan de brondatabase aangebrachte wijzigingen stapsgewijs pusht naar de individuele database die wordt teruggezet. Op deze manier kunt u snel uw toepassing van de bron- naar de doeldatabase overzetten met minimale downtime.
+Met de artikelen in deze quickstarts kunt u uw database snel maken of importeren in Azure met een `.bacpac`-bestand. `.bacpac`- en `.dacpac`-bestanden zijn echter ontworpen om snel databases te verplaatsen tussen verschillende versies van SQL Server en binnen Azure SQL of om continue integratie in uw DevOps-pijplijn te implementeren. Deze methode is echter niet ontworpen voor de migratie van uw productiedatabases met minimale downtime, omdat u moet stoppen met het toevoegen van nieuwe gegevens, wachten tot de export van de brondatabase naar een `.bacpac`-bestand voltooid is en vervolgens wachten totdat het importeren in Azure SQL Database voltooid is. Al dit wachten leidt tot downtime van uw toepassing, met name voor grote databases. Als u uw productiedatabase verplaatst, hebt u waarschijnlijk een betere migratiemethode nodig met minimale downtime. Om de database met minimale downtime te migreren, gebruikt u de [Database Migration Service (DMS)](../../dms/tutorial-sql-server-to-azure-sql.md?toc=%2fazure%2fsql-database%2ftoc.json). Dit wordt bereikt doordat DMS de aan de brondatabase aangebrachte wijzigingen stapsgewijs pusht naar de individuele database die wordt teruggezet. Op deze manier kunt u snel uw toepassing van de bron- naar de doeldatabase overzetten met minimale downtime.
 
 ## <a name="hands-on-learning-modules"></a>Praktijkgerichte leermodules
 

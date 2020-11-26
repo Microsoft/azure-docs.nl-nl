@@ -10,12 +10,12 @@ ms.workload: identity
 ms.date: 09/28/2020
 ms.author: rolyon
 ms.custom: contperfq1, devx-track-azurecli
-ms.openlocfilehash: e23b6513751764063e3d8c85e063a24165d34648
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 94052b847f48a9fd676496601d85a8cb58a76944
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844877"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184294"
 ---
 # <a name="add-or-remove-azure-role-assignments-using-azure-cli"></a>Azure-roltoewijzingen toevoegen of verwijderen met behulp van Azure CLI
 
@@ -183,17 +183,7 @@ Hieronder ziet u een voor beeld van de uitvoer wanneer u de rol [Inzender voor v
     
 ## <a name="add-role-assignment-examples"></a>Voor beelden van functie toewijzing toevoegen
 
-### <a name="add-role-assignment-for-a-specific-blob-container-resource-scope"></a>Roltoewijzings toevoegen voor een specifiek BLOB-container resource bereik
-
-Hiermee wijst u de rol van [BLOB voor gegevens opslag](built-in-roles.md#storage-blob-data-contributor) toe aan een service-principal met object-id *55555555-5555-5555-5555-555555555555* in een resource bereik voor een BLOB-container met de naam *BLOB-01*.
-
-```azurecli
-az role assignment create --assignee "55555555-5555-5555-5555-555555555555" \
---role "Storage Blob Data Contributor" \
---scope "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Example-Storage-rg/providers/Microsoft.Storage/storageAccounts/storage12345/blobServices/default/containers/blob-container-01"
-```
-
-### <a name="add-role-assignment-for-all-blob-containers-in-a-storage-account-resource-scope"></a>Roltoewijzing voor alle BLOB-containers in een opslag account bron bereik toevoegen
+#### <a name="add-role-assignment-for-all-blob-containers-in-a-storage-account-resource-scope"></a>Roltoewijzing voor alle BLOB-containers in een opslag account bron bereik toevoegen
 
 Hiermee wijst u de rol van de BLOB voor het decoderen van gegevens over de [opslag](built-in-roles.md#storage-blob-data-contributor) van een opslag account met de naam *storage12345* toe aan een service-principal met object-id *55555555-5555-5555-5555-555555555555* .
 
@@ -203,7 +193,17 @@ az role assignment create --assignee "55555555-5555-5555-5555-555555555555" \
 --scope "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Example-Storage-rg/providers/Microsoft.Storage/storageAccounts/storage12345"
 ```
 
-### <a name="add-role-assignment-for-a-group-in-a-specific-virtual-network-resource-scope"></a>Roltoewijzing toevoegen voor een groep in een specifiek bron bereik voor een virtueel netwerk
+#### <a name="add-role-assignment-for-a-specific-blob-container-resource-scope"></a>Roltoewijzings toevoegen voor een specifiek BLOB-container resource bereik
+
+Hiermee wijst u de rol van [BLOB voor gegevens opslag](built-in-roles.md#storage-blob-data-contributor) toe aan een service-principal met object-id *55555555-5555-5555-5555-555555555555* in een resource bereik voor een BLOB-container met de naam *BLOB-01*.
+
+```azurecli
+az role assignment create --assignee "55555555-5555-5555-5555-555555555555" \
+--role "Storage Blob Data Contributor" \
+--scope "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Example-Storage-rg/providers/Microsoft.Storage/storageAccounts/storage12345/blobServices/default/containers/blob-container-01"
+```
+
+#### <a name="add-role-assignment-for-a-group-in-a-specific-virtual-network-resource-scope"></a>Roltoewijzing toevoegen voor een groep in een specifiek bron bereik voor een virtueel netwerk
 
 Wijst de rol [Inzender voor virtuele machines](built-in-roles.md#virtual-machine-contributor) toe aan de *team groep Anne Mack* met id 22222222-2222-2222-2222-222222222222 bij een resource bereik voor een virtueel netwerk met de naam *Pharma-Sales-project-Network*.
 
@@ -213,7 +213,7 @@ az role assignment create --assignee "22222222-2222-2222-2222-222222222222" \
 --scope "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/pharma-sales/providers/Microsoft.Network/virtualNetworks/pharma-sales-project-network"
 ```
 
-### <a name="add-role-assignment-for-a-user-at-a-resource-group-scope"></a>Roltoewijzing voor een gebruiker toevoegen aan een bereik van een resource groep
+#### <a name="add-role-assignment-for-a-user-at-a-resource-group-scope"></a>Roltoewijzing voor een gebruiker toevoegen aan een bereik van een resource groep
 
 Wijst de rol van [Inzender voor virtuele machines](built-in-roles.md#virtual-machine-contributor) toe aan *patlong \@ contoso.com* gebruiker op het *Pharma-Sales-* resource groeps bereik.
 
@@ -223,7 +223,7 @@ az role assignment create --assignee "patlong@contoso.com" \
 --resource-group "pharma-sales"
 ```
 
-### <a name="add-role-assignment-for-a-user-using-the-unique-role-id-at-a-resource-group-scope"></a>Roltoewijzing voor een gebruiker toevoegen met behulp van de unieke rol-ID in een resource groeps bereik
+#### <a name="add-role-assignment-for-a-user-using-the-unique-role-id-at-a-resource-group-scope"></a>Roltoewijzing voor een gebruiker toevoegen met behulp van de unieke rol-ID in een resource groeps bereik
 
 Er zijn een aantal keren dat een rolnaam kan worden gewijzigd, bijvoorbeeld:
 
@@ -240,7 +240,7 @@ az role assignment create --assignee "patlong@contoso.com" \
 --resource-group "pharma-sales"
 ```
 
-### <a name="add-role-assignment-for-all-blob-containers-at-a-resource-group-scope"></a>Roltoewijzing toevoegen voor alle BLOB-containers in een bereik van een resource groep
+#### <a name="add-role-assignment-for-all-blob-containers-at-a-resource-group-scope"></a>Roltoewijzing toevoegen voor alle BLOB-containers in een bereik van een resource groep
 
 Hiermee wordt de rol van [BLOB-gegevens](built-in-roles.md#storage-blob-data-contributor) van de opslag gebruiker toegewezen aan een service-principal met de object-id *55555555-5555-5555-5555-555555555555* in het *voor beeld-opslag-RG-* bron groeps bereik.
 
@@ -258,7 +258,7 @@ az role assignment create --assignee "55555555-5555-5555-5555-555555555555" \
 --scope "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/Example-Storage-rg"
 ```
 
-### <a name="add-role-assignment-for-an-application-at-a-resource-group-scope"></a>Roltoewijzing toevoegen voor een toepassing in een bereik van een resource groep
+#### <a name="add-role-assignment-for-an-application-at-a-resource-group-scope"></a>Roltoewijzing toevoegen voor een toepassing in een bereik van een resource groep
 
 Wijst de rol van [Inzender voor virtuele machines](built-in-roles.md#virtual-machine-contributor) toe aan een toepassing met Service-Principal object-id 44444444-4444-4444-4444-444444444444 op het *Pharma* van de resource groep.
 
@@ -268,7 +268,7 @@ az role assignment create --assignee "44444444-4444-4444-4444-444444444444" \
 --resource-group "pharma-sales"
 ```
 
-### <a name="add-role-assignment-for-a-new-service-principal-at-a-resource-group-scope"></a>Roltoewijzing toevoegen voor een nieuwe Service-Principal in een bereik van een resource groep
+#### <a name="add-role-assignment-for-a-new-service-principal-at-a-resource-group-scope"></a>Roltoewijzing toevoegen voor een nieuwe Service-Principal in een bereik van een resource groep
 
 Als u een nieuwe Service-Principal maakt en een rol onmiddellijk probeert toe te wijzen aan die Service-Principal, kan die roltoewijzing in sommige gevallen mislukken. Als u bijvoorbeeld een script gebruikt voor het maken van een nieuwe beheerde identiteit en vervolgens probeert een rol toe te wijzen aan die Service-Principal, kan de roltoewijzing mislukken. De oorzaak van deze fout is waarschijnlijk een replicatie vertraging. De service-principal wordt gemaakt in één regio. de roltoewijzing kan echter plaatsvinden in een andere regio waarvoor de Service-Principal nog niet is gerepliceerd. Als u dit scenario wilt aanpakken, geeft u het Principal-type op bij het maken van de roltoewijzing.
 
@@ -291,7 +291,7 @@ az role assignment create --assignee-object-id "33333333-3333-3333-3333-33333333
 --resource-group "pharma-sales"
 ```
 
-### <a name="add-role-assignment-for-a-user-at-a-subscription-scope"></a>Roltoewijzing voor een gebruiker toevoegen aan een abonnements bereik
+#### <a name="add-role-assignment-for-a-user-at-a-subscription-scope"></a>Roltoewijzing voor een gebruiker toevoegen aan een abonnements bereik
 
 Wijst de rol van [lezer](built-in-roles.md#reader) toe aan de *annm \@ example.com* -gebruiker bij een abonnements bereik.
 
@@ -301,7 +301,7 @@ az role assignment create --assignee "annm@example.com" \
 --subscription "00000000-0000-0000-0000-000000000000"
 ```
 
-### <a name="add-role-assignment-for-a-group-at-a-subscription-scope"></a>Roltoewijzing voor een groep toevoegen aan een abonnements bereik
+#### <a name="add-role-assignment-for-a-group-at-a-subscription-scope"></a>Roltoewijzing voor een groep toevoegen aan een abonnements bereik
 
 Wijst de rol van [lezer](built-in-roles.md#reader) toe aan de *team groep Anne Mack* met id 22222222-2222-2222-2222-222222222222 bij een abonnements bereik.
 
@@ -311,7 +311,7 @@ az role assignment create --assignee "22222222-2222-2222-2222-222222222222" \
 --subscription "00000000-0000-0000-0000-000000000000"
 ```
 
-### <a name="add-role-assignment-for-all-blob-containers-at-a-subscription-scope"></a>Roltoewijzing voor alle BLOB-containers toevoegen aan een abonnements bereik
+#### <a name="add-role-assignment-for-all-blob-containers-at-a-subscription-scope"></a>Roltoewijzing voor alle BLOB-containers toevoegen aan een abonnements bereik
 
 Wijst de rol [opslag-BLOB-gegevens lezer](built-in-roles.md#storage-blob-data-reader) toe aan de *Alain \@ example.com* -gebruiker bij een abonnements bereik.
 
@@ -321,7 +321,7 @@ az role assignment create --assignee "alain@example.com" \
 --scope "/subscriptions/00000000-0000-0000-0000-000000000000"
 ```
 
-### <a name="add-role-assignment-for-a-user-at-a-management-group-scope"></a>Roltoewijzing voor een gebruiker toevoegen aan een beheer groeps bereik
+#### <a name="add-role-assignment-for-a-user-at-a-management-group-scope"></a>Roltoewijzing voor een gebruiker toevoegen aan een beheer groeps bereik
 
 Wijst de rol [facturerings lezer](built-in-roles.md#billing-reader) toe aan de *Alain \@ example.com* -gebruiker in een bereik van een beheer groep.
 
@@ -331,7 +331,7 @@ az role assignment create --assignee "alain@example.com" \
 --scope "/providers/Microsoft.Management/managementGroups/marketing-group"
 ```
 
-## <a name="remove-role-assignment"></a>Roltoewijzing verwijderen
+## <a name="remove-a-role-assignment"></a>Roltoewijzing verwijderen
 
 Als u de toegang wilt verwijderen in azure RBAC, verwijdert u een roltoewijzing met behulp van [AZ Role Assignment delete](/cli/azure/role/assignment#az_role_assignment_delete).
 

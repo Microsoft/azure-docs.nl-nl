@@ -5,12 +5,12 @@ ms.date: 10/19/2020
 services: automation
 ms.topic: conceptual
 ms.custom: references_regions
-ms.openlocfilehash: bffd1cc0ce2a6a827c0bc708321a6bd2839aae2d
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 23e5293301a2fc311565d0c1c8ec5fd92bebe9b2
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207322"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183563"
 ---
 # <a name="supported-regions-for-linked-log-analytics-workspace"></a>Ondersteunde regio's voor gekoppelde Log Analytics-werkruimte
 
@@ -87,6 +87,6 @@ U kunt de werk ruimte ook ontkoppelen van uw Automation-account in de werk ruimt
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over Updatebeheer in [updatebeheer Overview](../update-management/update-mgmt-overview.md).
+* Meer informatie over Updatebeheer in [updatebeheer Overview](../update-management/overview.md).
 * Meer informatie over Wijzigingen bijhouden en inventaris in [Wijzigingen bijhouden en inventaris overzicht](../change-tracking/overview.md).
 * Meer informatie over VM's buiten bedrijfsuren starten/stoppen in [VM's buiten bedrijfsuren starten/stoppen Overview](../automation-solution-vm-management.md).

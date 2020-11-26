@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: tutorial
 ms.date: 09/24/2020
 ms.author: caya
-ms.openlocfilehash: 7a7a3669c5462adba3828bb1fd6c2fc9c4b3213c
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 9d1aa54ba1e3f3a589df8f694e340909c4e24ecc
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94566160"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183682"
 ---
 # <a name="tutorial-enable-application-gateway-ingress-controller-add-on-for-an-existing-aks-cluster-with-an-existing-application-gateway-through-azure-cli-preview"></a>Zelfstudie: De invoegtoepassing Application Gateway Ingress Controller inschakelen voor een bestaand AKS cluster met een bestaande Application Gateway via Azure CLI (preview)
 
@@ -35,16 +35,16 @@ In deze zelfstudie leert u het volgende:
 
  - Voor deze zelfstudie is versie 2.0.4 of hoger van de Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
- - Registreer de functievlag *AKS-IngressApplicationGatewayAddon* met behulp van de opdracht [az feature register](https://docs.microsoft.com/cli/azure/feature#az-feature-register) zoals getoond in het volgende voorbeeld. Zolang de invoegtoepassing nog in preview is, hoeft u dit slechts één keer per abonnement te doen:
+ - Registreer de functievlag *AKS-IngressApplicationGatewayAddon* met behulp van de opdracht [az feature register](/cli/azure/feature#az-feature-register) zoals getoond in het volgende voorbeeld. Zolang de invoegtoepassing nog in preview is, hoeft u dit slechts één keer per abonnement te doen:
      ```azurecli-interactive
      az feature register --name AKS-IngressApplicationGatewayAddon --namespace microsoft.containerservice
      ```
-    Het kan enkele minuten duren voordat de status Geregistreerd wordt weergegeven. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](https://docs.microsoft.com/cli/azure/feature#az-feature-register):
+    Het kan enkele minuten duren voordat de status Geregistreerd wordt weergegeven. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](/cli/azure/feature#az-feature-register):
      ```azurecli-interactive
      az feature list -o table --query "[?contains(name, 'microsoft.containerservice/AKS-IngressApplicationGatewayAddon')].{Name:name,State:properties.state}"
      ```
 
- - Wanneer u klaar bent, vernieuwt u de registratie van de resourceprovider Microsoft.ContainerService met behulp van de opdracht [az provider register](https://docs.microsoft.com/cli/azure/provider#az-provider-register):
+ - Wanneer u klaar bent, vernieuwt u de registratie van de resourceprovider Microsoft.ContainerService met behulp van de opdracht [az provider register](/cli/azure/provider#az-provider-register):
     ```azurecli-interactive
     az provider register --namespace Microsoft.ContainerService
     ```

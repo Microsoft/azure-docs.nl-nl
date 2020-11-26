@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/12/2020
-ms.openlocfilehash: f7980ca7bc6f23c383ea013c2b017b3bd61e2d25
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 410281ce67faf345539701389d4b03351d403b99
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842291"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186062"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>ITSM-producten/-services verbinden met IT-servicebeheerconnector
 Dit artikel bevat informatie over het configureren van de verbinding tussen uw ITSM-product/-service en de IT Service Management-connector (ITSMC) in Log Analytics om uw werk items centraal te beheren. Zie [overzicht](./itsmc-overview.md)voor meer informatie over ITSMC.
@@ -46,7 +46,7 @@ Zorg ervoor dat aan de volgende vereisten wordt voldaan:
 > [!NOTE]
 > 
 > - ITSM-connector kan alleen verbinding maken met ServiceNow-exemplaren op basis van de Cloud. On-premises ServiceNow-instanties worden momenteel niet ondersteund.
-> - Als u aangepaste [sjablonen](https://docs.microsoft.com/azure/azure-monitor/platform/itsmc-overview#template-definitions) wilt gebruiken als onderdeel van de acties, moet de para meter "ProjectionType" in de sjabloon SCSM worden toegewezen aan "IncidentManagement! System. WorkItem. incident. ProjectionType "
+> - Als u aangepaste [sjablonen](./itsmc-overview.md#template-definitions) wilt gebruiken als onderdeel van de acties, moet de para meter "ProjectionType" in de sjabloon SCSM worden toegewezen aan "IncidentManagement! System. WorkItem. incident. ProjectionType "
 
 ### <a name="connection-procedure"></a>Verbindings procedure
 
@@ -432,4 +432,3 @@ Als u de client-ID/sleutel voor Cher well wilt genereren, gebruikt u de volgende
 
 ## <a name="next-steps"></a>Volgende stappen
  - [ITSM-werk items maken op basis van Azure-waarschuwingen](./itsmc-overview.md#create-itsm-work-items-from-azure-alerts)
-

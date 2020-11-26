@@ -10,16 +10,16 @@ ms.subservice: metrics-advisor
 ms.topic: conceptual
 ms.date: 08/28/2020
 ms.author: mbullwin
-ms.openlocfilehash: de8d5d8e9fc5ce1df05cfd4c67ef146760e2c7e9
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: fb6eaf44967732d3a41ea92b0896540a40f694e3
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92043167"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184719"
 ---
 # <a name="how-to-manage-your-data-feeds"></a>Procedure: uw gegevensfeeds beheren
 
-Meer informatie over het beheren van uw onboarded gegevensfeeds in metrische gegevens Advisor. Dit artikel begeleidt u bij het beheren van gegevensfeeds in de monitor voor metrische gegevens.
+Meer informatie over het beheren van uw onboarded gegevensfeeds in metrische gegevens Advisor. In dit artikel vindt u instructies voor het beheren van gegevensfeeds in metrische gegevens Advisor.
 
 ## <a name="edit-a-data-feed"></a>Een gegevensfeed bewerken
 
@@ -89,7 +89,7 @@ Er zijn verschillende optionele geavanceerde instellingen voor het maken van een
     | :------------ | :--------------- |
     | Dagelijks, aangepast (>= 1 dag), wekelijks, maandelijks     | 30 minuten          |
     | Elk uur, aangepast (< 1 dag)      | 10 minuten |
-    | Jaarlijks | 1 dag          |
+    | Jaar | 1 dag          |
  
 ### <a name="fill-gap-when-detecting"></a>Tussen ruimte door voeren bij detecteren van: 
 
@@ -97,7 +97,7 @@ Er zijn verschillende optionele geavanceerde instellingen voor het maken van een
 > Deze instelling heeft geen invloed op de gegevens bron en heeft geen invloed op de gegevens diagrammen die worden weer gegeven op de portal. De automatische vulling vindt alleen plaats tijdens de afwijkings detectie.
 
 Sommige tijd reeksen zijn niet doorlopend. Wanneer er gegevens punten ontbreken, wordt de opgegeven waarde in de Advisor gebruikt voor het opvullen van deze voor afwijkende detectie voor een betere nauw keurigheid.
-U kunt kiezen uit de volgende opties: 
+De opties zijn: 
 
 * De waarde van het vorige werkelijke gegevens punt gebruiken. Dit wordt standaard gebruikt.
 * Een specifieke waarde gebruiken.
@@ -106,7 +106,7 @@ U kunt kiezen uit de volgende opties:
 
 Actie koppelings sjablonen worden gebruikt om vooraf bewaarde http-url's te definiëren, die bestaan uit de tijdelijke aanduidingen,,, `%datafeed` `%metric` `%timestamp` `%detect_config` en `%tagset` . U kunt de sjabloon gebruiken om te omleiden van een afwijkend of incident naar een specifieke URL om in te zoomen.
 
-:::image type="content" source="../media/action-link-template.png" alt-text="Backfill-gegevens invoer" lightbox="../media/action-link-template.png":::
+:::image type="content" source="../media/action-link-template.png" alt-text="Sjabloon actie koppeling" lightbox="../media/action-link-template.png":::
 
 Wanneer u de actie koppeling hebt ingevuld, klikt u op **Ga naar actie koppeling** op de actie optie van de incidenten lijst en klikt u op het snelmenu van de boom structuur. Vervang de tijdelijke aanduidingen in de sjabloon actie koppeling door de overeenkomstige waarden van de anomalie of het incident.
 

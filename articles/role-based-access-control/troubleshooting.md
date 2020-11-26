@@ -15,12 +15,12 @@ ms.date: 11/10/2020
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: seohack1, devx-track-azurecli
-ms.openlocfilehash: 53628f5aa0bc5ab5dedde5deb9950c7b13fb4bf6
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: e30af9522d7c8fa81c4d93e11d252aefc4426586
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94490743"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184260"
 ---
 # <a name="troubleshoot-azure-rbac"></a>Problemen met Azure RBAC oplossen
 
@@ -80,7 +80,7 @@ $ras.Count
 
 ## <a name="custom-roles-and-management-groups"></a>Aangepaste rollen en beheer groepen
 
-- U kunt slechts één beheer groep definiëren in `AssignableScopes` een aangepaste rol. Een beheer groep toevoegen aan `AssignableScopes` is momenteel beschikbaar als preview-versie.
+- U kunt slechts één beheer groep definiëren in `AssignableScopes` een aangepaste rol. Het toevoegen van een beheergroep aan `AssignableScopes` is momenteel in de preview-fase.
 - Aangepaste rollen met `DataActions` kunnen niet worden toegewezen in het bereik van de beheer groep.
 - Azure Resource Manager valideert niet het bestaan van de beheer groep in het toewijs bare bereik van de roldefinitie.
 - Zie [uw resources organiseren met Azure-beheer groepen](../governance/management-groups/overview.md#azure-custom-role-definition-and-assignment)voor meer informatie over aangepaste rollen en beheer groepen.
@@ -151,7 +151,7 @@ Ook als u deze roltoewijzing met behulp van Azure CLI vermeldt, ziet u mogelijk 
 }
 ```
 
-Het is geen probleem om deze roltoewijzingen te verlaten wanneer de beveiligingsprincipal is verwijderd. Als u wilt, kunt u deze roltoewijzingen verwijderen met behulp van stappen die vergelijkbaar zijn met andere roltoewijzingen. Zie [Azure Portal](role-assignments-portal.md#remove-a-role-assignment), [Azure POWERSHELL](role-assignments-powershell.md#remove-a-role-assignment)of [Azure cli](role-assignments-cli.md#remove-role-assignment) (Engelstalig) voor meer informatie over het verwijderen van roltoewijzingen
+Het is geen probleem om deze roltoewijzingen te verlaten wanneer de beveiligingsprincipal is verwijderd. Als u wilt, kunt u deze roltoewijzingen verwijderen met behulp van stappen die vergelijkbaar zijn met andere roltoewijzingen. Zie [Azure Portal](role-assignments-portal.md#remove-a-role-assignment), [Azure POWERSHELL](role-assignments-powershell.md#remove-a-role-assignment)of [Azure cli](role-assignments-cli.md#remove-a-role-assignment) (Engelstalig) voor meer informatie over het verwijderen van roltoewijzingen
 
 Als u in Power shell probeert de roltoewijzingen te verwijderen met de naam van de object-ID en roldefinitie en er meer dan één roltoewijzing overeenkomt met de para meters, wordt het volgende fout bericht weer gegeven: ' de opgegeven informatie is niet toegewezen aan een roltoewijzing '. In de volgende uitvoer ziet u een voor beeld van het fout bericht:
 
@@ -212,7 +212,7 @@ Voor deze items is **Schrijf** toegang vereist voor het **app service abonnement
 Deze items hebben **Schrijf** toegang tot de hele **resource groep** die uw website bevat:  
 
 * TLS/SSL-certificaten en bindingen (TLS/SSL-certificaten kunnen worden gedeeld tussen sites in dezelfde resource groep en geografische locatie)  
-* Waarschuwings regels  
+* Waarschuwingsregels  
 * Instellingen voor automatisch schalen  
 * Application Insights-onderdelen  
 * Webtests  
@@ -228,13 +228,13 @@ Voor deze items is **Schrijf** toegang tot de **virtuele machine** vereist:
 * Eindpunten  
 * IP-adressen  
 * Disks  
-* Extensies  
+* Uitbreidingen  
 
 Hiervoor is **Schrijf** toegang vereist voor zowel de **virtuele machine** als de **resource groep** (samen met de domein naam) waarin deze zich bevindt:  
 
 * Beschikbaarheidsset  
 * Set met gelijke taak verdeling  
-* Waarschuwings regels  
+* Waarschuwingsregels  
 
 Als u geen toegang hebt tot deze tegels, vraagt u uw beheerder om toegang tot de resource groep te krijgen.
 

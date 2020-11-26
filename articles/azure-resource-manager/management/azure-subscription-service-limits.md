@@ -3,12 +3,12 @@ title: Limieten en quota voor Azure-abonnementen
 description: Biedt een lijst met algemene Azure-abonnementen en service limieten, quota's en beperkingen. Dit artikel bevat informatie over het verhogen van de limieten en maximum waarden.
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: 54eb25e302d49be9e3ab1febeb5c636d267d7e4f
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 810d503f1abdc14ad2d255a89aebe7c10954a889
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94577835"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186198"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Azure-abonnements-en service limieten, quota's en beperkingen
 
@@ -96,7 +96,7 @@ Prijs categorieën bepalen de capaciteit en limieten van uw zoek service. Lagen 
 
 * **Gratis** multi tenant-service, gedeeld met andere Azure-abonnees, is bedoeld voor evaluatie-en kleine ontwikkelings projecten.
 * **Basic** biedt specifieke computer bronnen voor productie werkbelastingen op een kleinere schaal, met Maxi maal drie replica's voor Maxi maal beschik bare query werkbelastingen.
-* De **standaard** , waaronder S1, S2, S3 en S3 high density, is voor grotere productie workloads. Er zijn meerdere niveaus in de laag standaard, zodat u een resource configuratie kunt kiezen die het beste overeenkomt met uw werkbelasting profiel.
+* De **standaard**, waaronder S1, S2, S3 en S3 high density, is voor grotere productie workloads. Er zijn meerdere niveaus in de laag standaard, zodat u een resource configuratie kunt kiezen die het beste overeenkomt met uw werkbelasting profiel.
 
 **Limieten per abonnement**
 
@@ -398,7 +398,7 @@ Zie [grootten van virtuele machines](../../virtual-machines/sizes.md?toc=%2fazur
 
 #### <a name="disk-encryption-sets"></a>Schijf versleutelings sets
 
-Er is een limiet van 50 schijf versleutelings sets per regio, per abonnement. Zie de documentatie over versleuteling voor virtuele [Linux](../../virtual-machines/linux/disk-encryption.md#restrictions) -of [Windows](../../virtual-machines/windows/disk-encryption.md#restrictions) -machines voor meer informatie. Neem contact op met de ondersteuning van Azure als u het quotum wilt verhogen.
+Er is een limiet van 50 schijf versleutelings sets per regio, per abonnement. Zie de documentatie over versleuteling voor virtuele [Linux](../../virtual-machines/disk-encryption.md#restrictions) -of [Windows](../../virtual-machines/disk-encryption.md#restrictions) -machines voor meer informatie. Neem contact op met de ondersteuning van Azure als u het quotum wilt verhogen.
 
 ### <a name="managed-virtual-machine-disks"></a>Beheerde schijven van virtuele machines
 
@@ -442,7 +442,7 @@ Elk abonnement kent limieten voor het implementeren van resources met behulp van
 
 [!INCLUDE [virtual-machine-scale-sets-limits](../../../includes/azure-virtual-machine-scale-sets-limits.md)]
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 * [Meer informatie over Azure-limieten en toename](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)
 * [Grootten van virtuele machines en Cloud Services voor Azure](../../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)

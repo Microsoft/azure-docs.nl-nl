@@ -5,12 +5,12 @@ services: automation
 ms.date: 11/04/2020
 ms.topic: conceptual
 ms.custom: mvc
-ms.openlocfilehash: 1ed4ad3e1bae34b5007d13c7d092f46e972ac8a8
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 35feb136ca1fd7ea0be16a906f7d5193cf8570c7
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93347077"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183546"
 ---
 # <a name="enable-update-management-from-an-azure-vm"></a>Updatebeheer inschakelen vanaf een virtuele Azure-machine
 
@@ -39,7 +39,7 @@ Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
     ![Selecteer gast en host updates in het linkerdeel venster](media/enable-from-vm/select-guest-and-os-updates.png)
 
-4. U moet gemachtigd zijn `Microsoft.OperationalInsights/workspaces/read` om te bepalen of de virtuele machine is ingeschakeld voor een werk ruimte. Zie [machtigingen die nodig zijn om computers in te scha kelen](../automation-role-based-access-control.md#feature-setup-permissions)voor meer informatie over aanvullende machtigingen die vereist zijn. Zie [updatebeheer inschakelen vanuit een Automation-account](update-mgmt-enable-automation-account.md)voor meer informatie over het inschakelen van meerdere computers tegelijk.
+4. U moet gemachtigd zijn `Microsoft.OperationalInsights/workspaces/read` om te bepalen of de virtuele machine is ingeschakeld voor een werk ruimte. Zie [machtigingen die nodig zijn om computers in te scha kelen](../automation-role-based-access-control.md#feature-setup-permissions)voor meer informatie over aanvullende machtigingen die vereist zijn. Zie [updatebeheer inschakelen vanuit een Automation-account](./enable-from-automation-account.md)voor meer informatie over het inschakelen van meerdere computers tegelijk.
 
 5. Kies op de pagina Updatebeheer inschakelen de Log Analytics werk ruimte en het Automation-account en klik op **inschakelen** om updatebeheer in te scha kelen. Nadat u Updatebeheer hebt ingeschakeld, kan het ongeveer 15 minuten duren voordat u de update-evaluatie van de VM kunt bekijken.
 

@@ -6,19 +6,19 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/04/2020
-ms.openlocfilehash: 26d6bcb52099b15aeeb73a36a7144c14bdf481d6
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: ba27739ff9e9d992ffe6202629a1db19604b1409
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94496935"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186113"
 ---
 # <a name="overview-of-log-analytics-in-azure-monitor"></a>Overzicht van Log Analytics in Azure Monitor
 Log Analytics is een hulp programma in de Azure Portal dat wordt gebruikt om logboek query's met gegevens in Azure Monitor logboeken te bewerken en uit te voeren. U kunt een eenvoudige query schrijven die een set records retourneert en vervolgens functies van Log Analytics gebruiken om ze te sorteren, te filteren en te analyseren. U kunt ook een meer geavanceerde query schrijven om statistische analyses uit te voeren en de resultaten in een grafiek te visualiseren om een bepaalde trend te identificeren. Of u nu interactief met de resultaten van uw query's werkt of ze gebruikt met andere Azure Monitor functies, zoals waarschuwingen voor logboek query's of werkmappen, Log Analytics is het hulp programma dat u wilt gebruiken om ze te schrijven en te testen. 
 
 
 > [!TIP]
-> In dit artikel vindt u een beschrijving van Log Analytics en elk van de bijbehorende functies. Als u direct naar een zelf studie wilt gaan, raadpleegt u [log Analytics zelf studie](get-started-portal.md).
+> In dit artikel vindt u een beschrijving van Log Analytics en elk van de bijbehorende functies. Als u direct naar een zelf studie wilt gaan, raadpleegt u [log Analytics zelf studie](./log-analytics-tutorial.md).
 
 
 
@@ -59,7 +59,7 @@ Lijsten met tabellen in de werk ruimte, voorbeeld query's en filter opties voor 
 |:---|:---|
 | Tabellen | Een lijst met de tabellen die deel uitmaken van de geselecteerde scope. Selecteer **groeperen op** om de groepering van de tabellen te wijzigen. Beweeg de muis aanwijzer over een tabel naam om een dialoog venster weer te geven met een beschrijving van de tabel en opties om de bijbehorende documentatie weer te geven en om een voor beeld van de gegevens te bekijken. Een tabel uitvouwen om de kolommen ervan weer te geven. Dubbel klik op de naam van een tabel of kolom om deze aan de query toe te voegen. |
 | Query's | Lijst met voorbeeld query's die u in het query venster kunt openen. Dit is dezelfde lijst die wordt weer gegeven wanneer u Log Analytics opent. Selecteer **groeperen op** om de groepering van de query's te wijzigen. Dubbel klik op een query om deze toe te voegen aan het query venster of Beweeg de muis aanwijzer over andere opties. |
-| Filteren | Filter opties maken op basis van de resultaten van een query. Nadat u een query hebt uitgevoerd, worden de kolommen weer gegeven met verschillende waarden uit de resultaten. Selecteer een of meer waarden en klik vervolgens op **Toep assen & uitvoeren** om een **where** -opdracht toe te voegen aan de query en deze opnieuw uit te voeren. |
+| Filter | Filter opties maken op basis van de resultaten van een query. Nadat u een query hebt uitgevoerd, worden de kolommen weer gegeven met verschillende waarden uit de resultaten. Selecteer een of meer waarden en klik vervolgens op **Toep assen & uitvoeren** om een **where** -opdracht toe te voegen aan de query en deze opnieuw uit te voeren. |
 
 ### <a name="3-query-window"></a>3. het query venster
 In het query venster kunt u de query bewerken. Dit omvat IntelliSense voor KQL-opdrachten en kleur codering om de Lees baarheid te verbeteren. Klik **+** boven aan het venster om een ander tabblad te openen.
@@ -91,5 +91,5 @@ Hiermee worden de resultaten weer gegeven als een van meerdere beschik bare graf
 Als u al bekend bent met de Web-UI van Azure Data Explorer, moet Log Analytics vertrouwd zijn. Dat komt doordat het is gebouwd op Azure Data Explorer en gebruikmaakt van dezelfde Kusto query language (KQL). Log Analytics voegt functies toe die specifiek zijn voor Azure Monitor, zoals filteren op tijds bereik, en de mogelijkheid om een waarschuwings regel te maken op basis van een query. Beide hulpprogram ma's bevatten een Explorer waarmee u de structuur van beschik bare tabellen kunt scannen, maar de Azure Data Explorer-webinterface werkt voornamelijk samen met tabellen in azure Data Explorer-data bases terwijl Log Analytics werkt met tabellen in een Log Analytics-werk ruimte. 
 
 ## <a name="next-steps"></a>Volgende stappen
-- Door loop een [zelf studie over het gebruik van log Analytics in het Azure Portal](get-started-portal.md).
+- Door loop een [zelf studie over het gebruik van log Analytics in het Azure Portal](./log-analytics-tutorial.md).
 - Door loop een [zelf studie over het schrijven van query's](get-started-queries.md).

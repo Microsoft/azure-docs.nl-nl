@@ -6,18 +6,18 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: yajin1
-ms.openlocfilehash: 4b0b85b08c3f813440d556c61ba5e290ac200049
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 413bb88deac96c1ca12e8a9d25fc9cd16edf4616
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686760"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183954"
 ---
 # <a name="how-to-troubleshoot-connectivity-and-message-delivery-issues"></a>Problemen met connectiviteit en aflevering van berichten oplossen
 
 In deze richt lijnen worden verschillende manieren beschreven om zelf te diagnosticeren om de hoofd oorzaak direct te vinden of het probleem op te lossen. Het resultaat zelf diagnose is ook nuttig wanneer het aan ons meldt voor verdere onderzoek.
 
-Eerst moet u controleren vanaf de Azure Portal welke [ServiceMode](https://docs.microsoft.com/azure/azure-signalr/concept-service-mode) de Azure signalerings service (ook wel bekend als **ASRS**) is geconfigureerd.
+Eerst moet u controleren vanaf de Azure Portal welke [ServiceMode](./concept-service-mode.md) de Azure signalerings service (ook wel bekend als **ASRS**) is geconfigureerd.
 
 :::image type="content" source="./media/signalr-howto-troubleshoot-method/service-mode.png" alt-text="ServiceMode":::
 
@@ -49,13 +49,13 @@ Er zijn verschillende manieren om het probleem te verhelpen.
 
 ### <a name="how-to-view-the-traffic-and-narrow-down-the-issue"></a>Het verkeer weer geven en het probleem beperken
 
-Het vastleggen van het doorlopende verkeer is de meest rechtse manier om het probleem te verfijnen. U kunt de [netwerk traceringen](https://docs.microsoft.com/aspnet/core/signalr/diagnostics#network-traces) vastleggen met behulp van de opties die hieronder worden beschreven:
+Het vastleggen van het doorlopende verkeer is de meest rechtse manier om het probleem te verfijnen. U kunt de [netwerk traceringen](/aspnet/core/signalr/diagnostics#network-traces) vastleggen met behulp van de opties die hieronder worden beschreven:
 
-* [Een netwerk tracering met Fiddler verzamelen](https://docs.microsoft.com/aspnet/core/signalr/diagnostics#network-traces)
+* [Een netwerk tracering met Fiddler verzamelen](/aspnet/core/signalr/diagnostics#network-traces)
 
-* [Een netwerk tracering met tcpdump verzamelen](https://docs.microsoft.com/aspnet/core/signalr/diagnostics#collect-a-network-trace-with-tcpdump-macos-and-linux-only)
+* [Een netwerk tracering met tcpdump verzamelen](/aspnet/core/signalr/diagnostics#collect-a-network-trace-with-tcpdump-macos-and-linux-only)
 
-* [Een netwerk tracering in de browser verzamelen](https://docs.microsoft.com/aspnet/core/signalr/diagnostics#collect-a-network-trace-in-the-browser)
+* [Een netwerk tracering in de browser verzamelen](/aspnet/core/signalr/diagnostics#collect-a-network-trace-in-the-browser)
 
 <a name="view_traffic_client"></a>
 
@@ -63,7 +63,7 @@ Het vastleggen van het doorlopende verkeer is de meest rechtse manier om het pro
 
 Voor een permanente verbinding met een signaal sterkte wordt het eerst door gegeven `/negotiate` aan uw gehoste app-server en vervolgens omgeleid naar de Azure signalerings service. vervolgens wordt de werkelijke permanente verbinding met de Azure signalerings service tot stand gebracht. Raadpleeg de [interne Azure signalerings service](https://github.com/Azure/azure-signalr/blob/dev/docs/internal.md) voor de gedetailleerde stappen.
 
-Controleer aan de hand van de netwerk tracering aan de client zijde of de aanvraag is mislukt met de status code en welk antwoord en zoek naar oplossingen in de [gids voor probleem oplossing](https://docs.microsoft.com/azure/azure-signalr/signalr-howto-troubleshoot-guide).
+Controleer aan de hand van de netwerk tracering aan de client zijde of de aanvraag is mislukt met de status code en welk antwoord en zoek naar oplossingen in de [gids voor probleem oplossing](./signalr-howto-troubleshoot-guide.md).
 
 #### <a name="server-requests"></a>Server aanvragen
 
@@ -71,7 +71,7 @@ De signaal *Server* onderhoudt de *Server verbinding* tussen de *Server* en de *
 
 *Server verbinding* s kan worden verwijderd vanwege netwerk instabiliteit of regel matig onderhoud van de Azure signalerings service of de updates/onderhoud van uw gehoste app-server. Zolang de client-side het mechanisme voor ontkoppelen/opnieuw verbinden heeft, is de impact mini maal, net zoals elke client de verbinding verbreken heeft veroorzaakt.
 
-Bekijk de netwerk tracering aan de server zijde om de status code en fout details te achterhalen waarom de *Server verbinding* wordt verbroken of geweigerd door de *service* en zoek naar de hoofd oorzaak in de [probleemoplossings handleiding](https://docs.microsoft.com/azure/azure-signalr/signalr-howto-troubleshoot-guide).
+Bekijk de netwerk tracering aan de server zijde om de status code en fout details te achterhalen waarom de *Server verbinding* wordt verbroken of geweigerd door de *service* en zoek naar de hoofd oorzaak in de [probleemoplossings handleiding](./signalr-howto-troubleshoot-guide.md).
 
 
 ### <a name="how-to-add-logs"></a>Logboeken toevoegen
@@ -86,18 +86,18 @@ Logboek registratie aan de client zijde is precies hetzelfde als wanneer u een z
 
 ##### <a name="enable-client-side-logging-for-aspnet-core-signalr"></a>Logboek registratie aan client zijde inschakelen voor `ASP.NET Core SignalR`
 
-* [Java script-client logboek registratie](https://docs.microsoft.com/aspnet/core/signalr/diagnostics#javascript-client-logging)
+* [Java script-client logboek registratie](/aspnet/core/signalr/diagnostics#javascript-client-logging)
 
-* [.NET-client logboek registratie](https://docs.microsoft.com/aspnet/core/signalr/diagnostics#net-client-logging)
+* [.NET-client logboek registratie](/aspnet/core/signalr/diagnostics#net-client-logging)
 
 
 ##### <a name="enable-client-side-logging-for-aspnet-signalr"></a>Logboek registratie aan client zijde inschakelen voor `ASP.NET SignalR`
 
-* [.NET-client](https://docs.microsoft.com/aspnet/signalr/overview/testing-and-debugging/enabling-signalr-tracing#enabling-tracing-in-the-net-client-windows-desktop-apps)
+* [.NET-client](/aspnet/signalr/overview/testing-and-debugging/enabling-signalr-tracing#enabling-tracing-in-the-net-client-windows-desktop-apps)
 
-* [Tracering inschakelen in Windows Phone 8 clients](https://docs.microsoft.com/aspnet/signalr/overview/testing-and-debugging/enabling-signalr-tracing#enabling-tracing-in-windows-phone-8-clients)
+* [Tracering inschakelen in Windows Phone 8 clients](/aspnet/signalr/overview/testing-and-debugging/enabling-signalr-tracing#enabling-tracing-in-windows-phone-8-clients)
 
-* [Tracering inschakelen in de Java script-client](https://docs.microsoft.com/aspnet/signalr/overview/testing-and-debugging/enabling-signalr-tracing#enabling-tracing-in-the-javascript-client)
+* [Tracering inschakelen in de Java script-client](/aspnet/signalr/overview/testing-and-debugging/enabling-signalr-tracing#enabling-tracing-in-the-javascript-client)
 
 <a name="add_logs_server"></a>
 
@@ -105,7 +105,7 @@ Logboek registratie aan de client zijde is precies hetzelfde als wanneer u een z
 
 ##### <a name="enable-server-side-logging-for-aspnet-core-signalr"></a>Logboek registratie aan de server zijde inschakelen voor `ASP.NET Core SignalR`
 
-Logboek registratie aan de server zijde voor `ASP.NET Core SignalR` integreert met de `ILogger` [logboek registratie](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1&tabs=aspnetcore2x) op basis van het `ASP.NET Core` Framework. U kunt logboek registratie aan de server zijde inschakelen door gebruik te maken van `ConfigureLogging` een voorbeeld gebruik:
+Logboek registratie aan de server zijde voor `ASP.NET Core SignalR` integreert met de `ILogger` [logboek registratie](/aspnet/core/fundamentals/logging/?tabs=aspnetcore2x&view=aspnetcore-2.1) op basis van het `ASP.NET Core` Framework. U kunt logboek registratie aan de server zijde inschakelen door gebruik te maken van `ConfigureLogging` een voorbeeld gebruik:
 
 ```cs
 .ConfigureLogging((hostingContext, logging) =>
@@ -162,7 +162,7 @@ Controleer of er abnormale waarschuwings-en fout logboeken zijn geregistreerd.
 
 #### <a name="how-to-enable-logs-inside-azure-signalr-service"></a>Logboeken inschakelen in de Azure signalerings service
 
-U kunt ook [Diagnostische logboeken inschakelen](https://docs.microsoft.com/azure/azure-signalr/signalr-tutorial-diagnostic-logs) voor de Azure signalerings service. deze logboeken bevatten gedetailleerde informatie over elke verbinding die is verbonden met de Azure signalerings service.
+U kunt ook [Diagnostische logboeken inschakelen](./signalr-howto-diagnostic-logs.md) voor de Azure signalerings service. deze logboeken bevatten gedetailleerde informatie over elke verbinding die is verbonden met de Azure signalerings service.
 
 <a name="serverless_mode_tsg"></a>
 
@@ -188,13 +188,13 @@ U kunt de status-API voor de service status controleren.
 
 * Status code van antwoord:
   * 200: in orde.
-  * 503: uw service is niet in orde. U kunt:
+  * 503: uw service is niet in orde. U kunt het volgende doen:
     * Wacht enkele minuten op auto herstel.
     * Controleer of het IP-adres overeenkomt met de IP-adressen uit de portal.
     * Of start het exemplaar opnieuw.
     * Als alle bovenstaande opties niet werken, neemt u contact met ons op door een nieuwe ondersteunings aanvraag toe te voegen in Azure Portal.
 
-Meer informatie over [herstel na nood gevallen](https://docs.microsoft.com/azure/azure-signalr/signalr-concept-disaster-recovery).
+Meer informatie over [herstel na nood gevallen](./signalr-concept-disaster-recovery.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

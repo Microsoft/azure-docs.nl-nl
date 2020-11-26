@@ -6,28 +6,28 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 5/31/2019
 ms.subservice: alerts
-ms.openlocfilehash: 8081c60833c3c02d55ae66ca695ba106dba01450
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 89cec12804f6fd2b8a3885248c42646d6c6dbb13
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995077"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186555"
 ---
 # <a name="log-alerts-in-azure-monitor"></a>Waarschuwingen registreren in Azure Monitor
 
 ## <a name="overview"></a>Overzicht
 
-Logboek waarschuwingen zijn een van de waarschuwings typen die worden ondersteund in [Azure-waarschuwingen](./alerts-overview.md). Met logboek waarschuwingen kunnen gebruikers een [log Analytics](../log-query/get-started-portal.md) query gebruiken om resources te evalueren elke ingestelde frequentie, en wordt een waarschuwing gestart op basis van de resultaten. Regels kunnen een of meer acties activeren met behulp van [actie groepen](./action-groups.md).
+Logboek waarschuwingen zijn een van de waarschuwings typen die worden ondersteund in [Azure-waarschuwingen](./alerts-overview.md). Met logboek waarschuwingen kunnen gebruikers een [log Analytics](../log-query/log-analytics-tutorial.md) query gebruiken om resources te evalueren elke ingestelde frequentie, en wordt een waarschuwing gestart op basis van de resultaten. Regels kunnen een of meer acties activeren met behulp van [actie groepen](./action-groups.md).
 
 > [!NOTE]
-> Logboek gegevens van een [log Analytics-werk ruimte](../log-query/get-started-portal.md) kunnen worden verzonden naar de Azure monitor metrische gegevens opslag. Waarschuwingen voor metrische gegevens hebben een [ander gedrag](alerts-metric-overview.md), wat wenselijker is, afhankelijk van de data waarmee u werkt. Zie [metrische waarschuwingen voor logboeken](alerts-metric-logs.md)voor meer informatie over hoe en hoe u Logboeken kunt routeren naar metrische gegevens.
+> Logboek gegevens van een [log Analytics-werk ruimte](../log-query/log-analytics-tutorial.md) kunnen worden verzonden naar de Azure monitor metrische gegevens opslag. Waarschuwingen voor metrische gegevens hebben een [ander gedrag](alerts-metric-overview.md), wat wenselijker is, afhankelijk van de data waarmee u werkt. Zie [metrische waarschuwingen voor logboeken](alerts-metric-logs.md)voor meer informatie over hoe en hoe u Logboeken kunt routeren naar metrische gegevens.
 
 > [!NOTE]
 > Er zijn momenteel geen extra kosten verbonden aan de API-versie en de waarschuwingen over de `2020-05-01-preview` resource-georiënteerde Logboeken.  Prijzen voor functies die in de preview-versie zijn opgenomen, worden in de toekomst aangekondigd en er is een kennisgeving gegeven vóór het begin van de facturering. Als u ervoor kiest om door te gaan met het gebruik van de nieuwe API-versie en de waarschuwingen van resource gerichte logboeken na de kennisgevings periode, wordt u gefactureerd tegen het toepasselijke rente bedrag.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Logboek waarschuwingen voeren query's uit op Log Analytics gegevens. Eerst moet u beginnen met het [verzamelen van logboek gegevens](resource-logs.md) en het uitvoeren van een query op de logboek gegevens voor problemen. U kunt het [onderwerp voor beelden van waarschuwings query's](../log-query/saved-queries.md) in log Analytics gebruiken om te begrijpen wat u kunt detecteren of [aan de slag gaat met het schrijven van uw eigen query](../log-query/get-started-portal.md).
+Logboek waarschuwingen voeren query's uit op Log Analytics gegevens. Eerst moet u beginnen met het [verzamelen van logboek gegevens](resource-logs.md) en het uitvoeren van een query op de logboek gegevens voor problemen. U kunt het [onderwerp voor beelden van waarschuwings query's](../log-query/example-queries.md) in log Analytics gebruiken om te begrijpen wat u kunt detecteren of [aan de slag gaat met het schrijven van uw eigen query](../log-query/log-analytics-tutorial.md).
 
 Beheer van [Azure-bewaking](./roles-permissions-security.md) is een algemene rol die nodig is om logboek waarschuwingen te maken, te wijzigen en bij te werken. Er zijn ook toegangs rechten voor het uitvoeren van & voor de bron logboeken nodig. Gedeeltelijke toegang tot bron logboeken kan mislukken van query's of gedeeltelijke resultaten retour neren. Meer [informatie over het configureren van logboek waarschuwingen in azure](./alerts-log.md).
 
@@ -44,7 +44,7 @@ Definitie van de voor waarden voor logboek zoeken van regels wordt gestart vanaf
 In de volgende secties worden de verschillende para meters beschreven die u kunt gebruiken om de bovenstaande logica in te stellen.
 
 ### <a name="log-query"></a>Logboekquery
-De [log Analytics](../log-query/get-started-portal.md) query die wordt gebruikt om de regel te evalueren. De resultaten die door deze query worden geretourneerd, worden gebruikt om te bepalen of een waarschuwing moet worden geactiveerd. Het bereik van de query kan worden toegewezen aan:
+De [log Analytics](../log-query/log-analytics-tutorial.md) query die wordt gebruikt om de regel te evalueren. De resultaten die door deze query worden geretourneerd, worden gebruikt om te bepalen of een waarschuwing moet worden geactiveerd. Het bereik van de query kan worden toegewezen aan:
 
 - Een specifieke resource, zoals een virtuele machine.
 - Een at-schaal resource, zoals een abonnement of resource groep.
@@ -209,4 +209,3 @@ De prijs informatie bevindt zich op de [pagina met Azure monitor prijzen](https:
 * Informatie [over webhooks in logboek waarschuwingen in azure](alerts-log-webhook.md).
 * Meer informatie over [Azure-waarschuwingen](./alerts-overview.md).
 * Meer informatie over [log Analytics](../log-query/log-query-overview.md).
-

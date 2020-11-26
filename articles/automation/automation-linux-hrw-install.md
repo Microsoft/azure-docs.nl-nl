@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 11/23/2020
 ms.topic: conceptual
-ms.openlocfilehash: 07c04274829530942bab0e3267200f6524c4ddc7
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: 20683808c81b32560170b175edf1c37c332f47ad
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95793408"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183614"
 ---
 # <a name="deploy-a-linux-hybrid-runbook-worker"></a>Een Linux-Hybrid Runbook Worker implementeren
 
@@ -73,7 +73,7 @@ De minimale vereisten voor een Linux-systeem en gebruikers Hybrid Runbook Worker
 U kunt de werk computer toevoegen aan een Hybrid Runbook Worker groep in een van uw Automation-accounts. Voor computers die als host fungeren voor het systeem Hybrid Runbook worker die wordt beheerd door Updatebeheer, kunnen ze worden toegevoegd aan een Hybrid Runbook Worker groep. Maar u moet hetzelfde Automation-account gebruiken voor zowel Updatebeheer als het lidmaatschap van de Hybrid Runbook Worker groep.
 
 >[!NOTE]
->Azure Automation [updatebeheer](update-management/update-mgmt-overview.md) installeert automatisch het systeem Hybrid Runbook worker op een Azure-of niet-Azure-machine die is ingeschakeld voor updatebeheer. Deze werk nemer is echter niet geregistreerd met Hybrid Runbook Worker groepen in uw Automation-account. Als u uw runbooks op deze computers wilt uitvoeren, moet u deze toevoegen aan een Hybrid Runbook Worker groep. Volg stap 4 onder de sectie [een Linux-Hybrid Runbook worker installeren](#install-a-linux-hybrid-runbook-worker) om het toe te voegen aan een groep.
+>Azure Automation [updatebeheer](./update-management/overview.md) installeert automatisch het systeem Hybrid Runbook worker op een Azure-of niet-Azure-machine die is ingeschakeld voor updatebeheer. Deze werk nemer is echter niet geregistreerd met Hybrid Runbook Worker groepen in uw Automation-account. Als u uw runbooks op deze computers wilt uitvoeren, moet u deze toevoegen aan een Hybrid Runbook Worker groep. Volg stap 4 onder de sectie [een Linux-Hybrid Runbook worker installeren](#install-a-linux-hybrid-runbook-worker) om het toe te voegen aan een groep.
 
 ## <a name="supported-linux-hardening"></a>Ondersteunde Linux-beveiliging
 

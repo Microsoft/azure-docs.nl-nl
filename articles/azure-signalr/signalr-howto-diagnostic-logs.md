@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 12/17/2019
 ms.author: wanl
-ms.openlocfilehash: b0c1a91df30ee6a88f055dc47cfdef339e2ee2b2
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 5ad40ca051677ced0c6d8b5c35e8563272ff598f
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151063"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183971"
 ---
 # <a name="resource-logs-for-azure-signalr-service"></a>Resource logboeken voor de Azure signalerings service
 
@@ -31,7 +31,7 @@ U kunt resource logboeken voor de Azure signalerings service weer geven. Deze lo
 
 Bron logboeken zijn standaard uitgeschakeld. Voer de volgende stappen uit om resource Logboeken in te scha kelen:
 
-1. Klik in de [Azure Portal](https://portal.azure.com)onder **bewaking**op **Diagnostische instellingen**.
+1. Klik in de [Azure Portal](https://portal.azure.com)onder **bewaking** op **Diagnostische instellingen**.
 
     ![Deel venster navigatie naar Diagnostische instellingen](./media/signalr-tutorial-diagnostic-logs/diagnostic-settings-menu-item.png)
 
@@ -122,7 +122,7 @@ Ga als volgt te werk om resource logboeken weer te geven:
 
     ![Menu-item Log Analytics](./media/signalr-tutorial-diagnostic-logs/log-analytics-menu-item.png)
 
-2. Voer een `SignalRServiceDiagnosticLogs` tijds bereik in en selecteer dit om een query uit te voeren op resource Logboeken. Zie [aan de slag met log Analytics in azure monitor](../azure-monitor/log-query/get-started-portal.md) voor geavanceerde query's.
+2. Voer een `SignalRServiceDiagnosticLogs` tijds bereik in en selecteer dit om een query uit te voeren op resource Logboeken. Zie [aan de slag met log Analytics in azure monitor](../azure-monitor/log-query/log-analytics-tutorial.md) voor geavanceerde query's.
 
     ![Log Analytics van de query aanmelden](./media/signalr-tutorial-diagnostic-logs/query-log-in-log-analytics.png)
 
@@ -162,7 +162,7 @@ Het verschil tussen `ConnectionAborted` en is `ConnectionEnded` `ConnectionEnded
 
 De redenen voor afbreken worden weer gegeven in de volgende tabel:
 
-Reden | Beschrijving
+Reden | Description
 ------- | ------- 
 Limiet voor aantal verbindingen bereikt | Het aantal verbindingen heeft de limiet van uw huidige prijs categorie bereikt. Overweeg service-eenheid omhoog te schalen
 Toepassings server heeft de verbinding gesloten | App server activeert de Abortion. Het kan worden beschouwd als een verwacht Abortion
@@ -182,7 +182,7 @@ Als u 401 niet-geautoriseerde retour neren voor client aanvragen, controleert u 
 
 #### <a name="throttling"></a>Beperking
 
-Als u merkt dat u geen signalerings client verbindingen met de Azure signalerings service kunt instellen, controleert u de logboeken van uw bron. Als u `Connection count reaches limit` in resource logboek stuit, kunt u te veel verbindingen met de signaal service tot stand brengen, waardoor de limiet voor het aantal verbindingen is bereikt. U kunt uw signalerings service verg Roten of verkleinen. Als u `Message count reaches limit` in resource logboek stuit, betekent dit dat u de gratis laag gebruikt en kunt u de quota van berichten gebruiken. Als u meer berichten wilt verzenden, kunt u eventueel uw signalerings service wijzigen in de laag standaard om extra berichten te verzenden. Zie [prijzen van Azure signalerings Services](https://azure.microsoft.com/pricing/details/signalr-service/)voor meer informatie.
+Als u merkt dat u geen signalerings client verbindingen met de Azure signalerings service kunt instellen, controleert u de logboeken van uw bron. Als u `Connection count reaches limit` in resource logboek stuit, kunt u te veel verbindingen met de signaal service tot stand brengen, waardoor de limiet voor het aantal verbindingen is bereikt. U kunt uw signalerings service verg Roten of verkleinen. Als u `Message count reaches limit` in resource logboek stuit, betekent dit dat u de gratis laag gebruikt en kunt u de quota van berichten gebruiken. Als u meer berichten wilt verzenden, kunt u eventueel uw signalerings service wijzigen in de laag standaard om extra berichten te verzenden. Zie [prijzen van Azure signalerings Services](https://azure.microsoft.com/pricing/details/signalr-service/)voor meer informatie.
 
 ### <a name="get-help"></a>Hulp vragen
 

@@ -3,12 +3,12 @@ title: Ongeldige sjabloon fouten
 description: Hierin wordt beschreven hoe u fouten met ongeldige sjablonen oplost tijdens het implementeren van Azure Resource Manager sjablonen.
 ms.topic: troubleshooting
 ms.date: 05/22/2020
-ms.openlocfilehash: 3e68d4634d0092d05222348ca0db0116422faec3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ba19d3c4e72a765e2aaff7393915b77a80daf2ba
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87373807"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185790"
 ---
 # <a name="resolve-errors-for-invalid-template"></a>Fouten met een ongeldige sjabloon oplossen
 
@@ -130,7 +130,7 @@ Controleer de toegestane waarden in de sjabloon en geef er een op tijdens de imp
 
 ## <a name="solution-4---too-many-target-resource-groups"></a>Oplossing 4: te veel doel resource groepen
 
-Mogelijk ziet u deze fout in eerdere implementaties omdat u beperkt tot vijf doel resource groepen hebt in één implementatie. In mei 2020 is die limiet verhoogd naar 800 resource groepen. Zie [Azure-resources implementeren voor meer dan één abonnement of resource groep](cross-scope-deployment.md)voor meer informatie.
+Mogelijk ziet u deze fout in eerdere implementaties omdat u beperkt tot vijf doel resource groepen hebt in één implementatie. In mei 2020 is die limiet verhoogd naar 800 resource groepen. Zie [Azure-resources implementeren voor meer dan één abonnement of resource groep](./deploy-to-resource-group.md)voor meer informatie.
 
 <a id="circular-dependency"></a>
 

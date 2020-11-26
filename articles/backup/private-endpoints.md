@@ -4,11 +4,11 @@ description: Meer informatie over het proces van het maken van privé-eind punte
 ms.topic: conceptual
 ms.date: 05/07/2020
 ms.openlocfilehash: 0ca4e7a83e18ac72e25131d320737ce9578b1cf3
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92172236"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184741"
 ---
 # <a name="private-endpoints-for-azure-backup"></a>Privé-eind punten voor Azure Backup
 
@@ -73,11 +73,11 @@ Als u de vereiste privé-eind punten voor Azure Backup wilt maken, moet de kluis
 We raden u aan de rol **Inzender** voor deze drie resource groepen toe te kennen aan de kluis (beheerde identiteit). In de volgende stappen wordt beschreven hoe u dit doet voor een bepaalde resource groep (dit moet worden gedaan voor elk van de drie resource groepen):
 
 1. Ga naar de resource groep en navigeer naar **Access Control (IAM)** op de balk aan de linkerkant.
-1. Ga in **Access Control**naar **een roltoewijzing toevoegen**.
+1. Ga in **Access Control** naar **een roltoewijzing toevoegen**.
 
     ![Een roltoewijzing toevoegen](./media/private-endpoints/add-role-assignment.png)
 
-1. Kies in het deel venster **roltoewijzing toevoegen** de optie **Inzender** als **rol**en gebruik de **naam** van de kluis als de **Principal**. Selecteer uw kluis en selecteer **Opslaan** wanneer u klaar bent.
+1. Kies in het deel venster **roltoewijzing toevoegen** de optie **Inzender** als **rol** en gebruik de **naam** van de kluis als de **Principal**. Selecteer uw kluis en selecteer **Opslaan** wanneer u klaar bent.
 
     ![Rol en Principal kiezen](./media/private-endpoints/choose-role-and-principal.png)
 
@@ -93,7 +93,7 @@ In deze sectie wordt het proces voor het maken van een persoonlijk eind punt voo
 
     ![Zoeken naar persoonlijke koppeling](./media/private-endpoints/search-for-private-link.png)
 
-1. Selecteer **privé-eind punten**op de navigatie balk aan de linkerkant. Selecteer in het deel venster **privé-eind punten** **+ toevoegen** om te beginnen met het maken van een persoonlijk eind punt voor uw kluis.
+1. Selecteer **privé-eind punten** op de navigatie balk aan de linkerkant. Selecteer in het deel venster **privé-eind punten** **+ toevoegen** om te beginnen met het maken van een persoonlijk eind punt voor uw kluis.
 
     ![Persoonlijk eind punt toevoegen in persoonlijk koppelings centrum](./media/private-endpoints/add-private-endpoint.png)
 
@@ -103,7 +103,7 @@ In deze sectie wordt het proces voor het maken van een persoonlijk eind punt voo
 
         ![Basis details invullen](./media/private-endpoints/basic-details.png)
 
-    1. **Resource**: op dit tabblad moet u de Paas-resource vermelden waarvoor u de verbinding wilt maken. Selecteer **micro soft. Recovery Services/kluizen** van het resource type voor uw gewenste abonnement. Als u klaar bent, kiest u de naam van uw Recovery Services kluis als de **resource** en **AzureBackup** als de **subresource**van het doel.
+    1. **Resource**: op dit tabblad moet u de Paas-resource vermelden waarvoor u de verbinding wilt maken. Selecteer **micro soft. Recovery Services/kluizen** van het resource type voor uw gewenste abonnement. Als u klaar bent, kiest u de naam van uw Recovery Services kluis als de **resource** en **AzureBackup** als de **subresource** van het doel.
 
         ![Het tabblad resource invullen](./media/private-endpoints/resource-tab.png)
 
@@ -358,7 +358,7 @@ $privateEndpoint = New-AzPrivateEndpoint `
 
     `privateendpointconnectionid = {peName}.{vaultId}.backup.{guid}`
 
-1. Haal de **verbindings-id van het particuliere eind punt** (en de naam van het **persoonlijke eind**punt, waar nodig) van het antwoord op en vervang deze in de volgende JSON en Azure Resource Manager URI en probeer de status te wijzigen in goedgekeurd/afgewezen/losgekoppeld, zoals wordt weer gegeven in het voor beeld hieronder:
+1. Haal de **verbindings-id van het particuliere eind punt** (en de naam van het **persoonlijke eind** punt, waar nodig) van het antwoord op en vervang deze in de volgende JSON en Azure Resource Manager URI en probeer de status te wijzigen in goedgekeurd/afgewezen/losgekoppeld, zoals wordt weer gegeven in het voor beeld hieronder:
 
     ```rest
     armclient PUT /subscriptions/<subscriptionid>/resourceGroups/<rgname>/providers/Microsoft.RecoveryServices/Vaults/<vaultname>/privateEndpointConnections/<privateendpointconnectionid>?api-version=2020-02-02-preview @C:\<filepath>\BackupAdminApproval.json
@@ -387,7 +387,7 @@ $privateEndpoint = New-AzPrivateEndpoint `
 
 U moet drie particuliere DNS-zones maken en deze koppelen aan uw virtuele netwerk.
 
-| **Gebied**                                                     | **Service** |
+| **Zone**                                                     | **Service** |
 | ------------------------------------------------------------ | ----------- |
 | `privatelink.<geo>.backup.windowsazure.com`      | Backup      |
 | `privatelink.blob.core.windows.net`                            | Blob        |

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2019
-ms.openlocfilehash: e3a8e8b908c9d278654bfe992474811d6a9ddb86
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: d365b13ef8fb7ed9676bb00919315dc6fc9773ee
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91993704"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184583"
 ---
 # <a name="monitoring-azure-resources-with-azure-monitor"></a>Azure-resources bewaken met Azure Monitor
 Wanneer u belang rijke toepassingen en bedrijfs processen hebt die afhankelijk zijn van Azure-resources, wilt u deze resources controleren op hun Beschik baarheid, prestaties en werking. In dit artikel worden de bewakings gegevens beschreven die worden gegenereerd door Azure-resources en hoe u de functies van Azure Monitor kunt gebruiken om deze gegevens te analyseren en te waarschuwen.
@@ -57,7 +57,7 @@ Resources in azure genereren [Logboeken](../platform/data-platform-logs.md) en [
 - [Activiteiten logboek](../platform/platform-logs-overview.md) : biedt inzicht in de bewerkingen op elke Azure-resource in het abonnement van buiten (het beheer vlak), bijvoorbeeld het maken van een nieuwe resource of het starten van een virtuele machine. Hier vindt u informatie over de functies wat, wie en wanneer u schrijf bewerkingen (PUT, POST, DELETE) hebt uitgevoerd voor de resources in uw abonnement.
 
 
-## <a name="configuration-requirements"></a>Configuratie vereisten
+## <a name="configuration-requirements"></a>Configuratievereisten
 
 ### <a name="configure-monitoring"></a>Bewaking configureren
 Sommige bewakings gegevens worden automatisch verzameld, maar u moet mogelijk een configuratie uitvoeren, afhankelijk van uw vereisten. Zie de onderstaande informatie voor specifieke informatie voor elk type bewakings gegevens.
@@ -93,7 +93,7 @@ Veel services bevatten bewakingsgegevens op de pagina **Overzicht** als een snel
 
 
 ### <a name="insights-and-solutions"></a>Inzichten en oplossingen 
-Sommige services bieden nog meer hulp middelen dan de standaard functies van Azure Monitor. [Inzichten](./insights-overview.md) bieden een aangepaste bewakings ervaring die is gebaseerd op het Azure monitor gegevens platform en de standaard functies. [Oplossingen](./solutions.md) bieden vooraf gedefinieerde bewakings logica die is gebaseerd op Azure monitor Logboeken. 
+Sommige services bieden nog meer hulp middelen dan de standaard functies van Azure Monitor. [Inzichten](../monitor-reference.md) bieden een aangepaste bewakings ervaring die is gebaseerd op het Azure monitor gegevens platform en de standaard functies. [Oplossingen](./solutions.md) bieden vooraf gedefinieerde bewakings logica die is gebaseerd op Azure monitor Logboeken. 
 
 Als een service een Azure Monitor inzicht heeft, kunt u deze openen vanuit **bewaking** in elk resource menu. Toegang tot alle inzichten en oplossingen vanuit het **Azure monitor** menu.
 
@@ -119,7 +119,7 @@ Vermeldingen in het activiteiten logboek weer geven in de Azure Portal met het e
 ### <a name="azure-monitor-logs"></a>Azure Monitor-logboeken
 Met Azure Monitor logboeken worden logboeken en metrische gegevens van meerdere services en andere data bronnen voor analyse geconsolideerd met een krachtig query programma. Zoals hierboven beschreven, maakt u een diagnostische instelling voor het verzamelen van metrische gegevens van het platform, het activiteiten logboek en bron Logboeken in een Log Analytics-werk ruimte in Azure Monitor.
 
-Met [log Analytics](../log-query/get-started-portal.md) kunt u werken met [logboek query's](../log-query/log-query-overview.md). Dit is een krachtige functie van Azure monitor waarmee u een geavanceerde analyse van logboek gegevens kunt uitvoeren met behulp van een volledig aanbevolen query taal. Open Log Analytics van **Logboeken** in het **controle** menu voor een Azure-resource om te werken met logboek query's met behulp van de resource als [query bereik](../log-query/scope.md#query-scope). Zo kunt u gegevens analyseren over meerdere tabellen voor deze resource. Gebruik **Logboeken** in het menu Azure monitor om toegang te krijgen tot logboeken voor alle resources. 
+Met [log Analytics](../log-query/log-analytics-tutorial.md) kunt u werken met [logboek query's](../log-query/log-query-overview.md). Dit is een krachtige functie van Azure monitor waarmee u een geavanceerde analyse van logboek gegevens kunt uitvoeren met behulp van een volledig aanbevolen query taal. Open Log Analytics van **Logboeken** in het **controle** menu voor een Azure-resource om te werken met logboek query's met behulp van de resource als [query bereik](../log-query/scope.md#query-scope). Zo kunt u gegevens analyseren over meerdere tabellen voor deze resource. Gebruik **Logboeken** in het menu Azure monitor om toegang te krijgen tot logboeken voor alle resources. 
 
 - Zie aan de [slag met logboek query's in azure monitor](../log-query/get-started-queries.md) voor een zelf studie over het gebruik van de query taal die wordt gebruikt om logboek query's te schrijven.
 - Zie [Azure-resource logboeken verzamelen in log Analytics werk ruimte in azure monitor](../platform/resource-logs.md#send-to-log-analytics-workspace) voor informatie over hoe bron logboeken worden verzameld in azure monitor logboeken en Details over hoe u ze in een query kunt openen.

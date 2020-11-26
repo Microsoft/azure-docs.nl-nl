@@ -6,12 +6,12 @@ ms.author: lcozzens
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: 21a43a005b78c8916d06e97ca9d2ba21d5a585a3
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 56416009395ebf8270ad0fa8d141277424dd6d9a
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424332"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183461"
 ---
 # <a name="authentication"></a>Verificatie
 
@@ -23,4 +23,4 @@ Alle HTTP-aanvragen moeten worden geverifieerd. De volgende verificatie schema's
 
 ## <a name="azure-active-directory"></a>Azure Active Directory
 
-[Azure Active Directory-verificatie (Azure AD)](/azure/active-directory/authentication/overview-authentication) maakt gebruik van een Bearer-token dat is verkregen van Azure Active Directory om aanvragen te verifiëren. Meer informatie over hoe aanvragen die gebruikmaken van deze verificatie methode, kunt u vinden in de sectie over [Azure AD-autorisatie](./rest-api-authorization-azure-ad.md) .
+[Azure Active Directory-verificatie (Azure AD)](../active-directory/authentication/overview-authentication.md) maakt gebruik van een Bearer-token dat is verkregen van Azure Active Directory om aanvragen te verifiëren. Meer informatie over hoe aanvragen die gebruikmaken van deze verificatie methode, kunt u vinden in de sectie over [Azure AD-autorisatie](./rest-api-authorization-azure-ad.md) .

@@ -11,12 +11,12 @@ ms.workload: integration
 ms.topic: article
 ms.date: 04/20/2020
 ms.author: apimpm
-ms.openlocfilehash: c7f0e98b5ea2fdd13b1daa9fd9737998eb6cfaf1
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 466af29a3f073f73d4a0fc62d74709cd59f82425
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "96010211"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183784"
 ---
 # <a name="upgrade-and-scale-an-azure-api-management-instance"></a>Een Azure API Management-exemplaar bijwerken en schalen  
 
@@ -80,7 +80,7 @@ U kunt een upgrade en downgrade uitvoeren naar een wille keurige laag. Het bijwe
 Als u schaalt van of naar de Developer-laag, zal er downtime zijn. Anders is er geen downtime. 
 
 ## <a name="compute-isolation"></a>Reken isolatie
-Als uw beveiligings vereisten [reken isolatie](https://docs.microsoft.com/azure/azure-government/azure-secure-isolation-guidance#compute-isolation)bevatten, kunt u de **geïsoleerde** prijs categorie gebruiken. Deze laag zorgt ervoor dat de reken resources van een API Management service-exemplaar de gehele fysieke host verbruiken en het vereiste isolatie niveau bieden dat vereist is voor de ondersteuning van bijvoorbeeld het Amerikaanse Department of IL5-workloads. Als u toegang wilt krijgen tot de geïsoleerde laag, moet u [een ondersteunings ticket maken](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request). 
+Als uw beveiligings vereisten [reken isolatie](../azure-government/azure-secure-isolation-guidance.md#compute-isolation)bevatten, kunt u de **geïsoleerde** prijs categorie gebruiken. Deze laag zorgt ervoor dat de reken resources van een API Management service-exemplaar de gehele fysieke host verbruiken en het vereiste isolatie niveau bieden dat vereist is voor de ondersteuning van bijvoorbeeld het Amerikaanse Department of IL5-workloads. Als u toegang wilt krijgen tot de geïsoleerde laag, moet u [een ondersteunings ticket maken](../azure-portal/supportability/how-to-create-azure-support-request.md). 
 
 
 

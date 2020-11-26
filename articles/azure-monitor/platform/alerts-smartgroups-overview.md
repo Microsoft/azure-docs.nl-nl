@@ -4,12 +4,12 @@ description: Slimme groepen zijn aggregaties van waarschuwingen waarmee u waarsc
 ms.topic: conceptual
 ms.subservice: alerts
 ms.date: 05/15/2018
-ms.openlocfilehash: dff59ac207e6078a264d1350d24c9e6f4a461d78
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 743bd1a674c034cd6a0350f959289ac3ecb568de
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96012881"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186606"
 ---
 # <a name="smart-groups"></a>Slimme groepen
 
@@ -27,13 +27,13 @@ De status van een slimme groep is een vergelijkbaar concept met de waarschuwings
 
 De volgende statussen van de Smart Group worden ondersteund.
 
-| Status | Beschrijving |
+| Staat | Beschrijving |
 |:---|:---|
 | Nieuw | Het probleem is zojuist gedetecteerd en nog niet gecontroleerd. |
 | Bevestigd | Een beheerder heeft de slimme groep gecontroleerd en ermee begonnen. |
 | Gesloten | Het probleem is opgelost. Nadat een Smart-groep is gesloten, kunt u deze opnieuw openen door deze te wijzigen in een andere status. |
 
-[Meer informatie over het wijzigen van de status van uw slimme groep.](./alerts-managing-alert-states.md?toc=%252fazure%252fazure-monitor%252ftoc.json)
+[Meer informatie over het wijzigen van de status van uw slimme groep.](./alerts-managing-alert-states.md?toc=%2fazure%2fazure-monitor%2ftoc.json)
 
 > [!NOTE]
 >  Als u de status van een Smart groep wijzigt, wordt de status van de waarschuwingen voor afzonderlijke leden niet gewijzigd.
@@ -58,5 +58,5 @@ De naam van een Smart Group is de naam van de eerste waarschuwing. U kunt een sl
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Slimme groepen beheren](./alerts-managing-smart-groups.md?toc=%252fazure%252fazure-monitor%252ftoc.json)
-- [De status van de waarschuwing en de slimme groep wijzigen](./alerts-managing-alert-states.md?toc=%252fazure%252fazure-monitor%252ftoc.json)
+- [Slimme groepen beheren](./alerts-managing-smart-groups.md?toc=%2fazure%2fazure-monitor%2ftoc.json)
+- [De status van de waarschuwing en de slimme groep wijzigen](./alerts-managing-alert-states.md?toc=%2fazure%2fazure-monitor%2ftoc.json)

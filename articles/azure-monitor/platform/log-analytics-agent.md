@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 08/21/2020
-ms.openlocfilehash: c09b50272ce73fe084e84d49be7d9d81cbe725aa
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 8563f734db8524d6e90171bb2272723f14533055
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207135"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185926"
 ---
 # <a name="log-analytics-agent-overview"></a>Overzicht van Log Analytics-agent
 De Azure Log Analytics-agent verzamelt telemetrie van virtuele Windows-en Linux-machines in elke Cloud, on-premises machines en die worden bewaakt door [System Center Operations Manager](/system-center/scom/) en verzendt de verzamelde gegevens naar uw log Analytics-werk ruimte in azure monitor. De Log Analytics-agent biedt ook ondersteuning voor inzichten en andere services in Azure Monitor zoals [Azure monitor voor VM's](../insights/vminsights-enable-overview.md), [Azure Security Center](../../security-center/index.yml)en [Azure Automation](../../automation/automation-intro.md). Dit artikel bevat een gedetailleerd overzicht van de agent-, systeem-en netwerk vereisten en implementatie methoden.
@@ -39,7 +39,7 @@ Er zijn geen kosten verbonden aan Log Analytics-agent, maar mogelijk worden er k
 ## <a name="data-collected"></a>Verzamelde gegevens
 De volgende tabel bevat de typen gegevens die u kunt configureren voor het verzamelen van een Log Analytics werkruimte van alle verbonden agents. Zie [wat wordt bewaakt door Azure monitor?](../monitor-reference.md) voor een lijst met inzichten, oplossingen en andere oplossingen die gebruikmaken van de log Analytics-agent voor het verzamelen van andere soorten gegevens.
 
-| Gegevensbron | Beschrijving |
+| Gegevensbron | Description |
 | --- | --- |
 | [Windows-gebeurtenis logboeken](data-sources-windows-events.md) | Gegevens die worden verzonden naar het Windows-systeem voor gebeurtenis registratie. |
 | [Syslog](data-sources-syslog.md)                     | Informatie die wordt verzonden naar het systeem voor het registreren van Linux-gebeurtenissen. |
@@ -51,7 +51,7 @@ De volgende tabel bevat de typen gegevens die u kunt configureren voor het verza
 De Log Analytics agent verzendt gegevens naar een Log Analytics-werk ruimte in Azure Monitor. De Windows-agent kan multihomed zijn om gegevens te verzenden naar meerdere werk ruimten en System Center Operations Manager-beheer groepen. De Linux-agent kan slechts naar één bestemming verzenden, hetzij een werk ruimte of een beheer groep.
 
 ## <a name="other-services"></a>Overige services
-De agent voor Linux en Windows is niet alleen voor het maken van verbinding met Azure Monitor. Andere services, zoals Azure Security Center en Azure Sentinel, zijn afhankelijk van de agent en de gekoppelde Log Analytics-werk ruimte. De agent biedt ook ondersteuning voor Azure Automation voor het hosten van de Hybrid Runbook worker-rol en andere services, zoals [Wijzigingen bijhouden](../../automation/change-tracking/overview.md), [updatebeheer](../../automation/update-management/update-mgmt-overview.md)en [Azure Security Center](../../security-center/security-center-intro.md). Zie [Azure Automation Hybrid Runbook worker](../../automation/automation-hybrid-runbook-worker.md)voor meer informatie over de functie Hybrid Runbook Worker.  
+De agent voor Linux en Windows is niet alleen voor het maken van verbinding met Azure Monitor. Andere services, zoals Azure Security Center en Azure Sentinel, zijn afhankelijk van de agent en de gekoppelde Log Analytics-werk ruimte. De agent biedt ook ondersteuning voor Azure Automation voor het hosten van de Hybrid Runbook worker-rol en andere services, zoals [Wijzigingen bijhouden](../../automation/change-tracking/overview.md), [updatebeheer](../../automation/update-management/overview.md)en [Azure Security Center](../../security-center/security-center-introduction.md). Zie [Azure Automation Hybrid Runbook worker](../../automation/automation-hybrid-runbook-worker.md)voor meer informatie over de functie Hybrid Runbook Worker.  
 
 ## <a name="workspace-and-management-group-limitations"></a>Beperkingen van de werk ruimte en de beheer groep
 
@@ -111,10 +111,10 @@ De volgende tabel geeft een lijst van de proxy-en firewall configuratie gegevens
 
 |Agentresource|Poorten |Richting |HTTPS-controle overslaan|
 |------|---------|--------|--------|   
-|*.ods.opinsights.azure.com |Poort 443 |Uitgaand|Ja |  
-|*.oms.opinsights.azure.com |Poort 443 |Uitgaand|Ja |  
-|*.blob.core.windows.net |Poort 443 |Uitgaand|Ja |
-|*.azure-automation.net |Poort 443 |Uitgaand|Ja |
+|*.ods.opinsights.azure.com |Poort 443 |Uitgaand|Yes |  
+|*.oms.opinsights.azure.com |Poort 443 |Uitgaand|Yes |  
+|*.blob.core.windows.net |Poort 443 |Uitgaand|Yes |
+|*.azure-automation.net |Poort 443 |Uitgaand|Yes |
 
 Zie [Azure Government Management](../../azure-government/compare-azure-government-global-azure.md#azure-monitor)voor informatie over de firewall die vereist is voor Azure Government. 
 

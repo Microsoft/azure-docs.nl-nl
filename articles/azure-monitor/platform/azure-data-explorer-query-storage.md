@@ -7,12 +7,12 @@ ms.author: bwren
 ms.reviewer: bwren
 ms.topic: conceptual
 ms.date: 10/13/2020
-ms.openlocfilehash: 18ece47187e3f83277d7d925ad958d2ede7cb337
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 2735aec0f95f5e282bb1dffba6e4f42f966cf117
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030013"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186538"
 ---
 # <a name="query-exported-data-from-azure-monitor-using-azure-data-explorer-preview"></a>Gegevens van Azure Monitor geëxporteerd met Azure Data Explorer (preview-versie)
 Bij het exporteren van gegevens uit Azure Monitor naar een Azure Storage-account is een lage Bewaar periode en de mogelijkheid om Logboeken opnieuw toe te wijzen aan verschillende regio's. Gebruik Azure Data Explorer om query's uit te voeren op gegevens die zijn geëxporteerd uit uw Log Analytics-werk ruimten. Eenmaal geconfigureerd, worden ondersteunde tabellen die vanuit uw werk ruimten worden verzonden naar een Azure-opslag account, beschikbaar als gegevens bron voor Azure-Data Explorer.
@@ -118,7 +118,7 @@ In de volgende afbeelding ziet u een voor beeld van de uitvoer.
 
 :::image type="content" source="media/azure-data-explorer-query-storage/external-table-create-command-output.png" alt-text="Opdracht uitvoer ExternalTable maken.":::
 
-[![Voorbeeld uitvoer](media/azure-data-explorer-query-storage/external-table-create-command-output.png)](media/azure-data-explorer-query-storage/external-table-create-command-output.png#lightbox)
+[![Voorbeelduitvoer](media/azure-data-explorer-query-storage/external-table-create-command-output.png)](media/azure-data-explorer-query-storage/external-table-create-command-output.png#lightbox)
 
 >[!TIP]
 >* Kopieer, plak en voer vervolgens de uitvoer van het script in uw Azure Data Explorer-client hulpprogramma uit om de tabel en toewijzing te maken.
@@ -136,4 +136,4 @@ external_table("HBTest","map") | take 10000
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over het [schrijven van query's in Azure Data Explorer](https://docs.microsoft.com/azure/data-explorer/write-queries)
+- Meer informatie over het [schrijven van query's in Azure Data Explorer](/azure/data-explorer/write-queries)

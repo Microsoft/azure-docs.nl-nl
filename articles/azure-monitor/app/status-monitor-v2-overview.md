@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 09/16/2019
-ms.openlocfilehash: 0fa0b0d5e3620fc45a104ea31fd3bcbedd673da1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f0ce969a4ab016d6a036d33a0e9bf027bb580a20
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87318943"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186215"
 ---
 # <a name="deploy-azure-monitor-application-insights-agent-for-on-premises-servers"></a>Azure Monitor Application Insights-agent implementeren voor on-premises servers
 
@@ -67,7 +67,7 @@ Elk van deze opties wordt beschreven in de [gedetailleerde instructies](status-m
   - De cmdlet [Get-ApplicationInsightsMonitoringStatus](./status-monitor-v2-api-reference.md#get-applicationinsightsmonitoringstatus) kan worden gebruikt om te controleren of de activering is geslaagd.
   - We raden u aan [Live metrische gegevens](./live-stream.md) te gebruiken om snel te bepalen of uw app telemetrie verzendt.
 
-  - U kunt [log Analytics](../log-query/get-started-portal.md) ook gebruiken om alle Cloud rollen weer te geven die momenteel telemetrie verzenden:
+  - U kunt [log Analytics](../log-query/log-analytics-tutorial.md) ook gebruiken om alle Cloud rollen weer te geven die momenteel telemetrie verzenden:
       ```Kusto
       union * | summarize count() by cloud_RoleName, cloud_RoleInstance
       ```
@@ -86,4 +86,3 @@ Meer telemetrie toevoegen:
 * [Maak webtests](monitor-web-app-availability.md) om ervoor te zorgen dat uw site actief blijft.
 * [Voeg de telemetrie van de webclient](./javascript.md) toe om uitzonde ringen van webpagina code te bekijken en tracerings aanroepen in te scha kelen.
 * [Voeg de Application INSIGHTS SDK toe aan uw code](./asp-net.md) zodat u tracerings-en logboek aanroepen kunt invoegen.
-

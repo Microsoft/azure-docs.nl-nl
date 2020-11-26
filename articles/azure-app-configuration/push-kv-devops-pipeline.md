@@ -7,12 +7,12 @@ ms.service: azure-app-configuration
 ms.topic: how-to
 ms.date: 07/27/2020
 ms.author: lcozzens
-ms.openlocfilehash: b2b903f259fdd2564fbcaed5eb0a750edf9c06e2
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 936be917d5b494c9d71386440c711ef6c29ffb45
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075872"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183495"
 ---
 # <a name="push-settings-to-app-configuration-with-azure-pipelines"></a>Instellingen pushen naar app-configuratie met Azure-pijp lijnen
 
@@ -23,7 +23,7 @@ Met de [Push taak configuratie-Azure-app](https://marketplace.visualstudio.com/i
 - Azure-abonnement: [u kunt een gratis abonnement nemen](https://azure.microsoft.com/free/)
 - Bron van de app-configuratie: Maak een gratis versie in de [Azure Portal](https://portal.azure.com).
 - Azure DevOps-project: [Maak er een gratis](https://go.microsoft.com/fwlink/?LinkId=2014881)
-- Azure-app-configuratie push taak: down load gratis vanuit [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AzureAppConfiguration.azure-app-configuration-task-push#:~:text=Navigate%20to%20the%20Tasks%20tab,the%20Azure%20App%20Configuration%20instance.).
+- Azure-app-configuratie push taak: down load gratis vanuit [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AzureAppConfiguration.azure-app-configuration-task-push).
 
 ## <a name="create-a-service-connection"></a>Een service verbinding maken
 
@@ -48,15 +48,15 @@ Wijs de juiste toewijzingen van de functie app-configuratie toe aan de referenti
 
 1. Navigeer naar de configuratie Store van uw doel-app. 
 1. Selecteer aan de linkerkant **toegangs beheer (IAM)**.
-1. Selecteer aan de bovenkant **+** **roltoewijzing**toevoegen en kiezen.
-1. Selecteer onder **rol**de **eigenaar van de app-configuratie gegevens**. Met deze rol kan de taak lezen uit en schrijven naar de app-configuratie opslag. 
+1. Selecteer aan de bovenkant **+** **roltoewijzing** toevoegen en kiezen.
+1. Selecteer onder **rol** de **eigenaar van de app-configuratie gegevens**. Met deze rol kan de taak lezen uit en schrijven naar de app-configuratie opslag. 
 1. Selecteer de service-principal die is gekoppeld aan de service verbinding die u hebt gemaakt in de vorige sectie.
   
 ## <a name="use-in-builds"></a>Gebruiken in builds
 
 Deze sectie bevat informatie over het gebruik van de Azure-app configuratie push taak in een Azure DevOps build-pijp lijn.
 
-1. Ga naar de pagina voor het bouwen van de pijp lijn door te klikken op **pijp**lijnen  >  **pijp lijnen**. Documentatie voor Build-pijp lijnen vindt u [hier](/azure/devops/pipelines/create-first-pipeline?tabs=tfs-2018-2&view=azure-devops).
+1. Ga naar de pagina voor het bouwen van de pijp lijn door te klikken op **pijp** lijnen  >  **pijp lijnen**. Documentatie voor Build-pijp lijnen vindt u [hier](/azure/devops/pipelines/create-first-pipeline?tabs=tfs-2018-2&view=azure-devops).
       - Als u een nieuwe build-pijp lijn maakt, selecteert u de optie **assistent weer geven** aan de rechter kant van de pijp lijn en zoekt u naar de **Azure-app push** taak voor de configuratie.
       - Als u een bestaande build-pijp lijn gebruikt, navigeert u naar het tabblad **taken** bij het bewerken van de pijp lijn en zoekt u naar de push taak voor de **Azure-app-configuratie** .
 2. Configureer de vereiste para meters voor de taak om de sleutel waarden van het configuratie bestand naar de app-configuratie opslag te pushen. De para meter **pad naar configuratie bestand** begint bij de hoofdmap van de bestands opslagplaats.
@@ -66,7 +66,7 @@ Deze sectie bevat informatie over het gebruik van de Azure-app configuratie push
 
 Deze sectie bevat informatie over het gebruik van de Azure-app configuratie push taak in een Azure DevOps-release pijplijn.
 
-1. Navigeer naar de pagina release pijplijn door **pijp lijnen**te selecteren  >  **Releases**. Documentatie voor release pijplijnen vindt u [hier](/azure/devops/pipelines/release?view=azure-devops).
+1. Navigeer naar de pagina release pijplijn door **pijp lijnen** te selecteren  >  **Releases**. Documentatie voor release pijplijnen vindt u [hier](/azure/devops/pipelines/release?view=azure-devops).
 1. Kies een bestaande release pijplijn. Als u er nog geen hebt, selecteert u **+ Nieuw** om een nieuw item te maken.
 1. Selecteer de knop **bewerken** in de rechter bovenhoek om de release pijplijn te bewerken.
 1. Kies het **stadium** om de taak toe te voegen. Meer informatie over de stadia vindt u [hier](/azure/devops/pipelines/release/environments?view=azure-devops).
@@ -87,7 +87,7 @@ De volgende para meters worden gebruikt door de taak app-configuratie push:
 - **Label**: een teken reeks die wordt toegevoegd aan elke sleutel waarde als het label in de app-configuratie opslag.
 - **Inhouds type**: een teken reeks die wordt toegevoegd aan elke sleutel waarde als het inhouds type in de app-configuratie opslag.
 - **Tags**: een JSON-object in de indeling van `{"tag1":"val1", "tag2":"val2"}` , waarmee Tags worden gedefinieerd die worden toegevoegd aan elke sleutel waarde die wordt gepusht naar de app-configuratie opslag.
-- **Verwijder alle andere Key-Values in de Store met het opgegeven voor voegsel en label: de**standaard waarde is **uitgeschakeld**.
+- **Verwijder alle andere Key-Values in de Store met het opgegeven voor voegsel en label: de** standaard waarde is **uitgeschakeld**.
   - **Ingeschakeld**: Hiermee verwijdert u alle sleutel waarden in de app-configuratie opslag die overeenkomen met het opgegeven voor voegsel en label voordat u nieuwe sleutel waarden uit het configuratie bestand pusht.
   - **Uitgeschakeld**: Hiermee worden alle sleutel waarden van het configuratie bestand naar de app-configuratie opslag gepusht en blijven alle andere in de app-configuratie Store intact.
 

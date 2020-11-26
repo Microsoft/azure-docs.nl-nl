@@ -16,12 +16,12 @@ ms.date: 07/27/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 224ccaeace91288171db42d2b8b8cf8c21a352e0
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 99da9b787bfe06bece8b8dafdafc257336dddf63
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94652515"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96176185"
 ---
 # <a name="troubleshoot-azure-active-directory-pass-through-authentication"></a>Problemen met Pass Through-verificatie in Azure Active Directory oplossen
 
@@ -72,7 +72,7 @@ U kunt controleren of dit het probleem is door eerst te testen of de Pass-Throug
  ``` 
 4. Wanneer u wordt gevraagd om referenties in te voeren, voert u dezelfde gebruikers naam en hetzelfde wacht woord in als voor aanmelding bij ( https://login.microsoftonline.com) .
 
-Als u dezelfde gebruikers naam en hetzelfde wacht woord krijgt, betekent dit dat de Pass-Through-verificatie agent correct werkt en het probleem mogelijk is dat de on-premises UPN niet routeerbaar is. Zie de [alternatieve aanmeldings-id configureren]( /windows-server/identity/ad-fs/operations/configuring-alternate-login-id#:~:text=%20Configuring%20Alternate%20Login%20ID,See%20Also.%20%20More)voor meer informatie.
+Als u dezelfde gebruikers naam en hetzelfde wacht woord krijgt, betekent dit dat de Pass-Through-verificatie agent correct werkt en het probleem mogelijk is dat de on-premises UPN niet routeerbaar is. Zie de [alternatieve aanmeldings-id configureren](/windows-server/identity/ad-fs/operations/configuring-alternate-login-id)voor meer informatie.
 
 > [!IMPORTANT]
 > Als de Azure AD Connect server geen lid is van een domein, wordt een vereiste in [Azure AD Connect:](./how-to-connect-install-prerequisites.md#installation-prerequisites)vereisten, het ongeldige probleem met de gebruikers naam en het wacht woord.

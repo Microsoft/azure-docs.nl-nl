@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 07/09/2020
 ms.author: joflore
-ms.openlocfilehash: 02c4679016ea80a4ac8bb53b502292945cbe9d7b
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 5d19cddc82d9fb092887c5cdeba36b8ab7127f94
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91967066"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96175131"
 ---
 # <a name="review-security-audit-events-in-azure-active-directory-domain-services-using-azure-monitor-workbooks"></a>Beveiligings controle gebeurtenissen in Azure Active Directory Domain Services controleren met behulp van Azure Monitor werkmappen
 
@@ -91,7 +91,7 @@ Voer de volgende stappen uit om toegang te krijgen tot de werkmap sjabloon voor 
 
     Kies een **tijds bereik**, bijvoorbeeld de *laatste 30 dagen*, en hoe de **tegel weergave** de gegevens moet vertegenwoordigen.
 
-    U kunt filteren op de **gebruikers naam**van het account, zoals *Felix*, zoals wordt weer gegeven in het volgende voorbeeld rapport:
+    U kunt filteren op de **gebruikers naam** van het account, zoals *Felix*, zoals wordt weer gegeven in het volgende voorbeeld rapport:
 
     [![Account activiteit rapport in Azure Monitor-werkmappen.](./media/use-azure-monitor-workbooks/account-activity-report-cropped.png)](./media/use-azure-monitor-workbooks/account-activity-report.png#lightbox)
 
@@ -122,5 +122,5 @@ Voor problemen met gebruikers leert u hoe u problemen met [account aanmelding][t
 [password-policy]: password-policy.md
 [troubleshoot-sign-in]: troubleshoot-sign-in.md
 [troubleshoot-account-lockout]: troubleshoot-account-lockout.md
-[azure-monitor-queries]: ../azure-monitor/log-query/query-language.md
+[azure-monitor-queries]: /azure/data-explorer/kusto/query/
 [kusto-queries]: /azure/kusto/query/tutorial?pivots=azuredataexplorer

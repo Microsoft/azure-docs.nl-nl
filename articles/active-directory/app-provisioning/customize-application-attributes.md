@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/10/2020
 ms.author: kenwith
-ms.openlocfilehash: f65fb37a4cc6640bc998af1c56e7852cccaba234
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 5f6e5de61c9f43d5958e68c545105c4373996f7c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94955512"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96175063"
 ---
 # <a name="tutorial---customize-user-provisioning-attribute-mappings-for-saas-applications-in-azure-active-directory"></a>Zelfstudie - Kenmerktoewijzingen voor het inrichten van gebruikers aanpassen voor SaaS-toepassingen in Azure Active Directory
 
@@ -239,7 +239,7 @@ Volg de onderstaande stappen om rollen voor een gebruiker in te richten bij uw t
    }
    ]
    ```  
-De aanvragen voor PATCH en POST hebben een verschillende indeling. Om ervoor te zorgen dat POST en PATCH in dezelfde indeling worden verzonden, kunt u de functievlag gebruiken die [hier](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-config-problem-scim-compatibility#flags-to-alter-the-scim-behavior) wordt beschreven. 
+De aanvragen voor PATCH en POST hebben een verschillende indeling. Om ervoor te zorgen dat POST en PATCH in dezelfde indeling worden verzonden, kunt u de functievlag gebruiken die [hier](./application-provisioning-config-problem-scim-compatibility.md#flags-to-alter-the-scim-behavior) wordt beschreven. 
 
 - **AppRoleAssignmentsComplex** 
   - **Wanneer gebruiken**: Gebruik de expressie AppRoleAssignmentsComplex om meerdere rollen in te richten voor een gebruiker. 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/17/2019
 ms.author: kenwith
 ms.reviewer: arvindha, celested
-ms.openlocfilehash: 010e2a206ef08677651572c274cfc38fd516ecc9
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: e741bd6c87ea32b0d92b1dd53112a1bed3e4cd38
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93041115"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96174914"
 ---
 # <a name="plan-an-automatic-user-provisioning-deployment"></a>Implementatie van een automatische gebruikersinrichting plannen
 
@@ -34,13 +34,13 @@ Gebruikers inrichten maakt een basis voor de voortdurende identiteits bestuur en
 
 De belangrijkste voor delen van het inschakelen van automatische gebruikers inrichting zijn:
 
-* **Verhoogde productiviteit** . U kunt gebruikers identiteiten in SaaS-toepassingen beheren met één gebruikers inrichten-beheer interface. Deze interface heeft één set inrichtings beleidsregels.
+* **Verhoogde productiviteit**. U kunt gebruikers identiteiten in SaaS-toepassingen beheren met één gebruikers inrichten-beheer interface. Deze interface heeft één set inrichtings beleidsregels.
 
-* **Risico's beheren** . U kunt de beveiliging verhogen door wijzigingen te automatiseren op basis van de status van werk nemers of groepslid maatschappen waarmee rollen en/of toegang worden gedefinieerd.
+* **Risico's beheren**. U kunt de beveiliging verhogen door wijzigingen te automatiseren op basis van de status van werk nemers of groepslid maatschappen waarmee rollen en/of toegang worden gedefinieerd.
 
 * **Naleving en** beheer van adressen. Azure AD biedt ondersteuning voor systeem eigen controle logboeken voor elke aanvraag voor het inrichten van gebruikers. Aanvragen worden uitgevoerd in de bron-en doel systemen. Zo kunt u bijhouden wie toegang heeft tot toepassingen vanaf één scherm.
 
-* **Kosten verlagen** . Automatische gebruikers inrichting vermindert de kosten door inefficiëntie en menselijke fout te voor komen die zijn gekoppeld aan hand matige inrichting. Het vermindert de behoefte aan aangepaste, ontwikkelde oplossingen voor gebruikers inrichten, scripts en audit Logboeken.
+* **Kosten verlagen**. Automatische gebruikers inrichting vermindert de kosten door inefficiëntie en menselijke fout te voor komen die zijn gekoppeld aan hand matige inrichting. Het vermindert de behoefte aan aangepaste, ontwikkelde oplossingen voor gebruikers inrichten, scripts en audit Logboeken.
 
 ### <a name="licensing"></a>Licentieverlening
 
@@ -83,7 +83,7 @@ De Azure AD-inrichtings service voorziet gebruikers van SaaS-apps en andere syst
 
 In dit voor beeld worden gebruikers en of groepen gemaakt in een HR-data base die is verbonden met een on-premises Directory. De Azure AD-inrichtings service beheert het automatisch inrichten van gebruikers aan de doel-SaaS-toepassingen.
 
- ![inrichten van gebruikers](./media/plan-auto-user-provisioning/hybridprovisioning.png)
+ ![Gebruikers inrichten](./media/plan-auto-user-provisioning/hybridprovisioning.png)
 
 **Beschrijving van werk stroom:**
 
@@ -157,7 +157,7 @@ De stappen die nodig zijn om automatische inrichting in te scha kelen en te conf
 
 Als dat niet het geval is, volgt u de onderstaande stappen:
 
-1. [Een aanvraag maken](../azuread-dev/howto-app-gallery-listing.md) voor een vooraf geïntegreerde User Provisioning connector. Ons team zal samen werken met u en met de ontwikkelaar van de toepassing om uw toepassing op ons platform uit te laten staan als SCIM wordt ondersteund.
+1. [Een aanvraag maken](../develop/v2-howto-app-gallery-listing.md) voor een vooraf geïntegreerde User Provisioning connector. Ons team zal samen werken met u en met de ontwikkelaar van de toepassing om uw toepassing op ons platform uit te laten staan als SCIM wordt ondersteund.
 
 1. Gebruik de algemene ondersteuning voor het inrichten van [BYOA scim](../app-provisioning/use-scim-to-provision-users-and-groups.md) voor de app. Dit is een vereiste voor Azure AD om gebruikers in te richten op de app zonder vooraf geïntegreerde inrichtings connector.
 
@@ -300,11 +300,11 @@ Raadpleeg de volgende koppelingen voor het oplossen van problemen die kunnen opt
 
 * [Een kenmerk van uw on-premises Active Directory naar Azure AD synchroniseren voor het inrichten van een toepassing](../app-provisioning/user-provisioning-sync-attributes-for-mapping.md)
 
-* [Probleem bij het opslaan van de beheerders referenties tijdens het configureren van de gebruikers inrichting voor een Azure Active Directory galerie-toepassing](../app-provisioning/application-provisioning-config-problem-storage-limit.md)
+* [Probleem bij het opslaan van de beheerders referenties tijdens het configureren van de gebruikers inrichting voor een Azure Active Directory galerie-toepassing](./user-provisioning.md)
 
 * [Er worden geen gebruikers ingericht voor een Azure AD-galerie toepassing](../app-provisioning/application-provisioning-config-problem-no-users-provisioned.md)
 
-* [Er wordt een verkeerde set gebruikers ingericht voor een Azure AD-galerie toepassing](../app-provisioning/application-provisioning-config-problem-wrong-users-provisioned.md)
+* [Er wordt een verkeerde set gebruikers ingericht voor een Azure AD-galerie toepassing](../manage-apps/add-application-portal-assign-users.md)
 
 ### <a name="helpful-documentation"></a>Nuttige documentatie
 

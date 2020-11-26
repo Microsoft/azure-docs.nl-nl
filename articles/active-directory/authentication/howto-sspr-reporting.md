@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c6aa31d0b8c68f38d2b4fc41a6bbaaeab8a3ffac
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 3f2c5b37c713b69df56e938fdaa2a9134402d765
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92363603"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173899"
 ---
 # <a name="reporting-options-for-azure-ad-password-management"></a>Reporting options for Azure AD password management (Rapportageopties voor Azure AD-wachtwoordbeheer)
 
@@ -181,7 +181,7 @@ In de volgende lijst vindt u meer informatie over deze activiteit:
 * [Wat zijn de beleidsopties bij selfservice voor wachtwoordherstel?](concept-sspr-policy.md)
 * [Wat is Wachtwoord terugschrijven en waarom is dit van belang?](./tutorial-enable-sspr-writeback.md)
 * [Wat zijn alle opties in selfservice voor wachtwoordherstel en wat houden ze in?](concept-sspr-howitworks.md)
-* [Ik denk dat er iets is verbroken. Hoe kan ik problemen met SSPR oplossen?](active-directory-passwords-troubleshoot.md)
+* [Ik denk dat er iets is verbroken. Hoe kan ik problemen met SSPR oplossen?](./troubleshoot-sspr.md)
 * [Ik heb een vraag die nog niet is beantwoord](active-directory-passwords-faq.md)
 
 [Reporting]: ./media/howto-sspr-reporting/sspr-reporting.png "Voor beeld van audit logboeken voor SSPR-activiteiten in azure AD"

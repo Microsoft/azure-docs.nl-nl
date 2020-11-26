@@ -9,12 +9,12 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: 21307deb509d0735e4367f2b41603086f301bdeb
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 51a2facfdaccc6cb29264873e9ffd60fc48735da
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94533528"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96174659"
 ---
 # <a name="azure-active-directory-application-provisioning-whats-new"></a>Azure Active Directory toepassing inrichten: wat is er nieuw
 
@@ -59,7 +59,7 @@ Welkom bij wat er nieuw is in Azure Active Directory documentatie over het inric
 
 
 ### <a name="updated-articles"></a>Bijgewerkte artikelen
-- [Inrichting configureren met behulp van Microsoft Graph-Api's](application-provisioning-configure-api.md)
+- [Inrichting configureren met behulp van Microsoft Graph-Api's](/graph/application-provisioning-configure-api)
 - [Bekende problemen en oplossingen met SCIM 2,0-protocol compatibiliteit van de Azure AD User Provisioning Service](application-provisioning-config-problem-scim-compatibility.md)
 
 ## <a name="july-2020"></a>Juli 2020

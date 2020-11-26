@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8fa1c2627917bfe386c488470f6a78db4c51f2ec
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: fae9872593b48355d4ad3711e8e5092481b16213
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994261"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96174527"
 ---
 # <a name="how-it-works-azure-ad-self-service-password-reset"></a>How it works: Azure AD self-service password reset (Hoe het werkt: selfservice voor wachtwoordherstel in Azure AD)
 
@@ -195,9 +195,9 @@ Azure AD controleert uw huidige hybride verbinding en biedt een van de volgende 
 * Uw on-premises terugschrijf client is actief.
 * Azure AD is online en is verbonden met uw on-premises terugschrijf client. Het lijkt echter alsof de geïnstalleerde versie van Azure AD Connect verouderd is. Overweeg het [upgraden van Azure AD Connect](../hybrid/how-to-upgrade-previous-version.md) om ervoor te zorgen dat u beschikt over de nieuwste connectiviteits functies en belang rijke problemen met oplossingen.
 * Helaas kan de status van uw on-premises terugschrijf client niet worden gecontroleerd, omdat de geïnstalleerde versie van Azure AD Connect verouderd is. [Upgrade Azure AD Connect](../hybrid/how-to-upgrade-previous-version.md) zodat u de verbindings status kunt controleren.
-* Helaas lijkt het alsof er geen verbinding kan worden gemaakt met uw on-premises back-upclient. [Problemen met Azure AD Connect oplossen](active-directory-passwords-troubleshoot.md#troubleshoot-password-writeback-connectivity) om de verbinding te herstellen.
+* Helaas lijkt het alsof er geen verbinding kan worden gemaakt met uw on-premises back-upclient. [Problemen met Azure AD Connect oplossen](./troubleshoot-sspr-writeback.md) om de verbinding te herstellen.
 * Er kan geen verbinding worden gemaakt met uw on-premises terugschrijf client omdat het terugschrijven van wacht woorden niet correct is geconfigureerd. [Configureer write-back van wacht woord](./tutorial-enable-sspr-writeback.md) om de verbinding te herstellen.
-* Helaas lijkt het alsof er geen verbinding kan worden gemaakt met uw on-premises back-upclient. Dit kan worden veroorzaakt door tijdelijke problemen aan onze kant. Als het probleem zich blijft voordoen, [lost u Azure AD Connect](active-directory-passwords-troubleshoot.md#troubleshoot-password-writeback-connectivity) op om de verbinding te herstellen.
+* Helaas lijkt het alsof er geen verbinding kan worden gemaakt met uw on-premises back-upclient. Dit kan worden veroorzaakt door tijdelijke problemen aan onze kant. Als het probleem zich blijft voordoen, [lost u Azure AD Connect](./troubleshoot-sspr-writeback.md) op om de verbinding te herstellen.
 
 Voltooi de volgende zelf studie om aan de slag te gaan met SSPR write-back:
 

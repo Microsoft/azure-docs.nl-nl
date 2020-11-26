@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: annaba
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 96f1e3983f3c093cdf643e7674221b04631eeabd
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: ddff11caba9d83e9ed21748fd50a3480d866d8a9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91965621"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96174561"
 ---
 # <a name="get-started-with-certificate-based-authentication-in-azure-active-directory"></a>Aan de slag met verificatie op basis van certificaten in Azure Active Directory
 
@@ -31,7 +31,7 @@ Als u deze functie configureert, hoeft u geen combi natie van gebruikers naam en
 Dit onderwerp:
 
 - Biedt u de stappen voor het configureren en gebruiken van verificatie op basis van certificaten voor gebruikers van tenants in Office 365 Enter prise, Business, Education en Amerikaanse overheids plannen. Deze functie is beschikbaar als preview-versie van Office 365 China, Amerikaanse overheids verdediging en Amerikaanse overheids instanties.
-- Er wordt van uitgegaan dat u al een [open bare-sleutel infrastructuur (PKI)](https://go.microsoft.com/fwlink/?linkid=841737) en [AD FS](../hybrid/how-to-connect-fed-whatis.md) geconfigureerd.
+- Er wordt van uitgegaan dat u al een [open bare-sleutel infrastructuur (PKI)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11)) en [AD FS](../hybrid/how-to-connect-fed-whatis.md) geconfigureerd.
 
 ## <a name="requirements"></a>Vereisten
 
@@ -104,7 +104,7 @@ Voor de configuratie kunt u de [Azure Active Directory Power shell versie 2](/po
 
 Als eerste configuratie stap moet u een verbinding maken met uw Tenant. Zodra er een verbinding met uw Tenant bestaat, kunt u de vertrouwde certificerings instanties die in uw Directory zijn gedefinieerd, bekijken, toevoegen, verwijderen en wijzigen.
 
-### <a name="connect"></a>Verbinden
+### <a name="connect"></a>Verbinding maken
 
 Gebruik de cmdlet [Connect-AzureAD](/powershell/module/azuread/connect-azuread?view=azureadps-2.0) om verbinding te maken met uw Tenant:
 

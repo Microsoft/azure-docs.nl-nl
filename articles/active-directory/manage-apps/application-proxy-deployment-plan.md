@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: kenwith
-ms.openlocfilehash: 9736e1b71f5e129989aba9a045581bae8a1c5f93
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 9815237617566eda4759ecc31718786b6cb2cac8
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997542"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96176049"
 ---
 # <a name="plan-an-azure-ad-application-proxy-deployment"></a>Plan een implementatie voor de Azure AD-toepassingsproxy
 
@@ -323,7 +323,7 @@ De volgende artikelen hebben betrekking op veelvoorkomende scenario's die ook ku
 * [Eenmalige aanmelding voor mijn app configureren](application-proxy-config-sso-how-to.md)
 * [Probleem bij het maken van een app in de beheerportal](application-proxy-config-problem.md)
 * [Kerberos-beperkte overdracht configureren](application-proxy-back-end-kerberos-constrained-delegation-how-to.md)
-* [Configureren met PingAccess](/azure/active-directory/manage-apps/application-proxy-ping-access-publishing-guide)
+* [Configureren met PingAccess](./application-proxy-ping-access-publishing-guide.md)
 * [De fout 'Kan deze zakelijke toepassing niet openen'](application-proxy-sign-in-bad-gateway-timeout-error.md)
 * [Probleem bij het installeren van de connector voor de toepassingsproxyagent](application-proxy-connector-installation-problem.md)
 * [Aanmeldingsprobleem](application-sign-in-problem-on-premises-application-proxy.md)

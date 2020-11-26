@@ -12,12 +12,12 @@ ms.date: 09/15/2020
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.custom: contperfq2
-ms.openlocfilehash: 5e2f323f705a891f06cee1d25779351d02a91572
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 19942e5400be63dfde48b9653282fb93bcb1ec42
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94695262"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96174812"
 ---
 # <a name="tutorial---build-a-scim-endpoint-and-configure-user-provisioning-with-azure-ad"></a>Zelfstudie: een SCIM-eind punt bouwen en gebruikers inrichten met Azure AD
 
@@ -154,7 +154,7 @@ Volgens de [SCIM 2.0-protocolspecificatie](http://www.simplecloud.info/#Specific
 * Biedt ondersteuning voor het uitvoeren van query's op gebruikers of groepen, volgens sectie [3.4.2 van het SCIM-protocol](https://tools.ietf.org/html/rfc7644#section-3.4.2).  Gebruikers worden standaard opgehaald op basis van `id` en query’s worden uitgevoerd op basis van `username` en de `externalId`. Groepen worden opgehaald door query’s uit te voeren op basis van `displayName`.  
 * Biedt ondersteuning voor het uitvoeren van query's op de gebruiker op basis van de id en beheerder, volgens sectie 3.4.2 van het SCIM-protocol.  
 * Ondersteunt het opvragen van groepen op basis van id en lid, volgens sectie 3.4.2 van het SCIM-protocol.  
-* Biedt ondersteuning voor het filter [excludedAttributes=members](https://docs.microsoft.com/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups#get-group) wanneer u een query uitvoert op de groepsresource, volgens sectie 3.4.2.5 van het SCIM-protocol.
+* Biedt ondersteuning voor het filter [excludedAttributes=members](#get-group) wanneer u een query uitvoert op de groepsresource, volgens sectie 3.4.2.5 van het SCIM-protocol.
 * Hiermee wordt één Bearer-token geaccepteerd voor verificatie en autorisatie van Azure AD voor uw toepassing.
 * Ondersteunt het voorlopig verwijderen van een gebruiker `active=false` en het herstellen van de gebruiker `active=true` (het gebruikersobject moet worden geretourneerd in een aanvraag, ongeacht of de gebruiker wel of niet actief is). De enige keer dat een gebruiker niet wordt geretourneerd, is wanneer deze permanent wordt verwijderd uit de toepassing. 
 
@@ -1173,7 +1173,7 @@ Zodra de eerste cyclus is gestart, kunt u **Inrichtingslogboeken** selecteren in
 
 ## <a name="step-5-publish-your-application-to-the-azure-ad-application-gallery"></a>Stap 5: Uw toepassing publiceren in de Azure AD-toepassingsgalerie
 
-Als u een toepassing bouwt die wordt gebruikt door meer dan één tenant, kunt u deze beschikbaar stellen in de Azure AD-toepassingsgalerie. Dit maakt het eenvoudig voor organisaties om de toepassing te vinden en inrichtingen te configureren. Het publiceren van uw app in de Azure AD-galerie en het beschikbaar stellen van de inrichting voor anderen is eenvoudig. Bekijk de stappen [hier](../azuread-dev/howto-app-gallery-listing.md) Microsoft werkt samen met u om uw toepassing te integreren in onze galerie, uw eindpunt te testen en onboarding-[documentatie](../saas-apps/tutorial-list.md) beschikbaar te stellen voor klanten. 
+Als u een toepassing bouwt die wordt gebruikt door meer dan één tenant, kunt u deze beschikbaar stellen in de Azure AD-toepassingsgalerie. Dit maakt het eenvoudig voor organisaties om de toepassing te vinden en inrichtingen te configureren. Het publiceren van uw app in de Azure AD-galerie en het beschikbaar stellen van de inrichting voor anderen is eenvoudig. Bekijk de stappen [hier](../develop/v2-howto-app-gallery-listing.md) Microsoft werkt samen met u om uw toepassing te integreren in onze galerie, uw eindpunt te testen en onboarding-[documentatie](../saas-apps/tutorial-list.md) beschikbaar te stellen voor klanten.
 
 ### <a name="gallery-onboarding-checklist"></a>Controlelijst voor onboarding van galerie
 Gebruik de onderstaande controlelijst om ervoor te zorgen dat de onboarding van uw toepassing snel verloopt en klanten een prettige implementatie-ervaring hebben. De informatie wordt van u verzameld bij de onboarding in de galerie. 

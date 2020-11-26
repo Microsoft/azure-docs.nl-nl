@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: rosouz
 ms.custom: references_regions
-ms.openlocfilehash: a487d984fe4b8f5d6313e181863872c4ea150059
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 3355b502033451f58ac2289a81414e62823e459b
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93334532"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96175930"
 ---
 # <a name="configure-and-use-azure-synapse-link-for-azure-cosmos-db-preview"></a>Azure Synapse-koppeling voor Azure Cosmos DB configureren en gebruiken (preview)
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -63,7 +63,7 @@ U kunt de analytische opslag inschakelen op een Azure Cosmos-container tijdens h
 
 ### <a name="azure-portal"></a>Azure Portal
 
-1. Meld u aan bij de [Azure Portal](https://portal.azure.com/) of [Azure Cosmos Explorer](https://cosmos.azure.com/).
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com/) of de [Azure Cosmos DB Explorer](https://cosmos.azure.com/).
 
 1. Navigeer naar uw Azure Cosmos DB-account en open het tabblad **Data Explorer** .
 
@@ -75,7 +75,7 @@ U kunt de analytische opslag inschakelen op een Azure Cosmos-container tijdens h
 
 1. Selecteer **OK** om een Azure Cosmos-container met analytische opslag te maken.
 
-1. Nadat de container is gemaakt, controleert u of het analytische archief is ingeschakeld door te klikken op **instellingen** , rechts onder documenten in Data Explorer en controleert u of de optie voor het **analytische archief time to Live** is ingeschakeld.
+1. Nadat de container is gemaakt, controleert u of het analytische archief is ingeschakeld door te klikken op **instellingen**, rechts onder documenten in Data Explorer en controleert u of de optie voor het **analytische archief time to Live** is ingeschakeld.
 
 ### <a name="net-sdk"></a>.NET SDK
 
@@ -171,7 +171,7 @@ Nadat de analytische opslag met een bepaalde TTL-waarde is ingeschakeld, kunt u 
 
 Als u een container voor een analytische opslag hebt gemaakt via de Azure Portal, bevat deze een standaard analyse-TTL van-1. Gebruik de volgende stappen om deze waarde bij te werken:
 
-1. Meld u aan bij de [Azure Portal](https://portal.azure.com/) of [Azure Cosmos Explorer](https://cosmos.azure.com/).
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com/) of de [Azure Cosmos DB Explorer](https://cosmos.azure.com/).
 
 1. Navigeer naar uw Azure Cosmos DB-account en open het tabblad **Data Explorer** .
 

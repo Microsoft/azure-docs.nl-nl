@@ -11,45 +11,45 @@ ms.workload: identity
 ms.date: 11/22/2019
 ms.author: kenwith
 ms.reviewer: arvindha, celested
-ms.openlocfilehash: ce8b792beb8652bedfddff470444240bc3edf148
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 64418a727ecb9a300912a4766a9ea2066328ad31
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92363654"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96174897"
 ---
 # <a name="plan-cloud-hr-application-to-azure-active-directory-user-provisioning"></a>Cloud-HR-toepassing plannen voor Azure Active Directory gebruikers inrichting
 
-In het verleden hebben IT-mede werkers gepaard met hand matige methoden voor het maken, bijwerken en verwijderen. Ze hebben methoden gebruikt als het uploaden van CSV-bestanden of aangepaste scripts om gegevens van werk nemers te synchroniseren. Deze inrichtings processen zijn fout gevoelig, onveilig en moeilijk te beheren.
+In het verleden gebruikten IT-medewerkers handmatige methoden voor het maken, bijwerken en verwijderen van medewerkers. Ze gebruikten methoden zoals het uploaden van CSV-bestanden of aangepaste scripts om gegevens van werknemers te synchroniseren. Deze inrichtingsprocessen zijn foutgevoelig, onveilig en moeilijk te beheren.
 
-Voor het beheren van de identiteits levensduur van werk nemers, leveranciers of voorwaardelijke werk nemers, [Azure Active Directory-gebruikers (Azure AD) User Provisioning Service](../app-provisioning/user-provisioning.md) , biedt integratie met op de cloud gebaseerde HR-toepassingen (Human Resources). Voor beelden van toepassingen zijn workday of SuccessFactors.
+Voor het beheren van de identiteitslevenscycli van werknemers, leveranciers of tijdelijke werknemers, biedt de [Azure Active Directory (Azure AD)-gebruikersinrichtingsservice](../app-provisioning/user-provisioning.md) integratie met human resources (HR)-toepassingen in de cloud. Voorbeelden van toepassingen zijn Workday of SuccessFactors.
 
-Azure AD gebruikt deze integratie om de volgende workflows voor de Cloud toepassing (app) in te scha kelen:
+Azure AD gebruikt deze integratie om de volgende workflows voor de HR-toepassing (app) in de cloud in te schakelen:
 
-- **Gebruikers voorzien van Active Directory:** U kunt geselecteerde gebruikers sets van een app in de cloud in een of meer Active Directory domeinen inrichten.
-- **Alleen Cloud gebruikers inrichten voor Azure AD:** In scenario's waarin Active Directory niet wordt gebruikt, dient u gebruikers rechtstreeks vanuit de Cloud HR-app in te richten op Azure AD.
-- **Terugschrijven naar de Cloud-app HR:** Schrijf de e-mail adressen en de kenmerken van de gebruikers naam van Azure AD terug naar de Cloud HR-app.
+- **Gebruikers inrichten op Active Directory:** U kunt bepaalde sets gebruikers van een HR-app in de cloud in een of meer Active Directory-domeinen inrichten.
+- **Alleen-cloud gebruikers inrichten op Azure AD:** In scenario's waarin Active Directory niet wordt gebruikt, dient u gebruikers rechtstreeks vanuit de cloud-HR-app in te richten op Azure AD.
+- **Terugschrijven naar de cloud-HR-app:** Schrijf de e-mailadressen en de kenmerken van de gebruikersnamen van Azure AD terug naar de cloud-HR-app.
 
 > [!NOTE]
 > Dit implementatie plan laat zien hoe u uw workflows voor de werk stroom van de cloud kunt implementeren met Azure AD-gebruikers inrichting. Zie [een automatische gebruikers inrichting plannen](./plan-auto-user-provisioning.md)voor meer informatie over het implementeren van automatische gebruikers inrichting voor SaaS-apps (Software as a Service).
 
 ## <a name="enabled-hr-scenarios"></a>Ingeschakelde HR-scenario's
 
-Met de Azure AD User Provisioning-Service kunnen de volgende HR-scenario's voor levenscyclus beheer worden geautomatiseerd:
+Met de Azure AD-gebruikersinrichtingsservice kunnen de volgende HR-scenario's voor beheer van identiteitslevenscycli worden geautomatiseerd:
 
-- **Nieuwe indienstneming van werk nemers:** Wanneer een nieuwe werk nemer wordt toegevoegd aan de Cloud-app, wordt er automatisch een gebruikers account in Active Directory en Azure AD gemaakt met de optie om het e-mail adres en de kenmerken van de gebruikers naam terug te schrijven naar de Cloud HR-app.
-- **Updates voor kenmerk-en profiel van werk nemers:** Wanneer een werknemers record, zoals naam, titel of manager, wordt bijgewerkt in de Cloud HR-app, wordt het gebruikers account automatisch bijgewerkt in Active Directory en Azure AD.
-- **Beëindiging van werk nemers:** Wanneer een werk nemer wordt beëindigd in de Cloud-app HR, wordt het gebruikers account automatisch uitgeschakeld in Active Directory en Azure AD.
-- **Gehuurde werk nemers:** Wanneer een werk nemer in de Cloud-app HR opnieuw wordt ingehuurd, kan het oude account automatisch opnieuw worden geactiveerd of worden ingericht voor Active Directory en Azure AD.
+- **Nieuwe werknemer aannemen:** Wanneer een nieuwe werknemer wordt toegevoegd aan de cloud-HR-app, wordt er automatisch een gebruikersaccount gemaakt in Active Directory en Azure AD met de optie om het e-mailadres en de kenmerken van de gebruikersnaam terug te schrijven naar de cloud-HR-app.
+- **Updates van kenmerken en profielen van werknemers:** Wanneer een werknemersrecord, zoals naam, titel of manager, wordt bijgewerkt in de cloud-HR-app, wordt het gebruikersaccount automatisch bijgewerkt in Active Directory en Azure AD.
+- **Beëindiging van dienstverband:** Wanneer een dienstverband wordt beëindigd in de cloud-HR-app, wordt het gebruikersaccount automatisch uitgeschakeld in Active Directory en Azure AD.
+- **Werknemers opnieuw in dienst genomen:** Wanneer een werknemer in de cloud-HR-app opnieuw wordt aangenomen, kan het oude account automatisch opnieuw worden geactiveerd of opnieuw worden ingericht voor Active Directory en Azure AD.
 
-## <a name="who-is-this-integration-best-suited-for"></a>Voor wie is deze integratie het meest geschikt voor?
+## <a name="who-is-this-integration-best-suited-for"></a>Voor wie is deze integratie het meest geschikt?
 
-De integratie van Cloud-apps met Azure AD-gebruikers inrichten is in het ideale geval geschikt voor organisaties die:
+De integratie van de cloud-HR-app met Azure AD-gebruikersinrichting is ideaal voor organisaties die:
 
-- U wilt een vooraf ontwikkelde, Cloud oplossing voor het inrichten van de Cloud-gebruikers van de afdeling.
-- U moet directe gebruikers inrichting van de HR-app in de Cloud Toep Active Directory of Azure AD.
-- Vereisen dat gebruikers worden ingericht met behulp van gegevens die zijn verkregen uit de Cloud-app HR.
-- Vereisen dat gebruikers lid worden van een of meer Active Directory forests, domeinen en organisatie-eenheden op basis van gewijzigde informatie die is gedetecteerd in de Cloud HR-app.
+- Een vooraf ontwikkelde cloud-oplossing willen voor cloud-HR-gebruikersinrichting.
+- Rechtstreekse gebruikersinrichting nodig hebben van de cloud-HR-app naar Active Directory of Azure AD.
+- Vereisen dat gebruikers worden ingericht met behulp van gegevens die zijn verkregen uit de cloud-HR-app.
+- Vereisen dat gebruikers die erbij komen, verhuizen of vertrekken worden gesynchroniseerd met een of meer Active Directory-forests, -domeinen en OE’s op basis van wijzigingsinformatie die is gedetecteerd in de cloud-HR-app.
 - Gebruik Microsoft 365 voor e-mail.
 
 ## <a name="learn"></a>Learn
@@ -66,12 +66,12 @@ In dit artikel worden de volgende termen gebruikt:
 
 ### <a name="key-benefits"></a>Belangrijkste voordelen
 
-Deze mogelijkheid van HR-IT-inrichting biedt de volgende belang rijke voor delen voor uw bedrijf:
+Deze mogelijkheid van HR-aangestuurde IT-inrichting biedt de volgende belangrijke zakelijke voordelen:
 
-- **Verhoog de productiviteit:** U kunt nu de toewijzing van gebruikers accounts en Microsoft 365 licenties automatiseren en toegang verlenen tot sleutel groepen. Als u toewijzingen automatiseert, krijgen nieuwe mede werkers direct toegang tot hun taak hulpprogramma's en wordt de productiviteit verhoogd.
-- **Risico beheren:** U kunt de beveiliging verhogen door wijzigingen te automatiseren op basis van de status van werk nemers of groepslid maatschappen met gegevens die in de Cloud-app voor HR worden geplaatst. Als u wijzigingen automatiseert, zorgt u ervoor dat gebruikers identiteiten en toegang tot de sleutel-apps automatisch worden bijgewerkt wanneer gebruikers overstappen of de organisatie verlaten.
-- **Naleving en beheer van adressen:** Azure AD biedt ondersteuning voor systeem eigen audit logboeken voor gebruikers voorzienings aanvragen die worden uitgevoerd door apps van zowel de bron-als doel systemen. Met controle kunt u bijhouden wie vanuit één scherm toegang tot de apps heeft.
-- **Kosten beheren:** Automatische inrichting vermindert de kosten door inefficiëntie en menselijke fout te voor komen die zijn gekoppeld aan hand matige inrichting. Het vermindert de behoefte aan aangepaste, ontwikkelde oplossingen voor gebruikers inrichting die in de loop van de tijd zijn gebouwd met behulp van verouderde en verouderde platforms.
+- **Verhoog de productiviteit:** U kunt nu de toewijzing van gebruikers accounts en Microsoft 365 licenties automatiseren en toegang verlenen tot sleutel groepen. Als u toewijzingen automatiseert, krijgen nieuwe medewerkers direct toegang tot de hulpprogramma's voor hun werk en wordt de productiviteit verhoogd.
+- **Risico’s beheren:** U kunt de beveiliging verbeteren door wijzigingen te automatiseren op basis van de status van werknemers of groepslidmaatschappen met gegevens die binnenstromen vanuit de cloud-HR-app. Als u wijzigingen automatiseert, zorgt u ervoor dat gebruikersidentiteiten en toegang tot belangrijke apps automatisch worden bijgewerkt wanneer gebruikers overstappen of de organisatie verlaten.
+- **Naleving en governance aanpakken:** Azure AD biedt ondersteuning voor systeemeigen auditlogboeken voor aanvragen voor gebruikersinrichting die worden uitgevoerd door apps van zowel de bron- als doelsystemen. Tijdens het controleren kunt u vanaf één scherm bijhouden wie toegang heeft tot de apps.
+- **Kosten beheren:** Automatische inrichting vermindert de kosten door inefficiëntie en menselijke fouten te voorkomen die gerelateerd zijn aan handmatige inrichting. Het vermindert de behoefte aan aangepaste, op maat ontwikkelde oplossingen voor gebruikersinrichting die in de loop van de tijd zijn gebouwd met behulp van verouderde platforms.
 
 ### <a name="licensing"></a>Licentieverlening
 
@@ -95,7 +95,7 @@ U hebt ook een geldige licentie voor Azure AD Premium P1 of hoger nodig voor elk
 | Video's | [Wat is gebruikers inrichten in Active Azure Directory?](https://youtu.be/_ZjARPpI6NI) |
 | | [Het inrichten van gebruikers in Active Azure Directory implementeren](https://youtu.be/pKzyts6kfrw) |
 | Zelfstudies | [Lijst met zelfstudies over het integreren van SaaS-apps met Azure AD](../saas-apps/tutorial-list.md) |
-| | [Zelf studie: workday configureren voor het automatisch inrichten van gebruikers](../saas-apps/workday-inbound-tutorial.md#frequently-asked-questions-faq) |
+| | [Zelfstudie: Workday configureren voor automatisch inrichten van gebruikers](../saas-apps/workday-inbound-tutorial.md#frequently-asked-questions-faq) |
 | Veelgestelde vragen | [Automatische gebruikers inrichting](../app-provisioning/user-provisioning.md#what-applications-and-systems-can-i-use-with-azure-ad-automatic-user-provisioning) |
 | | [Inrichten van workday naar Azure AD](../saas-apps/workday-inbound-tutorial.md#frequently-asked-questions-faq) |
 
@@ -404,13 +404,13 @@ Raadpleeg de volgende artikelen voor informatie over het oplossen van problemen 
 
 - [Probleem bij het configureren van de gebruikers inrichting voor een Azure AD Gallery-toepassing](application-provisioning-config-problem.md)
 - [Een kenmerk van uw on-premises Active Directory naar Azure AD synchroniseren voor het inrichten van een toepassing](user-provisioning-sync-attributes-for-mapping.md)
-- [Probleem bij het opslaan van de beheerders referenties tijdens het configureren van de gebruikers inrichting voor een Azure Active Directory galerie-toepassing](application-provisioning-config-problem-storage-limit.md)
+- [Probleem bij het opslaan van de beheerders referenties tijdens het configureren van de gebruikers inrichting voor een Azure Active Directory galerie-toepassing](./user-provisioning.md)
 - [Er worden geen gebruikers ingericht voor een Azure AD-galerie toepassing](application-provisioning-config-problem-no-users-provisioned.md)
-- [Er wordt een verkeerde set gebruikers ingericht voor een Azure AD-galerie toepassing](application-provisioning-config-problem-wrong-users-provisioned.md)
-- [Problemen met Windows Logboeken instellen voor agent probleem oplossing](../saas-apps/workday-inbound-tutorial.md#setting-up-windows-event-viewer-for-agent-troubleshooting)
-- [Azure Portal audit logboeken instellen voor het oplossen van services](../saas-apps/workday-inbound-tutorial.md#setting-up-azure-portal-audit-logs-for-service-troubleshooting)
-- [Informatie over Logboeken voor het maken van AD-gebruikers accounts](../saas-apps/workday-inbound-tutorial.md#understanding-logs-for-ad-user-account-create-operations)
-- [Logboeken voor update bewerkingen voor managers](../saas-apps/workday-inbound-tutorial.md#understanding-logs-for-manager-update-operations)
+- [Er wordt een verkeerde set gebruikers ingericht voor een Azure AD-galerie toepassing](../manage-apps/add-application-portal-assign-users.md)
+- [Windows Logboeken instellen voor het oplossen van problemen met agenten](../saas-apps/workday-inbound-tutorial.md#setting-up-windows-event-viewer-for-agent-troubleshooting)
+- [Auditlogboeken in Azure Portal instellen voor het oplossen van problemen met services](../saas-apps/workday-inbound-tutorial.md#setting-up-azure-portal-audit-logs-for-service-troubleshooting)
+- [Informatie over logboeken over het maken van AD-gebruikersaccounts](../saas-apps/workday-inbound-tutorial.md#understanding-logs-for-ad-user-account-create-operations)
+- [Informatie over logboeken over het bijwerken van managers](../saas-apps/workday-inbound-tutorial.md#understanding-logs-for-manager-update-operations)
 - [Veelvoorkomende fouten oplossen](../saas-apps/workday-inbound-tutorial.md#resolving-commonly-encountered-errors)
 
 ### <a name="next-steps"></a>Volgende stappen

@@ -490,7 +490,7 @@
         - name: Algemene scenario's voor inrichting
           href: ../app-provisioning/scim-graph-scenarios.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
         - name: Configuratie automatiseren met behulp van MS Graph
-          href: ../app-provisioning/application-provisioning-configure-api.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+          href: /graph/application-provisioning-configure-api?bc=%2fazure%2factive-directory%2fdevelop%2fbreadcrumb%2ftoc.json&toc=%2fazure%2factive-directory%2fdevelop%2ftoc.json
     - name: Help-artikelen over de Azure-portal
       items:
         - name: Standaardlevensduur van tokens voor een zelf ontwikkelde toepassing

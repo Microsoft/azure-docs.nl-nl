@@ -51,7 +51,7 @@
         - name: Inrichtingsrapporten
           href: ../reports-monitoring/concept-provisioning-logs.md?context=%2fazure%2factive-directory%2fapp-provisioning%2fcontext%2fapp-provisioning-context
     - name: Configuratie automatiseren met behulp van MS Graph
-      href: 'https://docs.microsoft.com/graph/application-provisioning-configure-api'
+      href: /graph/application-provisioning-configure-api
     - name: Problemen met toepassingsinrichting oplossen
       items:
         - name: Bekende problemen

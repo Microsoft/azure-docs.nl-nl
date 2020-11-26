@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 09/24/2020
 ms.author: joflore
-ms.openlocfilehash: a66268c0cd0c2382b412873ec7f78b87d3491594
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: aae665b5982ab2b5c1163bb9297eda5f2e5d344a
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91968171"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96175369"
 ---
 # <a name="migrate-azure-active-directory-domain-services-from-the-classic-virtual-network-model-to-resource-manager"></a>Azure Active Directory Domain Services migreren van het klassieke virtuele netwerk model naar Resource Manager
 
@@ -166,7 +166,7 @@ De migratie naar het Resource Manager-implementatie model en het virtuele netwer
 
 Voordat u met het migratie proces begint, moet u de volgende eerste controles en updates uitvoeren. Deze stappen kunnen op elk moment vóór de migratie plaatsvinden en hebben geen invloed op de werking van het beheerde domein.
 
-1. Werk uw lokale Azure PowerShell-omgeving bij naar de nieuwste versie. Voor het volt ooien van de migratie stappen moet u ten minste versie *2.3.2*hebben.
+1. Werk uw lokale Azure PowerShell-omgeving bij naar de nieuwste versie. Voor het volt ooien van de migratie stappen moet u ten minste versie *2.3.2* hebben.
 
     Zie [Azure PowerShell Overview][azure-powershell]voor meer informatie over het controleren en bijwerken van uw Power shell-versie.
 
@@ -176,7 +176,7 @@ Voordat u met het migratie proces begint, moet u de volgende eerste controles en
 
     Azure AD DS heeft een netwerkbeveiligingsgroep nodig om de poorten die nodig zijn voor het beheerde domein te beveiligen en al het andere inkomende verkeer te blokkeren. Deze netwerk beveiligings groep fungeert als een extra beveiligingslaag om de toegang tot het beheerde domein te vergren delen. Zie [Netwerkbeveiligingsgroepen en vereiste poorten][network-ports]om de vereiste poorten weer te geven.
 
-    Als u beveiligde LDAP gebruikt, voegt u een regel toe aan de netwerk beveiligings groep om binnenkomend verkeer voor *TCP* -poort *636*toe te staan. Zie [beveiligde LDAP-toegang via internet vergren delen](tutorial-configure-ldaps.md#lock-down-secure-ldap-access-over-the-internet) voor meer informatie.
+    Als u beveiligde LDAP gebruikt, voegt u een regel toe aan de netwerk beveiligings groep om binnenkomend verkeer voor *TCP* -poort *636* toe te staan. Zie [beveiligde LDAP-toegang via internet vergren delen](tutorial-configure-ldaps.md#lock-down-secure-ldap-access-over-the-internet) voor meer informatie.
 
     Noteer deze doel resource groep, het virtuele netwerk van het doel en het subnet van het virtuele netwerk. Deze resource namen worden gebruikt tijdens het migratie proces.
 
@@ -302,7 +302,7 @@ Als dat nodig is, kunt u het beleid voor verfijnde wacht woorden bijwerken zodat
 
 1. [Configureer wachtwoord beleid][password-policy] voor minder beperkingen op het beheerde domein en Bekijk de gebeurtenissen in de audit Logboeken.
 1. Als voor service accounts verlopen wacht woorden worden gebruikt, zoals aangegeven in de audit logboeken, moet u deze accounts bijwerken met het juiste wacht woord.
-1. Als een virtuele machine wordt blootgesteld aan Internet, controleert u op algemene account namen, zoals *Administrator*, *gebruiker*of *gast* , met hoge aanmeldings pogingen. Waar mogelijk kunt u deze Vm's bijwerken met minder algemeen benoemde accounts.
+1. Als een virtuele machine wordt blootgesteld aan Internet, controleert u op algemene account namen, zoals *Administrator*, *gebruiker* of *gast* , met hoge aanmeldings pogingen. Waar mogelijk kunt u deze Vm's bijwerken met minder algemeen benoemde accounts.
 1. Gebruik een netwerk tracering op de virtuele machine om de bron van de aanvallen te zoeken en te voor komen dat deze IP-adressen zich kunnen aanmelden.
 1. Wanneer er minimale vergrendelings problemen zijn, werkt u het verfijnde wachtwoord beleid zo strikt mogelijk aan.
 
@@ -360,7 +360,7 @@ Als uw beheerde domein is gemigreerd naar het Resource Manager-implementatie mod
 [notifications]: notifications.md
 [password-policy]: password-policy.md
 [secure-ldap]: tutorial-configure-ldaps.md
-[migrate-iaas]: ../virtual-machines/windows/migration-classic-resource-manager-overview.md
+[migrate-iaas]: ../virtual-machines/migration-classic-resource-manager-overview.md
 [join-windows]: join-windows-vm.md
 [tutorial-create-management-vm]: tutorial-create-management-vm.md
 [troubleshoot-domain-join]: troubleshoot-domain-join.md

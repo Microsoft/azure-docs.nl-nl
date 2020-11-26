@@ -244,7 +244,7 @@
     - name: Microsoft Graph REST API-bèta
       href: /graph/api/resources/authenticationmethods-overview?view=graph-rest-beta
     - name: Servicelimieten en -beperkingen
-      href: ../users-groups-roles/directory-service-limits-restrictions.md
+      href: ../enterprise-users/directory-service-limits-restrictions.md
 - name: Resources
   items:
     - name: Azure-feedbackforum

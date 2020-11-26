@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c154952d41db742c4d33899094a49a65fae72f26
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 7caeefb741e6916d69894ede3a7c64eb2e8f623f
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94840097"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96174493"
 ---
 # <a name="self-service-password-reset-frequently-asked-questions"></a>Veelgestelde vragen over self-service voor wachtwoord herstel
 
@@ -289,4 +289,4 @@ Deze veelgestelde vragen zijn onderverdeeld in de volgende secties:
 * [Wat is Wachtwoord terugschrijven en waarom is dit van belang?](./tutorial-enable-sspr-writeback.md)
 * [Hoe maak ik rapporten van activiteit in selfservice voor wachtwoordherstel?](howto-sspr-reporting.md)
 * [Wat zijn alle opties in selfservice voor wachtwoordherstel en wat houden ze in?](concept-sspr-howitworks.md)
-* [Ik denk dat er iets is verbroken. Hoe kan ik problemen met SSPR oplossen?](active-directory-passwords-troubleshoot.md)
+* [Ik denk dat er iets is verbroken. Hoe kan ik problemen met SSPR oplossen?](./troubleshoot-sspr.md)

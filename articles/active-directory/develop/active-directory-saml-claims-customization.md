@@ -13,16 +13,16 @@ ms.date: 10/22/2019
 ms.author: kenwith
 ms.reviewer: luleon, paulgarn, jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 90efdd560735a112c2a4c5eb5740f211b587a241
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: f462a78790e73f3e0f67f55b6417589c7826a75d
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92275763"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173665"
 ---
 # <a name="how-to-customize-claims-issued-in-the-saml-token-for-enterprise-applications"></a>Procedure: claims aanpassen die zijn uitgegeven in het SAML-token voor zakelijke toepassingen
 
-Tegenwoordig ondersteunt micro soft Identity platform eenmalige aanmelding (SSO) met de meeste zakelijke toepassingen, waaronder toepassingen die vooraf zijn geïntegreerd in de Azure AD-App-galerie en aangepaste toepassingen. Wanneer een gebruiker via het SAML 2,0-protocol met het micro soft Identity-platform wordt geverifieerd bij een toepassing, stuurt micro soft Identity platform een token naar de toepassing (via een HTTP POST). Vervolgens valideert en gebruikt de toepassing het token voor het registreren van de gebruiker in plaats van een gebruikers naam en wacht woord op te vragen. Deze SAML-tokens bevatten stukjes informatie over de gebruiker die *claims*wordt genoemd.
+Tegenwoordig ondersteunt micro soft Identity platform eenmalige aanmelding (SSO) met de meeste zakelijke toepassingen, waaronder toepassingen die vooraf zijn geïntegreerd in de Azure AD-App-galerie en aangepaste toepassingen. Wanneer een gebruiker via het SAML 2,0-protocol met het micro soft Identity-platform wordt geverifieerd bij een toepassing, stuurt micro soft Identity platform een token naar de toepassing (via een HTTP POST). Vervolgens valideert en gebruikt de toepassing het token voor het registreren van de gebruiker in plaats van een gebruikers naam en wacht woord op te vragen. Deze SAML-tokens bevatten stukjes informatie over de gebruiker die *claims* wordt genoemd.
 
 Een *claim* is informatie die een id-provider staat voor een gebruiker binnen het token dat wordt uitgegeven voor die gebruiker. In het [SAML-token](https://en.wikipedia.org/wiki/SAML_2.0)bevinden deze gegevens zich doorgaans in de instructie SAML Attribute. De unieke ID van de gebruiker wordt gewoonlijk weer gegeven in het SAML-onderwerp, ook wel naam-id genoemd.
 
@@ -54,7 +54,7 @@ Als de SAML-aanvraag geen element voor NameIDPolicy bevat, wordt het NameID door
 
 U kunt een van de volgende opties selecteren in de vervolg keuzelijst **Kies naam-id-indeling** .
 
-| NameID-indeling | Beschrijving |
+| NameID-indeling | Description |
 |---------------|-------------|
 | **Standaard** | Micro soft Identity platform gebruikt de standaard indeling voor de bron. |
 | **Permanent** | Micro soft Identity platform gebruikt persistent als de NameID-indeling. |
@@ -70,7 +70,7 @@ Selecteer de gewenste bron voor de `NameIdentifier` claim (of NameID). U kunt ki
 
 | Naam | Beschrijving |
 |------|-------------|
-| Email | Het e-mailadres van de gebruiker |
+| E-mail | Het e-mailadres van de gebruiker |
 | userprincipalName | UPN (User Principal Name) van de gebruiker |
 | onpremisessamaccount | SAM-account naam die is gesynchroniseerd vanuit on-premises Azure AD |
 | id | Objectid van de gebruiker in azure AD |
@@ -109,7 +109,7 @@ U kunt ook de functies voor het transformeren van claims gebruiken.
 
 Toepassingsspecifieke claims toevoegen:
 
-1. Selecteer in **gebruikers kenmerken & claims**de optie **nieuwe claim toevoegen** om de pagina **gebruikers claims beheren** te openen.
+1. Selecteer in **gebruikers kenmerken & claims** de optie **nieuwe claim toevoegen** om de pagina **gebruikers claims beheren** te openen.
 1. Voer de **naam** van de claims in. De waarde hoeft niet strikt een URI-patroon te volgen, conform de SAML-specificatie. Als u een URI-patroon nodig hebt, kunt u dat in het veld **naam ruimte** plaatsen.
 1. Selecteer de **bron** waar de claim de waarde gaat ophalen. U kunt een gebruikers kenmerk selecteren in de vervolg keuzelijst bron kenmerk of een trans formatie Toep assen op het kenmerk gebruiker voordat u het als een claim verzendt.
 
@@ -117,7 +117,7 @@ Toepassingsspecifieke claims toevoegen:
 
 Een trans formatie Toep assen op een gebruikers kenmerk:
 
-1. Selecteer in **claim beheren**de optie *trans formatie* als claim bron om de pagina **trans formatie beheren** te openen.
+1. Selecteer in **claim beheren** de optie *trans formatie* als claim bron om de pagina **trans formatie beheren** te openen.
 2. Selecteer de functie in de vervolg keuzelijst transformeren. Afhankelijk van de functie die u hebt geselecteerd, moet u para meters en een constante waarde opgeven om in de trans formatie te evalueren. Raadpleeg de onderstaande tabel voor meer informatie over de beschik bare functies.
 3. Als u meerdere trans formatie wilt Toep assen, klikt u op **trans formatie toevoegen**. U kunt Maxi maal twee trans formatie op een claim Toep assen. U kunt bijvoorbeeld eerst het e-mail voorvoegsel van de toevoegen `user.mail` . Vervolgens maakt u de reeks hoofd letters.
 
@@ -162,7 +162,7 @@ Een scenario waarbij dit nuttig is wanneer de bron van een claim afwijkt van een
 
 Een claim voorwaarde toevoegen:
 
-1. Vouw in **claim beheren**de claim voorwaarden uit.
+1. Vouw in **claim beheren** de claim voorwaarden uit.
 2. Selecteer het gebruikers type.
 3. Selecteer de groep (en) waarvan de gebruiker deel moet uitmaken. U kunt Maxi maal 50 unieke groepen selecteren voor alle claims voor een bepaalde toepassing. 
 4. Selecteer de **bron** waar de claim de waarde gaat ophalen. U kunt een gebruikers kenmerk selecteren in de vervolg keuzelijst bron kenmerk of een trans formatie Toep assen op het kenmerk gebruiker voordat u het als een claim verzendt.
@@ -178,5 +178,5 @@ Eerst controleert het micro soft Identity-platform of het gebruikers type van Ju
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Toepassings beheer in azure AD](../manage-apps/what-is-application-management.md)
-* [Eenmalige aanmelding configureren voor toepassingen die zich niet in de Azure AD-toepassings galerie bevinden](../manage-apps/configure-federated-single-sign-on-non-gallery-applications.md)
-* [Problemen met eenmalige aanmelding op basis van SAML oplossen](../azuread-dev/howto-v1-debug-saml-sso-issues.md)
+* [Eenmalige aanmelding configureren voor toepassingen die zich niet in de Azure AD-toepassings galerie bevinden](../manage-apps/configure-saml-single-sign-on.md)
+* [Problemen met eenmalige aanmelding op basis van SAML oplossen](../manage-apps/debug-saml-sso-issues.md)

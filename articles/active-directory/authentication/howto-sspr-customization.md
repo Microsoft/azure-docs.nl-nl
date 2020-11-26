@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4bef201cbd14a4de0c785b5f86d534f27bfedb31
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: e121a6a45ab20055591a3670152114b8d03529cf
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92363705"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173991"
 ---
 # <a name="customize-the-user-experience-for-azure-active-directory-self-service-password-reset"></a>De gebruikers ervaring voor Azure Active Directory self-service voor wachtwoord herstel aanpassen
 
@@ -74,7 +74,7 @@ De afbeeldingen die u kiest, worden in de volgende omstandigheden weer gegeven:
 
 Om ervoor te zorgen dat dingen meer gebruikers vriendelijk zijn, kunt u de naam van de organisatie wijzigen in de portal en in automatische communicatie. Als u het kenmerk van de mapnaam wilt wijzigen in de Azure Portal, bladert u naar **Azure Active Directory**  >  **Eigenschappen**. Deze beschrijvende organisatie naam optie is het meest zichtbaar in automatische e-mail berichten, zoals in de volgende voor beelden:
 
-* De beschrijvende naam in het e-mail bericht, bijvoorbeeld '*micro soft*namens de CONTOSO-demo '
+* De beschrijvende naam in het e-mail bericht, bijvoorbeeld '*micro soft* namens de CONTOSO-demo '
 * De regel onderwerp in het e-mail bericht, bijvoorbeeld '*CONTOSO-demo account e-mail verificatie code*'
 
 ## <a name="customize-the-ad-fs-sign-in-page"></a>De AD FS aanmeldings pagina aanpassen
@@ -91,4 +91,4 @@ Set-ADFSGlobalWebContent -SigninPageDescriptionText "<p><a href='https://passwor
 
 Zie [rapportage-opties voor Azure AD-wachtwoord beheer voor](howto-sspr-reporting.md)meer informatie over het gebruik van SSPR in uw omgeving.
 
-Zie problemen met het [opnieuw instellen van wacht woorden oplossen](active-directory-passwords-troubleshoot.md) als u of gebruikers problemen hebben met SSPR
+Zie problemen met het [opnieuw instellen van wacht woorden oplossen](./troubleshoot-sspr.md) als u of gebruikers problemen hebben met SSPR

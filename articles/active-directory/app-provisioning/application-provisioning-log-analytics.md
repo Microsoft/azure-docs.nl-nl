@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/12/2020
 ms.author: kenwith
 ms.reviewer: arvinh,luleon
-ms.openlocfilehash: 68e47fe3cc674542a807ecbabd37cc6b624d5c03
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 167ed7e5c00452db4ee77e10236fec3ff86f0439
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92145582"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96175097"
 ---
 # <a name="understand-how-provisioning-integrates-with-azure-monitor-logs"></a>Meer informatie over het inrichten van inrichtingen met Azure Monitor-logboeken
 
@@ -30,13 +30,13 @@ Zodra u Azure monitoring hebt geconfigureerd, kunt u Logboeken inschakelen voor 
 
 :::image type="content" source="media/application-provisioning-log-analytics/diagnostic-settings.png" alt-text="Diagnostische instellingen openen" lightbox="media/application-provisioning-log-analytics/diagnostic-settings.png":::
 
-:::image type="content" source="media/application-provisioning-log-analytics/enable-log-analytics.png" alt-text="Diagnostische instellingen openen" lightbox="media/application-provisioning-log-analytics/enable-log-analytics.png":::
+:::image type="content" source="media/application-provisioning-log-analytics/enable-log-analytics.png" alt-text="Inrichtings logboeken voor toepassingen inschakelen" lightbox="media/application-provisioning-log-analytics/enable-log-analytics.png":::
 
 > [!NOTE]
 > Als u net onlangs een werk ruimte hebt ingericht, kan het enige tijd duren voordat u er logboeken naar kunt verzenden. Als er een fout bericht wordt weer gegeven dat het abonnement niet is geregistreerd voor gebruik van *micro soft. Insights* , kunt u na enkele minuten teruggaan.
  
 ## <a name="understanding-the-data"></a>Informatie over de gegevens
-De onderliggende gegevens stroom die het inrichten van logboek viewers verzendt, is bijna identiek. Azure Monitor logboeken krijgt bijna dezelfde stroom als de Azure Portal-gebruikers interface en de Azure-API. Er zijn slechts enkele **verschillen** in de logboek velden, zoals beschreven in de volgende tabel. Zie [List provisioningObjectSummary](https://docs.microsoft.com/graph/api/provisioningobjectsummary-list?view=graph-rest-beta&tabs=http&preserve-view=true)voor meer informatie over deze velden.
+De onderliggende gegevens stroom die het inrichten van logboek viewers verzendt, is bijna identiek. Azure Monitor logboeken krijgt bijna dezelfde stroom als de Azure Portal-gebruikers interface en de Azure-API. Er zijn slechts enkele **verschillen** in de logboek velden, zoals beschreven in de volgende tabel. Zie [List provisioningObjectSummary](/graph/api/provisioningobjectsummary-list?preserve-view=true&tabs=http&view=graph-rest-beta)voor meer informatie over deze velden.
 
 |Azure Monitor-logboeken   |Azure Portal gebruikers interface   |Azure-API |
 |----------|-----------|------------|
@@ -51,9 +51,9 @@ Azure Monitor werkmappen bieden een flexibel canvas voor gegevens analyse. Ze bi
 
 Het inrichten van toepassingen wordt geleverd met een reeks vooraf gemaakte werkmappen. U kunt ze vinden op de pagina werkmappen. Als u de gegevens wilt bekijken, moet u ervoor zorgen dat alle filters (time Range, jobID, appName) worden ingevuld. U moet er ook voor zorgen dat u een app hebt ingericht, anders zijn er geen gegevens in de logboeken.
 
-:::image type="content" source="media/application-provisioning-log-analytics/workbooks.png" alt-text="Diagnostische instellingen openen" lightbox="media/application-provisioning-log-analytics/workbooks.png":::
+:::image type="content" source="media/application-provisioning-log-analytics/workbooks.png" alt-text="Werkmappen voor het inrichten van toepassingen" lightbox="media/application-provisioning-log-analytics/workbooks.png":::
 
-:::image type="content" source="media/application-provisioning-log-analytics/report.png" alt-text="Diagnostische instellingen openen" lightbox="media/application-provisioning-log-analytics/report.png":::
+:::image type="content" source="media/application-provisioning-log-analytics/report.png" alt-text="Inrichtings dashboard voor toepassingen" lightbox="media/application-provisioning-log-analytics/report.png":::
 
 ## <a name="custom-queries"></a>Aangepaste query's
 
@@ -100,15 +100,15 @@ Zie [reageren op gebeurtenissen met Azure monitor-waarschuwingen](../../azure-mo
 
 Waarschuwen wanneer er sprake is van een piek in storingen. Vervang de jobID door de jobID voor uw toepassing.
 
-:::image type="content" source="media/application-provisioning-log-analytics/alert1.png" alt-text="Diagnostische instellingen openen" lightbox="media/application-provisioning-log-analytics/alert1.png":::
+:::image type="content" source="media/application-provisioning-log-analytics/alert1.png" alt-text="Waarschuwen wanneer er sprake is van een piek in storingen." lightbox="media/application-provisioning-log-analytics/alert1.png":::
 
 Er is mogelijk een probleem waardoor de inrichtings service niet meer actief is. Gebruik de volgende waarschuwing om te detecteren wanneer er tijdens een bepaald tijds interval geen inrichtings gebeurtenissen zijn.
 
-:::image type="content" source="media/application-provisioning-log-analytics/alert2.png" alt-text="Diagnostische instellingen openen" lightbox="media/application-provisioning-log-analytics/alert2.png":::
+:::image type="content" source="media/application-provisioning-log-analytics/alert2.png" alt-text="Er is mogelijk een probleem waardoor de inrichtings service niet meer actief is." lightbox="media/application-provisioning-log-analytics/alert2.png":::
 
 Waarschuwen wanneer er een piek is in uitgeschakeld of verwijderd.
 
-:::image type="content" source="media/application-provisioning-log-analytics/alert3.png" alt-text="Diagnostische instellingen openen" lightbox="media/application-provisioning-log-analytics/alert3.png":::
+:::image type="content" source="media/application-provisioning-log-analytics/alert3.png" alt-text="Waarschuwen wanneer er een piek is in uitgeschakeld of verwijderd." lightbox="media/application-provisioning-log-analytics/alert3.png":::
 
 
 ## <a name="community-contributions"></a>Bijdragen van de community
@@ -121,4 +121,4 @@ We nemen een open-source-en community-benadering voor het inrichten van query's 
 - [Aan de slag met query's in Azure Monitor-logboeken](../../azure-monitor/log-query/get-started-queries.md)
 - [Waarschuwings groepen maken en beheren in de Azure Portal](../../azure-monitor/platform/action-groups.md)
 - [De log Analytics-weer gaven voor Azure Active Directory installeren en gebruiken](../reports-monitoring/howto-install-use-log-analytics-views.md)
-- [API voor het inrichten van Logboeken](https://docs.microsoft.com/graph/api/resources/provisioningobjectsummary?view=graph-rest-beta.md&preserve-view=true)
+- [API voor het inrichten van Logboeken](/graph/api/resources/provisioningobjectsummary?preserve-view=true&view=graph-rest-beta.md)

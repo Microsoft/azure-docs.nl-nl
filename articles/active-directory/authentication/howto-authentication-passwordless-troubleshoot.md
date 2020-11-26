@@ -12,11 +12,11 @@ manager: daveba
 ms.reviewer: aakapo
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 690d4761657b8bf6e5ba63ddfbce7163584e64e2
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964567"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96174031"
 ---
 # <a name="troubleshooting-for-hybrid-deployments-of-fido2-security-keys-in-azure-ad-preview"></a>Problemen oplossen voor hybride implementaties van FIDO2-beveiligings sleutels in azure AD (preview)
 
@@ -54,7 +54,7 @@ Nadat het domein is toegevoegd aan een schone installatie van een hybride Azure 
 
 Dit gedrag is een bekende beperking voor apparaten die lid zijn van een domein en is niet specifiek voor FIDO2-beveiligings sleutels.
 
-Als u de huidige status wilt controleren, gebruikt u de `dsregcmd /status` opdracht. Controleer of *AzureAdJoined* en *DomainJoined* *Ja*bevatten.
+Als u de huidige status wilt controleren, gebruikt u de `dsregcmd /status` opdracht. Controleer of *AzureAdJoined* en *DomainJoined* *Ja* bevatten.
 
 ### <a name="users-are-unable-to-get-sso-to-my-ntlm-network-resource-after-signing-in-with-a-fido2-security-key-and-receiving-a-credential-prompt"></a>Gebruikers kunnen geen SSO voor mijn NTLM-netwerk bron ophalen nadat ze zich hebben aangemeld met een FIDO2-beveiligings sleutel en een prompt voor referenties hebben ontvangen
 
@@ -76,9 +76,9 @@ Voer de volgende stappen uit om gegevens te verzamelen die helpen bij het oploss
 
 1. Selecteer de categorie *beveiliging en privacy* en vervolgens de subcategorie *Fido* .
 1. Schakel het selectie vakje in om *bijgevoegde bestanden en diagnostische gegevens naar micro soft te verzenden samen met mijn feedback*.
-1. Selecteer *mijn problemen opnieuw maken*en vervolgens *vastleggen starten*.
+1. Selecteer *mijn problemen opnieuw maken* en vervolgens *vastleggen starten*.
 1. Vergrendel en Ontgrendel de computer met de beveiligings sleutel FIDO2. Als het probleem zich voordoet, probeert u met andere referenties te ontgrendelen.
-1. Ga terug naar de **feedback hub**, selecteer **Stop vastleggen**en verzend uw feedback.
+1. Ga terug naar de **feedback hub**, selecteer **Stop vastleggen** en verzend uw feedback.
 1. Ga naar de pagina *feedback* en klik vervolgens op het tabblad *mijn feedback* . Selecteer uw laatst verzonden feedback.
 1. Selecteer de knop *delen* in de rechter bovenhoek om een koppeling naar de feedback te krijgen. Neem deze koppeling op wanneer u een ondersteunings aanvraag opent of beantwoordt aan de engineer die is toegewezen aan een bestaande ondersteunings aanvraag.
 
@@ -149,7 +149,7 @@ De eerste set eigenschappen is afkomstig uit de objecten in de on-premises AD DS
 | DomainDnsName      | De DNS-domein naam van het AD DS domein. |
 | ComputerAccount    | Het object computer account van het object van de Azure AD Kerberos-server (de domein controller). |
 | User account        | Het uitgeschakelde gebruikers account-object dat de Azure AD Kerberos server TGT-versleutelings sleutel bevat. De DN-naam van dit account is *CN = krbtgt_AzureAD, CN = Users <domein-DN>* |
-| Versie         | De sleutel versie van de TGT-versleutelings sleutel van de Azure AD Kerberos-server. De versie wordt toegewezen wanneer de sleutel wordt gemaakt. De versie wordt vervolgens verhoogd telkens wanneer de sleutel wordt gedraaid. De stappen zijn gebaseerd op meta gegevens van replicatie en zijn waarschijnlijk groter dan één.<br /><br /> De eerste *versie* kan bijvoorbeeld *192272*zijn. De eerste keer dat de sleutel wordt gedraaid, kan de versie worden voortgezet in *212621*.<br /><br /> Het is belang rijk om te controleren of de *versie* van het on-premises object en de *CloudKeyVersion* voor het Cloud object hetzelfde zijn. |
+| Versie         | De sleutel versie van de TGT-versleutelings sleutel van de Azure AD Kerberos-server. De versie wordt toegewezen wanneer de sleutel wordt gemaakt. De versie wordt vervolgens verhoogd telkens wanneer de sleutel wordt gedraaid. De stappen zijn gebaseerd op meta gegevens van replicatie en zijn waarschijnlijk groter dan één.<br /><br /> De eerste *versie* kan bijvoorbeeld *192272* zijn. De eerste keer dat de sleutel wordt gedraaid, kan de versie worden voortgezet in *212621*.<br /><br /> Het is belang rijk om te controleren of de *versie* van het on-premises object en de *CloudKeyVersion* voor het Cloud object hetzelfde zijn. |
 | KeyUpdatedOn       | De datum en tijd waarop de TGT-versleutelings sleutel van de Azure AD Kerberos-server is bijgewerkt of gemaakt. |
 | KeyUpdatedFrom     | De domein controller waarop de TGT-versleutelings sleutel van de Azure AD Kerberos-server voor het laatst is bijgewerkt. |
 | CloudId            | De *id* van het Azure AD-object. Moet overeenkomen met de bovenstaande *id* . |

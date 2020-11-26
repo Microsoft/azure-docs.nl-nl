@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 07/06/2020
 ms.author: joflore
-ms.openlocfilehash: b9656b62e2c689d0993fb16c1f1d66b14d3430c6
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: b4fb5c1dcb2bb34b472c2a3eda88ca4c219303d0
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91967729"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96175165"
 ---
 # <a name="enable-security-audits-for-azure-active-directory-domain-services"></a>Beveiligings controles inschakelen voor Azure Active Directory Domain Services
 
@@ -50,9 +50,9 @@ Voer de volgende stappen uit om beveiligings controle gebeurtenissen van Azure A
 > Azure AD DS-beveiligings controles zijn niet terugwerkt. U kunt geen gebeurtenissen uit het verleden ophalen of opnieuw afspelen. Azure AD DS kan alleen gebeurtenissen verzenden die optreden nadat beveiligings controles zijn ingeschakeld.
 
 1. Meld u aan bij Azure Portal op https://portal.azure.com.
-1. Zoek en selecteer **Azure AD Domain Services**aan de bovenkant van de Azure Portal. Kies uw beheerde domein, bijvoorbeeld *aaddscontoso.com*.
+1. Zoek en selecteer **Azure AD Domain Services** aan de bovenkant van de Azure Portal. Kies uw beheerde domein, bijvoorbeeld *aaddscontoso.com*.
 1. Selecteer in het venster Azure AD DS **Diagnostische instellingen** aan de linkerkant.
-1. Er worden standaard geen diagnostische gegevens geconfigureerd. Selecteer **Diagnostische instelling toevoegen**om aan de slag te gaan.
+1. Er worden standaard geen diagnostische gegevens geconfigureerd. Selecteer **Diagnostische instelling toevoegen** om aan de slag te gaan.
 
     ![Een diagnostische instelling voor Azure AD Domain Services toevoegen](./media/security-audit-events/add-diagnostic-settings.png)
 
@@ -63,15 +63,15 @@ Voer de volgende stappen uit om beveiligings controle gebeurtenissen van Azure A
     ![Het vereiste doel en type controle gebeurtenissen inschakelen dat moet worden vastgelegd](./media/security-audit-events/diagnostic-settings-page.png)
 
     * **Azure-opslag**
-        * Selecteer **archiveren naar een opslag account**en kies vervolgens **configureren**.
+        * Selecteer **archiveren naar een opslag account** en kies vervolgens **configureren**.
         * Selecteer het **abonnement** en het **opslag account** dat u wilt gebruiken voor het archiveren van beveiligings controle gebeurtenissen.
         * Als u klaar bent, kiest u **OK**.
     * **Azure Event hubs**
-        * Selecteer **Stream naar een event hub**en kies vervolgens **configureren**.
+        * Selecteer **Stream naar een event hub** en kies vervolgens **configureren**.
         * Selecteer het **abonnement** en de **Event hub-naam ruimte**. Als dat nodig is, kiest u ook de naam van een **Event hub** en vervolgens de naam van het **Event hub-beleid**.
         * Als u klaar bent, kiest u **OK**.
     * **Azure log analytic-werk ruimten**
-        * Selecteer **verzenden naar log Analytics**en kies vervolgens het **abonnement** en de **log Analytics werk ruimte** die u wilt gebruiken om beveiligings controle gebeurtenissen op te slaan.
+        * Selecteer **verzenden naar log Analytics** en kies vervolgens het **abonnement** en de **log Analytics werk ruimte** die u wilt gebruiken om beveiligings controle gebeurtenissen op te slaan.
 
 1. Selecteer de logboek categorieën die u voor de specifieke doel resource wilt opnemen. Als u de controle gebeurtenissen naar een Azure Storage-account verzendt, kunt u ook een Bewaar beleid configureren waarmee het aantal dagen voor het bewaren van gegevens wordt gedefinieerd. Een standaard instelling van *0* behoudt alle gegevens en roteert geen gebeurtenissen na een bepaalde tijd.
 
@@ -95,7 +95,7 @@ Voer de volgende stappen uit om beveiligings controle gebeurtenissen van Azure A
 1. Maak de doel resource voor de beveiligings controle gebeurtenissen.
 
     * **Azure-opslag**  -  [Een opslag account maken met behulp van Azure PowerShell](../storage/common/storage-account-create.md?tabs=azure-powershell)
-    * **Azure Event hubs**  -  [Maak een event hub met behulp van Azure PowerShell](../event-hubs/event-hubs-quickstart-powershell.md). Mogelijk moet u ook de cmdlet [New-AzEventHubAuthorizationRule](/powershell/module/az.eventhub/new-azeventhubauthorizationrule) gebruiken om een autorisatie regel te maken waarmee Azure-AD DS machtigingen worden verleend aan de Event hub *naam ruimte*. De autorisatie regel moet de rechten **beheren**, **Luis teren**en **verzenden** bevatten.
+    * **Azure Event hubs**  -  [Maak een event hub met behulp van Azure PowerShell](../event-hubs/event-hubs-quickstart-powershell.md). Mogelijk moet u ook de cmdlet [New-AzEventHubAuthorizationRule](/powershell/module/az.eventhub/new-azeventhubauthorizationrule) gebruiken om een autorisatie regel te maken waarmee Azure-AD DS machtigingen worden verleend aan de Event hub *naam ruimte*. De autorisatie regel moet de rechten **beheren**, **Luis teren** en **verzenden** bevatten.
 
         > [!IMPORTANT]
         > Zorg ervoor dat u de autorisatie regel instelt op de naam ruimte Event Hub en niet op de Event Hub zelf.
@@ -141,7 +141,7 @@ Voer de volgende stappen uit om beveiligings controle gebeurtenissen van Azure A
 Met log Analytics-werk ruimten kunt u de beveiligings controle gebeurtenissen bekijken en analyseren met behulp van Azure Monitor en de query taal Kusto. Deze query taal is alleen bedoeld voor gebruik met alleen-lezen en biedt mogelijkheden voor Power Analytics met een eenvoudig te lezen-syntaxis. Raadpleeg de volgende artikelen voor meer informatie om aan de slag te gaan met Kusto-query talen:
 
 * [Azure Monitor-documentatie](../azure-monitor/index.yml)
-* [Aan de slag met Log Analytics in Azure Monitor](../azure-monitor/log-query/get-started-portal.md)
+* [Aan de slag met Log Analytics in Azure Monitor](../azure-monitor/log-query/log-analytics-tutorial.md)
 * [Aan de slag met logboekquery’s in Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 * [Dashboards van Log Analytics-gegevens maken en delen](../azure-monitor/learn/tutorial-logs-dashboards.md)
 
@@ -217,7 +217,7 @@ Azure AD DS-beveiligings controles worden uitgelijnd met traditionele controle v
 
 De volgende controle gebeurtenis categorieën zijn beschikbaar:
 
-| Naam van audit categorie | Beschrijving |
+| Naam van audit categorie | Description |
 |:---|:---|
 | Account aanmelding|Controles proberen account gegevens te verifiëren op een domein controller of op een lokale SAM (Security Accounts Manager).</p>Aanmeldings-en afmeldings beleids instellingen en gebeurtenissen volgen pogingen om toegang te krijgen tot een bepaalde computer. De instellingen en gebeurtenissen in deze categorie zijn gericht op de account database die wordt gebruikt. Deze categorie bevat de volgende subcategorieën:<ul><li>[Validatie van referenties controleren](/windows/security/threat-protection/auditing/audit-credential-validation)</li><li>[De Kerberos-authenticatieservice controleren](/windows/security/threat-protection/auditing/audit-kerberos-authentication-service)</li><li>[Kerberos-serviceticketbewerkingen controleren](/windows/security/threat-protection/auditing/audit-kerberos-service-ticket-operations)</li><li>[Andere gebeurtenissen voor aanmelden/afmelden controleren](/windows/security/threat-protection/auditing/audit-other-logonlogoff-events)</li></ul>|
 | Accountbeheer|Hiermee worden wijzigingen in gebruikers-en computer accounts en-groepen gecontroleerd. Deze categorie bevat de volgende subcategorieën:<ul><li>[Beheer van toepassingsgroepen controleren](/windows/security/threat-protection/auditing/audit-application-group-management)</li><li>[Beheer van computeraccounts controleren](/windows/security/threat-protection/auditing/audit-computer-account-management)</li><li>[Beheer van distributiegroepen controleren](/windows/security/threat-protection/auditing/audit-distribution-group-management)</li><li>[Ander account beheer controleren](/windows/security/threat-protection/auditing/audit-other-account-management-events)</li><li>[Beheer van beveiligingsgroepen controleren](/windows/security/threat-protection/auditing/audit-security-group-management)</li><li>[Gebruikersaccountbeheer controleren](/windows/security/threat-protection/auditing/audit-user-account-management)</li></ul>|

@@ -13,19 +13,19 @@ ms.custom: aaddev
 ms.topic: conceptual
 ms.workload: identity
 ROBOTS: NOINDEX
-ms.openlocfilehash: 378dab95d8fb3519bb2fc5c934a760e051a18d29
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: b08b07ebcd6e45e95e23dff8686148889e9d4b39
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94575880"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173916"
 ---
 # <a name="developer-guidance-for-the-azure-active-directory-conditional-access-feature"></a>Richt lijnen voor ontwikkel aars voor de functie voor voorwaardelijke toegang van Azure Active Directory
 
 [!INCLUDE [active-directory-azuread-dev](../../../includes/active-directory-azuread-dev.md)]
 
 > [!NOTE]
-> Zie voor de micro soft Identity platform-versie van dit artikel [ontwikkelaars richtlijnen voor Azure Active Directory voorwaardelijke toegang](/azure/active-directory/develop/v2-conditional-access-dev-guide).
+> Zie voor de micro soft Identity platform-versie van dit artikel [ontwikkelaars richtlijnen voor Azure Active Directory voorwaardelijke toegang](../develop/v2-conditional-access-dev-guide.md).
 
 De functie voor voorwaardelijke toegang in Azure Active Directory (Azure AD) biedt een van de volgende manieren om uw app te beveiligen en een service te beveiligen. Met voorwaardelijke toegang kunnen ontwikkel aars en zakelijke klanten services op talrijke manieren beveiligen, waaronder:
 
@@ -178,7 +178,7 @@ Onze app moet worden onderschept `error=interaction_required` . De toepassing ka
 
 Als u dit scenario wilt uitproberen, raadpleegt u ons [js Spa-code voorbeeld](https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof-ca). Dit code voorbeeld maakt gebruik van het beleid voor voorwaardelijke toegang en de Web-API die u eerder hebt geregistreerd met een JS SPA om dit scenario te demonstreren. Hier ziet u hoe u de claim Challenge goed kunt afhandelen en een toegangs token krijgt dat kan worden gebruikt voor uw web-API. U kunt ook het voor beeld van de algemene [Angular.js code](https://github.com/Azure-Samples/active-directory-angularjs-singlepageapp) uitchecken voor hulp bij een hoek Spa
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 * Zie [voorwaardelijke toegang in azure Active Directory](../conditional-access/overview.md)voor meer informatie over de mogelijkheden.
 * Zie [github opslag plaats code samples](https://github.com/azure-samples?utf8=%E2%9C%93&q=active-directory)(Engelstalig) voor meer informatie over Azure ad-code voorbeelden.

@@ -4,12 +4,12 @@ description: Leer hoe u uw functie-app kunt verbinden met Application Insights v
 ms.date: 8/31/2020
 ms.topic: how-to
 ms.custom: contperfq2, devx-track-azurecli
-ms.openlocfilehash: f5b1b00c534abf1e7f82d2aca69dd4763b40d5ad
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 0b8aae707f0fb055677af111f1e88c0a2e19b227
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94833075"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96175743"
 ---
 # <a name="how-to-configure-monitoring-for-azure-functions"></a>Bewaking voor Azure Functions configureren
 
@@ -230,7 +230,7 @@ az functionapp config appsettings delete --name <FUNCTION_APP_NAME> \
 
 Voor een functie-app voor het verzenden van gegevens naar Application Insights, moet de instrumentatie sleutel van een Application Insights resource bekend zijn. De sleutel moet een app-instelling met de naam **APPINSIGHTS_INSTRUMENTATIONKEY** hebben.
 
-Wanneer u de functie-app maakt [in de Azure Portal](functions-create-first-azure-function.md), vanaf de opdracht regel met behulp van [Azure functions core tools](functions-create-first-azure-function-azure-cli.md), of met behulp van [Visual Studio code](functions-create-first-function-vs-code.md), Application Insights integratie standaard ingeschakeld. De Application Insights resource heeft dezelfde naam als de functie-app en wordt gemaakt in dezelfde regio of in de dichtstbijzijnde regio.
+Wanneer u de functie-app maakt [in de Azure Portal](functions-create-first-azure-function.md), vanaf de opdracht regel met behulp van [Azure functions core tools](./create-first-function-cli-csharp.md), of met behulp van [Visual Studio code](./create-first-function-vs-code-csharp.md), Application Insights integratie standaard ingeschakeld. De Application Insights resource heeft dezelfde naam als de functie-app en wordt gemaakt in dezelfde regio of in de dichtstbijzijnde regio.
 
 ### <a name="new-function-app-in-the-portal"></a>Nieuwe functie-app in de portal
 

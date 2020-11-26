@@ -11,12 +11,12 @@ ms.date: 11/16/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5322e5ce1bb124387931eac666cf9e5510cb2463
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: c3960b8afeb9d7ecc80aa49fc13eee4977fa5494
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95237630"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173967"
 ---
 # <a name="install-the-azure-ad-connect-cloud-provisioning-agent"></a>De agent voor Azure AD Connect-cloudinrichting installeren
 Dit document helpt u bij het installatie proces voor de Azure Active Directory (Azure AD) Connect inrichtings agent en hoe u deze in eerste instantie kunt configureren in de Azure Portal.
@@ -32,7 +32,7 @@ Het installeren en configureren van Azure AD Connect inrichting wordt uitgevoerd
 
 
 ## <a name="group-managed-service-accounts"></a>Door groep beheerde serviceaccounts
-Een beheerd service account voor een groep is een beheerd domein account dat automatische wachtwoord beheer, vereenvoudigd Service Principal Name (SPN)-beheer biedt, de mogelijkheid om het beheer te delegeren aan andere beheerders en deze functionaliteit uit te breiden op meerdere servers.  Azure AD Connect Cloud Sync ondersteunt en beveelt het gebruik aan van een door een groep beheerd service account voor het uitvoeren van de agent.  Zie [beheerde service accounts voor groepen](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview) voor meer informatie over een gMSA 
+Een beheerd service account voor een groep is een beheerd domein account dat automatische wachtwoord beheer, vereenvoudigd Service Principal Name (SPN)-beheer biedt, de mogelijkheid om het beheer te delegeren aan andere beheerders en deze functionaliteit uit te breiden op meerdere servers.  Azure AD Connect Cloud Sync ondersteunt en beveelt het gebruik aan van een door een groep beheerd service account voor het uitvoeren van de agent.  Zie [beheerde service accounts voor groepen](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview) voor meer informatie over een gMSA 
 
 
 ### <a name="upgrading-an-existing-agent-to-use-the-gmsa-account"></a>Een bestaande agent bijwerken voor het gebruik van het gMSA-account
@@ -73,7 +73,7 @@ Verificatie van de agent vindt plaats in de Azure Portal en op de lokale server 
 ### <a name="azure-portal-agent-verification"></a>Verificatie van Azure Portal-agent
 Voer de volgende stappen uit om te controleren of de agent wordt gezien door Azure.
 
-1. Meld u aan bij de Azure-portal.
+1. Meld u aan bij Azure Portal.
 1. Selecteer aan de linkerkant **Azure Active Directory**  >  **Azure AD CONNECT**. Selecteer in het midden de optie **inrichting beheren (preview)**.
 
    ![Azure Portal](media/how-to-install/install-6.png)</br>
@@ -107,4 +107,3 @@ Voer de volgende stappen uit om te controleren of de agent wordt uitgevoerd.
 
 - [Wat is inrichting?](what-is-provisioning.md)
 - [Wat is Azure AD Connect-cloudinrichting?](what-is-cloud-provisioning.md)
- 

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: baselden, librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0143da9c1961b4123467120210135f7db2c582c8
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: b4c06e53d3ddfb5f344a759e31d83cb22ce6d4d3
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94839570"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96174133"
 ---
 # <a name="plan-a-passwordless-authentication-deployment-in-azure-active-directory"></a>Een authenticatie-implementatie met een wacht woord plannen in Azure Active Directory
 
@@ -78,7 +78,7 @@ Organisaties moeten voldoen aan de volgende vereisten voordat een implementatie 
 
 De vereisten voor Windows hello zijn zeer afhankelijk van of u implementeert in een on-premises, hybride of Cloud configuratie. Zie voor meer informatie de [volledige lijst met vereisten voor Windows hello voor bedrijven](/windows/security/identity-protection/hello-for-business/hello-identity-verification).
 
-### <a name="azure-ad-multi-factor-authentication"></a>Azure AD-Multi-Factor Authentication
+### <a name="azure-ad-multi-factor-authentication"></a>Azure AD Multi-Factor Authentication
 
 Gebruikers registreren hun eigen methode als onderdeel van de registratie stroom van de Azure AD-Multi-Factor Authentication. Multi-factor Authentication met een gebruikers naam en wacht woord samen met een andere geregistreerde methode kan worden gebruikt als terugval voor het geval ze hun telefoon of beveiligings sleutel in sommige scenario's niet kunnen gebruiken.
 
@@ -93,7 +93,7 @@ Houd rekening met de behoeften van uw bedrijf en de use cases voor elke verifica
 
 De volgende tabel bevat een overzicht van de use cases die tijdens dit project moeten worden geïmplementeerd.
 
-| Gebied | Beschrijving |
+| Onderwerp | Beschrijving |
 | --- | --- |
 | **Toegang** | Aanmelden met een wacht woord is beschikbaar vanaf een zakelijk of persoonlijk apparaat binnen of buiten het bedrijfs netwerk. |
 | **Controle** | Gebruiks gegevens zijn beschikbaar voor beheerders die bijna in realtime kunnen worden gecontroleerd. <br> Gebruiks gegevens worden minstens elke 29 dagen naar bedrijfs systemen gedownload, of het hulp programma SIEM wordt gebruikt. |
@@ -126,7 +126,7 @@ Wanneer u een wacht woordloze verificatie implementeert, moet u eerst een of mee
 
 Groepen kunnen worden gesynchroniseerd vanuit een on-premises adres lijst of vanuit Azure AD. Zodra u tevreden bent met de resultaten van uw pilot, kunt u scha kelen tussen de authenticatie zonder wacht woord voor alle gebruikers.
 
-Zie [Aanbevolen procedures voor een pilot](https://aka.ms/deploymentplans) op de pagina implementatie plannen.
+Zie [Aanbevolen procedures voor een pilot](../fundamentals/active-directory-deployment-plans.md) op de pagina implementatie plannen.
 
 ## <a name="plan-passwordless-authentication-with-the-microsoft-authenticator-app"></a>Authenticatie zonder wacht woord plannen met de app Microsoft Authenticator
 
@@ -292,7 +292,7 @@ Volg de stappen die zijn afgestemd op de gekozen methode.
 
 ### <a name="required-administrative-roles"></a>Vereiste beheerders rollen
 
-| Azure AD-rol | Beschrijving |
+| Azure AD-rol | Description |
 | --- | --- |
 | Hoofdbeheerder|De rol met minimale bevoegdheden om gecombineerde registratie-ervaring te kunnen implementeren. |
 | Verificatie beheerder | De functie voor de minste bevoegdheden waarmee verificatie methoden kunnen worden geïmplementeerd en beheerd. |

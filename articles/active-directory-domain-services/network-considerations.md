@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/06/2020
 ms.author: joflore
-ms.openlocfilehash: 4ced7331daa116e237d9628d12d16a67687db5b9
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 43731f84066943b991b566ff5936e4288aa669eb
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91968086"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96175216"
 ---
 # <a name="virtual-network-design-considerations-and-configuration-options-for-azure-active-directory-domain-services"></a>Ontwerp overwegingen voor het virtuele netwerk en configuratie opties voor Azure Active Directory Domain Services
 
@@ -91,7 +91,7 @@ U kunt naam omzetting inschakelen met behulp van voorwaardelijke DNS-doorstuur s
 
 Een beheerd domein maakt sommige netwerk bronnen tijdens de implementatie. Deze resources zijn nodig voor een geslaagde bewerking en beheer van het beheerde domein, en mogen niet hand matig worden geconfigureerd.
 
-| Azure-resource                          | Beschrijving |
+| Azure-resource                          | Description |
 |:----------------------------------------|:---|
 | Netwerk interface kaart                  | Azure AD DS fungeert als host voor het beheerde domein op twee domein controllers (Dc's) die worden uitgevoerd op Windows Server als Azure-Vm's. Elke VM heeft een virtuele netwerk interface die verbinding maakt met het subnet van het virtuele netwerk. |
 | Dynamisch standaard openbaar IP-adres      | Azure AD DS communiceert met de synchronisatie-en beheer service met een standaard-SKU openbaar IP-adres. Zie [IP-adres typen en toewijzings methoden in azure](../virtual-network/public-ip-addresses.md)voor meer informatie over open bare IP-adressen. |
@@ -104,15 +104,15 @@ Een beheerd domein maakt sommige netwerk bronnen tijdens de implementatie. Deze 
 
 ## <a name="network-security-groups-and-required-ports"></a>Netwerk beveiligings groepen en de vereiste poorten
 
-Een [netwerkbeveiligingsgroep](../virtual-network/security-overview.md) (NSG: Network Security Group) bevat een lijst met beveiligingsregels waarmee netwerkverkeer naar verkeer in een virtueel Azure-netwerk wordt toegestaan of geweigerd. Er wordt een netwerk beveiligings groep gemaakt wanneer u een beheerd domein implementeert dat een set regels bevat waarmee de service verificatie-en beheer functies kan bieden. Deze standaard netwerk beveiligings groep is gekoppeld aan het subnet van het virtuele netwerk waarop uw beheerde domein is geïmplementeerd.
+Een [netwerkbeveiligingsgroep](../virtual-network/network-security-groups-overview.md) (NSG: Network Security Group) bevat een lijst met beveiligingsregels waarmee netwerkverkeer naar verkeer in een virtueel Azure-netwerk wordt toegestaan of geweigerd. Er wordt een netwerk beveiligings groep gemaakt wanneer u een beheerd domein implementeert dat een set regels bevat waarmee de service verificatie-en beheer functies kan bieden. Deze standaard netwerk beveiligings groep is gekoppeld aan het subnet van het virtuele netwerk waarop uw beheerde domein is geïmplementeerd.
 
 De volgende regels voor de netwerk beveiligings groep zijn vereist voor het beheerde domein voor het leveren van verificatie-en beheer Services. Wijzig of verwijder deze regels voor netwerk beveiligings groepen niet voor het subnet van het virtuele netwerk waarop uw beheerde domein is geïmplementeerd.
 
 | Poortnummer | Protocol | Bron                             | Doel | Bewerking | Vereist | Doel |
 |:-----------:|:--------:|:----------------------------------:|:-----------:|:------:|:--------:|:--------|
-| 443         | TCP      | AzureActiveDirectoryDomainServices | Alle         | Toestaan  | Ja      | Synchronisatie met uw Azure AD-Tenant. |
-| 3389        | TCP      | CorpNetSaw                         | Alle         | Toestaan  | Ja      | Beheer van uw domein. |
-| 5986        | TCP      | AzureActiveDirectoryDomainServices | Alle         | Toestaan  | Ja      | Beheer van uw domein. |
+| 443         | TCP      | AzureActiveDirectoryDomainServices | Alle         | Toestaan  | Yes      | Synchronisatie met uw Azure AD-Tenant. |
+| 3389        | TCP      | CorpNetSaw                         | Alle         | Toestaan  | Yes      | Beheer van uw domein. |
+| 5986        | TCP      | AzureActiveDirectoryDomainServices | Alle         | Toestaan  | Yes      | Beheer van uw domein. |
 
 Er wordt een Standard Load Balancer van Azure gemaakt waarvoor deze regels moeten worden uitgevoerd. Deze netwerkbeveiligingsgroep beveiligt Azure AD DS en is vereist voor een juiste werking van het beheerde domein. Verwijder deze netwerk beveiligings groep niet. De load balancer werkt niet zonder problemen.
 
@@ -123,7 +123,7 @@ Als dat nodig is, kunt u [de vereiste netwerk beveiligings groep en-regels maken
 >
 > Als u beveiligde LDAP gebruikt, kunt u de vereiste regel voor de TCP-poort 636 toevoegen om extern verkeer toe te staan, indien nodig. Door deze regel toe te voegen, worden de regels voor de netwerk beveiligings groep niet in een niet-ondersteunde staat geplaatst. Zie [beveiligde LDAP-toegang via internet vergren delen](tutorial-configure-ldaps.md#lock-down-secure-ldap-access-over-the-internet) voor meer informatie.
 >
-> De standaard regels voor *AllowVnetInBound*, *AllowAzureLoadBalancerInBound*, *DenyAllInBound*, *AllowVnetOutBound*, *AllowInternetOutBound*en *DenyAllOutBound* bestaan ook voor de netwerk beveiligings groep. Bewerk of verwijder deze standaard regels niet.
+> De standaard regels voor *AllowVnetInBound*, *AllowAzureLoadBalancerInBound*, *DenyAllInBound*, *AllowVnetOutBound*, *AllowInternetOutBound* en *DenyAllOutBound* bestaan ook voor de netwerk beveiligings groep. Bewerk of verwijder deze standaard regels niet.
 >
 > De Azure SLA is niet van toepassing op implementaties waarbij een onjuist geconfigureerde netwerk beveiligings groep en/of door de gebruiker gedefinieerde route tabellen zijn toegepast waardoor Azure AD DS het bijwerken en beheren van uw domein blokkeert.
 
@@ -140,7 +140,7 @@ Als dat nodig is, kunt u [de vereiste netwerk beveiligings groep en-regels maken
 * De standaard regel voor de netwerk beveiligings groep maakt gebruik van het *CorpNetSaw* -service label om het verkeer verder te beperken.
     * Met deze servicetag wordt alleen beveiligde toegang tot werk stations in het bedrijfs netwerk van micro soft toegestaan om extern bureau blad te gebruiken voor het beheerde domein.
     * Toegang is alleen toegestaan met zakelijke redenen, zoals voor beheer-of probleemoplossings scenario's.
-* Deze regel kan worden ingesteld op *weigeren*en alleen ingesteld op *toestaan* wanneer dit nodig is. De meeste beheer-en bewakings taken worden uitgevoerd met externe communicatie met Power shell. RDP wordt alleen gebruikt in de zeldzame gebeurtenis die micro soft nodig heeft om extern verbinding te maken met uw beheerde domein voor geavanceerde probleem oplossing.
+* Deze regel kan worden ingesteld op *weigeren* en alleen ingesteld op *toestaan* wanneer dit nodig is. De meeste beheer-en bewakings taken worden uitgevoerd met externe communicatie met Power shell. RDP wordt alleen gebruikt in de zeldzame gebeurtenis die micro soft nodig heeft om extern verbinding te maken met uw beheerde domein voor geavanceerde probleem oplossing.
 
 > [!NOTE]
 > U kunt de *CorpNetSaw* -servicetag niet hand matig selecteren in de portal als u deze regel voor de netwerk beveiligings groep probeert te bewerken. U moet Azure PowerShell of de Azure CLI gebruiken om hand matig een regel te configureren die gebruikmaakt van het *CorpNetSaw* -service label.
@@ -154,7 +154,7 @@ Als dat nodig is, kunt u [de vereiste netwerk beveiligings groep en-regels maken
 * Wordt gebruikt voor het uitvoeren van beheer taken met externe communicatie van Power shell in uw beheerde domein.
 * Als u geen toegang hebt tot deze poort, kan uw beheerde domein niet worden bijgewerkt, geconfigureerd, ondersteund of gecontroleerd.
 * Voor beheerde domeinen die gebruikmaken van een virtueel netwerk op basis van Resource Manager, kunt u de inkomende toegang tot deze poort beperken tot het *AzureActiveDirectoryDomainServices* -service label.
-    * Voor verouderde beheerde domeinen die gebruikmaken van een klassiek virtueel netwerk, kunt u de inkomende toegang tot deze poort beperken tot de volgende bron-IP-adressen: *52.180.183.8*, *23.101.0.70*, *52.225.184.198*, *52.179.126.223*, *13.74.249.156*, *52.187.117.83*, *52.161.13.95*, *104.40.156.18*en *104.40.87.209*.
+    * Voor verouderde beheerde domeinen die gebruikmaken van een klassiek virtueel netwerk, kunt u de inkomende toegang tot deze poort beperken tot de volgende bron-IP-adressen: *52.180.183.8*, *23.101.0.70*, *52.225.184.198*, *52.179.126.223*, *13.74.249.156*, *52.187.117.83*, *52.161.13.95*, *104.40.156.18* en *104.40.87.209*.
 
     > [!NOTE]
     > In 2017 is Azure AD Domain Services beschikbaar voor de host in een Azure Resource Manager netwerk. Sindsdien hebben we een veiligere service met de moderne mogelijkheden van Azure Resource Manager kunnen bouwen. Omdat Azure Resource Manager implementaties volledig worden vervangen door klassieke implementaties, worden Azure AD DS-implementaties met een klassiek virtueel netwerk ingetrokken op 1 maart 2023.
@@ -176,4 +176,4 @@ Raadpleeg de volgende artikelen voor meer informatie over sommige netwerk bronne
 
 * [Peering van het virtuele netwerk van Azure](../virtual-network/virtual-network-peering-overview.md)
 * [Azure VPN-gateways](../vpn-gateway/vpn-gateway-about-vpn-gateway-settings.md)
-* [Netwerkbeveiligingsgroepen in Azure](../virtual-network/security-overview.md)
+* [Netwerkbeveiligingsgroepen in Azure](../virtual-network/network-security-groups-overview.md)

@@ -11,12 +11,12 @@ author: barbaraselden
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 06c37eaf63b79b171e5a21d807262cfb359d416c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 765bfe0f805ae4219110d689e8f7f8fd54a26cf3
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994159"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173933"
 ---
 # <a name="plan-an-azure-active-directory-self-service-password-reset-deployment"></a>Een Azure Active Directory self-service voor het opnieuw instellen van wacht woorden plannen
 
@@ -123,7 +123,7 @@ Houd rekening met de behoeften van uw organisatie terwijl u de strategie voor de
 
 ### <a name="engage-the-right-stakeholders"></a>De juiste belanghebbenden benaderen
 
-Wanneer technologie projecten mislukken, worden ze doorgaans als gevolg van niet-overeenkomende verwachtingen voor impact, resultaten en verantwoordelijkheden. Als u deze problemen wilt voor komen, moet [u ervoor zorgen dat u de juiste belanghebbenden](https://aka.ms/deploymentplans) en de rol van belanghebbenden in het project goed begrijpen door de belanghebbenden en hun project invoer en accountabilities te documenteren.
+Wanneer technologie projecten mislukken, worden ze doorgaans als gevolg van niet-overeenkomende verwachtingen voor impact, resultaten en verantwoordelijkheden. Als u deze problemen wilt voor komen, moet [u ervoor zorgen dat u de juiste belanghebbenden](../fundamentals/active-directory-deployment-plans.md) en de rol van belanghebbenden in het project goed begrijpen door de belanghebbenden en hun project invoer en accountabilities te documenteren.
 
 #### <a name="required-administrator-roles"></a>Vereiste beheerders rollen
 
@@ -149,7 +149,7 @@ Zie [een groep maken en leden toevoegen in azure Active Directory](../fundamenta
 
 De volgende instellingen zijn vereist om SSPR samen met aanbevolen waarden in te scha kelen.
 
-| Gebied | Instelling | Waarde |
+| Onderwerp | Instelling | Waarde |
 | --- | --- | --- |
 | **SSPR-eigenschappen** | Self-service voor wacht woord opnieuw instellen is ingeschakeld | **Geselecteerde** groep voor pilot/ **all** voor productie |
 | **Verificatiemethoden** | Verificatie methoden die nodig zijn om te registreren | Altijd 1 meer dan vereist voor opnieuw instellen |
@@ -325,7 +325,7 @@ Audit logboeken voor registratie en het opnieuw instellen van wacht woorden zijn
 
 ### <a name="troubleshoot"></a>Problemen oplossen
 
-* Raadpleeg [problemen met selfservice voor wachtwoord herstel oplossen](./active-directory-passwords-troubleshoot.md) 
+* Raadpleeg [problemen met selfservice voor wachtwoord herstel oplossen](./troubleshoot-sspr.md) 
 
 * [Veelgestelde vragen over wachtwoord beheer](./active-directory-passwords-faq.md) volgen 
 

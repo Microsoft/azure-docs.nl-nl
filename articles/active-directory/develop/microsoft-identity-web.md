@@ -13,12 +13,12 @@ ms.date: 10/09/2020
 ms.author: jmprieur
 ms.reviewer: marsma
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 77cb3b0c13a6bfe41c6f7a1a5a0f9d7278aea1db
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: b82e300128a41f8315132e1ff93af33c853edb15
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91930149"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173512"
 ---
 # <a name="microsoft-identity-web-authentication-library"></a>Micro soft Identity Web authentication-bibliotheek
 
@@ -58,14 +58,14 @@ dotnet new --install Microsoft.Identity.Web.ProjectTemplates::1.0.0
 
 Het volgende diagram toont een weer gave op hoog niveau van de ondersteunde typen apps en de bijbehorende argumenten:
 
-:::image type="content" source="media/microsoft-identity-web-overview/diagram-microsoft-identity-web-templates.png" lightbox="media/microsoft-identity-web-overview/diagram-microsoft-identity-web-templates.png" alt-text="Diagram van de beschik bare dot net CLI-project sjablonen voor micro soft Identity Web&quot;:::
+:::image type="content" source="media/microsoft-identity-web-overview/diagram-microsoft-identity-web-templates.png" lightbox="media/microsoft-identity-web-overview/diagram-microsoft-identity-web-templates.png" alt-text="Diagram van de beschik bare dot net CLI-project sjablonen voor micro soft Identity Web":::
 <br /><sup><b>*</b></sup>`MultiOrg`wordt niet ondersteund met `webapi2` , maar kan worden ingeschakeld in *appsettings.js* door een Tenant in te stellen op `common` of`organizations`
 <br /><sup><b>**</b></sup>`--calls-graph`wordt niet ondersteund voor Azure AD B2C
 
 Dit voor beeld van een .NET CLI-opdracht die is opgehaald uit onze [zelf studie voor de razendsnelle server](tutorial-blazor-server.md), genereert een nieuw razendsnelle server project met daarin de juiste pakketten en begin code (waarden van de tijdelijke aanduidingen weer gegeven):
 
 ```dotnetcli
-dotnet new blazorserver2 --auth SingleOrg --calls-graph --client-id &quot;00000000-0000-0000-0000-000000000000&quot; --tenant-id &quot;11111111-1111-1111-1111-111111111111" --output my-blazor-app
+dotnet new blazorserver2 --auth SingleOrg --calls-graph --client-id "00000000-0000-0000-0000-000000000000" --tenant-id "11111111-1111-1111-1111-111111111111" --output my-blazor-app
 ```
 
 #### <a name="github"></a>GitHub
@@ -82,11 +82,11 @@ Micro soft Identity web bevat verschillende functies die niet worden gegeven als
 |------------------------------------------------------------------------------------------|----------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | [Gebruikers aanmelden](scenario-web-app-sign-user-app-configuration.md) in web-apps             | <li>Werk- of schoolaccounts<li>Sociale identiteiten (met Azure AD B2C) | <li>Werk- of schoolaccounts<li>Persoonlijk Microsoft-account<li>Sociale identiteiten (met Azure AD B2C)     |
 | [Web-Api's beveiligen](scenario-protected-web-api-app-configuration.md#microsoftidentityweb) | <li>Werk- of schoolaccounts<li>Sociale identiteiten (met Azure AD B2C) | <li>Werk- of schoolaccounts<li>Persoonlijk Microsoft-account<li>Sociale identiteiten (met Azure AD B2C)     |
-| Validatie van de verlener in apps met meerdere tenants                                                   | Nee                                                                   | Ja, voor [alle Clouds](authentication-national-cloud.md) en [Azure AD B2C](/azure/active-directory-b2c) |
+| Validatie van de verlener in apps met meerdere tenants                                                   | No                                                                   | Ja, voor [alle Clouds](authentication-national-cloud.md) en [Azure AD B2C](../../active-directory-b2c/index.yml) |
 | Web-app/API [aanroepen van micro soft Graph] [scenario-API-aanroep-Graph]                             | Nee                                                                   | Ja                                                                                                     |
 | Web-app/API [aanroepen van Web-API] [scenario-API-aanroep-API]                                       | Nee                                                                   | Ja                                                                                                     |
-| Ondersteunt certificaat referenties                                                         | Nee                                                                   | Ja, met inbegrip van Azure Key Vault                                                                          |
-| Ondersteuning voor incrementele toestemming en voorwaardelijke toegang in web-apps                           | Nee                                                                   | Ja, in MVC, haar pagina's en ultra meer                                                                    |
+| Ondersteunt certificaat referenties                                                         | No                                                                   | Ja, met inbegrip van Azure Key Vault                                                                          |
+| Ondersteuning voor incrementele toestemming en voorwaardelijke toegang in web-apps                           | No                                                                   | Ja, in MVC, haar pagina's en ultra meer                                                                    |
 | Token versleutelings certificaten in Web-Api's                                                | Nee                                                                   | Ja                                                                                                     |
 | [Bereiken/validatie van app-rollen] [scenario-API-validatie] in Web-Api's                        | Nee                                                                   | Ja                                                                                                     |
 | `WWW-Authenticate` genereren van header in Web-Api's                                         | Nee                                                                   | Ja                                                                                                     |

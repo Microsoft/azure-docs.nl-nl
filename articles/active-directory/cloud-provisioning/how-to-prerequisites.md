@@ -11,12 +11,12 @@ ms.date: 11/16/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5f6c5985c16875e263f2494f56636abb4d4e980d
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 8eb8de2424012d12f216f154eb077028a8f82d76
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95237252"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173699"
 ---
 # <a name="prerequisites-for-azure-ad-connect-cloud-provisioning"></a>Vereisten voor Azure AD Connect-cloudinrichting
 Dit artikel bevat richt lijnen voor het kiezen en gebruiken van Azure Active Directory (Azure AD) verbinden met Cloud inrichting als uw identiteits oplossing.
@@ -30,11 +30,11 @@ U hebt het volgende nodig voor het gebruik van Azure AD Connect Cloud inrichting
 - On-premises firewall configuraties.
 
 ## <a name="group-managed-service-accounts"></a>Door groep beheerde serviceaccounts
-Een beheerd service account voor een groep is een beheerd domein account dat automatische wachtwoord beheer, vereenvoudigd Service Principal Name (SPN)-beheer biedt, de mogelijkheid om het beheer te delegeren aan andere beheerders en deze functionaliteit uit te breiden op meerdere servers.  Azure AD Connect Cloud Sync ondersteunt en maakt gebruik van een gMSA voor het uitvoeren van de agent.  Tijdens de installatie wordt u gevraagd om beheerders referenties, om dit account te maken.  Het account wordt weer gegeven als (domain\provAgentgMSA $).  Zie [beheerde service accounts voor groepen](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview) voor meer informatie over een gMSA 
+Een beheerd service account voor een groep is een beheerd domein account dat automatische wachtwoord beheer, vereenvoudigd Service Principal Name (SPN)-beheer biedt, de mogelijkheid om het beheer te delegeren aan andere beheerders en deze functionaliteit uit te breiden op meerdere servers.  Azure AD Connect Cloud Sync ondersteunt en maakt gebruik van een gMSA voor het uitvoeren van de agent.  Tijdens de installatie wordt u gevraagd om beheerders referenties, om dit account te maken.  Het account wordt weer gegeven als (domain\provAgentgMSA $).  Zie [beheerde service accounts voor groepen](/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview) voor meer informatie over een gMSA 
 
 ### <a name="prerequisites-for-gmsa"></a>Vereisten voor gMSA:
 1.  Het Active Directory schema in het forest van het gMSA-domein moet worden bijgewerkt naar Windows Server 2012
-2.  [Power shell RSAT-modules](https://docs.microsoft.com/windows-server/remote/remote-server-administration-tools) op een domein controller
+2.  [Power shell RSAT-modules](/windows-server/remote/remote-server-administration-tools) op een domein controller
 3.  Op ten minste één domein controller in het domein moet Windows Server 2012 worden uitgevoerd.
 4.  Een server die lid is van een domein waarop de agent wordt geïnstalleerd, moet Windows Server 2012 of hoger zijn.
 

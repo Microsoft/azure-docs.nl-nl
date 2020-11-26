@@ -12,12 +12,12 @@ ms.date: 05/08/2020
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, jesakowi
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: 036c40395e5da5ebc09a87e420893d7dbd2ec668
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 94da22fbb2940bddaad1324bedc8759706eca37b
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88116798"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173563"
 ---
 # <a name="microsoft-identity-platform-best-practices-and-recommendations"></a>Best practices en aanbevelingen voor het Microsoft-identiteitsplatform
 
@@ -32,13 +32,13 @@ Gebruik de volgende controle lijst om ervoor te zorgen dat uw toepassing effecti
 
 ## <a name="basics"></a>Basisbeginselen
 
-![in ](./media/active-directory-integration-checklist/checkbox-two.svg) het selectie vakje [wordt het micro soft-platform beleid](https://go.microsoft.com/fwlink/?linkid=2090497&clcid=0x409)gelezen en begrepen. Zorg ervoor dat uw toepassing voldoet aan de voor waarden die worden beschreven, zoals ze zijn ontworpen om gebruikers en het platform te beveiligen.
+![in ](./media/active-directory-integration-checklist/checkbox-two.svg) het selectie vakje [wordt het micro soft-platform beleid](/legal/microsoft-identity-platform/terms-of-use)gelezen en begrepen. Zorg ervoor dat uw toepassing voldoet aan de voor waarden die worden beschreven, zoals ze zijn ontworpen om gebruikers en het platform te beveiligen.
 
 ## <a name="ownership"></a>Eigendom
 
 ![selectievakje](./media/active-directory-integration-checklist/checkbox-two.svg) Zorg ervoor dat de informatie die is gekoppeld aan het account dat u hebt gebruikt voor het registreren en beheren van apps up-to-date is.
 
-## <a name="branding"></a>Huisstijl
+## <a name="branding"></a>Branding
 
 ![het selectie vakje ](./media/active-directory-integration-checklist/checkbox-two.svg) voldoet aan de [huisstijl richtlijnen voor toepassingen](howto-add-branding-in-azure-ad-apps.md).
 
@@ -100,7 +100,7 @@ Gebruik de volgende controle lijst om ervoor te zorgen dat uw toepassing effecti
 
 ![selectievakje](./media/active-directory-integration-checklist/checkbox-two.svg) Test uw toepassing met alle mogelijke accounts die u wilt ondersteunen (bijvoorbeeld werk-of school accounts, persoonlijke micro soft-accounts, onderliggende accounts en soevereine accounts).
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+## <a name="additional-resources"></a>Aanvullende resources
 
 Gedetailleerde informatie over v2.0 verkennen:
 

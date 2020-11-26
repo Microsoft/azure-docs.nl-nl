@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: 695d47c839a9436f4fad9399f7995b3197e1c0eb
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: b1583307771dd58053128d71cb0ae5dd7e709f68
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964992"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96174378"
 ---
 # <a name="password-policies-and-account-restrictions-in-azure-active-directory"></a>Wachtwoord beleid en account beperkingen in Azure Active Directory
 
@@ -45,7 +45,7 @@ Een wachtwoord beleid wordt toegepast op alle gebruikers accounts die rechtstree
 
 Standaard wordt een account vergrendeld na 10 mislukte aanmeldings pogingen met het verkeerde wacht woord. De gebruiker is één minuut geblokkeerd. Bij verdere onjuiste aanmeldings pogingen wordt de gebruiker vergrendeld om de duur van de tijd te verg Roten. [Slimme vergren deling](howto-password-smart-lockout.md) houdt de laatste drie ongeldige hashes met een onjuist wacht woord bij om te voor komen dat de vergrendelings teller voor hetzelfde wacht woord wordt verhoogd. Als iemand hetzelfde onjuiste wacht woord meermaals invoert, wordt het account niet vergrendeld. U kunt de drempel en duur voor de slimme vergren deling definiëren.
 
-Het Azure AD-wachtwoord beleid is niet van toepassing op gebruikers accounts die zijn gesynchroniseerd vanuit een on-premises AD DS omgeving met behulp van Azure AD Connect, tenzij u *EnforceCloudPasswordPolicyForPasswordSyncedUsers*inschakelt.
+Het Azure AD-wachtwoord beleid is niet van toepassing op gebruikers accounts die zijn gesynchroniseerd vanuit een on-premises AD DS omgeving met behulp van Azure AD Connect, tenzij u *EnforceCloudPasswordPolicyForPasswordSyncedUsers* inschakelt.
 
 De volgende opties voor het Azure AD-wachtwoord beleid zijn gedefinieerd. Tenzij anders vermeld, kunt u deze instellingen niet wijzigen:
 
@@ -102,7 +102,7 @@ U kunt het gebruik van SSPR voor beheerders accounts uitschakelen met de Power s
 Voor een one-Gate-beleid is één verificatie gegevens vereist, zoals een e-mail adres of telefoon nummer. Een beleid met één poort is van toepassing op de volgende omstandigheden:
 
 * Het is binnen de eerste 30 dagen van een proef abonnement. of
-* Er is geen aangepast domein geconfigureerd voor uw Azure AD-Tenant. Daarom wordt de standaard waarde **. onmicrosoft.com*gebruikt. Het standaard domein **. onmicrosoft.com* wordt niet aanbevolen voor productie gebruik. maar
+* Er is geen aangepast domein geconfigureerd voor uw Azure AD-Tenant. Daarom wordt de standaard waarde **. onmicrosoft.com* gebruikt. Het standaard domein **. onmicrosoft.com* wordt niet aanbevolen voor productie gebruik. maar
 * De identiteiten van Azure AD Connect zijn niet gesynchroniseerd
 
 ## <a name="password-expiration-policies"></a><a name="set-password-expiration-policies-in-azure-ad"></a>Wachtwoord verloop beleid
@@ -180,4 +180,4 @@ Nadat de module is geïnstalleerd, voert u de volgende stappen uit om elke taak 
 
 Zie [zelf studie: gebruikers in staat stellen hun account te ontgrendelen of wacht woorden opnieuw in te stellen met Azure Active Directory self-service voor wachtwoord herstel](tutorial-enable-sspr.md)om aan de slag te gaan met SSPR.
 
-Zie problemen met het [opnieuw instellen van wacht woorden oplossen](active-directory-passwords-troubleshoot.md) als u of gebruikers problemen hebben met SSPR
+Zie problemen met het [opnieuw instellen van wacht woorden oplossen](./troubleshoot-sspr.md) als u of gebruikers problemen hebben met SSPR

@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 576b9c11f167f7c0d5fcb06e484347c643589a66
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: abdfbc92af3617a7a13a2e4f603de9c1cc3959af
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94839060"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96174327"
 ---
 # <a name="integrate-your-existing-network-policy-server-nps-infrastructure-with-azure-ad-multi-factor-authentication"></a>Uw bestaande Network Policy Server (NPS)-infra structuur integreren met Azure AD Multi-Factor Authentication
 
@@ -72,7 +72,7 @@ De NPS-extensie is bedoeld om te werken met uw bestaande infra structuur. Zorg e
 
 ### <a name="licenses"></a>Licenties
 
-De NPS-extensie voor Azure AD Multi-Factor Authentication is beschikbaar voor klanten met [licenties voor Azure AD-multi-factor Authentication](multi-factor-authentication.md). Licenties op basis van verbruik voor Azure AD Multi-Factor Authentication, zoals per gebruiker of per verificatie licentie, zijn niet compatibel met de NPS-extensie.
+De NPS-extensie voor Azure AD Multi-Factor Authentication is beschikbaar voor klanten met [licenties voor Azure AD-multi-factor Authentication](./concept-mfa-howitworks.md). Licenties op basis van verbruik voor Azure AD Multi-Factor Authentication, zoals per gebruiker of per verificatie licentie, zijn niet compatibel met de NPS-extensie.
 
 ### <a name="software"></a>Software
 

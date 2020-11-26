@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 11/19/2020
 ms.reviewer: arvinh
-ms.openlocfilehash: 8a1c789759f1119a6170fffc2c70874cd9a32fde
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: e0a77e1e4757c8951756c3e41479628c293dfd8f
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94919677"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96174829"
 ---
 # <a name="known-issues-application-provisioning"></a>Bekende problemen: toepassings inrichting
 Bekende problemen waarvan u rekening moet houden wanneer u werkt met het inrichten van apps. U kunt feedback geven over de Application Provisioning-Service op UserVoice, de [Azure AD-toepassing inrichten UserVoice](https://aka.ms/appprovisioningfeaturerequest). We kijken naar UserVoice zodat we de service kunnen verbeteren. 
@@ -28,7 +28,7 @@ Bekende problemen waarvan u rekening moet houden wanneer u werkt met het inricht
 
 **Kan niet opslaan nadat de verbindings test is geslaagd**
 
-Als u een verbinding wel of niet kunt opslaan, hebt u de toegestane opslag limiet voor referenties overschreden. Zie probleem bij het [opslaan van beheerders referenties](application-provisioning-config-problem-storage-limit.md)voor meer informatie.
+Als u een verbinding wel of niet kunt opslaan, hebt u de toegestane opslag limiet voor referenties overschreden. Zie probleem bij het [opslaan van beheerders referenties](./user-provisioning.md)voor meer informatie.
 
 **Kan niet opslaan**
 

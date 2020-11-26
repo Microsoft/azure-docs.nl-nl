@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/15/2020
 ms.author: Zhchia
-ms.openlocfilehash: 011071c9aa1722b8f1cf81ec8d9ef88e8d91ea03
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: b371baec663ffc7ff5909e04965353e79acb9708
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94359048"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96177069"
 ---
 # <a name="tutorial-configure-hootsuite-for-automatic-user-provisioning"></a>Zelfstudie: Hootsuite configureren voor automatische gebruikersinrichting
 
@@ -35,7 +35,7 @@ In deze zelfstudie worden de stappen beschreven die u moet uitvoeren in zowel Ho
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
 * [Een Azure AD-tenant](../develop/quickstart-create-new-tenant.md) 
-* Een gebruikersaccount in Azure AD met [machtigingen](../users-groups-roles/directory-assign-admin-roles.md) voor het configureren van inrichting (bijvoorbeeld Toepassingsbeheerder, Cloudtoepassingsbeheerder, Toepassingseigenaar of Globale beheerder). 
+* Een gebruikersaccount in Azure AD met [machtigingen](../roles/permissions-reference.md) voor het configureren van inrichting (bijvoorbeeld Toepassingsbeheerder, Cloudtoepassingsbeheerder, Toepassingseigenaar of Globale beheerder). 
 * Een gebruikersaccount van [HootSuite](http://www.hootsuite.com/) met de machtiging **Manage Member** voor de organisatie.
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Stap 1. Implementatie van de inrichting plannen
@@ -121,7 +121,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
       |externalId|Tekenreeks|
       |leden|Naslaginformatie|
 
-12. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
+12. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
 13. Wijzig in de sectie **Instellingen** **Inrichtingsstatus** in **Aan** om de Azure AD-inrichtingsservice in te schakelen voor Hootsuite.
 

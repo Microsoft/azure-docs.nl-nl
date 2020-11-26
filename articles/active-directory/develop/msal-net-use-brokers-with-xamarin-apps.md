@@ -13,11 +13,11 @@ ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
 ms.openlocfilehash: 7fa13a328a55b0e9eaa546e70bf0711f4f011cf1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89068527"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173427"
 ---
 # <a name="use-microsoft-authenticator-or-intune-company-portal-on-xamarin-applications"></a>Microsoft Authenticator of Intune-bedrijfsportal gebruiken in Xamarin-toepassingen
 
@@ -25,7 +25,7 @@ Op Android en iOS kunnen brokers als Microsoft Authenticator en de Android-speci
 
 - **Eenmalige aanmelding (SSO)**: gebruikers hoeven zich niet aan te melden bij elke toepassing.
 - **Apparaat-id**: de Broker heeft toegang tot het certificaat van het apparaat. Dit certificaat wordt gemaakt op het apparaat wanneer het is gekoppeld aan de werk plek.
-- **Verificatie**van de toepassings-id: wanneer een toepassing de Broker aanroept, wordt de omleidings-URL door gegeven. De Broker verifieert de URL.
+- **Verificatie** van de toepassings-id: wanneer een toepassing de Broker aanroept, wordt de omleidings-URL door gegeven. De Broker verifieert de URL.
 
 Als u een van deze functies wilt inschakelen, gebruikt `WithBroker()` u de para meter wanneer u de-methode aanroept `PublicClientApplicationBuilder.CreateApplication` . De `.WithBroker()` para meter is standaard ingesteld op True.
 
@@ -183,9 +183,9 @@ Voeg de omleidings-URI toe aan de registratie van de app in de [Azure Portal](ht
 
 **De omleidings-URI genereren:**
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Selecteer **Azure Active Directory**  >  **app-registraties** > de geregistreerde app
-1. **Verificatie**selecteren  >  **een platform toevoegen**  >  **IOS/macOS**
+1. **Verificatie** selecteren  >  **een platform toevoegen**  >  **IOS/macOS**
 1. Voer uw bundel-ID in en selecteer vervolgens **configureren**.
 
     Kopieer de gegenereerde omleidings-URI die wordt weer gegeven in het tekstvak **omleidings-URI** voor opname in de code:
@@ -347,7 +347,7 @@ Hier volgen enkele tips voor het vermijden van problemen wanneer u brokered-veri
   - Microsoft Authenticator logboeken weer geven:
 
     1. Selecteer de menu knop in de rechter bovenhoek van de app.
-    1. Selecteer **Help**-  >  **Logboeken verzenden**logboeken  >  **weer geven**.
+    1. Selecteer **Help**-  >  **Logboeken verzenden** logboeken  >  **weer geven**.
     1. Selecteer **Alles kopiëren** om de Broker logboeken te kopiëren naar het klem bord van het apparaat.
 
     De beste manier om fouten op te lossen met deze logboeken is door ze naar uzelf te sturen en ze weer te geven op uw ontwikkel computer. Het kan zijn dat u de logboeken op uw computer gemakkelijker kunt parseren in plaats van op het apparaat zelf. U kunt ook een test editor op Android gebruiken om de logboeken op te slaan als een tekst bestand en vervolgens een USB-kabel gebruiken om het bestand naar een computer te kopiëren.

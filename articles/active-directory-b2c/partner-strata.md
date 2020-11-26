@@ -11,23 +11,23 @@ ms.topic: how-to
 ms.date: 10/25/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 6276bd0db9bfb93897f7350b87d208ac2951c859
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: bddc4c64feb31f78bed482bbd729ab1c4b8e676e
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94330322"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96171412"
 ---
 # <a name="tutorial-for-extending-azure-ad-b2c-to-protect-on-premises-applications-using-strata"></a>Zelf studie voor het uitbreiden van Azure AD B2C om on-premises toepassingen te beveiligen met behulp van Strata
 
 In deze voorbeeld zelfstudie vindt u informatie over het integreren van Azure Active Directory (AD) B2C met de [Maverics Identity Orchestrator](https://www.strata.io/maverics-identity-orchestrator/)van Strata.
 Maverics Identity Orchestrator breidt Azure AD B2C uit om on-premises toepassingen te beveiligen. Hiermee wordt verbinding gemaakt met elk identiteits systeem, worden gebruikers en referenties transparant gemigreerd, worden beleids regels en configuraties gesynchroniseerd en worden de verificatie en sessie beheer van de samen vatting geauthenticeerd. Het gebruik van Strata-ondernemingen kan snel overstappen van verouderde naar Azure AD B2C zonder toepassingen opnieuw te schrijven. Deze oplossing biedt de volgende voordelen:
 
-- **Klant Single Sign-On (SSO) naar on-premises hybride apps** : Azure AD B2C ondersteunt Customer SSO met Maverics Identity Orchestrator. Gebruikers melden zich aan met hun accounts die worden gehost in Azure AD B2C of sociale ID-provider (IdP). Maverics breidt SSO uit naar apps die historisch zijn beveiligd door oudere identiteits systemen, zoals Symantec SiteMinder.
+- **Klant Single Sign-On (SSO) naar on-premises hybride apps**: Azure AD B2C ondersteunt Customer SSO met Maverics Identity Orchestrator. Gebruikers melden zich aan met hun accounts die worden gehost in Azure AD B2C of sociale ID-provider (IdP). Maverics breidt SSO uit naar apps die historisch zijn beveiligd door oudere identiteits systemen, zoals Symantec SiteMinder.
 
-- Op **standaarden gebaseerde SSO naar apps uitbreiden zonder ze opnieuw te schrijven** : gebruik Azure AD B2C om gebruikers toegang te beheren en eenmalige aanmelding in te scha kelen met Maverics Identity Orchestrator SAML-of OIDC-connectors.
+- Op **standaarden gebaseerde SSO naar apps uitbreiden zonder ze opnieuw te schrijven**: gebruik Azure AD B2C om gebruikers toegang te beheren en eenmalige aanmelding in te scha kelen met Maverics Identity Orchestrator SAML-of OIDC-connectors.
 
-- **Eenvoudige configuratie** : Azure AD B2C biedt een eenvoudige stapsgewijze gebruikers interface voor het verbinden van Maverics Identity Orchestrator SAML-of OIDC-connectors naar Azure AD B2C.
+- **Eenvoudige configuratie**: Azure AD B2C biedt een eenvoudige stapsgewijze gebruikers interface voor het verbinden van Maverics Identity Orchestrator SAML-of OIDC-connectors naar Azure AD B2C.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -35,7 +35,7 @@ Om aan de slag te gaan, hebt u het volgende nodig:
 
 - Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
 
-- Een [Azure AD B2C-Tenant](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant) die is gekoppeld aan uw Azure-abonnement.
+- Een [Azure AD B2C-Tenant](./tutorial-create-tenant.md) die is gekoppeld aan uw Azure-abonnement.
 
 - Een instantie van [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) voor het opslaan van geheimen die worden gebruikt door de Maverics Identity Orchestrator. Het wordt gebruikt om verbinding te maken met Azure AD B2C of andere kenmerk providers, zoals een LDAP-Directory of-data base (Lightweight Directory Access Protocol).
 
@@ -47,11 +47,11 @@ Om aan de slag te gaan, hebt u het volgende nodig:
 
 De Maverics-integratie van Strata omvat de volgende onderdelen:
 
-- **Azure AD B2C** : de autorisatie server die verantwoordelijk is voor het controleren van de referenties van de gebruiker. Geverifieerde gebruikers hebben toegang tot on-premises apps met behulp van een lokaal account dat is opgeslagen in de Azure AD B2C Directory.
+- **Azure AD B2C**: de autorisatie server die verantwoordelijk is voor het controleren van de referenties van de gebruiker. Geverifieerde gebruikers hebben toegang tot on-premises apps met behulp van een lokaal account dat is opgeslagen in de Azure AD B2C Directory.
 
-- **Een externe Social of ENTER prise IDP** : kan een OpenID Connect Connect provider, Facebook, Google of github zijn. Zie voor meer informatie over het gebruik van [externe ID](https://docs.microsoft.com/azure/active-directory-b2c/technical-overview#external-identity-providers) met Azure AD B2C.  
+- **Een externe Social of ENTER prise IDP**: kan een OpenID Connect Connect provider, Facebook, Google of github zijn. Zie voor meer informatie over het gebruik van [externe ID](./technical-overview.md#external-identity-providers) met Azure AD B2C.  
 
-- **Strata Maverics Identity Orchestrator** : de service die gebruikers aanmeldt en op transparante wijze identiteiten doorgeeft aan apps via HTTP-headers.
+- **Strata Maverics Identity Orchestrator**: de service die gebruikers aanmeldt en op transparante wijze identiteiten doorgeeft aan apps via HTTP-headers.
 
 In het volgende architectuur diagram wordt de implementatie weer gegeven.
 
@@ -75,7 +75,7 @@ Neem contact op met [Strata](https://www.strata.io/contact/)om de software te ge
 
 1. **Uw toepassing registreren**
 
-   a. [Registreer de Orchestrator als een toepassing](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-register-applications?tabs=app-reg-ga) in azure AD B2C Tenant.
+   a. [Registreer de Orchestrator als een toepassing](./tutorial-register-applications.md?tabs=app-reg-ga) in azure AD B2C Tenant.
    >[!Note]
    >U hebt de Tenant naam en-id, client-ID, client geheim, geconfigureerde claims en omleidings-URI later nodig wanneer u uw Orchestrator-exemplaar configureert.
 
@@ -83,13 +83,13 @@ Neem contact op met [Strata](https://www.strata.io/contact/)om de software te ge
 
    c. Voeg een omleidings-URI voor uw toepassing toe. Deze URI komt overeen met de `oauthRedirectURL` para meter van de Azure AD B2C connector configuratie van uw orchestrator, bijvoorbeeld `https://example.com/oidc-endpoint` .
 
-2. **Een gebruikers stroom maken** : Maak een [aanmeldings-en aanmeldings gebruikers stroom](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-user-flows).
+2. **Een gebruikers stroom maken**: Maak een [aanmeldings-en aanmeldings gebruikers stroom](./tutorial-create-user-flows.md).
 
-3. **Een IDP toevoegen** : Kies voor het aanmelden bij uw gebruiker met een lokaal account of een sociaal-of ENTER prise- [IDP](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-add-identity-providers).
+3. **Een IDP toevoegen**: Kies voor het aanmelden bij uw gebruiker met een lokaal account of een sociaal-of ENTER prise- [IDP](./tutorial-add-identity-providers.md).
 
-4. **Gebruikers kenmerken definiëren** : Definieer de kenmerken die moeten worden verzameld tijdens het aanmelden.
+4. **Gebruikers kenmerken definiëren**: Definieer de kenmerken die moeten worden verzameld tijdens het aanmelden.
 
-5. **Toepassings claims opgeven** : Geef de kenmerken op die moeten worden geretourneerd naar de toepassing via uw Orchestrator-exemplaar. De Orchestrator gebruikt kenmerken van claims die worden geretourneerd door Azure AD B2C en kan extra kenmerken ophalen van andere verbonden identiteits systemen, zoals LDAP-directory's en data bases. Deze kenmerken worden ingesteld in HTTP-headers en verzonden naar de upstream-toepassing on-premises.
+5. **Toepassings claims opgeven**: Geef de kenmerken op die moeten worden geretourneerd naar de toepassing via uw Orchestrator-exemplaar. De Orchestrator gebruikt kenmerken van claims die worden geretourneerd door Azure AD B2C en kan extra kenmerken ophalen van andere verbonden identiteits systemen, zoals LDAP-directory's en data bases. Deze kenmerken worden ingesteld in HTTP-headers en verzonden naar de upstream-toepassing on-premises.
 
 ## <a name="configure-maverics-identity-orchestrator"></a>Maverics Identity Orchestrator configureren
 
@@ -259,7 +259,7 @@ appgateways:
 
 Het is belang rijk om de geheimen te beveiligen die uw Orchestrator gebruikt om verbinding te maken met Azure AD B2C en een ander identiteits systeem. Maverics wordt standaard geheimen in tekst zonder opmaak geladen `maverics.yaml` , maar in deze zelf studie gebruikt u Azure Key Vault als de provider geheimen.
 
-Volg de instructies voor het [maken van een nieuwe Key Vault](https://docs.microsoft.com/azure/key-vault/secrets/quick-create-portal#create-a-vault) die door uw Orchestrator-exemplaar wordt gebruikt als een provider van geheimen. Voeg uw geheimen toe aan uw kluis en noteer het `SECRET NAME` gegeven aan elk geheim. Bijvoorbeeld `AzureADB2CClientSecret`.
+Volg de instructies voor het [maken van een nieuwe Key Vault](../key-vault/secrets/quick-create-portal.md) die door uw Orchestrator-exemplaar wordt gebruikt als een provider van geheimen. Voeg uw geheimen toe aan uw kluis en noteer het `SECRET NAME` gegeven aan elk geheim. Bijvoorbeeld `AzureADB2CClientSecret`.
 
 Om een waarde als een geheim te declareren in een `maverics.yaml`-configuratiebestand, zet u haakjes rondom het geheim:
 
@@ -342,6 +342,6 @@ appgateways:
 
 Raadpleeg de volgende artikelen voor meer informatie:
 
-- [Aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Aangepast beleid in Azure AD B2C](./custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md?tabs=applications)

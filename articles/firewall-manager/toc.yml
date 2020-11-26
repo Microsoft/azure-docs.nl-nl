@@ -40,6 +40,10 @@
       href: threat-intelligence-settings.md
     - name: FQDN in netwerkregels
       href: fqdn-filtering-network-rules.md
+    - name: Beveiliging
+      items:
+        - name: Beveiligingsbasislijn
+          href: security-baseline.md
 - name: Instructiegidsen
   items:
     - name: Beveiligingspartnerproviders implementeren

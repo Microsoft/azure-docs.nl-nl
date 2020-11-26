@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: nichola
-ms.openlocfilehash: 8f184de8953e8e8bfe982d2502ca476fb54a66c9
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 7fd9e504448d55b4a2ef8c10b4ba1176cb2e3402
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95903709"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96172632"
 ---
 # <a name="five-steps-for-integrating-all-your-apps-with-azure-ad"></a>Vijf stappen voor het integreren van al uw apps met Azure AD
 
@@ -38,7 +38,7 @@ Azure Active Directory (Azure AD) bevat een galerie met duizenden vooraf geïnte
 - [AWS](../saas-apps/amazon-web-service-tutorial.md)
 - [Slack](../saas-apps/slack-tutorial.md)
 
-Daarnaast kunt u [toepassingen integreren die zich niet in de galerie](../manage-apps/view-applications-portal.md)bevindt, inclusief alle toepassingen die al in uw organisatie bestaan, of een toepassing van derden die al deel uitmaakt van de Azure AD-galerie. Als dat niet het geval is, kunt u [uw app ook toevoegen aan de galerie](../azuread-dev/howto-app-gallery-listing.md) .
+Daarnaast kunt u [toepassingen integreren die zich niet in de galerie](../manage-apps/view-applications-portal.md)bevindt, inclusief alle toepassingen die al in uw organisatie bestaan, of een toepassing van derden die al deel uitmaakt van de Azure AD-galerie. Als dat niet het geval is, kunt u [uw app ook toevoegen aan de galerie](../develop/v2-howto-app-gallery-listing.md) .
 
 Ten slotte kunt u ook de apps integreren die u zelf ontwikkelt. Dit wordt behandeld in stap 5 van deze hand leiding.
 

@@ -9,12 +9,12 @@ ms.date: 06/22/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 7cde23372f6a3af0320e2d48c78a0d7fe69a2600
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 3916855a62e506b12f72de713ccb56e89f846938
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92045700"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96171803"
 ---
 # <a name="update-the-iot-edge-security-daemon-and-runtime"></a>De IoT Edge-beveiligingsdaemon en -runtime bijwerken
 
@@ -48,7 +48,7 @@ De nieuwste opslagplaats configuratie ophalen van micro soft:
    curl https://packages.microsoft.com/config/ubuntu/18.04/multiarch/prod.list > ./microsoft-prod.list
    ```
 
-* **Raspbian stretch**:
+* **Raspberry Pi OS stretch**:
 
    ```bash
    curl https://packages.microsoft.com/config/debian/stretch/multiarch/prod.list > ./microsoft-prod.list
@@ -160,7 +160,7 @@ Als u specifieke tags in uw implementatie gebruikt (bijvoorbeeld mcr.microsoft.c
 
    ![Runtime-instellingen configureren](./media/how-to-update-iot-edge/configure-runtime.png)
 
-1. Werk in **runtime-instellingen**de **afbeeldings** waarde voor **Edge hub** bij met de gewenste versie. Selecteer nog niet **Opslaan** .
+1. Werk in **runtime-instellingen** de **afbeeldings** waarde voor **Edge hub** bij met de gewenste versie. Selecteer nog niet **Opslaan** .
 
    ![Versie van Edge hub-installatie kopie bijwerken](./media/how-to-update-iot-edge/runtime-settings-edgehub.png)
 

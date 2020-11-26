@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f92b95e38dea6555ca881d56ccf1cf2d68783e53
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 2825d3776f7b45f6726aaec05484900511ed1477
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896086"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96172972"
 ---
 # <a name="azure-active-directory-b2b-collaboration-faqs"></a>Veelgestelde vragen over Azure Active Directory B2B-samen werking
 
@@ -64,17 +64,17 @@ Tenzij aan een gebruiker de rol van beperkte beheerder is toegewezen, is voor B2
 Ja. U kunt een beleid voor voorwaardelijke toegang maken waarmee wordt voor komen dat alle gasten en externe gebruikers toegang krijgen tot de Azure Portal. Wanneer u dit beleid configureert, moet u voorzichtig zijn om te voor komen dat de toegang tot leden en beheerders per ongeluk wordt geblokkeerd.
 
 1. Meld u als beveiligingsbeheerder of beheerder voor voorwaardelijke toegang aan bij [Azure Portal](https://portal.azure.com/).
-2. Selecteer in Azure Portal **Azure Active Directory** . 
-3. Selecteer onder **beheren** de optie **beveiliging** .
-4. Onder **beveiligen** selecteert u **voorwaardelijke toegang** . Selecteer **Nieuw beleid** .
+2. Selecteer in Azure Portal **Azure Active Directory**. 
+3. Selecteer onder **beheren** de optie **beveiliging**.
+4. Onder **beveiligen** selecteert u **voorwaardelijke toegang**. Selecteer **Nieuw beleid**.
 5. Voer op de pagina **Nieuw** in het tekstvak **naam** een naam in voor het beleid (bijvoorbeeld ' gasten blok keren voor toegang tot de portal ').
-6. Onder **Toewijzingen** selecteert u **Gebruikers en groepen** .
-7. Klik op het tabblad **include** op **gebruikers en groepen selecteren** en selecteer vervolgens **alle gast en externe gebruikers (preview-versie)** .
-9. Selecteer **Gereed** .
-10. Selecteer op de pagina **Nieuw** in de sectie **toewijzingen** de optie **Cloud-apps of-acties** .
-11. Kies op de pagina **Cloud-apps of acties** de optie **apps selecteren** en kies vervolgens **selecteren** .
-12. Kies op de pagina **Selecteren** de optie **Microsoft Azure Management** en kies vervolgens **Selecteren** .
-13. Op de pagina **Cloud-apps of acties** , selecteer **gereed** .
+6. Onder **Toewijzingen** selecteert u **Gebruikers en groepen**.
+7. Klik op het tabblad **include** op **gebruikers en groepen selecteren** en selecteer vervolgens **alle gast en externe gebruikers (preview-versie)**.
+9. Selecteer **Gereed**.
+10. Selecteer op de pagina **Nieuw** in de sectie **toewijzingen** de optie **Cloud-apps of-acties**.
+11. Kies op de pagina **Cloud-apps of acties** de optie **apps selecteren** en kies vervolgens **selecteren**.
+12. Kies op de pagina **Selecteren** de optie **Microsoft Azure Management** en kies vervolgens **Selecteren**.
+13. Op de pagina **Cloud-apps of acties** , selecteer **gereed**.
 
 ### <a name="does-azure-ad-b2b-collaboration-support-multi-factor-authentication-and-consumer-email-accounts"></a>Ondersteunt Azure AD B2B-samen werking multi-factor Authentication-en consumenten-e-mail accounts?
 Ja. Multi-factor Authentication-en consumenten-e-mail accounts worden beide ondersteund voor Azure AD B2B-samen werking.
@@ -84,7 +84,7 @@ Als uw Azure AD-Tenant de basis directory voor een gebruiker is, kunt u [het wac
  
 * Gast gebruikers die zich aanmelden met een Microsoft-account (bijvoorbeeld guestuser@live.com ) kunnen hun eigen wacht woorden opnieuw instellen met behulp van Microsoft-account self-service voor wachtwoord herstel (SSPR). Lees [hoe u uw Microsoft-account wacht woord opnieuw instelt](https://support.microsoft.com/help/4026971/microsoft-account-how-to-reset-your-password).
 * Gast gebruikers die zich aanmelden met een Google-account of een andere externe ID-provider kunnen hun eigen wacht woord opnieuw instellen met behulp van de SSPR-methode van de identiteits provider. Een gast gebruiker met het Google-account kan bijvoorbeeld guestuser@gmail.com het wacht woord opnieuw instellen door de instructies te volgen in [uw wacht woord wijzigen of opnieuw instellen](https://support.google.com/accounts/answer/41078).
-* Als de identiteits Tenant een just-in-time-Tenant (JIT) of ' virale ' is (wat betekent dat het een afzonderlijke, niet-beheerde Azure-Tenant is), kan alleen de gast gebruiker het wacht woord opnieuw instellen. Soms neemt een organisatie het [beheer van virale tenants over](../users-groups-roles/domains-admin-takeover.md) die worden gemaakt wanneer werk nemers hun werk-e-mail adressen gebruiken om zich aan te melden voor services. Nadat de organisatie een virale Tenant heeft overgenomen, kan alleen een beheerder in die organisatie het wacht woord van de gebruiker opnieuw instellen of SSPR inschakelen. Als dat nodig is, kunt u, als de uitnodigende organisatie, het gast gebruikers account uit uw Directory verwijderen en een uitnodiging opnieuw verzenden.
+* Als de identiteits Tenant een just-in-time-Tenant (JIT) of ' virale ' is (wat betekent dat het een afzonderlijke, niet-beheerde Azure-Tenant is), kan alleen de gast gebruiker het wacht woord opnieuw instellen. Soms neemt een organisatie het [beheer van virale tenants over](../enterprise-users/domains-admin-takeover.md) die worden gemaakt wanneer werk nemers hun werk-e-mail adressen gebruiken om zich aan te melden voor services. Nadat de organisatie een virale Tenant heeft overgenomen, kan alleen een beheerder in die organisatie het wacht woord van de gebruiker opnieuw instellen of SSPR inschakelen. Als dat nodig is, kunt u, als de uitnodigende organisatie, het gast gebruikers account uit uw Directory verwijderen en een uitnodiging opnieuw verzenden.
 
 * Als de basismap van de gast gebruiker uw Azure AD-Tenant is, kunt u het wacht woord van de gebruiker opnieuw instellen. U hebt bijvoorbeeld een gebruiker gemaakt of een gebruiker gesynchroniseerd vanaf uw on-premises Active Directory en de User type ingesteld op gast. Omdat deze gebruiker zich in uw directory bevindt, kunt u het wacht woord opnieuw instellen via de Azure Portal.
 

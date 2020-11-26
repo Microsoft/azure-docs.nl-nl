@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: jeffsta
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bbf23a32fdf5515402e18f70fe032a1a589dbcbe
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 32526a31a9d52fbfac57f1d384b25e0939b5e297
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424058"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96172870"
 ---
 # <a name="how-to-find-your-azure-active-directory-tenant-id"></a>Uw Azure Active Directory Tenant-ID zoeken
 
@@ -51,7 +51,7 @@ Zie voor meer informatie deze Azure PowerShell-cmdlet-verwijzing voor [Get-AzTen
 ## <a name="find-tenant-id-with-cli"></a>Tenant-ID zoeken met CLI
 Als u een opdracht regel interface wilt gebruiken om de Tenant-ID te vinden, kunt u dit doen met [Azure cli](/cli/azure/install-azure-cli) of [Microsoft 365 cli](https://pnp.github.io/cli-microsoft365/). 
 
-Gebruik voor Azure CLI een van de opdrachten **AZ login** , **AZ account list** of **AZ account Tenant List** , zoals wordt weer gegeven in het volgende voor beeld. Let op de eigenschap **tenantId** voor elk van uw abonnementen in de uitvoer van elke opdracht.
+Gebruik voor Azure CLI een van de opdrachten **AZ login**, **AZ account list** of **AZ account Tenant List** , zoals wordt weer gegeven in het volgende voor beeld. Let op de eigenschap **tenantId** voor elk van uw abonnementen in de uitvoer van elke opdracht.
 
 ```azurecli-interactive
 az login
@@ -77,4 +77,4 @@ Zie voor meer informatie de Microsoft 365 [-Tenant-id](https://pnp.github.io/cli
 
 - Zie [een Azure-abonnement koppelen aan of toevoegen aan uw Azure Active Directory-Tenant](active-directory-how-subscriptions-associated-directory.md)voor meer informatie over het koppelen of toevoegen van een abonnement aan een Tenant.
 
-- Zie [de gebruikers object-id zoeken](https://docs.microsoft.com/partner-center/find-ids-and-domain-names#find-the-user-object-id)voor meer informatie over het vinden van de object-id.
+- Zie [de gebruikers object-id zoeken](/partner-center/find-ids-and-domain-names#find-the-user-object-id)voor meer informatie over het vinden van de object-id.

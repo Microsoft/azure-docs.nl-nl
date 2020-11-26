@@ -6,12 +6,12 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/10/2020
-ms.openlocfilehash: a02fa7d9f656ed3b6e61aab1f42e2a3ffca131a7
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 4fea027663b55e87822eae1fd0cdb2d67dbc630b
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917253"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96170817"
 ---
 # <a name="introduction-to-provisioned-throughput-in-azure-cosmos-db"></a>Inleiding tot ingerichte door Voer in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -137,7 +137,7 @@ U kunt [Azure monitor metrische gegevens](monitor-cosmos-db.md#view-operation-le
 
 Zoals beschreven in de sectie [huidige ingerichte door Voer](#current-provisioned-throughput) , de minimale door Voer die u kunt inrichten voor een container of Data Base is afhankelijk van een aantal factoren. Een van beide is de hoeveelheid gegevens die momenteel is opgeslagen, omdat Azure Cosmos DB een minimale door Voer van 10 RU/s per GB opslag afdwingt.
 
-Dit kan een probleem zijn in situaties waarin u grote hoeveel heden gegevens moet opslaan, maar een lage doorvoer vereisten in vergelijking hebt. Voor een beter begrip van deze scenario's heeft Azure Cosmos DB een **' hoge opslag/lage door Voer '** geïntroduceerd waarmee de beperking van de ru/s per GB van 10 naar 1 wordt verlaagd voor in aanmerking komende accounts.
+Dit kan een probleem zijn in situaties waarin u grote hoeveel heden gegevens moet opslaan, maar een lage doorvoer vereisten in vergelijking hebt. Voor een beter begrip van deze scenario's heeft Azure Cosmos DB een **' hoge opslag/lage door Voer '** geïntroduceerd waarmee de beperking van ru/s per GB voor in aanmerking komende accounts wordt verlaagd.
 
 U hebt momenteel ten minste één container of een Data Base voor gedeelde door Voer met meer dan 1 TB aan gegevens in uw account nodig om in aanmerking te komen. Als u wilt meedoen aan dit programma en uw volledige geschiktheid wilt beoordelen, moet u dit doen door [deze enquête](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRzBPrdEMjvxPuDm8fCLUtXpUREdDU0pCR0lVVFY5T1lRVEhWNUZITUJGMC4u)in te vullen. Het Azure Cosmos DB-team wordt vervolgens opvolgd en gaat door met uw onboarding.
 

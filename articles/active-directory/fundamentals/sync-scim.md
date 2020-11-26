@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f957070ec94fc4c61089f31fe91261a2f52c4ee4
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: b95aac504bc6ee72c353faecad25384e2dc90840
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578855"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96172415"
 ---
 # <a name="scim-synchronization-with-azure-active-directory"></a>SCIM synchronisatie met Azure Active Directory
 
@@ -35,21 +35,20 @@ U wilt gebruikers gegevens automatisch inrichten van een HCM-systeem naar Azure 
 
 ## <a name="components-of-system"></a>Onderdelen van systeem 
 
-* **HCM System** : toepassingen en technologieën waarmee HR-processen kunnen worden ondersteund en geautomatiseerd gedurende de levens cyclus van werk nemers. 
+* **HCM System**: toepassingen en technologieën waarmee HR-processen kunnen worden ondersteund en geautomatiseerd gedurende de levens cyclus van werk nemers. 
 
-* **Azure AD-inrichtings service** : maakt gebruik van het scim 2,0-protocol voor automatische inrichting. De service maakt verbinding met het SCIM-eind punt voor de toepassing en maakt gebruik van het schema voor de SCIM-gebruikers objecten en REST-Api's voor het automatiseren van het inrichten en het ongedaan maken van de inrichting van gebruikers en groepen.  
+* **Azure AD-inrichtings service**: maakt gebruik van het scim 2,0-protocol voor automatische inrichting. De service maakt verbinding met het SCIM-eind punt voor de toepassing en maakt gebruik van het schema voor de SCIM-gebruikers objecten en REST-Api's voor het automatiseren van het inrichten en het ongedaan maken van de inrichting van gebruikers en groepen.  
 
-* **Azure AD** : opslag plaats voor gebruikers die wordt gebruikt voor het beheren van de levens cyclus van identiteiten en hun rechten. 
+* **Azure AD**: opslag plaats voor gebruikers die wordt gebruikt voor het beheren van de levens cyclus van identiteiten en hun rechten. 
 
-* **Doel systeem** : toepassing of systeem met scim-eind punt en werkt met de Azure AD-inrichting om automatische inrichting van gebruikers en groepen in te scha kelen.  
+* **Doel systeem**: toepassing of systeem met scim-eind punt en werkt met de Azure AD-inrichting om automatische inrichting van gebruikers en groepen in te scha kelen.  
 
 ## <a name="implement-scim-with-azure-ad"></a>SCIM implementeren met Azure AD 
 
-* [Hoe het inrichten werkt in azure AD ](https://docs.microsoft.com/azure/active-directory/app-provisioning/how-provisioning-works)
+* [Hoe het inrichten werkt in azure AD ](../app-provisioning/how-provisioning-works.md)
 
-* [Het inrichten van gebruikers accounts voor zakelijke apps beheren in de Azure Portal ](https://docs.microsoft.com/azure/active-directory/app-provisioning/configure-automatic-user-provisioning-portal)
+* [Het inrichten van gebruikers accounts voor zakelijke apps beheren in de Azure Portal ](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 
-* [Een SCIM-eind punt bouwen en gebruikers inrichten met Azure AD configureren  ](https://docs.microsoft.com/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups)
+* [Een SCIM-eind punt bouwen en gebruikers inrichten met Azure AD configureren  ](../app-provisioning/use-scim-to-provision-users-and-groups.md)
 
-* [Naleving van SCIM 2,0-protocol van de Azure AD-inrichtings service](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-config-problem-scim-compatibility)
-
+* [Naleving van SCIM 2,0-protocol van de Azure AD-inrichtings service](../app-provisioning/application-provisioning-config-problem-scim-compatibility.md)

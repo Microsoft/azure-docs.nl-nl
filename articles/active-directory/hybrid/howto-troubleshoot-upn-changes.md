@@ -11,12 +11,12 @@ author: barbaraselden
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6a1acdbeb29091bae0be214b740023f13928506a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 46ecc2cba96b07d9105020e69ae3198a3765be7c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91319840"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96172228"
 ---
 # <a name="plan-and-troubleshoot-user-principal-name-changes-in-azure-active-directory"></a>Wijzigingen in de principal-naam van gebruikers plannen en oplossen in Azure Active Directory
 
@@ -174,7 +174,7 @@ De [Microsoft Authenticator-app](../user-help/user-help-auth-app-overview.md) he
 
 * Multi-factor Authentication via een push melding of verificatie code
 
-* Fungeren als een verificatie Broker op iOS-en Android-apparaten om eenmalige aanmelding te bieden voor toepassingen die gebruikmaken van [brokered-verificatie](../develop/brokered-auth.md)
+* Fungeren als een verificatie Broker op iOS-en Android-apparaten om eenmalige aanmelding te bieden voor toepassingen die gebruikmaken van [brokered-verificatie](../develop/msal-android-single-sign-on.md)
 
 * Apparaatregistratie (ook bekend als Workplace Join) voor Azure AD. Dit is een vereiste voor andere functies, zoals Intune-app-beveiliging en inschrijving/beheer van het apparaat.
 

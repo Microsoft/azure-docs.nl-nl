@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: pafarley
-ms.openlocfilehash: 10ae9e1356cea954435d15441d74f4f86a804578
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 929aed28df2725ccde62c348a18ef7b41334e233
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95893977"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96172126"
 ---
 # <a name="whats-new-in-form-recognizer"></a>Wat is er nieuw in Form Recognizer?
 
@@ -37,6 +37,7 @@ De Form Recognizer-service wordt doorlopend bijgewerkt. Gebruik dit artikel om o
  
   > [Meer informatie over indelings extractie](concept-layout.md)
 
+- **Update van client bibliotheek** : de [client bibliotheken](quickstarts/client-library.md) voor .net, Python, Java en Java script hebben algemene Beschik baarheid.
 - **Nieuwe ondersteunde taal: Japans** -de volgende nieuwe talen worden nu ondersteund: voor `AnalyzeLayout` en `AnalyzeCustomForm` : Japans ( `ja` ). [Taalondersteuning](language-support.md)
 - **Tekst lijn stijl vermelding (handgeschreven/Overig) (alleen Latijnse talen)** : met formulier herkenning wordt nu een `appearance` object geclassificeerd waarin wordt aangegeven of elke tekst regel handgeschreven stijl is of niet, samen met een betrouwbaarheids Score. Deze functie wordt alleen ondersteund voor Latijnse talen.
 - **Kwaliteits verbeteringen** : extractie verbeteringen, waaronder de extractie van één cijfer.
@@ -46,8 +47,8 @@ De Form Recognizer-service wordt doorlopend bijgewerkt. Gebruik dit artikel om o
 
   ![FOTT-voor beeld](./media/ui-preview.jpg)
   
-- **Feedback-lus** : bij het analyseren van bestanden via het hulp programma voor het labelen van het voor beeld kunt u dit nu ook toevoegen aan de Trainingsset en adujst de classificatielabels indien nodig en train om het model te verbeteren.
-- **Documets automatisch labelen** -Automitcally labels extra documenten op basis van eerder gelabelde documenten in het project. 
+- **Feedback-lus** : bij het analyseren van bestanden via het hulp programma voor het labelen van het voor beeld kunt u dit nu ook toevoegen aan de Trainingsset en zo nodig de labels aanpassen, zodat het model kan worden verbeterd.
+- **Documenten automatisch labelen** : automatisch extra documenten labelen op basis van eerder gelabelde documenten in het project.
 
 ## <a name="august-2020"></a>Augustus 2020
 

@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.author: mimart
 ms.subservice: B2C
 ms.date: 11/12/2020
-ms.openlocfilehash: b41f5e9a3bd4d3cbe52cf2e1c567d24de8a661f4
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 6d40eab12c9726459543d0b69e27b73178eba99f
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95992830"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96170613"
 ---
 # <a name="monitor-azure-ad-b2c-with-azure-monitor"></a>Azure AD B2C met Azure Monitor bewaken
 
@@ -140,9 +140,9 @@ Nadat u de sjabloon hebt geïmplementeerd en enkele minuten hebt gewacht totdat 
 
 Diagnostische instellingen bepalen waar logboeken en metrische gegevens voor een resource moeten worden verzonden. Mogelijke bestemmingen zijn:
 
-- [Azure Storage-account](../azure-monitor/platform/resource-logs-collect-storage.md)
-- [Event hubs](../azure-monitor/platform/resource-logs-stream-event-hubs.md) -oplossingen
-- [Log Analytics werk ruimte](../azure-monitor/platform/resource-logs-collect-workspace.md)
+- [Azure Storage-account](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
+- [Event hubs](../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs) -oplossingen
+- [Log Analytics werk ruimte](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace)
 
 In dit voor beeld gebruiken we de Log Analytics-werk ruimte om een dash board te maken.
 
@@ -180,7 +180,7 @@ U kunt nu uw Log Analytics-werk ruimte configureren om uw gegevens te visualiser
 Met logboekquery's kunt u de waarde van de gegevens die in Azure Monitor-logboeken worden verzameld, volledig benutten. Met een krachtige query taal kunt u gegevens uit meerdere tabellen samen voegen, grote gegevens sets verzamelen en complexe bewerkingen met minimale code uitvoeren. Vrijwel elke vraag kan worden beantwoord en de analyse wordt uitgevoerd zolang de ondersteunende gegevens zijn verzameld en u begrijpt hoe u de juiste query kunt bouwen. Zie [aan de slag met logboek query's in azure monitor](../azure-monitor/log-query/get-started-queries.md)voor meer informatie.
 
 1. Selecteer in **log Analytics werk ruimte** **Logboeken**
-1. Plak in de query-editor de volgende [query taal](https://docs.microsoft.com/azure/data-explorer/kusto/query/) query van Kusto. Deze query toont het beleids gebruik per bewerking over de afgelopen x dagen. De standaard duur is ingesteld op 90 dagen (90d). U ziet dat de query alleen gericht is op de bewerking waarbij een token/code wordt uitgegeven door het beleid.
+1. Plak in de query-editor de volgende [query taal](/azure/data-explorer/kusto/query/) query van Kusto. Deze query toont het beleids gebruik per bewerking over de afgelopen x dagen. De standaard duur is ingesteld op 90 dagen (90d). U ziet dat de query alleen gericht is op de bewerking waarbij een token/code wordt uitgegeven door het beleid.
 
     ```kusto
     AuditLogs
@@ -205,7 +205,7 @@ Met logboekquery's kunt u de waarde van de gegevens die in Azure Monitor-logboek
 
 1. Selecteer **Opslaan**.
 
-U kunt de query ook zo wijzigen dat de gegevens worden gevisualiseerd met behulp van de operator [render](https://docs.microsoft.com/azure/data-explorer/kusto/query/renderoperator?pivots=azuremonitor) .
+U kunt de query ook zo wijzigen dat de gegevens worden gevisualiseerd met behulp van de operator [render](/azure/data-explorer/kusto/query/renderoperator?pivots=azuremonitor) .
 
 ```kusto
 AuditLogs

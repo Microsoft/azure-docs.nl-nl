@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: daf40a2ced3f753619e9c4723dbe78cd7e51ff21
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: c1604d79ce5eb9949028cd677b340bf3d4b09f6c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94577903"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96172836"
 ---
 # <a name="oauth-20-authentication-with-azure-active-directory"></a>OAuth 2,0-verificatie met Azure Active Directory
 
@@ -34,20 +34,19 @@ Voor uitgebreide client & moderne app-scenario's en REST Web API-toegang.
 
 ## <a name="components-of-system"></a>Onderdelen van systeem
 
-* **Gebruiker** : vraagt een service aan bij de webtoepassing (app). De gebruiker is doorgaans de eigenaar van de resource die eigenaar is van de gegevens en heeft de kracht om clients toegang te geven tot de gegevens of de resource. 
+* **Gebruiker**: vraagt een service aan bij de webtoepassing (app). De gebruiker is doorgaans de eigenaar van de resource die eigenaar is van de gegevens en heeft de kracht om clients toegang te geven tot de gegevens of de resource. 
 
-* **Webbrowser** : de webbrowser waarmee de gebruiker communiceert, is de OAuth-client. 
+* **Webbrowser**: de webbrowser waarmee de gebruiker communiceert, is de OAuth-client. 
 
-* **Web-app** : de web-app of de resource server is waar de resource of gegevens zich bevinden. Het vertrouwt de autorisatie server om de OAuth-client veilig te verifiëren en te autoriseren. 
+* **Web-app**: de web-app of de resource server is waar de resource of gegevens zich bevinden. Het vertrouwt de autorisatie server om de OAuth-client veilig te verifiëren en te autoriseren. 
 
-* **Azure AD** : Azure AD is de autorisatie server, ook wel bekend als de ID-provider (IDP). U kunt alles veilig afhandelen met de gegevens van de gebruiker, hun toegang en de vertrouwens relatie. Het is verantwoordelijk voor het uitgeven van de tokens die toegang tot bronnen verlenen en intrekken.
+* **Azure AD**: Azure AD is de autorisatie server, ook wel bekend als de ID-provider (IDP). U kunt alles veilig afhandelen met de gegevens van de gebruiker, hun toegang en de vertrouwens relatie. Het is verantwoordelijk voor het uitgeven van de tokens die toegang tot bronnen verlenen en intrekken.
 
 ## <a name="implement-oauth-20-with-azure-ad"></a>OAuth 2,0 implementeren met Azure AD
 
-* [Toepassingen integreren met Azure AD](https://docs.microsoft.com/azure/active-directory/saas-apps/tutorial-list) 
+* [Toepassingen integreren met Azure AD](../saas-apps/tutorial-list.md) 
 
-* [OAuth 2,0 en OpenID Connect Connect protocollen op het micro soft Identity-platform](https://docs.microsoft.com/azure/active-directory/develop/active-directory-v2-protocols) 
+* [OAuth 2,0 en OpenID Connect Connect protocollen op het micro soft Identity-platform](../develop/active-directory-v2-protocols.md) 
 
-* [Toepassings typen en OAuth2](https://docs.microsoft.com/azure/active-directory/develop/v2-app-types) 
+* [Toepassings typen en OAuth2](../develop/v2-app-types.md) 
 
- 

@@ -12,12 +12,12 @@ ms.date: 11/04/2020
 ms.author: kenwith
 ms.reviewer: jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 3b9f744e414e83c103f6b9249a0ccf5020588463
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 6374164bb5049742d63a669b4c1e552c93967977
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93356345"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173376"
 ---
 # <a name="publish-your-app-to-the-azure-ad-app-gallery"></a>Uw app publiceren in de app-galerie van Azure AD
 
@@ -36,7 +36,7 @@ Daarnaast zijn er veel voor delen wanneer uw klanten Azure AD als id-provider vo
 - Bieden van eenmalige aanmelding voor uw gebruikers. Met eenmalige aanmelding vermindert u de ondersteunings kosten door het voor uw klanten gemakkelijker te maken om eenmalige aanmelding te bieden. Als eenmalige aanmelding is ingeschakeld, hebben de IT-beheerders van uw klanten geen informatie over het configureren van uw toepassing voor gebruik in hun organisatie. Zie [Wat is eenmalige aanmelding?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over eenmalige aanmelding.
 - Uw app kan worden gedetecteerd in de galerie met Microsoft 365 apps, het start programma voor Microsoft 365 apps en in micro soft Search op Office.com. 
 - Geïntegreerd app-beheer. Zie [Wat is toepassings beheer?](../manage-apps/what-is-application-management.md)voor meer informatie over app-beheer in azure AD.
-- Uw app kan de [Graph API](https://docs.microsoft.com/graph/) gebruiken om toegang te krijgen tot de gegevens die de gebruikers productiviteit in het micro soft-ecosysteem bewaart.
+- Uw app kan de [Graph API](/graph/) gebruiken om toegang te krijgen tot de gegevens die de gebruikers productiviteit in het micro soft-ecosysteem bewaart.
 - Toepassingsspecifieke documentatie die in combi natie met het Azure AD-team is geproduceerd voor onze wederzijdse klanten, vereenvoudigt de acceptatie.
 - U geeft uw klanten de mogelijkheid om de verificatie en autorisatie van hun werk nemers en gast identiteiten volledig te beheren.
 - Het plaatsen van alle account beheer en nalevings verantwoordelijkheid met de klant eigenaar van deze identiteiten.
@@ -47,7 +47,7 @@ Daarnaast zijn er veel voor delen wanneer uw klanten Azure AD als id-provider vo
 - Voeg beveiliging en gebruiks gemak toe wanneer gebruikers zich aanmelden bij toepassingen met behulp van Azure AD SSO en de nood zaak van afzonderlijke referenties verwijderen.
 
 > [!TIP]
-> Wanneer u uw toepassing aanbiedt voor gebruik door andere bedrijven via een aankoop of abonnement, maakt u uw toepassing beschikbaar voor klanten binnen hun eigen Azure-tenants. Dit staat bekend als het maken van een toepassing met meerdere tenants. Zie [multi tenant-toepassingen in azure](https://docs.microsoft.com/azure/dotnet-develop-multitenant-applications) en [pacht in azure Active Directory](single-and-multi-tenant-apps.md)voor een overzicht van dit concept.
+> Wanneer u uw toepassing aanbiedt voor gebruik door andere bedrijven via een aankoop of abonnement, maakt u uw toepassing beschikbaar voor klanten binnen hun eigen Azure-tenants. Dit staat bekend als het maken van een toepassing met meerdere tenants. Zie [multi tenant-toepassingen in azure](../../dotnet-develop-multitenant-applications.md) en [pacht in azure Active Directory](single-and-multi-tenant-apps.md)voor een overzicht van dit concept.
 
 > [!IMPORTANT]
 > Als u uw app in de Azure AD-galerie wilt publiceren, moet u akkoord gaan met specifieke voor waarden. Voordat u begint, moet u ervoor zorgen dat u de [voor waarden](https://azure.microsoft.com/support/legal/active-directory-app-gallery-terms/)leest en instemt.
@@ -98,7 +98,7 @@ De volgende tabel vergelijkt de belangrijkste standaarden: open verificatie 2,0 
 | Beleid voor voorwaardelijke toegang voor mobiele toepassingen| √| X |
 | Naadloze MFA-ervaring voor mobiele toepassingen| √| X |
 | SCIM-inrichting| √| √ |
-| Toegang Microsoft Graph| √| X |
+| Toegang tot Microsoft Graph krijgen| √| X |
 
 * Mogelijk, maar micro soft biedt geen voor beelden of richt lijnen.
 
@@ -162,7 +162,7 @@ Als uw app SAML 2,0 ondersteunt, kunt u deze rechtstreeks integreren met een Azu
 Micro soft biedt geen-of aanbevolen bibliotheken voor SAML-implementaties. Er zijn veel open-source bibliotheken beschikbaar.
 
 ### <a name="implement-ws-fed"></a>WS-Fed implementeren
-Zie [gebruikers verifiëren met WS-Federation in ASP.net core](https://docs.microsoft.com/aspnet/core/security/authentication/ws-federation)voor meer informatie over WS-Fed in ASP.net core.
+Zie [gebruikers verifiëren met WS-Federation in ASP.net core](/aspnet/core/security/authentication/ws-federation)voor meer informatie over WS-Fed in ASP.net core.
 
 ### <a name="implement-password-vaulting"></a>Wachtwoord kluizen implementeren
 
@@ -173,7 +173,7 @@ Maak een webtoepassing met een HTML-aanmeldings pagina. Zorg ervoor dat uw toepa
 
 U hebt een Azure AD-Tenant nodig om uw app te kunnen testen. Zie [Quick Start: een Tenant instellen](quickstart-create-new-tenant.md)om uw ontwikkel omgeving in te stellen.
 
-Een Azure AD-Tenant wordt ook geleverd met elk Microsoft 365-abonnement. Als u een gratis Microsoft 365 ontwikkel omgeving wilt instellen, raadpleegt u [lid worden van het Microsoft 365 ontwikkelaars programma](https://docs.microsoft.com/office/developer-program/microsoft-365-developer-program).
+Een Azure AD-Tenant wordt ook geleverd met elk Microsoft 365-abonnement. Als u een gratis Microsoft 365 ontwikkel omgeving wilt instellen, raadpleegt u [lid worden van het Microsoft 365 ontwikkelaars programma](/office/developer-program/microsoft-365-developer-program).
 
 Zodra u een Tenant hebt, moet u toegang voor eenmalige aanmelding inschakelen en testen. 
 
@@ -209,7 +209,7 @@ Het is raadzaam dat uw documentatie op uw site mini maal de volgende items bevat
 
 ### <a name="documentation-on-the-microsoft-site"></a>Documentatie op de micro soft-site
 
-Wanneer u uw toepassing opneemt met de Azure Active Directory toepassings galerie, waarmee uw toepassing ook wordt gepubliceerd in de Azure Marketplace, wordt door micro soft documentatie gegenereerd voor de wederzijdse klanten die het stapsgewijze proces bespreken. [Hier](https://aka.ms/appstutorial)kunt u een voor beeld bekijken. Deze documentatie wordt gemaakt op basis van uw inzending naar de galerie, en u kunt deze eenvoudig bijwerken als u wijzigingen aanbrengt in uw toepassing met behulp van uw GitHub-account.
+Wanneer u uw toepassing opneemt met de Azure Active Directory toepassings galerie, waarmee uw toepassing ook wordt gepubliceerd in de Azure Marketplace, wordt door micro soft documentatie gegenereerd voor de wederzijdse klanten die het stapsgewijze proces bespreken. [Hier](../saas-apps/tutorial-list.md)kunt u een voor beeld bekijken. Deze documentatie wordt gemaakt op basis van uw inzending naar de galerie, en u kunt deze eenvoudig bijwerken als u wijzigingen aanbrengt in uw toepassing met behulp van uw GitHub-account.
 
 
 ## <a name="step-5---submit-your-app"></a>Stap 5: uw app verzenden
@@ -254,7 +254,7 @@ Als u uw toepassing wilt toevoegen aan de lijst in de galerie met behulp van Ope
 
 ![Een OpenID Connect Connect-toepassing in de galerie weer geven](./media/howto-app-gallery-listing/openid.png)
 
-Als u uw toepassing wilt toevoegen aan de lijst in de galerie met behulp van **saml 2,0** of **WS-voeder** , selecteert u **SAML 2.0/WS-wordt gevoederd** zoals weer gegeven.
+Als u uw toepassing wilt toevoegen aan de lijst in de galerie met behulp van **saml 2,0** of **WS-voeder**, selecteert u **SAML 2.0/WS-wordt gevoederd** zoals weer gegeven.
 
 ![Een SAML 2,0-of WS-Fed-toepassing in de galerie weer geven](./media/howto-app-gallery-listing/saml.png)
 
@@ -262,7 +262,7 @@ Als u uw toepassing wilt toevoegen aan de lijst in de galerie met behulp van wac
 
 ![Een SSO-toepassing voor wacht woorden in de galerie weer geven](./media/howto-app-gallery-listing/passwordsso.png)
 
-Als u een [SCIM](https://docs.microsoft.com/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups) 2,0-eind punt voor het inrichten van gebruikers implementeert, selecteert u de optie zoals weer gegeven. 
+Als u een [SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md) 2,0-eind punt voor het inrichten van gebruikers implementeert, selecteert u de optie zoals weer gegeven. 
 
    ![Aanvraag voor gebruikers inrichting](./media/howto-app-gallery-listing/user-provisioning.png)
 

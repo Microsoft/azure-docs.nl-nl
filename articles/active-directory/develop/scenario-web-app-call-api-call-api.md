@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 846c47017ba2887c287dd080c44c46b372660d0e
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 016a2917c02deaecf35c526426cb2a6dbc89e338
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94443599"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173186"
 ---
 # <a name="a-web-app-that-calls-web-apis-call-a-web-api"></a>Een web-app die web-Api's aanroept: een web-API aanroepen
 
@@ -152,7 +152,7 @@ public async Task<IActionResult> Profile()
 > [!NOTE]
 > U kunt dezelfde methode gebruiken om een web-API aan te roepen.
 >
-> De meeste Azure-Web-Api's bieden een SDK die het aanroepen van de API vereenvoudigt als het geval is voor Microsoft Graph. Zie bijvoorbeeld [een webtoepassing voor het maken van toegang tot Blob Storage met Azure AD](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-app?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=dotnet) voor een voor beeld van een web-app met behulp van micro soft. Identity. Web en met behulp van de Azure Storage SDK.
+> De meeste Azure-Web-Api's bieden een SDK die het aanroepen van de API vereenvoudigt als het geval is voor Microsoft Graph. Zie bijvoorbeeld [een webtoepassing voor het maken van toegang tot Blob Storage met Azure AD](../../storage/common/storage-auth-aad-app.md?tabs=dotnet&toc=%2fazure%2fstorage%2fblobs%2ftoc.json) voor een voor beeld van een web-app met behulp van micro soft. Identity. Web en met behulp van de Azure Storage SDK.
 
 # <a name="java"></a>[Java](#tab/java)
 

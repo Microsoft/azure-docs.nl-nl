@@ -5,13 +5,13 @@ author: ThomasWeiss
 ms.author: thweiss
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 11/10/2020
-ms.openlocfilehash: c811a2ea5c06250068e7c0276e4b79e9108d920d
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.date: 11/25/2020
+ms.openlocfilehash: cabc243c6ba74217873b5b0a5fa51a7cb410512e
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94490352"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96170826"
 ---
 # <a name="azure-cosmos-db-serverless-preview"></a>Azure Cosmos DB serverloze (preview-versie)
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -33,9 +33,8 @@ Wanneer u Azure Cosmos DB gebruikt, worden voor elke database bewerking de koste
 
 Azure Cosmos DB server het beste geschikt is voor scenario's waar u verwacht:
 
-- **Licht verkeer** : omdat de capaciteit van de inrichting in dergelijke situaties niet vereist is en het mogelijk is dat de kosten worden verboden
-- **Matige burstie** : omdat containers met serverloze maxi maal 5.000 aanvraag eenheden per seconde kunnen leveren
-- **Matige prestaties** : omdat containers van serverloze [specifieke prestatie kenmerken](#performance) hebben
+- **Laag, onregelmatig en onvoorspelbaar verkeer**: omdat het inrichten van capaciteit in dergelijke situaties niet vereist is en het mogelijk is dat de kosten worden verboden
+- **Matige prestaties**: omdat containers van serverloze [specifieke prestatie kenmerken](#performance) hebben
 
 Om deze redenen moet Azure Cosmos DB serverloos worden overwogen voor de volgende typen werk belasting:
 
@@ -62,7 +61,6 @@ Een container die is gemaakt in een serverloze account, is een serverloze contai
     - U kunt geen door voer door geven bij het maken van een serverloze container en er wordt een fout geretourneerd.
     - U kunt de door Voer niet lezen of bijwerken op een serverloze container en er wordt een fout geretourneerd.
     - U kunt geen gedeelde doorvoer database maken in een serverloze account en daarom wordt er een fout geretourneerd.
-- Serverloze containers kunnen een maximale doorvoer snelheid bieden van 5.000 aanvraag eenheden per seconde.
 - Serverloze containers kunnen Maxi maal 50 GB aan gegevens en indexen opslaan.
 
 ## <a name="monitoring-your-consumption"></a>Uw verbruik bewaken
@@ -79,9 +77,9 @@ U kunt dezelfde grafiek vinden wanneer u Azure Monitor gebruikt, zoals [hier](mo
 
 Serverloze resources geven specifieke prestatie kenmerken door die afwijken van de ingerichte doorvoer resources:
 
-- **Beschik baarheid** : nadat de serverloze aanbieding algemeen beschikbaar is, wordt de beschik baarheid van serverloze containers gedekt door een Service Level Agreement (Sla) van 99,9% wanneer Beschikbaarheidszones (zone redundantie) niet wordt gebruikt. De SLA is 99,99% wanneer Beschikbaarheidszones worden gebruikt.
-- **Latentie** : nadat de serverloze aanbieding algemeen beschikbaar is, wordt de latentie van serverloze containers gedekt door een serviceniveau doelstelling (SLO) van 10 milliseconden of minder voor punt-en 30 milliseconden of minder voor schrijf bewerkingen. Een lees bewerking voor een punt bestaat uit het ophalen van één item met de ID en partitie sleutel waarde.
-- **Burstie** : nadat de serverloze aanbieding algemeen beschikbaar is, wordt de burstie van serverloze containers gedekt door een serviceniveau doelstelling (SLO) van 95%. Dit betekent dat de maximale burstie ten minste 95% van de tijd kan worden bereikt.
+- **Beschik baarheid**: nadat de serverloze aanbieding algemeen beschikbaar is, wordt de beschik baarheid van serverloze containers gedekt door een Service Level Agreement (Sla) van 99,9% wanneer Beschikbaarheidszones (zone redundantie) niet wordt gebruikt. De SLA is 99,99% wanneer Beschikbaarheidszones worden gebruikt.
+- **Latentie**: nadat de serverloze aanbieding algemeen beschikbaar is, wordt de latentie van serverloze containers gedekt door een serviceniveau doelstelling (SLO) van 10 milliseconden of minder voor punt-en 30 milliseconden of minder voor schrijf bewerkingen. Een lees bewerking voor een punt bestaat uit het ophalen van één item met de ID en partitie sleutel waarde.
+- **Burstie**: nadat de serverloze aanbieding algemeen beschikbaar is, wordt de burstie van serverloze containers gedekt door een serviceniveau doelstelling (SLO) van 95%. Dit betekent dat de maximale burstie ten minste 95% van de tijd kan worden bereikt.
 
 > [!NOTE]
 > Als Azure-Preview wordt Azure Cosmos DB serverloos uitgesloten van service overeenkomsten (SLA). De prestatie-eigenschappen die hierboven worden vermeld, worden geleverd als een preview van wat deze aanbieding zal leveren wanneer algemeen beschikbaar is.

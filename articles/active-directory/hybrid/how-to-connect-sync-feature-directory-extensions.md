@@ -16,12 +16,12 @@ ms.date: 11/12/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4a0765f5279eb41324691c431c5973bb55a8b52d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 74bc659c11c4f43ab3cf85cdc53f704cd07a1cde
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89662484"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96172364"
 ---
 # <a name="azure-ad-connect-sync-directory-extensions"></a>Azure AD Connect synchronisatie: Directory-extensies
 U kunt Directory-extensies gebruiken om het schema uit te breiden in Azure Active Directory (Azure AD) met uw eigen kenmerken van on-premises Active Directory. Met deze functie kunt u LOB-apps bouwen door gebruik te maken van kenmerken die u on-premises blijft beheren. Deze kenmerken kunnen worden gebruikt via [uitbrei dingen](/graph/extensibility-overview
@@ -60,7 +60,7 @@ Tijdens de installatie van Azure AD Connect wordt een toepassing geregistreerd w
 
 Zorg ervoor dat u **alle toepassingen** selecteert om deze app weer te geven.
 
-De kenmerken worden voorafgegaan door de **extensie \_ {ApplicationId} \_ **. ApplicationId heeft dezelfde waarde voor alle kenmerken in uw Azure AD-Tenant. U hebt deze waarde nodig voor alle andere scenario's in dit onderwerp.
+De kenmerken worden voorafgegaan door de **extensie \_ {ApplicationId} \_**. ApplicationId heeft dezelfde waarde voor alle kenmerken in uw Azure AD-Tenant. U hebt deze waarde nodig voor alle andere scenario's in dit onderwerp.
 
 ## <a name="viewing-attributes-using-the-microsoft-graph-api"></a>Kenmerken weer geven met behulp van de Microsoft Graph-API
 
@@ -71,11 +71,14 @@ Deze kenmerken zijn nu beschikbaar via de Microsoft Graph-API met behulp van [Mi
 >
 > Zie [Microsoft Graph: query parameters gebruiken](/graph/query-parameters#select-parameter)voor meer informatie.
 
+>[!NOTE]
+> Het synchroniseren van kenmerk waarden van AADConnect naar extensie kenmerken die niet zijn gemaakt door AADConnect, wordt niet ondersteund. Dit kan leiden tot prestatie problemen en onverwachte resultaten. Alleen extensie kenmerken die worden gemaakt zoals weer gegeven in het bovenstaande, worden ondersteund voor synchronisatie.
+
 ## <a name="use-the-attributes-in-dynamic-groups"></a>De kenmerken in dynamische groepen gebruiken
 
 Een van de handigste scenario's is het gebruik van deze kenmerken in dynamische beveiligings-of Microsoft 365 groepen.
 
-1. Maak een nieuwe groep in azure AD. Geef het een goede naam en zorg ervoor dat het **lidmaatschaps type** een **dynamische gebruiker**is.
+1. Maak een nieuwe groep in azure AD. Geef het een goede naam en zorg ervoor dat het **lidmaatschaps type** een **dynamische gebruiker** is.
 
    ![Scherm afbeelding met een nieuwe groep](./media/how-to-connect-sync-feature-directory-extensions/dynamicgroup1.png)
 

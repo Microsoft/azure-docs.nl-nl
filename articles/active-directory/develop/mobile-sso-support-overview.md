@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 10/14/2020
 ms.author: nichola
-ms.openlocfilehash: 4a9282882d23ecbdc3c03ca158ea3de5566143e7
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: 59924c1f876d08aa504f19c5d6c86dca32fbd1e2
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94634851"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173461"
 ---
 # <a name="support-single-sign-on-and-app-protection-policies-in-mobile-apps-you-develop"></a>Ondersteuning voor eenmalige aanmelding en app-beveiligings beleid in mobiele apps die u ontwikkelt
 
@@ -38,7 +38,7 @@ We raden u aan het volgende te doen om ervoor te zorgen dat uw app kan profitere
 
 ### <a name="use-microsoft-authentication-library-msal"></a>Micro soft Authentication Library (MSAL) gebruiken
 
-De beste optie voor het implementeren van eenmalige aanmelding in uw toepassing is het gebruik van [de micro soft Authentication Library (MSAL)](msal-overview.md). Door MSAL te gebruiken, kunt u verificatie toevoegen aan uw app met minimale code-en API-aanroepen, de volledige functies van het [micro soft-identiteits platform](/azure/active-directory/develop/)ophalen en micro soft de handhaving van een veilige verificatie oplossing laten afhandelen. MSAL voegt standaard SSO-ondersteuning toe voor uw toepassing. Daarnaast is het gebruik van MSAL een vereiste als u ook van plan bent om app-beveiligings beleid te implementeren.
+De beste optie voor het implementeren van eenmalige aanmelding in uw toepassing is het gebruik van [de micro soft Authentication Library (MSAL)](msal-overview.md). Door MSAL te gebruiken, kunt u verificatie toevoegen aan uw app met minimale code-en API-aanroepen, de volledige functies van het [micro soft-identiteits platform](./index.yml)ophalen en micro soft de handhaving van een veilige verificatie oplossing laten afhandelen. MSAL voegt standaard SSO-ondersteuning toe voor uw toepassing. Daarnaast is het gebruik van MSAL een vereiste als u ook van plan bent om app-beveiligings beleid te implementeren.
 
 > [!NOTE]
 > Het is mogelijk om MSAL te configureren voor het gebruik van een Inge sloten webweergave. Hiermee voor komt u eenmalige aanmelding. Gebruik het standaard gedrag (dat wil zeggen, de webbrowser van het systeem) om er zeker van te zijn dat SSO werkt.
@@ -64,17 +64,17 @@ Apple bevat richt lijnen voor het uitvoeren van deze service in iOS-toepassingen
 
 Als u beveiligings beleid voor Apps wilt inschakelen, gebruikt u de [micro soft Authentication Library (MSAL)](msal-overview.md). MSAL is de verificatie-en autorisatie bibliotheek van het micro soft-identiteits platform en de intune SDK is ontwikkeld om samen met IT te werken.
 
-Daarnaast moet u een Broker-app gebruiken voor verificatie. De Broker vereist dat de app toepassings-en apparaatgegevens verstrekt om de compatibiliteit van de app te garanderen. iOS-gebruikers gebruiken de [Microsoft Authenticator app](../user-help/user-help-auth-app-sign-in.md) en Android-gebruikers gebruiken de Microsoft Authenticator-app of de [bedrijfsportal-app](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal) voor [brokered-verificatie](brokered-auth.md). MSAL gebruikt standaard een Broker als de eerste keuze voor het uitvoeren van een verificatie aanvraag, dus als u de Broker voor verificatie gebruikt, wordt deze automatisch ingeschakeld voor uw app wanneer MSAL out-of-the-box wordt gebruikt.
+Daarnaast moet u een Broker-app gebruiken voor verificatie. De Broker vereist dat de app toepassings-en apparaatgegevens verstrekt om de compatibiliteit van de app te garanderen. iOS-gebruikers gebruiken de [Microsoft Authenticator app](../user-help/user-help-auth-app-sign-in.md) en Android-gebruikers gebruiken de Microsoft Authenticator-app of de [bedrijfsportal-app](https://play.google.com/store/apps/details?id=com.microsoft.windowsintune.companyportal) voor [brokered-verificatie](./msal-android-single-sign-on.md). MSAL gebruikt standaard een Broker als de eerste keuze voor het uitvoeren van een verificatie aanvraag, dus als u de Broker voor verificatie gebruikt, wordt deze automatisch ingeschakeld voor uw app wanneer MSAL out-of-the-box wordt gebruikt.
 
 Voeg tot slot [de intune-SDK](/mem/intune/developer/app-sdk-get-started) toe aan uw app om beveiligings beleid voor apps in te scha kelen. De SDK voor het meest deel maakt gebruik van een interceptie model en past automatisch beleids regels voor app-beveiliging toe om te bepalen of acties die door de app worden uitgevoerd, zijn toegestaan. Er zijn ook Api's die u hand matig kunt aanroepen om de app te laten weten of er beperkingen gelden voor bepaalde acties.
 
-## <a name="additional-resources"></a>Extra resources
+## <a name="additional-resources"></a>Aanvullende resources
 
 - [Een Azure Active Directory implementatie van eenmalige aanmelding plannen](../manage-apps/plan-sso-deployment.md)
 - [Procedure: SSO configureren in macOS en iOS](single-sign-on-macos-ios.md)
 - [Micro soft Enter prise SSO-invoeg toepassing voor Apple-apparaten (preview-versie)](apple-sso-plugin.md)
-- [Brokered-verificatie in Android](brokered-auth.md)
-- [Autorisatie agenten en hoe ze kunnen worden ingeschakeld](authorization-agents.md)
+- [Brokered-verificatie in Android](./msal-android-single-sign-on.md)
+- [Autorisatie agenten en hoe ze kunnen worden ingeschakeld](./msal-android-single-sign-on.md)
 - [Aan de slag met de Microsoft Intune App SDK](/mem/intune/developer/app-sdk-get-started)
 - [De instellingen van de Intune App SDK configureren](/mem/intune/developer/app-sdk-ios#configure-settings-for-the-intune-app-sdk)
 - [Met Microsoft Intune beveiligde apps](/mem/intune/apps/apps-supported-intune-apps)

@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 10/26/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: dd6e760fe8052463491f249b54c3af3d2636d46d
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 337275cef0f2159cb5fac40ac0435408baf3bbef
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93376881"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96170919"
 ---
 # <a name="tutorial-for-configuring-theaccesshub-admin-tool-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van TheAccessHub-beheer hulpprogramma met Azure Active Directory B2C
 
@@ -38,13 +38,13 @@ Om aan de slag te gaan, hebt u het volgende nodig:
 
 - Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
 
-- Een [Azure AD B2C-Tenant](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant). De Tenant moet worden gekoppeld aan uw Azure-abonnement.
+- Een [Azure AD B2C-Tenant](./tutorial-create-tenant.md). De Tenant moet worden gekoppeld aan uw Azure-abonnement.
 
 - Een TheAccessHub-beheer hulpprogramma omgeving: Neem contact op met [N8-identiteit](https://n8id.com/contact/) om een nieuwe omgeving in te richten.
 
 - Beschrijving Verbindings-en referentie gegevens voor alle data bases of het LDAPs (Lightweight Directory Access Protocol) waarvan u de klant gegevens wilt migreren.
 
-- Beschrijving Geconfigureerde Azure AD B2C-omgeving voor het gebruik van [aangepast beleid](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started), als u het TheAccessHub-beheer programma wilt integreren in uw beleids stroom voor registratie.
+- Beschrijving Geconfigureerde Azure AD B2C-omgeving voor het gebruik van [aangepast beleid](./custom-policy-get-started.md), als u het TheAccessHub-beheer programma wilt integreren in uw beleids stroom voor registratie.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
@@ -162,9 +162,9 @@ Machtigingen voor het beheren van de klant en CSR/helpdesk gebruikers in het hul
 
 3. Selecteer > **groep toevoegen**
 
-4. Voer een **groeps naam** , **groeps beschrijving** en **groeps eigenaar** in
+4. Voer een **groeps naam**, **groeps beschrijving** en **groeps eigenaar** in
 
-5. Zoek en schakel de selectie vakjes in van de collega's die u lid wilt maken van de groep en selecteer vervolgens > **toevoegen**
+5. Zoek en schakel de selectie vakjes in van de collega's die u lid wilt maken van de groep en selecteer vervolgens >**toevoegen**
 
 6. Aan de onderkant van de pagina ziet u alle leden van de groep.
 
@@ -296,7 +296,7 @@ Met het hulp programma TheAccessHub-beheer kunt u gegevens importeren uit versch
 
 4. Het **type collega** selecteren Azure AD B2C gebruiker
 
-5. Selecteer **bron** , Selecteer in het pop-updialoogvenster uw gegevens bron. Als u een OneDrive-gegevens bron hebt gemaakt, moet u ook het bestand selecteren.
+5. Selecteer **bron**, Selecteer in het pop-updialoogvenster uw gegevens bron. Als u een OneDrive-gegevens bron hebt gemaakt, moet u ook het bestand selecteren.
 
 6. Als u geen nieuwe klanten accounts met deze belasting wilt maken, wijzigt u vervolgens het eerste beleid: **als de collega niet in TheAccessHub is gevonden** , kunt u **niets doen**
 
@@ -358,7 +358,7 @@ Gegevens van Azure AD B2C synchroniseren met TheAccessHub-beheer programma:
 
 ## <a name="configure-azure-ad-b2c-policies"></a>Azure AD B2C-beleid configureren
 
-Het TheAccessHub-beheer programma wordt af en toe gesynchroniseerd met een beperkt aantal mogelijkheden om de status up-to-date te houden met Azure AD B2C. We kunnen gebruikmaken van het API-en Azure AD B2C-beleid van het TheAccessHub-beheer hulpprogramma om het TheAccessHub-beheer programma van wijzigingen op de hoogte te stellen wanneer ze plaatsvinden. Deze oplossing vereist technische kennis van [Azure AD B2C aangepast beleid](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started#:~:text=%20Get%20started%20with%20custom%20policies%20in%20Azure,Experience%20Framework%20applications.%20Azure%20AD%20B2C...%20More%20). In het volgende gedeelte krijgt u een voor beeld van de beleids stappen en een beveiligd certificaat om het TheAccessHub-beheer programma van nieuwe accounts in uw Sign-Up aangepast beleid te melden.
+Het TheAccessHub-beheer programma wordt af en toe gesynchroniseerd met een beperkt aantal mogelijkheden om de status up-to-date te houden met Azure AD B2C. We kunnen gebruikmaken van het API-en Azure AD B2C-beleid van het TheAccessHub-beheer hulpprogramma om het TheAccessHub-beheer programma van wijzigingen op de hoogte te stellen wanneer ze plaatsvinden. Deze oplossing vereist technische kennis van [Azure AD B2C aangepast beleid](./custom-policy-get-started.md). In het volgende gedeelte krijgt u een voor beeld van de beleids stappen en een beveiligd certificaat om het TheAccessHub-beheer programma van nieuwe accounts in uw Sign-Up aangepast beleid te melden.
 
 ### <a name="create-a-secure-credential-to-invoke-theaccesshub-admin-tools-api"></a>Een beveiligde referentie maken voor het aanroepen van de API van het TheAccessHub-beheer programma
 
@@ -372,7 +372,7 @@ Het TheAccessHub-beheer programma wordt af en toe gesynchroniseerd met een beper
 
 5. Selecteer **downloaden** om het client certificaat op te halen.
 
-6. Volg deze [zelf studie](https://docs.microsoft.com/azure/active-directory-b2c/secure-rest-api#https-client-certificate-authentication ) om het client certificaat toe te voegen aan Azure AD B2C.
+6. Volg deze [zelf studie](./secure-rest-api.md#https-client-certificate-authentication ) om het client certificaat toe te voegen aan Azure AD B2C.
 
 ### <a name="retrieve-your-custom-policy-examples"></a>Uw aangepaste beleids voorbeelden ophalen
 
@@ -386,12 +386,12 @@ Het TheAccessHub-beheer programma wordt af en toe gesynchroniseerd met een beper
 
 5. Selecteer **downloaden** om een zip-bestand op te halen met een basis beleid waarmee klanten worden toegevoegd aan het TheAccessHub-beheer programma als klanten zich registreren.
 
-6. Volg deze [zelf studie](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started) om aan de slag te gaan met het ontwerpen van aangepast beleid in azure AD B2C.
+6. Volg deze [zelf studie](./custom-policy-get-started.md) om aan de slag te gaan met het ontwerpen van aangepast beleid in azure AD B2C.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Raadpleeg de volgende artikelen voor meer informatie:
 
-- [Aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Aangepast beleid in Azure AD B2C](./custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md?tabs=applications)

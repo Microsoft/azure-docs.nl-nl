@@ -10,12 +10,12 @@ ms.author: vanto
 ms.topic: article
 ms.date: 09/21/2020
 ms.reviewer: ''
-ms.openlocfilehash: b309ce01595e2e62bea7f78ae728d83bc7d9b9be
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 803c9a98f0dc10ff8218ac7b7c20dcb117700034
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94992162"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187099"
 ---
 # <a name="playbook-for-addressing-common-security-requirements-with-azure-sql-database-and-azure-sql-managed-instance"></a>Playbook voor het adresseren van algemene beveiligings vereisten met Azure SQL Database en Azure SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -228,7 +228,7 @@ Wijs alleen de benodigde [machtigingen](/sql/relational-databases/security/permi
 - In SQL-data bases:
   - Gedetailleerde machtigingen en door de gebruiker gedefinieerde database rollen (of Server-rollen in beheerde instantie) gebruiken:
     1. De vereiste rollen maken
-       - [ROL MAKEN](/sql/t-sql/statements/create-role-transact-sql)
+       - [CREATE ROLE](/sql/t-sql/statements/create-role-transact-sql)
        - [SERVERROL MAKEN](/sql/t-sql/statements/create-server-role-transact-sql)
     1. Vereiste gebruikers maken
        - [GEBRUIKER MAKEN](/sql/t-sql/statements/create-user-transact-sql)
@@ -376,7 +376,7 @@ Schei ding van taken is niet beperkt tot de gegevens in een Data Base, maar beva
 
 - Zorg ervoor dat u alle bron code-wijzigingen kent. Code kan zich in T-SQL-scripts bevindt. Dit kan ad-hoc opdrachten zijn om uit te voeren of te worden geïmplementeerd in formulieren van weer gaven, functies, triggers en opgeslagen procedures. Het kan een onderdeel zijn van SQL Agent-taak definities (stappen). Het kan ook worden uitgevoerd vanuit SSIS-pakketten, Azure Data Factory en andere services.
 
-## <a name="data-protection"></a>Gegevensbeveiliging
+## <a name="data-protection"></a>Gegevensbescherming
 
 Gegevens beveiliging is een reeks mogelijkheden voor het beveiligen van belang rijke informatie tegen inbreuk door versleuteling of het afwijzen van een schijf.
 
@@ -614,7 +614,7 @@ DDoS-aanvallen (Distributed Denial of service) zijn pogingen door een kwaadwille
 
 DDoS Protection wordt automatisch ingeschakeld als onderdeel van het Azure-platform. Het bevat permanente verkeers bewaking en real-time beperking van aanvallen op netwerk niveau op open bare eind punten.
 
-- Gebruik [Azure DDoS Protection](../../virtual-network/ddos-protection-overview.md) voor het bewaken van open bare IP-adressen die zijn gekoppeld aan resources die in virtuele netwerken zijn geïmplementeerd.
+- Gebruik [Azure DDoS Protection](../../ddos-protection/ddos-protection-overview.md) voor het bewaken van open bare IP-adressen die zijn gekoppeld aan resources die in virtuele netwerken zijn geïmplementeerd.
 
 - Gebruik [Advanced Threat Protection voor Azure SQL database](threat-detection-overview.md) om DOS-aanvallen (Denial of service) te detecteren op data bases.
 

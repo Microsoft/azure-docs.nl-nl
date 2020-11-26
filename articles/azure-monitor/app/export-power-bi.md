@@ -3,12 +3,12 @@ title: Exporteren naar Power BI vanuit Azure-toepassing inzichten | Microsoft Do
 description: Analytische query's kunnen worden weer gegeven in Power BI.
 ms.topic: conceptual
 ms.date: 08/10/2018
-ms.openlocfilehash: 804da7d3aaa2fd1b7973a686bc9ca5cb5ee973a2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1e88d60cd9a9d0e6267998237b33a361b12ffd84
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90979170"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186997"
 ---
 # <a name="feed-power-bi-from-application-insights"></a>Feed Power BI van Application Insights
 [Power bi](https://www.powerbi.com/) is een suite met zakelijke hulp middelen waarmee u gegevens kunt analyseren en inzichten deelt. Uitgebreide Dash boards zijn beschikbaar op elk apparaat. U kunt gegevens uit een groot aantal bronnen combi neren, met inbegrip van analyse query's van [Azure-toepassing Insights](./app-insights-overview.md).
@@ -31,12 +31,12 @@ Als u uw Application Insights query wilt importeren, gebruikt u de bureaublad ve
 Installeer [Power bi Desktop](https://powerbi.microsoft.com/en-us/desktop/).
 
 ### <a name="export-an-analytics-query"></a>Een Analytics-query exporteren
-1. [Open Analytics en schrijf uw query](../log-query/get-started-portal.md).
+1. [Open Analytics en schrijf uw query](../log-query/log-analytics-tutorial.md).
 2. U kunt de query testen en verfijnen totdat u tevreden bent met de resultaten. Zorg ervoor dat de query correct wordt uitgevoerd in Analytics voordat u deze exporteert.
 3. Kies in het menu **exporteren** de optie **Power bi (M)**. Sla het tekstbestand op.
    
     ![Scherm opname van analyse, met het menu exporteren gemarkeerd](./media/export-power-bi/analytics-export-power-bi.png)
-4. Selecteer in Power bi Desktop de optie **gegevens**  >  **lege query**ophalen. Selecteer vervolgens in de query-editor onder **weer gave**de optie **Geavanceerde editor**.
+4. Selecteer in Power bi Desktop de optie **gegevens**  >  **lege query** ophalen. Selecteer vervolgens in de query-editor onder **weer gave** de optie **Geavanceerde editor**.
 
     Plak het geëxporteerde M-taal script in de Geavanceerde editor.
 
@@ -61,7 +61,7 @@ Installeer [Power bi Desktop](https://powerbi.microsoft.com/en-us/desktop/).
 
    ![Scherm afbeelding van de knop Power BI](./media/export-power-bi/button.png)
 
-3. Selecteer in Power bi Desktop de optie **gegevens**  >  **lege query**ophalen. Selecteer vervolgens in de query-editor onder **weer gave**de optie **Geavanceerde editor**.
+3. Selecteer in Power bi Desktop de optie **gegevens**  >  **lege query** ophalen. Selecteer vervolgens in de query-editor onder **weer gave** de optie **Geavanceerde editor**.
 
    ![Scherm opname van Power BI Desktop, met lege query knop gemarkeerd](./media/export-power-bi/blankquery.png)
 
@@ -126,7 +126,7 @@ Met deze methode maakt u een volledig dash board van telemetrie. De eerste gegev
 3. Selecteer **nu downloaden** onder Application Insights.
 
    ![Scherm opnamen van de gegevens bron ophalen uit Application Insights](./media/export-power-bi/003.png)
-4. Geef de details van de Application Insights resource op en **Meld**u aan.
+4. Geef de details van de Application Insights resource op en **Meld** u aan.
 
     ![Scherm opname toont het venster verbinding maken met Application Insights.](./media/export-power-bi/005.png)
 
@@ -146,5 +146,4 @@ Na de eerste import blijven het dash board en de rapporten dagelijks worden bijg
 
 ## <a name="next-steps"></a>Volgende stappen
 * [Power BI-meer informatie](https://www.powerbi.com/learning/)
-* [Zelf studie voor analyse](../log-query/get-started-portal.md)
-
+* [Zelf studie voor analyse](../log-query/log-analytics-tutorial.md)

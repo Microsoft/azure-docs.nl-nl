@@ -3,12 +3,12 @@ title: Azure Red Hat open Shift v3. x configureren met Azure Monitor voor contai
 description: In dit artikel wordt beschreven hoe u de bewaking van een Kubernetes-cluster configureert met Azure Monitor die worden gehost op Azure Red Hat open Shift versie 3 en hoger.
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: 1186056559d6497b2b48cb3533a0967d6d61f38e
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 2cd39c13ce7d67b2bfcfaca0a6f627e19d289783
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92216365"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186912"
 ---
 # <a name="configure-azure-red-hat-openshift-v3-with-azure-monitor-for-containers"></a>Azure Red Hat open Shift v3 configureren met Azure Monitor voor containers
 
@@ -18,7 +18,7 @@ ms.locfileid: "92216365"
 > Vanaf oktober 2020 kunt u geen nieuwe 3,11-clusters meer maken.
 > Bestaande 3,11-clusters blijven actief tot juni 2022, maar worden na die datum niet meer ondersteund.
 >
-> Volg deze hand leiding voor het [maken van een Azure Red Hat open Shift 4-cluster](https://docs.microsoft.com/azure/openshift/tutorial-create-cluster).
+> Volg deze hand leiding voor het [maken van een Azure Red Hat open Shift 4-cluster](../../openshift/tutorial-create-cluster.md).
 > Als u specifieke vragen hebt, [kunt u contact met ons](mailto:aro-feedback@microsoft.com)opnemen.
 
 Azure Monitor voor containers biedt uitgebreide bewakings ervaring voor de Azure Kubernetes-service (AKS) en AKS-engine clusters. In dit artikel wordt beschreven hoe u de bewaking kunt inschakelen van Kubernetes-clusters die worden gehost op [Azure Red Hat open Shift](../../openshift/intro-openshift.md) versie 3 en de meest recente ondersteunde versie van versie 3, om een vergelijk bare bewakings ervaring te krijgen.
@@ -172,7 +172,7 @@ Voer de volgende stappen uit om de bewaking in te scha kelen van een Azure Red H
 
 2. Selecteer in het menu Azure Portal of op de start pagina **Azure monitor**. Selecteer in de sectie **insightss** de optie **containers**.
 
-3. Selecteer de **niet-bewaakte clusters**op de pagina **monitor-containers** .
+3. Selecteer de **niet-bewaakte clusters** op de pagina **monitor-containers** .
 
 4. Zoek in de lijst met niet-bewaakte clusters het cluster in de lijst en klik op **inschakelen**. U kunt de resultaten in de lijst identificeren door te zoeken naar de waarde **Aro** onder het kolom **cluster type**.
 

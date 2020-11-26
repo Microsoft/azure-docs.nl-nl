@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.date: 10/26/2020
 ms.custom: seodec18
 ms.openlocfilehash: c8be18049e6ae74a198f5885a46b70df581e0cd7
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95020824"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187456"
 ---
 # <a name="streaming-ingestion-throughput-limits"></a>Doorvoer limieten voor stroom inslikken
 

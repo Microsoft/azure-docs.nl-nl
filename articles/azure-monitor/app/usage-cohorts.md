@@ -6,12 +6,12 @@ author: NumberByColors
 ms.author: daviste
 ms.date: 04/10/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: d12244bce117d6a631fdb67dc460af18bc77028c
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: f8edeb452f01af88f0305cd0a3e3a2332ec09e4e
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91995751"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186946"
 ---
 # <a name="application-insights-cohorts"></a>Application Insights cohortes
 
@@ -43,13 +43,13 @@ Uw team definieert een ingeschakelde gebruiker als iedereen die uw app vijf of m
     * **Period**, de definitie van een maand.
     * **UsedAtLeastCustom**, het aantal keren dat gebruikers iets moeten gebruiken binnen een periode om te tellen als actief.
 
-4. Wijzig **UsedAtLeastCustom** in **5 + dagen**en geef de standaard waarde van 28 **dagen aan.**
+4. Wijzig **UsedAtLeastCustom** in **5 + dagen** en geef de standaard waarde van 28 **dagen aan.**
 
     ![Ingeschakelde gebruikers](./media/usage-cohorts/003.png)
 
     Nu vertegenwoordigt deze cohort alle gebruikers-Id's die met een aangepaste gebeurtenis of pagina weergave worden verzonden op 5 afzonderlijke dagen in de afgelopen 28.
 
-5. Selecteer **Save** (Opslaan).
+5. Selecteer **Opslaan**.
 
    > [!TIP]
    > Geef uw cohort een naam, bijvoorbeeld ' ingeschakelde gebruikers (5 + dagen) '. Sla het bestand op in ' mijn rapporten ' of ' gedeelde rapporten ', afhankelijk van of u wilt dat andere personen die toegang hebben tot deze Application Insights resource, deze cohort kunnen zien.
@@ -79,7 +79,7 @@ U kunt ook cohorts van gebeurtenissen maken. In deze sectie definieert u een coh
 
 2. Selecteer het tabblad **sjabloon galerie** . U ziet een verzameling sjablonen voor verschillende cohorts.
 
-3. Selecteer **gebeurtenissen**selecteren.
+3. Selecteer **gebeurtenissen** selecteren.
 
     ![Scherm opname van gebeurtenissen selecteren](./media/usage-cohorts/006.png)
 
@@ -129,9 +129,9 @@ Cohort en filters verschillen. Stel dat u een cohort hebt van gebruikers uit het
 * De cohort-versie toont alle gebeurtenissen van gebruikers die een of meer gebeurtenissen van het Verenigd Konink rijk in het huidige tijds bereik hebben verzonden. Als u op land of regio splitst, ziet u waarschijnlijk veel landen en regio's.
 * De filters-versie toont alleen gebeurtenissen uit het Verenigd Konink rijk. Maar als u op land of regio splitst, ziet u alleen het Verenigd Konink rijk.
 
-## <a name="learn-more"></a>Meer informatie
+## <a name="learn-more"></a>Lees meer
 
-* [Querytaal voor analytische gegevens](../log-query/get-started-portal.md?toc=%252fazure%252fazure-monitor%252ftoc.json)
+* [Querytaal voor analytische gegevens](../log-query/log-analytics-tutorial.md?toc=%2fazure%2fazure-monitor%2ftoc.json)
 * [Gebruikers, sessies, gebeurtenissen](usage-segmentation.md)
 * [Gebruikersstromen](usage-flows.md)
 * [Overzicht van gebruik](usage-overview.md)

@@ -11,15 +11,14 @@ ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
 ms.date: 06/12/2020
-ms.openlocfilehash: 580459f3a5da8485bd92395f9b0b9745e28c023c
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: a0e9401842284cad29b297be5ce572fa53cfe774
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325265"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96188085"
 ---
 # <a name="deploy-a-model-to-azure-container-instances"></a>Een model implementeren op Azure Container Instances
-
 
 Meer informatie over het gebruik van Azure Machine Learning voor het implementeren van een model als een webservice op Azure Container Instances (ACI). Gebruik Azure Container Instances als aan een van de volgende voor waarden wordt voldaan:
 
@@ -29,7 +28,7 @@ Meer informatie over het gebruik van Azure Machine Learning voor het implementer
 Zie [quota's en regionale Beschik baarheid voor Azure container instances](../container-instances/container-instances-quotas.md) artikel voor meer informatie over de beschik baarheid van quota en REGIO'S voor ACI.
 
 > [!IMPORTANT]
-> Het wordt ten zeerste aanbevolen om lokaal fouten op te sporen voordat u de webservice implementeert, voor meer informatie. Raadpleeg [lokaal fouten opsporen](./how-to-troubleshoot-deployment.md#debug-locally)
+> Het wordt ten zeerste aanbevolen om lokaal fouten op te sporen voordat u de webservice implementeert, voor meer informatie. Raadpleeg [lokaal fouten opsporen](./how-to-troubleshoot-deployment-local.md)
 >
 > U kunt ook verwijzen naar Azure Machine Learning: [Deploy to Local Notebook](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/deployment/deploy-to-local) (Implementeren naar lokale notebook)
 

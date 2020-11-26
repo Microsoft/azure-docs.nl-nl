@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: f97d04ca40e69ba2516744adfc9f1f455cba97c0
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 0bb252e227e4f23388929f2fca18769e0bd02e19
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896341"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187031"
 ---
 # <a name="tutorial---migrate-web-service-from-google-maps"></a>Zelfstudie: webservices migreren vanuit Google Maps
 
@@ -132,7 +132,7 @@ De API voor reverse geocodering van Azure Maps biedt enkele aanvullende functies
 In Google Maps kan naar nuttige plaatsen worden gezocht met behulp van de API Locaties zoeken. Deze API biedt drie verschillende manieren om te zoeken naar nuttige plaatsen:
 
 - **Locatie zoeken op basis van tekst:** Hiermee wordt gezocht naar een nuttige plaats op basis van de naam, het adres of het telefoonnummer ervan.
-- **In de buurt zoeken** : Hiermee wordt naar nuttige plaatsen gezocht die zich binnen een bepaalde afstand van een locatie bevinden.
+- **In de buurt zoeken**: Hiermee wordt naar nuttige plaatsen gezocht die zich binnen een bepaalde afstand van een locatie bevinden.
 - **Zoeken op basis van tekst:** Hiermee wordt naar plaatsen gezocht met behulp van een vrije tekst, die een nuttige plaats en een locatie bevat. Bijvoorbeeld pizza in New York of restaurants in de buurt van Main St.
 
 Azure Maps biedt verschillende zoek-API's voor nuttige plaatsen:
@@ -220,7 +220,7 @@ De tabel bevat de API-parameters in Google Maps en de vergelijkbare API-paramete
 | `optimize`                     | `computeBestOrder`                 |
 | `origin`                       | `query`                            |
 | `region`                       | *N.v.t.* - deze functie is gerelateerd aan geocodering. Gebruik de parameter *countrySet* wanneer u de geocoderings-API van Azure Maps gebruikt.  |
-| `traffic_model`               | *N.v.t.* - er kan alleen worden opgegeven of er verkeersgegevens moeten worden gebruikt met de parameter *traffic* . |
+| `traffic_model`               | *N.v.t.* - er kan alleen worden opgegeven of er verkeersgegevens moeten worden gebruikt met de parameter *traffic*. |
 | `transit_mode`                | Zie de [documentatie van Mobility-services](/rest/api/maps/mobility) |
 | `transit_routing_preference` | Zie de [documentatie van Mobility-services](/rest/api/maps/mobility) |
 | `units`                        | *N.v.t.* - in Azure Maps wordt alleen het metrische systeem gebruikt.  |
@@ -501,10 +501,10 @@ Meer informatie over Azure Maps REST-services:
 > [Best practices voor routering](how-to-use-best-practices-for-routing.md)
 
 > [!div class="nextstepaction"]
-> [Naslagdocumentatie over de REST-service-API van Azure Maps](https://docs.microsoft.com/rest/api/maps/)
+> [Naslagdocumentatie over de REST-service-API van Azure Maps](/rest/api/maps/)
 
 > [!div class="nextstepaction"]
-> [Codevoorbeelden](https://docs.microsoft.com/samples/browse/?products=azure-maps)
+> [Codevoorbeelden](/samples/browse/?products=azure-maps)
 
 > [!div class="nextstepaction"]
 > [De services-module gebruiken (Web SDK)](how-to-use-best-practices-for-routing.md)

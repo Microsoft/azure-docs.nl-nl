@@ -7,12 +7,12 @@ author: bwren
 ms.author: bwren
 ms.date: 10/16/2020
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: c38fa77951aaeb5559dc2030f1401a896d7c238d
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: f9ced3dfeccdbac5f0eb220cf0e104679f263aac
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94841917"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186861"
 ---
 # <a name="monitoring-solutions-in-azure-monitor"></a>Bewakings oplossingen in Azure Monitor
 
@@ -29,7 +29,7 @@ Gebruik de vervolg keuzelijsten aan de bovenkant van het scherm om de werk ruimt
 
 [![Scherm afbeelding toont het Azure Portal menu met de geselecteerde oplossingen en oplossingen die worden weer gegeven in het deel venster oplossingen.](media/solutions/overview.png)](media/solutions/overview.png#lightbox)
 
-Bewakings oplossingen kunnen meerdere typen Azure-resources bevatten en u kunt alle resources die zijn opgenomen in een oplossing, net als elke andere resource bekijken. Alle logboek query's die in de oplossing zijn opgenomen, worden bijvoorbeeld vermeld onder **oplossingen query's** in [query Explorer](../log-query/get-started-portal.md#load-queries) . u kunt deze query's gebruiken bij het uitvoeren van ad hoc analyses met [logboek query's](../log-query/log-query-overview.md).
+Bewakings oplossingen kunnen meerdere typen Azure-resources bevatten en u kunt alle resources die zijn opgenomen in een oplossing, net als elke andere resource bekijken. Alle logboek query's die in de oplossing zijn opgenomen, worden bijvoorbeeld vermeld onder **oplossingen query's** in [query Explorer](../log-query/log-analytics-tutorial.md). U kunt deze query's gebruiken bij het uitvoeren van ad hoc-analyses met [logboek query's](../log-query/log-query-overview.md).
 
 ## <a name="list-installed-monitoring-solutions"></a>Geïnstalleerde bewakings oplossingen weer geven
 

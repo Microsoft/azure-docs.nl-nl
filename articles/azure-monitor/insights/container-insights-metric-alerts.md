@@ -3,12 +3,12 @@ title: Metrische waarschuwingen van Azure Monitor voor containers
 description: In dit artikel worden de aanbevolen metrische waarschuwingen weer gegeven die beschikbaar zijn via Azure Monitor voor containers in de open bare preview.
 ms.topic: conceptual
 ms.date: 10/28/2020
-ms.openlocfilehash: cda5639fdf72f5731af851860f37afa888e7d965
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: 16995246578dc8d3c009253d8384c6d7ff3911d3
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92927818"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186878"
 ---
 # <a name="recommended-metric-alerts-preview-from-azure-monitor-for-containers"></a>Aanbevolen metrische waarschuwingen (preview) van Azure Monitor voor containers
 
@@ -29,7 +29,7 @@ Voordat u begint, controleert u het volgende:
     Als u wilt controleren of op uw cluster de nieuwere versie van de agent wordt uitgevoerd, kunt u het volgende doen:
 
     * Voer de opdracht uit: `kubectl describe <omsagent-pod-name> --namespace=kube-system` . In de status die is geretourneerd, noteert u de waarde onder **afbeelding** voor omsagent in de sectie *containers* van de uitvoer. 
-    * Op het tabblad **knoop punten** selecteert u het cluster knooppunt en in het deel venster **Eigenschappen** aan de rechter kant, noteer de waarde onder **Agent-installatie kopie code** .
+    * Op het tabblad **knoop punten** selecteert u het cluster knooppunt en in het deel venster **Eigenschappen** aan de rechter kant, noteer de waarde onder **Agent-installatie kopie code**.
 
     De waarde die wordt weer gegeven voor AKS moet versie **ciprod05262020** of hoger zijn. De waarde die wordt weer gegeven voor Azure Arc enabled Kubernetes cluster moet versie **ciprod09252020** of hoger zijn. Als uw cluster een oudere versie heeft, raadpleegt u [de Azure monitor van de agent voor containers bijwerken](container-insights-manage-agent.md#upgrade-agent-on-aks-cluster) voor stappen om de nieuwste versie te verkrijgen.
 
@@ -74,15 +74,15 @@ De volgende metrische gegevens op basis van een waarschuwing hebben unieke gedra
 
 * *oomKilledContainerCount* metric wordt alleen verzonden wanneer er oom zijn gedood.
 
-* *cpuExceededPercentage* -, *MemoryRssExceededPercentage* -en *memoryWorkingSetExceededPercentage* -metrische gegevens worden verzonden wanneer de waarden van de CPU, het geheugen en de geheugen werkset de geconfigureerde drempel waarde overschrijden (de standaard drempel waarde is 95%). Deze drempel waarden zijn exclusief de drempel waarde voor waarschuwings voorwaarden die is opgegeven voor de bijbehorende waarschuwings regel. Als u deze metrische gegevens wilt verzamelen en wilt analyseren vanuit [Metrics Explorer](../platform/metrics-getting-started.md), raden we u aan om de drempel waarde te configureren op een lager niveau dan uw waarschuwings drempel. De configuratie voor de verzamelings instellingen voor de drempel waarden voor het resource gebruik van een container kan worden overschreven in het ConfigMaps-bestand onder de sectie `[alertable_metrics_configuration_settings.container_resource_utilization_thresholds]` . Zie de sectie [waarschuwingen over metrische gegevens ConfigMaps configureren](#configure-alertable-metrics-in-configmaps) voor meer informatie over het configureren van uw ConfigMap-configuratie bestand.
+* *cpuExceededPercentage*-, *MemoryRssExceededPercentage*-en *memoryWorkingSetExceededPercentage* -metrische gegevens worden verzonden wanneer de waarden van de CPU, het geheugen en de geheugen werkset de geconfigureerde drempel waarde overschrijden (de standaard drempel waarde is 95%). Deze drempel waarden zijn exclusief de drempel waarde voor waarschuwings voorwaarden die is opgegeven voor de bijbehorende waarschuwings regel. Als u deze metrische gegevens wilt verzamelen en wilt analyseren vanuit [Metrics Explorer](../platform/metrics-getting-started.md), raden we u aan om de drempel waarde te configureren op een lager niveau dan uw waarschuwings drempel. De configuratie voor de verzamelings instellingen voor de drempel waarden voor het resource gebruik van een container kan worden overschreven in het ConfigMaps-bestand onder de sectie `[alertable_metrics_configuration_settings.container_resource_utilization_thresholds]` . Zie de sectie [waarschuwingen over metrische gegevens ConfigMaps configureren](#configure-alertable-metrics-in-configmaps) voor meer informatie over het configureren van uw ConfigMap-configuratie bestand.
 
-* *pvUsageExceededPercentage* metric wordt verzonden wanneer het gebruiks percentage van het permanente volume de geconfigureerde drempel waarde overschrijdt (de standaard drempel waarde is 60%). Deze drempel waarde is exclusief de drempel waarde voor waarschuwings voorwaarden die is opgegeven voor de bijbehorende waarschuwings regel. Als u deze metrische gegevens wilt verzamelen en wilt analyseren vanuit [Metrics Explorer](../platform/metrics-getting-started.md), raden we u aan om de drempel waarde te configureren op een lager niveau dan uw waarschuwings drempel. De configuratie met betrekking tot de verzamelings instellingen voor drempel waarden voor permanente volume gebruik kan worden overschreven in het ConfigMaps-bestand onder de sectie `[alertable_metrics_configuration_settings.pv_utilization_thresholds]` . Zie de sectie [waarschuwingen over metrische gegevens ConfigMaps configureren](#configure-alertable-metrics-in-configmaps) voor meer informatie over het configureren van uw ConfigMap-configuratie bestand. Verzameling van gegevens over het permanente volume met claims in de *uitvoeren-* naam ruimte worden standaard uitgesloten. Gebruik de sectie in het ConfigMap-bestand om de verzameling in deze naam ruimte in te scha kelen `[metric_collection_settings.collect_kube_system_pv_metrics]` . Zie [instellingen voor metrische verzameling](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-agent-config#metric-collection-settings) voor meer informatie.
+* *pvUsageExceededPercentage* metric wordt verzonden wanneer het gebruiks percentage van het permanente volume de geconfigureerde drempel waarde overschrijdt (de standaard drempel waarde is 60%). Deze drempel waarde is exclusief de drempel waarde voor waarschuwings voorwaarden die is opgegeven voor de bijbehorende waarschuwings regel. Als u deze metrische gegevens wilt verzamelen en wilt analyseren vanuit [Metrics Explorer](../platform/metrics-getting-started.md), raden we u aan om de drempel waarde te configureren op een lager niveau dan uw waarschuwings drempel. De configuratie met betrekking tot de verzamelings instellingen voor drempel waarden voor permanente volume gebruik kan worden overschreven in het ConfigMaps-bestand onder de sectie `[alertable_metrics_configuration_settings.pv_utilization_thresholds]` . Zie de sectie [waarschuwingen over metrische gegevens ConfigMaps configureren](#configure-alertable-metrics-in-configmaps) voor meer informatie over het configureren van uw ConfigMap-configuratie bestand. Verzameling van gegevens over het permanente volume met claims in de *uitvoeren-* naam ruimte worden standaard uitgesloten. Gebruik de sectie in het ConfigMap-bestand om de verzameling in deze naam ruimte in te scha kelen `[metric_collection_settings.collect_kube_system_pv_metrics]` . Zie [instellingen voor metrische verzameling](./container-insights-agent-config.md#metric-collection-settings) voor meer informatie.
 
 ## <a name="metrics-collected"></a>Verzamelde metrische gegevens
 
 De volgende metrische gegevens worden ingeschakeld en verzameld, tenzij anders aangegeven, als onderdeel van deze functie:
 
-|Metrische naam ruimte |Gegevens |Beschrijving |
+|Metrische naam ruimte |Metrisch |Beschrijving |
 |---------|----|------------|
 |Inzichten. container/knoop punten |cpuUsageMillicores |CPU-gebruik in millicores per host.|
 |Inzichten. container/knoop punten |cpuUsagePercentage |Percentage CPU-gebruik per knoop punt.|
@@ -110,7 +110,7 @@ Volg deze stappen om de metrische waarschuwingen in Azure Monitor van de Azure P
 
 In deze sectie wordt beschreven hoe u Azure Monitor voor de metrische waarschuwing voor containers (preview) inschakelt vanuit de Azure Portal.
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
 2. Toegang tot de Azure Monitor voor de functie waarschuwing voor metrische gegevens van containers (preview) is rechtstreeks beschikbaar vanuit een AKS-cluster door **inzichten** te selecteren in het linkerdeel venster van de Azure Portal.
 
@@ -148,15 +148,15 @@ De basis stappen zijn als volgt:
 
 2. Als u een aangepaste sjabloon via de portal wilt implementeren, selecteert u **een resource maken** op basis van de [Azure Portal](https://portal.azure.com).
 
-3. Zoek naar een **sjabloon** en selecteer vervolgens **Sjabloonimlementatie** .
+3. Zoek naar een **sjabloon** en selecteer vervolgens **Sjabloonimlementatie**.
 
-4. Selecteer **Maken** .
+4. Selecteer **Maken**.
 
-5. U ziet verschillende opties voor het maken van een sjabloon. Selecteer **uw eigen sjabloon bouwen in de editor** .
+5. U ziet verschillende opties voor het maken van een sjabloon. Selecteer **uw eigen sjabloon bouwen in de editor**.
 
 6. Selecteer op de **pagina sjabloon bewerken** de optie **bestand laden** en selecteer vervolgens het sjabloon bestand.
 
-7. Selecteer op de pagina **sjabloon bewerken** de optie **Opslaan** .
+7. Selecteer op de pagina **sjabloon bewerken** de optie **Opslaan**.
 
 8. Geef op de pagina **aangepaste implementatie** het volgende op en klik vervolgens op **kopen** volt ooien om de sjabloon te implementeren en de waarschuwings regel te maken.
 
@@ -207,7 +207,7 @@ U kunt Azure Monitor voor de waarschuwings regels voor containers weer geven en 
     * Selecteer de **voor waarde** om de drempel waarde voor de waarschuwings regel te wijzigen.
     * Als u een bestaande wilt opgeven of een actie groep wilt maken, selecteert u **toevoegen** of **maken** onder **actie groep**
 
-Als u waarschuwingen wilt weer geven die zijn gemaakt voor de ingeschakelde regels, selecteert u in het deel venster **Aanbevolen waarschuwingen** **weer geven in waarschuwingen** . U wordt omgeleid naar het menu waarschuwing voor het AKS-cluster, waarin u alle waarschuwingen kunt zien die momenteel zijn gemaakt voor uw cluster.
+Als u waarschuwingen wilt weer geven die zijn gemaakt voor de ingeschakelde regels, selecteert u in het deel venster **Aanbevolen waarschuwingen** **weer geven in waarschuwingen**. U wordt omgeleid naar het menu waarschuwing voor het AKS-cluster, waarin u alle waarschuwingen kunt zien die momenteel zijn gemaakt voor uw cluster.
 
 ## <a name="configure-alertable-metrics-in-configmaps"></a>Waarschuwings gegevens configureren in ConfigMaps
 

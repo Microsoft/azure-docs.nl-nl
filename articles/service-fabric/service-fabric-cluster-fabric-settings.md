@@ -4,11 +4,11 @@ description: In dit artikel worden de infrastructuur instellingen en het Fabric-
 ms.topic: reference
 ms.date: 08/30/2019
 ms.openlocfilehash: 1f16e89dd1131f6aea64e5e72a342b3b737f3728
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95542640"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187218"
 ---
 # <a name="customize-service-fabric-cluster-settings"></a>Instellingen voor Service Fabric-cluster aanpassen
 In dit artikel worden de verschillende infrastructuur instellingen voor uw Service Fabric cluster beschreven die u kunt aanpassen. Voor clusters die worden gehost in azure, kunt u instellingen aanpassen via de [Azure Portal](https://portal.azure.com) of met behulp van een Azure Resource Manager sjabloon. Zie [de configuratie van een Azure-cluster upgraden](service-fabric-cluster-config-upgrade-azure.md)voor meer informatie. Voor zelfstandige clusters past u de instellingen aan door de *ClusterConfig.jsin* het bestand bij te werken en een configuratie-upgrade uit te voeren op uw cluster. Zie [de configuratie van een zelfstandig cluster upgraden](service-fabric-cluster-config-upgrade-windows-server.md)voor meer informatie.
@@ -760,7 +760,7 @@ Hier volgt een lijst met infrastructuur instellingen die u kunt aanpassen, geord
 |PropertyWriteBatch |teken reeks, standaard instelling is "beheerder" |Dynamisch|Beveiligings configuraties voor het benoemen van schrijf bewerkingen voor eigenschappen. |
 |ProvisionApplicationType |teken reeks, standaard instelling is "beheerder" |Dynamisch| Beveiligings configuratie voor het inrichten van het toepassings type. |
 |ProvisionFabric |teken reeks, standaard instelling is "beheerder" |Dynamisch| Beveiligings configuratie voor het inrichten van MSI en/of cluster manifest. |
-|Query |teken reeks, standaard is ' \| \| gebruiker beheerder ' |Dynamisch| Beveiligings configuratie voor query's. |
+|Query’s uitvoeren |teken reeks, standaard is ' \| \| gebruiker beheerder ' |Dynamisch| Beveiligings configuratie voor query's. |
 |RecoverPartition |teken reeks, standaard instelling is "beheerder" | Dynamisch|Beveiligings configuratie voor het herstellen van een partitie. |
 |RecoverPartitions |teken reeks, standaard instelling is "beheerder" | Dynamisch|Beveiligings configuratie voor het herstellen van partities. |
 |RecoverServicePartitions |teken reeks, standaard instelling is "beheerder" |Dynamisch| Beveiligings configuratie voor het herstellen van service partities. |

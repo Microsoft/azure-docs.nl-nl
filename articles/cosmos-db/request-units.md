@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 10/23/2020
 ms.custom: seo-nov-2020
-ms.openlocfilehash: f698c1ac7ab3ad2dbd86710bea9a48d962603d86
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 23401885580a3883dc49eccc97c17bbedd9080ab
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94334581"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187320"
 ---
 # <a name="request-units-in-azure-cosmos-db"></a>Aanvraageenheden in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -31,34 +31,34 @@ Azure Cosmos DB zorgt ervoor dat het aantal RU's voor een bepaalde databasebewer
 
 Het type van het Azure Cosmos-account dat u gebruikt, bepaalt de manier waarop het verbruikte RUs wordt gefactureerd. Er zijn drie modi waarin u een account kunt maken:
 
-1. **Ingerichte doorvoer modus** : in deze modus richt u het aantal RUs voor uw toepassing in per seconde op basis van een interval van 100 RUs per seconde. Als u de ingerichte door Voer voor uw toepassing wilt schalen, kunt u het aantal RUs op elk gewenst moment verg Roten of verkleinen in stappen of verlaagt u 100 RUs. U kunt uw wijzigingen programmatisch aanbrengen of via Azure Portal. U wordt gefactureerd op basis van de hoeveelheid RUs per seconde die u hebt ingericht. Zie het artikel [ingerichte door Voer](set-throughput.md) voor meer informatie.
+1. **Ingerichte doorvoer modus**: in deze modus richt u het aantal RUs voor uw toepassing in per seconde op basis van een interval van 100 RUs per seconde. Als u de ingerichte door Voer voor uw toepassing wilt schalen, kunt u het aantal RUs op elk gewenst moment verg Roten of verkleinen in stappen of verlaagt u 100 RUs. U kunt uw wijzigingen programmatisch aanbrengen of via Azure Portal. U wordt gefactureerd op basis van de hoeveelheid RUs per seconde die u hebt ingericht. Zie het artikel [ingerichte door Voer](set-throughput.md) voor meer informatie.
 
    U kunt de door Voer op twee verschillende granulariteit inrichten:
 
-   * **Containers** : Zie [door Voer inrichten op een Azure Cosmos-container](how-to-provision-container-throughput.md)voor meer informatie.
-   * **Data bases** : Zie [door Voer inrichten voor een Azure Cosmos-data base](how-to-provision-database-throughput.md)voor meer informatie.
+   * **Containers**: Zie [door Voer inrichten op een Azure Cosmos-container](how-to-provision-container-throughput.md)voor meer informatie.
+   * **Data bases**: Zie [door Voer inrichten voor een Azure Cosmos-data base](how-to-provision-database-throughput.md)voor meer informatie.
 
-2. **Serverloze modus** : in deze modus hoeft u geen door Voer in te richten bij het maken van resources in uw Azure Cosmos-account. Aan het einde van de facturerings periode wordt u gefactureerd voor de hoeveelheid aanvraag eenheden die is verbruikt door uw database bewerkingen. Zie het artikel over [serverloze door Voer](serverless.md) voor meer informatie. 
+2. **Serverloze modus**: in deze modus hoeft u geen door Voer in te richten bij het maken van resources in uw Azure Cosmos-account. Aan het einde van de facturerings periode wordt u gefactureerd voor de hoeveelheid aanvraag eenheden die is verbruikt door uw database bewerkingen. Zie het artikel over [serverloze door Voer](serverless.md) voor meer informatie. 
 
-3. **Modus voor automatisch schalen** : in dit geval kunt u de door Voer (ru/s) van uw data base of container automatisch en direct schalen op basis van het gebruik, zonder dat dit van invloed is op de beschik baarheid, latentie, door Voer of de prestaties van de werk belasting. Deze modus is zeer geschikt voor bedrijfskritische workloads die variabele of onvoorspelbare verkeers patronen hebben en voor het vereisen van Sla's voor hoge prestaties en schaal baarheid. Zie het artikel [automatisch schalen door Voer](provision-throughput-autoscale.md) voor meer informatie. 
+3. **Modus voor automatisch schalen**: in deze modus kunt u de door Voer (ru/s) van uw data base of container automatisch en direct schalen op basis van het gebruik, zonder dat dit van invloed is op de beschik baarheid, latentie, door Voer of de prestaties van de werk belasting. Deze modus is zeer geschikt voor bedrijfskritische workloads die variabele of onvoorspelbare verkeers patronen hebben en voor het vereisen van Sla's voor hoge prestaties en schaal baarheid. Zie het artikel [automatisch schalen door Voer](provision-throughput-autoscale.md) voor meer informatie. 
 
 ## <a name="request-unit-considerations"></a>Aandachtspunten voor aanvraageenheden
 
 Houd rekening met de volgende factoren wanneer u een schatting maakt van het aantal dat door uw workload verbruikt.
 
-* **Itemgrootte** : Als de grootte van een item toeneemt, neemt ook het aantal verbruikte RU's om het item te lezen of schrijven toe.
+* **Itemgrootte**: Als de grootte van een item toeneemt, neemt ook het aantal verbruikte RU's om het item te lezen of schrijven toe.
 
-* **Itemindexing** : Elk item wordt standaard automatisch geïndexeerd. Er worden minder RU's verbruikt als u ervoor kiest bepaalde items in een container niet te indexeren.
+* **Itemindexing**: Elk item wordt standaard automatisch geïndexeerd. Er worden minder RU's verbruikt als u ervoor kiest bepaalde items in een container niet te indexeren.
 
-* **Het aantal itemeigenschappen** : Ervan uitgaande dat alle eigenschappen de standaardindexering hebben, wordt het aantal verbruikte RU's om een item te schrijven, groter naarmate het aantal itemeigenschappen toeneemt.
+* **Het aantal itemeigenschappen**: Ervan uitgaande dat alle eigenschappen de standaardindexering hebben, wordt het aantal verbruikte RU's om een item te schrijven, groter naarmate het aantal itemeigenschappen toeneemt.
 
-* **Geïndexeerde eigenschappen** : Een indexbeleid voor elke container bepaalt welke eigenschappen standaard worden geïndexeerd. Beperk het aantal geïndexeerde eigenschappen om het RU-verbruik voor schrijfbewerkingen te verlagen.
+* **Geïndexeerde eigenschappen**: Een indexbeleid voor elke container bepaalt welke eigenschappen standaard worden geïndexeerd. Beperk het aantal geïndexeerde eigenschappen om het RU-verbruik voor schrijfbewerkingen te verlagen.
 
-* **Gegevens consistentie** : de sterke en gebonden consistentie niveaus voor veroudering worden ongeveer twee keer meer gebruikt tijdens het uitvoeren van Lees bewerkingen in vergelijking met die van andere beperkte consistentie niveaus.
+* **Gegevens consistentie**: de sterke en gebonden consistentie niveaus voor veroudering worden ongeveer twee keer meer gebruikt tijdens het uitvoeren van Lees bewerkingen in vergelijking met die van andere beperkte consistentie niveaus.
 
-* **Type Lees bewerkingen** : punt besparingen zijn aanzienlijk minder RUs dan query's.
+* **Type Lees bewerkingen**: punt besparingen zijn aanzienlijk minder RUs dan query's.
 
-* **Querypatronen** : De complexiteit van een query beïnvloedt het aantal verbruikte RU's voor een bewerking. Factoren die invloed hebben op de kosten van querybewerkingen: 
+* **Querypatronen**: De complexiteit van een query beïnvloedt het aantal verbruikte RU's voor een bewerking. Factoren die invloed hebben op de kosten van querybewerkingen: 
  
   * Het aantal queryresultaten
   * Het aantal predicaten
@@ -70,7 +70,7 @@ Houd rekening met de volgende factoren wanneer u een schatting maakt van het aan
 
   Dezelfde query op dezelfde gegevens kost altijd hetzelfde aantal RUs bij herhaalde uitvoeringen.
 
-* **Script gebruik** : net als bij query's, worden voor opgeslagen procedures en triggers RUs gebruikt op basis van de complexiteit van de bewerkingen die worden uitgevoerd. Controleer tijdens het ontwikkelen van uw toepassing de [aanvraagkostenheader](./optimize-cost-reads-writes.md#measuring-the-ru-charge-of-a-request) om meer inzicht te krijgen in hoeveel RU-capaciteit elke bewerking verbruikt.
+* **Script gebruik**: net als bij query's, worden voor opgeslagen procedures en triggers RUs gebruikt op basis van de complexiteit van de bewerkingen die worden uitgevoerd. Controleer tijdens het ontwikkelen van uw toepassing de [aanvraagkostenheader](./optimize-cost-reads-writes.md#measuring-the-ru-charge-of-a-request) om meer inzicht te krijgen in hoeveel RU-capaciteit elke bewerking verbruikt.
 
 ## <a name="request-units-and-multiple-regions"></a>Aanvraag eenheden en meerdere regio's
 
@@ -78,7 +78,7 @@ Als u *' r '* Rus inricht in een Cosmos-container (of-data base), zorgt Cosmos D
 
 Ervan uitgaande dat een Cosmos-container is geconfigureerd met *' R '* RUs en dat er *N* -regio's zijn gekoppeld aan het Cosmos-account, het totale RUs-totaal beschikbaar op de container = *R* x *N*.
 
-Uw keuze van [consistentie model](consistency-levels.md) is ook van invloed op de door voer. U kunt ongeveer 2x Lees doorvoer bereiken voor de minder consistente consistentie niveaus (zoals een *sessie* , *consistent voor voegsel* en *uiteindelijke* consistentie) in vergelijking met sterkere consistentie niveaus (bijvoorbeeld *gebonden veroudering* of *sterke* consistentie).
+Uw keuze van [consistentie model](consistency-levels.md) is ook van invloed op de door voer. U kunt ongeveer 2x Lees doorvoer bereiken voor de minder consistente consistentie niveaus (zoals een *sessie*, *consistent voor voegsel* en *uiteindelijke* consistentie) in vergelijking met sterkere consistentie niveaus (bijvoorbeeld *gebonden veroudering* of *sterke* consistentie).
 
 ## <a name="next-steps"></a>Volgende stappen
 

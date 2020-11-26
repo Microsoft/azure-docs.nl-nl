@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 09/13/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: b684123068889e422080605fb9c50ef9aed0cb76
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: e446ec08d63c44566b2f45c1427999536d0be703
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630155"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96188714"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows-smb"></a>Problemen met Azure Files oplossen in Windows (SMB)
 
@@ -176,7 +176,7 @@ Controleer of regels voor het virtuele netwerk of de firewall juist zijn geconfi
 Blader naar het opslag account waar de Azure-bestands share zich bevindt, klik op **toegangs beheer (IAM)** en controleer of uw gebruikers account toegang heeft tot het opslag account. Zie [uw opslag account beveiligen met Azure op rollen gebaseerd toegangs beheer (Azure RBAC)](../blobs/security-recommendations.md#data-protection)voor meer informatie.
 
 <a id="open-handles"></a>
-## <a name="unable-to-delete-a-file-or-directory-in-an-azure-file-share"></a>Kan een bestand of map in een Azure-bestandsshare niet verwijderen
+## <a name="unable-to-modify-moverename-or-delete-a-file-or-directory"></a>Kan een bestand of map niet wijzigen, verplaatsen/verwijderen of de naam ervan wijzigen
 Een van de belangrijkste doel stellingen van een bestands share is dat meerdere gebruikers en toepassingen gelijktijdig kunnen communiceren met bestanden en mappen in de share. Om u te helpen bij deze interactie bieden bestands shares verschillende manieren om toegang tot bestanden en mappen te verkrijgen.
 
 Wanneer u een bestand opent vanuit een gekoppelde Azure-bestands share via SMB, vraagt uw toepassing/besturings systeem een bestands ingang aan. Dit is een verwijzing naar het bestand. Uw toepassing geeft onder andere de modus voor het delen van bestanden op wanneer er een bestands ingang wordt aangevraagd, waarmee het niveau wordt opgegeven van de toegang tot het bestand dat wordt afgedwongen door Azure Files: 

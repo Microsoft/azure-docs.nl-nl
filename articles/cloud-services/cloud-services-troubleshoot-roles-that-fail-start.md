@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 06/15/2018
 ms.author: v-six
-ms.openlocfilehash: 68daec6bb6682d2b488abacb2f79bdfadc4ae628
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: bedf4dd2a955a8ffe648b47c1691e77ac1fdb8f5
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92076569"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187796"
 ---
 # <a name="troubleshoot-cloud-service-roles-that-fail-to-start"></a>Problemen met Cloud service rollen oplossen die niet worden gestart
 Hier volgen enkele veelvoorkomende problemen en oplossingen met betrekking tot Azure Cloud Services-rollen die niet worden gestart.
@@ -27,11 +27,11 @@ Hier volgen enkele veelvoorkomende problemen en oplossingen met betrekking tot A
 [!INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
 ## <a name="missing-dlls-or-dependencies"></a>Ontbrekende Dll's of afhankelijkheden
-Niet-reagerende rollen en rollen die worden uitgevoerd tussen de initialisatie, **bezet**en **het** **stoppen** van de status, kunnen worden veroorzaakt door ontbrekende dll's of assembly's.
+Niet-reagerende rollen en rollen die worden uitgevoerd tussen de initialisatie, **bezet** en **het** **stoppen** van de status, kunnen worden veroorzaakt door ontbrekende dll's of assembly's.
 
 Symptomen van ontbrekende Dll's of assembly's kunnen zijn:
 
-* Uw rolinstantie wordt uitgevoerd door de **initialisatie**, **bezet**en de status van het **stoppen** .
+* Uw rolinstantie wordt uitgevoerd door de **initialisatie**, **bezet** en de status van het **stoppen** .
 * De rolinstantie is verplaatst naar **gereed** , maar als u naar uw webtoepassing navigeert, wordt de pagina niet weer gegeven.
 
 Er zijn verschillende aanbevolen methoden om deze problemen te onderzoeken.
@@ -47,7 +47,7 @@ Meer informatie over de fout kan worden weer gegeven door de web.config voor de 
 Meer volledige fouten weer geven zonder Extern bureaublad te gebruiken:
 
 1. Open de oplossing in micro soft Visual Studio.
-2. Zoek in het **Solution Explorer**het web.config bestand en open het.
+2. Zoek in het **Solution Explorer** het web.config bestand en open het.
 3. Zoek in het web.config-bestand de sectie System. Web en voeg de volgende regel toe:
 
     ```xml
@@ -105,7 +105,7 @@ Voer de volgende stappen uit om de service te implementeren met IntelliTrace ing
 4. Vouw het knoop punt **Azure \\ Cloud Services** uit en zoek de implementatie.
 5. Vouw de implementatie uit totdat u de rolinstanties ziet. Klik met de rechter muisknop op een van de exemplaren.
 6. Kies **IntelliTrace-logboeken weer geven**. De **IntelliTrace-samen vatting** wordt geopend.
-7. Zoek de sectie uitzonde ringen van de samen vatting. Als er uitzonde ringen zijn, wordt de sectie **uitzonderings gegevens**genoemd.
+7. Zoek de sectie uitzonde ringen van de samen vatting. Als er uitzonde ringen zijn, wordt de sectie **uitzonderings gegevens** genoemd.
 8. Vouw de **uitzonderings gegevens** uit en zoek naar **System. io. FileNotFoundException** -fouten die vergelijkbaar zijn met het volgende:
 
 ![Uitzonderings gegevens, ontbrekend bestand of assembly](./media/cloud-services-troubleshoot-roles-that-fail-start/ic503390.png)

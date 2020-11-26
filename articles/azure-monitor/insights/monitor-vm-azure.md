@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/05/2020
-ms.openlocfilehash: 0c1e84695ce40b489fb1005325d501ea241cdaf1
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: fc89790c7d268bcfa0c08bd26249bc91979d7fca
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94738098"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186895"
 ---
 # <a name="monitoring-azure-virtual-machines-with-azure-monitor"></a>Virtuele Azure-machines bewaken met Azure Monitor
 In dit artikel wordt beschreven hoe u Azure Monitor kunt gebruiken om bewakings gegevens van virtuele Azure-machines te verzamelen en analyseren om hun status te behouden. Virtuele machines kunnen worden bewaakt voor Beschik baarheid en prestaties met Azure Monitor zoals elke [andere Azure-resource](monitor-azure-resource.md), maar ze zijn uniek van andere resources, aangezien u ook de gast besturingssystemen en het systeem en de werk belastingen die hierop worden uitgevoerd, moet bewaken. 
@@ -58,13 +58,13 @@ Als u alle functies van Azure Monitor voor het bewaken van een virtuele machine 
 | Geen configuratie | -De metrische platform gegevens die worden verzameld voor metrische gegevens van de host.<br>-Verzamelde activiteiten Logboeken. | -Metrics Explorer voor de host.<br>-Metrische waarschuwingen voor de host.<br>-Waarschuwingen voor activiteiten Logboeken. |
 | [Azure Monitor voor VM's inschakelen](#enable-azure-monitor-for-vms) | -Log Analytics-agent geïnstalleerd.<br>-De agent voor afhankelijkheden is geïnstalleerd.<br>-Gast prestatie gegevens die worden verzameld voor Logboeken.<br>-Proces en afhankelijkheids details die zijn verzameld voor Logboeken. | -Prestatie diagrammen en werkmappen voor prestatie gegevens van de gast.<br>-Query's vastleggen voor prestatie gegevens van de gast.<br>-Waarschuwingen in logboek registreren voor prestatie gegevens van de gast.<br>-Afhankelijkheids toewijzing. |
 | [De diagnostische uitbrei ding en de telegrafie agent installeren](#enable-diagnostics-extension-and-telegraf-agent) | -De prestatie gegevens voor de gast die worden verzameld voor de meet waarden. | -Metrics Explorer voor gast.<br>-Metrische waarschuwingen voor gast.  |
-| [Log Analytics werkruimte configureren](#configure-log-analytics-workspace) | -Gebeurtenissen die worden verzameld van de gast. | -Query's vastleggen voor gast gebeurtenissen.<br>-Waarschuwingen vastleggen voor gast gebeurtenissen. |
+| [Log Analytics-werkruimte configureren](#configure-log-analytics-workspace) | -Gebeurtenissen die worden verzameld van de gast. | -Query's vastleggen voor gast gebeurtenissen.<br>-Waarschuwingen vastleggen voor gast gebeurtenissen. |
 | [Diagnostische instelling voor virtuele machine maken](#collect-platform-metrics-and-activity-log) | -Metrische platform gegevens die worden verzameld voor Logboeken.<br>-Het activiteiten logboek dat is verzameld voor Logboeken. | -Query's vastleggen voor metrische gegevens van de host.<br>-Waarschuwingen vastleggen voor metrische gegevens van de host.<br>-Query's vastleggen voor het activiteiten logboek.
 
 Elk van deze configuratie stappen wordt beschreven in de volgende secties.
 
 ### <a name="enable-azure-monitor-for-vms"></a>Azure Monitor voor VM's inschakelen
-[Azure monitor voor VM's](vminsights-overview.md) is een [inzicht](insights-overview.md) in azure monitor dat het primaire hulp programma is voor het bewaken van virtuele machines in azure monitor. Het biedt de volgende aanvullende waarde ten opzichte van standaard Azure Monitor-functies.
+[Azure monitor voor VM's](vminsights-overview.md) is een [inzicht](../monitor-reference.md) in azure monitor dat het primaire hulp programma is voor het bewaken van virtuele machines in azure monitor. Het biedt de volgende aanvullende waarde ten opzichte van standaard Azure Monitor-functies.
 
 - Vereenvoudigd onboarding van Log Analytics agent en afhankelijkheids agent om de bewaking van een gast besturingssysteem en werk belastingen van een virtuele machine mogelijk te maken. 
 - Vooraf gedefinieerde diagrammen voor trend prestaties en werkmappen waarmee u de metrische prestatie gegevens van het gast besturingssysteem van de virtuele machine kunt analyseren.
@@ -79,7 +79,7 @@ Schakel Azure Monitor voor VM's in via de optie **inzichten** in het menu virtue
 
 ![Azure Monitor voor VM's inschakelen](media/monitor-vm-azure/enable-vminsights.png)
 
-### <a name="configure-log-analytics-workspace"></a>Log Analytics werkruimte configureren
+### <a name="configure-log-analytics-workspace"></a>Log Analytics-werkruimte configureren
 De Log Analytics agent die door Azure Monitor voor VM's wordt gebruikt, verzendt gegevens naar een [log Analytics-werk ruimte](../platform/data-platform-logs.md). U kunt het verzamelen van aanvullende prestatie gegevens, gebeurtenissen en andere bewakings gegevens van de agent inschakelen door de Log Analytics-werk ruimte te configureren. Het hoeft slechts eenmaal te worden geconfigureerd, omdat elke agent die verbinding maakt met de werk ruimte automatisch de configuratie downloadt en meteen begint met het verzamelen van de gedefinieerde gegevens. 
 
 U kunt de configuratie voor de werk ruimte rechtstreeks vanuit Azure Monitor voor VM's openen door **werkruimte configuratie** te selecteren in de **aan de slag**. Klik op de naam van de werk ruimte om het menu te openen.
@@ -140,7 +140,7 @@ Wanneer u de verzameling van bewakings gegevens voor een virtuele machine hebt g
 | Diagnostische instellingen | De [uitbrei ding voor diagnostische gegevens](../platform/diagnostics-extension-overview.md) voor de huidige virtuele machine inschakelen en configureren. |
 | Advisor-aanbevelingen | Aanbevelingen voor de huidige virtuele machine van [Azure Advisor](../../advisor/index.yml). |
 | Logboeken | Open [log Analytics](../log-query/log-analytics-overview.md) met de [Scope](../log-query/scope.md) die is ingesteld op de huidige virtuele machine. |
-| Verbindings monitor | Open [Network Watcher verbindings monitor](../../network-watcher/connection-monitor-preview.md) om de verbindingen tussen de huidige virtuele machine en andere virtuele machines te bewaken. |
+| Verbindings monitor | Open [Network Watcher verbindings monitor](../../network-watcher/connection-monitor-overview.md) om de verbindingen tussen de huidige virtuele machine en andere virtuele machines te bewaken. |
 
 
 ## <a name="analyzing-metric-data"></a>Metrische gegevens analyseren
@@ -148,7 +148,7 @@ U kunt metrische gegevens voor virtuele machines analyseren met metrische gegeve
 
 Er zijn drie naam ruimten die door virtuele machines worden gebruikt voor metrische gegevens:
 
-| Naamruimte | Beschrijving | Vereiste |
+| Naamruimte | Description | Vereiste |
 |:---|:---|:---|
 | Host van virtuele machine | Metrische gegevens van de host worden automatisch verzameld voor alle virtuele machines van Azure. Gedetailleerde lijst met metrische gegevens bij [micro soft. Compute/informatie](../platform/metrics-supported.md#microsoftcomputevirtualmachines). | Automatisch verzameld zonder configuratie vereist. |
 | Gast (klassiek) | Beperkte set gast besturingssysteem en prestatie gegevens van toepassingen. Beschikbaar in Metrics Explorer, maar niet op andere Azure Monitor functies, zoals metrische waarschuwingen.  | [Diagnostische uitbrei ding](../platform/diagnostics-extension-overview.md) geïnstalleerd. Gegevens worden uit Azure Storage gelezen.  |
@@ -242,4 +242,3 @@ Zie [Connect Operations Manager to Azure monitor](../platform/om-agents.md) voor
 
 * [Meer informatie over het analyseren van gegevens in Azure Monitor logboeken met behulp van logboek query's.](../log-query/get-started-queries.md)
 * [Meer informatie over waarschuwingen met metrische gegevens en Logboeken in Azure Monitor.](../platform/alerts-overview.md)
-

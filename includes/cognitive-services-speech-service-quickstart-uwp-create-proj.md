@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/15/2020
 ms.author: erhopf
 ms.openlocfilehash: df9dbdf61dbc7d83f1cf74871ddc864488ed9d47
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92097215"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96188222"
 ---
 Als u een Visual Studio-project voor UWP-ontwikkeling (Universeel Windows-platform) wilt maken, moet u ontwikkelingsopties voor Visual Studio instellen, het project maken, de doelarchitectuur selecteren, audio-opname instellen en de Speech-SDK installeren.
 
@@ -17,7 +17,7 @@ Als u een Visual Studio-project voor UWP-ontwikkeling (Universeel Windows-platfo
 
 Zorg er eerst voor dat Visual Studio correct is ingesteld voor UWP-ontwikkeling:
 
-1. Open Visual Studio 2019 om het**Start**-venster weer te geven.
+1. Open Visual Studio 2019 om het **Start**-venster weer te geven.
 
    ![Schermopname van het venster Start, met de actie Doorgaan zonder code gemarkeerd.](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-uwp-start-window.png)
 
@@ -92,7 +92,7 @@ Installeer tot slot het [Speech SDK NuGet package](https://aka.ms/csspeech/nuget
 
    ![Schermopname van het dialoogvenster Pakketten voor oplossing beheren, met het tabblad Bladeren, het vak Zoeken, en de optie Pakketbron gemarkeerd.](../articles/cognitive-services/Speech-Service/media/sdk/vs-enable-uwp-nuget-solution-browse.png)
 
-1. Kies **nuget.org**in **Package source** (Pakketbron).
+1. Kies **nuget.org** in **Package source** (Pakketbron).
 
 1. Voer in het vak **Search** (Zoeken) `Microsoft.CognitiveServices.Speech` in, en kies dat pakket wanneer het in de zoekresultaten wordt weergegeven.
 
@@ -102,6 +102,6 @@ Installeer tot slot het [Speech SDK NuGet package](https://aka.ms/csspeech/nuget
 
 1. Selecteer **Installeren**.
 
-1. Selecteer **OK**in het dialoog venster **Preview Changes** (Voorbeeld van wijzigingen bekijken).
+1. Selecteer **OK** in het dialoog venster **Preview Changes** (Voorbeeld van wijzigingen bekijken).
 
 1. Lees de licentie in het dialoogvenster **License Acceptance** (Acceptatie van licentie) en selecteer **I Accept** (Ik ga akkoord). De installatie van het pakket wordt gestart, en wanneer de installatie is voltooid, wordt in het deelvenster **Output** (Uitvoer) een bericht weergegeven met een bericht als `Successfully installed 'Microsoft.CognitiveServices.Speech 1.13.0' to helloworld`.

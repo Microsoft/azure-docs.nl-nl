@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: liud
 ms.reviewer: pimorano
-ms.openlocfilehash: b7248a3a66e0eeca4d86568f80af82bf2d89701f
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: a5cb5831090987f1b620593843ddba817d8e68d4
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96031166"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96188119"
 ---
 # <a name="source-control-in-azure-synapse-studio"></a>Broncode beheer in azure Synapse Studio
 
@@ -38,7 +38,7 @@ Selecteer in het ontwerp doek van Synapse Studio de vervolg keuzelijst **Synapse
 
 ![De instellingen van de code opslagplaats configureren vanuit ontwerpen](media/configure-repo-1.png)
 
-### <a name="configuration-method-2-management-hub"></a>Configuratie methode 2: Management hub
+### <a name="configuration-method-2-manage-hub"></a>Configuratie methode 2: hub beheren
 
 Ga naar de Management hub van Synapse Studio. Selecteer **Git-configuratie** in de sectie **bron beheer** . Als u geen opslag plaats hebt verbonden, klikt u op **configureren**.
 
@@ -217,6 +217,11 @@ Als de publicatie vertakking niet is gesynchroniseerd met de vertakking voor sam
 
 1. Een pull-aanvraag maken om de wijzigingen aan de collaboration Branch samen te voegen 
 
+## <a name="unsupported-features"></a>Niet-ondersteunde functies
+
+- Synapse studio staat geen kers toe voor het verzamelen van door voeringen of selectief publiceren van resources. 
+- Synapse Studio biedt geen ondersteuning voor het aanpassen van commit-berichten.
+- Op basis van het ontwerp wordt de actie verwijderen in Studio direct doorgevoerd in de git
 
 ## <a name="next-steps"></a>Volgende stappen
 

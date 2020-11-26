@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 06/04/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: d349d07a66b21766ea529661c2f27d0c76ea4d3b
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: cac0d8cb8a910b735454c9270060364cab2db5fb
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95024718"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187235"
 ---
 # <a name="use-the-azure-digital-twins-apis-and-sdks"></a>De Azure Digital Twins-API's en -SDK's gebruiken
 
@@ -20,7 +20,7 @@ Azure Digital Apparaatdubbels wordt geleverd met beide **Control-api's** en **da
 * De Api's van het besturings element zijn [Azure Resource Manager (arm)](../azure-resource-manager/management/overview.md) -api's en bedekken bron beheer bewerkingen, zoals het maken en verwijderen van uw exemplaar. 
 * De data vlak-Api's zijn Azure Digital Apparaatdubbels Api's en worden gebruikt voor gegevens beheer bewerkingen, zoals het beheren van modellen, apparaatdubbels en de grafiek.
 
-Dit artikel geeft een overzicht van de beschik bare Api's en de methoden om ermee te werken. U kunt de REST-Api's rechtstreeks met hun bijbehorende Swaggers of via een SDK gebruiken.
+Dit artikel geeft een overzicht van de beschik bare Api's en de methoden om ermee te werken. U kunt de REST-Api's rechtstreeks met de bijbehorende Swaggers gebruiken (via een hulp programma zoals [postman](how-to-use-postman.md)) of via een SDK.
 
 ## <a name="overview-control-plane-apis"></a>Overzicht: Controling-Api's
 
@@ -32,7 +32,7 @@ De Control-Api's gebruiken:
 * U kunt de Api's rechtstreeks aanroepen door te verwijzen naar de laatste Swagger in de map van het [besturings vlak Swagger](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/digitaltwins/resource-manager/Microsoft.DigitalTwins). Deze opslag plaats bevat ook een map met voor beelden waarin het gebruik wordt weer gegeven.
 * U kunt momenteel toegang krijgen tot Sdk's voor besturings-Api's in...
   - [**.Net (C#)**](https://www.nuget.org/packages/Microsoft.Azure.Management.DigitalTwins/) ([referentie [automatisch gegenereerd]](/dotnet/api/overview/azure/digitaltwins/management?view=azure-dotnet&preserve-view=true)) ([bron](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/digitaltwins/Microsoft.Azure.Management.DigitalTwins))
-  - [**Java**](https://search.maven.org/artifact/com.microsoft.azure.digitaltwins.v2020_10_31/azure-mgmt-digitaltwins/1.0.0/jar) ([referentie [automatisch gegenereerd]](/java/api/overview/azure/digitaltwins?view=azure-java-stable)) ([bron](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins/mgmt-v2020_10_31))
+  - [**Java**](https://search.maven.org/artifact/com.microsoft.azure.digitaltwins.v2020_10_31/azure-mgmt-digitaltwins/1.0.0/jar) ([referentie [automatisch gegenereerd]](/java/api/overview/azure/digitaltwins?view=azure-java-stable&preserve-view=true)) ([bron](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/digitaltwins/mgmt-v2020_10_31))
   - [**Java script**](https://www.npmjs.com/package/@azure/arm-digitaltwins) ([bron](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/digitaltwins/arm-digitaltwins))
   - [**Python**](https://pypi.org/project/azure-mgmt-digitaltwins/) ([bron](https://github.com/Azure/azure-sdk-for-python/tree/release/v3/sdk/digitaltwins/azure-mgmt-digitaltwins))
   - [**Go**](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/digitaltwins/mgmt/2020-10-31/digitaltwins) ([bron](https://github.com/Azure/azure-sdk-for-go/tree/master/services/digitaltwins/mgmt/2020-10-31/digitaltwins))
@@ -279,6 +279,7 @@ client.UpdateDigitalTwin("myTwin", updateTwinData);
 
 De volgende lijst bevat aanvullende details en algemene richt lijnen voor het gebruik van de Api's en Sdk's.
 
+* U kunt een HTTP REST-test programma zoals postman gebruiken om directe aanroepen naar de Azure Digital Apparaatdubbels-Api's uit te voeren. Zie [*How-to: Requests with postman*](how-to-use-postman.md)(Engelstalig) voor meer informatie over dit proces.
 * Als u de SDK wilt gebruiken, maakt u een instantie van de `DigitalTwinsClient` klasse. De constructor vereist referenties die kunnen worden verkregen met diverse verificatie methoden in het `Azure.Identity` pakket. `Azure.Identity`Zie de documentatie van de [naam ruimte](/dotnet/api/azure.identity?preserve-view=true&view=azure-dotnet)voor meer informatie. 
 * Het is `InteractiveBrowserCredential` handig om aan de slag te gaan, maar er zijn verschillende andere opties, waaronder referenties voor [beheerde identiteit](/dotnet/api/azure.identity.interactivebrowsercredential?preserve-view=true&view=azure-dotnet), die u waarschijnlijk gebruikt voor het verifiëren van [Azure functions die zijn ingesteld met MSI](../app-service/overview-managed-identity.md?tabs=dotnet) op Azure Digital apparaatdubbels. `InteractiveBrowserCredential`Zie de documentatie van de [klasse](/dotnet/api/azure.identity.interactivebrowsercredential?preserve-view=true&view=azure-dotnet)voor meer informatie.
 * Alle service-API-aanroepen worden weer gegeven als lidfuncties op de `DigitalTwinsClient` klasse.
@@ -303,8 +304,8 @@ Hier kunt u de metrische gegevens voor uw exemplaar bekijken en aangepaste weer 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie hoe u de Api's gebruikt om een Azure Digital Apparaatdubbels-exemplaar en-verificatie in te stellen:
-* [*Instructies: een exemplaar en verificatie instellen*](how-to-set-up-instance-cli.md)
+Zie direct aanvragen maken voor de Api's met behulp van Postman:
+* [*Instructies: aanvragen indienen met de Postman*](how-to-use-postman.md)
 
-Of volg de stappen voor het maken van een client-app, zoals de toepassing die wordt gebruikt in deze procedure:
+Of oefen met het gebruik van de .NET-SDK door een client-app te maken met deze zelf studie:
 * [*Zelfstudie: Een client-app coderen*](tutorial-code.md)

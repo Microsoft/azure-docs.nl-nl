@@ -3,18 +3,18 @@ title: Zoek functie gebruiken in Azure-toepassing Insights | Microsoft Docs
 description: Zoek en filter ruwe telemetriegegevens die zijn verzonden door uw web-app.
 ms.topic: conceptual
 ms.date: 07/30/2019
-ms.openlocfilehash: f88e0fb8fbd7e9605635ede1e8f71b57de84b74e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f87a972b417bf6074de1c10b7a54bd2416f88daa
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87324451"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187014"
 ---
 # <a name="using-search-in-application-insights"></a>Zoeken in Application Insights gebruiken
 
 Search is een functie van [Application Insights](./app-insights-overview.md) waarmee u afzonderlijke telemetriegegevens, zoals pagina weergaven, uitzonde ringen of webaanvragen, kunt zoeken en verkennen. En u kunt logboek traceringen en gebeurtenissen weer geven die u hebt gecodeerd.
 
-(Voor complexere query's over uw gegevens gebruikt u [Analytics](../log-query/get-started-portal.md).)
+(Voor complexere query's over uw gegevens gebruikt u [Analytics](../log-query/log-analytics-tutorial.md).)
 
 ## <a name="where-do-you-see-search"></a>Waar ziet u zoeken?
 
@@ -81,7 +81,7 @@ Als u alle items met dezelfde eigenschaps waarde wilt zoeken, typt u deze in de 
 ## <a name="search-the-data"></a>De gegevens zoeken
 
 > [!NOTE]
-> Als u complexere query's wilt schrijven, opent u [**Logboeken (Analytics)**](../log-query/get-started-portal.md) aan de bovenkant van de Blade zoeken.
+> Als u complexere query's wilt schrijven, opent u [**Logboeken (Analytics)**](../log-query/log-analytics-tutorial.md) aan de bovenkant van de Blade zoeken.
 >
 
 U kunt zoeken naar termen in een van de eigenschaps waarden. Dit is handig als u [aangepaste gebeurtenissen](./api-custom-events-metrics.md) met eigenschaps waarden hebt geschreven.
@@ -116,7 +116,7 @@ Als uw app een grote hoeveelheid telemetrie genereert (en u de ASP.NET SDK-versi
 
 U kunt een bug in GitHub of Azure DevOps maken met de details van een telemetrie-item.
 
-Ga naar de weer gave end-to-end trans actie-Details door te klikken op een telemetrie-item en vervolgens **werk item maken**te selecteren.
+Ga naar de weer gave end-to-end trans actie-Details door te klikken op een telemetrie-item en vervolgens **werk item maken** te selecteren.
 
 ![Klik op nieuw werk item, bewerk de velden en klik vervolgens op OK.](./media/diagnostic-search/work-item.png)
 
@@ -145,8 +145,7 @@ De POST gegevens worden niet automatisch geregistreerd, maar u kunt wel [TrackTr
 
 ## <a name="next-steps"></a><a name="add"></a>Volgende stappen
 
-* [Complexe query's schrijven in analyse](../log-query/get-started-portal.md)
+* [Complexe query's schrijven in analyse](../log-query/log-analytics-tutorial.md)
 * [Logboeken en aangepaste telemetrie naar Application Insights verzenden](./asp-net-trace-logs.md)
 * [Testen van Beschik baarheid en reactie snelheid instellen](./monitor-web-app-availability.md)
 * [Problemen oplossen](../faq.md)
-

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 09/29/2020
-ms.openlocfilehash: 2a19183f5ba5b1ea4d50cd5cfba6115f7dede6cd
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 1d3a7be429f730dd4dbd71bade1e3e51ea73c10f
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94540043"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96188646"
 ---
 # <a name="what-are-compute-targets-in-azure-machine-learning"></a>Wat zijn compute-doelen in Azure Machine Learning?
 
@@ -119,6 +119,12 @@ Raadpleeg de volgende tabel voor meer informatie over ondersteunde reeksen en be
 
 
 Hoewel Azure Machine Learning deze VM-serie ondersteunt, zijn ze mogelijk niet beschikbaar in alle Azure-regio's. Zie [beschik bare producten per regio](https://azure.microsoft.com/global-infrastructure/services/?products=virtual-machines)om te controleren of de VM-serie beschikbaar is.
+
+> [!NOTE]
+> Azure Machine Learning biedt geen ondersteuning voor alle VM-grootten die door Azure Compute worden ondersteund. Als u de beschik bare VM-grootten wilt weer geven, gebruikt u een van de volgende methoden:
+> * [REST API](https://github.com/Azure/azure-rest-api-specs/blob/master/specification/machinelearningservices/resource-manager/Microsoft.MachineLearningServices/stable/2020-08-01/examples/ListVMSizesResult.json)
+> * [Python SDK](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute?view=azure-ml-py.md#supported-vmsizes-workspace--location-none-)
+>
 
 ### <a name="compute-isolation"></a>Reken isolatie
 

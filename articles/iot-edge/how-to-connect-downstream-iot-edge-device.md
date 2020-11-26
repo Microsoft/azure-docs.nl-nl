@@ -12,19 +12,19 @@ ms.custom:
 - amqp
 - mqtt
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: d5da6576258d3e33296781bbc262494220140ddc
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 37c237cdaf6c0d4f766d4b2e39c10e3e96215463
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94489281"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187830"
 ---
 # <a name="connect-a-downstream-iot-edge-device-to-an-azure-iot-edge-gateway-preview"></a>Een downstream-IoT Edge apparaat verbinden met een Azure IoT Edge gateway (preview-versie)
 
 Dit artikel bevat instructies voor het tot stand brengen van een vertrouwde verbinding tussen een IoT Edge gateway en een downstream IoT Edge apparaat.
 
 >[!NOTE]
->Voor deze functie is IoT Edge versie 1,2, in open bare preview, een Linux-container vereist.
+>Voor deze functie is IoT Edge versie 1.2, in openbare preview, met Linux-containers vereist.
 
 In een gateway scenario kan een IoT Edge apparaat zowel een gateway als een downstream-apparaat zijn. Meerdere IoT Edge gateways kunnen worden gelaagd om een hiërarchie van apparaten te maken. De downstream-(of onderliggende) apparaten kunnen berichten verifiëren en verzenden of ontvangen via hun gateway-(of bovenliggende) apparaat.
 
@@ -34,15 +34,15 @@ Sommige netwerk architecturen vereisen dat alleen het bovenste IoT Edge apparaat
 
 Alle stappen in dit artikel zijn gebaseerd op die in [een IOT edge apparaat configureren om te fungeren als een transparante gateway](how-to-create-transparent-gateway.md), waarmee een IOT edge apparaat wordt ingesteld als gateway voor downstream IOT-apparaten. Dezelfde basis stappen zijn van toepassing op alle gateway scenario's:
 
-* **Verificatie** : Maak IOT hub-identiteiten voor alle apparaten in de hiërarchie van de gateway.
-* **Autorisatie** : Stel de bovenliggende/onderliggende relatie in IOT hub in om onderliggende apparaten te autoriseren om verbinding te maken met het bovenliggende apparaat, net zoals ze verbinding zouden maken met IOT hub.
-* **Gateway detectie** : Controleer of het onderliggende apparaat het bovenliggende apparaat kan vinden in het lokale netwerk.
-* **Beveiligde verbinding** : Stel een beveiligde verbinding in met vertrouwde certificaten die deel uitmaken van dezelfde keten.
+* **Verificatie**: Maak IOT hub-identiteiten voor alle apparaten in de hiërarchie van de gateway.
+* **Autorisatie**: Stel de bovenliggende/onderliggende relatie in IOT hub in om onderliggende apparaten te autoriseren om verbinding te maken met het bovenliggende apparaat, net zoals ze verbinding zouden maken met IOT hub.
+* **Gateway detectie**: Controleer of het onderliggende apparaat het bovenliggende apparaat kan vinden in het lokale netwerk.
+* **Beveiligde verbinding**: Stel een beveiligde verbinding in met vertrouwde certificaten die deel uitmaken van dezelfde keten.
 
 ## <a name="prerequisites"></a>Vereisten
 
 * Een gratis of standaard IoT-hub.
-* Ten minste twee **IOT edge apparaten** , een als het hoogste laag apparaat en een of meer apparaten met een lagere laag. Als IoT Edge apparaten niet beschikbaar zijn, kunt u [Azure IOT Edge uitvoeren op virtuele Ubuntu-machines](how-to-install-iot-edge-ubuntuvm.md).
+* Ten minste twee **IOT edge apparaten**, een als het hoogste laag apparaat en een of meer apparaten met een lagere laag. Als IoT Edge apparaten niet beschikbaar zijn, kunt u [Azure IOT Edge uitvoeren op virtuele Ubuntu-machines](how-to-install-iot-edge-ubuntuvm.md).
 * Als u de Azure CLI gebruikt om apparaten te maken en te beheren, moet u Azure CLI v 2.3.1 met de Azure IoT-extensie v 0.10.6 of hoger hebben geïnstalleerd.
 
 In dit artikel vindt u gedetailleerde stappen en opties om u te helpen de juiste gateway hiërarchie te maken voor uw scenario. Zie [een hiërarchie van IOT edge apparaten met behulp van gateways maken](tutorial-nested-iot-edge.md)voor een begeleide zelf studie.
@@ -99,9 +99,9 @@ Met deze installatie kan elk downstream-IoT Edge apparaat of IoT-blad apparaat d
 
 Maak de volgende certificaten:
 
-* Een **basis-CA-certificaat** , dat het bovenste gedeelde certificaat is voor alle apparaten in een bepaalde gateway hiërarchie. Dit certificaat is geïnstalleerd op alle apparaten.
+* Een **basis-CA-certificaat**, dat het bovenste gedeelde certificaat is voor alle apparaten in een bepaalde gateway hiërarchie. Dit certificaat is geïnstalleerd op alle apparaten.
 * Alle **tussenliggende certificaten** die u wilt toevoegen aan de basis certificaat keten.
-* Een **CA-certificaat** van het apparaat en de bijbehorende **persoonlijke sleutel** , gegenereerd door de basis-en tussenliggende certificaten. U hebt één uniek CA-certificaat voor apparaten nodig voor elk IoT Edge apparaat in de gateway-hiërarchie.
+* Een **CA-certificaat** van het apparaat en de bijbehorende **persoonlijke sleutel**, gegenereerd door de basis-en tussenliggende certificaten. U hebt één uniek CA-certificaat voor apparaten nodig voor elk IoT Edge apparaat in de gateway-hiërarchie.
 
 >[!NOTE]
 >Op dit moment wordt een beperking in libiothsm voor komen dat certificaten worden gebruikt die op of na 1 januari 2038 verlopen.
@@ -146,11 +146,11 @@ Zorg er in Linux voor dat de gebruiker **iotedge** Lees machtigingen heeft voor 
    sudo nano /etc/iotedge/config.yaml
    ```
 
-1. Zoek de sectie **certificaten** in het bestand config. yaml. Werk de drie certificaat velden bij zodat deze naar uw certificaten verwijzen. Geef de bestands-URI-paden op die de indeling hebben `file:///<path>/<filename>` .
+1. Zoek de sectie **certificaten** in het bestand config. yaml. Werk de drie certificaat velden bij zodat deze naar uw certificaten verwijzen. Geef de bestands-URI-paden op, die de indeling `file:///<path>/<filename>` hebben.
 
-   * **device_ca_cert** : het pad naar de BESTANDS-URI naar het CA-certificaat van het apparaat dat uniek is voor dit apparaat.
-   * **device_ca_pk** : het pad naar de BESTANDS-URI naar de persoonlijke sleutel van de apparaat-CA die uniek is voor dit apparaat.
-   * **trusted_ca_certs** : het pad naar de BESTANDS-URI naar het basis-CA-certificaat dat wordt gedeeld door alle apparaten in de gateway hiërarchie.
+   * **device_ca_cert**: het pad naar de BESTANDS-URI naar het CA-certificaat van het apparaat dat uniek is voor dit apparaat.
+   * **device_ca_pk**: het pad naar de BESTANDS-URI naar de persoonlijke sleutel van de apparaat-CA die uniek is voor dit apparaat.
+   * **trusted_ca_certs**: het pad naar de BESTANDS-URI naar het basis-CA-certificaat dat wordt gedeeld door alle apparaten in de gateway hiërarchie.
 
 1. Zoek de para meter **hostname** in het bestand config. yaml. Werk de hostnaam bij naar de Fully Qualified Domain Name (FQDN) of het IP-adres van het IoT Edge apparaat.
 
@@ -160,7 +160,7 @@ Zorg er in Linux voor dat de gebruiker **iotedge** Lees machtigingen heeft voor 
 
    Consistent zijn met het hostname-patroon in een gateway-hiërarchie. Gebruik FQDN-of IP-adressen, maar niet beide.
 
-1. **Als dit apparaat een onderliggend apparaat is** , zoekt u de para meter **parent_hostname** . Werk het **parent_hostname** veld bij naar de FQDN of het IP-adres van het bovenliggende apparaat, dat overeenkomt met wat er is gegeven als de hostnaam in het bestand config. yaml van de bovenliggende map.
+1. **Als dit apparaat een onderliggend apparaat is**, zoekt u de para meter **parent_hostname** . Werk het **parent_hostname** veld bij naar de FQDN of het IP-adres van het bovenliggende apparaat, dat overeenkomt met wat er is gegeven als de hostnaam in het bestand config. yaml van de bovenliggende map.
 
 1. Hoewel deze functie in de open bare preview is, moet u uw IoT Edge-apparaat configureren om de open bare preview-versie van de IoT Edge agent te gebruiken wanneer deze wordt gestart.
 
@@ -172,7 +172,7 @@ Zorg er in Linux voor dat de gebruiker **iotedge** Lees machtigingen heeft voor 
      type: "docker"
      env: {}
      config:
-       image: "mcr.microsoft.com/azureiotedge-agent:1.2.0-rc1"
+       image: "mcr.microsoft.com/azureiotedge-agent:1.2.0-rc2"
        auth: {}
    ```
 
@@ -202,16 +202,16 @@ Zorg er in Linux voor dat de gebruiker **iotedge** Lees machtigingen heeft voor 
 
 Hoewel deze functie in de open bare preview is, moet u uw IoT Edge-apparaat configureren voor het gebruik van de open bare Preview-versies van de IoT Edge runtime-modules. De vorige sectie bevat stappen voor het configureren van edgeAgent bij het opstarten. U moet ook de runtime modules configureren in implementaties voor uw apparaat.
 
-1. De edgeHub-module configureren voor het gebruik van de open bare voorbeeld installatie kopie: `mcr.microsoft.com/azureiotedge-hub:1.2.0-rc1` .
+1. De edgeHub-module configureren voor het gebruik van de open bare voorbeeld installatie kopie: `mcr.microsoft.com/azureiotedge-hub:1.2.0-rc2` .
 
 1. Configureer de volgende omgevings variabelen voor de module edgeHub:
 
-   | Naam | Waarde |
+   | Name | Waarde |
    | - | - |
    | `experimentalFeatures__enabled` | `true` |
    | `experimentalFeatures__nestedEdgeEnabled` | `true` |
 
-1. De edgeAgent-module configureren voor het gebruik van de open bare voorbeeld installatie kopie: `mcr.microsoft.com/azureiotedge-hub:1.2.0-rc1` .
+1. De edgeAgent-module configureren voor het gebruik van de open bare voorbeeld installatie kopie: `mcr.microsoft.com/azureiotedge-hub:1.2.0-rc2` .
 
 ## <a name="network-isolate-downstream-devices"></a>Downstream-apparaten netwerk isoleren
 
@@ -298,17 +298,17 @@ De API-proxy module is ontworpen om te worden aangepast voor het verwerken van d
 1. Selecteer **Opslaan** om uw wijzigingen in de runtime-instellingen op te slaan.
 1. Selecteer opnieuw **toevoegen** en kies vervolgens **IOT Edge module**.
 1. Geef de volgende waarden op om de docker-register module toe te voegen aan uw-implementatie:
-   1. **Module naam IOT Edge** : `registry`
-   1. Op het tabblad **module-instellingen** , **afbeeldings-URI** : `registry:latest`
+   1. **Module naam IOT Edge**: `registry`
+   1. Op het tabblad **module-instellingen** , **afbeeldings-URI**: `registry:latest`
    1. Voeg op het tabblad **omgevings variabelen** de volgende omgevings variabelen toe:
 
-      * **Naam** : `REGISTRY_PROXY_REMOTEURL` **waarde** : de URL voor het container register waarnaar u deze register module wilt toewijzen. Bijvoorbeeld `https://myregistry.azurecr`.
+      * **Naam**: `REGISTRY_PROXY_REMOTEURL` **waarde**: de URL voor het container register waarnaar u deze register module wilt toewijzen. Bijvoorbeeld `https://myregistry.azurecr`.
 
         De register module kan alleen worden toegewezen aan één container register, dus u kunt het beste alle container installatie kopieën in één persoonlijk container register.
 
-      * **Naam** : `REGISTRY_PROXY_USERNAME` **waarde** : gebruikers naam voor verificatie bij het container register.
+      * **Naam**: `REGISTRY_PROXY_USERNAME` **waarde**: gebruikers naam voor verificatie bij het container register.
 
-      * **Name** : `REGISTRY_PROXY_PASSWORD` **Value** : wacht woord voor verificatie bij het container register.
+      * **Name**: `REGISTRY_PROXY_PASSWORD` **Value**: wacht woord voor verificatie bij het container register.
 
    1. Plak op het tabblad Opties voor het maken van de **container** :
 
@@ -329,8 +329,8 @@ De API-proxy module is ontworpen om te worden aangepast voor het verwerken van d
 1. Selecteer **toevoegen** om de module toe te voegen aan de implementatie.
 1. Selecteer **volgende: routes** om naar de volgende stap te gaan.
 1. Als u apparaat-naar-Cloud-berichten wilt inschakelen vanaf downstream-apparaten om IoT Hub te bereiken, neemt u een route op waarmee alle berichten worden door gegeven aan IoT Hub. Bijvoorbeeld:
-    1. **Naam** : `Route`
-    1. **Waarde** : `FROM /messages/* INTO $upstream`
+    1. **Naam**: `Route`
+    1. **Waarde**: `FROM /messages/* INTO $upstream`
 1. Selecteer **controleren + maken** om naar de laatste stap te gaan.
 1. Selecteer **maken** om te implementeren op het apparaat.
 
@@ -366,7 +366,7 @@ agent:
   type: "docker"
   env: {}
   config:
-    image: "{Parent FQDN or IP}:443/azureiotedge-agent:1.2.0-rc1"
+    image: "{Parent FQDN or IP}:443/azureiotedge-agent:1.2.0-rc2"
     auth: {}
 ```
 
@@ -436,8 +436,8 @@ De API-proxy module is ontworpen om te worden aangepast voor het verwerken van d
 1. Selecteer **Opslaan** om uw wijzigingen in de runtime-instellingen op te slaan.
 1. Selecteer **volgende: routes** om naar de volgende stap te gaan.
 1. Als u apparaat-naar-Cloud-berichten wilt inschakelen vanaf downstream-apparaten om IoT Hub te bereiken, neemt u een route op waarmee alle berichten worden door gegeven aan `$upstream` . De upstream-para meter verwijst naar het bovenliggende apparaat in het geval van apparaten met een lagere laag. Bijvoorbeeld:
-    1. **Naam** : `Route`
-    1. **Waarde** : `FROM /messages/* INTO $upstream`
+    1. **Naam**: `Route`
+    1. **Waarde**: `FROM /messages/* INTO $upstream`
 1. Selecteer **controleren + maken** om naar de laatste stap te gaan.
 1. Selecteer **maken** om te implementeren op het apparaat.
 

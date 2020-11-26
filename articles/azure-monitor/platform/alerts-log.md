@@ -6,18 +6,18 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 07/29/2019
 ms.subservice: alerts
-ms.openlocfilehash: 0842efe304faa9a0d94fbf71075f1bc16ff34014
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 61aba3e5792d1cc20da16686d052de91744dab76
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96018202"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186776"
 ---
 # <a name="create-view-and-manage-log-alerts-using-azure-monitor"></a>Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor
 
 ## <a name="overview"></a>Overzicht
 
-Met logboek waarschuwingen kunnen gebruikers een [log Analytics](../log-query/get-started-portal.md) query gebruiken om resources te evalueren elke ingestelde frequentie, en wordt een waarschuwing gestart op basis van de resultaten. Regels kunnen een of meer acties activeren met behulp van [actie groepen](./action-groups.md). [Meer informatie over de functionaliteit en termen van logboek waarschuwingen](alerts-unified-log.md).
+Met logboek waarschuwingen kunnen gebruikers een [log Analytics](../log-query/log-analytics-tutorial.md) query gebruiken om resources te evalueren elke ingestelde frequentie, en wordt een waarschuwing gestart op basis van de resultaten. Regels kunnen een of meer acties activeren met behulp van [actie groepen](./action-groups.md). [Meer informatie over de functionaliteit en termen van logboek waarschuwingen](alerts-unified-log.md).
 
 In dit artikel wordt beschreven hoe u logboek waarschuwingen maakt en beheert met behulp van Azure Monitor. Waarschuwings regels worden gedefinieerd door drie onderdelen:
 - Doel: een specifieke Azure-resource om te bewaken.
@@ -27,7 +27,7 @@ In dit artikel wordt beschreven hoe u logboek waarschuwingen maakt en beheert me
 U kunt ook waarschuwings regels voor logboeken maken met behulp van Azure Resource Manager sjablonen, die in [een afzonderlijk artikel](alerts-log-create-templates.md)worden beschreven.
 
 > [!NOTE]
-> Logboek gegevens van een [log Analytics-werk ruimte](../log-query/get-started-portal.md) kunnen worden verzonden naar de Azure monitor metrische gegevens opslag. Waarschuwingen voor metrische gegevens hebben een [ander gedrag](alerts-metric-overview.md), wat wenselijker is, afhankelijk van de data waarmee u werkt. Zie [metrische waarschuwingen voor logboeken](alerts-metric-logs.md)voor meer informatie over hoe en hoe u Logboeken kunt routeren naar metrische gegevens.
+> Logboek gegevens van een [log Analytics-werk ruimte](../log-query/log-analytics-tutorial.md) kunnen worden verzonden naar de Azure monitor metrische gegevens opslag. Waarschuwingen voor metrische gegevens hebben een [ander gedrag](alerts-metric-overview.md), wat wenselijker is, afhankelijk van de data waarmee u werkt. Zie [metrische waarschuwingen voor logboeken](alerts-metric-logs.md)voor meer informatie over hoe en hoe u Logboeken kunt routeren naar metrische gegevens.
 
 ## <a name="create-a-log-alert-rule-with-the-azure-portal"></a>Een waarschuwings regel voor het logboek maken met de Azure Portal
 
@@ -35,7 +35,7 @@ Hier volgen de stappen om aan de slag te gaan met het schrijven van query's voor
 
 1. Ga naar de resource waarvoor u een waarschuwing wilt ontvangen.
 1. Onder **monitor** selecteert u **Logboeken**.
-1. Voer een query uit op de logboekgegevens die het probleem kunnen aanduiden. U kunt het [onderwerp voor beelden van waarschuwings query's](../log-query/saved-queries.md) gebruiken om te begrijpen wat u kunt detecteren of [aan de slag gaat met het schrijven van uw eigen query](../log-query/get-started-portal.md). U kunt ook [leren hoe u geoptimaliseerde waarschuwingsquery's maakt](alerts-log-query.md).
+1. Voer een query uit op de logboekgegevens die het probleem kunnen aanduiden. U kunt het [onderwerp voor beelden van waarschuwings query's](../log-query/example-queries.md) gebruiken om te begrijpen wat u kunt detecteren of [aan de slag gaat met het schrijven van uw eigen query](../log-query/log-analytics-tutorial.md). U kunt ook [leren hoe u geoptimaliseerde waarschuwingsquery's maakt](alerts-log-query.md).
 1. Druk op de knop + nieuwe waarschuwings regel om de stroom voor het maken van waarschuwingen te starten.
 
     ![Log Analytics-ingestelde waarschuwing](media/alerts-log/AlertsAnalyticsCreate.png)
@@ -112,7 +112,7 @@ Hier volgen de stappen om aan de slag te gaan met het schrijven van query's voor
 
 1. Selecteer in de [Portal](https://portal.azure.com/) **monitor** en kies vervolgens **waarschuwingen**.
 
-    ![Bewaking](media/alerts-log/AlertsPreviewMenu.png)
+    ![Controleren](media/alerts-log/AlertsPreviewMenu.png)
 
 1. Selecteer **nieuwe waarschuwings regel**. 
 
@@ -327,4 +327,3 @@ Wanneer het maken is voltooid, wordt 201 geretourneerd. Als de update is voltooi
 * Maak logboek waarschuwingen met behulp van [Azure Resource Manager sjablonen](./alerts-log-create-templates.md).
 * Informatie [over webhook-acties voor logboek waarschuwingen](./alerts-log-webhook.md).
 * Meer informatie over [logboek query's](../log-query/log-query-overview.md).
-

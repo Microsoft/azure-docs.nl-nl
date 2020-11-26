@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 04/02/2020
 ms.author: sideeksh
-ms.openlocfilehash: 53c5dc4920b6c50ee3c900db9626f4d283f7b846
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 42d3c74229ab7eeec0ac716073a9e631775fd002
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89426415"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187337"
 ---
 # <a name="automatic-update-of-the-mobility-service-in-azure-to-azure-replication"></a>Automatische update van de Mobility-service in azure-naar-Azure-replicatie
 
@@ -56,20 +56,20 @@ Wanneer u replicatie voor een virtuele machine inschakelt [vanuit de VM-weer gav
 
 ### <a name="toggle-the-extension-update-settings-inside-the-vault"></a>De instellingen voor het bijwerken van de extensie in de kluis in-/uitschakelen
 
-1. Ga vanuit de Recovery Services kluis naar **Manage**  >  **site Recovery-infra structuur**beheren.
-1. Onder voor de update-instellingen **van Azure virtual machines**  >  -**extensie**  >  **kunt u site Recovery beheren**selecteren. **On**
+1. Ga vanuit de Recovery Services kluis naar **Manage**  >  **site Recovery-infra structuur** beheren.
+1. Onder voor de update-instellingen **van Azure virtual machines**  >  -**extensie**  >  **kunt u site Recovery beheren** selecteren. **On**
 
    Als u de extensie hand matig wilt beheren, selecteert u **uit**.
 
 1. Selecteer **Opslaan**.
 
-:::image type="content" source="./media/azure-to-azure-autoupdate/vault-toggle.png" alt-text="Extensie-instellingen":::
+:::image type="content" source="./media/azure-to-azure-autoupdate/vault-toggle.png" alt-text="Instellingen voor extensie-updates":::
 
 > [!IMPORTANT]
-> Wanneer u **site Recovery voor beheer toestaan**kiest, wordt de instelling toegepast op alle virtuele machines in de kluis.
+> Wanneer u **site Recovery voor beheer toestaan** kiest, wordt de instelling toegepast op alle virtuele machines in de kluis.
 
 > [!NOTE]
-> Een van beide opties waarschuwt u voor het Automation-account dat wordt gebruikt voor het beheren van updates. Als u deze functie voor de eerste keer gebruikt in een kluis, wordt standaard een nieuw Automation-account gemaakt. U kunt de instelling ook aanpassen en een bestaand Automation-account kiezen. Alle volgende keer dat de replicatie in dezelfde kluis wordt ingeschakeld, wordt het eerder gemaakte Automation-account gebruikt. Op dit moment worden in de vervolg keuzelijst alleen Automation-accounts weer geven die zich in dezelfde resource groep bevinden als de kluis.
+> Een van beide opties waarschuwt u voor het Automation-account dat wordt gebruikt voor het beheren van updates. Als u deze functie voor de eerste keer gebruikt in een kluis, wordt standaard een nieuw Automation-account gemaakt. U kunt de instelling ook aanpassen en een bestaand Automation-account kiezen. Eenmaal gedefinieerd, wordt voor alle volgende acties voor het inschakelen van replicatie in dezelfde kluis het geselecteerde Automation-account gebruikt. Op dit moment worden in de vervolg keuzelijst alleen Automation-accounts weer geven die zich in dezelfde resource groep bevinden als de kluis.
 
 > [!IMPORTANT]
 > Het volgende script moet worden uitgevoerd in de context van een Automation-account.
@@ -460,12 +460,12 @@ Write-Tracing -Level Succeeded -Message ("Modify cloud pairing completed.") -Dis
 
 1. Als er nieuwe updates zijn voor de Mobility-service die is geïnstalleerd op uw Vm's, ziet u de volgende melding: er **is een nieuwe site Recovery update voor de replicatie agent beschikbaar. Klik om te installeren.**
 
-   :::image type="content" source="./media/vmware-azure-install-mobility-service/replicated-item-notif.png" alt-text="Extensie-instellingen":::
+   :::image type="content" source="./media/vmware-azure-install-mobility-service/replicated-item-notif.png" alt-text="Venster gerepliceerde items":::
 
 1. Selecteer de melding om de pagina VM selecteren te openen.
 1. Kies de Vm's die u wilt bijwerken en selecteer vervolgens **OK**. De update Mobility-service wordt gestart voor elke geselecteerde VM.
 
-   :::image type="content" source="./media/vmware-azure-install-mobility-service/update-okpng.png" alt-text="Extensie-instellingen":::
+   :::image type="content" source="./media/vmware-azure-install-mobility-service/update-okpng.png" alt-text="VM-lijst van gerepliceerde items":::
 
 ## <a name="common-issues-and-troubleshooting"></a>Veelvoorkomende problemen en probleem oplossing
 
@@ -479,7 +479,7 @@ Als u automatische updates niet kunt inschakelen, raadpleegt u de volgende veelv
 
   Als u de meeste problemen wilt verhelpen nadat u automatische updates hebt ingeschakeld, selecteert u **herstellen**. Als de knop herstellen niet beschikbaar is, raadpleegt u het fout bericht dat wordt weer gegeven in het deel venster instellingen voor het bijwerken van de extensie.
 
-  :::image type="content" source="./media/azure-to-azure-autoupdate/repair.png" alt-text="Extensie-instellingen":::
+  :::image type="content" source="./media/azure-to-azure-autoupdate/repair.png" alt-text="Knop Site Recovery service herstellen in instellingen voor extensie-updates":::
 
 - **Fout**: het run as-account heeft geen machtiging voor toegang tot de Recovery Services-resource.
 
@@ -493,9 +493,9 @@ Als u automatische updates niet kunt inschakelen, raadpleegt u de volgende veelv
 
   Het zelfondertekende certificaat dat voor het run as-account is gemaakt, verloopt één jaar na de aanmaak datum. U kunt het certificaat op elk gewenst moment vernieuwen voordat het verloopt. Als u zich hebt geregistreerd voor e-mail meldingen, ontvangt u ook e-mails wanneer een actie is vereist aan uw zijde. Deze fout wordt weer gegeven twee maanden vóór de verval datum en wordt gewijzigd in een kritieke fout als het certificaat is verlopen. Zodra het certificaat is verlopen, werkt automatisch bijwerken pas nadat u dit hebt vernieuwd.
 
-  **Aanbevolen actie**: Selecteer **herstellen** en vervolgens **certificaat vernieuwen**om dit probleem op te lossen.
+  **Aanbevolen actie**: Selecteer **herstellen** en vervolgens **certificaat vernieuwen** om dit probleem op te lossen.
 
-  :::image type="content" source="./media/azure-to-azure-autoupdate/automation-account-renew-runas-certificate.PNG" alt-text="Extensie-instellingen":::
+  :::image type="content" source="./media/azure-to-azure-autoupdate/automation-account-renew-runas-certificate.PNG" alt-text="renew-CERT":::
 
   > [!NOTE]
   > Nadat u het certificaat hebt vernieuwd, vernieuwt u de pagina om de huidige status weer te geven.

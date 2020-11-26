@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/20/2020
 ms.author: memildin
-ms.openlocfilehash: 372ff1dc53f15a1338cad933fec64746b6736f40
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 5645a2e0449a1929421f9444bf645f08ad0525e9
+ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92368079"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96296808"
 ---
 # <a name="protect-your-endpoints-with-security-centers-integrated-edr-solution-microsoft-defender-for-endpoint"></a>Bescherm uw eind punten met de geïntegreerde EDR-oplossing van Security Center: micro soft Defender voor eind punt
 
@@ -42,10 +42,10 @@ Micro soft Defender voor eind punt is een holistische, Cloud geleverde endpoint-
 |---------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Releasestatus:                  | Algemeen verkrijgbaar (GA)                                                                                                                                                                                                                                                                                      |
 | Prijzen:                        | [Azure Defender voor servers](security-center-pricing.md) is vereist                                                                                                                                                                                                                                             |
-| Ondersteunde platformen:            | ![Ja](./media/icons/yes-icon.png) Azure-machines met Windows<br>![Ja](./media/icons/yes-icon.png) Azure-Arc-machines met Windows|
+| Ondersteunde platformen:            | ![Yes](./media/icons/yes-icon.png) Azure-machines met Windows<br>![Yes](./media/icons/yes-icon.png) Azure-Arc-machines met Windows|
 | Ondersteunde versies van Windows:  | Defender voor eind punt is ingebouwd in Windows 10 1703 (en nieuwer) en Windows Server 2019.<br>Security Center ondersteunt detectie in Windows Server 2016, 2012 R2 en 2008 R2 SP1.<br>Server eindpunt bewaking met deze integratie is uitgeschakeld voor Office 365 GCC-klanten. |
-| Vereiste rollen en machtigingen: | De integratie: **beveiligings beheerder** of **eigenaar** inschakelen/uitschakelen<br>MDATP-waarschuwingen weer geven in Security Center: **beveiligings lezer**, **lezer**, **Inzender voor resource groep**, **eigenaar van resource groep**, **beveiligings beheerder**, **abonnements eigenaar**of **mede werker** van het abonnement                         |
-| Clouds:                         | ![Ja](./media/icons/yes-icon.png) Commerciële Clouds.<br>![Nee](./media/icons/no-icon.png) GCC-klanten die werk belastingen uitvoeren in wereld wijde Azure-Clouds<br>![Ja](./media/icons/yes-icon.png) US Gov<br>![Nee](./media/icons/no-icon.png) China Gov, Other Gov                                                        |
+| Vereiste rollen en machtigingen: | De integratie: **beveiligings beheerder** of **eigenaar** inschakelen/uitschakelen<br>MDATP-waarschuwingen weer geven in Security Center: **beveiligings lezer**, **lezer**, **Inzender voor resource groep**, **eigenaar van resource groep**, **beveiligings beheerder**, **abonnements eigenaar** of **mede werker** van het abonnement                         |
+| Clouds:                         | ![Ja](./media/icons/yes-icon.png) Commerciële Clouds.<br>![No](./media/icons/no-icon.png) GCC-klanten die werk belastingen uitvoeren in wereld wijde Azure-Clouds<br>![Ja](./media/icons/yes-icon.png) US Gov<br>![Nee](./media/icons/no-icon.png) China Gov, Other Gov                                                        |
 |                                 |                                                                                                                                                                                                                                                                                                               |
 
 
@@ -61,7 +61,7 @@ Micro soft Defender voor eind punt biedt:
 
 Door Defender voor het eind punt met Security Center te integreren, profiteert u van de volgende aanvullende mogelijkheden:
 
-- **Automatische onboarding**. Security Center schakelt automatisch de micro soft Defender for Endpoint-sensor in voor alle Windows-servers die worden bewaakt door Security Center (tenzij Windows Server 2019 wordt uitgevoerd).
+- **Automatische onboarding**. Security Center schakelt automatisch de micro soft Defender for Endpoint-sensor in voor alle Windows-servers die worden bewaakt door Security Center. Behalve voor computers met Windows Server 2019, die moeten worden uitgevoerd via lokaal script, groepsbeleid object (GPO) of [micro soft Endpoint Configuration Manager](https://docs.microsoft.com/mem/configmgr/) (voorheen SCCM).
 
 - **Eén venster glas**. In de Security Center-console worden micro soft Defender voor eindpunt waarschuwingen weer gegeven. Als u verder wilt onderzoeken, gebruikt u de eigen Portal pagina's van micro soft Defender voor het eind punt waar u aanvullende informatie ziet, zoals de structuur van het waarschuwings proces en de incidenten grafiek. U kunt ook een gedetailleerde computer tijdlijn bekijken waarin elk gedrag wordt weer gegeven voor een historische periode van Maxi maal zes maanden.
 
@@ -76,7 +76,7 @@ Nadat u de locatie hebt geconfigureerd, kunt u deze niet meer wijzigen. Als u uw
 
 ## <a name="enabling-the-microsoft-defender-for-endpoint-integration"></a>De integratie van micro soft Defender voor endpoint inschakelen
 
-1. Schakel **Azure Defender voor servers**in. Zie de [prijzen van Azure Security Center](security-center-pricing.md#enable-azure-defender).
+1. Schakel **Azure Defender voor servers** in. Zie de [prijzen van Azure Security Center](security-center-pricing.md#enable-azure-defender).
 
     > [!NOTE]
     > Volg de instructies in [Quick Start: Hybrid machine Connect with Azure Arc enabled servers](../azure-arc/servers/learn/quick-enable-hybrid-vm.md)om uw Azure Arc-machines te beveiligen.
@@ -85,9 +85,9 @@ Nadat u de locatie hebt geconfigureerd, kunt u deze niet meer wijzigen. Als u uw
 1. Selecteer **Prijzen en instellingen** in het hoofdmenu van Security Center.
 1. Selecteer het abonnement dat u wilt wijzigen.
 1. Selecteer **Detectie van dreigingen**.
-1. Selecteer **micro soft Defender voor eind punt toestaan om toegang te krijgen tot mijn gegevens**en selecteer **Opslaan**.
+1. Selecteer **micro soft Defender voor eind punt toestaan om toegang te krijgen tot mijn gegevens** en selecteer **Opslaan**.
 
-    :::image type="content" source="./media/security-center-wdatp/enable-integration-with-edr.png" alt-text="De eigen Security Center van micro soft Defender voor het eind punt":::
+    :::image type="content" source="./media/security-center-wdatp/enable-integration-with-edr.png" alt-text="De integratie tussen Azure Security Center en de EDR-oplossing van micro soft inschakelen, micro soft Defender voor eind punt":::
 
     Azure Security Center worden uw servers automatisch op micro soft Defender voor eind punten geboardd. Het kan tot 24 uur duren voordat de onboarding is uitgevoerd.
 
@@ -112,7 +112,7 @@ Een goed aardige micro soft Defender for Endpoint-test waarschuwing genereren:
     ```powershell
     powershell.exe -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden (New-Object System.Net.WebClient).DownloadFile('http://127.0.0.1/1.exe', 'C:\\test-MDATP-test\\invoice.exe'); Start-Process 'C:\\test-MDATP-test\\invoice.exe'
     ```
-    :::image type="content" source="./media/security-center-wdatp/generate-edr-alert.png" alt-text="De eigen Security Center van micro soft Defender voor het eind punt":::
+    :::image type="content" source="./media/security-center-wdatp/generate-edr-alert.png" alt-text="Een opdracht prompt venster met de opdracht om een test waarschuwing te genereren.":::
 
 1. Als de opdracht is geslaagd, ziet u een nieuwe waarschuwing in het dash board Azure Security Center en in de portal van micro soft Defender voor eind punt. Het kan enkele minuten duren voordat deze waarschuwing wordt weer gegeven.
 1. Als u de waarschuwing in Security Center wilt bekijken, gaat u naar **beveiligings waarschuwingen**  >  **verdachte Power shell**-opdracht regel.

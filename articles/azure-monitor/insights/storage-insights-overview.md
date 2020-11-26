@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: mrbullwinkle
 ms.author: mbullwin
 ms.date: 05/11/2020
-ms.openlocfilehash: 250a06d81f929d0e3d3befa1e7494db13044fc97
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 2538bc91be59ff12b39ee3f5f629e4c016480a97
+ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93101269"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96296332"
 ---
 # <a name="monitoring-your-storage-service-with-azure-monitor-for-storage"></a>Uw opslag service controleren met Azure Monitor voor opslag
 
@@ -36,9 +36,6 @@ Voor deze functie hoeft u niets in te scha kelen of te configureren. de metrisch
 >[!NOTE]
 >Er zijn geen kosten verbonden aan het verkrijgen van toegang tot deze functie en er worden alleen kosten in rekening gebracht voor de Azure Monitor essentiële functies die u configureert of inschakelt, zoals wordt beschreven op de pagina met [Azure monitor prijs informatie](https://azure.microsoft.com/pricing/details/monitor/) .
 
->[!NOTE]
->Azure Monitor voor opslag biedt geen ondersteuning voor [algemene v1-accounts](../../storage/common/storage-account-overview.md#general-purpose-v1-accounts).
->
 
 ## <a name="view-from-azure-monitor"></a>Weer geven van Azure Monitor
 
@@ -46,9 +43,9 @@ Vanuit Azure Monitor kunt u de trans actie-, latentie-en capaciteits gegevens va
 
 Voer de volgende stappen uit om het gebruik en de beschik baarheid van uw opslag accounts in al uw abonnementen weer te geven.
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
-2. Selecteer **monitor** in het linkerdeel venster in het Azure Portal en selecteer in de sectie **insightss** de optie **opslag accounts** .
+2. Selecteer **monitor** in het linkerdeel venster in het Azure Portal en selecteer in de sectie **insightss** de optie **opslag accounts**.
 
     ![Weer gave meerdere opslag accounts](./media/storage-insights-overview/multiple-storage-accounts-view-01.png)
 
@@ -64,10 +61,10 @@ In de **overzichts** werkmap voor het geselecteerde abonnement worden in de tabe
 
 De tegel item in de vervolg keuzelijst bevat een samen telling van het totale aantal opslag accounts in het abonnement en geeft aan hoeveel van het totaal wordt geselecteerd. Er zijn voorwaardelijke kleurcoderings-of Heatmaps voor kolommen in de werkmap die de metrische gegevens over de trans actie of fouten rapporteren. De diepste kleur heeft de hoogste waarde en een lichtere kleur op basis van de laagste waarden. Voor de kolommen op basis van fouten is de waarde rood en voor de kolommen op basis van metrische gegevens de waarde blauw.
 
-Selecteer een waarde in de kolommen **Beschik baarheid** , **E2E latentie** , **Server latentie** en **transactie fout type/fouten** stuurt u een rapport dat is afgestemd op het specifieke type metrische opslag gegevens dat overeenkomt met de geselecteerde kolom voor dat opslag account. Zie de sectie [gedetailleerde opslag werkmappen](#detailed-storage-workbooks) hieronder voor meer informatie over de werkmappen voor elke categorie. 
+Selecteer een waarde in de kolommen **Beschik baarheid**, **E2E latentie**, **Server latentie** en **transactie fout type/fouten** stuurt u een rapport dat is afgestemd op het specifieke type metrische opslag gegevens dat overeenkomt met de geselecteerde kolom voor dat opslag account. Zie de sectie [gedetailleerde opslag werkmappen](#detailed-storage-workbooks) hieronder voor meer informatie over de werkmappen voor elke categorie. 
 
 >[!NOTE]
->Zie het [schema antwoord type](../../storage/blobs/monitor-blob-storage-reference.md#metrics-dimensions) en zoek naar antwoord typen zoals **ServerOtherError** , **ClientOtherError** , **ClientThrottlingError** voor meer informatie over welke fouten in het rapport kunnen worden weer gegeven. Afhankelijk van de geselecteerde opslag accounts, worden alle andere fouten weer gegeven onder de **andere** categorie als er meer dan drie typen fouten worden gerapporteerd.
+>Zie het [schema antwoord type](../../storage/blobs/monitor-blob-storage-reference.md#metrics-dimensions) en zoek naar antwoord typen zoals **ServerOtherError**, **ClientOtherError**, **ClientThrottlingError** voor meer informatie over welke fouten in het rapport kunnen worden weer gegeven. Afhankelijk van de geselecteerde opslag accounts, worden alle andere fouten weer gegeven onder de **andere** categorie als er meer dan drie typen fouten worden gerapporteerd.
 
 De standaard drempelwaarde voor **Beschik baarheid** is:
 
@@ -104,13 +101,13 @@ Op de **overzichts** werkmap voor het opslag account worden diverse metrische ge
 
 * Tegels voor metrische gegevens en status markering Beschik baarheid van de service, het totale aantal trans acties voor de opslag service, E2E latentie en latentie van de server.
 
-Als u een van de knoppen voor **fouten** , **prestaties** , **Beschik baarheid** en **capaciteit** selecteert, wordt de betreffende werkmap geopend. 
+Als u een van de knoppen voor **fouten**, **prestaties**, **Beschik baarheid** en **capaciteit** selecteert, wordt de betreffende werkmap geopend. 
 
 ![Overzichts pagina voor de geselecteerde opslag account](./media/storage-insights-overview/storage-account-capacity-01.png)
 
 ## <a name="detailed-storage-workbooks"></a>Gedetailleerde opslag werkmappen
 
-Hiermee wordt aangegeven of u een waarde hebt geselecteerd in de kolommen **Beschik baarheid** , **E2E latentie** , **Server latentie** en **transactie fout type/fouten** van **de werkmap met** meerdere opslag accounts, of dat u een van de knoppen voor **fouten** , **prestaties** , **Beschik baarheid** en **capaciteit** van de **overzichts** werkmap kunt selecteren op basis van een specifiek opslag account, waarbij elk een set interactieve gegevens met betrekking tot de opslag levert die  
+Hiermee wordt aangegeven of u een waarde hebt geselecteerd in de kolommen **Beschik baarheid**, **E2E latentie**, **Server latentie** en **transactie fout type/fouten** van **de werkmap met** meerdere opslag accounts, of dat u een van de knoppen voor **fouten**, **prestaties**, **Beschik baarheid** en **capaciteit** van de **overzichts** werkmap kunt selecteren op basis van een specifiek opslag account, waarbij elk een set interactieve gegevens met betrekking tot de opslag levert die  
 
 * Met **Beschik baarheid** wordt de **beschikbaarheids** werkmap geopend. Hier ziet u de huidige status van Azure Storage service, een tabel met de beschik bare status van elk object dat is gecategoriseerd door de gegevens service die is gedefinieerd in het opslag account met een trend lijn die het geselecteerde tijds bereik vertegenwoordigt, en een diagram met beschikbaarheids trend voor elke gegevens service in het account.  
 
@@ -120,7 +117,7 @@ Hiermee wordt aangegeven of u een waarde hebt geselecteerd in de kolommen **Besc
 
     ![Voor beeld van prestatie rapport](./media/storage-insights-overview/storage-account-performance-01.png)
 
-* Als u een van de fout categorieën in het raster selecteert, wordt de werkmap met **fouten** geopend. In het rapport worden metrische tegels van alle andere client-side-fouten weer gegeven, met uitzonde ring van beschreven en geslaagde aanvragen, client-bandbreedte fouten, een prestatie diagram voor het type trans actie- **antwoord** dat specifiek is voor het kenmerk ClientOtherError en twee tabellen- **trans acties op API-naam** en **trans acties per antwoord type** .
+* Als u een van de fout categorieën in het raster selecteert, wordt de werkmap met **fouten** geopend. In het rapport worden metrische tegels van alle andere client-side-fouten weer gegeven, met uitzonde ring van beschreven en geslaagde aanvragen, client-bandbreedte fouten, een prestatie diagram voor het type trans actie- **antwoord** dat specifiek is voor het kenmerk ClientOtherError en twee tabellen- **trans acties op API-naam** en **trans acties per antwoord type**.
 
    ![Voor beeld van fouten rapport](./media/storage-insights-overview/storage-account-failures-01.png)
 
@@ -174,7 +171,7 @@ In ons voor beeld werken we met de werkmap voor meerdere abonnementen en opslag 
 * Een metriek verwijderen
 * Kleur weergave wijzigen
 
-U kunt dezelfde wijzigingen uitvoeren op een van de vooraf gebouwde **fouten** , **prestaties** , **Beschik baarheid** en **capaciteits** werkmappen.
+U kunt dezelfde wijzigingen uitvoeren op een van de vooraf gebouwde **fouten**, **prestaties**, **Beschik baarheid** en **capaciteits** werkmappen.
 
 1. Selecteer **monitor** in de portal en selecteer vervolgens **opslag accounts** in het linkerdeel venster.
 
@@ -182,7 +179,7 @@ U kunt dezelfde wijzigingen uitvoeren op een van de vooraf gebouwde **fouten** ,
 
     ![Selecteer Bewerken om een werkmap te wijzigen](./media/storage-insights-overview/workbook-edit-workbook.png)
 
-3. Selecteer in het gedeelte metrische gegevens de optie **bewerken** .
+3. Selecteer in het gedeelte metrische gegevens de optie **bewerken**.
 
     ![Selecteer Bewerken om de metrische gegevens van de capaciteits werkmap te wijzigen](./media/storage-insights-overview/edit-metrics-capacity-workbook-01.png)
 
@@ -190,7 +187,7 @@ U kunt dezelfde wijzigingen uitvoeren op een van de vooraf gebouwde **fouten** ,
 
     ![Kolom instellingen bewerken](./media/storage-insights-overview/edit-capacity-workbook-resource-grid.png)
 
-5. Selecteer in het deel venster **kolom instellingen bewerken** onder het **Columns** gedeelte kolommen **micro soft. Storage/Storage accounts-capacity-UsedCapacity Timeline $ | Gebruikte capaciteit tijd lijn voor account $** , en onder de vervolg keuzelijst **kolom renderer** selecteert **verborgen** .
+5. Selecteer in het deel venster **kolom instellingen bewerken** onder het **Columns** gedeelte kolommen **micro soft. Storage/Storage accounts-capacity-UsedCapacity Timeline $ | Gebruikte capaciteit tijd lijn voor account $**, en onder de vervolg keuzelijst **kolom renderer** selecteert **verborgen**.
 
 6. Selecteer **opslaan en sluiten** om de wijziging door te voeren.
 
@@ -198,7 +195,7 @@ We gaan nu het kleuren thema wijzigen voor de metrische gegevens over capaciteit
 
 1. Selecteer **kolom instellingen** in het raster metrische gegevens.
 
-2. Selecteer in het deel venster **kolom instellingen bewerken** onder het **Columns** gedeelte kolommen **micro soft. Storage/Storage accounts-capacity-UsedCapacity $ micro soft. Storage/ `|` Storage accounts/blobservices-capacity-BlobCapacity $ `|` micro soft. Storage/Storage accounts/fileservices-capacity `|` `|`** -FileCapacity $ micro soft. Storage/Storage accounts/queueservices-capacity-QueueCapacity $ micro soft. Storage/Storage accounts/tableservices-capacity-TableCapacity $. Selecteer **groen** onder het **kleuren palet** vervolg keuzelijst.
+2. Selecteer in het deel venster **kolom instellingen bewerken** onder het **Columns** gedeelte kolommen **micro soft. Storage/Storage accounts-capacity-UsedCapacity $ micro soft. Storage/ `|` Storage accounts/blobservices-capacity-BlobCapacity $ `|` micro soft. Storage/Storage accounts/fileservices-capacity `|` `|`**-FileCapacity $ micro soft. Storage/Storage accounts/queueservices-capacity-QueueCapacity $ micro soft. Storage/Storage accounts/tableservices-capacity-TableCapacity $. Selecteer **groen** onder het **kleuren palet** vervolg keuzelijst.
 
 3. Selecteer **opslaan en sluiten** om de wijziging door te voeren.
 
@@ -214,13 +211,13 @@ In dit voor beeld werken we met de werkmap capaciteit van opslag account en late
 
 3. Selecteer in de werkmap **Beschik baarheid** om over te scha kelen naar de beschikbaarheids werkmap en selecteer vervolgens **bewerken** in de opdracht balk. 
 
-4. Ga naar de onderkant van de pagina en klik aan de linkerkant naast het raster **Beschik baarheid per API** op **bewerken** .
+4. Ga naar de onderkant van de pagina en klik aan de linkerkant naast het raster **Beschik baarheid per API** op **bewerken**.
 
     ![Raster instellingen beschik baarheid bewerken per API-naam](./media/storage-insights-overview/availability-workbook-avail-by-apiname.png)
 
-5. Selecteer **kolom instellingen** en selecteer in het deel venster **kolom instellingen bewerken** onder het gedeelte **kolommen** de optie **Beschik baarheid (%) (Drempel waarden + notatie)** .
+5. Selecteer **kolom instellingen** en selecteer in het deel venster **kolom instellingen bewerken** onder het gedeelte **kolommen** de optie **Beschik baarheid (%) (Drempel waarden + notatie)**.
 
-6. Wijzig de waarde voor de **kritieke** status van **90** in **85** en klik vervolgens op **opslaan en sluiten** .
+6. Wijzig de waarde voor de **kritieke** status van **90** in **85** en klik vervolgens op **opslaan en sluiten**.
 
     ![Wijzig de drempel waarde voor Beschik baarheid voor kritieke status](./media/storage-insights-overview/edit-column-settings-capacity-workbook-01.png)
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: liud
 ms.reviewer: pimorano
-ms.openlocfilehash: a5cb5831090987f1b620593843ddba817d8e68d4
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 111b2b5b660133c20afdb3c56e1c3e3ed607398c
+ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/26/2020
-ms.locfileid: "96188119"
+ms.locfileid: "96297001"
 ---
 # <a name="source-control-in-azure-synapse-studio"></a>Broncode beheer in azure Synapse Studio
 
@@ -30,17 +30,17 @@ Met Synapse Studio kunt u uw werk ruimte koppelen aan een Git-opslag plaats, Azu
 
 ## <a name="configure-git-repository-in-synapse-studio"></a>Git-opslag plaats configureren in Synapse Studio 
 
-Nadat u uw Synapse Studio hebt gestart, kunt u de Git-opslag plaats in de werk ruimte configureren. Een Synapse studio-werk ruimte kan slechts aan één Git-opslag plaats tegelijk worden gekoppeld. 
+Nadat u uw Synapse Studio hebt gestart, kunt u een Git-opslag plaats in uw werk ruimte configureren. Een Synapse studio-werk ruimte kan slechts worden gekoppeld aan één Git-opslag plaats. 
 
-### <a name="configuration-method-1-authoring-canvas"></a>Configuratie methode 1: canvas ontwerpen
+### <a name="configuration-method-1-global-bar"></a>Configuratie methode 1: algemene balk
 
-Selecteer in het ontwerp doek van Synapse Studio de vervolg keuzelijst **Synapse Live** en selecteer vervolgens **code opslagplaats instellen**.
+Selecteer in de Synapse Studio Global-balk de vervolg keuzelijst **Synapse Live** en selecteer vervolgens **code opslagplaats instellen**.
 
 ![De instellingen van de code opslagplaats configureren vanuit ontwerpen](media/configure-repo-1.png)
 
 ### <a name="configuration-method-2-manage-hub"></a>Configuratie methode 2: hub beheren
 
-Ga naar de Management hub van Synapse Studio. Selecteer **Git-configuratie** in de sectie **bron beheer** . Als u geen opslag plaats hebt verbonden, klikt u op **configureren**.
+Ga naar de Managed hub van Synapse Studio. Selecteer **Git-configuratie** in de sectie **bron beheer** . Als u geen opslag plaats hebt verbonden, klikt u op **configureren**.
 
 ![De instellingen van de code opslagplaats van de Management hub configureren](media/configure-repo-2.png)
 
@@ -51,11 +51,11 @@ U kunt verbinding maken met een Azure DevOps-of GitHub Git-opslag plaats in uw w
 
 ## <a name="connect-with-azure-devops-git"></a>Verbinding maken met Azure DevOps git 
 
-U kunt een Synapse-werk ruimte koppelen aan een Azure DevOps-opslag plaats voor broncode beheer, samen werking, versies, enzovoort. Als u geen Azure DevOps-opslag plaats hebt, volgt u [deze instructies](/azure/devops/organizations/accounts/create-organization-msa-or-work-student) om eerst uw opslagplaats resources te maken.
+U kunt een Synapse-werk ruimte koppelen aan een Azure DevOps-opslag plaats voor broncode beheer, samen werking, versies, enzovoort. Als u geen Azure DevOps-opslag plaats hebt, volgt u [deze instructies](/azure/devops/organizations/accounts/create-organization-msa-or-work-student) voor het maken van uw opslag plaats-resources.
 
 ### <a name="azure-devops-git-repository-settings"></a>Instellingen voor Azure DevOps Git-opslag plaats
 
-Wanneer u verbinding maakt met uw Git-opslag plaats, selecteert u eerst uw opslagplaats als Azure DevOps Git en selecteert u vervolgens een Azure AD-Tenant uit vervolg keuzelijst en klikt u op **door gaan**.
+Wanneer u verbinding maakt met uw Git-opslag plaats, selecteert u eerst uw opslagplaats type als Azure DevOps Git en selecteert u vervolgens een Azure AD-Tenant in de vervolg keuzelijst en klikt u op **door gaan**.
 
 ![De instellingen voor de code opslagplaats configureren](media/connect-with-azuredevops-repo-selected.png)
 
@@ -94,7 +94,7 @@ Als u een persoonlijk Microsoft-account wilt gebruiken voor git-integratie, kunt
 
 Na deze configuratie stappen is uw persoonlijke opslag plaats beschikbaar wanneer u Git-integratie instelt in de Synapse Studio.
 
-Zie [uw Azure DevOps-organisatie verbinden met Azure Active Directory](/azure/devops/organizations/accounts/connect-organization-to-azure-ad)voor meer informatie over het verbinden van Azure opslag plaatsen met de Active Directory van uw organisatie.
+Zie [verbinding maken tussen uw organisatie en Azure Active Directory](/azure/devops/organizations/accounts/connect-organization-to-azure-ad)voor meer informatie over het verbinden van Azure opslag plaatsen met de Active Directory van uw organisatie.
 
 ## <a name="connect-with-github"></a>Verbinding maken met GitHub 
 

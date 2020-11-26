@@ -7,12 +7,12 @@ ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 11/17/2020
 ms.author: lle
-ms.openlocfilehash: 93c35828444ec93a974769ed3a2f1981c0ec4368
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 8195c4d072acce5345fa9752f97713aed22d962f
+ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96013443"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96296951"
 ---
 # <a name="troubleshoot-self-hosted-integration-runtime"></a>Problemen met zelf-hostende Integration runtime oplossen
 
@@ -459,6 +459,22 @@ Voor en na de conversie:
 
 ![Nadat het certificaat is gewijzigd](media/self-hosted-integration-runtime-troubleshoot-guide/after-certificate-change.png)
 
+### <a name="self-hosted-integration-runtime-version-5x"></a>Zelf-hostende Integration Runtime versie 5. x
+Voor de upgrade naar versie 5. x van Azure Data Factory zelf-hostende Integration runtime vereisen we **.NET Framework runtime 4.7.2** of hoger. De download pagina bevat koppelingen naar de nieuwste versie van 4. x en de nieuwste twee 5. x-versies. 
+
+
+Voor klanten van ADF v2:
+- Als automatische updates is ingeschakeld en u uw .NET Framework-runtime al hebt bijgewerkt naar 4.7.2 of hoger, wordt de zelf-hostende Integration runtime automatisch bijgewerkt naar de nieuwste versie van 5. x.
+- Als automatische updates is ingeschakeld en u uw .NET Framework-runtime niet hebt bijgewerkt naar 4.7.2 of hoger, wordt de zelf-hostende Integration runtime niet automatisch bijgewerkt naar de nieuwste versie van 5. x. De zelf-hostende Integration runtime blijft aanwezig in de huidige 4. x-versie. U kunt een waarschuwing voor de upgrade van .NET Framework runtime bekijken in de portal en zelf-hostende Integration runtime-client.
+- Als automatische updates is uitgeschakeld en u uw .NET Framework-runtime al hebt bijgewerkt naar 4.7.2 of hoger, kunt u de nieuwste 5. x hand matig downloaden en installeren op uw computer.
+- Als automatische updates is uitgeschakeld en u uw .NET Framework-runtime niet hebt bijgewerkt naar 4.7.2 of hoger. Wanneer u probeert SHIR 5. x hand matig te installeren en de sleutel te registreren, moet u eerst uw .NET Framework-runtime bijwerken.
+
+
+Voor klanten van ADF v1:
+- Zelf-hostende Integration runtime 5. X biedt geen ondersteuning voor ADF v1.
+- Voor de zelf-hostende Integration runtime wordt automatisch een upgrade uitgevoerd naar de nieuwste versie van 4. x. En de laatste versie van 4. x zal niet verlopen. 
+- Als u de zelf-hostende Integration runtime 5. x hand matig wilt installeren en de sleutel wilt registreren, geeft u aan dat zelf-hostende Integration runtime 5. x geen ondersteuning biedt voor v1.
+
 
 ## <a name="self-hosted-ir-connectivity-issues"></a>Zelf-hostende IR-verbindings problemen
 
@@ -757,6 +773,7 @@ U kunt andere gegevens fabrieken (op verschillende tenants) zien tijdens het del
 #### <a name="cause"></a>Oorzaak
 
 De zelf-hostende IR kan geen gedeelde cross-tenants zijn.
+
 
 
 ## <a name="next-steps"></a>Volgende stappen

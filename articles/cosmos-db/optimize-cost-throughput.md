@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 02/07/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 76f4f9ddaa1e4aec9409e96a0088ec51b8c2645e
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 86de3e1199b00dff4e03f3b4292f86e6c19ea491
+ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93097461"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96296536"
 ---
 # <a name="optimize-provisioned-throughput-cost-in-azure-cosmos-db"></a>Kosten voor ingerichte doorvoer optimaliseren in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -31,7 +31,7 @@ U kunt doorvoer inrichten in databases of containers, en elke strategie kan help
 
 Hier volgen enkele richt lijnen voor het kiezen van een ingerichte doorvoer strategie:
 
-**Overweeg de door Voer in te richten op een Azure Cosmos-data base (met een set containers) als** :
+**Overweeg de door Voer in te richten op een Azure Cosmos-data base (met een set containers) als**:
 
 1. U hebt een aantal dozijn Azure Cosmos-containers en u kunt door Voer voor een aantal of alle daarvan delen. 
 
@@ -137,7 +137,7 @@ Omdat u de ingerichte door Voer hebt gefactureerd, kunt u met de ingerichte door
 
 U kunt de volgende stappen gebruiken om de ingerichte door Voer voor een nieuwe workload te bepalen: 
 
-1. Voer een initiële, ruwe evaluatie uit met behulp van de capaciteits planner en pas uw schattingen aan met behulp van de Azure Cosmos Explorer in de Azure Portal. 
+1. Voer een initiële, ruwe evaluatie uit met behulp van de capaciteits planner en pas uw schattingen aan met behulp van de Azure Cosmos DB Explorer in de Azure Portal. 
 
 2. Het is raadzaam om de containers met een hogere door voer te maken dan verwacht en vervolgens naar behoefte te schalen. 
 

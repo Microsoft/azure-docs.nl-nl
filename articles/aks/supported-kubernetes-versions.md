@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 09/08/2020
 author: palma21
 ms.author: jpalma
-ms.openlocfilehash: 649f02097a18a141d186434a91539563c64e72ba
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: ecea9dcd28aede92ef255bf002b9195ded43c68b
+ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93042121"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96296111"
 ---
 # <a name="supported-kubernetes-versions-in-azure-kubernetes-service-aks"></a>Ondersteunde Kubernetes-versies in AKS (Azure Kubernetes Service)
 
@@ -95,7 +95,7 @@ New Supported Version List
 
 U kunt één secundaire oudere versie gebruiken `kubectl` die relatief is ten opzichte van uw *uitvoeren-apiserver-* versie, die consistent is met het [Kubernetes-ondersteunings beleid voor kubectl](https://kubernetes.io/docs/setup/release/version-skew-policy/#kubectl).
 
-Als uw *uitvoeren-apiserver* bijvoorbeeld *1,17* is, kunt u versie *1,16* gebruiken tot *1,18* van `kubectl` die *uitvoeren-apiserver* .
+Als uw *uitvoeren-apiserver* bijvoorbeeld *1,17* is, kunt u versie *1,16* gebruiken tot *1,18* van `kubectl` die *uitvoeren-apiserver*.
 
 Voer uit om de versie van te installeren of bij te werken `kubectl` `az aks install-cli` .
 
@@ -106,6 +106,9 @@ U kunt naar aanstaande release-en afschaffing-versies van de [AKS-Kubernetes](#a
 Voor nieuwe **secundaire** versies van Kubernetes
 1. AKS publiceert een pre-aankondiging met de geplande datum van de release van een nieuwe versie en de definitieve afschaffing van een oude versie in de opmerkingen bij de [AKS-release](https://aka.ms/aks/releasenotes) ten minste 30 dagen vóór de verwijdering.
 2. AKS publiceert een [service status melding](../service-health/service-health-overview.md) die beschikbaar is voor alle gebruikers met toegang tot AKS en Portal en stuurt een e-mail naar de abonnements beheerders met de geplande versie van de verwijderings datum.
+````
+To find out who is your subscription administrators or to change it, please refer to [manage Azure subscriptions](https://docs.microsoft.com/azure/cost-management-billing/manage/add-change-subscription-administrator#assign-a-subscription-administrator).
+````
 3. Gebruikers beschikken over **30 dagen** vanaf het verwijderen van de versie om een upgrade naar een ondersteunde versie van de secundaire release te kunnen blijven ontvangen.
 
 Voor nieuwe **patch** versies van Kubernetes
@@ -121,7 +124,7 @@ Specifieke patch releases kunnen worden overgeslagen of de implementatie wordt v
 
 ## <a name="azure-portal-and-cli-versions"></a>Azure Portal-en CLI-versies
 
-Wanneer u een AKS-cluster implementeert in de portal of met de Azure CLI, wordt het cluster standaard gedistribueerd naar de N-1-secundaire versie en de meest recente patch. Als AKS bijvoorbeeld *1.17. a* , *1.17. b* , *1.16. c* , *1.16. d* , *1.15. e* en *1.15. f* ondersteunt, is de geselecteerde standaard versie *1.16. c* .
+Wanneer u een AKS-cluster implementeert in de portal of met de Azure CLI, wordt het cluster standaard gedistribueerd naar de N-1-secundaire versie en de meest recente patch. Als AKS bijvoorbeeld *1.17. a*, *1.17. b*, *1.16. c*, *1.16. d*, *1.15. e* en *1.15. f* ondersteunt, is de geselecteerde standaard versie *1.16. c*.
 
 Gebruik de opdracht [AZ AKS Get-verse][az-aks-get-versions] voor meer informatie over welke versies momenteel beschikbaar zijn voor uw abonnement en regio. In het volgende voor beeld ziet u een lijst met de beschik bare Kubernetes-versies voor de regio *oostus* :
 
@@ -179,7 +182,7 @@ Het besturings vlak moet zich in een venster met versies van alle knooppunt groe
 
 Wanneer u een ondersteund AKS-cluster bijwerkt, kunnen secundaire versies van Kubernetes niet worden overgeslagen. Bijvoorbeeld: upgrades tussen *1.12. x*  ->  *1.13. x* of *1.13. x*  ->  *1.14. x* zijn toegestaan, maar *1.12. x*  ->  *1.14. x* is niet.
 
-Als u een upgrade wilt uitvoeren, van *1.12. x*  ->  *1.14. x* , moet u eerst een upgrade uitvoeren van *1.12. x*  ->  *1.13. x* en vervolgens een upgrade uitvoeren van *1.13. x*  ->  *1.14. x* .
+Als u een upgrade wilt uitvoeren, van *1.12. x*  ->  *1.14. x*, moet u eerst een upgrade uitvoeren van *1.12. x*  ->  *1.13. x* en vervolgens een upgrade uitvoeren van *1.13. x*  ->  *1.14. x*.
 
 Het overs laan van meerdere versies kan alleen worden uitgevoerd wanneer u een upgrade uitvoert van een niet-ondersteunde versie terug naar een ondersteunde versie. U kunt bijvoorbeeld een upgrade uitvoeren van een niet-ondersteund *1,10. x* --> een ondersteunde *1.15. x* kan worden voltooid.
 

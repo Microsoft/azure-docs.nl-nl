@@ -3,12 +3,12 @@ title: Over SAP HANA back-up van de data base in azure Vm's
 description: In dit artikel vindt u informatie over het maken van back-ups van SAP HANA-data bases die worden uitgevoerd op virtuele machines van Azure.
 ms.topic: conceptual
 ms.date: 12/11/2019
-ms.openlocfilehash: e30510817401fd8db23dc9f1d62fab495fac7ab2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: efb9c3f786e429df404e261f053a9c9a9b032e11
+ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89022306"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96296451"
 ---
 # <a name="about-sap-hana-database-backup-in-azure-vms"></a>Over SAP HANA back-up van de data base in azure Vm's
 
@@ -60,15 +60,12 @@ Naast het gebruik van de SAP HANA back-up in azure die back-up en herstel op dat
 
 De [Backint Certified Azure SAP Hana backup-oplossing](#backup-architecture) kan worden gebruikt voor back-up en herstel van de data base.
 
-[Back-ups van Azure-vm's](backup-azure-vms-introduction.md) kunnen worden gebruikt voor het maken van een back-up van het besturings systeem en andere niet-database schijven. De back-up van de virtuele machine wordt één keer per dag gemaakt en er wordt een back-up gemaakt van alle schijven (met uitzonde ring van **Write Accelerator wa-schijven** en **Ultra schijven**). Omdat er een back-up van de data base wordt gemaakt met behulp van de back-upoplossing van Azure SAP HANA, kunt u een bestands consistente back-up maken van alleen de besturings systemen en niet-database schijven met behulp van de functie [selectief schijf back-up en herstel voor Azure vm's](selective-disk-backup-restore.md) .
-
->[!NOTE]
-> Met de pre-post scripts met de back-up van de Azure-VM kunnen app-consistente back-ups van de gegevens volumes van de Data Base worden gemaakt. Als het logboek gebied zich echter op WA-schijven bevindt, kan het maken van een moment opname van deze schijven ertoe leiden dat er geen consistentie van het logboek gebied wordt gegarandeerd. HANA heeft een expliciete manier om logboek back-ups te genereren voor deze exacte reden. Schakel in uw SAP HANA hetzelfde in en maak een back-up van de back-up met Azure SAP HANA backup.
+[Back-ups van Azure-vm's](backup-azure-vms-introduction.md) kunnen worden gebruikt voor het maken van een back-up van het besturings systeem en andere niet-database schijven. De back-up van de virtuele machine wordt één keer per dag gemaakt en er wordt een back-up gemaakt van alle schijven (met uitzonde ring van **Write Accelerator (WA)** en **Ultra schijven**). Omdat er een back-up van de data base wordt gemaakt met behulp van de back-upoplossing van Azure SAP HANA, kunt u een bestands consistente back-up maken van alleen de besturings systemen en niet-database schijven met behulp van de functie [selectief schijf back-up en herstel voor Azure vm's](selective-disk-backup-restore.md) .
 
 Voer de volgende stappen uit om een VM met SAP HANA te herstellen:
 
 * [Een nieuwe VM herstellen vanaf het laatste herstel punt van een Azure VM-back-up](backup-azure-arm-restore-vms.md) . Of maak een nieuwe lege VM en koppel de schijven van het meest recente herstel punt.
-* Omdat er geen back-up is gemaakt van de schijven van WA, worden ze niet hersteld. Maak lege WA-schijven en logboek gebied.
+* Als WA-schijven worden uitgesloten, worden ze niet hersteld. In dit geval maakt u lege WA-schijven en logboek gebieden.
 * Nadat alle andere configuraties (zoals IP, systeem naam, enzovoort) zijn ingesteld, wordt de VM ingesteld om database gegevens van Azure Backup te ontvangen.
 * Zet de data base nu terug naar de virtuele machine van de [Azure SAP Hana DB-back-up](sap-hana-db-restore.md#restore-to-a-point-in-time-or-to-a-recovery-point) naar het gewenste tijdstip.
 

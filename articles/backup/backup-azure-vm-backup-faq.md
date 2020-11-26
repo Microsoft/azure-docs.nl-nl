@@ -4,12 +4,12 @@ description: In dit artikel vindt u antwoorden op veelgestelde vragen over het m
 ms.reviewer: sogup
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.openlocfilehash: 74e2facfd9fd6073acc1f939c3d2ba922e3ac931
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: e6e14209a8df7160d103cb036d38c9fee29b34dd
+ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92925574"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96296060"
 ---
 # <a name="frequently-asked-questions-back-up-azure-vms"></a>Veelgestelde vragen: back-ups maken van virtuele Azure-machines
 
@@ -87,11 +87,11 @@ Ja, Azure Backup ondersteunt [Standard SSD Managed disks](https://docs.microsoft
 
 ### <a name="can-we-back-up-a-vm-with-a-write-accelerator-wa-enabled-disk"></a>Kan ik een back-up maken van een VM met een Write Accelerator (WA) ingeschakelde schijf?
 
-Er kunnen geen moment opnamen worden gemaakt op de schijf met WA-functionaliteit. De Azure Backup-service kan de op WA ingeschakelde schijf echter uitsluiten van een back-up.
+Moment opnamen kunnen alleen worden gemaakt op gegevens schijven die WA zijn ingeschakeld en geen besturingssysteem schijven. Alleen gegevens schijven die WA zijn ingeschakeld, kunnen worden beveiligd.
 
 ### <a name="i-have-a-vm-with-write-accelerator-wa-disks-and-sap-hana-installed-how-do-i-back-up"></a>Ik heb een virtuele machine met Write Accelerator (WA) schijven en SAP HANA geïnstalleerd. Hoe kan ik back-up?
 
-Azure Backup kan geen back-up maken van de op WA ingeschakelde schijf, maar deze kan wel worden uitgesloten van een back-up. De back-up biedt echter geen consistentie van de data base, omdat er geen back-up wordt gemaakt van de gegevens op de schijf met WA. U kunt met deze configuratie back-ups maken van schijven als u back-ups wilt maken van de besturingssysteem schijf en een back-up wilt maken van schijven waarop geen WA is ingeschakeld.
+Azure Backup kunt een back-up maken van de gegevens schijf met WA-functionaliteit. De back-up biedt echter geen consistentie van de data base.
 
 Azure Backup biedt een streaming-back-upoplossing voor SAP HANA-data bases met een RPO van 15 minuten. Het is Backint gecertificeerd door SAP om een systeem eigen back-upondersteuning te bieden die gebruikmaakt van de systeem eigen Api's van SAP HANA. Meer informatie [over het maken van back-ups van SAP Hana-data bases in azure-vm's](./sap-hana-db-about.md).
 
@@ -149,7 +149,7 @@ Ja. Zelfs als u de virtuele machine verwijdert, kunt u naar het bijbehorende bac
 
 ### <a name="how-do-i-restore-a-vm-to-the-same-availability-sets"></a>Hoe kan ik een VM naar dezelfde beschikbaarheids sets herstellen?
 
-Voor virtuele Azure-machines met beheerde schijven wordt het herstellen naar de beschikbaarheids sets ingeschakeld door een optie in de sjabloon op te geven tijdens het herstellen als beheerde schijven. Deze sjabloon bevat de invoer parameter met de naam **beschikbaarheids sets** .
+Voor virtuele Azure-machines met beheerde schijven wordt het herstellen naar de beschikbaarheids sets ingeschakeld door een optie in de sjabloon op te geven tijdens het herstellen als beheerde schijven. Deze sjabloon bevat de invoer parameter met de naam **beschikbaarheids sets**.
 
 ### <a name="how-do-we-get-faster-restore-performances"></a>Hoe worden de prestaties sneller teruggezet?
 
@@ -185,7 +185,7 @@ Er wordt een back-up van de virtuele machine gemaakt met behulp van de instellin
 
    1. Zoek de locatie van de virtuele machine.
    2. Een resource groep zoeken met het volgende naamgevings patroon: `AzureBackupRG_<location of your VM>_1` . Bijvoorbeeld *AzureBackupRG_westus2_1*
-   3. Selecteer in het Azure Portal de optie **verborgen typen weer geven** .
+   3. Selecteer in het Azure Portal de optie **verborgen typen weer geven**.
    4. Zoek de resource met het type **micro soft. Compute/restorePointCollections** die het naamgevings patroon heeft `AzureBackup_<name of your VM that you're trying to move>_###########` .
    5. Deze resource verwijderen. Met deze bewerking worden alleen de directe herstel punten verwijderd, niet de gegevens waarvan een back-up is gemaakt in de kluis.
    6. Nadat de bewerking delete is voltooid, kunt u de virtuele machine verplaatsen.

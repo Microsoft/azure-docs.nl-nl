@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/20/2020
 ms.author: duau
-ms.openlocfilehash: 18e32a0387119d235294d1126d869186ae28d2b2
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: abc4529d6076496b34859eec2b931a8dcbd1ce93
+ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92488976"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96296587"
 ---
 # <a name="frequently-asked-questions-for-azure-front-door"></a>Veelgestelde vragen over de voor deur van Azure
 
@@ -24,7 +24,7 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over de functies en fun
 
 1. De sectie opmerkingen van dit artikel.
 2. [Azure front-deur UserVoice](https://feedback.azure.com/forums/217313-networking?category_id=345025).
-3. **Microsoft ondersteuning:** Als u een nieuwe ondersteunings aanvraag wilt maken, selecteert u in het Azure Portal op het tabblad **Help** de knop **Help en ondersteuning** en selecteert u vervolgens **nieuwe ondersteunings aanvraag** .
+3. **Microsoft ondersteuning:** Als u een nieuwe ondersteunings aanvraag wilt maken, selecteert u in het Azure Portal op het tabblad **Help** de knop **Help en ondersteuning** en selecteert u vervolgens **nieuwe ondersteunings aanvraag**.
 
 ## <a name="general"></a>Algemeen
 
@@ -97,7 +97,7 @@ Als u uw toepassing wilt vergren delen om alleen verkeer van uw specifieke voor 
     > [!WARNING]
     > De backend-back-end van de voor deur kan later worden gewijzigd, maar we zorgen ervoor dat voordat dat gebeurt, dat we hebben geïntegreerd met [Azure IP-bereiken en-Tags](https://www.microsoft.com/download/details.aspx?id=56519). U wordt aangeraden om u te abonneren op [Azure IP-bereiken en service Tags](https://www.microsoft.com/download/details.aspx?id=56519) voor eventuele wijzigingen of updates.
 
--    Voer een GET-bewerking uit op uw voor deur met de API-versie `2020-01-01` of hoger. Zoek in de API-aanroep naar `frontdoorID` veld. Filter op de inkomende header ' **X-Azure-FDID** ' die door de voor deur naar uw back-end wordt verzonden met de waarde van het veld `frontdoorID` . U kunt `Front Door ID` de waarde ook vinden in de sectie Overzicht van de portal-pagina voor de voor deur. 
+-    Voer een GET-bewerking uit op uw voor deur met de API-versie `2020-01-01` of hoger. Zoek in de API-aanroep naar `frontdoorID` veld. Filter op de inkomende header '**X-Azure-FDID**' die door de voor deur naar uw back-end wordt verzonden met de waarde van het veld `frontdoorID` . U kunt `Front Door ID` de waarde ook vinden in de sectie Overzicht van de portal-pagina voor de voor deur. 
 
 - Regel filtering Toep assen op uw back-end-webserver om verkeer te beperken op basis van de resulterende waarde ' X-Azure-FDID '.
 
@@ -147,7 +147,7 @@ Opmerking: aangepaste TLS/SSL-certificaat updates nemen ongeveer 30 minuten in b
 Eventuele updates van routes of back-end-Pools, enzovoort, zijn naadloos en veroorzaken geen downtime (als de nieuwe configuratie juist is). Certificaat updates zijn ook atomisch en veroorzaken geen storingen, tenzij u overschakelt van ' AFD Managed ' naar ' uw eigen certificaat gebruiken ' of andersom.
 
 
-## <a name="configuration"></a>Configuratie
+## <a name="configuration"></a>Configuration
 
 ### <a name="can-azure-front-door-load-balance-or-route-traffic-within-a-virtual-network"></a>Kan de taak verdeling van de voor deur van Azure voor de voor grond zijn of verkeer binnen een virtueel netwerk routeren?
 
@@ -235,22 +235,22 @@ Ja, OCSP-nietfunctie wordt standaard door de voor deur ondersteund en er is geen
 
 ### <a name="does-azure-front-door-also-support-re-encryption-of-traffic-to-the-backend"></a>Ondersteunt Azure front-deur ook het opnieuw versleutelen van verkeer naar de back-end?
 
-Ja, Azure front deur ondersteunt TLS/SSL-offload en end-to-end TLS, waarmee het verkeer opnieuw wordt versleuteld naar de back-end. Omdat de verbindingen met de back-end een openbaar IP-adres hebben, wordt aanbevolen dat u de voor deur configureert om HTTPS te gebruiken als het doorstuur protocol.
+Ja, Azure front deur ondersteunt TLS/SSL-offload en end-to-end TLS, waarmee het verkeer opnieuw wordt versleuteld naar de back-end. Omdat de verbindingen met de back-end plaatsvinden via het open bare IP-adres, wordt het aanbevolen dat u de voor deur configureert om HTTPS als het doorstuur protocol te gebruiken.
 
 ### <a name="does-front-door-support-self-signed-certificates-on-the-backend-for-https-connection"></a>Ondersteunt front-deur zelfondertekende certificaten op de back-end voor HTTPS-verbinding?
 
 Nee, zelfondertekende certificaten worden niet op de voor deur ondersteund en de beperking is van toepassing op beide:
 
-1. **Back** -ends: u kunt geen zelfondertekende certificaten gebruiken wanneer u het verkeer doorstuurt als HTTPS-of https-status controle of het invullen van de cache voor van oorsprong voor routerings regels waarvoor caching is ingeschakeld.
-2. Front- **End** : u kunt geen zelfondertekende certificaten gebruiken wanneer u uw eigen aangepaste TLS/SSL-certificaat gebruikt om https in te scha kelen voor uw aangepaste domein.
+1. **Back**-ends: u kunt geen zelfondertekende certificaten gebruiken wanneer u het verkeer doorstuurt als HTTPS-of https-status controle of het invullen van de cache voor van oorsprong voor routerings regels waarvoor caching is ingeschakeld.
+2. Front- **End**: u kunt geen zelfondertekende certificaten gebruiken wanneer u uw eigen aangepaste TLS/SSL-certificaat gebruikt om https in te scha kelen voor uw aangepaste domein.
 
 ### <a name="why-is-https-traffic-to-my-backend-failing"></a>Waarom is HTTPS-verkeer naar mijn back-end mislukt?
 
 Als u een geslaagde HTTPS-verbinding met de back-end wilt maken, ongeacht of de status test of aanvragen worden doorgestuurd, kunnen er twee redenen zijn waarom HTTPS-verkeer kan mislukken:
 
-1. De naam van het **certificaat onderwerp komt niet overeen** : voor HTTPS-verbindingen verwacht de voor deur dat uw back-end een certificaat van een geldige CA met de naam van de back-end (en) overeenkomt met de backend-hostnaam. Als bijvoorbeeld de hostnaam van de back-end is ingesteld op `myapp-centralus.contosonews.net` en het certificaat dat uw back-end presenteert tijdens de TLS `myapp-centralus.contosonews.net` -Handshake, noch de `*myapp-centralus*.contosonews.net` naam van het onderwerp, wordt de verbinding door de voor deur geweigerd en wordt er een fout geretourneerd. 
-    1. **Oplossing** : Hoewel het niet wordt aangeraden om het probleem op te lossen, kunt u deze fout omzeilen door de naam van de certificaat houder voor uw deur te controleren. Dit is aanwezig onder instellingen in Azure Portal en onder BackendPoolsSettings in de API.
-2. **Backend-hosting certificaat van ongeldige ca** : alleen certificaten van [geldige certificerings instanties](./front-door-troubleshoot-allowed-ca.md) kunnen worden gebruikt op de back-end met de voor deur. Certificaten van interne Ca's of zelfondertekende certificaten zijn niet toegestaan.
+1. De naam van het **certificaat onderwerp komt niet overeen**: voor HTTPS-verbindingen verwacht de voor deur dat uw back-end een certificaat van een geldige CA met de naam van de back-end (en) overeenkomt met de backend-hostnaam. Als bijvoorbeeld de hostnaam van de back-end is ingesteld op `myapp-centralus.contosonews.net` en het certificaat dat uw back-end presenteert tijdens de TLS `myapp-centralus.contosonews.net` -Handshake, noch de `*myapp-centralus*.contosonews.net` naam van het onderwerp, wordt de verbinding door de voor deur geweigerd en wordt er een fout geretourneerd. 
+    1. **Oplossing**: Hoewel het niet wordt aangeraden om het probleem op te lossen, kunt u deze fout omzeilen door de naam van de certificaat houder voor uw deur te controleren. Dit is aanwezig onder instellingen in Azure Portal en onder BackendPoolsSettings in de API.
+2. **Backend-hosting certificaat van ongeldige ca**: alleen certificaten van [geldige certificerings instanties](./front-door-troubleshoot-allowed-ca.md) kunnen worden gebruikt op de back-end met de voor deur. Certificaten van interne Ca's of zelfondertekende certificaten zijn niet toegestaan.
 
 ### <a name="can-i-use-clientmutual-authentication-with-azure-front-door"></a>Kan ik client/wederzijdse verificatie met Azure front-deur gebruiken?
 

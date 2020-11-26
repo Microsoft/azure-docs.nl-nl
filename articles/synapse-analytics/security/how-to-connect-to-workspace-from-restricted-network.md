@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 10/25/2020
 ms.author: xujiang1
 ms.reviewer: jrasnick
-ms.openlocfilehash: 55ec8be176dc7274a3b9a1feca53726d57eeb422
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 2e96cbf0c1464e27b0a384e8a813118056103b91
+ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95024462"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96296683"
 ---
 # <a name="connect-to-workspace-resources-from-a-restricted-network"></a>Verbinding maken met werkruimte bronnen vanuit een beperkt netwerk
 
@@ -46,14 +46,11 @@ Zie [overzicht van service Tags](/azure/virtual-network/service-tags-overview)vo
 
 Maak vervolgens de persoonlijke koppelings hubs vanuit het Azure Portal. Als u dit wilt vinden in de portal, zoekt u naar *Azure Synapse Analytics (persoonlijke koppelingen hubs)* en vult u vervolgens de vereiste gegevens in om deze te maken. 
 
-> [!Note]
-> Zorg ervoor dat de waarde **regio** gelijk is aan die van uw Azure Synapse Analytics-werk ruimte.
-
 ![Scherm opname van de Synapse private link hub.](./media/how-to-connect-to-workspace-from-restricted-network/private-links.png)
 
-## <a name="step-3-create-a-private-endpoint-for-your-gateway"></a>Stap 3: een persoonlijk eind punt maken voor uw gateway
+## <a name="step-3-create-a-private-endpoint-for-your-synapse-studio"></a>Stap 3: Maak een persoonlijk eind punt voor uw Synapse Studio
 
-Als u toegang wilt krijgen tot de Azure Synapse Analytics Studio-gateway, moet u een persoonlijk eind punt maken op basis van de Azure Portal. Als u dit wilt vinden in de portal, zoekt u naar een *privé-koppeling*. Selecteer in het **persoonlijke koppelings centrum** **persoonlijke eind punt maken** en vul vervolgens de vereiste gegevens in om deze te maken. 
+Voor toegang tot Azure Synapse Analytics Studio moet u een persoonlijk eind punt maken op basis van de Azure Portal. Als u dit wilt vinden in de portal, zoekt u naar een *privé-koppeling*. Selecteer in het **persoonlijke koppelings centrum** **persoonlijke eind punt maken** en vul vervolgens de vereiste gegevens in om deze te maken. 
 
 > [!Note]
 > Zorg ervoor dat de waarde **regio** gelijk is aan die van uw Azure Synapse Analytics-werk ruimte.
@@ -118,6 +115,43 @@ Als u wilt dat uw notebook toegang krijgt tot de gekoppelde opslag resources ond
 Nadat u dit eind punt hebt gemaakt, wordt in de goedkeurings status de status **in behandeling** weer gegeven. Goed keuring aanvragen van de eigenaar van dit opslag account, op het tabblad verbindingen van het **particuliere eind punt** van dit opslag account in de Azure Portal. Nadat deze is goedgekeurd, heeft uw notebook toegang tot de gekoppelde opslag resources onder dit opslag account.
 
 Nu is alle ingesteld. U hebt toegang tot uw Azure Synapse Analytics Studio-werkruimte resource.
+
+## <a name="appendix-dns-registration-for-private-endpoint"></a>Bijlage: DNS-registratie voor persoonlijk eind punt
+
+Als de ' integreren met particuliere DNS-zone ' niet is ingeschakeld tijdens het maken van het privé-eind punt, moet u voor elk van uw privé-eind punten de **privé-DNS zone** maken.
+![Scherm opname van Synapse persoonlijke DNS-zone 1 maken.](./media/how-to-connect-to-workspace-from-restricted-network/pdns-zone-1.png)
+
+Zoek naar *privé-DNS zone* om de **privé-DNS zone** te vinden in de portal. Vul in de **zone privé-DNS** de vereiste gegevens hieronder in om deze te maken.
+
+* Voer bij **naam** de speciale naam voor de persoonlijke DNS-zone in voor een specifiek persoonlijk eind punt, zoals hieronder wordt beschreven:
+  * **`privatelink.azuresynapse.net`** is voor het persoonlijke eind punt van toegang tot de Azure Synapse Analytics Studio-gateway. Zie dit type privé-eind punt maken in stap 3.
+  * **`privatelink.sql.azuresynapse.net`** is voor dit type privé-eind punt voor het uitvoeren van SQL-query's in de SQL-groep en de ingebouwde groep. Zie het maken van een eind punt in stap 4.
+  * **`privatelink.dev.azuresynapse.net`** is voor dit type privé-eind punt van toegang tot alles in azure Synapse Analytics studio-werk ruimten. Zie dit type privé-eind punt maken in stap 4.
+  * **`privatelink.dfs.core.windows.net`** is voor het persoonlijke eind punt van de toegang tot de gekoppelde Azure Data Lake Storage Gen2 van de werk ruimte. Zie dit type privé-eind punt maken in stap 5.
+  * **`privatelink.blob.core.windows.net`** is voor het persoonlijke eind punt van de toegang tot de gekoppelde Azure-Blob Storage werkruimte. Zie dit type privé-eind punt maken in stap 5.
+
+![Scherm opname van Synapse persoonlijke DNS-zone 2 maken.](./media/how-to-connect-to-workspace-from-restricted-network/pdns-zone-2.png)
+
+Nadat de **privé-DNS zone** is gemaakt, voert u de gemaakte persoonlijke DNS-zone in en selecteert u de koppelingen naar het **virtuele netwerk** om de koppeling toe te voegen aan uw virtuele netwerk. 
+
+![Scherm opname van Synapse private DNS zone 3.](./media/how-to-connect-to-workspace-from-restricted-network/pdns-zone-3.png)
+
+Vul de verplichte velden in zoals hieronder:
+* Voer bij **naam van koppeling** de naam van de koppeling in.
+* Selecteer het virtuele netwerk voor het **virtuele netwerk**.
+
+![Scherm opname van Synapse private DNS zone 4.](./media/how-to-connect-to-workspace-from-restricted-network/pdns-zone-4.png)
+
+Nadat de koppeling met het virtuele netwerk is toegevoegd, moet u de DNS-recordset toevoegen in de **privé-DNS zone** die u eerder hebt gemaakt.
+
+* Voer bij **naam** de toegewezen naam teken reeksen in voor het verschillende persoonlijke eind punt: 
+  * **Web** is voor het persoonlijke eind punt van toegang tot Azure Synapse Analytics Studio.
+  * "***YourWorkSpaceName * * _" is voor het persoonlijke eind punt van SQL-query uitvoering in SQL-groep en ook voor het persoonlijke eind punt van toegang tot alles in azure Synapse Analytics studio-werk ruimten. _ "*** YourWorkSpaceName *-OnDemand * *" is voor het persoonlijke eind punt van SQL-query uitvoering in de ingebouwde groep.
+* Selecteer bij **type** alleen DNS-record type **A** . 
+* Voer bij **IP-adres** het bijbehorende IP-adres van elk privé-eind punt in. U kunt het IP-adres in de **netwerk interface** ophalen uit het overzicht van uw persoonlijke eind punt.
+
+![Scherm opname van Synapse private DNS zone 5.](./media/how-to-connect-to-workspace-from-restricted-network/pdns-zone-5.png)
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

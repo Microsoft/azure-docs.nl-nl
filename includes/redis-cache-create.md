@@ -8,21 +8,21 @@ ms.topic: include
 ms.date: 10/06/2020
 ms.author: cauribeg
 ms.custom: include file
-ms.openlocfilehash: 07a80fcd1ec62b051a660bdac696f89e3b7c42b7
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: da36cb5c5d2db20b89f80d381f48632c7528c193
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93353945"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96002448"
 ---
 1. Als u een cache wilt maken, meldt u zich aan bij de [Azure-portal](https://portal.azure.com) en selecteert u **Een resource maken**.
 
-    :::image type="content" source="media/redis-cache-create/create-resource.png" alt-text="Selecteer Azure Cache voor Redis.":::
+    :::image type="content" source="media/redis-cache-create/create-resource.png" alt-text="Een resource maken is gemarkeerd in het linkernavigatiedeelvenster.":::
 
    
 1. Selecteer op de pagina **Nieuw** de optie **Databases** en selecteer vervolgens **Azure Cache voor Redis**.
 
-    :::image type="content" source="media/redis-cache-create/select-cache.png" alt-text="Selecteer Azure Cache voor Redis.":::
+    :::image type="content" source="media/redis-cache-create/select-cache.png" alt-text="In Nieuw is Databases gemarkeerd. Azure Cache voor Redis is ook gemarkeerd.":::
    
 1. Configureer op de pagina **Nieuwe Redis-cache** de instellingen voor de nieuwe cache.
    

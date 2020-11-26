@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
-ms.openlocfilehash: 44c1e55d60fb35ba510d99535c50c7919b29253e
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 1299cbf1b837315a1a95c8a2ec2e4ed0706d959c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92918681"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95999325"
 ---
 Ga aan de slag met gezichtsherkenning met behulp van de Face-clientbibliotheek voor .NET. Volg deze stappen om het pakket te installeren en de voorbeeldcode voor basistaken uit te proberen. De Face-service biedt u toegang tot geavanceerde algoritmen voor het detecteren en herkennen van menselijke gezichten in afbeeldingen.
 
@@ -46,7 +46,7 @@ Maak met behulp van Visual Studio een nieuwe .NET Core-toepassing.
 
 ### <a name="install-the-client-library"></a>De clientbibliotheek installeren 
 
-Nadat u een nieuw project hebt gemaakt, installeert u de clientbibliotheek door in **Solution Explorer** met de rechtermuisknop op de projectoplossing te klikken en **NuGet-pakketten beheren** te selecteren. Selecteer in de package manager die wordt geopend de optie **Bladeren** , schakel **Prerelease opnemen** in en zoek naar `Microsoft.Azure.CognitiveServices.Vision.Face`. Selecteer versie `2.6.0-preview.1` en vervolgens **Installeren**. 
+Nadat u een nieuw project hebt gemaakt, installeert u de clientbibliotheek door in **Solution Explorer** met de rechtermuisknop op de projectoplossing te klikken en **NuGet-pakketten beheren** te selecteren. Selecteer in de package manager die wordt geopend de optie **Bladeren**, schakel **Prerelease opnemen** in en zoek naar `Microsoft.Azure.CognitiveServices.Vision.Face`. Selecteer versie `2.6.0-preview.1` en vervolgens **Installeren**. 
 
 #### <a name="cli"></a>[CLI](#tab/cli)
 
@@ -113,9 +113,9 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 |[FaceClient](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceclient?view=azure-dotnet) | Deze klasse vertegenwoordigt uw autorisatie voor het gebruik van de Face-service. U hebt deze nodig voor alle Face-functies. U instantieert deze klasse met uw abonnementsgegevens en gebruikt deze om instanties van andere klassen te maken. |
 |[FaceOperations](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.faceoperations?view=azure-dotnet)|Deze klasse verwerkt de basistaken voor detectie en herkenning die u met menselijke gezichten kunt uitvoeren. |
 |[DetectedFace](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.models.detectedface?view=azure-dotnet)|Deze klasse vertegenwoordigt alle gegevens die zijn gedetecteerd van één gezicht in een afbeelding. U kunt deze gebruiken om gedetailleerde informatie over het gezicht op te halen.|
-|[FaceListOperations](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.facelistoperations?view=azure-dotnet)|Deze klasse beheert de in de cloud opgeslagen **FaceList** -constructies, waarin een geassorteerde set gezichten wordt opgeslagen. |
-|[PersonGroupPersonExtensions](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongrouppersonextensions?view=azure-dotnet)| Deze klasse beheert de in de cloud opgeslagen **Person** -constructies, die een set gezichten opslaan die tot één persoon behoren.|
-|[PersonGroupOperations](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongroupoperations?view=azure-dotnet)| Deze klasse beheert de in de cloud opgeslagen **PersonGroup** -constructies, die een set van verschillende **Person** -objecten opslaan. |
+|[FaceListOperations](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.facelistoperations?view=azure-dotnet)|Deze klasse beheert de in de cloud opgeslagen **FaceList**-constructies, waarin een geassorteerde set gezichten wordt opgeslagen. |
+|[PersonGroupPersonExtensions](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongrouppersonextensions?view=azure-dotnet)| Deze klasse beheert de in de cloud opgeslagen **Person**-constructies, die een set gezichten opslaan die tot één persoon behoren.|
+|[PersonGroupOperations](/dotnet/api/microsoft.azure.cognitiveservices.vision.face.persongroupoperations?view=azure-dotnet)| Deze klasse beheert de in de cloud opgeslagen **PersonGroup**-constructies, die een set van verschillende **Person**-objecten opslaan. |
 
 ## <a name="code-examples"></a>Codevoorbeelden
 
@@ -139,7 +139,7 @@ De volgende velden zijn vereist voor verschillende gezichtsbewerkingen die u lat
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/Face/FaceQuickstart.cs?name=snippet_image_url)]
 
-Definieer in de **Main** -methode tekenreeksen die verwijzen naar de verschillende typen herkenningsmodellen. Later kunt u opgeven welk herkenningsmodel u wilt gebruiken voor gezichtsdetectie. Zie [Een herkenningsmodel opgeven](../../Face-API-How-to-Topics/specify-recognition-model.md) voor meer informatie over deze opties.
+Definieer in de **Main**-methode tekenreeksen die verwijzen naar de verschillende typen herkenningsmodellen. Later kunt u opgeven welk herkenningsmodel u wilt gebruiken voor gezichtsdetectie. Zie [Een herkenningsmodel opgeven](../../Face-API-How-to-Topics/specify-recognition-model.md) voor meer informatie over deze opties.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/Face/FaceQuickstart.cs?name=snippet_detect_models)]
 
@@ -184,11 +184,11 @@ Met de volgende code worden de overeenkomende resultaten op de console weergegev
 
 ## <a name="identify-a-face"></a>Een gezicht identificeren
 
-Bij de bewerking Identificeren wordt op basis van een afbeelding van een persoon (of meerdere personen) gezocht naar de identiteit van elk gezicht in de afbeelding (zoeken met gezichtsherkenning). Elk gedetecteerd gezicht wordt vergeleken met een **PersonGroup** , een database van verschillende **Person** -objecten waarvan de gezichtskenmerken bekend zijn. Als u de bewerking Identificeren wilt uitvoeren, moet u eerst een **PersonGroup** maken en trainen
+Bij de bewerking Identificeren wordt op basis van een afbeelding van een persoon (of meerdere personen) gezocht naar de identiteit van elk gezicht in de afbeelding (zoeken met gezichtsherkenning). Elk gedetecteerd gezicht wordt vergeleken met een **PersonGroup**, een database van verschillende **Person**-objecten waarvan de gezichtskenmerken bekend zijn. Als u de bewerking Identificeren wilt uitvoeren, moet u eerst een **PersonGroup** maken en trainen
 
 ### <a name="create-a-person-group"></a>Een groep personen (PersonGroup) maken
 
-Met de volgende code wordt een **PersonGroup** gemaakt met zes verschillende **Person** -objecten. Het koppelt elke **persoon** aan een reeks voorbeeldafbeeldingen en wordt vervolgens getraind om elke persoon te herkennen aan de gezichtskenmerken. **Person** - en **PersonGroup** -objecten worden gebruikt bij de bewerkingen Verifiëren, Identificeren of Groeperen.
+Met de volgende code wordt een **PersonGroup** gemaakt met zes verschillende **Person**-objecten. Het koppelt elke **persoon** aan een reeks voorbeeldafbeeldingen en wordt vervolgens getraind om elke persoon te herkennen aan de gezichtskenmerken. **Person**- en **PersonGroup**-objecten worden gebruikt bij de bewerkingen Verifiëren, Identificeren of Groeperen.
 
 Declareer een tekenreeksvariabele in de hoofdmap van uw klasse om de id weer te geven van de **PersonGroup** die u maakt.
 
@@ -200,7 +200,7 @@ Voeg in een nieuwe methode de volgende code toe. Met deze methode wordt de bewer
 
 Met deze code wordt de variabele `sourceImageFileName` gedefinieerd. Deze variabele komt overeen met de bronafbeelding&mdash;de afbeelding die de personen bevat die moeten worden geïdentificeerd.
 
-Voeg vervolgens de volgende code toe om een **Person** -object te maken voor elke persoon in de woordenlijst en voeg de gezichtsgegevens toe van de juiste afbeeldingen. Elk **Person** -object is gekoppeld aan dezelfde **PersonGroup** via de unieke id-reeks. Vergeet niet om de variabelen `client`, `url`en `RECOGNITION_MODEL1` in deze methode op te geven.
+Voeg vervolgens de volgende code toe om een **Person**-object te maken voor elke persoon in de woordenlijst en voeg de gezichtsgegevens toe van de juiste afbeeldingen. Elk **Person**-object is gekoppeld aan dezelfde **PersonGroup** via de unieke id-reeks. Vergeet niet om de variabelen `client`, `url`en `RECOGNITION_MODEL1` in deze methode op te geven.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/Face/FaceQuickstart.cs?name=snippet_persongroup_create)]
 
@@ -209,11 +209,14 @@ Voeg vervolgens de volgende code toe om een **Person** -object te maken voor elk
 
 ### <a name="train-the-persongroup"></a>De PersonGroup trainen
 
-Zodra u de gezichtsgegevens van uw afbeeldingen hebt geëxtraheerd en deze in verschillende **Person** -objecten hebt gesorteerd, moet u de **PersonGroup** trainen om de visuele functies te identificeren die zijn gekoppeld aan elk van de **Person** -objecten. Met de volgende code wordt de asynchrone **Train** -methode aangeroepen en worden de resultaten gecontroleerd, en wordt de status naar de console afgedrukt.
+Zodra u de gezichtsgegevens van uw afbeeldingen hebt geëxtraheerd en deze in verschillende **Person**-objecten hebt gesorteerd, moet u de **PersonGroup** trainen om de visuele functies te identificeren die zijn gekoppeld aan elk van de **Person**-objecten. Met de volgende code wordt de asynchrone **Train**-methode aangeroepen en worden de resultaten gecontroleerd, en wordt de status naar de console afgedrukt.
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/Face/FaceQuickstart.cs?name=snippet_persongroup_train)]
 
-Deze **Person** -groep en de bijbehorende **Person** -objecten zijn nu klaar om te worden gebruikt in de bewerkingen Verifiëren, Identificeren of Groeperen.
+> [!TIP]
+> De Face-API wordt uitgevoerd op een set vooraf gebouwde modellen die van nature statisch zijn (de prestaties van het model worden niet slechter of beter tijdens het uitvoeren van de service). De resultaten die het model produceert, kunnen veranderen als de back-end van het model door Microsoft wordt gewijzigd zonder migratie naar een heel nieuwe modelversie. Als u wilt profiteren van een nieuwere versie van het model, kunt u **PersonGroup** opnieuw trainen, waarbij u het nieuwere model opgeeft als een parameter bij dezelfde inschrijvingsafbeeldingen.
+
+Deze **Person**-groep en de bijbehorende **Person**-objecten zijn nu klaar om te worden gebruikt in de bewerkingen Verifiëren, Identificeren of Groeperen.
 
 ### <a name="identify-faces"></a>Gezichten identificeren
 

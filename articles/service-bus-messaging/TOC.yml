@@ -26,18 +26,24 @@
               href: service-bus-resource-manager-namespace-queue.md
         - name: Berichten verzenden en ontvangen
           items:
-            - name: .NET
+            - name: .NET (Azure.Messaging.ServiceBus)
               href: service-bus-dotnet-get-started-with-queues.md
-            - name: Java
+            - name: Java (azure-messaging-servicebus)
               href: service-bus-java-how-to-use-queues.md
-            - name: Node.js
-              href: service-bus-nodejs-how-to-use-queues-new-package.md
+            - name: Python (azure-servicebus)
+              href: service-bus-python-how-to-use-queues.md
+            - name: JavaScript (@azure/service-bus)
+              href: service-bus-nodejs-how-to-use-queues.md
             - name: PHP
               href: service-bus-php-how-to-use-queues.md
-            - name: Python
-              href: service-bus-python-how-to-use-queues.md
             - name: Ruby
               href: service-bus-ruby-how-to-use-queues.md
+        - name: Berichten verzenden en ontvangen (old versions/packages)
+          items:
+            - name: .NET (Microsoft.Azure.ServiceBus)
+              href: service-bus-dotnet-get-started-with-queues-legacy.md
+            - name: Java (azure-servicebus)
+              href: service-bus-java-how-to-use-queues-legacy.md
     - name: Services Bus-onderwerpen en -abonnementen
       items:
         - name: Onderwerpen en abonnementen maken
@@ -50,24 +56,34 @@
               href: service-bus-resource-manager-namespace-topic.md
         - name: Publiceren en abonneren op berichten
           items:
-            - name: .NET
+            - name: .NET (Azure.Messaging.ServiceBus)
               href: service-bus-dotnet-how-to-use-topics-subscriptions.md
-            - name: Java
+            - name: Java (azure-messaging-servicebus)
               href: service-bus-java-how-to-use-topics-subscriptions.md
-            - name: Node.js
-              href: service-bus-nodejs-how-to-use-topics-subscriptions-new-package.md
+            - name: Python (azure-servicebus)
+              href: service-bus-python-how-to-use-topics-subscriptions.md
+            - name: JavaScript (@azure/service-bus)
+              href: service-bus-nodejs-how-to-use-topics-subscriptions.md
             - name: PHP
               href: service-bus-php-how-to-use-topics-subscriptions.md
-            - name: Python
-              href: service-bus-python-how-to-use-topics-subscriptions.md
             - name: Ruby
               href: service-bus-ruby-how-to-use-topics-subscriptions.md
+        - name: Berichten publiceren en erop abonneren (old versions/packages)
+          items:
+            - name: .NET (Microsoft.Azure.ServiceBus)
+              href: service-bus-dotnet-how-to-use-topics-subscriptions-legacy.md
+            - name: Java (azure-servicebus)
+              href: service-bus-java-how-to-use-topics-subscriptions-legacy.md
 - name: Zelfstudies
   items:
     - name: Inventaris bijwerken
       href: service-bus-tutorial-topics-subscriptions-portal.md
-    - name: Reageren op gebeurtenissen via Event Grid
-      href: service-bus-to-event-grid-integration-example.md
+    - name: Service Bus-gebeurtenissen verwerken via Event Grid
+      items:
+        - name: Azure Logic Apps
+          href: service-bus-to-event-grid-integration-example.md
+        - name: Azure Functions
+          href: service-bus-to-event-grid-integration-function.md
 - name: Voorbeelden
   items:
     - name: Voorbeelden van Service Bus
@@ -182,10 +198,6 @@
           href: service-bus-end-to-end-tracing.md
         - name: Een Service Bus-toepassing met meerdere lagen maken
           href: service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
-        - name: Berichten versturen en ontvangen vanuit wachtrijen (verouderde azure-sb)
-          href: service-bus-nodejs-how-to-use-queues.md
-        - name: Publiceren en abonneren op berichten (verouderde azure-sb)
-          href: service-bus-nodejs-how-to-use-topics-subscriptions.md
     - name: Migreren
       items:
         - name: Migreren van ActiveMQ naar Azure Service Bus
@@ -241,16 +253,38 @@
   items:
     - name: .NET
       items:
-        - name: Microsoft.ServiceBus.Messaging (.NET Framework)
-          href: /dotnet/api/microsoft.servicebus.messaging
+        - name: Migreren van Microsoft.Azure.ServiceBus naar Azure.Messaging.ServiceBus
+          href: 'https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/servicebus/Azure.Messaging.ServiceBus/MigrationGuide.md'
+        - name: Azure.Messaging.ServiceBus (.NET Standard - nieuwste)
+          href: 'https://docs.microsoft.com/dotnet/api/azure.messaging.servicebus'
         - name: Microsoft.Azure.ServiceBus (.NET Standard)
-          href: /dotnet/api/microsoft.azure.servicebus
+          href: 'https://docs.microsoft.com/dotnet/api/microsoft.azure.servicebus'
+        - name: Microsoft.ServiceBus.Messaging (.NET Framework)
+          href: 'https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging'
     - name: Java
-      href: /java/api/overview/azure/servicebus
+      items:
+        - name: Migreren van azure-servicebus naar azure-messaging-servicebus
+          href: 'https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/servicebus/azure-messaging-servicebus/migration-guide.md'
+        - name: azure-messaging-servicebus (nieuwste)
+          href: 'https://docs.microsoft.com/java/api/overview/azure/servicebus?view=azure-java-preview'
+        - name: azure-servicebus
+          href: 'https://docs.microsoft.com/java/api/overview/azure/servicebus'
     - name: Python
-      href: /python/api/overview/azure/servicebus?view=azure-python
-    - name: Node.js
-      href: /javascript/api/overview/azure/service-bus
+      items:
+        - name: Migreren van azure-servicebus versie 0.50 naar versie 7
+          href: 'https://github.com/Azure/azure-sdk-for-python/blob/master/sdk/servicebus/azure-servicebus/migration_guide.md'
+        - name: azure-servicebus versie 7
+          href: 'https://docs.microsoft.com/python/api/overview/azure/servicebus?view=azure-python-preview'
+        - name: azure-servicebus versie 0.50
+          href: 'https://docs.microsoft.com/python/api/overview/azure/servicebus'
+    - name: Javascript
+      items:
+        - name: Migreren van versie 1 naar versie 7
+          href: 'https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/servicebus/service-bus/migrationguide.md'
+        - name: azure/service-bus versie 7
+          href: 'https://docs.microsoft.com/javascript/api/overview/azure/service-bus?view=azure-node--preview'
+        - name: azure/service-bus versie 1
+          href: 'https://docs.microsoft.com/javascript/api/overview/azure/service-bus?view=azure-node-latest'
     - name: PHP
       href: 'https://github.com/Azure/azure-sdk-for-php'
     - name: Ruby
@@ -265,9 +299,9 @@
       href: /azure/templates/microsoft.servicebus/allversions
     - name: Quota
       href: service-bus-quotas.md
-    - name: SQLFilter-syntaxis
+    - name: SQL-filtersyntaxis abonnementsregel
       href: service-bus-messaging-sql-filter.md
-    - name: SQLRuleAction-syntaxis
+    - name: SQL-actiesyntaxis abonnementsregel
       href: service-bus-messaging-sql-rule-action.md
     - name: Ingebouwde modules voor Azure Policy
       displayName: 'samples, policies, definitions'

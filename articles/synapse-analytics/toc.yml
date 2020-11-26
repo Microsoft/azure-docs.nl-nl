@@ -445,61 +445,72 @@
           href: quickstart-create-apache-spark-pool-studio.md
     - name: Zelfstudies
       items:
-        - name: Apache Spark-toepassingen uitvoeren
-          href: ./spark/intellij-tool-synapse.md
-          displayname: intellij
-        - name: PySpark-toepassingen voor Spark-pools uitvoeren
-          href: ./spark/vscode-tool-synapse.md
-        - name: Spark-taakdefinities
+        - name: Gegevensvisualisatie met Synapse Studio-notebooks
+          href: ./spark/apache-spark-data-visualization-tutorial.md
+        - name: Gegevens analyseren met Apache Spark en Power BI
+          href: ./spark/apache-spark-to-power-bi.md
+        - name: Azure-Machine Learning-modellen maken
+          href: ./spark/apache-spark-machine-learning-mllib-notebook.md
+        - name: Spark-taakdefinities verzenden
           href: ./spark/apache-spark-job-definitions.md
     - name: Concepten
       items:
-        - name: Concepten van Apache Spark
+        - name: Apache Spark
           href: ./spark/apache-spark-concepts.md
-        - name: Wat is Delta Lake
+        - name: Delta Lake
           href: ./spark/apache-spark-what-is-delta-lake.md
-        - name: Functioneel overzicht van Delta Lake
-          href: ./spark/apache-spark-delta-lake-overview.md
-        - name: Prestaties van Apache Spark
-          href: ./spark/apache-spark-performance.md
-        - name: Prestatieoptimalisatie voor Apache Spark met behulp van Hyperspace-indexen
-          href: ./spark/apache-spark-performance-hyperspace.md
         - name: Gedrag van Apache Spark bij automatisch schalen
           href: ./spark/apache-spark-autoscale.md
-        - name: Ontwikkeling
+        - name: Synapse-runtimes
+          href: ./spark/apache-spark-version-support.md
+        - name: Machine learning
+          href: ./spark/apache-spark-machine-learning-concept.md
+        - name: Notebooks
+          href: ./spark/apache-spark-notebook-concept.md
+        - name: Bewakingsprogramma's
+          href: monitoring/how-to-monitor-spark-applications.md
+    - name: Instructiegidsen
+      items:
+        - name: Werken met Delta Lake
+          href: ./spark/apache-spark-delta-lake-overview.md
+        - name: Bibliotheken beheren
+          href: ./spark/apache-spark-azure-portal-add-libraries.md
+        - name: Notebooks gebruiken
           items:
-            - name: Bibliotheken
-              items:
-                - name: Bibliotheken toevoegen en beheren
-                  href: ./spark/apache-spark-azure-portal-add-libraries.md
-                - name: Ondersteuning voor runtime-taal en -bibliotheek
-                  href: ./spark/apache-spark-version-support.md
-            - name: Azure Synapse Studio-notebooks
+            - name: Notebooks beheren
               href: ./spark/apache-spark-development-using-notebooks.md
-            - name: Referenties bewaren met TokenLibrary
-              href: ./spark/apache-spark-secure-credentials-with-tokenlibrary.md
+            - name: Gegevens visualiseren
+              href: ./spark/apache-spark-data-visualization.md
+            - name: Verbinding maken met Spark met de IntelliJ-invoegtoepassing
+              href: ./spark/intellij-tool-synapse.md
+            - name: Verbinding maken met Spark-pools met VSCode
+              href: ./spark/vscode-tool-synapse.md
+        - name: Talen verkennen
+          items:
             - name: .NET voor Apache Spark
               href: ./spark/spark-dotnet.md
-        - name: Bewaking
+        - name: Beveiliging
+          items:
+            - name: Referenties bewaren met TokenLibrary
+              href: ./spark/apache-spark-secure-credentials-with-tokenlibrary.md
+        - name: Prestaties optimaliseren
+          items:
+            - name: Prestaties van Apache Spark
+              href: ./spark/apache-spark-performance.md
+            - name: Prestatieoptimalisatie voor Apache Spark met behulp van Hyperspace-indexen
+              href: ./spark/apache-spark-performance-hyperspace.md
+        - name: Beheren en bewaken
           items:
             - name: Spark-pool History Server
               href: ./spark/apache-spark-history-server.md
-    - name: Instructiegidsen
-      items:
-        - name: Beheren en bewaken
-          items:
-            - name: Apache Spark-toepassingen
-              href: monitoring/how-to-monitor-spark-applications.md
-            - name: Apache Spark-toepassingsgegevens
+            - name: Spark-toepassingen bewaken
               href: monitoring/apache-spark-applications.md
-            - name: JSON analyseren met behulp van Apache Spark
-              href: how-to-analyze-complex-schema.md
         - name: Gegevens opnemen en voorbereiden
           items:
-            - name: In de datawarehouse
-              items:
-                - name: Gegevens importeren en exporteren met Apache Spark
-                  href: ./spark/synapse-spark-sql-pool-import-export.md
+            - name: SQL Data Warehouse
+              href: ./spark/synapse-spark-sql-pool-import-export.md
+            - name: JSON analyseren
+              href: how-to-analyze-complex-schema.md
 - name: Synapse Link
   items:
     - name: Overzicht
@@ -616,6 +627,8 @@
               href: ../data-factory/connector-azure-database-for-mysql.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Azure Database for PostgreSQL
               href: ../data-factory/connector-azure-database-for-postgresql.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+            - name: Azure Databricks Delta Lake
+              href: ../data-factory/connector-azure-databricks-delta-lake.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Azure File Storage
               href: ../data-factory/connector-azure-file-storage.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Azure SQL Database
@@ -959,8 +972,8 @@
               href: ../data-factory/data-factory-troubleshoot-guide.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Problemen met connector oplossen
               href: ../data-factory/connector-troubleshoot-guide.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-            - name: Problemen oplossen met het hulpprogramma Gegevens kopiëren
-              href: ../data-factory/copy-data-tool-troubleshoot-guide.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+            - name: Beveiligings- en toegangsbeheer
+              href: ../data-factory/security-and-access-control-troubleshoot-guide.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Problemen met zelf-hostende Integration Runtimes oplossen
               href: ../data-factory/self-hosted-integration-runtime-troubleshoot-guide.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
 - name: Machine Learning
@@ -973,15 +986,22 @@
       items:
         - name: Een nieuwe gekoppelde Azure Machine Learning-service maken
           href: machine-learning/quickstart-integrate-azure-machine-learning.md
+    - name: Concepten
+      items:
+        - name: Modellen trainen
+          href: ./spark/apache-spark-machine-learning-training.md
     - name: Zelfstudies
       items:
+        - name: Gegevens visualiseren met Apache Spark
+          href: ./spark/apache-spark-data-visualization-tutorial.md
+          displayname: machine learning
         - name: Wizard om modellen te beoordelen voor SQL-pools
           href: machine-learning/tutorial-sql-pool-model-scoring-wizard.md
           displayname: machine learning
         - name: Een regressie-experiment uitvoeren met Azure AutoML
           href: ./spark/apache-spark-azure-machine-learning-tutorial.md
           displayname: machine learning
-        - name: Een machine learning-app in Apache Spark maken
+        - name: Een machine learning-model maken met Apache Spark MLlib
           href: ./spark/apache-spark-machine-learning-mllib-notebook.md
           displayname: machine learning
 - name: Naslaginformatie
@@ -1046,5 +1066,9 @@
           href: ./sql-data-warehouse/sql-data-warehouse-partner-data-management.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
         - name: Machine learning en AI
           href: ./sql-data-warehouse/sql-data-warehouse-partner-machine-learning-ai.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+        - name: Systeemintegratie
+          href: ./sql-data-warehouse/sql-data-warehouse-partner-system-integration.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
         - name: Openbare preview-partners
           href: ./sql-data-warehouse/sql-data-warehouse-partner-launch.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+        - name: Compatibiliteitsproblemen met toepassingen van derden
+          href: ./sql-data-warehouse/sql-data-warehouse-partner-compatibility-issues.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json

@@ -424,5 +424,9 @@
           href: sql-data-warehouse-partner-data-management.md
         - name: Machine learning en AI
           href: sql-data-warehouse-partner-machine-learning-ai.md
+        - name: Systeemintegratie
+          href: sql-data-warehouse-partner-system-integration.md
         - name: Openbare preview-partners
           href: sql-data-warehouse-partner-launch.md
+        - name: Compatibiliteitsproblemen met toepassingen van derden
+          href: sql-data-warehouse-partner-compatibility-issues.md

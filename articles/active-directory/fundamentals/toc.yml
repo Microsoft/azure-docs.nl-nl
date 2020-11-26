@@ -79,6 +79,46 @@
               href: sync-ldap.md
             - name: SCIM-synchronisatie
               href: sync-scim.md
+        - name: Bouwen voor tolerantie
+          items:
+            - name: Overzicht
+              href: resilience-overview.md
+            - name: Richtlijnen voor infrastructuur
+              items:
+                - name: Overzicht van infrastructuur
+                  href: resilience-in-infrastructure.md
+                - name: Referentiebeheer
+                  href: resilience-in-credentials.md
+                - name: Apparaatstatussen
+                  href: resilience-with-device-states.md
+                - name: Continue toegangsevaluatie
+                  href: resilience-with-continuous-access-evaluation.md
+                - name: Externe gebruikersverificatie
+                  href: resilience-b2b-authentication.md
+                - name: Hybride verificatie
+                  href: resilience-in-hybrid.md
+                - name: Toepassingsproxy
+                  href: resilience-on-premises-access.md
+            - name: Azure AD B2C-richtlijnen
+              items:
+                - name: Azure AD B2C-inleiding tot tolerantie
+                  href: resilience-b2c.md
+                - name: Ervaring voor de eindgebruiker
+                  href: resilient-end-user-experience.md
+                - name: Interfaces met externe processen
+                  href: resilient-external-processes.md
+                - name: Best practices voor Azure AD B2C-ontwikkelaars
+                  href: resilience-b2c-developer-best-practices.md
+                - name: Bewaking en analytische gegevens
+                  href: resilience-with-monitoring-alerting.md
+            - name: Richtlijnen voor toepassingsontwikkeling
+              items:
+                - name: Ontwikkelingsoverzicht
+                  href: resilience-app-development-overview.md
+                - name: Clienttoepassingen
+                  href: resilience-client-app.md
+                - name: Daemontoepassingen
+                  href: resilience-daemon-app.md
         - name: Autoriteiten certificeren die in Azure worden gebruikt
           href: certificate-authorities.md
     - name: Implementatiehandleiding

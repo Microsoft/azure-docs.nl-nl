@@ -15,23 +15,22 @@ ms.workload: infrastructure-services
 ms.date: 02/18/2020
 ms.author: allensu
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: a44a3af7be214aa2ed000eb824b63c0bf7a95aee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a4d034aefe59a661bfb0694feba36a669aa274ac
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88054016"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96007270"
 ---
 # <a name="create-a-nat-gateway-using-azure-cli"></a>Een NAT-gateway maken met Azure CLI
 
 In deze zelfstudie wordt uitgelegd hoe u de Azure Virtual Network NAT-service gebruikt. U maakt een NAT-gateway om uitgaande connectiviteit te bieden voor virtuele machines in Azure. 
 
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-U kunt deze zelfstudie met behulp van Azure Cloud Shell voltooien of de betreffende opdrachten lokaal uitvoeren.  Als u Azure Cloud Shell nooit hebt gebruikt, moet u zich [nu aanmelden](https://shell.azure.com) om door te gaan met de eerste installatie.
-Als u ervoor kiest om deze opdrachten lokaal uit te voeren, moet u CLI installeren.  Voor deze zelfstudie moet u Azure CLI versie 2.0.71 of hoger uitvoeren. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren]( /cli/azure/install-azure-cli) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
-
+- Voor dit artikel is versie 2.0.71 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
@@ -72,7 +71,7 @@ U kunt een of meer openbare IP-resources, openbare IP-voorvoegsels of beide met 
 ### <a name="create-a-nat-gateway-resource"></a>Een NAT-gatewayresource maken
 
 In deze sectie wordt beschreven hoe u de volgende onderdelen van de NAT-service met de NAT-gatewayresource kunt maken en configureren:
-  - Een openbare IP-adresgroep en een openbaar IP-voorvoegsel die moeten worden gebruikt voor uitgaande stromen die worden omgezet door de NAT-gatewayresource.
+  - Een openbare IP-adresgroep en een openbaar IP-voorvoegsel die moeten worden gebruikt voor uitgaande stromen die worden vertaald door de NAT-gatewayresource.
   - Wijzig de time-out voor inactiviteit van de standaardwaarde van 4 minuten naar 10 minuten.
 
 Maak met [az network nat gateway create](https://docs.microsoft.com/cli/azure/network/nat?view=azure-cli-latest) een globaal Azure NAT-gateway met de naam **myNATgateway**. De opdracht gebruikt zowel het openbare IP-adres **myPublicIP** als het openbare IP-voorvoegsel **myPublicIPprefix**. De opdracht verandert de time-out voor inactiviteit in **10** minuten.
@@ -206,7 +205,7 @@ Eerst moet het IP-adres van de VM die u hebt gemaakt, worden gedetecteerd. Gebru
 
 ### <a name="sign-in-to-vm"></a>Aanmelden bij VM
 
-De SSH-aanmeldingsgegevens moeten worden opgeslagen in uw Cloud Shell van de vorige bewerking.  Open een [Azure Cloud Shell](https://shell.azure.com) in uw browser. Gebruik het IP-adres dat in de vorige stap is opgehaald om SSH op de virtuele machine uit te voeren.
+De SSH-aanmeldingsgegevens moeten worden opgeslagen in uw Cloud Shell van de vorige bewerking.  Open een [Azure Cloud Shell](https://shell.azure.com) in uw browser. Gebruik het IP-adres dat in de vorige stap is opgehaald om SSH naar de virtuele machine uit te voeren.
 
 ```bash
 ssh <ip-address-destination>
@@ -227,13 +226,13 @@ U kunt de opdracht [az group delete](/cli/azure/group#az-group-delete) gebruiken
 
 In deze zelfstudie hebt u een NAT-gateway gemaakt en een VM om de gateway te gebruiken. 
 
-Controleer de metrische gegevens in Azure Monitor om uw NAT-service weer te geven. Stel problemen vast, zoals de resource-uitputting van de beschikbare SNAT-poorten.  Resource-uitputting van de SNAT-poorten kan worden verholpen door extra openbare IP-adresresources of openbare IP-voorvoegselresources of beide toe te voegen.
+Controleer de metrische gegevens in Azure Monitor om uw NAT-service weer te geven. Problemen vaststellen, zoals de resource-uitputting van de beschikbare SNAT-poorten.  Resource-uitputting van de SNAT-poorten kan worden verholpen door extra openbare IP-adresresources of openbare IP-voorvoegselresources of beide toe te voegen.
 
 
 - Meer informatie over [Azure Virtual Network NAT](./nat-overview.md)
-- Meer informatie over [NAT-gatewayresource](./nat-gateway-resource.md)
-- Quickstart voor het implementeren van [NAT-gatewayresource met Azure CLI](./quickstart-create-nat-gateway-cli.md)
-- Quickstart voor het implementeren van [NAT-gatewayresource met behulp van Azure PowerShell](./quickstart-create-nat-gateway-powershell.md)
-- Quickstart voor het implementeren van [NAT-gatewayresource met de Azure-portal](./quickstart-create-nat-gateway-portal.md)
+- Meer informatie over [NAT-gatewayresource](./nat-gateway-resource.md).
+- Quickstart voor het implementeren van [NAT-gatewayresource met Azure CLI](./quickstart-create-nat-gateway-cli.md).
+- Quickstart voor het implementeren van [NAT-gatewayresource met behulp van Azure PowerShell](./quickstart-create-nat-gateway-powershell.md).
+- Quickstart voor het implementeren van [NAT-gatewayresource met Azure Portal](./quickstart-create-nat-gateway-portal.md).
 > [!div class="nextstepaction"]
 

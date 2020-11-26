@@ -11,9 +11,9 @@
 - name: Snelstartgidsen
   expanded: true
   items:
-    - name: .NET Core
+    - name: ASP.NET Core
       href: quickstart-dotnetcore.md
-    - name: .NET Framework
+    - name: ASP.NET
       href: quickstart-dotnet-framework.md
     - name: Node.js
       href: quickstart-nodejs.md
@@ -52,9 +52,9 @@
           href: scenario-secure-app-clean-up-resources.md
     - name: App met DB
       items:
-        - name: .Net Core met SQL DB
+        - name: ASP.NET Core met SQL DB
           href: tutorial-dotnetcore-sqldb-app.md
-        - name: .NET Framework met SQL DB
+        - name: ASP.NET met SQL DB
           href: app-service-web-tutorial-dotnet-sqldatabase.md
         - name: PHP met MySQL
           href: tutorial-php-mysql-app.md

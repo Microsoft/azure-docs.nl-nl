@@ -22,6 +22,12 @@
           href: howto-create-private-cluster-4x.md
         - name: DNS-forwarding configureren
           href: dns-forwarding.md
+    - name: Storage
+      items:
+        - name: Een Azure Files-opslagklasse maken
+          href: howto-create-a-storageclass.md
+        - name: Het ingebouwde containerregister gebruiken
+          href: built-in-container-registry.md
     - name: Verificatie en beveiliging
       items:
         - name: Azure Active Directory-verificatie (CLI) configureren

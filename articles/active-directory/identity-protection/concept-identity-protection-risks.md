@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d0da8755199645b12e9c6ed75a42881fe86e70b5
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: f10d8a94be53780f732112c012600a7fb840642b
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023034"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96180639"
 ---
 # <a name="what-is-risk"></a>Wat is risico?
 
@@ -74,7 +74,7 @@ Deze Risico's kunnen in realtime worden berekend of offline worden berekend met 
 
 ### <a name="risk-levels"></a>Risiconiveaus
 
-Met Identity Protection wordt het risico gecategoriseerd in drie niveaus: laag, gemiddeld en hoog. Wanneer u [aangepaste beleids regels voor identiteits beveiliging](https://docs.microsoft.com/azure/active-directory/identity-protection/concept-identity-protection-policies#custom-conditional-access-policy)configureert, kunt u deze ook configureren om te activeren op een **risico** niveau. Geen risico betekent dat er geen actieve indicatie is dat de identiteit van de gebruiker is aangetast.
+Met Identity Protection wordt het risico gecategoriseerd in drie niveaus: laag, gemiddeld en hoog. Wanneer u [aangepaste beleids regels voor identiteits beveiliging](./concept-identity-protection-policies.md#custom-conditional-access-policy)configureert, kunt u deze ook configureren om te activeren op een **risico** niveau. Geen risico betekent dat er geen actieve indicatie is dat de identiteit van de gebruiker is aangetast.
 
 Microsoft biedt geen specifieke details over de manier waarop het risico wordt berekend, maar hoe hoger het niveau is, hoe betrouwbaarder het is dat de gebruiker of het aanmelden is gecompromitteerd. Een voorbeeld: één geval van onbekende aanmeldingseigenschappen voor een gebruiker kan minder bedreigend zijn dan gelekte referenties voor een andere gebruiker.
 

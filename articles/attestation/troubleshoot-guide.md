@@ -7,12 +7,12 @@ ms.service: attestation
 ms.topic: reference
 ms.date: 07/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: fe347983e2143c7a4bdf00ca0207356c881c66ac
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 72d7a40c38f3629a70260f223074b456dff9ce38
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95891279"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182832"
 ---
 # <a name="microsoft-azure-attestation-troubleshooting-guide"></a>Gids voor het oplossen van problemen met Microsoft Azure
 
@@ -95,7 +95,7 @@ b. De toewijzings instellingen voor Azure-rollen controleren
  
   ```
 
-c. Als u geen geschikte roltoewijzing in de lijst vindt, volgt u de instructies [hier](/azure/role-based-access-control/role-assignments-powershell)
+c. Als u geen geschikte roltoewijzing in de lijst vindt, volgt u de instructies [hier](../role-based-access-control/role-assignments-powershell.md)
 
 ## <a name="2-http--400-errors"></a>2. HTTP: 400 fouten
 
@@ -123,7 +123,7 @@ G:\Az\security\Attestation\src\AttestationServices\Instance\Enclave\api.cpp(840)
 
 Een aanvraag verzenden naar een Attestation-API door beleids tekst op te geven in de para meter "draftPolicyForAttestation". De AttestSgxEnclave-API gebruikt dit beleids document tijdens de attest aanroep en dit kan worden gebruikt om Attestation-beleid te testen voordat ze worden verbruikt. Het Attestation-token dat wordt gegenereerd wanneer dit veld aanwezig is, wordt niet beveiligd.
 
-Zie [voor beelden van Attestation-beleid](/azure/attestation/policy-examples)
+Zie [voor beelden van Attestation-beleid](./policy-examples.md)
 
 ### <a name="22-attestation-failure-due-to-invalid-input"></a>2.2. Attestation-fout vanwege ongeldige invoer
 
@@ -163,7 +163,7 @@ Zorg ervoor dat de uitbrei ding basis beperkingen van het basis certificaat is i
 
 Anders wordt de certificaat keten als ongeldig beschouwd.
 
-Zie [beleids handtekening](/azure/attestation/policy-signer-examples) en [beleids](/azure/attestation/policy-examples) voorbeelden 
+Zie [beleids handtekening](./policy-signer-examples.md) en [beleids](./policy-examples.md) voorbeelden 
 
 ### <a name="24-adddelete-policy-signer-failure"></a>2.4. Fout met beleids handtekening toevoegen/verwijderen
 
@@ -209,7 +209,7 @@ At line:1 char:1
     + FullyQualifiedErrorId : Microsoft.Azure.Commands.Attestation.AddAzureAttestationPolicySigner
 ```
 
-**Probleemoplossings stappen** Als u een nieuw certificaat voor een beleids ondertekenaar wilt toevoegen/verwijderen, gebruikt u RFC7519 JSON Web Token (JWT) met een claim met de naam "x-MS-policyCertificate". De waarde van de claim is een RFC7517 JSON-websleutel, die het certificaat bevat dat moet worden toegevoegd. JWT moet zijn ondertekend met een persoonlijke sleutel van een van de geldige beleids handtekening certificaten die zijn gekoppeld aan de provider. Zie [voor beelden van beleids regels voor aanmelden](/azure/attestation/policy-signer-examples).
+**Probleemoplossings stappen** Als u een nieuw certificaat voor een beleids ondertekenaar wilt toevoegen/verwijderen, gebruikt u RFC7519 JSON Web Token (JWT) met een claim met de naam "x-MS-policyCertificate". De waarde van de claim is een RFC7517 JSON-websleutel, die het certificaat bevat dat moet worden toegevoegd. JWT moet zijn ondertekend met een persoonlijke sleutel van een van de geldige beleids handtekening certificaten die zijn gekoppeld aan de provider. Zie [voor beelden van beleids regels voor aanmelden](./policy-signer-examples.md).
 
 ### <a name="25-attestation-policy-configuration-failure"></a>2.5. Configuratie fout Attestation-beleid
 
@@ -255,7 +255,7 @@ Als u een beleid wilt configureren in tekst indeling, geeft u de beleids tekst r
 
 Geef in Power shell PolicyFormat als JWT op om beleid te configureren in de JWT-indeling. De standaard indeling voor het beleid is tekst.
 
-Zie [voor beelden](/azure/attestation/policy-examples) van Attestation-beleid en [een Attestation-beleid ontwerpen](/azure/attestation/author-sign-policy) 
+Zie [voor beelden](./policy-examples.md) van Attestation-beleid en [een Attestation-beleid ontwerpen](./author-sign-policy.md) 
 
 ## <a name="3-azattestation-installation-issues-in-powershell"></a>3. AZ. Attestation-installatie problemen in Power shell
 
@@ -301,4 +301,3 @@ Get-InstalledModule
 Als de versies niet overeenkomen met de minimum vereiste, voert u Update-Module opdrachten uit
 
 bijvoorbeeld-Update-Module-naam AZ. Attestation
-

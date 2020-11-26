@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 05/31/2019
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: bc3352dd57a76cbb0b38455adfa11987ec93781a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d73cf3336afad83fadf6f56606161f523e202280
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96003018"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96180537"
 ---
 # <a name="using-azure-ad-application-proxy-to-publish-on-premises-apps-for-remote-users"></a>Een toegangsproxy van Azure AD gebruiken om on-premises apps te publiceren voor externe gebruikers
 
@@ -95,7 +95,7 @@ App-proxy werkt met apps die gebruikmaken van het volgende systeemeigen verifica
 
 De app-proxy biedt ook ondersteuning voor de volgende verificatieprotocollen met integratie van derden of in specifieke configuratiescenario's:
 
-* [**Op headers gebaseerde verificatie**](/azure/active-directory/manage-apps/application-proxy-configure-single-sign-on-with-headers). Deze aanmeldingsmethode maakt gebruik van een verificatieservice van derden met de naam PingAccess en wordt gebruikt wanneer de toepassing headers gebruikt voor verificatie. In dit scenario wordt verificatie afgehandeld door PingAccess.
+* [**Op headers gebaseerde verificatie**](./application-proxy-configure-single-sign-on-with-headers.md). Deze aanmeldingsmethode maakt gebruik van een verificatieservice van derden met de naam PingAccess en wordt gebruikt wanneer de toepassing headers gebruikt voor verificatie. In dit scenario wordt verificatie afgehandeld door PingAccess.
 * [**Verificatie op basis van een formulier of wachtwoord**](application-proxy-configure-single-sign-on-password-vaulting.md). Met deze verificatiemethode melden gebruikers zich aan bij de toepassing met een gebruikersnaam en wachtwoord, bij de eerste keer dat ze deze gebruiken. Na de eerste aanmelding levert Azure AD de gebruikersnaam en het wachtwoord voor de toepassing. In dit scenario wordt verificatie verwerkt door Azure AD.
 * [**SAML-verificatie**](application-proxy-configure-single-sign-on-on-premises-apps.md). Eenmalige aanmelding op basis van SAML wordt ondersteund voor toepassingen die gebruikmaken van de protocollen SAML 2.0 of WS-Federation. Met eenmalige aanmelding via SAML verifieert Azure AD bij de toepassing met behulp van het Azure AD-account van de gebruiker.
 

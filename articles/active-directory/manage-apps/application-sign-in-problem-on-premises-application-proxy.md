@@ -15,12 +15,12 @@ ms.date: 05/21/2018
 ms.author: kenwith
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7abf61d6b10e22a434c42097bf42183c7b39e352
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: a73dea856ee3250eb040f8464ee8703b01003f1f
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94654946"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96180554"
 ---
 # <a name="problems-signing-in-to-an-on-premises-application-using-the-azure-ad-application-proxy"></a>Problemen bij het aanmelden bij een on-premises toepassing met behulp van de Azure AD-toepassings proxy
 
@@ -48,7 +48,7 @@ De volgende documenten kunnen u helpen een aantal van de meest voorkomende probl
 ## <a name="im-having-a-problem-setting-up-back-end-authentication-to-my-application"></a>Ik heb een probleem met het instellen van back-endverificatie naar mijn toepassing
   De volgende documenten kunnen u helpen een aantal van de meest voorkomende problemen in deze categorie op te lossen.
   * [Ik weet niet hoe ik Kerberos-beperkte overdracht moet configureren](application-proxy-back-end-kerberos-constrained-delegation-how-to.md)
-  * [Ik weet niet hoe ik mijn toepassing met PingAccess moet configureren](/azure/active-directory/manage-apps/application-proxy-ping-access-publishing-guide)
+  * [Ik weet niet hoe ik mijn toepassing met PingAccess moet configureren](./application-proxy-ping-access-publishing-guide.md)
 
 ## <a name="im-having-a-problem-when-signing-in-to-my-application"></a>Ik heb een probleem met het aanmelden bij mijn toepassing
   De volgende documenten kunnen u helpen een aantal van de meest voorkomende problemen in deze categorie op te lossen.

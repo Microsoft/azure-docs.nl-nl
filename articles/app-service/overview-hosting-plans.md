@@ -6,16 +6,16 @@ ms.assetid: dea3f41e-cf35-481b-a6bc-33d7fc9d01b1
 ms.topic: article
 ms.date: 10/01/2020
 ms.custom: seodec18
-ms.openlocfilehash: 5f96b48b8fec07ab207ea3962a201bbff68a5339
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 8033235cde5b7ebe298bb1fa8d4222e208df998b
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92200845"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183002"
 ---
 # <a name="azure-app-service-plan-overview"></a>Overzicht van Azure App Service-plan
 
-In App Service (Web Apps, API Apps of Mobile Apps) wordt een app altijd uitgevoerd in een _app service plan_. Daarnaast heeft [Azure functions](../azure-functions/functions-scale.md#app-service-plan) ook de mogelijkheid om in een _app service-abonnement_te worden uitgevoerd. Een App Service-plan definieert een set rekenresources waarmee een web-app kan worden uitgevoerd. Deze reken bronnen zijn vergelijkbaar met de [_server farm_](https://wikipedia.org/wiki/Server_farm) in conventionele webhosting. Een of meer apps kunnen worden geconfigureerd om te worden uitgevoerd op dezelfde rekenresources (of in hetzelfde App Service-plan).
+In App Service (Web Apps, API Apps of Mobile Apps) wordt een app altijd uitgevoerd in een _app service plan_. Daarnaast heeft [Azure functions](../azure-functions/functions-scale.md#app-service-plan) ook de mogelijkheid om in een _app service-abonnement_ te worden uitgevoerd. Een App Service-plan definieert een set rekenresources waarmee een web-app kan worden uitgevoerd. Deze reken bronnen zijn vergelijkbaar met de [_server farm_](https://wikipedia.org/wiki/Server_farm) in conventionele webhosting. Een of meer apps kunnen worden geconfigureerd om te worden uitgevoerd op dezelfde rekenresources (of in hetzelfde App Service-plan).
 
 Wanneer u in een bepaalde regio een App Service plan maakt (bijvoorbeeld Europa-west), wordt er een set reken bronnen gemaakt voor dat plan in die regio. De apps die u in dit App Service plan plaatst, worden uitgevoerd op deze reken resources, zoals gedefinieerd in uw App Service plan. In elk App Service-plan wordt het volgende gedefinieerd:
 
@@ -26,8 +26,8 @@ Wanneer u in een bepaalde regio een App Service plan maakt (bijvoorbeeld Europa-
 
 De _prijs categorie_ van een app service plan bepaalt welke app service functies u krijgt en hoeveel u betaalt voor het abonnement. Er zijn verschillende prijscategorieën:
 
-- **Gedeelde Compute** **: de** twee basis **lagen, een**app, worden op dezelfde Azure-VM uitgevoerd als andere app service apps, inclusief apps van andere klanten. Hierbij worden CPU-quota toegewezen aan elke app die op de gedeelde resources wordt uitgevoerd en kunnen de resources niet worden opgeschaald.
-- **Toegewezen reken kracht**: de lagen **Basic**, **Standard**, **Premium**, **PremiumV2**en **PremiumV3** voeren apps uit op toegewezen Azure-vm's. Alleen apps in hetzelfde App Service-plan maken gedeeld gebruik van dezelfde rekenresources. Hoe hoger het niveau, hoe meer VM-exemplaren u kunt gebruiken voor uitschalen.
+- **Gedeelde Compute** **: de** twee basis **lagen, een** app, worden op dezelfde Azure-VM uitgevoerd als andere app service apps, inclusief apps van andere klanten. Hierbij worden CPU-quota toegewezen aan elke app die op de gedeelde resources wordt uitgevoerd en kunnen de resources niet worden opgeschaald.
+- **Toegewezen reken kracht**: de lagen **Basic**, **Standard**, **Premium**, **PremiumV2** en **PremiumV3** voeren apps uit op toegewezen Azure-vm's. Alleen apps in hetzelfde App Service-plan maken gedeeld gebruik van dezelfde rekenresources. Hoe hoger het niveau, hoe meer VM-exemplaren u kunt gebruiken voor uitschalen.
 - **Geïsoleerd**: deze laag voert specifieke virtuele Azure-machines uit op specifieke Azure Virtual Networks. Het biedt netwerk isolatie boven op reken isolatie voor uw apps. Dit niveau biedt de meeste mogelijkheden voor uitschalen.
 
 [!INCLUDE [app-service-dev-test-note](../../includes/app-service-dev-test-note.md)]
@@ -37,13 +37,13 @@ Elke laag biedt ook een specifieke subset van App Service-functies. Deze functie
 <a name="new-pricing-tier-premiumv3"></a>
 
 > [!NOTE]
-> De nieuwe **PremiumV3** -prijs categorie garandeert computers met snellere processors (mini maal 195 [ACU](https://docs.microsoft.com/azure/virtual-machines/acu) per virtuele CPU), SSD-opslag en vierdubbele geheugen-naar-core-verhouding ten opzichte van de **Standard** -laag. **PremiumV3** biedt ook ondersteuning voor een hogere schaal via een verhoogd aantal instanties en biedt nog steeds alle geavanceerde mogelijkheden die in de laag **standaard** worden gevonden. Alle beschik bare functies in de bestaande **PremiumV2** -laag zijn opgenomen in **PremiumV3**.
+> De nieuwe **PremiumV3** -prijs categorie garandeert computers met snellere processors (mini maal 195 [ACU](../virtual-machines/acu.md) per virtuele CPU), SSD-opslag en vierdubbele geheugen-naar-core-verhouding ten opzichte van de **Standard** -laag. **PremiumV3** biedt ook ondersteuning voor een hogere schaal via een verhoogd aantal instanties en biedt nog steeds alle geavanceerde mogelijkheden die in de laag **standaard** worden gevonden. Alle beschik bare functies in de bestaande **PremiumV2** -laag zijn opgenomen in **PremiumV3**.
 >
 > Net als bij andere toegewezen lagen zijn er drie VM-grootten beschikbaar voor deze laag:
 >
 > - Klein (2 CPU-core, 8 GiB geheugen) 
 > - Gemiddeld (4 CPU-kernen, 16 GiB geheugen) 
-> - Groot (8 CPU-kernen, 32 GiB geheugen)  
+> - Groot (8 CPU-kernen, 32 GiB geheugen)  
 >
 > Zie [app service prijzen](https://azure.microsoft.com/pricing/details/app-service/)voor **PremiumV3e** prijs informatie.
 >

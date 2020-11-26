@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 09/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: 8578f8aef779ff80f3965fc21b24b785f11226d0
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 2e7e798967541748b5572994d48cb5bdf7474cb1
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95024140"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182866"
 ---
 # <a name="forward-azure-automation-job-data-to-azure-monitor-logs"></a>Azure Automation-taakgegevens doorsturen naar Azure Monitor-logboeken
 
@@ -177,7 +177,7 @@ AzureDiagnostics
 
 ### <a name="filter-job-status-output-converted-into-a-json-object"></a>Taak status uitvoer die is geconverteerd naar een JSON-object filteren
 
-Onlangs hebben we het gedrag gewijzigd van de manier waarop de gegevens van het Automation-logboek worden geschreven naar de `AzureDiagnostics` tabel in de log Analytics-service, waar de JSON-eigenschappen niet langer in afzonderlijke velden worden opgesplitst. Als u uw runbook hebt geconfigureerd om objecten in de uitvoer stroom in JSON-indeling als afzonderlijke kolommen in te delen, moet u uw query's opnieuw configureren om dat veld te parseren naar een JSON-object om die eigenschappen te openen. Dit wordt gerealiseerd met behulp van [parsejson](https://docs.microsoft.com/azure/data-explorer/kusto/query/samples?&pivots=azuremonitor#parsejson) om toegang te krijgen tot een specifiek JSON-element in een bekend pad.
+Onlangs hebben we het gedrag gewijzigd van de manier waarop de gegevens van het Automation-logboek worden geschreven naar de `AzureDiagnostics` tabel in de log Analytics-service, waar de JSON-eigenschappen niet langer in afzonderlijke velden worden opgesplitst. Als u uw runbook hebt geconfigureerd om objecten in de uitvoer stroom in JSON-indeling als afzonderlijke kolommen in te delen, moet u uw query's opnieuw configureren om dat veld te parseren naar een JSON-object om die eigenschappen te openen. Dit wordt gerealiseerd met behulp van [parsejson](/azure/data-explorer/kusto/query/samples?pivots=#parsejson) om toegang te krijgen tot een specifiek JSON-element in een bekend pad.
 
 Zo wordt met een runbook de eigenschap *ResultDescription* in de uitvoer stroom in JSON-indeling met meerdere velden opgemaakt. Als u wilt zoeken naar de status van uw taken met een mislukte status die is opgegeven in een veld met de naam **status**, gebruikt u deze voorbeeld query om te zoeken in de *ResultDescription* met de status **mislukt**:
 

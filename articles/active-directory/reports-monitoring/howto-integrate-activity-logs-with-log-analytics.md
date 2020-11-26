@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01f762ef1fa3a997c01873df02abf87362b8c06f
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: 85e6a66f4520f12278266203211e1d1ae224c97f
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92055950"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96180452"
 ---
 # <a name="integrate-azure-ad-logs-with-azure-monitor-logs"></a>Azure AD-logboeken integreren met Azure Monitor-logboeken
 
@@ -46,7 +46,7 @@ U kunt Logboeken voor controle activiteiten en logboeken voor de registratie van
 
 * **Auditlogboeken**: het [activiteitenrapport voor auditlogboeken](concept-audit-logs.md) biedt u toegang tot de geschiedenis van elke taak die in uw tenant is uitgevoerd.
 * **Aanmeldingslogboeken**: met het [activiteitenrapport voor aanmeldingen](concept-sign-ins.md) kunt u bepalen wie de taken heeft uitgevoerd die in het auditlogboek zijn gerapporteerd.
-* **Inrichtings logboeken**: met de [inrichtings logboeken](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-log-analytics)kunt u controleren welke gebruikers zijn gemaakt, bijgewerkt en verwijderd in al uw toepassingen van derden. 
+* **Inrichtings logboeken**: met de [inrichtings logboeken](../app-provisioning/application-provisioning-log-analytics.md)kunt u controleren welke gebruikers zijn gemaakt, bijgewerkt en verwijderd in al uw toepassingen van derden. 
 
 > [!NOTE]
 > Auditlogboeken en aanmeldingslogboeken met betrekking tot B2C worden momenteel niet ondersteund.
@@ -69,7 +69,7 @@ Voor het gebruik van deze functie is een Azure AD Premium P1-of P2-licentie vere
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
 
-2. Selecteer **Azure Active Directory**  >  Diagnostische**instellingen Azure Active Directory diagnostische**  ->  **instelling toevoegen**. U kunt ook **export instellingen** selecteren op de pagina **controle logboeken** of **aanmeldingen** om naar de configuratie pagina Diagnostische instellingen te gaan.  
+2. Selecteer **Azure Active Directory**  >  Diagnostische **instellingen Azure Active Directory diagnostische**  ->  **instelling toevoegen**. U kunt ook **export instellingen** selecteren op de pagina **controle logboeken** of **aanmeldingen** om naar de configuratie pagina Diagnostische instellingen te gaan.  
     
 3. Schakel in het menu **Diagnostische instellingen** het selectie vakje **verzenden naar log Analytics werk ruimte** in en selecteer vervolgens **configureren**.
 

@@ -14,21 +14,21 @@ ms.date: 04/01/2020
 ms.author: kenwith
 ms.reviewer: baselden
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1012ae32f679d23f16a7483415657596d027cc01
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: ab3b655d59e2cb8c6773fa1a34a08638e6926475
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658822"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96180656"
 ---
-# <a name="moving-application-authentication-from-active-directory-federation-services-to-azure-active-directory"></a>Toepassings verificatie van Active Directory Federation Services naar Azure Active Directory verplaatsen
+# <a name="moving-application-authentication-from-active-directory-federation-services-to-azure-active-directory"></a>Toepassingsverificatie verplaatsen van Active Directory Federation Services naar Azure Active Directory
 
 [Azure Active Directory (Azure AD)](../fundamentals/active-directory-whatis.md) biedt een universeel identiteits platform dat uw gebruikers, partners en klanten een enkele identiteit biedt voor het openen van toepassingen en samen werken vanaf elk platform en apparaat. Azure AD heeft een [volledige reeks mogelijkheden voor identiteits beheer](../fundamentals/active-directory-whatis.md). Door de verificatie van uw toepassing (app) en autorisatie voor Azure AD in te stellen, kunt u profiteren van de voor delen van deze mogelijkheden.
 
 > [!TIP]
 > Dit artikel is geschreven voor een doel groep van ontwikkel aars. Project managers en beheerders die de overstap naar Azure AD van een toepassing plannen, moeten overwegen onze [migratie van verificatie van toepassingen naar Azure AD](https://aka.ms/migrateapps/whitepaper) White Paper (PDF) te lezen.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Als u een on-premises map hebt die gebruikers accounts bevat, hebt u waarschijnlijk veel toepassingen die gebruikers verifiëren. Elk van deze apps is geconfigureerd voor gebruikers om toegang te krijgen tot het gebruik van hun identiteit.
 
@@ -262,7 +262,7 @@ Toegang tot alle gebruikers toestaan, zoals in AD FS:
 
 Dit wordt op een van de volgende manieren toegewezen aan Azure AD:
 
-In de [Azure Portal](https://portal.azure.com/):
+[In Azure Portal](https://portal.azure.com/):
 * Optie 1: gebruikers toewijzing instellen is vereist voor Nee ![Toegangs beheer beleid voor SaaS-apps bewerken ](media/migrate-adfs-apps-to-azure/permit-access-to-all-users-2.png)
 
     Houd er rekening mee dat bij het instellen van de gebruikers toewijzing vereiste overschakelen op Ja vereist is dat gebruikers aan de toepassing worden toegewezen om toegang te krijgen. Wanneer dit is ingesteld op Nee, hebben alle gebruikers toegang. Deze schakel optie bepaalt niet wat voor gebruikers wordt weer gegeven in de ervaring mijn apps.
@@ -320,7 +320,7 @@ De selector gebruiker/groep is een regel waarmee u MFA afdwingt voor een per gro
 
 MFA-regels opgeven voor een gebruiker of een groep in azure AD:
 
-1. Maak een [Nieuw beleid voor voorwaardelijke toegang](../authentication/tutorial-enable-azure-mfa.md?bc=%252fazure%252factive-directory%252fconditional-access%252fbreadcrumb%252ftoc.json&toc=%252fazure%252factive-directory%252fconditional-access%252ftoc.json).
+1. Maak een [Nieuw beleid voor voorwaardelijke toegang](../authentication/tutorial-enable-azure-mfa.md?bc=%2fazure%2factive-directory%2fconditional-access%2fbreadcrumb%2ftoc.json&toc=%2fazure%2factive-directory%2fconditional-access%2ftoc.json).
 
 2. Selecteer **Toewijzingen**. Voeg de gebruiker (s) of groep (en) toe waarvoor u MFA wilt afdwingen.
 
@@ -333,7 +333,7 @@ MFA-regels opgeven voor een gebruiker of een groep in azure AD:
 
 MFA-regels opgeven voor niet-geregistreerde apparaten in azure AD:
 
-1. Maak een [Nieuw beleid voor voorwaardelijke toegang](../authentication/tutorial-enable-azure-mfa.md?bc=%252fazure%252factive-directory%252fconditional-access%252fbreadcrumb%252ftoc.json&toc=%252fazure%252factive-directory%252fconditional-access%252ftoc.json).
+1. Maak een [Nieuw beleid voor voorwaardelijke toegang](../authentication/tutorial-enable-azure-mfa.md?bc=%2fazure%2factive-directory%2fconditional-access%2fbreadcrumb%2ftoc.json&toc=%2fazure%2factive-directory%2fconditional-access%2ftoc.json).
 
 2. De **toewijzingen** instellen voor **alle gebruikers**.
 
@@ -348,7 +348,7 @@ Wanneer u de optie voor meerdere besturings elementen zo instelt dat een van de 
 
 MFA-regels opgeven op basis van de locatie van een gebruiker in azure AD:
 
-1. Maak een [Nieuw beleid voor voorwaardelijke toegang](../authentication/tutorial-enable-azure-mfa.md?bc=%252fazure%252factive-directory%252fconditional-access%252fbreadcrumb%252ftoc.json&toc=%252fazure%252factive-directory%252fconditional-access%252ftoc.json).
+1. Maak een [Nieuw beleid voor voorwaardelijke toegang](../authentication/tutorial-enable-azure-mfa.md?bc=%2fazure%2factive-directory%2fconditional-access%2fbreadcrumb%2ftoc.json&toc=%2fazure%2factive-directory%2fconditional-access%2ftoc.json).
 
 1. De **toewijzingen** instellen voor **alle gebruikers**.
 
@@ -386,7 +386,7 @@ AD FS 2016 heeft verschillende ingebouwde beleids regels voor toegangs beheer wa
 ![Azure AD ingebouwde toegangs beheer](media/migrate-adfs-apps-to-azure/map-builtin-access-control-policies-1.png)
 
 
-Als u ingebouwde beleids regels wilt implementeren in azure AD, kunt u een [Nieuw beleid voor voorwaardelijke toegang](../authentication/tutorial-enable-azure-mfa.md?bc=%252fazure%252factive-directory%252fconditional-access%252fbreadcrumb%252ftoc.json&toc=%252fazure%252factive-directory%252fconditional-access%252ftoc.json) gebruiken en de toegangs elementen configureren, of u kunt de ontwerp functie voor aangepaste beleids regels in AD FS 2016 gebruiken voor het configureren van beleid voor toegangs beheer. De regel Editor bevat een uitgebreide lijst met vergunningen en behalve opties die u kunnen helpen bij het maken van allerlei soorten permutaties.
+Als u ingebouwde beleids regels wilt implementeren in azure AD, kunt u een [Nieuw beleid voor voorwaardelijke toegang](../authentication/tutorial-enable-azure-mfa.md?bc=%2fazure%2factive-directory%2fconditional-access%2fbreadcrumb%2ftoc.json&toc=%2fazure%2factive-directory%2fconditional-access%2ftoc.json) gebruiken en de toegangs elementen configureren, of u kunt de ontwerp functie voor aangepaste beleids regels in AD FS 2016 gebruiken voor het configureren van beleid voor toegangs beheer. De regel Editor bevat een uitgebreide lijst met vergunningen en behalve opties die u kunnen helpen bij het maken van allerlei soorten permutaties.
 
 ![Beleid voor toegangs beheer van Azure AD](media/migrate-adfs-apps-to-azure/map-builtin-access-control-policies-2.png)
 

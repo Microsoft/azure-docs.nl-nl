@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 06/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: b0bc23d515bebdd0d943bbad33c5ebba35a35605
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3fdb3b2b23d07b79a8e9979450bee653d646196c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90987201"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182798"
 ---
 # <a name="configure-startstop-vms-during-off-hours"></a>VM's buiten bedrijfsuren starten/stoppen configureren
 
@@ -63,7 +63,7 @@ In een omgeving met twee of meer onderdelen op meerdere Vm's die een gedistribue
 
 ### <a name="target-the-start-and-stop-actions-against-a-subscription-and-resource-group"></a>De start-en stop acties voor een abonnement en resource groep richten
 
-1. Voeg een `sequencestart` en een `sequencestop` tag met positieve gehele waarden toe aan vm's die zijn gericht op `External_Start_ResourceGroupNames` en `External_Stop_ResourceGroupNames` variabelen. De start-en stop acties worden in oplopende volg orde uitgevoerd. Zie een [virtuele Windows-machine coderen in azure](../virtual-machines/windows/tag.md) en [een virtuele Linux-machine in azure labelen](../virtual-machines/linux/tag.md)voor meer informatie over het coderen van een VM.
+1. Voeg een `sequencestart` en een `sequencestop` tag met positieve gehele waarden toe aan vm's die zijn gericht op `External_Start_ResourceGroupNames` en `External_Stop_ResourceGroupNames` variabelen. De start-en stop acties worden in oplopende volg orde uitgevoerd. Zie een [virtuele Windows-machine coderen in azure](../virtual-machines/tag-portal.md) en [een virtuele Linux-machine in azure labelen](../virtual-machines/tag-cli.md)voor meer informatie over het coderen van een VM.
 
 2. Wijzig de planningen **Sequenced-StartVM** en **Sequence-StopVM** in de datum en tijd die aan uw vereisten voldoen en schakel de planning in.
 
@@ -137,19 +137,19 @@ Als u e-mail meldingen wilt wijzigen nadat VM's buiten bedrijfsuren starten/stop
 > [!NOTE]
 > Abonnementen in de Azure Government Cloud bieden geen ondersteuning voor de e-mail functionaliteit van deze functie.
 
-1. Ga in het Azure Portal naar **controle**en vervolgens op **actie groepen**. Selecteer de actie groep met de naam **StartStop_VM_Notication**.
+1. Ga in het Azure Portal naar **controle** en vervolgens op **actie groepen**. Selecteer de actie groep met de naam **StartStop_VM_Notication**.
 
     :::image type="content" source="media/automation-solution-vm-management/azure-monitor.png" alt-text="Scherm afbeelding van de pagina monitor-actie groepen.":::
 
 2. Klik op de pagina StartStop_VM_Notification op **Details bewerken** onder **Details**. Hiermee opent u de pagina E-mail/SMS/push/Voice. Werk het e-mail adres bij en klik op **OK** om uw wijzigingen op te slaan.
 
-    :::image type="content" source="media/automation-solution-vm-management/change-email.png" alt-text="Scherm afbeelding van de pagina monitor-actie groepen.":::
+    :::image type="content" source="media/automation-solution-vm-management/change-email.png" alt-text="Scherm afbeelding van de pagina E-mail/SMS/push/Voice met een voor beeld van een e-mail adres bijgewerkt.":::
 
     U kunt ook aanvullende acties toevoegen aan de actie groep, Zie [actie groepen](../azure-monitor/platform/action-groups.md) voor meer informatie over actie groepen
 
 Hier volgt een voor beeld van een e-mail bericht dat wordt verzonden wanneer virtuele machines worden afgesloten met de functie.
 
-:::image type="content" source="media/automation-solution-vm-management/email.png" alt-text="Scherm afbeelding van de pagina monitor-actie groepen.":::
+:::image type="content" source="media/automation-solution-vm-management/email.png" alt-text="Scherm afbeelding van een voor beeld van een e-mail bericht dat wordt verzonden wanneer virtuele machines worden afgesloten met het onderdeel.":::
 
 ## <a name="add-or-exclude-vms"></a><a name="add-exclude-vms"></a>Vm's toevoegen of uitsluiten
 

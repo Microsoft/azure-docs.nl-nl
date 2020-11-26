@@ -3,12 +3,12 @@ title: Verbeter de prestaties van Azure-apps met Advisor
 description: Gebruik aanbevelingen voor prestaties in Azure Advisor om de snelheid en reactie tijd van uw bedrijfskritische toepassingen te verbeteren.
 ms.topic: article
 ms.date: 07/29/2020
-ms.openlocfilehash: 6a008411d4422853e6a98fad59bd4519b42a9548
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 55f5ac6784bf613170fd10060799ab5ad1290a62
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93308675"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183342"
 ---
 # <a name="improve-the-performance-of-azure-applications-by-using-azure-advisor"></a>Verbeter de prestaties van Azure-toepassingen met behulp van Azure Advisor
 
@@ -146,7 +146,7 @@ Advisor detecteert Azure Cosmos DB accounts die verkeer hebben van een regio die
 
 ## <a name="configure-your-azure-cosmos-db-indexing-policy-by-using-custom-included-or-excluded-paths"></a>Uw Azure Cosmos DB-indexerings beleid configureren met behulp van aangepaste, opgenomen of uitgesloten paden
 
-Advisor identificeert Azure Cosmos DB containers die gebruikmaken van het standaard indexerings beleid, maar kunnen wel profiteren van een aangepast indexerings beleid. Deze bepaling is gebaseerd op het werkbelasting patroon. Met het standaard indexerings beleid worden alle eigenschappen geïndexeerd. Een aangepast indexerings beleid met expliciet opgenomen of uitgesloten paden die in query filters worden gebruikt, kan het RUs-en opslag verbruik voor indexering verminderen. [Meer informatie over het wijzigen van index beleid.](/azure/cosmos-db/index-policy)
+Advisor identificeert Azure Cosmos DB containers die gebruikmaken van het standaard indexerings beleid, maar kunnen wel profiteren van een aangepast indexerings beleid. Deze bepaling is gebaseerd op het werkbelasting patroon. Met het standaard indexerings beleid worden alle eigenschappen geïndexeerd. Een aangepast indexerings beleid met expliciet opgenomen of uitgesloten paden die in query filters worden gebruikt, kan het RUs-en opslag verbruik voor indexering verminderen. [Meer informatie over het wijzigen van index beleid.](../cosmos-db/index-policy.md)
 
 ## <a name="set-your-azure-cosmos-db-query-page-size-maxitemcount-to--1"></a>Stel het pagina formaat van uw Azure Cosmos DB-query (MaxItemCount) in op-1 
 

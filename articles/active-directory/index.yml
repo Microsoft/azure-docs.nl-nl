@@ -12,12 +12,12 @@ metadata:
   ms.author: mtillman
   manager: daveba
   ms.date: 10/22/2020
-  ms.openlocfilehash: 10b16a6319f0bc458b5bae98edee39133e66acb4
-  ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+  ms.openlocfilehash: 741fe2c9cb2c4992b8c7b7b1905962b37b527917
+  ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 11/18/2020
-  ms.locfileid: "94835625"
+  ms.lasthandoff: 11/26/2020
+  ms.locfileid: "96180607"
 highlightedContent:
   items:
   - title: Wat is Azure AD?
@@ -28,7 +28,7 @@ highlightedContent:
     url: ./fundamentals/whats-new.md
   - title: Beveilig uw externe personeel
     itemType: get-started
-    url: https://docs.microsoft.com/enterprise-mobility-security/remote-work/
+    url: /enterprise-mobility-security/remote-work/
   - title: Rollen toewijzen aan gebruikers
     itemType: how-to-guide
     url: ./fundamentals/active-directory-users-assign-role-azure-portal.md
@@ -101,7 +101,7 @@ conceptualContent:
     - url: ./conditional-access/overview.md
       itemType: overview
       text: Wat is voorwaardelijke toegang?
-    - url: ./conditional-access/app-based-mfa.md
+    - url: ./authentication/tutorial-enable-azure-mfa.md
       itemType: quickstart
       text: Meervoudige verificatie vereisen voor specifieke apps
     - url: ./conditional-access/location-condition.md
@@ -126,13 +126,13 @@ conceptualContent:
       text: Meer informatie
   - title: Domeinservices
     links:
-    - url: ../active-directory-domain-services/active-directory-ds-overview.md
+    - url: ../active-directory-domain-services/overview.md
       itemType: overview
       text: Wat is Azure AD Domain Services?
-    - url: ../active-directory-domain-services/active-directory-ds-getting-started.md
+    - url: ../active-directory-domain-services/tutorial-create-instance.md
       itemType: quickstart
       text: Azure AD Domain Services inschakelen
-    - url: ../active-directory-domain-services/active-directory-ds-admin-guide-administer-group-policy.md
+    - url: ../active-directory-domain-services/manage-group-policy.md
       itemType: how-to-guide
       text: Groepsbeleid beheren
     footerLink:
@@ -154,17 +154,17 @@ conceptualContent:
       text: Meer informatie
   - title: Externe identiteiten
     links:
-    - url: ./b2b/compare-with-b2c.md
+    - url: ./external-identities/compare-with-b2c.md
       itemType: overview
       text: Oplossingen voor externe gebruikers vergelijken
-    - url: ../active-directory-b2c/active-directory-b2c-overview.md
+    - url: ../active-directory-b2c/overview.md
       itemType: overview
       text: Uw apps schalen naar consumenten (B2C)
-    - url: ./b2b/what-is-b2b.md
+    - url: ./external-identities/what-is-b2b.md
       itemType: overview
       text: Samenwerken met gebruikers buiten uw organisatie (B2B)
     footerLink:
-      url: ./b2b/index.yml
+      url: ./external-identities/index.yml
       text: Meer informatie
   - title: Hybride identiteit
     links:
@@ -297,10 +297,10 @@ additionalContent:
   - items:
     - title: Microsoft 365
       summary: Verken Microsoft 365, een complete oplossing met Azure AD.
-      url: https://docs.microsoft.com/microsoft-365/
+      url: /microsoft-365/
     - title: Azure AD PowerShell
       summary: Informatie over hoe u de Azure AD PowerShell-module installeert en gebruikt.
-      url: https://docs.microsoft.com/powershell/module/azuread/
+      url: /powershell/module/azuread/
     - title: Azure CLI-opdrachten voor Azure AD
       summary: De Azure AD-opdrachten in de CLI-verwijzing zoeken.
-      url: https://docs.microsoft.com/cli/azure/ad
+      url: /cli/azure/ad

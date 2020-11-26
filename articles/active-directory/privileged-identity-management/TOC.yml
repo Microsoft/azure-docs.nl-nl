@@ -11,7 +11,7 @@
     - name: Rollen die u niet met PIM kunt beheren
       href: pim-roles.md
     - name: Veilige bevoegde toegang
-      href: ../users-groups-roles/directory-admin-roles-secure.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json
+      href: ../roles/security-planning.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json
     - name: MFA en PIM
       href: pim-how-to-require-mfa.md
     - name: Overzichtsdashboards

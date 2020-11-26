@@ -6,12 +6,12 @@ author: yunjchoi
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: yunjchoi
-ms.openlocfilehash: 9d06ad2f740394a4959f3665c5d6311e71841241
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: e8921152177d3e4534ca9fb48cf209aed6e1b27c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94960832"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183359"
 ---
 # <a name="azure-kubernetes-service-diagnostics-preview-overview"></a>Overzicht van de diagnostische gegevens voor Azure Kubernetes-service (preview)
 
@@ -83,6 +83,6 @@ Identiteits-en beveiligings beheer detecteert verificatie-en autorisatie fouten 
 
 Verzamel Logboeken om u te helpen bij het oplossen van problemen met uw cluster met behulp van [AKS Peri Scope](https://aka.ms/aksperiscope).
 
-Lees het [gedeelte sorteren practices](https://docs.microsoft.com/azure/architecture/operator-guides/aks/aks-triage-practices) van de AKS-hand leiding voor de dag-2.
+Lees het [gedeelte sorteren practices](/azure/architecture/operator-guides/aks/aks-triage-practices) van de AKS-hand leiding voor de dag-2.
 
 Post uw vragen of feedback op [UserVoice](https://feedback.azure.com/forums/914020-azure-kubernetes-service-aks) door ' [diag] ' toe te voegen in de titel.

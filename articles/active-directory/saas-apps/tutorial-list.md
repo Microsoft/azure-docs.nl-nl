@@ -12,12 +12,12 @@ ms.date: 10/10/2019
 ms.author: jeedes
 ms.custom: it-pro
 ms.reviewer: celested
-ms.openlocfilehash: 19889c05447db05cc20c8f46e97bd8d16ff43bdf
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: f74cdb700013dc9b124c6a2df195456f08e4b60a
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445656"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182135"
 ---
 # <a name="tutorials-for-integrating-saas-applications-with-azure-active-directory"></a>Tutorials for integrating SaaS applications with Azure Active Directory (Zelfstudies voor het integreren van SaaS-toepassingen met Azure Active Directory)
 
@@ -25,7 +25,7 @@ Om u te helpen uw [cloudsoftwaretoepassingen als een service (SaaS)](https://azu
 
 Raadpleeg de [Active Directory-marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/category/azure-active-directory-apps) voor een lijst met alle SaaS-apps die vooraf zijn geïntegreerd in Azure Active Directory.
 
-Gebruik de [netwerkportal van de toepassing](../azuread-dev/howto-app-gallery-listing.md) om een [SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md)-toepassing aan te vragen voor de galerie voor automatische inrichting, of een SAML-/ODIC-toepassing die aan de galerie kan worden toegevoegd voor SSO.
+Gebruik de [netwerkportal van de toepassing](../develop/v2-howto-app-gallery-listing.md) om een [SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md)-toepassing aan te vragen voor de galerie voor automatische inrichting, of een SAML-/ODIC-toepassing die aan de galerie kan worden toegevoegd voor SSO.
 
 ## <a name="quick-links"></a>Snelkoppelingen
 

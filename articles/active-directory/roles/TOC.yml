@@ -4,7 +4,7 @@
   items:
     - name: Azure AD-rollen
       href: custom-overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: Onbeperkte app-registraties maken
       href: quickstart-app-registration-limits.md
@@ -33,11 +33,11 @@
         - name: De toegang van een gebruiker intrekken
           href: ../enterprise-users/users-revoke-access.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
         - name: Rol toewijzen aan gastgebruiker
-          href: ../b2b/add-guest-to-role.md?context=%2fazure/active-directory/roles/context/ugr-context
+          href: ../external-identities/add-guest-to-role.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
         - name: Toegang van gastgebruikers beperken
           href: ../enterprise-users/users-restrict-guest-permissions.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
         - name: Dynamische groepen en gasten
-          href: ../b2b/use-dynamic-groups.md?context=%2fazure/active-directory/roles/context/ugr-context
+          href: ../external-identities/use-dynamic-groups.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
     - name: Rollen en machtigingen
       expanded: true
       items:
@@ -112,7 +112,7 @@
       items:
         - name: Ondersteuning voor Azure AD vragen
           href: ../fundamentals/active-directory-troubleshooting-support-howto.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
-- name: Verwijzing
+- name: Naslaginformatie
   items:
     - name: Minst bevoorrechte rollen per taak
       href: delegate-by-task.md

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 07/14/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 668976e9777b35e514746070f0f4039a12b4e02b
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 9d620342d53bdae0b3a520000f6d240eb0e28d15
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94651716"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96180589"
 ---
 # <a name="remote-access-to-on-premises-applications-through-azure-ad-application-proxy"></a>Externe toegang tot on-premises toepassingen via een Azure Active Directory-toepassingsproxy
 
@@ -36,7 +36,7 @@ Toepassings proxy is een functie van Azure AD waarmee gebruikers toegang kunnen 
 Toepassings proxy werkt met:
 
 * Webtoepassingen die gebruikmaken van [geïntegreerde Windows-authenticatie](application-proxy-configure-single-sign-on-with-kcd.md) voor verificatie
-* Webtoepassingen die gebruikmaken van op formulieren of [koptekst gebaseerde](/azure/active-directory/manage-apps/application-proxy-configure-single-sign-on-with-headers) toegang
+* Webtoepassingen die gebruikmaken van op formulieren of [koptekst gebaseerde](./application-proxy-configure-single-sign-on-with-headers.md) toegang
 * Web-API's die u beschikbaar wilt maken voor uitgebreide toepassingen op verschillende apparaten
 * Toepassingen die worden gehost achter een [extern bureaublad-gateway](application-proxy-integrate-with-remote-desktop-services.md)
 * Uitgebreide client-apps die zijn geïntegreerd met deMicrosoft Authentication Library (MSAL)

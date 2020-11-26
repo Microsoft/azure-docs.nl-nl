@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a48a72aa021a17c59adb86bece66cec966e234bd
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: 0c4fde22b1b8d72ae8ae775c090e0da25ce0665f
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92056137"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96181166"
 ---
 # <a name="analyze-azure-ad-activity-logs-with-azure-monitor-logs"></a>Azure AD-activiteiten logboeken analyseren met Azure Monitor-logboeken
 
@@ -49,7 +49,7 @@ Als u wilt volgen, hebt u het volgende nodig:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
 
-2. Selecteer **Azure Active Directory**en selecteer vervolgens **Logboeken** in het gedeelte **bewaking** om uw log Analytics-werk ruimte te openen. De werk ruimte wordt geopend met een standaard query.
+2. Selecteer **Azure Active Directory** en selecteer vervolgens **Logboeken** in het gedeelte **bewaking** om uw log Analytics-werk ruimte te openen. De werk ruimte wordt geopend met een standaard query.
 
     ![Standaard query](./media/howto-analyze-activity-logs-log-analytics/defaultquery.png)
 
@@ -104,9 +104,9 @@ U kunt ook waarschuwingen instellen voor uw query. Als u bijvoorbeeld een waarsc
 
 De werkmappen bieden verschillende rapporten die betrekking hebben op algemene scenario's met betrekking tot het controleren, aanmelden en inrichten van gebeurtenissen. U kunt ook een waarschuwing ontvangen voor de gegevens in de rapporten, met behulp van de stappen die in de vorige sectie zijn beschreven.
 
-* **Inrichtings analyse**: deze [werkmap](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-log-analytics) bevat rapporten met betrekking tot het controleren van inrichtings activiteiten, zoals het aantal nieuwe gebruikers dat is ingericht en het inrichten van fouten, het aantal gebruikers dat is bijgewerkt en de mislukte update en het aantal gebruikers dat de inrichting heeft en de bijbehorende fouten.    
+* **Inrichtings analyse**: deze [werkmap](../app-provisioning/application-provisioning-log-analytics.md) bevat rapporten met betrekking tot het controleren van inrichtings activiteiten, zoals het aantal nieuwe gebruikers dat is ingericht en het inrichten van fouten, het aantal gebruikers dat is bijgewerkt en de mislukte update en het aantal gebruikers dat de inrichting heeft en de bijbehorende fouten.    
 * **Gebeurtenissen voor aanmeldingen**: deze werkmap bevat de meest relevante rapporten met betrekking tot het controleren van de aanmeldings activiteit, zoals aanmeldingen per toepassing, gebruiker, apparaat en een samen vatting van het aantal aanmeldingen in de loop van de tijd.
-* **Inzichten**op basis van voorwaardelijke toegang: met de Insights- [werkmap](https://docs.microsoft.com/azure/active-directory/conditional-access/howto-conditional-access-insights-reporting) voor voorwaardelijke toegang kunt u de gevolgen van het beleid voor voorwaardelijke toegang in uw organisatie in de loop van de tijd begrijpen. 
+* **Inzichten** op basis van voorwaardelijke toegang: met de Insights- [werkmap](../conditional-access/howto-conditional-access-insights-reporting.md) voor voorwaardelijke toegang kunt u de gevolgen van het beleid voor voorwaardelijke toegang in uw organisatie in de loop van de tijd begrijpen. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

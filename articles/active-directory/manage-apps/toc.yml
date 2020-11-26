@@ -263,7 +263,7 @@
             - name: Kerberos-beperkte overdracht configureren
               href: application-proxy-back-end-kerberos-constrained-delegation-how-to.md
             - name: Configureren met PingAccess
-              href: /azure/active-directory/manage-apps/application-proxy-ping-access-publishing-guide
+              href: ./application-proxy-ping-access-publishing-guide.md
             - name: De fout 'Kan deze zakelijke toepassing niet openen'
               href: application-proxy-sign-in-bad-gateway-timeout-error.md
             - name: Probleem bij het installeren van de connector voor de toepassingsproxyagent

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 11/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: 31bb0fac302a81c2523a2d2855ca1930cb266ac4
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: e77a90617d79dab8c71cdf0c7a6a4fb21e052fbd
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95906616"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182781"
 ---
 # <a name="deploy-a-windows-hybrid-runbook-worker"></a>Een Windows-Hybrid Runbook Worker implementeren
 
@@ -65,7 +65,7 @@ Zie [uw netwerk configureren](automation-hybrid-runbook-worker.md#network-planni
 U kunt de werk computer toevoegen aan een Hybrid Runbook Worker groep in een van uw Automation-accounts. Voor computers die als host fungeren voor het systeem Hybrid Runbook worker die wordt beheerd door Updatebeheer, kunnen ze worden toegevoegd aan een Hybrid Runbook Worker groep. Maar u moet hetzelfde Automation-account gebruiken voor zowel Updatebeheer als het lidmaatschap van de Hybrid Runbook Worker groep.
 
 >[!NOTE]
->Azure Automation [updatebeheer](update-management/update-mgmt-overview.md) installeert automatisch het systeem Hybrid Runbook worker op een Azure-of niet-Azure-machine die is ingeschakeld voor updatebeheer. Deze werk nemer is echter niet geregistreerd met Hybrid Runbook Worker groepen in uw Automation-account. Als u uw runbooks op deze computers wilt uitvoeren, moet u deze toevoegen aan een Hybrid Runbook Worker groep. Volg stap 6 onder de sectie [hand matige implementatie](#manual-deployment) om deze toe te voegen aan een groep.
+>Azure Automation [updatebeheer](./update-management/overview.md) installeert automatisch het systeem Hybrid Runbook worker op een Azure-of niet-Azure-machine die is ingeschakeld voor updatebeheer. Deze werk nemer is echter niet geregistreerd met Hybrid Runbook Worker groepen in uw Automation-account. Als u uw runbooks op deze computers wilt uitvoeren, moet u deze toevoegen aan een Hybrid Runbook Worker groep. Volg stap 6 onder de sectie [hand matige implementatie](#manual-deployment) om deze toe te voegen aan een groep.
 
 ## <a name="enable-for-management-with-azure-automation-state-configuration"></a>Inschakelen voor beheer met Azure Automation status configuratie
 

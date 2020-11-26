@@ -5,12 +5,12 @@ ms.assetid: 96cf87b9-8db6-41a8-863a-abb828e3d06d
 ms.topic: how-to
 ms.date: 03/26/2020
 ms.custom: devx-track-csharp, mvc, devcenter, cc996988-fb4f-47
-ms.openlocfilehash: 770b1076f1a711cd863c5d3d468a3ec87ea54e7b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8a6f154dc3c7a2984c687d55af2cf51a60169d6b
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88212728"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182560"
 ---
 # <a name="create-your-first-function-in-the-azure-portal"></a>Uw eerste functie maken in Azure Portal
 
@@ -21,7 +21,7 @@ Gebruik een van de volgende koppelingen om aan de slag te gaan met de gekozen lo
 
 | Visual Studio Code | Terminal/opdracht prompt | Visual Studio |
 | --- | --- | --- |
-|  &bull;&nbsp;[Aan de slag met C #](./functions-create-first-function-vs-code.md?pivots=programming-language-csharp)<br/>&bull;&nbsp;[Aan de slag met Java](./functions-create-first-function-vs-code.md?pivots=programming-language-java)<br/>&bull;&nbsp;[Aan de slag met Java script](./functions-create-first-function-vs-code.md?pivots=programming-language-javascript)<br/>&bull;&nbsp;[Aan de slag met Power shell](./functions-create-first-function-vs-code.md?pivots=programming-language-powershell)<br/>&bull;&nbsp;[Aan de slag met python](./functions-create-first-function-vs-code.md?pivots=programming-language-python) |&bull;&nbsp;[Aan de slag met C #](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-csharp)<br/>&bull;&nbsp;[Aan de slag met Java](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-java)<br/>&bull;&nbsp;[Aan de slag met Java script](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-javascript)<br/>&bull;&nbsp;[Aan de slag met Power shell](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-powershell)<br/>&bull;&nbsp;[Aan de slag met python](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-python) | [Aan de slag met C #](functions-create-your-first-function-visual-studio.md) |
+|  &bull;&nbsp;[Aan de slag met C #](./create-first-function-vs-code-csharp.md?pivots=programming-language-csharp)<br/>&bull;&nbsp;[Aan de slag met Java](./create-first-function-vs-code-csharp.md?pivots=programming-language-java)<br/>&bull;&nbsp;[Aan de slag met Java script](./create-first-function-vs-code-csharp.md?pivots=programming-language-javascript)<br/>&bull;&nbsp;[Aan de slag met Power shell](./create-first-function-vs-code-csharp.md?pivots=programming-language-powershell)<br/>&bull;&nbsp;[Aan de slag met python](./create-first-function-vs-code-csharp.md?pivots=programming-language-python) |&bull;&nbsp;[Aan de slag met C #](./create-first-function-cli-csharp.md?pivots=programming-language-csharp)<br/>&bull;&nbsp;[Aan de slag met Java](./create-first-function-cli-csharp.md?pivots=programming-language-java)<br/>&bull;&nbsp;[Aan de slag met Java script](./create-first-function-cli-csharp.md?pivots=programming-language-javascript)<br/>&bull;&nbsp;[Aan de slag met Power shell](./create-first-function-cli-csharp.md?pivots=programming-language-powershell)<br/>&bull;&nbsp;[Aan de slag met python](./create-first-function-cli-csharp.md?pivots=programming-language-python) | [Aan de slag met C #](functions-create-your-first-function-visual-studio.md) |
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -41,11 +41,11 @@ Maak vervolgens een functie in de nieuwe functie-app.
 
 1. Selecteer in het menu links van het venster **Functies** de optie **Functies** en selecteer vervolgens **Toevoegen** in het bovenste menu. 
  
-1. Selecteer **http-trigger**in het venster **nieuwe functie** .
+1. Selecteer **http-trigger** in het venster **nieuwe functie** .
 
     ![HTTP-triggerfunctie kiezen](./media/functions-create-first-azure-function/function-app-select-http-trigger.png)
 
-1. Accepteer in het venster **nieuwe functie** de standaard naam voor de **nieuwe functie**of voer een nieuwe naam in. 
+1. Accepteer in het venster **nieuwe functie** de standaard naam voor de **nieuwe functie** of voer een nieuwe naam in. 
 
 1. Kies **anoniem** in de vervolg keuzelijst **autorisatie niveau** en selecteer vervolgens **functie maken**.
 
@@ -80,4 +80,3 @@ Maak vervolgens een functie in de nieuwe functie-app.
 ## <a name="next-steps"></a>Volgende stappen
 
 [!INCLUDE [Next steps note](../../includes/functions-quickstart-next-steps.md)]
-

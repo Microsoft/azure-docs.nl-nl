@@ -4,12 +4,12 @@ description: Meer informatie over het maken van een Azure-functie vanuit een Azu
 Customer intent: As a student, I want to be able to create an HTTP triggered Function App within the Student Starter plan so that I can easily add APIs to any project.
 ms.topic: how-to
 ms.date: 04/29/2020
-ms.openlocfilehash: ecb2cc20bec602101d683dbfdd3f82a2e199aa16
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f40405c9325743da5d1963e3baea781606d2d8d9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87386959"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182526"
 ---
 # <a name="create-a-function-using-azure-for-students-starter"></a>Een functie maken met behulp van Azure for students starter
 
@@ -43,11 +43,11 @@ Vervolgens maakt u een functie in de nieuwe functie-app.
 
 1. Selecteer in het menu links van het venster **Functies** de optie **Functies** en selecteer vervolgens **Toevoegen** in het bovenste menu. 
  
-1. Selecteer **http-trigger**in het venster **nieuwe functie** .
+1. Selecteer **http-trigger** in het venster **nieuwe functie** .
 
     ![HTTP-triggerfunctie kiezen](./media/functions-create-student-starter/function-app-select-http-trigger.png)
 
-1. Accepteer in het venster **nieuwe functie** de standaard naam voor de **nieuwe functie**of voer een nieuwe naam in. 
+1. Accepteer in het venster **nieuwe functie** de standaard naam voor de **nieuwe functie** of voer een nieuwe naam in. 
 
 1. Kies **anoniem** in de vervolg keuzelijst **autorisatie niveau** en selecteer vervolgens **functie maken**.
 
@@ -100,7 +100,7 @@ In azure for students starter hebt u toegang tot de meeste functies van de Azure
 U bent nu klaar met het maken van een functie-app met een eenvoudige HTTP-activerings functie. Daarna kunt u het lokale hulp programma, meer talen, bewaking en integraties verkennen.
 
  * [Uw eerste functie maken met Visual Studio](./functions-create-your-first-function-visual-studio.md)
- * [Uw eerste functie maken met Visual Studio Code](./functions-create-first-function-vs-code.md)
+ * [Uw eerste functie maken met Visual Studio Code](./create-first-function-vs-code-csharp.md)
  * [Ontwikkelaarshandleiding voor Azure Functions Javascript](./functions-reference-node.md)
  * [Azure Functions gebruiken om verbinding te maken met een Azure SQL Database](./functions-scenario-database-table-cleanup.md)
  * [Meer informatie over Azure functions HTTP-bindingen](./functions-bindings-http-webhook.md).

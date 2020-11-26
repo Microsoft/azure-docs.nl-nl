@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 05/15/2020
 ms.author: Zhchia
-ms.openlocfilehash: 25767a7ddb83acf3ad10698f9f2ff8949a0ad55f
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 0ed56d200c2b5a472dbf93d45ad25156ea02a884
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94357195"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96181149"
 ---
 # <a name="tutorial-configure-8x8-for-automatic-user-provisioning"></a>Zelfstudie: 8x8 configureren voor automatische gebruikersinrichting
 
@@ -34,7 +34,7 @@ In deze zelfstudie worden de stappen beschreven die u moet uitvoeren in zowel 8x
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
 * [Een Azure AD-tenant](../develop/quickstart-create-new-tenant.md) 
-* Een gebruikersaccount in Azure AD met [machtigingen](../users-groups-roles/directory-assign-admin-roles.md) voor het configureren van inrichting (bijvoorbeeld toepassingsbeheerder, cloud-toepassingsbeheerder, toepassingseigenaar of globale beheerder).
+* Een gebruikersaccount in Azure AD met [machtigingen](../roles/permissions-reference.md) voor het configureren van inrichting (bijvoorbeeld toepassingsbeheerder, cloud-toepassingsbeheerder, toepassingseigenaar of globale beheerder).
 * Een abonnement op 8x8 X-serie van elk niveau.
 * Een 8x8-gebruikersaccount met beheerdersmachtiging in [Configuration Manager](https://vo-cm.8x8.com).
 * [Eenmalige aanmelding met Azure AD](./8x8virtualoffice-tutorial.md) is al geconfigureerd.

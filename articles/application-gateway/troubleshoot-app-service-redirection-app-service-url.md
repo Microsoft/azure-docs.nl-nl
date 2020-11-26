@@ -8,12 +8,12 @@ ms.service: application-gateway
 ms.topic: troubleshooting
 ms.date: 11/14/2019
 ms.author: absha
-ms.openlocfilehash: 51249c68407f6b4ca7793b2fdeceab5aa4f7bc5c
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 1cc7df755198461643703cac988c8c31f2ac25db
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94575982"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182883"
 ---
 # <a name="troubleshoot-app-service-issues-in-application-gateway"></a>Problemen met App Service oplossen in Application Gateway
 
@@ -93,7 +93,7 @@ De app service doet nu de omleiding (indien van toepassing) op dezelfde oorspron
 
 U moet eigenaar zijn van een aangepast domein en dit proces volgen:
 
-- Registreer het domein bij de lijst met aangepaste domeinen van de app service. U moet een CNAME in uw aangepaste domein hebben dat verwijst naar de FQDN van de app-service. Zie [een bestaande aangepaste DNS-naam toewijzen aan Azure app service](/azure/app-service/app-service-web-tutorial-custom-domain)voor meer informatie.
+- Registreer het domein bij de lijst met aangepaste domeinen van de app service. U moet een CNAME in uw aangepaste domein hebben dat verwijst naar de FQDN van de app-service. Zie [een bestaande aangepaste DNS-naam toewijzen aan Azure app service](../app-service/app-service-web-tutorial-custom-domain.md)voor meer informatie.
 
     ![Lijst met aangepaste domeinen voor app service](./media/troubleshoot-app-service-redirection-app-service-url/appservice-2.png)
 

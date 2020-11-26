@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7311f4faf4d8e93c4d3d2724bb9810342a769473
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 7c1e46fd55cd7beda931db2e24cc2210753ee26f
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93379227"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96180401"
 ---
 # <a name="view-custom-role-assignments-in-azure-active-directory"></a>Aangepaste roltoewijzingen in Azure Active Directory weer geven
 
@@ -32,14 +32,14 @@ In dit artikel wordt beschreven hoe u aangepaste rollen kunt weer geven die u he
 In deze procedure wordt beschreven hoe u toewijzingen van een rol met bereik voor de hele organisatie weergeeft.
 
 1. Meld u aan bij het [Azure AD-beheer centrum](https://aad.portal.azure.com) met privileged Role Administrator of Global Administrator Permissions in de Azure AD-organisatie.
-1. Selecteer **Azure Active Directory** , selecteer **rollen en beheerders** en selecteer vervolgens een rol om deze te openen en de eigenschappen ervan weer te geven.
+1. Selecteer **Azure Active Directory**, selecteer **rollen en beheerders** en selecteer vervolgens een rol om deze te openen en de eigenschappen ervan weer te geven.
 1. Selecteer **toewijzingen** om de toewijzingen voor de rol weer te geven.
 
     ![Roltoewijzingen en-machtigingen weer geven bij het openen van een rol in de lijst](./media/custom-view-assignments/role-assignments.png)
 
 ## <a name="view-role-assignments-using-azure-ad-powershell"></a>Roltoewijzingen weer geven met behulp van Azure AD Power shell
 
-In deze sectie wordt beschreven hoe u toewijzingen van een rol met bereik voor de hele organisatie weergeeft. In dit artikel wordt gebruikgemaakt van de [Azure Active Directory module Power shell versie 2](/powershell/module/azuread/?view=azureadps-2.0#directory_roles) . Als u Scope toewijzingen met één toepassing wilt weer geven met behulp van Power shell, kunt u de cmdlets gebruiken in [aangepaste rollen toewijzen met Power shell](../users-groups-roles/roles-assign-powershell.md).
+In deze sectie wordt beschreven hoe u toewijzingen van een rol met bereik voor de hele organisatie weergeeft. In dit artikel wordt gebruikgemaakt van de [Azure Active Directory module Power shell versie 2](/powershell/module/azuread/?view=azureadps-2.0#directory_roles) . Als u Scope toewijzingen met één toepassing wilt weer geven met behulp van Power shell, kunt u de cmdlets gebruiken in [aangepaste rollen toewijzen met Power shell](./custom-assign-powershell.md).
 
 ### <a name="prepare-powershell"></a>PowerShell voorbereiden
 
@@ -78,7 +78,7 @@ Get-AzureADDirectoryRoleMember -ObjectId $role.ObjectId | Get-AzureADUser
 
 ## <a name="view-role-assignments-using-microsoft-graph-api"></a>Roltoewijzingen weer geven met behulp van Microsoft Graph-API
 
-In deze sectie wordt beschreven hoe u toewijzingen van een rol met bereik voor de hele organisatie weergeeft.  Als u Scope toewijzingen met één toepassing wilt weer geven met behulp van Graph API, kunt u de bewerkingen gebruiken in [aangepaste rollen toewijzen met Graph API](../users-groups-roles/roles-assign-graph.md).
+In deze sectie wordt beschreven hoe u toewijzingen van een rol met bereik voor de hele organisatie weergeeft.  Als u Scope toewijzingen met één toepassing wilt weer geven met behulp van Graph API, kunt u de bewerkingen gebruiken in [aangepaste rollen toewijzen met Graph API](./custom-assign-graph.md).
 
 HTTP-aanvraag voor het ophalen van een roltoewijzing voor een bepaalde roldefinitie.
 
@@ -109,7 +109,7 @@ In deze sectie wordt beschreven hoe u toewijzingen van een rol met een bereik me
 
     ![App-registraties maken of bewerken op de App-registraties pagina](./media/custom-view-assignments/appreg-all-apps.png)
 
-1. Selecteer in de app-registratie **rollen en beheerders** , en selecteer vervolgens een rol om de eigenschappen ervan weer te geven.
+1. Selecteer in de app-registratie **rollen en beheerders**, en selecteer vervolgens een rol om de eigenschappen ervan weer te geven.
 
     ![Roltoewijzingen van de app-registratie weer geven op de pagina App-registraties](./media/custom-view-assignments/appreg-assignments.png)
 

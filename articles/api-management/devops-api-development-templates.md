@@ -7,12 +7,12 @@ ms.service: api-management
 ms.topic: conceptual
 ms.date: 10/09/2020
 ms.author: apimpm
-ms.openlocfilehash: 92d108304f788279a636b1dc5e1c4e6c103ede3d
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 62f163b9ce649cd5ddb52b4325682570633dfb92
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93088876"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183155"
 ---
 # <a name="cicd-for-api-management-using-azure-resource-manager-templates"></a>CI/CD voor API Management met behulp van Azure Resource Manager-sjablonen
 
@@ -36,19 +36,19 @@ In de volgende afbeelding ziet u de voorgestelde benadering.
 
 :::image type="content" source="media/devops-api-development-templates/apim-devops.png" alt-text="Diagram dat DevOps met API Management illustreert.":::
 
-In dit voor beeld zijn er twee implementatie omgevingen: *ontwikkeling* en *productie* . Elk heeft een eigen API Management exemplaar. 
+In dit voor beeld zijn er twee implementatie omgevingen: *ontwikkeling* en *productie*. Elk heeft een eigen API Management exemplaar. 
 
 * API-Ontwikkel aars hebben toegang tot de ontwikkelings instantie en kunnen deze gebruiken voor het ontwikkelen en testen van hun Api's. 
 * Een aangewezen team dat de *API-uitgevers* wordt genoemd, beheert het productie-exemplaar.
 
-De sleutel in deze voorgestelde benadering is om alle API Management configuraties in [Azure Resource Manager sjablonen](../azure-resource-manager/resource-group-authoring-templates.md)te blijven gebruiken. De organisatie moet deze sjablonen in een broncode beheer systeem, zoals git, houden. Zoals in de afbeelding wordt geïllustreerd, bevat een Publisher-opslag plaats alle configuraties van de productie-API Management exemplaar in een verzameling sjablonen:
+De sleutel in deze voorgestelde benadering is om alle API Management configuraties in [Azure Resource Manager sjablonen](../azure-resource-manager/templates/template-syntax.md)te blijven gebruiken. De organisatie moet deze sjablonen in een broncode beheer systeem, zoals git, houden. Zoals in de afbeelding wordt geïllustreerd, bevat een Publisher-opslag plaats alle configuraties van de productie-API Management exemplaar in een verzameling sjablonen:
 
 |Template  |Beschrijving  |
 |---------|---------|
 |Servicesjabloon     | Configuraties op service niveau van het API Management-exemplaar, zoals prijs categorie en aangepaste domeinen.         |
 |Gedeelde sjablonen     |  Gedeelde bronnen in een API Management-exemplaar, zoals groepen, producten en Logboeken.    |
 |API-sjablonen     |  Configuraties van Api's en hun subresources: bewerkingen, beleids regels en diagnostische instellingen.        |
-|Hoofd sjabloon (hoofd)     |   BIND alles samen door te [koppelen](../azure-resource-manager/resource-group-linked-templates.md) aan alle sjablonen en te implementeren in de juiste volg orde. Als u alle configuraties wilt implementeren in een API Management-exemplaar, implementeert u de hoofd sjabloon. U kunt ook elke sjabloon afzonderlijk implementeren.       |
+|Hoofd sjabloon (hoofd)     |   BIND alles samen door te [koppelen](../azure-resource-manager/templates/linked-templates.md) aan alle sjablonen en te implementeren in de juiste volg orde. Als u alle configuraties wilt implementeren in een API Management-exemplaar, implementeert u de hoofd sjabloon. U kunt ook elke sjabloon afzonderlijk implementeren.       |
 
 API-Ontwikkel aars splitsen de opslag plaats van de uitgever naar een ontwikkelaars opslagplaats en werken aan de wijzigingen voor hun Api's. In de meeste gevallen zijn ze gericht op de API-sjablonen voor hun Api's en hoeven ze de gedeelde of service sjablonen niet te wijzigen.
 

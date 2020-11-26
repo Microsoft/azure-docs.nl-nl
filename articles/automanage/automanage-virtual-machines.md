@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/04/2020
 ms.author: deanwe
 ms.custom: references_regions
-ms.openlocfilehash: a51a4a95d3580912d9b727d1580e6f278831f677
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: ffbf3fa3e2d404b7bc5888ef01707cbd816600b3
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92891499"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182849"
 ---
 # <a name="azure-automanage-for-virtual-machines"></a>Azure automanage voor virtuele machines
 
@@ -28,7 +28,7 @@ In dit artikel wordt informatie behandeld over Azure automanage voor virtuele ma
 
 ## <a name="overview"></a>Overzicht
 
-Azure automanage voor virtuele machines is een service waarmee u niet hoeft te ontdekken, weet hoe u kunt uitkomen en hoe u bepaalde services in azure kunt configureren die voor deel van uw virtuele machine zijn. Met deze services kunt u de betrouw baarheid, de beveiliging en het beheer van virtuele machines verbeteren en worden beschouwd als Services voor aanbevolen procedures van Azure, zoals [azure updatebeheer](../automation/update-management/update-mgmt-overview.md) en [Azure backup](../backup/backup-overview.md) -slechts een van de namen.
+Azure automanage voor virtuele machines is een service waarmee u niet hoeft te ontdekken, weet hoe u kunt uitkomen en hoe u bepaalde services in azure kunt configureren die voor deel van uw virtuele machine zijn. Met deze services kunt u de betrouw baarheid, de beveiliging en het beheer van virtuele machines verbeteren en worden beschouwd als Services voor aanbevolen procedures van Azure, zoals [azure updatebeheer](../automation/update-management/overview.md) en [Azure backup](../backup/backup-overview.md) -slechts een van de namen.
 
 Nadat u uw virtuele machines hebt voor het automatisch beheren van Azure, wordt elke best practice-service op de aanbevolen instellingen geconfigureerd. Aanbevolen procedures verschillen voor elk van de services. Een voor beeld is mogelijk Azure Backup, waarbij de best practice mogelijk eenmaal per dag een back-up van de virtuele machine maakt en een Bewaar periode van zes maanden hebben.
 
@@ -69,7 +69,7 @@ Voor al deze services worden automatisch de voor-en onderhouds-en berekenings-en
 
 In de Azure Portal kunt u automatisch beheer inschakelen op een bestaande virtuele machine of wanneer u een nieuwe virtuele machine maakt. Bekijk de Snelstartgids voor het [autobeheren van virtuele machines](quick-create-virtual-machines-portal.md)voor beknopte stappen voor dit proces.
 
-Als dit de eerste keer is dat u automatisch beheer voor uw virtuele machine inschakelt, kunt u zoeken in de Azure Portal voor de aanbevolen procedures voor het automatisch **beheren van virtuele Azure-machines** . Klik op **inschakelen op bestaande virtuele machine** , selecteer de virtuele machines die u wilt vrijmaken, klik op **selecteren** , klik op **inschakelen** en u bent klaar.
+Als dit de eerste keer is dat u automatisch beheer voor uw virtuele machine inschakelt, kunt u zoeken in de Azure Portal voor de aanbevolen procedures voor het automatisch **beheren van virtuele Azure-machines**. Klik op **inschakelen op bestaande virtuele machine**, selecteer de virtuele machines die u wilt vrijmaken, klik op **selecteren**, klik op **inschakelen** en u bent klaar.
 
 De enige keer dat u moet kunnen communiceren met deze virtuele machine om deze services te beheren, is in het geval dat u de virtuele machine hebt geprobeerd te herstellen, maar dit is niet gelukt. Als uw virtuele machine is hersteld, wordt deze weer in overeenstemming gebracht zonder dat u wordt gewaarschuwd.
 
@@ -114,7 +114,7 @@ Wanneer u automatisch beheer op uw virtuele machines inschakelt, is er een geava
 
 Ga in het Azure Portal naar de pagina **Aanbevolen procedures voor het automatisch beheren van virtuele Azure-machines** , waarin al uw door u beheerde vm's worden weer gegeven. Hier ziet u de algemene status van elke virtuele machine.
 
-:::image type="content" source="media\automanage-virtual-machines\configured-status.png" alt-text="Services op intelligente wijze voorbereiden.":::
+:::image type="content" source="media\automanage-virtual-machines\configured-status.png" alt-text="Lijst met geconfigureerde virtuele machines.":::
 
 Voor elke vermelde VM worden de volgende gegevens weer gegeven: naam, configuratie profiel, configuratie voorkeur, status, account, abonnement en resource groep.
 
@@ -123,7 +123,7 @@ In de kolom **status** kunnen de volgende statussen worden weer gegeven:
 - *Geconfigureerd* : de virtuele machine is geconfigureerd en er is geen drift gedetecteerd
 - *Mislukt* : de VM is gedrift en kan niet worden hersteld
 
-Als u de **status** als *mislukt* ziet, kunt u problemen met de implementatie oplossen via de resource groep waar uw VM zich bevindt. Ga naar **resource groepen** , selecteer uw resource groep, klik op **implementaties** en Bekijk de status *mislukt* samen met de fout Details.
+Als u de **status** als *mislukt* ziet, kunt u problemen met de implementatie oplossen via de resource groep waar uw VM zich bevindt. Ga naar **resource groepen**, selecteer uw resource groep, klik op **implementaties** en Bekijk de status *mislukt* samen met de fout Details.
 
 
 ## <a name="disabling-automanage-for-vms"></a>Automanage voor Vm's uitschakelen
@@ -132,9 +132,9 @@ U kunt een dag kiezen om automanage op bepaalde Vm's uit te scha kelen. Op uw co
 
 Ga hiervoor in het Azure Portal naar de pagina aanbevolen procedures voor het automatisch **beheren van virtuele Azure-machines** met een lijst met alle automatische beheerde vm's. Schakel het selectie vakje in naast de virtuele machine die u wilt uitschakelen voor automatisch beheer en klik vervolgens op de knop **automanagement uitschakelen** .
 
-:::image type="content" source="media\automanage-virtual-machines\disable-step-1.png" alt-text="Services op intelligente wijze voorbereiden.":::
+:::image type="content" source="media\automanage-virtual-machines\disable-step-1.png" alt-text="Automanage uitschakelen op een virtuele machine.":::
 
-Lees aandachtig door de berichten in het pop-upvenster voordat u akkoord gaat met het **uitschakelen** .
+Lees aandachtig door de berichten in het pop-upvenster voordat u akkoord gaat met het **uitschakelen**.
 
 > [!NOTE]
 > Het uitschakelen van het automanagement in een VM resulteert in het volgende gedrag:

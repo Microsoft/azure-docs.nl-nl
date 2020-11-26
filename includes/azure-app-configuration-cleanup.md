@@ -9,11 +9,11 @@ ms.date: 1/31/2020
 ms.author: lcozzens
 ms.custom: include file
 ms.openlocfilehash: 751613e7b3b2252b62dff2c3e1adad83bdc8c393
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96001461"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182671"
 ---
 Als u niet door wilt gaan met de resources die in dit artikel zijn gemaakt, verwijdert u de resourcegroep die u hier hebt gemaakt om kosten te voorkomen.
 

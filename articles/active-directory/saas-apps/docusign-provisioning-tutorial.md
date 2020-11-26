@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/21/2020
 ms.author: jeedes
-ms.openlocfilehash: 185b61f77b275ed78050f5d8efb820c5333f6e1f
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: d813757d5adb8cee9b83e0486baed80ae1bac874
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358572"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96180928"
 ---
 # <a name="tutorial-configure-docusign-for-automatic-user-provisioning"></a>Zelfstudie: DocuSign configureren voor automatische gebruikersinrichting
 
@@ -95,7 +95,7 @@ De eerste synchronisatie van gebruikers en/of groepen die zijn toegewezen aan Do
 Zie [Rapportage over automatische inrichting van gebruikersaccounts](../app-provisioning/check-status-user-account-provisioning.md) voor informatie over het lezen van de Azure AD-inrichtingslogboeken.
 
 ## <a name="troubleshooting-tips"></a>Tips voor probleemoplossing
-* Het inrichten van een rol of machtigingsprofiel voor een gebruiker in DocuSign kan worden uitgevoerd met behulp van een expressie in uw kenmerktoewijzingen waarin de functies [switch](https://docs.microsoft.com/azure/active-directory/app-provisioning/functions-for-customizing-application-data#switch) en [singleAppRoleAssignment](https://docs.microsoft.com/azure/active-directory/app-provisioning/functions-for-customizing-application-data#singleapproleassignment) worden gebruikt. Met de onderstaande expressie wordt bijvoorbeeld de id '8032066' ingericht wanneer aan een gebruiker de rol van DS-beheerder is toegewezen in Azure AD. Er wordt geen machtigingsprofiel ingericht als er geen rol aan de gebruiker is toegewezen in Azure AD. De id kan worden opgehaald uit de [portal](https://support.docusign.com/articles/Default-settings-for-out-of-the-box-DocuSign-Permission-Profiles) van DocuSign.
+* Het inrichten van een rol of machtigingsprofiel voor een gebruiker in DocuSign kan worden uitgevoerd met behulp van een expressie in uw kenmerktoewijzingen waarin de functies [switch](../app-provisioning/functions-for-customizing-application-data.md#switch) en [singleAppRoleAssignment](../app-provisioning/functions-for-customizing-application-data.md#singleapproleassignment) worden gebruikt. Met de onderstaande expressie wordt bijvoorbeeld de id '8032066' ingericht wanneer aan een gebruiker de rol van DS-beheerder is toegewezen in Azure AD. Er wordt geen machtigingsprofiel ingericht als er geen rol aan de gebruiker is toegewezen in Azure AD. De id kan worden opgehaald uit de [portal](https://support.docusign.com/articles/Default-settings-for-out-of-the-box-DocuSign-Permission-Profiles) van DocuSign.
 
 Switch(SingleAppRoleAssignment([appRoleAssignments])," ", "8032066", "DS Admin")
 

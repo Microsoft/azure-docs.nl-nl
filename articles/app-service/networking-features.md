@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 10/18/2020
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 39a511601606118228ee5fbd9dcf68b6707ede47
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 5d950598e4a0af86ac37b53722e80eb4ef0a71a4
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93288357"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183053"
 ---
 # <a name="app-service-networking-features"></a>App Service-netwerk functies
 
@@ -207,7 +207,7 @@ Met een ASE hoeft u geen functies zoals VNet-integratie of service-eind punten t
 
 Omdat de apps in een ILB-ASE kunnen worden weer gegeven op een privé-IP-adres, kunt u eenvoudig WAF-apparaten toevoegen om alleen de apps die u wilt Internet beschikbaar te maken en de rest veilig te houden. Deze functie kan helpen de ontwikkeling van toepassingen met meerdere lagen eenvoudiger te maken. 
 
-Sommige dingen zijn momenteel niet mogelijk van de multi tenant-service, maar zijn wel mogelijk via een ASE. Enkele voorbeelden:
+Sommige dingen zijn momenteel niet mogelijk van de multi tenant-service, maar zijn wel mogelijk via een ASE. Hier volgen enkele voorbeelden:
 
 * Maak uw apps beschikbaar op een privé-IP-adres.
 * Beveilig al het uitgaande verkeer met netwerk besturings elementen die geen deel uitmaken van uw app.
@@ -243,7 +243,7 @@ Met deze implementatie stijl krijgt u geen toegewezen adres voor uitgaand verkee
 
 ### <a name="create-multitier-applications"></a>Toepassingen met meerdere lagen maken
 
-Een toepassing met meerdere lagen is een toepassing waarin de API-back-end-apps alleen kunnen worden geopend vanuit de front-end-laag. Er zijn twee manieren om een toepassing met meerdere lagen te maken. Beide beginnen met VNet-integratie om uw front-end-web-app te verbinden met een subnet in een virtueel netwerk. Hierdoor kan uw web-app aanroepen naar uw virtuele netwerk. Nadat de front-end-app is verbonden met het virtuele netwerk, moet u bepalen hoe u de toegang tot uw API-toepassing wilt vergren delen. U kunt:
+Een toepassing met meerdere lagen is een toepassing waarin de API-back-end-apps alleen kunnen worden geopend vanuit de front-end-laag. Er zijn twee manieren om een toepassing met meerdere lagen te maken. Beide beginnen met VNet-integratie om uw front-end-web-app te verbinden met een subnet in een virtueel netwerk. Hierdoor kan uw web-app aanroepen naar uw virtuele netwerk. Nadat de front-end-app is verbonden met het virtuele netwerk, moet u bepalen hoe u de toegang tot uw API-toepassing wilt vergren delen. U kunt het volgende doen:
 
 * Host zowel de front-end als de API-app in dezelfde ILB ASE en maak de front-end-app beschikbaar op internet met behulp van een toepassings gateway.
 * Host de front-end in de multi tenant-service en de back-end in een ILB-ASE.
@@ -290,12 +290,12 @@ Als u App Service scant, vindt u verschillende poorten die beschikbaar zijn voor
 |  Gebruik van infra structuur | 7654, 1221 |
 
 <!--Links-->
-[appassignedaddress]: https://docs.microsoft.com/azure/app-service/configure-ssl-certificate
-[iprestrictions]: https://docs.microsoft.com/azure/app-service/app-service-ip-restrictions
-[serviceendpoints]: https://docs.microsoft.com/azure/app-service/app-service-ip-restrictions
-[hybridconn]: https://docs.microsoft.com/azure/app-service/app-service-hybrid-connections
-[vnetintegrationp2s]: https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet
-[vnetintegration]: https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet
-[networkinfo]: https://docs.microsoft.com/azure/app-service/environment/network-info
-[appgwserviceendpoints]: https://docs.microsoft.com/azure/app-service/networking/app-gateway-with-service-endpoints
-[privateendpoints]: https://docs.microsoft.com/azure/app-service/networking/private-endpoint
+[appassignedaddress]: ./configure-ssl-certificate.md
+[iprestrictions]: ./app-service-ip-restrictions.md
+[serviceendpoints]: ./app-service-ip-restrictions.md
+[hybridconn]: ./app-service-hybrid-connections.md
+[vnetintegrationp2s]: ./web-sites-integrate-with-vnet.md
+[vnetintegration]: ./web-sites-integrate-with-vnet.md
+[networkinfo]: ./environment/network-info.md
+[appgwserviceendpoints]: ./networking/app-gateway-with-service-endpoints.md
+[privateendpoints]: ./networking/private-endpoint.md

@@ -1,5 +1,5 @@
 ---
-title: Regio's en beschikbaarheidszones in Azure
+title: Regio's en Beschikbaarheidszones in azure
 description: Meer informatie over regio's en Beschikbaarheidszones in azure om te voldoen aan uw technische en wettelijke vereisten.
 author: cynthn
 ms.service: azure
@@ -7,14 +7,14 @@ ms.topic: article
 ms.date: 08/27/2020
 ms.author: cynthn
 ms.custom: fasttrack-edit, mvc
-ms.openlocfilehash: 771635baa3c49c07d0d796cf6ef3be7b870de3e1
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 32cd6c23e1fe465a801e56fad5dd3461df860503
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425431"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182730"
 ---
-# <a name="regions-and-availability-zones-in-azure"></a>Regio's en beschikbaarheidszones in Azure
+# <a name="regions-and-availability-zones-in-azure"></a>Regio's en Beschikbaarheidszones in azure
 
 Microsoft Azure Services zijn wereld wijd beschikbaar om uw Cloud bewerkingen op een optimaal niveau te stimuleren. U kunt de beste regio voor uw behoeften kiezen op basis van technische en reglementaire overwegingen: service mogelijkheden, gegevens locatie, nalevings vereisten en latentie.
 
@@ -27,7 +27,7 @@ Als u meer wilt weten over regio's en Beschikbaarheidszones in azure, kunt u de 
 | regio | Een reeks data centers die zijn geïmplementeerd binnen een latentie definitie en verbonden zijn via een toegewezen regionaal netwerk met lage latentie. |
 | Geografie | Een gebied van de wereld met ten minste één Azure-regio. Met geografi wordt een discrete markt gedefinieerd die de grenzen van gegevens locatie en-naleving behoudt. Klanten met specifieke behoeften ten aanzien van gegevenslocatie en naleving, kunnen met geografische gebieden hun gegevens en toepassingen in de buurt houden. Geografi zijn fout tolerante problemen met betrekking tot de volledige regio fout via de verbinding met onze specifieke netwerk infrastructuur met hoge capaciteit. |
 | Beschikbaarheidszone | Unieke fysieke locaties binnen een regio. Elke zone bestaat uit een of meer datacenters die zijn voorzien van een onafhankelijke stroomvoorziening, koeling en netwerken. |
-| Aanbevolen regio | Een regio die het breedste scala aan service mogelijkheden biedt en is ontworpen om Beschikbaarheidszones nu of in de toekomst te ondersteunen. Deze worden in de Azure Portal zoals **Aanbevolen**aangeduid. |
+| Aanbevolen regio | Een regio die het breedste scala aan service mogelijkheden biedt en is ontworpen om Beschikbaarheidszones nu of in de toekomst te ondersteunen. Deze worden in de Azure Portal zoals **Aanbevolen** aangeduid. |
 | alternatieve regio (overige) | Een regio die de footprint van Azure uitbreidt binnen een gegevens locatie grens waar een aanbevolen regio ook zich bevindt. Alternatieve regio's helpen latentie te optimaliseren en bieden een tweede regio voor nood herstel behoeften. Ze zijn niet ontworpen ter ondersteuning van Beschikbaarheidszones (hoewel Azure een regel matige evaluatie van deze regio's uitvoert om te bepalen of ze aanbevolen regio's moeten worden). Deze worden in de Azure Portal aangeduid als **andere**. |
 | Foundational service | Een kern service van Azure die beschikbaar is in alle regio's wanneer de regio algemeen beschikbaar is. |
 | mainstream service | Een Azure-service die beschikbaar is in alle aanbevolen regio's binnen 12 maanden na de algemene Beschik baarheid van de regio/service of de beschik baarheid op basis van de vraag in alternatieve regio's. |
@@ -61,7 +61,7 @@ Als u een uitgebreide bedrijfs continuïteit wilt bereiken op Azure, bouwt u uw 
 
 De benadering van Azure voor de beschik baarheid van Azure-Services in verschillende regio's wordt het beste beschreven door de services die beschikbaar zijn in Aanbevolen regio's en alternatieve regio's.
 
-- **Aanbevolen regio** : een regio die het breedste scala aan service mogelijkheden biedt en is ontworpen om Beschikbaarheidszones nu of in de toekomst te ondersteunen. Deze worden in de Azure Portal zoals **Aanbevolen**aangeduid.
+- **Aanbevolen regio** : een regio die het breedste scala aan service mogelijkheden biedt en is ontworpen om Beschikbaarheidszones nu of in de toekomst te ondersteunen. Deze worden in de Azure Portal zoals **Aanbevolen** aangeduid.
 - **Alternatieve (andere) regio** : een regio die de footprint van Azure uitbreidt binnen een Data locatie-grens waarbij een aanbevolen regio ook bestaat. Alternatieve regio's helpen latentie te optimaliseren en bieden een tweede regio voor nood herstel behoeften. Ze zijn niet ontworpen ter ondersteuning van Beschikbaarheidszones (hoewel Azure een regel matige evaluatie van deze regio's uitvoert om te bepalen of ze aanbevolen regio's moeten worden). Deze worden in de Azure Portal aangeduid als **andere**.
 
 ### <a name="comparing-region-types"></a>Regio typen vergelijken
@@ -170,9 +170,9 @@ Er zijn geen extra kosten verbonden aan het implementeren van virtuele machines 
 - [Een virtuele machine maken](../virtual-machines/windows/create-portal-availability-zone.md)
 - [Een beheerde schijf toevoegen met Power shell](../virtual-machines/windows/attach-disk-ps.md#add-an-empty-data-disk-to-a-virtual-machine)
 - [Een door een zone redundante schaalset voor virtuele machines maken](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md)
-- [Taak verdeling van virtuele machines in zones met behulp van een Standard Load Balancer met een zone-redundante front-end](../load-balancer/load-balancer-standard-public-zone-redundant-cli.md)
-- [Taak verdeling van Vm's binnen een zone met behulp van een Standard Load Balancer met een zonegebonden-front-end](../load-balancer/load-balancer-standard-public-zonal-cli.md)
-- [Zone-redundante opslag](../storage/common/storage-redundancy-zrs.md)
+- [Taak verdeling van virtuele machines in zones met behulp van een Standard Load Balancer met een zone-redundante front-end](../load-balancer/quickstart-load-balancer-standard-public-cli.md)
+- [Taak verdeling van Vm's binnen een zone met behulp van een Standard Load Balancer met een zonegebonden-front-end](../load-balancer/quickstart-load-balancer-standard-public-cli.md)
+- [Zone-redundante opslag](../storage/common/storage-redundancy.md)
 - [SQL Database laag voor algemeen gebruik](../azure-sql/database/high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview)
 - [Geo-noodherstel Event Hubs](../event-hubs/event-hubs-geo-dr.md#availability-zones)
 - [Geo-noodherstel Service Bus](../service-bus-messaging/service-bus-geo-dr.md#availability-zones)

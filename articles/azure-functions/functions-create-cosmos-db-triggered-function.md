@@ -5,12 +5,12 @@ ms.assetid: bc497d71-75e7-47b1-babd-a060a664adca
 ms.topic: how-to
 ms.date: 04/28/2020
 ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: c7dc18d8186d7262154cc0718bb6ad77ebbb5d2e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 907836b0e45ccc9e9481e605b1ebf4180f7650d6
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85829836"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182577"
 ---
 # <a name="create-a-function-triggered-by-azure-cosmos-db"></a>Een door Azure Cosmos DB geactiveerde functie maken
 
@@ -50,7 +50,7 @@ Vervolgens maakt u een functie in de nieuwe functie-app.
 
 1. Voer op de pagina **nieuwe functie** `cosmos` in het zoek veld in en kies vervolgens de sjabloon **Azure Cosmos DB trigger** .
 
-   :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/function-choose-cosmos.png" alt-text="Azure Cosmos DB code":::
+   :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/function-choose-cosmos.png" alt-text="De pagina functies in het Azure Portal":::
 
 
 1. Configureer de nieuwe trigger met de instellingen zoals opgegeven in de volgende tabel:
@@ -62,9 +62,9 @@ Vervolgens maakt u een functie in de nieuwe functie-app.
     | **Databasenaam** | Taken | De naam van de data base die de verzameling bevat die moet worden bewaakt. |
     | **Naam van verzameling** | Items | De naam van de verzameling die moet worden bewaakt. |
     | **Naam van de verzameling voor leases** | leases | De naam van de verzameling waarin de leases moeten worden opgeslagen. |
-    | **Een lease verzameling maken als deze nog niet bestaat** | Ja | Controleert op de aanwezigheid van de lease verzameling en maakt deze automatisch. |
+    | **Een lease verzameling maken als deze nog niet bestaat** | Yes | Controleert op de aanwezigheid van de lease verzameling en maakt deze automatisch. |
 
-    :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/functions-cosmosdb-trigger-settings.png" alt-text="Azure Cosmos DB code":::
+    :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/functions-cosmosdb-trigger-settings.png" alt-text="Maak de door Azure Cosmos DB geactiveerde functie":::
 
 1. Selecteer **Functie maken**. 
 
@@ -72,7 +72,7 @@ Vervolgens maakt u een functie in de nieuwe functie-app.
 
 1. Als u de functie code op basis van een sjabloon wilt weer geven, selecteert u **code + testen**.
 
-    :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/function-cosmosdb-template.png" alt-text="Azure Cosmos DB code":::
+    :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/function-cosmosdb-template.png" alt-text="Cosmos DB-functiesjabloon in C#":::
 
     Met deze functiesjabloon worden het aantal documenten en de eerste document-id naar de logboeken geschreven.
 
@@ -88,11 +88,11 @@ Vervolgens gaat u verbinding maken met uw Azure Cosmos DB-account en maakt u de 
 
 1. Kies uw Azure Cosmos DB-account en selecteer vervolgens **Data Explorer**. 
 
-1. Kies onder **SQL API**de optie **taken** data base en selecteer **nieuwe container**.
+1. Kies onder **SQL API** de optie **taken** data base en selecteer **nieuwe container**.
 
     ![Een container maken](./media/functions-create-cosmos-db-triggered-function/cosmosdb-create-container.png)
 
-1. Gebruik in **container toevoegen**de instellingen die in de tabel onder de afbeelding worden weer gegeven. 
+1. Gebruik in **container toevoegen** de instellingen die in de tabel onder de afbeelding worden weer gegeven. 
 
     ![De taken container definiëren](./media/functions-create-cosmos-db-triggered-function/cosmosdb-create-container2.png)
 
@@ -100,7 +100,7 @@ Vervolgens gaat u verbinding maken met uw Azure Cosmos DB-account en maakt u de 
     | ---|---|--- |
     | **Database-id** | Taken |De naam voor de nieuwe database. Dit moet overeenkomen met de naam die is gedefinieerd in de functiebinding. |
     | **Container-id** | Items | De naam voor de nieuwe container. Dit moet overeenkomen met de naam die is gedefinieerd in de functiebinding.  |
-    | **[Partitiesleutel](../cosmos-db/partition-data.md)** | /category|Een partitiesleutel waarmee gegevens gelijkmatig worden gedistribueerd naar elke partitie. Het is belang rijk dat u de juiste partitie sleutel selecteert bij het maken van een uitvoerende container. | 
+    | **[Partitiesleutel](../cosmos-db/partitioning-overview.md)** | /category|Een partitiesleutel waarmee gegevens gelijkmatig worden gedistribueerd naar elke partitie. Het is belang rijk dat u de juiste partitie sleutel selecteert bij het maken van een uitvoerende container. | 
     | **Doorvoer** |400 RU| Gebruik de standaardwaarde. U kunt de doorvoer later opschalen als u de latentie wilt beperken. |    
 
 1. Klik op **OK** om de container items te maken. Het kan even duren voordat de container is gemaakt.
@@ -109,9 +109,17 @@ Nadat de container die in de functie binding is opgegeven, bestaat, kunt u de fu
 
 ## <a name="test-the-function"></a>De functie testen
 
-1. Vouw de container nieuwe **items** in Data Explorer uit, kies **items**en selecteer vervolgens **Nieuw item**.
+1. Vouw de container nieuwe **items** in Data Explorer uit, kies **items** en selecteer vervolgens **Nieuw item**.
 
-    :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/create-item-in-container.png" alt-text="Azure Cosmos DB code"
+    :::image type="content" source="./media/functions-create-cosmos-db-triggered-function/create-item-in-container.png" alt-text="Een item in de items container maken":::
+
+1. Vervang de inhoud van het nieuwe item door de volgende inhoud en kies vervolgens **Opslaan**.
+
+    ```yaml
+    {
+        "id": "task1",
+        "category": "general",
+        "description": "some task"
     }
     ```
 

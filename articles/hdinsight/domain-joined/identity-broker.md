@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 11/03/2020
-ms.openlocfilehash: 9a2bda0a526c307ae17d8415f6f24423ddf51b63
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 8a4f9a5df8def928c06fe95a53c7be0d93ec76c4
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917763"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302679"
 ---
 # <a name="azure-hdinsight-id-broker-hib"></a>Azure HDInsight ID Broker (HIB)
 
@@ -52,7 +52,7 @@ In het volgende diagram ziet u de basis verificatie stroom voor federatieve gebr
 
 Een Enterprise Security Package cluster maken waarbij HDInsight ID Broker is ingeschakeld:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Volg de basis stappen voor het maken van een Enterprise Security Package cluster. Zie [een HDInsight-cluster maken met Enterprise Security Package](apache-domain-joined-configure-using-azure-adds.md#create-an-hdinsight-cluster-with-esp)voor meer informatie.
 1. Selecteer **HDINSIGHT id Broker inschakelen**.
 
@@ -140,7 +140,7 @@ Voor het gebruik van Beeline en livy kunt u ook de voor beelden-codes volgen die
 
 ## <a name="faq"></a>Veelgestelde vragen
 ### <a name="what-app-is-created-by-hdinsight-in-aad"></a>Welke app is gemaakt door HDInsight in AAD?
-Voor elk cluster wordt een toepassing van derden geregistreerd in AAD met de URI van het cluster als identifierUri (zoals https://clustername.azurehdinsight.net ).
+Voor elk cluster wordt een toepassing van derden geregistreerd in AAD met de URI van het cluster als identifierUri (zoals `https://clustername.azurehdinsight.net` ).
 
 ### <a name="why-are-users-prompted-for-consent-before-using-hib-enabled-clusters"></a>Waarom wordt gebruikers gevraagd om toestemming voordat ze HIB ingeschakelde clusters gebruiken?
 In AAD is toestemming vereist voor alle toepassingen van derden voordat deze gebruikers kan verifiëren of toegang kan krijgen tot gegevens.

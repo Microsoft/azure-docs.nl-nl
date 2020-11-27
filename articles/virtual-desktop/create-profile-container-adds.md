@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 04/10/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: ea834ed874f3011d95f8b924df860576f72bc4ee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 70a56b7efc34ba2fd3c06521c6e4cac6ea28778f
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88825610"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302479"
 ---
 # <a name="create-a-profile-container-with-azure-files-and-azure-ad-ds"></a>Een profiel container maken met Azure Files en Azure AD DS
 
@@ -27,7 +27,7 @@ U kunt extra beheerders toevoegen door een nieuwe gebruiker te maken en deze mac
 
 Een beheerder toevoegen:
 
-1. Selecteer **Azure Active Directory** in de zijbalk, selecteer **alle gebruikers**en selecteer vervolgens **nieuwe gebruiker**.
+1. Selecteer **Azure Active Directory** in de zijbalk, selecteer **alle gebruikers** en selecteer vervolgens **nieuwe gebruiker**.
 
 2.  Voer de gebruikers gegevens in de velden in.
 
@@ -35,7 +35,7 @@ Een beheerder toevoegen:
 
 4. Selecteer de groep **Aad DC-Administrators** .
 
-5. Selecteer **leden**in het linkerdeel venster en selecteer vervolgens **leden toevoegen** in het hoofd venster. Hiermee wordt een lijst weer gegeven met alle gebruikers die beschikbaar zijn in azure AD. Selecteer de naam van het gebruikers profiel dat u zojuist hebt gemaakt.
+5. Selecteer **leden** in het linkerdeel venster en selecteer vervolgens **leden toevoegen** in het hoofd venster. Hiermee wordt een lijst weer gegeven met alle gebruikers die beschikbaar zijn in azure AD. Selecteer de naam van het gebruikers profiel dat u zojuist hebt gemaakt.
 
 ## <a name="set-up-an-azure-storage-account"></a>Een Azure Storage account instellen
 
@@ -67,7 +67,7 @@ Gebruikers toegangs machtigingen toewijzen:
 
 4. Selecteer op het tabblad **toewijzing van rol toevoegen** de juiste ingebouwde rol in de lijst met rollen. U moet mini maal de machtiging **opslag bestands gegevens SMB delen** voor het account selecteren om de juiste machtigingen te krijgen.
 
-5. Selecteer **Azure Active Directory gebruiker, groep of Service-Principal**om **toegang toe te wijzen**.
+5. Selecteer **Azure Active Directory gebruiker, groep of Service-Principal** om **toegang toe te wijzen**.
 
 6. Selecteer een naam of e-mail adres voor de identiteit van het doel Azure Active Directory.
 
@@ -83,7 +83,7 @@ De toegangs sleutel voor het opslag account ophalen:
 
 2. Selecteer in de lijst met opslag accounts het account waarvoor u Azure AD DS hebt ingeschakeld en maak de aangepaste rollen in de bovenstaande stappen.
 
-3. Selecteer onder **instellingen**de optie **toegangs sleutels** en kopieer de sleutel van **key1**.
+3. Selecteer onder **instellingen** de optie **toegangs sleutels** en kopieer de sleutel van **key1**.
 
 4. Ga naar het tabblad **virtual machines** en zoek naar een virtuele machine die deel gaat uitmaken van de hostgroep.
 
@@ -99,7 +99,7 @@ De toegangs sleutel voor het opslag account ophalen:
 7. Voer de volgende opdracht uit:
 
      ```cmd
-     net use <desired-drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name> <storage-account-key> /user:Azure\<storage-account-name>
+     net use <desired-drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name> /user:Azure\<storage-account-name> <storage-account-key>
      ```
 
     - Vervang door `<desired-drive-letter>` een stationsletter van uw keuze (bijvoorbeeld `y:` ).
@@ -142,29 +142,29 @@ Een FSLogix-profiel container configureren:
 
 1. Meld u aan bij de host-VM die u aan het begin van dit artikel hebt geconfigureerd. vervolgens [downloadt en installeert u de FSLogix-agent](/fslogix/install-ht/).
 
-2. Pak het FSLogix-agent bestand dat u hebt gedownload uit en ga naar **x64**  >  -**releases**en open **FSLogixAppsSetup.exe**.
+2. Pak het FSLogix-agent bestand dat u hebt gedownload uit en ga naar **x64**  >  -**releases** en open **FSLogixAppsSetup.exe**.
 
 3. Wanneer het installatie programma wordt gestart, selecteert **u ik ga akkoord met de licentie voorwaarden.** Geef, indien van toepassing, een nieuwe sleutel op.
 
 4. Selecteer **Installeren**.
 
-5. Open **station C**en ga naar **programma bestanden**  >  **FSLogix**  >  **apps** om te controleren of de FSLogix-agent correct is geïnstalleerd.
+5. Open **station C** en ga naar **programma bestanden**  >  **FSLogix**  >  **apps** om te controleren of de FSLogix-agent correct is geïnstalleerd.
 
      >[!NOTE]
      > Als er meerdere virtuele machines in de hostgroep zijn, moet u stap 1 tot en met 5 herhalen voor elke VM.
 
 6. Voer de **REGI ster-editor** (regedit) uit als Administrator.
 
-7. Navigeer naar **computer**  >  **HKEY_LOCAL_MACHINE**  >  **Software**  >  **FSLogix**, klik met de rechter muisknop op **FSLogix**, selecteer **Nieuw**en selecteer vervolgens **sleutel**.
+7. Navigeer naar **computer**  >  **HKEY_LOCAL_MACHINE**  >  **Software**  >  **FSLogix**, klik met de rechter muisknop op **FSLogix**, selecteer **Nieuw** en selecteer vervolgens **sleutel**.
 
 8. Maak een nieuwe sleutel met de naam **Profiles**.
 
-9.  Klik met de rechter muisknop op **profielen**, selecteer **Nieuw**en selecteer vervolgens **DWORD-waarde (32-bits).** Geef de waarde **ingeschakeld** en stel de **gegevens** waarde in op **1**.
+9.  Klik met de rechter muisknop op **profielen**, selecteer **Nieuw** en selecteer vervolgens **DWORD-waarde (32-bits).** Geef de waarde **ingeschakeld** en stel de **gegevens** waarde in op **1**.
 
     > [!div class="mx-imgBorder"]
     > ![Een scherm afbeelding van de sleutel Profiles. Het REG_DWORD bestand wordt gemarkeerd en de bijbehorende gegevens waarde is ingesteld op 1.](media/dword-value.png)
 
-10. Klik met de rechter muisknop op **profielen**, selecteer **Nieuw**en selecteer vervolgens **waarde met meerdere teken reeksen**. Noem de waarde **VHDLocations** en stel de URI voor de Azure Files share `\\fsprofile.file.core.windows.net\share` in als gegevens waarde.
+10. Klik met de rechter muisknop op **profielen**, selecteer **Nieuw** en selecteer vervolgens **waarde met meerdere teken reeksen**. Noem de waarde **VHDLocations** en stel de URI voor de Azure Files share `\\fsprofile.file.core.windows.net\share` in als gegevens waarde.
 
     > [!div class="mx-imgBorder"]
     > ![Een scherm afbeelding van de sleutel Profiles waarin het VHDLocations-bestand wordt weer gegeven. De gegevens waarde bevat de URI voor de Azure Files share.](media/multi-string-value.png)
@@ -232,7 +232,7 @@ Uw profiel verifiëren:
 
 3. Zodra de gebruikers sessie tot stand is gebracht, opent u de Azure Portal en meldt u zich aan met een Administrator-account.
 
-4. Selecteer **opslag accounts**in de zijbalk.
+4. Selecteer **opslag accounts** in de zijbalk.
 
 5. Selecteer het opslag account dat u hebt geconfigureerd als de bestands share voor uw Session Host-groep en is ingeschakeld met Azure AD DS.
 

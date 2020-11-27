@@ -70,6 +70,8 @@
       items:
         - name: Pushen met behulp van Azure Pipelines
           href: push-kv-devops-pipeline.md
+        - name: Pull met Azure Pipelines
+          href: pull-key-value-devops-pipeline.md
         - name: Pushen met behulp van GitHub Actions
           href: concept-github-action.md
         - name: Een project bouwen met behulp van een geëxporteerde configuratie

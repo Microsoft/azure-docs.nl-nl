@@ -8,12 +8,12 @@ author: vhorne
 ms.service: web-application-firewall
 ms.date: 11/20/2020
 ms.author: victorh
-ms.openlocfilehash: f164418c29e9838928f3d03519342ebef40e16e7
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: b14bd60ab744be5a1735abc073f32f8ebc3e1ab1
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95015694"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96301710"
 ---
 # <a name="create-and-use-web-application-firewall-v2-custom-rules-on-application-gateway"></a>Aangepaste regels voor Web Application firewall v2 maken en gebruiken op Application Gateway
 
@@ -21,7 +21,7 @@ Web Application firewall (WAF) v2 op Azure-toepassing gateway biedt beveiliging 
 
 In dit artikel ziet u een aantal voor beelden van aangepaste regels die u kunt maken en gebruiken met uw v2-WAF. Zie [aangepaste regels voor Web Application firewall configureren met](configure-waf-custom-rules.md)behulp van Azure PowerShell voor meer informatie over het implementeren van een WAF met een aangepaste regel met behulp van Azure PowerShell.
 
-De JSON-fragmenten die in dit artikel worden weer gegeven, zijn afgeleid van een [ApplicationGatewayWebApplicationFirewallPolicies](/templates/microsoft.network/applicationgatewaywebapplicationfirewallpolicies) -resource.
+De JSON-fragmenten die in dit artikel worden weer gegeven, zijn afgeleid van een [ApplicationGatewayWebApplicationFirewallPolicies](/azure/templates/microsoft.network/applicationgatewaywebapplicationfirewallpolicies) -resource.
 
 >[!NOTE]
 > Als uw toepassings gateway geen gebruik maakt van de WAF-laag, wordt de optie voor het bijwerken van de toepassings gateway naar de laag WAF weer gegeven in het rechterdeel venster.

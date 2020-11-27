@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019,fasttrack-edit, devx-track-azurepowershell
 ms.topic: how-to
 ms.date: 02/20/2020
-ms.openlocfilehash: 9e1c45b99138a05ef78976b90f65f57304e676ff
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: aa97fa5e92d4afe11cf8af5f7cfd3458a3c12014
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94962770"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302724"
 ---
 # <a name="migrate-sql-server-to-sql-managed-instance-with-powershell--azure-database-migration-service"></a>SQL Server migreren naar een beheerd exemplaar van SQL met Power shell-& Azure Database Migration Service
 
@@ -80,7 +80,7 @@ Voor deze cmdlet worden de volgende vereiste para meters verwacht:
 * *Service naam*. Teken reeks die overeenkomt met de gewenste unieke service naam voor Azure Database Migration Service.
 * *Locatie*. Hiermee geeft u de locatie van de service. Geef een Azure Data Center-locatie op, zoals vs-West of Zuidoost-Azië.
 * *SKU*. Deze para meter komt overeen met de naam van een DMS-SKU. Momenteel ondersteunde SKU-namen zijn *Basic_1vCore*, *Basic_2vCores* *GeneralPurpose_4vCores*.
-* *Id van het virtuele subnet*. U kunt de cmdlet gebruiken [`New-AzVirtualNetworkSubnetConfig`](//powershell/module/az.network/new-azvirtualnetworksubnetconfig) om een subnet te maken.
+* *Id van het virtuele subnet*. U kunt de cmdlet gebruiken [`New-AzVirtualNetworkSubnetConfig`](/powershell/module/az.network/new-azvirtualnetworksubnetconfig) om een subnet te maken.
 
 In het volgende voor beeld wordt een service gemaakt met de naam *MyDMS* in de resource groep *MyDMSResourceGroup* die zich bevindt in de regio *VS Oost* met behulp van een virtueel netwerk met de naam *MyVNET* en een subnet met de naam *MySubnet*.
 

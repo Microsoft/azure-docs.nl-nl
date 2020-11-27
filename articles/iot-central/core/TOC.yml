@@ -47,12 +47,8 @@
   items:
     - name: Apparaten verbinden en ontwikkelen
       items:
-        - name: Een apparaat verbinden (Node.js)
-          href: tutorial-connect-device-nodejs.md
-        - name: Een apparaat verbinden (Python)
-          href: tutorial-connect-device-python.md
-        - name: Een apparaat verbinden (Java)
-          href: tutorial-connect-device-java.md
+        - name: Een apparaat maken en verbinden
+          href: tutorial-connect-device.md
         - name: Een gateway-apparaatsjabloon maken
           href: tutorial-define-gateway-device-type.md
         - name: Een IoT Edge-apparaat verbinden

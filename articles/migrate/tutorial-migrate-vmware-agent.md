@@ -4,12 +4,12 @@ description: Informatie over het uitvoeren van een migratie van VMware-VM’s op
 ms.topic: tutorial
 ms.date: 06/09/2020
 ms.custom: MVC
-ms.openlocfilehash: ffdbdba0aeae33b04195c5a6bf6aeaff5658424b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 437dbce1c577b5d837ad0c70e8e8865ba59cf9e6
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96012234"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302760"
 ---
 # <a name="migrate-vmware-vms-to-azure-agent-based"></a>VMware-VM’s migreren naar Azure (op basis van een agent)
 
@@ -134,35 +134,6 @@ Controleer of de VMware-servers en VM's aan de vereisten voor migratie naar Azur
 > [!NOTE]
 > Migratie op basis van een agent met Azure Migrate Server Migration is gebaseerd op de functies van de Azure Site Recovery-service. Bepaalde vereisten worden mogelijk gekoppeld aan Site Recovery-documentatie.
 
-
-
-## <a name="add-the-azure-migrateserver-migration-tool"></a>Het Azure Migrate: Server Migration-hulpprogramma toevoegen
-
-Als u nog geen Azure Migrate-project hebt, kunt u dat [nu instellen](how-to-add-tool-first-time.md) door het hulpprogramma Server Migration toe te voegen.
-
-Als u een project hebt, voegt u het hulpprogramma als volgt toe:
-
-1. Zoek in de Azure-portal in **Alle services** naar **Azure Migrate**.
-2. Onder **Services** selecteert u **Azure Migrate**.
-
-    ![Azure Migrate instellen](./media/tutorial-migrate-vmware-agent/azure-migrate-search.png)
-
-3. Klik in **Overzicht** op **Servers evalueren en migreren**.
-4. Klik onder **Servers detecteren, evalueren en migreren** op **Servers evalueren en migreren**.
-
-    ![Servers detecteren en evalueren](./media/tutorial-migrate-vmware-agent/assess-migrate.png)
-
-1. Klik in **Servers detecteren, evalueren en migreren** op **Hulpprogramma's toevoegen**.
-2. Selecteer in **Project migreren** uw Azure-abonnement en maak een resourcegroep als u er nog geen hebt.
-3. Geef in **Projectdetails** de projectnaam en geografie op waarin u het project wilt maken en klik op **Volgende**. Bekijk ondersteunde geografische regio's voor [openbare](migrate-support-matrix.md#supported-geographies-public-cloud) clouds en [overheidsclouds](migrate-support-matrix.md#supported-geographies-azure-government).
-
-    ![Een Azure Migrate-project maken](./media/tutorial-migrate-vmware-agent/migrate-project.png)
-
-
-4. Selecteer in **Evaluatieprogramma selecteren** de optie **Het toevoegen van een evaluatieprogramma voorlopig overslaan** > **Volgende**.
-5. Selecteer in **Migratieprogramma selecteren** de optie **Azure Migrate: Server Migration** > **Volgende**.
-6. Controleer in **Beoordelen en hulpprogramma's toevoegen** de instellingen en klik op **Hulpmiddelen toevoegen**
-7. Nadat u het hulpprogramma hebt toegevoegd, wordt het weergegeven in het Azure Migrate-project > **Servers** > **Migratieprogramma's**.
 
 ## <a name="set-up-the-replication-appliance"></a>Het replicatieapparaat instellen
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
-ms.openlocfilehash: 04399dc82a3bd2d70b8b472b121e95a73ca43136
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 9c27139e2dca37c1ff8d963e1e8cdb5de682d39d
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96009599"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302943"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-carlson-wagonlit-travel"></a>Zelfstudie: Azure Active Directory-integratie met Carlson Wagonlit Travel
 
@@ -119,7 +119,7 @@ Om eenmalige aanmelding bij Azure Active Directory te configureren met Carlson W
 
 ### <a name="configure-carlson-wagonlit-travel-single-sign-on"></a>Eenmalige aanmelding bij Carlson Wagonlit Travel configureren
 
-Als u eenmalige aanmelding aan **Carlson Wagonlit Travel**-zijde wilt configureren, moet u het gedownloade **Federation Metadata XML** en de correcte uit de Azure-portal gekopieerde URL's verzenden naar het [ondersteuningsteam van Carlson Wagonlit Travel](http://www.carlsonwagonlit.in/content/cwt/in/en/technical-assistance.html). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Als u eenmalige aanmelding aan **Carlson Wagonlit Travel**-zijde wilt configureren, moet u het gedownloade **Federation Metadata XML** en de correcte uit de Azure-portal gekopieerde URL's verzenden naar het [ondersteuningsteam van Carlson Wagonlit Travel](https://www.mycwt.com/traveler-help/). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
@@ -174,7 +174,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 ### <a name="create-carlson-wagonlit-travel-test-user"></a>Carlson Wagonlit Travel-testgebruiker maken
 
-In deze sectie maakt u een gebruiker met de naam Britta Simon in Carlson Wagonlit Travel. Neem contact op met het [ondersteuningsteam van Carlson Wagonlit Travel](http://www.carlsonwagonlit.in/content/cwt/in/en/technical-assistance.html) om de gebruikers toe te voegen in het Carlson Wagonlit Travel-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
+In deze sectie maakt u een gebruiker met de naam Britta Simon in Carlson Wagonlit Travel. Neem contact op met het [ondersteuningsteam van Carlson Wagonlit Travel](https://www.mycwt.com/traveler-help/) om de gebruikers toe te voegen in het Carlson Wagonlit Travel-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen 
 

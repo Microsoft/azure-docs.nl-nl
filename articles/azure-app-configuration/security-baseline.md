@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 61dc3b9376737f89643473dffc3c915d3e0d9c44
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: a885f027250a915347fea758c7c7978af0f45f49
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183444"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302517"
 ---
 # <a name="azure-security-baseline-for-azure-app-configuration"></a>Azure-beveiligings basislijn voor Azure-app configuratie
 
@@ -94,7 +94,7 @@ Opmerking: als u een wettelijke of andere vereiste hebt voor het gebruik van ID'
 
 - [Azure Marketplace bevat mogelijkheden voor externe ID'S van derden](https://azuremarketplace.microsoft.com/marketplace?search=IDS)
 
-- [Micro soft Defender ATP EDR-mogelijkheid](/windows/security/threat-protection/microsoft-defender-atp/overviewendpoint-detection-response)
+- [Micro soft Defender ATP EDR-mogelijkheid](/windows/security/threat-protection/microsoft-defender-atp/overview-endpoint-detection-response)
 
 **Monitoring door Azure Security Center**: Niet van toepassing
 
@@ -327,7 +327,7 @@ Opmerking: beheerde identiteiten worden waar mogelijk gesuggereerd voor verifica
 
 - [Een toegangs beoordeling van Azure-resource rollen maken in Privileged Identity Management (PIM)](../active-directory/privileged-identity-management/pim-resource-roles-start-access-review.md) 
 
-- [Identiteits- en toegangsbeoordelingen van Azure AD](/azure/active-directory/governance/access-reviews-overvie)
+- [Identiteits- en toegangsbeoordelingen van Azure AD](/azure/active-directory/governance/access-reviews-overview)
 
 - [Toegang tot Azure-app configuratie machtigen met behulp van Azure AD](concept-enable-rbac.md)
 
@@ -477,7 +477,7 @@ Azure biedt standaard versleuteling voor gegevens op rest. Voor zeer gevoelige g
 
 ## <a name="asset-management"></a>Asset-management
 
-*Ga voor meer informatie naar [Azure Security-benchmark: Asset-management](../security/benchmarks/security-controls-v2-asset-management.md).*
+*Ga voor meer informatie naar [Azure Security-benchmark: Asset-management](/azure/security/benchmarks/security-controls-v2-asset-management).*
 
 ### <a name="am-1-ensure-security-team-has-visibility-into-risks-for-assets"></a>AM-1: Beveiligingsteam inzicht geven in risico's voor assets
 
@@ -553,7 +553,7 @@ Verwijder Azure-resources wanneer deze ze niet meer nodig zijn. Zorg ervoor dat 
 
 ## <a name="logging-and-threat-detection"></a>Logboekregistratie en bedreigingsdetectie
 
-*Ga voor meer informatie naar [Azure Security-benchmark: Logboekregistratie en bedreigingsdetectie](/azure/security/benchmarks/security-controls-v2-logging-threat-protection).*
+*Ga voor meer informatie naar [Azure Security-benchmark: Logboekregistratie en bedreigingsdetectie](/azure/security/benchmarks/security-controls-v2-logging-threat-detection).*
 
 ### <a name="lt-2-enable-threat-detection-for-azure-identity-and-access-management"></a>LT-2: Bedreigingsdetectie inschakelen voor identiteits- en toegangsbeheer van Azure
 
@@ -746,7 +746,7 @@ Daarnaast kunt u resources markeren met behulp van tags en een naamgevingssystee
 
 ## <a name="posture-and-vulnerability-management"></a>Beheer van beveiligingspostuur en beveiligingsproblemen
 
-*Ga voor meer informatie naar [Azure Security-benchmark: Beheer van beveiligingspostuur en beveiligingsproblemen](/azure/security/benchmarks/security-controls-v2-vulnerability-management).*
+*Ga voor meer informatie naar [Azure Security-benchmark: Beheer van beveiligingspostuur en beveiligingsproblemen](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management).*
 
 ### <a name="pv-1-establish-secure-configurations-for-azure-services"></a>PV-1: beveiligde configuraties instellen voor Azure-Services 
 
@@ -846,9 +846,9 @@ Raadpleeg het volgende Engelstalige naslagmateriaal voor meer informatie:
 
 - [Cloud Adoption Framework - Azure data security and encryption best practices](../security/fundamentals/data-encryption-best-practices.md?amp;bc=%2fazure%2fcloud-adoption-framework%2f_bread%2ftoc.json&toc=%2fazure%2fcloud-adoption-framework%2ftoc.json)
 
-- [Azure Security Benchmark - Asset management](/azure/security/benchmarks/security-benchmark-v2-asset-management)
+- [Azure Security Benchmark - Asset management](/azure/security/benchmarks/security-controls-v2-asset-management)
 
-- [Azure Security Benchmark - Data Protection](/azure/security/benchmarks/security-benchmark-v2-data-protection)
+- [Azure Security Benchmark - Data Protection](/azure/security/benchmarks/security-controls-v2-data-protection)
 
 **Monitoring door Azure Security Center**: Niet van toepassing
 
@@ -876,7 +876,7 @@ Zorg ervoor dat de segmentatiestrategie consistent wordt geïmplementeerd voor a
 
 **Richtlijnen**: U moet de risico's voor afzonderlijke assets en de omgeving waarin ze worden gehost, voortdurend meten en beperken. Geef prioriteit aan waardevolle assets en gebieden die zeer kwetsbaar zijn voor aanvallen, zoals gepubliceerde toepassingen, punten in het netwerk voor binnenkomend en uitgaand verkeer, eindpunten voor gebruikers en beheerders, enzovoort.
 
-- [Azure Security Benchmark - Posture and vulnerability management](/azure/security/benchmarks/security-benchmark-v2-posture-vulnerability-management)
+- [Azure Security Benchmark - Posture and vulnerability management](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management)
 
 **Monitoring door Azure Security Center**: Niet van toepassing
 
@@ -917,7 +917,7 @@ Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten 
 Raadpleeg het volgende Engelstalige naslagmateriaal voor meer informatie:
 - [Azure Security Best Practice 11 - Architecture. Single unified security strategy](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
-- [Azure Security Benchmark - Network Security](/azure/security/benchmarks/security-benchmark-v2-network-security)
+- [Azure Security Benchmark - Network Security](/azure/security/benchmarks/security-controls-v2-network-security)
 
 - [Azure network security overview](../security/fundamentals/network-overview.md)
 
@@ -945,9 +945,9 @@ Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten 
 
 Raadpleeg het volgende Engelstalige naslagmateriaal voor meer informatie:
 
-- [Azure Security Benchmark - Identity management](/azure/security/benchmarks/security-benchmark-v2-identity-management)
+- [Azure Security Benchmark - Identity management](/azure/security/benchmarks/security-controls-v2-identity-management)
 
-- [Azure Security Benchmark - Privileged access](/azure/security/benchmarks/security-benchmark-v2-privileged-access)
+- [Azure Security Benchmark - Privileged access](/azure/security/benchmarks/security-controls-v2-privileged-access)
 
 - [Azure Security Best Practice 11 - Architecture. Single unified security strategy](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
@@ -979,9 +979,9 @@ Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten 
 
 Raadpleeg het volgende Engelstalige naslagmateriaal voor meer informatie:
 
-- [Azure Security Benchmark - Logging and threat detection](/azure/security/benchmarks/security-benchmark-v2-logging-threat-detection)
+- [Azure Security Benchmark - Logging and threat detection](/azure/security/benchmarks/security-controls-v2-logging-threat-detection)
 
-- [Azure Security Benchmark - Incident response](/azure/security/benchmarks/security-benchmark-v2-incident-response)
+- [Azure Security Benchmark - Incident response](/azure/security/benchmarks/security-controls-v2-incident-response)
 
 - [Azure Security Best Practice 4 - Process. Update Incident Response Processes for Cloud](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
 

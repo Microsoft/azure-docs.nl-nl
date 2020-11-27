@@ -5,16 +5,16 @@ services: data-factory
 author: linda33wj
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 09/10/2020
+ms.date: 11/25/2020
 ms.author: jingwang
 ms.reviewer: craigg
 ms.custom: has-adal-ref
-ms.openlocfilehash: 2e54c0b09c3dbe398b0522d0ad9ad2314e29ed26
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: dcc84dc252001721a3848a008a3db80dcc7822d2
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023837"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96301268"
 ---
 # <a name="troubleshoot-azure-data-factory-connectors"></a>Problemen met Azure Data Factory-connectors oplossen
 
@@ -440,7 +440,7 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 
 - **Bericht**: `The name of column index %index; is empty. Make sure column name is properly specified in the header row.`
 
-- **Oorzaak**: wanneer ' firstRowAsHeader ' in de activiteit wordt ingesteld, wordt de eerste rij als kolom naam gebruikt. Deze fout geeft aan dat de eerste rij een lege waarde bevat. Bijvoorbeeld: ' koloma,, ColumnB '.
+- **Oorzaak**: wanneer ' firstRowAsHeader ' in de activiteit wordt ingesteld, wordt de eerste rij als kolom naam gebruikt. Deze fout geeft aan dat de eerste rij een lege waarde bevat. Bijvoorbeeld: ' koloma, ColumnB '.
 
 - **Aanbeveling**: Controleer de eerste rij en los de waarde op als er een lege waarde is.
 
@@ -645,6 +645,29 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 
 - **Aanbeveling**: Verwijder ' CompressionType ' in de nettolading.
 
+
+## <a name="rest"></a>REST
+
+### <a name="unexpected-network-response-from-rest-connector"></a>Onverwachte netwerk reactie van REST-connector
+
+- **Symptomen**: het eind punt ontvangt soms een onverwachte reactie (400/401/403/500) van de rest-connector.
+
+- **Oorzaak**: de rest-bron connector gebruikt de URL en de HTTP-methode/koptekst/hoofd code van de gekoppelde service/gegevensset/Kopieer bron als para meters bij het samen stellen van een HTTP-aanvraag. Het probleem wordt waarschijnlijk veroorzaakt door enkele fouten in een of meer opgegeven para meters.
+
+- **Oplossing**: 
+    - Gebruik ' krul ' in het CMD-venster om te controleren of para meter de oorzaak is of niet (**accepteren** en **gebruikers agent** headers moeten altijd worden opgenomen):
+        ```
+        curl -i -X <HTTP method> -H <HTTP header1> -H <HTTP header2> -H "Accept: application/json" -H "User-Agent: azure-data-factory/2.0" -d '<HTTP body>' <URL>
+        ```
+      Als de opdracht dezelfde onverwachte reactie retourneert, moet u de bovenstaande para meters met ' krul ' herstellen totdat het verwachte antwoord wordt geretourneerd. 
+
+      U kunt ook ' krul--Help ' gebruiken voor meer geavanceerd gebruik van de opdracht.
+
+    - Neem contact op met micro soft ondersteuning als alleen een ADF-REST-connector een onverwachte reactie retourneert.
+    
+    - Houd er rekening mee dat ' krul ' mogelijk niet geschikt is om het probleem met het valideren van het SSL-certificaat te reproduceren. In sommige scenario's is de opdracht ' krul ' uitgevoerd zonder dat er een probleem is met het valideren van een SSL-certificaat. Maar wanneer dezelfde URL wordt uitgevoerd in de browser, wordt er in de eerste plaats geen SSL-certificaat geretourneerd, zodat de client geen vertrouwens relatie met de server tot stand kan brengen.
+
+      Hulpprogram ma's zoals **postman** en **Fiddler** worden aanbevolen voor het bovenstaande geval.
 
 
 ## <a name="general-copy-activity-error"></a>Fout met algemene Kopieer activiteit

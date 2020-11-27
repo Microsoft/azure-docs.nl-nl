@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 64731ce443ddd806402efd33fe22300ab8362d18
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 7865562a8161e6fc7bed52791b42b867a3dac6f8
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94663520"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302412"
 ---
 # <a name="azure-security-baseline-for-content-delivery-network"></a>Azure-beveiligings basislijn voor Content Delivery Network
 
@@ -22,7 +22,7 @@ Als u wilt zien hoe Content Delivery Network volledig is toegewezen aan de bevei
 
 ## <a name="identity-management"></a>Identiteitsbeheer
 
-*Zie [Azure Security Bench Mark: Identity Management](/azure/security/benchmarks/security-controls-v2-identity-management)(Engelstalig) voor meer informatie.*
+*Ga voor meer informatie naar [Azure Security Benchmark: Identiteitsbeheer](/azure/security/benchmarks/security-controls-v2-identity-management).*
 
 ### <a name="im-6-restrict-azure-resource-access-based-on-conditions"></a>Chat-6: toegang tot Azure-bronnen beperken op basis van voor waarden
 
@@ -30,13 +30,13 @@ Als u wilt zien hoe Content Delivery Network volledig is toegewezen aan de bevei
 
 - [Azure CDN inhoud beperken per land of regio](cdn-restrict-access-by-country.md)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
-## <a name="privileged-access"></a>Privileged Access
+## <a name="privileged-access"></a>Bevoegde toegang
 
-*Zie [Azure Security Bench Mark: Privileged Access](/azure/security/benchmarks/security-controls-v2-privileged-access)(Engelstalig) voor meer informatie.*
+*Ga voor meer informatie naar [Azure Security-benchmark: Bevoegde toegang](/azure/security/benchmarks/security-controls-v2-privileged-access).*
 
 ### <a name="pa-2-restrict-administrative-access-to-business-critical-systems"></a>PA-2: beheer toegang beperken tot essentiële bedrijfs systemen
 
@@ -52,9 +52,9 @@ Alle typen besturings elementen voor toegang moeten worden afgestemd op uw bedri
 
 - [Beheerders van Azure-abonnementen](../cost-management-billing/manage/add-change-subscription-administrator.md)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: gedeeld
+**Verantwoordelijkheid**: Gedeeld
 
 ### <a name="pa-6-use-privileged-access-workstations"></a>PA-6: bevoorrechte toegang gebruiken werk stations
 
@@ -64,49 +64,49 @@ Alle typen besturings elementen voor toegang moeten worden afgestemd op uw bedri
 
 - [Een privileged Access-werk station implementeren](../active-directory/devices/howto-azure-managed-workstation.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Monitoring door Azure Security Center**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
-### <a name="pa-7-follow-just-enough-administration-least-privilege-principle"></a>PA-7: Volg gewoon voldoende beheer (minimale bevoegdheids methode) 
+### <a name="pa-7-follow-just-enough-administration-least-privilege-principle"></a>PA-7: Principe van minimale bevoegdheden hanteren 
 
-**Hulp**: Content Delivery Network is geïntegreerd met op rollen gebaseerd toegangs beheer (RBAC) van Azure voor het beheren van de bijbehorende resources. Gebruik Azure RBAC voor het beheren van toegang tot Azure-resources via roltoewijzingen. Wijs deze rollen toe aan gebruikers, groepering van service-principals en beheerde identiteiten. Er zijn vooraf gedefinieerde ingebouwde rollen voor bepaalde resources, en deze rollen kunnen worden geïnventariseerd of opgevraagd via hulpprogram ma's als Azure CLI, Azure PowerShell of de Azure Portal. 
+**Hulp**: Content Delivery Network is geïntegreerd met op rollen gebaseerd toegangs beheer (RBAC) van Azure voor het beheren van de bijbehorende resources. Gebruik Azure RBAC voor het beheren van toegang tot Azure-resources via roltoewijzingen. Wijs deze rollen toe aan gebruikers, groepering van service-principals en beheerde identiteiten. Er bestaan vooraf gedefinieerde, ingebouwde rollen voor bepaalde resources, en deze rollen kunnen worden geïnventariseerd of opgevraagd via tools zoals Azure CLI, Azure PowerShell en Azure Portal. 
 
-Beperk de bevoegdheden die u toewijst aan resources via de Azure RBAC zoals vereist door de rollen. Dit is een aanvulling op de just-in-time (JIT) benadering van Azure AD Privileged Identity Management (PIM) en moet regel matig worden gecontroleerd. 
+Beperk de bevoegdheden die u toewijst aan resources via de Azure RBAC zoals vereist door de rollen. Dit is een aanvulling op de JIT-benadering van Azure AD Privileged Identity Management (PIM) en moet regelmatig worden geëvalueerd. 
 
 Daarnaast kunt u ingebouwde rollen gebruiken om machtigingen toe te wijzen en alleen aangepaste rollen te maken wanneer dat nodig is.
 
 - [Wat is Azure Role-based Access Control (Azure RBAC)](../role-based-access-control/overview.md) 
 
-- [RBAC configureren in azure](../role-based-access-control/role-assignments-portal.md) 
+- [RBAC configureren in Azure](../role-based-access-control/role-assignments-portal.md) 
 
-- [Azure AD-identiteits-en toegangs beoordelingen gebruiken](../active-directory/governance/access-reviews-overview.md)
+- [Identiteits- en toegangsbeoordelingen van Azure AD](../active-directory/governance/access-reviews-overview.md)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: gedeeld
+**Verantwoordelijkheid**: Gedeeld
 
 ## <a name="asset-management"></a>Asset-management
 
-*Zie [Azure Security Bench Mark: Asset Management](/azure/security/benchmarks/security-controls-v2-asset-management)voor meer informatie.*
+*Ga voor meer informatie naar [Azure Security-benchmark: Asset-management](/azure/security/benchmarks/security-controls-v2-asset-management).*
 
-### <a name="am-1-ensure-security-team-has-visibility-into-risks-for-assets"></a>AM-1: controleren of het beveiligings team inzicht heeft in Risico's voor assets
+### <a name="am-1-ensure-security-team-has-visibility-into-risks-for-assets"></a>AM-1: Beveiligingsteam inzicht geven in risico's voor assets
 
 **Richt lijnen**: Zorg ervoor dat beveiligings teams machtigingen voor beveiligings lezers krijgen in uw Azure-Tenant en-abonnementen, zodat ze beveiligings Risico's kunnen bewaken met behulp van Azure Security Center. 
 
-Afhankelijk van de manier waarop de verantwoordelijkheden van het beveiligings team zijn gestructureerd, kan bewaking voor beveiligings Risico's de verantwoordelijkheid zijn van een centraal beveiligings team of een lokaal team. Beveiligings inzichten en-risico's moeten echter altijd centraal worden geaggregeerd in een organisatie. 
+Afhankelijk van de manier waarop de verantwoordelijkheden van het beveiligingsteam zijn gestructureerd, kan de controle op beveiligingsrisico's de verantwoordelijkheid zijn van een centraal beveiligingsteam of een lokaal team. Beveiligings inzichten en-risico's moeten echter altijd centraal worden geaggregeerd in een organisatie. 
 
-Machtigingen voor beveiligings lezers kunnen breed worden toegepast op een hele Tenant (hoofd beheer groep) of in het bereik van beheer groepen of specifieke abonnementen. 
+De machtiging Beveiligingslezer kan breed worden toegepast op een hele tenant (hoofdbeheergroep) of in het bereik van beheergroepen of specifieke abonnementen. 
 
 Opmerking: deze aanvullende machtigingen zijn mogelijk vereist voor zicht baarheid in werk belastingen en services. 
 
-- [Overzicht van de rol van beveiligings lezer](../role-based-access-control/built-in-roles.md#security-reader)
+- [Overzicht van rol Beveiligingslezer](../role-based-access-control/built-in-roles.md#security-reader)
 
-- [Overzicht van Azure Beheergroepen](../governance/management-groups/overview.md)
+- [Overzicht van Azure-beheergroepen](../governance/management-groups/overview.md)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="am-2-ensure-security-team-has-access-to-asset-inventory-and-metadata"></a>AM-2: controleren of het beveiligings team toegang heeft tot de inventaris en meta gegevens van de Asset
 
@@ -118,9 +118,9 @@ Opmerking: deze aanvullende machtigingen zijn mogelijk vereist voor zicht baarhe
 
 - [Handleiding voor beslissingen over taggen en naamgeving voor resources](https://docs.microsoft.com/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=/azure/azure-resource-manager/management/toc.json)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Monitoring door Azure Security Center**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="am-3-use-only-approved-azure-services"></a>AM-3: alleen goedgekeurde Azure-Services gebruiken
 
@@ -132,21 +132,21 @@ Opmerking: deze aanvullende machtigingen zijn mogelijk vereist voor zicht baarhe
 
 - [Query's maken met Azure Resource Graph Explorer](../governance/resource-graph/first-query-portal.md)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
-### <a name="am-4-ensure-security-of-asset-lifecycle-management"></a>AM-4: zorg voor de beveiliging van levenscyclus beheer van middelen
+### <a name="am-4-ensure-security-of-asset-lifecycle-management"></a>AM-4: Beveiliging van levenscyclusbeheer van assets garanderen
 
 **Hulp**: gegevens netwerk kan niet worden gebruikt om de beveiliging van assets in een levenscyclus beheer proces te garanderen. Het is de verantwoordelijkheid van de klant om kenmerken en netwerk configuraties van activa te onderhouden die als hoge impact worden beschouwd. Het is raadzaam dat de klant een proces maakt om het kenmerk en de wijzigingen in de netwerk configuratie vast te leggen, de wijzigings invloed te meten en herstel taken te maken, indien van toepassing.
 
-**Azure Security Center bewaking**: niet van toepassing
+**Monitoring door Azure Security Center**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
-## <a name="logging-and-threat-detection"></a>Logboek registratie en detectie van bedreigingen
+## <a name="logging-and-threat-detection"></a>Logboekregistratie en bedreigingsdetectie
 
-*Zie [Azure Security Bench Mark: Logging and Threat Detection](/azure/security/benchmarks/security-controls-v2-logging-threat-protection)(Engelstalig) voor meer informatie.*
+*Ga voor meer informatie naar [Azure Security-benchmark: Logboekregistratie en bedreigingsdetectie](/azure/security/benchmarks/security-controls-v2-data-protection).*
 
 ### <a name="lt-1-enable-threat-detection-for-azure-resources"></a>LT-1: detectie van bedreigingen inschakelen voor Azure-resources
 
@@ -160,9 +160,9 @@ Het bewaken van verschillende typen Azure-assets voor mogelijke dreigingen en af
 
 - [Cyber Threat Intelligence met Azure Sentinel](/azure/architecture/example-scenario/data/sentinel-threat-intelligence)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="lt-3-enable-logging-for-azure-network-activities"></a>LT-3: logboek registratie inschakelen voor Azure-netwerk activiteiten
 
@@ -172,9 +172,9 @@ Content Delivery Network registreert al het netwerk verkeer dat wordt verwerkt v
 
 - [Zelf studie-diagnostische logboek instellen in azure Content Delivery Network](cdn-azure-diagnostic-logs.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Monitoring door Azure Security Center**: Niet van toepassing
 
-**Verantwoordelijkheid**: gedeeld
+**Verantwoordelijkheid**: Gedeeld
 
 ### <a name="lt-4-enable-logging-for-azure-resources"></a>LT-4: logboek registratie inschakelen voor Azure-resources
 
@@ -188,333 +188,333 @@ Azure-resource logboeken inschakelen voor CDN kunt u Azure Security Center en Az
 
 - [Meer informatie over het verzamelen van Azure Security Center gegevens](../security-center/security-center-enable-data-collection.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: gedeeld
+**Verantwoordelijkheid**: Gedeeld
 
 ## <a name="incident-response"></a>Reageren op incidenten
 
-*Zie [Azure Security Bench Mark: Incident Response](/azure/security/benchmarks/security-controls-v2-incident-response)(Engelstalig) voor meer informatie.*
+*Ga voor meer informatie naar [Azure Security-benchmark: Reageren op incidenten](/azure/security/benchmarks/security-controls-v2-incident-response).*
 
-### <a name="ir-1-preparation--update-incident-response-process-for-azure"></a>IR-1: voor bereiding-respons proces van incidenten bijwerken voor Azure
+### <a name="ir-1-preparation--update-incident-response-process-for-azure"></a>IR-1: Voorbereiding – proces voor reageren op incidenten bijwerken voor Azure
 
-**Hulp**: Zorg ervoor dat uw organisatie processen heeft om te reageren op beveiligings incidenten, dat deze processen voor Azure zijn bijgewerkt en dat ze regel matig de voor bereidingen spelen.
+**Richtlijnen**: Zorg ervoor dat er processen aanwezig zijn in uw organisatie om te reageren op beveiligingsincidenten, dat deze processen zijn bijgewerkt voor Azure en dat ze regelmatig worden uitgevoerd om de gereedheid ervan te garanderen.
 
-- [Implementeer beveiliging in de bedrijfs omgeving](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
+- [Beveiliging implementeren binnen de onderneming](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
 
-- [Naslag Gids voor respons op incidenten](/microsoft-365/downloads/IR-Reference-Guide.pdf)
+- [Naslaggids voor reageren op incidenten](/microsoft-365/downloads/IR-Reference-Guide.pdf)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Monitoring door Azure Security Center**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
-### <a name="ir-2-preparation--setup-incident-notification"></a>IR-2: voor bereiding-incident melding instellen
+### <a name="ir-2-preparation--setup-incident-notification"></a>IR-2: Voorbereiding - melding van incidenten configureren
 
-**Richt lijnen**: contact gegevens voor beveiligings incidenten instellen in azure Security Center. Deze contact gegevens worden door micro soft gebruikt om contact met u op te nemen als het micro soft Security Response Center (MSRC) detecteert dat uw gegevens zijn geopend door een onrecht matige of niet-gemachtigde partij. U hebt ook opties voor het aanpassen van incident waarschuwingen en meldingen in verschillende Azure-Services op basis van de behoeften van uw incident respons. 
+**Richtlijnen**: Definieer in Azure Security Center contactgegevens voor beveiligingsincidenten. Deze contactgegevens worden gebruikt door Microsoft om contact met u op te nemen als Microsoft Security Response Center (MSRC) heeft vastgesteld dat uw gegevens zijn geraadpleegd door een onrechtmatige of niet-geautoriseerde partij. U hebt ook de mogelijkheid om waarschuwingen en meldingen voor incidenten aan te passen in verschillende Azure-services, op basis van de behoeften van de reactie op incidenten. 
 
-- [De Azure Security Center Security-contact persoon instellen](../security-center/security-center-provide-security-contact-details.md)
+- [Contactpersoon voor beveiliging instellen in Azure Security Center](../security-center/security-center-provide-security-contact-details.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
-### <a name="ir-3-detection-and-analysis--create-incidents-based-on-high-quality-alerts"></a>IR-3: detectie en analyse: incidenten maken op basis van waarschuwingen van hoge kwaliteit
+### <a name="ir-3-detection-and-analysis--create-incidents-based-on-high-quality-alerts"></a>IR-3: Detectie en analyse - incidenten maken op basis van waarschuwingen van hoge kwaliteit
 
-**Richt lijnen**: Zorg ervoor dat u een proces hebt om waarschuwingen van hoge kwaliteit te maken en de kwaliteit van waarschuwingen te meten. Zo kunt u lessen uit eerdere incidenten ontdekken en waarschuwingen voor analisten prioriteiten geven, zodat ze geen tijd verspillen op valse positieven. 
+**Richtlijnen**: Zorg ervoor dat u een proces hebt om waarschuwingen van hoge kwaliteit te maken en de kwaliteit van waarschuwingen te meten. Zo kunt u leren van eerdere incidenten en prioriteit toekennen aan waarschuwingen voor analisten, zodat ze geen tijd verspillen aan fout-positieven. 
 
-Waarschuwingen van hoge kwaliteit kunnen worden gebouwd op basis van ervaringen van eerdere incidenten, gevalideerde community-bronnen en hulpprogram ma's die zijn ontworpen om waarschuwingen te genereren en op te schonen door diverse signaal bronnen te weigeren en te correleren. 
+Waarschuwingen van hoge kwaliteit kunnen worden samengesteld op basis van ervaringen met eerdere incidenten, gevalideerde communitybronnen, en tools die zijn ontworpen om waarschuwingen te genereren en op te schonen door verschillende signaalbronnen samen te voegen en te correleren. 
 
-Azure Security Center biedt waarschuwingen van hoge kwaliteit in veel Azure-assets. U kunt de ASC data connector gebruiken om de waarschuwingen naar Azure Sentinel te streamen. Met Azure Sentinel kunt u geavanceerde waarschuwings regels maken om incidenten automatisch te genereren voor een onderzoek. 
+Azure Security Center biedt waarschuwingen van hoge kwaliteit voor diverse Azure-assets. U kunt de ASC-dataconnector gebruiken om de waarschuwingen te streamen naar Azure Sentinel. Met Azure Sentinel kunt u geavanceerde waarschuwingsregels opstellen om automatisch incidenten te genereren voor onderzoek. 
 
-Exporteer uw Azure Security Center waarschuwingen en aanbevelingen met behulp van de export functie om Risico's voor Azure-resources te identificeren. Waarschuwingen en aanbevelingen hand matig of op een doorlopende manier exporteren.
+Exporteer de waarschuwingen en aanbevelingen van Azure Security Center met behulp van de exportfunctie om zo beter risico's voor Azure-resources te kunnen identificeren. U kunt waarschuwingen en aanbevelingen handmatig exporteren of doorlopend.
 
-- [Exporteren configureren](../security-center/continuous-export.md)
+- [Export configureren](../security-center/continuous-export.md)
 
 - [Waarschuwingen streamen naar Azure Sentinel](../sentinel/connect-azure-security-center.md)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
-### <a name="ir-4-detection-and-analysis--investigate-an-incident"></a>IR-4: detectie en analyse: een incident onderzoeken
+### <a name="ir-4-detection-and-analysis--investigate-an-incident"></a>IR-4: Detectie en analyse - een incident onderzoeken
 
-**Richt lijnen**: Zorg ervoor dat analisten verschillende gegevens bronnen kunnen opvragen en gebruiken bij het onderzoeken van mogelijke incidenten, om een volledig overzicht te maken van wat er is gebeurd. Diverse logboeken moeten worden verzameld om de activiteiten van een mogelijke aanvaller in de Kill-keten te volgen om blinde vlekken te voor komen.  U moet er ook voor zorgen dat inzichten en informatie worden vastgelegd voor andere analisten en voor toekomstige historische Naslag informatie.  
+**Richtlijnen**: Zorg ervoor dat analisten verschillende gegevensbronnen kunnen bevragen en gebruiken bij het onderzoeken van mogelijke incidenten, zodat ze een volledig beeld hebben van wat er is gebeurd. Er moeten verschillende logboeken worden verzameld om de activiteiten van een mogelijke aanvaller in de kill chain te volgen om zo blinde vlekken te voorkomen.  U moet er ook voor zorgen dat inzichten en resultaten worden vastgelegd voor andere analisten, zodat deze kunnen worden geraadpleegd als historische naslaginformatie.  
 
-De gegevens bronnen voor onderzoek bevatten de gecentraliseerde logboek registratie bronnen die al worden verzameld van de services binnen het bereik en het uitvoeren van systemen, maar kan ook het volgende omvatten:
+De gegevensbronnen voor onderzoek zijn niet alleen de gecentraliseerde logboekbronnen die al worden verzameld door de services binnen het bereik en de actieve systemen, maar kunnen ook de volgende zijn:
 
-- Netwerk gegevens: gebruik stroom logboeken voor netwerk beveiligings groepen, Azure Network Watcher en Azure Monitor om netwerk stroom logboeken en andere analyse-informatie vast te leggen. 
+- Netwerkgegevens: gebruik stroomlogboeken van netwerkbeveiligingsgroepen, Azure Network Watcher en Azure Monitor om logboeken van netwerkstromen en andere analysegegevens vast te leggen. 
 
-- Moment opnamen van actieve systemen: 
+- Momentopnamen van actieve systemen: 
 
-    - Gebruik de functie voor moment opnamen van de virtuele machine van Azure om een moment opname te maken van de schijf waarop het systeem wordt uitgevoerd. 
+    - Gebruik de functie voor het maken van momentopnamen van virtuele machines van Azure om een momentopname of snapshot te maken van de schijf van het actieve systeem. 
 
-    - Gebruik de systeem eigen geheugen dump functie van het besturings systeem om een moment opname te maken van het actieve systeem geheugen.
+    - Gebruik de voorziening van het besturingssysteem voor het maken van geheugendumps om een momentopname te maken van het geheugen van het actieve systeem.
 
-    - Gebruik de functie snap shot van de Azure-Services of de eigen mogelijkheid van uw software om moment opnamen van de actieve systemen te maken.
+    - Gebruik de momentopnamefunctie van de Azure-services of van uw software om momentopnamen van de actieve systemen te maken.
 
-Azure Sentinel biedt uitgebreide gegevens analyse voor vrijwel elke logboek bron en een case beheer Portal om de volledige levens duur van incidenten te beheren. Informatie over Intelligence tijdens een onderzoek kan worden gekoppeld aan een incident voor het bijhouden en rapporteren van de doel einden. 
+Azure Sentinel biedt uitgebreide voorzieningen voor gegevensanalyse voor vrijwel elke logboekbron en een portal voor dossierbeheer om de volledige levenscyclus van incidenten te beheren. Informatie die wordt verzameld tijdens een onderzoek kan worden gekoppeld aan een incident voor tracerings- en rapportagedoeleinden. 
 
-- [Moment opname maken van de schijf van een Windows-computer](../virtual-machines/windows/snapshot-copy-managed-disk.md)
+- [Momentopname maken van de schijf van een Windows-computer](../virtual-machines/windows/snapshot-copy-managed-disk.md)
 
-- [Moment opname maken van de schijf van een Linux-machine](../virtual-machines/linux/snapshot-copy-managed-disk.md)
+- [Momentopname maken van de schijf van een Linux-computer](../virtual-machines/linux/snapshot-copy-managed-disk.md)
 
-- [Microsoft Azure ondersteuning voor diagnostische gegevens en geheugen dump verzameling](https://azure.microsoft.com/support/legal/support-diagnostic-information-collection/) 
+- [Diagnostische gegevens en geheugendumps van Microsoft Azure Ondersteuning](https://azure.microsoft.com/support/legal/support-diagnostic-information-collection/) 
 
 - [Incidenten onderzoeken met Azure Sentinel](../sentinel/tutorial-investigate-cases.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Monitoring door Azure Security Center**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
-### <a name="ir-5-detection-and-analysis--prioritize-incidents"></a>IR-5: detectie en analyse: de prioriteit van incidenten bepalen
+### <a name="ir-5-detection-and-analysis--prioritize-incidents"></a>IR-5: Detectie en analyse: incidenten prioriteren
 
-**Richt lijnen**: Geef een context voor analisten waarop incidenten zich richten op basis van ernst van de waarschuwing en de gevoeligheid van een activa. 
+**Richtlijnen**: Bied context aan analisten voor de incidenten waarop ze zich eerst moeten concentreren op basis van de ernst van waarschuwingen en de gevoeligheid van assets. 
 
-Azure Security Center wijst aan elke waarschuwing een Ernst toe om u te helpen bepalen welke waarschuwingen het eerst moeten worden onderzocht. De ernst is gebaseerd op de manier waarop vertrouwen Security Center is in de zoek actie of het analyse programma dat wordt gebruikt om de waarschuwing te geven, evenals het betrouwbaarheids niveau waarvan er sprake is van schadelijke opzet achter de activiteit die tot de waarschuwing heeft geleid.
+Azure Security Center wijst aan elke waarschuwing een ernst toe om u te helpen bepalen welke waarschuwingen het eerst moeten worden onderzocht. De ernst is gebaseerd op hoeveel vertrouwen Security Center heeft in de zoekactie of de analysefunctie die is gebruikt om de waarschuwing te genereren, evenals in welke mate kan worden aangetoond dat er sprake is van schadelijke opzet achter de activiteit die tot de waarschuwing heeft geleid.
 
-Daarnaast kunt u resources markeren met behulp van tags en een naamgevings systeem maken om Azure-resources te identificeren en categoriseren, met name voor de verwerking van gevoelige gegevens.  Het is uw verantwoordelijkheid om prioriteit te geven aan het herstel van waarschuwingen op basis van de ernst van de Azure-resources en-omgeving waar het incident heeft plaatsgevonden.
+Daarnaast kunt u resources markeren met behulp van tags en een naamgevingssysteem opzetten om Azure-resources te identificeren en categoriseren, met name voor resources die gevoelige gegevens verwerken.  Het is uw verantwoordelijkheid om prioriteit te geven aan het oplossen van waarschuwingen op basis van de ernst van de Azure-resources en -omgeving waarin het incident heeft plaatsgevonden.
 
 - [Beveiligingswaarschuwingen in Azure Security Center](../security-center/security-center-alerts-overview.md)
 
 - [Tags gebruiken om Azure-resources te organiseren](/azure/azure-resource-manager/resource-group-using-tags)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
-### <a name="ir-6-containment-eradication-and-recovery--automate-the-incident-handling"></a>IR-6: insluiting, uitroeiing en herstel: de verwerking van incidenten automatiseren
+### <a name="ir-6-containment-eradication-and-recovery--automate-the-incident-handling"></a>IR-6: Insluiting, eliminatie en herstel - verwerking van incidenten automatiseren
 
-**Richt lijnen**: Automatiseer hand matige terugkerende taken om de reactie tijd te versnellen en de overhead voor analisten te verlagen. Het uitvoeren van hand matige taken duurt langer om uit te voeren, elk incident te vertragen en te verminderen hoeveel incidenten een analist kan verwerken. Hand matige taken verg Roten ook analisten intensief, waardoor het risico van menselijke fout wordt verg root dat vertragingen veroorzaakt, en de mogelijkheid van analisten om effectief te best Eden aan complexe taken te degraderen. Gebruik werk stroom automatiserings functies in Azure Security Center en Azure Sentinel om automatisch acties te activeren of een Playbook uit te voeren om te reageren op binnenkomende beveiligings waarschuwingen. De Playbook neemt acties, zoals het verzenden van meldingen, het uitschakelen van accounts en het isoleren van problematische netwerken. 
+**Richtlijnen**: Automatiseer handmatige terugkerende taken om de responstijd te versnellen en de belasting van analisten te verlagen. Handmatige taken nemen meer tijd in beslag, waardoor elk incident wordt vertraagd en een analist minder incidenten kan verwerken. Daarnaast raken analisten sneller vermoeid door handmatige taken, met als gevolg dat het risico van menselijke fouten toeneemt en analisten zich minder goed kunnen concentreren. Gebruik voorzieningen voor de automatisering van werkstromen in Azure Security Center en Azure Sentinel om automatisch acties te activeren of een playbook uit te voeren in reactie op binnenkomende beveiligingswaarschuwingen. Het playbook voert acties uit, zoals het verzenden van meldingen, het uitschakelen van accounts en het isoleren van problematische netwerken. 
 
-- [Werk stroom automatisering configureren in Security Center](../security-center/workflow-automation.md)
+- [Werkstroomautomatisering configureren in Security Center](../security-center/workflow-automation.md)
 
-- [Automatische reacties op dreigingen instellen in Azure Security Center](../security-center/tutorial-security-incident.md#triage-security-alerts)
+- [Geautomatiseerde bedreigingsreacties instellen in Azure Security Center](../security-center/tutorial-security-incident.md#triage-security-alerts)
 
-- [Automatische bedreigings reacties instellen in azure Sentinel](../sentinel/tutorial-respond-threats-playbook.md)
+- [Geautomatiseerde bedreigingsreacties instellen in Azure Sentinel](../sentinel/tutorial-respond-threats-playbook.md)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
-## <a name="posture-and-vulnerability-management"></a>Postuur en beveiligings beheer
+## <a name="posture-and-vulnerability-management"></a>Beheer van beveiligingspostuur en beveiligingsproblemen
 
-*Zie voor meer informatie de [Azure Security Bench Mark: postuur en het beveiligings beleid](/azure/security/benchmarks/security-controls-v2-vulnerability-management).*
+*Ga voor meer informatie naar [Azure Security-benchmark: Beheer van beveiligingspostuur en beveiligingsproblemen](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management).*
 
 ### <a name="pv-3-establish-secure-configurations-for-compute-resources"></a>PV-3: veilige configuraties voor reken bronnen instellen
 
 **Richt lijnen**: niet van toepassing; Content Delivery Network hebt geen mogelijkheden voor beveiligings configuratie.
 
-**Azure Security Center bewaking**: niet van toepassing
+**Monitoring door Azure Security Center**: Niet van toepassing
 
-**Verantwoordelijkheid**: gedeeld
+**Verantwoordelijkheid**: Gedeeld
 
-### <a name="pv-7-rapidly-and-automatically-remediate-software-vulnerabilities"></a>HW-7: snel en automatisch problemen met software oplossen
+### <a name="pv-7-rapidly-and-automatically-remediate-software-vulnerabilities"></a>PV-7: Beveiligingsproblemen in software snel en automatisch oplossen
 
-**Hulp**: software-updates snel implementeren om software problemen in besturings systemen en toepassingen op te lossen. 
+**Richtlijnen**: Implementeer snel software-updates om kwetsbaarheden in besturingssystemen en toepassingen op te lossen. 
 
 Stel prioriteiten in met behulp van een gemeen schappelijke risico Score programma (bijvoorbeeld gemeen schappelijke restrictie systeem voor beveiligings problemen) of de standaard risico classificaties die worden meegeleverd met het hulp programma van derden. Pas uw omgeving aan met behulp van context van welke toepassingen een hoog beveiligings risico opleveren en waarvoor een hoge uptime nodig is.
 
-**Azure Security Center bewaking**: niet van toepassing
+**Monitoring door Azure Security Center**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
-### <a name="pv-8-conduct-regular-attack-simulation"></a>PV-8: regel matige aanvals simulatie uitvoeren
+### <a name="pv-8-conduct-regular-attack-simulation"></a>PV-8: Regelmatig aanvalssimulaties uitvoeren
 
-**Richt lijnen**: u kunt zo nodig indringings tests of rode team activiteiten uitvoeren op uw Azure-resources en ervoor zorgen dat alle essentiële beveiligings resultaten worden hersteld.
-Volg de Microsoft Cloud regels voor het testen van de indringings fase om ervoor te zorgen dat uw indringings tests niet worden geschonden door het micro soft-beleid. Gebruik de strategie van micro soft en de uitvoering van de implementatie van de indringing van een live site in de Cloud, services en toepassingen die door micro soft worden beheerd.
+**Richtlijnen**: Voer zo nodig penetratietests of Red Teaming-activiteiten uit voor uw Azure-resources en zorg ervoor dat alle beveiligingsproblemen worden opgelost.
+Volg de Microsoft Cloud Penetration Testing Rules of Engagement om ervoor te zorgen dat uw penetratietests voldoen aan de beleidsregels van Microsoft. Volg de strategie en instructies van Microsoft voor Red Teaming en penetratietests van live sites voor cloudinfrastructuur, services en toepassingen die door Microsoft worden beheerd.
 
-- [Indringings tests in azure](../security/fundamentals/pen-testing.md)
+- [Penetratietests in Azure](../security/fundamentals/pen-testing.md)
 
-- [Regels van betrokkenheid voor het testen van indringing](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1) 
+- [Penetration Testing Rules of Engagement](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1) 
 
-- [Microsoft Cloud rode teams](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+- [Microsoft Cloud Red Teaming](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Monitoring door Azure Security Center**: Niet van toepassing
 
-**Verantwoordelijkheid**: gedeeld
+**Verantwoordelijkheid**: Gedeeld
 
 ## <a name="governance-and-strategy"></a>Governance en strategie
 
-*Zie [Azure Security Bench Mark: governance en strategie](/azure/security/benchmarks/security-controls-v2-governance-strategy)voor meer informatie.*
+*Ga voor meer informatie naar [Azure Security-benchmark: Governance en strategie](/azure/security/benchmarks/security-controls-v2-governance-strategy).*
 
-### <a name="gs-1-define-asset-management-and-data-protection-strategy"></a>GS-1: de strategie voor Asset Management en gegevens bescherming definiëren 
+### <a name="gs-1-define-asset-management-and-data-protection-strategy"></a>GS-1: Strategie voor Asset Management en gegevensbescherming definiëren 
 
-**Richt lijnen**: Zorg ervoor dat u een duidelijke strategie documenteert en communiceert voor continue bewaking en bescherming van systemen en gegevens. Volg prioriteiten voor detectie, beoordeling, beveiliging en bewaking van bedrijfs kritieke gegevens en systemen. 
+**Richtlijnen**: Zorg ervoor dat u een duidelijke strategie documenteert en communiceert voor continue bewaking en bescherming van systemen en gegevens. Stel prioriteiten in voor detectie, beoordeling, beveiliging en bewaking van bedrijfskritieke gegevens en systemen. 
 
-Deze strategie moet gedocumenteerde richt lijnen, beleid en standaarden bevatten voor de volgende elementen: 
+Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten voor de volgende elementen: 
 
--   Standaard gegevens classificatie in overeenstemming met de zakelijke Risico's
+-   Standaard voor gegevensclassificatie in overeenstemming met de bedrijfsrisico's
 
--   Zicht baarheid van beveiligings organisaties in Risico's en activa-inventaris 
+-   Zichtbaarheid van de beveiligingsorganisaties ten aanzien van risico's en asset-inventaris 
 
--   Goed keuring van beveiligings organisaties van Azure-Services voor gebruik 
+-   Goedkeuring van beveiligingsorganisatie van te gebruiken Azure-services 
 
--   Beveiliging van assets via hun levens cyclus
+-   Beveiliging van assets gedurende de gehele levenscyclus
 
--   Vereiste strategie voor toegangs beheer in overeenstemming met organisatie gegevens classificatie
+-   Vereiste strategie voor toegangsbeheer in overeenstemming met gegevensclassificatie van organisatie
 
--   Gebruik van functies voor gegevens bescherming van Azure native en derden
+-   Gebruik van voorzieningen voor gegevensbescherming van Azure en derden
 
--   Gegevens versleutelings vereisten voor in-transit-en rest-use cases
+-   Vereisten voor gegevensversleutelings van gegevens in-transit en at-rest
 
 -   Juiste cryptografische normen
 
 Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
 
-- [Aanbeveling van Azure-beveiligings architectuur-opslag, gegevens en versleuteling](https://docs.microsoft.com/azure/architecture/framework/security/storage-data-encryption?toc=/security/compass/toc.json&amp;bc=/security/compass/breadcrumb/toc.json)
+- [Azure Security Architecture Recommendation - Storage, data, and encryption](https://docs.microsoft.com/azure/architecture/framework/security/storage-data-encryption?toc=/security/compass/toc.json&amp;bc=/security/compass/breadcrumb/toc.json)
 
-- [Basis beginselen van Azure-beveiliging-Azure-gegevens beveiliging,-versleuteling en-opslag](../security/fundamentals/encryption-overview.md)
+- [Azure Security Fundamentals - Azure Data security, encryption, and storage](../security/fundamentals/encryption-overview.md)
 
-- [Cloud-acceptatie Framework-aanbevolen procedures voor Azure Data Security en versleuteling](https://docs.microsoft.com/azure/security/fundamentals/data-encryption-best-practices?toc=/azure/cloud-adoption-framework/toc.json&amp;bc=/azure/cloud-adoption-framework/_bread/toc.json)
+- [Cloud Adoption Framework - Azure data security and encryption best practices](https://docs.microsoft.com/azure/security/fundamentals/data-encryption-best-practices?toc=/azure/cloud-adoption-framework/toc.json&amp;bc=/azure/cloud-adoption-framework/_bread/toc.json)
 
-- [Azure Security Bench Mark-Asset Management](/azure/security/benchmarks/security-benchmark-v2-asset-management)
+- [Azure Security Benchmark - Asset management](/azure/security/benchmarks/security-controls-v2-asset-management)
 
-- [Azure Security Bench Mark-gegevens beveiliging](/azure/security/benchmarks/security-benchmark-v2-data-protection)
+- [Azure Security Benchmark - Data Protection](/azure/security/benchmarks/security-controls-v2-data-protection)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Monitoring door Azure Security Center**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
-### <a name="gs-2-define-enterprise-segmentation-strategy"></a>GS-2: ondernemings segmentatie strategie definiëren 
+### <a name="gs-2-define-enterprise-segmentation-strategy"></a>GS-2: Segmentatiestrategie voor bedrijf definiëren 
 
-**Richt lijnen**: Stel een bedrijfs strategie in om de toegang tot assets te segmenteren met een combi natie van identiteits-, netwerk-, toepassings-, abonnements-, beheer groep-en andere besturings elementen.
+**Richtlijnen**: Stel een bedrijfsbrede strategie in om de toegang tot assets te segmenteren met behulp van een combinatie van maatregelen voor identiteit, netwerken, toepassingen, abonnementen, beheergroepen en andere maatregelen.
 
-Houd de nood zaak van beveiligings scheiding zorgvuldig bij met de nood zaak om de dagelijkse werking van de systemen in te scha kelen die met elkaar moeten communiceren en toegang hebben tot gegevens.
+Zoek een compromis tussen de noodzaak om beveiligingsaspecten te scheiden en de dagelijkse werking van de systemen die met elkaar moeten communiceren en toegang hebben tot gegevens.
 
-Zorg ervoor dat de segmentatie strategie consistent wordt geïmplementeerd in alle controle typen, zoals netwerk beveiliging, identiteits-en toegangs modellen, en toepassings machtigingen/toegangs modellen en besturings elementen voor menselijke processen.
+Zorg ervoor dat de segmentatiestrategie consistent wordt geïmplementeerd voor alle soorten maatregelen, zoals netwerkbeveiliging, identiteits- en toegangsmodellen, en modellen voor toepassingsmachtigingen/toegangs en maatregelen voor menselijke processen.
 
-- [Richt lijnen voor segmentatie strategie in azure (video)](/security/compass/microsoft-security-compass-introduction#azure-components-and-reference-model-2151)
+- [Guidance on segmentation strategy in Azure (video)](/security/compass/microsoft-security-compass-introduction#azure-components-and-reference-model-2151)
 
-- [Richt lijnen voor segmentatie strategie in azure (document)](/security/compass/governance#enterprise-segmentation-strategy)
+- [Guidance on segmentation strategy in Azure (document)](/security/compass/governance#enterprise-segmentation-strategy)
 
-- [Netwerk segmentatie uitlijnen met strategie voor bedrijfs segmentatie](/security/compass/network-security-containment#align-network-segmentation-with-enterprise-segmentation-strategy)
+- [Align network segmentation with enterprise segmentation strategy](/security/compass/network-security-containment#align-network-segmentation-with-enterprise-segmentation-strategy)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Monitoring door Azure Security Center**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
-### <a name="gs-3-define-security-posture-management-strategy"></a>GS-3: beveiligings strategie voor postuur-beheer definiëren
+### <a name="gs-3-define-security-posture-management-strategy"></a>GS-3: Strategie voor beheer van beveiligingspostuur definiëren
 
-**Hulp**: regel matig de Risico's voor uw afzonderlijke assets en de omgeving waarin ze worden gehost. Volg prioriteiten voor hoogwaardige assets en zeer belichte aanvallen, zoals gepubliceerde toepassingen, netwerk binnenkomend en uitgevende punten, gebruikers-en beheerders eindpunten, enzovoort.
+**Richtlijnen**: U moet de risico's voor afzonderlijke assets en de omgeving waarin ze worden gehost, voortdurend meten en beperken. Geef prioriteit aan waardevolle assets en gebieden die zeer kwetsbaar zijn voor aanvallen, zoals gepubliceerde toepassingen, punten in het netwerk voor binnenkomend en uitgaand verkeer, eindpunten voor gebruikers en beheerders, enzovoort.
 
-- [Azure Security Bench Mark-postuur en beveiligings beheer](/azure/security/benchmarks/security-benchmark-v2-posture-vulnerability-management)
+- [Azure Security Benchmark - Posture and vulnerability management](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Monitoring door Azure Security Center**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
-### <a name="gs-4-align-organization-roles-responsibilities-and-accountabilities"></a>GS-4: organisatie rollen, verantwoordelijkheden en accountabilities uitlijnen
+### <a name="gs-4-align-organization-roles-responsibilities-and-accountabilities"></a>GS-4: Rollen en verantwoordelijkheden binnen de organisatie in overeenstemming brengen
 
-**Richt lijnen**: Zorg ervoor dat u een duidelijke strategie voor rollen en verantwoordelijkheden in uw beveiligings organisatie documenteert en communiceert. Volg prioriteiten voor een duidelijke verantwoordelijkheid voor beveiligings beslissingen, het trainen van iedereen op het gedeelde verantwoordelijkheids model en technische teams op technologie om de cloud te beveiligen.
+**Richtlijnen**: Zorg ervoor dat u een duidelijke strategie voor rollen en verantwoordelijkheden in uw beveiligingsorganisatie documenteert en communiceert. Bepaal de prioriteit door een duidelijke verantwoordelijkheid te definiëren voor beveiligingsbeslissingen, het bekend maken van het personeel met het gedeelde verantwoordelijkheidsmodel en het trainen van technische teams in technologie om de cloud te beveiligen.
 
-- [Best Practice voor Azure-beveiliging 1: personen: teams trainen in Cloud Security traject](/azure/cloud-adoption-framework/security/security-top-10#1-people-educate-teams-about-the-cloud-security-journey)
+- [Azure Security Best Practice 1 – People: Educate Teams on Cloud Security Journey](/azure/cloud-adoption-framework/security/security-top-10#1-people-educate-teams-about-the-cloud-security-journey)
 
-- [Aanbevolen beveiligings procedure voor Azure-gebruikers: teams in de Cloud-beveiligings technologie trainen](/azure/cloud-adoption-framework/security/security-top-10#2-people-educate-teams-on-cloud-security-technology)
+- [Azure Security Best Practice 2 - People: Educate Teams on Cloud Security Technology](/azure/cloud-adoption-framework/security/security-top-10#2-people-educate-teams-on-cloud-security-technology)
 
-- [Best Practice voor Azure-beveiliging 3-proces: verantwoordelijkheid toewijzen voor Cloud beveiligings beslissingen](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
+- [Azure Security Best Practice 3 - Process: Assign Accountability for Cloud Security Decisions](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Monitoring door Azure Security Center**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
-### <a name="gs-5-define-network-security-strategy"></a>GS-5: netwerk beveiligings strategie definiëren
+### <a name="gs-5-define-network-security-strategy"></a>GS-5: Beveiligingsstrategie voor netwerk definiëren
 
-**Richt lijnen**: Stel een Azure-netwerk beveiligings benadering in als onderdeel van de algehele strategie voor het toegangs beheer van uw organisatie.  
+**Richtlijnen**: Stel een aanpak voor Azure-netwerkbeveiliging op als onderdeel van de algehele strategie voor het toegangsbeheer van uw organisatie.  
 
-Deze strategie moet gedocumenteerde richt lijnen, beleid en standaarden bevatten voor de volgende elementen: 
+Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten voor de volgende elementen: 
 
--   Gecentraliseerd netwerk beheer en beveiligings verantwoordelijkheid
+-   Gecentraliseerd netwerkbeheer en beveiligingsverantwoordelijkheid
 
--   Segment model voor virtuele netwerken dat is afgestemd op de strategie voor bedrijfs segmentatie
+-   Model voor segmentatie van het virtuele netwerk in lijn met de segmentatiestrategie van het bedrijf
 
--   Herstel strategie in verschillende scenario's voor bedreigingen en aanvallen
+-   Herstelstrategie voor verschillende bedreigings- en aanvalsscenario's
 
--   Internet-en ingangs-en uitgangs strategie
+-   Strategie voor internetperiferie en inkomend en uitgaand
 
--   Hybride Cloud en on-premises interconnectiviteit-strategie
+-   Strategie voor interconnectiviteit tussen hybride cloud en on-premises
 
--   Up-to-date netwerk beveiligings artefacten (zoals netwerk diagrammen, referentie netwerk architectuur)
+-   Up-to-date artefacten voor netwerkbeveiliging (zoals netwerkdiagrammen en referentienetwerkarchitectuur)
 
-Zie voor meer informatie de volgende verwijzingen:
-- [Aanbevolen procedures voor Azure-beveiliging 11-architectuur. Eén uniforme beveiligings strategie](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
+Raadpleeg het volgende Engelstalige naslagmateriaal voor meer informatie:
+- [Azure Security Best Practice 11 - Architecture. Single unified security strategy](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
-- [Azure Security Bench Mark-netwerk beveiliging](/azure/security/benchmarks/security-benchmark-v2-network-security)
+- [Azure Security Benchmark - Network Security](/azure/security/benchmarks/security-controls-v2-network-security)
 
-- [Overzicht van Azure-netwerk beveiliging](../security/fundamentals/network-overview.md)
+- [Azure network security overview](../security/fundamentals/network-overview.md)
 
-- [Strategie voor bedrijfs netwerk architectuur](/azure/cloud-adoption-framework/ready/enterprise-scale/architecture)
+- [Enterprise network architecture strategy](/azure/cloud-adoption-framework/ready/enterprise-scale/architecture)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Monitoring door Azure Security Center**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
-### <a name="gs-6-define-identity-and-privileged-access-strategy"></a>GS-6: identiteits-en bevoorrechte toegangs strategie definiëren
+### <a name="gs-6-define-identity-and-privileged-access-strategy"></a>GS-6: Strategie voor identiteit en bevoegde toegang definiëren
 
-**Richt lijnen**: Stel een Azure Identity and privileged Access benaderingen in als onderdeel van de algehele strategie voor beveiligings beheer van uw organisatie.  
+**Richtlijnen**: Stel een aanpak voor Azure-identiteit en bevoegde toegang op als onderdeel van de algehele strategie voor het toegangsbeheer van uw organisatie.  
 
-Deze strategie moet gedocumenteerde richt lijnen, beleid en standaarden bevatten voor de volgende elementen: 
+Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten voor de volgende elementen: 
 
--   Een gecentraliseerd identiteits-en verificatie systeem en de interconnectiviteit daarvan met andere interne en externe identiteits systemen
+-   Een gecentraliseerd identiteits- en verificatiesysteem en de interconnectiviteit ervan met andere interne en externe identiteitssystemen
 
--   Sterke authenticatie methoden in verschillende use-cases en-voor waarden
+-   Krachtige authenticatiemethoden in verschillende use-cases en onder diverse omstandigheden
 
 -   Beveiliging van gebruikers met hoge bevoegdheden
 
--   Bewaking en verwerking van afwijkende gebruikers activiteiten  
+-   Controle en afhandeling van afwijkende gebruikersactiviteiten  
 
--   Beoordelings-en afstemmings proces voor gebruikers-id en-toegang
-
-Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
-
-- [Azure Security Bench Mark-Identity Management](/azure/security/benchmarks/security-benchmark-v2-identity-management)
-
-- [Azure Security-benchmark-privileged Access](/azure/security/benchmarks/security-benchmark-v2-privileged-access)
-
-- [Aanbevolen procedures voor Azure-beveiliging 11-architectuur. Eén uniforme beveiligings strategie](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
-
-- [Overzicht van Azure Identity Management-beveiliging](../security/fundamentals/identity-management-overview.md)
-
-**Azure Security Center bewaking**: niet van toepassing
-
-**Verantwoordelijkheid**: klant
-
-### <a name="gs-7-define-logging-and-threat-response-strategy"></a>GS-7: vastleggen van de logboek registratie en de reactie op bedreigingen
-
-**Richt lijnen**: Stel een strategie voor logboek registratie en reactie op bedreigingen in om bedreigingen snel te detecteren en op te lossen terwijl aan nalevings vereisten wordt voldaan. Volg prioriteiten om analisten te voorzien van waarschuwingen met hoge kwaliteit en naadloze ervaring, zodat ze zich kunnen concentreren op bedreigingen in plaats van integratie en hand matige stappen. 
-
-Deze strategie moet gedocumenteerde richt lijnen, beleid en standaarden bevatten voor de volgende elementen:
-
--   De rol en verantwoordelijkheden van de organisatie voor beveiligings bewerkingen (SecOps) 
-
--   Een goed gedefinieerd respons proces voor incidenten dat wordt afgestemd op het NIST of een ander branche raamwerk 
-
--   Vastleggen en bewaren in Logboeken voor ondersteuning van detectie van bedreigingen, reacties op incidenten en nalevings behoeften
-
--   Gecentraliseerde zicht baarheid van en correlatie-informatie over bedreigingen, met behulp van SIEM, systeem eigen Azure-mogelijkheden en andere bronnen 
-
--   Communicatie-en meldings abonnement met uw klanten, leveranciers en open bare partijen
-
--   Gebruik van Azure native en platforms van derden voor het verwerken van incidenten, zoals logboek registratie en detectie van bedreigingen, forensische, herstel en uitroeiing van aanvallen
-
--   Processen voor het verwerken van incidenten en activiteiten na incidenten, zoals geleerde lessen en bewijs behoud
+-   Beoordelings- en afstemmingsproces voor gebruikers-id's en -toegang
 
 Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
 
-- [Azure Security Bench Mark-logboek registratie en detectie van bedreigingen](/azure/security/benchmarks/security-benchmark-v2-logging-threat-detection)
+- [Azure Security Benchmark - Identity management](/azure/security/benchmarks/security-controls-v2-identity-management)
 
-- [Azure Security Bench Mark-incident respons](/azure/security/benchmarks/security-benchmark-v2-incident-response)
+- [Azure Security Benchmark - Privileged access](/azure/security/benchmarks/security-controls-v2-privileged-access)
 
-- [Aanbevolen procedure voor Azure-beveiliging 4-proces. Reactie processen voor incidenten bijwerken voor Cloud](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
+- [Azure Security Best Practice 11 - Architecture. Single unified security strategy](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
-- [Hand leiding Azure-acceptatie raamwerk, logboek registratie en rapportage](/azure/cloud-adoption-framework/decision-guides/logging-and-reporting/)
+- [Azure identity management security overview](../security/fundamentals/identity-management-overview.md)
 
-- [Schaal, beheer en bewaking van Azure Enter prise](/azure/cloud-adoption-framework/ready/enterprise-scale/management-and-monitoring)
+**Monitoring door Azure Security Center**: Niet van toepassing
 
-**Azure Security Center bewaking**: niet van toepassing
+**Verantwoordelijkheid**: Klant
 
-**Verantwoordelijkheid**: klant
+### <a name="gs-7-define-logging-and-threat-response-strategy"></a>GS-7: Strategie voor logboekregistratie en respons bij bedreigingen definiëren
+
+**Richtlijnen**: Stel een strategie op voor logboekregistratie en de respons bij bedreigingen om bedreigingen snel te detecteren en op te lossen terwijl u voldoet aan de nalevingsvereisten. Stel prioriteiten om analisten te voorzien van waarschuwingen van hoge kwaliteit en naadloze ervaringen, zodat ze zich kunnen concentreren op bedreigingen in plaats van integratie en handmatige stappen. 
+
+Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten voor de volgende elementen:
+
+-   De rol en verantwoordelijkheden van het SecOps-team van de organisatie 
+
+-   Een goed omschreven responsproces voor incidenten dat is afgestemd op NIST of een ander framework uit de branche 
+
+-   Logboeken registreren en bewaren voor ondersteuning van bedreigingsdetectie, respons op incidenten en nalevingsbehoeften
+
+-   Gecentraliseerde zichtbaarheid van en correlatiegegevens over bedreigingen, met behulp van SIEM, functies van Azure en andere bronnen 
+
+-   Plan voor communicatie en melding aan klanten, leveranciers en openbare betrokken partijen
+
+-   Gebruik van platforms van Azure en van derden voor het afhandelen van incidenten, zoals logboekregistratie en bedreigingsdetectie, forensics, en herstel en eliminatie van aanvallen
+
+-   Processen voor het afhandelen van incidenten en activiteiten na incidenten, zoals geleerde lessen en bewijsbehoud
+
+Meer informatie vindt u op de koppelingen waarnaar wordt verwezen.
+
+- [Azure Security Benchmark - Logging and threat detection](/azure/security/benchmarks/security-controls-v2-logging-threat-detection)
+
+- [Azure Security Benchmark - Incident response](/azure/security/benchmarks/security-controls-v2-incident-response)
+
+- [Azure Security Best Practice 4 - Process. Update Incident Response Processes for Cloud](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
+
+- [Azure Adoption Framework, logging, and reporting decision guide](/azure/cloud-adoption-framework/decision-guides/logging-and-reporting/)
+
+- [Azure enterprise scale, management, and monitoring](/azure/cloud-adoption-framework/ready/enterprise-scale/management-and-monitoring)
+
+**Monitoring door Azure Security Center**: Niet van toepassing
+
+**Verantwoordelijkheid**: Klant
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [overzicht van Azure Security Bench Mark v2](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligings basislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Lees [dit overzichtsartikel over Azure Security Benchmark V2](/azure/security/benchmarks/overview).
+- Lees meer over [basislijnen voor de beveiliging van Azure](/azure/security/benchmarks/security-baselines-overview)

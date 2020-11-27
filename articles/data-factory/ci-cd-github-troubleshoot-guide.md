@@ -7,21 +7,21 @@ ms.reviewer: susabat
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: troubleshooting
-ms.date: 11/26/2020
-ms.openlocfilehash: f07cc8e3d5e9d6f59671a3c8c2efd9f5fb9f27b7
-ms.sourcegitcommit: 236014c3274b31f03e5fcee5de510f9cacdc27a0
+ms.date: 11/27/2020
+ms.openlocfilehash: e0b4b31a1d732cbd5cbfaa9b6e5e021caa3adf01
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96299053"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96301965"
 ---
 # <a name="troubleshoot-ci-cd-azure-devops-and-github-issues-in-adf"></a>Problemen met CI-CD-, Azure DevOps-en GitHub oplossen in ADF 
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
-In dit artikel worden algemene probleemoplossings methoden voor CI-CD-, Azure DevOps-en GitHub-problemen in Azure Data Factory besproken.
+In dit artikel worden algemene probleemoplossings methoden besproken voor doorlopende Integration-Continuous implementatie (CI-CD), Azure DevOps-en GitHub-problemen in Azure Data Factory.
 
-Als u vragen of problemen hebt met behulp van broncode beheer-of DevOps-technieken, zijn er enkele artikelen die u mogelijk nuttig vindt.:
+Als u vragen of problemen hebt met behulp van broncode beheer-of DevOps-technieken, zijn er een aantal artikelen die u mogelijk nuttig vindt:
 
 - Raadpleeg [broncode beheer in ADF](source-control.md) voor meer informatie over het gebruik van broncode beheer in ADF. 
 - Raadpleeg  [CI-cd in ADF](continuous-integration-deployment.md) voor meer informatie over hoe DevOps CI-cd wordt gebruikt in ADF.
@@ -158,9 +158,5 @@ Voor meer informatie over het oplossen van problemen kunt u de volgende bronnen 
 *  [Data Factory Blog](https://azure.microsoft.com/blog/tag/azure-data-factory/)
 *  [Data Factory functie aanvragen](https://feedback.azure.com/forums/270578-data-factory)
 *  [Azure-video's](https://azure.microsoft.com/resources/videos/index/?sort=newest&services=data-factory)
-*  [Microsoft Q&A-vragenpagina](/answers/topics/azure-data-factory.html)
 *  [Stack overflow-forum voor Data Factory](https://stackoverflow.com/questions/tagged/azure-data-factory)
 *  [Twitter-informatie over Data Factory](https://twitter.com/hashtag/DataFactory)
-
-
- 

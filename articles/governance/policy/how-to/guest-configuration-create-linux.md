@@ -4,12 +4,12 @@ description: Meer informatie over het maken van een Azure Policy gast configurat
 ms.date: 08/17/2020
 ms.topic: how-to
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 1e81d1a5157cc5872ba2628c8d6cb408e35ab9c6
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 1f6308250717d35dc725b097575bf3921646c6a0
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94694239"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302716"
 ---
 # <a name="how-to-create-guest-configuration-policies-for-linux"></a>Beleidsregels voor gastconfiguratie voor Linux maken
 
@@ -89,6 +89,10 @@ DSC fungeert als wrapper voor inspecers om te standaardiseren hoe het wordt uitg
 #### <a name="configuration-requirements"></a>Configuratievereisten
 
 De naam van de aangepaste configuratie moet consistent zijn. De naam van het zip-bestand voor het inhouds pakket, de configuratie naam in het MOF-bestand en de naam van de gast toewijzing in de Azure Resource Manager sjabloon (ARM-sjabloon) moet hetzelfde zijn.
+
+Power shell-cmdlets helpen bij het maken van het pakket.
+Er is geen map op het hoofd niveau of de versie van de map vereist.
+De pakket indeling moet een zip-bestand zijn. en mag niet groter zijn dan de totale grootte van 100 MB bij ongecomprimeerd.
 
 ### <a name="custom-guest-configuration-configuration-on-linux"></a>Configuratie van aangepaste gast configuratie op Linux
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: troubleshooting
 ms.date: 7/10/2019
 ms.author: genli
-ms.openlocfilehash: d4d25d8e79c30933546af2b823e328a652f482eb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f785f44b88c7f0d5f0b6f43114070888bb23146d
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91360528"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302495"
 ---
 # <a name="how-to-use-perfinsights"></a>PerfInsights gebruiken
 
@@ -132,7 +132,7 @@ Informatie over de virtuele Linux-machine, het besturings systeem, het blok kere
     |----------------------------|-------------------------------------------------|
     | Oracle Linux server        | 6,10 [ `*` ], 7,3, 7,6, 7,5 |
     | CentOS                     | 6,5 [ `*` ], 7,6                                    |
-    | RHEL                       | 7,2, 7,5, 8,0 [ `*` ]                               |
+    | RHEL                       | 7,6, 7,7, 7,8, 7,9                                |
     | Ubuntu                     | 14,04, 16,04, 18,04, 20,04                               |
     | Debian                     | 8, 9, 10 [ `*` ]                                    |
     | SLES                       | 12 SP4 [ `*` ]                                      |
@@ -236,7 +236,7 @@ Tabblad **CPU** bevat informatie over het CPU-verbruik op het hele systeem tijde
 
 In het gedeelte **bevindingen** worden verschillende bevindingen en aanbevelingen met betrekking tot opslag weer gegeven.
 
-Op de tabbladen **apparaten** en andere gerelateerde secties, zoals **partities**, **LVM**en **MDADM** , wordt beschreven hoe blok apparaten worden geconfigureerd en aan elkaar zijn gerelateerd.
+Op de tabbladen **apparaten** en andere gerelateerde secties, zoals **partities**, **LVM** en **MDADM** , wordt beschreven hoe blok apparaten worden geconfigureerd en aan elkaar zijn gerelateerd.
 
 ![Scherm afbeelding van het tabblad opslag](media/how-to-use-perfinsights-linux/perfinsights-linux-storage-tab.png)  
 ![Scherm afbeelding van het tabblad MDADM](media/how-to-use-perfinsights-linux/perfinsights-linux-mdadm-config.png)

@@ -3,12 +3,12 @@ title: Beleidsregels voor gastconfiguratie voor Windows maken
 description: Meer informatie over het maken van een Azure Policy-gast configuratie beleid voor Windows.
 ms.date: 08/17/2020
 ms.topic: how-to
-ms.openlocfilehash: ea9b40006deefbac2c253082eda4ef2da12149a4
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 124f747a1e7c7925efc2519ee826d62034e69cc5
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94700674"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302686"
 ---
 # <a name="how-to-create-guest-configuration-policies-for-windows"></a>Beleidsregels voor gastconfiguratie voor Windows maken
 
@@ -160,7 +160,7 @@ Het voltooide pakket wordt gebruikt door de gast configuratie om de Azure Policy
 
 Power shell-cmdlets helpen bij het maken van het pakket.
 Er is geen map op het hoofd niveau of de versie van de map vereist.
-De pakket indeling moet een zip-bestand zijn.
+De pakket indeling moet een zip-bestand zijn en mag niet groter zijn dan de totale grootte van 100 MB bij niet-gecomprimeerde bestanden.
 
 ### <a name="storing-guest-configuration-artifacts"></a>Gast configuratie artefacten opslaan
 

@@ -3,16 +3,16 @@ title: Afhankelijkheids analyse op basis van een agent instellen in de evaluatie
 description: In dit artikel wordt beschreven hoe u een afhankelijkheids analyse op basis van een agent instelt in Azure Migrate server-evaluatie.
 ms.topic: how-to
 ms.date: 11/25/2020
-ms.openlocfilehash: 17c6e3e24596727350b11946bdf6896e22d41529
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 58c1aeea00ae033def0f45d220c12d13cc28b4b2
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96028959"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302842"
 ---
 # <a name="set-up-dependency-visualization"></a>Visualisatie van afhankelijkheid instellen
 
-In dit artikel wordt beschreven hoe u analyse van agentloze afhankelijkheden instelt in Azure Migrate: Server Assessment. [Afhankelijkheids analyse](concepts-dependency-visualization.md) helpt u bij het identificeren en begrijpen van afhankelijkheden tussen computers die u wilt beoordelen en die u wilt migreren naar Azure.
+In dit artikel wordt beschreven hoe u een afhankelijkheids analyse op basis van een agent instelt in Azure Migrate: Server Assessment. [Afhankelijkheids analyse](concepts-dependency-visualization.md) helpt u bij het identificeren en begrijpen van afhankelijkheden tussen computers die u wilt beoordelen en die u wilt migreren naar Azure.
 
 ## <a name="before-you-start"></a>Voordat u begint
 

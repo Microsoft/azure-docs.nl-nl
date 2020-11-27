@@ -2,14 +2,14 @@
 author: roygara
 ms.service: storage
 ms.topic: include
-ms.date: 05/06/2019
+ms.date: 09/16/2020
 ms.author: rogarana
-ms.openlocfilehash: a71762010984928b93c19c7256c2ba4f0fe0f64b
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: e7b7fae094ad15bc1732778b6a4a3259fb4dd3b5
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94504112"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96028397"
 ---
 | Resource | Standaardbestandsshares\* | Premiumbestandsshares |
 |----------|---------------|------------------------------------------|
@@ -27,6 +27,7 @@ ms.locfileid: "94504112"
 | Maximum lengte van de naam van het object (mappen en bestanden) | 2048 tekens | 2048 tekens |
 | Maximum pathname-onderdeel (in het pad \A\B\C\D is elke letter een onderdeel) | 255 tekens | 255 tekens |
 | Limiet voor vaste koppelingen (alleen NFS) | N.v.t. | 178 |
+| Maximumaantal SMB Multichannel-kanalen | N.v.t. | 4 |
 
 \* De limieten voor standaard bestandsshares zijn van toepassing op alle drie beschikbare lagen voor standaard bestandsshares: geoptimaliseerd voor transacties, dynamisch en statisch.
 

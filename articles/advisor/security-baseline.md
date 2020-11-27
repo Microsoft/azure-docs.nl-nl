@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 24935f1b10ec11bb546cb08e06430d1e0b5c31fa
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 7a3351654bb912eb7a4b532e636ca02fdf08a14d
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183325"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96301547"
 ---
 # <a name="azure-security-baseline-for-azure-advisor"></a>Azure-beveiligings basislijn voor Azure Advisor
 
@@ -143,7 +143,7 @@ Houd er rekening mee dat sommige Azure-Services lokale gebruikers en rollen onde
 
 - [Een toegangs beoordeling van Azure-resource rollen maken in Privileged Identity Management (PIM)](../active-directory/privileged-identity-management/pim-resource-roles-start-access-review.md) 
 
-- [Identiteits- en toegangsbeoordelingen van Azure AD](/azure/active-directory/governance/access-reviews-overvie)
+- [Identiteits- en toegangsbeoordelingen van Azure AD](/azure/active-directory/governance/access-reviews-overview)
 
 **Monitoring door Azure Security Center**: Niet van toepassing
 
@@ -219,7 +219,7 @@ Gebruik voorwaardelijke toegang van Azure om de interactie van een gebruiker met
 
 ## <a name="logging-and-threat-detection"></a>Logboekregistratie en bedreigingsdetectie
 
-*Ga voor meer informatie naar [Azure Security-benchmark: Logboekregistratie en bedreigingsdetectie](/azure/security/benchmarks/security-controls-v2-logging-threat-protection).*
+*Ga voor meer informatie naar [Azure Security-benchmark: Logboekregistratie en bedreigingsdetectie](/azure/security/benchmarks/security-controls-v2-logging-threat-detection).*
 
 ### <a name="lt-4-enable-logging-for-azure-resources"></a>LT-4: logboek registratie inschakelen voor Azure-resources
 
@@ -370,7 +370,7 @@ Daarnaast kunt u resources markeren met behulp van tags en een naamgevingssystee
 
 ## <a name="posture-and-vulnerability-management"></a>Beheer van beveiligingspostuur en beveiligingsproblemen
 
-*Ga voor meer informatie naar [Azure Security-benchmark: Beheer van beveiligingspostuur en beveiligingsproblemen](/azure/security/benchmarks/security-controls-v2-vulnerability-management).*
+*Ga voor meer informatie naar [Azure Security-benchmark: Beheer van beveiligingspostuur en beveiligingsproblemen](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management).*
 
 ### <a name="pv-8-conduct-regular-attack-simulation"></a>PV-8: Regelmatig aanvalssimulaties uitvoeren
 
@@ -420,9 +420,9 @@ Raadpleeg het volgende Engelstalige naslagmateriaal voor meer informatie:
 
 - [Cloud Adoption Framework - Azure data security and encryption best practices](../security/fundamentals/data-encryption-best-practices.md?amp;bc=%2fazure%2fcloud-adoption-framework%2f_bread%2ftoc.json&toc=%2fazure%2fcloud-adoption-framework%2ftoc.json)
 
-- [Azure Security Benchmark - Asset management](/azure/security/benchmarks/security-benchmark-v2-asset-management)
+- [Azure Security Benchmark - Asset management](/azure/security/benchmarks/security-controls-v2-asset-management)
 
-- [Azure Security Benchmark - Data Protection](/azure/security/benchmarks/security-benchmark-v2-data-protection)
+- [Azure Security Benchmark - Data Protection](/azure/security/benchmarks/security-controls-v2-data-protection)
 
 **Monitoring door Azure Security Center**: Niet van toepassing
 
@@ -450,7 +450,7 @@ Zorg ervoor dat de segmentatie strategie consistent wordt geïmplementeerd in al
 
 **Richtlijnen**: U moet de risico's voor afzonderlijke assets en de omgeving waarin ze worden gehost, voortdurend meten en beperken. Geef prioriteit aan waardevolle assets en gebieden die zeer kwetsbaar zijn voor aanvallen, zoals gepubliceerde toepassingen, punten in het netwerk voor binnenkomend en uitgaand verkeer, eindpunten voor gebruikers en beheerders, enzovoort.
 
-- [Azure Security Benchmark - Posture and vulnerability management](/azure/security/benchmarks/security-benchmark-v2-posture-vulnerability-management)
+- [Azure Security Benchmark - Posture and vulnerability management](/azure/security/benchmarks/security-controls-v2-posture-vulnerability-management)
 
 **Monitoring door Azure Security Center**: Niet van toepassing
 
@@ -491,7 +491,7 @@ Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten 
 Raadpleeg het volgende Engelstalige naslagmateriaal voor meer informatie:
 - [Azure Security Best Practice 11 - Architecture. Single unified security strategy](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
-- [Azure Security Benchmark - Network Security](/azure/security/benchmarks/security-benchmark-v2-network-security)
+- [Azure Security Benchmark - Network Security](/azure/security/benchmarks/security-controls-v2-network-security)
 
 - [Azure network security overview](../security/fundamentals/network-overview.md)
 
@@ -519,9 +519,9 @@ Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten 
 
 Raadpleeg de koppelingen waarnaar wordt verwezen voor meer informatie.
 
-- [Azure Security Benchmark - Identity management](/azure/security/benchmarks/security-benchmark-v2-identity-management)
+- [Azure Security Benchmark - Identity management](/azure/security/benchmarks/security-controls-v2-identity-management)
 
-- [Azure Security Benchmark - Privileged access](/azure/security/benchmarks/security-benchmark-v2-privileged-access)
+- [Azure Security Benchmark - Privileged access](/azure/security/benchmarks/security-controls-v2-privileged-access)
 
 - [Azure Security Best Practice 11 - Architecture. Single unified security strategy](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
@@ -553,9 +553,9 @@ Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten 
 
 Raadpleeg het volgende Engelstalige naslagmateriaal voor meer informatie:
 
-- [Azure Security Benchmark - Logging and threat detection](/azure/security/benchmarks/security-benchmark-v2-logging-threat-detection)
+- [Azure Security Benchmark - Logging and threat detection](/azure/security/benchmarks/security-controls-v2-logging-threat-detection)
 
-- [Azure Security Benchmark - Incident response](/azure/security/benchmarks/security-benchmark-v2-incident-response)
+- [Azure Security Benchmark - Incident response](/azure/security/benchmarks/security-controls-v2-incident-response)
 
 - [Azure Security Best Practice 4 - Process. Update Incident Response Processes for Cloud](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
 

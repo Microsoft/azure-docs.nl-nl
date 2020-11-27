@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: trkeya
 ms.author: trkeya
 ms.date: 11/16/2020
-ms.openlocfilehash: 38f65253791f28d9ae9806bea1264e594b769b19
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: aaf0374bcafdb91f316b7133de1c2d019b12b285
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94741906"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302870"
 ---
 # <a name="introduction-to-listing-options"></a>Inleiding tot aanbiedings opties
 
@@ -145,7 +145,7 @@ In de volgende tabel ziet u de opties die beschikbaar zijn voor verschillende aa
 
 &#42; SaaS transactable aanbiedingen in AppSource zijn momenteel alleen een credit card.
 
-&#42;&#42; Microsoft 365-invoeg toepassingen zijn gratis te installeren en kunnen worden te gelde met behulp van een SaaS-aanbieding. Zie [geld verdienen Your Office 365-invoeg toepassing via micro soft Commercial Marketplace](/office/dev/store/monetize-addins-through-microsoft-commercial-marketplace.md)(Engelstalig) voor meer informatie.
+&#42;&#42; Microsoft 365-invoeg toepassingen zijn gratis te installeren en kunnen worden te gelde met behulp van een SaaS-aanbieding. Zie [geld verdienen Your Office 365-invoeg toepassing via micro soft Commercial Marketplace](/office/dev/store/monetize-addins-through-microsoft-commercial-marketplace)(Engelstalig) voor meer informatie.
 
 ## <a name="marketplace-rewards"></a>Marketplace-beloningen
 

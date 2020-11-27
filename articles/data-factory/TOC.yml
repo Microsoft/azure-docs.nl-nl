@@ -752,6 +752,8 @@
           href: connector-troubleshoot-guide.md
         - name: Gegevensstromen
           href: data-flow-troubleshoot-guide.md
+        - name: Continue integratie en implementatie
+          href: ci-cd-github-troubleshoot-guide.md
         - name: Beveiligings- en toegangsbeheer
           href: security-and-access-control-troubleshoot-guide.md
         - name: Zelf-hostende Integration Runtimes

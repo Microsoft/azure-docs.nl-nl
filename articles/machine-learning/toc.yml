@@ -454,7 +454,9 @@
               href: ../iot-edge/tutorial-deploy-machine-learning.md?context=%2fazure%2fmachine-learning%2fservice%2fcontext%2fml-context
             - name: FPGA-interferentie
               href: how-to-deploy-fpga-web-service.md
-        - name: Problemen oplossen en fouten opsporen
+        - name: Problemen oplossen en fouten opsporen (lokaal)
+          href: how-to-troubleshoot-deployment-local.md
+        - name: Problemen oplossen en fouten opsporen (op afstand)
           href: how-to-troubleshoot-deployment.md
         - name: Webservice gebruiken
           displayName: create client consume request response synchronous

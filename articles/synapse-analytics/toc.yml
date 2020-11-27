@@ -98,6 +98,8 @@
           items:
             - name: Beveiligingsbasislijn
               href: security-baseline.md
+            - name: Versleuteling
+              href: ./security/workspaces-encryption.md
             - name: Netwerkbeveiliging
               items:
                 - name: 'Synapse-werkruimte: IP-firewallregels'
@@ -976,6 +978,8 @@
               href: ../data-factory/data-factory-troubleshoot-guide.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Problemen met connector oplossen
               href: ../data-factory/connector-troubleshoot-guide.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+            - name: Continue integratie en implementatie
+              href: ../data-factory/ci-cd-github-troubleshoot-guide.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Beveiligings- en toegangsbeheer
               href: ../data-factory/security-and-access-control-troubleshoot-guide.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Problemen met zelf-hostende Integration Runtimes oplossen
@@ -1028,6 +1032,9 @@
       href: 'https://github.com/Azure-Samples/Synapse'
     - name: Systeemweergaven
       href: sql/reference-tsql-system-views.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+    - name: Ingebouwde modules voor Azure Policy
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
     - name: T-SQL
       items:
         - name: Volledige naslaginformatie

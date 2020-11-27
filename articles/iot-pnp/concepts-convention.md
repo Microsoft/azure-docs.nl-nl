@@ -7,12 +7,12 @@ ms.date: 07/10/2020
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: a58fa45f47ee8dce4ec96591551abad76c1218ee
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 86c6ea9dded423e7bd513faf73adfd293f2bd38f
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92045479"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302599"
 ---
 # <a name="iot-plug-and-play-conventions"></a>Conventies voor IoT Plug en Play
 
@@ -79,7 +79,7 @@ Voor beeld van gerapporteerde payload van eigenschap:
 
 Het apparaat of de module moet de `{"__t": "c"}` markering toevoegen om aan te geven dat het element naar een onderdeel verwijst.
 
-DTDL:
+DTDL die verwijst naar een onderdeel:
 
 ```json
 {
@@ -95,7 +95,11 @@ DTDL:
     }
   ]
 }
+```
 
+DTDL die het onderdeel definieert:
+
+```json
 {
   "@context": "dtmi:dtdl:context;2",
   "@id": "dtmi:com:example:Thermostat;1",
@@ -255,7 +259,7 @@ Wanneer een apparaat meerdere gerapporteerde eigenschappen in één nettolading 
 
 Het apparaat of de module moet bevestigen dat de eigenschappen zijn ontvangen door de gerapporteerde eigenschappen te verzenden:
 
-DTDL:
+DTDL die verwijst naar een onderdeel:
 
 ```json
 {
@@ -271,7 +275,11 @@ DTDL:
     }
   ]
 }
+```
 
+DTDL die het onderdeel definieert:
+
+```json
 {
   "@context": "dtmi:dtdl:context;2",
   "@id": "dtmi:com:example:Thermostat;1",

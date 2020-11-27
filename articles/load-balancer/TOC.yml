@@ -4,7 +4,7 @@
   items:
     - name: Wat is Azure Load Balancer?
       href: load-balancer-overview.md
-- name: Snelstartgidsen
+- name: Quickstarts
   items:
     - name: Een openbare load balancer maken - Portal
       href: quickstart-load-balancer-standard-public-portal.md
@@ -33,6 +33,8 @@
       href: tutorial-load-balancer-standard-public-zonal-portal.md
     - name: Doorsturen via poort configureren in Load Balancer
       href: tutorial-load-balancer-port-forwarding-portal.md
+    - name: Een load balancer voor meerdere regio's maken - Portal
+      href: tutorial-cross-region-portal.md
 - name: Voorbeelden
   items:
     - name: Azure CLI

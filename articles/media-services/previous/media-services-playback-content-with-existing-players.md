@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/17/2020
 ms.author: inhenkel
-ms.openlocfilehash: 6085f34c46ab39012500cd42cd8392e65776f773
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: f15e2553ec3f3beed4dae809cc6c37f01837a40c
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94739805"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302907"
 ---
 # <a name="playing-your-content-with-existing-players"></a>Uw inhoud afspelen op bestaande spelers
 
@@ -54,11 +54,11 @@ Gebruik [Azure Media Player](https://aka.ms/azuremediaplayer) om uw inhoud (held
 
 ### <a name="dash-players"></a>STREEPJE-spelers
 
-[streepje-speler](https://dashplayer.azurewebsites.net)
+[streepje-speler](http://players.akamai.com/players/dashjs)
 
 [https://dashif.org](https://dashif.org)
 
-### <a name="other"></a>Overige
+### <a name="other"></a>Anders
 
 Als u HLS-Url's wilt testen, kunt u ook het volgende gebruiken:
 

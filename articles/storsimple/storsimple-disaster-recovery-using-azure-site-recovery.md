@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/13/2017
 ms.author: alkohli
-ms.openlocfilehash: 6d98f1a1dfb575f4af8b666d173f9354b5eeac6b
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: e2d89718d953f05b3e5500db412ac8ac03bfa00b
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966238"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96301951"
 ---
 # <a name="automated-disaster-recovery-solution-using-azure-site-recovery-for-file-shares-hosted-on-storsimple"></a>Geautomatiseerde oplossing voor herstel na nood gevallen met Azure Site Recovery voor bestands shares die worden gehost op StorSimple
 
@@ -44,7 +44,7 @@ Het implementeren van een oplossing voor nood herstel met één klik die gebruik
    - StorSimple-opslag apparaat is on-premises geregistreerd bij Azure StorSimple Manager
    - StorSimple Cloud Appliance gemaakt in azure StorSimple Manager. Het apparaat kan worden bewaard in een afsluit status.
    - Bestands shares die worden gehost op de volumes die zijn geconfigureerd op het StorSimple-opslag apparaat
-   - [Azure site Recovery Services-kluis](/azure/storsimple/hyper-v-vmm-disaster-recovery) die is gemaakt in een Microsoft Azure-abonnement
+   - [Azure site Recovery Services-kluis](/azure/site-recovery/hyper-v-vmm-azure-tutorial) die is gemaakt in een Microsoft Azure-abonnement
 
 Als Azure uw herstel site is, voert u het [hulp programma Azure virtual machine Readiness Assessment](https://azure.microsoft.com/downloads/vm-readiness-assessment/) uit op virtuele machines om ervoor te zorgen dat ze compatibel zijn met Azure-vm's en Azure site Recovery Services.
 
@@ -112,7 +112,7 @@ Voor deze stap is het vereist dat u de on-premises Bestands server omgeving voor
    1. Gebruik de functie bestands-en opslag Services om bestands shares op deze volumes te maken.
 
 #### <a name="to-create-and-prepare-an-azure-site-recovery-vault"></a>Een Azure Site Recovery kluis maken en voorbereiden
-Raadpleeg de [documentatie van Azure site Recovery](/azure/storsimple/hyper-v-azure-tutorial) om aan de slag te gaan met Azure site Recovery voordat u de bestands Server-VM beveiligt.
+Raadpleeg de [documentatie van Azure site Recovery](/azure/site-recovery/) om aan de slag te gaan met Azure site Recovery voordat u de bestands Server-VM beveiligt.
 
 #### <a name="to-enable-protection"></a>Beveiliging inschakelen
 1. Ontkoppel de iSCSI-doel (en) van de on-premises Vm's die u wilt beveiligen via Azure Site Recovery:
@@ -124,7 +124,7 @@ Raadpleeg de [documentatie van Azure site Recovery](/azure/storsimple/hyper-v-az
    > [!NOTE]
    > Dit zorgt ervoor dat de bestands shares tijdelijk niet beschikbaar zijn.
    
-1. [Schakel de beveiliging van de virtuele machine](/azure/storsimple/hyper-v-azure-tutorial) van de bestands Server-VM in via de Azure site Recovery Portal.
+1. [Schakel de beveiliging van de virtuele machine](/azure/site-recovery/hyper-v-azure-tutorial) van de bestands Server-VM in via de Azure site Recovery Portal.
 1. Wanneer de initiële synchronisatie begint, kunt u het doel opnieuw verbinding maken. Ga naar de iSCSI-initiator, selecteer het StorSimple-apparaat en klik op **verbinden**.
 1. Wanneer de synchronisatie is voltooid en de status van de virtuele machine is **beveiligd**, selecteert u de virtuele machine, selecteert u het tabblad **configureren** en werkt u het netwerk van de virtuele machine dienovereenkomstig bij (dit is het netwerk waarvan de failover-VM (s) een deel van heeft). Als het netwerk niet wordt weer gegeven, betekent dit dat de synchronisatie nog steeds gaat plaatsvinden.
 

@@ -9,16 +9,16 @@ author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 02/01/2019
-ms.openlocfilehash: 00501a1e17f8e085b817cfe3dac819ba890248f5
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: c69ed7b9e2aaa7113637868e1c1329ed2962b931
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93309839"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302781"
 ---
 # <a name="import-your-training-data-into-azure-machine-learning-studio-classic-from-various-data-sources"></a>Importeer uw trainings gegevens in Azure Machine Learning Studio (klassiek) van verschillende gegevens bronnen
 
-**VAN TOEPASSING OP:**  ![Van toepassing op.](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![Niet van toepassing op. ](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
+**VAN TOEPASSING OP:**  ![Van toepassing op.](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![Niet van toepassing op.](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 Als u uw eigen gegevens in Machine Learning Studio (klassiek) wilt gebruiken voor het ontwikkelen en trainen van een predictive analytics oplossing, kunt u gegevens gebruiken van: 
@@ -54,7 +54,7 @@ U kunt een aantal gegevens typen importeren in uw experiment, afhankelijk van he
 * SQL database tabel
 * OData-waarden
 * SVMLight-gegevens (. SVMLight) (Zie de [SVMLight-definitie](http://svmlight.joachims.org/) voor indelings informatie)
-* Kenmerk relatie bestands indeling (ARFF) gegevens (. ARFF) (Zie de [ARFF-definitie](https://weka.wikispaces.com/ARFF) voor indelings informatie)
+* Kenmerk relatie bestands indeling (ARFF) gegevens (. ARFF) (Zie de [ARFF-definitie](https://www.cs.waikato.ac.nz/ml/weka/arff.html) voor indelings informatie)
 * Zip-bestand (. zip)
 * R-object of werkruimte bestand (. RData
 
@@ -73,12 +73,12 @@ De volgende gegevens typen worden herkend door Studio (klassiek):
 * DateTime
 * TimeSpan
 
-Studio maakt gebruik van een intern gegevens type met de naam * **Data Table** _ voor het door geven van gegevens tussen modules. U kunt uw gegevens in de indeling van de gegevens tabel expliciet converteren met behulp van de module [converteren naar dataset][convert-to-dataset] .
+Studio maakt gebruik van een intern gegevens type met de naam ***Data Table** _ voor het door geven van gegevens tussen modules. U kunt uw gegevens in de indeling van de gegevens tabel expliciet converteren met behulp van de module [converteren naar dataset][convert-to-dataset] .
 
 Alle modules die andere indelingen dan gegevens tabel accepteren, converteren de gegevens naar de gegevens tabel op de achtergrond voordat deze aan de volgende module worden door gegeven.
 
 Indien nodig kunt u de indeling van de gegevens tabel weer omzetten in de CSV-, TSV-, ARFF-of SVMLight-indeling met behulp van andere conversie modules.
-Zoek in de sectie _ *gegevens indeling conversies* * van het module palet voor modules die deze functies uitvoeren.
+Zoek in de sectie _ *gegevens indeling conversies** van het module palet voor modules die deze functies uitvoeren.
 
 ## <a name="data-capacities"></a>Gegevens capaciteit
 

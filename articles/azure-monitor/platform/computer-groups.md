@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 02/05/2019
-ms.openlocfilehash: 217be627f81406f671118d5290cd5f67f52c01d2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 92603165ac399415ec4fb6daeea1641065671a83
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86112109"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302929"
 ---
 # <a name="computer-groups-in-azure-monitor-log-queries"></a>Computer groepen in Azure Monitor-logboek query's
 Met computer groepen in Azure Monitor kunt u [logboek query's](../log-query/log-query-overview.md) op een bepaalde set computers bereiken.  Elke groep wordt gevuld met computers met behulp van een query die u definieert of door groepen te importeren uit verschillende bronnen.  Wanneer de groep is opgenomen in een logboek query, zijn de resultaten beperkt tot records die overeenkomen met de computers in de groep.
@@ -61,7 +61,7 @@ Wanneer u Azure Monitor configureert om Active Directory groepslid maatschappen 
 > [!NOTE]
 > Geïmporteerde Active Directory groepen bevatten alleen Windows-machines.
 
-U configureert Azure Monitor om Active Directory beveiligings groepen te importeren uit **Geavanceerde instellingen** in uw log Analytics-werk ruimte in de Azure Portal.  Selecteer **computer groepen**, **Active Directory**en importeer vervolgens **Active Directory groepslid maatschappen van computers**.  Er is geen verdere configuratie nodig.
+U configureert Azure Monitor om Active Directory beveiligings groepen te importeren uit **Geavanceerde instellingen** in uw log Analytics-werk ruimte in de Azure Portal.  Selecteer **computer groepen**, **Active Directory** en importeer vervolgens **Active Directory groepslid maatschappen van computers**.  Er is geen verdere configuratie nodig.
 
 ![Computer groepen van Active Directory](media/computer-groups/configure-activedirectory.png)
 
@@ -70,7 +70,7 @@ Wanneer groepen zijn geïmporteerd, wordt in het menu het aantal computers weer 
 ### <a name="windows-server-update-service"></a>Windows Server updateservice
 Wanneer u Azure Monitor configureert om WSUS-groepslid maatschappen te importeren, analyseert het het lidmaatschap van de doel groep van alle computers met de Log Analytics agent.  Als u doel items aan de client zijde gebruikt, wordt voor elke computer die is verbonden met Azure Monitor en die deel uitmaakt van een WSUS-doel groep, het groepslid maatschap geïmporteerd in Azure Monitor. Als u doel items aan de server zijde gebruikt, moet de Log Analytics-agent worden geïnstalleerd op de WSUS-server om de gegevens van het groepslid maatschap te importeren in Azure Monitor.  Dit lidmaatschap wordt elke 4 uur voortdurend bijgewerkt. 
 
-U configureert Azure Monitor voor het importeren van WSUS-groepen uit **Geavanceerde instellingen** in uw log Analytics-werk ruimte in de Azure Portal.  Selecteer **computer groepen**, **WSUS**en vervolgens **WSUS-groepslid maatschappen importeren**.  Er is geen verdere configuratie nodig.
+U configureert Azure Monitor voor het importeren van WSUS-groepen uit **Geavanceerde instellingen** in uw log Analytics-werk ruimte in de Azure Portal.  Selecteer **computer groepen**, **WSUS** en vervolgens **WSUS-groepslid maatschappen importeren**.  Er is geen verdere configuratie nodig.
 
 ![Computer groepen van WSUS](media/computer-groups/configure-wsus.png)
 
@@ -97,13 +97,13 @@ Klik op de **x** in de kolom **verwijderen** om de computer groep te verwijderen
 U gebruikt een computer groep die is gemaakt op basis van een logboek query in een query door de alias te behandelen als een functie, meestal met de volgende syntaxis:
 
 ```kusto
-Table | where Computer in (ComputerGroup)`
+Table | where Computer in (ComputerGroup)
 ```
 
 U kunt bijvoorbeeld het volgende gebruiken om update Summary-records te retour neren voor alleen computers in een computer groep met de naam mycomputergroup.
 
 ```kusto
-UpdateSummary | where Computer in (mycomputergroup)`
+UpdateSummary | where Computer in (mycomputergroup)
 ```
 
 Geïmporteerde computer groepen en de bijbehorende computers worden opgeslagen in de tabel **ComputerGroup** .  Met de volgende query wordt bijvoorbeeld een lijst met computers in de groep domein computers uit Active Directory geretourneerd. 

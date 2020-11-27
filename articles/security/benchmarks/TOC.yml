@@ -105,6 +105,8 @@
       href: ../../devtest-labs/security-baseline.md
     - name: Azure Firewall-beveiligingsbasislijn
       href: ../../firewall/security-baseline.md
+    - name: Azure Firewall Manager-beveiligingsbasislijn
+      href: ../../firewall-manager/security-baseline.md
     - name: Azure Front Door-beveiligingsbasislijn
       href: ../../frontdoor/security-baseline.md
     - name: Azure Functions-beveiligingsbasislijn
@@ -185,6 +187,8 @@
       href: ../../logic-apps/security-baseline.md
     - name: Network Watcher-beveiligingsbasislijn
       href: ../../network-watcher/security-baseline.md
+    - name: Power BI-basislijn
+      href: /power-bi/fundamentals/security-baseline
     - name: Security Center-basislijn
       href: ../../security-center/security-baseline.md
     - name: Service Bus-basislijn
@@ -207,5 +211,7 @@
       href: ../../virtual-network/security-baseline.md
     - name: Virtual Network NAT-beveiligingsbasislijn
       href: ../../virtual-network/nat-security-baseline.md
+    - name: Virtual WAN-beveiligingsbasislijn
+      href: ../../virtual-wan/security-baseline.md
     - name: VPN Gateway-beveiligingsbasislijn
       href: ../../vpn-gateway/security-baseline.md

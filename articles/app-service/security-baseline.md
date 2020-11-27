@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 5b9c41209902e384988064207bb3e1ded1c47477
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 691bb538ea0f46e26c318a68e9f66a9a986eb5d4
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182951"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96301846"
 ---
 # <a name="azure-security-baseline-for-app-service"></a>Azure-beveiligings basislijn voor App Service
 
@@ -168,7 +168,7 @@ Raadpleeg de koppelingen waarnaar wordt verwezen voor aanvullende informatie.
 
 - [End-to-end TLS configureren met behulp van Application Gateway met de portal](../application-gateway/end-to-end-ssl-portal.md)
 
-- [De ASE beveiligen zoals beschreven in een App Service vergren delen](https://review.docs.microsoft.com/azure/app-service/environment/firewall-integrationEnvironment:)
+- [De ASE beveiligen zoals beschreven in een App Service vergren delen](/azure/app-service/environment/firewall-integration)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -205,7 +205,7 @@ Raadpleeg de koppelingen waarnaar wordt verwezen voor aanvullende informatie.
 
 - [End-to-end TLS configureren met behulp van Application Gateway met de portal](../application-gateway/end-to-end-ssl-portal.md)
 
-- [De ASE beveiligen zoals beschreven in een App Service vergren delen](https://review.docs.microsoft.com/azure/app-service/environment/firewall-integrationEnvironment:)
+- [De ASE beveiligen zoals beschreven in een App Service vergren delen](/azure/app-service/environment/firewall-integration)
 
 **Monitoring door Azure Security Center**: Niet van toepassing
 
@@ -221,7 +221,7 @@ Pas een van de ingebouwde Azure Policy definities toe die betrekking hebben op l
 
 - [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
-- [Toegangs beperkingen Azure App Service](/azure/app-service/app-service-ip-restriction)
+- [Toegangs beperkingen Azure App Service](/azure/app-service/app-service-ip-restrictions)
 
 **Monitoring door Azure Security Center**: Niet van toepassing
 
@@ -538,7 +538,7 @@ Gebruik Azure AD Identity Protection om automatische antwoorden te configureren 
 
 **Verantwoordelijkheid**: Klant
 
-## <a name="data-protection"></a>Gegevensbescherming
+## <a name="data-protection"></a>Gegevensbeveiliging
 
 *Zie [Azure Security Bench Mark: Data Protection](../security/benchmarks/security-control-data-protection.md)voor meer informatie.*
 

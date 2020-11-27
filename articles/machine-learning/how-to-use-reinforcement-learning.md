@@ -10,12 +10,12 @@ author: peterclu
 ms.date: 05/05/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: b9966d4d9ab0a37f5484ec9eb9b7e2472a6b41dc
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: a7fdb370847e72657829d53df019203b0a5b211b
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95012908"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302571"
 ---
 # <a name="reinforcement-learning-preview-with-azure-machine-learning"></a>Educatief leren (preview) met Azure Machine Learning
 
@@ -117,7 +117,7 @@ exp = Experiment(workspace=ws, name=experiment_name)
 
 ### <a name="specify-a-virtual-network"></a>Een virtueel netwerk opgeven
 
-Voor RL-taken die gebruikmaken van meerdere Compute-doelen moet u een virtueel netwerk met open poorten opgeven waarmee werk knooppunten en hoofd knooppunten met elkaar kunnen communiceren. Het virtuele netwerk kan zich in elke resource groep bevinden, maar moet zich in dezelfde regio bevinden als uw werk ruimte. Zie voor meer informatie over het instellen van uw virtuele netwerk het [notitie blok](https://aka.ms/azure-rl-env-setup) voor het instellen van de werk ruimte die u kunt vinden in de sectie vereisten. Hier geeft u de naam op van het virtuele netwerk in de resource groep.
+Voor RL-taken die gebruikmaken van meerdere Compute-doelen moet u een virtueel netwerk met open poorten opgeven waarmee werk knooppunten en hoofd knooppunten met elkaar kunnen communiceren. Het virtuele netwerk kan zich in elke resource groep bevinden, maar moet zich in dezelfde regio bevinden als uw werk ruimte. Zie voor meer informatie over het instellen van uw virtuele netwerk het notitie blok voor het instellen van de werk ruimte die u kunt vinden in de sectie vereisten. Hier geeft u de naam op van het virtuele netwerk in de resource groep.
 
 ```python
 vnet = 'your_vnet'

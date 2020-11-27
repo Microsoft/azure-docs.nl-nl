@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: Veelvoorkomende problemen met Kubernetes-clusters met Arc-functionaliteit oplossen.
 keywords: Kubernetes, Arc, Azure, containers
-ms.openlocfilehash: 4a8f4c652f1ab73e0b9979f77d7de5014c8d31a8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2e05701b92d2d96074a07e0e61ce65145a1d9dfd
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91540605"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302404"
 ---
 # <a name="azure-arc-enabled-kubernetes-troubleshooting-preview"></a>Probleem oplossing voor Azure Arc ingeschakeld Kubernetes (preview)
 
@@ -69,7 +69,7 @@ pod/metrics-agent-58b765c8db-n5l7k              2/2     Running  0       16h
 pod/resource-sync-agent-5cf85976c7-522p5        3/3     Running  0       16h
 ```
 
-Alle peulen moeten `STATUS` worden weer gegeven als `Running` en `READY` moeten ofwel `3/3` of zijn `2/2` . Logboeken ophalen en de peulen beschrijven die worden geretourneerd `Error` of `CrashLoopBackOff` . Als een van deze peulen in `Pending` staat is, kan dit worden veroorzaakt door onvoldoende bronnen op cluster knooppunten. Als u [het cluster omhoog schaalt](https://kubernetes.io/docs/tasks/administer-cluster/cluster-management/#resizing-a-cluster) , krijgen deze peulen de `Running` status.
+Alle peulen moeten `STATUS` worden weer gegeven als `Running` en `READY` moeten ofwel `3/3` of zijn `2/2` . Logboeken ophalen en de peulen beschrijven die worden geretourneerd `Error` of `CrashLoopBackOff` . Als een van deze peulen in `Pending` staat is, kan dit worden veroorzaakt door onvoldoende bronnen op cluster knooppunten. Als u [het cluster omhoog schaalt](https://kubernetes.io/docs/tasks/administer-cluster/) , krijgen deze peulen de `Running` status.
 
 ## <a name="connecting-kubernetes-clusters-to-azure-arc"></a>Kubernetes-clusters verbinden met Azure Arc
 

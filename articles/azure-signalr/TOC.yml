@@ -66,6 +66,10 @@
       href: signalr-concept-authenticate-oauth.md
     - name: Gebeurtenisverwerking
       href: signalr-concept-event-grid-integration.md
+    - name: Beveiliging
+      items:
+        - name: Beveiligingsbasislijn
+          href: security-baseline.md
 - name: Instructiegidsen
   items:
     - name: Schalen

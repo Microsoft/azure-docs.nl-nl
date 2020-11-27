@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: PaperCut Cloud-afdruk beheer (Pocket/Hive) configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
-description: Meer informatie over het automatisch inrichten en ongedaan maken van de inrichting van gebruikers accounts vanuit Azure AD naar PaperCut Cloud Print Management (Pocket/component).
+title: 'Zelf studie: PaperCut Cloud-afdruk beheer configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
+description: Meer informatie over het automatisch inrichten en ongedaan maken van de inrichting van gebruikers accounts vanuit Azure AD naar PaperCut Cloud-afdruk beheer.
 services: active-directory
 documentationcenter: ''
 author: Zhchia
@@ -15,31 +15,31 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/18/2020
 ms.author: Zhchia
-ms.openlocfilehash: d0ecc06cd256dc2fae598e8bc44336d69a9c99df
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 860b880faae9c5fe37a2c7eab2ef3a068ed4da3e
+ms.sourcegitcommit: 236014c3274b31f03e5fcee5de510f9cacdc27a0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96031187"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96299087"
 ---
-# <a name="tutorial-configure-papercut-cloud-print-management-pockethive-for-automatic-user-provisioning"></a>Zelf studie: PaperCut Cloud-afdruk beheer (Pocket/Hive) configureren voor automatische gebruikers inrichting
+# <a name="tutorial-configure-papercut-cloud-print-management-for-automatic-user-provisioning"></a>Zelf studie: PaperCut Cloud-afdruk beheer configureren voor automatische gebruikers inrichting
 
-In deze zelf studie worden de stappen beschreven die u moet uitvoeren in zowel PaperCut Cloud-afdruk beheer (Pocket/Hive) als Azure Active Directory (Azure AD) voor het configureren van automatische gebruikers inrichting. Wanneer deze is geconfigureerd, worden gebruikers en groepen door Azure AD automatisch ingericht en ongedaan gemaakt om [papercut](https://www.papercut.com/products/papercut-pocket/) te maken met behulp van de Azure AD-inrichtings service. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../manage-apps/user-provisioning.md).
+In deze zelf studie worden de stappen beschreven die u moet uitvoeren in zowel PaperCut Cloud-afdruk beheer als Azure Active Directory (Azure AD) voor het configureren van automatische gebruikers inrichting. Wanneer deze is geconfigureerd, worden gebruikers en groepen door Azure AD automatisch ingericht en ongedaan gemaakt om [papercut](https://www.papercut.com/products/papercut-pocket/) te maken met behulp van de Azure AD-inrichtings service. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../manage-apps/user-provisioning.md).
 
 ## <a name="capabilities-supported"></a>Ondersteunde mogelijkheden
 
 > [!div class="checklist"]
-> * Gebruikers maken in PaperCut Cloud-afdruk beheer (Pocket/Hive)
-> * Gebruikers verwijderen in PaperCut Cloud-afdruk beheer (Pocket/Hive) wanneer ze geen toegang meer nodig hebben
-> * Gebruikers kenmerken gesynchroniseerd laten tussen Azure AD en PaperCut Cloud-afdruk beheer (Pocket/Hive)
+> * Gebruikers maken in PaperCut Cloud-afdruk beheer
+> * Gebruikers verwijderen in PaperCut Cloud-afdruk beheer wanneer ze geen toegang meer nodig hebben
+> * Gebruikers kenmerken gesynchroniseerd laten tussen Azure AD en PaperCut Cloud-afdruk beheer
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
-* [Een Azure AD-tenant](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant). 
-* Een gebruikersaccount in Azure AD met [machtigingen](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) voor het configureren van de inrichting (bijvoorbeeld toepassingsbeheerder, cloud-toepassingsbeheerder, toepassingseigenaar of globale beheerder). 
-* Een gebruikers account in PaperCut Cloud-afdruk beheer (Pocket/Hive) met beheerders machtigingen
+* [Een Azure AD-tenant](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant) 
+* Een gebruikersaccount in Azure AD met [machtigingen](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) voor het configureren van inrichting (bijvoorbeeld Toepassingsbeheerder, Cloudtoepassingsbeheerder, Toepassingseigenaar of Globale beheerder). 
+* Een gebruikers account in PaperCut Cloud-afdruk beheer met beheerders machtigingen
 
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Stap 1. Implementatie van de inrichting plannen
@@ -58,23 +58,23 @@ In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan d
 
 
 
-4. Na de installatie wordt de pagina Details van invoeg toepassing weer gegeven met uw **Tenant-URL** en een **geheim token**. Deze waarden worden ingevoerd in het veld Tenant-URL \* en geheim token \* op het tabblad inrichten van de toepassing papercut Cloud Print Management (Pocket/component) in de Azure Portal.
+4. Na de installatie wordt de pagina Details van invoeg toepassing weer gegeven met uw **Tenant-URL** en een **geheim token**. Deze waarden worden ingevoerd in het veld Tenant-URL \* en geheim token \* op het tabblad inrichten van uw papercut Cloud-afdruk beheer toepassing in de Azure Portal.
 
 
 
-## <a name="step-3-add-papercut-cloud-print-management-pockethive-from-the-azure-ad-application-gallery"></a>Stap 3. PaperCut Cloud-afdruk beheer (Pocket/Hive) toevoegen vanuit de Azure AD-toepassings galerie
+## <a name="step-3-add-papercut-cloud-print-management-from-the-azure-ad-application-gallery"></a>Stap 3. PaperCut Cloud-afdruk beheer toevoegen vanuit de Azure AD-toepassings galerie
 
-Voeg PaperCut Cloud-afdruk beheer (Pocket/Hive) toe vanuit de Azure AD-toepassings galerie om het beheer van de inrichting te starten voor PaperCut-Cloud afdruk beheer (Pocket/Hive). Als u eerder PaperCut Cloud-afdruk beheer (Pocket/Hive) voor SSO hebt ingesteld, kunt u dezelfde toepassing gebruiken. U wordt echter aangeraden een afzonderlijke app te maken wanneer u de integratie voor het eerst test. Klik [hier](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app) voor meer informatie over het toevoegen van een toepassing uit de galerie.
+Voeg PaperCut Cloud-afdruk beheer toe vanuit de Azure AD-toepassings galerie om het beheer van de inrichting voor PaperCut-Cloud afdruk beheer te starten. Als u eerder PaperCut Cloud afdruk beheer voor SSO hebt ingesteld, kunt u dezelfde toepassing gebruiken. U wordt echter aangeraden een afzonderlijke app te maken wanneer u de integratie voor het eerst test. Klik [hier](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app) voor meer informatie over het toevoegen van een toepassing uit de galerie.
 
 ## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Stap 4. Definiëren wie u wilt opnemen in het bereik voor inrichting
 
 Met de Azure AD-inrichtingsservice kunt u bepalen wie worden ingericht op basis van toewijzing aan de toepassing en/of op basis van kenmerken van de gebruiker/groep. Als u ervoor kiest om te bepalen wie wordt ingericht voor uw app op basis van toewijzing, kunt u de volgende [stappen](../manage-apps/assign-user-or-group-access-portal.md) gebruiken om gebruikers en groepen aan de toepassing toe te wijzen. Als u ervoor kiest om uitsluitend te bepalen wie wordt ingericht op basis van kenmerken van de gebruiker of groep, kunt u een bereikfilter gebruiken zoals [hier](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts) wordt beschreven.
 
-* Wanneer u gebruikers en groepen toewijst aan PaperCut Cloud afdruk beheer (Pocket/Hive), moet u een andere rol dan **standaard toegang** selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps) om extra rollen toe te voegen.
+* Wanneer u gebruikers en groepen toewijst aan PaperCut-Cloud afdruk beheer, moet u een andere rol dan **standaard toegang** selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps) om extra rollen toe te voegen.
 
 * Begin klein. Test de toepassing met een kleine set gebruikers en groepen voordat u de toepassing naar iedereen uitrolt. Wanneer het bereik voor inrichting is ingesteld op toegewezen gebruikers en groepen, kunt u dit beheren door een of twee gebruikers of groepen aan de app toe te wijzen. Wanneer het bereik is ingesteld op alle gebruikers en groepen, kunt u een [bereikfilter op basis van kenmerken](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts) opgeven. 
 
-## <a name="step-5-configure-automatic-user-provisioning-to-papercut-cloud-print-management-pockethive"></a>Stap 5. Automatische gebruikers inrichting configureren voor PaperCut-Cloud afdruk beheer (Pocket/Hive)
+## <a name="step-5-configure-automatic-user-provisioning-to-papercut-cloud-print-management"></a>Stap 5. Automatische gebruikers inrichting configureren voor PaperCut-Cloud afdruk beheer
 
 In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in BlogIn te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
@@ -84,7 +84,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-2. Selecteer in de lijst toepassingen de optie **papercut Cloud-afdruk beheer (Pocket/Hive)**.
+2. Selecteer in de lijst toepassingen de optie **papercut Cloud-afdruk beheer**.
 
    ![De koppeling PaperCut Cloud Print Management in de lijst met toepassingen](common/all-applications.png)
 
@@ -96,7 +96,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
    ![De inrichtingsmodus ingesteld op Automatisch](common/provisioning-automatic.png)
 
-5. Voer in het gedeelte **beheerders referenties** de TENANT-URL voor papercut Cloud-afdruk beheer (Pocket/Hive) in en het geheime token. Klik op **verbinding testen** om te controleren of Azure AD verbinding kan maken met papercut Cloud-afdruk beheer. Als de verbinding mislukt, zorg er dan voor dat uw PaperCut Cloud-afdruk beheer account beheerders machtigingen heeft en probeer het opnieuw.
+5. Voer in het gedeelte **beheerders referenties** de papercut in voor de TENANT-URL voor afdruk beheer van uw Cloud en het geheime token. Klik op **verbinding testen** om te controleren of Azure AD verbinding kan maken met papercut Cloud-afdruk beheer. Als de verbinding mislukt, zorg er dan voor dat uw PaperCut Cloud-afdruk beheer account beheerders machtigingen heeft en probeer het opnieuw.
 
    ![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -118,11 +118,11 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 10. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 
-11. Als u de Azure AD-inrichtings service voor PaperCut Cloud-afdruk beheer (Pocket/Hive) wilt inschakelen, wijzigt **u de** **inrichtings status** in in het gedeelte **instellingen** .
+11. Als u de Azure AD-inrichtings service voor PaperCut Cloud-afdruk beheer wilt inschakelen, wijzigt **u de** **inrichtings status** in in het gedeelte **instellingen** .
 
     ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
 
-12. Definieer de gebruikers en/of groepen die u wilt inrichten voor PaperCut Cloud-afdruk beheer (Pocket/Hive) door de gewenste waarden in het **bereik** te kiezen in de sectie **instellingen** .
+12. Definieer de gebruikers en/of groepen die u wilt inrichten voor PaperCut Cloud-afdruk beheer door de gewenste waarden in het **bereik** te kiezen in de sectie **instellingen** .
 
     ![Inrichtingsbereik](common/provisioning-scope.png)
 

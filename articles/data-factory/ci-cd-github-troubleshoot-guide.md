@@ -1,0 +1,166 @@
+---
+title: Problemen met CI-CD-, Azure DevOps-en GitHub oplossen in ADF
+description: Gebruik verschillende methoden om problemen met CI-CD in ADF op te lossen.
+author: ssabat
+ms.author: susabat
+ms.reviewer: susabat
+ms.service: data-factory
+ms.workload: data-services
+ms.topic: troubleshooting
+ms.date: 11/26/2020
+ms.openlocfilehash: f07cc8e3d5e9d6f59671a3c8c2efd9f5fb9f27b7
+ms.sourcegitcommit: 236014c3274b31f03e5fcee5de510f9cacdc27a0
+ms.translationtype: MT
+ms.contentlocale: nl-NL
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96299053"
+---
+# <a name="troubleshoot-ci-cd-azure-devops-and-github-issues-in-adf"></a>Problemen met CI-CD-, Azure DevOps-en GitHub oplossen in ADF 
+
+[!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
+
+In dit artikel worden algemene probleemoplossings methoden voor CI-CD-, Azure DevOps-en GitHub-problemen in Azure Data Factory besproken.
+
+Als u vragen of problemen hebt met behulp van broncode beheer-of DevOps-technieken, zijn er enkele artikelen die u mogelijk nuttig vindt.:
+
+- Raadpleeg [broncode beheer in ADF](source-control.md) voor meer informatie over het gebruik van broncode beheer in ADF. 
+- Raadpleeg  [CI-cd in ADF](continuous-integration-deployment.md) voor meer informatie over hoe DevOps CI-cd wordt gebruikt in ADF.
+ 
+## <a name="common-errors-and-messages"></a>Veelvoorkomende fouten en berichten
+
+### <a name="connect-to-git-repository-failed-due-to-different-tenant"></a>Verbinding maken met git-opslag plaats is mislukt vanwege een andere Tenant
+
+#### <a name="issue"></a>Probleem
+    
+Soms stuit u op verificatie problemen, zoals HTTP-status 401. Met name wanneer u meerdere tenants met een gast account hebt, kunnen de dingen ingewik kelder raken.
+
+#### <a name="cause"></a>Oorzaak
+
+We hebben geconstateerd dat het token is verkregen van de oorspronkelijke Tenant, maar ADF bevindt zich in de gast Tenant en probeert het token te gebruiken om DevOps te bezoeken in de gast Tenant. Dit is niet het verwachte gedrag.
+
+#### <a name="recommendation"></a>Aanbeveling
+
+U moet in plaats daarvan het token gebruiken dat is uitgegeven door gast Tenant. U moet bijvoorbeeld dezelfde Azure Active Directory toewijzen als uw gast Tenant en uw DevOps, zodat het token gedrag correct kan worden ingesteld en de juiste Tenant wordt gebruikt.
+
+### <a name="template-parameters-in-the-parameters-file-are-not-valid"></a>De sjabloon parameters in het parameter bestand zijn ongeldig
+
+#### <a name="issue"></a>Probleem
+
+Als we een trigger in dev Branch verwijderen, die al beschikbaar is in test-of productie vertakking met **dezelfde** configuratie (zoals frequentie en interval), wordt de implementatie van de pijp lijn geslaagd en wordt de bijbehorende trigger verwijderd uit de respectieve omgevingen. Maar als u een **andere** configuratie (zoals frequentie en interval) voor de trigger in test-en productie omgevingen hebt, en als u dezelfde trigger in dev verwijdert, mislukt de implementatie met een fout.
+
+#### <a name="cause"></a>Oorzaak
+
+CI/CD-pijp lijn mislukt met de volgende fout:
+
+`
+2020-07-20T11:19:02.1276769Z ##[error]Deployment template validation failed: 'The template parameters 'Trigger_Salesforce_properties_typeProperties_recurrence_frequency, Trigger_Salesforce_properties_typeProperties_recurrence_interval, Trigger_Salesforce_properties_typeProperties_recurrence_startTime, Trigger_Salesforce_properties_typeProperties_recurrence_timeZone' in the parameters file are not valid; they are not present in the original template and can therefore not be provided at deployment time. The only supported parameters for this template are 'factoryName, PlanonDWH_connectionString, PlanonKeyVault_properties_typeProperties_baseUrl
+`
+
+#### <a name="recommendation"></a>Aanbeveling
+
+De fout treedt op omdat er vaak een trigger wordt verwijderd die para meters bevat. de para meters zijn daarom niet beschikbaar in de ARM-sjabloon (omdat de trigger niet meer bestaat). Omdat de para meter zich niet meer in de ARM-sjabloon bevindt, moeten de overschreven para meters in de DevOps-pijp lijn worden bijgewerkt. Anders worden de para meters in de ARM-sjabloon gewijzigd, dan moeten ze de overschreven para meters in de DevOps-pijp lijn (in de implementatie taak) bijwerken.
+
+### <a name="updating-property-type-is-not-supported"></a>Het bijwerken van het eigenschaps type wordt niet ondersteund
+
+#### <a name="issue"></a>Probleem
+
+Er is een fout opgetreden in de CI/CD-release-pijp lijn.
+
+`
+2020-07-06T09:50:50.8716614Z There were errors in your deployment. Error code: DeploymentFailed.
+2020-07-06T09:50:50.8760242Z ##[error]At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/DeployOperations for usage details.
+2020-07-06T09:50:50.8771655Z ##[error]Details:
+2020-07-06T09:50:50.8772837Z ##[error]DataFactoryPropertyUpdateNotSupported: Updating property type is not supported.
+2020-07-06T09:50:50.8774148Z ##[error]DataFactoryPropertyUpdateNotSupported: Updating property type is not supported.
+2020-07-06T09:50:50.8775530Z ##[error]Check out the troubleshooting guide to see if your issue is addressed: https://docs.microsoft.com/azure/devops/pipelines/tasks/deploy/azure-resource-group-deployment?view=azure-devops#troubleshooting
+2020-07-06T09:50:50.8776801Z ##[error]Task failed while creating or updating the template deployment.
+`
+
+#### <a name="cause"></a>Oorzaak
+
+Dit wordt veroorzaakt door een Integration Runtime met dezelfde naam in de doel-Factory, maar met een ander type. Integration Runtime moet van hetzelfde type zijn wanneer u implementeert.
+
+#### <a name="recommendation"></a>Aanbeveling
+
+- Raadpleeg deze aanbevolen procedures voor CI/CD hieronder:
+
+    https://docs.microsoft.com/azure/data-factory/continuous-integration-deployment#best-practices-for-cicd 
+- Integratie-Runtimes worden niet vaak gewijzigd en zijn vergelijkbaar in alle fasen van uw CI/CD, dus Data Factory verwacht dat u dezelfde naam en hetzelfde type Integration runtime hebt in alle stadia van CI/CD. Als de naam en het type & eigenschappen verschillen, moet u ervoor zorgen dat de bron-en doel-IR-configuratie overeenkomen en de release pijplijn implementeren.
+- Als u integratie-Runtimes in alle fasen wilt delen, kunt u overwegen een ternaire fabriek alleen te gebruiken om de gedeelde integratie-runtime te bevatten. U kunt deze gedeelde Factory in al uw omgevingen gebruiken als het type gekoppelde integratie runtime.
+
+### <a name="document-creation-or-update-failed-because-of-invalid-reference"></a>Het maken of bijwerken van het document is mislukt vanwege een ongeldige verwijzing
+
+#### <a name="issue"></a>Probleem
+
+Bij het publiceren van wijzigingen in een Data Factory wordt het volgende fout bericht weer gegeven:
+
+`
+"error": {
+        "code": "BadRequest",
+        "message": "The document creation or update failed because of invalid reference '<entity>'.",
+        "target": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/<rgname>/providers/Microsoft.DataFactory/factories/<datafactory>/pipelines/<pipeline>",
+        "details": null
+    }
+`
+
+#### <a name="symptom"></a>Symptoom
+
+U hebt de Git-configuratie losgekoppeld en opnieuw ingesteld met de vlag ' resources importeren ' geselecteerd, waarmee de Data Factory als synchroon wordt ingesteld. Dit betekent dat er geen wijzigingen worden gepubliceerd.
+
+**Oplossing**
+
+Ontkoppel Git-configuratie en stel deze opnieuw in en zorg ervoor dat u het selectie vakje ' bestaande resources importeren ' niet inschakelt.
+
+### <a name="data-factory-move-failing-from-one-resource-group-to-another"></a>Data Factory verplaatsen van een resource groep naar een andere mislukt
+
+#### <a name="issue"></a>Probleem
+
+Het is niet mogelijk om Data Factory van de ene resource groep naar de andere te verplaatsen, waarbij de volgende fout optreedt:
+
+`
+{
+    "code": "ResourceMoveProviderValidationFailed",
+    "message": "Resource move validation failed. Please see details. Diagnostic information: timestamp 'xxxxxxxxxxxxZ', subscription id 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', tracking id 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', request correlation id 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'.",
+    "details": [
+        {
+            "code": "BadRequest",
+            "target": "Microsoft.DataFactory/factories",
+            "message": "One of the resources contain integration runtimes that are either SSIS-IRs in starting/started/stopping state, or Self-Hosted IRs which are shared with other resources. Resource move is not supported for those resources."
+        }
+    ]
+}
+`
+
+#### <a name="resolution"></a>Oplossing
+
+U moet de SSIS-IR en gedeelde IRs verwijderen om de verplaatsings bewerking toe te staan. Als u de IRs niet wilt verwijderen, kunt u het beste het document kopiëren en klonen volgen om de kopie uit te voeren en de oude Data Factory te verwijderen.
+
+###  <a name="unable-to-export-and-import-arm-template"></a>Kan ARM-sjabloon niet exporteren en importeren
+
+#### <a name="issue"></a>Probleem
+
+Kan ARM-sjabloon niet exporteren en importeren. Er is geen fout opgetreden op de portal, maar in de browser tracering ziet u mogelijk de volgende fout:
+
+`Failed to load resource: the server responded with a status code of 401 (Unauthorized)`
+
+#### <a name="cause"></a>Oorzaak
+
+U hebt een klantrol als gebruiker gemaakt en deze heeft niet de benodigde machtigingen. Wanneer de fabriek in de gebruikers interface wordt geladen, wordt een reeks waarden voor belichtings beheer voor de Factory gecontroleerd. In dit geval heeft de Access-rol van de gebruiker geen machtiging voor toegang tot de *queryFeaturesValue* -API. De functie globale para meters is uitgeschakeld voor toegang tot deze API. Het pad naar de ARM-export code is deels afhankelijk van de functie voor algemene para meters.
+
+#### <a name="resolution"></a>Oplossing
+
+Om het probleem op te lossen, moet u de volgende machtiging toevoegen aan uw rol: *micro soft. DataFactory/factories/queryFeaturesValue/Action*. Deze machtiging moet standaard worden opgenomen in de rol ' Data Factory Inzender '.
+
+## <a name="next-steps"></a>Volgende stappen
+
+Voor meer informatie over het oplossen van problemen kunt u de volgende bronnen proberen:
+
+*  [Data Factory Blog](https://azure.microsoft.com/blog/tag/azure-data-factory/)
+*  [Data Factory functie aanvragen](https://feedback.azure.com/forums/270578-data-factory)
+*  [Azure-video's](https://azure.microsoft.com/resources/videos/index/?sort=newest&services=data-factory)
+*  [Microsoft Q&A-vragenpagina](/answers/topics/azure-data-factory.html)
+*  [Stack overflow-forum voor Data Factory](https://stackoverflow.com/questions/tagged/azure-data-factory)
+*  [Twitter-informatie over Data Factory](https://twitter.com/hashtag/DataFactory)
+
+
+ 

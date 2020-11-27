@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: tutorial
-ms.date: 08/05/2020
+ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 1648bd9a073bca696299e9ed703536db745e7edb
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: ad689c746a0f4d7232e7f61982fb8c4f735cbe34
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92912834"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95737799"
 ---
 # <a name="tutorial-video-and-transcript-moderation"></a>Zelfstudie: Video's en transcripties beoordelen
 
@@ -35,7 +35,7 @@ In deze zelfstudie ontdekt u hoe u:
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Registreer u voor de website [Content Moderator-beoordelingsprogramma](https://contentmoderator.cognitive.microsoft.com/) en maak aangepaste tags. Zie [Tags gebruiken](./review-tool-user-guide/configure.md#tags) als u hulp nodig hebt met deze stap.
+- Registreer u voor de website [Content Moderator-beoordelingsprogramma](https://contentmoderator.cognitive.microsoft.com/) en maak aangepaste tags voor de functies die u wilt identificeren. Zie [Tags gebruiken](./review-tool-user-guide/configure.md#tags) als u hulp nodig hebt met deze stap.
 
     ![Schermopname van Aangepaste tags voor beoordelen van video's](images/video-tutorial-custom-tags.png)
 - Om de voorbeeldtoepassing uit te voeren, hebt u een Azure-account, een Azure Media Services-resource, een Azure Content Moderator-resource en Azure Active Directory-referenties nodig. Voor instructies over het verkrijgen van deze resources raadpleegt u de handleiding [API voor videobeoordeling](video-moderation-api.md).
@@ -57,7 +57,7 @@ Bewerk het bestand `App.config` en voeg de naam van de Active Directory-tenant, 
 
 ## <a name="examine-the-main-code"></a>De hoofdcode controleren
 
-De klasse `Program` in `Program.cs` is het belangrijkste invoerpunt voor de toepassing voor videobeoordeling.
+De klasse **Programma** in _Program.cs_ is het belangrijkste invoerpunt voor de toepassing voor videobeoordeling.
 
 ### <a name="methods-of-program-class"></a>Methoden van de klasse Program
 
@@ -116,7 +116,7 @@ In de volgende gedeelten worden enkele van de afzonderlijke processen die worden
 Teneinde het netwerkverkeer zo veel mogelijk te beperken, converteert de toepassing videobestanden naar de indeling H.264 (MPEG-4 AVC) en worden de bestanden vervolgens geschaald naar een maximale breedte van 640 pixels. De codec H.264 wordt aanbevolen vanwege de hoge efficiëntie (compressie). De compressie wordt gedaan met behulp van het gratis opdrachtregelprogramma `ffmpeg`, dat u kunt vinden in de map `Lib` van Visual Studio. De invoerbestanden kunnen elke indeling hebben die wordt ondersteund door `ffmpeg`, dus ook de meest gebruikte indeling en codecs voor videobestanden.
 
 > [!NOTE]
-> Wanneer u het programma start met opdrachtregelopties, geeft u een map op die de videobestanden bevat die moeten worden verzonden voor beoordeling. Alle bestanden in deze map met de extensie `.mp4` worden verwerkt. Als u andere bestanden met andere extensies wilt verwerken, moet u de methode `Main()` in `Program.cs` bijwerken om de gewenste extensies toe te voegen.
+> Wanneer u het programma start met opdrachtregelopties, geeft u een map op die de videobestanden bevat die moeten worden verzonden voor beoordeling. Alle bestanden in deze map met de extensie `.mp4` worden verwerkt. Als u andere bestanden met andere extensies wilt verwerken, moet u de methode `Main()` in _Program.cs_ bijwerken om de gewenste extensies toe te voegen.
 
 De code voor het comprimeren van een videobestand is de klasse `AmsComponent` in `AMSComponent.cs`. De methode die verantwoordelijk is voor deze functionaliteit is `CompressVideo()`, die hier wordt weergegeven.
 
@@ -138,7 +138,7 @@ De methode retourneert de bestandsnaam van het gecomprimeerde uitvoerbestand.
 
 ## <a name="upload-and-moderate-the-video"></a>De video uploaden en beoordelen
 
-De video moet worden opgeslagen in Azure Media Services voordat deze kan worden verwerkt door de Content Moderation-service. De klasse `Program` in `Program.cs` heeft een korte methode `CreateVideoStreamingRequest()` die een object retourneert dat de streaming-aanvraag voorstelt voor het uploaden van de video.
+De video moet worden opgeslagen in Azure Media Services voordat deze kan worden verwerkt door de Content Moderation-service. De klasse **Programma** in _Program.cs_ heeft een korte methode `CreateVideoStreamingRequest()` die een object retourneert dat de streaming-aanvraag voorstelt voor het uploaden van de video.
 
 [!code-csharp[CreateVideoStreamingRequest](~/VideoReviewConsoleApp/Microsoft.ContentModerator.AMSComponent/AMSComponentClient/Program.cs?range=120-133)]
 
@@ -228,7 +228,7 @@ Er wordt ook een transcriptie van de audio van de video gemaakt wanneer de vlag 
 
 ## <a name="create-a-human-review"></a>Een menselijke beoordeling maken
 
-Het beoordelingsproces retourneert een lijst met sleutelframes uit de video, samen met een transcriptie van de audiotracks. De volgende stap is het maken van een beoordeling in Content Moderator voor menselijke beoordelaars. Als we teruggaan naar de methode `ProcessVideo()` in `Program.cs`, ziet u de aanroep van de methode `CreateVideoReviewInContentModerator()`. Deze methode maakt deel uit van de klasse `videoReviewApi`, in `VideoReviewAPI.cs`, en wordt hier weergegeven.
+Het beoordelingsproces retourneert een lijst met sleutelframes uit de video, samen met een transcriptie van de audiotracks. De volgende stap is het maken van een beoordeling in Content Moderator voor menselijke beoordelaars. Als we teruggaan naar de methode `ProcessVideo()` in _Program.cs_, ziet u de aanroep van de methode `CreateVideoReviewInContentModerator()`. Deze methode maakt deel uit van de klasse `videoReviewApi`, in `VideoReviewAPI.cs`, en wordt hier weergegeven.
 
 [!code-csharp[CreateVideoReviewInContentModerator](~/VideoReviewConsoleApp/Microsoft.ContentModerator.AMSComponent/AMSComponentClient/VideoReviewAPI.cs?range=42-69)]
 

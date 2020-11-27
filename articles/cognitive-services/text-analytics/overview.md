@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: overview
-ms.date: 11/02/2020
+ms.date: 11/17/2020
 ms.author: aahi
 keywords: tekstanalyse, sentimentanalyse, tekst analytics
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: 6d10161609abda321ed1be9dfda0acabf2030c9e
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 14dfa6111bbda8750b175c8c9b2a96321e1af2c5
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94365292"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95519401"
 ---
 # <a name="what-is-the-text-analytics-api"></a>Wat is Text Analytics-API?
 
@@ -47,9 +47,18 @@ Taaldetectie kan [detecteren in welke taal de ingevoerde tekst is geschreven](ho
 
 Herkenning van benoemde entiteiten (NER) kan entiteiten in uw tekst [identificeren en categoriseren](how-tos/text-analytics-how-to-entity-linking.md) als mensen, plaatsen, organisaties of hoeveelheden. Bekende entiteiten worden ook herkend en gekoppeld aan informatie op het web.
 
-## <a name="use-containers"></a>Containers gebruiken
+## <a name="deploy-on-premises-using-docker-containers"></a>On-premises implementeren met behulp van Docker-containers
 
-[Gebruik de Text Analytics-containers](how-tos/text-analytics-how-to-install-containers.md) als een on-premises oplossing voor tekstanalyse en het gebruik van de API. Met deze Docker-containers kunt u sleuteltermen extraheren, taal detecteren en sentiment analyseren in uw gegevens.
+[Gebruik Text Analytics-containers](how-tos/text-analytics-how-to-install-containers.md) om API-functies on-premises te implementeren. Deze Docker-containers stellen u in staat om de service dichter bij uw gegevens te brengen voor naleving, beveiliging en andere operationele redenen. Text Analytics biedt de volgende containers:
+
+* sentimentanalyse
+* sleuteltermextractie (preview)
+* taaldetectie (preview)
+* Text Analytics voor status (preview)
+
+## <a name="asynchronous-operations"></a>Asynchrone bewerkingen
+
+Het eindpunt `/analyze` stelt u in staat om geselecteerde functies van de Text Analytics-API [asynchroon](how-tos/text-analytics-how-to-call-api.md) te gebruiken, zoals NER en sleuteltermextractie.
 
 ## <a name="typical-workflow"></a>Standaardwerkstroom
 

@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: overview
 ms.date: 10/23/2020
 ms.author: aahi
-ms.openlocfilehash: 14b4e7217b6e902023e5e82f8dbd404e43b36ef0
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 0ae7bb9acde3cc8552a23db12d208a82ba0fb2f3
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92676152"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95800863"
 ---
 # <a name="migrate-to-the-read-v3x-ocr-containers"></a>Migreer naar de Read v3.x OCR-containers
 
@@ -29,13 +29,13 @@ Als u versie 2 van de Computer Vision Read OCR-container gebruikt, raadpleegt u 
 
 ## <a name="api-changes"></a>API-wijzigingen
 
-De Read v3.1-containers gebruikt versie 3 van de Computer Vision-API en heeft de volgende eindpunten:
+De Read v3.2-container gebruikt versie 3 van de Computer Vision-API en heeft de volgende eindpunten:
 
-* `/vision/v3.1-preview.2/read/analyzeResults/{operationId}`
-* `/vision/v3.1-preview.2/read/analyze`
-* `/vision/v3.1-preview.2/read/syncAnalyze`
+* `/vision/v3.2-preview.1/read/analyzeResults/{operationId}`
+* `/vision/v3.2-preview.1/read/analyze`
+* `/vision/v3.2-preview.1/read/syncAnalyze`
 
-Raadpleeg de [Migratiehandleiding van Computer Vision v3 REST API](https://docs.microsoft.com/azure/cognitive-services/computer-vision/upgrade-api-versions) voor gedetailleerde informatie over het bijwerken van uw toepassingen voor het gebruik van versie 3 van op de Read-API in de cloud. Deze informatie is ook van toepassing op de container. Houd er rekening mee dat synchronisatiebewerkingen alleen worden ondersteund in containers.
+Raadpleeg de [Migratiehandleiding van Computer Vision v3 REST API](./upgrade-api-versions.md) voor gedetailleerde informatie over het bijwerken van uw toepassingen voor het gebruik van versie 3 van op de Read-API in de cloud. Deze informatie is ook van toepassing op de container. Houd er rekening mee dat synchronisatiebewerkingen alleen worden ondersteund in containers.
 
 ## <a name="memory-requirements"></a>Geheugenvereisten
 
@@ -43,7 +43,7 @@ De vereisten en aanbevelingen zijn gebaseerd op benchmarks met één aanvraag pe
 
 |Container  |Minimum | Aanbevolen  |
 |---------|---------|------|
-|Read 3.1-preview | 8 kernen, 16 GB geheugen         | 8 kernen, 24 GB geheugen |
+|Read 3.2-preview | 8 kernen, 16 GB geheugen         | 8 kernen, 24 GB geheugen |
 
 Elke kern moet ten minste 2,6 gigahertz (GHz) of sneller zijn.
 

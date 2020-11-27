@@ -7,16 +7,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: overview
-ms.date: 9/17/2020
+ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: gezichtsherkenning, gezichtsherkenningssoftware, gezichtsanalyse, gezichtsvergelijking, gezichtsherkennings-app, gezichten zoeken binnen een afbeelding, zoekfunctie voor gezichtsherkenning
-ms.openlocfilehash: ccc9ee3107d287844430be0ae089e4b7ac3a2f44
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 600ca48cc19ee8723b423e484ec96736a55ae7fc
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92911440"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95532253"
 ---
 # <a name="what-is-the-azure-face-service"></a>Wat is de Azure Face-service?
 
@@ -76,9 +76,9 @@ Nadat u een database hebt gemaakt en getraind, kunt u een identificatie uitvoere
 
 Zie de handleiding over concepten van [Gezichtsherkenning](concepts/face-recognition.md) of de referentiedocumentatie over de [Identify API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239) voor meer informatie over persoonsidentificatie.
 
-## <a name="containers"></a>Containers
+## <a name="deploy-on-premises-using-docker-containers"></a>On-premises implementeren met behulp van Docker-containers
 
-[Gebruik de Face-container](face-how-to-install-containers.md) om gezichten te detecteren, herkennen en identificeren. Hiertoe installeert u een gestandaardiseerde Docker-container die zich dichter bij uw gegevens bevindt.
+[Gebruik de Face-container (preview)](face-how-to-install-containers.md) om API-functies on-premises te implementeren. Deze Docker-container stelt u in staat om de service dichter bij uw gegevens te brengen voor naleving, beveiliging en andere operationele redenen.
 
 ## <a name="sample-apps"></a>Voorbeeld-apps
 

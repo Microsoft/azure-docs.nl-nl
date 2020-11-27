@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: overview
-ms.date: 08/14/2020
+ms.date: 11/19/2020
 ms.author: aahi
 ms.reviewer: chtufts
-ms.openlocfilehash: 905dde6932afb440c34bcccb563bfda98f23eb7c
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: c60adb09da05ba945bcf6ccb55e71c395f064211
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94363830"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965099"
 ---
 # <a name="data-and-rate-limits-for-the-text-analytics-api"></a>Gegevens- en frequentielimieten voor de Text Analytics-API
 <a name="data-limits"></a>
@@ -31,24 +31,28 @@ Lees dit artikel voor informatie over de limieten voor de grootte en de frequent
 
 | Limiet | Waarde |
 |------------------------|---------------|
-| Maximale grootte van één document | 5\.120 tekens, gemeten volgens [StringInfo.LengthInTextElements](/dotnet/api/system.globalization.stringinfo.lengthintextelements). Geldt ook voor de Text Analytics voor de statuscontainer. |
-| Maximale grootte van de hele aanvraag | 1 MB. Geldt ook voor de Text Analytics voor de statuscontainer. |
+| Maximale grootte van één document | 5\.120 tekens, gemeten volgens [StringInfo.LengthInTextElements](/dotnet/api/system.globalization.stringinfo.lengthintextelements). Geldt ook voor Text Analytics voor status. |
+| Maximale grootte van één document (`/analyze` eindpunt)  | 125 K tekens, gemeten volgens [StringInfo.LengthInTextElements](/dotnet/api/system.globalization.stringinfo.lengthintextelements). Geldt niet voor Text Analytics voor status. |
+| Maximale grootte van de hele aanvraag | 1 MB. Geldt ook voor Text Analytics voor status. |
 
-Het maximumaantal documenten dat u in één aanvraag kunt verzenden, is afhankelijk van de API-versie en functie die u gebruikt.
+Het maximumaantal documenten dat u in één aanvraag kunt verzenden, is afhankelijk van de API-versie en functie die u gebruikt. Het eindpunt `/analyze` weigert de hele aanvraag als een of meer van de documenten de maximale grootte overschrijdt (125 K tekens)
 
 #### <a name="version-3"></a>[Versie 3](#tab/version-3)
 
-De volgende limieten zijn in v3 van de API gewijzigd. Als u de onderstaande limieten overschrijdt, wordt een HTTP 400-foutcode gegenereerd.
+De volgende limieten gelden voor de huidige v3 API. Als u de onderstaande limieten overschrijdt, wordt een HTTP 400-foutcode gegenereerd.
 
 
 | Functie | Max. aantal documenten per aanvraag | 
 |----------|-----------|
 | Taaldetectie | 1000 |
 | Sentimentanalyse | 10 |
+| Meninganalyse | 10 |
 | Sleuteltermextractie | 10 |
 | Herkenning van benoemde entiteiten | 5 |
 | Entiteiten koppelen | 5 |
-| Text Analytics voor statuscontainer | 1000 |
+| Text Analytics voor status  | 10 voor de web-API, 1000 voor de container. |
+| Eindpunt analyseren | 25 voor alle bewerkingen. |
+
 #### <a name="version-2"></a>[Versie 2](#tab/version-2)
 
 | Functie | Max. aantal documenten per aanvraag | 
@@ -74,7 +78,7 @@ Uw frequentielimiet hangt af van uw [prijscategorie](https://azure.microsoft.com
 | S3            | 500                 | 500                 |
 | S4            | 1000                | 1000                |
 
-Aanvragen worden afzonderlijk voor elke Text Analytics-functie gemeten. U kunt bijvoorbeeld het maximumaantal aanvragen voor uw prijscategorie tegelijkertijd naar elke functie verzenden.  
+Het aantal aanvragen wordt voor elke Text Analytics-functie afzonderlijk gemeten. U kunt het maximumaantal aanvragen voor uw prijscategorie tegelijkertijd naar elke functie verzenden. Als u zich bijvoorbeeld in de categorie `S` bevindt en 1000 aanvragen tegelijk verzendt, kunt u gedurende 59 seconden hierna geen aanvragen verzenden.
 
 
 ## <a name="see-also"></a>Zie ook

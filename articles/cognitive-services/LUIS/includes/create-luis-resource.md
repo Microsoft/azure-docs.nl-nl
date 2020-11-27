@@ -6,14 +6,14 @@ author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.topic: include
-ms.date: 04/07/2020
+ms.date: 11/20/2020
 ms.author: aahi
-ms.openlocfilehash: a077d255648ff07cc88b43dece889a221c46c11f
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: ee7fd384a198c5eff672b14b6cb479aac26cfe54
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94561506"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95972506"
 ---
 <a name="create-luis-resources"></a>
 
@@ -37,7 +37,7 @@ ms.locfileid: "94561506"
     > [![Schermopname met het tabblad Basisgegevens onder Maken.](../media/luis-how-to-azure-subscription/create-resource-in-azure-small.png)](../media/luis-how-to-azure-subscription/create-resource-in-azure-small.png#lightbox)
 
 1. Selecteer **Controleren + maken** en wacht totdat de resource is gemaakt.
-1. Nadat beide resources zijn gemaakt, selecteert u in Azure Portal de nieuwe creatie-resource. Selecteer vervolgens **Quickstarts** om de **eindpunt-URL** en de **sleutel** voor de creatie te verkrijgen om via programmacode te ontwerpen.
+1. Nadat beide resources zijn gemaakt, selecteert u in Azure Portal de nieuwe creatie-resource. Selecteer vervolgens **Sleutels en eindpunten** om de **eindpunt-URL** en de **sleutel** voor de creatie te verkrijgen om programmatisch te ontwerpen.
 
 > [!TIP]
 > Als u de resources wilt gebruiken in de LUIS-portal [moet u de resources](../luis-how-to-azure-subscription.md#assign-an-authoring-resource-in-the-luis-portal-for-all-apps) toewijzen.

@@ -5,14 +5,14 @@ keywords: Azure, kunstmatige intelligentie, ai, natuurlijke taalverwerking, nlp,
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: overview
-ms.date: 09/02/2020
+ms.date: 11/23/2020
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: 242d131e79966ebdb286a20f75d20f91f5fa7406
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: fb36ab8a86a89d6383f93ad58c23956472841de2
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91334647"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95539257"
 ---
 # <a name="what-is-language-understanding-luis"></a>Wat is Language Understanding (LUIS)?
 
@@ -50,7 +50,7 @@ De LUIS-app levert intelligence zodat er slimme keuzen kunnen worden gemaakt in 
 
 Uw LUIS-app bevat een domein-specifiek model voor natuurlijke taal. U kunt de LUIS-app starten met een vooraf gedefinieerd domeinmodel, uw eigen model bouwen of onderdelen van een vooraf gedefinieerd domein combineren met uw eigen aangepaste gegevens.
 
-* **Vooraf gedefinieerd model** LUIS bevat veel vooraf gedefinieerde domeinmodellen, inclusief intenties, uitingen en vooraf gedefinieerde entiteiten. U kunt de vooraf gedefinieerde entiteiten ook gebruiken zonder de intenties en uitingen van het vooraf gedefinieerde model. [Vooraf gedefinieerde domeinmodellen](luis-how-to-use-prebuilt-domains.md "Modellen voor vooraf gemaakt domein") bevatten alles wat u nodig hebt om LUIS snel te kunnen gaan gebruiken.
+* **Vooraf gedefinieerd model** LUIS bevat veel vooraf gedefinieerde domeinmodellen, inclusief intenties, uitingen en vooraf gedefinieerde entiteiten. U kunt de vooraf gedefinieerde entiteiten ook gebruiken zonder de intenties en uitingen van het vooraf gedefinieerde model. [Vooraf gedefinieerde domeinmodellen](./howto-add-prebuilt-models.md "Modellen voor vooraf gemaakt domein") bevatten alles wat u nodig hebt om LUIS snel te kunnen gaan gebruiken.
 
 * **Aangepast model** LUIS biedt u een aantal manieren om uw eigen aangepaste modellen e identificeren, inclusief intenties en entiteiten. Entiteiten zijn machine learning-entiteiten, specifieke of letterlijke entiteiten, en een combinatie van machine learning en letterlijk.
 
@@ -116,7 +116,7 @@ Hulpprogramma's om LUIS snel en eenvoudig met een bot te gebruiken:
 
 ## <a name="integrate-with-a-bot"></a>Integratie met een bot
 
-Gebruik de [Azure Bot-service](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0 "Azure Bot Service") met het [Microsoft Bot Framework](https://dev.botframework.com/ "Microsoft Bot Framework") om een chatbot te bouwen en te implementeren. Gebruik het grafische interfaceprogramma [Composer](https://docs.microsoft.com/composer/ "Composer") of [actieve voorbeelden van bots](https://github.com/microsoft/BotBuilder-Samples "werkende botvoorbeelden") die voor de belangrijkste botscenario's zijn ontworpen, om te ontwerpen en te ontwikkelen.
+Gebruik de [Azure Bot-service](/azure/bot-service/ "Azure Bot Service") met het [Microsoft Bot Framework](https://dev.botframework.com/ "Microsoft Bot Framework") om een chatbot te bouwen en te implementeren. Gebruik het grafische interfaceprogramma [Composer](/composer/ "Composer") of [actieve voorbeelden van bots](https://github.com/microsoft/BotBuilder-Samples "werkende botvoorbeelden") die voor de belangrijkste botscenario's zijn ontworpen, om te ontwerpen en te ontwikkelen.
 
 ## <a name="integrate-with-other-cognitive-services"></a>Integreren met andere Cognitive Services
 
@@ -131,6 +131,10 @@ LUIS biedt functionaliteit van Text Analytics als onderdeel van uw bestaande LUI
 Gebruik de praktische quickstarts in de [portal](get-started-portal-build-app.md "portal") en de [SDK-clientbibliotheken](azure-sdk-quickstart.md "SDK-clientbibliotheken") om meer te leren over LUIS.
 
 
+## <a name="deploy-on-premises-using-docker-containers"></a>On-premises implementeren met behulp van Docker-containers
+
+[Gebruik LUIS-containers](luis-container-howto.md) om API-functies on-premises te implementeren. Deze Docker-containers stellen u in staat om de service dichter bij uw gegevens te brengen voor naleving, beveiliging en andere operationele redenen.
+
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Wat is er nieuw](whats-new.md "Nieuwe functies") bij de service en de documentatie
@@ -138,8 +142,8 @@ Gebruik de praktische quickstarts in de [portal](get-started-portal-build-app.md
 * [Voer een query uit op het voorspellingseindpunt](luis-get-started-get-intent-from-browser.md "Voer een query uit op het voorspellingseindpunt").
 * [Resources voor ontwikkelaars](developer-reference-resource.md "Bronnen voor ontwikkelaars") voor LUIS.
 
-[bot-framework]: https://docs.microsoft.com/bot-framework/
-[flow]: https://docs.microsoft.com/connectors/luis/
+[bot-framework]: /bot-framework/
+[flow]: /connectors/luis/
 [authoring-apis]: https://go.microsoft.com/fwlink/?linkid=2092087
 [endpoint-apis]: https://go.microsoft.com/fwlink/?linkid=2092356
 [qnamaker]: https://qnamaker.ai/

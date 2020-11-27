@@ -13,15 +13,15 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 11/05/2020
+ms.date: 11/26/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: af2eac929e3e3f40e1ac1cd384c943b1e09171a8
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: b8b8d100eb2ff16e8f8b7a734ad493ed4faddd33
+ms.sourcegitcommit: 5e2f5efba1957ba40bd951c3dcad42f4a00734ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94967462"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96299527"
 ---
 # <a name="sap-hana-azure-virtual-machine-storage-configurations"></a>Configuraties van SAP HANA in virtuele Azure-machineopslag
 
@@ -273,7 +273,7 @@ Lees voor meer informatie over ANF voor HANA het document [NFS v 4.1-volumes op 
 
 
 ## <a name="cost-conscious-solution-with-azure-premium-storage"></a>Prijs bewuste oplossing met Azure Premium Storage
-Tot nu toe zijn de Azure Premium Storage-oplossing die in dit document wordt beschreven in sectie [oplossingen met Premium Storage en azure write Accelerator voor virtuele machines uit de M-serie van Azure](#solutions-with-premium-storage-and-azure-write-accelerator-for-azure-m-series-virtual-machines) , bedoeld voor het SAP Hana van productie-ondersteunde scenario's. Een van de kenmerken van productie configuraties die kunnen worden ondersteund, is de schei ding van de volumes voor SAP HANA gegevens en meld u opnieuw aan op twee verschillende volumes. De reden hiervoor is dat de kenmerken van de werk belasting op de volumes verschillend zijn. En dat met de voorgestelde productie configuraties, kan een ander type caching of zelfs verschillende typen Azure-blok opslag nodig zijn. De productie ondersteunde configuraties die gebruikmaken van Azure-blok opslag doel om te voldoen aan de [Sla voor Azure-virtual machines voor één VM](https://azure.microsoft.com/support/legal/sla/virtual-machines/) .  Voor niet-productie scenario's is het mogelijk dat een aantal van de overwegingen voor productie systemen niet van toepassing is op meer niet-productie systemen met een lage eind tijd. Als gevolg hiervan kunnen de HANA-gegevens en het logboek volume worden gecombineerd. Uiteindelijk met een aantal culprits, zoals uiteindelijk geen bepaalde doorvoer-of latentie-Kpi's die vereist zijn voor productie systemen. Een ander aspect voor het verlagen van de kosten in dergelijke omgevingen kan het gebruik zijn van [Azure Standard-SSD Storage](./planning-guide-storage.md#azure-standard-ssd-storage). Hoewel een keuze waarmee de [Sla van één VM voor Azure virtual machines](https://azure.microsoft.com/support/legal/sla/virtual-machines/)ongeldig wordt gemaakt. 
+Tot nu toe zijn de Azure Premium Storage-oplossing die in dit document wordt beschreven in sectie [oplossingen met Premium Storage en azure write Accelerator voor virtuele machines uit de M-serie van Azure](#solutions-with-premium-storage-and-azure-write-accelerator-for-azure-m-series-virtual-machines) , bedoeld voor het SAP Hana van productie-ondersteunde scenario's. Een van de kenmerken van productie configuraties die kunnen worden ondersteund, is de schei ding van de volumes voor SAP HANA gegevens en meld u opnieuw aan op twee verschillende volumes. De reden hiervoor is dat de kenmerken van de werk belasting op de volumes verschillend zijn. En dat met de voorgestelde productie configuraties, kan een ander type caching of zelfs verschillende typen Azure-blok opslag nodig zijn. Voor niet-productie scenario's is het mogelijk dat een aantal van de overwegingen voor productie systemen niet van toepassing is op meer niet-productie systemen met een lage eind tijd. Als gevolg hiervan kunnen de HANA-gegevens en het logboek volume worden gecombineerd. Uiteindelijk met een aantal culprits, zoals uiteindelijk geen bepaalde doorvoer-of latentie-Kpi's die vereist zijn voor productie systemen. Een ander aspect voor het verlagen van de kosten in dergelijke omgevingen kan het gebruik zijn van [Azure Standard-SSD Storage](./planning-guide-storage.md#azure-standard-ssd-storage). Denk eraan dat het kiezen van Standard-SSD of Standard-HDD Azure-opslag invloed heeft op uw enkele VM-Sla's zoals beschreven in het artikel  [Sla voor virtual machines](https://azure.microsoft.com/support/legal/sla/virtual-machines).
 
 Een kostenbesparend alternatief voor dergelijke configuraties kan er als volgt uitzien:
 

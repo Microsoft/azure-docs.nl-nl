@@ -14,15 +14,15 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 06/23/2020
+ms.date: 11/26/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1cd6f5f7865d18461ac7a635530e9aabfde380a6
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 325e28b9fde349fc4bf01d2b130bee0be0684962
+ms.sourcegitcommit: 5e2f5efba1957ba40bd951c3dcad42f4a00734ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94955409"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96299595"
 ---
 # <a name="azure-storage-types-for-sap-workload"></a>Azure Storage-typen voor SAP-workload
 Azure heeft talloze opslag typen die in de mogelijkheden, door Voer, latentie en prijzen aanzienlijk verschillen. Sommige opslag typen zijn niet of zijn beperkt bruikbaar voor SAP-scenario's. Dat zijn verschillende Azure Storage-typen goed geschikt of geoptimaliseerd voor specifieke SAP-werkbelasting scenario's. Met name voor SAP HANA hebben sommige Azure Storage-typen gecertificeerd voor het gebruik met SAP HANA. In dit document gaan we de verschillende soorten opslag door lopen en de mogelijkheden en bruikbaarheid van SAP-workloads en SAP-onderdelen beschrijven.
@@ -34,6 +34,8 @@ Opmerkingen over de eenheden die in dit artikel worden gebruikt. De leveranciers
 Microsoft Azure opslag van Standard-HDD, Standard-SSD, Azure Premium-opslag en ultra Disk blijven de basis-VHD (met OS) en gegevens schijven of Vhd's met gekoppelde virtuele machines in drie kopieën op drie verschillende opslag knooppunten. Het uitvoeren van een failover naar een andere replica en het seeden van een nieuwe replica in het geval van een storing in een opslag knooppunt is transparant. Als gevolg van deze redundantie is het **niet** nodig om een ander type opslag redundantie laag te gebruiken op meerdere Azure-schijven. Dit feit wordt lokale redundante opslag (LRS) genoemd. LRS is standaard voor deze opslag typen in Azure. [Azure NetApp files](https://azure.microsoft.com/services/netapp/) biedt voldoende redundantie voor het uitvoeren van dezelfde sla's als andere systeem eigen Azure-opslag.
 
 Er zijn diverse redundante methoden, die allemaal worden beschreven in het artikel [Azure storage replicatie](../../../storage/common/storage-redundancy.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json) die van toepassing zijn op enkele van de verschillende opslag typen die Azure te bieden heeft. 
+
+Houd er ook wel van uit dat verschillende typen Azure-opslag van invloed zijn op de beschik baarheid van één VM, zoals uitgebracht in [Sla voor virtual machines](https://azure.microsoft.com/support/legal/sla/virtual-machines).
 
 ### <a name="azure-managed-disks"></a>Azure Managed disks
 
@@ -131,7 +133,6 @@ Dit type opslag is gericht op DBMS-workloads, opslag verkeer waarvoor een lage l
 - De I/O-door Voer voor deze opslag is niet lineair met de grootte van de schijf categorie. Voor kleinere schijven, zoals de categorie tussen 65 GiB en 128 GiB capaciteit, is de door Voer ongeveer 780KB/GiB. Overwegende dat voor de extreem grote schijven, zoals een 32.767 GiB-schijf, de door Voer rond 28KB/GiB
 - De Sla's voor IOPS en door Voer kunnen niet worden gewijzigd zonder de capaciteit van de schijf te wijzigen
 
-Azure heeft een single instance VM-SLA van 99,9% dat is gekoppeld aan het gebruik van Azure Premium Storage of Azure Ultra Disk-opslag. De SLA wordt beschreven in [Sla voor virtual machines](https://azure.microsoft.com/support/legal/sla/virtual-machines/). Als u wilt voldoen aan deze enkelvoudige VM-SLA, moet de basis-VHD-schijf en **alle** gekoppelde schijven Azure Premium Storage of Azure Ultra Disk Storage zijn.
 
 De functie matrix voor SAP-werk belasting ziet er als volgt uit:
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/10/2020
 ms.author: yelevin
-ms.openlocfilehash: 247abafd7abec38e43794b76268ee52538aee508
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 63b9d74fbbb1a79dd4f3d3e7c5fb094a372282e0
+ms.sourcegitcommit: 5e2f5efba1957ba40bd951c3dcad42f4a00734ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94655677"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96299629"
 ---
 # <a name="use-logstash-to-connect-data-sources-to-azure-sentinel"></a>Logstash gebruiken om gegevens bronnen te verbinden met Azure Sentinel
 
@@ -57,7 +57,7 @@ De Azure Sentinel output-invoeg toepassing voor Logstash verzendt gegevens in JS
 
 De Azure Sentinel output-invoeg toepassing is beschikbaar in de Logstash-verzameling.
 
-- Volg de instructies in het document Logstash [Working with plugins](https://www.elastic.co/guide/en/logstash/current/working-with-plugins.html) voor het installeren van de **_micro soft-Logstash-output-Azure-loganalytics_* _-invoeg toepassing.
+- Volg de instructies in het document Logstash [Working with plugins](https://www.elastic.co/guide/en/logstash/current/working-with-plugins.html) voor het installeren van de **_[micro soft-Logstash-output-Azure-loganalytics](https://github.com/Azure/Azure-Sentinel/tree/master/DataConnectors/microsoft-logstash-output-azure-loganalytics)_* _-invoeg toepassing.
    
 - Als uw Logstash-systeem geen Internet toegang heeft, volgt u de instructies in het Logstash [offline-invoeg toepassing](https://www.elastic.co/guide/en/logstash/current/offline-plugins.html) voor het beheren van een offline-invoeg toepassing. (Hiervoor moet u een ander Logstash-systeem met Internet toegang maken.)
 
@@ -72,7 +72,7 @@ Gebruik de informatie in de Logstash- [structuur van een config file](https://ww
 | `custom_log_table_name` | tekenreeks | Stel de naam in van de tabel waarin de logboeken worden opgenomen. Er kan slechts één tabel naam per uitvoer-invoeg toepassing worden geconfigureerd. De logboek tabel wordt weer gegeven in azure Sentinel onder **Logboeken**, in **tabellen** in de categorie **aangepaste logboeken** met een `_CL` achtervoegsel. |
 | `endpoint` | tekenreeks | Optioneel veld. Standaard is dit het Log Analytics-eind punt. Gebruik dit veld om een alternatief eind punt in te stellen. |
 | `time_generated_field` | tekenreeks | Optioneel veld. Met deze eigenschap wordt het standaard **TimeGenerated** -veld in log Analytics overschreven. Voer de naam van het tijds tempel veld in de gegevens bron in. De gegevens in het veld moeten voldoen aan de ISO 8601-indeling ( `YYYY-MM-DDThh:mm:ssZ` ) |
-| `key_names` | matrix | Geef een lijst met Log Analytics uitvoer schema velden op. Elk lijst item moet tussen enkele aanhalings tekens worden geplaatst en de items worden gescheiden door komma's en de volledige lijst tussen vier Kante haken. Zie het onderstaande voor beeld. |
+| `key_names` | matrix | Geef een lijst met Log Analytics uitvoer schema velden op. Elk lijst item moet tussen enkele aanhalings tekens worden geplaatst en de items worden gescheiden door komma's en de volledige lijst tussen vier Kante haken. Zie onderstaand voorbeeld. |
 | `plugin_flush_interval` | getal | Optioneel veld. Stel in om het maximum interval (in seconden) te definiëren tussen het verzenden van berichten naar Log Analytics. De standaard waarde is 5. |
     | `amount_resizing` | booleaans | Waar of onwaar. Het mechanisme voor automatisch schalen in-of uitschakelen, waarbij de grootte van de bericht buffer wordt aangepast op basis van het volume van de ontvangen logboek gegevens. |
 | `max_items` | getal | Optioneel veld. Geldt alleen indien `amount_resizing` ingesteld op ' false '. Gebruiken om een limiet in te stellen voor de buffer grootte van het bericht (in records). De standaardwaarde is 2000.  |

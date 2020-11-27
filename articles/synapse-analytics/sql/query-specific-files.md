@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: e3f0a9f0b7fdef26cf1ef2b145ede1826fda6ebd
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: d24ae1f42c685589309506b2d5e0eab157b2bc42
+ms.sourcegitcommit: 5e2f5efba1957ba40bd951c3dcad42f4a00734ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685593"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96299612"
 ---
 # <a name="use-file-metadata-in-serverless-sql-pool-queries"></a>Meta gegevens van een bestand in serverloze SQL-pool query's gebruiken
 
@@ -28,7 +28,7 @@ U kunt de functie gebruiken `filepath` en `filename` bestands namen en/of het pa
 
 De eerste stap bestaat uit het **maken van een Data Base** met een gegevens bron die verwijst naar het opslag account. Initialiseer vervolgens de objecten door een [installatiescript](https://github.com/Azure-Samples/Synapse/blob/master/SQL/Samples/LdwSample/SampleDB.sql) uit te voeren op die database. Met dit installatie script worden de gegevens bronnen, referenties voor het data base-bereik en externe bestands indelingen gemaakt die in deze voor beelden worden gebruikt.
 
-## <a name="functions"></a>Functions
+## <a name="functions"></a>Functies
 
 ### <a name="filename"></a>Bestands
 
@@ -76,7 +76,7 @@ ORDER BY
 
 De functie filepath retourneert een volledig of gedeeltelijk pad:
 
-- Als u zonder para meter aangeroepen, wordt het volledige bestandspad geretourneerd waaruit de rij afkomstig is.
+- Als u zonder para meter aangeroepen, wordt het volledige bestandspad geretourneerd waaruit de rij afkomstig is. Als DATA_SOURCE wordt gebruikt in OpenRowset, wordt pad geretourneerd ten opzichte van DATA_SOURCE. 
 - Als deze wordt aangeroepen met een para meter, wordt een deel van het pad geretourneerd dat overeenkomt met het Joker teken op de positie die is opgegeven in de para meter. Zo retourneert parameter waarde 1 een deel van het pad dat overeenkomt met het eerste Joker teken.
 
 In het volgende voor beeld worden NYC Yellow Taxi-gegevens bestanden voor de laatste drie maanden van 2017 gelezen. Hiermee wordt het aantal onderdrukkingen per bestandspad geretourneerd. Het gedeelte OPENROWSET van de query geeft aan welke bestanden worden gelezen.

@@ -3,12 +3,12 @@ title: Prestaties bewaken op virtuele machines van Azure-Azure-toepassing Insigh
 description: Bewaking van toepassings prestaties voor Azure VM en virtuele-machine schaal sets van Azure. Grafiek belasting en respons tijd, afhankelijkheids informatie en waarschuwingen instellen voor prestaties.
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.openlocfilehash: 8b025c5196d65234a632bd1f939bc1116b72dce0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dcf0c88eae021487072424636113d5a3de08699a
+ms.sourcegitcommit: 5e2f5efba1957ba40bd951c3dcad42f4a00734ff
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87024629"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96299561"
 ---
 # <a name="deploy-the-azure-monitor-application-insights-agent-on-azure-virtual-machines-and-azure-virtual-machine-scale-sets"></a>De Azure Monitor Application Insights-agent implementeren op virtuele machines van Azure en virtuele-machine schaal sets van Azure
 
@@ -17,8 +17,8 @@ Het inschakelen van bewaking op uw .NET-webtoepassingen die worden uitgevoerd op
 Dit artikel helpt u bij het inschakelen van Application Insights bewaking met behulp van de Application Insights agent en voorziet in voorlopige richt lijnen voor het automatiseren van het proces voor grootschalige implementaties.
 
 > [!IMPORTANT]
-> Azure-toepassing Insights-agent voor .NET is momenteel beschikbaar als open bare preview.
-> Deze preview-versie is beschikbaar zonder een service overeenkomst en wij raden deze niet aan voor productie werkbelastingen. Sommige functies worden mogelijk niet ondersteund en andere hebben mogelijk beperkte mogelijkheden.
+> Azure-toepassing Insights-agent voor APS.NET-toepassingen die worden uitgevoerd op **virtuele machines in Azure en VMSS** , is momenteel beschikbaar als open bare preview. Voor het bewaken van uw ASP.Net-toepassingen die **on-premises** worden uitgevoerd, gebruikt u de [Azure-toepassing Insights-agent voor on-premises servers](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-overview), die algemeen beschikbaar en volledig wordt ondersteund.
+> De preview-versie voor virtuele Azure-machines en VMSS wordt zonder een service overeenkomst aangestuurd en wij raden deze niet aan voor productie werkbelastingen. Sommige functies worden mogelijk niet ondersteund en andere hebben mogelijk beperkte mogelijkheden.
 > Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 ## <a name="enable-application-insights"></a>Application Insights inschakelen

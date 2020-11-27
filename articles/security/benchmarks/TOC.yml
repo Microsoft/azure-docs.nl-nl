@@ -75,10 +75,14 @@
       href: ../../backup/security-baseline.md
     - name: Azure Bastion-beveiligingsbasislijn
       href: ../../bastion/security-baseline.md
+    - name: Azure Bot Network-beveiligingsbasislijn
+      href: /azure/bot-service/security-baseline?view=azure-bot-service-4.0
     - name: Azure Cache voor Redis-beveiligingsbasislijn
       href: ../../azure-cache-for-redis/security-baseline.md
     - name: Azure Cognitive Search-beveiligingsbasislijn
       href: ../../search/security-baseline.md
+    - name: Azure Cosmos DB-beveiligingsbasislijn
+      href: ../../cosmos-db/security-baseline.md
     - name: Azure Data Box-beveiligingsbasislijn
       href: ../../databox/security-baseline.md
     - name: Azure Data Explorer-beveiligingsbasislijn
@@ -91,18 +95,20 @@
       href: ../../mysql/security-baseline.md
     - name: Azure Database for MariaDB-beveiligingsbasislijn
       href: ../../mariadb/security-baseline.md
-    - name: Azure Database for PostgreSQL - Beveiligingsbasislijn voor één server
-      href: ../../postgresql/security-baseline.md
     - name: Azure Database for PostgreSQL- Beveiligingsbasislijn voor Hyperscale
       href: ../../postgresql/postgresql-hyperscale-security-baseline.md
+    - name: Azure Database for PostgreSQL - Beveiligingsbasislijn voor één server
+      href: ../../postgresql/security-baseline.md
     - name: Azure Databricks-beveiligingsbasislijn
       href: /azure/databricks/scenarios/security-baseline
+    - name: Azure DDOS Protection Standard-beveiligingsbasislijn
+      href: ../fundamentals/ddos-protection-security-baseline.md
     - name: Azure Defender for IoT-beveiligingsbasislijn
       href: ../../defender-for-iot/security-baseline.md
-    - name: Azure DNS-beveiligingsbasislijn
-      href: ../../dns/security-baseline.md
     - name: Azure DevTest Labs-beveiligingsbasislijn
       href: ../../devtest-labs/security-baseline.md
+    - name: Azure DNS-beveiligingsbasislijn
+      href: ../../dns/security-baseline.md
     - name: Azure Firewall-beveiligingsbasislijn
       href: ../../firewall/security-baseline.md
     - name: Azure Firewall Manager-beveiligingsbasislijn
@@ -115,18 +121,16 @@
       href: ../../hpc-cache/security-baseline.md
     - name: Azure Information Protection-beveiligingsbasislijn
       href: /azure/information-protection/security-baseline
-    - name: Azure IoT Hub-beveiligingsbasislijn
-      href: ../../iot-hub/security-baseline.md
     - name: Azure Kubernetes Service-beveiligingsbasislijn
       href: ../../aks/security-baseline.md
     - name: Azure Lighthouse-beveiligingsbasislijn
       href: ../../lighthouse/security-baseline.md
     - name: Azure Load Balancer-beveiligingsbasislijn
       href: ../../load-balancer/security-baseline.md
-    - name: Azure Monitor-beveiligingsbasislijn
-      href: ../../azure-monitor/security-baseline.md
     - name: Azure Machine Learning-beveiligingsbasislijn
       href: ../../machine-learning/security-baseline.md
+    - name: Azure Monitor-beveiligingsbasislijn
+      href: ../../azure-monitor/security-baseline.md
     - name: Azure Migrate Learning-beveiligingsbasislijn
       href: ../../migrate/security-baseline.md
     - name: Azure Policy-beveiligingsbasislijn
@@ -141,12 +145,12 @@
       href: ../../azure-resource-manager/management/security-baseline.md
     - name: Azure Sentinel-beveiligingsbasislijn
       href: ../../sentinel/security-baseline.md
+    - name: Azure SignalR Service-beveiligingsbasislijn
+      href: ../../azure-signalr/security-baseline.md
     - name: Azure SQL Database-beveiligingsbasislijn
       href: ../../azure-sql/database/security-baseline.md
     - name: Azure Storage-beveiligingsbasislijn
       href: ../../storage/common/security-baseline.md
-    - name: Azure Traffic Manager-beveiligingsbasislijn
-      href: ../../traffic-manager/security-baseline.md
     - name: Azure Web Application Firewall-beveiligingsbasislijn
       href: ../../web-application-firewall/security-baseline.md
     - name: Basislijn voor batch-beveiliging
@@ -163,16 +167,12 @@
       href: ../../container-registry/security-baseline.md
     - name: Content Delivery Network-beveiligingsbasislijn
       href: ../../cdn/security-baseline.md
-    - name: Cosmos DB-beveiligingsbasislijn
-      href: ../../cosmos-db/security-baseline.md
     - name: Cost Management-beveiligingsbasislijn
       href: ../../cost-management-billing/security-baseline.md
     - name: Customer Lockbox-beveiligingsbasislijn
       href: ../fundamentals/customer-lockbox-security-baseline.md
     - name: Data Lake Analytics-beveiligingsbasislijn
       href: ../../data-lake-analytics/security-baseline.md
-    - name: DDOS Protection-beveiligingsbasislijn
-      href: ../fundamentals/ddos-protection-security-baseline.md
     - name: Event Grid-beveiligingsbasislijn
       href: ../../event-grid/security-baseline.md
     - name: Basislijn voor Event Hubs-beveiliging
@@ -181,6 +181,8 @@
       href: ../../expressroute/security-baseline.md
     - name: Basislijn voor HDInsight-beveiliging
       href: ../../hdinsight/security-baseline.md
+    - name: IoT Hub-beveiligingsbasislijn
+      href: ../../iot-hub/security-baseline.md
     - name: Basislijn voor Key Vault-beveiliging
       href: ../../key-vault/general/security-baseline.md
     - name: Logic Apps-beveiligingsbasislijn
@@ -201,6 +203,8 @@
       href: ../../stream-analytics/security-baseline.md
     - name: Synapse Analytics-beveiligingsbasislijn
       href: ../../synapse-analytics/security-baseline.md
+    - name: Traffic Manager-beveiligingsbasislijn
+      href: ../../traffic-manager/security-baseline.md
     - name: Virtual Machine Scale Sets-beveiligingsbasislijn
       href: ../../virtual-machine-scale-sets/security-baseline.md
     - name: Virtual Machines Linux-beveiligingsbasislijn

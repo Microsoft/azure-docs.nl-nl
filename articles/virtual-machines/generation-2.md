@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: jushiman
-ms.openlocfilehash: 0aedcc3be4cb319dc24990507d85756bd77777e4
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 56a360f461c89d7c60e973bf2d6258d63113ab47
+ms.sourcegitcommit: 6b16e7cc62b29968ad9f3a58f1ea5f0baa568f02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94963824"
+ms.lasthandoff: 11/28/2020
+ms.locfileid: "96303777"
 ---
 # <a name="support-for-generation-2-vms-on-azure"></a>Ondersteuning voor Generatie 2-VM’s in Azure
 
@@ -49,6 +49,8 @@ Virtuele machines van de eerste generatie worden ondersteund door alle VM-groott
 * [NCv3-serie](ncv3-series.md)
 * [ND-serie](nd-series.md)
 * [NVv3-serie](nvv3-series.md)
+* [NVv4-serie](nvv4-series.md)
+* [NCasT4_v3-series](nct4-v3-series.md)
 
 <sup>1</sup> Mv2-serie biedt geen ondersteuning voor generatie 1 VM-installatie kopieën en biedt alleen ondersteuning voor een subset van installatie kopieën van de 2e generatie. Raadpleeg de [documentatie van de Mv2-serie](mv2-series.md) voor meer informatie.
 

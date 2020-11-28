@@ -8,17 +8,17 @@ ms.author: brjohnst
 tags: complex data types; compound data types; aggregate data types
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 10/07/2020
-ms.openlocfilehash: 1d380a41f5b20c52fefca9e68bb4ed858b3bf3a1
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.date: 11/27/2020
+ms.openlocfilehash: b0b2dd9904682121c83b22b9029097e7ee57fb11
+ms.sourcegitcommit: 6b16e7cc62b29968ad9f3a58f1ea5f0baa568f02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422049"
+ms.lasthandoff: 11/28/2020
+ms.locfileid: "96303755"
 ---
 # <a name="how-to-model-complex-data-types-in-azure-cognitive-search"></a>Complexe gegevens typen model leren in azure Cognitive Search
 
-Externe gegevens sets die worden gebruikt voor het vullen van een Azure Cognitive Search-index kunnen in veel vormen worden geleverd. Soms bevatten deze hiërarchische of geneste substructuren. Voor beelden zijn bijvoorbeeld meerdere adressen voor één klant, meerdere kleuren en grootten voor één SKU, meerdere auteurs van één boek, enzovoort. In het kader van model lering kunnen deze structuren worden aangeduid als *complexe* , *samengestelde* , *samengestelde* of *statistische* gegevens typen. De term Azure Cognitive Search gebruikt voor dit concept is een **complex type**. In azure Cognitive Search worden complexe typen gemodelleerd met behulp van **complexe velden**. Een complex veld is een veld met onderliggende elementen (subvelden) die van elk gegevens type kunnen zijn, met inbegrip van andere complexe typen. Dit werkt op een vergelijk bare manier als gestructureerde gegevens typen in een programmeer taal.
+Externe gegevens sets die worden gebruikt voor het vullen van een Azure Cognitive Search-index kunnen in veel vormen worden geleverd. Soms bevatten deze hiërarchische of geneste substructuren. Voor beelden zijn bijvoorbeeld meerdere adressen voor één klant, meerdere kleuren en grootten voor één SKU, meerdere auteurs van één boek, enzovoort. In het kader van model lering kunnen deze structuren worden aangeduid als *complexe*, *samengestelde*, *samengestelde* of *statistische* gegevens typen. De term Azure Cognitive Search gebruikt voor dit concept is een **complex type**. In azure Cognitive Search worden complexe typen gemodelleerd met behulp van **complexe velden**. Een complex veld is een veld met onderliggende elementen (subvelden) die van elk gegevens type kunnen zijn, met inbegrip van andere complexe typen. Dit werkt op een vergelijk bare manier als gestructureerde gegevens typen in een programmeer taal.
 
 Complexe velden vertegenwoordigen ofwel één object in het document of een matrix van objecten, afhankelijk van het gegevens type. Velden van het type `Edm.ComplexType` vertegenwoordigen afzonderlijke objecten, terwijl velden van het type `Collection(Edm.ComplexType)` matrices van objecten vertegenwoordigen.
 
@@ -62,8 +62,6 @@ Het volgende JSON-document bestaat uit eenvoudige velden en complexe velden. Com
   ]
 }
 ```
-
-<een name = "indexering-complex type></a>
 
 ## <a name="indexing-complex-types"></a>Complexe typen indexeren
 

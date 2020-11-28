@@ -62,14 +62,14 @@
         - name: Onboarding naar Azure Sentinel
           href: scenario-onboard-azure-sentinel.md
         - name: Onboarding naar Azure Security Center
-          href: /security-center/quickstart-onboard-machines.md
+          href: /security-center/quickstart-onboard-machines
     - name: Problemen oplossen
       items:
         - name: Verbindingsproblemen met de agent
           href: troubleshoot-agent-onboard.md
         - name: Problemen met VM-extensies
           href: troubleshoot-vm-extensions.md
-- name: Verwijzing
+- name: Naslaginformatie
   items:
     - name: Gegevenslocatie
       href: data-residency.md

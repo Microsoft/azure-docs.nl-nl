@@ -3,37 +3,69 @@ title: Installatie kopieën van het AKS-knoop punt (Azure Kubernetes service) up
 description: Meer informatie over het bijwerken van de installatie kopieën op AKS-cluster knooppunten en-knooppunt groepen.
 ms.service: container-service
 ms.topic: conceptual
-ms.date: 11/17/2020
-ms.openlocfilehash: 211190228c1ea9c98004b55da96ad38808821d67
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.date: 11/25/2020
+ms.author: jpalma
+ms.openlocfilehash: e8214345bd1c328f0996f8aa8a2a8bb402a76e8d
+ms.sourcegitcommit: ac7029597b54419ca13238f36f48c053a4492cb6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94682380"
+ms.lasthandoff: 11/29/2020
+ms.locfileid: "96309593"
 ---
 # <a name="azure-kubernetes-service-aks-node-image-upgrade"></a>Upgrade van installatie kopie van knoop punt Azure Kubernetes service (AKS)
 
 AKS biedt ondersteuning voor het upgraden van installatie kopieën op een knoop punt zodat u up-to-date bent met de nieuwste besturings systemen en runtime-updates. AKS biedt een nieuwe installatie kopie per week met de nieuwste updates. het is dus handig om de installatie kopieën van uw knoop punt regel matig bij te werken voor de nieuwste functies, waaronder Linux-of Windows-patches. In dit artikel wordt beschreven hoe u installatie kopieën van AKS-cluster knooppunten bijwerkt en hoe u installatie kopieën van groeps knooppunten bijwerkt zonder de versie van Kubernetes bij te werken.
 
-Als u wilt weten over de nieuwste installatie kopieën van AKS, raadpleegt u de [opmerkingen](https://github.com/Azure/AKS/releases) bij de release van AKS voor meer informatie.
+Zie de [release opmerkingen voor AKS](https://github.com/Azure/AKS/releases)voor meer informatie over de nieuwste installatie kopieën van AKS.
 
 Zie [een AKS-cluster upgraden][upgrade-cluster]voor informatie over het bijwerken van de Kubernetes-versie voor uw cluster.
 
-## <a name="limitations"></a>Beperkingen
+> [!NOTE]
+> Het AKS-cluster moet virtuele-machine schaal sets gebruiken voor de knoop punten.
 
-* Het AKS-cluster moet virtuele-machine schaal sets gebruiken voor de knoop punten.
+## <a name="check-if-your-node-pool-is-on-the-latest-node-image"></a>Controleren of de knooppunt groep zich op de laatste kopie van het knoop punt bevindt
 
-## <a name="install-the-aks-cli-extension"></a>De AKS CLI-extensie installeren
-
-Voordat de volgende kern CLI-versie wordt uitgebracht, hebt u de *AKS-preview cli-* extensie nodig om de upgrade van de knooppunt installatie kopie te gebruiken. Gebruik de opdracht [AZ extension add][az-extension-add] en controleer vervolgens of er beschik bare updates zijn met behulp van de opdracht [AZ extension update][az-extension-update] :
+Met de volgende opdracht kunt u zien wat de nieuwste versie van de knooppunt installatie kopie beschikbaar is voor de knooppunt groep: 
 
 ```azurecli
-# Install the aks-preview extension
-az extension add --name aks-preview
-
-# Update the extension to make sure you have the latest version installed
-az extension update --name aks-preview
+az aks nodepool get-upgrades \
+    --nodepool-name mynodepool \
+    --cluster-name myAKSCluster \
+    --resource-group myResourceGroup
 ```
+
+In de uitvoer ziet u het `latestNodeImageVersion` als in het voor beeld hieronder:
+
+```output
+{
+  "id": "/subscriptions/XXXX-XXX-XXX-XXX-XXXXX/resourcegroups/myResourceGroup/providers/Microsoft.ContainerService/managedClusters/myAKSCluster/agentPools/nodepool1/upgradeProfiles/default",
+  "kubernetesVersion": "1.17.11",
+  "latestNodeImageVersion": "AKSUbuntu-1604-2020.10.28",
+  "name": "default",
+  "osType": "Linux",
+  "resourceGroup": "myResourceGroup",
+  "type": "Microsoft.ContainerService/managedClusters/agentPools/upgradeProfiles",
+  "upgrades": null
+}
+```
+
+`nodepool1`De meest recente knooppunt installatie kopie is dus beschikbaar `AKSUbuntu-1604-2020.10.28` . U kunt dit nu vergelijken met de huidige versie van de installatie kopie die door de knooppunt groep wordt gebruikt door de volgende handelingen uit te voeren:
+
+```azurecli
+az aks nodepool show \
+    --resource-group myResourceGroup \
+    --cluster-name myAKSCluster \
+    --name mynodepool \
+    --query nodeImageVersion
+```
+
+Een voor beeld van een uitvoer is:
+
+```output
+"AKSUbuntu-1604-2020.10.08"
+```
+
+In dit voor beeld kunt u een upgrade uitvoeren van de huidige versie van de `AKSUbuntu-1604-2020.10.08` installatie kopie naar de meest recente versie `AKSUbuntu-1604-2020.10.28` . 
 
 ## <a name="upgrade-all-nodes-in-all-node-pools"></a>Alle knoop punten in alle knooppunt groepen upgraden
 

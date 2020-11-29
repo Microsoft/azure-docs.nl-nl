@@ -12,12 +12,12 @@ ms.date: 11/16/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 4426a305d72fdd86ee58b3f4a05153593515d4b5
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 7c6ba79a82fe3d291008f3317ddce7df4adcda0a
+ms.sourcegitcommit: ac7029597b54419ca13238f36f48c053a4492cb6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94949646"
+ms.lasthandoff: 11/29/2020
+ms.locfileid: "96309644"
 ---
 # <a name="register-a-saml-application-in-azure-ad-b2c"></a>Een SAML-toepassing registreren in Azure AD B2C
 
@@ -443,7 +443,7 @@ De volgende opties voor SAML-Relying Party (RP) worden ondersteund via uw eigen 
 
 Een SAML-token is een beveiligings token dat is uitgegeven door Azure AD B2C nadat het aanmelden is geslaagd. Het bevat informatie over de gebruiker, de service provider waarvoor het token is bedoeld, de hand tekening en de geldigheids duur. De volgende tabel geeft een lijst van de claims en eigenschappen die u kunt verwachten in een SAML-token dat is uitgegeven door Azure AD B2C.
 
-|Element  |Eigenschap  |Opmerkingen  |
+|Element  |Eigenschap  |Notities  |
 |---------|---------|---------|
 |`<Response>`| `ID` | Een automatisch gegenereerde unieke id van het antwoord. | 
 |`<Response>`| `InResponseTo` | De ID van de SAML-aanvraag waarnaar dit bericht wordt gestuurd. | 
@@ -453,7 +453,7 @@ Een SAML-token is een beveiligings token dat is uitgegeven door Azure AD B2C nad
 |`<Response>` `<Assertion>` `<Subject>` `<NameID>`     |         |De principal over welke het token informatie bedient, zoals de gebruikers object-ID. Deze waarde is onveranderbaar en kan niet opnieuw worden toegewezen of opnieuw worden gebruikt. Het kan worden gebruikt om autorisatie controles veilig uit te voeren, zoals wanneer het token wordt gebruikt voor toegang tot een bron. Standaard wordt de subject claim gevuld met de object-ID van de gebruiker in de Directory.|
 |`<Response>` `<Assertion>` `<Subject>` `<NameID>`     | `Format` | Een URI-verwijzing voor de classificatie van gegevens op basis van teken reeks-id's. Deze eigenschap wordt standaard wegge laten. U kunt de Relying Party [SubjectNamingInfo](relyingparty.md#subjectnaminginfo) instellen om de indeling op te geven `NameID` , zoals `urn:oasis:names:tc:SAML:2.0:nameid-format:transient` . |
 |`<Response>` `<Assertion>` `<Subject>` `<Conditions>` |`NotBefore` |Het tijdstip waarop het token geldig wordt. De tijd waarde wordt gecodeerd in UTC. Uw toepassing moet deze claim gebruiken om de geldigheid van de levens duur van het token te controleren. Als u de instellingen voor de levens duur van uw tokens wilt wijzigen, stelt u de `TokenNotBeforeSkewInSeconds` [meta gegevens](saml-issuer-technical-profile.md#metadata) van het SAML-token probleem technisch profiel in. |
-|`<Response>` `<Assertion>` `<Subject>` `<Conditions>` | `NotOnOrAfter` | Het tijdstip waarop het token ongeldig wordt. Uw toepassing moet deze claim gebruiken om de geldigheid van de levens duur van het token te controleren. De waarde is 15 minuten na de `NotBefore` en kan niet worden gewijzigd.|
+|`<Response>` `<Assertion>` `<Subject>` `<Conditions>` | `NotOnOrAfter` | Het tijdstip waarop het token ongeldig wordt. Uw toepassing moet deze claim gebruiken om de geldigheid van de levens duur van het token te controleren. De standaard waarde is 5 minuten na de `NotBefore` en kan worden bijgewerkt door de `TokenLifeTimeInSeconds` [meta gegevens](saml-issuer-technical-profile.md#metadata) van het SAML-token probleem met het technische profiel toe te voegen.|
 |`<Response>` `<Assertion>` `<Conditions>` `<AudienceRestriction>` `<Audience>` | |Een URI-verwijzing waarmee een beoogde doel groep wordt geïdentificeerd. Hiermee wordt de beoogde ontvanger van het token geïdentificeerd. De waarde is gelijk aan de SAML-aanvraag `AssertionConsumerServiceURL` .|
 |`<Response>``<Assertion>` `<AttributeStatement>` verzameling van`<Attribute>` | | Beweringen verzameling (claims), zoals geconfigureerd in de [Relying Party technische profiel](relyingparty.md#technicalprofile) uitvoer claims. U kunt de naam van de bewering configureren door de `PartnerClaimType` van de uitvoer claim in te stellen. |
 

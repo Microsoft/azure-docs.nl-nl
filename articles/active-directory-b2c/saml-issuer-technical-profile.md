@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 10/12/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 73c381624b69acb6fe7a6296a3153160812818bf
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: b4fb7c6fb3bbf02e5f1aba25c868e4a44e8507dd
+ms.sourcegitcommit: ac7029597b54419ca13238f36f48c053a4492cb6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94886410"
+ms.lasthandoff: 11/29/2020
+ms.locfileid: "96309627"
 ---
 # <a name="define-a-technical-profile-for-a-saml-token-issuer-in-an-azure-active-directory-b2c-custom-policy"></a>Een technisch profiel voor een SAML-token Uitgever definiëren in een Azure Active Directory B2C aangepast beleid
 
@@ -60,6 +60,8 @@ De **InputClaims**-, **OutputClaims**-en **PersistClaims** -elementen zijn leeg 
 | IssuerUri | Nee | De naam van de verlener die wordt weer gegeven in het SAML-antwoord. De waarde moet overeenkomen met de naam die is geconfigureerd in de Relying Party-toepassing. |
 | XmlSignatureAlgorithm | Nee | De methode die Azure AD B2C gebruikt om de SAML-bevestigingen te ondertekenen. Mogelijke waarden: `Sha256` , `Sha384` , `Sha512` of `Sha1` . Zorg ervoor dat u het handtekening algoritme aan beide zijden met dezelfde waarde configureert. Gebruik alleen de algoritme die door uw certificaat wordt ondersteund. Zie [SAML-meta gegevens voor relying](relyingparty.md#metadata) Party voor informatie over het configureren van het SAML-antwoord|
 |TokenNotBeforeSkewInSeconds| Nee| Geeft het verschil aan, als een geheel getal, voor het tijds tempel dat het begin van de geldigheids periode aangeeft. Hoe hoger dit getal is, hoe meer tijd de geldigheids periode begint ten opzichte van de tijd dat de claims worden uitgegeven voor de Relying Party. Als de TokenNotBeforeSkewInSeconds bijvoorbeeld is ingesteld op 60 seconden en het token is uitgegeven om 13:05:10 UTC, is het token geldig van 13:04:10 UTC. De standaardwaarde is 0. De maximum waarde is 3600 (één uur). |
+|TokenLifeTimeInSeconds| Nee| Hiermee geeft u de levens duur van de SAML-bevestiging. Deze waarde is in seconden van de bovenstaande NotBefore waarde refernced. De standaard waarde is 300 seconden (5 minuten). |
+
 
 ## <a name="cryptographic-keys"></a>Cryptografische sleutels
 

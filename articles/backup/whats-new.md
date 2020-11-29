@@ -3,12 +3,12 @@ title: Wat is er nieuw in Azure Backup
 description: Meer informatie over nieuwe functies in Azure Backup.
 ms.topic: conceptual
 ms.date: 11/11/2020
-ms.openlocfilehash: e48a7df1e42591843c30b77026a4d8656773a57d
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: ba29ddea5d5f096640f2bfc012c44ab06bb3e131
+ms.sourcegitcommit: ac7029597b54419ca13238f36f48c053a4492cb6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95511507"
+ms.lasthandoff: 11/29/2020
+ms.locfileid: "96309661"
 ---
 # <a name="whats-new-in-azure-backup"></a>Wat is er nieuw in Azure Backup
 
@@ -19,6 +19,7 @@ Meer informatie over de nieuwe releases vindt u in blad wijzers op deze pagina o
 ## <a name="updates-summary"></a>Samen vatting van updates
 
 - November 2020
+  - [Azure Resource Manager sjabloon voor het maken van een back-up van Azure file share (AFS)](#azure-resource-manager-template-for-afs-backup)
   - [Incrementele back-ups voor SAP HANA data bases op virtuele Azure-machines](#incremental-backups-for-sap-hana-databases)
 - September 2020
   - [Back-upcentrum](#backup-center)
@@ -30,6 +31,12 @@ Meer informatie over de nieuwe releases vindt u in blad wijzers op deze pagina o
   - [Back-SAP HANA in RHEL Azure Virtual Machines](#backup-sap-hana-in-rhel-azure-virtual-machines)
   - [Zone redundante opslag (ZRS) voor back-upgegevens](#zone-redundant-storage-zrs-for-backup-data)
   - [Zacht verwijderen voor SQL Server en SAP HANA workloads in azure-Vm's](#soft-delete-for-sql-server-and-sap-hana-workloads)
+
+## <a name="azure-resource-manager-template-for-afs-backup"></a>Azure Resource Manager sjabloon voor AFS-back-up
+
+Azure Backup ondersteunt nu het configureren van back-ups voor bestaande Azure-bestands shares met behulp van een Azure Resource Manager ARM-sjabloon. Met de sjabloon wordt de beveiliging voor een bestaande Azure-bestands share geconfigureerd door de juiste details op te geven voor de Recovery Services kluis en het back-upbeleid. Er wordt optioneel een nieuwe Recovery Services kluis en een nieuw back-upbeleid gemaakt en het opslag account dat de bestands share bevat, wordt geregistreerd bij de Recovery Services kluis.
+
+Zie [Azure Resource Manager sjablonen voor Azure backup](backup-rm-template-samples.md)voor meer informatie.
 
 ## <a name="incremental-backups-for-sap-hana-databases"></a>Incrementele back-ups voor SAP HANA-data bases
 

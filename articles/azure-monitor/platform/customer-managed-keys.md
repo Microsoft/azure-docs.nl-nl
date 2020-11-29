@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 11/18/2020
-ms.openlocfilehash: ac785b3ad534e80d4dd240d1a29ba5f6aa75e10a
-ms.sourcegitcommit: 236014c3274b31f03e5fcee5de510f9cacdc27a0
+ms.openlocfilehash: 6264ea50f128764a5213a7a1fd9b8c47ddae8961
+ms.sourcegitcommit: ac7029597b54419ca13238f36f48c053a4492cb6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96299036"
+ms.lasthandoff: 11/29/2020
+ms.locfileid: "96309678"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Door de klant beheerde sleutel van Azure Monitor 
 
@@ -76,7 +76,23 @@ Customer-Managed-sleutel configuratie wordt niet ondersteund in Azure Portal en 
 
 ### <a name="asynchronous-operations-and-status-check"></a>Asynchrone bewerkingen en status controle
 
-Sommige van de configuratie stappen worden asynchroon uitgevoerd, omdat ze niet snel kunnen worden voltooid. Bij gebruik van REST retourneert de reactie in eerste instantie een HTTP-status code 200 (OK) en koptekst met de eigenschap *Azure-AsyncOperation* wanneer deze wordt geaccepteerd:
+Sommige van de configuratie stappen worden asynchroon uitgevoerd, omdat ze niet snel kunnen worden voltooid. De `status` in-antwoord bevat kan een van de volgende zijn: InProgress, bijwerken, verwijderen, geslaagd of mislukt, inclusief de fout code.
+
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+
+N.v.t.
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+N.v.t.
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+N.v.t.
+
+# <a name="rest"></a>[REST](#tab/rest)
+
+Bij gebruik van REST retourneert de reactie in eerste instantie een HTTP-status code 200 (OK) en koptekst met de eigenschap *Azure-AsyncOperation* wanneer deze wordt geaccepteerd:
 ```json
 "Azure-AsyncOperation": "https://management.azure.com/subscriptions/subscription-id/providers/Microsoft.OperationalInsights/locations/region-name/operationStatuses/operation-id?api-version=2020-08-01"
 ```
@@ -87,7 +103,7 @@ GET https://management.azure.com/subscriptions/subscription-id/providers/microso
 Authorization: Bearer <token>
 ```
 
-De `status` in-antwoord bevat kan een van de volgende zijn: InProgress, bijwerken, verwijderen, geslaagd of mislukt, inclusief de fout code.
+---
 
 ### <a name="allowing-subscription"></a>Abonnement toestaan
 
@@ -137,16 +153,25 @@ KeyVaultProperties in cluster bijwerken met sleutel-id-Details.
 
 De bewerking is asynchroon en kan enige tijd duren.
 
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+
+N.v.t.
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
 ```azurecli
 az monitor log-analytics cluster update --name "cluster-name" --resource-group "resource-group-name" --key-name "key-name" --key-vault-uri "key-uri" --key-version "key-version"
 ```
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 ```powershell
 Update-AzOperationalInsightsCluster -ResourceGroupName "resource-group-name" -ClusterName "cluster-name" -KeyVaultUri "key-uri" -KeyName "key-name" -KeyVersion "key-version"
 ```
 
+# <a name="rest"></a>[REST](#tab/rest)
+
 ```rst
-PATCH https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/cluster-name"?api-version=2020-08-01
+PATCH https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/cluster-name?api-version=2020-08-01
 Authorization: Bearer <token> 
 Content-type: application/json
  
@@ -200,6 +225,8 @@ Een antwoord op de GET-aanvraag moet er als volgt uitzien wanneer de sleutel-id-
 }
 ```
 
+---
+
 ### <a name="link-workspace-to-cluster"></a>Werk ruimte koppelen aan cluster
 
 U moet schrijf machtigingen hebben voor uw werk ruimte en cluster om deze bewerking uit te voeren, waaronder de volgende acties:
@@ -250,15 +277,25 @@ Wanneer u uw eigen opslag (BYOS) meebrengt en deze aan uw werk ruimte koppelt, w
 
 Een opslag account voor een *query* aan uw werk ruimte koppelen: *opgeslagen Zoek opdrachten* query's worden opgeslagen in uw opslag account. 
 
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+
+N.v.t.
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
 ```azurecli
 $storageAccountId = '/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.Storage/storageAccounts/<storage name>'
 az monitor log-analytics workspace linked-storage create --type Query --resource-group "resource-group-name" --workspace-name "workspace-name" --storage-accounts $storageAccountId
 ```
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
 ```powershell
 $storageAccount.Id = Get-AzStorageAccount -ResourceGroupName "resource-group-name" -Name "storage-account-name"
 New-AzOperationalInsightsLinkedStorageAccount -ResourceGroupName "resource-group-name" -WorkspaceName "workspace-name" -DataSourceType Query -StorageAccountIds $storageAccount.Id
 ```
+
+# <a name="rest"></a>[REST](#tab/rest)
 
 ```rst
 PUT https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/workspaces/<workspace-name>/linkedStorageAccounts/Query?api-version=2020-08-01
@@ -276,21 +313,33 @@ Content-type: application/json
 }
 ```
 
+---
+
 Na de configuratie wordt een nieuwe *opgeslagen zoek opdracht* opgeslagen in uw opslag.
 
 **BYOS configureren voor query's met betrekking tot logboek waarschuwingen**
 
 Een opslag account voor *waarschuwingen* aan uw werk ruimte koppelen: query's voor *logboek waarschuwingen* worden opgeslagen in uw opslag account. 
 
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+
+N.v.t.
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
 ```azurecli
 $storageAccountId = '/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.Storage/storageAccounts/<storage name>'
 az monitor log-analytics workspace linked-storage create --type ALerts --resource-group "resource-group-name" --workspace-name "workspace-name" --storage-accounts $storageAccountId
 ```
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
 ```powershell
 $storageAccount.Id = Get-AzStorageAccount -ResourceGroupName "resource-group-name" -Name "storage-account-name"
 New-AzOperationalInsightsLinkedStorageAccount -ResourceGroupName "resource-group-name" -WorkspaceName "workspace-name" -DataSourceType Alerts -StorageAccountIds $storageAccount.Id
 ```
+
+# <a name="rest"></a>[REST](#tab/rest)
 
 ```rst
 PUT https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/workspaces/<workspace-name>/linkedStorageAccounts/Alerts?api-version=2020-08-01
@@ -308,9 +357,12 @@ Content-type: application/json
 }
 ```
 
+---
+
 Na de configuratie wordt een nieuwe waarschuwings query opgeslagen in uw opslag.
 
 ## <a name="customer-lockbox-preview"></a>Klanten-lockbox (preview-versie)
+
 Met lockbox kunt u de micro soft Engineer-aanvraag voor toegang tot uw gegevens goed keuren of afwijzen tijdens een ondersteunings aanvraag.
 
 In Azure Monitor hebt u dit controle over gegevens in werk ruimten die zijn gekoppeld aan uw Log Analytics toegewezen cluster. Het besturings element lockbox is van toepassing op gegevens die zijn opgeslagen in een Log Analytics toegewezen cluster, waar het wordt geïsoleerd in de opslag accounts van het cluster onder uw abonnement op uw lockbox.  
@@ -321,13 +373,23 @@ Meer informatie over [klanten-lockbox voor Microsoft Azure](../../security/funda
 
 - **Alle clusters in een resource groep ophalen**
   
+  # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+
+  N.v.t.
+
+  # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
   ```azurecli
   az monitor log-analytics cluster list --resource-group "resource-group-name"
   ```
 
+  # <a name="powershell"></a>[PowerShell](#tab/powershell)
+
   ```powershell
   Get-AzOperationalInsightsCluster -ResourceGroupName "resource-group-name"
   ```
+
+  # <a name="rest"></a>[REST](#tab/rest)
 
   ```rst
   GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters?api-version=2020-08-01
@@ -369,15 +431,27 @@ Meer informatie over [klanten-lockbox voor Microsoft Azure](../../security/funda
   }
   ```
 
+  ---
+
 - **Alle clusters in een abonnement ophalen**
+
+  # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+
+  N.v.t.
+
+  # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
   ```azurecli
   az monitor log-analytics cluster list
   ```
 
+  # <a name="powershell"></a>[PowerShell](#tab/powershell)
+
   ```powershell
   Get-AzOperationalInsightsCluster
   ```
+
+  # <a name="rest"></a>[REST](#tab/rest)
 
   ```rst
   GET https://management.azure.com/subscriptions/<subscription-id>/providers/Microsoft.OperationalInsights/clusters?api-version=2020-08-01
@@ -388,17 +462,29 @@ Meer informatie over [klanten-lockbox voor Microsoft Azure](../../security/funda
     
   Hetzelfde antwoord als voor een cluster in een resource groep, maar in het abonnements bereik.
 
+  ---
+
 - ***Capaciteits reservering* in cluster bijwerken**
 
   Wanneer het gegevens volume naar uw gekoppelde werk ruimten in de loop van de tijd verandert en u het capaciteits reserverings niveau op de juiste wijze wilt bijwerken. Volg de [update cluster](#update-cluster-with-key-identifier-details) en geef de nieuwe capaciteits waarde op. Dit kan binnen het bereik van 1000 tot 3000 GB per dag zijn en in stappen van 100. Voor een niveau hoger dan 3000 GB per dag, bereikt u uw micro soft-contact persoon om dit in te scha kelen. Houd er rekening mee dat u geen volledige REST-aanvraag tekst hoeft op te geven, maar moet de SKU bevatten:
+
+  # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+
+  N.v.t.
+
+  # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
   ```azurecli
   az monitor log-analytics cluster update --name "cluster-name" --resource-group "resource-group-name" --sku-capacity daily-ingestion-gigabyte
   ```
 
+  # <a name="powershell"></a>[PowerShell](#tab/powershell)
+
   ```powershell
   Update-AzOperationalInsightsCluster -ResourceGroupName "resource-group-name" -ClusterName "cluster-name" -SkuCapacity daily-ingestion-gigabyte
   ```
+
+  # <a name="rest"></a>[REST](#tab/rest)
 
   ```rst
   PATCH https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-08-01
@@ -413,6 +499,8 @@ Meer informatie over [klanten-lockbox voor Microsoft Azure](../../security/funda
   }
   ```
 
+  ---
+
 - ***BillingType* in cluster bijwerken**
 
   De eigenschap *billingType* bepaalt de facturerings toewijzing voor het cluster en de bijbehorende gegevens:
@@ -420,6 +508,20 @@ Meer informatie over [klanten-lockbox voor Microsoft Azure](../../security/funda
   - *werk ruimten* : de facturering wordt toegeschreven aan de abonnementen die proportioneel als host fungeren voor uw werk ruimten
   
   Volg de [update cluster](#update-cluster-with-key-identifier-details) en geef de nieuwe waarde voor billingType op. Houd er rekening mee dat u de volledige REST-aanvraag tekst niet hoeft op te geven en moet de *billingType* bevatten:
+
+  # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+
+  N.v.t.
+
+  # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+  N.v.t.
+
+  # <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+  N.v.t.
+
+  # <a name="rest"></a>[REST](#tab/rest)
 
   ```rst
   PATCH https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-08-01
@@ -433,36 +535,67 @@ Meer informatie over [klanten-lockbox voor Microsoft Azure](../../security/funda
   }
   ``` 
 
+  ---
+
 - **Werkruimte ontkoppelen**
 
   U hebt schrijf machtigingen voor de werk ruimte en het cluster nodig om deze bewerking uit te voeren. U kunt een werk ruimte op elk gewenst moment ontkoppelen van het cluster. Nieuwe opgenomen gegevens na de ontkoppelings bewerking worden opgeslagen in Log Analytics opslag en versleuteld met de micro soft-sleutel. U kunt een query uitvoeren op gegevens die zijn opgenomen in uw werk ruimte vóór en na de ontkoppeling, zolang het cluster is ingericht en geconfigureerd met een geldige Key Vault sleutel.
 
   Deze bewerking is asynchroon en kan enige tijd worden voltooid.
 
+  # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+
+  N.v.t.
+
+  # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
   ```azurecli
   az monitor log-analytics workspace linked-service delete --resource-group "resource-group-name" --name "cluster-name" --workspace-name "workspace-name"
   ```
 
+  # <a name="powershell"></a>[PowerShell](#tab/powershell)
+
   ```powershell
   Remove-AzOperationalInsightsLinkedService -ResourceGroupName "resource-group-name" -Name "workspace-name" -LinkedServiceName cluster
   ```
+
+  # <a name="rest"></a>[REST](#tab/rest)
 
   ```rest
   DELETE https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>/linkedservices/cluster?api-version=2020-08-01
   Authorization: Bearer <token>
   ```
 
+  ---
+
   - **Status van werkruimte koppeling controleren**
   
   Een Get-bewerking uitvoeren op de werk ruimte en bekijken of de eigenschap *clusterResourceId* aanwezig is in de reactie onder *functies*. Een gekoppelde werk ruimte heeft de eigenschap *clusterResourceId* .
+
+  # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+
+  N.v.t.
+
+  # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
   ```azurecli
   az monitor log-analytics cluster show --resource-group "resource-group-name" --name "cluster-name"
   ```
 
+  # <a name="powershell"></a>[PowerShell](#tab/powershell)
+
   ```powershell
   Get-AzOperationalInsightsWorkspace -ResourceGroupName "resource-group-name" -Name "workspace-name"
   ```
+
+  # <a name="rest"></a>[REST](#tab/rest)
+
+   ```rest
+  GET https://management.azure.com/subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/microsoft.operationalinsights/workspaces/<workspace-name>?api-version=2020-08-01
+  Authorization: Bearer <token>
+  ```
+
+  ---
 
 - **Uw cluster verwijderen**
 
@@ -470,18 +603,30 @@ Meer informatie over [klanten-lockbox voor Microsoft Azure](../../security/funda
   
   De bewerking ontkoppelen is asynchroon en kan Maxi maal 90 minuten duren.
 
+  # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+
+  N.v.t.
+
+  # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
   ```azurecli
   az monitor log-analytics cluster delete --resource-group "resource-group-name" --name "cluster-name"
   ```
- 
+
+  # <a name="powershell"></a>[PowerShell](#tab/powershell)
+
   ```powershell
   Remove-AzOperationalInsightsCluster -ResourceGroupName "resource-group-name" -ClusterName "cluster-name"
   ```
+
+  # <a name="rest"></a>[REST](#tab/rest)
 
   ```rst
   DELETE https://management.azure.com/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.OperationalInsights/clusters/<cluster-name>?api-version=2020-08-01
   Authorization: Bearer <token>
   ```
+
+  ---
   
 - **Uw cluster en uw gegevens herstellen** 
   

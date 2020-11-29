@@ -4,12 +4,12 @@ description: Azure Functions ondersteunt meerdere versies van de runtime. Meer i
 ms.topic: conceptual
 ms.custom: devx-track-dotnet
 ms.date: 12/09/2019
-ms.openlocfilehash: c67708b5c23667a7b0a1603b756d564b35fa0c3f
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 3997c5e79192f4386ee5280350620a748dd1489b
+ms.sourcegitcommit: ac7029597b54419ca13238f36f48c053a4492cb6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94533732"
+ms.lasthandoff: 11/29/2020
+ms.locfileid: "96309700"
 ---
 # <a name="azure-functions-runtime-versions-overview"></a>Overzicht van Azure Functions runtime versies
 
@@ -27,8 +27,6 @@ Vanaf versie 2. x gebruikt de runtime een taal uitbreid model en alle functies i
 De volgende tabel geeft aan welke programmeer talen momenteel worden ondersteund in elke runtime versie.
 
 [!INCLUDE [functions-supported-languages](../../includes/functions-supported-languages.md)]
-
-Zie voor meer informatie [Ondersteunde talen](supported-languages.md).
 
 ## <a name="run-on-a-specific-version"></a><a name="creating-1x-apps"></a>Uitvoeren op een specifieke versie
 

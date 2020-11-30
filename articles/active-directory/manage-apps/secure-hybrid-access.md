@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 9/10/2020
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5a936552bd7d3b97e2c027f7b0d23abd7c21b6e2
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 521439da044fb4fc3c2f578f28658215266138d9
+ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94652192"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96317092"
 ---
 # <a name="secure-hybrid-access-secure-legacy-apps-with-azure-active-directory"></a>Beveiligde hybride toegang: beveiligde verouderde apps met Azure Active Directory
 
@@ -48,7 +48,7 @@ De volgende netwerk leveranciers bieden vooraf ontwikkelde oplossingen en gedeta
 
 - [Citrix Application Delivery controller (ADC)](../saas-apps/citrix-netscaler-tutorial.md)
 
-- [F5 BIG-IP APM](../saas-apps/headerf5-tutorial.md)
+- [F5 BIG-IP APM](f5-aad-integration.md)
 
 - [Kemp](../saas-apps/kemp-tutorial.md)
 
@@ -64,7 +64,7 @@ De volgende VPN-en SDP-leveranciers bieden vooraf ontwikkelde oplossingen en ged
 
 • [Fortinet](../saas-apps/fortigate-ssl-vpn-tutorial.md)
 
-• [F5 BIG-IP apm](../saas-apps/headerf5-tutorial.md)
+• [F5 BIG-IP apm](f5-aad-password-less-vpn.md)
 
 • [Palo Alto-netwerken wereld wijd beveiligen](../saas-apps/paloaltoadmin-tutorial.md)
 

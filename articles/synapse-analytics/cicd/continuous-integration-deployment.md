@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: liud
 ms.reviewer: pimorano
-ms.openlocfilehash: 7b77a47acba6180df4a067887b79d8cdc0f56df6
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 5dbd49312b58dc656e2239e8a0a4acea614023de
+ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185076"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96317129"
 ---
 # <a name="continuous-integration-and-delivery-for-azure-synapse-workspace"></a>Continue integratie en levering voor Azure Synapse-werk ruimte
 
@@ -91,15 +91,25 @@ Een Azure Resource Manager implementatie taak toevoegen om resources, waaronder 
 
 ## <a name="set-up-a-stage-task-for-artifacts-deployment"></a>Een fase taak voor de implementatie van artefacten instellen 
 
-Gebruik [Synapse-werk ruimten om & release](https://marketplace.visualstudio.com/items?itemName=PraveenMathamsetty.synapsecicd-deploy) taak te maken om andere items in Synapse-werk ruimte te implementeren, zoals DATASET, SQL script, notebook, Spark-taak definitie, gegevens stroom, pijp lijn, gekoppelde service, referenties en IR (Integration runtime).  
+Gebruik de [implementatie uitbreiding Synapse werk ruimte](https://marketplace.visualstudio.com/items?itemName=AzureSynapseWorkspace.synapsecicd-deploy) om andere items in Synapse-werk ruimte te implementeren, zoals DATASET, SQL script, notebook, Spark-taak definitie, gegevens stroom, pijp lijn, gekoppelde service, referenties en IR (Integration runtime).  
+
+1. Zoek en down load de uitbrei ding van **Azure DevOps Marketplace**(https://marketplace.visualstudio.com/azuredevops) 
+
+     ![Extensie ophalen](media/get-extension-from-market.png)
+
+1. Selecteer een organisatie om de extensie te installeren. 
+
+     ![De extensie installeren](media/install-extension.png)
 
 1. Zorg ervoor dat de Service Principle van de Azure DevOps-pijp lijn de machtiging van het abonnement heeft gekregen en ook is toegewezen als werkruimte beheerder voor de doel werkruimte. 
 
-1. Een nieuwe taak maken. Zoek naar **Synapse-werk ruimten bouwen & versie** en selecteer vervolgens **toevoegen**.
+1. Een nieuwe taak maken. Zoek naar de implementatie van de **Synapse-werk ruimte** en selecteer vervolgens **toevoegen**.
+
+     ![Extensie toevoegen](media/add-extension-task.png)
 
 1.  Geef in de taak gerelateerde Git-opslagplaats gegevens van **workspace_publish** op en selecteer resource groep, regio, naam en Cloud omgeving voor de doel werkruimte. Geef para meters en waarden op als u dat nodig hebt.
 
-    ![implementatie van Synapse-werk ruimte](media/create-release-artifacts-deployment.png)
+    ![Implementatie van Synapse-werk ruimte](media/create-release-artifacts-deployment.png)
 
 > [!IMPORTANT]
 > In de CI/CD-scenario's moet het type Integration runtime (IR) in verschillende omgevingen hetzelfde zijn. Als u bijvoorbeeld een zelf-hostende IR in de ontwikkel omgeving hebt, moet dezelfde IR ook van het type zelf-hostend zijn in andere omgevingen, zoals testen en productie. En als u integratie-runtime in meerdere fasen deelt, moet u de Integration Runtimes als gekoppelde zelf-hostende in alle omgevingen configureren, zoals ontwikkeling, testen en productie.

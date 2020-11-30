@@ -11,12 +11,12 @@ author: knicholasa
 ms.author: nichola
 manager: martinco
 ms.date: 11/23/2020
-ms.openlocfilehash: 69967035f98d7ec2fcedff173dcf481455014ac2
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 9189d4d8cda5f9fcfce7e6ac2097414aa29f0a68
+ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919657"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96317466"
 ---
 # <a name="increase-the-resilience-of-authentication-and-authorization-in-client-applications-you-develop"></a>Verhoog de flexibiliteit van verificatie en autorisatie in client toepassingen die u ontwikkelt
 
@@ -157,4 +157,4 @@ Als u resource-Api's ontwikkelt, raden we u aan deel te nemen aan de [gedeelde s
 - [Api's voor continue toegang voor evaluatie gebruiken in uw toepassingen](../develop/app-resilience-continuous-access-evaluation.md)
 - [Flexibiliteit bouwen in daemon-toepassingen](resilience-daemon-app.md)
 - [Maak flexibiliteit in uw infra structuur voor identiteits-en toegangs beheer](resilience-in-infrastructure.md)
-- [Ontwikkel flexibiliteit in uw klant identiteits-en toegangs beheer met Azure Active Directory B2C](resilience-b2c.md)
+- [Maak flexibiliteit in uw CIAM-systemen](resilience-b2c.md)

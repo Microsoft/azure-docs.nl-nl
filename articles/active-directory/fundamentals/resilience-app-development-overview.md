@@ -11,12 +11,12 @@ author: knicholasa
 ms.author: nichola
 manager: martinco
 ms.date: 11/23/2020
-ms.openlocfilehash: c2c2f9d0ad7bfa50f543b57326b9fc8dab0069c6
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: d06e851390537bf94b59e656f84bf58fe7216410
+ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96029299"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96317349"
 ---
 # <a name="increase-resilience-of-authentication-and-authorization-applications-you-develop"></a>Verbeter de flexibiliteit van verificatie-en autorisatie toepassingen die u ontwikkelt
 
@@ -29,4 +29,4 @@ Deze artikelen bieden richt lijnen voor het verg Roten van tolerantie in apps me
 - [Ontwikkel flexibiliteit in toepassingen die gebruikers aanmelden](resilience-client-app.md)
 - [Ontwikkel flexibiliteit in toepassingen zonder gebruikers](resilience-daemon-app.md)
 - [Maak flexibiliteit in uw infra structuur voor identiteits-en toegangs beheer](resilience-in-infrastructure.md)
-- [Ontwikkel flexibiliteit in uw klant identiteits-en toegangs beheer met Azure Active Directory B2C](resilience-b2c.md)
+- [Maak flexibiliteit in uw CIAM-systemen](resilience-b2c.md)

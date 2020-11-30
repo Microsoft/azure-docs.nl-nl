@@ -6,12 +6,12 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 5/31/2019
 ms.subservice: alerts
-ms.openlocfilehash: 89cec12804f6fd2b8a3885248c42646d6c6dbb13
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 9f8004b41e8048dfc97fb61bb67a634963c0c575
+ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186555"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96317551"
 ---
 # <a name="log-alerts-in-azure-monitor"></a>Waarschuwingen registreren in Azure Monitor
 
@@ -90,7 +90,7 @@ requests
 | where resultCode == "500"
 ```
 
-- **Tijds periode:** 15 minuten
+- **Nauw keurigheid van de tijds periode/aggregatie:** 15 minuten
 - **Waarschuwings frequentie:** 15 minuten
 - **Drempel waarde:** Groter dan 0
 
@@ -145,7 +145,7 @@ U wilt bijvoorbeeld fouten bewaken voor meerdere virtuele machines waarop uw web
 - **Resource-ID-kolom:** _ResourceId (splitsen op resource-id-kolom in waarschuwings regels is momenteel alleen beschikbaar voor abonnementen en resource groepen)
 - **Afmetingen/geaggregeerd op:**
   - Computer = VM1, VM2 (waarden filteren in waarschuwings regel definitie is momenteel niet beschikbaar voor werk ruimten en Application Insights. Filter in de query tekst.)
-- **Tijds periode:** 15 minuten
+- **Nauw keurigheid van de tijds periode/aggregatie:** 15 minuten
 - **Waarschuwings frequentie:** 15 minuten
 - **Drempel waarde:** Groter dan 0
 

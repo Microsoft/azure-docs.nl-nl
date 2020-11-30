@@ -6,12 +6,12 @@ ms.author: nikiest
 ms.topic: conceptual
 ms.date: 10/05/2020
 ms.subservice: ''
-ms.openlocfilehash: 3f9779d2676d4d2b67efff37118d109664b84bd5
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 8633aba2f7cda5dec4a48e9f7132283f8235f746
+ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96184600"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96317517"
 ---
 # <a name="use-azure-private-link-to-securely-connect-networks-to-azure-monitor"></a>Azure Private Link gebruiken om netwerken veilig te verbinden met Azure Monitor
 
@@ -79,10 +79,10 @@ Er zijn een aantal beperkingen waarmee u rekening moet houden bij het plannen va
 * Een AMPLS-object kan Maxi maal 10 persoonlijke eind punten verbinden.
 
 In de onderstaande topologie:
-* Elk VNet maakt verbinding met één AMPLS-object, waardoor er geen verbinding kan worden gemaakt met andere AMPLSs.
-* AMPLS B maakt verbinding met 2 VNets: met 2/10 van de mogelijke particuliere endpoint-verbindingen.
-* AMPLS A maakt verbinding met 2 werk ruimten en één toepassings inzicht onderdeel: met 3/50 van de mogelijke Azure Monitor resources.
-* Werk ruimte 2 maakt verbinding met AMPLS A en AMPLS B: met 2/5 van de mogelijke AMPLS-verbindingen.
+* Elk VNet is verbonden met slechts **één** AMPLS-object.
+* AMPLS B is verbonden met persoonlijke eind punten van twee VNets (VNet2 en VNet3), met 2/10 (20%) van de mogelijke VPN-verbindingen.
+* AMPLS A maakt verbinding met twee werk ruimten en een toepassings inzicht onderdeel met 3/50 (6%) van de mogelijke Azure Monitor bronnen verbindingen.
+* Workspace2 maakt verbinding met AMPLS A en AMPLS B met 2/5 (40%) van de mogelijke AMPLS-verbindingen.
 
 ![Diagram van AMPLS-limieten](./media/private-link-security/ampls-limits.png)
 
@@ -103,9 +103,9 @@ Maak eerst een Azure Monitor-bron voor een persoonlijk koppelings bereik.
 
 6. Laat de validatie slagen en klik vervolgens op **maken**.
 
-## <a name="connect-azure-monitor-resources"></a>Azure Monitor-resources verbinden
+### <a name="connect-azure-monitor-resources"></a>Azure Monitor-resources verbinden
 
-U kunt uw AMPLS eerst aansluiten op privé-eind punten en vervolgens Azure Monitor-resources of andersom, maar het verbindings proces verloopt sneller als u begint met uw Azure Monitor-resources. Hier wordt uitgelegd hoe u Azure Monitor Log Analytics werk ruimten en Application Insights onderdelen verbindt met een AMPLS
+Verbind Azure Monitor resources (Log Analytics werk ruimten en Application Insights onderdelen) met uw AMPLS.
 
 1. Klik in het Azure Monitor bereik voor persoonlijke koppelingen op **Azure monitor resources** in het linkermenu. Klik op de knop **Toevoegen**.
 2. Voeg de werk ruimte of het onderdeel toe. Als u op de knop **toevoegen** klikt, wordt er een dialoog venster geopend waarin u Azure monitor resources kunt selecteren. U kunt door uw abonnementen en resource groepen bladeren of u kunt hun naam typen om deze te filteren. Selecteer de werk ruimte of het onderdeel en klik op **Toep assen** om ze toe te voegen aan uw bereik.
@@ -158,16 +158,19 @@ U hebt nu een nieuw persoonlijk eind punt gemaakt dat is verbonden met dit Azure
 
 ## <a name="configure-log-analytics"></a>Log Analytics configureren
 
-Ga naar Azure Portal. In uw Log Analytics werkruimte resource bevindt zich aan de linkerkant een menu opdracht **netwerk isolatie** . Vanuit dit menu kunt u twee verschillende statussen beheren. 
+Ga naar Azure Portal. In uw Log Analytics werkruimte resource bevindt zich aan de linkerkant een menu opdracht **netwerk isolatie** . Vanuit dit menu kunt u twee verschillende statussen beheren.
 
 ![LA-netwerk isolatie](./media/private-link-security/ampls-log-analytics-lan-network-isolation-6.png)
 
-Eerst kunt u deze Log Analytics-resource verbinden met een Azure Monitor persoonlijke koppelings bereik waartoe u toegang hebt. Klik op **toevoegen** en selecteer het Azure monitor bereik voor persoonlijke koppelingen.  Klik op **Toep assen** om de verbinding te maken. Alle verbonden bereiken worden in dit scherm weer gegeven. Als u deze verbinding maakt, is netwerk verkeer in de verbonden virtuele netwerken mogelijk om deze werk ruimte te bereiken. Het maken van de verbinding heeft hetzelfde effect als wanneer er verbinding wordt gemaakt met het bereik van [Azure monitor resources](#connect-azure-monitor-resources).  
+### <a name="connected-azure-monitor-private-link-scopes"></a>Verbonden Azure Monitor scopes voor persoonlijke koppelingen
+Alle bereiken die zijn verbonden met deze werk ruimte, worden weer gegeven in dit scherm. Als u verbinding maakt met scopes (AMPLSs), kan netwerk verkeer van het virtuele netwerk dat is verbonden met elke AMPLS, worden bereikt in deze werk ruimte. Het maken van een verbinding via hier heeft hetzelfde effect als het instellen ervan op het bereik, zoals we hebben gedaan [met het verbinden van Azure monitor resources](#connect-azure-monitor-resources). Als u een nieuwe verbinding wilt toevoegen, klikt u op **toevoegen** en selecteert u het Azure monitor bereik voor persoonlijke koppelingen. Klik op **Toep assen** om de verbinding te maken. Een werk ruimte kan verbinding maken met 5 AMPLS-objecten, zoals wordt beschreven in [limieten](#consider-limits). 
 
-Ten tweede kunt u bepalen hoe deze bron bereikbaar kan zijn vanaf buiten de hierboven vermelde privé-koppelingen. Als u het **toestaan van open bare netwerk toegang** hebt ingesteld op **Nee**, kunnen computers buiten de verbonden bereiken geen gegevens uploaden naar deze werk ruimte. Als u het **toestaan van open bare netwerk toegang voor query's** op **Nee** instelt, hebben computers buiten de scopes geen toegang tot gegevens in deze werk ruimte. Deze gegevens bevatten toegang tot werkmappen, Dash boards, client ervaringen op basis van een query-API, inzichten in de Azure Portal, en meer. Ervaringen die worden uitgevoerd buiten de Azure Portal, en die query Log Analytics gegevens moeten ook worden uitgevoerd binnen het persoonlijk gekoppelde VNET.
+### <a name="access-from-outside-of-private-links-scopes"></a>Toegang tot buiten persoonlijke koppelingen bereiken
+De instellingen in het onderste gedeelte van deze pagina bepalen de toegang vanaf open bare netwerken, wat betekent dat netwerken niet zijn verbonden via de hierboven vermelde bereiken. Als u het **toestaan van open bare netwerk toegang** hebt ingesteld op **Nee**, kunnen computers buiten de verbonden bereiken geen gegevens uploaden naar deze werk ruimte. Als u het **toestaan van open bare netwerk toegang voor query's** op **Nee** instelt, hebben computers buiten de scopes geen toegang tot gegevens in deze werk ruimte, wat betekent dat het niet mogelijk is om gegevens in de werk ruimte op te vragen. Dit omvat query's in werkmappen, Dash boards, client ervaringen op basis van API, inzichten in de Azure Portal, en meer. Ervaringen die worden uitgevoerd buiten de Azure Portal, en die query Log Analytics gegevens moeten ook worden uitgevoerd binnen het persoonlijk gekoppelde VNET.
 
-Het beperken van toegang op deze manier is niet van toepassing op de Azure Resource Manager en heeft daarom de volgende beperkingen:
-* Toegang tot gegevens: Hoewel het blok keren van query's van open bare netwerken van toepassing is op de meeste Log Analytics-ervaringen, is het mogelijk dat er een query wordt uitgevoerd op gegevens via Azure Resource Manager en daarom geen gegevens kan worden opgevraagd, tenzij persoonlijke koppelings instellingen worden toegepast op de Resource Manager en ook (binnenkort beschikbaar). Dit omvat bijvoorbeeld Azure Monitor oplossingen, werkmappen en inzichten, en de LogicApp-connector.
+### <a name="exceptions"></a>Uitzonderingen
+Het beperken van de toegang zoals hierboven is uitgelegd, is niet van toepassing op de Azure Resource Manager en heeft daarom de volgende beperkingen:
+* Toegang tot gegevens: Hoewel het blok keren/toestaan van query's van open bare netwerken op de meeste Log Analytics-ervaringen van toepassing is, kunnen sommige gegevens query's uitvoeren via Azure Resource Manager en daarom geen query uitvoeren op gegevens tenzij persoonlijke koppelings instellingen worden toegepast op de Resource Manager, ook al is de functie binnenkort beschikbaar. Dit omvat bijvoorbeeld Azure Monitor oplossingen, werkmappen en inzichten, en de LogicApp-connector.
 * Werkruimte beheer-werk ruimte-instelling en configuratie wijzigingen (waaronder het inschakelen van deze toegangs instellingen in-of uitschakelen) worden beheerd door Azure Resource Manager. Beperk de toegang tot werk ruimte beheer met de juiste rollen, machtigingen, netwerk besturings elementen en controle. Zie [Azure monitor rollen, machtigingen en beveiliging](roles-permissions-security.md)voor meer informatie.
 
 > [!NOTE]

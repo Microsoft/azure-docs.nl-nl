@@ -13,12 +13,12 @@ ms.workload: iaas-sql-server
 ms.date: 11/27/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 60f781ddfa5717bbe5bcbb05ec8c236c8594c587
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: c6d03c896242d02e147e880a99eb9f1e7bb15da8
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92793089"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326859"
 ---
 # <a name="what-is-sql-server-on-azure-virtual-machines-windows"></a>Wat is SQL Server in Azure Virtual Machines (Windows)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -109,14 +109,14 @@ Als u een bestaande database hebt, doet u er verstandig aan deze te verplaatsen 
 
 De Azure-portal biedt één pagina waar u [al uw Azure SQL-resources](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Sql%2Fazuresql) kunt beheren, met inbegrip van uw virtuele SQL-machines.
 
-Om toegang te krijgen tot de pagina **Azure SQL-resources** , selecteert u **Azure SQL** in het menu van de Azure-portal of zoekt en selecteert u **Azure SQL** vanaf een willekeurige pagina.
+Om toegang te krijgen tot de pagina **Azure SQL-resources**, selecteert u **Azure SQL** in het menu van de Azure-portal of zoekt en selecteert u **Azure SQL** vanaf een willekeurige pagina.
 
 ![Zoeken naar Azure SQL](./media/sql-server-on-azure-vm-iaas-what-is-overview/search-for-azure-sql.png)
 
 > [!NOTE]
 > Azure SQL biedt een snelle en eenvoudige manier om toegang te krijgen tot al uw databases, elastische pools, logische servers, beheerde instanties en virtuele machines van Azure SQL. Azure SQL is geen service of resource. 
 
-Als u bestaande resources wilt beheren, selecteert u het gewenste item in de lijst. Als u nieuwe Azure SQL-resources wilt maken, selecteert u **+ Toevoegen** . 
+Als u bestaande resources wilt beheren, selecteert u het gewenste item in de lijst. Als u nieuwe Azure SQL-resources wilt maken, selecteert u **+ Toevoegen**. 
 
 ![Azure SQL-resource maken](./media/sql-server-on-azure-vm-iaas-what-is-overview/create-azure-sql-resource.png)
 
@@ -147,7 +147,7 @@ Het programma voor kwaliteitsverbetering (CEIP) is standaard ingeschakeld. Met d
 ### <a name="networking"></a>Netwerken
 * [Overzicht van Virtual Network](../../../virtual-network/virtual-networks-overview.md)
 * [IP-adressen in Azure](../../../virtual-network/public-ip-addresses.md)
-* [Een Fully Qualified Domain Name maken in Azure Portal](../../../virtual-machines/linux/portal-create-fqdn.md)
+* [Een Fully Qualified Domain Name maken in Azure Portal](../../../virtual-machines/create-fqdn.md)
 
 ### <a name="sql"></a>SQL
 * [Documentatie over SQL Server](/sql/index)

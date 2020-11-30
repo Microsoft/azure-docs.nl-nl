@@ -10,12 +10,12 @@ author: markjones-msft
 ms.author: markjon
 ms.reviewer: mathoma
 ms.date: 11/06/2020
-ms.openlocfilehash: 1558c396566b2fcfc098a749407d5e7a28316b6f
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 3b0fdccd3eaf6e6bd94b595107022f738bdd8382
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95019446"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325911"
 ---
 # <a name="migration-guide-sql-server-to-sql-server-on-azure-vms"></a>Migratie handleiding: SQL Server SQL Server op virtuele machines van Azure 
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlvm.md)]
@@ -38,8 +38,8 @@ Voor informatie over aanvullende migratie strategieën raadpleegt u het [overzic
 Voor de migratie naar SQL Server op Azure Vm's is het volgende vereist: 
 
 - [Data Base-migration assistant (DMA)](https://www.microsoft.com/download/details.aspx?id=53595).
-- Een [Azure migrate-project](/azure/migrate/create-manage-projects).
-- Een voor bereide doel [SQL Server op de Azure-VM](/azure/azure-sql/virtual-machines/windows/create-sql-vm-portal) die dezelfde of een grotere versie heeft dan de bron SQL Server.
+- Een [Azure migrate-project](../../../migrate/create-manage-projects.md).
+- Een voor bereide doel [SQL Server op de Azure-VM](../../virtual-machines/windows/create-sql-vm-portal.md) die dezelfde of een grotere versie heeft dan de bron SQL Server.
 - [Connectiviteit tussen Azure en on-premises](/azure/architecture/reference-architectures/hybrid-networking).
 - [Een geschikte migratie strategie kiezen](sql-server-to-sql-on-azure-vm-migration-overview.md#migrate).
 
@@ -109,7 +109,7 @@ Het wordt ten zeerste aangeraden alle DMA-oplossingen tijdens het [na de migrati
 > Niet alle versies van SQL Server ondersteunen alle compatibiliteits modi. Controleer of uw [doel-SQL Server-versie](/sql/t-sql/statements/alter-database-transact-sql-compatibility-level) de gekozen database compatibiliteit ondersteunt. SQL Server 2019 biedt bijvoorbeeld geen ondersteuning voor data bases met niveau-90-compatibiliteit (SQL Server 2005). Voor deze data bases is ten minste een upgrade van het compatibiliteits niveau 100 vereist.
 >
 
-## <a name="migrate"></a>Migrate
+## <a name="migrate"></a>Migreren
 
 Nadat u de stappen voorafgaand aan de migratie hebt voltooid, bent u klaar om de gebruikers databases en-onderdelen te migreren. Migreer uw data bases met uw voorkeurs [migratie methode](sql-server-to-sql-on-azure-vm-migration-overview.md#migrate).  
 
@@ -157,8 +157,8 @@ De volgende tabel bevat een lijst met onderdelen en aanbevolen migratie methoden
 || Gebruikers databases met FileStream |  Gebruik de [back-up-en herstel](../../virtual-machines/windows/migrate-to-vm-from-sql-server.md#back-up-and-restore) methoden voor migratie. DMA biedt geen ondersteuning voor data bases met FileStream. |
 | **Beveiliging** | SQL Server-en Windows-aanmeldingen | Gebruik DMA om [Gebruikers aanmeldingen te migreren](/sql/dma/dma-migrateserverlogins). |
 || SQL Server rollen | Script met SQL Server Management Studio |
-|| Cryptografische providers | [U kunt het beste converteren om Azure Key Vault-service te gebruiken](../../virtual-machines/windows/azure-key-vault-integration-configure.md). Deze procedure maakt gebruik van de [resource provider](../../virtual-machines/windows/sql-vm-resource-provider-register.md)van de SQL-VM. |
-| **Server objecten** | Back-upapparaten | Vervang door back-up van de data base met [Azure backup-service](../../../backup/backup-sql-server-database-azure-vms.md) of schrijf back-ups naar [Azure Storage](../../virtual-machines/windows/azure-storage-sql-server-backup-restore-use.md) (SQL Server 2012 SP1 Cu2 +). Deze procedure maakt gebruik van de [resource provider](../../virtual-machines/windows/sql-vm-resource-provider-register.md)van de SQL-VM.|
+|| Cryptografische providers | [U kunt het beste converteren om Azure Key Vault-service te gebruiken](../../virtual-machines/windows/azure-key-vault-integration-configure.md). Deze procedure maakt gebruik van de [resource provider](../../virtual-machines/windows/sql-agent-extension-manually-register-single-vm.md)van de SQL-VM. |
+| **Server objecten** | Back-upapparaten | Vervang door back-up van de data base met [Azure backup-service](../../../backup/backup-sql-server-database-azure-vms.md) of schrijf back-ups naar [Azure Storage](../../virtual-machines/windows/azure-storage-sql-server-backup-restore-use.md) (SQL Server 2012 SP1 Cu2 +). Deze procedure maakt gebruik van de [resource provider](../../virtual-machines/windows/sql-agent-extension-manually-register-single-vm.md)van de SQL-VM.|
 || Gekoppelde servers | Script met SQL Server Management Studio. |
 || Server triggers | Script met SQL Server Management Studio. |
 | **Replicatie** | Lokale publicaties | Script met SQL Server Management Studio. |

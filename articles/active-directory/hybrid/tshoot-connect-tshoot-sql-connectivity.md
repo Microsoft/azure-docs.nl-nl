@@ -10,16 +10,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 05/14/2018
+ms.date: 11/30/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d5f8b87684847089a05341a5a68f6ad3e2ac86b0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c29087ee1f74e2abed8c9fb2449a222469c82848
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85355859"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325124"
 ---
 # <a name="troubleshoot-sql-connectivity-issues-with-azure-ad-connect"></a>Troubleshoot SQL connectivity issues with Azure AD Connect (SQL-connectiviteitsproblemen met Azure AD Connect oplossen)
 In dit artikel wordt uitgelegd hoe u verbindings problemen tussen Azure AD Connect en SQL Server kunt oplossen. 
@@ -32,7 +32,9 @@ In de volgende scherm afbeelding ziet u een typische fout als de SQL Server niet
 Open een Power shell-venster en importeer de ADSyncTools Power shell-module
 
 ``` powershell
-Import-Module "C:\Program Files\Microsoft Azure Active Directory Connect\Tools\AdSyncTools.psm1" 
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Install-PackageProvider -Name NuGet -MinimumVersion2.8.5.201 -Force
+Import-module -Name "C:\Program Files\Microsoft Azure Active Directory Connect\Tools\AdSyncTools"
 ```
 
 >[!NOTE]
@@ -43,7 +45,7 @@ Of Installeer [Package Management Power shell-modules preview-maart 2016 voor Po
 - **De Power shell-functie uitvoeren**: `Connect-ADSyncDatabase` met de volgende para meters
     - Naam. De naam van de SQL Server.
     - Exemplaar. Beschrijving De naam van het SQL Server exemplaar en optioneel poort nummer dat u wilt gebruiken. Geef deze para meter niet op als u het standaard exemplaar wilt gebruiken.
-    - Gebruikers. Beschrijving Het gebruikers account waarmee verbinding moet worden gemaakt. Als u niets opgeeft, wordt de gebruiker die momenteel is aangemeld, gebruikt. Als u verbinding maakt met een externe SQL Server moet dit het aangepaste service account zijn dat u hebt gemaakt voor Azure ADConnect SQL-connectiviteit. Azure AD Connect gebruikt het Azure AD Connect synchronisatie service-account als verificatie bij een externe SQL-Server.
+    - Gebruikers. Beschrijving Het gebruikers account waarmee verbinding moet worden gemaakt. Als u niets opgeeft, wordt de gebruiker die momenteel is aangemeld, gebruikt. Als u verbinding maakt met een externe SQL Server moet dit het aangepaste service account zijn dat u hebt gemaakt voor Azure AD Connect SQL-verbinding. Azure AD Connect gebruikt het Azure AD Connect synchronisatie service-account als verificatie bij een externe SQL-Server.
     - Wacht woord. Beschrijving Wacht woord voor de opgegeven gebruikers naam.
 
 Deze Power shell-functie probeert verbinding te maken met de opgegeven SQL Server en het exemplaar met behulp van de referenties die zijn door gegeven of de referenties van de huidige gebruiker worden gebruikt. Als de SQL Server niet kan worden gevonden, probeert het script verbinding te maken met de SQL Browser-service om ingeschakelde protocollen en poorten te bepalen.

@@ -5,18 +5,18 @@ author: billmath
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.date: 04/23/2020
+ms.date: 11/30/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.topic: reference
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: f81af557242503c6380d0ff7bc1dfaed852cd908
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e7d0022cd381a6c5d6592e2097f3c1bd4855a3e4
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89070680"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325992"
 ---
 # <a name="azure-ad-connect--adsynctools-powershell-reference"></a>Azure AD Connect: ADSyncTools Power shell-referentie
 De volgende documentatie bevat referentie-informatie voor de Power shell-module ADSyncTools. psm1, die deel uitmaakt van Azure AD Connect.
@@ -27,7 +27,9 @@ Ga als volgt te werk om de ADSyncTools Power shell-module te installeren:
 1.  Windows Power shell openen met beheer upaccount
 2.  Typ of kopieer en plak het volgende: 
     ``` powershell
-    Import-module -Name "C:\Program Files\Microsoft Azure Active Directory Connect\Tools\AdSyncTools"
+        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+        Install-PackageProvider -Name NuGet -MinimumVersion2.8.5.201 -Force
+        Import-module -Name "C:\Program Files\Microsoft Azure Active Directory Connect\Tools\AdSyncTools"
     ```
 3.  Druk op ENTER.
 4.  Als u wilt controleren of de module is geïnstalleerd, voert u de volgende in of kopieert en plakt u deze:

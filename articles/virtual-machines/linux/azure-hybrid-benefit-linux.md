@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 09/22/2020
 ms.author: mathapli
-ms.openlocfilehash: 1459c80c857a436c8369d3ebe89794e0b69c33b1
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.openlocfilehash: 35bed58f95deebb78d8e787c8bc3f522ce7004df
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94980878"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326966"
 ---
 # <a name="azure-hybrid-benefit--how-it-applies-for-linux-virtual-machines"></a>Azure Hybrid Benefit: hoe dit van toepassing is voor Linux Virtual Machines
 
@@ -155,9 +155,13 @@ A: Nee, dat kan niet. Azure Hybrid Benefit ondersteunt alleen conversie op insta
 
 A: Nee, dat kan niet. Azure Hybrid Benefit ondersteunt alleen conversie op installatie kopieën met betalen per gebruik.
 
-*V: Ik heb mijn eigen RHEL-installatie kopie geüpload van on-premises (via ASR of anderszins) naar Azure. Kan ik de facturering voor deze afbeeldingen converteren van BYOS naar PAYG?*
+*V: Ik heb mijn eigen RHEL-installatie kopie geüpload van on-premises (via Azure Migrate, ASR of anderszins) naar Azure. Kan ik de facturering voor deze afbeeldingen converteren van BYOS naar PAYG?*
 
 A: Nee, dat kan niet. De Azure Hybrid Benefit mogelijkheid is vandaag alleen beschikbaar voor RHEL-en SLES-installatie kopieën in de Marketplace. 
+
+*V: Ik heb mijn eigen RHEL-installatie kopie geüpload van on-premises (via Azure Migrate, ASR of anderszins) naar Azure. Moet ik iets doen om te profiteren van Azure Hybrid Benefit?*
+
+A: Nee, niet. RHEL-installatie kopieën die u uploadt, worden al beschouwd als BYOS en u betaalt alleen voor de kosten van de Azure-infra structuur. U bent zelf verantwoordelijk voor de kosten voor RHEL-abonnementen, net als bij uw on-premises omgevingen. 
 
 *V: kan ik Azure Hybrid Benefit gebruiken op Vm's die zijn geïmplementeerd vanuit Marketplace RHEL en SLES SAP-installatie kopieën?*
 

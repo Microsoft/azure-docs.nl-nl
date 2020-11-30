@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: virtual-machines
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 0a6b6196888aedfd6aa60c9395ff27611907661a
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: ef481b73b6dc42bc35252c08ae8d63b9de95b2ba
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94413141"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325091"
 ---
 # <a name="what-disk-types-are-available-in-azure"></a>Welke schijftypen zijn beschikbaar in Azure?
 
@@ -82,7 +82,7 @@ Wanneer u een Premium Storage-schijf inricht, bent u, in tegenstelling tot stand
 
 ## <a name="bursting"></a>Toepassingen
 
-Premium-SSD grootten die kleiner zijn dan P30 bieden nu schijf bursting en kunnen de IOPS per schijf tot 3.500 en de band breedte van Maxi maal 170 Mbps. Bursting wordt geautomatiseerd en werkt op basis van een tegoed systeem. Tegoeden worden automatisch opgeteld in een burst-Bucket wanneer het schijf verkeer lager is dan het ingerichte prestatie doel en de tegoeden automatisch worden gebruikt wanneer het verkeer groter wordt dan het doel, tot de maximale burst-limiet. De maximale burst-limiet bepaalt het maximum van schijf-IOPS & band breedte, zelfs als u burst-tegoeden hebt om te gebruiken. Schijf bursting biedt betere tolerantie voor onvoorspelbare wijzigingen van i/o-patronen. U kunt dit het beste gebruiken voor het opstarten van de besturingssysteem schijf en toepassingen met piekige-verkeer.    
+Premium-SSD grootten die kleiner zijn dan P30 bieden nu schijf bursting en kunnen de IOPS per schijf tot 3.500 en de band breedte van Maxi maal 170 MB/s. Bursting wordt geautomatiseerd en werkt op basis van een tegoed systeem. Tegoeden worden automatisch opgeteld in een burst-Bucket wanneer het schijf verkeer lager is dan het ingerichte prestatie doel en de tegoeden automatisch worden gebruikt wanneer het verkeer groter wordt dan het doel, tot de maximale burst-limiet. De maximale burst-limiet bepaalt het maximum van schijf-IOPS & band breedte, zelfs als u burst-tegoeden hebt om te gebruiken. Schijf bursting biedt betere tolerantie voor onvoorspelbare wijzigingen van i/o-patronen. U kunt dit het beste gebruiken voor het opstarten van de besturingssysteem schijf en toepassingen met piekige-verkeer.    
 
 Schijven die ondersteuning bieden voor bursting, worden standaard ingeschakeld voor nieuwe implementaties van toepasselijke schijf grootten, zonder dat de gebruiker actie hoeft te ondernemen. Voor bestaande schijven van de toepasselijke grootten kunt u bursting met een van de volgende twee opties inschakelen: Ontkoppel en koppel de schijf opnieuw of stop de gekoppelde VM. Alle burst-toepasselijke schijf grootten beginnen met een volledige burst-credit Bucket wanneer de schijf is gekoppeld aan een virtuele machine die een maximale duur van Maxi maal 30 minuten ondersteunt. Zie [Premium-SSD bursting](linux/disk-bursting.md)voor meer informatie over hoe bursting werkt op Azure-schijven. 
 
@@ -124,15 +124,15 @@ Bij het gebruik van beheerde schijven gelden de volgende facturerings overweging
 - Uitgaande gegevens overdracht
 - Aantal trans acties
 
-**Beheerde schijf grootte** : beheerde schijven worden gefactureerd op de ingerichte grootte. Azure wijst de ingerichte grootte (afgerond) toe aan de dichtstbijzijnde schijf grootte. Zie de vorige tabellen voor meer informatie over de geboden schijf groottes. Elke schijf wordt toegewezen aan een ondersteunde aanbieding van de ingerichte schijf en wordt dienovereenkomstig gefactureerd. Als u bijvoorbeeld een 200 GiB-Standard-SSD hebt ingericht, wordt deze toegewezen aan de aanbieding voor de schijf grootte van E15 (256 GiB). Facturering voor een ingerichte schijf wordt per uur naar beneden gefactureerd met behulp van de maandelijkse prijs voor de opslag aanbieding. Als u bijvoorbeeld een E10-schijf hebt ingericht en deze na 20 uur hebt verwijderd, wordt u gefactureerd voor het E10-aanbod dat Maxi maal 20 uur in rekening wordt gebracht. Dit is ongeacht de hoeveelheid gegevens die naar de schijf wordt geschreven.
+**Beheerde schijf grootte**: beheerde schijven worden gefactureerd op de ingerichte grootte. Azure wijst de ingerichte grootte (afgerond) toe aan de dichtstbijzijnde schijf grootte. Zie de vorige tabellen voor meer informatie over de geboden schijf groottes. Elke schijf wordt toegewezen aan een ondersteunde aanbieding van de ingerichte schijf en wordt dienovereenkomstig gefactureerd. Als u bijvoorbeeld een 200 GiB-Standard-SSD hebt ingericht, wordt deze toegewezen aan de aanbieding voor de schijf grootte van E15 (256 GiB). Facturering voor een ingerichte schijf wordt per uur naar beneden gefactureerd met behulp van de maandelijkse prijs voor de opslag aanbieding. Als u bijvoorbeeld een E10-schijf hebt ingericht en deze na 20 uur hebt verwijderd, wordt u gefactureerd voor het E10-aanbod dat Maxi maal 20 uur in rekening wordt gebracht. Dit is ongeacht de hoeveelheid gegevens die naar de schijf wordt geschreven.
 
-**Moment opnamen** : moment opnamen worden gefactureerd op basis van de gebruikte grootte. Als u bijvoorbeeld een moment opname maakt van een beheerde schijf met een ingerichte capaciteit van 64 GiB en de daad werkelijke gebruikte gegevens grootte van 10 GiB, wordt de moment opname alleen gefactureerd voor de gebruikte gegevens grootte van 10 GiB.
+**Moment opnamen**: moment opnamen worden gefactureerd op basis van de gebruikte grootte. Als u bijvoorbeeld een moment opname maakt van een beheerde schijf met een ingerichte capaciteit van 64 GiB en de daad werkelijke gebruikte gegevens grootte van 10 GiB, wordt de moment opname alleen gefactureerd voor de gebruikte gegevens grootte van 10 GiB.
 
 Zie de sectie over moment opnamen in het [overzicht Managed Disk](managed-disks-overview.md)voor meer informatie over moment opnamen.
 
-**Uitgaande gegevens overdrachten** : [uitgaande gegevens overdracht](https://azure.microsoft.com/pricing/details/bandwidth/) (gegevens die uit de Azure-data centers worden verzonden) zijn er facturen voor bandbreedte gebruik.
+**Uitgaande gegevens overdrachten**: [uitgaande gegevens overdracht](https://azure.microsoft.com/pricing/details/bandwidth/) (gegevens die uit de Azure-data centers worden verzonden) zijn er facturen voor bandbreedte gebruik.
 
-**Trans acties** : u wordt gefactureerd voor het aantal trans acties dat u uitvoert op een Standard Managed disk. Voor standaard Ssd's wordt elke I/O-bewerking kleiner dan of gelijk aan 256 KiB van de door Voer beschouwd als één I/O-bewerking. I/O-bewerkingen die groter zijn dan 256 KiB door Voer, worden beschouwd als meerdere I/O's van grootte 256 KiB. Voor standaard Hdd's wordt elke IO-bewerking beschouwd als één trans actie, ongeacht de I/O-grootte.
+**Trans acties**: u wordt gefactureerd voor het aantal trans acties dat u uitvoert op een Standard Managed disk. Voor standaard Ssd's wordt elke I/O-bewerking kleiner dan of gelijk aan 256 KiB van de door Voer beschouwd als één I/O-bewerking. I/O-bewerkingen die groter zijn dan 256 KiB door Voer, worden beschouwd als meerdere I/O's van grootte 256 KiB. Voor standaard Hdd's wordt elke IO-bewerking beschouwd als één trans actie, ongeacht de I/O-grootte.
 
 Zie [Managed disks prijzen](https://azure.microsoft.com/pricing/details/managed-disks)voor gedetailleerde informatie over de prijzen voor Managed disks, waaronder transactie kosten.
 

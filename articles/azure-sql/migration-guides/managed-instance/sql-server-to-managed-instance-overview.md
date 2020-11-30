@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 2c143c299cec1d48dd5438d5350c818d5cc93800
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 2241049e5c3cb5039a73c0f7637f7e3553d2e227
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023715"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326867"
 ---
 # <a name="migration-overview-sql-server-to-sql-managed-instance"></a>Migratie overzicht: SQL Server naar een beheerd exemplaar van SQL
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -63,7 +63,7 @@ Enkele algemene richt lijnen om u te helpen bij het kiezen van de juiste service
 U kunt reken-en opslag Resources kiezen tijdens de implementatie en deze vervolgens wijzigen nadat u de [Azure Portal](../../database/scale-resources.md) hebt gebruikt zonder uitval tijd voor uw toepassing. 
 
 > [!IMPORTANT]
-> Elk verschil in de [vereisten voor virtuele netwerken van het beheerde exemplaar](/azure/azure-sql/managed-instance/connectivity-architecture-overview#network-requirements) kan verhinderen dat u nieuwe instanties maakt of bestaande exemplaren gebruikt. Meer informatie over [het maken van nieuwe en het](/azure/azure-sql/managed-instance/virtual-network-subnet-create-arm-template?branch=release-ignite-arc-data)   configureren van [bestaande](/azure/azure-sql/managed-instance/vnet-existing-add-subnet?branch=release-ignite-arc-data)   netwerken. 
+> Elk verschil in de [vereisten voor virtuele netwerken van het beheerde exemplaar](../../managed-instance/connectivity-architecture-overview.md#network-requirements) kan verhinderen dat u nieuwe instanties maakt of bestaande exemplaren gebruikt. Meer informatie over [het maken van nieuwe en het](../../managed-instance/virtual-network-subnet-create-arm-template.md?branch=release-ignite-arc-data)   configureren van [bestaande](../../managed-instance/vnet-existing-add-subnet.md?branch=release-ignite-arc-data)   netwerken. 
 
 ### <a name="sql-server-vm-alternative"></a>SQL Server VM-alternatief
 
@@ -88,7 +88,7 @@ De volgende tabel bevat de aanbevolen migratie hulpprogramma's:
 
 |Technologie | Beschrijving|
 |---------|---------|
-|[Azure Database Migration Service (DMS)](/azure/dms/tutorial-sql-server-to-managed-instance)  | Azure-service van de eerste partij die migratie in de offline modus ondersteunt voor toepassingen die downtime tijdens het migratie proces kunnen veroorloven. In tegens telling tot de continue migratie in de online modus, voert migratie van de offline modus eenmalige herstel van een volledige database back-up uit van de bron naar het doel. | 
+|[Azure Database Migration Service (DMS)](../../../dms/tutorial-sql-server-to-managed-instance.md)  | Azure-service van de eerste partij die migratie in de offline modus ondersteunt voor toepassingen die downtime tijdens het migratie proces kunnen veroorloven. In tegens telling tot de continue migratie in de online modus, voert migratie van de offline modus eenmalige herstel van een volledige database back-up uit van de bron naar het doel. | 
 |[Systeem eigen back-up en herstel](../../managed-instance/restore-sample-database-quickstart.md) | SQL Managed instance biedt ondersteuning voor herstel van systeem eigen SQL Server database back-ups (. bak-bestanden), waardoor het de eenvoudigste migratie optie is voor klanten die volledige database back-ups naar Azure Storage kunnen leveren. Volledige en differentiële back-ups worden ook ondersteund en beschreven in de [sectie migratie-assets](#migration-assets) verderop in dit artikel.| 
 | | |
 
@@ -100,8 +100,8 @@ De volgende tabel bevat alternatieve hulpprogram ma's voor migratie:
 |---------|---------|
 |[Transactionele replicatie](../../managed-instance/replication-transactional-overview.md) | Gegevens repliceren van bron-SQL Server database tabel (s) naar SQL Managed instance door een Publisher-abonnee type migratie optie te bieden terwijl transactionele consistentie wordt gehandhaafd. |  |
 |[Bulksgewijs kopiëren](/sql/relational-databases/import-export/import-and-export-bulk-data-by-using-the-bcp-utility-sql-server)| Het [hulp programma voor bulksgewijs kopiëren (BCP)](/sql/tools/bcp-utility) kopieert gegevens van een exemplaar van SQL Server naar een gegevens bestand. Gebruik het hulp programma BCP voor het exporteren van de gegevens uit uw bron en het importeren van het gegevens bestand in het door SQL beheerde doel exemplaar.</br></br> Voor het verplaatsen van gegevens naar Azure SQL Database, kunt u het [hulp programma](/samples/azure-samples/smartbulkcopy/smart-bulk-copy/) voor bulksgewijs kopiëren gebruiken om de overdrachts snelheid te maximaliseren door gebruik te maken van parallelle Kopieer taken. | 
-|[Wizard export exporteren/BACPAC](/azure/azure-sql/database/database-import?tabs=azure-powershell)| [BACPAC](/sql/relational-databases/data-tier-applications/data-tier-applications#bacpac) is een Windows-bestand met een `.bacpac` extensie waarmee het schema en de gegevens van een Data Base worden ingekapseld. BACPAC kan worden gebruikt om gegevens uit een bron SQL Server te exporteren en het bestand weer te importeren in Azure SQL Managed instance.  |  
-|[Azure Data Factory (ADF)](/azure/data-factory/connector-azure-sql-managed-instance)| Met de [Kopieer activiteit](/azure/data-factory/copy-activity-overview) in azure Data Factory worden gegevens van de bron-SQL Server Data Base (s) gemigreerd naar een SQL-beheerd exemplaar met behulp van ingebouwde connectors en een [Integration runtime](/azure/data-factory/concepts-integration-runtime).</br> </br> ADF ondersteunt een breed scala aan [connectors](/azure/data-factory/connector-overview) voor het verplaatsen van gegevens van SQL Server bronnen naar een door SQL beheerd exemplaar. |
+|[Wizard export exporteren/BACPAC](../../database/database-import.md?tabs=azure-powershell)| [BACPAC](/sql/relational-databases/data-tier-applications/data-tier-applications#bacpac) is een Windows-bestand met een `.bacpac` extensie waarmee het schema en de gegevens van een Data Base worden ingekapseld. BACPAC kan worden gebruikt om gegevens uit een bron SQL Server te exporteren en het bestand weer te importeren in Azure SQL Managed instance.  |  
+|[Azure Data Factory (ADF)](../../../data-factory/connector-azure-sql-managed-instance.md)| Met de [Kopieer activiteit](../../../data-factory/copy-activity-overview.md) in azure Data Factory worden gegevens van de bron-SQL Server Data Base (s) gemigreerd naar een SQL-beheerd exemplaar met behulp van ingebouwde connectors en een [Integration runtime](../../../data-factory/concepts-integration-runtime.md).</br> </br> ADF ondersteunt een breed scala aan [connectors](../../../data-factory/connector-overview.md) voor het verplaatsen van gegevens van SQL Server bronnen naar een door SQL beheerd exemplaar. |
 | | |
 
 ## <a name="compare-migration-options"></a>Migratie opties vergelijken
@@ -114,7 +114,7 @@ In de volgende tabel worden de aanbevolen migratie opties vergeleken:
 
 |Migratieoptie  |Wanneer gebruikt u dit?  |Overwegingen  |
 |---------|---------|---------|
-|[Azure Database Migration Service (DMS)](/azure/dms/tutorial-sql-server-to-managed-instance) | -Migreer afzonderlijke data bases of meerdere data bases op schaal. </br> -Kan downtime tijdens het migratie proces inpassen. </br> </br> Ondersteunde bronnen: </br> -SQL Server (2005-2019) on-premises of Azure VM </br> -AWS EC2 </br> -AWS RDS </br> -GCP Compute SQL Server-VM |  -Migraties op schaal kunnen worden geautomatiseerd via [Power shell](/azure/dms/howto-sql-server-to-azure-sql-mi-powershell). </br> -Het volt ooien van de migratie is afhankelijk van de grootte van de data base en van invloed op back-up-en herstel tijd. </br> -Er is mogelijk voldoende downtime vereist. |
+|[Azure Database Migration Service (DMS)](../../../dms/tutorial-sql-server-to-managed-instance.md) | -Migreer afzonderlijke data bases of meerdere data bases op schaal. </br> -Kan downtime tijdens het migratie proces inpassen. </br> </br> Ondersteunde bronnen: </br> -SQL Server (2005-2019) on-premises of Azure VM </br> -AWS EC2 </br> -AWS RDS </br> -GCP Compute SQL Server-VM |  -Migraties op schaal kunnen worden geautomatiseerd via [Power shell](../../../dms/howto-sql-server-to-azure-sql-mi-powershell.md). </br> -Het volt ooien van de migratie is afhankelijk van de grootte van de data base en van invloed op back-up-en herstel tijd. </br> -Er is mogelijk voldoende downtime vereist. |
 |[Systeem eigen back-up en herstel](../../managed-instance/restore-sample-database-quickstart.md) | -Een afzonderlijke line-of-Business-toepassings database (s) migreren.  </br> -Snelle en eenvoudige migratie zonder een afzonderlijke migratie service of een afzonderlijk hulp programma.  </br> </br> Ondersteunde bronnen: </br> -SQL Server (2005-2019) on-premises of Azure VM </br> -AWS EC2 </br> -AWS RDS </br> -GCP Compute SQL Server-VM | -Database back-up gebruikt meerdere threads voor het optimaliseren van gegevens overdracht naar Azure Blob-opslag, maar ISV-band breedte en grootte van de data base kunnen de overdrachts frequentie beïnvloeden. </br> -Downtime moet voldoen aan de tijd die nodig is voor het uitvoeren van een volledige back-up en herstel (dit is een omvang van de gegevens bewerking).| 
 | | | |
 
@@ -126,8 +126,8 @@ De volgende tabel vergelijkt de alternatieve migratie opties:
 |---------|---------|---------|
 |[Transactionele replicatie](../../managed-instance/replication-transactional-overview.md) | -Migreert voortdurend wijzigingen van de bron database tabellen naar het doel database tabellen van SQL Managed instance. </br> -Volledige of gedeeltelijke database migraties van geselecteerde tabellen (subset van data base).  </br> </br> Ondersteunde bronnen: </br> -SQL Server (2012-2019) met enkele beperkingen </br> -AWS EC2  </br> -GCP Compute SQL Server-VM | </br> -Setup is relatief complex ten opzichte van andere migratie opties.   </br> -Biedt een optie voor continue replicatie om gegevens te migreren (zonder de data bases offline te halen).</br> -Transactionele replicatie heeft een aantal beperkingen om rekening mee te houden bij het instellen van de uitgever op de bron SQL Server. Zie de [beperkingen voor het publiceren van objecten](/sql/relational-databases/replication/publish/publish-data-and-database-objects#limitations-on-publishing-objects) voor meer informatie.  </br> -Mogelijkheid om [replicatie activiteiten te bewaken](/sql/relational-databases/replication/monitor/monitoring-replication) is beschikbaar.    |
 |[Bulksgewijs kopiëren](/sql/relational-databases/import-export/import-and-export-bulk-data-by-using-the-bcp-utility-sql-server)| -Volledige of gedeeltelijke gegevens migraties migreren. </br> -Kan downtime bevatten. </br> </br> Ondersteunde bronnen: </br> -SQL Server (2005-2019) on-premises of Azure VM </br> -AWS EC2 </br> -AWS RDS </br> -GCP Compute SQL Server-VM   | -Vereist uitval tijd voor het exporteren van gegevens uit de bron en het importeren naar het doel. </br> -De bestands indelingen en gegevens typen die worden gebruikt in de export/import moeten consistent zijn met tabel schema's. |
-|[Wizard export exporteren/BACPAC](/azure/azure-sql/database/database-import)| -Een afzonderlijke line-of-Business-toepassings database (s) migreren. </br>-Geschikt voor kleinere data bases.  </br>  Vereist geen afzonderlijke migratie service of hulp programma. </br> </br> Ondersteunde bronnen: </br> -SQL Server (2005-2019) on-premises of Azure VM </br> -AWS EC2 </br> -AWS RDS </br> -GCP Compute SQL Server-VM  |   </br> -Vereist uitval tijd wanneer gegevens moeten worden geëxporteerd bij de bron en worden geïmporteerd op de doel locatie.   </br> -De bestands indelingen en gegevens typen die in de export/import worden gebruikt, moeten consistent zijn met de tabel schema's om te voor komen dat de gegevens niet overeenkomen met een Afbrekings fout. </br> De tijd die nodig is om een Data Base met een groot aantal objecten te exporteren, kan aanzienlijk hoger zijn. |
-|[Azure Data Factory (ADF)](/azure/data-factory/connector-azure-sql-managed-instance)| -Gegevens migreren en/of transformeren van bron-SQL Server Data Base (s).</br> -Het samen voegen van gegevens uit meerdere gegevens bronnen naar Azure SQL Managed instance, normaal gesp roken voor BI-workloads (Business Intelligence).   </br> -Vereist het maken van pijp lijnen voor gegevens verplaatsing in ADF om gegevens van bron naar bestemming te verplaatsen.   </br> - [Kosten](https://azure.microsoft.com/pricing/details/data-factory/data-pipeline/) zijn een belang rijke overweging en zijn gebaseerd op de pijplijn triggers, de uitvoering van de activiteit, de duur van de verplaatsing van gegevens, enzovoort. |
+|[Wizard export exporteren/BACPAC](../../database/database-import.md)| -Een afzonderlijke line-of-Business-toepassings database (s) migreren. </br>-Geschikt voor kleinere data bases.  </br>  Vereist geen afzonderlijke migratie service of hulp programma. </br> </br> Ondersteunde bronnen: </br> -SQL Server (2005-2019) on-premises of Azure VM </br> -AWS EC2 </br> -AWS RDS </br> -GCP Compute SQL Server-VM  |   </br> -Vereist uitval tijd wanneer gegevens moeten worden geëxporteerd bij de bron en worden geïmporteerd op de doel locatie.   </br> -De bestands indelingen en gegevens typen die in de export/import worden gebruikt, moeten consistent zijn met de tabel schema's om te voor komen dat de gegevens niet overeenkomen met een Afbrekings fout. </br> De tijd die nodig is om een Data Base met een groot aantal objecten te exporteren, kan aanzienlijk hoger zijn. |
+|[Azure Data Factory (ADF)](../../../data-factory/connector-azure-sql-managed-instance.md)| -Gegevens migreren en/of transformeren van bron-SQL Server Data Base (s).</br> -Het samen voegen van gegevens uit meerdere gegevens bronnen naar Azure SQL Managed instance, normaal gesp roken voor BI-workloads (Business Intelligence).   </br> -Vereist het maken van pijp lijnen voor gegevens verplaatsing in ADF om gegevens van bron naar bestemming te verplaatsen.   </br> - [Kosten](https://azure.microsoft.com/pricing/details/data-factory/data-pipeline/) zijn een belang rijke overweging en zijn gebaseerd op de pijplijn triggers, de uitvoering van de activiteit, de duur van de verplaatsing van gegevens, enzovoort. |
 | | | |
 
 ## <a name="feature-interoperability"></a>Functie compatibiliteit 
@@ -136,7 +136,7 @@ Er zijn aanvullende overwegingen bij het migreren van werk belastingen die afhan
 
 #### <a name="sql-server-integration-services"></a>SQL Server Integration Services
 
-SQL Server Integration Services SSIS-pakketten en-projecten in SSISDB migreren naar Azure SQL Managed instance met behulp van [Azure database Migration service (DMS)](/azure/dms/how-to-migrate-ssis-packages-managed-instance). 
+SQL Server Integration Services SSIS-pakketten en-projecten in SSISDB migreren naar Azure SQL Managed instance met behulp van [Azure database Migration service (DMS)](../../../dms/how-to-migrate-ssis-packages-managed-instance.md). 
 
 Alleen SSIS-pakketten in SSISDB die beginnen met SQL Server 2012 worden ondersteund voor migratie. Verouderde SSIS-pakketten converteren vóór migratie. Raadpleeg de [zelf studie over project conversie](/sql/integration-services/lesson-6-2-converting-the-project-to-the-project-deployment-model) voor meer informatie. 
 
@@ -149,7 +149,7 @@ Rapporten van SQL Server Reporting Services (SSRS) kunnen worden gemigreerd naar
 
 SQL Server Analysis Services Tabellaire modellen van SQL Server 2012 en hoger kunnen worden gemigreerd naar Azure Analysis Services, een PaaS-implementatie model voor Analysis Services Tabellaire model in Azure. U vindt meer informatie over het migreren van on-premises modellen naar Azure Analysis Services in deze [video zelf studie](https://azure.microsoft.com/resources/videos/azure-analysis-services-moving-models/).
 
-U kunt ook overwegen om uw on-premises Analysis Services Tabellaire modellen te migreren naar [Power bi Premium met behulp van de nieuwe XMLA-eind punten voor lezen/schrijven](https://docs.microsoft.com/power-bi/admin/service-premium-connect-tools). 
+U kunt ook overwegen om uw on-premises Analysis Services Tabellaire modellen te migreren naar [Power bi Premium met behulp van de nieuwe XMLA-eind punten voor lezen/schrijven](/power-bi/admin/service-premium-connect-tools). 
 > [!NOTE]
 > Power BI XMLA-eind punten voor lezen/schrijven bevindt zich momenteel in de open bare preview en mag niet worden overwogen voor productie werkbelastingen totdat de functionaliteit algemeen beschikbaar wordt.
 
@@ -161,7 +161,7 @@ Naast de architectuur met hoge Beschik baarheid die is opgenomen in het SQL Mana
 
 #### <a name="sql-agent-jobs"></a>SQL-Agent taken
 
-Gebruik de optie offline Azure Database Migration Service (DMS) om [SQL-Agent taken](/azure/dms/howto-sql-server-to-azure-sql-mi-powershell#offline-migrations)te migreren. Als dat niet het geval is, voert u de taken in Transact-SQL (T-SQL) uit met SQL Server Management Studio en maakt u deze hand matig opnieuw op het door SQL Managed instance-exemplaar. 
+Gebruik de optie offline Azure Database Migration Service (DMS) om [SQL-Agent taken](../../../dms/howto-sql-server-to-azure-sql-mi-powershell.md#offline-migrations)te migreren. Als dat niet het geval is, voert u de taken in Transact-SQL (T-SQL) uit met SQL Server Management Studio en maakt u deze hand matig opnieuw op het door SQL Managed instance-exemplaar. 
 
 > [!IMPORTANT]
 > Momenteel ondersteunt Azure DMS alleen taken met de stappen van het T-SQL-subsysteem. Taken met SSIS-pakket stappen moet hand matig worden gemigreerd. 
@@ -193,7 +193,7 @@ Het herstellen van systeem databases wordt niet ondersteund. Als u objecten op e
 
 Zorg ervoor dat u profiteren van de geavanceerde Cloud functies die beschikbaar worden gesteld door SQL Managed instance. Zo hoeft u zich geen zorgen meer te maken over het beheer van back-ups omdat de service dit voor u doet. U kunt [binnen de Bewaar periode](../../database/recovery-using-backups.md#point-in-time-restore)herstellen naar elk gewenst moment. Bovendien hoeft u zich geen zorgen te maken over het instellen van hoge Beschik baarheid, omdat [hoge Beschik baarheid is ingebouwd](../../database/high-availability-sla.md). 
 
-U kunt de beveiliging versterken door [Azure Active Directory verificatie](../../database/authentication-aad-overview.md), [controle](../../managed-instance/auditing-configure.md), [detectie van bedreigingen](../../database/advanced-data-security.md), [beveiliging op rijniveau](/sql/relational-databases/security/row-level-security)en [dynamische gegevens maskering](/sql/relational-databases/security/dynamic-data-masking)te gebruiken.
+U kunt de beveiliging versterken door [Azure Active Directory verificatie](../../database/authentication-aad-overview.md), [controle](../../managed-instance/auditing-configure.md), [detectie van bedreigingen](../../database/azure-defender-for-sql.md), [beveiliging op rijniveau](/sql/relational-databases/security/row-level-security)en [dynamische gegevens maskering](/sql/relational-databases/security/dynamic-data-masking)te gebruiken.
 
 Naast geavanceerde beheer-en beveiligings functies biedt SQL Managed instance een aantal geavanceerde hulp middelen waarmee u [uw werk belasting kunt bewaken en afstemmen](../../database/monitor-tune-overview.md). Met [Azure SQL-analyse](../../../azure-monitor/insights/azure-sql.md) kunt u een groot aantal beheerde exemplaren op een gecentraliseerde manier bewaken.  [Automatisch afstemmen](/sql/relational-databases/automatic-tuning/automatic-tuning#automatic-plan-correction)   in beheerde instanties bewaakt voortdurend de prestaties van de uitvoerings statistieken van uw SQL-plan en worden de geïdentificeerde prestatie problemen automatisch opgelost. 
 
@@ -203,7 +203,7 @@ Sommige functies zijn alleen beschikbaar als het [compatibiliteits niveau van de
 
 Raadpleeg de volgende bronnen die zijn ontwikkeld voor de echte wereld wijde migratie projecten voor meer hulp.
 
-|Asset  |Description  |
+|Asset  |Beschrijving  |
 |---------|---------|
 |[Beoordelings model en hulp programma voor gegevens workload](https://github.com/Microsoft/DataMigrationTeam/tree/master/Data%20Workload%20Assessment%20Model%20and%20Tool)| Dit hulp programma biedt voorgestelde ' Best passend ' doel platformen, Cloud gereedheids en toepassings-en database herstel niveau voor een bepaalde werk belasting. U kunt met één klik berekeningen en rapporten genereren waarmee u grote voor-en hand-evaluaties versnelt door het besluitvormings proces voor een geautomatiseerd en uniform doel platform te bieden.|
 |[Hulp programma DBLoader](https://github.com/microsoft/DataMigrationTeam/tree/master/DBLoader%20Utility)|De DBLoader kan worden gebruikt voor het laden van gegevens uit tekst bestanden met scheidings tekens naar SQL Server. Dit Windows-console hulpprogramma maakt gebruik van de SQL Server Native Client bulkload-interface, die werkt op alle versies van SQL Server, waaronder Azure SQL MI.|

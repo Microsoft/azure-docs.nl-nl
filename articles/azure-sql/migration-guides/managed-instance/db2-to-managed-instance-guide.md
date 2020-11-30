@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: f691ec2d6ba873ba8052c5fab35162932668f185
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: c31187e87f18f0ec84cd5b80ccab997d0ba381c3
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94496749"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96324751"
 ---
 # <a name="migration-guide-db2-to-sql-managed-instance"></a>Migratie handleiding: DB2 naar SQL-beheerd exemplaar
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -102,7 +102,7 @@ Voer de volgende stappen uit om het schema te converteren:
 1. Sla het project lokaal op voor een herbemiddeling van het offline schema. Selecteer **project opslaan** in het menu **bestand** . 
 
 
-## <a name="migrate"></a>Migrate
+## <a name="migrate"></a>Migreren
 
 Nadat u klaar bent met het beoordelen van uw data bases en eventuele verschillen hebt opgelost, is de volgende stap het uitvoeren van het migratie proces.
 
@@ -138,10 +138,10 @@ Nadat de gegevens zijn gemigreerd naar de doel omgeving, moeten alle toepassinge
 
 De test benadering voor database migratie bestaat uit de volgende activiteiten:
 
-1. **Validatie tests ontwikkelen** : als u database migratie wilt testen, moet u SQL-query's gebruiken. U moet de validatie query's maken om te worden uitgevoerd op zowel de bron-als de doel database. Uw validatie query's moeten betrekking hebben op het bereik dat u hebt gedefinieerd.
-1. **Test omgeving instellen** : de test omgeving moet een kopie van de bron database en de doel database bevatten. Zorg ervoor dat u de test omgeving isoleert.
-1. **Validatie tests uitvoeren** : Voer de validatie tests uit op de bron en het doel en analyseer vervolgens de resultaten.
-1. **Prestatie testen uitvoeren** : prestaties testen op basis van de bron en het doel, en vervolgens de resultaten analyseren en vergelijken.
+1. **Validatie tests ontwikkelen**: als u database migratie wilt testen, moet u SQL-query's gebruiken. U moet de validatie query's maken om te worden uitgevoerd op zowel de bron-als de doel database. Uw validatie query's moeten betrekking hebben op het bereik dat u hebt gedefinieerd.
+1. **Test omgeving instellen**: de test omgeving moet een kopie van de bron database en de doel database bevatten. Zorg ervoor dat u de test omgeving isoleert.
+1. **Validatie tests uitvoeren**: Voer de validatie tests uit op de bron en het doel en analyseer vervolgens de resultaten.
+1. **Prestatie testen uitvoeren**: prestaties testen op basis van de bron en het doel, en vervolgens de resultaten analyseren en vergelijken.
 
    > [!NOTE]
    > Voor hulp bij het ontwikkelen en uitvoeren van validatie tests na de migratie, moet u rekening houden met de oplossing voor gegevens kwaliteit die beschikbaar is via de partner [QuerySurge](https://www.querysurge.com/company/partners/microsoft). 
@@ -149,7 +149,7 @@ De test benadering voor database migratie bestaat uit de volgende activiteiten:
 
 ## <a name="leverage-advanced-features"></a>Geavanceerde functies gebruiken 
 
-Zorg ervoor dat u profiteren van de geavanceerde Cloud functies die worden geboden door Azure SQL Managed instance, zoals [ingebouwde hoge Beschik baarheid](../../database/high-availability-sla.md), [detectie van bedreigingen](../../database/advanced-data-security.md)en [het bewaken en afstemmen van uw werk belasting](../../database/monitor-tune-overview.md). 
+Zorg ervoor dat u profiteren van de geavanceerde Cloud functies die worden geboden door Azure SQL Managed instance, zoals [ingebouwde hoge Beschik baarheid](../../database/high-availability-sla.md), [detectie van bedreigingen](../../database/azure-defender-for-sql.md)en [het bewaken en afstemmen van uw werk belasting](../../database/monitor-tune-overview.md). 
 
 
 Sommige SQL Server-functies zijn alleen beschikbaar als het [compatibiliteits niveau van de data base](/sql/relational-databases/databases/view-or-change-the-compatibility-level-of-a-database) is gewijzigd in het meest recente compatibiliteits niveau (150). 

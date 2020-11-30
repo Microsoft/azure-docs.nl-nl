@@ -8,13 +8,13 @@ ms.topic: how-to
 ms.date: 10/29/2020
 ms.author: alkohli
 ms.subservice: common
-ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: d23560e8ee387ca8bc9cb4bba4211f6c8272addd
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.custom: devx-track-azurepowershell, devx-track-azurecli
+ms.openlocfilehash: 07f1a6ff5d15ee552680c59c86a194aeabe5b866
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94490879"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326383"
 ---
 # <a name="use-the-azure-importexport-service-to-import-data-to-azure-blob-storage"></a>De Azure import/export-service gebruiken om gegevens te importeren in Azure Blob Storage
 
@@ -52,7 +52,7 @@ Voer de volgende stappen uit om de stations voor te bereiden.
 1. Verbind uw schijf stations met het Windows-systeem via SATA-connectors.
 2. Maak één NTFS-volume op elk station. Wijs een stationsletter aan het volume toe. Gebruik mountpoints niet.
 3. BitLocker-versleuteling inschakelen op het NTFS-volume. Als u een Windows Server-systeem gebruikt, gebruikt u de instructies in [How to Enable BitLocker in Windows server 2012 R2](https://thesolving.com/storage/how-to-enable-bitlocker-on-windows-server-2012-r2/).
-4. Gegevens kopiëren naar versleuteld volume. Gebruik slepen en neerzetten of Robocopy of een dergelijk Kopieer programma. Er wordt een logboek bestand ( *. jrn* ) gemaakt in dezelfde map waarin u het hulp programma uitvoert.
+4. Gegevens kopiëren naar versleuteld volume. Gebruik slepen en neerzetten of Robocopy of een dergelijk Kopieer programma. Er wordt een logboek bestand (*. jrn*) gemaakt in dezelfde map waarin u het hulp programma uitvoert.
 
    Als het station is vergrendeld en u het station moet ontgrendelen, zijn de stappen voor ontgrendelen mogelijk anders, afhankelijk van uw use-case.
 
@@ -109,7 +109,7 @@ Voer de volgende stappen uit om een import taak te maken in de Azure Portal.
 
     ![Klik op import/export-taak maken](./media/storage-import-export-data-to-blobs/import-to-blob2.png)
 
-4. In de **basis beginselen** :
+4. In de **basis beginselen**:
 
    * Selecteer **importeren in azure**.
    * Voer een beschrijvende naam in voor de import taak. Gebruik de naam om de voortgang van uw taken bij te houden.
@@ -120,7 +120,7 @@ Voer de volgende stappen uit om een import taak te maken in de Azure Portal.
 
      ![Import taak maken-stap 1](./media/storage-import-export-data-to-blobs/import-to-blob3.png)
 
-5. In **taak Details** :
+5. In **taak Details**:
 
    * Upload de schijf logboek bestanden die u hebt verkregen tijdens de stap voor bereiding van het station. Als `waimportexport.exe version1` deze is gebruikt, uploadt u één bestand voor elk station dat u hebt voor bereid. Als de grootte van het logboek bestand groter is dan 2 MB, kunt u `<Journal file name>_DriveInfo_<Drive serial ID>.xml` ook de met het logboek bestand gemaakt maken.
    * Selecteer het doel-opslag account waarin de gegevens worden opgeslagen.
@@ -128,7 +128,7 @@ Voer de volgende stappen uit om een import taak te maken in de Azure Portal.
 
    ![Import taak maken-stap 2](./media/storage-import-export-data-to-blobs/import-to-blob4.png)
 
-6. In **retour verzendings gegevens** :
+6. In **retour verzendings gegevens**:
 
    * Selecteer de transporteur in de vervolg keuzelijst. Als u een andere transporteur dan FedEx/DHL wilt gebruiken, kiest u een bestaande optie in de vervolg keuzelijst. Neem contact op met Azure Data Box Operations-team `adbops@microsoft.com`  met de informatie over de provider die u wilt gebruiken.
    * Voer een geldig account nummer van een transporteur in dat u hebt gemaakt met die transporteur. Micro soft gebruikt dit account om de schijven terug naar u te verzenden zodra uw import taak is voltooid. Als u geen account nummer hebt, maakt u een [FedEx](https://www.fedex.com/us/oadr/) -of [DHL](https://www.dhl.com/) -draaggolf account.
@@ -139,7 +139,7 @@ Voer de volgende stappen uit om een import taak te maken in de Azure Portal.
 
      ![Import taak maken-stap 3](./media/storage-import-export-data-to-blobs/import-to-blob5.png)
 
-7. In de **samen vatting** :
+7. In de **samen vatting**:
 
    * Bekijk de taak gegevens die in de samen vatting worden weer gegeven. Noteer de naam van de taak en het verzend adres van Azure Data Center om schijven terug te sturen naar Azure. Deze informatie wordt later op het verzend label gebruikt.
    * Klik op **OK** om de import taak te maken.

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/27/2020
 ms.author: mathoma
-ms.openlocfilehash: 81d0bddbd62f9f2d15d8404fee63b15c8ab2c0a3
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 194c6a5cead400e1bac78ba42cb7238b64bd3b7b
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93102272"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327471"
 ---
 # <a name="business-continuity-and-hadr-for-sql-server-on-azure-virtual-machines"></a>Bedrijfs continuïteit en HADR voor SQL Server op Azure Virtual Machines
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -90,7 +90,7 @@ In de volgende afbeelding gebruikt de installatie SQL Server uitgevoerd op een v
 
 Zie [Licentievoorwaarden voor het product](https://www.microsoft.com/licensing/product-licensing/products) voor meer informatie. 
 
-Als u dit voor deel wilt inschakelen, gaat u naar de resource van uw [SQL Server virtuele machine](manage-sql-vm-portal.md#access-the-sql-virtual-machines-resource). Selecteer **configureren** onder **instellingen** en kies vervolgens de optie voor **nood herstel** onder **SQL Server-licentie** . Schakel het selectie vakje in om te bevestigen dat deze SQL Server virtuele machine wordt gebruikt als passieve replica en selecteer vervolgens **Toep assen** om uw instellingen op te slaan. 
+Als u dit voor deel wilt inschakelen, gaat u naar de resource van uw [SQL Server virtuele machine](manage-sql-vm-portal.md#access-the-sql-virtual-machines-resource). Selecteer **configureren** onder **instellingen** en kies vervolgens de optie voor **nood herstel** onder **SQL Server-licentie**. Schakel het selectie vakje in om te bevestigen dat deze SQL Server virtuele machine wordt gebruikt als passieve replica en selecteer vervolgens **Toep assen** om uw instellingen op te slaan. 
 
 ![Een herstel replica voor nood gevallen in azure configureren](./media/business-continuity-high-availability-disaster-recovery-hadr-overview/dr-replica-in-portal.png)
 
@@ -101,7 +101,7 @@ Azure-Vm's,-opslag en-netwerken hebben verschillende operationele kenmerken dan 
 ### <a name="high-availability-nodes-in-an-availability-set"></a>Knoop punten met hoge Beschik baarheid in een beschikbaarheidsset
 Met beschikbaarheids sets in azure kunt u de knoop punten met hoge Beschik baarheid plaatsen in afzonderlijke fout domeinen en update domeinen. Het Azure-platform wijst een update domein en een fout domein toe aan elke virtuele machine in uw beschikbaarheidsset. Deze configuratie binnen een Data Center zorgt ervoor dat tijdens een geplande of ongeplande onderhouds gebeurtenis ten minste één virtuele machine beschikbaar is en voldoet aan de Azure-SLA van 99,95 procent. 
 
-Als u een instelling voor maximale Beschik baarheid wilt configureren, plaatst u alle deelnemende SQL Server virtuele machines in dezelfde beschikbaarheidsset om te voor komen dat toepassingen of gegevens verloren gaan tijdens een onderhouds gebeurtenis. Alleen knoop punten in dezelfde Cloud service kunnen deel nemen aan dezelfde beschikbaarheidsset. Zie voor meer informatie [De beschikbaarheid van virtuele machines beheren](../../../virtual-machines/manage-availability.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json).
+Als u een instelling voor maximale Beschik baarheid wilt configureren, plaatst u alle deelnemende SQL Server virtuele machines in dezelfde beschikbaarheidsset om te voor komen dat toepassingen of gegevens verloren gaan tijdens een onderhouds gebeurtenis. Alleen knoop punten in dezelfde Cloud service kunnen deel nemen aan dezelfde beschikbaarheidsset. Zie voor meer informatie [De beschikbaarheid van virtuele machines beheren](../../../virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 ### <a name="high-availability-nodes-in-an-availability-zone"></a>Knoop punten met hoge Beschik baarheid in een beschikbaarheids zone
 Beschikbaarheidszones zijn unieke, fysieke locaties binnen een Azure-regio. Elke zone bestaat uit een of meer data centers die zijn uitgerust met onafhankelijke voeding, koeling en netwerken. De fysieke schei ding van beschikbaarheids zones binnen een regio helpt bij het beveiligen van toepassingen en gegevens van datacenter fouten door ervoor te zorgen dat er ten minste één virtuele machine beschikbaar is en voldoet aan de Azure-SLA van 99,99 procent. 
@@ -136,7 +136,7 @@ Als de beschikbaarheids groep meerdere Azure-subnetten omvat (zoals een implemen
 U kunt nog steeds afzonderlijk verbinding maken met elke beschikbaarheids replica door rechtstreeks verbinding te maken met het service-exemplaar. Omdat beschikbaarheids groepen achterwaarts compatibel zijn met data base mirroring-clients, kunt u ook verbinding maken met de beschikbaarheids replica's als database spiegeling, zolang de replica's zo zijn geconfigureerd dat ze op een vergelijk bare manier worden gespiegeld:
 
 * Er is één primaire replica en één secundaire replica.
-* De secundaire replica is geconfigureerd als niet-lees bare, **secundaire** optie ingesteld op **Nee** .
+* De secundaire replica is geconfigureerd als niet-lees bare,**secundaire** optie ingesteld op **Nee**.
 
 Hier volgt een voor beeld-Client connection string die overeenkomt met deze gespiegelde configuratie van de data base met behulp van ADO.NET of SQL Server Native Client:
 

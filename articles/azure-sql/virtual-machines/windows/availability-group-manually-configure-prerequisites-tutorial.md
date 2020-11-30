@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 03/29/2018
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 59eae5303d9eca48fa4cec30fe622faf19ffba1f
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 8572a73586b01967c8aef7f6c4947b5ce96146b4
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94961886"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96324853"
 ---
 # <a name="tutorial-prerequisites-for-creating-availability-groups-on-sql-server-on-azure-virtual-machines"></a>Zelf studie: vereisten voor het maken van beschikbaarheids groepen op SQL Server op Azure Virtual Machines
 
@@ -46,7 +46,7 @@ U hebt een Azure-account nodig. U kunt [een gratis Azure-account openen of de](h
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Selecteer **+** deze optie om een nieuw object te maken in de portal.
 
    ![Nieuw object](./media/availability-group-manually-configure-prerequisites-tutorial-/01-portalplus.png)
@@ -91,7 +91,7 @@ Het virtuele netwerk maken in de Azure Portal:
    | --- | --- |
    | **Naam** |autoHAVNET |
    | **Adresruimte** |10.33.0.0/24 |
-   | **Subnetnaam** |Administrator |
+   | **Subnetnaam** |Beheerder |
    | **Subnetadresbereik** |10.33.0.0/29 |
    | **Abonnement** |Geef het abonnement op dat u wilt gebruiken. Het **abonnement** is leeg als u slechts één abonnement hebt. |
    | **Resourcegroep** |Kies **bestaande gebruiken** en kies de naam van de resource groep. |
@@ -144,7 +144,7 @@ De volgende tabel geeft een overzicht van de netwerk configuratie-instellingen:
 
 ## <a name="create-availability-sets"></a>Beschikbaarheidssets maken
 
-Voordat u virtuele machines maakt, moet u beschikbaarheids sets maken. Beschikbaarheids sets verminderen de uitval tijd voor geplande of niet-geplande onderhouds gebeurtenissen. Een beschikbaarheidsset van Azure is een logische groep resources die Azure plaatst op fysieke fout domeinen en update domeinen. Een fout domein zorgt ervoor dat de leden van de beschikbaarheidsset afzonderlijke stroom-en netwerk bronnen hebben. Een update domein zorgt ervoor dat de leden van de beschikbaarheidsset niet tegelijkertijd voor onderhoud worden ingesteld. Zie voor meer informatie [De beschikbaarheid van virtuele machines beheren](../../../virtual-machines/manage-availability.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json).
+Voordat u virtuele machines maakt, moet u beschikbaarheids sets maken. Beschikbaarheids sets verminderen de uitval tijd voor geplande of niet-geplande onderhouds gebeurtenissen. Een beschikbaarheidsset van Azure is een logische groep resources die Azure plaatst op fysieke fout domeinen en update domeinen. Een fout domein zorgt ervoor dat de leden van de beschikbaarheidsset afzonderlijke stroom-en netwerk bronnen hebben. Een update domein zorgt ervoor dat de leden van de beschikbaarheidsset niet tegelijkertijd voor onderhoud worden ingesteld. Zie voor meer informatie [De beschikbaarheid van virtuele machines beheren](../../../virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 U hebt twee beschikbaarheids sets nodig. Een voor de domein controllers. De tweede is voor de SQL Server Vm's.
 

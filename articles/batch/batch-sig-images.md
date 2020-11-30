@@ -4,12 +4,12 @@ description: Aangepaste installatie kopie groepen zijn een efficiënte manier om
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: c24da435540f62a793620fe6005d176ce10c7b05
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: eb21a9e0d355274142e34fbb5c90a4d293c88ef1
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917780"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327301"
 ---
 # <a name="use-the-shared-image-gallery-to-create-a-custom-image-pool"></a>De galerie met gedeelde afbeeldingen gebruiken om een aangepaste installatie kopie groep te maken
 
@@ -58,7 +58,7 @@ In azure kunt u een gedeelde installatie kopie voorbereiden op basis van een beh
 - Een gegeneraliseerde on-premises VHD die is geüpload naar de Cloud
 
 > [!NOTE]
-> Op dit moment ondersteunt batch alleen gegeneraliseerde gedeelde installatie kopieën. U kunt op dit moment geen aangepaste installatie kopie groep maken van een speciale gedeelde installatie kopie.
+> Batch ondersteunt alleen gegeneraliseerde gedeelde installatie kopieën. een speciale gedeelde installatie kopie kan niet worden gebruikt voor het maken van een groep.
 
 De volgende stappen laten zien hoe u een virtuele machine voorbereidt, een moment opname maakt en een installatie kopie van de moment opname kunt maken.
 

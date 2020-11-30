@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 03/06/2020
 ms.topic: conceptual
 ms.custom: how-to, racking-python, devx-track-azurecli
-ms.openlocfilehash: d17967c24fbbb127c1d3eaee5acd5b78c3e3b902
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 901e4d458cc2d77d4e7f13c1782b86c8532ca499
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630342"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327165"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-functions-preview"></a>Een machine learning model implementeren op Azure Functions (preview-versie)
 
@@ -31,7 +31,7 @@ Met Azure Machine Learning kunt u docker-installatie kopieën maken op basis van
 ## <a name="prerequisites"></a>Vereisten
 
 * Een Azure Machine Learning-werkruimte. Zie het artikel [een werk ruimte maken](how-to-manage-workspace.md) voor meer informatie.
-* De [Azure cli](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
+* De [Azure CLI](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
 * Een getraind machine learning model dat is geregistreerd in uw werk ruimte. Als u geen model hebt, gebruikt u de [zelf studie voor installatie kopie classificatie: Train model](tutorial-train-models-with-aml.md) om er een te trainen en te registreren.
 
     > [!IMPORTANT]
@@ -58,7 +58,7 @@ Voordat u implementeert, moet u definiëren wat er nodig is om het model als een
 
 Zie [Score code definiëren](./how-to-deploy-and-where.md#define-an-entry-script) voor meer informatie over het invoer script
 
-* **Afhankelijkheden** , zoals hulp scripts of python/Conda-pakketten die zijn vereist voor het uitvoeren van het script of model van de vermelding
+* **Afhankelijkheden**, zoals hulp scripts of python/Conda-pakketten die zijn vereist voor het uitvoeren van het script of model van de vermelding
 
 Deze entiteiten worden ingekapseld in een Afleidings __configuratie__. De deductieconfiguratie verwijst naar het invoerscript en andere afhankelijkheden.
 
@@ -277,7 +277,7 @@ Nadat de installatie kopie is geladen en de app beschikbaar is, gebruikt u de vo
     }
     ```
 
-3. Als u de uitvoer wilt weer geven die door de functie is geproduceerd, gebruikt u de volgende opdracht om de gegenereerde uitvoer bestanden te vermelden. Vervang door `<triggerConnectionString>` de Connection String die u eerder hebt geretourneerd. In dit voor beeld `output` is de naam van de uitvoer container die u eerder hebt gemaakt. Als u een andere naam hebt gebruikt, vervangt u deze waarde::
+3. Als u de uitvoer wilt weer geven die door de functie is geproduceerd, gebruikt u de volgende opdracht om de gegenereerde uitvoer bestanden te vermelden. Vervang door `<triggerConnectionString>` de Connection String die u eerder hebt geretourneerd. In dit voor beeld `output` is de naam van de uitvoer container die u eerder hebt gemaakt. Als u een andere naam hebt gebruikt, vervangt u deze waarde:
 
     ```azurecli-interactive
     az storage blob list --container-name output --connection-string <triggerConnectionString> --query '[].name' --output tsv

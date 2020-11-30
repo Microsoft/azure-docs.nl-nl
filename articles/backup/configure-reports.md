@@ -3,12 +3,12 @@ title: Azure Backup-rapporten configureren
 description: Rapporten voor Azure Backup configureren en weer geven met behulp van Log Analytics en Azure-werkmappen
 ms.topic: conceptual
 ms.date: 02/10/2020
-ms.openlocfilehash: 11893488c59781bb78cf913a30069e920c66bc71
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 2565fa1183635c10e45b247f723788b6fe371c14
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92172467"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325244"
 ---
 # <a name="configure-azure-backup-reports"></a>Azure Backup-rapporten configureren
 
@@ -18,7 +18,7 @@ Een veelvoorkomende vereiste voor back-upbeheerders is het verkrijgen van inzich
 - Controle van back-ups en herstel bewerkingen.
 - De belangrijkste trends op verschillende niveaus nauw keurig te identificeren.
 
-Momenteel biedt Azure Backup een rapportage oplossing die gebruikmaakt van [Azure monitor-logboeken](../azure-monitor/log-query/get-started-portal.md) en [Azure-werkmappen](../azure-monitor/platform/workbooks-overview.md). Met deze resources krijgt u inzicht in uw back-ups over uw hele back-ups. In dit artikel wordt uitgelegd hoe u Azure Backup-rapporten configureert en weergeeft.
+Momenteel biedt Azure Backup een rapportage oplossing die gebruikmaakt van [Azure monitor-logboeken](../azure-monitor/log-query/log-analytics-tutorial.md) en [Azure-werkmappen](../azure-monitor/platform/workbooks-overview.md). Met deze resources krijgt u inzicht in uw back-ups over uw hele back-ups. In dit artikel wordt uitgelegd hoe u Azure Backup-rapporten configureert en weergeeft.
 
 ## <a name="supported-scenarios"></a>Ondersteunde scenario's
 
@@ -60,7 +60,7 @@ Azure Backup biedt ook een ingebouwde Azure Policy definitie, waarmee de configu
 
 #### <a name="3-view-reports-in-the-azure-portal"></a>3. rapporten weer geven in de Azure Portal
 
-Nadat u uw kluizen hebt geconfigureerd om gegevens naar Log Analytics te verzenden, kunt u de back-uprapporten bekijken door naar het deel venster van de kluis te gaan en **back-uprapporten**te selecteren.
+Nadat u uw kluizen hebt geconfigureerd om gegevens naar Log Analytics te verzenden, kunt u de back-uprapporten bekijken door naar het deel venster van de kluis te gaan en **back-uprapporten** te selecteren.
 
 ![Kluis dashboard](./media/backup-azure-configure-backup-reports/vault-dashboard.png)
 
@@ -157,7 +157,7 @@ Als u [Azure Lighthouse](../lighthouse/index.yml) gebruikt met gedelegeerde toeg
 - Filters werken van links naar rechts en van boven naar beneden op elk tabblad. Dat wil zeggen dat alle filters alleen van toepassing zijn op alle widgets die aan de rechter kant van het filter of onder dat filter worden geplaatst.
 - Als u een gekleurde tegel selecteert, worden de objecten onder de tegel gefilterd op records die betrekking hebben op de waarde van die tegel. Als u bijvoorbeeld de tegel **beveiliging gestopt** selecteert op het tabblad **Back-upitems** , worden de rasters en de onderstaande grafieken gefilterd om gegevens weer te geven voor back-upitems met de status gestopt voor beveiliging.
 - Tegels die niet zijn gekleurd, zijn niet te selecteren.
-- De gegevens voor de huidige gedeeltelijke dag worden niet weer gegeven in de rapporten. Dus als de geselecteerde waarde van het **tijds bereik** de **laatste 7 dagen**is, worden in het rapport records weer gegeven voor de afgelopen zeven voltooide dagen. De huidige dag is niet opgenomen.
+- De gegevens voor de huidige gedeeltelijke dag worden niet weer gegeven in de rapporten. Dus als de geselecteerde waarde van het **tijds bereik** de **laatste 7 dagen** is, worden in het rapport records weer gegeven voor de afgelopen zeven voltooide dagen. De huidige dag is niet opgenomen.
 - Het rapport bevat details van taken (naast logboek taken) die zijn *geactiveerd* in het geselecteerde tijds bereik.
 - De waarden die worden weer gegeven voor **Cloud opslag** en **beveiligde instanties** bevinden zich aan het *einde* van het geselecteerde tijds bereik.
 - De back-upitems die in de rapporten worden weer gegeven, zijn de items die aan het *einde* van het geselecteerde tijds bereik bestaan. Back-upitems die in het midden van het geselecteerde tijds bereik zijn verwijderd, worden niet weer gegeven. Dezelfde Conventie geldt ook voor back-upbeleid.

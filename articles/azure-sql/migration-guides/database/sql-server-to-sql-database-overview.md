@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: cafb32e5bd91c6b7f3cfef4641828963e0731797
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 46216fe06e3d3425d5b237cdbb7326eed596945a
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94496966"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326927"
 ---
 # <a name="migration-overview-sql-server-to-sql-database"></a>Migratie overzicht: SQL Server naar SQL Database
 [!INCLUDE[appliesto--sqldb](../../includes/appliesto-sqldb.md)]
@@ -61,18 +61,18 @@ Er zijn verschillende hulpprogram ma's beschikbaar voor verschillende werk belas
 Bekijk algemene richt lijnen om u te helpen bij het kiezen van het juiste implementatie model en de servicelaag van Azure SQL Database. U kunt reken-en opslag Resources kiezen tijdens de implementatie en deze later wijzigen met behulp van de  [Azure Portal](../../database/scale-resources.md)  zonder uitval tijd voor uw toepassing.
 
 
-**Implementatie modellen** : inzicht in de werk belasting van uw toepassing en het gebruiks patroon om te bepalen of een enkele data base of elastische pool. 
+**Implementatie modellen**: inzicht in de werk belasting van uw toepassing en het gebruiks patroon om te bepalen of een enkele data base of elastische pool. 
 
 - [Eén data base](../../database/single-database-overview.md) vertegenwoordigt een volledig beheerde data base die geschikt is voor de meeste moderne Cloud toepassingen en micro Services.
 - Een [elastische pool](../../database/elastic-pool-overview.md) is een verzameling afzonderlijke data bases met een gedeelde set resources, zoals CPU of geheugen, en is geschikt voor het combi neren van data bases in een pool met voorspel bare gebruiks patronen die effectief dezelfde set van bronnen kunnen delen.
 
-**Inkoop modellen** : Kies tussen het VCORE, DTU of serverloos aankoop model. 
+**Inkoop modellen**: Kies tussen het VCORE, DTU of serverloos aankoop model. 
 
 - Met het [vCore-model](../../database/service-tiers-vcore.md) kunt u het aantal vCores voor uw Azure SQL database kiezen, zodat het de eenvoudigste keuze is wanneer u van on-premises SQL server vertaalt. Dit is de enige optie die het opslaan van de licentie kosten met de [Azure Hybrid Benefit](https://azure.microsoft.com/pricing/hybrid-benefit/)ondersteunt. 
 - Het [DTU-model](../../database/service-tiers-dtu.md) bevat een samen vatting van de onderliggende compute-, geheugen-en i/o-resources om een OVERVLOEI-DTU te bieden. 
 - Het [model zonder server](../../database/serverless-tier-overview.md) is bedoeld voor werk belastingen waarvoor automatische schaling op aanvraag is vereist met reken resources die worden gefactureerd per seconde van het gebruik. De compute-laag zonder server onderbreekt automatisch data bases tijdens inactieve Peri Oden (waarbij alleen opslag wordt gefactureerd) en hervat automatisch data bases wanneer de activiteit wordt geretourneerd. 
 
-**Service lagen** : Kies uit drie service lagen die zijn ontworpen voor verschillende soorten toepassingen.
+**Service lagen**: Kies uit drie service lagen die zijn ontworpen voor verschillende soorten toepassingen.
 
 - [Algemeen/Standard-servicelaag](../../database/service-tier-general-purpose.md) biedt een evenwichtige, budget gerichte optie met reken kracht en opslag die geschikt is voor het leveren van toepassingen uit de onderste laag, waarbij redundantie is ingebouwd in de opslaglaag om fouten op te lossen. Ontworpen voor de meeste data base-workloads. 
 - [Bedrijfskritiek/Premium-servicelaag](../../database/service-tier-business-critical.md) is voor toepassingen met een hoge categorie waarvoor hoge transactie tarieven, io met lage latentie en een hoge mate van tolerantie met secundaire replica's beschikbaar zijn voor zowel de failover als voor het offloaden van Lees werk belastingen.
@@ -183,7 +183,7 @@ Voor Azure SQL Database zijn de enige toepasselijke systeem databases [Master](/
 
 Zorg ervoor dat u profiteren van de geavanceerde Cloud functies die worden geboden door SQL Database. Zo hoeft u zich geen zorgen meer te maken over het beheer van back-ups omdat de service dit voor u doet. U kunt [binnen de Bewaar periode](../../database/recovery-using-backups.md#point-in-time-restore)herstellen naar elk gewenst moment. 
 
-U kunt de beveiliging versterken door [Azure Active Directory verificatie](../../database/authentication-aad-overview.md), [controle](../../database/auditing-overview.md), [detectie van bedreigingen](../../database/advanced-data-security.md), [beveiliging op rijniveau](/sql/relational-databases/security/row-level-security)en [dynamische gegevens maskering](/sql/relational-databases/security/dynamic-data-masking)te gebruiken.
+U kunt de beveiliging versterken door [Azure Active Directory verificatie](../../database/authentication-aad-overview.md), [controle](../../database/auditing-overview.md), [detectie van bedreigingen](../../database/azure-defender-for-sql.md), [beveiliging op rijniveau](/sql/relational-databases/security/row-level-security)en [dynamische gegevens maskering](/sql/relational-databases/security/dynamic-data-masking)te gebruiken.
 
 Naast geavanceerde beheer-en beveiligings functies biedt SQL Database een aantal geavanceerde hulp middelen waarmee u [uw werk belasting kunt bewaken en afstemmen](../../database/monitor-tune-overview.md). [Azure SQL-analyse (preview)](../../../azure-monitor/insights/azure-sql.md) is een geavanceerde Cloud bewakings oplossing voor het bewaken van de prestaties van al uw data bases in Azure SQL database op schaal en op meerdere abonnementen in één weer gave. Azure SQL-analyse verzamelt en visualiseert metrische prestatie gegevens met ingebouwde intelligentie voor het oplossen van prestaties.
 

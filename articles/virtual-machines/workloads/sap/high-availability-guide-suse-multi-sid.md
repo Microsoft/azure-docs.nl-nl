@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/16/2020
 ms.author: radeltch
-ms.openlocfilehash: 3827fa7a98cef9358db0ee102925586bce97fae6
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: cf0703406b71cb56bdd75a04746dfce7db6af471
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96188680"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327131"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-for-sap-applications-multi-sid-guide"></a>Hoge Beschik baarheid voor SAP NetWeaver op Azure Vm's op SUSE Linux Enterprise Server voor de multi-SID-hand leiding voor SAP-toepassingen
 
@@ -90,11 +90,11 @@ Voordat u begint, raadpleegt u eerst de volgende SAP-opmerkingen en-documenten:
 * [NetApp SAP-toepassingen op Microsoft Azure met behulp van Azure NetApp Files][anf-sap-applications-azure]
 ## <a name="overview"></a>Overzicht
 
-De virtuele machines die deel uitmaken van het cluster, moeten de grootte hebben om alle resources te kunnen uitvoeren, voor het geval failover wordt uitgevoerd. Elke SAP-SID kan onafhankelijk van elkaar worden overgenomen in het cluster met hoge Beschik baarheid met meerdere SID'S.  Als u gebruikmaakt van een SBD-omheining, kunnen de SBD-apparaten worden gedeeld tussen meerdere clusters.  
+De grootte van de virtuele machines die deel uitmaken van het cluster, moet kunnen worden uitgevoerd voor alle resources, voor het geval failover plaatsvindt. Elke SAP-SID kan onafhankelijk van elkaar worden overgenomen in het cluster met hoge Beschik baarheid met meerdere SID'S.  Als u gebruikmaakt van een SBD-omheining, kunnen de SBD-apparaten worden gedeeld tussen meerdere clusters.  
 
 Voor een hoge Beschik baarheid zijn voor SAP net-Weave Maxi maal beschik bare NFS-shares vereist. In dit voor beeld gaan we ervan uit dat de SAP NFS-shares worden gehost op een Maxi maal beschik bare [NFS-Bestands server](./high-availability-guide-suse-nfs.md), die door meerdere SAP-systemen kan worden gebruikt. Of de shares worden geïmplementeerd op [Azure NETAPP files NFS-volumes](../../../azure-netapp-files/azure-netapp-files-create-volumes.md).  
 
-![Overzicht van de hoge Beschik baarheid van SAP netweave](./media/high-availability-guide-suse/ha-suse-multi-sid.png)
+![Het pacemaker-cluster bevat gedetailleerde informatie over twee multi-SID clusters, msidcl1 en msidcl2.](./media/high-availability-guide-suse/ha-suse-multi-sid.png)
 
 > [!IMPORTANT]
 > De ondersteuning voor multi-SID clustering van SAP ASCS/ERS met SUSE Linux als gast besturingssysteem in azure Vm's is beperkt tot **vijf** SAP-sid's op hetzelfde cluster. Elke nieuwe SID verhoogt de complexiteit. Een combi natie van SAP voor het in de wachtrij plaatsen van replicatie server 1 en in plaats van replicatie Server 2 op hetzelfde cluster wordt **niet ondersteund**. Met multi-SID clustering wordt de installatie van meerdere SAP ASCS/ERS-exemplaren met verschillende Sid's in één pacemaker-cluster beschreven. Momenteel wordt multi-SID-clustering alleen ondersteund voor ASCS/ERS.  

@@ -4,12 +4,12 @@ description: In dit artikel vindt u antwoorden op veelgestelde vragen over het m
 ms.reviewer: sogup
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.openlocfilehash: e6e14209a8df7160d103cb036d38c9fee29b34dd
-ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
+ms.openlocfilehash: 0f4f990654cc23fde7cf1ad2e37ba1ada76d94e3
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96296060"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96324785"
 ---
 # <a name="frequently-asked-questions-back-up-azure-vms"></a>Veelgestelde vragen: back-ups maken van virtuele Azure-machines
 
@@ -83,7 +83,7 @@ Azure Backup maakt een afzonderlijke resource groep in de indeling `AzureBackupR
 
 ### <a name="does-azure-backup-support-standard-ssd-managed-disks"></a>Ondersteunt Azure Backup standaard SSD-Managed disks?
 
-Ja, Azure Backup ondersteunt [Standard SSD Managed disks](https://docs.microsoft.com/azure/virtual-machines/disks-types#standard-ssd).
+Ja, Azure Backup ondersteunt [Standard SSD Managed disks](../virtual-machines/disks-types.md#standard-ssd).
 
 ### <a name="can-we-back-up-a-vm-with-a-write-accelerator-wa-enabled-disk"></a>Kan ik een back-up maken van een VM met een Write Accelerator (WA) ingeschakelde schijf?
 

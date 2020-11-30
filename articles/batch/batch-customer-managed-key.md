@@ -5,12 +5,12 @@ author: pkshultz
 ms.topic: how-to
 ms.date: 07/17/2020
 ms.author: peshultz
-ms.openlocfilehash: 35780f915247e88a5de093594b653ddcebdfb06b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 404103caf376b792d363996664a69f655d5bd202
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89008876"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326009"
 ---
 # <a name="configure-customer-managed-keys-for-your-azure-batch-account-with-azure-key-vault-and-managed-identity"></a>Door de klant beheerde sleutels voor uw Azure Batch account configureren met Azure Key Vault en beheerde identiteit
 
@@ -76,7 +76,7 @@ Voeg in de Azure Portal, nadat de Key Vault is gemaakt, in het **toegangs beleid
 
 ![Toegangs beleid toevoegen](./media/batch-customer-managed-key/key-permissions.png)
 
-Vul in het veld **selecteren** onder **Principal**de in `principalId` die u eerder hebt opgehaald, of de naam van het batch-account.
+Vul in het veld **selecteren** onder **Principal** de in `principalId` die u eerder hebt opgehaald, of de naam van het batch-account.
 
 ![PrincipalId invoeren](./media/batch-customer-managed-key/principal-id.png)
 
@@ -92,7 +92,7 @@ Nadat de sleutel is gemaakt, klikt u op de zojuist gemaakte sleutel en de huidig
 
 ### <a name="azure-portal"></a>Azure Portal
 
-Ga in het [Azure Portal](https://portal.azure.com/)naar de pagina batch-account. Schakel onder de sectie **versleuteling** de door de **klant beheerde sleutel**in. U kunt de sleutel-id rechtstreeks gebruiken, of u kunt de sleutel kluis selecteren en vervolgens op **een sleutel kluis en sleutel selecteren**klikken.
+Ga in het [Azure Portal](https://portal.azure.com/)naar de pagina batch-account. Schakel onder de sectie **versleuteling** de door de **klant beheerde sleutel** in. U kunt de sleutel-id rechtstreeks gebruiken, of u kunt de sleutel kluis selecteren en vervolgens op **een sleutel kluis en sleutel selecteren** klikken.
 
 ![Schakel onder versleuteling de door de klant beheerde sleutel in](./media/batch-customer-managed-key/encryption-page.png)
 
@@ -144,11 +144,10 @@ az batch account set \
   * **Worden door de klant beheerde sleutels ondersteund voor bestaande batch-accounts?** Nee. Door de klant beheerde sleutels worden alleen ondersteund voor nieuwe batch-accounts.
   * **Kan ik RSA-sleutel grootten selecteren die groter zijn dan 2048 bits?** Ja, RSA-sleutel groottes `3072` en `4096` bits worden ook ondersteund.
   * **Welke bewerkingen zijn beschikbaar nadat een door de klant beheerde sleutel is ingetrokken?** De enige bewerking die is toegestaan, is het verwijderen van een account als batch de toegang tot de door de klant beheerde sleutel verliest.
-  * **Hoe kan ik de toegang tot mijn batch-account herstellen als ik de Key Vault sleutel per ongeluk verwijder?** Aangezien het opschonen van de beveiliging en het voorlopig verwijderen zijn ingeschakeld, kunt u de bestaande sleutels herstellen. Zie [een Azure Key Vault herstellen](../key-vault/general/soft-delete-cli.md#recovering-a-key-vault)voor meer informatie.
+  * **Hoe kan ik de toegang tot mijn batch-account herstellen als ik de Key Vault sleutel per ongeluk verwijder?** Aangezien het opschonen van de beveiliging en het voorlopig verwijderen zijn ingeschakeld, kunt u de bestaande sleutels herstellen. Zie [een Azure Key Vault herstellen](../key-vault/general/key-vault-recovery.md)voor meer informatie.
   * **Kan ik door de klant beheerde sleutels uitschakelen?** U kunt het versleutelings type van het batch-account op elk gewenst moment weer instellen op ' micro soft Managed key '. Daarna kunt u de sleutel verwijderen of wijzigen.
   * **Hoe kan ik mijn sleutels draaien?** Door de klant beheerde sleutels worden niet automatisch gedraaid. Als u de sleutel wilt draaien, werkt u de sleutel-id bij waaraan het account is gekoppeld.
   * **Hoe lang duurt het voordat de toegang tot het batch-account is hersteld?** Het kan tot tien minuten duren voordat het account weer toegankelijk is nadat de toegang is hersteld.
   * **Wat gebeurt er met mijn resources terwijl het batch-account niet beschikbaar is?** Alle groepen die worden uitgevoerd wanneer batch toegang tot door de klant beheerde sleutels verloren gaat, blijven actief. De knoop punten gaan echter over naar een niet-beschik bare status en taken worden niet meer uitgevoerd (en worden opnieuw in de wachtrij gezet). Zodra de toegang is hersteld, worden knoop punten weer beschikbaar en worden de taken opnieuw gestart.
   * **Is dit versleutelings mechanisme van toepassing op VM-schijven in een batch-pool?** Nee. Voor Cloud service-configuratie groepen wordt er geen versleuteling toegepast voor het besturings systeem en de tijdelijke schijf. Voor virtuele-machine configuratie groepen worden het besturings systeem en de opgegeven gegevens schijven standaard versleuteld met een door micro soft platform beheerde sleutel. Op dit moment kunt u niet uw eigen sleutel opgeven voor deze schijven. Als u de tijdelijke schijf van Vm's voor een batch-pool wilt versleutelen met een door micro soft platform beheerde sleutel, moet u de eigenschap [diskEncryptionConfiguration](/rest/api/batchservice/pool/add#diskencryptionconfiguration) in de configuratie groep van de [virtuele machine](/rest/api/batchservice/pool/add#virtualmachineconfiguration) inschakelen. Voor zeer gevoelige omgevingen wordt u aangeraden tijdelijke schijf versleuteling in te scha kelen en te voor komen dat gevoelige gegevens worden opgeslagen op het besturings systeem en gegevens schijven. Zie [een groep maken met schijf versleuteling is ingeschakeld](./disk-encryption.md) voor meer informatie.
   * **Is de door het systeem toegewezen beheerde identiteit voor het batch-account dat beschikbaar is op de reken knooppunten?** Nee. Deze beheerde identiteit wordt momenteel alleen gebruikt voor toegang tot de Azure Key Vault voor de door de klant beheerde sleutel.
-  

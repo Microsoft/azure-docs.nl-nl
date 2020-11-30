@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: pafarley
-ms.openlocfilehash: d98f2390be3b3f4b3770125185cb33daa5ff6371
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: e2d87d4322ac6b91a19a4775c23ceec75d528030
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93143608"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325329"
 ---
 # <a name="content-moderation-reviews-workflows-and-jobs"></a>Beoordelingen, werk stromen en taken voor content toezicht
 
@@ -26,7 +26,7 @@ Content Moderator combineert de door de machine ondersteunde toezicht met de mog
 Bij een beoordeling wordt inhoud geüpload naar het hulp programma beoordeling. U kunt deze weer geven door te klikken op het inhouds type onder **controleren** op het dash board. Vanuit het scherm controleren kunt u de toegepaste labels wijzigen en uw eigen aangepaste labels Toep assen. Wanneer u een beoordeling verzendt, worden de resultaten verzonden naar een opgegeven eind punt van de retour aanroep en wordt de inhoud verwijderd van de site.
 
 > [!div class="mx-imgBorder"]
-> ![Controle programma site met geselecteerd tabblad controleren](./Review-Tool-user-Guide/images/review-tab.png)
+> ![De vervolg keuzelijst controle is gemarkeerd. Deze inhouds typen worden weer gegeven: afbeelding, tekst en video.](./Review-Tool-user-Guide/images/review-tab.png)
 
 ### <a name="manage-reviews"></a>Beoordelingen beheren
 
@@ -40,7 +40,7 @@ Met de **actie** knop met drie puntjes op elke beoordeling kunt u naar het contr
 Gebruik de **Zoek** werkbalk om de beoordelingen te sorteren op diverse categorieën, zoals beoordelings status, tags, inhouds type, subteams, toegewezen gebruikers en gemaakt/gewijzigd op.
 
 > [!div class="mx-imgBorder"]
-> ![Controle programma site met geselecteerd tabblad controleren](./Review-Tool-user-Guide/images/review-search.png)
+> ![De werk balk Zoeken wordt weer gegeven. Er zijn verschillende keuze lijsten met invoervak voor het invoeren van zoek criteria, zoals de status van de controle en de tags.](./Review-Tool-user-Guide/images/review-search.png)
 
 Raadpleeg de [hand leiding voor het beoordelings programma](./review-tool-user-guide/review-moderated-images.md) om te beginnen met het maken van recensies of raadpleeg de [rest API gids](./try-review-api-review.md) voor informatie over hoe u dit kunt doen.
 
@@ -50,7 +50,7 @@ Een werk stroom is een op de cloud gebaseerd gepersonaliseerd filter voor inhoud
 
 ### <a name="view-workflows"></a>Werk stromen weer geven
 
-Als u uw bestaande werk stromen wilt weer geven, gaat u naar het [hulp programma controleren](https://contentmoderator.cognitive.microsoft.com/) en selecteert u **beheer**  >  **werk stromen** .
+Als u uw bestaande werk stromen wilt weer geven, gaat u naar het [hulp programma controleren](https://contentmoderator.cognitive.microsoft.com/) en selecteert u **beheer**  >  **werk stromen**.
 
 > [!div class="mx-imgBorder"]
 > ![Standaardwerk stroom](images/default-workflow-list.png)

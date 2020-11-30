@@ -14,12 +14,12 @@ ms.date: 11/07/2019
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 347948734da439691bced01cf3693d0990567748
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: ca632a643215b689a9bbb825959e5c5c052d73cb
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93146225"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326060"
 ---
 # <a name="how-to-use-the-azure-portal-to-provision-a-windows-virtual-machine-with-sql-server"></a>De Azure Portal gebruiken om een virtuele Windows-machine in te richten met SQL Server
 
@@ -56,7 +56,7 @@ Wanneer u een SQL Server virtuele machine maakt, kunt u een van de verschillende
    > Zie [Pricing guidance for SQL Server Azure VMs](pricing-guidance.md) (Prijsrichtlijnen voor SQL Server Azure VM's) voor meer informatie over deze opties.
 
 
-1. Selecteer **Maken** .
+1. Selecteer **Maken**.
 
 
 ## <a name="1-configure-basic-settings"></a>1. basis instellingen configureren
@@ -75,15 +75,15 @@ Geef op het tabblad **Basisbeginselen** u de volgende gegevens op:
 * Geef onder **Exemplaardetails** het volgende op:
 
     1. Voer een unieke **naam voor de virtuele machine** in.  
-    1. Kies een locatie voor uw **Regio** . 
-    1. Voor het doel van deze hand leiding, behoud de **beschikbaarheids opties** ingesteld op _geen infra structuur-redundantie vereist_ . Zie [Beschikbaarheid](../../../virtual-machines/availability.md) voor meer informatie over beschikbaarheidsopties. 
-    1. Selecteer in de lijst **Installatiekopie** de optie _Gratis SQL Server-licentie: SQL Server 2017 Developer op Windows Server 2016_ .  
-    1. Kies **Grootte wijzigen** voor de **Grootte** van de virtuele machine en selecteer de aanbieding **A2 Basic** . Zorg dat u uw resources opschoont wanneer u ze niet meer nodig hebt, om te voorkomen dat er onverwachte kosten in rekening worden gebracht. Zie [Performance best practices for SQL Server in Azure Virtual Machines (Best practices voor optimale prestaties van SQL Server in Azure Virtual Machines)](performance-guidelines-best-practices.md) voor de aanbevolen machinegrootten en configuratie voor productieworkloads.
+    1. Kies een locatie voor uw **Regio**. 
+    1. Voor het doel van deze hand leiding, behoud de **beschikbaarheids opties** ingesteld op _geen infra structuur-redundantie vereist_. Zie [Beschikbaarheid](../../../virtual-machines/availability.md) voor meer informatie over beschikbaarheidsopties. 
+    1. Selecteer in de lijst **Installatiekopie** de optie _Gratis SQL Server-licentie: SQL Server 2017 Developer op Windows Server 2016_.  
+    1. Kies **Grootte wijzigen** voor de **Grootte** van de virtuele machine en selecteer de aanbieding **A2 Basic**. Zorg dat u uw resources opschoont wanneer u ze niet meer nodig hebt, om te voorkomen dat er onverwachte kosten in rekening worden gebracht. Zie [Performance best practices for SQL Server in Azure Virtual Machines (Best practices voor optimale prestaties van SQL Server in Azure Virtual Machines)](performance-guidelines-best-practices.md) voor de aanbevolen machinegrootten en configuratie voor productieworkloads.
 
     ![Exemplaardetails](./media/create-sql-vm-portal/basics-instance-details.png)
 
 > [!IMPORTANT]
-> De geschatte maandelijkse kosten die worden weergegeven in het venster **Grootte kiezen** , zijn niet inclusief de kosten voor SQL Server-licentieverlening. Deze schatting is alleen de kosten van de virtuele machine. Voor de Express-en Developer-edities van SQL Server is deze schatting de totale geschatte kosten. Zie de [pagina met prijzen voor virtuele Windows-machines](https://azure.microsoft.com/pricing/details/virtual-machines/windows/) en selecteer de gewenste editie van SQL server. Zie ook de [richt lijnen voor prijzen voor SQL Server Azure-vm's](pricing-guidance.md) en- [grootten voor virtuele machines](../../../virtual-machines/sizes.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json).
+> De geschatte maandelijkse kosten die worden weergegeven in het venster **Grootte kiezen**, zijn niet inclusief de kosten voor SQL Server-licentieverlening. Deze schatting is alleen de kosten van de virtuele machine. Voor de Express-en Developer-edities van SQL Server is deze schatting de totale geschatte kosten. Zie de [pagina met prijzen voor virtuele Windows-machines](https://azure.microsoft.com/pricing/details/virtual-machines/windows/) en selecteer de gewenste editie van SQL server. Zie ook de [richt lijnen voor prijzen voor SQL Server Azure-vm's](pricing-guidance.md) en- [grootten voor virtuele machines](../../../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 * Geef een gebruikers naam en wacht woord onder **Administrator-account** op. Het wachtwoord moet minstens 12 tekens lang zijn en moet voldoen aan de [gedefinieerde complexiteitsvereisten](../../../virtual-machines/windows/faq.md#what-are-the-password-requirements-when-creating-a-vm).
 
@@ -101,7 +101,7 @@ Geef op het tabblad **Basisbeginselen** u de volgende gegevens op:
 Configureer uw schijf opties op het tabblad **schijven** . 
 
 * Selecteer onder **type besturingssysteem schijf** het type schijf dat u wilt voor het besturings systeem in de vervolg keuzelijst. Premium wordt aanbevolen voor productie systemen, maar is niet beschikbaar voor een basis-VM. Als u een Premium-SSD wilt gebruiken, wijzigt u de grootte van de virtuele machine. 
-* Onder **Geavanceerd** selecteert u **ja** onder gebruik **Managed disks** .
+* Onder **Geavanceerd** selecteert u **ja** onder gebruik **Managed disks**.
 
    > [!NOTE]
    > Microsoft raadt Managed Disks aan voor SQL Server. Managed Disks verwerken de opslag achter de schermen. Bovendien distribueert Azure de opslagresources zodat voldoende redundantie wordt geboden wanneer virtuele machines met Managed Disks zich in dezelfde beschikbaarheidsset bevinden. Zie [overzicht van Azure Managed disks](../../../virtual-machines/managed-disks-overview.md)voor meer informatie. Zie [Managed Disks gebruiken schijven voor virtuele machines in een beschikbaarheidsset](../../../virtual-machines/manage-availability.md) voor meer informatie over Managed Disks in een beschikbaarheidsset.
@@ -109,7 +109,7 @@ Configureer uw schijf opties op het tabblad **schijven** .
 ![SQL-VM-schijf instellingen](./media/create-sql-vm-portal/azure-sqlvm-disks.png)
   
   
-### <a name="networking"></a>Netwerken
+### <a name="networking"></a>Networking
 
 Configureer uw netwerk opties op het tabblad **netwerk** . 
 
@@ -137,7 +137,7 @@ Configureer op het tabblad **SQL Server instellingen** specifieke instellingen e
 
 - [Connectiviteit](#connectivity)
 - [Verificatie](#authentication)
-- [Integratie van Azure Sleutelkluis](#azure-key-vault-integration)
+- [Integratie van Azure Key Vault](#azure-key-vault-integration)
 - [Opslagconfiguratie](#storage-configuration)
 - [Automatische patching](#automated-patching)
 - [Automatische back-up](#automated-backup)
@@ -149,7 +149,7 @@ Configureer op het tabblad **SQL Server instellingen** specifieke instellingen e
 Geef onder **SQL-connectiviteit** het gewenste type toegang tot het SQL Server-exemplaar op deze virtuele machine op. Voor de doel einden van deze walkthrough selecteert u **openbaar (Internet)** om verbindingen toe te staan met SQL Server van computers of services op internet. Als deze optie is geselecteerd, configureert Azure automatisch de firewall en de netwerk beveiligings groep om verkeer op de geselecteerde poort toe te staan.
 
 > [!TIP]
-> Standaard gebruikt SQL Server een bekende poort, namelijk **1433** . Wijzig de poort in het vorige dialoogvenster om een andere poort, zoals 1401, te gebruiken voor betere beveiliging. Als u de poort wijzigt, moet u via die poort verbinding maken via elke client hulpprogramma's, zoals SQL Server Management Studio (SSMS).
+> Standaard gebruikt SQL Server een bekende poort, namelijk **1433**. Wijzig de poort in het vorige dialoogvenster om een andere poort, zoals 1401, te gebruiken voor betere beveiliging. Als u de poort wijzigt, moet u via die poort verbinding maken via elke client hulpprogramma's, zoals SQL Server Management Studio (SSMS).
 
 ![SQL VM-beveiliging](./media/create-sql-vm-portal/azure-sqlvm-security.png)
 
@@ -177,7 +177,7 @@ Als u geen SQL Server-verificatie wilt inschakelen, kunt u het lokale Administra
 
 ### <a name="azure-key-vault-integration"></a>Integratie van Azure Sleutelkluis
 
-Als u beveiligings geheimen wilt opslaan in azure voor versleuteling, selecteert u **SQL Server instellingen** en schuift u omlaag naar  **Azure Key kluis-integratie** . Selecteer **inschakelen** en vul de aangevraagde informatie in. 
+Als u beveiligings geheimen wilt opslaan in azure voor versleuteling, selecteert u **SQL Server instellingen** en schuift u omlaag naar  **Azure Key kluis-integratie**. Selecteer **inschakelen** en vul de aangevraagde informatie in. 
 
 ![Integratie van Azure Sleutelkluis](./media/create-sql-vm-portal/azure-sqlvm-akv.png)
 
@@ -188,7 +188,7 @@ De volgende tabel bevat de para meters die vereist zijn voor het configureren va
 | **Sleutelkluis-URL** |De locatie van de sleutelkluis. |`https://contosokeyvault.vault.azure.net/` |
 | **Principal-naam** |Principal-naam voor de Azure Active Directory-service. Deze naam wordt ook wel aangeduid als de Client-ID. |`fde2b411-33d5-4e11-af04eb07b669ccf2` |
 | **Principal-geheim** |Principal-geheim voor de Azure Active Directory-service. Dit geheim wordt ook wel aangeduid als het Clientgeheim. |`9VTJSQwzlFepD8XODnzy8n2V01Jd8dAjwm/azF1XDKM=` |
-| **Referentienaam** |**Referentie naam** : Azure-integratie maakt een referentie binnen SQL Server en staat de VM toe om toegang te krijgen tot de sleutel kluis. Kies een naam voor deze referentie. |`mycred1` |
+| **Referentienaam** |**Referentie naam**: Azure-integratie maakt een referentie binnen SQL Server en staat de VM toe om toegang te krijgen tot de sleutel kluis. Kies een naam voor deze referentie. |`mycred1` |
 
 Zie voor meer informatie [Integratie van Azure Sleutelkluis configureren voor SQL Server op Azure-VM's](azure-key-vault-integration-configure.md).
 
@@ -216,7 +216,7 @@ Als u een Software Assurance-klant bent, kunt u de [Azure Hybrid Benefit](https:
 
 ### <a name="automated-patching"></a>Automatisch patchen
 
-**Automatisch patchen** is standaard ingeschakeld. Met automatisch patchen kan Azure automatisch een patch uitvoeren voor SQL Server en het besturingssysteem. Geef een dag van de week, een tijd en een periode op voor een onderhoudssessie. Azure voert de patch uit tijdens deze onderhoudssessie. De planning van het onderhouds venster maakt gebruik van de VM-land instelling. Als u niet wilt dat Azure automatisch patches SQL Server en het besturings systeem, selecteert u **uitschakelen** .  
+**Automatisch patchen** is standaard ingeschakeld. Met automatisch patchen kan Azure automatisch een patch uitvoeren voor SQL Server en het besturingssysteem. Geef een dag van de week, een tijd en een periode op voor een onderhoudssessie. Azure voert de patch uit tijdens deze onderhoudssessie. De planning van het onderhouds venster maakt gebruik van de VM-land instelling. Als u niet wilt dat Azure automatisch patches SQL Server en het besturings systeem, selecteert u **uitschakelen**.  
 
 ![Automatische patching van SQL-VM](./media/create-sql-vm-portal/azure-sqlvm-automated-patching.png)
 
@@ -224,7 +224,7 @@ Zie voor meer informatie [Automatisch patchen voor SQL Server in Azure Virtual M
 
 ### <a name="automated-backup"></a>Automatische back-up
 
-Schakel automatische databaseback-ups in voor alle databases onder **Automatische back-up** . Automatische back-up is standaard uitgeschakeld.
+Schakel automatische databaseback-ups in voor alle databases onder **Automatische back-up**. Automatische back-up is standaard uitgeschakeld.
 
 Als u automatische back-up van SQL inschakelt, kunt u de volgende instellingen configureren:
 
@@ -269,7 +269,7 @@ Met toegang tot de machine kunt u rechtstreeks de instellingen voor de machine e
 
 ## <a name="connect-to-sql-server-remotely"></a><a id="connect"></a> Extern verbinding maken met SQL Server
 
-In dit scenario hebt u **open bare** toegang geselecteerd voor de virtuele machine en **SQL Server-verificatie** . Door deze instellingen is de virtuele machine automatisch geconfigureerd voor het toestaan van SQL Server-verbindingen vanaf elke client via internet (ervan uitgaande dat deze beschikken over de juiste SQL-aanmeldgegevens).
+In dit scenario hebt u **open bare** toegang geselecteerd voor de virtuele machine en **SQL Server-verificatie**. Door deze instellingen is de virtuele machine automatisch geconfigureerd voor het toestaan van SQL Server-verbindingen vanaf elke client via internet (ervan uitgaande dat deze beschikken over de juiste SQL-aanmeldgegevens).
 
 > [!NOTE]
 > Als u tijdens het inrichten niet de optie Openbaar hebt geselecteerd, kunt u de instellingen voor SQL-verbindingen achteraf wijzigen via de portal. Zie [Change your SQL connectivity settings](ways-to-connect-to-sql.md#change) (SQL-verbindingsinstellingen wijzigen) voor meer informatie.

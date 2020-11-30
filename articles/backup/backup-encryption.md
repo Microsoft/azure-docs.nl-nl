@@ -4,12 +4,12 @@ description: Meer informatie over de versleutelings functies in Azure Backup u h
 ms.topic: conceptual
 ms.date: 08/04/2020
 ms.custom: references_regions
-ms.openlocfilehash: 47ecf5c16682691bd9ff7014400ea6e8ab658a92
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: c9b1b2782a34285ae194f2998a7cd053cf3c0c70
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92173939"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325672"
 ---
 # <a name="encryption-in-azure-backup"></a>Versleuteling in Azure Backup
 
@@ -24,7 +24,7 @@ Azure Backup omvat versleuteling op twee niveaus:
   - **Met door de klant beheerde sleutels**: wanneer u een back-up maakt van uw Azure-virtual machines, kunt u ervoor kiezen uw gegevens te versleutelen met versleutelings sleutels die eigendom zijn van en worden beheerd door u. Met Azure Backup kunt u uw RSA-sleutels gebruiken die zijn opgeslagen in de Azure Key Vault voor het versleutelen van uw back-ups. De versleutelings sleutel die wordt gebruikt voor het versleutelen van back-ups is mogelijk anders dan die voor de bron. De gegevens worden beveiligd met behulp van een AES 256-gegevens versleutelings sleutel (DEK), die op zijn beurt wordt beveiligd met uw sleutels. Hiermee krijgt u volledige controle over de gegevens en de sleutels. Als u versleuteling wilt toestaan, moet u de Recovery Services kluis toegang verlenen tot de versleutelings sleutel in de Azure Key Vault. U kunt de sleutel uitschakelen of toegang intrekken wanneer dit nodig is. U moet echter versleuteling inschakelen met behulp van uw sleutels voordat u de items in de kluis probeert te beveiligen. Meer [informatie vindt u hier](encryption-at-rest-with-cmk.md).
   - **Versleuteling op infrastructuur niveau**: naast het versleutelen van uw gegevens In de Recovery Services kluis met door de klant beheerde sleutels kunt u er ook voor kiezen om een extra laag versleuteling te configureren voor de opslag infrastructuur. Deze infra structuur versleuteling wordt beheerd door het platform. In combi natie met door de klant beheerde sleutels kunt u de gegevens op de rest versleutelen met twee lagen. Infrastructuur versleuteling kan alleen worden geconfigureerd als u ervoor kiest om uw eigen sleutels te gebruiken voor versleuteling in rust. Infrastructuur versleuteling maakt gebruik van door het platform beheerde sleutels voor het versleutelen van gegevens.
 - **Versleuteling specifiek voor de werk belasting waarvan een back-up wordt gemaakt**  
-  - **Back-up van Azure virtual machine**: Azure Backup ondersteunt het maken van back-ups van vm's met schijven die zijn versleuteld met door het [platform beheerde sleutels](../virtual-machines/windows/disk-encryption.md#platform-managed-keys), en door de [klant beheerde sleutels](../virtual-machines/windows/disk-encryption.md#customer-managed-keys) die eigendom zijn van en worden beheerd door u. Daarnaast kunt u ook een back-up maken van uw virtuele Azure-machines waarvan het besturings systeem of de gegevens schijven zijn versleuteld met behulp van [Azure Disk Encryption](backup-azure-vms-encryption.md#encryption-support-using-ade). ADE maakt gebruik van BitLocker voor Windows-Vm's en DM-Crypt voor Linux-Vm's om in-gast versleuteling uit te voeren.
+  - **Back-up van Azure virtual machine**: Azure Backup ondersteunt het maken van back-ups van vm's met schijven die zijn versleuteld met door het [platform beheerde sleutels](../virtual-machines/disk-encryption.md#platform-managed-keys), en door de [klant beheerde sleutels](../virtual-machines/disk-encryption.md#customer-managed-keys) die eigendom zijn van en worden beheerd door u. Daarnaast kunt u ook een back-up maken van uw virtuele Azure-machines waarvan het besturings systeem of de gegevens schijven zijn versleuteld met behulp van [Azure Disk Encryption](backup-azure-vms-encryption.md#encryption-support-using-ade). ADE maakt gebruik van BitLocker voor Windows-Vm's en DM-Crypt voor Linux-Vm's om in-gast versleuteling uit te voeren.
 
 >[!NOTE]
 >Infrastructuur versleuteling is momenteel in beperkte preview en is alleen beschikbaar in de regio's VS-Oost, VS-West2, VS Zuid-Centraal, US Gov-Arizona en VS GOV Virginia. Als u de functie in een van deze regio's wilt gebruiken, vult u [dit formulier](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR0H3_nezt2RNkpBCUTbWEapUN0VHNEpJS0ZUWklUNVdJSTEzR0hIOVRMVC4u) in en e-mail ons op [AskAzureBackupTeam@microsoft.com](mailto:AskAzureBackupTeam@microsoft.com) .

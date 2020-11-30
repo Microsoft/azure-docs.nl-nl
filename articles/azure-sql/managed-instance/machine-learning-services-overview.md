@@ -12,12 +12,12 @@ ms.author: garye
 ms.reviewer: sstein, davidph
 manager: cgronlun
 ms.date: 06/03/2020
-ms.openlocfilehash: c5392c822c42c2e0ee3f6ce9edffc6229d572165
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: c805bacbd4a2219fb79168ad6426efd8b0a390df
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92782413"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96324513"
 ---
 # <a name="machine-learning-services-in-azure-sql-managed-instance-preview"></a>Machine Learning Services in Azure SQL Managed instance (preview-versie)
 
@@ -54,7 +54,7 @@ Deze beperkte open bare preview is onderhevig aan de voor [waarden van Azure pre
 
 Als u geïnteresseerd bent in het toevoegen van het preview-programma en deze voor waarden accepteert, kunt u de inschrijving aanvragen door een ondersteunings ticket voor Azure te maken op [**https://azure.microsoft.com/support/create-ticket/**](https://azure.microsoft.com/support/create-ticket/) . 
 
-1. Klik op de pagina **een ondersteunings ticket maken** op **een incident maken** .
+1. Klik op de pagina **een ondersteunings ticket maken** op **een incident maken**.
 
 1. Klik op de pagina **Help en ondersteuning** op **nieuwe ondersteunings aanvraag** om een nieuw ticket te maken.
 
@@ -67,16 +67,16 @@ Als u geïnteresseerd bent in het toevoegen van het preview-programma en deze vo
    - Probleem type- **Machine Learning Services voor een SQL-beheerd exemplaar (preview-versie)**
    - Subtype van probleem: **ander probleem of ' How to '-vragen**
 
-1. Klik op **volgende: oplossingen** .
+1. Klik op **volgende: oplossingen**.
 
-1. Lees de informatie over de preview en klik vervolgens op **volgende: Details** .
+1. Lees de informatie over de preview en klik vervolgens op **volgende: Details**.
 
 1. Op deze pagina:
-   - Voor de vraag wilt **u zich aanmelden voor de preview-versie** . Selecteer **Ja** . 
+   - Voor de vraag wilt **u zich aanmelden voor de preview-versie**. Selecteer **Ja**. 
    - Voer bij **Beschrijving** de specifieke kenmerken van uw aanvraag in, met inbegrip van de naam van de logische server, de regio en de abonnements-id die u in de preview wilt registreren. Voer indien nodig nog meer details in.
    - Selecteer uw voorkeurs methode voor contact. 
 
-1. Wanneer u klaar bent, klikt u op **volgende: bekijken en maken** en klikt u vervolgens op **maken** .
+1. Wanneer u klaar bent, klikt u op **volgende: bekijken en maken** en klikt u vervolgens op **maken**.
 
 Zodra u voor het programma staat ingeschreven, vindt onboarding plaats voor de openbare preview en wordt Machine Learning Services voor uw bestaande of nieuwe database ingeschakeld.
 
@@ -85,6 +85,6 @@ Machine Learning Services in SQL Managed Instance wordt niet aanbevolen voor pro
 ## <a name="next-steps"></a>Volgende stappen
 
 - Bekijk de belangrijkste verschillen ten opzichte [van SQL Server machine learning Services](machine-learning-services-differences.md).
-- Zie [python-scripts uitvoeren](/sql/machine-learning/tutorials/quickstart-python-create-script?context=%252fazure%252fazure-sql%252fmanaged-instance%252fcontext%252fml-context&view=sql-server-ver15)voor meer informatie over het gebruik van python in Machine Learning Services.
-- Zie [r-scripts uitvoeren](/sql/machine-learning/tutorials/quickstart-r-create-script?context=%252fazure%252fazure-sql%252fmanaged-instance%252fcontext%252fml-context&view=sql-server-ver15)voor meer informatie over het gebruik van r in Machine Learning Services.
+- Zie [python-scripts uitvoeren](/sql/machine-learning/tutorials/quickstart-python-create-script?context=%2fazure%2fazure-sql%2fmanaged-instance%2fcontext%2fml-context&view=sql-server-ver15)voor meer informatie over het gebruik van python in Machine Learning Services.
+- Zie [r-scripts uitvoeren](/sql/machine-learning/tutorials/quickstart-r-create-script?context=%2fazure%2fazure-sql%2fmanaged-instance%2fcontext%2fml-context&view=sql-server-ver15)voor meer informatie over het gebruik van r in Machine Learning Services.
 - Zie de [documentatie voor sql machine learning](/sql/machine-learning/)voor meer informatie over machine learning op andere SQL-platforms.

@@ -13,12 +13,12 @@ ms.workload: iaas-sql-server
 ms.date: 02/06/2019
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: cb55274800b239cf0e1e942647ae0c65b321b862
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 147c507cde9abf2ef97098c6b41fbbd4d67f02d2
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790046"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96324802"
 ---
 # <a name="configure-one-or-more-always-on-availability-group-listeners---resource-manager"></a>Een of meer listeners voor Always on-beschikbaarheids groep configureren-Resource Manager
 
@@ -64,7 +64,7 @@ Als u de toegang met een Azure-netwerk beveiligings groep wilt beperken, moet u 
 De huidige [micro soft-sjabloon](./availability-group-quickstart-template-configure.md) voor een beschikbaarheids groep maakt gebruik van een basis Load Balancer met basis-IP-adressen.
 
    > [!NOTE]
-   > U moet een [service-eind punt](../../../storage/common/storage-network-security.md?toc=%252fazure%252fvirtual-network%252ftoc.json#grant-access-from-a-virtual-network) configureren als u een standaard load balancer en Azure Storage voor de cloudwitness gebruikt. 
+   > U moet een [service-eind punt](../../../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json#grant-access-from-a-virtual-network) configureren als u een standaard load balancer en Azure Storage voor de cloudwitness gebruikt. 
    > 
 
 In de voor beelden in dit artikel wordt een standaard load balancer opgegeven. In de voor beelden bevat het script `-sku Standard` .
@@ -195,11 +195,11 @@ $ILB | Add-AzLoadBalancerRuleConfig -Name $LBConfigRuleName -FrontendIpConfigura
 
 1. Start SQL Server Management Studio en maak verbinding met de primaire replica.
 
-1. Ga naar **Hoge beschikbaarheid met AlwaysOn** > **Beschikbaarheidsgroepen** > **Listeners voor beschikbaarheidsgroep** . 
+1. Ga naar **Hoge beschikbaarheid met AlwaysOn** > **Beschikbaarheidsgroepen** > **Listeners voor beschikbaarheidsgroep**. 
 
-1. U ziet nu de naam van de listener die u hebt gemaakt in Failoverclusterbeheer. Klik met de rechtermuisknop op de naam en selecteer **Eigenschappen** .
+1. U ziet nu de naam van de listener die u hebt gemaakt in Failoverclusterbeheer. Klik met de rechtermuisknop op de naam en selecteer **Eigenschappen**.
 
-1. Geef in het vak **poort** het poort nummer voor de beschikbaarheids groep-listener op met behulp van de $EndpointPort die u eerder hebt gebruikt (1433 was de standaard instelling) en selecteer **OK** .
+1. Geef in het vak **poort** het poort nummer voor de beschikbaarheids groep-listener op met behulp van de $EndpointPort die u eerder hebt gebruikt (1433 was de standaard instelling) en selecteer **OK**.
 
 ## <a name="test-the-connection-to-the-listener"></a>De verbinding met de listener testen
 
@@ -207,7 +207,7 @@ Test als volgt de verbinding:
 
 1. Gebruik Remote Desktop Protocol (RDP) om verbinding te maken met een SQL Server die zich in hetzelfde virtuele netwerk bevindt, maar geen eigenaar is van de replica. Dit kan de andere SQL Server in het cluster zijn.
 
-1. Gebruik het **Sqlcmd** -hulp programma om de verbinding te testen. Met het volgende script wordt bijvoorbeeld met Windows-verificatie een **sqlcmd** -verbinding met de primaire replica tot stand gebracht via de listener:
+1. Gebruik het **Sqlcmd** -hulp programma om de verbinding te testen. Met het volgende script wordt bijvoorbeeld met Windows-verificatie een **sqlcmd**-verbinding met de primaire replica tot stand gebracht via de listener:
    
     ```
     sqlcmd -S <listenerName> -E
@@ -236,7 +236,7 @@ Houd rekening met de volgende richt lijnen voor de beschikbaarheids groep-listen
   - Het load balancer zwevende IP-adressen voor de AG-listener
   - Het basis-IP-adres van het cluster, indien van toepassing.
 
-* Maak een service-eind punt wanneer u een standaard load balancer met Azure Storage voor de cloudwitness gebruikt. Zie [toegang verlenen vanuit een virtueel netwerk](../../../storage/common/storage-network-security.md?toc=%252fazure%252fvirtual-network%252ftoc.json#grant-access-from-a-virtual-network)voor meer informatie.
+* Maak een service-eind punt wanneer u een standaard load balancer met Azure Storage voor de cloudwitness gebruikt. Zie [toegang verlenen vanuit een virtueel netwerk](../../../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json#grant-access-from-a-virtual-network)voor meer informatie.
 
 ## <a name="for-more-information"></a>Voor meer informatie
 

@@ -3,12 +3,12 @@ title: Back-up en herstel van versleutelde virtuele Azure-machines
 description: Hierin wordt beschreven hoe u back-ups van versleutelde virtuele Azure-machines maakt en herstelt met de Azure Backup-service.
 ms.topic: conceptual
 ms.date: 08/18/2020
-ms.openlocfilehash: 67c0e879fe2acf241b1ed08a5658209bf70b1b9c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c4760a54d0200e48b2d6a38c963e9fc23925f7ff
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95978111"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96324921"
 ---
 # <a name="back-up-and-restore-encrypted-azure-virtual-machines"></a>Back-up en herstel van versleutelde virtuele Azure-machines
 
@@ -16,13 +16,13 @@ In dit artikel wordt beschreven hoe u back-ups maakt van Windows of Linux Azure 
 
 ## <a name="encryption-using-platform-managed-keys"></a>Versleuteling met door het platform beheerde sleutels
 
-Standaard worden alle schijven in uw virtuele machines automatisch versleuteld met behulp van door het systeem beheerde sleutels (PMK) die gebruikmaken van [opslag service versleuteling](../storage/common/storage-service-encryption.md). U kunt een back-up maken van deze virtuele machines met behulp van Azure Backup zonder specifieke acties die nodig zijn om versleuteling aan uw end te ondersteunen. [Zie dit artikel](../virtual-machines/windows/disk-encryption.md#platform-managed-keys)voor meer informatie over versleuteling met door het platform beheerde sleutels.
+Standaard worden alle schijven in uw virtuele machines automatisch versleuteld met behulp van door het systeem beheerde sleutels (PMK) die gebruikmaken van [opslag service versleuteling](../storage/common/storage-service-encryption.md). U kunt een back-up maken van deze virtuele machines met behulp van Azure Backup zonder specifieke acties die nodig zijn om versleuteling aan uw end te ondersteunen. [Zie dit artikel](../virtual-machines/disk-encryption.md#platform-managed-keys)voor meer informatie over versleuteling met door het platform beheerde sleutels.
 
 ![Versleutelde schijven](./media/backup-encryption/encrypted-disks.png)
 
 ## <a name="encryption-using-customer-managed-keys"></a>Versleuteling met door de klant beheerde sleutels
 
-Wanneer u schijven versleutelt met aangepaste sleutels (CMK), wordt de sleutel die wordt gebruikt voor het versleutelen van de schijven opgeslagen in de Azure Key Vault en door u beheerd. Storage Service Encryption (SSE) met CMK wijkt af van de versleuteling van Azure Disk Encryption (ADE). ADE maakt gebruik van de versleutelings hulpprogramma's van het besturings systeem. Met SSE worden gegevens in de opslag service versleuteld, zodat u elk besturings systeem of installatie kopieën voor uw virtuele machines kunt gebruiken. Zie [dit artikel](../virtual-machines/windows/disk-encryption.md#customer-managed-keys)voor meer informatie over het versleutelen van Managed disks met door de klant beheerde sleutels.
+Wanneer u schijven versleutelt met aangepaste sleutels (CMK), wordt de sleutel die wordt gebruikt voor het versleutelen van de schijven opgeslagen in de Azure Key Vault en door u beheerd. Storage Service Encryption (SSE) met CMK wijkt af van de versleuteling van Azure Disk Encryption (ADE). ADE maakt gebruik van de versleutelings hulpprogramma's van het besturings systeem. Met SSE worden gegevens in de opslag service versleuteld, zodat u elk besturings systeem of installatie kopieën voor uw virtuele machines kunt gebruiken. Zie [dit artikel](../virtual-machines/disk-encryption.md#customer-managed-keys)voor meer informatie over het versleutelen van Managed disks met door de klant beheerde sleutels.
 
 ## <a name="encryption-support-using-ade"></a>Ondersteuning voor versleuteling met behulp van ADE
 

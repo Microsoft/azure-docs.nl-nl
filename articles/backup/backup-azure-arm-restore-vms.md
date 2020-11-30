@@ -4,12 +4,12 @@ description: Een virtuele Azure-machine herstellen vanaf een herstel punt met be
 ms.reviewer: geg
 ms.topic: conceptual
 ms.date: 08/02/2020
-ms.openlocfilehash: 335dfc665cc7fb9727e4eff3e65a18a2aa5c3f94
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 1c28de679bd957a472e543489a2dd15b3883aed5
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96002984"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327182"
 ---
 # <a name="how-to-restore-azure-vm-data-in-azure-portal"></a>Azure VM-gegevens herstellen in Azure Portal
 
@@ -203,7 +203,7 @@ Er zijn een aantal algemene scenario's waarin u mogelijk Vm's moet herstellen.
 **Netwerk beveiligings groep (NSG) op NIC/subnet** | Azure VM Backup ondersteunt het maken van back-ups en het herstellen van NSG-informatie op vnet-, subnet-en NIC-niveau.
 **Met zone vastgemaakte Vm's** | Als u een back-up maakt van een virtuele machine van Azure die is vastgemaakt aan een zone (met Azure Backup), kunt u deze herstellen in dezelfde zone als waarin deze is vastgemaakt. [Meer informatie](../availability-zones/az-overview.md)
 **Herstel de virtuele machine in een beschikbaarheidsset** | Wanneer u een virtuele machine herstelt vanuit de portal, is er geen optie om een beschikbaarheidsset te kiezen. Een herstelde VM heeft geen beschikbaarheidsset. Als u de optie schijf herstellen gebruikt, kunt u [een beschikbaarheidsset opgeven](../virtual-machines/windows/tutorial-availability-sets.md) wanneer u een virtuele machine van de schijf maakt met behulp van de meegeleverde sjabloon of Power shell.
-**Speciale Vm's herstellen, zoals SQL-Vm's** | Als u een back-up van een SQL-VM maakt met behulp van Azure VM backup en vervolgens de optie VM herstellen gebruikt of een virtuele machine maakt na het herstellen van schijven, moet de zojuist gemaakte virtuele machine zijn geregistreerd bij de SQL-provider zoals [hier](../azure-sql/virtual-machines/windows/sql-vm-resource-provider-register.md?tabs=azure-cli%2Cbash)wordt vermeld. Hiermee wordt de herstelde VM geconverteerd naar een SQL-VM.
+**Speciale Vm's herstellen, zoals SQL-Vm's** | Als u een back-up van een SQL-VM maakt met behulp van Azure VM backup en vervolgens de optie VM herstellen gebruikt of een virtuele machine maakt na het herstellen van schijven, moet de zojuist gemaakte virtuele machine zijn geregistreerd bij de SQL-provider zoals [hier](../azure-sql/virtual-machines/windows/sql-agent-extension-manually-register-single-vm.md?tabs=azure-cli%2cbash)wordt vermeld. Hiermee wordt de herstelde VM geconverteerd naar een SQL-VM.
 
 ### <a name="restore-domain-controller-vms"></a>Vm's van de domein controller herstellen
 

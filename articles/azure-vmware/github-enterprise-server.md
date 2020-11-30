@@ -3,12 +3,12 @@ title: GitHub Enter prise server instellen op uw persoonlijke cloud van Azure VM
 description: Meer informatie over het instellen van GitHub Enter prise server op uw Azure VMware-oplossing privécloud.
 ms.topic: how-to
 ms.date: 09/22/2020
-ms.openlocfilehash: afce212416c7c12631a7f8d388dc991ed957736f
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 00b3acf721dd7f7a1a15bcd0d24eccf3ca27ff58
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91949306"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326910"
 ---
 # <a name="set-up-github-enterprise-server-on-your-azure-vmware-solution-private-cloud"></a>GitHub Enter prise server instellen op uw persoonlijke cloud van Azure VMware-oplossing
 
@@ -24,7 +24,7 @@ Down load [de huidige versie van github Enter prise server](https://enterprise.g
 
 :::image type="content" source="media/github-enterprise-server/github-options.png" alt-text="Kies voor het uitvoeren van GitHub on-premises of in de Cloud.":::  
 
-:::image type="content" source="media/github-enterprise-server/deploy-ova-template.png" alt-text="Kies voor het uitvoeren van GitHub on-premises of in de Cloud.":::  
+:::image type="content" source="media/github-enterprise-server/deploy-ova-template.png" alt-text="De eicellen-sjabloon implementeren.":::  
 
 Geef een herken bare naam op voor de nieuwe virtuele machine, zoals GitHubEnterpriseServer. U hoeft de release details niet op te geven in de naam van de virtuele machine, aangezien deze details verouderd worden wanneer het exemplaar wordt geüpgraded. Selecteer alle standaard waarden voor nu (deze gegevens worden binnenkort gewijzigd) en wacht totdat de eicellen zijn geïmporteerd.
 
@@ -41,11 +41,11 @@ Uw behoeften kunnen echter verschillen. Raadpleeg de richt lijnen over hardwarep
 
 ## <a name="configuring-the-github-enterprise-server-instance"></a>Het GitHub Enter prise Server-exemplaar configureren
 
-:::image type="content" source="media/github-enterprise-server/install-github-enterprise.png" alt-text="Kies voor het uitvoeren van GitHub on-premises of in de Cloud.":::  
+:::image type="content" source="media/github-enterprise-server/install-github-enterprise.png" alt-text="Installeer GitHub Enter prise.":::  
 
 Nadat de zojuist ingerichte virtuele machine (VM) is ingeschakeld, configureert u [deze via uw browser](https://docs.github.com/en/enterprise/admin/installation/installing-github-enterprise-server-on-vmware#configuring-the-github-enterprise-server-instance). U moet uw licentie bestand uploaden en een wacht woord voor de beheer console instellen. Zorg ervoor dat u dit wacht woord ergens anders schrijft.
 
-:::image type="content" source="media/github-enterprise-server/ssh-access.png" alt-text="Kies voor het uitvoeren van GitHub on-premises of in de Cloud.":::    
+:::image type="content" source="media/github-enterprise-server/ssh-access.png" alt-text="Open de beheer shell via SSH.":::    
 
 We raden u aan om ten minste de volgende stappen uit te voeren:
 
@@ -53,11 +53,11 @@ We raden u aan om ten minste de volgende stappen uit te voeren:
 
 2. [CONFIGUREER TLS op uw exemplaar](https://docs.github.com/en/enterprise/admin/configuration/configuring-tls) zodat u een certificaat kunt gebruiken dat is ondertekend door een vertrouwde certificerings instantie.
 
-:::image type="content" source="media/github-enterprise-server/configuring-your-instance.png" alt-text="Kies voor het uitvoeren van GitHub on-premises of in de Cloud.":::
+:::image type="content" source="media/github-enterprise-server/configuring-your-instance.png" alt-text="Uw exemplaar configureren.":::
 
 Pas uw instellingen toe.  Terwijl het exemplaar opnieuw wordt gestart, kunt u door gaan met de volgende stap en **Blob Storage configureren voor github-acties**.
 
-:::image type="content" source="media/github-enterprise-server/create-admin-account.png" alt-text="Kies voor het uitvoeren van GitHub on-premises of in de Cloud.":::
+:::image type="content" source="media/github-enterprise-server/create-admin-account.png" alt-text="Maak uw beheerders account.":::
 
 Wanneer het exemplaar opnieuw is opgestart, maakt u een nieuw beheerders account op het exemplaar. Zorg er ook voor dat u het wacht woord van deze gebruiker noteert.
 
@@ -80,9 +80,9 @@ Als u uw exemplaar wilt beveiligen voor gebruik in de productie omgeving, kunt u
 > [!NOTE]
 > GitHub-acties zijn [momenteel beschikbaar als beperkte bèta op github Enter prise Server versie 2,22](https://docs.github.com/en/enterprise/admin/github-actions).
 
-Externe Blob-opslag is nodig voor het inschakelen van GitHub-acties op GitHub Enter prise server (momenteel beschikbaar als een ' bèta-functie). Deze externe Blob-opslag wordt gebruikt door acties om artefacten en logboeken op te slaan. Acties op GitHub Enter prise server [ondersteunen Azure Blob Storage als een opslag provider](https://docs.github.com/en/enterprise/admin/github-actions/enabling-github-actions-and-configuring-storage#about-external-storage-requirements) (en andere). Daarom richten we een nieuw Azure-opslag account in met het [type opslag account](../storage/common/storage-account-overview.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json#types-of-storage-accounts) van BlobStorage:
+Externe Blob-opslag is nodig voor het inschakelen van GitHub-acties op GitHub Enter prise server (momenteel beschikbaar als een ' bèta-functie). Deze externe Blob-opslag wordt gebruikt door acties om artefacten en logboeken op te slaan. Acties op GitHub Enter prise server [ondersteunen Azure Blob Storage als een opslag provider](https://docs.github.com/en/enterprise/admin/github-actions/enabling-github-actions-and-configuring-storage#about-external-storage-requirements) (en andere). Daarom richten we een nieuw Azure-opslag account in met het [type opslag account](../storage/common/storage-account-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#types-of-storage-accounts) van BlobStorage:
 
-:::image type="content" source="media/github-enterprise-server/storage-account.png" alt-text="Kies voor het uitvoeren van GitHub on-premises of in de Cloud.":::
+:::image type="content" source="media/github-enterprise-server/storage-account.png" alt-text="Blob Storage-account van Azure inrichten.":::
 
 Nadat de implementatie van de nieuwe BlobStorage-resource is voltooid, kopieert u de connection string (beschikbaar onder toegangs sleutels) en noteert u deze. Deze teken reeks is binnenkort vereist.
 
@@ -97,9 +97,9 @@ We gaan nu ergens maken voor het uitvoeren van GitHub-acties. de Azure VMware-op
 
 Eerst gaan we een nieuwe VM op het cluster inrichten. We baseren onze VM op [een recente release van Ubuntu Server](http://releases.ubuntu.com/20.04.1/).
 
-:::image type="content" source="media/github-enterprise-server/provision-new-vm.png" alt-text="Kies voor het uitvoeren van GitHub on-premises of in de Cloud.":::
+:::image type="content" source="media/github-enterprise-server/provision-new-vm.png" alt-text="Richt een nieuwe VM in.":::
 
-:::image type="content" source="media/github-enterprise-server/provision-new-vm-2.png" alt-text="Kies voor het uitvoeren van GitHub on-premises of in de Cloud.":::
+:::image type="content" source="media/github-enterprise-server/provision-new-vm-2.png" alt-text="Richt u op een nieuwe VM-stap 2.":::
 
 Zodra de VM is gemaakt, kunt u deze inschakelen via SSH en er verbinding mee maken.
 
@@ -158,7 +158,7 @@ Volgende uitvoering:
 
 U ziet de uitvoer: "Blob Storage is in orde".
 
-Nu de GitHub-acties zijn geconfigureerd, schakelt u deze voor uw gebruikers in. Meld u aan bij uw GitHub Enter prise Server-exemplaar als beheerder en selecteer het ![ pictogram raket.](media/github-enterprise-server/rocket-icon.png) in de rechter bovenhoek van elke pagina. In de zijbalk links selecteert u **Enter prise Overview**, vervolgens **beleids regels**, **acties**en selecteert u de optie om **acties voor alle organisaties in te scha kelen**.
+Nu de GitHub-acties zijn geconfigureerd, schakelt u deze voor uw gebruikers in. Meld u aan bij uw GitHub Enter prise Server-exemplaar als beheerder en selecteer het ![ pictogram raket.](media/github-enterprise-server/rocket-icon.png) in de rechter bovenhoek van elke pagina. In de zijbalk links selecteert u **Enter prise Overview**, vervolgens **beleids regels**, **acties** en selecteert u de optie om **acties voor alle organisaties in te scha kelen**.
 
 Configureer vervolgens uw loper van het tabblad **zelf-hostende lopers** . Selecteer **nieuwe toevoegen** en vervolgens **nieuwe loper** in de vervolg keuzelijst.
 
@@ -168,15 +168,15 @@ Op de volgende pagina ziet u een reeks opdrachten die moeten worden uitgevoerd. 
 
 Kopieer de `config.sh` opdracht en plak deze in een sessie van uw acties loper (eerder gemaakt).
 
-:::image type="content" source="media/github-enterprise-server/actions-runner.png" alt-text="Kies voor het uitvoeren van GitHub on-premises of in de Cloud.":::
+:::image type="content" source="media/github-enterprise-server/actions-runner.png" alt-text="Acties uitvoeren.":::
 
 Gebruik de opdracht run.sh om de loper *uit te voeren* :
 
-:::image type="content" source="media/github-enterprise-server/run-runner.png" alt-text="Kies voor het uitvoeren van GitHub on-premises of in de Cloud.":::
+:::image type="content" source="media/github-enterprise-server/run-runner.png" alt-text="Voer de loper uit.":::
 
 Als u deze loper beschikbaar wilt maken voor organisaties in uw onderneming, bewerkt u de toegang tot de organisatie:
 
-:::image type="content" source="media/github-enterprise-server/edit-runner-access.png" alt-text="Kies voor het uitvoeren van GitHub on-premises of in de Cloud.":::
+:::image type="content" source="media/github-enterprise-server/edit-runner-access.png" alt-text="Toegang voor lopers bewerken.":::
 
 Hier gaan we de app beschikbaar maken voor alle organisaties, maar u kunt ook de toegang tot een subset van organisaties beperken, zelfs voor specifieke opslag plaatsen.
 
@@ -188,7 +188,7 @@ Als u GitHub Connect wilt inschakelen, volgt u de stappen in [automatische toega
 
 Zodra GitHub Connect is ingeschakeld, selecteert u de optie **Server voor het gebruik van acties van github.com in werk stroom uitvoeringen** .
 
-:::image type="content" source="media/github-enterprise-server/enable-using-actions.png" alt-text="Kies voor het uitvoeren van GitHub on-premises of in de Cloud.":::
+:::image type="content" source="media/github-enterprise-server/enable-using-actions.png" alt-text="Inschakelen met behulp van acties vanuit GitHub.com in werk stroom uitvoeringen.":::
 
 ## <a name="setting-up-and-running-your-first-workflow"></a>Uw eerste werk stroom instellen en uitvoeren
 
@@ -196,32 +196,32 @@ Nu het maken van acties en GitHub-verbinding is ingesteld, gaan we al deze werkz
 
 In deze basis werk stroom gebruiken we `octokit/request-action` voor het openen van een probleem op github met behulp van de API.
 
-:::image type="content" source="media/github-enterprise-server/workflow-example.png" alt-text="Kies voor het uitvoeren van GitHub on-premises of in de Cloud.":::
+:::image type="content" source="media/github-enterprise-server/workflow-example.png" alt-text="Voorbeeld werk stroom.":::
 
 >[!NOTE]
 >GitHub.com fungeert als host voor de actie, maar wanneer deze wordt uitgevoerd op GitHub Enter prise-server, wordt *automatisch* de GitHub Enter prise Server-API gebruikt.
 
 Als u ervoor hebt gekozen om GitHub Connect niet in te scha kelen, kunt u de volgende alternatieve werk stroom gebruiken.
 
-:::image type="content" source="media/github-enterprise-server/workflow-example-2.png" alt-text="Kies voor het uitvoeren van GitHub on-premises of in de Cloud.":::
+:::image type="content" source="media/github-enterprise-server/workflow-example-2.png" alt-text="Alternatieve voorbeeld werk stroom.":::
 
 Navigeer naar een opslag plaats in uw exemplaar en voeg de bovenstaande werk stroom toe als: `.github/workflows/hello-world.yml`
 
-:::image type="content" source="media/github-enterprise-server/workflow-example-3.png" alt-text="Kies voor het uitvoeren van GitHub on-premises of in de Cloud.":::
+:::image type="content" source="media/github-enterprise-server/workflow-example-3.png" alt-text="Een andere voorbeeld werk stroom.":::
 
 Wacht tot de werk stroom is uitgevoerd op het tabblad **acties** van uw opslag plaats.
 
-:::image type="content" source="media/github-enterprise-server/executed-example-workflow.png" alt-text="Kies voor het uitvoeren van GitHub on-premises of in de Cloud.":::
+:::image type="content" source="media/github-enterprise-server/executed-example-workflow.png" alt-text="De voorbeeld werk stroom is uitgevoerd.":::
 
 U kunt ook bekijken dat het wordt verwerkt door de loper.
 
-:::image type="content" source="media/github-enterprise-server/workflow-processed-by-runner.png" alt-text="Kies voor het uitvoeren van GitHub on-premises of in de Cloud.":::
+:::image type="content" source="media/github-enterprise-server/workflow-processed-by-runner.png" alt-text="Werk stroom verwerkt door loper.":::
 
 Als alles goed is uitgevoerd, ziet u een nieuw probleem in uw opslag plaats, getiteld "Hallo wereld".
 
-:::image type="content" source="media/github-enterprise-server/example-in-repo.png" alt-text="Kies voor het uitvoeren van GitHub on-premises of in de Cloud.":::
+:::image type="content" source="media/github-enterprise-server/example-in-repo.png" alt-text="Voor beeld in opslag plaats.":::
 
-Gefeliciteerd! U hebt zojuist uw eerste werk stroom voor acties voltooid op GitHub Enter prise server, die wordt uitgevoerd op uw persoonlijke cloud van Azure VMware-oplossing.
+Gefeliciteerd. U hebt zojuist uw eerste werk stroom voor acties voltooid op GitHub Enter prise server, die wordt uitgevoerd op uw persoonlijke cloud van Azure VMware-oplossing.
 
 We gaan gewoon het Opper vlak van wat u kunt doen met GitHub-acties. Voor meer inspiratie kunt u de lijst met acties op [Marketplace van github](https://github.com/marketplace)afhandelen of [uw eigen actie maken](https://docs.github.com/en/actions/creating-actions).
 

@@ -3,12 +3,12 @@ title: Transport Layer Security in Azure Backup
 description: Informatie over het inschakelen van Azure Backup om het versleutelings Protocol Transport Layer Security (TLS) te gebruiken om gegevens veilig te houden wanneer ze via een netwerk worden overgedragen.
 ms.topic: conceptual
 ms.date: 11/01/2020
-ms.openlocfilehash: 9881fd3532cbc7d67c7d5adbce75e02fc62e0bcf
-ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
+ms.openlocfilehash: ba9c9d91f562f54695a0739908c8a409d14d5852
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93280679"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327114"
 ---
 # <a name="transport-layer-security-in-azure-backup"></a>Transport Layer Security in Azure Backup
 
@@ -45,7 +45,7 @@ De volgende register sleutels zorgen ervoor dat het TLS 1,2-protocol is ingescha
 
 ### <a name="configuring-net-framework"></a>.NET Framework configureren
 
-De volgende register sleutels configureren .NET Framework voor de ondersteuning van sterke crypto grafie. U kunt hier meer lezen over het [configureren van .NET Framework](https://docs.microsoft.com/dotnet/framework/network-programming/tls#configuring-schannel-protocols-in-the-windows-registry).
+De volgende register sleutels configureren .NET Framework voor de ondersteuning van sterke crypto grafie. U kunt hier meer lezen over het [configureren van .NET Framework](/dotnet/framework/network-programming/tls#configuring-schannel-protocols-in-the-windows-registry).
 
 ```reg
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319]
@@ -65,7 +65,7 @@ TLS 1,2 is veiliger dan eerdere cryptografische protocollen, zoals SSL 2,0, SSL 
 
 ### <a name="what-determines-the-encryption-protocol-used"></a>Wat bepaalt het gebruikte versleutelings Protocol?
 
-De hoogste Protocol versie die door zowel de client als de server wordt ondersteund, wordt onderhandeld om de versleutelde conversatie tot stand te brengen. Zie [een beveiligde sessie tot stand brengen met behulp van TLS](https://docs.microsoft.com/windows/win32/secauthn/tls-handshake-protocol#establishing-a-secure-session-by-using-tls)voor meer informatie over het TLS-hand Shake protocol.
+De hoogste Protocol versie die door zowel de client als de server wordt ondersteund, wordt onderhandeld om de versleutelde conversatie tot stand te brengen. Zie [een beveiligde sessie tot stand brengen met behulp van TLS](/windows/win32/secauthn/tls-handshake-protocol#establishing-a-secure-session-by-using-tls)voor meer informatie over het TLS-hand Shake protocol.
 
 ### <a name="what-is-the-impact-of-not-enabling-tls-12"></a>Wat is de impact van het niet inschakelen van TLS 1,2?
 
@@ -77,6 +77,6 @@ Voor een betere beveiliging van protocol downgrade-aanvallen wordt Azure Backup 
 
 ## <a name="additional-resources"></a>Aanvullende resources
 
-- [TLS-protocol (Transport Layer Security)](https://docs.microsoft.com/windows/win32/secauthn/transport-layer-security-protocol)
-- [Ondersteuning voor TLS 1,2 voor geïmplementeerde besturings systemen](https://docs.microsoft.com/security/engineering/solving-tls1-problem#ensuring-support-for-tls-12-across-deployed-operating-systems)
-- [Aanbevolen procedures voor trans port Layer Security (TLS) met de .NET Framework](https://docs.microsoft.com/dotnet/framework/network-programming/tls)
+- [TLS-protocol (Transport Layer Security)](/windows/win32/secauthn/transport-layer-security-protocol)
+- [Ondersteuning voor TLS 1,2 voor geïmplementeerde besturings systemen](/security/engineering/solving-tls1-problem#ensuring-support-for-tls-12-across-deployed-operating-systems)
+- [Aanbevolen procedures voor trans port Layer Security (TLS) met de .NET Framework](/dotnet/framework/network-programming/tls)

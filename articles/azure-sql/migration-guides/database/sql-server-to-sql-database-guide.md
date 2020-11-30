@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 55ce3747aaf105c7e2cbb830b1175769a658fd72
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: ee4abaf3c9f6aa70ba14920711c8917994254649
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94496766"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326961"
 ---
 # <a name="migration-guide-sql-server-to-sql-database"></a>Migratie handleiding: SQL Server naar SQL Database
 [!INCLUDE[appliesto--sqldb](../../includes/appliesto-sqldb.md)]
@@ -100,7 +100,7 @@ Als u meerdere servers en data bases hebt die op schaal moeten worden beoordeeld
 > [!IMPORTANT]
 > Het uitvoeren van analyses op schaal voor meerdere data bases, met name grote bestanden, kan ook worden geautomatiseerd met behulp van het [hulp programma voor de DMA-opdracht regel](/sql/dma/dma-commandline) en geüpload naar [Azure migrate](/sql/dma/dma-assess-sql-data-estate-to-sqldb#view-target-readiness-assessment-results) voor verdere analyse en doel gereedheid.
 
-## <a name="migrate"></a>Migrate
+## <a name="migrate"></a>Migreren
 
 Nadat u taken hebt voltooid die zijn gekoppeld aan de fase voorafgaand aan de migratie, bent u klaar om het schema en de gegevens migratie uit te voeren. 
 
@@ -114,7 +114,7 @@ Voer de volgende stappen uit om een Data Base te migreren van SQL Server naar Az
 
 1. Down load en installeer de Migration Assistant van de [Data Base](https://www.microsoft.com/download/details.aspx?id=53595).
 1. Maak een nieuw project en selecteer **migratie** als het project type.
-1. Stel het type bron server in op **SQL Server** en geef het type doel server op **Azure SQL database** , selecteer het migratie bereik als **schema en gegevens** en selecteer **maken**.
+1. Stel het type bron server in op **SQL Server** en geef het type doel server op **Azure SQL database**, selecteer het migratie bereik als **schema en gegevens** en selecteer **maken**.
 1. Geef in het migratie project de gegevens van de bron server op, zoals de server naam, de referenties om verbinding te maken met de server en de bron database die moet worden gemigreerd.
 1. Geef in de details van de doel server de naam op van de Azure SQL Database-Server, de referenties om verbinding te maken met de server en de doel database waarnaar moet worden gemigreerd.
 1. Selecteer de schema objecten en implementeer deze voor de doel Azure SQL Database.
@@ -165,10 +165,10 @@ Nadat de gegevens zijn gemigreerd naar de doel omgeving, moeten alle toepassinge
 
 De test benadering voor database migratie bestaat uit de volgende activiteiten:
 
-1. **Validatie tests ontwikkelen** : als u database migratie wilt testen, moet u SQL-query's gebruiken. U moet de validatie query's maken om te worden uitgevoerd op zowel de bron-als de doel database. Uw validatie query's moeten betrekking hebben op het bereik dat u hebt gedefinieerd.
-1. **Test omgeving instellen** : de test omgeving moet een kopie van de bron database en de doel database bevatten. Zorg ervoor dat u de test omgeving isoleert.
-1. **Validatie tests uitvoeren** : Voer de validatie tests uit op de bron en het doel en analyseer vervolgens de resultaten.
-1. **Prestatie testen uitvoeren** : prestaties testen op basis van de bron en het doel, en vervolgens de resultaten analyseren en vergelijken.
+1. **Validatie tests ontwikkelen**: als u database migratie wilt testen, moet u SQL-query's gebruiken. U moet de validatie query's maken om te worden uitgevoerd op zowel de bron-als de doel database. Uw validatie query's moeten betrekking hebben op het bereik dat u hebt gedefinieerd.
+1. **Test omgeving instellen**: de test omgeving moet een kopie van de bron database en de doel database bevatten. Zorg ervoor dat u de test omgeving isoleert.
+1. **Validatie tests uitvoeren**: Voer de validatie tests uit op de bron en het doel en analyseer vervolgens de resultaten.
+1. **Prestatie testen uitvoeren**: prestaties testen op basis van de bron en het doel, en vervolgens de resultaten analyseren en vergelijken.
 
    > [!NOTE]
    > Voor hulp bij het ontwikkelen en uitvoeren van validatie tests na de migratie, moet u rekening houden met de oplossing voor gegevens kwaliteit die beschikbaar is via de partner [QuerySurge](https://www.querysurge.com/company/partners/microsoft). 
@@ -176,7 +176,7 @@ De test benadering voor database migratie bestaat uit de volgende activiteiten:
 
 ## <a name="leverage-advanced-features"></a>Geavanceerde functies gebruiken 
 
-Zorg ervoor dat u profiteren van de geavanceerde Cloud functies die worden geboden door SQL Database, zoals [ingebouwde hoge Beschik baarheid](../../database/high-availability-sla.md), [detectie van bedreigingen](../../database/advanced-data-security.md)en [het bewaken en afstemmen van uw werk belasting](../../database/monitor-tune-overview.md). 
+Zorg ervoor dat u profiteren van de geavanceerde Cloud functies die worden geboden door SQL Database, zoals [ingebouwde hoge Beschik baarheid](../../database/high-availability-sla.md), [detectie van bedreigingen](../../database/azure-defender-for-sql.md)en [het bewaken en afstemmen van uw werk belasting](../../database/monitor-tune-overview.md). 
 
 Sommige SQL Server-functies zijn alleen beschikbaar als het [compatibiliteits niveau van de data base](/sql/relational-databases/databases/view-or-change-the-compatibility-level-of-a-database) is gewijzigd in het meest recente compatibiliteits niveau (150). 
 

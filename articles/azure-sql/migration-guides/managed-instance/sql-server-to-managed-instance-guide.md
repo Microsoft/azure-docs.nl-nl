@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 5c20fbbe25b51160f42f233d30c39ccaec0f5cac
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 5d5404537ad107a54bd32110727e5a7d0f74ebea
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95026041"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326893"
 ---
 # <a name="migration-guide-sql-server-to-sql-managed-instance"></a>Migratie handleiding: SQL Server naar een door SQL beheerd exemplaar
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -99,10 +99,10 @@ Als u de prestaties van uw werk belasting wilt vergelijken met de oorspronkelijk
 
 ### <a name="create-sql-managed-instance"></a>Door SQL beheerd exemplaar maken 
 
-Maak op basis van de informatie in de fase detecteren en beoordelen een passend, met een doel gericht SQL beheerd exemplaar. U kunt dit doen met behulp van de sjabloon [Azure Portal](../../managed-instance/instance-create-quickstart.md), [Power shell](../../managed-instance/scripts/create-configure-managed-instance-powershell.md)of een [Azure Resource Manager (arm)](/azure/azure-sql/managed-instance/create-template-quickstart). 
+Maak op basis van de informatie in de fase detecteren en beoordelen een passend, met een doel gericht SQL beheerd exemplaar. U kunt dit doen met behulp van de sjabloon [Azure Portal](../../managed-instance/instance-create-quickstart.md), [Power shell](../../managed-instance/scripts/create-configure-managed-instance-powershell.md)of een [Azure Resource Manager (arm)](../../managed-instance/create-template-quickstart.md). 
 
 
-## <a name="migrate"></a>Migrate
+## <a name="migrate"></a>Migreren
 
 Nadat u taken hebt voltooid die zijn gekoppeld aan de fase voorafgaand aan de migratie, bent u klaar om het schema en de gegevens migratie uit te voeren. 
 
@@ -124,7 +124,7 @@ Volg de onderstaande stappen om migraties uit te voeren met behulp van DMS:
 1. Nadat de data base is hersteld, kiest u **Cutover starten**. Tijdens het migratie proces wordt de back-up van het einde van het logboek gekopieerd zodra u deze beschikbaar maakt in de SMB-netwerk share en deze terugzet op het doel. 
 1. Stop alle binnenkomend verkeer naar de bron database en werk de connection string bij naar de nieuwe data base van Azure SQL Managed instance. 
 
-Zie voor een gedetailleerde stapsgewijze zelf studie van deze migratie optie [SQL Server migreren naar een Azure SQL Managed instance online met behulp van DMS](/azure/dms/tutorial-sql-server-managed-instance-online). 
+Zie voor een gedetailleerde stapsgewijze zelf studie van deze migratie optie [SQL Server migreren naar een Azure SQL Managed instance online met behulp van DMS](../../../dms/tutorial-sql-server-managed-instance-online.md). 
    
 
 
@@ -160,7 +160,7 @@ Voer de volgende stappen uit om te migreren met back-up en herstel:
 
 1. Nadat de herstel bewerking is voltooid, bekijkt u de data base in **objectverkenner** in SQL Server Management Studio. 
 
-Zie [een Data Base herstellen naar Azure SQL Managed instance met SSMS](https://docs.microsoft.com/azure/azure-sql/managed-instance/restore-sample-database-quickstart)voor meer informatie over deze migratie optie.
+Zie [een Data Base herstellen naar Azure SQL Managed instance met SSMS](../../managed-instance/restore-sample-database-quickstart.md)voor meer informatie over deze migratie optie.
 
 > [!NOTE]
 > Een terugzetbewerking voor de database is asynchroon en kan opnieuw worden uitgevoerd. Mogelijk wordt er een fout weergegeven in SQL Server Management Studio als de verbinding wordt verbroken of als er een time-out optreedt. Op de achtergrond wordt blijvend geprobeerd om de database terug te zetten. U kunt de voortgang hiervan volgen in de weergaven [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql) en [sys.dm_operation_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database).
@@ -203,7 +203,7 @@ De test benadering voor database migratie bestaat uit de volgende activiteiten:
 
 ## <a name="leverage-advanced-features"></a>Geavanceerde functies gebruiken 
 
-Zorg ervoor dat u profiteren van de geavanceerde Cloud functies die beschikbaar worden gesteld door SQL Managed instance, zoals [ingebouwde hoge Beschik baarheid](../../database/high-availability-sla.md), [detectie van bedreigingen](../../database/advanced-data-security.md)en [het bewaken en afstemmen van uw werk belasting](../../database/monitor-tune-overview.md). 
+Zorg ervoor dat u profiteren van de geavanceerde Cloud functies die beschikbaar worden gesteld door SQL Managed instance, zoals [ingebouwde hoge Beschik baarheid](../../database/high-availability-sla.md), [detectie van bedreigingen](../../database/azure-defender-for-sql.md)en [het bewaken en afstemmen van uw werk belasting](../../database/monitor-tune-overview.md). 
 
 Met [Azure SQL-analyse](../../../azure-monitor/insights/azure-sql.md) kunt u een groot aantal beheerde exemplaren op een gecentraliseerde manier bewaken.
 

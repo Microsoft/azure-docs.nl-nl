@@ -4,14 +4,14 @@ description: Meer informatie over het ontwikkelen van functies met Java.
 ms.topic: conceptual
 ms.date: 09/14/2018
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 9679f6030ac889ac442a40cd852f5cc17f505756
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 1ffbd760ae75605d75652b29d379420d6946aa8f
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422515"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326451"
 ---
-# <a name="azure-functions-java-developer-guide"></a>Azure Functions Java-ontwikkelaars handleiding
+# <a name="azure-functions-java-developer-guide"></a>Java-ontwikkelaarshandleiding voor Azure Functions
 
 Deze hand leiding bevat gedetailleerde informatie die u kan helpen bij het ontwikkelen van Azure Functions met behulp van Java.
 
@@ -45,15 +45,27 @@ De bovenstaande artikel koppelingen laten zien hoe u uw eerste functies kunt mak
 
 ### <a name="project-scaffolding"></a>Project steigers
 
-Als u de voor keur geeft aan de opdracht regel ontwikkeling van de Terminal, is de eenvoudigste manier om op Java gebaseerde functie projecten op basis van een archetypes te gebruiken `Apache Maven` . De Java maven archetype voor Azure Functions wordt gepubliceerd onder de volgende _groupid_ : _artifactId_ : [com. micro soft. Azure: Azure-functions-archetype](https://search.maven.org/artifact/com.microsoft.azure/azure-functions-archetype/). 
+Als u de voor keur geeft aan de opdracht regel ontwikkeling van de Terminal, is de eenvoudigste manier om op Java gebaseerde functie projecten op basis van een archetypes te gebruiken `Apache Maven` . De Java maven archetype voor Azure Functions wordt gepubliceerd onder de volgende _groupid_:_artifactId_: [com. micro soft. Azure: Azure-functions-archetype](https://search.maven.org/artifact/com.microsoft.azure/azure-functions-archetype/). 
 
 Met de volgende opdracht wordt een nieuw Java-functie project gegenereerd met behulp van deze Archetype:
+
+# <a name="bash"></a>[Bash](#tab/bash)
 
 ```bash
 mvn archetype:generate \
     -DarchetypeGroupId=com.microsoft.azure \
-    -DarchetypeArtifactId=azure-functions-archetype 
+    -DarchetypeArtifactId=azure-functions-archetype
 ```
+
+# <a name="cmd"></a>[Cmd](#tab/cmd)
+
+```cmd
+mvn archetype:generate ^
+    -DarchetypeGroupId=com.microsoft.azure ^
+    -DarchetypeArtifactId=azure-functions-archetype
+```
+
+---
 
 Zie [Java Quick](./create-first-function-cli-java.md)start om aan de slag te gaan met deze archetype.
 
@@ -202,7 +214,7 @@ U kunt aanvullende argumenten opgeven in een app-instelling met de naam `JAVA_OP
 > [!IMPORTANT]  
 > In het verbruiks plan moet u ook de instelling WEBSITE_USE_PLACEHOLDER toevoegen met de waarde 0 voordat de aanpassing werkt. Met deze instelling worden de koude start tijden voor Java-functies verhoogd.
 
-### <a name="azure-portal"></a>Azure-portal
+### <a name="azure-portal"></a>Azure Portal
 
 Gebruik het [tabblad toepassings instellingen](functions-how-to-use-azure-function-app-settings.md#settings) In het [Azure Portal](https://portal.azure.com)om de instelling toe te voegen `JAVA_OPTS` .
 
@@ -210,19 +222,40 @@ Gebruik het [tabblad toepassings instellingen](functions-how-to-use-azure-functi
 
 U kunt de opdracht [AZ functionapp config appSettings set](/cli/azure/functionapp/config/appsettings) gebruiken om in te stellen `JAVA_OPTS` , zoals in het volgende voor beeld:
 
-#### <a name="consumption-plan"></a>[Verbruiksabonnement](#tab/consumption)
+# <a name="consumption-plan"></a>[Verbruiksabonnement](#tab/consumption/bash)
+
 ```azurecli-interactive
 az functionapp config appsettings set \
---settings "JAVA_OPTS=-Djava.awt.headless=true" \
-"WEBSITE_USE_PLACEHOLDER=0" \
---name <APP_NAME> --resource-group <RESOURCE_GROUP>
+    --settings "JAVA_OPTS=-Djava.awt.headless=true" \
+    "WEBSITE_USE_PLACEHOLDER=0" \
+    --name <APP_NAME> --resource-group <RESOURCE_GROUP>
 ```
-#### <a name="dedicated-plan--premium-plan"></a>[Speciaal plan/Premium-abonnement](#tab/dedicated+premium)
+
+# <a name="consumption-plan"></a>[Verbruiksabonnement](#tab/consumption/cmd)
+
+```azurecli-interactive
+az functionapp config appsettings set ^
+    --settings "JAVA_OPTS=-Djava.awt.headless=true" ^
+    "WEBSITE_USE_PLACEHOLDER=0" ^
+    --name <APP_NAME> --resource-group <RESOURCE_GROUP>
+```
+
+# <a name="dedicated-plan--premium-plan"></a>[Speciaal plan/Premium-abonnement](#tab/dedicated+premium/bash)
+
 ```azurecli-interactive
 az functionapp config appsettings set \
---settings "JAVA_OPTS=-Djava.awt.headless=true" \
---name <APP_NAME> --resource-group <RESOURCE_GROUP>
+    --settings "JAVA_OPTS=-Djava.awt.headless=true" \
+    --name <APP_NAME> --resource-group <RESOURCE_GROUP>
 ```
+
+# <a name="dedicated-plan--premium-plan"></a>[Speciaal plan/Premium-abonnement](#tab/dedicated+premium/cmd)
+
+```azurecli-interactive
+az functionapp config appsettings set ^
+    --settings "JAVA_OPTS=-Djava.awt.headless=true" ^
+    --name <APP_NAME> --resource-group <RESOURCE_GROUP>
+```
+
 ---
 
 In dit voor beeld wordt de modus headless ingeschakeld. Vervang door `<APP_NAME>` de naam van uw functie-app en `<RESOURCE_GROUP>` met de resource groep. 
@@ -460,15 +493,36 @@ U kunt de Azure CLI gebruiken voor het streamen van Java stdout-en stderr-logboe
 
 U kunt als volgt uw functie-app configureren om toepassings logboeken te schrijven met behulp van Azure CLI:
 
+# <a name="bash"></a>[Bash](#tab/bash)
+
 ```azurecli-interactive
 az webapp log config --name functionname --resource-group myResourceGroup --application-logging true
 ```
 
+# <a name="cmd"></a>[Cmd](#tab/cmd)
+
+```azurecli-interactive
+az webapp log config --name functionname --resource-group myResourceGroup --application-logging true
+```
+
+---
+
 Als u de uitvoer van logboek registratie voor uw functie-app wilt streamen met behulp van de Azure CLI, opent u een nieuwe opdracht prompt, bash of terminal sessie en voert u de volgende opdracht in:
+
+# <a name="bash"></a>[Bash](#tab/bash)
 
 ```azurecli-interactive
 az webapp log tail --name webappname --resource-group myResourceGroup
 ```
+
+# <a name="cmd"></a>[Cmd](#tab/cmd)
+
+```azurecli-interactive
+az webapp log tail --name webappname --resource-group myResourceGroup
+```
+
+---
+
 De opdracht [AZ webapp log staart](/cli/azure/webapp/log) bevat opties voor het filteren van uitvoer met behulp van de `--provider` optie. 
 
 Als u de logboek bestanden wilt downloaden als één ZIP-bestand met behulp van de Azure CLI, opent u een nieuwe opdracht prompt, bash of terminal sessie en voert u de volgende opdracht in:

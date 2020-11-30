@@ -4,12 +4,12 @@ description: In dit artikel vindt u informatie over het oplossen van fouten die 
 ms.reviewer: srinathv
 ms.topic: troubleshooting
 ms.date: 08/30/2019
-ms.openlocfilehash: 343ad80a6b68de352424fa8f16686fcece921954
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: cb25d9263648fbd92bc075751c1a8e627d03bd44
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94840913"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325210"
 ---
 # <a name="troubleshooting-backup-failures-on-azure-virtual-machines"></a>Back-upfouten op virtuele machines van Azure oplossen
 
@@ -246,7 +246,7 @@ Deze opdracht zorgt ervoor dat de momentopnamen worden gemaakt via host in plaat
 
 **Stap 2**: Probeer het back-upschema te wijzigen in een keer wanneer de virtuele machine minder belasting heeft (zoals minder CPU of IOPS)
 
-**Stap 3**: Probeer [de grootte van de virtuele machine te verg Roten](https://docs.microsoft.com/azure/virtual-machines/windows/resize-vm) en voer de bewerking opnieuw uit
+**Stap 3**: Probeer [de grootte van de virtuele machine te verg Roten](../virtual-machines/windows/resize-vm.md) en voer de bewerking opnieuw uit
 
 ### <a name="320001-resourcenotfound---could-not-perform-the-operation-as-vm-no-longer-exists--400094-bcmv2vmnotfound---the-virtual-machine-doesnt-exist--an-azure-virtual-machine-wasnt-found"></a>320001, ResourceNotFound: kan de bewerking niet uitvoeren omdat de VM niet meer bestaat/400094, BCMV2VMNotFound-de virtuele machine bestaat niet/er is geen virtuele machine van Azure gevonden
 
@@ -405,7 +405,7 @@ VM-back-up is afhankelijk van het uitgeven van momentopname opdrachten aan onder
 * **Als meer dan vier vm's dezelfde Cloud service delen, verspreidt u de virtuele machines over meerdere back-upbeleid**. Spreid de back-uptijden zodat er niet meer dan vier VM-back-ups tegelijk worden gestart. Probeer de start tijden in het beleid met ten minste een uur te scheiden.
 * **De virtuele machine wordt uitgevoerd op een hoog CPU-of geheugen niveau**. Als de virtuele machine wordt uitgevoerd op een hoog geheugen of CPU-gebruik, meer dan 90 procent, wordt uw momentopname taak in de wachtrij geplaatst en vertraagd. Er is uiteindelijk een time-out opgegaan. Als dit probleem optreedt, probeert u een back-up op aanvraag uit te voeren.
 
-## <a name="networking"></a>Netwerken
+## <a name="networking"></a>Networking
 
 DHCP moet zijn ingeschakeld in de gast voor het werken met IaaS VM-back-up. Als u een statisch privé IP-adres nodig hebt, configureert u dit via de Azure Portal of Power shell. Zorg ervoor dat de DHCP-optie in de virtuele machine is ingeschakeld.
 Meer informatie over het instellen van een statisch IP-adres via Power shell:

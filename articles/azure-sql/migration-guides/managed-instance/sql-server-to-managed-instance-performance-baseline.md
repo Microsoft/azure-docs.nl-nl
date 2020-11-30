@@ -10,12 +10,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: mokabiru
 ms.date: 11/06/2020
-ms.openlocfilehash: e9fb004df5fdf8a955312ebcf16b8b60fd7c9b6a
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: c47e4c1278f222feac35a2c6ab0b067c916c0217
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94592189"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326842"
 ---
 # <a name="migration-performance-sql-server-to-sql-managed-instance-performance-analysis"></a>Migratie prestaties: SQL Server van de prestatie analyse van SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -86,4 +86,4 @@ Raadpleeg de volgende bronnen voor meer informatie over het optimaliseren van uw
 - [Hoe kan ik vaststellen waarom de prestaties van de werk belasting van een Azure SQL Managed instance afwijkt van SQL Server?](https://medium.com/azure-sqldb-managed-instance/what-to-do-when-azure-sql-managed-instance-is-slower-than-sql-server-dd39942aaadd)
 - [De belangrijkste oorzaken van prestatie verschillen tussen het beheerde exemplaar van SQL en SQL Server](https://azure.microsoft.com/blog/key-causes-of-performance-differences-between-sql-managed-instance-and-sql-server/)
 - [Aanbevolen procedures voor opslag prestaties en overwegingen voor Azure SQL Managed instance (Algemeen)](https://techcommunity.microsoft.com/t5/datacat/storage-performance-best-practices-and-considerations-for-azure/ba-p/305525)
-- [Real-time prestatie bewaking voor Azure SQL Managed instance (dit wordt gearchiveerd, is dit het beoogde doel?)](https://docs.microsoft.com/archive/blogs/sqlcat/real-time-performance-monitoring-for-azure-sql-database-managed-instance)
+- [Real-time prestatie bewaking voor Azure SQL Managed instance (dit wordt gearchiveerd, is dit het beoogde doel?)](/archive/blogs/sqlcat/real-time-performance-monitoring-for-azure-sql-database-managed-instance)

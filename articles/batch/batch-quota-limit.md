@@ -4,12 +4,12 @@ description: Meer informatie over standaard Azure Batch quota's, limieten en bep
 ms.topic: conceptual
 ms.date: 06/03/2020
 ms.custom: seodec18
-ms.openlocfilehash: 8ca08d43f07633b58cf6f7067c1a8fcd58350678
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: b2039794a0c8a13070c9d81b83869ca4097bd02e
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92107535"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325962"
 ---
 # <a name="batch-service-quotas-and-limits"></a>Quota en limieten voor Batch-service
 
@@ -23,15 +23,33 @@ Als u in batch productie werkbelastingen wilt uitvoeren, moet u mogelijk een of 
 
 ## <a name="resource-quotas"></a>Resourcequota
 
-Een quotum is een krediet limiet, geen capaciteits garantie. Neem contact op met de ondersteuning van Azure als u de capaciteits behoeften op grote schaal hebt.
+Een quotum is een limiet, geen capaciteits garantie. Neem contact op met de ondersteuning van Azure als u de capaciteits behoeften op grote schaal hebt.
 
 Houd er ook rekening mee dat quota's geen gegarandeerde waarden zijn. Quota kunnen variëren op basis van wijzigingen van de batch-service of een gebruikers aanvraag om een quotum waarde te wijzigen.
 
 [!INCLUDE [azure-batch-limits](../../includes/azure-batch-limits.md)]
 
+## <a name="core-quotas"></a>Kern quota
+
+### <a name="cores-quotas-in-batch-service-mode"></a>Kernen quota's in de batch-service modus
+
+Het afdwingen van specifieke kern quota wordt verbeterd, waarbij de wijzigingen in fasen beschikbaar worden gemaakt en voor alle batch-accounts aan het eind december 2020 worden uitgevoerd.
+
+Er bestaan kern quota's voor elke VM-serie die wordt ondersteund door batch en die worden weer gegeven op de pagina **quota's** in de portal. De quotum limieten van de VM-serie kunnen worden bijgewerkt met een ondersteunings aanvraag, zoals hieronder wordt beschreven.
+
+Als het bestaande mechanisme is uitgeschakeld, worden de quotum limieten voor VM-reeksen niet gecontroleerd; alleen de totale quotum limiet voor het account wordt afgedwongen. Dit betekent dat het mogelijk is om meer kernen toe te wijzen voor een VM-serie dan wordt aangegeven door het quotum van de VM-reeks, tot aan de limiet voor het totale account quotum.
+
+Het bijgewerkte mechanisme dwingt de VM-reeks quota's naast het totale account quotum af. Als onderdeel van de overgang naar het nieuwe mechanisme kunnen de quota waarden van de VM-reeks worden bijgewerkt om toewijzings fouten te voor komen. voor elke VM-serie die in de afgelopen maanden wordt gebruikt, wordt het quotum van de VM-reeks bijgewerkt zodat deze overeenkomt met het totale account quotum. Met deze wijziging wordt het gebruik van meer capaciteit niet ingeschakeld dan al beschikbaar was.
+
+Het is mogelijk om te bepalen of het quotum voor het afdwingen van VM-Series is ingeschakeld voor een batch-account door het volgende te controleren:
+
+* De [dedicatedCoreQuotaPerVMFamilyEnforced](/rest/api/batchmanagement/batchaccount/get#batchaccount) API-eigenschap van het batch-account.
+
+* Tekst op de pagina **quota** van de batch-account in de portal.
+
 ### <a name="cores-quotas-in-user-subscription-mode"></a>Kernen quota's in de modus gebruikers abonnement
 
-Als u een [batch-account](accounts.md) hebt gemaakt met de groeps toewijzings modus ingesteld op **gebruikers abonnement**, worden quota anders toegepast. In deze modus worden batch-Vm's en andere resources rechtstreeks in uw abonnement gemaakt wanneer er een groep wordt gemaakt. De quota voor de Azure Batch-kernen zijn niet van toepassing op een account dat in deze modus wordt gemaakt. In plaats daarvan worden de quota's in uw abonnement voor regionale reken kernen en andere resources toegepast.
+Als u een [batch-account](accounts.md) hebt gemaakt met de groeps toewijzings modus ingesteld op **gebruikers abonnement**, worden batch-vm's en andere resources rechtstreeks in uw abonnement gemaakt wanneer een groep wordt gemaakt of waarvan het formaat wordt gewijzigd. De kern quota van Azure Batch zijn niet van toepassing en de quota's in uw abonnement voor regionale reken kernen, reken kernen per serie en andere bronnen worden gebruikt en afgedwongen.
 
 Zie [Azure-abonnement en service limieten, quota's en beperkingen](../azure-resource-manager/management/azure-subscription-service-limits.md)voor meer informatie over deze quota's.
 
@@ -69,11 +87,11 @@ Aanvullende limieten die zijn ingesteld door de batch-service. In tegens telling
 
 U kunt als volgt uw batch-account quota's weer geven in de [Azure Portal](https://portal.azure.com):
 
-1. Selecteer **batch-accounts**en selecteer vervolgens het batch-account waarin u bent geïnteresseerd.
+1. Selecteer **batch-accounts** en selecteer vervolgens het batch-account waarin u bent geïnteresseerd.
 1. Selecteer **quota's** in het menu van het batch-account.
 1. De quota's weer geven die momenteel zijn toegepast op het batch-account.
 
-    ![Quota voor batch-account][account_quotas]
+:::image type="content" source="./media/batch-quota-limit/account-quota-portal.png" alt-text="Quota voor batch-account":::
 
 ## <a name="increase-a-quota"></a>Een quotum verhogen
 
@@ -93,7 +111,7 @@ U kunt een quota verhoging aanvragen voor uw batch-account of uw abonnement met 
     
 1. In **Details**:
       
-    1. Geef in **Details**opgeven de locatie, het quotum type en het batch-account op.
+    1. Geef in **Details** opgeven de locatie, het quotum type en het batch-account op.
     
        ![Verhoging van batch quotum][quota_increase]
 
@@ -129,7 +147,7 @@ Batch-Pools in de virtuele-machine configuratie die is geïmplementeerd in een v
 - Eén [openbaar IP-adres](../virtual-network/public-ip-addresses.md)
 - Een [Load Balancer](../load-balancer/load-balancer-overview.md)
 
-Deze resources worden toegewezen in het abonnement met het virtuele netwerk dat is geleverd bij het maken van de batch-pool. De beperkingen die voor deze resources gelden, worden bepaald door de [resourcequota](../azure-resource-manager/management/azure-subscription-service-limits.md) van het abonnement. Als u implementaties van grote groepen plant in een virtueel netwerk, controleert u de quota van het abonnement voor deze resources. Vraag, indien nodig, een verhoging van de Azure Portal aan door **Help en ondersteuning**te selecteren.
+Deze resources worden toegewezen in het abonnement met het virtuele netwerk dat is geleverd bij het maken van de batch-pool. De beperkingen die voor deze resources gelden, worden bepaald door de [resourcequota](../azure-resource-manager/management/azure-subscription-service-limits.md) van het abonnement. Als u implementaties van grote groepen plant in een virtueel netwerk, controleert u de quota van het abonnement voor deze resources. Vraag, indien nodig, een verhoging van de Azure Portal aan door **Help en ondersteuning** te selecteren.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -10,12 +10,12 @@ ms.reviewer: veyalla
 ms.service: iot-edge
 ms.custom: devx-track-azurecli
 services: iot-edge
-ms.openlocfilehash: 97cdc4ad0b1d5e7dfb6642fa0163f810be5d7171
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: ad990f10c611c5ca5bb8a8d053ee4d59b6f05c83
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966918"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326995"
 ---
 # <a name="retrieve-logs-from-iot-edge-deployments"></a>Logboeken ophalen uit IoT Edge-implementaties
 
@@ -50,10 +50,10 @@ Met deze methode wordt een JSON-nettolading met het volgende schema geaccepteerd
           {
              "id": "regex string",
              "filter": {
-                "tail": int,
-                "since": int,
-                "until": int,
-                "loglevel": int,
+                "tail": "int",
+                "since": "int",
+                "until": "int",
+                "loglevel": "int",
                 "regex": "regex string"
              }
           }
@@ -159,10 +159,10 @@ Deze methode accepteert een JSON-nettolading vergelijkbaar met **GetModuleLogs**
           {
              "id": "regex string",
              "filter": {
-                "tail": int,
-                "since": int,
-                "until": int,
-                "loglevel": int,
+                "tail": "int",
+                "since": "int",
+                "until": "int",
+                "loglevel": "int",
                 "regex": "regex string"
              }
           }

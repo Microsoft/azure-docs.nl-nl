@@ -12,12 +12,12 @@ ms.author: garye
 ms.reviewer: sstein, davidph
 manager: cgronlun
 ms.date: 10/26/2020
-ms.openlocfilehash: adf454ac697f8cabf4256ebfc5baa5d0d1c76264
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: c806c0a13f9f5f13588b780054d1f285beb44802
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92782464"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96324530"
 ---
 # <a name="key-differences-between-machine-learning-services-in-azure-sql-managed-instance-and-sql-server"></a>De belangrijkste verschillen tussen Machine Learning Services in Azure SQL Managed Instance en SQL Server
 
@@ -55,7 +55,7 @@ Machine Learning Services in SQL Managed instance en SQL Server ondersteunen zow
 Python en R-pakket beheer werken anders tussen SQL Managed instance en SQL Server. Deze verschillen zijn:
 
 - Er wordt geen ondersteuning geboden voor pakketten die afhankelijk zijn van externe Runtimes (zoals Java) of waarvoor u toegang nodig hebt tot OS Api's voor installatie of gebruik.
-- Pakketten kunnen uitgaande netwerk aanroepen uitvoeren (eerdere wijzigingen in de preview-versie). U kunt de juiste uitgaande beveiligings regels instellen op het niveau van de [netwerk beveiligings groep](/azure/virtual-network/network-security-groups-overview) om uitgaande netwerk aanroepen in te scha kelen.
+- Pakketten kunnen uitgaande netwerk aanroepen uitvoeren (eerdere wijzigingen in de preview-versie). U kunt de juiste uitgaande beveiligings regels instellen op het niveau van de [netwerk beveiligings groep](../../virtual-network/network-security-groups-overview.md) om uitgaande netwerk aanroepen in te scha kelen.
 
 Zie voor meer informatie over het beheren van python-en R-pakketten:
 

@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: conceptual
 ms.date: 07/20/2020
 ms.author: pafarley
-ms.openlocfilehash: 392cc06c6e0bce7ec2304da61033fc508d940bbb
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: 079d5ea0259a436100b81489043b71a81ec1a330
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93143727"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327216"
 ---
 # <a name="video-moderation-with-the-review-tool"></a>Video toezicht met het hulp programma beoordeling
 
@@ -26,7 +26,7 @@ Content Moderator gebruik de functie voor door de machine ondersteunde video-en 
 Selecteer op het dash board een van de controle wachtrijen in het inhouds type video. Hiermee wordt een controle gestart en wordt de pagina toezicht op video-inhoud geopend.
 
 > [!div class="mx-imgBorder"]
-> ![Gedetailleerde weer gave voor video toezicht in het hulp programma beoordeling](./Review-Tool-User-Guide/images/video-moderation-detailed.png)
+> ![Op Content Moderator (preview) is de schuif regelaar gemarkeerd en ingesteld op 4 Beoordelingen. De Schakel opties vervagen en zwart en wit zijn gemarkeerd en beide zijn ingesteld.](./Review-Tool-User-Guide/images/video-moderation-detailed.png)
 
 ### <a name="review-count"></a>Aantal beoordelingen
 
@@ -55,7 +55,7 @@ In de **detail** weergave ziet u in het rechterdeel venster verschillende tabbla
 * Selecteer het tabblad **geschiedenis** om de geschiedenis van de beoordeling weer te geven, zoals wanneer deze is gemaakt en hoe deze is gewijzigd.
 
 > [!div class="mx-imgBorder"]
-> ![Knop voor bulk markeringen voor video toezicht](./Review-Tool-User-Guide/images/video-moderation-video-details.png)
+> ![Het rechterdeel venster is gemarkeerd en het tabblad notities is geselecteerd. Er is een test gebied met de label een notitie toevoegen.](./Review-Tool-User-Guide/images/video-moderation-video-details.png)
 
 ## <a name="apply-moderation-tags"></a>Moderator Tags Toep assen
 
@@ -63,10 +63,10 @@ De belangrijkste taak van een video controle is het Toep assen of verwijderen va
 
 ### <a name="bulk-tagging"></a>Bulk tagging
 
-Met de werk balk **massa Tags** kunt u tags aan meerdere geselecteerde Video's tegelijk toevoegen. Selecteer een of meer Video's en selecteer vervolgens de tags die u wilt Toep assen en klik op **verzenden** . 
+Met de werk balk **massa Tags** kunt u tags aan meerdere geselecteerde Video's tegelijk toevoegen. Selecteer een of meer Video's en selecteer vervolgens de tags die u wilt Toep assen en klik op **verzenden**. 
 
 > [!div class="mx-imgBorder"]
-> ![Knop voor bulk markeringen voor video toezicht](./Review-Tool-User-Guide/images/video-moderation-bulk-tags.png)
+> ![De knop + wordt gemarkeerd in het deel venster bulk Tags.](./Review-Tool-User-Guide/images/video-moderation-bulk-tags.png)
 
 
 ### <a name="key-frame-tagging"></a>Belangrijkste frame Tags
@@ -77,7 +77,7 @@ U kunt ook moderator Tags toevoegen aan specifieke keyframes. Selecteer de frame
 > Als de service geen keyframes kan extra heren, worden **er geen frames** weer gegeven in het tegel deel venster van het hoofd frame en wordt de optie voor het selecteren van keyframes lichter gekleurd. In dit geval kunt u alleen Tags Toep assen op de video als geheel (met behulp van de **video Tags +** knop).
 
 > [!div class="mx-imgBorder"]
-> ![Gedetailleerde weer gave voor video toezicht in het hulp programma beoordeling](./Review-Tool-User-Guide/images/video-moderation-tagging-options.png)
+> ![De deel Vensters tegel, video speler, keyframe en video Tags worden weer gegeven. De keyframe Tags + en video Tags + knoppen zijn gemarkeerd.](./Review-Tool-User-Guide/images/video-moderation-tagging-options.png)
 
 ## <a name="put-a-review-on-hold"></a>Een beoordeling in de wacht zetten
 
@@ -86,7 +86,7 @@ Met de knop **vasthouden** aan de onderkant van het deel venster video kunt u ee
 U kunt de Video's in de wacht stand weer geven door te klikken op de knop **vasthouden** boven aan het scherm. Het deel venster vasthouden wordt aan de rechter kant weer gegeven. Hier kunt u meerdere beoordelingen in de wacht selecteren en deze weer vrijgeven in de wachtrij of de verloop tijd instellen. Na de vooraf geconfigureerde tijd worden beoordelingen in de wacht stand weer gegeven. Selecteer **Opslaan** om te beginnen met tellen vanaf de huidige geselecteerde verval tijd.
 
 > [!div class="mx-imgBorder"]
-> ![Gedetailleerde weer gave voor video toezicht in het hulp programma beoordeling](./Review-Tool-User-Guide/images/video-moderation-hold.png)
+> ![In het deel venster video is de knop vasthouden gemarkeerd. Onder aan het deel venster wordt een keuze lijst met invoervak met een wacht tijd gemarkeerd, samen met de knoppen vrijgeven en opslaan.](./Review-Tool-User-Guide/images/video-moderation-hold.png)
 
 ## <a name="submit-a-review"></a>Een beoordeling verzenden
 

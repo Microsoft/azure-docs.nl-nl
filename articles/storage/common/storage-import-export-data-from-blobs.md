@@ -8,13 +8,13 @@ ms.topic: how-to
 ms.date: 10/29/2020
 ms.author: alkohli
 ms.subservice: common
-ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 39f9a5802d7f10753c8ea81bf414da195e137cc6
-ms.sourcegitcommit: bbd66b477d0c8cb9adf967606a2df97176f6460b
+ms.custom: devx-track-azurepowershell, devx-track-azurecli
+ms.openlocfilehash: e2e25f2fb806cb6e88745ffdfefe3dd82c0e9a6d
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93234134"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326537"
 ---
 # <a name="use-the-azure-importexport-service-to-export-data-from-azure-blob-storage"></a>De Azure Import/Export-service gebruiken voor het exporteren van gegevens uit Azure Blob-opslag
 
@@ -43,26 +43,26 @@ U moet het volgende doen:
 Voer de volgende stappen uit om een export taak te maken in de Azure Portal.
 
 1. Meld u aan bij <https://portal.azure.com/> .
-2. Ga naar **alle services > opslag > import/export-taken** .
+2. Ga naar **alle services > opslag > import/export-taken**.
 
     ![Ga naar import/export-taken](./media/storage-import-export-data-from-blobs/export-from-blob1.png)
 
-3. Klik op **import/export-taak maken** .
+3. Klik op **import/export-taak maken**.
 
     ![Klik op import/export-taak](./media/storage-import-export-data-from-blobs/export-from-blob2.png)
 
-4. In de **basis beginselen** :
+4. In de **basis beginselen**:
 
-    - Selecteer **exporteren vanuit Azure** .
+    - Selecteer **exporteren vanuit Azure**.
     - Voer een beschrijvende naam in voor de export taak. Gebruik de naam die u kiest om de voortgang van uw taken bij te houden.
         - De naam mag alleen kleine letters, cijfers, afbreek streepjes en onderstrepings tekens bevatten.
         - De naam moet beginnen met een letter en mag geen spaties bevatten.
     - Selecteer een abonnement.
     - Voer een resource groep in of Selecteer deze.
 
-        ![Basisinstellingen](./media/storage-import-export-data-from-blobs/export-from-blob3.png)
+        ![Basisbeginselen](./media/storage-import-export-data-from-blobs/export-from-blob3.png)
 
-5. In **taak Details** :
+5. In **taak Details**:
 
     - Selecteer het opslag account waarin de gegevens moeten worden geëxporteerd. Gebruik een opslag account waar u zich bevindt.
     - De locatie van de dropoff wordt automatisch ingevuld op basis van de regio van het geselecteerde opslag account.
@@ -72,8 +72,8 @@ Voer de volgende stappen uit om een export taak te maken in de Azure Portal.
          ![Alles exporteren](./media/storage-import-export-data-from-blobs/export-from-blob4.png)
 
     - U kunt opgeven welke containers en blobs u wilt exporteren.
-        - U kunt als volgt **een BLOB opgeven die moet worden geëxporteerd** : gebruik de **gelijkteken** -selector. Geef het relatieve pad naar de BLOB op, beginnend met de container naam. Gebruik *$root* om de basis container op te geven.
-        - **Om alle blobs op te geven die beginnen met een voor voegsel** : gebruik de kiezer **begint met** selector. Geef het voor voegsel op, beginnend met een slash/. Het voor voegsel kan het voor voegsel van de container naam, de volledige container naam of de volledige container naam, gevolgd door het voor voegsel van de BLOB-naam. U moet de BLOB-paden in een geldige indeling opgeven om te voor komen dat er fouten optreden tijdens de verwerking, zoals wordt weer gegeven in deze scherm opname. Zie voor [beelden van geldige BLOB-paden](#examples-of-valid-blob-paths)voor meer informatie.
+        - U kunt als volgt **een BLOB opgeven die moet worden geëxporteerd**: gebruik de **gelijkteken** -selector. Geef het relatieve pad naar de BLOB op, beginnend met de container naam. Gebruik *$root* om de basis container op te geven.
+        - **Om alle blobs op te geven die beginnen met een voor voegsel**: gebruik de kiezer **begint met** selector. Geef het voor voegsel op, beginnend met een slash/. Het voor voegsel kan het voor voegsel van de container naam, de volledige container naam of de volledige container naam, gevolgd door het voor voegsel van de BLOB-naam. U moet de BLOB-paden in een geldige indeling opgeven om te voor komen dat er fouten optreden tijdens de verwerking, zoals wordt weer gegeven in deze scherm opname. Zie voor [beelden van geldige BLOB-paden](#examples-of-valid-blob-paths)voor meer informatie.
 
            ![Geselecteerde containers en blobs exporteren](./media/storage-import-export-data-from-blobs/export-from-blob5.png)
 
@@ -84,7 +84,7 @@ Voer de volgende stappen uit om een export taak te maken in de Azure Portal.
    > [!NOTE]
    > Als de blob die moet worden geëxporteerd, wordt gebruikt tijdens het kopiëren van de gegevens, neemt Azure import/export-service een moment opname van de BLOB en kopieert de moment opname.
 
-6. In **retour verzendings gegevens** :
+6. In **retour verzendings gegevens**:
 
     - Selecteer de transporteur in de vervolg keuzelijst. Als u een andere transporteur dan FedEx/DHL wilt gebruiken, kiest u een bestaande optie in de vervolg keuzelijst. Neem contact op met Azure Data Box Operations-team `adbops@microsoft.com`  met de informatie over de provider die u wilt gebruiken.
     - Voer een geldig account nummer van een transporteur in dat u hebt gemaakt met die transporteur. Micro soft gebruikt dit account om de schijven terug naar u te verzenden zodra de export taak is voltooid.
@@ -93,7 +93,7 @@ Voer de volgende stappen uit om een export taak te maken in de Azure Portal.
         > [!TIP]
         > In plaats van een e-mail adres voor één gebruiker op te geven, moet u een groeps-e-mail opgeven. Dit zorgt ervoor dat u meldingen ontvangt, zelfs als een beheerder deze verlaat.
 
-7. In **samen vatting** :
+7. In **samen vatting**:
 
     - Bekijk de details van de taak.
     - Noteer de naam van de taak en geleverd Azure Data Center-verzend adres voor het verzenden van schijven naar Azure.
@@ -103,7 +103,7 @@ Voer de volgende stappen uit om een export taak te maken in de Azure Portal.
 
     - Klik op **OK** om het maken van de export taak te volt ooien.
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Gebruik de volgende stappen om een export taak te maken in de Azure Portal.
 
@@ -155,7 +155,7 @@ Gebruik de volgende stappen om een export taak te maken in de Azure Portal.
 
    Deze parameter waarde exporteert de blob met de naam *logo.bmp* in de hoofd container.
 
-   U kunt ook alle blobs in een container selecteren met behulp van een voor voegsel. Vervang deze waarde voor **--export** :
+   U kunt ook alle blobs in een container selecteren met behulp van een voor voegsel. Vervang deze waarde voor **--export**:
 
     ```azurecli
     blob-path-prefix=/myiecontainer
@@ -234,7 +234,7 @@ Install-Module -Name Az.ImportExport
     > [!TIP]
     > In plaats van een e-mail adres voor één gebruiker op te geven, moet u een groeps-e-mail opgeven. Dit zorgt ervoor dat u meldingen ontvangt, zelfs als een beheerder deze verlaat.
 
-   Met deze taak worden alle blobs in uw opslag account geëxporteerd. U kunt een BLOB voor exporteren opgeven door deze waarde te vervangen door **-ExportBlobListblobPath** :
+   Met deze taak worden alle blobs in uw opslag account geëxporteerd. U kunt een BLOB voor exporteren opgeven door deze waarde te vervangen door **-ExportBlobListblobPath**:
 
    ```azurepowershell-interactive
    -ExportBlobListblobPath $root\logo.bmp
@@ -242,7 +242,7 @@ Install-Module -Name Az.ImportExport
 
    Deze parameter waarde exporteert de blob met de naam *logo.bmp* in de hoofd container.
 
-   U kunt ook alle blobs in een container selecteren met behulp van een voor voegsel. Vervang deze waarde voor **-ExportBlobListblobPath** :
+   U kunt ook alle blobs in een container selecteren met behulp van een voor voegsel. Vervang deze waarde voor **-ExportBlobListblobPath**:
 
    ```azurepowershell-interactive
    -ExportBlobListblobPath '/myiecontainer'

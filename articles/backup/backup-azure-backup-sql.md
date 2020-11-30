@@ -3,12 +3,12 @@ title: Back-ups maken van SQL Server naar Azure als een DPM-workload
 description: Een inleiding tot het maken van back-ups van SQL Server-data bases met behulp van de Azure Backup-Service
 ms.topic: conceptual
 ms.date: 01/30/2019
-ms.openlocfilehash: 8130990f86311221ae6d097137a66a6e9b81be73
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 592a51051a0d02a6c1d491db0fe559e2e62babb2
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92218082"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327046"
 ---
 # <a name="back-up-sql-server-to-azure-as-a-dpm-workload"></a>Back-ups maken van SQL Server naar Azure als een DPM-workload
 
@@ -24,7 +24,7 @@ Een back-up maken van een SQL Server Data Base naar Azure en deze herstellen van
 
 >[!NOTE]
 >DPM 2019 UR2 ondersteunt SQL Server failover cluster instances (FCI) met behulp van gedeelde cluster volumes (CSV).<br><br>
->De beveiliging van [SQL Server failover-cluster exemplaar met opslagruimten direct op Azure](https://docs.microsoft.com/azure/azure-sql/virtual-machines/windows/failover-cluster-instance-storage-spaces-direct-manually-configure)  en [SQL Server failovercluster met gedeelde schijven van Azure](https://docs.microsoft.com/azure/azure-sql/virtual-machines/windows/failover-cluster-instance-azure-shared-disks-manually-configure) wordt ondersteund met deze functie. De DPM-server moet worden geïmplementeerd in de virtuele machine van Azure om het SQL FCI-exemplaar te beveiligen dat is geïmplementeerd op virtuele machines van Azure. 
+>De beveiliging van [SQL Server failover-cluster exemplaar met opslagruimten direct op Azure](../azure-sql/virtual-machines/windows/failover-cluster-instance-storage-spaces-direct-manually-configure.md)  en [SQL Server failovercluster met gedeelde schijven van Azure](../azure-sql/virtual-machines/windows/failover-cluster-instance-azure-shared-disks-manually-configure.md) wordt ondersteund met deze functie. De DPM-server moet worden geïmplementeerd in de virtuele machine van Azure om het SQL FCI-exemplaar te beveiligen dat is geïmplementeerd op virtuele machines van Azure. 
 
 ## <a name="prerequisites-and-limitations"></a>Vereisten en beperkingen
 
@@ -44,7 +44,7 @@ Een back-up maken van een SQL Server Data Base naar Azure en deze herstellen van
     * Alleen secundaire: back-up mag niet op de primaire replica worden uitgevoerd. Als de primaire replica de enige online replica is, mag de back-up niet plaatsvinden.
     * Primaire: back-ups moeten altijd op de primaire replica plaatsvinden.
     * Iedere replica: back-ups kunnen op alle beschikbare replica's in de beschikbaarheidsgroep plaatsvinden. Het knooppunt waarvan een back-up moet worden gemaakt, zal gebaseerd zijn op de back-upprioriteiten voor elk van de knooppunten.
-  * Houd rekening met het volgende:
+  * en let op het volgende:
     * U kunt back-ups maken van elke Lees bare replica, dat wil zeggen primair, synchroon secundair, asynchroon secundair.
     * Als een replica wordt uitgesloten van de back-up, bijvoorbeeld als **replica uitsluiten** is ingeschakeld of als niet leesbaar is gemarkeerd, wordt die replica niet geselecteerd voor back-up onder een van de opties.
     * Als er meerdere replica's beschikbaar en leesbaar zijn, wordt het knoop punt met de hoogste back-upprioriteit geselecteerd voor back-up.
@@ -98,13 +98,13 @@ Als u SQL Server-data bases in azure wilt beveiligen, moet u eerst een back-upbe
 
     DPM maakt standaard één volume per gegevens bron (SQL Server-Data Base). Het volume wordt gebruikt voor de eerste back-upkopie. In deze configuratie beperkt LDM (Logical Disk Manager) DPM-beveiliging tot 300 gegevens bronnen (SQL Server-data bases). Als u deze beperking wilt omzeilen, selecteert u **gegevens in de DPM-opslag groep samen zoeken**. Als u deze optie gebruikt, gebruikt DPM één volume voor meerdere gegevens bronnen. Met deze instelling kan DPM Maxi maal 2.000 SQL Server data bases beveiligen.
 
-    Als u **de volumes automatisch verg root**, kunt u met DPM het verhoogde back-upvolume uitbreiden naarmate de productie gegevens groeien. Als u **de volumes automatisch verg Roten**selecteert, wordt de back-upopslag door DPM beperkt tot de gegevens bronnen in de beveiligings groep.
+    Als u **de volumes automatisch verg root**, kunt u met DPM het verhoogde back-upvolume uitbreiden naarmate de productie gegevens groeien. Als u **de volumes automatisch verg Roten** selecteert, wordt de back-upopslag door DPM beperkt tot de gegevens bronnen in de beveiligings groep.
 
 1. Als u een beheerder bent, kunt u ervoor kiezen om de eerste back-up **automatisch over het netwerk** over te dragen en de overdrachts tijd te kiezen. Of kies ervoor om de back-up **hand matig** te verplaatsen. Selecteer vervolgens **Volgende**.
 
     ![Een methode voor het maken van replica's kiezen](./media/backup-azure-backup-sql/pg-manual.png)
 
-    De eerste back-up vereist de overdracht van de volledige gegevens bron (SQL Server-Data Base). De back-upgegevens worden verplaatst van de productie server (SQL Server computer) naar de DPM-server. Als deze back-up groot is, kan het overdragen van de gegevens via het netwerk leiden tot bandbreedte congestie. Daarom kunnen beheerders ervoor kiezen om Verwissel bare media te gebruiken om de eerste back-up **hand matig**over te dragen. Het is ook mogelijk dat de gegevens **automatisch via het netwerk** worden overgedragen op een opgegeven tijdstip.
+    De eerste back-up vereist de overdracht van de volledige gegevens bron (SQL Server-Data Base). De back-upgegevens worden verplaatst van de productie server (SQL Server computer) naar de DPM-server. Als deze back-up groot is, kan het overdragen van de gegevens via het netwerk leiden tot bandbreedte congestie. Daarom kunnen beheerders ervoor kiezen om Verwissel bare media te gebruiken om de eerste back-up **hand matig** over te dragen. Het is ook mogelijk dat de gegevens **automatisch via het netwerk** worden overgedragen op een opgegeven tijdstip.
 
     Nadat de eerste back-up is voltooid, worden de back-ups incrementeel door lopen op de eerste back-upkopie. Incrementele back-ups zijn vaak klein en kunnen eenvoudig via het netwerk worden overgedragen.
 
@@ -157,13 +157,13 @@ Als u SQL Server-data bases in azure wilt beveiligen, moet u eerst een back-upbe
 
 Er wordt een herstel punt gemaakt wanneer de eerste back-up wordt uitgevoerd. In plaats van te wachten tot het schema wordt uitgevoerd, kunt u hand matig het maken van een herstel punt activeren:
 
-1. Controleer in de beveiligings groep of de database status **OK**is.
+1. Controleer in de beveiligings groep of de database status **OK** is.
 
     ![Een beveiligings groep, met de database status](./media/backup-azure-backup-sql/sqlbackup-recoverypoint.png)
 1. Klik met de rechter muisknop op de data base en selecteer **herstel punt maken**.
 
     ![Kiezen voor het maken van een online herstel punt](./media/backup-azure-backup-sql/sqlbackup-createrp.png)
-1. Selecteer **online beveiliging**in de vervolg keuzelijst. Selecteer vervolgens **OK** om het maken van een herstel punt in azure te starten.
+1. Selecteer **online beveiliging** in de vervolg keuzelijst. Selecteer vervolgens **OK** om het maken van een herstel punt in azure te starten.
 
     ![Beginnen met het maken van een herstel punt in azure](./media/backup-azure-backup-sql/sqlbackup-azure.png)
 1. U kunt de voortgang van de taak weer geven in de werk ruimte **bewaking** .

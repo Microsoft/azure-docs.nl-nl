@@ -3,12 +3,12 @@ title: Uw Azure VMware-oplossings resource inschakelen
 description: Meer informatie over het indienen van een ondersteunings aanvraag om uw Azure VMware-oplossings resource in te scha kelen. U kunt ook meer hosts aanvragen in uw bestaande Azure VMware-oplossings privécloud.
 ms.topic: how-to
 ms.date: 11/12/2020
-ms.openlocfilehash: 68f8fe38c67ec5ddad7cf662a7996330ee2a1e73
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: 526d6b38f4b4e3f6c4806b71b4728dee90cf558a
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95794718"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325074"
 ---
 # <a name="how-to-enable-azure-vmware-solution-resource"></a>Azure VMware Solution resource inschakelen
 Meer informatie over het indienen van een ondersteunings aanvraag om uw [Azure VMware-oplossings](introduction.md) resource in te scha kelen. U kunt ook meer hosts aanvragen in uw bestaande Azure VMware-oplossings privécloud.
@@ -76,7 +76,7 @@ Csp's moeten [micro soft Partner Center](https://partner.microsoft.com) gebruike
 
 1. Selecteer **Azure-abonnement** en selecteer vervolgens **toevoegen aan winkel wagen**. 
 
-1. Bekijk en voltooi de algemene instellingen van het abonnement voor Azure plan voor uw klant. Zie de [documentatie van micro soft Partner Center](https://docs.microsoft.com/partner-center/azure-plan-manage)voor meer informatie.
+1. Bekijk en voltooi de algemene instellingen van het abonnement voor Azure plan voor uw klant. Zie de [documentatie van micro soft Partner Center](/partner-center/azure-plan-manage)voor meer informatie.
 
 Na het configureren van het Azure-abonnement en de benodigde vSphere RBAC-machtigingen zijn aanwezig als CSP, stelt u micro soft in staat om het quotum voor een Azure-abonnement in te scha kelen. Toegang tot Azure Portal van het partner centrum door gebruik te maken van **beheerder namens** (administrate) procedure.
 

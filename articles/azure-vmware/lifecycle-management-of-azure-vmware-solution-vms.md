@@ -3,12 +3,12 @@ title: Levenscyclus beheer van virtuele machines met Azure VMware-oplossingen
 description: Meer informatie over het beheren van alle aspecten van de levens cyclus van uw Azure VMware-oplossing-Vm's met Microsoft Azure systeem eigen hulpprogram ma's.
 ms.topic: conceptual
 ms.date: 09/11/2020
-ms.openlocfilehash: 5280d362c1e7b1bf33579d051c4cc11adb1b7e59
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: ff1032900fa936895f3adfcb0d8a872f24948aca
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545753"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96326808"
 ---
 # <a name="lifecycle-management-of-azure-vmware-solution-vms"></a>Levenscyclus beheer van virtuele machines met Azure VMware-oplossingen
 
@@ -61,7 +61,7 @@ Azure Updatebeheer in Azure Automation beheert updates van het besturings systee
 
 2. Met **log Analytics werk ruimte** kan de verzameling van Logboeken en prestatie meter items worden verzameld met de log Analytics agent of uitbrei dingen. Zie [een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/learn/quick-create-workspace.md)om uw log Analytics-werk ruimte te maken. Als u wilt, kunt u ook een werk ruimte maken via [cli](../azure-monitor/learn/quick-create-workspace-cli.md), [power shell](../azure-monitor/platform/powershell-workspace-configuration.md)of [Azure Resource Manager sjabloon](../azure-monitor/samples/resource-manager-workspace.md).
 
-3. Als u Azure Updatebeheer wilt inschakelen voor uw virtuele machines, raadpleegt u [updatebeheer inschakelen vanuit een Automation-account](../automation/update-management/update-mgmt-enable-automation-account.md). In het proces koppelt u uw Log Analytics-werk ruimte aan uw Automation-account. 
+3. Als u Azure Updatebeheer wilt inschakelen voor uw virtuele machines, raadpleegt u [updatebeheer inschakelen vanuit een Automation-account](../automation/update-management/enable-from-automation-account.md). In het proces koppelt u uw Log Analytics-werk ruimte aan uw Automation-account. 
  
 4. Zodra u Vm's hebt toegevoegd aan Azure Updatebeheer, kunt u [updates op Vm's implementeren en resultaten bekijken](../automation/update-management/deploy-updates.md). 
 

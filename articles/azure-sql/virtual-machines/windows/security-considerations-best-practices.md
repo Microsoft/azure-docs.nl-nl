@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 03/23/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: e6f6d1960c07dc23c584dec5bb424f91630fc1bb
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 92cd20f9e636c50416a72ec974a33c87da1ae2cb
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92785065"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327267"
 ---
 # <a name="security-considerations-for-sql-server-on-azure-virtual-machines"></a>Veiligheidsoverwegingen voor SQL Server in virtuele Azure-machines
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -41,7 +41,7 @@ In de volgende secties vindt u suggesties voor het door lopen van deze punten.
 
 ## <a name="secure-connections"></a>Beveiligde verbindingen
 
-Wanneer u een SQL Server virtuele machine maakt met een galerie-afbeelding, biedt de **SQL Server connectiviteits** optie u de keuze van **lokale (binnen VM)** , **privé (binnen Virtual Network)** of **openbaar (Internet)** .
+Wanneer u een SQL Server virtuele machine maakt met een galerie-afbeelding, biedt de **SQL Server connectiviteits** optie u de keuze van **lokale (binnen VM)**, **privé (binnen Virtual Network)** of **openbaar (Internet)**.
 
 ![SQL Server connectiviteit](./media/security-considerations-best-practices/sql-vm-connectivity-option.png)
 
@@ -59,7 +59,7 @@ Ten slotte kunt u versleutelde verbindingen inschakelen voor het exemplaar van d
 
 ## <a name="encryption"></a>Versleuteling
 
-Managed disks biedt Server-Side versleuteling en Azure Disk Encryption. [Versleuteling aan de server zijde](../../../virtual-machines/windows/disk-encryption.md) biedt versleuteling-at-rest en beveiligt uw gegevens om te voldoen aan de verplichtingen van de beveiliging en naleving van uw organisatie. [Azure Disk Encryption](../../../security/fundamentals/azure-disk-encryption-vms-vmss.md) gebruikt BitLocker-of DM-Crypt-technologie en integreert met Azure Key Vault om zowel het besturings systeem als de gegevens schijven te versleutelen. 
+Managed disks biedt Server-Side versleuteling en Azure Disk Encryption. [Versleuteling aan de server zijde](../../../virtual-machines/disk-encryption.md) biedt versleuteling-at-rest en beveiligt uw gegevens om te voldoen aan de verplichtingen van de beveiliging en naleving van uw organisatie. [Azure Disk Encryption](../../../security/fundamentals/azure-disk-encryption-vms-vmss.md) gebruikt BitLocker-of DM-Crypt-technologie en integreert met Azure Key Vault om zowel het besturings systeem als de gegevens schijven te versleutelen. 
 
 ## <a name="use-a-non-default-port"></a>Een niet-standaard poort gebruiken
 
@@ -93,7 +93,7 @@ U wilt niet dat aanvallers eenvoudig account namen of wacht woorden raden. Gebru
   - Maak een SQL-account met een unieke naam die het lidmaatschap van de **sysadmin** heeft. U kunt dit doen vanuit de portal door **SQL-verificatie** in te scha kelen tijdens het inrichten.
 
     > [!TIP] 
-    > Als u geen SQL-verificatie inschakelt tijdens het inrichten, moet u de verificatie modus hand matig wijzigen in **SQL Server en Windows-verificatie modus** . Zie voor meer informatie [Server verificatie modus wijzigen](/sql/database-engine/configure-windows/change-server-authentication-mode).
+    > Als u geen SQL-verificatie inschakelt tijdens het inrichten, moet u de verificatie modus hand matig wijzigen in **SQL Server en Windows-verificatie modus**. Zie voor meer informatie [Server verificatie modus wijzigen](/sql/database-engine/configure-windows/change-server-authentication-mode).
 
   - Als u de **sa** -aanmelding moet gebruiken, schakelt u de aanmelding na het inrichten in en wijst u een nieuw sterk wacht woord toe.
 

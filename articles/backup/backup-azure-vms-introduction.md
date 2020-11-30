@@ -3,12 +3,12 @@ title: Over Azure VM Backup
 description: In dit artikel leest u hoe de Azure Backup-service een back-up maakt van virtuele Azure-machines en hoe u de aanbevolen procedures volgt.
 ms.topic: conceptual
 ms.date: 09/13/2019
-ms.openlocfilehash: 30d27f3f9c559fd149bd45f303127e0eec40b878
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.openlocfilehash: 7fa47b83eb8fa06c028079cf47ea0cb46df31860
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92173857"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325227"
 ---
 # <a name="an-overview-of-azure-vm-backup"></a>Een overzicht van Azure VM backup
 
@@ -51,7 +51,7 @@ Wanneer u back-ups maakt van virtuele Azure-machines met Azure Backup, worden vi
 
 **Versleuteling** | **Details** | **Ondersteuning**
 --- | --- | ---
-**SSE** | Met SSE biedt Azure Storage versleuteling op rest door gegevens automatisch te versleutelen voordat ze worden opgeslagen. Azure Storage worden ook gegevens ontsleuteld voordat ze worden opgehaald. Azure Backup ondersteunt back-ups van Vm's met twee typen Storage Service Encryption:<li> **SSE met door het platform beheerde sleutels**: deze versleuteling is standaard voor alle schijven in uw vm's. Meer informatie vindt u [hier](../virtual-machines/windows/disk-encryption.md#platform-managed-keys).<li> **SSE met door de klant beheerde sleutels**. Met CMK beheert u de sleutels die worden gebruikt om de schijven te versleutelen. Meer informatie vindt u [hier](../virtual-machines/windows/disk-encryption.md#customer-managed-keys). | Azure Backup maakt gebruik van SSE voor op reste versleuteling van virtuele Azure-machines.
+**SSE** | Met SSE biedt Azure Storage versleuteling op rest door gegevens automatisch te versleutelen voordat ze worden opgeslagen. Azure Storage worden ook gegevens ontsleuteld voordat ze worden opgehaald. Azure Backup ondersteunt back-ups van Vm's met twee typen Storage Service Encryption:<li> **SSE met door het platform beheerde sleutels**: deze versleuteling is standaard voor alle schijven in uw vm's. Meer informatie vindt u [hier](../virtual-machines/disk-encryption.md#platform-managed-keys).<li> **SSE met door de klant beheerde sleutels**. Met CMK beheert u de sleutels die worden gebruikt om de schijven te versleutelen. Meer informatie vindt u [hier](../virtual-machines/disk-encryption.md#customer-managed-keys). | Azure Backup maakt gebruik van SSE voor op reste versleuteling van virtuele Azure-machines.
 **Azure Disk Encryption** | Azure Disk Encryption versleutelt zowel besturings systeem-als gegevens schijven voor virtuele Azure-machines.<br/><br/> Azure Disk Encryption kan worden geïntegreerd met BitLocker-versleutelings sleutels (BEKs), die worden beveiligd in een sleutel kluis als geheimen. Azure Disk Encryption is ook geïntegreerd met Azure Key Vault Key Encryption Keys (KEKs). | Azure Backup ondersteunt back-ups van beheerde en onbeheerde Azure-Vm's die alleen met BEKs zijn versleuteld, of met BEKs samen met KEKs.<br/><br/> Zowel BEKs als KEKs worden van een back-up gemaakt en versleuteld.<br/><br/> Als er een back-up van KEKs en BEKs wordt gemaakt, kunnen gebruikers met de vereiste machtigingen sleutels en geheimen terug naar de sleutel kluis herstellen als dat nodig is. Deze gebruikers kunnen ook de versleutelde VM herstellen.<br/><br/> Versleutelde sleutels en geheimen kunnen niet worden gelezen door onbevoegde gebruikers of Azure.
 
 Voor beheerde en onbeheerde Azure-Vm's ondersteunt back-ups beide Vm's die zijn versleuteld met alleen BEKs of Vm's die zijn versleuteld met BEKs, samen met KEKs.
@@ -76,14 +76,14 @@ Azure Backup maakt moment opnamen volgens het back-upschema.
 
 In de volgende tabel ziet u de verschillende soorten consistentie van moment opnamen:
 
-**Momentopname** | **Details** | **Herstel** | **Overweging**
+**Snapshot** | **Details** | **Herstel** | **Overweging**
 --- | --- | --- | ---
 **Toepassings consistent** | Met app-consistente back-ups worden geheugen inhoud en I/O-bewerkingen in behandeling vastgelegd. App-consistente moment opnamen maken gebruik van een VSS Writer (of pre/post scripts voor Linux) om de consistentie van de app-gegevens te garanderen voordat een back-up wordt uitgevoerd. | Wanneer u een virtuele machine herstelt met een app-consistente moment opname, wordt de VM opgestart. Er zijn geen gegevens beschadiging of-verlies. De apps beginnen met een consistente status. | Windows: alle VSS-schrijvers zijn geslaagd<br/><br/> Linux: vóór/post-scripts zijn geconfigureerd en geslaagd
 **Bestands systeem consistent** | Bestandssysteem consistente back-ups bieden consistentie door een moment opname van alle bestanden tegelijk te maken.<br/><br/> | Wanneer u een virtuele machine herstelt met een bestandssysteem consistente moment opname, wordt de VM opgestart. Er zijn geen gegevens beschadiging of-verlies. Apps moeten hun eigen mechanisme ' herstellen ' implementeren om ervoor te zorgen dat de herstelde gegevens consistent zijn. | Windows: sommige VSS-schrijvers zijn mislukt <br/><br/> Linux: standaard (als er vooraf/post-scripts niet zijn geconfigureerd of mislukt)
 **Crash-consistent** | Crash-consistente moment opnamen doen zich meestal voor als een Azure-VM wordt afgesloten op het moment van de back-up. Alleen de gegevens die al op de schijf aanwezig zijn op het moment van de back-up worden vastgelegd en er een back-up van wordt gemaakt. | Begint met het opstart proces van de virtuele machine, gevolgd door een schijf controle om beschadigings fouten op te lossen. Gegevens in het geheugen of schrijf bewerkingen die niet naar de schijf zijn overgedragen voordat de crash is verbroken. Apps implementeren hun eigen gegevens verificatie. Een Data Base-app kan bijvoorbeeld het transactie logboek voor verificatie gebruiken. Als het transactie logboek vermeldingen bevat die zich niet in de data base bevinden, worden trans acties teruggedraaid door de data base software totdat de gegevens consistent zijn. | De virtuele machine is afgesloten (status gestopt/toegewezen).
 
 >[!NOTE]
-> Als de inrichtings status is **geslaagd**, neemt Azure backup bestandssysteem consistente back-ups. Als de inrichtings status niet **beschikbaar** of **mislukt**is, worden er crash-consistente back-ups gemaakt. Als de inrichtings status **maakt** of **verwijdert**, betekent dit dat Azure backup de bewerkingen opnieuw probeert uit te voeren.
+> Als de inrichtings status is **geslaagd**, neemt Azure backup bestandssysteem consistente back-ups. Als de inrichtings status niet **beschikbaar** of **mislukt** is, worden er crash-consistente back-ups gemaakt. Als de inrichtings status **maakt** of **verwijdert**, betekent dit dat Azure backup de bewerkingen opnieuw probeert uit te voeren.
 
 ## <a name="backup-and-restore-considerations"></a>Overwegingen voor back-up en herstel
 

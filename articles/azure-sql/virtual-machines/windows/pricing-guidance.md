@@ -15,12 +15,12 @@ ms.date: 08/09/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: c64ab815572af0f6c76a5076c9d4cf03586f242d
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 57e9c82e5685171cff994aca7985f6a4211f00e7
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92784997"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327284"
 ---
 # <a name="pricing-guidance-for-sql-server-on-azure-vms"></a>Prijs informatie voor SQL Server op virtuele machines van Azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -36,9 +36,9 @@ Dit artikel bevat prijs informatie voor [SQL Server op Azure virtual machines](s
 
 ## <a name="free-licensed-sql-server-editions"></a>Gratis licentie SQL Server-edities
 
-Als u een concept wilt ontwikkelen, testen of maken, gebruikt u de gratis licentie **SQL Server Developer Edition** . Deze editie heeft alle functies van SQL Server Enterprise Edition, zodat u elk type toepassing kunt bouwen en testen. U kunt de Developer Edition echter niet in productie uitvoeren. Een SQL Server Developer Edition-VM brengt alleen kosten in rekening voor de kosten van de virtuele machine, omdat er geen bijbehorende SQL Server licentie kosten zijn.
+Als u een concept wilt ontwikkelen, testen of maken, gebruikt u de gratis licentie **SQL Server Developer Edition**. Deze editie heeft alle functies van SQL Server Enterprise Edition, zodat u elk type toepassing kunt bouwen en testen. U kunt de Developer Edition echter niet in productie uitvoeren. Een SQL Server Developer Edition-VM brengt alleen kosten in rekening voor de kosten van de virtuele machine, omdat er geen bijbehorende SQL Server licentie kosten zijn.
 
-Als u een licht gewicht werk belasting wilt uitvoeren in productie (<4 kernen, <geheugen van 1 GB, <10 GB/data base), gebruikt u de gratis licentie **SQL Server Express Edition** . Een SQL Server Express Edition-VM maakt ook alleen kosten in rekening voor de kost prijs van de virtuele machine.
+Als u een licht gewicht werk belasting wilt uitvoeren in productie (<4 kernen, <geheugen van 1 GB, <10 GB/data base), gebruikt u de gratis licentie **SQL Server Express Edition**. Een SQL Server Express Edition-VM maakt ook alleen kosten in rekening voor de kost prijs van de virtuele machine.
 
 Voor deze werk belastingen voor ontwikkelen en testen en lichte productie kunt u ook geld besparen door een kleinere VM-grootte te kiezen die overeenkomt met deze werk belastingen. Het DS1v2 is mogelijk een goede keuze in sommige scenario's.
 
@@ -61,7 +61,7 @@ Als u een niet-lichte productie werk belasting hebt, gebruikt u een van de volge
 | Standard | Kleine tot middel grote werk belastingen |
 | Enterprise | Grote of bedrijfskritische workloads|
 
-U hebt twee opties om te betalen voor SQL Server licenties voor deze edities: u *betaalt per gebruik* of *u kunt uw eigen licentie (BYOL) meenemen* .
+U hebt twee opties om te betalen voor SQL Server licenties voor deze edities: u *betaalt per gebruik* of *u kunt uw eigen licentie (BYOL) meenemen*.
 
 ## <a name="pay-per-usage"></a>Betalen per gebruik
 
@@ -71,9 +71,9 @@ De kosten zijn hetzelfde voor alle versies van SQL Server (2012 SP3 tot 2019). D
 
 U wordt aangeraden de SQL Server licenties per gebruik te betalen voor:
 
-- **Tijdelijke of periodieke werk belastingen** . Een app die bijvoorbeeld elk jaar een gebeurtenis moet ondersteunen voor een paar maanden of bedrijfs analyse op maandag.
+- **Tijdelijke of periodieke werk belastingen**. Een app die bijvoorbeeld elk jaar een gebeurtenis moet ondersteunen voor een paar maanden of bedrijfs analyse op maandag.
 
-- **Workloads met een onbekende levens duur of schaal** . Een app die bijvoorbeeld niet in een paar maanden is vereist of waarvoor meer of minder reken kracht nodig is, afhankelijk van de vraag.
+- **Workloads met een onbekende levens duur of schaal**. Een app die bijvoorbeeld niet in een paar maanden is vereist of waarvoor meer of minder reken kracht nodig is, afhankelijk van de vraag.
 
 Zie de volgende koppelingen voor het maken van een Azure-VM met SQL Server 2017 met een van deze betalen naar gebruik-installatie kopieën:
 
@@ -96,7 +96,7 @@ Zie de volgende koppelingen voor het maken van een Azure-VM met SQL Server 2017 
 
 ## <a name="bring-your-own-license-byol"></a><a id="byol"></a> Bring Your Own License (BYOL)
 
-Met behulp van een bestaande SQL Server volume licentie met Software Assurance in een Azure-VM kunt u **uw eigen SQL Server-licentie meenemen via License Mobility** , ook wel **BYOL** genoemd. Met een SQL Server-VM met BYOL worden alleen kosten in rekening gebracht voor de kosten van het uitvoeren van de virtuele machine, niet voor SQL Server licenties, gezien dat u al licenties en Software Assurance hebt aangeschaft via een volume licentie programma.
+Met behulp van een bestaande SQL Server volume licentie met Software Assurance in een Azure-VM kunt u **uw eigen SQL Server-licentie meenemen via License Mobility**, ook wel **BYOL** genoemd. Met een SQL Server-VM met BYOL worden alleen kosten in rekening gebracht voor de kosten van het uitvoeren van de virtuele machine, niet voor SQL Server licenties, gezien dat u al licenties en Software Assurance hebt aangeschaft via een volume licentie programma.
 
 > [!IMPORTANT]
 > Voor BYOL-installatie kopieën is een Enterprise Agreement met Software Assurance vereist. Ze zijn op dit moment niet beschikbaar als onderdeel van de Azure Cloud Solution partner (CSP). CSP-klanten kunnen hun eigen licentie gebruiken door een betalen per gebruik-installatie kopie te implementeren en vervolgens de [Azure Hybrid Benefit](licensing-model-azure-hybrid-benefit-ahb-change.md)in te scha kelen.
@@ -106,9 +106,9 @@ Met behulp van een bestaande SQL Server volume licentie met Software Assurance i
 
 U wordt aangeraden uw eigen SQL Server-licenties te halen via License Mobility.
 
-- **Doorlopende werk belastingen** . Bijvoorbeeld een app die de bedrijfs activiteiten 24x7 moet ondersteunen.
+- **Doorlopende werk belastingen**. Bijvoorbeeld een app die de bedrijfs activiteiten 24x7 moet ondersteunen.
 
-- **Werk belastingen met een bekende levens duur en schaal** . Een voor beeld: een app die is vereist voor het hele jaar en welke vraag is geforecastd.
+- **Werk belastingen met een bekende levens duur en schaal**. Een voor beeld: een app die is vereist voor het hele jaar en welke vraag is geforecastd.
 
 Als u BYOL wilt gebruiken met een SQL Server-VM, moet u een licentie hebben voor SQL Server Standard of ENTER prise en [Software Assurance](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx#tab=1), een vereiste optie via sommige volume licentie Programma's en een optionele aankoop met anderen. Het prijs niveau dat door de volume licentie Programma's wordt gegeven, is afhankelijk van het type overeenkomst en het aantal en of de toezeg ging naar SQL Server. Maar als vuist regel biedt uw eigen licentie voor continue productie werkbelastingen de volgende voor delen:
 
@@ -136,7 +136,7 @@ Om onnodige kosten te voor komen, kiest u een optimale grootte van de virtuele m
 
 ### <a name="correctly-size-your-vm"></a><a id="machinesize"></a> De grootte van uw virtuele machine correct aanpassen
 
-De licentie kosten van SQL Server zijn direct gerelateerd aan het aantal Vcpu's. Kies een VM-grootte die overeenkomt met de verwachte behoeften voor CPU, geheugen, opslag en I/O-band breedte. Zie [Windows VM-grootten](../../../virtual-machines/sizes.md) en- [VM-grootten](../../../virtual-machines/sizes.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json)voor een volledige lijst met opties voor de computer grootte.
+De licentie kosten van SQL Server zijn direct gerelateerd aan het aantal Vcpu's. Kies een VM-grootte die overeenkomt met de verwachte behoeften voor CPU, geheugen, opslag en I/O-band breedte. Zie [Windows VM-grootten](../../../virtual-machines/sizes.md) en- [VM-grootten](../../../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)voor een volledige lijst met opties voor de computer grootte.
 
 Er zijn nieuwe machine grootten die geschikt zijn voor bepaalde soorten SQL Server werk belastingen. Deze computer grootten zorgen voor grote hoeveel heden geheugen, opslag ruimte en I/O-band breedte, maar ze hebben een lager gevirtualiseerde aantal gevirtualiseerd. Bekijk bijvoorbeeld het volgende voor beeld:
 

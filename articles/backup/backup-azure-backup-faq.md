@@ -3,12 +3,12 @@ title: Antwoorden op veelgestelde vragen
 description: 'Antwoorden op veelgestelde vragen over de functies van Azure Backup, waaronder de Recovery Services-kluis, waarvan een back-up kan worden gemaakt, hoe het werkt, versleuteling en limieten. '
 ms.topic: conceptual
 ms.date: 07/07/2019
-ms.openlocfilehash: 72a4f805b34ba8a536cd398efd5e6809bd66f0d4
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: d85866e490b2c56abb7de1e94cd0ffaa8f714615
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92096620"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327148"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Azure Backup - veelgestelde vragen
 
@@ -60,7 +60,7 @@ Als u de back-up al hebt geconfigureerd en wilt overstappen van GRS naar LRS, ra
 
 ### <a name="how-can-i-move-data-from-the-recovery-services-vault-to-on-premises"></a>Hoe kan ik gegevens van de Recovery Services kluis verplaatsen naar on-premises?
 
-Het is niet mogelijk om gegevens rechtstreeks vanuit de Recovery Services kluis naar on-premises te exporteren met behulp van Data Box. Gegevens moeten worden hersteld naar een opslag account en vervolgens kunnen worden verplaatst naar on-premises via [Data Box](https://docs.microsoft.com/azure/databox/data-box-overview) of [importeren/exporteren](https://docs.microsoft.com/azure/storage/common/storage-import-export-service).
+Het is niet mogelijk om gegevens rechtstreeks vanuit de Recovery Services kluis naar on-premises te exporteren met behulp van Data Box. Gegevens moeten worden hersteld naar een opslag account en vervolgens kunnen worden verplaatst naar on-premises via [Data Box](../databox/data-box-overview.md) of [importeren/exporteren](../storage/common/storage-import-export-service.md).
 
 ## <a name="azure-backup-agent"></a>Azure Backup-agent
 

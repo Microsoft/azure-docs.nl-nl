@@ -5,12 +5,12 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: cshoe
-ms.openlocfilehash: 0361ba7bc67948c25b842a3fb7406d2999fdd725
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 87d7d4676c604ca7219b7580eb3ce585282a7f11
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91530609"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327237"
 ---
 # <a name="azure-functions-deployment-slots"></a>Implementatie sleuven Azure Functions
 
@@ -29,7 +29,7 @@ Hieronder ziet u hoe de functies worden beïnvloed door de wisselende sleuven:
 Er zijn een aantal voor delen voor het gebruik van implementatie sites. In de volgende scenario's worden veelvoorkomende toepassingen voor sleuven beschreven:
 
 - **Verschillende omgevingen voor verschillende doel einden**: het gebruik van verschillende sleuven biedt u de mogelijkheid om app-exemplaren te onderscheiden voordat u naar de productie-of staging-sleuf overgaat.
-- Voor bereiding: als u in plaats van rechtstreeks naar productie een sleuf implementeert, kan de app worden **opgewarmd**voordat u live gaat. Daarnaast vermindert het gebruik van sleuven de latentie voor HTTP-geactiveerde workloads. Instanties worden vóór de implementatie opwarmd, waardoor het koud starten voor nieuwe geïmplementeerde functies wordt verminderd.
+- Voor bereiding: als u in plaats van rechtstreeks naar productie een sleuf implementeert, kan de app worden **opgewarmd** voordat u live gaat. Daarnaast vermindert het gebruik van sleuven de latentie voor HTTP-geactiveerde workloads. Instanties worden vóór de implementatie opwarmd, waardoor het koud starten voor nieuwe geïmplementeerde functies wordt verminderd.
 - **Eenvoudige terugvals**: na een swap met productie heeft de sleuf met een eerder gefaseerde app nu de vorige productie-app. Als de wijzigingen die zijn gewisseld naar de productie sleuf, niet naar verwachting zijn, kunt u de wisseling onmiddellijk omkeren om de laatste bekende juiste instantie terug te halen.
 
 ## <a name="swap-operations"></a>Swap bewerkingen
@@ -57,7 +57,38 @@ Houd rekening met de volgende belangrijke punten:
 
 ## <a name="manage-settings"></a>Instellingen beheren
 
-[!INCLUDE [app-service-deployment-slots-settings](../../includes/app-service-deployment-slots-settings.md)]
+Sommige configuratie-instellingen zijn specifiek voor een bepaalde sleuf. De volgende lijst geeft een overzicht van de instellingen die veranderen wanneer u sleuven verwisselt en die hetzelfde blijven.
+
+**Instellingen voor een specifieke sleuf**:
+
+* Eind punten publiceren
+* Aangepaste domeinnamen
+* Niet-open bare certificaten en TLS/SSL-instellingen
+* Schaal instellingen
+* Webjobs-planners
+* IP-beperkingen
+* AlwaysOn
+* Diagnostische instellingen
+* CORS (Cross-Origin Resource Sharing, cross-origin-resource delen)
+
+**Niet-sleuf-specifieke instellingen**:
+
+* Algemene instellingen, zoals Framework versie, 32/64 bits, Web Sockets
+* App-instellingen (kan worden geconfigureerd om naar een sleuf te worden gestickt)
+* Verbindings reeksen (kan zodanig worden geconfigureerd dat ze naar een sleuf worden gestickt)
+* Handlertoewijzing
+* Openbare certificaten
+* Inhoud van webjobs
+* Hybride verbindingen *
+* Integratie van virtueel netwerk *
+* Service-eind punten *
+* Azure Content Delivery Network *
+
+Functies die zijn gemarkeerd met een sterretje (*) zijn gepland om ongewisseld te worden. 
+
+> [!NOTE]
+> Bepaalde app-instellingen die van toepassing zijn op niet-Verwissel bare instellingen, worden ook niet omgewisseld. Omdat de diagnostische instellingen bijvoorbeeld niet worden gewisseld, worden gerelateerde app-instellingen, zoals `WEBSITE_HTTPLOGGING_RETENTION_DAYS` en `DIAGNOSTICS_AZUREBLOBRETENTIONDAYS` ook niet omgewisseld, zelfs niet weer gegeven als sleuf instellingen.
+>
 
 ### <a name="create-a-deployment-setting"></a>Een implementatie-instelling maken
 
@@ -71,17 +102,17 @@ Gebruik de volgende stappen om een implementatie-instelling te maken:
 
     :::image type="content" source="./media/functions-deployment-slots/functions-navigate-slots.png" alt-text="Zoek naar sleuven in de Azure Portal." border="true":::
 
-1. Selecteer **configuratie**en selecteer vervolgens de naam van de instelling die u met de huidige sleuf wilt houden.
+1. Selecteer **configuratie** en selecteer vervolgens de naam van de instelling die u met de huidige sleuf wilt houden.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-configure-deployment-slot.png" alt-text="Zoek naar sleuven in de Azure Portal." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-configure-deployment-slot.png" alt-text="Configureer de toepassings instelling voor een sleuf in het Azure Portal." border="true":::
 
-1. Selecteer **implementatie site-instelling**en selecteer vervolgens **OK**.
+1. Selecteer **implementatie site-instelling** en selecteer vervolgens **OK**.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slot-setting.png" alt-text="Zoek naar sleuven in de Azure Portal." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slot-setting.png" alt-text="Configureer de implementatie site-instelling." border="true":::
 
 1. Zodra de sectie is ingesteld op verdwijnt, selecteert u **Opslaan** om de wijzigingen te bewaren
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-save-deployment-slot-setting.png" alt-text="Zoek naar sleuven in de Azure Portal." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-save-deployment-slot-setting.png" alt-text="Sla de implementatie site-instelling op." border="true":::
 
 ## <a name="deployment"></a>Implementatie
 
@@ -100,26 +131,26 @@ U kunt een sleuf toevoegen via de [cli](/cli/azure/functionapp/deployment/slot?v
 
 1. Navigeer naar uw functie-app.
 
-1. Selecteer **implementatie sleuven**en selecteer vervolgens **+ sleuf toevoegen**.
+1. Selecteer **implementatie sleuven** en selecteer vervolgens **+ sleuf toevoegen**.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slots-add.png" alt-text="Zoek naar sleuven in de Azure Portal." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slots-add.png" alt-text="Azure Functions implementatie site toevoegen." border="true":::
 
 1. Typ de naam van de sleuf en selecteer **toevoegen**.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slots-add-name.png" alt-text="Zoek naar sleuven in de Azure Portal." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slots-add-name.png" alt-text="Noem de Azure Functions implementatie sleuf." border="true":::
 
 ## <a name="swap-slots"></a>Wisselings sleuven
 
 U kunt sleuven wisselen via de [cli](/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-swap) of via de portal. De volgende stappen laten zien hoe u sleuven in de portal kunt wisselen:
 
 1. Navigeer naar de functie-app.
-1. Selecteer **implementatie sleuven**en selecteer vervolgens **wisselen**.
+1. Selecteer **implementatie sleuven** en selecteer vervolgens **wisselen**.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-swap-deployment-slot.png" alt-text="Zoek naar sleuven in de Azure Portal." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-swap-deployment-slot.png" alt-text="Scherm opname van de pagina implementatie site waarop de actie ' sleuf toevoegen ' is geselecteerd." border="true":::
 
 1. Controleer de configuratie-instellingen voor de wisseling en selecteer **wisselen**
     
-    :::image type="content" source="./media/functions-deployment-slots/azure-functions-deployment-slots-swap-config.png" alt-text="Zoek naar sleuven in de Azure Portal." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/azure-functions-deployment-slots-swap-config.png" alt-text="De implementatie site wisselen." border="true":::
 
 De bewerking kan even duren wanneer de wissel bewerking wordt uitgevoerd.
 
@@ -137,15 +168,15 @@ U kunt een sleuf verwijderen via de [cli](/cli/azure/functionapp/deployment/slot
 
 1. Selecteer **Verwijderen**.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-delete-deployment-slot.png" alt-text="Zoek naar sleuven in de Azure Portal." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-delete-deployment-slot.png" alt-text="Scherm opname waarin de pagina overzicht wordt weer gegeven waarop de actie verwijderen is geselecteerd." border="true":::
 
 1. Typ de naam van de implementatie site die u wilt verwijderen en selecteer vervolgens **verwijderen**.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-delete-deployment-slot-details.png" alt-text="Zoek naar sleuven in de Azure Portal." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-delete-deployment-slot-details.png" alt-text="Verwijder de implementatie site in de Azure Portal." border="true":::
 
 1. Sluit het bevestigings venster voor verwijdering.
 
-    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slot-deleted.png" alt-text="Zoek naar sleuven in de Azure Portal." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/functions-deployment-slot-deleted.png" alt-text="Bevestiging implementatie sleuf verwijderen." border="true":::
 
 ## <a name="automate-slot-management"></a>Sleuf beheer automatiseren
 
@@ -153,7 +184,7 @@ Met de [Azure cli](/cli/azure/functionapp/deployment/slot?view=azure-cli-latest)
 
 - [creëren](/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-create)
 - [verwijderen](/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-delete)
-- [orderverzamellijst](/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-list)
+- [list](/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-list)
 - [ruil](/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-swap)
 - [automatisch wisselen](/cli/azure/functionapp/deployment/slot?view=azure-cli-latest#az-functionapp-deployment-slot-auto-swap)
 
@@ -174,7 +205,7 @@ Gebruik de volgende stappen om het App Service plan van een sleuf te wijzigen:
 
 1. Selecteer het abonnement dat u wilt bijwerken of maak een nieuw abonnement.
 
-    :::image type="content" source="./media/functions-deployment-slots/azure-functions-deployment-slots-change-app-service-apply.png" alt-text="Zoek naar sleuven in de Azure Portal." border="true":::
+    :::image type="content" source="./media/functions-deployment-slots/azure-functions-deployment-slots-change-app-service-apply.png" alt-text="Wijzig het App Service plan in de Azure Portal." border="true":::
 
 1. Selecteer **OK**.
 

@@ -62,7 +62,7 @@
         - name: Onboarding naar Azure Sentinel
           href: scenario-onboard-azure-sentinel.md
         - name: Onboarding naar Azure Security Center
-          href: /security-center/quickstart-onboard-machines
+          href: ../../security-center/quickstart-onboard-machines.md
     - name: Problemen oplossen
       items:
         - name: Verbindingsproblemen met de agent

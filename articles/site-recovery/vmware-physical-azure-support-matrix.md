@@ -3,12 +3,12 @@ title: Ondersteunings matrix voor nood herstel voor VMware/fysiek in Azure Site 
 description: Hierin wordt een overzicht gegeven van de ondersteuning voor nood herstel van virtuele VMware-machines en fysieke servers naar Azure met behulp van Azure Site Recovery.
 ms.topic: conceptual
 ms.date: 07/14/2020
-ms.openlocfilehash: e3130242e29b8d3886b585d56d33d0a9a2379ee3
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: cdc9edeb99e02d78b0701e02b157adbee016a566
+ms.sourcegitcommit: b849ecdc8aa97337299b0f09970b7810c59cd044
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95800279"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96310325"
 ---
 # <a name="support-matrix-for-disaster-recovery--of-vmware-vms-and-physical-servers-to-azure"></a>Ondersteunings matrix voor nood herstel van virtuele VMware-machines en fysieke servers naar Azure
 
@@ -85,12 +85,12 @@ Windows 7 met SP1 64-bits | Ondersteund door [Update pakket 36](https://support.
 **Besturingssysteem** | **Details**
 --- | ---
 Linux | Alleen 64-bits systeem wordt ondersteund. 32-bits systeem wordt niet ondersteund.<br/><br/>Op elke Linux-server moeten [Lis-onderdelen (Linux Integration Services)](https://www.microsoft.com/download/details.aspx?id=55106) zijn geïnstalleerd. Het is vereist om de server op te starten in azure na een testfailover of failover. Als ingebouwde LIS-onderdelen ontbreken, moet u ervoor zorgen dat u de [onderdelen](https://www.microsoft.com/download/details.aspx?id=55106) installeert voordat u replicatie inschakelt om de computers op te starten in Azure. <br/><br/> Site Recovery organiseert de failover voor het uitvoeren van Linux-servers in Azure. Linux-leveranciers kunnen echter wel de ondersteuning beperken tot distributie versies die geen einde van de levens duur hebben bereikt.<br/><br/> In Linux-distributies worden alleen de voorraad kernels ondersteund die deel uitmaken van de distributie secundaire versie/update.<br/><br/> Het bijwerken van beveiligde machines in grote Linux-distributie versies wordt niet ondersteund. Als u een upgrade wilt uitvoeren, schakelt u replicatie uit, voert u een upgrade van het besturings systeem uit en schakelt u de replicatie opnieuw in<br/><br/> Meer [informatie](https://support.microsoft.com/help/2941892/support-for-linux-and-open-source-technology-in-azure) over ondersteuning voor Linux en open-source technologie in Azure.
-Linux Red Hat Enter prise | 5,2 tot 5,11</b><br/> 6,1 tot 6,10</b> </br> 7,0, 7,1, 7,2, 7,3, 7,4, 7,5, 7,6, [7,7](https://support.microsoft.com/help/4528026/update-rollup-41-for-azure-site-recovery), [7,8](https://support.microsoft.com/help/4564347/), [7,9 bèta versie](https://support.microsoft.com/help/4578241/), [7,9](https://support.microsoft.com/help/4590304/) </br> [8,0](https://support.microsoft.com/help/4531426/update-rollup-42-for-azure-site-recovery), 8,1, [8,2](https://support.microsoft.com/help/4570609) <br/> Enkele oudere kernels op servers met Red Hat Enterprise Linux 5.2-5,11 & 6.1-6.10 hebben geen [Lis-onderdelen (Linux Integration Services)](https://www.microsoft.com/download/details.aspx?id=55106) vooraf geïnstalleerd. Als ingebouwde LIS-onderdelen ontbreken, moet u ervoor zorgen dat u de [onderdelen](https://www.microsoft.com/download/details.aspx?id=55106) installeert voordat u replicatie inschakelt om de computers op te starten in Azure.
+Linux Red Hat Enter prise | 5,2 tot 5,11</b><br/> 6,1 tot 6,10</b> </br> 7,0, 7,1, 7,2, 7,3, 7,4, 7,5, 7,6, [7,7](https://support.microsoft.com/help/4528026/update-rollup-41-for-azure-site-recovery), [7,8](https://support.microsoft.com/help/4564347/), [7,9 bèta versie](https://support.microsoft.com/help/4578241/), [7,9](https://support.microsoft.com/help/4590304/), [8,0](https://support.microsoft.com/help/4531426/update-rollup-42-for-azure-site-recovery), 8,1, [8,2](https://support.microsoft.com/help/4570609), [8,3](https://support.microsoft.com/help/4597409). <br/><br/> Enkele oudere kernels op servers met Red Hat Enterprise Linux 5.2-5,11 & 6.1-6.10 bevatten geen vooraf geïnstalleerde [Linux Integration Services-onderdelen](https://www.microsoft.com/download/details.aspx?id=55106) . Als ingebouwde LIS-onderdelen ontbreken, installeert u de [onderdelen](https://www.microsoft.com/download/details.aspx?id=55106) voordat u replicatie inschakelt voor de machines, om het opstarten in azure te garanderen.
 Linux: CentOS | 5,2 tot 5,11</b><br/> 6,1 tot 6,10</b><br/> </br> 7,0, 7,1, 7,2, 7,3, 7,4, 7,5, 7,6, [7,7](https://support.microsoft.com/help/4528026/update-rollup-41-for-azure-site-recovery), [7,8](https://support.microsoft.com/help/4564347/), [7,9](https://support.microsoft.com/help/4578241/) </br> [8,0](https://support.microsoft.com/help/4531426/update-rollup-42-for-azure-site-recovery), 8,1, [8,2](https://support.microsoft.com/help/4570609) <br/><br/> Enkele oudere kernels op servers met CentOS 5.2-5,11 & 6.1-6.10 hebben geen  [Lis-onderdelen (Linux Integration Services)](https://www.microsoft.com/download/details.aspx?id=55106) vooraf geïnstalleerd. Als ingebouwde LIS-onderdelen ontbreken, moet u ervoor zorgen dat u de [onderdelen](https://www.microsoft.com/download/details.aspx?id=55106) installeert voordat u replicatie inschakelt om de computers op te starten in Azure.
 Ubuntu | Ubuntu 14,04 * LTS-server [(ondersteunde kernel-versies controleren)](#ubuntu-kernel-versions)<br/>Ubuntu 16,04 * LTS-server [(ondersteunde kernel-versies controleren)](#ubuntu-kernel-versions) </br> Ubuntu 18,04 * LTS-server [(ondersteunde kernel-versies controleren)](#ubuntu-kernel-versions) </br> Ubuntu 20,04 * LTS-server [(ondersteunde kernel-versies controleren)](#ubuntu-kernel-versions) </br> (*inclusief ondersteuning voor alle 14,04.* x *, 16,04.* x *, 18,04.* x *, 20,04.* x * versies)
-Debian | Debian 7/Debian 8 (inclusief ondersteuning voor alle 7. *x*, 8. *x* -versies); Debian 9 (biedt ondersteuning voor 9,1 tot 9,13. Debian 9,0 wordt niet ondersteund.) [(ondersteunde kernel-versies controleren)](#debian-kernel-versions)
+Debian | Debian 7/Debian 8 (inclusief ondersteuning voor alle 7. *x*, 8. *x* -versies); Debian 9 (biedt ondersteuning voor 9,1 tot 9,13. Debian 9,0 wordt niet ondersteund.) [(Ondersteunde kernel-versies controleren)](#debian-kernel-versions)
 SUSE Linux | SUSE Linux Enterprise Server 12 SP1, SP2, SP3, SP4, [SP5](https://support.microsoft.com/help/4570609) [(ondersteunde kernel-versies controleren)](#suse-linux-enterprise-server-12-supported-kernel-versions) <br/> SUSE Linux Enterprise Server 15, 15 SP1 [(ondersteunde kernel-versies controleren)](#suse-linux-enterprise-server-15-supported-kernel-versions) <br/> SUSE Linux Enterprise Server 11 SP3. [Zorg ervoor dat u het meest recente installatie programma van de Mobility-agent op de configuratie server downloadt](vmware-physical-mobility-service-overview.md#download-latest-mobility-agent-installer-for-suse-11-sp3-rhel-5-debian-7-server). </br> SUSE Linux Enterprise Server 11 SP4 </br> **Opmerking**: het upgraden van gerepliceerde machines van SuSE Linux Enterprise Server 11 SP3 naar SP4 wordt niet ondersteund. Als u een upgrade wilt uitvoeren, schakelt u replicatie uit en schakelt u na de upgrade opnieuw in. <br/>|
-Oracle Linux | 6,4, 6,5, 6,6, 6,7, 6,8, 6,9, 6,10, 7,0, 7,1, 7,2, 7,3, 7,4, 7,5, 7,6, [7,7](https://support.microsoft.com/en-us/help/4531426/update-rollup-42-for-azure-site-recovery), [7,8](https://support.microsoft.com/help/4573888/), [8,0](https://support.microsoft.com/help/4573888/), [8,1](https://support.microsoft.com/help/4573888/), [8,2](https://support.microsoft.com/help/4573888/)  <br/> Met de Red Hat compatibele kernel of een onherstelbare versie van de Enter prise kernel van 3, 4 & 5 (UEK3, UEK4, UEK5)<br/><br/>8.1<br/>Uitvoeren op alle UEK-kernels en RedHat-kernel <= 3.10.0-1062. * worden ondersteund in [9,35](https://support.microsoft.com/help/4573888/) -ondersteuning voor de rest van de RedHat-kernels is beschikbaar in [9,36](https://support.microsoft.com/help/4578241/)
+Oracle Linux | 6,4, 6,5, 6,6, 6,7, 6,8, 6,9, 6,10, 7,0, 7,1, 7,2, 7,3, 7,4, 7,5, 7,6, [7,7](https://support.microsoft.com/en-us/help/4531426/update-rollup-42-for-azure-site-recovery), [7,8](https://support.microsoft.com/help/4573888/), [7,9](https://support.microsoft.com/help/4597409), [8,0](https://support.microsoft.com/help/4573888/), [8,1](https://support.microsoft.com/help/4573888/), [8,2](https://support.microsoft.com/help/4573888/), [8,3](https://support.microsoft.com/help/4597409).  <br/> Met de Red Hat compatibele kernel of een onherstelbare versie van de Enter prise kernel van 3, 4 & 5 (UEK3, UEK4, UEK5)<br/><br/>8.1<br/>Uitvoeren op alle UEK-kernels en RedHat-kernel <= 3.10.0-1062. * worden ondersteund in [9,35](https://support.microsoft.com/help/4573888/) -ondersteuning voor de rest van de RedHat-kernels is beschikbaar in [9,36](https://support.microsoft.com/help/4578241/)
 
 > [!Note]
 >- Voor elk van de Windows-versies biedt Azure Site Recovery alleen ondersteuning voor [LTSC-builds (Long-term Servicing Channel)](/windows-server/get-started-19/servicing-channels-19#long-term-servicing-channel-ltsc) .  [Semi-Annual-kanaal](/windows-server/get-started-19/servicing-channels-19#semi-annual-channel) releases worden op dit moment niet ondersteund.
@@ -197,43 +197,43 @@ Persoonlijke koppelings toegang tot Site Recovery service | Ja. [Meer informatie
 
 **Onderdeel** | **Ondersteund**
 --- | ---
-Azure ExpressRoute | Yes
-ILB | Yes
-ELB | Yes
-Azure Traffic Manager | Yes
-Multi-NIC | Yes
-Gereserveerd IP adres | Yes
-IPv4 | Yes
-Bron-IP-adres behouden | Yes
-Service-eindpunten voor een virtueel Azure-netwerk<br/> | Yes
-Versneld netwerken | No
+Azure ExpressRoute | Ja
+ILB | Ja
+ELB | Ja
+Azure Traffic Manager | Ja
+Multi-NIC | Ja
+Gereserveerd IP adres | Ja
+IPv4 | Ja
+Bron-IP-adres behouden | Ja
+Service-eindpunten voor een virtueel Azure-netwerk<br/> | Ja
+Versneld netwerken | Nee
 
 ## <a name="storage"></a>Storage
 **Onderdeel** | **Ondersteund**
 --- | ---
 Dynamische schijf | De besturingssysteem schijf moet een standaard schijf zijn. <br/><br/>Gegevens schijven kunnen dynamische schijven zijn
-Configuratie van docker-schijf | No
+Configuratie van docker-schijf | Nee
 Host-NFS | Ja voor VMware<br/><br/> Nee voor fysieke servers
-SAN van host (iSCSI/FC) | Yes
+SAN van host (iSCSI/FC) | Ja
 VSAN hosten | Ja voor VMware<br/><br/> N.v.t. voor fysieke servers
 Multipath (MPIO) hosten | Ja, getest met micro soft DSM, EMC PowerPath 5,7 SP4, EMC PowerPath DSM voor CLARiiON
 Virtuele volumes hosten (VVols) | Ja voor VMware<br/><br/> N.v.t. voor fysieke servers
-VMDK van gast/server | Yes
-Gedeelde gast/server-cluster schijf | No
-Door gast/server versleutelde schijf | No
-Gast/server-NFS | No
+VMDK van gast/server | Ja
+Gedeelde gast/server-cluster schijf | Nee
+Door gast/server versleutelde schijf | Nee
+Gast/server-NFS | Nee
 ISCSI voor gast/server | Voor migratie-Ja<br/>Voor herstel na nood gevallen-Nee, iSCSI zal failback als een gekoppelde schijf aan de VM
-Het SMB 3,0 van de gast/server | No
-RDM/server | Yes<br/><br/> N.v.t. voor fysieke servers
+Het SMB 3,0 van de gast/server | Nee
+RDM/server | Ja<br/><br/> N.v.t. voor fysieke servers
 Gast/server schijf > 1 TB | Ja, schijf moet groter zijn dan 1024 MB<br/><br/>Maxi maal 8.192 GB bij het repliceren naar Managed disks (9,26-versie en hoger)<br></br> Maxi maal 4.095 GB bij het repliceren naar opslag accounts
-Gast/server-schijf met 4 KB logische en 4.000 fysieke sector grootte | No
-Gast/server schijf met 4 KB logische en 512-bytes fysieke sector grootte | No
-Volume van gast/server met gestripte schijf >4 TB | Yes
+Gast/server-schijf met 4 KB logische en 4.000 fysieke sector grootte | Nee
+Gast/server schijf met 4 KB logische en 512-bytes fysieke sector grootte | Nee
+Volume van gast/server met gestripte schijf >4 TB | Ja
 Beheer van logische volumes (LVM)| Dik inrichten-Ja <br></br> Thin Provisioning-Nee
-Gast/Server-opslag ruimten | No
-Hot-of-Remove-schijf voor gast/server | No
-Gast/server-schijf uitsluiten | Yes
-Meerdere paden gast/server (MPIO) | No
+Gast/Server-opslag ruimten | Nee
+Hot-of-Remove-schijf voor gast/server | Nee
+Gast/server-schijf uitsluiten | Ja
+Meerdere paden gast/server (MPIO) | Nee
 GPT/server-GUID-partities | Er worden vijf partities ondersteund van [Update pakket 37](https://support.microsoft.com/help/4508614/) (versie 9,25 van de Mobility-service). Eerder vier werden ondersteund.
 ReFS | Flexibel bestands systeem wordt ondersteund met Mobility Service versie 9,23 of hoger
 EFI/UEFI-opstart procedure voor gast/server | -Wordt ondersteund voor alle [UEFI-besturings systemen van Azure Marketplace](../virtual-machines/generation-2.md#generation-2-vm-images-in-azure-marketplace) met site Recovery Mobility agent versie 9,30 en hoger. <br/> -Secure UEFI-opstart type wordt niet ondersteund. [Meer informatie.](../virtual-machines/generation-2.md#on-premises-vs-azure-generation-2-vms)
@@ -242,26 +242,26 @@ EFI/UEFI-opstart procedure voor gast/server | -Wordt ondersteund voor alle [UEFI
 
 |**Type replicatie**   |**Ondersteund**  |
 |---------|---------|
-|Offloaded data transfers (ODX)    |       No  |
-|Offline seeding        |   No      |
-| Azure Data Box | No
+|Offloaded data transfers (ODX)    |       Nee  |
+|Offline seeding        |   Nee      |
+| Azure Data Box | Nee
 
 ## <a name="azure-storage"></a>Azure Storage
 
 **Onderdeel** | **Ondersteund**
 --- | ---
-Lokaal redundante opslag | Yes
-Geografisch redundante opslag | Yes
-Geografisch redundante opslag met leestoegang | Yes
-Cool Storage | No
-Hot Storage| No
-Blok-blobs | No
-Versleuteling-at-rest (SSE)| Yes
+Lokaal redundante opslag | Ja
+Geografisch redundante opslag | Ja
+Geografisch redundante opslag met leestoegang | Ja
+Cool Storage | Nee
+Hot Storage| Nee
+Blok-blobs | Nee
+Versleuteling-at-rest (SSE)| Ja
 Versleuteling-at-rest (CMK)| Ja (via Power shell AZ 3.3.0 module)
 Dubbele versleuteling bij rest | Ja (via Power shell AZ 3.3.0 module). Meer informatie over ondersteunde regio's voor [Windows](../virtual-machines/windows/disk-encryption.md) en [Linux](../virtual-machines/linux/disk-encryption.md).
-Premium Storage | Yes
-Optie voor beveiligde overdracht | Yes
-Import/export-service | No
+Premium Storage | Ja
+Optie voor beveiligde overdracht | Ja
+Import/export-service | Nee
 Firewalls voor VNets Azure Storage | Ja.<br/> Geconfigureerd op het doel opslag/cache-opslag account (wordt gebruikt voor het opslaan van replicatie gegevens).
 V2-opslag accounts voor algemeen gebruik (warme en coole lagen) | Ja (de transactie kosten zijn aanzienlijk hoger voor v2 vergeleken met v1)
 
@@ -269,10 +269,10 @@ V2-opslag accounts voor algemeen gebruik (warme en coole lagen) | Ja (de transac
 
 **Functie** | **Ondersteund**
 --- | ---
-Beschikbaarheidssets | Yes
-Beschikbaarheidszones | No
-HUB | Yes
-Managed Disks | Yes
+Beschikbaarheidssets | Ja
+Beschikbaarheidszones | Nee
+HUB | Ja
+Managed Disks | Ja
 
 ## <a name="azure-vm-requirements"></a>Vereisten voor Azure-VM's
 
@@ -326,10 +326,10 @@ Maximumgegevensverloop per dag dat wordt ondersteund door een processerver | 2 T
 
 **Actie** | **Ondersteund**
 --- | ---
-De kluis verplaatsen tussen resource groepen | No
-De kluis verplaatsen binnen en tussen abonnementen | No
-Opslag, netwerk, Azure-Vm's verplaatsen tussen resource groepen | No
-Verplaats opslag-, netwerk-, Azure-Vm's binnen en tussen abonnementen. | No
+De kluis verplaatsen tussen resource groepen | Nee
+De kluis verplaatsen binnen en tussen abonnementen | Nee
+Opslag, netwerk, Azure-Vm's verplaatsen tussen resource groepen | Nee
+Verplaats opslag-, netwerk-, Azure-Vm's binnen en tussen abonnementen. | Nee
 
 
 ## <a name="obtain-latest-components"></a>Nieuwste onderdelen ophalen

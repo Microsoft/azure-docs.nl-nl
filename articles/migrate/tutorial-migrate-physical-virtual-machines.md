@@ -4,12 +4,12 @@ description: In dit artikel wordt beschreven hoe u fysieke machines naar Azure m
 ms.topic: tutorial
 ms.date: 04/15/2020
 ms.custom: MVC
-ms.openlocfilehash: 67ea5800885b4edb16581f22c199d139053af495
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c783cb22ce8a31d346e98c53dee365fa59b73b8a
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96018933"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302901"
 ---
 # <a name="migrate-machines-as-physical-servers-to-azure"></a>Machines als fysieke servers migreren naar Azure
 
@@ -52,7 +52,7 @@ Bereid Azure voor op een migratie met Server Migration.
 
 **Taak** | **Details**
 --- | ---
-**Maak een Azure Migrate-project** | Uw Azure-account heeft Inzender- of Eigenaarsmachtigingen nodig om een project te maken.
+**Maak een Azure Migrate-project** | Uw Azure-account heeft inzender- of eigenaarsmachtigingen nodig [om een nieuw project te maken](https://docs.microsoft.com/azure/migrate/create-manage-projects).
 **Machtigingen verifiëren voor uw Azure-account** | U hebt voor uw Azure-account machtigingen nodig om een virtuele machine te maken en naar een beheerde Azure-schijf te schrijven.
 
 
@@ -110,28 +110,6 @@ Bereid de implementatie van het apparaat als volgt voor:
 
 > [!NOTE]
 > Het replicatieapparaat mag niet worden geïnstalleerd op een bronmachine die u wilt repliceren of op het detectie- en beoordelingsapparaat voor Azure Migrate dat u eerder hebt geïnstalleerd.
-
-## <a name="add-the-server-migration-tool"></a>Het hulpprogramma Server Migration toevoegen
-
-Stel een Azure Migrate-project in en voeg daarna het hulpprogramma Server Migration eraan toe.
-
-1. Zoek in de Azure-portal in **Alle services** naar **Azure Migrate**.
-2. Onder **Services** selecteert u **Azure Migrate**.
-3. Klik in **Overzicht** op **Servers evalueren en migreren**.
-4. Klik onder **Servers detecteren, evalueren en migreren** op **Servers evalueren en migreren**.
-
-    ![Servers detecteren en evalueren](./media/tutorial-migrate-physical-virtual-machines/assess-migrate.png)
-
-5. Klik in **Servers detecteren, evalueren en migreren** op **Hulpprogramma's toevoegen**.
-6. Selecteer in **Project migreren** uw Azure-abonnement en maak een resourcegroep als u er nog geen hebt.
-7. Geef in **Projectdetails** de projectnaam en geografie op waarin u het project wilt maken en klik op **Volgende**. Bekijk ondersteunde geografische regio's voor [openbare](migrate-support-matrix.md#supported-geographies-public-cloud) clouds en [overheidsclouds](migrate-support-matrix.md#supported-geographies-azure-government).
-
-    ![Een Azure Migrate-project maken](./media/tutorial-migrate-physical-virtual-machines/migrate-project.png)
-
-8. Selecteer in **Evaluatieprogramma selecteren** de optie **Het toevoegen van een evaluatieprogramma voorlopig overslaan** > **Volgende**.
-9. Selecteer in **Migratieprogramma selecteren** de optie **Azure Migrate: Server Migration** > **Volgende**.
-10. Controleer in **Beoordelen en hulpprogramma's toevoegen** de instellingen en klik op **Hulpmiddelen toevoegen**
-11. Nadat u het hulpprogramma hebt toegevoegd, wordt het weergegeven in het Azure Migrate-project > **Servers** > **Migratieprogramma's**.
 
 ## <a name="set-up-the-replication-appliance"></a>Het replicatieapparaat instellen
 

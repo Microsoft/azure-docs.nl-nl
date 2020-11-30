@@ -6,12 +6,12 @@ ms.date: 06/08/2020
 ms.custom:
 - MVC
 - fasttrack-edit
-ms.openlocfilehash: 84f04d2f1f8c9b54a1f2a2a13cc97954ac5add90
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 038d0ec817d4f81371546e8d7aa4b48b299c8d98
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995315"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302554"
 ---
 # <a name="migrate-hyper-v-vms-to-azure"></a>Virtuele Hyper-V-machines naar Azure migreren 
 
@@ -43,23 +43,9 @@ Voordat u aan deze zelfstudie begint, dient u eerst:
 2. [Beoordeel](migrate-support-matrix-hyper-v-migration.md#hyper-v-host-requirements) vereisten voor de Hyper-V-host voor migratie en de Azure-URL's waar Hyper-V-hosts en-clusters toegang nodig hebben voor VM-migratie.
 3. [Beoordeel](migrate-support-matrix-hyper-v-migration.md#hyper-v-vms) de vereisten voor virtuele Hyper-V-machines die u naar Azure wilt migreren.
 4. U wordt aangeraden om [Hyper-V-VM's te beoordelen](tutorial-assess-hyper-v.md) voordat u de VM’s migreert naar Azure, maar dit is niet verplicht.
+5. Ga naar het al gemaakte project of [maak een nieuw project](https://docs.microsoft.com/azure/migrate/create-manage-projects).
+6. Controleer de machtigingen voor uw Azure-account. U hebt voor uw Azure-account machtigingen nodig om een virtuele machine te maken en naar een beheerde Azure-schijf te schrijven.
 
-   
-## <a name="add-the-azure-migrateserver-migration-tool"></a>Het Azure Migrate: Server Migration-hulpprogramma toevoegen
-
-Voeg het Azure Migrate: Server Migration-hulpprogramma toe. Als u nog geen Azure Migrate-project hebt [maakt u dat eerst](how-to-add-tool-first-time.md) om een Azure Migrate-project in te stellen. U voegt het Azure Migrate: Server Migrate-hulpprogramma toe wanneer u het project maakt.
-
-Als u een project hebt ingesteld, voegt u het hulpprogramma als volgt toe:
-
-1. Klik in het Azure Migrate-project op **Overzicht**. 
-2. In **Servers ontdekken, evalueren en migreren** klikt u op **Servers evalueren en migreren**.
-3. Selecteer in **Hulpprogramma's voor migratie** de optie **Klik hier om een hulpprogramma voor migratie toe te voegen wanneer u klaar bent om te migreren**.
-
-    ![Selecteer een hulpprogramma](./media/tutorial-migrate-hyper-v/select-migration-tool.png)
-
-4. In de lijst met hulpprogramma's selecteert u **Azure Migrate: Server Migration** > **Hulpprogramma toevoegen**
-
-    ![Hulpprogramma voor de migratie van servers](./media/tutorial-migrate-hyper-v/server-migration-tool.png)
 
 ## <a name="download-and-install-the-provider"></a>De provider downloaden en installeren
 

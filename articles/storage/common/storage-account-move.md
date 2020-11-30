@@ -10,10 +10,10 @@ ms.date: 05/11/2020
 ms.author: normesta
 ms.reviewer: dineshm
 ms.openlocfilehash: b70beb90fae794eb5512cb8b466524169c4c7b53
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.sourcegitcommit: ac7029597b54419ca13238f36f48c053a4492cb6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 11/29/2020
 ms.locfileid: "92792987"
 ---
 # <a name="move-an-azure-storage-account-to-another-region"></a>Een Azure Storage-account naar een andere regio verplaatsen
@@ -51,11 +51,11 @@ Deze sjabloon bevat instellingen die uw opslagaccount beschrijven.
 
 Een sjabloon exporteren via de Azure-portal:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 2. Selecteer **alle resources** en selecteer vervolgens uw opslag account.
 
-3. Selecteer > **instellingen**  >  **sjabloon exporteren** .
+3. Selecteer > **instellingen**  >  **sjabloon exporteren**.
 
 4. Kies **downloaden** in de Blade **sjabloon exporteren** .
 
@@ -101,17 +101,17 @@ Wijzig de sjabloon door de naam en regio van het opslagaccount te wijzigen.
 
 De sjabloon implementeren met behulp van Azure Portal:
 
-1. Selecteer in de Azure Portal **een resource maken** .
+1. Selecteer in de Azure Portal **een resource maken**.
 
-2. Typ in **de Marketplace zoeken de** **sjabloon implementatie** en druk vervolgens op **Enter** .
+2. Typ in **de Marketplace zoeken de** **sjabloon implementatie** en druk vervolgens op **Enter**.
 
-3. Selecteer **Sjabloonimlementatie** .
+3. Selecteer **Sjabloonimlementatie**.
 
     ![Azure Resource Manager-sjabloonbibliotheek](./media/storage-account-move/azure-resource-manager-template-library.png)
 
-4. Selecteer **Maken** .
+4. Selecteer **Maken**.
 
-5. Selecteer **Bouw uw eigen sjabloon in de editor** .
+5. Selecteer **Bouw uw eigen sjabloon in de editor**.
 
 6. Selecteer **bestand laden** en volg de instructies voor het laden van de **template.jsin** het bestand dat u in de laatste sectie hebt gedownload.
 
@@ -137,7 +137,7 @@ De sjabloon implementeren met behulp van Azure Portal:
          "location": "centralus"
          }]          
     ```
-    Zie [Azure-locaties](https://azure.microsoft.com/global-infrastructure/locations/)voor het verkrijgen van regio-locatie codes.  De code voor een regio is de naam van de regio zonder spaties, **Central VS** -  =  **Midden** .
+    Zie [Azure-locaties](https://azure.microsoft.com/global-infrastructure/locations/)voor het verkrijgen van regio-locatie codes.  De code voor een regio is de naam van de regio zonder spaties, **Central VS**-  =  **Midden**.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -186,11 +186,11 @@ Implementeer de sjabloon om een nieuw opslagaccount te maken in de doelregio.
 
 2. Voer de eigenschaps waarden in of Selecteer deze:
 
-- **Abonnement** : Selecteer een Azure-abonnement.
+- **Abonnement**: Selecteer een Azure-abonnement.
 
-- **Resourcegroep** : selecteer **Nieuwe maken** en geef de resourcegroep een naam.
+- **Resourcegroep**: selecteer **Nieuwe maken** en geef de resourcegroep een naam.
 
-- **Locatie** : Selecteer een Azure-locatie.
+- **Locatie**: Selecteer een Azure-locatie.
 
 3. Klik op het selectie vakje **Ik ga akkoord met de bovenstaande voor waarden** en klik vervolgens op de knop **aankoop selecteren** .
 
@@ -255,7 +255,7 @@ Een opslagaccount verwijderen via de Azure-portal:
 
 1. Vouw in het Azure Portal het menu aan de linkerkant uit om het menu met services te openen en kies **opslag accounts** om de lijst met uw opslag accounts weer te geven.
 
-2. Zoek het doel-opslag account dat u wilt verwijderen en klik met de rechter muisknop op de knop **meer** ( **...** ) aan de rechter kant van de vermelding.
+2. Zoek het doel-opslag account dat u wilt verwijderen en klik met de rechter muisknop op de knop **meer** (**...**) aan de rechter kant van de vermelding.
 
 3. Selecteer **verwijderen** en bevestigen.
 

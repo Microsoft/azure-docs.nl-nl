@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/12/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: d085d59dc1dbe09c014dcaf5aa239805824354f0
-ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
+ms.openlocfilehash: 6559de2b94879ac8643f4945fd5adcf4fc7e1045
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93279961"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350820"
 ---
 # <a name="route-events-within-and-outside-of-azure-digital-twins"></a>Gebeurtenissen binnen en buiten Azure Digital Apparaatdubbels routeren
 
@@ -103,7 +103,7 @@ Als aan een van de voor waarden wordt voldaan, wordt de gebeurtenis verwijderd o
 
 Voordat u de locatie van de onbestelbare letter instelt, moet u een opslag account hebben met een container. U geeft de URL voor deze container op wanneer u het eind punt maakt. De onbestelbare letter wordt gegeven als container-URL met een SAS-token. Dit token heeft alleen `write` machtigingen nodig voor de doel container in het opslag account. De volledig opgemaakte URL heeft de volgende indeling: `https://<storageAccountname>.blob.core.windows.net/<containerName>?<SASToken>`
 
-Zie voor meer informatie over SAS-tokens: [ *beperkte toegang verlenen tot Azure storage resources met behulp van Shared Access signatures (SAS)*](https://docs.microsoft.com/azure/storage/common/storage-sas-overview)
+Zie voor meer informatie over SAS-tokens: [ *beperkte toegang verlenen tot Azure storage resources met behulp van Shared Access signatures (SAS)*](../storage/common/storage-sas-overview.md)
 
 Voor meer informatie over het instellen van een eind punt met onbestelbare berichten raadpleegt u [*How to: eind punten en routes beheren in azure Digital apparaatdubbels (api's en CLI)*](how-to-manage-routes-apis-cli.md#create-an-endpoint-with-dead-lettering).
 

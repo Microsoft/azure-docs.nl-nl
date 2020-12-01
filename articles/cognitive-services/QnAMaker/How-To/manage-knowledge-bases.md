@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 03/18/2020
-ms.openlocfilehash: 890b555703f922168a820a0535296b9f55218752
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8c13dc0854fb29467b0fe8a1ce5f2dfc1c19bd78
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011044"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352334"
 ---
 # <a name="create-knowledge-base-and-manage-settings"></a>Knowledge Base maken en instellingen beheren
 
@@ -67,7 +67,7 @@ Met QnA Maker kunt u uw kennis grondslagen beheren door toegang te bieden tot de
 
 1.  Selecteer **Instellingen**. De volgende lijst bevat velden die u kunt wijzigen.
 
-       |Doel|Actie|
+       |Doel|Bewerking|
        |--|--|
        |URL toevoegen|U kunt nieuwe Url's toevoegen om nieuwe veelgestelde vragen over inhoud toe te voegen aan de Knowledge Base door te klikken op **Knowledge Base beheren-> koppeling + URL toevoegen** .|
        |URL verwijderen|U kunt bestaande Url's verwijderen door het pictogram verwijderen te selecteren, de prullenbak kan.|
@@ -107,7 +107,7 @@ Als u uw Knowledge Base deelt met mede werkers,] (samen werken-kennis-base.md) v
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over [het beheren van de taal](language-knowledge-base.md) van alle kennis grondslagen in een resource.
+Meer informatie over [het beheren van de taal](../index.yml) van alle kennis grondslagen in een resource.
 
 * QnA-paren bewerken
 * Azure-resources beheren die worden gebruikt door QnA Maker

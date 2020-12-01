@@ -11,42 +11,42 @@ ms.date: 09/22/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 58b7aa0bf8c82990a00b4e41041145a67ee2f02b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9e272c402cac803d10d9998298ce6d3370d0e000
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91637218"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348800"
 ---
-# <a name="azure-ad-connect-cloud-provisioning-attibute-mapping"></a>Kenmerk-toewijzing voor Cloud inrichting Azure AD Connect
+# <a name="azure-ad-connect-cloud-provisioning-attribute-mapping"></a>Toewijzing van kenmerk van Cloud inrichting Azure AD Connect
 
 Azure AD Connect Cloud inrichting heeft een nieuwe functie geïntroduceerd, waarmee u eenvoudig kenmerken kunt toewijzen tussen uw on-premises gebruikers-en groeps objecten en de objecten in azure AD.  Deze functie is toegevoegd aan de configuratie voor de inrichting van de Cloud.
 
-U kunt de standaard kenmerk toewijzingen aanpassen op basis van de behoeften van uw bedrijf. U kunt dus bestaande kenmerk toewijzingen wijzigen of verwijderen, of nieuwe kenmerk toewijzingen maken.  Zie [kenmerken die zijn gesynchroniseerd](../hybrid/reference-connect-sync-attributes-synchronized.md?context=azure%2factive-directory%2fcloud-provisioning%2fcontext%2fcp-context/hybrid/reference-connect-sync-attributes-synchronized.md)voor een lijst met kenmerken die worden gesynchroniseerd.
+U kunt de standaardtoewijzingen van kenmerken aanpassen op basis van de behoeften van uw bedrijf. Dit betekent dat u bestaande kenmerktoewijzingen kunt wijzigen of verwijderen, of nieuwe kenmerktoewijzingen kunt maken.  Zie [kenmerken die zijn gesynchroniseerd](../hybrid/reference-connect-sync-attributes-synchronized.md?context=azure%2factive-directory%2fcloud-provisioning%2fcontext%2fcp-context/hybrid/reference-connect-sync-attributes-synchronized.md)voor een lijst met kenmerken die worden gesynchroniseerd.
 
-## <a name="understanding-attribute-mapping-types"></a>Informatie over kenmerk toewijzings typen
+## <a name="understanding-attribute-mapping-types"></a>Informatie over typen kenmerktoewijzingen
 Met kenmerk toewijzingen bepaalt u hoe kenmerken worden ingevuld in azure AD.
-Er worden vier verschillende toewijzings typen ondersteund:
+Er worden vier verschillende toewijzingstypen ondersteund:
 
 - **Direct** : het doel kenmerk wordt gevuld met de waarde van een kenmerk van het gekoppelde object in AD.
-- **Constante** : het doel kenmerk wordt ingevuld met een specifieke teken reeks die u hebt opgegeven.
-- **Expressie** -het doel kenmerk wordt ingevuld op basis van het resultaat van een script achtige expressie.
+- **Constante**: het doelkenmerk wordt gevuld met een specifieke tekenreeks die u hebt opgegeven.
+- **Expressie**: het doelkenmerk wordt ingevuld op basis van het resultaat van een scriptachtige expressie.
   Zie [expressies schrijven voor kenmerk toewijzingen](reference-expressions.md)voor meer informatie.
-- **Geen** -het doel kenmerk blijft ongewijzigd. Als het doel kenmerk echter ooit leeg is, wordt het ingevuld met de standaard waarde die u opgeeft.
+- **Geen**: het doelkenmerk blijft ongewijzigd. Als het doelkenmerk echter leeg is, wordt het ingevuld met de standaardwaarde die u opgeeft.
 
-Naast deze vier basis typen ondersteunen aangepaste kenmerk toewijzingen het concept van een optionele **standaard** waarde voor toewijzingen. De toewijzing van de standaard waarde zorgt ervoor dat een doel kenmerk wordt gevuld met een waarde als er geen waarde in azure AD of op het doel object is. De meest voorkomende configuratie is om dit leeg te laten.
+Naast deze vier basistypen kunt u via ondersteuning voor aangepaste kenmerktoewijzingen het concept van toewijzing van een optionele **standaardwaarde** gebruiken. De toewijzing van een standaardwaarde zorgt ervoor dat een doelkenmerk wordt ingevuld met een waarde als er geen waarde beschikbaar is in Azure AD of in het doelobject. De meest gangbare configuratie is om dit leeg te laten.
 
-## <a name="understanding-attribute-mapping-properties"></a>Informatie over kenmerk toewijzings eigenschappen
+## <a name="understanding-attribute-mapping-properties"></a>Informatie over eigenschappen van kenmerktoewijzingen
 
-In de vorige sectie hebt u al een kenmerk-toewijzings type-eigenschap geïntroduceerd.
-Naast deze eigenschap ondersteunen kenmerk toewijzingen ook de volgende kenmerken:
+In de vorige paragraaf hebt u kennisgemaakt met de verschillende typen kenmerktoewijzingen.
+Hier beschrijven we de kenmerken die u kunt gebruiken met kenmerktoewijzingen:
 
 - **Bron kenmerk** : het gebruikers kenmerk van het bron systeem (voor beeld: Active Directory).
 - **Doel kenmerk** : het gebruikers kenmerk in het doel systeem (voor beeld: Azure Active Directory).
-- **Standaard waarde indien Null (optioneel)** : de waarde die wordt door gegeven aan het doel systeem als het bron kenmerk null is. Deze waarde wordt alleen ingericht wanneer een gebruiker wordt gemaakt. De ' standaard waarde wanneer null ' wordt niet ingericht bij het bijwerken van een bestaande gebruiker.  
-- **Deze toewijzing Toep assen**
-  - **Altijd** : deze toewijzing Toep assen op acties voor zowel het maken van de gebruiker als bij het bijwerken.
-  - **Alleen tijdens het maken** : pas deze toewijzing alleen toe op acties voor het maken van een gebruiker.
+- **Standaardwaarde indien null (optioneel)** : de waarde die wordt doorgegeven aan het doelsysteem als het bronkenmerk null is. Deze waarde wordt alleen ingericht bij het maken van een gebruiker. 'Standaardwaarde indien null' wordt niet ingericht bij het bijwerken van een bestaande gebruiker.  
+- **Deze toewijzing toepassen**
+  - **Altijd**: deze toewijzing toepassen bij het maken en bijwerken van gebruikers.
+  - **Alleen tijdens het maken van een object**: deze toewijzing alleen toepassen bij het maken van gebruikers.
 
 > [!NOTE]
 > In dit document wordt beschreven hoe u de Azure Portal gebruikt om kenmerken toe te wijzen.  Zie trans [formaties](how-to-transformation.md) voor meer informatie over het gebruik van Graph
@@ -97,5 +97,5 @@ Als u de kenmerk toewijzing wilt testen, kunt u [inrichten op aanvraag](how-to-o
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Wat is Azure AD Connect-cloudinrichting?](what-is-cloud-provisioning.md)
-- [Expressies schrijven voor kenmerk toewijzingen](reference-expressions.md)
+- [Expressies schrijven voor kenmerktoewijzingen](reference-expressions.md)
 - [Kenmerken die worden gesynchroniseerd](../hybrid/reference-connect-sync-attributes-synchronized.md?context=azure%2factive-directory%2fcloud-provisioning%2fcontext%2fcp-context/hybrid/reference-connect-sync-attributes-synchronized.md)

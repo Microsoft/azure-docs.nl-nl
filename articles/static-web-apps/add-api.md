@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 05/29/2020
 ms.author: wachegha
 ms.custom: devx-track-js
-ms.openlocfilehash: e0af8e0674a15c98fadbedfa42f735d269b3de2b
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: 53be2ee9b6b3ab46f081747aec58b9c99fc54f0d
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94920488"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349953"
 ---
 # <a name="add-an-api-to-azure-static-web-apps-preview-with-azure-functions"></a>Een API toevoegen aan de preview-versie van statische Web Apps van Azure met Azure Functions
 
@@ -32,7 +32,7 @@ U kunt serverloze Api's toevoegen aan statische Azure-Web Apps via integratie me
 
 De volgende stappen laten zien hoe u een nieuwe opslag plaats maakt en de bestanden naar uw computer kloont.
 
-1. Zorg ervoor dat u bent aangemeld bij GitHub en ga naar https://github.com/staticwebdev/vanilla-basic/generate om een nieuwe opslag plaats te maken.
+1. Zorg ervoor dat u bent aangemeld bij GitHub en ga naar [https://github.com/staticwebdev/vanilla-basic/generate](https://github.com/login?return_to=/staticwebdev/vanilla-basic/generate) om een nieuwe opslag plaats te maken.
 1. Voer in het vak _naam van opslag plaats_ **mijn-vanille-API** in.
 1. Klik op **opslagplaats maken op basis van sjabloon**.
 
@@ -268,7 +268,7 @@ Als u deze toepassing niet wilt blijven gebruiken voor verder gebruik, kunt u de
 1. Klik op **resource groepen**
 1. Selecteer **myResourceGroup**.
 1. Controleer op de pagina _myResourceGroup_ of de weergegeven resources de resources zijn die u wilt verwijderen.
-1. Selecteer **verwijderen**
+1. Selecteer **Verwijderen**
 1. Typ **myResourceGroup** in het tekstvak
 1. Selecteer **Verwijderen**.
 

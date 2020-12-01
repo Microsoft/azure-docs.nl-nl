@@ -8,12 +8,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/17/2020
-ms.openlocfilehash: fa048473f0f285b793dad88c7defdb6189ca1ccd
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 63be912986542741359cd5e88227f06905d42647
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023003"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350871"
 ---
 # <a name="sink-transformation-in-mapping-data-flow"></a>Trans formatie sinken bij toewijzing van gegevens stroom
 
@@ -100,7 +100,7 @@ Standaard worden gegevens in een niet-deterministische volg orde naar meerdere s
 ![Scherm afbeelding waarin de aangepaste Sink-ordening wordt weer gegeven.](media/data-flow/custom-sink-ordering.png "Scherm afbeelding waarin de aangepaste Sink-ordening wordt weer gegeven.")
 
 > [!NOTE]
-> Wanneer u [lookups in de cache](https://docs.microsoft.com/azure/data-factory/concepts-data-flow-expression-builder#cached-lookup)gebruikt, moet u ervoor zorgen dat de sinks in de cache zijn ingesteld op 1, het laagste (of het eerste) in de volg orde.
+> Wanneer u [lookups in de cache](./concepts-data-flow-expression-builder.md#cached-lookup)gebruikt, moet u ervoor zorgen dat de sinks in de cache zijn ingesteld op 1, het laagste (of het eerste) in de volg orde.
 
 ![Aangepaste Sink-ordening](media/data-flow/cache-2.png "Aangepaste Sink-ordening")
 

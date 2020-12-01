@@ -3,12 +3,12 @@ title: Azure-beveiligings basislijn voor Azure DevTest Labs
 description: Azure-beveiligings basislijn voor Azure DevTest Labs
 ms.topic: conceptual
 ms.date: 07/23/2020
-ms.openlocfilehash: 64e5ac46fbeb71706f7b1ae2d3682260e3cbc651
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4ae3886e1c47b1d6835dc348b474e3d9e82a8f41
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95993649"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348820"
 ---
 # <a name="azure-security-baseline-for-azure-devtest-labs"></a>Azure-beveiligings basislijn voor Azure DevTest Labs
 
@@ -172,7 +172,7 @@ Daarnaast kunt u aanbevelingen van Azure Security Center of ingebouwde Azure-bel
 ### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3,5: multi-factor Authentication gebruiken voor alle op Azure Active Directory gebaseerde toegang
 **Hulp:** Schakel Azure Active Directory (AD) Multi-Factor Authentication (MFA) in en volg Azure Security Center aanbevelingen voor identiteits-en toegangs beheer.
 
-- [MFA inschakelen in azure](../active-directory/authentication/howto-mfa-getstarted.md)  
+- [MFA inschakelen in Azure](../active-directory/authentication/howto-mfa-getstarted.md)  
 - [Identiteit en toegang bewaken in Azure Security Center](../security-center/security-center-identity-access.md)
 
 **Azure Security Center bewaking:** _ Ja
@@ -184,7 +184,7 @@ _ *Verantwoordelijkheid:** klant
 **Hulp:** Gebruik Paw's (privileged Access workstations) met MFA dat is geconfigureerd om Azure-resources aan te melden en te configureren.
 
 - [Meer informatie over privileged Access workstations](/windows-server/identity/securing-privileged-access/privileged-access-workstations)  
-- [MFA inschakelen in azure](../active-directory/authentication/howto-mfa-getstarted.md)  
+- [MFA inschakelen in Azure](../active-directory/authentication/howto-mfa-getstarted.md)  
 
 **Azure Security Center bewaking:** n.v.t.
 
@@ -193,8 +193,8 @@ _ *Verantwoordelijkheid:** klant
 ### <a name="37-log-and-alert-on-suspicious-activity-from-administrative-accounts"></a>3,7: logboek en waarschuwing voor verdachte activiteiten van beheerders accounts
 **Hulp:** Gebruik Azure Active Directory (Azure AD) beveiligings rapporten voor het genereren van Logboeken en waarschuwingen wanneer verdachte of onveilige activiteiten in de omgeving worden uitgevoerd. Gebruik Azure Security Center om identiteits-en toegangs activiteiten te bewaken.
 
-- [Azure AD-gebruikers identificeren die zijn gemarkeerd voor Risk ante activiteiten](../active-directory/identity-protection/overview-identity-protection.md)  
-- [Identiteits-en toegangs activiteiten van gebruikers controleren in Azure Security Center](../security-center/security-center-identity-access.md)  
+- [Azure AD-gebruikers identificeren die zijn gemarkeerd voor riskante activiteiten](../active-directory/identity-protection/overview-identity-protection.md)  
+- [Identiteits- en toegangsactiviteiten van gebruikers controleren in Azure Security Center](../security-center/security-center-identity-access.md)  
 
 **Azure Security Center bewaking:** Momenteel niet beschikbaar
 
@@ -212,7 +212,7 @@ _ *Verantwoordelijkheid:** klant
 ### <a name="39-use-azure-active-directory"></a>3,9: Azure Active Directory gebruiken
 **Hulp:** Gebruik Azure Active Directory (Azure AD) als centrale verificatie-en autorisatie systeem. Azure AD beveiligt gegevens door gebruik te maken van sterke versleuteling voor gegevens in rust en onderweg. Azure AD bevat ook zouten, hashes en veilige gebruikers referenties.
 
-- [Een Azure AD-exemplaar maken en configureren](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)  
+- [Een Azure AD-instantie maken en configureren](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)  
 
 **Azure Security Center bewaking:** Momenteel niet beschikbaar
 
@@ -233,7 +233,7 @@ _ *Verantwoordelijkheid:** klant
 
 U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure Active Directory gebruikers accounts te maken en de audit logboeken en aanmeldings logboeken te verzenden naar een Log Analytics-werk ruimte. U kunt waarschuwingen configureren binnen Log Analytics werk ruimte.
 
-- [Azure-activiteiten logboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)  
+- [Azure-activiteitenlogboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)  
 
 **Azure Security Center bewaking:** Momenteel niet beschikbaar
 
@@ -242,7 +242,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure Activ
 ### <a name="312-alert-on-account-login-behavior-deviation"></a>3,12: waarschuwing voor de afwijking van het aanmeldings gedrag van accounts
 **Hulp:** Gebruik Azure Active Directory (Azure AD) risico-en identiteits beveiligings functies voor het configureren van automatische antwoorden op gedetecteerde verdachte acties die betrekking hebben op gebruikers identiteiten.
 
-- [Risk ante aanmeldingen voor Azure AD weer geven](../active-directory/identity-protection/overview-identity-protection.md)  
+- [Riskante Azure AD-aanmeldingen weergeven](../active-directory/identity-protection/overview-identity-protection.md)  
 - [Risico beleid voor identiteits beveiliging configureren en inschakelen](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)  
 
 **Azure Security Center bewaking:** Momenteel niet beschikbaar
@@ -288,7 +288,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure Activ
 
 Micro soft beheert de onderliggende infra structuur voor Azure DevTest Labs en heeft strikte controles geïmplementeerd om verlies of bloot stelling van klant gegevens te voor komen.
 
-- [Informatie over beveiliging van klanten in azure](../security/fundamentals/protection-customer-data.md)
+- [Informatie over beveiliging van klantgegevens in Azure](../security/fundamentals/protection-customer-data.md)
 
 **Azure Security Center bewaking:** Momenteel niet beschikbaar
 
@@ -308,7 +308,7 @@ Micro soft beheert de onderliggende infra structuur voor Azure DevTest Labs en h
 
 Voor het onderliggende platform, dat wordt beheerd door micro soft, behandelt micro soft alle inhoud van de klant als gevoelig en gaat het om tot een uitstekende lengte van het verlies en de bloot stelling van klant gegevens. Om ervoor te zorgen dat klant gegevens binnen Azure veilig blijven, heeft micro soft een reeks robuuste besturings elementen en mogelijkheden voor gegevens bescherming geïmplementeerd en onderhouden.
 
-- [Informatie over beveiliging van klanten in azure](../security/fundamentals/protection-customer-data.md)
+- [Informatie over beveiliging van klantgegevens in Azure](../security/fundamentals/protection-customer-data.md)
 
 **Azure Security Center bewaking:** Momenteel niet beschikbaar
 
@@ -329,7 +329,7 @@ Voor het onderliggende platform, dat wordt beheerd door micro soft, behandelt mi
 
 Voor het onderliggende platform, dat wordt beheerd door micro soft, behandelt micro soft alle inhoud van de klant als gevoelig en gaat het om tot een uitstekende lengte van het verlies en de bloot stelling van klant gegevens. Om ervoor te zorgen dat klant gegevens binnen Azure veilig blijven, heeft micro soft een reeks robuuste besturings elementen en mogelijkheden voor gegevens bescherming geïmplementeerd en onderhouden.
 
-- [Informatie over beveiliging van klanten in azure](../security/fundamentals/protection-customer-data.md)
+- [Informatie over beveiliging van klantgegevens in Azure](../security/fundamentals/protection-customer-data.md)
 
 **Azure Security Center bewaking:** Niet van toepassing
 
@@ -379,7 +379,7 @@ Micro soft voert beveiligings beheer uit op de onderliggende resources die Azure
 ### <a name="52-deploy-automated-operating-system-patch-management-solution"></a>5,2: geautomatiseerde oplossing voor patch beheer voor besturings systemen implementeren
 **Hulp:** Gebruik Azure Updatebeheer om ervoor te zorgen dat de meest recente beveiligings updates worden geïnstalleerd op uw Windows-en Linux-Vm's die worden gehost in DevTest Labs. Zorg ervoor dat Windows Update is ingeschakeld en is ingesteld om automatisch te worden bijgewerkt voor virtuele Windows-machines. Deze instelling is momenteel niet beschikbaar voor configuratie via DevTest Labs, maar de beheerder van de Lab-beheerder/abonnement kan deze instelling ook configureren op de onderliggende Compute-Vm's in hun abonnement. 
 
-- [Updatebeheer configureren voor virtuele machines in azure](../automation/update-management/update-mgmt-overview.md)
+- [Updatebeheer configureren voor virtuele machines in azure](../automation/update-management/overview.md)
 - [Meer informatie over Azure-beveiligings beleid bewaakt door Security Center](../security-center/policy-reference.md)
 
 **Azure Security Center bewaking:** Niet van toepassing
@@ -393,8 +393,8 @@ Meer informatie over [Image Factory in DevTest Labs](image-factory-create.md), e
 
 Als abonnements beheerder kunt u ook de Azure Updatebeheer-oplossing gebruiken om updates en patches voor DevTest Labs-Vm's te beheren. Updatebeheer is afhankelijk van de lokaal geconfigureerde update opslagplaats voor patches die worden ondersteund door Windows-systemen. Met hulpprogram ma's als System Center Updates Publisher (updates Publisher) kunt u aangepaste updates publiceren in Windows Server Update Services (WSUS). Met dit scenario kunnen Updatebeheer patches voor machines die gebruikmaken van Configuration Manager als update opslagplaats met software van derden.
 
-- [Updatebeheer oplossing in azure](../automation/update-management/update-mgmt-overview.md)
-- [Updates en patches voor uw virtuele machines beheren](../automation/update-management/update-mgmt-overview.md)
+- [Updatebeheer oplossing in azure](../automation/update-management/overview.md)
+- [Updates en patches voor uw virtuele machines beheren](../automation/update-management/overview.md)
 
 _ *Azure Security Center bewaking:** niet van toepassing
 
@@ -711,7 +711,7 @@ Azure Marketplace-installatie kopieën voor virtuele machines die zijn gepublice
 **Verantwoordelijkheid:** Gebruikers
 
 ### <a name="713-eliminate-unintended-credential-exposure"></a>7,13: onbedoelde referentie blootstelling elimineren
-**Hulp:** Referentie scanner implementeren om referenties in code te identificeren. Referentie scanner stimuleert ook het verplaatsen van gedetecteerde referenties naar veiliger locaties, zoals Azure Key Vault.
+**Hulp:** Referentie scanner implementeren om referenties in code te identificeren. Door het gebruik van Credential Scanner worden gebruikers ook aangemoedigd om gedetecteerde referenties naar veiligere locaties, zoals Azure Key Vault, te verplaatsen.
 
 - Referentie scanner instellen
 
@@ -825,7 +825,7 @@ Als u gebruikmaakt van Azure Disk Encryption, kunt u de Azure VM herstellen met 
 ### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10,2: een beoordelings procedure voor incidenten en prioriteits procedures maken
 **Hulp:** Azure Security Center wijst aan elke waarschuwing een Ernst toe om u te helpen bepalen welke waarschuwingen het eerst moeten worden onderzocht. De ernst is gebaseerd op de manier waarop vertrouwen Security Center is in de zoek actie of de analyse die wordt gebruikt om de waarschuwing te geven, evenals het betrouwbaarheids niveau waarvan er sprake is van schadelijke opzet achter de activiteit die tot de waarschuwing heeft geleid.
 
-Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld productie, niet-productie) met behulp van tags en maak een naamgevings systeem om Azure-resources duidelijk te identificeren en te categoriseren, met name voor de verwerking van gevoelige gegevens. Het is uw verantwoordelijkheid om prioriteit te geven aan het herstel van waarschuwingen op basis van de ernst van de Azure-resources en-omgeving waar het incident heeft plaatsgevonden.
+Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld productie, niet-productie) met behulp van tags en maak een naamgevings systeem om Azure-resources duidelijk te identificeren en te categoriseren, met name voor de verwerking van gevoelige gegevens. Het is uw verantwoordelijkheid om prioriteit te geven aan het oplossen van waarschuwingen op basis van de ernst van de Azure-resources en -omgeving waarin het incident heeft plaatsgevonden.
 
 - [Beveiligingswaarschuwingen in Azure Security Center](../security-center/security-center-alerts-overview.md)
 - [Tags gebruiken om Azure-resources te organiseren](../azure-resource-manager/management/tag-resources.md)
@@ -835,7 +835,7 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 **Verantwoordelijkheid:** Gebruikers
 
 ### <a name="103-test-security-response-procedures"></a>10,3: procedures voor beveiligings antwoorden testen
-**Hulp:** Voer oefeningen uit om de incident respons mogelijkheden van uw systemen te testen op een regel matige uitgebracht om uw Azure-resources te beschermen. Identificeer zwakke punten en tussen ruimten en wijzig zo nodig het schema.
+**Hulp:** Voer oefeningen uit om de incident respons mogelijkheden van uw systemen te testen op een regel matige uitgebracht om uw Azure-resources te beschermen. Stel vast waar zich zwakke plekken en hiaten bevinden, en wijzig zo nodig het plan.
 
 - [Publicatie van het NIST-hand leiding voor test-, trainings-en oefen Programma's voor IT-plannen en-mogelijkheden](https://csrc.nist.gov/publications/detail/sp/800-84/final)
 
@@ -877,7 +877,7 @@ Azure Security Center bewaking: * * * * niet van toepassing
 
 
 ### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings-within-60-days"></a>11,1: voert regel matig indringings tests van uw Azure-resources uit en zorgt voor herstel van alle essentiële beveiligings resultaten binnen 60 dagen
-**Hulp:** Volg de richt lijnen van micro soft om ervoor te zorgen dat uw indringings tests niet worden geschonden door het micro soft-beleid. Gebruik de strategie van micro soft en de uitvoering van de implementatie van de indringing van een live site in de Cloud, services en toepassingen die door micro soft worden beheerd.
+**Hulp:** Volg de richt lijnen van micro soft om ervoor te zorgen dat uw indringings tests niet worden geschonden door het micro soft-beleid. Gebruik de strategie van Microsoft en de uitvoering van Red Teaming-activiteiten, en voer een penetratietest van de live site uit op basis van een infrastructuur, services en toepassingen die door Microsoft worden beheerd.
 
 - [Regels van betrokkenheid voor het testen van indringing](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
 - [Micro soft Cloud Red Teaming](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)

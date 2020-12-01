@@ -6,12 +6,12 @@ ms.author: abpai
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/19/2020
-ms.openlocfilehash: de74d7e3cf854f36d122be6a32c7fb4d449c5fe5
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: f591a9781cb81ec735d22f4f687f8d413923dc93
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96175913"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349126"
 ---
 # <a name="azure-cosmos-db-service-quotas"></a>Service quota's Azure Cosmos DB
 
@@ -78,8 +78,8 @@ In samen vatting vindt u de minimale ingerichte RU-limieten.
 
 | Resource | Standaardlimiet |
 | --- | --- |
-| Mini maal RUs per container ([ingerichte modus toegewezen door Voer](databases-containers-items.md#azure-cosmos-containers)) | 400 |
-| Mini maal RUs per data base ([ingerichte modus voor gedeelde door Voer](databases-containers-items.md#azure-cosmos-containers)) | 400 RU/s voor de eerste 25 containers. Meer dan 100 RU/s voor elke container nader hand. |
+| Mini maal RUs per container ([ingerichte modus toegewezen door Voer](./account-databases-containers-items.md#azure-cosmos-containers)) | 400 |
+| Mini maal RUs per data base ([ingerichte modus voor gedeelde door Voer](./account-databases-containers-items.md#azure-cosmos-containers)) | 400 RU/s voor de eerste 25 containers. Meer dan 100 RU/s voor elke container nader hand. |
 
 Cosmos DB ondersteunt programmatisch schalen van door Voer (RU/s) per container of Data Base via de Sdk's of portal.    
 

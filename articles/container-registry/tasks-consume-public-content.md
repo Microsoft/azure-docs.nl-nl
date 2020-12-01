@@ -6,12 +6,12 @@ ms.topic: article
 ms.author: stevelas
 ms.date: 10/29/2020
 ms.custom: ''
-ms.openlocfilehash: 261604b66d393723b35b472415b8840b047bc36e
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 4fba6290b4973e797c13943fc9be4fadb19f3274
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93133583"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349279"
 ---
 # <a name="how-to-consume-and-maintain-public-content-with-azure-container-registry-tasks"></a>Open bare inhoud gebruiken en onderhouden met Azure Container Registry taken
 
@@ -39,7 +39,7 @@ U kunt de Azure Cloud Shell of een lokale installatie van de Azure CLI gebruiken
 
 In dit scenario wordt het volgende ingesteld:
 
-1. Drie **container registers** , die het volgende vertegenwoordigen:
+1. Drie **container registers**, die het volgende vertegenwoordigen:
    * Een gesimuleerde [docker hub][docker-hub] ( `publicregistry` ) ter ondersteuning van het wijzigen van de basis installatie kopie
    * Team register ( `contoso` ) voor het delen van persoonlijke installatie kopieën
    * Gedeeld REGI ster/team van het bedrijf ( `baseartifacts` ) voor geïmporteerde open bare inhoud
@@ -47,12 +47,12 @@ In dit scenario wordt het volgende ingesteld:
    1. Een gesimuleerde open bare `node` installatie kopie bouwen
    1. De installatie kopie importeren en valideren `node` in het gedeelde REGI ster van het bedrijf/team
    1. De installatie kopie bouwen en implementeren `hello-world`
-1. **ACR-taak definities** , inclusief configuraties voor:
-1. Een verzameling **register referenties** , die verwijst naar een sleutel kluis
-1. Een verzameling **geheimen** , beschikbaar in een `acr-task.yaml` , die verwijst naar een sleutel kluis
+1. **ACR-taak definities**, inclusief configuraties voor:
+1. Een verzameling **register referenties**, die verwijst naar een sleutel kluis
+1. Een verzameling **geheimen**, beschikbaar in een `acr-task.yaml` , die verwijst naar een sleutel kluis
 1. Een verzameling **geconfigureerde waarden** die worden gebruikt in een `acr-task.yaml`
 1. Een **Azure-sleutel kluis** om alle geheimen te beveiligen
-1. Een **Azure-container instantie** , die als host fungeert voor de `hello-world` Build-toepassing
+1. Een **Azure-container instantie**, die als host fungeert voor de `hello-world` Build-toepassing
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -751,11 +751,11 @@ In dit artikel. u hebt ACR-taken gebruikt voor het maken van een geautomatiseerd
 
 [install-cli]:                  /cli/azure/install-azure-cli
 [acr]:                          https://aka.ms/acr
-[acr-repo-permissions]:         https://aka.ms/acr/repo-permissions
-[acr-task]:                     https://aka.ms/acr/tasks
+[acr-repo-permissions]:         ./container-registry-repository-scoped-permissions.md
+[acr-task]:                     ./container-registry-tasks-overview.md
 [acr-task-triggers]:            container-registry-tasks-overview.md#task-scenarios
 [acr-task-credentials]:       container-registry-tasks-authentication-managed-identity.md#4-optional-add-credentials-to-the-task
-[acr-tokens]:                   https://aka.ms/acr/tokens
+[acr-tokens]:                   ./container-registry-repository-scoped-permissions.md
 [aci]:                          https://aka.ms/aci
 [alpine-public-image]:          https://hub.docker.com/_/alpine
 [docker-hub]:                   https://hub.docker.com
@@ -766,11 +766,7 @@ In dit artikel. u hebt ACR-taken gebruikt voor het maken van een geautomatiseerd
 [helm-charts]:                  https://helm.sh
 [mcr]:                          https://aka.ms/mcr
 [nginx-public-image]:           https://hub.docker.com/_/nginx
-[oci-artifacts]:                https://aka.ms/acr/artifacts
+[oci-artifacts]:                ./container-registry-oci-artifacts.md
 [oci-consuming-public-content]: https://opencontainers.org/posts/blog/2020-10-30-consuming-public-content/
 [opa]:                          https://www.openpolicyagent.org/
 [quay]:                         https://quay.io
-
-
-
-

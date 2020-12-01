@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 07/16/2020
-ms.openlocfilehash: 3940f060209ea5ba55957a3673020656d45de9e4
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 9541320f65060a0b1f2b5c84a131c08e92554e9e
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96000093"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351704"
 ---
 # <a name="edit-qna-pairs-in-your-knowledge-base"></a>QnA-paren in uw Knowledge Base bewerken
 
@@ -128,11 +128,11 @@ Selecteer regel matig **opslaan en trainen** na het maken van bewerkingen om te 
 
 Met [RTF-bewerking](#add-an-editorial-qna-set) van antwoorden kunt u, als auteur, een opmaak werkbalk gebruiken om snel tekst te selecteren en op te maken.
 
-De [prijs verlaging](../reference-markdown-format.md) is een beter hulp middel wanneer u inhoud automatisch moet genereren om kennis te maken van de Knowledge bases die als onderdeel van een CI/cd-pijp lijn of voor [batch tests](../Quickstarts/batch-testing.md)moeten worden geïmporteerd.
+De [prijs verlaging](../reference-markdown-format.md) is een beter hulp middel wanneer u inhoud automatisch moet genereren om kennis te maken van de Knowledge bases die als onderdeel van een CI/cd-pijp lijn of voor [batch tests](../index.yml)moeten worden geïmporteerd.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Samenwerken aan een knowledge base](./collaborate-knowledge-base.md)
+> [Samenwerken aan een knowledge base](../index.yml)
 
 * [Azure-resources beheren die worden gebruikt door QnA Maker](set-up-qnamaker-service-azure.md)

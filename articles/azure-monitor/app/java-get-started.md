@@ -6,18 +6,18 @@ author: lgayhardt
 ms.custom: devx-track-java
 ms.author: lagayhar
 ms.date: 11/22/2020
-ms.openlocfilehash: 1a68cea423678dd8582d65b839d57076e84de940
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 288b7463098b1c63b816f5544581e6222c7548c9
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96029537"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351551"
 ---
 # <a name="quickstart-get-started-with-application-insights-in-a-java-web-project"></a>Snelstartgids: aan de slag met Application Insights in een Java-webproject
 
 
 > [!CAUTION]
-> Vanaf november 2020 wordt voor het bewaken van Java-toepassingen de automatische instrumentatie aanbevolen met de Azure Monitor Application Insights 3,0-agent. Zie [Application Insights Java 3,0-agent](./java-in-process-agent.md)voor meer informatie over hoe u aan de slag kunt gaan.
+> Vanaf november 2020 wordt voor het bewaken van Java-toepassingen de automatische instrumentatie aanbevolen met de Azure Monitor Application Insights Java 3,0-agent. Zie [Application Insights Java 3,0-agent](./java-in-process-agent.md)voor meer informatie over hoe u aan de slag kunt gaan.
 
 In deze Snelstartgids gebruikt u Application Insights SDK om de aanvraag te instrumenteren, afhankelijkheden bij te houden en prestatie meter items te verzamelen, prestatie problemen en uitzonde ringen te diagnosticeren en code te schrijven om te volgen wat gebruikers met uw app doen.
 
@@ -30,7 +30,7 @@ Application Insights is een uitbreidbare analyseservice voor webontwikkelaars di
 
 ## <a name="get-an-application-insights-instrumentation-key"></a>Een Application Insights-instrumentatiesleutel ophalen
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 2. Maak in de Azure Portaleen Application Insights-resource. Stel het toepassingstype in op Java-webtoepassing.
 
 3. Zoek de instrumentatiesleutel van de nieuwe resource. U moet deze sleutel zo dadelijk in de code van uw project plakken.

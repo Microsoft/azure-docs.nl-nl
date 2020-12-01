@@ -11,12 +11,12 @@ ms.reviewer: maghan
 manager: jroth
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: 728dda7c702d7fc52c9285c7cb15fc4b6dc3003c
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: aef85b263a142c001d47bac4aed7a71066e26dae
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182049"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350446"
 ---
 # <a name="continuous-integration-and-delivery-in-azure-data-factory"></a>Continue integratie en levering in Azure Data Factory
 
@@ -639,7 +639,7 @@ Zie de video onder een gedetailleerde video zelf studie over het dynamisch oplos
 
 ## <a name="exposure-control-and-feature-flags"></a>Belichtings controle en functie vlaggen
 
-Wanneer u aan een team werkt, zijn er exemplaren waar u wijzigingen kunt samen voegen, maar niet wilt dat ze worden uitgevoerd in verhoogde omgevingen zoals PROD en QA. Voor het afhandelen van dit scenario beveelt het ADF-team [het DevOps-concept van het gebruik van functie vlaggen](https://docs.microsoft.com/azure/devops/migrate/phase-features-with-feature-flags?view=azure-devops)aan. In ADF kunt u [globale para meters](author-global-parameters.md) combi neren en de [if-voorwaarde activiteit](control-flow-if-condition-activity.md) om sets van logica te verbergen op basis van deze omgevings vlaggen.
+Wanneer u aan een team werkt, zijn er exemplaren waar u wijzigingen kunt samen voegen, maar niet wilt dat ze worden uitgevoerd in verhoogde omgevingen zoals PROD en QA. Voor het afhandelen van dit scenario beveelt het ADF-team [het DevOps-concept van het gebruik van functie vlaggen](/azure/devops/migrate/phase-features-with-feature-flags?view=azure-devops)aan. In ADF kunt u [globale para meters](author-global-parameters.md) combi neren en de [if-voorwaarde activiteit](control-flow-if-condition-activity.md) om sets van logica te verbergen op basis van deze omgevings vlaggen.
 
 Zie de onderstaande video-zelf studie voor meer informatie over het instellen van een functie vlag:
 

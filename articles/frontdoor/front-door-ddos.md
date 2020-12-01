@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/28/2020
 ms.author: jodowns
-ms.openlocfilehash: 58efeaebcc9f643c725cde54fcbda6f65c4bd700
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 24a8a559d72eae4dab0b6e740b34890f1d7ff114
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94414725"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350780"
 ---
 # <a name="ddos-protection-on-front-door"></a>DDoS-beveiliging op de voor deur
 
@@ -36,7 +36,7 @@ De voor deur is een enorme schaal bare, wereld wijd gedistribueerde service. We 
 
 ## <a name="caching"></a>Caching
 
-[De cache mogelijkheden van front deur](./front-door-caching.md) kunnen worden gebruikt voor het beveiligen van back-endservers van grote verkeers volumes die worden gegenereerd door een aanval. Bronnen die in de cache zijn opgeslagen, worden geretourneerd vanaf de front-deur rand knooppunten zodat ze niet worden doorgestuurd naar uw back-end. Even verloop tijd van de korte cache (seconden of minuten) op dynamische reacties kan de belasting van back-upservices aanzienlijk verminderen. Zie [overwegingen voor caching](https://docs.microsoft.com/azure/architecture/best-practices/caching) en [het cache-leggings patroon](https://docs.microsoft.com/azure/architecture/patterns/cache-aside)voor meer informatie over het opslaan van concepten en patronen in de cache.
+[De cache mogelijkheden van front deur](./front-door-caching.md) kunnen worden gebruikt voor het beveiligen van back-endservers van grote verkeers volumes die worden gegenereerd door een aanval. Bronnen die in de cache zijn opgeslagen, worden geretourneerd vanaf de front-deur rand knooppunten zodat ze niet worden doorgestuurd naar uw back-end. Even verloop tijd van de korte cache (seconden of minuten) op dynamische reacties kan de belasting van back-upservices aanzienlijk verminderen. Zie [overwegingen voor caching](/azure/architecture/best-practices/caching) en [het cache-leggings patroon](/azure/architecture/patterns/cache-aside)voor meer informatie over het opslaan van concepten en patronen in de cache.
 
 ## <a name="web-application-firewall-waf"></a>Web Application Firewall (WAF)
 

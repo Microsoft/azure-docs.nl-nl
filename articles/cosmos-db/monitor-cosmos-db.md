@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/23/2020
 ms.author: sngun
 ms.custom: subject-monitoring
-ms.openlocfilehash: 19137f3384a1b97ae1ae7e3faeb4dc2e0e4fd3bd
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 550418761e91a8292761d7595ff32d939c0d542e
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96017794"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350395"
 ---
 # <a name="monitor-azure-cosmos-db"></a>Azure Cosmos DB controleren
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -93,11 +93,11 @@ Alle metrische gegevens voor Azure Cosmos DB bevinden zich in de naam ruimte **C
 * Regio
 * Status code
 
-Ter referentie ziet u een lijst met [alle metrische resource gegevens die worden ondersteund in azure monitor](/azure/azure-monitor/platform/metrics-supported).
+Ter referentie ziet u een lijst met [alle metrische resource gegevens die worden ondersteund in azure monitor](../azure-monitor/platform/metrics-supported.md).
 
 ### <a name="view-operation-level-metrics-for-azure-cosmos-db"></a>Metrische gegevens van het bewerkings niveau voor Azure Cosmos DB weer geven
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 
 1. Selecteer **monitor** in de navigatie balk aan de linkerkant en selecteer **metrische gegevens**.
 
@@ -127,7 +127,7 @@ U kunt metrische gegevens groeperen met behulp van de optie **splitsing Toep ass
 
 Gegevens in Azure Monitor logboeken worden opgeslagen in tabellen waarvan elke tabel een eigen set unieke eigenschappen heeft.
 
-Alle resource Logboeken in Azure Monitor hebben dezelfde velden die worden gevolgd door servicespecifieke velden. Het algemene schema wordt beschreven in [Azure monitor resource-logboek schema](../azure-monitor/platform/diagnostic-logs-schema.md#top-level-resource-logs-schema). Zie [bewaking Azure Cosmos DB Data Reference] ((monitor-Cosmos-DB-Reference. MD # resource-logs) voor een lijst met de typen bron logboeken die worden verzameld voor Azure Cosmos DB.  
+Alle resource Logboeken in Azure Monitor hebben dezelfde velden die worden gevolgd door servicespecifieke velden. Het algemene schema wordt beschreven in [Azure monitor resource-logboek schema](../azure-monitor/platform/resource-logs-schema.md#top-level-common-schema). Zie [Azure Cosmos DB gegevens referentie bewaken](monitor-cosmos-db-reference.md#resource-logs)voor een lijst met de typen bron logboeken die zijn verzameld voor Azure Cosmos db.
 
 Het [activiteiten logboek](/azure/azure-monitor/platform/activity-log) is een Azure-aanmelding voor een platform dat inzicht biedt in gebeurtenissen op abonnements niveau. U kunt deze onafhankelijk bekijken of door sturen naar Azure Monitor-logboeken, waar u veel complexere query's kunt uitvoeren met behulp van Log Analytics.  
 
@@ -172,11 +172,11 @@ Hier volgen enkele query's die u kunt invoeren in de zoek balk Zoeken naar **Log
 
 ## <a name="alerts"></a>Waarschuwingen
 
-Azure Monitor waarschuwingen geven u proactief op de hoogte wanneer er belang rijke voor waarden worden gevonden in uw bewakings gegevens. Hiermee kunt u problemen in uw systeem identificeren en oplossen voordat uw klanten ze opmerken. U kunt waarschuwingen instellen voor [metrische gegevens](/azure/azure-monitor/platform/alerts-metric-overview), [Logboeken](/azure/azure-monitor/platform/alerts-unified-log)en het [activiteiten logboek](/azure/azure-monitor/platform/activity-log-alerts). Verschillende soorten waarschuwingen hebben voor delen en nadelen
+Azure Monitor waarschuwingen geven u proactief op de hoogte wanneer er belang rijke voor waarden worden gevonden in uw bewakings gegevens. Hiermee kunt u problemen in uw systeem identificeren en oplossen voordat uw klanten ze opmerken. U kunt waarschuwingen instellen voor [metrische gegevens](../azure-monitor/platform/alerts-metric-overview.md), [Logboeken](../azure-monitor/platform/alerts-unified-log.md)en het [activiteiten logboek](../azure-monitor/platform/activity-log-alerts.md). Verschillende soorten waarschuwingen hebben voor delen en nadelen
 
 De volgende tabel bevat bijvoorbeeld enkele waarschuwings regels voor uw resources. U kunt een gedetailleerde lijst met waarschuwings regels van de Azure Portal vinden. Zie [het artikel waarschuwingen configureren](create-alerts.md) voor meer informatie.  
 
-| Waarschuwingstype | Conditie | Description  |
+| Waarschuwingstype | Conditie | Beschrijving  |
 |:---|:---|:---|
 |Frequentie limiet voor aanvraag eenheden (metrische waarschuwing) |Dimensie naam: status code, operator: is gelijk aan, dimensie waarden: 429  | Waarschuwingen als de container of data base de ingerichte doorvoer limiet heeft overschreden. |
 |Er is een failover uitgevoerd voor de regio |Operator: groter dan, aggregatie type: aantal, drempel waarde: 1 | Als er een failover wordt uitgevoerd voor een enkele regio. Deze waarschuwing is handig als u automatische failover niet hebt ingeschakeld. |

@@ -6,12 +6,12 @@ author: mlearned
 ms.topic: article
 ms.date: 06/03/2020
 ms.author: mlearned
-ms.openlocfilehash: a80082ac524a4777b3b5ee32d946e9db8ec6e7f5
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 85f0a42cdfcbea2223d202a9dc35f58746580e85
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94681615"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350123"
 ---
 # <a name="access-the-kubernetes-web-dashboard-in-azure-kubernetes-service-aks"></a>Toegang tot het Kubernetes Web dash board in azure Kubernetes service (AKS)
 
@@ -41,6 +41,10 @@ az aks disable-addons -g myRG -n myAKScluster -a kube-dashboard
 ```
 
 ## <a name="start-the-kubernetes-dashboard"></a>Het Kubernetes-dash board starten
+
+> [!WARNING]
+> De dash board-invoeg toepassing voor AKS is afgeschaft voor versies 1.19 +. Gebruik in plaats daarvan de [resource weergave Kubernetes in de Azure Portal (preview)][kubernetes-portal] . 
+> * Met de volgende opdracht wordt nu de resource weergave van Azure portal geopend in plaats van het kubernetes-dash board voor versie 1,19 en hoger.
 
 Als u het Kubernetes-dash board op een cluster wilt starten, gebruikt u de opdracht [AZ AKS Browse][az-aks-browse] . Deze opdracht vereist de installatie van de uitvoeren-dashboard invoeg toepassing op het cluster, dat standaard is opgenomen in clusters met een oudere versie dan Kubernetes 1,18.
 

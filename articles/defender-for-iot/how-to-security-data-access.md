@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/04/2020
 ms.author: mlottner
-ms.openlocfilehash: e56cf54e1bf1483309cb7aac8519bb281ca2bc06
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 677ab3327f2357ce7b242c314b44702370779def
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90935804"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351670"
 ---
 # <a name="access-your-security-data"></a>Toegang tot uw beveiligings gegevens
 
@@ -30,14 +30,14 @@ Configureren welke Log Analytics-werk ruimte wordt gebruikt:
 
 1. Open uw IoT-hub.
 1. Klik op de Blade **instellingen** in het gedeelte **beveiliging** .
-1. Klik op **gegevens verzameling**en wijzig de configuratie van uw log Analytics-werk ruimte.
+1. Klik op **gegevens verzameling** en wijzig de configuratie van uw log Analytics-werk ruimte.
 
 Voor toegang tot uw waarschuwingen en aanbevelingen in uw Log Analytics-werk ruimte na de configuratie:
 
 1. Kies een waarschuwing of aanbeveling in Defender voor IoT.
-1. Klik op **nader onderzoek**en klik vervolgens op **de kolom DeviceID om te zien op welke apparaten deze waarschuwing wordt weer gegeven**.
+1. Klik op **nader onderzoek** en klik vervolgens op **de kolom DeviceID om te zien op welke apparaten deze waarschuwing wordt weer gegeven**.
 
-Zie [aan de slag met query's in log Analytics](https://docs.microsoft.com//azure/log-analytics/query-language/get-started-queries)voor meer informatie over het opvragen van gegevens uit log Analytics.
+Zie [aan de slag met query's in log Analytics](//azure/log-analytics/query-language/get-started-queries)voor meer informatie over het opvragen van gegevens uit log Analytics.
 
 ## <a name="security-alerts"></a>Beveiligingswaarschuwingen
 

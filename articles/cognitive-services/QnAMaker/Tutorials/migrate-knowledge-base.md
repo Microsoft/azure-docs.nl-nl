@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: how-to
 ms.date: 11/09/2020
-ms.openlocfilehash: 4378a648b8b7a545c9e4b638d08592aa32fff3aa
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: c89ab375cb02824a08ff57e6b5278dd9299126ff
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427663"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350922"
 ---
 # <a name="migrate-a-knowledge-base-using-export-import"></a>Een Knowledge Base migreren met behulp van exporteren/importeren
 
@@ -34,7 +34,7 @@ Voor het migreren van een Knowledge Base moet u vanuit een bestaande Knowledge B
 1. Meld u aan bij [QnA Maker Portal](https://qnamaker.ai).
 1. Selecteer de Knowledge Base van de oorsprong die u wilt migreren.
 
-1. Selecteer op de pagina **instellingen** de optie **Knowledge Base exporteren** om een TSV-bestand te downloaden dat de inhoud van de Knowledge Base van uw oorsprong bevat: vragen, antwoorden, meta gegevens, opvolgings prompts en de namen van de gegevens bronnen waaruit ze zijn geëxtraheerd. De QnA-Id's die worden geëxporteerd met de vragen en antwoorden, kunnen worden gebruikt om een specifiek QnA-paar bij te werken met de [Update-API](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update). De QnA-ID voor een specifiek QnA-paar blijft ongewijzigd tijdens meerdere export bewerkingen.
+1. Selecteer op de pagina **instellingen** de optie **Knowledge Base exporteren** om een TSV-bestand te downloaden dat de inhoud van de Knowledge Base van uw oorsprong bevat: vragen, antwoorden, meta gegevens, opvolgings prompts en de namen van de gegevens bronnen waaruit ze zijn geëxtraheerd. De QnA-Id's die worden geëxporteerd met de vragen en antwoorden, kunnen worden gebruikt om een specifiek QnA-paar bij te werken met de [Update-API](/rest/api/cognitiveservices/qnamaker/knowledgebase/update). De QnA-ID voor een specifiek QnA-paar blijft ongewijzigd tijdens meerdere export bewerkingen.
 
 1. Selecteer **een Knowledge Base maken** in het bovenste menu en maak vervolgens een _lege_ Knowledge Base. Het is leeg omdat u geen Url's of bestanden gaat toevoegen wanneer u deze maakt. Deze worden toegevoegd tijdens de stap importeren na het maken.
 
@@ -59,16 +59,16 @@ Het migratie proces is programmatisch beschikbaar met behulp van de volgende RES
 
 **Exporteren**
 
-* [Knowledge Base-API downloaden](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker4.0/knowledgebase/download)
+* [Knowledge Base-API downloaden](/rest/api/cognitiveservices/qnamaker4.0/knowledgebase/download)
 
-**Wederinvoer**
+**Importeren**
 
-* [API vervangen (opnieuw laden met dezelfde Knowledge Base-ID)](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker4.0/knowledgebase/replace)
-* [API maken (laden met nieuwe Knowledge Base-ID)](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker4.0/knowledgebase/create)
+* [API vervangen (opnieuw laden met dezelfde Knowledge Base-ID)](/rest/api/cognitiveservices/qnamaker4.0/knowledgebase/replace)
+* [API maken (laden met nieuwe Knowledge Base-ID)](/rest/api/cognitiveservices/qnamaker4.0/knowledgebase/create)
 
 
 ## <a name="chat-logs-and-alterations"></a>Chat-logboeken en-wijzigingen
-Niet-hoofdletter gevoelige wijzigingen (synoniemen) worden niet automatisch geïmporteerd. Gebruik de [v4-api's](https://go.microsoft.com/fwlink/?linkid=2092179) om de wijzigingen in de nieuwe Knowledge Base te verplaatsen.
+Niet-hoofdletter gevoelige wijzigingen (synoniemen) worden niet automatisch geïmporteerd. Gebruik de [v4-api's](/rest/api/cognitiveservices/qnamaker4.0/knowledgebase) om de wijzigingen in de nieuwe Knowledge Base te verplaatsen.
 
 Het is niet mogelijk om chat-logboeken te migreren omdat de nieuwe Knowledge Base gebruikmaakt van Application Insights voor het opslaan van chat-Logboeken.
 

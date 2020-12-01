@@ -12,12 +12,12 @@ ms.reviewer: douglasl
 manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 11/19/2020
-ms.openlocfilehash: a79055a77ec73ce2b267bb4f16fa91f37e22ea75
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 82cc58d46061ec7b623d062ab0b0e5a1fdae7ddd
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94916777"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352215"
 ---
 # <a name="configure-a-self-hosted-ir-as-a-proxy-for-an-azure-ssis-ir-in-azure-data-factory"></a>Een zelf-hostende IR configureren als proxy voor een Azure-SSIS IR in Azure Data Factory
 
@@ -70,7 +70,7 @@ Als u dit nog niet hebt gedaan, maakt u een gekoppelde Azure Blob Storage-servic
 - Selecteer voor **verificatie methode** **account sleutel**, **SAS-URI**, **Service-Principal** of **beheerde identiteit**.  
 
 >[!TIP]
->Als u de **Service-Principal** -methode selecteert, geeft u de Service-Principal ten minste een rol voor *Storage BLOB data Inzender* . Zie [Azure Blob Storage-connector](connector-azure-blob-storage.md#linked-service-properties)voor meer informatie. Als u de methode **beheerde identiteit** selecteert, verleen uw ADF beheerde identiteit de juiste rollen om toegang te krijgen tot Azure Blob Storage. Zie [toegang tot Azure Blob Storage met behulp van Azure Active Directory-verificatie met beheerde identiteit voor ADF](https://docs.microsoft.com/sql/integration-services/connection-manager/azure-storage-connection-manager?view=sql-server-ver15#managed-identities-for-azure-resources-authentication)voor meer informatie.
+>Als u de **Service-Principal** -methode selecteert, geeft u de Service-Principal ten minste een rol voor *Storage BLOB data Inzender* . Zie [Azure Blob Storage-connector](connector-azure-blob-storage.md#linked-service-properties)voor meer informatie. Als u de methode **beheerde identiteit** selecteert, verleen uw ADF beheerde identiteit de juiste rollen om toegang te krijgen tot Azure Blob Storage. Zie [toegang tot Azure Blob Storage met behulp van Azure Active Directory-verificatie met beheerde identiteit voor ADF](/sql/integration-services/connection-manager/azure-storage-connection-manager?view=sql-server-ver15#managed-identities-for-azure-resources-authentication)voor meer informatie.
 
 ![De aan Azure Blob Storage gekoppelde service voorbereiden voor fase ring](media/self-hosted-integration-runtime-proxy-ssis/shir-azure-blob-storage-linked-service.png)
 
@@ -157,7 +157,7 @@ U kunt deze eigenschap ook inschakelen wanneer u bestaande pakketten uitvoert, z
 
 ## <a name="debug-the-on-premises-and-cloud-staging-tasks"></a>Fouten opsporen in de on-premises en Cloud staging tasks
 
-Op uw zelf-hostende IR vindt u de runtime-Logboeken in de map *C:\ProgramData\SSISTelemetry* en de uitvoerings logboeken van on-premises staging-taken in de map *C:\ProgramData\SSISTelemetry\ExecutionLog* .  U kunt de uitvoerings logboeken van Cloud staging-taken vinden in uw SSISDB, opgegeven paden voor het logboek bestand of Azure Monitor, afhankelijk van of u uw pakketten opslaat in SSISDB, [Azure monitor-integratie](https://docs.microsoft.com/azure/data-factory/monitor-using-azure-monitor#monitor-ssis-operations-with-azure-monitor)inschakelt, enzovoort. U kunt ook de unieke Id's van on-premises faserings taken vinden in de uitvoerings logboeken van Cloud staging tasks. 
+Op uw zelf-hostende IR vindt u de runtime-Logboeken in de map *C:\ProgramData\SSISTelemetry* en de uitvoerings logboeken van on-premises staging-taken in de map *C:\ProgramData\SSISTelemetry\ExecutionLog* .  U kunt de uitvoerings logboeken van Cloud staging-taken vinden in uw SSISDB, opgegeven paden voor het logboek bestand of Azure Monitor, afhankelijk van of u uw pakketten opslaat in SSISDB, [Azure monitor-integratie](./monitor-using-azure-monitor.md#monitor-ssis-operations-with-azure-monitor)inschakelt, enzovoort. U kunt ook de unieke Id's van on-premises faserings taken vinden in de uitvoerings logboeken van Cloud staging tasks. 
 
 ![Unieke ID van de eerste faserings taak](media/self-hosted-integration-runtime-proxy-ssis/shir-first-staging-task-guid.png)
 
@@ -173,7 +173,7 @@ De faserings taken voor de cloud die op uw Azure-SSIS IR worden uitgevoerd, word
 
 Volg de volgende instructies om uw aangepaste/derde onderdelen in staat te stellen om toegang te krijgen tot gegevens on-premises met een zelf-hostende IR als proxy voor Azure-SSIS IR:
 
-1. Installeer uw aangepaste/derde onderdelen die zijn gericht op SQL Server 2017 op Azure-SSIS IR via [standaard/snelle aangepaste Setup](https://docs.microsoft.com/azure/data-factory/how-to-configure-azure-ssis-ir-custom-setup).
+1. Installeer uw aangepaste/derde onderdelen die zijn gericht op SQL Server 2017 op Azure-SSIS IR via [standaard/snelle aangepaste Setup](./how-to-configure-azure-ssis-ir-custom-setup.md).
 
 1. Maak de volgende DTSPath-register sleutels op zelf-hostende IR als ze nog niet bestaan:
    1. `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SQL Server\140\SSIS\Setup\DTSPath` ingesteld op `C:\Program Files\Microsoft SQL Server\140\DTS\`
@@ -197,7 +197,7 @@ Als u een krachtig crypto grafie/veiliger netwerk protocol (TLS 1,2) moet gebrui
 
 ## <a name="current-limitations"></a>Huidige beperkingen
 
-- Alleen gegevensstroom onderdelen die zijn ingebouwd/vooraf geïnstalleerd op Azure-SSIS IR Standard Edition, met uitzonde ring van Hadoop/HDFS/DQS-onderdelen, worden op dit moment ondersteund. Zie [alle ingebouwde en vooraf geïnstalleerde onderdelen op Azure-SSIS IR](https://docs.microsoft.com/azure/data-factory/built-in-preinstalled-components-ssis-integration-runtime).
+- Alleen gegevensstroom onderdelen die zijn ingebouwd/vooraf geïnstalleerd op Azure-SSIS IR Standard Edition, met uitzonde ring van Hadoop/HDFS/DQS-onderdelen, worden op dit moment ondersteund. Zie [alle ingebouwde en vooraf geïnstalleerde onderdelen op Azure-SSIS IR](./built-in-preinstalled-components-ssis-integration-runtime.md).
 - Alleen aangepaste gegevens stroom onderdelen van derden die zijn geschreven in beheerde code (.NET Framework) worden momenteel ondersteund. deze zijn geschreven in systeem eigen code (C++) en worden momenteel niet ondersteund.
 - Het wijzigen van variabelen waarden in zowel on-premises als in de Cloud faserings taken wordt momenteel niet ondersteund.
 - Het wijzigen van variabelen waarden van het type object in on-premises faserings taken worden niet weer gegeven in andere taken.

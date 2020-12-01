@@ -10,19 +10,19 @@ ms.subservice: bing-web-search
 ms.topic: conceptual
 ms.date: 01/31/2019
 ms.author: aahi
-ms.openlocfilehash: 93be72f2afcda90dde1b74c5ee317a7ad3350be1
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 4300860039b76bd076f19acfc252f59ef10d462b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93075684"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351841"
 ---
 # <a name="bing-search-api-use-and-display-requirements"></a>Vereisten voor gebruik en weergave van Bing Zoeken-API's
 
 > [!WARNING]
-> Bing Zoeken-API's van Cognitive Services naar Bing Search-Services verplaatsen. Vanaf **30 oktober 2020** moeten nieuwe exemplaren van Bing Search worden ingericht volgens het proces dat [hier](https://aka.ms/cogsvcs/bingmove)wordt beschreven.
-> Bing Zoeken-API's ingericht met Cognitive Services wordt voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst gebeurt.
-> Zie [Bing Search Services](https://aka.ms/cogsvcs/bingmigration)voor migratie-instructies.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
+> Bing Search-API's die zijn ingericht met Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
+> Raadpleeg [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
 Deze gebruiks-en weergave vereisten zijn van toepassing op elke implementatie van de inhoud en de bijbehorende informatie uit de volgende Bing Zoeken-API's, inclusief relaties, meta gegevens en andere signalen.
 
@@ -39,7 +39,7 @@ Deze gebruiks-en weergave vereisten zijn van toepassing op elke implementatie va
 ## <a name="definitions"></a>Definities
 
 
-|Term  |Beschrijving  |
+|Termijn  |Beschrijving  |
 |---------|---------|
 |Antwoord     | Een categorie met resultaten die in een antwoord wordt geretourneerd. Een reactie van de Bing Webzoekopdrachten-API kan bijvoorbeeld antwoorden bevatten in de categorieën resultaten van webpagina's, afbeelding, video, visueel element en nieuws. |
 |Antwoord     | Alle antwoorden en bijbehorende gegevens die zijn ontvangen als reactie op één aanroep van een zoek-API. |
@@ -104,7 +104,7 @@ Niet doen:
 ### <a name="notices-and-branding"></a>Kennisgevingen en huismerk 
 Uitvoeren
 
-- Neem prominent een functionele Hyper link op naar de [privacyverklaring van micro soft](https://go.microsoft.com/fwlink/?LinkId=521839), bijna elk punt in de gebruikers ervaring (UX) die een gebruiker de mogelijkheid biedt om een zoek opdracht in te voeren. Voorzie de Hyper Link van de **privacyverklaring van micro soft** .
+- Neem prominent een functionele Hyper link op naar de [privacyverklaring van micro soft](https://go.microsoft.com/fwlink/?LinkId=521839), bijna elk punt in de gebruikers ervaring (UX) die een gebruiker de mogelijkheid biedt om een zoek opdracht in te voeren. Voorzie de Hyper Link van de **privacyverklaring van micro soft**.
 
 - Geef een prominente Bing-huis stijl weer, in overeenstemming met de richt lijnen voor het gebruik van het [Bing-handels merk](https://go.microsoft.com/fwlink/?linkid=833278), waarbij een gebruiker de mogelijkheid biedt om een zoek opdracht in te voeren. Een dergelijke branding moet de gebruiker die micro soft in staat is om de Internet zoekmachine te controleren, een duidelijke status hebben.
 
@@ -172,5 +172,4 @@ De vorige secties van de vereisten voor het gebruik en de weer gave van zoek-Api
 
 ## <a name="gdpr-compliance"></a>AVG-naleving  
 
-Met betrekking tot persoonlijke gegevens die zijn onderworpen aan de Europese Unie AVG (AVG) en die worden verwerkt in verband met het aanroepen van de zoek-Api's, Bing Spellingcontrole-API of Automatische suggestie-API voor Bing, weet u dat u en micro soft onafhankelijke gegevens controllers zijn onder de AVG. U bent onafhankelijk verantwoordelijk voor uw naleving met de AVG.  
-
+Met betrekking tot persoonlijke gegevens die zijn onderworpen aan de Europese Unie AVG (AVG) en die worden verwerkt in verband met het aanroepen van de zoek-Api's, Bing Spellingcontrole-API of Automatische suggestie-API voor Bing, weet u dat u en micro soft onafhankelijke gegevens controllers zijn onder de AVG. U bent onafhankelijk verantwoordelijk voor uw naleving met de AVG.

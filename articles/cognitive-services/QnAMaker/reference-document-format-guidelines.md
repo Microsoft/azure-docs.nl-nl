@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: reference
 ms.date: 04/06/2020
-ms.openlocfilehash: d35ea57a68e500deffa99033b83114ec518dd5e3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 1bf6eebcfc43452dd9a62e4a49f9aacbcd517ffc
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95993802"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352232"
 ---
 # <a name="format-guidelines-for-imported-documents-and-urls"></a>Richt lijnen voor het opmaken van geïmporteerde documenten en Url's
 
@@ -22,7 +22,7 @@ Nadat u een bestand of URL hebt geïmporteerd, worden QnA Maker geconverteerd en
 
 Als u inhoud rechtstreeks in uw Knowledge Base toevoegt of bewerkt, gebruikt u de indeling voor **prijs verlaging** om inhoud met opmaak te maken of de inhoud van de prijs verlaging te wijzigen die al in het antwoord voor komt. QnA Maker ondersteunt een groot deel van de prijs verlaging voor uw inhoud. De client toepassing, zoals een chat-bot, ondersteunt echter mogelijk niet dezelfde set prijs notaties. Het is belang rijk om de weer gave van antwoorden van de client toepassing te testen.
 
-Bekijk een volledige lijst met [inhouds typen en voor beelden](./Concepts/content-types.md#file-and-url-data-types).
+Bekijk een volledige lijst met [inhouds typen en voor beelden](./concepts/data-sources-and-content.md#content-types-of-documents-you-can-add-to-a-knowledge-base).
 
 ## <a name="basic-document-formatting"></a>Elementaire document opmaak
 
@@ -118,4 +118,4 @@ Als u een Knowledge Base importeert, wordt de inhoud van de bestaande Knowledge 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Een volledige lijst met [inhouds typen en voor beelden](./Concepts/content-types.md#file-and-url-data-types) weer geven
+Een volledige lijst met [inhouds typen en voor beelden](./concepts/data-sources-and-content.md#content-types-of-documents-you-can-add-to-a-knowledge-base) weer geven

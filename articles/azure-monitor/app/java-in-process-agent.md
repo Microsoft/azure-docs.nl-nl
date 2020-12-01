@@ -3,12 +3,12 @@ title: Azure Monitor Application Insights java
 description: Bewaking van toepassings prestaties voor Java-toepassingen die worden uitgevoerd in een omgeving zonder dat code hoeft te worden gewijzigd. Gedistribueerde tracering en toepassings toewijzing.
 ms.topic: conceptual
 ms.date: 03/29/2020
-ms.openlocfilehash: 8423443abac90b87349a4a80fce0ec33a8b686da
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 36e2b419da2bccdf2f5f13227457172cf644994c
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94444738"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351534"
 ---
 # <a name="java-codeless-application-monitoring-azure-monitor-application-insights"></a>Azure Monitor Application Insights voor de bewaking van Java-toepassingen
 
@@ -228,17 +228,3 @@ U kunt ook Application Insights Java SDK 2. x gebruiken:
       telemetryClient.trackException(e);
   }
 ```
-
-## <a name="upgrading-from-application-insights-java-sdk-2x"></a>Upgraden van Application Insights Java SDK 2. x
-
-Als u Application Insights Java SDK 2. x al gebruikt in uw toepassing, hoeft u deze niet te verwijderen.
-De Java 3,0-agent detecteert deze en legt elke aangepaste telemetrie die u verzendt via de Java SDK 2. x, vast en zorgt ervoor dat alle automatische verzamelingen die door de Java SDK 2. x worden uitgevoerd, worden onderdrukt om dubbele telemetrie te voor komen.
-
-Als u Application Insights 2. x-agent gebruikt, moet u het `-javaagent:` JVMe ARG verwijderen dat wijst naar de 2. x-agent.
-
-> [!NOTE]
-> Java SDK 2. x TelemetryInitializers en TelemetryProcessors worden niet uitgevoerd wanneer de 3,0-agent wordt gebruikt.
-> Veel van de use-cases die eerder zijn vereist, kunnen worden opgelost in 3,0 door [aangepaste dimensies](./java-standalone-config.md#custom-dimensions) te configureren of [telemetrie-processors](./java-standalone-telemetry-processors.md)te configureren.
-
-> [!NOTE]
-> 3,0 biedt nog geen ondersteuning voor meerdere instrumentatie sleutels in één JVM.

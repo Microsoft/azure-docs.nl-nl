@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: reference
 ms.date: 03/19/2020
-ms.openlocfilehash: f5f640f8895cd6defe31a68b790ce841c4679a6f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f49e05578f55a38845acbd4010f928fb17c51606
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91777361"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352266"
 ---
 # <a name="markdown-format-supported-in-qna-maker-answer-text"></a>De indeling voor prijs verlaging wordt ondersteund in QnA Maker antwoord tekst
 
@@ -22,7 +22,7 @@ Gebruik de **[CommonMark](https://commonmark.org/help/tutorial/index.html)** -ze
 
 Met [RTF-bewerking](How-To/edit-knowledge-base.md#add-an-editorial-qna-set) van antwoorden kunt u, als auteur, een opmaak werkbalk gebruiken om snel tekst te selecteren en op te maken.
 
-De prijs verlaging is een beter hulp middel wanneer u inhoud automatisch moet genereren om kennis te maken van de Knowledge bases die als onderdeel van een CI/CD-pijp lijn of voor [batch tests](Quickstarts/batch-testing.md)moeten worden geïmporteerd.
+De prijs verlaging is een beter hulp middel wanneer u inhoud automatisch moet genereren om kennis te maken van de Knowledge bases die als onderdeel van een CI/CD-pijp lijn of voor [batch tests](./index.yml)moeten worden geïmporteerd.
 
 ## <a name="supported-markdown-format"></a>Ondersteunde indeling voor prijs verlaging
 
@@ -37,8 +37,8 @@ Een nieuwe regel tussen twee zinnen.|`\n\n`|`How can I create a bot with \n\n Qn
 |URL voor koppeling|`[text](https://www.my.com)`|`How do I create a bot with [QnA Maker](https://www.qnamaker.ai)?`|![indeling voor URL (Hyper Link)](./media/qnamaker-concepts-datasources/format-url.png)|
 |* URL voor de open bare afbeelding|`![text](https://www.my.com/image.png)`|`How can I create a bot with ![QnAMaker](https://review.docs.microsoft.com/azure/cognitive-services/qnamaker/media/qnamaker-how-to-key-management/qnamaker-resource-list.png)`|![indeling voor URL van open bare afbeelding ](./media/qnamaker-concepts-datasources/format-image-url.png)|
 |Doorhalen|`~~text~~`|`some ~~questoins~~ questions need to be asked`|![opmaak voor door halen](./media/qnamaker-concepts-datasources/format-strikethrough.png)|
-|Vet en cursief|`***text***`|`How can I create a ***QnA Maker*** bot?`|![opmaak voor vet en cursief](./media/qnamaker-concepts-datasources/format-bold-italics.png)|
-|Vetgedrukte URL voor koppeling|`[**text**](https://www.my.com)`|`How do I create a bot with [**QnA Maker**](https://www.qnamaker.ai)?`|![notatie voor vetgedrukte URL](./media/qnamaker-concepts-datasources/format-bold-url.png)|
+|Vet en cursief|`***text**_`|`How can I create a _*_QnA Maker_*_ bot?`|![opmaak voor vet en cursief](./media/qnamaker-concepts-datasources/format-bold-italics.png)|
+|Vetgedrukte URL voor koppeling|`[_*text**](https://www.my.com)`|`How do I create a bot with [**QnA Maker**](https://www.qnamaker.ai)?`|![notatie voor vetgedrukte URL](./media/qnamaker-concepts-datasources/format-bold-url.png)|
 |Cursieve URL voor koppeling|`[*text*](https://www.my.com)`|`How do I create a bot with [*QnA Maker*](https://www.qnamaker.ai)?`|![notatie voor cursieve URL](./media/qnamaker-concepts-datasources/format-url-italics.png)|
 |Symbolen voor kortings symbool voor Escape|`\*text\*`|`How do I create a bot with \*QnA Maker\*?`|![Indeling voor de symbolen voor de kortings verlaging.](./media/qnamaker-concepts-datasources/format-escape-markdown-symbols.png)|
 |Geordende lijst|`\n 1. item1 \n 1. item2`|`This is an ordered list: \n 1. List item 1 \n 1. List item 2`<br>In het voor gaande voor beeld wordt gebruikgemaakt van automatische nummering in korting.<br>`This is an ordered list: \n 1. List item 1 \n 2. List item 2`<br>In het vorige voor beeld wordt gebruikgemaakt van expliciete nummering.|![indeling voor geordende lijst](./media/qnamaker-concepts-datasources/format-ordered-list.png)|

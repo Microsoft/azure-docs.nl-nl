@@ -12,12 +12,12 @@ ms.topic: how-to
 ms.date: 02/27/2019
 ms.author: billmath
 author: billmath
-ms.openlocfilehash: cb828eeb408a170b93ffc73b58f14b3f7a883cc4
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: bef5942707c1ded22ba82bdb0d945b9fdb23fffa
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95247231"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349347"
 ---
 # <a name="configure-group-claims-for-applications-with-azure-active-directory"></a>Groeps claims configureren voor toepassingen met Azure Active Directory
 
@@ -58,7 +58,7 @@ Als een bestaande toepassing echter groeps gegevens per claim verwacht te verbru
 
 - Wanneer u groepslid maatschap gebruikt voor autorisatie doeleinden in de toepassing, is het raadzaam om de groeps-ObjectID te gebruiken. De ObjectID van de groep is onveranderbaar en uniek in Azure Active Directory en is beschikbaar voor alle groepen.
 - Als de on-premises groep sAMAccountName voor autorisatie gebruikt, gebruikt u domein gekwalificeerde namen.  Er is minder kans op conflicterende namen. sAMAccountName kan uniek zijn in een Active Directory domein, maar als meer dan één Active Directory domein is gesynchroniseerd met een Azure Active Directory-Tenant, kan er meer dan één groep dezelfde naam hebben.
-- U kunt [toepassings rollen](../../active-directory/develop/howto-add-app-roles-in-azure-ad-apps.md) gebruiken om een laag van omleiding te bieden tussen het groepslid maatschap en de toepassing.   De toepassing brengt vervolgens interne autorisatie beslissingen op basis van de functie-en schelpen in het token.
+- U kunt [toepassings rollen](../../active-directory/develop/howto-add-app-roles-in-azure-ad-apps.md) gebruiken om een laag van omleiding te bieden tussen het groepslid maatschap en de toepassing.   De toepassing brengt vervolgens interne autorisatie beslissingen op basis van rol claims in het token.
 - Als de toepassing is geconfigureerd voor het ophalen van groeps kenmerken die zijn gesynchroniseerd vanuit Active Directory en een groep deze kenmerken niet bevat, wordt deze niet opgenomen in de claims.
 - Groepeer claims in tokens bevatten geneste groepen, behalve wanneer u de optie gebruikt om de groeps claims te beperken tot groepen die zijn toegewezen aan de toepassing.  Als een gebruiker lid is van GroupB en GroupB lid is van GroepA, bevatten de groeps claims voor de gebruiker zowel GroepA als GroupB. Wanneer de gebruikers van een organisatie grote aantallen groepslid maatschappen hebben, kan het aantal groepen dat in het token wordt vermeld, de token grootte verg Roten.  Azure Active Directory beperkt het aantal groepen dat in een token wordt meezenden naar 150 voor SAML-bevestigingen en 200 voor JWT.  Als een gebruiker lid is van een groter aantal groepen, worden de groepen wegge laten en vindt u in plaats daarvan een koppeling naar het eind punt van de grafiek om groeps gegevens op te halen.
 

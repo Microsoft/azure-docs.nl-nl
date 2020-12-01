@@ -3,12 +3,12 @@ title: Problemen met het netwerk oplossen met het REGI ster
 description: Symptomen, oorzaken en oplossingen voor veelvoorkomende problemen bij het openen van een Azure container registry in een virtueel netwerk of achter een firewall
 ms.topic: article
 ms.date: 10/01/2020
-ms.openlocfilehash: 5f2cf2d72e6641d4871b7acccdbd7cc37c653f74
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 95b32b839d1b3b804a2035b797e1146a09d5236a
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148460"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351790"
 ---
 # <a name="troubleshoot-network-issues-with-registry"></a>Problemen met het netwerk oplossen met het REGI ster
 
@@ -59,7 +59,7 @@ Controleer achter een HTTPS-proxy of uw docker-client en docker-daemon zijn geco
 
 Register bron Logboeken in de tabel ContainerRegistryLoginEvents kunnen helpen bij het vaststellen van een verbindings poging die is geblokkeerd.
 
-Gerelateerde koppelingen:
+Gerelateerde links:
 
 * [Regels configureren voor toegang tot een Azure container Registry achter een firewall](container-registry-firewall-access-rules.md)
 * [HTTP/HTTPS-proxy configuratie](https://docs.docker.com/config/daemon/systemd/#httphttps-proxy)
@@ -72,7 +72,7 @@ Als u via internet toegang wilt krijgen tot een REGI ster, controleert u of het 
 
 Als het REGI ster is geconfigureerd voor een virtueel netwerk met een service-eind punt, schakelt het uitschakelen van open bare netwerk toegang ook de toegang via het service-eind punt uit. Als uw REGI ster is geconfigureerd voor een virtueel netwerk met een persoonlijke koppeling, zijn de IP-netwerk regels niet van toepassing op de persoonlijke eind punten van het REGI ster. 
 
-Gerelateerde koppelingen:
+Gerelateerde links:
 
 * [Open bare IP-netwerk regels configureren](container-registry-access-selected-networks.md)
 * [Persoonlijke verbinding maken met een Azure container Registry met behulp van een persoonlijke Azure-koppeling](container-registry-private-link.md)
@@ -93,7 +93,7 @@ Als Azure Firewall of een vergelijk bare oplossing in het netwerk is geconfigure
 
 Als er een persoonlijk eind punt is geconfigureerd, controleert u of de open bare FQDN van het REGI ster, zoals *myregistry.azurecr.io* , wordt omgezet naar het privé-IP-adres van het REGI ster. Gebruik een netwerk hulpprogramma, zoals `dig` of `nslookup` voor DNS-Zoek opdrachten.
 
-Gerelateerde koppelingen:
+Gerelateerde links:
 
 * [Persoonlijke verbinding maken met een Azure container Registry met behulp van een persoonlijke Azure-koppeling](container-registry-private-link.md)
 * [Toegang tot een container register beperken met behulp van een service-eind punt in een virtueel Azure-netwerk](container-registry-vnet.md)
@@ -103,7 +103,7 @@ Gerelateerde koppelingen:
 
 ### <a name="configure-service-access"></a>Service toegang configureren
 
-Op dit moment kan Azure Security Center geen [installatie kopie van het beveiligings probleem](../security-center/defender-for-container-registries-introduction.md?bc=%252fazure%252fcontainer-registry%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fcontainer-registry%252ftoc.json) in een REGI ster scannen waarmee de toegang wordt beperkt tot persoonlijke eind punten, geselecteerde subnetten of IP-adressen. Resources van de volgende services kunnen ook geen toegang krijgen tot een container register met netwerk beperkingen:
+Op dit moment kan Azure Security Center geen [installatie kopie van het beveiligings probleem](../security-center/defender-for-container-registries-introduction.md?bc=%2fazure%2fcontainer-registry%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fcontainer-registry%2ftoc.json) in een REGI ster scannen waarmee de toegang wordt beperkt tot persoonlijke eind punten, geselecteerde subnetten of IP-adressen. Resources van de volgende services kunnen ook geen toegang krijgen tot een container register met netwerk beperkingen:
 
 * Azure DevOps Services 
 * Azure Container Instances
@@ -111,7 +111,7 @@ Op dit moment kan Azure Security Center geen [installatie kopie van het beveilig
 
 Als toegang tot of integratie van deze Azure-Services met het container register is vereist, verwijdert u de netwerk beperking. U kunt bijvoorbeeld de persoonlijke eind punten van het REGI ster verwijderen of de open bare toegangs regels van het REGI ster verwijderen of wijzigen.
 
-Gerelateerde koppelingen:
+Gerelateerde links:
 
 * [Azure Container Registry afbeeldingen scannen door Security Center](../security-center/defender-for-container-registries-introduction.md)
 * [Feedback](https://feedback.azure.com/forums/347535-azure-security-center/suggestions/41091577-enable-vulnerability-scanning-for-images-that-are) geven
@@ -123,7 +123,7 @@ Gerelateerde koppelingen:
 
 Als het [verzamelen van bron logboeken](container-registry-diagnostics-audit-logs.md) is ingeschakeld in het REGI ster, raadpleegt u het ContainterRegistryLoginEvents-logboek. In dit logboek worden verificatie gebeurtenissen en status opgeslagen, met inbegrip van de binnenkomende identiteit en het IP-adres. Zoek het logboek op voor [register verificatie fouten](container-registry-diagnostics-audit-logs.md#registry-authentication-failures). 
 
-Gerelateerde koppelingen:
+Gerelateerde links:
 
 * [Logboeken voor diagnostische evaluaties en controles](container-registry-diagnostics-audit-logs.md)
 * [Veelgestelde vragen over container Registry](container-registry-faq.md)

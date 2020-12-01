@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/16/2020
 ms.author: thvankra
 ms.reviewer: thvankra
-ms.openlocfilehash: 877aa96b189de47d158721df6585cb94ace4a855
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: 827abcdb9eb2eb8b7328eb3e3a78f49d51e87e6b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94932899"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349177"
 ---
 # <a name="migrate-data-from-cassandra-to-azure-cosmos-db-cassandra-api-account-using-azure-databricks"></a>Gegevens migreren van Cassandra naar Azure Cosmos DB Cassandra-API-account met behulp van Azure Databricks
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -114,7 +114,7 @@ DFfromNativeCassandra
 ```
 
 > [!NOTE]
-> De `spark.cassandra.output.concurrent.writes` `connections_per_executor_max` configuraties en zijn belang rijk voor het voor komen van [frequentie beperkingen](https://docs.microsoft.com/samples/azure-samples/azure-cosmos-cassandra-java-retry-sample/azure-cosmos-db-cassandra-java-retry-sample/), wat gebeurt wanneer aanvragen om Cosmos DB de ingerichte door voer te overschrijden ([aanvraag eenheden](https://docs.microsoft.com/azure/cosmos-db/request-units)). Het kan zijn dat u deze instellingen moet aanpassen, afhankelijk van het aantal uitnodigingen in het Spark-cluster en mogelijk de grootte (en dus RU cost) van elke record die naar de doel tabellen wordt geschreven.
+> De `spark.cassandra.output.concurrent.writes` `connections_per_executor_max` configuraties en zijn belang rijk voor het voor komen van [frequentie beperkingen](/samples/azure-samples/azure-cosmos-cassandra-java-retry-sample/azure-cosmos-db-cassandra-java-retry-sample/), wat gebeurt wanneer aanvragen om Cosmos DB de ingerichte door voer te overschrijden ([aanvraag eenheden](./request-units.md)). Het kan zijn dat u deze instellingen moet aanpassen, afhankelijk van het aantal uitnodigingen in het Spark-cluster en mogelijk de grootte (en dus RU cost) van elke record die naar de doel tabellen wordt geschreven.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -1,6 +1,6 @@
 ---
-title: Een beheerde installatie kopie migreren naar een galerie met gedeelde afbeeldingen
-description: Meer informatie over het gebruik van Azure PowerShell voor het migreren van een beheerde installatie kopie naar een installatie kopie versie in een galerie met gedeelde installatie kopieën.
+title: Een beheerde installatie kopie klonen naar een galerie met gedeelde afbeeldingen
+description: Meer informatie over het gebruik van Azure PowerShell voor het klonen van een beheerde installatie kopie naar een installatie kopie versie in een galerie met gedeelde installatie kopieën.
 author: cynthn
 ms.topic: how-to
 ms.service: virtual-machines
@@ -9,16 +9,16 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 1c57d9d283714da6905335fd3167c4f8a69292f8
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 92cae59978b172993c779e9a486ff67d82309800
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94964878"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349919"
 ---
-# <a name="migrate-from-a-managed-image-to-a-shared-image-gallery-image"></a>Migreren van een beheerde installatie kopie naar een afbeelding van de galerie met gedeelde afbeeldingen
+# <a name="clone-a-managed-image-to-a-shared-image-gallery-image"></a>Een beheerde installatie kopie klonen naar een afbeelding van de galerie met gedeelde afbeeldingen
 
-Als u een bestaande beheerde installatie kopie hebt die u wilt migreren naar een gedeelde installatie kopie galerie, kunt u rechtstreeks vanuit de beheerde installatie kopie een installatie kopie van een gedeelde installatie kopie maken. Wanneer u de nieuwe installatie kopie hebt getest, kunt u de door de bron beheerde installatie kopie verwijderen. U kunt ook migreren van een beheerde installatie kopie naar een galerie met gedeelde afbeeldingen met behulp van de [Azure cli](image-version-managed-image-cli.md).
+Als u een bestaande beheerde installatie kopie hebt die u wilt klonen en naar een gedeelde galerie met installatie kopieën wilt verplaatsen, kunt u rechtstreeks vanuit de beheerde installatie kopie een installatie kopie van de gedeelde installatie kopie maken. Wanneer u de nieuwe installatie kopie hebt getest, kunt u de door de bron beheerde installatie kopie verwijderen. U kunt ook migreren van een beheerde installatie kopie naar een galerie met gedeelde afbeeldingen met behulp van de [Azure cli](image-version-managed-image-cli.md).
 
 Afbeeldingen in een afbeeldings galerie hebben twee onderdelen, die we in dit voor beeld gaan maken:
 - Een **definitie van een installatie kopie** bevat informatie over de installatie kopie en vereisten voor het gebruik ervan. Dit omvat of de installatie kopie Windows of Linux, gespecialiseerde of gegeneraliseerde, release opmerkingen en minimale en maximale geheugen vereisten zijn. Het is een definitie van een type installatiekopie. 

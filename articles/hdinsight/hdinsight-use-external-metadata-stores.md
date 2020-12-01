@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 08/06/2020
-ms.openlocfilehash: bcfd14572b632cdc455babf7b9f8d67be904406c
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: a001f3a13daf40a1af712f09e35d93fd045ea133
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629951"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350242"
 ---
 # <a name="use-external-metadata-stores-in-azure-hdinsight"></a>Externe metagegevensopslag gebruiken in Azure HDInsight
 
@@ -67,7 +67,7 @@ Maak een bestaande Azure SQL Database voordat u een aangepaste Hive-metastore vo
 
 Tijdens het maken van het cluster moet de HDInsight-service verbinding maken met de externe meta Store en uw referenties verifiëren. Configureer Azure SQL Database firewall regels om Azure-Services en-bronnen toegang te geven tot de server. Schakel deze optie in het Azure Portal in door **Server firewall instellen** te selecteren. Selecteer vervolgens **niet** onder **open bare netwerk toegang weigeren** en **Ja** hieronder **toestaan dat Azure-Services en-bronnen toegang hebben tot deze server** voor Azure SQL database. Zie [IP-firewall regels maken en beheren](../azure-sql/database/firewall-configure.md#use-the-azure-portal-to-manage-server-level-ip-firewall-rules) voor meer informatie.
 
-Privé-eind punten voor SQL-archieven worden alleen ondersteund op de clusters die zijn gemaakt met `outbound` ResourceProviderConnection. Raadpleeg deze [documentatie](https://docs.microsoft.com/azure/hdinsight/hdinsight-private-link)voor meer informatie.
+Privé-eind punten voor SQL-archieven worden alleen ondersteund op de clusters die zijn gemaakt met `outbound` ResourceProviderConnection. Raadpleeg deze [documentatie](./hdinsight-private-link.md)voor meer informatie.
 
 ![knop Server firewall instellen](./media/hdinsight-use-external-metadata-stores/configure-azure-sql-database-firewall1.png)
 

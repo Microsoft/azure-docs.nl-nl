@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 07/15/2020
 ms.author: allensu
-ms.openlocfilehash: e5d84616e70d2a28abf3937b485f4fcf5258c43e
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: fdb609a243656e2c75159cd2d4e70e2f965ae896
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92779404"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352113"
 ---
 # <a name="diagnostic-logs---azure-content-delivery-network"></a>Diagnostische logboeken-Azure Content Delivery Network
 
@@ -42,7 +42,7 @@ Een Azure CDN profiel is vereist voor de volgende stappen. Raadpleeg [een Azure 
 
 Voer de volgende stappen uit om logboek registratie in te scha kelen voor uw Azure CDN-eind punt:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
 
 2. Ga in het Azure Portal naar **alle resources**  ->  **uw-CDN-profiel**
 
@@ -52,26 +52,26 @@ Voer de volgende stappen uit om logboek registratie in te scha kelen voor uw Azu
 
 3. Selecteer **Diagnostische logboeken** in het gedeelte **bewaking** :
 
-    :::image type="content" source="./media/cdn-diagnostics-log/03_diagnostics-logs-options.png" alt-text="Selecteer het CDN-eind punt." border="true":::
+    :::image type="content" source="./media/cdn-diagnostics-log/03_diagnostics-logs-options.png" alt-text="Selecteer Diagnostische logboeken." border="true":::
 
 ### <a name="enable-logging-with-azure-storage"></a>Logboek registratie inschakelen met Azure Storage
 
 Als u een opslag account wilt gebruiken om de logboeken op te slaan, voert u de volgende stappen uit:
 
  >[!NOTE] 
- >U hebt een opslag account nodig om deze stappen te volt ooien. Raadpleeg: **[een Azure Storage-account maken](../storage/common/storage-account-create.md?tabs=azure-portal&toc=%252fazure%252fstorage%252fblobs%252ftoc.json)** voor meer informatie.
+ >U hebt een opslag account nodig om deze stappen te volt ooien. Raadpleeg: **[een Azure Storage-account maken](../storage/common/storage-account-create.md?tabs=azure-portal&toc=%2fazure%2fstorage%2fblobs%2ftoc.json)** voor meer informatie.
     
-1. Voer een naam in voor de diagnostische logboek instellingen voor de naam van de **Diagnostische instelling** .
+1. Voer een naam in voor de diagnostische logboek instellingen voor de naam van de **Diagnostische instelling**.
  
-2. Selecteer **archiveren naar een opslag account** en selecteer vervolgens **CoreAnalytics** . 
+2. Selecteer **archiveren naar een opslag account** en selecteer vervolgens **CoreAnalytics**. 
 
 3. Kies voor **retentie (dagen)** het aantal Bewaar dagen. Een Bewaar periode van nul dagen slaat de logboeken voor onbepaalde tijd op. 
 
 4. Selecteer het abonnement en het opslag account voor de logboeken.
 
-    :::image type="content" source="./media/cdn-diagnostics-log/04_diagnostics-logs-storage.png" alt-text="Selecteer het CDN-eind punt." border="true":::
+    :::image type="content" source="./media/cdn-diagnostics-log/04_diagnostics-logs-storage.png" alt-text="Diagnostische logboeken: opslag." border="true":::
 
-3. Selecteer **Opslaan** .
+3. Selecteer **Opslaan**.
 
 ### <a name="send-to-log-analytics"></a>Verzenden naar Log Analytics
 
@@ -80,15 +80,15 @@ Voer de volgende stappen uit om Log Analytics te gebruiken voor de logboeken:
 >[!NOTE] 
 >Er is een log Analytics-werk ruimte vereist om deze stappen uit te voeren. Raadpleeg: **[een log Analytics-werk ruimte maken in de Azure Portal](../azure-monitor/learn/quick-create-workspace.md)** voor meer informatie.
     
-1. Voer een naam in voor de diagnostische logboek instellingen voor de naam van de **Diagnostische instelling** .
+1. Voer een naam in voor de diagnostische logboek instellingen voor de naam van de **Diagnostische instelling**.
 
-2. Selecteer **verzenden naar log Analytics** en selecteer vervolgens **CoreAnalytics** . 
+2. Selecteer **verzenden naar log Analytics** en selecteer vervolgens **CoreAnalytics**. 
 
 3. Selecteer het abonnement en de Log Analytics werk ruimte voor de logboeken.
 
-   :::image type="content" source="./media/cdn-diagnostics-log/05-la-workspace.png" alt-text="Selecteer het CDN-eind punt." border="true":::
+   :::image type="content" source="./media/cdn-diagnostics-log/05-la-workspace.png" alt-text="Diagnostische logboeken-Log Analytics." border="true":::
 
-4. Selecteer **Opslaan** .
+4. Selecteer **Opslaan**.
 
 ### <a name="stream-to-an-event-hub"></a>Streamen naar een Event Hub
 
@@ -97,15 +97,15 @@ Voer de volgende stappen uit om een Event Hub te gebruiken voor de logboeken:
 >[!NOTE] 
 >Voor het uitvoeren van deze stappen is een Event Hub vereist. Raadpleeg: **[Snelstartgids: een event hub maken met behulp van Azure Portal](../event-hubs/event-hubs-create.md)** voor meer informatie.
     
-1. Voer een naam in voor de diagnostische logboek instellingen voor de naam van de **Diagnostische instelling** .
+1. Voer een naam in voor de diagnostische logboek instellingen voor de naam van de **Diagnostische instelling**.
 
-2. Selecteer **Stream naar een event hub** en selecteer vervolgens **CoreAnalytics** . 
+2. Selecteer **Stream naar een event hub** en selecteer vervolgens **CoreAnalytics**. 
 
 3. Selecteer het abonnement en de naam ruimte van de Event Hub voor de logboeken.
 
-   :::image type="content" source="./media/cdn-diagnostics-log/06-eventhub-namespace.png" alt-text="Selecteer het CDN-eind punt." border="true":::
+   :::image type="content" source="./media/cdn-diagnostics-log/06-eventhub-namespace.png" alt-text="Diagnostische logboeken-Event hub." border="true":::
 
-4. Selecteer **Opslaan** .
+4. Selecteer **Opslaan**.
 
 
 ## <a name="enable-logging-with-powershell"></a>Logboekregistratie inschakelen met PowerShell
@@ -190,8 +190,8 @@ Zie [Azure Storage Explorer](https://storageexplorer.com/)als u het hulp program
 1.  **Microsoft Azure Storage Explorer** openen
 2.  Zoek het opslag account
 3.  Vouw het knoop punt **BLOB containers** onder dit opslag account uit.
-4.  Selecteer de container met de naam *Insights-logs-coreanalytics* .
-5.  Resultaten worden weer gegeven in het rechterdeel venster, te beginnen met het eerste niveau, als *resourceId =* . Ga door met het selecteren van elk niveau totdat u het bestand hebt gevonden *PT1H.js* . Zie [indeling van BLOB-pad](cdn-azure-diagnostic-logs.md#blob-path-format)voor een uitleg van het pad.
+4.  Selecteer de container met de naam *Insights-logs-coreanalytics*.
+5.  Resultaten worden weer gegeven in het rechterdeel venster, te beginnen met het eerste niveau, als *resourceId =*. Ga door met het selecteren van elk niveau totdat u het bestand hebt gevonden *PT1H.js*. Zie [indeling van BLOB-pad](cdn-azure-diagnostic-logs.md#blob-path-format)voor een uitleg van het pad.
 6.  Elke BLOB- *PT1H.jsin* het bestand vertegenwoordigt de analyse logboeken gedurende één uur voor een specifiek CDN-eind punt of het aangepaste domein.
 7.  Het schema van de inhoud van dit JSON-bestand wordt beschreven in het sectie schema van de logboeken van de kern analyse.
 
@@ -222,14 +222,14 @@ Voor toegang tot de kern analyse wordt een voorbeeld code voor een hulp programm
 U kunt het hulp programma als volgt gebruiken:
 
 1.  Ga naar de GitHub-koppeling: [https://github.com/Azure-Samples/azure-cdn-samples/tree/master/CoreAnalytics-ExportToCsv](https://github.com/Azure-Samples/azure-cdn-samples/tree/master/CoreAnalytics-ExportToCsv)
-2.  Down load de code.
+2.  Download de code.
 3.  Volg de instructies voor het compileren en configureren.
 4.  Voer het hulp programma uit.
 5.  In het resulterende CSV-bestand worden de analyse gegevens weer gegeven in een eenvoudige, vlakke hiërarchie.
 
 ## <a name="log-data-delays"></a>Gegevens vertragingen vastleggen
 
-De volgende tabel geeft een logboek gegevens vertraging voor **Azure CDN standaard van micro soft** , **Azure CDN standaard van Akamai** en **Azure CDN Standard/Premium van Verizon** .
+De volgende tabel geeft een logboek gegevens vertraging voor **Azure CDN standaard van micro soft**, **Azure CDN standaard van Akamai** en **Azure CDN Standard/Premium van Verizon**.
 
 Micro soft logboek gegevens vertragingen | Vertragingen bij Verizon-logboek gegevens | Vertragingen in Akamai-logboek gegevens
 --- | --- | ---
@@ -249,7 +249,7 @@ In de volgende tabel ziet u een lijst met metrische gegevens die beschikbaar zij
 Niet alle metrische gegevens zijn beschikbaar voor alle providers, hoewel deze verschillen mini maal zijn. In de tabel wordt ook weer gegeven of een bepaalde metriek beschikbaar is van een provider. De metrische gegevens zijn alleen beschikbaar voor de CDN-eind punten die verkeer hebben.
 
 
-|Gegevens                     | Beschrijving | Microsoft | Verizon | Akamai |
+|Metrisch                     | Beschrijving | Microsoft | Verizon | Akamai |
 |---------------------------|-------------|-----------|---------|--------|
 | RequestCountTotal         | Totaal aantal aanvraag treffers tijdens deze periode. | Ja | Ja |Ja |
 | RequestCountHttpStatus2xx | Het aantal aanvragen dat heeft geleid tot een 2xx HTTP-code (bijvoorbeeld 200, 202). | Ja | Ja |Ja |
@@ -367,7 +367,7 @@ Voorbeeld eigenschappen:
 
 ```
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+## <a name="additional-resources"></a>Aanvullende resources
 
 * [Diagnostische logboeken van Azure](../azure-monitor/platform/platform-logs-overview.md)
 * [Kern analyse via Azure CDN aanvullende portal](./cdn-analyze-usage-patterns.md)

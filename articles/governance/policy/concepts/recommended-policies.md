@@ -4,12 +4,12 @@ description: Hierin wordt beschreven hoe u aanbevolen beleids regels voor Azure-
 ms.date: 09/02/2020
 ms.topic: conceptual
 ms.customer: generated
-ms.openlocfilehash: 5c297bcedd29fa8d9a2712850a57b66630cb52d9
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 019541f034ce8f0c3728c38d2ae4425308b4e2a1
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91951516"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350276"
 ---
 # <a name="recommended-policies-for-azure-services"></a>Aanbevolen beleid voor Azure-Services
 
@@ -27,7 +27,7 @@ Als een organisatie een verval datum heeft bereikt bij het [ordenen van hun reso
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Virtuele machines controleren waarop geen herstel na noodgevallen is geconfigureerd](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0015ea4d-51ff-4ce3-8d8c-f3f8f0179a56) |Controleer virtuele machines waarop herstel na noodgevallen niet is geconfigureerd. Ga naar [https://aka.ms/asr-doc](https://aka.ms/asr-doc) voor meer informatie over herstel na noodgevallen. |auditIfNotExists |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Compute/RecoveryServices_DisasterRecovery_Audit.json) |
+|[Virtuele machines controleren waarop geen herstel na noodgevallen is geconfigureerd](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0015ea4d-51ff-4ce3-8d8c-f3f8f0179a56) |Controleer virtuele machines waarop herstel na noodgevallen niet is geconfigureerd. Ga naar [https://aka.ms/asr-doc](../../../site-recovery/index.yml) voor meer informatie over herstel na noodgevallen. |auditIfNotExists |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Compute/RecoveryServices_DisasterRecovery_Audit.json) |
 |[Controleer virtuele machines die niet gebruikmaken van beheerde schijven](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F06a78e20-9358-41c9-923c-fb736d382a4d) |Dit beleid controleert virtuele machines die niet gebruikmaken van beheerde schijven |controleren |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Compute/VMRequireManagedDisk_Audit.json) |
 |[Azure Backup moet zijn ingeschakeld voor virtuele machines](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F013e242c-8828-4970-87b3-ab247555486d) |Dit beleid helpt te controleren of Azure Backup-service is ingeschakeld voor alle virtuele machines. Azure Backup is een voordelige back-upoplossing voor eenvoudig gegevensherstel en is makkelijker in te schakelen dan andere services voor cloudback-ups. |AuditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Backup/VirtualMachines_EnableAzureBackup_Audit.json) |
 

@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: 46b1cf2681ab5d804035c98d458600de5081c77d
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.openlocfilehash: cd64c19e7e9af05becd7a6978ceb4d0306112170
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94376792"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351892"
 ---
 # <a name="azure-resources-for-qna-maker"></a>Azure-resources voor QnA Maker
 
@@ -18,7 +18,7 @@ QnA Maker maakt gebruik van verschillende Azure-bronnen, elk met een ander doel.
 
 ## <a name="resource-planning"></a>Resource planning
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele versie)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 
 Wanneer u voor het eerst een QnA Maker Knowledge Base ontwikkelt, is in de prototype fase gebruikelijk dat er één QnA Maker resource is voor testen en productie.
 
@@ -30,7 +30,7 @@ Wanneer u naar de ontwikkelings fase van het project gaat, moet u rekening houde
 
 Plan voor een enkele QnA Maker resource alle kennis grondslagen met dezelfde taal, dezelfde regio en dezelfde combi natie van onderwerps domeinen.
 
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-versie)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
 Wanneer u voor het eerst een QnA Maker beheerde Knowledge Base ontwikkelt, is in de prototype fase gebruikelijk een enkele QnA Maker beheerde resource voor zowel testen als productie.
 
@@ -44,21 +44,21 @@ Wanneer u naar de ontwikkelings fase van het project gaat, moet u rekening houde
 
 ## <a name="pricing-tier-considerations"></a>Overwegingen voor prijs Categorieën
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele versie)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 
 Normaal gesp roken zijn er drie para meters die u moet overwegen:
 
-* **De door Voer die u nodig hebt via de service** :
-    * Selecteer het juiste [app-abonnement](https://azure.microsoft.com/pricing/details/app-service/plans/) voor uw app service op basis van uw behoeften. U kunt de app omhoog of omlaag [schalen](https://docs.microsoft.com/azure/app-service/manage-scale-up) .
-    * Dit moet ook van invloed zijn op uw selectie van Azure **Cognitive Search** SKU. Zie [hier](https://docs.microsoft.com/azure/search/search-sku-tier)voor meer informatie. Daarnaast moet u mogelijk Cognitive Search [capaciteit](../../../search/search-capacity-planning.md) aanpassen met replica's.
+* **De door Voer die u nodig hebt via de service**:
+    * Selecteer het juiste [app-abonnement](https://azure.microsoft.com/pricing/details/app-service/plans/) voor uw app service op basis van uw behoeften. U kunt de app omhoog of omlaag [schalen](../../../app-service/manage-scale-up.md) .
+    * Dit moet ook van invloed zijn op uw selectie van Azure **Cognitive Search** SKU. Zie [hier](../../../search/search-sku-tier.md)voor meer informatie. Daarnaast moet u mogelijk Cognitive Search [capaciteit](../../../search/search-capacity-planning.md) aanpassen met replica's.
 
-* **Grootte en aantal kennis grondslagen** : Kies de juiste [Azure Search-SKU](https://azure.microsoft.com/pricing/details/search/) voor uw scenario. Normaal gesp roken bepaalt u het aantal kennis grondslagen dat u nodig hebt op basis van het aantal verschillende onderwerps domeinen. Zodra het onderwerp domein (voor een enkele taal) in één kennis database moet zijn.
+* **Grootte en aantal kennis grondslagen**: Kies de juiste [Azure Search-SKU](https://azure.microsoft.com/pricing/details/search/) voor uw scenario. Normaal gesp roken bepaalt u het aantal kennis grondslagen dat u nodig hebt op basis van het aantal verschillende onderwerps domeinen. Zodra het onderwerp domein (voor een enkele taal) in één kennis database moet zijn.
 
     U kunt N-1 Knowledge bases publiceren in een bepaalde laag, waarbij N de Maxi maal toegestane indexen in de laag is. Controleer ook de maximale grootte en het aantal documenten dat per laag is toegestaan.
 
     Als uw laag bijvoorbeeld 15 toegestane indexen heeft, kunt u 14 Knowledge bases publiceren (1 index per gepubliceerde kennis basis). De vijftiende index wordt gebruikt voor alle kennis grondslagen voor ontwerpen en testen.
 
-* **Aantal documenten als bronnen** : de gratis SKU van de QnA Maker Management-service beperkt het aantal documenten dat u kunt beheren via de portal en de api's tot 3 (van elke grootte van 1 MB). De standaard-SKU heeft geen limieten voor het aantal documenten dat u kunt beheren. Meer informatie vindt u [hier](https://aka.ms/qnamaker-pricing).
+* **Aantal documenten als bronnen**: de gratis SKU van de QnA Maker Management-service beperkt het aantal documenten dat u kunt beheren via de portal en de api's tot 3 (van elke grootte van 1 MB). De standaard-SKU heeft geen limieten voor het aantal documenten dat u kunt beheren. Meer informatie vindt u [hier](https://aka.ms/qnamaker-pricing).
 
 De volgende tabel bevat een aantal richt lijnen op hoog niveau.
 
@@ -68,15 +68,15 @@ De volgende tabel bevat een aantal richt lijnen op hoog niveau.
 | **Ontwikkel-en test omgeving**   | Standaard SKU         | Gedeeld      | Basic        | Maxi maal 14 Kb's publiceren, grootte van 2 GB    |
 | **Productie omgeving** | Standaard SKU         | Basic       | Standard     | Publiceer tot 49 Kb's, grootte van 25 GB |
 
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-versie)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
 Normaal gesp roken zijn er drie para meters die u moet overwegen:
 
-* **De door Voer die u nodig hebt via de service** :
+* **De door Voer die u nodig hebt via de service**:
     * QnA Maker Managed (preview) is een gratis service en de door Voer is momenteel beperkt bij 10 TPS voor zowel beheer-Api's als Voorspellings-Api's.
-    * Dit moet ook van invloed zijn op uw selectie van Azure **Cognitive Search** SKU. Zie [hier](https://docs.microsoft.com/azure/search/search-sku-tier)voor meer informatie. Daarnaast moet u mogelijk Cognitive Search [capaciteit](../../../search/search-capacity-planning.md) aanpassen met replica's.
+    * Dit moet ook van invloed zijn op uw selectie van Azure **Cognitive Search** SKU. Zie [hier](../../../search/search-sku-tier.md)voor meer informatie. Daarnaast moet u mogelijk Cognitive Search [capaciteit](../../../search/search-capacity-planning.md) aanpassen met replica's.
 
-* **Grootte en aantal kennis grondslagen** : Kies de juiste [Azure Search-SKU](https://azure.microsoft.com/pricing/details/search/) voor uw scenario. Normaal gesp roken bepaalt u het aantal kennis grondslagen dat u nodig hebt op basis van het aantal verschillende onderwerps domeinen. Zodra het onderwerp domein (voor een enkele taal) in één kennis database moet zijn.
+* **Grootte en aantal kennis grondslagen**: Kies de juiste [Azure Search-SKU](https://azure.microsoft.com/pricing/details/search/) voor uw scenario. Normaal gesp roken bepaalt u het aantal kennis grondslagen dat u nodig hebt op basis van het aantal verschillende onderwerps domeinen. Zodra het onderwerp domein (voor een enkele taal) in één kennis database moet zijn.
 
     Met QnA Maker Managed (preview) hebt u de mogelijkheid om uw QnA Maker-service in te stellen voor Kb's in één taal of in meerdere talen. U kunt deze selectie maken wanneer u de eerste Knowledge Base maakt in uw QnA Maker Managed (preview)-service.
 
@@ -86,7 +86,7 @@ Normaal gesp roken zijn er drie para meters die u moet overwegen:
 
     Als uw laag bijvoorbeeld 15 toegestane indexen heeft, kunt u 14 Knowledge bases van dezelfde taal publiceren (1 index per gepubliceerde kennis basis). De vijftiende index wordt gebruikt voor alle kennis grondslagen voor ontwerpen en testen. Als u ervoor kiest om kennis bases in verschillende talen te hebben, kunt u alleen 7 knowledge bases publiceren.
 
-* **Aantal documenten als bronnen** : QnA Maker beheerd (preview) is een gratis service en er zijn geen beperkingen voor het aantal documenten dat u als bronnen kunt toevoegen. Meer informatie vindt u [hier](https://aka.ms/qnamaker-pricing).
+* **Aantal documenten als bronnen**: QnA Maker beheerd (preview) is een gratis service en er zijn geen beperkingen voor het aantal documenten dat u als bronnen kunt toevoegen. Meer informatie vindt u [hier](https://aka.ms/qnamaker-pricing).
 
 De volgende tabel bevat een aantal richt lijnen op hoog niveau.
 
@@ -100,7 +100,7 @@ De volgende tabel bevat een aantal richt lijnen op hoog niveau.
 
 ## <a name="recommended-settings"></a>Aanbevolen instellingen
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele versie)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 
 |Doel-QPS | App Service | Azure Cognitive Search |
 | -------------------- | ----------- | ------------ |
@@ -110,7 +110,7 @@ De volgende tabel bevat een aantal richt lijnen op hoog niveau.
 | 100         | P3V2, 10 instanties  | S3, 12 instanties, 3 partities   |
 | 200 tot 250         | P3V2, 20 exemplaren | S3, 12 instanties, 3 partities    |
 
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-versie)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
 QnA Maker Managed is een gratis service en de door Voer is momenteel beperkt tot 10 trans acties per seconde voor zowel beheer-Api's als Voorspellings-Api's. Als u 10 trans acties per seconde voor uw service wilt richten, raden we u aan de Cognitive Search van S1 (1-exemplaar) van Azure te bevelen.
 
@@ -118,9 +118,9 @@ QnA Maker Managed is een gratis service en de door Voer is momenteel beperkt tot
 
 ## <a name="when-to-change-a-pricing-tier"></a>Wanneer u een prijs categorie wilt wijzigen
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele versie)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 
-|Upgrade|Reden|
+|Upgraden|Reden|
 |--|--|
 |[Upgrade uitvoeren](../How-to/set-up-qnamaker-service-azure.md#upgrade-qna-maker-sku) QnA Maker Management-SKU|U wilt meer QnA-paren of document bronnen in uw Knowledge Base hebben.|
 |[Upgrade uitvoeren](../How-to/set-up-qnamaker-service-azure.md#upgrade-app-service) App Service SKU en controleer Cognitive Search laag en [maak Cognitive Search replica's](../../../search/search-capacity-planning.md)|Uw Knowledge Base moet meer aanvragen van uw client-app leveren, zoals een chat-bot.|
@@ -128,7 +128,7 @@ QnA Maker Managed is een gratis service en de door Voer is momenteel beperkt tot
 
 Down load de nieuwste runtime-updates door [uw app service in de Azure portal bij te werken](../how-to/set-up-qnamaker-service-azure.md#get-the-latest-runtime-updates).
 
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-versie)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
 [Upgrade uitvoeren](../How-to/set-up-qnamaker-service-azure.md#upgrade-the-azure-cognitive-search-service) Azure Cognitive Search-service wanneer u van plan bent om veel kennis bases te hebben.
 
@@ -136,7 +136,7 @@ Down load de nieuwste runtime-updates door [uw app service in de Azure portal bi
 
 ## <a name="resource-naming-considerations"></a>Overwegingen voor het benoemen van resources
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele versie)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 
 De resource naam voor de QnA Maker resource, zoals `qna-westus-f0-b` , wordt ook gebruikt voor het benoemen van de andere resources.
 
@@ -232,7 +232,7 @@ De beheer service van QnA Maker wordt alleen gebruikt voor de QnA Maker Portal e
 
 Uw QnA Maker-service behandelt twee soorten sleutels: het **ontwerpen van sleutels** en **query-eindpunt sleutels** die worden gebruikt met de runtime die wordt gehost in de app service.
 
-Als u op zoek bent naar uw **abonnements sleutel** , [is de terminologie gewijzigd](#subscription-keys).
+Als u op zoek bent naar uw **abonnements sleutel**, [is de terminologie gewijzigd](#subscription-keys).
 
 Gebruik deze sleutels bij het indienen van aanvragen bij de service via Api's.
 
@@ -240,7 +240,7 @@ Gebruik deze sleutels bij het indienen van aanvragen bij de service via Api's.
 
 |Naam|Locatie|Doel|
 |--|--|--|
-|Sleutel ontwerpen|[Azure-portal](https://azure.microsoft.com/free/cognitive-services/)|Deze sleutels worden gebruikt voor toegang tot de Api's van de [QnA Maker Management-service](https://go.microsoft.com/fwlink/?linkid=2092179). Met deze Api's kunt u de vragen en antwoorden in uw Knowledge Base bewerken en uw kennis database publiceren. Deze sleutels worden gemaakt wanneer u een nieuwe QnA Maker-service maakt.<br><br>Deze sleutels vindt u op de pagina **sleutels** van de **Cognitive Services** resource.|
+|Sleutel ontwerpen|[Azure-portal](https://azure.microsoft.com/free/cognitive-services/)|Deze sleutels worden gebruikt voor toegang tot de Api's van de [QnA Maker Management-service](/rest/api/cognitiveservices/qnamaker4.0/knowledgebase). Met deze Api's kunt u de vragen en antwoorden in uw Knowledge Base bewerken en uw kennis database publiceren. Deze sleutels worden gemaakt wanneer u een nieuwe QnA Maker-service maakt.<br><br>Deze sleutels vindt u op de pagina **sleutels** van de **Cognitive Services** resource.|
 |Query-eindpunt sleutel|[QnA Maker-portal](https://www.qnamaker.ai)|Deze sleutels worden gebruikt om een query uit te geven op het gepubliceerde Knowledge Base-eind punt om een antwoord te krijgen op de vraag van een gebruiker. Normaal gesp roken gebruikt u dit query-eind punt in uw chat-bot of in de client toepassings code die verbinding maakt met de QnA Maker-service. Deze sleutels worden gemaakt wanneer u uw QnA Maker Knowledge Base publiceert.<br><br>Deze sleutels vindt u op de pagina **Service-instellingen** . Ga naar deze pagina vanuit het menu van de gebruiker in de rechter bovenhoek van de pagina in de vervolg keuzelijst.|
 
 ### <a name="subscription-keys"></a>Abonnementssleutels
@@ -251,13 +251,13 @@ U moet weten welke sleutel u wilt zoeken met beinformatie over de toegang tot de
 
 ### <a name="recommended-settings-for-network-isolation"></a>Aanbevolen instellingen voor netwerk isolatie
 
-* Beveilig de cognitieve service resource van open bare toegang door [het virtuele netwerk te configureren](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-virtual-networks?tabs=portal).
+* Beveilig de cognitieve service resource van open bare toegang door [het virtuele netwerk te configureren](../../cognitive-services-virtual-networks.md?tabs=portal).
 * App Service van open bare toegang beveiligen (QnA runtime):
     * Alleen verkeer van de cognitieve service Ip's toestaan. Deze zijn al opgenomen in de service tags ' CognitiveServicesManagement '. Dit is vereist voor het ontwerpen van Api's (Create/update KB) om de app service te kunnen aanroepen en Azure Search-service dienovereenkomstig bij te werken.
     * Zorg ervoor dat u ook andere toegangs punten als bot-service, QnA Maker-Portal (mogelijk uw Corpnet), enzovoort kunt gebruiken. voor de voor spelling ' GenerateAnswer ' API-toegang.
-    * Bekijk [meer informatie over service tags.](https://docs.microsoft.com/azure/virtual-network/service-tags-overview)
+    * Bekijk [meer informatie over service tags.](../../../virtual-network/service-tags-overview.md)
 
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-versie)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
 De resource naam voor de QnA Maker Managed (preview)-resource, zoals `qna-westus-f0-b` , wordt ook gebruikt om de andere resources een naam te geven.
 
@@ -309,7 +309,7 @@ In QnA Maker Managed (preview) kunnen zowel het beheer als de Voorspellings Serv
 
 Uw QnA Maker Managed (preview)-service behandelt twee soorten sleutels: het **ontwerpen van sleutels** en **Azure Cognitive Search sleutels** die worden gebruikt voor toegang tot de service in het abonnement van de klant.
 
-Als u op zoek bent naar uw **abonnements sleutel** , [is de terminologie gewijzigd](#subscription-keys).
+Als u op zoek bent naar uw **abonnements sleutel**, [is de terminologie gewijzigd](#subscription-keys).
 
 Gebruik deze sleutels bij het indienen van aanvragen bij de service via Api's.
 
@@ -317,8 +317,8 @@ Gebruik deze sleutels bij het indienen van aanvragen bij de service via Api's.
 
 |Naam|Locatie|Doel|
 |--|--|--|
-|Sleutel ontwerpen|[Azure-portal](https://azure.microsoft.com/free/cognitive-services/)|Deze sleutels worden gebruikt voor toegang tot de Api's van de [QnA Maker Management-service](https://go.microsoft.com/fwlink/?linkid=2092179). Met deze Api's kunt u de vragen en antwoorden in uw Knowledge Base bewerken en uw kennis database publiceren. Deze sleutels worden gemaakt wanneer u een nieuwe QnA Maker-service maakt.<br><br>Deze sleutels vindt u op de pagina **sleutels** van de **Cognitive Services** resource.|
-|Azure Cognitive Search-beheer sleutel|[Azure-portal](https://docs.microsoft.com/azure/search/search-security-api-keys)|Deze sleutels worden gebruikt om te communiceren met de Azure cognitieve Search-service die is geïmplementeerd in het Azure-abonnement van de gebruiker. Wanneer u een Azure cognitieve zoek opdracht koppelt aan de service QnA Maker Managed (preview), wordt de beheer sleutel automatisch door gegeven aan de QnA Maker-service. <br><br>Op de pagina **sleutels** vindt u deze sleutels op de **Azure Cognitive Search** -resource.|
+|Sleutel ontwerpen|[Azure-portal](https://azure.microsoft.com/free/cognitive-services/)|Deze sleutels worden gebruikt voor toegang tot de Api's van de [QnA Maker Management-service](/rest/api/cognitiveservices/qnamaker4.0/knowledgebase). Met deze Api's kunt u de vragen en antwoorden in uw Knowledge Base bewerken en uw kennis database publiceren. Deze sleutels worden gemaakt wanneer u een nieuwe QnA Maker-service maakt.<br><br>Deze sleutels vindt u op de pagina **sleutels** van de **Cognitive Services** resource.|
+|Azure Cognitive Search-beheer sleutel|[Azure-portal](../../../search/search-security-api-keys.md)|Deze sleutels worden gebruikt om te communiceren met de Azure cognitieve Search-service die is geïmplementeerd in het Azure-abonnement van de gebruiker. Wanneer u een Azure cognitieve zoek opdracht koppelt aan de service QnA Maker Managed (preview), wordt de beheer sleutel automatisch door gegeven aan de QnA Maker-service. <br><br>Op de pagina **sleutels** vindt u deze sleutels op de **Azure Cognitive Search** -resource.|
 
 ### <a name="subscription-keys"></a>Abonnementssleutels
 
@@ -328,13 +328,12 @@ U moet weten welke sleutel u wilt zoeken met beinformatie over de toegang tot de
 
 ### <a name="recommended-settings-for-network-isolation"></a>Aanbevolen instellingen voor netwerk isolatie 
 
-Beveilig de cognitieve service resource van open bare toegang door [het virtuele netwerk te configureren](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-virtual-networks?tabs=portal).
+Beveilig de cognitieve service resource van open bare toegang door [het virtuele netwerk te configureren](../../cognitive-services-virtual-networks.md?tabs=portal).
 
 ---
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over de QnA Maker [Knowledge Base](knowledge-base.md)
+* Meer informatie over de QnA Maker [Knowledge Base](../index.yml)
 * Inzicht in de [levens cyclus van een Knowledge Base](development-lifecycle-knowledge-base.md)
 * [Limieten](../limits.md) voor service-en Knowledge bases controleren
-

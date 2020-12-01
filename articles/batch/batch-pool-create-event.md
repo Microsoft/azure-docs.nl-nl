@@ -3,12 +3,12 @@ title: Gebeurtenis Azure Batch groep maken
 description: Verwijzing voor de gebeurtenis batch-pool Create die wordt verzonden zodra een pool is gemaakt. De inhoud van het logboek bevat algemene informatie over de groep.
 ms.topic: reference
 ms.date: 10/08/2020
-ms.openlocfilehash: db7440df4303857d4c4a6533bc06b5f248c75da3
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 03c656ea2698ee0e61c1ddb903fcc10df9d3044b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92102945"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352385"
 ---
 # <a name="pool-create-event"></a>Gebeurtenis pool maken
 
@@ -49,11 +49,11 @@ ms.locfileid: "92102945"
 }
 ```
 
-|Element|Type|Notities|
+|Element|Type|Opmerkingen|
 |-------------|----------|-----------|
 |`id`|Tekenreeks|De ID van de pool.|
 |`displayName`|Tekenreeks|De weergave naam van de pool.|
-|`vmSize`|Tekenreeks|De grootte van de virtuele machines in de groep. Alle virtuele machines in een groep hebben dezelfde grootte. <br/><br/> Zie [grootten voor Cloud Services](../cloud-services/cloud-services-sizes-specs.md)voor informatie over de beschik bare grootten van virtuele machines voor Cloud Services Pools (Pools die zijn gemaakt met cloudServiceConfiguration). Batch ondersteunt alle Cloud Services VM-grootten behalve `ExtraSmall` .<br/><br/> Zie [grootten voor virtual machines](../virtual-machines/sizes.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) (Linux) of [grootten voor virtual machines](../virtual-machines/sizes.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json) (Windows) voor meer informatie over de beschik bare VM-grootten voor Pools met installatie kopieën van de virtual machines Marketplace (Pools die zijn gemaakt met virtualMachineConfiguration). Batch ondersteunt alle Azure VM-groottes met uitzondering van `STANDARD_A0` en die met Premium Storage (de serie `STANDARD_GS`, `STANDARD_DS` en `STANDARD_DSV2`).|
+|`vmSize`|Tekenreeks|De grootte van de virtuele machines in de groep. Alle virtuele machines in een groep hebben dezelfde grootte. <br/><br/> Zie [grootten voor Cloud Services](../cloud-services/cloud-services-sizes-specs.md)voor informatie over de beschik bare grootten van virtuele machines voor Cloud Services Pools (Pools die zijn gemaakt met cloudServiceConfiguration). Batch ondersteunt alle Cloud Services VM-grootten behalve `ExtraSmall` .<br/><br/> Zie [grootten voor virtual machines](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) (Linux) of [grootten voor virtual machines](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) (Windows) voor meer informatie over de beschik bare VM-grootten voor Pools met installatie kopieën van de virtual machines Marketplace (Pools die zijn gemaakt met virtualMachineConfiguration). Batch ondersteunt alle Azure VM-groottes met uitzondering van `STANDARD_A0` en die met Premium Storage (de serie `STANDARD_GS`, `STANDARD_DS` en `STANDARD_DSV2`).|
 |`imageType`|Tekenreeks|De implementatie methode voor de installatie kopie. Ondersteunde waarden zijn `virtualMachineConfiguration` of `cloudServiceConfiguration`|
 |[`cloudServiceConfiguration`](#bk_csconf)|Complex type|De Cloud service configuratie voor de groep.|
 |[`virtualMachineConfiguration`](#bk_vmconf)|Complex type|De virtuele-machine configuratie voor de groep.|
@@ -69,14 +69,14 @@ ms.locfileid: "92102945"
 
 ###  <a name="cloudserviceconfiguration"></a><a name="bk_csconf"></a> cloudServiceConfiguration
 
-|Elementnaam|Type|Notities|
+|Elementnaam|Type|Opmerkingen|
 |------------------|----------|-----------|
 |`osFamily`|Tekenreeks|De Azure-gast besturingssysteem familie moet worden geïnstalleerd op de virtuele machines in de groep.<br /><br /> Mogelijke waarden zijn:<br /><br /> **2** : OS-familie 2, gelijk aan Windows Server 2008 R2 SP1.<br /><br /> **3** : OS-familie 3, gelijk aan Windows Server 2012.<br /><br /> **4** : OS-familie 4, gelijk aan Windows Server 2012 R2.<br /><br /> Zie [versies van Azure Guest OS](../cloud-services/cloud-services-guestos-update-matrix.md#releases)voor meer informatie.|
 |`targetOSVersion`|Tekenreeks|De versie van het Azure-gast besturingssysteem die moet worden geïnstalleerd op de virtuele machines in de groep.<br /><br /> De standaard waarde is **\*** de meest recente versie van het besturings systeem voor de opgegeven familie.<br /><br /> Zie [versies van Azure Guest OS](../cloud-services/cloud-services-guestos-update-matrix.md#releases)voor andere toegestane waarden.|
 
 ###  <a name="virtualmachineconfiguration"></a><a name="bk_vmconf"></a> virtualMachineConfiguration
 
-|Elementnaam|Type|Notities|
+|Elementnaam|Type|Opmerkingen|
 |------------------|----------|-----------|
 |[`imageReference`](#bk_imgref)|Complex type|Hiermee geeft u informatie op over het platform of de Marketplace-installatie kopie die moet worden gebruikt.|
 |`nodeAgentId`|Tekenreeks|De SKU van de batch-knooppunt agent die is ingericht op het reken knooppunt.|
@@ -84,7 +84,7 @@ ms.locfileid: "92102945"
 
 ###  <a name="imagereference"></a><a name="bk_imgref"></a> imageReference
 
-|Elementnaam|Type|Notities|
+|Elementnaam|Type|Opmerkingen|
 |------------------|----------|-----------|
 |`publisher`|Tekenreeks|De uitgever van de installatie kopie.|
 |`offer`|Tekenreeks|De aanbieding van de installatie kopie.|
@@ -93,12 +93,12 @@ ms.locfileid: "92102945"
 
 ###  <a name="windowsconfiguration"></a><a name="bk_winconf"></a> windowsConfiguration
 
-|Elementnaam|Type|Notities|
+|Elementnaam|Type|Opmerkingen|
 |------------------|----------|-----------|
-|`enableAutomaticUpdates`|Boolean|Hiermee wordt aangegeven of de virtuele machine is ingeschakeld voor automatische updates. Als deze eigenschap niet is opgegeven, is de standaard waarde True.|
+|`enableAutomaticUpdates`|Booleaans|Hiermee wordt aangegeven of de virtuele machine is ingeschakeld voor automatische updates. Als deze eigenschap niet is opgegeven, is de standaard waarde True.|
 
 ###  <a name="networkconfiguration"></a><a name="bk_netconf"></a> networkConfiguration
 
-|Elementnaam|Type|Notities|
+|Elementnaam|Type|Opmerkingen|
 |------------------|--------------|----------|
 |`subnetId`|Tekenreeks|Hiermee geeft u de resource-id op van het subnet waarin de reken knooppunten van de pool worden gemaakt.|

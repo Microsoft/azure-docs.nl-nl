@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/09/2020
 ms.author: mlottner
-ms.openlocfilehash: 1933e60892430b907e070ea04f39d8acc86ddac2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4f6d9f670a1b85e55ccc8f6cb18645b92927221a
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90935329"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351636"
 ---
 # <a name="azure-defender-for-iot-edge-security-module"></a>Beveiligings module voor Azure Defender voor IoT Edge
 
-[Azure IOT Edge](https://docs.microsoft.com/azure/iot-edge/) biedt krachtige mogelijkheden voor het beheren en uitvoeren van zakelijke werk stromen aan de rand.
+[Azure IOT Edge](../iot-edge/index.yml) biedt krachtige mogelijkheden voor het beheren en uitvoeren van zakelijke werk stromen aan de rand.
 Het belangrijkste deel dat IoT Edge speelt in IoT-omgevingen, maakt het bijzonder aantrekkelijk voor kwaad aardige actors.
 
 Defender voor IoT Security module biedt een uitgebreide beveiligings oplossing voor uw IoT Edge-apparaten.
@@ -39,7 +39,7 @@ Defender voor IoT Security module voor IoT Edge biedt de volgende functies:
 
 - Analyse van IoT Edge implementatie manifesten.
 
-- Voegt onbewerkte beveiligings gebeurtenissen samen in berichten die via [IOT Edge hub](https://docs.microsoft.com/azure/iot-edge/iot-edge-runtime#iot-edge-hub)worden verzonden.
+- Voegt onbewerkte beveiligings gebeurtenissen samen in berichten die via [IOT Edge hub](../iot-edge/iot-edge-runtime.md#iot-edge-hub)worden verzonden.
 
 - Verwijder de configuratie door middel van het gebruik van de beveiligings module dubbele.
 

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 10/07/2020
-ms.openlocfilehash: 1f62623758f683e5fa0580816f1497df3ab23637
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: d5103cbbeb5a8ab12f9ce497ee4ed227ca180728
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95748866"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350293"
 ---
 # <a name="archived-release-notes"></a>Gearchiveerde releaseopmerkingen
 
@@ -30,14 +30,14 @@ Deze versie is van toepassing op zowel HDInsight 3,6 als HDInsight 4,0. HDInsigh
 HDInsight Identity Broker (HIB) die OAuth-verificatie voor ESP-clusters mogelijk maakt, is nu algemeen beschikbaar in deze release. HIB-clusters die zijn gemaakt na deze release, hebben de nieuwste HIB-functies:
 - Hoge Beschik baarheid (HA)
 - Ondersteuning voor Multi-Factor Authentication (MFA)
-- Federatieve gebruikers aanmelden zonder wachtwoord-hash-synchronisatie met AAD-DS Zie [HIB-documentatie](https://docs.microsoft.com/azure/hdinsight/domain-joined/identity-broker)voor meer informatie.
+- Federatieve gebruikers aanmelden zonder wachtwoord-hash-synchronisatie met AAD-DS Zie [HIB-documentatie](./domain-joined/identity-broker.md)voor meer informatie.
 
 #### <a name="moving-to-azure-virtual-machine-scale-sets"></a>Verplaatsen naar schaal sets voor virtuele Azure-machines
-HDInsight maakt nu gebruik van virtuele machines van Azure om het cluster in te richten. Vanaf deze release wordt de service geleidelijk naar [virtuele-machine schaal sets van Azure](https://docs.microsoft.com/azure/virtual-machine-scale-sets/overview)gemigreerd. Het hele proces kan maanden duren. Nadat uw regio's en abonnementen zijn gemigreerd, worden nieuw gemaakte HDInsight-clusters uitgevoerd op virtuele-machine schaal sets zonder klant acties. Er wordt geen breuk wijziging verwacht.
+HDInsight maakt nu gebruik van virtuele machines van Azure om het cluster in te richten. Vanaf deze release wordt de service geleidelijk naar [virtuele-machine schaal sets van Azure](../virtual-machine-scale-sets/overview.md)gemigreerd. Het hele proces kan maanden duren. Nadat uw regio's en abonnementen zijn gemigreerd, worden nieuw gemaakte HDInsight-clusters uitgevoerd op virtuele-machine schaal sets zonder klant acties. Er wordt geen breuk wijziging verwacht.
 
 ### <a name="deprecation"></a>Afschaffing
 #### <a name="deprecation-of-hdinsight-36-ml-services-cluster"></a>Afschaffing van HDInsight 3,6 ML Services-cluster
-Het cluster type van HDInsight 3,6 ML-Services is de eind datum van de ondersteuning van december 31 2020. Klanten maken geen nieuwe 3,6 ML-clusters na december 31 2020. Bestaande clusters worden uitgevoerd zonder de ondersteuning van micro soft. Controleer [hier](https://docs.microsoft.com/azure/hdinsight/hdinsight-component-versioning#available-versions)het ondersteunings verloop voor HDInsight-versies en cluster typen.
+Het cluster type van HDInsight 3,6 ML-Services is de eind datum van de ondersteuning van december 31 2020. Klanten maken geen nieuwe 3,6 ML-clusters na december 31 2020. Bestaande clusters worden uitgevoerd zonder de ondersteuning van micro soft. Controleer [hier](./hdinsight-component-versioning.md#available-versions)het ondersteunings verloop voor HDInsight-versies en cluster typen.
 
 #### <a name="disabled-vm-sizes"></a>Uitgeschakelde VM-grootten
 Vanaf november 16 2020 worden nieuwe klanten die clusters maken met behulp van standand_A8, standand_A9 standand_A10 en standand_A11 VM-grootten geblokkeerd door HDInsight. Bestaande klanten die deze VM-grootten in de afgelopen drie maanden hebben gebruikt, worden niet beïnvloed. Formulier wordt gestart 9 2021. HDInsight blokkeert alle klanten die clusters maken met behulp van standand_A8, standand_A9, standand_A10 en standand_A11 VM-grootten. Bestaande clusters worden uitgevoerd. Overweeg om over te stappen op HDInsight 4,0 om mogelijke onderbreking van systeem/ondersteuning te voor komen.
@@ -52,7 +52,7 @@ De volgende wijzigingen worden uitgevoerd in toekomstige releases.
 HDInsight biedt geen ondersteuning voor het aanpassen van de grootte van Zookeeper-knoop punten voor de cluster typen Spark, Hadoop en ML Services. De standaard instelling is dat de grootte van de virtuele machines van/a2 wordt A2_v2, die gratis worden meegeleverd. In de aanstaande release kunt u de grootte van een virtuele Zookeeper-machine selecteren die het meest geschikt is voor uw scenario. Zookeeper-knoop punten met een andere grootte dan A2_v2/a2 worden in rekening gebracht. A2_v2 en a2 virtuele machines worden nog gratis beschikbaar gesteld.
 
 #### <a name="default-cluster-version-will-be-changed-to-40"></a>De standaard versie van het cluster wordt gewijzigd in 4,0
-Vanaf februari 2021 wordt de standaard versie van het HDInsight-cluster gewijzigd van 3,6 in 4,0. Zie [beschik bare versies](https://docs.microsoft.com/azure/hdinsight/hdinsight-component-versioning#available-versions)voor meer informatie over de beschik bare versies. Meer informatie over wat er nieuw is in [HDInsight 4,0](https://docs.microsoft.com/azure/hdinsight/hdinsight-version-release)
+Vanaf februari 2021 wordt de standaard versie van het HDInsight-cluster gewijzigd van 3,6 in 4,0. Zie [beschik bare versies](./hdinsight-component-versioning.md#available-versions)voor meer informatie over de beschik bare versies. Meer informatie over wat er nieuw is in [HDInsight 4,0](./hdinsight-version-release.md)
 
 #### <a name="hdinsight-36-end-of-support-on-june-30-2021"></a>HDInsight 3,6 end of support op 30 2021 juni
 HDInsight 3,6 wordt beëindigd. Het formulier wordt gestart 30 2021, klanten kunnen geen nieuwe HDInsight 3,6-clusters maken. Bestaande clusters worden uitgevoerd zonder de ondersteuning van micro soft. Overweeg om over te stappen op HDInsight 4,0 om mogelijke onderbreking van systeem/ondersteuning te voor komen.
@@ -60,7 +60,7 @@ HDInsight 3,6 wordt beëindigd. Het formulier wordt gestart 30 2021, klanten kun
 ### <a name="bug-fixes"></a>Opgeloste fouten
 HDInsight blijft de betrouw baarheid en prestaties van het cluster verbeteren. 
 #### <a name="fix-issue-for-restarting-vms-in-cluster"></a>Probleem oplossen voor het opnieuw starten van Vm's in het cluster
-Het probleem voor het opnieuw starten van Vm's in het cluster is opgelost. u kunt [Power shell of rest API opnieuw starten knoop punten in het cluster](https://docs.microsoft.com/azure/hdinsight/cluster-reboot-vm) .
+Het probleem voor het opnieuw starten van Vm's in het cluster is opgelost. u kunt [Power shell of rest API opnieuw starten knoop punten in het cluster](./cluster-reboot-vm.md) .
 
 ### <a name="component-version-change"></a>Onderdeel versie wijzigen
 Er is geen wijziging van de onderdeel versie voor deze versie. In [dit document](./hdinsight-component-versioning.md)vindt u de huidige versie van de onderdelen voor hdinsight 4,0 en hdinsight 3,6.
@@ -109,7 +109,7 @@ HDInsight ondersteunt nu Premium ADLS Gen2 als primair opslag account voor HDIns
 #### <a name="kafka-partition-distribution-on-azure-fault-domains"></a>Distributie van Kafka-partities in azure-fout domeinen
 Een foutdomein is een logische groepering van de onderliggende hardware in een Azure-datacenter. Elk foutdomein deelt een algemene voedingsbron en netwerkswitch. Voordat HDInsight Kafka alle partitie replica's in hetzelfde fout domein kan opslaan. Vanaf deze release ondersteunt HDInsight nu automatisch de distributie van Kafka-partities op basis van Azure-fout domeinen. 
 
-#### <a name="encryption-in-transit"></a>Versleuteling tijdens overdracht
+#### <a name="encryption-in-transit"></a>Versleuteling 'in transit'
 Klanten kunnen versleuteling in transit tussen cluster knooppunten inschakelen met behulp van IPSec-versleuteling met door het platform beheerde sleutels. Deze optie kan worden ingeschakeld op het moment dat het cluster wordt gemaakt. Zie meer informatie over [het inschakelen van versleuteling tijdens de overdracht](./domain-joined/encryption-in-transit.md).
 
 #### <a name="encryption-at-host"></a>Versleuteling op de host

@@ -11,19 +11,19 @@ ms.subservice: bing-web-search
 ms.topic: conceptual
 ms.date: 07/08/2019
 ms.author: scottwhi
-ms.openlocfilehash: f4f001cdeb37ff760a01ac48d7efb41c0437fe5f
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: 571314009b6f58e5c2ab6aac02cfebc82c53f42f
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94380248"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351858"
 ---
 # <a name="filtering-the-answers-that-the-search-response-includes"></a>De antwoorden filteren die het zoek antwoord bevat  
 
 > [!WARNING]
-> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](https://aka.ms/cogsvcs/bingmove) is beschreven.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
 > Bing Search-API's die zijn ingericht met Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
-> Raadpleeg [Bing Search Services](https://aka.ms/cogsvcs/bingmigration) voor migratie-instructies.
+> Raadpleeg [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
 Wanneer u een query op het web uitvoert, retourneert Bing alle relevante inhoud die wordt gevonden voor de zoek opdracht. Als de zoek query bijvoorbeeld ' zeil-en dinghies ' is, kan het antwoord de volgende antwoorden bevatten:
 
@@ -136,7 +136,7 @@ De resultaten kunnen webpagina's bevatten die buiten de opgegeven periode vallen
 
 ## <a name="limiting-the-number-of-answers-in-the-response"></a>Het aantal antwoorden in het antwoord beperken
 
-Bing kan meerdere antwoord typen retour neren in het JSON-antwoord. Als u bijvoorbeeld query's gaat uitvoeren op *dinghies* , kan Bing retour neren `webpages` , `images` , `videos` en `relatedSearches` .
+Bing kan meerdere antwoord typen retour neren in het JSON-antwoord. Als u bijvoorbeeld query's gaat uitvoeren op *dinghies*, kan Bing retour neren `webpages` , `images` , `videos` en `relatedSearches` .
 
 ```json
 {

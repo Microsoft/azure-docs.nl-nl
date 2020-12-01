@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 08/04/2020
-ms.openlocfilehash: 3674c6a0579eb901cc490d08bb8a4893296884c4
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 0041779abcd97901fb9315125a287a1d45cff133
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96020650"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350106"
 ---
 # <a name="tutorial-migrate-sql-server-to-an-azure-sql-managed-instance-online-using-dms"></a>Zelfstudie: SQL Server online migreren naar een Azure SQL Managed Instance met behulp van DMS
 
@@ -220,7 +220,7 @@ Nadat er een exemplaar van de service is gemaakt, zoekt u het exemplaar in de Az
     ![Migratie-instellingen configureren](media/tutorial-sql-server-to-managed-instance-online/dms-configure-migration-settings4.png)
 
     > [!NOTE]
-    > Als Azure Database Migration Service de fout 'Systeemfout 53' of 'Systeemfout 57' weergeeft, kan dit gebeuren omdat Azure Database Migration Service geen toegang heeft tot de Azure-bestandsshare. Als een van deze fouten optreedt, moet u toegang verlenen tot het opslagaccount vanuit het virtuele netwerk. Dit kan met behulp van [deze instructies](../storage/common/storage-network-security.md?toc=%252fazure%252fvirtual-network%252ftoc.json#grant-access-from-a-virtual-network).
+    > Als Azure Database Migration Service de fout 'Systeemfout 53' of 'Systeemfout 57' weergeeft, kan dit gebeuren omdat Azure Database Migration Service geen toegang heeft tot de Azure-bestandsshare. Als een van deze fouten optreedt, moet u toegang verlenen tot het opslagaccount vanuit het virtuele netwerk. Dit kan met behulp van [deze instructies](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json#grant-access-from-a-virtual-network).
 
     > [!IMPORTANT]
     > Als de functionaliteit voor loopback-controle is ingeschakeld en de bron SQL-server en de bestandsshare zich op dezelfde computer bevinden, kan de bron niet via FQDN toegang krijgen tot de bestandsshare. U kunt dit probleem oplossen door loopback-controle uit te schakelen met behulp van de instructies [hier](https://support.microsoft.com/help/926642/error-message-when-you-try-to-access-a-server-locally-by-using-its-fqd).

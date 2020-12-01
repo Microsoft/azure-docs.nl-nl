@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: how-to
 ms.date: 02/06/2020
 ms.author: duau
-ms.openlocfilehash: ac6fe619fc1c65b9ced18227d08cde50997eb7d7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 57c439cf8ac52d93d231d6ff33f72a5a942dec6a
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89395261"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351602"
 ---
 # <a name="migrate-expressroute-associated-virtual-networks-from-classic-to-resource-manager"></a>ExpressRoute-gekoppelde virtuele netwerken migreren van klassiek naar Resource Manager
 
@@ -29,10 +29,10 @@ In dit artikel wordt uitgelegd hoe u ExpressRoute-gekoppelde virtuele netwerken 
 * Zorg ervoor dat u een resource groep hebt die is gemaakt in het Resource Manager-implementatie model.
 * Raadpleeg de volgende documentatie over resource migratie:
 
-    * [Platformondersteunde migratie van IaaS-resources van het klassieke implementatiemodel naar Azure Resource Manager](../virtual-machines/windows/migration-classic-resource-manager-overview.md)
+    * [Platformondersteunde migratie van IaaS-resources van het klassieke implementatiemodel naar Azure Resource Manager](../virtual-machines/migration-classic-resource-manager-overview.md)
     * [Technische details over door platforms ondersteunde migratie van klassiek naar Azure Resource Manager](../virtual-machines/migration-classic-resource-manager-deep-dive.md)
     * [Veelgestelde vragen: door het platform ondersteunde migratie van IaaS-resources van klassiek naar Azure Resource Manager](../virtual-machines/migration-classic-resource-manager-faq.md)
-    * [Bekijk de meeste veelvoorkomende migratie fouten en-oplossingen](../virtual-machines/windows/migration-classic-resource-manager-errors.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+    * [Bekijk de meeste veelvoorkomende migratie fouten en-oplossingen](../virtual-machines/migration-classic-resource-manager-errors.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 
 ## <a name="supported-and-unsupported-scenarios"></a>Ondersteunde en niet-ondersteunde scenario's
 
@@ -82,7 +82,7 @@ In deze sectie worden de stappen beschreven voor het migreren van een virtueel n
    ```
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Platformondersteunde migratie van IaaS-resources van het klassieke implementatiemodel naar Azure Resource Manager](../virtual-machines/windows/migration-classic-resource-manager-overview.md)
+* [Platformondersteunde migratie van IaaS-resources van het klassieke implementatiemodel naar Azure Resource Manager](../virtual-machines/migration-classic-resource-manager-overview.md)
 * [Technische details over door platforms ondersteunde migratie van klassiek naar Azure Resource Manager](../virtual-machines/migration-classic-resource-manager-deep-dive.md)
 * [Veelgestelde vragen: door het platform ondersteunde migratie van IaaS-resources van klassiek naar Azure Resource Manager](../virtual-machines/migration-classic-resource-manager-faq.md)
-* [Bekijk de meeste veelvoorkomende migratie fouten en-oplossingen](../virtual-machines/windows/migration-classic-resource-manager-errors.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+* [Bekijk de meeste veelvoorkomende migratie fouten en-oplossingen](../virtual-machines/migration-classic-resource-manager-errors.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)

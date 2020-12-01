@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/15/2020
-ms.openlocfilehash: 66c9a3afb91aaff448d6eadc86175d8515be766c
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: fac26c616c977eedc466f004a9455297ec995fb8
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94889079"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352538"
 ---
 # <a name="secure-and-isolate-azure-hdinsight-clusters-with-private-link-preview"></a>Azure HDInsight-clusters beveiligen en isoleren met een persoonlijke koppeling (preview-versie)
 
@@ -102,10 +102,10 @@ Voor een volledige sjabloon met veel van de beveiligings functies van HDInsight-
 
 ### <a name="use-azure-powershell"></a>Azure PowerShell gebruiken
 
-Zie het [voor beeld voor](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightcluster?view=azps-5.1.0#example-4--create-an-azure-hdinsight-cluster-with-relay-outbound-and-private-link-feature)het gebruik van Power shell.
+Zie het [voor beeld voor](/powershell/module/az.hdinsight/new-azhdinsightcluster?view=azps-5.1.0#example-4--create-an-azure-hdinsight-cluster-with-relay-outbound-and-private-link-feature)het gebruik van Power shell.
 
 ### <a name="use-azure-cli"></a>Azure CLI gebruiken
-Zie het [voor beeld als](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az_hdinsight_create-examples)u Azure cli wilt gebruiken.
+Zie het [voor beeld als](/cli/azure/hdinsight?view=azure-cli-latest#az_hdinsight_create-examples)u Azure cli wilt gebruiken.
 
 ## <a name="next-steps"></a>Volgende stappen
 

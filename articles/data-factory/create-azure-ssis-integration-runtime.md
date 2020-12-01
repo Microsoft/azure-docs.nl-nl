@@ -11,12 +11,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
-ms.openlocfilehash: effa0d3ba9f7098b691605bfbd76bff9ea3d5e66
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 7936699832a09f535729c42b12fec2d5c49a11a0
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023428"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350939"
 ---
 # <a name="create-an-azure-ssis-integration-runtime-in-azure-data-factory"></a>Een Azure SSIS Integration runtime in Azure Data Factory maken
 
@@ -167,7 +167,7 @@ Als u het selectievakje inschakelt, moet u de volgende stappen uitvoeren om uw e
 Selecteer **Verbinding testen** wanneer dit van toepassing is en selecteer **Volgende**.
 
 > [!NOTE]
-   > Als u Azure SQL Database Server gebruikt om SSISDB te hosten, worden uw gegevens standaard opgeslagen in geografisch redundante opslag voor back-ups. Als u niet wilt dat uw gegevens worden gerepliceerd in andere regio's, volgt u de instructies voor het [configureren van de redundantie van back-upopslag met behulp van Power shell](https://docs.microsoft.com/azure/azure-sql/database/automated-backups-overview?tabs=single-database#configure-backup-storage-redundancy-by-using-powershell).
+   > Als u Azure SQL Database Server gebruikt om SSISDB te hosten, worden uw gegevens standaard opgeslagen in geografisch redundante opslag voor back-ups. Als u niet wilt dat uw gegevens worden gerepliceerd in andere regio's, volgt u de instructies voor het [configureren van de redundantie van back-upopslag met behulp van Power shell](../azure-sql/database/automated-backups-overview.md?tabs=single-database#configure-backup-storage-redundancy-by-using-powershell).
    
 ##### <a name="creating-azure-ssis-ir-package-stores"></a>Azure-SSIS IR-pakketarchieven maken
 

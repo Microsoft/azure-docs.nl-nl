@@ -11,19 +11,19 @@ ms.subservice: bing-web-search
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: scottwhi
-ms.openlocfilehash: 39848bcaded1669c6a6efd5b649ecf8e8343a596
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: d930543671a5328d76a38aa7e1b421c111e89e39
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94381113"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349517"
 ---
 # <a name="upgrade-from-bing-web-search-api-v5-to-v7"></a>Upgrade van Bing Webzoekopdrachten-API v5 naar v7
 
 > [!WARNING]
-> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](https://aka.ms/cogsvcs/bingmove) is beschreven.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
 > Bing Search-API's die zijn ingericht met Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
-> Raadpleeg [Bing Search Services](https://aka.ms/cogsvcs/bingmigration) voor migratie-instructies.
+> Raadpleeg [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
 Deze upgrade handleiding bevat de wijzigingen tussen versie 5 en versie 7 van de Bing Webzoekopdrachten-API. Gebruik deze hand leiding om u te helpen bij het identificeren van de onderdelen van uw toepassing die u moet bijwerken om versie 7 te gebruiken.
 
@@ -31,7 +31,7 @@ Deze upgrade handleiding bevat de wijzigingen tussen versie 5 en versie 7 van de
 
 ### <a name="endpoints"></a>Eindpunten
 
-- Het versie nummer van het eind punt is gewijzigd van v5 naar v7. Bijvoorbeeld https: \/ \/ API.Cognitive.Microsoft.com/Bing/ **v 7.0** /Search.
+- Het versie nummer van het eind punt is gewijzigd van v5 naar v7. Bijvoorbeeld https: \/ \/ API.Cognitive.Microsoft.com/Bing/**v 7.0**/Search.
 
 ### <a name="error-response-objects-and-error-codes"></a>Fout bericht objecten en fout codes
 
@@ -86,7 +86,7 @@ Geblokkeerd|InvalidRequest. blocked
 
 - De query parameter [answerCount](/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#answercount) is toegevoegd. Gebruik deze para meter om het aantal antwoorden op te geven dat u wilt dat het antwoord bevat. De antwoorden worden gekozen op basis van de rang schikking. Als u deze para meter bijvoorbeeld instelt op drie (3), bevat het antwoord de eerste drie geclassificeerde antwoorden.  
 
-- De [promote](/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#promote) query-para meter is toegevoegd. Gebruik deze para meter `answerCount` om expliciet een of meer antwoord typen toe te voegen, ongeacht hun positie. Als u bijvoorbeeld Video's en afbeeldingen in het antwoord wilt promoten, stelt u promo veren in op *Video's, afbeeldingen*. De lijst met antwoorden die u wilt promoten, telt niet op basis van de `answerCount` limiet. Als bijvoorbeeld `answerCount` 2 is en `promote` is ingesteld op *Video's, installatie kopieën* , kan de reactie webpagina's, nieuws, Video's en afbeeldingen bevatten.
+- De [promote](/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#promote) query-para meter is toegevoegd. Gebruik deze para meter `answerCount` om expliciet een of meer antwoord typen toe te voegen, ongeacht hun positie. Als u bijvoorbeeld Video's en afbeeldingen in het antwoord wilt promoten, stelt u promo veren in op *Video's, afbeeldingen*. De lijst met antwoorden die u wilt promoten, telt niet op basis van de `answerCount` limiet. Als bijvoorbeeld `answerCount` 2 is en `promote` is ingesteld op *Video's, installatie kopieën*, kan de reactie webpagina's, nieuws, Video's en afbeeldingen bevatten.
 
 ### <a name="object-changes"></a>Object wijzigingen
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: liud
 ms.reviewer: pimorano
-ms.openlocfilehash: 111b2b5b660133c20afdb3c56e1c3e3ed607398c
-ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
+ms.openlocfilehash: b6cadbf5c3a33c1a954a47f37b33ad8703f40b69
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96297001"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350735"
 ---
 # <a name="source-control-in-azure-synapse-studio"></a>Broncode beheer in azure Synapse Studio
 
@@ -215,7 +215,7 @@ Als de publicatie vertakking niet is gesynchroniseerd met de vertakking voor sam
 
 1. Configureer Git opnieuw met dezelfde instellingen, maar zorg ervoor dat **bestaande resources importeren in opslag plaats** is ingeschakeld en kies dezelfde vertakking.  
 
-1. Een pull-aanvraag maken om de wijzigingen aan de collaboration Branch samen te voegen 
+1. Een pull-aanvraag maken om de wijzigingen in de samenwerkingsvertakking samen te voegen 
 
 ## <a name="unsupported-features"></a>Niet-ondersteunde functies
 

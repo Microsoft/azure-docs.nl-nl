@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/05/2019
 ms.author: kenwith
 ms.reviewer: paulgarn
-ms.openlocfilehash: 6e7e4dd6383b1f264ff2da7893d9f86a3708217d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 47b036f558628d51242a78c00d2ee17332816d25
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89227913"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348756"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-saml-bearer-assertion-flow"></a>Micro soft Identity platform en OAuth 2,0-bevestiging stroom voor SAML Bearer
 Met de OAuth 2,0-bevestigings stroom voor SAML Bearer kunt u een OAuth-toegangs token aanvragen met behulp van een SAML-verklaring wanneer een client een bestaande vertrouwens relatie moet gebruiken. De hand tekening die wordt toegepast op de SAML-verklaring biedt verificatie van de geautoriseerde app. Een SAML-verklaring is een XML-beveiligings token dat is uitgegeven door een id-provider en wordt gebruikt door een service provider. De service provider vertrouwt op basis van de inhoud om het onderwerp van de bewering te identificeren voor beveiligings doeleinden.
@@ -32,7 +32,7 @@ De OAuth-Bearer-bevestigings stroom wordt alleen ondersteund voor gebruikers die
 ![OAuth-stroom](./media/v2-saml-bearer-assertion/1.png)
 
 ## <a name="call-graph-using-saml-bearer-assertion"></a>Grafiek aanroepen met behulp van een SAML Bearer-bevestiging
-Laat ons nu weten hoe we de SAML-bewering programmatisch kunnen ophalen. Deze aanpak wordt getest met ADFS. Dit werkt echter met een id-provider die het retour neren van SAML-beweringen programmatisch ondersteunt. Het basis proces is: een SAML-bevestiging ophalen, een toegangs Token ophalen en toegang krijgen tot Microsoft Graph.
+Laat ons nu weten hoe we de SAML-bewering programmatisch kunnen ophalen. Deze aanpak wordt getest met ADFS. Dit werkt echter met een id-provider die het retour neren van de SAML-bewering programmatisch ondersteunt. Het basis proces is: een SAML-bevestiging ophalen, een toegangs Token ophalen en toegang krijgen tot Microsoft Graph.
 
 ### <a name="prerequisites"></a>Vereisten
 
@@ -48,7 +48,7 @@ Registreer de toepassing in de [Portal](https://ms.portal.azure.com/#blade/Micro
     1. Selecteer **Registreren** wanneer u klaar bent.
 1. Noteer de toepassings-ID van de toepassing (client).
 1. Selecteer in het linkerdeel venster **certificaten & geheimen**. Klik op **Nieuw client geheim** in het gedeelte **client geheimen** . Kopieer het nieuwe client geheim, u kunt niet ophalen wanneer u de Blade verlaat.
-1. Selecteer in het linkerdeel venster **API-machtigingen** en **Voeg vervolgens een machtiging toe**. Selecteer **Microsoft Graph**, vervolgens **gedelegeerde machtigingen**en selecteer vervolgens **Tasks. Read** sinds u de Outlook-Graph API wilt gebruiken. 
+1. Selecteer in het linkerdeel venster **API-machtigingen** en **Voeg vervolgens een machtiging toe**. Selecteer **Microsoft Graph**, vervolgens **gedelegeerde machtigingen** en selecteer vervolgens **Tasks. Read** sinds u de Outlook-Graph API wilt gebruiken. 
 
 Installeer [postman](https://www.getpostman.com/), een hulp programma dat vereist is om de voorbeeld aanvragen te testen.  Later kunt u de aanvragen omzetten in code.
 
@@ -73,7 +73,7 @@ In deze stap haalt u een OAuth2-token op met behulp van het ADFS-bevestigings an
 1. Maak een POST-aanvraag, zoals hieronder wordt weer gegeven met de header waarden:
 
     ![POST-aanvraag](./media/v2-saml-bearer-assertion/5.png)
-1. Vervang **client_id**, **client_secret**en **Assertion** in de hoofd tekst van de aanvraag (de met base64 gecodeerde SAML-bewering heeft de vorige stap verkregen):
+1. Vervang **client_id**, **client_secret** en **Assertion** in de hoofd tekst van de aanvraag (de met base64 gecodeerde SAML-bewering heeft de vorige stap verkregen):
 
     ![Aanvraagbody](./media/v2-saml-bearer-assertion/6.png)
 1. Wanneer de aanvraag is voltooid, ontvangt u een toegangs token van Azure Active Directory.

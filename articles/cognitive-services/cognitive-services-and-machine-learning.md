@@ -7,12 +7,12 @@ manager: nitinme
 ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 08/22/2019
-ms.openlocfilehash: 96cca89b1206aaa7890648def694074a18b2aa17
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 4ab32cd37d732cd9f177363da547edd22bd5af77
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94368862"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349262"
 ---
 # <a name="cognitive-services-and-machine-learning"></a>Cognitive Services en machine learning
 
@@ -23,8 +23,8 @@ Cognitive Services biedt machine learning mogelijkheden om algemene problemen op
 |Service categorie|Doel|
 |--|--|
 |[Besluit](https://azure.microsoft.com/services/cognitive-services/directory/decision/)|Bouw apps die aanbevelingen opleveren voor geïnformeerde en efficiënte besluitvorming.|
-|[Taal](https://azure.microsoft.com/services/cognitive-services/directory/lang/)|Laat uw apps natuurlijke taal verwerken met vooraf gemaakte scripts, sentiment evalueren en leren herkennen wat gebruikers willen.|
-|[Zoeken](https://azure.microsoft.com/services/cognitive-services/directory/search/)|Voeg Bing Search-API's toe aan uw apps en maak het mogelijk om miljarden webpagina's, afbeeldingen, video's en nieuwsartikelen met één API-aanroep te doorzoeken.|
+|[Taal](https://azure.microsoft.com/services/cognitive-services/directory/lang/)|Laat uw apps natuurlijke taal verwerken met vooraf ontwikkelde scripts, evalueer sentiment en leer herkennen wat gebruikers willen.|
+|[Zoeken](https://azure.microsoft.com/services/cognitive-services/directory/search/)|Voeg Bing Search-API's toe aan uw apps en benut de mogelijkheid om miljarden webpagina's, afbeeldingen, video's en nieuwsitems met één API-aanroep te doorzoeken.|
 |[Speech](https://azure.microsoft.com/services/cognitive-services/directory/speech/)|Converteer spraak naar tekst en tekst naar spraak met natuurlijke uitspraak. Vertaal teksten van de ene naar de andere taal en schakel sprekercontrole en -herkenning in.|
 |[Vision](https://azure.microsoft.com/services/cognitive-services/directory/vision/)|Herken, identificeer, indexeer en wijzig uw afbeeldingen, video's en digitale inkt en voorzie deze van ondertitels.|
 ||||
@@ -44,7 +44,7 @@ Machine learning is een concept waarbij u gegevens en een algoritme samenvoegt o
 
 Het proces van het bouwen van een machine learning systeem vereist enige kennis van machine learning of Data Science.
 
-Machine learning wordt gegeven met behulp van [Azure machine learning (AML)-producten en-services](/azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=azure%252fmachine-learning%252fstudio%252fcontext%252fml-context).
+Machine learning wordt gegeven met behulp van [Azure machine learning (AML)-producten en-services](/azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=azure%2fmachine-learning%2fstudio%2fcontext%2fml-context).
 
 ## <a name="what-is-a-cognitive-service"></a>Wat is een cognitieve service?
 
@@ -90,7 +90,7 @@ In de volgende gegevens wordt elke service gecategoriseerd op basis van het type
 |Cognitieve service|Geen trainings gegevens vereist|U geeft enkele of alle trainings gegevens op|Real-time of bijna realtime gegevens verzameling|
 |--|--|--|--|
 |[Anomaliedetectie](./Anomaly-Detector/overview.md)|x|x|x|
-|Bing Zoeken |x|||
+|Bing Search |x|||
 |[Computer Vision](./computer-vision/overview.md)|x|||
 |[Content Moderator](./Content-Moderator/overview.md)|x||x|
 |[Custom Vision](./custom-vision-service/overview.md)||x||
@@ -129,7 +129,7 @@ Cognitive Services die export modellen bieden voor andere machine learning-hulpp
 |--|--|
 |[Custom Vision](./custom-vision-service/overview.md)|[Exporteren](./Custom-Vision-Service/export-model-python.md) voor tensor flow voor Android, CoreML voor IOS11, ONNX voor Windows ml|
 
-## <a name="learn-more"></a>Lees meer
+## <a name="learn-more"></a>Meer informatie
 
 * [Architectuur handleiding-wat zijn de machine learning producten van micro soft?](/azure/architecture/data-guide/technology-choices/data-science-and-machine-learning)
 * [Machine learning-Inleiding tot diep gaande informatie versus machine learning](../machine-learning/concept-deep-learning-vs-machine-learning.md)

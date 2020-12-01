@@ -6,12 +6,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: dcf912f431d578a6e678801d3dc8f4e11484ea78
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a77083c721328a8df9facd2f4b320b863aa03c68
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997015"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352402"
 ---
 # <a name="accept-active-learning-suggested-questions-in-the-knowledge-base"></a>Voorgestelde vragen over actieve trainingen in de Knowledge Base accepteren
 
@@ -22,7 +22,7 @@ Met actief onderwijs wijzigt u de Knowledge Base of Search Service na het goed k
 
 ## <a name="turn-on-active-learning"></a>Actief leren inschakelen
 
-Als u voorgestelde vragen wilt weer geven, moet u [actief leren inschakelen](https://docs.microsoft.com/azure/cognitive-services/qnamaker/concepts/active-learning-suggestions) voor uw QnA Maker-resource.
+Als u voorgestelde vragen wilt weer geven, moet u [actief leren inschakelen](../concepts/active-learning-suggestions.md) voor uw QnA Maker-resource.
 
 ## <a name="view-suggested-questions"></a>Voorgestelde vragen weer geven
 

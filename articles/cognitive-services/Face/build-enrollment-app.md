@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: pafarley
-ms.openlocfilehash: bd2032d565f5bd1fb430449be8b8c08e222f531d
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 085dd18214f795566669fb862bba63b67eb9115d
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95025748"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350361"
 ---
 # <a name="build-an-enrollment-app-for-android-with-react"></a>Een inschrijvings-app voor Android bouwen met reageren
 
@@ -74,7 +74,7 @@ Lees het [overzicht](enrollment-overview.md) voor meer informatie over het imple
 
 ### <a name="android"></a>Android
 
-Zorg er eerst voor dat uw app gereed is voor productie-implementatie: Verwijder alle sleutels of geheimen uit de app-code en zorg ervoor dat u de [aanbevolen beveiligings procedures](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-security?tabs=command-line%2Ccsharp)hebt gevolgd.
+Zorg er eerst voor dat uw app gereed is voor productie-implementatie: Verwijder alle sleutels of geheimen uit de app-code en zorg ervoor dat u de [aanbevolen beveiligings procedures](../cognitive-services-security.md?tabs=command-line%2ccsharp)hebt gevolgd.
 
 Wanneer u klaar bent om uw app uit te geven voor productie, genereert u een APK-bestand dat klaar is voor vrijgave. Dit is de bestands indeling van het pakket voor Android-apps. Dit APK-bestand moet zijn ondertekend met een persoonlijke sleutel. Met deze release-build kunt u de app rechtstreeks naar uw apparaten distribueren. 
 

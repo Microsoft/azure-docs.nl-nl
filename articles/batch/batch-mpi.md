@@ -4,12 +4,12 @@ description: Meer informatie over het uitvoeren van MPI-toepassingen (Message Pa
 ms.topic: how-to
 ms.date: 10/08/2020
 ms.custom: H1Hack27Feb2017, devx-track-csharp
-ms.openlocfilehash: 3dc52d13cf41347e7382872e887d87fc9b25a95b
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 6aa6a910dd57a255d9ec9292119bc692edf4946f
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92108079"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351517"
 ---
 # <a name="use-multi-instance-tasks-to-run-message-passing-interface-mpi-applications-in-batch"></a>Taken met meerdere instanties gebruiken voor het uitvoeren van MPI-toepassingen (Message Passing Interface) in batch
 
@@ -21,14 +21,14 @@ Met taken met meerdere instanties kunt u een Azure Batch taak op meerdere reken 
 >
 
 ## <a name="multi-instance-task-overview"></a>Overzicht van taken met meerdere instanties
-In batch wordt elke taak normaal gesp roken uitgevoerd op één Compute-knoop punt: u verzendt meerdere taken naar een taak en de batch-service plant elke taak voor uitvoering op een knoop punt. Door de **instellingen voor meerdere instanties**van een taak te configureren, vertelt u batch in plaats daarvan een primaire taak en verschillende subtaken die vervolgens op meerdere knoop punten worden uitgevoerd.
+In batch wordt elke taak normaal gesp roken uitgevoerd op één Compute-knoop punt: u verzendt meerdere taken naar een taak en de batch-service plant elke taak voor uitvoering op een knoop punt. Door de **instellingen voor meerdere instanties** van een taak te configureren, vertelt u batch in plaats daarvan een primaire taak en verschillende subtaken die vervolgens op meerdere knoop punten worden uitgevoerd.
 
 ![Overzicht van taken met meerdere instanties][1]
 
 Wanneer u een taak met instellingen voor meerdere instanties naar een taak verzendt, voert batch verschillende stappen uit die uniek zijn voor taken met meerdere instanties:
 
 1. Met de batch-service worden één **primaire** en verschillende **subtaken** gemaakt op basis van de instellingen voor meerdere instanties. Het totale aantal taken (primaire plus alle subtaken) komt overeen met het aantal **exemplaren** (reken knooppunten) dat u opgeeft in de instellingen voor meerdere instanties.
-2. Met batch wordt een van de reken knooppunten aangeduid als de **Master**en wordt de primaire taak gepland om te worden uitgevoerd op de Master. De subtaken worden gepland om te worden uitgevoerd op de rest van de reken knooppunten die aan de taak met meerdere instanties zijn toegewezen, één subtaak per knoop punt.
+2. Met batch wordt een van de reken knooppunten aangeduid als de **Master** en wordt de primaire taak gepland om te worden uitgevoerd op de Master. De subtaken worden gepland om te worden uitgevoerd op de rest van de reken knooppunten die aan de taak met meerdere instanties zijn toegewezen, één subtaak per knoop punt.
 3. De primaire en alle subtaken downloaden alle **algemene bron bestanden** die u opgeeft in de instellingen voor meerdere instanties.
 4. Nadat de gemeen schappelijke bron bestanden zijn gedownload, voeren de primaire en subtaken de **coördinatie opdracht** uit die u in de instellingen voor meerdere instanties opgeeft. De coördinatie opdracht wordt doorgaans gebruikt om knoop punten voor het uitvoeren van de taak voor te bereiden. Dit kan onder andere het starten van de achtergrond Services zijn (zoals [micro soft mpi][msmpi_msdn] `smpd.exe` ) en te controleren of de knoop punten gereed zijn voor het verwerken van berichten tussen knoop punten.
 5. De primaire taak voert de **toepassing opdracht** uit op het hoofd knooppunt *nadat* de coördinatie opdracht met succes is voltooid door de primaire en alle subtaken. De opdracht toepassing is de opdracht regel van de taak voor meerdere exemplaren zelf en wordt alleen uitgevoerd door de primaire taak. In een op [MS-mpi][msmpi_msdn]gebaseerde oplossing kunt u uw mpi-toepassing uitvoeren met `mpiexec.exe` .
@@ -39,7 +39,7 @@ Wanneer u een taak met instellingen voor meerdere instanties naar een taak verze
 >
 
 ## <a name="requirements-for-multi-instance-tasks"></a>Vereisten voor taken met meerdere instanties
-Voor taken met meerdere instanties is een pool vereist waarvoor **communicatie tussen knoop punten is ingeschakeld**en waarvoor **gelijktijdige taak uitvoering is uitgeschakeld**. Als u het uitvoeren van gelijktijdige taken wilt uitschakelen, stelt u de eigenschap [CloudPool. TaskSlotsPerNode](/dotnet/api/microsoft.azure.batch.cloudpool) in op 1.
+Voor taken met meerdere instanties is een pool vereist waarvoor **communicatie tussen knoop punten is ingeschakeld** en waarvoor **gelijktijdige taak uitvoering is uitgeschakeld**. Als u het uitvoeren van gelijktijdige taken wilt uitschakelen, stelt u de eigenschap [CloudPool. TaskSlotsPerNode](/dotnet/api/microsoft.azure.batch.cloudpool) in op 1.
 
 > [!NOTE]
 > Batch [beperkt](batch-quota-limit.md#pool-size-limits) de grootte van een pool waarvoor communicatie tussen knoop punten is ingeschakeld.
@@ -95,8 +95,8 @@ Zoek naar de grootten die zijn opgegeven als ' RDMA capable ' in de volgende art
   * [Grootten voor Cloud Services](../cloud-services/cloud-services-sizes-specs.md) (alleen Windows)
 * **VirtualMachineConfiguration** -groepen
 
-  * [Grootten voor virtuele machines in azure](../virtual-machines/sizes.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) (Linux)
-  * [Grootten voor virtuele machines in azure](../virtual-machines/sizes.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json) (Windows)
+  * [Grootten voor virtuele machines in azure](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) (Linux)
+  * [Grootten voor virtuele machines in azure](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) (Windows)
 
 > [!NOTE]
 > Als u wilt profiteren van RDMA op [Linux-reken knooppunten](batch-linux-nodes.md), moet u **Intel mpi** gebruiken op de knoop punten.
@@ -153,7 +153,7 @@ cmd /c start cmd /c ""%MSMPI_BIN%\smpd.exe"" -d
 Let op het gebruik van `start` in deze coördinatie opdracht. Dit is vereist omdat de `smpd.exe` toepassing niet direct na de uitvoering wordt geretourneerd. Zonder het gebruik van de [Start][cmd_start] opdracht, wordt deze coördinatie opdracht niet geretourneerd en wordt de toepassings opdracht daarom geblokkeerd.
 
 ## <a name="application-command"></a>Toepassings opdracht
-Zodra de primaire taak en alle subtaken klaar zijn met het uitvoeren van de coördinatie opdracht, wordt de opdracht regel van de multi-instance taak *alleen*uitgevoerd door de primaire taak. We noemen deze opdracht om de **toepassing** te onderscheiden van de coördinatie opdracht.
+Zodra de primaire taak en alle subtaken klaar zijn met het uitvoeren van de coördinatie opdracht, wordt de opdracht regel van de multi-instance taak *alleen* uitgevoerd door de primaire taak. We noemen deze opdracht om de **toepassing** te onderscheiden van de coördinatie opdracht.
 
 Voor MS-MPI-toepassingen gebruikt u de opdracht toepassing om uw MPI-toepassing uit te voeren met `mpiexec.exe` . Dit is bijvoorbeeld een toepassings opdracht voor een oplossing met behulp van MS-MPI versie 7:
 

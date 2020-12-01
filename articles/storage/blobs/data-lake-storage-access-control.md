@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/16/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 485b23d9b7ebac4f7d183239d035fbd53b09f4ee
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 2418a8813e7b9de603b7e7cdc11fc756d73ac2a4
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96017666"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350752"
 ---
 # <a name="access-control-lists-acls-in-azure-data-lake-storage-gen2"></a>Toegangs beheer lijsten (Acl's) in Azure Data Lake Storage Gen2
 
@@ -62,7 +62,7 @@ Zowel toegangs-Acl's als standaard-Acl's hebben dezelfde structuur.
 
 De machtigingen voor een container object zijn **lezen**, **schrijven** en **uitvoeren** en kunnen worden gebruikt voor bestanden en mappen, zoals wordt weer gegeven in de volgende tabel:
 
-|            |    Bestand     |   Directory |
+|            |    File     |   Directory |
 |------------|-------------|----------|
 | **Lezen (L)** | Kan de inhoud van een bestand lezen | Moet worden **gelezen** en **uitgevoerd** om de inhoud van de map weer te geven |
 | **Schrijven (S)** | Kan schrijven of toevoegen aan een bestand | **Schrijven** en **uitvoeren** is vereist om onderliggende items in een map te maken |
@@ -162,36 +162,36 @@ def access_check( user, desired_perms, path ) :
   # path is the file or directory
   # Note: the "sticky bit" isn't illustrated in this algorithm
   
-# Handle super users.
+  # Handle super users.
   if (is_superuser(user)) :
     return True
 
-# Handle the owning user. Note that mask isn't used.
-entry = get_acl_entry( path, OWNER )
-if (user == entry.identity)
-    return ( (desired_perms & entry.permissions) == desired_perms )
+  # Handle the owning user. Note that mask isn't used.
+  entry = get_acl_entry( path, OWNER )
+  if (user == entry.identity)
+      return ( (desired_perms & entry.permissions) == desired_perms )
 
-# Handle the named users. Note that mask IS used.
-entries = get_acl_entries( path, NAMED_USER )
-for entry in entries:
-    if (user == entry.identity ) :
-        mask = get_mask( path )
-        return ( (desired_perms & entry.permissions & mask) == desired_perms)
+  # Handle the named users. Note that mask IS used.
+  entries = get_acl_entries( path, NAMED_USER )
+  for entry in entries:
+      if (user == entry.identity ) :
+          mask = get_mask( path )
+          return ( (desired_perms & entry.permissions & mask) == desired_perms)
 
-# Handle named groups and owning group
-member_count = 0
-perms = 0
-entries = get_acl_entries( path, NAMED_GROUP | OWNING_GROUP )
-mask = get_mask( path )
-for entry in entries:
-if (user_is_member_of_group(user, entry.identity)) :
-    if ((desired_perms & entry.permissions & mask) == desired_perms)
-        return True 
+  # Handle named groups and owning group
+  member_count = 0
+  perms = 0
+  entries = get_acl_entries( path, NAMED_GROUP | OWNING_GROUP )
+  mask = get_mask( path )
+  for entry in entries:
+    if (user_is_member_of_group(user, entry.identity)) :
+        if ((desired_perms & entry.permissions & mask) == desired_perms)
+            return True 
         
-# Handle other
-perms = get_perms_for_other(path)
-mask = get_mask( path )
-return ( (desired_perms & perms & mask ) == desired_perms)
+  # Handle other
+  perms = get_perms_for_other(path)
+  mask = get_mask( path )
+  return ( (desired_perms & perms & mask ) == desired_perms)
 ```
 
 ### <a name="the-mask"></a>Het masker
@@ -200,11 +200,11 @@ Zoals geïllustreerd in het algoritme voor toegangs controle, beperkt het masker
 
 Voor een nieuwe Data Lake Storage Gen2-container wordt het masker voor de toegangs-ACL van de hoofdmap (/) standaard ingesteld op **750** voor directory's en **640** voor bestanden. In de volgende tabel ziet u de symbolische notatie van deze machtigings niveaus.
 
-|Entiteit|Mappen|Files|
+|Entiteit|Mappen|Bestanden|
 |--|--|--|
 |Gebruiker die eigenaar is|`rwx`|`r-w`|
 |Groep die eigenaar is|`r-x`|`r--`|
-|Anders|`---`|`---`|
+|Overige|`---`|`---`|
 
 Bestanden ontvangen niet de X-bit omdat deze niet van toepassing is op bestanden in een alleen-opslag systeem. 
 

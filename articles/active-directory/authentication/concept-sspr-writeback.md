@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9781196690c689036bfb69e1fa769112b5f69b2b
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: af41f03a1ac0ea65d72d9af47b175bb78f9e1bc2
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964975"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348776"
 ---
 # <a name="how-does-self-service-password-reset-writeback-work-in-azure-active-directory"></a>Hoe werkt de write-back van self-service voor wacht woord opnieuw instellen in Azure Active Directory?
 
@@ -58,7 +58,7 @@ Wanneer een federatieve of wacht woord-hash gesynchroniseerde gebruiker probeert
    * Als de Write-service niet beschikbaar is, wordt de gebruiker ervan op de hoogte gesteld dat het wacht woord niet kan worden hersteld.
 1. Vervolgens geeft de gebruiker de juiste verificatie poorten door en bereikt de pagina **wacht woord opnieuw instellen** .
 1. De gebruiker selecteert een nieuw wacht woord en bevestigt dit.
-1. Wanneer de gebruiker **verzenden**selecteert, wordt het Lees bare wacht woord versleuteld met een symmetrische sleutel die is gemaakt tijdens het terugschrijf installatie proces.
+1. Wanneer de gebruiker **verzenden** selecteert, wordt het Lees bare wacht woord versleuteld met een symmetrische sleutel die is gemaakt tijdens het terugschrijf installatie proces.
 1. Het versleutelde wacht woord is opgenomen in een Payload die via een HTTPS-kanaal wordt verzonden naar de Tenant-specifieke service bus relay (die tijdens het terugschrijf installatie proces is ingesteld). Deze relay wordt beveiligd door een wille keurig gegenereerd wacht woord dat alleen uw on-premises installatie kent.
 1. Nadat het bericht de service bus heeft bereikt, wordt het eind punt voor het opnieuw instellen van het wacht woord automatisch geactiveerd en ziet u dat er een aanvraag voor opnieuw instellen in behandeling is.
 1. De service zoekt vervolgens naar de gebruiker met behulp van het anker kenmerk Cloud. Deze zoek actie slaagt alleen als aan de volgende voor waarden wordt voldaan:
@@ -90,7 +90,7 @@ Het terugschrijven van wacht woorden is een zeer veilige service. Om ervoor te z
 * **Tenant-specifieke service-bus relay**
    * Wanneer u de service instelt, wordt een Tenant-specifieke service bus-relay ingesteld die wordt beveiligd door een wille keurig gegenereerd sterk wacht woord waarmee micro soft nooit toegang heeft.
 * **Vergrendeld, cryptografisch sterk, versleutelings sleutel voor wacht woord**
-   * Nadat de service bus-relay is gemaakt, wordt er een sterke symmetrische sleutel gemaakt die wordt gebruikt voor het versleutelen van het wacht woord. Deze sleutel bevindt zich alleen in het geheime archief van uw bedrijf in de Cloud, wat sterk is vergrendeld en gecontroleerd, net als elk ander wacht woord in de Directory.
+   * Nadat de service bus relay is gemaakt, wordt er een sterke symmetrische sleutel gemaakt die wordt gebruikt voor het versleutelen van het wacht woord. Deze sleutel bevindt zich alleen in het geheime archief van uw bedrijf in de Cloud, wat sterk is vergrendeld en gecontroleerd, net als elk ander wacht woord in de Directory.
 * **Industrie norm Transport Layer Security (TLS)**
    1. Wanneer een wacht woord opnieuw instellen of een wijzigings bewerking wordt uitgevoerd in de Cloud, wordt het Lees bare wacht woord versleuteld met uw open bare sleutel.
    1. Het versleutelde wacht woord wordt in een HTTPS-bericht geplaatst dat via een versleuteld kanaal wordt verzonden met behulp van micro soft TLS/SSL-certificaten naar uw service bus relay.

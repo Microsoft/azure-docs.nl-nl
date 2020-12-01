@@ -9,16 +9,16 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: f58fe342d66c328bdadf41fc965c2952605aea8e
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.openlocfilehash: 5f149dd6db82b66b45a4c995e2004936481af786
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94376571"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352419"
 ---
 # <a name="get-analytics-on-your-knowledge-base"></a>Analytische gegevens verkrijgen voor uw knowledge base
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele versie)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 
 QnA Maker alle chat logboeken en andere telemetrie opslaat, als u Application Insights hebt ingeschakeld tijdens het [maken van de QnA Maker service](./set-up-qnamaker-service-azure.md). Voer de voorbeeld query's uit om uw chat logboeken van Application Insights op te halen.
 
@@ -48,11 +48,11 @@ QnA Maker alle chat logboeken en andere telemetrie opslaat, als u Application In
 
     [![Query uitvoeren om vragen, antwoorden en Score van gebruikers te bepalen](../media/qnamaker-how-to-analytics-kb/run-query.png)](../media/qnamaker-how-to-analytics-kb/run-query.png#lightbox)
 
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-versie)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
 QnA Maker Managed (preview) maakt gebruik van Azure diagnostische logboek registratie voor het opslaan van de telemetriegegevens en chat Logboeken. Volg de onderstaande stappen om voorbeeld query's uit te voeren om analyses te verkrijgen over het gebruik van uw QnA Maker Knowledge Base.
 
-1. [Schakel logboek registratie van diagnostische gegevens in](https://docs.microsoft.com/azure/cognitive-services/diagnostic-logging) voor uw QnA Maker Managed (preview)-service.
+1. [Schakel logboek registratie van diagnostische gegevens in](../../diagnostic-logging.md) voor uw QnA Maker Managed (preview)-service.
 
 2. In de vorige stap selecteert u naast **controle, RequestResponse en AllMetrics** **traceren** voor logboek registratie
 
@@ -62,7 +62,7 @@ QnA Maker Managed (preview) maakt gebruik van Azure diagnostische logboek regist
 
 ## <a name="run-queries-for-other-analytics-on-your-qna-maker-knowledge-base"></a>Query's uitvoeren voor andere analyses op uw QnA Maker Knowledge Base
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele versie)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 
 ### <a name="total-90-day-traffic"></a>Totaal 90-dagen verkeer
 
@@ -132,7 +132,7 @@ traces | extend id = operation_ParentId
 | order  by timestamp  desc
 ```
 
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-versie)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
 ### <a name="all-qna-chat-log"></a>Alle QnA chat-logboek
 

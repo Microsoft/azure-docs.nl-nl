@@ -2,14 +2,14 @@
 title: Resource providers en resource typen
 description: Hierin worden de resource providers beschreven die Azure Resource Manager ondersteunen. Hierin worden de schema's, beschik bare API-versies en de regio's beschreven die als host kunnen fungeren voor de resources.
 ms.topic: conceptual
-ms.date: 11/09/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 702836e0dc98b06ccf6e0eeb0d0f373374c4e783
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a8adbce80d5e8f9ee9df2050d8f43363cbf57dc3
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95972535"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352096"
 ---
 # <a name="azure-resource-providers-and-types"></a>Azure-resourceproviders en -typen
 
@@ -36,6 +36,9 @@ Voordat u een resource provider gebruikt, moet uw Azure-abonnement zijn geregist
 
 In dit artikel leest u hoe u de registratie status van een resource provider kunt controleren en waar nodig kunt registreren. U moet gemachtigd zijn om de `/register/action` bewerking voor de resource provider uit te voeren. De machtiging is opgenomen in de rollen Inzender en eigenaar.
 
+> [!IMPORTANT]
+> Registreer alleen een resource provider wanneer u er klaar voor bent om deze te gebruiken. Met de registratie stap kunt u de minimale bevoegdheden binnen uw abonnement behouden. Een kwaadwillende gebruiker kan geen resource providers gebruiken die niet zijn geregistreerd.
+
 De toepassings code mag het maken van resources voor een resource provider die zich in de **registratie** status bevindt, niet blok keren. Wanneer u de resource provider registreert, wordt de bewerking afzonderlijk voor elke ondersteunde regio uitgevoerd. Voor het maken van resources in een regio moet de registratie alleen worden uitgevoerd in die regio. Door de resource provider niet te blok keren in de registratie status, kan uw toepassing veel sneller worden uitgevoerd dan het wachten op alle regio's.
 
 U kunt de registratie van een resource provider niet ongedaan maken wanneer u nog steeds resource typen van die resource provider in uw abonnement hebt.
@@ -55,7 +58,7 @@ Als u alle resource providers en de registratie status voor uw abonnement wilt w
 
     ![resource providers weer geven](./media/resource-providers-and-types/show-resource-providers.png)
 
-6. Als u een resource provider wilt registreren, selecteert u **registreren**. In de vorige scherm afbeelding is de koppeling **registreren** gemarkeerd voor **micro soft. blauw druk**.
+6. Als u een resource provider wilt registreren, selecteert u **registreren**. In de vorige scherm afbeelding is de koppeling **registreren** gemarkeerd voor **micro soft. blauw druk**. Als u de minimale bevoegdheden in uw abonnement wilt behouden, registreert u alleen de resource providers die u kunt gebruiken.
 
 Informatie weer geven voor een bepaalde resource provider:
 
@@ -107,7 +110,7 @@ Als u alle geregistreerde resource providers voor uw abonnement wilt weer geven,
  Get-AzResourceProvider -ListAvailable | Where-Object RegistrationState -eq "Registered" | Select-Object ProviderNamespace, RegistrationState | Sort-Object ProviderNamespace
 ```
 
-Als u een resource provider wilt registreren, gebruikt u:
+Als u de minimale bevoegdheden in uw abonnement wilt behouden, registreert u alleen de resource providers die u kunt gebruiken. Als u een resource provider wilt registreren, gebruikt u:
 
 ```azurepowershell-interactive
 Register-AzResourceProvider -ProviderNamespace Microsoft.Batch
@@ -216,7 +219,7 @@ Als u alle geregistreerde resource providers voor uw abonnement wilt weer geven,
 az provider list --query "sort_by([?registrationState=='Registered'].{Provider:namespace, Status:registrationState}, &Provider)" --out table
 ```
 
-Als u een resource provider wilt registreren, gebruikt u:
+Als u de minimale bevoegdheden in uw abonnement wilt behouden, registreert u alleen de resource providers die u kunt gebruiken. Als u een resource provider wilt registreren, gebruikt u:
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.Batch

@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 10/08/2020
 ms.author: peshultz
 ms.custom: references_regions
-ms.openlocfilehash: 55a7e117ebd49f268d4b075d58791df4e9223fdf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a61e87c660bf2d2f0f4c8d02bd1699c58f8da667
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91849259"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350667"
 ---
 # <a name="create-a-pool-with-disk-encryption-enabled"></a>Een pool maken met schijfversleuteling ingeschakeld
 
@@ -25,8 +25,8 @@ Met een batch-pool kunt u gegevens op het besturings systeem en de tijdelijke sc
 
 Met batch wordt een van deze schijf versleutelings technologieën toegepast op reken knooppunten, op basis van pool configuratie en regionale ondersteunings mogelijkheden.
 
-- [Beheerde schijf versleuteling op rest met door het platform beheerde sleutels](../virtual-machines/windows/disk-encryption.md#platform-managed-keys)
-- [Versleuteling op de host met een door een platform beheerde sleutel](../virtual-machines/windows/disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data)
+- [Beheerde schijf versleuteling op rest met door het platform beheerde sleutels](../virtual-machines/disk-encryption.md#platform-managed-keys)
+- [Versleuteling op de host met een door een platform beheerde sleutel](../virtual-machines/disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data)
 - [Azure Disk Encryption](../security/fundamentals/azure-disk-encryption-vms-vmss.md)
 
 > [!IMPORTANT]
@@ -44,7 +44,7 @@ Wanneer u een batch-pool maakt in de Azure Portal, selecteert u **TemporaryDisk*
 
 Nadat de groep is gemaakt, ziet u de configuratie doelen van de schijf versleuteling in de sectie **Eigenschappen** van de groep.
 
-:::image type="content" source="media/disk-encryption/configuration-target.png" alt-text="Scherm afbeelding van de configuratie optie voor schijf versleuteling in de Azure Portal.":::
+:::image type="content" source="media/disk-encryption/configuration-target.png" alt-text="Scherm opname van de configuratie doelen van de schijf versleuteling in de Azure Portal.":::
 
 ## <a name="examples"></a>Voorbeelden
 
@@ -107,5 +107,5 @@ az batch pool create \
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [versleuteling aan de server zijde van Azure Disk Storage](../virtual-machines/windows/disk-encryption.md).
+- Meer informatie over [versleuteling aan de server zijde van Azure Disk Storage](../virtual-machines/disk-encryption.md).
 - Zie [batch service workflow en resources](batch-service-workflow-features.md)voor een uitgebreid overzicht van batch.

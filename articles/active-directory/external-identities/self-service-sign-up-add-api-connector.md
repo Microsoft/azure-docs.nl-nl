@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de255836cb269f5077a417a203e136f9e903f05d
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: d121e6280b83265a742736f9b8dd3aee96a8b32e
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92441671"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351756"
 ---
 # <a name="add-an-api-connector-to-a-user-flow"></a>Een API-connector toevoegen aan een gebruikers stroom
 
@@ -25,7 +25,7 @@ Als u een [API-connector](api-connectors-overview.md)wilt gebruiken, maakt u eer
 ## <a name="create-an-api-connector"></a>Een API-connector maken
 
 1. Meld u als een Azure AD-administrator aan bij de [Azure Portal](https://portal.azure.com/).
-2. Onder **Azure-Services**selecteert u **Azure Active Directory**.
+2. Onder **Azure-Services** selecteert u **Azure Active Directory**.
 3. Selecteer in het linkermenu **externe identiteiten**.
 4. Selecteer **alle API-connectors (preview)** en selecteer vervolgens **nieuwe API-connector**.
 
@@ -35,7 +35,7 @@ Als u een [API-connector](api-connectors-overview.md)wilt gebruiken, maakt u eer
 6. Geef de **eind punt-URL** voor de API-aanroep op.
 7. Geef de verificatie gegevens op voor de API.
 
-   - Momenteel wordt alleen basis verificatie ondersteund. Als u een API zonder basis verificatie voor ontwikkelings doeleinden wilt gebruiken, voert u een dummy **gebruikers naam** en **wacht woord** in die door uw API kunnen worden genegeerd. Voor gebruik met een Azure-functie met een API-sleutel kunt u de code als een query parameter in de **eind punt-URL** toevoegen (bijvoorbeeld https []() ://contoso.azurewebsites.net/API/endpoint<b>? code = 0123456789</b>).
+   - Momenteel wordt alleen basis verificatie ondersteund. Als u een API zonder basis verificatie voor ontwikkelings doeleinden wilt gebruiken, voert u een dummy **gebruikers naam** en **wacht woord** in die door uw API kunnen worden genegeerd. Voor gebruik met een Azure-functie met een API-sleutel kunt u de code als een query parameter in de **eind punt-URL** toevoegen (bijvoorbeeld https []() ://contoso.azurewebsites.net/API/endpoint <b>? code = 0123456789</b>).
 
    ![Een nieuwe API-connector configureren](./media/self-service-sign-up-add-api-connector/api-connector-config.png)
 8. Selecteer **Opslaan**.
@@ -75,7 +75,7 @@ Content-type: application/json
 }
 ```
 
-Alleen gebruikers eigenschappen en aangepaste kenmerken die worden weer gegeven in de **Azure Active Directory**  >  aangepaste gebruikers kenmerken van**externe identiteiten**kunnen  >  **Custom user attributes** in de aanvraag worden verzonden.
+Alleen gebruikers eigenschappen en aangepaste kenmerken die worden weer gegeven in de **Azure Active Directory**  >  aangepaste gebruikers kenmerken van **externe identiteiten** kunnen  >  **Custom user attributes** in de aanvraag worden verzonden.
 
 Aangepaste kenmerken bestaan in de indeling **extension_ \<extensions-app-id> _AttributeName**  in de map. Uw API moet verwachten dat er claims in dezelfde geserialiseerde indeling worden ontvangen. Zie voor meer informatie over aangepaste kenmerken [aangepaste kenmerken definiëren voor Self-service aanmeldingen](user-flow-add-custom-attributes.md).
 
@@ -92,10 +92,10 @@ Daarnaast wordt de **gebruikers interface land instellingen (' ui_locales ')** s
 Volg deze stappen om een API-connector toe te voegen aan een self-service voor het registreren van een gebruikers stroom.
 
 1. Meld u als een Azure AD-administrator aan bij de [Azure Portal](https://portal.azure.com/).
-2. Onder **Azure-Services**selecteert u **Azure Active Directory**.
+2. Onder **Azure-Services** selecteert u **Azure Active Directory**.
 3. Selecteer in het linkermenu **externe identiteiten**.
 4. Selecteer **gebruikers stromen (preview)** en selecteer vervolgens de gebruikers stroom waaraan u de API-connector wilt toevoegen.
-5. Selecteer **API-connectors**en selecteer vervolgens de API-eind punten die u wilt aanroepen met de volgende stappen in de gebruikers stroom:
+5. Selecteer **API-connectors** en selecteer vervolgens de API-eind punten die u wilt aanroepen met de volgende stappen in de gebruikers stroom:
 
    - **Nadat u zich hebt aangemeld met een id-provider**
    - **Voordat u de gebruiker maakt**
@@ -106,7 +106,7 @@ Volg deze stappen om een API-connector toe te voegen aan een self-service voor h
 
 ## <a name="after-signing-in-with-an-identity-provider"></a>Nadat u zich hebt aangemeld met een id-provider
 
-Een API-connector in deze stap van het registratie proces wordt direct geactiveerd nadat de gebruiker zich bij een id-provider (Google, Facebook, Azure AD) heeft geverifieerd. Deze stap gaat vooraf aan de *-*_kenmerk verzamelings pagina_*_. Dit is het formulier dat wordt weer gegeven aan de gebruiker om gebruikers kenmerken te verzamelen. 
+Een API-connector in deze stap van het registratie proces wordt direct geactiveerd nadat de gebruiker zich bij een id-provider (Google, Facebook, Azure AD) heeft geverifieerd. Deze stap gaat vooraf aan de *-*_kenmerk verzamelings pagina_* _. Dit is het formulier dat wordt weer gegeven aan de gebruiker om gebruikers kenmerken te verzamelen. 
 
 <!-- The following are examples of API connector scenarios you may enable at this step:
 - Use the email or federated identity that the user provided to look up claims in an existing system. Return these claims from the existing system, pre-fill the attribute collection page, and make them available to return in the token.
@@ -248,7 +248,7 @@ Content-type: application/json
 | -------------------------------------------------- | ----------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | versie                                            | Tekenreeks            | Ja      | De versie van de API.                                                                                                                                                                                                                                                                |
 | actie                                             | Tekenreeks            | Ja      | Waarde moet zijn `Continue` .                                                                                                                                                                                                                                                              |
-| \<builtInUserAttribute>                            | \<attribute-type> | Nee       | Waarden kunnen worden opgeslagen in de map als ze zijn geselecteerd als een _*claim om * te ontvangen*in de API-connector configuratie en **gebruikers kenmerken** voor een gebruikers stroom. Waarden kunnen worden geretourneerd in het token als deze zijn geselecteerd als een **toepassings claim**.                                              |
+| \<builtInUserAttribute>                            | \<attribute-type> | Nee       | Waarden kunnen worden opgeslagen in de map als ze zijn geselecteerd als een _ *claim om * te ontvangen* in de API-connector configuratie en **gebruikers kenmerken** voor een gebruikers stroom. Waarden kunnen worden geretourneerd in het token als deze zijn geselecteerd als een **toepassings claim**.                                              |
 | \<extension\_{extensions-app-id}\_CustomAttribute> | \<attribute-type> | Nee       | De geretourneerde claim hoeft niet te bevatten `_<extensions-app-id>_` . Waarden worden opgeslagen in de map als deze zijn geselecteerd als een **claim om te ontvangen** in de API-connector configuratie en het **gebruikers kenmerk** voor een gebruikers stroom. Aangepaste kenmerken kunnen niet terug worden verzonden in het token. |
 
 ### <a name="example-of-a-blocking-response"></a>Voor beeld van een blokkerend antwoord

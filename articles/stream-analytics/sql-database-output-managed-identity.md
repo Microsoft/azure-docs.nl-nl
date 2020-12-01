@@ -1,31 +1,45 @@
 ---
-title: Beheerde identiteiten gebruiken om toegang te krijgen tot Azure SQL Database-Azure Stream Analytics
-description: In dit artikel wordt beschreven hoe u beheerde identiteiten gebruikt om uw Azure Stream Analytics-taak te verifiëren voor Azure SQL data base-uitvoer.
+title: Beheerde identiteiten gebruiken om toegang te krijgen tot Azure SQL Database of Azure Synapse Analytics-Azure Stream Analytics
+description: In dit artikel wordt beschreven hoe u beheerde identiteiten gebruikt om uw Azure Stream Analytics-taak te verifiëren voor Azure SQL Database of Azure Synapse Analytics-uitvoer.
 author: mamccrea
 ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: how-to
-ms.date: 05/08/2020
-ms.openlocfilehash: ec260c2e71d1716eb4de9ad25942f61169356dfb
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.date: 11/30/2020
+ms.openlocfilehash: ee617b50d85f611e130ec5533239c8924efecc6b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491338"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352181"
 ---
-# <a name="use-managed-identities-to-access-azure-sql-database-from-an-azure-stream-analytics-job-preview"></a>Beheerde identiteiten gebruiken om toegang te krijgen tot Azure SQL Database vanuit een Azure Stream Analytics-taak (preview-versie)
+# <a name="use-managed-identities-to-access-azure-sql-database-or-azure-synapse-analytics-from-an-azure-stream-analytics-job-preview"></a>Beheerde identiteiten gebruiken om toegang te krijgen tot Azure SQL Database of Azure Synapse Analytics vanuit een Azure Stream Analytics-taak (preview)
 
-Azure Stream Analytics ondersteunt [beheerde identiteits verificatie](../active-directory/managed-identities-azure-resources/overview.md) voor Azure SQL database uitvoer-Sinks. Beheerde identiteiten elimineren de beperkingen van verificatie methoden op basis van gebruikers, zoals de nood zaak om opnieuw te worden geverifieerd als gevolg van wachtwoord wijzigingen of verlopen van gebruikers tokens die elke 90 dagen worden uitgevoerd. Wanneer u de nood zaak om hand matig te verifiëren verwijdert, kunnen uw Stream Analytics-implementaties volledig worden geautomatiseerd.
+Azure Stream Analytics ondersteunt [beheerde identiteits verificatie](../active-directory/managed-identities-azure-resources/overview.md) voor Azure SQL database en Azure Synapse Analytics-uitvoer Sinks. Beheerde identiteiten elimineren de beperkingen van verificatie methoden op basis van gebruikers, zoals de nood zaak om opnieuw te worden geverifieerd als gevolg van wachtwoord wijzigingen of verlopen van gebruikers tokens die elke 90 dagen worden uitgevoerd. Wanneer u de nood zaak om hand matig te verifiëren verwijdert, kunnen uw Stream Analytics-implementaties volledig worden geautomatiseerd.
 
-Een beheerde identiteit is een beheerde toepassing die is geregistreerd in Azure Active Directory die een bepaalde Stream Analytics taak vertegenwoordigt. De beheerde toepassing wordt gebruikt om te verifiëren bij een doel resource. Dit artikel laat u zien hoe u beheerde identiteit kunt inschakelen voor een Azure SQL Database uitvoer (en) van een Stream Analytics taak via de Azure Portal.
+Een beheerde identiteit is een beheerde toepassing die is geregistreerd in Azure Active Directory die een bepaalde Stream Analytics taak vertegenwoordigt. De beheerde toepassing wordt gebruikt om te verifiëren bij een doel resource. Dit artikel laat u zien hoe u beheerde identiteit kunt inschakelen voor een Azure SQL Database of een Azure Synapse Analytics-uitvoer (en) van een Stream Analytics taak via de Azure Portal.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Het volgende is vereist voor deze functie:
+#### <a name="azure-sql-database"></a>[Azure SQL Database](#tab/azure-sql)
+
+Het volgende is vereist voor het gebruik van deze functie:
 
 - Een Azure Stream Analytics taak.
 
 - Een Azure SQL Database resource.
+
+#### <a name="azure-synapse-analytics"></a>[Azure Synapse Analytics](#tab/azure-synapse)
+
+Het volgende is vereist voor het gebruik van deze functie:
+
+- Een Azure Stream Analytics taak.
+
+- Een Azure Synapse Analytics SQL-groep.
+
+- Een Azure Storage-account dat is [geconfigureerd voor uw stream Analytics taak](azure-synapse-analytics-output.md).
+
+---
 
 ## <a name="create-a-managed-identity"></a>Een beheerde identiteit maken
 
@@ -37,8 +51,7 @@ Eerst maakt u een beheerde identiteit voor uw Azure Stream Analytics-taak.
 
    ![Door het systeem toegewezen beheerde identiteit selecteren](./media/sql-db-output-managed-identity/system-assigned-managed-identity.png)
 
-
-   Een service-principal voor de identiteit van de Stream Analytics-taak wordt gemaakt in Azure Active Directory. De levens cyclus van de zojuist gemaakte identiteit wordt beheerd door Azure. Wanneer de Stream Analytics taak wordt verwijderd, wordt de bijbehorende identiteit (de service-principal) automatisch verwijderd door Azure. 
+   Een service-principal voor de identiteit van de Stream Analytics-taak wordt gemaakt in Azure Active Directory. De levens cyclus van de zojuist gemaakte identiteit wordt beheerd door Azure. Wanneer de Stream Analytics taak wordt verwijderd, wordt de bijbehorende identiteit (de service-principal) automatisch verwijderd door Azure.
 
 1. Wanneer u de configuratie opslaat, wordt de object-ID (OID) van de Service-Principal vermeld als de principal-ID zoals hieronder wordt weer gegeven: 
 
@@ -50,12 +63,12 @@ Eerst maakt u een beheerde identiteit voor uw Azure Stream Analytics-taak.
 
 Nadat u een beheerde identiteit hebt gemaakt, selecteert u een Active Directory beheerder.
 
-1. Navigeer naar uw Azure SQL Database-resource en selecteer de SQL Server waarvan de data base zich bevindt. U vindt de SQL Server naam naast *Server naam* op de pagina overzicht van resources. 
+1. Navigeer naar uw Azure SQL Database of Azure Synapse Analytics-resource en selecteer de SQL Server waarvan de data base zich bevindt. U vindt de SQL Server naam naast *Server naam* op de pagina overzicht van resources.
 
-1. Selecteer **Active Directory beheerder** onder **instellingen**. Selecteer vervolgens **beheerder instellen**. 
+1. Selecteer **Active Directory beheerder** onder **instellingen**. Selecteer vervolgens **beheerder instellen**.
 
    ![Active Directory-beheer pagina](./media/sql-db-output-managed-identity/active-directory-admin-page.png)
- 
+
 1. Zoek op de pagina Active Directory-beheer naar een gebruiker of groep om een beheerder voor de SQL Server te zijn en klik op **selecteren**.
 
    ![Active Directory beheerder toevoegen](./media/sql-db-output-managed-identity/add-admin.png)
@@ -68,15 +81,15 @@ Nadat u een beheerde identiteit hebt gemaakt, selecteert u een Active Directory 
 
 ## <a name="create-a-contained-database-user"></a>Een Inge sloten database gebruiker maken
 
-Vervolgens maakt u een Inge sloten database gebruiker in uw SQL Database die is toegewezen aan de Azure Active Directory identiteit. De Inge sloten database gebruiker heeft geen aanmelding voor de primaire data base, maar wordt toegewezen aan een identiteit in de map die is gekoppeld aan de data base. De identiteit van de Azure Active Directory kan een afzonderlijk gebruikers account of een groep zijn. In dit geval wilt u een Inge sloten database gebruiker voor uw Stream Analytics-taak maken. 
+Vervolgens maakt u een Inge sloten database gebruiker in uw Azure SQL-of Azure Synapse-data base die is toegewezen aan de Azure Active Directory-identiteit. De Inge sloten database gebruiker heeft geen aanmelding voor de primaire data base, maar wordt toegewezen aan een identiteit in de map die is gekoppeld aan de data base. De identiteit van de Azure Active Directory kan een afzonderlijk gebruikers account of een groep zijn. In dit geval wilt u een Inge sloten database gebruiker voor uw Stream Analytics-taak maken. 
 
-1. Verbinding maken met SQL Database met behulp van SQL Server Management Studio. De **gebruikers naam** is een Azure Active Directory gebruiker met de machtiging voor het **wijzigen van een gebruiker** . De beheerder die u instelt op de SQL Server is een voor beeld. Gebruik **Azure Active Directory-Universal met MFA-** verificatie. 
+1. Maak verbinding met uw Azure SQL-of Azure Synapse-data base met behulp van SQL Server Management Studio. De **gebruikers naam** is een Azure Active Directory gebruiker met de machtiging voor het **wijzigen van een gebruiker** . De beheerder die u instelt op de SQL Server is een voor beeld. Gebruik **Azure Active Directory-Universal met MFA-** verificatie. 
 
    ![Verbinding maken met SQL Server](./media/sql-db-output-managed-identity/connect-sql-server.png)
 
    De naam van de server `<SQL Server name>.database.windows.net` kan verschillen in verschillende regio's. Bijvoorbeeld, de regio China moet gebruiken `<SQL Server name>.database.chinacloudapi.cn` .
  
-   U kunt een specifieke SQL Database opgeven door te gaan naar **opties > verbindings eigenschappen > verbinding maken met data base**.  
+   U kunt een specifieke Azure SQL-of Azure Synapse-data base opgeven door te gaan naar **opties > verbindings eigenschappen > verbinding maken met de data base**.  
 
    ![Eigenschappen van SQL Server-verbinding](./media/sql-db-output-managed-identity/sql-server-connection-properties.png)
 
@@ -90,7 +103,7 @@ Vervolgens maakt u een Inge sloten database gebruiker in uw SQL Database die is 
    1. Gebruik het *IP-adres in het* venster **nieuwe firewall regel** voor het *eind-IP*. 
    1. Selecteer **Opslaan** en probeer opnieuw verbinding te maken vanuit SQL Server Management Studio. 
 
-1. Nadat u verbinding hebt gemaakt, maakt u de Inge sloten database gebruiker. Met de volgende SQL-opdracht maakt u een Inge sloten database gebruiker die dezelfde naam heeft als uw Stream Analytics-taak. Zorg ervoor dat u de haken rond de *ASA_JOB_NAME* plaatst. Gebruik de volgende T-SQL-syntaxis en voer de query uit. 
+1. Wanneer u bent verbonden, maakt u de Inge sloten database gebruiker. Met de volgende SQL-opdracht maakt u een Inge sloten database gebruiker die dezelfde naam heeft als uw Stream Analytics-taak. Zorg ervoor dat u de haken rond de *ASA_JOB_NAME* plaatst. Gebruik de volgende T-SQL-syntaxis en voer de query uit. 
 
    ```sql
    CREATE USER [ASA_JOB_NAME] FROM EXTERNAL PROVIDER; 
@@ -102,19 +115,43 @@ Vervolgens maakt u een Inge sloten database gebruiker in uw SQL Database die is 
 
 ## <a name="grant-stream-analytics-job-permissions"></a>Stream Analytics taak machtigingen verlenen
 
-Zodra u een Inge sloten database gebruiker hebt gemaakt en toegang hebt gekregen tot Azure-Services in de portal, zoals beschreven in de vorige sectie, is uw Stream Analytics-taak gemachtigd van beheerde identiteit om **verbinding te maken** met uw SQL database Resource via een beheerde identiteit. U wordt aangeraden de machtigingen voor selecteren en invoegen toe te kennen aan de Stream Analytics-taak, omdat deze later in de Stream Analytics werk stroom nodig zijn. Met de machtiging **selecteren** kunt u de verbinding van de taak naar de tabel in de SQL database testen. Met de machtiging **Invoegen** kunt u end-to-end-stream Analytics query's testen zodra u een invoer en de SQL database uitvoer hebt geconfigureerd. U kunt deze machtigingen toewijzen aan de Stream Analytics-taak met behulp van SQL Server Management Studio. Zie de referentie GRANT (Transact-SQL) voor meer informatie.
+#### <a name="azure-sql-database"></a>[Azure SQL Database](#tab/azure-sql)
+
+Zodra u een Inge sloten database gebruiker hebt gemaakt en toegang hebt gekregen tot Azure-Services in de portal, zoals beschreven in de vorige sectie, is uw Stream Analytics-taak gemachtigd van beheerde identiteit om **verbinding te maken** met uw Azure SQL database-Resource via een beheerde identiteit. U wordt aangeraden de machtigingen voor selecteren en invoegen toe te kennen aan de Stream Analytics-taak, omdat deze later in de Stream Analytics werk stroom nodig zijn. Met de machtiging **selecteren** kunt u de verbinding met de tabel in de Azure-SQL database testen. Met de machtiging voor **Invoegen** kunt u end-to-end-stream Analytics query's testen zodra u een invoer en de Azure SQL database-uitvoer hebt geconfigureerd.
+
+#### <a name="azure-synapse-analytics"></a>[Azure Synapse Analytics](#tab/azure-synapse)
+
+Zodra u een Inge sloten database gebruiker hebt gemaakt en toegang hebt gekregen tot Azure-Services in de portal, zoals beschreven in de vorige sectie, is uw Stream Analytics-taak gemachtigd van beheerde identiteit om **verbinding te maken** met uw Azure Synapse-database Resource via een beheerde identiteit. We raden u aan om de machtigingen voor het maken, invoegen en beheren van data BASEs te verfijnen aan de Stream Analytics-taak, omdat deze later nodig zijn in de Stream Analytics werk stroom. Met de machtiging **selecteren** kunt u de verbinding van de taak naar de tabel in de Azure Synapse-data base testen. Met de machtigingen voor het **Invoegen** en beheren van de **Data Base** kunt u end-to-end-stream Analytics query's testen zodra u een invoer en de Azure Synapse-data base-uitvoer hebt geconfigureerd.
+
+Als u de machtiging voor het beheren van meerdere data BASEs wilt verlenen, moet u alle machtigingen verlenen die als **besturings element** worden aangeduid, onder [impliciet door de machtiging voor de data base](/sql/t-sql/statements/grant-database-permissions-transact-sql?view=azure-sqldw-latest#remarks) voor de stream Analytics taak. U hebt deze machtiging nodig omdat de Stream Analytics-taak de instructie COPY uitvoert, waarvoor het beheren van de [Data base in bulk bewerkingen en invoegen](/sql/t-sql/statements/copy-into-transact-sql)vereist is.
+
+---
+
+U kunt deze machtigingen toewijzen aan de Stream Analytics-taak met behulp van SQL Server Management Studio. Zie de referentie GRANT (Transact-SQL) voor meer informatie.
 
 Als u alleen machtigingen wilt verlenen voor een bepaalde tabel of object in de data base, gebruikt u de volgende T-SQL-syntaxis en voert u de query uit. 
 
+#### <a name="azure-sql-database"></a>[Azure SQL Database](#tab/azure-sql)
+
 ```sql
-GRANT SELECT, INSERT ON OBJECT::TABLE_NAME TO ASA_JOB_NAME; 
+GRANT SELECT, INSERT ON OBJECT::TABLE_NAME TO ASA_JOB_NAME;
 ```
 
-U kunt ook met de rechter muisknop op uw SQL database in SQL Server Management Studio klikken en **eigenschappen > machtigingen** selecteren. In het menu machtigingen ziet u de Stream Analytics-taak die u eerder hebt toegevoegd. u kunt ook hand matig machtigingen verlenen of weigeren zoals u dat wilt.
+#### <a name="azure-synapse-analytics"></a>[Azure Synapse Analytics](#tab/azure-synapse)
 
-## <a name="create-an-azure-sql-database-output"></a>Een Azure SQL Database uitvoer maken
+```sql
+GRANT [PERMISSION NAME] OBJECT::TABLE_NAME TO ASA_JOB_NAME;
+```
 
-Nu uw beheerde identiteit is geconfigureerd, kunt u de Azure SQL Database als uitvoer aan uw Stream Analytics-taak toevoegen.
+---
+
+U kunt ook met de rechter muisknop op uw Azure SQL-of Azure Synapse-data base in SQL Server Management Studio klikken en **eigenschappen > machtigingen** selecteren. In het menu machtigingen ziet u de Stream Analytics-taak die u eerder hebt toegevoegd. u kunt ook hand matig machtigingen verlenen of weigeren zoals u dat wilt.
+
+## <a name="create-an-azure-sql-database-or-azure-synapse-output"></a>Een Azure SQL Database-of Azure Synapse-uitvoer maken
+
+#### <a name="azure-sql-database"></a>[Azure SQL Database](#tab/azure-sql)
+
+Nu uw beheerde identiteit is geconfigureerd, kunt u een Azure SQL Database-of Azure Synapse-uitvoer aan uw Stream Analytics-taak toevoegen.
 
 Zorg ervoor dat u een tabel in uw SQL Database hebt gemaakt met het juiste uitvoer schema. De naam van deze tabel is een van de vereiste eigenschappen die moeten worden ingevuld wanneer u de SQL Database uitvoer toevoegt aan de Stream Analytics taak. Zorg er ook voor dat de taak de machtigingen **selecteren** en **Invoegen** heeft om de verbinding te testen en stream Analytics query's uit te voeren. Raadpleeg de sectie [machtigingen stream Analytics taak machtiging verlenen](#grant-stream-analytics-job-permissions) als u dit nog niet hebt gedaan. 
 
@@ -122,7 +159,21 @@ Zorg ervoor dat u een tabel in uw SQL Database hebt gemaakt met het juiste uitvo
 
 1. Selecteer **> SQL database toevoegen**. Selecteer in het venster uitvoer eigenschappen van de SQL Database uitvoer Sink **beheerde identiteit** in de vervolg keuzelijst verificatie modus.
 
-1. Vul de rest van de eigenschappen in. Zie [Create a SQL database output with stream Analytics](sql-database-output.md)voor meer informatie over het maken van een SQL database-uitvoer. Wanneer u klaar bent, selecteert u **Opslaan**. 
+1. Vul de rest van de eigenschappen in. Zie [Create a SQL database output with stream Analytics](sql-database-output.md)voor meer informatie over het maken van een SQL database-uitvoer. Wanneer u klaar bent, selecteert u **Opslaan**.
+
+#### <a name="azure-synapse-analytics"></a>[Azure Synapse Analytics](#tab/azure-synapse)
+
+Nu uw beheerde identiteits-en opslag account zijn geconfigureerd, kunt u een Azure SQL Database-of Azure Synapse-uitvoer aan uw Stream Analytics-taak toevoegen.
+
+Zorg ervoor dat u in uw Azure Synapse-Data Base een tabel hebt gemaakt met het juiste uitvoer schema. De naam van deze tabel is een van de vereiste eigenschappen die moeten worden ingevuld wanneer u de Azure Synapse-uitvoer aan de Stream Analytics-taak toevoegt. Zorg er ook voor dat de taak de machtigingen **selecteren** en **Invoegen** heeft om de verbinding te testen en stream Analytics query's uit te voeren. Raadpleeg de sectie [machtigingen stream Analytics taak machtiging verlenen](#grant-stream-analytics-job-permissions) als u dit nog niet hebt gedaan.
+
+1. Ga terug naar uw Stream Analytics-taak en navigeer naar de pagina **uitvoer** onder **taak topologie**.
+
+1. Selecteer **> Azure Synapse Analytics toevoegen**. Selecteer in het venster uitvoer eigenschappen van de SQL Database uitvoer Sink **beheerde identiteit** in de vervolg keuzelijst verificatie modus.
+
+1. Vul de rest van de eigenschappen in. Zie [Azure Synapse Analytics output van Azure stream Analytics](azure-synapse-analytics-output.md)voor meer informatie over het maken van een Azure Synapse-uitvoer. Wanneer u klaar bent, selecteert u **Opslaan**.
+
+---
 
 ## <a name="remove-managed-identity"></a>Beheerde identiteit verwijderen
 
@@ -132,3 +183,4 @@ De beheerde identiteit die is gemaakt voor een Stream Analytics taak wordt allee
 
 * [Meer informatie over de uitvoer van Azure Stream Analytics](stream-analytics-define-outputs.md)
 * [Azure Stream Analytics uitvoer naar Azure SQL Database](stream-analytics-sql-output-perf.md)
+* [Azure Synapse Analytics-uitvoer van Azure Stream Analytics](azure-synapse-analytics-output.md)

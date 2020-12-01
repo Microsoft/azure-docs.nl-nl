@@ -7,12 +7,12 @@ ms.reviewer: hrasheed
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 08/21/2020
-ms.openlocfilehash: 2716f037de533e14ae8e57706134c8a2b135b440
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 2fd7a3e512b79651fdcf6a6ac0c14822361fc263
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322372"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350191"
 ---
 # <a name="azure-hdinsight-40-overview"></a>Overzicht van Azure HDInsight 4,0
 
@@ -102,9 +102,9 @@ Er wordt geen ondersteund upgradepad van eerdere versies van HDInsight naar HDIn
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [HBase-migratie handleiding](https://docs.microsoft.com/azure/hdinsight/hbase/apache-hbase-migrate-new-version)
-* [Hand leiding voor Hive-migratie](https://docs.microsoft.com/azure/hdinsight/interactive-query/apache-hive-migrate-workloads)
-* [Kafka-migratie handleiding](https://docs.microsoft.com/azure/hdinsight/kafka/migrate-versions)
-* [Spark-migratie handleiding](https://docs.microsoft.com/azure/hdinsight/spark/migrate-versions)
+* [HBase-migratie handleiding](./hbase/apache-hbase-migrate-new-version.md)
+* [Hand leiding voor Hive-migratie](./interactive-query/apache-hive-migrate-workloads.md)
+* [Kafka-migratie handleiding](./kafka/migrate-versions.md)
+* [Spark-migratie handleiding](./spark/migrate-versions.md)
 * [Documentatie voor Azure HDInsight](index.yml)
 * [Release opmerkingen](hdinsight-release-notes.md)

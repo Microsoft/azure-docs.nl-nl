@@ -12,12 +12,12 @@ ms.reviewer: nibaccam
 ms.date: 01/09/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 0da4127960450a13b64ec23908b4a4fd4c69bd7e
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 921c88f4771fedb910dc41983d559987a8cdfb0c
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542011"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349330"
 ---
 # <a name="start-monitor-and-cancel-training-runs-in-python"></a>Trainings uitvoeringen in python starten, controleren en annuleren
 
@@ -278,7 +278,7 @@ Als u veel onderliggende items efficiënt wilt maken, gebruikt u de- [`create_ch
 
 ### <a name="submit-child-runs"></a>Onderliggende uitvoeringen verzenden
 
-Onderliggende uitvoeringen kunnen ook worden verzonden vanuit een bovenliggende run. Hierdoor kunt u hiërarchieën van bovenliggende en onderliggende uitvoeringen maken. 
+Onderliggende uitvoeringen kunnen ook worden verzonden vanuit een bovenliggende run. Hierdoor kunt u hiërarchieën van bovenliggende en onderliggende uitvoeringen maken. U kunt geen bovenliggend element zonder onderliggende items maken: zelfs als de bovenliggende run niets doet maar geen onderliggende uitvoeringen start, is het nog steeds nodig om de hiërarchie te maken. De status van alle uitvoeringen is onafhankelijk: een bovenliggend item kan de `"Completed"` status geslaagd hebben, zelfs als een of meer onderliggende uitvoeringen zijn geannuleerd of mislukt.  
 
 Mogelijk wilt u dat uw kind een andere uitvoerings configuratie gebruikt dan de bovenliggende run. U kunt bijvoorbeeld een minder krachtige, op CPU gebaseerde configuratie voor het bovenliggende knoop punt gebruiken, terwijl u op GPU gebaseerde configuraties voor uw kinderen gebruikt. Een andere gang bare wens is om elke onderliggende andere argumenten en gegevens door te geven. Als u een onderliggende uitvoering wilt aanpassen, maakt u een- `ScriptRunConfig` object voor de onderliggende run. De onderstaande code doet het volgende:
 
@@ -327,6 +327,24 @@ Gebruik de-methode om een query uit te voeren op de onderliggende uitvoeringen v
 ```python
 print(parent_run.get_children())
 ```
+
+### <a name="log-to-parent-or-root-run"></a>Aanmelden bij bovenliggend item of uitvoering van hoofdmap
+
+U kunt het `Run.parent` veld gebruiken om toegang te krijgen tot de uitvoering die de huidige onderliggende uitvoering heeft gestart. Een veelvoorkomend gebruik: dit is het geval wanneer u de resultaten van het logboek op één plek wilt consolideren. Houd er rekening mee dat onderliggende worden asynchroon uitgevoerd en dat er geen garantie is dat de volg orde of synchronisatie wordt gewacht op het volt ooien van de onderliggende uitvoering van het bovenliggende item.
+
+```python
+# in child (or even grandchild) run
+
+def root_run(self : Run) -> Run :
+    if self.parent is None : 
+        return self
+    return root_run(self.parent)
+
+current_child_run = Run.get_context()
+root_run(current_child_run).log("MyMetric", f"Data from child run {current_child_run.id}")
+
+```
+
 
 ## <a name="tag-and-find-runs"></a>Uitvoeringen coderen en zoeken
 

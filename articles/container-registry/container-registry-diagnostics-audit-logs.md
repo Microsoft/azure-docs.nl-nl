@@ -3,16 +3,16 @@ title: Resource logboeken verzamelen & analyseren
 description: Registreer en analyseer bron logboek gebeurtenissen voor Azure Container Registry zoals verificatie, installatie kopie push en installatie kopie ophalen.
 ms.topic: article
 ms.date: 06/01/2020
-ms.openlocfilehash: 63ccb944b9c3de9941acf55ca5ea85fda70a7008
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8b05d34e6c50fea3760e30d28f59e55d8c5f211a
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87553373"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348582"
 ---
 # <a name="azure-container-registry-logs-for-diagnostic-evaluation-and-auditing"></a>Azure Container Registry logboeken voor diagnostische evaluatie en controle
 
-In dit artikel wordt uitgelegd hoe u logboek gegevens kunt verzamelen voor een Azure container Registry met behulp van de functies van [Azure monitor](../azure-monitor/overview.md). Azure Monitor verzamelt [bron logboeken](../azure-monitor/platform/platform-logs-overview.md) (voorheen *Diagnostische logboeken*genoemd) voor door gebruikers gestuurde gebeurtenissen in het REGI ster. Verzamelen en gebruiken van deze gegevens om te voldoen aan de behoeften, zoals:
+In dit artikel wordt uitgelegd hoe u logboek gegevens kunt verzamelen voor een Azure container Registry met behulp van de functies van [Azure monitor](../azure-monitor/overview.md). Azure Monitor verzamelt [bron logboeken](../azure-monitor/platform/platform-logs-overview.md) (voorheen *Diagnostische logboeken* genoemd) voor door gebruikers gestuurde gebeurtenissen in het REGI ster. Verzamelen en gebruiken van deze gegevens om te voldoen aan de behoeften, zoals:
 
 * Register verificatie gebeurtenissen controleren om te zorgen voor beveiliging en naleving 
 
@@ -70,7 +70,7 @@ De volgende afbeelding toont het maken van een diagnostische instelling voor een
 
 Nadat u het verzamelen van Diagnostische logboeken in Log Analytics hebt ingeschakeld, kan het enkele minuten duren voordat gegevens worden weer gegeven in Azure Monitor. Als u de gegevens in de portal wilt weer geven, selecteert u het REGI ster en selecteert u **> logboeken controleren**. Selecteer een van de tabellen die gegevens voor het REGI ster bevatten. 
 
-Query's uitvoeren om de gegevens weer te geven. Er worden verschillende voorbeeld query's gegeven of u kunt uw eigen query uitvoeren. Met de volgende query worden bijvoorbeeld de meest recente 24 uur aan gegevens opgehaald uit de **ContainerRegistryRepositoryEvents** -tabel:
+Voer query's uit om de gegevens weer te geven. Er worden verschillende voorbeeldquery's gegeven of u kunt uw eigen query's uitvoeren. Met de volgende query worden bijvoorbeeld de meest recente 24 uur aan gegevens opgehaald uit de **ContainerRegistryRepositoryEvents** -tabel:
 
 ```Kusto
 ContainerRegistryRepositoryEvents
@@ -81,7 +81,7 @@ De volgende afbeelding toont voorbeeld uitvoer:
 
 ![Query uitvoeren op logboekgegevens](media/container-registry-diagnostics-audit-logs/azure-monitor-query.png)
 
-Zie [aan de slag met Azure Monitor Log Analytics](../azure-monitor/log-query/get-started-portal.md)of probeer de log Analytics- [demo omgeving](https://portal.loganalytics.io/demo)voor een zelf studie over het gebruik van log Analytics in het Azure Portal. 
+Zie [aan de slag met Azure Monitor Log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md)of probeer de log Analytics- [demo omgeving](https://portal.loganalytics.io/demo)voor een zelf studie over het gebruik van log Analytics in het Azure Portal. 
 
 Zie [overzicht van logboek query's in azure monitor](../azure-monitor/log-query/log-query-overview.md)voor meer informatie over logboek query's.
 
@@ -146,5 +146,5 @@ U kunt ook diagnostische logboek gebeurtenissen streamen naar een [Azure Event h
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over het gebruik van [log Analytics](../azure-monitor/log-query/get-started-portal.md) en het maken van [logboek query's](../azure-monitor/log-query/get-started-queries.md).
+* Meer informatie over het gebruik van [log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md) en het maken van [logboek query's](../azure-monitor/log-query/get-started-queries.md).
 * Zie [overzicht van Azure platform-logboeken](../azure-monitor/platform/platform-logs-overview.md) voor meer informatie over platform logboeken die beschikbaar zijn op verschillende lagen van Azure.

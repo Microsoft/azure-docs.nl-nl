@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 09/23/2020
 ms.author: dech
-ms.openlocfilehash: 691a2e56230d312416aed3d68bffd361f1d63558
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d4baa92fe4aa2ed402c394198684c4deec2bf9f1
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96008579"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348599"
 ---
-# <a name="work-with-data-using-azure-cosmos-explorer"></a>Werken met gegevens in Azure Cosmos Explorer 
+# <a name="work-with-data-using-azure-cosmos-db-explorer"></a>Werken met gegevens met behulp van Azure Cosmos DB Explorer 
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
 Azure Cosmos DB Explorer is een zelfstandige webgebaseerde interface waarmee u de gegevens kunt bekijken en beheren die zijn opgeslagen in Azure Cosmos DB. Azure Cosmos DB Explorer is gelijk aan het bestaande **Data Explorer** tabblad dat beschikbaar is in azure Portal wanneer u een Azure Cosmos DB-account maakt. De belangrijkste voor delen van Azure Cosmos DB Explorer over de bestaande Data Explorer zijn:
@@ -42,7 +42,7 @@ Azure Cosmos DB Explorer is een zelfstandige webgebaseerde interface waarmee u d
 
    Kies het type toegang waarmee u het account wilt openen en klik op **openen**. Nadat u de Explorer hebt geopend, is de ervaring hetzelfde als bij de Data Explorer tabblad in Azure Portal.
 
-   :::image type="content" source="./media/data-explorer/open-data-explorer-with-access-url.png" alt-text="Azure Cosmos DB Explorer openen":::
+   :::image type="content" source="./media/data-explorer/open-data-explorer-with-access-url.png" alt-text="Open Azure Cosmos DB Explorer openen":::
 
 ## <a name="known-issues"></a>Bekende problemen
 

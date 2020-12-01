@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/23/2020
 ms.author: dech
 ms.custom: seodec18, has-adal-ref
-ms.openlocfilehash: 61ae446d180a86b42bc52ac3244b96b7b347b68f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 5b09ce48226b3c31efce4966ec776c10931cc391
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96010568"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348650"
 ---
 # <a name="manage-azure-cosmos-db-resources-by-using-azure-storage-explorer"></a>Azure Cosmos DB-resources beheren met Azure Storage Explorer
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -22,7 +22,7 @@ U kunt Azure Storage Explorer gebruiken om verbinding te maken met Azure Cosmos 
 Gebruik hetzelfde hulp programma om uw verschillende Azure-entiteiten op één plek te beheren. U kunt Azure Cosmos DB entiteiten beheren, gegevens bewerken, opgeslagen procedures en triggers bijwerken, samen met andere Azure-entiteiten, zoals opslag-blobs en wacht rijen. Azure Storage Explorer ondersteunt Cosmos-accounts die zijn geconfigureerd voor SQL-, MongoDB-, Graph-en Table-Api's.
 
 > [!NOTE]
-> Integratie van Azure Cosmos DB met Storage Explorer is afgeschaft. Bestaande functionaliteit wordt gedurende minimaal één jaar niet uit deze release verwijderd. Gebruik in plaats daarvan [Azure Portal](https://portal.azure.com/), de [Azure Portal-bureaublad-app](https://portal.azure.com/App/Download) of het zelfstandige [Azure Cosmos Explorer](data-explorer.md). De alternatieve opties bevatten veel nieuwe functies die momenteel niet in Storage Explorer worden ondersteund.
+> Integratie van Azure Cosmos DB met Storage Explorer is afgeschaft. Bestaande functionaliteit wordt gedurende minimaal één jaar niet uit deze release verwijderd. U moet in plaats daarvan de [Azure Portal](https://portal.azure.com/), de [Azure Portal desktop-app](https://portal.azure.com/App/Download) of de zelfstandige [Azure Cosmos DB Explorer](data-explorer.md) gebruiken. De alternatieve opties bevatten veel nieuwe functies die momenteel niet in Storage Explorer worden ondersteund.
 
 ## <a name="prerequisites"></a>Vereisten
 

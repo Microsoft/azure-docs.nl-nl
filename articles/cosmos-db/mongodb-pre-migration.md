@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-mongo
 ms.topic: how-to
 ms.date: 09/01/2020
 ms.author: chrande
-ms.openlocfilehash: 8ad164f79f150e0cd6ab4a083f21b22c59f7c729
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 337341daf0e092def639a4e8f6fc8ee0a9b57c75
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93361582"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349415"
 ---
 # <a name="pre-migration-steps-for-data-migrations-from-mongodb-to-azure-cosmos-dbs-api-for-mongodb"></a>Stappen voorafgaand aan de migratie voor gegevens migraties van MongoDB naar de API van Azure Cosmos DB voor MongoDB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -31,13 +31,13 @@ Als u de bovenstaande vereisten voor de migratie al hebt voltooid, kunt u MongoD
 
 Hieronder vindt u specifieke kenmerken over de API van Azure Cosmos DB voor MongoDB:
 
-- **Capaciteits model** : de capaciteit van de data base op Azure Cosmos DB is gebaseerd op een model op basis van door voer. Dit model is gebaseerd op [aanvraag eenheden per seconde](request-units.md). Dit is een eenheid die het aantal database bewerkingen vertegenwoordigt dat per seconde kan worden uitgevoerd voor een verzameling. Deze capaciteit kan worden toegewezen op [Data Base-of verzamelings niveau](set-throughput.md), en kan worden ingericht voor een toewijzings model, of met de [ingerichte door Voer voor automatisch schalen](provision-throughput-autoscale.md).
+- **Capaciteits model**: de capaciteit van de data base op Azure Cosmos DB is gebaseerd op een model op basis van door voer. Dit model is gebaseerd op [aanvraag eenheden per seconde](request-units.md). Dit is een eenheid die het aantal database bewerkingen vertegenwoordigt dat per seconde kan worden uitgevoerd voor een verzameling. Deze capaciteit kan worden toegewezen op [Data Base-of verzamelings niveau](set-throughput.md), en kan worden ingericht voor een toewijzings model, of met de [ingerichte door Voer voor automatisch schalen](provision-throughput-autoscale.md).
 
-- **Aanvraag eenheden** : elke database bewerking heeft een bijbehorende aanvraag eenheden (RUs) in azure Cosmos db. Wanneer dit wordt uitgevoerd, wordt dit afgetrokken van het niveau van de beschik bare aanvraag eenheden van een opgegeven seconde. Als voor een aanvraag meer RUs is vereist dan de momenteel toegewezen RU/s, zijn er twee opties om het probleem op te lossen: Verhoog de hoeveelheid RUs of wacht tot de volgende seconde wordt gestart en voer de bewerking vervolgens opnieuw uit.
+- **Aanvraag eenheden**: elke database bewerking heeft een bijbehorende aanvraag eenheden (RUs) in azure Cosmos db. Wanneer dit wordt uitgevoerd, wordt dit afgetrokken van het niveau van de beschik bare aanvraag eenheden van een opgegeven seconde. Als voor een aanvraag meer RUs is vereist dan de momenteel toegewezen RU/s, zijn er twee opties om het probleem op te lossen: Verhoog de hoeveelheid RUs of wacht tot de volgende seconde wordt gestart en voer de bewerking vervolgens opnieuw uit.
 
-- **Elastische capaciteit** : de capaciteit van een bepaalde verzameling of Data Base kan op elk gewenst moment worden gewijzigd. Hierdoor kan de data base flexibel worden aangepast aan de doorvoer vereisten van uw workload.
+- **Elastische capaciteit**: de capaciteit van een bepaalde verzameling of Data Base kan op elk gewenst moment worden gewijzigd. Hierdoor kan de data base flexibel worden aangepast aan de doorvoer vereisten van uw workload.
 
-- **Automatische sharding** : Azure Cosmos DB biedt een automatisch partitioneren-systeem dat alleen een Shard (of een partitie sleutel) nodig heeft. Het [mechanisme voor automatische partitionering](partitioning-overview.md) wordt gedeeld met alle Azure Cosmos DB api's en maakt naadloze gegevens en schaalbaar door horizontale distributie mogelijk.
+- **Automatische sharding**: Azure Cosmos DB biedt een automatisch partitioneren-systeem dat alleen een Shard (of een partitie sleutel) nodig heeft. Het [mechanisme voor automatische partitionering](partitioning-overview.md) wordt gedeeld met alle Azure Cosmos DB api's en maakt naadloze gegevens en schaalbaar door horizontale distributie mogelijk.
 
 ## <a name="migration-options-for-azure-cosmos-dbs-api-for-mongodb"></a><a id="options"></a>Migratie opties voor de API van Azure Cosmos DB voor MongoDB
 
@@ -57,11 +57,11 @@ In Azure Cosmos DB wordt de door Voer vooraf ingericht en in aanvraag eenheden (
 U kunt de [Azure Cosmos DB capaciteit Calculator](https://cosmos.azure.com/capacitycalculator/) gebruiken om de hoeveelheid aanvraag eenheden te bepalen op basis van de configuratie van uw database account, de hoeveelheid gegevens, de document grootte en de vereiste Lees-en schrijf bewerkingen per seconde.
 
 Hieronder vindt u belang rijke factoren die van invloed zijn op het aantal vereiste RUs:
-- **Document grootte** : als de grootte van een item/document toeneemt, wordt het aantal dat is gebruikt voor het lezen of schrijven van het item/document ook verhoogd.
+- **Document grootte**: als de grootte van een item/document toeneemt, wordt het aantal dat is gebruikt voor het lezen of schrijven van het item/document ook verhoogd.
 
-- **Aantal document eigenschappen** : het aantal verbruikte RUs voor het maken of bijwerken van een document is gerelateerd aan het aantal, de complexiteit en de lengte van de eigenschappen. U kunt het verbruik van aanvraag eenheden voor schrijf bewerkingen verlagen door [het aantal geïndexeerde eigenschappen te beperken](mongodb-indexing.md).
+- **Aantal document eigenschappen**: het aantal verbruikte RUs voor het maken of bijwerken van een document is gerelateerd aan het aantal, de complexiteit en de lengte van de eigenschappen. U kunt het verbruik van aanvraag eenheden voor schrijf bewerkingen verlagen door [het aantal geïndexeerde eigenschappen te beperken](mongodb-indexing.md).
 
-- **Query patronen** : de complexiteit van een query is van invloed op het aantal aanvraag eenheden dat door de query wordt verbruikt. 
+- **Query patronen**: de complexiteit van een query is van invloed op het aantal aanvraag eenheden dat door de query wordt verbruikt. 
 
 De beste manier om de kosten van query's te begrijpen is het gebruik van voorbeeld gegevens in Azure Cosmos DB [en om voorbeeld query's uit de MongoDb-shell uit te voeren](connect-mongodb-account.md) met behulp van de `getLastRequestStastistics` opdracht om de aanvraag kosten op te halen, waardoor het aantal verbruikt RUs wordt uitgevoerd:
 
@@ -71,7 +71,7 @@ Met deze opdracht wordt een JSON-document uitgevoerd dat lijkt op het volgende:
 
 ```{  "_t": "GetRequestStatisticsResponse",  "ok": 1,  "CommandName": "find",  "RequestCharge": 10.1,  "RequestDurationInMilliSeconds": 7.2}```
 
-U kunt ook [de diagnostische instellingen](cosmosdb-monitor-resource-logs.md) gebruiken om inzicht te krijgen in de frequentie en patronen van de query's die worden uitgevoerd op Azure Cosmos db. De resultaten van de diagnostische logboeken kunnen worden verzonden naar een opslag account, een EventHub-exemplaar of [Azure-log Analytics](../azure-monitor/log-query/get-started-portal.md).  
+U kunt ook [de diagnostische instellingen](cosmosdb-monitor-resource-logs.md) gebruiken om inzicht te krijgen in de frequentie en patronen van de query's die worden uitgevoerd op Azure Cosmos db. De resultaten van de diagnostische logboeken kunnen worden verzonden naar een opslag account, een EventHub-exemplaar of [Azure-log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md).  
 
 ## <a name="choose-your-partition-key"></a><a id="partitioning"></a>Kies uw partitie sleutel
 Partitioneren, ook wel bekend als sharding, is een belang rijk aandachtspunt voordat u gegevens migreert. Azure Cosmos DB maakt gebruik van volledig beheerde partities om de capaciteit in een Data Base te verg Roten om te voldoen aan de vereisten voor opslag en door voer. Voor deze functie is geen hosting-of configuratie van routerings servers nodig.   

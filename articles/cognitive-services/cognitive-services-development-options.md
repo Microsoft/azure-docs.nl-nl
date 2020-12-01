@@ -8,12 +8,12 @@ ms.author: erhopf
 ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 10/22/2020
-ms.openlocfilehash: 4eaa33778287bfcda45547c24e6abe0606b6baa7
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: a952bfa45515b9d35549d03d18fd94103679344d
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94368794"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349466"
 ---
 # <a name="cognitive-services-development-options"></a>Cognitive Services-ontwikkelingsopties
 
@@ -49,10 +49,10 @@ Laten we eens kijken naar de verschillende manieren waarop u met de Cognitive Se
 
 Cognitive Services-client bibliotheken en REST-Api's bieden u rechtstreekse toegang tot uw service. Deze hulpprogram ma's bieden programmatische toegang tot de Cognitive Services, hun basislijn modellen en in veel gevallen kunt u uw modellen en oplossingen programmatisch aanpassen. 
 
-* **Doel gebruiker (s)** : ontwikkel aars en gegevens wetenschappers
-* **Voor delen** : biedt de grootste flexibiliteit voor het aanroepen van de Services vanuit elke taal en omgeving. 
-* **Gebruikers interface** : N/A-code
-* **Abonnement/abonnementen** : Azure-account + Cognitive services resources
+* **Doel gebruiker (s)**: ontwikkel aars en gegevens wetenschappers
+* **Voor delen**: biedt de grootste flexibiliteit voor het aanroepen van de Services vanuit elke taal en omgeving. 
+* **Gebruikers interface**: N/A-code
+* **Abonnement/abonnementen**: Azure-account + Cognitive services resources
 
 Als u meer wilt weten over de beschik bare client bibliotheken en REST Api's, gebruikt u onze [Cognitive Services-overzicht](index.yml) om te kiezen en te onderhouden en aan de slag te gaan met een van onze Quick starts voor Vision, beslissing, taal en spraak.
 
@@ -60,10 +60,10 @@ Als u meer wilt weten over de beschik bare client bibliotheken en REST Api's, ge
 
 Met Cognitive Services voor Big data kunt u intelligente modellen rechtstreeks in Apache Spark&trade; en SQL-berekeningen opnemen. Dankzij hulpprogramma's moeten ontwikkelaars zich niet meer bezighouden met netwerkdetails op laag niveau, zodat ze zich kunnen richten op het maken van slimme, gedistribueerde toepassingen. Cognitive Services voor Big Data ondersteunt de volgende platforms en connectors: Azure Databricks, Azure Synapse, Azure Kubernetes service en data connectors.
 
-* **Doel gebruiker (s)** : gegevens wetenschappers en gegevens technici
-* **Voor delen** : met Azure Cognitive Services voor Big data kunnen gebruikers met behulp van Apache Spark Data Channel terabytes aan gegevens via Cognitive Services &trade; . Het is eenvoudig om grootschalige intelligente toepassingen te maken met elke gegevens opslag.
-* **Gebruikers interface** : N/A-code
-* **Abonnement/abonnementen** : Azure-account + Cognitive services resources
+* **Doel gebruiker (s)**: gegevens wetenschappers en gegevens technici
+* **Voor delen**: met Azure Cognitive Services voor Big data kunnen gebruikers met behulp van Apache Spark Data Channel terabytes aan gegevens via Cognitive Services &trade; . Het is eenvoudig om grootschalige intelligente toepassingen te maken met elke gegevens opslag.
+* **Gebruikers interface**: N/A-code
+* **Abonnement/abonnementen**: Azure-account + Cognitive services resources
 
 Als u meer wilt weten over Big data voor Cognitive Services, kunt u het beste beginnen met het [overzicht](./big-data/cognitive-services-for-big-data.md). Als u klaar bent om te beginnen met het bouwen, probeert u onze [python](./big-data/samples-python.md) -of [scala](./big-data/samples-scala.md) -voor beelden.
 
@@ -71,46 +71,46 @@ Als u meer wilt weten over Big data voor Cognitive Services, kunt u het beste be
 
 [Azure functions](../azure-functions/index.yml) -en [Azure app service webjobs](../app-service/index.yml) bieden beide code-eerste integratie services die zijn ontworpen voor ontwikkel aars en zijn gebouwd op [Azure-app Services](../app-service/index.yml). Deze producten bieden serverloze infra structuur voor het schrijven van code. Binnen die code kunt u aanroepen naar onze services met behulp van onze client bibliotheken en REST Api's. 
 
-* **Doel gebruiker (s)** : ontwikkel aars en gegevens wetenschappers
-* **Voor delen** : serverloze compute-service waarmee u gebeurtenis-geactiveerde code kunt uitvoeren. 
-* **UI** : Ja
-* **Abonnement/abonnementen** : Azure-account + Cognitive Services resource + Azure functions abonnement
+* **Doel gebruiker (s)**: ontwikkel aars en gegevens wetenschappers
+* **Voor delen**: serverloze compute-service waarmee u gebeurtenis-geactiveerde code kunt uitvoeren. 
+* **UI**: Ja
+* **Abonnement/abonnementen**: Azure-account + Cognitive Services resource + Azure functions abonnement
 
 ### <a name="azure-logic-apps"></a>Azure Logic Apps 
 
 [Azure Logic apps](../logic-apps/index.yml) dezelfde werk stroom ontwerper en connectors als automatische automatisering delen, maar biedt meer geavanceerde en controle mogelijkheden, inclusief integraties met Visual Studio en DevOps. Met energie automatisering kunt u gemakkelijk integreren met uw cognitieve services-resources via servicespecifieke connectors die een proxy of wrapper rond de Api's bieden. Dit zijn dezelfde connectors als die beschikbaar zijn in automatische energie automatisering. 
 
-* **Doel gebruiker (s)** : ontwikkel aars, integrators, IT-professionals, DevOps
-* **Voor delen** : Designer-First (declaratief) ontwikkelings model dat geavanceerde opties en integratie biedt in een oplossing met weinig code
-* **UI** : Ja
-* **Abonnement (en)** : Azure-account + Cognitive Services resource + Logic apps implementatie
+* **Doel gebruiker (s)**: ontwikkel aars, integrators, IT-professionals, DevOps
+* **Voor delen**: Designer-First (declaratief) ontwikkelings model dat geavanceerde opties en integratie biedt in een oplossing met weinig code
+* **UI**: Ja
+* **Abonnement (en)**: Azure-account + Cognitive Services resource + Logic apps implementatie
 
 ### <a name="power-automate"></a>Power Automate 
 
 Energie automatisering is een service in het [Power platform](/power-platform/) waarmee u geautomatiseerde werk stromen tussen apps en services kunt maken zonder code te hoeven schrijven. We bieden verschillende connectors waarmee u eenvoudig kunt communiceren met uw Cognitive Services-resource in een oplossing voor het automatiseren van de stroom. Power Automate is gebaseerd op Logic Apps. 
 
-* **Doel gebruiker (s)** : zakelijke gebruikers (analisten) en share point-beheerders
-* **Voor delen** : Automatiseer Herhaalde hand matige taken door muis klikken te registreren, toetsaanslagen en kopieer plak stappen van uw bureau blad.
-* **UI-hulpprogram ma's** : Ja, alleen gebruikers interface
-* **Abonnement (en)** : Azure account + Cognitive Services resource + abonnement voor automatische abonnementen + Office 365-abonnement
+* **Doel gebruiker (s)**: zakelijke gebruikers (analisten) en share point-beheerders
+* **Voor delen**: Automatiseer Herhaalde hand matige taken door muis klikken te registreren, toetsaanslagen en kopieer plak stappen van uw bureau blad.
+* **UI-hulpprogram ma's**: Ja, alleen gebruikers interface
+* **Abonnement (en)**: Azure account + Cognitive Services resource + abonnement voor automatische abonnementen + Office 365-abonnement
 
 ### <a name="ai-builder"></a>AI Builder 
 
 [AI Builder](/ai-builder/overview) is een micro soft power platform-mogelijkheid die u kunt gebruiken om de bedrijfs prestaties te verbeteren door processen te automatiseren en resultaten te voors pellen. AI Builder biedt de kracht van AI naar uw oplossingen door middel van een point-and-click-ervaring. Veel cognitieve Services, zoals formulier herkenning, Text Analytics en Computer Vision, zijn rechtstreeks geïntegreerd en u hoeft geen eigen Cognitive Services te maken. 
 
-* **Doel gebruiker (s)** : zakelijke gebruikers (analisten) en share point-beheerders
-* **Voor delen** : een kant-en-klare oplossing die de kracht van AI biedt met behulp van een point-and-click-ervaring. Geen code ring of vaardig heden van data Science vereist.
-* **UI-hulpprogram ma's** : Ja, alleen gebruikers interface
-* **Abonnement (en)** : AI-opbouw functie
+* **Doel gebruiker (s)**: zakelijke gebruikers (analisten) en share point-beheerders
+* **Voor delen**: een kant-en-klare oplossing die de kracht van AI biedt met behulp van een point-and-click-ervaring. Geen code ring of vaardig heden van data Science vereist.
+* **UI-hulpprogram ma's**: Ja, alleen gebruikers interface
+* **Abonnement (en)**: AI-opbouw functie
 
 ### <a name="continuous-integration-and-deployment"></a>Continue integratie en implementatie
 
 U kunt de acties van Azure DevOps en GitHub gebruiken voor het beheren van uw implementaties. In de [sectie hieronder vindt](#continuous-integration-and-delivery-with-devops-and-github-actions) u twee voor beelden van CI/cd-integraties voor het trainen en implementeren van aangepaste modellen voor spraak en de Language Understanding-service (Luis). 
 
-* **Doel gebruiker (s)** : ontwikkel aars, gegevens wetenschappers en gegevens technici
-* **Voor delen** : Hiermee kunt u toepassingen en modellen voortdurend programmatisch aanpassen, bijwerken en implementeren. Er is een aanzienlijk voor deel wanneer u uw gegevens regel matig gebruikt om modellen voor spraak, visie, taal en beslissing te verbeteren en bij te werken. 
-* **UI-hulpprogram ma's** : alleen N/A-code 
-* **Abonnement (en)** : Azure-account + Cognitive Services resource + github-account
+* **Doel gebruiker (s)**: ontwikkel aars, gegevens wetenschappers en gegevens technici
+* **Voor delen**: Hiermee kunt u toepassingen en modellen voortdurend programmatisch aanpassen, bijwerken en implementeren. Er is een aanzienlijk voor deel wanneer u uw gegevens regel matig gebruikt om modellen voor spraak, visie, taal en beslissing te verbeteren en bij te werken. 
+* **UI-hulpprogram ma's**: alleen N/A-code 
+* **Abonnement (en)**: Azure-account + Cognitive Services resource + github-account
 
 ## <a name="tools-to-customize-and-configure-models"></a>Hulp middelen voor het aanpassen en configureren van modellen
 
@@ -122,7 +122,7 @@ Wanneer u de voortgang van uw traject bouwt voor het maken van een toepassing of
 
 De hulpprogram ma's die u gebruikt om modellen te trainen en te configureren, zijn anders dan degene die u gebruikt om de Cognitive Services aan te roepen. In veel gevallen biedt Cognitive Services die ondersteuning bieden voor portals en hulpprogram ma's voor de gebruikers interface die zijn ontworpen om u te helpen bij het trainen, evalueren en implementeren van modellen. Laten we snel een aantal opties bekijken:<br><br>
 
-| Pijler | Service | UI voor aanpassing | Snelstartgids |
+| Pijler | Service | UI voor aanpassing | Snelstart |
 |--------|---------|------------------|------------|
 | Vision | Custom Vision | https://www.customvision.ai/ | [Snelstartgids](./custom-vision-service/quickstarts/image-classification.md?pivots=programming-language-csharp) | 
 | Vision | Form Recognizer | Voorbeeldhulpprogramma voor labelen | [Snelstartgids](./form-recognizer/quickstarts/label-tool.md?tabs=v2-0) |
@@ -132,9 +132,9 @@ De hulpprogram ma's die u gebruikt om modellen te trainen en te configureren, zi
 | Taal | Language Understanding (LUIS) | https://www.luis.ai/ | |
 | Taal | QnA Maker | https://www.qnamaker.ai/ | [Snelstartgids](./qnamaker/quickstarts/create-publish-knowledge-base.md) |
 | Taal | Translator/aangepaste vertaler | https://portal.customtranslator.azure.ai/ | [Snelstartgids](./translator/custom-translator/quickstart-build-deploy-custom-model.md) |
-| Speech | Aangepaste opdrachten | https://speech.microsoft.com/ | [Snelstartgids](./speech-service/custom-commands.md) |
-| Speech | Aangepaste spraak | https://speech.microsoft.com/ | [Snelstartgids](./speech-service/how-to-custom-speech.md) |
-| Speech | Aangepaste stem | https://speech.microsoft.com/ | [Snelstartgids](./speech-service/how-to-custom-voice.md) |  
+| Spraak | Aangepaste opdrachten | https://speech.microsoft.com/ | [Snelstartgids](./speech-service/custom-commands.md) |
+| Spraak | Aangepaste spraak | https://speech.microsoft.com/ | [Snelstartgids](./speech-service/custom-speech-overview.md) |
+| Spraak | Aangepaste stem | https://speech.microsoft.com/ | [Snelstartgids](./speech-service/how-to-custom-voice.md) |  
 
 ### <a name="continuous-integration-and-delivery-with-devops-and-github-actions"></a>Continue integratie en levering met DevOps-en GitHub-acties
 

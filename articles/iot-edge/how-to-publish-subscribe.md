@@ -10,16 +10,16 @@ ms.date: 11/09/2020
 ms.topic: conceptual
 ms.service: iot-edge
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: 1ace40098e1d53c6199accea755ffb6969781663
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: ecb034ae621c935c3ebcd5b480e116c2cb1d864f
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95015660"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96435532"
 ---
 # <a name="publish-and-subscribe-with-azure-iot-edge"></a>Publiceren en abonneren met Azure IoT Edge
 
-U kunt Azure IoT Edge MQTT Broker gebruiken voor het publiceren en abonneren van berichten. In dit artikel leest u hoe u verbinding maakt met deze Broker, berichten publiceert en abonneert op door de gebruiker gedefinieerde onderwerpen en IoT Hub-bericht primitieven gebruikt. De IoT Edge MQTT Broker is ingebouwd in de IoT Edge hub. Zie de functies voor het [brokerpen van de IOT Edge hub](iot-edge-runtime.md)voor meer informatie.
+U kunt Azure IoT Edge MQTT Broker gebruiken voor het publiceren en abonneren van berichten. In dit artikel leest u hoe u verbinding kunt maken met deze Broker, hoe u berichten publiceert en hierop abonneert via door de gebruiker gedefinieerde onderwerpen en hoe u IoT Hub bericht primitieven kunt gebruiken. De IoT Edge MQTT Broker is ingebouwd in de IoT Edge hub. Zie de functies voor het [brokerpen van de IOT Edge hub](iot-edge-runtime.md)voor meer informatie.
 
 > [!NOTE]
 > IoT Edge MQTT Broker bevindt zich momenteel in de open bare preview.
@@ -27,7 +27,7 @@ U kunt Azure IoT Edge MQTT Broker gebruiken voor het publiceren en abonneren van
 ## <a name="pre-requisites"></a>Vereisten
 
 - Een Azure-account met een geldig abonnement
-- [Azure cli](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest&preserve-view=true) met de `azure-iot` cli-extensie geïnstalleerd. Zie [de installatie stappen voor Azure IOT-extensie voor Azure Azure cli](https://docs.microsoft.com/cli/azure/azure-cli-reference-for-iot)voor meer informatie.
+- [Azure cli](/cli/azure/) met de `azure-iot` cli-extensie geïnstalleerd. Zie [de installatie stappen voor Azure IOT-extensie voor Azure Azure cli](/cli/azure/azure-cli-reference-for-iot)voor meer informatie.
 - Een **IOT hub** van de SKU F1, S1, S2 of S3.
 - Een **IOT edge apparaat hebben met versie 1,2 of hoger**. Omdat IoT Edge MQTT Broker momenteel beschikbaar is in de open bare preview, stelt u de volgende omgevings variabelen in op True in de edgeHub-container om de MQTT Broker in te scha kelen:
 
@@ -36,7 +36,7 @@ U kunt Azure IoT Edge MQTT Broker gebruiken voor het publiceren en abonneren van
    | `experimentalFeatures__enabled` | `true` |
    | `experimentalFeatures__mqttBrokerEnabled` | `true` |
 
-- **Mosquitto-clients** geïnstalleerd op het IOT edge-apparaat. In dit artikel wordt gebruikgemaakt van de populaire Mosquitto-clients met [MOSQUITTO_PUB](https://mosquitto.org/man/mosquitto_pub-1.html) en [MOSQUITTO_SUB](https://mosquitto.org/man/mosquitto_sub-1.html). In plaats daarvan kunnen andere MQTT-clients worden gebruikt. Als u de Mosquitto-clients op een Ubuntu-apparaat wilt installeren, voert u de volgende opdracht uit:
+- **Mosquitto-clients** geïnstalleerd op het IOT edge-apparaat. In dit artikel wordt gebruikgemaakt van de populaire Mosquitto-clients [MOSQUITTO_PUB](https://mosquitto.org/man/mosquitto_pub-1.html) en [MOSQUITTO_SUB](https://mosquitto.org/man/mosquitto_sub-1.html). In plaats daarvan kunnen andere MQTT-clients worden gebruikt. Als u de Mosquitto-clients op een Ubuntu-apparaat wilt installeren, voert u de volgende opdracht uit:
 
     ```cmd
     sudo apt-get update && sudo apt-get install mosquitto-clients
@@ -62,28 +62,28 @@ Als u TLS wilt inschakelen, wordt een TLS-kanaal gestart als een client verbindi
 
 ### <a name="authentication"></a>Verificatie
 
-Een MQTT-client kan zichzelf alleen verifiëren als eerst een verbindings pakket naar de MQTT Broker moet worden verzonden om een verbinding in de naam te initiëren. Dit pakket biedt drie soorten verificatie-informatie: a `client identifier` , a `username` en `password` :
+Een MQTT-client kan zichzelf alleen verifiëren als eerst een CONNECT-pakket naar de MQTT Broker moet worden verzonden om een verbinding in de naam te initiëren. Dit pakket biedt drie soorten verificatie-informatie: a `client identifier` , a `username` en een `password` :
 
--   Het `client identifier` veld bevat de naam van het apparaat of de module naam in IOT hub. Er wordt gebruikgemaakt van de volgende syntaxis:
+- Het `client identifier` veld bevat de naam van het apparaat of de module naam in IOT hub. Er wordt gebruikgemaakt van de volgende syntaxis:
 
-    - Voor een apparaat: `<device_name>`
+  - Voor een apparaat: `<device_name>`
 
-    - Voor een module: `<device_name>/<module_name>`
+  - Voor een module: `<device_name>/<module_name>`
 
    Als u verbinding wilt maken met de MQTT Broker, moet een apparaat of module zijn geregistreerd in IoT Hub.
 
-   Houd er rekening mee dat de Broker niet toestaat dat twee clients met dezelfde referenties verbinding maken. De Broker verbreekt de verbinding van de reeds verbonden client als een tweede client verbinding maakt met behulp van dezelfde referenties.
+   De Broker staat geen verbindingen toe van meerdere clients die dezelfde referenties gebruiken. De Broker verbreekt de verbinding van de reeds verbonden client als een tweede client verbinding maakt met behulp van dezelfde referenties.
 
 - Het `username` veld is afgeleid van het apparaat of de module naam en de naam van het IoTHub-apparaat maakt gebruik van de volgende syntaxis:
 
-    - Voor een apparaat: `<iot_hub_name>.azure-devices.net/<device_name>/?api-version=2018-06-30`
+  - Voor een apparaat: `<iot_hub_name>.azure-devices.net/<device_name>/?api-version=2018-06-30`
 
-    - Voor een module: `<iot_hub_name>.azure-devices.net/<device_name>/<module_name>/?api-version=2018-06-30`
+  - Voor een module: `<iot_hub_name>.azure-devices.net/<device_name>/<module_name>/?api-version=2018-06-30`
 
 - Het `password` veld van het verbindings pakket is afhankelijk van de verificatie modus:
 
-    - In het geval van de [verificatie van symmetrische sleutels](how-to-authenticate-downstream-device.md#symmetric-key-authentication) `password` is het veld een SAS-token.
-    - In het geval van de [X. 509 zelfondertekende verificatie](how-to-authenticate-downstream-device.md#x509-self-signed-authentication), `password` is het veld niet aanwezig. In deze verificatie modus is een TLS-kanaal vereist. De client moet verbinding maken met poort 8883 om een TLS-verbinding tot stand te brengen. Tijdens de TLS-Handshake vraagt de MQTT Broker een client certificaat aan. Dit certificaat wordt gebruikt om de identiteit van de client te controleren en daarom `password` is het veld niet meer nodig wanneer het Connect-pakket wordt verzonden. Als u een client certificaat en het wachtwoord veld verzendt, leidt dit tot een fout en wordt de verbinding gesloten. MQTT-bibliotheken en TLS-client bibliotheken hebben doorgaans een manier om een client certificaat te verzenden wanneer een verbinding wordt gestart. U ziet een voor beeld van een stapsgewijze stap in de sectie [met het x509-certificaat voor client verificatie](how-to-authenticate-downstream-device.md#x509-self-signed-authentication).
+  - Wanneer u gebruikmaakt van [symmetrische sleutel verificatie](how-to-authenticate-downstream-device.md#symmetric-key-authentication), `password` is het veld een SAS-token.
+  - Wanneer u [X. 509 zelfondertekende authenticatie](how-to-authenticate-downstream-device.md#x509-self-signed-authentication)gebruikt, `password` is het veld niet aanwezig. In deze verificatie modus is een TLS-kanaal vereist. De client moet verbinding maken met poort 8883 om een TLS-verbinding tot stand te brengen. Tijdens de TLS-Handshake vraagt de MQTT Broker een client certificaat aan. Dit certificaat wordt gebruikt om de identiteit van de client te controleren en daarom `password` is het veld niet meer nodig wanneer het Connect-pakket wordt verzonden. Als u een client certificaat en het wachtwoord veld verzendt, leidt dit tot een fout en wordt de verbinding gesloten. MQTT-bibliotheken en TLS-client bibliotheken hebben doorgaans een manier om een client certificaat te verzenden wanneer een verbinding wordt gestart. U ziet een voor beeld van een stapsgewijze stap in de sectie [met het x509-certificaat voor client verificatie](how-to-authenticate-downstream-device.md#x509-self-signed-authentication).
 
 Modules die worden geïmplementeerd door IoT Edge [symmetrische sleutel verificatie](how-to-authenticate-downstream-device.md#symmetric-key-authentication) gebruiken en kunnen de lokale [IOT Edge workload API](https://github.com/Azure/iotedge/blob/40f10950dc65dd955e20f51f35d69dd4882e1618/edgelet/workload/README.md) aanroepen om programmatisch een SAS-token te verkrijgen, zelfs als u offline bent.
 
@@ -92,12 +92,12 @@ Modules die worden geïmplementeerd door IoT Edge [symmetrische sleutel verifica
 Zodra een MQTT-client is geverifieerd voor IoT Edge hub, moet deze worden gemachtigd om verbinding te maken. Nadat de verbinding tot stand is gebracht, moet deze worden gemachtigd voor publiceren of abonneren op specifieke onderwerpen. Deze autorisaties worden verleend door de IoT Edge hub op basis van het autorisatie beleid. Het autorisatie beleid is een set instructies die wordt weer gegeven als een JSON-structuur die via het dubbele wordt verzonden naar de IoT Edge hub. Bewerk een IoT Edge hub tussen het configureren van het autorisatie beleid.
 
 > [!NOTE]
-> Voor de open bare preview is het bewerken van autorisatie beleid van de MQTT-Broker alleen beschikbaar via Visual Studio, Visual Studio code of Azure CLI. De Azure Portal biedt momenteel geen ondersteuning voor het bewerken van de IoT Edge hub dubbele en het bijbehorende autorisatie beleid.
+> Voor de open bare preview is het bewerken van autorisatie beleid van de MQTT-Broker alleen beschikbaar via Visual Studio, Visual Studio code of de Azure CLI. De Azure Portal biedt momenteel geen ondersteuning voor het bewerken van de IoT Edge hub dubbele en het bijbehorende autorisatie beleid.
 
-Elke autorisatie beleids instructie bestaat uit de combi natie van `identities` , of van het `allow` `deny` effect, `operations` en `resources` :
+Elke autorisatie beleids instructie bestaat uit de combi natie van `identities` , `allow` of `deny` effecten, `operations` en `resources` :
 
 - `identities` Beschrijf het onderwerp van het beleid. Het moet worden toegewezen aan de `client identifier` verzonden door-clients in hun Connect-pakket.
-- `allow` of- `deny` effect bepalen of bewerkingen moeten worden toegestaan of geweigerd.
+- `allow` of `deny` effecten bepalen of bewerkingen moeten worden toegestaan of geweigerd.
 - `operations` Definieer de acties die moeten worden geautoriseerd. `mqtt:connect``mqtt:publish`en `mqtt:subscribe` zijn vandaag de drie ondersteunde acties.
 - `resources` Definieer het object van het beleid. Dit kan een onderwerp of een onderwerp patroon zijn dat is gedefinieerd met [MQTT-joker tekens](https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718107).
 
@@ -163,16 +163,18 @@ Hieronder ziet u een voor beeld van een autorisatie beleid waarmee ' rogue_clien
 ```
 
 Een aantal dingen die u moet onthouden bij het schrijven van uw autorisatie beleid:
+
 - Het vereist `$edgeHub` dubbele schema versie 1,2
 - Standaard worden alle bewerkingen geweigerd.
-- Autorisatie-instructies worden in de volg orde geëvalueerd dan ze in de JSON-definitie worden weer gegeven. Het begint met het zoeken naar `identities` en vervolgens de eerste instructies voor toestaan of weigeren selecteren die overeenkomen met de aanvraag. In het geval van conflicten tussen de instructies Allow en deny, wint de instructie deny.
+- Autorisatie-instructies worden geëvalueerd in de volg orde waarin ze worden weer gegeven in de JSON-definitie. Het begint met het zoeken naar `identities` en vervolgens de eerste instructies voor toestaan of weigeren selecteren die overeenkomen met de aanvraag. In het geval van conflicten tussen de instructies Allow en deny, wint de instructie deny.
 - Verschillende variabelen (bijvoorbeeld substituties) kunnen worden gebruikt in het autorisatie beleid:
-    - `{{iot:identity}}` Hiermee wordt de identiteit van de momenteel verbonden client aangeduid. Bijvoorbeeld in het geval van een `myDevice` -apparaat, `myEdgeDevice/SampleModule` in het geval van een module.
-    - `{{iot:device_id}}` Hiermee wordt de identiteit van het momenteel verbonden apparaat aangeduid. Bijvoorbeeld in het geval van een `myDevice` -apparaat, `myEdgeDevice` in het geval van een module.
-    - `{{iot:module_id}}` Hiermee wordt de identiteit van de momenteel verbonden module aangeduid. Voor beeld: ' ' in het geval van een-apparaat, `SampleModule` in het geval van een module.
+    - `{{iot:identity}}` Hiermee wordt de identiteit van de momenteel verbonden client aangeduid. Bijvoorbeeld een apparaat-id zoals `myDevice` een module-ID, zoals `myEdgeDevice/SampleModule` .
+    - `{{iot:device_id}}` Hiermee wordt de identiteit van het momenteel verbonden apparaat aangeduid. Bijvoorbeeld een apparaat-id zoals `myDevice` of de apparaat-id waar een module op lijkt `myEdgeDevice` .
+    - `{{iot:module_id}}` Hiermee wordt de identiteit van de momenteel verbonden module aangeduid. Deze variabele is leeg voor verbonden apparaten of een module-identiteit zoals `SampleModule` .
     - `{{iot:this_device_id}}` Hiermee wordt de identiteit aangeduid van het IoT Edge apparaat dat het autorisatie beleid uitvoert. Bijvoorbeeld `myIoTEdgeDevice`.
 
-Verificatie voor IoT hub-onderwerpen worden enigszins anders behandeld dan door de gebruiker gedefinieerde onderwerpen. Dit zijn de belangrijkste punten die u moet onthouden:
+Autorisaties voor IoT hub-onderwerpen worden enigszins anders behandeld dan door de gebruiker gedefinieerde onderwerpen. Dit zijn de belangrijkste punten die u moet onthouden:
+
 - Azure IoT-apparaten of-modules hebben een expliciete autorisatie regel nodig om verbinding te maken met IoT Edge hub MQTT Broker. Hieronder vindt u een standaard beleid voor verbindings autorisatie.
 - Azure IoT-apparaten of-modules hebben standaard toegang tot hun eigen IoT hub-onderwerpen zonder enige expliciete autorisatie regel. Autorisaties zijn echter afkomstig van bovenliggende/onderliggende relaties in dat geval en deze relaties moeten worden ingesteld. IoT Edge modules worden automatisch ingesteld als onderliggende items van hun IoT Edge apparaat, maar apparaten moeten expliciet worden ingesteld als onderliggende items van hun IoT Edge gateway.
 - Azure IoT-apparaten of-modules hebben toegang tot de onderwerpen, waaronder IoT hub-onderwerpen, van andere apparaten of modules die voorzien in de juiste expliciete autorisatie regels worden gedefinieerd.
@@ -327,7 +329,7 @@ mosquitto_sub \
 
 `<edge_device_address>`  =  `localhost` in dit voor beeld omdat de client wordt uitgevoerd op hetzelfde apparaat als IOT Edge.
 
-Houd er rekening mee dat poort 1883 (MQTT), bijvoorbeeld zonder TLS, in dit eerste voor beeld wordt gebruikt. Een ander voor beeld met poort 8883 (MQTTS), bijvoorbeeld met TLS ingeschakeld, wordt weer gegeven in de volgende sectie.
+Houd er rekening mee dat poort 1883 (MQTT), zonder TLS, in dit eerste voor beeld wordt gebruikt. Een ander voor beeld met poort 8883 (MQTTS), met TLS ingeschakeld, wordt in de volgende sectie weer gegeven.
 
 De **sub_client** MQTT-client is nu gestart en wacht op inkomende berichten op `test_topic` .
 
@@ -384,7 +386,7 @@ Een client moet zich abonneren op een speciaal IoTHub-onderwerp om dubbele patch
 
 ### <a name="receive-direct-methods"></a>Directe methoden ontvangen
 
-Het ontvangen van een directe methode lijkt sterk op het ontvangen van volledige apparaatdubbels, met de toevoeging dat de client moet bevestigen dat deze de aanroep heeft ontvangen. Eerst abonneert u zich op de client voor een speciaal onderwerp voor IoT hub `$iothub/methods/POST/#` . Zodra een directe methode op dit onderwerp wordt ontvangen, moet de client de aanvraag-id extra heren `rid` uit het subonderwerp waarop de directe methode wordt ontvangen en uiteindelijk een bevestigings bericht in een speciaal onderwerp van de IOT-hub publiceren `$iothub/methods/res/200/<request_id>` .
+Het ontvangen van een directe methode is vergelijkbaar met het ontvangen van volledige apparaatdubbels, met de toevoeging dat de client moet bevestigen dat deze de aanroep heeft ontvangen. Eerst wordt de client geabonneerd op een speciaal onderwerp voor IoT hub `$iothub/methods/POST/#` . Zodra een directe methode op dit onderwerp wordt ontvangen, moet de client de aanvraag-id extra heren `rid` uit het subonderwerp waarop de directe methode wordt ontvangen en uiteindelijk een bevestigings bericht in een speciaal onderwerp van de IOT-hub publiceren `$iothub/methods/res/200/<request_id>` .
 
 ### <a name="send-direct-methods"></a>Directe methoden verzenden
 
@@ -437,7 +439,7 @@ Hieronder ziet u een voor beeld van een IoT Edge MQTT-brug configuratie waarmee 
 }
 ```
 Andere opmerkingen over de MQTT-brug van IoT Edge hub:
-- Het MQTT-protocol wordt automatisch als upstream-protocol gebruikt wanneer de MQTT Broker wordt gebruikt en dat IoT Edge wordt gebruikt in een geneste configuratie, bijvoorbeeld met een `parent_hostname` opgegeven. Zie [Cloud communicatie](iot-edge-runtime.md#cloud-communication)voor meer informatie over upstream-protocollen. Zie [een downstream IOT edge apparaat verbinden met een Azure IOT Edge gateway](how-to-connect-downstream-iot-edge-device.md#configure-iot-edge-on-devices)voor meer informatie over geneste configuraties.
+- Het MQTT-protocol wordt automatisch als upstream-protocol gebruikt wanneer de MQTT Broker wordt gebruikt en die IoT Edge wordt gebruikt in een geneste configuratie, bijvoorbeeld met een `parent_hostname` opgegeven. Zie [Cloud communicatie](iot-edge-runtime.md#cloud-communication)voor meer informatie over upstream-protocollen. Zie [een downstream IOT edge apparaat verbinden met een Azure IOT Edge gateway](how-to-connect-downstream-iot-edge-device.md#configure-iot-edge-on-devices)voor meer informatie over geneste configuraties.
 
 ## <a name="next-steps"></a>Volgende stappen
 

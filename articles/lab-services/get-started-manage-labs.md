@@ -3,12 +3,12 @@ title: Aan de slag met Azure Lab Services
 description: In dit artikel wordt beschreven hoe u aan de slag gaat met Azure Lab Services.
 ms.topic: article
 ms.date: 11/18/2020
-ms.openlocfilehash: bdc4f4af06d70a1798e7409b78f6b47530ddd7f4
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 6fb0da7f91e0eecdeefecdb6635b657245fda9af
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917100"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96434427"
 ---
 # <a name="get-started-with-lab-services"></a>Aan de slag met Lab-Services 
 
@@ -48,7 +48,7 @@ Het belangrijkste dat u moet onthouden bij het beheren van de virtuele machines 
 
 ### <a name="overview"></a>Overzicht
 
-Dash boards voor klassikale Labs in Azure Lab Services bieden een moment opname van verschillende aspecten van een bepaald Lab, zoals VM-informatie, het aantal toegewezen en niet-toegewezen Vm's, het aantal geregistreerde en niet-geregistreerde gebruikers en informatie over Lab-schema's. 
+Dash boards voor Labs in Azure Lab Services bieden een moment opname van verschillende aspecten van een bepaald Lab, zoals VM-informatie, het aantal toegewezen en niet-toegewezen Vm's, het aantal geregistreerde en niet-geregistreerde gebruikers en informatie over Lab-schema's. 
 
 > [!NOTE]
 > Hoewel de meeste beheer aspecten van het dash board en de [Azure Lab Services website](https://labs.azure.com/) zichtbaar zijn voor docenten, zijn de machtigingen die specifiek zijn voor uw rol mogelijk van invloed op de mogelijkheid om bepaalde criteria in het dash board te wijzigen. Als u een probleem ondervindt met uw specifieke Lab-installatie, neem dan contact op met uw CTE-beheerder.

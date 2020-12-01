@@ -3,12 +3,12 @@ title: Azure Lab Services gebruiken voor hackathon
 description: In dit artikel wordt beschreven hoe u Azure Lab Services gebruikt voor het maken van Labs die u kunt gebruiken voor het uitvoeren van hackathons trappen.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 8727fad6f37d1365983127a1a514e87e3a5003b9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 561351636a37c2cd5c3070dbfef2a3122e5c29b0
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85445879"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96434257"
 ---
 # <a name="use-azure-lab-services-for-your-next-hackathon"></a>Azure Lab Services gebruiken voor uw volgende hackathon
 Azure Lab Services is lichter ontworpen en eenvoudig te gebruiken, zodat u snel een nieuw Lab van virtuele machines (Vm's) kunt maken voor uw Hackathon.  Gebruik de volgende controle lijst om ervoor te zorgen dat uw hackathon zo soepel mogelijk verloopt. Deze controle lijst moet worden ingevuld door uw IT-afdeling of faculteit die verantwoordelijk is voor het maken en beheren van uw hackathon-Lab. 
@@ -17,7 +17,7 @@ Als u Lab-Services voor uw hackathon wilt gebruiken, moet u ervoor zorgen dat zo
 
 ## <a name="guidance"></a>Hulp
 
-- **Maak het lab in een regio of locatie die het dichtst bij de deel nemers**ligt. 
+- **Maak het lab in een regio of locatie die het dichtst bij de deel nemers** ligt. 
 
     Als u de latentie wilt beperken, maakt u uw Lab in een regio die het dichtst bij uw hackathon-deel nemers ligt.  Als uw deel nemers zich overal ter wereld bevinden, moet u uw beste arrest gebruiken om een lab te maken dat zich centraal bevindt.  Of Splits de hackathon om meerdere lessen te gebruiken op basis van de locaties waar uw deel nemers zich bevinden.
 - **Kies een berekenings grootte die het meest geschikt is voor gebruiks behoeften**.
@@ -41,7 +41,7 @@ Als u Lab-Services voor uw hackathon wilt gebruiken, moet u ervoor zorgen dat zo
 
     Wanneer gebruikers aan het lab worden toegevoegd, is er een optie voor het beperken van toegang die standaard is ingeschakeld. Voor deze functie moet u alle e-mail berichten van uw hackathon-deel nemers aan de lijst toevoegen voordat ze het lab kunnen registreren en openen via de registratie koppeling. Als u een hackathon hebt waar u niet weet wie de deel nemers voor de gebeurtenis zullen hebben, kunt u ervoor kiezen de optie toegang beperken uit te scha kelen, waarmee iedereen zich bij het Lab kan registreren met de registratie koppeling. Zie voor meer informatie de [hand leiding voor het toevoegen van gebruikers](how-to-configure-student-usage.md#add-users-to-a-lab).
 
-- **Controleer de instellingen voor schema, quota**en automatisch afsluiten. 
+- **Controleer de instellingen voor schema, quota** en automatisch afsluiten. 
 
     Lab-services bieden diverse kosten controles voor het beperken van het gebruik van Vm's. Als deze instellingen echter onjuist zijn geconfigureerd, kunnen ze ervoor zorgen dat de virtuele machines van uw Lab onverwacht worden afgesloten. Controleer de volgende instellingen om ervoor te zorgen dat deze instellingen op de juiste wijze zijn geconfigureerd voor uw hackathon:
 
@@ -61,7 +61,7 @@ Als u Lab-Services voor uw hackathon wilt gebruiken, moet u ervoor zorgen dat zo
 
     - De **verbinding met extern bureaublad** -app van micro soft voor RDP-verbindingen. De Verbinding met extern bureaublad-app wordt ondersteund op verschillende platformen, waaronder Chromebooks en [Mac](https://techcommunity.microsoft.com/t5/azure-lab-services/connecting-to-azure-lab-services-environments-on-your-macos/ba-p/1290162).
     - [Putty](https://techcommunity.microsoft.com/t5/azure-lab-services/connecting-to-azure-lab-services-environments-on-your-macos/ba-p/1290162) voor het gebruik van SSH om verbinding te maken met een virtuele Linux-machine.
-- **Controleer de virtuele machines**van het lab. 
+- **Controleer de virtuele machines** van het lab. 
 
     Nadat u de Lab-Vm's hebt gepubliceerd, moet u controleren of deze juist zijn geconfigureerd. U hoeft deze verificatie alleen uit te voeren voor een van de virtuele machines van de deel nemer:
 
@@ -72,7 +72,7 @@ Als u Lab-Services voor uw hackathon wilt gebruiken, moet u ervoor zorgen dat zo
 ## <a name="on-the-day-of-hackathon"></a>Op de dag van hackathon
 In deze sectie vindt u een overzicht van de stappen voor het volt ooien van de dag van uw Hackathon.
 
-1. **Start de virtuele machines**van het lab.
+1. **Start de virtuele machines** van het lab.
 
     Afhankelijk van uw besturings systeem kan het starten van de test computer tot 30 minuten duren. Daarom is het belang rijk om machines te starten voordat de hackathon wordt gestart, zodat uw deel nemers niet hoeven te wachten. Als u een planning gebruikt, moet u ervoor zorgen dat de virtuele machines ook ten minste 30 minuten eerder worden gestart.
 2. **Nodig studenten uit om hun Lab-virtuele machine te registreren en te openen**. 
@@ -86,4 +86,4 @@ In deze sectie vindt u een overzicht van de stappen voor het volt ooien van de d
         Zie [instructies voor het verzenden van uitnodigingen voor gebruikers en het](how-to-configure-student-usage.md?branch=master#send-invitations-to-users) [verbinden met virtuele Linux-machines](how-to-use-remote-desktop-linux-student.md?branch=master)voor meer informatie. 
 
 ## <a name="next-steps"></a>Volgende stappen
-Begin met het maken van een Lab-account in klassikale Labs door de volgende instructies te volgen in het artikel: [zelf studie: een Lab-account instellen met Azure Lab Services](tutorial-setup-lab-account.md).
+Begin met het maken van een Lab-account in Labs door de volgende instructies te volgen in het artikel: [zelf studie: een Lab-account instellen met Azure Lab Services](tutorial-setup-lab-account.md).

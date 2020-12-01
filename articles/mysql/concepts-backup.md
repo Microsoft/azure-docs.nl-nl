@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 3/27/2020
-ms.openlocfilehash: 4438ceaa7bb4e9c29a05de0481acdad571e3bb64
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 05cc6579d83fe0cd861f3f91b8d44297963f8101
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542334"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96433271"
 ---
 # <a name="backup-and-restore-in-azure-database-for-mysql"></a>Back-ups maken en herstellen in Azure Database for MySQL
 
@@ -43,8 +43,6 @@ De opslag voor algemeen gebruik is de back-end-opslag die [Algemeen](concepts-pr
 #### <a name="general-purpose-storage-servers-with-up-to-16-tb-storage"></a>Opslag servers voor algemeen gebruik met Maxi maal 16 TB opslag
 
 In een subset van [Azure-regio's](/azure/mysql/concepts-pricing-tiers#storage)kunnen alle nieuw ingerichte servers ondersteuning bieden voor algemeen gebruik, tot 16 TB aan opslag ruimte. Met andere woorden, opslag tot 16 TB opslag is de standaard opslag voor algemeen gebruik voor alle [regio's](concepts-pricing-tiers.md#storage) waar deze wordt ondersteund. Back-ups op deze opslag servers met 16 TB zijn op moment opnamen gebaseerd. De eerste volledige momentopnameback-up wordt gepland direct nadat een server is gemaakt. De eerste volledige back-up van de moment opname wordt bewaard als basis back-up van de server. Volgende momentopnameback-ups zijn alleen differentiële back-ups.
-
-In een subset van [Azure-regio's](concepts-pricing-tiers.md#storage)kunnen alle nieuw ingerichte servers ondersteuning bieden voor algemeen gebruik, tot 16 TB aan opslag ruimte. Met andere woorden, opslag tot 16 TB opslag is de standaard opslag voor algemeen gebruik voor alle [regio's](concepts-pricing-tiers.md#storage) waar deze wordt ondersteund. Back-ups op deze opslag servers met 16 TB zijn op moment opnamen gebaseerd. De eerste volledige momentopnameback-up wordt gepland direct nadat een server is gemaakt. De eerste volledige back-up van de moment opname wordt bewaard als basis back-up van de server. Volgende momentopnameback-ups zijn alleen differentiële back-ups.
 
 Differentiële momentopnameback-ups worden minstens één keer per dag uitgevoerd. Differentiële momentopnameback-ups worden niet uitgevoerd volgens een vast schema. Back-ups van differentiële moment opnamen worden elke 24 uur uitgevoerd, tenzij het transactie logboek (binlog in MySQL) 50 GB overschrijdt sinds de laatste differentiële back-up. Op één dag zijn maximaal zes differentiële momentopnamen toegestaan.
 

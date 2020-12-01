@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: vincesm
 ms.custom: it-pro, seodec18, contperfq1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 019501eef0857c9dc7cd7f63a656eccf61608f1b
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 29580564ffa2fed579065e6a8551a6f44597e41a
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92367819"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96433254"
 ---
 # <a name="what-are-the-default-user-permissions-in-azure-active-directory"></a>Wat zijn de standaard machtigingen voor gebruikers in Azure Active Directory?
 In Azure Active Directory (Azure AD) wordt aan alle gebruikers een reeks standaardmachtigingen verleend. De toegang van een gebruiker bestaat uit het type gebruiker, hun [roltoewijzingen](active-directory-users-assign-role-azure-portal.md)en hun eigendom van afzonderlijke objecten. Dit artikel beschrijft deze standaardmachtigingen en bevat een vergelijking van de standaardinstellingen voor lid- en gastgebruikers. De standaard gebruikers machtigingen kunnen alleen worden gewijzigd in gebruikers instellingen in azure AD.
@@ -30,7 +30,7 @@ De set standaard machtigingen die worden ontvangen, is afhankelijk van het feit 
 
 ## <a name="compare-member-and-guest-default-permissions"></a>Standaardmachtigingen voor leden en gasten vergelijken
 
-**Gebied** | **Machtigingen voor lidgebruikers** | **Standaard machtigingen voor gast gebruikers** | **Beperkte gebruikers machtigingen voor gasten (preview-versie)**
+**Onderwerp** | **Machtigingen voor lidgebruikers** | **Standaard machtigingen voor gast gebruikers** | **Beperkte gebruikers machtigingen voor gasten (preview-versie)**
 ------------ | --------- | ---------- | ----------
 Gebruikers en contactpersonen | <ul><li>Lijst met alle gebruikers en contact personen opsommen<li>Alle openbare eigenschappen lezen van gebruikers en contactpersonen</li><li>Gasten uitnodigen<li>Eigen wachtwoord wijzigen<li>Eigen mobiele nummer beheren<li>Eigen foto beheren<li>Eigen vernieuwingstekens ongeldig verklaren</li></ul> | <ul><li>Eigen eigenschappen lezen<li>Weergave naam, e-mail adres, aanmeldings naam, foto, user principal name en gebruikers type-eigenschappen van andere gebruikers en contact personen lezen<li>Eigen wachtwoord wijzigen<li>Zoeken naar een andere gebruiker op weergave naam, User Principal name of ObjectId (indien toegestaan)<li>Informatie over lees beheer en directe rapporten van andere gebruikers</li></ul> | <ul><li>Eigen eigenschappen lezen<li>Eigen wachtwoord wijzigen</li></ul>
 Groepen | <ul><li>Beveiligingsgroepen maken<li>Microsoft 365 groepen maken<li>Lijst met alle groepen opsommen<li>Alle eigenschappen van groepen lezen<li>Niet-verborgen groepslidmaatschappen lezen<li>Verborgen Microsoft 365 groepslid maatschappen voor gekoppelde groep lezen<li>Eigenschappen, eigendom en lidmaatschap van groepen beheren waarvan de gebruiker eigenaar is<li>Gasten toevoegen aan groepen in eigendom<li>Instellingen voor dynamisch lidmaatschap beheren<li>Groepen in eigendom verwijderen<li>In eigendom zijn van Microsoft 365 groepen herstellen</li></ul> | <ul><li>Eigenschappen van niet-verborgen groepen lezen, inclusief lidmaatschap en eigendom (zelfs niet-gekoppelde groepen)<li>Verborgen Microsoft 365 groepslid maatschappen voor samengevoegde groepen lezen<li>Zoeken naar groepen op weergave naam of ObjectId (indien toegestaan)</li></ul> | <ul><li>Object-id voor samengevoegde groepen lezen<li>Lidmaatschap en eigendom van gekoppelde groepen in sommige Microsoft 365-apps lezen (indien toegestaan)</li></ul>
@@ -63,7 +63,7 @@ Standaard machtigingen voor gast gebruikers kunnen op de volgende manieren worde
 
 Machtiging | Uitleg van de instelling
 ---------- | ------------
-Gebruikers toegangs beperkingen van gasten (preview-versie) | Als u deze optie instelt op **gast gebruikers, hebben dezelfde toegang als leden,** waarbij alle gebruikers machtigingen voor alle leden standaard worden verleend aan gast gebruikers.<p>Als u deze optie instelt op de **toegang van gast gebruikers is beperkt tot eigenschappen en lidmaatschappen van hun eigen Directory-objecten** , beperkt de gast toegang alleen tot hun eigen gebruikers profiel. Toegang tot andere gebruikers is niet langer toegestaan, zelfs niet als u zoekt op UPN (User Principal Name), ObjectId of weergave naam. Toegang tot groeps informatie, waaronder groepslid maatschappen, is ook niet meer toegestaan.<p>**Opmerking**: met deze instelling wordt niet voor komen dat de toegang tot samengevoegde groepen wordt gebruikt in sommige Microsoft 365 Services, zoals micro soft teams. Zie [gast toegang van micro soft teams]() voor meer informatie.<p>Gast gebruikers kunnen nog steeds worden toegevoegd aan beheerders rollen, ongeacht deze machtigings instellingen.
+Gebruikers toegangs beperkingen van gasten (preview-versie) | Als u deze optie instelt op **gast gebruikers, hebben dezelfde toegang als leden,** waarbij alle gebruikers machtigingen voor alle leden standaard worden verleend aan gast gebruikers.<p>Als u deze optie instelt op de **toegang van gast gebruikers is beperkt tot eigenschappen en lidmaatschappen van hun eigen Directory-objecten** , beperkt de gast toegang alleen tot hun eigen gebruikers profiel. Toegang tot andere gebruikers is niet langer toegestaan, zelfs niet als u zoekt op UPN (User Principal Name), ObjectId of weergave naam. Toegang tot groeps informatie, waaronder groepslid maatschappen, is ook niet meer toegestaan.<p>**Opmerking**: met deze instelling wordt niet voor komen dat de toegang tot samengevoegde groepen wordt gebruikt in sommige Microsoft 365 Services, zoals micro soft teams. Zie [gast toegang van micro soft teams](https://docs.microsoft.com/MicrosoftTeams/guest-access) voor meer informatie.<p>Gast gebruikers kunnen nog steeds worden toegevoegd aan beheerders rollen, ongeacht deze machtigings instellingen.
 Gasten kunnen uitnodigingen versturen | Als u deze optie instelt op Ja, kunnen gasten andere gasten uitnodigen. Zie [uitnodigingen voor B2B-samen werking delegeren](../external-identities/delegate-invitations.md#configure-b2b-external-collaboration-settings) voor meer informatie.
 Leden kunnen uitnodigingen versturen | Als u deze optie instelt op Ja, kunnen niet-beheerders leden van uw directory gasten uitnodigen. Zie [uitnodigingen voor B2B-samen werking delegeren](../external-identities/delegate-invitations.md#configure-b2b-external-collaboration-settings) voor meer informatie.
 Beheerders en gebruikers in de rol van gastuitnodiger kunnen uitnodigingen versturen | Als u deze optie instelt op Ja, kunnen beheerders en gebruikers in de rol ' gast uitnodiging ' gasten uitnodigen. Als deze optie is ingesteld op Ja, kunnen gebruikers in de rol gast-uitnodiging nog steeds gasten uitnodigen, ongeacht de leden kunnen de instelling uitnodigen. Zie [uitnodigingen voor B2B-samen werking delegeren](../external-identities/delegate-invitations.md#assign-the-guest-inviter-role-to-a-user) voor meer informatie.
@@ -85,7 +85,7 @@ De volgende tabellen bevatten een beschrijving van de specifieke machtigingen in
 #### <a name="owned-application-registrations"></a>Toepassings registraties in eigendom
 Gebruikers kunnen de volgende acties uitvoeren op toepassings registraties van de eigenaar.
 
-| **Acties** | **Deschription** (Beschrijving) |
+| **Acties** | **Beschrijving** |
 | --- | --- |
 | micro soft. Directory/toepassingen/publiek/update | Werk de eigenschap Applications. Audience bij in Azure Active Directory. |
 | microsoft.directory/applications/authentication/update | Werk de eigenschap Applications. Authentication bij in Azure Active Directory. |
@@ -100,7 +100,7 @@ Gebruikers kunnen de volgende acties uitvoeren op toepassings registraties van d
 #### <a name="owned-enterprise-applications"></a>Bedrijfs toepassingen in eigendom
 Gebruikers kunnen de volgende acties uitvoeren op bedrijfs toepassingen die eigendom zijn van de onderneming. Een bedrijfs toepassing bestaat uit Service-Principal, een of meer toepassings beleid en soms een toepassings object in dezelfde Tenant als de Service-Principal.
 
-| **Acties** | **Deschription** (Beschrijving) |
+| **Acties** | **Beschrijving** |
 | --- | --- |
 | microsoft.directory/auditLogs/allProperties/read | Lees alle eigenschappen (inclusief bevoorrechte eigenschappen) op audit logs bevat in Azure Active Directory. |
 | micro soft. Directory/policies/Basic/update | Basis eigenschappen van beleid in Azure Active Directory bijwerken. |
@@ -121,7 +121,7 @@ Gebruikers kunnen de volgende acties uitvoeren op bedrijfs toepassingen die eige
 #### <a name="owned-devices"></a>Apparaten in eigendom
 Gebruikers kunnen de volgende acties uitvoeren op apparaten die eigendom zijn van het apparaat.
 
-| **Acties** | **Deschription** (Beschrijving) |
+| **Acties** | **Beschrijving** |
 | --- | --- |
 | micro soft. Directory/apparaten/bitLockerRecoveryKeys/lezen | Lees de eigenschap devices. bitLockerRecoveryKeys in Azure Active Directory. |
 | micro soft. map/apparaten/uitschakelen | Apparaten uitschakelen in Azure Active Directory. |
@@ -129,7 +129,7 @@ Gebruikers kunnen de volgende acties uitvoeren op apparaten die eigendom zijn va
 #### <a name="owned-groups"></a>Groepen in eigendom
 Gebruikers kunnen de volgende acties uitvoeren op groepen in eigendom.
 
-| **Acties** | **Deschription** (Beschrijving) |
+| **Acties** | **Beschrijving** |
 | --- | --- |
 | micro soft. Directory/groepen/appRoleAssignments/update | Werk de eigenschap groups. appRoleAssignments bij in Azure Active Directory. |
 | micro soft. Directory/groepen/basis/bijwerken | Basis eigenschappen van groepen in Azure Active Directory bijwerken. |

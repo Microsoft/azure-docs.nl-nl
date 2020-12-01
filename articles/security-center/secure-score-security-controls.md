@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/21/2020
+ms.date: 11/10/2020
 ms.author: memildin
-ms.openlocfilehash: b7c4c0565d17e62226a518bc443223df8339faec
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 0e853a4ce1e3891ddffd2f9fb1315da49a896933
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94949374"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96433172"
 ---
 # <a name="secure-score-in-azure-security-center"></a>Beveiligingsscore in Azure Security Center
 
@@ -70,8 +70,6 @@ Voor samen vatting wordt uw beveiligde Score op de volgende locaties weer gegeve
 
     :::image type="content" source="./media/secure-score-security-controls/score-on-recommendations-page.png" alt-text="De pagina met aanbevelingen voor beveiligde scores op Security Center":::
 
-
-
 ### <a name="get-your-secure-score-from-the-rest-api"></a>Uw beveiligde Score ophalen uit de REST API
 
 U krijgt toegang tot uw score via de API voor beveiligde scores (momenteel in preview-versie). De API-methoden bieden de flexibiliteit om query's uit te voeren op de gegevens en uw eigen rapportagemechanisme te bouwen van uw beveiligingsscores in de loop van de tijd. U kunt bijvoorbeeld de [API beveiligde scores](/rest/api/securitycenter/securescores) gebruiken om de score voor een specifiek abonnement op te halen. Daarnaast kunt u de [API besturings elementen voor beveiligde scores](/rest/api/securitycenter/securescorecontrols) gebruiken om de beveiligings controles en de huidige Score van uw abonnementen weer te geven.
@@ -79,8 +77,6 @@ U krijgt toegang tot uw score via de API voor beveiligde scores (momenteel in pr
 ![Het ophalen van een enkele beveiligde Score via de API](media/secure-score-security-controls/single-secure-score-via-api.png)
 
 Zie voor voor beelden van hulpprogram ma's die zijn gebouwd boven op de API voor beveiligde scores [het beveiligde Score gebied van onze github-Community](https://github.com/Azure/Azure-Security-Center/tree/master/Secure%20Score). 
-
-
 
 ### <a name="get-your-secure-score-from-azure-resource-graph-arg"></a>Uw beveiligde Score ophalen uit de Azure-resource grafiek (ARG)
 
@@ -114,13 +110,34 @@ Om toegang te krijgen tot de beveiligde score voor meerdere abonnementen met ARG
 
 1. Selecteer **query uitvoeren**.
 
+
+
+
+## <a name="tracking-your-secure-score-over-time"></a>Uw beveiligde Score na verloop van tijd bijhouden
+
+Als u een Power BI gebruiker bent met een Pro-account, kunt u de **beveiligde Score gedurende een periode** Power bi dash board gebruiken om uw beveiligde Score na verloop van tijd bij te houden en eventuele wijzigingen te onderzoeken.
+
+> [!TIP]
+> U kunt dit dash board vinden, evenals andere hulp middelen voor het werken met een beveiligde Score, in het toegewezen gebied van de Azure Security Center Community op GitHub: https://github.com/Azure/Azure-Security-Center/tree/master/Secure%20Score
+
+Het dash board bevat de volgende twee rapporten die u helpen bij het analyseren van de beveiligings status:
+
+- **Overzicht van resources** : bevat samengevatte gegevens met betrekking tot de status van uw resources.
+- **Overzicht van beveiligde scores** : bevat samengevatte gegevens over de voortgang van uw score. Gebruik de grafiek beveiligde Score over tijd per abonnement om de wijzigingen in de Score weer te geven. Als u een aanzienlijke wijziging in uw score ziet, raadpleegt u de tabel met gedetecteerde wijzigingen die van invloed kunnen zijn op uw beveiligde score voor mogelijke wijzigingen die de wijziging zouden hebben veroorzaakt. Deze tabel bevat verwijderde resources, nieuw geïmplementeerde resources of bronnen waarvan de beveiligings status is gewijzigd voor een van de aanbevelingen.
+
+:::image type="content" source="./media/secure-score-security-controls/power-bi-secure-score-dashboard.png" alt-text="De optionele beveiligde Score van het Power bi-dash board voor het bijhouden van uw beveiligde Score over tijd en het onderzoeken van wijzigingen":::
+
+
+
+
+
 ## <a name="how-your-secure-score-is-calculated"></a>Hoe uw beveiligde score wordt berekend 
 
 De bijdrage van elk beveiligings beheer voor de algehele beveiligde score wordt duidelijk weer gegeven op de pagina aanbevelingen.
 
 [![De verbeterde beveiligde Score introduceert beveiligings controles](media/secure-score-security-controls/security-controls.png)](media/secure-score-security-controls/security-controls.png#lightbox)
 
-Om alle mogelijke punten voor een beveiligings controle op te halen, moeten al uw resources voldoen aan alle beveiligings aanbevelingen binnen het beveiligings beheer. Security Center heeft bijvoorbeeld meerdere aanbevelingen over hoe u uw beheer poorten kunt beveiligen. In het verleden kon u enkele van die gerelateerde en afhankelijke aanbevelingen herstellen, terwijl anderen niet opgelost blijven en uw veilige score wordt verbeterd. Wanneer u objectief bekijkt, is het eenvoudig om te raden dat uw beveiligings niet had verbeterd totdat u ze allemaal hebt opgelost. Nu moet u deze allemaal herstellen om een verschil te maken met uw beveiligde Score.
+Om alle mogelijke punten voor een beveiligings controle op te halen, moeten al uw resources voldoen aan alle beveiligings aanbevelingen binnen het beveiligings beheer. Security Center heeft bijvoorbeeld meerdere aanbevelingen over hoe u uw beheer poorten kunt beveiligen. U moet deze allemaal herstellen om een verschil te maken met uw beveiligde Score.
 
 Het beveiligings beheer met de naam ' systeem updates Toep assen ' heeft bijvoorbeeld een maximum Score van zes punten, die u in de tooltip kunt zien op de mogelijke verhogings waarde van het besturings element:
 
@@ -135,11 +152,11 @@ De maximum score voor dit besturings element, het Toep assen van systeem updates
 
 ### <a name="calculations---understanding-your-score"></a>Berekeningen: uitleg van uw Score
 
-|Metrisch|Formule en voor beeld|
+|Gegevens|Formule en voor beeld|
 |-|-|
-|**Huidige Score van beveiligings beheer**|<br>![Vergelijking voor het berekenen van de huidige Score van een beveiligings beheer](media/secure-score-security-controls/security-control-scoring-equation.png)<br><br>Elk afzonderlijk beveiligings beheer draagt bij aan de beveiligings Score. Elke resource die wordt beïnvloed door een aanbeveling binnen het besturings element, draagt bij aan de huidige Score van het besturings element. De huidige score voor elk besturings element is een meting van de status van de resources *in* het besturings element.<br>![Knop info met de waarden die worden gebruikt bij het berekenen van de huidige Score van het beveiligings beheer](media/secure-score-security-controls/security-control-scoring-tooltips.png)<br>In dit voor beeld wordt de maximale Score van 6 gedeeld door 78, omdat dat de som is van de in orde zijnde en slechte resources.<br>6/78 = 0,0769<br>Als u wilt vermenigvuldigen met het aantal ongezonde resources (4), resulteert dit in de huidige Score:<br>0,0769 * 4 = **0,31**<br><br>|
-|**Beveiligingsscore**<br>Enkel abonnement|<br>![Vergelijking voor het berekenen van de huidige beveiligde Score](media/secure-score-security-controls/secure-score-equation.png)<br><br>![Een beveiligde Score van één abonnement waarbij alle besturings elementen zijn ingeschakeld](media/secure-score-security-controls/secure-score-example-single-sub.png)<br>In dit voor beeld is er één abonnement met alle beveiligings controles beschikbaar (een potentiële maximum Score van 60 punten). De score toont 28 punten van een mogelijke 60 en de resterende 32 punten worden weer gegeven in de sectie ' potentiële Score verhogen ' van de beveiligings controles.<br>![Lijst met besturings elementen en de potentiële toename van de Score](media/secure-score-security-controls/secure-score-example-single-sub-recs.png)|
-|**Beveiligingsscore**<br>Meerdere abonnementen|<br>De huidige scores voor alle resources in alle abonnementen worden toegevoegd en de berekening is dan hetzelfde als voor één abonnement<br><br>Wanneer er meerdere abonnementen worden weer gegeven, evalueert de beveiligde score alle resources binnen het ingeschakelde beleid en worden de gecombineerde impact van elk van de maximale scores van het beveiligings beheer gegroepeerd.<br>![Beveiligde score voor meerdere abonnementen waarbij alle besturings elementen zijn ingeschakeld](media/secure-score-security-controls/secure-score-example-multiple-subs.png)<br>De gecombineerde score is **geen** gemiddelde. in plaats daarvan is het de geëvalueerde postuur van de status van alle resources in alle abonnementen.<br>Ook als u naar de pagina aanbevelingen gaat en de potentiële punten die beschikbaar zijn, opneemt, zult u merken dat het verschil tussen de huidige Score (24) en de Maxi maal beschik bare Score (60) is.|
+|**Huidige Score van beveiligings beheer**|<br>![Vergelijking voor het berekenen van de Score van een beveiligings controle](media/secure-score-security-controls/secure-score-equation-single-control.png)<br><br>Elk afzonderlijk beveiligings beheer draagt bij aan de beveiligings Score. Elke resource die wordt beïnvloed door een aanbeveling binnen het besturings element, draagt bij aan de huidige Score van het besturings element. De huidige score voor elk besturings element is een meting van de status van de resources *in* het besturings element.<br>![Knop info met de waarden die worden gebruikt bij het berekenen van de huidige Score van het beveiligings beheer](media/secure-score-security-controls/security-control-scoring-tooltips.png)<br>In dit voor beeld wordt de maximale Score van 6 gedeeld door 78, omdat dat de som is van de in orde zijnde en slechte resources.<br>6/78 = 0,0769<br>Als u wilt vermenigvuldigen met het aantal ongezonde resources (4), resulteert dit in de huidige Score:<br>0,0769 * 4 = **0,31**<br><br>|
+|**Beveiligingsscore**<br>Enkel abonnement|<br>![Vergelijking voor het berekenen van de beveiligde Score van een abonnement](media/secure-score-security-controls/secure-score-equation-single-sub.png)<br><br>![Een beveiligde Score van één abonnement waarbij alle besturings elementen zijn ingeschakeld](media/secure-score-security-controls/secure-score-example-single-sub.png)<br>In dit voor beeld is er één abonnement met alle beveiligings controles beschikbaar (een potentiële maximum Score van 60 punten). De score toont 28 punten van een mogelijke 60 en de resterende 32 punten worden weer gegeven in de sectie ' potentiële Score verhogen ' van de beveiligings controles.<br>![Lijst met besturings elementen en de potentiële toename van de Score](media/secure-score-security-controls/secure-score-example-single-sub-recs.png)|
+|**Beveiligingsscore**<br>Meerdere abonnementen|<br>![Vergelijking voor het berekenen van de beveiligde score voor meerdere abonnementen](media/secure-score-security-controls/secure-score-equation-multiple-subs.png)<br><br>Bij het berekenen van de gecombineerde score voor meerdere abonnementen, bevat Security Center een *gewicht* voor elk abonnement. De relatieve gewichten voor uw abonnementen worden bepaald door Security Center op basis van factoren zoals het aantal resources.<br>De huidige score voor elk abonnement wordt berekend op dezelfde manier als voor één abonnement, maar vervolgens wordt het gewicht toegepast, zoals weer gegeven in de vergelijking.<br>Wanneer er meerdere abonnementen worden weer gegeven, evalueert de beveiligde score alle resources binnen het ingeschakelde beleid en worden de gecombineerde impact van elk van de maximale scores van het beveiligings beheer gegroepeerd.<br>![Beveiligde score voor meerdere abonnementen waarbij alle besturings elementen zijn ingeschakeld](media/secure-score-security-controls/secure-score-example-multiple-subs.png)<br>De gecombineerde score is **geen** gemiddelde. in plaats daarvan is het de geëvalueerde postuur van de status van alle resources in alle abonnementen.<br>Ook als u naar de pagina aanbevelingen gaat en de potentiële punten die beschikbaar zijn, opneemt, zult u merken dat het verschil tussen de huidige Score (24) en de Maxi maal beschik bare Score (60) is.|
 ||||
 
 ### <a name="which-recommendations-are-included-in-the-secure-score-calculations"></a>Welke aanbevelingen zijn opgenomen in de berekeningen van de veilige Score?
@@ -271,3 +288,4 @@ In dit artikel vindt u een beschrijving van de beveiligde Score en de beveiligin
 
 - [Meer informatie over de verschillende elementen van een aanbeveling](security-center-recommendations.md)
 - [Meer informatie over het oplossen van aanbevelingen](security-center-remediate-recommendations.md)
+- [De GitHub-hulpprogram ma's voor het werken met een beveiligde Score weer geven](https://github.com/Azure/Azure-Security-Center/tree/master/Secure%20Score)

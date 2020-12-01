@@ -124,6 +124,8 @@
           href: concepts-supported-versions.md
         - name: Beperkingen
           href: concepts-limits.md
+        - name: Aanbevolen operationele procedures
+          href: concept-operation-excellence-best-practices.md
         - name: Prijscategorieën
           items:
             - name: Prijscategorieën
@@ -195,6 +197,10 @@
             - name: Aanbevelingen voor prestaties
               href: concepts-performance-recommendations.md
               displayName: recommendation
+            - name: Best practices voor bewaking
+              href: concept-monitoring-best-practices.md
+            - name: Aanbevolen procedures voor de prestaties
+              href: concept-performance-best-practices.md
         - name: Toepassingen ontwikkelen
           items:
             - name: Overzicht van de ontwikkeling van toepassingen
@@ -202,7 +208,7 @@
             - name: Compatibiliteit van stuurprogramma's en hulpprogramma's
               href: concepts-compatibility.md
               displayName: 'drivers, tools'
-            - name: Best practices voor toepassingen
+            - name: Best practice voor toepassingen
               href: app-development-best-practices.md
               displayName: application
             - name: Verbindingstolerantie

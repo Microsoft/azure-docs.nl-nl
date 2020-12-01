@@ -3,12 +3,12 @@ title: Verbinding maken met een peer netwerk in Azure Lab Services | Microsoft D
 description: Informatie over het verbinden van uw Lab-netwerk met een ander netwerk als een peer. Verbind uw on-premises organisatie/Universiteit-netwerk bijvoorbeeld met het virtuele netwerk van het lab in Azure.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 169160005b27f6ab9575749e4a72a26d2df4000b
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 99ea72f11c8f389a15171a1fe3b376646494903a
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94647984"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96434240"
 ---
 # <a name="connect-your-labs-network-with-a-peer-virtual-network-in-azure-lab-services"></a>Uw Lab-netwerk verbinden met een virtueel peer-netwerk in Azure Lab Services
 
@@ -26,7 +26,7 @@ Mogelijk moet u uw Lab-netwerk verbinden met een virtueel peer netwerk in sommig
 Bepaalde on-premises netwerken zijn verbonden met Azure Virtual Network via [ExpressRoute](../expressroute/expressroute-introduction.md) of [Virtual Network gateway](../vpn-gateway/vpn-gateway-about-vpngateways.md). Deze services moeten buiten Azure Lab Services worden ingesteld. Zie [overzicht van ExpressRoute](../expressroute/expressroute-introduction.md)voor meer informatie over het verbinden van een on-premises netwerk met Azure met behulp van ExpressRoute. Voor on-premises connectiviteit met een Virtual Network gateway, de gateway, het opgegeven virtuele netwerk en het lab-account moeten zich allemaal in dezelfde regio bevinden.
 
 > [!NOTE]
-> Bij het maken van een Azure-Virtual Network die wordt gekoppeld aan een Lab-account, is het belang rijk om te begrijpen hoe de regio van het virtuele netwerk zich bevindt waar de klassikale Labs wordt gemaakt.  Zie de sectie over de beheerders handleiding op [regions\locations](./administrator-guide.md#regionslocations)voor meer informatie.
+> Bij het maken van een Azure-Virtual Network die wordt gekoppeld aan een Lab-account, is het belang rijk om te begrijpen hoe de regio van het virtuele netwerk van invloed is op de manier waarop de Labs wordt gemaakt.  Zie de sectie over de beheerders handleiding op [regions\locations](./administrator-guide.md#regionslocations)voor meer informatie.
 
 ## <a name="configure-at-the-time-of-lab-account-creation"></a>Configureren op het moment dat het lab-account wordt gemaakt
 

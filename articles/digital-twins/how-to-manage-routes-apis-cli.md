@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 11/18/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 6b767a2cf4739a0b36b9f5c5c960e3e3ead58262
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: fc260736a740362db2c19730afc93dd4f3d22c2e
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353082"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96435404"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-apis-and-cli"></a>Eind punten en routes beheren in azure Digital Apparaatdubbels (Api's en CLI)
 
@@ -90,18 +90,31 @@ az dt endpoint create eventhub --endpoint-name <Event-Hub-endpoint-name> --event
 
 Wanneer een eind punt een gebeurtenis binnen een bepaalde tijds periode niet kan leveren of nadat de gebeurtenis een bepaald aantal keren is geprobeerd, kan de gebeurtenis worden verzonden naar een opslag account. Dit proces wordt **onbestelbare berichten** genoemd.
 
-Als u een eind punt wilt maken waarvoor onbestelbare berichten zijn ingeschakeld, moet u de [arm-api's](/rest/api/digital-twins/controlplane/endpoints/digitaltwinsendpoint_createorupdate) gebruiken om uw eind punt te maken. 
-
-Voordat u de locatie van de onbestelbare letter instelt, moet u een opslag account hebben met een container. U geeft de URL voor deze container op wanneer u het eind punt maakt. De onbestelbare letter wordt gegeven als container-URL met een SAS-token. Dit token heeft alleen `write` machtigingen nodig voor de doel container in het opslag account. De volledig opgemaakte URL heeft de volgende indeling: `https://<storageAccountname>.blob.core.windows.net/<containerName>?<SASToken>`
-
-Zie voor meer informatie over SAS-tokens: [beperkte toegang verlenen tot Azure storage resources met behulp van Shared Access signatures (SAS)](../storage/common/storage-sas-overview.md)
-
 Zie voor meer informatie over onbestelbare berichten [*concepten: gebeurtenis routes*](concepts-route-events.md#dead-letter-events).
 
-#### <a name="configuring-the-endpoint"></a>Het eind punt configureren
+#### <a name="set-up-storage-resources"></a>Opslag resources instellen
 
-Wanneer u een eind punt maakt, voegt `deadLetterSecret` u een toe aan het `properties` object in de hoofd tekst van de aanvraag, die een container-URL en een SAS-token voor uw opslag account bevat.
+Voordat u de locatie van de onbestelbare letter instelt, moet u een [opslag account](../storage/common/storage-account-create.md?tabs=azure-portal) hebben met een [container](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container) die is ingesteld in uw Azure-account. U geeft de URL voor deze container op wanneer u later het eind punt maakt.
+De onbestelbare letter wordt gegeven als container-URL met een [SAS-token](../storage/common/storage-sas-overview.md). Dit token heeft alleen `write` machtigingen nodig voor de doel container in het opslag account. De volledig opgemaakte URL heeft de volgende indeling: `https://<storageAccountname>.blob.core.windows.net/<containerName>?<SASToken>`
 
+Volg de onderstaande stappen om deze opslag resources in uw Azure-account in te stellen, zodat u de eindpunt verbinding kunt instellen in de volgende sectie.
+
+1. Volg [dit artikel](../storage/common/storage-account-create.md?tabs=azure-portal) om een opslag account te maken en de naam van het opslag account op te slaan om deze later te gebruiken.
+2. Maak een container met behulp van [dit artikel](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container) en sla de container naam op om deze later te gebruiken bij het instellen van de verbinding tussen de container en het eind punt.
+3. Maak vervolgens een SAS-token voor uw opslag account. Begin met het navigeren naar uw opslag account in de [Azure Portal](https://ms.portal.azure.com/#home) (u kunt deze naam vinden met de zoek balk van de portal).
+4. Kies op de pagina opslag account de koppeling _gedeelde toegangs handtekening_ in de linkernavigatiebalk om de juiste machtigingen voor het genereren van SAS-token te selecteren.
+5. Selecteer de gewenste instellingen voor _toegestane Services_ en _toegestane bron typen_. U moet ten minste één vak in elke categorie selecteren. Kies voor toegestane machtigingen **schrijven** (u kunt ook andere machtigingen selecteren als u dat wilt).
+Stel de overige instellingen echter wel in.
+6. Selecteer vervolgens de knop _SAS en Connection String genereren_ om het SAS-token te genereren. Hiermee genereert u onder aan dezelfde pagina verschillende SA'S-en connection string waarden onder de instellingen die u selecteert. Schuif omlaag om de waarden weer te geven en gebruik het pictogram kopiëren naar klem bord om de **SAS-token** waarde te kopiëren. Sla het bestand op om het later te gebruiken.
+
+:::image type="content" source="./media/how-to-manage-routes-apis-cli/generate-sas-token.png" alt-text="De pagina opslag account in de Azure Portal alle instellings selectie voor het genereren van een SAS-token." lightbox="./media/how-to-manage-routes-apis-cli/generate-sas-token.png":::
+
+:::image type="content" source="./media/how-to-manage-routes-apis-cli/copy-sas-token.png" alt-text="SAS-token kopiëren voor gebruik in het onbestelbare geheim." lightbox="./media/how-to-manage-routes-apis-cli/copy-sas-token.png":::
+
+#### <a name="configure-the-endpoint"></a>Het eind punt configureren
+
+Onbestelbare letter-eind punten worden gemaakt met behulp van Azure Resource Manager-Api's. Wanneer u een eind punt maakt, moet u de documentatie van de [Azure Resource Manager api's](/rest/api/digital-twins/controlplane/endpoints/digitaltwinsendpoint_createorupdate) gebruiken om de vereiste aanvraag parameters in te vullen. Voeg ook de `deadLetterSecret` toe aan het object Properties in de **hoofd tekst** van de aanvraag, die een container-URL en SAS-token voor uw opslag account bevat.
+      
 ```json
 {
   "properties": {
@@ -113,8 +126,7 @@ Wanneer u een eind punt maakt, voegt `deadLetterSecret` u een toe aan het `prope
   }
 }
 ```
-
-Zie de Azure Digital Apparaatdubbels REST API documentation: [endpoints-DigitalTwinsEndpoint CreateOrUpdate](/rest/api/digital-twins/controlplane/endpoints/digitaltwinsendpoint_createorupdate)voor meer informatie.
+Zie de Azure Digital Apparaatdubbels REST API-documentatie: [endpoints-DigitalTwinsEndpoint CreateOrUpdate](/rest/api/digital-twins/controlplane/endpoints/digitaltwinsendpoint_createorupdate)voor meer informatie over het structureren van deze aanvraag.
 
 ### <a name="message-storage-schema"></a>Schema voor bericht opslag
 

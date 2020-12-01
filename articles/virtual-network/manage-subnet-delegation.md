@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/06/2019
 ms.author: kumud
-ms.openlocfilehash: d2db8eb5b93d84a5ece182fffbca5870762ee89e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4e4f002d038820edf128e3fefb229a0918a8ac55
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84703890"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96433516"
 ---
 # <a name="add-or-remove-a-subnet-delegation"></a>Een subnet delegering toevoegen of verwijderen
 
@@ -33,17 +33,17 @@ Meld u aan bij Azure Portal op https://portal.azure.com.
 
 In deze sectie maakt u een virtueel netwerk en het subnet dat u later delegeert aan een Azure-service.
 
-1. Selecteer in de linkerbovenhoek van het scherm **een resource**  >  **netwerk**  >  **virtueel netwerk**maken.
+1. Selecteer in de linkerbovenhoek van het scherm **een resource**  >  **netwerk**  >  **virtueel netwerk** maken.
 1. Typ of selecteer in **Virtueel netwerk maken** de volgende gegevens:
 
     | Instelling | Waarde |
     | ------- | ----- |
-    | Naam | Voer *MyVirtualNetwork*in. |
+    | Naam | Voer *MyVirtualNetwork* in. |
     | Adresruimte | Voer *10.0.0.0/16* in. |
     | Abonnement | Selecteer uw abonnement.|
     | Resourcegroep | Selecteer **Nieuwe maken**, voer *myResourceGroup* in en selecteer vervolgens **OK**. |
     | Locatie | Selecteer **oostus**.|
-    | Subnet - Naam | Voer *mySubnet*in. |
+    | Subnet - Naam | Voer *mySubnet* in. |
     | Subnet - adresbereik | Voer *10.0.0.0/24* in. |
     |||
 1. Laat de rest als standaard staan en selecteer vervolgens **maken**.
@@ -59,22 +59,24 @@ De ingebouwde rol [Network Inzender](../role-based-access-control/built-in-roles
 In deze sectie delegeert u het subnet dat u in de voor gaande sectie hebt gemaakt, naar een Azure-service.
 
 1. Voer in de zoekbalk van de portal *myVirtualNetwork* in. Wanneer **myVirtualNetwork** wordt weergegeven in de zoekresultaten, selecteert u dit.
-2. Selecteer *myVirtualNetwork*in de zoek resultaten.
-3. Selecteer **subnetten**onder **instellingen**en selecteer vervolgens **mySubnet**.
+2. Selecteer *myVirtualNetwork* in de zoek resultaten.
+3. Selecteer **subnetten** onder **instellingen** en selecteer vervolgens **mySubnet**.
 4. Selecteer op de pagina *mySubnet* voor de lijst **subnet delegering** een van de services die worden vermeld onder **subnet delegeren aan een service** (bijvoorbeeld **micro soft. DBforPostgreSQL/serversv2**).  
 
 ### <a name="remove-subnet-delegation-from-an-azure-service"></a>Subnet delegering verwijderen van een Azure-service
 
 1. Voer in de zoekbalk van de portal *myVirtualNetwork* in. Wanneer **myVirtualNetwork** wordt weergegeven in de zoekresultaten, selecteert u dit.
-2. Selecteer *myVirtualNetwork*in de zoek resultaten.
-3. Selecteer **subnetten**onder **instellingen**en selecteer vervolgens **mySubnet**.
+2. Selecteer *myVirtualNetwork* in de zoek resultaten.
+3. Selecteer **subnetten** onder **instellingen** en selecteer vervolgens **mySubnet**.
 4. Selecteer op de pagina *mySubnet* voor de lijst **subnet delegering** de optie **geen** van de services die worden vermeld onder **subnet overdragen aan een service**. 
 
 ## <a name="azure-cli"></a>Azure CLI
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+Bereid uw omgeving voor op Azure CLI.
 
-Als u ervoor kiest om Azure CLI lokaal te installeren en te gebruiken, moet u voor dit artikel gebruikmaken van Azure CLI versie 2.0.28 of hoger. Voer `az --version` uit om na te gaan welke versie er is geïnstalleerd. Zie [Azure CLI installeren](/cli/azure/install-azure-cli) voor installatie- of upgrade-informatie.
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+- Voor dit artikel is versie 2.0.28 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ### <a name="create-a-resource-group"></a>Een resourcegroep maken
 Maak een resourcegroep maken met [az group create](https://docs.microsoft.com/cli/azure/group). Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd.
@@ -121,7 +123,7 @@ Gebruik [AZ Network vnet subnet update](https://docs.microsoft.com/cli/azure/net
   --delegations Microsoft.DBforPostgreSQL/serversv2
 ```
 
-Gebruik [AZ Network vnet subnet show](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-show)om te controleren of de overdracht is toegepast. Controleer of de service wordt overgedragen aan het subnet onder de eigenschap **service**naam:
+Gebruik [AZ Network vnet subnet show](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-show)om te controleren of de overdracht is toegepast. Controleer of de service wordt overgedragen aan het subnet onder de eigenschap **service** naam:
 
 ```azurecli-interactive
   az network vnet subnet show \
@@ -159,7 +161,7 @@ Gebruik [AZ Network vnet subnet update](https://docs.microsoft.com/cli/azure/net
   --vnet-name myVnet \
   --remove delegations
 ```
-Gebruik [AZ Network vnet subnet show](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-show)om te controleren of de overdracht is verwijderd. Controleer of de service is verwijderd uit het subnet onder de eigenschap **service**naam:
+Gebruik [AZ Network vnet subnet show](https://docs.microsoft.com/cli/azure/network/vnet/subnet?view=azure-cli-latest#az-network-vnet-subnet-show)om te controleren of de overdracht is verwijderd. Controleer of de service is verwijderd uit het subnet onder de eigenschap **service** naam:
 
 ```azurecli-interactive
   az network vnet subnet show \

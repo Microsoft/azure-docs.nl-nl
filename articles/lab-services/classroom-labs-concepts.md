@@ -1,16 +1,16 @@
 ---
-title: Lessen over klassikale Labs-Azure Lab Services | Microsoft Docs
+title: Labs-concepten-Azure Lab Services | Microsoft Docs
 description: Leer de basis concepten van Lab-Services en hoe u hiermee eenvoudig Labs kunt maken en beheren.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 38dd77df7a80ad252b553b6afa8b52d7fee753a1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fa3a8dad195b4b3cbf0786c8923c8b330d148898
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85443703"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96435515"
 ---
-# <a name="classroom-labs-concepts"></a>Concepten van leslokaallabs
+# <a name="labs-concepts"></a>Labs-concepten
 
 De volgende lijst bevat concepten en definities voor de belangrijkste Lab-Services:
 
@@ -48,7 +48,7 @@ Een IT-beheerder van de cloud resources van de organisatie, die eigenaar is van 
 
 ### <a name="educator"></a>Docent
 
-Normaal gesproken maken gebruikers, bijvoorbeeld een leraar of onlinedocent leslokaallabs in een labaccount. Een docent voert de volgende taken uit:
+Normaal gesp roken maken gebruikers zoals een docent of een online cursus Labs onder een Lab-account. Een docent voert de volgende taken uit:
 
 - Leslokaallab maken.
 - Virtuele machines maken in het lab.

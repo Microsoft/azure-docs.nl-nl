@@ -4,7 +4,7 @@
   items:
     - name: Wat is IoT Hub Device Provisioning Service?
       href: about-iot-dps.md
-- name: Snelstartgidsen
+- name: Quickstarts
   expanded: true
   items:
     - name: Een DPS instellen
@@ -47,6 +47,8 @@
           href: how-to-legacy-device-symm-key.md
         - name: Aangepast toewijzingsbeleid gebruiken
           href: tutorial-custom-allocation-policies.md
+        - name: Meerdere X.509-apparaten inrichten
+          href: tutorial-custom-hsm-enrollment-group-x509.md
     - name: 2 - Apparaten op meerdere hubs inrichten
       items:
         - name: Meerdere hubs aan DPS koppelen

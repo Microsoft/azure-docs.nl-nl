@@ -192,8 +192,16 @@
           href: application-proxy-remove-personal-data.md
         - name: Aangepast domein configureren
           href: application-proxy-configure-custom-domain.md
-        - name: Verouderde apps beveiligen met app-leveringscontrollers of -netwerken
-          href: secure-hybrid-access.md
+        - name: Verouderde apps beveiligen
+          items:
+            - name: Hybride toegang beveiligen met Azure AD
+              href: secure-hybrid-access.md
+            - name: F5 en Azure AD-integratie
+              href: f5-aad-integration.md
+            - name: F5 en BIG-IP VE-implementatie in Azure IaaS
+              href: f5-bigip-deployment-guide.md
+            - name: F5 BIG-IP met Azure AD voor een VPN zonder wachtwoord
+              href: f5-aad-password-less-vpn.md
         - name: Publicatie-overzicht
           items:
             - name: Integreren met toepassingsproxy in een NDES-server

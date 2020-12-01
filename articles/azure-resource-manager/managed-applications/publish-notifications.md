@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.author: ilahat
 author: ilahat
 ms.date: 11/01/2019
-ms.openlocfilehash: 3632a34678c7a0f0e6fa93e5ce8000b07bb413a6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cec17b98daa8eca31cda076921288e2838960511
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86054522"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96434529"
 ---
 # <a name="azure-managed-applications-with-notifications"></a>Door Azure beheerde toepassingen met meldingen
 
@@ -61,7 +61,7 @@ Zie [een service catalogus toepassing publiceren via Azure Portal](./publish-por
 
 ```
 ## <a name="add-azure-marketplace-managed-application-notifications"></a>Meldingen over beheerde toepassingen voor Azure Marketplace toevoegen
-Zie [een Azure-toepassings aanbieding maken](../../marketplace/partner-center-portal/create-new-azure-apps-offer.md)voor meer informatie.
+Zie [een Azure-toepassings aanbieding maken](../../marketplace/create-new-azure-apps-offer.md)voor meer informatie.
 
 ![Meldingen over beheerde toepassingen van Azure Marketplace in de Azure Portal](./media/publish-notifications/marketplace-notifications.png)
 ## <a name="event-triggers"></a>Gebeurtenistriggers
@@ -178,7 +178,7 @@ POST https://{your_endpoint_URI}/resource?{optional_parameter}={optional_paramet
 
 Parameter | Beschrijving
 ---|---
-Type | Het type gebeurtenis dat de melding heeft geactiveerd. (Bijvoorbeeld PUT, PATCH, DELETE)
+eventType | Het type gebeurtenis dat de melding heeft geactiveerd. (Bijvoorbeeld PUT, PATCH, DELETE)
 applicationId | De volledig gekwalificeerde resource-id van de beheerde toepassing waarvoor de melding is geactiveerd.
 eventTime | De tijds tempel van de gebeurtenis die de melding heeft geactiveerd. (Datum en tijd in UTC ISO 8601-indeling.)
 provisioningState | De inrichtings status van het exemplaar van de beheerde toepassing. (Bijvoorbeeld geslaagd, mislukt, verwijderen, verwijderd.)

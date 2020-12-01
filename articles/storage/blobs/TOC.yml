@@ -215,6 +215,8 @@
               href: ../../search/search-blob-ai-integration.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Volledige tekst doorzoeken op blobgegevens
               href: ../../search/search-blob-storage-integration.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Blobinventaris gebruiken om blobgegevens te beheren
+              href: blob-inventory.md
         - name: Gegevensmigratie
           items:
             - name: Oplossingen voor gegevensoverdracht vergelijken

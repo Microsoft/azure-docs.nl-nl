@@ -3,12 +3,12 @@ title: Aan de slag en een Azure Lab Services Lab maken in teams
 description: Meer informatie over hoe u aan de slag kunt gaan en een Azure Lab Services Lab maakt in teams.
 ms.topic: article
 ms.date: 10/08/2020
-ms.openlocfilehash: e17b0be223a1630402fc4f32c692d7ecfe184783
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: cc4ad604bdf250cc6e4ba2c50c2f7143c921e906
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92217079"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96433968"
 ---
 # <a name="get-started-and-create-a-lab-services-lab-within-teams"></a>Aan de slag en een Lab-service Lab maken in teams
 
@@ -40,18 +40,18 @@ Als eigenaar van een team kunt u **Azure Lab Services** app rechtstreeks toevoeg
 
     > [!div class="mx-imgBorder"]
     > :::image type="content" source="./media/integrate-with-teams/add.png" alt-text="Een tabblad toevoegen":::
-1. Selecteer een Lab Services-account, dat u wilt gebruiken voor het maken van klassikale Labs in dit team. 
+1. Selecteer een Lab Services-account, dat u wilt gebruiken voor het maken van Labs in dit team. 
 
     Azure Lab Services maakt gebruik van eenmalige aanmelding in de [Azure Lab Services-website](https://labs.azure.com) en haalt alle Lab-accounts op waartoe u toegang hebt. 
 
-    De accounts die zich in dezelfde Tenant bevinden als teams en waarvoor u de toegang **eigenaar**, **bijdrager**of **Maker** hebt, worden weer gegeven. 
+    De accounts die zich in dezelfde Tenant bevinden als teams en waarvoor u de toegang **eigenaar**, **bijdrager** of **Maker** hebt, worden weer gegeven. 
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/integrate-with-teams/welcome.png" alt-text="Een tabblad toevoegen":::
+    > :::image type="content" source="./media/integrate-with-teams/welcome.png" alt-text="Welkom bij als":::
 1. Druk op **Opslaan** en het tabblad wordt toegevoegd aan het kanaal.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/integrate-with-teams/created.png" alt-text="Een tabblad toevoegen":::
+    > :::image type="content" source="./media/integrate-with-teams/created.png" alt-text="Het tabblad als is gemaakt":::
 
     Nu kunt u het tabblad **Azure Lab Services** selecteren vanuit uw kanaal en de laboratoria beheren, zoals beschreven in de volgende artikelen.
 
@@ -63,7 +63,7 @@ Wanneer een lab in teams wordt gemaakt, wordt de gebruikers lijst in de test omg
 
 [Gebruikers lijsten van Lab-Services beheren in teams](how-to-manage-user-lists-within-teams.md)
 
-### <a name="see-also"></a>Zie tevens
+### <a name="see-also"></a>Zie ook
 
 Zie ook de volgende artikelen:
 

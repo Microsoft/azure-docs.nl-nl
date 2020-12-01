@@ -3,12 +3,12 @@ title: Een sjabloon van een leslokaal Lab beheren in Azure Lab Services | Micros
 description: Meer informatie over het maken en beheren van een sjabloon voor een leslokaal Lab in Azure Lab Services.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 0f7c74f75de3d24acd01330910bf6ee3f8f18533
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: be84a05fd8b278f5176cd768191d10a20fc719e6
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85445794"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96434274"
 ---
 # <a name="create-and-manage-a-classroom-template-in-azure-lab-services"></a>Een leslokaal sjabloon maken en beheren in Azure Lab Services
 Een sjabloon in een lab is een basiskopie van de virtuele machine waarvan de virtuele machines van alle gebruikers worden gemaakt. Stel de sjabloon voor de virtuele machine zo in dat deze is geconfigureerd met precies wat u de labgebruikers wilt bieden. U kunt een naam en een beschrijving opgeven voor de sjabloon die de gebruikers van het lab kunnen zien. Vervolgens publiceert u de sjabloon om exemplaren van de sjabloon-VM beschikbaar te maken voor uw test gebruikers. Wanneer u een sjabloon publiceert, maakt Azure Lab Services virtuele machines in het lab met behulp van de sjabloon. Het aantal virtuele machines dat in dit proces wordt gemaakt, is hetzelfde als het maximum aantal gebruikers dat in het lab is toegestaan. Dit kunt u instellen in het gebruiksbeleid van het lab. Alle virtuele machines hebben dezelfde configuratie als de sjabloon.
@@ -39,7 +39,7 @@ Gebruik de volgende stappen om een sjabloon-VM bij te werken.
     
 1. Installeer alle software die de studenten nodig hebben om het lab te doorlopen (bijvoorbeeld Visual Studio, Azure Storage Explorer, enzovoort). 
 1. Verbreek de verbinding met de sjabloon-VM (sluit de Extern bureaublad-sessie). 
-1. **Stop** de sjabloon-VM door **sjabloon stoppen**te selecteren. 
+1. **Stop** de sjabloon-VM door **sjabloon stoppen** te selecteren. 
 1. Volg de stappen in de volgende sectie om de bijgewerkte sjabloon-VM te **publiceren** . 
 
 ## <a name="publish-the-template-vm"></a>De sjabloon-VM publiceren  
@@ -67,4 +67,4 @@ Zie de volgende artikelen:
 - [Labaccounts maken en beheren als beheerder](how-to-manage-lab-accounts.md)
 - [Labs maken en beheren als labeigenaar](how-to-manage-classroom-labs.md)
 - [Het gebruik van een lab configureren en beheren als labeigenaar](how-to-configure-student-usage.md)
-- [Als test gebruiker toegang krijgen tot klassikale Labs](how-to-use-classroom-lab.md)
+- [Als test gebruiker, Access Labs](how-to-use-classroom-lab.md)

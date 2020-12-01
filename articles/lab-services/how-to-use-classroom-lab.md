@@ -3,12 +3,12 @@ title: Toegang tot een leslokaallab in Azure Lab Services | Microsoft Docs
 description: Meer informatie over hoe u zich registreert bij een leslokaal Lab, alle Labs bekijken die u kunt openen, een virtuele machine in de test omgeving starten/stoppen en verbinding maken met de virtuele machine.
 ms.topic: how-to
 ms.date: 06/26/2020
-ms.openlocfilehash: 0c2f0ba5e6a47e00f47a31e08c036ea17ff2507a
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: 6d5585082473a363df5f25f331475536544ae828
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91946107"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96433135"
 ---
 # <a name="how-to-access-a-classroom-lab-in-azure-lab-services"></a>Toegang tot een leslokaallab in Azure Lab Services
 In dit artikel wordt beschreven hoe u zich registreert bij een leslokaal Lab, alle lessen bekijkt die u kunt openen, een virtuele machine in het Lab wilt starten/stoppen en verbinding kunt maken met de virtuele machine. 
@@ -62,7 +62,7 @@ De voortgangsbalk op de tegel toont het aantal uren dat is gebruikt voor het aan
 - Als er geen quotum is toegewezen (nul uur), wordt de tekst die **beschikbaar is tijdens klassen alleen** weer gegeven in plaats van de voortgangs balk. 
     
     ![Status wanneer er geen quotum is ingesteld](./media/tutorial-connect-vm-in-classroom-lab/available-during-class.png)
-- Als u **geen quotum**hebt, is de kleur van de voortgangs balk **rood**. 
+- Als u **geen quotum** hebt, is de kleur van de voortgangs balk **rood**. 
 
     ![Voortgangs balk met rode kleur](./media/tutorial-connect-vm-in-classroom-lab/progress-bar-red-color.png)
 - De kleur van de voortgangs balk is **blauw** wanneer deze zich buiten het geplande tijdstip voor het lab bevindt en een deel van de quota tijd is gebruikt. 
@@ -70,8 +70,8 @@ De voortgangsbalk op de tegel toont het aantal uren dat is gebruikt voor het aan
     ![Voortgangs balk met blauwe kleur](./media/tutorial-connect-vm-in-classroom-lab/progress-bar-blue-color.png)
 
 
-## <a name="view-all-the-classroom-labs"></a>Alle leslokaallabs weergeven
-Als u zich voor de labs registreert, kunt u alle leslokaallabs weergeven door de volgende stappen uit te voeren: 
+## <a name="view-all-the-labs"></a>Bekijk alle Labs
+Nadat u zich bij de Labs hebt geregistreerd, kunt u alle Labs bekijken door de volgende stappen uit te voeren: 
 
 1. Navigeer naar [https://labs.azure.com](https://labs.azure.com) . Internet Explorer 11 wordt nog niet ondersteund. 
 2. Meld u aan bij de service met het gebruikersaccount waarmee u zich hebt geregistreerd voor het lab. 

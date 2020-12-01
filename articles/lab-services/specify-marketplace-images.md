@@ -3,18 +3,18 @@ title: Marketplace-installatie kopieën opgeven voor een lab in Azure Lab Servic
 description: In dit artikel wordt beschreven hoe u de Marketplace-installatie kopieën kunt opgeven die door Lab Creator kunnen worden gebruikt om Labs te maken in een Lab-account in Azure Lab Services.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 5a353394fec3dadf0f808a25ec66f6e9028820a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5c81c8d7a15d67055729a29e98f5b7e30f3d0764
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85445607"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96434733"
 ---
 # <a name="specify-marketplace-images-available-to-lab-creators"></a>Microsoft Azure Marketplace-installatiekopieën opgeven die beschikbaar zijn voor labmakers
 Als eigenaar van een labaccount kunt u de Marketplace-installatiekopieën opgeven die labmakers kunnen gebruiken in het labaccount. 
 
 ## <a name="select-images-available-for-labs"></a>Beschik bare installatie kopieën voor Labs selecteren
-Selecteer **Marketplace-installatiekopieën** in het menu aan de linkerkant. Standaard ziet u de volledige lijst met installatiekopieën (zowel ingeschakelde als uitgeschakelde). U kunt de lijst filteren om alleen ingeschakelde/uitgeschakelde installatie kopieën weer te geven door de optie **ingeschakeld**alleen / **uitgeschakeld** in de vervolg keuzelijst bovenaan te selecteren. 
+Selecteer **Marketplace-installatiekopieën** in het menu aan de linkerkant. Standaard ziet u de volledige lijst met installatiekopieën (zowel ingeschakelde als uitgeschakelde). U kunt de lijst filteren om alleen ingeschakelde/uitgeschakelde installatie kopieën weer te geven door de optie **ingeschakeld** alleen / **uitgeschakeld** in de vervolg keuzelijst bovenaan te selecteren. 
     
 ![Pagina Microsoft Azure Marketplace-installatiekopieën](./media/tutorial-setup-lab-account/marketplace-images-page.png)
 
@@ -60,4 +60,4 @@ Zie de volgende artikelen:
 - [Labs maken en beheren als labeigenaar](how-to-manage-classroom-labs.md)
 - [Sjablonen instellen en publiceren als labeigenaar](how-to-create-manage-template.md)
 - [Het gebruik van een lab configureren en beheren als labeigenaar](how-to-configure-student-usage.md)
-- [Als test gebruiker toegang krijgen tot klassikale Labs](how-to-use-classroom-lab.md)
+- [Als test gebruiker, Access Labs](how-to-use-classroom-lab.md)

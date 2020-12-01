@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 09/01/2020
 ms.author: danis
 ms.reviewer: cynthn
-ms.openlocfilehash: 30e76ec3085922ec2a1d4693681eb97c9052c026
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 9f0309f4e8273c2ef19ea86636de8e3aa6b6c4bc
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91978727"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96435097"
 ---
 # <a name="creating-generalized-images-without-a-provisioning-agent"></a>Gegeneraliseerde installatie kopieën maken zonder een inrichtings agent
 
@@ -199,7 +199,7 @@ WantedBy=multi-user.target
 Deze gesystemte service heeft drie dingen voor basis inrichting:
 
 1. Rapporten die gereed zijn voor Azure (om aan te geven dat deze correct zijn gearriveerd).
-1. Hiermee wordt de naam van de virtuele machine op basis van de door de gebruiker opgegeven VM-naam gewijzigd door deze gegevens uit [Azure instance metadata service (IMDS)](./instance-metadata-service.md)op te halen. **Opmerking** IMDS biedt ook andere [meta gegevens voor instanties](./instance-metadata-service.md#accessing-azure-instance-metadata-service), zoals open bare SSH-sleutels, zodat u meer dan de hostnaam kunt instellen.
+1. Hiermee wordt de naam van de virtuele machine op basis van de door de gebruiker opgegeven VM-naam gewijzigd door deze gegevens uit [Azure instance metadata service (IMDS)](./instance-metadata-service.md)op te halen. **Opmerking** IMDS biedt ook andere [meta gegevens voor instanties](./instance-metadata-service.md#access-azure-instance-metadata-service), zoals open bare SSH-sleutels, zodat u meer dan de hostnaam kunt instellen.
 1. Wordt uitgeschakeld, zodat deze alleen wordt uitgevoerd bij de eerste keer opstarten en niet bij de volgende keer opnieuw opstarten.
 
 Met de eenheid op het bestands systeem voert u de volgende handelingen uit om het bestand in te scha kelen:

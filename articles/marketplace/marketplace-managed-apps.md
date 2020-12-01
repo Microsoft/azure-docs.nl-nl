@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: msjogarrig
 ms.author: jogarrig
 ms.date: 09/04/2020
-ms.openlocfilehash: 10ca7602dd3cf5a80e371ceda845977bcd8f218a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d4fb3354b7035149b80191528b2f5335b593b764
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89484236"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96433552"
 ---
 # <a name="publishing-guide-for-azure-managed-applications"></a>Publicatie handleiding voor door Azure beheerde toepassingen
 
@@ -34,7 +34,7 @@ Gebruik het aanbiedings type beheerde toepassing onder de volgende voor waarden:
 |---------|---------|
 |Een Azure-abonnement | Beheerde toepassingen moeten worden geïmplementeerd op het abonnement van een klant, maar kunnen worden beheerd door derden. |
 |Facturering en meting    |  De resources zijn opgenomen in het Azure-abonnement van een klant. Vm's die gebruikmaken van het betalen per gebruik-betalings model, worden door micro soft gefactureerd met de klant via het Azure-abonnement van de klant. <br><br> Voor uw Vm's met uw eigen licentie, factureert micro soft kosten voor de infra structuur die in het abonnement van de klant worden gemaakt, maar u kunt ook de kosten voor software licenties ook rechtstreeks aan de klant door geven.        |
-|Een virtuele harde schijf die compatibel is met Azure (VHD)    |   Vm's moeten zijn gebouwd op Windows of Linux.<br><br>Zie [Linux-distributies die zijn goedgekeurd op Azure](../virtual-machines/linux/endorsed-distros.md)voor meer informatie over het maken van een virtuele Linux-harde schijf.<br><br>Zie [een Azure-toepassings aanbieding maken](./partner-center-portal/create-new-azure-apps-offer.md)voor meer informatie over het maken van een Windows-VHD. |
+|Een virtuele harde schijf die compatibel is met Azure (VHD)    |   Vm's moeten zijn gebouwd op Windows of Linux.<br><br>Zie [Linux-distributies die zijn goedgekeurd op Azure](../virtual-machines/linux/endorsed-distros.md)voor meer informatie over het maken van een virtuele Linux-harde schijf.<br><br>Zie [een Azure-toepassings aanbieding maken](./create-new-azure-apps-offer.md)voor meer informatie over het maken van een Windows-VHD. |
 
 ---
 
@@ -51,4 +51,4 @@ Als u dit nog niet hebt gedaan, leert u hoe u [uw Cloud activiteiten kunt verg R
 Registreren voor en werken in het partner centrum:
 
 - [Meld u aan bij Partner Center](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/partnership) om uw aanbieding te maken of te volt ooien.
-- Zie [een Azure-toepassings aanbieding maken](./partner-center-portal/create-new-azure-apps-offer.md) voor meer informatie.
+- Zie [een Azure-toepassings aanbieding maken](./create-new-azure-apps-offer.md) voor meer informatie.

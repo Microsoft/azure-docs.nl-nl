@@ -1,16 +1,16 @@
 ---
-title: Planning voor klassikale Labs maken in Azure Lab Services | Microsoft Docs
-description: Meer informatie over het maken van planningen voor klassikale Labs in Azure Lab Services zodat Vm's in de Labs op een opgegeven tijdstip worden gestart en afgesloten.
+title: Planning maken voor Labs in Azure Lab Services | Microsoft Docs
+description: Meer informatie over het maken van planningen voor Labs in Azure Lab Services zodat Vm's in de Labs op een opgegeven tijdstip worden gestart en afgesloten.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 4eb4e2459069b61990f51f8d8de76522b736723e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2a827c3d9f3022cb7d27ee43c9c95227c44f97e7
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91326436"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96434022"
 ---
-# <a name="create-and-manage-schedules-for-classroom-labs-in-azure-lab-services"></a>Planningen voor het maken en beheren van klassikale Labs in Azure Lab Services 
+# <a name="create-and-manage-schedules-for-labs-in-azure-lab-services"></a>Schema's maken en beheren voor Labs in Azure Lab Services 
 Met planningen kunt u een leslokaal Lab zodanig configureren dat de virtuele machines in het lab automatisch worden gestart en op een opgegeven tijdstip worden afgesloten. U kunt een eenmalig schema of een terugkerende planning definiëren. De volgende procedures geven u stappen voor het maken en beheren van planningen voor een klas Lab: 
 
 > [!IMPORTANT]
@@ -34,7 +34,7 @@ Maak een geplande gebeurtenis voor het lab, zodat VM's in het lab op opgegeven m
     ![Knop Planning toevoegen op de pagina Planningen](./media/how-to-create-schedules/select-current-schedule.png)
 5. Voer in het dialoogvenster **Herhalen** de volgende stappen uit:
     1. Bevestig dat **elke week** is ingesteld in het veld **Herhalen**. 
-    3. De **begin datum**opgeven.
+    3. De **begin datum** opgeven.
     4. Geef de **begin tijd** op waarop u de vm's wilt starten.
     5. Geef de **eind tijd** op waarop de vm's moeten worden afgesloten. 
     6. Geef de **tijd zone** op voor de start-en stop tijden die u hebt opgegeven. 
@@ -60,7 +60,7 @@ Wanneer u een gemarkeerde planning in de agenda selecteert, ziet u knoppen om de
 
 ![Schema pagina bewerken](./media/how-to-create-schedules/schedule-edit-button.png)
 
-Op de pagina **geplande gebeurtenis bewerken** kunt u het schema bijwerken en vervolgens **Opslaan**selecteren. 
+Op de pagina **geplande gebeurtenis bewerken** kunt u het schema bijwerken en vervolgens **Opslaan** selecteren. 
 
 ## <a name="delete-a-schedule"></a>Een schema verwijderen
 
@@ -77,4 +77,4 @@ Zie de volgende artikelen:
 - [Labaccounts maken en beheren als beheerder](how-to-manage-lab-accounts.md)
 - [Labs maken en beheren als labeigenaar](how-to-manage-classroom-labs.md)
 - [Het gebruik van een lab configureren en beheren als labeigenaar](how-to-configure-student-usage.md)
-- [Als test gebruiker toegang krijgen tot klassikale Labs](how-to-use-classroom-lab.md)
+- [Als test gebruiker, Access Labs](how-to-use-classroom-lab.md)

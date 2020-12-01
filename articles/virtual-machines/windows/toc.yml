@@ -453,7 +453,7 @@
                       href: ../image-version-vm-powershell.md
                     - name: Vanaf een beheerde schijf of momentopname
                       href: ../image-version-snapshot-powershell.md
-                    - name: Migreren vanaf een beheerde installatiekopie
+                    - name: Een beheerde installatiekopie klonen
                       href: ../image-version-managed-image-powershell.md
                     - name: Kopiëren uit een andere galerie
                       href: ../image-version-another-gallery-powershell.md
@@ -475,7 +475,7 @@
                       href: ../image-version-vm-cli.md
                     - name: Vanaf een beheerde schijf of momentopname
                       href: ../image-version-snapshot-cli.md
-                    - name: Migreren vanaf een beheerde installatiekopie
+                    - name: Een beheerde installatiekopie klonen
                       href: ../image-version-managed-image-cli.md
                     - name: Kopiëren uit een andere galerie
                       href: ../image-version-another-gallery-cli.md

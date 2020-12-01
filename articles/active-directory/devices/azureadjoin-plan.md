@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3587ef6be9d6c9969dff5d1af2181ed51aea7d29
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 3acaf4929158b24ff50655aa18c05b41aeec4b53
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93308283"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96435447"
 ---
 # <a name="how-to-plan-your-azure-ad-join-implementation"></a>Procedure: uw Azure AD-koppelings implementatie plannen
 
@@ -91,9 +91,11 @@ U kunt geen smart cards of verificatie op basis van certificaten gebruiken om ap
 Als u gebruikers maakt in uw:
 
 - **On-premises Active Directory** moet u deze synchroniseren met Azure AD met behulp van [Azure AD Connect](../hybrid/how-to-connect-sync-whatis.md). 
-- **Azure AD** , er is geen aanvullende installatie vereist.
+- **Azure AD**, er is geen aanvullende installatie vereist.
 
 On-premises Upn's die verschillen van Azure AD-Upn's, worden niet ondersteund op apparaten die zijn toegevoegd aan Azure AD. Als uw gebruikers een lokale UPN gebruiken, moet u overschakelen naar het gebruik van de primaire UPN in azure AD.
+
+UPN-wijzigingen worden alleen ondersteund bij het starten van de update voor Windows 10 2004. Gebruikers op apparaten met deze update hebben geen problemen nadat ze hun Upn's hebben gewijzigd. Voor apparaten met een update van Windows 10 2004 hebben gebruikers problemen met eenmalige aanmelding en voorwaardelijke toegang op hun apparaten. Ze moeten zich aanmelden bij Windows via de tegel ' andere gebruiker ' met hun nieuwe UPN om dit probleem op te lossen. 
 
 ## <a name="assess-your-device-management"></a>Uw Apparaatbeheer beoordelen
 
@@ -187,7 +189,7 @@ Voor verbinding met extern bureau blad met een aan Azure AD gekoppelde apparaten
 Als u Windows 10 2004 Update start, kunnen gebruikers ook extern bureau blad van een Azure AD-geregistreerde Windows 10-apparaat op een aan Azure AD toegevoegd apparaat gebruiken. 
 
 ## <a name="understand-your-provisioning-options"></a>Inzicht in uw inrichtings opties
-**Opmerking** : aan Azure AD gekoppelde apparaten kunnen niet worden geïmplementeerd met het hulp programma voor systeem voorbereiding (Sysprep) of vergelijk bare Imaging-hulpprogram ma's
+**Opmerking**: aan Azure AD gekoppelde apparaten kunnen niet worden geïmplementeerd met het hulp programma voor systeem voorbereiding (Sysprep) of vergelijk bare Imaging-hulpprogram ma's
 
 U kunt Azure AD-deelname inrichten met behulp van de volgende methoden:
 
@@ -243,7 +245,7 @@ Selecteer **Ja** als u gebruikers wilt verplichten MFA uit te voeren bij het toe
 
 Voordat u uw mobiliteits instellingen kunt configureren, moet u mogelijk eerst een MDM-provider toevoegen.
 
-**Een MDM-provider toevoegen** :
+**Een MDM-provider toevoegen**:
 
 1. Klik op de **pagina Azure Active Directory** in de sectie **beheren** op `Mobility (MDM and MAM)` . 
 1. Klik op **toepassing toevoegen**.
@@ -261,8 +263,8 @@ Selecteer **een aantal** of **Alles** op basis van het bereik van uw implementat
 
 Op basis van uw bereik gebeurt een van de volgende situaties: 
 
-- **Gebruiker bevindt zich in MDM-bereik** : als u een Azure AD Premium abonnement hebt, wordt MDM-inschrijving samen met Azure AD-deelname geautomatiseerd. Alle gebruikers met een bereik moeten een juiste licentie voor uw MDM hebben. Als MDM-inschrijving in dit scenario mislukt, wordt de Azure AD-koppeling ook teruggedraaid.
-- **Gebruiker bevindt zich niet in MDM-bereik** : als gebruikers zich niet in MDM-bereik bevinden, wordt Azure AD-deelname voltooid zonder MDM-registratie. Dit resulteert in een onbeheerd apparaat.
+- **Gebruiker bevindt zich in MDM-bereik**: als u een Azure AD Premium abonnement hebt, wordt MDM-inschrijving samen met Azure AD-deelname geautomatiseerd. Alle gebruikers met een bereik moeten een juiste licentie voor uw MDM hebben. Als MDM-inschrijving in dit scenario mislukt, wordt de Azure AD-koppeling ook teruggedraaid.
+- **Gebruiker bevindt zich niet in MDM-bereik**: als gebruikers zich niet in MDM-bereik bevinden, wordt Azure AD-deelname voltooid zonder MDM-registratie. Dit resulteert in een onbeheerd apparaat.
 
 ### <a name="mdm-urls"></a>MDM-URL's
 
@@ -284,7 +286,7 @@ MAM is niet van toepassing op Azure AD-deelname.
 
 Als u status roaming naar Azure AD wilt inschakelen zodat gebruikers hun instellingen op verschillende apparaten kunnen synchroniseren, raadpleegt u [Enterprise State roaming inschakelen in azure Active Directory](enterprise-state-roaming-enable.md). 
 
-**Aanbeveling** : Schakel deze instelling in, zelfs voor hybride apparaten die aan Azure AD zijn toegevoegd.
+**Aanbeveling**: Schakel deze instelling in, zelfs voor hybride apparaten die aan Azure AD zijn toegevoegd.
 
 ## <a name="configure-conditional-access"></a>Voorwaardelijke toegang configureren
 

@@ -3,12 +3,12 @@ title: Azure Lab Services in micro soft teams
 description: Biedt een overzicht van het gebruik van Azure Lab Services in micro soft teams.
 ms.topic: conceptual
 ms.date: 10/07/2020
-ms.openlocfilehash: 0c7defdb6f801a10c5fadfdca805381a31f39378
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: f39613427ed174dfca80d4a48be9473ab7025e79
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92047825"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96433925"
 ---
 # <a name="azure-lab-services-within-microsoft-teams"></a>Azure Lab Services in micro soft teams
 
@@ -23,7 +23,7 @@ In dit artikel vindt u een overzicht van de voor delen van het gebruik van Azure
 
 Azure Lab Services integratie met micro soft teams helpt docenten bij het instellen van een leslokaal omgeving en bieden virtuele lab-omgevingen in het team (klasse): 
 
-* Docenten kunnen klassikale Labs instellen, zodat de cursisten vanuit teams toegang hebben tot hun Vm's, zonder dat ze zich hoeven te houden en te navigeren naar de [Azure Lab Services website](https://labs.azure.com).
+* Docenten kunnen Labs instellen, zodat de studenten toegang hebben tot hun Vm's vanuit teams, zonder dat ze zich hoeven te houden en te navigeren naar de [Azure Lab Services website](https://labs.azure.com).
 * Eenmalige aanmelding (SSO) van teams tot Azure Lab Services.
 * Team-en Lab-eigen aren hoeven geen klassen roosters te onderhouden in twee verschillende systemen met een gebruikers lijst van het abonnement wordt automatisch ingevuld op basis van het lidmaatschap van het team en wordt een synchronisatie uitgevoerd om de 24 uur. 
 * Nadat de eerste keer dat de VM van de sjabloon is gepubliceerd, wordt lab-capaciteit (dat wil zeggen, het aantal Vm's in het lab) automatisch aangepast op basis van de toevoeging of verwijdering van gebruikers uit het team lidmaatschap. 

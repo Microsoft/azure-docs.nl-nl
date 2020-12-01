@@ -1,14 +1,14 @@
 ---
 title: Wacht woorden instellen voor virtuele machines in Azure Lab Services | Microsoft Docs
-description: Meer informatie over het instellen en opnieuw instellen van wacht woorden voor virtuele machines (Vm's) in klassikale Labs van Azure Lab Services.
+description: Meer informatie over het instellen en opnieuw instellen van wacht woorden voor virtuele machines (Vm's) in Labs van Azure Lab Services.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: e24fee26670a664012ec5f0216b0638d6149453f
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 6ae577ee4c0c7e31760e0fb12afeaeac1ef8b7e2
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93379686"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96434223"
 ---
 # <a name="set-up-and-manage-virtual-machine-pool"></a>VM-pool instellen en beheren 
 In dit artikel leest u hoe u de volgende taken kunt uitvoeren:
@@ -102,4 +102,4 @@ De Lab Creator (docenten) kan verbinding maken met een student-VM als aan de vol
 ## <a name="next-steps"></a>Volgende stappen
 Zie het volgende artikel: het [gebruik van studenten configureren](how-to-configure-student-usage.md)voor meer informatie over andere gebruiks opties voor studenten die u (als een Lab-eigenaar) kunt configureren.
 
-Zie [wacht woord instellen of opnieuw instellen voor virtuele machines in klassikale Labs (studenten)](how-to-set-virtual-machine-passwords-student.md)voor meer informatie over hoe studenten wacht woorden opnieuw kunnen instellen voor hun vm's.
+Zie [wacht woord instellen of opnieuw instellen voor virtuele machines in Labs (studenten)](how-to-set-virtual-machine-passwords-student.md)voor meer informatie over hoe studenten wacht woorden voor hun vm's kunnen herstellen.

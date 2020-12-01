@@ -3,12 +3,12 @@ title: Een Azure Lab Services Lab uit teams verwijderen
 description: Meer informatie over het verwijderen van een Azure Lab Services Lab uit teams.
 ms.topic: article
 ms.date: 10/12/2020
-ms.openlocfilehash: 1d2fe73d33a88e595f42b47c1e7122dcbdfe1063
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 8d1e20f8f676eb9863187b550a3c0400871d670c
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92094452"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96433951"
 ---
 # <a name="delete-labs-within-teams"></a>Laboratoria verwijderen in teams
 
@@ -21,7 +21,7 @@ In dit artikel wordt beschreven hoe u een Lab verwijdert uit de app **Azure Lab 
 
 ## <a name="delete-labs"></a>Labs verwijderen
 
-Een lab dat is gemaakt in teams kan worden verwijderd op de website van de [test services](https://labs.azure.com) door het lab rechtstreeks te verwijderen, zoals wordt beschreven in [klassikale labs beheren in Azure Lab Services](how-to-manage-classroom-labs.md). 
+Een lab dat is gemaakt in teams kan worden verwijderd op de [website Lab Services](https://labs.azure.com) door het lab rechtstreeks te verwijderen, zoals beschreven in [labs beheren in Azure Lab Services](how-to-manage-classroom-labs.md). 
 
 Het verwijderen van het lab wordt ook geactiveerd wanneer het team wordt verwijderd. Als het team waarin het lab is gemaakt wordt verwijderd, wordt het lab automatisch 24 uur na de synchronisatie van de automatische gebruikers lijst geactiveerd. 
 

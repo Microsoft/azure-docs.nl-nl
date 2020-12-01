@@ -1,14 +1,14 @@
 ---
-title: Gebruiks instellingen configureren in de klassikale Labs van Azure Lab Services
+title: Gebruiks instellingen in Labs van Azure Lab Services configureren
 description: Meer informatie over het configureren van het aantal studenten voor een lab, het ontvangen van ze met het lab, het aantal uren dat ze de virtuele machine mogen gebruiken en meer.
 ms.topic: article
 ms.date: 11/11/2020
-ms.openlocfilehash: d3100f1a7e67e3b0d403375de02cb3daf5fcfb31
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: e768c74d338cf21eb56660fe3790fc1f0f3ec80d
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94555716"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96434546"
 ---
 # <a name="add-and-manage-lab-users"></a>Labgebruikers toevoegen en beheren
 
@@ -81,7 +81,7 @@ Met deze methode wordt uitgelegd hoe u een e-mail met een registratie koppeling 
 
 1. Voer in het venster **uitnodiging per E-mail verzenden** een optioneel bericht in en selecteer vervolgens **verzenden**. 
 
-    Het e-mailbericht bevat automatisch een registratiekoppeling. Als u de registratie koppeling afzonderlijk wilt ophalen en opslaan, selecteert u het weglatings teken ( **...** ) aan de bovenkant van het deel venster **gebruikers** en selecteert u vervolgens **registratie koppeling**. 
+    Het e-mailbericht bevat automatisch een registratiekoppeling. Als u de registratie koppeling afzonderlijk wilt ophalen en opslaan, selecteert u het weglatings teken (**...**) aan de bovenkant van het deel venster **gebruikers** en selecteert u vervolgens **registratie koppeling**. 
 
     ![Het venster registratie koppeling per e-mail verzenden](./media/tutorial-setup-classroom-lab/send-email.png)
 
@@ -169,7 +169,7 @@ Ga als volgt te werk om aanvullende quota's in te stellen:
 Als u studenten wilt toevoegen aan een leslokaal Lab, gebruikt u hun e-mail accounts. Studenten hebben mogelijk de volgende typen e-mail accounts:
 
 - Een e-mail account voor studenten dat wordt weer gegeven door de Azure Active Directory instantie van uw universiteit.
-- Een micro soft-domein e-mail account, zoals *Outlook.com* , *Hotmail.com* , *MSN.com* of *Live.com*.
+- Een micro soft-domein e-mail account, zoals *Outlook.com*, *Hotmail.com*, *MSN.com* of *Live.com*.
 - Een niet-micro soft-e-mail account, zoals een van Yahoo! of Google. Deze typen accounts moeten echter worden gekoppeld aan een Microsoft-account.
 - Een GitHub-account. Dit account moet worden gekoppeld aan een Microsoft-account.
 
@@ -207,7 +207,7 @@ Als ze hun GitHub-account nog niet aan een Microsoft-account hebben gekoppeld, k
 ## <a name="export-a-list-of-users-to-a-csv-file"></a>Een lijst met gebruikers exporteren naar een CSV-bestand
 
 1. Ga naar het deel venster **gebruikers** .
-1. Selecteer op de werk balk het beletsel teken ( **...** ) en selecteer vervolgens **CSV exporteren**. 
+1. Selecteer op de werk balk het beletsel teken (**...**) en selecteer vervolgens **CSV exporteren**. 
 
     ![De knop CSV exporteren](./media/how-to-export-users-virtual-machines-csv/users-export-csv.png)
 
@@ -218,4 +218,4 @@ Zie de volgende artikelen:
 
 - Voor beheerders: [Lab-accounts maken en beheren](how-to-manage-lab-accounts.md)
 - Voor Lab-eigen aars: [maken en beheren van Labs](how-to-manage-classroom-labs.md) en [sjablonen instellen en publiceren](how-to-create-manage-template.md)
-- Voor Lab-gebruikers: [toegang tot klassikale Labs](how-to-use-classroom-lab.md)
+- Voor Lab-gebruikers: [toegang tot Labs](how-to-use-classroom-lab.md)

@@ -676,6 +676,8 @@
                       href: app/java-standalone-telemetry-processors.md
                     - name: Configuratie van JVM-argumenten
                       href: app/java-standalone-arguments.md
+                    - name: Upgraden van 2.x
+                      href: app/java-standalone-upgrade-from-2x.md
             - name: On-premises servers
               items:
                 - name: ASP.NET

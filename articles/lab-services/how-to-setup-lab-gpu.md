@@ -5,12 +5,12 @@ author: nicolela
 ms.topic: article
 ms.date: 06/26/2020
 ms.author: nicolela
-ms.openlocfilehash: 3cbca82ba88baf5ddda2a6d7a6cdd35b62f28b8e
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 264d103cd5f1459a6d29a35a1ecefc595285587a
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94647933"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96433985"
 ---
 # <a name="set-up-a-lab-with-gpu-virtual-machines"></a>Een Lab instellen met GPU virtual machines
 
@@ -28,13 +28,13 @@ In dit proces hebt u de mogelijkheid om een **visualisatie** of **reken** gpu's 
 
 Zoals beschreven in de volgende tabel is de *reken* GPU-grootte bedoeld voor computerintensieve toepassingen.  Het [diepe leer proces van het type natuurlijke taal verwerking](./class-type-deep-learning-natural-language-processing.md) maakt bijvoorbeeld gebruik van de grootte van de **kleine GPU (Compute)** .  De reken-GPU is geschikt voor dit type klasse, omdat studenten gebruikmaken van een diep geleerde frameworks en hulpprogram ma's die door de [Data Science virtual machine-afbeelding](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.ubuntu-1804) worden verschaft om diepe leer modellen met grote gegevens sets te trainen.
 
-| Grootte | Kernen | RAM | Beschrijving | 
+| Grootte | Kernen | RAM | Description | 
 | ---- | ----- | --- | ----------- | 
 | Kleine GPU (Compute) | -&nbsp;6 &nbsp; kernen<br>-&nbsp;56 &nbsp; GB &nbsp; RAM-geheugen  | [Standard_NC6](../virtual-machines/nc-series.md) |Deze grootte is het meest geschikt voor computerintensieve toepassingen zoals kunst matige intelligentie (AI) en diep gaande lessen. |
 
 De grootte van de *visualisatie* GPU is bedoeld voor grafische intensieve toepassingen.  Bijvoorbeeld, het [type SOLIDWORKS engineering](./class-type-solidworks.md) wordt weer gegeven met behulp van de grootte van de **kleine GPU (visualisatie)** .  De visualisatie GPU is geschikt voor dit type klasse, omdat studenten communiceren met de SOLIDWORKS 3D computer-aided design (CAD)-omgeving voor het model leren en visualiseren van effen objecten.
 
-| Grootte | Kernen | RAM | Beschrijving | 
+| Grootte | Kernen | RAM | Description | 
 | ---- | ----- | --- | ----------- | 
 | Kleine GPU (visualisatie) | -&nbsp;6 &nbsp; kernen<br>-&nbsp;56 &nbsp; GB &nbsp; RAM-geheugen  | [Standard_NV6](../virtual-machines/nv-series.md) | Deze grootte is het meest geschikt voor externe visualisatie, streaming, games en code ring waarbij frameworks zoals OpenGL en DirectX worden gebruikt. |
 | Gemiddelde GPU (visualisatie) | -&nbsp;12 &nbsp; kernen<br>-&nbsp;112 &nbsp; GB &nbsp; RAM-geheugen  | [Standard_NV12](../virtual-machines/nv-series.md?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) | Deze grootte is het meest geschikt voor externe visualisatie, streaming, games en code ring waarbij frameworks zoals OpenGL en DirectX worden gebruikt. |
@@ -95,7 +95,7 @@ Ga als volgt te werk om stuur Programma's hand matig te installeren voor de groo
 ### <a name="validate-the-installed-drivers"></a>De geïnstalleerde Stuur Programma's valideren
 In deze sectie wordt beschreven hoe u controleert of uw GPU-Stuur Programma's goed zijn geïnstalleerd.
 
-#### <a name="windows-images"></a>Windows-installatie kopieën
+#### <a name="windows-images"></a>Windows-installatiekopieën
 1.  Volg de instructies in de sectie ' installatie van Stuur Programma's controleren ' van [NVIDIA GPU-Stuur Programma's installeren op vm's uit de N-serie waarop Windows wordt uitgevoerd](../virtual-machines/windows/n-series-driver-setup.md#verify-driver-installation).
 1.  Als u een *visualisatie* -GPU gebruikt, kunt u ook het volgende doen:
     - Bekijk en wijzig uw GPU-instellingen in het NVIDIA-configuratie scherm. Hiertoe selecteert u **Hardware** in **het configuratie scherm van Windows** en selecteert u vervolgens **NVIDIA-configuratie scherm**.
@@ -115,6 +115,6 @@ Volg de instructies in de sectie ' installatie van Stuur Programma's controleren
 ## <a name="next-steps"></a>Volgende stappen
 Zie de volgende artikelen:
 
-- [Leslokaallabs maken en beheren](how-to-manage-classroom-labs.md)
+- [Labs maken en beheren](how-to-manage-classroom-labs.md)
 - [Type SOLIDWORKS computer-aided design (CAD)-klasse](class-type-solidworks.md)
 - [Het klassen type MATLAB (matrix laboratorium)](class-type-matlab.md)

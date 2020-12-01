@@ -10,12 +10,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 10/05/2020
 ms.author: memildin
-ms.openlocfilehash: 033f06aa61baf04b5c74fbbe9cc8f925d5d4e3d3
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: c1406e6a1f2f36c5d42544c52ade3f991fe2ba0a
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182305"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96433016"
 ---
 # <a name="security-alerts-in-azure-security-center"></a>Beveiligingswaarschuwingen in Azure Security Center
 
@@ -91,7 +91,7 @@ U hebt verschillende mogelijkheden voor het weer geven van uw waarschuwingen bui
 
 - **Down load het CSV-rapport** in het dash board waarschuwingen en biedt een eenmalige export naar CSV.
 - Met **continue export** van prijzen & instellingen kunt u stromen van beveiligings waarschuwingen en aanbevelingen configureren voor log Analytics werk ruimten en Event hubs. [Meer informatie over continue export](continuous-export.md)
-- Azure **Sentinel connector** streamt Azure Defender-waarschuwingen van Azure Security Center naar Azure Sentinel. [Meer informatie over het verbinden van Azure Security Center met Sentinel](../sentinel/connect-azure-security-center.md)
+- Beveiligings waarschuwingen van Azure Security Center worden door **Azure Sentinel connector** naar Azure Sentinel gestreamd. [Meer informatie over het verbinden van Azure Security Center met Sentinel](../sentinel/connect-azure-security-center.md)
 
 
 ## <a name="next-steps"></a>Volgende stappen

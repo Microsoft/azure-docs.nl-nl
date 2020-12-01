@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 11/03/2020
-ms.openlocfilehash: 8a4f9a5df8def928c06fe95a53c7be0d93ec76c4
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: c6bc5ca748a35b17c61d314e96f7284d30e7fc3b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96302679"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96338126"
 ---
 # <a name="azure-hdinsight-id-broker-hib"></a>Azure HDInsight ID Broker (HIB)
 
@@ -146,7 +146,7 @@ Voor elk cluster wordt een toepassing van derden geregistreerd in AAD met de URI
 In AAD is toestemming vereist voor alle toepassingen van derden voordat deze gebruikers kan verifiëren of toegang kan krijgen tot gegevens.
 
 ### <a name="can-the-consent-be-approved-programatically"></a>Kan de toestemming worden goedgekeurd via een programma?
-Met Microsoft Graph-API kunt u de toestemming automatiseren, raadpleegt u de [API-documentatie](https://docs.microsoft.com/graph/api/resources/oauth2permissiongrant?view=graph-rest-1.0) voor het automatiseren van de toestemming:
+Met Microsoft Graph-API kunt u de toestemming automatiseren, raadpleegt u de [API-documentatie](/graph/api/resources/oauth2permissiongrant?view=graph-rest-1.0) voor het automatiseren van de toestemming:
 
 * Registreer een app en Ken Application. ReadWrite. alle machtigingen voor de app toe om toegang te krijgen tot Microsoft Graph
 * Nadat een cluster is gemaakt, kunt u een query uitvoeren voor de cluster-app op basis van de id-URI

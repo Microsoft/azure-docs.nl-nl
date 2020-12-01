@@ -3,12 +3,12 @@ title: Azure Event Hubs-uitzonde ringen (verouderd)
 description: Dit artikel bevat een lijst met uitzonde ringen en voorgestelde acties van Azure Event Hubs Messa ging.
 ms.topic: article
 ms.date: 11/02/2020
-ms.openlocfilehash: adaf7242530727a1f77a9662110a43341e57e80a
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 357a87c53023962dd9195a616bd9ce9e01c55bf9
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289335"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96340964"
 ---
 # <a name="event-hubs-messaging-exceptions---net-legacy"></a>Uitzonde ringen voor Event Hubs berichten-.NET (verouderd)
 In deze sectie vindt u de .NET-uitzonde ringen die worden gegenereerd door .NET Framework-Api's. 
@@ -107,11 +107,11 @@ Deze fout kan een van de volgende twee oorzaken hebben:
 
 - De belasting wordt niet gelijkmatig verdeeld over alle partities op het Event Hub en de ene partitie is afhankelijk van de limiet van de lokale doorvoer eenheid.
     
-    **Oplossing** : als u de strategie voor partitie distributie wijzigt of als u probeert [EventHubClient. send (eventDataWithOutPartitionKey)](/dotnet/api/microsoft.servicebus.messaging.eventhubclient) te gebruiken, kan dit helpen.
+    **Oplossing**: als u de strategie voor partitie distributie wijzigt of als u probeert [EventHubClient. send (eventDataWithOutPartitionKey)](/dotnet/api/microsoft.servicebus.messaging.eventhubclient) te gebruiken, kan dit helpen.
 
 - De Event Hubs naam ruimte heeft onvoldoende doorvoer eenheden (u kunt het scherm **metrische gegevens** controleren in het venster Event hubs naam ruimte in de [Azure Portal](https://portal.azure.com) om te bevestigen). In de portal wordt een samengevoegde (1 minuut) informatie weer gegeven, maar we meten de door Voer in realtime, zodat het slechts een schatting is.
 
-    **Oplossing** : het verhogen van de doorvoer eenheden van de naam ruimte kan helpen. 
+    **Oplossing**: het verhogen van de doorvoer eenheden van de naam ruimte kan helpen. 
 
     U kunt doorvoer eenheden configureren op de pagina **Scale** of **overzicht** van de pagina **Event Hubs naam ruimte** in de Azure Portal. U kunt ook [automatisch verg Roten](event-hubs-auto-inflate.md)gebruiken, dat automatisch wordt geschaald door het aantal doorvoer eenheden te verhogen om te voldoen aan de behoeften van het gebruik.
 
@@ -123,13 +123,13 @@ Deze fout kan een van de volgende twee oorzaken hebben:
     
     Ga op de pagina **overzicht** naar de sectie **metrische gegevens weer geven** en schakel over naar het tabblad **door Voer** . Selecteer de grafiek om deze te openen in een groter venster met intervallen van 1 minuut op de x-as. Bekijk de piek waarden en deel ze met 60 om binnenkomende bytes/seconde of uitgaande bytes per seconde te verkrijgen. Gebruik een soort gelijke benadering om het aantal aanvragen per seconde op piek tijden te berekenen op het tabblad **aanvragen** . 
 
-    Als u waarden ziet die hoger zijn dan het aantal TUs * limieten (1 MB per seconde voor ingangen of 1000 aanvragen voor binnenkomend/seconde, 2 MB per seconde voor uitgaand verkeer), verg root u het aantal TUs met behulp van de **schaal** (in de menu balk links van een naam ruimte) om event hubs een hogere waarde hand matig te schalen of om de Event hubs functie voor [automatisch](event-hubs-auto-inflate.md) Houd er rekening mee dat automatisch verg Roten kan Maxi maal 20 TUS verhogen. Dien een [ondersteunings aanvraag](https://docs.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request)in om het te verheffen naar precies 40 TUs.
+    Als u waarden ziet die hoger zijn dan het aantal TUs * limieten (1 MB per seconde voor ingangen of 1000 aanvragen voor binnenkomend/seconde, 2 MB per seconde voor uitgaand verkeer), verg root u het aantal TUs met behulp van de **schaal** (in de menu balk links van een naam ruimte) om event hubs een hogere waarde hand matig te schalen of om de Event hubs functie voor [automatisch](event-hubs-auto-inflate.md) Houd er rekening mee dat automatisch verg Roten kan Maxi maal 20 TUS verhogen. Dien een [ondersteunings aanvraag](../azure-portal/supportability/how-to-create-azure-support-request.md)in om het te verheffen naar precies 40 TUs.
 
 ### <a name="error-code-50001"></a>Fout code 50001
 
 Deze fout moet zelden optreden. Het gebeurt wanneer de container code voor uw naam ruimte op de CPU laag is, niet meer dan een paar seconden voordat de Event Hubs load balancer begint.
 
-**Oplossing** : beperken van aanroepen naar de methode GetRuntimeInformation. Azure Event Hubs ondersteunt Maxi maal 50 oproepen per seconde voor de GetRuntimeInfo per seconde. Er wordt een uitzonde ring weer gegeven die vergelijkbaar is met de volgende wanneer de limiet is bereikt:
+**Oplossing**: beperken van aanroepen naar de methode GetRuntimeInformation. Azure Event Hubs ondersteunt Maxi maal 50 oproepen per seconde voor de GetRuntimeInfo per seconde. Er wordt een uitzonde ring weer gegeven die vergelijkbaar is met de volgende wanneer de limiet is bereikt:
 
 ```
 ExceptionId: 00000000000-00000-0000-a48a-9c908fbe84f6-ServerBusyException: The request was terminated because the namespace 75248:aaa-default-eventhub-ns-prodb2b is being throttled. Error code : 50001. Please wait 10 seconds and try again.

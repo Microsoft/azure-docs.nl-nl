@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 10/26/2020
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 55a27dbb6c2ec3569bae9d6fb96fcd8087f08daf
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d2d6ee8357698e4af59f44579ce7f2c3aa82991c
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96001674"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96340319"
 ---
 # <a name="azure-data-factory-copy-wizard"></a>Wizard Azure Data Factory kopiëren
 
@@ -94,7 +94,7 @@ Een eenmalige Kopieer bewerking maakt het verplaatsen van gegevens van een bron 
 In deze sectie worden algemene probleemoplossings methoden voor de wizard kopiëren in Azure Data Factory besproken.
 
 > [!NOTE] 
-> Deze tips voor probleem oplossing zijn van toepassing op de wizard kopiëren in versie 1 van Data Factory. Zie voor Data Factory v2 probleemoplossings gids bij het [oplossen van problemen Azure Data Factory](https://docs.microsoft.com/azure/data-factory/data-factory-ux-troubleshoot-guide).
+> Deze tips voor probleem oplossing zijn van toepassing op de wizard kopiëren in versie 1 van Data Factory. Zie voor Data Factory v2 probleemoplossings gids bij het [oplossen van problemen Azure Data Factory](../data-factory-ux-troubleshoot-guide.md).
 
 ### <a name="error-code-unable-to-validate-in-copy-wizard"></a>Fout code: kan niet valideren in wizard kopiëren
 

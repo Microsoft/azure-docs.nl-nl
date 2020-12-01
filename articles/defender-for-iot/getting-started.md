@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/09/2020
 ms.author: mlottner
-ms.openlocfilehash: e3de253ee6f45f9296d6b09189fe4bc488be36ad
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 6aa525fd7f2d82194baa2e2a0c910cb71509c2d5
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92090060"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96340013"
 ---
 # <a name="getting-started-with-azure-defender-for-iot"></a>Aan de slag met Azure Defender voor IoT
 
@@ -30,9 +30,9 @@ Voer de volgende stappen uit om Azure Defender voor IoT actief en werkend te kri
 
 ## <a name="1-set-up-azure"></a>1. Azure instellen
 
-- Stel een Azure-account in. Zie [een Azure-account maken](https://docs.microsoft.com/learn/modules/create-an-azure-account/)voor meer informatie.
+- Stel een Azure-account in. Zie [een Azure-account maken](/learn/modules/create-an-azure-account/)voor meer informatie.
 
-- Firewall of proxy: als u een firewall of soortgelijk netwerk apparaat hebt dat is geconfigureerd om specifieke verbindingen toe te staan, controleert u of *. azure-devices.net:443 wordt geopend voor de firewall of proxy. Als joker tekens niet worden ondersteund of als u meer controle wilt, moet u de specifieke IoT Hub FQDN openen in uw FW of proxy. Zie [referentie-IOT hub-eind punten](/azure/iot-hub/iot-hub-devguide-endpoints)voor meer informatie.
+- Firewall of proxy: als u een firewall of soortgelijk netwerk apparaat hebt dat is geconfigureerd om specifieke verbindingen toe te staan, controleert u of *. azure-devices.net:443 wordt geopend voor de firewall of proxy. Als joker tekens niet worden ondersteund of als u meer controle wilt, moet u de specifieke IoT Hub FQDN openen in uw FW of proxy. Zie [referentie-IOT hub-eind punten](../iot-hub/iot-hub-devguide-endpoints.md)voor meer informatie.
 
 ## <a name="2-deploy-hardware-software-and-onboard-to-sensor"></a>2. Implementeer hardware, software en onboarding naar sensor
 

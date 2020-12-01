@@ -8,12 +8,12 @@ ms.service: cloud-services
 ms.topic: article
 ms.date: 07/18/2017
 ms.author: tagore
-ms.openlocfilehash: 52fad84c9ed145b4acec73ffad1fa470acf94532
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: b617ba8db8f9dbb1c25ac34aa879613c29c723b7
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994584"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96340285"
 ---
 # <a name="sizes-for-cloud-services"></a>Grootte voor Cloud Services
 In dit onderwerp worden de beschik bare grootten en opties voor Cloud service-rolinstanties (webrollen en werk rollen) beschreven. Het biedt ook overwegingen bij de implementatie bij het plannen van het gebruik van deze resources. Elke grootte heeft een ID die u in het [service definitie bestand](cloud-services-model-and-package.md#csdef)plaatst. De prijzen voor elke grootte zijn beschikbaar op de pagina met [Cloud Services prijzen](https://azure.microsoft.com/pricing/details/cloud-services/) .
@@ -36,7 +36,7 @@ De grootte van de virtuele machine heeft invloed op de prijs. De grootte heeft o
 
 De volgende overwegingen kunnen u helpen bij het kiezen van een grootte:
 
-* Grootten uit de A8-A11- en H-serie worden ook wel *rekenintensieve exemplaren* genoemd. De hardware waarop deze grootten worden uitgevoerd, is ontworpen en geoptimaliseerd voor rekenintensieve en netwerkintensieve toepassingen, waaronder HPC-clustertoepassingen (high-performance computing), modellerings- en simulatietoepassingen. De A8-A11-serie gebruikt Intel Xeon E5-2670 @ 2,6 GHZ en de H-serie gebruikt Intel Xeon E5-2667 v3 @ 3,2 GHz. Zie [High Performance Compute VM sizes](../virtual-machines/sizes-hpc.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json)(Engelstalig) voor gedetailleerde informatie en overwegingen over het gebruik van deze grootten.
+* Grootten uit de A8-A11- en H-serie worden ook wel *rekenintensieve exemplaren* genoemd. De hardware waarop deze grootten worden uitgevoerd, is ontworpen en geoptimaliseerd voor rekenintensieve en netwerkintensieve toepassingen, waaronder HPC-clustertoepassingen (high-performance computing), modellerings- en simulatietoepassingen. De A8-A11-serie gebruikt Intel Xeon E5-2670 @ 2,6 GHZ en de H-serie gebruikt Intel Xeon E5-2667 v3 @ 3,2 GHz. Zie [High Performance Compute VM sizes](../virtual-machines/sizes-hpc.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)(Engelstalig) voor gedetailleerde informatie en overwegingen over het gebruik van deze grootten.
 * De Dv3-serie, dv2-serie, D-serie, G-serie zijn ideaal voor toepassingen die snellere Cpu's, betere prestaties van de lokale schijf of een hogere hoeveelheid geheugen vereisen. Ze bieden een krachtige combinatie voor vele toepassingen op bedrijfsniveau.
 * Sommige fysieke hosts in Azure-datacenters bieden mogelijk geen ondersteuning voor grotere VM-formaten, zoals A5 – A11. Als gevolg hiervan kan het fout bericht de **virtuele machine {machine name} niet configureren** , of kan de **virtuele machine {machine naam} niet worden gemaakt** wanneer de grootte van een bestaande virtuele machine wordt gewijzigd in een nieuwe omvang. maken van een nieuwe virtuele machine in een virtueel netwerk dat is gemaakt vóór 16 april 2013; of toevoegen van een nieuwe virtuele machine aan een bestaande Cloud service. Zie [fout: ' het configureren van de virtuele machine is mislukt '](https://social.msdn.microsoft.com/Forums/9693f56c-fcd3-4d42-850e-5e3b56c7d6be/error-failed-to-configure-virtual-machine-with-a5-a6-or-a7-vm-size?forum=WAVirtualMachinesforWindows) in het ondersteunings forum voor tijdelijke oplossingen voor elk implementatie scenario.
 * Het is ook mogelijk dat uw abonnement het aantal kernen beperkt dat u in een bepaalde groottefamilie mag implementeren. Neem contact op met ondersteuning van Azure als u een quotum wilt verhogen.
@@ -63,7 +63,7 @@ We hebben het concept van de Azure Compute Unit (ACU) ontwikkeld om een manier t
 | [D v3](#dv3-series) |160-190 * |
 | [E v3](#ev3-series) |160-190 * |
 | [Kg](#g-series) |180 - 240* |
-| [HxBxD](#h-series) |290 - 300* |
+| [H](#h-series) |290 - 300* |
 
 ACU's die met een * zijn gemarkeerd, maken gebruik van Intel® Turbo-technologie om de CPU-frequentie te verhogen en nóg betere prestaties te leveren. Hoe groot die extra prestaties zijn, is afhankelijk van de VM-grootte, de workload en de andere workloads die op dezelfde host worden uitgevoerd.
 
@@ -88,7 +88,7 @@ In de volgende tabellen ziet u de grootten en de capaciteiten die ze bieden.
 | A7              | 8         | 56           | 2040                 | 4/hoog |
 
 ## <a name="a-series---compute-intensive-instances"></a>A-serie: rekenintensieve exemplaren
-Zie [High Performance Compute VM sizes](../virtual-machines/sizes-hpc.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json)(Engelstalig) voor informatie en overwegingen over het gebruik van deze grootten.
+Zie [High Performance Compute VM sizes](../virtual-machines/sizes-hpc.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)(Engelstalig) voor informatie en overwegingen over het gebruik van deze grootten.
 
 | Grootte            | CPU-kernen | Geheugen: GiB  | Tijdelijke opslag: GiB       | Max. aantal NIC's/netwerkbandbreedte |
 |---------------- | --------- | ------------ | -------------------- | ---------------------------- |
@@ -217,4 +217,4 @@ Get-AzureRoleSize | where SupportedByWebWorkerRoles -eq $true | select InstanceS
 
 ## <a name="next-steps"></a>Volgende stappen
 * Zie voor meer informatie: [Azure subscription and service limits, quotas, and constraints](../azure-resource-manager/management/azure-subscription-service-limits.md) (Limieten van Azure-abonnementen en -services, quota en beperkingen).
-* Meer informatie [over de maximale grootte van Compute-vm's](../virtual-machines/sizes-hpc.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json) voor HPC-workloads.
+* Meer informatie [over de maximale grootte van Compute-vm's](../virtual-machines/sizes-hpc.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) voor HPC-workloads.

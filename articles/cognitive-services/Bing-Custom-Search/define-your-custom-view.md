@@ -10,19 +10,19 @@ ms.subservice: bing-custom-search
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: aahi
-ms.openlocfilehash: e8747b822916ba2c9ef7b45cc3cbbaa88d16dcb1
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: b2d4eb75002474bbec57753bbf0255cc4c2b4a16
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94565786"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96338636"
 ---
 # <a name="configure-your-bing-custom-search-experience"></a>Uw Bing Aangepaste zoekopdrachten-ervaring configureren
 
 > [!WARNING]
-> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](https://aka.ms/cogsvcs/bingmove) is beschreven.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
 > Bing Search-API's die zijn ingericht met Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
-> Raadpleeg [Bing Search Services](https://aka.ms/cogsvcs/bingmigration) voor migratie-instructies.
+> Raadpleeg [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
 Met een aangepaste zoek opdracht kunt u de zoek ervaring zodanig aanpassen dat alleen inhoud wordt Inge sloten van websites waar uw gebruikers zich bevinden. In plaats van een zoek opdracht in het hele web uit te voeren, zoekt Bing alleen de segmenten van het web die u interesseren. Als u een aangepaste weergave van het web wilt maken, gebruikt u de [portal](https://www.customsearch.ai) van Bing Aangepaste zoekopdrachten.
 
@@ -33,7 +33,7 @@ Gebruik het volgende bij het definiëren van uw segmenten van het web:
 | Segment naam | Beschrijving                                                                                                                                                                                                                                                                                                |
 |------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Domain     | Een domein segment bevat alle inhoud die binnen een Internet domein is gevonden. Bijvoorbeeld `www.microsoft.com`. Als u dit weglaat, `www.` zoekt Bing ook de subdomeinen van het domein. Als u bijvoorbeeld opgeeft `microsoft.com` , retourneert Bing ook resultaten van `support.microsoft.com` of `technet.microsoft.com` . |
-| Subpagina    | Een segment van een subpagina bevat alle inhoud die is gevonden op de subpagina en de onderliggende paden. U kunt Maxi maal twee subpagina's in het pad opgeven. Bijvoorbeeld: `www.microsoft.com/en-us/windows/`                                                                                                                       |
+| Subpagina    | Een segment van een subpagina bevat alle inhoud die is gevonden op de subpagina en de onderliggende paden. U kunt Maxi maal twee subpagina's in het pad opgeven. bijvoorbeeld `www.microsoft.com/en-us/windows/`                                                                                                                       |
 | Webpagina    | Een segment van een webpagina kan alleen die webpagina in een aangepaste zoek opdracht bevatten. U kunt eventueel ook opgeven of u subpagina's wilt toevoegen.                                                                                                                                                                                  |
 
 > [!IMPORTANT]
@@ -89,7 +89,7 @@ U kunt uw zoek opdracht testen met behulp van het voorbeeld venster op de rechte
 
 1. Selecteer onder het zoekvak **mijn exemplaar**. U kunt de resultaten van uw zoek ervaring vergelijken met Bing door **Bing** te selecteren. 
 2. Selecteer een veilig zoek filter en welke markt u wilt zoeken (Zie [query parameters](/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference#query-parameters)).
-3. Voer een query in en druk op ENTER of klik op het zoek pictogram om de resultaten van de huidige configuratie weer te geven. U kunt het Zoek type dat u hebt uitgevoerd, wijzigen door op **Web** , **afbeelding** of **video** te klikken om de bijbehorende resultaten te verkrijgen. 
+3. Voer een query in en druk op ENTER of klik op het zoek pictogram om de resultaten van de huidige configuratie weer te geven. U kunt het Zoek type dat u hebt uitgevoerd, wijzigen door op **Web**, **afbeelding** of **video** te klikken om de bijbehorende resultaten te verkrijgen. 
 
 <a name="adjustrank"></a>
 

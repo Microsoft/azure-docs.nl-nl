@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/24/2019
 ms.author: mlottner
-ms.openlocfilehash: a5382313c837482f116f498f3a05c36447062b0a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b33c456d47426a3721e8582f24ffd603db0429c9
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90936878"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96340030"
 ---
 # <a name="security-module"></a>Beveiligingsmodule
 
@@ -30,7 +30,7 @@ Apparaatdubbels spelen een belangrijke rol voor zowel apparaatbeheer als procesa
 
 Defender for IoT biedt volledige integratie met uw bestaande IoT-beheerplatform, zodat u de beveiligingsstatus van uw apparaten kunt beheren en ook de bestaande apparaten kunt gebruiken. Integratie wordt bereikt door gebruik te maken van de IoT Hub dubbele methode.
 
-Meer informatie over het concept van [device apparaatdubbels](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-device-twins) in azure IOT hub.
+Meer informatie over het concept van [device apparaatdubbels](../iot-hub/iot-hub-devguide-device-twins.md) in azure IOT hub.
 
 ## <a name="security-module-twins"></a>Beveiligings module apparaatdubbels
 
@@ -38,7 +38,7 @@ Defender voor IoT onderhoudt een beveiligings module voor elk apparaat in de ser
 De beveiligings module bevat alle informatie die relevant is voor de beveiliging van apparaten voor elk specifiek apparaat in uw oplossing.
 Beveiligings eigenschappen van apparaten worden onderhouden in een speciale beveiligings module, met als gevolg dat er een veiliger communicatie is en voor het inschakelen van updates en onderhoud waarvoor minder resources nodig zijn.
 
-Zie [Security-module](quickstart-create-security-twin.md) configureren, en [Configureer beveiligings agenten](how-to-agent-configuration.md) voor meer informatie over het maken, aanpassen en configureren van de dubbele. Zie [Wat is module apparaatdubbels](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-module-twins) ? voor meer informatie over het concept van module apparaatdubbels in IOT hub.
+Zie [Security-module](quickstart-create-security-twin.md) configureren, en [Configureer beveiligings agenten](how-to-agent-configuration.md) voor meer informatie over het maken, aanpassen en configureren van de dubbele. Zie [Wat is module apparaatdubbels](../iot-hub/iot-hub-devguide-module-twins.md) ? voor meer informatie over het concept van module apparaatdubbels in IOT hub.
 
 ## <a name="see-also"></a>Zie ook
 

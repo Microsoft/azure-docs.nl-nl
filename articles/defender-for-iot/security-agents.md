@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/23/2019
 ms.author: mlottner
-ms.openlocfilehash: 888fdbb2352c4ac972eac8b24c29d22ce973e04d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e3fe3e910134080f6620023f539913454670d093
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90936368"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96339911"
 ---
 # <a name="get-started-with-azure-defender-for-iot-device-security-agents"></a>Aan de slag met Azure Defender voor IoT-beveiligings agenten voor apparaten
 
@@ -31,9 +31,9 @@ De Defender voor IoT-beveiligings agenten verwerken de onbewerkte gebeurtenis ve
 Gebruik de volgende werk stroom voor het implementeren en testen van uw Defender voor IoT-beveiligings agenten:
 
 1. [Schakel Defender voor IoT-service in op uw IoT Hub](quickstart-onboard-iot-hub.md)
-1. Als uw IoT Hub geen geregistreerde apparaten heeft, [registreert u een nieuw apparaat](https://docs.microsoft.com/azure/iot-accelerators/quickstart-device-simulation-deploy).
+1. Als uw IoT Hub geen geregistreerde apparaten heeft, [registreert u een nieuw apparaat](../iot-accelerators/quickstart-device-simulation-deploy.md).
 1. [Maak een azureiotsecurity-beveiligings module](quickstart-create-security-twin.md) voor uw apparaten.
-1. Als u de agent wilt installeren op een gesimuleerd Azure-apparaat in plaats van op een echt apparaat te installeren, kunt u [een nieuwe virtuele Azure-machine (VM)](https://docs.microsoft.com/azure/virtual-machines/linux/quick-create-portal) in een beschik bare zone zetten.
+1. Als u de agent wilt installeren op een gesimuleerd Azure-apparaat in plaats van op een echt apparaat te installeren, kunt u [een nieuwe virtuele Azure-machine (VM)](../virtual-machines/linux/quick-create-portal.md) in een beschik bare zone zetten.
 1. [Implementeer een Defender voor IOT-beveiligings agent](how-to-deploy-linux-cs.md) op uw IOT-apparaat of op een nieuwe virtuele machine.
 1. Volg de instructies voor [trigger_events](https://aka.ms/iot-security-github-trigger-events) om een onschadelijke simulatie van een aanval uit te voeren.
 1. Verifieer Defender voor IoT-waarschuwingen als reactie op de gesimuleerde aanval in de vorige stap. Begin met de verificatie 5 minuten na het uitvoeren van het script.

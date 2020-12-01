@@ -5,12 +5,12 @@ author: batrived
 ms.topic: article
 ms.date: 06/21/2020
 ms.author: batrived
-ms.openlocfilehash: 7b93d7a110889192bb5be6fffa56a73758d6faa2
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: fa119784715b8c88ef3c9f2700b2cac1cc467234
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92892312"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96339742"
 ---
 # <a name="troubleshoot-connectivity-issues---azure-event-grid"></a>Verbindings problemen oplossen-Azure Event Grid
 
@@ -50,7 +50,7 @@ telnet {sampletopicname}.{region}-{suffix}.eventgrid.azure.net 443
 
 Wanneer u met Azure werkt, moet u soms specifieke IP-adresbereiken of Url's in uw bedrijfs firewall of-proxy toestaan om toegang te krijgen tot alle Azure-Services die u gebruikt of probeert te gebruiken. Controleer of het verkeer is toegestaan op IP-adressen die worden gebruikt door Event Grid. Voor IP-adressen die worden gebruikt door Azure Event Grid: Zie [Azure IP-adresbereiken en service Tags-Public Cloud](https://www.microsoft.com/download/details.aspx?id=56519) en [service tag-AzureEventGrid](network-security.md#service-tags).
 
-In het [Azure IP-bereik en de service Tags-open bare Cloud](https://www.microsoft.com/download/details.aspx?id=56519) document worden ook IP-adressen **per regio** vermeld. U kunt adresbereiken voor de **regio van het onderwerp** en de **gekoppelde regio** in uw bedrijfs firewall of proxy toestaan. Zie [bedrijfs continuïteit en herstel na nood gevallen (BCDR): Azure-gekoppelde regio's](/azure/best-practices-availability-paired-regions)voor een gepaarde regio voor een regio. 
+In het [Azure IP-bereik en de service Tags-open bare Cloud](https://www.microsoft.com/download/details.aspx?id=56519) document worden ook IP-adressen **per regio** vermeld. U kunt adresbereiken voor de **regio van het onderwerp** en de **gekoppelde regio** in uw bedrijfs firewall of proxy toestaan. Zie [bedrijfs continuïteit en herstel na nood gevallen (BCDR): Azure-gekoppelde regio's](../best-practices-availability-paired-regions.md)voor een gepaarde regio voor een regio. 
 
 > [!NOTE]
 > Er kunnen nieuwe IP-adressen worden toegevoegd aan de AzureEventGrid-servicetag, maar dit is niet gebruikelijk. Daarom is het een goed idee om de service Tags per week te controleren.

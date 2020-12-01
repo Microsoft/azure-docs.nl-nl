@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7cb0223b338457ad5eeea0b0bb40593f57a0d3aa
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: a23056445331c82aded878a77d1e0e730e4e2ceb
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92442079"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96339469"
 ---
 # <a name="direct-federation-with-ad-fs-and-third-party-providers-for-guest-users-preview"></a>Directe Federatie met AD FS en providers van derden voor gast gebruikers (preview-versie)
 
@@ -30,7 +30,7 @@ Wanneer u directe Federatie instelt met de IdP van een partner, kunnen nieuwe ga
 > Gebruikers met een directe Federatie gast moeten zich aanmelden met behulp van een koppeling die de Tenant context bevat (bijvoorbeeld `https://myapps.microsoft.com/?tenantid=<tenant id>` of `https://portal.azure.com/<tenant id>` , of in het geval van een geverifieerd domein `https://myapps.microsoft.com/\<verified domain>.onmicrosoft.com` ). Directe koppelingen naar toepassingen en bronnen werken ook zolang ze de context van de Tenant bevatten. Directe Federatie gebruikers kunnen zich momenteel niet aanmelden met algemene eind punten die geen Tenant context hebben. Als bijvoorbeeld, `https://myapps.microsoft.com` `https://portal.azure.com` of wordt gebruikt, `https://teams.microsoft.com` resulteert dit in een fout.
  
 ## <a name="when-is-a-guest-user-authenticated-with-direct-federation"></a>Wanneer is een gast gebruiker geverifieerd met directe Federatie?
-Nadat u directe Federatie hebt ingesteld met een organisatie, worden nieuwe gast gebruikers die u uitnodigt, geverifieerd met behulp van directe Federatie. Het is belang rijk te weten dat het instellen van directe Federatie de verificatie methode niet wijzigt voor gast gebruikers die al een uitnodiging van u hebben ingewisseld. Enkele voorbeelden:
+Nadat u directe Federatie hebt ingesteld met een organisatie, worden nieuwe gast gebruikers die u uitnodigt, geverifieerd met behulp van directe Federatie. Het is belang rijk te weten dat het instellen van directe Federatie de verificatie methode niet wijzigt voor gast gebruikers die al een uitnodiging van u hebben ingewisseld. Hier volgen enkele voorbeelden:
  - Als gast gebruikers al uitnodigingen van u hebben ingewisseld en u vervolgens direct Federation hebt ingesteld met hun organisatie, blijven deze gast gebruikers dezelfde verificatie methode gebruiken die ze hebben gebruikt voordat u directe Federatie hebt ingesteld.
  - Als u directe Federatie hebt ingesteld met een partner organisatie en gast gebruikers uitnodigt en vervolgens de partner organisatie later naar Azure AD verplaatst, blijven de gast gebruikers die al ingedeelde uitnodigingen hebben ingewisseld, gebruikmaken van directe Federatie, zolang het directe Federatie beleid in uw Tenant bestaat.
  - Als u directe Federatie met een partner organisatie verwijdert, kunnen gast gebruikers die momenteel direct Federation gebruiken, zich niet aanmelden.
@@ -45,7 +45,7 @@ Met directe Federatie melden gast gebruikers zich aan bij uw Azure AD-Tenant met
 ## <a name="limitations"></a>Beperkingen
 
 ### <a name="dns-verified-domains-in-azure-ad"></a>Door DNS geverifieerde domeinen in azure AD
-Het domein waarmee u wilt communiceren, moet ***niet**_ door DNS worden geverifieerd in azure AD. U mag directe Federatie met niet-beheerde (e-mail berichten geverifieerde of ' virale ') Azure AD-tenants instellen, omdat deze niet zijn geverifieerd voor DNS.
+Het domein waarmee u wilt communiceren, moet ***niet** _ door DNS worden geverifieerd in azure AD. U mag directe Federatie met niet-beheerde (e-mail berichten geverifieerde of ' virale ') Azure AD-tenants instellen, omdat deze niet zijn geverifieerd voor DNS.
 
 ### <a name="authentication-url"></a>Verificatie-URL
 Directe Federatie is alleen toegestaan voor beleids regels waarbij het domein van de authenticatie-URL overeenkomt met het doel domein of waarbij de verificatie-URL een van deze toegestane id-providers is (deze lijst kan worden gewijzigd):

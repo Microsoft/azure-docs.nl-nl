@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.date: 07/28/2020
 ms.author: cynthn
 ms.reviewer: zivr
-ms.openlocfilehash: 0b0e198075455f697c87ad48741a770e6f78b5a5
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: a42b07254deaf19d253f7523631018bfe7166a57
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542147"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96339588"
 ---
 # <a name="azure-dedicated-hosts"></a>Met Azure toegewezen hosts
 
@@ -165,6 +165,8 @@ Het *type* is het genereren van hardware. Verschillende typen hardware voor deze
 
 De grootten en typen hardware variëren per regio. Raadpleeg de pagina met [prijzen](https://aka.ms/ADHPricing) voor de host voor meer informatie.
 
+> [!NOTE]
+> Zodra een toegewezen host is richten, kunt u de grootte of het type niet wijzigen. Als u een ander type grootte nodig hebt, moet u een nieuwe host maken.  
 
 ## <a name="host-life-cycle"></a>Levens cyclus van host
 

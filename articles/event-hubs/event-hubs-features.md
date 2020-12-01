@@ -3,12 +3,12 @@ title: Overzicht van functies-Azure Event Hubs | Microsoft Docs
 description: In dit artikel vindt u informatie over de functies en terminologie van Azure Event Hubs.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: db7c0244fd4e9e04f9cfbcbba8748ec8190fc5c5
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: a38cf4ba6a06dc6e977f9ea168fcf67ce83ff5de
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96007427"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96339979"
 ---
 # <a name="features-and-terminology-in-azure-event-hubs"></a>Functies en terminologie in azure Event Hubs
 
@@ -33,7 +33,7 @@ Elke entiteit die gegevens naar een Event Hub verzendt, is een gebeurtenis produ
 
 ### <a name="publishing-an-event"></a>Een gebeurtenis publiceren
 
-U kunt een gebeurtenis publiceren via AMQP 1,0, Kafka 1,0 (en later) of HTTPS. De Event Hubs-service biedt [rest API](https://docs.microsoft.com/rest/api/eventhub/) -en [.net](event-hubs-dotnet-standard-getstarted-send.md)-, [Java](event-hubs-java-get-started-send.md)-, [python](event-hubs-python-get-started-send.md)-, [Java script](event-hubs-node-get-started-send.md)-en [Go](event-hubs-go-get-started-send.md) -client bibliotheken voor het publiceren van gebeurtenissen naar een event hub. Voor andere runtimes en platforms kunt u een AMQP 1.0-client gebruiken, zoals [Apache Qpid](https://qpid.apache.org/). 
+U kunt een gebeurtenis publiceren via AMQP 1,0, Kafka 1,0 (en later) of HTTPS. De Event Hubs-service biedt [rest API](/rest/api/eventhub/) -en [.net](event-hubs-dotnet-standard-getstarted-send.md)-, [Java](event-hubs-java-get-started-send.md)-, [python](event-hubs-python-get-started-send.md)-, [Java script](event-hubs-node-get-started-send.md)-en [Go](event-hubs-go-get-started-send.md) -client bibliotheken voor het publiceren van gebeurtenissen naar een event hub. Voor andere runtimes en platforms kunt u een AMQP 1.0-client gebruiken, zoals [Apache Qpid](https://qpid.apache.org/). 
 
 U kunt gebeurtenissen afzonderlijk of batchgewijs publiceren. Eén publicatie (gebeurtenis gegevens exemplaar) heeft een limiet van 1 MB, ongeacht of het om één gebeurtenis of een batch gaat. Het publiceren van gebeurtenissen die groter zijn dan deze drempel resulteert in een fout. Het is een best practice dat uitgevers geen rekening hoeven te houden met partities binnen de Event Hub en om alleen een *partitie sleutel* op te geven (geïntroduceerd in de volgende sectie) of hun identiteit via hun SAS-token.
 
@@ -41,7 +41,7 @@ De keuze om AMQP of HTTPS te gebruiken, geldt specifiek voor het gebruiksscenari
 
 ![Partitie sleutels](./media/event-hubs-features/partition_keys.png)
 
-Event Hubs zorgt ervoor dat alle gebeurtenissen met een partitiesleutelwaarde op volgorde en aan dezelfde partitie worden geleverd. De identiteit van de uitgever en de waarde van de partitiesleutel moeten overeenkomen als er partitiesleutels met uitgeversbeleid worden gebruikt. Als deze niet overeenkomen, treedt er een fout op.
+Event Hubs zorgt ervoor dat alle gebeurtenissen met een partitiesleutelwaarde op volgorde en aan dezelfde partitie worden geleverd. De identiteit van de uitgever en de waarde van de partitiesleutel moeten overeenkomen als er partitiesleutels met uitgeversbeleid worden gebruikt. Anders treedt er een fout op.
 
 ### <a name="publisher-policy"></a>Uitgeversbeleid
 

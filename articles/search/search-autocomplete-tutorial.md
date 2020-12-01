@@ -1,5 +1,5 @@
 ---
-title: Automatisch aanvullen en suggesties toevoegen aan een zoekvak
+title: Automatisch aanvullen toevoegen aan een zoekvak
 titleSuffix: Azure Cognitive Search
 description: Schakel zoek acties op basis van het type query in azure Cognitive Search door Voorst Ellen te maken en aanvragen te formuleren waarmee automatisch een zoekvak met de voor waarden of zinsdelen wordt ingevuld. U kunt ook voorgestelde overeenkomsten retour neren.
 manager: nitinme
@@ -9,14 +9,14 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/24/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 5b498b8f49f2f0636b010e3c4d86f13ad44ac090
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 25c87971455ed3c5f59c92748794720d61e599e3
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96029010"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96339605"
 ---
-# <a name="add-autocomplete-and-suggestions-to-client-apps"></a>Automatisch aanvullen en suggesties aan client-apps toevoegen
+# <a name="add-autocomplete-and-suggestions-to-client-apps-using-azure-cognitive-search"></a>Automatisch aanvullen en suggesties toevoegen aan client-apps met behulp van Azure Cognitive Search
 
 Search-as-u-type is een algemene techniek voor het verbeteren van de productiviteit van door de gebruiker geïnitieerde query's. In azure Cognitive Search wordt deze ervaring ondersteund via *automatisch aanvullen*, waardoor een term of woord groep is gebaseerd op gedeeltelijke invoer (het volt ooien van ' micro ' met ' micro soft '). Een tweede gebruikers ervaring is *suggesties* of een korte lijst met overeenkomende documenten (waarbij Boek titels worden geretourneerd met een id zodat u een koppeling kunt maken naar een detail pagina over dat boek). Automatisch aanvullen en suggesties worden voorgesteld op basis van een overeenkomst in de index. De service biedt geen query's die nul resultaten retour neren.
 

@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 12/13/2019
 ms.author: duau
-ms.openlocfilehash: b8ef1c14089744defaf6de5b3cf9e72d281452b6
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.openlocfilehash: 7b7362d9315d8228e56dc85b2da22e0d507fa8ae
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93027105"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96339786"
 ---
 # <a name="expressroute-faq"></a>Veelgestelde vragen ExpressRoute
 
@@ -46,7 +46,7 @@ Nee. U kunt een VPN-verbinding kopen van elke snelheid van uw service provider. 
 
 ### <a name="if-i-pay-for-an-expressroute-circuit-of-a-given-bandwidth-do-i-have-the-ability-to-use-more-than-my-procured-bandwidth"></a>Als ik voor een ExpressRoute-circuit van een bepaalde band breedte betaal, heb ik dan de mogelijkheid om meer dan mijn beschik bare band breedte te gebruiken?
 
-Ja, u kunt Maxi maal twee keer de bandbreedte limiet gebruiken die u hebt aangeschaft met behulp van de band breedte die beschikbaar is op de secundaire verbinding van uw ExpressRoute-circuit. De ingebouwde redundantie van uw circuit wordt geconfigureerd met behulp van primaire en secundaire verbindingen, elk van de aangeschafte band breedte, op twee micro soft Enter prise Edge-routers (Msee's). De band breedte die beschikbaar is via uw secundaire verbinding, kan zo nodig worden gebruikt voor extra verkeer. Omdat de secundaire verbinding is bedoeld voor redundantie, is deze echter niet gegarandeerd en mag niet worden gebruikt voor extra verkeer gedurende een langere periode. Zie [hier](https://docs.microsoft.com/azure/expressroute/expressroute-optimize-routing#solution-use-as-path-prepending)voor meer informatie over het gebruik van beide verbindingen om verkeer te verzenden.
+Ja, u kunt Maxi maal twee keer de bandbreedte limiet gebruiken die u hebt aangeschaft met behulp van de band breedte die beschikbaar is op de secundaire verbinding van uw ExpressRoute-circuit. De ingebouwde redundantie van uw circuit wordt geconfigureerd met behulp van primaire en secundaire verbindingen, elk van de aangeschafte band breedte, op twee micro soft Enter prise Edge-routers (Msee's). De band breedte die beschikbaar is via uw secundaire verbinding, kan zo nodig worden gebruikt voor extra verkeer. Omdat de secundaire verbinding is bedoeld voor redundantie, is deze echter niet gegarandeerd en mag niet worden gebruikt voor extra verkeer gedurende een langere periode. Zie [hier](./expressroute-optimize-routing.md#solution-use-as-path-prepending)voor meer informatie over het gebruik van beide verbindingen om verkeer te verzenden.
 Als u van plan bent om de primaire verbinding alleen te gebruiken om verkeer te verzenden, wordt de band breedte van de verbinding vast en wordt geprobeerd het abonnement te verbreken, waardoor het pakket verloren gaat. Als verkeer via een ExpressRoute-gateway loopt, is de band breedte voor de SKU vast en niet bursteel.
 
 ### <a name="can-i-use-the-same-private-network-connection-with-virtual-network-and-other-azure-services-simultaneously"></a>Kan ik dezelfde particuliere netwerk verbinding gebruiken met het virtuele netwerk en andere Azure-Services tegelijk?
@@ -413,7 +413,7 @@ Uw bestaande circuit gaat verder met het adverteren van de voor voegsels voor Mi
 
 * Microsoft-peering van ExpressRoute-circuits die zijn geconfigureerd vóór 1 augustus 2017, heeft alle servicevoorvoegsels die worden geadverteerd via Microsoft-peering, zelfs als er geen routefilters zijn gedefinieerd.
 
-* Microsoft-peering van ExpressRoute-circuits die zijn geconfigureerd op of na 1 augustus 2017, heeft geen voorvoegsels die worden geadverteerd totdat een routefilter aan het circuit is gekoppeld. Er worden standaard geen voor voegsels weer geven.
+* Microsoft-peering voor ExpressRoute-circuits die zijn geconfigureerd op of na 1 augustus 2017, heeft geen voorvoegsels die worden geadverteerd totdat een routefilter aan het circuit is gekoppeld. Er worden standaard geen voor voegsels weer geven.
 
 ## <a name="expressroute-direct"></a><a name="expressRouteDirect"></a>ExpressRoute direct
 

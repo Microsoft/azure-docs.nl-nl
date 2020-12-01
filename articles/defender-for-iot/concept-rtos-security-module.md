@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/09/2020
 ms.author: mlottner
-ms.openlocfilehash: 9f816b35fd79d3f158ea12fd2c7e1d811823dc8a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8f521bd593369509fd520831f90ce9c601227f09
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90936278"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96340047"
 ---
 # <a name="security-module-for-azure-rtos-preview"></a>Beveiligings module voor Azure RTO'S (preview-versie)
 
@@ -32,7 +32,7 @@ De beveiligings module voor Azure RTO'S wordt op de achtergrond uitgevoerd en bi
 
 ## <a name="azure-rtos-netx-duo"></a>Azure RTOS NetX Duo
 
-Azure RTO'S NetX Duo is een geavanceerde TCP/IP-netwerk stack met hoge kwaliteit die speciaal is ontworpen voor diep Inge sloten real-time-en IoT-toepassingen. Azure RTO'S NetX Duo is een Dual IPv4-en IPv6-netwerk stack met een uitgebreide set protocollen, waaronder beveiliging en Cloud. Meer informatie over [Azure Rto's netx Duo](https://aka.ms/netxduo) -oplossingen.
+Azure RTO'S NetX Duo is een geavanceerde TCP/IP-netwerk stack met hoge kwaliteit die speciaal is ontworpen voor diep Inge sloten real-time-en IoT-toepassingen. Azure RTO'S NetX Duo is een Dual IPv4-en IPv6-netwerk stack met een uitgebreide set protocollen, waaronder beveiliging en Cloud. Meer informatie over [Azure Rto's netx Duo](/azure/rtos/netx-duo/) -oplossingen.
 
 De module biedt de volgende functies:
 
@@ -47,11 +47,11 @@ De beveiligings module voor Azure RTO'S wordt geïnitialiseerd door het Azure Io
 :::image type="content" source="media/architecture/security-module-state-diagram.png" alt-text="Status diagram en informatie stroom van Azure IoT Security module":::
 
 De beveiligings module voor Azure RTO'S bewaakt de volgende activiteit van het apparaat en informatie met behulp van drie Verzamel modules:
-- Netwerk activiteit van apparaat **TCP**, **UDP**en **ICM**
+- Netwerk activiteit van apparaat **TCP**, **UDP** en **ICM**
 - Systeem gegevens als **threadx** en **netx Duo** -versies
 - Heartbeat-gebeurtenissen
 
-Elke Collector is gekoppeld aan een prioriteits groep en elke prioriteits groep heeft een eigen interval met mogelijke waarden van **laag**, **gemiddeld**en **hoog**. De intervallen beïnvloeden het tijds interval waarin de gegevens worden verzameld en verzonden.
+Elke Collector is gekoppeld aan een prioriteits groep en elke prioriteits groep heeft een eigen interval met mogelijke waarden van **laag**, **gemiddeld** en **hoog**. De intervallen beïnvloeden het tijds interval waarin de gegevens worden verzameld en verzonden.
 
 Elke tijds interval kan worden geconfigureerd en de IoT-Connectors kunnen worden ingeschakeld en uitgeschakeld om [uw oplossing](how-to-azure-rtos-security-module.md)verder aan te passen. 
 
@@ -68,4 +68,3 @@ De beveiligings module voor Azure RTO'S is beschikbaar als gratis down load voor
 - Aan de slag met de beveiligings module voor Azure RTO'S- [vereisten en-Setup](quickstart-azure-rtos-security-module.md).
 - Meer informatie over de beveiligings module voor Azure RTO'S- [beveiligings waarschuwingen en aanbevelingen](concept-rtos-security-alerts-recommendations.md). 
 - Gebruik de beveiligings module voor Azure RTO'S [Reference-API](azure-rtos-security-module-api.md).
-

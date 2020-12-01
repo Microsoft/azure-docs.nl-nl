@@ -10,19 +10,19 @@ ms.subservice: bing-web-search
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.author: aahi
-ms.openlocfilehash: b3ce1fdc0b52db2706f81950fff735cf7f95e52b
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: 6de01d2c12454f43a2802b4a7a979b5f74b46f0e
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94379677"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96340268"
 ---
 # <a name="language-and-region-support-for-the-bing-web-search-api"></a>Ondersteuning van talen en regio's voor de Bing Webzoekopdrachten-API
 
 > [!WARNING]
-> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](https://aka.ms/cogsvcs/bingmove) is beschreven.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
 > Bing Search-API's die zijn ingericht met Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
-> Raadpleeg [Bing Search Services](https://aka.ms/cogsvcs/bingmigration) voor migratie-instructies.
+> Raadpleeg [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
 Het Bing Webzoekopdrachten-API ondersteunt meer dan drie dozijn landen of regio's, veel met meer dan één taal. Het opgeven van een land of regio met een query helpt de zoek resultaten te verfijnen op basis van de interesses van die landen of regio's. De resultaten kunnen koppelingen naar Bing bevatten en deze koppelingen kunnen de Bing-gebruikers ervaring lokaliseren op basis van de opgegeven land/regio of taal.
 

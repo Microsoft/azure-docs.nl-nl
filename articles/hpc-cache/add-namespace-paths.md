@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: v-erkel
-ms.openlocfilehash: a39b6973767b72e69a82750ab8d0d487c733eda0
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: e525fc0705dffcd4765e6a1f6c5235bdef260fcd
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94657105"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96339673"
 ---
 # <a name="set-up-the-aggregated-namespace"></a>De geaggregeerde naam ruimte instellen
 
@@ -83,7 +83,7 @@ In deze lijst wordt het maximum aantal naam ruimte paden per configuratie weer g
   * 6 TB cache-10-naam ruimte paden
   * 23 TB cache-20 naam ruimte paden
 
-* Maxi maal 5 GB/s door Voer:
+* Maxi maal 4 GB/s door Voer:
 
   * 6 TB cache-10-naam ruimte paden
   * 12 TB cache-10-naam ruimte paden

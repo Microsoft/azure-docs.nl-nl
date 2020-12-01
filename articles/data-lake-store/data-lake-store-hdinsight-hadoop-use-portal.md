@@ -6,12 +6,12 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: e901009063afa81c98dd86268ac8c9c6de725e5d
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 666b39e2a600fe6ca004798ed4f8371cdd1dfe5f
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92521013"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96340251"
 ---
 # <a name="create-hdinsight-clusters-with-azure-data-lake-storage-gen1-by-using-the-azure-portal"></a>Maak HDInsight-clusters met Azure Data Lake Storage Gen1 met behulp van de Azure Portal
 
@@ -47,7 +47,7 @@ Een HDInsight-cluster met een Data Lake Storage Gen1 als standaard opslag accoun
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Volg [clusters maken](../hdinsight/hdinsight-hadoop-create-linux-clusters-portal.md#create-clusters) voor algemene informatie over het maken van HDInsight-clusters.
-3. Selecteer op de Blade **opslag** onder **primair opslag type** **Azure data Lake Storage gen1**en voer de volgende gegevens in:
+3. Selecteer op de Blade **opslag** onder **primair opslag type** **Azure data Lake Storage gen1** en voer de volgende gegevens in:
 
     ![Instellingen voor HDInsight-opslag account](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.1.adls.storage.png)
 
@@ -56,7 +56,7 @@ Een HDInsight-cluster met een Data Lake Storage Gen1 als standaard opslag accoun
     * **Data Lake Store toegang**: Configureer de toegang tussen het data Lake Storage gen1-account en het HDInsight-cluster. Zie voor instructies [Data Lake Storage gen1 toegang configureren](#configure-data-lake-storage-gen1-access).
     * **Extra opslag accounts**: Voeg Azure Storage-accounts toe als extra opslag accounts voor het cluster. U kunt extra Data Lake Storage Gen1 accounts toevoegen door de cluster machtigingen te geven op gegevens in meer Data Lake Storage Gen1 accounts tijdens het configureren van een Data Lake Storage Gen1-account als primair opslag type. Zie [Data Lake Storage gen1 toegang configureren](#configure-data-lake-storage-gen1-access).
 
-4. Klik op de **Data Lake Store toegang**op **selecteren**en ga vervolgens door met het maken van een cluster zoals beschreven in [Hadoop-clusters maken in HDInsight](../hdinsight/hdinsight-hadoop-create-linux-clusters-portal.md).
+4. Klik op de **Data Lake Store toegang** op **selecteren** en ga vervolgens door met het maken van een cluster zoals beschreven in [Hadoop-clusters maken in HDInsight](../hdinsight/hdinsight-hadoop-create-linux-clusters-portal.md).
 
 ### <a name="create-a-cluster-with-data-lake-storage-gen1-as-additional-storage"></a>Een cluster maken met Data Lake Storage Gen1 als extra opslag
 
@@ -66,11 +66,11 @@ Als u een HDInsight-cluster met Data Lake Storage Gen1 wilt maken als een extra 
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Volg [clusters maken](../hdinsight/hdinsight-hadoop-create-linux-clusters-portal.md#create-clusters) voor algemene informatie over het maken van HDInsight-clusters.
-3. Selecteer op de Blade **opslag** onder **primair opslag type** **Azure Storage**en voer de volgende gegevens in:
+3. Selecteer op de Blade **opslag** onder **primair opslag type** **Azure Storage** en voer de volgende gegevens in:
 
     ![Extra opslag voor de instellingen van het HDInsight-opslag account](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.1.png)
 
-    * **Selectie methode** : als u een opslag account wilt opgeven dat deel uitmaakt van uw Azure-abonnement, selecteert u **Mijn abonnementen**en selecteert u vervolgens het opslag account. Als u een opslag account wilt opgeven dat zich buiten uw Azure-abonnement bevindt, selecteert u **toegangs sleutel**en geeft u de informatie voor het externe opslag account op.
+    * **Selectie methode** : als u een opslag account wilt opgeven dat deel uitmaakt van uw Azure-abonnement, selecteert u **Mijn abonnementen** en selecteert u vervolgens het opslag account. Als u een opslag account wilt opgeven dat zich buiten uw Azure-abonnement bevindt, selecteert u **toegangs sleutel** en geeft u de informatie voor het externe opslag account op.
 
     * **Standaard container** : gebruik de standaard waarde of geef uw eigen naam op.
     * **Extra opslag accounts** : Voeg meer Azure-opslag accounts toe als extra opslag ruimte.
@@ -85,14 +85,14 @@ In deze sectie configureert u Data Lake Storage Gen1 toegang vanaf HDInsight-clu
 Vanuit de Azure Portal, kunt u een bestaande Service-Principal gebruiken of een nieuwe maken.
 
 Een service-principal maken op basis van de Azure Portal:
-1. Zie [Service-Principal en certificaten maken](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal) met behulp van Azure Active Directory.
+1. Zie [Service-Principal en certificaten maken](../active-directory/develop/howto-create-service-principal-portal.md) met behulp van Azure Active Directory.
 
 Een bestaande Service-Principal gebruiken van de Azure Portal:
 
 1. De Service-Principal moet eigenaars machtigingen hebben voor het opslag account. Zie [machtigingen voor de service-principal instellen als eigenaar van het opslag account](#configure-serviceprincipal-permissions).
 1. Selecteer **Data Lake Store toegang**.
 1. Selecteer op de Blade **Data Lake Storage gen1 toegang** de optie **bestaande gebruiken**.
-1. Selecteer **Service-Principal**en selecteer vervolgens een service-principal.
+1. Selecteer **Service-Principal** en selecteer vervolgens een service-principal.
 1. Upload het certificaat (. pfx-bestand) dat is gekoppeld aan de geselecteerde service-principal en voer het certificaat wachtwoord in.
 
     ![Service-Principal toevoegen aan HDInsight-cluster](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.5.png)
@@ -118,12 +118,12 @@ De configuratie verschilt, afhankelijk van het feit of het account wordt gebruik
 
 Om machtigingen toe te wijzen aan het opslag account met Data Lake Storage Gen1 op het hoofd niveau:
 
-1. Selecteer **toegang**op de blade **Data Lake Storage gen1 toegang** . De Blade **Bestands machtigingen selecteren** wordt geopend. Alle opslag accounts in uw abonnement worden weer gegeven.
+1. Selecteer **toegang** op de blade **Data Lake Storage gen1 toegang** . De Blade **Bestands machtigingen selecteren** wordt geopend. Alle opslag accounts in uw abonnement worden weer gegeven.
 1. Houd de muis aanwijzer op de naam van het account met Data Lake Storage Gen1 om het selectie vakje zichtbaar te maken en schakel vervolgens het selectie vakje in.
 
     ![Bestands machtigingen selecteren](./media/data-lake-store-hdinsight-hadoop-use-portal/hdi.adl.3.png)
 
-   Standaard zijn __lezen__, __schrijven__en __uitvoeren__ geselecteerd.
+   Standaard zijn __lezen__, __schrijven__ en __uitvoeren__ geselecteerd.
 
 1. Klik op **selecteren** onder aan de pagina.
 1. Selecteer **uitvoeren** om machtigingen toe te wijzen.
@@ -131,7 +131,7 @@ Om machtigingen toe te wijzen aan het opslag account met Data Lake Storage Gen1 
 
 Machtigingen toewijzen op het basis niveau van het HDInsight-cluster:
 
-1. Selecteer **toegang**op de blade **Data Lake Storage gen1 toegang** . De Blade **Bestands machtigingen selecteren** wordt geopend. Alle opslag accounts met Data Lake Storage Gen1 in uw abonnement worden weer gegeven.
+1. Selecteer **toegang** op de blade **Data Lake Storage gen1 toegang** . De Blade **Bestands machtigingen selecteren** wordt geopend. Alle opslag accounts met Data Lake Storage Gen1 in uw abonnement worden weer gegeven.
 1. Selecteer op de Blade **Bestands machtigingen selecteren** het opslag account met data Lake Storage gen1 naam om de inhoud ervan weer te geven.
 1. Selecteer de hoofdmap HDInsight-cluster opslag door het selectie vakje aan de linkerkant van de map in te scha kelen. Volgens de scherm afbeelding eerder is de hoofdmap van de cluster opslag __/clusters__ map die u hebt opgegeven tijdens het selecteren van data Lake Storage gen1 als standaard opslag.
 1. Stel de machtigingen voor de map in.  Standaard zijn lezen, schrijven en uitvoeren geselecteerd.
@@ -200,4 +200,4 @@ U kunt het opslag account gebruiken met Data Lake Storage Gen1 voor het schrijve
 * [Power shell: een HDInsight-cluster maken voor het gebruik van Data Lake Storage Gen1](data-lake-store-hdinsight-hadoop-use-powershell.md)
 
 [makecert]: /windows-hardware/drivers/devtest/makecert
-[pvk2pfx]: https://msdn.microsoft.com/library/windows/desktop/ff550672(v=vs.85).aspx
+[pvk2pfx]: /windows-hardware/drivers/devtest/pvk2pfx

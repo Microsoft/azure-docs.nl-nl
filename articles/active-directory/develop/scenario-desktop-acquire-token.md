@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 11/04/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: cdda14bb579fc94414f9da89b8b1f1aa04ec3bf5
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: fd341a4f6e2402ce934bdffd4f024e0ef569eec1
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628098"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96340914"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Bureau blad-app voor het aanroepen van web-Api's: een Token ophalen
 
@@ -105,7 +105,7 @@ if not result:
     result = app.acquire_token_by_xxx(scopes=config["scope"])
 ```
 
-# <a name="macos"></a>[macOS](#tab/macOS)
+# <a name="macos"></a>[MacOS](#tab/macOS)
 
 ### <a name="in-msal-for-ios-and-macos"></a>In MSAL voor iOS en macOS
 
@@ -374,7 +374,7 @@ if not result:
 
 ```
 
-# <a name="macos"></a>[macOS](#tab/macOS)
+# <a name="macos"></a>[MacOS](#tab/macOS)
 
 ### <a name="in-msal-for-ios-and-macos"></a>In MSAL voor iOS en macOS
 
@@ -590,7 +590,7 @@ private static IAuthenticationResult acquireTokenIwa() throws Exception {
 
 Deze stroom wordt nog niet ondersteund in MSAL python.
 
-# <a name="macos"></a>[macOS](#tab/macOS)
+# <a name="macos"></a>[MacOS](#tab/macOS)
 
 Deze stroom is niet van toepassing op macOS.
 
@@ -913,7 +913,7 @@ if not result:
         config["username"], config["password"], scopes=config["scope"])
 ```
 
-# <a name="macos"></a>[macOS](#tab/macOS)
+# <a name="macos"></a>[MacOS](#tab/macOS)
 
 Deze stroom wordt niet ondersteund op MSAL voor macOS.
 
@@ -1144,7 +1144,7 @@ if not result:
         # and then keep calling acquire_token_by_device_flow(flow) in your own customized loop
 ```
 
-# <a name="macos"></a>[macOS](#tab/macOS)
+# <a name="macos"></a>[MacOS](#tab/macOS)
 
 Deze stroom is niet van toepassing op macOS.
 

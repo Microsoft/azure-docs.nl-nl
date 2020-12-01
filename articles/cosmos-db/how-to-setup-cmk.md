@@ -6,17 +6,17 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 08/05/2020
 ms.author: thweiss
-ms.openlocfilehash: 21bb594f4e374d41cfc4184f3a72aea1717c85d8
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: e87f6f158265fd8ac210a0a071e35b0bb77df4d9
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93086139"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96338267"
 ---
 # <a name="configure-customer-managed-keys-for-your-azure-cosmos-account-with-azure-key-vault"></a>Door de klant beheerde sleutels configureren voor uw Azure Cosmos-account met Azure Key Vault
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
-Gegevens die zijn opgeslagen in uw Azure Cosmos-account, worden automatisch en naadloos versleuteld met sleutels die worden beheerd door micro soft (door **service beheerde sleutels** ). U kunt desgewenst een tweede laag versleuteling toevoegen met sleutels die u beheert (door de **klant beheerde sleutels** ).
+Gegevens die zijn opgeslagen in uw Azure Cosmos-account, worden automatisch en naadloos versleuteld met sleutels die worden beheerd door micro soft (door **service beheerde sleutels**). U kunt desgewenst een tweede laag versleuteling toevoegen met sleutels die u beheert (door de **klant beheerde sleutels**).
 
 :::image type="content" source="./media/how-to-setup-cmk/cmk-intro.png" alt-text="Lagen van versleuteling rondom klant gegevens":::
 
@@ -29,40 +29,40 @@ U moet door de klant beheerde sleutels opslaan in [Azure Key Vault](../key-vault
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com/), ga naar uw Azure-abonnement en selecteer **resource providers** op het tabblad **instellingen** :
 
-   :::image type="content" source="./media/how-to-setup-cmk/portal-rp.png" alt-text="Lagen van versleuteling rondom klant gegevens":::
+   :::image type="content" source="./media/how-to-setup-cmk/portal-rp.png" alt-text="Resource providers-vermelding in het menu links":::
 
-1. Zoek naar de resource provider van de **Microsoft.DocumentDB** . Controleer of de resource provider al is gemarkeerd als geregistreerd. Als dat niet het geval is, kiest u de resource provider en selecteert u **registreren** :
+1. Zoek naar de resource provider van de **Microsoft.DocumentDB** . Controleer of de resource provider al is gemarkeerd als geregistreerd. Als dat niet het geval is, kiest u de resource provider en selecteert u **registreren**:
 
-   :::image type="content" source="./media/how-to-setup-cmk/portal-rp-register.png" alt-text="Lagen van versleuteling rondom klant gegevens":::
+   :::image type="content" source="./media/how-to-setup-cmk/portal-rp-register.png" alt-text="De resource provider voor de Microsoft.DocumentDB registreren":::
 
 ## <a name="configure-your-azure-key-vault-instance"></a>Uw Azure Key Vault-exemplaar configureren
 
-Voor het gebruik van door de klant beheerde sleutels met Azure Cosmos DB moet u twee eigenschappen instellen voor het Azure Key Vault exemplaar dat u wilt gebruiken voor het hosten van de versleutelings sleutels: **voorlopig verwijderen** en **beveiliging opschonen** .
+Voor het gebruik van door de klant beheerde sleutels met Azure Cosmos DB moet u twee eigenschappen instellen voor het Azure Key Vault exemplaar dat u wilt gebruiken voor het hosten van de versleutelings sleutels: **voorlopig verwijderen** en **beveiliging opschonen**.
 
 Als u een nieuw exemplaar van Azure Key Vault maakt, schakelt u deze eigenschappen tijdens het maken in:
 
-:::image type="content" source="./media/how-to-setup-cmk/portal-akv-prop.png" alt-text="Lagen van versleuteling rondom klant gegevens":::
+:::image type="content" source="./media/how-to-setup-cmk/portal-akv-prop.png" alt-text="Zacht verwijderen inschakelen en de beveiliging opschonen voor een nieuw Azure Key Vault-exemplaar":::
 
 Als u een bestaand Azure Key Vault exemplaar gebruikt, kunt u controleren of deze eigenschappen zijn ingeschakeld door te kijken naar de sectie **Eigenschappen** op de Azure Portal. Als een van deze eigenschappen niet is ingeschakeld, raadpleegt u de secties ' voorlopig verwijderen inschakelen ' en ' beveiliging opschonen inschakelen ' in een van de volgende artikelen:
 
-- [Voorlopig verwijderen gebruiken met PowerShell](../key-vault/general/soft-delete-powershell.md)
-- [Voorlopig verwijderen gebruiken met Azure CLI](../key-vault/general/soft-delete-cli.md)
+- [Voorlopig verwijderen gebruiken met PowerShell](../key-vault/general/key-vault-recovery.md)
+- [Voorlopig verwijderen gebruiken met Azure CLI](../key-vault/general/key-vault-recovery.md)
 
 ## <a name="add-an-access-policy-to-your-azure-key-vault-instance"></a>Een toegangs beleid toevoegen aan uw Azure Key Vault-exemplaar
 
 1. Ga vanuit het Azure Portal naar het Azure Key Vault exemplaar dat u wilt gebruiken voor het hosten van de versleutelings sleutels. Selecteer **toegangs beleid** in het menu links:
 
-   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-ap.png" alt-text="Lagen van versleuteling rondom klant gegevens":::
+   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-ap.png" alt-text="Beleids regels openen vanuit het menu links":::
 
-1. Selecteer **+ toegangs beleid toevoegen** .
+1. Selecteer **+ toegangs beleid toevoegen**.
 
-1. Selecteer in de vervolg keuzelijst **sleutel machtigingen** de optie **ophalen** , **uitpakken van sleutel** en **verpakkende sleutel** :
+1. Selecteer in de vervolg keuzelijst **sleutel machtigingen** de optie **ophalen**, **uitpakken van sleutel** en **verpakkende sleutel** :
 
-   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-add-ap-perm2.png" alt-text="Lagen van versleuteling rondom klant gegevens":::
+   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-add-ap-perm2.png" alt-text="De juiste machtigingen selecteren":::
 
-1. Selecteer onder **Principal selecteren** de optie **geen geselecteerd** . Vervolgens zoekt u naar **Azure Cosmos DB** Principal en selecteert u deze (om eenvoudiger te vinden, kunt u ook zoeken op Principal-id: `a232010e-820c-4083-83bb-3ace5fc29d0b` voor elke Azure-regio, met uitzonde ring van Azure Government regio's waar de principal-id is `57506a73-e302-42a9-b869-6f12d9ec29e9` ). Kies tot slot onderaan **selecteren** . Als de principal van de **Azure Cosmos DB** zich niet in de lijst bevindt, moet u de resource provider voor **Microsoft.DocumentDB** mogelijk opnieuw registreren zoals beschreven in de sectie [de resource provider registreren](#register-resource-provider) van dit artikel.
+1. Selecteer onder **Principal selecteren** de optie **geen geselecteerd**. Vervolgens zoekt u naar **Azure Cosmos DB** Principal en selecteert u deze (om eenvoudiger te vinden, kunt u ook zoeken op Principal-id: `a232010e-820c-4083-83bb-3ace5fc29d0b` voor elke Azure-regio, met uitzonde ring van Azure Government regio's waar de principal-id is `57506a73-e302-42a9-b869-6f12d9ec29e9` ). Kies tot slot onderaan **selecteren** . Als de principal van de **Azure Cosmos DB** zich niet in de lijst bevindt, moet u de resource provider voor **Microsoft.DocumentDB** mogelijk opnieuw registreren zoals beschreven in de sectie [de resource provider registreren](#register-resource-provider) van dit artikel.
 
-   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-add-ap.png" alt-text="Lagen van versleuteling rondom klant gegevens":::
+   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-add-ap.png" alt-text="Selecteer de Azure Cosmos DB-Principal":::
 
 1. Selecteer **toevoegen** om het nieuwe toegangs beleid toe te voegen.
 
@@ -72,17 +72,17 @@ Als u een bestaand Azure Key Vault exemplaar gebruikt, kunt u controleren of dez
 
 1. Ga vanuit het Azure Portal naar de Azure Key Vault instantie die u wilt gebruiken voor het hosten van uw versleutelings sleutels. Selecteer vervolgens **sleutels** in het menu links:
 
-   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-keys.png" alt-text="Lagen van versleuteling rondom klant gegevens":::
+   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-keys.png" alt-text="Vermelding van sleutels in het menu links":::
 
-1. Selecteer **genereren/importeren** , geef een naam op voor de nieuwe sleutel en selecteer een RSA-sleutel grootte. Mini maal 3072 wordt aanbevolen voor de beste beveiliging. Selecteer vervolgens **Maken** :
+1. Selecteer **genereren/importeren**, geef een naam op voor de nieuwe sleutel en selecteer een RSA-sleutel grootte. Mini maal 3072 wordt aanbevolen voor de beste beveiliging. Selecteer vervolgens **Maken**:
 
-   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-gen.png" alt-text="Lagen van versleuteling rondom klant gegevens":::
+   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-gen.png" alt-text="Een nieuwe sleutel maken":::
 
 1. Nadat de sleutel is gemaakt, selecteert u de zojuist gemaakte sleutel en vervolgens de huidige versie.
 
 1. Kopieer de sleutel- **id** van de sleutel, behalve het deel na de laatste slash:
 
-   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-keyid.png" alt-text="Lagen van versleuteling rondom klant gegevens":::
+   :::image type="content" source="./media/how-to-setup-cmk/portal-akv-keyid.png" alt-text="De sleutel-id van de sleutel kopiëren":::
 
 ## <a name="create-a-new-azure-cosmos-account"></a>Een nieuw Azure Cosmos-account maken
 
@@ -90,13 +90,13 @@ Als u een bestaand Azure Key Vault exemplaar gebruikt, kunt u controleren of dez
 
 Wanneer u een nieuw Azure Cosmos DB-account maakt vanuit de Azure Portal, kiest u door de **klant beheerde sleutel** in de **versleutelings** stap. Plak in het veld **sleutel-URI** de URI/sleutel-id van de Azure Key Vault sleutel die u hebt gekopieerd uit de vorige stap:
 
-:::image type="content" source="./media/how-to-setup-cmk/portal-cosmos-enc.png" alt-text="Lagen van versleuteling rondom klant gegevens":::
+:::image type="content" source="./media/how-to-setup-cmk/portal-cosmos-enc.png" alt-text="CMK-para meters instellen in de Azure Portal":::
 
 ### <a name="using-azure-powershell"></a><a id="using-powershell"></a> Azure PowerShell gebruiken
 
 Wanneer u een nieuw Azure Cosmos DB-account maakt met Power shell:
 
-- Geef de URI van de Azure Key Vault sleutel die u eerder hebt gekopieerd door in de eigenschap **keyVaultKeyUri** in **PropertyObject** .
+- Geef de URI van de Azure Key Vault sleutel die u eerder hebt gekopieerd door in de eigenschap **keyVaultKeyUri** in **PropertyObject**.
 
 - Gebruik **2019-12-12** of hoger als de API-versie.
 
@@ -229,15 +229,15 @@ Het draaien van de door de klant beheerde sleutel die wordt gebruikt door uw Azu
 
 - Maak een nieuwe versie van de sleutel die momenteel wordt gebruikt vanuit Azure Key Vault:
 
-  :::image type="content" source="./media/how-to-setup-cmk/portal-akv-rot.png" alt-text="Lagen van versleuteling rondom klant gegevens":::
+  :::image type="content" source="./media/how-to-setup-cmk/portal-akv-rot.png" alt-text="Een nieuwe sleutel versie maken":::
 
 - Wissel de sleutel die momenteel wordt gebruikt door een volledig andere toe door de sleutel-URI in uw account bij te werken. Ga vanuit het Azure Portal naar uw Azure Cosmos-account en selecteer **gegevens versleuteling** in het menu links:
 
-    :::image type="content" source="./media/how-to-setup-cmk/portal-data-encryption.png" alt-text="Lagen van versleuteling rondom klant gegevens":::
+    :::image type="content" source="./media/how-to-setup-cmk/portal-data-encryption.png" alt-text="De menu vermelding voor gegevens versleuteling":::
 
-    Vervang vervolgens de **sleutel-URI** door de nieuwe sleutel die u wilt gebruiken en selecteer **Opslaan** :
+    Vervang vervolgens de **sleutel-URI** door de nieuwe sleutel die u wilt gebruiken en selecteer **Opslaan**:
 
-    :::image type="content" source="./media/how-to-setup-cmk/portal-key-swap.png" alt-text="Lagen van versleuteling rondom klant gegevens":::
+    :::image type="content" source="./media/how-to-setup-cmk/portal-key-swap.png" alt-text="De sleutel-URI bijwerken":::
 
     Ga als volgt te werk om hetzelfde resultaat te krijgen in Power shell:
 
@@ -300,7 +300,7 @@ Momenteel worden er geen sleutels op container niveau overwogen.
 
 Ga vanuit het Azure Portal naar uw Azure Cosmos-account en Bekijk de **gegevens versleutelings** vermelding in het menu links. Als dit item bestaat, worden door de klant beheerde sleutels ingeschakeld voor uw account:
 
-:::image type="content" source="./media/how-to-setup-cmk/portal-data-encryption.png" alt-text="Lagen van versleuteling rondom klant gegevens":::
+:::image type="content" source="./media/how-to-setup-cmk/portal-data-encryption.png" alt-text="De menu vermelding voor gegevens versleuteling":::
 
 U kunt de gegevens van uw Azure Cosmos-account ook programmatisch ophalen en zoeken naar de aanwezigheid van de `keyVaultKeyUri` eigenschap. Zie hierboven voor manieren om dit te doen [in Power shell](#using-powershell) en [de Azure CLI te gebruiken](#using-azure-cli).
 
@@ -312,11 +312,11 @@ Azure Cosmos DB maakt [regel matig en automatisch een back-up](./online-backup-a
 
 Het intrekken van de sleutel wordt uitgevoerd door de nieuwste versie van de sleutel uit te scha kelen:
 
-:::image type="content" source="./media/how-to-setup-cmk/portal-akv-rev2.png" alt-text="Lagen van versleuteling rondom klant gegevens":::
+:::image type="content" source="./media/how-to-setup-cmk/portal-akv-rev2.png" alt-text="De versie van een sleutel uitschakelen":::
 
 Als u alle sleutels wilt intrekken van een Azure Key Vault-exemplaar, kunt u ook het toegangs beleid verwijderen dat is verleend aan de Azure Cosmos DB Principal:
 
-:::image type="content" source="./media/how-to-setup-cmk/portal-akv-rev.png" alt-text="Lagen van versleuteling rondom klant gegevens":::
+:::image type="content" source="./media/how-to-setup-cmk/portal-akv-rev.png" alt-text="Het toegangs beleid voor de Azure Cosmos DB-Principal verwijderen":::
 
 ### <a name="what-operations-are-available-after-a-customer-managed-key-is-revoked"></a>Welke bewerkingen zijn beschikbaar nadat een door de klant beheerde sleutel is ingetrokken?
 

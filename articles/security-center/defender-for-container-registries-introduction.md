@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: d587c4dbdd8f46d6e098ff96f464d456fffc9ccf
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: ad880b7c23c687530a79ca1123474e94c923e150
+ms.sourcegitcommit: b849ecdc8aa97337299b0f09970b7810c59cd044
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95529979"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96310388"
 ---
 # <a name="introduction-to-azure-defender-for-container-registries"></a>Inleiding tot Azure Defender voor containerregisters
 
@@ -85,6 +85,8 @@ Ja. Als u een organisatorische behoefte hebt om een resultaat te negeren in plaa
 
 [Meer informatie over het maken van rollen om bevindingen uit te schakelen uit het geïntegreerde evaluatiehulpprogramma voor beveiligingsproblemen](defender-for-container-registries-usage.md#disable-specific-findings-preview).
 
+### <a name="why-is-security-center-alerting-me-to-vulnerabilities-about-an-image-that-isnt-in-my-registry"></a>Waarom krijg ik waarschuwingen van Security Center over kwetsbaarheden voor een installatiekopie die zich niet in mijn register bevindt?
+Security Center biedt evaluaties van beveiligingsproblemen voor elke push- of pullbewerking voor een installatiekopie in een register. Het kan zijn dat sommige installatiekopieën tags gebruiken van een installatiekopie die al is gescand. U kunt bijvoorbeeld de tag 'Meest recent' telkens opnieuw toewijzen wanneer u een installatiekopie aan een samenvatting toevoegt. In dergelijke gevallen is de 'oude' installatiekopie nog steeds aanwezig in het register en kan deze nog steeds worden opgehaald door de samenvatting. Als er beveiligingsresultaten voor deze installatiekopie zijn en deze wordt opgehaald, worden er beveiligingsproblemen vastgesteld.
 
 
 ## <a name="next-steps"></a>Volgende stappen

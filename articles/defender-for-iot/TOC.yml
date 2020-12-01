@@ -122,11 +122,11 @@
 - name: Resources
   items:
     - name: Uw beveiligingsvaardigheden ontwikkelen met Microsoft Learn
-      href: 'https://docs.microsoft.com/learn/browse/?term=securityS&terms=securityS'
+      href: /learn/browse/?term=securityS&terms=securityS
     - name: Documentatie voor Azure Security Center
-      href: 'https://docs.microsoft.com/azure/security-center/'
+      href: ../security-center/index.yml
     - name: Documentatie over beveiliging in Azure
-      href: 'https://docs.microsoft.com/azure/security/'
+      href: ../security/index.yml
     - name: Azure RTO-beveiligingsmodule op Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-rtos+azure-iot-security-module'
     - name: 'Blog over veiligheid, privacy en naleving met betrekking tot Azure IoT'

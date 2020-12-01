@@ -11,12 +11,12 @@ metadata:
   services: cognitive-services
   title: Documentatie voor QnA Maker
   description: QnA Maker is een cloudgebaseerde API-service voor het maken van een vraag- en antwoordlaag over uw gegevens in gespreksstijl. Met QnA Maker kunt u een vraag- en antwoordservice maken op basis van uw semi-gestructureerde inhoud zoals FAQ-documenten, URL's en producthandleidingen. De QnA Maker-service beantwoordt de in natuurlijke taal gestelde vragen van uw gebruikers door deze te koppelen aan de best mogelijke antwoorden uit de QnA's in uw Knowledge Base.
-  ms.openlocfilehash: 487e783aa0c3ac5ad294c34f8522ee54fbfd6aea
-  ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+  ms.openlocfilehash: 54c5e8c880020ac4c29dc730902dadef10838390
+  ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 11/21/2020
-  ms.locfileid: "95021334"
+  ms.lasthandoff: 11/30/2020
+  ms.locfileid: "96338080"
 landingContent:
 - title: Over QnA Maker
   linkLists:
@@ -34,18 +34,12 @@ landingContent:
     links:
     - text: Levenscyclus van ontwikkeling
       url: concepts/development-lifecycle-knowledge-base.md
-    - text: Gegevensbronnen
-      url: concepts/knowledge-base.md
   - linkListType: video
     links:
     - text: Bouw binnen enkele minuten een bot
       url: https://channel9.msdn.com/Shows/AI-Show/Build-a-Bot-in-Minutes-with-QnA-Maker
 - title: Knowledge Base maken en bewerken
   linkLists:
-  - linkListType: concept
-    links:
-    - text: Wat is een Knowledge Base
-      url: concepts/knowledge-base.md
   - linkListType: get-started
     links:
     - text: 'Quickstart: Een knowledge base maken'
@@ -95,11 +89,11 @@ landingContent:
   - linkListType: get-started
     links:
     - text: 'Portal: Een Azure Bot-servicebot maken'
-      url: tutorials/create-qna-bot.md
+      url: ./quickstarts/create-publish-knowledge-base.md#create-a-bot
     - text: 'Power-apps: Een door QnA Maker gestuurde bot maken'
       url: tutorials/integrate-with-power-virtual-assistant-fallback-topic.md
     - text: 'Bot-framework: Verzending tussen LUIS- en QnA Maker-apps'
-      url: https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-dispatch?view=azure-bot-service-4.0&tabs=cs
+      url: /azure/bot-service/bot-builder-tutorial-dispatch?tabs=cs&view=azure-bot-service-4.0
     - text: Andere botvoorbeelden
       url: https://github.com/Microsoft/BotBuilder-Samples/blob/master/README.md
 - title: Naslaginformatie
@@ -109,15 +103,15 @@ landingContent:
     - text: Limieten van Knowledge Base
       url: limits.md
     - text: API's ontwerpen
-      url: https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase
+      url: /rest/api/cognitiveservices/qnamaker/knowledgebase
     - text: Antwoord-API's genereren
-      url: https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker4.0/Runtime
+      url: /rest/api/cognitiveservices/qnamaker4.0/Runtime
     - text: Referentiedocumentatie voor .NET SDK
-      url: https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker?view=azure-dotnet
+      url: /dotnet/api/microsoft.azure.cognitiveservices.knowledge.qnamaker?view=azure-dotnet
     - text: Azure PowerShell
-      url: https://docs.microsoft.com/powershell/module/az.cognitiveservices/?view=azps-2.6.0#cognitive_services
+      url: /powershell/module/az.cognitiveservices/?view=azps-2.6.0#cognitive_services
     - text: Azure-opdrachtregelinterface (CLI)
-      url: https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az-cognitiveservices-list
+      url: /cli/azure/cognitiveservices?view=azure-cli-latest#az-cognitiveservices-list
 - title: Help en feedback
   linkLists:
   - linkListType: reference

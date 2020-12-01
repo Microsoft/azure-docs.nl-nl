@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 05/15/2020
-ms.openlocfilehash: c3d6e21b45bccbdaeeee350bac79be680783eb24
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: ecf81152605d77e1036c9fbf5d3308af2b1fb988
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92147529"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96346152"
 ---
 # <a name="collaborate-with-other-authors-and-editors"></a>Samen werken met andere auteurs en editors
 
@@ -42,11 +42,11 @@ In het volgende diagram ziet u de stroom, van het perspectief van de auteur, voo
 |3|QnA Maker-API valideert het token.|
 |4 |QnA Maker-API-QnAMaker-service wordt aangeroepen.|
 
-Als u van plan bent om de [ontwerp-api's](../How-To/collaborate-knowledge-base.md)aan te roepen, leest u meer over het instellen van de verificatie.
+Als u van plan bent om de [ontwerp-api's](../index.yml)aan te roepen, leest u meer over het instellen van de verificatie.
 
 ## <a name="authenticate-by-qna-maker-portal"></a>Verifiëren door QnA Maker Portal
 
-Als u de QnA Maker Portal ontwerpt en gebruikt, nadat u [de juiste rol aan de resource voor een samen werker hebt toegevoegd](../How-To/collaborate-knowledge-base.md), beheert de QnA Maker-Portal alle toegangs machtigingen.
+Als u de QnA Maker Portal ontwerpt en gebruikt, nadat u [de juiste rol aan de resource voor een samen werker hebt toegevoegd](../index.yml), beheert de QnA Maker-Portal alle toegangs machtigingen.
 
 ## <a name="authenticate-by-qna-maker-apis-and-sdks"></a>Verifiëren door QnA Maker Api's en Sdk's
 
@@ -54,4 +54,4 @@ Als u de Api's met behulp van REST of de Sdk's wilt ontwerpen en samen werken, m
 
 ## <a name="next-step"></a>Volgende stap
 
-* Een kennis database ontwerpen voor [talen](design-language-culture.md) en voor [client toepassingen](integration-with-other-applications.md)
+* Een kennis database ontwerpen voor [talen](../index.yml) en voor [client toepassingen](../index.yml)

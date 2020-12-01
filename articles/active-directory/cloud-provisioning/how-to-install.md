@@ -11,12 +11,12 @@ ms.date: 11/16/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c3960b8afeb9d7ecc80aa49fc13eee4977fa5494
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 4c4ba11dabc8e805f3604afc2fc4388840ac67cf
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96173967"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348531"
 ---
 # <a name="install-the-azure-ad-connect-cloud-provisioning-agent"></a>De agent voor Azure AD Connect-cloudinrichting installeren
 Dit document helpt u bij het installatie proces voor de Azure Active Directory (Azure AD) Connect inrichtings agent en hoe u deze in eerste instantie kunt configureren in de Azure Portal.
@@ -58,11 +58,11 @@ Voer de volgende stappen uit om de agent te installeren.
    ![GMSA maken](media/how-to-install/install-12.png)</br>
  11. Selecteer in het scherm **verbinding maken Active Directory** de optie **map toevoegen**. Meld u vervolgens aan met uw Active Directory-beheerders account. Met deze bewerking wordt uw on-premises Directory toegevoegd. 
  12. Desgewenst kunt u de voor keur van domein controllers die door de agent worden gebruikt, beheren door de **domein controller selecteren prioriteit** te selecteren en de lijst met domein controllers te ordenen.   Klik op **OK**.
-  ![Volg orde van domein controlllers](media/how-to-install/install-2a.png)</br>
+  ![Domein controllers best Ellen](media/how-to-install/install-2a.png)</br>
  13. Selecteer **Next**.
   ![Active Directory scherm verbinden](media/how-to-install/install-3a.png)</br>
  14.  Controleer op het scherm installatie van de **agent** de instellingen en het account dat wordt gemaakt en klik op **bevestigen**.
-  ![Settngs bevestigen](media/how-to-install/install-11.png)</br>
+  ![Instellingen bevestigen](media/how-to-install/install-11.png)</br>
  15. Nadat deze bewerking is voltooid, ziet u dat **de installatie van de agent is voltooid.** Selecteer **Afsluiten**.
   ![Scherm configuratie voltooid](media/how-to-install/install-4a.png)</br>
 1. Als u nog steeds het scherm eerste **Microsoft Azure AD Connect inrichtings agent-pakket** ziet, selecteert u **sluiten**.

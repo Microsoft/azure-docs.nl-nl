@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/06/2020
 ms.author: nichola
 ms.reviewer: ''
-ms.openlocfilehash: 975c92256ea0993badde0faf840a939f42901059
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: cf5a7a5902484536d0cf2a1844be469f29e15f4b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95753694"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348463"
 ---
 # <a name="how-to-use-continuous-access-evaluation-enabled-apis-in-your-applications"></a>Api's voor continue toegang voor evaluatie gebruiken in uw toepassingen
 
@@ -57,7 +57,7 @@ Als aan deze voor waarden wordt voldaan, kan de app de claim Challenge extra her
 ```csharp
 if (APIresponse.IsSuccessStatusCode)
 {
-    // . . .
+    // ...
 }
 else
 {
@@ -99,7 +99,7 @@ catch (MsalUiRequiredException)
             .ExecuteAsync()
             .ConfigureAwait(false);
     }
-    // . . .
+    // ...
 ```
 
 Zodra uw toepassing gereed is om de claim controle af te handelen die door een gestarte resource wordt geretourneerd, kunt u de micro soft-identiteit die uw app is ingesteld op CAE. Als u dit wilt doen in uw MSAL-toepassing, bouwt u uw open bare client met behulp van de client mogelijkheden van ' CP1 '.

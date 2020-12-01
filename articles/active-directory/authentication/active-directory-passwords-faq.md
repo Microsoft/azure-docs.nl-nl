@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7caeefb741e6916d69894ede3a7c64eb2e8f623f
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: b79eb842105734f0f6c145884d73f886a02dbbbc
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96174493"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348155"
 ---
 # <a name="self-service-password-reset-frequently-asked-questions"></a>Veelgestelde vragen over self-service voor wachtwoord herstel
 
@@ -263,7 +263,7 @@ Deze veelgestelde vragen zijn onderverdeeld in de volgende secties:
   >
 * **V: voor welke typen accounts is wacht woord terugschrijven werk voor?**
 
-  > **A:** Het terugschrijven van wacht woorden werkt voor gebruikers accounts die zijn gesynchroniseerd van on-premises Active Directory naar Azure AD, met inbegrip van federatieve, gesynchroniseerde wacht woord-hash en Pass-Through Autentication-gebruikers.
+  > **A:** Het terugschrijven van wacht woorden werkt voor gebruikers accounts die zijn gesynchroniseerd van on-premises Active Directory naar Azure AD, waaronder federatieve, wacht woord-hash gesynchroniseerd en gebruikers Pass-Through authenticatie.
   >
   >
 * **V: wacht woord terugschrijven dwingt het wachtwoord beleid van mijn domein af?**

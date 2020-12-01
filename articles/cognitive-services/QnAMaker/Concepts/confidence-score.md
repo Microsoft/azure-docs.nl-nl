@@ -9,12 +9,12 @@ ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 01/27/2020
 ms.custom: seodec18
-ms.openlocfilehash: abae83cee106feb553e8ced404d23ba5619ba416
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 489592fcbc779685728b120f18e5e923ee34d655
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91327150"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96346372"
 ---
 # <a name="the-confidence-score-of-an-answer"></a>De betrouwbaarheids Score van een antwoord
 Wanneer een gebruikers query wordt vergeleken met een Knowledge Base, retourneert QnA Maker relevante antwoorden, samen met een betrouwbaarheids Score. Met deze score wordt het vertrouwen aangegeven dat het antwoord het juiste resultaat voor de opgegeven gebruikers query is.
@@ -48,9 +48,9 @@ In de bovenstaande tabel worden de scores weer gegeven die op de meeste Kb's wor
 
 Houd bij het kiezen van de drempel waarde rekening met het evenwicht tussen nauw keurigheid en dekking en pas uw drempel aan op basis van uw vereisten.
 
-- Als **nauw keurigheid** (of precisie) belang rijker is voor uw scenario, verhoogt u de drempel waarde. Op deze manier wordt elke keer dat u een antwoord retourneert, een veel meer VERTROUWENs situatie en veel waarschijnlijker zijn de antwoord gebruikers op zoek naar. In dit geval is het mogelijk dat u uiteindelijk nog meer vragen hebt. *Bijvoorbeeld:* als u de drempel waarde **70**maakt, kunt u enkele ambigue voor beelden missen ' wat is opslaan en trainen? '.
+- Als **nauw keurigheid** (of precisie) belang rijker is voor uw scenario, verhoogt u de drempel waarde. Op deze manier wordt elke keer dat u een antwoord retourneert, een veel meer VERTROUWENs situatie en veel waarschijnlijker zijn de antwoord gebruikers op zoek naar. In dit geval is het mogelijk dat u uiteindelijk nog meer vragen hebt. *Bijvoorbeeld:* als u de drempel waarde **70** maakt, kunt u enkele ambigue voor beelden missen ' wat is opslaan en trainen? '.
 
-- Als **dekking** (of intrekken) belang rijker is en u zo veel mogelijk vragen wilt beantwoorden, zelfs als er slechts een gedeeltelijke relatie is met de vraag van de gebruiker, moet u de drempel waarde verlagen. Dit betekent dat er meer gevallen zijn waarin het antwoord niet de daad werkelijke query van de gebruiker beantwoordt, maar een ander, iets verwant antwoord geeft. *Bijvoorbeeld:* als u de drempel waarde **30**maakt, kunt u antwoorden geven op query's zoals ' waar kan ik mijn KB bewerken? '
+- Als **dekking** (of intrekken) belang rijker is en u zo veel mogelijk vragen wilt beantwoorden, zelfs als er slechts een gedeeltelijke relatie is met de vraag van de gebruiker, moet u de drempel waarde verlagen. Dit betekent dat er meer gevallen zijn waarin het antwoord niet de daad werkelijke query van de gebruiker beantwoordt, maar een ander, iets verwant antwoord geeft. *Bijvoorbeeld:* als u de drempel waarde **30** maakt, kunt u antwoorden geven op query's zoals ' waar kan ik mijn KB bewerken? '
 
 > [!NOTE]
 > Nieuwere versies van QnA Maker bevatten verbeteringen in de Score logica en kunnen van invloed zijn op de drempel waarde. Telkens wanneer u de service bijwerkt, moet u ervoor zorgen dat de drempel waarde wordt getest en zo nodig wordt verfijnd. U kunt [hier](https://www.qnamaker.ai/UserSettings)de QnA-Service versie controleren en bekijken hoe u de meest recente updates [hier](../How-To/set-up-qnamaker-service-azure.md#get-the-latest-runtime-updates)ophaalt.
@@ -62,7 +62,7 @@ Stel de drempel Score in als een eigenschap van de [JSON-hoofd tekst](../how-to/
 Stel in het bot-Framework de score in als onderdeel van het object Options met [C#](../how-to/metadata-generateanswer-usage.md?#use-qna-maker-with-a-bot-in-c) of [Node.js](../how-to/metadata-generateanswer-usage.md?#use-qna-maker-with-a-bot-in-nodejs).
 
 ## <a name="improve-confidence-scores"></a>Betrouwbaarheids scores verbeteren
-Als u de betrouwbaarheids Score van een bepaalde reactie op een gebruikers query wilt verbeteren, kunt u de gebruikers query toevoegen aan de Knowledge Base als een andere vraag over dat antwoord. U kunt ook hoofdletter gevoelige [woord wijzigingen](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/alterations/replace) gebruiken om synoniemen toe te voegen aan tref woorden in uw KB.
+Als u de betrouwbaarheids Score van een bepaalde reactie op een gebruikers query wilt verbeteren, kunt u de gebruikers query toevoegen aan de Knowledge Base als een andere vraag over dat antwoord. U kunt ook hoofdletter gevoelige [woord wijzigingen](/rest/api/cognitiveservices/qnamaker/alterations/replace) gebruiken om synoniemen toe te voegen aan tref woorden in uw KB.
 
 
 ## <a name="similar-confidence-scores"></a>Vergelijk bare betrouwbaarheids scores
@@ -89,4 +89,3 @@ Wanneer de rang schikking geen goede overeenkomst heeft gevonden, wordt de betro
 ## <a name="next-steps"></a>Volgende stappen
 > [!div class="nextstepaction"]
 > [Aanbevolen procedures](./best-practices.md)
-

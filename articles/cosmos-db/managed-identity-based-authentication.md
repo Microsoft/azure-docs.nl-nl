@@ -9,12 +9,12 @@ ms.date: 03/20/2020
 ms.author: justipat
 ms.reviewer: sngun
 ms.custom: devx-track-csharp
-ms.openlocfilehash: b3bd6a71898576ac23cdd10c1eb52e1ef3a39b95
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: cfef6ce0fb38f074f854d5ceb77677843e44b91b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93336585"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96345726"
 ---
 # <a name="use-system-assigned-managed-identities-to-access-azure-cosmos-db-data"></a>Door het systeem toegewezen beheerde identiteiten gebruiken om toegang te krijgen tot Azure Cosmos DB gegevens
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -68,9 +68,9 @@ In dit scenario leest de functie-app de Tempe ratuur van het aquarium en schrijf
 
    :::image type="content" source="./media/managed-identity-based-authentication/cosmos-db-iam-tab-add-role-pane.png" alt-text="Scherm opname van het deel venster toewijzing van rol toevoegen.":::
 
-   * **Rol** : Selecteer **Inzender** voor het DocumentDB-account
-   * **Toegang toewijzen aan** : Selecteer onder de Subsectie door het **systeem toegewezen beheerde identiteit selecteren** de optie **functie-app**.
-   * **Selecteren** : het deel venster wordt gevuld met alle functie-apps in uw abonnement die een **beheerde systeem identiteit** hebben. In dit geval selecteert u de functie-app **FishTankTemperatureService** : 
+   * **Rol**: Selecteer **Inzender** voor het DocumentDB-account
+   * **Toegang toewijzen aan**: Selecteer onder de Subsectie door het **systeem toegewezen beheerde identiteit selecteren** de optie **functie-app**.
+   * **Selecteren**: het deel venster wordt gevuld met alle functie-apps in uw abonnement die een **beheerde systeem identiteit** hebben. In dit geval selecteert u de functie-app **FishTankTemperatureService** : 
 
       :::image type="content" source="./media/managed-identity-based-authentication/cosmos-db-iam-tab-add-role-pane-filled.png" alt-text="Scherm opname waarin het deel venster roltoewijzing toevoegen is ingevuld met voor beelden.":::
 
@@ -214,7 +214,7 @@ namespace Monitor
 }
 ```
 
-U bent nu klaar om [uw functie-app te implementeren](../azure-functions/functions-create-first-function-vs-code.md).
+U bent nu klaar om [uw functie-app te implementeren](../azure-functions/create-first-function-vs-code-csharp.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

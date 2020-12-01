@@ -8,15 +8,15 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: how-to
-ms.date: 07/22/2020
+ms.date: 11/30/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: 03e89b0da25a915a00c70a9a87bd0f675b8e12d6
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: bfa9367e06c099e21a54ad8c03f8d5ab853aaafb
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997525"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348072"
 ---
 # <a name="publish-remote-desktop-with-azure-ad-application-proxy"></a>Remote Desktop publiceren met Azure AD-toepassingsproxy
 
@@ -130,7 +130,7 @@ De configuratie die in dit artikel wordt beschreven, is voor toegang tot RDS via
 
 | Verificatiemethode | Ondersteunde client configuratie |
 | --------------------- | ------------------------------ |
-| Verificatie vooraf    | Extern bureau blad-web-Windows 7/10 met Internet Explorer of [Edge-IE-modus van chroom](/deployedge/edge-ie-mode) en RDS ActiveX-invoeg toepassing |
+| Verificatie vooraf    | Extern bureau blad-web-Windows 7/10 met Internet Explorer of [Edge-IE-modus van chroom](/deployedge/edge-ie-mode) en RDS ActiveX-invoeg toepassing <br /> *Opmerking de portal mijn apps ondersteunt alleen Edge.* |
 | Verificatie vooraf    | Extern bureau blad-webclient-HTML5-compatibele webbrowser, zoals micro soft Edge, Internet Explorer 11, Google Chrome, Safari of Mozilla Firefox (v 55.0 en hoger) |
 | Voer | Elk ander besturings systeem dat ondersteuning biedt voor de Microsoft Extern bureaublad-toepassing |
 

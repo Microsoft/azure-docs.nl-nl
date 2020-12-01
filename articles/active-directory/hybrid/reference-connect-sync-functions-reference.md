@@ -16,12 +16,12 @@ ms.date: 07/12/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6d8ec8eec28d66cf93608393ddca45f78460d831
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c6c8be064ade8182355c320e948b3b60b846033d
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89279768"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348055"
 ---
 # <a name="azure-ad-connect-sync-functions-reference"></a>Azure AD Connect Sync: Naslag informatie over functies
 In Azure AD Connect worden functies gebruikt voor het bewerken van een kenmerk waarde tijdens de synchronisatie.  
@@ -48,7 +48,7 @@ De typen worden weer gegeven met de volgende syntaxis:
 * **var** : een variant van (bijna) elk ander type
 * **void** : retourneert geen waarde
 
-De functies met de typen **mvbin**, **mvstr**en **mvref** kunnen alleen worden gebruikt voor kenmerken met meerdere waarden. Functies met **bin**, **Str**en **Ref** werken zowel op kenmerken met één waarde als met meerdere waarden.
+De functies met de typen **mvbin**, **mvstr** en **mvref** kunnen alleen worden gebruikt voor kenmerken met meerdere waarden. Functies met **bin**, **Str** en **Ref** werken zowel op kenmerken met één waarde als met meerdere waarden.
 
 ## <a name="functions-reference"></a>Functieverwijzing
 
@@ -98,7 +98,7 @@ De functies met de typen **mvbin**, **mvstr**en **mvref** kunnen alleen worden g
   * [DNComponent](#dncomponent)
   * [DNComponentRev](#dncomponentrev)
   * [EscapeDNComponent](#escapedncomponent)
-* **Evaluatie**
+* **Raming**
   * [IsBitSet](#isbitset)
   * [IsDate](#isdate)
   * [IsEmpty](#isempty)
@@ -113,7 +113,7 @@ De functies met de typen **mvbin**, **mvstr**en **mvref** kunnen alleen worden g
   * [BitOr](#bitor)
   * [RandomNum](#randomnum)
 * **Meerdere waarden**
-  * [Daarin](#contains)
+  * [Contains](#contains)
   * [Aantal](#count)
   * [Item](#item)
   * [ItemOrNull](#itemornull)
@@ -124,7 +124,7 @@ De functies met de typen **mvbin**, **mvstr**en **mvref** kunnen alleen worden g
   * [Fout](#error)
   * [IIF](#iif)
   * [Selecteren](#select)
-  * [/Tijdnotatie](#switch)
+  * [Switch](#switch)
   * [Positie](#where)
   * [Met](#with)
 * **Tekst**
@@ -703,7 +703,7 @@ De functie InStr zoekt het eerste exemplaar van een subtekenreeks in een teken r
 
 `num InStr(str stringcheck, str stringmatch)`  
 `num InStr(str stringcheck, str stringmatch, num start)`  
-`num InStr(str stringcheck, str stringmatch, num start , enum compare)`
+`num InStr(str stringcheck, str stringmatch, num start, enum compare)`
 
 * stringcheck: teken reeks die moet worden doorzocht
 * stringmatch: teken reeks die moet worden gevonden

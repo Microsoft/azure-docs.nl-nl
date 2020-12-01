@@ -1,5 +1,5 @@
 ---
-title: AADCloudSyncTools Power shell-module voor Azure AD Connect Cloud synchronisatie
+title: AADCloudSyncTools Power shell-module voor Azure AD Connect Cloud inrichting
 description: In dit artikel wordt beschreven hoe u de Azure AD Connect Cloud-inrichtings Agent installeert.
 services: active-directory
 author: billmath
@@ -7,18 +7,18 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 11/16/2020
+ms.date: 11/30/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d3ce5a7a313ab0f0680558aa60b34e3ebb9b51c9
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: ba71d3eedbb75780c20499daa890556574494a35
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95255122"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348134"
 ---
-# <a name="aadcloudsynctools-powershell-module-for-azure-ad-connect-cloud-sync"></a>AADCloudSyncTools Power shell-module voor Azure AD Connect Cloud synchronisatie
+# <a name="aadcloudsynctools-powershell-module-for-azure-ad-connect-cloud-provisioning"></a>AADCloudSyncTools Power shell-module voor Azure AD Connect Cloud inrichting
 
 Met de release van open bare preview vernieuwen 2 heeft micro soft de AADCloudSyncTools Power shell-module geïntroduceerd.  Deze module biedt een aantal nuttige hulpprogram ma's die u kunt gebruiken om uw Azure AD Connect Cloud synchronisatie-implementaties te beheren.
 

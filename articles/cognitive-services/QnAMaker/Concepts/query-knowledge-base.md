@@ -3,12 +3,12 @@ title: Query's uitvoeren op de Knowledge Base-QnA Maker
 description: Een Knowledge Base moet worden gepubliceerd. Zodra de Knowledge Base is gepubliceerd, wordt deze in de runtime-Voorspellings eindpunt opgevraagd met behulp van de generateAnswer-API.
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: e8dd056a7b6357b8342d3059e17baa88db92b404
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.openlocfilehash: d8f986299edee46bf5cace7a9f4c805c29b3ce0c
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94376709"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96346202"
 ---
 # <a name="query-the-knowledge-base-for-answers"></a>De Knowledge Base doorzoeken op antwoorden
 
@@ -16,9 +16,9 @@ Een Knowledge Base moet worden gepubliceerd. Zodra de Knowledge Base is gepublic
 
 ## <a name="how-qna-maker-processes-a-user-query-to-select-the-best-answer"></a>Hoe QnA Maker een gebruikers query verwerkt om het beste antwoord te selecteren
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele versie)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 
-De getrainde en [gepubliceerde](/azure/cognitive-services/qnamaker/quickstarts/create-publish-knowledge-base#publish-the-knowledge-base) QnA Maker Knowledge Base ontvangt een gebruikers query, vanuit een bot of andere client toepassing, op de [GenerateAnswer-API](/azure/cognitive-services/qnamaker/how-to/metadata-generateanswer-usage). Het volgende diagram illustreert het proces wanneer de query van de gebruiker wordt ontvangen.
+De getrainde en [gepubliceerde](../quickstarts/create-publish-knowledge-base.md#publish-the-knowledge-base) QnA Maker Knowledge Base ontvangt een gebruikers query, vanuit een bot of andere client toepassing, op de [GenerateAnswer-API](../how-to/metadata-generateanswer-usage.md). Het volgende diagram illustreert het proces wanneer de query van de gebruiker wordt ontvangen.
 
 ![Het classificatie model proces voor een gebruikers query](../media/qnamaker-concepts-knowledgebase/ranker-v1.png)
 
@@ -28,7 +28,7 @@ Het proces wordt uitgelegd in de volgende tabel.
 
 |Stap|Doel|
 |--|--|
-|1|De client toepassing verzendt de query van de gebruiker naar de [GenerateAnswer-API](/azure/cognitive-services/qnamaker/how-to/metadata-generateanswer-usage).|
+|1|De client toepassing verzendt de query van de gebruiker naar de [GenerateAnswer-API](../how-to/metadata-generateanswer-usage.md).|
 |2|QnA Maker de gebruikers query met taal detectie, spellingen en woord afbreekers verwerkt.|
 |3|Deze voor verwerking wordt gebruikt om de query van de gebruiker voor de beste Zoek resultaten te wijzigen.|
 |4|Deze gewijzigde query wordt verzonden naar een Azure Cognitive Search-index, die het `top` aantal resultaten ontvangt. Als het juiste antwoord niet in deze resultaten voor komt, verhoogt u de waarde `top` enigszins. Over het algemeen is de waarde 10 voor `top` Works in 90% van de query's.|
@@ -39,9 +39,9 @@ Het proces wordt uitgelegd in de volgende tabel.
 
 De functies die worden gebruikt, zijn, maar zijn niet beperkt tot semantiek op woord niveau, urgentie op term niveau in een verzameling en diep opgedane semantische modellen om de gelijkenis en relevantie tussen twee teken reeksen te bepalen.
 
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-versie)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
-De getrainde en [gepubliceerde](/azure/cognitive-services/qnamaker/quickstarts/create-publish-knowledge-base#publish-the-knowledge-base) QnA Maker Knowledge Base ontvangt een gebruikers query, vanuit een bot of andere client toepassing, op de [GenerateAnswer-API](/azure/cognitive-services/qnamaker/how-to/metadata-generateanswer-usage). Het volgende diagram illustreert het proces wanneer de query van de gebruiker wordt ontvangen.
+De getrainde en [gepubliceerde](../quickstarts/create-publish-knowledge-base.md#publish-the-knowledge-base) QnA Maker Knowledge Base ontvangt een gebruikers query, vanuit een bot of andere client toepassing, op de [GenerateAnswer-API](../how-to/metadata-generateanswer-usage.md). Het volgende diagram illustreert het proces wanneer de query van de gebruiker wordt ontvangen.
 
 ![Het classificatie model proces voor een voor beeld van een gebruikers query](../media/qnamaker-concepts-knowledgebase/ranker-v2.png)
 
@@ -51,7 +51,7 @@ Het proces wordt uitgelegd in de volgende tabel.
 
 |Stap|Doel|
 |--|--|
-|1|De client toepassing verzendt de query van de gebruiker naar de [GenerateAnswer-API](/azure/cognitive-services/qnamaker/how-to/metadata-generateanswer-usage).|
+|1|De client toepassing verzendt de query van de gebruiker naar de [GenerateAnswer-API](../how-to/metadata-generateanswer-usage.md).|
 |2|QnA Maker de gebruikers query met taal detectie, spellingen en woord afbreekers verwerkt.|
 |3|Deze voor verwerking wordt gebruikt om de query van de gebruiker voor de beste Zoek resultaten te wijzigen.|
 |4|Deze gewijzigde query wordt verzonden naar een Azure Cognitive Search-index, die het `top` aantal resultaten ontvangt. Als het juiste antwoord niet in deze resultaten voor komt, verhoogt u de waarde `top` enigszins. Over het algemeen is de waarde 10 voor `top` Works in 90% van de query's.|

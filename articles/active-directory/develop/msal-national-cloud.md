@@ -13,12 +13,12 @@ ms.date: 11/22/2019
 ms.author: negoe
 ms.reviewer: nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: 4d899fe7f84a8708bb8ee32cc008567b272a885c
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 566c429fc70ae3f0fc18f024b745d8142535932c
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96169372"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348404"
 ---
 # <a name="use-msal-in-a-national-cloud-environment"></a>MSAL gebruiken in een nationale cloud omgeving
 
@@ -55,7 +55,7 @@ Als u nog geen abonnement op Azure Government hebt, maakt u een [gratis account]
 
 Voor meer informatie over het gebruik van een nationale Cloud met een bepaalde programmeer taal kiest u het tabblad dat overeenkomt met uw taal:
 
-## <a name="net"></a>[.NET](#tab/donet)
+## <a name="net"></a>[.NET](#tab/dotnet)
 
 U kunt MSAL.NET gebruiken voor het aanmelden van gebruikers, het verkrijgen van tokens en het aanroepen van de Microsoft Graph-API in nationale Clouds.
 

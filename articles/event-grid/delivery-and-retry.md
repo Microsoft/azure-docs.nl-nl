@@ -3,12 +3,12 @@ title: Azure Event Grid levering en probeer het opnieuw
 description: Hierin wordt beschreven hoe Azure Event Grid gebeurtenissen levert en hoe er niet-bezorgde berichten worden verwerkt.
 ms.topic: conceptual
 ms.date: 10/29/2020
-ms.openlocfilehash: 7bf8fd3a647e28d18a7ca1e658761f9226d1153a
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.openlocfilehash: 9a7bde33e322183f86c3c51d30bb004d06fa1406
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94981099"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96345350"
 ---
 # <a name="event-grid-message-delivery-and-retry"></a>Bericht bezorging Event Grid en probeer het opnieuw
 
@@ -54,6 +54,22 @@ az eventgrid event-subscription create \
 Voor meer informatie over het gebruik van Azure CLI met Event Grid raadpleegt [u opslag gebeurtenissen naar een webeindpunt routeren met Azure cli](../storage/blobs/storage-blob-event-quickstart.md).
 
 ## <a name="retry-schedule-and-duration"></a>Schema en duur van opnieuw proberen
+
+Wanneer EventGrid een fout ontvangt voor een gebeurtenis bezorgings poging, bepaalt EventGrid of het een nieuwe levering of onbestelbare letter moet doen of de gebeurtenis wilt verwijderen op basis van het type fout. 
+
+Als de fout die wordt geretourneerd door het geabonneerde eind punt, configuratie gerelateerde fout is die niet kan worden opgelost met nieuwe pogingen (bijvoorbeeld als het eind punt wordt verwijderd), EventGrid het een gebeurtenis die niet kan worden uitgevoerd, of de gebeurtenis als de Dead-letter niet is geconfigureerd.
+
+Hier volgen de typen eind punten waarvoor het nieuwe pogingen niet gebeurt:
+
+| Eindpunttype | Foutcodes |
+| --------------| -----------|
+| Azure-bronnen | 400 ongeldige aanvraag, 413 aanvraag entiteit te groot, 403 verboden | 
+| Webhook | 400 ongeldige aanvraag, 413 aanvraag entiteit te groot, 403 verboden, 404 niet gevonden, 401 niet toegestaan |
+ 
+> [!NOTE]
+> Als Dead-Letter niet is geconfigureerd voor het eind punt, worden gebeurtenissen verwijderd wanneer er meer dan fouten optreden. Overweeg daarom onbestelbare berichten te configureren, als u niet wilt dat dit soort gebeurtenissen wordt verwijderd.
+
+Als de fout die is geretourneerd door het geabonneerde eind punt niet voor komt in de bovenstaande lijst, voert EventGrid de volgende stappen uit die hieronder worden beschreven:
 
 Event Grid 30 seconden wachten op een reactie na het afleveren van een bericht. Als het eind punt 30 seconden niet heeft gereageerd, wordt het bericht in de wachtrij geplaatst voor opnieuw proberen. Event Grid gebruikt een exponentiële uitstel beleid voor opnieuw proberen voor gebeurtenis levering. Event Grid nieuwe pogingen op het volgende schema worden uitgevoerd op basis van de beste inspanningen:
 
@@ -256,16 +272,16 @@ Event Grid beschouwt **alleen** de volgende HTTP-antwoord codes als geslaagde le
 
 ### <a name="failure-codes"></a>Fout codes
 
-Alle andere codes die zich niet in de bovenstaande set (200-204) bevinden, worden beschouwd als fouten en worden opnieuw geprobeerd. Enkele van de specifieke beleids regels voor opnieuw proberen die hieronder worden beschreven, volgen alle andere voor beelden van het standaard exponentiële uitstel model. Het is belang rijk dat u er rekening mee houdt dat het gedrag van de nieuwe poging niet-deterministisch is als gevolg van de zeer parallelle aard van de architectuur van Event Grid. 
+Alle andere codes die zich niet in de bovenstaande set (200-204) bevinden, worden beschouwd als storingen en worden opnieuw geprobeerd (indien nodig). Enkele van de specifieke beleids regels voor opnieuw proberen die hieronder worden beschreven, volgen alle andere voor beelden van het standaard exponentiële uitstel model. Het is belang rijk dat u er rekening mee houdt dat het gedrag van de nieuwe poging niet-deterministisch is als gevolg van de zeer parallelle aard van de architectuur van Event Grid. 
 
 | Statuscode | Gedrag voor opnieuw proberen |
 | ------------|----------------|
-| 400 Ongeldige aanvraag | Na 5 minuten of meer opnieuw proberen (Deadletter direct bij het instellen van Deadletter) |
-| 401 Onbevoegd | Opnieuw proberen na 5 minuten of langer |
-| 403 verboden | Opnieuw proberen na 5 minuten of langer |
-| 404 Niet gevonden | Opnieuw proberen na 5 minuten of langer |
+| 400 Ongeldige aanvraag | Niet opnieuw geprobeerd |
+| 401 Onbevoegd | Opnieuw proberen na 5 minuten of langer voor Azure-resources-eind punten |
+| 403 Verboden | Niet opnieuw geprobeerd |
+| 404 Niet gevonden | Opnieuw proberen na 5 minuten of langer voor Azure-resources-eind punten |
 | 408 Time-out van aanvraag | Opnieuw proberen na twee minuten of langer |
-| de 413-aanvraag entiteit is te groot | Na 10 seconden of meer opnieuw proberen (Deadletter onmiddellijk als Deadletter is ingesteld) |
+| de 413-aanvraag entiteit is te groot | Niet opnieuw geprobeerd |
 | 503 Service niet beschikbaar | Opnieuw proberen na 30 seconden of langer |
 | Alle andere | Opnieuw proberen na 10 seconden of langer |
 

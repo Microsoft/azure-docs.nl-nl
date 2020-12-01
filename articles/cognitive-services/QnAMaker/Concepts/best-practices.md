@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: 2f87f5c7e43757db476153db93d6ecc5082dde89
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.openlocfilehash: ee8d838ba315c2e261a61699948b71a710341165
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94376754"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96346355"
 ---
 # <a name="best-practices-of-a-qna-maker-knowledge-base"></a>Aanbevolen procedures voor een QnA Maker Knowledge Base
 
@@ -18,7 +18,7 @@ De [Knowledge Base-ontwikkelings levenscyclus](../Concepts/development-lifecycle
 
 ## <a name="extraction"></a>Extractie
 
-De QnA Maker-service verbetert de algoritmen die QnAs extra heren uit inhoud en breiden de lijst met ondersteunde bestands-en HTML-indelingen voortdurend uit. Volg de [richt lijnen](../Concepts/content-types.md) voor gegevens extractie op basis van uw document type.
+De QnA Maker-service verbetert de algoritmen die QnAs extra heren uit inhoud en breiden de lijst met ondersteunde bestands-en HTML-indelingen voortdurend uit. Volg de [richt lijnen](../index.yml) voor gegevens extractie op basis van uw document type.
 
 Over het algemeen moeten pagina's met veelgestelde vragen zelfstandig zijn en niet worden gecombineerd met andere informatie. Product handleidingen moeten duidelijke kopteksten en bij voor keur een index pagina bevatten.
 
@@ -71,7 +71,7 @@ Er zijn bepaalde bot-specifieke vragen die deel uitmaken van de Chit-Chat gegeve
 
 We raden u aan om de volgende Chit-Chat QnAs specifieker te maken:
 
-* Wie ben jij?
+* Wat is uw rol?
 * Wat kunt u doen?
 * How old are you?
 * Wie heeft u gemaakt?
@@ -116,11 +116,11 @@ QnA Maker zoekt standaard naar vragen en antwoorden. Als u alleen vragen wilt do
 [Meta gegevens](../How-To/edit-knowledge-base.md) voegen de mogelijkheid toe om een client toepassing te laten weten dat deze niet alle antwoorden mag hebben, maar in plaats daarvan de resultaten van een gebruikers query te beperken op basis van meta gegevenslabels. Het antwoord van de Knowledge Base kan variëren op basis van de meta gegevens code, zelfs als de query hetzelfde is. Bijvoorbeeld *' waar bevindt zich parkeren '* kan een ander antwoord hebben als de locatie van de restaurant vertakking anders is, dat wil zeggen, de meta gegevens zijn *Locatie: Seattle* versus *Locatie: Redmond*.
 
 ### <a name="use-synonyms"></a>Synoniemen gebruiken
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele versie)](#tab/v1)
-Hoewel er enige ondersteuning is voor synoniemen in de Engelse taal, gebruikt u hoofdletter gevoelige woord wijzigingen via de [aanpassings-API](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/alterations/replace) om synoniemen toe te voegen aan tref woorden die verschillende vormen hebben. Synoniemen worden toegevoegd op het QnA Maker service niveau en worden **gedeeld door alle kennis grondslagen in de service**.
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
+Hoewel er enige ondersteuning is voor synoniemen in de Engelse taal, gebruikt u hoofdletter gevoelige woord wijzigingen via de [aanpassings-API](/rest/api/cognitiveservices/qnamaker/alterations/replace) om synoniemen toe te voegen aan tref woorden die verschillende vormen hebben. Synoniemen worden toegevoegd op het QnA Maker service niveau en worden **gedeeld door alle kennis grondslagen in de service**.
 
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-versie)](#tab/v2)
-Hoewel er enige ondersteuning is voor synoniemen in de Engelse taal, gebruikt u hoofdletter gevoelige woord wijzigingen via de [aanpassings-API](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/alterations/replace) om synoniemen toe te voegen aan tref woorden die verschillende vormen hebben. Synoniemen in QnA Maker Managed (preview) worden **toegevoegd per Knowledge Base**.
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
+Hoewel er enige ondersteuning is voor synoniemen in de Engelse taal, gebruikt u hoofdletter gevoelige woord wijzigingen via de [aanpassings-API](/rest/api/cognitiveservices/qnamaker/alterations/replace) om synoniemen toe te voegen aan tref woorden die verschillende vormen hebben. Synoniemen in QnA Maker Managed (preview) worden **toegevoegd per Knowledge Base**.
 
 |Oorspronkelijk woord|Synoniemen|
 |--|--|
@@ -138,10 +138,10 @@ U kunt bijvoorbeeld twee afzonderlijke QnAs hebben met de volgende vragen:
 |waar bevindt zich de parkeer *locatie*|
 |waar is de ATM- *locatie*|
 
-Omdat deze twee QnAs worden aangeduid met zeer vergelijk bare woorden, kan deze soort gelijke scores worden veroorzaakt door veel gebruikers query's die zijn aangeduid als  *' waar is de `<x>` locatie '*. Probeer in plaats daarvan duidelijk te onderscheiden van query's zoals  *' waar is de parkeer partij '* en *' waar is de ATM '* , door woorden als ' locatie ' te vermijden, zodat u veel vragen in uw KB kunt vinden.
+Omdat deze twee QnAs worden aangeduid met zeer vergelijk bare woorden, kan deze soort gelijke scores worden veroorzaakt door veel gebruikers query's die zijn aangeduid als  *' waar is de `<x>` locatie '*. Probeer in plaats daarvan duidelijk te onderscheiden van query's zoals  *' waar is de parkeer partij '* en *' waar is de ATM '*, door woorden als ' locatie ' te vermijden, zodat u veel vragen in uw KB kunt vinden.
 
 ## <a name="collaborate"></a>Samenwerken
-Met QnA Maker kunnen gebruikers [samen werken](../How-to/collaborate-knowledge-base.md) aan een Knowledge Base. Gebruikers moeten toegang hebben tot de resource groep Azure QnA Maker om toegang te krijgen tot de kennis bases. Sommige organisaties willen het bewerken en onderhouden van de Knowledge Base mogelijk maken en nog steeds toegang tot hun Azure-resources kunnen beveiligen. Dit model voor redacteur-goed keuring wordt uitgevoerd door twee identieke [QnA Maker Services](../How-to/set-up-qnamaker-service-azure.md) in verschillende abonnementen in te stellen en er een te selecteren voor de bewerking voor het bewerken van de test cyclus. Zodra het testen is voltooid, wordt de inhoud van de Knowledge Base met een [import-export](../Tutorials/migrate-knowledge-base.md) proces overgebracht naar de QnA Maker-service van de goed keurder die de Knowledge Base uiteindelijk gaat publiceren en het eind punt bijwerkt.
+Met QnA Maker kunnen gebruikers [samen werken](../index.yml) aan een Knowledge Base. Gebruikers moeten toegang hebben tot de resource groep Azure QnA Maker om toegang te krijgen tot de kennis bases. Sommige organisaties willen het bewerken en onderhouden van de Knowledge Base mogelijk maken en nog steeds toegang tot hun Azure-resources kunnen beveiligen. Dit model voor redacteur-goed keuring wordt uitgevoerd door twee identieke [QnA Maker Services](../How-to/set-up-qnamaker-service-azure.md) in verschillende abonnementen in te stellen en er een te selecteren voor de bewerking voor het bewerken van de test cyclus. Zodra het testen is voltooid, wordt de inhoud van de Knowledge Base met een [import-export](../Tutorials/migrate-knowledge-base.md) proces overgebracht naar de QnA Maker-service van de goed keurder die de Knowledge Base uiteindelijk gaat publiceren en het eind punt bijwerkt.
 
 
 

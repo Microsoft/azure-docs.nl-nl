@@ -11,12 +11,12 @@ ms.subservice: user-help
 ms.topic: end-user-help
 ms.date: 02/13/2019
 ms.author: curtand
-ms.openlocfilehash: c96be79a349478db7d0452cae1ff07ee1c48aaa3
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: e383896e50ccf06ef6d1b5caaeb0ef36ece2ce3b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94700083"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348293"
 ---
 # <a name="set-up-the-microsoft-authenticator-app-as-your-verification-method"></a>De app Microsoft Authenticator instellen als uw verificatiemethode
 

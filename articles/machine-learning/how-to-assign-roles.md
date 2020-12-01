@@ -11,12 +11,12 @@ ms.author: nigup
 author: nishankgu
 ms.date: 11/09/2020
 ms.custom: how-to, seodec18, devx-track-azurecli, contperfq2
-ms.openlocfilehash: 90abd46e73ecb50b5e6de40218571d0ec899752e
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 8af3da5d04f9aaafc18299f4837660694ee34b51
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95012958"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96345266"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>De toegang tot een Azure Machine Learning-werkruimte beheren
 
@@ -55,7 +55,7 @@ Als u eigenaar bent van een werk ruimte, kunt u rollen toevoegen en verwijderen 
 - [PowerShell](../role-based-access-control/role-assignments-powershell.md)
 - [Azure-CLI](../role-based-access-control/role-assignments-cli.md)
 - [REST API](../role-based-access-control/role-assignments-rest.md)
-- [Azure Resource Manager-sjablonen](../role-based-access-control/role-assignments-template.md)
+- [Azure Resource Manager sjablonen](../role-based-access-control/role-assignments-template.md)
 
 Als u de [Azure machine learning cli](reference-azure-machine-learning-cli.md)hebt geïnstalleerd, kunt u de CLI-opdrachten gebruiken om rollen toe te wijzen aan gebruikers:
 
@@ -175,7 +175,7 @@ De volgende tabel bevat een overzicht van Azure Machine Learning activiteiten en
 | Nieuw reken cluster maken | Niet vereist | Niet vereist | Eigenaar, bijdrager of aangepaste rol, waardoor: `/workspaces/computes/write` |
 | Nieuw reken exemplaar maken | Niet vereist | Niet vereist | Eigenaar, bijdrager of aangepaste rol, waardoor: `/workspaces/computes/write` |
 | Elk type uitvoering verzenden | Niet vereist | Niet vereist | Eigenaar, bijdrager of aangepaste rol, waardoor: `"/workspaces/*/read", "/workspaces/environments/write", "/workspaces/experiments/runs/write", "/workspaces/metadata/artifacts/write", "/workspaces/metadata/snapshots/write", "/workspaces/environments/build/action", "/workspaces/experiments/runs/submit/action", "/workspaces/environments/readSecrets/action"` |
-| Een pijplijn eindpunt publiceren | Niet vereist | Niet vereist | Eigenaar, bijdrager of aangepaste rol, waardoor: `"/workspaces/pipelines/write", "/workspaces/endpoints/pipelines/*", "/workspaces/pipelinedrafts/*", "/workspaces/modules/*"` |
+| Pijp lijnen en eind punten publiceren | Niet vereist | Niet vereist | Eigenaar, bijdrager of aangepaste rol, waardoor: `"/workspaces/endpoints/pipelines/*", "/workspaces/pipelinedrafts/*", "/workspaces/modules/*"` |
 | Een geregistreerd model implementeren op een AKS/ACI-bron | Niet vereist | Niet vereist | Eigenaar, bijdrager of aangepaste rol, waardoor: `"/workspaces/services/aks/write", "/workspaces/services/aci/write"` |
 | Score voor een geïmplementeerd AKS-eind punt | Niet vereist | Niet vereist | Eigenaar, bijdrager of aangepaste rol waarmee: `"/workspaces/services/aks/score/action", "/workspaces/services/aks/listkeys/action"` (wanneer u geen Azure Active Directory auth) of `"/workspaces/read"` (wanneer u token verificatie gebruikt) |
 | Toegang tot opslag met interactieve notebooks | Niet vereist | Niet vereist | Eigenaar, bijdrager of aangepaste rol, waardoor: `"/workspaces/computes/read", "/workspaces/notebooks/samples/read", "/workspaces/notebooks/storage/*", "/workspaces/listKeys/action"` |
@@ -207,7 +207,7 @@ Als u MLflow-bewerkingen wilt uitvoeren met uw Azure Machine Learning-werk ruimt
 
 ## <a name="example-custom-roles"></a>Voor beeld van aangepaste rollen
 
-### <a name="data-scientist"></a>Data scientist
+### <a name="data-scientist"></a>Gegevenswetenschapper
 
 Hiermee kan een gegevens wetenschapper alle bewerkingen binnen een werk ruimte uitvoeren **, met uitzonde ring** van:
 

@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 10/13/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: fda57ae152efbb04a793c6acf63465fe8d406a1a
-ms.sourcegitcommit: 090ea6e8811663941827d1104b4593e29774fa19
+ms.openlocfilehash: 5b89126b837f9c197a8babf81abb17bfd98002e4
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91998658"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96344994"
 ---
 # <a name="userjourneys"></a>UserJourneys
 
@@ -92,7 +92,7 @@ Het element **voor waarde** bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| `Type` | Ja | Het type controle of query dat moet worden uitgevoerd voor deze voor waarde. De waarde kan **ClaimsExist**zijn, waarmee wordt aangegeven dat de acties moeten worden uitgevoerd als de opgegeven claims bestaan in de huidige claimset van de gebruiker of **ClaimEquals**, waarmee wordt aangegeven dat de acties moeten worden uitgevoerd als de opgegeven claim bestaat en de waarde ervan gelijk is aan de opgegeven waarde. |
+| `Type` | Ja | Het type controle of query dat moet worden uitgevoerd voor deze voor waarde. De waarde kan **ClaimsExist** zijn, waarmee wordt aangegeven dat de acties moeten worden uitgevoerd als de opgegeven claims bestaan in de huidige claimset van de gebruiker of **ClaimEquals**, waarmee wordt aangegeven dat de acties moeten worden uitgevoerd als de opgegeven claim bestaat en de waarde ervan gelijk is aan de opgegeven waarde. |
 | `ExecuteActionsIf` | Ja | Gebruik een test waar of ONWAAR om te bepalen of de acties in de voor waarde moeten worden uitgevoerd. |
 
 De elementen in de **voor waarde** bevatten de volgende elementen:
@@ -172,7 +172,7 @@ Het **ClaimsProviderSelections** -element bevat de volgende kenmerken:
 
 | Kenmerk | Vereist | Beschrijving |
 | --------- | -------- | ----------- |
-| DisplayOption| Nee | Hiermee bepaalt u het gedrag van een geval waarbij één claim provider selectie beschikbaar is. Mogelijke waarden:  `DoNotShowSingleProvider`   (standaard), de gebruiker wordt direct omgeleid naar de provider voor federatieve identiteiten. Of  `ShowSingleProvider`   Azure AD B2C geeft de aanmeldings pagina weer met de selectie van de enkelvoudige ID-provider. Als u dit kenmerk wilt gebruiken, moet de versie van de [inhouds definitie](page-layout.md) gelijk zijn aan  `urn:com:microsoft:aad:b2c:elements:contract:providerselection:1.0.0` of hoger.|
+| DisplayOption| Nee | Hiermee bepaalt u het gedrag van een geval waarbij één claim provider selectie beschikbaar is. Mogelijke waarden: `DoNotShowSingleProvider` (standaard), de gebruiker wordt direct omgeleid naar de provider voor federatieve identiteiten. Of `ShowSingleProvider` Azure AD B2C geeft de aanmeldings pagina weer met de selectie van de enkelvoudige ID-provider. Als u dit kenmerk wilt gebruiken, moet de versie van de [inhouds definitie](page-layout.md) gelijk zijn aan `urn:com:microsoft:aad:b2c:elements:contract:providerselection:1.0.0` of hoger.|
 
 Het **ClaimsProviderSelection** -element bevat de volgende kenmerken:
 

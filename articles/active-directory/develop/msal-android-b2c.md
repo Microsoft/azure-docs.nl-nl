@@ -13,12 +13,12 @@ ms.date: 9/18/2019
 ms.author: brianmel
 ms.reviewer: rapong
 ms.custom: aaddev
-ms.openlocfilehash: 0ad5fab685757d2efd91cd1df0e48a5f1258d17e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1c4f47fd771cfb92b3896963c96b39d9eb7d97b8
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88119875"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96344875"
 ---
 # <a name="use-msal-for-android-with-b2c"></a>MSAL voor Android gebruiken met B2C
 
@@ -129,7 +129,7 @@ AcquireTokenSilentParameters parameters = new AcquireTokenSilentParameters.Build
 
         @Override
         public void onError(MsalException exception) {
-            // Token request was unsuccesful, inspect the exception
+            // Token request was unsuccessful, inspect the exception
         }
     })
     .build();
@@ -153,7 +153,7 @@ AcquireTokenParameters parameters = new AcquireTokenParameters.Builder()
 
 ## <a name="handle-password-change-policies"></a>Beleid voor wachtwoord wijziging verwerken
 
-De gebruikers stroom voor het registreren of aanmelden van het lokale account bevat een**verg eten wacht woord?** . Als u op deze koppeling klikt, wordt de gebruikers stroom voor wacht woord opnieuw instellen niet automatisch geactiveerd.
+De gebruikers stroom voor het registreren of aanmelden van het lokale account bevat een **verg eten wacht woord?** . Als u op deze koppeling klikt, wordt de gebruikers stroom voor wacht woord opnieuw instellen niet automatisch geactiveerd.
 
 In plaats daarvan wordt de fout code `AADB2C90118` geretourneerd naar uw app. Uw app moet deze fout code verwerken door een specifieke gebruikers stroom uit te voeren waarmee het wacht woord opnieuw wordt ingesteld.
 

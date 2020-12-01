@@ -10,12 +10,12 @@ ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.custom: it-pro
-ms.openlocfilehash: 47885e64b40db07ca3b4a7380389967a36abbd9e
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 9117474c3cbf5087a5b63512fcc17c4771bf7aa6
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94949833"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96343872"
 ---
 # <a name="add-an-api-connector-to-a-sign-up-user-flow-preview"></a>Een API-connector toevoegen aan een registratie gebruikers stroom (preview-versie)
 
@@ -26,7 +26,7 @@ Als u een [API-connector](api-connectors-overview.md)wilt gebruiken, maakt u eer
 
 ## <a name="create-an-api-connector"></a>Een API-connector maken
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 2. Onder **Azure-Services** selecteert u **Azure AD B2C**.
 4. Selecteer **API-connectors (preview)** en selecteer vervolgens **nieuwe API-connector**.
 
@@ -89,7 +89,7 @@ Daarnaast wordt de **gebruikers interface land instellingen (' ui_locales ')** s
 
 Volg deze stappen om een API-connector toe te voegen aan een registratie gebruikers stroom.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 2. Onder **Azure-Services** selecteert u **Azure AD B2C**.
 4. Selecteer **gebruikers stromen** en selecteer vervolgens de gebruikers stroom waaraan u de API-connector wilt toevoegen.
 5. Selecteer **API-connectors** en selecteer vervolgens de API-eind punten die u wilt aanroepen met de volgende stappen in de gebruikers stroom:

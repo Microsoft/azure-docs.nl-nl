@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/18/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 349f57299387b616373bb5fb4d295da8df8ee493
-ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
+ms.openlocfilehash: d62e7566038af6647cab2992b02184a4ea5ba30b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93279888"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96344144"
 ---
 # <a name="secure-azure-digital-twins"></a>Azure Digital Apparaatdubbels beveiligen
 
@@ -24,7 +24,7 @@ Azure Digital Apparaatdubbels biedt ook ondersteuning voor versleuteling van geg
 
 Azure RBAC wordt geleverd aan Azure Digital Apparaatdubbels via integratie met [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md) (Azure AD).
 
-U kunt Azure RBAC gebruiken om machtigingen toe te kennen aan een *beveiligingsprincipal* , die een gebruiker, een groep of een Application Service-Principal kan zijn. De beveiligingsprincipal wordt geverifieerd door Azure AD en ontvangt een OAuth 2,0-token als resultaat. Dit token kan worden gebruikt voor het autoriseren van een toegangs aanvraag aan een Azure Digital Apparaatdubbels-exemplaar.
+U kunt Azure RBAC gebruiken om machtigingen toe te kennen aan een *beveiligingsprincipal*, die een gebruiker, een groep of een Application Service-Principal kan zijn. De beveiligingsprincipal wordt geverifieerd door Azure AD en ontvangt een OAuth 2,0-token als resultaat. Dit token kan worden gebruikt voor het autoriseren van een toegangs aanvraag aan een Azure Digital Apparaatdubbels-exemplaar.
 
 ### <a name="authentication-and-authorization"></a>Verificatie en autorisatie
 
@@ -93,7 +93,7 @@ Als een gebruiker probeert een actie uit te voeren die niet is toegestaan door h
 
 Een **servicetag** vertegenwoordigt een groep IP-adres voorvoegsels van een bepaalde Azure-service. Micro soft beheert de adres voorvoegsels die zijn opgenomen in het servicetag en werkt de servicetag automatisch bij met gewijzigde adressen, zodat de complexiteit van regel matige updates voor netwerk beveiligings regels wordt geminimaliseerd. Zie voor meer informatie over service tags  [*virtuele netwerk Tags*](../virtual-network/service-tags-overview.md). 
 
-U kunt service tags gebruiken voor het definiëren van netwerk toegangs beheer voor [netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md#security-rules)   of [Azure firewall](../firewall/service-tags.md)door service tags te gebruiken in plaats van specifieke IP-adressen wanneer u beveiligings regels maakt. Door de naam van de servicetag (in dit geval **AzureDigitalTwins** ) op te geven in het juiste *bron* -   of *doel*   veld van een regel, kunt u het verkeer voor de bijbehorende service toestaan of weigeren. 
+U kunt service tags gebruiken voor het definiëren van netwerk toegangs beheer voor [netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md#security-rules)   of [Azure firewall](../firewall/service-tags.md)door service tags te gebruiken in plaats van specifieke IP-adressen wanneer u beveiligings regels maakt. Door de naam van de servicetag (in dit geval **AzureDigitalTwins**) op te geven in het juiste *bron*-   of *doel*   veld van een regel, kunt u het verkeer voor de bijbehorende service toestaan of weigeren. 
 
 Hieronder vindt u de details van de **AzureDigitalTwins** -servicetag.
 
@@ -121,7 +121,7 @@ Azure Digital Apparaatdubbels zorgt voor versleuteling van gegevens in rust en i
 
 ## <a name="cross-origin-resource-sharing-cors"></a>CORS (Cross-Origin Resource Sharing)
 
-Azure Digital Apparaatdubbels ondersteunt momenteel geen **CORS (cross-Origin Resource Sharing)**. Als u dus een REST API aanroept vanuit een browser-app, een API Management-interface [(APIM)](../api-management/api-management-key-concepts.md) of een [Power apps](https://docs.microsoft.com/powerapps/powerapps-overview) -connector, wordt er mogelijk een beleids fout weer geven.
+Azure Digital Apparaatdubbels ondersteunt momenteel geen **CORS (cross-Origin Resource Sharing)**. Als u dus een REST API aanroept vanuit een browser-app, een API Management-interface [(APIM)](../api-management/api-management-key-concepts.md) of een [Power apps](/powerapps/powerapps-overview) -connector, wordt er mogelijk een beleids fout weer geven.
 
 U kunt dit probleem op een van de volgende manieren oplossen:
 * De CORS-header `Access-Control-Allow-Origin` van het bericht verwijderen. Deze header geeft aan of het antwoord kan worden gedeeld. 

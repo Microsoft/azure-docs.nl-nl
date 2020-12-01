@@ -8,12 +8,12 @@ keywords: Hadoop hoge Beschik baarheid
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/07/2020
-ms.openlocfilehash: c322380d6a41e69baa8f753b84c0bc074f334647
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 0275fa4cc46dff8781d73563fd250b1ec62ddd56
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547024"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96344110"
 ---
 # <a name="azure-hdinsight-business-continuity-architectures"></a>Azure HDInsight-architectuur voor bedrijfs continuïteit
 
@@ -50,13 +50,13 @@ Het secundaire cluster is doorgaans alleen-lezen. U kunt het secundaire cluster 
 
 In een *actieve primaire, met secundaire architectuur op aanvraag* , schrijven toepassingen naar de actieve primaire regio terwijl er geen cluster in de secundaire regio wordt ingericht tijdens normale bewerkingen. SQL-meta Store en opslag in de secundaire regio zijn permanent, terwijl het HDInsight-cluster wordt gescripteerd en alleen op aanvraag wordt geïmplementeerd voordat de geplande Hive-replicatie wordt uitgevoerd.
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/active-primary-on-demand-secondary.png" alt-text="Architectuur van Hive-en interactieve query's":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/active-primary-on-demand-secondary.png" alt-text="actief primair met on-demand secundair":::
 
 #### <a name="hive-active-primary-with-standby-secondary"></a>Hive actief primair met stand-by-secundair
 
-In een *actief primair met stand-by secundair* , schrijven toepassingen naar de actieve primaire regio terwijl een stand-by omlaag geschaald secundair cluster in de modus alleen-lezen wordt uitgevoerd tijdens normale bewerkingen. Tijdens normale bewerkingen kunt u ervoor kiezen om regio-specifieke Lees bewerkingen te offloaden naar een secundaire.
+In een *actief primair met stand-by secundair*, schrijven toepassingen naar de actieve primaire regio terwijl een stand-by omlaag geschaald secundair cluster in de modus alleen-lezen wordt uitgevoerd tijdens normale bewerkingen. Tijdens normale bewerkingen kunt u ervoor kiezen om regio-specifieke Lees bewerkingen te offloaden naar een secundaire.
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/active-primary-standby-secondary.png" alt-text="Architectuur van Hive-en interactieve query's":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/active-primary-standby-secondary.png" alt-text="actief primair met stand-by-secundair":::
 
 Zie [Apache Hive replicatie in azure HDInsight-clusters](./interactive-query/apache-hive-replication.md) voor meer informatie over Hive-replicatie en code voorbeelden.
 
@@ -85,13 +85,13 @@ Als er klantspecifieke bibliotheken zijn die meer dan HDInsight bieden, moeten z
 
 Toepassingen lezen en schrijven naar Spark-en Hive-clusters in de primaire regio terwijl er geen clusters in de secundaire regio worden ingericht tijdens de normale werking. SQL meta Store, Hive-opslag en Spark-opslag zijn permanent in de secundaire regio. De Spark-en Hive-clusters worden op aanvraag gescripteerd en geïmplementeerd. Hive-replicatie wordt gebruikt om Hive-opslag en Hive-meta Stores te repliceren, terwijl Azure Data Factory `DistCP` kan worden gebruikt voor het kopiëren van zelfstandige Spark-opslag. Hive-clusters moeten worden geïmplementeerd voordat elke Hive-replicatie wordt uitgevoerd vanwege de afhankelijkheids `DistCp` berekening.
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/active-primary-on-demand-secondary-spark.png" alt-text="Architectuur van Hive-en interactieve query's":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/active-primary-on-demand-secondary-spark.png" alt-text="actief primair met secundaire Apache Spark architectuur op aanvraag":::
 
 #### <a name="spark-active-primary-with-standby-secondary"></a>Spark actief primair met stand-by-secundair
 
 Toepassingen lezen en schrijven naar Spark-en Hive-clusters in de primaire regio terwijl stand-by omlaag geschaalde componenten en Spark-clusters in de modus alleen-lezen worden uitgevoerd in de secundaire regio tijdens normale bewerkingen. Tijdens de normale bewerkingen kunt u ervoor kiezen om regio-specifieke Hive en Spark-Lees bewerkingen te offloaden naar een secundaire.
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/active-primary-standby-secondary-spark.png" alt-text="Architectuur van Hive-en interactieve query's":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/active-primary-standby-secondary-spark.png" alt-text="actieve primaire stand-by secundaire Apache Spark ":::
 
 ## <a name="apache-hbase"></a>Apache HBase
 
@@ -131,19 +131,19 @@ In deze regio die is ingesteld, is replicatie van de primaire regio naar de secu
 
 Het secundaire cluster fungeert als een normaal HBase-cluster dat een eigen tabel kan hosten en lees-en schrijf bewerkingen kan uitvoeren vanuit regionale toepassingen. Schrijf bewerkingen voor de gerepliceerde tabellen of tabellen die van de oorspronkelijke naar de secundaire tabel worden uitgevoerd, worden echter niet teruggerepliceerd naar de primaire.
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/hbase-leader-follower.png" alt-text="Architectuur van Hive-en interactieve query's":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/hbase-leader-follower.png" alt-text="Model voor HBase Leader":::
 
 #### <a name="hbase-replication--leader--leader-model"></a>HBase-replicatie: toonaangevend model
 
 Deze regio die u hebt ingesteld, is vergelijkbaar met de installatie in één richting, behalve dat replicatie twee maal gebeurt tussen de primaire regio en de secundaire regio. Toepassingen kunnen beide clusters gebruiken in de modus lezen-schrijven en updates zijn asynchroon van elkaar.
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/hbase-leader-leader.png" alt-text="Architectuur van Hive-en interactieve query's":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/hbase-leader-leader.png" alt-text="HBase Leader-model":::
 
 #### <a name="hbase-replication-multi-region-or-cyclic"></a>HBase-replicatie: meerdere regio's of cyclisch
 
 Het replicatie model Multi-Region/cyclische is een uitbrei ding van HBase-replicatie en kan worden gebruikt voor het maken van een wereld wijd redundante HBase-architectuur met meerdere toepassingen die lees-en schrijf bewerkingen naar specifieke HBase-clusters van regio's. De clusters kunnen worden ingesteld in verschillende combi Naties van leider/leider of leider/volger, afhankelijk van de bedrijfs vereisten.
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/hbase-cyclic.png" alt-text="Architectuur van Hive-en interactieve query's":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/hbase-cyclic.png" alt-text="Cyclisch model HBase":::
 
 ## <a name="apache-kafka"></a>Apache Kafka
 
@@ -151,7 +151,7 @@ De beschik baarheid van meerdere regio's inschakelen HDInsight 4,0 ondersteunt K
 
 Afhankelijk van de levens duur van het onderwerp wanneer de replicatie is gestart, kan de MirrorMaker-onderwerp replicatie leiden tot verschillende offsets tussen de bron-en replica-onderwerpen. HDInsight Kafka-clusters bieden ook ondersteuning voor de replicatie van onderwerps partities. Dit is een functie voor hoge Beschik baarheid op het niveau van de afzonderlijke cluster.
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/kafka-replication.png" alt-text="Architectuur van Hive-en interactieve query's":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/kafka-replication.png" alt-text="Replicatie Apache Kafka":::
 
 ### <a name="apache-kafka-architectures"></a>Apache Kafka architecturen
 
@@ -172,7 +172,7 @@ Nadelen:
 * Uiteindelijke consistentie tussen de onderwerpen tussen actieve en passieve clusters.
 * Failback naar primair kan leiden tot inconsistentie van berichten in onderwerpen.
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/kafka-active-passive.png" alt-text="Architectuur van Hive-en interactieve query's":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/kafka-active-passive.png" alt-text="Actief passieve model Apache Kafka":::
 
 #### <a name="kafka-replication-active--active"></a>Kafka-replicatie: actief – actief
 
@@ -188,7 +188,7 @@ Nadelen:
 * Het probleem van circulaire replicatie moet worden verholpen.  
 * Bidirectionele replicatie leidt tot hogere kosten voor het uitvallen van regionale gegevens.
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/kafka-active-active.png" alt-text="Architectuur van Hive-en interactieve query's":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/kafka-active-active.png" alt-text="Actief actief model Apache Kafka":::
 
 ## <a name="hdinsight-enterprise-security-package"></a>HDInsight-Enterprise Security Package
 
@@ -198,11 +198,11 @@ Zwerver meta Store-replicatie:
 
 De meta Store van Zwerver wordt gebruikt voor het permanent opslaan en verwerken van Zwerver-beleid voor het beheer van de gegevens autorisatie. We raden u aan het onafhankelijke zwerver-beleid in primaire en secundaire beleids regels te onderhouden en de secundaire als een lees replica te onderhouden.
   
-Als het nodig is om zwerver-beleid te synchroniseren tussen de primaire en de secundaire, gebruikt u [zwerver importeren/exporteren](https://cwiki.apache.org/confluence/display/RANGER/User+Guide+For+Import-Export#:~:text=Ranger%20has%20introduced%20a%20new,can%20import%20and%20export%20policies.&text=Also%20can%20export%2Fimport%20a,repositories\)%20via%20Ranger%20Admin%20UI) om periodiek back-ups te maken en het beleid voor zwerver te importeren van primair naar secundair.
+Als het nodig is om zwerver-beleid te synchroniseren tussen de primaire en de secundaire, gebruikt u [zwerver importeren/exporteren](https://cwiki.apache.org/confluence/display/RANGER/User+Guide+For+Import-Export) om periodiek back-ups te maken en het beleid voor zwerver te importeren van primair naar secundair.
 
 Het repliceren van Zwerver-beleid tussen primair en secundair kan ertoe leiden dat de secundaire functie voor schrijven is ingeschakeld, wat kan leiden tot onopzettelijke schrijf bewerkingen op de secundaire, waardoor de gegevens inconsistent zijn.  
 
-:::image type="content" source="./media/hdinsight-business-continuity-architecture/hdinsight-enterprise-security-package.png" alt-text="Architectuur van Hive-en interactieve query's":::
+:::image type="content" source="./media/hdinsight-business-continuity-architecture/hdinsight-enterprise-security-package.png" alt-text="Enterprise Security Package architectuur van HDInsight":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

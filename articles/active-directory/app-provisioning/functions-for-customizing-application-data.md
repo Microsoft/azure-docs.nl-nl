@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 02/05/2020
 ms.author: kenwith
 ms.custom: contperfq2
-ms.openlocfilehash: 4c37923b0955652a0627808b19762095c18bdedc
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: a1d83f91ad82bddacb7e806e31151b8e4a7ab612
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92737665"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96344926"
 ---
 # <a name="reference-for-writing-expressions-for-attribute-mappings-in-azure-ad"></a>Naslag informatie voor het schrijven van expressies voor kenmerk toewijzingen in azure AD
 
@@ -453,10 +453,10 @@ Retourneert "Joh".
 * Wanneer **regexPattern** en **replacementValue** worden gegeven:
 
   * De functie past de **regexPattern** toe op de **bron** teken reeks en u kunt de regex-groeps namen gebruiken om de teken reeks voor **replacementValue** te maken
-* Als **regexPattern** , **regexGroupName** , **replacementValue** worden gegeven:
+* Als **regexPattern**, **regexGroupName**, **replacementValue** worden gegeven:
   
   * De functie past de **regexPattern** toe op de **bron** teken reeks en vervangt alle waarden die overeenkomen met **regexGroupName** met **replacementValue**
-* Als **regexPattern** , **regexGroupName** , **replacementAttributeName** worden gegeven:
+* Als **regexPattern**, **regexGroupName**, **replacementAttributeName** worden gegeven:
   
   * Als de **bron** geen waarde heeft, wordt de **bron** geretourneerd
   * Als de **bron** een waarde heeft, past de functie **de regexPattern** toe op de **bron** teken reeks en worden alle waarden die overeenkomen met **regexGroupName** vervangen door de waarde die is gekoppeld aan **replacementAttributeName**
@@ -466,9 +466,9 @@ Retourneert "Joh".
 | Naam | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **Bron** |Vereist |Tekenreeks |Doorgaans naam van het kenmerk van het **bron** object. |
-| **oldValue** |Optioneel |Tekenreeks |De waarde die moet worden vervangen in de **bron** of de **sjabloon** . |
+| **oldValue** |Optioneel |Tekenreeks |De waarde die moet worden vervangen in de **bron** of de **sjabloon**. |
 | **regexPattern** |Optioneel |Tekenreeks |Regex-patroon voor de waarde die in de **bron** moet worden vervangen. Of, wanneer **replacementPropertyName** wordt gebruikt, patroon om waarde uit **replacementPropertyName** te halen. |
-| **regexGroupName** |Optioneel |Tekenreeks |De naam van de groep in **regexPattern** . Alleen wanneer  **replacementPropertyName** wordt gebruikt, wordt de waarde van deze groep geëxtraheerd als **replacementValue** van **replacementPropertyName** . |
+| **regexGroupName** |Optioneel |Tekenreeks |De naam van de groep in **regexPattern**. Alleen wanneer  **replacementPropertyName** wordt gebruikt, wordt de waarde van deze groep geëxtraheerd als **replacementValue** van **replacementPropertyName**. |
 | **replacementValue** |Optioneel |Tekenreeks |Nieuwe waarde om oude te vervangen door. |
 | **replacementAttributeName** |Optioneel |Tekenreeks |Naam van het kenmerk dat moet worden gebruikt voor de vervangings waarde |
 | **sjabloon** |Optioneel |Tekenreeks |Als u een **sjabloon** waarde opgeeft, worden de **oude** waarden in de sjabloon gezocht en vervangen door de **bron** waarde. |
@@ -516,7 +516,7 @@ Retourneert "Joh".
 | Naam | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **Bron** |Vereist |Tekenreeks |**bron** waarde die moet worden bijgewerkt. |
-| **scheidingsteken** |Vereist |Tekenreeks |Hiermee geeft u het teken op dat wordt gebruikt om de teken reeks te splitsen (bijvoorbeeld: ",") |
+| **vorm** |Vereist |Tekenreeks |Hiermee geeft u het teken op dat wordt gebruikt om de teken reeks te splitsen (bijvoorbeeld: ",") |
 
 ---
 ### <a name="stripspaces"></a>StripSpaces
@@ -534,7 +534,7 @@ Retourneert "Joh".
 ### <a name="switch"></a>Switch
 **Functie:** Switch (bron, defaultValue, Key1, waarde1, Key2, waarde2,...)
 
-**Beschrijving:** Als de **bron** waarde overeenkomt met een **sleutel** , retourneert **waarde** voor die **sleutel** . Als de **bron** waarde niet overeenkomt met een sleutel, wordt **DefaultValue** geretourneerd.  **Sleutel** -en **waarde** -para meters moeten altijd in paren zijn. De functie verwacht altijd een even aantal para meters. De functie mag niet worden gebruikt voor referentiële kenmerken, zoals Manager. 
+**Beschrijving:** Als de **bron** waarde overeenkomt met een **sleutel**, retourneert **waarde** voor die **sleutel**. Als de **bron** waarde niet overeenkomt met een sleutel, wordt **DefaultValue** geretourneerd.  **Sleutel** -en **waarde** -para meters moeten altijd in paren zijn. De functie verwacht altijd een even aantal para meters. De functie mag niet worden gebruikt voor referentiële kenmerken, zoals Manager. 
 
 **Instellen** 
 
@@ -542,7 +542,7 @@ Retourneert "Joh".
 | --- | --- | --- | --- |
 | **Bron** |Vereist |Tekenreeks |**Bron** waarde die moet worden bijgewerkt. |
 | **Standaard** |Optioneel |Tekenreeks |De standaard waarde die moet worden gebruikt als de bron niet overeenkomt met een sleutel. Kan een lege teken reeks zijn (""). |
-| **prestatie** |Vereist |Tekenreeks |**Sleutel** voor het vergelijken van de **bron** waarde met. |
+| **sleutel** |Vereist |Tekenreeks |**Sleutel** voor het vergelijken van de **bron** waarde met. |
 | **value** |Vereist |Tekenreeks |Vervangings waarde voor de **bron** die overeenkomt met de sleutel. |
 
 ---
@@ -556,7 +556,7 @@ Retourneert "Joh".
 | Naam | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **Bron** |Vereist |Tekenreeks |Doorgaans naam van het kenmerk van het bron object |
-| **culturele** |Optioneel |Tekenreeks |De notatie voor de cultuur naam op basis van RFC 4646 is *languagecode2-Country/regioncode2* , waarbij *languagecode2* de taal code van twee letters is en *land/regioncode2* de subcultuurcode van twee letters is. Voor beelden zijn ja-JP voor Japans (Japan) en en-US voor Engels (Verenigde Staten). In gevallen waarin een taal code van twee letters niet beschikbaar is, wordt er een code van drie letters gebruikt die is afgeleid van ISO 639-2.|
+| **culturele** |Optioneel |Tekenreeks |De notatie voor de cultuur naam op basis van RFC 4646 is *languagecode2-Country/regioncode2*, waarbij *languagecode2* de taal code van twee letters is en *land/regioncode2* de subcultuurcode van twee letters is. Voor beelden zijn ja-JP voor Japans (Japan) en en-US voor Engels (Verenigde Staten). In gevallen waarin een taal code van twee letters niet beschikbaar is, wordt er een code van drie letters gebruikt die is afgeleid van ISO 639-2.|
 
 ---
 ### <a name="toupper"></a>ToUpper
@@ -569,7 +569,7 @@ Retourneert "Joh".
 | Naam | Vereist/herhalend | Type | Opmerkingen |
 | --- | --- | --- | --- |
 | **Bron** |Vereist |Tekenreeks |Doorgaans naam van het kenmerk van het bron object. |
-| **culturele** |Optioneel |Tekenreeks |De notatie voor de cultuur naam op basis van RFC 4646 is *languagecode2-Country/regioncode2* , waarbij *languagecode2* de taal code van twee letters is en *land/regioncode2* de subcultuurcode van twee letters is. Voor beelden zijn ja-JP voor Japans (Japan) en en-US voor Engels (Verenigde Staten). In gevallen waarin een taal code van twee letters niet beschikbaar is, wordt er een code van drie letters gebruikt die is afgeleid van ISO 639-2.|
+| **culturele** |Optioneel |Tekenreeks |De notatie voor de cultuur naam op basis van RFC 4646 is *languagecode2-Country/regioncode2*, waarbij *languagecode2* de taal code van twee letters is en *land/regioncode2* de subcultuurcode van twee letters is. Voor beelden zijn ja-JP voor Japans (Japan) en en-US voor Engels (Verenigde Staten). In gevallen waarin een taal code van twee letters niet beschikbaar is, wordt er een code van drie letters gebruikt die is afgeleid van ISO 639-2.|
 
 ---
 ### <a name="word"></a>Word
@@ -610,7 +610,7 @@ U moet een bekende domein naam verwijderen uit het e-mail adres van een gebruike
 **Voor beeld van invoer/uitvoer:** 
 
 * **Invoer** (e-mail adres): " john.doe@contoso.com "
-* **Uitvoer** : "John. Splinter"
+* **Uitvoer**: "John. Splinter"
 
 ### <a name="append-constant-suffix-to-user-name"></a>Een constant achtervoegsel toevoegen aan de gebruikers naam
 Als u een Sales Force-sandbox gebruikt, moet u mogelijk een extra achtervoegsel toevoegen aan al uw gebruikers namen voordat u ze synchroniseert.
@@ -620,8 +620,8 @@ Als u een Sales Force-sandbox gebruikt, moet u mogelijk een extra achtervoegsel 
 
 **Voor beeld van invoer/uitvoer:** 
 
-* **Invoer** : (userPrincipalName): " John.Doe@contoso.com "
-* **Uitvoer** : " John.Doe@contoso.com.test "
+* **Invoer**: (userPrincipalName): " John.Doe@contoso.com "
+* **Uitvoer**: " John.Doe@contoso.com.test "
 
 ### <a name="generate-user-alias-by-concatenating-parts-of-first-and-last-name"></a>Gebruikers alias genereren door delen van de voor-en achternaam samen te voegen
 U moet een gebruikers alias genereren door eerste drie letters van de voor naam van de gebruiker en eerste 5 letters van de achternaam van de gebruiker te nemen.
@@ -633,7 +633,7 @@ U moet een gebruikers alias genereren door eerste drie letters van de voor naam 
 
 * **Invoer** (voor gegeven): John
 * **Invoer** (achternaam): "Splinter"
-* **Uitvoer** : "JohDoe"
+* **Uitvoer**: "JohDoe"
 
 ### <a name="remove-diacritics-from-a-string"></a>Diakritische tekens uit een teken reeks verwijderen
 U moet tekens met accent tekens vervangen door gelijkwaardige tekens die geen accent tekens bevatten.
@@ -643,7 +643,7 @@ U moet tekens met accent tekens vervangen door gelijkwaardige tekens die geen ac
 **Voor beeld van invoer/uitvoer:** 
 
 * **Invoer** (voor OpgegevenNaam): "Zoë"
-* **Uitvoer** : "Zoe"
+* **Uitvoer**: "Zoe"
 
 ### <a name="split-a-string-into-a-multi-valued-array"></a>Een teken reeks splitsen in een matrix met meerdere waarden
 U moet een door komma's gescheiden lijst met teken reeksen maken en deze opsplitsen in een matrix die kan worden aangesloten op een kenmerk met meerdere waarden, zoals het kenmerk PermissionSets van Sales Force. In dit voor beeld is een lijst met machtigingen sets ingevuld in extensionAttribute5 in azure AD.
@@ -652,8 +652,8 @@ U moet een door komma's gescheiden lijst met teken reeksen maken en deze opsplit
 
 **Voor beeld van invoer/uitvoer:** 
 
-* **Invoer** (extensionAttribute5): "PermissionSetOne, PermisionSetTwo"
-* **Output** : ["PermissionSetOne", "PermissionSetTwo"]
+* **Invoer** (extensionAttribute5): "PermissionSetOne, PermissionSetTwo"
+* **Output**: ["PermissionSetOne", "PermissionSetTwo"]
 
 ### <a name="output-date-as-a-string-in-a-certain-format"></a>Uitvoer datum als een teken reeks in een bepaalde notatie
 U wilt datums naar een SaaS-toepassing verzenden in een bepaalde indeling. Stel dat u datums wilt opmaken voor ServiceNow.
@@ -665,7 +665,7 @@ U wilt datums naar een SaaS-toepassing verzenden in een bepaalde indeling. Stel 
 **Voor beeld van invoer/uitvoer:**
 
 * **Invoer** (extensionAttribute1): "20150123105347.1 z"
-* **Uitvoer** : "2015-01-23"
+* **Uitvoer**: "2015-01-23"
 
 ### <a name="replace-a-value-based-on-predefined-set-of-options"></a>Een waarde vervangen op basis van een vooraf gedefinieerde set opties
 
@@ -677,7 +677,7 @@ U moet de tijd zone van de gebruiker definiëren op basis van de status code die
 **Voor beeld van invoer/uitvoer:**
 
 * **Invoer** (status): "Qld"
-* **Uitvoer** : "Australië/Brisbane"
+* **Uitvoer**: "Australië/Brisbane"
 
 ### <a name="replace-characters-using-a-regular-expression"></a>Tekens vervangen met een reguliere expressie
 U moet tekens vinden die overeenkomen met een reguliere expressie waarde en deze verwijderen.
@@ -689,7 +689,7 @@ Replace ([mailnickname],, "[a-zA-Z_] *",, "",,,)
 **Voor beeld van invoer/uitvoer:**
 
 * **Invoer** (mailnickname: "john_doe72"
-* **Uitvoer** : "72"
+* **Uitvoer**: "72"
 
 ### <a name="convert-generated-userprincipalname-upn-value-to-lower-case"></a>Gegenereerde userPrincipalName-waarde converteren naar kleine letters
 In het onderstaande voor beeld wordt de UPN-waarde gegenereerd door het samen voegen van de bron velden PreferredFirstName en PreferredLastName en de functie ToLower werkt op de gegenereerde teken reeks om alle tekens te converteren naar kleine letters. 
@@ -700,7 +700,7 @@ In het onderstaande voor beeld wordt de UPN-waarde gegenereerd door het samen vo
 
 * **Invoer** (PreferredFirstName): "John"
 * **Invoer** (PreferredLastName): "Smith"
-* **Uitvoer** : " john.smith@contoso.com "
+* **Uitvoer**: " john.smith@contoso.com "
 
 ### <a name="generate-unique-value-for-userprincipalname-upn-attribute"></a>Genereer een unieke waarde voor het kenmerk userPrincipalName (UPN)
 Op basis van de voor naam van de gebruiker, de middelste naam en de achternaam, moet u een waarde voor het UPN-kenmerk genereren en controleren of de uniekheid in de AD-doel directory is voordat u de waarde aan het UPN-kenmerk toewijst.
@@ -719,9 +719,9 @@ Op basis van de voor naam van de gebruiker, de middelste naam en de achternaam, 
 
 * **Invoer** (PreferredFirstName): "John"
 * **Invoer** (PreferredLastName): "Smith"
-* **Uitvoer** : " John.Smith@contoso.com " als UPN-waarde van John.Smith@contoso.com niet al bestaat in de map
-* **Uitvoer** : " J.Smith@contoso.com " als UPN-waarde John.Smith@contoso.com al bestaat in de map
-* **Uitvoer** : " Jo.Smith@contoso.com " als de bovenstaande twee UPN-waarden al bestaan in de map
+* **Uitvoer**: " John.Smith@contoso.com " als UPN-waarde van John.Smith@contoso.com niet al bestaat in de map
+* **Uitvoer**: " J.Smith@contoso.com " als UPN-waarde John.Smith@contoso.com al bestaat in de map
+* **Uitvoer**: " Jo.Smith@contoso.com " als de bovenstaande twee UPN-waarden al bestaan in de map
 
 ### <a name="flow-mail-value-if-not-null-otherwise-flow-userprincipalname"></a>Stroom-mail waarde indien niet NULL, anders flow userPrincipalName
 U wilt het kenmerk mail stroomren als het aanwezig is. Als dat niet het geval is, wilt u in plaats daarvan de waarde van userPrincipalName door lopen.
@@ -733,12 +733,12 @@ U wilt het kenmerk mail stroomren als het aanwezig is. Als dat niet het geval is
 
 * **Invoer** (mail): null
 * **Invoer** (userPrincipalName): " John.Doe@contoso.com "
-* **Uitvoer** : " John.Doe@contoso.com "
+* **Uitvoer**: " John.Doe@contoso.com "
 
 ## <a name="related-articles"></a>Gerelateerde artikelen
-* [Gebruikers inrichting en ongedaan maken van de inrichting van SaaS-apps automatiseren](../app-provisioning/user-provisioning.md)
+* [Automatisch gebruikers voor SaaS-apps inrichten en de inrichting ongedaan maken](../app-provisioning/user-provisioning.md)
 * [Kenmerk toewijzingen aanpassen voor het inrichten van gebruikers](../app-provisioning/customize-application-attributes.md)
-* [Filters voor het inrichten van gebruikers in bereik](define-conditional-rules-for-provisioning-user-accounts.md)
+* [Bereikfilters voor het inrichten van gebruikers](define-conditional-rules-for-provisioning-user-accounts.md)
 * [Using SCIM to enable automatic provisioning of users and groups from Azure Active Directory to applications](../app-provisioning/use-scim-to-provision-users-and-groups.md) (SCIM gebruiken om in te stellen dat gebruikers en groepen van Azure Active Directory automatisch worden ingericht voor toepassingen)
 * [Meldingen voor het inrichten van accounts](../app-provisioning/user-provisioning.md)
-* [Lijst met zelf studies voor het integreren van SaaS-apps](../saas-apps/tutorial-list.md)
+* [Lijst met zelfstudies voor het integreren van SaaS-apps](../saas-apps/tutorial-list.md)

@@ -1,14 +1,14 @@
 ---
 title: Overzicht van sjablonen
-description: Beschrijft de voor delen van het gebruik van Azure Resource Manager sjablonen voor het implementeren van resources.
+description: Beschrijft de voor delen van het gebruik van Azure Resource Manager sjablonen (ARM-sjablonen) voor de implementatie van resources.
 ms.topic: conceptual
 ms.date: 06/22/2020
-ms.openlocfilehash: 188fd5782795a4fb5456978a2a596cabc6dfd874
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: e25404fc74456f99a4d41c25786b34b6e1f3edda
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/30/2020
-ms.locfileid: "96325057"
+ms.locfileid: "96342325"
 ---
 # <a name="what-are-arm-templates"></a>Wat zijn ARM-sjablonen?
 
@@ -16,7 +16,7 @@ Dankzij de overstap naar de Cloud hebben veel teams flexibele ontwikkelings meth
 
 Om aan deze uitdagingen te voldoen, kunt u implementaties automatiseren en de infra structuur als code gebruiken. In code definieert u de infra structuur die moet worden geïmplementeerd. De code van de infra structuur wordt onderdeel van het project. Net als bij de toepassings code slaat u de infrastructuur code op in een bron opslagplaats en maakt u er een versie van. Een van uw team leden kan de code uitvoeren en vergelijk bare omgevingen implementeren.
 
-Gebruik Azure Resource Manager (ARM)-Sjablonen om de infra structuur te implementeren als code voor uw Azure-oplossingen. De sjabloon is een JavaScript Object Notation-bestand (JSON) waarmee de infra structuur en configuratie voor uw project worden gedefinieerd. De sjabloon gebruikt een declaratieve syntaxis. Dit is een syntaxis waarmee u kunt aangeven wat u wilt implementeren zonder hiervoor de nodige reeks programmeeropdrachten te hoeven maken. In de sjabloon geeft u de resources op die u wilt implementeren en de eigenschappen voor deze resources.
+Gebruik Azure Resource Manager sjablonen (ARM-sjablonen) om de infra structuur te implementeren als code voor uw Azure-oplossingen. De sjabloon is een JavaScript Object Notation-bestand (JSON) waarmee de infra structuur en configuratie voor uw project worden gedefinieerd. De sjabloon gebruikt een declaratieve syntaxis. Dit is een syntaxis waarmee u kunt aangeven wat u wilt implementeren zonder hiervoor de nodige reeks programmeeropdrachten te hoeven maken. In de sjabloon geeft u de resources op die u wilt implementeren en de eigenschappen voor deze resources.
 
 ## <a name="why-choose-arm-templates"></a>Waarom kiest u ARM-sjablonen?
 

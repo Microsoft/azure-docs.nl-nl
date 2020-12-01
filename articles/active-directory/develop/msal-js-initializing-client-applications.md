@@ -13,12 +13,12 @@ ms.date: 07/17/2020
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev, devx-track-js
-ms.openlocfilehash: ea8629e53ec793b4a63c817b6ec83278a2d23871
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 6b5093c5a1a45aed3493fabd7a362b0579998171
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92674078"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96343583"
 ---
 # <a name="initialize-client-applications-using-msaljs"></a>Client toepassingen initialiseren met MSAL.js
 
@@ -37,7 +37,7 @@ Nadat u uw app hebt geregistreerd, hebt u enkele of alle van de volgende waarden
 | Waarde | Vereist | Beschrijving |
 |:----- | :------: | :---------- |
 | (Client-)id van de app | Vereist | Een GUID die uw toepassing op unieke wijze identificeert binnen het micro soft Identity-platform. |
-| Instantie | Optioneel | De URL van de identiteits provider (het *exemplaar* ) en de *doel groep voor aanmelding* voor uw toepassing. Het exemplaar en de doel groep bij het samen voegen van de *instantie* . |
+| Instantie | Optioneel | De URL van de identiteits provider (het *exemplaar*) en de *doel groep voor aanmelding* voor uw toepassing. Het exemplaar en de doel groep bij het samen voegen van de *instantie*. |
 | (Tenant-)id van de map | Optioneel | Geef dit op als u een line-of-Business-toepassing wilt bouwen voor uw organisatie, ook wel een *toepassing met één Tenant* genoemd. |
 | Omleidings-URI | Optioneel | Als u een web-app bouwt, `redirectUri` geeft de opgegeven locatie aan waar de ID-provider (het micro soft Identity-platform) de beveiligings tokens moet retour neren die het heeft uitgegeven. |
 
@@ -108,7 +108,7 @@ Roep [handleRedirectPromise][msal-js-handleredirectpromise] aan als uw toepassin
 Er zijn drie mogelijke resultaten van de belofte:
 
 - `.then` wordt aangeroepen en `tokenResponse` is een waarheid: de toepassing wordt geretourneerd vanuit een omleidings bewerking die is geslaagd.
-- `.then` wordt aangeroepen en `tokenResponse` is onwaar ( `null` ): de toepassing wordt niet geretourneerd vanuit een omleidings bewerking.
+- `.then` wordt aangeroepen en `tokenResponse` is False ( `null` ): de toepassing wordt niet geretourneerd vanuit een omleidings bewerking.
 - `.catch` wordt aangeroepen: de toepassing wordt geretourneerd vanuit een omleidings bewerking en er is een fout opgetreden.
 
 ## <a name="initialize-msaljs-1x-apps"></a>Initialiseren MSAL.js 1. x-apps

@@ -11,15 +11,15 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/24/2020
+ms.date: 11/30/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 935c0bf76e298ab1e2e4d25fab8685ac4ce617db
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4c758dca9f6020fd948ad8c3a8cdf014306e8ae7
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95916160"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96343987"
 ---
 # <a name="azure-classic-subscription-administrators"></a>Klassieke abonnementsbeheerders van Azure
 
@@ -105,7 +105,7 @@ Volg deze stappen om de service beheerder in de Azure Portal te wijzigen.
 
 1. Meld u als accountbeheerder aan bij de [Azure-portal](https://portal.azure.com).
 
-1. Open [Abonnementen](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) en selecteer een abonnement.
+1. Open **Cost Management en facturering** en selecteer een abonnement.
 
 1. Klik in de linkernavigatiebalk op **Eigenschappen**.
 
@@ -138,9 +138,9 @@ De account beheerder is de gebruiker die zich voor het eerst aanmeldt voor het A
 
 Volg deze stappen om de account beheerder weer te geven.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
-1. Open [Abonnementen](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) en selecteer een abonnement.
+1. Open **Cost Management en facturering** en selecteer een abonnement.
 
 1. Klik in de linkernavigatiebalk op **Eigenschappen**.
 

@@ -11,19 +11,19 @@ ms.subservice: bing-image-search
 ms.topic: conceptual
 ms.date: 06/27/2019
 ms.author: aahi
-ms.openlocfilehash: 6fb1bdbad4455b55c3f6cc3b395526f637339847
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 2566b2cf950df915f8ea843c34ea1fb6f8e7ea21
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94592155"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96342002"
 ---
 # <a name="customize-and-suggest-image-search-queries"></a>Zoek query's voor afbeeldingen aanpassen en suggereren
 
 > [!WARNING]
-> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](https://aka.ms/cogsvcs/bingmove) is beschreven.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
 > Bing Search-API's die zijn ingericht met Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
-> Raadpleeg [Bing Search Services](https://aka.ms/cogsvcs/bingmigration) voor migratie-instructies.
+> Raadpleeg [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
 In dit artikel leest u hoe u query's kunt aanpassen en zoek termen kunt suggereren om naar de Bing Afbeeldingen zoeken-API te verzenden.
 
@@ -35,7 +35,7 @@ Als uw app een zoekvak bevat waarin zoek termen worden ingevoerd, kunt u de [Aut
 
 Als Bing de oorspronkelijke Zoek query kan segmenteren, bevat het geretourneerde [afbeeldingen](/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#images) -object `pivotSuggestions` . Suggesties voor draai grafieken kunnen worden weer gegeven als optionele zoek termen voor de gebruiker. Als de oorspronkelijke query bijvoorbeeld *micro soft-Opper vlak* was, kan de query door Bing worden gesegmenteerd in *micro soft* en het *Opper vlak* en kunnen er voor elke draai grafiek suggesties worden gegeven. Deze suggesties kunnen worden weer gegeven als optionele query termen aan de gebruiker.
 
-In het volgende voor beeld ziet u de draai suggesties voor het *micro soft-Opper vlak* :  
+In het volgende voor beeld ziet u de draai suggesties voor het *micro soft-Opper vlak*:  
 
 ```json
 {

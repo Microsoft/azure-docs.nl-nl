@@ -11,12 +11,12 @@ ms.topic: reference
 ms.date: 10/26/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: a4e76e3924b1b14660dce8a3b58f7dd5b2715eec
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: e17c390dddcb2af9fdc83b45ae812ef1fff7f1c3
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92670117"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96345079"
 ---
 # <a name="define-a-self-asserted-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Een zelf-bevestigd technisch profiel definiëren in een Azure Active Directory B2C aangepast beleid
 
@@ -53,7 +53,7 @@ In een zelf-bevestigd technisch profiel kunt u de **InputClaims** -en **InputCla
 
 ## <a name="display-claims"></a>Claims weer geven
 
-De functie voor het weer geven van claims is momenteel beschikbaar als **Preview-versie** .
+De functie voor het weer geven van claims is momenteel beschikbaar als **Preview-versie**.
 
 Het **DisplayClaims** -element bevat een lijst met claims die op het scherm moeten worden weer gegeven voor het verzamelen van gegevens van de gebruiker. Als u de waarden van weer gave claims vooraf wilt invullen, gebruikt u de invoer claims die eerder zijn beschreven. Het element kan ook een standaard waarde bevatten.
 
@@ -133,10 +133,10 @@ In een niet-bevestigd technisch profiel retourneert de claim verzameling output 
 
 Uitvoer claims gebruiken wanneer:
 
-- **Claims worden uitgevoerd door trans formatie van uitvoer claims** .
+- **Claims worden uitgevoerd door trans formatie van uitvoer claims**.
 - Het **instellen van een standaard waarde in een uitvoer claim** zonder het verzamelen van gegevens van de gebruiker of het retour neren van de gegevens uit het technische profiel voor validatie. Het `LocalAccountSignUpWithLogonEmail` zelfondertekende technische profiel stelt de **uitgevoerde-SelfAsserted-invoer** claim in op `true` .
 - **Een technisch profiel voor validatie retourneert de uitvoer claims** -uw technische profiel kan een validatie technische profiel aanroepen dat enkele claims retourneert. U kunt de claims inbellen en terugsturen naar de volgende indelings stappen in de gebruikers reis. Als u zich bijvoorbeeld aanmeldt met een lokaal account, roept het zelfondertekende technische profiel met de naam het technische profiel voor validatie op met de naam `SelfAsserted-LocalAccountSignin-Email` `login-NonInteractive` . Dit technische profiel valideert de gebruikers referenties en retourneert ook het gebruikers profiel. Zoals ' userPrincipalName ', ' displayName ', ' naam ' en ' Achternaam '.
-- **Een besturings element voor weer gave retourneert de uitvoer claims** -uw technische profiel bevat mogelijk een verwijzing naar een [besturings element voor weer gave](display-controls.md). Het besturings element weer gave retourneert enkele claims, zoals het geverifieerde e-mail adres. U kunt de claims inbellen en terugsturen naar de volgende indelings stappen in de gebruikers reis. De functie voor het weer geven van besturings elementen is momenteel beschikbaar als **Preview-versie** .
+- **Een besturings element voor weer gave retourneert de uitvoer claims** -uw technische profiel bevat mogelijk een verwijzing naar een [besturings element voor weer gave](display-controls.md). Het besturings element weer gave retourneert enkele claims, zoals het geverifieerde e-mail adres. U kunt de claims inbellen en terugsturen naar de volgende indelings stappen in de gebruikers reis. De functie voor het weer geven van besturings elementen is momenteel beschikbaar als **Preview-versie**.
 
 In het volgende voor beeld wordt het gebruik van een zelf-bevestigd technisch profiel gedemonstreerd dat zowel claims als uitvoer claims gebruikt.
 

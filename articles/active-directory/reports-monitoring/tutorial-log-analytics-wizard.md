@@ -11,12 +11,12 @@ author: MarkusVi
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e6b03a2f9dd0089b1112000804e46f3d214cd3c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 2bdf3a763dc71eb842496775b6cc91b8ca39b4b3
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96000756"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96343838"
 ---
 # <a name="tutorial-configure-the-log-analytics-wizard"></a>Zelfstudie: De wizard Log Analytics configureren
 
@@ -172,7 +172,7 @@ De resultaten op bewerkingsnaam draaien
 
 Bewakings- en aanmeldingslogboeken samenvoegen met behulp van een inner join:
 
-`AuditLogs |where OperationName contains "Add User" |extend UserPrincipalName = tostring(TargetResources[0].userPrincipalName) | |project TimeGenerated , UserPrincipalName |join kind = inner (SigninLogs) on UserPrincipalName |summarize arg_min(TimeGenerated, *) by UserPrincipalName |extend SigninDate = TimeGenerated` 
+`AuditLogs |where OperationName contains "Add User" |extend UserPrincipalName = tostring(TargetResources[0].userPrincipalName) | |project TimeGenerated, UserPrincipalName |join kind = inner (SigninLogs) on UserPrincipalName |summarize arg_min(TimeGenerated, *) by UserPrincipalName |extend SigninDate = TimeGenerated` 
 
 
 Het aantal ondertekeningen per client-app-type weergeven:

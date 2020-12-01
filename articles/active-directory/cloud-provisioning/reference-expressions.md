@@ -11,12 +11,12 @@ ms.date: 12/02/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c14f406e5671e1eefb43f0208044f9945e446267
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1a775ce6b7c560783a22697c5dd92288c5d5b7d4
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89226570"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96343702"
 ---
 # <a name="writing-expressions-for-attribute-mappings-in-azure-active-directory"></a>Expressies schrijven voor kenmerk toewijzingen in Azure Active Directory
 Wanneer u Cloud inrichting configureert, is een van de typen kenmerk toewijzingen die u kunt opgeven een expressie toewijzing. 
@@ -65,7 +65,7 @@ De syntaxis voor expressies voor kenmerk toewijzingen is reminiscent van Visual 
 |[Gebleven](#left)|De functie Left retourneert een opgegeven aantal tekens vanaf de linkerkant van een teken reeks.|
 |[Klemstoonstreepje](#mid) |Retourneert een subtekenreeks van de bron waarde. Een subtekenreeks is een teken reeks die slechts een aantal tekens uit de bron teken reeks bevat.|
 |[NormalizeDiacritics](#normalizediacritics)|Vereist één teken reeks argument. Retourneert de teken reeks, maar waarbij alle diakritische tekens worden vervangen door gelijkwaardige tekens die niet van het diakritische teken zijn.|
-|[Ten](#not) |Hiermee wordt de Booleaanse waarde van de **bron**gespiegeld. Als de **bron** waarde '*True*' is, wordt '*False*' geretourneerd. Anders wordt '*True*' geretourneerd.| 
+|[Ten](#not) |Hiermee wordt de Booleaanse waarde van de **bron** gespiegeld. Als de **bron** waarde '*True*' is, wordt '*False*' geretourneerd. Anders wordt '*True*' geretourneerd.| 
 |[RemoveDuplicates](#removeduplicates)|De functie RemoveDuplicates gebruikt een teken reeks met meerdere waarden en zorg ervoor dat elke waarde uniek is.| 
 |[Vervangen](#replace) |Vervangt waarden binnen een teken reeks. | 
 |[SelectUniqueValue](#selectuniquevalue)|Er zijn mini maal twee argumenten vereist. Dit zijn de regels voor het genereren van unieke waarden die zijn gedefinieerd met behulp van expressies. De functie evalueert elke regel en controleert vervolgens de waarde die is gegenereerd voor uniekheid in de doel-app/-directory.| 
@@ -73,7 +73,7 @@ De syntaxis voor expressies voor kenmerk toewijzingen is reminiscent van Visual 
 |[Delen](#split)|Hiermee splitst u een teken reeks in een matrix met meerdere waarden met behulp van het opgegeven scheidings teken.|
 |[StringFromSID](#stringfromsid)|Met de functie StringFromSid wordt een byte matrix met een beveiligings-id omgezet in een teken reeks.| 
 |[StripSpaces](#stripspaces) |Verwijdert alle spatie tekens ("") uit de bron teken reeks.| 
-|[/Tijdnotatie](#switch)|Als de **bron** waarde overeenkomt met een **sleutel**, retourneert **waarde** voor die **sleutel**. | 
+|[Switch](#switch)|Als de **bron** waarde overeenkomt met een **sleutel**, retourneert **waarde** voor die **sleutel**. | 
 |[ToLower](#tolower)|Neemt een *bron* teken reeks waarde en converteert deze in kleine letters met de opgegeven cultuur regels.| 
 |[ToUpper](#toupper)|Neemt een *bron* teken reeks waarde en converteert deze in hoofd letters met de opgegeven cultuur regels.|
 |[Interne](#trim)|De functie Trim verwijdert voor loop-en volg spaties uit een teken reeks.|
@@ -87,7 +87,7 @@ De syntaxis voor expressies voor kenmerk toewijzingen is reminiscent van Visual 
 
 **Instellen**<br> 
 
-   | Naam | Vereist/herhalend | Type | Notities |
+   | Naam | Vereist/herhalend | Type | Opmerkingen |
    | --- | --- | --- | --- |
    | **Bron** |Vereist |Tekenreeks |Doorgaans naam van het kenmerk van het bron object. |
    | **achtervoegsel** |Vereist |Tekenreeks |De teken reeks die u wilt toevoegen aan het einde van de bron waarde. |
@@ -250,7 +250,7 @@ Als het kenmerk AccountName niet aanwezig is, genereert een fout op het object.
 
 **Instellen**<br> 
 
-   | Naam | Vereist/herhalend | Type | Notities |
+   | Naam | Vereist/herhalend | Type | Opmerkingen |
    | --- | --- | --- | --- |
    | **Bron** |Vereist |Tekenreeks |Doorgaans naam van het kenmerk van het bron object. |
    | **inputFormat** |Vereist |Tekenreeks |Verwachte indeling van de bron waarde. Zie [/DotNet/Standard/Base-types/Custom-date-and-time-format-strings](/dotnet/standard/base-types/custom-date-and-time-format-strings)voor ondersteunde indelingen. |
@@ -289,7 +289,7 @@ De functie InStr zoekt het eerste exemplaar van een subtekenreeks in een teken r
 
 `num InStr(str stringcheck, str stringmatch)`  
 `num InStr(str stringcheck, str stringmatch, num start)`  
-`num InStr(str stringcheck, str stringmatch, num start , enum compare)`
+`num InStr(str stringcheck, str stringmatch, num start, enum compare)`
 
 * stringcheck: teken reeks die moet worden doorzocht
 * stringmatch: teken reeks die moet worden gevonden
@@ -392,7 +392,7 @@ Als een van de bron waarden een kenmerk met meerdere waarden is, wordt elke waar
 
 **Instellen**<br> 
 
-   | Naam | Vereist/herhalend | Type | Notities |
+   | Naam | Vereist/herhalend | Type | Opmerkingen |
    | --- | --- | --- | --- |
    | **scheiding** |Vereist |Tekenreeks |Teken reeks die wordt gebruikt om bron waarden te scheiden wanneer ze worden samengevoegd tot één teken reeks. Kan zijn als er geen scheidings teken is vereist. |
    | **source1 ... Bronn** |Vereist, variabele-aantal keren |Tekenreeks |Teken reeks waarden die samen moeten worden samengevoegd. |
@@ -429,7 +429,7 @@ Retourneert `Joh` .
 
 **Instellen**<br> 
 
-   | Naam | Vereist/herhalend | Type | Notities |
+   | Naam | Vereist/herhalend | Type | Opmerkingen |
    | --- | --- | --- | --- |
    | **Bron** |Vereist |Tekenreeks |Meestal naam van het kenmerk. |
    | **starten** |Vereist |geheel getal |Index in de **bron** teken reeks waarin de subtekenreeks moet worden gestart. Het eerste teken in de teken reeks heeft index 1, tweede teken heeft index 2, enzovoort. |
@@ -443,7 +443,7 @@ Retourneert `Joh` .
 
 **Instellen**<br> 
 
-   | Naam | Vereist/herhalend | Type | Notities |
+   | Naam | Vereist/herhalend | Type | Opmerkingen |
    | --- | --- | --- | --- |
    | **Bron** |Vereist |Tekenreeks | Meestal een voor naam-of achternaam-kenmerk. |
 
@@ -451,11 +451,11 @@ Retourneert `Joh` .
 ### <a name="not"></a>Not
 **Functieassembly**<br> Niet (bron)
 
-**Beschrijving:**<br> Hiermee wordt de Booleaanse waarde van de **bron**gespiegeld. Als de **bron** waarde '*True*' is, wordt '*False*' geretourneerd. Anders wordt '*True*' geretourneerd.
+**Beschrijving:**<br> Hiermee wordt de Booleaanse waarde van de **bron** gespiegeld. Als de **bron** waarde '*True*' is, wordt '*False*' geretourneerd. Anders wordt '*True*' geretourneerd.
 
 **Instellen**<br> 
 
-   | Naam | Vereist/herhalend | Type | Notities |
+   | Naam | Vereist/herhalend | Type | Opmerkingen |
    | --- | --- | --- | --- |
    | **Bron** |Vereist |Booleaanse teken reeks |Verwachte **bron** waarden zijn ' True ' of ' false '. |
 
@@ -497,11 +497,11 @@ Vervangt waarden binnen een teken reeks. Het werkt anders afhankelijk van de opg
 
 **Instellen**<br> 
 
-   | Naam | Vereist/herhalend | Type | Notities |
+   | Naam | Vereist/herhalend | Type | Opmerkingen |
    | --- | --- | --- | --- |
    | **Bron** |Vereist |Tekenreeks |Doorgaans naam van het kenmerk van het **bron** object. |
    | **oldValue** |Optioneel |Tekenreeks |De waarde die moet worden vervangen in de **bron** of de **sjabloon**. |
-   | **regexPattern** |Optioneel |Tekenreeks |Regex-patroon voor de waarde die in de **bron**moet worden vervangen. Of, wanneer **replacementPropertyName** wordt gebruikt, patroon om waarde uit **replacementPropertyName**te halen. |
+   | **regexPattern** |Optioneel |Tekenreeks |Regex-patroon voor de waarde die in de **bron** moet worden vervangen. Of, wanneer **replacementPropertyName** wordt gebruikt, patroon om waarde uit **replacementPropertyName** te halen. |
    | **regexGroupName** |Optioneel |Tekenreeks |De naam van de groep in **regexPattern**. Alleen wanneer  **replacementPropertyName** wordt gebruikt, wordt de waarde van deze groep geëxtraheerd als **replacementValue** van **replacementPropertyName**. |
    | **replacementValue** |Optioneel |Tekenreeks |Nieuwe waarde om oude te vervangen door. |
    | **replacementAttributeName** |Optioneel |Tekenreeks |Naam van het kenmerk dat moet worden gebruikt voor de vervangings waarde |
@@ -516,13 +516,13 @@ Vervangt waarden binnen een teken reeks. Het werkt anders afhankelijk van de opg
 > [!NOTE]
 > - Dit is een functie op het hoogste niveau en kan niet worden genest.
 > - Deze functie kan niet worden toegepast op kenmerken met een overeenkomende prioriteit.  
-> - Deze functie is alleen bedoeld om te worden gebruikt voor het maken van items. Wanneer u het gebruikt met een-kenmerk, moet u de eigenschap **toewijzing Toep assen** instellen op **alleen tijdens het maken**van een object.
+> - Deze functie is alleen bedoeld om te worden gebruikt voor het maken van items. Wanneer u het gebruikt met een-kenmerk, moet u de eigenschap **toewijzing Toep assen** instellen op **alleen tijdens het maken** van een object.
 > - Deze functie wordt momenteel alleen ondersteund voor werk dagen Active Directory het inrichten van de gebruiker. Het kan niet worden gebruikt met andere inrichtings toepassingen. 
 
 
 **Instellen**<br> 
 
-   | Naam | Vereist/herhalend | Type | Notities |
+   | Naam | Vereist/herhalend | Type | Opmerkingen |
    | --- | --- | --- | --- |
    | **uniqueValueRule1 ... uniqueValueRuleN** |Ten minste 2 zijn vereist, geen bovengrens |Tekenreeks | Lijst met regels voor het genereren van unieke waarden om te evalueren. |
 
@@ -535,7 +535,7 @@ Vervangt waarden binnen een teken reeks. Het werkt anders afhankelijk van de opg
 
 **Instellen**<br> 
 
-  | Naam | Vereist/herhalend | Type | Notities |
+  | Naam | Vereist/herhalend | Type | Opmerkingen |
   |--- | --- | --- | --- |
   | **AppRoleAssignments** |Vereist |Tekenreeks |object **[appRoleAssignments]** . |
 
@@ -547,10 +547,10 @@ Vervangt waarden binnen een teken reeks. Het werkt anders afhankelijk van de opg
 
 **Instellen**<br> 
 
-   | Naam | Vereist/herhalend | Type | Notities |
+   | Naam | Vereist/herhalend | Type | Opmerkingen |
    | --- | --- | --- | --- |
    | **Bron** |Vereist |Tekenreeks |**bron** waarde die moet worden bijgewerkt. |
-   | **scheidingsteken** |Vereist |Tekenreeks |Hiermee geeft u het teken op dat wordt gebruikt om de teken reeks te splitsen (bijvoorbeeld: ",") |
+   | **vorm** |Vereist |Tekenreeks |Hiermee geeft u het teken op dat wordt gebruikt om de teken reeks te splitsen (bijvoorbeeld: ",") |
 
 ---
 ### <a name="stringfromsid"></a>StringFromSid
@@ -568,7 +568,7 @@ Met de functie StringFromSid wordt een byte matrix met een beveiligings-id omgez
 
 **Instellen**<br> 
 
-   | Naam | Vereist/herhalend | Type | Notities |
+   | Naam | Vereist/herhalend | Type | Opmerkingen |
    | --- | --- | --- | --- |
    | **Bron** |Vereist |Tekenreeks |**bron** waarde die moet worden bijgewerkt. |
 
@@ -576,15 +576,15 @@ Met de functie StringFromSid wordt een byte matrix met een beveiligings-id omgez
 ### <a name="switch"></a>Switch
 **Functieassembly**<br> Switch (bron, defaultValue, Key1, waarde1, Key2, waarde2,...)
 
-**Beschrijving:**<br> Als de **bron** waarde overeenkomt met een **sleutel**, retourneert **waarde** voor die **sleutel**. Als de **bron** waarde niet overeenkomt met een sleutel, wordt **DefaultValue**geretourneerd.  **Sleutel** -en **waarde** -para meters moeten altijd in paren zijn. De functie verwacht altijd een even aantal para meters.
+**Beschrijving:**<br> Als de **bron** waarde overeenkomt met een **sleutel**, retourneert **waarde** voor die **sleutel**. Als de **bron** waarde niet overeenkomt met een sleutel, wordt **DefaultValue** geretourneerd.  **Sleutel** -en **waarde** -para meters moeten altijd in paren zijn. De functie verwacht altijd een even aantal para meters.
 
 **Instellen**<br> 
 
-   | Naam | Vereist/herhalend | Type | Notities |
+   | Naam | Vereist/herhalend | Type | Opmerkingen |
    | --- | --- | --- | --- |
    | **Bron** |Vereist |Tekenreeks |Te controleren **bron** waarde. |
    | **Standaard** |Optioneel |Tekenreeks |De standaard waarde die moet worden gebruikt als de bron niet overeenkomt met een sleutel. Kan een lege teken reeks zijn (""). |
-   | **prestatie** |Vereist |Tekenreeks |**Sleutel** voor het vergelijken van de **bron** waarde met. |
+   | **sleutel** |Vereist |Tekenreeks |**Sleutel** voor het vergelijken van de **bron** waarde met. |
    | **value** |Vereist |Tekenreeks |Vervangings waarde voor de **bron** die overeenkomt met de sleutel. |
 
 ---
@@ -595,7 +595,7 @@ Met de functie StringFromSid wordt een byte matrix met een beveiligings-id omgez
 
 **Instellen**<br> 
 
-   | Naam | Vereist/herhalend | Type | Notities |
+   | Naam | Vereist/herhalend | Type | Opmerkingen |
    | --- | --- | --- | --- |
    | **Bron** |Vereist |Tekenreeks |Doorgaans naam van het kenmerk van het bron object |
    | **culturele** |Optioneel |Tekenreeks |De notatie voor de cultuur naam op basis van RFC 4646 is *languagecode2-Country/regioncode2*, waarbij *languagecode2* de taal code van twee letters is en *land/regioncode2* de subcultuurcode van twee letters is. Voor beelden zijn ja-JP voor Japans (Japan) en en-US voor Engels (Verenigde Staten). In gevallen waarin een taal code van twee letters niet beschikbaar is, wordt er een code van drie letters gebruikt die is afgeleid van ISO 639-2.|
@@ -609,7 +609,7 @@ Met de functie StringFromSid wordt een byte matrix met een beveiligings-id omgez
 
 **Instellen**<br> 
 
-  | Naam | Vereist/herhalend | Type | Notities |
+  | Naam | Vereist/herhalend | Type | Opmerkingen |
   | --- | --- | --- | --- |
   | **Bron** |Vereist |Tekenreeks |Doorgaans naam van het kenmerk van het bron object. |
   | **culturele** |Optioneel |Tekenreeks |De notatie voor de cultuur naam op basis van RFC 4646 is *languagecode2-Country/regioncode2*, waarbij *languagecode2* de taal code van twee letters is en *land/regioncode2* de subcultuurcode van twee letters is. Voor beelden zijn ja-JP voor Japans (Japan) en en-US voor Engels (Verenigde Staten). In gevallen waarin een taal code van twee letters niet beschikbaar is, wordt er een code van drie letters gebruikt die is afgeleid van ISO 639-2.|
@@ -712,7 +712,7 @@ Splitsen ([extensionAttribute5], ",")
 
 **Voor beeld van invoer/uitvoer:** <br>
 
-* **Invoer** (extensionAttribute5): "PermissionSetOne, PermisionSetTwo"
+* **Invoer** (extensionAttribute5): "PermissionSetOne, PermissionSetTwo"
 * **Output**: ["PermissionSetOne", "PermissionSetTwo"]
 
 ### <a name="output-date-as-a-string-in-a-certain-format"></a>Uitvoer datum als een teken reeks in een bepaalde notatie

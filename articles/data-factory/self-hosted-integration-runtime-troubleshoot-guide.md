@@ -7,12 +7,12 @@ ms.service: data-factory
 ms.topic: troubleshooting
 ms.date: 11/17/2020
 ms.author: lle
-ms.openlocfilehash: 8195c4d072acce5345fa9752f97713aed22d962f
-ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
+ms.openlocfilehash: 635178999398287649d8630fc5262a385afc48b2
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96296951"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96341766"
 ---
 # <a name="troubleshoot-self-hosted-integration-runtime"></a>Problemen met zelf-hostende Integration runtime oplossen
 
@@ -752,7 +752,7 @@ Twee mogelijke redenen voor dit probleem:
 - Zorg er daarom voor dat het ADF-server certificaat en de bijbehorende certificaat keten worden vertrouwd door de computer waarop de SHIR is geïnstalleerd.
 - Voor de reden 2 vertrouwt u de vervangen basis-CA op de SHIR-machine of configureert u de proxy niet om het ADF server-certificaat te vervangen.
 
-Raadpleeg [dit artikel](https://docs.microsoft.com/skype-sdk/sdn/articles/installing-the-trusted-root-certificate) voor meer informatie over het vertrouwen van een certificaat in Windows.
+Raadpleeg [dit artikel](/skype-sdk/sdn/articles/installing-the-trusted-root-certificate) voor meer informatie over het vertrouwen van een certificaat in Windows.
 
 #### <a name="additional-info"></a>Aanvullende informatie
 We implementeren een nieuw SSL-certificaat dat is ondertekend vanuit DigiCert. Controleer of de globale hoofdmap G2 van DigiCert zich in de vertrouwde basis certificerings instantie bevindt.

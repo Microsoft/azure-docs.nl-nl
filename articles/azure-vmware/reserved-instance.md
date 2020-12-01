@@ -3,12 +3,12 @@ title: Bespaar kosten met het gereserveerde exemplaar van Azure VMware-oplossing
 description: Meer informatie over het kopen van een gereserveerde instantie voor de Azure VMware-oplossing.
 ms.topic: how-to
 ms.date: 11/12/2020
-ms.openlocfilehash: b57e985068adabccecbbdb43dd11bcf6596bf422
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 80780e9718001893b6960220b5004c1c29b2fec5
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578947"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327394"
 ---
 # <a name="save-costs-with-azure-vmware-solution"></a>Bespaar kosten met de Azure VMware-oplossing
 
@@ -22,7 +22,7 @@ Gereserveerde instanties zijn beschikbaar met enkele uitzonde ringen.
 
 -   **Onvoldoende quotum** : voor een reserverings scope in één/gedeeld abonnement moet het quotum van de host zijn opgenomen in het abonnement voor het nieuwe gereserveerde exemplaar. U kunt een [aanvraag voor quotum verhoging maken](enable-azure-vmware-solution.md) om dit probleem op te lossen.
 
--   **Aanbiedings recht** : u hebt een [Azure Enterprise Agreement (EA)](../cost-management-billing/manage/ea-portal-agreements.md) met micro soft nodig.
+-   **Aanbiedings recht**: u hebt een [Azure Enterprise Agreement (EA)](../cost-management-billing/manage/ea-portal-agreements.md) met micro soft nodig.
 
 -   **Capaciteits beperkingen** : in zeldzame omstandigheden beperkt Azure de aanschaf van nieuwe reserve ringen voor Azure VMware Solution host sku's vanwege een geringe capaciteit in een regio.
 
@@ -59,11 +59,11 @@ Deze vereisten zijn van toepassing op het kopen van een gereserveerde, toegeweze
    | Regio       | De Azure-regio die wordt gedekt door de reserve ring.   |
    | Grootte van de host    | AV36    |
    | Termijn         | Eén jaar of drie jaar.  |
-   | Hoeveelheid     | Het aantal exemplaren dat moet worden gekocht binnen de reserve ring. De hoeveelheid is het aantal actieve Azure VMware-oplossings hosts dat de facturerings korting kan krijgen.    |
+   | Aantal     | Het aantal exemplaren dat moet worden gekocht binnen de reserve ring. De hoeveelheid is het aantal actieve Azure VMware-oplossings hosts dat de facturerings korting kan krijgen.    |
 
 ### <a name="buy-reserved-instances-for-a-csp-subscription"></a>Gereserveerde instanties voor een CSP-abonnement kopen
 
-Csp's die gereserveerde instanties voor hun klanten willen aanschaffen, moeten de **beheerder namens** (administrate) in de documentatie van het [partner centrum](https://docs.microsoft.com/partner-center/azure-plan-manage)gebruiken. Raadpleeg voor meer informatie de [administrate-video (beheerder namens)](https://channel9.msdn.com/Series/cspdev/Module-11-Admin-On-Behalf-Of-AOBO) .
+Csp's die gereserveerde instanties voor hun klanten willen aanschaffen, moeten de **beheerder namens** (administrate) in de documentatie van het [partner centrum](/partner-center/azure-plan-manage)gebruiken. Raadpleeg voor meer informatie de [administrate-video (beheerder namens)](https://channel9.msdn.com/Series/cspdev/Module-11-Admin-On-Behalf-Of-AOBO) .
 
 1. Meld u aan bij [Partner Center](https://partner.microsoft.com).
 
@@ -73,7 +73,7 @@ Csp's die gereserveerde instanties voor hun klanten willen aanschaffen, moeten d
 
    :::image type="content" source="media/reserved-instances/csp-partner-center-aobo.png" alt-text="Het gebied klanten van micro soft-partner centrum" lightbox="media/reserved-instances/csp-partner-center-aobo.png":::
 
-4. Selecteer in het Azure Portal **alle services** -  >  **reserve ringen**.
+4. Selecteer in het Azure Portal **alle services**-  >  **reserve ringen**.
 
 5. Selecteer **Nu kopen** en selecteer vervolgens **Azure VMware-oplossing**.
 
@@ -88,7 +88,7 @@ Csp's die gereserveerde instanties voor hun klanten willen aanschaffen, moeten d
    | Regio       | De Azure-regio die wordt gedekt door de reserve ring.   |
    | Grootte van de host    | AV36    |
    | Termijn         | Eén jaar of drie jaar.  |
-   | Hoeveelheid     | Het aantal exemplaren dat moet worden gekocht binnen de reserve ring. De hoeveelheid is het aantal actieve Azure VMware-oplossings hosts dat de facturerings korting kan krijgen.     |
+   | Aantal     | Het aantal exemplaren dat moet worden gekocht binnen de reserve ring. De hoeveelheid is het aantal actieve Azure VMware-oplossings hosts dat de facturerings korting kan krijgen.     |
 
 Zie [Azure-reserve ringen weer geven als een Cloud Solution Provider (CSP)](../cost-management-billing/reservations/how-to-view-csp-reservations.md) -artikel voor meer informatie over het weer geven van de aangeschafte reserve ringen voor uw klant.
 
@@ -113,7 +113,7 @@ U kunt deze wijzigingen aanbrengen in een reserve ring na de aankoop:
 
 U kunt ook een reserve ring in kleinere segmenten splitsen of reserve ringen samen voegen. Geen van de wijzigingen veroorzaakt een nieuwe commerciële trans actie of wijzigt de eind datum van de reserve ring.
 
-Zie voor meer informatie over door CSP beheerde reserve ringen [verkoop Microsoft Azure reserve ringen aan klanten met behulp van partner centrum, de Azure portal of api's](https://docs.microsoft.com/partner-center/azure-reservations).
+Zie voor meer informatie over door CSP beheerde reserve ringen [verkoop Microsoft Azure reserve ringen aan klanten met behulp van partner centrum, de Azure portal of api's](/partner-center/azure-reservations).
 
 
 
@@ -122,7 +122,7 @@ Zie voor meer informatie over door CSP beheerde reserve ringen [verkoop Microsof
 >
 > - Een bestaande reserverings regio
 > - SKU
-> - Hoeveelheid
+> - Aantal
 > - Duur
 >
 >U kunt echter wel een reserve ring *uitwisselen* als u wijzigingen wilt aanbrengen.
@@ -131,4 +131,4 @@ Zie voor meer informatie over door CSP beheerde reserve ringen [verkoop Microsof
 
 Annulering, ruiling of terugbetaling van reserveringen is mogelijk met bepaalde beperkingen. Zie [Selfserviceopties voor inwisselen en retourneren van Azure-reserveringen](../cost-management-billing/reservations/exchange-and-refund-azure-reservations.md) voor meer informatie.
 
-Csp's kunnen reserve ringen annuleren, uitwisselen of terugbetalen, met bepaalde beperkingen, gekocht voor hun klant. Zie voor meer informatie [beheren, annuleren, uitwisselen of terugbetalen Microsoft Azure reserve ringen voor klanten](https://docs.microsoft.com/partner-center/azure-reservations-manage).
+Csp's kunnen reserve ringen annuleren, uitwisselen of terugbetalen, met bepaalde beperkingen, gekocht voor hun klant. Zie voor meer informatie [beheren, annuleren, uitwisselen of terugbetalen Microsoft Azure reserve ringen voor klanten](/partner-center/azure-reservations-manage).

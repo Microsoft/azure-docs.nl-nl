@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/04/2018
 ms.author: mikeray
-ms.openlocfilehash: db270224a753f815a2d94e6a1fa79ebbedf49278
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: f3723c792dfe962f2cbf16e3b167faf66c50a92e
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94991533"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327454"
 ---
 # <a name="backup-and-restore-for-sql-server-on-azure-vms"></a>Back-ups maken en herstellen voor SQL Server op virtuele machines in azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -31,7 +31,7 @@ In het eerste deel van dit artikel vindt u een overzicht van de beschik bare opt
 
 De volgende tabel bevat informatie over verschillende opties voor back-up en herstel voor SQL Server op Azure-Vm's:
 
-| Strategie | SQL-versies | Description |
+| Strategie | SQL-versies | Beschrijving |
 |---|---|---|
 | [Automatische back-up](#automated) | 2014<br/> 2016<br/> 2017 | Met automatische back-up kunt u regel matige back-ups plannen voor alle data bases op een SQL Server-VM. Back-ups worden Maxi maal 30 dagen opgeslagen in azure Storage. Vanaf SQL Server 2016 biedt automatische back-up v2 extra opties, zoals het configureren van hand matige planning en de frequentie van volledige en logboek back-ups. |
 | [Azure Backup voor SQL-VM's](#azbackup) | 2008<br/> 2012<br/> 2014<br/> 2016<br/> 2017 | Azure Backup biedt een back-upfunctie voor bedrijfs klasse voor SQL Server op Azure-Vm's. Met deze service kunt u back-ups centraal beheren voor meerdere servers en duizenden data bases. Data bases kunnen worden hersteld naar een bepaald punt in de tijd in de portal. Het biedt een aanpasbaar Bewaar beleid waarmee back-ups voor jaren kunnen worden onderhouden. |
@@ -93,7 +93,7 @@ In de volgende secties worden verschillende hand matige back-up-en herstel optie
 
 ### <a name="backup-to-attached-disks"></a>Back-up naar gekoppelde schijven
 
-Voor SQL Server op virtuele machines in azure kunt u systeem eigen back-up-en herstel technieken gebruiken met behulp van gekoppelde schijven op de virtuele machine voor het doel van de back-upbestanden. Er is echter een limiet voor het aantal schijven dat u kunt koppelen aan een virtuele machine van Azure, op basis van de [grootte van de virtuele machine](../../../virtual-machines/sizes.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json). Er is ook de overhead van schijf beheer die u kunt overwegen.
+Voor SQL Server op virtuele machines in azure kunt u systeem eigen back-up-en herstel technieken gebruiken met behulp van gekoppelde schijven op de virtuele machine voor het doel van de back-upbestanden. Er is echter een limiet voor het aantal schijven dat u kunt koppelen aan een virtuele machine van Azure, op basis van de [grootte van de virtuele machine](../../../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Er is ook de overhead van schijf beheer die u kunt overwegen.
 
 Zie [een volledige database back-up maken](/sql/relational-databases/backup-restore/create-a-full-database-backup-sql-server)voor een voor beeld van het hand matig maken van een back-up van een volledige data base met behulp van SQL Server Management Studio (SSMS) of Transact-SQL.
 

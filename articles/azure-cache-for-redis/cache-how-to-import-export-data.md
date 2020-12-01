@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 07/31/2017
 ms.author: yegu
-ms.openlocfilehash: e8bb1457bbf5d610518c3bc84768186972734099
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 9ee3b447b2b5f6dfa8972749c3c46ae01f79bfdc
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92536858"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327505"
 ---
 # <a name="import-and-export-data-in-azure-cache-for-redis"></a>Gegevens importeren en exporteren in azure cache voor redis
 Import/export is een Azure cache voor redis-gegevens beheer bewerking, waarmee u gegevens kunt importeren in azure-cache voor redis of gegevens uit Azure-cache exporteren voor redis door het importeren en exporteren van een Azure-cache voor de redis-data base (RDB) van een Premium-cache naar een BLOB in een Azure Storage-account.
@@ -36,7 +36,7 @@ Importeren kan worden gebruikt om redis compatibele RDB-bestanden te halen van e
 >
 >
 
-1. Als u een of meer geëxporteerde cache-blobs wilt importeren, [bladert u naar uw cache](cache-configure.md#configure-azure-cache-for-redis-settings) in de Azure Portal en klikt u op **gegevens importeren** in het **menu resource** .
+1. Als u een of meer geëxporteerde cache-blobs wilt importeren, [bladert u naar uw cache](cache-configure.md#configure-azure-cache-for-redis-settings) in de Azure Portal en klikt u op **gegevens importeren** in het **menu resource**.
 
     ![Gegevens importeren](./media/cache-how-to-import-export-data/cache-import-data.png)
 2. Klik op **BLOB (s) kiezen** en selecteer het opslag account dat de gegevens bevat die u wilt importeren.
@@ -45,7 +45,7 @@ Importeren kan worden gebruikt om redis compatibele RDB-bestanden te halen van e
 3. Klik op de container die de gegevens bevat die u wilt importeren.
 
     ![Container kiezen](./media/cache-how-to-import-export-data/cache-import-choose-container.png)
-4. Selecteer een of meer blobs die u wilt importeren door te klikken op het gebied links van de naam van de BLOB en vervolgens op **selecteren** .
+4. Selecteer een of meer blobs die u wilt importeren door te klikken op het gebied links van de naam van de BLOB en vervolgens op **selecteren**.
 
     ![Blobs kiezen](./media/cache-how-to-import-export-data/cache-import-choose-blobs.png)
 5. Klik op **importeren** om het import proces te starten.
@@ -64,9 +64,9 @@ Importeren kan worden gebruikt om redis compatibele RDB-bestanden te halen van e
 ## <a name="export"></a>Exporteren
 Met exporteren kunt u de gegevens die zijn opgeslagen in azure cache exporteren voor redis naar redis-compatibele RDB-bestanden. U kunt deze functie gebruiken om gegevens van één Azure-cache te verplaatsen voor een redis-exemplaar naar een ander of een andere redis-server. Tijdens het export proces wordt er een tijdelijk bestand gemaakt op de virtuele machine die als host fungeert voor de Azure-cache voor redis server-exemplaar, en wordt het bestand geüpload naar het aangewezen opslag account. Wanneer de export bewerking is voltooid met de status geslaagd of mislukt, wordt het tijdelijke bestand verwijderd.
 
-1. Als u de huidige inhoud van de cache naar de opslag ruimte wilt exporteren, [bladert u naar uw cache](cache-configure.md#configure-azure-cache-for-redis-settings) in de Azure Portal en klikt u op **gegevens exporteren** in het **menu resource** .
+1. Als u de huidige inhoud van de cache naar de opslag ruimte wilt exporteren, [bladert u naar uw cache](cache-configure.md#configure-azure-cache-for-redis-settings) in de Azure Portal en klikt u op **gegevens exporteren** in het **menu resource**.
 
-    ![Opslag container kiezen](./media/cache-how-to-import-export-data/cache-export-data-choose-storage-container.png)
+    ![In het navigatie deel venster voor contoso5premium is de optie gegevens exporteren in de beheer lijst gemarkeerd.](./media/cache-how-to-import-export-data/cache-export-data-choose-storage-container.png)
 2. Klik op **opslag container kiezen** en selecteer het gewenste opslag account. Het opslag account moet zich in hetzelfde abonnement en dezelfde regio bevinden als uw cache.
 
    > [!IMPORTANT]
@@ -74,9 +74,9 @@ Met exporteren kunt u de gegevens die zijn opgeslagen in azure cache exporteren 
    >
 
     ![Storage-account](./media/cache-how-to-import-export-data/cache-export-data-choose-account.png)
-3. Kies de gewenste BLOB-container en klik op **selecteren** . Als u een nieuwe container wilt gebruiken, klikt u op **container toevoegen** om deze eerst toe te voegen en selecteert u deze in de lijst.
+3. Kies de gewenste BLOB-container en klik op **selecteren**. Als u een nieuwe container wilt gebruiken, klikt u op **container toevoegen** om deze eerst toe te voegen en selecteert u deze in de lijst.
 
-    ![Opslag container kiezen](./media/cache-how-to-import-export-data/cache-export-data-container.png)
+    ![Op containers voor contoso55 is de optie + container gemarkeerd. Er bevindt zich één container in de lijst cachesaves en deze is geselecteerd en gemarkeerd. De optie selectie is geselecteerd en gemarkeerd.](./media/cache-how-to-import-export-data/cache-export-data-container.png)
 4. Typ een **voor voegsel voor de BLOB-naam** en klik op **exporteren** om het export proces te starten. Het voor voegsel van de blobnaam wordt gebruikt voor het voor voegsel van de namen van bestanden die door deze export bewerking worden gegenereerd.
 
     ![Exporteren](./media/cache-how-to-import-export-data/cache-export-data.png)

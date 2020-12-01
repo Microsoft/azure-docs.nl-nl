@@ -3,14 +3,14 @@ title: Overzicht van Azure Automation Updatebeheer
 description: Dit artikel bevat een overzicht van de functie Updatebeheer die updates implementeert voor uw Windows-en Linux-computers.
 services: automation
 ms.subservice: update-management
-ms.date: 11/23/2020
+ms.date: 11/30/2020
 ms.topic: conceptual
-ms.openlocfilehash: eadceb17d01b40deab656bdd6223cb8f0844f54f
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 37ab05ce7e963ab7fdc4d2b02e254adaa205446c
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95528241"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327488"
 ---
 # <a name="update-management-overview"></a>Overzicht van updatebeheer
 
@@ -72,14 +72,14 @@ De volgende tabel geeft een lijst van de ondersteunde besturings systemen voor u
 > [!NOTE]
 > Update-evaluatie van Linux-machines wordt alleen ondersteund in bepaalde regio's, zoals vermeld in het Automation-account en de tabel Log Analytics werkruimte [toewijzingen](../how-to/region-mappings.md#supported-mappings).
 
-|Besturingssysteem  |Opmerkingen  |
+|Besturingssysteem  |Notities  |
 |---------|---------|
 |Windows Server 2019 (Data Center/Data Center core/Standard)<br><br>Windows Server 2016 (Data Center/Data Center core/Standard)<br><br>Windows Server 2012 R2 (Data Center/Standard)<br><br>Windows Server 2012 ||
 |Windows Server 2008 R2 (RTM en SP1 Standard)| Updatebeheer ondersteunt evaluaties en patches voor dit besturings systeem. De [Hybrid Runbook worker](../automation-windows-hrw-install.md) wordt ondersteund voor Windows Server 2008 R2. |
 |CentOS 6 en 7 (x64)      | Linux-agents moeten toegang hebben tot een update opslagplaats. Voor op classificaties gebaseerde patches moeten `yum` beveiligings gegevens worden geretourneerd die CentOS niet hebben in de RTM-releases. Zie [Update classificaties in Linux](view-update-assessments.md#linux)voor meer informatie over op CentOS gebaseerde patches op basis van classificatie.          |
 |Red Hat Enter prise 6 en 7 (x64)     | Linux-agents moeten toegang hebben tot een update opslagplaats.        |
 |SUSE Linux Enterprise Server 12 (x64)     | Linux-agents moeten toegang hebben tot een update opslagplaats.        |
-|Ubuntu 14,04 LTS, 16,04 LTS en 18,04 (x64)      |Linux-agents moeten toegang hebben tot een update opslagplaats.         |
+|Ubuntu 14,04 LTS, 16,04 LTS en 18,04 LTS (x64)      |Linux-agents moeten toegang hebben tot een update opslagplaats.         |
 
 > [!NOTE]
 > Virtuele-machine schaal sets van Azure kunnen worden beheerd via Updatebeheer. Updatebeheer werkt op de instanties zelf en niet op basis van de installatie kopie. U moet de updates op een incrementele manier plannen, zodat niet alle VM-exemplaren tegelijk worden bijgewerkt. U kunt knoop punten voor virtuele-machine schaal sets toevoegen door de stappen onder [een niet-Azure-computer toevoegen aan wijzigingen bijhouden en inventarisatie te](../automation-tutorial-installed-software.md#add-a-non-azure-machine-to-change-tracking-and-inventory)volgen.
@@ -88,7 +88,7 @@ De volgende tabel geeft een lijst van de ondersteunde besturings systemen voor u
 
 De volgende tabel bevat een lijst met niet-ondersteunde besturings systemen:
 
-|Besturingssysteem  |Opmerkingen  |
+|Besturingssysteem  |Notities  |
 |---------|---------|
 |Windows-client     | Client besturingssystemen (zoals Windows 7 en Windows 10) worden niet ondersteund.<br> Voor Azure Windows virtueel bureau blad (WVD), de aanbevolen methode<br> voor het beheren van updates is [micro soft Endpoint Configuration Manager](../../virtual-desktop/configure-automatic-updates.md) voor patch beheer voor Windows 10-client computers. |
 |Windows Server 2016 Nano Server     | Niet ondersteund.       |

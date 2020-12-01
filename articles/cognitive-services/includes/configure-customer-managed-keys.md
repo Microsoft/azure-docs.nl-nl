@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/28/2020
 ms.author: egeaney
-ms.openlocfilehash: 17dff6056564b421f0741f55ce8171f3251c94c9
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c79846b0a5b675c34e4e7919e9ecd9d591bfefe5
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96026782"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96356355"
 ---
 ## <a name="customer-managed-keys-with-azure-key-vault"></a>Door de klant beheerde sleutels met Azure Key Vault
 
@@ -38,8 +38,8 @@ Voor het gebruik van door de klant beheerde sleutels moeten twee eigenschappen w
 
 Voor meer informatie over het inschakelen van deze eigenschappen voor een bestaande sleutelkluis raadpleegt u de secties **Voorlopig verwijderen inschakelen** en **Beveiliging tegen leegmaken inschakelen** in een van de volgende artikelen:
 
-- [Voorlopig verwijderen gebruiken met Power shell](../../key-vault/general/soft-delete-powershell.md).
-- [Voorlopig verwijderen gebruiken met CLI](../../key-vault/general/soft-delete-cli.md).
+- [Voorlopig verwijderen gebruiken met Power shell](../../key-vault/general/key-vault-recovery.md).
+- [Voorlopig verwijderen gebruiken met CLI](../../key-vault/general/key-vault-recovery.md).
 
 Alleen RSA-sleutels met een grootte van 2048 worden ondersteund met Azure Storage versleuteling. Zie **Key Vault sleutels** in [over Azure Key Vault sleutels, geheimen en certificaten](../../key-vault/general/about-keys-secrets-certificates.md)voor meer informatie over sleutels.
 

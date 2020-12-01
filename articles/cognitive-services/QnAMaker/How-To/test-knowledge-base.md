@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: 21984a03947e4f9f60e705955cb1be3b2df8933c
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.openlocfilehash: 273548ec095ce04772438a2d732b914d80d976cc
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94376142"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353150"
 ---
 # <a name="test-your-knowledge-base-in-qna-maker"></a>Test uw Knowledge Base in QnA Maker
 
@@ -18,7 +18,7 @@ Het testen van uw QnA Maker Knowledge Base is een belang rijk onderdeel van een 
 
 ## <a name="interactively-test-in-qna-maker-portal"></a>Interactief testen in QnA Maker Portal
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele versie)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 
 1. Open uw kennis database door de naam ervan te selecteren op de pagina **mijn Knowledge bases** .
 1. Als u toegang wilt krijgen tot het toetsen paneel testen, selecteert u **testen** in het bovenste paneel van de toepassing.
@@ -66,14 +66,14 @@ Selecteer **opslaan en trainen** om dit antwoord te behouden. Er is nu een nieuw
 > [!NOTE]
 > Alle wijzigingen in uw kennis database worden alleen opgeslagen wanneer u op de knop **opslaan en trainen** drukt.
 
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-versie)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
 1. Open uw kennis database door de naam ervan te selecteren op de pagina **mijn Knowledge bases** .
 1. Als u toegang wilt krijgen tot het toetsen paneel testen, selecteert u **testen** in het bovenste paneel van de toepassing. 
-1. Er wordt een selectie vakje weer gegeven op het bovenste **antwoord** , dat standaard is geselecteerd. Deze optie wordt gebruikt voor het inschakelen van op MRC gebaseerde antwoord bereik detectie in het test paneel. 
+1. Er wordt een selectie vakje weer gegeven op het bovenste **antwoord**, dat standaard is geselecteerd. Deze optie wordt gebruikt voor het inschakelen van op MRC gebaseerde antwoord bereik detectie in het test paneel. 
 1. Voer een query in het tekstvak in en selecteer ENTER. 
 1. Voor elke query geldt dat als er sprake is van een nauw keurig antwoord/kort antwoord dat in het antwoord wordt weer gegeven, samen met het best overeenkomende antwoord dat in de Knowledge Base aanwezig is, u ook een kort antwoord hebt voor uw query.
-    ![Gemanaged test venster voor ingeschakelde tests](../media/qnamaker-how-to-test-knowledge-bases/test-pane-with-managed-detail.png)
+    ![Beheerd ingeschakeld testvenster](../media/qnamaker-how-to-test-knowledge-bases/test-pane-with-managed-detail.png)
 1. Als u het selectie vakje **kort antwoord weer geven** uitschakelt, wordt alleen het beste antwoord in de Knowledge Base geretourneerd als antwoord.
 
 ### <a name="clear-test-panel"></a>Test paneel wissen
@@ -160,7 +160,7 @@ Gebruik het hulp programma voor batch tests wanneer u het volgende wilt doen:
     |**+ Bestand toevoegen**|Selecteer de gedownloade `.docx`-bestandslijst in de vereisten.|
     |**Chit-chat**|**Professional** selecteren|
 
-1. Selecteer in **stap 5** , **Uw KB maken**.
+1. Selecteer in **stap 5**, **Uw KB maken**.
 
     Wanneer het proces is voltooid, geeft de portal de bewerkbare Knowledge Base weer.
 
@@ -263,7 +263,7 @@ Gebruik het volgende diagram om de veldwaarden te vinden voor de optionele gegev
     > [!TIP]
     > Om de metagegevens en QnA-ID's van elke set te zien, moet u de Knowledge Base exporteren. Selecteer de pagina **Instellingen** en selecteer vervolgens **Exporteren** als `.xls`-bestand. Zoek dit gedownloade bestand en open het met Excel om te controleren op metagegevens en ID.
 
-1. Selecteer **Opslaan en trainen** , selecteer dan de pagina **Publiceren** en vervolgens de knop **Publiceren**. Door deze acties zijn de wijziging beschikbaar voor de batchtest. Download de Knowledge Base vanuit de pagina **Instellingen**.
+1. Selecteer **Opslaan en trainen**, selecteer dan de pagina **Publiceren** en vervolgens de knop **Publiceren**. Door deze acties zijn de wijziging beschikbaar voor de batchtest. Download de Knowledge Base vanuit de pagina **Instellingen**.
 
     Het gedownloade bestand heeft de juiste indeling voor de metagegevens en de juiste vraag-en-antwoord-set-ID. Gebruik deze velden in het volgende gedeelte
 
@@ -273,8 +273,8 @@ Gebruik het volgende diagram om de veldwaarden te vinden voor de optionele gegev
 ### <a name="create-a-second-batch-test"></a>Een tweede batchtest maken
 
 Er zijn twee belangrijke scenario's voor batchtesten:
-* **Chatlogboekbestanden verwerken** , bepaal het meestvoorkomende antwoord voor een nog niet bekeken vraag. De meestvoorkomende situatie is wanneer u een logboekbestand van query's moet verwerken, zoals gebruikersvragen van een chatbot. Maak een batchbestandtest met alleen de vereiste kolommen. De test retourneert het meestvoorkomende antwoord voor elke vraag. Dat betekent niet dat het meestvoorkomende antwoord ook het goede antwoord is. Wanneer deze test is voltooid, gaat u verder met de validatietest.
-* **Validatietest** , valideer het verwachte antwoord. Voor deze test moeten alle vragen en bijbehorende verwachte antwoorden in de batchtest zijn gevalideerd. Hier is mogelijk wat handmatige verwerking nodig.
+* **Chatlogboekbestanden verwerken**, bepaal het meestvoorkomende antwoord voor een nog niet bekeken vraag. De meestvoorkomende situatie is wanneer u een logboekbestand van query's moet verwerken, zoals gebruikersvragen van een chatbot. Maak een batchbestandtest met alleen de vereiste kolommen. De test retourneert het meestvoorkomende antwoord voor elke vraag. Dat betekent niet dat het meestvoorkomende antwoord ook het goede antwoord is. Wanneer deze test is voltooid, gaat u verder met de validatietest.
+* **Validatietest**, valideer het verwachte antwoord. Voor deze test moeten alle vragen en bijbehorende verwachte antwoorden in de batchtest zijn gevalideerd. Hier is mogelijk wat handmatige verwerking nodig.
 
 In de volgende procedure wordt ervan uitgegaan dat het scenario het verwerken is van chatlogboeken met
 
@@ -323,4 +323,4 @@ Als u deze Knowledge Base verder niet gaat gebruiken, verwijder dan de Knowledge
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Een kennisdatabase publiceren](./publish-knowledge-base.md)
+> [Een kennisdatabase publiceren](../quickstarts/create-publish-knowledge-base.md)

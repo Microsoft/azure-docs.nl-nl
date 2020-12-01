@@ -3,12 +3,12 @@ title: Netwerk isolatie in Azure DevTest Labs
 description: Meer informatie over netwerk isolatie in Azure DevTest Labs.
 ms.topic: article
 ms.date: 08/25/2020
-ms.openlocfilehash: aafa6bf94c7963d69bfb67a28a520b811c4fbacf
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 28bfa048a8a6666deb58a8ecfff38779c91d95b8
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92149159"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352929"
 ---
 # <a name="network-isolation-in-devtest-labs"></a>Netwerk isolatie in DevTest Labs
 
@@ -38,7 +38,7 @@ Lees ook de volgende artikelen:
 1. Als u ervoor kiest om Lab-resources (Lab-opslag account en sleutel kluis) te isoleren in het standaard netwerk, is er geen verdere actie nodig en zal het lab het isoleren van resources afhandelen.
  
     > [!div class="mx-imgBorder"]
-    > ![Netwerk isolatie](./media/network-isolation/isolate-lab-resources.png)
+    > ![Netwerkisolatie](./media/network-isolation/isolate-lab-resources.png)
 1. Als u ervoor kiest om Lab-resources (Lab-opslag account en sleutel kluis) te isoleren met een bestaand netwerk dat u hebt geselecteerd, moet u de volgende stappen uitvoeren om te zorgen dat het lab in de geïsoleerde modus blijft werken. 
  
     > [!div class="mx-imgBorder"]
@@ -74,7 +74,7 @@ Met deze optie worden door Azure Storage binnenkomende verbindingen van het toeg
 
 U kunt er ook voor kiezen om deze stappen te automatiseren voor het configureren van deze instelling voor meerdere lessen. 
 
-[Meer informatie over het beheren van standaard regels voor netwerk toegang voor Azure Storage met behulp van Power shell en CLI](../storage/common/storage-network-security.md?toc=%252fazure%252fvirtual-network%252ftoc.json#powershell)
+[Meer informatie over het beheren van standaard regels voor netwerk toegang voor Azure Storage met behulp van Power shell en CLI](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json#powershell)
 
 ## <a name="things-to-remember-while-using-a-lab-in-a-network-isolated-mode"></a>Wat u moet onthouden tijdens het gebruik van een lab in een geïsoleerd netwerk modus
 

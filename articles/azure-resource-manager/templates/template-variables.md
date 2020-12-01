@@ -1,18 +1,18 @@
 ---
 title: Variabelen in sjablonen
-description: Hierin wordt beschreven hoe u variabelen definieert in een Azure Resource Manager sjabloon.
+description: Hierin wordt beschreven hoe u variabelen definieert in een Azure Resource Manager sjabloon (ARM-sjabloon).
 ms.topic: conceptual
 ms.date: 11/24/2020
-ms.openlocfilehash: 7758451747503cb8c42566dc081a91f84bafa375
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 5d9b58d63e96656c45d3494d24099bbeadc46b11
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95916000"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353456"
 ---
-# <a name="variables-in-azure-resource-manager-template"></a>Variabelen in Azure Resource Manager-sjabloon
+# <a name="variables-in-arm-template"></a>Variabelen in ARM-sjabloon
 
-In dit artikel wordt beschreven hoe u in uw Azure Resource Manager-sjabloon variabelen definieert en gebruikt. U kunt variabelen gebruiken om uw sjabloon te vereenvoudigen. In plaats van ingewikkelde expressies in uw sjabloon te herhalen, definieert u een variabele die de gecompliceerde expressie bevat. Vervolgens verwijst u naar die variabele die u nodig hebt in uw sjabloon.
+In dit artikel wordt beschreven hoe u variabelen definieert en gebruikt in uw Azure Resource Manager sjabloon (ARM-sjabloon). U kunt variabelen gebruiken om uw sjabloon te vereenvoudigen. In plaats van ingewikkelde expressies in uw sjabloon te herhalen, definieert u een variabele die de gecompliceerde expressie bevat. Vervolgens verwijst u naar die variabele die u nodig hebt in uw sjabloon.
 
 Met Resource Manager worden variabelen omgezet voordat de implementatie bewerkingen worden gestart. Wanneer de variabele wordt gebruikt in de sjabloon, wordt deze door de Resource Manager vervangen door de omgezette waarde.
 
@@ -95,5 +95,5 @@ In de volgende voor beelden ziet u scenario's voor het gebruik van variabelen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [inzicht krijgen in de structuur en de syntaxis van Azure Resource Manager-sjablonen](template-syntax.md)voor meer informatie over de beschik bare eigenschappen voor variabelen.
+* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor meer informatie over de beschik bare eigenschappen voor variabelen.
 * Zie [Best practices-Varia bles](template-best-practices.md#variables)(Engelstalig) voor aanbevelingen voor het maken van variabelen.

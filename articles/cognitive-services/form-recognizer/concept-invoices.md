@@ -10,16 +10,16 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: pafarley
-ms.openlocfilehash: af3935bab5cd4d6a2aa4a9e3250f6beec19a8ea4
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 5c8af8ddb7a0870de37b73cbe09965ee63c88ba1
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95736668"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353745"
 ---
 # <a name="form-recognizer-prebuilt-invoice-model"></a>Vooraf gebouwd factuur model voor formulier herkenning
 
-De Azure-formulier herkenner kan gegevens uit verkoop facturen analyseren en extra heren met behulp van de vooraf gemaakte factuur modellen. Met de factuur-API kunnen klanten facturen in verschillende indelingen nemen en gestructureerde gegevens retour neren om de factuur verwerking te automatiseren. Het combineert onze krachtige functies voor [optische teken herkenning (OCR)](https://docs.microsoft.com/azure/cognitive-services/computer-vision/concept-recognizing-text) met factuur uitgebreide leer modellen voor het extra heren van belang rijke informatie uit facturen in het Engels. Hiermee worden de tekst, tabellen en gegevens, zoals klant, leverancier, factuur-ID, verval datum van factuur, totaal, factuur bedrag, belasting bedrag, verzen ding, factuur en meer geëxtraheerd. De vooraf gemaakte factuur-API is openbaar beschikbaar in de preview-versie van de formulier Recognizer v 2.1.
+De Azure-formulier herkenner kan gegevens uit verkoop facturen analyseren en extra heren met behulp van de vooraf gemaakte factuur modellen. Met de factuur-API kunnen klanten facturen in verschillende indelingen nemen en gestructureerde gegevens retour neren om de factuur verwerking te automatiseren. Het combineert onze krachtige functies voor [optische teken herkenning (OCR)](../computer-vision/concept-recognizing-text.md) met factuur uitgebreide leer modellen voor het extra heren van belang rijke informatie uit facturen in het Engels. Hiermee worden de tekst, tabellen en gegevens, zoals klant, leverancier, factuur-ID, verval datum van factuur, totaal, factuur bedrag, belasting bedrag, verzen ding, factuur en meer geëxtraheerd. De vooraf gemaakte factuur-API is openbaar beschikbaar in de preview-versie van de formulier Recognizer v 2.1.
 
 ## <a name="what-does-the-invoice-service-do"></a>Wat doet de factuur service?
 
@@ -32,7 +32,7 @@ De factuur-API extraheert sleutel velden van facturen en retourneert deze in een
 Als u de factuur service voor formulier herkenning wilt uitproberen, gaat u naar het hulp programma online voor beeld-UI:
 
 > [!div class="nextstepaction"]
-> [Vooraf gebouwde modellen proberen](https://fott-preview.azurewebsites.net/)
+> [Vooraf gebouwde modellen uitproberen](https://fott-preview.azurewebsites.net/)
 
 U hebt een Azure-abonnement nodig ([Maak er een gratis](https://azure.microsoft.com/free/cognitive-services)) en een [Recognzier resource](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesFormRecognizer) -eind punt en-sleutel van het formulier om de formulier Recognizer-factuur service uit te proberen. 
 
@@ -70,18 +70,18 @@ De JSON-uitvoer heeft drie delen:
 * `"pageResults"` het knoop punt bevat de tabellen en cellen die zijn geëxtraheerd met hun begrenzingsvak, betrouw baarheid en een verwijzing naar de regels en woorden in ' readResults '.
 * `"documentResults"` het knoop punt bevat de specifieke factuur waarden die het model heeft gedetecteerd. Hier vindt u alle velden van de factuur, zoals factuur-ID, verzen ding, factuur naar, klant, totaal en nog veel meer.
 
-## <a name="example-output"></a>Voorbeeld uitvoer
+## <a name="example-output"></a>Voorbeelduitvoer
 
 Met de factuur service worden de velden tekst, tabellen en 26 factuur geëxtraheerd. Hieronder vindt u de velden die zijn geëxtraheerd uit een factuur in het JSON-uitvoer antwoord (de onderstaande uitvoer gebruikt deze [voorbeeld factuur](./media/sample-invoice.jpg))  
 
-|Naam| Type | Description | Tekst | Waarde (gestandaardiseerde uitvoer) |
+|Naam| Type | Beschrijving | Tekst | Waarde (gestandaardiseerde uitvoer) |
 |:-----|:----|:----|:----| :----|
 | CustomerName | tekenreeks | Klant wordt gefactureerd | Micro soft Corp |  |
 | CustomerId | tekenreeks | Referentie-ID voor de klant | CID-12345 |  |
 | PurchaseOrder | tekenreeks | Een referentie nummer van een inkoop order | IO-3333 | |  |
 | InvoiceId | tekenreeks | Id voor deze specifieke factuur (vaak factuur nummer) | INV-100 | |  |
-| InvoiceDate | datum | Datum waarop de factuur is verzonden | 11/15/2019 | 
-| DueDate | datum | De verval datum van de betaling voor deze factuur | 12/15/2019 | 2019-12-15 | 2019-11-15 |
+| InvoiceDate | date | Datum waarop de factuur is verzonden | 11/15/2019 | 
+| DueDate | date | De verval datum van de betaling voor deze factuur | 12/15/2019 | 2019-12-15 | 2019-11-15 |
 | Leveranciers naam | tekenreeks | Leverancier die deze factuur heeft gemaakt | CONTOSO LTD. | |
 | VendorAddress | tekenreeks | E-mail adres voor de leverancier | 123 456th St New York, NY, 10001 | |
 | VendorAddressRecipient | tekenreeks | De naam die is gekoppeld aan de VendorAddress | Contoso Headquarters | |
@@ -99,8 +99,8 @@ Met de factuur service worden de velden tekst, tabellen en 26 factuur geëxtrahe
 | ServiceAddressRecipient | tekenreeks | De naam die is gekoppeld aan de ServiceAddress | Micro soft-Services | |
 | RemittanceAddress | tekenreeks | Expliciete remise of betalings adres voor de klant | 123 remitte St New York, NY, 10001 |  |
 | RemittanceAddressRecipient | tekenreeks | De naam die is gekoppeld aan de RemittanceAddress | Contoso-facturering |  |
-| ServiceStartDate | datum | Eerste datum voor de service periode (bijvoorbeeld een service periode van het hulp programma) | 14-10-2019 | 2019-10-14 |
-| ServiceEndDate | datum | De eind datum voor de service periode (bijvoorbeeld een service periode van het hulp programma) | 11/14/2019 | 2019-11-14 |
+| ServiceStartDate | date | Eerste datum voor de service periode (bijvoorbeeld een service periode van het hulp programma) | 14-10-2019 | 2019-10-14 |
+| ServiceEndDate | date | De eind datum voor de service periode (bijvoorbeeld een service periode van het hulp programma) | 11/14/2019 | 2019-11-14 |
 | PreviousUnpaidBalance | getal | Expliciet eerder onbetaald saldo | $500,00 | 500 |
 
 
@@ -113,4 +113,3 @@ Met de factuur service worden de velden tekst, tabellen en 26 factuur geëxtrahe
 
 * [Wat is Form Recognizer?](./overview.md)
 * [REST API referentie documenten](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/AnalyzeInvoiceAsync)
-

@@ -1,18 +1,18 @@
 ---
 title: Uitvoer in sjablonen
-description: Hierin wordt beschreven hoe u uitvoer waarden definieert in een Azure Resource Manager sjabloon.
+description: Hierin wordt beschreven hoe u uitvoer waarden definieert in een Azure Resource Manager sjabloon (ARM-sjabloon).
 ms.topic: conceptual
 ms.date: 11/24/2020
-ms.openlocfilehash: 8f782a78e523ebc55faac98344643982172476fa
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 6a375dfbc767bcbbfd8ec6b7f8cb9e942e275582
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95911427"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353524"
 ---
-# <a name="outputs-in-azure-resource-manager-template"></a>Uitvoer in Azure Resource Manager sjabloon
+# <a name="outputs-in-arm-templates"></a>Uitvoer in ARM-sjablonen
 
-In dit artikel wordt beschreven hoe u uitvoer waarden definieert in uw Azure Resource Manager sjabloon. U gebruikt uitvoer wanneer u waarden van de geïmplementeerde resources moet retour neren.
+In dit artikel wordt beschreven hoe u uitvoer waarden definieert in uw Azure Resource Manager sjabloon (ARM-sjabloon). U gebruikt uitvoer wanneer u waarden van de geïmplementeerde resources moet retour neren.
 
 De indeling van elke uitvoer waarde moet overeenkomen met een van de [gegevens typen](template-syntax.md#data-types).
 
@@ -120,4 +120,4 @@ In de volgende voor beelden ziet u scenario's voor het gebruik van uitvoer.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [inzicht krijgen in de structuur en de syntaxis van Azure Resource Manager-sjablonen](template-syntax.md)voor meer informatie over de beschik bare eigenschappen voor uitvoer.
+* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor meer informatie over de beschik bare eigenschappen voor uitvoer.

@@ -4,12 +4,12 @@ ms.service: azure-functions
 ms.topic: include
 ms.date: 10/01/2020
 ms.author: glenga
-ms.openlocfilehash: 39c0556350482e171234a3ff9dce0c16ed88d110
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 2ccff72be66a88b9bf0a5e9eb9c29ade8397804b
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93406709"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96356190"
 ---
 Fouten die zijn opgetreden in een Azure Functions kunnen afkomstig zijn van een van de volgende oorsprongen:
 
@@ -149,6 +149,27 @@ Dit is het beleid voor opnieuw proberen in het *function.js* bestand:
     }
 }
 ```
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Dit is het beleid voor opnieuw proberen in het *function.js* bestand:
+
+
+```json
+{
+    "disabled": false,
+    "bindings": [
+        {
+            ....
+        }
+    ],
+    "retry": {
+        "strategy": "fixedDelay",
+        "maxRetryCount": 4,
+        "delayInterval": "00:00:10"
+    }
+}
+```
 ---
 
 #### <a name="exponential-backoff-retry"></a>Exponentiële uitstel opnieuw proberen
@@ -230,6 +251,27 @@ Dit is het beleid voor opnieuw proberen in het *function.js* bestand:
 ```
 
 # <a name="java"></a>[Java](#tab/java)
+
+Dit is het beleid voor opnieuw proberen in het *function.js* bestand:
+
+```json
+{
+    "disabled": false,
+    "bindings": [
+        {
+            ....
+        }
+    ],
+    "retry": {
+        "strategy": "exponentialBackoff",
+        "maxRetryCount": 5,
+        "minimumInterval": "00:00:10",
+        "maximumInterval": "00:15:00"
+    }
+}
+```
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
 
 Dit is het beleid voor opnieuw proberen in het *function.js* bestand:
 

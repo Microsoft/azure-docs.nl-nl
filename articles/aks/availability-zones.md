@@ -5,12 +5,12 @@ services: container-service
 ms.custom: fasttrack-edit, references_regions, devx-track-azurecli
 ms.topic: article
 ms.date: 09/04/2020
-ms.openlocfilehash: 43b57d0b58c9268482ca27fd51040c7152ecdc25
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 15f66e836a2900349007fb5068a172b89f39d4de
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95026048"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352793"
 ---
 # <a name="create-an-azure-kubernetes-service-aks-cluster-that-uses-availability-zones"></a>Een AKS-cluster (Azure Kubernetes service) maken dat gebruikmaakt van beschikbaarheids zones
 
@@ -34,15 +34,12 @@ AKS-clusters kunnen momenteel worden gemaakt met beschikbaarheids zones in de vo
 * VS - oost 
 * VS - oost 2
 * Frankrijk - centraal
-* Duitsland - west-centraal
-* Japan - oost
+* Japan East
 * Europa - noord
-* Zuid-Afrika - noord
-* VS - zuid-centraal
 * Azië - zuidoost
 * Verenigd Koninkrijk Zuid
 * Europa -west
-* VS - west 2
+* West US 2
 
 De volgende beperkingen zijn van toepassing wanneer u een AKS-cluster maakt met beschikbaarheids zones:
 

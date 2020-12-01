@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/21/2020
-ms.openlocfilehash: 10a2ae71d8c26d82a4a730bab3ba16e7c62d1243
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: b2b27da096ed18170ca8c9d70f31dc955fb74950
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95911733"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352827"
 ---
 # <a name="collect-custom-logs-with-log-analytics-agent-in-azure-monitor"></a>Aangepaste logboeken met Log Analytics agent verzamelen in Azure Monitor
 
@@ -30,7 +30,7 @@ De logboek bestanden die moeten worden verzameld, moeten voldoen aan de volgende
 
 - Het logboek bestand mag geen circulaire logboek registratie of logboek rotatie toestaan, waarbij het bestand wordt overschreven door nieuwe vermeldingen.
 - Het logboek bestand moet ASCII-of UTF-8-code ring gebruiken.  Andere indelingen, zoals UTF-16, worden niet ondersteund.
-- Voor Linux wordt tijd zone converesion niet ondersteund voor tijds tempels in de logboeken.
+- Voor Linux wordt tijdzone conversie niet ondersteund voor tijds tempels in de logboeken.
 
 >[!NOTE]
 > Als er dubbele vermeldingen in het logboek bestand staan, worden deze door Azure Monitor verzameld. De query resultaten zijn echter inconsistent wanneer de filter resultaten meer gebeurtenissen weer geven dan het aantal resultaten. Het is belang rijk dat u het logboek valideert om te bepalen of de toepassing die deze maakt, dit gedrag veroorzaakt en zo goed mogelijk verhelpt voordat u de aangepaste definitie van de logboek verzameling maakt.  
@@ -78,7 +78,7 @@ Een toepassing kan bijvoorbeeld elke dag een logboek bestand maken met de datum 
 
 De volgende tabel bevat voor beelden van geldige patronen om andere logboek bestanden op te geven.
 
-| Description | Pad |
+| Beschrijving | Pad |
 |:--- |:--- |
 | Alle bestanden in *C:\Logs* met de extensie. txt op de Windows-agent |C:\Logs \\ \* . txt |
 | Alle bestanden in *C:\Logs* met een naam die begint met log en een. txt-extensie in Windows-agent |C:\Logs\log \* . txt |

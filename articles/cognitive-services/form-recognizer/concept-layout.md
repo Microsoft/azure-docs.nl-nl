@@ -10,16 +10,16 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: pafarley
-ms.openlocfilehash: b489964e5ef8ea483cbe203be1ff665078a6d66a
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 60ef490bbba4dca4f01b82967ad6ea8636e7bd4e
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95741726"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353694"
 ---
 # <a name="form-recognizer-layout-service"></a>Indelings service voor formulier herkenning
 
-Azure Form Recognizer kan tekst, tabellen, selectie markeringen en structuur gegevens uit documenten ophalen met behulp van de lay-outservice. Met de indelings-API kunnen klanten documenten maken in verschillende indelingen en gestructureerde gegevens en representatie van het document retour neren. Het combineert onze krachtige functies voor [optische teken herkenning (OCR)](https://docs.microsoft.com/azure/cognitive-services/computer-vision/concept-recognizing-text) met document over diepe leer modellen voor het extra heren van tekst, tabellen, selectie markeringen en de structuur van documenten. 
+Azure Form Recognizer kan tekst, tabellen, selectie markeringen en structuur gegevens uit documenten ophalen met behulp van de lay-outservice. Met de indelings-API kunnen klanten documenten maken in verschillende indelingen en gestructureerde gegevens en representatie van het document retour neren. Het combineert onze krachtige functies voor [optische teken herkenning (OCR)](../computer-vision/concept-recognizing-text.md) met document over diepe leer modellen voor het extra heren van tekst, tabellen, selectie markeringen en de structuur van documenten. 
 
 ## <a name="what-does-the-layout-service-do"></a>Wat doet de lay-outservice?
 
@@ -96,7 +96,3 @@ De indeling haalt ook selectie markeringen uit documenten op. De door geëxtrahe
 
 * [Wat is Form Recognizer?](./overview.md)
 * [REST API referentie documenten](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/AnalyzeLayoutAsync)
-
-
-
-

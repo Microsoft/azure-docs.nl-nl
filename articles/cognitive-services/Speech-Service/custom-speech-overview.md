@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/11/2020
 ms.author: trbye
-ms.openlocfilehash: 6dbe97d615753f0a90c8ba80aa7afa6dafa15eb2
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 7f8fb0488c863868b1076ad5b3fa7868d1880a6b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94658465"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353779"
 ---
 # <a name="what-is-custom-speech"></a>Wat is Custom Speech?
 
@@ -31,7 +31,7 @@ Dit diagram markeert de onderdelen waaruit de [Custom speech Portal](https://aka
 
 1. [Abonneren en een project maken](#set-up-your-azure-account) : Maak een Azure-account en Abonneer u op de spraak service. Dit uniforme abonnement geeft u toegang tot spraak naar tekst, tekst naar spraak, spraak omzetting en de [Custom speech Portal](https://speech.microsoft.com/customspeech). Maak vervolgens uw eerste Custom Speech project met behulp van uw abonnement op de spraak service.
 
-1. [Test gegevens uploaden](how-to-custom-speech-test-data.md) test gegevens uploaden (audio bestanden) om de spraak-naar-tekst-aanbieding van micro soft voor uw toepassingen, hulpprogram ma's en producten te evalueren.
+1. [Test gegevens uploaden](./how-to-custom-speech-test-and-train.md) test gegevens uploaden (audio bestanden) om de spraak-naar-tekst-aanbieding van micro soft voor uw toepassingen, hulpprogram ma's en producten te evalueren.
 
 1. [Herkennings kwaliteit inspecteren](how-to-custom-speech-inspect-data.md) : gebruik de [Custom speech Portal](https://speech.microsoft.com/customspeech) voor het afspelen van geüploade audio en controleer de kwaliteit van de spraak herkenning van uw test gegevens. Zie [gegevens controleren](how-to-custom-speech-inspect-data.md)voor kwantitatieve metingen.
 
@@ -101,7 +101,7 @@ Houd er rekening mee dat u het model op een aangepast spraak eindpunt zonder dow
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Uw gegevens voorbereiden en testen](how-to-custom-speech-test-data.md)
+* [Uw gegevens voorbereiden en testen](./how-to-custom-speech-test-and-train.md)
 * [Uw gegevens controleren](how-to-custom-speech-inspect-data.md)
 * [De nauw keurigheid van modellen evalueren en verbeteren](how-to-custom-speech-evaluate-data.md)
 * [Een model trainen en implementeren](how-to-custom-speech-train-model.md)

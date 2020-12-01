@@ -1,6 +1,6 @@
 ---
-title: Migreren van een beheerde installatie kopie naar een installatie kopie versie met de Azure CLI
-description: Meer informatie over het migreren van een beheerde installatie kopie naar een installatie kopie versie in een galerie met gedeelde afbeeldingen met behulp van de Azure CLI.
+title: Een beheerde installatie kopie klonen naar een installatie kopie versie met behulp van de Azure CLI
+description: Meer informatie over het klonen van een beheerde installatie kopie naar een installatie kopie versie in een galerie met gedeelde afbeeldingen met behulp van de Azure CLI.
 author: cynthn
 ms.service: virtual-machines
 ms.subservice: imaging
@@ -10,15 +10,15 @@ ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 8631a411b26f91bc72e23ac7ff9fb2278f61168c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0e53bebf9cdb8c0fc084d04550c7444c1c01be50
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87502882"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352861"
 ---
-# <a name="migrate-from-a-managed-image-to-an-image-version-using-the-azure-cli"></a>Migreren van een beheerde installatie kopie naar een installatie kopie versie met behulp van de Azure CLI
-Als u een bestaande beheerde installatie kopie hebt die u wilt migreren naar een gedeelde installatie kopie galerie, kunt u rechtstreeks vanuit de beheerde installatie kopie een installatie kopie van een gedeelde installatie kopie maken. Wanneer u de nieuwe installatie kopie hebt getest, kunt u de door de bron beheerde installatie kopie verwijderen. U kunt ook migreren van een beheerde installatie kopie naar een galerie met gedeelde afbeeldingen met behulp van [Power shell](image-version-managed-image-powershell.md).
+# <a name="clone-a-managed-image-to-an-image-version-using-the-azure-cli"></a>Een beheerde installatie kopie klonen naar een installatie kopie versie met behulp van de Azure CLI
+Als u een bestaande beheerde installatie kopie hebt die u in een galerie met gedeelde afbeeldingen wilt klonen, kunt u rechtstreeks vanuit de beheerde installatie kopie een installatie kopie van een gedeelde installatie kopie maken. Wanneer u de nieuwe installatie kopie hebt getest, kunt u de door de bron beheerde installatie kopie verwijderen. U kunt ook migreren van een beheerde installatie kopie naar een galerie met gedeelde afbeeldingen met behulp van [Power shell](image-version-managed-image-powershell.md).
 
 Afbeeldingen in een afbeeldings galerie hebben twee onderdelen, die we in dit voor beeld gaan maken:
 - Een **definitie van een installatie kopie** bevat informatie over de installatie kopie en vereisten voor het gebruik ervan. Dit omvat of de installatie kopie Windows of Linux, gespecialiseerde of gegeneraliseerde, release opmerkingen en minimale en maximale geheugen vereisten zijn. Het is een definitie van een type installatiekopie. 
@@ -45,7 +45,7 @@ Zie [Installatiekopiedefinities](./linux/shared-image-galleries.md#image-definit
 
 Een installatiekopiedefinitie in de galerie maken met [az sig image-definition create](/cli/azure/sig/image-definition#az-sig-image-definition-create).
 
-In dit voor beeld heeft de definitie van de installatie kopie de naam *myImageDefinition*en is voor een [gegeneraliseerde](./linux/shared-image-galleries.md#generalized-and-specialized-images) installatie kopie van Linux-besturings systeem. Als u een definitie wilt maken voor installatiekopieën met een Windows-besturingssysteem, gebruikt u `--os-type Windows`. 
+In dit voor beeld heeft de definitie van de installatie kopie de naam *myImageDefinition* en is voor een [gegeneraliseerde](./linux/shared-image-galleries.md#generalized-and-specialized-images) installatie kopie van Linux-besturings systeem. Als u een definitie wilt maken voor installatiekopieën met een Windows-besturingssysteem, gebruikt u `--os-type Windows`. 
 
 ```azurecli-interactive 
 resourceGroup=myGalleryRG

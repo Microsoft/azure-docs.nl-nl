@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 04/13/2020
-ms.openlocfilehash: 57e878f11f5857f4c5b629a8069f64de259e8e7a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 26fc976983fc08857e7771d58f15d0abcd9a1d3c
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91777796"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353218"
 ---
 # <a name="use-follow-up-prompts-to-create-multiple-turns-of-a-conversation"></a>Opvolgprompts gebruiken om meerdere beurten in een gesprek te maken
 
@@ -35,7 +35,7 @@ Met multi-bocht beheert een chat-bot een conversatie met een gebruiker om het la
 
 ![Een dialoog venster waarin u wordt gevraagd een gebruiker via een gesprek te begeleiden](../media/conversational-context/conversation-in-bot.png)
 
-Een gebruiker heeft in de voor gaande afbeelding een gesprek gestart door **Mijn account**in te voeren. De Knowledge Base heeft drie gekoppelde vraag-en antwoord paren. Om het antwoord te verfijnen, selecteert de gebruiker een van de drie opties in de Knowledge Base. De vraag (#1) heeft drie opvolgings prompts die in de chat-bot worden weer gegeven als drie opties (#2).
+Een gebruiker heeft in de voor gaande afbeelding een gesprek gestart door **Mijn account** in te voeren. De Knowledge Base heeft drie gekoppelde vraag-en antwoord paren. Om het antwoord te verfijnen, selecteert de gebruiker een van de drie opties in de Knowledge Base. De vraag (#1) heeft drie opvolgings prompts die in de chat-bot worden weer gegeven als drie opties (#2).
 
 Wanneer de gebruiker een optie (#3) selecteert, wordt de volgende lijst met verfijnings opties (#4) weer gegeven. Deze reeks blijft (#5) totdat de gebruiker het juiste, laatste antwoord (#6) bepaalt.
 
@@ -82,19 +82,19 @@ Wanneer u een hiërarchisch document toevoegt, bepaalt QnA Maker opvolgings aanw
 
 ## <a name="create-knowledge-base-with-multi-turn-prompts-with-the-create-api"></a>Maak een kennis database met de prompts in meerdere richtingen met de API maken
 
-U kunt met behulp van de [QnA Maker Create API](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/create)een kennis Case maken met vragen over meerdere schakelingen. De prompts worden toegevoegd in de `context` matrix van de eigenschap `prompts` .
+U kunt met behulp van de [QnA Maker Create API](/rest/api/cognitiveservices/qnamaker/knowledgebase/create)een kennis Case maken met vragen over meerdere schakelingen. De prompts worden toegevoegd in de `context` matrix van de eigenschap `prompts` .
 
 ## <a name="show-questions-and-answers-with-context"></a>Vragen en antwoorden met context weer geven
 
 De weer gegeven vraag-en antwoord paren beperken tot alleen die context afhankelijke gesp rekken.
 
-Selecteer **weergave opties**en selecteer vervolgens **context weer geven**. In de lijst worden de vraag-en-antwoord-paren weer gegeven die opvolgings prompts bevatten.
+Selecteer **weergave opties** en selecteer vervolgens **context weer geven**. In de lijst worden de vraag-en-antwoord-paren weer gegeven die opvolgings prompts bevatten.
 
 ![Vraag-en-antwoord paren filteren op contextuele conversaties](../media/conversational-context/filter-question-and-answers-by-context.png)
 
 De context voor meerdere scha kelen wordt weer gegeven in de eerste kolom.
 
-:::image type="content" source="../media/conversational-context/surface-manual-pdf-follow-up-prompt.png" alt-text="Scherm afbeelding toont een voor beeld van de structuur in een gebruikers handleiding." lightbox="../media/conversational-context/surface-manual-pdf-follow-up-prompt.png":::
+:::image type="content" source="../media/conversational-context/surface-manual-pdf-follow-up-prompt.png" alt-text="Scherm afbeelding toont de context sectie gemarkeerd." lightbox="../media/conversational-context/surface-manual-pdf-follow-up-prompt.png":::
 
 In de voor gaande afbeelding geeft **#1** vetgedrukte tekst in de kolom op die de huidige vraag aangeeft. De bovenliggende vraag is het bovenste item in de rij. Eventuele vragen hieronder zijn de gekoppelde vraag-en-antwoord paren. Deze items kunnen worden geselecteerd, zodat u direct naar de andere context items kunt gaan.
 
@@ -107,7 +107,7 @@ De oorspronkelijke vraag, **Mijn account**, heeft vervolg vragen, zoals **accoun
 Voeg een opvolgings prompt toe aan een bestaand vraag-en antwoord paar dat momenteel niet is gekoppeld. Omdat de vraag niet is gekoppeld aan een vraag-en-antwoord paar, moet de huidige weer gave-instelling worden gewijzigd.
 
 1. Als u een bestaand vraag-en antwoord paar wilt koppelen als een opvolgings prompt, selecteert u de rij voor het vraag-en-antwoord paar. Zoek voor de hand leiding voor het Opper vlak naar **Afmelden** om de lijst te verminderen.
-1. In de rij voor **Afmelden**in de kolom **antwoord** selecteert u **opvolgings prompt toevoegen**.
+1. In de rij voor **Afmelden** in de kolom **antwoord** selecteert u **opvolgings prompt toevoegen**.
 1. Voer de volgende waarden in in de velden in het pop-upvenster **opvolgings prompt** :
 
     |Veld|Waarde|
@@ -125,7 +125,7 @@ Voeg een opvolgings prompt toe aan een bestaand vraag-en antwoord paar dat momen
 
 ### <a name="edit-the-display-text"></a>De weergave tekst bewerken
 
-Wanneer er een opvolgings prompt wordt gemaakt en een bestaand vraag-en-antwoord paar wordt ingevoerd als de **koppeling die moet worden beantwoord**, kunt u nieuwe **weergave tekst**invoeren. Met deze tekst wordt de bestaande vraag niet vervangen en er wordt geen nieuwe alternatieve vraag toegevoegd. Deze is gescheiden van die waarden.
+Wanneer er een opvolgings prompt wordt gemaakt en een bestaand vraag-en-antwoord paar wordt ingevoerd als de **koppeling die moet worden beantwoord**, kunt u nieuwe **weergave tekst** invoeren. Met deze tekst wordt de bestaande vraag niet vervangen en er wordt geen nieuwe alternatieve vraag toegevoegd. Deze is gescheiden van die waarden.
 
 1. Als u de weergave tekst wilt bewerken, zoekt en selecteert u de vraag in het veld **context** .
 1. Selecteer in de rij voor die vraag de opvolgings prompt in de kolom antwoord.
@@ -142,7 +142,7 @@ Wanneer er een opvolgings prompt wordt gemaakt en een bestaand vraag-en-antwoord
 
 Wanneer u een nieuw vraag-en-antwoord paar toevoegt aan de Knowledge Base, moet elk paar worden gekoppeld aan een bestaande vraag als vervolg prompt.
 
-1. Zoek en selecteer op de werk balk van de Knowledge Base het bestaande vraag-en antwoord paar voor **accounts en meld**u aan.
+1. Zoek en selecteer op de werk balk van de Knowledge Base het bestaande vraag-en antwoord paar voor **accounts en meld** u aan.
 
 1. Selecteer in de kolom **antwoord** op deze vraag **opvolgen prompt toevoegen**.
 1. Bij **opvolgings prompt (preview)** maakt u een nieuwe opvolgings prompt door de volgende waarden in te voeren:
@@ -151,17 +151,17 @@ Wanneer u een nieuw vraag-en-antwoord paar toevoegt aan de Knowledge Base, moet 
     |--|--|
     |Weergavetekst|*Maak een Windows-account*. De aangepaste tekst die moet worden weer gegeven in de opvolgings prompt.|
     |Alleen context|Schakel dit selectievakje in. Dit antwoord wordt alleen geretourneerd als de vraag context aangeeft.|
-    |Aan antwoord koppelen|Voer de volgende tekst in als antwoord:<br>* [Maak](https://account.microsoft.com/) een Windows-account met een nieuw of bestaand e-mail account*.<br>Wanneer u de data base opslaat en traint, wordt deze tekst geconverteerd. |
+    |Aan antwoord koppelen|Voer de volgende tekst in als antwoord:<br>*[Maak](https://account.microsoft.com/) een Windows-account met een nieuw of bestaand e-mail account*.<br>Wanneer u de data base opslaat en traint, wordt deze tekst geconverteerd. |
     |||
 
     ![Een nieuwe vraag en antwoord op vragen stellen](../media/conversational-context/create-child-prompt-from-parent.png)
 
 
-1. Selecteer **nieuwe maken**en selecteer vervolgens **Opslaan**.
+1. Selecteer **nieuwe maken** en selecteer vervolgens **Opslaan**.
 
     Met deze actie maakt u een nieuw vraag-en antwoord paar en koppelt u de geselecteerde vraag aan de hand van een opvolgings prompt. De **context** kolom, voor beide vragen, geeft aan dat er een follow-up-prompt relatie is.
 
-1. Selecteer **weergave opties**en selecteer vervolgens [**context weer geven (preview)**](#show-questions-and-answers-with-context).
+1. Selecteer **weergave opties** en selecteer vervolgens [**context weer geven (preview)**](#show-questions-and-answers-with-context).
 
     In de nieuwe vraag ziet u hoe deze is gekoppeld.
 
@@ -169,7 +169,7 @@ Wanneer u een nieuw vraag-en-antwoord paar toevoegt aan de Knowledge Base, moet 
 
     De bovenliggende vraag geeft een nieuwe vraag weer als een van de opties.
 
-    :::image type="content" source="../media/conversational-context/child-prompt-created.png" alt-text="Scherm afbeelding toont een voor beeld van de structuur in een gebruikers handleiding." lightbox="../media/conversational-context/child-prompt-created.png":::
+    :::image type="content" source="../media/conversational-context/child-prompt-created.png" alt-text="Scherm afbeelding toont de context kolom, voor beide vragen, geeft aan dat er een follow-up-prompt relatie is." lightbox="../media/conversational-context/child-prompt-created.png":::
 
 1. Nadat u de opvolgings prompt hebt toegevoegd, selecteert u **opslaan en trainen** in de bovenste navigatie balk.
 
@@ -197,7 +197,7 @@ Gebruik het lege `context` object om het antwoord op de vraag van de gebruiker a
 
 ## <a name="a-json-response-to-return-an-initial-answer-and-follow-up-prompts"></a>Een JSON-antwoord om een eerste antwoord en opvolgings prompts te retour neren
 
-In de voor gaande sectie is een antwoord aangevraagd en wordt u gevraagd om **accounts in**te voeren en zich aan te melden. Het antwoord bevat de prompt informatie, die zich bevindt in *antwoorden [0]. context*, en de tekst die moet worden weer gegeven voor de gebruiker.
+In de voor gaande sectie is een antwoord aangevraagd en wordt u gevraagd om **accounts in** te voeren en zich aan te melden. Het antwoord bevat de prompt informatie, die zich bevindt in *antwoorden [0]. context*, en de tekst die moet worden weer gegeven voor de gebruiker.
 
 ```JSON
 {
@@ -274,7 +274,7 @@ The `promptsToDelete` array provides the ...
 
 Vul het `context` object in om de vorige context op te laten bevatten.
 
-In de volgende JSON-aanvraag gebruikt de huidige vraag *Windows hello om u aan te melden* . de vorige vraag is *accounts en*u aan te melden.
+In de volgende JSON-aanvraag gebruikt de huidige vraag *Windows hello om u aan te melden* . de vorige vraag is *accounts en* u aan te melden.
 
 ```JSON
 {
@@ -357,11 +357,11 @@ Als u een aangepaste toepassing bouwt met behulp van de functie voor meerdere ze
 
 ## <a name="display-order-is-supported-in-the-update-api"></a>Weergave volgorde wordt ondersteund in de API update
 
-De [weergave tekst en weergave volgorde](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update#promptdto), geretourneerd in het JSON-antwoord, worden ondersteund voor bewerking door de [Update-API](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update).
+De [weergave tekst en weergave volgorde](/rest/api/cognitiveservices/qnamaker/knowledgebase/update#promptdto), geretourneerd in het JSON-antwoord, worden ondersteund voor bewerking door de [Update-API](/rest/api/cognitiveservices/qnamaker/knowledgebase/update).
 
 ## <a name="add-or-delete-multi-turn-prompts-with-the-update-api"></a>Vragen om meerdere zetten toe te voegen of te verwijderen met de API voor bijwerken
 
-U kunt vragen over meerdere schakelingen toevoegen of verwijderen met de [API QnA Maker update](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update).  De prompts worden toegevoegd in de `context` matrix van de eigenschap `promptsToAdd` en de `promptsToDelete` matrix.
+U kunt vragen over meerdere schakelingen toevoegen of verwijderen met de [API QnA Maker update](/rest/api/cognitiveservices/qnamaker/knowledgebase/update).  De prompts worden toegevoegd in de `context` matrix van de eigenschap `promptsToAdd` en de `promptsToDelete` matrix.
 
 ## <a name="export-knowledge-base-for-version-control"></a>Knowledge Base exporteren voor versie beheer
 
@@ -369,7 +369,7 @@ QnA Maker ondersteunt versie beheer door gespreks stappen voor meerdere locaties
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over contextuele gesp rekken in dit [dialoog venster](https://github.com/microsoft/BotBuilder-Samples/blob/master/samples/csharp_dotnetcore/adaptive-dialog/07.qnamaker/QnAMaker.csproj) vindt u in het voor beeld van een [conceptueel bot-ontwerp voor multi-telegesprekken](https://docs.microsoft.com/azure/bot-service/bot-builder-conversations?view=azure-bot-service-4.0).
+Meer informatie over contextuele gesp rekken in dit [dialoog venster](https://github.com/microsoft/BotBuilder-Samples/blob/master/samples/csharp_dotnetcore/adaptive-dialog/07.qnamaker/QnAMaker.csproj) vindt u in het voor beeld van een [conceptueel bot-ontwerp voor multi-telegesprekken](/azure/bot-service/bot-builder-conversations?view=azure-bot-service-4.0).
 
 > [!div class="nextstepaction"]
 > [Een knowledge base migreren](../Tutorials/migrate-knowledge-base.md)

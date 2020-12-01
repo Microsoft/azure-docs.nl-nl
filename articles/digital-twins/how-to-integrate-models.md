@@ -1,5 +1,5 @@
 ---
-title: Industrie standaard modellen integreren
+title: In de industrie gangbare modellen integreren
 titleSuffix: Azure Digital Twins
 description: Meer informatie over het integreren van industrie standaard modellen in DTDL voor Azure Digital Apparaatdubbels, hetzij met behulp van speciale DTDL Ontologies of het converteren van bestaande Ontologies
 author: baanders
@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 11/04/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 1866e9b233a1379474c061779ada09fd6d119107
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: f5bfe128ddc04e8048bb89a8e39035434dfd2b92
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94338393"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352878"
 ---
 # <a name="integrate-industry-standard-models-with-dtdl-for-azure-digital-twins"></a>Industrie standaard modellen integreren met DTDL voor Azure Digital Apparaatdubbels
 
@@ -21,9 +21,9 @@ Het gebruik van modellen die zijn gebaseerd op industrie normen of het gebruik v
 Als u wilt gebruiken met Azure Digital Apparaatdubbels, moet een model worden weer gegeven in de op JSON-LD gebaseerde [**Digital Apparaatdubbels Definition Language (DTDL)**](concepts-models.md). In dit artikel wordt daarom beschreven hoe u uw industrie standaard modellen in DTDL aanduidt, de bestaande principes van de industrie integreert met DTDL semantiek zodat Azure Digital Apparaatdubbels deze kan gebruiken. Het DTDL-model fungeert vervolgens als de bron van waarheid voor het model in azure Digital Apparaatdubbels.
 
 Er zijn drie mogelijke paden voor het integreren van industrie standaard modellen met DTDL:
-* **Aannemen** : u kunt uw oplossing starten met een open-source DTDL-Ontology dat is gebouwd op veel aangenomen industrie normen. 
-* **Converteren** : als u al bestaande modellen hebt, moet u deze converteren naar DTDL.
-* **Auteur** : u kunt altijd uw eigen aangepaste DTDL-modellen ontwikkelen, zoals beschreven in [*instructies: aangepaste modellen beheren*](how-to-manage-model.md).
+* **Aannemen**: u kunt uw oplossing starten met een open-source DTDL-Ontology dat is gebouwd op veel aangenomen industrie normen. 
+* **Converteren**: als u al bestaande modellen hebt, moet u deze converteren naar DTDL.
+* **Auteur**: u kunt altijd uw eigen aangepaste DTDL-modellen ontwikkelen, zoals beschreven in [*instructies: aangepaste modellen beheren*](how-to-manage-model.md).
 
 ## <a name="adopt-an-open-source-dtdl-ontology"></a>Een open-source DTDL-Ontology aannemen
 
@@ -111,7 +111,7 @@ Er is een voorbeeld toepassing beschikbaar waarmee een op RDF gebaseerd model be
 
 Het voor beeld is een .NET core-opdracht regel toepassing met de naam **RdfToDtdlConverter**.
 
-U kunt het voor beeld hier ophalen: [**RdfToDtdlConverter**](https://docs.microsoft.com/samples/azure-samples/rdftodtdlconverter/digital-twins-model-conversion-samples/). 
+U kunt het voor beeld hier ophalen: [**RdfToDtdlConverter**](/samples/azure-samples/rdftodtdlconverter/digital-twins-model-conversion-samples/). 
 
 Als u de code wilt downloaden naar uw computer, klikt u op de knop voor het downloaden van de *zip* onder de titel op de pagina voor beeld van land. Hiermee wordt een *zip* -bestand met de naam *RdfToDtdlConverter_sample_application_to_convert_RDF_to_DTDL.zip* gedownload, dat u vervolgens kunt uitpakken en verkennen.
 

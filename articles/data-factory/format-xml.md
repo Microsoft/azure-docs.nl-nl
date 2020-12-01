@@ -9,18 +9,18 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/29/2020
 ms.author: jingwang
-ms.openlocfilehash: 0e34ee7ae47358c7de95298dd245e77690bb15cf
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: 1555d8b97f89b567cb1769c0ba10ecf50bca4366
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92928073"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352592"
 ---
 # <a name="xml-format-in-azure-data-factory"></a>XML-indeling in Azure Data Factory
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
-Volg dit artikel als u **de XML-bestanden wilt parseren** . 
+Volg dit artikel als u **de XML-bestanden wilt parseren**. 
 
 De XML-indeling wordt ondersteund voor de volgende connectors: [Amazon S3](connector-amazon-simple-storage-service.md), [Azure Blob](connector-azure-blob-storage.md), [Azure Data Lake Storage Gen1](connector-azure-data-lake-store.md), [Azure data Lake Storage Gen2](connector-azure-data-lake-storage.md), [Azure File Storage](connector-azure-file-storage.md), [Bestands systeem](connector-file-system.md), [FTP](connector-ftp.md), [Google Cloud Storage](connector-google-cloud-storage.md), [HDFS](connector-hdfs.md), [http](connector-http.md)en [SFTP](connector-sftp.md). Het wordt ondersteund als bron, maar niet op sink.
 
@@ -30,13 +30,13 @@ Zie het artikel [gegevens sets](concepts-datasets-linked-services.md) voor een v
 
 | Eigenschap         | Beschrijving                                                  | Vereist |
 | ---------------- | ------------------------------------------------------------ | -------- |
-| type             | De eigenschap type van de gegevensset moet worden ingesteld op **XML** . | Ja      |
-| location         | Locatie-instellingen van bestand (en). Elke connector op basis van bestanden heeft een eigen locatie type en ondersteunde eigenschappen onder `location` . **Zie de sectie Details in connector artikel-> eigenschappen van gegevensset** . | Ja      |
+| type             | De eigenschap type van de gegevensset moet worden ingesteld op **XML**. | Ja      |
+| location         | Locatie-instellingen van bestand (en). Elke connector op basis van bestanden heeft een eigen locatie type en ondersteunde eigenschappen onder `location` . **Zie de sectie Details in connector artikel-> eigenschappen van gegevensset**. | Ja      |
 | encodingName     | Het coderings type dat wordt gebruikt voor het lezen/schrijven van test bestanden. <br>Toegestane waarden zijn als volgt: ' UTF-8 ', ' UTF-16 ', ' UTF-16BE ', ' UTF-32 ', ' UTF-32BE ', ' VS-ASCII ', ' UTF-7 ', ' BIG5 ', ' EUC-JP ', ' EUC-KR ', ' GB2312 "," GB18030 "," JOHAB "," SHIFT-JIS "," CP875 "," CP866 "," IBM00858 "," IBM037 "," IBM273 "," IBM437 "," IBM500 "," IBM737 "," IBM775 "," IBM850 "," IBM852 "," IBM855 "," IBM857 "," IBM860 "," IBM861 ', ' IBM863 ', ' IBM864 ', ' IBM865 ', ' IBM869 ', ' IBM870 ', ' IBM01140 ', ' IBM01141 ', ' IBM01142 ', ' IBM01143 ', ' IBM01144 ', IBM01145 "," IBM01146 "," IBM01147 "," IBM01148 "," IBM01149 "," ISO-2022-JP "," ISO-2022-KR "," ISO-8859-1 "," ISO-8859-2 "," ISO-8859-3 "," ISO-8859-4 "," ISO-8859-5 "," ISO-8859-6 "," ISO-8859-7 "," ISO-8859-8 "," ISO-8859-9 "," ISO-8859-13 " , "ISO-8859-15", "WINDOWS-874", "WINDOWS-1250", "WINDOWS-1251", "WINDOWS-1252", "WINDOWS-1253", "WINDOWS-1254", "WINDOWS-1255", "WINDOWS-1256", "WINDOWS-1257", "WINDOWS-1258".| Nee       |
-| nullValue | Hiermee wordt de teken reeks representatie van een null-waarde opgegeven.<br/>De standaard waarde is een **lege teken reeks** . | Nee |
+| nullValue | Hiermee wordt de teken reeks representatie van een null-waarde opgegeven.<br/>De standaard waarde is een **lege teken reeks**. | Nee |
 | compressie | Groep eigenschappen voor het configureren van bestands compressie. Configureer deze sectie als u compressie/decompressie wilt uitvoeren tijdens de uitvoering van de activiteit. | Nee |
-| type<br>( *onder `compression`* ) | De compressie-codec die wordt gebruikt voor het lezen/schrijven van XML-bestanden. <br>Toegestane waarden zijn **bzip2** , **gzip** , **Deflate** , **ZipDeflate** , **TarGzip** , **tar** , **Snappy** of **LZ4** . De standaard waarde is niet gecomprimeerd.<br>**Houd er rekening mee** dat de Kopieer activiteit geen ondersteuning biedt voor "snappy" & "LZ4" en de toewijzing van gegevens stroom geen ondersteuning biedt voor "ZipDeflate", "TarGzip" en "tar".<br>**Opmerking** wanneer u Kopieer activiteit gebruikt om **ZipDeflate** / **TarGzip** / **tar** -bestand (en) te decomprimeren en te schrijven naar Sink-gegevens archief op basis van een bestand, worden standaard bestanden uitgepakt naar de map:. `<path specified in dataset>/<folder named as source compressed file>/` Gebruik de `preserveZipFileNameAsFolder` / `preserveCompressionFileNameAsFolder` bron van de [Kopieer activiteit](#xml-as-source) om te bepalen of u de naam van de gecomprimeerde bestanden als mapstructuur wilt behouden. | Nee.  |
-| niveau<br/>( *onder `compression`* ) | De compressie ratio. <br>Toegestane waarden zijn **optimaal** of **snelst** .<br>- **Snelst:** De compressie bewerking moet zo snel mogelijk worden voltooid, zelfs als het resulterende bestand niet optimaal is gecomprimeerd.<br>- **Optimaal** : de compressie bewerking moet optimaal worden gecomprimeerd, zelfs als het volt ooien van de bewerking langer duurt. Zie het onderwerp [compressie niveau](https://msdn.microsoft.com/library/system.io.compression.compressionlevel.aspx) voor meer informatie. | Nee       |
+| type<br>(*onder `compression`*) | De compressie-codec die wordt gebruikt voor het lezen/schrijven van XML-bestanden. <br>Toegestane waarden zijn **bzip2**, **gzip**, **Deflate**, **ZipDeflate**, **TarGzip**, **tar**, **Snappy** of **LZ4**. De standaard waarde is niet gecomprimeerd.<br>**Houd er rekening mee** dat de Kopieer activiteit geen ondersteuning biedt voor "snappy" & "LZ4" en de toewijzing van gegevens stroom geen ondersteuning biedt voor "ZipDeflate", "TarGzip" en "tar".<br>**Opmerking** wanneer u Kopieer activiteit gebruikt om **ZipDeflate** / **TarGzip** / **tar** -bestand (en) te decomprimeren en te schrijven naar Sink-gegevens archief op basis van een bestand, worden standaard bestanden uitgepakt naar de map:. `<path specified in dataset>/<folder named as source compressed file>/` Gebruik de `preserveZipFileNameAsFolder` / `preserveCompressionFileNameAsFolder` bron van de [Kopieer activiteit](#xml-as-source) om te bepalen of u de naam van de gecomprimeerde bestanden als mapstructuur wilt behouden. | Nee.  |
+| niveau<br/>(*onder `compression`*) | De compressie ratio. <br>Toegestane waarden zijn **optimaal** of **snelst**.<br>- **Snelst:** De compressie bewerking moet zo snel mogelijk worden voltooid, zelfs als het resulterende bestand niet optimaal is gecomprimeerd.<br>- **Optimaal**: de compressie bewerking moet optimaal worden gecomprimeerd, zelfs als het volt ooien van de bewerking langer duurt. Zie het onderwerp [compressie niveau](/dotnet/api/system.io.compression.compressionlevel) voor meer informatie. | Nee       |
 
 Hieronder ziet u een voor beeld van XML-gegevensset op Azure Blob Storage:
 
@@ -71,26 +71,26 @@ Meer informatie over het toewijzen van XML-gegevens en Sink-gegevens opslag/-ind
 
 ### <a name="xml-as-source"></a>XML als bron
 
-De volgende eigenschappen worden ondersteund in de sectie Kopieer **activiteit \_ _ \* bron** *. Meer informatie over het [gedrag van XML-Connector](#xml-connector-behavior).
+De volgende eigenschappen worden ondersteund in de sectie Kopieer **activiteit \_ _ \* bron***. Meer informatie over het [gedrag van XML-Connector](#xml-connector-behavior).
 
 | Eigenschap      | Beschrijving                                                  | Vereist |
 | ------------- | ------------------------------------------------------------ | -------- |
-| type          | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **XmlSource** . | Ja      |
+| type          | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **XmlSource**. | Ja      |
 | formatSettings | Een groep eigenschappen. Raadpleeg de onderstaande tabel **XML-Lees instellingen** . | Nee       |
-| storeSettings | Een groep eigenschappen voor het lezen van gegevens uit een gegevens archief. Elke connector op basis van een bestand heeft zijn eigen ondersteunde Lees instellingen onder `storeSettings` . **Zie de sectie Details in connector artikel-> eigenschappen van de Kopieer activiteit** . | Nee       |
+| storeSettings | Een groep eigenschappen voor het lezen van gegevens uit een gegevens archief. Elke connector op basis van een bestand heeft zijn eigen ondersteunde Lees instellingen onder `storeSettings` . **Zie de sectie Details in connector artikel-> eigenschappen van de Kopieer activiteit**. | Nee       |
 
 Ondersteunde **XML-Lees instellingen** onder `formatSettings` :
 
 | Eigenschap      | Beschrijving                                                  | Vereist |
 | ------------- | ------------------------------------------------------------ | -------- |
-| type          | Het type formatSettings moet zijn ingesteld op **XmlReadSettings** . | Ja      |
+| type          | Het type formatSettings moet zijn ingesteld op **XmlReadSettings**. | Ja      |
 | validationMode | Hiermee wordt opgegeven of het XML-schema moet worden gevalideerd.<br>Toegestane waarden zijn **geen** (standaard instelling, geen validatie), **xsd** (valideren met XSD), **DTD** (valideren met DTD). | Nee |
-| naam ruimten | Hiermee wordt aangegeven of naam ruimte moet worden ingeschakeld bij het parseren van de XML-bestanden. Toegestane waarden zijn: **True** (standaard), **False** . | Nee |
+| naam ruimten | Hiermee wordt aangegeven of naam ruimte moet worden ingeschakeld bij het parseren van de XML-bestanden. Toegestane waarden zijn: **True** (standaard), **False**. | Nee |
 | namespacePrefixes | Naam ruimte-URI naar voorvoegsel toewijzing, die wordt gebruikt om velden te benoemen tijdens het parseren van het XML-bestand.<br/>Als een XML-bestand naam ruimte en naam ruimte is ingeschakeld, is de veld naam standaard hetzelfde als in het XML-document.<br>Als er een item is gedefinieerd voor de naam ruimte-URI in deze kaart, is de veld naam `prefix:fieldName` . | Nee |
-| detectDataType | Hiermee wordt aangegeven of integer-, double-en Boolean-gegevens typen moeten worden gedetecteerd. Toegestane waarden zijn: **True** (standaard), **False** .| Nee |
+| detectDataType | Hiermee wordt aangegeven of integer-, double-en Boolean-gegevens typen moeten worden gedetecteerd. Toegestane waarden zijn: **True** (standaard), **False**.| Nee |
 | compressionProperties | Een groep eigenschappen voor het decomprimeren van gegevens voor een bepaalde compressie-codec. | Nee       |
-| preserveZipFileNameAsFolder<br>( *onder `compressionProperties` -> `type` als `ZipDeflateReadSettings`* )  | Van toepassing wanneer de invoer-gegevensset is geconfigureerd met **ZipDeflate** -compressie. Hiermee wordt aangegeven of de naam van het bron-zip-bestand tijdens het kopiëren moet worden bewaard als mapstructuur.<br>-Als deze eigenschap is ingesteld op **True (standaard)** , wordt in Data Factory ongecomprimeerde bestanden naar `<path specified in dataset>/<folder named as source zip file>/` .<br>-Als deze eigenschap is ingesteld op **Onwaar** , wordt door Data Factory ongecomprimeerde bestanden rechtstreeks naar te schrijven `<path specified in dataset>` . Zorg ervoor dat u geen dubbele bestands namen in verschillende zip-bron bestanden hebt om te voor komen dat u racet of onverwacht gedrag.  | Nee |
-| preserveCompressionFileNameAsFolder<br>( *onder `compressionProperties` -> `type` as `TarGZipReadSettings` of `TarReadSettings`* ) | Van toepassing wanneer de invoer-gegevensset is geconfigureerd met **TarGzip** / **tar** -compressie. Hiermee wordt aangegeven of de gecomprimeerde bestands naam van de bron moet worden behouden als mapstructuur tijdens het kopiëren.<br>-Als deze eigenschap is ingesteld op **True (standaard)** , schrijft Data Factory gedecomprimeerde bestanden naar `<path specified in dataset>/<folder named as source compressed file>/` . <br>-Als deze eigenschap is ingesteld op **Onwaar** , schrijft Data Factory de gedecomprimeerde bestanden rechtstreeks naar `<path specified in dataset>` . Zorg ervoor dat u geen dubbele bestands namen in verschillende bron bestanden hebt om te voor komen dat u racet of onverwacht gedrag. | Nee |
+| preserveZipFileNameAsFolder<br>(*onder `compressionProperties` -> `type` als `ZipDeflateReadSettings`*)  | Van toepassing wanneer de invoer-gegevensset is geconfigureerd met **ZipDeflate** -compressie. Hiermee wordt aangegeven of de naam van het bron-zip-bestand tijdens het kopiëren moet worden bewaard als mapstructuur.<br>-Als deze eigenschap is ingesteld op **True (standaard)**, wordt in Data Factory ongecomprimeerde bestanden naar `<path specified in dataset>/<folder named as source zip file>/` .<br>-Als deze eigenschap is ingesteld op **Onwaar**, wordt door Data Factory ongecomprimeerde bestanden rechtstreeks naar te schrijven `<path specified in dataset>` . Zorg ervoor dat u geen dubbele bestands namen in verschillende zip-bron bestanden hebt om te voor komen dat u racet of onverwacht gedrag.  | Nee |
+| preserveCompressionFileNameAsFolder<br>(*onder `compressionProperties` -> `type` as `TarGZipReadSettings` of `TarReadSettings`*) | Van toepassing wanneer de invoer-gegevensset is geconfigureerd met **TarGzip** / **tar** -compressie. Hiermee wordt aangegeven of de gecomprimeerde bestands naam van de bron moet worden behouden als mapstructuur tijdens het kopiëren.<br>-Als deze eigenschap is ingesteld op **True (standaard)**, schrijft Data Factory gedecomprimeerde bestanden naar `<path specified in dataset>/<folder named as source compressed file>/` . <br>-Als deze eigenschap is ingesteld op **Onwaar**, schrijft Data Factory de gedecomprimeerde bestanden rechtstreeks naar `<path specified in dataset>` . Zorg ervoor dat u geen dubbele bestands namen in verschillende bron bestanden hebt om te voor komen dat u racet of onverwacht gedrag. | Nee |
 
 ## <a name="mapping-data-flow-properties"></a>Eigenschappen van gegevens stroom toewijzen
 

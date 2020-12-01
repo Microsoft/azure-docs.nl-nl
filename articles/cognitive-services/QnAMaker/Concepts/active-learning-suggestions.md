@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: d39e34bd85c4524a6f28d188f977a7ab37eecc58
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: e1a8043912c984be46f85bd384a7049da27028b3
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445010"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353235"
 ---
 # <a name="active-learning-suggestions"></a>Suggesties voor actieve trainingen
 
@@ -37,14 +37,14 @@ Zodra vragen worden voorgesteld in de QnA Maker Portal, moet u deze suggesties c
 
 ## <a name="turn-on-active-learning"></a>Actief leren inschakelen
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele versie)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 
 Actief leren is standaard **uitgeschakeld**.
 Actief leren gebruiken:
 * U moet [actief leren inschakelen](../How-To/use-active-learning.md#turn-on-active-learning-for-alternate-questions) zodat QnA Maker alternatieve vragen voor uw Knowledge Base verzamelt.
 * Als u de voorgestelde alternatieve vragen wilt zien, [gebruikt u weergave opties](../How-To/improve-knowledge-base.md#view-suggested-questions) op de pagina bewerken.
 
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-versie)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
 Actief leren bevindt zich **standaard in QnA Maker** Managed (preview). Als u de voorgestelde alternatieve vragen wilt zien, [gebruikt u weergave opties](../How-To/improve-knowledge-base.md#view-suggested-questions) op de pagina bewerken.
 
@@ -137,7 +137,7 @@ QnA Maker expliciete feedback nodig hebt over welke van de antwoorden het beste 
 * Bedrijfs logica, zoals het bepalen van een acceptabel Score bereik.
 * Een combi natie van feedback van gebruikers en bedrijfs logica.
 
-Gebruik de [Train API](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker4.0/runtime/train) om het juiste antwoord naar QnA Maker te verzenden nadat de gebruiker dit heeft geselecteerd.
+Gebruik de [Train API](/rest/api/cognitiveservices/qnamaker4.0/runtime/train) om het juiste antwoord naar QnA Maker te verzenden nadat de gebruiker dit heeft geselecteerd.
 
 ## <a name="next-step"></a>Volgende stap
 

@@ -10,26 +10,26 @@ ms.subservice: bing-custom-search
 ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: aahi
-ms.openlocfilehash: 90b6619a5a0c3d59b09eeb5a5002d15cf0c21e19
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 6141bd67681df757536792981d47756a20ed33db
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93095897"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353320"
 ---
 # <a name="share-your-custom-search-instance"></a>Uw aangepaste zoek exemplaar delen
 
 > [!WARNING]
-> Bing Zoeken-API's van Cognitive Services naar Bing Search-Services verplaatsen. Vanaf **30 oktober 2020** moeten nieuwe exemplaren van Bing Search worden ingericht volgens het proces dat [hier](https://aka.ms/cogsvcs/bingmove)wordt beschreven.
-> Bing Zoeken-API's ingericht met Cognitive Services wordt voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst gebeurt.
-> Zie [Bing Search Services](https://aka.ms/cogsvcs/bingmigration)voor migratie-instructies.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
+> Bing Search-API's die zijn ingericht met Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
+> Raadpleeg [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
 U kunt het gezamenlijk bewerken en testen van uw exemplaar eenvoudig toestaan door het te delen met leden van uw team. U kunt uw exemplaar delen met iedereen die alleen hun e-mail adres gebruikt. Een exemplaar delen:
 
 - Aanmelden bij [aangepaste zoek opdracht](https://customsearch.ai)
 - Een aangepast Zoek exemplaar selecteren
 - Klik op het instellingen pictogram (wordt weer gegeven als tand wiel). 
-- Onder **uw exemplaar delen** voert u het e-mail adres in van de persoon met wie u uw exemplaar wilt delen en klikt u op **delen** . 
+- Onder **uw exemplaar delen** voert u het e-mail adres in van de persoon met wie u uw exemplaar wilt delen en klikt u op **delen**. 
 
 Nadat u het e-mail adres hebt toegevoegd, wordt het toegevoegd aan het exemplaar dat wordt **gedeeld met** de lijst. Herhaal dit proces voor elke persoon met wie u uw exemplaar wilt delen. 
 

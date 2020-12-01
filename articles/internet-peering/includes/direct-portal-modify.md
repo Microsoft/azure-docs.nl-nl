@@ -8,19 +8,19 @@ ms.service: internet-peering
 ms.topic: include
 ms.date: 11/27/2019
 ms.author: prmitiki
-ms.openlocfilehash: 3894bf046ed4ee3f068e43dbc5bc5b7f2a1002b4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c3212acd5015edbb639b8904b885c718d654e5b4
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81681036"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96356258"
 ---
 In deze sectie wordt beschreven hoe u de volgende wijzigings bewerkingen voor directe peering uitvoert.
 
 ### <a name="add-direct-peering-connections"></a>Directe peering-verbindingen toevoegen
 1. Selecteer de knop **+ verbindingen toevoegen** en configureer een nieuwe peering-verbinding.
     > [!div class="mx-imgBorder"]
-    > ![Bron weergave voor peering](../media/setup-direct-modify-addconnection.png)
+    > ![Op de pagina AshburnPeering-verbindingen worden de verbindingen weer gegeven. De knop + verbindingen toevoegen is gemarkeerd.](../media/setup-direct-modify-addconnection.png)
 
 1. Vul het **verbindings formulier direct peering** in en selecteer **Opslaan**. Voor hulp bij het configureren van een peering-verbinding raadpleegt u de stappen in de sectie ' een directe peering maken en inrichten '.
     > [!div class="mx-imgBorder"]
@@ -35,7 +35,7 @@ Het verwijderen van een verbinding wordt momenteel niet ondersteund in de Azure 
     > [!div class="mx-imgBorder"]
     > ![Verbinding bewerken](../media/setup-direct-modify-editconnection.png)
 
-1. Wijzig de band breedte door de schuif regelaar te verplaatsen en vervolgens **Opslaan**te selecteren.
+1. Wijzig de band breedte door de schuif regelaar te verplaatsen en vervolgens **Opslaan** te selecteren.
     > [!div class="mx-imgBorder"]
     > ![Band breedte wijzigen](../media/setup-direct-modify-editconnectionsettings.png)
 

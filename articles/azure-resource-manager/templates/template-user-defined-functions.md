@@ -1,20 +1,20 @@
 ---
 title: Door de gebruiker gedefinieerde functies in sjablonen
-description: Hierin wordt beschreven hoe u door de gebruiker gedefinieerde functies definieert en gebruikt in een Azure Resource Manager sjabloon.
+description: Hierin wordt beschreven hoe u door de gebruiker gedefinieerde functies definieert en gebruikt in een Azure Resource Manager sjabloon (ARM-sjabloon).
 ms.topic: conceptual
 ms.date: 03/09/2020
-ms.openlocfilehash: 69f4e98d389cc8dbe5cd3f4b628189676c501106
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c0d62abb5362d51a77db872c11416b04dcfb3f97
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84672932"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353473"
 ---
-# <a name="user-defined-functions-in-azure-resource-manager-template"></a>Door de gebruiker gedefinieerde functies in Azure Resource Manager sjabloon
+# <a name="user-defined-functions-in-arm-template"></a>Door de gebruiker gedefinieerde functies in ARM-sjabloon
 
 U kunt binnen uw sjabloon uw eigen functies maken. Deze functies zijn beschikbaar voor gebruik in uw sjabloon. Door de gebruiker gedefinieerde functies zijn gescheiden van de [standaard sjabloon functies](template-functions.md) die automatisch beschikbaar zijn in uw sjabloon. Maak uw eigen functies wanneer u gecompliceerde expressies hebt die herhaaldelijk worden gebruikt in uw sjabloon.
 
-In dit artikel wordt beschreven hoe u door de gebruiker gedefinieerde functies in uw Azure Resource Manager-sjabloon kunt toevoegen.
+In dit artikel wordt beschreven hoe u door de gebruiker gedefinieerde functies toevoegt in uw Azure Resource Manager sjabloon (ARM-sjabloon).
 
 ## <a name="define-the-function"></a>Definieer de functie
 

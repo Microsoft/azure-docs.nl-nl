@@ -8,12 +8,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 11/22/2020
 ms.author: makromer
-ms.openlocfilehash: 49d11dfe3d42d99c610fae9fa64079a5fd87501f
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: c8b0ae7058aecc1813d720a3fbb2a1a1f967cf40
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96006781"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352595"
 ---
 # <a name="handle-sql-truncation-error-rows-in-data-factory-mapping-data-flows"></a>Afgebroken SQL-rijen in Data Factory gegevens stromen toewijzen
 
@@ -23,7 +23,7 @@ Een veelvoorkomend scenario in Data Factory bij het gebruik van toewijzings gege
 
 Er zijn twee primaire methoden voor het afhandelen van fouten bij het schrijven van gegevens naar uw data base-sink in ADF-gegevens stromen:
 
-* Stel de verwerking van de Sink- [fout rijen](https://docs.microsoft.com/azure/data-factory/connector-azure-sql-database#error-row-handling) in op ' door gaan bij fout ' bij het verwerken van database gegevens. Dit is een geautomatiseerde catch-all-methode waarvoor geen aangepaste logica in uw gegevens stroom nodig is.
+* Stel de verwerking van de Sink- [fout rijen](./connector-azure-sql-database.md#error-row-handling) in op ' door gaan bij fout ' bij het verwerken van database gegevens. Dit is een geautomatiseerde catch-all-methode waarvoor geen aangepaste logica in uw gegevens stroom nodig is.
 * U kunt ook de volgende stappen uitvoeren om de logboek registratie van kolommen die niet in een doel reeks kolom passen, toe te voegen, zodat uw gegevens stroom kan door gaan.
 
 > [!NOTE]

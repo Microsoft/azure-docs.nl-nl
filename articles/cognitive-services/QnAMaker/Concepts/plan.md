@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: 0be2fecfad4d2a2b829266fa1d9574bcc4c50eee
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.openlocfilehash: 048b53186aa0be388d9d801cd6590d4295a4faa7
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94376673"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353167"
 ---
 # <a name="plan-your-qna-maker-app"></a>Uw QnA Maker-app plannen
 
@@ -20,7 +20,7 @@ Als u uw QnA Maker-app wilt plannen, moet u weten hoe QnA Maker werkt en samenwe
 
 Elke [Azure-resource](azure-resources.md#resource-purposes) die is gemaakt met QnA Maker heeft een specifiek doel. Elke resource heeft zijn eigen doel, limieten en [prijs categorie](azure-resources.md#pricing-tier-considerations). Het is belang rijk dat u de functie van deze resources begrijpt, zodat u die kennis in uw plannings proces kunt gebruiken.
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele versie)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 
 | Resource | Doel |
 |--|--|
@@ -29,7 +29,7 @@ Elke [Azure-resource](azure-resources.md#resource-purposes) die is gemaakt met Q
 | [Resource en app-plan service resource app service](azure-resources.md#app-service-and-app-service-plan) | Eindpunt queryvoorspelling |
 | [Application Insights](azure-resources.md#application-insights) resource | Telemetrie voor spelling query |
 
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-versie)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
 | Resource | Doel |
 |--|--|
@@ -75,13 +75,13 @@ Een kennis database is rechtstreeks verbonden met de QnA Maker resource. Het bev
 
 ### <a name="language-considerations"></a>Taal overwegingen
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele versie)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 
 De eerste Knowledge Base die is gemaakt op uw QnA Maker resource stelt de taal voor de resource in. U kunt slechts één taal voor een QnA Maker bron hebben.
 
 U kunt uw QnA Maker resources structureren per taal of u kunt [Translator](../../translator/translator-info-overview.md) gebruiken om een query van een andere taal te wijzigen in de taal van de Knowledge Base voordat u de query naar het eind punt voor query voorspelling verzendt.
 
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-versie)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
 U kunt nu kennissen hebben in verschillende talen binnen dezelfde QnA Maker resource. Wanneer u de eerste Knowledge Base maakt, kunt u kiezen of u de resource wilt gebruiken voor Knowledge bases in één taal of in meerdere talen.
 
@@ -94,13 +94,13 @@ U kunt nu kennissen hebben in verschillende talen binnen dezelfde QnA Maker reso
 
 ### <a name="ingest-data-sources"></a>Gegevens bronnen opnemen
 
-U kunt een van de volgende opgenomen [gegevens bronnen](knowledge-base.md) gebruiken om een Knowledge Base te maken:
+U kunt een van de volgende opgenomen [gegevens bronnen](../index.yml) gebruiken om een Knowledge Base te maken:
 
 * Open bare URL
 * Persoonlijke share point-URL
-* Bestand
+* File
 
-Met het opname proces worden [ondersteunde inhouds typen](content-types.md) geconverteerd om te worden geprijsd. Alle verdere bewerking van het *antwoord* geschiedt met prijs verlaging. Nadat u een Knowledge Base hebt gemaakt, kunt u [QnA-paren](question-answer-set.md) in de QnA Maker Portal bewerken met [Rich Text-ontwerp](../how-to/edit-knowledge-base.md#rich-text-editing-for-answer).
+Met het opname proces worden [ondersteunde inhouds typen](../index.yml) geconverteerd om te worden geprijsd. Alle verdere bewerking van het *antwoord* geschiedt met prijs verlaging. Nadat u een Knowledge Base hebt gemaakt, kunt u [QnA-paren](question-answer-set.md) in de QnA Maker Portal bewerken met [Rich Text-ontwerp](../how-to/edit-knowledge-base.md#rich-text-editing-for-answer).
 
 ### <a name="data-format-considerations"></a>Overwegingen voor gegevens indeling
 
@@ -124,17 +124,17 @@ Ontwerp uw gesprek stroom met een lus, zodat een gebruiker weet hoe uw bot moet 
 
 Mede werkers kunnen andere ontwikkel aars zijn die de volledige ontwikkelings stack van de Knowledge Base-toepassing delen of kunnen worden beperkt tot alleen het ontwerpen van de kennis database.
 
-Knowledge Base-ontwerp ondersteunt diverse op [rollen gebaseerde toegangs machtigingen](../how-to/collaborate-knowledge-base.md) die u in de Azure Portal toepast om het bereik van de mogelijkheden van een samen werker te beperken.
+Knowledge Base-ontwerp ondersteunt diverse op [rollen gebaseerde toegangs machtigingen](../index.yml) die u in de Azure Portal toepast om het bereik van de mogelijkheden van een samen werker te beperken.
 
 ## <a name="integration-with-client-applications"></a>Integratie met client toepassingen
 
-De integratie met [client toepassingen](integration-with-other-applications.md) wordt gerealiseerd door een query naar het runtime-eind punt voor de voor spelling te verzenden. Er wordt een query naar uw specifieke Knowledge Base verzonden met een SDK of op REST gebaseerde aanvraag naar het eind punt van de Web-App van uw QnA Maker.
+De integratie met [client toepassingen](../index.yml) wordt gerealiseerd door een query naar het runtime-eind punt voor de voor spelling te verzenden. Er wordt een query naar uw specifieke Knowledge Base verzonden met een SDK of op REST gebaseerde aanvraag naar het eind punt van de Web-App van uw QnA Maker.
 
 Als u een client aanvraag correct wilt verifiëren, moet de client toepassing de juiste referenties en de Knowledge Base-ID verzenden. Als u een Azure Bot Service gebruikt, configureert u deze instellingen als onderdeel van de bot-configuratie in de Azure Portal.
 
 ### <a name="conversation-flow-in-a-client-application"></a>Conversatie stroom in een client toepassing
 
-De conversatie stroom in een [client toepassing](integration-with-other-applications.md), zoals een Azure-bot, vereist mogelijk functionaliteit voor en na interactie met de Knowledge Base.
+De conversatie stroom in een [client toepassing](../index.yml), zoals een Azure-bot, vereist mogelijk functionaliteit voor en na interactie met de Knowledge Base.
 
 Ondersteunt uw client toepassing gesprek stroom door alternatieve manieren te bieden voor het verwerken van vervolg vragen of met inbegrip van Chit-Chit? Als dit het geval is, ontwerpt u deze vroege en zorgt u ervoor dat de query van de client toepassing correct wordt verwerkt door een andere service of wanneer deze naar uw kennis database wordt verzonden.
 
@@ -152,7 +152,7 @@ QnA Maker maakt gebruik van _actief leren_ om uw Knowledge Base te verbeteren do
 
 ### <a name="providing-a-default-answer"></a>Een standaard antwoord opgeven
 
-Als uw Knowledge Base geen antwoord heeft gevonden, wordt het _standaard antwoord_ geretourneerd. Dit antwoord kan worden geconfigureerd op de pagina **instellingen** in de QnA Maker portal of in de [api's](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update#request-body).
+Als uw Knowledge Base geen antwoord heeft gevonden, wordt het _standaard antwoord_ geretourneerd. Dit antwoord kan worden geconfigureerd op de pagina **instellingen** in de QnA Maker portal of in de [api's](/rest/api/cognitiveservices/qnamaker/knowledgebase/update#request-body).
 
 Dit standaard antwoord wijkt af van het standaard antwoord van Azure bot. U kunt het standaard antwoord voor uw Azure-bot configureren in de Azure Portal als onderdeel van de configuratie-instellingen. Deze wordt geretourneerd wanneer niet aan de Score drempel wordt voldaan.
 
@@ -175,11 +175,11 @@ Er is een [rang orde van twee fasen](query-knowledge-base.md#how-qna-maker-proce
 
 ### <a name="service-updates"></a>Service-updates
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele versie)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 
 Pas de [meest recente runtime-updates](../how-to/set-up-qnamaker-service-azure.md#get-the-latest-runtime-updates) toe om service-updates automatisch te beheren.
 
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-versie)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
 In QnA Maker Managed (preview) wordt de runtime beheerd door de QnA Maker-service zelf. Daarom zijn service-updates niet van toepassing.
 
@@ -191,13 +191,13 @@ Schalen, door Voer en tolerantie worden bepaald door de Azure- [resources](../ho
 
 ### <a name="analytics-with-application-insights"></a>Analytics met Application Insights
 
-# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele versie)](#tab/v1)
+# <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 
 Alle query's voor uw Knowledge Base worden opgeslagen in Application Insights. Gebruik onze [meest voorkomende query's](../how-to/get-analytics-knowledge-base.md) om inzicht te krijgen in uw metrische gegevens.
 
-# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-versie)](#tab/v2)
+# <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
-In de beheerde implementatie wordt telemetrie aangeboden via de [Azure Monitor-service](https://docs.microsoft.com/azure/azure-monitor/). Gebruik onze [meest voorkomende query's](../how-to/get-analytics-knowledge-base.md) om inzicht te krijgen in uw metrische gegevens.
+In de beheerde implementatie wordt telemetrie aangeboden via de [Azure Monitor-service](../../../azure-monitor/index.yml). Gebruik onze [meest voorkomende query's](../how-to/get-analytics-knowledge-base.md) om inzicht te krijgen in uw metrische gegevens.
 
 
 ---
@@ -217,7 +217,7 @@ Elk paar kan het volgende bevatten:
 
 ### <a name="devops-development"></a>DevOps-ontwikkeling
 
-Voor het ontwikkelen van een Knowledge Base voor het invoegen van een DevOps-pijp lijn moet de Knowledge Base tijdens [batch tests](../quickstarts/batch-testing.md)worden geïsoleerd.
+Voor het ontwikkelen van een Knowledge Base voor het invoegen van een DevOps-pijp lijn moet de Knowledge Base tijdens [batch tests](../index.yml)worden geïsoleerd.
 
 Een Knowledge Base deelt de Cognitive Search index met alle andere kennis grondslagen op de QnA Maker resource. Hoewel de Knowledge Base is geïsoleerd per partitie, kan het delen van de index een verschil in de Score veroorzaken in vergelijking met de gepubliceerde kennis database.
 

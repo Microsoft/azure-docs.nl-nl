@@ -5,20 +5,20 @@ author: craigshoemaker
 ms.topic: conceptual
 ms.date: 02/18/2019
 ms.author: cshoe
-ms.openlocfilehash: e00fd3d1dac0a18ac7f7377e08ae8d20ae132c56
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aa0d78d52ec13c91b82e6a8d10720269076f59a1
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91652608"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353541"
 ---
-# <a name="azure-functions-triggers-and-bindings-concepts"></a>Concepten van Azure Functions-triggers en -bindingen
+# <a name="azure-functions-triggers-and-bindings-concepts"></a>Concepten van Azure Functions triggers en bindingen
 
 In dit artikel vindt u informatie over de concepten van het hoge niveau rond functies triggers en bindingen.
 
 Triggers zijn de oorzaak dat een functie wordt uitgevoerd. Een trigger definieert hoe een functie wordt aangeroepen en een functie moet precies één trigger hebben. Aan triggers zijn gegevens gekoppeld. Meestal is dit de nettolading waarmee de functie is geactiveerd. 
 
-Een binding met een functie is een manier om een andere resource declaratief aan de functie te koppelen. bindingen kunnen worden verbonden als *invoer bindingen*, *uitvoer bindingen*of beide. Gegevens van bindingen worden als parameters doorgegeven aan de functie.
+Een binding met een functie is een manier om een andere resource declaratief aan de functie te koppelen. bindingen kunnen worden verbonden als *invoer bindingen*, *uitvoer bindingen* of beide. Gegevens van bindingen worden als parameters doorgegeven aan de functie.
 
 U kunt verschillende bindingen mixen en matchen om aan uw behoeften te voldoen. Bindingen zijn optioneel en een functie kan een of meerdere invoer- en/of uitvoerbindingen hebben.
 
@@ -43,7 +43,7 @@ Triggers en bindingen worden op verschillende manieren gedefinieerd, afhankelijk
 
 | Platform | Triggers en bindingen worden geconfigureerd door... |
 |-------------|--------------------------------------------|
-| C#-klassen bibliotheek | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;de methoden en para meters voor C#-kenmerken |
+| C#-klassebibliotheek | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;de methoden en para meters voor C#-kenmerken |
 | Alle andere (inclusief Azure Portal) | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[function.jsbijwerken op](./functions-reference.md) ([schema](http://json.schemastore.org/function)) |
 
 De portal biedt een gebruikers interface voor deze configuratie, maar u kunt het bestand rechtstreeks bewerken door de **Geavanceerde editor** te openen die beschikbaar is via het tabblad **integreren** van uw functie.
@@ -88,6 +88,10 @@ Zie [ondersteunde talen](supported-languages.md)voor informatie over welke bindi
 Gebruik de volgende tabel om voor beelden te vinden van specifieke bindings typen die laten zien hoe u met bindingen kunt werken in uw-functies. Kies eerst het tabblad taal dat overeenkomt met uw project. 
 
 [!INCLUDE [functions-bindings-code-example-chooser](../../includes/functions-bindings-code-example-chooser.md)]
+
+## <a name="custom-bindings"></a>Aangepaste bindingen
+
+U kunt aangepaste invoer-en uitvoer bindingen maken. Bindingen moeten zijn geschreven in .NET, maar kunnen worden gebruikt vanuit elke ondersteunde taal. Zie [aangepaste invoer-en uitvoer bindingen maken](https://github.com/Azure/azure-webjobs-sdk/wiki/Creating-custom-input-and-output-bindings)voor meer informatie over het maken van aangepaste bindingen.
 
 ## <a name="resources"></a>Resources
 - [Expressies en patronen binden](./functions-bindings-expressions-patterns.md)

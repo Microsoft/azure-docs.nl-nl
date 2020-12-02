@@ -8,11 +8,11 @@ ms.date: 08/27/2020
 ms.custom: cog-serv-seo-aug-2020
 keywords: personalizer, Azure personalizer, machine learning
 ms.openlocfilehash: f843e7bfa014ad8391e20efff83a3c21a9de11b9
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94363898"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96171956"
 ---
 # <a name="what-is-personalizer"></a>Wat is Personalizer?
 
@@ -29,14 +29,14 @@ Voordat u aan de slag gaat, kunt u [Personalizer proberen met deze interactieve 
 
 ## <a name="how-does-personalizer-select-the-best-content-item"></a>Hoe selecteert Personalizer het beste inhoudsitem?
 
-Personalizer gebruikt **bekrachtigend leren** om het beste item ( _actie_ ) te selecteren op basis van gezamenlijk gedrag en scores toe te kennen aan alle gebruikers. Acties zijn de inhoudsitems, zoals nieuwsartikelen, specifieke films of producten.
+Personalizer gebruikt **bekrachtigend leren** om het beste item (_actie_) te selecteren op basis van gezamenlijk gedrag en scores toe te kennen aan alle gebruikers. Acties zijn de inhoudsitems, zoals nieuwsartikelen, specifieke films of producten.
 
-Met de **Positie** -aanroep wordt het actie-item in combinatie met de functies van de actie en contextfuncties gebruikt om het bovenste actie-item te selecteren:
+Met de **Positie**-aanroep wordt het actie-item in combinatie met de functies van de actie en contextfuncties gebruikt om het bovenste actie-item te selecteren:
 
-* **Acties met functies** : inhoudsitems met specifieke functies voor elk item
-* **Contextfuncties** : functies van uw gebruikers, hun context of hun omgeving wanneer ze uw app gebruiken
+* **Acties met functies**: inhoudsitems met specifieke functies voor elk item
+* **Contextfuncties**: functies van uw gebruikers, hun context of hun omgeving wanneer ze uw app gebruiken
 
-Met de Positie-aanroep wordt de id van elk inhoudsitem, __actie__ , geretourneerd om in het veld **Beloningsactie-id** aan de gebruiker te tonen.
+Met de Positie-aanroep wordt de id van elk inhoudsitem, __actie__, geretourneerd om in het veld **Beloningsactie-id** aan de gebruiker te tonen.
 
 De __actie__ die aan de gebruiker wordt weergegeven, wordt gekozen aan de hand van machine learning-modellen die de totale hoeveelheid beloningen over een bepaalde periode proberen te maximaliseren.
 
@@ -57,9 +57,9 @@ Personalizer gebruikt bekrachtigend leren om de beste actie te selecteren. Dit w
 
 ## <a name="when-to-use-personalizer"></a>Wanneer kan ik Personalizer gebruiken
 
-De **Positie** - [API](https://go.microsoft.com/fwlink/?linkid=2092082) van Personalizer wordt steeds aangeroepen wanneer in uw toepassing inhoud wordt getoond. Dit wordt een **gebeurtenis** genoemd, voorzien van een _gebeurtenis-id_.
+De **Positie**-[API](https://go.microsoft.com/fwlink/?linkid=2092082) van Personalizer wordt steeds aangeroepen wanneer in uw toepassing inhoud wordt getoond. Dit wordt een **gebeurtenis** genoemd, voorzien van een _gebeurtenis-id_.
 
-De **belonings** - [API](https://westus2.dev.cognitive.microsoft.com/docs/services/personalizer-api/operations/Reward) van Personalizer kan in real time worden aangeroepen of later, zodat het beter bij uw infrastructuur past. U bepaalt de beloningsscore op basis van uw zakelijke behoeften. De beloningsscore ligt tussen 0 en 1. Dat kan één waarde zijn, zoals 1 voor goed en 0 voor slecht, of een getal dat wordt geproduceerd door een algoritme dat u maakt voor uw bedrijfsdoelen en metrische gegevens.
+De **belonings**-[API](https://westus2.dev.cognitive.microsoft.com/docs/services/personalizer-api/operations/Reward) van Personalizer kan in real time worden aangeroepen of later, zodat het beter bij uw infrastructuur past. U bepaalt de beloningsscore op basis van uw zakelijke behoeften. De beloningsscore ligt tussen 0 en 1. Dat kan één waarde zijn, zoals 1 voor goed en 0 voor slecht, of een getal dat wordt geproduceerd door een algoritme dat u maakt voor uw bedrijfsdoelen en metrische gegevens.
 
 ## <a name="content-requirements"></a>Inhoudsvereisten
 
@@ -86,7 +86,7 @@ Omdat voor Personalizer collectieve gegevens in bijna realtime worden gebruikt o
     |Gratis, `F0`| Onlineleergedrag proberen in een niet-productieomgeving|
 
 1. Voeg Personalizer toe aan uw toepassing, website of systeem:
-    1. Voeg een **Positie** -aanroep toe aan Personalizer in uw toepassing, website of systeem om het beste _inhoudsitem_ te bepalen voordat de gebruiker de inhoud te zien krijgt.
+    1. Voeg een **Positie**-aanroep toe aan Personalizer in uw toepassing, website of systeem om het beste _inhoudsitem_ te bepalen voordat de gebruiker de inhoud te zien krijgt.
     1. Toon gebruikers het beste _inhoudsitem_. Dit item is de geretourneerde _beloningsactie-id_.
     1. Pas _bedrijfslogica_ toe op verzamelde informatie over het gedrag van de gebruiker om de **beloningsscore** te bepalen, zoals:
 

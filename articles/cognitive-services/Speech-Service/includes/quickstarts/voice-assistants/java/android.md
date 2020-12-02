@@ -11,11 +11,11 @@ ms.topic: include
 ms.date: 04/04/2020
 ms.author: travisw
 ms.openlocfilehash: bc27c73fbf9e827ce9a95c8aaaddc82ffb0aec53
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95096874"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187507"
 ---
 ## <a name="prerequisites"></a>Vereisten
 

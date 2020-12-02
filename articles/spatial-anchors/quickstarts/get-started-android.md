@@ -1,19 +1,19 @@
 ---
 title: 'Quickstart: Een Android-app maken'
 description: In deze quickstart leert u een Android-app bouwen met behulp van Spatial Anchors.
-author: craigktreasure
-manager: vriveras
+author: msftradford
+manager: MehranAzimi-msft
 services: azure-spatial-anchors
-ms.author: crtreasu
-ms.date: 02/24/2019
+ms.author: parkerra
+ms.date: 11/20/2020
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 6b7f924c7f115e8eddda93ea0c096ab94411da72
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: b7be4e257fc884c655fe380f69b08797a907fbbb
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87810391"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96022646"
 ---
 # <a name="quickstart-create-an-android-app-with-azure-spatial-anchors"></a>Quickstart: Een Android-app maken met Azure Spatial Anchors
 

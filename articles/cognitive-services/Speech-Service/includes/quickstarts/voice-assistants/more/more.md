@@ -5,15 +5,15 @@ ms.topic: include
 ms.date: 03/30/2020
 ms.author: trbye
 ms.openlocfilehash: b84db9eee473b14f2ba078ed1be77f6165a5f3b9
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "81421856"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187548"
 ---
 ## <a name="additional-language-and-platform-support"></a>Aanvullende taal- en platformondersteuning
 
-Als u op dit tabblad hebt geklikt, ziet u waarschijnlijk geen quickstart in uw favoriete computertaal. Geen zorgen: er zijn extra quickstartmaterialen en codevoorbeelden beschikbaar op GitHub. Gebruik de tabel om het juiste voorbeeld voor uw combinatie van programmeertaal en platform/besturingssysteem te vinden.
+Als u op dit tabblad hebt geklikt, ziet u waarschijnlijk geen quickstart in uw favoriete computertaal. Geen zorgen: er zijn extra quickstart-materialen en codevoorbeelden beschikbaar op GitHub. Gebruik de tabel om het juiste voorbeeld voor uw combinatie van programmeertaal en platform/besturingssysteem te vinden.
 
 | Taal    | Codevoorbeelden                                                                                   |
 |-------------|------------------------------------------------------------------------------------------------|

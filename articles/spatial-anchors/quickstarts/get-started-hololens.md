@@ -1,19 +1,19 @@
 ---
 title: 'Quickstart: Een HoloLens-app maken met DirectX'
 description: In deze quickstart leert u een HoloLens-app maken met behulp van Spatial Anchors.
-author: craigktreasure
-manager: virivera
+author: msftradford
+manager: MehranAzimi-msft
 services: azure-spatial-anchors
-ms.author: crtreasu
-ms.date: 02/24/2019
+ms.author: parkerra
+ms.date: 11/20/2020
 ms.topic: quickstart
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 66b8008312c1cf81d4fca7fb8ee5f26fc4c98f60
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: c96c45869ee1c9c96cd77d0b3eb10c733199666e
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92096160"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95993513"
 ---
 # <a name="quickstart-create-a-hololens-app-with-azure-spatial-anchors-in-cwinrt-and-directx"></a>Quickstart: HoloLens-app maken met Azure Spatial Anchors, in C++/WinRT en DirectX
 

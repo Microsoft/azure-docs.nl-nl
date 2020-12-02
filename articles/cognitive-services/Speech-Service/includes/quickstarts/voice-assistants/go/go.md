@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 05/25/2020
 ms.author: trrwilson
 ms.openlocfilehash: c37637ba1cb5154bbd56f7fd22bbbca62b8c3438
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95096107"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187526"
 ---
 ## <a name="prerequisites"></a>Vereisten
 

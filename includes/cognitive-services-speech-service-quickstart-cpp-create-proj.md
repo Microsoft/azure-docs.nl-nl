@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/15/2020
 ms.author: erhopf
 ms.openlocfilehash: 967861363d5056a5a466aa88840cda2aafbeb86b
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92097164"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96188315"
 ---
 Als u een Visual Studio-project voor C++-desktopontwikkeling wilt maken, moet u ontwikkelingsopties voor Visual Studio instellen, het project maken, de doelarchitectuur selecteren en de Speech SDK installeren.
 
@@ -17,7 +17,7 @@ Als u een Visual Studio-project voor C++-desktopontwikkeling wilt maken, moet u 
 
 Zorg er eerst voor dat Visual Studio correct is ingesteld voor C++-desktopontwikkeling:
 
-1. Open Visual Studio 2019 om het**Start**-venster weer te geven.
+1. Open Visual Studio 2019 om het **Start**-venster weer te geven.
 
    ![Schermopname van het Start-venster in Visual Studio 2019.](../articles/cognitive-services/Speech-Service/media/sdk/vs-start-window.png)
 
@@ -75,6 +75,6 @@ Installeer tot slot het [Speech SDK NuGet-pakket](https://aka.ms/csspeech/nuget)
 
 1. Selecteer **Installeren**.
 
-1. Selecteer **OK**in het dialoogvenster **Voorbeeld van wijzigingen bekijken**.
+1. Selecteer **OK** in het dialoogvenster **Voorbeeld van wijzigingen bekijken**.
 
 1. Lees de licentie in het dialoogvenster **Acceptatie van licentie** en selecteer **Ik ga akkoord**. De installatie van het pakket wordt gestart, en wanneer de installatie is voltooid, wordt in het deelvenster **Uitvoer** een bericht weergegeven met een bericht als `Successfully installed 'Microsoft.CognitiveServices.Speech 1.13.0' to helloworld`.

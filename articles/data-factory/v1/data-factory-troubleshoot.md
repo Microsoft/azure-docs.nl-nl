@@ -8,17 +8,17 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 ms.reviewer: maghan
 manager: anandsub
 robots: noindex
-ms.openlocfilehash: 7afc16beaacee5b75d57c4e4216a105734d20a09
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: bd18a26a1c199e1ecc32cfc371d2931b1dee0c3f
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637068"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96494967"
 ---
 # <a name="troubleshoot-data-factory-issues"></a>Problemen met Data Factory oplossen
 > [!NOTE]
@@ -65,9 +65,9 @@ Voor de snelle installatie voor Data Management Gateway is Internet Explorer ver
 Start **Data Management Gateway Configuration Manager** op de gateway computer en gebruik het tabblad **probleem oplossing** om de verbinding met SQL Server vanaf de gateway computer te testen. Zie problemen [met gateway problemen oplossen](data-factory-data-management-gateway.md#troubleshooting-gateway-issues) voor tips over het oplossen van problemen met verbinding/gateway.   
 
 ### <a name="problem-input-slices-are-in-waiting-state-forever"></a>Probleem: de invoer segmenten bevinden zich in de wacht status permanent
-Het segment kan om verschillende redenen een **wacht** status hebben. Een van de meest voorkomende redenen is dat de eigenschap **External** niet is ingesteld op **True** . Een gegevensset die buiten het bereik van Azure Data Factory wordt geproduceerd, moet worden gemarkeerd met een **externe** eigenschap. Deze eigenschap geeft aan dat de gegevens extern zijn en niet worden ondersteund door pijp lijnen in de data factory. De gegevenssegmenten worden gemarkeerd als **Gereed** wanneer de gegevens beschikbaar zijn in het desbetreffende archief.
+Het segment kan om verschillende redenen een **wacht** status hebben. Een van de meest voorkomende redenen is dat de eigenschap **External** niet is ingesteld op **True**. Een gegevensset die buiten het bereik van Azure Data Factory wordt geproduceerd, moet worden gemarkeerd met een **externe** eigenschap. Deze eigenschap geeft aan dat de gegevens extern zijn en niet worden ondersteund door pijp lijnen in de data factory. De gegevenssegmenten worden gemarkeerd als **Gereed** wanneer de gegevens beschikbaar zijn in het desbetreffende archief.
 
-Raadpleeg het volgende voorbeeld voor het gebruik van de eigenschap **external** . U kunt eventueel **externalData** _ opgeven wanneer u external instelt op True.
+Raadpleeg het volgende voorbeeld voor het gebruik van de eigenschap **external**. U kunt eventueel **externalData** _ opgeven wanneer u external instelt op True.
 
 Raadpleeg het artikel [Datasets](data-factory-create-datasets.md) (Gegevenssets) voor meer informatie over deze eigenschap.
 
@@ -97,7 +97,7 @@ Raadpleeg het artikel [Datasets](data-factory-create-datasets.md) (Gegevenssets)
 }
 ```
 
-Om de fout op te lossen, voegt u de eigenschap _ *External* * en de optionele sectie **externalData** toe aan de JSON-definitie van de invoer tabel en maakt u de tabel opnieuw.
+Om de fout op te lossen, voegt u de eigenschap _ *External** en de optionele sectie **externalData** toe aan de JSON-definitie van de invoer tabel en maakt u de tabel opnieuw.
 
 ### <a name="problem-hybrid-copy-operation-fails"></a>Probleem: de hybride Kopieer bewerking is mislukt
 Zie problemen met [gateway problemen oplossen](data-factory-data-management-gateway.md#troubleshooting-gateway-issues) voor stappen voor het oplossen van problemen met het kopiëren van/naar een on-premises gegevens archief met behulp van de Data Management Gateway.

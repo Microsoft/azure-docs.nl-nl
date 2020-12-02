@@ -6,12 +6,12 @@ author: musa-57
 ms.manager: abhemraj
 ms.author: hamusa
 ms.date: 01/01/2020
-ms.openlocfilehash: f2245e13f348706f662055408196ea7a26484811
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: af9254bc536dedc425aac53199665ae399e60a5a
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92314649"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96494406"
 ---
 # <a name="troubleshoot-azure-migrate-projects"></a>Problemen met Azure Migrate-projecten oplossen
 
@@ -19,7 +19,7 @@ Dit artikel helpt u bij het oplossen van problemen bij het maken en beheren van 
 
 ## <a name="how-to-add-new-project"></a>Hoe kunt u een nieuw project toevoegen?
 
-U kunt meerdere Azure Migrate-projecten in een abonnement hebben. [Meer informatie over](how-to-add-tool-first-time.md) het maken van een project voor de eerste keer of het [toevoegen van extra](create-manage-projects.md#create-additional-projects) projecten.
+U kunt meerdere Azure Migrate-projecten in een abonnement hebben. [Meer informatie over](./create-manage-projects.md) het maken van een project voor de eerste keer of het [toevoegen van extra](create-manage-projects.md#create-additional-projects) projecten.
 
 ## <a name="what-azure-permissions-are-needed"></a>Welke Azure-machtigingen zijn er nodig?
 
@@ -40,13 +40,13 @@ U kunt Maxi maal 35.000 VMware-Vm's of Maxi maal 35.000 virtuele Hyper-V-machine
 
 ## <a name="can-i-upgrade-old-project"></a>Kan ik een upgrade uitvoeren voor een oud project?
 
-Projecten van de vorige versie van Azure Migrate kunnen niet worden bijgewerkt. U moet [een nieuw project maken](how-to-add-tool-first-time.md)en er hulp middelen aan toevoegen.
+Projecten van de vorige versie van Azure Migrate kunnen niet worden bijgewerkt. U moet [een nieuw project maken](./create-manage-projects.md)en er hulp middelen aan toevoegen.
 
 ## <a name="cant-create-a-project"></a>Kan geen project maken
 
 Als u een project probeert te maken en er een implementatie fout optreedt:
 
-- Probeer het project opnieuw te maken voor het geval er een tijdelijke fout is opgetreden. Klik in **implementaties**op **opnieuw implementeren** om het opnieuw te proberen.
+- Probeer het project opnieuw te maken voor het geval er een tijdelijke fout is opgetreden. Klik in **implementaties** op **opnieuw implementeren** om het opnieuw te proberen.
 - Controleer of u machtigingen voor Inzender of eigenaar hebt in het abonnement.
 - Als u in een nieuwe geografische regio implementeert, moet u een korte tijd wachten en het opnieuw proberen.
 - Als u de fout melding ' aanvragen moeten gebruikers identiteits headers bevatten ' ontvangt, kan dit erop wijzen dat u geen toegang hebt tot de Azure Active Directory (Azure AD)-Tenant van de organisatie. In dat geval:
@@ -61,7 +61,7 @@ Als u een project probeert te maken en er een implementatie fout optreedt:
 
 ## <a name="added-tools-dont-show"></a>Toegevoegde hulpprogram ma's worden niet weer gegeven
 
-Controleer of u het juiste project hebt geselecteerd. Klik in de Azure Migrate hub > **servers** of in **data bases**op **wijzigen** naast **project migreren (wijzigen)** in de rechter bovenhoek van het scherm. Kies de juiste abonnement-en project naam > **OK**. De pagina moet worden vernieuwd met de toegevoegde hulp middelen van het geselecteerde project.
+Controleer of u het juiste project hebt geselecteerd. Klik in de Azure Migrate hub > **servers** of in **data bases** op **wijzigen** naast **project migreren (wijzigen)** in de rechter bovenhoek van het scherm. Kies de juiste abonnement-en project naam > **OK**. De pagina moet worden vernieuwd met de toegevoegde hulp middelen van het geselecteerde project.
 
 ## <a name="next-steps"></a>Volgende stappen
 

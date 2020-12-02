@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/23/2020
 ms.author: vinigam
-ms.openlocfilehash: eed68ff7e6b002e7a5985b336686b646a1a9acee
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: a97f3bf3a479d956747755a421d7946f7aafd4f1
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95522945"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96494236"
 ---
 # <a name="migrate-to-connection-monitor-from-connection-monitor-classic"></a>Migreren naar verbindings monitor vanuit verbindings monitor (klassiek)
 
@@ -64,5 +64,5 @@ Nadat de migratie is gestart, worden de volgende wijzigingen doorgevoerd:
 ## <a name="next-steps"></a>Volgende stappen
 
 Zie voor meer informatie over verbindings monitor:
-* [Migreren van Netwerkprestatiemeter naar verbindings monitor](/azure/network-watcher/migrate-to-connection-monitor-from-network-performance-monitor)
+* [Migreren van Netwerkprestatiemeter naar verbindings monitor](./migrate-to-connection-monitor-from-network-performance-monitor.md)
 * [Verbindings monitor maken met behulp van de Azure Portal](./connection-monitor-create-using-portal.md)

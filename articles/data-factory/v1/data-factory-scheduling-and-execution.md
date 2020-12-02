@@ -3,20 +3,20 @@ title: Plannen en uitvoeren met Data Factory
 description: Meer informatie over plannings-en uitvoerings aspecten van Azure Data Factory toepassings model.
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: e0707f9a7694741f54771699f5aeb3b452b11b8c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 60410eb2a9a5f18abf2daf87646943ffdc944402
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85319717"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96495171"
 ---
 # <a name="data-factory-scheduling-and-execution"></a>Planning en uitvoering Data Factory
 > [!NOTE]
@@ -50,7 +50,7 @@ Het is niet de pijp lijn die wordt uitgevoerd. Het zijn de activiteiten in de pi
 },
 ```
 
-Zoals in het volgende diagram wordt weer gegeven, wordt met een planning voor een activiteit een reeks tumblingvenstertriggers-vensters gemaakt met de begin-en eind tijd van de pijp lijn. Tumblingvenstertriggers Windows is een reeks niet-overlappende, aaneengesloten tijds intervallen. Deze logische tumblingvenstertriggers-Vensters voor een activiteit worden **activiteit Vensters**genoemd.
+Zoals in het volgende diagram wordt weer gegeven, wordt met een planning voor een activiteit een reeks tumblingvenstertriggers-vensters gemaakt met de begin-en eind tijd van de pijp lijn. Tumblingvenstertriggers Windows is een reeks niet-overlappende, aaneengesloten tijds intervallen. Deze logische tumblingvenstertriggers-Vensters voor een activiteit worden **activiteit Vensters** genoemd.
 
 ![Activity Scheduler-voor beeld](media/data-factory-scheduling-and-execution/scheduler-example.png)
 
@@ -164,7 +164,7 @@ In de volgende pijplijn definitie wordt de **scheduler** -eigenschap gebruikt om
 
 In dit voor beeld wordt de activiteit elk uur uitgevoerd tussen de begin-en eind tijd van de pijp lijn. De uitvoer gegevens worden elk uur geproduceerd voor een Windows-systeem met een tijd van drie uur (8 AM-9 AM, 9 AM-10 uur en 10 AM 11 uur). 
 
-Elke gegevens eenheid die wordt verbruikt of geproduceerd door een uitvoering van een activiteit, wordt een **gegevens segment**genoemd. Het volgende diagram toont een voor beeld van een activiteit met één invoer gegevensset en één uitvoer gegevensset: 
+Elke gegevens eenheid die wordt verbruikt of geproduceerd door een uitvoering van een activiteit, wordt een **gegevens segment** genoemd. Het volgende diagram toont een voor beeld van een activiteit met één invoer gegevensset en één uitvoer gegevensset: 
 
 ![Beschikbaarheids planner](./media/data-factory-scheduling-and-execution/availability-scheduler.png)
 
@@ -294,7 +294,7 @@ In het diagram ziet u dat er een fout is opgetreden bij het genereren van het 9-
 
 Met Data Factory hulpprogram ma's voor controle en beheer kunt u de diagnostische logboeken voor het mislukte segment inzoomen om de hoofd oorzaak van het probleem eenvoudig te vinden en deze op te lossen. Nadat u het probleem hebt opgelost, kunt u eenvoudig de uitvoering van de activiteit starten om het defecte segment te maken. Zie [pijp lijnen bewaken en beheren met Azure Portal Blades](data-factory-monitor-manage-pipelines.md) of de [app voor bewaking en beheer](data-factory-monitor-manage-app.md)voor meer informatie over het opnieuw uitvoeren en begrijpen van status overgangen voor gegevens segmenten.
 
-Nadat u het 9-10 AM-segment voor **Dataset2**opnieuw hebt uitgevoerd, start Data Factory de uitvoering van het 9-10-afhankelijke segment op de laatste gegevensset.
+Nadat u het 9-10 AM-segment voor **Dataset2** opnieuw hebt uitgevoerd, start Data Factory de uitvoering van het 9-10-afhankelijke segment op de laatste gegevensset.
 
 ![Mislukt segment opnieuw uitvoeren](./media/data-factory-scheduling-and-execution/rerun-failed-slice.png)
 

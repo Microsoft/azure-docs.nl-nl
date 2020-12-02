@@ -3,12 +3,12 @@ title: Veelgestelde vragen over Azure Migrate
 description: Krijg antwoorden op veelgestelde vragen over de Azure Migrate-service.
 ms.topic: conceptual
 ms.date: 04/15/2020
-ms.openlocfilehash: 95fd2ea9ecf5e4bcdf3fb2291e4cf7bf5b111c5f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d0877ad0d36e131525a227050cf44321e39e8b30
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87847462"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96494610"
 ---
 # <a name="azure-migrate-common-questions"></a>Azure Migrate: algemene vragen
 
@@ -41,7 +41,7 @@ Het Azure Migrate: hulp programma voor server migratie maakt gebruik van enige b
 
 ## <a name="i-have-a-project-with-the-previous-classic-experience-of-azure-migrate-how-do-i-start-using-the-new-version"></a>Ik heb een project met de vorige klassieke ervaring van Azure Migrate. Hoe kan ik beginnen met het gebruik van de nieuwe versie?
 
-U kunt projecten of onderdelen in de vorige versie niet upgraden naar de nieuwe versie. U moet [een nieuw Azure Migrate-project maken](create-manage-projects.md) en daar [hulpprogramma's voor evaluatie en migratie aan toevoegen](how-to-add-tool-first-time.md). Gebruik de zelfstudies om te begrijpen hoe u de beschikbare hulpprogramma’s voor evaluatie en migratie kunt gebruiken. Als er een Log Analytics-werkruimte aan een Klassiek project was gekoppeld, kunt u deze aan een project in de huidige versie koppelen nadat u het Klassieke project hebt verwijderd.
+U kunt projecten of onderdelen in de vorige versie niet upgraden naar de nieuwe versie. U moet [een nieuw Azure Migrate-project maken](create-manage-projects.md) en daar [hulpprogramma's voor evaluatie en migratie aan toevoegen](./create-manage-projects.md). Gebruik de zelfstudies om te begrijpen hoe u de beschikbare hulpprogramma’s voor evaluatie en migratie kunt gebruiken. Als er een Log Analytics-werkruimte aan een Klassiek project was gekoppeld, kunt u deze aan een project in de huidige versie koppelen nadat u het Klassieke project hebt verwijderd.
 
 ## <a name="whats-the-difference-between-azure-migrate-server-assessment-and-the-map-toolkit"></a>Wat is het verschil tussen Azure Migrate: Server analyse en de kaart Toolkit?
 

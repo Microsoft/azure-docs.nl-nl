@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: damendo
-ms.openlocfilehash: 792908236c4f240db64bd3899474d779d5b0570c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: b6f66813ea23f6c9d4b47a3733d0c72c683d0676
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96018100"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96493981"
 ---
 # <a name="introduction-to-flow-logging-for-network-security-groups"></a>Introductie van stroomlogboeken voor netwerkbeveiligingsgroepen
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 
 Stroom logboeken voor [netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md#security-rules) (NSG) is een functie van Azure Network Watcher waarmee u informatie kunt vastleggen over IP-verkeer dat wordt doorgelopen via een NSG. Stroom gegevens worden verzonden naar Azure Storage accounts van waaruit u toegang hebt, en deze kunt u exporteren naar een wille keurig visualisatie programma, SIEM of ID'S van uw keuze.
 
@@ -59,7 +59,7 @@ Stroom logboeken zijn de bron van waarheid voor alle netwerk activiteiten in uw 
 **Basisconcepten**
 
 - Software gedefinieerde netwerken zijn ingedeeld rond virtuele netwerken (VNETs) en subnetten. De beveiliging van deze VNets en subnetten kan worden beheerd met behulp van een NSG.
-- Een netwerk beveiligings groep (NSG) bevat een lijst met _beveiligings regels_ voor het toestaan of weigeren van netwerk verkeer in bronnen waarmee deze is verbonden. Nsg's kan worden gekoppeld aan subnetten, afzonderlijke Vm's of afzonderlijke netwerk interfaces (NIC) die zijn gekoppeld aan Vm's (Resource Manager). Zie [overzicht van netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md?toc=%252fazure%252fnetwork-watcher%252ftoc.json)voor meer informatie.
+- Een netwerk beveiligings groep (NSG) bevat een lijst met _beveiligings regels_ voor het toestaan of weigeren van netwerk verkeer in bronnen waarmee deze is verbonden. Nsg's kan worden gekoppeld aan subnetten, afzonderlijke Vm's of afzonderlijke netwerk interfaces (NIC) die zijn gekoppeld aan Vm's (Resource Manager). Zie [overzicht van netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json)voor meer informatie.
 - Alle verkeers stromen in uw netwerk worden geëvalueerd aan de hand van de regels in de desbetreffende NSG.
 - Het resultaat van deze evaluaties is NSG-stroom Logboeken. Stroom logboeken worden verzameld via het Azure-platform en hoeven niet te worden gewijzigd in de resources van de klant.
 - Opmerking: regels bestaan uit twee typen: het beëindigen van & niet-beëindigd, elk met verschillende gedragingen voor logboek registratie.
@@ -365,7 +365,7 @@ https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecurity
 - [Azure Kubernetes Services (AKS)](https://azure.microsoft.com/services/kubernetes-service/)
 - [Logic Apps](https://azure.microsoft.com/services/logic-apps/) 
 
-## <a name="best-practices"></a>Aanbevolen procedures
+## <a name="best-practices"></a>Best practices
 
 **Inschakelen op kritieke VNETs/subnetten**: stroom logboeken moeten worden ingeschakeld op alle kritieke VNETs/subnetten in uw abonnement als controle bare en beveiligings best practice. 
 

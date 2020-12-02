@@ -3,20 +3,20 @@ title: Spark-Program ma's aanroepen vanuit Azure Data Factory
 description: Meer informatie over het aanroepen van Spark-Program ma's vanuit een Azure-data factory met behulp van de MapReduce-activiteit.
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 97e2be64818888040b7e6ac3bc8861da24ebdbbd
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 6c9e5b6466d3da675975dbf2c532602561e820c9
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92359948"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96495069"
 ---
 # <a name="invoke-spark-programs-from-azure-data-factory-pipelines"></a>Spark-Program ma's aanroepen vanuit Azure Data Factory pijp lijnen
 
@@ -60,14 +60,14 @@ Hier volgen de typische stappen voor het maken van een data factory pijp lijn me
 
 1. Upload **test.py** naar de map **pyFiles** in de container **adfspark** in uw Blob-opslag. Maak de container en de map als deze nog niet bestaan.
 
-### <a name="create-a-data-factory"></a>Een gegevensfactory maken
+### <a name="create-a-data-factory"></a>Een data factory maken
 Volg deze stappen om een data factory te maken:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
 1. Selecteer **Nieuw** > **Gegevens en analyses** > **Data Factory**.
 
-1. Voer op de Blade **nieuw Data Factory** onder **naam** **SparkDF**in.
+1. Voer op de Blade **nieuw Data Factory** onder **naam** **SparkDF** in.
 
    > [!IMPORTANT]
    > De naam van de Azure-gegevensfactory moet wereldwijd uniek zijn. Als de fout ' Data Factory-naam SparkDF is niet beschikbaar is ' wordt weer gegeven, wijzigt u de naam van de data factory. Gebruik bijvoorbeeld yournameSparkDFdate en maak de data factory opnieuw. Zie voor meer informatie over naamgevingsregels [Data Factory: naamgevingsregels](data-factory-naming-rules.md).
@@ -237,7 +237,7 @@ In deze stap maakt u een pijp lijn met een HDInsightSpark-activiteit. Op dit mom
 
     ![De tegel Bewaking en beheer](media/data-factory-spark/monitor-and-manage-tile.png)
 
-1. Wijzig het filter **begin tijd** aan de bovenkant van **2/1/2017**en selecteer **Toep assen**.
+1. Wijzig het filter **begin tijd** aan de bovenkant van **2/1/2017** en selecteer **Toep assen**.
 
 1. Er wordt slechts één activiteiten venster weer gegeven omdat er slechts één dag tussen de begin datum (2017-02-01) en de eind tijd (2017-02-02) van de pijp lijn. Controleer of het gegevens segment de status **gereed** heeft.
 
@@ -327,7 +327,7 @@ In de volgende tabel worden de JSON-eigenschappen beschreven die in de JSON-defi
 | Eigenschap | Beschrijving | Vereist |
 | -------- | ----------- | -------- |
 | naam | De naam van de activiteit in de pijp lijn. | Ja |
-| description | Tekst die beschrijft wat de activiteit doet. | Nee |
+| beschrijving | Tekst die beschrijft wat de activiteit doet. | Nee |
 | type | Deze eigenschap moet worden ingesteld op HDInsightSpark. | Ja |
 | linkedServiceName | De naam van de gekoppelde HDInsight-service waarop het Spark-programma wordt uitgevoerd. | Ja |
 | rootPath | De BLOB-container en de map waarin het Spark-bestand zich bevindt. De bestands naam is hoofdletter gevoelig. | Ja |
@@ -347,7 +347,7 @@ Maak de volgende mapstructuur in de Blob-opslag waarnaar wordt verwezen door de 
 | Pad | Beschrijving | Vereist | Type |
 | ---- | ----------- | -------- | ---- |
 | . | Het pad naar de hoofdmap van de Spark-taak in de gekoppelde Storage-service. | Ja | Map |
-| &lt;door de gebruiker gedefinieerd &gt; | Het pad dat naar het invoer bestand van de Spark-taak verwijst. | Ja | Bestand |
+| &lt;door de gebruiker gedefinieerd &gt; | Het pad dat naar het invoer bestand van de Spark-taak verwijst. | Ja | File |
 | ./jars | Alle bestanden in deze map worden geüpload en geplaatst op het Java-klassenpad van het cluster. | Nee | Map |
 | ./pyFiles | Alle bestanden in deze map worden geüpload en geplaatst op de PYTHONPATH van het cluster. | Nee | Map |
 | ./files | Alle bestanden in deze map worden geüpload en geplaatst op de werk directory van de uitvoerder. | Nee | Map |

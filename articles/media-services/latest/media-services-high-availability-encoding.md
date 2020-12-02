@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.custom: ''
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: d2493a3a1e4fbb49c0b7f6dad29771b6e9faae8e
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: 15a23ab5b05ad1093069b4297ad1d292beeb3a42
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93146804"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96494950"
 ---
 # <a name="high-availability-with-media-services-and-video-on-demand-vod"></a>Hoge Beschik baarheid met Media Services en video on demand (VOD)
 
@@ -26,7 +26,7 @@ ms.locfileid: "93146804"
 
 ## <a name="high-availability-for-vod"></a>Hoge Beschik baarheid voor VOD
 
-Er is een ontwerp patroon met hoge Beschik baarheid met de naam [Geodes](https://docs.microsoft.com/azure/architecture/patterns/geodes) in de documentatie van de Azure-architectuur. Hierin wordt beschreven hoe dubbele resources worden geïmplementeerd in verschillende geografische regio's om te voorzien in schaal baarheid en tolerantie.  U kunt Azure-Services gebruiken om een dergelijke architectuur te maken voor een groot aantal ontwerp overwegingen voor hoge Beschik baarheid, zoals redundantie, status controle, taak verdeling en gegevens back-up en herstel.  Hieronder wordt een van deze architectuur beschreven, met details over elke service die in de oplossing wordt gebruikt en hoe de afzonderlijke services kunnen worden gebruikt voor het maken van een architectuur met hoge Beschik baarheid voor uw VOD-toepassing.
+Er is een ontwerp patroon met hoge Beschik baarheid met de naam [Geodes](/azure/architecture/patterns/geodes) in de documentatie van de Azure-architectuur. Hierin wordt beschreven hoe dubbele resources worden geïmplementeerd in verschillende geografische regio's om te voorzien in schaal baarheid en tolerantie.  U kunt Azure-Services gebruiken om een dergelijke architectuur te maken voor een groot aantal ontwerp overwegingen voor hoge Beschik baarheid, zoals redundantie, status controle, taak verdeling en gegevens back-up en herstel.  Hieronder wordt een van deze architectuur beschreven, met details over elke service die in de oplossing wordt gebruikt en hoe de afzonderlijke services kunnen worden gebruikt voor het maken van een architectuur met hoge Beschik baarheid voor uw VOD-toepassing.
 
 ### <a name="sample"></a>Voorbeeld
 
@@ -55,7 +55,7 @@ Dit diagram op hoog niveau toont de architectuur van het voor beeld om u op weg 
 
 [![Video on demand (VOD)-architectuur diagram ](media/media-services-high-availability-encoding/high-availability-architecture.svg) op hoog niveau](media/media-services-high-availability-encoding/high-availability-architecture.svg#lightbox)
 
-## <a name="best-practices"></a>Aanbevolen procedures
+## <a name="best-practices"></a>Best practices
 
 ### <a name="regions"></a>Regio's
 
@@ -87,4 +87,4 @@ Dit diagram op hoog niveau toont de architectuur van het voor beeld om u op weg 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Code voorbeelden](https://docs.microsoft.com/samples/browse/?products=azure-media-services) bekijken
+* [Code voorbeelden](/samples/browse/?products=azure-media-services) bekijken

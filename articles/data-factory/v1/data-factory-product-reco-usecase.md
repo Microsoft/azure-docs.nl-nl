@@ -3,8 +3,8 @@ title: Gebruiks voorbeeld-product aanbevelingen van Data Factory
 description: Meer informatie over een gebruiks voorbeeld dat is geïmplementeerd met behulp van Azure Data Factory samen met andere services.
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: maghan
 ms.assetid: 6f1523c7-46c3-4b8d-9ed6-b847ae5ec4ae
@@ -12,12 +12,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: b458b8d76111db6b32d188d9784e56d7fae303b9
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: fc1e0398f98dc72d57039530dce9751af012f154
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96456844"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96495290"
 ---
 # <a name="use-case---product-recommendations"></a>Gebruiks voorbeeld-product aanbevelingen
 Azure Data Factory is een van de vele services die worden gebruikt voor het implementeren van de Cortana Intelligence Suite oplossings versnellers.  Zie [Cortana Intelligence Suite](https://www.microsoft.com/cortanaanalytics) -pagina voor meer informatie over deze suite. In dit document beschrijven we een algemene use-case die Azure-gebruikers al hebben opgelost en geïmplementeerd met Azure Data Factory en andere Cortana Intelligence-onderdeel Services.

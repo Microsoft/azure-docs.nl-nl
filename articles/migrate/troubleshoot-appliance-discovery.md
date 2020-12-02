@@ -6,12 +6,12 @@ ms.manager: abhemraj
 ms.author: hamusa
 ms.topic: troubleshooting
 ms.date: 01/02/2020
-ms.openlocfilehash: b6fed24c7de87424bde94b864d4a9db91828a510
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 0d4630cad94a30e0dd53785c512e452d7b4a7d38
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92315774"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96494440"
 ---
 # <a name="troubleshoot-the-azure-migrate-appliance-and-discovery"></a>Problemen met het Azure Migrate apparaat en de detectie oplossen
 
@@ -56,8 +56,8 @@ Zorg ervoor dat u de juiste referenties gebruikt.
 Er is een fout opgetreden bij de synchronisatie van datum en tijd (802) geeft aan dat de klok van de server mogelijk niet meer is gesynchroniseerd met de huidige tijd van meer dan vijf minuten. Wijzig de klok tijd op de Collector-VM zodat deze overeenkomt met de huidige tijd:
 
 1. Open een opdracht prompt met beheerders rechten op de VM.
-2. Voer **w32tm/TZ**uit om de tijd zone te controleren.
-3. Voer **w32tm/resync**uit om de tijd te synchroniseren.
+2. Voer **w32tm/TZ** uit om de tijd zone te controleren.
+3. Voer **w32tm/resync** uit om de tijd te synchroniseren.
 
 
 ## <a name="unabletoconnecttoserver"></a>"UnableToConnectToServer"
@@ -80,7 +80,7 @@ Als deze verbindings fout optreedt, kunt u mogelijk geen verbinding maken met vC
     - Meer [informatie](./migrate-appliance.md#appliance---vmware) over vereiste Azure-rollen en-machtigingen.
 - Fout 60039 ' het apparaat is mogelijk niet geregistreerd voor het Azure Migrate-project ' kan zich voordoen als de registratie mislukt, omdat het Azure Migrate project dat is gebruikt voor de registratie van het apparaat, niet kan worden gevonden.
     - In de Azure Portal en controleer of het project bestaat in de resource groep.
-    - Als het project niet bestaat, maakt u een nieuw Azure Migrate project in de resource groep en registreert u het apparaat opnieuw. [Meer informatie over het](./how-to-add-tool-first-time.md#create-a-project-and-add-a-tool) maken van een nieuw project.
+    - Als het project niet bestaat, maakt u een nieuw Azure Migrate project in de resource groep en registreert u het apparaat opnieuw. [Meer informatie over het](./create-manage-projects.md#create-a-project-for-the-first-time) maken van een nieuw project.
 
 ## <a name="error-6003060031-key-vault-management-operation-failed"></a>Fout 60030/60031: Key Vault beheer bewerking is mislukt
 
@@ -157,8 +157,8 @@ Als dit niet werkt en u de VMware-servers wilt detecteren:
 
 Als gedetecteerde Vm's niet worden weer gegeven in de portal of als de VM-gegevens verouderd zijn, wacht u een paar minuten. Het duurt Maxi maal 30 minuten voordat wijzigingen in gedetecteerde VM-configuratie gegevens worden weer gegeven in de portal. Het kan enkele uren duren voordat wijzigingen in de toepassings gegevens worden weer gegeven. Als er na deze tijd geen gegevens zijn, kunt u als volgt vernieuwen
 
-1. Selecteer in **servers**  >  **Azure migrate server-evaluatie**de optie **overzicht**.
-2. Selecteer onder **beheren**de optie **status van agent**.
+1. Selecteer in **servers**  >  **Azure migrate server-evaluatie** de optie **overzicht**.
+2. Selecteer onder **beheren** de optie **status van agent**.
 3. Selecteer **agent vernieuwen**.
 4. Wacht tot de vernieuwings bewerking is voltooid. Nu worden actuele gegevens weer geven.
 
@@ -179,8 +179,8 @@ Deze status wordt weer gegeven als het uploaden van CSV-bestanden is mislukt van
 ## <a name="do-not-see-application-details-even-after-updating-guest-credentials"></a>Details van toepassing niet zien, zelfs na het bijwerken van gast referenties
 De detectie van de toepassing wordt elke 24 uur uitgevoerd. Als u de details onmiddellijk wilt zien, kunt u het volgende vernieuwen. Dit kan een paar minuten duren, afhankelijk van het aantal. van virtuele machines die zijn gedetecteerd.
 
-1. Selecteer in **servers**  >  **Azure migrate server-evaluatie**de optie **overzicht**.
-2. Selecteer onder **beheren**de optie **status van agent**.
+1. Selecteer in **servers**  >  **Azure migrate server-evaluatie** de optie **overzicht**.
+2. Selecteer onder **beheren** de optie **status van agent**.
 3. Selecteer **agent vernieuwen**.
 4. Wacht tot de vernieuwings bewerking is voltooid. Nu worden actuele gegevens weer geven.
 

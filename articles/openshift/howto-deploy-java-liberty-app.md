@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 10/30/2020
 keywords: Java, jakartaee, javaee, microprofile, open-vrijheid, WebSphere-vrijheid, Aro, openshift, Red Hat
-ms.openlocfilehash: 41891b58942efbfd705747cc16219185f2a2daa2
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 0c17c911d1eefe646785314a26b6a9b1e964ca67
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95018389"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96493935"
 ---
 # <a name="deploy-a-java-application-with-open-libertywebsphere-liberty-on-an-azure-red-hat-openshift-4-cluster"></a>Een Java-toepassing met open vrijheid/WebSphere vrijheid implementeren op een Azure Red Hat openshift 4-cluster
 
@@ -25,26 +25,26 @@ In deze hand leiding wordt gedemonstreerd hoe u uw Java-, Java EE-, [Jakarta ee]
 Voer de volgende vereisten uit om deze hand leiding door te lopen.
 
 > [!NOTE]
-> Azure Red Hat OpenShift vereist minimaal 40 kernen om een OpenShift-cluster te maken en uit te voeren. Het standaardquotum voor Azure-resources voor een nieuw Azure-abonnement voldoet niet aan deze vereiste. Als u een verhoging van de resourcelimiet wilt aanvragen, raadpleegt u [Standaardquotum: limieten verhogen per VM-reeks](https://docs.microsoft.com/azure/azure-portal/supportability/per-vm-quota-requests). Houd er rekening mee dat het gratis proef abonnement niet in aanmerking komt voor een quota verhoging, [upgrade naar een abonnement voor betalen per gebruik voordat u](https://docs.microsoft.com/azure/cost-management-billing/manage/upgrade-azure-subscription) een quota verhoging aanvraagt.
+> Azure Red Hat OpenShift vereist minimaal 40 kernen om een OpenShift-cluster te maken en uit te voeren. Het standaardquotum voor Azure-resources voor een nieuw Azure-abonnement voldoet niet aan deze vereiste. Als u een verhoging van de resourcelimiet wilt aanvragen, raadpleegt u [Standaardquotum: limieten verhogen per VM-reeks](../azure-portal/supportability/per-vm-quota-requests.md). Houd er rekening mee dat het gratis proef abonnement niet in aanmerking komt voor een quota verhoging, [upgrade naar een abonnement voor betalen per gebruik voordat u](../cost-management-billing/manage/upgrade-azure-subscription.md) een quota verhoging aanvraagt.
 
 1. Bereid een lokale computer voor met een UNIX-soortgelijk besturings systeem (bijvoorbeeld Ubuntu, macOS).
 1. Installeer een Java-SE-implementatie (bijvoorbeeld [AdoptOpenJDK openjdk 8 LTS/OpenJ9](https://adoptopenjdk.net/?variant=openjdk8&jvmVariant=openj9)).
 1. Installeer [maven](https://maven.apache.org/download.cgi) 3.5.0 of hoger.
 1. Installeer [docker](https://docs.docker.com/get-docker/) voor uw besturings systeem.
-1. Installeer [Azure cli](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) 2.0.75 of hoger.
+1. Installeer [Azure cli](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest) 2.0.75 of hoger.
 1. Controleren en installeren [`envsubst`](https://command-not-found.com/envsubst) als deze niet vooraf is geïnstalleerd in uw besturings systeem.
 1. Kloon de code voor dit voor beeld op het lokale systeem. Het voor beeld bevindt zich op [github](https://github.com/Azure-Samples/open-liberty-on-aro).
-1. Volg de instructies in [een Azure Red Hat open Shift 4-cluster maken](/azure/openshift/tutorial-create-cluster).
+1. Volg de instructies in [een Azure Red Hat open Shift 4-cluster maken](./tutorial-create-cluster.md).
 
    Hoewel de stap ' een Red Hat pull-geheim ophalen ' is voorzien van het label optioneel, **is het vereist voor dit artikel**.  Met het pull-geheim kan uw Azure Red Hat open Shift-cluster de openstaande vrijheids operator vinden.
 
    Als u van plan bent geheugenintensieve toepassingen op het cluster uit te voeren, geeft u de juiste grootte van de virtuele machine voor de worker-knoop punten op met behulp van de `--worker-vm-size` para meter. `Standard_E4s_v3`Is bijvoorbeeld de minimale grootte van de virtuele machine om de Elasticsearch-operator in een cluster te installeren. Zie voor meer informatie:
 
-   * [Azure CLI om een cluster te maken](https://docs.microsoft.com/cli/azure/aro?view=azure-cli-latest&preserve-view=true#az-aro-create)
-   * [Ondersteunde grootten voor virtuele machines voor geoptimaliseerd geheugen](/azure/openshift/support-policies-v4#memory-optimized)
+   * [Azure CLI om een cluster te maken](/cli/azure/aro?preserve-view=true&view=azure-cli-latest#az-aro-create)
+   * [Ondersteunde grootten voor virtuele machines voor geoptimaliseerd geheugen](./support-policies-v4.md#memory-optimized)
    * [Vereisten voor het installeren van de Elasticsearch-operator](https://docs.openshift.com/container-platform/4.3/logging/cluster-logging-deploying.html#cluster-logging-deploy-eo-cli_cluster-logging-deploying)
 
-1. Maak verbinding met het cluster door de stappen te volgen in [verbinding maken met een Azure Red Hat open Shift 4-cluster](/azure/openshift/tutorial-connect-cluster).
+1. Maak verbinding met het cluster door de stappen te volgen in [verbinding maken met een Azure Red Hat open Shift 4-cluster](./tutorial-connect-cluster.md).
    * Volg de stappen in ' de openhouds-CLI installeren ', omdat de `oc` opdracht later in dit artikel wordt gebruikt.
    * Noteer de URL van de cluster console, die er als volgt uitziet `https://console-openshift-console.apps.<random>.<region>.aroapp.io/` .
    * Noteer de `kubeadmin` referenties.
@@ -314,7 +314,7 @@ oc delete -f openlibertyapplication.yaml
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Verwijder het ARO-cluster door de stappen in de [zelf studie te volgen: een Azure Red Hat open Shift 4-cluster verwijderen](/azure/openshift/tutorial-delete-cluster)
+Verwijder het ARO-cluster door de stappen in de [zelf studie te volgen: een Azure Red Hat open Shift 4-cluster verwijderen](./tutorial-delete-cluster.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 

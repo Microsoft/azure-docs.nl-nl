@@ -7,12 +7,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.author: raynew
-ms.openlocfilehash: 393c58334f4a1bead7e089d0a64b2d165b67401d
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: f54283e4e63af22b30bddf97456eed75de3806cc
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92317179"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492961"
 ---
 # <a name="assess-large-numbers-of-hyper-v-vms-for-migration-to-azure"></a>Een groot aantal virtuele Hyper-V-machines beoordelen voor migratie naar Azure
 
@@ -75,7 +75,7 @@ In overeenstemming met uw plannings vereisten gaat u als volgt te werk:
 1. Een Azure Migrate projecten maken.
 2. Voeg het hulp programma voor het evalueren van Azure Migrate-servers toe aan de projecten.
 
-[Meer informatie](how-to-add-tool-first-time.md)
+[Meer informatie](./create-manage-projects.md)
 
 ## <a name="create-and-review-an-assessment"></a>Een evaluatie maken en bekijken
 

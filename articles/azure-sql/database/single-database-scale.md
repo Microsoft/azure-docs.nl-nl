@@ -7,16 +7,16 @@ ms.subservice: performance
 ms.custom: sqldbrb=1, references_regions
 ms.devlang: ''
 ms.topic: conceptual
-author: stevestein
-ms.author: sstein
-ms.reviewer: ''
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: sstein
 ms.date: 09/16/2020
-ms.openlocfilehash: d24143a440c0d30c3abcd6eb5efd454033b8f71c
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: da3c70baccc3c86f2ac57d61539456464e3042b6
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791474"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96493403"
 ---
 # <a name="scale-single-database-resources-in-azure-sql-database"></a>Resources van een individuele database schalen in Azure SQL Database
 
@@ -78,13 +78,13 @@ WHERE s.type_desc IN ('ROWS', 'LOG');
 
 Een wijzigings-of COMPUTE-bewerking voor het opnieuw schalen van een service tier kan worden geannuleerd.
 
-### <a name="the-azure-portal"></a>Azure Portal
+### <a name="the-azure-portal"></a>De Azure-portal
 
 Ga op de Blade database overzicht naar **meldingen** en klik op de tegel die aangeeft dat er een doorlopende bewerking is:
 
 ![Doorlopende bewerking](./media/single-database-scale/ongoing-operations.png)
 
-Klik vervolgens op de knop met het label **annulering van deze bewerking** .
+Klik vervolgens op de knop met het label **annulering van deze bewerking**.
 
 ![Doorlopende bewerking annuleren](./media/single-database-scale/cancel-ongoing-operation.png)
 

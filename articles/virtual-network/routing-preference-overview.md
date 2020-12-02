@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/18/2020
 ms.author: mnayak
-ms.openlocfilehash: 171ae04a70f3639981e74d20d260a03359a0f2c8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3f5653e4c184e88bce86026681dde1aee9e14d49
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86187435"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96491414"
 ---
 # <a name="what-is-routing-preference-preview"></a>Wat is routerings voorkeur (preview)?
 
@@ -30,7 +30,7 @@ Met de voor keuren voor Azure-route ring kunt u kiezen hoe uw verkeer tussen Azu
 
 ## <a name="routing-via-microsoft-global-network"></a>Route ring via een wereld wijd netwerk van micro soft
 
-Wanneer u uw verkeer via het *wereld wijde micro soft-netwerk*rondstuurt, wordt verkeer via een van de grootste netwerken op de wereldbol bezorgd met meer dan 160.000 mijl van glas met meer dan 165 Edge-aanwezigheid (pop). Het netwerk is goed ingericht met meerdere redundante glasvezel paden om te zorgen voor uitzonderlijk hoge betrouw baarheid en beschik baarheid. De verkeers techniek wordt beheerd door een software-gedefinieerde WAN-controller die ervoor zorgt dat er weinig latentie wordt geselecteerd voor uw verkeer en biedt de Premium-netwerk prestaties.
+Wanneer u uw verkeer via het *wereld wijde micro soft-netwerk* rondstuurt, wordt verkeer via een van de grootste netwerken op de wereldbol bezorgd met meer dan 160.000 mijl van glas met meer dan 165 Edge-aanwezigheid (pop). Het netwerk is goed ingericht met meerdere redundante glasvezel paden om te zorgen voor uitzonderlijk hoge betrouw baarheid en beschik baarheid. De verkeers techniek wordt beheerd door een software-gedefinieerde WAN-controller die ervoor zorgt dat er weinig latentie wordt geselecteerd voor uw verkeer en biedt de Premium-netwerk prestaties.
 
 ![Route ring via een wereld wijd netwerk van micro soft](media/routing-preference-overview/route-via-microsoft-global-network.png)
 
@@ -38,7 +38,7 @@ Binnenkomend **verkeer:** De wereld wijde BGP-aankondiging zorgt ervoor dat binn
 
 Uitgaand **verkeer:** Het uitgaande verkeer volgt hetzelfde principe. Verkeer reist het meren deel van de trajecten op het wereld wijde netwerk van micro soft en dicht bij de gebruiker. Als verkeer van Azure Chicago bijvoorbeeld bestemd is voor een gebruiker uit Singapore, reist het verkeer via het micro soft-netwerk van Chicago naar Singapore en sluit het het micro soft-netwerk in Singapore Edge POP.
 
-Zowel binnenkomend als uitgaand verkeer blijft in bulk van de reis op het wereld wijde netwerk van micro soft. Dit wordt ook wel *koude aardappel routering*genoemd.
+Zowel binnenkomend als uitgaand verkeer blijft in bulk van de reis op het wereld wijde netwerk van micro soft. Dit wordt ook wel *koude aardappel routering* genoemd.
 
 
 ## <a name="routing-over-public-internet-isp-network"></a>Route ring via een openbaar Internet (ISP-netwerk)
@@ -70,19 +70,7 @@ Voor opslag gebruiken primaire eind punten altijd het **wereld wijde netwerk van
 * Azure DataLake
 
 ## <a name="pricing"></a>Prijzen
-Het prijs verschil tussen beide opties wordt weer gegeven in de prijzen voor gegevens overdracht via internet. Route ring via de **wereld wijde** prijs van gegevens overdracht van micro soft is hetzelfde als de huidige prijs voor het uitbrengen van Internet. Ga naar de [pagina met prijzen voor Azure-band breedte](https://azure.microsoft.com/pricing/details/bandwidth/) voor de meest recente prijs informatie. Route ring via **open bare Internet** heeft een lagere prijs, zoals wordt weer gegeven in de onderstaande tabel:
-
-| Bron regio voor uitgang | 0-5 GB/maand | 5 GB-10 TB/maand | 10-50 TB/maand | 50-150 TB/maand | 150-500 TB/maand |
-| --- | --- | --- | --- | --- | --- |
-| Zone 1 | $0/GB | $0.085/GB | $0.065/GB | $0.06/GB | $0.04/GB |
-| Zone 2 | $0/GB | $0,11/GB | $0.075/GB | $0,07/GB | $0.06/GB  |
-
-[Neem contact met ons](https://azure.microsoft.com/overview/sales-number/) op voor het maandelijkse volume van meer dan 500 TB.
-* Zone 1-Australië-centraal, Australië-centraal 2, Canada-centraal, Canada-oost, Europa-noord, Europa-west, Frankrijk-centraal, Frankrijk-zuid, Duitsland-noord (openbaar), Duitsland-west-centraal (openbaar), Noor wegen Oost, Noor wegen West, Zwitserland-noord, Zwitserland-west, UK-zuid, UK-west, VS-Oost, VS Zuid-Amerika, VS-Oost 2, VS-West-Centraal, VS-centraal, Verenigde Staten, West-Centraal vs.
-
-* Zone 2: Azië-oost, Zuidoost-Azië, Australië-oost, Australië-zuidoost, Centraal-India, India-zuid, West-India, Japan-Oost, Japan-West, Korea-centraal en Korea-zuid.
-
-* Zone 3: Brazilië-zuid, Zuid-Afrika-noord, Zuid-Afrika-west, UAE-centraal en UAE-noord.
+Het prijs verschil tussen beide opties wordt weer gegeven in de prijzen voor gegevens overdracht via internet. Route ring via de **wereld wijde** prijs van gegevens overdracht van micro soft is hetzelfde als de huidige prijs voor het uitbrengen van Internet. Ga naar de [pagina met prijzen voor Azure-band breedte](https://azure.microsoft.com/pricing/details/bandwidth/) voor de meest recente prijs informatie. 
 
 ## <a name="availability"></a>Beschikbaarheid
 

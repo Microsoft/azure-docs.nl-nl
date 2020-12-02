@@ -6,18 +6,18 @@ ms.author: srranga
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 11/10/2020
-ms.openlocfilehash: e756e033c8e5b2508dca9bde76ad16be26a940fa
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 42bbe1c9f4056ae0dae0ccd59b452db90a7c63c5
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94505781"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96493658"
 ---
 # <a name="upgrade-your-postgresql-database-using-dump-and-restore"></a>Een upgrade uitvoeren van uw PostgreSQL-data base met dump en herstel
 
 U kunt een upgrade uitvoeren van uw PostgreSQL-server die is geïmplementeerd in Azure Database for PostgreSQL-één server door uw data bases te migreren naar een hogere primaire versie server met behulp van de volgende methoden.
 * **Offline** methode met postgresql [pg_dump](https://www.postgresql.org/docs/current/static/app-pgdump.html) en [pg_restore](https://www.postgresql.org/docs/current/static/app-pgrestore.html) die downtime voor het migreren van de gegevens. Dit document is bedoeld voor deze methode van upgrade/migratie.
-* **Online** methode met behulp van [database Migration service](https://docs.microsoft.com/azure/dms/tutorial-azure-postgresql-to-azure-postgresql-online-portal) (DMS). Deze methode biedt een gereduceerde downtime-migratie en houdt de doel database synchroon met met de bron en u kunt kiezen wanneer u wilt knippen. Er zijn echter enkele vereisten en beperkingen voor het gebruik van DMS. Raadpleeg de documentatie van het [DMS](https://docs.microsoft.com/azure/dms/tutorial-azure-postgresql-to-azure-postgresql-online-portal)voor meer informatie. 
+* **Online** methode met behulp van [database Migration service](../dms/tutorial-azure-postgresql-to-azure-postgresql-online-portal.md) (DMS). Deze methode biedt een gereduceerde downtime-migratie en houdt de doel database synchroon met met de bron en u kunt kiezen wanneer u wilt knippen. Er zijn echter enkele vereisten en beperkingen voor het gebruik van DMS. Raadpleeg de documentatie van het [DMS](../dms/tutorial-azure-postgresql-to-azure-postgresql-online-portal.md)voor meer informatie. 
 
  De volgende tabel bevat enkele aanbevelingen die zijn gebaseerd op data base-grootten en-scenario's.
 
@@ -28,7 +28,7 @@ U kunt een upgrade uitvoeren van uw PostgreSQL-server die is geïmplementeerd in
 | Kleine, middel grote Db's (10 GB – 100 GB) | X | X |
 | Grote data bases (> 100 GB) |  | X |
 | Kan de uitval tijd voor de upgrade veroorloven (ongeacht de grootte van de data base) | X |  |
-| Kan de [voorbereidings vereisten](https://docs.microsoft.com/azure/dms/tutorial-azure-postgresql-to-azure-postgresql-online-portal#prerequisites)van een DMS worden geadresseerd, met inbegrip van opnieuw opstarten? |  | X |
+| Kan de [voorbereidings vereisten](../dms/tutorial-azure-postgresql-to-azure-postgresql-online-portal.md#prerequisites)van een DMS worden geadresseerd, met inbegrip van opnieuw opstarten? |  | X |
 | Kunt u DDLs en niet-geregistreerde tabellen voor komen tijdens het upgrade proces? | |  X |
 
 Deze hand leiding bevat enkele methoden voor offline migratie en voor beelden om te laten zien hoe u kunt migreren van de bron server naar de doel server waarop een hogere versie van PostgreSQL wordt uitgevoerd.

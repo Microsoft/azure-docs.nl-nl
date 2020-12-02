@@ -11,19 +11,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/11/2017
 ms.author: damendo
-ms.openlocfilehash: 6411e019d77b219e40bd91da973e00afda0ff18b
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 047da0224cdbdb534ad9080faee4fd48da3840c5
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965482"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492451"
 ---
 # <a name="introduction-to-connection-troubleshoot-in-azure-network-watcher"></a>Inleiding tot verbindings problemen in azure Network Watcher
 
 De functie verbinding oplossen van Network Watcher biedt de mogelijkheid om een directe TCP-verbinding van een virtuele machine naar een virtuele machine (VM), Fully Qualified Domain Name (FQDN), URI of IPv4-adres te controleren. Netwerk scenario's zijn complex, ze worden geïmplementeerd met behulp van netwerk beveiligings groepen, firewalls, door de gebruiker gedefinieerde routes en resources die worden geboden door Azure. Complexe configuraties maken probleem oplossing van connectiviteits problemen lastig. Network Watcher helpt de hoeveelheid tijd te beperken om verbindings problemen op te sporen en op te sporen. De geretourneerde resultaten kunnen inzicht geven in of een connectiviteits probleem wordt veroorzaakt door een platform of een probleem met de gebruikers configuratie. Connectiviteit kan worden gecontroleerd met [Power shell](network-watcher-connectivity-powershell.md), [Azure cli](network-watcher-connectivity-cli.md)en [rest API](network-watcher-connectivity-rest.md).
 
 > [!IMPORTANT]
-> Verbindings problemen oplossen vereist dat de VM-extensie is geïnstalleerd op de VM die u wilt oplossen `AzureNetworkWatcherExtension` . Voor het installeren van de uitbrei ding op een Windows-VM gaat u naar [azure Network Watcher agent-extensie voor virtuele machines voor Windows](../virtual-machines/extensions/network-watcher-windows.md?toc=%252fazure%252fnetwork-watcher%252ftoc.json) en voor Linux VM gaat u naar de [Azure Network Watcher agent-extensie voor virtuele machines voor Linux](../virtual-machines/extensions/network-watcher-linux.md?toc=%252fazure%252fnetwork-watcher%252ftoc.json). De uitbrei ding is niet vereist voor het eind punt van de bestemming.
+> Verbindings problemen oplossen vereist dat de VM-extensie is geïnstalleerd op de VM die u wilt oplossen `AzureNetworkWatcherExtension` . Voor het installeren van de uitbrei ding op een Windows-VM gaat u naar [azure Network Watcher agent-extensie voor virtuele machines voor Windows](../virtual-machines/extensions/network-watcher-windows.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json) en voor Linux VM gaat u naar de [Azure Network Watcher agent-extensie voor virtuele machines voor Linux](../virtual-machines/extensions/network-watcher-linux.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json). De uitbrei ding is niet vereist voor het eind punt van de bestemming.
 
 ## <a name="response"></a>Antwoord
 

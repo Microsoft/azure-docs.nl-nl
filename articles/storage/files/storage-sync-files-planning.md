@@ -8,12 +8,12 @@ ms.date: 01/15/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 1b29565e18b2da2087cc15966b30b433a42fb603
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 32aa94c986c90b7bd46b9f5561021c34c0f142af
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629798"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492089"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Planning voor de implementatie van Azure Files Sync
 
@@ -30,22 +30,22 @@ ms.locfileid: "94629798"
 
 De bestanden worden opgeslagen in de cloud in [Azure-bestands shares](storage-files-introduction.md). Azure-bestands shares kunnen op twee manieren worden gebruikt: door deze serverloze Azure-bestands shares (SMB) rechtstreeks te koppelen of door Azure-bestands shares on-premises in de cache op te maken met behulp van Azure File Sync. Welke implementatie optie u kiest, wijzigt de aspecten die u moet overwegen bij het plannen van uw implementatie. 
 
-- **Directe koppeling van een Azure-bestands share** : omdat Azure files SMB-toegang biedt, kunt u Azure-bestands shares on-premises of in de Cloud koppelen met behulp van de standaard-SMB-client die beschikbaar is in Windows, MacOS en Linux. Omdat Azure-bestands shares serverloos zijn, is voor het implementeren van productie scenario's geen bestands server of een NAS-apparaat nodig. Dit betekent dat u geen software patches hoeft toe te passen of fysieke schijven hoeft uit te wisselen. 
+- **Directe koppeling van een Azure-bestands share**: omdat Azure files SMB-toegang biedt, kunt u Azure-bestands shares on-premises of in de Cloud koppelen met behulp van de standaard-SMB-client die beschikbaar is in Windows, MacOS en Linux. Omdat Azure-bestands shares serverloos zijn, is voor het implementeren van productie scenario's geen bestands server of een NAS-apparaat nodig. Dit betekent dat u geen software patches hoeft toe te passen of fysieke schijven hoeft uit te wisselen. 
 
-- **Azure-bestands share op locatie opslaan in de cache met Azure file sync** : Azure File Sync kunt u de bestands shares van uw organisatie in azure files centraliseren en tegelijkertijd de flexibiliteit, prestaties en compatibiliteit van een on-premises Bestands server behouden. Azure File Sync transformeert een on-premises Windows-Server (of Cloud) naar een snelle cache van uw Azure-bestands share. 
+- **Azure-bestands share op locatie opslaan in de cache met Azure file sync**: Azure File Sync kunt u de bestands shares van uw organisatie in azure files centraliseren en tegelijkertijd de flexibiliteit, prestaties en compatibiliteit van een on-premises Bestands server behouden. Azure File Sync transformeert een on-premises Windows-Server (of Cloud) naar een snelle cache van uw Azure-bestands share. 
 
 ## <a name="management-concepts"></a>Beheer concepten
 Een Azure File Sync-implementatie heeft drie fundamentele beheer objecten:
 
 - **Azure-bestands** share: een Azure-bestands share is een serverloze Cloud bestands share die het *Cloud eindpunt* van een Azure file sync Sync-relatie bevat. Bestanden in een Azure-bestands share kunnen rechtstreeks worden geopend met SMB of het FileREST-protocol, maar we raden u aan om voornamelijk toegang te krijgen tot de bestanden via de Windows Server-cache wanneer de Azure-bestands share wordt gebruikt met Azure File Sync. Dit komt omdat Azure Files vandaag geen efficiënt mechanisme voor wijzigings detectie heeft, zoals Windows Server heeft, waardoor wijzigingen aan de Azure-bestands share rechtstreeks worden uitgevoerd om de server eindpunten te kunnen gebruiken.
-- **Server eindpunt** : het pad op de Windows-Server dat wordt gesynchroniseerd met een Azure-bestands share. Dit kan een specifieke map op een volume zijn of de hoofdmap van het volume. Meerdere server eindpunten kunnen bestaan op hetzelfde volume als hun naam ruimten elkaar niet overlappen.
-- **Synchronisatie groep** : het object dat de synchronisatie relatie tussen een **Cloud eindpunt** of een Azure-bestands share en een server eindpunt definieert. Eindpunten binnen een synchronisatiegroep worden onderling synchroon gehouden. Als u bijvoorbeeld twee verschillende sets bestanden hebt die u met Azure File Sync wilt beheren, maakt u twee synchronisatie groepen en voegt u verschillende eind punten toe aan elke synchronisatie groep.
+- **Server eindpunt**: het pad op de Windows-Server dat wordt gesynchroniseerd met een Azure-bestands share. Dit kan een specifieke map op een volume zijn of de hoofdmap van het volume. Meerdere server eindpunten kunnen bestaan op hetzelfde volume als hun naam ruimten elkaar niet overlappen.
+- **Synchronisatie groep**: het object dat de synchronisatie relatie tussen een **Cloud eindpunt** of een Azure-bestands share en een server eindpunt definieert. Eindpunten binnen een synchronisatiegroep worden onderling synchroon gehouden. Als u bijvoorbeeld twee verschillende sets bestanden hebt die u met Azure File Sync wilt beheren, maakt u twee synchronisatie groepen en voegt u verschillende eind punten toe aan elke synchronisatie groep.
 
 ### <a name="azure-file-share-management-concepts"></a>Concepten van Azure file share Management
 [!INCLUDE [storage-files-file-share-management-concepts](../../../includes/storage-files-file-share-management-concepts.md)]
 
 ### <a name="azure-file-sync-management-concepts"></a>Azure File Sync-beheer concepten
-Synchronisatie groepen worden geïmplementeerd in **opslag synchronisatie Services** , die objecten van het hoogste niveau zijn die servers registreren voor gebruik met Azure file sync en de relaties van de synchronisatie groep bevatten. De resource van de opslag synchronisatie service is een peer van de bron van het opslag account en kan ook worden geïmplementeerd voor Azure-resource groepen. Een opslag synchronisatie service kan synchronisatie groepen maken die Azure-bestands shares bevatten in meerdere opslag accounts en meerdere geregistreerde Windows-servers.
+Synchronisatie groepen worden geïmplementeerd in **opslag synchronisatie Services**, die objecten van het hoogste niveau zijn die servers registreren voor gebruik met Azure file sync en de relaties van de synchronisatie groep bevatten. De resource van de opslag synchronisatie service is een peer van de bron van het opslag account en kan ook worden geïmplementeerd voor Azure-resource groepen. Een opslag synchronisatie service kan synchronisatie groepen maken die Azure-bestands shares bevatten in meerdere opslag accounts en meerdere geregistreerde Windows-servers.
 
 Voordat u een synchronisatie groep in een opslag synchronisatie service kunt maken, moet u eerst een Windows-Server bij de opslag synchronisatie service registreren. Hiermee maakt u een **geregistreerd server** object dat een vertrouwens relatie tussen uw server of cluster en de opslag synchronisatie service vertegenwoordigt. Als u een opslag synchronisatie service wilt registreren, moet u eerst de Azure File Sync-agent op de server installeren. Een afzonderlijke server of cluster kan slechts met één opslag synchronisatie service tegelijk worden geregistreerd.
 
@@ -213,9 +213,9 @@ Azure File Sync biedt geen ondersteuning voor Gegevensontdubbeling en Cloud lage
 ### <a name="distributed-file-system-dfs"></a>Distributed File System (DFS)
 Azure File Sync ondersteunt interop met DFS-naam ruimten (DFS-N) en DSF-replicatie (DFS-R).
 
-**DFS-naam ruimten (DFS-n)** : Azure File Sync wordt volledig ondersteund op DFS-N-servers. U kunt de Azure File Sync-agent installeren op een of meer DFS-N-leden om gegevens te synchroniseren tussen de server eindpunten en het Cloud eindpunt. Zie overzicht van DFS- [naam ruimten](/windows-server/storage/dfs-namespaces/dfs-overview)voor meer informatie.
+**DFS-naam ruimten (DFS-n)**: Azure File Sync wordt volledig ondersteund op DFS-N-servers. U kunt de Azure File Sync-agent installeren op een of meer DFS-N-leden om gegevens te synchroniseren tussen de server eindpunten en het Cloud eindpunt. Zie overzicht van DFS- [naam ruimten](/windows-server/storage/dfs-namespaces/dfs-overview)voor meer informatie.
  
-**DSF-replicatie (DFS-r)** : Aangezien DFS-r en Azure file sync beide replicatie oplossingen zijn, raden wij in de meeste gevallen DFS-r te vervangen door Azure file sync. Er zijn echter verschillende scenario's waarin u DFS-R en Azure File Sync tegelijk wilt gebruiken:
+**DSF-replicatie (DFS-r)**: Aangezien DFS-r en Azure file sync beide replicatie oplossingen zijn, raden wij in de meeste gevallen DFS-r te vervangen door Azure file sync. Er zijn echter verschillende scenario's waarin u DFS-R en Azure File Sync tegelijk wilt gebruiken:
 
 - U migreert van een DFS-R-implementatie naar een Azure File Sync-implementatie. Zie [een DSF-replicatie-implementatie (DFS-R) migreren naar Azure file sync](storage-sync-files-deployment-guide.md#migrate-a-dfs-replication-dfs-r-deployment-to-azure-file-sync)voor meer informatie.
 - Niet elke on-premises server waarvoor een kopie van uw bestands gegevens nodig is, kan rechtstreeks op internet worden aangesloten.
@@ -271,7 +271,7 @@ De andere belangrijkste methode voor het versleutelen van gegevens is het versle
 
 Azure File Sync werkt niet met NTFS Encrypted File System (NTFS EFS) of versleutelings oplossingen van derden die boven het bestands systeem zitten, maar onder de gegevens stroom van het bestand. 
 
-### <a name="encryption-in-transit"></a>Versleuteling tijdens overdracht
+### <a name="encryption-in-transit"></a>Versleuteling 'in transit'
 
 > [!NOTE]
 > Met Azure File Sync Service wordt de ondersteuning voor TLS 1.0 en 1,1 op 1 augustus 2020 verwijderd. Alle ondersteunde Azure File Sync agent versies gebruiken standaard al TLS 1.2. Het gebruik van een eerdere versie van TLS kan optreden als TLS 1.2 is uitgeschakeld op uw server of als er een proxy wordt gebruikt. Als u een proxy gebruikt, raden we u aan om de proxy configuratie te controleren. Azure File Sync Service regio's die zijn toegevoegd na 5/1/2020, ondersteunen alleen TLS 1.2 en ondersteuning voor TLS 1.0 en 1,1 worden verwijderd uit bestaande regio's op 1 augustus 2020.  Zie voor meer informatie de [hand leiding](storage-sync-files-troubleshoot.md#tls-12-required-for-azure-file-sync)voor het oplossen van problemen.
@@ -306,7 +306,7 @@ Azure File Sync is beschikbaar in de volgende regio's:
 | Openbaar | Azië | Azië - oost | `eastasia` |
 | Openbaar | Azië | Azië - zuidoost | `southeastasia` |
 | Openbaar | Australië | Australië - oost | `australiaeast` |
-| Openbaar | Australië | Australia Southeast | `australiasoutheast` |
+| Openbaar | Australië | Australië - zuidoost | `australiasoutheast` |
 | Openbaar | Brazilië | Brazil South | `brazilsouth` |
 | Openbaar | Canada | Canada - midden | `canadacentral` |
 | Openbaar | Canada | Canada - oost | `canadaeast` |
@@ -328,7 +328,7 @@ Azure File Sync is beschikbaar in de volgende regio's:
 | Openbaar | VK | Verenigd Koninkrijk West | `ukwest` |
 | Openbaar | VS | Central US | `centralus` |
 | Openbaar | VS | VS - oost | `eastus` |
-| Openbaar | VS | US - oost 2 | `eastus2` |
+| Openbaar | VS | VS - oost 2 | `eastus2` |
 | Openbaar | VS | VS - noord-centraal | `northcentralus` |
 | Openbaar | VS | South Central US | `southcentralus` |
 | Openbaar | VS | VS - west-centraal | `westcentralus` |
@@ -368,7 +368,7 @@ De interne anti-virus oplossingen van micro soft, Windows Defender en System Cen
 > Antivirus leveranciers kunnen de compatibiliteit controleren tussen hun product en Azure File Sync met behulp van de [Azure file sync anti virus Compatibility Test Suite](https://www.microsoft.com/download/details.aspx?id=58322), die beschikbaar is voor downloaden in het micro soft Download centrum.
 
 ## <a name="backup"></a>Backup 
-Als Cloud lagen zijn ingeschakeld, mogen oplossingen die rechtstreeks een back-up maken van het server eindpunt of een virtuele machine waarop het server eindpunt zich bevindt, niet worden gebruikt. Met Cloud lagen kan slechts een subset van uw gegevens worden opgeslagen op het server eindpunt, met de volledige gegevensset die zich in uw Azure-bestands share bevindt. Afhankelijk van de gebruikte back-upoplossing, worden gelaagde bestanden overgeslagen en er geen back-ups van gemaakt (omdat ze de FILE_ATTRIBUTE_RECALL_ON_DATA_ACCESS kenmerkset hebben), of ze worden op schijf teruggebeld, wat resulteert in hoge uitstaande kosten. U kunt het beste een Cloud back-upoplossing gebruiken om rechtstreeks een back-up te maken van de Azure-bestands share. Zie [about Azure file share backup](../../backup/azure-file-share-backup-overview.md?toc=%252fazure%252fstorage%252ffiles%252ftoc.json) (Engelstalig) voor meer informatie of neem contact op met uw back-upprovider om te zien of deze back-ups van Azure-bestands shares ondersteunen.
+Als Cloud lagen zijn ingeschakeld, mogen oplossingen die rechtstreeks een back-up maken van het server eindpunt of een virtuele machine waarop het server eindpunt zich bevindt, niet worden gebruikt. Met Cloud lagen kan slechts een subset van uw gegevens worden opgeslagen op het server eindpunt, met de volledige gegevensset die zich in uw Azure-bestands share bevindt. Afhankelijk van de gebruikte back-upoplossing, worden gelaagde bestanden overgeslagen en er geen back-ups van gemaakt (omdat ze de FILE_ATTRIBUTE_RECALL_ON_DATA_ACCESS kenmerkset hebben), of ze worden op schijf teruggebeld, wat resulteert in hoge uitstaande kosten. U kunt het beste een Cloud back-upoplossing gebruiken om rechtstreeks een back-up te maken van de Azure-bestands share. Zie [about Azure file share backup](../../backup/azure-file-share-backup-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) (Engelstalig) voor meer informatie of neem contact op met uw back-upprovider om te zien of deze back-ups van Azure-bestands shares ondersteunen.
 
 Als u liever een on-premises back-upoplossing gebruikt, moeten back-ups worden uitgevoerd op een server in de synchronisatie groep waarvoor Cloud lagen zijn uitgeschakeld. Wanneer u een herstel bewerking uitvoert, gebruikt u de opties op volume-of bestands niveau herstellen. Bestanden die zijn hersteld met de optie herstel op bestands niveau worden gesynchroniseerd naar alle eind punten in de synchronisatie groep en bestaande bestanden worden vervangen door de versie die wordt hersteld vanuit een back-up.  Herstel bewerkingen op volume niveau worden niet vervangen door nieuwere bestands versies in de Azure-bestands share of andere server eindpunten.
 

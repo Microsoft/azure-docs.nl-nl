@@ -8,12 +8,12 @@ ms.author: abmotley
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: 8ceb6d4dddb76148be1e82ebc8c1994886a11da3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dcdc05ae696a207546eb62160fe89ea38d307058
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91362811"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492264"
 ---
 # <a name="troubleshooting-common-indexer-errors-and-warnings-in-azure-cognitive-search"></a>Veelvoorkomende fouten en waarschuwingen voor Indexeer functies in azure Cognitive Search oplossen
 
@@ -165,8 +165,8 @@ Het document is gelezen en verwerkt door de Indexeer functie, maar als gevolg va
 
 | Reden | Details/voor beeld
 | --- | ---
-| Het gegevens type van het veld (en) dat door de Indexeer functie is geëxtraheerd, is incompatibel met het gegevens model van het bijbehorende doel index veld. | Het gegevens veld_Data_in het document met de sleutel 888 heeft een ongeldige waarde van het type EDM. String. Het verwachte type was ' verzameling (EDM. String) '. |
-| Kan geen JSON-entiteit ophalen uit een teken reeks waarde. | Kan de waarde van het type EDM. String ' van het veld '_Data_' niet parseren als een JSON-object. Fout: ' na het parseren van een waarde is een onverwacht teken aangetroffen: ' '. Pad_naar_pad, regel 1, positie 3162. |
+| Het gegevens type van het veld (en) dat door de Indexeer functie is geëxtraheerd, is incompatibel met het gegevens model van het bijbehorende doel index veld. | Het gegevens veld _Data_ in het document met de sleutel 888 heeft een ongeldige waarde van het type EDM. String. Het verwachte type was ' verzameling (EDM. String) '. |
+| Kan geen JSON-entiteit ophalen uit een teken reeks waarde. | Kan de waarde van het type EDM. String ' van het veld '_Data_' niet parseren als een JSON-object. Fout: ' na het parseren van een waarde is een onverwacht teken aangetroffen: ' '. Pad _naar_ pad, regel 1, positie 3162. |
 | Het uitpakken van een verzameling JSON-entiteiten uit een teken reeks waarde is mislukt.  | Kan de waarde van het type EDM. String ' van het veld '_Data_' niet parseren als een JSON-matrix. Fout: ' na het parseren van een waarde is een onverwacht teken aangetroffen: ' '. Pad [0], regel 1, positie 27. |
 | Er is een onbekend type gedetecteerd in het bron document. | Onbekend type '_onbekend_' kan niet worden geïndexeerd |
 | Er is een niet-compatibele notatie voor geografische punten gebruikt in het bron document. | Letterlijke teken reeksen van WKT-punten worden niet ondersteund. Gebruik in plaats daarvan geojson Point-tekens |
@@ -348,8 +348,8 @@ Om deze waarschuwing te omzeilen, bepaalt u wat de tekst codering voor deze blob
 
 ## <a name="warning-cosmos-db-collection-x-has-a-lazy-indexing-policy-some-data-may-be-lost"></a>Waarschuwing: Cosmos DB verzameling ' X ' heeft een Lazy-indexerings beleid. Er zijn mogelijk gegevens verloren gegaan
 
-Verzamelingen met een [Lazy](/azure/cosmos-db/index-policy#indexing-mode) -indexerings beleid kunnen niet consistent worden opgevraagd, wat resulteert in uw Indexeer functie waarbij gegevens ontbreken. Als u deze waarschuwing wilt omzeilen, wijzigt u het indexerings beleid in consistent.
+Verzamelingen met een [Lazy](../cosmos-db/index-policy.md#indexing-mode) -indexerings beleid kunnen niet consistent worden opgevraagd, wat resulteert in uw Indexeer functie waarbij gegevens ontbreken. Als u deze waarschuwing wilt omzeilen, wijzigt u het indexerings beleid in consistent.
 
 ## <a name="warning-the-document-contains-very-long-words-longer-than-64-characters-these-words-may-result-in-truncated-andor-unreliable-model-predictions"></a>Waarschuwing: het document bevat zeer lange woorden (langer is dan 64 tekens). Deze woorden kunnen resulteren in afgekapte en/of onbetrouwbare model voorspellingen.
 
-Deze waarschuwing wordt door gegeven van de Text Analytics-service.  In sommige gevallen is het veilig om deze waarschuwing te negeren, bijvoorbeeld wanneer uw document een lange URL bevat (waarschijnlijk geen sleutel woord groep of sentiment, enzovoort).  Houd er rekening mee dat als een woord langer is dan 64 tekens, het wordt afgekapt tot 64 tekens die van invloed kunnen zijn op de voor spellingen van modellen.  
+Deze waarschuwing wordt door gegeven van de Text Analytics-service.  In sommige gevallen is het veilig om deze waarschuwing te negeren, bijvoorbeeld wanneer uw document een lange URL bevat (waarschijnlijk geen sleutel woord groep of sentiment, enzovoort).  Houd er rekening mee dat als een woord langer is dan 64 tekens, het wordt afgekapt tot 64 tekens die van invloed kunnen zijn op de voor spellingen van modellen.

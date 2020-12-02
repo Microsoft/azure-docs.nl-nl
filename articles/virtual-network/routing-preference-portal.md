@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/18/2020
 ms.author: mnayak
-ms.openlocfilehash: 7d41893d734037e466ad786641fed98c461adcfc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 21d9f318ef18b7ffb49a95ce495c09f1fa46ec1a
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86231808"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96491312"
 ---
 # <a name="configure-routing-preference-for-a-public-ip-address-using-the-azure-portal"></a>Routerings voorkeur configureren voor een openbaar IP-adres met behulp van de Azure Portal
 
@@ -38,18 +38,12 @@ De routerings voorkeur voor openbaar IP-adres is standaard ingesteld op het micr
 
 Als u nog geen abonnement op Azure hebt, maak dan nu een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-## <a name="register-the-feature-for-your-subscription"></a>De functie voor uw abonnement registreren
-De functie voor route ring is momenteel beschikbaar als preview-versie. Registreer de functie voor uw abonnement met behulp van Azure PowerShell als volgt:
-```azurepowershell
-Register-AzProviderFeature -FeatureName AllowRoutingPreferenceFeature -ProviderNamespace Microsoft.Network
-```
-
 ## <a name="create-a-public-ip-address-with-a-routing-preference"></a>Een openbaar IP-adres maken met een routerings voorkeur
 1. Meld u aan bij de [Azure-portal](https://preview.portal.azure.com/).
 2. Selecteer **Een resource maken**. 
-3. Typ *openbaar IP-adres*in het zoekvak.
-3. Selecteer **openbaar IP-adres**in de zoek resultaten. Selecteer vervolgens op de pagina **openbaar IP-adres** **maken**.
-3. Selecteer **Internet**in de **Voorkeurs instellingen voor route ring** .
+3. Typ *openbaar IP-adres* in het zoekvak.
+3. Selecteer **openbaar IP-adres** in de zoek resultaten. Selecteer vervolgens op de pagina **openbaar IP-adres** **maken**.
+3. Selecteer **Internet** in de **Voorkeurs instellingen voor route ring** .
 
       ![Een openbaar IP-adres maken](./media/routing-preference-portal/pip-new.png)
 

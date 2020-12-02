@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: troubleshooting
 author: jovanpop-msft
 ms.author: jovanpop
-ms.reviewer: jrasnick, sstein
+ms.reviewer: wiassaf, sstein
 ms.date: 03/10/2020
-ms.openlocfilehash: ce5bf86073b2c478108e264010bb3c213c214368
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 6ea17f04538e3444b1baddaa8862add2cfbbaa9c
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791746"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96493420"
 ---
 # <a name="detectable-types-of-query-performance-bottlenecks-in-azure-sql-database"></a>Detecteerbare typen queryprestatieknelpunten in Azure SQL Database
 [!INCLUDE[appliesto-sqldb-sqlmi](includes/appliesto-sqldb-sqlmi.md)]
@@ -137,13 +137,13 @@ Als u een RECOMPILE-Hint gebruikt, wordt er geen plan in de cache opgeslagen.
 
 Een hercompilatie (of nieuwe compilatie na verwijdering van de cache) kan nog steeds leiden tot het genereren van een query-uitvoerings plan dat identiek is aan het origineel. Wanneer het plan wordt gewijzigd ten opzichte van het vorige of oorspronkelijke abonnement, zijn deze toelichtingen waarschijnlijk:
 
-- **Gewijzigd fysiek ontwerp** : nieuwe indexen maken bijvoorbeeld effectiever de vereisten van een query. De nieuwe indexen kunnen worden gebruikt voor een nieuwe compilatie als de query optimalisatie besluit dat het gebruik van die nieuwe index betrouwbaarder is dan het gebruik van de gegevens structuur die oorspronkelijk was geselecteerd voor de eerste versie van de uitvoering van de query. Eventuele fysieke wijzigingen in de objecten waarnaar wordt verwezen, kunnen leiden tot een nieuwe plannings optie tijdens het compileren.
+- **Gewijzigd fysiek ontwerp**: nieuwe indexen maken bijvoorbeeld effectiever de vereisten van een query. De nieuwe indexen kunnen worden gebruikt voor een nieuwe compilatie als de query optimalisatie besluit dat het gebruik van die nieuwe index betrouwbaarder is dan het gebruik van de gegevens structuur die oorspronkelijk was geselecteerd voor de eerste versie van de uitvoering van de query. Eventuele fysieke wijzigingen in de objecten waarnaar wordt verwezen, kunnen leiden tot een nieuwe plannings optie tijdens het compileren.
 
-- **Verschillen in Server bronnen** : wanneer een plan in het ene systeem verschilt van het plan in een ander systeem, kan de beschik baarheid van resources, zoals het aantal beschik bare processors, invloed hebben op welk plan wordt gegenereerd. Als een systeem bijvoorbeeld meer processors heeft, kan een parallelle planning worden gekozen.
+- **Verschillen in Server bronnen**: wanneer een plan in het ene systeem verschilt van het plan in een ander systeem, kan de beschik baarheid van resources, zoals het aantal beschik bare processors, invloed hebben op welk plan wordt gegenereerd. Als een systeem bijvoorbeeld meer processors heeft, kan een parallelle planning worden gekozen.
 
-- **Andere statistieken** : de statistieken die zijn gekoppeld aan de objecten waarnaar wordt verwezen, zijn mogelijk gewijzigd of kunnen afwijken van de statistieken van het oorspronkelijke systeem. Als de statistieken veranderen en een hercompilatie plaatsvindt, gebruikt de query Optimizer de statistieken die beginnen wanneer ze zijn gewijzigd. De gegevens distributies en-frequenties van de herziene statistieken kunnen verschillen van die van de oorspronkelijke compilatie. Deze wijzigingen worden gebruikt voor het maken van kardinaliteit. ( *Schattingen van kardinaliteit* zijn het aantal rijen dat naar verwachting door de logische query structuur loopt.) Wijzigingen in de kardinaliteit kunnen ertoe leiden dat u verschillende fysieke Opera tors en gekoppelde orders van bewerkingen kunt kiezen. Zelfs kleine wijzigingen in statistieken kunnen leiden tot een gewijzigd query-uitvoerings plan.
+- **Andere statistieken**: de statistieken die zijn gekoppeld aan de objecten waarnaar wordt verwezen, zijn mogelijk gewijzigd of kunnen afwijken van de statistieken van het oorspronkelijke systeem. Als de statistieken veranderen en een hercompilatie plaatsvindt, gebruikt de query Optimizer de statistieken die beginnen wanneer ze zijn gewijzigd. De gegevens distributies en-frequenties van de herziene statistieken kunnen verschillen van die van de oorspronkelijke compilatie. Deze wijzigingen worden gebruikt voor het maken van kardinaliteit. (*Schattingen van kardinaliteit* zijn het aantal rijen dat naar verwachting door de logische query structuur loopt.) Wijzigingen in de kardinaliteit kunnen ertoe leiden dat u verschillende fysieke Opera tors en gekoppelde orders van bewerkingen kunt kiezen. Zelfs kleine wijzigingen in statistieken kunnen leiden tot een gewijzigd query-uitvoerings plan.
 
-- Het **database compatibiliteits niveau of de Estimator-versie van de kardinaliteit is gewijzigd** : wijzigingen in het database compatibiliteits niveau kunnen nieuwe strategieën en functies mogelijk maken die kunnen leiden tot een ander uitvoerings plan voor query's. Buiten het database compatibiliteits niveau kan een uitgeschakelde of ingeschakelde tracerings vlag 4199 of een gewijzigde status van de database bereik configuratie QUERY_OPTIMIZER_HOTFIXES ook van invloed zijn op het uitvoerings plan van de query tijdens het compileren. Tracerings vlaggen 9481 (geforceerd verouderd CE) en 2312 (standaard-CE forceren) zijn ook van invloed op het plan.
+- Het **database compatibiliteits niveau of de Estimator-versie van de kardinaliteit is gewijzigd**: wijzigingen in het database compatibiliteits niveau kunnen nieuwe strategieën en functies mogelijk maken die kunnen leiden tot een ander uitvoerings plan voor query's. Buiten het database compatibiliteits niveau kan een uitgeschakelde of ingeschakelde tracerings vlag 4199 of een gewijzigde status van de database bereik configuratie QUERY_OPTIMIZER_HOTFIXES ook van invloed zijn op het uitvoerings plan van de query tijdens het compileren. Tracerings vlaggen 9481 (geforceerd verouderd CE) en 2312 (standaard-CE forceren) zijn ook van invloed op het plan.
 
 ## <a name="resource-limits-issues"></a>Problemen met resource limieten
 
@@ -173,11 +173,11 @@ Als het query-uitvoerings plan niet anders is uitgevoerd, maar het CPU-gebruik i
 
 Het is niet altijd gemakkelijk om een wijziging van het werkbelasting volume te identificeren dat een CPU-probleem ondervindt. Houd rekening met de volgende factoren:
 
-- **Resource gebruik gewijzigd** : u kunt bijvoorbeeld een scenario gebruiken waarbij het CPU-gebruik gedurende een lange periode is verhoogd tot 80 procent. Het CPU-gebruik betekent alleen dat het werkbelasting volume is gewijzigd. Regressies in het query-uitvoerings plan en wijzigingen in de gegevens distributie kunnen ook bijdragen aan meer resource gebruik, zelfs als de toepassing dezelfde werk belasting uitvoert.
+- **Resource gebruik gewijzigd**: u kunt bijvoorbeeld een scenario gebruiken waarbij het CPU-gebruik gedurende een lange periode is verhoogd tot 80 procent. Het CPU-gebruik betekent alleen dat het werkbelasting volume is gewijzigd. Regressies in het query-uitvoerings plan en wijzigingen in de gegevens distributie kunnen ook bijdragen aan meer resource gebruik, zelfs als de toepassing dezelfde werk belasting uitvoert.
 
-- **Het uiterlijk van een nieuwe query** : een toepassing kan op verschillende tijdstippen een nieuwe set query's aansturen.
+- **Het uiterlijk van een nieuwe query**: een toepassing kan op verschillende tijdstippen een nieuwe set query's aansturen.
 
-- **Een verhoging of afname van het aantal aanvragen** : dit scenario is de meest duidelijke maat regel voor een werk belasting. Het aantal query's komt niet altijd overeen met meer resource gebruik. Deze metriek is echter nog steeds een significant signaal, ervan uitgaande dat andere factoren ongewijzigd blijven.
+- **Een verhoging of afname van het aantal aanvragen**: dit scenario is de meest duidelijke maat regel voor een werk belasting. Het aantal query's komt niet altijd overeen met meer resource gebruik. Deze metriek is echter nog steeds een significant signaal, ervan uitgaande dat andere factoren ongewijzigd blijven.
 
 Gebruik Intelligent Insights om de [werk belasting te verhogen](database/intelligent-insights-troubleshoot-performance.md#workload-increase) en [regressies te plannen](database/intelligent-insights-troubleshoot-performance.md#plan-regression).
 
@@ -185,7 +185,7 @@ Gebruik Intelligent Insights om de [werk belasting te verhogen](database/intelli
 
 Wanneer u een suboptimaal plan hebt geëlimineerd en te *wachten* op problemen die betrekking hebben op uitvoerings problemen, is het prestatie probleem in het algemeen de query's die waarschijnlijk wachten op een bepaalde resource. Er kunnen problemen met de wacht worden veroorzaakt door:
 
-- **Blok keren** :
+- **Blok keren**:
 
   Een query kan de vergren deling van objecten in de data base blok keren, terwijl andere gebruikers toegang proberen te krijgen tot dezelfde objecten. U kunt blokkerende query's identificeren met behulp van [dmv's](database/monitoring-with-dmvs.md#monitoring-blocked-queries) of [intelligent Insights](database/intelligent-insights-troubleshoot-performance.md#locking).
 - **IO-problemen**

@@ -12,12 +12,12 @@ ms.date: 10/27/2016
 ms.author: sumuth
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: references_regions
-ms.openlocfilehash: cecb3a150de8c19d390cafbd163f287520c3a91d
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 25cc4dfaabee58a47cc33fe4be8dc7375bc804d2
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95519030"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96491639"
 ---
 # <a name="faq-for-cleardb-mysql-databases-with-azure-app-service"></a>Veelgestelde vragen over ClearDB MySql-data bases met Azure App Service
 Deze veelgestelde vragen antwoorden op veelgestelde vragen over het gebruik en het kopen van ClearDB MySQL-data bases voor Azure Web Apps.
@@ -33,7 +33,7 @@ Zie [ClearDB](https://w2.cleardb.net/) voor de meest recente informatie over die
 U hebt verschillende andere opties voor het hosten van MySQL in Azure:
 * [Azure Database for MySQL](https://azure.microsoft.com/services/mysql/)
 * [MySQL-cluster dat wordt uitgevoerd op een virtuele Azure-machine](https://github.com/azure/azure-quickstart-templates/tree/master/mysql-replication)
-* [Eén exemplaar van MySQL dat wordt uitgevoerd op een virtuele Azure-machine](/previous-versions/azure/virtual-machines/windows/classic/mysql-2008r2?toc=%252fazure%252fvirtual-machines%252fwindows%252fclassic%252ftoc.json)
+* [Eén exemplaar van MySQL dat wordt uitgevoerd op een virtuele Azure-machine](/previous-versions/azure/virtual-machines/windows/classic/mysql-2008r2?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json)
 
 
 ## <a name="do-i-need-a-credit-card-for-the-web-app--mysql-template-in-the-azure-marketplace"></a>Heb ik een credit card nodig voor de web-app + MySQL-sjabloon in de Azure Marketplace?
@@ -48,7 +48,7 @@ Dit is afhankelijk van het type abonnement dat u gebruikt. Hier volgen enkele ve
 De standaard optie voor de data base is Titan, een $3,50. De kosten worden niet weer gegeven tijdens het maken van de data base en u kunt per ongeluk een Data Base kopen die u niet wilt. We proberen de ervaring te verbeteren, maar tot nu toe moet u alle geselecteerde prijs categorieën voor web-app en data base controleren voordat u op **maken** klikt en de implementatie van de resources start.
 
 ## <a name="i-am-running-mysql-on-my-own-azure-virtual-machine-can-i-connect-my-azure-web-app-to-my-database"></a>Ik voer MySQL uit op mijn eigen virtuele machine van Azure. Kan ik mijn Azure-web-app verbinden met mijn data base?
-Ja. U kunt uw web-app verbinden met uw data base zolang uw virtuele Azure-machine externe toegang heeft gekregen tot uw web-app. Zie [MySQL op een virtuele machine installeren](/previous-versions/azure/virtual-machines/windows/classic/mysql-2008r2?toc=%252fazure%252fvirtual-machines%252fwindows%252fclassic%252ftoc.json)voor meer informatie.
+Ja. U kunt uw web-app verbinden met uw data base zolang uw virtuele Azure-machine externe toegang heeft gekregen tot uw web-app. Zie [MySQL op een virtuele machine installeren](/previous-versions/azure/virtual-machines/windows/classic/mysql-2008r2?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json)voor meer informatie.
 
 ## <a name="in-which-countriesregions-are-cleardb-premium-mysql-clusters-supported"></a>In welke landen/regio's worden ClearDB Premium MySQL-clusters ondersteund?
 ClearDB Premium MySQL-clusters zijn overal ter wereld beschikbaar in alle Azure-regio's, met uitzonde ring van India, Australië, Brazilië-zuid en China.

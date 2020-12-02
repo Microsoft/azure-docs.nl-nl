@@ -8,12 +8,12 @@ ms.date: 09/15/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: e60ba773c5ef750f027c2e0b1528409c71eeb4b8
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 650ee1fc9e0e1941a7a3655bca1c75950ab878dd
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011697"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492111"
 ---
 # <a name="planning-for-an-azure-files-deployment"></a>Planning voor de implementatie van Azure Files
 [Azure files](storage-files-introduction.md) kunnen op twee manieren worden geïmplementeerd: door de Serverloze Azure-bestands shares rechtstreeks te koppelen of door Azure-bestands shares on-premises in de cache op te maken met behulp van Azure file sync. Welke implementatie optie u kiest, wijzigt de dingen die u moet overwegen bij het plannen van uw implementatie. 
@@ -99,13 +99,13 @@ U kunt het beste verwijderen voor de meeste bestands shares inschakelen. Als u e
 Voor meer informatie over zacht verwijderen, Zie [voor komen dat onbedoelde gegevens worden verwijderd](./storage-files-prevent-file-share-deletion.md).
 
 ### <a name="backup"></a>Backup
-U kunt een back-up maken van uw Azure-bestands share via [moment opnamen van shares](./storage-snapshots-files.md), die alleen-lezen zijn, Point-in-time-kopieën van uw share. Moment opnamen zijn incrementeel, wat betekent dat ze slechts zoveel gegevens bevatten als is gewijzigd sinds de vorige moment opname. U kunt Maxi maal 200 moment opnamen per bestands share hebben en deze Maxi maal tien jaar bewaren. U kunt deze moment opnamen hand matig maken in de Azure Portal, via Power shell of via de opdracht regel interface (CLI), maar u kunt ook [Azure backup](../../backup/azure-file-share-backup-overview.md?toc=%252fazure%252fstorage%252ffiles%252ftoc.json)gebruiken. Moment opnamen worden opgeslagen in uw bestands share, wat betekent dat als u de bestands share verwijdert, uw moment opnamen ook worden verwijderd. Als u back-ups van uw moment opname wilt beveiligen tegen onbedoeld verwijderen, moet u ervoor zorgen dat zacht verwijderen is ingeschakeld voor uw share.
+U kunt een back-up maken van uw Azure-bestands share via [moment opnamen van shares](./storage-snapshots-files.md), die alleen-lezen zijn, Point-in-time-kopieën van uw share. Moment opnamen zijn incrementeel, wat betekent dat ze slechts zoveel gegevens bevatten als is gewijzigd sinds de vorige moment opname. U kunt Maxi maal 200 moment opnamen per bestands share hebben en deze Maxi maal tien jaar bewaren. U kunt deze moment opnamen hand matig maken in de Azure Portal, via Power shell of via de opdracht regel interface (CLI), maar u kunt ook [Azure backup](../../backup/azure-file-share-backup-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)gebruiken. Moment opnamen worden opgeslagen in uw bestands share, wat betekent dat als u de bestands share verwijdert, uw moment opnamen ook worden verwijderd. Als u back-ups van uw moment opname wilt beveiligen tegen onbedoeld verwijderen, moet u ervoor zorgen dat zacht verwijderen is ingeschakeld voor uw share.
 
-[Azure backup voor Azure-bestands shares zorgt voor](../../backup/azure-file-share-backup-overview.md?toc=%252fazure%252fstorage%252ffiles%252ftoc.json) de planning en retentie van moment opnamen. De mogelijkheden van de groot vader-vader-zoon (GFS) betekenen dat u dagelijkse, wekelijkse, maandelijkse en jaarlijkse moment opnamen kunt maken, elk met een eigen Bewaar periode. Azure Backup wordt ook de activering van zacht verwijderen in de vorm van een opslag account in de vorm van een bestands share die is geconfigureerd voor back-up. Ten slotte biedt Azure Backup bepaalde belang rijke functies voor het bewaken en waarschuwen waarmee klanten een geconsolideerde weer gave van hun back-ups kunnen maken.
+[Azure backup voor Azure-bestands shares zorgt voor](../../backup/azure-file-share-backup-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) de planning en retentie van moment opnamen. De mogelijkheden van de groot vader-vader-zoon (GFS) betekenen dat u dagelijkse, wekelijkse, maandelijkse en jaarlijkse moment opnamen kunt maken, elk met een eigen Bewaar periode. Azure Backup wordt ook de activering van zacht verwijderen in de vorm van een opslag account in de vorm van een bestands share die is geconfigureerd voor back-up. Ten slotte biedt Azure Backup bepaalde belang rijke functies voor het bewaken en waarschuwen waarmee klanten een geconsolideerde weer gave van hun back-ups kunnen maken.
 
 U kunt op item niveau en op share niveau terugzetten in de Azure Portal met behulp van Azure Backup uitvoeren. Het enige wat u hoeft te doen, is het herstel punt (een bepaalde moment opname), het specifieke bestand of de betreffende map, indien van toepassing, en vervolgens de locatie (oorspronkelijk of alternatief) kiezen waarnaar u wilt herstellen. De back-upservice zorgt voor het kopiëren van de momentopname gegevens en toont de voortgang van de herstel bewerking in de portal.
 
-Zie [about Azure file share backup](../../backup/azure-file-share-backup-overview.md?toc=%252fazure%252fstorage%252ffiles%252ftoc.json)(Engelstalig) voor meer informatie over back-ups.
+Zie [about Azure file share backup](../../backup/azure-file-share-backup-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)(Engelstalig) voor meer informatie over back-ups.
 
 ### <a name="advanced-threat-protection-for-azure-files-preview"></a>Advanced Threat Protection voor Azure Files (preview-versie)
 Advanced Threat Protection (ATP) voor Azure Storage biedt een extra beveiligingslaag met waarschuwingen wanneer er afwijkende activiteiten in uw opslag account worden gedetecteerd, bijvoorbeeld ongebruikelijke pogingen om toegang te krijgen tot het opslag account. ATP voert ook malware-hash-reputatie analyse uit en geeft een waarschuwing over bekende malware. U kunt ATP op een niveau van een abonnement of opslag account configureren via Azure Security Center. 
@@ -125,7 +125,7 @@ Over het algemeen zijn Azure Files functies en interoperabiliteit met andere ser
 - **Maximale grootte van bestands share**
     - Premium-bestands shares kunnen Maxi maal 100 TiB worden ingericht zonder verdere werkzaamheden.
     - Standaard kunnen standaard bestands shares slechts tot 5 TiB groot zijn, hoewel de limiet voor delen kan worden verhoogd tot 100 TiB door u aan te melden bij de functie vlag voor het opslag account voor *grote bestands shares* . Standaard bestands shares kunnen Maxi maal 100 TiB zijn voor lokaal redundante of zone redundante opslag accounts. Zie [grote bestands shares inschakelen en maken](./storage-files-how-to-create-large-file-share.md)voor meer informatie over het verhogen van de grootte van de bestands share.
-- **Regionale beschikbaarheid**
+- **Regionale Beschik baarheid**
     - Premium-bestands shares zijn beschikbaar in de meeste Azure-regio's, met uitzonde ring van enkele regio's. Zone redundante ondersteuning is beschikbaar in een subset van regio's. Zie de pagina [producten beschikbaar per regio](https://azure.microsoft.com/global-infrastructure/services/?products=storage) voor Azure als u wilt weten of Premium-bestands shares op dit moment beschikbaar zijn in uw regio. Zie [zone-redundante opslag](../common/storage-redundancy.md#zone-redundant-storage)als u wilt weten welke regio's ZRS ondersteunen. Vul deze [enquête](https://aka.ms/pfsfeedback)in om u te helpen bij het bepalen van de prioriteit van nieuwe regio's en de functies van de Premium-laag.
     - Standaard bestands shares zijn beschikbaar in elke Azure-regio.
 - Azure Kubernetes service (AKS) biedt ondersteuning voor Premium-bestands shares in versie 1,13 en hoger.

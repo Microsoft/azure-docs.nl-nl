@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 09/13/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: e446ec08d63c44566b2f45c1427999536d0be703
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: aef332e54fa650e1abbebe671560238d7eb318de
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96188714"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492043"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows-smb"></a>Problemen met Azure Files oplossen in Windows (SMB)
 
@@ -147,7 +147,7 @@ Fout 1816 treedt op wanneer u de bovengrens van gelijktijdige open ingangen bere
 
 ### <a name="solution"></a>Oplossing
 
-Verminder het aantal gelijktijdige open ingangen door enkele grepen te sluiten en probeer het opnieuw. Zie [Microsoft Azure Storage controle lijst voor prestaties en schaal baarheid](../blobs/storage-performance-checklist.md?toc=%252fazure%252fstorage%252ffiles%252ftoc.json)voor meer informatie.
+Verminder het aantal gelijktijdige open ingangen door enkele grepen te sluiten en probeer het opnieuw. Zie [Microsoft Azure Storage controle lijst voor prestaties en schaal baarheid](../blobs/storage-performance-checklist.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)voor meer informatie.
 
 Gebruik de Power shell [-cmdlet Get-AzStorageFileHandle](/powershell/module/az.storage/get-azstoragefilehandle) om de geopende ingangen voor een bestands share, map of bestand weer te geven.  
 
@@ -262,7 +262,7 @@ Mogelijk ziet u trage prestaties wanneer u bestanden probeert over te brengen na
 - Als u geen specifieke minimale I/O-grootte vereiste hebt, raden we u aan om 1 MiB te gebruiken als de I/O-grootte voor optimale prestaties.
 -   Als u de uiteindelijke grootte kent van een bestand dat u uitbreidt met schrijf bewerkingen, en uw software geen compatibiliteits problemen heeft wanneer de niet-genoteerde staart van het bestand nullen bevat, moet u de bestands grootte vooraf instellen in plaats van elke schrijf bewerking uit te voeren.
 -   Gebruik de juiste Kopieer methode:
-    -   Gebruik [AzCopy](../common/storage-use-azcopy-v10.md?toc=%252fazure%252fstorage%252ffiles%252ftoc.json) voor elke overdracht tussen twee bestands shares.
+    -   Gebruik [AzCopy](../common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) voor elke overdracht tussen twee bestands shares.
     -   Gebruik [Robocopy](./storage-files-deployment-guide.md#robocopy) tussen bestands shares op een on-premises computer.
 
 ### <a name="considerations-for-windows-81-or-windows-server-2012-r2"></a>Overwegingen voor Windows 8,1 of Windows Server 2012 R2
@@ -401,7 +401,7 @@ Debug-AzStorageAccountAuth -StorageAccountName $StorageAccountName -ResourceGrou
 De cmdlet voert deze controles hieronder uit, en biedt richt lijnen voor fouten:
 1. CheckADObjectPasswordIsCorrect: Zorg ervoor dat het wacht woord dat is geconfigureerd voor de AD-identiteit die het opslag account vertegenwoordigt, overeenkomt met de sleutel kerb1 of kerb2 van het opslag account. Als het wacht woord onjuist is, kunt u [Update-AzStorageAccountADObjectPassword](./storage-files-identity-ad-ds-update-password.md) uitvoeren om het wacht woord opnieuw in te stellen. 
 2. CheckADObject: Bevestig dat er een object in de Active Directory is dat het opslag account vertegenwoordigt en de juiste SPN (Service Principal Name) heeft. Als de SPN niet juist is ingesteld, voert u de set-AD-cmdlet uit die is geretourneerd in de cmdlet debug om de SPN te configureren.
-3. CheckDomainJoined: Controleer of de client computer lid is van een domein dat is gekoppeld aan AD. Als uw computer niet is gekoppeld aan AD, raadpleegt u dit [artikel](/windows-server/identity/ad-fs/deployment/join-a-computer-to-a-domain#:~:text=To%20join%20a%20computer%20to%20a%20domain&text=Navigate%20to%20System%20and%20Security,join%2C%20and%20then%20click%20OK) voor instructies over het toevoegen van een domein.
+3. CheckDomainJoined: Controleer of de client computer lid is van een domein dat is gekoppeld aan AD. Als uw computer niet is gekoppeld aan AD, raadpleegt u dit [artikel](/windows-server/identity/ad-fs/deployment/join-a-computer-to-a-domain) voor instructies over het toevoegen van een domein.
 4. CheckPort445Connectivity: Controleer of poort 445 is geopend voor de SMB-verbinding. Als de vereiste poort niet open is, raadpleegt u het hulp programma voor probleem oplossing [AzFileDiagnostics.ps1](https://github.com/Azure-Samples/azure-files-samples/tree/master/AzFileDiagnostics/Windows) voor verbindings problemen met Azure files.
 5. CheckSidHasAadUser: Controleer of de aangemelde AD-gebruiker is gesynchroniseerd met Azure AD. Als u wilt controleren of een specifieke AD-gebruiker is gesynchroniseerd met Azure AD, kunt u de-gebruikers naam en-domein opgeven in de invoer parameters. 
 6. CheckGetKerberosTicket: er wordt geprobeerd een Kerberos-ticket op te halen om verbinding te maken met het opslag account. Als er geen geldig Kerberos-token is, voert u de cmdlet Klist ophalen CIFS/Storage-account-name. file. core. Windows. net uit en controleert u de fout code in het hoofd knooppunt waardoor het ophalen van het ticket mislukt.

@@ -10,140 +10,140 @@ metadata:
   author: twooley
   ms.author: twooley
   ms.date: 05/01/2020
-  ms.openlocfilehash: f4428556c33bc476b21932034fa43b020f9e779d
-  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+  ms.openlocfilehash: e7b4fc7988621c996966c77bf9dd9b74b60afe86
+  ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 10/09/2020
-  ms.locfileid: "82735025"
+  ms.lasthandoff: 12/02/2020
+  ms.locfileid: "96491992"
 highlightedContent:
   items:
   - title: Inleiding in de belangrijkste opslagservices
     itemType: concept
-    url: /azure/storage/common/storage-introduction?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    url: ./common/storage-introduction.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
   - title: Meer informatie over typen opslagaccounts
     itemType: concept
-    url: /azure/storage/common/storage-account-overview?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    url: ./common/storage-account-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
   - title: Create a storage account
     itemType: how-to-guide
-    url: /azure/storage/common/storage-account-create?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    url: ./common/storage-account-create.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
   - title: Meer informatie over gegevensredundantie
     itemType: concept
-    url: /azure/storage/common/storage-redundancy?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    url: ./common/storage-redundancy.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
   - title: Gegevens overdragen naar Azure
     itemType: concept
-    url: /azure/storage/common/storage-choose-data-transfer-solution?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    url: ./common/storage-choose-data-transfer-solution.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
 additionalContent:
   sections:
   - title: Cloudopslagoplossingen
     items:
     - title: Objectopslag voor uw apps
       links:
-      - url: /azure/storage/blobs/storage-blobs-introduction
+      - url: ./blobs/storage-blobs-introduction.md
         text: Meer informatie over opslag voor ongestructureerde gegevens (Blob-opslag)
       - url: /rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs
         text: Blok-, toevoeg- en paginablobs begrijpen
-      - url: /azure/storage/blobs/
+      - url: ./blobs/index.yml
         text: Meer informatie >
     - title: Opslag voor big data-analyses
       links:
-      - url: /azure/storage/blobs/data-lake-storage-introduction
+      - url: ./blobs/data-lake-storage-introduction.md
         text: Meer informatie over opslag voor Enterprise Data Lakes (Data Lake Storage)
-      - url: /azure/storage/blobs/data-lake-storage-data-scenarios
+      - url: ./blobs/data-lake-storage-data-scenarios.md
         text: Opties en hulpprogramma's begrijpen voor het verwerken van big data
     - title: In de cloud gehoste bestandsshares
       links:
-      - url: /azure/storage/files/storage-files-introduction
+      - url: ./files/storage-files-introduction.md
         text: Bestandsshares gebruiken die worden verstrekt door de Azure Storage Platform-kern (Azure Files)
-      - url: /azure/azure-netapp-files/azure-netapp-files-introduction
+      - url: ../azure-netapp-files/azure-netapp-files-introduction.md
         text: Volumes gebruiken die worden verstrekt door NetApp ONTAP (Azure NetApp Files)
     - title: Schijfopslag voor IaaS-workloads
       links:
-      - url: /azure/virtual-machines/windows/managed-disks-overview
+      - url: ../virtual-machines/managed-disks-overview.md
         text: Meer informatie over opslagvolumes op blokniveau voor Azure-VM's
-      - url: /azure/virtual-machines/windows/disks-types
+      - url: ../virtual-machines/disks-types.md
         text: Inzicht in de beschikbare schijftypen
-      - url: /azure/virtual-machines/windows/attach-managed-disk-portal
+      - url: ../virtual-machines/windows/attach-managed-disk-portal.md
         text: Een nieuwe schijf aan een VM toevoegen - Windows
-      - url: /azure/virtual-machines/linux/attach-disk-portal
+      - url: ../virtual-machines/linux/attach-disk-portal.md
         text: Een gegevensschijf aan een VM koppelen - Linux
     - title: Opslag voor asynchrone berichtwachtrijen
       links:
-      - url: /azure/storage/queues/storage-queues-introduction
+      - url: ./queues/storage-queues-introduction.md
         text: Meer informatie over de Azure Storage-oplossing voor wachtrijen (Queue Storage)
-      - url: /azure/service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted
+      - url: ../service-bus-messaging/service-bus-azure-and-service-bus-queues-compared-contrasted.md
         text: Queue Storage- en Service Bus-wachtrijen vergelijken
-      - url: /azure/storage/queues/
+      - url: ./queues/index.yml
         text: Meer informatie >
     - title: Opslag voor gestructureerde NoSQL-gegevens
       links:
-      - url: /azure/storage/tables/table-storage-overview
+      - url: ./tables/table-storage-overview.md
         text: Gestructureerde NoSQL-gegevens opslaan in de cloud (Tabelopslag en Cosmos DB)
-      - url: /azure/cosmos-db/table-support
+      - url: ../cosmos-db/table-support.md
         text: Tabelopslag en Cosmos DB Table-API vergelijken
-      - url: /azure/storage/tables/
+      - url: ./tables/index.yml
         text: Meer informatie >
   - title: Hybride opslagoplossingen
     items:
     - title: On-premises bestandsshares uitbreiden in de cloud
       links:
-      - url: /azure/storage/files/storage-sync-files-planning
+      - url: ./files/storage-sync-files-planning.md
         text: Azure-bestandsshares synchroniseren met Windows-bestandsserver (Azure FileSync)
-      - url: /azure/storage/files/storage-sync-files-deployment-guide
+      - url: ./files/storage-sync-files-deployment-guide.md
         text: Azure Files SYNC implementeren
-      - url: /azure/storage/files/
+      - url: ./files/index.yml
         text: Meer informatie >
     - title: Online gegevensoverdracht (on-premises naar Azure)
       links:
-      - url: /azure/databox-online/data-box-gateway-overview
+      - url: ../databox-online/data-box-gateway-overview.md
         text: Probleemloze gegevensoverdracht naar Azure (Data Box Gateway)
-      - url: /azure/databox-online/data-box-edge-overview
+      - url: ../databox-online/azure-stack-edge-overview.md
         text: Gegevens lokaal verwerken voor overdracht naar Azure (Azure Stack Edge)
-      - url: /azure/databox-online/
+      - url: ../databox-online/index.yml
         text: Meer informatie >
     - title: Caching voor workloads in high performance computing (HPC)
       links:
-      - url: /azure/hpc-cache/hpc-cache-overview
+      - url: ../hpc-cache/hpc-cache-overview.md
         text: Een volledig beheerde service voor bestandscaching gebruiken (Azure HPC Cache)
-      - url: /azure/avere-vfxt/avere-vfxt-overview
+      - url: ../avere-vfxt/avere-vfxt-overview.md
         text: On-premises NAS cachen in Azure (Avere vFXT for Azure)
-      - url: /azure/fxt-edge-filer/fxt-overview
+      - url: ../fxt-edge-filer/fxt-overview.md
         text: Een on-premises cachingtoepassing implementeren (Azure FXT Edge Filer)
   - title: Gegevensbewerkingen
     items:
     - title: Offline bulkoverdracht naar Azure
       links:
-      - url: /azure/databox/data-box-disk-overview
+      - url: ../databox/data-box-disk-overview.md
         text: < 40 TB aan gegevens overdragen (Data Box Disk)
-      - url: /azure/databox/data-box-overview
+      - url: ../databox/data-box-overview.md
         text: 40 tot 500 TB aan gegevens overdragen (Data Box)
-      - url: /azure/databox/data-box-heavy-overview
+      - url: ../databox/data-box-heavy-overview.md
         text: '> 500 TB aan gegevens overdragen (Data Box Heavy)'
-      - url: /azure/databox/
+      - url: ../databox/index.yml
         text: Meer informatie >
     - title: Kleine gegevenssets overdragen (online)
       links:
-      - url: /azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+      - url: ./common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         text: Het opdrachtregelhulpprogramma AzCopy gebruiken
-      - url: /azure/storage/blobs/storage-quickstart-blobs-storage-explorer
+      - url: ./blobs/storage-quickstart-blobs-storage-explorer.md
         text: Het in Azure Storage Explorer GUI gebaseerde hulpprogramma gebruiken
     - title: Beheerkosten
       links:
-      - url: /azure/storage/blobs/storage-blob-storage-tiers
+      - url: ./blobs/storage-blob-storage-tiers.md
         text: Blobgegevens op een kosteneffectieve manier in lagen indelen (hot, cool, archief)
     - title: Uw gegevens delen
       links:
-      - url: /azure/data-share/
+      - url: ../data-share/index.yml
         text: Gegevens delen met klanten en partners (Azure Data Share)
-      - url: /azure/data-share/supported-data-stores
+      - url: ../data-share/supported-data-stores.md
         text: Ondersteunde gegevensopslag om te delen
-      - url: /azure/data-share/
+      - url: ../data-share/index.yml
         text: Meer informatie >
     - title: Een back-up maken van gegevens
       links:
-      - url: /azure/backup/quick-backup-vm-portal
+      - url: ../backup/quick-backup-vm-portal.md
         text: Een back-up maken van VM's (Azure Backup)
-      - url: /azure/backup/tutorial-backup-azure-files
+      - url: ../backup/backup-afs.md
         text: Een back-up maken van Azure-bestandsshares
-      - url: /azure/backup/
+      - url: ../backup/index.yml
         text: Meer informatie >

@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/13/2020
-ms.openlocfilehash: 554b3ad1dbe1e736300387aefde195b9054ab326
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 87dff3bbb4a7ff5e40a06d1b63bdc38987d727fe
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96437096"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492689"
 ---
 # <a name="azure-database-for-mysql-data-encryption-with-a-customer-managed-key"></a>Gegevens versleuteling Azure Database for MySQL met een door de klant beheerde sleutel
 
@@ -97,8 +97,8 @@ Wanneer u gegevens versleuteling configureert met een door de klant beheerde sle
 
 * Als er een herstel server voor een punt in de tijd wordt gemaakt voor uw Azure Database for MySQL waarvoor gegevens versleuteling is ingeschakeld, heeft de zojuist gemaakte server de status niet *toegankelijk* . U kunt dit oplossen via [Azure Portal](howto-data-encryption-portal.md#using-data-encryption-for-restore-or-replica-servers) of [cli](howto-data-encryption-cli.md#using-data-encryption-for-restore-or-replica-servers).
 * Als we een lees replica maken voor uw Azure Database for MySQL waarvoor gegevens versleuteling is ingeschakeld, heeft de replica server de status niet *toegankelijk* . U kunt dit oplossen via [Azure Portal](howto-data-encryption-portal.md#using-data-encryption-for-restore-or-replica-servers) of [cli](howto-data-encryption-cli.md#using-data-encryption-for-restore-or-replica-servers).
-* Als u de sleutel kluis verwijdert, is de Azure Database for MySQL niet in staat om toegang te krijgen tot de code en wordt deze verplaatst naar een niet- *toegankelijke* status. Herstel de [Key Vault](../key-vault/general/soft-delete-cli.md#deleting-and-purging-key-vault-objects) en valideer de gegevens versleuteling om de server *beschikbaar* te maken.
-* Als we de sleutel verwijderen uit de Azure Database for MySQL, kan de-sleutel geen toegang krijgen tot de code en wordt deze verplaatst naar een niet- *toegankelijke* status. Herstel de [sleutel](../key-vault/general/soft-delete-cli.md#deleting-and-purging-key-vault-objects) en valideer de gegevens versleuteling om de server *beschikbaar* te maken.
+* Als u de sleutel kluis verwijdert, is de Azure Database for MySQL niet in staat om toegang te krijgen tot de code en wordt deze verplaatst naar een niet- *toegankelijke* status. Herstel de [Key Vault](../key-vault/general/key-vault-recovery.md) en valideer de gegevens versleuteling om de server *beschikbaar* te maken.
+* Als we de sleutel verwijderen uit de Azure Database for MySQL, kan de-sleutel geen toegang krijgen tot de code en wordt deze verplaatst naar een niet- *toegankelijke* status. Herstel de [sleutel](../key-vault/general/key-vault-recovery.md) en valideer de gegevens versleuteling om de server *beschikbaar* te maken.
 * Als de sleutel die is opgeslagen in de Azure-hoofd kluis verloopt, wordt de sleutel ongeldig en wordt de Azure Database for MySQL overgezet naar de status *unaccessible* . Breid de verval datum van de sleutel uit met [cli](/cli/azure/keyvault/key#az-keyvault-key-set-attributes) en valideer vervolgens de gegevens versleuteling om de server *beschikbaar* te maken.
 
 ### <a name="accidental-key-access-revocation-from-key-vault"></a>Het intrekken van onbedoelde sleutel toegang van Key Vault

@@ -6,12 +6,12 @@ ms.date: 06/08/2020
 ms.custom:
 - MVC
 - fasttrack-edit
-ms.openlocfilehash: 038d0ec817d4f81371546e8d7aa4b48b299c8d98
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: 2d31c5b90f37f336b48118e4f4adde4777f8cf4a
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96302554"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96493131"
 ---
 # <a name="migrate-hyper-v-vms-to-azure"></a>Virtuele Hyper-V-machines naar Azure migreren 
 
@@ -45,7 +45,6 @@ Voordat u aan deze zelfstudie begint, dient u eerst:
 4. U wordt aangeraden om [Hyper-V-VM's te beoordelen](tutorial-assess-hyper-v.md) voordat u de VM’s migreert naar Azure, maar dit is niet verplicht.
 5. Ga naar het al gemaakte project of [maak een nieuw project](https://docs.microsoft.com/azure/migrate/create-manage-projects).
 6. Controleer de machtigingen voor uw Azure-account. U hebt voor uw Azure-account machtigingen nodig om een virtuele machine te maken en naar een beheerde Azure-schijf te schrijven.
-
 
 ## <a name="download-and-install-the-provider"></a>De provider downloaden en installeren
 

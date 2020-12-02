@@ -9,12 +9,12 @@ ms.date: 10/02/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 0196330df01f98e216c39bcc689eac2bde2f4cd9
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: e112060db4a44884d3094a939b03ff106ba72e65
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629339"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492196"
 ---
 # <a name="develop-for-azure-files-with-net"></a>Ontwikkelen voor Azure Files met .NET
 
@@ -70,7 +70,7 @@ Raadpleeg deze pakketten in uw project:
 U kunt NuGet gebruiken om de pakketten te verkrijgen. Volg deze stappen:
 
 1. Klik in **Solution Explorer** met de rechter muisknop op het project en kies **NuGet-pakketten beheren**.
-1. Selecteer in **NuGet package manager** de optie **Browse**. Zoek en kies **Azure. core** , en selecteer vervolgens **installeren**.
+1. Selecteer in **NuGet package manager** de optie **Browse**. Zoek en kies **Azure. core**, en selecteer vervolgens **installeren**.
 
    Met deze stap installeert u het pakket en de bijbehorende afhankelijkheden.
 
@@ -316,7 +316,7 @@ Zie [How a Shared Access Signature](../common/storage-sas-overview.md?toc=%2fazu
 
 Vanaf versie 5. x van de Azure Files-client bibliotheek kunt u een bestand kopiëren naar een ander bestand, een bestand naar een BLOB of een BLOB naar een bestand.
 
-U kunt AzCopy ook gebruiken om één bestand naar een andere te kopiëren of een BLOB naar een bestand of een andere manier te kopiëren. Raadpleeg [Aan de slag met AzCopy](../common/storage-use-azcopy-v10.md?toc=%252fazure%252fstorage%252ffiles%252ftoc.json).
+U kunt AzCopy ook gebruiken om één bestand naar een andere te kopiëren of een BLOB naar een bestand of een andere manier te kopiëren. Raadpleeg [Aan de slag met AzCopy](../common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json).
 
 > [!NOTE]
 > Als u een blob kopieert naar een bestand of een bestand naar een blob, moet u een Shared Access Signature (SAS) gebruiken om toegang tot het bronobject toe te staan, zelfs als u binnen hetzelfde opslagaccount kopieert.
@@ -624,10 +624,10 @@ Raadpleeg de volgende bronnen voor meer informatie over Azure Files:
 
 ### <a name="tooling-support-for-file-storage"></a>Hulpprogramma-ondersteuning voor File Storage
 
-- [Aan de slag met AzCopy](../common/storage-use-azcopy-v10.md?toc=%252fazure%252fstorage%252ffiles%252ftoc.json)
+- [Aan de slag met AzCopy](../common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)
 - [Problemen met Azure Files in Windows oplossen](./storage-troubleshoot-windows-file-connection-problems.md)
 
-### <a name="reference"></a>Referentie
+### <a name="reference"></a>Naslaginformatie
 
 - [Azure Storage-API's voor .NET](/dotnet/api/overview/azure/storage)
 - [Bestandsservice REST API](/rest/api/storageservices/File-Service-REST-API)

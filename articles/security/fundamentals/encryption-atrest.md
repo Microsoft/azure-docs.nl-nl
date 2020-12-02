@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/13/2020
 ms.author: mbaldwin
-ms.openlocfilehash: c9a68661a89f53c5aa27bdd046b5bc09a47db400
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 092320db9b7fe2b1f3fe142f84ad201d40dc6e2e
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556621"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492281"
 ---
-# <a name="azure-data-encryption-at-rest"></a>Versleuteling van inactieve gegevens in Azure
+# <a name="azure-data-encryption-at-rest"></a>Azure-gegevens versleuteling in rust
 
 Microsoft Azure bevat hulpprogram ma's voor het beveiligen van gegevens op basis van de beveiligings-en nalevings behoeften van uw bedrijf. Dit document is gericht op:
 

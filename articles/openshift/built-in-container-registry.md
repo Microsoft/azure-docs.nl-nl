@@ -6,12 +6,12 @@ ms.author: jiangma
 ms.service: container-service
 ms.topic: conceptual
 ms.date: 10/15/2020
-ms.openlocfilehash: 0a6449e6b728ee690dd6ddee192868aaeb3511ad
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 9ed53721b66dc03bad24e0510e0c8a970c61aec1
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95911036"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492417"
 ---
 # <a name="configure-built-in-container-registry-for-azure-red-hat-openshift-4"></a>Ingebouwd containerregister voor Azure Red Hat OpenShift 4 configureren
 
@@ -26,9 +26,9 @@ In dit artikel configureert u het ingebouwde REGI ster van de container installa
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-In dit artikel wordt ervan uitgegaan dat u beschikt over een bestaand ARO-cluster. Als u een ARO-cluster nodig hebt, raadpleegt u de ARO-zelf studie [een Azure Red Hat open Shift 4-cluster maken](/azure/openshift/tutorial-create-cluster). Zorg ervoor dat u het cluster met het `--pull-secret` argument maakt naar `az aro create` .  Dit is nodig voor het configureren van Azure Active Directory-verificatie en het ingebouwde container register.
+In dit artikel wordt ervan uitgegaan dat u beschikt over een bestaand ARO-cluster. Als u een ARO-cluster nodig hebt, raadpleegt u de ARO-zelf studie [een Azure Red Hat open Shift 4-cluster maken](./tutorial-create-cluster.md). Zorg ervoor dat u het cluster met het `--pull-secret` argument maakt naar `az aro create` .  Dit is nodig voor het configureren van Azure Active Directory-verificatie en het ingebouwde container register.
 
-Nadat u uw cluster hebt gemaakt, maakt u verbinding met het cluster door de stappen in [verbinding maken met een Azure Red Hat open Shift 4-cluster](/azure/openshift/tutorial-connect-cluster)te volgen.
+Nadat u uw cluster hebt gemaakt, maakt u verbinding met het cluster door de stappen in [verbinding maken met een Azure Red Hat open Shift 4-cluster](./tutorial-connect-cluster.md)te volgen.
    * Volg de stappen in ' de openhouds-CLI installeren ', omdat de `oc` opdracht later in dit artikel wordt gebruikt.
    * Noteer de URL van de cluster console, die er als volgt uitziet `https://console-openshift-console.apps.<random>.<region>.aroapp.io/` . De waarden voor `<random>` en worden `<region>` verderop in dit artikel gebruikt.
    * Noteer de `kubeadmin` referenties. Ze worden ook later in dit artikel gebruikt.

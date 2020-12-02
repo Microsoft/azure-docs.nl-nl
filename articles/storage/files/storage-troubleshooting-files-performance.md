@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 11/16/2020
 ms.author: gunjanj
 ms.subservice: files
-ms.openlocfilehash: a49dbdace01396656c3114df0bc0d4589aff57c1
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 5a35d939c12639770e25c3096c77f13d31310f85
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94916488"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492009"
 ---
 # <a name="troubleshoot-azure-file-shares-performance-issues"></a>Prestatie problemen met Azure file shares oplossen
 
@@ -196,7 +196,7 @@ Recente wijzigingen in de configuratie-instellingen van SMB meerdere kanalen zon
 
 ### <a name="cause"></a>Oorzaak  
 
-Een hoog aantal bericht wijzigingen in bestands shares kan leiden tot aanzienlijke hoge latentie. Dit gebeurt meestal met websites die worden gehost op bestands shares met een diepe geneste mapstructuur. Een typisch scenario is een door IIS gehoste webtoepassing waarbij bestands wijzigings meldingen worden ingesteld voor elke directory in de standaard configuratie. Elke wijziging ([ReadDirectoryChangesW](https://docs.microsoft.com/windows/win32/api/winbase/nf-winbase-readdirectorychangesw)) op de share die door de SMB-client wordt geregistreerd, wordt een wijzigings melding van de bestands service naar de client verzonden, waardoor systeem bronnen worden gebruikt. het probleem verloopt met het aantal wijzigingen. Dit kan ertoe leiden dat delen worden beperkt en dus resulteren in een hogere latentie van de client zijde. 
+Een hoog aantal bericht wijzigingen in bestands shares kan leiden tot aanzienlijke hoge latentie. Dit gebeurt meestal met websites die worden gehost op bestands shares met een diepe geneste mapstructuur. Een typisch scenario is een door IIS gehoste webtoepassing waarbij bestands wijzigings meldingen worden ingesteld voor elke directory in de standaard configuratie. Elke wijziging ([ReadDirectoryChangesW](/windows/win32/api/winbase/nf-winbase-readdirectorychangesw)) op de share die door de SMB-client wordt geregistreerd, wordt een wijzigings melding van de bestands service naar de client verzonden, waardoor systeem bronnen worden gebruikt. het probleem verloopt met het aantal wijzigingen. Dit kan ertoe leiden dat delen worden beperkt en dus resulteren in een hogere latentie van de client zijde. 
 
 U kunt de metrische gegevens van Azure in de portal gebruiken om te bevestigen. 
 

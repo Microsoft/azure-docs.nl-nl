@@ -13,12 +13,12 @@ ms.date: 06/15/2018
 ms.author: damendo
 ms.reviewer: vinigam
 ms.custom: references_regions
-ms.openlocfilehash: e35d44d197e1ca4e8f8036cb7920a96e5a60a5f9
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: d259f3ab6434a75a641050acfaf3a3409e3555d9
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94948779"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492791"
 ---
 # <a name="traffic-analytics"></a>Traffic Analytics
 
@@ -44,9 +44,9 @@ Virtuele Azure-netwerken hebben NSG-stroom logboeken, die u informatie geven ove
 
 ## <a name="key-components"></a>Belangrijkste onderdelen
 
-- **Netwerk beveiligings groep (NSG)**: bevat een lijst met beveiligings regels waarmee netwerk verkeer wordt toegestaan of geweigerd voor resources die zijn verbonden met een Azure-Virtual Network. NSG's kunnen worden gekoppeld aan subnetten, afzonderlijke virtuele machines (klassiek) of afzonderlijke netwerkinterfaces (NIC) die zijn gekoppeld aan VM’s (Resource Manager). Zie [overzicht van netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md?toc=%252fazure%252fnetwork-watcher%252ftoc.json)voor meer informatie.
+- **Netwerk beveiligings groep (NSG)**: bevat een lijst met beveiligings regels waarmee netwerk verkeer wordt toegestaan of geweigerd voor resources die zijn verbonden met een Azure-Virtual Network. NSG's kunnen worden gekoppeld aan subnetten, afzonderlijke virtuele machines (klassiek) of afzonderlijke netwerkinterfaces (NIC) die zijn gekoppeld aan VM’s (Resource Manager). Zie [overzicht van netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json)voor meer informatie.
 - **Stroom logboeken voor netwerk beveiligings groepen (NSG)**: Hiermee kunt u informatie weer geven over binnenkomend en IP-verkeer met behulp van een netwerk beveiligings groep. NSG-stroom logboeken worden geschreven in JSON-indeling en uitgaande en inkomende stromen per regel weer gegeven, de NIC waarop de stroom van toepassing is, vijf tuple informatie over de stroom (bron/doel-IP-adres, bron/doel poort en Protocol), en als het verkeer is toegestaan of geweigerd. Zie [NSG flow logs](network-watcher-nsg-flow-logging-overview.md)(Engelstalig) voor meer informatie over NSG-stroom Logboeken.
-- **Log Analytics**: een Azure-service waarmee bewakings gegevens worden verzameld en de gegevens worden opgeslagen in een centrale opslag plaats. Deze gegevens kunnen gebeurtenissen, prestatie gegevens of aangepaste gegevens bevatten die via de Azure API worden geleverd. Na verzameling zijn de gegevens beschikbaar voor waarschuwingen, analyse en export. Het bewaken van toepassingen zoals netwerk prestatie meter en verkeers analyse zijn gebouwd op basis van Azure Monitor-Logboeken als basis. Zie [Azure monitor-logboeken](../azure-monitor/log-query/log-query-overview.md?toc=%252fazure%252fnetwork-watcher%252ftoc.json)voor meer informatie.
+- **Log Analytics**: een Azure-service waarmee bewakings gegevens worden verzameld en de gegevens worden opgeslagen in een centrale opslag plaats. Deze gegevens kunnen gebeurtenissen, prestatie gegevens of aangepaste gegevens bevatten die via de Azure API worden geleverd. Na verzameling zijn de gegevens beschikbaar voor waarschuwingen, analyse en export. Het bewaken van toepassingen zoals netwerk prestatie meter en verkeers analyse zijn gebouwd op basis van Azure Monitor-Logboeken als basis. Zie [Azure monitor-logboeken](../azure-monitor/log-query/log-query-overview.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json)voor meer informatie.
 - **Log Analytics-werk ruimte**: een exemplaar van Azure monitor logboeken, waarbij de gegevens die betrekking hebben op een Azure-account, worden opgeslagen. Zie [een log Analytics-werk ruimte maken](../azure-monitor/learn/quick-create-workspace.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json)voor meer informatie over log Analytics-werk ruimten.
 - **Network Watcher**: een regionale service waarmee u voor waarden kunt bewaken en diagnosticeren op het niveau van een netwerk scenario in Azure. U kunt NSG-stroom Logboeken in-en uitschakelen met Network Watcher. Zie [Network Watcher](network-watcher-monitoring-overview.md)voor meer informatie.
 
@@ -131,7 +131,7 @@ De Log Analytics-werk ruimte moet in de volgende regio's bestaan:
       VS-Oost 2 EUAP  
       Frankrijk - centraal  
       Duitsland - west-centraal  
-      Japan East  
+      Japan - oost  
       Korea - centraal  
       VS - noord-centraal  
       Europa - noord  
@@ -232,7 +232,7 @@ Selecteer de volgende opties, zoals wordt weer gegeven in de afbeelding:
 4. Stel de **Bewaar periode** in op het aantal dagen waarvoor u gegevens wilt opslaan. Als u de gegevens permanent wilt opslaan, stelt u de waarde in op *0*. U hebt Azure Storage kosten voor het opslag account. 
 5. Selecteer *aan* voor **Traffic Analytics status**.
 6. Selecteer een verwerkings interval. Op basis van uw keuze worden de stroom logboeken verzameld van het opslag account en verwerkt door Traffic Analytics. U kunt het verwerkings interval van elke 1 uur of elke 10 minuten kiezen. 
-7. Selecteer een bestaande Log Analytics (OMS)-werk ruimte of selecteer **nieuwe werk ruimte maken** om een nieuwe te maken. Een Log Analytics-werk ruimte wordt gebruikt door Traffic Analytics om de geaggregeerde en geïndexeerde gegevens op te slaan die vervolgens worden gebruikt voor het genereren van de analyse. Als u een bestaande werk ruimte selecteert, moet deze bestaan in een van de [ondersteunde regio's](#supported-regions-log-analytics-workspaces) en zijn bijgewerkt naar de nieuwe query taal. Als u een bestaande werk ruimte niet wilt upgraden of als u geen werk ruimte in een ondersteunde regio hebt, maakt u een nieuwe. Zie [Azure log Analytics upgrade uitvoeren naar nieuwe zoek opdracht in Logboeken](../azure-monitor/log-query/log-query-overview.md?toc=%252fazure%252fnetwork-watcher%252ftoc.json)voor meer informatie over query talen.
+7. Selecteer een bestaande Log Analytics (OMS)-werk ruimte of selecteer **nieuwe werk ruimte maken** om een nieuwe te maken. Een Log Analytics-werk ruimte wordt gebruikt door Traffic Analytics om de geaggregeerde en geïndexeerde gegevens op te slaan die vervolgens worden gebruikt voor het genereren van de analyse. Als u een bestaande werk ruimte selecteert, moet deze bestaan in een van de [ondersteunde regio's](#supported-regions-log-analytics-workspaces) en zijn bijgewerkt naar de nieuwe query taal. Als u een bestaande werk ruimte niet wilt upgraden of als u geen werk ruimte in een ondersteunde regio hebt, maakt u een nieuwe. Zie [Azure log Analytics upgrade uitvoeren naar nieuwe zoek opdracht in Logboeken](../azure-monitor/log-query/log-query-overview.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json)voor meer informatie over query talen.
 
 > [!NOTE]
 >De log Analytics-werk ruimte die als host fungeert voor de Traffic Analytics-oplossing en de Nsg's hoeven zich niet in dezelfde regio te bevinden. U kunt bijvoorbeeld Traffic Analytics hebben in een werk ruimte in de Europa-west regio, terwijl u mogelijk Nsg's hebt in VS-Oost en VS-West. Meerdere Nsg's kunnen in dezelfde werk ruimte worden geconfigureerd.

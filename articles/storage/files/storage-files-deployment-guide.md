@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 05/22/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 53111ccd634c516d0db10c0e2dd41768aba43f41
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: a0415133bf3168c846e1105efe992c2c48c57ff2
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629237"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492179"
 ---
 # <a name="how-to-deploy-azure-files"></a>Azure Files implementeren
 [Azure files](storage-files-introduction.md) biedt volledig beheerde bestands shares in de cloud die toegankelijk zijn via het industrie standaard SMB-protocol. In dit artikel wordt uitgelegd hoe u Azure Files in uw organisatie nagenoeg implementeert.
@@ -22,7 +22,7 @@ Voordat u de stappen in dit artikel uitvoert, wordt u ten zeerste geadviseerd om
 ## <a name="prerequisites"></a>Vereisten
 In dit artikel wordt ervan uitgegaan dat u de volgende stappen al hebt uitgevoerd:
 
-- U hebt een Azure Storage-account gemaakt met de gewenste tolerantie-en versleutelings opties, in de regio die u wenst. Zie [een opslag account maken](../common/storage-account-create.md?toc=%252fazure%252fstorage%252ffiles%252ftoc.json) voor stapsgewijze instructies voor het maken van een opslag account.
+- U hebt een Azure Storage-account gemaakt met de gewenste tolerantie-en versleutelings opties, in de regio die u wenst. Zie [een opslag account maken](../common/storage-account-create.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) voor stapsgewijze instructies voor het maken van een opslag account.
 - Maak een Azure-bestands share met uw gewenste quotum in uw opslag account. Zie [een bestands share maken](storage-how-to-create-file-share.md) voor stapsgewijze instructies voor het maken van een bestands share.
 
 ## <a name="transfer-data-into-azure-files"></a>Gegevens overdragen naar Azure Files
@@ -63,7 +63,7 @@ Met de volgende stappen worden gegevens van een on-premises locatie naar uw Azur
     "F:\shares\scratch\","MyAzureFileShare/",file,rename,"None",None
     ```
 
-    Er kunnen meerdere shares met een opslag account worden opgegeven. Zie [het CSV-bestand van de gegevensset voorbereiden](/previous-versions/azure/storage/common/storage-import-export-tool-preparing-hard-drives-import?toc=%252fazure%252fstorage%252ffiles%252ftoc.json) voor meer informatie.
+    Er kunnen meerdere shares met een opslag account worden opgegeven. Zie [het CSV-bestand van de gegevensset voorbereiden](/previous-versions/azure/storage/common/storage-import-export-tool-preparing-hard-drives-import?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) voor meer informatie.
 
 5. Maak het CSV-bestand van het stationset. Het CSV-bestand van het station bevat een lijst met de schijven die beschikbaar zijn voor de on-premises export agent. U kunt bijvoorbeeld de volgende CSV-bestanden van stationset `X:` , `Y:` en `Z:` stations gebruiken voor de on-premises export taak:
 
@@ -74,7 +74,7 @@ Met de volgende stappen worden gegevens van een on-premises locatie naar uw Azur
     Z,Format,SilentMode,Encrypt,
     ```
     
-    Zie [het CSV-bestand van het stationset voorbereiden](/previous-versions/azure/storage/common/storage-import-export-tool-preparing-hard-drives-import?toc=%252fazure%252fstorage%252ffiles%252ftoc.json) voor meer informatie.
+    Zie [het CSV-bestand van het stationset voorbereiden](/previous-versions/azure/storage/common/storage-import-export-tool-preparing-hard-drives-import?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) voor meer informatie.
 
 6. Gebruik het [hulp programma WAImportExport](https://www.microsoft.com/download/details.aspx?id=55280) om uw gegevens naar een of meer harde schijven te kopiëren.
 
@@ -120,7 +120,7 @@ AzCopy is een opdracht regel programma dat is ontworpen voor het kopiëren van g
     azcopy --source <path-to-local-share> --destination https://<storage-account>.file.core.windows.net/<file-share>/ --dest-key <storage-account-key> --recursive
     ```
 
-    AzCopy heeft een groot aantal opties om het Kopieer gedrag naar wens aan te passen. Zie [aan de slag met AzCopy](../common/storage-use-azcopy-v10.md?toc=%252fazure%252fstorage%252ffiles%252ftoc.json)voor meer informatie.
+    AzCopy heeft een groot aantal opties om het Kopieer gedrag naar wens aan te passen. Zie [aan de slag met AzCopy](../common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)voor meer informatie.
 
 ## <a name="automatically-mount-on-needed-pcsservers"></a>Automatisch koppelen op de benodigde Pc's/servers
 Als u een on-premises bestands share wilt vervangen, is het handig om de shares vooraf te koppelen op de computers waarop deze worden gebruikt. Dit kan automatisch worden gedaan in een lijst met computers.

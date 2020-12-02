@@ -4,12 +4,12 @@ description: Informatie over het uitvoeren van een migratie van VMware-VM’s op
 ms.topic: tutorial
 ms.date: 06/09/2020
 ms.custom: MVC
-ms.openlocfilehash: 437dbce1c577b5d837ad0c70e8e8865ba59cf9e6
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: 46f23953e6572b752f8773bc9db86be946ccf212
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96302760"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492994"
 ---
 # <a name="migrate-vmware-vms-to-azure-agent-based"></a>VMware-VM’s migreren naar Azure (op basis van een agent)
 
@@ -133,7 +133,6 @@ Controleer of de VMware-servers en VM's aan de vereisten voor migratie naar Azur
 
 > [!NOTE]
 > Migratie op basis van een agent met Azure Migrate Server Migration is gebaseerd op de functies van de Azure Site Recovery-service. Bepaalde vereisten worden mogelijk gekoppeld aan Site Recovery-documentatie.
-
 
 ## <a name="set-up-the-replication-appliance"></a>Het replicatieapparaat instellen
 

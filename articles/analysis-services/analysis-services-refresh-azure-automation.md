@@ -4,20 +4,20 @@ description: In dit artikel wordt beschreven hoe u code model vernieuwt voor Azu
 author: chrislound
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 05/07/2020
+ms.date: 12/01/2020
 ms.author: chlound
-ms.openlocfilehash: fe811c81d0774393f40dc5c8403d1af8b22da109
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 7c801511b6f24cf5ef04d55bb195e3a4c62d7b6d
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92019134"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96491244"
 ---
 # <a name="refresh-with-azure-automation"></a>Vernieuwen met Azure Automation
 
 Met Azure Automation-en Power shell-Runbooks kunt u geautomatiseerde gegevens vernieuwings bewerkingen uitvoeren op de tabellaire modellen van Azure Analysis.  
 
-In het voor beeld in dit artikel wordt gebruikgemaakt van de [sqlserver Power shell-module](/powershell/module/sqlserver/?view=sqlserver-ps). Verderop in dit artikel vindt u een voor beeld van een Power shell-Runbook, dat laat zien hoe u een model vernieuwt.  
+In het voor beeld in dit artikel wordt gebruikgemaakt van de [sqlserver Power shell-module](/powershell/module/sqlserver/?view=sqlserver-ps&preserve-view=true). Verderop in dit artikel vindt u een voor beeld van een Power shell-Runbook, dat laat zien hoe u een model vernieuwt.  
 
 ## <a name="authentication"></a>Verificatie
 
@@ -30,7 +30,7 @@ Alle aanroepen moeten worden geverifieerd met een geldig Azure Active Directory 
 
 ### <a name="install-sqlserver-modules-from-powershell-gallery"></a>Installeer SqlServer-modules vanuit Power shell Gallery.
 
-1. Klik in uw Azure Automation-account op **modules**en **Blader**vervolgens op Galerie.
+1. Klik in uw Azure Automation-account op **modules** en **Blader** vervolgens op Galerie.
 
 2. Zoek in de zoek balk naar **sqlserver**.
 
@@ -56,7 +56,7 @@ De service-principal die u maakt, moet Server Administrator-machtigingen hebben 
 
     ![Scherm opname van de pagina referenties waarop de actie ' referentie toevoegen ' is geselecteerd.](./media/analysis-services-refresh-azure-automation/6.png)
 
-2. Voer de details in voor de referentie. Voer in **gebruikers naam**de Service Principal-toepassings-id (AppID) in en voer vervolgens bij **wacht woord**het geheim van de Service-Principal in.
+2. Voer de details in voor de referentie. Voer in **gebruikers naam** de Service Principal-toepassings-id (AppID) in en voer vervolgens bij **wacht woord** het geheim van de Service-Principal in.
 
     ![Referentie maken](./media/analysis-services-refresh-azure-automation/7.png)
 
@@ -64,7 +64,7 @@ De service-principal die u maakt, moet Server Administrator-machtigingen hebben 
 
     ![Scherm opname van de pagina Runbooks waarop de actie ' een runbook importeren ' is geselecteerd.](./media/analysis-services-refresh-azure-automation/8.png)
 
-4. Blader naar het [Refresh-Model.ps1](#sample-powershell-runbook) bestand, geef een **naam** en **Beschrijving**op en klik vervolgens op **maken**.
+4. Blader naar het [Refresh-Model.ps1](#sample-powershell-runbook) bestand, geef een **naam** en **Beschrijving** op en klik vervolgens op **maken**.
 
     > [!NOTE]
     > Gebruik script uit de sectie voor [beeld van Power shell-Runbook](#sample-powershell-runbook) onder aan dit document om een bestand met de naam Refresh-Model.ps1 te maken en op te slaan op de lokale computer om te importeren in Runbook.
@@ -78,11 +78,11 @@ De service-principal die u maakt, moet Server Administrator-machtigingen hebben 
     > [!NOTE]
     > De referentie resource die eerder is gemaakt, wordt opgehaald door het runbook met behulp van de opdracht **Get-AutomationPSCredential** .  Deze opdracht wordt vervolgens door gegeven aan de Power shell **-opdracht invoke-ProcessASADatabase** om de verificatie uit te voeren voor Azure Analysis Services.
 
-6. Test het runbook door op **Start**te klikken.
+6. Test het runbook door op **Start** te klikken.
 
     ![Scherm opname waarin de pagina overzicht wordt weer gegeven en de actie starten is geselecteerd.](./media/analysis-services-refresh-azure-automation/11.png)
 
-7. Vul de para meters **DATABASENAME**, **ANALYSISSERVER**en **REFRESHTYPE** in en klik vervolgens op **OK**. De para meter **WEBHOOKDATA** is niet vereist wanneer het Runbook hand matig wordt uitgevoerd.
+7. Vul de para meters **DATABASENAME**, **ANALYSISSERVER** en **REFRESHTYPE** in en klik vervolgens op **OK**. De para meter **WEBHOOKDATA** is niet vereist wanneer het Runbook hand matig wordt uitgevoerd.
 
     ![Het Runbook starten](./media/analysis-services-refresh-azure-automation/12.png)
 
@@ -96,11 +96,11 @@ Het Runbook kan worden geconfigureerd om het Azure Analysis Services model verni
 
 Dit kan als volgt worden geconfigureerd:
 
-1. Klik in het Automation-Runbook op **planningen**en vervolgens op **een schema toevoegen**.
+1. Klik in het Automation-Runbook op **planningen** en vervolgens op **een schema toevoegen**.
  
     ![Planning maken](./media/analysis-services-refresh-azure-automation/14.png)
 
-2. Klik op **planning**  >  **een nieuw schema maken**en vul de details in.
+2. Klik op **planning**  >  **een nieuw schema maken** en vul de details in.
 
     ![Planning configureren](./media/analysis-services-refresh-azure-automation/15.png)
 
@@ -117,9 +117,9 @@ Dit kan als volgt worden geconfigureerd:
 Als u het runbook wilt gebruiken met behulp van Azure Data Factory, maakt u eerst een **webhook** voor het runbook. De **webhook** bevat een URL die kan worden aangeroepen via een Azure Data Factory-webactiviteit.
 
 > [!IMPORTANT]
-> Als u een **webhook**wilt maken, moet de status van het Runbook worden **gepubliceerd**.
+> Als u een **webhook** wilt maken, moet de status van het Runbook worden **gepubliceerd**.
 
-1. Klik in uw Automation-Runbook op **webhooks**en klik vervolgens op **webhook toevoegen**.
+1. Klik in uw Automation-Runbook op **webhooks** en klik vervolgens op **webhook toevoegen**.
 
    ![Webhook toevoegen](./media/analysis-services-refresh-azure-automation/17.png)
 
@@ -202,7 +202,7 @@ $_Credential = Get-AutomationPSCredential -Name "ServicePrincipal"
 
 # If runbook was called from Webhook, WebhookData will not be null.
 if ($WebhookData)
-{ 
+{ 
     # Retrieve AAS details from Webhook request body
     $atmParameters = (ConvertFrom-Json -InputObject $WebhookData.RequestBody)
     Write-Output "CredentialName: $($atmParameters.CredentialName)"

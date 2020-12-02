@@ -6,12 +6,12 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: how-to
 ms.date: 09/22/2020
-ms.openlocfilehash: 319b7a40a87d29454b22a26088df313ef524dc56
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 3b54fe1ffd49c12db82a038ad449190a0049133f
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545817"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492349"
 ---
 # <a name="configure-and-access-logs-in-azure-database-for-postgresql---flexible-server"></a>Logboeken configureren en openen in Azure Database for PostgreSQL-flexibele server
 
@@ -22,21 +22,21 @@ PostgreSQL-logboeken zijn beschikbaar op elk knoop punt van een flexibele server
 
 ## <a name="configure-diagnostic-settings"></a>Diagnostische instellingen configureren
 
-U kunt Diagnostische instellingen inschakelen voor uw post gres-server met behulp van de Azure Portal, CLI, REST API en Power shell. De logboek categorie die moet worden geselecteerd, is **PostgreSQLLogs** .
+U kunt Diagnostische instellingen inschakelen voor uw post gres-server met behulp van de Azure Portal, CLI, REST API en Power shell. De logboek categorie die moet worden geselecteerd, is **PostgreSQLLogs**.
 
 Resource logboeken inschakelen met behulp van de Azure Portal:
 
 1. Ga in de portal naar *Diagnostische instellingen* in het navigatie menu van uw post gres-server.
    
-2. Selecteer *Diagnostische instelling toevoegen* .
+2. Selecteer *Diagnostische instelling toevoegen*.
    :::image type="content" source="media/howto-logging/diagnostic-settings.png" alt-text="Knop Diagnostische instellingen toevoegen":::
 
 3. Geef deze instelling een naam. 
 
 4. Selecteer uw gewenste eind punt (opslag account, Event Hub, log Analytics). 
 
-5. Selecteer het logboek type **PostgreSQLLogs** .
-   :::image type="content" source="media/howto-logging/diagnostic-create-setting.png" alt-text="Knop Diagnostische instellingen toevoegen":::
+5. Selecteer het logboek type **PostgreSQLLogs**.
+   :::image type="content" source="media/howto-logging/diagnostic-create-setting.png" alt-text="PostgreSQL-logboeken kiezen":::
 
 7. Sla de instelling op.
 
@@ -71,5 +71,5 @@ In de bovenstaande query worden de resultaten weer gegeven in de afgelopen 6 uur
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Aan de slag met log Analytics-query's](../../azure-monitor/log-query/get-started-portal.md)
+- [Aan de slag met log Analytics-query's](../../azure-monitor/log-query/log-analytics-tutorial.md)
 - Meer informatie over [Azure Event hubs](../../event-hubs/event-hubs-about.md)

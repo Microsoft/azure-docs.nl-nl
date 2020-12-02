@@ -1,21 +1,21 @@
 ---
-title: Lijst met veilige URL'S voor Windows-virtueel bureau blad-Azure
+title: Lijst met vereiste URL'S voor Windows virtueel bureau blad-Azure
 description: Een lijst met Url's die u moet deblokkeren om ervoor te zorgen dat de implementatie van Windows virtueel bureau blad werkt zoals bedoeld.
 author: Heidilohr
 ms.topic: conceptual
-ms.date: 08/12/2020
+ms.date: 12/02/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 3d19a60fd6a22eb9245722c6ff69d3b39c05d29e
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 6b3fdc18a04dadf4bf1cf380c7bb51d21f826633
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023170"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96512338"
 ---
-# <a name="safe-url-list"></a>Lijst met veilige URL's
+# <a name="required-url-list"></a>Lijst met vereiste URL'S
 
-U moet bepaalde Url's blok keren zodat uw Windows Virtual Desktop-implementatie goed werkt. In dit artikel vindt u een overzicht van deze Url's, zodat u weet welke items veilig zijn.
+Als u Windows virtueel bureau blad wilt implementeren en gebruiken, moet u bepaalde Url's deblokkeren zodat uw virtuele machines (Vm's) op elk gewenst moment toegang hebben. In dit artikel worden de vereiste Url's vermeld die u nodig hebt om de blok kering op te heffen.
 
 ## <a name="virtual-machines"></a>Virtuele machines
 
@@ -53,7 +53,7 @@ De virtuele machines van Azure die u voor virtuele Windows-Bureau bladen maakt, 
 |*. servicebus.usgovcloudapi.net|443|Agent-verkeer|AzureCloud|
 |* xt.table.core.usgovcloudapi.net|443|Agent-verkeer|AzureCloud|
 |Kms.core.usgovcloudapi.net|1688|Windows-activering|Internet|
-|mrsglobalstugviffx.core.usgovcloudapi.net|443|Updates van Agent- en SXS-stack|AzureCloud|
+|mrsglobalstugviffx.blob.core.usgovcloudapi.net|443|Updates van Agent- en SXS-stack|AzureCloud|
 |wvdportalstorageblob.blob.core.usgovcloudapi.net|443|Ondersteuning Azure-portal|AzureCloud|
 | 169.254.169.254 | 80 | [Azure instance meta data service-eind punt](../virtual-machines/windows/instance-metadata-service.md) | N.v.t. |
 | 168.63.129.16 | 80 | [Status controle van sessie-host](../virtual-network/network-security-groups-overview.md#azure-platform-considerations) | N.v.t. |
@@ -69,9 +69,13 @@ In de volgende tabel vindt u optionele URL's waar uw virtuele Azure-machines toe
 |login.windows.net|443|Aanmelden bij Microsoft Online Services, Microsoft 365|login.microsoftonline.us|
 |*.sfx.ms|443|Updates voor OneDrive-clientsoftware|oneclient.sfx.ms|
 |*.digicert.com|443|Controle van certificaatintrekking|Geen|
+|*. azure-dns.com|443|Azure DNS resolutie|Geen|
+|*. azure-dns.net|443|Azure DNS resolutie|Geen|
 
 >[!NOTE]
 >Het virtuele bureau blad van Windows heeft momenteel geen lijst met IP-adresbereiken die u kunt blok keren om netwerk verkeer toe te staan. Er wordt momenteel alleen ondersteuning geboden voor het opheffen van de blok kering van specifieke Url's.
+>
+>Als u een Next Generation firewall (NGFW) gebruikt, moet u een dynamische lijst gebruiken die speciaal is gemaakt voor Azure Ip's om ervoor te zorgen dat u verbinding kunt maken.
 >
 >Zie [Office 365 url's en IP-](/office365/enterprise/urls-and-ip-address-ranges)adresbereiken voor een lijst met veilige Office-url's, met inbegrip van vereiste url's voor Azure Active Directory.
 >

@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 11/19/2020
 ms.author: aahi
-ms.openlocfilehash: 2977946b2e1f37aa356ee075d2caac237170df0f
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 90a4da2aadbbdf07d851e4407d2d417fc76d32af
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "95993328"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96512321"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>De Text Analytics aanroepen REST API
 
@@ -54,9 +54,9 @@ Zie de onderstaande tabel om te zien welke functies asynchroon kunnen worden geb
 > [!NOTE]
 > Als u de eind punten wilt gebruiken, hebt u een Text Analytics resource met een [prijs categorie](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/) Standard (S) nodig `/analyze` `/health` .
 
-1.  Ga eerst naar de [Azure Portal](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics) en maak een nieuwe Text Analytics resource als u er nog geen hebt. Kies de prijs categorie Standard (S) als u de `/analyze` eind punten wilt gebruiken `/health` .
+1.  Ga eerst naar de [Azure Portal](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics) en maak een nieuwe Text Analytics resource als u er nog geen hebt. Kies de **prijs categorie Standard (S)** als u de `/analyze` eind punten wilt gebruiken `/health` .
 
-2.  Selecteer de regio die u wilt gebruiken voor het eind punt.
+2.  Selecteer de regio die u voor het eind punt wilt gebruiken.  Houd er rekening mee dat de `/analyze` `/health` eind punten alleen beschikbaar zijn in de volgende REGIO'S: VS-West 2, VS-Oost 2, VS-midden, Europa-noord en Europa-West.
 
 3.  Maak de Text Analytics resource en ga naar de Blade sleutels en eind punt aan de linkerkant van de pagina. Kopieer de sleutel die u later wilt gebruiken wanneer u de Api's aanroept. U voegt dit later toe als waarde voor de `Ocp-Apim-Subscription-Key` koptekst.
 
@@ -198,7 +198,7 @@ Voeg in Postman (of een ander web API-test hulpprogramma) het eind punt toe voor
 |--|--|--|
 | Taaldetectie | POST | `<your-text-analytics-resource>/text/analytics/v3.0/languages` |
 | Sentimentanalyse | POST | `<your-text-analytics-resource>/text/analytics/v3.0/sentiment` |
-| Opinie analyse | POST | `<your-text-analytics-resource>/text/analytics/v3.0/sentiment?opinionMining=true` |
+| Meninganalyse | POST | `<your-text-analytics-resource>/text/analytics/v3.0/sentiment?opinionMining=true` |
 | Sleuteltermextractie | POST | `<your-text-analytics-resource>/text/analytics/v3.0/keyPhrases` |
 | Herkenning van benoemde entiteiten-algemeen | POST | `<your-text-analytics-resource>/text/analytics/v3.0/entities/recognition/general` |
 | Herkenning van benoemde entiteiten-PII | POST | `<your-text-analytics-resource>/text/analytics/v3.0/entities/recognition/pii` |

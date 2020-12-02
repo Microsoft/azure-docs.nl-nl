@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/19/2019
 ms.author: Zhchia
-ms.openlocfilehash: f43d7b2a858c5047c40157429dc5c50b467c8efc
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 419f25ee3df471bc2fc4526254f5677b8bd71856
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96012387"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96342726"
 ---
 # <a name="tutorial-configure-sap-cloud-platform-identity-authentication-for-automatic-user-provisioning"></a>Zelfstudie: SAP Cloud Platform Identity Authentication configureren voor automatische inrichting van gebruikers
 
@@ -114,7 +114,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
     ![Schermopname van de vervolgkeuzelijst Inrichtingsmodus met de optie Automatisch gemarkeerd.](common/provisioning-automatic.png)
 
-5. Voer onder de sectie **Referenties voor beheerder** `https://<tenantID>.accounts.ondemand.com/service/scim ` in **Tenant-URL** in. Voer de waarden van de **Gebruikers-id** en het **Wachtwoord** in die eerder zijn opgehaald in respectievelijk **Gebruikersnaam van beheerder** en **Wachtwoord van beheerder**. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met SAP Cloud Platform Identity Authentication. Als de verbinding mislukt, controleert u of uw SAP Cloud Platform Identity Authentication-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
+5. Voer onder de sectie **Referenties voor beheerder** `https://<tenantID>.accounts.ondemand.com/service/scim ` in bij **Tenant-URL**. Voer de waarden van de **Gebruikers-id** en het **Wachtwoord** in die eerder zijn opgehaald in respectievelijk **Gebruikersnaam van beheerder** en **Wachtwoord van beheerder**. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met SAP Cloud Platform Identity Authentication. Als de verbinding mislukt, controleert u of uw SAP Cloud Platform Identity Authentication-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
     ![Tenant-URL + token](media/sap-cloud-platform-identity-authentication-provisioning-tutorial/testconnection.png)
 

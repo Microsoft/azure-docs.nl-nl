@@ -6,18 +6,18 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 09/16/2020
-ms.openlocfilehash: a68501bd1189993b4dd0c2acdecaa7434fa51dcc
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: d2446e866c0e12d50a0759373682f4f62bc4bba0
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/02/2020
-ms.locfileid: "96488031"
+ms.locfileid: "96512219"
 ---
 # <a name="azure-monitor-logs-dedicated-clusters"></a>Azure Monitor logboeken toegewezen clusters
 
-Azure Monitor logboeken toegewezen clusters zijn een implementatie optie waarmee u de mogelijkheid biedt om klanten van Azure Monitor-logboeken te kunnen ervaren. Klanten met toegewezen clusters kunnen de werk ruimten kiezen die worden gehost op deze clusters.
+Azure Monitor logboeken toegewezen clusters zijn een implementatie optie waarmee geavanceerde mogelijkheden voor Azure Monitor-logboeken van klanten mogelijk zijn. Klanten met toegewezen clusters kunnen de werk ruimten kiezen die worden gehost op deze clusters.
 
-De mogelijkheden waarvoor speciale clusters zijn vereist zijn:
+De mogelijkheden die toegewezen clusters vereisen zijn:
 
 - Door de **[klant beheerde sleutels](../platform/customer-managed-keys.md)** : de cluster gegevens versleutelen met behulp van sleutels die worden verstrekt en beheerd door de klant.
 - **[Lockbox](../platform/customer-managed-keys.md#customer-lockbox-preview)** : klanten kunnen micro soft support engineers toegangs aanvragen voor gegevens beheren.
@@ -52,7 +52,7 @@ Er zijn twee facturerings methoden voor gebruik in een cluster. Deze kunnen word
 
 2. **Werk ruimten**: de kosten voor de capaciteits reservering voor uw cluster worden proportioneel toegeschreven aan de werk ruimten in het cluster (na de accounting van toewijzingen per knoop punt van [Azure Security Center](../../security-center/index.yml) voor elke werk ruimte.)
 
-Houd er rekening mee dat als uw werk ruimte verouderde prijs categorie per knoop punt gebruikt, wanneer deze is gekoppeld aan een cluster, wordt gefactureerd op basis van gegevens die zijn opgenomen in de capaciteits reservering van het cluster en niet langer per knoop punt. Gegevens toewijzingen per knoop punt van Azure Security Center worden nog steeds toegepast.
+Als uw werk ruimte verouderde prijs categorie per knoop punt gebruikt, wordt deze gefactureerd op basis van gegevens die zijn opgenomen in de capaciteits reservering van het cluster en niet langer per knoop punt. Gegevens toewijzingen per knoop punt van Azure Security Center worden nog steeds toegepast.
 
 [Hier]( https://docs.microsoft.com/azure/azure-monitor/platform/manage-cost-storage#log-analytics-dedicated-clusters)vindt u meer informatie over facturering voor log Analytics toegewezen clusters.
 

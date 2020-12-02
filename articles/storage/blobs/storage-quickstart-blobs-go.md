@@ -7,12 +7,12 @@ ms.date: 11/14/2018
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: f4016349e354c84e9e096ac6d5072a4870e9ef29
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: bf0e868e9ee746da1dfe1b03403d21f7edb3bd5e
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "68726460"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95544646"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-using-go"></a>Quickstart: blobs downloaden, uploaden en vermelden met behulp van Go
 
@@ -108,7 +108,7 @@ Als eerste moeten verwijzingen worden gemaakt naar de ContainerURL- en BlobURL-o
 Zodra u de ContainerURL hebt, kunt u het **BlobURL**-object maken dat verwijst naar een blob en bewerkingen uitvoeren zoals uploaden, downloaden en kopiëren.
 
 > [!IMPORTANT]
-> Containernamen moeten uit kleine letters bestaan. Zie [Naming and referencing containers, blobs, and metadata](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Containers, blobs en metagegevens een naam geven en hiernaar verwijzen) voor meer informatie over namen voor blobs en containers.
+> Containernamen moeten uit kleine letters bestaan. Zie [Naming and referencing containers, blobs, and metadata](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Containers, blobs en metagegevens een naam geven en hiernaar verwijzen) voor meer informatie over namen voor blobs en containers.
 
 In deze sectie maakt u een nieuwe container. De container heeft de naam **quickstartblobs-[random string]**. 
 
@@ -149,9 +149,9 @@ Blob-opslag ondersteunt blok-blobs, toevoeg-blobs en pagina-blobs. Omdat blok-bl
 
 Als u een bestand wilt uploaden naar een blob, opent u het bestand met **os. Open**. U kunt het bestand vervolgens naar het opgegeven pad uploaden met een van de REST API's: Upload (PutBlob), StageBlock/CommitBlockList (PutBlock/PutBlockList). 
 
-De SDK biedt [API's op hoog niveau](https://github.com/Azure/azure-storage-blob-go/blob/master/azblob/highlevel.go) die zijn gebaseerd op de REST-API's op laag niveau. De functie ***UploadFileToBlockBlob*** maakt bijvoorbeeld gebruik van StageBlock-bewerkingen (PutBlock) om gelijktijdig een bestand in segmenten te uploaden om de doorvoer te optimaliseren. Als het bestand minder dan 256 MB is, wordt in plaats daarvan Upload (PutBlob) gebruikt om de overdracht in één transactie te voltooien.
+De SDK biedt [API's op hoog niveau](https://github.com/Azure/azure-storage-blob-go/blob/master/azblob/highlevel.go) die zijn gebaseerd op de REST-API's op laag niveau. De functie **_UploadFileToBlockBlob_* _ maakt bijvoorbeeld gebruik van StageBlock-bewerkingen (PutBlock) om gelijktijdig een bestand in segmenten te uploaden om de doorvoer te optimaliseren. Als het bestand minder dan 256 MB is, wordt in plaats daarvan Upload (PutBlob) gebruikt om de overdracht in één transactie te voltooien.
 
-In het volgende voorbeeld wordt het bestand geüpload naar de container met de naam **quickstartblobs-[randomstring]**.
+In het volgende voorbeeld wordt het bestand geüpload naar de container met de naam _*quickstartblobs-[randomstring]**.
 
 ```go
 // Create a file to test the upload and download.

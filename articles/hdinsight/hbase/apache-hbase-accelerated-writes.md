@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 01/24/2020
-ms.openlocfilehash: 99253aa2e7e2e1f3f58f2ab7d5c40a695c2b9690
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c7a2373f0cf7005e465c2d3bd42817b3394a84de
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88654851"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96510268"
 ---
 # <a name="azure-hdinsight-accelerated-writes-for-apache-hbase"></a>Versnelde schrijfbewerkingen van Azure HDInsight voor Apache HBase
 
@@ -20,15 +20,15 @@ In dit artikel vindt u achtergrond informatie over de functie voor **Geversnelle
 
 ## <a name="overview-of-hbase-architecture"></a>Overzicht van HBase-architectuur
 
-In HBase bestaat een **rij** uit een of meer **kolommen** en wordt deze aangeduid met een **rij-sleutel**. Meerdere rijen vormen een **tabel**. Kolommen bevatten **cellen**die een tijds tempel hebben van de waarde in die kolom. Kolommen worden gegroepeerd in **kolom families**en alle kolommen in een kolom familie worden samen opgeslagen in opslag bestanden met de naam **HFiles**.
+In HBase bestaat een **rij** uit een of meer **kolommen** en wordt deze aangeduid met een **rij-sleutel**. Meerdere rijen vormen een **tabel**. Kolommen bevatten **cellen** die een tijds tempel hebben van de waarde in die kolom. Kolommen worden gegroepeerd in **kolom families** en alle kolommen in een kolom familie worden samen opgeslagen in opslag bestanden met de naam **HFiles**.
 
 **Regio's** in HBase worden gebruikt om de belasting van gegevens verwerking te verdelen. HBase slaat eerst de rijen van een tabel op in één regio. De rijen worden verdeeld over meerdere regio's naarmate de hoeveelheid gegevens in de tabel toeneemt. **Regio servers** kunnen aanvragen voor meerdere regio's verwerken.
 
 ## <a name="write-ahead-log-for-apache-hbase"></a>Write-Ahead logboek voor Apache HBase
 
-HBase schrijft eerst gegevens updates naar een type doorvoer logboek dat een write-Ahead logboek (WAL) wordt genoemd. Nadat de update is opgeslagen in de WAL, wordt deze geschreven naar de **geheugen opslag**in het geheugen. Als de maximale capaciteit van de gegevens in het geheugen is bereikt, wordt deze naar de schijf geschreven als een **HFile**.
+HBase schrijft eerst gegevens updates naar een type doorvoer logboek dat een write-Ahead logboek (WAL) wordt genoemd. Nadat de update is opgeslagen in de WAL, wordt deze geschreven naar de **geheugen opslag** in het geheugen. Als de maximale capaciteit van de gegevens in het geheugen is bereikt, wordt deze naar de schijf geschreven als een **HFile**.
 
-Als een **RegionServer** vastloopt of niet meer beschikbaar is voordat de geheugen opslag wordt leeg gemaakt, kan het Write-Ahead logboek worden gebruikt voor het opnieuw afspelen van updates. Zonder de WAL, als een **RegionServer** vastloopt voordat updates naar een **HFile**worden verwijderd, gaan al deze updates verloren.
+Als een **RegionServer** vastloopt of niet meer beschikbaar is voordat de geheugen opslag wordt leeg gemaakt, kan het Write-Ahead logboek worden gebruikt voor het opnieuw afspelen van updates. Zonder de WAL, als een **RegionServer** vastloopt voordat updates naar een **HFile** worden verwijderd, gaan al deze updates verloren.
 
 ## <a name="accelerated-writes-feature-in-azure-hdinsight-for-apache-hbase"></a>De functie voor versnelde schrijf bewerkingen in azure HDInsight voor Apache HBase
 
@@ -36,9 +36,9 @@ Met de functie voor versnelde schrijf bewerkingen wordt het probleem opgelost da
 
 ## <a name="how-to-enable-accelerated-writes-for-hbase-in-hdinsight"></a>Versnelde schrijf bewerkingen inschakelen voor HBase in HDInsight
 
-Als u een nieuw HBase-cluster wilt maken met de functie voor versnelde schrijf bewerkingen, volgt u de stappen in [clusters instellen in HDInsight](../hdinsight-hadoop-provision-linux-clusters.md) totdat u **stap 3, opslag**. Schakel onder **instellingen van meta Store**het selectie vakje in naast **HBase versneld schrijven inschakelen**. Ga vervolgens door met de resterende stappen voor het maken van het cluster.
+Als u een nieuw HBase-cluster wilt maken met de functie voor versnelde schrijf bewerkingen, volgt u de stappen in [clusters instellen in HDInsight](../hdinsight-hadoop-provision-linux-clusters.md) totdat u **stap 3, opslag**. Schakel onder **instellingen van meta Store** het selectie vakje in naast **HBase versneld schrijven inschakelen**. Ga vervolgens door met de resterende stappen voor het maken van het cluster.
 
-![Optie voor versneld schrijven inschakelen voor HDInsight Apache HBase](./media/apache-hbase-accelerated-writes/azure-portal-cluster-storage-hbase.png)
+![Optie voor versneld schrijven inschakelen voor HDInsight Apache HBase](./media/apache-hbase-accelerated-writes/azure-portal-create-hbase-wals.png)
 
 ## <a name="other-considerations"></a>Andere overwegingen
 

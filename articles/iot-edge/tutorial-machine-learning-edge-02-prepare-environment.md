@@ -8,19 +8,20 @@ ms.date: 3/12/2020
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 99a0805239ee2437ad6ec9ceb40cf45496a07850
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 3a3518ba68c9474fc4a34390e6fd9a7d1e88f6c6
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92047655"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959591"
 ---
 # <a name="tutorial-set-up-an-environment-for-machine-learning-on-iot-edge"></a>Zelfstudie: Een omgeving instellen voor machine learning op IoT Edge
 
-> [!NOTE]
-> Dit artikel maakt deel uit van een reeks voor een zelfstudie over het gebruik van Azure Machine Learning in IoT Edge. Als u rechtstreeks bij dit artikel bent terechtgekomen, wordt u aangeraden te beginnen met het [eerste artikel](tutorial-machine-learning-edge-01-intro.md) in de reeks voor de beste resultaten.
-
 In dit artikel leert u hoe u uw omgeving voorbereidt voor ontwikkeling en implementatie. Stel eerst een ontwikkelingsmachine in met alle hulpprogramma's die u nodig hebt. Maak vervolgens de benodigde cloudresources in Azure.
+
+## <a name="prerequisites"></a>Vereisten
+
+Dit artikel maakt deel uit van een reeks voor een zelfstudie over het gebruik van Azure Machine Learning in IoT Edge. Elk artikel in de reeks is gebaseerd op het werk in het vorige artikel. Als u rechtstreeks bij dit artikel terecht bent gekomen, gaat u naar de [eerste artikel](tutorial-machine-learning-edge-01-intro.md) in de reeks.
 
 ## <a name="set-up-the-development-vm"></a>De virtuele machine voor ontwikkeling instellen
 
@@ -183,7 +184,7 @@ Als onderdeel van het maken van de IoT-hub worden ook een aangepast eindpunt en 
 
 1. Selecteer in de lijst met resources de IoT-hub dat door het script is gemaakt. De naam hiervan eindigt op willekeurige tekens zoals `IotEdgeAndMlHub-jrujej6de6i7w`.
 
-1. In het menu in het linkerdeelvenster selecteert u onder **Berichten**de optie **Routering bericht**.
+1. In het menu in het linkerdeelvenster selecteert u onder **Berichten** de optie **Routering bericht**.
 
 1. Op de pagina **Berichtroutering** selecteert u het tabblad **Aangepaste eindpunten**.
 

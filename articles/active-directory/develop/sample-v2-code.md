@@ -12,12 +12,12 @@ ms.date: 11/04/2020
 ms.author: marsma
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: b3ea370a686e272a1d8ea201dd953fc09c1098ee
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: de25aafcfefee195e8d674c60ebdbaf79cb1ae10
+ms.sourcegitcommit: 1d366d72357db47feaea20c54004dc4467391364
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628183"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95406885"
 ---
 # <a name="microsoft-identity-platform-code-samples-v20-endpoint"></a>Codevoorbeelden voor Microsoft identity platform (v2.0-eindpunt)
 
@@ -59,10 +59,12 @@ De volgende voorbeelden illustreren webtoepassingen waarmee gebruikers worden aa
 | ![In deze afbeelding ziet u het ASP.NET Framework-logo](media/sample-v2-code/logo_NETframework.png)</p>ASP.NET Core | [Migratiedraaiboek voor AD FS naar Azure AD voor ontwikkelaars](https://github.com/Azure-Samples/ms-identity-dotnet-adfs-to-aad) om te leren hoe u veilig uw toepassingen die geïntegreerd zijn in Active Directory Federation Services (AD FS) migreert naar Azure Active Directory (Azure AD) | |
 | ![In deze afbeelding ziet u het ASP.NET Framework-logo](media/sample-v2-code/logo_NETframework.png)</p> ASP.NET | [ASP.NET-quickstart](https://github.com/AzureAdQuickstarts/AppModelv2-WebApp-OpenIDConnect-DotNet) </p> [dotnet-webapp-openidconnect-v2](https://github.com/azure-samples/active-directory-dotnet-webapp-openidconnect-v2)  |  [dotnet-admin-restricted-scopes-v2](https://github.com/azure-samples/active-directory-dotnet-admin-restricted-scopes-v2) </p> |[msgraph-training-aspnetmvcapp](https://github.com/microsoftgraph/msgraph-training-aspnetmvcapp)
 | ![In deze afbeelding ziet u het Java-logo](media/sample-v2-code/logo_java.png)  |                   | [ms-identity-java-webapp](https://github.com/Azure-Samples/ms-identity-java-webapp) |
+| ![In deze afbeelding ziet u het Java-logo](media/sample-v2-code/logo_java.png)  | [ms-identity-b2c-java-servlet-webapp-authentication](https://github.com/Azure-Samples/ms-identity-b2c-java-servlet-webapp-authentication)|  |
 | ![In deze afbeelding ziet u het Python-logo](media/sample-v2-code/logo_python.png)  | [ms-identity-python-flask-webapp-authentication](https://github.com/Azure-Samples/ms-identity-python-flask-webapp-authentication) | [ms-identity-python-webapp](https://github.com/Azure-Samples/ms-identity-python-webapp) |
 | ![In deze afbeelding ziet u het Python-logo](media/sample-v2-code/logo_python.png)  | Zelfstudie: gebruikers aanmelden met [Python Flask-web-app](https://github.com/Azure-Samples/ms-identity-python-flask-tutorial/blob/main/README.md)                   | Zelfstudie: gebruikers aanmelden en Graph aanroepen met [Python Flask-web-app](https://github.com/Azure-Samples/ms-identity-python-flask-tutorial/blob/main/README.md) |
 | ![In deze afbeelding ziet u het Python-logo](media/sample-v2-code/logo_python.png)  | Gebruikers aanmelden met [Python Flask-web-app](https://github.com/Azure-Samples/ms-identity-b2c-python-flask-webapp-authentication/blob/main/README.md) met B2C                    |  |
 | ![In deze afbeelding ziet u het Ruby-logo](media/sample-v2-code/logo_ruby.png) |                   | [msgraph-training-rubyrailsapp](https://github.com/microsoftgraph/msgraph-training-rubyrailsapp) |
+
 
 ## <a name="desktop-and-mobile-public-client-apps"></a>Openbare client-apps voor bureaublad en mobiel
 

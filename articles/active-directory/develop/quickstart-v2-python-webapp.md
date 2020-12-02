@@ -12,16 +12,16 @@ ms.workload: identity
 ms.date: 09/25/2019
 ms.author: abpati
 ms.custom: aaddev, devx-track-python, scenarios:getting-started, languages:Python
-ms.openlocfilehash: eaac8bdf828d2dd9a8e2dfae0b1b2b5985d1951d
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 1a8d851d2e70850155950786c6aa67c1d5086eb2
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94592699"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95993870"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-a-python-web-app"></a>Quickstart: Aanmelden met Microsoft toevoegen aan een Python-webapp
 
-In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoorbeeld laat zien hoe gebruikers kunnen worden aangemeld met een Python-webtoepassing, en een toegangstoken kunnen verkrijgen om de Microsoft Graph API aan te roepen. Gebruikers met een persoonlijk Microsoft-account of een account in een willekeurige Azure AD-organisatie (Azure Active Directory) kunnen zich aanmelden bij de toepassing.
+In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoorbeeld laat zien hoe gebruikers kunnen worden aangemeld met een Python-webtoepassing, en een toegangstoken kunnen krijgen om de Microsoft Graph API aan te roepen. Gebruikers met een persoonlijk Microsoft-account of een account in een willekeurige Azure AD-organisatie (Azure Active Directory) kunnen zich aanmelden bij de toepassing.
 
 Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 

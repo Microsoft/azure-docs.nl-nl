@@ -1,94 +1,61 @@
 ---
 title: Overzicht van Azure Functions
-description: Informatie over het gebruik van Azure Functions voor het optimaliseren van asynchrone workloads.
-author: mattchenderson
+description: Ontdek hoe Azure Functions u kan helpen schaalbare serverloze apps te bouwen.
+author: craigshoemaker
 ms.assetid: 01d6ca9f-ca3f-44fa-b0b9-7ffee115acd4
 ms.topic: overview
-ms.date: 01/16/2020
-ms.custom: H1Hack27Feb2017, mvc
-ms.openlocfilehash: 0583b68df603b04d47ac6104f0cf127b3c4bedd0
-ms.sourcegitcommit: 2989396c328c70832dcadc8f435270522c113229
+ms.date: 11/20/2020
+ms.author: cshoe
+ms.custom: contperfq2
+ms.openlocfilehash: 6713c0d45a8b5363122c726d1d31e5c479ba8fff
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92173720"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95504638"
 ---
-# <a name="an-introduction-to-azure-functions"></a>Een inleiding tot Azure Functions
+# <a name="introduction-to-azure-functions"></a>Een inleiding tot Azure Functions
 
-Met Azure Functions kunt u kleine stukjes code ('functies' genoemd) uitvoeren zonder dat u zich zorgen hoeft te maken over de infrastructuur van de toepassing. Dankzij Azure Functions biedt de cloudinfrastructuur alle actuele servers die u nodig hebt om ervoor te zorgen dat uw toepassing op schaal wordt uitgevoerd.
+We bouwen vaak systemen om te reageren op een reeks kritieke gebeurtenissen. Of u nu een web-API bouwt, reageert op wijzigingen in de database, IoT-gegevensstromen verwerkt of berichtenwachtrijen beheert, elke toepassing heeft een methode nodig om code uit te voeren wanneer deze gebeurtenissen optreden.
 
-Een functie wordt 'geactiveerd' door een specifiek type gebeurtenis. [Ondersteunde triggers](./functions-triggers-bindings.md) zijn onder meer reacties op wijzigingen in gegevens, antwoorden op berichten, een tijdschema of een HTTP-aanvraag.
+Azure Functions biedt twee belangrijke methoden voor 'berekeningen op aanvraag' om aan deze behoefte te voldoen.
 
-Hoewel u altijd voor talloze services rechtstreeks code kunt gebruiken, wordt de integratie met andere services gestroomlijnd door middel van bindingen. Met bindingen hebt u [declaratieve toegang tot een groot aantal services van Azure en van derden](./functions-triggers-bindings.md).
+Ten eerste kunt u met Azure Functions de logica van uw systeem implementeren in direct beschikbare codeblokken. Deze codeblokken worden 'functies' genoemd. Verschillende functies kunnen op elk gewenst moment worden uitgevoerd om te reageren op kritieke gebeurtenissen.
 
-## <a name="features"></a>Functies
+Ten tweede kunt u, als het aantal aanvragen toeneemt, met Azure Functions aan de vraag voldoen met zo veel resources en functie-instanties als nodig, maar alleen zolang dat nodig is. Wanneer het aantal aanvragen afneemt, worden alle extra resources en toepassingsexemplaren automatisch weer verwijderd.
 
-Enkele essentiële functies van Azure Functions zijn:
+Waar komen alle rekenresources vandaan? Azure Functions [biedt zo veel of zo weinig rekenresources](./functions-scale.md) als nodig is om te voldoen aan de vraag van uw toepassing.
 
-- **Serverloze toepassingen** : met Functions kunt u [serverloze](https://azure.microsoft.com/solutions/serverless/) toepassingen ontwikkelen in Microsoft Azure.
+Het leveren van rekenresources op aanvraag is de essentie van [serverloze computing](https://azure.microsoft.com/solutions/serverless/) in Azure Functions.
 
-- **Taalkeuze** : schrijf functies in de taal van uw voorkeur: [C#, Java, JavaScript, Python en PowerShell](supported-languages.md).
+## <a name="scenarios"></a>Scenario's
 
-- **Betalen per gebruik** : betaal alleen voor de tijd die nodig is voor het uitvoeren van de code. Raadpleeg de optie voor het hostingabonnement Consumption in de sectie over [prijzen](#pricing).  
+In veel gevallen kan een functie worden [geïntegreerd met een matrix van cloudservices](./functions-triggers-bindings.md) om implementaties met uitgebreide functies te bieden.
 
-- **Uw eigen afhankelijkheden** : Functions biedt ondersteuning voor NuGet en NPM, zodat u toegang hebt tot uw favoriete bibliotheken.
+Hier volgt een veelvoorkomende, _maar geen volledige_ set scenario's voor Azure Functions.
 
-- **Geïntegreerde beveiliging** : beveilig door HTTP-geactiveerde functies met OAuth-providers als Azure Active Directory, Facebook, Google, Twitter en een Microsoft-account.
+| Als u dit wilt... | moet u... |
+| --- | --- |
+| **Een web-API bouwen** | Een eindpunt voor uw webtoepassingen implementeren met de [HTTP-trigger](./functions-bindings-http-webhook.md) |
+| **Uploads van bestanden verwerken** | Code uitvoeren wanneer een bestand wordt geüpload of gewijzigd in [blob-opslag](./functions-bindings-storage-blob.md) |
+| **Een serverloze werkstroom maken** | Een reeks functies koppelen met behulp van [duurzame functies](./durable-functions-overview.md) |
+| **Reageren op wijzigingen in de database** | Aangepaste logica uitvoeren wanneer een document wordt gemaakt of bijgewerkt in [Cosmos DB](./functions-bindings-cosmosdb-v2.md) |
+| **Geplande taken uitvoeren** | Code uitvoeren op [vaste tijdstippen](./functions-bindings-timer.md) |
+| **Betrouwbare berichtenwachtrijsystemen maken** | Berichtenwachtrijen verwerken met behulp van [Queue Storage](./functions-bindings-storage-queue.md), [Service Bus](./functions-bindings-service-bus.md) of [Event Hubs](./functions-bindings-event-hubs.md) |
+| **IoT-gegevensstromen analyseren** | [Gegevens van IoT-apparaten](./functions-bindings-event-iot.md) verzamelen en verwerken |
+| **Gegevens in realtime verwerken** | [Functions en Signal R](./functions-bindings-signalr-service.md) gebruiken om in realtime op gegevens te reageren |
 
-- **Eenvoudige integratie** : maak eenvoudig gebruik van Azure-services en SaaS-producten (software-als-een-dienst).
+Voor het bouwen van functies zijn de volgende opties en resources beschikbaar:
 
-- **Flexibel ontwikkelen** : stel continue integratie in en implementeer uw code via [GitHub](../app-service/scripts/cli-continuous-deployment-github.md), [Azure DevOps Services](../app-service/scripts/cli-continuous-deployment-vsts.md) en andere [ondersteunde ontwikkelprogramma's](../app-service/deploy-local-git.md).
+- **Uw voorkeurstaal gebruiken**: Schrijf functies in [C#, Java, JavaScript, PowerShell of Python](./supported-languages.md) of gebruik een [aangepaste handler](./functions-custom-handlers.md) om vrijwel elke andere taal te kunnen gebruiken.
 
-- **Stateful, serverloze architectuur** : serverloze toepassingen indelen met [Durable Functions](durable/durable-functions-overview.md).
+- **Implementatie automatiseren**: Bij een op hulpprogramma's gebaseerde benadering voor het gebruik van externe pijplijnen zijn er [talloze implementatieopties](./functions-deployment-technologies.md) beschikbaar.
 
-- **Opensource** : de runtime van Functions is opensource en [beschikbaar op GitHub](https://github.com/azure/azure-webjobs-sdk-script).
+- **Problemen met een functie oplossen**: Gebruik [controlehulpprogramma's](./functions-monitoring.md) en [teststrategieën](./functions-test-a-function.md) om inzicht te krijgen in uw apps.
 
-## <a name="what-can-i-do-with-functions"></a>Wat kan ik doen met Functions?
-
-Functions is de ideale oplossing voor het verwerken van bulkgegevens, het integreren van systemen, het werken met IoT (Internet of Things) en het bouwen van eenvoudige API's en microservices.
-
-Er is een reeks sjablonen beschikbaar, zodat u met belangrijke scenario's aan de slag kunt, waaronder:
-
-- **HTTP** : code uitvoeren op basis van [HTTP-aanvragen](functions-create-first-azure-function.md)
-
-- **Timer** : code plannen om [uit te laten voeren op vooraf gedefinieerde tijdstippen](./functions-create-scheduled-function.md)
-
-- **Azure Cosmos DB** : [nieuwe en gewijzigde Azure Cosmos DB documenten](./functions-create-cosmos-db-triggered-function.md) verwerken
-
-- **Blob Storage** : [nieuwe en gewijzigde Azure Storage-blobs](./functions-create-storage-blob-triggered-function.md) verwerken
-
-- **Queue Storage** : reageren op [Azure Storage-wachtrijberichten](./functions-create-storage-queue-triggered-function.md)
-
-- **Event Grid** : reageren op [Azure Event Grid-gebeurtenissen via abonnementen en filters](../event-grid/resize-images-on-storage-blob-upload-event.md)
-
-- **Event Hub** : reageren op [hoge volumes van Azure Event Hub-gebeurtenissen](./functions-bindings-event-hubs.md)
-
-- **Service Bus-wachtrij** : verbinding maken met andere Azure- of on-premises services door [Service Bus-wachtrijberichten te beantwoorden](./functions-bindings-service-bus.md)
-
-- **Service Bus-onderwerp** : verbinding maken met andere Azure- of on-premises services door [Service Bus-onderwerpberichten te beantwoorden](./functions-bindings-service-bus.md)
-
-## <a name="how-much-does-functions-cost"></a><a name="pricing"></a>Wat kost Functions?
-
-Azure Functions kent drie soorten abonnementen. Kies het abonnement dat het beste aansluit bij uw behoeften:
-
-- **Verbruiksabonnement** : Azure biedt alle benodigde rekenresources. U hoeft u geen zorgen te maken over het beheer van resources en betaalt alleen voor de tijd die nodig is voor het uitvoeren van de code.
-
-- **Premium-abonnement** : U geeft een aantal voorbereide instanties op die altijd online zijn en onmiddellijk kunnen reageren. Wanneer uw functie wordt uitgevoerd, kunt u zo nodig gebruikmaken van extra rekenresources. U betaalt voor de voorbereide instanties die continu worden uitgevoerd en voor extra instanties die u gebruikt naarmate de schaal van uw app wordt aangepast.
-
-- **App Service-plan** : Voer uw functies net zo uit als uw web-apps. Als u App Service voor andere toepassingen gebruikt, kunnen de functies kosteloos binnen hetzelfde abonnement worden uitgevoerd.
-
-Zie [Azure Functions scale and hosting](functions-scale.md) (Azure Functions schalen en hosten) voor meer informatie over hostingabonnementen. Volledige prijsinformatie is beschikbaar op de pagina [Prijzen voor Functions](https://azure.microsoft.com/pricing/details/functions/).
+- **Flexibele prijsopties**: Bij het [Verbruiksabonnement](./pricing.md) betaalt u alleen voor uw functies wanneer deze worden uitgevoerd. De [Premium](./pricing.md)- en [App Service](./pricing.md)-abonnementen bieden functies voor speciale behoeften.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Uw eerste Azure-functie maken](functions-create-first-function-vs-code.md)  
-  Aan de slag met [Visual Studio Code](functions-create-first-function-vs-code.md) of de [opdrachtregel](functions-create-first-azure-function-azure-cli.md), of maak gebruik van [Azure Portal](functions-create-first-azure-function.md).
-
-- [Naslaginformatie over Azure Functions voor ontwikkelaars](functions-reference.md)  
-  Biedt meer technische informatie over de Azure Functions-runtime en bevat gedetailleerde informatie over het coderen van functies en het definiëren van triggers en bindingen.
-
-- [Azure Functions schalen](functions-scale.md)  
-  Beschrijft de serviceabonnementen die beschikbaar zijn voor Azure Functions, zoals het hostingabonnement Consumption, en helpt u bij het kiezen van het juiste abonnement.
-
-- [Meer informatie over Azure App Service](../app-service/overview.md)  
-  Azure Functions maakt gebruik van Azure App Service voor kernfunctionaliteit zoals implementaties, omgevingsvariabelen en diagnostische procedures.
+> [!div class="nextstepaction"]
+> [Aan de slag met lessen, voorbeelden en interactieve zelfstudies](./functions-get-started.md)

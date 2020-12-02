@@ -10,12 +10,12 @@ ms.service: security-center
 ms.topic: overview
 ms.date: 09/15/2020
 ms.author: memildin
-ms.openlocfilehash: 0b80db15e4fafd5e5c63a4194039fbeca21d429b
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: d03416f390abb8656ac1aed81419864443122ce6
+ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92900401"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96122419"
 ---
 # <a name="additional-threat-protections-in-azure-security-center"></a>Extra bedreigingsbeveiliging in Azure Security Center
 Naast de ingebouwde [Azure Defender-beveiligingsmethoden](azure-defender.md) biedt Azure Security Center de volgende mogelijkheden voor bedreigingsbeveiliging.
@@ -29,7 +29,7 @@ Naast de ingebouwde [Azure Defender-beveiligingsmethoden](azure-defender.md) bie
 ## <a name="threat-protection-for-azure-network-layer"></a>Bedreigingsbeveiliging voor de Azure-netwerklaag <a name="network-layer"></a>
 Analyse van de Security Center-netwerklaag is gebaseerd op voorbeelden van [IPFIX-gegevens](https://en.wikipedia.org/wiki/IP_Flow_Information_Export). Dit zijn pakketheaders die verzameld zijn door Azure-corerouters. Op basis van deze gegevensfeed gebruikt Security Center machinelearning-modellen om schadelijke verkeersactiviteiten te identificeren en markeren. Security Center gebruikt bovendien de Microsoft Threat Intelligence-database om IP-adressen te verrijken.
 
-Sommige netwerkconfiguraties kunnen voorkomen dat Security Center waarschuwingen over verdachte netwerkactiviteit genereert. Security Center genereert netwerkwaarschuwingen als de volgende voorwaarden van toepassing zijn:
+Sommige netwerkconfiguraties voorkomen dat Security Center waarschuwingen over verdachte netwerkactiviteit genereert. Security Center genereert netwerkwaarschuwingen als de volgende voorwaarden van toepassing zijn:
 - Uw virtuele machine heeft een openbaar IP-adres (of bevindt zich op een load balancer met een openbaar IP-adres).
 - Het uitgaande netwerkverkeer van uw virtuele machine wordt niet geblokkeerd door een externe ID-oplossing.
 

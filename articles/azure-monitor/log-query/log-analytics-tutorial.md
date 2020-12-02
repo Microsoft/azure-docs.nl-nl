@@ -6,12 +6,12 @@ ms.topic: tutorial
 author: bwren
 ms.author: bwren
 ms.date: 10/07/2020
-ms.openlocfilehash: bd6ba091b3715741af929613600a59511e7cdb0b
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 16292999bf8c01615a9125ffaa9f93fc4b2a8ec2
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94495331"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95756210"
 ---
 # <a name="log-analytics-tutorial"></a>Log Analytics-zelfstudie
 Log Analytics is een hulpprogramma in Azure Portal om logboekquery's te bewerken en uit te voeren op basis van gegevens die zijn verzameld door Azure Monitor-logboeken en om de resultaten interactief te analyseren. U kunt Log Analytics-query's gebruiken om records op te halen die overeenkomen met bepaalde criteria, trends te identificeren, patronen te analyseren en een verscheidenheid aan inzichten in uw gegevens te bieden. 
@@ -23,7 +23,7 @@ In deze tutorial wordt u begeleid door de Log Analytics-interface, wordt u op we
 > * Eenvoudige query's schrijven en uitvoeren en het tijdsbereik voor query's wijzigen
 > * Queryresultaten filteren, sorteren en groeperen
 > * Visuals van queryresultaten weergeven, wijzigen en delen
-> * Query's en resultaten opslaan, laden, exporteren en kopiëren
+> * Query's en resultaten laden, exporteren en kopiëren
 
 > [!IMPORTANT]
 > In deze zelfstudie worden functies van Log Analytics gebruikt om een ​​query te maken en uit te voeren in plaats van met de query zelf te werken. U gebruikt Log Analytics-functies om een ​​query te maken en een andere voorbeeldquery te gebruiken. Als u klaar bent om de syntaxis van query's te leren en de query zelf rechtstreeks te bewerken, doorloopt u de [zelfstudie voor Kusto-querytaal](/azure/data-explorer/kusto/query/tutorial?pivots=azuremonitor). In deze zelfstudie worden verschillende voorbeeldquery's doorlopen die u kunt bewerken en uitvoeren in Log Analytics, waarbij u gebruikmaakt van verschillende functies die u in deze zelfstudie leert.

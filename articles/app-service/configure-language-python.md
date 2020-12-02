@@ -2,19 +2,19 @@
 title: Linux Python-apps configureren
 description: Meer informatie over het configureren van de Python-container waarin web-apps worden uitgevoerd, met behulp van de Azure-portal en de Azure CLI.
 ms.topic: quickstart
-ms.date: 11/06/2020
+ms.date: 11/16/2020
 ms.reviewer: astay; kraigb
 ms.custom: mvc, seodec18, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 9e0e9098959231d4283608e8191081ae2df6737a
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 149f8deb8839b3adce3555300c94b8ebdf587100
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94425912"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94873842"
 ---
 # <a name="configure-a-linux-python-app-for-azure-app-service"></a>Een Linux Python-app voor Azure App Service configureren
 
-In dit artikel wordt beschreven hoe Python-apps worden uitgevoerd in [Azure App Service](overview.md) en hoe u het gedrag van Azure App Service zo nodig kunt aanpassen. Python-apps moet worden geïmplementeerd met alle vereiste [pip](https://pypi.org/project/pip/)-modules.
+In dit artikel wordt beschreven hoe Python-apps worden uitgevoerd in [Azure App Service](overview.md), hoe bestaande apps kunt migreren naar Azure en hoe u het gedrag van Azure App Service zo nodig kunt aanpassen. Python-apps moet worden geïmplementeerd met alle vereiste [pip](https://pypi.org/project/pip/)-modules.
 
 Met de implementatie-engine van App Service wordt automatisch een virtuele omgeving geactiveerd waarin `pip install -r requirements.txt` voor u wordt uitgevoerd wanneer u een [Git-opslagplaats](deploy-local-git.md) of een [zip-pakket](deploy-zip.md) implementeert.
 
@@ -94,7 +94,31 @@ Zie [hoe Python-apps worden gedetecteerd en gebouwd met Oryx](https://github.com
 > [!NOTE]
 > Gebruik altijd relatieve paden in alle pre- en post-buildscripts, omdat de buildcontainer waarin Oryx wordt uitgevoerd, een andere container is dan de runtimecontainer waarin de app wordt uitgevoerd. Vertrouw er nooit op dat de app-projectmap exact binnen de container wordt geplaatst (bijvoorbeeld onder *site/wwwroot*).
 
-## <a name="production-settings-for-django-apps"></a>Productie-instellingen voor Django-apps
+## <a name="migrate-existing-applications-to-azure"></a>Bestaande toepassingen migreren naar Azure
+
+Bestaande webtoepassingen kunnen als volgt opnieuw worden geïmplementeerd in Azure:
+
+1. **Bronopslagplaats**: Onderhoud uw broncode in een geschikte opslagplaats zoals GitHub, zodat u later in dit proces doorlopende implementatie kunt instellen.
+    1. Het bestand *requirements.txt* moet zich in de hoofdmap van uw opslagplaats voor App Service bevinden, zodat de benodigde pakketten automatisch kunnen worden geïnstalleerd.    
+
+1. **Database**: Als uw app afhankelijk is van een database, moet u ook de benodigde resources in Azure inrichten. Zie [Zelfstudie: Een Django-web-app implementeren met PostgreSQL - een database maken](tutorial-python-postgresql-app.md#create-postgres-database-in-azure) voor een voorbeeld hiervan.
+
+1. **App Service-resources**: Maak een resourcegroep, een App Service-plan en een App Service-web-app om uw toepassing te hosten. U kunt dit het eenvoudigst doen door een eerste implementatie van uw code uit te voeren via de Azure CLI-opdracht `az webapp up`, zoals wordt weergegeven in [Zelfstudie: Een Django-web-app implementeren met PostgreSQL - de code implementeren](tutorial-python-postgresql-app.md#deploy-the-code-to-azure-app-service). Vervang de namen van de resourcegroep, het App Service plan en de web-app in waarden die geschikt zijn voor uw toepassing.
+
+1. **Omgevingsvariabelen**: Als voor uw toepassing omgevingsvariabelen zijn vereist, maakt u gelijkwaardige [App Service-toepassingsinstellingen](configure-common.md#configure-app-settings). Deze App Service-instellingen worden weergegeven in uw code als omgevingsvariabelen, zoals wordt beschreven in [Omgevingsvariabelen voor toegang](#access-app-settings-as-environment-variables).
+    - Databaseverbindingen worden bijvoorbeeld vaak beheerd via dergelijke instellingen, zoals wordt weergegeven in [Zelfstudie: Een Django-web-app implementeren met PostgreSQL - variabelen configureren om verbinding te maken met de database](tutorial-python-postgresql-app.md#configure-environment-variables-to-connect-the-database).
+    - Zie [Productie-instellingen voor Django-apps](#production-settings-for-django-apps) voor specifieke instellingen voor typische Django-apps.
+
+1. **App-opstartproces**: Raadpleeg de sectie [Opstartproces met container](#container-startup-process) verderop in dit artikel voor meer informatie over hoe App Service probeert om uw app uit te voeren. App Service maakt standaard gebruik van de Gunicorn-webserver, die de map met uw app-object of *wsgi.py* moet kunnen vinden. U kunt zo nodig [de opstartopdracht aanpassen](#customize-startup-command).
+
+1. **Doorlopende implementatie**: Stel continue implementatie in, zoals beschreven in [continue implementatie naar Azure App Service](deploy-continuous-deployment.md) als u Azure-pijplijnen of Kudu-implementatie gebruikt, of kies voor een [implementatie naar App Service met GitHub Actions](deploy-github-actions.md) als u GitHub Actions gebruikt.
+
+1. **Aangepaste acties**: Als u acties wilt uitvoeren in de App Service-container die als host fungeert voor uw app, zoals Django-databasemigraties, kunt u [verbinding maken met de container via SSH](configure-linux-open-ssh-session.md). Zie voor een voorbeeld van het uitvoeren van Django-databasemigraties [Zelfstudie: Een Django-web-app implementeren met PostgreSQL - databasemigraties uitvoeren](tutorial-python-postgresql-app.md#run-django-database-migrations).
+    - Wanneer u continue implementatie gebruikt, kunt u deze acties uitvoeren met achteraf gebouwde opdrachten, zoals beschreven in [De automatisering van bouwbewerkingen aanpassen](#customize-build-automation).
+
+Als deze stappen zijn voltooid, kunt u wijzigingen in uw bronopslagplaats doorvoeren en deze updates automatisch implementeren in App Service.
+
+### <a name="production-settings-for-django-apps"></a>Productie-instellingen voor Django-apps
 
 Voor een productie omgeving, zoals Azure App Service, moeten Django-apps voldoen aan de [controlelijst voor implementatie](https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/) van Django (djangoproject.com).
 

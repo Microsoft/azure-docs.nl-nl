@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: quickstart
 ms.date: 11/13/2019
 ms.author: zhshang
-ms.openlocfilehash: 85cda8458dca4ce24fed9433af1527f49a2393ad
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 2613f91e8c7f1ad3a05792a9a165f4560c09a637
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150977"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874522"
 ---
 # <a name="quickstart-broadcast-real-time-messages-from-console-app"></a>Quickstart: In realtime berichten verzenden via de console-app
 
@@ -28,17 +28,17 @@ Deze quickstart kan worden uitgevoerd op macOS, Windows of Linux.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsapi)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsapi).
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 
 Meld u met uw Azure-account aan bij Azure Portal op <https://portal.azure.com/>.
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsapi)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsapi).
 
 [!INCLUDE [Create instance](includes/signalr-quickstart-create-instance.md)]
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsapi)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsapi).
 
 ## <a name="clone-the-sample-application"></a>De voorbeeldtoepassing klonen
 
@@ -51,7 +51,7 @@ Laten wij de code klaarmaken terwijl de service wordt geïmplementeerd. Kloon de
     ```bash
     git clone https://github.com/aspnet/AzureSignalR-samples.git
     ```
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsapi)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsapi).
 
 ## <a name="build-and-run-the-sample"></a>Het voorbeeldproject compileren en uitvoeren
 
@@ -88,7 +88,7 @@ cd bin/Release/netcoreapp2.1/osx.10.13-x64/
 Serverless server -c "<ConnectionString>" -h <HubName>
 ```
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsapi)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsapi).
 
 ## <a name="run-the-sample-without-publishing"></a>Het voorbeeld uitvoeren zonder te publiceren
 
@@ -106,7 +106,7 @@ dotnet run -- client <ClientName> -c "<ConnectionString>" -h <HubName>
 
 U kunt `dotnet user-secrets set Azure:SignalR:ConnectionString "<ConnectionString>"` uitvoeren in de hoofdmap van het voorbeeld. Daarna hebt u de optie `-c "<ConnectionString>"` niet meer nodig.
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsapi)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsapi).
 
 ## <a name="usage"></a>Gebruik
 
@@ -122,7 +122,7 @@ broadcast
 
 U kunt meerdere clients met verschillende clientnamen starten.
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsapi)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsapi).
 
 ## <a name="integration-with-third-party-services"></a><a name="usage"> </a> Integratie met services van derden
 
@@ -257,11 +257,11 @@ Statuscode respons | Beschrijving
 `200` | Service goed
 `5xx` | Servicefout
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsapi)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsapi).
 
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsapi)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsapi).
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -269,5 +269,3 @@ In deze quickstart hebt u geleerd hoe u een REST API gebruikt om een realtime be
 
 > [!div class="nextstepaction"]
 > [Azure-functies ontwikkelen met Azure SignalR Service-bindingen](signalr-quickstart-azure-functions-csharp.md)
-
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsapi)

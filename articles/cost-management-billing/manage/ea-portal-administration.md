@@ -9,12 +9,12 @@ ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.reviewer: boalcsva
 ms.custom: contperfq1
-ms.openlocfilehash: edcc94050880544a6c2de54ff27f833f1c60f99f
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: f18f1184f921aca4f2c1e33ac00dcf14c63b24eb
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94683642"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95893355"
 ---
 # <a name="azure-ea-portal-administration"></a>Beheer van Azure EA Portal
 
@@ -146,7 +146,7 @@ Voordat u een eigenaarsoverdracht uitvoert, dient u deze beleidsmaatregelen op A
 - Wanneer u een eigenaarsoverdracht van het abonnement of een account uitvoert tussen twee organisatie-id's in dezelfde tenant, blijven het Azure RBAC-beleid, de bestaande servicebeheerders en co-beheerdersrollen bewaard.
 - Cross-tenant-eigenaarsoverdrachten van het abonnement of een account leiden ertoe dat uw Azure RBAC-beleid en de roltoewijzingen verloren gaan.
 - Beleidsregels en beheerdersrollen kunnen niet worden overgedragen naar andere mappen. Servicebeheerders worden bijgewerkt naar eigenaar van het doelaccount.
-- Als u wilt voorkomen dat het RBAC-beleid en de roltoewijzingen verloren gaan bij het overdragen van het abonnement tussen tenants, moet u ervoor zorgen dat de **Verplaats abonnementen naar de Azure AD-tenant van de ontvanger** selectievakje van de ontvanger **niet wordt aangevinkt**. Hiermee blijven de services, RBAC-rollen en het beleid van de huidige Azure AD-tenant behouden en wordt alleen het eigendom van de facturering voor het account overgedragen.  
+- Als u wilt voorkomen dat het Azure RBAC-beleid en de roltoewijzingen verloren gaan bij het overdragen van het abonnement tussen tenants, moet u ervoor zorgen dat het selectievakje **Verplaats abonnementen naar de Azure AD-tenant van de ontvanger** van de ontvanger **niet wordt aangevinkt**. Hiermee blijven de services, Azure-rollen en het beleid van de huidige Azure AD-tenant behouden en wordt alleen het eigendom van de facturering voor het account overgedragen.  
     :::image type="content" source="./media/ea-portal-administration/unselected-checkbox-move-subscriptions-to-recipients-tenant.png" alt-text="Afbeelding waarin het selectievakje voor het verplaatsen van abonnementen naar de Azure AD-tenant niet is aangevinkt" lightbox="./media/ea-portal-administration/unselected-checkbox-move-subscriptions-to-recipients-tenant.png" :::
 
 
@@ -282,7 +282,7 @@ Met Azure EA Portal kunt u de kosten en het gebruik van Azure EA beheren. Er zij
 
 Elke rol heeft een ander toegangs- en autoriteitsniveau.
 
-Zie [Enterprise-gebruikersrollen](https://docs.microsoft.com/azure/manage/understand-ea-roles#enterprise-user-roles) voor meer informatie over rollen.
+Zie [Enterprise-gebruikersrollen](/azure/cost-management-billing/manage/understand-ea-roles#enterprise-user-roles) voor meer informatie over rollen.
 
 ## <a name="add-an-azure-ea-account"></a>Een Azure EA-account toevoegen
 

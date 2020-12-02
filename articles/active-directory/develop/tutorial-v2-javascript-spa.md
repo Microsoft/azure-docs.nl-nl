@@ -12,16 +12,16 @@ ms.workload: identity
 ms.date: 08/06/2020
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, devx-track-js
-ms.openlocfilehash: 027305d953a24de17e62aa74b33b72494b03e652
-ms.sourcegitcommit: d2222681e14700bdd65baef97de223fa91c22c55
+ms.openlocfilehash: ded54628a307f3cf4441e804f7f1025a0e943b51
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91825909"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94979943"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>Zelfstudie: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een JavaScript-toepassing met één pagina (SPA)
 
-In deze zelfstudie bouwt u een app met één pagina (SPA) in JavaScript waarmee gebruikers kunnen worden aangemeld met persoonlijke Microsoft-accounts of werk- en schoolaccounts. Vervolgens krijgt u een toegangstoken voor het aanroepen van de Microsoft Graph API.
+In deze zelfstudie bouwt u een JavaScript-toepassing met één pagina (SPA) die zich aanmeldt bij gebruikers en die Microsoft Graph aanroepen met impliciete stroom. De SPA die u bouwt, maakt gebruik van de Microsoft Authentication Library (MSAL) voor JavaScript v1.0.
 
 In deze zelfstudie:
 
@@ -513,4 +513,3 @@ Lees meer over het ontwikkelen van toepassingen met enkele pagina (SPA) op het M
 
 > [!div class="nextstepaction"]
 > [Scenario: Toepassing met één pagina](scenario-spa-overview.md)
-

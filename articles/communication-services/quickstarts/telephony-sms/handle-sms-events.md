@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: e153c873305cc128ce97ae7c6a907a8f592f8b32
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: e8decbe22f869573bf7a2221099d2bc30c00fc8a
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93357467"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888841"
 ---
 # <a name="quickstart-handle-sms-events"></a>Quickstart: SMS-gebeurtenissen verwerken
 
@@ -24,7 +24,7 @@ Aan de slag met Azure Communication Services met Azure Event Grid om SMS-gebeurt
 
 ## <a name="about-azure-event-grid"></a>Over Azure Event Grid
 
-[Azure Event Grid](https://docs.microsoft.com/azure/event-grid/overview) is een gebeurtenisservice in de cloud. In dit artikel leert u hoe u zich abonneert op gebeurtenissen voor [Communication Service-gebeurtenissen](../../concepts/event-handling.md) en hoe u een gebeurtenis activeert om het resultaat weer te geven. Normaal gesproken verzendt u gebeurtenissen naar een eindpunt dat de gebeurtenisgegevens verwerkt en vervolgens in actie komt. In dit artikel sturen we de gebeurtenissen naar een web-app die de berichten verzamelt en weergeeft.
+[Azure Event Grid](../../../event-grid/overview.md) is een gebeurtenisservice in de cloud. In dit artikel leert u hoe u zich abonneert op gebeurtenissen voor [Communication Service-gebeurtenissen](../../concepts/event-handling.md) en hoe u een gebeurtenis activeert om het resultaat weer te geven. Normaal gesproken verzendt u gebeurtenissen naar een eindpunt dat de gebeurtenisgegevens verwerkt en vervolgens in actie komt. In dit artikel sturen we de gebeurtenissen naar een web-app die de berichten verzamelt en weergeeft.
 
 ## <a name="prerequisites"></a>Vereisten
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) 
@@ -49,7 +49,7 @@ Het kan even duren voordat de registratie is voltooid. Selecteer **Vernieuwen** 
 
 ### <a name="event-grid-viewer-deployment"></a>Event Grid Viewer-implementatie
 
-Voor deze quickstart gebruiken we het [Azure Event Grid Viewer-voorbeeld](https://docs.microsoft.com/samples/azure-samples/azure-event-grid-viewer/azure-event-grid-viewer/) om bijna in realtime gebeurtenissen te bekijken. Zo krijgt de gebruiker ervaring met een realtime feed. Bovendien moet de payload voor elke gebeurtenis ook beschikbaar zijn voor inspectie.  
+Voor deze quickstart gebruiken we het [Azure Event Grid Viewer-voorbeeld](/samples/azure-samples/azure-event-grid-viewer/azure-event-grid-viewer/) om bijna in realtime gebeurtenissen te bekijken. Zo krijgt de gebruiker ervaring met een realtime feed. Bovendien moet de payload voor elke gebeurtenis ook beschikbaar zijn voor inspectie.  
 
 ## <a name="subscribe-to-the-sms-events-using-web-hooks"></a>Abonneren op SMS-gebeurtenissen via webhooks
 
@@ -63,7 +63,7 @@ Voer op de pagina **Gebeurtenisabonnement maken** een **naam** in voor het gebeu
 
 U kunt zich op specifieke gebeurtenissen abonneren om Event Grid te laten weten welke SMS-gebeurtenissen u wilt volgen en waar die gebeurtenissen naartoe moeten worden gestuurd. Selecteer de gebeurtenissen waarvoor u zich wilt abonneren in het vervolgkeuzemenu. Voor SMS hebt u de optie `SMS Received` en `SMS Delivery Report Received`. 
 
-Als u wordt gevraagd om **de naam van een systeemonderwerp op te geven**, kunt u een unieke id opgeven die u eventueel kunt gebruiken voor het filteren van gebeurtenissen nadat deze zijn verzonden.
+Als u wordt gevraagd om de naam van een **Systeemonderwerp** op te geven, kunt u een unieke tekenreeks opgeven. Dit veld heeft geen invloed op uw ervaring en wordt gebruikt voor interne telemetrie.
 
 Bekijk de volledige lijst [door Azure Communication Services ondersteunde gebeurtenissen](../../concepts/event-handling.md).
 
@@ -75,7 +75,7 @@ Selecteer **Webhook** voor het **Eindpunttype**.
 
 Klik voor **Eindpunt** op **Een eindpunt selecteren** en voer de URL van uw web-app in.
 
-In dit geval gebruiken we de URL van het [Azure Event Grid Viewer-voorbeeld](https://docs.microsoft.com/samples/azure-samples/azure-event-grid-viewer/azure-event-grid-viewer/) dat we eerder in deze quickstart hebben ingesteld. De URL voor het voorbeeld heeft de volgende indeling: `https://{{site-name}}.azurewebsites.net/api/updates`
+In dit geval gebruiken we de URL van het [Azure Event Grid Viewer-voorbeeld](/samples/azure-samples/azure-event-grid-viewer/azure-event-grid-viewer/) dat we eerder in deze quickstart hebben ingesteld. De URL voor het voorbeeld heeft de volgende indeling: `https://{{site-name}}.azurewebsites.net/api/updates`
 
 Selecteer vervolgens **Selectie bevestigen**.
 
@@ -94,7 +94,7 @@ Bekijk de volledige lijst [door Azure Communication Services ondersteunde gebeur
 
 ### <a name="receiving-sms-events"></a>SMS-gebeurtenissen ontvangen
 
-Nadat u een van de bovenstaande acties hebt voltooid, ziet u dat de gebeurtenissen `SMS Received` en `SMS Delivery Report Received` naar uw eindpunt worden gestuurd. Deze gebeurtenissen worden weergegeven in het [Azure Event Grid Viewer-voorbeeld](https://docs.microsoft.com/samples/azure-samples/azure-event-grid-viewer/azure-event-grid-viewer/) dat we in het begin hebben ingesteld. U kunt op het oogpictogram naast de gebeurtenis klikken om de hele payload te bekijken. Gebeurtenissen zien er als volgt uit:
+Nadat u een van de bovenstaande acties hebt voltooid, ziet u dat de gebeurtenissen `SMS Received` en `SMS Delivery Report Received` naar uw eindpunt worden gestuurd. Deze gebeurtenissen worden weergegeven in het [Azure Event Grid Viewer-voorbeeld](/samples/azure-samples/azure-event-grid-viewer/azure-event-grid-viewer/) dat we in het begin hebben ingesteld. U kunt op het oogpictogram naast de gebeurtenis klikken om de hele payload te bekijken. Gebeurtenissen zien er als volgt uit:
 
 :::image type="content" source="./media/handle-sms-events/sms-received.png" alt-text="Schermopname van het Event Grid Schema voor een ontvangen SMS-gebeurtenis.":::
 
@@ -116,4 +116,4 @@ In deze quickstart leert u hoe u SMS-gebeurtenis gebruikt. U kunt SMS-berichten 
 U wilt mogelijk ook:
 
  - [Meer informatie over de concepten van gebeurtenisverwerking](../../concepts/event-handling.md)
- - [Meer informatie over Event Grid](https://docs.microsoft.com/azure/event-grid/overview)
+ - [Meer informatie over Event Grid](../../../event-grid/overview.md)

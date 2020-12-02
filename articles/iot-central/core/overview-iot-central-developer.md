@@ -10,12 +10,12 @@ services: iot-central
 ms.custom:
 - mvc
 - device-developer
-ms.openlocfilehash: 39ce436cd59447b2b6f8d9f88deaab80b00dd639
-ms.sourcegitcommit: 5abc3919a6b99547f8077ce86a168524b2aca350
+ms.openlocfilehash: 82818c8db326889079948cd2b32b2ed0be6ab50d
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91812349"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94990751"
 ---
 # <a name="iot-central-device-development-overview"></a>Overzicht van het ontwikkelen van IoT Central-apparaten
 
@@ -72,7 +72,7 @@ Zie [Get connected to Azure IoT Central](./concepts-get-connected.md) (Verbindin
 
 ### <a name="security"></a>Beveiliging
 
-De verbinding tussen een apparaat en uw IoT Central-toepassing wordt beveiligd met behulp van [handtekeningen voor gedeelde toegang](./concepts-get-connected.md#connect-devices-at-scale-using-sas) of de industriestandaard [X. 509-certificaten](./concepts-get-connected.md#connect-devices-using-x509-certificates).
+De verbinding tussen een apparaat en uw IoT Central-toepassing wordt beveiligd met behulp van [handtekeningen voor gedeelde toegang](./concepts-get-connected.md#sas-group-enrollment) of de industriestandaard [X. 509-certificaten](./concepts-get-connected.md#x509-group-enrollment).
 
 ### <a name="communication-protocols"></a>Communicatieprotocollen
 
@@ -80,12 +80,58 @@ Communicatieprotocollen die een apparaat kan gebruiken om verbinding te maken me
 
 ## <a name="implement-the-device"></a>Het apparaat implementeren
 
+Een IoT Central-apparaatsjabloon bevat een _model_ dat het gedrag specificeert dat een apparaat van dat type moet implementeren. Gedragingen zijn onder andere telemetrie, eigenschappen en opdrachten.
+
+> [!TIP]
+> U kunt het model exporteren vanuit IoT Central als een JSON-bestand van [Digital Twins Definition Language (DTDL) v2](https://github.com/Azure/opendigitaltwins-dtdl).
+
+Elk model heeft een unieke _model-id van apparaatdubbel_ (DTMI), zoals `dtmi:com:example:Thermostat;1`. Wanneer een apparaat verbinding maakt met IoT Central, verzendt het een DTMI van het model dat het implementeert. IoT Central kan vervolgens de juiste apparaatsjabloon aan het apparaat koppelen.
+
+[IoT Plug and Play](../../iot-pnp/overview-iot-plug-and-play.md) definieert een set conventies die een apparaat moet volgen bij het implementeren van een DTDL-model.
+
+De [Azure IoT Device SDK’s](#languages-and-sdks) bevat ook ondersteuning voor de IoT-Plug and Play-conventies.
+
+### <a name="device-model"></a>Apparaatmodel
+
+Een apparaatmodel wordt gedefinieerd met behulp van de [DTDL](https://github.com/Azure/opendigitaltwins-dtdl). Met deze taal kunt u het volgende definiëren:
+
+- De telemetrie die het apparaat verzendt. De definitie bevat de naam en het gegevenstype van de telemetrie. Zo verstuurt een apparaat bijvoorbeeld de temperatuurtelemetrie als een dubbel.
+- De eigenschappen die het apparaat rapporteert aan IoT Central. Een eigenschapsdefinitie bevat de naam en het gegevenstype. Zo rapporteert een apparaat bijvoorbeeld de status van een klep als een Booleaanse waarde.
+- De eigenschappen van het apparaat kunnen ontvangen van IoT Central. U kunt desgewenst een eigenschap markeren als beschrijfbaar. IoT Central verzendt bijvoorbeeld een doeltemperatuur als een dubbel naar een apparaat.
+- De opdrachten waarop een apparaat reageert. De definitie bevat de naam van de opdracht en de namen en gegevenstypen van parameters. Een apparaat reageert bijvoorbeeld op een opdracht voor opnieuw opstarten, waarmee wordt opgegeven hoeveel seconden moet worden gewacht voordat opnieuw wordt opgestart.
+
+Een DTDL-model kan een model met _geen-onderdeel_ of _multi-onderdeel_ zijn:
+
+- Geen-onderdeelmodel: Een eenvoudig model maakt geen gebruik van ingesloten of trapsgewijze onderdelen. Alle telemetrie, eigenschappen en opdrachten zijn gedefinieerd als één _standaard onderdeel_. Zie het [Thermostaat](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/Thermostat.json)-model voor een voorbeeld.
+- Multi-onderdeelmodel. Een complexer model met twee of meer onderdelen. Deze onderdelen bevatten één standaard onderdeel en een of meer extra geneste onderdelen. Zie het [Temperatuur-controller](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/samples/TemperatureController.json)-model voor een voorbeeld.
+
+Zie voor meer informatie [IoT Plug and Play-componenten in modellen](../../iot-pnp/concepts-components.md)
+
+### <a name="conventions"></a>Conventies
+
+Een apparaat moet de IoT Plug and Play-conventies volgen wanneer het gegevens uitwisselt met IoT Central. De conventies zijn onder andere:
+
+- De DTMI verzenden wanneer deze verbinding maakt met IoT Central.
+- De juist geformatteerde JSON-payloads en -metagegevens verzenden naar IoT Central.
+- Op de juiste manier reageren op schrijfbare eigenschappen en opdrachten van IoT Central.
+- De naamconventies voor onderdeelopdrachten volgen.
+
+> [!NOTE]
+> Momenteel biedt IoT Central geen volledige ondersteuning voor de **Matrix**- en **Georuimtelijke** gegevenstypen van DTDL.
+
+Zie [Telemetrie-, eigenschap- en opdracht-payloads](concepts-telemetry-properties-commands.md) voor meer informatie over de indeling van de JSON-berichten die door een apparaat worden uitgewisseld met IoT Central.
+
+Zie voor meer informatie over de IoT Plug and Play-conventies [IoT Plug and Play-conventies](../../iot-pnp/concepts-convention.md).
+
+### <a name="device-sdks"></a>Apparaat-SDK's
+
 Gebruik een van de [SDK's voor Azure IoT-apparaten](#languages-and-sdks) om het gedrag van uw apparaat te implementeren. De code moet:
 
 - Het apparaat registreren met DPS en de informatie van DPS gebruiken om verbinding te maken met de interne IoT-hub in uw IoT Central-toepassing.
-- Telemetrie verzenden in de indeling die door de apparaatsjabloon in IoT Central wordt opgegeven. IoT Central gebruikt de apparaatsjabloon om te bepalen hoe u de telemetrie gebruikt voor visualisaties en analyses.
-- De eigenschapswaarden synchroniseren tussen het apparaat en IoT Central. In de apparaatsjabloon worden de eigenschapsnamen en gegevenstypen opgegeven, zodat IoT Central de informatie kan weergeven.
-- Opdrachthandlers implementeren voor de opdrachten die worden opgegeven in de apparaatsjabloon. In de apparaatsjabloon worden de opdrachtnamen en parameters opgegeven die het apparaat moet gebruiken.
+- De DTMI aankondigen van het model dat het apparaat implementeert.
+- Telemetrie verzenden in de indeling die door het apparaatmodel wordt opgegeven. IoT Central gebruikt het model in de apparaatsjabloon om te bepalen hoe u de telemetrie gebruikt voor visualisaties en analyses.
+- De eigenschapswaarden synchroniseren tussen het apparaat en IoT Central. In het model worden de eigenschapsnamen en gegevenstypen opgegeven, zodat IoT Central de informatie kan weergeven.
+- Opdrachthandlers implementeren voor de opdrachten die worden opgegeven in het model. In het model worden de opdrachtnamen en parameters opgegeven die het apparaat moet gebruiken.
 
 Zie [Wat zijn apparaatsjablonen?](./concepts-device-templates.md) voor meer informatie over de rol van apparaatsjablonen.
 

@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.custom: devx-track-csharp
 ms.date: 09/25/2020
 ms.author: zhshang
-ms.openlocfilehash: be26fdafe0a8a52669fe41fd5514c808f10df745
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.openlocfilehash: 1f28058a766144ada3326b3ee4ce09ca503d1896
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91369124"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94873876"
 ---
 # <a name="quickstart-create-a-chat-room-with-azure-functions-and-signalr-service-using-c"></a>Quickstart: Een chatruimte maken met Azure Functions en SignalR Service met behulp van C\#
 
@@ -27,21 +27,21 @@ U kunt deze zelfstudie ook uitvoeren op de opdrachtregel (macOS, Windows of Linu
 
 Als u geen Azure-abonnement hebt, [kunt u er gratis een maken](https://azure.microsoft.com/free/dotnet) voordat u begint.
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qscsharp)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qscsharp).
 
 ## <a name="log-in-to-azure"></a>Meld u aan bij Azure.
 
 Meld u met uw Azure-account aan bij Azure Portal op <https://portal.azure.com/>.
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qscsharp)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qscsharp).
 
 [!INCLUDE [Create instance](includes/signalr-quickstart-create-instance.md)]
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qscsharp)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qscsharp).
 
 [!INCLUDE [Clone application](includes/signalr-quickstart-clone-application.md)]
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qscsharp)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qscsharp).
 
 ## <a name="configure-and-run-the-azure-function-app"></a>De Azure-functie-app configureren en uitvoeren
 
@@ -75,15 +75,15 @@ Meld u met uw Azure-account aan bij Azure Portal op <https://portal.azure.com/>.
         ```bash
         func start
         ```
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qscsharp)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qscsharp).
 
 [!INCLUDE [Run web application](includes/signalr-quickstart-run-web-application.md)]
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qscsharp)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qscsharp).
 
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qscsharp)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qscsharp)
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -92,4 +92,3 @@ In deze quickstart hebt u een serverloze, realtimetoepassing in Visual Studio Co
 > [!div class="nextstepaction"]
 > [Azure Functions ontwikkelen met Visual Studio](../azure-functions/functions-develop-vs.md)
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qscsharp)

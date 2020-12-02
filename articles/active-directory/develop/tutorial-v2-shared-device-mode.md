@@ -13,16 +13,16 @@ ms.date: 1/15/2020
 ms.author: hahamil
 ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 2aa786f78d3e730bb351d1fa84b0c7fbb32d6786
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.openlocfilehash: 981d3a0c5d01d70625fc0d022318c5bc866f23a0
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91611228"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95756397"
 ---
 # <a name="tutorial-use-shared-device-mode-in-your-android-application"></a>Zelfstudie: Modus voor gedeelde apparaten gebruiken in een Android-toepassing
 
-Deze zelfstudie bevat richtlijnen voor ontwikkelaars en tenantbeheerders bij het instellen en ondersteunen van de modus voor gedeelde apparaten voor een Android-app.
+In deze zelfstudie hebben Android-ontwikkelaars en Azure Active Directory (Azure AD)-tenantbeheerders meer informatie over de code, Authenticator-app en tenantinstellingen die vereist zijn om de modus gedeeld apparaat in te schakelen voor een Android-app.
 
 In deze zelfstudie:
 
@@ -226,7 +226,7 @@ Raadpleeg [Uw toepassing registreren](./tutorial-v2-android.md#register-your-app
 
 Selecteer **Dit voor mij wijzigen** en geef vervolgens in Azure Portal de waarden op waarom in de quickstart wordt gevraagd. Als dit is gebeurd, worden alle configuratiebestanden gegenereerd die u nodig hebt.
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/config-info.png" alt-text="Uw Android-app-pagina configureren in de quickstart van Azure Portal":::
+:::image type="content" source="media/tutorial-v2-shared-device-mode/config-info.png" alt-text="Uw projectpagina configureren in de quickstart van Azure Portal":::
 
 ## <a name="set-up-a-tenant"></a>Een tenant instellen
 
@@ -242,25 +242,25 @@ Download de Microsoft Authenticator-app uit de Google Play Store. Als u de app a
 
 Start de Authenticator-app en ga naar de hoofdaccountpagina. Zodra u de pagina **Account toevoegen** ziet, kunt u het apparaat gaan delen.
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-add-account.png" alt-text="Uw Android-app-pagina configureren in de quickstart van Azure Portal":::
+:::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-add-account.png" alt-text="Scherm Account toevoegen in Authenticator":::
 
 Ga naar het deelvenster **Instellingen** met behulp van de menubalk aan de rechterkant. Selecteer **Apparaatregistratie** onder **Werk- en schoolaccounts**.
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-settings.png" alt-text="Uw Android-app-pagina configureren in de quickstart van Azure Portal":::
+:::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-settings.png" alt-text="Het scherm met Authenticator-instellingen":::
 
 Wanneer u op deze knop klikt, wordt u gevraagd toegang te verlenen tot contactpersonen van het apparaat. Dit komt door de accountintegratie van Android op het apparaat. Kies **Toestaan**.
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-allow-screen.png" alt-text="Uw Android-app-pagina configureren in de quickstart van Azure Portal":::
+:::image type="content" source="media/tutorial-v2-shared-device-mode/authenticator-allow-screen.png" alt-text="Het bevestigingsscherm toegang Authenticator toestaan":::
 
 De cloudapparaatbeheerder moet het e-mailadres van de organisatie invoeren onder **Of registreren als een gedeeld apparaat**. Vervolgens moet de beheerder op de knop **Registreren als gedeeld apparaat** klikken en de referenties invoeren.
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/register-device.png" alt-text="Uw Android-app-pagina configureren in de quickstart van Azure Portal":::
+:::image type="content" source="media/tutorial-v2-shared-device-mode/register-device.png" alt-text="Het scherm apparaatregistratie in de app":::
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/sign-in.png" alt-text="Uw Android-app-pagina configureren in de quickstart van Azure Portal":::
+:::image type="content" source="media/tutorial-v2-shared-device-mode/sign-in.png" alt-text="Schermopname van app met Microsoft-aanmeldingspagina":::
 
 Het apparaat bevindt zich nu in de gedeelde modus.
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/shared-device-mode-screen.png" alt-text="Uw Android-app-pagina configureren in de quickstart van Azure Portal":::
+:::image type="content" source="media/tutorial-v2-shared-device-mode/shared-device-mode-screen.png" alt-text="App-scherm met de modus gedeelde apparaten ingeschakeld":::
 
  Alle aanmeldingen en afmeldingen op het apparaat zijn globaal. Dit betekent dat ze van toepassing zijn op alle apps die zijn geïntegreerd met MSAL en Microsoft Authenticator op het apparaat. U kunt nu toepassingen implementeren op het apparaat waarop functies worden gebruikt van de modus voor gedeelde apparaten.
 
@@ -268,13 +268,13 @@ Het apparaat bevindt zich nu in de gedeelde modus.
 
 Zodra u een apparaat in de gedeelde modus hebt geplaatst, is het bekend in de organisatie en wordt het bijgehouden in de organisatietenant. U kunt uw gedeelde apparaten bekijken door naar **Join-type** te gaan op de blade Azure Active Directory van Azure Portal.
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/registered-device-screen.png" alt-text="Uw Android-app-pagina configureren in de quickstart van Azure Portal":::
+:::image type="content" source="media/tutorial-v2-shared-device-mode/registered-device-screen.png" alt-text="Het deelvenster Alle apparaten wordt weergegeven in de Azure Portal":::
 
 ## <a name="running-the-sample-app"></a>De voorbeeld-app uitvoeren
 
 De voorbeeldtoepassing is een eenvoudige app waarmee de Graph API van uw organisatie wordt aangeroepen. Bij de eerste uitvoering wordt u gevraagd om toestemming omdat de toepassing nieuw is bij uw werknemersaccount.
 
-:::image type="content" source="media/tutorial-v2-shared-device-mode/run-app-permissions-requested.png" alt-text="Uw Android-app-pagina configureren in de quickstart van Azure Portal":::
+:::image type="content" source="media/tutorial-v2-shared-device-mode/run-app-permissions-requested.png" alt-text="Informatiescherm over app-configuratie":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

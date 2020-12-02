@@ -4,12 +4,12 @@ description: Leer snel hoe u een persoonlijk Docker-containerregister maakt met 
 ms.topic: quickstart
 ms.date: 06/12/2020
 ms.custom: seodec18, H1Hack27Feb2017, mvc, devx-track-azurecli
-ms.openlocfilehash: f4e69616d30c6a7b853c5cc854adee147ebde206
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 226e50aec8f7c76a1b4c81d1a07d57583059ef0e
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87486541"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96020072"
 ---
 # <a name="quickstart-create-a-private-container-registry-using-the-azure-cli"></a>Quickstart: Een privé-containerregister maken met Azure CLI
 
@@ -69,10 +69,16 @@ Noteer `loginServer` in de uitvoer. Dit is de volledig gekwalificeerde registern
 
 ## <a name="log-in-to-registry"></a>Aanmelden bij register
 
-Voordat u installatiekopieën van containers gaat pushen en ophalen, moet u zich aanmelden bij het register. Gebruik hiervoor de opdracht [az acr login][az-acr-login].
+Voordat u installatiekopieën van containers gaat pushen en ophalen, moet u zich aanmelden bij het register. Gebruik hiervoor de opdracht [az acr login][az-acr-login]. Geef alleen de registernaam op wanneer u zich aanmeldt bij Azure CLI. Gebruik niet de naam van de aanmeldingsserver, met inbegrip van een domeinachtervoegsel zoals `azurecr.io`. 
 
 ```azurecli
 az acr login --name <registry-name>
+```
+
+Voorbeeld:
+
+```azurecli
+az acr login --name mycontainerregistry
 ```
 
 Met de opdracht wordt een `Login Succeeded`-bericht geretourneerd nadat deze is voltooid.

@@ -7,20 +7,20 @@ manager: craigg
 ms.service: synapse-analytics
 ms.topic: quickstart
 ms.subservice: sql-dw
-ms.date: 06/18/2020
+ms.date: 11/20/2020
 ms.author: kevin
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: f82bedc6ef638714b2641003e8274c2024a86c2e
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 83b5804888379316b855c36f803f646cec102d9e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "85213003"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024582"
 ---
 # <a name="quickstart-bulk-load-data-using-the-copy-statement"></a>Quickstart: Gegevens bulksgewijs laden met behulp van de instructie COPY
 
-In deze quickstart laadt u gegevens bulksgewijs in uw SQL-pool met behulp van de eenvoudige en flexibele [COPY-instructie](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) voor gegevensopname met hoge doorvoer. De instructie COPY is het aanbevolen hulpprogramma voor het laden omdat u er naadloos en flexibel gegevens mee kunt laden door middel van de volgende functionaliteit:
+In deze quickstart laadt u gegevens bulksgewijs in uw toegewezen SQL-pool met behulp van de eenvoudige en flexibele [COPY-instructie](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) voor gegevensopname met hoge doorvoer. De instructie COPY is het aanbevolen hulpprogramma voor het laden omdat u er naadloos en flexibel gegevens mee kunt laden door middel van de volgende functionaliteit:
 
 - Sta gebruikers met een beperkte bevoegdheid toe om gegevens te laden zonder dat er strikte CONTROL-machtigingen voor het datawarehouse nodig zijn
 - Gebruik slechts één T-SQL-instructie zonder extra databaseobjecten te hoeven maken
@@ -34,7 +34,7 @@ In deze quickstart laadt u gegevens bulksgewijs in uw SQL-pool met behulp van de
 
 ## <a name="prerequisites"></a>Vereisten
 
-In deze snelstart wordt ervan uitgegaan dat u al een SQL-pool hebt. Gebruik de quickstart [Maken en verbinding maken - portal](create-data-warehouse-portal.md) als er nog geen SQL-pool is gemaakt.
+In deze snelstart wordt ervan uitgegaan dat u al een toegewezen SQL-pool hebt. Gebruik de quickstart [Maken en verbinding maken - portal](create-data-warehouse-portal.md) als er nog geen toegewezen SQL-pool is gemaakt.
 
 ## <a name="set-up-the-required-permissions"></a>De vereiste machtigingen instellen
 

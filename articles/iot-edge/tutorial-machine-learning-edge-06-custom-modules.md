@@ -9,17 +9,14 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 3a2087c83ec48b0b732ce1cb954f78fad9b46fef
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 199da0586a061bccdf8a6ff8a1f53df2f703512f
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91857432"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959438"
 ---
 # <a name="tutorial-create-and-deploy-custom-iot-edge-modules"></a>Zelfstudie: Aangepaste IoT Edge-modules maken en implementeren
-
-> [!NOTE]
-> Dit artikel maakt deel uit van een reeks voor een zelfstudie over het gebruik van Azure Machine Learning in IoT Edge. Als u rechtstreeks bij dit artikel bent terechtgekomen, wordt u aangeraden te beginnen met het [eerste artikel](tutorial-machine-learning-edge-01-intro.md) in de reeks voor de beste resultaten.
 
 In dit artikel maken we drie IoT Edge-modules die berichten ontvangen van bladknooppuntapparaten van IoT, de gegevens via uw Machine Learning-model uitvoeren en inzichten naar de IoT Hub doorsturen.
 
@@ -54,6 +51,10 @@ Het volgende diagram toont de module, invoer, uitvoer en de IoT Edge-hubroutes v
 ![Architectuurdiagram van drie modules IoT Edge](media/tutorial-machine-learning-edge-06-custom-modules/modules-diagram.png)
 
 De stappen in dit artikel worden doorgaans uitgevoerd door een cloud-ontwikkelaar.
+
+## <a name="prerequisites"></a>Vereisten
+
+Dit artikel maakt deel uit van een reeks voor een zelfstudie over het gebruik van Azure Machine Learning in IoT Edge. Elk artikel in de reeks is gebaseerd op het werk in het vorige artikel. Als u rechtstreeks bij dit artikel terecht bent gekomen, gaat u naar de [eerste artikel](tutorial-machine-learning-edge-01-intro.md) in de reeks.
 
 ## <a name="create-a-new-iot-edge-solution"></a>Een nieuwe IoT Edge-oplossing maken
 
@@ -360,7 +361,7 @@ Zoals eerder vermeld, is de schrijfmodule afhankelijk van de aanwezigheid van ee
 
 Als u de map wilt toevoegen aan de container van de module, wijzigt u de Dockerfiles die zijn gekoppeld aan de avroFileWriter-module. Er zijn drie Dockerfiles gekoppeld aan de module: Dockerfile.amd64, Dockerfile.amd64.debug en Dockerfile.arm32v7. Deze bestanden moeten worden gesynchroniseerd als u fouten wilt opsporen of op een arm32-apparaat wilt implementeren. In dit artikel focussen we ons alleen op Dockerfile.amd64.
 
-1. Open het bestand **C:\source\IoTEdgeAndMlSample\EdgeSolution\modules\avoFileWriter\Dockerfile.amd64**op uw virtuele ontwikkelingsmachine.
+1. Open het bestand **C:\source\IoTEdgeAndMlSample\EdgeSolution\modules\avoFileWriter\Dockerfile.amd64** op uw virtuele ontwikkelingsmachine.
 
 1. Wijzig het bestand zodat het er zo uitziet als in het volgende voorbeeld:
 
@@ -577,7 +578,7 @@ Als de router en classificatie zijn geïmplementeerd, wordt verwacht dat er rege
 
 1. Ga in Azure Portal naar uw IoT Hub.
 
-1. In het menu in het linkerdeelvenster, selecteert u onder **Berichten**de optie **Routering bericht**.
+1. In het menu in het linkerdeelvenster, selecteert u onder **Berichten** de optie **Routering bericht**.
 
 1. Selecteer op het tabblad **Routes** de optie **Toevoegen**.
 

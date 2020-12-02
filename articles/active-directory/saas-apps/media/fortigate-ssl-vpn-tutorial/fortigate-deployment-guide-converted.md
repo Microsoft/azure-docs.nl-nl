@@ -2,66 +2,46 @@
 title: Implementatiehandleiding voor FortiGate | Microsoft Docs
 description: De Fortinet FortiGate-firewall van de volgende generatie instellen en gebruiken.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 18a3d9d5-d81c-478c-be7e-ef38b574cb88
+manager: CelesteDG
+ms.reviewer: celested
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
 ms.topic: tutorial
-ms.date: 08/11/2020
+ms.date: 10/30/2020
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 357eb0a60e6246996de9ab75337ecc213d845ae7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cdaa6a9601452100ab90ef8b0f2191002f256b74
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91273327"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95025467"
 ---
-# <a name="fortigate-deployment-guide"></a>Implementatiehandleiding voor FortiGate
+# <a name="fortigate-azure-virtual-machine-deployment-guide"></a>Implementatiehandleiding voor virtuele Azure-machines met Fortigate
 
-Met deze implementatiehandleiding leert u de Fortinet FortiGate-firewall van de volgende generatie instellen en gebruiken.
+Met deze implementatiehandleiding leert u de Fortinet FortiGate-firewall van de volgende generatie instellen en gebruiken. Dit product wordt geïmplementeerd als een virtuele Azure-machine. Daarnaast configureert u de FortiGate SSL VPN Azure AD Gallery-app om VPN-verificatie via Azure Active Directory mogelijk te maken.
 
 ## <a name="redeem-the-fortigate-license"></a>De FortiGate-licentie inwisselen
 
-Het product Fortinet FortiGate Next-Generation Firewall is beschikbaar als een virtuele machine in Azure IaaS (infrastructuur als een dienst). Er zijn twee licentiemodi voor deze virtuele machine: betalen per gebruik en eigen licentie.
+Het product Fortinet FortiGate Next-Generation Firewall is beschikbaar als een virtuele machine in Azure IaaS (infrastructuur als een dienst). Er zijn twee licentiemodi voor deze virtuele machine: betalen per gebruik en eigen licentie (BYOL).
 
-Fortinet kan leden van het team "Get to Production Secure Hybrid Access (SHA)" van Azure Active Directory (Azure AD) licenties verschaffen. In gevallen waarin geen licentie wordt afgegeven, werkt de implementatie met betalen per gebruik ook.
-
-Als een licentie is verleend, verstrekt Fortinet een registratiecode die online moet worden ingewisseld.
-
-![Schermopname van de FortiGate SSL VPN-registratiecode.](registration-code.png)
-
-1. Registreer u op https://support.fortinet.com/.
-2. Na de registratie, kunt u zich aanmelden op https://support.fortinet.com/.
-3. Ga naar **Asset** > **Register/Activate**.
-4. Voer de registratiecode in die u hebt ontvangen van Fortinet.
-5. Geef de registratiecode op, selecteer **The product will be used by a non-government user** en selecteer **Next**.
-6. Voer een productbeschrijving in (zoals FortiGate), stel de Fortinet-partner in als **Other** > **Microsoft**, en selecteer **Next**.
-7. Accepteer de **Fortinet Product Registration Agreement** en selecteer **Next**.
-8. Accepteer de **Terms** en selecteer **Confirm**.
-9. Selecteer de **License File Download** en sla de licentie op voor eventueel later gebruik.
-
+Als u een FortiGate-licentie hebt aangeschaft in Fortinet voor gebruik met de BYOL-implementatieoptie voor virtuele machines, kunt u deze inwisselen via de productactiveringspagina van Fortinet: https://support.fortinet.com. Het resulterende licentiebestand heeft de bestandsextensie .lic.
 
 ## <a name="download-firmware"></a>Firmware downloaden
 
-De Fortinet FortiGate Azure-VM wordt momenteel geleverd zonder de firmwareversie die nodig is voor SAML-verificatie. U kunt de nieuwste versie downloaden op de site van Fortinet.
+Op het moment van schrijven wordt de Fortinet FortiGate Azure-VM geleverd zonder de firmwareversie die nodig is voor SAML-verificatie. U kunt de nieuwste versie downloaden op de site van Fortinet.
 
 1. Meld u aan op https://support.fortinet.com/.
 2. Ga naar **Download** > **Firmware Images**.
 3. Selecteer **Download** rechts van **Release Notes**.
-4. Selecteer **V6.** > **6.** > **6.4.** .
-5. Download **FGT_VM64_AZURE-v6-build1637-FORTINET.out** door in dezelfde rij de link **HTTPS** te selecteren.
+4. Selecteer **v6.00** > **6.4** > **6.4.2**.
+5. Download **FGT_VM64_AZURE-v6-build1723-FORTINET.out** door in dezelfde rij de link **HTTPS** te selecteren.
 6. Sla het bestand op voor later.
-
 
 ## <a name="deploy-the-fortigate-vm"></a>De FortiGate-VM implementeren
 
-1. Ga naar https://portal.azure.com en meld u aan bij het abonnement waarin de virtuele machine van FortiGate wilt implementeren.
+1. Ga naar Azure Portal en meld u aan bij het abonnement waarin u de virtuele machine van FortiGate wilt implementeren.
 2. Maak een nieuwe resourcegroep of open de resourcegroep waarin u de virtuele machine van FortiGate wilt implementeren.
 3. Selecteer **Toevoegen**.
 4. Voer *Forti* in bij **Marktplaats doorzoeken**. Selecteer **Fortinet FortiGate Next-Generation Firewall**
@@ -75,11 +55,11 @@ De Fortinet FortiGate Azure-VM wordt momenteel geleverd zonder de firmwareversie
 9. Wacht totdat de implementatie van de VM is voltooid.
 
 
-### <a name="set-a-static-public-ip-address-and-assign-a-fully-qualified-domain-name"></a>Een statisch IP-adres instellen en een FQDN toewijzen
+### <a name="set-a-static-public-ip-address-and-assign-a-fully-qualified-domain-name"></a>Een statisch openbaar IP-adres instellen en een FQDN toewijzen
 
 Voor een consistente gebruikerservaring  wijst u het openbare IP-adres voor de FortiGate-VM statisch toe. Wijs het daarnaast toe aan een FQDN (Fully Qualified Domain Name).
 
-1. Ga naar https://portal.azure.com en open de instellingen voor de FortiGate-VM.
+1. Ga naar Azure Portal en open de instellingen voor de FortiGate-VM.
 2. Selecteer op het scherm **Overview** op het openbare IP-adres.
 
     ![Schermopname van de Forti Gate SSL VPN.](public-ip-address.png)
@@ -88,9 +68,9 @@ Voor een consistente gebruikerservaring  wijst u het openbare IP-adres voor de F
 
 Als u eigenaar bent van een openbaar routeerbare domeinnaam voor de omgeving waarin de FortiGate-VM wordt geïmplementeerd, maakt u een hostrecord (A-record) voor de VM. Deze record wordt toegewezen aan het voorafgaande openbare IP-adres dat statisch is toegewezen.
 
-### <a name="create-a-new-inbound-network-security-group-rule-for-tcp-port"></a>Een nieuwe regel voor inkomend verkeer voor een netwerkbeveiligingsgroep maken voor TCP-poort
+### <a name="create-a-new-inbound-network-security-group-rule-for-tcp-port-8443"></a>Een nieuwe regel voor inkomend verkeer voor een netwerkbeveiligingsgroep maken voor TCP-poort 8443
 
-1. Ga naar https://portal.azure.com en open de instellingen voor de FortiGate-VM.
+1. Ga naar Azure Portal en open de instellingen voor de FortiGate-VM.
 2. Selecteer **Networking** in het menu aan de linkerkant. De netwerkinterface wordt weergegeven evenals de regels voor binnenkomende poorten.
 3. Selecteer **Add inbound port rule**.
 4. Maak een nieuwe regel voor binnenkomende poort TCP 8443.
@@ -99,52 +79,20 @@ Als u eigenaar bent van een openbaar routeerbare domeinnaam voor de omgeving waa
 
 5. Selecteer **Toevoegen**.
 
+## <a name="create-a-second-virtual-nic-for-the-vm"></a>Een tweede virtuele NIC voor de VM maken
 
-## <a name="create-a-custom-azure-app-for-fortigate"></a>Een aangepaste Azure-app maken voor FortiGate
+Voor interne resources die beschikbaar moeten worden gemaakt voor gebruikers, moet een tweede virtuele NIC worden toegevoegd aan de FortiGate-VM. Het virtuele netwerk in Azure waarop de virtuele NIC zich bevindt, moet een routeerbare verbinding met die interne resources hebben.
 
-1. Ga naar https://portal.azure.com en open het venster Azure AD voor de tenant die de identiteit levert voor FortiGate-aanmeldingen.
-2. Selecteer in het linkermenu **Enterprise-toepassingen**.
-3. Selecteer **New Application** > **Non-gallery application**.
-4. Voer een naam in (bijvoorbeeld Forti Gate) en selecteer **Add**.
-5. Selecteer **Users and groups** in het menu.
-6. Voeg gebruikers toe die zich kunnen aanmelden en selecteer **Toewijzen**.
-7. Selecteer **Single sign-on** in het linkermenu.
-8. Selecteer **SAML**.
-9. Selecteer in het gedeelte **Standaard SAML-configuratie** het potloodpictogram om de configuratie te bewerken.
-10. Configureer het volgende:
-    - **Identifier (Entity ID)** moet `https://<address>/remote/saml/metadata` zijn.
-    - **Reply URL (Assertion Consumer Service URL)** moet  `https://<address>/remote/saml/login` zijn.
-    - **Logout URL** moet `https://<address>/remote/saml/logout` zijn.
+1. Ga naar Azure Portal en open de instellingen voor de FortiGate-VM.
+2. Als de FortiGate-VM nog niet is gestopt, selecteert u **Stoppen** en wacht u totdat de VM is afgesloten.
+3. Selecteer **Networking** in het menu aan de linkerkant.
+4. Selecteer **Netwerkinterface koppelen**.
+5. Selecteer **Netwerkinterface maken en koppelen**.
+6. Configureer de eigenschappen voor de nieuwe netwerkinterface en selecteer vervolgens **Maken**.
 
-    `<address>` is de FQDN is of het openbare IP-adres dat is toegewezen aan de FortiGate-VM.
+    ![Schermopname van Netwerkinterface maken.](new-network-interface.png)
 
-11. Noteer deze URL's voor later gebruik: Entiteits-id, antwoord-URL en afmeldings-URL.
-12. Selecteer **Save**, and sluit **Basic SAML Configuration**.
-13. Download onder **3 – SAML Signing Certificate** het **Certificate (base64)** en sla het op voor later gebruik.
-14. Kopieer onder **4 – Set up (App Name)** de URL voor Azure-aanmelding, de Azure AD-id en de URL voor afmelden bij Azure en sla deze op voor later gebruik.
-15. Klik onder **2 – User Attributes and Claims** op het potloodpictogram om de configuratie te bewerken.
-16. Selecteer **Add new claim**en stel de naam in op **username**.
-17. Stel het bronkenmerk in op **user.userprincipalname**.
-18. Selecteer **Save** > **Add a group claim** > **All groups**.
-19. Selecteer **Customize the name of the group claim**, en stel de naam in op **group**.
-20. Selecteer **Opslaan**.
-
-
-## <a name="prepare-for-group-matching"></a>Matchen van groepen voorbereiden
-
-FortiGate maakt het mogelijk om op basis van groepslidmaatschap verschillende gebruikerservaringen voor de portal aan te bieden na aanmelding. Zo kan er een ervaring zijn voor de groep Marketing en een andere voor de groep Finance. Zo maakt u groepen voor gebruikers:
-
-1. Ga naar https://portal.azure.com en open het venster Azure AD voor de tenant die de identiteit levert voor FortiGate-aanmeldingen.
-2. Selecteer **Groups** > **New Group**.
-3. Maak een groep met de volgende details:
-    - Groepstype = Beveiliging
-    - Groepsnaam = `a meaningful name`
-    - Groepsbeschrijving = `a meaningful description for the group`
-    - Type lidmaatschap = Toegewezen
-    - Leden = `users for the user experience that will map to this group`
-4. Herhaal stap 3 en 4 voor eventuele extra gebruikerservaringen.
-5. Nadat u de groepen hebt gemaakt, selecteert u elke groep en noteert u de **Object-id** voor elke groep.
-6. Sla deze object-cd's en de groepsnamen op voor later gebruik.
+7. Start de FortiGate-VM.
 
 
 ## <a name="configure-the-fortigate-vm"></a>De FortiGate-VM configureren
@@ -182,7 +130,7 @@ De volgende secties helpen u bij het instellen van de FortiGate-VM.
 11. Wanneer u wordt gevraagd het dashboard in te stellen, selecteert u **Later**.
 12. Wanneer de video start, selecteert u **OK**.
 
-### <a name="change-the-management-port-to-tcp"></a>De beheerpoort wijzigen in TCP
+### <a name="change-the-management-port-to-tcp-8443"></a>De beheerpoort wijzigen in TCP 8443
 
 1. Ga naar `https://<address>`. waarbij `<address>` de FQDN is of het openbare IP-adres dat is toegewezen aan de FortiGate-VM.
 
@@ -190,13 +138,13 @@ De volgende secties helpen u bij het instellen van de FortiGate-VM.
 3. Meld u aan met de beheerdersreferenties die zijn verstrekt tijdens de implementatie van de FortiGate-VM.
 4. Selecteer **System** in het menu aan de linkerkant.
 5. Wijzig onder **Administration Settings** de HTTPS-poort in **8443** en selecteer **Apply**.
-6. Als de wijziging is toegepast, probeert de browser de beheerpagina opnieuw te laden maar dit lukt niet. Het adres van de beheerpagina is vanaf nu namelijk `https://<address>`.
+6. Als de wijziging is toegepast, probeert de browser de beheerpagina opnieuw te laden maar dit lukt niet. Het adres van de beheerpagina is vanaf nu namelijk `https://<address>:8443`.
 
     ![Schermafbeelding van Upload Remote Certificate.](certificate.png)
 
 ### <a name="upload-the-azure-ad-saml-signing-certificate"></a>Het SAML-handtekeningcertificaat van Azure AD uploaden
 
-1. Ga naar `https://<address>`. waarbij `<address>` de FQDN is of het openbare IP-adres dat is toegewezen aan de FortiGate-VM.
+1. Ga naar `https://<address>:8443`. waarbij `<address>` de FQDN is of het openbare IP-adres dat is toegewezen aan de FortiGate-VM.
 
 2. Negeer eventuele certificaatfouten.
 3. Meld u aan met de beheerdersreferenties die zijn verstrekt tijdens de implementatie van de FortiGate-VM.
@@ -208,7 +156,7 @@ De volgende secties helpen u bij het instellen van de FortiGate-VM.
 
 U kunt de FortiGate-VM configureren met uw eigen SSL-certificaat dat ondersteuning biedt voor de FQDN die u gebruikt. Als u toegang hebt tot een SSL-certificaat dat is verpakt met de persoonlijke sleutel in PFX-indeling, kan dit voor dit doel worden gebruikt.
 
-1. Ga naar `https://<address>`. waarbij `<address>` de FQDN is of het openbare IP-adres dat is toegewezen aan de FortiGate-VM.
+1. Ga naar `https://<address>:8443`. waarbij `<address>` de FQDN is of het openbare IP-adres dat is toegewezen aan de FortiGate-VM.
 
 2. Negeer eventuele certificaatfouten.
 3. Meld u aan met de beheerdersreferenties die zijn verstrekt tijdens de implementatie van de FortiGate-VM.
@@ -219,83 +167,12 @@ U kunt de FortiGate-VM configureren met uw eigen SSL-certificaat dat ondersteuni
 8. Selecteer **System** > **Settings** in het menu aan de linkerkant.
 9. Open onder **Administration Settings** de lijst naast **HTTPS server certificate** en selecteer het SSL-certificaat dat u eerder hebt geïmporteerd.
 10. Selecteer **Toepassen**.
-11. Sluit het browservenster en ga naar `https://<address>`.
+11. Sluit het browservenster en ga naar `https://<address>:8443`.
 12. Meld u aan met de FortiGate-beheerdersreferenties. U ziet nu het juiste SSL-certificaat dat wordt gebruikt.
 
+### <a name="configure-authentication-timeout"></a>Time-out voor verificatie configureren
 
-### <a name="perform-command-line-configuration"></a>Opdrachtregelconfiguratie uitvoeren
-
-In de volgende secties vindt u de stappen voor verschillende configuraties met behulp van de opdracht regel.
-
-#### <a name="for-saml-authentication"></a>Voor SAML-verificatie
-
-1. Ga naar https://portal.azure.com en open de instellingen voor de FortiGate-VM.
-2. Selecteer **Serial Console** in het menu aan de linkerkant.
-3. Meld u aan bij de console met de beheerdersreferenties voor de FortiGate-VM. Voor de volgende stap zijn de URL's nodig die u eerder hebt genoteerd.
-    - Entiteits-id
-    - Antwoord-URL
-    - Afmeldings-URL
-    - URL voor aanmelden bij Azure
-    - Azure AD-id
-    - URL voor afmelden bij Azure
-4. Voer de volgende opdrachten uit in de console:
-
-    ```
-    config user saml
-    edit azure
-    set entity-id <Entity ID>
-    set single-sign-on-url <Reply URL>
-    set single-logout-url <Logout URL>
-    set idp-single-sign-on-url <Azure Login URL>
-    set idp-entity-id <Azure AD Identifier>
-    set idp-single-logout-url <Azure Logout URL>
-    set idp-cert REMOTE_Cert_
-    set user-name username
-    set group-name group
-    end
-    ```
-    > [!NOTE]
-    > De Azure-afmeldings-URL bevat een `?`-teken. U moet een speciale toetsencombinatie gebruiken om dit teken goed in te voeren in de console van FortiGate. De URL is doorgaans `https://login.microsoftonline.com/common/wsfederation?wa=wsignout1`. Als u dit wilt opgeven in de console, typt u:
-        ```
-        set idp-single-logout-url https://login.microsoftonline.com/common/wsfederation
-        ```.
-    Typ vervolgens CTRL+V en plak de rest van de URL om de regel te voltooien: 
-        ```
-        set idp-single-logout-url
-        https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.
-        ```
-
-5. Om de configuratie te bevestingen, moet u het volgende uitvoeren:
-
-    ```
-    show user saml
-    ```
-
-#### <a name="for-group-matching"></a>Om groepen te matchen
-
-1. Ga naar https://portal.azure.com en open de instellingen voor de FortiGate-VM.
-2. Selecteer **Serial Console** in het menu aan de linkerkant.
-3. Meld u aan bij de console met de beheerdersreferenties voor de FortiGate-VM.
-4. Voer de volgende opdrachten uit in de console:
-
-    ```
-    config user group
-    edit <group 1 name>
-    set member azure
-    config match
-    edit 1
-    set server-name azure
-    set group-name <group 1 Object Id>
-    next
-    end
-    next
-    ```
-
-    Herhaal deze opdrachten (te beginnen vanaf de tweede regel van de code) voor elke extra groep die een andere portaalervaring moet hebben in FortiGate.
-
-#### <a name="for-authentication-timeout"></a>Voor time-out van de verificatie
-
-1. Ga naar https://portal.azure.com en open de instellingen voor de FortiGate-VM.
+1. Ga naar Azure Portal en open de instellingen voor de FortiGate-VM.
 2. Selecteer **Serial Console** in het menu aan de linkerkant.
 3. Meld u aan bij de console met de beheerdersreferenties voor de FortiGate-VM.
 4. Voer de volgende opdrachten uit in de console:
@@ -305,42 +182,39 @@ In de volgende secties vindt u de stappen voor verschillende configuraties met b
     set remoteauthtimeout 60
     end
     ```
-### <a name="create-vpn-portals-and-firewall-policy"></a>VPN-portals en firewallbeleid maken
 
-1. Ga naar `https://<address>`. waarbij `<address>` de FQDN is of het openbare IP-adres dat is toegewezen aan de FortiGate-VM.
+### <a name="ensure-network-interfaces-are-obtaining-ip-addresses"></a>Controleren of netwerkinterfaces IP-adressen verkrijgen
+
+1. Ga naar `https://<address>:8443`. waarbij `<address>` de FQDN is of het openbare IP-adres dat is toegewezen aan de FortiGate-VM.
 
 2. Meld u aan met de beheerdersreferenties die zijn verstrekt tijdens de implementatie van de FortiGate-VM.
-3. Selecteer in het linkermenu **VPN** > **SSL-VPN Portals** > **Create New**.
-6. Geef een naam op (meestal de naam van de Azure-groep die wordt gebruikt voor het bieden van de aangepaste portalervaring).
-7. Selecteer het plusteken ( **+** ) naast **Source IP Pools**, selecteer de standaardpool en klik op **Close**.
-8. Pas de ervaring voor deze groep aan. Voor testdoeleinden kan dit een aanpassing zijn van het portalbericht en het thema. Hier kunt u ook aangepaste bladwijzers maken die gebruikers naar interne bronnen sturen.
-9. Selecteer **OK**.
-10. Herhaal stap 5-9 voor elke Azure-groep die een aangepaste portalervaring moet krijgen.
-11. Selecteer onder VPN **SSL-VPN Settings**.
-12. Selecteer het plusteken ( **+** ) naast **Listen on Interfaces**, selecteer **Port1** en vervolgens **Close**.
-14. Als u eerder een aangepast SSL-certificaat hebt geïnstalleerd, selecteert u dit certificaat in de vervolgkeuzelijst **Server Certificate**.
-15. Selecteer onder **Authentication/Portal Mapping** op **Create New**. Kies de eerste Azure-groep en koppel deze aan het portaal met dezelfde naam. Selecteer vervolgens **OK**.
-18. Herhaal stappen 15-17 voor alle Azure-groepen die u aan een portaal wilt koppelen.
-19. Bewerk **All Other Users/Groups** onder **Authentication/Portal Mapping**.
-20. Stel het portaal in op **full-access** en selecteer **OK** > **Apply**.
-23. Ga naar het begin van de pagina **SSL-VPN Setting** en selecteer **No SSL-VPN policies exist. Click here to create a new SSL-VPN policy using these settings.**
-24. Geef een naam op, zoals **VPN Grp**. Stel **Outgoing Interface** vervolgens i op **port** en selecteer **Source**.
-27. Selecteer **All** onder **Address**.
-28. Selecteer onder **User** de eerste Azure-groep.
-29. Selecteer **Close** > **Destination**. Onder **Address** bevindt zich meestal het interne netwerk. Selecteer **login.microsoft.com** voor testdoeleinden.
-32. Selecteer **Close** > **Service** > **All**. Selecteer vervolgens **Close** > **OK**.
-37. Selecteer in het menu aan de linkerzijde **Policy & Objects** > **Firewall Policy**.
-39. Vouw **SSL-VPN tunnel interface (ssl.root) -> port** > **port** uit.
-40. Klik met de rechtermuisknop op het VPN-beleid dat u eerder hebt gemaakt (**VPN Grp 1**) en selecteer **Copy**.
-41. Klik met de rechtermuisknop onder het VPN-beleid en selecteer **Paste** > **Below**.
-42. Bewerk het nieuwe beleid en geeft het een andere naam (bijvoorbeeld **VPN Grp2**). Wijzig ook de groep waarop het van toepassing is (naar een andere Azure-groep).
-43. Klik met de rechtermuisknop op het nieuwe beleid en stel de status in op **Enabled**.
+3. Selecteer **Networking** in het menu aan de linkerkant.
+4. Selecteer **Interfaces** onder Netwerk.
+5. Bekijk port1 (externe interface) en port2 (interne interface) om te controleren of ze een IP-adres verkrijgen van het juiste Azure-subnet.
+    a. Als een van beide poorten geen IP-adres van het subnet ontvangt (via DHCP), klikt u met de rechtermuisknop op de poort en selecteert u **Bewerken**.
+    b. Zorg ervoor dat **DHCP** is geselecteerd naast de adresseringsmodus.
+    c. Selecteer **OK**.
 
+    ![Schermopname van Netwerkinterface-adressering.](addressing.png)
 
-## <a name="test-sign-in-by-using-azure"></a>Aanmelden met Azure testen
+### <a name="ensure-fortigate-vm-has-correct-route-to-on-premises-corporate-resources"></a>De juiste route van de FortiGate-VM naar on-premises bedrijfsresources instellen
 
-1. Gebruik een InPrivate-sessie in uw browser om naar `https://<address>` te gaan.  
-2. De aanmelding moet worden omgeleid naar Azure AD.
-3. Nadat u referenties hebt opgegeven voor een gebruiker die is toegewezen aan de FortiGate-app in de Azure-tenant, moet het juiste gebruikersportaal verschijnen.
+Multi-homed Azure-VM's hebben alle netwerkinterfaces in hetzelfde virtuele netwerk (maar mogelijk afzonderlijke subnetten). Dit betekent vaak dat beide netwerkinterfaces een verbinding hebben met de on-premises bedrijfsresources die worden gepubliceerd via FortiGate. Daarom is het noodzakelijk om aangepaste routevermeldingen te maken zodat uitgaand verkeer vanaf de juiste interface wordt toegestaan voor aanvragen voor on-premises bedrijfsresources.
 
-    ![Schermafbeelding van FortiGate SSL VPN](test-sign-in.png)
+1. Ga naar `https://<address>:8443`. waarbij `<address>` de FQDN is of het openbare IP-adres dat is toegewezen aan de FortiGate-VM.
+
+2. Meld u aan met de beheerdersreferenties die zijn verstrekt tijdens de implementatie van de FortiGate-VM.
+3. Selecteer **Networking** in het menu aan de linkerkant.
+4. Selecteer onder Netwerk de optie **Statische routes**.
+5. Selecteer **Nieuwe maken**.
+6. Selecteer naast Doel de optie **Subnet**.
+7. Geef onder Subnet op waar de on-premises bedrijfsresources zich bevinden (bijvoorbeeld 10.1.0.0/255.255.255.0)
+8. Geef naast het gatewayadres de gateway op het Azure-subnet op waarmee port2 is verbonden (dit eindigt meestal op een 1, bijvoorbeeld 10.6.1.1)
+9. Selecteer naast Interface de interne netwerkinterface, port2
+10. Selecteer **OK**.
+
+    ![Schermopname van het configureren van een route.](route.png)
+
+## <a name="configure-fortigate-ssl-vpn"></a>FortiGate SSL VPN configureren
+
+Voer de stappen uit die worden beschreven in https://docs.microsoft.com/azure/active-directory/saas-apps/fortigate-ssl-vpn-tutorial

@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: zoomen configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
-description: Meer informatie over het automatisch inrichten en ongedaan maken van gebruikers accounts vanuit Azure AD om in te zoomen.
+title: 'Zelfstudie: Zoom configureren voor automatische inrichting van gebruikers met Azure Active Directory | Microsoft Docs'
+description: Meer informatie over het automatisch inrichten en ongedaan maken van de inrichting van gebruikersaccounts van Azure AD voor Zoom.
 services: active-directory
 author: zchia
 writer: zchia
@@ -11,79 +11,79 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 06/3/2019
 ms.author: Zhchia
-ms.openlocfilehash: 280083ccbd732e95796013bf2b2c08e96564c24c
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: c87c3692d7e1106e0952b85791da663e03c6001d
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94354152"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182475"
 ---
-# <a name="tutorial-configure-zoom-for-automatic-user-provisioning"></a>Zelf studie: zoomen configureren voor automatische gebruikers inrichting
+# <a name="tutorial-configure-zoom-for-automatic-user-provisioning"></a>Zelfstudie: Zoom configureren voor automatische gebruikersinrichting
 
-In deze zelf studie worden de stappen beschreven die u moet uitvoeren in zowel in-/uitzoomen als Azure Active Directory (Azure AD) om het automatisch inrichten van gebruikers te configureren. Wanneer u deze configureert, worden gebruikers en groepen automatisch door Azure AD ingericht en ongedaan gemaakt om te [zoomen](https://zoom.us/pricing/) met behulp van de Azure AD-inrichtings service. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md). 
+In deze zelfstudie worden de stappen beschreven die u moet uitvoeren in zowel Zoom als Azure Active Directory (Azure AD) voor het configureren van automatische inrichting van gebruikers. Wanneer de configuratie is voltooid, wordt inrichting en ongedaan maken van inrichting van gebruikers en groepen door Azure AD automatisch uitgevoerd op [Zoom](https://zoom.us/pricing/) met behulp van de Azure AD-inrichtingsservice. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md). 
 
 
 ## <a name="capabilities-supported"></a>Ondersteunde mogelijkheden
 > [!div class="checklist"]
-> * Gebruikers in-/uitzoomen maken
-> * Gebruikers in zoomen verwijderen wanneer ze niet meer toegang nodig hebben
-> * Gebruikers kenmerken gesynchroniseerd laten tussen Azure AD en zoomen
-> * [Eenmalige aanmelding om in](./zoom-tutorial.md) te zoomen (aanbevolen)
+> * Gebruikers maken in Zoom
+> * Gebruikers verwijderen uit Zoom wanneer ze geen toegang meer nodig hebben
+> * Gebruikerskenmerken gesynchroniseerd houden tussen Azure AD en Zoom
+> * [Eenmalige aanmelding](./zoom-tutorial.md) bij Zoom (aanbevolen)
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
 * [Een Azure AD-tenant](../develop/quickstart-create-new-tenant.md).
-* Een gebruikersaccount in Azure AD met [machtigingen](../users-groups-roles/directory-assign-admin-roles.md) voor het configureren van inrichting (bijvoorbeeld toepassingsbeheerder, cloud-toepassingsbeheerder, toepassingseigenaar of globale beheerder). 
-* [Een zoom-Tenant](https://zoom.us/pricing).
-* Een gebruikers account in-/uitzoomen met beheerders machtigingen.
+* Een gebruikersaccount in Azure AD met [machtigingen](../roles/permissions-reference.md) voor het configureren van inrichting (bijvoorbeeld toepassingsbeheerder, cloud-toepassingsbeheerder, toepassingseigenaar of globale beheerder). 
+* [Een Zoom-tenant](https://zoom.us/pricing).
+* Een gebruikersaccount in Zoom met beheerdersmachtigingen.
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Stap 1. Implementatie van de inrichting plannen
 1. Lees [hoe de inrichtingsservice werkt](../app-provisioning/user-provisioning.md).
 2. Bepaal wie u wilt opnemen in het [bereik voor inrichting](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Bepaal welke gegevens moeten worden [toegewezen tussen Azure AD en zoom](../app-provisioning/customize-application-attributes.md). 
+3. Bepaal welke gegevens u wilt [toewijzen tussen Azure AD en Zoom](../app-provisioning/customize-application-attributes.md). 
 
-## <a name="step-2-configure-zoom-to-support-provisioning-with-azure-ad"></a>Stap 2. Inzoomen configureren voor ondersteuning van inrichting met Azure AD
+## <a name="step-2-configure-zoom-to-support-provisioning-with-azure-ad"></a>Stap 2. Zoom configureren om ondersteuning te bieden voor inrichting met Azure AD
 
-1. Meld u aan bij de [Zoom-beheer console](https://zoom.us/signin). Navigeer naar **Advanced > app Marketplace** in het navigatie deel venster links.
+1. Meld u aan bij de [beheerconsole van Zoom](https://zoom.us/signin). Ga naar **Advanced > App Marketplace** in het linkernavigatiemenu.
 
-    ![Zoom integraties](media/zoom-provisioning-tutorial/zoom01.png)
+    ![Zoom-integraties](media/zoom-provisioning-tutorial/zoom01.png)
 
-2. Navigeer naar **beheren** in de rechter bovenhoek van de pagina. 
+2. Ga naar **Manage** in de rechterbovenhoek van de pagina. 
 
-    ![Scherm afbeelding van de zoom app Marketplace met de optie beheren.](media/zoom-provisioning-tutorial/zoom02.png)
+    ![Schermopname van de App Marketplace van Zoom met de optie Manage gemarkeerd.](media/zoom-provisioning-tutorial/zoom02.png)
 
-3. Navigeer naar uw Azure AD-app die u hebt gemaakt. 
+3. Navigeer naar de Azure AD-app die u hebt gemaakt. 
     
-    ![Scherm opname van de sectie gemaakte apps met de Azure A D-app die is aangeroepen.](media/zoom-provisioning-tutorial/zoom03.png)
+    ![Schermopname van de sectie Created Apps (Gemaakte apps) met de Azure AD-app uitgelicht.](media/zoom-provisioning-tutorial/zoom03.png)
 
-4. Selecteer **app-referenties** in het navigatie deel venster links.
+4. Selecteer **App Credentials** (App-referenties) in het linkernavigatiemenu.
 
-    ![Scherm afbeelding van het navigatie deel venster links met de optie voor app-referenties gemarkeerd.](media/zoom-provisioning-tutorial/zoom04.png)
+    ![Schermopname van het linkernavigatiemenu met de optie voor app-referenties gemarkeerd.](media/zoom-provisioning-tutorial/zoom04.png)
 
-5. Kopieer het JWT- **token** en sla het op. Deze waarde wordt ingevoerd in het veld **geheime token** op het tabblad inrichten van de zoom toepassing in de Azure Portal. Als u een nieuw niet-verlopend token nodig hebt, moet u de verval tijd opnieuw configureren waarmee automatisch een nieuw token wordt gegenereerd. 
+5. Kopieer het **JWT-token** en sla het op. Deze waarde wordt ingevoerd in het veld **Token voor geheim** op het tabblad Inrichten van de Zoom-toepassing in Azure Portal. Als u een nieuw niet-verlopend token nodig hebt, moet u opnieuw de vervaltijd configureren waarna automatisch een nieuw token wordt gegenereerd. 
 
-    ![Scherm afbeelding van de pagina met app-referenties.](media/zoom-provisioning-tutorial/zoom05.png)
+    ![Schermopname van de pagina met app-referenties.](media/zoom-provisioning-tutorial/zoom05.png)
 
-## <a name="step-3-add-zoom-from-the-azure-ad-application-gallery"></a>Stap 3. Inzoomen toevoegen vanuit de Azure AD-toepassings galerie
+## <a name="step-3-add-zoom-from-the-azure-ad-application-gallery"></a>Stap 3. Zoom toevoegen vanuit de Azure AD-toepassingsgalerie
 
-U kunt inzoomen toevoegen vanuit de Azure AD-toepassings galerie om het beheer van de inrichting te starten om in te zoomen. Als u eerder inzoomen hebt ingesteld voor SSO, kunt u dezelfde toepassing gebruiken. U wordt echter aangeraden een afzonderlijke app te maken wanneer u de integratie voor het eerst test. Klik [hier](../manage-apps/add-application-portal.md) voor meer informatie over het toevoegen van een toepassing uit de galerie. 
+Voeg Zoom toe vanuit de Azure AD-toepassingsgalerie om de inrichting in Zoom te beheren. Als u Zoom eerder hebt ingesteld voor eenmalige aanmelding, kunt u dezelfde toepassing gebruiken. U wordt echter aangeraden een afzonderlijke app te maken wanneer u de integratie voor het eerst test. Klik [hier](../manage-apps/add-application-portal.md) voor meer informatie over het toevoegen van een toepassing uit de galerie. 
 
 ## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Stap 4. Definiëren wie u wilt opnemen in het bereik voor inrichting 
 
 Met de Azure AD-inrichtingsservice kunt u bepalen wie worden ingericht op basis van toewijzing aan de toepassing en/of op basis van kenmerken van de gebruiker/groep. Als u ervoor kiest om te bepalen wie wordt ingericht voor uw app op basis van toewijzing, kunt u de volgende [stappen](../manage-apps/assign-user-or-group-access-portal.md) gebruiken om gebruikers en groepen aan de toepassing toe te wijzen. Als u ervoor kiest om uitsluitend te bepalen wie wordt ingericht op basis van kenmerken van de gebruiker of groep, kunt u een bereikfilter gebruiken zoals [hier](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) wordt beschreven. 
 
-* Wanneer u gebruikers en groepen toewijst om in te zoomen, moet u een andere rol dan de **standaard toegang** selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](../develop/howto-add-app-roles-in-azure-ad-apps.md) om extra rollen toe te voegen. 
+* Wanneer u gebruikers toewijst aan Zoom, moet u een andere rol dan **Standaardtoegang** selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](../develop/howto-add-app-roles-in-azure-ad-apps.md) om extra rollen toe te voegen. 
 
 * Begin klein. Test de toepassing met een kleine set gebruikers en groepen voordat u de toepassing naar iedereen uitrolt. Wanneer het bereik voor inrichting is ingesteld op toegewezen gebruikers en groepen, kunt u dit beheren door een of twee gebruikers of groepen aan de app toe te wijzen. Wanneer het bereik is ingesteld op alle gebruikers en groepen, kunt u een [bereikfilter op basis van kenmerken](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) opgeven. 
 
 
-## <a name="step-5-configure-automatic-user-provisioning-to-zoom"></a>Stap 5. Automatische gebruikers inrichting configureren om in te zoomen 
+## <a name="step-5-configure-automatic-user-provisioning-to-zoom"></a>Stap 5. Automatische gebruikersinrichting configureren voor Zoom 
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtings service om gebruikers en/of groepen in TestApp te maken, bij te werken en uit te scha kelen op basis van gebruikers-en/of groeps toewijzingen in azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in BlogIn te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
-### <a name="to-configure-automatic-user-provisioning-for-zoom-in-azure-ad"></a>Automatische gebruikers inrichting configureren voor inzoomen in azure AD:
+### <a name="to-configure-automatic-user-provisioning-for-zoom-in-azure-ad"></a>Automatische gebruikersinrichting configureren voor Zoom in Azure AD:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
 
@@ -95,15 +95,15 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 3. Selecteer het tabblad **Inrichten**.
 
-    ![Scherm opname van de opties voor beheer met de inrichtings optie.](common/provisioning.png)
+    ![Schermopname van de opties onder Beheren met de optie Inrichten gemarkeerd.](common/provisioning.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Scherm afbeelding van de vervolg keuzelijst voor de inrichtings modus met de automatische optie aangeroepen.](common/provisioning-automatic.png)
+    ![Schermopname van de vervolgkeuzelijst Inrichtingsmodus met de optie Automatisch gemarkeerd.](common/provisioning-automatic.png)
 
-5. Voer in het gedeelte **beheerders referenties** de `https://api.zoom.us/scim` URL van de **Tenant** in. Voer de **JWT-token** waarde in die eerder is opgehaald in het **geheime token**. Klik op **verbinding testen** om te controleren of Azure AD verbinding kan maken met Inzoomen. Als de verbinding mislukt, zorg er dan voor dat uw zoom account beheerders machtigingen heeft en probeer het opnieuw.
+5. Voer onder de sectie **Referenties voor beheerder** `https://api.zoom.us/scim` in bij **Tenant-URL**. Voer de waarde van het **JWT-token** in die eerder in **Token voor geheim** is opgehaald. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met Zoom. Als de verbinding mislukt, controleert u of het Zoom-account beheerdersmachtigingen heeft. Probeer het vervolgens opnieuw.
 
-    ![Inzoom inrichting](./media/zoom-provisioning-tutorial/provisioning.png)
+    ![Zoom-inrichting](./media/zoom-provisioning-tutorial/provisioning.png)
 
 6. Voer in het veld **E-mailadres voor meldingen** het e-mailadres in van een persoon of groep die de inrichtingsfoutmeldingen zou moeten ontvangen en schakel het selectievakje **Een e-mailmelding verzenden als een fout optreedt** in.
 
@@ -111,9 +111,9 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 7. Selecteer **Opslaan**.
 
-8. Selecteer in de sectie **toewijzingen** de optie **synchroniseren Azure Active Directory gebruikers om in te zoomen**.
+8. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers synchroniseren met Zoom**.
 
-9. Controleer de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD om in te zoomen in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de gebruikers accounts in zoomen voor bijwerk bewerkingen. Als u ervoor kiest om het [overeenkomende doel kenmerk](../app-provisioning/customize-application-attributes.md)te wijzigen, moet u ervoor zorgen dat de zoom-API het filteren van gebruikers op basis van dat kenmerk ondersteunt. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+9. Controleer in de sectie **Kenmerktoewijzing** de gebruikerskenmerken die vanuit Azure AD worden gesynchroniseerd met Zoom. De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de gebruikersaccounts in Zoom te vinden voor updatebewerkingen. Als u ervoor kiest om het [overeenkomende doelkenmerk](../app-provisioning/customize-application-attributes.md) te wijzigen, moet u ervoor zorgen dat de API van Zoom het filteren van gebruikers op basis van dat kenmerk kan ondersteunen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
    |Kenmerk|Type|
    |---|---|
@@ -121,16 +121,16 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
    |actief|Booleaans|
    |name.givenName|Tekenreeks|
    |name.familyName|Tekenreeks|
-   |e-mail berichten [type EQ "werk]|Tekenreeks|
+   |emails[type eq "work"]|Tekenreeks|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Tekenreeks|
 
 10. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-11. Als u de Azure AD-inrichtings service voor inzoomen wilt inschakelen, **wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
+11. Wijzig **Inrichtingsstatus** in **Aan** in de sectie **Instellingen** om de Azure AD-inrichtingsservice in te schakelen voor Zoom.
 
     ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
 
-12. Definieer de gebruikers en/of groepen die u wilt inrichten om in te zoomen door de gewenste waarden in het **bereik** in het gedeelte **instellingen** te kiezen.
+12. Definieer de gebruikers en/of groepen die u wilt toevoegen aan Zoom, door in de sectie **Instellingen** de gewenste waarden te kiezen bij **Bereik**.
 
     ![Inrichtingsbereik](common/provisioning-scope.png)
 
@@ -148,11 +148,11 @@ Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om u
 3. Als het configureren van de inrichting een foutieve status lijkt te hebben, wordt de toepassing in quarantaine geplaatst. [Klik hier](../app-provisioning/application-provisioning-quarantine-status.md) voor meer informatie over quarantainestatussen.  
 
 ## <a name="connector-limitations"></a>Connectorbeperkingen
-* Als u inzoomt, worden er momenteel Maxi maal 9.999 basis gebruikers toegestaan.
+* Momenteel is het maximum aantal basisgebruikers in Zoom slechts 9999.
 
 ## <a name="change-log"></a>Wijzigingenlogboek
-* 05/14/2020-ondersteuning voor UPDATE bewerkingen toegevoegd voor e-mails [type EQ "werk] kenmerk.
-* 10/20/2020-ondersteuning toegevoegd voor twee nieuwe rollen ' gelicentieerd ' en ' on-premises ' om bestaande rollen ' Pro ' en ' Corp ' te vervangen. Ondersteuning voor rollen "Pro" en "Corp" wordt in de toekomst verwijderd.
+* 14-05-2020: ondersteuning toegevoegd voor UPDATE-bewerkingen voor het kenmerk emails[type eq "work"].
+* 20-10-2020: ondersteuning toegevoegd voor twee nieuwe rollen, 'Licensed' (Gelicentieerd) en 'On-Prem' (On-premises), ter vervanging van de bestaande rollen 'Pro' en 'Corp'. Ondersteuning voor de rollen 'Pro' en 'Corp' wordt in de toekomst verwijderd.
 
 ## <a name="additional-resources"></a>Aanvullende resources
 

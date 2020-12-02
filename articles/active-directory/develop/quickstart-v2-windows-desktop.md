@@ -11,16 +11,16 @@ ms.workload: identity
 ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 25c5e6445bb5d673db1cfb755f320302a9e9c5b5
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: f63dbad398afcd0a9756cc1e9d4f70f1303d00b0
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94561859"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95993853"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-windows-desktop-app"></a>Quickstart: Een token verkrijgen en Microsoft Graph API aanroepen vanuit een Windows-bureaublad-app
 
-In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoorbeeld laat zien hoe gebruikers kunnen worden aangemeld met een WPF-toepassing (.NET voor Windows-desktop), en een toegangstoken kunnen verkrijgen om de Microsoft Graph API aan te roepen. 
+In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoorbeeld laat zien hoe gebruikers kunnen worden aangemeld met een WPF-toepassing (.NET voor Windows-desktop), en een toegangstoken kunnen krijgen om de Microsoft Graph API aan te roepen. 
 
 Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 

@@ -8,13 +8,13 @@ ms.subservice: core
 ms.topic: reference
 author: likebupt
 ms.author: keli19
-ms.date: 10/21/2020
-ms.openlocfilehash: 1e71d3883b8dacefa9b501ee3a9a0533d5c7d515
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.date: 12/02/2020
+ms.openlocfilehash: 57b4b6f3f49e9b82ada4b37c8e2de0697781e063
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94592665"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96510587"
 ---
 # <a name="execute-r-script-module"></a>R-script module uitvoeren
 
@@ -78,25 +78,27 @@ azureml_main <- function(dataframe1, dataframe2){
  > [!NOTE]
  > Controleer voordat u een pakket installeert of het al bestaat, zodat u de installatie niet herhaalt. Herhalings installaties kunnen een time-out veroorzaken voor webservice-aanvragen.     
 
+## <a name="access-to-registered-dataset"></a>Toegang tot geregistreerde gegevensset
+
+U kunt de volgende voorbeeld code gebruiken om toegang te krijgen tot de [geregistreerde gegevens sets](../how-to-create-register-datasets.md) in uw werk ruimte:
+
+```R
+azureml_main <- function(dataframe1, dataframe2){
+  print("R script run.")
+  run = get_current_run()
+  ws = run$experiment$workspace
+  dataset = azureml$core$dataset$Dataset$get_by_name(ws, "YOUR DATASET NAME")
+  dataframe2 <- dataset$to_pandas_dataframe()
+  # Return datasets as a Named List
+  return(list(dataset1=dataframe1, dataset2=dataframe2))
+}
+```
+
 ## <a name="uploading-files"></a>Bestanden uploaden
 De module voor het uitvoeren van R-scripts ondersteunt het uploaden van bestanden met behulp van de Azure Machine Learning R SDK.
 
 In het volgende voor beeld ziet u hoe u een afbeeldings bestand uploadt in het script Execute R:
 ```R
-
-# R version: 3.5.1
-# The script MUST contain a function named azureml_main,
-# which is the entry point for this module.
-
-# Note that functions dependent on the X11 library,
-# such as "View," are not supported because the X11 library
-# is not preinstalled.
-
-# The entry point function MUST have two input arguments.
-# If the input port is not connected, the corresponding
-# dataframe argument will be null.
-#   Param<dataframe1>: a R DataFrame
-#   Param<dataframe2>: a R DataFrame
 azureml_main <- function(dataframe1, dataframe2){
   print("R script run.")
 
@@ -119,22 +121,6 @@ Nadat de pijplijn uitvoering is voltooid, kunt u een voor beeld van de afbeeldin
 > [!div class="mx-imgBorder"]
 > ![Voor beeld van geüploade afbeelding](media/module/upload-image-in-r-script.png)
 
-## <a name="access-to-registered-dataset"></a>Toegang tot geregistreerde gegevensset
-
-U kunt de volgende voorbeeld code gebruiken om toegang te krijgen tot de [geregistreerde gegevens sets](../how-to-create-register-datasets.md) in uw werk ruimte:
-
-```R
-    azureml_main <- function(dataframe1, dataframe2){
-  print("R script run.")
-  run = get_current_run()
-  ws = run$experiment$workspace
-  dataset = azureml$core$dataset$Dataset$get_by_name(ws, "YOUR DATASET NAME")
-  dataframe2 <- dataset$to_pandas_dataframe()
-  # Return datasets as a Named List
-  return(list(dataset1=dataframe1, dataset2=dataframe2))
-}
-```
-
 ## <a name="how-to-configure-execute-r-script"></a>Het uitvoeren van een R-script configureren
 
 De script module Execute R bevat voorbeeld code als uitgangs punt.
@@ -147,11 +133,11 @@ Gegevens sets die zijn opgeslagen in de ontwerp functie worden automatisch gecon
 
 1. Verbind alle invoer die het script nodig heeft. Invoer zijn optioneel en kunnen gegevens en aanvullende R-code bevatten.
 
-    * **Dataset1** : referentie de eerste invoer als `dataframe1` . De invoer gegevensset moet zijn opgemaakt als een CSV-, TSV-of ARFF-bestand. U kunt ook verbinding maken met een Azure Machine Learning-gegevensset.
+    * **Dataset1**: referentie de eerste invoer als `dataframe1` . De invoer gegevensset moet zijn opgemaakt als een CSV-, TSV-of ARFF-bestand. U kunt ook verbinding maken met een Azure Machine Learning-gegevensset.
 
-    * **Dataset2** : verwijst naar de tweede invoer als `dataframe2` . Deze gegevensset moet ook worden geformatteerd als een CSV-, TSV-of ARFF-bestand of als een Azure Machine Learning-gegevensset.
+    * **Dataset2**: verwijst naar de tweede invoer als `dataframe2` . Deze gegevensset moet ook worden geformatteerd als een CSV-, TSV-of ARFF-bestand of als een Azure Machine Learning-gegevensset.
 
-    * **Script bundel** : de derde invoer accepteert zip-bestanden. Een zip-bestand kan meerdere bestanden en meerdere bestands typen bevatten.
+    * **Script bundel**: de derde invoer accepteert zip-bestanden. Een zip-bestand kan meerdere bestanden en meerdere bestands typen bevatten.
 
 1. Typ of plak een geldig R-script in het tekstvak **R-script** .
 

@@ -8,12 +8,12 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 08/03/2020
 ms.author: banders
-ms.openlocfilehash: 0b3cf0c705048d37d422d62b77dc7d94c5ae13bd
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 7bec455b804d1f4b13ab7e13677092077214a121
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92149392"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94965847"
 ---
 # <a name="get-started-with-your-updated-azure-billing-account"></a>Aan de slag met uw bijgewerkte Azure-factureringsaccount
 
@@ -42,7 +42,7 @@ Wanneer uw account wordt bijgewerkt, wordt er automatisch een factureringsprofie
 
 Rollen in de factureringsprofielen hebben machtigingen om facturen en betalingswijzen weer te geven en te beheren. Deze rollen moeten worden toegewezen aan gebruikers die facturen betalen, zoals leden van het boekhoudteam in een organisatie. Zie [Rollen en taken van een factureringsprofiel](../manage/understand-mca-roles.md#billing-profile-roles-and-tasks) voor meer informatie. 
 
-Wanneer uw account wordt bijgewerkt, geldt dat voor elk abonnement waarvoor u anderen toestemming hebt gegeven om [facturen te bekijken](download-azure-invoice.md#allow-others-to-download-the-your-subscription-invoice), gebruikers met de Azure RBAC-rol Eigenaar, Bijdrager, Lezer of Factureringslezer de rol Lezer krijgen voor het respectievelijke factureringsprofiel.
+Wanneer uw account wordt bijgewerkt, geldt dat voor elk abonnement waarvoor u anderen toestemming hebt gegeven om [facturen te bekijken](download-azure-invoice.md#allow-others-to-download-the-your-subscription-invoice), gebruikers met de Azure-rol Eigenaar, Bijdrager, Lezer of Factureringslezer de rol Lezer krijgen voor het respectievelijke factureringsprofiel.
 
 ## <a name="invoice-sections"></a>Factuursecties
 

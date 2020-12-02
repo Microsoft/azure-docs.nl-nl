@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 09/30/2020
+ms.date: 11/19/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 72575725c0924b8ec5f9466f4ffbba86bf071db4
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.openlocfilehash: 28637f35294e9c70cbf0e96fb2cdcb1853d2ba39
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91631529"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94992723"
 ---
 ::: zone target="docs"
 
@@ -47,7 +47,7 @@ In deze zelfstudie vindt u informatie over onderwerpen als:
 Zorg voordat u begint voor het volgende:
 
 * U hebt de [Zelfstudie: Gegevens kopiëren naar Azure Data Box en deze gegevens controleren](data-box-deploy-copy-data.md).
-* Kopieertaken zijn voltooid en er zijn geen fouten op de pagina **Verbinding maken en kopiëren** . Voorbereiding voor verzending kan niet worden uitgevoerd als er kopieertaken worden uitgevoerd of als er fouten zijn op de pagina **Verbinding maken en kopiëren** .
+* Kopieertaken zijn voltooid en er zijn geen fouten op de pagina **Verbinding maken en kopiëren**. Voorbereiding voor verzending kan niet worden uitgevoerd als er kopieertaken worden uitgevoerd of als er fouten zijn op de pagina **Verbinding maken en kopiëren**.
 
 ## <a name="prepare-to-ship"></a>Voorbereiding voor verzending
 
@@ -84,7 +84,7 @@ Voer de volgende stappen uit als u het apparaat vanuit de VS, Canada of Europa r
 
 1. Zorg ervoor dat het apparaat uit staat en de kabels zijn verwijderd. 
 2. Rol het netsnoer op en plaats het veilig aan de achterzijde van het apparaat.
-3. Zorg ervoor dat het verzendlabel wordt weergegeven op het E-ink-scherm en plan met de vervoerder een tijdstip waarop het kan worden opgehaald. Neem contact op met de Microsoft-ondersteuning als het label beschadigd is of ontbreekt of niet wordt weergegeven op het e-inkscherm. Als het ondersteuningsteam dit aanraadt, gaat u in de Azure-portal naar **Overzicht > Verzendlabel downloaden** . Download het verzendlabel en bevestig dat op het apparaat. 
+3. Zorg ervoor dat het verzendlabel wordt weergegeven op het E-ink-scherm en plan met de vervoerder een tijdstip waarop het kan worden opgehaald. Neem contact op met de Microsoft-ondersteuning als het label beschadigd is of ontbreekt of niet wordt weergegeven op het e-inkscherm. Als het ondersteuningsteam dit aanraadt, gaat u in de Azure-portal naar **Overzicht > Verzendlabel downloaden**. Download het verzendlabel en bevestig dat op het apparaat. 
 4. Als u het apparaat retourneert, spreekt u met UPS een tijdstip af waarop het kan worden opgehaald. Ophalen van apparaat plannen:
 
     * Bel met UPS (gratis land-/regiospecifiek nummer).
@@ -92,7 +92,7 @@ Voer de volgende stappen uit als u het apparaat vanuit de VS, Canada of Europa r
     * Als het trackingnummer niet wordt vermeld, moet u bij het afhalen door UPS extra kosten betalen.
 
     In plaats van het ophalen te plannen, kunt u de Data Box ook zelf naar de dichtstbijzijnde inleverlocatie brengen.
-4. Nadat de Data Box door de vervoerder is opgehaald en gescand, verandert de orderstatus in de portal in **Opgehaald** . Er wordt ook een tracerings-id weergegeven.
+4. Nadat de Data Box door de vervoerder is opgehaald en gescand, verandert de orderstatus in de portal in **Opgehaald**. Er wordt ook een tracerings-id weergegeven.
 
 ::: zone target="chromeless"
 
@@ -103,12 +103,6 @@ Voer de volgende stappen uit als u het apparaat vanuit de VS, Canada of Europa r
 ## <a name="erasure-of-data-from-data-box"></a>Gegevens verwijderen uit de Data Box
 
 Nadat de gegevens naar Azure zijn geüpload, worden de gegevens door de Data Box van de schijven gewist volgens de [richtlijnen van NIST SP 800-88 Revision 1](https://csrc.nist.gov/News/2014/Released-SP-800-88-Revision-1,-Guidelines-for-Medi).
-
-::: zone-end
-
-::: zone target="docs"
-
-[!INCLUDE [data-box-verify-upload-return](../../includes/data-box-verify-upload-return.md)]
 
 ::: zone-end
 
@@ -131,12 +125,6 @@ Voor Azure-datacenters in Australië geldt een extra beveiligingsmaatregel. Alle
 ## <a name="erasure-of-data-from-data-box"></a>Gegevens verwijderen uit de Data Box
 
 Nadat de gegevens naar Azure zijn geüpload, worden de gegevens door de Data Box van de schijven gewist volgens de [richtlijnen van NIST SP 800-88 Revision 1](https://csrc.nist.gov/News/2014/Released-SP-800-88-Revision-1,-Guidelines-for-Medi).
-
-::: zone-end
-
-::: zone target="docs"
-
-[!INCLUDE [data-box-verify-upload-return](../../includes/data-box-verify-upload-return.md)]
 
 ::: zone-end
 
@@ -182,12 +170,6 @@ Nadat de gegevens naar Azure zijn geüpload, worden de gegevens door de Data Box
 
 ::: zone-end
 
-::: zone target="docs"
-
-[!INCLUDE [data-box-verify-upload-return](../../includes/data-box-verify-upload-return.md)]
-
-::: zone-end
-
 ## <a name="singapore"></a>[Singapore](#tab/in-singapore)
 
 1. Bewaar de oorspronkelijke doos om het apparaat terug te sturen.
@@ -223,33 +205,33 @@ Nadat de gegevens naar Azure zijn geüpload, worden de gegevens door de Data Box
 
 ::: zone-end
 
-::: zone target="docs"
-
-[!INCLUDE [data-box-verify-upload-return](../../includes/data-box-verify-upload-return.md)]
-
-::: zone-end
-
 ## <a name="south-africa"></a>[Zuid-Afrika](#tab/in-sa)
 
 1. Verpak het apparaat in de oorspronkelijke doos om het apparaat terug te sturen.
 2. Rol het meegeleverde netsnoer op en plaats het in de opberglade aan de achterkant van het apparaat.
-3. Ophalen door DHL inplannen:
+3. Noteer het volgnummer (weergegeven als referentienummer op de pagina **Voorbereiden voor verzending** van de lokale web-UI van Data Box). Dit is beschikbaar nadat de stap "Voorbereiden voor verzending" volledig is voltooid. Download het verzendlabel vanaf deze pagina en plak het vervolgens op de doos.
+4. Vraag een retourcode aan van Azure Data Box-bewerkingen. Er is een retourcode vereist om het pakket terug te sturen naar het datacentrum. E-mail verzenden naar [adbops@microsoft.com](mailto:adbops@microsoft.com). Noteer deze code op het verzendlabel naast het retouradres zodat het duidelijk zichtbaar is.
+5. Laat het pakket door DHL ophalen met een van de volgende methodes:
+ 
+   * Regel het ophalen van het pakket online door naar [DHL Express Zuid-Afrika, **Ophalen plannen**](https://mydhl.express.dhl/za/en/schedule-pickup.html#/schedule-pickup#label-reference) te gaan.
+   * Stuur een e-mail naar [Priority.Support@dhl.com](mailto:Priority.Support@dhl.com) met behulp van de volgende sjabloon:
 
-    * Bel met het klantenservicecentrum op + 27(0) 11 9213600, selecteer optie 1 en geef het nummer van de vrachtbrief op.
-    * U moet vóór 14:00 bellen om het ophalen te plannen.
-    * Stuur een e-mail naar [Priority.Support@dhl.com](mailto:Priority.Support@dhl.com) met behulp van de volgende sjabloon:
+     ```output
+     To: Priority.Support@dhl.com
+     Subject: Pickup request for Microsoft Azure
+     Body: Need pick up for the below shipment
+       *  DHL tracking number: (reference number/waybill number)
+       *  Requested pickup date: yyyy/mm/dd;time:HH MM
+       *  Shipper contact: (company name)
+       *  Contact person: 
+       *  Phone number: 
+       *  Full physical address: 
+       *  Item to be collected: Azure Dt
+     ```
 
-    ```output
-    To: Priority.Support@dhl.com
-    Subject: Pickup request for Microsoft Azure
-    Body: Need pick up for the below shipment
-      *  DHL tracking number (reference number/waybill number)
-      *  Requested pickup date: yyyy/mm/dd;time:HH MM
-    ```
+    * Of lever het pakket af bij het dichtstbijzijnde DHL-servicepunt.
 
-    * Een andere optie is het pakket af te leveren bij het dichtstbijzijnde DHL-servicepunt.
-
-4. Als u problemen hebt, stuurt u een e-mail naar [Priority.Support@dhl.com](mailto:Priority.Support@dhl.com) met details van de problemen die zich hebben voorgedaan. Vermeld het vrachtnummer in de onderwerpregel. U kunt ook bellen naar +27(0)119213902.
+6. Als u problemen hebt, stuurt u een e-mail naar [Priority.Support@dhl.com](mailto:Priority.Support@dhl.com) met details van de problemen die zich hebben voorgedaan. Vermeld het vrachtnummer in de onderwerpregel. U kunt ook bellen naar +27(0)119213902.
 
 ::: zone target="chromeless"
 
@@ -260,12 +242,6 @@ Nadat de gegevens naar Azure zijn geüpload, worden de gegevens door de Data Box
 ## <a name="erasure-of-data-from-data-box"></a>Gegevens verwijderen uit de Data Box
 
 Nadat de gegevens naar Azure zijn geüpload, worden de gegevens door de Data Box van de schijven gewist volgens de [richtlijnen van NIST SP 800-88 Revision 1](https://csrc.nist.gov/News/2014/Released-SP-800-88-Revision-1,-Guidelines-for-Medi).
-
-::: zone-end
-
-::: zone target="docs"
-
-[!INCLUDE [data-box-verify-upload-return](../../includes/data-box-verify-upload-return.md)]
 
 ::: zone-end
 
@@ -301,12 +277,6 @@ Indien u een probleem ondervindt, stuurt u een e-mail naar Data Box Operations A
 ## <a name="erasure-of-data-from-data-box"></a>Gegevens verwijderen uit de Data Box
  
 Nadat de gegevens naar Azure zijn geüpload, worden de gegevens door de Data Box van de schijven gewist volgens de [richtlijnen van NIST SP 800-88 Revision 1](https://csrc.nist.gov/News/2014/Released-SP-800-88-Revision-1,-Guidelines-for-Medi).
-
-::: zone-end
-
-::: zone target="docs"
-
-[!INCLUDE [data-box-verify-upload-return](../../includes/data-box-verify-upload-return.md)]
 
 ::: zone-end
 
@@ -369,8 +339,6 @@ Als u de Data Box gebruikt in de Amerikaanse overheid, Japan, Singapore, Korea, 
 
 ::: zone target="chromeless"
 
----
-
 ## <a name="verify-data-upload-to-azure"></a>De gegevensupload naar Azure controleren
 
 [!INCLUDE [data-box-verify-upload](../../includes/data-box-verify-upload.md)]
@@ -381,7 +349,11 @@ Nadat de gegevens naar Azure zijn geüpload, worden de gegevens door de Data Box
 
 ::: zone-end
 
+---
+
 ::: zone target="docs"
+
+## <a name="verify-data-upload-to-azure"></a>De gegevensupload naar Azure controleren
 
 [!INCLUDE [data-box-verify-upload-return](../../includes/data-box-verify-upload-return.md)]
 

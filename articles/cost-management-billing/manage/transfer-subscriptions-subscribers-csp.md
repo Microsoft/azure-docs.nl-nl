@@ -8,12 +8,12 @@ ms.subservice: billing
 ms.topic: how-to
 ms.date: 11/17/2020
 ms.author: banders
-ms.openlocfilehash: 7cbb628f6af286141fb1c7b330117ded33142c4f
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 4cc213db19a567f18c5ff483b64a75e3bbeef892
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94744235"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94962107"
 ---
 # <a name="transfer-azure-subscriptions-between-subscribers-and-csps"></a>Overdracht van Azure-abonnementen tussen abonnees en CSP's
 
@@ -58,7 +58,7 @@ Als u andere Azure-abonnementen wilt overdragen van een CSP-partner naar een and
 
 1. Maak doelabonnementen voor Azure.
 1. Zorg ervoor dat de bron- en doelabonnementen zich in dezelfde Azure Active Directory-tenant (Azure AD) bevinden. Zie [Een Azure-abonnement aan uw Azure Active Directory-tenant toevoegen of koppelen](../../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md) voor meer informatie over het wijzigen van een Azure AD-tenant.
-    Houd er rekening mee dat de directory voor de wijziging niet het CSP-abonnement is. U kunt bijvoorbeeld overgaan van een CSP-abonnement naar een abonnement met betalen per gebruik. U moet de directory van het abonnement met betalen per gebruik wijzigen, zodat deze overeenkomt met de directory.
+    Houd er rekening mee dat de optie directory voor de wijziging niet wordt ondersteund voor het CSP-abonnement. U kunt bijvoorbeeld overgaan van een CSP-abonnement naar een abonnement met betalen per gebruik. U moet de directory van het abonnement met betalen per gebruik wijzigen, zodat deze overeenkomt met de directory.
 
     > [!IMPORTANT]
     >  - Wanneer u een abonnement aan een andere directory koppelt, verliezen gebruikers aan wie rollen zijn toegewezen met [Azure RBAC](../../role-based-access-control/role-assignments-portal.md) hun toegang. Klassieke abonnementsbeheerders, waaronder de servicebeheerder en co-beheerders, verliezen ook hun toegang.

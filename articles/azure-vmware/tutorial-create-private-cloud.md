@@ -2,13 +2,13 @@
 title: Zelfstudie - vSphere-cluster implementeren in Azure
 description: Meer informatie over het implementeren van een vSphere-cluster in Azure met behulp van Azure VMware Solution
 ms.topic: tutorial
-ms.date: 09/21/2020
-ms.openlocfilehash: b673a67fac734c9cb63e96b6a0c3dc9182f4b994
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.date: 11/19/2020
+ms.openlocfilehash: 93937f8ca0918494810885f5cb45de571a6e1529
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91952281"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94966306"
 ---
 # <a name="tutorial-deploy-an-azure-vmware-solution-private-cloud-in-azure"></a>Zelfstudie: Een Azure VMware Solution-privécloud implementeren in Azure
 
@@ -43,7 +43,7 @@ U kunt een Azure VMware Solution-privécloud maken met behulp van [Azure Portal]
 
 ### <a name="azure-cli"></a>Azure CLI
 
-U kunt ook een Azure VMware Solution-privécloud maken met de Azure CLI met behulp van de Azure Cloud Shell in plaats van met Azure Portal.  Zie [Azure VMware-opdrachten](/cli/azure/ext/vmware/vmware) voor een lijst met opdrachten die u kunt gebruiken met de Azure VMware-oplossing.
+U kunt ook een Azure VMware Solution-privécloud maken met de Azure CLI met behulp van de Azure Cloud Shell in plaats van met Azure Portal.  Zie [Azure VMware-opdrachten](/cli/azure/ext/vmware/vmware) voor een lijst met opdrachten die u kunt gebruiken met Azure VMware Solution.
 
 #### <a name="open-azure-cloud-shell"></a>Azure Cloud Shell openen
 
@@ -51,7 +51,7 @@ Selecteer **Nu proberen** in de rechterbovenhoek van een codeblok. U kunt Cloud 
 
 #### <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Een resourcegroep maken met de opdracht [az group create](/cli/azure/group). Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *eastus*:
+Maak een resourcegroep met de opdracht `[az group create](/cli/azure/group)`. Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *eastus*:
 
 ```azurecli-interactive
 
@@ -77,7 +77,7 @@ az vmware private-cloud create -g myResourceGroup -n myPrivateCloudName --locati
 
 ## <a name="delete-an-azure-vmware-solution-private-cloud"></a>Een Azure VMware Solution-privécloud verwijderen
 
-Als u een Azure VMware Solution-privécloud hebt die u niet meer nodig hebt, kunt u deze verwijderen. Een privécloud van Azure VMware Solution bevat een geïsoleerd netwerkdomein, een of meer vSphere-clusters die zijn ingericht op toegewezen serverknooppunten, en meestal veel virtuele machines. Als een privécloud wordt verwijderd, worden alle virtuele machines, hun gegevens en clusters verwijderd. De toegewezen bare-metalknooppunten worden veilig gewist en geretourneerd naar de gratis pool. Het netwerkdomein dat is ingericht voor de klant wordt verwijderd.  
+Als u een Azure VMware Solution-privécloud hebt die u niet meer nodig hebt, kunt u deze verwijderen. Een privécloud van Azure VMware Solution bevat een geïsoleerd netwerkdomein, een of meer ingerichte vSphere-clusters op toegewezen serverhosts, en meerdere virtuele machines. Als een privécloud wordt verwijderd, worden alle virtuele machines, hun gegevens en clusters verwijderd. De toegewezen bare-metalhosts worden veilig gewist en geretourneerd naar de gratis pool. Het netwerkdomein dat is ingericht voor de klant wordt verwijderd.  
 
 > [!CAUTION]
 > Het verwijderen van de privécloud is een onomkeerbare bewerking. Zodra de privécloud is verwijderd, kunnen de gegevens niet worden hersteld. Dit komt doordat alle actieve workloads en onderdelen worden beëindigd en alle privécloudgegevens en configuratie-instellingen, met inbegrip van openbare IP-adressen, worden vernietigd.
@@ -92,7 +92,7 @@ Zodra een privécloud is verwijderd, is er geen manier om de virtuele machines e
 
 2. Selecteer de privécloud die u wilt verwijderen.
  
-3. Voer de naam van de privécloud in en selecteer **Ja**. Binnen een paar uur is het verwijderingsproces voltooid.  
+3. Voer de naam van de privécloud in en selecteer **Ja**. Binnen een paar uur wordt het verwijderingsproces voltooid.  
 
 ## <a name="azure-vmware-commands"></a>Azure VMware-opdrachten
 
@@ -100,7 +100,7 @@ Zie [Azure VMware-opdrachten](/cli/azure/ext/vmware/vmware) voor een lijst met o
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie heeft u het volgende geleerd:
+In deze zelfstudie hebt u het volgende geleerd:
 
 > [!div class="checklist"]
 > * Een Azure VMware Solution-privécloud maken

@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: Code42 configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
-description: Meer informatie over het automatisch inrichten en ongedaan maken van de inrichting van gebruikers accounts van Azure AD naar Code42.
+title: 'Zelfstudie: Code42 configureren voor automatische inrichting van gebruikers met Azure Active Directory | Microsoft Docs'
+description: Meer informatie over het automatisch inrichten en ongedaan maken van de inrichting van gebruikersaccounts van Azure AD voor Code42.
 services: active-directory
 documentationcenter: ''
 author: Zhchia
@@ -15,72 +15,72 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 09/23/2020
 ms.author: Zhchia
-ms.openlocfilehash: e7f3817a6db288e93b5e0dc99c7b6c9b7bd2e44b
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: ffae286437a476d5ebe08c3ee442d0d52af84eb7
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94355733"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96179335"
 ---
-# <a name="tutorial-configure-code42-for-automatic-user-provisioning"></a>Zelf studie: Code42 configureren voor automatische gebruikers inrichting
+# <a name="tutorial-configure-code42-for-automatic-user-provisioning"></a>Zelfstudie: Code42 configureren voor automatische gebruikersinrichting
 
-In deze zelf studie worden de stappen beschreven die u moet uitvoeren in zowel Code42 als Azure Active Directory (Azure AD) voor het configureren van automatische gebruikers inrichting. Wanneer de configuratie is geconfigureerd, worden gebruikers en groepen door Azure AD automatisch ingericht en [GeCode42d](https://www.crashplan.com/) met behulp van de Azure AD-inrichtings service. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md).
+In deze zelfstudie worden de stappen beschreven die u moet uitvoeren in zowel Code42 als Azure Active Directory (Azure AD) voor het configureren van automatische inrichting van gebruikers. Wanneer de configuratie is voltooid, wordt inrichting en ongedaan maken van inrichting van gebruikers en groepen door Azure AD automatisch uitgevoerd op [Code42](https://www.crashplan.com/) met behulp van de Azure AD-inrichtingsservice. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md).
 
 
 ## <a name="capabilities-supported"></a>Ondersteunde mogelijkheden
 > [!div class="checklist"]
 > * Gebruikers maken in Code42
-> * Gebruikers in Code42 verwijderen wanneer ze niet meer toegang nodig hebben
-> * Gebruikers kenmerken gesynchroniseerd laten tussen Azure AD en Code42
-> * Inrichtings groepen en groepslid maatschappen in Code42
+> * Gebruikers uit Code42 verwijderen wanneer ze geen toegang meer nodig hebben
+> * Gebruikerskenmerken gesynchroniseerd houden tussen Azure AD en Code42
+> * Groepen en groepslidmaatschappen inrichten in Code42
 > * [Eenmalige aanmelding](./code42-tutorial.md) bij Code42 (aanbevolen)
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende vereisten:
 
-* [Een Azure AD-Tenant](../develop/quickstart-create-new-tenant.md)
-* Een gebruikers account in azure AD met [toestemming](../users-groups-roles/directory-assign-admin-roles.md) voor het configureren van inrichting (bijvoorbeeld toepassings beheerder, Cloud toepassings beheerder, eigenaar van de toepassing of globale beheerder).
-* Een Code42-Tenant met identiteits beheer ingeschakeld.
-* Een Code42-gebruikers account met een machtiging voor de [Cloud beheerder](https://support.code42.com/Administrator/Cloud/Monitoring_and_managing/Roles_reference#Customer_Cloud_Admin) van de klant.
+* [Een Azure AD-tenant](../develop/quickstart-create-new-tenant.md)
+* Een gebruikersaccount in Azure AD met [machtigingen](../roles/permissions-reference.md) voor het configureren van inrichting (bijvoorbeeld Toepassingsbeheerder, Cloudtoepassingsbeheerder, Toepassingseigenaar of Globale beheerder).
+* Een Code42-tenant met Identiteitsbeheer ingeschakeld.
+* Een Code42-gebruikersaccount met de machtiging [Customer Cloud Admin](https://support.code42.com/Administrator/Cloud/Monitoring_and_managing/Roles_reference#Customer_Cloud_Admin) (Cloudbeheerder van klant).
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Stap 1. Implementatie van de inrichting plannen
 1. Lees [hoe de inrichtingsservice werkt](../app-provisioning/user-provisioning.md).
 2. Bepaal wie u wilt opnemen in het [bereik voor inrichting](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
-3. Bepaal welke gegevens moeten worden [toegewezen tussen Azure AD en Code42](../app-provisioning/customize-application-attributes.md).
+3. Bepaal welke gegevens u wilt [toewijzen tussen Azure AD en Code42](../app-provisioning/customize-application-attributes.md).
 
-## <a name="step-2-configure-code42-to-support-provisioning-with-azure-ad"></a>Stap 2. Code42 configureren voor ondersteuning bij het inrichten met Azure AD
+## <a name="step-2-configure-code42-to-support-provisioning-with-azure-ad"></a>Stap 2. Code42 configureren om ondersteuning te bieden voor inrichting met Azure AD
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van Azure AD als een inrichtings provider in de sectie identiteits beheer van de Code42's-console. Als u dit doet, kan Code42 veilig inrichtings aanvragen ontvangen van Azure AD. Het is raadzaam om de [Code42's-ondersteunings documentatie](https://support.code42.com/Administrator/Cloud/Configuring/Introduction_to_SCIM_provisioning/How_to_provision_users_to_Code42_from_Azure_AD) te controleren voordat u het inrichten met Azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van Azure AD als inrichtingsprovider in de sectie Identity Management (Identiteitsbeheer) van de console van Code42. Als u dit doet, kan Code42 veilig inrichtingsaanvragen ontvangen van Azure AD. U wordt aangeraden de [documentatie voor ondersteuning van Code42](https://support.code42.com/Administrator/Cloud/Configuring/Introduction_to_SCIM_provisioning/How_to_provision_users_to_Code42_from_Azure_AD) te bekijken voordat u het product inricht met Azure AD.
 
-### <a name="to-create-a-provisioning-provider-in-code42s-console"></a>Een inrichtings provider maken in de Code42's-console:
+### <a name="to-create-a-provisioning-provider-in-code42s-console"></a>Een inrichtingsprovider maken in de console van Code42:
 
-1. Meld u aan bij uw Code42-console. Selecteer **beheer** om het navigatie menu uit te vouwen. Selecteer **instellingen** en vervolgens **identiteits beheer**.
-2. Selecteer het tabblad **inrichten** . Vouw vervolgens het menu **inrichtings provider toevoegen** uit en selecteer **scim provider toevoegen**.
-3. Voer in het veld **weergave naam** een unieke naam in voor de inrichtings provider. Stel het **type verificatie referentie** in op **OAuth-token**. Selecteer **volgende** om referenties te genereren.
+1. Meld u aan bij uw Code42-console. Selecteer **Administration** (Beheer) om het navigatiemenu uit te vouwen. Selecteer **Settings** (Instellingen) en **Identity Management** (Identiteitsbeheer).
+2. Selecteer het tabblad **Inrichten**. Vouw vervolgens het menu **Add provisioning provider** (Inrichtingsprovider toevoegen) uit en selecteer **Add SCIM provider** (SCIM-provider toevoegen).
+3. Voer in het veld **Display name** (Weergavenaam) een unieke naam in voor de inrichtingsprovider. Stel **Authentication credential type** (type referenties voor verificatie) in op **OAuth-token**. Selecteer **Next** (Volgende) om referenties te genereren.
 
 > [!NOTE]
->* Houd dit venster open totdat u wordt gevraagd naar de **basis-URL** en het **token** dat u in de volgende stappen hebt vereist.
->* U kunt deze informatie ook kopiëren naar een tijdelijke locatie voor toekomstige referentie.
+>* Houd dit venster open totdat u wordt gevraagd om de **basis-URL** en het **token**. Deze gegevens zijn vereist voor de volgende stappen.
+>* U kunt deze informatie ook naar een tijdelijke locatie kopiëren voor later gebruik.
 
-## <a name="step-3-add-code42-from-the-azure-ad-application-gallery"></a>Stap 3. Code42 toevoegen vanuit de Azure AD-toepassings galerie
+## <a name="step-3-add-code42-from-the-azure-ad-application-gallery"></a>Stap 3. Code42 toevoegen vanuit de Azure AD-toepassingsgalerie
 
-Voeg Code42 toe vanuit de Azure AD-toepassings galerie om het beheren van de inrichting van Code42 te starten. Als u eerder Code42 voor SSO hebt ingesteld, kunt u dezelfde toepassing gebruiken. U wordt echter aangeraden een afzonderlijke app te maken wanneer u de integratie voor het eerst test. Klik [hier](../manage-apps/add-application-portal.md) voor meer informatie over het toevoegen van een toepassing uit de galerie.
+Voeg Code42 toe vanuit de Azure AD-toepassingsgalerie om de inrichting in Code42 te beheren. Als u Code42 eerder hebt ingesteld voor eenmalige aanmelding, kunt u dezelfde toepassing gebruiken. U wordt echter aangeraden een afzonderlijke app te maken wanneer u de integratie voor het eerst test. Klik [hier](../manage-apps/add-application-portal.md) voor meer informatie over het toevoegen van een toepassing uit de galerie.
 
 ## <a name="step-4-define-who-will-be-in-scope-for-provisioning"></a>Stap 4. Definiëren wie u wilt opnemen in het bereik voor inrichting
 
 Met de Azure AD-inrichtingsservice kunt u bepalen wie worden ingericht op basis van toewijzing aan de toepassing en/of op basis van kenmerken van de gebruiker/groep. Als u ervoor kiest om te bepalen wie wordt ingericht voor uw app op basis van toewijzing, kunt u de volgende [stappen](../manage-apps/assign-user-or-group-access-portal.md) gebruiken om gebruikers en groepen aan de toepassing toe te wijzen. Als u ervoor kiest om uitsluitend te bepalen wie wordt ingericht op basis van kenmerken van de gebruiker of groep, kunt u een bereikfilter gebruiken zoals [hier](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) wordt beschreven.
 
-* Wanneer u gebruikers en groepen toewijst aan Code42, moet u een andere rol dan **standaard toegang** selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](../develop/howto-add-app-roles-in-azure-ad-apps.md) om extra rollen toe te voegen.
+* Wanneer u gebruikers en groepen toewijst aan Code42, moet u een andere rol dan **Standaardtoegang** selecteren. Gebruikers met de rol Standaardtoegang worden uitgesloten van inrichting en worden gemarkeerd als niet-effectief gerechtigd in de inrichtingslogboeken. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](../develop/howto-add-app-roles-in-azure-ad-apps.md) om extra rollen toe te voegen.
 
 * Begin klein. Test de toepassing met een kleine set gebruikers en groepen voordat u de toepassing naar iedereen uitrolt. Wanneer het bereik voor inrichting is ingesteld op toegewezen gebruikers en groepen, kunt u dit beheren door een of twee gebruikers of groepen aan de app toe te wijzen. Wanneer het bereik is ingesteld op alle gebruikers en groepen, kunt u een [bereikfilter op basis van kenmerken](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md) opgeven.
 
 
-## <a name="step-5-configure-automatic-user-provisioning-to-code42"></a>Stap 5. Automatische gebruikers inrichting configureren voor Code42
+## <a name="step-5-configure-automatic-user-provisioning-to-code42"></a>Stap 5. Automatische gebruikersinrichting configureren voor Code42
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtings service om gebruikers en/of groepen in TestApp te maken, bij te werken en uit te scha kelen op basis van gebruikers-en/of groeps toewijzingen in azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in BlogIn te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
-### <a name="to-configure-automatic-user-provisioning-for-code42-in-azure-ad"></a>Automatische gebruikers inrichting configureren voor Code42 in azure AD:
+### <a name="to-configure-automatic-user-provisioning-for-code42-in-azure-ad"></a>Automatische gebruikersinrichting configureren voor Code42 in Azure AD:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
 
@@ -88,7 +88,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 2. Selecteer **Code42** in de lijst met toepassingen.
 
-    ![De koppeling Code42 in de lijst met toepassingen](common/all-applications.png)
+    ![De koppeling Code42 in de lijst Toepassingen](common/all-applications.png)
 
 3. Selecteer het tabblad **Inrichten**.
 
@@ -96,9 +96,9 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Tabblad inrichten automatisch](common/provisioning-automatic.png)
+    ![De inrichtingsmodus ingesteld op Automatisch](common/provisioning-automatic.png)
 
-5. In het gedeelte **beheerders referenties** voert u de **scim 2,0-basis-URL en toegangs token** waarden in die eerder zijn opgehaald uit Code42 in de **Tenant-URL** en het **geheime token** . Klik op **verbinding testen** om te controleren of Azure AD verbinding kan maken met Code42. Als de verbinding mislukt, zorg er dan voor dat uw Code42-account beheerders machtigingen heeft en probeer het opnieuw.
+5. In het gedeelte **Beheerdersreferenties** voert u de waarden voor **SCIM 2.0 basis-URL en toegangstoken** in die eerder zijn opgehaald uit Code42 in respectievelijk **Tenant-URL** en **Token voor geheim**. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met Code42. Als de verbinding mislukt, moet u controleren of uw Code42-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
     ![Token](common/provisioning-testconnection-tenanturltoken.png)
 
@@ -108,9 +108,9 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 7. Selecteer **Opslaan**.
 
-8. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory gebruikers synchroniseren met Code42**.
+8. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers synchroniseren met Code42**.
 
-9. Controleer de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar Code42 in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de gebruikers accounts in Code42 voor bijwerk bewerkingen. Als u ervoor kiest om het [overeenkomende doel kenmerk](../app-provisioning/customize-application-attributes.md)te wijzigen, moet u ervoor zorgen dat de CODE42-API het filteren van gebruikers op basis van dat kenmerk ondersteunt. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+9. Controleer in de sectie **Kenmerktoewijzingen** de gebruikerskenmerken die vanuit Azure AD met Code42 worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in Code42 te vinden voor updatebewerkingen. Als u ervoor kiest om het [overeenkomende doelkenmerk](../app-provisioning/customize-application-attributes.md) te wijzigen, moet u ervoor zorgen dat de API van Code42 het filteren van gebruikers op basis van dat kenmerk kan ondersteunen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
    |Kenmerk|Type|
    |---|---|
@@ -120,18 +120,18 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
    |emails[type eq "work"].value|Tekenreeks|
    |name.givenName|Tekenreeks|
    |name.familyName|Tekenreeks|
-   |adressen [type EQ "werk]. locatie|Tekenreeks|
-   |adressen [type EQ "werk]. regio|Tekenreeks|
-   |adressen [type EQ "werk]. land|Tekenreeks|
+   |addresses[type eq "work"].locality|Tekenreeks|
+   |addresses[type eq "work"].region|Tekenreeks|
+   |addresses[type eq "work"].country|Tekenreeks|
    |externalId|Tekenreeks|
    |userType|Tekenreeks|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Tekenreeks|
-   |urn: IETF: params: scim: schemas: extensie: Enter prise: 2.0: gebruiker: deling|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division|Tekenreeks|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Naslaginformatie|
 
-10. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory groepen synchroniseren met Code42**.
+10. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-groepen synchroniseren met Code42**.
 
-11. Controleer de groeps kenmerken die zijn gesynchroniseerd vanuit Azure AD naar Code42 in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de groepen in Code42 te vergelijken voor bijwerk bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+11. Controleer in de sectie **Kenmerktoewijzingen** de groepskenmerken die worden gesynchroniseerd vanuit Azure AD naar Code42. De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de groepen in Code42 te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
       |Kenmerk|Type|
       |---|---|
@@ -141,11 +141,11 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 12. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-13. Als u de Azure AD-inrichtings service voor **Code42 wilt inschakelen, wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
+13. Wijzig **Inrichtingsstatus** naar **Aan** in de sectie **Instellingen** om de Azure AD-inrichtingsservice in te schakelen voor Code42.
 
     ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
 
-14. Definieer de gebruikers en/of groepen die u wilt inrichten voor Code42 door de gewenste waarden in het **bereik** te kiezen in de sectie **instellingen** .
+14. Definieer de gebruikers en/of groepen die u aan Code42 wilt toevoegen door de gewenste waarden te kiezen bij **Bereik** in de sectie **Instellingen**.
 
     ![Inrichtingsbereik](common/provisioning-scope.png)
 
@@ -166,8 +166,8 @@ Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om u
 
 * [Gebruikersaccountinrichting voor zakelijke apps beheren](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
-* [Organisatie toewijzingen configureren op basis van SCIM groepen in Code42](https://support.code42.com/Administrator/Cloud/Configuring/Introduction_to_SCIM_provisioning/How_to_provision_users_to_Code42_from_Azure_AD#Step_6:_Choose_an_organization_mapping_method)
-* [Roltoewijzingen configureren op basis van SCIM groepen in Code42](https://support.code42.com/Administrator/Cloud/Configuring/Introduction_to_SCIM_provisioning/How_to_provision_users_to_Code42_from_Azure_AD#Step_7:_Configure_role_mapping)
+* [Organisatietoewijzingen op basis van SCIM-groepen in Code42 configureren](https://support.code42.com/Administrator/Cloud/Configuring/Introduction_to_SCIM_provisioning/How_to_provision_users_to_Code42_from_Azure_AD#Step_6:_Choose_an_organization_mapping_method)
+* [Roltoewijzingen op basis van SCIM-groepen in Code42 configureren](https://support.code42.com/Administrator/Cloud/Configuring/Introduction_to_SCIM_provisioning/How_to_provision_users_to_Code42_from_Azure_AD#Step_7:_Configure_role_mapping)
 
 ## <a name="next-steps"></a>Volgende stappen
 

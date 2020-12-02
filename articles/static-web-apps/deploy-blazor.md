@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 09/10/2020
 ms.author: cshoe
-ms.openlocfilehash: 60e62228e33d2d86bb407e45802f5c0621a94049
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 80a48a948c70db7344ac9cbc20474177309bd909
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91761087"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95024225"
 ---
 # <a name="tutorial-building-a-static-web-app-with-blazor-in-azure-static-web-apps"></a>Zelfstudie: Een statische web-app bouwen met Blazor in Azure Static Web Apps
 
@@ -33,7 +33,7 @@ Met Azure Static Web Apps kunt u statische webtoepassingen maken die worden onde
 
 De app die in deze zelfstudie wordt aanbevolen, bestaat uit drie verschillende Visual Studio-projecten:
 
-- **Api**: De C# Azure Functions-toepassing die het API-eindpunt implementeert dat weerinformatie levert aan de statische app. De [`WeatherForecastFunction`](https://github.com/ssdeepak/blazor/blob/main/Api/WeatherForecastFunction.cs) retourneert een matrix van `WeatherForecast`-objecten.
+- **Api**: De C# Azure Functions-toepassing die het API-eindpunt implementeert dat weerinformatie levert aan de statische app. De **WeatherForecastFunction** retourneert een matrix van `WeatherForecast` objects.
 
 - **Client**: Het front-end Blazor-web-assembly-webproject. Er wordt een [terugvalroute](#fallback-route) geïmplementeerd om ervoor te zorgen dat aan alle routes het _index. html_-bestand worden geleverd.
 
@@ -79,7 +79,7 @@ Nu de opslagplaats is gemaakt, kunt u een statische web-app maken in de Azure Po
 
 Op het tabblad _Basisbeginselen_ kunt u de nieuwe app configureren en aan een GitHub-opslagplaats koppelen.
 
-:::image type="content" source="media/deploy-blazor/basics.png" alt-text="Volledige Blazor-app":::
+:::image type="content" source="media/deploy-blazor/basics.png" alt-text="Tabblad Basisbeginselen":::
 
 1. Selecteer uw _Azure-abonnement_
 1. Een nieuwe _Resourcegroep_ selecteren of maken
@@ -91,13 +91,13 @@ Op het tabblad _Basisbeginselen_ kunt u de nieuwe app configureren en aan een Gi
 
 Nadat u zich hebt aangemeld bij GitHub, voert u de gegevens van de opslagplaats in.
 
-:::image type="content" source="media/deploy-blazor/repository-details.png" alt-text="Volledige Blazor-app":::
+:::image type="content" source="media/deploy-blazor/repository-details.png" alt-text="Gegevens van opslagplaats":::
 
 1. Kies de gewenste _organisatie_
 1. Selecteer **mijn-eerste-statische-blazor-app** in de vervolgkeuzelijst _Opslagplaats_
 1. Selecteer **Hoofd** in de vervolgkeuzelijst _Vertakking_
 
-    Als u geen opslagplaatsen ziet, moet u mogelijk Azure Static Web Apps autoriseren in GitHub. Ga naar de GitHub-opslagplaats en ga naar **Instellingen > Toepassingen > Geautoriseerde OAuth-apps**, selecteer **Azure Static Web Apps**en selecteer **Verlenen**. Voor organisatie-opslagplaatsen moet u een eigenaar van de organisatie zijn om de machtigingen te verlenen.
+    Als u geen opslagplaatsen ziet, moet u mogelijk Azure Static Web Apps autoriseren in GitHub. Ga naar de GitHub-opslagplaats en ga naar **Instellingen > Toepassingen > Geautoriseerde OAuth-apps**, selecteer **Azure Static Web Apps** en selecteer **Verlenen**. Voor organisatie-opslagplaatsen moet u een eigenaar van de organisatie zijn om de machtigingen te verlenen.
 
 1. Voeg in de sectie _Details van de build_ Blazor-details van de configuratie toe.
 
@@ -105,15 +105,15 @@ Nadat u zich hebt aangemeld bij GitHub, voert u de gegevens van de opslagplaats 
 
 1. Selecteer **Controleren + maken**.
 
-    :::image type="content" source="media/deploy-blazor/review-create.png" alt-text="Volledige Blazor-app":::
+    :::image type="content" source="media/deploy-blazor/review-create.png" alt-text="Knop Beoordelen en maken":::
 
 1. Selecteer **Maken**.
 
-    :::image type="content" source="media/deploy-blazor/create-button.png" alt-text="Volledige Blazor-app":::
+    :::image type="content" source="media/deploy-blazor/create-button.png" alt-text="De knop Maken":::
 
 1. Selecteer **Ga naar resource**.
 
-    :::image type="content" source="media/deploy-blazor/resource-button.png" alt-text="Volledige Blazor-app":::
+    :::image type="content" source="media/deploy-blazor/resource-button.png" alt-text="De knop Naar de resource gaan":::
 
 ## <a name="view-the-website"></a>De website weergeven
 
@@ -123,7 +123,7 @@ Voordat u naar de nieuwe statische site kunt navigeren, moet de uitvoering van d
 
 In het overzichtsvenster van Static Web Apps wordt een reeks koppelingen weergegeven die u helpen te werken met uw web-app.
 
-:::image type="content" source="./media/deploy-blazor/overview-window.png" alt-text="Volledige Blazor-app":::
+:::image type="content" source="./media/deploy-blazor/overview-window.png" alt-text="Overzichtsvenster":::
 
 1. Als u op de banner klikt waarin staat _Klik hier om de status van de uitvoering van uw GitHub-acties te controleren_ wordt u naar de GitHub-acties geleid die worden uitgevoerd in uw opslagplaats. Zodra u hebt gecontroleerd of de implementatietaak is voltooid, kunt u naar de website navigeren via de gegenereerde URL.
 

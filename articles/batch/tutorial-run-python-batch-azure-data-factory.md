@@ -1,18 +1,18 @@
 ---
-title: Python-scripts via Data Factory uitvoeren
-description: Zelfstudie - informatie over het uitvoeren van Python-scripts als onderdeel van een pijplijn via Azure Data Factory met behulp van Azure Batch.
-author: mammask
+title: 'Zelfstudie: Python-scripts via Data Factory uitvoeren'
+description: Informatie over het uitvoeren van Python-scripts als onderdeel van een pijplijn via Azure Data Factory met behulp van Azure Batch.
+author: pkshultz
 ms.devlang: python
 ms.topic: tutorial
 ms.date: 08/12/2020
-ms.author: komammas
+ms.author: peshultz
 ms.custom: mvc, devx-track-python
-ms.openlocfilehash: c66c14d42c3d14fc4171f6fdfaf2e7f75a531507
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 7752bc3f768aec7a3e98fb1813c4194f81fb9dfb
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: HT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 11/19/2020
-ms.locfileid: "94886903"
+ms.locfileid: "94917627"
 ---
 # <a name="tutorial-run-python-scripts-through-azure-data-factory-using-azure-batch"></a>Zelfstudie: Python-scripts uitvoeren via Azure Data Factory met behulp van Azure Batch
 
@@ -155,6 +155,5 @@ In deze zelfstudie bekeek u een voorbeeld dat u meer informatie bood over het ui
 Zie voor meer informatie over Azure Data Factory:
 
 > [!div class="nextstepaction"]
-> [Azure Data Factory](../data-factory/introduction.md)
-> [-pijplijnen en activiteiten](../data-factory/concepts-pipelines-activities.md)
-> [Aangepaste activiteiten](../data-factory/transform-data-using-dotnet-custom-activity.md)
+> [Overzicht van Azure Data Factory](../data-factory/introduction.md)
+

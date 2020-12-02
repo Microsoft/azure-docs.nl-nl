@@ -17,12 +17,12 @@ ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
 ms.custom: contperfq1
-ms.openlocfilehash: 3f52b8d4e56ec854f93940ea77f09c3dff1d362e
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 423a879889402d5d3df70a7fadae6451c8418238
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93095999"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95743154"
 ---
 # <a name="what-are-azure-ad-access-reviews"></a>Wat zijn toegangsbeoordelingen in Azure AD?
 
@@ -74,10 +74,18 @@ Afhankelijk van wat u wilt controleren, maakt u uw toegangsbeoordelingen in Azur
 
 Uw directory moet ten minste evenveel Azure AD Premium P2-licenties hebben als het aantal werknemers die de volgende taken zullen uitvoeren:
 
-- Leden en gastgebruikers die zijn toegewezen als beoordelaars
-- Leden en gastgebruikers die een zelfbeoordeling uitvoeren
-- Groepseigenaren die een toegangsbeoordeling uitvoeren
-- Toepassingseigenaren die een toegangsbeoordeling uitvoeren
+-   Leden die zijn toegewezen als beoordelaars
+-   Leden die een zelfbeoordeling uitvoeren
+-   Leden als groepseigenaren die een toegangsbeoordeling uitvoeren
+-   Leden als toepassingseigenaren die een toegangsbeoordeling uitvoeren
+
+Voor gastgebruikers is de licentiebehoefte afhankelijk van het licentiemodel dat u gebruikt. De onderstaande activiteiten van gastgebruikers worden echter beschouwd als Azure AD Premium P2-gebruik:
+
+-   Gastgebruikers die zijn toegewezen als beoordelaars
+-   Gastgebruikers die een zelfbeoordeling uitvoeren
+-   Gastgebruikers als groepseigenaren die een toegangsbeoordeling uitvoeren
+-   Gastgebruikers als toepassingseigenaren die een toegangsbeoordeling uitvoeren
+
 
 Azure AD Premium P2-licenties zijn **niet** vereist voor Globale beheerders of Gebruikersbeheerders die toegangsbeoordelingen instellen, instellingen configureren of de beslissingen van de beoordelingen toepassen.
 

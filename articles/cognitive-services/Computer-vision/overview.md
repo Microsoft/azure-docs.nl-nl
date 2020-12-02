@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: overview
-ms.date: 11/13/2020
+ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom:
 - seodec18
 - cog-serv-seo-aug-2020
 keywords: computer vision, computer vision-toepassingen, computer vision-service
-ms.openlocfilehash: aeaa10870b8b40b907da1d1660e77ebf0271c300
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 1b4768781c45733590639b4a382fecfdb02adf48
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629747"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95532287"
 ---
 # <a name="what-is-computer-vision"></a>Wat is Computer Vision?
 
@@ -64,7 +64,7 @@ Genereer een beschrijving van een volledige afbeelding in leesbare taal met behu
 
 ### <a name="detect-faces"></a>Gezichten detecteren
 
-Detecteer gezichten in een afbeelding en geef informatie op over elk gedetecteerd gezicht. Met Computer Vision worden de coördinaten, de rechthoek, het geslacht en de leeftijd van elk gedetecteerd gezicht geretourneerd.<br/>Computer Vision biedt een subset van de servicefunctionaliteit [Face](/azure/cognitive-services/face/). U kunt de Face-service gebruiken voor een gedetailleerdere analyse, zoals gezichtsidentificatie en posedetectie. [Gezichten detecteren](concept-detecting-faces.md)
+Detecteer gezichten in een afbeelding en geef informatie op over elk gedetecteerd gezicht. Met Computer Vision worden de coördinaten, de rechthoek, het geslacht en de leeftijd van elk gedetecteerd gezicht geretourneerd.<br/>Computer Vision biedt een subset van de servicefunctionaliteit [Face](../face/index.yml). U kunt de Face-service gebruiken voor een gedetailleerdere analyse, zoals gezichtsidentificatie en posedetectie. [Gezichten detecteren](concept-detecting-faces.md)
 
 ### <a name="detect-image-types"></a>Afbeeldingstypen detecteren
 
@@ -90,13 +90,12 @@ Analyseer de inhoud van een afbeelding om de coördinaten van het *interessegebi
 
 U kunt Computer Vision gebruiken om [erotische inhoud te detecteren](concept-detecting-adult-content.md) in een afbeelding en vertrouwensscores voor verschillende classificaties te retourneren. De drempel voor het markeren van inhoud kan worden ingesteld met een glijdende schaal om uw voorkeuren aan te geven.
 
-## <a name="use-containers"></a>Containers gebruiken
+## <a name="deploy-on-premises-using-docker-containers"></a>On-premises implementeren met behulp van Docker-containers
 
-Gebruik Docker-containers van Computer Vision om de service on-premises te gebruiken. Er zijn momenteel twee containers beschikbaar:
+Gebruik Computer Vision-containers om API-functies on-premises te implementeren. Deze Docker-containers stellen u in staat om de service dichter bij uw gegevens te brengen voor naleving, beveiliging en andere operationele redenen. Computer Vision biedt de volgende containers:
 
-* Met de [Computer Vision-leescontainer](computer-vision-how-to-install-containers.md) kunt u gedrukte en handgeschreven tekst in afbeeldingen herkennen.
-
-* Met de [container voor ruimtelijke analyse van Computer Vision](spatial-analysis-container.md) kunt u realtime streaming-video analyseren om inzicht te krijgen in de ruimtelijke relaties tussen mensen en hun verplaatsing door fysieke omgevingen.
+* Met de [Computer Vision-lees-OCR-container (preview)](computer-vision-how-to-install-containers.md) kunt u gedrukte en handgeschreven tekst in afbeeldingen herkennen.
+* Met de [container voor ruimtelijke analyse van Computer Vision (preview)](spatial-analysis-container.md) kunt u realtime streaming-video analyseren om inzicht te krijgen in de ruimtelijke relaties tussen mensen en hun verplaatsing door fysieke omgevingen.
 
 ## <a name="image-requirements"></a>Vereisten voor installatiekopieën
 

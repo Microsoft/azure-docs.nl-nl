@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 04/28/2020
+ms.date: 11/09/2020
 ms.author: jeedes
-ms.openlocfilehash: c2f2e86a3080b0edfcb0a699ac9b3a78ee1b5a52
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 9bebb11c3a1162a0a7b72140f7d3812f86f793ce
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92519415"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95791367"
 ---
 # <a name="tutorial-integrate-azure-ad-single-sign-on-sso-with-netsuite"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met NetSuite
 
@@ -25,8 +25,6 @@ In deze zelfstudie leert u hoe u NetSuite integreert met Azure Active Directory 
 * In Azure AD bepalen wie er toegang heeft tot NetSuite.
 * Ervoor zorgen dat uw gebruikers automatisch met hun Azure AD-account worden aangemeld bij NetSuite.
 * Uw accounts op een centrale locatie beheren, namelijk de Azure-portal.
-
-Zie [Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps met Azure AD.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -44,7 +42,6 @@ Netsuite biedt ondersteuning voor:
 * Door IDP geïnitieerde eenmalige aanmelding.
 * Just-In-Time inrichten van gebruikers.
 * [Geautomatiseerd inrichten van gebruikers](NetSuite-provisioning-tutorial.md).
-* Zodra u NetSuite hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad)
 
 > [!NOTE]
 > Omdat de id van deze toepassing een vaste tekenreekswaarde is, kan maar één exemplaar in één tenant worden geconfigureerd.
@@ -53,16 +50,16 @@ Netsuite biedt ondersteuning voor:
 
 Om de integratie van NetSuite in Azure AD te configureren, moet u NetSuite vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps. U doet dit als volgt:
 
-1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkerdeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
-1. Als u een nieuwe toepassing wilt toevoegen, selecteert u **Nieuwe toepassing** .
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Selecteer in het linkerdeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Als u een nieuwe toepassing wilt toevoegen, selecteert u **Nieuwe toepassing**.
 1. Typ in het gedeelte **Toevoegen uit de galerie** **NetSuite** in het zoekvak.
 1. Selecteer **NetSuite** in het resultatenvenster en voeg de app vervolgens toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-netsuite"></a>Eenmalige aanmelding van Azure AD configureren en testen voor NetSuite
 
-Configureer en test eenmalige aanmelding van Azure AD met NetSuite met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in NetSuite.
+Configureer en test eenmalige aanmelding van Azure AD met NetSuite met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in NetSuite.
 
 Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met NetSuite te configureren en te testen:
 
@@ -77,9 +74,9 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met NetSuite te
 
 Ga als volgt te werk om eenmalige aanmelding van Azure AD in te schakelen in de Azure-portal:
 
-1. Ga in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de toepassing **NetSuite** naar de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** in het deelvenster **Selecteer een methode voor eenmalige aanmelding** .
-1. Selecteer in het deelvenster **Eenmalige aanmelding met SAML instellen** het pictogram **Bewerken** (potlood) naast **Standaard SAML-configuratie** .
+1. Ga in de Azure Portal op de integratiepagina van de toepassing **NetSuite** naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** in het deelvenster **Selecteer een methode voor eenmalige aanmelding**.
+1. Selecteer in het deelvenster **Eenmalige aanmelding met SAML instellen** het pictogram **Bewerken** (potlood) naast **Standaard SAML-configuratie**.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
@@ -126,47 +123,41 @@ Ga als volgt te werk om eenmalige aanmelding van Azure AD in te schakelen in de 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in de Azure-portal.
 
-1. Selecteer in het linkerdeelvenster van de Azure-portal **Azure Active Directory** > **Gebruikers** > **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van de Azure-portal **Azure Active Directory** > **Gebruikers** > **Alle gebruikers**.
 
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
 
-1. Volg de volgende stappen in het eigenschappendeelvenster **Gebruiker** :
+1. Volg de volgende stappen in het eigenschappendeelvenster **Gebruiker**:
 
    a. Voer in het vak **Naam** de naam **B.Simon** in.  
    b. Voer in het vak **Gebruikersnaam** de username@companydomain.extension in (bijvoorbeeld B.Simon@contoso.com).  
-   c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .  
-   d. Selecteer **Maken** .
+   c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.  
+   d. Selecteer **Maken**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u de gebruiker B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door hem of haar toegang te verlenen tot NetSuite.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **NetSuite** in de lijst met toepassingen.
-1. Zoek in het overzichtsvenster naar het gedeelte **Beheren** en selecteer vervolgens de koppeling **Gebruikers en groepen** .
-
-   ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het deelvenster **Toewijzing toevoegen** .
-
-    ![De knop Gebruiker toevoegen](common/add-assign-user.png)
-
+1. Zoek in het overzichtsvenster naar het gedeelte **Beheren** en selecteer vervolgens de koppeling **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het deelvenster **Toewijzing toevoegen**.
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** **Britta Simon** in de lijst **Gebruikers** en selecteer vervolgens de knop **Selecteren** onder aan het scherm.
 1. Ga als volgt te werk als u een willekeurige rol in de SAML-assertie verwacht:
 
    a. Selecteer in het deelvenster **Rol selecteren** in de vervolgkeuzelijst de juiste rol voor de gebruiker.  
-   b. Selecteer onder aan het scherm de knop **Selecteren** .
-1. Selecteer in het deelvenster **Toewijzing toevoegen** de knop **Toewijzen** .
+   b. Selecteer onder aan het scherm de knop **Selecteren**.
+1. Selecteer in het deelvenster **Toewijzing toevoegen** de knop **Toewijzen**.
 
 ## <a name="configure-netsuite-sso"></a>Eenmalige aanmelding voor NetSuite configureren
 
 1. Open een nieuw tabblad in uw browser en meld u als beheerder aan bij de bedrijfssite van NetSuite.
 
-2. Selecteer in de bovenste navigatiebalk de optie **Setup** en selecteer vervolgens **Company** > **Enable Features** .
+2. Selecteer in de bovenste navigatiebalk de optie **Setup** en selecteer vervolgens **Company** > **Enable Features**.
 
     ![Schermopname van Functies inschakelen geselecteerd vanuit Bedrijf.](./media/NetSuite-tutorial/ns-setupsaml.png)
 
-3. Selecteer op de werkbalk in het midden van de pagina **SuiteCloud** .
+3. Selecteer op de werkbalk in het midden van de pagina **SuiteCloud**.
 
     ![Schermopname met SuiteCloud geselecteerd.](./media/NetSuite-tutorial/ns-suitecloud.png)
 
@@ -174,19 +165,19 @@ In deze sectie geeft u de gebruiker B.Simon toestemming om eenmalige aanmelding 
 
     ![Schermopname van Verificatie beheren waar u Eenmalige aanmelding voor SAML kunt selecteren.](./media/NetSuite-tutorial/ns-ticksaml.png)
 
-5. Selecteer in de bovenste navigatiebalk de optie **Setup** .
+5. Selecteer in de bovenste navigatiebalk de optie **Setup**.
 
     ![Schermopname van Installatie geselecteerd vanuit de navigatiebalk van NETSUITE.](./media/NetSuite-tutorial/ns-setup.png)
 
-6. Selecteer in de lijst **Setup Tasks** de optie **Integration** .
+6. Selecteer in de lijst **Setup Tasks** de optie **Integration**.
 
     ![Schermopname van Integratie die is geselecteerd vanuit TAKEN INSTALLEREN.](./media/NetSuite-tutorial/ns-integration.png)
 
-7. Selecteer onder **Manage Authentication** de optie **SAML Single Sign-on** .
+7. Selecteer onder **Manage Authentication** de optie **SAML Single Sign-on**.
 
     ![Schermopname van Eenmalige aanmelding voor SAML geselecteerd vanuit het Integratie-item in TAKEN INSTALLEREN.](./media/NetSuite-tutorial/ns-saml.png)
 
-8. Voer in het deelvenster **SAML Setup** , onder **NetSuite Configuration** , de volgende stappen uit:
+8. Voer in het deelvenster **SAML Setup**, onder **NetSuite Configuration**, de volgende stappen uit:
 
     ![Schermopname van de SAML-installatie waarin u de beschreven waarden kunt invoeren.](./media/NetSuite-tutorial/ns-saml-setup.png)
   
@@ -194,53 +185,55 @@ In deze sectie geeft u de gebruiker B.Simon toestemming om eenmalige aanmelding 
 
     b. Selecteer onder **SAMLV2 Identity Provider Metadata** de optie **Upload IDP Metadata File** en selecteer vervolgens **Browse** om het metagegevensbestand te uploaden dat u hebt gedownload van de Azure-portal.
 
-    c. Selecteer **Indienen** .
+    c. Selecteer **Indienen**.
 
-9. Selecteer in de bovenste navigatiebalk in NetSuite de optie **Setup** en selecteer vervolgens **Company** > **Company Information** .
+9. Selecteer in de bovenste navigatiebalk in NetSuite de optie **Setup** en selecteer vervolgens **Company** > **Company Information**.
 
     ![Schermopname van Bedrijfsgegevens geselecteerd vanuit Bedrijf.](./media/NetSuite-tutorial/ns-com.png)
 
     ![Schermopname van het deelvenster waarin u de beschreven waarden kunt invoeren.](./media/NetSuite-tutorial/ns-account-id.png)
 
-    b. Kopieer de waarde van **Account ID** in de rechterkolom in het deelvenster **Company Information** .
+    b. Kopieer de waarde van **Account ID** in de rechterkolom in het deelvenster **Company Information**.
 
     c. Plak de **account-id** die u hebt gekopieerd uit het NetSuite-account in het vak **Waarde kenmerk** in Azure AD.
 
+    ![Schermopname laat zien dat de waarde van de account-id wordt toegevoegd](./media/netsuite-tutorial/attribute-value.png)
+
 10. Voordat gebruikers eenmalige aanmelding kunnen gebruiken met NetSuite moeten ze over de juiste machtigingen beschikken in NetSuite. Ga als volgt te werk om deze machtigingen toe te wijzen:
 
-    a. Selecteer in de bovenste navigatiebalk de optie **Setup** .
+    a. Selecteer in de bovenste navigatiebalk de optie **Setup**.
 
     ![Schermopname van Installatie geselecteerd vanuit de navigatiebalk van NETSUITE.](./media/NetSuite-tutorial/ns-setup.png)
 
-    b. Selecteer in het linkerdeelvenster de optie **Users/Roles** en selecteer vervolgens **Manage Roles** .
+    b. Selecteer in het linkerdeelvenster de optie **Users/Roles** en selecteer vervolgens **Manage Roles**.
 
     ![Schermopname van het deelvenster Rollen beheren waar u een Nieuwe rol kunt selecteren.](./media/NetSuite-tutorial/ns-manage-roles.png)
 
-    c. Selecteer **New Role** .
+    c. Selecteer **New Role**.
 
     d. Voer een **naam** in voor de nieuwe rol.
 
     ![Schermopname van de Installatiebeheerder waarin u een naam voor de rol kunt invoeren.](./media/NetSuite-tutorial/ns-new-role.png)
 
-    e. Selecteer **Opslaan** .
+    e. Selecteer **Opslaan**.
 
-    f. Selecteer in de bovenste navigatiebalk de optie **Permissions** . Selecteer vervolgens **Setup** .
+    f. Selecteer in de bovenste navigatiebalk de optie **Permissions**. Selecteer vervolgens **Setup**.
 
     ![Schermopname van het tabblad Installeren waarin u de beschreven waarden kunt invoeren.](./media/NetSuite-tutorial/ns-sso.png)
 
-    g. Selecteer **SAML Single Sign-on** en selecteer vervolgens **Add** .
+    g. Selecteer **SAML Single Sign-on** en selecteer vervolgens **Add**.
 
-    h. Selecteer **Opslaan** .
+    h. Selecteer **Opslaan**.
 
-    i. Selecteer in de bovenste navigatiebalk de optie **Setup** en selecteer vervolgens **Setup Manager** .
+    i. Selecteer in de bovenste navigatiebalk de optie **Setup** en selecteer vervolgens **Setup Manager**.
 
     ![Schermopname van Installatie geselecteerd vanuit de navigatiebalk van NETSUITE.](./media/NetSuite-tutorial/ns-setup.png)
 
-    j. Selecteer in het linkerdeelvenster de optie **Users/Roles** en selecteer vervolgens **Manage Users** .
+    j. Selecteer in het linkerdeelvenster de optie **Users/Roles** en selecteer vervolgens **Manage Users**.
 
     ![Schermopname van het deelvenster Gebruikers beheren waar u Suite Demo Team kunt selecteren.](./media/NetSuite-tutorial/ns-manage-users.png)
 
-    k. Selecteer een testgebruiker, selecteer **Edit** en selecteer vervolgens het tabblad **Access** .
+    k. Selecteer een testgebruiker, selecteer **Edit** en selecteer vervolgens het tabblad **Access**.
 
     ![Schermopname van het deelvenster Gebruikers beheren waar u Bewerken kunt selecteren.](./media/NetSuite-tutorial/ns-edit-user.png)
 
@@ -248,7 +241,7 @@ In deze sectie geeft u de gebruiker B.Simon toestemming om eenmalige aanmelding 
 
     ![Schermopname van de Beheerder die is geselecteerd vanuit Werknemer.](./media/NetSuite-tutorial/ns-add-role.png)
 
-    m. Selecteer **Opslaan** .
+    m. Selecteer **Opslaan**.
 
 ### <a name="create-the-netsuite-test-user"></a>De testgebruiker voor NetSuite maken
 
@@ -256,16 +249,13 @@ In deze sectie wordt een gebruiker met de naam B.Simon gemaakt in NetSuite. NetS
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen
 
-In dit gedeelte test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties.
 
-Wanneer u in het toegangsvenster de tegel NetSuite selecteert, zou u automatisch moeten worden aangemeld bij het exemplaar van in het toegangsvenster waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+- Klik op Deze toepassing testen in de Azure Portal. U wordt automatisch aangemeld bij het exemplaar van NestSuite waarvoor u eenmalige aanmelding hebt ingesteld
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+- U kunt Microsoft Mijn apps gebruiken. Wanneer u in de Mijn apps op de tegel NetSuite klikt, zou u automatisch moeten worden aangemeld bij het exemplaar van in het toegangsvenster waarvoor u de eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
-- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
-- [Netsuite gebruiken met Azure AD](https://aad.portal.azure.com/)
-- [Wat is sessiebeheer in Microsoft Cloud App Security?](/cloud-app-security/proxy-intro-aad)
 
-- [NetSuite beveiligen met geavanceerde zichtbaarheid en besturingselementen](/cloud-app-security/proxy-intro-aad)
+## <a name="next-steps"></a>Volgende stappen
+
+Zodra u NetSuite hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad)

@@ -5,35 +5,39 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/15/2020
 ms.author: v-demjoh
-ms.openlocfilehash: 4b04558077f6b59d0fef613308a6ab96680d7ff8
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 6f80d41001d11c52a00454ea2a593f3f1fce32db
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92470735"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96027539"
 ---
 ## <a name="download-and-install"></a>Downloaden en installeren
 
 #### <a name="windows-install"></a>[Windows installeren](#tab/windowsinstall)
 
-> [!NOTE]
-> In Windows hebt u het [Microsoft Visual C++ Redistributable for Visual Studio 2019](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads) voor uw platform nodig. Als u dit voor de eerste keer installeert, dient u Windows opnieuw op te starten.
-
 Volg deze stappen om de Speech CLI te installeren voor Windows:
 
-1. Download het Speech CLI-[zip-bestand](https://aka.ms/speech/spx-zips.zip) en pak het uit.
-2. Ga naar de hoofdmap `spx-zips` van de download en pak de gewenste submap uit (`spx-net471` voor .NET Framework 4.7 of `spx-netcore-win-x64` voor .NET Core 3.0 op een x64-CPU) uit.
+1. In Windows hebt u het [Microsoft Visual C++ Redistributable for Visual Studio 2019](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads) voor uw platform nodig. Bij een eerste installatie is mogelijk een herstart vereist.
+2. Download het Speech CLI-[zip-bestand](https://aka.ms/speech/spx-zips.zip) en pak het uit.
+3. Ga naar de map waar u `spx-zips` hebt geëxtraheerd. Deze map bevat programmabestanden voor de Speech CLI op verschillende platforms. 
+4. Extraheer de bestanden voor uw platform (`spx-net471` voor .NET Framework 4.7 of `spx-netcore-win-x64` voor .NET Core 3.0 op een x64-CPU). Houd er rekening mee dat u `spx` vanuit deze map uitvoert.
 
-Wijzig in de opdrachtprompt de map naar deze locatie en typ `spx` om de Help voor de Speech CLI weer te geven.
+### <a name="run-the-speech-cli"></a>De Speech CLI uitvoeren
 
-> [!NOTE]
-> In Windows kan de Speech CLI alleen de lettertypen weergeven die beschikbaar zijn voor de opdrachtprompt op de lokale computer.
-> [Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701) ondersteunt alle lettertypen die interactief worden gemaakt door de Speech CLI.
-> Als u naar een bestand uitvoert, kunnen in een teksteditor zoals Kladblok of een webbrowser zoals Microsoft Edge ook alle lettertypen worden weergegeven.
+1. Open de opdrachtprompt of PowerShell en ga naar de map waarin u de Speech CLI hebt uitgepakt.  
+2. Typ `spx` om Help-opdrachten voor de Speech CLI weer te geven.
 
 > [!NOTE]
 > De lokale map wordt niet door Powershell gecontroleerd tijdens het zoeken naar een opdracht. Wijzig in Powershell de map naar de locatie van `spx` en roep het hulpprogramma aan door `.\spx` in te voeren.
 > Als u deze map aan het pad, Powershell en de opdrachtprompt van Windows toevoegt, vindt u `spx` vanuit een willekeurige map, zonder het `.\`-voorvoegsel.
+
+### <a name="font-limitations"></a>Lettertypebeperkingen
+
+In Windows kan de Speech CLI alleen de lettertypen weergeven die beschikbaar zijn voor de opdrachtprompt op de lokale computer.
+[Windows Terminal](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701) ondersteunt alle lettertypen die interactief worden gemaakt door de Speech CLI.
+
+Als u naar een bestand uitvoert, kunnen in een teksteditor zoals Kladblok of een webbrowser zoals Microsoft Edge ook alle lettertypen worden weergegeven.
 
 #### <a name="linux-install"></a>[Linux-installatie](#tab/linuxinstall)
 

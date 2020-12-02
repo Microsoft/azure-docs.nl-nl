@@ -1,71 +1,63 @@
 ---
-title: Aan de slag met Azure Service Bus-wachtrijen | Microsoft Docs
-description: In deze zelf studie maakt u .NET Core-Console toepassingen om berichten te verzenden naar en berichten van een Service Bus wachtrij te ontvangen.
-ms.topic: conceptual
+title: Aan de slag met Azure Service Bus-wachtrijen (Azure.Messaging.ServiceBus)
+description: In deze zelfstudie maakt u een .NET Core C#-toepassing om berichten te verzenden naar en te ontvangen van een Service Bus-wachtrij.
+ms.topic: quickstart
 ms.tgt_pltfrm: dotnet
-ms.date: 06/23/2020
+ms.date: 11/13/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: cff2b8a8a0f6aefad43737aeb6fe63d40facac05
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
+ms.openlocfilehash: 4335c1e81ead36d14ee1794fffbdd4cc1ff72a0a
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89021660"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96029605"
 ---
-# <a name="get-started-with-service-bus-queues"></a>Aan de slag met Service Bus-wachtrijen
-[!INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
-In deze zelf studie maakt u .NET Core-Console toepassingen om berichten te verzenden naar en berichten van een Service Bus wachtrij te ontvangen.
+# <a name="send-messages-to-and-receive-messages-from-azure-service-bus-queues-net"></a>Berichten verzenden naar en berichten ontvangen van Azure Service Bus-wachtrijen (.NET)
+In deze zelfstudie maakt u een .NET Core-consoletoepassing om berichten te verzenden naar en te ontvangen van een Service Bus-wachtrij met behulp van het pakket **Azure.Messaging.ServiceBus**. 
+
+> [!Important]
+> Deze quickstart maakt gebruik van het nieuwe pakket Azure.Messaging.ServiceBus. Zie [Gebeurtenissen verzenden en ontvangen met het Microsoft.Azure.ServiceBus-pakket](service-bus-dotnet-get-started-with-queues-legacy.md) voor een quickstart die gebruikmaakt van het oude Microsoft.Azure.ServiceBus-pakket.
 
 ## <a name="prerequisites"></a>Vereisten
 
-- [Visual Studio 2019](https://www.visualstudio.com/vs).
-- [NET Core SDK](https://www.microsoft.com/net/download/windows), versie 2.0 of later.
+- [Visual Studio 2019](https://www.visualstudio.com/vs)
 - Een Azure-abonnement. U hebt een Azure-account nodig om deze zelfstudie te voltooien. U kunt uw [voordelen als MSDN-abonnee](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) activeren of u aanmelden voor een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
-- Als u geen wachtrij hebt om te gebruiken, volgt u de stappen in het artikel [De Azure-portal gebruiken om een Service Bus-wachtrij te maken](service-bus-quickstart-portal.md) om een wachtrij te maken.
+- Als u geen wachtrij hebt om te gebruiken, volgt u de stappen in het artikel [De Azure-portal gebruiken om een Service Bus-wachtrij te maken](service-bus-quickstart-portal.md) om een wachtrij te maken. Noteer de **verbindingsreeks** voor uw Service Bus-naamruimte en de naam van de **wachtrij** die u hebt gemaakt.
 
-  - Lees het beknopte overzicht van Service Bus-wachtrijen.
-  - Maak een Service Bus naam ruimte.
-  - De verbindingsreeks ophalen.
-  - Maak een Service Bus wachtrij.
-
-## <a name="send-messages-to-the-queue"></a>Berichten naar de wachtrij verzenden
-
-Maak een C#-consoletoepassing met Visual Studio om berichten naar de wachtrij te verzenden.
+## <a name="send-messages-to-a-queue"></a>Berichten verzenden naar een wachtrij
+In deze quickstart maakt u een C# .Net Core-consoletoepassing om berichten naar de wachtrij te verzenden.
 
 ### <a name="create-a-console-application"></a>Een consoletoepassing maken
-
-Start Visual Studio en maak een nieuw **console-app (.net core)** -project voor C#. In dit voor beeld wordt de app- *CoreSenderApp*naam.
+Start Visual Studio en maak een nieuwe **Consoletoepassing (.NET Core)** voor C#. 
 
 ### <a name="add-the-service-bus-nuget-package"></a>Het Service Bus NuGet-pakket toevoegen
 
 1. Klik met de rechtermuisknop op het nieuwe project en selecteer **NuGet-pakketten beheren**.
-1. Selecteer **Bladeren**. Zoek en selecteer **[micro soft. Azure. ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus/)**.
-1. Selecteer **installeren** om de installatie te volt ooien en sluit NuGet Package Manager.
+1. Selecteer **Bladeren**. Zoek en selecteer **[Azure.Messaging.ServiceBus](https://www.nuget.org/packages/Azure.Messaging.ServiceBus/)** .
+1. Selecteer **Installeren** om de installatie te voltooien en sluit vervolgens de NuGet Package Manager.
 
-    ![Een NuGet-pakket selecteren][nuget-pkg]
+### <a name="add-code-to-send-messages-to-the-queue"></a>Code toevoegen om berichten naar de wachtrij te verzenden
 
-### <a name="write-code-to-send-messages-to-the-queue"></a>Code schrijven om berichten naar de wachtrij te verzenden
-
-1. Voeg in *Program.cs*de volgende `using` instructies toe boven aan de definitie van de naam ruimte, vóór de klassen declaratie:
+1. Voeg in *Program.cs* de volgende `using`-instructies aan het begin van de naamruimtedefinitie toe voor de klassedeclaratie:
 
     ```csharp
-    using System.Text;
-    using System.Threading;
+    using System;
+    using System.Collections.Generic;
     using System.Threading.Tasks;
-    using Microsoft.Azure.ServiceBus;
+    
+    using Azure.Messaging.ServiceBus;
     ```
 
-1. `Program`Declareer de volgende variabelen in de-klasse:
+1. Declareer in de klasse `Program` de volgende variabelen:
 
     ```csharp
-    const string ServiceBusConnectionString = "<your_connection_string>";
-    const string QueueName = "<your_queue_name>";
-    static IQueueClient queueClient;
+        static string connectionString = "<NAMESPACE CONNECTION STRING>";
+        static string queueName = "<QUEUE NAME>";
     ```
 
-    Voer uw connection string in voor de naam ruimte als de `ServiceBusConnectionString` variabele. Voer de naam van uw wachtrij in.
+    Voer uw verbindingsstring in voor de naamruimte als de variabele `ServiceBusConnectionString`. Voer de naam van uw wachtrij in.
 
-1. Vervang de- `Main()` methode door de volgende **async** - `Main` methode. Hiermee wordt de `SendMessagesAsync()` methode aangeroepen die u in de volgende stap toevoegt om berichten naar de wachtrij te verzenden. 
+1. Vervang de `Main()`-methode door de volgende **async** `Main`-methode. Hiermee wordt de `SendMessagesAsync()`-methode aangeroepen die u in de volgende stap toevoegt om berichten naar de wachtrij te verzenden. 
 
     ```csharp
     public static async Task Main(string[] args)
@@ -85,316 +77,220 @@ Start Visual Studio en maak een nieuw **console-app (.net core)** -project voor 
         await queueClient.CloseAsync();
     }
     ```
-1. Voeg direct na de `MainAsync()` methode de volgende `SendMessagesAsync()` methode toe waarmee het aantal berichten wordt verzonden dat is opgegeven door `numberOfMessagesToSend` (momenteel ingesteld op 10):
+1. Voeg direct na de `Main()` methode de volgende `SendMessagesAsync()` methode toe voor het uitvoeren van het werk van het verzenden van het aantal berichten dat is opgegeven door `numberOfMessagesToSend` (momenteel ingesteld op 10):
 
     ```csharp
-    static async Task SendMessagesAsync(int numberOfMessagesToSend)
-    {
-        try
+        static async Task SendMessageAsync()
         {
-            for (var i = 0; i < numberOfMessagesToSend; i++)
+            // create a Service Bus client 
+            await using (ServiceBusClient client = new ServiceBusClient(connectionString))
             {
-                // Create a new message to send to the queue.
-                string messageBody = $"Message {i}";
-                var message = new Message(Encoding.UTF8.GetBytes(messageBody));
+                // create a sender for the queue 
+                ServiceBusSender sender = client.CreateSender(queueName);
 
-                // Write the body of the message to the console.
-                Console.WriteLine($"Sending message: {messageBody}");
+                // create a message that we can send
+                ServiceBusMessage message = new ServiceBusMessage("Hello world!");
 
-                // Send the message to the queue.
-                await queueClient.SendAsync(message);
+                // send the message
+                await sender.SendMessageAsync(message);
+                Console.WriteLine($"Sent a single message to the queue: {queueName}");
             }
         }
-        catch (Exception exception)
-        {
-            Console.WriteLine($"{DateTime.Now} :: Exception: {exception.Message}");
-        }
-    }
     ```
+1. Voeg een methode met de naam `CreateMessages` toe om een wachtrij (.NET-wachtrij) te maken met berichten aan de klasse `Program`. Normaal gesproken ontvangt u deze berichten van verschillende onderdelen van uw toepassing. Hier maken we een wachtrij met voorbeeldberichten.
 
-Het *Program.cs* -bestand moet er als volgt uitzien.
-
-```csharp
-namespace CoreSenderApp
-{
-    using System;
-    using System.Text;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using Microsoft.Azure.ServiceBus;
-
-    class Program
-    {
-        // Connection String for the namespace can be obtained from the Azure portal under the 
-        // 'Shared Access policies' section.
-        const string ServiceBusConnectionString = "<your_connection_string>";
-        const string QueueName = "<your_queue_name>";
-        static IQueueClient queueClient;
-
-        public static async Task Main(string[] args)
-        {    
-            const int numberOfMessages = 10;
-            queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
-    
-            Console.WriteLine("======================================================");
-            Console.WriteLine("Press ENTER key to exit after sending all the messages.");
-            Console.WriteLine("======================================================");
-    
-            // Send messages.
-            await SendMessagesAsync(numberOfMessages);
-    
-            Console.ReadKey();
-    
-            await queueClient.CloseAsync();
-        }
-
-        static async Task SendMessagesAsync(int numberOfMessagesToSend)
+    ```csharp
+        static Queue<ServiceBusMessage> CreateMessages()
         {
-            try
+            // create a queue containing the messages and return it to the caller
+            Queue<ServiceBusMessage> messages = new Queue<ServiceBusMessage>();
+            messages.Enqueue(new ServiceBusMessage("First message"));
+            messages.Enqueue(new ServiceBusMessage("Second message"));
+            messages.Enqueue(new ServiceBusMessage("Third message"));
+            return messages;
+        }
+    ```
+1. Voeg een methode met de naam `SendMessageBatchAsync` toe aan de klasse `Program` en voeg de volgende code toe. Met deze methode wordt een wachtrij met berichten genomen en worden een of meer batches voorbereid voor verzending naar de Service Bus-wachtrij. 
+
+    ```csharp
+        static async Task SendMessageBatchAsync()
+        {
+            // create a Service Bus client 
+            await using (ServiceBusClient client = new ServiceBusClient(connectionString))
             {
-                for (var i = 0; i < numberOfMessagesToSend; i++)
+                // create a sender for the queue 
+                ServiceBusSender sender = client.CreateSender(queueName);
+
+                // get the messages to be sent to the Service Bus queue
+                Queue<ServiceBusMessage> messages = CreateMessages();
+
+                // total number of messages to be sent to the Service Bus queue
+                int messageCount = messages.Count;
+
+                // while all messages are not sent to the Service Bus queue
+                while (messages.Count > 0)
                 {
-                    // Create a new message to send to the queue
-                    string messageBody = $"Message {i}";
-                    var message = new Message(Encoding.UTF8.GetBytes(messageBody));
+                    // start a new batch 
+                    using ServiceBusMessageBatch messageBatch = await sender.CreateMessageBatchAsync();
 
-                    // Write the body of the message to the console
-                    Console.WriteLine($"Sending message: {messageBody}");
+                    // add the first message to the batch
+                    if (messageBatch.TryAddMessage(messages.Peek()))
+                    {
+                        // dequeue the message from the .NET queue once the message is added to the batch
+                        messages.Dequeue();
+                    }
+                    else
+                    {
+                        // if the first message can't fit, then it is too large for the batch
+                        throw new Exception($"Message {messageCount - messages.Count} is too large and cannot be sent.");
+                    }
 
-                    // Send the message to the queue
-                    await queueClient.SendAsync(message);
+                    // add as many messages as possible to the current batch
+                    while (messages.Count > 0 && messageBatch.TryAddMessage(messages.Peek()))
+                    {
+                        // dequeue the message from the .NET queue as it has been added to the batch
+                        messages.Dequeue();
+                    }
+        
+                    // now, send the batch
+                    await sender.SendMessagesAsync(messageBatch);
+        
+                    // if there are any remaining messages in the .NET queue, the while loop repeats 
                 }
-            }
-            catch (Exception exception)
-            {
-                Console.WriteLine($"{DateTime.Now} :: Exception: {exception.Message}");
+
+                Console.WriteLine($"Sent a batch of {messageCount} messages to the topic: {queueName}");
             }
         }
-    }
-}
-```
-
-Voer het programma uit en controleer de Azure Portal.
-
-Selecteer de naam van uw wachtrij in het venster **overzicht** van de naam ruimte om de wachtrij- **essentiële**elementen weer te geven.
-
-![Berichten ontvangen met aantal en grootte][queue-message]
-
-De waarde voor het **aantal actieve berichten** voor de wachtrij is nu **10**. Telkens wanneer u deze app Sender uitvoert zonder de berichten op te halen, wordt deze waarde verhoogd met 10.
-
-De huidige grootte van de wachtrij verhoogt de **huidige** waarde in **Essentials**  telkens wanneer de app berichten aan de wachtrij toevoegt.
-
-In de volgende sectie wordt beschreven hoe u deze berichten ophaalt.
-
-## <a name="receive-messages-from-the-queue"></a>Berichten ontvangen uit de wachtrij
-
-Als u de berichten wilt ontvangen die u hebt verzonden, maakt u een andere **console app (.net core)** -toepassing. Installeer het **micro soft. Azure. ServiceBus** NuGet-pakket, zoals u voor de afzender toepassing hebt gedaan.
-
-### <a name="write-code-to-receive-messages-from-the-queue"></a>Schrijven van code voor het ontvangen van berichten van de wachtrij
-
-1. Voeg in *Program.cs*de volgende `using` instructies toe boven aan de definitie van de naam ruimte, vóór de klassen declaratie:
-
-    ```csharp
-    using System;
-    using System.Text;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using Microsoft.Azure.ServiceBus;
     ```
-
-1. `Program`Declareer de volgende variabelen in de-klasse:
-
-    ```csharp
-    const string ServiceBusConnectionString = "<your_connection_string>";
-    const string QueueName = "<your_queue_name>";
-    static IQueueClient queueClient;
-    ```
-
-    Voer uw connection string in voor de naam ruimte als de `ServiceBusConnectionString` variabele. Voer de naam van uw wachtrij in.
-
-1. Vervang de `Main()`-methode door de volgende code:
+1. Vervang de `Main()`-methode door de volgende **async** `Main`-methode. Hiermee worden de verzendmethoden aangeroepen om één bericht én een batch berichten naar de wachtrij te verzenden. 
 
     ```csharp
-    static void Main(string[] args)
-    {
-        MainAsync().GetAwaiter().GetResult();
-    }
-
-    static async Task MainAsync()
-    {
-        queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
-
-        Console.WriteLine("======================================================");
-        Console.WriteLine("Press ENTER key to exit after receiving all the messages.");
-        Console.WriteLine("======================================================");
-
-        // Register QueueClient's MessageHandler and receive messages in a loop
-        RegisterOnMessageHandlerAndReceiveMessages();
-
-        Console.ReadKey();
-
-        await queueClient.CloseAsync();
-    }
-    ```
-
-1. Voeg direct na de `MainAsync()` methode de volgende methode toe, waarmee de bericht afhandeling wordt geregistreerd en de berichten worden ontvangen die worden verzonden door de toepassing van de afzender:
-
-    ```csharp
-    static void RegisterOnMessageHandlerAndReceiveMessages()
-    {
-        // Configure the message handler options in terms of exception handling, number of concurrent messages to deliver, etc.
-        var messageHandlerOptions = new MessageHandlerOptions(ExceptionReceivedHandler)
+        static async Task Main()
         {
-            // Maximum number of concurrent calls to the callback ProcessMessagesAsync(), set to 1 for simplicity.
-            // Set it according to how many messages the application wants to process in parallel.
-            MaxConcurrentCalls = 1,
+            // send a message to the queue
+            await SendMessageAsync();
 
-            // Indicates whether the message pump should automatically complete the messages after returning from user callback.
-            // False below indicates the complete operation is handled by the user callback as in ProcessMessagesAsync().
-            AutoComplete = false
-        };
-
-        // Register the function that processes messages.
-        queueClient.RegisterMessageHandler(ProcessMessagesAsync, messageHandlerOptions);
-    }
+            // send a batch of messages to the queue
+            await SendMessageBatchAsync();
+        }
     ```
+5. Voer de toepassing uit. Als het goed is, ziet u de volgende berichten. 
 
-1. Voeg direct na de vorige methode de volgende methode `ProcessMessagesAsync()` toe voor het verwerken van de ontvangen berichten:
+    ```console
+    Sent a single message to the queue: myqueue
+    Sent a batch of messages to the queue: myqueue
+    ```       
+1. Volg deze stappen in Azure Portal:
+    1. Navigeer naar uw Service Bus-naamruimte. 
+    1. Selecteer op de pagina **Overzicht** de wachtrij in het deelvenster in het midden onderaan. 
+    1. Let op de waarden in de sectie **Essentials**.
+
+    :::image type="content" source="./media/service-bus-dotnet-get-started-with-queues/sent-messages-essentials.png" alt-text="Berichten ontvangen met aantal en grootte" lightbox="./media/service-bus-dotnet-get-started-with-queues/sent-messages-essentials.png":::
+
+    Let op de volgende waarden:
+    - De waarde voor **Aantal actieve berichten** voor de wachtrij is nu **4**. Telkens wanneer u deze zendtoepassing uitvoert zonder de berichten op te halen, wordt deze waarde verhoogd met 4.
+    - De huidige grootte van de wachtrij verhoogt de **HUIDIGE** waarde in **Essentials** telkens wanneer de app berichten aan de wachtrij toevoegt.
+    - U ziet in de grafiek **Berichten** in het onderste gedeelte **Metrische gegevens** dat er vier binnenkomende berichten voor de wachtrij zijn. 
+
+## <a name="receive-messages-from-a-queue"></a>Berichten van een wachtrij ontvangen
+In deze sectie voegt u code toe om berichten uit de wachtrij op te halen.
+
+1. Voeg de volgende methoden toe aan de klasse `Program` die berichten en eventuele fouten verwerken. 
 
     ```csharp
-    static async Task ProcessMessagesAsync(Message message, CancellationToken token)
-    {
-        // Process the message.
-        Console.WriteLine($"Received message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{Encoding.UTF8.GetString(message.Body)}");
-
-        // Complete the message so that it is not received again.
-        // This can be done only if the queue Client is created in ReceiveMode.PeekLock mode (which is the default).
-        await queueClient.CompleteAsync(message.SystemProperties.LockToken);
-
-        // Note: Use the cancellationToken passed as necessary to determine if the queueClient has already been closed.
-        // If queueClient has already been closed, you can choose to not call CompleteAsync() or AbandonAsync() etc.
-        // to avoid unnecessary exceptions.
-    }
-    ```
-
-1. Voeg tot slot de volgende methode toe om eventuele uitzonderingen af te handelen:
-
-    ```csharp
-    // Use this handler to examine the exceptions received on the message pump.
-    static Task ExceptionReceivedHandler(ExceptionReceivedEventArgs exceptionReceivedEventArgs)
-    {
-        Console.WriteLine($"Message handler encountered an exception {exceptionReceivedEventArgs.Exception}.");
-        var context = exceptionReceivedEventArgs.ExceptionReceivedContext;
-        Console.WriteLine("Exception context for troubleshooting:");
-        Console.WriteLine($"- Endpoint: {context.Endpoint}");
-        Console.WriteLine($"- Entity Path: {context.EntityPath}");
-        Console.WriteLine($"- Executing Action: {context.Action}");
-        return Task.CompletedTask;
-    }
-    ```
-
-Het *Program.cs* -bestand moet er als volgt uitzien:
-
-```csharp
-namespace CoreReceiverApp
-{
-    using System;
-    using System.Text;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using Microsoft.Azure.ServiceBus;
-
-    class Program
-    {
-        // Connection String for the namespace can be obtained from the Azure portal under the 
-        // 'Shared Access policies' section.
-        const string ServiceBusConnectionString = "<your_connection_string>";
-        const string QueueName = "<your_queue_name>";
-        static IQueueClient queueClient;
-
-        static void Main(string[] args)
+        // handle received messages
+        static async Task MessageHandler(ProcessMessageEventArgs args)
         {
-            MainAsync().GetAwaiter().GetResult();
+            string body = args.Message.Body.ToString();
+            Console.WriteLine($"Received: {body}");
+
+            // complete the message. messages is deleted from the queue. 
+            await args.CompleteMessageAsync(args.Message);
         }
 
-        static async Task MainAsync()
+        // handle any errors when receiving messages
+        static Task ErrorHandler(ProcessErrorEventArgs args)
         {
-            queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
-
-            Console.WriteLine("======================================================");
-            Console.WriteLine("Press ENTER key to exit after receiving all the messages.");
-            Console.WriteLine("======================================================");
-
-            // Register QueueClient's MessageHandler and receive messages in a loop
-            RegisterOnMessageHandlerAndReceiveMessages();
- 
-            Console.ReadKey();
-
-            await queueClient.CloseAsync();
-        }
-
-        static void RegisterOnMessageHandlerAndReceiveMessages()
-        {
-            // Configure the MessageHandler Options in terms of exception handling, number of concurrent messages to deliver etc.
-            var messageHandlerOptions = new MessageHandlerOptions(ExceptionReceivedHandler)
-            {
-                // Maximum number of Concurrent calls to the callback `ProcessMessagesAsync`, set to 1 for simplicity.
-                // Set it according to how many messages the application wants to process in parallel.
-                MaxConcurrentCalls = 1,
-
-                // Indicates whether MessagePump should automatically complete the messages after returning from User Callback.
-                // False below indicates the Complete will be handled by the User Callback as in `ProcessMessagesAsync` below.
-                AutoComplete = false
-            };
-
-            // Register the function that will process messages
-            queueClient.RegisterMessageHandler(ProcessMessagesAsync, messageHandlerOptions);
-        }
-
-        static async Task ProcessMessagesAsync(Message message, CancellationToken token)
-        {
-            // Process the message
-            Console.WriteLine($"Received message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{Encoding.UTF8.GetString(message.Body)}");
-
-            // Complete the message so that it is not received again.
-            // This can be done only if the queueClient is created in ReceiveMode.PeekLock mode (which is default).
-            await queueClient.CompleteAsync(message.SystemProperties.LockToken);
-
-            // Note: Use the cancellationToken passed as necessary to determine if the queueClient has already been closed.
-            // If queueClient has already been Closed, you may chose to not call CompleteAsync() or AbandonAsync() etc. calls 
-            // to avoid unnecessary exceptions.
-        }
-
-        static Task ExceptionReceivedHandler(ExceptionReceivedEventArgs exceptionReceivedEventArgs)
-        {
-            Console.WriteLine($"Message handler encountered an exception {exceptionReceivedEventArgs.Exception}.");
-            var context = exceptionReceivedEventArgs.ExceptionReceivedContext;
-            Console.WriteLine("Exception context for troubleshooting:");
-            Console.WriteLine($"- Endpoint: {context.Endpoint}");
-            Console.WriteLine($"- Entity Path: {context.EntityPath}");
-            Console.WriteLine($"- Executing Action: {context.Action}");
+            Console.WriteLine(args.Exception.ToString());
             return Task.CompletedTask;
         }
-    }
-}
+    ```
+1. Voeg een methode met de naam `ReceiveMessagesAsync` toe aan de klasse `Program` en voeg de volgende code toe om berichten te ontvangen. 
+
+    ```csharp
+        static async Task ReceiveMessagesAsync()
+        {
+            await using (ServiceBusClient client = new ServiceBusClient(connectionString))
+            {
+                // create a processor that we can use to process the messages
+                ServiceBusProcessor processor = client.CreateProcessor(queueName, new ServiceBusProcessorOptions());
+
+                // add handler to process messages
+                processor.ProcessMessageAsync += MessageHandler;
+
+                // add handler to process any errors
+                processor.ProcessErrorAsync += ErrorHandler;
+
+                // start processing 
+                await processor.StartProcessingAsync();
+
+                Console.WriteLine("Wait for a minute and then press any key to end the processing");
+                Console.ReadKey();
+
+                // stop processing 
+                Console.WriteLine("\nStopping the receiver...");
+                await processor.StopProcessingAsync();
+                Console.WriteLine("Stopped receiving messages");
+            }
+        }
+    ```
+1. Voeg vanuit de methode `Main` een aanroep toe aan `ReceiveMessagesAsync` methode. Maak de methode `SendMessagesAsync` onzichtbaar als u alleen het ontvangen van berichten wilt testen. Als u dit niet doet, ziet u nog vier berichten die naar de wachtrij worden verzonden. 
+
+    ```csharp
+        static async Task Main()
+        {
+            // send a message to the queue
+            await SendMessageAsync();
+
+            // send a batch of messages to the queue
+            await SendMessageBatchAsync();
+
+            // receive message from the queue
+            await ReceiveMessagesAsync();
+        }
+    ```
+
+## <a name="run-the-app"></a>De app uitvoeren
+Voer de toepassing uit. Wacht een minuut en druk vervolgens op een willekeurige toets om het ontvangen van berichten te stoppen. U zou de volgende uitvoer moeten zien (spatiebalk als toets). 
+
+```console
+Sent a single message to the queue: myqueue
+Sent a batch of messages to the queue: myqueue
+Wait for a minute and then press any key to end the processing
+Received: Hello world!
+Received: First message in the batch
+Received: Second message in the batch
+Received: Third message in the batch
+Received: Hello world!
+Received: First message in the batch
+Received: Second message in the batch
+Received: Third message in the batch
+
+Stopping the receiver...
+Stopped receiving messages
 ```
 
-Voer het programma uit en controleer de portal opnieuw. Het **aantal actieve berichten** en **huidige** waarden zijn nu **0**.
+Controleer de portal opnieuw. 
 
-![Wachtrij nadat berichten zijn ontvangen][queue-message-receive]
+- De waarden voor **Aantal actieve berichten** en **HUIDIGE** zijn nu **0**.
+- U ziet in de grafiek **Berichten** in het onderste gedeelte **Metrische gegevens** dat er acht binnenkomende berichten en acht uitgaande berichten voor de wachtrij zijn. 
 
-Gefeliciteerd! U hebt nu een wachtrij gemaakt, een set berichten naar die wachtrij verzonden en die berichten ontvangen van dezelfde wachtrij.
-
-> [!NOTE]
-> U kunt resources van Service Bus beheren met [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer/). Met de Service Bus Explorer kunnen gebruikers eenvoudig verbinding maken met een Service Bus naam ruimte en berichten entiteiten beheren. Het hulp programma biedt geavanceerde functies zoals de functionaliteit voor importeren/exporteren of de mogelijkheid om onderwerpen, wacht rijen, abonnementen, relay-Services, Notification hubs en Event hubs te testen.
+    :::image type="content" source="./media/service-bus-dotnet-get-started-with-queues/queue-messages-size-final.png" alt-text="Actieve berichten en grootte na ontvangst" lightbox="./media/service-bus-dotnet-get-started-with-queues/queue-messages-size-final.png":::
 
 ## <a name="next-steps"></a>Volgende stappen
+Raadpleeg de volgende documentatie en voorbeelden:
 
-Bekijk onze [GitHub-opslagplaats met voorbeelden](https://github.com/Azure/azure-service-bus/tree/master/samples) die enkele van de meer geavanceerde functies van Service Bus Messaging laten zien.
-
-<!--Image references-->
-
-[nuget-pkg]: ./media/service-bus-dotnet-get-started-with-queues/nuget-package.png
-[queue-message]: ./media/service-bus-dotnet-get-started-with-queues/messages-sent-to-essentials.png
-[queue-message-receive]: ./media/service-bus-dotnet-get-started-with-queues/queue-message-receive-in-essentials.png
+- [Azure Service Bus-clientbibliotheek voor .NET - Leesmij](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/servicebus/Azure.Messaging.ServiceBus)
+- [Voorbeelden op GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/servicebus/Azure.Messaging.ServiceBus/samples)
+- [.NET-API-referentie](https://docs.microsoft.com/dotnet/api/azure.messaging.servicebus?view=azure-dotnet-preview&preserve-view=true)
 

@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 11/03/2020
+ms.date: 11/20/2020
 ms.author: alkohli
 ms.localizationpriority: high
-ms.openlocfilehash: 0aace1041eba771a26bed4c85361ea2551c71ba6
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: f1d667f55a8be1b701fda6240895dd8f96315cff
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94659417"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94986314"
 ---
 ::: zone target="docs"
 
@@ -164,23 +164,28 @@ Voer de volgende stappen uit als u het apparaat vanuit Zuid-Afrika retourneert.
 
 2. Verzegel de verpakking en zorg ervoor dat het retourlabel zichtbaar is.
 
-3. Ophalen door DHL inplannen:
+3. Vraag een retourcode aan van Azure Data Box-bewerkingen. Er is een retourcode vereist om het pakket terug te sturen naar het datacentrum. E-mail verzenden naar [adbops@microsoft.com](mailto:adbops@microsoft.com). Noteer deze code op het verzendlabel naast het retouradres zodat het duidelijk zichtbaar is.
 
-    * Bel met het klantenservicecentrum op + 27(0) 11 9213600, selecteer optie 1 en geef het nummer van de vrachtbrief op.
-    * U moet vóór 14:00 uur Zuid-Afrikaanse standaardtijd (ZA) bellen om het ophalen te plannen.  
-    * Stuur een e-mail naar [Priority.Support@dhl.com](mailto:Priority.Support@dhl.com) om het afhalen in te plannen met behulp van de volgende e-mailsjabloon:
+4. Laat het pakket door DHL ophalen met een van de volgende methodes:
+   * Regel het ophalen van het pakket online door naar [DHL Express Zuid-Afrika, **Ophalen plannen**](https://mydhl.express.dhl/za/en/schedule-pickup.html#/schedule-pickup#label-reference) te gaan.
+   * Stuur een e-mail naar [Priority.Support@dhl.com](mailto:Priority.Support@dhl.com) met behulp van de volgende sjabloon:
 
-    ```output
-    To: Priority.Support@dhl.com
-    Subject:Pickup request for Microsoft Azure
-    Body:  Need pick up for the below shipment
-    *  DHL tracking number (reference number/waybill number)
-    *  Requested pickup date：yyyy/mm/dd; time: HH MM
-    ```
+     ```output
+     To: Priority.Support@dhl.com
+     Subject: Pickup request for Microsoft Azure
+     Body: Need pick up for the below shipment
+       *  DHL tracking number: (reference number/waybill number)
+       *  Requested pickup date: yyyy/mm/dd;time:HH MM
+       *  Shipper contact: (company name)
+       *  Contact person: 
+       *  Phone number: 
+       *  Full physical address: 
+       *  Item to be collected: Azure Dt
+     ```
 
-    * Een andere optie is het pakket af te leveren bij het dichtstbijzijnde DHL-servicepunt.
+    * Of lever het pakket af bij het dichtstbijzijnde DHL-servicepunt.
 
-4. Als u problemen hebt, stuurt u een e-mail naar [Priority.Support@dhl.com](mailto:Priority.Support@dhl.com) met details van de problemen die zich hebben voorgedaan. Vermeld het vrachtnummer in de onderwerpregel. U kunt ook bellen naar +27(0)119213902.
+5. Als u problemen hebt, stuurt u een e-mail naar [Priority.Support@dhl.com](mailto:Priority.Support@dhl.com) met details van de problemen die zich hebben voorgedaan. Vermeld het vrachtnummer in de onderwerpregel. U kunt ook bellen naar +27(0)119213902.
 
 ### <a name="china"></a>[China](#tab/in-china)
 

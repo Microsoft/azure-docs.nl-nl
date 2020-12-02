@@ -5,12 +5,12 @@ services: container-service
 ms.topic: quickstart
 ms.date: 09/11/2020
 ms.custom: mvc,subject-armqs, devx-track-azurecli
-ms.openlocfilehash: f0ef1c32035eed26c0717364bda030b6b7662b3e
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 271913a731a2bdf5af94885b5fe4027c0334853c
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92740291"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94887498"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-an-arm-template"></a>Quickstart: Een AKS-cluster (Azure Kubernetes Service) implementeren met behulp van een ARM-sjabloon
 
@@ -22,23 +22,21 @@ Azure Kubernetes Service (AKS) is een beheerde Kubernetes-service waarmee u snel
 
 In deze snelstart wordt ervan uitgegaan dat u een basisbegrip hebt van Kubernetes-concepten. Zie [Kubernetes-kernconcepten voor Azure Kubernetes Service (AKS)][kubernetes-concepts] voor meer informatie.
 
-Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van ARM-sjablonen, selecteert u de knop **Implementeren naar Azure** . De sjabloon wordt in Azure Portal geopend.
+Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van ARM-sjablonen, selecteert u de knop **Implementeren naar Azure**. De sjabloon wordt in Azure Portal geopend.
 
 [![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-aks%2Fazuredeploy.json)
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u voor deze snelstartgids de Azure CLI versie 2.0.61 of hoger uitvoeren. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren][azure-cli-install] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-## <a name="prerequisites"></a>Vereisten
+- Voor dit artikel is versie 2.0.61 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
-Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
-
-Als u een AKS-cluster wilt maken met behulp van een Resource Manager-sjabloon, geeft u een open bare SSH-sleutel en Azure Active Directory-service-principal op. U kunt voor machtigingen ook een [beheerde identiteit](use-managed-identity.md) gebruiken in plaats van een service-principal. Als u een van deze resources nodig hebt, raadpleegt u de volgende sectie. Ga anders naar de sectie [De sjabloon controleren](#review-the-template).
+- Als u een AKS-cluster wilt maken met behulp van een Resource Manager-sjabloon, geeft u een open bare SSH-sleutel en Azure Active Directory-service-principal op. U kunt voor machtigingen ook een [beheerde identiteit](use-managed-identity.md) gebruiken in plaats van een service-principal. Als u een van deze resources nodig hebt, raadpleegt u de volgende sectie. Ga anders naar de sectie [De sjabloon controleren](#review-the-template).
 
 ### <a name="create-an-ssh-key-pair"></a>Een SSH-sleutelpaar maken
 
-Als u toegang wilt krijgen tot AKS-knooppunten, maakt u verbinding met een SSH-sleutelpaar. Gebruik de opdracht `ssh-keygen` om openbare en privé-SSH-sleutelbestanden te genereren. Deze bestanden worden standaard gemaakt in de map *~/.ssh* . Als er op de opgegeven locatie een SSH-sleutelpaar met dezelfde naam bestaat, worden deze bestanden overschreven.
+Als u toegang wilt krijgen tot AKS-knooppunten, maakt u verbinding met een SSH-sleutelpaar. Gebruik de opdracht `ssh-keygen` om openbare en privé-SSH-sleutelbestanden te genereren. Deze bestanden worden standaard gemaakt in de map *~/.ssh*. Als er op de opgegeven locatie een SSH-sleutelpaar met dezelfde naam bestaat, worden deze bestanden overschreven.
 
 Ga naar [https://shell.azure.com](https://shell.azure.com) om Cloud Shell in uw browser te openen.
 
@@ -70,7 +68,7 @@ De uitvoer lijkt op die in het volgende voorbeeld:
 }
 ```
 
-Noteer de *appId* en *wachtwoord* . Deze waarden worden gebruikt in de volgende stappen.
+Noteer de *appId* en *wachtwoord*. Deze waarden worden gebruikt in de volgende stappen.
 
 ## <a name="review-the-template"></a>De sjabloon controleren
 
@@ -88,22 +86,22 @@ Zie de site [AKS-quickstartsjablonen][aks-quickstart-templates] voor meer AKS-vo
 
 2. Typ of selecteer de volgende waarden.
 
-    Voor deze quickstart behoudt u de standaardwaarden voor *besturingssysteemschijfgrootte (GB)* , *aantal agenten* , *agentgrootte van de virtuele machine* , *type besturingssysteem* en *Kubernetes-versie* . Geef uw eigen waarden op voor de volgende sjabloonparameters:
+    Voor deze quickstart behoudt u de standaardwaarden voor *besturingssysteemschijfgrootte (GB)* , *aantal agenten*, *agentgrootte van de virtuele machine*, *type besturingssysteem* en *Kubernetes-versie*. Geef uw eigen waarden op voor de volgende sjabloonparameters:
 
-    * **Abonnement** : Selecteer een Azure-abonnement.
-    * **Resourcegroep** : Selecteer **Nieuw maken** . Voer een unieke naam in voor de resourcegroep, zoals *myResourceGroup* , en kies vervolgens **OK** .
-    * **Locatie** : Selecteer een locatie, zoals **VS-Oost** .
-    * **Clusternaam** : voer een unieke naam in voor het AKS-cluster, zoals *myAKSCluster* .
-    * **DNS-voorvoegsel** : voer een uniek DNS-voorvoegsel voor uw cluster in, zoals *myakscluster* .
-    * **Linux-gebruikersnaam van beheerder** : voer een gebruikersnaam in om verbinding te maken via SSH, zoals *azureuser* .
-    * **Openbare SSH-RSA-sleutel** : kopieer en plak het *openbare* onderdeel van uw SSH-sleutelpaar (standaard de inhoud van *~/.ssh/id_rsa.pub* ).
-    * **Client-id service-principal** : kopieer en plak de *appId* van de service-principal uit de opdracht `az ad sp create-for-rbac`.
-    * **Clientgeheim service-principal** : kopieer en plak het *wachtwoord* van de service-principal uit de opdracht `az ad sp create-for-rbac`.
-    * **Ik ga akkoord met de bovenstaande voorwaarden** : schakel dit selectievakje in om akkoord te gaan.
+    * **Abonnement**: Selecteer een Azure-abonnement.
+    * **Resourcegroep**: Selecteer **Nieuw maken**. Voer een unieke naam in voor de resourcegroep, zoals *myResourceGroup*, en kies vervolgens **OK**.
+    * **Locatie**: Selecteer een locatie, zoals **VS-Oost**.
+    * **Clusternaam**: voer een unieke naam in voor het AKS-cluster, zoals *myAKSCluster*.
+    * **DNS-voorvoegsel**: voer een uniek DNS-voorvoegsel voor uw cluster in, zoals *myakscluster*.
+    * **Linux-gebruikersnaam van beheerder**: voer een gebruikersnaam in om verbinding te maken via SSH, zoals *azureuser*.
+    * **Openbare SSH-RSA-sleutel**: kopieer en plak het *openbare* onderdeel van uw SSH-sleutelpaar (standaard de inhoud van *~/.ssh/id_rsa.pub*).
+    * **Client-id service-principal**: kopieer en plak de *appId* van de service-principal uit de opdracht `az ad sp create-for-rbac`.
+    * **Clientgeheim service-principal**: kopieer en plak het *wachtwoord* van de service-principal uit de opdracht `az ad sp create-for-rbac`.
+    * **Ik ga akkoord met de bovenstaande voorwaarden**: schakel dit selectievakje in om akkoord te gaan.
 
     ![Resource Manager-sjabloon om een Azure Kubernetes Service-cluster te maken in de portal](./media/kubernetes-walkthrough-rm-template/create-aks-cluster-using-template-portal.png)
 
-3. Selecteer **Aankoop** .
+3. Selecteer **Aankoop**.
 
 Het duurt een paar minuten om het AKS-cluster te maken. Wacht totdat het cluster met succes is geïmplementeerd voordat u met de volgende stap verdergaat.
 
@@ -257,14 +255,14 @@ Gebruik de opdracht [kubectl get service][kubectl-get] met het argument `--watch
 kubectl get service azure-vote-front --watch
 ```
 
-Eerst wordt het *EXTERNAL-IP* -adres voor de service *azure-vote-front* weergegeven als *in behandeling* .
+Eerst wordt het *EXTERNAL-IP*-adres voor de service *azure-vote-front* weergegeven als *in behandeling*.
 
 ```output
 NAME               TYPE           CLUSTER-IP   EXTERNAL-IP   PORT(S)        AGE
 azure-vote-front   LoadBalancer   10.0.37.27   <pending>     80:30572/TCP   6s
 ```
 
-Zodra het *EXTERNAL-IP* -adres is gewijzigd van *in behandeling* in een echt openbaar IP-adres, gebruikt u `CTRL-C` om het controleproces van `kubectl` te stoppen. In de volgende voorbeelduitvoer ziet u een geldig openbaar IP-adres dat aan de service is toegewezen:
+Zodra het *EXTERNAL-IP*-adres is gewijzigd van *in behandeling* in een echt openbaar IP-adres, gebruikt u `CTRL-C` om het controleproces van `kubectl` te stoppen. In de volgende voorbeelduitvoer ziet u een geldig openbaar IP-adres dat aan de service is toegewezen:
 
 ```output
 azure-vote-front   LoadBalancer   10.0.37.27   52.179.23.131   80:30572/TCP   2m

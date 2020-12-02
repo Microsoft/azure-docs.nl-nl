@@ -7,12 +7,12 @@ ms.date: 11/12/2019
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 53304f14286577bf0bc25b2a66442286527c5140
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0a7f5ec0231612a2cee2a9435144c886527c228e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90972436"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95014472"
 ---
 # <a name="tutorial-create-a-connected-waste-management-application-in-iot-central"></a>Zelfstudie: Een toepassing voor verbonden afvalbeheer maken in Azure IoT Central
 
@@ -92,18 +92,18 @@ Als ontwikkelaar kunt u weergaven in het operatordashboard maken en aanpassen. V
 
 Het dashboard bestaat uit verschillende soorten tegels:
 
-* ***Tegel met een afbeelding van het Wide World Waste-hulpprogramma***: de eerste tegel in het dashboard is een tegel met een afbeelding van een fictief hulpprogramma voor afvalbeheer met de naam 'Wide World Waste'. U kunt de tegel aanpassen en uw afbeelding gebruiken of deze verwijderen. 
+* ***Tegel met een afbeelding van het Wide World Waste-hulpprogramma**: de eerste tegel in het dashboard is een tegel met een afbeelding van een fictief hulpprogramma voor afvalbeheer met de naam 'Wide World Waste'. U kunt de tegel aanpassen en uw afbeelding gebruiken of deze verwijderen. 
 
-* ***Tegel met afbeelding van prullenbak***: u kunt tegels met afbeeldingen en inhoud gebruiken om het apparaat dat wordt bewaakt, samen met een beschrijvende tekst, visueel weer te geven. 
+_***Tegel met afbeelding van prullenbak** _: u kunt tegels met afbeeldingen en inhoud gebruiken om het apparaat dat wordt bewaakt, samen met een beschrijvende tekst, visueel weer te geven. 
 
-* ***KPI-tegel met vulniveau***: de tegel geeft een waarde weer die door een *vulniveausensor* in een prullenbak wordt gerapporteerd. *Vulniveausensoren* en andere sensoren zoals een *geurmeter* of *gewichtssensor* in een prullenbak kunnen op afstand worden bewaakt. Een operator kan actie ondernemen, zoals de vuilniswagen erop uitsturen om het vuil op te halen. 
+_***KPI-tegel met vulniveau** _: de tegel geeft een waarde weer die door een _vulniveausensor_* in een prullenbak wordt gerapporteerd. *Vulniveausensoren* en andere sensoren zoals een *geurmeter* of *gewichtssensor* in een prullenbak kunnen op afstand worden bewaakt. Een operator kan actie ondernemen, zoals de vuilniswagen erop uitsturen om het vuil op te halen. 
 
-*  ***Omgevingskaart voor afvalbewaking***: de kaart maakt gebruik van Azure Maps, die u rechtstreeks in Azure IoT Central kunt configureren. Op de tegel met de kaart wordt de locatie van het apparaat weergegeven. Beweeg de muisaanwijzer over de kaart en probeer de besturingselementen op de kaart uit, zoals inzoomen, uitzoomen of uitbreiden.
+*  ***Omgevingskaart voor afvalbewaking**: de kaart maakt gebruik van Azure Maps, die u rechtstreeks in Azure IoT Central kunt configureren. Op de tegel met de kaart wordt de locatie van het apparaat weergegeven. Beweeg de muisaanwijzer over de kaart en probeer de besturingselementen op de kaart uit, zoals inzoomen, uitzoomen of uitbreiden.
 
      ![Dashboardkaart Verbonden afvalbeheer](./media/tutorial-connectedwastemanagement/connectedwastemanagement-dashboard-map.png)
 
 
-* ***Staafdiagram dat vulniveau, geur, gewicht aangeeft**: u kunt de telemetriegegevens van een of meer apparaten in een staafdiagram visualiseren. U kunt het staafdiagram ook uitbreiden.  
+_***Staafdiagram dat vulniveau, geur, gewicht aangeeft**: u kunt de telemetriegegevens van een of meer apparaten in een staafdiagram visualiseren. U kunt het staafdiagram ook uitbreiden.  
 
   ![Staafdiagram op dashboard Verbonden afvalbeheer](./media/tutorial-connectedwastemanagement/connectedwastemanagement-dashboard-barchart.png)
 
@@ -163,7 +163,7 @@ Pas het volgende aan:
 
 ### <a name="publish"></a>Publiceren 
 
-* Als u wijzigingen hebt aangebracht, zorg er dan voor dat u de apparaatsjabloon**Publiceert**. 
+* Als u wijzigingen hebt aangebracht, zorg er dan voor dat u de apparaatsjabloon **Publiceert**. 
 
 ### <a name="create-a-new-device-template"></a>Een nieuwe apparaatsjabloon maken 
 
@@ -197,7 +197,7 @@ Voor de **Verbonden afvalbeheer**-toepassing zijn twee gesimuleerde apparaten to
 
 ## <a name="explore-and-configure-rules"></a>Regels verkennen en configureren
 
-In Azure IoT Central kunt u regels maken om de telemetrische gegevens van apparaten automatisch te bewaken en acties te activeren die worden ondernomen wanneer aan een of meer voorwaarden wordt voldaan. De acties kunnen onder andere het verzenden van e-mail zijn, het activeren van een Microsoft Flow-actie of een webhookactie voor het verzenden van gegevens naar andere services.
+In Azure IoT Central kunt u regels maken om de telemetrische gegevens van apparaten automatisch te bewaken en acties te activeren die worden ondernomen wanneer aan een of meer voorwaarden wordt voldaan. De acties kunnen onder andere het verzenden van e-mail zijn, het activeren van een Power Automate-actie of een webhookactie voor het verzenden van gegevens naar andere services.
 
 De toepassing **Verbonden afvalbeheer** bevat vier voorbeeldregels.
 

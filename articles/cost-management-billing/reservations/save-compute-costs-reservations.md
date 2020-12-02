@@ -6,14 +6,14 @@ ms.reviewer: yashar
 ms.service: cost-management-billing
 ms.subservice: reservations
 ms.topic: overview
-ms.date: 10/01/2020
+ms.date: 11/18/2020
 ms.author: banders
-ms.openlocfilehash: 5aeb9046b8901580e4de37b1735a2d2dddd42fce
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: eef19a6c421a64c3951d35eea78ea84f7e7d97b2
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92147450"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94887209"
 ---
 # <a name="what-are-azure-reservations"></a>Wat zijn Azure-reserveringen?
 
@@ -90,7 +90,7 @@ Zie [Selfservice voor omruiling en terugbetaling van Azure-reserveringen](exchan
 - **Gereserveerde VM-instantie**: een reservering dekt alleen de rekenkosten van de virtuele machine en cloudservices. Aanvullende kosten voor software, Windows, netwerken of opslag vallen hier niet onder.
 - **Gereserveerde Azure Storage-capaciteit**: onder een reservering valt de opslagcapaciteit voor standaardopslagaccounts voor Blob Storage of Azure Data Lake Gen2 Storage. De tarieven voor bandbreedte of transacties vallen niet onder de reservering.
 - **Gereserveerde Azure Cosmos DB-capaciteit**: onder een reservering valt de doorvoer die voor uw resources is ingericht. De opslag- en netwerkkosten vallen hier niet onder.
-- **Gereserveerde SQL Database-vCore**: alleen de rekenkosten worden opgenomen in een reservering. De SQL-licentie wordt afzonderlijk gefactureerd.
+- **SQL Database gereserveerde vCore** : omvat zowel Beheerd SQL-exemplaar als SQL Database Elastische pool/individuele database. Alleen de rekenkosten worden opgenomen in een reservering. De SQL-licentie wordt afzonderlijk gefactureerd. 
 - **Azure Synapse Analytics**: een reservering omvat cDWU-gebruik. Een reservering omvat geen opslag- en netwerkkosten die samenhangen met het gebruik van Azure Synapse Analytics.
 - **Azure Databricks**: onder een reservering valt alleen het DBU-gebruik. Andere kosten, bijvoorbeeld voor berekeningen, opslag en netwerken, worden afzonderlijk toegepast.
 - **App Service-zegelkosten**: onder een reservering valt het gebruik van zegels. De reservering is niet van toepassing op werkrollen, dus alle andere resources die aan de zegel zijn gekoppeld, worden afzonderlijk in rekening gebracht.

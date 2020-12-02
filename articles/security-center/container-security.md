@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: 6b57428aeba702dc8cf06ec4ae7984854a94ac7a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7265195f9614928a2150a56a780ea7b36bc2e266
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91449168"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96030863"
 ---
 # <a name="container-security-in-security-center"></a>Containerbeveiliging in Security Center
 
@@ -78,11 +78,11 @@ Zie de sectie [Container](recommendations-reference.md#recs-containers) van de n
 
 ###  <a name="workload-protection-best-practices-using-kubernetes-admission-control"></a>Aanbevolen procedures voor workloadbeveiliging met behulp van Kubernetes Admission Control
 
-Installeer de **Azure Policy-invoegtoepassing voor Kubernetes** om aanbevelingen te krijgen voor het beveiligen van de workloads van uw Kubernetes-containers.
+Installeer de **Azure Policy-invoegtoepassing voor Kubernetes** om een set aanbevelingen te krijgen voor het beveiligen van de workloads van uw Kubernetes-containers. U kunt deze invoegtoepassing ook automatisch implementeren, zoals wordt uitgelegd in [Automatische inrichting van extensies inschakelen](security-center-enable-data-collection.md#enable-auto-provisioning-of-extensions). Als automatische inrichting voor de invoegtoepassing is ingeschakeld, wordt de uitbreiding standaard ingeschakeld in alle bestaande en toekomstige clusters (die voldoen aan de installatievereisten van de invoegtoepassing).
 
 Zoals beschreven in deze pagina [Azure Policy for Kubernetes](../governance/policy/concepts/policy-for-kubernetes.md), vormt de invoegtoepassing een uitbreiding op de open-source webhook voor de [Gatekeeper v3](https://github.com/open-policy-agent/gatekeeper) -toegangscontroller voor  [Open Policy Agent](https://www.openpolicyagent.org/). Toegangscontrollers van Kubernetes zijn invoegtoepassingen die de gebruikswijze van uw clusters afdwingen. De invoegtoepassing wordt geregistreerd als een webhook voor Kubernetes-toegangsbeheer en maakt het mogelijk om op een gecentraliseerde, consistente manier afdwinging en beveiliging op uw clusters op schaal toe te passen. 
 
-Wanneer u de invoegtoepassing op uw AKS-cluster hebt geïnstalleerd, wordt elke aanvraag voor de Kubernetes API-server gecontroleerd op basis van de vooraf gedefinieerde set aanbevolen procedures voordat deze naar het cluster gaat. Vervolgens kunt u instellingen configureren om de aanbevolen procedures **af te dwingen** en ze te verplichten voor toekomstige workloads. 
+Met de invoegtoepassing op uw AKS-cluster wordt elke aanvraag voor de Kubernetes API-server gecontroleerd op basis van de vooraf gedefinieerde set aanbevolen procedures voordat deze naar het cluster gaat. Vervolgens kunt u instellingen configureren om de aanbevolen procedures **af te dwingen** en ze te verplichten voor toekomstige workloads. 
 
 U kunt er bijvoorbeeld voor zorgen dat containers met machtigingen niet moeten worden gemaakt, en toekomstige aanvragen hiervoor worden dan geblokkeerd.
 

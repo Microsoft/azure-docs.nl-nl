@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc,subject-armqs
 ms.date: 10/14/2020
 ms.author: sebansal
-ms.openlocfilehash: 0a613ce64d2037fdc7ebad680939893f1faa0639
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: c16fc475e4982724ebc9f4f55301b6fc56dfb7c7
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92899021"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95017006"
 ---
 # <a name="quickstart-create-an-azure-key-vault-and-a-key-by-using-arm-template-preview"></a>Quickstart: Een Azure-sleutelkluis en een sleutel maken met behulp van een ARM-sjabloon (preview)
 
@@ -26,7 +26,7 @@ ms.locfileid: "92899021"
 Voor het voltooien van dit artikel, is het volgende vereist:
 
 - Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
-
+- Voor de gebruiker moet de rol ingebouwde RBAC zijn toegewezen, bijvoorbeeld. inzender. [Klik hier voor meer informatie](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
 - Uw Azure AD-gebruikersobject-id is in de sjabloon nodig om machtigingen te kunnen configureren. Met de volgende procedure wordt de object-id (GUID) opgehaald.
 
     1. Voer de volgende Azure PowerShell- of de Azure CLI-opdracht uit door **Proberen** te selecteren en het script vervolgens in het shell-deelvenster te plakken. Plak het script door met de rechtermuisknop op de shell te klikken en **Plakken** te selecteren.
@@ -95,7 +95,7 @@ Voor het voltooien van dit artikel, is het volgende vereist:
     },
     "keySize": {
       "type": "int",
-      "defaultValue": -1,
+      "defaultValue": 2048,
       "metadata": {
         "description": "The size in bits of the key to be created."
       }
@@ -143,7 +143,7 @@ Voor het voltooien van dit artikel, is het volgende vereist:
       "properties": {
         "kty": "[parameters('keyType')]",
         "keyOps": "[parameters('keyOps')]",
-        "keySize": "[if(equals(parameters('keySize'), -1), json('null'), parameters('keySize'))]",
+        "keySize": "[parameters('keySize')]",
         "curveName": "[parameters('curveName')]"
       }
     }

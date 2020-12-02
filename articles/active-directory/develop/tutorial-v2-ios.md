@@ -13,16 +13,16 @@ ms.date: 09/18/2020
 ms.author: marsma
 ms.reviewer: oldalton
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 70194c7adc55a00c5cb65928daac184499eb124d
-ms.sourcegitcommit: 06ba80dae4f4be9fdf86eb02b7bc71927d5671d3
+ms.openlocfilehash: aff89d49dec9bafedb3c9a5a76abdeb803740a12
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91611109"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95746724"
 ---
 # <a name="tutorial-sign-in-users-and-call-microsoft-graph-from-an-ios-or-macos-app"></a>Zelfstudie: Gebruikers aanmelden en Microsoft Graph aanroepen vanuit een iOS- of macOS-app
 
-In deze zelfstudie leert u hoe u een iOS- of macOS-app integreert met het Microsoft-identiteitsplatform. Via de app wordt een gebruiker aangemeld, een toegangstoken opgehaald om de Microsoft Graph API aan te roepen, en een aanvraag ingediend bij de Microsoft Graph API.
+In deze zelfstudie bouwt u een iOS- of macOS-app die integreert met het Microsoft-identiteitsplatform voor het aanmelden van gebruikers. U krijgt een toegangstoken waarmee u de Microsoft Graph API kunt aanroepen.
 
 Wanneer u de handleiding hebt voltooid, accepteert uw toepassing aanmeldingen van persoonlijke Microsoft-accounts (waaronder outlook.com, live.com en overige accounts), en werk- of schoolaccounts van elk bedrijf of elke organisatie waar Azure Active Directory wordt gebruikt. Deze zelfstudie is van toepassing op iOS- en macOS-apps. Sommige stappen verschillen tussen de twee platforms.
 
@@ -854,7 +854,7 @@ Nadat u zich hebt aangemeld, verschijnen in de app de gegevens die zijn geretour
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over het bouwen van mobiele apps die beveiligde web-API's aanroepen in deze reeks met meerdere scenario's.
+Meer informatie over het bouwen van mobiele apps die beveiligde web-API's aanroepen in onze reeks met meerdere scenario's.
 
 > [!div class="nextstepaction"]
 > [Scenario: Een mobiele app die web-API's aanroept](scenario-mobile-overview.md)

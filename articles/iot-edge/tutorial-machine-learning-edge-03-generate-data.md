@@ -8,17 +8,14 @@ ms.date: 1/20/2020
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: c40f7d988f2b5f206f42eae787efcdce786948a8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ef6e86bbb55a2c51779f2dcf60f802ce549516cb
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91857075"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959676"
 ---
 # <a name="tutorial-generate-simulated-device-data"></a>Zelfstudie: Gesimuleerde apparaatgegevens genereren
-
-> [!NOTE]
-> Dit artikel maakt deel uit van een reeks voor een zelfstudie over het gebruik van Azure Machine Learning in IoT Edge. Als u rechtstreeks bij dit artikel bent terechtgekomen, wordt u aangeraden te beginnen met het [eerste artikel](tutorial-machine-learning-edge-01-intro.md) in de reeks voor de beste resultaten.
 
 In dit artikel gebruiken we machine learning-trainingsgegevens om een apparaat te simuleren dat telemetrie naar Azure IoT Hub verzendt. Zoals gezegd in de inleiding, maakt deze zelfstudie gebruik van de [Turbofan Engine Degradation Simulation Data Set](https://c3.nasa.gov/dashlink/resources/139/) voor het simuleren van gegevens uit een set vliegtuigmotoren voor training en tests.
 
@@ -45,6 +42,10 @@ Het DeviceHarness-project is een .NET core-project dat is geschreven in C# en be
 Het uitvoeren van de taken die in dit artikel worden beschreven, zou ongeveer 20 minuten moeten duren.
 
 In werkelijkheid zou het equivalent van het werk in deze stap waarschijnlijk worden gedaan door apparaatontwikkelings en cloudontwikkelaars.
+
+## <a name="prerequisites"></a>Vereisten
+
+Dit artikel maakt deel uit van een reeks voor een zelfstudie over het gebruik van Azure Machine Learning in IoT Edge. Elk artikel in de reeks is gebaseerd op het werk in het vorige artikel. Als u rechtstreeks bij dit artikel terecht bent gekomen, gaat u naar de [eerste artikel](tutorial-machine-learning-edge-01-intro.md) in de reeks.
 
 ## <a name="configure-visual-studio-code-and-build-deviceharness-project"></a>Visual Studio Code configureren en DeviceHarness-project bouwen
 

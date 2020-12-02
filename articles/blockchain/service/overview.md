@@ -4,16 +4,16 @@ description: Overzicht van Azure Blockchain Service
 ms.date: 05/22/2020
 ms.topic: overview
 ms.reviewer: ravastra
-ms.openlocfilehash: e82916d7366ad82746d2d3ddfc979264e113619b
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: dc716b475fe85170d595463e0785743591e398c1
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91334817"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874556"
 ---
 # <a name="what-is-azure-blockchain-service"></a>Wat is Azure Blockchain Service?
 
-Azure Blockchain Service is een volledig beheerde grootboekservice waarmee gebruikers de mogelijkheid hebben om blockchain-netwerken op schaal te vergroten of te bedienen in Azure. Door geïntegreerd beheer te bieden voor zowel infrastructuurbeheer als governance van blockchain-netwerken, biedt Azure Blockchain Service de volgende mogelijkheden:
+Azure Blockchain Service is een volledig beheerde grootboekservice waarmee gebruikers in staat zijn om blockchain-netwerken op schaal te vergroten of te bedienen in Azure. Door geïntegreerd beheer te bieden voor zowel infrastructuurbeheer als governance van blockchain-netwerken, biedt Azure Blockchain Service de volgende mogelijkheden:
 
 * Eenvoudige netwerkimplementatie en -bewerkingen
 * Ingebouwd consortiumbeheer

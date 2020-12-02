@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
 ms.date: 11/16/2020
-ms.openlocfilehash: 57213e228359fd6c201d501d3bb75f7267054277
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 0314f5e55a476cd1cd1f8a31bd918e0ebb64c75f
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685423"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95254235"
 ---
 # <a name="explore-the-synapse-knowledge-center"></a>Het Synapse Knowledge Center verkennen
 
@@ -33,8 +33,8 @@ Kies een van beide methoden en open het **Knowledge Center**.
 ## <a name="overview"></a>Overzicht
 
 In het **Knowledge Center** kunt u drie dingen doen:
-* **Voorbeelden direct gebruiken**. Deze optie is geoptimaliseerd zodat u zo snel mogelijk analyses in de praktijk kunt bekijken. Als u een snel voorbeeld wilt van hoe Synapse werkt, kiest u deze optie.
-* **Beschikbare voorbeeld voor de browser**. Met deze optie kunt u voorbeeldgegevenssets koppelen en voorbeeldcode toevoegen in de vorm van SQL-scripts, -notebooks en -pijplijnen.
+* **Voorbeelden direct gebruiken**. Als u een snel voorbeeld wilt van hoe Synapse werkt, kiest u deze optie.
+* **Door galerie bladeren**. Met deze optie kunt u voorbeeldgegevenssets koppelen en voorbeeldcode toevoegen in de vorm van SQL-scripts, -notebooks en -pijplijnen.
 * **Rondleiding door Synapse Studio**. Met deze optie krijgt u een korte rondleiding door de basisonderdelen van Synapse Studio. Dit is handig als u Synapse Studio nog nooit eerder hebt gebruikt.
 
 ## <a name="exploring-blob-storage-with-serverless-sql-pool"></a>Blob-opslag verkennen met een serverloze SQL-pool
@@ -47,7 +47,7 @@ In het **Knowledge Center** kunt u drie dingen doen:
 1. Klik op Run. De tekst die u hebt geselecteerd, wordt uitgevoerd.
 
 ## <a name="loading-more-nyc-taxi-data"></a>Meer NYC Taxi-gegevens laden
-1. Ga naar het **Knowledge Center-** en klik op **Door de beschikbare voorbeelden bladeren** 
+1. Ga naar het **Knowledge Center-** en klik op **Door de galerie bladeren** 
 1. Selecteer het tabblad **SQL-scripts** bovenaan
 1. Selecteer **De dataset van New York Taxicab laden**
 1. Kies onder **Invoer** de optie **Een bestaande pool selecteren** en selecteer **SQLDB1**

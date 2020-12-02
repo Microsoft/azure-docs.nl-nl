@@ -8,18 +8,18 @@ ms.service: stream-analytics
 ms.topic: overview
 ms.custom: mvc
 ms.date: 09/22/2020
-ms.openlocfilehash: b3ad0da1f910556c172c519faf953d4075647955
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 36d26195e78c74ed7b976cfdd48e1e965bca872b
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92109048"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95249781"
 ---
 # <a name="create-and-delete-private-endpoints-in-an-azure-stream-analytics-cluster"></a>Privé-eindpunten maken en verwijderen in een Azure Stream Analytics-cluster
 
 U kunt uw Azure Stream Analytics-taken die worden uitgevoerd op een cluster verbinden met invoer- en uitvoerbronnen die zich achter een firewall of een Azure Virtual Network (VNet) bevinden. Eerst maakt u een privé-eindpunt voor een resource, zoals Azure Event Hub of Azure SQL Database, in uw Stream Analytics-cluster. Vervolgens keurt u de verbinding met het privé-eindpunt goed vanuit uw invoer of uitvoer.
 
-Zodra u de verbinding hebt goedgekeurd, heeft elke taak die in uw Stream Analytics-cluster wordt uitgevoerd toegang tot de resource via het privé-eindpunt. In dit artikel wordt beschreven hoe u privé-eindpunten maakt en verwijdert in een Stream Analytics-cluster.
+Zodra u de verbinding hebt goedgekeurd, heeft elke taak die in uw Stream Analytics-cluster wordt uitgevoerd toegang tot de resource via het privé-eindpunt. In dit artikel wordt beschreven hoe u privé-eindpunten maakt en verwijdert in een Stream Analytics-cluster. U kunt privé-eindpunten maken voor Azure SQL Database, Azure Storage, Azure Data Lake Storage Gen2, Azure Event Hub en Azure Service Bus. Privé-eindpunten voor andere services worden binnenkort toegevoegd. 
 
 ## <a name="create-private-endpoint-in-stream-analytics-cluster"></a>Een privé-eindpunt in een Stream Analytics-cluster maken
 
@@ -27,14 +27,14 @@ In dit gedeelte leert u hoe u een privé-eindpunt in een Stream Analytics cluste
 
 1. Zoek en selecteer uw Stream Analytics-cluster in Azure Portal.
 
-1. Selecteer onder **Alle instellingen** de optie **Privé-eindpunten** .
+1. Selecteer onder **Alle instellingen** de optie **Privé-eindpunten**.
 
 1. Selecteer **Privé-eindpunt toevoegen** en voer de volgende gegevens in om de resource te kiezen die u veilig wilt openen via een privé-eindpunt.
 
    |Instelling|Waarde|
    |---|---|
    |Naam|Voer een naam in voor uw privé-eindpunt. Als deze naam al wordt gebruikt, maakt u een unieke naam.|
-   |Verbindingsmethode|Selecteer **Verbinding maken met een Azure-resource in mijn directory** .<br><br>U kunt een van uw resources kiezen om veilig verbinding te maken met het privé-eindpunt, of u kunt verbinding maken met de resource van iemand anders met behulp van een resource-id of alias die met u is gedeeld.|
+   |Verbindingsmethode|Selecteer **Verbinding maken met een Azure-resource in mijn directory**.<br><br>U kunt een van uw resources kiezen om veilig verbinding te maken met het privé-eindpunt, of u kunt verbinding maken met de resource van iemand anders met behulp van een resource-id of alias die met u is gedeeld.|
    |Abonnement|Selecteer uw abonnement.|
    |Resourcetype|Kies het [resourcetype dat aan uw resource is toegewezen](../private-link/private-endpoint-overview.md#private-link-resource).|
    |Resource|Selecteer de resource waarmee u verbinding wilt maken met behulp van een privé-eindpunt.|
@@ -52,9 +52,9 @@ In dit gedeelte leert u hoe u een privé-eindpunt in een Stream Analytics cluste
 
 1. Zoek en selecteer uw Stream Analytics-cluster in Azure Portal.
 
-1. Selecteer onder **Alle instellingen** de optie **Privé-eindpunten** .
+1. Selecteer onder **Alle instellingen** de optie **Privé-eindpunten**.
 
-1. Selecteer het privé-eindpunt dat u wilt verwijderen en selecteer **Verwijderen** .
+1. Selecteer het privé-eindpunt dat u wilt verwijderen en selecteer **Verwijderen**.
 
    ![privé-eindpunt verwijderen](./media/private-endpoints/delete-private-endpoint.png)
 

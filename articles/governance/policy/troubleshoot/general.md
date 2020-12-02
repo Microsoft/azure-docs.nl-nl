@@ -1,14 +1,14 @@
 ---
 title: Veelvoorkomende fouten oplossen
 description: Meer informatie over het oplossen van problemen met het maken van beleids definities, de verschillende SDK en de invoeg toepassing voor Kubernetes.
-ms.date: 10/30/2020
+ms.date: 12/01/2020
 ms.topic: troubleshooting
-ms.openlocfilehash: 74b622dd41fb28e845a35780e5d06588189ec029
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: f3667988d527100507d308887338278e1200d454
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93146276"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96510995"
 ---
 # <a name="troubleshoot-errors-using-azure-policy"></a>Fouten oplossen met behulp van Azure Policy
 
@@ -56,7 +56,7 @@ Wacht eerst de juiste hoeveelheid tijd om een evaluatie uit te voeren en de resu
 
 #### <a name="issue"></a>Probleem
 
-Een resource bevindt zich niet in de evaluatie status, niet _compatibel_ of _niet-compatibel_ , die voor die resource wordt verwacht.
+Een resource bevindt zich niet in de evaluatie status, niet _compatibel_ of _niet-compatibel_, die voor die resource wordt verwacht.
 
 #### <a name="cause"></a>Oorzaak
 
@@ -88,14 +88,14 @@ Een resource waarvan wordt verwacht dat deze wordt uitgevoerd door Azure Policy 
 
 #### <a name="cause"></a>Oorzaak
 
-De beleids toewijzing is geconfigureerd voor [enforcementMode](../concepts/assignment-structure.md#enforcement-mode) van _disabled_ . Terwijl de afdwingings modus is uitgeschakeld, wordt het beleids effect niet afgedwongen en is er geen vermelding in het activiteiten logboek.
+De beleids toewijzing is geconfigureerd voor [enforcementMode](../concepts/assignment-structure.md#enforcement-mode) van _disabled_. Terwijl de afdwingings modus is uitgeschakeld, wordt het beleids effect niet afgedwongen en is er geen vermelding in het activiteiten logboek.
 
 #### <a name="resolution"></a>Oplossing
 
 Voer de volgende stappen uit om het afdwingen van uw beleids toewijzing op te lossen:
 
 1. Wacht eerst de juiste hoeveelheid tijd om een evaluatie uit te voeren en de resultaten van naleving beschikbaar te stellen in Azure Portal of SDK. Zie [evaluatie scan op aanvraag](../how-to/get-compliance-data.md#on-demand-evaluation-scan)om een nieuwe evaluatie scan te starten met Azure PowerShell of rest API.
-1. Controleer of de toewijzings parameters en het toewijzings bereik correct zijn ingesteld en of **enforcementMode** is _ingeschakeld_ . 
+1. Controleer of de toewijzings parameters en het toewijzings bereik correct zijn ingesteld en of **enforcementMode** is _ingeschakeld_.
 1. Selecteer de [beleidsdefinitiemodus](../concepts/definition-structure.md#mode):
    - Modus all voor alle resource typen.
    - Modus ' geïndexeerd ' als de beleids definitie controleert op Tags of locatie.
@@ -190,24 +190,6 @@ Zie het volgende blog bericht voor een gedetailleerde beschrijving:
 
 ## <a name="add-on-for-kubernetes-general-errors"></a>Invoeg toepassing voor Kubernetes algemene fouten
 
-### <a name="scenario-add-on-doesnt-work-with-aks-clusters-on-version-119-preview"></a>Scenario: add-on werkt niet met AKS-clusters op versie 1,19 (preview)
-
-#### <a name="issue"></a>Probleem
-
-Versie 1,19-clusters retour neren deze fout via gate keeper controller en beleids-webhook peul:
-
-```
-2020/09/22 20:06:55 http: TLS handshake error from 10.244.1.14:44282: remote error: tls: bad certificate
-```
-
-#### <a name="cause"></a>Oorzaak
-
-AKS clusers in versie 1,19 (preview) is nog niet compatibel met de invoeg toepassing Azure Policy.
-
-#### <a name="resolution"></a>Oplossing
-
-Vermijd het gebruik van Kubernetes 1,19 (preview) met de invoeg toepassing Azure Policy. De invoeg toepassing kan worden gebruikt met een ondersteunde, algemeen beschik bare versie zoals 1,16, 1,17 of 1,18.
-
 ### <a name="scenario-add-on-is-unable-to-reach-the-azure-policy-service-endpoint-due-to-egress-restrictions"></a>Scenario: add-on kan het Azure Policy service-eind punt niet bereiken vanwege uitgevals beperkingen
 
 #### <a name="issue"></a>Probleem
@@ -239,7 +221,7 @@ De invoeg toepassing kan het Azure Policy service-eind punt niet bereiken en ret
 
 #### <a name="cause"></a>Oorzaak
 
-Deze fout treedt op wanneer _add-pod-Identity_ is geïnstalleerd op het cluster en het _uitvoeren-systeem_ niet wordt uitgesloten van _Aad-pod-Identity_ .
+Deze fout treedt op wanneer _add-pod-Identity_ is geïnstalleerd op het cluster en het _uitvoeren-systeem_ niet wordt uitgesloten van _Aad-pod-Identity_.
 
 Het _Aad-pod-Identity_ component node Managed Identity (NMI) peul wijzigt de knoop punten iptables om aanroepen naar het eind punt van de meta gegevens van Azure-instanties te onderscheppen. Deze instelling houdt in dat elke aanvraag die wordt gedaan aan het eind punt van de meta gegevens wordt onderschept door NMI, zelfs als de pod geen _Aad-pod-identiteit_ gebruikt.
 **AzurePodIdentityException** CRD kan worden geconfigureerd om _Aad-pod-identiteit_ te informeren dat alle aanvragen voor het eind punt van de meta gegevens die afkomstig zijn van een pod die overeenkomt met de labels die in CRD zijn gedefinieerd, moeten worden gewaarschuwd zonder enige verwerking in NMI.
@@ -277,10 +259,19 @@ spec:
 
 #### <a name="issue"></a>Probleem
 
-De invoeg toepassing kan het Azure Policy service-eind punt bereiken, maar ziet de volgende fout:
+De invoeg toepassing kan het Azure Policy service-eind punt bereiken, maar ziet een van de volgende fouten in invoeg toepassings logboeken:
 
 ```
-The resource provider 'Microsoft.PolicyInsights' is not registered in subscription '{subId}'. See https://aka.ms/policy-register-subscription for how to register subscriptions.
+The resource provider 'Microsoft.PolicyInsights' is not registered in subscription '{subId}'. See
+https://aka.ms/policy-register-subscription for how to register subscriptions.
+```
+
+of
+
+```
+policyinsightsdataplane.BaseClient#CheckDataPolicyCompliance: Failure responding to request:
+StatusCode=500 -- Original Error: autorest/azure: Service returned an error. Status=500
+Code="InternalServerError" Message="Encountered an internal server error."
 ```
 
 #### <a name="cause"></a>Oorzaak
@@ -289,9 +280,9 @@ De `Microsoft.PolicyInsights` resource provider is niet geregistreerd en moet wo
 
 #### <a name="resolution"></a>Oplossing
 
-Registreer de `Microsoft.PolicyInsights`-resourceprovider. Zie [een resource provider registreren](../../../azure-resource-manager/management/resource-providers-and-types.md#register-resource-provider)voor instructies.
+Registreer de `Microsoft.PolicyInsights` resource provider in het cluster abonnement. Zie [een resource provider registreren](../../../azure-resource-manager/management/resource-providers-and-types.md#register-resource-provider)voor instructies.
 
-### <a name="scenario-the-subscript-is-disabled"></a>Scenario: het subscript is uitgeschakeld
+### <a name="scenario-the-subscription-is-disabled"></a>Scenario: het abonnement is uitgeschakeld
 
 #### <a name="issue"></a>Probleem
 
@@ -307,7 +298,7 @@ Deze fout betekent dat het abonnement een probleem heeft vastgesteld en dat de f
 
 #### <a name="resolution"></a>Oplossing
 
-Neem contact op met het team functie `azuredg@microsoft.com` om dit probleem te onderzoeken en op te lossen. 
+Neem contact op met het team functie `azuredg@microsoft.com` om dit probleem te onderzoeken en op te lossen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -315,4 +306,4 @@ Als u het probleem niet ziet of als u het probleem niet kunt oplossen, gaat u na
 
 - Krijg antwoorden van experts via [micro soft Q&A](/answers/topics/azure-policy.html).
 - Maak verbinding met [@AzureSupport](https://twitter.com/azuresupport) – het officiële Microsoft Azure account voor het verbeteren van de gebruikers ervaring door de Azure-community te verbinden met de juiste resources: antwoorden, ondersteuning en experts.
-- Als u meer hulp nodig hebt, kunt u een ondersteunings incident voor Azure opslaan. Ga naar de [ondersteunings site van Azure](https://azure.microsoft.com/support/options/) en selecteer **ondersteuning verkrijgen** .
+- Als u meer hulp nodig hebt, kunt u een ondersteunings incident voor Azure opslaan. Ga naar de [ondersteunings site van Azure](https://azure.microsoft.com/support/options/) en selecteer **ondersteuning verkrijgen**.

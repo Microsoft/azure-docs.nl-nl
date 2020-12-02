@@ -3,17 +3,17 @@ title: Azure-kosten beheren met automatisering
 description: In dit artikel wordt uitgelegd hoe u Azure-kosten kunt beheren met automatisering.
 author: bandersmsft
 ms.author: banders
-ms.date: 09/14/2020
+ms.date: 11/19/2020
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: cost-management
-ms.reviewer: matrive
-ms.openlocfilehash: 939e621da414fc2d4d55d85e8b66a409b1338941
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.reviewer: adwise
+ms.openlocfilehash: 47d9c2838c5c806214e3be2f9ba7ce335bc0af67
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131969"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94956089"
 ---
 # <a name="manage-costs-with-automation"></a>Kosten beheren met automatisering
 
@@ -63,11 +63,18 @@ De volgende voorbeeldaanvragen worden door Microsoft-klanten gebruikt voor het o
 
 ### <a name="get-usage-details-for-a-scope-during-specific-date-range"></a>Gebruiksgegevens voor een bereik tijdens een bepaald datumbereik ophalen
 
-De gegevens die door de aanvraag worden geretourneerd, komen overeen met de datum waarop het gebruik is ontvangen door het factureringssysteem. Dit kan kosten van meerdere facturen bevatten.
+De gegevens die door de aanvraag worden geretourneerd, komen overeen met de datum waarop het gebruik is ontvangen door het factureringssysteem. Dit kan kosten van meerdere facturen bevatten. De aanroep die moet worden gebruikt, hang af van het type abonnement.
+
+Gebruik de volgende aanroep voor verouderde klanten met een Enterprise Agreement (EA) of een betalen per gebruik-abonnement:
 
 ```http
 GET https://management.azure.com/{scope}/providers/Microsoft.Consumption/usageDetails?$filter=properties%2FusageStart%20ge%20'2020-02-01'%20and%20properties%2FusageEnd%20le%20'2020-02-29'&$top=1000&api-version=2019-10-01
+```
 
+Voor moderne klanten met een Microsoft-klantovereenkomst gebruikt u de volgende aanroep:
+
+```http
+GET https://management.azure.com/{scope}/providers/Microsoft.Consumption/usageDetails?startDate=2020-08-01&endDate=&2020-08-05$top=1000&api-version=2019-10-01
 ```
 
 ### <a name="get-amortized-cost-details"></a>Gegevens van afgeschreven kosten ophalen

@@ -8,17 +8,14 @@ ms.date: 3/24/2020
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: cfb778a1a632dc17a9f50c7ea05debed0edb4fb6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b9a29e890553d15d19853ec836f8c4296869e143
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88660244"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959625"
 ---
 # <a name="tutorial-train-and-deploy-an-azure-machine-learning-model"></a>Zelfstudie: Een Azure Machine Learning-model trainen en implementeren
-
-> [!NOTE]
-> Dit artikel maakt deel uit van een reeks voor een zelfstudie over het gebruik van Azure Machine Learning in IoT Edge. Als u rechtstreeks bij dit artikel bent terechtgekomen, wordt u aangeraden te beginnen met het [eerste artikel](tutorial-machine-learning-edge-01-intro.md) in de reeks voor de beste resultaten.
 
 In dit artikel voeren we de volgende taken uit:
 
@@ -29,6 +26,10 @@ In dit artikel voeren we de volgende taken uit:
 De Azure Notebooks profiteren van een Azure Machine Learning-werkruimte, een basisblok dat u gebruikt voor het experimenteren, trainen en implementeren van machine learning-modellen.
 
 De stappen in dit artikel worden doorgaans uitgevoerd door gegevenswetenschappers.
+
+## <a name="prerequisites"></a>Vereisten
+
+Dit artikel maakt deel uit van een reeks voor een zelfstudie over het gebruik van Azure Machine Learning in IoT Edge. Elk artikel in de reeks is gebaseerd op het werk in het vorige artikel. Als u rechtstreeks bij dit artikel terecht bent gekomen, gaat u naar de [eerste artikel](tutorial-machine-learning-edge-01-intro.md) in de reeks.
 
 ## <a name="set-up-azure-notebooks"></a>Azure Notebooks instellen
 
@@ -64,7 +65,7 @@ Er worden voorbeeldnotebookbestanden geüpload naar een nieuw Azure Notebooks-pr
 
 1. Voeg een nieuw project toe door de knop **+** te selecteren.
 
-1. Geef een **Projectnaam**op in het dialoogvenster **Nieuw project maken**. 
+1. Geef een **Projectnaam** op in het dialoogvenster **Nieuw project maken**. 
 
 1. Laat **Openbaar** en **LEESMIJ** uitgeschakeld omdat het project niet openbaar hoeft te zijn of een leesmij hoeft te hebben.
 

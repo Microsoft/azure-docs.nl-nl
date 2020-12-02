@@ -1,15 +1,15 @@
 ---
 title: Details van Naleving van regelgeving voor NIST SP 800-53 R4
 description: Details van het ingebouwde initiatief voor Naleving van regelgeving voor NIST SP 800-53 R4. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 11/17/2020
+ms.date: 11/20/2020
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: f3b4253f21bc13bf4ce728f3913f88bef9065b87
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: f4a355bf87f679f3a9ac412fad3a1258ca399654
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94700621"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94987130"
 ---
 # <a name="details-of-the-nist-sp-800-53-r4-regulatory-compliance-built-in-initiative"></a>Details van het ingebouwde initiatief voor Naleving van regelgeving voor NIST SP 800-53 R4
 
@@ -3212,7 +3212,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Aanbevelingen voor Adaptieve netwerkbeveiliging moeten worden toegepast op virtuele machines die op internet zijn gericht](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F08e6af2d-db70-460a-bfe9-d5bd474ba9d6) |Azure Security Center analyseert de verkeerspatronen van virtuele machines die vanaf het internet toegankelijk zijn, en formuleert aanbevelingen voor regels voor de netwerkbeveiligingsgroep die de kans op aanvallen beperken |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_AdaptiveNetworkHardenings_Audit.json) |
+|[Aanbevelingen voor Adaptieve netwerkbeveiliging moeten worden toegepast op virtuele machines die op internet zijn gericht](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F08e6af2d-db70-460a-bfe9-d5bd474ba9d6) |Azure Security Center analyseert de verkeerspatronen van virtuele machines die vanaf het internet toegankelijk zijn, en formuleert aanbevelingen voor regels voor de netwerkbeveiligingsgroep die de kans op aanvallen beperken |AuditIfNotExists, uitgeschakeld |[2.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_AdaptiveNetworkHardenings_Audit.json) |
 |[Alle netwerkpoorten moeten worden beperkt in netwerkbeveiligingsgroepen die zijn gekoppeld aan uw virtuele machine](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F9daedab3-fb2d-461e-b861-71790eead4f6) |Azure Security Center heeft een aantal te ruime regels voor binnenkomende verbindingen van uw netwerkbeveiligingsgroepen geïdentificeerd. Inkomende regels mogen geen toegang toestaan vanuit de bereiken ‘Any’ of ‘Internet’. Dit kan mogelijke kwaadwillende personen in staat stellen om uw resources aan te vallen. |AuditIfNotExists, uitgeschakeld |[2.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_UnprotectedEndpoints_Audit.json) |
 |[Microsoft Managed Control 1622 - Grensbescherming ](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fecf56554-164d-499a-8d00-206b07c27bed) |Microsoft implementeert dit besturingselement voor systeem- en communicatiebeveiliging |controleren |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Regulatory%20Compliance/MicrosoftManagedControl1622.json) |
 |[Microsoft Managed Control 1623 - Grensbescherming ](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F02ce1b22-412a-4528-8630-c42146f917ed) |Microsoft implementeert dit besturingselement voor systeem- en communicatiebeveiliging |controleren |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Regulatory%20Compliance/MicrosoftManagedControl1623.json) |

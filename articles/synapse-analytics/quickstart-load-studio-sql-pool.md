@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 11/16/2020
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: 3b32e7a1df0dbbf4d43a73f1e3e409a904ab88a3
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 8d70a45b89142f6f9c6990fdbb4b79751c82275f
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660080"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95237473"
 ---
 # <a name="quickstart-bulk-loading-with-synapse-sql"></a>Snelstart: Bulksgewijs laden met Synapse SQL
 
@@ -39,7 +39,8 @@ U kunt gegevens nu eenvoudig bulksgewijs laden met toegewezen SQL-pools. Klik hi
 
 ### <a name="steps"></a>Stappen
 
-1. Selecteer het opslagaccount en het bestand of de map waar vanuit u gegevens wilt laden in het venster 'Opslaglocatie van bron'. De wizard probeert automatisch Parquet-bestanden te detecteren. Als het bestandstype Parquet niet kan worden bevestigd, wordt standaard de tekst met scheidingstekens (CSV) gebruikt. 
+1. Selecteer het opslagaccount en het bestand of de map waar vanuit u gegevens wilt laden in het venster 'Opslaglocatie van bron'. De wizard probeert automatisch Parquet-bestanden te detecteren. Als het bestandstype Parquet niet kan worden bevestigd, wordt standaard de tekst met scheidingstekens (CSV) gebruikt.
+
    ![Bronlocatie selecteren](./sql/media/bulk-load/bulk-load-source-location.png)
 
 2. Selecteer de instellingen voor de bestandsindeling, waaronder het opslagaccount waarnaar u geweigerde rijen wilt schrijven (foutbestand). Momenteel worden alleen CSV- en Parquet-bestanden ondersteund.

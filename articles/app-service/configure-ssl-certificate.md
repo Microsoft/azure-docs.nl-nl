@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 10/25/2019
 ms.reviewer: yutlin
 ms.custom: seodec18
-ms.openlocfilehash: 3201870d2d738a867f89166904d668b5596cbcdf
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: dff98a5c54d2fee350e2b35dc00148c19ea233b8
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92149072"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94956497"
 ---
 # <a name="add-a-tlsssl-certificate-in-azure-app-service"></a>Een TLS/SSL-certificaat toevoegen in Azure App Service
 
@@ -105,6 +105,8 @@ Als u al een werkend App Service-certificaat hebt, kunt u het volgende doen:
 
 - [Het certificaat importeren in App Service](#import-certificate-into-app-service).
 - [Het certificaat beheren](#manage-app-service-certificates), bijvoorbeeld verlengen, opnieuw versleutelen of exporteren.
+> [!NOTE]
+> App Service certificaten worden momenteel niet ondersteund in nationale clouds van Azure.
 
 ### <a name="start-certificate-order"></a>Certificaatorder starten
 
@@ -164,7 +166,7 @@ Selecteer **App Service-verificatie**. Omdat u het domein al aan uw web-app hebt
 > - **App Service**: de handigste optie wanneer het domein al is toegewezen aan een App Service-app in hetzelfde abonnement. Er wordt gebruikgemaakt van het feit dat de App Service-app het eigendom van het domein al heeft geverifieerd.
 > - **Domein**: verifieer een [App Service-domein dat u hebt gekocht in Azure](manage-custom-dns-buy-domain.md). De TXT-record voor de verificatie wordt automatisch voor u toegevoegd en het proces wordt voltooid.
 > - **E-mail**: verifieer het domein door een e-mailbericht naar de domeinbeheerder te verzenden. Er worden instructies weergegeven wanneer u de optie selecteert.
-> - **Handmatig**: verifieer het domein met behulp van een HTML-pagina (alleen **standaard**certificaat) of een DNS TXT-record. Er worden instructies weergegeven wanneer u de optie selecteert.
+> - **Handmatig**: verifieer het domein met behulp van een HTML-pagina (alleen **standaard** certificaat) of een DNS TXT-record. Er worden instructies weergegeven wanneer u de optie selecteert.
 
 ### <a name="import-certificate-into-app-service"></a>Certificaat in App Service importeren
 

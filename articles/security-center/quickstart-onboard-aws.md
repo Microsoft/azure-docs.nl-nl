@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: quickstart
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 3a2de9b167fcbe9dc603d33fd816e70d5c3705e5
-ms.sourcegitcommit: 65d518d1ccdbb7b7e1b1de1c387c382edf037850
+ms.openlocfilehash: 7aa65cb8e37ce48a59c276fdf2631f75397d3236
+ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94372775"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96122517"
 ---
 #  <a name="connect-your-aws-accounts-to-azure-security-center"></a>Uw AWS-accounts verbinden met Azure Security Center
 
@@ -60,14 +60,14 @@ In de onderstaande schermopname ziet u de AWS-accounts die worden weergegeven in
     1. Schakel [AWS Security Hub](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html) in.
     1. Controleer of er gegevens naar de Security Hub worden gestuurd.
 
-        Wanneer u Security Hub voor het eerst inschakelt, kan het enkele uren duren voordat gegevens beschikbaar zijn.
+        Wanneer u Security Hub voor het eerst inschakelt, kan het enkele uren duren voordat er gegevens beschikbaar zijn.
 
 ### <a name="step-2-set-up-authentication-for-security-center-in-aws"></a>Stap 2. Verificatie instellen voor Security Center in AWS
 
 Er zijn twee manieren om Security Center te verifiëren bij AWS:
 
-- **Een IAM-rol maken voor Security Center** : dit is de veiligste methode en wordt daarom ook aanbevolen
-- **Een AWS-gebruiker maken voor Security Center** : dit is een minder veilige optie als u IAM niet hebt ingeschakeld
+- **Een IAM-rol maken voor Security Center**: dit is de veiligste methode en wordt daarom ook aanbevolen
+- **Een AWS-gebruiker maken voor Security Center**: dit is een minder veilige optie als u IAM niet hebt ingeschakeld
 
 #### <a name="create-an-iam-role-for-security-center"></a>Een IAM-rol maken voor Security Center
 1. Ga in uw Amazon Web Services-console naar **Beveiliging, identiteit en naleving** en selecteer **IAM**.
@@ -77,12 +77,12 @@ Er zijn twee manieren om Security Center te verifiëren bij AWS:
 1. Selecteer **Een ander AWS-account**.
 1. Voer de volgende details in:
 
-    - **Account-id** : voer de id van uw Microsoft-account ( **158177204117** ) in, zoals wordt weergegeven op de pagina van de AWS-connector in Security Center.
+    - **Account-id**: voer de id van uw Microsoft-account (**158177204117**) in, zoals wordt weergegeven op de pagina van de AWS-connector in Security Center.
     - **Externe is vereisen** moet geselecteerd zijn
-    - **Externe id** : voer de abonnements-id is zoals wordt weergegeven op de pagina van de AWS-connector in Security Center 
+    - **Externe id**: voer de abonnements-id is zoals wordt weergegeven op de pagina van de AWS-connector in Security Center 
 
 1. Selecteer **Next**.
-1. Selecteer de volgende beleidsregels in de sectie **Machtigingsbeleid toevoegen** :
+1. Selecteer de volgende beleidsregels in de sectie **Machtigingsbeleid toevoegen**:
 
     - SecurityAudit
     - AmazonSSMAutomationRole
@@ -131,7 +131,7 @@ AWS Systems Manager is vereist voor het automatiseren van taken in uw AWS-resour
 1. Selecteer **Meerdere cloudconnectors** in het menu van Security Center.
 1. Selecteer **AWS-account toevoegen**.
     :::image type="content" source="./media/quickstart-onboard-aws/add-aws-account.png" alt-text="Knop 'AWS-account toevoegen' op de pagina voor meerdere cloudconnectors van Security Center":::
-1. Configureer de opties op het tabblad **AWS-verificatie** :
+1. Configureer de opties op het tabblad **AWS-verificatie**:
     1. Voer een **Weergavenaam** in voor de connector.
     1. Bevestig dat het abonnement het juiste is. Dit abonnement gaat de connector en de aanbevelingen van AWS Security Hub bevatten.
     1. Dit is afhankelijk van de verificatieoptie die u hebt gekozen in [Stap 2. Verificatie instellen voor Security Center in AWS](#step-2-set-up-authentication-for-security-center-in-aws):
@@ -142,7 +142,7 @@ AWS Systems Manager is vereist voor het automatiseren van taken in uw AWS-resour
 
         - Selecteer **Referenties** en plak de **toegangssleutel** en **geheime sleutel** uit het CSV-bestand dat u hebt opgeslagen in [Een AWS-gebruiker maken voor Security Center](#create-an-aws-user-for-security-center).
 1. Selecteer **Next**.
-1. Configureer de opties op het tabblad **Azure Arc-configuratie** :
+1. Configureer de opties op het tabblad **Azure Arc-configuratie**:
 
     Security Center detecteert de EC2-instanties in het verbonden AWS-account en gebruikt SSM om ze op Azure Arc te onboarden. 
 

@@ -1,6 +1,6 @@
 ---
 title: 'Zelfstudie: Web-app krijgt toegang tot Microsoft Graph als de app | Azure'
-description: In deze zelfstudie leert u hoe u toegang tot gegevens in Microsoft Graph krijgt met behulp van beheerde identiteiten.
+description: In deze zelfstudie leert u hoe u toegang tot gegevens in Microsoft Graph krijgt met beheerde identiteiten.
 services: microsoft-graph, app-service-web
 author: rwike77
 manager: CelesteDG
@@ -10,20 +10,20 @@ ms.workload: identity
 ms.date: 11/09/2020
 ms.author: ryanwi
 ms.reviewer: stsoneff
-ms.openlocfilehash: 70b180efa35d6310735f045a85103719b17c8555
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: a7b8ca309bf5710ddbd88413935bef5e97a1ed9f
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94428186"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95999668"
 ---
 # <a name="tutorial-access-microsoft-graph-from-a-secured-app-as-the-app"></a>Zelfstudie: Toegang tot Microsoft Graph krijgen vanuit een beveiligde app als de app
 
 Ontdek hoe u toegang tot Microsoft Graph krijgt vanuit een web-app die wordt uitgevoerd in Azure App Service.
 
-:::image type="content" alt-text="Toegang tot Microsoft Graph krijgen" source="./media/scenario-secure-app-access-microsoft-graph/web-app-access-graph.svg" border="false":::
+:::image type="content" alt-text="Diagram waarin de toegang tot Microsoft Graph wordt weergegeven." source="./media/scenario-secure-app-access-microsoft-graph/web-app-access-graph.svg" border="false":::
 
-U wilt Microsoft Graph aanroepen namens de web-app.  Een veilige manier om uw web-app toegang tot gegevens te geven, is een [door het systeem toegewezen beheerde identiteit](/azure/active-directory/managed-identities-azure-resources/overview) te gebruiken. Met een beheerde identiteit van Azure AD kan App Services toegang tot resources krijgen via RBAC (op rollen gebaseerd toegangsbeheer), zonder dat daar app-referenties voor nodig zijn. Nadat een beheerde identiteit aan uw web-app is toegewezen, wordt er in Azure een certificaat gemaakt en gedistribueerd.  U hoeft zich geen zorgen te maken over het beheren van geheimen of app-referenties.
+U wilt Microsoft Graph aanroepen voor de web-app. Een veilige manier om uw web-app toegang tot gegevens te geven, is een [door het systeem toegewezen beheerde identiteit](/azure/active-directory/managed-identities-azure-resources/overview) te gebruiken. Met een beheerde identiteit van Azure Active Directory kan App Services toegang tot resources krijgen via RBAC (op rollen gebaseerd toegangsbeheer), zonder dat daar app-referenties voor nodig zijn. Nadat een beheerde identiteit aan uw web-app is toegewezen, wordt er in Azure een certificaat gemaakt en gedistribueerd. U hoeft zich geen zorgen te maken over het beheren van geheimen of app-referenties.
 
 In deze zelfstudie leert u het volgende:
 
@@ -31,7 +31,7 @@ In deze zelfstudie leert u het volgende:
 >
 > * Een door het systeem toegewezen beheerde identiteit maken in een web-app
 > * Microsoft Graph API-machtigingen toevoegen aan een beheerde identiteit
-> * Microsoft Graph aanroepen vanuit een web-app met behulp van beheerde identiteiten
+> * Microsoft Graph aanroepen vanuit een web-app met beheerde identiteiten
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -41,39 +41,39 @@ In deze zelfstudie leert u het volgende:
 
 ## <a name="enable-managed-identity-on-app"></a>Een beheerde identiteit inschakelen voor een app
 
-Als u uw web-app via Visual Studio maakt en publiceert, was de beheerde identiteit al voor u ingeschakeld in uw app. In uw app-service selecteert u **Identiteit** in het linkernavigatievenster en selecteert u vervolgens **Door het systeem toegewezen**.  Verifieer dat **Status** is ingesteld op **Aan**.  Als dat niet het geval is, klikt u op **Opslaan** en vervolgens op **Ja** om de door het systeem toegewezen beheerde identiteit in te schakelen.  Wanneer de beheerde identiteit is ingeschakeld, is de status ingesteld op *Aan* en is de object-id beschikbaar.
+Als u uw web-app via Visual Studio maakt en publiceert, was de beheerde identiteit al voor u ingeschakeld in uw app. In uw app-service selecteert u **Identiteit** in het linkerdeelvenster en selecteert u vervolgens **Door het systeem toegewezen**. Verifieer dat **Status** is ingesteld op **Aan**. Als dat niet het geval is, selecteert u **Opslaan** en vervolgens **Ja** om de door het systeem toegewezen beheerde identiteit in te schakelen. Wanneer de beheerde identiteit is ingeschakeld, is de status ingesteld op **Aan** en is de object-id beschikbaar.
 
-Noteer de **Object-id**. U hebt deze in de volgende stap nodig.
+Noteer de **Object-id**-waarde. U hebt deze in de volgende stap nodig.
 
-:::image type="content" alt-text="Door het systeem toegewezen identiteit" source="./media/scenario-secure-app-access-microsoft-graph/create-system-assigned-identity.png":::
+:::image type="content" alt-text="Schermopname van door het systeem toegewezen identiteit." source="./media/scenario-secure-app-access-microsoft-graph/create-system-assigned-identity.png":::
 
 ## <a name="grant-access-to-microsoft-graph"></a>Toegang tot Microsoft Graph verlenen
 
-Voor toegang tot Microsoft Graph moet de beheerde identiteit de juiste machtigingen hebben voor de bewerking die deze wil uitvoeren. Er is momenteel geen optie om dergelijke machtigingen toe te wijzen via de Azure-portal. Met het volgende script worden de aangevraagde Microsoft Graph API-machtigingen toegevoegd aan het service-principalobject van de beheerde identiteit:
+Voor toegang tot Microsoft Graph moet de beheerde identiteit de juiste machtigingen hebben voor de bewerking die deze wil uitvoeren. Er is momenteel geen optie om dergelijke machtigingen toe te wijzen via Azure Portal. Met het volgende script worden de aangevraagde Microsoft Graph API-machtigingen toegevoegd aan het service-principalobject van de beheerde identiteit.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```powershell
-# Install the module (You need admin on the machine)
-#Install-Module AzureAD 
+# Install the module. (You need admin on the machine.)
+# Install-Module AzureAD.
 
-# Your tenant id (in Azure Portal, under Azure Active Directory -> Overview )
+# Your tenant ID (in the Azure portal, under Azure Active Directory > Overview).
 $TenantID="<tenant-id>"
 $resourceGroup = "securewebappresourcegroup"
 $webAppName="SecureWebApp-20201102125811"
 
-# Get ID of the managed identity for the web app
+# Get the ID of the managed identity for the web app.
 $spID = (Get-AzWebApp -ResourceGroupName $resourceGroup -Name $webAppName).identity.principalid
 
-# Check the Microsoft Graph documentation for the permission you need for the operation
+# Check the Microsoft Graph documentation for the permission you need for the operation.
 $PermissionName = "User.Read.All"
 
 Connect-AzureAD -TenantId $TenantID
 
-# Get the service principal for Microsoft Graph
+# Get the service principal for Microsoft Graph.
 $GraphServicePrincipal = Get-AzureADServicePrincipal -SearchString "Microsoft Graph"
 
-# Assign permissions to managed identity service principal
+# Assign permissions to the managed identity service principal.
 $AppRole = $GraphServicePrincipal.AppRoles | `
 Where-Object {$_.Value -eq $PermissionName -and $_.AllowedMemberTypes -contains "Application"}
 
@@ -103,29 +103,33 @@ az rest --method post --uri $uri --body $body --headers "Content-Type=applicatio
 
 ---
 
-Nadat u het script hebt uitgevoerd, kunt u in de [Azure-portal](https://portal.azure.com) verifiëren dat de aangevraagde API-machtigingen zijn toegewezen aan de beheerde identiteit.  Ga naar **Azure Active Directory** en selecteer **Bedrijfstoepassingen**.  Op deze blade worden alle service-principals in uw tenant weergegeven.  Selecteer in **Alle toepassingen** de service-principal voor de beheerde identiteit.  Als u deze zelfstudie volgt, zijn er twee service-principals met dezelfde weergavenaam (bijvoorbeeld 'SecureWebApp2020094113531').  De service-principal met een *Startpagina-URL* vertegenwoordigt de web-app in uw tenant.  De service-principal zonder een *Startpagina-URL* vertegenwoordigt de door het systeem toegewezen beheerde identiteit voor uw web-app. De object-id voor de beheerde identiteit komt overeen met de object-id van de beheerde identiteit die u eerder hebt gemaakt.  
+Nadat u het script hebt uitgevoerd, kunt u in de [Azure-portal](https://portal.azure.com) verifiëren dat de aangevraagde API-machtigingen zijn toegewezen aan de beheerde identiteit.
+
+Ga naar **Azure Active Directory** en selecteer **Bedrijfstoepassingen**. Op dit venster worden alle service-principals in uw tenant weergegeven. Selecteer in **Alle toepassingen** de service-principal voor de beheerde identiteit. 
+
+Als u deze zelfstudie volgt, zijn er twee service-principals met dezelfde weergavenaam (bijvoorbeeld SecureWebApp2020094113531). De service-principal met een **Startpagina-URL** vertegenwoordigt de web-app in uw tenant. De service-principal zonder een **Startpagina-URL** vertegenwoordigt de door het systeem toegewezen beheerde identiteit voor uw web-app. De **Object-id** voor de beheerde identiteit komt overeen met de object-id van de beheerde identiteit die u eerder hebt gemaakt.
 
 Selecteer de service-principal voor de beheerde identiteit.
 
-:::image type="content" alt-text="Alle toepassingen" source="./media/scenario-secure-app-access-microsoft-graph/enterprise-apps-all-applications.png":::
+:::image type="content" alt-text="Schermopname van de optie Alle toepassingen." source="./media/scenario-secure-app-access-microsoft-graph/enterprise-apps-all-applications.png":::
 
 In **Overzicht** selecteert u **Machtigingen**. U ziet dan de toegevoegde machtigingen voor Microsoft Graph.
 
-:::image type="content" alt-text="Machtigingen" source="./media/scenario-secure-app-access-microsoft-graph/enterprise-apps-permissions.png":::
+:::image type="content" alt-text="Schermopname van het venster Machtigingen." source="./media/scenario-secure-app-access-microsoft-graph/enterprise-apps-permissions.png":::
 
 ## <a name="call-microsoft-graph-net"></a>Microsoft Graph (.NET) aanroepen
 
-De klasse [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential) wordt gebruikt om een tokenreferentie voor uw code op te halen om aanvragen voor Azure Storage te autoriseren.  Maak een exemplaar van de klasse [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential), die gebruikmaakt van de beheerde identiteit om tokens op te halen en aan de serviceclient te koppelen. Met het volgende codevoorbeeld wordt de geverifieerde tokenreferentie opgehaald en gebruikt om een serviceclientobject te maken, waarmee de gebruikers in de groep worden opgehaald.  
+De klasse [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential) wordt gebruikt om een tokenreferentie voor uw code op te halen om aanvragen voor Microsoft Graph te autoriseren. Maak een exemplaar van de klasse [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential), die gebruikmaakt van de beheerde identiteit om tokens op te halen en aan de serviceclient te koppelen. Met het volgende codevoorbeeld wordt de geverifieerde tokenreferentie opgehaald en gebruikt om een serviceclientobject te maken, waarmee de gebruikers in de groep worden opgehaald.
 
-### <a name="install-microsoftgraph-client-library-package"></a>Microsoft.Graph-clientbibliotheekpakket installeren
+### <a name="install-the-microsoftgraph-client-library-package"></a>Het Microsoft.Graph-clientbibliotheekpakket installeren
 
-Installeer het [NuGet-pakket Microsoft.Graph](https://www.nuget.org/packages/Microsoft.Graph) in uw project met behulp van de opdrachtregelinterface van .NET Core of de Package Manager Console in Visual Studio.
+Installeer het [NuGet-pakket Microsoft.Graph](https://www.nuget.org/packages/Microsoft.Graph) in uw project met de opdrachtregelinterface van .NET Core of de Package Manager Console in Visual Studio.
 
 # <a name="command-line"></a>[Opdrachtregel](#tab/command-line)
 
 Open een opdrachtregel en ga naar de map die uw projectbestand bevat.
 
-Voer de installatieopdrachten uit:
+Voer de installatieopdrachten uit.
 
 ```dotnetcli
 dotnet add package Microsoft.Graph
@@ -133,9 +137,9 @@ dotnet add package Microsoft.Graph
 
 # <a name="package-manager"></a>[Package Manager](#tab/package-manager)
 
-Open het project/de oplossing in Visual Studio en open de console met behulp van de opdracht **Hulpprogramma's** > **NuGet Package Manager** > **Package Manager Console**.
+Open het project/de oplossing in Visual Studio en open de console met de opdracht **Hulpprogramma's** > **NuGet Package Manager** > **Package Manager Console**.
 
-Voer de installatieopdrachten uit:
+Voer de installatieopdrachten uit.
 ```powershell
 Install-Package Microsoft.Graph
 ```
@@ -159,7 +163,7 @@ public IList<MSGraphUser> Users { get; set; }
 
 public async Task OnGetAsync()
 {
-    // Create the Graph service client with a DefaultAzureCredential which gets an access token using the available Managed Identity
+    // Create the Microsoft Graph service client with a DefaultAzureCredential class, which gets an access token by using the available Managed Identity.
     var credential = new DefaultAzureCredential();
     var token = credential.GetToken(
         new Azure.Core.TokenRequestContext(
@@ -212,6 +216,6 @@ In deze zelfstudie heeft u het volgende geleerd:
 >
 > * Een door het systeem toegewezen beheerde identiteit maken in een web-app
 > * Microsoft Graph API-machtigingen toevoegen aan een beheerde identiteit
-> * Microsoft Graph aanroepen vanuit een web-app met behulp van beheerde identiteiten
+> * Microsoft Graph aanroepen vanuit een web-app met beheerde identiteiten
 
 Ontdek hoe u een [.NET Core-app](tutorial-dotnetcore-sqldb-app.md), [Python-app](tutorial-python-postgresql-app.md), [Java-app](tutorial-java-spring-cosmosdb.md) of [Node.js-app](tutorial-nodejs-mongodb-app.md) verbindt met een database.

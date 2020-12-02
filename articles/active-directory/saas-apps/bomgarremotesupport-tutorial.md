@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 10/30/2019
+ms.date: 11/12/2020
 ms.author: jeedes
-ms.openlocfilehash: f5839b5df4cdaf4abf863587b5f84f87aa63b5a0
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: c11d8aaa578006c7dbd96b457399df5b17fd9bd8
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92456922"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95914937"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-beyondtrust-remote-support"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met BeyondTrust Remote Support
 
@@ -25,8 +25,6 @@ In deze zelfstudie leert u hoe u BeyondTrust Remote Support integreert met Azure
 * U kunt in Azure AD beheren wie toegang heeft tot BeyondTrust Remote Support.
 * Ervoor zorgen dat gebruikers zich automatisch met hun Azure AD-account kunnen aanmelden bij BeyondTrust Remote Support.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
-
-Zie [Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps met Azure AD.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -46,16 +44,16 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 Als u de integratie van BeyondTrust Remote Support in Azure Active Directory wilt configureren, moet u BeyondTrust Remote Support vanuit de galerie aan uw lijst met beheerde SaaS-apps toevoegen.
 
-1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
 1. Typ in de sectie **Toevoegen uit de galerie** **BeyondTrust Remote Support** in het zoekvak:.
 1. Selecteer **BeyondTrust Remote Support** in het resultatenvenster en voeg de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-beyondtrust-remote-support"></a>Eenmalige aanmelding van Azure AD configureren en testen voor BeyondTrust Remote Support
 
-Configureer en test eenmalige aanmelding van Azure AD voor BeyondTrust Remote Support met behulp van een testgebruiker met de naam **B. Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in BeyondTrust Remote Support.
+Configureer en test eenmalige aanmelding van Azure AD voor BeyondTrust Remote Support met behulp van een testgebruiker met de naam **B. Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in BeyondTrust Remote Support.
 
 Als u eenmalige aanmelding van Azure AD met BeyondTrust Remote Support wilt configureren en testen, moet u de volgende stappen uitvoeren:
 
@@ -70,8 +68,8 @@ Als u eenmalige aanmelding van Azure AD met BeyondTrust Remote Support wilt conf
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in [Azure Portal](https://portal.azure.com/) op de pagina voor integratie van de toepassing **BeyondTrust Remote Support** de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Zoek in Azure Portal op de pagina voor integratie van de toepassing **BeyondTrust Remote Support** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
@@ -95,19 +93,18 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     | Naam |  Bronkenmerk|
     | ---------------| ----------|
-    | Givenname | user.givenname |
-    | Emailaddress | user.mail |
-    | Naam | user.userprincipalname |
     | Gebruikersnaam | user.userprincipalname |
+    | FirstName | user.givenname |
+    | LastName | user.surname |
+    | Email | user.mail |
     | Groepen | user.groups |
-    | Unieke gebruikers-id | user.userprincipalname |
 
     > [!NOTE]
     > Bij het toewijzen van Azure AD-groepen voor de BeyondTrust Remote Support-toepassing moet de optie Groepen die in claim zijn geretourneerd worden gewijzigd van None in SecurityGroup. De groepen worden als object-id's in de toepassing geïmporteerd. U kunt de object-id van de Azure AD-groep vinden door de eigenschappen in de Azure Active Directory-interface te controleren. Dit is vereist om Azure AD-groepen naar het juiste groepsbeleid te kunnen verwijzen en ze eraan te kunnen toewijzen.
 
-1. Bij het instellen van de unieke gebruikers-id moet deze waarde worden ingesteld op NameID-indeling: **Permanent** . Dit moet een permanente id zijn om de gebruiker correct te identificeren en te koppelen aan de juiste groepsbeleidsregels voor machtigingen. Klik op het bewerkingspictogram om het dialoogvenster **Gebruikerskenmerken en claims** te openen om de waarde voor de unieke gebruikers-id te bewerken.
+1. Bij het instellen van de unieke gebruikers-id moet deze waarde worden ingesteld op NameID-indeling: **Permanent**. Dit moet een permanente id zijn om de gebruiker correct te identificeren en te koppelen aan de juiste groepsbeleidsregels voor machtigingen. Klik op het bewerkingspictogram om het dialoogvenster **Gebruikerskenmerken en claims** te openen om de waarde voor de unieke gebruikers-id te bewerken.
 
-1. Klik in de sectie **Claim beheren** op de **Naam id-indeling kiezen** , stel de waarde in op **Permanent** en klik op **Opslaan** .
+1. Klik in de sectie **Claim beheren** op de **Naam id-indeling kiezen**, stel de waarde in op **Permanent** en klik op **Opslaan**.
 
     ![Gebruikerskenmerken en claims](./media/bomgarremotesupport-tutorial/attribute-unique-user-identifier.png)
 
@@ -123,78 +120,77 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B. Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot BeyondTrust Remote Support.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **BeyondTrust Remote Support** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
-
-   ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
-
-    ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
-
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-beyondtrust-remote-support-sso"></a>Eenmalige aanmelding voor BeyondTrust Remote Support configureren
 
 1. Meld u in een ander browservenster bij BeyondTrust Remote Support aan als beheerder.
 
-1. Klik op het menu **STATUS** en kopieer de **id** , **antwoord-URL** en **aanmeldings-URL** en gebruik deze waarden in de sectie **Standaard-SAML-configuratie** in Azure Portal.
+1. Ga naar **Users & Security** > **Security Providers**.
 
-    ![Schermopname van het menu 'Status' in BeyondTrust Remote Support, waar u deze informatie kunt verzamelen.](./media/bomgarremotesupport-tutorial/config-url-values.png)
+1. Klik op het pictogram **Bewerken** in de **SAML-providers**.
 
-1. Ga naar de BeyondTrust Remote Support-/aanmeldingsinterface op `https://support.example.com/login`, waarbij **support.example.com** de primaire hostnaam van uw apparaat is en voer verificatie uit met uw beheerdersreferenties.
+    ![Pictogram voor bewerken van SAML-providers](./media/bomgarremotesupport-tutorial/saml-providers.png)
 
-1. Ga naar **Users & Security** > **Security Providers** .
+1. Vouw de sectie **Instellingen van serviceprovider** uit.
 
-1. Selecteer in de vervolgkeuzelijst de optie **SAML** en klik op de knop **Create Provider** .
+1. Klik op **Metagegevens van serviceprovider downloaden** of kopieer de **Entiteits-id** en **ACS-URL**-waarden en gebruik deze waarden in de sectie **Standaard SAML-configuratie** in de Azure Portal.
 
-1. Onder de sectie Identity Provider Settings ziet u een optie voor het uploaden van de metagegevens van de identiteitsprovider. Zoek het XML-bestand met metagegevens dat u hebt gedownload uit Azure Portal en klik op **Upload** . **Entity ID** , **Single Sign-On Service URL** en het certificaat worden automatisch geüpload en **Protocol Binding** moet worden gewijzigd in **HTTP POST** . Zie de onderstaande schermafbeelding:
+    ![Metagegevens van serviceprovider downloaden](./media/bomgarremotesupport-tutorial/service-provider-metadata.png)
 
-    ![Schermopname van de sectie 'Instellingen van identiteitsprovider' waarin u deze acties uitvoert.](./media/bomgarremotesupport-tutorial/config-uploadfile.png)
+
+1. Klik onder de sectie Instellingen van de identiteitsprovider op **Metagegevens van de identiteitsprovider uploaden** en zoek het XML-bestand met metagegevens dat u hebt gedownload van de Azure Portal.
+
+1.  **Entity ID**, **Single Sign-On Service URL** en **Servercertificaat** worden automatisch geüpload en de **SSO URL Protocol Binding** moet worden gewijzigd in **HTTP POST**.
+
+    ![Schermopname van de sectie 'Instellingen van identiteitsprovider' waarin u deze acties uitvoert.](./media/bomgarremotesupport-tutorial/identity-provider.png)
+
+1. Klik op **Opslaan**.
 
 ### <a name="create-beyondtrust-remote-support-test-user"></a>BeyondTrust Remote Support-testgebruiker maken
 
 De instellingen voor het inrichten van gebruikers worden hier geconfigureerd. Voor de waarden die in deze sectie worden gebruikt, wordt verwezen vanuit de sectie **Gebruikerskenmerken en claims** sectie in Azure Portal. De waarden zijn geconfigureerd als de standaardwaarden die al worden geïmporteerd op het moment dat ze worden gemaakt, maar de waarde kan indien nodig worden aangepast.
 
-![Schermopname van de instellingen voor het inrichten van de gebruiker, waar u gebruikerswaarden kunt configureren.](./media/bomgarremotesupport-tutorial/config-user1.png)
+![Schermopname van de instellingen voor het inrichten van de gebruiker, waar u gebruikerswaarden kunt configureren.](./media/bomgarremotesupport-tutorial/user-attribute.png)
 
 > [!NOTE]
 > Het groeps- en e-mailkenmerk zijn voor deze implementatie niet nodig. Als u Azure AD-groepen gebruikt en toewijst aan BeyondTrust Remote Support-groepsbeleid voor machtigingen, moet naar de object-id van de groep worden verwezen via de eigenschappen in Azure Portal. Vervolgens moeten ze in de sectie Beschikbare groepen worden geplaatst. Zodra dit is voltooid, kan de object-id/AD-groep nu aan een groepsbeleid voor machtigingen worden toegewezen.
 
 ![Schermopname van de sectie 'IT' met het type lidmaatschap, de bron, het type en object-id.](./media/bomgarremotesupport-tutorial/config-user2.png)
 
-![Schermopname van de pagina 'Basisinstellingen' voor een groepsbeleid.](./media/bomgarremotesupport-tutorial/config-user3.png)
+![Schermopname van de pagina 'Basisinstellingen' voor een groepsbeleid.](./media/bomgarremotesupport-tutorial/group-policy.png)
 
 > [!NOTE]
 > U kunt ook een standaardgroepsbeleid instellen voor de SAML2-beveiligingsprovider. Als u deze optie definieert, worden aan alle gebruikers die zijn geverifieerd via SAML, de machtigingen toegewezen die zijn opgegeven in het groepsbeleid. Het beleid General Members is in BeyondTrust Remote Support/Privileged Remote Access met beperkte machtigingen opgenomen. Dit kan worden gebruikt om de verificatie te testen en gebruikers toe te wijzen aan het juiste beleid. Gebruikers worden pas via /login > Users & Security in de SAML2-gebruikerslijst vermeld na de eerste geslaagde verificatiepoging. Voor meer informatie over groepsbeleid klikt u op de volgende koppeling: `https://www.beyondtrust.com/docs/remote-support/getting-started/admin/group-policies.htm`
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u in het toegangsvenster op de tegel van BeyondTrust Remote Support klikt, wordt u automatisch aangemeld bij de instantie van BeyondTrust Remote Support waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van BeyondTrust Remote Support, waar u de aanmeldingsstroom kunt initiëren. 
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+* Ga rechtstreeks naar de aanmeldings-URL van BeyondTrust Remote Support en initieer de aanmeldingsstroom daar.
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](./tutorial-list.md) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel BeyondTrust Remote Support in de Mijn apps klikt, wordt dit omgeleid naar de aanmeldings-URL voor BeyondTrust Remote Support. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-- [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
+## <a name="next-steps"></a>Volgende stappen
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
-
-- [BeyondTrust Remote Support met Azure AD uitproberen](https://aad.portal.azure.com/)
+Wanneer u BeyondTrust Remote Support hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor realtime beveiliging wordt geboden tegen exfiltratie en infiltratie van gevoelige gegevens van uw organisatie. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad)

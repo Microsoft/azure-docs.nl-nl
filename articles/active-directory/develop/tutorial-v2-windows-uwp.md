@@ -12,16 +12,16 @@ ms.workload: identity
 ms.date: 12/13/2019
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40
-ms.openlocfilehash: cbfb5c598a2a56b0b14a3a90cf29ce23366b9b6c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 774c17af88e45e25cf1e8edc0df60ab55fe53e0e
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91627666"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95974324"
 ---
 # <a name="tutorial-call-the-microsoft-graph-api-from-a-universal-windows-platform-uwp-application"></a>Zelfstudie: De Microsoft Graph-API aanroepen vanuit de Universeel Windows-platformtoepasing (UWP)
 
-In deze handleiding wordt uitgelegd hoe een systeemeigen UWP-toepassing een toegangstoken kan aanvragen. De toepassing roept vervolgens de Microsoft Graph API aan. Deze handleiding is ook van toepassing op andere API's die toegangstokens nodig hebben van het Microsoft identity platform-eindpunt.
+In deze zelfstudie bouwt u een systeemeigen Universal Windows Platform (UWP) die gebruikers aanmeldt en een toegangstoken ophaalt om de Microsoft Graph API aan te roepen. 
 
 Aan het einde van deze handleiding roept uw toepassing een beveiligde API aan met persoonlijke accounts. Voorbeelden zijn outlook.com, live.com, enzovoort. Uw toepassing roept ook werk- en schoolaccounts aan van een bedrijf of organisatie met Azure Active Directory (Azure AD).
 
@@ -31,7 +31,7 @@ In deze zelfstudie:
 > * Een *Universal Windows Platform (UWP)* -project maken in Visual Studio
 > * De app registreren in de Azure Portal
 > * Code toevoegen voor de ondersteuning van het aan- en afmelden van gebruikers
-> * Code toevoegen om Microsoft Graph API aan te roepen
+> * Code toevoegen om de Microsoft Graph API aan te roepen
 > * De app testen
 
 ## <a name="prerequisites"></a>Vereisten
@@ -67,7 +67,7 @@ In deze handleiding wordt een toepassing gemaakt waarin een knop voor het uitvoe
 1. Open Visual Studio en selecteer **Een nieuw project maken**.
 1. Kies in het venster **Een nieuw project maken** de optie **Lege app (Universal Windows)** voor C# en selecteer **Volgende**.
 1. In **Uw nieuwe project configureren**, geeft u de app een naam en selecteert u **Maken**.
-1. Als u hierom wordt gevraagd, selecteert u in **Nieuw Universeel Windows-platformproject** een willekeurige versie voor de **minimum**- en **doel**versies en selecteert u **OK**.
+1. Als u hierom wordt gevraagd, selecteert u in **Nieuw Universeel Windows-platformproject** een willekeurige versie voor de **minimum**- en **doel** versies en selecteert u **OK**.
 
    ![Minimum- en doelversies](./media/tutorial-v2-windows-uwp/select-uwp-target-minimum.png)
 

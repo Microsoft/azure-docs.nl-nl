@@ -3,39 +3,40 @@ title: 'Quickstart: Een C# ASP.NET Core-app maken'
 description: Leer hoe u web-apps uitvoert in Azure App Service door uw eerste ASP.NET Core-app te implementeren.
 ms.assetid: b1e6bd58-48d1-4007-9d6c-53fd6db061e3
 ms.topic: quickstart
-ms.date: 09/24/2020
+ms.date: 11/23/2020
 ms.custom: devx-track-csharp, mvc, devcenter, vs-azure, seodec18, contperfq1
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: aa8eb945ba77e1a4ac5215acf3bdbc12cac0c4c9
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: bf7d911c6f9d90e400e589828c093877875e7d97
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91661122"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96015629"
 ---
 # <a name="quickstart-create-an-aspnet-core-web-app-in-azure"></a>Quickstart: Een ASP.NET Core-web-app maken in Azure
 
 ::: zone pivot="platform-windows"  
 
-In deze quickstart leert u hoe u uw eerste ASP.NET Core-web-app maakt en implementeert in [Azure App Service](overview.md). 
+In deze quickstart leert u hoe u uw eerste ASP.NET Core-web-app maakt en implementeert in [Azure App Service](overview.md). App Service ondersteunt .NET 5.0-apps.
 
 Als u klaar bent, beschikt u over een Azure-resourcegroep die bestaat uit een App Service-hostingabonnement en een Azure Service-app met een geïmplementeerde webtoepassing.
 
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/dotnet/)
-- In deze quickstart implementeert u een app in App Service onder Windows. Als u een app wilt implementeren in App Service onder _Linux_, raadpleegt u [Een .NET Core-web-app maken in App Service in Linux](./quickstart-dotnetcore.md).
 - U moet <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2019</a> met de **ASP.NET- en webontwikkelworkload** installeren.
 
   Als u Visual Studio 2019 al hebt geïnstalleerd:
 
-  - Installeer de nieuwste updates in Visual Studio door **Help** > **Controleren op updates** te selecteren.
+  - Installeer de nieuwste updates in Visual Studio door **Help** > **Controleren op updates** te selecteren. De meest recente updates bevatten de .NET 5,0 SDK.
   - Voeg de workload toe door **Hulpprogramma's** > **Hulpprogramma's en functies ophalen** te selecteren.
 
 
 ## <a name="create-an-aspnet-core-web-app"></a>Een ASP.NET Core-web-app maken
 
 Maak een ASP.NET Core-web-app in Visual Studio door deze stappen te volgen:
+
+# <a name="net-core-31"></a>[.NET Core 3.1](#tab/netcore31)
 
 1. Open Visual Studio en selecteer **Een nieuw project maken**.
 
@@ -53,6 +54,28 @@ Maak een ASP.NET Core-web-app in Visual Studio door deze stappen te volgen:
 
    ![Web-app die lokaal wordt uitgevoerd](./media/quickstart-dotnetcore/web-app-running-locally.png)
 
+# <a name="net-50"></a>[.NET 5.0](#tab/net50)
+
+1. Open Visual Studio en selecteer **Een nieuw project maken**.
+
+1. Selecteer in **Een nieuw project maken** de **ASP.NET Core-webtoepassing**, en controleer of **C#** wordt vermeld in de talen voor deze keuze. Selecteer vervolgens **Volgende**.
+
+1. Geef in **Uw nieuwe project configureren** het webtoepassingsproject de naam *myFirstAzureWebApp*, en selecteer **Maken**.
+
+   ![Uw web-app-project configureren](./media/quickstart-dotnetcore/configure-web-app-project.png)
+
+1. Voor een .NET 5.0-app selecteert u **ASP.NET Core 5.0** in de vervolgkeuzelijst.
+
+1. U kunt elk type ASP.NET Core-web-app implementeren in Azure, maar voor deze quickstart kiest u de sjabloon **ASP.NET Core Web App**. Zorg ervoor dat **Verificatie** is ingesteld op **Geen verificatie** en dat er geen andere optie is geselecteerd. Ten slotte selecteert u **Create**.
+
+   ![Een nieuw ASP.NET Core-web-app maken](./media/quickstart-dotnetcore/create-aspnet-core-web-app-5.png) 
+   
+1. Selecteer in het menu van Visual Studio de optie **Foutopsporing** > **Starten zonder foutopsporing** om de web-app lokaal uit te voeren.
+
+   ![Web-app die lokaal wordt uitgevoerd](./media/quickstart-dotnetcore/web-app-running-locally.png)
+
+---
+
 ## <a name="publish-your-web-app"></a>Uw web-app publiceren
 
 Als u de web-app wilt publiceren, moet u eerst een nieuwe App Service maken en configureren waarin u de app kunt publiceren. 
@@ -64,13 +87,17 @@ Als onderdeel van het instellen van de App Service maakt u het volgende:
 
 Volg deze stappen om de App Service te maken en uw web-app te publiceren:
 
-1. Klik in **Solution Explorer** met de rechtermuisknop op het project **myFirstAzureWebApp** en selecteer **Publiceren**. Als u zich nog niet hebt aangemeld bij uw Azure-account vanuit Visual Studio, selecteert u **Een account toevoegen** of **Aanmelden**. U kunt ook een gratis Azure-account maken.
+1. Klik in **Solution Explorer** met de rechtermuisknop op het project **myFirstAzureWebApp** en selecteer **Publiceren**. 
 
-1. Kies in het dialoogvenster **Een publicatiedoel kiezen** de optie **App Service**, selecteer **Nieuwe maken** en selecteer vervolgens **Profiel maken**.
+1. Selecteer bij **Publiceren** de optie **Azure** en klik op **Volgende**.
 
-   ![Kies een publicatiedoel](./media/quickstart-dotnetcore/pick-publish-target-vs2019.png)
+1. Uw opties zijn afhankelijk van het feit of u al bent aangemeld bij Azure en of u een Visual Studio-account hebt gekoppeld aan een Azure-account. Selecteer **Een account toevoegen** of **Aanmelden** om u aan te melden bij uw Azure-abonnement. Als u al bent aangemeld, selecteert u het gewenste account.
 
-1. Geef in het dialoogvenster **App Service: Nieuwe App Service maken**, een globaal unieke **Naam** op voor de app door de standaardnaam te accepteren of een nieuwe naam in te voeren. Geldige tekens zijn `a-z`, `A-Z`, `0-9` en `-`. Deze **Naam** wordt gebruikt als het URL-voorvoegsel voor de web-app in de indeling `http://<app_name>.azurewebsites.net`.
+   ![Aanmelden bij Azure](./media/quickstart-dotnetcore/sign-in-azure-vs2019.png)
+
+1. Klik rechts van **App Service-exemplaren** op **+** .
+
+   ![Nieuwe App Service-app](./media/quickstart-dotnetcore/publish-new-app-service.png)
 
 1. Accepteer bij **Abonnement** het abonnement dat wordt vermeld, of selecteer een nieuw abonnement in de vervolgkeuzelijst.
 
@@ -88,17 +115,17 @@ Volg deze stappen om de App Service te maken en uw web-app te publiceren:
    
    ![Nieuw hostingabonnement maken](./media/quickstart-dotnetcore/create-new-hosting-plan-vs2019.png)
 
-1. Houd **Application Insights** ingesteld op *Geen*.
+1. Voer bij **Naam** een unieke app-naam in die alleen deze geldige tekens bevat: `a-z`, `A-Z`, `0-9` en `-`. U kunt de automatisch gegenereerde unieke naam accepteren. De URL van de web-app is `http://<app-name>.azurewebsites.net`, waarbij `<app-name>` de naam van uw app is.
 
-1. Selecteer in het dialoogvenster **App Service: Nieuwe App Service maken** de optie **Maken** om te beginnen met het maken van de Azure-resources.
+2. Selecteer **Maken** om de Azure-resources te maken.
 
-   ![Nieuwe App Service maken](./media/quickstart-dotnetcore/create-new-app-service-vs2019.png)
+   ![App-resources maken](./media/quickstart-dotnetcore/web-app-name-vs2019.png)
 
-1. Zodra de wizard is voltooid, selecteert u **Publiceren**.
+   Zodra de wizard is voltooid, worden de Azure-resources gemaakt en bent u klaar om te publiceren.
 
-   ![Web-app publiceren in Azure](./media/quickstart-dotnetcore/publish-web-app-vs2019.png)
+3. Klik op **Voltooien** om de wizard te sluiten.
 
-   Met Visual Studio wordt uw ASP.NET Core web-app gepubliceerd in Azure. De app wordt gestart in de standaardbrowser. 
+1. Klik op de pagina **Publiceren** op **Publiceren**. Visual Studio maakt, verpakt en publiceert de app naar Azure. Daarna wordt de app gestart in de standaardbrowser.
 
    ![Gepubliceerde ASP.NET-web-app, uitgevoerd in Azure](./media/quickstart-dotnetcore/web-app-running-live.png)
 
@@ -123,11 +150,11 @@ Volg deze stappen om uw web-app bij te werken en opnieuw te implementeren:
 
 1. Selecteer op de samenvattingspagina **Publiceren** de optie **Publiceren**.
 
-   ![Update voor web-app publiceren](./media/quickstart-dotnetcore/publish-update-to-web-app-vs2019.png)
+   <!-- ![Publish update to web app](./media/quickstart-dotnetcore/publish-update-to-web-app-vs2019.png) -->
 
-Als het publiceren is voltooid, start Visual Studio een browser waarin de URL van de web-app wordt geladen.
+    Als het publiceren is voltooid, start Visual Studio een browser waarin de URL van de web-app wordt geladen.
 
-![Bijgewerkte ASP.NET-web-app, uitgevoerd in Azure](./media/quickstart-dotnetcore/updated-web-app-running-live.png)
+    ![Bijgewerkte ASP.NET-web-app, uitgevoerd in Azure](./media/quickstart-dotnetcore/updated-web-app-running-live.png)
 
 ## <a name="manage-the-azure-app"></a>De Azure-app beheren
 
@@ -168,12 +195,23 @@ U kunt de stappen in dit artikel volgen met behulp van een Mac-, Windows- of Lin
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>Vereisten
+## <a name="set-up-your-initial-environment"></a>Uw eerste omgeving instellen
+
+# <a name="net-core-31"></a>[.NET Core 3.1](#tab/netcore31)
 
 Dit zijn de vereisten voor het voltooien van deze snelstart:
 
-* <a href="https://git-scm.com/" target="_blank">Git installeren</a>
-* <a href="https://dotnet.microsoft.com/download/dotnet-core/3.1" target="_blank">De nieuwste versie van .NET Core 3.1 SDK installeren</a>
+* <a href="https://dotnet.microsoft.com/download/dotnet-core/3.1" target="_blank">Installeer de nieuwste versie van .NET Core 3.1 SDK</a>.
+* <a href="/cli/azure/install-azure-cli" target="_blank">Installeer de nieuwste Azure CLI</a>.
+
+# <a name="net-50"></a>[.NET 5.0](#tab/net50)
+
+Dit zijn de vereisten voor het voltooien van deze snelstart:
+
+* <a href="https://dotnet.microsoft.com/download/dotnet/5.0" target="_blank">Installeer de nieuwste versie van .NET 5.0 SDK</a>.
+* <a href="/cli/azure/install-azure-cli" target="_blank">Installeer de nieuwste Azure CLI</a>.
+
+---
 
 [Ondervindt u problemen? Laat het ons weten.](https://aka.ms/DotNetAppServiceLinuxQuickStart)
 
@@ -196,8 +234,6 @@ dotnet new web
 
 Voer de toepassing lokaal uit zodat u kunt zien hoe deze eruit ziet wanneer u de toepassing implementeert naar Azure. 
 
-Herstel de NuGet-pakketten en voer de app uit.
-
 ```bash
 dotnet run
 ```
@@ -208,76 +244,56 @@ Het bericht **Hello World** uit de voorbeeld-app wordt weergegeven op de pagina.
 
 ![Testen met browser](media/quickstart-dotnetcore/dotnet-browse-local.png)
 
-Druk in uw terminalvenster op **Ctrl + C** om de webserver af te sluiten. Initialiseer een Git-opslagplaats voor het .NET Core-project.
+[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/DotNetAppServiceLinuxQuickStart)
 
-```bash
-git init
-git add .
-git commit -m "first commit"
+## <a name="sign-into-azure"></a>Aanmelden bij Azure
+Meld u in het terminalvenster aan bij Azure met de volgende opdracht:
+
+```azurecli
+az login
 ```
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/DotNetAppServiceLinuxQuickStart)
+## <a name="deploy-the-app"></a>De app implementeren
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+Implementeer de code in uw lokale map (*hellodotnetcore*) met behulp van de `az webapp up`-opdracht:
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/DotNetAppServiceLinuxQuickStart)
-
-[!INCLUDE [Configure deployment user](../../includes/configure-deployment-user.md)]
-
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/DotNetAppServiceLinuxQuickStart)
-
-[!INCLUDE [Create resource group](../../includes/app-service-web-create-resource-group-linux.md)]
-
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/DotNetAppServiceLinuxQuickStart)
-
-[!INCLUDE [Create app service plan](../../includes/app-service-web-create-app-service-plan-linux.md)]
-
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/DotNetAppServiceLinuxQuickStart)
-
-## <a name="create-a-web-app"></a>Een webtoepassing maken
-
-[!INCLUDE [Create web app](../../includes/app-service-web-create-web-app-dotnetcore-linux-no-h.md)]
-
-Blader naar de app die u net hebt gemaakt. Vervang _&lt;app-naam>_ door de naam van uw app.
-
-```bash
-https://<app-name>.azurewebsites.net
+```azurecli
+az webapp up --sku F1 --name <app-name> --os-type linux
 ```
 
-Uw nieuwe app lijkt op het volgende:
+- Als de `az`-opdracht niet wordt herkend, controleert u of de Azure CLI is geïnstalleerd volgens de beschrijving in [Uw initiële omgeving instellen](#set-up-your-initial-environment).
+- Vervang `<app-name>` door een naam die in de volledige Azure-omgeving uniek is (*geldige tekens zijn `a-z`, `0-9` en `-`* ). Het is handig om een combinatie van uw bedrijfsnaam en een app-id te gebruiken.
+- Met het argument `--sku F1` maakt u de web-app in de prijscategorie Gratis. Laat dit argument weg om een snellere Premium-laag te gebruiken, waarmee u kosten per uur in rekening worden gebracht.
+- U kunt eventueel het argument `--location <location-name>` toevoegen, waarbij `<location-name>` een beschikbare Azure-regio is. U kunt een lijst met toegestane regio's voor uw Azure-account ophalen door de [`az account list-locations`](/cli/azure/appservice#az-appservice-list-locations)-opdracht uit te voeren.
 
-![Lege app-pagina](media/quickstart-dotnetcore/dotnet-browse-created.png)
+Het volledig uitvoeren van de opdracht kan even duren. Terwijl de opdracht wordt uitgevoerd, krijgt u berichten over het maken van de resourcegroep, het App Service-plan en de hosting-app, het configureren van de logboekfunctie en het vervolgens uitvoeren van de ZIP-implementatie. Vervolgens krijgt u het volgende bericht: 'U kunt de app starten op http://&lt;app-name&gt;.azurewebsites.net'. Dit is de URL van de app op Azure.
 
-[!INCLUDE [Push to Azure](../../includes/app-service-web-git-push-to-azure.md)] 
+# <a name="net-core-31"></a>[.NET Core 3.1](#tab/netcore31)
 
-<pre>
-Enumerating objects: 5, done.
-Counting objects: 100% (5/5), done.
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 285 bytes | 95.00 KiB/s, done.
-Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
-remote: Deploy Async
-remote: Updating branch 'master'.
-remote: Updating submodules.
-remote: Preparing deployment for commit id 'd6b54472f7'.
-remote: Repository path is /home/site/repository
-remote: Running oryx build...
-remote: Build orchestrated by Microsoft Oryx, https://github.com/Microsoft/Oryx
-remote: You can report issues at https://github.com/Microsoft/Oryx/issues
-remote:
-remote: Oryx Version      : 0.2.20200114.13, Commit: 204922f30f8e8d41f5241b8c218425ef89106d1d, ReleaseTagName: 20200114.13
-remote: Build Operation ID: |imoMY2y77/s=.40ca2a87_
-remote: Repository Commit : d6b54472f7e8e9fd885ffafaa64522e74cf370e1
-.
-.
-.
-remote: Deployment successful.
-remote: Deployment Logs : 'https://&lt;app-name&gt;.scm.azurewebsites.net/newui/jsonviewer?view_url=/api/deployments/d6b54472f7e8e9fd885ffafaa64522e74cf370e1/log'
-To https://&lt;app-name&gt;.scm.azurewebsites.net:443/&lt;app-name&gt;.git
-   d87e6ca..d6b5447  master -> master
-</pre>
+![Voorbeelduitvoer van de opdracht az webapp up](./media/quickstart-dotnetcore/az-webapp-up-output-3.1.png)
+
+# <a name="net-50"></a>[.NET 5.0](#tab/net50)
+
+<!-- Deploy the code in your local folder (*hellodotnetcore*) using the `az webapp up` command:
+
+```azurecli
+az webapp up --sku B1 --name <app-name> --os-type linux
+```
+
+- If the `az` command isn't recognized, be sure you have the Azure CLI installed as described in [Set up your initial environment](#set-up-your-initial-environment).
+- Replace `<app-name>` with a name that's unique across all of Azure (*valid characters are `a-z`, `0-9`, and `-`*). A good pattern is to use a combination of your company name and an app identifier.
+- The `--sku B1` argument creates the web app in the Basic pricing tier, which incurs an hourly cost. Omit this argument to use a faster premium tier, which costs more.
+- You can optionally include the argument `--location <location-name>` where `<location-name>` is an available Azure region. You can retrieve a list of allowable regions for your Azure account by running the [`az account list-locations`](/cli/azure/appservice#az-appservice-list-locations) command.
+
+The command may take a few minutes to complete. While running, it provides messages about creating the resource group, the App Service plan and hosting app, configuring logging, then performing ZIP deployment. It then gives the message, "You can launch the app at http://&lt;app-name&gt;.azurewebsites.net", which is the app's URL on Azure. -->
+
+![Voorbeelduitvoer van de opdracht az webapp up](./media/quickstart-dotnetcore/az-webapp-up-output-5.0.png)
+
+---
 
 [Ondervindt u problemen? Laat het ons weten.](https://aka.ms/DotNetAppServiceLinuxQuickStart)
+
+[!include [az webapp up command note](../../includes/app-service-web-az-webapp-up-note.md)]
 
 ## <a name="browse-to-the-app"></a>Bladeren naar de app
 
@@ -303,12 +319,13 @@ Open het bestand _Startup.cs_ in de lokale map. Breng een kleine wijziging aan i
 await context.Response.WriteAsync("Hello Azure!");
 ```
 
-Leg uw wijzigingen vast in Git en push de codewijzigingen vervolgens naar Azure.
+Sla de wijzigingen op en implementeer de app opnieuw met de opdracht `az webapp up`:
 
-```bash
-git commit -am "updated output"
-git push azure master
+```azurecli
+az webapp up
 ```
+
+Met deze opdracht worden waarden gebruikt die lokaal in de cache worden opgeslagen in het bestand *.azure/config*, met inbegrip van de app-naam, de resourcegroep en het App Service-plan.
 
 Als de implementatie is voltooid, gaat u terug naar het browservenster dat is geopend in de stap **Bladeren naar de app** en klikt u op Vernieuwen.
 
@@ -322,11 +339,11 @@ Ga naar <a href="https://portal.azure.com" target="_blank">Azure Portal</a> om d
 
 Klik in het linkermenu op **App Services** en klik op de naam van uw Azure-app.
 
-:::image type="content" source="./media/quickstart-dotnetcore/portal-app-service-list.png" alt-text="Schermopname van de App Services-pagina waarop een voorbeeldweb-app is geselecteerd.":::
+:::image type="content" source="./media/quickstart-dotnetcore/portal-app-service-list-up.png" alt-text="Schermopname van de App Services-pagina waarop een voorbeeld-Azure-app is geselecteerd.":::
 
 De pagina Overzicht van uw app wordt weergegeven. Hier kunt u algemene beheertaken uitvoeren, zoals bladeren, stoppen, starten, opnieuw opstarten en verwijderen. 
 
-![App Service-pagina in Azure Portal](media/quickstart-dotnetcore/portal-app-overview.png)
+![App Service-pagina in Azure Portal](media/quickstart-dotnetcore/portal-app-overview-up.png)
 
 Het linkermenu bevat een aantal pagina's voor het configureren van uw app. 
 

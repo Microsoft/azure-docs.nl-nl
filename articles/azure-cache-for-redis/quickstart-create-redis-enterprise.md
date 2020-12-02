@@ -7,12 +7,12 @@ ms.service: cache
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 10/28/2020
-ms.openlocfilehash: bd5e05f38d34199d9012c52ca3fdad33af231aad
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 95f6e2cf7803ff0b152f33c08f170725b5a0e94e
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93127979"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95795674"
 ---
 # <a name="quickstart-create-an-enterprise-tier-cache-preview"></a>Quickstart: Een cache voor een Enterprise-laag maken (preview)
 
@@ -22,7 +22,7 @@ De Enterprise-lagen voor Azure Cache voor Redis bieden het volledig geïntegreer
 
 ## <a name="prerequisites"></a>Vereisten
 
-U hebt een Azure-abonnement nodig voordat u kunt beginnen. Als u nog geen account hebt, maakt u eerst [een gratis account](https://azure.microsoft.com/free/).
+U hebt een Azure-abonnement nodig voordat u kunt beginnen. Als u nog geen account hebt, kunt u [een account maken](https://azure.microsoft.com/). Zie [Enterprise-laagvereisten](cache-overview.md#enterprise-tier-requirements) voor meer informatie.
 
 ## <a name="create-a-cache"></a>Een cache maken
 1. Meld u aan bij de Azure-portal via de link in uw preview-uitnodiging en selecteer **Een resource maken** om een cache te maken.
@@ -39,7 +39,7 @@ U hebt een Azure-abonnement nodig voordat u kunt beginnen. Als u nog geen accoun
    | **Resourcegroep** | Open de vervolgkeuzelijst en selecteer een resourcegroep of kies **Nieuwe maken** en geef een naam voor de nieuwe resourcegroep op. | Naam voor de resourcegroep waarin de cache en andere resources moeten worden gemaakt. Door al uw app-resources in één resourcegroep te plaatsen, kunt u ze eenvoudig beheren of verwijderen. | 
    | **DNS-naam** | Geef een wereldwijd unieke naam op. | De cachenaam is een tekenreeks van 1 tot 63 tekens die alleen cijfers, letters en afbreekstreepjes mag bevatten. De naam moet beginnen en eindigen met een cijfer of letter en mag geen opeenvolgende afbreekstreepjes bevatten. De *hostnaam* van het cache-exemplaar is *\<DNS name>.<Azure region>.redisenterprise.cache.azure.net*. | 
    | **Locatie** | Open de vervolgkeuzelijst en selecteer een locatie. | Tijdens de preview-fase zijn Enterprise-lagen in een beperkt aantal Azure-regio's beschikbaar. |
-   | **Cachetype** | Open de vervolgkeuzelijst en selecteer een *Enterprise* - of *Enterprise Flash* -laag, en een grootte. |  De grootte, prestaties en functies die beschikbaar zijn voor de cache, zijn afhankelijk van de gekozen laag. |
+   | **Cachetype** | Open de vervolgkeuzelijst en selecteer een *Enterprise*- of *Enterprise Flash*-laag, en een grootte. |  De grootte, prestaties en functies die beschikbaar zijn voor de cache, zijn afhankelijk van de gekozen laag. |
    
    :::image type="content" source="media/cache-create/enterprise-tier-basics.png" alt-text="Enterprise-laag Basisinstellingen":::
 

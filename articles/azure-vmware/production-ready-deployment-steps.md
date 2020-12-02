@@ -3,12 +3,12 @@ title: De implementatie van Azure VMware Solution plannen
 description: In dit artikel vindt u een overzicht van de implementatiewerkstroom voor Azure VMware Solution.  Het uiteindelijke resultaat is een omgeving die gereed is om virtuele machines te maken en te migreren.
 ms.topic: tutorial
 ms.date: 10/16/2020
-ms.openlocfilehash: 08a15e6f8cad4068415cec3353544829f2218fb0
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 1ef83a568e41fe99f1e8e385a599de9c5ab7c0ca
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94888977"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "95529724"
 ---
 # <a name="planning-the-azure-vmware-solution-deployment"></a>De implementatie van Azure VMware Solution plannen
 
@@ -48,7 +48,7 @@ Bepaal de omvang van de hosts die u wilt gebruiken om Azure VMware Solution te i
 
 ## <a name="number-of-hosts"></a>Aantal hosts
 
-Definieer het aantal hosts dat u wilt implementeren in de Azure VMware Solution-privécloud.  Het minimum aantal knooppunten is drie, en het maximum is 16 per cluster.  Raadpleeg voor meer informatie de documentatie van [Azure VMware Solution-privéclouds en -clusters](concepts-private-clouds-clusters.md#clusters).
+Definieer het aantal hosts dat u wilt implementeren in de Azure VMware Solution-privécloud.  Het minimum aantal hosts is drie, en het maximum is 16 per cluster.  Raadpleeg voor meer informatie de documentatie van [Azure VMware Solution-privéclouds en -clusters](concepts-private-clouds-clusters.md#clusters).
 
 U kunt de cluster later altijd uitbreiden als u verder moet gaan dan het oorspronkelijke implementatie-aantal.
 

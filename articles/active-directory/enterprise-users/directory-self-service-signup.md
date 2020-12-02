@@ -7,7 +7,6 @@ author: curtand
 manager: daveba
 editor: ''
 ms.service: active-directory
-ms.subservice: enterprise-users
 ms.topic: overview
 ms.workload: identity
 ms.date: 11/15/2020
@@ -15,12 +14,12 @@ ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c0edd85ea4478ac95ea854b73717056d52a9098b
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 846059c5c20255f9bddba59673458e12e1f354d3
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94647559"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95503575"
 ---
 # <a name="what-is-self-service-sign-up-for-azure-active-directory"></a>Wat is de selfservice voor aanmelden voor Azure Active Directory?
 
@@ -76,6 +75,12 @@ Deze twee parameters kunnen samen worden gebruikt om nauwkeuriger beheer over de
 In het volgende stroomdiagram worden de verschillende combinaties voor deze parameters en de daaruit volgende voorwaarden voor de map en de selfservice voor aanmelden uitgelegd.
 
 ![Stroomdiagram met de besturingselementen voor de selfservice voor aanmelden](./media/directory-self-service-signup/SelfServiceSignUpControls.png)
+
+De details van deze instelling kunnen worden opgehaald met de volgende PowerShell-cmdlet Get-MsolCompanyInformation. Zie [Get-MsolCompanyInformation](/powershell/module/msonline/get-msolcompanyinformation?view=azureadps-1.0) voor meer informatie
+
+```powershell
+    Get-MsolCompanyInformation | Select AllowEmailVerifiedUsers, AllowAdHocSubscriptions
+```
 
 Zie [Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0) voor meer informatie en voorbeelden van het gebruik van deze parameters.
 

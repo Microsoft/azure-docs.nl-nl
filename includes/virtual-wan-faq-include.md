@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/02/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: da2535a9764c909af3a491402311fe263dbb48fb
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: c476fe2af1fb4bddff4799609b164aab14f57b00
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93331074"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187392"
 ---
 ### <a name="is-azure-virtual-wan-in-ga"></a>Is Azure Virtual WAN algemeen beschikbaar?
 
@@ -273,3 +273,7 @@ Raadpleeg het gedeelte [Limieten voor Virtual WAN](../articles/azure-resource-ma
 ### <a name="what-are-the-differences-between-the-virtual-wan-types-basic-and-standard"></a>Wat zijn de verschillen tussen de Virtual WAN-typen (Basic en Standard)?
 
 Zie [Virtual WAN's: Basic en Standard](../articles/virtual-wan/virtual-wan-about.md#basicstandard). Zie de pagina [Prijzen](https://azure.microsoft.com/pricing/details/virtual-wan/) voor prijsopgaven.
+
+### <a name="does-virtual-wan-store-customer-data"></a>Slaat Virtual WAN klantgegevens op? 
+
+Nee. Virtual WAN slaat geen klantgegevens op.

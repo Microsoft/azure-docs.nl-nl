@@ -8,12 +8,12 @@ ms.service: stream-analytics
 ms.topic: overview
 ms.custom: mvc
 ms.date: 09/22/2020
-ms.openlocfilehash: 613cf7d9b68fe42c26f2c01cb1fb5dd1da1e1fb5
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: f67df45b6b663584e848983251031146cdf8df60
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90943752"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95247690"
 ---
 # <a name="overview-of-azure-stream-analytics-cluster-preview"></a>Overzicht van Azure Stream Analytics Cluster (preview)
 
@@ -69,7 +69,7 @@ Uw Stream Analytics-clusters worden in rekening gebracht op basis van de gekozen
 
 ### <a name="which-inputs-and-outputs-can-i-privately-connect-to-from-my-stream-analytics-cluster"></a>Met welke invoer en uitvoer kan ik privé verbinding maken vanuit mijn Stream Analytics-cluster?
 
-Stream Analytics ondersteunt diverse typen invoer en uitvoer. Elk van deze services die ondersteuning bieden voor Azure Private Links, kan een privéverbinding maken met uw taken. U kunt [persoonlijke eindpunten maken](private-endpoints.md) in uw cluster waarmee taken toegang kunnen krijgen tot de invoer- en uitvoerbronnen.
+Stream Analytics ondersteunt diverse typen invoer en uitvoer. U kunt [persoonlijke eindpunten maken](private-endpoints.md) in uw cluster waarmee taken toegang kunnen krijgen tot de invoer- en uitvoerbronnen. Momenteel zijn de ondersteunde services Azure SQL Database, Azure Storage, Azure Data Lake Storage Gen2, Azure Event Hub en Azure Service Bus en andere typen worden binnenkort toegevoegd. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

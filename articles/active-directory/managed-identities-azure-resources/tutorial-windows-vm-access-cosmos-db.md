@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 09/29/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6b571b2b8e0d334a02631e3f443ec54398117ee9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4cd1fb7f33c56aefe76bc55181ae92ca3d149754
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91532666"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96006955"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-cosmos-db"></a>Zelfstudie: een door het Windows-VM-systeem toegewezen beheerde identiteit gebruiken voor toegang tot Azure Cosmos DB
 
@@ -82,7 +82,7 @@ New-AzRoleAssignment -ObjectId $spID -RoleDefinitionName "Cosmos DB Account Read
 ```
 
 >[!NOTE]
-> Als u een bewerking niet kunt uitvoeren, hebt u mogelijk niet de juiste machtigingen. Als u schrijftoegang wilt hebben tot sleutels, moet u een RBAC-rol gebruiken, zoals Inzender voor het DocumentDB-account of moet u een aangepaste rol maken. Raadpleeg [Op rollen gebaseerd toegangsbeheer in Azure Cosmos DB](../../cosmos-db/role-based-access-control.md) voor meer informatie
+> Als u een bewerking niet kunt uitvoeren, hebt u mogelijk niet de juiste machtigingen. Als u schrijftoegang wilt hebben tot sleutels, moet u een Azure-rol gebruiken, zoals Inzender voor het DocumentDB-account of moet u een aangepaste rol maken. Raadpleeg [Op rollen gebaseerd Azure-toegangsbeheer in Azure Cosmos DB](../../cosmos-db/role-based-access-control.md) voor meer informatie
 
 ## <a name="access-data"></a>Toegang tot gegevens
 

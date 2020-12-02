@@ -4,15 +4,15 @@ description: Hierin wordt Azure HPC Cache beschreven, een versnellingsoplossing 
 author: ekpgh
 ms.service: hpc-cache
 ms.topic: overview
-ms.date: 09/03/2020
+ms.date: 11/23/2020
 ms.author: v-erkel
 ms.custom: references_regions
-ms.openlocfilehash: b51cd938747c1cfa82b397160f077474e176b2f5
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 0568d9b7fea2e4e048c0c1d1b2d6f81d64a9b114
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91612962"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95519333"
 ---
 # <a name="what-is-azure-hpc-cache"></a>Wat is Azure HPC Cache?
 
@@ -64,6 +64,8 @@ De functie [door klant beheerde sleutels](customer-keys.md) wordt alleen in deze
 * Europa - west
 * VS (overheid) - Arizona
 * VS (overheid) - Virginia
+
+De Azure HPC Cache bevindt zich in een enkele regio. Het kan toegang krijgen tot gegevens die zijn opgeslagen in andere regio's als u deze verbindt met blobcontainers die daar zich bevinden. Met de cache worden klantgegevens niet permanent opgeslagen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

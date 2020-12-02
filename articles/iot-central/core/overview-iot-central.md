@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
-ms.openlocfilehash: 3952736af9cf7c3b720769cee6a58e3fc52a6111
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: b62a0da7074676787b7e1c0182ca7588b83cdbe0
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92127400"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94985039"
 ---
 # <a name="what-is-azure-iot-central"></a>Wat is Azure IoT Central?
 
@@ -58,7 +58,7 @@ Als bouwer van oplossingen gebruikt u de webgebaseerde hulpprogramma's om een _a
 
 Deze [apparaatsjabloon](howto-set-up-template.md) omvat:
 
-- Een _apparaatondersteuningmodel_ dat de mogelijkheden beschrijft waarmee een apparaat moet worden geïmplementeerd. De apparaatmogelijkheden zijn:
+- Een _apparaatmodel_ dat de mogelijkheden beschrijft waarmee een apparaat moet worden geïmplementeerd. De apparaatmogelijkheden zijn:
 
   - De telemetrie die naar IoT Central wordt gestreamd.
   - De alleen-lezeneigenschappen die worden gebruikt om de status aan IoT Central te rapporteren.
@@ -72,9 +72,9 @@ Deze [apparaatsjabloon](howto-set-up-template.md) omvat:
 
 Als bouwer van oplossingen hebt u verschillende opties voor het maken van apparaatsjablonen:
 
-- Ontwerp de apparaatsjabloon in IoT Central en implementeer vervolgens het apparaatfunctiemodel in de code van uw apparaat.
-- Maak een apparaatfunctiemodel met behulp van Visual Studio-code en publiceer het model naar een opslagplaats. Implementeer uw apparaatcode vanuit het model en verbind uw apparaat met uw IoT Central-toepassing. IoT Central vindt het apparaatfunctiemodel in de opslagplaats en maakt een eenvoudige apparaatsjabloon voor u.
-- Maak een apparaatfunctiemodel met behulp van Visual Studio-code. Implementeer uw apparaatcode vanuit het model. Importeer het apparaatfunctiemodel handmatig in uw IoT Central-toepassing en voeg vervolgens alle cloudeigenschappen, aanpassingen en dashboards toe die uw IoT Central-toepassing nodig heeft.
+- Ontwerp de apparaatsjabloon in IoT Central en implementeer vervolgens het apparaatmodel in de code van uw apparaat.
+- Maak een apparaatmodel met behulp van Visual Studio-code en publiceer het model naar een opslagplaats. Implementeer uw apparaatcode vanuit het model en verbind uw apparaat met uw IoT Central-toepassing. IoT Central vindt het apparaatmodel in de opslagplaats en maakt een eenvoudige apparaatsjabloon voor u.
+- Een apparaatmodel maken met Visual Studio Code. Implementeer uw apparaatcode vanuit het model. Importeer het apparaatmodel handmatig in uw IoT Central-toepassing en voeg vervolgens alle cloudeigenschappen, aanpassingen en dashboards toe die uw IoT Central-toepassing nodig heeft.
 
 Als bouwer van oplossingen kunt u IoT Central gebruiken om code te genereren voor testapparaten om uw apparaatsjablonen te valideren.
 
@@ -151,7 +151,6 @@ Voor elk Azure-abonnement gelden standaardquota die invloed kunnen hebben op het
 - Het schematype Matrix wordt niet ondersteund.
 - Alleen de C-apparaat-SDK en de Node.js-apparaat- en service-SDK's worden ondersteund.
 - IoT Central is momenteel beschikbaar in de Verenigde Staten, Europa, Azië en Stille Oceaan, Australië, Verenigd Koninkrijk en Japan.
-- Voor apparaatfunctiemodellen geldt dat alle interfaces inline moeten zijn gedefinieerd in hetzelfde bestand.
 
 ## <a name="next-steps"></a>Volgende stappen
 

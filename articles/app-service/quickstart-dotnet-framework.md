@@ -3,14 +3,14 @@ title: 'Quickstart: Een C# ASP.NET-app maken'
 description: Leer hoe u web-apps uitvoert in Azure App Service door de standaard C# ASP.NET-web-app vanuit Visual Studio te implementeren.
 ms.assetid: 04a1becf-7756-4d4e-92d8-d9471c263d23
 ms.topic: quickstart
-ms.date: 08/06/2020
+ms.date: 11/20/2020
 ms.custom: devx-track-csharp, mvc, devcenter, seodec18
-ms.openlocfilehash: 5bf774f2b5cf4a6275dc04248aadfd9a94f5122d
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: a4f7ba288bc27d6079deea9caf0ea315a55d0745
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88212547"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96004046"
 ---
 # <a name="create-an-aspnet-framework-web-app-in-azure"></a>Een ASP.NET Framework-web-app maken in Azure
 
@@ -55,20 +55,21 @@ Maak een ASP.NET-web-app door de volgende stappen uit te voeren:
 
 1. Klik in **Solution Explorer** met de rechtermuisknop op het project **myFirstAzureWebApp** en selecteer **Publiceren**.
 
-1. Kies **App Service** en selecteer **Profiel maken**.
+1. Selecteer bij **Publiceren** de optie **Azure** en klik op **Volgende**.
 
-   ![Publiceren vanaf de projectoverzichtspagina](./media/quickstart-dotnet-framework/publish-app-framework-vs2019.png)
+1. Selecteer **Azure App Service (Windows)** en klik op **Volgende**.
 
-1. In **Nieuwe App Service maken** zijn uw opties afhankelijk van het feit of u al bent aangemeld bij Azure en of u een Visual Studio-account hebt gekoppeld aan een Azure-account. Selecteer **Een account toevoegen** of **Aanmelden** om u aan te melden bij uw Azure-abonnement. Als u al bent aangemeld, selecteert u het gewenste account.
+   <!-- ![Publish from project overview page](./media/quickstart-dotnet-framework/publish-app-framework-vs2019.png) -->
 
-   > [!NOTE]
-   > Als u al bent aangemeld, selecteert u **Maken** nog niet.
-   >
-   >
+1. Uw opties zijn afhankelijk van het feit of u al bent aangemeld bij Azure en of u een Visual Studio-account hebt gekoppeld aan een Azure-account. Selecteer **Een account toevoegen** of **Aanmelden** om u aan te melden bij uw Azure-abonnement. Als u al bent aangemeld, selecteert u het gewenste account.
 
    ![Aanmelden bij Azure](./media/quickstart-dotnet-framework/sign-in-azure-framework-vs2019.png)
 
    [!INCLUDE [resource group intro text](../../includes/resource-group.md)]
+
+1. Klik rechts van **App Service-exemplaren** op **+** .
+
+   ![Nieuwe App Service-app](./media/quickstart-dotnet-framework/publish-new-app-service.png)
 
 1. Selecteer in **Resourcegroep** de optie **Nieuw**.
 
@@ -76,7 +77,7 @@ Maak een ASP.NET-web-app door de volgende stappen uit te voeren:
 
    [!INCLUDE [app-service-plan](../../includes/app-service-plan.md)]
 
-1. Selecteer bij **Hostingabonnement** **Nieuw**.
+1. Selecteer bij **Hostingabonnement** de optie **Nieuw**.
 
 1. Voer in het dialoogvenster **Hostingabonnement** de waarden uit de volgende tabel in en selecteer **OK**.
 
@@ -90,11 +91,13 @@ Maak een ASP.NET-web-app door de volgende stappen uit te voeren:
 
 1. Voer bij **Naam** een unieke app-naam in die alleen deze geldige tekens bevat: `a-z`, `A-Z`, `0-9` en `-`. U kunt de automatisch gegenereerde unieke naam accepteren. De URL van de web-app is `http://<app-name>.azurewebsites.net`, waarbij `<app-name>` de naam van uw app is.
 
-2. Selecteer **Maken** om de Azure-resources te gaan maken.
+2. Selecteer **Maken** om de Azure-resources te maken.
 
    ![Uw app-naam configureren](./media/quickstart-dotnet-framework/web-app-name-framework-vs2019.png)
 
     Zodra de wizard is voltooid, worden de Azure-resources gemaakt en bent u klaar om te publiceren.
+
+3. Klik op **Voltooien** om de wizard te sluiten.
 
 3. Klik op de pagina **Publiceren** op **Publiceren**. Visual Studio maakt, verpakt en publiceert de app naar Azure. Daarna wordt de app gestart in de standaardbrowser.
 

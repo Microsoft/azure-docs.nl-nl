@@ -13,16 +13,16 @@ ms.date: 09/24/2019
 ms.author: marsma
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:iOS
-ms.openlocfilehash: 1b15330d368a93ac4ba176df129df212a259f3e2
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 3ea3c3990a9319a81c841de8a7109850fcab5179
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94561893"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95993904"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-or-macos-app"></a>Quickstart: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een iOS- of macOS-app
 
-In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoorbeeld laat zien hoe gebruikers kunnen worden aangemeld met een systeemeigen iOS- of macOS-toepassing, en een toegangstoken kunnen verkrijgen om de Microsoft Graph API aan te roepen.
+In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoorbeeld laat zien hoe gebruikers kunnen worden aangemeld met een systeemeigen iOS- of macOS-toepassing, en een toegangstoken kunnen krijgen om de Microsoft Graph API aan te roepen.
 
 De quickstart is van toepassing op iOS- en macOS-apps. Sommige stappen zijn alleen nodig voor iOS-apps en worden als zodanig aangeduid.
 

@@ -3,17 +3,17 @@ title: Azure Defender voor SQL - de voordelen en functies
 description: Meer informatie over de voordelen en functies van Azure Defender voor SQL.
 author: memildin
 ms.author: memildin
-ms.date: 11/17/2020
+ms.date: 11/22/2020
 ms.topic: overview
 ms.service: security-center
 ms.custom: references_regions
 manager: rkarlin
-ms.openlocfilehash: b4f046339c027a5ae66f7f7510d8d2b311abd6df
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: bb24c04681b142aaa1c80738090afe2a13949495
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94693457"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96014534"
 ---
 # <a name="introduction-to-azure-defender-for-sql"></a>Inleiding tot Azure Defender voor SQL
 
@@ -25,7 +25,7 @@ Azure Defender voor SQL bevat twee Azure Defender-abonnementen die het [gegevens
 |----|:----|
 |Releasestatus:|**Azure Defender voor Azure SQL-databaseservers** - algemeen beschikbaar<br>**Azure Defender voor SQL-servers op computers** - preview<br>[!INCLUDE [Legalese](../../includes/security-center-preview-legal-text.md)] |
 |Prijzen:|De twee abonnementen die **Azure Defender voor SQL** vormen, worden gefactureerd zoals wordt weergegeven op [de pagina met prijzen](security-center-pricing.md)|
-|Beveiligde SQL-versies:|Azure SQL Database <br>Azure SQL Managed Instance<br>Toegewezen SQL-pool in Azure Synapse (voorheen SQL DW)<br>SQL Server (alle ondersteunde versies)|
+|Beveiligde SQL-versies:|SQL op virtuele machines in Azure - [Windows](../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md) en [Linux](../azure-sql/virtual-machines/linux/sql-server-on-linux-vm-what-is-iaas-overview.md)<br>[Door Arc ingeschakelde SQL-servers](https://docs.microsoft.com/sql/sql-server/azure-arc/overview) (inclusief on-premises SQL-servers)<br>Azure SQL [individuele databases](../azure-sql/database/single-database-overview.md) en [elastische pools](../azure-sql/database/elastic-pool-overview.md)<br>[Azure SQL Managed Instance](../azure-sql/managed-instance/sql-managed-instance-paas-overview.md)<br>[Azure Synapse Analytics (voorheen SQL DW) toegewezen SQL-pool](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md#dedicated-sql-pool-in-azure-synapse)|
 |Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov<br>![Nee](./media/icons/no-icon.png) China Gov, Other Gov|
 |||
 

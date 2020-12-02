@@ -6,12 +6,12 @@ ms.topic: overview
 author: bwren
 ms.author: bwren
 ms.date: 11/11/2020
-ms.openlocfilehash: 18222573956f5ff3e9c617602902374b114328da
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 4fa00bffc35c4ed67ce70751c8882b74ad6b01a1
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94555614"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95534497"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Wat is er nieuw de documentatie van Azure Monitor?
 
@@ -296,7 +296,7 @@ Nieuwe en bijgewerkte artikelen van het opnieuw indelen van de inhoud van Azure 
 
 ### <a name="logs"></a>Logboeken
 - [Azure Log Analytics-werkruimte verwijderen en herstellen](platform/delete-workspace.md): PowerShell-opdracht toegevoegd. Probleemoplossing bijgewerkt.
-- [Log Analytics-werkruimten beheren in Azure Monitor](platform/manage-access.md) - Voorbeeld toegevoegd voor niet-toegelaten tabellen in RBAC-sectie.
+- [Log Analytics-werkruimten beheren in Azure Monitor](platform/manage-access.md) - Voorbeeld toegevoegd voor niet-toegelaten tabellen in Azure RBAC-sectie.
 - [Het gebruik en de kosten voor Azure Monitor-logboeken beheren](platform/manage-cost-storage.md) - Aanvullende details over de berekening van de gegevensgrootte. Configuratie van waarschuwingen voor gegevensvolumes bijgewerkt. Details over de beveiligingsgegevens die door Azure Sentinel worden verzameld. Toelichting bij gegevenslimiet.
 - [Azure Monitor-logboeken gebruiken met Azure Logic Apps en Power Automate](platform/logicapp-flow-connector.md) - Connectorlimieten toegevoegd.
 
@@ -571,7 +571,7 @@ Meerdere updates als onderdeel van het herschrijven van inhoud van extensie voor
 
 #### <a name="azure-monitor-for-containers"></a>Azure Monitor voor containers
 
-- [Azure Active Directory integreren met Azure Kubernetes Service](../aks/azure-ad-integration-cli.md): opmerking toegevoegd voor het maken van een clienttoepassing om RBAC-enabled cluster te ondersteunen voor de ondersteuning van Azure Monitor voor containers.
+- [Azure Active Directory integreren met Azure Kubernetes Service](../aks/azure-ad-integration-cli.md): opmerking toegevoegd voor het maken van een clienttoepassing om Kubernetes RBAC-enabled cluster te ondersteunen voor de ondersteuning van Azure Monitor voor containers.
 
 #### <a name="azure-monitor-for-vms"></a>Azure Monitor voor virtuele machines
 

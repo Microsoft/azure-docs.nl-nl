@@ -3,15 +3,15 @@ title: Door de klant beheerde sleutels instellen voor het versleutelen van gegev
 description: Maak en beheer uw eigen coderings sleutels voor het beveiligen van gegevens op rest voor integratie service omgevingen (ISEs) in Azure Logic Apps
 services: logic-apps
 ms.suite: integration
-ms.reviewer: klam, rarayudu, logicappspm
+ms.reviewer: mijos, rarayudu, logicappspm
 ms.topic: conceptual
-ms.date: 03/11/2020
-ms.openlocfilehash: 30b09d43cbe510318ac4f48e0655d5483491c215
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.date: 11/20/2020
+ms.openlocfilehash: 59c60c876058f8664b38411b562e57c2d5cdc2a8
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94682771"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96510621"
 ---
 # <a name="set-up-customer-managed-keys-to-encrypt-data-at-rest-for-integration-service-environments-ises-in-azure-logic-apps"></a>Door de klant beheerde sleutels instellen om gegevens in rust te versleutelen voor integratie service omgevingen (ISEs) in Azure Logic Apps
 
@@ -27,11 +27,15 @@ In dit onderwerp wordt beschreven hoe u uw eigen versleutelings sleutel instelt 
 
 * U kunt alleen een door de klant beheerde sleutel opgeven *Wanneer u uw ISE maakt*, niet daarna. U kunt deze sleutel niet uitschakelen nadat de ISE is gemaakt. Momenteel bestaat er geen ondersteuning voor het draaien van een door de klant beheerde sleutel voor een ISE.
 
-* Ter ondersteuning van door de klant beheerde sleutels vereist uw ISE dat de door het [systeem toegewezen beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) is ingeschakeld. Met deze identiteit kan de ISE toegang tot resources in andere Azure Active Directory-tenants (Azure AD) verifiëren, zodat u zich niet hoeft aan te melden met uw referenties.
+* Ter ondersteuning van door de klant beheerde sleutels moet uw ISE de door het [systeem toegewezen of door de gebruiker toegewezen beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types)inschakelen. Met deze identiteit kan uw ISE toegang tot beveiligde bronnen verifiëren, zoals virtuele machines en andere systemen of services, die in of verbonden zijn met een virtueel Azure-netwerk. Op die manier hoeft u zich niet aan te melden met uw referenties.
 
-* Als u momenteel een ISE wilt maken die door de klant beheerde sleutels ondersteunt en de door het systeem toegewezen identiteit is ingeschakeld, moet u de Logic Apps REST API aanroepen met behulp van een HTTPS PUT-aanvraag.
+* Als u momenteel een ISE wilt maken die door de klant beheerde sleutels ondersteunt en waarvoor het type beheerde identiteit is ingeschakeld, moet u de Logic Apps REST API aanroepen met behulp van een HTTPS PUT-aanvraag.
 
-* Binnen *30 minuten* nadat u de https put-aanvraag hebt verzonden die uw ISE maakt, moet u toegang tot de [sleutel kluis verlenen aan de door het systeem toegewezen identiteit van uw ISE](#identity-access-to-key-vault). Anders mislukt het maken van ISE en wordt er een machtigings fout gegenereerd.
+* U moet [sleutel kluis toegang geven tot de beheerde identiteit van uw ISE](#identity-access-to-key-vault), maar de timing is afhankelijk van de beheerde identiteit die u gebruikt.
+
+  * Door het **systeem toegewezen beheerde identiteit**: binnen *30 minuten nadat* u de https put-aanvraag hebt verzonden die uw ISE maakt, moet u [toegang tot de sleutel kluis verlenen aan de beheerde identiteit van uw ISE](#identity-access-to-key-vault). Anders mislukt het maken van ISE en krijgt u een machtigings fout.
+
+  * Door de **gebruiker toegewezen beheerde identiteit**: voordat u de https put-aanvraag verzendt die uw ISE maakt, [geeft u een sleutel kluis toegang tot de beheerde identiteit van uw ISE](#identity-access-to-key-vault).
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -56,7 +60,7 @@ In dit onderwerp wordt beschreven hoe u uw eigen versleutelings sleutel instelt 
 
 * Een hulp programma dat u kunt gebruiken om uw ISE te maken door de Logic Apps REST API aan te roepen met een HTTPS-aanvraag. U kunt bijvoorbeeld [postman](https://www.getpostman.com/downloads/)gebruiken of u kunt een logische app maken die deze taak uitvoert.
 
-<a name="enable-support-key-system-identity"></a>
+<a name="enable-support-key-managed-identity"></a>
 
 ## <a name="create-ise-with-key-vault-and-managed-identity-support"></a>ISE maken met sleutel kluis en beheerde identiteits ondersteuning
 
@@ -65,7 +69,7 @@ Als u uw ISE wilt maken door de Logic Apps REST API aan te roepen, maakt u deze 
 `PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/integrationServiceEnvironments/{integrationServiceEnvironmentName}?api-version=2019-05-01`
 
 > [!IMPORTANT]
-> Voor de versie Logic Apps REST API 2019-05-01 moet u uw eigen HTTP PUT-aanvraag voor ISE-connectors maken.
+> Voor de versie Logic Apps REST API 2019-05-01 moet u uw eigen HTTPS-aanvraag voor ISE-connectors maken.
 
 Het volt ooien van de implementatie duurt gewoonlijk binnen twee uur. De implementatie kan af en toe Maxi maal vier uur duren. Als u de implementatie status wilt controleren, selecteert u in de [Azure Portal](https://portal.azure.com)op de Azure-werk balk het meldingen pictogram, waarmee het deel venster meldingen wordt geopend.
 
@@ -88,7 +92,7 @@ Neem de volgende eigenschappen op in de aanvraag header:
 
 Schakel in de hoofd tekst van de aanvraag ondersteuning in voor deze aanvullende items door hun gegevens op te geven in uw ISE-definitie:
 
-* De door het systeem toegewezen beheerde identiteit die uw ISE gebruikt om toegang te krijgen tot uw sleutel kluis
+* De beheerde identiteit die uw ISE gebruikt om toegang te krijgen tot uw sleutel kluis
 * Uw sleutel kluis en de door de klant beheerde sleutel die u wilt gebruiken
 
 #### <a name="request-body-syntax"></a>Syntaxis van aanvraag tekst
@@ -106,7 +110,14 @@ Hier volgt de syntaxis van de hoofd tekst van de aanvraag, waarin de eigenschapp
       "capacity": 1
    },
    "identity": {
-      "type": "SystemAssigned"
+      "type": <"SystemAssigned" | "UserAssigned">,
+      // When type is "UserAssigned", include the following "userAssignedIdentities" object:
+      "userAssignedIdentities": {
+         "/subscriptions/{Azure-subscription-ID}/resourceGroups/{Azure-resource-group}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{user-assigned-managed-identity-object-ID}": {
+            "principalId": "{principal-ID}",
+            "clientId": "{client-ID}"
+         }
+      }
    },
    "properties": {
       "networkConfiguration": {
@@ -153,7 +164,13 @@ In dit voor beeld van de aanvraag tekst worden de voorbeeld waarden weer gegeven
    "type": "Microsoft.Logic/integrationServiceEnvironments",
    "location": "WestUS2",
    "identity": {
-      "type": "SystemAssigned"
+      "type": "UserAssigned",
+      "userAssignedIdentities": {
+         "/subscriptions/********************/resourceGroups/Fabrikam-RG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/*********************************": {
+            "principalId": "*********************************",
+            "clientId": "*********************************"
+         }
+      }
    },
    "sku": {
       "name": "Premium",
@@ -197,7 +214,11 @@ In dit voor beeld van de aanvraag tekst worden de voorbeeld waarden weer gegeven
 
 ## <a name="grant-access-to-your-key-vault"></a>Toegang verlenen tot uw sleutelkluis
 
-Binnen *30 minuten* nadat u de HTTP put-aanvraag voor het maken van uw ISE hebt verzonden, moet u een toegangs beleid toevoegen aan de sleutel kluis voor de door het systeem toegewezen identiteit van uw ISE. Als u dit niet doet, mislukt het maken van uw ISE en krijgt u een machtigings fout. 
+Hoewel de timing afwijkt van de beheerde identiteit die u gebruikt, moet u [toegang tot de sleutel kluis verlenen aan de beheerde identiteit van uw ISE](#identity-access-to-key-vault).
+
+* Door het **systeem toegewezen beheerde identiteit**: binnen *30 minuten nadat* u de https put-aanvraag hebt verzonden die uw ISE maakt, moet u een toegangs beleid toevoegen aan de sleutel kluis voor de door het systeem toegewezen beheerde identiteit van uw ISE. Als u dit niet doet, mislukt het maken van uw ISE en krijgt u een machtigings fout.
+
+* Door de **gebruiker toegewezen beheerde identiteit**: voordat u de https put-aanvraag verzendt die uw ISE maakt, moet u een toegangs beleid toevoegen aan de sleutel kluis voor de door de gebruiker toegewezen beheerde identiteit van uw ISE.
 
 Voor deze taak kunt u de Azure PowerShell [set-AzKeyVaultAccessPolicy](/powershell/module/az.keyvault/set-azkeyvaultaccesspolicy) gebruiken of kunt u deze stappen volgen in de Azure portal:
 

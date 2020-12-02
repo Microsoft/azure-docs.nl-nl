@@ -8,20 +8,20 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
 ms.date: 10/16/2020
-ms.openlocfilehash: f967b10d729c9c5486bbca9b643f48aaf558687c
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 5489feeeec64c7b3d4b5fc28eddfe8b780308796
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628064"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94979875"
 ---
 # <a name="tutorial-sign-in-users-and-call-a-protected-api-from-a-blazor-webassembly-app"></a>Zelfstudie: Gebruikers aanmelden en een beveiligde API aanroepen vanuit een Blazor WebAssembly-app
 
-Blazor WASM (WebAssembly) is een app-framework met één pagina voor het bouwen van interactieve web-apps aan de clientzijde met .NET. In deze zelfstudie leert u hoe u verificatie kunt implementeren en gegevens kunt ophalen uit Microsoft Graph in een Blazor WASM-app, met behulp van het Microsoft-identiteitsplatform en door de app te registreren in Azure AD (Azure Active Directory).
+In deze zelfstudie leert u hoe u een Blazor WebAssembly-app kunt bouwen dit gebruikers inlogt en gegevens kunt ophalen uit Microsoft Graph, met behulp van het Microsoft-identiteitsplatform en door de app te registreren in Azure AD (Azure Active Directory).
 
 We hebben ook een [zelfstudie voor Blazor Server](tutorial-blazor-server.md). 
 
-In deze zelfstudie leert u het volgende:
+In deze zelfstudie hebt u het volgende gedaan:
 
 > [!div class="checklist"]
 >

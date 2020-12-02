@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 12/14/2019
 ms.author: zhshang
 ms.custom: devx-track-js
-ms.openlocfilehash: 02bcbf0b4f6f6021c157a8ba3c5d2783fc94f1aa
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 061dce01d2437d04d371ac65c115a1d95136fb5d
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425325"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874692"
 ---
 # <a name="quickstart-use-javascript-to-create-a-chat-room-with-azure-functions-and-signalr-service"></a>Quickstart: JavaScript gebruiken om een chatruimte met Azure Functions en SignalR Service te maken
 
@@ -32,21 +32,21 @@ Met Azure SignalR Service kunt u eenvoudig realtime functionaliteit toevoegen aa
 > [!NOTE]
 > Deze quickstart kan worden uitgevoerd op macOS, Windows of Linux.
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsjs)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsjs).
 
 ## <a name="log-in-to-azure"></a>Meld u aan bij Azure.
 
 Meld u met uw Azure-account aan bij Azure Portal op <https://portal.azure.com/>.
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsjs)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsjs).
 
 [!INCLUDE [Create instance](includes/signalr-quickstart-create-instance.md)]
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsjs)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsjs).
 
 [!INCLUDE [Clone application](includes/signalr-quickstart-clone-application.md)]
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsjs)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsjs).
 
 ## <a name="configure-and-run-the-azure-function-app"></a>De Azure-functie-app configureren en uitvoeren
 
@@ -68,8 +68,8 @@ Meld u met uw Azure-account aan bij Azure Portal op <https://portal.azure.com/>.
 
 1. JavaScript-functies zijn georganiseerd in mappen. In elke map zitten twee bestanden: *function.json* definieert de bindingen die worden gebruikt in de functie, en *index.js* is de hoofdtekst van de functie. Deze functie-app bevat twee met HTTP geactiveerde functies:
 
-    - **negotiate** : gebruikt de invoerbinding *SignalRConnectionInfo* om geldige verbindingsgegevens te genereren en te retourneren.
-    - **messages** : ontvangt een chatbericht in de hoofdtekst van de aanvraag en gebruikt de uitvoerbinding *SignalR* om het bericht uit te zenden naar alle verbonden clienttoepassingen.
+    - **negotiate**: gebruikt de invoerbinding *SignalRConnectionInfo* om geldige verbindingsgegevens te genereren en te retourneren.
+    - **messages**: ontvangt een chatbericht in de hoofdtekst van de aanvraag en gebruikt de uitvoerbinding *SignalR* om het bericht uit te zenden naar alle verbonden clienttoepassingen.
 
 1. Zorg ervoor dat u zich in de terminal in de map *src/chat/javascript* bevindt. Voer de functie-app uit.
 
@@ -78,16 +78,16 @@ Meld u met uw Azure-account aan bij Azure Portal op <https://portal.azure.com/>.
     ```
 
     ![De service SignalR maken](media/signalr-quickstart-azure-functions-javascript/signalr-quickstart-run-application.png)
-
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsjs)
+    
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsjs).
 
 [!INCLUDE [Run web application](includes/signalr-quickstart-run-web-application.md)]
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsjs)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsjs).
 
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsjs)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsjs).
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -96,4 +96,3 @@ In deze quickstart hebt u een serverloze, realtime toepassing in VS Code gebouwd
 > [!div class="nextstepaction"]
 > [Azure Functions met VS Code implementeren](/azure/developer/javascript/tutorial-vscode-serverless-node-01)
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsjs)

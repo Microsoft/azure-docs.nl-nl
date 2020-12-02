@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: overview
 ms.date: 11/13/2020
 ms.author: matjazl
-ms.openlocfilehash: 3bb168cf3f642d22096c54b3f35c7833afaff769
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: 386003d7dae80e086f523b2cebe61aa0eee7b89e
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94635140"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95527816"
 ---
 # <a name="what-is-azure-api-for-fhirreg"></a>Wat is Azure API for FHIR&reg;?
 
@@ -24,7 +24,7 @@ Met Azure API for FHIR kunnen gegevens snel worden uitgewisseld via snelle API's
 - Hoge prestaties, lage latentie
 - Veilig beheer van PHI (Protected Health Data) in een compatibele cloudomgeving
 - INFO op FHIR voor mobiele en webimplementaties
-- Uw eigen gegevens op schaal beheren met op rollen gebaseerd toegangsbeheer
+- Uw eigen gegevens op schaal beheren met op rollen gebaseerd toegangsbeheer (RBAC)
 - Bijhouden van audittrails voor openen, maken, wijzigen en lezen in elk gegevensarchief
 
 Met Azure API for FHIR kunt u in slechts enkele minuten een FHIR-service maken en implementeren om gebruik te maken van elastisch schalen van de cloud.  U betaalt alleen voor de doorvoer en opslag die u nodig hebt. De Azure-services die Azure API for FHIR aandrijven, zijn ontworpen voor snelle prestaties, ongeacht de grootte van de gegevenssets die u beheert.
@@ -53,7 +53,7 @@ Met Azure API for FHIR kunt u verbinding maken met elk systeem dat gebruikmaakt 
 
 ### <a name="control-data-access-at-scale"></a>Toegang tot gegevens op schaal beheren
 
-U beheert uw gegevens. Met op rollen gebaseerd toegangsbeheer kunt u beheren hoe uw gegevens worden opgeslagen en geopend.  Door betere beveiliging te bieden en de administratieve werkbelasting te verminderen, bepaalt u wie toegang heeft tot de door u gemaakte gegevenssets op basis van roldefinities die u voor uw omgeving maakt.  
+U beheert uw gegevens. Met op rollen gebaseerd toegangsbeheer (RBAC) kunt u beheren hoe uw gegevens worden opgeslagen en geopend.  Door betere beveiliging te bieden en de administratieve werkbelasting te verminderen, bepaalt u wie toegang heeft tot de door u gemaakte gegevenssets op basis van roldefinities die u voor uw omgeving maakt.  
 
 ### <a name="audit-logs-and-tracking"></a>Audittrails en bijhouden 
 

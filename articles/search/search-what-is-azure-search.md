@@ -7,38 +7,47 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: overview
-ms.date: 10/22/2020
+ms.date: 11/24/2020
 ms.custom: contperfq1
-ms.openlocfilehash: 0062caff7d8d25b263a9b1202f61691c056469af
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 19be1155476ca7c295e2d0311e8285bc2128dd1d
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701079"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96030761"
 ---
 # <a name="what-is-azure-cognitive-search"></a>Wat is Azure Cognitive Search?
 
-Azure Cognitive Search ([voorheen 'Azure Search'](whats-new.md#new-service-name)) is een cloudzoekservice die ontwikkelaars API’s en hulpprogramma’s biedt. Hiermee kunnen ze een uitgebreide zoekervaring bouwen binnen privé- en heterogene inhoud in web-, mobiele en ondernemingstoepassingen.
+Azure Cognitive Search ([voorheen 'Azure Search'](whats-new.md#new-service-name)) is een cloudzoekservice die ontwikkelaars API’s en hulpprogramma’s biedt. Hiermee kunnen ze een uitgebreide zoekervaring bouwen binnen privé- en heterogene inhoud in web-, mobiele en ondernemingstoepassingen. 
 
-Wanneer u een Cognitive Search-service maakt, krijgt u een zoekmachine die het indexeren en uitvoeren van query's regelt, persistente opslag van indexen die u maakt en beheert uitvoert, en een querytaal voor het samenstellen van eenvoudige tot complexe query's uitvoert. Een zoekservice kan eventueel worden geïntegreerd met andere Azure-services. Dit kan in de vorm van specifieke *indexeerfuncties* en *vaardighedensets*. De indexeerfuncties nemen of halen gegevens op van Azure-gegevensbronnen. De vaardighedensets integreren verbruikbare AI van Cognitive Services (zoals afbeeldings- en tekstanalyse) of aangepaste AI-elementen die u in Azure Machine Learning maakt of binnen Azure Functions inpakt.
+Wanneer u een Cognitive Search-service maakt, krijgt u:
+
++ een zoekprogramma dat indexering en query's uitvoert
++ op AI gebaseerde analyse en transformatie van afbeeldingen en niet-gedifferentieerde tekst tijdens het indexeren
++ permanente opslag van zoekindexen die u maakt en beheert
++ een querytaal voor het opstellen van eenvoudige tot complexe query's
+
+In de architectuur wordt een zoekservice geplaatst tussen de externe gegevensarchieven die uw niet-geïndexeerde gegevens bevatten en een client-app die query-aanvragen naar een zoekindex verzendt en het antwoord verwerkt.
 
 ![Architectuur van Azure Cognitive Search](media/search-what-is-azure-search/azure-search-diagram.svg "Architectuur van Azure Cognitive Search")
 
-In de architectuur wordt een zoekservice geplaatst tussen de externe gegevensarchieven die uw niet-geïndexeerde gegevens bevatten en een client-app die query-aanvragen naar een zoekindex verzendt en het antwoord verwerkt.  Een indexschema bepaalt de structuur van doorzoekbare inhoud. 
+Een zoekservice kan worden geïntegreerd met andere Azure-services. Dit kan in de vorm van specifieke *indexeerfuncties* en *vaardighedensets*. De indexeerfuncties nemen of halen gegevens op van Azure-gegevensbronnen. De vaardighedensets integreren verbruikbare AI van Cognitive Services (zoals afbeeldings- en tekstanalyse) of aangepaste AI-elementen die u in Azure Machine Learning maakt of binnen Azure Functions inpakt.
 
-De twee primaire werkbelastingen van een zoekservice zijn *indexeren* en *query's uitvoeren*.
+Binnen de zoekservice zelf zijn de twee primaire werkbelastingen *indexeren* en *query's uitvoeren*. 
 
-+ Bij het indexeren wordt tekst naar uw zoekservice gebracht en doorzoekbaar gemaakt. Intern wordt inkomende tekst verwerkt in tokens en opgeslagen in omgekeerde indexen voor snelle scans. Tijdens het indexeren hebt u de mogelijkheid om *cognitieve vaardigheden* toe te voegen: vooraf gedefinieerde vaardigheden van Microsoft of aangepaste vaardigheden die u hebt gemaakt. De daaropvolgende analyse en transformaties kunnen leiden tot nieuwe informatie en structuren die voorheen nog niet bestonden, waardoor veel hulp voor een groot aantal zoek- en kennisanalysescenario's wordt geboden.
++ Bij het indexeren wordt tekst naar uw zoekservice gebracht en doorzoekbaar gemaakt. Intern wordt inkomende tekst verwerkt in tokens en opgeslagen in omgekeerde indexen voor snelle scans. 
+
+  Bij het indexeren hebt u de mogelijkheid om *AI-verrijking* via [cognitieve vaardigheden](cognitive-search-working-with-skillsets.md) toe te voegen: vooraf gedefinieerde vaardigheden van Microsoft of aangepaste vaardigheden die u hebt gemaakt. De daaropvolgende analyse en transformaties kunnen leiden tot nieuwe informatie en structuren die voorheen nog niet bestonden, waardoor veel hulp voor een groot aantal zoek- en kennisanalysescenario's wordt geboden.
 
 + Zodra een index is gevuld met doorzoekbare gegevens, stuurt uw client-app query aanvragen naar een zoekservice en verwerkt deze antwoorden. Alle uitvoeringen van query's verlopen via een zoekindex die u in uw service maakt, bezit en opslaat. In uw client-app wordt de zoekervaring gedefinieerd met behulp van API's van Azure Cognitive Search. De zoekervaring kan het volgende omvatten: afstemming van relevantie, automatische aanvulling, overeenkomende synoniemen, zoeken bij benadering, patroonvergelijking, filteren en sorteren.
 
 Functionaliteit wordt beschikbaar gemaakt via een eenvoudige [REST API](/rest/api/searchservice/) of [.NET SDK](search-howto-dotnet-sdk.md) waarmee de inherente complexiteit van het ophalen van gegevens wordt gemaskeerd. Azure Portal biedt daarnaast ondersteuning voor service-administratie en inhoudsbeheer, door middel van hulpprogramma’s voor het ontwikkelen van prototypen, het doorzoeken van indexen en het doorzoeken van vaardighedensets. Omdat de service wordt uitgevoerd in de cloud, worden de infrastructuur en beschikbaarheid beheerd met Microsoft.
 
-## <a name="when-to-use-cognitive-search"></a>Wanneer u Cognitive Search gebruikt
+## <a name="why-use-cognitive-search"></a>Redenen om Cognitive Search te gebruiken
 
 Azure Cognitive Search is geschikt voor de volgende toepassingsscenario's:
 
-+ Consolidatie van heterogene inhoudstypen in een index die privé, enkelvoudig en doorzoekbaar is. U kunt een index vullen met streams van JSON-documenten van elke bron. Gebruik voor ondersteunde bronnen in Azure een *indexeerfunctie* om het indexeren te automatiseren. Controle over het indexschema en het vernieuwingsschema is een belangrijke reden voor het gebruik van Cognitive Search.
++ heterogene inhoud consolideren in een index die privé, enkelvoudig en doorzoekbaar is. U kunt een index vullen met streams van JSON-documenten van elke bron. Gebruik voor ondersteunde bronnen in Azure een *indexeerfunctie* om het indexeren te automatiseren. Controle over het indexschema en het vernieuwingsschema is een belangrijke reden voor het gebruik van Cognitive Search.
 
 + Eenvoudige implementatie van zoekfuncties. Azure Cognitive Search API's vereenvoudigen het bouwen van query's, facetnavigatie, filters (inclusief georuimtelijke zoekacties), toewijzing van synoniemen, automatische aanvulling en afstemming van relevantie. Met ingebouwde functies kunt u aan de verwachtingen van eindgebruikers voldoen en een zoekervaring bieden die vergelijkbaar is met commerciële webzoekprogramma's.
 
@@ -48,39 +57,20 @@ Azure Cognitive Search is geschikt voor de volgende toepassingsscenario's:
 
 Zie [Functies van Azure Cognitive Search](search-features-list.md) voor meer informatie over specifieke functionaliteiten
 
-## <a name="how-to-use-cognitive-search"></a>Cognitive Search gebruiken
+## <a name="how-to-get-started"></a>Hoe gaat u aan de slag
 
-### <a name="step-1-provision-service"></a>Stap 1: Service inrichten
+Een end-to-end-onderzoek van de belangrijkste zoekfuncties kan in vier stappen worden bereikt:
 
-U kunt [Een gratis service maken](search-create-service-portal.md) die gedeeld wordt met andere abonnees, of een [betaalde laag](https://azure.microsoft.com/pricing/details/search/) met toegewezen resources die alleen door uw service worden gebruikt. Alle snelstartgidsen en zelfstudies kunnen worden gevolgd in de gratis service.
+1. [**Maak een zoekservice**](search-create-service-portal.md) bij de gratis laag die wordt gedeeld met andere abonnees of een [betaalde laag](https://azure.microsoft.com/pricing/details/search/) voor toegewezen resources die alleen door uw service worden gebruikt. Alle snelstartgidsen en zelfstudies kunnen worden gevolgd in de gratis service.
 
-Voor betaalde lagen kunt u een service in twee dimensies schalen om de resourcetoewijzing te kalibreren op basis van productievereisten:
+1. [**Maak een zoekindex**](search-what-is-an-index.md) met behulp van de portal, [REST API](/rest/api/searchservice/create-index). [.NET SDK](search-howto-dotnet-sdk.md) of een andere SDK. Het indexschema bepaalt de structuur van doorzoekbare inhoud.
 
-+ Replica’s toevoegen om de capaciteit voor het verwerken van zware querybelastingen te vergroten
-+ Partities toevoegen om meer documenten op te kunnen slaan
+1. [**Upload inhoud**](search-what-is-data-import.md) naar de index. Gebruik het ['push'-model](tutorial-optimize-indexing-push-api.md) om JSON-documenten vanuit een willekeurige bron te pushen of gebruik het ['pull'-model (indexeerfuncties)](search-indexer-overview.md) als uw brongegevens zich in Azure bevinden.
 
-### <a name="step-2-create-an-index"></a>Stap 2: een index maken
-
-U definieert het indexschema dat moet worden toegewezen, om de structuur van de documenten te weerspiegelen waarin u wilt zoeken, vergelijkbaar met de velden in een database. Een zoekindex is een gespecialiseerde gegevensstructuur die is geoptimaliseerd voor het snel uitvoeren van query's.
-
-Het is gebruikelijk om een [indexschema te maken in de Azure Portal](search-what-is-an-index.md) of programmatisch met behulp van de [.NET SDK](search-howto-dotnet-sdk.md) of [REST API](/rest/api/searchservice/).
+1. [**Vraag een index op**](search-query-overview.md) met behulp van [Search Explorer](search-explorer.md) in de portal, [REST API](search-get-started-rest.md), [.NET SDK](/dotnet/api/azure.search.documents.searchclient.search) of een andere SDK.
 
 > [!TIP]
-> Begin met de [quickstart: Wizardgegevens importeren](search-get-started-portal.md) om in een paar minuten een index te maken, te laden en op te vragen.
-
-### <a name="step-3-load-data"></a>Stap 3: Gegevens laden
-
-Nadat u een index hebt gedefinieerd, bent u klaar om inhoud te uploaden. U kunt hiervoor een push- of een pull-model gebruiken.
-
-Het pushmodel 'pusht' JSON-documenten naar een index met behulp van API's van een [SDK](search-howto-dotnet-sdk.md) of [REST](/rest/api/searchservice/addupdate-or-delete-documents). De externe gegevensset kan vrijwel elke gegevensbron zijn, zolang de documenten JSON zijn.
-
-Met het pullmodel worden gegevens opgehaald uit bronnen op Azure en verzonden naar een zoekindex. Het pullmodel wordt ondersteund met [*indexeerfuncties*](/rest/api/searchservice/Indexer-operations) die aspecten van de gegevensopname stroomlijnen en automatiseren, zoals het verbinden met, het lezen van en het serialiseren van gegevens. Ondersteunde gegevensbronnen zijn onder andere Azure Cosmos DB, Azure SQL en Azure Storage.
-
-### <a name="step-4-send-queries-and-handle-responses"></a>Stap 4: Query's verzenden en antwoorden verwerken
-
-Nadat u een index hebt gevuld, kunt u [zoekquery’s verzenden](search-query-overview.md) naar het service-eindpunt met behulp van eenvoudige HTTP-aanvragen met [REST API](/rest/api/searchservice/Search-Documents) of de [.NET SDK](/dotnet/api/azure.search.documents.searchclient.search).
-
-Volg [Uw eerste zoek-app maken](tutorial-csharp-create-first-app.md) om een webpagina te maken en uit te breiden die gebruikersinvoer verzamelt en de resultaten verwerkt. U kun ook [Postman of Visual Studio Code](search-get-started-rest.md) voor interactieve REST-aanroepen gebruiken of de in Azure Portal ingebouwde [Search Explorer](search-explorer.md) om een query uit te voeren op een bestaande index.
+> Consolideer stappen door te beginnen met de [**wizard Gegevens importeren**](search-get-started-portal.md) en een Azure-gegevensbron om in een paar minuten een index te maken, te laden en op te vragen.
 
 ## <a name="how-it-compares"></a>Vergelijking
 

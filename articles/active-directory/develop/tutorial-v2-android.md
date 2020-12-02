@@ -13,18 +13,20 @@ ms.date: 11/26/2019
 ms.author: hahamil
 ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: cbfaf52a7c5bb5e44b85513d8e2c2ec5f1cea356
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 08ee000d8f801559fcf572b8ab489161fd090b77
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92101980"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95996199"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-application"></a>Zelfstudie: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een Android-app
 
-In deze zelfstudie leert u hoe u uw Android-app integreert met Microsoft identiteitsplatform met behulp van Microsoft Authentication Library (MSAL) for Android. U leert hoe u een gebruiker aan- en afmeldt, een toegangstoken ophaalt om de Microsoft Graph API aan te roepen en een aanvraag indient bij de Microsoft Graph-API.
+In deze zelfstudie bouwt u een Android-app die integreert met het Microsoft-identiteitsplatform voor het aanmelden van gebruikers. U krijgt een toegangstoken waarmee u de Microsoft Graph API kunt aanroepen.
 
 Wanneer u de zelfstudie hebt voltooid, accepteert uw toepassing aanmeldingen van persoonlijke Microsoft-accounts (waaronder outlook.com, live.com en overige accounts), maar ook werk- of schoolaccounts van elk bedrijf of elke organisatie waar Azure Active Directory wordt gebruikt.
+
+In deze zelfstudie hebt u het volgende gedaan: 
 
 > [!div class="checklist"]
 > * Een Android-app-project maken in *Android Studio*

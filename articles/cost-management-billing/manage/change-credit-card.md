@@ -6,21 +6,21 @@ ms.reviewer: judupont
 tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
-ms.topic: conceptual
-ms.date: 09/15/2020
+ms.topic: how-to
+ms.date: 11/20/2020
 ms.author: banders
-ms.openlocfilehash: f773c964d900c45a51eac433c3616a6e4b8978ae
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: fbb69a4449c32f85cc4be438645b654608aa7489
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "92131136"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026553"
 ---
 # <a name="add-or-update-a-credit-card-for-azure"></a>Een creditcard toevoegen of bijwerken voor Azure
 
 Dit document is van toepassing op klanten die zich online met een creditcard hebben geregistreerd voor Azure.
 
-In de Azure Portal kunt u uw standaardbetalingswijze wijzigen in een nieuwe creditcard en uw creditcardgegevens bijwerken. U moet een [accountbeheerder](../understand/subscription-transfer.md#whoisaa) zijn om deze wijzigingen door te voeren.
+In de Azure Portal kunt u uw standaardbetalingswijze wijzigen in een nieuwe creditcard en uw creditcardgegevens bijwerken. U moet een [accountbeheerder](../understand/subscription-transfer.md#whoisaa) zijn of u moet de juiste [MCA-machtigingen](understand-mca-roles.md) hebben om deze wijzigingen door te voeren.
 
 Als u een creditcard wilt verwijderen, raadpleegt u [Een betalingswijze voor Azure-facturering verwijderen](delete-azure-payment-method.md).
 
@@ -82,11 +82,11 @@ Als uw creditcard wordt vernieuwd en het nummer blijft hetzelfde, werkt u de bes
 
 ## <a name="manage-credit-cards-for-a-microsoft-customer-agreement"></a>Creditcards voor een Microsoft-klantovereenkomst beheren
 
-De volgende secties zijn bedoeld voor klanten die een Microsoft-klantovereenkomst hebben en zich hebben geregistreerd voor Azure online met een creditcard. [Controleren of u toegang hebt tot een Microsoft-klantovereenkomst](#check-the-type-of-your-account).
+De volgende secties zijn bedoeld voor klanten die een Microsoft-klantovereenkomst hebben en zich hebben geregistreerd voor Azure online met een creditcard of die de correcte [MCA-machtigingen](understand-mca-roles.md) hebben. [Controleren of u toegang hebt tot een Microsoft-klantovereenkomst](#check-the-type-of-your-account).
 
 ### <a name="change-default-credit-card"></a>Standaardcreditcard wijzigen
 
-Als u een Microsoft-klantovereenkomst hebt, is uw creditcard gekoppeld aan een factureringsprofiel. Als u de betalingswijze voor een factureringsprofiel wilt wijzigen, moet u de persoon zijn die zich heeft geregistreerd bij Azure en de factureringsrekening heeft gemaakt.
+Als u een Microsoft-klantovereenkomst hebt, is uw creditcard gekoppeld aan een factureringsprofiel. Als u de betalingswijze voor een factureringsprofiel wilt wijzigen, moet u de persoon zijn die zich heeft geregistreerd bij Azure en de factureringsrekening heeft gemaakt of u moet de correcte [MCA-machtigingen](understand-mca-roles.md) hebben.
 
 Zie [Azure-abonnementen betalen per factuur](pay-by-invoice.md) als u de standaard betalingswijze van uw factureringsprofiel wilt wijzigen in betalen per cheque of overschrijving.
 

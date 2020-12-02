@@ -1,7 +1,7 @@
 ---
-title: Sentimentanalyse uitvoeren met Text Analytics REST API
+title: Sentimentanalyse en meninganalyse uitvoeren met Text Analytics REST API
 titleSuffix: Azure Cognitive Services
-description: In dit artikel wordt uitgelegd hoe u sentiment in tekst kunt detecteren met de Azure Cognitive Services Text Analytics REST API.
+description: In dit artikel wordt uitgelegd hoe u sentiment in tekst kunt detecteren en meningen kunt analyseren met de Azure Cognitive Services Text Analytics-API.
 services: cognitive-services
 author: aahill
 manager: nitinme
@@ -10,20 +10,18 @@ ms.subservice: text-analytics
 ms.topic: sample
 ms.date: 11/11/2020
 ms.author: aahi
-ms.openlocfilehash: 87e6ad488438ae28467f6e904fbb57f7ca5448ff
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: 2c592a959dfb9d4e93f97488a9ac1b1f6683c23e
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94518172"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94968265"
 ---
-# <a name="how-to-detect-sentiment-using-the-text-analytics-api"></a>Procedure: Sentiment detecteren met behulp van de Text Analytics API
+# <a name="how-to-sentiment-analysis-and-opinion-mining"></a>Procedure: Sentimentanalyse en meninganalyse
 
-De functie Sentimentanalyse van de Text Analytics API evalueert tekst en retourneert sentimentscores en -labels voor elke zin. Deze functie is handig voor het detecteren van positief en negatief sentiment in sociale media, klantbeoordelingen, discussieforums en meer. De AI-modellen die door de API worden gebruikt, worden door de service verschaft. U hoeft alleen maar inhoud voor analyse te verzenden.
+De functie Sentimentanalyse van Text Analytics-API biedt u twee manieren om positieve en negatieve sentiment te detecteren. Nadat u een aanvraag voor Sentimentanalyse verzendt, retourneert de API sentimentlabels (zoals 'negatief', 'neutraal' en 'positief') en betrouwbaarheidsscores op zins- en documentniveau. U kunt ook aanvragen voor Meninganalyse verzenden met het eindpunt Sentimentanalyse. Dit biedt gedetailleerde informatie over de meningen over bepaalde aspecten (zoals de kenmerken van producten of diensten) in de tekst.
 
-Na verzending van een aanvraag voor sentimentanalyse retourneert de API sentimentlabels (zoals 'negatief', 'neutraal' en 'positief') en betrouwbaarheidsscores op zins- en documentniveau.
-
-Sentimentanalyse ondersteunt een breed scala aan talen, met meer in preview-versie. Zie voor meer informatie [Ondersteunde talen](../language-support.md).
+De AI-modellen die door de API worden gebruikt, worden door de service verschaft. U hoeft alleen maar inhoud voor analyse te verzenden.
 
 ## <a name="sentiment-analysis-versions-and-features"></a>Versies en functies van Sentimentanalyse
 
@@ -32,13 +30,13 @@ Sentimentanalyse ondersteunt een breed scala aan talen, met meer in preview-vers
 | Functie                                   | Sentimentanalyse v3 | Sentimentanalyse v3.1 (preview) |
 |-------------------------------------------|-----------------------|-----------------------------------|
 | Methoden voor afzonderlijke aanvragen en batchaanvragen    | X                     | X                                 |
-| Sentimentscores en -labels             | X                     | X                                 |
+| Sentimentanalyse-scores en -labels             | X                     | X                                 |
 | [Docker-container](text-analytics-how-to-install-containers.md) op basis van Linux | X  |  |
 | Meninganalyse                            |                       | X                                 |
 
-## <a name="sentiment-scoring-and-labeling"></a>Sentimentscores en -labels
+## <a name="sentiment-analysis"></a>Sentimentanalyse
 
-In Sentimentanalyse v3 worden sentimentlabels toegepast op tekst, die worden geretourneerd op zins- en documentniveau. Elk label heeft ook een betrouwbaarheidsscore. 
+In Sentimentanalyse versie 3.x worden sentimentlabels toegepast op tekst, die worden geretourneerd op zins- en documentniveau. Elk label heeft ook een betrouwbaarheidsscore. 
 
 De labels zijn *positief*, *negatief* en *neutraal*. Op documentniveau kan ook het *gemengde* sentimentlabel worden geretourneerd. Het sentiment van het document wordt hieronder bepaald:
 
@@ -55,14 +53,11 @@ Betrouwbaarheidsscores kunnen variëren van 1 tot 0. Scores die dichter bij 1 li
 
 Meninganalyse is een functie van Sentimentanalyse vanaf versie 3.1-preview.1. Deze functie wordt ook wel op aspecten gebaseerde sentimentanalyse in natuurlijke taalverwerking (NLP) en biedt gedetailleerde informatie over de meningen over bepaalde aspecten (zoals de kenmerken van producten of diensten) in de tekst.
 
-Als een klant bijvoorbeeld als feedback over een hotel 'de kamer was geweldig, maar het personeel was onvriendelijk' geeft, worden in de meninganalyse aspecten van de tekst en de bijbehorende meningen en sentimenten gevonden:
+Als een klant bijvoorbeeld als feedback over een hotel 'De kamer was geweldig, maar het personeel was onvriendelijk' geeft, worden in de Meninganalyse aspecten van de tekst en de bijbehorende meningen en sentimenten gevonden. Sentimentanalyse kan alleen een negatief sentiment melden.
 
-| Aspect | Mening    | Sentiment |
-|--------|------------|-----------|
-| ruimte   | geweldig      | positief  |
-| personeel  | onvriendelijk | negatief  |
+:::image type="content" source="../media/how-tos/opinion-mining.png" alt-text="Een diagram van het Meninganalyse-voorbeeld" lightbox="../media/how-tos/opinion-mining.png":::
 
-Voor een meninganalyse moet u de vlag `opinionMining=true` opnemen in een sentimentanalyse-aanvraag. De resultaten van de meninganalyse worden opgenomen in het antwoord van de sentimentanalyse.
+Voor een Meninganalyse moet u de vlag `opinionMining=true` opnemen in een sentimentanalyse-aanvraag. De resultaten van de Meninganalyse worden opgenomen in het antwoord van de sentimentanalyse.
 
 ## <a name="sending-a-rest-api-request"></a>Een REST API-aanvraag verzenden 
 
@@ -70,9 +65,9 @@ Voor een meninganalyse moet u de vlag `opinionMining=true` opnemen in een sentim
 
 Sentimentanalyses produceren een hoger kwaliteitsresultaat wanneer u ze kleinere hoeveelheden tekst aanbiedt om op te werken. Dit is het tegenovergestelde van sleuteltermextractie, wat beter presteert op grotere blokken tekst. Voor de beste resultaten bij beide activiteiten, zou u de invoeren dienovereenkomstig kunnen herstructureren.
 
-U moet JSON-documenten in deze indeling hebben: id, tekst en taal.
+U moet JSON-documenten in deze indeling hebben: id, tekst en taal. Sentimentanalyse ondersteunt een breed scala aan talen, met meer in preview-versie. Zie voor meer informatie [Ondersteunde talen](../language-support.md).
 
-De documenten mogen niet meer dan 5.120 tekens per document bevatten. Een verzameling mag maximaal 1000 items (id's) bevatten. De verzameling is in de hoofdtekst van de aanvraag ingediend.
+De documenten mogen niet meer dan 5.120 tekens per document bevatten. Zie het artikel [gegevenslimieten](../concepts/data-limits.md?tabs=version-3) onder Concepten voor het maximum aantal documenten dat is toegestaan in een verzameling. De verzameling is in de hoofdtekst van de aanvraag ingediend.
 
 ## <a name="structure-the-request"></a>Structureer de aanvraag
 
@@ -80,7 +75,7 @@ Maak een POST-aanvraag. Gebruik [Postman](text-analytics-how-to-call-api.md) of 
 
 #### <a name="version-31-preview2"></a>[Versie 3.1-preview.2](#tab/version-3-1)
 
-[Referentie voor Sentimentanalyse v3.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-2/operations/Sentiment)
+[Referentie voor Sentimentanalyse v3.1](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v3-1-preview-3/operations/Sentiment)
 
 #### <a name="version-30"></a>[Versie 3.0](#tab/version-3)
 
@@ -97,9 +92,13 @@ Stel het HTTPS-eindpunt voor sentimentanalyse in met behulp van een Text Analyti
 
 #### <a name="version-31-preview2"></a>[Versie 3.1-preview.2](#tab/version-3-1)
 
+**Sentimentanalyse**
+
 `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.2/sentiment`
 
-Als u meninganalyseresultaten wenst, moet u de parameter `opinionMining=true` toevoegen. Bijvoorbeeld:
+**Meninganalyse**
+
+Als u Meninganalyseresultaten wenst, moet u de parameter `opinionMining=true` toevoegen. Bijvoorbeeld:
 
 `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.1-preview.2/sentiment?opinionMining=true`
 
@@ -107,15 +106,19 @@ Deze parameter is standaard ingesteld op `false`.
 
 #### <a name="version-30"></a>[Versie 3.0](#tab/version-3)
 
+**Sentimentanalyse**
+
+In v 3.0 is het enige beschikbare eindpunt voor Sentimentanalyse.
+ 
 `https://<your-custom-subdomain>.cognitiveservices.azure.com/text/analytics/v3.0/sentiment`
 
 ---
 
 Stel een hoofdtekst in om uw Text Analytics-API-sleutel in de aanvraag op te nemen. Verstrek in de hoofdtekst van de aanvraag de JSON-documentenverzameling die u hebt voorbereid voor deze analyse.
 
-### <a name="example-sentiment-analysis-request"></a>Voorbeeld van Sentimentanalyse-aanvraag 
+### <a name="example-request-for-sentiment-analysis-and-opinion-mining"></a>Voorbeeld van aanvraag voor Sentimentanalyse en Meninganalyse  
 
-Hier volgt een voorbeeld van de inhoud die u voor gevoelsanalyse kan indienen. De indeling van de aanvraag is hetzelfde voor beide versies.
+Hier volgt een voorbeeld van de inhoud die u voor gevoelsanalyse kan indienen. De indeling van de aanvraag is hetzelfde voor zowel `v3.0` en `v3.1-preview`.
     
 ```json
 {
@@ -138,15 +141,20 @@ De Text Analytics-API is stateless (staatloos). Er worden geen gegevens in uw ac
 
 ### <a name="view-the-results"></a>De resultaten bekijken
 
-Sentimentanalyse retourneert een sentimentlabel en een betrouwbaarheidsscore voor het hele document, en elke zin daarin. Scores die dichter bij 1 liggen, geven een hogere betrouwbaarheid in de classificatie van het label aan. Lagere scores geven een lagere betrouwbaarheid aan. Een document kan meerdere zinnen bevatten en het totaal van alle betrouwbaarheidsscores binnen elk document of zin is 1.
-
 Uitvoer wordt onmiddellijk geretourneerd. U kunt de resultaten streamen naar een toepassing die JSON accepteert of de uitvoer op het lokale systeem opslaan als een bestand. Vervolgens importeert u de uitvoerput in een toepassing waarin u de gegevens kunt sorteren, doorzoeken en bewerken. Vanwege meertalige en Emoji-ondersteuning kan het antwoord tekstverschuivingen bevatten. Zie [Verschuivingen verwerken](../concepts/text-offsets.md) voor meer informatie.
 
 #### <a name="version-31-preview2"></a>[Versie 3.1-preview.2](#tab/version-3-1)
 
-### <a name="sentiment-analysis-v31-example-response"></a>Voorbeeld van antwoord van Sentimentanalyse v3.1
+### <a name="sentiment-analysis-and-opinion-mining-example-response"></a>Voorbeeld van reactie Sentimentanalyse en Meninganalyse
 
-Sentimentanalyse v3.1 biedt naast het antwoordobject op het tabblad **Versie 3.0** ook een meninganalyse. In het onderstaande antwoord heeft de zin *Het restaurant had heerlijk eten en de ober was vriendelijk* twee aspecten: *eten* en *ober*. De eigenschap `relations` van elk aspect bevat een `ref`-waarde met de URI-referentie naar de gekoppelde `documents`-, `sentences`- en `opinions`-objecten.
+> [!IMPORTANT]
+> Hier volgt een voorbeeld van een JSON voor het gebruik van Meninganalyse met Sentimentanalyse, aangeboden in v3.1 van de API. Als u geen Meninganalyse aanvraagt, is de API-reactie hetzelfde als het tabblad **versie 3.0**.  
+
+Sentimentanalyse v3.1 kan respons-objecten retourneren voor zowel Sentimentanalyse als Meninganalyse.
+  
+Sentimentanalyse retourneert een sentimentlabel en een betrouwbaarheidsscore voor het hele document, en elke zin daarin. Scores die dichter bij 1 liggen, geven een hogere betrouwbaarheid in de classificatie van het label aan. Lagere scores geven een lagere betrouwbaarheid aan. Een document kan meerdere zinnen bevatten en het totaal van alle betrouwbaarheidsscores binnen elk document of zin is 1.
+
+Met Meninganalyse worden aspecten in de tekst en hun bijbehorende meningen en sentimenten gevonden. In het onderstaande antwoord heeft de zin *Het restaurant had heerlijk eten en de ober was vriendelijk* twee aspecten: *eten* en *ober*. De eigenschap `relations` van elk aspect bevat een `ref`-waarde met de URI-referentie naar de gekoppelde `documents`-, `sentences`- en `opinions`-objecten.
 
 ```json
 {
@@ -240,7 +248,9 @@ Sentimentanalyse v3.1 biedt naast het antwoordobject op het tabblad **Versie 3.0
 
 #### <a name="version-30"></a>[Versie 3.0](#tab/version-3)
 
-### <a name="sentiment-analysis-v30-example-response"></a>Voorbeeld van antwoord van Sentimentanalyse v 3.0
+### <a name="sentiment-analysis-example-response"></a>Voorbeeld van antwoord van Sentimentanalyse
+
+Sentimentanalyse retourneert een sentimentlabel en een betrouwbaarheidsscore voor het hele document, en elke zin daarin. Scores die dichter bij 1 liggen, geven een hogere betrouwbaarheid in de classificatie van het label aan. Lagere scores geven een lagere betrouwbaarheid aan. Een document kan meerdere zinnen bevatten en het totaal van alle betrouwbaarheidsscores binnen elk document of zin is 1.
 
 Antwoorden van Sentimentanalyse v3 bevatten sentimentlabels en -scores voor elke geanalyseerde zin en elk geanalyseerd document.
 
@@ -282,9 +292,10 @@ Antwoorden van Sentimentanalyse v3 bevatten sentimentlabels en -scores voor elke
 
 In dit artikel hebt u concepten en de werkstroom geleerd voor sentimentanalyse met behulp van de Text Analytics-API. Samenvatting:
 
-+ Sentimentanalyse is beschikbaar voor de geselecteerde talen.
++ Sentimentanalyse en Meninganalyse is beschikbaar voor de geselecteerde talen.
 + JSON-documenten in de aanvraagbody omvatten een id, tekst en taalcode.
 + De POST-aanvraag wordt verzonden naar een `/sentiment`-eindpunt met behulp van een persoonlijke [toegangssleutel en een eindpunt](../../cognitive-services-apis-create-account.md#get-the-keys-for-your-resource) die geldig zijn voor uw abonnement.
++ Gebruik `opinionMining=true` in Sentimentanalyse-aanvragen voor Meninganalyse-resultaten.
 + Antwoorduitvoer, die uit een sentimentscore voor elke document-id bestaat, kan worden gestreamd naar alle apps die JSON accepteren. Excel en Power BI, bijvoorbeeld.
 
 ## <a name="see-also"></a>Zie ook

@@ -3,18 +3,21 @@ title: 'Zelfstudie: VMware HCX implementeren en configureren'
 description: Meer informatie over het implementeren en configureren van een VMware HCX-oplossing voor de privécloud van uw Azure VMware Solution.
 ms.topic: tutorial
 ms.date: 11/18/2020
-ms.openlocfilehash: 57bcf1bd3023e56f6a64b5d82d8f1fc90be9dd47
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: afb5c653ce7c4b4a453a4031c5664042357de6c0
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94888739"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95999621"
 ---
 # <a name="deploy-and-configure-vmware-hcx"></a>VMware HCX implementeren en configureren
 
 In dit artikel wordt uitgelegd hoe de implementatie en configuratie van de on-premises VMware HCX-connector voor de privécloud van uw Azure VMware Solution in zijn werk gaat. Met VMware HCX kunt u uw VMware-workloads migreren naar Azure VMware Solution en andere verbonden sites mogelijk via verschillende migratietypen. Omdat Azure VMware Solution de HCX Cloud Manager implementeert en configureert, moet u de HCX-connector in uw on-premises VMware-datacenter downloaden, activeren en configureren.
 
 VMware HCX Advanced Connector is vooraf geïmplementeerd in Azure VMware Solution. De connector ondersteunt maximaal drie siteverbindingen (on-premises naar de cloud of van cloud naar cloud). Als u meer dan drie site verbindingen nodig hebt, dient u een [ondersteuningsaanvraag](https://portal.azure.com/#create/Microsoft.Support) in om de invoegtoepassing [VMware HCX Enterprise](https://cloud.vmware.com/community/2019/08/08/introducing-hcx-enterprise/) in te schakelen. Deze invoegtoepassing is momenteel in preview. 
+
+>[!Note]
+>Hoewel het hulpprogramma VMware Configuration Maximum 25 aangeeft als het maximale aantal siteparen tussen de on-premises-connector en Cloud Manager, beperkt de licentie die tot 3 voor Advanced en 10 voor Enterprise Edition.
 
 >[!NOTE]
 >VMware HCX Enterprise is beschikbaar bij Azure VMware Solution als een preview-service. Het is gratis en de voorwaarden voor een preview-service zijn van toepassing. Nadat de VMware HCX Enterprise-service algemeen beschikbaar is, krijgt u een melding dat de facturering over 30 dagen wordt omgeschakeld. U hebt ook de mogelijkheid om de service uit te schakelen of op te zeggen. Er is geen eenvoudig pad om van VMware HCX Enterprise naar VMware HCX Advanced te downgraden. Als u besluit om te downgraden, moet u de implementatie opnieuw uitvoeren. Dit brengt downtime met zich mee.

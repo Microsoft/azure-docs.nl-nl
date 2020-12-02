@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 11/15/2019
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: f1ea8d16a441230323b4f0213229d223a0b035bc
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 8dbf3b5de4b908eb831158b73b2b17472bc4895e
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92778636"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95020960"
 ---
 # <a name="what-are-the-comparisons-between-azure-cdn-product-features"></a>Wat zijn de vergelijkingen tussen Azure CDN-productfuncties?
 
@@ -23,7 +23,7 @@ Azure Content Delivery Network (CDN) bevat vier producten:
 * **Azure CDN Standard van Microsoft**
 * **Azure CDN Standard van Akamai**
 * **Azure CDN Standard van Verizon**
-* **Azure CDN Premium van Verizon** . 
+* **Azure CDN Premium van Verizon**. 
 
 De volgende tabel vergelijkt de functies die beschikbaar zijn voor elk product.
 
@@ -72,11 +72,11 @@ De volgende tabel vergelijkt de functies die beschikbaar zijn voor elk product.
 | Eenvoudige integratie met Azure-services, zoals [Storage](cdn-create-a-storage-account-with-cdn.md), [Web Apps](cdn-add-to-web-app.md) en [Media Services](../media-services/previous/media-services-portal-manage-streaming-endpoints.md)  | **&#x2713;** |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | Beheer via [REST API](/rest/api/cdn/), [.NET](cdn-app-dev-net.md), [Node.js](cdn-app-dev-node.md) of [PowerShell](cdn-manage-powershell.md)  | **&#x2713;** |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | [Compressie-MIME-typen](./cdn-improve-performance.md)  |Alleen standaard |Configureerbaar |Configureerbaar  |Configureerbaar  |
-| Compressie-coderingen  |gzip, brotli |gzip |gzip, deflate, bzip2, brotili  |gzip, deflate, bzip2, brotili  |
+| Compressie-coderingen  |gzip, brotli |gzip |gzip, deflate, bzip2, brotli  |gzip, deflate, bzip2, brotli  |
 
 ## <a name="migration"></a>Migratie
 
-Voor informatie over het migreren van een **Azure CDN Standard van Verizon** -profiel naar **Azure CDN Premium van Verizon** , raadpleegt u [Een Azure CDN-profiel migreren van Standard Verizon naar Premium Verizon](cdn-migrate.md). 
+Voor informatie over het migreren van een **Azure CDN Standard van Verizon**-profiel naar **Azure CDN Premium van Verizon**, raadpleegt u [Een Azure CDN-profiel migreren van Standard Verizon naar Premium Verizon](cdn-migrate.md). 
 
 > [!NOTE]
 > Er bestaat een upgradepad van Standard Verizon naar Premium Verizon, maar er is op dit moment geen omzettingsmechanisme beschikbaar voor andere producten.

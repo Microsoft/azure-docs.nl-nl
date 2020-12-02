@@ -7,12 +7,12 @@ ms.service: attestation
 ms.topic: quickstart
 ms.date: 11/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: e5ffcd56be1ce7427697cd3a75bd7c4232cc3b8a
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: dee9e7596c0a30301d9e0453ef22a6dfe9541522
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94663971"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96020939"
 ---
 # <a name="quickstart-set-up-azure-attestation-with-azure-cli"></a>Quickstart: Azure Attestation instellen met Azure CLI
 
@@ -45,7 +45,7 @@ Ga aan de slag met Azure Attestation door met behulp van Azure CLI attestation i
    > [!NOTE]
    > U hoeft slechts één keer per abonnement een resourceprovider te registreren.
 
-1. Maak een resourcegroep voor de Attestation-provider. U kunt andere Azure-resources in dezelfde resourcegroep plaatsen, met inbegrip van een virtuele machine met een client-toepassingsexemplaar). Voer de opdracht [az group create](/cli/azure/group#az_group_create) uit om een resourcegroep te maken, of gebruik een bestaande resourcegroep:
+1. Maak een resource groep voor de Attestation-provider. U kunt andere Azure-resources in dezelfde resourcegroep plaatsen, met inbegrip van een virtuele machine met een client-toepassingsexemplaar). Voer de opdracht [az group create](/cli/azure/group#az_group_create) uit om een resourcegroep te maken, of gebruik een bestaande resourcegroep:
 
    ```azurecli
    az group create --name attestationrg --location uksouth
@@ -53,7 +53,7 @@ Ga aan de slag met Azure Attestation door met behulp van Azure CLI attestation i
 
 ## <a name="create-and-manage-an-attestation-provider"></a>Maak en beheer een Attestation-provider
 
-Volg deze procedure om een attestation-provider te maken en te beheren.
+Hier vindt u de opdrachten die u kunt gebruiken om de attestation-provider te maken en beheren:
 
 1. Voer de opdracht [az attestation create](/cli/azure/ext/attestation/attestation#ext_attestation_az_attestation_create) uit om een attestation-provider te maken:
 

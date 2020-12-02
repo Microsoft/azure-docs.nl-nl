@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/17/2020
-ms.openlocfilehash: c1d21d88ed49cb14aa9f964791154f001a40fbe2
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 10dff18f7b9db7273fcd6ec92bcca5970bb83b08
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499574"
+ms.locfileid: "96510366"
 ---
 # <a name="java-code-samples-for-azure-cognitive-search"></a>Java-code voorbeelden voor Azure Cognitive Search
 
@@ -25,7 +25,7 @@ Meer informatie over de Java-code voorbeelden die de functies en functionaliteit
 | [Azure-samples/Azure-Search-java-voor beelden](https://github.com/Azure-Samples/azure-search-java-samples) | Code voorbeelden die betrekking hebben op procedures. **Voor beelden in deze opslag plaats zijn nog niet bijgewerkt met de Azure SDK voor Java**. Op dit moment roepen deze steek proeven REST-Api's aan in Java-code.|
 
 > [!Tip]
-> Gebruik de voor beelden van de [browser](/samples/browse/?languages=csharp&products=azure-cognitive-search) om te zoeken naar micro soft-code voorbeelden in github, gefilterd op product, service en taal.
+> Gebruik de voor beelden van de [browser](/samples/browse/?languages=java&products=azure-cognitive-search) om te zoeken naar micro soft-code voorbeelden in github, gefilterd op product, service en taal.
 
 ## <a name="java-sdk-samples"></a>Java SDK-voorbeelden
 

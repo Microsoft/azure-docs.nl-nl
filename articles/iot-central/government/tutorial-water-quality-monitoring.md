@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 manager: abjork
-ms.openlocfilehash: a80fe998c1ab241e35bee195b927846e264dec59
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 07f0e66888eaa909dfce14924e9186bcb9b876b4
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90972370"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95014489"
 ---
 # <a name="tutorial-create-a-water-quality-monitoring-application-in-azure-iot-central"></a>Zelfstudie: Een toepassing voor het bewaken van de waterkwaliteit maken in Azure IoT Central
 
@@ -188,7 +188,7 @@ Selecteer **+ Nieuw** op het tabblad **Apparaten** om een nieuw apparaat toe te 
 
 ## <a name="explore-and-configure-rules"></a>Regels verkennen en configureren
 
-In Azure IoT Central kunt u regels maken om de telemetrie van apparaten automatisch te bewaken. Deze regels activeren een actie wanneer aan een van de voorwaarden wordt voldaan. Een voorbeeld van een actie is het verzenden van meldingen per e-mail. Andere mogelijkheden zijn een Microsoft Flow-actie of een webhookactie om gegevens naar andere services te verzenden.
+In Azure IoT Central kunt u regels maken om de telemetrie van apparaten automatisch te bewaken. Deze regels activeren een actie wanneer aan een van de voorwaarden wordt voldaan. Een voorbeeld van een actie is het verzenden van meldingen per e-mail. Andere mogelijkheden zijn een Power Automate-actie of een webhookactie om gegevens naar andere services te verzenden.
 
 De toepassing voor het bewaken van de waterkwaliteit die u hebt gemaakt, heeft twee vooraf geconfigureerde regels.
 
@@ -235,7 +235,7 @@ Als ontwikkelaar kunt u verschillende instellingen wijzigen om de gebruikerserva
 1. Selecteer **Wijzigen** onder **Impressumlogo** om de afbeelding te kiezen die u als het logo wilt uploaden.
 1. Selecteer **Wijzigen** onder **Browserpictogram** om de afbeelding te kiezen die wordt weergegeven op browsertabbladen.
 1. Onder de **Browserkleuren** kunt u de standaardwaarden vervangen door hexadecimale HTML-kleurcodes.
-1. Selecteer **Instellingen** om de waarde van **Thema**te wijzigen.
+1. Selecteer **Instellingen** om de waarde van **Thema** te wijzigen.
 
    ![Uw toepassing aanpassen](./media/tutorial-waterqualitymonitoring/waterqualitymonitoring-customize-your-application1.png)
 

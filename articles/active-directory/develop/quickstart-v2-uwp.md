@@ -12,16 +12,16 @@ ms.workload: identity
 ms.date: 10/07/2020
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:UWP
-ms.openlocfilehash: 28d912153b52580727e0fb5086e0a7ae55e8b545
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: ab8942b473ad980da22d451116bea6a759aeb461
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94560924"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95995111"
 ---
 # <a name="quickstart-call-the-microsoft-graph-api-from-a-universal-windows-platform-uwp-application"></a>Quickstart: De Microsoft Graph-API aanroepen vanuit de Universeel Windows-platformtoepasing (UWP)
 
-In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoorbeeld laat zien hoe gebruikers kunnen worden aangemeld met een UWP-toepassing (Universeel Windows-platform), en een toegangstoken kunnen verkrijgen om de Microsoft Graph API aan te roepen. 
+In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoorbeeld laat zien hoe gebruikers kunnen worden aangemeld met een UWP-toepassing (Universeel Windows-platform), en een toegangstoken kunnen krijgen om de Microsoft Graph API aan te roepen. 
 
 Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 

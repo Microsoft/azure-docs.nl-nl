@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 10/06/2020
 ms.author: pafarley
-ms.openlocfilehash: 86803e1d7ef77467fd870221c0bc2c1c006ae479
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 2d8b876f01f110a314734e596055831650a6c08b
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94816572"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95866699"
 ---
 > [!IMPORTANT]
 > De code in dit artikel maakt gebruik van synchrone methoden en onbeveiligde referentieopslag voor de eenvoud.
@@ -31,18 +31,6 @@ ms.locfileid: "94816572"
     * U kunt de gratis prijscategorie (`F0`) gebruiken om de service uit te proberen, en later upgraden naar een betaalde laag voor productie.
 
 ## <a name="setting-up"></a>Instellen
-
-### <a name="create-a-new-c-application"></a>Een nieuwe C#-toepassing maken
-
-#### <a name="visual-studio-ide"></a>[Visual Studio IDE](#tab/visual-studio)
-
-Maak met behulp van Visual Studio een nieuwe .NET Core-toepassing. 
-
-### <a name="install-the-client-library"></a>De clientbibliotheek installeren 
-
-Nadat u een nieuw project hebt gemaakt, installeert u de clientbibliotheek door in **Solution Explorer** met de rechtermuisknop op de projectoplossing te klikken en **NuGet-pakketten beheren** te selecteren. Selecteer in de package manager die wordt geopend de optie **Bladeren**, schakel **Prerelease opnemen** in en zoek naar `Azure.AI.FormRecognizer`. Selecteer versie `3.0.0` en vervolgens **Installeren**. 
-
-#### <a name="cli"></a>[CLI](#tab/cli)
 
 Gebruik in een consolevenster (zoals cmd, PowerShell of Bash) de opdracht `dotnet new` om een nieuwe console-app te maken met de naam `formrecognizer-quickstart`. Met deze opdracht maakt u een eenvoudig Hallo wereld-C#-project met één bronbestand: *program.cs*. 
 
@@ -70,8 +58,16 @@ Build succeeded.
 
 Installeer in de toepassingsmap de Form Recognizer-clientbibliotheek voor .NET met de volgende opdracht:
 
+#### <a name="version-30"></a>[versie 3.0](#tab/ga)
+
 ```console
 dotnet add package Azure.AI.FormRecognizer --version 3.0.0
+```
+
+#### <a name="version-31-preview"></a>[versie 3.1 preview](#tab/preview)
+
+```console
+dotnet add package Azure.AI.FormRecognizer --version 3.1.0-beta.1
 ```
 ---
 
@@ -91,9 +87,14 @@ Maak in de klasse **Programma** van de toepassing variabelen voor de sleutel en 
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_creds)]
 
-Voeg in de **Hoofd** methode van de toepassing een aanroep toe aan de asynchrone taak die in deze quickstart wordt gebruikt. U gaat deze later implementeren.
+Voeg in de **Hoofd** methode van de toepassing een aanroep toe aan de asynchrone taken die in deze quickstart wordt gebruikt. U gaat ze later implementeren.
 
+#### <a name="version-30"></a>[versie 3.0](#tab/ga)
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_main)]
+#### <a name="version-31-preview"></a>[versie 3.1 preview](#tab/preview)
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_main)]
+
+---
 
 
 ## <a name="object-model"></a>Objectmodel 
@@ -126,6 +127,8 @@ Zie de voorbeelden voor [Een model trainen](#train-a-custom-model) en [Aangepast
 
 Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de clientbibliotheek van Form Recognizer voor .NET:
 
+#### <a name="version-30"></a>[versie 3.0](#tab/ga)
+
 * [De client verifiëren](#authenticate-the-client)
 * [Formulierinhoud herkennen](#recognize-form-content)
 * [Ontvangstbewijzen herkennen](#recognize-receipts)
@@ -133,6 +136,18 @@ Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de cli
 * [Formulieren analyseren met een aangepast model](#analyze-forms-with-a-custom-model)
 * [Uw aangepaste modellen beheren](#manage-your-custom-models)
 
+#### <a name="version-31-preview"></a>[versie 3.1 preview](#tab/preview)
+
+* [De client verifiëren](#authenticate-the-client)
+* [Formulierinhoud herkennen](#recognize-form-content)
+* [Ontvangstbewijzen herkennen](#recognize-receipts)
+* [Visitekaartjes herkennen](#recognize-business-cards)
+* [Facturen herkennen](#recognize-invoices)
+* [Aangepast model trainen](#train-a-custom-model)
+* [Formulieren analyseren met een aangepast model](#analyze-forms-with-a-custom-model)
+* [Uw aangepaste modellen beheren](#manage-your-custom-models)
+
+---
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
@@ -155,9 +170,14 @@ U moet ook verwijzingen naar de URL's toevoegen voor uw trainings- en testgegeve
 
 * Als u de SAS-URL voor de trainingsgegevens van uw aangepaste model wilt ophalen, opent u de Microsoft Azure Storage Explorer, klikt u met de rechtermuisknop op uw container en selecteert u **Handtekening voor gedeelde toegang ophalen**. Controleer of de machtigingen **Lezen** en **Lijst** zijn ingeschakeld en klik op **Maken**. Kopieer vervolgens de waarde in de sectie **URL**. Deze moet de notatie `https://<storage account>.blob.core.windows.net/<container name>?<SAS value>` hebben.
 * Gebruik vervolgens de bovenstaande stappen om de SAS-URL van een afzonderlijk document in Blob Storage op te halen.
-* Sla tot slot de URL op van de afbeelding van het voorbeeldontvangstbewijs dat is opgenomen in de onderstaande voorbeelden (ook beschikbaar op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples/sample_forms). 
+* Sla tot slot de URL op van de voorbeeldafbeelding(en) die hieronder zijn opgenomen (ook beschikbaar op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples/sample_forms)). 
 
+#### <a name="version-30"></a>[versie 3.0](#tab/ga)
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_urls)]
+#### <a name="version-31-preview"></a>[versie 3.1 preview](#tab/preview)
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_urls)]
+
+---
 
 
 ## <a name="recognize-form-content"></a>Formulierinhoud herkennen
@@ -268,6 +288,43 @@ Item:
     Total Price: '99.99', with confidence 0.386
 Total: '1203.39', with confidence '0.774'
 ```
+
+#### <a name="version-30"></a>[versie 3.0](#tab/ga)
+
+#### <a name="version-31-preview"></a>[versie 3.1 preview](#tab/preview)
+
+## <a name="recognize-business-cards"></a>Visitekaartjes herkennen
+
+In deze sectie wordt beschreven hoe u veelvoorkomende velden in Engelse visitekaartjes kunt herkennen en extraheren, met behulp van een vooraf getraind model.
+
+Gebruik de methode `StartRecognizeBusinessCardsFromUriAsync` om visitekaartjes te herkennen vanuit een URL. 
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_bc_call)]
+
+> [!TIP]
+> U kunt ook lokale afbeeldingen van ontvangstbewijzen herkennen. Zie de methoden [FormRecognizerClient](https://docs.microsoft.com/dotnet/api/azure.ai.formrecognizer.formrecognizerclient?view=azure-dotnet), zoals **StartRecognizeBusinessCards**. Of zie de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
+
+De geretourneerde waarde is een verzameling `RecognizedForm`-objecten: één voor elke kaart in het document. Met de volgende code wordt het visitekaartje op de opgegeven URI verwerkt, en worden de belangrijkste velden en waarden op de console weergegeven.
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_bc_print)]
+
+## <a name="recognize-invoices"></a>Facturen herkennen
+
+In deze sectie wordt beschreven hoe u veelvoorkomende velden in verkoopfacturen kunt herkennen en extraheren, met behulp van een vooraf getraind model.
+
+Gebruik de methode `StartRecognizeInvoicesFromUriAsync` om facturen te herkennen vanuit een URL. 
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_invoice_call)]
+
+> [!TIP]
+> U kunt ook lokale afbeeldingen van facturen herkennen. Zie de [FormRecognizerClient](https://docs.microsoft.com/dotnet/api/azure.ai.formrecognizer.formrecognizerclient?view=azure-dotnet)-methoden, bijvoorbeeld **StartRecognizeInvoices**. Of zie de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/formrecognizer/Azure.AI.FormRecognizer/samples/README.md) voor scenario's met betrekking tot lokale afbeeldingen.
+
+De geretourneerde waarde is een verzameling `RecognizedForm`-objecten: één voor elke factuur in het ingediende document. Met de volgende code wordt de factuur op de opgegeven URI verwerkt en worden de belangrijkste velden en waarden op de console weergegeven.
+
+[!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_invoice_print)]
+
+---
+
 
 ## <a name="train-a-custom-model"></a>Aangepast model trainen
 
@@ -575,19 +632,12 @@ U kunt een model ook uit uw account verwijderen door naar de id te verwijzen. In
 
 ## <a name="run-the-application"></a>De toepassing uitvoeren
 
-#### <a name="visual-studio-ide"></a>[Visual Studio IDE](#tab/visual-studio)
-
-Voer de toepassing uit door boven in het IDE-venster op de knop **Fouten opsporen** te klikken.
-
-#### <a name="cli"></a>[CLI](#tab/cli)
-
 Voer de toepassing op vanuit uw toepassingsmap met de opdracht `dotnet run`.
 
 ```dotnet
 dotnet run
 ```
 
----
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

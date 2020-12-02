@@ -1,5 +1,5 @@
 ---
-title: 'Zelfstudie: aangepaste Python-module maken - Azure IoT Edge | Microsoft Docs'
+title: 'Zelfstudie: zelfstudie voor aangepaste Python-modules met Azure IoT Edge'
 description: In deze zelfstudie ziet u hoe u een IoT Edge-module met Python-code maakt en deze implementeert op een Edge-apparaat.
 services: iot-edge
 author: kgremban
@@ -10,12 +10,12 @@ ms.date: 08/04/2020
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 1cc3db32650891c5f95be05267541f93ca49218e
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 402b61bb0845532d601e9f5dcaaf55eacce685d1
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92047961"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959370"
 ---
 # <a name="tutorial-develop-and-deploy-a-python-iot-edge-module-for-linux-devices"></a>Zelfstudie: Een IoT Edge-module schrijven in Python en implementeren voor Linux-apparaten
 
@@ -34,7 +34,7 @@ De IoT Edge-module die u maakt in deze zelfstudie filtert de temperatuurgegevens
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="solution-scope"></a>Oplossingsbereik
+## <a name="prerequisites"></a>Vereisten
 
 Deze zelfstudie laat zien hoe u een module kunt ontwikkelen in **Python** met behulp van **Visual Studio Code** en hoe u deze kunt implementeren op een **Linux-apparaat**. IoT Edge biedt geen ondersteuning voor Python-modules voor Windows-apparaten.
 
@@ -44,8 +44,6 @@ Gebruik de volgende tabel om inzicht te krijgen in de opties voor het ontwikkele
 | - | ------------------ | ------------------ |
 | **Linux AMD64** | ![VS Code gebruiken voor Python-modules op Linux AMD64](./media/tutorial-c-module/green-check.png) |  |
 | **Linux ARM32** | ![VS Code gebruiken voor Python-modules op Linux ARM32](./media/tutorial-c-module/green-check.png) |  |
-
-## <a name="prerequisites"></a>Vereisten
 
 Voordat u met deze zelfstudie begint, moet u de vorige zelfstudie hebben doorlopen om uw ontwikkelomgeving voor Linux-containerontwikkeling in te stellen: [IoT Edge-modules ontwikkelen voor Linux-apparaten](tutorial-develop-for-linux.md). Als u die zelfstudie hebt voltooid, hebt u de volgende vereisten klaarstaan:
 

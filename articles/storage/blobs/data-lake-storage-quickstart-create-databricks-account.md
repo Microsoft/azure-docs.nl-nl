@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 06/12/2020
 ms.reviewer: jeking
-ms.openlocfilehash: 908bf21d2fe101731b11e3a8ad783f17728c8ed3
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: e289bea6b1a23f1622ced62656164d9865303298
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92677328"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95912821"
 ---
 # <a name="quickstart-analyze-data-with-databricks"></a>Quickstart: Gegevens analyseren met Databricks
 
@@ -23,7 +23,7 @@ In deze quickstart voert u een Apache Spark-taak uit met behulp van Azure Databr
 
 * Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)
 
-* De naam van uw Azure Data Lake Storage Gen2-opslagaccount. [Een Azure Data Lake Storage Gen2-opslagaccount maken](data-lake-storage-quickstart-create-account.md).
+* Een opslagaccount waarvoor de functie voor hiërarchische naamruimten is ingeschakeld. Zie [Een opslagaccount maken dat met Azure Data Lake Storage Gen2 wordt gebruikt](create-data-lake-storage-account.md) om er een te maken.
 
 * De tenant-id, app-id en het wachtwoord van een Azure-service-principal met een toegewezen rol voor **Bijdrager voor opslagblobgegevens**. [Een service-principal maken](../../active-directory/develop/howto-create-service-principal-portal.md).
 
@@ -84,7 +84,7 @@ In deze sectie maakt u een notitieblok in de Azure Databricks-werkruimte en voer
 
 1. Ga in [Azure Portal](https://portal.azure.com) naar de Azure Databricks-werkruimte die u hebt gemaakt en selecteer **Werkruimte starten**.
 
-2. Selecteer **Werkruimte** in het linkerdeelvenster. Selecteer in de **Werkruimte** -vervolgkeuzelijst, **Notitieblok** > **maken**.
+2. Selecteer **Werkruimte** in het linkerdeelvenster. Selecteer in de **Werkruimte**-vervolgkeuzelijst, **Notitieblok** > **maken**.
 
     ![Schermopname waarin wordt getoond hoe een notebook in Databricks wordt gemaakt en waarin de menuoptie Maken > Notebook is gemarkeerd.](./media/data-lake-storage-quickstart-create-databricks-account/databricks-create-notebook.png "Notitieblok maken in Databricks")
 
@@ -162,7 +162,7 @@ Voer de volgende taken uit om een Spark SQL-taak op de gegevens uit te voeren.
 
     ![Voorbeeld van JSON-gegevens](./media/data-lake-storage-quickstart-create-databricks-account/databricks-sample-csv-data.png "Voorbeeld van JSON-gegevens")
 
-    Naast andere gegevens wordt in de voorbeeldgegevens ook het geslacht van de doelgroep van een radiokanaal vastgelegd (kolomnaam **geslacht** ) en of het om een gratis dan wel betaald abonnement gaat (kolomnaam **niveau** ).
+    Naast andere gegevens wordt in de voorbeeldgegevens ook het geslacht van de doelgroep van een radiokanaal vastgelegd (kolomnaam **geslacht**) en of het om een gratis dan wel betaald abonnement gaat (kolomnaam **niveau**).
 
 4. U gaat nu een visuele weergave van deze gegevens maken om voor elk geslacht te zien kunnen hoeveel gebruikers een gratis account hebben en hoeveel een betaald. Klik onder in de tabel met uitvoer op het pictogram voor het **staafdiagram** en klik vervolgens op **Tekenopties**.
 
@@ -198,7 +198,7 @@ In dit artikel hebt u een Spark-cluster in Azure Databricks gemaakt en een Spark
 Ga naar het volgende artikel voor informatie over het uitvoeren van een ETL-bewerking (Extraction, Transformation, and Loading) met behulp van Azure Databricks.
 
 > [!div class="nextstepaction"]
->[Gegevens uitpakken, transformeren en laden met Azure Databricks](../../azure-databricks/databricks-extract-load-sql-data-warehouse.md).
+>[Gegevens uitpakken, transformeren en laden met Azure Databricks](/azure/databricks/scenarios/databricks-extract-load-sql-data-warehouse).
 
 - Raadpleeg [Spark-gegevensbronnen](https://docs.azuredatabricks.net/spark/latest/data-sources/index.html) voor meer informatie over het importeren van gegevens uit andere gegevensbronnen in Azure Databricks.
 

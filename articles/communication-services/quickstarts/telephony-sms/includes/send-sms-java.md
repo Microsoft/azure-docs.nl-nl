@@ -10,12 +10,12 @@ ms.date: 08/20/2020
 ms.topic: include
 ms.custom: include file
 ms.author: chrwhit
-ms.openlocfilehash: 76aae596c145c736ae75e65f7f72fdbdcead5919
-ms.sourcegitcommit: ef69245ca06aa16775d4232b790b142b53a0c248
+ms.openlocfilehash: cb8e6934125630590a337ed7bf7f4c81b2b73bb3
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91779350"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94915234"
 ---
 Ga aan de slag met Azure Communication Services door de sms-clientbibliotheek in Java van Communications Services te gebruiken om sms-berichten te verzenden.
 
@@ -28,7 +28,7 @@ Voor het voltooien van deze quickstart worden kosten van een paar dollarcent of 
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-- [Java Development Kit (JDK)](https://docs.microsoft.com/java/azure/jdk/?view=azure-java-stable&preserve-view=true) versie 8 of hoger.
+- [Java Development Kit (JDK)](/java/azure/jdk/?preserve-view=true&view=azure-java-stable) versie 8 of hoger.
 - [Apache Maven](https://maven.apache.org/download.cgi).
 - Een actieve Communication Services-resource en verbindingsreeks. [Een Communication Services-resource maken](../../create-communication-resource.md).
 - Een telefoonnummer met sms-functionaliteit. [Een telefoonnummer aanvragen](../get-phone-number.md).
@@ -58,7 +58,7 @@ Open het bestand **pom.xml** in uw teksteditor. Voeg het volgende afhankelijkhei
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-communication-sms</artifactId>
-    <version>1.0.0-beta.2</version>
+    <version>1.0.0-beta.3</version>
 </dependency>
 ```
 
@@ -85,7 +85,6 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.azure.communication.common.CommunicationClientCredential;
 import com.azure.communication.common.PhoneNumber;
 import com.azure.communication.sms.SmsClient;
 import com.azure.communication.sms.SmsClientBuilder;
@@ -113,7 +112,6 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 | SmsClientBuilder              | Deze klasse maakt de SmsClient. U geeft een eindpunt, referentie en een HTTP-client op. |
 | SmsClient                    | Deze klasse is vereist voor alle sms-functionaliteit. U kunt deze gebruiken om sms-berichten te verzenden.                |
 | SendSmsResponse               | Deze klasse bevat de reactie van de sms-service.                                          |
-| CommunicationClientCredential | Deze klasse handelt ondertekeningsaanvragen af.                                                            |
 | PhoneNumber                   | Deze klasse bevat telefoonnummergegevens
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
@@ -123,20 +121,32 @@ Breng een `SmsClient` tot stand met uw verbindingsreeks. Met de onderstaande cod
 Voeg de volgende code aan de `main` methode toe:
 
 ```java
+// Your can find your endpoint and access key from your resource in the Azure Portal
+String endpoint = "https://<RESOURCE_NAME>.communication.azure.com";
+String accessKey = "SECRET";
+
 // Create an HttpClient builder of your choice and customize it
 HttpClient httpClient = new NettyAsyncHttpClientBuilder().build();
-
-CommunicationClientCredential credential = new CommunicationClientCredential(accessKey);
 
 // Configure and build a new SmsClient
 SmsClient client = new SmsClientBuilder()
     .endpoint(endpoint)
-    .credential(credential)
+    .accessKey(accessKey)
     .httpClient(httpClient)
     .buildClient();
 ```
 
-U kunt de client initialiseren met een aangepaste HTTP-client. Hiermee implementeert u de `com.azure.core.http.HttpClient`-interface. De bovenstaande code toont het gebruik van de [Azure Core Netty HTTP-client](https://docs.microsoft.com/java/api/overview/azure/core-http-netty-readme?view=azure-java-stable&preserve-view=true) die wordt verschaft door `azure-core`.
+U kunt de client initialiseren met een aangepaste HTTP-client. Hiermee implementeert u de `com.azure.core.http.HttpClient` -interface. De bovenstaande code toont het gebruik van de [Azure Core Netty HTTP-client](/java/api/overview/azure/core-http-netty-readme?preserve-view=true&view=azure-java-stable) die wordt verschaft door `azure-core`.
+
+U kunt ook de volledige verbindingsreeks opgeven met behulp van de functie connectionString() in plaats van het eindpunt en de toegangssleutel op te geven. 
+```java
+// Your can find your connection string from your resource in the Azure Portal
+String connectionString = "<connection_string>";
+SmsClient client = new SmsClientBuilder()
+    .connectionString(connectionString)
+    .httpClient(httpClient)
+    .buildClient();
+```
 
 ## <a name="send-an-sms-message"></a>Een sms-bericht verzenden
 

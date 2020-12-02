@@ -12,17 +12,17 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
 ms.subservice: compliance
-ms.date: 09/30/2020
+ms.date: 11/23/2020
 ms.author: barclayn
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
 ms.custom: contperfq1
-ms.openlocfilehash: 24e514208683d540f08818020238090583a1bc42
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 163947268d79a0297eef3f3f6e97187a0aef6994
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92362464"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95738139"
 ---
 # <a name="what-is-azure-ad-entitlement-management"></a>Wat is Azure AD-rechtenbeheer?
 
@@ -85,7 +85,7 @@ U kunt ook de toegang beheren tot andere resources die afhankelijk zijn van Azur
 
 Met een toegangspakket geeft een beheerder of een gedelegeerde beheerder de resources (groepen, apps en sites) en de rollen op die de gebruikers nodig hebben voor die resources.
 
-Toegangspakketten bestaan ook uit een of meer *beleidsregels* . Een beleid definieert de regels of richtlijnen voor toewijzing tot een toegangspakket. Elke beleidsregel kan gebruikt worden om ervoor te zorgen dat enkel de juiste gebruikers toegang kunnen aanvragen, dat er fiatteurs zijn voor hun verzoek en dat hun toegang tot die resources beperkt is in de tijd en verloopt wanneer dit niet vernieuwd wordt.
+Toegangspakketten bestaan ook uit een of meer *beleidsregels*. Een beleid definieert de regels of richtlijnen voor toewijzing tot een toegangspakket. Elke beleidsregel kan gebruikt worden om ervoor te zorgen dat enkel de juiste gebruikers toegang kunnen aanvragen, dat er fiatteurs zijn voor hun verzoek en dat hun toegang tot die resources beperkt is in de tijd en verloopt wanneer dit niet vernieuwd wordt.
 
 ![Toegangspakket en beleidsregels](./media/entitlement-management-overview/elm-overview-access-package.png)
 
@@ -144,17 +144,22 @@ Gespecialiseerde clouds, zoals Azure Duitsland en Azure China 21Vianet, zijn mom
 Zorg ervoor dat uw directory ten minste evenveel Azure AD Premium P2-licenties heeft als u:
 
 - Leden heeft die een toegangspakket **kunnen** aanvragen.
-- Leden en gastgebruikers heeft die een toegangspakket aanvragen.
-- Leden en gastgebruikers heeft die aanvragen voor een toegangspakket goedkeuren.
-- Leden en gastgebruikers heeft die een directe toewijzing aan een toegangspakket hebben.
+- Leden heeft die een toegangspakket <u>aanvragen</u>.
+- Leden die <u>aanvragen voor een toegangspakket goedkeuren</u>.
+- Leden die <u>toewijzingen bekijken</u> voor een toegangspakket. 
+- Leden heeft die een <u>directe toewijzing</u> aan een toegangspakket hebben.
+
+Voor gastgebruikers is de licentiebehoefte afhankelijk van het [licentiemodel](../external-identities/external-identities-pricing.md) dat u gebruikt. De onderstaande activiteiten van gastgebruikers worden echter beschouwd als Azure AD Premium P2-gebruik:
+- Gastgebruikers heeft die een toegangspakket <u>aanvragen</u>. 
+- Gastgebruikers die <u>aanvragen voor een toegangspakket goedkeuren</u>.
+- Gastgebruikers die <u>toewijzingen bekijken</u> voor een toegangspakket.
+- Gastgebruikers heeft die een <u>directe toewijzing</u> aan een toegangspakket hebben. 
 
 Azure AD Premium P2-licenties zijn **niet** vereist voor de volgende taken:
 
 - Er zijn geen licenties vereist voor gebruikers met de rol Globale beheerder die initiële catalogi, toegangspakketten en beleidsregels instellen en administratieve taken delegeren aan andere gebruikers.
 - Er zijn geen licenties vereist voor gebruikers die administratieve taken gedelegeerd krijgen, zoals een catalogusmaker, cataloguseigenaar en een beheerder van een toegangspakket.
 - Er zijn geen licenties vereist voor gasten die toegangspakketten **kunnen** aanvragen, maar dat **niet** doen.
-
-De prijzen voor externe Azure AD-identiteiten (gastgebruiker) zijn gebaseerd op maandelijks actieve gebruikers (MAU), d.w.z. het aantal unieke gebruikers met verificatie-activiteit in een kalendermaand. Dit model vervangt het factureringsmodel met een verhouding van 1:5, waarbij vijf gastgebruikers voor elke Azure AD Premium-licentie in uw tenant waren toegestaan. Wanneer uw tenant aan een abonnement is gekoppeld en u functies van Externe identiteiten gebruikt om met gastgebruikers samen te werken, wordt u automatisch gefactureerd met behulp van het MAU-gebaseerde factureringsmodel. Zie Factureringsmodel voor externe [Azure AD-identiteiten](../external-identities/external-identities-pricing.md) voor meer informatie.
 
 Zie [Licenties toewijzen en verwijderen met behulp van het Azure Active Directory-portal](../fundamentals/license-users-groups.md) voor meer informatie over licenties.
 

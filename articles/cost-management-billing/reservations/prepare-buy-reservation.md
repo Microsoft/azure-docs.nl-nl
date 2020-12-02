@@ -8,12 +8,12 @@ ms.subservice: reservations
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: d22ab9f028f0491db33d62d0a6dff8d06282f925
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
+ms.openlocfilehash: f22a8f085938f5a3cc3e7a748391a9048129296c
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91368716"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888365"
 ---
 # <a name="buy-a-reservation"></a>Een reservering kopen
 
@@ -21,9 +21,9 @@ Azure-reserveringen helpen u geld te besparen door een toezegging te doen voor e
 
 ## <a name="who-can-buy-a-reservation"></a>Wie kan een reservering kopen
 
-Als u een abonnement wilt kopen, moet u een eigenaarsrol voor het abonnement hebben in een zakelijke abonnement (MS-AZR-0017P of MS-AZR-0148P) of een abonnement waarvoor wordt betaald per gebruik (MS-AZR-0003P of MS-AZR-0023P) of een abonnement in een Microsoft-klantovereenkomst. Cloud Solution Providers kunnen Azure-reserveringen aanschaffen via Azure Portal of het  [Partnercentrum](/partner-center/azure-reservations) .
+Als u een reservering wilt kopen, moet u een eigenaarsrol of reserveringskopersrol hebben in een Azure-abonnement van het type Enterprise (MS-AZR-0017P of MS-AZR-0148P) of betalen per gebruik (MS-AZR-0003P of MS-AZR-0023P) of Microsoft-klantovereenkomst. Cloud Solution Providers kunnen Azure-reserveringen aanschaffen via Azure Portal of het  [Partnercentrum](/partner-center/azure-reservations) .
 
-Enterprise Agreement-klanten (EA) kunnen het aantal aankopen voor EA-beheerders beperken door de optie **Gereserveerde instanties toevoegen** in de EA-portal uit te schakelen. EA-beheerders moeten een abonnementseigenaar zijn voor minimaal één EA-abonnement om een reservering te kunnen aanschaffen. De optie is nuttig voor bedrijven die hun reserveringen voor verschillende kostenplaatsen willen laten aanschaffen door een gecentraliseerd team. Na de aankoop kunnen gecentraliseerde teams kostenplaatseigenaars aan de reserveringen toevoegen. Eigenaars kunnen de reservering vervolgens aan hun abonnementen koppelen. Het centraleteam heeft geen toegang als abonnementseigenaar nodig tot de locatie waar de reservering wordt aangeschaft.
+Enterprise Agreement-klanten (EA) kunnen het aantal aankopen voor EA-beheerders beperken door de optie **Gereserveerde instanties toevoegen** in de EA-portal uit te schakelen. EA-beheerders moeten het toegangsniveau van een eigenaar of reserveringskoper hebben op ten minste één EA-abonnement om een reservering aan te schaffen. De optie is nuttig voor bedrijven die hun reserveringen willen laten aanschaffen door een gecentraliseerd team.
 
 Reserveringskorting is alleen van toepassing op resources die zijn gekoppeld aan abonnementen die via Enterprise, een Cloud Solution Provider (CSP), een Microsoft-klantovereenkomst of afzonderlijk abonnementen met tarieven voor betalen per gebruik zijn aangeschaft.
 

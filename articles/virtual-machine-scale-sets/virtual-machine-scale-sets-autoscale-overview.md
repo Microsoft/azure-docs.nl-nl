@@ -9,12 +9,12 @@ ms.subservice: autoscale
 ms.date: 06/30/2020
 ms.reviewer: jushiman
 ms.custom: avverma
-ms.openlocfilehash: dd042b28035b5e9a4b18041d6c1a81f77cfd4ea7
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 092b95845ed033ac0705e325fc6535739088848f
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "86527401"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888790"
 ---
 # <a name="overview-of-autoscale-with-azure-virtual-machine-scale-sets"></a>Overzicht van automatisch schalen met virtuele-machineschaalsets van Azure
 Met een virtuele-machineschaalset van Azure kunt u automatisch het aantal VM-exemplaren vergroten of verkleinen waarop uw toepassing wordt uitgevoerd. Dit geautomatiseerde en elastische gedrag vermindert de overhead die nodig is voor het controleren en optimaliseren van de prestaties van uw toepassing. U stelt regels op die de aanvaardbare prestaties bepalen voor een positieve klantervaring. Wanneer deze gedefinieerde drempelwaarden worden bereikt, worden op basis van de regels voor automatisch schalen acties ondernomen om de capaciteit van de schaalset aan te passen. U kunt ook gebeurtenissen plannen om de capaciteit van een schaalset op vaste tijden automatisch te vergroten of verkleinen. In dit artikel vindt u een overzicht van de metrische gegevens over prestaties die beschikbaar zijn en welke acties u met automatisch schalen kunt uitvoeren.
@@ -22,6 +22,9 @@ Met een virtuele-machineschaalset van Azure kunt u automatisch het aantal VM-exe
 
 ## <a name="benefits-of-autoscale"></a>Voordelen van automatisch schalen
 Als de vraag van uw toepassing toeneemt, neemt de belasting van de VM-exemplaren in de schaalset ook toe. Als deze toegenomen belasting consistent is, en geen piekbelasting is, kunt u regels voor automatisch schalen configureren om het aantal VM-exemplaren in de schaalset te verhogen.
+
+> [!NOTE]
+> Wanneer u automatische exemplaarreparaties voor uw schaalset gebruikt, is het maximum aantal exemplaren in de schaalset 200. Meer informatie over [Automatische exemplaarreparaties](./virtual-machine-scale-sets-automatic-instance-repairs.md).
 
 Wanneer deze VM-exemplaren worden gemaakt en uw toepassingen worden geïmplementeerd, zorgt de schaalset ervoor dat er via de load balancer verkeer wordt gedistribueerd naar de exemplaren. U bepaalt welke metrische gegevens moeten worden bewaakt, zoals CPU of schijf, hoe lang de belasting van de toepassing overeen moet komen met een bepaalde drempelwaarde en hoeveel VM-exemplaren er moeten worden toegevoegd aan de schaalset.
 

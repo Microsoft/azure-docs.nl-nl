@@ -13,12 +13,12 @@ ms.custom:
 - 'role: System Architecture'
 ms.service: iot-hub
 services: iot-hub
-ms.openlocfilehash: aaf803d463e03f2de7814fed4b20a0b4312fa1ef
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 7f1acc44a80d5ef70145997698a928e6f9ce0d48
+ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148833"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94888875"
 ---
 # <a name="what-is-azure-iot-hub"></a>Wat is Azure IoT Hub?
 
@@ -119,6 +119,12 @@ Voor elk Azure-abonnement gelden standaardquotalimieten ter voorkoming van misbr
 * [Limieten, quota en beperkingen van Azure-abonnementen en -services](../azure-resource-manager/management/azure-subscription-service-limits.md)
 
 * [IoT Hub throttling and you](https://azure.microsoft.com/blog/iot-hub-throttling-and-you/)
+
+## <a name="iot-hub-on-azure-stack-hub-preview"></a>IoT Hub in Azure Stack Hub (preview)
+
+Met IoT Hub op Azure Stack Hub (preview) kunt u hybride IoT-oplossingen maken. IoT Hub is een beheerde service die fungeert als een centrale berichtenhub voor bidirectionele communicatie tussen uw IoT-toepassing en de apparaten die hiermee worden beheerd. Met IoT Hub kunt u in Azure Stack Hub IoT-oplossingen bouwen met betrouwbare en veilige communicatie tussen IoT-apparaten en uw on-premises oplossingen.
+
+IoT Hub op Azure Stack Hub is gratis beschikbaar tijdens de openbare preview. Zie voor meer informatie het [overzicht voor IoT Hub in Azure Stack Hub](/azure-stack/operator/iot-hub-rp-overview).
 
 ## <a name="next-steps"></a>Volgende stappen
 

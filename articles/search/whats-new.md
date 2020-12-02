@@ -8,12 +8,12 @@ ms.service: cognitive-search
 ms.topic: overview
 ms.date: 11/12/2020
 ms.custom: references_regions
-ms.openlocfilehash: 4c1284c13d1516ac4061319287adb64ab7e14ff5
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 73902cf53d9995f7dfc1991e3b7ed7c7c469bf2a
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579467"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95026658"
 ---
 # <a name="whats-new-in-azure-cognitive-search"></a>Nieuwe functies in Azure Cognitive Search
 
@@ -23,7 +23,7 @@ Meer informatie over nieuwe functies in de service. Voeg een bladwijzer toe aan 
 
 |Functie&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Categorie | Beschrijving | Beschikbaarheid  |
 |------------------------------|----------|-------------|---------------|
-|[versleuteling via door de klant beheerde sleutels voor indexeerfuncties, gegevensbronnen en vaardighedensets](search-security-manage-encryption-keys.md) | Beveiliging | Deze toevoeging breidt door de klant beheerde versleuteling uit naar het volledige activabereik dat is gemaakt en beheerd met een zoekservice. Zoals u weet voegt CMK-ondersteuning een extra versleutelingslaag toe bovenop de basisversleuteling die wordt uitgevoerd en beheerd met Microsoft. | Algemeen beschikbaar via REST API-versie = 2020-06-30 |  
+|[Versleuteling via door de klant beheerde sleutels voor indexeerfuncties, gegevensbronnen en vaardighedensets](search-security-manage-encryption-keys.md) | Beveiliging | Deze toevoeging breidt door de klant beheerde versleuteling uit naar het volledige activabereik dat is gemaakt en beheerd met een zoekservice. Zoals u weet voegt ondersteuning voor door klant beheerde sleutels een extra versleutelingslaag toe bovenop de basisversleuteling die wordt uitgevoerd en beheerd met Microsoft. | Algemeen beschikbaar via REST API-versie = 2020-06-30 |  
 
 ## <a name="september-2020"></a>September 2020
 

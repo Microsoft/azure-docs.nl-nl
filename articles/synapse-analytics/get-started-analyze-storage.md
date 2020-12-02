@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: fabfdce72202f79e2ac5bad08d124df7ce2de542
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 5e3fbd1868cc1216cb7b9d02b2aa8e690af33952
+ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94592580"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94917678"
 ---
 # <a name="analyze-data-in-a-storage-account"></a>Gegevens analyseren in een opslagaccount
 
@@ -41,6 +41,8 @@ df.write.mode("overwrite").parquet("/NYCTaxi/PassengerCountStats_parquetformat")
 ```
 
 ### <a name="analyze-data-in-a-storage-account"></a>Gegevens analyseren in een opslagaccount
+
+U kunt de gegevens in uw werkruimte standaard ADLS Gen2 account analyseren of u kunt een ADLS Gen2-of Blob Storage-account koppelen aan uw werkruimte via '**Beheren**' >**Gekoppelde services**' > '**Nieuw**' (de onderstaande stappen verwijzen naar het primaire ADLS Gen2-account).
 
 1. Ga in Synapse Studio naar de hub **Gegevens** en selecteer vervolgens **Gekoppeld**.
 1. Navigeer naar **Opslagaccounts** > **myworkspace (Primary - contosolake)** .

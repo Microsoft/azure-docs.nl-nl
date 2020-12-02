@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/17/2020
-ms.openlocfilehash: 244408cc512a51683ecb3c062113170b1c7f4781
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 6e0f3d318cc462b03151d5a4935ae318df46e2c5
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499557"
+ms.locfileid: "96510553"
 ---
 # <a name="python-code-samples-for-azure-cognitive-search"></a>Python-code voorbeelden voor Azure Cognitive Search
 
@@ -25,7 +25,7 @@ Meer informatie over de python-code voorbeelden die de functies en functionalite
 | [Azure-samples/Azure-Search-python-voor beelden](https://github.com/Azure-Samples/azure-search-python-samples) | Code voorbeelden die betrekking hebben op procedures, waaronder [Quick Start: een zoek index in python maken](search-get-started-python.md).|
 
 > [!Tip]
-> Gebruik de voor beelden van de [browser](/samples/browse/?languages=csharp&products=azure-cognitive-search) om te zoeken naar micro soft-code voorbeelden in github, gefilterd op product, service en taal.
+> Gebruik de voor beelden van de [browser](/samples/browse/?languages=python&products=azure-cognitive-search) om te zoeken naar micro soft-code voorbeelden in github, gefilterd op product, service en taal.
 
 ## <a name="python-sdk-samples"></a>Python SDK-voorbeelden
 

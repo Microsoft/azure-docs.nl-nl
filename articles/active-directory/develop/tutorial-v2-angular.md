@@ -12,16 +12,16 @@ ms.workload: identity
 ms.date: 03/05/2020
 ms.author: hahamil
 ms.custom: aaddev, identityplatformtop40, devx-track-js
-ms.openlocfilehash: c93704130e150a7ca26144d4895e82756657fae2
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: c4c7d021c7c3a5a32d537a50fa45449fdee7e817
+ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92096246"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94979926"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-an-angular-single-page-application"></a>Zelfstudie: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een Angular-app met één pagina
 
-In deze zelfstudie leert u hoe u een eenvoudige app met één pagina bouwt waarmee gebruikers zich kunnen aanmelden met een persoonlijke Microsoft-account en werk- of schoolaccount en de Microsoft Graph API namens hen kan aanroepen.
+In deze zelfstudie bouwt u een Angular-toepassing met één pagina (SPA) die gebruikers aanmeldt en de Microsoft Graph API aanroept.
 
 In deze zelfstudie:
 
@@ -124,7 +124,7 @@ Registreer de waarde van uw **Omleidings-URI** als **http://localhost:4200/** en
     |---------|---------|
     |Voer_hier_de_toepassings-id_in|Op de pagina **Overzicht** van de registratie van uw toepassing, is dit uw waarde voor **Toepassings-id (client)** . |
     |Voer_hier_het_cloud-exemplaar_in|Dit is het exemplaar van de Azure-cloud. Voer **https://login.microsoftonline.com** in voor de primaire of algemene Azure-cloud. Raadpleeg [Nationale clouds](./authentication-national-cloud.md) voor nationale clouds (bijvoorbeeld China).|
-    |Voer_hier_tenantgegevens_in| Stel een van de volgende opties in: Als uw toepassing *accounts in deze organisatiemap ondersteunt* , vervangt u deze waarde door de map-id (tenant) of tenantnaam (bijvoorbeeld **contoso.microsoft.com** ). Als uw toepassing *accounts in elke organisatiemap* ondersteunt, vervang deze waarde dan door **organisaties** . Als uw toepassing *accounts in elke organisatiemap en persoonlijke Microsoft-accounts* ondersteunt, vervang deze waarde dan door **algemeen** . Als u de ondersteuning wilt beperken tot *alleen persoonlijke Microsoft-accounts* , vervang deze waarde dan door **consumenten** . |
+    |Voer_hier_tenantgegevens_in| Stel een van de volgende opties in: Als uw toepassing *accounts in deze organisatiemap ondersteunt*, vervangt u deze waarde door de map-id (tenant) of tenantnaam (bijvoorbeeld **contoso.microsoft.com**). Als uw toepassing *accounts in elke organisatiemap* ondersteunt, vervang deze waarde dan door **organisaties**. Als uw toepassing *accounts in elke organisatiemap en persoonlijke Microsoft-accounts* ondersteunt, vervang deze waarde dan door **algemeen**. Als u de ondersteuning wilt beperken tot *alleen persoonlijke Microsoft-accounts*, vervang deze waarde dan door **consumenten**. |
     |Voer_hier_de_omleidings-URI_in|Vervang door **http://localhost:4200** .|
 
     Raadpleeg [Clienttoepassingen initialiseren](msal-js-initializing-client-applications.md) voor meer informatie over beschikbare opties die u kunt configureren.

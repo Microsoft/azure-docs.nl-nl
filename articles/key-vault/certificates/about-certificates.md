@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: overview
 ms.date: 09/04/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 45c0108ed87dd5264b9192f5dd69e0198bd59fc1
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 66f077028b9f9f7a7644a318d4447eeaaab19e98
+ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289775"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94919927"
 ---
 # <a name="about-azure-key-vault-certificates"></a>Informatie over Azure Key Vault-certificaten
 
@@ -44,8 +44,17 @@ Wanneer een Key Vault-certificaat wordt gemaakt, kan het worden opgehaald uit he
 
 De adresseerbare sleutel wordt relevanter bij niet-exporteerbare KV-certificaten. De adresseerbare bewerkingen voor de KV-sleutel worden toegewezen uit het veld *keyusage* van het KV-certificaatbeleid dat wordt gebruikt om het KV-certificaat te maken.  
 
+Het type sleutelpaar dat wordt ondersteund voor certificaten
+
  - Ondersteunde sleuteltypen: RSA, RSA-HSM, EC, EC-HSM, oct ([hier](/rest/api/keyvault/createcertificate/createcertificate#jsonwebkeytype) genoemd) Exporteren is alleen toegestaan met RSA, EC. HSM-sleutels zouden niet exporteerbaar zijn.
 
+|Type sleutel|Over|Beveiliging|
+|--|--|--|
+|**RSA**| Met software beveiligde RSA-sleutel|FIPS 140-2 Level 1|
+|**RSA-HSM**| "Met HSM beveiligde" RSA-sleutel (alleen Premium SKU)|FIPS 140-2 Level 2 HSM|
+|**EC**| Met software beveiligde Elliptic Curve-sleutel|FIPS 140-2 Level 1|
+|**EC-HSM**| "Met HSM beveiligde" Elliptic Curve-sleutel (alleen Premium SKU)|FIPS 140-2 Level 2 HSM|
+|||
 
 ## <a name="certificate-attributes-and-tags"></a>Certificaatkenmerken en -tags
 
@@ -57,14 +66,14 @@ De certificaatkenmerken worden gespiegeld met kenmerken van de adresseerbare sle
 
 Een Key Vault-certificaat heeft de volgende kenmerken:  
 
--   *enabled* : boolean, optioneel; standaardwaarde is **true**. Kan worden opgegeven om aan te geven of de certificaatgegevens kunnen worden opgehaald als geheim of bruikbaar als sleutel. Wordt tevens gebruikt in combinatie met *nbf* en *exp* wanneer er een bewerking plaatsvindt tussen *nbf* en *exp* , en wordt alleen toegestaan als enabled is ingesteld op true. Bewerkingen buiten het venster van *nbf* en *exp* worden automatisch niet toegestaan.  
+-   *enabled*: boolean, optioneel; standaardwaarde is **true**. Kan worden opgegeven om aan te geven of de certificaatgegevens kunnen worden opgehaald als geheim of bruikbaar als sleutel. Wordt tevens gebruikt in combinatie met *nbf* en *exp* wanneer er een bewerking plaatsvindt tussen *nbf* en *exp*, en wordt alleen toegestaan als enabled is ingesteld op true. Bewerkingen buiten het venster van *nbf* en *exp* worden automatisch niet toegestaan.  
 
 Er zijn aanvullende alleen-lezen kenmerken die zijn opgenomen in de volgende antwoorden:
 
--   *created* : IntDate - geeft aan wanneer deze versie van het certificaat is gemaakt.  
--   *updated* : IntDate - geeft aan wanneer deze versie van het certificaat is bijgewerkt.  
--   *exp* : IntDate - bevat de waarde van de vervaldatum van het x509-certificaat.  
--   *nbf* : IntDate - bevat de waarde van de datum van het x509-certificaat.  
+-   *created*: IntDate - geeft aan wanneer deze versie van het certificaat is gemaakt.  
+-   *updated*: IntDate - geeft aan wanneer deze versie van het certificaat is bijgewerkt.  
+-   *exp*: IntDate - bevat de waarde van de vervaldatum van het x509-certificaat.  
+-   *nbf*: IntDate - bevat de waarde van de datum van het x509-certificaat.  
 
 > [!Note] 
 > Als een certificaat van Key Vault verloopt, werken de adresseerbare sleutel en het geheim van het certificaat niet meer.  

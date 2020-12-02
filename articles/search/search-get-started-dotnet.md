@@ -8,20 +8,20 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 10/05/2020
+ms.date: 11/20/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f3e43a6b72d8de25de3220a9a6ac4e0b3986a467
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 448f2b3e42e98d78652a005f5d1c11f55acdebb3
+ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701803"
+ms.lasthandoff: 11/21/2020
+ms.locfileid: "95021181"
 ---
 # <a name="quickstart-create-a-search-index-using-the-azuresearchdocuments-client-library"></a>Quickstart: Een zoekindex maken met behulp van de Azure.Search.Documents-clientbibliotheek.
 
 Gebruik de nieuwe [Azure.Search.Documents (versie 11)-clientbibliotheek](/dotnet/api/overview/azure/search.documents-readme) om een .NET Core-consoletoepassing te maken in C# waarmee een zoekindex kan worden gemaakt, geladen en opgevraagd.
 
-[Download de broncode](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/quickstart/v11) om te beginnen met een voltooid project of volg de stappen in dit artikel om uw eigen project te maken.
+U kunt [de broncode downloaden](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/quickstart/v11) om te beginnen met een voltooid project of de stappen in dit artikel volgen om uw eigen project te maken.
 
 > [!NOTE]
 > Zoekt u een eerdere versie? Zie [Een zoekindex maken met Microsoft. Azure.Search v10](search-get-started-dotnet-v10.md).
@@ -36,7 +36,9 @@ Voordat u begint, moet u beschikken over de volgende hulpprogramma's en services
 
 + [Visual Studio](https://visualstudio.microsoft.com/downloads/), een willekeurige editie. Voorbeeldcode is getest in de gratis Community-editie van Visual Studio 2019.
 
-+ [Azure.Search.Documents NuGet-pakket](https://www.nuget.org/packages/Azure.Search.Documents/)
+Bij het instellen van uw project downloadt u het [NuGet-pakket Azure.Search.Documents](https://www.nuget.org/packages/Azure.Search.Documents/).
+
+Azure SDK voor .NET voldoet aan [.NET Standard 2.0](/dotnet/standard/net-standard#net-implementation-support), wat betekent dat .NET Framework 4.6.1 en .NET Core 2.0 de minimale vereisten zijn.
 
 ## <a name="set-up-your-project"></a>Uw project instellen
 
@@ -59,6 +61,8 @@ Voor alle aanvragen is een API-sleutel vereist op elke aanvraag die naar uw serv
 ### <a name="install-the-nuget-package"></a>Installeer het NuGet-pakket van
 
 Nadat het project is gemaakt, voegt u de clientbibliotheek toe. Het [Azure.Search.Documents-pakket](https://www.nuget.org/packages/Azure.Search.Documents/) bestaat uit één clientbibliotheek die alle API's bevat die worden gebruikt om te werken met een zoekservice in .NET.
+
+1. Start Visual Studio en maak een .NET Core-consoletoepassing.
 
 1. Selecteer onder **Hulpprogramma's** > **NuGet-pakketbeheer** de optie **NuGet-pakketten voor oplossing beheren...** . 
 
@@ -86,16 +90,16 @@ Nadat het project is gemaakt, voegt u de clientbibliotheek toe. Het [Azure.Searc
    static void Main(string[] args)
    {
        string serviceName = "<YOUR-SERVICE-NAME>";
-       string indexName = "hotels-quickstart-v11";
+       string indexName = "hotels-quickstart";
        string apiKey = "<YOUR-ADMIN-API-KEY>";
 
-       // Create a SearchIndexClient to send create/delete index commands
-       Uri serviceEndpoint = new Uri($"https://{serviceName}.search.windows.net/");
-       AzureKeyCredential credential = new AzureKeyCredential(apiKey);
-       SearchIndexClient idxclient = new SearchIndexClient(serviceEndpoint, credential);
+        // Create a SearchIndexClient to send create/delete index commands
+        Uri serviceEndpoint = new Uri($"https://{serviceName}.search.windows.net/");
+        AzureKeyCredential credential = new AzureKeyCredential(apiKey);
+        SearchIndexClient adminClient = new SearchIndexClient(serviceEndpoint, credential);
 
-       // Create a SearchClient to load and query documents
-       SearchClient srchclient = new SearchClient(serviceEndpoint, indexName, credential);
+        // Create a SearchClient to load and query documents
+        SearchClient srchclient = new SearchClient(serviceEndpoint, indexName, credential);
     ```
 
 ## <a name="1---create-an-index"></a>1 - Een index maken
@@ -106,64 +110,106 @@ In dit voorbeeld worden synchrone methoden van de Azure.Search.Documents-bibliot
 
 1. Voeg een lege klassedefinitie toe aan uw project: **Hotel.cs**
 
-1. Definieer in **Hotel.cs** de structuur van een hoteldocument.
+1. Kopieer de volgende code in **Hotel.cs** om de structuur van een hoteldocument te definiëren. Door kenmerken in het veld wordt bepaald hoe het veld wordt gebruikt in een toepassing. Het `IsFilterable`-kenmerk moet bijvoorbeeld worden toegewezen aan elk veld dat een filterexpressie ondersteunt.
 
     ```csharp
     using System;
     using System.Text.Json.Serialization;
+    using Azure.Search.Documents.Indexes;
+    using Azure.Search.Documents.Indexes.Models;
 
-    namespace AzureSearch.SDK.Quickstart.v11
+    namespace AzureSearch.Quickstart
     {
-        public class Hotel
+        public partial class Hotel
         {
-            [JsonPropertyName("hotelId")]
-            public string Id { get; set; }
+            [SimpleField(IsKey = true, IsFilterable = true)]
+            public string HotelId { get; set; }
 
-            [JsonPropertyName("hotelName")]
-            public string Name { get; set; }
+            [SearchableField(IsSortable = true)]
+            public string HotelName { get; set; }
 
-            [JsonPropertyName("hotelCategory")]
+            [SearchableField(AnalyzerName = LexicalAnalyzerName.Values.EnLucene)]
+            public string Description { get; set; }
+
+            [SearchableField(AnalyzerName = LexicalAnalyzerName.Values.FrLucene)]
+            [JsonPropertyName("Description_fr")]
+            public string DescriptionFr { get; set; }
+
+            [SearchableField(IsFilterable = true, IsSortable = true, IsFacetable = true)]
             public string Category { get; set; }
 
-            [JsonPropertyName("baseRate")]
-            public Int32 Rate { get; set; }
+            [SearchableField(IsFilterable = true, IsFacetable = true)]
+            public string[] Tags { get; set; }
 
-            [JsonPropertyName("lastRenovationDate")]
-            public DateTime Updated { get; set; }
+            [SimpleField(IsFilterable = true, IsSortable = true, IsFacetable = true)]
+            public bool? ParkingIncluded { get; set; }
+
+            [SimpleField(IsFilterable = true, IsSortable = true, IsFacetable = true)]
+            public DateTimeOffset? LastRenovationDate { get; set; }
+
+            [SimpleField(IsFilterable = true, IsSortable = true, IsFacetable = true)]
+            public double? Rating { get; set; }
+
+            [SearchableField]
+            public Address Address { get; set; }
         }
     }
     ```
 
-1. Maak in **Program.cs** een [SearchIndex](/dotnet/api/azure.search.documents.indexes.models.searchindex)-object en roep vervolgens de methode [CreateIndex](/dotnet/api/azure.search.documents.indexes.searchindexclient.createindex) aan om de index uit te drukken in uw zoekservice.
+   In de clientbibliotheek van Azure.Search.Documents kunt u velddefinities stroomlijnen met behulp van de velden [SearchableField](/dotnet/api/azure.search.documents.indexes.models.searchablefield) en [SimpleField](/dotnet/api/azure.search.documents.indexes.models.simplefield). Beide zijn afgeleiden van een [SearchField](/dotnet/api/azure.search.documents.indexes.models.searchfield) en kunnen uw code vereenvoudigen:
+
+   + `SimpleField` kan elk gegevenstype zijn, is altijd niet-doorzoekbaar (wordt genegeerd voor zoekopdrachten in volledige tekst) en kan worden opgehaald (is niet verborgen). Andere kenmerken zijn standaard uitgeschakeld, maar kunnen wel worden ingeschakeld. U kunt een `SimpleField` gebruiken voor document-id's of velden die alleen worden gebruikt in filters, facetten of scoreprofielen. Als dat het geval is, moet u ervoor zorgen dat u alle kenmerken toepast die nodig zijn voor het scenario, zoals `IsKey = true` voor een document-id. Zie [SimpleFieldAttribute.cs](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Azure.Search.Documents/src/Indexes/SimpleFieldAttribute.cs) in broncode voor meer informatie.
+
+   + `SearchableField` moet een tekenreeks zijn die altijd kan worden doorzocht en opgehaald. Andere kenmerken zijn standaard uitgeschakeld, maar kunnen wel worden ingeschakeld. Omdat dit veldtype kan worden doorzocht, worden synoniemen en het volledige gamma van analyse-eigenschappen ondersteund. Zie [SearchableFieldAttribute.cs](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Azure.Search.Documents/src/Indexes/SearchableFieldAttribute.cs) in broncode voor meer informatie.
+
+   Ongeacht of u de basis-API van `SearchField` of een van de hulpmodellen gebruikt, u moet filter-, facet- en sorteerkenmerken expliciet inschakelen. Bijvoorbeeld [IsFilterable](/dotnet/api/azure.search.documents.indexes.models.searchfield.isfilterable), [IsSortable](/dotnet/api/azure.search.documents.indexes.models.searchfield.issortable)en [IsFacetable](/dotnet/api/azure.search.documents.indexes.models.searchfield.isfacetable) moet expliciet worden voorzien van een kenmerk, zoals weergegeven in het bovenstaande voorbeeld. 
+
+1. Voeg een tweede lege klassedefinitie toe aan uw project: **Address.cs**.  Kopieer de volgende code naar de klasse.
 
    ```csharp
-    // Define an index schema using SearchIndex
-    // Create the index using SearchIndexClient
-    SearchIndex index = new SearchIndex(indexName)
-    {
-        Fields =
-            {
-                new SimpleField("hotelId", SearchFieldDataType.String) { IsKey = true, IsFilterable = true, IsSortable = true },
-                new SearchableField("hotelName") { IsFilterable = true, IsSortable = true },
-                new SearchableField("hotelCategory") { IsFilterable = true, IsSortable = true },
-                new SimpleField("baseRate", SearchFieldDataType.Int32) { IsFilterable = true, IsSortable = true },
-                new SimpleField("lastRenovationDate", SearchFieldDataType.DateTimeOffset) { IsFilterable = true, IsSortable = true }
-            }
-    };
+   using Azure.Search.Documents.Indexes;
 
-    Console.WriteLine("{0}", "Creating index...\n");
-    idxclient.CreateIndex(index);
+    namespace AzureSearch.Quickstart
+    {
+        public partial class Address
+        {
+            [SearchableField(IsFilterable = true)]
+            public string StreetAddress { get; set; }
+
+            [SearchableField(IsFilterable = true, IsSortable = true, IsFacetable = true)]
+            public string City { get; set; }
+
+            [SearchableField(IsFilterable = true, IsSortable = true, IsFacetable = true)]
+            public string StateProvince { get; set; }
+
+            [SearchableField(IsFilterable = true, IsSortable = true, IsFacetable = true)]
+            public string PostalCode { get; set; }
+
+            [SearchableField(IsFilterable = true, IsSortable = true, IsFacetable = true)]
+            public string Country { get; set; }
+        }
+    }
    ```
 
-Door kenmerken in het veld wordt bepaald hoe het veld wordt gebruikt in een toepassing. Het `IsFilterable`-kenmerk moet bijvoorbeeld worden toegewezen aan elk veld dat een filterexpressie ondersteunt.
+1. Maak nog twee klassen: **Hotel.Methods.cs** en **Address.Methods.cs** voor ToString ()-overschrijvingen. Deze klassen worden gebruikt voor het weergeven van zoekresultaten in de console-uitvoer.  De inhoud van deze klassen zijn niet in dit artikel opgenomen, maar u kunt de code kopiëren vanuit [bestanden in GitHub](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/quickstart/v11/AzureSearchQuickstart-v11).
 
-In de clientbibliotheek van Azure.Search.Documents kunt u velddefinities stroomlijnen met behulp van de velden [SearchableField](/dotnet/api/azure.search.documents.indexes.models.searchablefield) en [SimpleField](/dotnet/api/azure.search.documents.indexes.models.simplefield). Beide zijn afgeleiden van een [SearchField](/dotnet/api/azure.search.documents.indexes.models.searchfield) en kunnen uw code vereenvoudigen:
+1. Maak in **Program.cs** een [SearchIndex](/dotnet/api/azure.search.documents.indexes.models.searchindex)-object en roep vervolgens de methode [CreateIndex](/dotnet/api/azure.search.documents.indexes.searchindexclient.createindex) aan om de index uit te drukken in uw zoekservice. De index bevat ook een [SearchSuggester](/dotnet/api/azure.search.documents.indexes.models.searchsuggester) om automatisch aanvullen in te schakelen voor de opgegeven velden.
 
-+ `SimpleField` kan elk gegevenstype zijn, is altijd niet-doorzoekbaar (wordt genegeerd voor zoekopdrachten in volledige tekst) en kan worden opgehaald (is niet verborgen). Andere kenmerken zijn standaard uitgeschakeld, maar kunnen wel worden ingeschakeld. U kunt een `SimpleField` gebruiken voor document-id's of velden die alleen worden gebruikt in filters, facetten of scoreprofielen. Als dat het geval is, moet u ervoor zorgen dat u alle kenmerken toepast die nodig zijn voor het scenario, zoals `IsKey = true` voor een document-id. Zie [SimpleFieldAttribute.cs](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Azure.Search.Documents/src/Indexes/SimpleFieldAttribute.cs) in broncode voor meer informatie.
+   ```csharp
+    // Create hotels-quickstart index
+    private static void CreateIndex(string indexName, SearchIndexClient adminClient)
+    {
+        FieldBuilder fieldBuilder = new FieldBuilder();
+        var searchFields = fieldBuilder.Build(typeof(Hotel));
 
-+ `SearchableField` moet een tekenreeks zijn die altijd kan worden doorzocht en opgehaald. Andere kenmerken zijn standaard uitgeschakeld, maar kunnen wel worden ingeschakeld. Omdat dit veldtype kan worden doorzocht, worden synoniemen en het volledige gamma van analyse-eigenschappen ondersteund. Zie [SearchableFieldAttribute.cs](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Azure.Search.Documents/src/Indexes/SearchableFieldAttribute.cs) in broncode voor meer informatie.
+        var definition = new SearchIndex(indexName, searchFields);
 
-Ongeacht of u de basis-API van `SearchField` of een van de hulpmodellen gebruikt, u moet filter-, facet- en sorteerkenmerken expliciet inschakelen. Bijvoorbeeld [IsFilterable](/dotnet/api/azure.search.documents.indexes.models.searchfield.isfilterable), [IsSortable](/dotnet/api/azure.search.documents.indexes.models.searchfield.issortable)en [IsFacetable](/dotnet/api/azure.search.documents.indexes.models.searchfield.isfacetable) moet expliciet worden voorzien van een kenmerk, zoals weergegeven in het bovenstaande voorbeeld. 
+        var suggester = new SearchSuggester("sg", new[] { "HotelName", "Category", "Address/City", "Address/StateProvince" });
+        definition.Suggesters.Add(suggester);
+
+        adminClient.CreateOrUpdateIndex(definition);
+    }
+   ```
 
 <a name="load-documents"></a>
 
@@ -171,28 +217,127 @@ Ongeacht of u de basis-API van `SearchField` of een van de hulpmodellen gebruikt
 
 Azure Cognitive Search doorzoekt inhoud die in de service is opgeslagen. In deze stap laadt u JSON-documenten die overeenkomen met de hotelindex die u zojuist hebt gemaakt.
 
-In Azure Cognitive Search zijn zoekdocumenten gegevensstructuren die zowel de invoer van indexeringen als de uitvoer van query's zijn. Als u de documenten hebt verkregen via een externe gegevensbron, bestaat de documentinvoer mogelijk uit rijen in een database, blobs in Blob Storage of JSON-documenten op een schijf. In dit voorbeeld nemen we de korte route en gaan we JSON-documenten voor vijf hotels in de code zelf insluiten. 
+In Azure Cognitive Search zijn zoekdocumenten gegevensstructuren die zowel de invoer van indexeringen als de uitvoer van query's zijn. Als u de documenten hebt verkregen via een externe gegevensbron, bestaat de documentinvoer mogelijk uit rijen in een database, blobs in Blob Storage of JSON-documenten op een schijf. In dit voorbeeld nemen we de korte route en gaan we JSON-documenten voor vier hotels in de code zelf insluiten. 
 
 Bij het uploaden van documenten moet u een [IndexDocumentsBatch](/dotnet/api/azure.search.documents.models.indexdocumentsbatch-1)-object gebruiken. Een `IndexDocumentsBatch`-object bevat een verzameling [acties](/dotnet/api/azure.search.documents.models.indexdocumentsbatch-1.actions), die elk een document en een eigenschap bevat waarmee Azure Cognitive Search wordt aangestuurd om een actie uit te voeren ([uploaden, samenvoegen, verwijderen en mergeOrUpload](search-what-is-data-import.md#indexing-actions)).
 
-1. In **Program.cs** maakt u een matrix met documenten en indexacties en vervolgens geeft u de matrix door aan `IndexDocumentsBatch`. De documenten hieronder voldoen aan de index hotel-quickstart-v11, zoals gedefinieerd door de hotelklasse.
+1. In **Program.cs** maakt u een matrix met documenten en indexacties en vervolgens geeft u de matrix door aan `IndexDocumentsBatch`. De documenten hieronder voldoen aan de index hotel-quickstart, zoals gedefinieerd door de hotelklasse.
 
     ```csharp
-    // Load documents (using a subset of fields for brevity)
-    IndexDocumentsBatch<Hotel> batch = IndexDocumentsBatch.Create(
-        IndexDocumentsAction.Upload(new Hotel { Id = "78", Name = "Upload Inn", Category = "hotel", Rate = 279, Updated = new DateTime(2018, 3, 1, 7, 0, 0) }),
-        IndexDocumentsAction.Upload(new Hotel { Id = "54", Name = "Breakpoint by the Sea", Category = "motel", Rate = 162, Updated = new DateTime(2015, 9, 12, 7, 0, 0) }),
-        IndexDocumentsAction.Upload(new Hotel { Id = "39", Name = "Debug Motel", Category = "motel", Rate = 159, Updated = new DateTime(2016, 11, 11, 7, 0, 0) }),
-        IndexDocumentsAction.Upload(new Hotel { Id = "48", Name = "NuGet Hotel", Category = "hotel", Rate = 238, Updated = new DateTime(2016, 5, 30, 7, 0, 0) }),
-        IndexDocumentsAction.Upload(new Hotel { Id = "12", Name = "Renovated Ranch", Category = "motel", Rate = 149, Updated = new DateTime(2020, 1, 24, 7, 0, 0) }));
+    // Upload documents in a single Upload request.
+    private static void UploadDocuments(SearchClient searchClient)
+    {
+        IndexDocumentsBatch<Hotel> batch = IndexDocumentsBatch.Create(
+            IndexDocumentsAction.Upload(
+                new Hotel()
+                {
+                    HotelId = "1",
+                    HotelName = "Secret Point Motel",
+                    Description = "The hotel is ideally located on the main commercial artery of the city in the heart of New York. A few minutes away is Time's Square and the historic centre of the city, as well as other places of interest that make New York one of America's most attractive and cosmopolitan cities.",
+                    DescriptionFr = "L'hôtel est idéalement situé sur la principale artère commerciale de la ville en plein cœur de New York. A quelques minutes se trouve la place du temps et le centre historique de la ville, ainsi que d'autres lieux d'intérêt qui font de New York l'une des villes les plus attractives et cosmopolites de l'Amérique.",
+                    Category = "Boutique",
+                    Tags = new[] { "pool", "air conditioning", "concierge" },
+                    ParkingIncluded = false,
+                    LastRenovationDate = new DateTimeOffset(1970, 1, 18, 0, 0, 0, TimeSpan.Zero),
+                    Rating = 3.6,
+                    Address = new Address()
+                    {
+                        StreetAddress = "677 5th Ave",
+                        City = "New York",
+                        StateProvince = "NY",
+                        PostalCode = "10022",
+                        Country = "USA"
+                    }
+                }),
+            IndexDocumentsAction.Upload(
+                new Hotel()
+                {
+                    HotelId = "2",
+                    HotelName = "Twin Dome Motel",
+                    Description = "The hotel is situated in a  nineteenth century plaza, which has been expanded and renovated to the highest architectural standards to create a modern, functional and first-class hotel in which art and unique historical elements coexist with the most modern comforts.",
+                    DescriptionFr = "L'hôtel est situé dans une place du XIXe siècle, qui a été agrandie et rénovée aux plus hautes normes architecturales pour créer un hôtel moderne, fonctionnel et de première classe dans lequel l'art et les éléments historiques uniques coexistent avec le confort le plus moderne.",
+                    Category = "Boutique",
+                    Tags = new[] { "pool", "free wifi", "concierge" },
+                    ParkingIncluded = false,
+                    LastRenovationDate = new DateTimeOffset(1979, 2, 18, 0, 0, 0, TimeSpan.Zero),
+                    Rating = 3.60,
+                    Address = new Address()
+                    {
+                        StreetAddress = "140 University Town Center Dr",
+                        City = "Sarasota",
+                        StateProvince = "FL",
+                        PostalCode = "34243",
+                        Country = "USA"
+                    }
+                }),
+            IndexDocumentsAction.Upload(
+                new Hotel()
+                {
+                    HotelId = "3",
+                    HotelName = "Triple Landscape Hotel",
+                    Description = "The Hotel stands out for its gastronomic excellence under the management of William Dough, who advises on and oversees all of the Hotel’s restaurant services.",
+                    DescriptionFr = "L'hôtel est situé dans une place du XIXe siècle, qui a été agrandie et rénovée aux plus hautes normes architecturales pour créer un hôtel moderne, fonctionnel et de première classe dans lequel l'art et les éléments historiques uniques coexistent avec le confort le plus moderne.",
+                    Category = "Resort and Spa",
+                    Tags = new[] { "air conditioning", "bar", "continental breakfast" },
+                    ParkingIncluded = true,
+                    LastRenovationDate = new DateTimeOffset(2015, 9, 20, 0, 0, 0, TimeSpan.Zero),
+                    Rating = 4.80,
+                    Address = new Address()
+                    {
+                        StreetAddress = "3393 Peachtree Rd",
+                        City = "Atlanta",
+                        StateProvince = "GA",
+                        PostalCode = "30326",
+                        Country = "USA"
+                    }
+                }),
+            IndexDocumentsAction.Upload(
+                new Hotel()
+                {
+                    HotelId = "4",
+                    HotelName = "Sublime Cliff Hotel",
+                    Description = "Sublime Cliff Hotel is located in the heart of the historic center of Sublime in an extremely vibrant and lively area within short walking distance to the sites and landmarks of the city and is surrounded by the extraordinary beauty of churches, buildings, shops and monuments. Sublime Cliff is part of a lovingly restored 1800 palace.",
+                    DescriptionFr = "Le sublime Cliff Hotel est situé au coeur du centre historique de sublime dans un quartier extrêmement animé et vivant, à courte distance de marche des sites et monuments de la ville et est entouré par l'extraordinaire beauté des églises, des bâtiments, des commerces et Monuments. Sublime Cliff fait partie d'un Palace 1800 restauré avec amour.",
+                    Category = "Boutique",
+                    Tags = new[] { "concierge", "view", "24-hour front desk service" },
+                    ParkingIncluded = true,
+                    LastRenovationDate = new DateTimeOffset(1960, 2, 06, 0, 0, 0, TimeSpan.Zero),
+                    Rating = 4.60,
+                    Address = new Address()
+                    {
+                        StreetAddress = "7400 San Pedro Ave",
+                        City = "San Antonio",
+                        StateProvince = "TX",
+                        PostalCode = "78216",
+                        Country = "USA"
+                    }
+                })
+            );
 
-    IndexDocumentsOptions idxoptions = new IndexDocumentsOptions { ThrowOnAnyError = true };
-
-    Console.WriteLine("{0}", "Loading index...\n");
-    srchclient.IndexDocuments(batch, idxoptions);
+        try
+        {
+            IndexDocumentsResult result = searchClient.IndexDocuments(batch);
+        }
+        catch (Exception)
+        {
+            // If for some reason any documents are dropped during indexing, you can compensate by delaying and
+            // retrying. This simple demo just logs the failed document keys and continues.
+            Console.WriteLine("Failed to index some of the documents: {0}");
+        }
+    }
     ```
 
     Nadat u het [IndexDocumentsBatch](/dotnet/api/azure.search.documents.models.indexdocumentsbatch-1)-object hebt geïnitialiseerd, kunt u het naar de index sturen door [IndexDocuments](/dotnet/api/azure.search.documents.searchclient.indexdocuments) aan te roepen op uw [SearchClient](/dotnet/api/azure.search.documents.searchclient)-object.
+
+1. Voeg de volgende regels toe aan Main(). Documenten worden geladen met SearchClient, maar voor de bewerking zijn ook beheerdersrechten op de service vereist, die meestal is gekoppeld aan SearchIndexClient. Een manier om deze bewerking in te stellen is het ophalen van SearchClient via SearchIndexClient (adminClient in dit voorbeeld).
+
+   ```csharp
+    SearchClient ingesterClient = adminClient.GetSearchClient(indexName);
+
+    // Load documents
+    Console.WriteLine("{0}", "Uploading documents...\n");
+    UploadDocuments(ingesterClient);
+   ```
 
 1. Omdat dit een console-app is waarmee alle opdrachten opeenvolgend worden uitgevoerd, moet u een wachttijd van 2 seconden tussen indexeren en query's toevoegen.
 
@@ -212,80 +357,139 @@ In deze sectie worden twee functies toegevoegd: querylogica en resultaten. Gebru
 
 De [SearchResults](/dotnet/api/azure.search.documents.models.searchresults-1)-klasse vertegenwoordigt de resultaten.
 
-1. In **Program.cs** maakt u een WriteDocuments-methode waarmee zoekresultaten op de console worden afgedrukt.
+1. Maak in **Program.cs** een **WriteDocuments**-methode waarmee zoekresultaten op de console worden afgedrukt.
 
     ```csharp
+    // Write search results to console
     private static void WriteDocuments(SearchResults<Hotel> searchResults)
     {
-        foreach (SearchResult<Hotel> response in searchResults.GetResults())
+        foreach (SearchResult<Hotel> result in searchResults.GetResults())
         {
-            Hotel doc = response.Document;
-            var score = response.Score;
-            Console.WriteLine($"Name: {doc.Name}, Type: {doc.Category}, Rate: {doc.Rate}, Last-update: {doc.Updated}, Score: {score}");
+            Console.WriteLine(result.Document);
         }
 
         Console.WriteLine();
     }
     ```
 
-1. Maak een RunQueries-methode om query's uit te voeren en resultaten te retourneren. Resultaten zijn Hotel-objecten.
+1. Maak een **RunQueries**-methode om query's uit te voeren en resultaten te retourneren. Resultaten zijn Hotel-objecten. In dit voorbeeld ziet u de handtekening en de eerste query van de methode. Deze query demonstreert de Select-parameter waarmee u het resultaat kunt samenstellen met behulp van geselecteerde velden uit het document.
 
     ```csharp
+    // Run queries, use WriteDocuments to print output
     private static void RunQueries(SearchClient srchclient)
     {
         SearchOptions options;
         SearchResults<Hotel> response;
 
-        Console.WriteLine("Query #1: Search on the term 'motel' and list the relevance score for each match...\n");
+        Console.WriteLine("Query #1: Search on empty term '*' to return all documents, showing a subset of fields...\n");
 
         options = new SearchOptions()
         {
+            IncludeTotalCount = true,
             Filter = "",
             OrderBy = { "" }
         };
 
-        response = srchclient.Search<Hotel>("motel", options);
-        WriteDocuments(response);
-
-        Console.WriteLine("Query #2: Find hotels where 'type' equals hotel...\n");
-
-        options = new SearchOptions()
-        {
-            Filter = "hotelCategory eq 'hotel'",
-        };
+        options.Select.Add("HotelId");
+        options.Select.Add("HotelName");
+        options.Select.Add("Address/City");
 
         response = srchclient.Search<Hotel>("*", options);
         WriteDocuments(response);
+        ```
 
-        Console.WriteLine("Query #3: Filter on rates less than $200 and sort by when the hotel was last updated...\n");
-
-        options = new SearchOptions()
-        {
-            Filter = "baseRate lt 200",
-            OrderBy = { "lastRenovationDate desc" }
-        };
-
-        response = srchclient.Search<Hotel>("*", options);
-        WriteDocuments(response);
-    }
-    ```
-
-1. Voeg RunQueries toe aan `Main()`.
+1. In the second query, search on a term, add a filter that selects documents where Rating is greater than 4, and then sort by Rating in descending order. Filter is a boolean expression that is evaluated over [IsFilterable](/dotnet/api/azure.search.documents.indexes.models.searchfield.isfilterable) fields in an index. Filter queries either include or exclude values. As such, there is no relevance score associated with a filter query. 
 
     ```csharp
-    Console.WriteLine("Starting queries...\n");
-    RunQueries(srchclient);
+    Console.WriteLine("Query #2: Search on 'hotels', filter on 'Rating gt 4', sort by Rating in descending order...\n");
+
+    options = new SearchOptions()
+    {
+        Filter = "Rating gt 4",
+        OrderBy = { "Rating desc" }
+    };
+
+    options.Select.Add("HotelId");
+    options.Select.Add("HotelName");
+    options.Select.Add("Rating");
+
+    response = srchclient.Search<Hotel>("hotels", options);
+    WriteDocuments(response);
     ```
 
-Er zijn twee [manieren om termen in een query te vergelijken](search-query-overview.md#types-of-queries): zoeken op volledige tekst en filters:
+1. De derde query demonstreert searchFields, die wordt gebruikt om een zoekbewerking in volledige tekst naar specifieke velden te bepalen.
 
-+ Een query naar volledige tekst zoekt naar een of meer termen in doorzoekbare velden in uw index. De eerste query zoekt naar volledige tekst. Zoeken naar volledige tekst produceert relevantiescores die worden gebruikt om de resultaten te rangschikken.
+    ```csharp
+    Console.WriteLine("Query #3: Limit search to specific fields (pool in Tags field)...\n");
 
-+ Een filter is een Booleaanse uitdrukking die wordt geëvalueerd over [IsFilterable](/dotnet/api/azure.search.documents.indexes.models.searchfield.isfilterable)-velden in een index. Filterquery's bevatten waarden of sluiten ze uit. Daarom is er geen relevantiescore gekoppeld aan een filterquery. De laatste twee query's tonen het zoeken met filters.
+    options = new SearchOptions()
+    {
+        SearchFields = { "Tags" }
+    };
 
-U kunt zoeken op volledige tekst en filters samen of afzonderlijk gebruiken.
+    options.Select.Add("HotelId");
+    options.Select.Add("HotelName");
+    options.Select.Add("Tags");
 
-Zoekopdrachten en filters worden uitgevoerd met behulp van de methode [SearchClient.Search](/dotnet/api/azure.search.documents.searchclient.search). Een zoekquery kan worden doorgegeven in de `searchText`-tekenreeks, terwijl een filterexpressie kan worden doorgegeven in de eigenschap [Filter](/dotnet/api/azure.search.documents.searchoptions.filter) van de klasse [Search Options](/dotnet/api/azure.search.documents.searchoptions). Als u wilt filteren zonder te zoeken, geeft u `"*"` door voor de `searchText`-parameter van de [Zoekmethode](/dotnet/api/azure.search.documents.searchclient.search). Om te zoeken zonder te filteren, stelt u de eigenschap `Filter` niet in of geeft u niet door aan een `SearchOptions`-instantie.
+    response = srchclient.Search<Hotel>("pool", options);
+    WriteDocuments(response);
+    ```
+
+1. De vierde query demonstreert facetten, die kunnen worden gebruikt voor het structureren van een facetnavigatiestructuur. 
+
+   ```csharp
+    Console.WriteLine("Query #4: Facet on 'Category'...\n");
+
+    options = new SearchOptions()
+    {
+        Filter = ""
+    };
+
+    options.Facets.Add("Category");
+
+    options.Select.Add("HotelId");
+    options.Select.Add("HotelName");
+    options.Select.Add("Category");
+
+    response = srchclient.Search<Hotel>("*", options);
+    WriteDocuments(response);
+   ```
+
+1. In de vijfde query retourneert u een specifiek document. Een zoekbewerking voor een document is een typisch antwoord op een OnClick-gebeurtenis in een resultatenset.
+
+   ```csharp
+    Console.WriteLine("Query #5: Look up a specific document...\n");
+
+    Response<Hotel> lookupResponse;
+    lookupResponse = srchclient.GetDocument<Hotel>("3");
+
+    Console.WriteLine(lookupResponse.Value.HotelId);
+   ```
+
+1. De laatste query toont de syntaxis voor automatisch aanvullen, waarbij een gedeeltelijke gebruikersinvoer van 'sa' wordt gesimuleerd die wordt omgezet in twee mogelijke overeenkomsten in de sourceFields die zijn gekoppeld aan de suggester die u in de index hebt gedefinieerd.
+
+   ```csharp
+    Console.WriteLine("Query #6: Call Autocomplete on HotelName that starts with 'sa'...\n");
+
+    var autoresponse = srchclient.Autocomplete("sa", "sg");
+    WriteDocuments(autoresponse);
+   ```
+
+1. Voeg **RunQueries** toe aan Main().
+
+    ```csharp
+    // Call the RunQueries method to invoke a series of queries
+    Console.WriteLine("Starting queries...\n");
+    RunQueries(srchclient);
+
+    // End the program
+    Console.WriteLine("{0}", "Complete. Press any key to end this program...\n");
+    Console.ReadKey();
+    ```
+
+De vorige query's tonen meerdere [manieren om termen in een query te koppelen](search-query-overview.md#types-of-queries): zoekopdracht in volledige tekst, filters en automatisch aanvullen.
+
+Zoekopdrachten in volledige tekst en filters worden uitgevoerd met behulp van de methode [SearchClient.Search](/dotnet/api/azure.search.documents.searchclient.search). Een zoekquery kan worden doorgegeven in de `searchText`-tekenreeks, terwijl een filterexpressie kan worden doorgegeven in de eigenschap [Filter](/dotnet/api/azure.search.documents.searchoptions.filter) van de klasse [Search Options](/dotnet/api/azure.search.documents.searchoptions). Als u wilt filteren zonder te zoeken, geeft u `"*"` door voor de `searchText`-parameter van de [Zoekmethode](/dotnet/api/azure.search.documents.searchclient.search). Om te zoeken zonder te filteren, stelt u de eigenschap `Filter` niet in of geeft u niet door aan een `SearchOptions`-instantie.
 
 ## <a name="run-the-program"></a>Het programma uitvoeren
 

@@ -1,123 +1,212 @@
 ---
-title: 'Quickstart: Azure Service Bus-wachtrijen gebruiken met Python'
-description: In dit artikel wordt beschreven hoe u met Python berichten maakt en deze verzendt naar en ontvangt van Azure Service Bus-wachtrijen.
+title: Azure Service Bus-wachtrijen met Azure Service Bus-pakketversie 7.0.0 voor Python gebruiken
+description: In dit artikel wordt beschreven hoe u met Python berichten verzendt naar en ontvangt van Azure Service Bus-wachtrijen.
 author: spelluru
 documentationcenter: python
 ms.devlang: python
 ms.topic: quickstart
-ms.date: 06/23/2020
+ms.date: 11/18/2020
 ms.author: spelluru
 ms.custom: seo-python-october2019, devx-track-python
-ms.openlocfilehash: a09f20b2c392dbf219750a76e9570239227dc865
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 2b54b167413b0fcbe7022eab4bbbf34b37225be5
+ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89458558"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95810583"
 ---
-# <a name="quickstart-use-azure-service-bus-queues-with-python"></a>Quickstart: Azure Service Bus-wachtrijen gebruiken met Python
-
-[!INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
-
-In dit artikel wordt beschreven hoe u met Python berichten maakt en deze verzendt naar en ontvangt van Azure Service Bus-wachtrijen. 
-
-Zie [Service Bus-bibliotheken voor Python](/python/api/overview/azure/servicebus?view=azure-python) voor meer informatie over de Azure Service Bus-bibliotheken voor Python.
+# <a name="send-messages-to-and-receive-messages-from-azure-service-bus-queues-python"></a>Berichten verzenden naar en berichten ontvangen van Azure Service Bus-wachtrijen (Python)
+In dit artikel wordt beschreven hoe u met Python berichten verzendt naar en ontvangt van Azure Service Bus-wachtrijen. 
 
 ## <a name="prerequisites"></a>Vereisten
 - Een Azure-abonnement. U kunt uw [voordelen als Visual Studio- of MSDN-abonnee activeren](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) of u aanmelden voor een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
-- Een Service Bus-naamruimte, gemaakt door de stappen in [Quickstart: Met Azure Portal een Service Bus-onderwerp en -abonnementen maken](service-bus-quickstart-topics-subscriptions-portal.md) uit te voeren. Kopieer de primaire verbindingstekenreeks in het scherm **Beleid voor gedeelde toegang**, zodat u deze later in dit artikel kunt gebruiken. 
-- Python 3.4x of hoger, met het [Python Azure Service Bus][Python Azure Service Bus package]-pakket geïnstalleerd. Zie de [Python-installatiehandleiding](/azure/developer/python/azure-sdk-install) voor meer informatie. 
-
-## <a name="create-a-queue"></a>Een wachtrij maken
-
-Met een object **ServiceBusClient** kunt u wachtrijen gebruiken. Als u via programmacode toegang wilt krijgen tot Service Bus, voegt u de volgende regel toe bovenaan het Python-bestand:
-
-```python
-from azure.servicebus import ServiceBusClient
-```
-
-Voeg de volgende code toe om een object **ServiceBusClient** te maken. Vervang `<connectionstring>` door de waarde voor de primaire verbindingstekenreeks voor Service Bus. U vindt deze waarde onder **Beleid voor gedeelde toegang** in uw Service Bus-naamruimte in [Azure Portal][Azure portal].
-
-```python
-sb_client = ServiceBusClient.from_connection_string('<connectionstring>')
-```
-
-De volgende code maakt gebruik van de methode `create_queue` van het object **ServiceBusClient** om een wachtrij met de naam `taskqueue` met standaardinstellingen te maken:
-
-```python
-sb_client.create_queue("taskqueue")
-```
-
-U kunt opties gebruiken om de standaardinstellingen voor de wachtrij te overschrijven, zoals de levensduur van het bericht (TTL of Time to Live) of de maximumgrootte van het onderwerp. Met de volgende code wordt een wachtrij met de naam `taskqueue` gemaakt met een maximale wachtrijgrootte van 5 GB en TTL-waarde van 1 minuut:
-
-```python
-sb_client.create_queue("taskqueue", max_size_in_megabytes=5120,
-                       default_message_time_to_live=datetime.timedelta(minutes=1))
-```
+- Als u geen wachtrij hebt om te gebruiken, volgt u de stappen in het artikel [De Azure-portal gebruiken om een Service Bus-wachtrij te maken](service-bus-quickstart-portal.md) om een wachtrij te maken. Noteer de **verbindingsreeks** voor uw Service Bus-naamruimte en de naam van de **wachtrij** die u hebt gemaakt.
+- Python 2.7 of hoger, met het [Python Azure Service Bus](https://pypi.python.org/pypi/azure-servicebus)-pakket geïnstalleerd. Raadpleeg de [Python-installatiehandleiding](/azure/developer/python/azure-sdk-install) voor meer informatie. 
 
 ## <a name="send-messages-to-a-queue"></a>Berichten verzenden naar een wachtrij
 
-Om een bericht te verzenden naar een Service Bus-wachtrij, wordt door de app de methode `send` in het object **ServiceBusClient** aangeroepen. In het volgende codevoorbeeld wordt een wachtrijclient gemaakt en wordt een testbericht verzonden naar de wachtrij `taskqueue`. Vervang `<connectionstring>` door de waarde voor de primaire verbindingstekenreeks voor Service Bus. 
+1. Voeg de volgende importeerinstructie toe. 
 
-```python
-from azure.servicebus import QueueClient, Message
+    ```python
+    from azure.servicebus import ServiceBusClient, ServiceBusMessage
+    ```
+2. Voeg de volgende constanten toe. 
 
-# Create the QueueClient
-queue_client = QueueClient.from_connection_string("<connectionstring>", "taskqueue")
+    ```python
+    CONNECTION_STR = "<NAMESPACE CONNECTION STRING>"
+    QUEUE_NAME = "<QUEUE NAME>"
+    ```
 
-# Send a test message to the queue
-msg = Message(b'Test Message')
-queue_client.send(msg)
-```
+    > [!IMPORTANT]
+    > - Vervang `<NAMESPACE CONNECTION STRING>` door de verbindingstekenreeks voor uw Service Bus-naamruimte.
+    > - Vervang `<QUEUE NAME>` door de naam van het wachtrij. 
+3. Voeg een methode voor het verzenden van één bericht toe.
 
-### <a name="message-size-limits-and-quotas"></a>Limieten en quota voor berichtgrootten
+    ```python
+    def send_single_message(sender):
+        # create a Service Bus message
+        message = ServiceBusMessage("Single Message")
+        # send the message to the queue
+        sender.send_messages(message)
+        print("Sent a single message")
+    ```
 
-Service Bus-wachtrijen ondersteunen een maximale berichtgrootte van 256 kB in de [Standard-laag](service-bus-premium-messaging.md) en 1 MB in de [Premium-laag](service-bus-premium-messaging.md). De koptekst, die de standaard- en aangepaste toepassingseigenschappen bevat, kan maximaal 64 kB groot zijn. Er is geen limiet voor het aantal berichten dat een wachtrij kan bevatten, maar er is een limiet voor de totale grootte van de berichten die de wachtrij kan bevatten. U kunt tijdens het maken van de wachtrij de wachtrijgrootte definiëren, met een bovengrens van 5 GB. 
+    De afzender is een object dat fungeert als een client voor de wachtrij dat u hebt gemaakt. U maakt en verzendt deze later als een argument voor deze functie. 
+4. Voeg een methode voor het verzenden van een lijst met berichten toe.
 
-Zie [Service Bus-quota][Service Bus quotas] voor meer informatie over quota.
+    ```python
+    def send_a_list_of_messages(sender):
+        # create a list of messages
+        messages = [ServiceBusMessage("Message in list") for _ in range(5)]
+        # send the list of messages to the queue
+        sender.send_messages(messages)
+        print("Sent a list of 5 messages")
+    ```
+5. Voeg een methode voor het verzenden van een batch met berichten toe.
 
+    ```python
+    def send_batch_message(sender):
+        # create a batch of messages
+        batch_message = sender.create_message_batch()
+        for _ in range(10):
+            try:
+                # add a message to the batch
+                batch_message.add_message(ServiceBusMessage("Message inside a ServiceBusMessageBatch"))
+            except ValueError:
+                # ServiceBusMessageBatch object reaches max_size.
+                # New ServiceBusMessageBatch object can be created here to send more data.
+                break
+        # send the batch of messages to the queue
+        sender.send_messages(batch_message)
+        print("Sent a batch of 10 messages")
+    ```
+6. Maak een Service Bus-client en vervolgens een object voor de afzender van de wachtrij om berichten te verzenden.
+
+    ```python
+    # create a Service Bus client using the connection string
+    servicebus_client = ServiceBusClient.from_connection_string(conn_str=CONNECTION_STR, logging_enable=True)
+    with servicebus_client:
+        # get a Queue Sender object to send messages to the queue
+        sender = servicebus_client.get_queue_sender(queue_name=QUEUE_NAME)
+        with sender:
+            # send one message        
+            send_single_message(sender)
+            # send a list of messages
+            send_a_list_of_messages(sender)
+            # send a batch of messages
+            send_batch_message(sender)
+    
+    print("Done sending messages")
+    print("-----------------------")
+    ```
+ 
 ## <a name="receive-messages-from-a-queue"></a>Berichten van een wachtrij ontvangen
-
-De wachtrijclient ontvangt berichten van een wachtrij met behulp van de methode `get_receiver` in het object **ServiceBusClient**. Met het volgende codevoorbeeld wordt een wachtrijclient gemaakt en wordt een bericht ontvangen van de wachtrij `taskqueue`. Vervang `<connectionstring>` door de waarde voor de primaire verbindingstekenreeks voor Service Bus. 
+Voeg de volgende code toe achter de afdrukinstructie. Deze code ontvangt voortdurend nieuwe berichten totdat er geen nieuwe berichten meer worden ontvangen gedurende 5 seconden (`max_wait_time`). 
 
 ```python
-from azure.servicebus import QueueClient
-
-# Create the QueueClient
-queue_client = QueueClient.from_connection_string("<connectionstring>", "taskqueue")
-
-# Receive the message from the queue
-with queue_client.get_receiver() as queue_receiver:
-    messages = queue_receiver.fetch_next(timeout=3)
-    for message in messages:
-        print(message)
-        message.complete()
+with servicebus_client:
+    # get the Queue Receiver object for the queue
+    receiver = servicebus_client.get_queue_receiver(queue_name=QUEUE_NAME, max_wait_time=5)
+    with receiver:
+        for msg in receiver:
+            print("Received: " + str(msg))
+            # complete the message so that the message is removed from the queue
+            receiver.complete_message(msg)
 ```
 
-### <a name="use-the-peek_lock-parameter"></a>De parameter peek_lock gebruiken
+## <a name="full-code"></a>Volledige code
 
-Met de optionele parameter `peek_lock` van `get_receiver` wordt bepaald of Service Bus berichten verwijdert uit de wachtrij wanneer ze worden gelezen. De standaardmodus voor het ontvangen van berichten is *PeekLock*, of `peek_lock` ingesteld op **Waar**. Hierbij worden berichten gelezen (peek) en vergrendeld zonder dat deze uit de wachtrij worden verwijderd. Elk bericht moet vervolgens expliciet worden voltooid om het uit de wachtrij te verwijderen.
+```python
+# import os
+from azure.servicebus import ServiceBusClient, ServiceBusMessage
 
-Als u berichten uit de wachtrij wilt verwijderen wanneer ze worden gelezen, kunt u de parameter `peek_lock` van `get_receiver` instellen op **Onwaar**. Berichten verwijderen als onderdeel van de bewerking voor ontvangen is het eenvoudigste model, maar werkt alleen als de app toelaat dat berichten ontbreken als er een fout optreedt. Neem bijvoorbeeld een scenario waarin de verwerkende app een ontvangstaanvraag indient en vervolgens vastloopt voordat het bericht wordt verwerkt. Als het bericht bij ontvangst is verwijderd en de app opnieuw wordt gestart en opnieuw berichten gaat verwerken, heeft deze het bericht gemist dat het heeft ontvangen vóór het vastlopen.
+CONNECTION_STR = "<NAMESPACE CONNECTION STRING>"
+QUEUE_NAME = "<QUEUE NAME>"
 
-Als uw app het niet toelaat dat berichten worden gemist, bestaat het ontvangen uit twee fasen. PeekLock zoekt naar het volgende bericht dat moet worden verwerkt, vergrendelt dit om te voorkomen dat andere verwerkende apps het ontvangen en retourneert het bericht vervolgens naar de app. Nadat het bericht is verwerkt of opgeslagen, voltooit de app de tweede fase van het ontvangstproces door de methode `complete` in het object **Message** aan te roepen.  Met de methode `complete` wordt het bericht gemarkeerd als verwerkt en wordt het uit de wachtrij verwijderd.
+def send_single_message(sender):
+    message = ServiceBusMessage("Single Message")
+    sender.send_messages(message)
+    print("Sent a single message")
 
-## <a name="handle-application-crashes-and-unreadable-messages"></a>Het vastlopen van de app en onleesbare berichten afhandelen
+def send_a_list_of_messages(sender):
+    messages = [ServiceBusMessage("Message in list") for _ in range(5)]
+    sender.send_messages(messages)
+    print("Sent a list of 5 messages")
 
-Service Bus biedt functionaliteit om netjes te herstellen bij fouten in uw toepassing of problemen bij het verwerken van een bericht. Als een ontvangende app een bericht om de een of andere reden niet kan verwerken, kan deze de methode `unlock` in het object **Message** aanroepen. Service Bus ontgrendelt het bericht in de wachtrij en maakt het beschikbaar, zodat het opnieuw kan worden ontvangen, ofwel door dezelfde of door een andere verwerkende app.
+def send_batch_message(sender):
+    batch_message = sender.create_message_batch()
+    for _ in range(10):
+        try:
+            batch_message.add_message(ServiceBusMessage("Message inside a ServiceBusMessageBatch"))
+        except ValueError:
+            # ServiceBusMessageBatch object reaches max_size.
+            # New ServiceBusMessageBatch object can be created here to send more data.
+            break
+    sender.send_messages(batch_message)
+    print("Sent a batch of 10 messages")
 
-Er is ook een time-out voor berichten die in de wachtrij zijn vergrendeld. Als een app een bericht niet kan verwerken voordat de time-out voor vergrendeling verloopt, bijvoorbeeld als de app vastloopt, dan ontgrendelt Service Bus automatisch het bericht en maakt het dit beschikbaar, zodat het weer kan worden ontvangen.
+servicebus_client = ServiceBusClient.from_connection_string(conn_str=CONNECTION_STR, logging_enable=True)
 
-Als een app vastloopt na het verwerken van een bericht, maar voordat deze de methode `complete` aanroept, wordt het bericht opnieuw bij de app bezorgd wanneer deze opnieuw wordt gestart. Deze werkwijze wordt ook wel *Ten minste één keer verwerken* genoemd. Elk bericht wordt ten minste één keer verwerkt, maar in bepaalde situaties kan hetzelfde bericht opnieuw worden bezorgd. Als uw situatie geen dubbele verwerking toelaat, kunt u de eigenschap **MessageId** van het bericht gebruiken, die constant blijft tijdens de bezorgingspogingen, om dubbele berichtbezorging te verwerken. 
+with servicebus_client:
+    sender = servicebus_client.get_queue_sender(queue_name=QUEUE_NAME)
+    with sender:
+        send_single_message(sender)
+        send_a_list_of_messages(sender)
+        send_batch_message(sender)
 
-> [!TIP]
-> U kunt resources van Service Bus beheren met [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer/). Met Service Bus Explorer kunt u verbinding maken met een Service Bus-naamruimte en berichtenentiteiten eenvoudig beheren. Het hulpprogramma biedt geavanceerde functies zoals functionaliteit voor importeren/exporteren en de mogelijkheid om onderwerpen, wachtrijen, abonnementen, relayservices, notification hubs en event hubs te testen.
+print("Done sending messages")
+print("-----------------------")
+
+with servicebus_client:
+    receiver = servicebus_client.get_queue_receiver(queue_name=QUEUE_NAME, max_wait_time=5)
+    with receiver:
+        for msg in receiver:
+            print("Received: " + str(msg))
+            receiver.complete_message(msg)
+```
+
+## <a name="run-the-app"></a>De app uitvoeren
+Wanneer u de toepassing uitvoert, wordt de volgende uitvoer weergegeven: 
+
+```console
+Sent a single message
+Sent a list of 5 messages
+Sent a batch of 10 messages
+Done sending messages
+-----------------------
+Received: Single Message
+Received: Message in list
+Received: Message in list
+Received: Message in list
+Received: Message in list
+Received: Message in list
+Received: Message inside a ServiceBusMessageBatch
+Received: Message inside a ServiceBusMessageBatch
+Received: Message inside a ServiceBusMessageBatch
+Received: Message inside a ServiceBusMessageBatch
+Received: Message inside a ServiceBusMessageBatch
+Received: Message inside a ServiceBusMessageBatch
+Received: Message inside a ServiceBusMessageBatch
+Received: Message inside a ServiceBusMessageBatch
+Received: Message inside a ServiceBusMessageBatch
+Received: Message inside a ServiceBusMessageBatch
+```
+
+Ga in Azure Portal naar uw Service Bus-naamruimte. Controleer op de pagina **Overzicht** of er 16 **inkomende** en **uitgaande** berichten zijn. Als u de tellingen niet ziet, wacht u een paar minuten en vernieuwt u de pagina. 
+
+:::image type="content" source="./media/service-bus-python-how-to-use-queues/overview-incoming-outgoing-messages.png" alt-text="Aantal inkomende en uitgaande berichten":::
+
+Selecteer de wachtrij op de pagina **Overzicht** om naar de pagina **Service Bus-wachtrij** te gaan. U kunt ook de **binnenkomende** en **uitgaande** berichten op deze pagina zien. U ziet ook andere informatie, zoals de **huidige grootte** van de wachtrij en **aantal actieve berichten**. 
+
+:::image type="content" source="./media/service-bus-python-how-to-use-queues/queue-details.png" alt-text="Details van wachtrij":::
+
 
 ## <a name="next-steps"></a>Volgende stappen
+Raadpleeg de volgende documentatie en voorbeelden: 
 
-Nu u bekend bent met de basisprincipes van Service Bus-wachtrijen, kunt u [Wachtrijen, onderwerpen en abonnementen][Queues, topics, and subscriptions] raadplegen voor meer informatie.
+- [Azure Service Bus-clientbibliotheek voor Python](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/servicebus/azure-servicebus)
+- [Voorbeelden](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/servicebus/azure-servicebus/samples). 
+    - De map **sync_samples** bevat voorbeelden die laten zien hoe u op synchrone wijze met Service Bus kunt werken. In deze quickstart hebt u deze methode gebruikt. 
+    - De map **async_samples** bevat voorbeelden die laten zien hoe u op asynchrone wijze met Service Bus kunt werken. 
+- [Referentiedocumentatie voor Azure Service Bus](https://docs.microsoft.com/python/api/azure-servicebus/azure.servicebus?view=azure-python-preview&preserve-view=true)
 
-[Azure portal]: https://portal.azure.com
-[Python Azure Service Bus package]: https://pypi.python.org/pypi/azure-servicebus  
-[Queues, topics, and subscriptions]: service-bus-queues-topics-subscriptions.md
-[Service Bus quotas]: service-bus-quotas.md

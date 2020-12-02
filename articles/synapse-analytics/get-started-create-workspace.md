@@ -9,13 +9,13 @@ ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
-ms.date: 10/07/2020
-ms.openlocfilehash: 862d2a93058c63dbfad1db49346edcbfe3c02ad1
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.date: 11/21/2020
+ms.openlocfilehash: 42b586062378c59b66ca945880bf723418264071
+ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94592444"
+ms.lasthandoff: 11/22/2020
+ms.locfileid: "95241927"
 ---
 # <a name="creating-a-synapse-workspace"></a>Een Synapse-werkruimte maken
 
@@ -65,9 +65,9 @@ Een toegewezen SQL-pool verbruikt factureerbare resources zolang deze worden uit
 
 De Spark-pool informeert Azure Synapse hoeveel Apache Spark-resources moeten worden gebruikt. U betaalt alleen voor de resources die u gebruikt. Wanneer u de pool niet meer actief gebruikt, treedt er automatisch een time-out op in de resources en worden ze gerecycled.
 
-## <a name="the-serverless-sql-pool"></a>De serverloze SQL-pool
+## <a name="the-built-in-serverless-sql-pool"></a>De ingebouwde serverloze SQL-pool
 
-Elke werkruimte wordt geleverd met een vooraf gemaakte pool met de naam **Ingebouwd**. Deze pool kan niet worden verwijderd. Met de serverloze SQL-pool kunt u met SQL werken zonder dat u een serverloze SQL-pool hoeft te maken of beheren in Azure Synapse. In tegenstelling tot de toegewezen SQL-pools is facturering voor een serverloze SQL-pool gebaseerd op de hoeveelheid gegevens die zijn gescand om de query uit te voeren en niet op het aantal resources dat wordt gebruikt om de query uit te voeren.
+Elke werkruimte wordt geleverd met een vooraf gemaakte serverloze SQL-pool met de naam **Ingebouwd**. Deze pool kan niet worden verwijderd. Met serverloze SQL-pools kunt u SQL gebruiken zonder dat er capaciteit hoeft te worden gereserveerd in toegewezen SQL-pools. In tegenstelling tot de toegewezen SQL-pools is facturering voor een serverloze SQL-pool gebaseerd op de hoeveelheid gegevens die zijn gescand om de query uit te voeren en niet op de hoeveelheid capaciteit die aan de pool wordt toegewezen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

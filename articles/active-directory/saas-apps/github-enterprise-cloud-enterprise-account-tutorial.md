@@ -11,20 +11,18 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/29/2020
 ms.author: jeedes
-ms.openlocfilehash: 7f23551fee5331d14cdcf9e31e248cf42022d4c3
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: d88cbb79b42637721412dd0a35c231782a896721
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92449279"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96029826"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-github-enterprise-cloud---enterprise-account"></a>Zelfstudie: integratie van eenmalige aanmelding (SSO) van Azure Active Directory met GitHub Enterprise Cloud - Enterprise Account
 
 In deze zelfstudie leert u hoe u GitHub Enterprise Cloud - Enterprise Account integreert met Azure Active Directory (Azure AD). Wanneer u GitHub Enterprise Cloud - Enterprise Account integreert met Azure AD, kunt u het volgende doen:
 
-* In Azure AD bepalen wie toegang heeft tot GitHub Enterprise Cloud - Enterprise Account.
-* Ervoor zorgen dat gebruikers automatisch met hun Azure AD-account worden aangemeld bij GitHub Enterprise Cloud - Enterprise Account.
-* Uw accounts op een centrale locatie beheren: Azure Portal.
+* Regel in Azure AD wie er toegang heeft tot een GitHub Enterprise-account en de organisaties binnen het Enterprise-account.
 
 Zie [Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps met Azure AD.
 
@@ -33,7 +31,8 @@ Zie [Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Activ
 U hebt het volgende nodig om aan de slag te gaan:
 
 * Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
-* Een abonnement waarvoor eenmalige aanmelding van GitHub Enterprise Cloud - Enterprise Account is ingeschakeld.
+* Een [GitHub Enterprise-account](https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-your-enterprise/about-enterprise-accounts)
+* Een GitHub-gebruikersaccount dat eigenaar is van een Enterprise-account. 
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
@@ -48,32 +47,31 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 Als u de integratie van GitHub Enterprise Cloud - Enterprise Account in Azure AD wilt configureren, moet u GitHub Enterprise Cloud - Enterprise Account vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ **GitHub Enterprise Cloud - Enterprise Account** in het zoekvak in de sectie **Toevoegen uit galerie** .
+1. Typ **GitHub Enterprise Cloud - Enterprise Account** in het zoekvak in de sectie **Toevoegen uit galerie**.
 1. Selecteer **GitHub Enterprise Cloud - Enterprise Account** in het resultatenvenster en voeg de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 
 ## <a name="configure-and-test-azure-ad-sso-for-github-enterprise-cloud---enterprise-account"></a>Eenmalige aanmelding van Azure AD voor GitHub Enterprise Cloud - Enterprise Account configureren en testen
 
-Configureer en test eenmalige aanmelding van Azure AD met GitHub Enterprise Cloud - Enterprise Account met behulp van de testgebruiker **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in GitHub Enterprise Cloud - Enterprise Account.
+Configureer en test eenmalige aanmelding van Azure AD met GitHub Enterprise Cloud - Enterprise Account met behulp van de testgebruiker **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in GitHub Enterprise Cloud - Enterprise Account.
 
 Voltooi de volgende bouwstenen om eenmalige aanmelding van Azure AD met GitHub Enterprise Cloud - Enterprise Account te configureren en te testen:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
     1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
-    1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
-1. **[Eenmalige aanmelding van GitHub Enterprise Cloud-Enterprise Account configureren](#configure-github-enterprise-cloud-enterprise-account-sso)** : om de instellingen voor eenmalige aanmelding aan de toepassingszijde te configureren.
-    1. **[Testgebruiker van GitHub Enterprise Cloud-Enterprise Account maken](#create-github-enterprise-cloud-enterprise-account-test-user)** : zodat B.Simon een tegenhanger in GitHub Enterprise Cloud - Enterprise Account heeft die is gekoppeld aan de Azure AD-weergave van de gebruiker.
-1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
+    1. **[Uw Azure AD-gebruiker en het testgebruikersaccount toewijzen aan de GitHub-app](#assign-the-azure-ad-test-user)** - om te zorgen dat uw gebruikersaccount en testgebruiker `B.Simon` de eenmalige aanmelding van Azure AD kunnen gebruiken.
+1. **[SAML inschakelen en testen voor het Enterprise-account en de bijbehorende organisaties](#enable-and-test-saml-for-the-enterprise-account-and-its-organizations)** - voor het configureren van de instellingen voor eenmalige aanmelding aan de kant van de toepassing.
+    1. **[Eenmalige aanmelding testen met een andere accounteigenaar of account van een ander lid van de organisatie](#test-sso)** - om te controleren of de configuratie werkt.
 
 ## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in [Azure Portal](https://portal.azure.com/), op de integratiepagina van de toepassing **GitHub Enterprise Cloud - Enterprise Account** , de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Zoek in [Azure Portal](https://portal.azure.com/), op de integratiepagina van de toepassing **GitHub Enterprise Cloud - Enterprise Account**, de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
@@ -89,9 +87,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
      In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://github.com/enterprises/<ENTERPRISE-SLUG>/sso`
 
     > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL, antwoord-URL en id. Neem voor deze waarden contact op met het [clientondersteuningsteam van GitHub Enterprise Cloud - Enterprise Account](mailto:support@github.com). U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > Vervang `<ENTERPRISE-SLUG>` door de werkelijke naam van uw GitHub Enterprise-account.
 
-1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** gaat u naar **Certificaat (Base64)** en selecteert u **Downloaden** om het certificaat te downloaden en op te slaan op uw computer.
+1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** gaat u naar **Certificaat (Base64)** en selecteert u **Downloaden** om het certificaat te downloaden en op te slaan op de computer.
 
     ![De link om het certificaat te downloaden](common/certificateBase64.png)
 
@@ -101,53 +99,68 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
-In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
+In deze sectie gaat u in Azure Portal een testgebruiker maken met de naam `B.Simon`.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
-### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
+<a name="assign-the-azure-ad-test-user"></a>
 
-In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot GitHub Enterprise Cloud - Enterprise Account.
+### <a name="assign-your-azure-ad-user-and-the-test-user-account-to-the-github-app"></a>Uw Azure AD-gebruiker en het testgebruikersaccount toewijzen aan de GitHub-app
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+In deze sectie geeft u `B.Simon` en uw gebruikersaccount toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot GitHub Enterprise Cloud - Enterprise Account.
+
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **GitHub Enterprise Cloud - Enterprise Account** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 
    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
 
-1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** en uw gebruikersaccount in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-## <a name="configure-github-enterprise-cloud-enterprise-account-sso"></a>Eenmalige aanmelding van GitHub Enterprise Cloud-Enterprise Account configureren
+## <a name="enable-and-test-saml-for-the-enterprise-account-and-its-organizations"></a>SAML inschakelen en testen voor de Enterprise-account en de bijbehorende organisaties
 
-Als u eenmalige aanmelding aan de zijde van **GitHub Enterprise Cloud-Enterprise Account** wilt configureren, moet u het gedownloade **certificaat (Base64)** en de juiste uit Azure Portal gekopieerde URL's verzenden naar het [ondersteuningsteam van GitHub Enterprise Cloud-Enterprise Account](mailto:support@github.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+Volg de stappen in [deze GitHub-documentatie](https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-your-enterprise/enforcing-security-settings-in-your-enterprise-account#enabling-saml-single-sign-on-for-organizations-in-your-enterprise-account)als u eenmalige aanmelding wilt configureren op de **GitHub Enterprise Cloud - Enterprise-account** zijde. 
+1. Meld u aan bij GitHub.com met een gebruikersaccount die een [eigenaar van het enterprise-account is](https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-your-enterprise/roles-in-an-enterprise#enterprise-owner). 
+1. Kopieer de waarde uit het `Login URL`-veld in de app uit de Azure Portal en plak deze in het veld `Sign on URL` in de SAML-instellingen van het GitHub Enterprise-account. 
+1. Kopieer de waarde uit het `Azure AD Identifier`-veld in de app uit de Azure Portal en plak deze in het veld `Issuer` in de SAML-instellingen van het GitHub Enterprise-account. 
+1. Kopieer de inhoud van het bestand **Certificaat (Base64)** dat u hebt gedownload in de bovenstaande stappen van Azure Portal en plak ze in het juiste veld in de SAML-instellingen van het GitHub Enterprise-account. 
+1. Klik op `Test SAML configuration` en controleer of u kunt verifiëren vanaf het GitHub Enterprise-account bij Azure AD.
+1. Wanneer de test is geslaagd, slaat u de instellingen op. 
+1. Na de eerste keer verifiëren via SAML vanuit het GitHub Enterprise-account wordt een _gekoppelde externe identiteit_ gemaakt in het GitHub Enterprise-account dat de aangemelde GitHub-gebruikersaccount koppelt aan het gebruikersaccount van Azure AD.  
+ 
+Nadat u eenmalige aanmelding met SAML voor uw GitHub Enterprise-account hebt ingeschakeld, wordt eenmalige aanmelding met SAML standaard ingeschakeld voor alle organisaties die eigendom zijn van uw Enterprise-account. Alle leden moeten worden geverifieerd met eenmalige aanmelding met SAML om toegang te krijgen tot de organisaties waar ze lid van zijn, en enterprise-eigenaren moeten worden geverifieerd met behulp van eenmalige aanmelding met SAML bij het openen van een Enterprise-account.
 
-### <a name="create-github-enterprise-cloud-enterprise-account-test-user"></a>Testgebruiker van GitHub Enterprise Cloud-Enterprise Account maken
+<a name="test-sso"></a>
 
-In deze sectie wordt een gebruiker met de naam B. Simon gemaakt in GitHub Enterprise Cloud-Enterprise Account. GitHub Enterprise Cloud-Enterprise Account biedt ondersteuning voor Just-In-Time-inrichting van gebruikers. Deze functie is standaard ingeschakeld. Er is geen actie-item voor u in deze sectie. Als er nog geen gebruiker bestaat in GitHub Enterprise Cloud-Enterprise Account, wordt er een nieuwe gebruiker gemaakt na verificatie.
+## <a name="test-sso-with-another-enterprise-account-owner-or-organization-member-account"></a>Eenmalige aanmelding testen met een andere accounteigenaar of account van een ander lid van de organisatie
 
-## <a name="test-sso"></a>Eenmalige aanmelding testen 
+Nadat de SAML-integratie is ingesteld voor het GitHub Enterprise-account (dat ook van toepassing is op de GitHub-organisaties in het Enterprise-account), moeten andere eigenaren van Enterprise-accounts die zijn toegewezen aan de app in Azure AD, kunnen navigeren naar de URL van het GitHub Enterprise-account (`https://github.com/enterprises/<enterprise account>`), kunnen verifiëren via SAML en toegang kunnen krijgen tot de beleidsregels en instellingen onder het GitHub Enterprise-account. 
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+Een organisatie-eigenaar voor een organisatie in een Enterprise-account moet [een gebruiker uitnodigen om lid te worden van zijn/haar GitHub-organisatie](https://docs.github.com/en/free-pro-team@latest/github/setting-up-and-managing-organizations-and-teams/inviting-users-to-join-your-organization). Meld u aan bij GitHub.com met een organisatie-eigenaarsaccount en volg de stappen in het artikel om `B.Simon` uit te nodigen voor de organisatie. Er moet een GitHub-gebruikersaccount worden gemaakt voor `B.Simon` als dat nog niet bestaat. 
 
-Wanneer u op de tegel GitHub Enterprise Cloud - Enterprise Account in Toegangsvenster klikt, wordt u automatisch aangemeld bij de versie van GitHub Enterprise Cloud - Enterprise Account waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+Als u de GitHub-organisatietoegang wilt testen onder het Enterprise-account met het testgebruikersaccount `B.Simon`:
+1. Nodig `B.Simon` uit voor een organisatie onder het Enterprise-account als een organisatie-eigenaar. 
+1. Meld u aan bij GitHub.com met het gebruikersaccount dat u wilt koppelen aan de Azure AD-gebruikersaccount `B.Simon`.
+1. Meld u aan bij Azure AD met de gebruikersaccount `B.Simon`.
+1. Ga naar de GitHub-organisatie. De gebruiker moet worden gevraagd om te verifiëren via SAML. Na een geslaagde SAML-verificatie moet `B.Simon` toegang hebben tot de resources van de organisatie. 
 
 ## <a name="additional-resources"></a>Aanvullende bronnen
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](./tutorial-list.md) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
+- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
 
-- [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
+- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
 - [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
 

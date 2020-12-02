@@ -5,14 +5,14 @@ author: vhorne
 ms.service: firewall-manager
 services: firewall-manager
 ms.topic: overview
-ms.date: 09/30/2020
+ms.date: 11/23/2020
 ms.author: victorh
-ms.openlocfilehash: 00a84fbf694a58128712abf806ff12df96f0e5e9
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 84ecea7764ddf48d68c983eaa5bccbac5f332d9b
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91596690"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95489691"
 ---
 # <a name="what-is-azure-firewall-manager"></a>Wat is Azure Firewall Manager?
 
@@ -89,7 +89,8 @@ Azure Firewall Manager heeft de volgende bekende problemen:
 |Toepassingsregels mislukken in een beveiligde hub waarin een aangepast DNS (preview) is geconfigureerd.|Aangepaste DNS (preview-versie) werkt niet in beveiligde hub-implementaties en implementaties van virtuele hubnetwerken waarvoor geforceerde tunneling is ingeschakeld.|Een oplossing wordt onderzocht.|
 |DDoS Protection Standard wordt niet ondersteund met beveiligde virtuele hubs|DDoS Protection Standard is niet geïntegreerd met vWAN's.|Wordt onderzocht|
 |Activiteitenlogboeken worden niet volledig ondersteund|Het firewallbeleid biedt momenteel geen ondersteuning voor activiteitenlogboeken.|Wordt onderzocht|
-|Privé IP-adresbereiken van SNAT configureren|[Instellingen voor privé IP-adresbereiken](../firewall/snat-private-range.md) worden genegeerd als Azure Firewall-beleid is geconfigureerd. Het standaard Azure Firewall-gedrag wordt gebruikt. SNAT-netwerkregels worden toegepast wanneer het doel-IP-adres zich in een privé IP-adresbereik bevindt per [IANA RFC 1918](https://tools.ietf.org/html/rfc1918).|Wordt onderzocht
+|Privé IP-adresbereiken van SNAT configureren|[Instellingen voor privé IP-adresbereiken](../firewall/snat-private-range.md) worden genegeerd als Azure Firewall-beleid is geconfigureerd. Het standaard Azure Firewall-gedrag wordt gebruikt. SNAT-netwerkregels worden toegepast wanneer het doel-IP-adres zich in een privé IP-adresbereik bevindt per [IANA RFC 1918](https://tools.ietf.org/html/rfc1918).|Wordt onderzocht|
+|Sommige firewallinstellingen worden niet gemigreerd wanneer de firewall wordt gemigreerd om het Firewallbeleid te gebruiken|Beschikbaarheidszones en privé-SNAT-adressen worden niet gemigreerd wanneer u migreert naar Azure Firewall-beleid.|Wordt onderzocht| 
 
 ## <a name="next-steps"></a>Volgende stappen
 

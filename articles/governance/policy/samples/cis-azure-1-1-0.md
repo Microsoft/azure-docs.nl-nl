@@ -1,15 +1,15 @@
 ---
 title: Nalevingsdetails van de regelgeving voor CIS Microsoft Azure Foundations Benchmark
 description: Informatie over het ingebouwde initiatief voor naleving van regelgeving in CIS Microsoft Azure Foundations Benchmark. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 11/17/2020
+ms.date: 11/20/2020
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 1f9379427be69ecf8a07000744f0410c9b34f13c
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 2ed1a40ba7589d25864cd5bdd90526635f189d6d
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94696928"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94991312"
 ---
 # <a name="details-of-the-cis-microsoft-azure-foundations-benchmark-regulatory-compliance-built-in-initiative"></a>Informatie over het ingebouwde initiatief voor naleving van regelgeving in CIS Microsoft Azure Foundations Benchmark
 
@@ -110,7 +110,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Aanbevelingen voor Adaptieve netwerkbeveiliging moeten worden toegepast op virtuele machines die op internet zijn gericht](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F08e6af2d-db70-460a-bfe9-d5bd474ba9d6) |Azure Security Center analyseert de verkeerspatronen van virtuele machines die vanaf het internet toegankelijk zijn, en formuleert aanbevelingen voor regels voor de netwerkbeveiligingsgroep die de kans op aanvallen beperken |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_AdaptiveNetworkHardenings_Audit.json) |
+|[Aanbevelingen voor Adaptieve netwerkbeveiliging moeten worden toegepast op virtuele machines die op internet zijn gericht](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F08e6af2d-db70-460a-bfe9-d5bd474ba9d6) |Azure Security Center analyseert de verkeerspatronen van virtuele machines die vanaf het internet toegankelijk zijn, en formuleert aanbevelingen voor regels voor de netwerkbeveiligingsgroep die de kans op aanvallen beperken |AuditIfNotExists, uitgeschakeld |[2.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_AdaptiveNetworkHardenings_Audit.json) |
 
 ### <a name="ensure-asc-default-policy-setting-enable-next-generation-firewallngfw-monitoring-is-not-disabled"></a>Controleren of de standaardbeleidsinstelling voor "NGFW-bewaking inschakelen" van de ASC is niet is "uitgeschakeld"
 

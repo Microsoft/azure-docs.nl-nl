@@ -11,12 +11,12 @@ author: jpe316
 ms.date: 09/24/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq2, devx-track-python, deploy
-ms.openlocfilehash: 9ec82dcd7578744dc7443d48dc28820413f14005
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: e2bb133997ec7b7d5ee3b8b82ec3179460596eeb
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95996301"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96511097"
 ---
 # <a name="deploy-ml-models-to-field-programmable-gate-arrays-fpgas-with-azure-machine-learning"></a>ML-modellen implementeren op veld-Programmeer bare poort matrices (Fpga's) met Azure Machine Learning 
 
@@ -31,9 +31,9 @@ U kunt Fpga's opnieuw configureren voor verschillende soorten machine learning m
 
 ![Diagram van Azure Machine Learning FPGA-vergelijking](./media/how-to-deploy-fpga-web-service/azure-machine-learning-fpga-comparison.png)
 
-|Processor| Afkorting |Description|
+|Processor| Afkorting |Beschrijving|
 |---|:-------:|------|
-|Toepassingsspecifieke geïntegreerde circuits|ASICs|Aangepaste circuits, zoals Google tensor flow processor units (TPU), bieden de hoogste efficiëntie. Ze kunnen niet opnieuw worden geconfigureerd als uw behoeften veranderen.|
+|Toepassingsspecifieke geïntegreerde circuits|ASICs|Aangepaste circuits, zoals Google tensor processor units (TPU), bieden de hoogste efficiëntie. Ze kunnen niet opnieuw worden geconfigureerd als uw behoeften veranderen.|
 |Veld-Programmeer bare poort matrices|FPGAs|Fpga's, zoals die beschikbaar zijn op Azure, bieden de prestaties bijna ASICs. Ze zijn ook flexibel en kunnen na verloop van tijd opnieuw worden geconfigureerd om nieuwe logica te implementeren.|
 |Grafische verwerkings eenheden|GPU's|Een populaire keuze voor AI-berekeningen. Gpu's bieden parallelle verwerkings mogelijkheden, waardoor het sneller wordt weer gegeven in de beeld weergave dan Cpu's.|
 |Centrale verwerkings eenheden|CPU's|Processors voor algemeen gebruik, de prestaties die niet ideaal zijn voor grafische en video verwerking.|

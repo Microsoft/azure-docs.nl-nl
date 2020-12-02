@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/03/2020
 ms.author: jeedes
-ms.openlocfilehash: 9dacbfacdbb9a1ecc103b0cec224d861b42b1576
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 3e4d3145263b4b0379f85dea86d075480935a28c
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94369605"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96029333"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-panorays"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Panorays
 
@@ -75,18 +75,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
-1. In de sectie **SAML-basisconfiguratie** hoeft de gebruiker geen enkele stap uit te voeren omdat de app al vooraf is geïntegreerd met Azure.
-
-1. Klik op **Extra URL's instellen** en voer de volgende stap uit als u de toepassing in de door **SP** geïnitieerde modus wilt configureren:
-
-    Typ in het tekstvak **Aanmeldings-URL** een URL met het volgende patroon:
-
-    | Aanmeldings-URL |
-    |--------------|
-    | `https://www.panoraysapp.com` |
-    | `https://auth.panoraysapp.com` |
-
-1. Klik op **Opslaan**.
+1. In de sectie **SAML-basisconfiguratie** is de toepassing vooraf geconfigureerd en zijn de benodigde URL's al vooraf ingevuld met Azure. De gebruiker moet de configuratie opslaan door op de knop Opslaan te klikken.
 
 1. In uw Panorays-toepassing worden de SAML-asserties in een specifieke indeling verwacht. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van uw SAML-tokenkenmerken. In de volgende schermafbeelding ziet u de lijst met standaardkenmerken, waarbij **Unieke gebruikers-id** is toegewezen aan **user.userprincipalname**. In de Panorays-toepassing wordt verwacht dat **Unieke gebruikers-id** is toegewezen aan **user.mail**. Daarom moet u de kenmerktoewijzing bewerken door op het pictogram **Bewerken** te klikken en de kenmerktoewijzing te wijzigen.
 
@@ -134,9 +123,7 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 #### <a name="sp-initiated"></a>Met SP geïnitieerd:
 
-1. Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van Panorays, waar u de aanmeldingsstroom kunt initiëren.  
-
-1. Ga rechtstreeks naar de aanmeldings-URL van Panorays en initieer de aanmeldingsstroom daar.
+Ga rechtstreeks naar de [aanmeldings-URL van Panorays](https://www.panoraysapp.com) en initieer de aanmeldingsstroom daar.
 
 #### <a name="idp-initiated"></a>Met IDP geïnitieerd:
 

@@ -12,17 +12,20 @@ ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/25/2018
+ms.date: 11/23/2020
 ms.author: damendo
 ms.custom: mvc
-ms.openlocfilehash: acdaf2318c3082db876ed9c69b704d3d00cd4c90
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2da675f0836dbb10ce5227e7e93e98d706cc5c64
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "76834651"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95544799"
 ---
 # <a name="tutorial-monitor-network-communication-between-two-virtual-machines-using-the-azure-portal"></a>Zelfstudie: Netwerkcommunicatie tussen twee virtuele machines bewaken met behulp van de Azure-portal
+
+> [!NOTE]
+> In deze zelfstudie wordt Verbindingsmonitor (klassiek) behandeld. Probeer de nieuwe en verbeterde [Verbindingsmonitor](connection-monitor-overview.md) voor verbeterde connectiviteitsbewaking
 
 Geslaagde communicatie tussen een virtuele machine (VM) en een eindpunt, zoals een andere virtuele machine, kan zijn essentieel voor uw organisatie. Soms ontstaan configuratiewijzigingen die de communicatie kunnen verbreken. In deze zelfstudie leert u het volgende:
 
@@ -33,6 +36,8 @@ Geslaagde communicatie tussen een virtuele machine (VM) en een eindpunt, zoals e
 > * Een communicatieprobleem tussen twee virtuele machines vaststellen en meer informatie over hoe u het kunt oplossen
 
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
+
+
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 
@@ -129,7 +134,7 @@ Waarschuwingen worden gemaakt door regels voor waarschuwingen in Azure Monitor e
 2. Klik op **Doel selecteren** en selecteer vervolgens de resources die u als doel wilt instellen. Selecteer het **Abonnement** en stel **Resourcetype** in om te filteren op de verbindingsmonitor die u wilt gebruiken.
 
     ![waarschuwingsscherm met een geselecteerd doel](./media/connection-monitor/set-alert-rule.png)
-1. Nadat u een doelresource hebt geselecteerd, selecteert u **Criteria toevoegen**. Network Watcher heeft [metrische gegevens over welke waarschuwingen u kunt maken](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-near-real-time-metric-alerts#metrics-and-dimensions-supported). Stel **Beschikbare signalen** in op de metrische gegevens ProbesFailedPercent en AverageRoundtripMs:
+1. Nadat u een doelresource hebt geselecteerd, selecteert u **Criteria toevoegen**. Network Watcher heeft [metrische gegevens over welke waarschuwingen u kunt maken](../azure-monitor/platform/alerts-metric-near-real-time.md#metrics-and-dimensions-supported). Stel **Beschikbare signalen** in op de metrische gegevens ProbesFailedPercent en AverageRoundtripMs:
 
     ![waarschuwingspagina met geselecteerde signalen](./media/connection-monitor/set-alert-signals.png)
 1. Vul de waarschuwingsdetails in, zoals de naam, beschrijving en ernst van de waarschuwingsregel. U kunt ook een actiegroep toevoegen aan de waarschuwing om het waarschuwingsantwoord te automatiseren en aan te passen.
@@ -153,7 +158,7 @@ Standaard staat Azure communicatie toe over alle poorten tussen virtuele machine
     | Prioriteit                | 100            |
     | Naam                    | DenySshInbound |
 
-5. Aangezien verbindingsmonitor test met intervallen van 60 seconden, wacht u een paar minuten. Selecteer vervolgens aan de linkerkant van de portal **Network Watcher**, dan **Verbindingsmonitor** en selecteer vervolgens de monitor ** myVm1-myVm2(22)** opnieuw. De resultaten zijn nu anders, zoals u ziet in de volgende afbeelding:
+5. Aangezien verbindingsmonitor test met intervallen van 60 seconden, wacht u een paar minuten. Selecteer vervolgens aan de linkerkant van de portal **Network Watcher**, dan **Verbindingsmonitor** en selecteer vervolgens de monitor **myVm1-myVm2(22)** opnieuw. De resultaten zijn nu anders, zoals u ziet in de volgende afbeelding:
 
     ![Fouten in monitordetails](./media/connection-monitor/vm-monitor-fault.png)
 

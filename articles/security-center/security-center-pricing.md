@@ -11,17 +11,17 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/22/2020
+ms.date: 11/24/2020
 ms.author: memildin
-ms.openlocfilehash: 01d7d29e9fffff3be2c98c0ec52c01774439e3f7
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: ee2582d25477d9b9f4fe0bac6b230132a797fd0f
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92341185"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95896591"
 ---
 # <a name="pricing-of-azure-security-center"></a>Prijzen van Azure Security Center
-Azure Security Center biedt geïntegreerd beveiligingsbeheer en geavanceerde bedreigingsbeveiliging voor werkbelastingen die worden uitgevoerd in Azure, on-premises en in andere clouds. Het biedt zichtbaarheid en controle over hybride cloudwerkbelastingen, actieve beveiligingen die uw blootstelling aan bedreigingen verminderen en intelligente detectie om u te helpen snel ontwikkelende cyberaanvallen voor te blijven.
+Azure Security Center biedt geïntegreerd beveiligingsbeheer en geavanceerde bedreigingsbeveiliging voor werkbelastingen die worden uitgevoerd in Azure, on-premises en in andere clouds. Het biedt zichtbaarheid en controle over hybride cloudwerkbelastingen, actieve beveiligingen die uw blootstelling aan bedreigingen verminderen en intelligente detectie om u te helpen snel ontwikkelende cyberrisico's voor te blijven.
 
 
 ## <a name="free-option-vs-azure-defender-enabled"></a>Gratis optie vs Azure Defender
@@ -33,18 +33,16 @@ Security Center wordt op twee manieren aangeboden:
 - **Azure Defender AAN** - Als u Azure Defender inschakelt, breidt dat de mogelijkheden van de gratis versie uit voor workloads die worden uitgevoerd in privé- en andere openbare clouds, met geïntegreerd beveiligingsbeheer en beveiliging tegen bedreigingen voor uw hybride cloudworkloads. Enkele belangrijke functies van Azure Defender:
 
     - **Microsoft Defender for Endpoint** - Azure Defender voor servers bevat [Microsoft Defender for Endpoint](https://www.microsoft.com/microsoft-365/security/endpoint-defender) voor uitgebreide eindpuntdetectie en -respons (EDR). Lees meer over de voordelen van het gebruik van Microsoft Defender for Endpoint met Azure Defender in [De geïntegreerde EDR-oplossing van Security Center gebruiken](security-center-wdatp.md).
-    - **Beveiligingsproblemen voor virtuele machines en containerregisters** : implementeer eenvoudig een scanner op al uw virtuele machines met de meest geavanceerde oplossing voor het beheer van beveiligingsproblemen. Bekijk onderzoek en herstel de bevinden rechtstreeks binnen Security Center. 
-    - **Hybride beveiliging** : krijg een uniforme weergave van beveiliging in al uw on-premises en cloudwerkbelastingen. Pas beveiligingsbeleid voor uw hybride-cloudworkloads toe en beoordeel de beveiliging van uw ervan om de naleving van beveiligingsstandaarden te waarborgen. Verzamel, zoek en analyseer beveiligingsgegevens van meerdere bronnen, waaronder firewalls en oplossingen van andere partners.
-    - **Bedreigingswaarschuwingen** : geavanceerde gedragsanalyses en de Microsoft Intelligent Security Graph bieden een voordeel tegen ontwikkelende cyberaanvallen. Maak gebruik van gedragsanalyses en machine learning om aanvallen en zero-day-aanvallen te identificeren. Bewaak netwerken, machines en cloudservices voor inkomende aanvallen en activiteiten na inbreuk. Stroomlijn onderzoek met interactieve hulpprogramma's en bedreigingsinformatie in context.
-    - **Toegang- en toepassingsbeheer** : blokkeer malware en andere ongewenste toepassingen door machine learning op basis van aanbevelingen toe te passen die is toegespitst op uw specifieke workloads om goedkeurings- en weigeringslijsten te maken. Verklein het oppervlak voor netwerkaanvallen met beheerde JIT-toegang tot beheerpoorten op Azure-VM's. Dit vermindert blootstelling aan brute kracht en andere netwerk aanvallen.
-    - **Beveiligingsfuncties voor containers** : profiteer van beiligingsprobleembeheer en realtime bedreigingsbescherming in uw containeromgevingen. Wanneer u de **Azure Defender voor containerregisters** inschakelt, kan het tot 12 uur duren totdat alle functies zijn ingeschakeld. Kosten zijn gebaseerd op het aantal unieke containerinstallatiekopieën dat naar uw gekoppelde register wordt gepusht. Nadat een installatiekopie is gescand, worden er geen kosten meer in rekening voor gebracht, tenzij deze wordt bewerkt en nogmaals wordt gepusht. 
+    - **Beveiligingsproblemen voor virtuele machines en containerregisters**: implementeer eenvoudig een scanner op al uw virtuele machines met de meest geavanceerde oplossing voor het beheer van beveiligingsproblemen. Bekijk onderzoek en herstel de bevinden rechtstreeks binnen Security Center. 
+    - **Hybride beveiliging**: krijg een uniforme weergave van beveiliging in al uw on-premises en cloudwerkbelastingen. Pas beveiligingsbeleid voor uw hybride-cloudworkloads toe en beoordeel de beveiliging van uw ervan om de naleving van beveiligingsstandaarden te waarborgen. Verzamel, zoek en analyseer beveiligingsgegevens van meerdere bronnen, waaronder firewalls en oplossingen van andere partners.
+    - **Bedreigingswaarschuwingen**: geavanceerde gedragsanalyses en de Microsoft Intelligent Security Graph bieden een voordeel tegen ontwikkelende cyberaanvallen. Met gedragsanalyses en machine learning kunnen aanvallen en zero-day-aanvallen worden geïdentificeerd. Bewaak netwerken, machines en cloudservices voor inkomende aanvallen en activiteiten na inbreuk. Stroomlijn onderzoek met interactieve hulpprogramma's en bedreigingsinformatie in context.
+    - **Toegang- en toepassingsbeheer** (AAC): blokkeer malware en andere ongewenste toepassingen door machine learning op basis van aanbevelingen toe te passen die is toegespitst op uw specifieke workloads om goedkeurings- en weigeringslijsten te maken. Verklein het oppervlak voor netwerkaanvallen met beheerde JIT-toegang tot beheerpoorten op Azure-VM's. AAC vermindert blootstelling aan brute force-beveiligingsaanvallen en andere netwerkaanvallen.
+    - **Beveiligingsfuncties voor containers**: profiteer van beiligingsprobleembeheer en realtime bedreigingsbescherming in uw containeromgevingen. Wanneer u **Azure Defender voor containerregisters** inschakelt, kan het tot 12 uur duren voordat alle functies zijn ingeschakeld. Kosten zijn gebaseerd op het aantal unieke containerinstallatiekopieën dat naar uw gekoppelde register wordt gepusht. Nadat een installatiekopie is gescand, worden er geen kosten meer in rekening voor gebracht, tenzij deze wordt bewerkt en nogmaals wordt gepusht. 
 
 ## <a name="try-azure-defender-free-for-30-days"></a>Azure Defender gratis uitproberen gedurende 30 dagen
-
 Azure Defender is gratis gedurende de eerste 30 dagen. Als u aan het einde van 30 dagen wilt door gaan met het gebruik van de service, worden er automatisch kosten voor gebruik in rekening gebracht.
 
 ## <a name="enable-azure-defender"></a>Azure Defender inschakelen
-
 U kunt een volledig Azure-abonnement beschermen met Azure Defender en de beschermingen worden overgenomen door alle resources binnen het abonnement.
 
 Azure Defender inschakelen:
@@ -52,7 +50,7 @@ Azure Defender inschakelen:
 1. Selecteer **Prijzen en instellingen** in het hoofdmenu van Security Center.
 1. Selecteer het abonnement dat u wilt upgraden.
 1. Selecteer **Azure Defender aan** als u een upgrade wilt uitvoeren.
-1. Selecteer **Opslaan** .
+1. Selecteer **Opslaan**.
 
 Hieronder volgt de prijspagina voor een voorbeeldabonnement. U ziet dat elk abonnement in Azure Defender afzonderlijk wordt geprijsd en afzonderlijk op aan of uit kan worden ingesteld.
 
@@ -66,8 +64,58 @@ Hieronder volgt de prijspagina voor een voorbeeldabonnement. U ziet dat elk abon
 > U kunt bedreigingsbeveiliging voor **Azure Database for MariaDB/MySQL/PostgreSQL** alleen inschakelen op resourceniveau.
 
 
+## <a name="faq---pricing-and-billing"></a>Veelgestelde vragen - Prijzen en facturering 
+
+### <a name="how-can-i-track-who-in-my-organization-enabled-azure-defender-changes-in-azure-security-center"></a>Hoe kan ik bijhouden wie in mijn organisatie Azure Defender-wijzigingen in Azure Security Center heeft ingeschakeld?
+Azure-abonnementen kunnen meerdere beheerders met machtigingen voor het wijzigen van prijsinstellingen hebben. Als u wilt weten welke gebruiker een wijziging heeft aangebracht, gebruikt u het Azure-activiteitenlogboek.
+
+Als de gegevens van de gebruiker niet worden weergegeven in de kolom **Gebeurtenis gestart door**, zoekt u de relevante gegevens van de gebeurtenis.
+
+:::image type="content" source="media/security-center-pricing/logged-change-to-pricing.png" alt-text="Azure-gebeurtenislogboek met een prijswijzigingsgebeurtenis":::
+
+
+### <a name="what-are-the-plans-offered-by-security-center"></a>Welke abonnementen worden aangeboden in Security Center? 
+Security Center heeft twee aanbiedingen: 
+
+- De gratis versie van Azure Security Center 
+- Azure Defender  
+
+### <a name="how-do-i-enable-azure-defender-for-my-subscription"></a>Hoe schakel ik Azure Defender in voor mijn abonnement? 
+U kunt Azure Defender voor uw abonnement op een van de volgende manieren inschakelen: 
+
+|Methode  |Instructies  |
+|---------|---------|
+|Azure Security Center-pagina's van Azure Portal|[Azure Defender inschakelen](#enable-azure-defender)|
+|REST-API|[Pricings-API](https://docs.microsoft.com/rest/api/securitycenter/pricings)|
+|Azure CLI|[az security pricing](https://docs.microsoft.com/cli/azure/security/pricing)|
+|PowerShell|[Set-AzSecurityPricing](https://docs.microsoft.com/powershell/module/az.security/set-azsecuritypricing)|
+|Azure Policy|[Bundle Pricings](https://github.com/Azure/Azure-Security-Center/tree/master/Pricing%20%26%20Settings/Azure%20Policy%20definitions/Bundle%20Pricings)|
+|||
+
+### <a name="can-i-enable-azure-defender-for-servers-on-a-subset-of-servers-in-my-subscription"></a>Kan ik Azure Defender voor servers inschakelen op een subset servers in mijn abonnement?
+Nee. Als u [Azure Defender voor servers](defender-for-servers-introduction.md) inschakelt in een abonnement, vallen alle servers in het abonnement vervolgens onder Azure Defender. 
+
+U kunt Azure Defender voor servers ook inschakelen op het niveau van de Log Analytics-werkruimte. Als u dit doet, worden alleen servers die aan die werkruimte rapporteren, beveiligd en gefactureerd. Een aantal mogelijkheden is dan echter niet beschikbaar. Hiertoe behoren onder meer Just-in-Time-VM-toegang, netwerkdetectie, naleving van regelgeving, adaptieve netwerkbeveiliging en adaptieve toepassingsregelaars. 
+
+
+### <a name="my-subscription-has-azure-defender-for-servers-enabled-do-i-pay-for-not-running-servers"></a>Azure Defender voor servers is ingeschakeld in mijn abonnement. Moet ik betalen voor niet-actieve servers? 
+Nee. Wanneer u [Azure Defender voor servers](defender-for-servers-introduction.md) inschakelt in een abonnement, worden alleen actieve servers per uur gefactureerd. Er worden geen kosten in rekening gebracht voor servers die waren uitgeschakeld gedurende die tijd. 
+
+> [!TIP]
+> Dit geldt ook voor de andere typen resources die worden beveiligd door Security Center. 
+
+### <a name="will-i-be-charged-for-machines-without-the-log-analytics-agent-installed"></a>Worden er kosten in rekening gebracht voor machines waarop de Log Analytics-agent is geïnstalleerd?
+Ja. Wanneer u [Azure Defender voor servers](defender-for-servers-introduction.md) in een abonnement inschakelt, worden de machines in dat abonnement op diverse manieren beveiligd, zelfs als u de Log Analytics-agent niet hebt geïnstalleerd.
+
+### <a name="if-a-log-analytics-agent-reports-to-multiple-workspaces-will-i-be-charged-twice"></a>Als een Log Analytics-agent aan meerdere werkruimten rapporteert, worden er dan tweemaal kosten in rekening gebracht? 
+Ja. Als uw Log Analytics-agent is geconfigureerd voor het verzenden van gegevens naar twee of meer verschillende Log Analytics-werkruimten (multi-homing), worden er kosten in rekening gebracht voor elke werkruimte waarop Security of AntiMalware is geïnstalleerd. 
+
+### <a name="if-a-log-analytics-agent-reports-to-multiple-workspaces-is-the-500-mb-free-data-ingestion-available-on-all-of-them"></a>Als een Log Analytics-agent aan meerdere werkruimten rapporteert, is er dan voor elke werkruimte gratis gegevensopname van 500 MB beschikbaar?
+Ja. Als u de Log Analytics-agent hebt geconfigureerd voor het verzenden van gegevens naar twee of meer verschillende Log Analytics-werkruimten (multi-homing), ontvangt u 500 MB gratis gegevensopname. Dit wordt berekend per knooppunt, per gerapporteerde werkruimte, per dag en is beschikbaar voor elke werkruimte waarop de oplossing Security of AntiMalware is geïnstalleerd. Er worden kosten in rekening gebracht voor gegevensopname van meer dan 500 MB.
+
+
 ## <a name="next-steps"></a>Volgende stappen
-In dit artikel zijn de prijzen voor Security Center geïntroduceerd. Zie voor gerelateerd materiaal:
+In dit artikel worden de prijsopties voor Security Center beschreven. Zie voor gerelateerd materiaal:
 
 - [De kosten van uw Azure-werkbelasting optimaliseren](https://azure.microsoft.com/blog/how-to-optimize-your-azure-workload-costs/)
 - [Prijsinformatie in de gewenste valuta en op basis van uw regio](https://azure.microsoft.com/pricing/details/security-center/)

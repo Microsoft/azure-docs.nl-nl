@@ -12,16 +12,16 @@ ms.workload: identity
 ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: b82193fda64f2cf265c879c5cda9141be1b576f8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0408d43fe897882fe09f6dd61a22d46349f2978e
+ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91627887"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95974388"
 ---
 # <a name="tutorial-call-the-microsoft-graph-api-from-a-windows-desktop-app"></a>Zelfstudie: De Microsoft Graph API aanroepen vanuit een Windows-bureaublad-app
 
-In deze handleiding wordt gedemonstreerd hoe een systeemeigen .NET-toepassing (XAML) voor Windows-bureaublad gebruikmaakt van een toegangstoken om de Microsoft Graph API aan te roepen. De app kan ook toegang krijgen tot andere API's waarvoor toegangstokens zijn vereist van het Microsoft-identiteitsplatform.
+In deze zelfstudie bouwt u een systeemeigen Windows Desktop .NET-app (XAML) die gebruikers aanmeldt en een toegangstoken ophaalt om de Microsoft Graph-API aan te roepen. 
 
 Wanneer u de handleiding hebt voltooid, kan uw toepassing een beveiligde API aanroepen die gebruikmaakt van persoonlijke accounts (waaronder outlook.com, live.com en andere). De toepassing maakt ook gebruik van werk- en schoolaccounts van een bedrijf of organisatie waar Azure Active Directory wordt gebruikt.
 

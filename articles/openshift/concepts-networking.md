@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.topic: tutorial
 ms.service: container-service
 ms.date: 06/22/2020
-ms.openlocfilehash: fb81405e85d6e2653e0cf6c007c363493992161a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3417b59d0be9e285f8793ef598abb7f98bda7549
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87419968"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95527986"
 ---
 # <a name="networking-in-azure-red-hat-on-openshift-4"></a>Netwerken in Azure Red Hat op OpenShift 4
 
@@ -98,7 +98,7 @@ De volgende netwerkinstellingen zijn beschikbaar in Azure Red Hat OpenShift 4:
     * 'Openbaar': API-server is toegankelijk voor externe netwerken.
     * 'Privé': aan API-server is een persoonlijk IP-adres toegewezen vanuit het masterssubnet, alleen toegankelijk via verbonden netwerken (gekoppelde virtuele netwerken, overige subnetten in het cluster). Namens de klant wordt een persoonlijke DNS-zone gemaakt.
 * **Zichtbaarheid van inkomend verkeer**: stel de API-zichtbaarheid in wanneer u de [opdracht az aro create](tutorial-create-cluster.md#create-the-cluster) uitvoert.
-    * 'Openbare' routes worden standaard ingesteld op openbare Azure Standard Load Balancer (dit kan worden gewijzigd).
+    * 'Openbare' routes worden standaard ingesteld op een openbare Standard Load Balancer (dit kan worden gewijzigd).
     * 'Privé' routes worden standaard ingesteld op de interne load balancer (dit kan worden gewijzigd).
 
 ## <a name="network-security-groups"></a>Netwerkbeveiligingsgroepen

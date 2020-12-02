@@ -9,23 +9,24 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ec7337ad798d586cb93bd13e60ead1ef9f2a4abe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f0695af6922182aa8be7acfb4b0a931bed35ef7d
+ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91857245"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94959302"
 ---
 # <a name="tutorial-send-data-via-transparent-gateway"></a>Zelfstudie: Gegevens verzenden via een transparante gateway
-
-> [!NOTE]
-> Dit artikel maakt deel uit van een reeks voor een zelfstudie over het gebruik van Azure Machine Learning in IoT Edge. Als u rechtstreeks bij dit artikel bent terechtgekomen, wordt u aangeraden te beginnen met het [eerste artikel](tutorial-machine-learning-edge-01-intro.md) in de reeks voor de beste resultaten.
 
 In dit artikel gebruiken we nogmaals de ontwikkel-VM als een gesimuleerd apparaat. In plaats van gegevens rechtstreeks naar de IoT Hub te verzenden, verzendt het apparaat gegevens naar het IoT Edge-apparaat dat is geconfigureerd als een transparante gateway.
 
 We controleren de werking van het IoT Edge apparaat terwijl het gesimuleerde apparaat gegevens verzendt. Zodra de uitvoering van het apparaat is voltooid, bekijken we de gegevens in het opslagaccount om te valideren of alles naar verwachting heeft gewerkt.
 
 Deze stap wordt doorgaans uitgevoerd door een cloud- of apparaatontwikkelaar.
+
+## <a name="prerequisites"></a>Vereisten
+
+Dit artikel maakt deel uit van een reeks voor een zelfstudie over het gebruik van Azure Machine Learning in IoT Edge. Elk artikel in de reeks is gebaseerd op het werk in het vorige artikel. Als u rechtstreeks bij dit artikel terecht bent gekomen, gaat u naar de [eerste artikel](tutorial-machine-learning-edge-01-intro.md) in de reeks.
 
 ## <a name="review-device-harness"></a>Apparaatharnas beoordelen
 

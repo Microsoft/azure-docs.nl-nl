@@ -8,12 +8,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 07/27/2020
-ms.openlocfilehash: da046fd633120944231ee440605367bdb730cbff
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 450d471beebbcc554a6d534fb2d5361778f158bc
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94543218"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94992315"
 ---
 # <a name="create-a-data-labeling-project-and-export-labels"></a>Een gegevenslabelproject maken en labels exporteren 
 
@@ -250,7 +250,7 @@ Gebruik deze stappen om een of meer labels aan een project toe te voegen:
 
 ## <a name="export-the-labels"></a>De labels exporteren
 
-U kunt de labelgegevens voor Machine Learning-experimenten op elk gewenst moment exporteren. Labels van afbeeldingen kunnen worden geëxporteerd in [COCO-indeling](http://cocodataset.org/#format-data) of als een Azure Machine Learning-gegevensset. Gebruik de knop **Exporteren** op de pagina **Projectdetails** van het labelproject.
+U kunt de labelgegevens voor Machine Learning-experimenten op elk gewenst moment exporteren. Labels van afbeeldingen kunnen worden geëxporteerd in [COCO-indeling](http://cocodataset.org/#format-data) of als een [Azure Machine Learning-gegevensset met labels](how-to-use-labeled-dataset.md). Gebruik de knop **Exporteren** op de pagina **Projectdetails** van het labelproject.
 
 Het COCO-bestand wordt gemaakt in de Blob-standaardopslag van de Azure Machine Learning-werkruimte in een map binnen *export/coco*. U hebt toegang tot de geëxporteerde Azure Machine Learning-gegevensset in de sectie **Gegevenssets** van Machine Learning. De pagina met details van de gegevensset biedt ook voorbeeldcode voor toegang tot uw labels vanuit Python.
 

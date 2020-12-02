@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: matrive
-ms.openlocfilehash: e900d63ba7e521cbf7e63d8580d22b08726d1ef6
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 2b8a008decc41a5686fb2c8d9fee271f95f0fef3
+ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92517341"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96122410"
 ---
 # <a name="set-up-and-configure-aws-cost-and-usage-report-integration"></a>AWS-integratie van kosten- en gebruiksrapporten instellen en configureren
 
@@ -150,7 +150,8 @@ De JSON van het beleid moet eruitzien als in het volgende voorbeeld. Vervang _bu
 Gebruik de volgende informatie om een AWS-connector te maken en te beginnen met het bewaken van uw AWS-kosten:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-2. Ga naar **Kostenbeheer en facturering** > **Kostenbeheer**.
+2. Ga naar de startpagina van Azure door te klikken op **Home** in het menu aan de linkerkant ('hamburger'-menupictogram met 3 lijnen).
+3. Ga aan de onderkant van de pagina naar **Hulpprogramma's** > **Cost Management**.
 3. Onder **Instellingen** selecteert u **Connectors voor AWS**.  
 4. Selecteer **+toevoegen** bovenaan de pagina om een connector te maken.  
     :::image type="content" source="./media/aws-integration-setup-configure/aws-connector.png" alt-text="Voorbeeld met de instelling van Connectors voor AWS" :::
@@ -161,7 +162,7 @@ Gebruik de volgende informatie om een AWS-connector te maken en te beginnen met 
 1. Voor **Role ARN** voert u de waarde in die u hebt gebruikt bij het instellen van de functie in AWS.
 1. Voor **Externe id** voert u de waarde in die u hebt gebruikt bij het instellen van de rol in AWS.
 1. Voer voor **Rapportnaam** de naam in die u hebt gemaakt in AWS.
-1. Selecteer **Volgende** , en selecteer vervolgens **Maken**.
+1. Selecteer **Volgende**, en selecteer vervolgens **Maken**.
 
 Het kan enkele uren duren voordat de nieuwe AWS-scopes, het geconsolideerde AWS-account, de gekoppelde AWS-accounts en de bijbehorende kostengegevens worden weergegeven.
 
@@ -180,7 +181,7 @@ Het toewijzen van connectormachtigingen aan gebruikers nadat detectie plaatsvind
 
 ## <a name="manage-aws-connectors"></a>AWS-connectors beheren
 
-Wanneer u een connector selecteert op de pagina **Connectors voor AWS** , kunt u het volgende doen:
+Wanneer u een connector selecteert op de pagina **Connectors voor AWS**, kunt u het volgende doen:
 
 - Selecteer **Ga naar de factureringsrekening** om informatie weer te geven voor het geconsolideerde AWS-account.
 - Selecteer **Toegangsbeheer** om de roltoewijzing voor de connector te beheren.

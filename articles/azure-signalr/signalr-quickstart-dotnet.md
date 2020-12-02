@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.custom: devx-track-csharp
 ms.date: 09/28/2020
 ms.author: zhshang
-ms.openlocfilehash: da91a5a7c077eb14d12a711b8b308d7045c88f4a
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: c39ef505b0cea0ad0c03b81683db8441077cd0d2
+ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150988"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94874539"
 ---
 # <a name="quickstart-create-a-chat-room-with-aspnet-and-signalr-service"></a>Quickstart: Een chatruimte maken met ASP.NET en SignalR Service
 
@@ -32,13 +32,13 @@ In deze quickstart leert u hoe u aan de slag kunt gaan met ASP.NET en Azure Sign
 * [.NET 4.6.1](https://www.microsoft.com/net/download/windows)
 * [ASP.NET SignalR 2.4.1](https://www.nuget.org/packages/Microsoft.AspNet.SignalR/)
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsnet)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsnet).
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 
 Meld u met uw Azure-account aan bij [Azure Portal](https://portal.azure.com/).
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsnet)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsnet).
 
 [!INCLUDE [Create instance](includes/signalr-quickstart-create-instance.md)]
 
@@ -46,7 +46,7 @@ De modus *Serverloos* wordt niet ondersteund voor ASP.NET SignalR-toepassingen. 
 
 U kunt de Azure-resources die in deze quickstart worden gebruikt ook maken met [Een SignalR Service-script maken](scripts/signalr-cli-create-service.md).
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsnet)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsnet).
 
 ## <a name="clone-the-sample-application"></a>De voorbeeldtoepassing klonen
 
@@ -60,7 +60,7 @@ Terwijl de service wordt geïmplementeerd, gaan we met code werken. Kloon de [vo
     git clone https://github.com/aspnet/AzureSignalR-samples.git
     ```
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsnet)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsnet).
 
 ## <a name="configure-and-run-chat-room-web-app"></a>Chatroom-web-app
 
@@ -106,7 +106,7 @@ Terwijl de service wordt geïmplementeerd, gaan we met code werken. Kloon de [vo
 
 1. Druk op <kbd>F5</kbd> om het project uit te voeren in de foutopsporingsmodus. U kunt zien dat de toepassing lokaal wordt uitgevoerd. In plaats van een SignalR-runtime door de toepassing zelf te laten hosten, wordt nu verbinding gemaakt met de Azure SignalR Service.
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsnet)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsnet).
 
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
 
@@ -121,7 +121,7 @@ Typ de naam van de resourcegroep in het tekstvak **Filteren op naam...** . In de
 
 Na enkele ogenblikken worden de resourcegroep en alle resources in de groep verwijderd.
 
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsnet)
+Ondervindt u problemen? Probeer de [gids voor probleemoplossing](signalr-howto-troubleshoot-guide.md) of [laat het ons weten](https://aka.ms/asrs/qsnet).
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -129,5 +129,3 @@ In deze quickstart hebt u een nieuwe Azure SignalR Service-resource gemaakt en d
 
 > [!div class="nextstepaction"]
 > [Azure SignalR Service met ASP.NET Core](./signalr-quickstart-dotnet-core.md)
-
-[Ondervindt u problemen? Laat het ons weten.](https://aka.ms/asrs/qsnet)

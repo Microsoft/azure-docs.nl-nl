@@ -1,5 +1,5 @@
 ---
-title: Een bestaande toegewezen SQL-groep herstellen in azure Synapse Analytics
+title: Een bestaande toegewezen SQL-groep herstellen
 description: Instructies voor het herstellen van een bestaande, specifieke SQL-groep in azure Synapse Analytics.
 services: synapse-analytics
 author: anumjs
@@ -7,20 +7,20 @@ manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
-ms.date: 08/29/2018
-ms.author: anjangsh
+ms.date: 11/13/2020
+ms.author: joanpo
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 0c3fd0aee0a70743db721f469d91f269b9764e5e
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: d3c84f7d951db715d26042f524f385826197e076
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94577546"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96449995"
 ---
-# <a name="restore-an-existing-dedicated-sql-pool-in-azure-synapse-analytics"></a>Een bestaande toegewezen SQL-groep herstellen in azure Synapse Analytics
+# <a name="restore-an-existing-dedicated-sql-pool-formerly-sql-dw"></a>Een bestaande toegewezen SQL-groep herstellen (voorheen SQL DW)
 
-In dit artikel leert u hoe u een bestaande, specifieke SQL-groep in azure Synapse Analytics kunt herstellen met behulp van Azure Portal en Power shell.
+In dit artikel leert u hoe u een bestaande toegewezen SQL-groep (voorheen SQL DW) kunt herstellen met behulp van Azure Portal en Power shell.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -31,9 +31,9 @@ In dit artikel leert u hoe u een bestaande, specifieke SQL-groep in azure Synaps
 1. Zorg ervoor dat u [Azure PowerShell installeert](/powershell/azure/?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 2. Een bestaand herstel punt hebben waarvan u wilt herstellen. Als u een nieuwe herstel bewerking wilt maken, raadpleegt u [de zelf studie voor het maken van een nieuw door de gebruiker gedefinieerd herstel punt](sql-data-warehouse-restore-points.md).
 
-## <a name="restore-an-existing-dedicated-sql-pool-through-powershell"></a>Een bestaande toegewezen SQL-groep herstellen via Power shell
+## <a name="restore-an-existing-dedicated-sql-pool-formerly-sql-dw-through-powershell"></a>Een bestaande toegewezen SQL-groep (voorheen SQL DW) herstellen via Power shell
 
-Gebruik de Power shell [-cmdlet Restore-AzSqlDatabase](/powershell/module/az.sql/restore-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) om een bestaande, specifieke SQL-groep te herstellen vanaf een herstel punt.
+Gebruik de cmdlet [Restore-AzSqlDatabase](/powershell/module/az.sql/restore-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) Power shell om een bestaande toegewezen SQL-groep (voorheen SQL DW) te herstellen vanaf een herstel punt.
 
 1. Open PowerShell.
 
@@ -41,18 +41,18 @@ Gebruik de Power shell [-cmdlet Restore-AzSqlDatabase](/powershell/module/az.sql
 
 3. Selecteer het abonnement dat de Data Base bevat die u wilt herstellen.
 
-4. De herstel punten voor de toegewezen SQL-groep weer geven.
+4. De herstel punten voor de toegewezen SQL-groep (voorheen SQL DW) weer geven.
 
 5. Kies het gewenste herstel punt met behulp van de RestorePointCreationDate.
 
-6. Herstel de toegewezen SQL-groep naar het gewenste herstel punt met de Power shell [-cmdlet Restore-AzSqlDatabase](/powershell/module/az.sql/restore-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) .
+6. Herstel de toegewezen SQL-groep (voorheen SQL DW) naar het gewenste herstel punt met de Power shell [-cmdlet Restore-AzSqlDatabase](/powershell/module/az.sql/restore-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) .
 
-    1. Als u de exclusieve SQL-groep naar een andere server wilt herstellen, moet u de naam van de andere server opgeven.  Deze server kan zich ook in een andere resource groep en regio bevinden.
+    1. Als u de toegewezen SQL-groep (voorheen SQL DW) naar een andere server wilt herstellen, moet u de andere server naam opgeven.  Deze server kan zich ook in een andere resource groep en regio bevinden.
     2. Als u wilt herstellen naar een ander abonnement, gebruikt u de knop verplaatsen om de server naar een ander abonnement te verplaatsen.
 
-7. Controleer of de herstelde toegewezen SQL-groep online is.
+7. Controleer of de herstelde toegewezen SQL-groep (voorheen SQL DW) online is.
 
-8. Nadat de herstel bewerking is voltooid, kunt u de gereserveerde toegewezen SQL-pool configureren door [de data base na het herstel te configureren](../../azure-sql/database/disaster-recovery-guidance.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#configure-your-database-after-recovery).
+8. Nadat de herstel bewerking is voltooid, kunt u uw gereserveerde, toegewezen SQL-groep (voorheen SQL DW) configureren door [de data base na het herstel te configureren](../../azure-sql/database/disaster-recovery-guidance.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#configure-your-database-after-recovery).
 
 ```Powershell
 
@@ -89,7 +89,7 @@ $RestoredDatabase.status
 
 ```
 
-## <a name="restore-an-existing-dedicated-sql-pool-through-the-azure-portal"></a>Een bestaande toegewezen SQL-groep herstellen via de Azure Portal
+## <a name="restore-an-existing-dedicated-sql-pool-formerly-sql-dw-through-the-azure-portal"></a>Een bestaande toegewezen SQL-groep (voorheen SQL DW) herstellen via de Azure Portal
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 2. Ga naar de specifieke configuratie waarvan u wilt herstellen.
@@ -97,11 +97,11 @@ $RestoredDatabase.status
 
     ![ Overzicht van Herstellen](./media/sql-data-warehouse-restore-active-paused-dw/restoring-01.png)
 
-4. Selecteer **automatische herstel punten** of door de **gebruiker gedefinieerde herstel punten**. Als de toegewezen SQL-groep geen automatische herstel punten heeft, wacht u enkele uren of maakt u een door de gebruiker gedefinieerd herstel punt voordat u dit herstelt. Voor User-Defined herstel punten selecteert u een bestaande en maakt u een nieuw item. Voor- **Server** kunt u een server in een andere resource groep en regio kiezen of een nieuwe maken. Nadat u alle para meters hebt opgegeven, klikt u op **bekijken + herstellen**.
+4. Selecteer **automatische herstel punten** of door de **gebruiker gedefinieerde herstel punten**. Als de toegewezen SQL-groep (voorheen SQL DW) geen automatische herstel punten heeft, wacht u enkele uren of maakt u een door de gebruiker gedefinieerd herstel punt voordat u dit herstelt. Voor User-Defined herstel punten selecteert u een bestaande en maakt u een nieuw item. Voor- **Server** kunt u een server in een andere resource groep en regio kiezen of een nieuwe maken. Nadat u alle para meters hebt opgegeven, klikt u op **bekijken + herstellen**.
 
     ![Automatische herstelpunten](./media/sql-data-warehouse-restore-active-paused-dw/restoring-11.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Een verwijderde toegewezen SQL-groep herstellen](sql-data-warehouse-restore-deleted-dw.md)
-- [Herstellen vanuit een toegewezen SQL-groep met geo-back-ups](sql-data-warehouse-restore-from-geo-backup.md)
+- [Een verwijderde toegewezen SQL-groep herstellen (voorheen SQL DW)](sql-data-warehouse-restore-deleted-dw.md)
+- [Herstellen vanuit een toegewezen SQL-groep met geo-back-ups (voorheen SQL DW)](sql-data-warehouse-restore-from-geo-backup.md)

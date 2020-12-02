@@ -11,16 +11,16 @@ ms.date: 04/19/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
 ms.custom: ''
-ms.openlocfilehash: b3e1c4b8dec0e62bb2a77939a36e38b61837033a
-ms.sourcegitcommit: 18046170f21fa1e569a3be75267e791ca9eb67d0
+ms.openlocfilehash: 52e3ea3e07a81495f64f70f72686154a02a654af
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/16/2020
-ms.locfileid: "94638849"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96451803"
 ---
 # <a name="statistics-in-synapse-sql"></a>Statistieken in Synapse SQL
 
-In dit artikel vindt u aanbevelingen en voor beelden voor het maken en bijwerken van statistieken voor het optimaliseren van query's met behulp van de Synapse SQL-resources: exclusieve SQL-groep en serverloze SQL-pool (preview).
+In dit artikel vindt u aanbevelingen en voor beelden voor het maken en bijwerken van statistieken voor het optimaliseren van query's met behulp van de Synapse SQL-resources: exclusieve SQL-groep en serverloze SQL-groep.
 
 ## <a name="statistics-in-dedicated-sql-pool"></a>Statistieken in de toegewezen SQL-groep
 
@@ -74,7 +74,7 @@ Om te voor komen dat de prestaties meetbaar zijn, moet u ervoor zorgen dat de st
 > [!NOTE]
 > Het maken van statistieken wordt geregistreerd in [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) onder een andere gebruikers context.
 
-Wanneer er automatische statistieken worden gemaakt, worden de volgende notatie toegepast: _WA_Sys_ <kolom-id van 8 cijfers in hex>_<tabel-ID van 8 cijfers in hexadecimale>. U kunt al gemaakte statistieken weer geven door de [DBCC-SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) opdracht uit te voeren:
+Wanneer er automatische statistieken worden gemaakt, worden de volgende notatie toegepast: _WA_Sys_<kolom-id van 8 cijfers in hex>_<tabel-ID van 8 cijfers in hexadecimale>. U kunt al gemaakte statistieken weer geven door de [DBCC-SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) opdracht uit te voeren:
 
 ```sql
 DBCC SHOW_STATISTICS (<table_name>, <target>)
@@ -245,7 +245,7 @@ Als u een statistieken object met meerdere kolommen wilt maken, gebruikt u de vo
 > [!NOTE]
 > Het histogram dat wordt gebruikt om het aantal rijen in het query resultaat te schatten, is alleen beschikbaar voor de eerste kolom die wordt vermeld in de definitie van het statistieken-object.
 
-In dit voor beeld is het histogram voor de *product \_ categorie*. Statistieken voor meerdere kolommen worden berekend voor *product \_ categorie* -en *product \_ sub_category* :
+In dit voor beeld is het histogram voor de *product \_ categorie*. Statistieken voor meerdere kolommen worden berekend voor *product \_ categorie* -en *product \_ sub_category*:
 
 ```sql
 CREATE STATISTICS stats_2cols
@@ -254,7 +254,7 @@ CREATE STATISTICS stats_2cols
     WITH SAMPLE = 50 PERCENT;
 ```
 
-Omdat er een correlatie bestaat tussen *product \_ categorie* en *product \_ \_ subcategorie* , kan een statistieken object met meerdere kolommen nuttig zijn als deze kolommen tegelijkertijd worden gebruikt.
+Omdat er een correlatie bestaat tussen *product \_ categorie* en *product \_ \_ subcategorie*, kan een statistieken object met meerdere kolommen nuttig zijn als deze kolommen tegelijkertijd worden gebruikt.
 
 #### <a name="create-statistics-on-all-columns-in-a-table"></a>Statistieken maken voor alle kolommen in een tabel
 
@@ -443,7 +443,7 @@ Er zijn verschillende systeem weergaven en-functies die u kunt gebruiken om info
 
 Deze systeem weergaven bieden informatie over statistieken:
 
-| Catalogus weergave | Description |
+| Catalogus weergave | Beschrijving |
 |:--- |:--- |
 | [sys. Columns](/sql/relational-databases/system-catalog-views/sys-columns-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) |Eén rij voor elke kolom. |
 | [sys. Objects](/sql/relational-databases/system-catalog-views/sys-objects-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) |Eén rij voor elk object in de data base. |
@@ -457,7 +457,7 @@ Deze systeem weergaven bieden informatie over statistieken:
 
 Deze systeem functies zijn handig voor het werken met statistieken:
 
-| Systeem functie | Description |
+| Systeem functie | Beschrijving |
 |:--- |:--- |
 | [STATS_DATE](/sql/t-sql/functions/stats-date-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) |Datum waarop het statistieken object voor het laatst is bijgewerkt. |
 | [DBCC-SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) |Overzichts niveau en gedetailleerde informatie over de distributie van waarden, zoals begrepen door het statistiek object. |
@@ -557,7 +557,7 @@ DBCC SHOW_STATISTICS (dbo.table1, stats_col1)
 - Aangepaste fout 2767 wordt niet ondersteund.
 
 
-## <a name="statistics-in-serverless-sql-pool-preview"></a>Statistieken in SQL-groep zonder server (preview-versie)
+## <a name="statistics-in-serverless-sql-pool"></a>Statistieken in de serverloze SQL-groep
 
 Er worden statistieken gemaakt per bepaalde kolom voor een bepaalde gegevensset (opslagpad).
 
@@ -566,7 +566,7 @@ Er worden statistieken gemaakt per bepaalde kolom voor een bepaalde gegevensset 
 
 ### <a name="why-use-statistics"></a>Waarom statistieken gebruiken?
 
-Hoe langer de serverloze SQL-groep (preview) weet wat uw gegevens zijn, des te sneller query's kunnen worden uitgevoerd. Het verzamelen van statistieken voor uw gegevens is een van de belangrijkste dingen die u kunt doen om uw query's te optimaliseren. 
+Hoe meer serverloze SQL-groepen weet wat uw gegevens zijn, des te sneller query's kunnen worden uitgevoerd. Het verzamelen van statistieken voor uw gegevens is een van de belangrijkste dingen die u kunt doen om uw query's te optimaliseren. 
 
 De query optimalisatie van de serverloze SQL-groep is een op kosten gebaseerd Optimizer. Hiermee worden de kosten van verschillende query plannen vergeleken en wordt vervolgens het abonnement met de laagste kosten gekozen. In de meeste gevallen kiest u het plan dat het snelst wordt uitgevoerd. 
 
@@ -825,7 +825,7 @@ Er zijn verschillende systeem weergaven en-functies die u kunt gebruiken om info
 
 Deze systeem weergaven bieden informatie over statistieken:
 
-| Catalogus weergave                                                 | Description                                                  |
+| Catalogus weergave                                                 | Beschrijving                                                  |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | [sys. Columns](/sql/relational-databases/system-catalog-views/sys-columns-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | Eén rij voor elke kolom.                                     |
 | [sys. Objects](/sql/relational-databases/system-catalog-views/sys-objects-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | Eén rij voor elk object in de data base.                     |
@@ -839,7 +839,7 @@ Deze systeem weergaven bieden informatie over statistieken:
 
 Deze systeem functies zijn handig voor het werken met statistieken:
 
-| Systeem functie                                              | Description                                  |
+| Systeem functie                                              | Beschrijving                                  |
 | :----------------------------------------------------------- | :------------------------------------------- |
 | [STATS_DATE](/sql/t-sql/functions/stats-date-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | Datum waarop het statistieken object voor het laatst is bijgewerkt. |
 

@@ -9,12 +9,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 02/10/2020
-ms.openlocfilehash: ba3cc376edef1e6dc8fbf859e456219a1fd3ca60
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: f65ee85b37e74f0ca16ccf6988eb2117231c3bc5
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92635759"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452198"
 ---
 # <a name="azure-data-factory-faq"></a>Veelgestelde vragen over Azure Data Factory
 
@@ -95,9 +95,9 @@ Sinds de eerste open bare preview-versie in 2017, heeft Data Factory de volgende
 ## <a name="what-is-the-integration-runtime"></a>Wat is de Integration runtime?
 Integration runtime is de reken infrastructuur die Azure Data Factory gebruikt om de volgende mogelijkheden voor gegevens integratie in verschillende netwerk omgevingen te bieden:
 
-- **Gegevens verplaatsing** : voor gegevens verplaatsing verplaatst de Integration runtime de gegevens tussen de bron-en doel gegevens archieven, terwijl er ondersteuning wordt geboden voor ingebouwde connectors, indelings conversie, kolom toewijzing en uitvoering van en schaal bare gegevens overdracht.
-- **Verzend activiteiten** : voor trans formatie biedt Integration runtime de mogelijkheid om systeem eigen SSIS-pakketten uit te voeren.
-- **SSIS-pakketten uitvoeren** : de Integration runtime voert de systeem eigen SSIS-pakketten uit in een beheerde Azure Compute-omgeving. De Integration runtime biedt ook ondersteuning voor het verzenden en bewaken van transformatie activiteiten die worden uitgevoerd op diverse Compute-Services, zoals Azure HDInsight, Azure Machine Learning, SQL Database en SQL Server.
+- **Gegevens verplaatsing**: voor gegevens verplaatsing verplaatst de Integration runtime de gegevens tussen de bron-en doel gegevens archieven, terwijl er ondersteuning wordt geboden voor ingebouwde connectors, indelings conversie, kolom toewijzing en uitvoering van en schaal bare gegevens overdracht.
+- **Verzend activiteiten**: voor trans formatie biedt Integration runtime de mogelijkheid om systeem eigen SSIS-pakketten uit te voeren.
+- **SSIS-pakketten uitvoeren**: de Integration runtime voert de systeem eigen SSIS-pakketten uit in een beheerde Azure Compute-omgeving. De Integration runtime biedt ook ondersteuning voor het verzenden en bewaken van transformatie activiteiten die worden uitgevoerd op diverse Compute-Services, zoals Azure HDInsight, Azure Machine Learning, SQL Database en SQL Server.
 
 U kunt een of meer exemplaren van de Integration runtime zo nodig implementeren om gegevens te verplaatsen en te transformeren. De Integration runtime kan worden uitgevoerd op een openbaar netwerk van Azure of op een particulier netwerk (on-premises, Azure Virtual Network, of Amazon Web Services Virtual Private Cloud [VPC]). 
 
@@ -190,7 +190,7 @@ Wanneer micro soft Help of probleem oplossing biedt voor gegevens stromen, kunt 
 
 ### <a name="how-do-i-access-data-by-using-the-other-90-dataset-types-in-data-factory"></a>Hoe kan ik toegang tot gegevens met behulp van de andere typen van 90-gegevensset in Data Factory?
 
-Met de functie voor het toewijzen van gegevens stroom kunnen op dit moment Azure SQL Database, Azure Synapse Analytics (voorheen SQL Data Warehouse), tekst bestanden met scheidings tekens worden gescheiden van Azure Blob-opslag of Azure Data Lake Storage Gen2, en Parquet bestanden van Blob Storage of Data Lake Storage Gen2 systeem eigen voor bron en Sink. 
+Met de functie voor het toewijzen van gegevens stroom kunnen op dit moment Azure SQL Database, Azure Synapse Analytics, tekst bestanden met scheidings tekens worden gescheiden van Azure Blob-opslag of Azure Data Lake Storage Gen2, en Parquet bestanden van Blob Storage of Data Lake Storage Gen2 systeem eigen voor bron en Sink. 
 
 Gebruik de Kopieer activiteit om gegevens te stage van een van de andere connectors en voer vervolgens een gegevens stroom activiteit uit om gegevens te transformeren nadat deze is klaargezet. Uw pijp lijn wordt bijvoorbeeld eerst gekopieerd naar de Blob-opslag en vervolgens gebruikt een gegevens stroom activiteit een gegevensset in de bron om die gegevens te transformeren.
 
@@ -209,7 +209,7 @@ Wrangling-gegevens stroom wordt momenteel ondersteund in gegevens fabrieken die 
 
 * Australië - oost
 * Canada - midden
-* Central India
+* India - centraal
 * VS - oost
 * VS - oost 2
 * Japan - oost
@@ -266,7 +266,7 @@ Wrangling-gegevens stroom ondersteunt de volgende gegevens typen in SQL. U krijg
 * bigint
 * long
 * tekst
-* date
+* datum
 * datum/tijd
 * datetime2
 * smalldatetime

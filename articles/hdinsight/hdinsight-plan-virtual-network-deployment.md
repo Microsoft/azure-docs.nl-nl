@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020, devx-track-azurecli
 ms.date: 05/04/2020
-ms.openlocfilehash: 60bb16b0a4fd2e710d0d5fddc6cf82916f2f66af
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 750e8cc59f196fda6bf3a816885c3c0b29a69a56
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92741427"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96451923"
 ---
 # <a name="plan-a-virtual-network-for-azure-hdinsight"></a>Een virtueel netwerk plannen voor Azure HDInsight
 
@@ -148,7 +148,7 @@ Voor het inschakelen van naam omzetting tussen het virtuele netwerk en bronnen i
 
          * Alle andere aanvragen door sturen naar de on-premises DNS-server. De on-premises DNS verwerkt alle andere aanvragen voor naam omzetting, zelfs aanvragen voor Internet bronnen zoals Microsoft.com.
 
-     * __On-premises DNS__ : aanvragen door sturen voor het DNS-achtervoegsel van het virtuele netwerk naar de aangepaste DNS-server. De aangepaste DNS-server wordt vervolgens doorgestuurd naar de recursieve resolver van Azure.
+     * __On-premises DNS__: aanvragen door sturen voor het DNS-achtervoegsel van het virtuele netwerk naar de aangepaste DNS-server. De aangepaste DNS-server wordt vervolgens doorgestuurd naar de recursieve resolver van Azure.
 
        Deze configuratie routes aanvragen voor volledig gekwalificeerde domein namen die het DNS-achtervoegsel van het virtuele netwerk bevatten naar de aangepaste DNS-server. Alle andere aanvragen (zelfs voor open bare Internet adressen) worden verwerkt door de on-premises DNS-server.
 
@@ -212,4 +212,4 @@ Wanneer u een HDInsight-cluster maakt, wordt er ook een load balancer gemaakt. H
 * Zie [overzicht van azure Virtual Network](../virtual-network/virtual-networks-overview.md)voor meer informatie over virtuele Azure-netwerken.
 * Zie [netwerk beveiligings groepen](../virtual-network/network-security-groups-overview.md)voor meer informatie over netwerk beveiligings groepen.
 * Zie door de gebruiker [gedefinieerde routes en door sturen via IP](../virtual-network/virtual-networks-udr-overview.md)voor meer informatie over door de gebruiker gedefinieerde routes.
-* Zie [netwerk verkeer beheren](./control-network-traffic.md)voor meer informatie over het beheren van verkeer.
+* Zie [netwerk verkeer beheren](./control-network-traffic.md)voor meer informatie over het beheren van verkeer met inbegrip van Firewall integratie.

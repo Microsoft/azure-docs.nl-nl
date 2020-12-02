@@ -9,12 +9,12 @@ ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: spark
 ms.date: 09/13/2020
-ms.openlocfilehash: 523356947d6d5f93fa8ef2202ad6e7d235c6afdd
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 73b18d15ad054f1c485d6f61cdefe54993148bc4
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919519"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96450542"
 ---
 # <a name="visualize-data"></a>Gegevens visualiseren
 Azure Synapse is een geïntegreerde analyse service waarmee tijd kan worden versneld, in data warehouses en big data Analytics-systemen. Gegevens visualisatie is een belang rijk onderdeel waarmee u inzicht kunt krijgen in uw gegevens. Het helpt grote en kleine gegevens gemakkelijker te maken voor mensen. Daarnaast is het gemakkelijker om patronen, trends en uitschieters in groepen gegevens te detecteren. 
@@ -34,7 +34,7 @@ Voor toegang tot de grafiek opties:
    ![ingebouwde grafieken](./media/apache-spark-development-using-notebooks/synapse-built-in-charts.png#lightbox)
 
 3. U kunt uw visualisatie nu aanpassen door de volgende waarden op te geven:
-   | Configuratie | Description |
+   | Configuratie | Beschrijving |
    |--|--| 
    | Grafiektype | De ```display``` functie ondersteunt een breed scala aan grafiek typen, waaronder staaf diagrammen, spreidings grafieken, lijn grafieken en meer |
    | Sleutel | Geef het bereik van de waarden voor de x-as op|
@@ -227,7 +227,7 @@ U kunt de Azure Synapse Analytics runtime- [documentatie](./spark/../apache-spar
 ## <a name="connect-to-power-bi-using-apache-spark--sql-on-demand"></a>Verbinding maken met Power BI met behulp van Apache Spark & SQL op aanvraag
 Azure Synapse Analytics integreert diep met Power BI zodat data engineers analyse oplossingen kunnen bouwen.
 
-Met Azure Synapse Analytics kunnen de verschillende rekenengines voor de werkruimte databases en tabellen delen tussen de Spark-pools (preview-versie) en de SQL-on-demand engine (preview-versie). Met behulp van het [gedeelde meta gegevens model](https://docs.microsoft.com/azure/synapse-analytics/metadata/overview)kunt u een query uitvoeren op uw Apache Spark tabellen met behulp van SQL op aanvraag. Als u klaar bent, kunt u uw SQL on-demand-eind punt verbinden met Power BI om eenvoudig een query uit te voeren op uw gesynchroniseerde Spark-tabellen.
+Met Azure Synapse Analytics kunnen de verschillende reken kundige engines voor werk ruimten data bases en tabellen uitwisselen tussen de Spark-Pools en serverloze SQL-groep. Met behulp van het [gedeelde meta gegevens model](https://docs.microsoft.com/azure/synapse-analytics/metadata/overview)kunt u een query uitvoeren op uw Apache Spark tabellen met behulp van SQL op aanvraag. Als u klaar bent, kunt u uw SQL on-demand-eind punt verbinden met Power BI om eenvoudig een query uit te voeren op uw gesynchroniseerde Spark-tabellen.
 
 
 ## <a name="next-steps"></a>Volgende stappen

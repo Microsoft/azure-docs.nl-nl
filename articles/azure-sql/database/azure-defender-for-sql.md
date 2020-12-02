@@ -11,13 +11,13 @@ ms.author: memildin
 manager: rkarlin
 author: memildin
 ms.reviewer: vanto
-ms.date: 09/21/2020
-ms.openlocfilehash: d147303df43c4f86843df518c71316e6a97b6671
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.date: 12/01/2020
+ms.openlocfilehash: 4bb7f2fd5823a9d8ebf4234f3bb41d955574b838
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92678088"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96451530"
 ---
 # <a name="azure-defender-for-sql"></a>Azure Defender voor SQL
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -48,21 +48,27 @@ Azure Defender kan worden geopend via de [Azure Portal](https://portal.azure.com
 >
 > De kosten van Azure Defender zijn afgestemd op Azure Security Center prijs van de Standard-laag per knoop punt, waarbij een knoop punt de volledige server of het hele beheerde exemplaar is. U betaalt dus slechts één keer voor het beveiligen van alle data bases op de server of het beheerde exemplaar met Azure Defender. U kunt Azure Defender in eerste instantie uitproberen met een gratis proef versie.
 
+:::image type="content" source="media/azure-defender-for-sql/enable-azure-defender.png" alt-text="Azure Defender inschakelen":::
+
 ## <a name="start-tracking-vulnerabilities-and-investigating-threat-alerts"></a>Het bijhouden van beveiligings problemen en het onderzoeken van bedreigings waarschuwingen
 
 Klik op de kaart met de **evaluatie van beveiligings** problemen voor het weer geven en beheren van beveiligings problemen en rapporten en voor het bijhouden van uw beveiligings stature. Als er beveiligings waarschuwingen zijn ontvangen, klikt u op de **Advanced Threat Protection** -kaart om de details van de waarschuwingen weer te geven en een geconsolideerd rapport te bekijken over alle waarschuwingen in uw Azure-abonnement via de pagina Azure Security Center Security Alerts.
 
 ## <a name="manage-azure-defender-settings"></a>Azure Defender-instellingen beheren
 
-Als u Azure Defender-instellingen wilt weer geven en beheren, gaat u naar **Security Center** onder de kop **Security** voor uw server of het beheerde exemplaar. Op deze pagina kunt u Azure Defender in-of uitschakelen en de evaluatie van beveiligings problemen en geavanceerde instellingen voor bedreigingen wijzigen voor uw hele server of een beheerd exemplaar.
+Als u Azure Defender-instellingen wilt weer geven en beheren, gaat u naar **Security Center** onder de kop **beveiliging** voor uw server of het beheerde exemplaar. Op deze pagina kunt u Azure Defender in-of uitschakelen en de evaluatie van beveiligings problemen en geavanceerde instellingen voor bedreigingen wijzigen voor uw hele server of een beheerd exemplaar.
+
+:::image type="content" source="media/azure-defender-for-sql/security-server-settings.png" alt-text="instellingen voor beveiligings server":::
 
 ## <a name="manage-azure-defender-settings-for-a-database"></a>Azure Defender-instellingen voor een Data Base beheren
 
-Als u de Azure Defender-instellingen voor een bepaalde Data Base wilt onderdrukken, schakelt u het selectie vakje **Azure Defender voor SQL inschakelen op database niveau** in. Gebruik deze optie alleen als u een bepaalde vereiste hebt voor het ontvangen van afzonderlijke geavanceerde beveiligings waarschuwingen of evaluatie resultaten van beveiligings problemen voor de afzonderlijke Data Base, in plaats van of naast de waarschuwingen en resultaten voor alle data bases op de server of het beheerde exemplaar.
+Als u de Azure Defender-instellingen voor een bepaalde Data Base wilt onderdrukken, schakelt u het selectie vakje **Azure Defender voor SQL inschakelen op database niveau** in uw data base- **Security Center** instellingen in. Gebruik deze optie alleen als u een bepaalde vereiste hebt voor het ontvangen van afzonderlijke geavanceerde beveiligings waarschuwingen of evaluatie resultaten van beveiligings problemen voor de afzonderlijke Data Base, in plaats van of naast de waarschuwingen en resultaten voor alle data bases op de server of het beheerde exemplaar.
 
 Zodra het selectie vakje is ingeschakeld, kunt u de relevante instellingen voor deze data base configureren.
 
-Azure Defender voor SQL-instellingen voor uw server of het beheerde exemplaar kan ook worden bereikt via het deel venster Azure Defender data base. Klik op **instellingen** in het hoofd venster van Azure Defender en klik vervolgens op **Azure Defender voor SQL Server-instellingen weer geven** .
+:::image type="content" source="media/azure-defender-for-sql/enable-for-database-level.png" alt-text="Azure Defender op database niveau inschakelen":::
+
+Azure Defender voor SQL-instellingen voor uw server of het beheerde exemplaar kan ook worden bereikt via het deel venster Azure Defender data base. Klik op **instellingen** in het hoofd Security Center deel venster en klik vervolgens op **Azure Defender voor SQL Server-instellingen weer geven**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

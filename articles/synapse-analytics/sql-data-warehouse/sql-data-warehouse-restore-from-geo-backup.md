@@ -7,33 +7,33 @@ manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
-ms.date: 07/12/2019
-ms.author: anjangsh
+ms.date: 11/13/2020
+ms.author: joanpo
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 7496cedd127182482bccf97909cc0a0a4a78253f
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 4683bd84873506483209f4a0eb3751a1b163ed48
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93313412"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96449894"
 ---
 # <a name="geo-restore-a-dedicated-sql-pool-in-azure-synapse-analytics"></a>Geo-herstel een toegewezen SQL-groep in azure Synapse Analytics
 
-In dit artikel leert u hoe u uw toegewezen SQL-groep kunt herstellen via een geo-back-up via Azure Portal en Power shell.
+In dit artikel leert u hoe u uw toegewezen SQL-groep (voorheen SQL DW) herstelt van een geo-back-up via Azure Portal en Power shell.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-**Controleer de DTU-capaciteit.** Elke toegewezen SQL-groep wordt gehost door een [logische SQL-Server](../../azure-sql/database/logical-servers.md) (bijvoorbeeld MyServer.database.Windows.net) die een standaard DTU-quotum heeft. Controleer of de SQL-Server voldoende resterende DTU-quota heeft voor de data base die wordt hersteld. Zie [een wijziging in een DTU-quotum aanvragen](sql-data-warehouse-get-started-create-support-ticket.md)voor meer informatie over het berekenen van de benodigde DTU of om meer DTU aan te vragen.
+**Controleer de DTU-capaciteit.** Elke toegewezen SQL-groep (voorheen SQL DW) wordt gehost door een [logische SQL-Server](../../azure-sql/database/logical-servers.md) (bijvoorbeeld MyServer.database.Windows.net) die een standaard DTU-quotum heeft. Controleer of de SQL-Server voldoende resterende DTU-quota heeft voor de data base die wordt hersteld. Zie [een wijziging in een DTU-quotum aanvragen](sql-data-warehouse-get-started-create-support-ticket.md)voor meer informatie over het berekenen van de benodigde DTU of om meer DTU aan te vragen.
 
 ## <a name="restore-from-an-azure-geographical-region-through-powershell"></a>Herstellen vanuit een geografische regio van Azure via Power shell
 
 Gebruik de cmdlet [Get-AzSqlDatabaseGeoBackup](/powershell/module/az.sql/get-azsqldatabasegeobackup?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) en [Restore-AzSqlDatabase](/powershell/module/az.sql/restore-azsqldatabase?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) om een geo-back-up te herstellen.
 
 > [!NOTE]
-> U kunt een geo-herstel bewerking uitvoeren op Gen2. Als u dit wilt doen, geeft u een Gen2 ServiceObjectiveName op (bijvoorbeeld DW1000 **c** ) als een optionele para meter.
+> U kunt een geo-herstel bewerking uitvoeren op Gen2. Als u dit wilt doen, geeft u een Gen2 ServiceObjectiveName op (bijvoorbeeld DW1000 **c**) als een optionele para meter.
 >
 
 1. Voordat u begint, moet u ervoor zorgen dat u [Azure PowerShell installeert](/powershell/azure/?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
@@ -74,28 +74,24 @@ De herstelde data base wordt TDE ingeschakeld als de bron database TDE is ingesc
 
 ## <a name="restore-from-an-azure-geographical-region-through-azure-portal"></a>Herstellen vanuit een geografische regio van Azure via Azure Portal
 
-Volg de onderstaande stappen om een toegewezen SQL-groep te herstellen vanuit een geo-back-up:
+Volg de onderstaande stappen om een toegewezen SQL-groep (voorheen SQL DW) te herstellen van een geo-back-up:
 
 1. Meld u aan bij uw [Azure Portal](https://portal.azure.com/) -account.
-2. Klik op **+ Een resource maken**.
+1. Zoek naar **toegewezen SQL-groepen (voorheen SQL DW)**.
 
-   ![Nieuwe DW](./media/sql-data-warehouse-restore-from-geo-backup/georestore-new.png)
+   ![Nieuwe DW 2](./media/sql-data-warehouse-restore-from-geo-backup/georestore-new.png)
 
-3. Klik op **data bases** en vervolgens op **Azure Synapse Analytics (voorheen SQL DW)**.
+1. Klik op toevoegen en vul de gevraagde gegevens in op het tabblad **basis beginselen** en klik op **volgende: aanvullende instellingen**.
 
-   ![Nieuwe DW 2](./media/sql-data-warehouse-restore-from-geo-backup/georestore-new-02.png)
+   ![Basisbeginselen](./media/sql-data-warehouse-restore-from-geo-backup/georestore-dw-1.png)
 
-4. Vul de gevraagde gegevens in op het tabblad **basis beginselen** en klik op **volgende: aanvullende instellingen**.
-
-   ![Basisinstellingen](./media/sql-data-warehouse-restore-from-geo-backup/georestore-dw-1.png)
-
-5. Selecteer voor het gebruik van de para meter **bestaande gegevens** **back-up** en selecteer de juiste back-up in de opties omlaag schuiven. Klik op **Controleren en maken**.
+1. Selecteer voor het gebruik van de para meter **bestaande gegevens** **back-up** en selecteer de juiste back-up in de opties omlaag schuiven. Klik op **Controleren + maken**.
 
    ![Back-up](./media/sql-data-warehouse-restore-from-geo-backup/georestore-select.png)
 
-6. Nadat het Data Warehouse is hersteld, controleert u of de **status** online is.
+1. Nadat het Data Warehouse is hersteld, controleert u of de **status** online is.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Een bestaande toegewezen SQL-groep herstellen](sql-data-warehouse-restore-active-paused-dw.md)
-- [Een verwijderde toegewezen SQL-groep herstellen](sql-data-warehouse-restore-deleted-dw.md)
+- [Een bestaande toegewezen SQL-groep herstellen (voorheen SQL DW)](sql-data-warehouse-restore-active-paused-dw.md)
+- [Een verwijderde toegewezen SQL-groep herstellen (voorheen SQL DW)](sql-data-warehouse-restore-deleted-dw.md)

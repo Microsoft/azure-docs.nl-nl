@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: conceptual
 ms.date: 10/10/2020
 ms.author: alkohli
-ms.openlocfilehash: 8957d8982a3bfe1da2811dc10d0c3e77a72fc288
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: ec7a32739940d53d976e73a7e170df96a0acc245
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92367598"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96449524"
 ---
 # <a name="azure-key-vault-integration-with-azure-stack-edge"></a>Integratie met Azure Stack Edge Azure Key Vault 
 
@@ -49,7 +49,7 @@ Er wordt een sleutel kluis gemaakt voor Azure Stack Edge-resource tijdens het ge
 
 - Een resource vergrendeling is ingeschakeld op de sleutel kluis om onbedoelde verwijdering te voor komen. Er is ook een voorlopig verwijderen ingeschakeld op de sleutel kluis waarmee de sleutel kluis binnen 90 dagen kan worden hersteld als er een ongeluk is verwijderd. Zie [Azure Key Vault overzicht van voorlopig verwijderen](../key-vault/general/soft-delete-overview.md) voor meer informatie
 
-    Als de sleutel kluis per ongeluk wordt verwijderd en de duur voor het leegmaken van de beveiliging van 90 dagen niet is verstreken, voert u de volgende stappen uit om [de sleutel kluis te herstellen](../key-vault/general/soft-delete-powershell.md#recovering-a-key-vault). 
+    Als de sleutel kluis per ongeluk wordt verwijderd en de duur voor het leegmaken van de beveiliging van 90 dagen niet is verstreken, voert u de volgende stappen uit om [de sleutel kluis te herstellen](../key-vault/general/key-vault-recovery.md#list-recover-or-purge-soft-deleted-secrets-keys-and-certificates). 
 
 - Als u een bestaande Azure Stack Edge-resource had voordat de Azure Key Vault werd geïntegreerd met Azure Stack-Edge-resource, heeft dit geen invloed op dit probleem. U kunt uw bestaande Azure Stack Edge-resource blijven gebruiken. 
 
@@ -73,4 +73,3 @@ When you generate an activation key, the following events occur:
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over het genereren van een [activerings sleutel](azure-stack-edge-gpu-deploy-prep.md#get-the-activation-key).
-

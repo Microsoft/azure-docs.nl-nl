@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 06/23/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, deploy, devx-track-azurecli
-ms.openlocfilehash: 491fa39bed9e73a41f5a29a9040df052b6945552
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 5f3861d43715ed68116d25206efe4347ea96805c
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578022"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452135"
 ---
 # <a name="deploy-a-machine-learning-model-to-azure-app-service-preview"></a>Een machine learning model implementeren op Azure App Service (preview-versie)
 
@@ -29,7 +29,7 @@ Meer informatie over het implementeren van een model van Azure Machine Learning 
 Met Azure Machine Learning kunt u docker-installatie kopieën maken op basis van getrainde machine learning modellen. Deze installatie kopie bevat een webservice waarmee gegevens worden ontvangen, naar het model worden verzonden en het antwoord vervolgens wordt geretourneerd. Azure App Service kan worden gebruikt om de installatie kopie te implementeren en biedt de volgende functies:
 
 * Geavanceerde [verificatie](../app-service/configure-authentication-provider-aad.md) voor verbeterde beveiliging. Verificatie methoden zijn zowel Azure Active Directory als multi-factor Authentication.
-* [Automatisch schalen](../azure-monitor/platform/autoscale-get-started.md?toc=%252fazure%252fapp-service%252ftoc.json) zonder opnieuw te hoeven implementeren.
+* [Automatisch schalen](../azure-monitor/platform/autoscale-get-started.md?toc=%2fazure%2fapp-service%2ftoc.json) zonder opnieuw te hoeven implementeren.
 * [TLS-ondersteuning](../app-service/configure-ssl-certificate-in-code.md) voor beveiligde communicatie tussen clients en de service.
 
 Zie [app service-overzicht](../app-service/overview.md)voor meer informatie over de functies van Azure app service.
@@ -40,7 +40,7 @@ Zie [app service-overzicht](../app-service/overview.md)voor meer informatie over
 ## <a name="prerequisites"></a>Vereisten
 
 * Een Azure Machine Learning-werkruimte. Zie het artikel [een werk ruimte maken](how-to-manage-workspace.md) voor meer informatie.
-* De [Azure cli](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
+* De [Azure CLI](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
 * Een getraind machine learning model dat is geregistreerd in uw werk ruimte. Als u geen model hebt, gebruikt u de [zelf studie voor installatie kopie classificatie: Train model](tutorial-train-models-with-aml.md) om er een te trainen en te registreren.
 
     > [!IMPORTANT]
@@ -70,7 +70,7 @@ Voordat u implementeert, moet u definiëren wat er nodig is om het model als een
 
     Zie [Modellen implementeren met Azure Machine Learning](how-to-deploy-and-where.md) voor meer informatie over invoerscripts.
 
-* **Afhankelijkheden** , zoals hulp scripts of python/Conda-pakketten die zijn vereist voor het uitvoeren van het script of model van de vermelding
+* **Afhankelijkheden**, zoals hulp scripts of python/Conda-pakketten die zijn vereist voor het uitvoeren van het script of model van de vermelding
 
 Deze entiteiten worden ingekapseld in een Afleidings __configuratie__. De deductieconfiguratie verwijst naar het invoerscript en andere afhankelijkheden.
 
@@ -271,7 +271,7 @@ print(response.json())
 ## <a name="next-steps"></a>Volgende stappen
 
 * Meer informatie over het configureren van uw web-app in de documentatie [over app service in Linux](/azure/app-service/containers/) .
-* Meer informatie over schalen vindt u in aan de [slag met automatisch schalen in azure](../azure-monitor/platform/autoscale-get-started.md?toc=%252fazure%252fapp-service%252ftoc.json).
+* Meer informatie over schalen vindt u in aan de [slag met automatisch schalen in azure](../azure-monitor/platform/autoscale-get-started.md?toc=%2fazure%2fapp-service%2ftoc.json).
 * [Gebruik een TLS/SSL-certificaat in uw Azure app service](../app-service/configure-ssl-certificate-in-code.md).
 * [Configureer uw app service-app voor het gebruik van Azure Active Directory aanmelden](../app-service/configure-authentication-provider-aad.md).
 * [Een ML-model gebruiken dat is geïmplementeerd als een webservice](how-to-consume-web-service.md)

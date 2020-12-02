@@ -11,12 +11,12 @@ ms.author: aashishb
 author: aashishb
 ms.reviewer: larryfr
 ms.date: 06/19/2020
-ms.openlocfilehash: 02772ff6279ee813b86f92984742ba8301bdf74e
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 78829ae52d74cf6ec58c12779c51bca9a98e0af1
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93357943"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96450802"
 ---
 # <a name="regenerate-storage-account-access-keys"></a>Toegangs sleutels voor het opslag account opnieuw genereren
 
@@ -27,7 +27,7 @@ Uit veiligheids overwegingen moet u de toegangs sleutels voor een Azure Storage-
 
 > [!IMPORTANT]
 
-> De referenties die zijn geregistreerd bij data stores worden opgeslagen in uw Azure Key Vault gekoppeld aan de werk ruimte. Als u [voorlopig verwijderen](https://docs.microsoft.com/azure/key-vault/general/soft-delete-overview) hebt ingeschakeld voor uw Key Vault, bevat dit artikel instructies voor het bijwerken van referenties. Als u de registratie van de gegevens opslag ongedaan maakt en opnieuw probeert te registreren onder dezelfde naam, mislukt deze actie. Zie [voorlopig verwijderen inschakelen voor een bestaande sleutel kluis]( https://docs.microsoft.com/azure/key-vault/general/soft-delete-change#turn-on-soft-delete-for-an-existing-key-vault) voor het inschakelen van voorlopig verwijderen in dit scenario.
+> De referenties die zijn geregistreerd bij data stores worden opgeslagen in uw Azure Key Vault gekoppeld aan de werk ruimte. Als u [voorlopig verwijderen](../key-vault/general/soft-delete-overview.md) hebt ingeschakeld voor uw Key Vault, bevat dit artikel instructies voor het bijwerken van referenties. Als u de registratie van de gegevens opslag ongedaan maakt en opnieuw probeert te registreren onder dezelfde naam, mislukt deze actie. Zie [voorlopig verwijderen inschakelen voor een bestaande sleutel kluis]( https://docs.microsoft.com/azure/key-vault/general/soft-delete-change#turn-on-soft-delete-for-an-existing-key-vault) voor het inschakelen van voorlopig verwijderen in dit scenario.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -111,7 +111,7 @@ Gebruik de volgende stappen om Azure Machine Learning bij te werken voor het geb
         Met deze opdracht worden automatisch de nieuwe sleutels gesynchroniseerd voor het Azure-opslag account dat wordt gebruikt door de werk ruimte.
 
 1. U kunt de gegevens die gebruikmaken van het opslag account opnieuw registreren via de SDK of [de Azure machine learning Studio](https://ml.azure.com).
-    1. **Als u gegevens opslag opnieuw wilt registreren via de python-SDK** , gebruikt u de waarden in de sectie [Wat moet worden bijgewerkt](#whattoupdate) en de sleutel uit stap 1 met de volgende code. 
+    1. **Als u gegevens opslag opnieuw wilt registreren via de python-SDK**, gebruikt u de waarden in de sectie [Wat moet worden bijgewerkt](#whattoupdate) en de sleutel uit stap 1 met de volgende code. 
     
         Sinds `overwrite=True` is opgegeven, overschrijft deze code de bestaande registratie en werkt deze bij om de nieuwe sleutel te gebruiken.
     
@@ -133,7 +133,7 @@ Gebruik de volgende stappen om Azure Machine Learning bij te werken voor het geb
         
         ```
     
-    1. **Als u gegevens opslag opnieuw wilt registreren via Studio** , selecteert u **gegevens opslag** in het linkerdeel venster van de Studio. 
+    1. **Als u gegevens opslag opnieuw wilt registreren via Studio**, selecteert u **gegevens opslag** in het linkerdeel venster van de Studio. 
         1. Selecteer de gegevens opslag die u wilt bijwerken.
         1. Selecteer de knop **referenties bijwerken** in de linkerbovenhoek. 
         1. Gebruik uw nieuwe toegangs sleutel uit stap 1 om het formulier in te vullen en klik op **Opslaan**.

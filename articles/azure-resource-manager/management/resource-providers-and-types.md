@@ -2,14 +2,14 @@
 title: Resource providers en resource typen
 description: Hierin worden de resource providers beschreven die Azure Resource Manager ondersteunen. Hierin worden de schema's, beschik bare API-versies en de regio's beschreven die als host kunnen fungeren voor de resources.
 ms.topic: conceptual
-ms.date: 11/30/2020
+ms.date: 12/01/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: a8adbce80d5e8f9ee9df2050d8f43363cbf57dc3
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 6413a1279c9c7a995bb144097e3db55d5f3a90d2
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352096"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452108"
 ---
 # <a name="azure-resource-providers-and-types"></a>Azure-resourceproviders en -typen
 
@@ -32,7 +32,7 @@ Zie [resource providers voor Azure-Services](azure-services-resource-providers.m
 
 ## <a name="register-resource-provider"></a>Resourceprovider registreren
 
-Voordat u een resource provider gebruikt, moet uw Azure-abonnement zijn geregistreerd voor de resource provider. Met registratie configureert u uw abonnement voor samen werking met de resource provider. Sommige resource providers zijn standaard geregistreerd. Andere resource providers worden automatisch geregistreerd wanneer u bepaalde acties uitvoert. Wanneer u bijvoorbeeld een bron maakt via de portal, wordt de resource provider doorgaans voor u geregistreerd. Voor andere scenario's moet u mogelijk hand matig een resource provider registreren.
+Voordat u een resource provider gebruikt, moet uw Azure-abonnement zijn geregistreerd voor de resource provider. Met registratie configureert u uw abonnement voor samen werking met de resource provider. Sommige resource providers zijn standaard geregistreerd. Andere resource providers worden automatisch geregistreerd wanneer u bepaalde acties uitvoert. Wanneer u bijvoorbeeld een bron maakt via de portal, wordt de resource provider doorgaans voor u geregistreerd. Voor andere scenario's moet u mogelijk hand matig een resource provider registreren. Zie [resource providers voor Azure-Services](azure-services-resource-providers.md)voor een lijst met resource providers die standaard zijn geregistreerd.
 
 In dit artikel leest u hoe u de registratie status van een resource provider kunt controleren en waar nodig kunt registreren. U moet gemachtigd zijn om de `/register/action` bewerking voor de resource provider uit te voeren. De machtiging is opgenomen in de rollen Inzender en eigenaar.
 

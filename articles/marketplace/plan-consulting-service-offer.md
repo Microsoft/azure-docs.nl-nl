@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 10/27/2020
-ms.openlocfilehash: dfc812771f0eeb8dcb0d95bdad1e76ed0b12297e
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: c56d83e551265f3fb4de106cb8fa77efd6dcbabc
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92754372"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452113"
 ---
 # <a name="how-to-plan-a-consulting-service-offer-in-the-commercial-marketplace"></a>Een advies service-aanbieding plannen in de commerciële Marketplace
 
@@ -27,16 +27,16 @@ Aanbiedingen voor advies services worden gepubliceerd als **contact** gegevens. 
 
 ## <a name="primary-products-and-online-stores"></a>Primaire producten en online winkels
 
-Elk advies service-aanbod moet zich richten op een micro soft-product met de naam **primair product** . Het primaire product dat u in Partner Center selecteert, bepaalt of uw aanbieding wordt gepubliceerd naar Microsoft AppSource of Azure Marketplace.
+Elk advies service-aanbod moet zich richten op een micro soft-product met de naam **primair product**. Het primaire product dat u in Partner Center selecteert, bepaalt of uw aanbieding wordt gepubliceerd naar Microsoft AppSource of Azure Marketplace.
 
 * Als het primaire product van uw Consulting Service Azure is, wordt de aanbieding vermeld in azure Marketplace.
 * Als het primaire product niet Azure is, wordt de aanbieding vermeld in AppSource.
 
 Zie [online winkels voor commerciële Marketplace](./overview.md#commercial-marketplace-online-stores)voor meer informatie over de verschillen tussen AppSource en Azure Marketplace.
 
-## <a name="eligibility-requirements"></a>Geschiktheids vereisten
+## <a name="eligibility-requirements"></a>Geschiktheidsvereisten
 
-Om aan te tonen dat u uw expertise in een veld wilt zien, moet u voldoen aan de vereisten voor de geschiktheid voordat u een advies service publiceert. De vereisten zijn afhankelijk van het product op basis van uw aanbieding. De volledige lijst van geschiktheids vereisten voor elk primair product bevindt zich in het [certificerings beleid voor Consulting Services](https://docs.microsoft.com/legal/marketplace/certification-policies#800-consulting-services).
+Om aan te tonen dat u uw expertise in een veld wilt zien, moet u voldoen aan de vereisten voor de geschiktheid voordat u een advies service publiceert. De vereisten zijn afhankelijk van het product op basis van uw aanbieding. De volledige lijst van geschiktheids vereisten voor elk primair product bevindt zich in het [certificerings beleid voor Consulting Services](/legal/marketplace/certification-policies#800-consulting-services).
 
 > [!NOTE]
 > Voor sommige primaire producten moet u een goud of zilver micro soft-competentie hebben in uw oplossings gebied. Zie [Microsoft Partner Network-competenties](https://partner.microsoft.com/membership/competencies)voor meer informatie.
@@ -45,11 +45,11 @@ Om aan te tonen dat u uw expertise in een veld wilt zien, moet u voldoen aan de 
 
 De commerciële Marketplace ondersteunt vijf soorten Consulting-Service:
 
-* **Beoordeling** : een evaluatie van de omgeving van een klant om de toepas baarheid van een oplossing te bepalen en de kosten en tijd lijn van de implementatie te schatten.
-* **Informatie** : een inleiding tot een oplossing of een service met behulp van frameworks, demo's en klant voorbeelden.
-* **Implementatie** : een volledige installatie die resulteert in een volledig werkende oplossing.
-* **Testen van concept** : een implementatie met een beperkt bereik om te bepalen of een oplossing voldoet aan de vereisten van de klant.
-* **Workshop** : een interactieve betrokkenheid die wordt uitgevoerd op de lokale locatie van de klant. Dit kan betrekking hebben op trainingen, korte informatie, beoordelingen of demo's die zijn gebaseerd op de gegevens of omgeving van de klant.
+* **Beoordeling**: een evaluatie van de omgeving van een klant om de toepas baarheid van een oplossing te bepalen en de kosten en tijd lijn van de implementatie te schatten.
+* **Informatie**: een inleiding tot een oplossing of een service met behulp van frameworks, demo's en klant voorbeelden.
+* **Implementatie**: een volledige installatie die resulteert in een volledig werkende oplossing.
+* **Testen van concept**: een implementatie met een beperkt bereik om te bepalen of een oplossing voldoet aan de vereisten van de klant.
+* **Workshop**: een interactieve betrokkenheid die wordt uitgevoerd op de lokale locatie van de klant. Dit kan betrekking hebben op trainingen, korte informatie, beoordelingen of demo's die zijn gebaseerd op de gegevens of omgeving van de klant.
 
 Uw service moet een vaste en vooraf bepaalde duur hebben van Maxi maal 10 weken. De service duur moet expliciet worden gemaakt in de aanbieding.
 
@@ -84,7 +84,7 @@ Wanneer u uw advies service-aanbieding in het partner centrum maakt, voert u tek
 
 Om uw aanbieding gemakkelijker te maken, moet u enkele van deze items vooraf voorbereiden. De volgende items zijn vereist tenzij anders vermeld.
 
-**Naam** : deze naam wordt weer gegeven als de titel van uw aanbieding in de commerciële Marketplace. De naam kan worden aangemerkt. Het mag geen emojis bevatten (tenzij ze de symbolen van het handels merk en copyright zijn) en moet beperkt zijn tot 50 tekens. De naam moet de duur en het Service type van de aanbieding bevatten om het optimalisatie programma voor zoek machines te maximaliseren. De vereiste indeling is *name: duration + type* . Neem uw bedrijfs naam niet op, tenzij dit ook de product naam is. Enkele voorbeelden:
+**Naam**: deze naam wordt weer gegeven als de titel van uw aanbieding in de commerciële Marketplace. De naam kan worden aangemerkt. Het mag geen emojis bevatten (tenzij ze de symbolen van het handels merk en copyright zijn) en moet beperkt zijn tot 50 tekens. De naam moet de duur en het Service type van de aanbieding bevatten om het optimalisatie programma voor zoek machines te maximaliseren. De vereiste indeling is *name: duration + type*. Neem uw bedrijfs naam niet op, tenzij dit ook de product naam is. Hier volgen enkele voorbeelden:
 
 |Niet zeggen |Zeg  |
 |---|---|
@@ -92,9 +92,9 @@ Om uw aanbieding gemakkelijker te maken, moet u enkele van deze items vooraf voo
 |Workshop op slimme geroosterers |Slimme geroosterers: 1 week workshop |
 |SQL Server voor de migratie door contoso |SQL-migratie: 3-WK testen van concept |
 
-**Samen vatting van zoek resultaten** : Beschrijf het doel of doel van uw aanbieding in 200 tekens of minder. Deze samen vatting wordt gebruikt in de zoek resultaten van de commerciële Marketplace-vermelding. Het mag niet identiek zijn aan de titel. Houd rekening met uw beste SEO-tref woorden.
+**Samen vatting van zoek resultaten**: Beschrijf het doel of doel van uw aanbieding in 200 tekens of minder. Deze samen vatting wordt gebruikt in de zoek resultaten van de commerciële Marketplace-vermelding. Het mag niet identiek zijn aan de titel. Houd rekening met uw beste SEO-tref woorden.
 
-**Beschrijving** : deze beschrijving wordt weer gegeven in de commerciële Marketplace-vermelding. Overweeg het opnemen van een toegevoegde waarde, belang rijke voor delen, beoogd gebruikers bestand en categorie-of branche koppelingen.
+**Beschrijving**: deze beschrijving wordt weer gegeven in de commerciële Marketplace-vermelding. Overweeg het opnemen van een toegevoegde waarde, belang rijke voor delen, beoogd gebruikers bestand en categorie-of branche koppelingen.
 
 Wanneer u de beschrijving schrijft, volgt u deze criteria volgens uw service type:
 
@@ -119,13 +119,13 @@ U kunt HTML-tags gebruiken om uw beschrijving op te maken. U kunt tot 2.000 teke
 
 **Zoek woorden** (optioneel): Geef Maxi maal drie Zoek trefwoorden op die klanten kunnen gebruiken om uw aanbieding in de online winkels te vinden. U hoeft de **naam** en **Beschrijving** van de aanbieding niet op te nemen.
 
-**Duur** : uw advies service-aanbieding moet een vooraf bepaalde duur hebben van Maxi maal 10 weken.
+**Duur**: uw advies service-aanbieding moet een vooraf bepaalde duur hebben van Maxi maal 10 weken.
 
-**Contact gegevens** : in Partner Center wordt u gevraagd om een naam, e-mail adres en telefoon nummer van twee personen in uw bedrijf op te geven (u kunt een van de twee contact personen zijn). We gebruiken deze informatie om met u te communiceren over uw aanbieding. Deze informatie wordt niet weer gegeven aan klanten, maar kan worden verstrekt aan partners van de Cloud Solution Provider (CSP).
+**Contact gegevens**: in Partner Center wordt u gevraagd om een naam, e-mail adres en telefoon nummer van twee personen in uw bedrijf op te geven (u kunt een van de twee contact personen zijn). We gebruiken deze informatie om met u te communiceren over uw aanbieding. Deze informatie wordt niet weer gegeven aan klanten, maar kan worden verstrekt aan partners van de Cloud Solution Provider (CSP).
 
-**Ondersteunende documenten** : Upload ten minste één en Maxi maal drie klant gerichte PDF-documenten die informatie over uw aanbieding bieden. Ze kunnen bijvoorbeeld white papers of brochures zijn.
+**Ondersteunende documenten**: Upload ten minste één en Maxi maal drie klant gerichte PDF-documenten die informatie over uw aanbieding bieden. Ze kunnen bijvoorbeeld white papers of brochures zijn.
 
-**Media voor Marketplace-logo's** : Geef een PNG-bestand voor het logo met grote grootte op. Het partner centrum gebruikt het om een klein logo te maken. U kunt eventueel het kleine logo vervangen door een andere afbeelding.
+**Media voor Marketplace-logo's**: Geef een PNG-bestand voor het logo met grote grootte op. Het partner centrum gebruikt het om een klein logo te maken. U kunt eventueel het kleine logo vervangen door een andere afbeelding.
 
 * Groot (van 216 x 216 tot 350 x 350 px, vereist)
 * Klein (48 x 48 px, optioneel)

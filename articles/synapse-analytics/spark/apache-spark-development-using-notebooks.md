@@ -10,16 +10,16 @@ ms.date: 10/19/2020
 ms.author: ruxu
 ms.reviewer: ''
 ms.custom: devx-track-python
-ms.openlocfilehash: c35ee7bcdefa5091d9c887430182638f066cb9fa
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: bfb822481e00e84fa17bd4b1fcb58c1d4b89a124
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95900880"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96450866"
 ---
-# <a name="create-develop-and-maintain-synapse-studio-preview-notebooks-in-azure-synapse-analytics"></a>Synapse Studio-notebooks maken, ontwikkelen en onderhouden in azure Synapse Analytics
+# <a name="create-develop-and-maintain-synapse-studio-notebooks-in-azure-synapse-analytics"></a>Synapse Studio-notitie blokken maken, ontwikkelen en onderhouden in azure Synapse Analytics
 
-Een Synapse Studio-Notebook (preview-versie) is een webinterface waarmee u bestanden kunt maken die live code, visualisaties en tekst verhalen bevatten. Notebooks zijn een goede plaats om ideeën te valideren en snelle experimenten te gebruiken om inzicht te krijgen in uw gegevens. Notebooks worden ook veel gebruikt in gegevens voorbereiding, gegevens visualisatie, machine learning en andere scenario's voor Big data.
+Een Synapse Studio-notebook is een webinterface waarmee u bestanden kunt maken die live code, visualisaties en tekst verhalen bevatten. Notebooks zijn een goede plaats om ideeën te valideren en snelle experimenten te gebruiken om inzicht te krijgen in uw gegevens. Notebooks worden ook veel gebruikt in gegevens voorbereiding, gegevens visualisatie, machine learning en andere scenario's voor Big data.
 
 Met een Azure Synapse Studio-notebook kunt u het volgende doen:
 
@@ -92,7 +92,7 @@ Er zijn meerdere manieren om een nieuwe cel aan uw notitie blok toe te voegen.
 Azure Synapse Studio-notebooks ondersteunen vier Apache Spark talen:
 
 * pySpark (python)
-* Spark (scala)
+* Spark (Scala)
 * SparkSQL
 * .NET voor Apache Spark (C#)
 
@@ -104,7 +104,7 @@ U kunt de primaire taal voor nieuwe toegevoegde cellen instellen in de vervolg k
 
 U kunt meerdere talen gebruiken in één notebook door de juiste Magic-opdracht voor de taal aan het begin van een cel op te geven. De volgende tabel bevat de Magic-opdrachten om te scha kelen tussen talen in cellen.
 
-|Opdracht Magic |Taal | Description |  
+|Opdracht Magic |Taal | Beschrijving |  
 |---|------|-----|
 |%% pyspark| Python | Voer een **python** -query uit op Spark-context.  |
 |% Spark| Scala | Voer een **scala** -query uit op Spark-context.  |  
@@ -149,10 +149,10 @@ De IntelliSense-functies bevinden zich op verschillende niveaus van de verval da
 
 |Talen| Syntaxis markering | Syntaxis fout markering  | Syntaxis code volt ooien | Voltooiing van variabele code| Voltooiing van systeem functie code| Voltooiing van gebruikers functie code| Smart Indent | Code vouwen|
 |--|--|--|--|--|--|--|--|--|
-|PySpark (python)|Ja|Ja|Ja|Ja|Ja|Ja|Ja|Ja|
-|Spark (scala)|Ja|Ja|Ja|Ja|-|-|-|Ja|
+|PySpark (Python)|Ja|Ja|Ja|Ja|Ja|Ja|Ja|Ja|
+|Spark (Scala)|Ja|Ja|Ja|Ja|-|-|-|Ja|
 |SparkSQL|Ja|Ja|-|-|-|-|-|-|
-|.NET voor Spark (C#)|Yes|-|-|-|-|-|-|-|
+|.NET voor Spark (C#)|Ja|-|-|-|-|-|-|-|
 
 ### <a name="format-text-cell-with-toolbar-buttons"></a>Tekst cel opmaken met werkbalk knoppen
 
@@ -549,8 +549,8 @@ Met de volgende sneltoetsen kunt u gemakkelijker code in azure Synapse-notebooks
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Voor beelden van Synapse-voorbeeld notitieblokken bekijken](https://github.com/Azure-Samples/Synapse/tree/master/Notebooks)
-- [Quickstart: Een Apache Spark-pool (preview) maken in Azure Synapse Analytics met behulp van webhulpprogramma's](../quickstart-apache-spark-notebook.md)
+- [Quickstart: Een Apache Spark-pool maken in Azure Synapse Analytics met behulp van webhulpprogramma's](../quickstart-apache-spark-notebook.md)
 - [Wat is Apache Spark in Azure Synapse Analytics?](apache-spark-overview.md)
-- [.NET gebruiken voor Apache Spark met Azure Synapse Analytics](spark-dotnet.md)
+- [.NET voor Apache Spark gebruiken met Azure Synapse Analytics](spark-dotnet.md)
 - [Documentatie voor .NET voor Apache Spark](/dotnet/spark?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
 - [Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics)

@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/25/2020
 ms.author: alkohli
-ms.openlocfilehash: d323504a46cd35525c889a94d2d044193c1471ac
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 8637b33ebc4b697ee6f498acb84ee33718c53f6d
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94535942"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96448856"
 ---
 # <a name="deploy-a-php-guestbook-stateless-application-with-redis-on-arc-enabled-kubernetes-cluster-on-azure-stack-edge-pro-gpu"></a>Een niet-beschik bare-gastenboek toepassing met redis implementeren op een Kubernetes-cluster op basis van Azure Stack Edge Pro GPU
 
@@ -25,7 +25,7 @@ In dit artikel wordt beschreven hoe u een eenvoudige webtoepassing met meerdere 
 
 De implementatie wordt uitgevoerd met behulp van GitOps op het Kubernetes-cluster met Arc-functionaliteit op uw Azure Stack Edge Pro-apparaat. 
 
-Deze procedure is bedoeld voor gebruikers die de Kubernetes- [workloads op Azure stack Edge Pro-apparaat](azure-stack-edge-gpu-kubernetes-workload-management.md) hebben bekeken en die bekend zijn met de concepten van [Wat is Azure Arc enabled Kubernetes (preview)](https://docs.microsoft.com/azure/azure-arc/kubernetes/overview).
+Deze procedure is bedoeld voor gebruikers die de Kubernetes- [workloads op Azure stack Edge Pro-apparaat](azure-stack-edge-gpu-kubernetes-workload-management.md) hebben bekeken en die bekend zijn met de concepten van [Wat is Azure Arc enabled Kubernetes (preview)](../azure-arc/kubernetes/overview.md).
 
 
 ## <a name="prerequisites"></a>Vereisten
@@ -44,7 +44,7 @@ Voordat u de stateless toepassing kunt implementeren, moet u ervoor zorgen dat u
 
 1. U hebt een Windows-client systeem dat wordt gebruikt om toegang te krijgen tot het Azure Stack Edge Pro-apparaat.
   
-    - Windows Power shell 5,0 of hoger wordt uitgevoerd op de client. Als u de meest recente versie van Windows Power shell wilt downloaden, gaat u naar [Windows Power Shell installeren](https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell?view=powershell-7).
+    - Windows Power shell 5,0 of hoger wordt uitgevoerd op de client. Als u de meest recente versie van Windows Power shell wilt downloaden, gaat u naar [Windows Power Shell installeren](/powershell/scripting/install/installing-windows-powershell?view=powershell-7).
     
     - U kunt ook een andere client met een [ondersteund besturings systeem](azure-stack-edge-gpu-system-requirements.md#supported-os-for-clients-connected-to-device) hebben. In dit artikel wordt de procedure beschreven voor het gebruik van een Windows-client. 
     

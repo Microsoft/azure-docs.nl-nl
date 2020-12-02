@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 10/13/2020
+ms.date: 11/30/2020
 ms.author: alkohli
-ms.openlocfilehash: b0377d7b209da76b03a115dc82831eeb00e1ff95
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 8d17528728c5519244210217b35d6cd6a3afe715
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92047077"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96449125"
 ---
 # <a name="update-your-azure-stack-edge-pro-gpu"></a>Uw Azure Stack Edge Pro GPU bijwerken 
 
@@ -22,9 +22,9 @@ In dit artikel worden de stappen beschreven die nodig zijn om updates te install
 De in dit artikel beschreven procedure is uitgevoerd met een andere versie van de software, maar het proces blijft hetzelfde voor de huidige software versie.
 
 > [!IMPORTANT]
-> - Update **2010** komt overeen met de **2.1.1377.2170** -software versie op het apparaat. Ga naar [release opmerkingen](azure-stack-edge-gpu-2009-release-notes.md)voor meer informatie over deze update.
+> - Update **2011** is de huidige update. <!--and corresponds to **2.1.1377.2170** software version on your device.--> Ga naar [release opmerkingen](azure-stack-edge-gpu-2011-release-notes.md)voor meer informatie over deze update.
 >
-> - Als u een update of hotfix installeert, wordt het apparaat opnieuw opgestart. Voor deze update moet u twee updates sequentieel Toep assen. Eerst past u de software-updates van het apparaat toe en vervolgens Kubernetes-updates. Gezien de Azure Stack Edge Pro is een apparaat met één knoop punt, worden alle I/O-bewerkingen onderbroken en duurt het apparaat een downtime van Maxi maal 30 minuten voor de software-update van het apparaat.
+> - Als u een update of hotfix installeert, wordt het apparaat opnieuw opgestart. Deze update bevat de software-updates van het apparaat en de Kubernetes-updates. Gezien de Azure Stack Edge Pro is een apparaat met één knoop punt, worden alle I/O-bewerkingen onderbroken en duurt het apparaat een downtime van Maxi maal 30 minuten voor de update.
 
 Als u updates op uw apparaat wilt installeren, moet u eerst de locatie van de update server configureren. Nadat de update server is geconfigureerd, kunt u de updates Toep assen via de Azure Portal gebruikers interface of de lokale webgebruikersinterface.
 
@@ -36,7 +36,7 @@ Deze stappen worden afzonderlijk beschreven in de volgende gedeelten.
    
     ![Updates configureren 1](./media/azure-stack-edge-gpu-install-update/configure-update-server-1.png)
 
-2. In **Selecteer update server type**in de vervolg keuzelijst kiest u van Microsoft Update server (standaard) of Windows Server Update Services.  
+2. In **Selecteer update server type** in de vervolg keuzelijst kiest u van Microsoft Update server (standaard) of Windows Server Update Services.  
    
     Als u een update uitvoert vanuit de Windows Server Update Services, geeft u de server-URI op. De-server op die URI implementeert de updates op alle apparaten die zijn verbonden met deze server.
 
@@ -44,16 +44,16 @@ Deze stappen worden afzonderlijk beschreven in de volgende gedeelten.
     
     De WSUS-server wordt gebruikt om updates te beheren en te distribueren via een beheer console. Een WSUS-server kan ook de update bron zijn voor andere WSUS-servers binnen de organisatie. De WSUS-server die fungeert als updatebron wordt een upstream-server genoemd. In een WSUS-implementatie moet ten minste één WSUS-server in uw netwerk verbinding kunnen maken met Microsoft Update om beschik bare Update gegevens te verkrijgen. Als beheerder kunt u bepalen op basis van netwerk beveiliging en-configuratie-het aantal andere WSUS-servers die rechtstreeks verbinding maken met Microsoft Update.
     
-    Ga voor meer informatie naar [Windows Server Update Services (WSUS)](https://docs.microsoft.com/windows-server/administration/windows-server-update-services/get-started/windows-server-update-services-wsus)
+    Ga voor meer informatie naar [Windows Server Update Services (WSUS)](/windows-server/administration/windows-server-update-services/get-started/windows-server-update-services-wsus)
 
-## <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+## <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
-U wordt aangeraden updates te installeren via de Azure Portal. Op het apparaat wordt eenmaal per dag automatisch gescand op updates. Zodra de updates beschikbaar zijn, ziet u een melding in de portal. U kunt vervolgens de updates downloaden en installeren. 
+U wordt aangeraden updates te installeren via de Azure Portal. Het apparaat scant eenmaal per dag automatisch op updates. Zodra de updates beschikbaar zijn, ziet u een melding in de portal. Vervolgens kunt u de updates downloaden en installeren. 
 
 > [!NOTE]
 > Zorg ervoor dat het apparaat in orde is en dat de status wordt weer gegeven als **online** voordat u doorgaat met de installatie van de updates.
 
-1. Wanneer de updates beschikbaar zijn voor uw apparaat, ziet u een melding. Selecteer de melding of van de bovenste opdracht balk, **werk het apparaat**bij. Hiermee kunt u software-updates voor apparaten Toep assen.
+1. Wanneer de updates beschikbaar zijn voor uw apparaat, ziet u een melding. Selecteer de melding of van de bovenste opdracht balk, **werk het apparaat** bij. Hiermee kunt u software-updates voor apparaten Toep assen.
 
     ![Software versie na update](./media/azure-stack-edge-gpu-install-update/portal-update-1.png)
 
@@ -88,12 +88,12 @@ U wordt aangeraden updates te installeren via de Azure Portal. Op het apparaat w
   
     ![Software versie na update 8](./media/azure-stack-edge-gpu-install-update/portal-update-7.png)
 
-5. U ziet een melding dat de installatie wordt uitgevoerd.
+5. U ziet een melding dat de installatie wordt uitgevoerd. 
 
     ![Software versie na update 9](./media/azure-stack-edge-gpu-install-update/portal-update-8.png)
-
+ 
     In de portal wordt ook een informatieve waarschuwing weer gegeven om aan te geven dat de installatie wordt uitgevoerd. Het apparaat wordt offline gezet en bevindt zich in de onderhouds modus.
-    
+   
     ![Software versie na update 10](./media/azure-stack-edge-gpu-install-update/portal-update-9.png)
 
 6. Aangezien dit een apparaat met één knoop punt is, wordt het apparaat opnieuw opgestart nadat de updates zijn geïnstalleerd. De kritieke waarschuwing tijdens het opnieuw opstarten geeft aan dat de heartbeat van het apparaat verloren is gegaan.
@@ -117,27 +117,25 @@ U wordt aangeraden updates te installeren via de Azure Portal. Op het apparaat w
 
     ![Software versie na update 14](./media/azure-stack-edge-gpu-install-update/portal-update-15.png)
 
-9. Er wordt opnieuw een melding weer geven dat er updates beschikbaar zijn. Dit zijn de Kubernetes-updates. Selecteer de melding of selecteer **apparaat bijwerken** in de bovenste opdracht balk.
+<!--9. You will again see a notification that updates are available. These are the Kubernetes updates. Select the notification or select **Update device** from the top command bar.
 
-    ![Software versie na update 15](./media/azure-stack-edge-gpu-install-update/portal-update-16.png)
+    ![Software version after update 15](./media/azure-stack-edge-gpu-install-update/portal-update-16.png)
 
-10. Down load de Kubernetes-updates. U kunt zien dat de grootte van het pakket verschilt in vergelijking met het vorige update pakket.
+10. Download the Kubernetes updates. You can see that the package size is different when compared to the previous update package.
 
-    ![Software versie na update 16](./media/azure-stack-edge-gpu-install-update/portal-update-17.png)
+    ![Software version after update 16](./media/azure-stack-edge-gpu-install-update/portal-update-17.png)
 
-    De installatie procedure is identiek aan die van de updates van het apparaat. Eerst worden de updates gedownload.
+    The process of installation is identical to that of device updates. First the updates are downloaded.
 
-    ![Software versie na update 17](./media/azure-stack-edge-gpu-install-update/portal-update-18.png)    
+    ![Software version after update 17](./media/azure-stack-edge-gpu-install-update/portal-update-18.png)    
     
-11. Nadat de updates zijn gedownload, kunt u de updates installeren. 
+11. Once the updates are downloaded, you can then install the updates. 
 
-    ![Software versie na update 18](./media/azure-stack-edge-gpu-install-update/portal-update-19.png)
+    ![Software version after update 18](./media/azure-stack-edge-gpu-install-update/portal-update-19.png)
 
-    Wanneer de updates zijn geïnstalleerd, wordt het apparaat in de onderhouds modus geplaatst. Het apparaat wordt niet opnieuw opgestart voor de Kubernetes-updates. 
+    As the updates are installed, the device is put into maintenance mode. The device does not restart for the Kubernetes updates. -->
 
-    Zodra de Kubernetes-updates zijn geïnstalleerd, verdwijnt de banner melding omdat er geen verdere updates nodig zijn. Uw apparaat heeft nu de nieuwste versie van de apparaatsoftware en Kubernetes.
-
-    ![Software versie na update 19](./media/azure-stack-edge-gpu-install-update/portal-update-20.png)
+Zodra de Kubernetes-software is geïnstalleerd, verdwijnt de banner melding. Uw apparaat heeft nu de nieuwste versie van de apparaatsoftware en Kubernetes.
 
 
 ## <a name="use-the-local-web-ui"></a>De lokale web-UI gebruiken
@@ -161,9 +159,9 @@ Voer de volgende stappen uit om de update te downloaden uit de Microsoft Update 
 
     ![Catalogus doorzoeken](./media/azure-stack-edge-gpu-install-update/download-update-1.png)
 
-2. Voer in het zoekvak van de catalogus van Microsoft Update het Knowledge Base-nummer (KB) in van de hotfix of de voor waarden voor de update die u wilt downloaden. Voer bijvoorbeeld **Azure stack Edge Pro**in en klik vervolgens op **zoeken**.
+2. Voer in het zoekvak van de catalogus van Microsoft Update het Knowledge Base-nummer (KB) in van de hotfix of de voor waarden voor de update die u wilt downloaden. Voer bijvoorbeeld **Azure stack Edge Pro** in en klik vervolgens op **zoeken**.
    
-    De update vermelding wordt weer gegeven als **Azure stack Edge update 2010**.
+    De update vermelding wordt weer gegeven als **Azure stack Edge update 2011**.
    
     <!--![Search catalog 2](./media/azure-stack-edge-gpu-install-update/download-update-2b.png)-->
 
@@ -198,7 +196,7 @@ Het volt ooien van deze procedure duurt ongeveer 20 minuten. Voer de volgende st
 
 5. De update wordt gestart. Nadat het apparaat is bijgewerkt, wordt het opnieuw opgestart. De lokale gebruikers interface is niet toegankelijk in deze duur.
    
-6. Wanneer het opnieuw opstarten is voltooid, wordt u naar de **aanmeldings** pagina geleid. Als u wilt controleren of de software van het apparaat is bijgewerkt, gaat u naar **onderhouds**  >  **Software-update**in de lokale web-UI. Voor de huidige versie moet de weer gegeven software versie **2.1.1377.2170**zijn.
+6. Wanneer het opnieuw opstarten is voltooid, wordt u naar de **aanmeldings** pagina geleid. Als u wilt controleren of de software van het apparaat is bijgewerkt, gaat u naar **onderhouds**  >  **Software-update** in de lokale web-UI. Voor de huidige versie moet de weer gegeven software versie **Azure stack Edge 2011** zijn.
 
    <!--![update device 6](./media/azure-stack-edge-gpu-install-update/local-ui-update-6.png)--> 
 

@@ -1,6 +1,6 @@
 ---
 title: Door de gebruiker gedefinieerde herstel punten
-description: Een herstel punt voor een toegewezen SQL-groep maken.
+description: Een herstel punt maken voor een toegewezen SQL-groep (voorheen SQL DW).
 services: synapse-analytics
 author: anumjs
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 07/03/2019
 ms.author: anjangsh
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 9d7266e0b84ae57682ddcfe7195be9574a702c74
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 5b8888a29d7dda94e4fc9c35b27056036bc6c463
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93313251"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96449777"
 ---
-# <a name="user-defined-restore-points-for-a-dedicated-sql-pool-in-azure-synapse-analytics"></a>Door de gebruiker gedefinieerde herstel punten voor een toegewezen SQL-groep in azure Synapse Analytics
+# <a name="user-defined-restore-points-for-a-dedicated-sql-pool-formerly-sql-dw"></a>Door de gebruiker gedefinieerde herstel punten voor een toegewezen SQL-groep (voorheen SQL DW)
 
-In dit artikel leert u hoe u een nieuw, door de gebruiker gedefinieerd herstel punt maakt voor een specifieke SQL-groep in azure Synapse Analytics met behulp van Power shell en de Azure Portal.
+In dit artikel leert u hoe u een nieuw, door de gebruiker gedefinieerd herstel punt maakt voor een toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics met behulp van Power shell en de Azure Portal.
 
 ## <a name="create-user-defined-restore-points-through-powershell"></a>Door de gebruiker gedefinieerde herstel punten maken via Power shell
 
@@ -62,9 +62,9 @@ Door de gebruiker gedefinieerde herstel punten kunnen ook worden gemaakt via Azu
 
 1. Meld u aan bij uw [Azure Portal](https://portal.azure.com/) -account.
 
-2. Navigeer naar de exclusieve SQL-groep waarvoor u een herstel punt wilt maken.
+2. Navigeer naar de toegewezen SQL-groep (voorheen SQL DW) waarvoor u een herstel punt wilt maken.
 
-3. Selecteer **overzicht** in het linkerdeel venster en selecteer **+ Nieuw herstel punt**. Als de knop Nieuw herstel punt niet is ingeschakeld, moet u ervoor zorgen dat de toegewezen SQL-groep niet wordt onderbroken.
+3. Selecteer **overzicht** in het linkerdeel venster en selecteer **+ Nieuw herstel punt**. Als de knop Nieuw herstel punt niet is ingeschakeld, moet u ervoor zorgen dat de toegewezen SQL-groep (voorheen SQL DW) niet is onderbroken.
 
     ![Nieuw herstel punt](./media/sql-data-warehouse-restore-points/creating-restore-point-01.png)
 
@@ -74,7 +74,6 @@ Door de gebruiker gedefinieerde herstel punten kunnen ook worden gemaakt via Azu
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Een bestaande toegewezen SQL-groep herstellen](sql-data-warehouse-restore-active-paused-dw.md)
-- [Een verwijderde toegewezen SQL-groep herstellen](sql-data-warehouse-restore-deleted-dw.md)
-- [Herstellen vanuit een toegewezen SQL-groep met geo-back-ups](sql-data-warehouse-restore-from-geo-backup.md)
-
+- [Een bestaande toegewezen SQL-groep herstellen (voorheen SQL DW)](sql-data-warehouse-restore-active-paused-dw.md)
+- [Een verwijderde toegewezen SQL-groep herstellen (voorheen SQL DW)](sql-data-warehouse-restore-deleted-dw.md)
+- [Herstellen vanuit een toegewezen SQL-groep met geo-back-ups (voorheen SQL DW)](sql-data-warehouse-restore-from-geo-backup.md)

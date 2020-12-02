@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: sudbalas
-ms.openlocfilehash: 91a3a0c2ae066fde55892af90a3d666a3c1221a3
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 3f28c50be73b2b87ed8b25429cfa2dee9a663f1b
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445486"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452164"
 ---
 # <a name="secure-access-to-a-key-vault"></a>Veilige toegang tot een sleutelkluis
 
@@ -44,9 +44,9 @@ Zie [verifiëren voor Azure Key Vault](authentication.md) voor meer informatie o
 
 Wanneer u een sleutel kluis maakt in een Azure-abonnement, wordt deze automatisch gekoppeld aan de Azure AD-Tenant van het abonnement. Alle bellers in beide abonnementen moeten zich registreren bij deze Tenant en verifiëren voor toegang tot de sleutel kluis. In beide gevallen kunnen toepassingen op drie manieren toegang krijgen tot Key Vault:
 
-- **Alleen toepassing** : de toepassing vertegenwoordigt een service-principal of beheerde identiteit. Deze identiteit is het meest voorkomende scenario voor toepassingen die regel matig toegang moeten hebben tot certificaten, sleutels of geheimen van de sleutel kluis. Voor een goede werking van dit scenario `objectId` moet de toepassing worden opgegeven in het toegangs beleid en `applicationId` mag _niet_ worden opgegeven of moet zijn `null` .
-- **Alleen gebruiker** : de gebruiker heeft toegang tot de sleutel kluis vanuit elke toepassing die is geregistreerd in de Tenant. Voor beelden van dit type toegang zijn Azure PowerShell en de Azure Portal. Dit scenario werkt alleen als de `objectId` gebruiker is opgegeven in het toegangs beleid en de `applicationId` mag _niet_ zijn opgegeven of moet zijn `null` .
-- **Toepassings-plus-gebruiker** (soms aangeduid als _samengestelde identiteit_ ): de gebruiker is verplicht om toegang te krijgen tot de sleutel kluis van een specifieke toepassing _en_ de toepassing moet de stroom voor verificatie op naam (OBO) gebruiken om de gebruiker te imiteren. Als u dit scenario wilt gebruiken, `applicationId` moet u beide en `objectId` opgeven in het toegangs beleid. De `applicationId` identificeert de vereiste toepassing en de `objectId` identificeert de gebruiker. Deze optie is momenteel niet beschikbaar voor gegevens vlak Azure RBAC (preview).
+- **Alleen toepassing**: de toepassing vertegenwoordigt een service-principal of beheerde identiteit. Deze identiteit is het meest voorkomende scenario voor toepassingen die regel matig toegang moeten hebben tot certificaten, sleutels of geheimen van de sleutel kluis. Voor een goede werking van dit scenario `objectId` moet de toepassing worden opgegeven in het toegangs beleid en `applicationId` mag _niet_ worden opgegeven of moet zijn `null` .
+- **Alleen gebruiker**: de gebruiker heeft toegang tot de sleutel kluis vanuit elke toepassing die is geregistreerd in de Tenant. Voor beelden van dit type toegang zijn Azure PowerShell en de Azure Portal. Dit scenario werkt alleen als de `objectId` gebruiker is opgegeven in het toegangs beleid en de `applicationId` mag _niet_ zijn opgegeven of moet zijn `null` .
+- **Toepassings-plus-gebruiker** (soms aangeduid als _samengestelde identiteit_): de gebruiker is verplicht om toegang te krijgen tot de sleutel kluis van een specifieke toepassing _en_ de toepassing moet de stroom voor verificatie op naam (OBO) gebruiken om de gebruiker te imiteren. Als u dit scenario wilt gebruiken, `applicationId` moet u beide en `objectId` opgeven in het toegangs beleid. De `applicationId` identificeert de vereiste toepassing en de `objectId` identificeert de gebruiker. Deze optie is momenteel niet beschikbaar voor gegevens vlak Azure RBAC (preview).
 
 Bij alle soorten toegang verifieert de toepassing met Azure AD. De toepassing gebruikt een [ondersteunde verificatie methode](../../active-directory/develop/authentication-vs-authorization.md) op basis van het toepassings type. De toepassing verkrijgt een token voor een resource in het vlak om toegang te verlenen. De resource is een eind punt in het beheer-of gegevens vlak, gebaseerd op de Azure-omgeving. De toepassing gebruikt het token en verzendt een REST API aanvraag naar Key Vault. Bekijk voor meer informatie de [volledige verificatie stroom](../../active-directory/develop/v2-oauth2-auth-code-flow.md).
 
@@ -73,9 +73,9 @@ In het beheer vlak gebruikt u [Azure RBAC (op rollen gebaseerd toegangs beheer)]
 
 U maakt een sleutel kluis in een resource groep en beheert de toegang met behulp van Azure AD. U verleent gebruikers of groepen de mogelijkheid om de sleutel kluizen in een resource groep te beheren. U verleent de toegang op een specifiek Scope niveau door de juiste Azure-rollen toe te wijzen. Als u toegang wilt verlenen aan een gebruiker om sleutel kluizen te beheren, wijst u een vooraf gedefinieerde [Key Vault Inzender](../../role-based-access-control/built-in-roles.md#key-vault-contributor) functie toe aan de gebruiker in een specifiek bereik. De volgende Scope niveaus kunnen worden toegewezen aan een Azure-rol:
 
-- **Abonnement** : een Azure-rol die is toegewezen op abonnements niveau, is van toepassing op alle resource groepen en resources in dat abonnement.
-- **Resource groep** : een Azure-rol die is toegewezen op het niveau van de resource groep, is van toepassing op alle resources in die resource groep.
-- **Specifieke resource** : een Azure-rol die is toegewezen voor een specifieke resource, is van toepassing op die resource. In dit geval is de resource een specifieke sleutel kluis.
+- **Abonnement**: een Azure-rol die is toegewezen op abonnements niveau, is van toepassing op alle resource groepen en resources in dat abonnement.
+- **Resource groep**: een Azure-rol die is toegewezen op het niveau van de resource groep, is van toepassing op alle resources in die resource groep.
+- **Specifieke resource**: een Azure-rol die is toegewezen voor een specifieke resource, is van toepassing op die resource. In dit geval is de resource een specifieke sleutel kluis.
 
 Er zijn verschillende vooraf gedefinieerde rollen. Als een vooraf gedefinieerde rol niet aan uw behoeften voldoet, kunt u uw eigen rol definiëren. Zie [Ingebouwde rollen in Azure](../../role-based-access-control/built-in-roles.md) voor meer informatie. 
 
@@ -130,19 +130,19 @@ Zie [Azure Key Vault firewalls en virtuele netwerken configureren](network-secur
 
 ## <a name="private-endpoint-connection"></a>Verbinding met particulier eind punt
 
-In het geval van een nood zaak om Key Vault bloot stelling aan het publiek volledig te blok keren, kan een [persoonlijk Azure-eind punt](https://docs.microsoft.com/azure/private-link/private-endpoint-overview) worden gebruikt. Een privé-eindpunt in Azure is een netwerkinterface waarmee u privé en veilig verbinding maakt met een service die door Azure Private Link mogelijk wordt gemaakt. Het privé-eindpunt maakt gebruik van een privé-IP-adres van uw VNet, waardoor de service feitelijk in uw VNet wordt geplaatst. Al het verkeer naar de service kan worden gerouteerd via het privé-eindpunt, zodat er geen gateways, NAT-apparaten, ExpressRoute of VPN-verbindingen of openbare IP-adressen nodig zijn. Verkeer tussen uw virtuele netwerk en de services wordt via het backbonenetwerk van Microsoft geleid, waarmee de risico's van het openbare internet worden vermeden. U kunt verbinding maken met een exemplaar van een Azure-resource, zodat u het hoogste granulariteit krijgt in toegangsbeheer.
+In het geval van een nood zaak om Key Vault bloot stelling aan het publiek volledig te blok keren, kan een [persoonlijk Azure-eind punt](../../private-link/private-endpoint-overview.md) worden gebruikt. Een privé-eindpunt in Azure is een netwerkinterface waarmee u privé en veilig verbinding maakt met een service die door Azure Private Link mogelijk wordt gemaakt. Het privé-eindpunt maakt gebruik van een privé-IP-adres van uw VNet, waardoor de service feitelijk in uw VNet wordt geplaatst. Al het verkeer naar de service kan worden gerouteerd via het privé-eindpunt, zodat er geen gateways, NAT-apparaten, ExpressRoute of VPN-verbindingen of openbare IP-adressen nodig zijn. Verkeer tussen uw virtuele netwerk en de services wordt via het backbonenetwerk van Microsoft geleid, waarmee de risico's van het openbare internet worden vermeden. U kunt verbinding maken met een exemplaar van een Azure-resource, zodat u het hoogste granulariteit krijgt in toegangsbeheer.
 
 Algemene scenario's voor het gebruik van een persoonlijke koppeling voor Azure-Services:
 
-- **Privétoegang tot services op het Azure-platform** : Verbind uw virtuele netwerk met services in Azure zonder een openbaar IP-adres bij de bron of bestemming. Serviceproviders kunnen hun services weergeven in hun eigen virtuele netwerk en consumenten hebben toegang tot deze services in hun lokale virtuele netwerk. Het Private Link-platform zorgt voor de connectiviteit tussen de consument en de services via het Azure-backbonenetwerk. 
+- **Privétoegang tot services op het Azure-platform**: Verbind uw virtuele netwerk met services in Azure zonder een openbaar IP-adres bij de bron of bestemming. Serviceproviders kunnen hun services weergeven in hun eigen virtuele netwerk en consumenten hebben toegang tot deze services in hun lokale virtuele netwerk. Het Private Link-platform zorgt voor de connectiviteit tussen de consument en de services via het Azure-backbonenetwerk. 
  
-- **On-premises en peered netwerken** : Toegang tot services die worden uitgevoerd in Azure vanuit on-premises via ExpressRoute-privépeering, VPN-tunnels en gekoppelde virtuele netwerken met behulp van privé-eindpunten. Het is niet nodig om de open bare peering in te stellen of door te bladeren op internet om de service te bereiken. Private Link biedt een veilige manier om workloads naar Azure te migreren.
+- **On-premises en peered netwerken**: Toegang tot services die worden uitgevoerd in Azure vanuit on-premises via ExpressRoute-privépeering, VPN-tunnels en gekoppelde virtuele netwerken met behulp van privé-eindpunten. Het is niet nodig om de open bare peering in te stellen of door te bladeren op internet om de service te bereiken. Private Link biedt een veilige manier om workloads naar Azure te migreren.
  
-- **Bescherming tegen gegevenslekken** : Een privé-eindpunt wordt toegewezen aan een instantie van een PaaS-resource in plaats van de gehele service. Consumenten kunnen alleen verbinding maken met de specifieke resource. Toegang tot andere resources in de service is geblokkeerd. Dit mechanisme biedt beveiliging tegen risico's van gegevenslekken. 
+- **Bescherming tegen gegevenslekken**: Een privé-eindpunt wordt toegewezen aan een instantie van een PaaS-resource in plaats van de gehele service. Consumenten kunnen alleen verbinding maken met de specifieke resource. Toegang tot andere resources in de service is geblokkeerd. Dit mechanisme biedt beveiliging tegen risico's van gegevenslekken. 
  
-- **Globaal bereik** : Maak privé verbinding met services die in andere regio's worden uitgevoerd. Het virtuele netwerk van de consument kan zich in regio A bevinden en kan verbinding maken met services achter een Private Link in regio B.  
+- **Globaal bereik**: Maak privé verbinding met services die in andere regio's worden uitgevoerd. Het virtuele netwerk van de consument kan zich in regio A bevinden en kan verbinding maken met services achter een Private Link in regio B.  
  
-- **Breid uit naar uw eigen services** : Schakel dezelfde ervaring en functionaliteit in om uw service privé te maken voor consumenten in Azure. Als u uw service achter een standaard Azure Load Balancer plaatst, kunt u deze inschakelen voor Private Link. De gebruiker kan vervolgens rechtstreeks verbinding maken met uw service met behulp van een privé-eindpunt in zijn eigen virtuele netwerk. U kunt de verbindingsaanvragen beheren met een goedkeuringsaanroepstroom. Azure Private Link werkt voor consumenten en services die deel uitmaken van verschillende Azure Active Directory-tenants. 
+- **Breid uit naar uw eigen services**: Schakel dezelfde ervaring en functionaliteit in om uw service privé te maken voor consumenten in Azure. Als u uw service achter een standaard Azure Load Balancer plaatst, kunt u deze inschakelen voor Private Link. De gebruiker kan vervolgens rechtstreeks verbinding maken met uw service met behulp van een privé-eindpunt in zijn eigen virtuele netwerk. U kunt de verbindingsaanvragen beheren met een goedkeuringsaanroepstroom. Azure Private Link werkt voor consumenten en services die deel uitmaken van verschillende Azure Active Directory-tenants. 
 
 Zie [Key Vault met persoonlijke Azure-koppeling](./private-link-service.md) voor meer informatie over persoonlijke eind punten.
 
@@ -151,15 +151,15 @@ Zie [Key Vault met persoonlijke Azure-koppeling](./private-link-service.md) voor
 In dit voor beeld ontwikkelen we een toepassing die gebruikmaakt van een certificaat voor TLS/SSL, Azure Storage voor het opslaan van gegevens en een RSA 2.048-bits sleutel voor het versleutelen van gegevens in Azure Storage. Onze toepassing wordt uitgevoerd op een virtuele machine (VM) van Azure (of een schaalset voor virtuele machines). We kunnen een sleutel kluis gebruiken om de toepassings geheimen op te slaan. We kunnen het Boots trap-certificaat dat door de toepassing wordt gebruikt, opslaan voor verificatie met Azure AD.
 
 We hebben toegang tot de volgende opgeslagen sleutels en geheimen nodig:
-- **TLS/SSL-certificaat** : wordt gebruikt voor TLS/SSL.
-- **Opslag sleutel** : wordt gebruikt voor toegang tot het opslag account.
-- **RSA 2.048-bits sleutel** : wordt gebruikt voor de versleutelings sleutel voor verpakken/uitpakken van gegevens Azure Storage.
-- Door de **toepassing beheerde identiteit** : wordt gebruikt voor verificatie met Azure AD. Nadat toegang tot Key Vault is verleend, kan de toepassing de opslag sleutel en het certificaat ophalen.
+- **TLS/SSL-certificaat**: wordt gebruikt voor TLS/SSL.
+- **Opslag sleutel**: wordt gebruikt voor toegang tot het opslag account.
+- **RSA 2.048-bits sleutel**: wordt gebruikt voor de versleutelings sleutel voor verpakken/uitpakken van gegevens Azure Storage.
+- Door de **toepassing beheerde identiteit**: wordt gebruikt voor verificatie met Azure AD. Nadat toegang tot Key Vault is verleend, kan de toepassing de opslag sleutel en het certificaat ophalen.
 
 We moeten de volgende rollen definiëren om aan te geven wie onze toepassing kan beheren, implementeren en controleren:
-- **Beveiligingsteam** : IT-personeel van het kantoor van de CSO (Chief Security Officer) of soortgelijke medewerkers. Het beveiligings team is verantwoordelijk voor het behoorlijk veilig bewaren van geheimen. De geheimen kunnen TLS/SSL-certificaten, RSA-sleutels voor versleuteling, verbindings reeksen en opslag account sleutels bevatten.
-- **Ontwikkelaars en operators** : De medewerkers die de toepassing ontwikkelen en implementeren in Azure. De leden van dit team maken geen deel uit van het beveiligingspersoneel. Ze mogen geen toegang hebben tot gevoelige gegevens zoals TLS/SSL-certificaten en RSA-sleutels. Alleen de toepassing die ze implementeren, moet toegang hebben tot gevoelige gegevens.
-- **Auditors** : Deze rol is voor medewerkers die niet behoren tot het team van ontwikkelaars of algemene IT-medewerkers. Ze controleren het gebruik en onderhoud van certificaten, sleutels en geheimen en zorgen voor de naleving van beveiligingsstandaarden.
+- **Beveiligingsteam**: IT-personeel van het kantoor van de CSO (Chief Security Officer) of soortgelijke medewerkers. Het beveiligings team is verantwoordelijk voor het behoorlijk veilig bewaren van geheimen. De geheimen kunnen TLS/SSL-certificaten, RSA-sleutels voor versleuteling, verbindings reeksen en opslag account sleutels bevatten.
+- **Ontwikkelaars en operators**: De medewerkers die de toepassing ontwikkelen en implementeren in Azure. De leden van dit team maken geen deel uit van het beveiligingspersoneel. Ze mogen geen toegang hebben tot gevoelige gegevens zoals TLS/SSL-certificaten en RSA-sleutels. Alleen de toepassing die ze implementeren, moet toegang hebben tot gevoelige gegevens.
+- **Auditors**: Deze rol is voor medewerkers die niet behoren tot het team van ontwikkelaars of algemene IT-medewerkers. Ze controleren het gebruik en onderhoud van certificaten, sleutels en geheimen en zorgen voor de naleving van beveiligingsstandaarden.
 
 Er is nog een rol die zich buiten het bereik van de toepassing bevindt: de beheerder van het abonnement (of de resourcegroep). De abonnementsbeheerder stelt de initiële toegangsmachtigingen voor het beveiligingsteam in. Ze verlenen toegang tot het beveiligingsteam door gebruik te maken van een resourcegroep met de benodigde resources voor de toepassing.
 
@@ -185,8 +185,8 @@ De volgende tabel bevat een overzicht van de toegangs machtigingen voor onze rol
 | Rol | Machtigingen voor de beheerlaag | Machtigingen voor gegevens vlak: beleid voor kluis toegang | Machtigingen voor gegevens vlak-Azure RBAC (preview-versie)  |
 | --- | --- | --- | --- |
 | Beveiligingsteam | [Inzender Key Vault](../../role-based-access-control/built-in-roles.md#key-vault-contributor) | Certificaten: alle bewerkingen <br> Sleutels: alle bewerkingen <br> Geheimen: alle bewerkingen | [Key Vault beheerder (preview-versie)](../../role-based-access-control/built-in-roles.md#key-vault-administrator-preview) |
-| Ontwikkel aars en &nbsp; Opera tors | Machtiging voor Key Vault implementeren<br><br> **Opmerking** : met deze machtiging kunnen geïmplementeerde vm's worden gebruikt voor het ophalen van geheimen uit een sleutel kluis. | Geen | Geen |
-| Auditors | Geen | Certificaten: lijst <br> Sleutels: weergeven<br>Geheimen: weergeven<br><br> **Opmerking** : met deze machtiging kunnen Audi tors kenmerken (tags, activerings datums, verval datums) controleren op sleutels en geheimen die niet in de logboeken zijn verzonden. | [Key Vault lezer (preview)]https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#key-vault-reader-preview |
+| Ontwikkel aars en &nbsp; Opera tors | Machtiging voor Key Vault implementeren<br><br> **Opmerking**: met deze machtiging kunnen geïmplementeerde vm's worden gebruikt voor het ophalen van geheimen uit een sleutel kluis. | Geen | Geen |
+| Auditors | Geen | Certificaten: lijst <br> Sleutels: weergeven<br>Geheimen: weergeven<br><br> **Opmerking**: met deze machtiging kunnen Audi tors kenmerken (tags, activerings datums, verval datums) controleren op sleutels en geheimen die niet in de logboeken zijn verzonden. | [Key Vault lezer (preview)]https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#key-vault-reader-preview |
 | Azure Storage-account | Geen | Sleutels: Get, List, wrapKey, sleutel uitpakken <br> | [Versleuteling van crypto-service Key Vault](../../role-based-access-control/built-in-roles.md#key-vault-crypto-service-encryption-preview) |
 | Toepassing | Geen | Geheimen: ophalen, lijst <br> Certificaten: ophalen, lijst | [Key Vault lezer (preview)](../../role-based-access-control/built-in-roles.md#key-vault-reader-preview), [Key Vault geheime gebruiker (preview-versie)](../../role-based-access-control/built-in-roles.md#key-vault-secrets-user-preview) |
 

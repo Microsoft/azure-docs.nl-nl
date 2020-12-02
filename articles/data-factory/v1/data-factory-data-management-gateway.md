@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: b362e1aecfa2cd4e5677230fcb94113b27a44ec6
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 94c1bed8d94f73bc7794037b307618f4c36c4518
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637459"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96450611"
 ---
 # <a name="data-management-gateway"></a>Gegevensbeheergateway
 > [!NOTE]
@@ -64,7 +64,7 @@ Dit is de gegevens stroom op hoog niveau voor en een samen vatting van de stappe
 * Eén exemplaar van Data Management Gateway kan worden gebruikt voor meerdere on-premises gegevens bronnen. **Eén gateway-exemplaar is echter slechts aan één Azure Data Factory gebonden** en kan niet worden gedeeld met een andere Data Factory.
 * U kunt **slechts één exemplaar van Data Management Gateway** op één computer installeren. Stel dat u twee gegevens fabrieken hebt die toegang nodig hebben tot on-premises gegevens bronnen. u moet gateways op twee on-premises computers installeren. Met andere woorden, een gateway is gekoppeld aan een specifieke data factory
 * De **gateway hoeft zich niet op dezelfde computer als de gegevens bron te** bevindt. Als de gateway dichter bij de gegevens bron ligt, verkort de gateway echter om verbinding te maken met de gegevens bron. U wordt aangeraden de gateway te installeren op een computer die verschilt van de-host die wordt gehost op een on-premises gegevens bron. Wanneer de gateway en gegevens bron zich op verschillende computers bevinden, maakt de gateway geen concurrentie voor resources met een gegevens bron.
-* U kunt **meerdere gateways op verschillende computers hebben die verbinding maken met dezelfde on-premises gegevens bron** . U kunt bijvoorbeeld twee gateways hebben die twee gegevens fabrieken bieden, maar dezelfde on-premises gegevens bron wordt geregistreerd met de gegevens fabrieken.
+* U kunt **meerdere gateways op verschillende computers hebben die verbinding maken met dezelfde on-premises gegevens bron**. U kunt bijvoorbeeld twee gateways hebben die twee gegevens fabrieken bieden, maar dezelfde on-premises gegevens bron wordt geregistreerd met de gegevens fabrieken.
 * Als u al een gateway op uw computer hebt geïnstalleerd voor een **Power bi** scenario, installeert u een **afzonderlijke gateway voor Azure Data Factory** op een andere computer.
 * De gateway moet worden gebruikt, zelfs wanneer u **ExpressRoute** gebruikt.
 * Behandel uw gegevens bron als een on-premises gegevens bron (die zich achter een firewall bevindt), zelfs wanneer u **ExpressRoute** gebruikt. Gebruik de gateway om connectiviteit tussen de service en de gegevens bron tot stand te brengen.
@@ -92,18 +92,18 @@ Data Management Gateway kan op de volgende manieren worden geïnstalleerd:
 
 ### <a name="install-the-gateway-from-download-center"></a>De gateway installeren vanuit het Download centrum
 1. Ga naar de [Download pagina van micro soft data management gateway](https://www.microsoft.com/download/details.aspx?id=39717).
-2. Klik op **downloaden** , selecteer de **64-bits** versie (32-bits wordt niet meer ondersteund) en klik op **volgende** .
+2. Klik op **downloaden**, selecteer de **64-bits** versie (32-bits wordt niet meer ondersteund) en klik op **volgende**.
 3. Voer het **MSI** -bestand rechtstreeks uit of sla het op de vaste schijf op en voer uit.
-4. Selecteer op de pagina **Welkom** een **taal** en klik op **volgende** .
-5. **Accepteer** de gebruiksrecht overeenkomst van End-User en klik op **volgende** .
-6. Selecteer **map** om de gateway te installeren en klik op **volgende** .
-7. Klik op de pagina **gereed voor installatie** op **installeren** .
+4. Selecteer op de pagina **Welkom** een **taal** en klik op **volgende**.
+5. **Accepteer** de gebruiksrecht overeenkomst van End-User en klik op **volgende**.
+6. Selecteer **map** om de gateway te installeren en klik op **volgende**.
+7. Klik op de pagina **gereed voor installatie** op **installeren**.
 8. Klik op **volt ooien** om de installatie te volt ooien.
 9. Haal de sleutel op uit het Azure Portal. Zie de volgende sectie voor stapsgewijze instructies.
 10. Voer de volgende stappen uit op de pagina de **Gateway registreren** van **Data Management Gateway Configuration Manager** op uw computer wordt uitgevoerd:
     1. Plak de sleutel in de tekst.
     2. Klik desgewenst op **Gateway sleutel weer geven** om de sleutel tekst te bekijken.
-    3. Klik op **Registreren** .
+    3. Klik op **Registreren**.
 
 ### <a name="register-gateway-using-key"></a>Gateway registreren met sleutel
 #### <a name="if-you-havent-already-created-a-logical-gateway-in-the-portal"></a>Als u nog geen logische gateway hebt gemaakt in de portal
@@ -116,10 +116,10 @@ Als u een gateway wilt maken in de portal en de sleutel wilt ophalen op de pagin
 2. Selecteer op de pagina **gekoppelde services** de logische **Gateway** die u in de portal hebt gemaakt.
 
     ![logische gateway](media/data-factory-data-management-gateway/data-factory-select-gateway.png)
-3. Klik op de pagina **gegevens gateway** op **gegevens gateway downloaden en installeren** .
+3. Klik op de pagina **gegevens gateway** op **gegevens gateway downloaden en installeren**.
 
     ![Download koppeling in de portal](media/data-factory-data-management-gateway/download-and-install-link-on-portal.png)
-4. Klik op de pagina **configureren** op **sleutel opnieuw maken** . Klik op Ja in het waarschuwings bericht nadat u het zorgvuldig hebt gelezen.
+4. Klik op de pagina **configureren** op **sleutel opnieuw maken**. Klik op Ja in het waarschuwings bericht nadat u het zorgvuldig hebt gelezen.
 
     ![Knop sleutel opnieuw maken](media/data-factory-data-management-gateway/recreate-key-button.png)
 5. Klik op de knop kopiëren naast de sleutel. De sleutel wordt gekopieerd naar het klem bord.
@@ -158,7 +158,7 @@ Op het niveau van Windows Firewall worden deze uitgaande poorten normaal gesp ro
 #### <a name="copy-data-from-a-source-data-store-to-a-sink-data-store"></a>Gegevens uit een brongegevens archief naar een Sink-gegevens archief kopiëren
 Zorg ervoor dat de firewall regels correct zijn ingeschakeld op de firewall van het bedrijf, Windows Firewall op de gateway computer en het gegevens archief zelf. Als u deze regels inschakelt, kan de gateway verbinding maken met zowel de bron-als de sink. Schakel regels in voor elk gegevens archief dat is betrokken bij de Kopieer bewerking.
 
-Als u bijvoorbeeld wilt kopiëren van **een on-premises gegevens archief naar een Azure SQL database sink of een Azure Synapse Analytics-Sink (voorheen SQL Data Warehouse)** , voert u de volgende stappen uit:
+Als u bijvoorbeeld wilt kopiëren van **een on-premises gegevens archief naar een Azure SQL database sink of een Azure Synapse Analytics-Sink**, voert u de volgende stappen uit:
 
 * Uitgaande **TCP** -communicatie toestaan op poort **1433** voor zowel Windows Firewall als bedrijfs firewall.
 * Configureer de firewall instellingen van de logische SQL-Server om het IP-adres van de gateway computer toe te voegen aan de lijst met toegestane IP-adressen.
@@ -179,16 +179,16 @@ De gateway maakt gebruik van de proxy server om verbinding te maken met de Cloud
 
 Er zijn drie configuratie opties:
 
-* **Proxy niet gebruiken** : gateway maakt geen expliciet gebruik van een proxy om verbinding te maken met Cloud Services.
-* **Systeem proxy gebruiken** : gateway maakt gebruik van de proxy instelling die is geconfigureerd in diahost.exe.config en diawp.exe.config. Als er geen proxy is geconfigureerd in diahost.exe.config en diawp.exe.config, maakt de gateway rechtstreeks verbinding met de Cloud service zonder dat hiervoor een proxy wordt door lopen.
-* **Aangepaste proxy gebruiken** : Configureer de http-proxy-instelling die moet worden gebruikt voor de gateway in plaats van configuraties te gebruiken in diahost.exe.config en diawp.exe.config. Adres en poort zijn vereist. Gebruikers naam en wacht woord zijn optioneel, afhankelijk van de verificatie-instelling van uw proxy. Alle instellingen worden versleuteld met het referentie certificaat van de gateway en lokaal opgeslagen op de hostserver van de gateway.
+* **Proxy niet gebruiken**: gateway maakt geen expliciet gebruik van een proxy om verbinding te maken met Cloud Services.
+* **Systeem proxy gebruiken**: gateway maakt gebruik van de proxy instelling die is geconfigureerd in diahost.exe.config en diawp.exe.config. Als er geen proxy is geconfigureerd in diahost.exe.config en diawp.exe.config, maakt de gateway rechtstreeks verbinding met de Cloud service zonder dat hiervoor een proxy wordt door lopen.
+* **Aangepaste proxy gebruiken**: Configureer de http-proxy-instelling die moet worden gebruikt voor de gateway in plaats van configuraties te gebruiken in diahost.exe.config en diawp.exe.config. Adres en poort zijn vereist. Gebruikers naam en wacht woord zijn optioneel, afhankelijk van de verificatie-instelling van uw proxy. Alle instellingen worden versleuteld met het referentie certificaat van de gateway en lokaal opgeslagen op de hostserver van de gateway.
 
 De Data Management Gateway-hostservice wordt automatisch opnieuw opgestart nadat u de bijgewerkte proxy-instellingen hebt opgeslagen.
 
 Nadat de registratie van de gateway is voltooid, gebruikt u Data Management Gateway Configuration Manager om de proxy-instellingen weer te geven of bij te werken.
 
-1. Start **Data Management Gateway Configuration Manager** .
-2. Schakel over naar het tabblad **Instellingen** .
+1. Start **Data Management Gateway Configuration Manager**.
+2. Schakel over naar het tabblad **Instellingen**.
 3. Klik op koppeling **wijzigen** in de sectie **http-proxy** om het dialoog venster **http-proxy instellen** te openen.
 4. Nadat u op de knop **volgende** hebt geklikt, wordt er een waarschuwings venster weer gegeven waarin u wordt gevraagd om de proxy instelling op te slaan en de gateway-hostservice opnieuw op te starten.
 
@@ -205,7 +205,7 @@ U kunt de HTTP-proxy bekijken en bijwerken met behulp van Configuration Manager-
 Als u de instelling **systeem proxy gebruiken** voor de http-proxy selecteert, gebruikt gateway de proxy instelling in diahost.exe.config en diawp.exe.config. Als er geen proxy is opgegeven in diahost.exe.config en diawp.exe.config, maakt de gateway rechtstreeks verbinding met de Cloud service zonder dat hiervoor een proxy wordt door gegeven. De volgende procedure bevat instructies voor het bijwerken van het diahost.exe.config-bestand.
 
 1. Maak in Verkenner een veilige kopie van *C: \\ \\ Program Files \\ micro soft data management gateway \\ 2,0 \\ gedeelde \\diahost.exe.config* om een back-up van het oorspronkelijke bestand te maken.
-2. Start Notepad.exe uitgevoerd als beheerder en open tekst bestand *C: \\ \\ Program Files \\ micro soft data management gateway \\ 2,0 \\ gedeelde \\diahost.exe.config* . U vindt de standaard code voor system.net, zoals wordt weer gegeven in de volgende code:
+2. Start Notepad.exe uitgevoerd als beheerder en open tekst bestand *C: \\ \\ Program Files \\ micro soft data management gateway \\ 2,0 \\ gedeelde \\diahost.exe.config*. U vindt de standaard code voor system.net, zoals wordt weer gegeven in de volgende code:
 
     ```
     <system.net>
@@ -228,7 +228,7 @@ Als u de instelling **systeem proxy gebruiken** voor de http-proxy selecteert, g
     ```
     <proxy autoDetect="true|false|unspecified" bypassonlocal="true|false|unspecified" proxyaddress="uriString" scriptLocation="uriString" usesystemdefault="true|false|unspecified "/>
     ```
-3. Sla het configuratie bestand op de oorspronkelijke locatie op en start de Data Management Gateway host-service opnieuw op om de wijzigingen op te halen. Als u de service opnieuw wilt starten, gebruikt u het onderdeel Services van het configuratie scherm of klikt u in het **Data Management Gateway Configuration Manager** > op de knop **service stoppen** en klikt u vervolgens op service **starten** . Als de service niet wordt gestart, is er waarschijnlijk een onjuiste syntaxis voor de XML-code toegevoegd aan het configuratie bestand van de toepassing dat is bewerkt.
+3. Sla het configuratie bestand op de oorspronkelijke locatie op en start de Data Management Gateway host-service opnieuw op om de wijzigingen op te halen. Als u de service opnieuw wilt starten, gebruikt u het onderdeel Services van het configuratie scherm of klikt u in het **Data Management Gateway Configuration Manager** > op de knop **service stoppen** en klikt u vervolgens op service **starten**. Als de service niet wordt gestart, is er waarschijnlijk een onjuiste syntaxis voor de XML-code toegevoegd aan het configuratie bestand van de toepassing dat is bewerkt.
 
 > [!IMPORTANT]
 > Vergeet niet om **zowel** diahost.exe.config als diawp.exe.config bij te werken.
@@ -311,7 +311,7 @@ U kunt de functie voor automatisch bijwerken uitschakelen of inschakelen door de
 Nadat u de gateway hebt geïnstalleerd, kunt u Data Management Gateway Configuration Manager op een van de volgende manieren starten:
 
 1. Typ in het venster **zoeken** **Data Management Gateway** voor toegang tot dit hulp programma.
-2. Voer het uitvoer bare *ConfigManager.exe* uit in de map: *C: \\ \\ Program Files \\ micro soft data management gateway \\ 2,0 \\ Shared* .
+2. Voer het uitvoer bare *ConfigManager.exe* uit in de map: *C: \\ \\ Program Files \\ micro soft data management gateway \\ 2,0 \\ Shared*.
 
 ### <a name="home-page"></a>Startpagina
 Op de start pagina kunt u de volgende acties uitvoeren:
@@ -320,7 +320,7 @@ Op de start pagina kunt u de volgende acties uitvoeren:
 * **Meld** u aan met een sleutel vanuit de portal.
 * **Stop** en start de **Data Management gateway host-service** op de gateway computer.
 * **Updates plannen** op een specifiek tijdstip van de dagen.
-* De datum weer geven waarop de gateway voor het **laatst is bijgewerkt** .
+* De datum weer geven waarop de gateway voor het **laatst is bijgewerkt**.
 
 ### <a name="settings-page"></a>Pagina Instellingen
 Op de pagina instellingen kunt u de volgende acties uitvoeren:
@@ -378,7 +378,7 @@ Rol | Er zijn twee soorten rollen in een gateway voor meerdere knoop punten en v
 Op deze pagina ziet u enkele instellingen die meer inzicht geven wanneer er twee of meer knoop punten zijn (scale-out scenario) in de gateway. Zie [Data Management Gateway-hoge Beschik baarheid en schaal baarheid](data-factory-data-management-gateway-high-availability-scalability.md) voor meer informatie over het instellen van een gateway met meerdere knoop punten.
 
 ### <a name="gateway-status"></a>Gateway status
-De volgende tabel bevat mogelijke statussen van een **Gateway knooppunt** :
+De volgende tabel bevat mogelijke statussen van een **Gateway knooppunt**:
 
 Status  | Opmerkingen/Scenario's
 :------- | :------------------
@@ -388,7 +388,7 @@ Abonnement | Het knoop punt wordt automatisch bijgewerkt.
 Beperkt | Vanwege een connectiviteits probleem. Wordt mogelijk veroorzaakt door een probleem met de HTTP-poort 8050, het connectiviteits probleem van de service bus of het probleem met de synchronisatie van referenties.
 Niet-actief | Het knoop punt bevindt zich in een configuratie die verschilt van de configuratie van andere hoofd knooppunten.<br/><br/> Een knoop punt kan inactief zijn wanneer er geen verbinding kan worden gemaakt met andere knoop punten.
 
-De volgende tabel bevat mogelijke statussen van een **logische gateway** . De status van de gateway is afhankelijk van de status van de gateway-knoop punten.
+De volgende tabel bevat mogelijke statussen van een **logische gateway**. De status van de gateway is afhankelijk van de status van de gateway-knoop punten.
 
 Status | Opmerkingen
 :----- | :-------
@@ -414,7 +414,7 @@ In deze sectie worden de stappen beschreven voor het verplaatsen van de Gateway-
 2. Selecteer uw gateway in het gedeelte **gegevens gateways** van de pagina **gekoppelde services** .
 
     ![Pagina gekoppelde services met Gateway geselecteerd](./media/data-factory-data-management-gateway/LinkedServiceBladeWithGateway.png)
-3. Klik op de pagina **gegevens gateway** op **gegevens gateway downloaden en installeren** .
+3. Klik op de pagina **gegevens gateway** op **gegevens gateway downloaden en installeren**.
 
     ![Gateway koppeling downloaden](./media/data-factory-data-management-gateway/DownloadGatewayLink.png)
 4. Klik op de pagina **configureren** op **gegevens gateway downloaden en installeren** en volg de instructies voor het installeren van de gegevens gateway op de computer.
@@ -430,7 +430,7 @@ In deze sectie worden de stappen beschreven voor het verplaatsen van de Gateway-
 
     ![Sleutel kopiëren en registreren](./media/data-factory-data-management-gateway/CopyKeyAndRegister.png)
 8. Klik op **registreren** om de gateway bij de Cloud service te registreren.
-9. Klik op het tabblad **instellingen** op **wijzigen** om hetzelfde certificaat te selecteren dat is gebruikt met de oude gateway, voer het **wacht woord** in en klik op **volt ooien** .
+9. Klik op het tabblad **instellingen** op **wijzigen** om hetzelfde certificaat te selecteren dat is gebruikt met de oude gateway, voer het **wacht woord** in en klik op **volt ooien**.
 
    ![Certificaat opgeven](./media/data-factory-data-management-gateway/SpecifyCertificate.png)
 
@@ -440,11 +440,11 @@ In deze sectie worden de stappen beschreven voor het verplaatsen van de Gateway-
 ## <a name="encrypting-credentials"></a>Referenties versleutelen
 Voer de volgende stappen uit om referenties in de Data Factory editor te versleutelen:
 
-1. Start de webbrowser op de **Gateway computer** , navigeer naar [Azure Portal](https://portal.azure.com). Zoek uw data factory indien nodig, open data factory op de pagina **Data Factory** en klik vervolgens op **Auteur & implementeren** om Data Factory editor te starten.
+1. Start de webbrowser op de **Gateway computer**, navigeer naar [Azure Portal](https://portal.azure.com). Zoek uw data factory indien nodig, open data factory op de pagina **Data Factory** en klik vervolgens op **Auteur & implementeren** om Data Factory editor te starten.
 2. Klik op een bestaande **gekoppelde service** in de structuur weergave om de JSON-definitie te bekijken of een gekoppelde service te maken waarvoor een Data Management Gateway is vereist (bijvoorbeeld: SQL Server of Oracle).
 3. Voer in de JSON-editor voor de eigenschap PropertyName de naam van **de gateway in** .
-4. Voer de server naam in voor de **gegevens bron** eigenschap in de **Connections Tring** .
-5. Voer de database naam in voor de **eerste catalogus** eigenschap in de **Connections Tring** .
+4. Voer de server naam in voor de **gegevens bron** eigenschap in de **Connections Tring**.
+5. Voer de database naam in voor de **eerste catalogus** eigenschap in de **Connections Tring**.
 6. Klik op de knop **versleutelen** op de opdracht balk waarmee de toepassing voor het **beheer van referenties** voor klikken wordt gestart. U ziet het dialoog venster **Referenties instellen** .
 
     ![Dialoog venster Referenties instellen](./media/data-factory-data-management-gateway/setting-credentials-dialog.png)
@@ -494,7 +494,7 @@ In deze sectie wordt beschreven hoe u een gateway maakt en registreert met behul
     ```powershell
     $MyDMG = New-AzDataFactoryGateway -Name <gatewayName> -DataFactoryName <dataFactoryName> -ResourceGroupName ADF –Description <desc>
     ```
-    **Voor beeld van opdracht en uitvoer** :
+    **Voor beeld van opdracht en uitvoer**:
 
     ```
     PS C:\> $MyDMG = New-AzDataFactoryGateway -Name MyGateway -DataFactoryName $df -ResourceGroupName ADF –Description "gateway for walkthrough"
@@ -512,7 +512,7 @@ In deze sectie wordt beschreven hoe u een gateway maakt en registreert met behul
     Key               : ADF#00000000-0000-4fb8-a867-947877aef6cb@fda06d87-f446-43b1-9485-78af26b8bab0@4707262b-dc25-4fe5-881c-c8a7c3c569fe@wu#nfU4aBlq/heRyYFZ2Xt/CD+7i73PEO521Sj2AFOCmiI
     ```
 
-1. Ga in azure PowerShell naar de map: *C: \\ \\ Program Files \\ Microsoft Integration runtime \\ 3,0 \\ PowerShellScript \\* . Voer *RegisterGateway.ps1* uit die is gekoppeld aan de lokale variabele **$Key** , zoals wordt weer gegeven in de volgende opdracht. Met dit script wordt de client agent die op uw computer is geïnstalleerd, geregistreerd met de logische gateway die u eerder hebt gemaakt.
+1. Ga in azure PowerShell naar de map: *C: \\ \\ Program Files \\ Microsoft Integration runtime \\ 3,0 \\ PowerShellScript \\*. Voer *RegisterGateway.ps1* uit die is gekoppeld aan de lokale variabele **$Key** , zoals wordt weer gegeven in de volgende opdracht. Met dit script wordt de client agent die op uw computer is geïnstalleerd, geregistreerd met de logische gateway die u eerder hebt gemaakt.
 
     ```powershell
     PS C:\> .\RegisterGateway.ps1 $MyDMG.Key

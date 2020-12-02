@@ -11,17 +11,17 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto, genemi
 ms.date: 11/14/2019
-ms.openlocfilehash: 97be3bf0ecec20c4bf2e1633f893c9aa0d9ba49d
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 2ff8f6134f74e0eda355342a7282e8be81a3d8df
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95020279"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96450235"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-servers-in-azure-sql-database"></a>Virtuele netwerk service-eind punten en-regels gebruiken voor servers in Azure SQL Database
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
 
-*Regels voor virtuele netwerken* zijn één firewall beveiligings functie waarmee wordt bepaald of de server voor uw data bases en elastische pools in [Azure SQL database](sql-database-paas-overview.md) of voor uw data bases in [Azure Synapse](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) communicatie accepteert die wordt verzonden vanuit bepaalde subnetten in virtuele netwerken. In dit artikel wordt uitgelegd waarom de regel functie van het virtuele netwerk soms de beste optie is voor het veilig toestaan van communicatie met uw data base in Azure SQL Database en Azure Synapse Analytics (voorheen SQL Data Warehouse).
+*Regels voor virtuele netwerken* zijn één firewall beveiligings functie waarmee wordt bepaald of de server voor uw data bases en elastische pools in [Azure SQL database](sql-database-paas-overview.md) of voor uw data bases in [Azure Synapse](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) communicatie accepteert die wordt verzonden vanuit bepaalde subnetten in virtuele netwerken. In dit artikel wordt uitgelegd waarom de regel functie van het virtuele netwerk soms de beste optie is voor het veilig toestaan van communicatie met uw data base in Azure SQL Database en Azure Synapse Analytics.
 
 > [!NOTE]
 > Dit artikel is van toepassing op zowel Azure SQL Database als Azure Synapse Analytics. Ter vereenvoudiging verwijst de term “database” naar beide databases in Azure SQL Database en Azure Synapse Analytics. Alle verwijzingen naar “server” verwijzen ook naar de [logische SQL Server](logical-servers.md) die als host fungeert voor Azure SQL Database en Azure Synapse Analytics.

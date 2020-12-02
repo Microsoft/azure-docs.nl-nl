@@ -10,18 +10,18 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: dd285e8029d8e140380b0f90c60081d0e1f8dd56
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 06faa1da71331c299245a93af96166880e7732de
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305032"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96451787"
 ---
 # <a name="temporary-tables-in-synapse-sql"></a>Tijdelijke tabellen in Synapse SQL
 
 Dit artikel bevat essentiële richt lijnen voor het gebruik van tijdelijke tabellen en markeert de principes van tijdelijke tabellen op sessie niveau binnen Synapse SQL. 
 
-Zowel de toegewezen SQL-groep als serverloze SQL-groep (preview)-resources kunnen gebruikmaken van tijdelijke tabellen. Serverloze SQL-pool heeft beperkingen die aan het einde van dit artikel worden besproken. 
+Zowel de exclusieve SQL-groep als serverloze SQL-pool bronnen kunnen gebruikmaken van tijdelijke tabellen. Serverloze SQL-pool heeft beperkingen die aan het einde van dit artikel worden besproken. 
 
 ## <a name="temporary-tables"></a>Tijdelijke tabellen
 
@@ -226,7 +226,7 @@ De toegewezen SQL-groep heeft enkele implementatie beperkingen voor tijdelijke t
 - Er kunnen geen weer gaven worden gemaakt voor tijdelijke tabellen.
 - Tijdelijke tabellen kunnen alleen worden gemaakt met hash-of round robin distributie.  De replicatie van de tijdelijke tabel wordt niet ondersteund. 
 
-## <a name="temporary-tables-in-serverless-sql-pool-preview"></a>Tijdelijke tabellen in een serverloze SQL-groep (preview-versie)
+## <a name="temporary-tables-in-serverless-sql-pool"></a>Tijdelijke tabellen in een serverloze SQL-groep
 
 Tijdelijke tabellen in een serverloze SQL-groep worden ondersteund, maar het gebruik ervan is beperkt. Ze kunnen niet worden gebruikt in query's die doel bestanden hebben. 
 

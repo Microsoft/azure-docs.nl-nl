@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/27/2018
 ms.author: sachins
-ms.openlocfilehash: 291a5850540ea7d7d24a4a544c1eb65183df8ffb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9a5c5f9a4033b70a664071d6077a69f38c905093
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91667738"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452221"
 ---
 # <a name="best-practices-for-using-azure-data-lake-storage-gen1"></a>Aanbevolen procedures voor het gebruik van Azure Data Lake Storage Gen1
 
@@ -37,7 +37,7 @@ Als aan een beveiligings groep machtigingen zijn toegewezen, moeten er geen upda
 
 ### <a name="security-for-groups"></a>Beveiliging voor groepen
 
-Zoals besproken: wanneer gebruikers toegang nodig hebben tot Data Lake Storage Gen1, is het raadzaam om Azure Active Directory beveiligings groepen te gebruiken. Een aantal aanbevolen groepen om met te beginnen, kan **ReadOnlyUsers**, **WriteAccessUsers**en **FullAccessUsers** zijn voor de hoofdmap van het account en zelfs voor sleutel submappen. Als er andere groepen gebruikers zijn die later kunnen worden toegevoegd, maar die nog niet zijn geïdentificeerd, kunt u overwegen om dummy beveiligings groepen te maken die toegang tot bepaalde mappen hebben. Wanneer u een beveiligings groep gebruikt, zorgt u ervoor dat u later geen lange verwerkings tijd nodig hebt om nieuwe machtigingen toe te wijzen aan duizenden bestanden.
+Zoals besproken: wanneer gebruikers toegang nodig hebben tot Data Lake Storage Gen1, is het raadzaam om Azure Active Directory beveiligings groepen te gebruiken. Een aantal aanbevolen groepen om met te beginnen, kan **ReadOnlyUsers**, **WriteAccessUsers** en **FullAccessUsers** zijn voor de hoofdmap van het account en zelfs voor sleutel submappen. Als er andere groepen gebruikers zijn die later kunnen worden toegevoegd, maar die nog niet zijn geïdentificeerd, kunt u overwegen om dummy beveiligings groepen te maken die toegang tot bepaalde mappen hebben. Wanneer u een beveiligings groep gebruikt, zorgt u ervoor dat u later geen lange verwerkings tijd nodig hebt om nieuwe machtigingen toe te wijzen aan duizenden bestanden.
 
 ### <a name="security-for-service-principals"></a>Beveiliging voor service-principals
 
@@ -49,7 +49,7 @@ Data Lake Storage Gen1 ondersteunt de mogelijkheid om een firewall in te scha ke
 
 ![Firewall instellingen in Data Lake Storage Gen1](./media/data-lake-store-best-practices/data-lake-store-firewall-setting.png "Firewall instellingen in Data Lake Storage Gen1")
 
-Zodra de firewall is ingeschakeld, hebben alleen Azure-Services, zoals HDInsight, Data Factory, Azure Synapse Analytics (voorheen SQL Data Warehouse), etc. toegang tot Data Lake Storage Gen1. Als gevolg van de interne Network Address Translation die door Azure worden gebruikt, biedt de Data Lake Storage Gen1 firewall geen ondersteuning voor het beperken van specifieke services via IP en is deze alleen bedoeld voor beperkingen van eind punten buiten Azure, zoals on-premises.
+Zodra de firewall is ingeschakeld, hebben alleen Azure-Services, zoals HDInsight, Data Factory, Azure Synapse Analytics, etc. toegang tot Data Lake Storage Gen1. Als gevolg van de interne Network Address Translation die door Azure worden gebruikt, biedt de Data Lake Storage Gen1 firewall geen ondersteuning voor het beperken van specifieke services via IP en is deze alleen bedoeld voor beperkingen van eind punten buiten Azure, zoals on-premises.
 
 ## <a name="performance-and-scale-considerations"></a>Overwegingen voor prestaties en schalen
 
@@ -114,7 +114,7 @@ Kopieer taken kunnen worden geactiveerd door Apache Oozie-werk stromen met behul
 
 ### <a name="use-azure-data-factory-to-schedule-copy-jobs"></a>Azure Data Factory gebruiken om Kopieer taken te plannen
 
-Azure Data Factory kan ook worden gebruikt voor het plannen van Kopieer taken met behulp van een **Kopieer activiteit**en kan zelfs worden ingesteld op basis van een frequentie via de **wizard kopiëren**. Houd er rekening mee dat Azure Data Factory een limiet van DMUs (Cloud data units) heeft en uiteindelijk de door Voer/Compute voor grote gegevens workloads optekent. Daarnaast biedt Azure Data Factory momenteel geen verschillen tussen de Data Lake Storage Gen1-accounts, waardoor mappen als Hive-tabellen een volledige kopie moeten repliceren. Raadpleeg de [hand leiding voor het afstemmen van de Kopieer activiteit](../data-factory/copy-activity-performance.md) voor meer informatie over het kopiëren met Data Factory.
+Azure Data Factory kan ook worden gebruikt voor het plannen van Kopieer taken met behulp van een **Kopieer activiteit** en kan zelfs worden ingesteld op basis van een frequentie via de **wizard kopiëren**. Houd er rekening mee dat Azure Data Factory een limiet van DMUs (Cloud data units) heeft en uiteindelijk de door Voer/Compute voor grote gegevens workloads optekent. Daarnaast biedt Azure Data Factory momenteel geen verschillen tussen de Data Lake Storage Gen1-accounts, waardoor mappen als Hive-tabellen een volledige kopie moeten repliceren. Raadpleeg de [hand leiding voor het afstemmen van de Kopieer activiteit](../data-factory/copy-activity-performance.md) voor meer informatie over het kopiëren met Data Factory.
 
 ### <a name="adlcopy"></a>AdlCopy
 

@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 11/09/2020
 author: sayantanroy83
 ms.author: sroy
-ms.openlocfilehash: ceecaf88f87a94473011eb48e944db7a011b3acc
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 943f1361a2a9d6bf8d891f8b4f2137b8738f0836
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94563780"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96450767"
 ---
 # <a name="orders-dashboard-in-commercial-marketplace-analytics"></a>Dashboard Bestellingen in Commerciële marketplace-analyses
 
@@ -21,7 +21,7 @@ Dit artikel bevat informatie over het dash board orders in partner centrum. Dit 
 Als u toegang wilt krijgen tot het dash board orders in het partner centrum, **[Analyze](https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/summary)** selecteert u onder **commerciële Marketplace** de optie  >  **Orders** analyseren.
 
 >[!NOTE]
-> Zie voor gedetailleerde definities van analyse terminologie [Commercial Marketplace Analytics terminologie en common questions](./partner-center-portal/faq-terminology.md)(Engelstalig).
+> Zie voor gedetailleerde definities van analyse terminologie [Commercial Marketplace Analytics terminologie en common questions](./analytics-faq.md)(Engelstalig).
 
 ## <a name="orders-dashboard"></a>Dashboard voor orders
 
@@ -69,9 +69,9 @@ Het lijn diagram **Orders per seat en op basis** van een site geeft de metrische
 
 SaaS-aanbiedingen kunnen gebruikmaken van een van de twee prijs modellen voor elk abonnement: een vast tarief (op site gebaseerd) of per gebruiker (op basis van een seat).
 
-- **Vast tarief** : Stel toegang tot uw aanbieding in met één maandelijks of jaarlijks vast tarief. Dit wordt soms ook wel site-gebaseerde prijzen genoemd.
-- **Per gebruiker** : Schakel toegang tot uw aanbieding in met een prijs op basis van het aantal gebruikers dat toegang heeft tot de aanbieding of stoelen kan innemen. Met dit model op basis van gebruik kunt u het minimale en maximale aantal gebruikers instellen dat door het plan wordt ondersteund. U kunt meerdere plannen maken om verschillende prijs punten te configureren op basis van het aantal gebruikers. Deze velden zijn optioneel. Als deze optie niet is geselecteerd, wordt het aantal gebruikers geïnterpreteerd als een limiet van Mini maal 1 en Maxi maal zo lang uw service kan ondersteunen. Deze velden kunnen worden bewerkt als onderdeel van een update voor uw plan.
-- **Factuur met data limiet** : bovenop de prijs van een vast tarief. Met dit prijs model kunt u optioneel plannen voor data limieten definiëren die gebruikmaken van de API voor de Marketplace-meter service om klanten in rekening te brengen voor gebruik dat niet wordt gedekt door het vaste tarief.
+- **Vast tarief**: Stel toegang tot uw aanbieding in met één maandelijks of jaarlijks vast tarief. Dit wordt soms ook wel site-gebaseerde prijzen genoemd.
+- **Per gebruiker**: Schakel toegang tot uw aanbieding in met een prijs op basis van het aantal gebruikers dat toegang heeft tot de aanbieding of stoelen kan innemen. Met dit model op basis van gebruik kunt u het minimale en maximale aantal gebruikers instellen dat door het plan wordt ondersteund. U kunt meerdere plannen maken om verschillende prijs punten te configureren op basis van het aantal gebruikers. Deze velden zijn optioneel. Als deze optie niet is geselecteerd, wordt het aantal gebruikers geïnterpreteerd als een limiet van Mini maal 1 en Maxi maal zo lang uw service kan ondersteunen. Deze velden kunnen worden bewerkt als onderdeel van een update voor uw plan.
+- **Factuur met data limiet**: bovenop de prijs van een vast tarief. Met dit prijs model kunt u optioneel plannen voor data limieten definiëren die gebruikmaken van de API voor de Marketplace-meter service om klanten in rekening te brengen voor gebruik dat niet wordt gedekt door het vaste tarief.
 
 Zie [een SaaS-aanbieding plannen voor de commerciële Marketplace](plan-saas-offer.md)voor meer informatie over de Seat, site en op basis van een Data limiet.
 
@@ -135,7 +135,7 @@ In de tabel Order Details wordt een genummerde lijst met de 1.000 belangrijkste 
 | Naam van aanbieding | Naam van aanbieding | De naam van de commerciële Marketplace-aanbieding. |
 | Eind datum van proef versie | Eind datum van proef versie | De datum waarop de proef periode voor deze order wordt beëindigd of beëindigd. |
 | Klant-id | Klant-ID | De unieke id die aan een klant is toegewezen. Een klant heeft mogelijk geen of meer Azure Marketplace-abonnementen. |
-| Facturerings account-id | Facturerings account-ID | De id van het account waarop de facturering wordt gegenereerd. Wijs het *facturerings account-id* * toe aan **customerID** om verbinding te maken met uw rapport met de uitbetalings transacties met de klant-, order-en gebruiks rapporten. |
+| Facturerings account-id | Facturerings account-ID | De id van het account waarop de facturering wordt gegenereerd. Wijs het *facturerings account-id** toe aan **customerID** om verbinding te maken met uw rapport met de uitbetalings transacties met de klant-, order-en gebruiks rapporten. |
 | AssetCount | Aantal assets | Het aantal assets dat is gekoppeld aan de order-ID. |
 ||||
 
@@ -154,4 +154,4 @@ De pagina met **Orders** wordt toegepast op het pagina niveau orders. U kunt een
 - Voor virtuele machine (VM) zijn metrische gegevens over gebruik en gefactureerde facturering, Zie [gebruiks dashboard in commerciële Marketplace-analyses](./usage-dashboard.md).
 - Zie [dash board downloaden in Commercial Marketplace Analytics](./partner-center-portal/downloads-dashboard.md)voor een lijst met Download aanvragen voor de afgelopen 30 dagen.
 - Voor een geconsolideerde weer gave van feedback van klanten voor aanbiedingen op Azure Marketplace en AppSource raadpleegt u [beoordelingen & beoordelingen Analytics dash board in partner centrum](./partner-center-portal/ratings-reviews.md).
-- Zie voor veelgestelde vragen over de analyse van commerciële Marketplace en voor een uitgebreid woorden boek met informatie over de [terminologie van commerciële Marketplace en veelgestelde vragen](./partner-center-portal/faq-terminology.md).
+- Zie voor veelgestelde vragen over de analyse van commerciële Marketplace en voor een uitgebreid woorden boek met informatie over de [terminologie van commerciële Marketplace en veelgestelde vragen](./analytics-faq.md).

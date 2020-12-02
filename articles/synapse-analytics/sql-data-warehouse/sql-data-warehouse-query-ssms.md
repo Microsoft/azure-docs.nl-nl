@@ -1,6 +1,6 @@
 ---
-title: Verbinden met SSMS
-description: Gebruik SQL Server Management Studio (SSMS) om verbinding te maken met en een query uit te zoeken naar een toegewezen SQL-groep in azure Synapse Analytics.
+title: Verbinding maken met een toegewezen SQL-groep (voorheen SQL DW) met SSMS
+description: Gebruik SQL Server Management Studio (SSMS) om verbinding te maken met en een query uit te zoeken naar een toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics.
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -11,14 +11,14 @@ ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: c2fab8f02f31897a2e3d38094b9bd365f8e921e9
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 950cb4c40a534f252ec8b0daa5a57eb87c098450
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325321"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96450470"
 ---
-# <a name="connect-to-a-dedicated-sql-pool-in-azure-synapse-analytics-with-sql-server-management-studio-ssms"></a>Verbinding maken met een toegewezen SQL-groep in azure Synapse Analytics met SQL Server Management Studio (SSMS)
+# <a name="connect-to-a-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-with-sql-server-management-studio-ssms"></a>Verbinding maken met een toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics met SQL Server Management Studio (SSMS)
 
 > [!div class="op_single_selector"]
 >
@@ -28,17 +28,17 @@ ms.locfileid: "93325321"
 > * [sqlcmd](sql-data-warehouse-get-started-connect-sqlcmd.md)
 > * [SSMS](sql-data-warehouse-query-ssms.md)
 
-Gebruik SQL Server Management Studio (SSMS) om verbinding te maken met en een query uit te brengen op een Data Warehouse in azure Synapse.
+Gebruik SQL Server Management Studio (SSMS) om verbinding te maken met en een query uit te zoeken naar een toegewezen SQL-groep (voorheen SQL DW).
 
 ## <a name="prerequisites"></a>Vereisten
 
 Voor deze zelfstudie hebt u het volgende nodig:
 
-* Een bestaande exclusieve SQL-groep. Zie [een toegewezen SQL-groep maken](create-data-warehouse-portal.md)om er een te maken.
+* Een bestaande exclusieve SQL-groep. Zie [een toegewezen SQL-groep maken (voorheen SQL DW)](create-data-warehouse-portal.md)om er een te maken.
 * SQL Server Management Studio (SSMS) is geïnstalleerd. [Down load SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) gratis als u dit nog niet hebt gedaan.
-* De volledig gekwalificeerde SQL-servernaam. Zie [verbinding maken met een toegewezen SQL-groep](sql-data-warehouse-connect-overview.md)om deze informatie te vinden.
+* De volledig gekwalificeerde SQL-servernaam. Zie [exclusieve SQL-groep (voorheen SQL DW)](sql-data-warehouse-connect-overview.md)om deze informatie te vinden.
 
-## <a name="1-connect-to-your-dedicated-sql-pool"></a>1. Maak verbinding met uw toegewezen SQL-groep
+## <a name="1-connect-to-your-dedicated-sql-pool-formerly-sql-dw"></a>1. Maak verbinding met uw toegewezen SQL-groep (voorheen SQL DW)
 
 1. Open SQL Server Management Studio.
 2. Open objectverkenner door **bestand**  >  **Connect objectverkenner** te selecteren.

@@ -11,12 +11,12 @@ ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: a3715abdebce319979d867d12764a22b4ed16c35
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: c452d51018ef3f204cd7281971c07fb6337d39bf
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93323622"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96449702"
 ---
 # <a name="guidance-for-designing-distributed-tables-using-dedicated-sql-pool-in-azure-synapse-analytics"></a>Richt lijnen voor het ontwerpen van gedistribueerde tabellen met een toegewezen SQL-groep in azure Synapse Analytics
 
@@ -44,7 +44,7 @@ Een hash-gedistribueerde tabel distribueert tabel rijen over de reken knooppunte
 
 ![Gedistribueerde tabel](./media/sql-data-warehouse-tables-distribute/hash-distributed-table.png "Gedistribueerde tabel")  
 
-Omdat identieke waarden altijd een hash naar dezelfde distributie hebben, heeft het Data Warehouse ingebouwde kennis van de maplocaties. In de toegewezen SQL-groep wordt deze kennis gebruikt om de verplaatsing van gegevens tijdens query's te minimaliseren, waardoor de query prestaties worden verbeterd.
+Aangezien identieke waarden altijd een hash naar dezelfde distributie hebben, heeft SQL Analytics ingebouwde kennis van de maplocaties van de rij. In de toegewezen SQL-groep wordt deze kennis gebruikt om de verplaatsing van gegevens tijdens query's te minimaliseren, waardoor de query prestaties worden verbeterd.
 
 Hash-gedistribueerde tabellen werken goed voor grote feiten tabellen in een ster schema. Ze kunnen zeer grote aantallen rijen hebben en toch hoge prestaties bezorgen. Er zijn uiteraard enkele ontwerp overwegingen waarmee u de prestaties van het gedistribueerde systeem kunt bepalen. Het kiezen van een goede distributie kolom is een van deze overwegingen die in dit artikel wordt beschreven.
 

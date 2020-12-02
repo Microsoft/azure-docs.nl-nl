@@ -6,12 +6,12 @@ ms.author: nlarin
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 07/17/2020
-ms.openlocfilehash: 37b2414252a7011444617ecc08c9dd7d081b7441
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: d45ab771f90c0174f24d5f0d39921f93f72be850
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425500"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96451068"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-postgresql---single-server"></a>Virtual Network Service-eind punten en-regels voor Azure Database for PostgreSQL-één server gebruiken
 
@@ -106,7 +106,7 @@ Voor Azure Database for PostgreSQL heeft de functie regels voor virtuele netwerk
 
 - De regels voor virtuele netwerken zijn alleen van toepassing op Azure Resource Manager virtuele netwerken. en niet op [klassieke implementatie model][arm-deployment-model-568f] netwerken.
 
-- Het inschakelen van service-eind punten voor virtuele netwerken voor het Azure Database for PostgreSQL met behulp van het tag **micro soft. SQL** -service, schakelt ook de eind punten in voor alle Azure data base-services: Azure Database for MySQL, Azure Database for PostgreSQL, Azure SQL database en Azure Synapse Analytics (voorheen SQL Data Warehouse).
+- Als u de service-eind punten van het virtuele netwerk inschakelt voor Azure Database for PostgreSQL met het tag **micro soft. SQL** -service, worden ook de eind punten ingeschakeld voor alle Azure data base-services: Azure Database for MySQL, Azure Database for PostgreSQL, Azure SQL database en Azure Synapse Analytics.
 
 - Ondersteuning voor VNet-service-eind punten is alleen voor servers met Algemeen en geoptimaliseerd voor geheugen.
 
@@ -124,7 +124,7 @@ Als u communicatie van uw circuit naar Azure Database for PostgreSQL wilt toesta
 
 ## <a name="adding-a-vnet-firewall-rule-to-your-server-without-turning-on-vnet-service-endpoints"></a>Een VNET-firewall regel toevoegen aan uw server zonder de VNET-service-eind punten in te scha kelen
 
-Als u alleen een VNet-firewall regel instelt, kunt u de server niet beveiligen met het VNet. U moet ook VNet-service-eind punten **inschakelen om de beveiliging van kracht** te laten worden. Wanneer u service-eind punten inschakelt, wordt de **downtime van uw**VNet- **subnet in stand**gezet totdat de overgang van **uit** naar wordt voltooid. Dit geldt met name in de context van grote VNets. U kunt de vlag **IgnoreMissingServiceEndpoint** gebruiken om de downtime te verminderen of te elimineren tijdens de overgang.
+Als u alleen een VNet-firewall regel instelt, kunt u de server niet beveiligen met het VNet. U moet ook VNet-service-eind punten **inschakelen om de beveiliging van kracht** te laten worden. Wanneer u service-eind punten inschakelt, wordt de **downtime van uw** VNet- **subnet in stand** gezet totdat de overgang van **uit** naar wordt voltooid. Dit geldt met name in de context van grote VNets. U kunt de vlag **IgnoreMissingServiceEndpoint** gebruiken om de downtime te verminderen of te elimineren tijdens de overgang.
 
 U kunt de vlag **IgnoreMissingServiceEndpoint** instellen met behulp van de Azure CLI of portal.
 

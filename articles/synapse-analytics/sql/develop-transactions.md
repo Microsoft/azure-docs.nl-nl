@@ -10,12 +10,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: a2597a4bc6c5ed44f0e0050be3f69d7e840665e5
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: c4fe512ff6db24498148ffa724c3144a2f61823f
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93323839"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96451719"
 ---
 # <a name="use-transactions-with-dedicated-sql-pool-in-azure-synapse-analytics"></a>Trans acties met een toegewezen SQL-groep gebruiken in azure Synapse Analytics
 
@@ -27,7 +27,7 @@ Zoals u verwacht, ondersteunt de toegewezen SQL-pool trans acties als onderdeel 
 
 ## <a name="transaction-isolation-levels"></a>Trans actie-isolatie niveaus
 
-De SQL-Groep implementeert zure trans acties. Het isolatie niveau van de transactionele ondersteuning is standaard om niet-doorgevoerd te lezen.  U kunt deze wijzigen om doorgevoerde MOMENTOPNAME isolatie te lezen door de optie READ_COMMITTED_SNAPSHOT data base in te scha kelen voor een gebruikers database wanneer deze is verbonden met de hoofd database.  
+De toegewezen SQL-Groep implementeert zuur transacties. Het isolatie niveau van de transactionele ondersteuning is standaard om niet-doorgevoerd te lezen.  U kunt deze wijzigen om doorgevoerde MOMENTOPNAME isolatie te lezen door de optie READ_COMMITTED_SNAPSHOT data base in te scha kelen voor een gebruikers database wanneer deze is verbonden met de hoofd database.  
 
 Wanneer deze optie is ingeschakeld, worden alle trans acties in deze data base uitgevoerd onder Lees-VASTGELEGDe snap shot-isolatie en wordt het lezen van niet-toegewezen op sessie niveau niet in rekening gehouden. Raadpleeg [ALTER data base set Options (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azure-sqldw-latest&preserve-view=true) voor meer informatie.
 
@@ -89,7 +89,7 @@ Als u de hoeveelheid gegevens die naar het logboek moet worden geschreven, wilt 
 
 ## <a name="transaction-state"></a>Transactie status
 
-De SQL-groep maakt gebruik van de functie XACT_STATE () om een mislukte trans actie te rapporteren met de waarde-2. Deze waarde betekent dat de trans actie is mislukt en alleen is gemarkeerd voor terugdraaien.
+Voor de exclusieve SQL-groep wordt de functie XACT_STATE () gebruikt om een mislukte trans actie te rapporteren met de waarde-2. Deze waarde betekent dat de trans actie is mislukt en alleen is gemarkeerd voor terugdraaien.
 
 > [!NOTE]
 > Het gebruik van-2 door de functie XACT_STATE om een mislukte trans actie aan te duiden, vertegenwoordigt een ander gedrag voor SQL Server. SQL Server gebruikt de waarde-1 om een niet-doorvoer bare trans actie weer te geven. SQL Server kunt een aantal fouten binnen een trans actie verdragen zonder dat het als niet-doorvoerbaar moet worden gemarkeerd. Er `SELECT 1/0` kan bijvoorbeeld een fout optreden, maar geen trans actie geforceerd worden uitgevoerd. Met SQL Server wordt ook lees bewerkingen in de niet-doorvoer bare trans actie toegestaan. Met exclusieve SQL-groep kunt u dit echter niet doen. Als er een fout optreedt in een toegewezen SQL-groeps transactie, wordt automatisch de status-2 ingevoerd en kunt u geen verdere SELECT-instructies meer maken totdat de instructie terug is teruggedraaid. Het is daarom belang rijk om te controleren of de toepassings code gebruikmaakt van XACT_STATE (), omdat u mogelijk code wijzigingen moet aanbrengen.
@@ -193,7 +193,7 @@ THROW is de meer moderne implementatie voor het verhogen van uitzonde ringen in 
 
 ## <a name="limitations"></a>Beperkingen
 
-De SQL-groep heeft enkele andere beperkingen die betrekking hebben op trans acties. De verschillen zijn als volgt:
+De toegewezen SQL-groep heeft enkele andere beperkingen die betrekking hebben op trans acties. De verschillen zijn als volgt:
 
 * Geen gedistribueerde trans acties
 * Geen geneste trans acties toegestaan
@@ -204,4 +204,4 @@ De SQL-groep heeft enkele andere beperkingen die betrekking hebben op trans acti
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [Aanbevolen procedures voor trans acties](../sql-data-warehouse/sql-data-warehouse-develop-best-practices-transactions.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)voor meer informatie over het optimaliseren van trans acties. Er zijn ook aanvullende best practices-hand leidingen beschikbaar voor [SQL-groep](best-practices-sql-pool.md) en [serverloze SQL-groep (preview)](best-practices-sql-on-demand.md).
+Zie [Aanbevolen procedures voor trans acties](../sql-data-warehouse/sql-data-warehouse-develop-best-practices-transactions.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)voor meer informatie over het optimaliseren van trans acties. Er zijn ook aanvullende best practices-hand leidingen beschikbaar voor [exclusieve SQL-groep](best-practices-sql-pool.md) en [serverloze SQL-groep](best-practices-sql-on-demand.md).

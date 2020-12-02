@@ -1,6 +1,6 @@
 ---
 title: T-SQL-weer gaven met behulp van SQL-groepen
-description: Tips voor het gebruik van T-SQL-weer gaven en het ontwikkelen van oplossingen met een exclusieve SQL-groep en serverloze SQL-groep (preview) in azure Synapse Analytics.
+description: Tips voor het gebruik van T-SQL-weer gaven en het ontwikkelen van oplossingen met een exclusieve SQL-groep en serverloze SQL-groep in azure Synapse Analytics.
 services: synapse-analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 5097c35d97e33ef2d6fa0be12c796bf7e4e06950
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 6fb75257a86e9e46d6c180a2a38193adecb2b36a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685729"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96451671"
 ---
-# <a name="t-sql-views-with-dedicated-sql-pool-and-serverless-sql-pool-preview--in-azure-synapse-analytics"></a>T-SQL-weer gaven met exclusieve SQL-groep en serverloze SQL-groep (preview) in azure Synapse Analytics
+# <a name="t-sql-views-with-dedicated-sql-pool-and-serverless-sql-pool-in-azure-synapse-analytics"></a>T-SQL-weer gaven met een toegewezen SQL-groep en een serverloze SQL-groep in azure Synapse Analytics
 
-In dit artikel vindt u tips voor het gebruik van T-SQL-weer gaven en het ontwikkelen van oplossingen met een exclusieve SQL-groep en serverloze SQL-pool (preview) in azure Synapse Analytics.
+In dit artikel vindt u tips voor het gebruik van T-SQL-weer gaven en het ontwikkelen van oplossingen met een exclusieve SQL-groep en serverloze SQL-groep in azure Synapse Analytics.
 
 ## <a name="why-use-views"></a>Waarom weer gaven gebruiken
 

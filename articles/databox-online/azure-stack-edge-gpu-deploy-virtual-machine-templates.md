@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 08/04/2020
+ms.date: 11/16/2020
 ms.author: alkohli
-ms.openlocfilehash: d0d02532f39d676772e5ee5d6414b802faffba7c
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 93df80cd6fcd6f5553ea509a4778a155299bb057
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94505934"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96449045"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-templates"></a>Vm's op uw Azure Stack Edge Pro GPU-apparaat implementeren via sjablonen
 
@@ -76,7 +76,7 @@ Configureer deze vereisten voor het maken van resources die nodig zijn voor het 
     
 ### <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Maak een Azure-resourcegroep met behulp van de opdracht [New-AzureRmResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup). Een resource groep is een logische container waarin de Azure-resources, zoals opslag account, schijf, beheerde schijf, worden geïmplementeerd en beheerd.
+Maak een Azure-resourcegroep met behulp van de opdracht [New-AzureRmResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Een resource groep is een logische container waarin de Azure-resources, zoals opslag account, schijf, beheerde schijf, worden geïmplementeerd en beheerd.
 
 > [!IMPORTANT]
 > Alle resources worden gemaakt op dezelfde locatie als die van het apparaat en de locatie is ingesteld op **DBELocal**.
@@ -185,17 +185,17 @@ Kopieer de schijf installatie kopieën die moeten worden gebruikt in pagina-blob
 
     ![Verbinding maken met Azure Storage 1](media/azure-stack-edge-gpu-deploy-virtual-machine-templates/connect-azure-storage-1.png)
 
-5. Selecteer **De naam en sleutel van een opslagaccount gebruiken**. Selecteer **Volgende**.
+5. Selecteer **De naam en sleutel van een opslagaccount gebruiken**. Selecteer **Next**.
 
     ![Verbinding maken met Azure Storage 2](media/azure-stack-edge-gpu-deploy-virtual-machine-templates/connect-azure-storage-2.png)
 
-6. Geef in de **naam en sleutel verbinding maken** de **weergave naam** , de **naam van het opslag account** , Azure Storage **account sleutel** op. Selecteer een **ander** opslag domein en geef vervolgens de `<device name>.<DNS domain>` Connection String op. Als u een certificaat niet in Storage Explorer hebt geïnstalleerd, controleert u de optie **http gebruiken** . Selecteer **Volgende**.
+6. Geef in de **naam en sleutel verbinding maken** de **weergave naam**, de **naam van het opslag account**, Azure Storage **account sleutel** op. Selecteer een **ander** opslag domein en geef vervolgens de `<device name>.<DNS domain>` Connection String op. Als u een certificaat niet in Storage Explorer hebt geïnstalleerd, controleert u de optie **http gebruiken** . Selecteer **Next**.
 
     ![Verbinding maken met naam en sleutel](media/azure-stack-edge-gpu-deploy-virtual-machine-templates/connect-name-key-1.png)
 
 7. Controleer het **samen vatting** van de verbinding en selecteer **verbinding maken**.
 
-8. Het opslag account wordt weer gegeven in het linkerdeel venster. Selecteer en vouw het opslag account uit. Selecteer **BLOB-containers** , klik met de rechter muisknop en selecteer **BLOB-container maken**. Geef een naam op voor de BLOB-container.
+8. Het opslag account wordt weer gegeven in het linkerdeel venster. Selecteer en vouw het opslag account uit. Selecteer **BLOB-containers**, klik met de rechter muisknop en selecteer **BLOB-container maken**. Geef een naam op voor de BLOB-container.
 
 9. Selecteer de container die u zojuist hebt gemaakt en selecteer in het rechterdeel venster de optie **upload > bestanden uploaden**. 
 
@@ -249,7 +249,7 @@ Het bestand `CreateImageAndVnet.parameters.json` heeft de volgende para meters:
               "value": "<Operating system corresponding to the VHD you upload can be Windows or Linux>"
         },
         "imageName": {
-            "value": "<Name for the VM iamge>"
+            "value": "<Name for the VM image>"
         },
         "imageUri": {
               "value": "<Path to the VHD that you uploaded in the Storage account>"
@@ -441,7 +441,7 @@ Wijs de juiste para meters toe aan `CreateVM.parameters.json` voor uw Azure stac
 
 1. Geef een unieke naam, de naam van de netwerk interface en de naam van de ipconfig op. 
 1. Voer een gebruikers naam, wacht woord en een ondersteunde VM-grootte in.
-1. Geef dezelfde naam op voor **VnetName** , **subnetmasker** en **installatie kopie** die is opgegeven in de para meters voor `CreateImageAndVnet.parameters.json` . Als u bijvoorbeeld VnetName, subnetvoorvoegsel en Imagenaam hebt opgegeven als **vnet1** , **subnet1** en **afbeelding1** , moet u deze waarden ook voor de para meters in deze sjabloon gebruiken.
+1. Geef dezelfde naam op voor **VnetName**, **subnetmasker** en **installatie kopie** die is opgegeven in de para meters voor `CreateImageAndVnet.parameters.json` . Als u bijvoorbeeld VnetName, subnetvoorvoegsel en Imagenaam hebt opgegeven als **vnet1**, **subnet1** en **afbeelding1**, moet u deze waarden ook voor de para meters in deze sjabloon gebruiken.
 1. U hebt nu een statisch IP-adres nodig om toe te wijzen aan de virtuele machine in het hierboven gedefinieerde subnet-netwerk. Vervang **PrivateIPAddress** door dit adres in het parameter bestand. Als u wilt dat de virtuele machine een IP-adres van uw lokale DHCP-server krijgt, laat u de `privateIPAddress` waarde leeg.  
     
     ```json
@@ -576,7 +576,7 @@ Implementeer de sjabloon voor het maken van de VM `CreateVM.json` . Met deze sja
     `Get-AzureRmVm`
 
 
-## <a name="connect-to-a-vm"></a>Verbinding maken met een VM
+## <a name="connect-to-a-vm"></a>Verbinding maken met een virtuele machine
 
 Afhankelijk van of u een Windows-of een Linux-VM hebt gemaakt, kunnen de stappen om verbinding te maken verschillend zijn.
 
@@ -629,4 +629,4 @@ To verify if the environment variable for AzCopy was set correctly, take the fol
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Azure Resource Manager-cmdlets](https://docs.microsoft.com/powershell/module/azurerm.resources/?view=azurermps-6.13.0)
+[Azure Resource Manager-cmdlets](/powershell/module/azurerm.resources/?view=azurermps-6.13.0)

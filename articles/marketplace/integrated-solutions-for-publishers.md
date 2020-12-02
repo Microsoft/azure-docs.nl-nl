@@ -7,16 +7,16 @@ ms.topic: conceptual
 author: vikrambmsft
 ms.author: vikramb
 ms.date: 04/16/2020
-ms.openlocfilehash: 2e976b895c6aa63b73c55b458668c00b64c6f960
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 705b0f02682b6aa41cb5c8e77d8da39faa5edb1f
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91660901"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96450131"
 ---
 # <a name="publish-an-integrated-solution"></a>Een geïntegreerde oplossing publiceren
 
-In dit artikel worden het algehele proces en de vereisten voor het publiceren van een geïntegreerde oplossing voor de commerciële Marketplace uitgelegd. In één gebundelde aanbieding combineert een geïntegreerde oplossing Point-Solution technologieën van software leveranciers met de implementatie en ondersteuning van een service partner. De services partner vermeldt de aanbieding in Microsoft AppSource of Azure Marketplace als [advies service](./consulting-services.md).
+In dit artikel worden het algehele proces en de vereisten voor het publiceren van een geïntegreerde oplossing voor de commerciële Marketplace uitgelegd. In één gebundelde aanbieding combineert een geïntegreerde oplossing Point-Solution technologieën van software leveranciers met de implementatie en ondersteuning van een service partner. De services partner vermeldt de aanbieding in Microsoft AppSource of Azure Marketplace als [advies service](./plan-consulting-service-offer.md).
 
 Geïntegreerde oplossingen richten zich op een specifieke klant behoefte of-scenario. Providers beginnen met de uitdaging of knel punten van de branche. Ze integreren twee of meer eersteklas technologieën voor het maken van een uniforme en herhaal bare implementatie-ervaring voor klanten. Met providers kunnen klanten snel aan de slag. Ze bieden een enkel contact punt aan de klant en bieden relevante aanpassings-, advies-en oplossings ondersteuning. Het resultaat is een geïntegreerde oplossing, inclusief technologie en services.
 
@@ -38,7 +38,7 @@ Bekijk de [overzichts video voor partners](https://partner.microsoft.com/asset/d
 
     * Ontwikkeling van toepassingen
     * Integratie van toepassingen
-    * Beheer van toepassings levenscyclus
+    * Beheer van toepassingslevenscyclus
     * Cloud platform
     * Data Analytics
     * Datacenter
@@ -104,7 +104,7 @@ Nadat uw aannamen zijn goedgekeurd, gebruikt u de gekoppelde programma bronnen o
 
 ## <a name="publish-your-integrated-solution"></a>Uw geïntegreerde oplossing publiceren
 
-Nadat u de technische integratie en het marketing onderpand hebt voltooid, raadpleegt u de Publisher-hand leiding voor [Consulting Services voor Microsoft AppSource en Azure Marketplace](./consulting-services.md). Gebruik deze resource om te bepalen of uw oplossing wordt gepubliceerd in Microsoft AppSource of Azure Marketplace. Gebruik ook de hand leiding om uw publicatie artefacten voor te bereiden en het publicatie proces te volt ooien.
+Nadat u de technische integratie en het marketing onderpand hebt voltooid, raadpleegt u de Publisher-hand leiding voor [Consulting Services voor Microsoft AppSource en Azure Marketplace](./plan-consulting-service-offer.md). Gebruik deze resource om te bepalen of uw oplossing wordt gepubliceerd in Microsoft AppSource of Azure Marketplace. Gebruik ook de hand leiding om uw publicatie artefacten voor te bereiden en het publicatie proces te volt ooien.
 
 Hoewel er vijf service typen beschikbaar zijn voor consulting-service aanbiedingen, moet een geïntegreerde oplossing een proef concept of een volledige implementatie zijn.
 

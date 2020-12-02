@@ -4,7 +4,7 @@
   items:
     - name: Wat is Azure Analysis Services?
       href: analysis-services-overview.md
-- name: Snelstartgidsen
+- name: Quickstarts
   items:
     - name: Een server maken - portal
       href: analysis-services-create-server.md
@@ -30,9 +30,9 @@
     - name: Automatisering met service-principals
       href: analysis-services-service-principal.md
     - name: Clientbibliotheken
-      href: /analysis-services/client-libraries?view=azure-analysis-services-current
+      href: /analysis-services/client-libraries?view=azure-analysis-services-current&preserve-view=true
     - name: Compatibiliteitsniveau
-      href: /analysis-services/tabular-models/compatibility-level-for-tabular-models-in-analysis-services?view=azure-analysis-services-current
+      href: /analysis-services/tabular-models/compatibility-level-for-tabular-models-in-analysis-services?view=azure-analysis-services-current&preserve-view=true
     - name: Verbinding maken met on-premises gegevensbronnen
       href: analysis-services-gateway.md
     - name: Verbinding maken met servers
@@ -112,9 +112,9 @@
     - name: Power Query M
       href: /powerquery-m/power-query-m-reference
     - name: Tabular Model Scripting Language (TMSL)
-      href: /analysis-services/tmsl/tabular-model-scripting-language-tmsl-reference?view=asallproducts-allversions
+      href: /analysis-services/tmsl/tabular-model-scripting-language-tmsl-reference?view=azure-analysis-services-current&preserve-view=true
     - name: Objectmodel in tabelvorm (TOM)
-      href: /analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo?view=asallproducts-allversions
+      href: /analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo?view=azure-analysis-services-current&preserve-view=true
     - name: Bronnen en objectlimieten
       href: analysis-services-capacity-limits.md
 - name: Resources

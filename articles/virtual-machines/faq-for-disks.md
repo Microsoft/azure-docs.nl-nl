@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/15/2017
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: d6cf0ba06293a073fc8fbe26e2386f1852429002
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: dcfef81f2d7f3413489490d97c143fdec7e11bed
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843992"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499319"
 ---
 # <a name="frequently-asked-questions-about-azure-iaas-vm-disks-and-managed-and-unmanaged-premium-disks"></a>Veelgestelde vragen over Azure IaaS VM-schijven en beheerde en onbeheerde Premium-schijven
 
@@ -151,7 +151,7 @@ Azure Disk reservation biedt de mogelijkheid om Premium-Ssd's te kopen in de opg
 Reserve ringen worden gemaakt in de vorm van schijven, niet op capaciteit. Met andere woorden, wanneer u een P80-schijf (32 TiB) reserveert, krijgt u één P80-schijf, kunt u die specifieke reserve ring niet delen in twee kleinere P70 (16 TiB)-schijven. U kunt natuurlijk zo veel of zo weinig schijven reserveren als u wilt, met inbegrip van twee afzonderlijke P70 (16 TiB)-schijven.
 
 **Hoe wordt Azure Disk reservation toegepast?**    
-Schijf reservering volgt een model dat vergelijkbaar is met gereserveerde VM-exemplaren (Virtual Machine). Het verschil is dat een schijf reservering niet kan worden toegepast op verschillende Sku's, terwijl een VM-instantie dat kan. Zie [kosten besparen met Azure reserved VM instances](./linux/prepay-reserved-vm-instances.md) voor meer informatie over VM-exemplaren.     
+Schijf reservering volgt een model dat vergelijkbaar is met gereserveerde VM-exemplaren (Virtual Machine). Het verschil is dat een schijf reservering niet kan worden toegepast op verschillende Sku's, terwijl een VM-instantie dat kan. Zie [kosten besparen met Azure reserved VM instances](./prepay-reserved-vm-instances.md) voor meer informatie over VM-exemplaren.     
 
 **Kan ik mijn gegevensopslag gebruiken die via een Azure-schijf reservering is aangeschaft in meerdere regio's?**    
 Azure Disk-reserve ringen worden aangeschaft voor een specifieke regio en SKU (zoals P30 in VS-Oost 2) en kunnen daarom niet buiten deze constructs worden gebruikt. U kunt altijd een extra reserve ring voor Azure-schijven aanschaffen voor uw schijf opslag behoeften in andere regio's of Sku's.    
@@ -304,7 +304,7 @@ Nee. Azure Site Recovery Azure naar Azure-beveiliging voor Vm's met Managed Disk
 
 **Kan ik Vm's migreren met onbeheerde schijven die zich bevinden op opslag accounts die al of niet eerder zijn versleuteld naar Managed disks?**
 
-Yes
+Ja
 
 ## <a name="managed-disks-and-storage-service-encryption"></a>Managed Disks en Storage Service Encryption
 
@@ -342,7 +342,7 @@ Ja. Alle beheerde moment opnamen en installatie kopieën worden automatisch vers
 
 **Kan ik Vm's converteren met onbeheerde schijven die zich bevinden op de opslag accounts die eerder zijn versleuteld op beheerde schijven?**
 
-Yes
+Ja
 
 **Wordt een geëxporteerde VHD van een beheerde schijf of een moment opname ook versleuteld?**
 

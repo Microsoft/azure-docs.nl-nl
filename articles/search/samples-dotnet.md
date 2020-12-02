@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/17/2020
-ms.openlocfilehash: d068365cc8197a579c0b043d3fff2da3d54eb803
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: ab6408621616a4be62631391456f73e90fced752
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686840"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498996"
 ---
 # <a name="net-c-code-samples-for-azure-cognitive-search"></a>Code voorbeelden van .NET (C#) voor Azure Cognitive Search
 
@@ -44,7 +44,7 @@ De Azure SDK voor .NET omvat talloze voor beelden en een [Leesmij-bestand voor b
 
 ## <a name="documentation-samples"></a>Documentatievoorbeelden
 
-De volgende voor beelden hebben een bijbehorend artikel in [Azure Cognitive Search-documentatie](https://docs.microsoft.com/azure/search/).
+De volgende voor beelden hebben een bijbehorend artikel in [Azure Cognitive Search-documentatie](./index.yml).
 
 | Voorbeelden | Beschrijving |
 |---------|-------------|
@@ -63,6 +63,6 @@ De volgende voor beelden hebben een bijbehorend artikel in [Azure Cognitive Sear
 | Voorbeelden | Beschrijving |
 |---------|-------------|
 | [Azure-zoeken-Power-vaardig heden](https://github.com/Azure-Samples/azure-search-power-skills)  | Bron code voor verbruikte aangepaste vaardig heden die u kunt opnemen in uw gewonnen oplossingen.  |
-| [Oplossingsverbetering voor kennisanalyse](https://docs.microsoft.com/samples/azure-samples/azure-search-knowledge-mining/azure-search-knowledge-mining/) | Bevat sjablonen, ondersteunings bestanden en analytische rapporten die u helpen bij het prototypen van een end-to-end kennis analyse oplossing.  |
+| [Oplossingsverbetering voor kennisanalyse](/samples/azure-samples/azure-search-knowledge-mining/azure-search-knowledge-mining/) | Bevat sjablonen, ondersteunings bestanden en analytische rapporten die u helpen bij het prototypen van een end-to-end kennis analyse oplossing.  |
 | [Covid-19-opslag plaats voor zoeken in apps](https://github.com/liamca/covid19search) | Opslag plaats van de bron code voor de op Cognitive Search gebaseerde [Covid-19-Zoek toepassing](https://covid19search.azurewebsites.net/) |
 | [JFK](https://github.com/Microsoft/AzureSearch_JFK_Files) | Meer informatie over de [JFK-oplossing](https://www.microsoft.com/ai/ai-lab-jfk-files). |

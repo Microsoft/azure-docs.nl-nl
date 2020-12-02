@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/18/2018
 ms.author: terrylan
-ms.openlocfilehash: 435cb1d52b5505f4f29bd0c31986a1f7f72208fd
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: e298cb0d1a2c510a096f8ead03f8af7e39c206a8
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94412864"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498928"
 ---
 # <a name="azure-ddos-protection---designing-resilient-solutions"></a>Azure DDoS Protection-flexibele oplossingen ontwerpen
 
@@ -54,7 +54,7 @@ Selecteer voor [Azure app service](../../app-service/overview.md)een [app servic
 
 Het voor beeld van een diep gaande verdedigings linie is het beheren van Risico's met behulp van verschillende verdedigings strategieën. Als u beveiligings beveiliging in een toepassing laagt, vermindert u de kans op een geslaagde aanval. U wordt aangeraden beveiligde ontwerpen voor uw toepassingen te implementeren met behulp van de ingebouwde mogelijkheden van het Azure-platform.
 
-Het risico van een aanval neemt bijvoorbeeld toe met de grootte ( *Surface Area* ) van de toepassing. U kunt de surface area verminderen door een goedkeurings lijst te gebruiken om de beschik bare IP-adres ruimte te sluiten en poorten te belui Steren die niet nodig zijn op de load balancers ([Azure Load Balancer](../../load-balancer/quickstart-load-balancer-standard-public-portal.md) en [Azure-toepassing gateway](../../application-gateway/application-gateway-create-probe-portal.md)). [Netwerk beveiligings groepen (nsg's)](../../virtual-network/network-security-groups-overview.md) zijn een andere manier om de kwets baarheid voor aanvallen te verminderen.
+Het risico van een aanval neemt bijvoorbeeld toe met de grootte (*Surface Area*) van de toepassing. U kunt de surface area verminderen door een goedkeurings lijst te gebruiken om de beschik bare IP-adres ruimte te sluiten en poorten te belui Steren die niet nodig zijn op de load balancers ([Azure Load Balancer](../../load-balancer/quickstart-load-balancer-standard-public-portal.md) en [Azure-toepassing gateway](../../application-gateway/application-gateway-create-probe-portal.md)). [Netwerk beveiligings groepen (nsg's)](../../virtual-network/network-security-groups-overview.md) zijn een andere manier om de kwets baarheid voor aanvallen te verminderen.
 U kunt [service Tags](../../virtual-network/network-security-groups-overview.md#service-tags) en [toepassings beveiligings groepen](../../virtual-network/network-security-groups-overview.md#application-security-groups) gebruiken om de complexiteit te minimaliseren voor het maken van beveiligings regels en het configureren van netwerk beveiliging, als een natuurlijke uitbrei ding van de structuur van een toepassing.
 
 Indien mogelijk moet u Azure-Services in een [virtueel netwerk](../../virtual-network/virtual-networks-overview.md) implementeren. Met deze procedure kunnen service resources communiceren via privé-IP-adressen. Azure service-verkeer van een virtueel netwerk maakt standaard gebruik van open bare IP-adressen als bron-IP-adressen. Als u [service-eind punten](../../virtual-network/virtual-network-service-endpoints-overview.md) gebruikt, wordt service verkeer voor het gebruik van privé adressen van het virtuele netwerk geswitcheerd als de bron-IP-adressen wanneer ze toegang krijgen tot de Azure-service vanuit een virtueel netwerk.
@@ -113,7 +113,7 @@ Als het open bare IP-adres zich onder een aanval bevindt, wordt de waarde voor d
 
 U kunt het beste een waarschuwing configureren voor deze metrische gegevens. U krijgt dan een melding wanneer er een actieve DDoS-beperking is uitgevoerd op uw open bare IP-adres.
 
-Zie [Azure DDoS Protection Standard beheren met de Azure Portal](../../virtual-network/manage-ddos-protection.md)voor meer informatie.
+Zie [Azure DDoS Protection Standard beheren met de Azure Portal](../../ddos-protection/manage-ddos-protection.md)voor meer informatie.
 
 #### <a name="web-application-firewall-for-resource-attacks"></a>Web Application Firewall voor bron aanvallen
 
@@ -179,7 +179,7 @@ Voor uw DDoS-antwoord team raden we u aan om simulatie oefeningen te gebruiken a
 
 ### <a name="alerts-during-an-attack"></a>Waarschuwingen tijdens een aanval
 
-Azure DDoS Protection Standard identificeert en vermindert DDoS-aanvallen zonder tussen komst van de gebruiker. Als u een melding wilt ontvangen wanneer er een actieve beperking is voor een beveiligd openbaar IP-adres, kunt u [een waarschuwing configureren](../../virtual-network/manage-ddos-protection.md) voor de metriek **onder DDoS-aanval of niet**. U kunt ervoor kiezen om waarschuwingen te maken voor de andere DDoS-metrische gegevens om inzicht te krijgen in de schaal van de aanval, het verkeer dat wordt verwijderd en andere details.
+Azure DDoS Protection Standard identificeert en vermindert DDoS-aanvallen zonder tussen komst van de gebruiker. Als u een melding wilt ontvangen wanneer er een actieve beperking is voor een beveiligd openbaar IP-adres, kunt u [een waarschuwing configureren](../../ddos-protection/manage-ddos-protection.md) voor de metriek **onder DDoS-aanval of niet**. U kunt ervoor kiezen om waarschuwingen te maken voor de andere DDoS-metrische gegevens om inzicht te krijgen in de schaal van de aanval, het verkeer dat wordt verwijderd en andere details.
 
 #### <a name="when-to-contact-microsoft-support"></a>Wanneer u contact opneemt met micro soft ondersteuning
 
@@ -260,7 +260,7 @@ Deze referentie architectuur toont het configureren van DDoS Protection Standard
 
 In deze architectuur wordt verkeer dat is bestemd voor het HDInsight-cluster via internet doorgestuurd naar het open bare IP-adres dat is gekoppeld aan de HDInsight-gateway load balancer. De gateway load balancer verzendt het verkeer vervolgens rechtstreeks naar de hoofd knooppunten of de worker-knoop punten. Omdat DDoS Protection standaard is ingeschakeld in het virtuele HDInsight-netwerk, krijgen alle open bare IP-adressen in het virtuele netwerk DDoS-beveiliging voor laag 3 en 4. Deze referentie architectuur kan worden gecombineerd met de referentie architecturen N-tier en meerdere regio's.
 
-Meer informatie over deze referentie architectuur kunt u vinden in de documentatie [Azure HDInsight uitbreiden met azure Virtual Network](../../hdinsight/hdinsight-plan-virtual-network-deployment.md?toc=%252fazure%252fvirtual-network%252ftoc.json) .
+Meer informatie over deze referentie architectuur kunt u vinden in de documentatie [Azure HDInsight uitbreiden met azure Virtual Network](../../hdinsight/hdinsight-plan-virtual-network-deployment.md?toc=%2fazure%2fvirtual-network%2ftoc.json) .
 
 
 > [!NOTE]
@@ -270,4 +270,4 @@ Meer informatie over deze referentie architectuur kunt u vinden in de documentat
 
 * [Gedeelde verantwoordelijkheid in de cloud](shared-responsibility.md)
 * [Azure DDoS Protection product pagina](https://azure.microsoft.com/services/ddos-protection/)
-* [Documentatie over Azure DDoS Protection](../../virtual-network/ddos-protection-overview.md)
+* [Documentatie over Azure DDoS Protection](../../ddos-protection/ddos-protection-overview.md)

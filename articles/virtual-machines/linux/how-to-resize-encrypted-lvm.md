@@ -7,12 +7,12 @@ ms.subservice: security
 ms.topic: article
 ms.author: jofrance
 ms.date: 09/21/2020
-ms.openlocfilehash: ddd6097fffbc02c9b7b027bcb712e20cc47f2f96
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 732a2ef3c6c33d0b17deaf3b9bdc5d1ac5e5934c
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92487956"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498911"
 ---
 # <a name="how-to-resize-logical-volume-management-devices-that-use-azure-disk-encryption"></a>Het formaat van apparaten voor beheer van logische volumes aanpassen die gebruikmaken van Azure Disk Encryption
 
@@ -32,7 +32,7 @@ U kunt dit proces voor het wijzigen van de grootte gebruiken in de volgende omge
 
 In dit artikel wordt ervan uitgegaan dat u het volgende hebt:
 
-- Een bestaande LVM-configuratie. Zie [LVM configureren op een virtuele Linux-machine](configure-lvm.md)voor meer informatie.
+- Een bestaande LVM-configuratie. Zie [LVM configureren op een virtuele Linux-machine](/previous-versions/azure/virtual-machines/linux/configure-lvm)voor meer informatie.
 
 - Schijven die al zijn versleuteld door Azure Disk Encryption. Zie [Configure LVM and RAID on encrypted devices](how-to-configure-lvm-raid-on-crypt.md)(Engelstalig) voor meer informatie.
 

@@ -16,12 +16,12 @@ ms.date: 04/16/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fde2052078e0131e720411f91aa8ae7484338252
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 40d77f4ebb897884f03377e6d9f1243a6d436766
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91295019"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500203"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-quickstart"></a>Azure Active Directory naadloze eenmalige aanmelding: Quick Start
 
@@ -37,7 +37,7 @@ Zorg ervoor dat aan de volgende vereisten is voldaan:
 
 * **Uw Azure AD Connect-server instellen**: als u [Pass-Through-verificatie](how-to-connect-pta.md) gebruikt als uw aanmeldings methode, is er geen aanvullende controle op vereisten vereist. Als u [wachtwoord hash-synchronisatie](how-to-connect-password-hash-synchronization.md) gebruikt als uw aanmeldings methode en als er een firewall is tussen Azure AD Connect en Azure AD, moet u ervoor zorgen dat:
    - U gebruikt versie 1.1.644.0 of hoger van Azure AD Connect. 
-   - Als uw firewall of proxy toestaat, voegt u de verbindingen toe aan de lijst met toegestane ** \* Msappproxy.net** -url's via poort 443. Als dat niet het geval is, moet u toegang toestaan tot de [IP-adresbereiken van Azure Datacenter](https://www.microsoft.com/download/details.aspx?id=41653), die elke week worden bijgewerkt. Deze vereiste is alleen van toepassing wanneer u de functie inschakelt. Het is niet vereist voor de werkelijke gebruikers aanmeldingen.
+   - Als uw firewall of proxy toestaat, voegt u de verbindingen toe aan de lijst met toegestane **\* Msappproxy.net** -url's via poort 443. Als dat niet het geval is, moet u toegang toestaan tot de [IP-adresbereiken van Azure Datacenter](https://www.microsoft.com/download/details.aspx?id=41653), die elke week worden bijgewerkt. Deze vereiste is alleen van toepassing wanneer u de functie inschakelt. Het is niet vereist voor de werkelijke gebruikers aanmeldingen.
 
     >[!NOTE]
     >Azure AD Connect versies 1.1.557.0, 1.1.558.0, 1.1.561.0 en 1.1.614.0 hebben een probleem met de synchronisatie van wacht woord-hashes. Als u de synchronisatie van wacht woord-hash _niet_ wilt gebruiken in combi natie met Pass-Through-verificatie, raadpleegt u de opmerkingen bij de [Azure AD Connect-release](./reference-connect-version-history.md) voor meer informatie.
@@ -65,7 +65,7 @@ Schakel naadloze SSO in via [Azure AD Connect](whatis-hybrid-identity.md).
 Als u een nieuwe installatie van Azure AD Connect hebt, kiest u het [aangepaste installatiepad](how-to-connect-install-custom.md). Selecteer de optie **eenmalige aanmelding inschakelen** op de aanmeldings pagina van de **gebruiker** .
 
 >[!NOTE]
-> De optie is alleen beschikbaar voor selectie als de aanmeldings methode **wachtwoord hash-synchronisatie** of pass through **-verificatie**is.
+> De optie is alleen beschikbaar voor selectie als de aanmeldings methode **wachtwoord hash-synchronisatie** of pass through **-verificatie** is.
 
 ![Azure AD Connect: aanmelding van gebruiker](./media/how-to-connect-sso-quick-start/sso8.png)
 
@@ -107,7 +107,7 @@ U kunt met behulp van de onderstaande instructies de naadloze SSO voor uw gebrui
 Daarnaast moet u de beleids instelling voor intranet zones met de naam **updates toestaan voor de status balk via script** inschakelen via Groepsbeleid. 
 
 >[!NOTE]
-> De volgende instructies werken alleen voor Internet Explorer en Google Chrome op Windows (als deze een set vertrouwde site-Url's deelt met Internet Explorer). Lees de volgende sectie voor instructies over het instellen van Mozilla Firefox en Google Chrome in macOS.
+> De volgende instructies werken alleen voor Internet Explorer, micro soft Edge en Google Chrome op Windows (als deze een set vertrouwde site-Url's deelt met Internet Explorer). Lees de volgende sectie voor instructies over het instellen van Mozilla Firefox en Google Chrome in macOS.
 
 ### <a name="why-do-you-need-to-modify-users-intranet-zone-settings"></a>Waarom moet u de intranet zone-instellingen van gebruikers wijzigen?
 
@@ -117,14 +117,14 @@ Er zijn twee manieren om de intranet zone-instellingen van gebruikers te wijzige
 
 | Optie | Beheerder overweging | Gebruikerservaring |
 | --- | --- | --- |
-| Groeps beleid | Beheerder vergrendelt het bewerken van intranet zone-instellingen | Gebruikers kunnen hun eigen instellingen niet wijzigen |
+| Groepsbeleid | Beheerder vergrendelt het bewerken van intranet zone-instellingen | Gebruikers kunnen hun eigen instellingen niet wijzigen |
 | Groeps beleids voorkeur |  De beheerder staat het bewerken op intranet zone-instellingen toe | Gebruikers kunnen hun eigen instellingen wijzigen |
 
 ### <a name="group-policy-option---detailed-steps"></a>De optie groeps beleid-gedetailleerde stappen
 
 1. Open het Groepsbeleidsbeheer-editor-hulp programma.
-2. Bewerk het groeps beleid dat is toegepast op enkele of al uw gebruikers. In dit voor beeld wordt het **standaard domein beleid**gebruikt.
-3. Blader naar **gebruikers configuratie**  >  **beleid**  >  **Beheersjablonen**  >  pagina**Windows-onderdelen**  >  **Internet Explorer**  >  **Internet configuratie scherm**  >  **beveiliging**. Selecteer vervolgens de **lijst site naar zone toewijzing**.
+2. Bewerk het groeps beleid dat is toegepast op enkele of al uw gebruikers. In dit voor beeld wordt het **standaard domein beleid** gebruikt.
+3. Blader naar **gebruikers configuratie**  >  **beleid**  >  **Beheersjablonen**  >  **Windows-onderdelen**  >  **Internet Explorer** Internet  >  **configuratie scherm**  >  **beveiligings pagina**. Selecteer vervolgens de **lijst site naar zone toewijzing**.
     ![Scherm opname waarin de ' beveiligings pagina ' met de lijst ' site naar zone toewijzing ' is geselecteerd.](./media/how-to-connect-sso-quick-start/sso6.png)
 4. Schakel het beleid in en voer de volgende waarden in het dialoog venster in:
    - **Waardenaam**: de Azure AD-URL waar de Kerberos-tickets worden doorgestuurd.
@@ -144,7 +144,7 @@ Er zijn twee manieren om de intranet zone-instellingen van gebruikers te wijzige
 
     ![Scherm opname van het venster inhoud weer geven met een zone toewijzing geselecteerd.](./media/how-to-connect-sso-quick-start/sso7.png)
 
-6. Blader naar **gebruikers configuratie**  >  **beleid**  >  **Beheersjablonen**  >  **Windows-onderdelen**  >  **Internet Explorer**Internet-  >  **configuratie scherm**  >  **Security Page**  >  **intranet zone**van beveiligings pagina. Selecteer vervolgens **updates toestaan voor status balk via script**.
+6. Blader naar **gebruikers configuratie**  >  **beleid**  >  **Beheersjablonen**  >  **Windows-onderdelen**  >  **Internet Explorer** Internet-  >  **configuratie scherm**  >  **Security Page**  >  **intranet zone** van beveiligings pagina. Selecteer vervolgens **updates toestaan voor status balk via script**.
 
     ![Scherm opname van de pagina ' intranet zone ' met ' updates toestaan voor status balk via script ' geselecteerd.](./media/how-to-connect-sso-quick-start/sso11.png)
 
@@ -155,16 +155,16 @@ Er zijn twee manieren om de intranet zone-instellingen van gebruikers te wijzige
 ### <a name="group-policy-preference-option---detailed-steps"></a>De optie voor keuren voor groeps beleid-gedetailleerde stappen
 
 1. Open het Groepsbeleidsbeheer-editor-hulp programma.
-2. Bewerk het groeps beleid dat is toegepast op enkele of al uw gebruikers. In dit voor beeld wordt het **standaard domein beleid**gebruikt.
-3. Bladeren naar **gebruikers configuratie**  >  **voor keuren**het  >  **Windows Settings**  >  **REGI ster**  >  **Nieuw**  >  **register item**.
+2. Bewerk het groeps beleid dat is toegepast op enkele of al uw gebruikers. In dit voor beeld wordt het **standaard domein beleid** gebruikt.
+3. Bladeren naar **gebruikers configuratie**  >  **voor keuren** het  >  **Windows Settings**  >  **REGI ster**  >  **Nieuw**  >  **register item**.
 
     ![Scherm opname van het geselecteerde "REGI ster" en "register item" geselecteerd.](./media/how-to-connect-sso-quick-start/sso15.png)
 
 4. Voer de volgende waarden in de juiste velden in en klik op **OK**.
-   - **Sleutelpad:** ***Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\microsoftazuread-SSO.com\autologon***
-   - **Waardenaam**: ***https***
-   - **Waardetype**: ***REG_DWORD***
-   - **Waardegegevens**: ***00000001***
+   - **Sleutelpad: ****_Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\microsoftazuread-SSO.com\autologon_* _
+   - _* Waardenaam * *: **_https_*_
+   - _* Waardetype * *: **_REG_DWORD_*_
+   - _* Waardegegevens * *: **_00000001_*_
  
      ![Scherm opname van het venster ' nieuwe register eigenschappen '.](./media/how-to-connect-sso-quick-start/sso16.png)
  
@@ -176,7 +176,7 @@ Er zijn twee manieren om de intranet zone-instellingen van gebruikers te wijzige
 
 In Mozilla Firefox wordt niet automatisch Kerberos-verificatie gebruikt. Elke gebruiker moet de URL van Azure AD hand matig toevoegen aan hun Firefox-instellingen door de volgende stappen te volgen:
 1. Voer Firefox uit en voer `about:config` in de adres balk in. Sluit alle meldingen die u ziet.
-2. Zoek naar de voor keuren **netwerk. Negotiate-auth. Trusted-uri's** . In deze voor keur worden vertrouwde sites van Firefox voor Kerberos-verificatie weer gegeven.
+2. Zoek naar de _ *Network. Negotiate-auth. Trusted-uri's** preference. In deze voor keur worden vertrouwde sites van Firefox voor Kerberos-verificatie weer gegeven.
 3. Klik met de rechter muisknop en selecteer **wijzigen**.
 4. Voer `https://autologon.microsoftazuread-sso.com` in het veld in.
 5. Selecteer **OK** en open vervolgens de browser opnieuw.

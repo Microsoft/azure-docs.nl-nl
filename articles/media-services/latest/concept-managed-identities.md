@@ -8,20 +8,20 @@ ms.service: media-services
 ms.topic: conceptual
 ms.date: 11/04/2020
 ms.author: inhenkel
-ms.openlocfilehash: a0ded2a1ad5cd590ab5715edebde2ab19e399e8d
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: d0811e8f9183ee334d413bcad69f2c7b32023be3
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686733"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499353"
 ---
 # <a name="managed-identities-and-trusted-storage-with-media-services"></a>Beheerde identiteiten en vertrouwde opslag met Media Services
 
-Media Services kan worden gebruikt met [beheerde identiteiten](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) voor het inschakelen van vertrouwde opslag. Wanneer u een Media Services-account maakt, moet u dit koppelen aan een opslag account. Media Services hebben toegang tot dat opslag account met behulp van systeem verificatie. Media Services valideert of het Media Services-account en het opslag account zich in hetzelfde abonnement bevinden en valideert dat de gebruiker die de koppeling toevoegt, toegang heeft tot het opslag account met Azure Resource Manager RBAC.
+Media Services kan worden gebruikt met [beheerde identiteiten](../../active-directory/managed-identities-azure-resources/overview.md) voor het inschakelen van vertrouwde opslag. Wanneer u een Media Services-account maakt, moet u dit koppelen aan een opslag account. Media Services hebben toegang tot dat opslag account met behulp van systeem verificatie. Media Services valideert of het Media Services-account en het opslag account zich in hetzelfde abonnement bevinden en valideert dat de gebruiker die de koppeling toevoegt, toegang heeft tot het opslag account met Azure Resource Manager RBAC.
 
 ## <a name="trusted-storage"></a>Vertrouwde opslag
 
-Als u echter een firewall wilt gebruiken om uw opslag account te beveiligen, moet u beheerde identiteits verificatie gebruiken. Hiermee kan Media Services toegang krijgen tot het opslag account dat is geconfigureerd met een firewall of een VNet-beperking via vertrouwde opslag toegang.  Zie [Azure Storage firewalls en virtuele netwerken configureren](https://docs.microsoft.com/azure/storage/common/storage-network-security#trusted-microsoft-services)voor meer informatie over vertrouwde micro soft-Services.
+Als u echter een firewall wilt gebruiken om uw opslag account te beveiligen, moet u beheerde identiteits verificatie gebruiken. Hiermee kan Media Services toegang krijgen tot het opslag account dat is geconfigureerd met een firewall of een VNet-beperking via vertrouwde opslag toegang.  Zie [Azure Storage firewalls en virtuele netwerken configureren](../../storage/common/storage-network-security.md#trusted-microsoft-services)voor meer informatie over vertrouwde micro soft-Services.
 
 ## <a name="media-services-managed-identity-scenarios"></a>Scenario's voor beheerde identiteiten van Media Services
 
@@ -57,4 +57,4 @@ Deze zelf studies bevatten beide hierboven vermelde scenario's.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [Azure AD Managed Identities](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview)(Engelstalig) voor meer informatie over welke beheerde identiteiten voor u en uw Azure-toepassingen kunnen worden uitgevoerd.
+Zie [Azure AD Managed Identities](../../active-directory/managed-identities-azure-resources/overview.md)(Engelstalig) voor meer informatie over welke beheerde identiteiten voor u en uw Azure-toepassingen kunnen worden uitgevoerd.

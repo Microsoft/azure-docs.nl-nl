@@ -8,12 +8,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: how-to
 ms.date: 05/17/2019
 ms.author: guybo
-ms.openlocfilehash: cc8d4458de5f3bbf1eaf111aa10f1377f3c9d46a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8c352b9e6b067724fbfc00bf5b0338baf8514421
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87292297"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500492"
 ---
 # <a name="prepare-a-red-hat-based-virtual-machine-for-azure"></a>Een op Red Hat gebaseerde virtuele machine voor Azure voorbereiden
 In dit artikel wordt beschreven hoe u een virtuele Red Hat Enterprise Linux-machine (RHEL) voorbereidt voor gebruik in Azure. De versies van RHEL die in dit artikel worden behandeld, zijn 6,7 + en 7.1 +. De Hyper visors voor voor bereidingen die in dit artikel worden behandeld, zijn Hyper-V, op kernel gebaseerde virtuele machine (KVM) en VMware. Voor meer informatie over de geschiktheids vereisten voor deelname aan het Cloud Access-programma van Red Hat raadpleegt u [de Cloud Access-website van Red Hat](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) en [voert u RHEL uit op Azure](https://access.redhat.com/ecosystem/ccsp/microsoft-azure). Zie de [opbouw functie voor Azure-installatie kopieën](./image-builder-overview.md)voor manieren om het bouwen van RHEL-installatie kopieën te automatiseren.
@@ -28,7 +28,7 @@ In deze sectie wordt ervan uitgegaan dat u al een ISO-bestand hebt verkregen van
 * Azure biedt geen ondersteuning voor de VHDX-indeling. Azure ondersteunt alleen vaste VHD. U kunt Hyper-V-beheer gebruiken om de schijf te converteren naar VHD-indeling, of u kunt de cmdlet Convert-VHD gebruiken. Als u VirtualBox gebruikt, selecteert u **vaste grootte** in plaats van de standaard optie voor dynamisch toegewezen wanneer u de schijf maakt.
 * Azure biedt ondersteuning voor gen1 (BIOS Boot) & Gen2 (UEFI boot) virtuele machines.
 * De maximale grootte die is toegestaan voor de VHD is 1.023 GB.
-* Logical Volume Manager (LVM) wordt ondersteund en kan worden gebruikt op de besturingssysteem schijf of gegevens schijven in virtuele machines van Azure. Over het algemeen is het echter raadzaam om standaard partities op de besturingssysteem schijf te gebruiken in plaats van LVM. Met deze procedure wordt voor komen dat LVM naam strijdig is met gekloonde virtuele machines, met name als u ooit een besturingssysteem schijf moet koppelen aan een andere identieke virtuele machine voor het oplossen van problemen. Zie ook  [LVM](configure-lvm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) en [RAID](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) -documentatie.
+* Logical Volume Manager (LVM) wordt ondersteund en kan worden gebruikt op de besturingssysteem schijf of gegevens schijven in virtuele machines van Azure. Over het algemeen is het echter raadzaam om standaard partities op de besturingssysteem schijf te gebruiken in plaats van LVM. Met deze procedure wordt voor komen dat LVM naam strijdig is met gekloonde virtuele machines, met name als u ooit een besturingssysteem schijf moet koppelen aan een andere identieke virtuele machine voor het oplossen van problemen. Zie ook  [LVM](/previous-versions/azure/virtual-machines/linux/configure-lvm?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) en [RAID](/previous-versions/azure/virtual-machines/linux/configure-raid?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) -documentatie.
 * Kernel-ondersteuning voor het koppelen van UDF-bestands systemen (Universal Disk Format) is vereist. Bij de eerste keer opstarten op Azure wordt de inrichtings configuratie door de UDF-indelings media die aan de gast is gekoppeld, door gegeven aan de virtuele Linux-machine. De Azure Linux-agent moet het UDF-bestands systeem kunnen koppelen om de configuratie te lezen en de virtuele machine in te richten.
 * Configureer geen swap partitie op de schijf met het besturings systeem. De Linux-agent kan worden geconfigureerd voor het maken van een wissel bestand op de tijdelijke bron schijf.  Meer informatie hierover vindt u in de volgende stappen.
 * Alle Vhd's op Azure moeten een virtuele grootte hebben die is afgestemd op 1 MB. Wanneer u van een onbewerkte schijf naar VHD converteert, moet u ervoor zorgen dat de onbewerkte schijf grootte een meervoud van 1MB is vóór de conversie. Meer informatie vindt u in de volgende stappen. Zie ook [Linux-installatie notities](create-upload-generic.md#general-linux-installation-notes) voor meer informatie.
@@ -294,7 +294,7 @@ In deze sectie wordt ervan uitgegaan dat u al een ISO-bestand hebt verkregen van
 
    Wijzig het tweede veld van de hoofd gebruiker van "!!" naar het versleutelde wacht woord.
 
-1. Maak een virtuele machine in KVM vanuit de qcow2-installatie kopie. Stel het schijf type in op **qcow2**en stel het apparaat model van de virtuele netwerk interface in op **virtio**. Vervolgens start u de virtuele machine en meldt u zich aan als root.
+1. Maak een virtuele machine in KVM vanuit de qcow2-installatie kopie. Stel het schijf type in op **qcow2** en stel het apparaat model van de virtuele netwerk interface in op **virtio**. Vervolgens start u de virtuele machine en meldt u zich aan als root.
 
 1. Maak of bewerk het `/etc/sysconfig/network` bestand en voeg de volgende tekst toe:
 
@@ -490,7 +490,7 @@ In deze sectie wordt ervan uitgegaan dat u al een ISO-bestand hebt verkregen van
 
    Het tweede veld van de hoofd gebruiker wijzigen van "!!" naar het versleutelde wacht woord.
 
-1. Maak een virtuele machine in KVM vanuit de qcow2-installatie kopie. Stel het schijf type in op **qcow2**en stel het apparaat model van de virtuele netwerk interface in op **virtio**. Vervolgens start u de virtuele machine en meldt u zich aan als root.
+1. Maak een virtuele machine in KVM vanuit de qcow2-installatie kopie. Stel het schijf type in op **qcow2** en stel het apparaat model van de virtuele netwerk interface in op **virtio**. Vervolgens start u de virtuele machine en meldt u zich aan als root.
 
 1. Maak of bewerk het `/etc/sysconfig/network` bestand en voeg de volgende tekst toe:
 
@@ -1112,11 +1112,11 @@ In deze sectie wordt ervan uitgegaan dat u al een RHEL virtuele machine hebt ge�
 
 1. Plaats het kickstart-bestand waar het installatie systeem toegang toe heeft.
 
-1. Maak een nieuwe virtuele machine in Hyper-V-beheer. Selecteer op de pagina **virtuele harde schijf aansluiten** de optie **later een virtuele harde schijf koppelen**en voltooi de wizard Nieuwe virtuele machine.
+1. Maak een nieuwe virtuele machine in Hyper-V-beheer. Selecteer op de pagina **virtuele harde schijf aansluiten** de optie **later een virtuele harde schijf koppelen** en voltooi de wizard Nieuwe virtuele machine.
 
 1. Open de instellingen van de virtuele machine:
 
-    a.  Koppel een nieuwe virtuele harde schijf aan de virtuele machine. Zorg ervoor dat u de **VHD-indeling** en de **vaste grootte**selecteert.
+    a.  Koppel een nieuwe virtuele harde schijf aan de virtuele machine. Zorg ervoor dat u de **VHD-indeling** en de **vaste grootte** selecteert.
 
     b.  Koppel de ISO-installatie aan het DVD-station.
 

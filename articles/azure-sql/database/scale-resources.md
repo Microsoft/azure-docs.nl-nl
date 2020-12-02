@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: jovanpop-msft
 ms.author: jovanpop
-ms.reviewer: jrasnik, sstein
+ms.reviewer: wiassaf, sstein
 ms.date: 06/25/2019
-ms.openlocfilehash: 026c2b7b57929d31fbbf776d81ee41eb73b73d44
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 453d7e118b946d60eb3d84c6a66abdbea7db2410
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91321510"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499217"
 ---
 # <a name="dynamically-scale-database-resources-with-minimal-downtime"></a>Database resources dynamisch schalen met minimale downtime
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -43,7 +43,7 @@ U kunt uw eerste app bouwen op een kleine, afzonderlijke Data Base met een lage 
 > [!NOTE]
 > Dynamische schaalbaarheid is iets anders dan automatisch schalen. Automatisch schalen is wanneer een service wordt geschaald op basis van criteria, terwijl dynamische schaal baarheid hand matig kan worden geschaald met een minimale downtime.
 
-Afzonderlijke data bases in Azure SQL Database ondersteunen hand matige dynamische schaal baarheid, maar niet automatisch schalen. Voor een meer *automatische* ervaring zou u elastische pools kunnen gebruiken. Hiermee kunnen databases resources in een pool delen op basis van afzonderlijke databasebehoeften.
+Afzonderlijke data bases in Azure SQL Database ondersteunen hand matige dynamische schaal baarheid, maar niet automatisch schalen. Voor een meer *automatische* ervaring kunt u gebruikmaken van elastische Pools, waarmee data bases bronnen in een pool kunnen delen op basis van de behoeften van individuele data bases.
 Er zijn echter scripts waarmee de schaal baarheid voor één data base in Azure SQL Database kan worden geautomatiseerd. Zie [PowerShell gebruiken voor het controleren en schalen van één Azure SQL-database](scripts/monitor-and-scale-database-powershell.md) voor een voorbeeld.
 
 U kunt steeds de [DTU-servicelagen](service-tiers-dtu.md) of [vCore-kenmerken](resource-limits-vcore-single-databases.md) wijzigen met minimale downtime voor de toepassing (meestal minder dan vier seconden). Voor veel bedrijven en apps is het kunnen maken van databases en het naar wens omhoog of omlaag schalen van de prestaties al voldoende, vooral als de gebruikspatronen redelijk voorspelbaar zijn. Bij onvoorspelbare gebruikspatronen kan het echter lastig zijn uw kosten en bedrijfsmodel effectief te beheren. Voor dit scenario gebruikt u een elastische pool met een bepaald aantal Edtu's die worden gedeeld door meerdere data bases in de groep.

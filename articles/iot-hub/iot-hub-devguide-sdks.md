@@ -12,12 +12,12 @@ ms.custom:
 - mqtt
 - 'Role: IoT Device'
 - 'Role: Cloud Development'
-ms.openlocfilehash: 8b3212dd7e1544d734c0f409bd4bcdf8ec22fbc2
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 4e914b7b49393964f17cc6d9515cb2f4a3bebd2e
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92147618"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499982"
 ---
 # <a name="understand-and-use-azure-iot-hub-sdks"></a>Azure IoT Hub SDK's leren kennen en gebruiken
 
@@ -53,6 +53,14 @@ Azure IoT Hub apparaat-SDK voor .NET:
 * [Broncode](https://github.com/Azure/azure-iot-sdk-csharp)
 * [API-naslaginformatie](/dotnet/api/microsoft.azure.devices?view=azure-dotnet)
 * [Module verwijzing](/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet)
+
+
+Azure IoT Hub apparaat-SDK voor Embedded C (ANSI C-C99):
+* [De embedded C SDK bouwen](https://github.com/Azure/azure-sdk-for-c/tree/master/sdk/docs/iot#build)
+* [Broncode](https://github.com/Azure/azure-sdk-for-c)
+* [Grootte grafiek](https://github.com/Azure/azure-sdk-for-c/tree/master/sdk/docs/iot#size-chart) voor beperkte apparaten.
+* [API-naslaginformatie](https://azuresdkdocs.blob.core.windows.net/$web/c/docs/1.0.0/index.html)
+
 
 Azure IoT Hub Device SDK voor C (ANSI C-C99):
 

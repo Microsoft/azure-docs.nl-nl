@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/02/2020
 ms.custom: references_regions
-ms.openlocfilehash: b0871b6365d78129cd6fdaec82fee14e2b0a7a4b
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 4fb20b221858c4717d67e0777afbe5c067c00a69
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94693440"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499608"
 ---
 # <a name="configure-customer-managed-keys-for-data-encryption-in-azure-cognitive-search"></a>Door de klant beheerde sleutels voor gegevens versleuteling configureren in azure Cognitive Search
 
@@ -96,7 +96,7 @@ U kunt beide eigenschappen instellen met behulp van de portal-, Power shell-of A
 
 ### <a name="using-azure-cli"></a>Azure CLI gebruiken
 
-+ Als u een [installatie van Azure cli](https://docs.microsoft.com/cli/azure/install-azure-cli)hebt, kunt u de volgende opdracht uitvoeren om de vereiste eigenschappen in te scha kelen.
++ Als u een [installatie van Azure cli](/cli/azure/install-azure-cli)hebt, kunt u de volgende opdracht uitvoeren om de vereiste eigenschappen in te scha kelen.
 
    ```azurecli-interactive
    az keyvault update -n <vault_name> -g <resource_group> --enable-soft-delete --enable-purge-protection
@@ -173,7 +173,7 @@ Toegangs machtigingen kunnen op elk gewenst moment worden ingetrokken. Na intrek
 
 ## <a name="5---encrypt-content"></a>5-inhoud versleutelen
 
-Als u een door de klant beheerde sleutel wilt toevoegen aan een index, gegevens bron, vaardig heden, Indexeer functie of synoniemen toewijzing, moet u de [zoek rest API](https://docs.microsoft.com/rest/api/searchservice/) of een SDK gebruiken. Synoniemen kaarten of versleutelings eigenschappen worden niet weer gegeven in de portal. Wanneer u een geldige API-index gebruikt, ondersteunen gegevens bronnen, vaardig heden, Indexeer functies en synoniemen kaarten een **encryptionKey** -eigenschap op het hoogste niveau.
+Als u een door de klant beheerde sleutel wilt toevoegen aan een index, gegevens bron, vaardig heden, Indexeer functie of synoniemen toewijzing, moet u de [zoek rest API](/rest/api/searchservice/) of een SDK gebruiken. Synoniemen kaarten of versleutelings eigenschappen worden niet weer gegeven in de portal. Wanneer u een geldige API-index gebruikt, ondersteunen gegevens bronnen, vaardig heden, Indexeer functies en synoniemen kaarten een **encryptionKey** -eigenschap op het hoogste niveau.
 
 In dit voor beeld wordt de REST API gebruikt met waarden voor Azure Key Vault en Azure Active Directory:
 
@@ -196,7 +196,7 @@ In dit voor beeld wordt de REST API gebruikt met waarden voor Azure Key Vault en
 
 ## <a name="example-index-encryption"></a>Voor beeld: index versleuteling
 
-Maak een versleutelde index met behulp van de [rest API Create Index Azure Cognitive Search](https://docs.microsoft.com/rest/api/searchservice/create-index). Gebruik de `encryptionKey` eigenschap om op te geven welke versleutelings sleutel moet worden gebruikt.
+Maak een versleutelde index met behulp van de [rest API Create Index Azure Cognitive Search](/rest/api/searchservice/create-index). Gebruik de `encryptionKey` eigenschap om op te geven welke versleutelings sleutel moet worden gebruikt.
 > [!Note]
 > Geen van deze sleutel kluis Details worden beschouwd als geheim en kunnen gemakkelijk worden opgehaald door te bladeren naar de relevante Azure Key Vault sleutel pagina in Azure Portal.
 
@@ -239,7 +239,7 @@ U kunt de aanvraag voor het maken van de index nu verzenden en de index vervolge
 
 ### <a name="synonym-map-encryption"></a>Synoniemen kaart versleuteling
 
-Maak een versleutelde synoniemen toewijzing met behulp van de [toewijzing Create synoniem Azure Cognitive Search rest API](https://docs.microsoft.com/rest/api/searchservice/create-synonym-map). Gebruik de `encryptionKey` eigenschap om op te geven welke versleutelings sleutel moet worden gebruikt.
+Maak een versleutelde synoniemen toewijzing met behulp van de [toewijzing Create synoniem Azure Cognitive Search rest API](/rest/api/searchservice/create-synonym-map). Gebruik de `encryptionKey` eigenschap om op te geven welke versleutelings sleutel moet worden gebruikt.
 
 ```json
 {
@@ -263,7 +263,7 @@ U kunt de aanvraag voor het maken van de synoniemen kaart nu verzenden en vervol
 
 ## <a name="example-data-source-encryption"></a>Voor beeld: versleuteling van gegevens bron
 
-Maak een versleutelde gegevens bron met behulp van de [gegevens bron maken (Azure Cognitive Search rest API)](https://docs.microsoft.com/rest/api/searchservice/create-data-source). Gebruik de `encryptionKey` eigenschap om op te geven welke versleutelings sleutel moet worden gebruikt.
+Maak een versleutelde gegevens bron met behulp van de [gegevens bron maken (Azure Cognitive Search rest API)](/rest/api/searchservice/create-data-source). Gebruik de `encryptionKey` eigenschap om op te geven welke versleutelings sleutel moet worden gebruikt.
 
 ```json
 {
@@ -289,7 +289,7 @@ U kunt de aanvraag voor het maken van de gegevens bron nu verzenden en vervolgen
 
 ## <a name="example-skillset-encryption"></a>Voor beeld: Vaardigheidset-versleuteling
 
-Maak een versleutelde vaardig heden met behulp van de [rest API Create vaardig heden Azure Cognitive Search](https://docs.microsoft.com/rest/api/searchservice/create-skillset). Gebruik de `encryptionKey` eigenschap om op te geven welke versleutelings sleutel moet worden gebruikt.
+Maak een versleutelde vaardig heden met behulp van de [rest API Create vaardig heden Azure Cognitive Search](/rest/api/searchservice/create-skillset). Gebruik de `encryptionKey` eigenschap om op te geven welke versleutelings sleutel moet worden gebruikt.
 
 ```json
 {
@@ -315,7 +315,7 @@ U kunt nu de aanvraag voor het maken van vaardig heden verzenden en deze vervolg
 
 ## <a name="example-indexer-encryption"></a>Voor beeld: indexer versleuteling
 
-Maak een versleutelde Indexeer functie met behulp van de [rest API Create Indexeer functie Azure Cognitive Search](https://docs.microsoft.com/rest/api/searchservice/create-indexer). Gebruik de `encryptionKey` eigenschap om op te geven welke versleutelings sleutel moet worden gebruikt.
+Maak een versleutelde Indexeer functie met behulp van de [rest API Create Indexeer functie Azure Cognitive Search](/rest/api/searchservice/create-indexer). Gebruik de `encryptionKey` eigenschap om op te geven welke versleutelings sleutel moet worden gebruikt.
 
 ```json
 {

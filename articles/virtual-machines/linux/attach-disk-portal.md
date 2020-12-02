@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: 565b781b5015f82cafe4e47be2170f2327660821
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 8f60c83417e9c614ca30f140e6acbbf08e5643cf
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91971588"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500645"
 ---
 # <a name="use-the-portal-to-attach-a-data-disk-to-a-linux-vm"></a>Een gegevens schijf koppelen aan een virtuele Linux-machine met behulp van de portal 
 Dit artikel laat u zien hoe u met de Azure Portal zowel nieuwe als bestaande schijven kunt koppelen aan een virtuele Linux-machine. U kunt ook [een gegevens schijf koppelen aan een virtuele Windows-machine in de Azure Portal](../windows/attach-managed-disk-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
@@ -20,19 +20,19 @@ Dit artikel laat u zien hoe u met de Azure Portal zowel nieuwe als bestaande sch
 Lees de volgende tips voordat u schijven aan uw virtuele machine koppelt:
 
 * De grootte van de virtuele machine bepaalt hoeveel gegevens schijven u kunt bijvoegen. Zie [grootten voor virtuele machines](../sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)voor meer informatie.
-* Schijven die zijn gekoppeld aan virtuele machines zijn eigenlijk VHD-bestanden die zijn opgeslagen in Azure. Zie onze [Inleiding tot Managed disks](../managed-disks-overview.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json)voor meer informatie.
+* Schijven die zijn gekoppeld aan virtuele machines zijn eigenlijk VHD-bestanden die zijn opgeslagen in Azure. Zie onze [Inleiding tot Managed disks](../managed-disks-overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)voor meer informatie.
 * Nadat u de schijf hebt gekoppeld, moet u [verbinding maken met de Linux-VM om de nieuwe schijf te koppelen](#connect-to-the-linux-vm-to-mount-the-new-disk).
 
 
 ## <a name="find-the-virtual-machine"></a>De virtuele machine zoeken
 1. Ga naar het [Azure Portal](https://portal.azure.com/) om de virtuele machine te vinden. Zoek en selecteer **virtuele machines**.
 2. Kies de virtuele machine in de lijst.
-3. Kies op de pagina **virtuele machines** onder **instellingen**de optie **schijven**.
+3. Kies op de pagina **virtuele machines** onder **instellingen** de optie **schijven**.
 
 
 ## <a name="attach-a-new-disk"></a>Een nieuwe schijf koppelen
 
-1. Selecteer in het deel venster **schijven** onder **gegevens schijven**de optie **maken en voeg een nieuwe schijf toe**.
+1. Selecteer in het deel venster **schijven** onder **gegevens schijven** de optie **maken en voeg een nieuwe schijf toe**.
 
 1. Voer een naam in voor uw beheerde schijf. Controleer de standaard instellingen en werk indien nodig het **opslag type**, de **grootte (GIB)**, de **versleuteling** en de **host-caching** bij.
    
@@ -43,7 +43,7 @@ Lees de volgende tips voordat u schijven aan uw virtuele machine koppelt:
 
 
 ## <a name="attach-an-existing-disk"></a>Een bestaande schijf koppelen
-1. Selecteer in het deel venster **schijven** onder **gegevens schijven**de optie  **bestaande schijven bijvoegen**.
+1. Selecteer in het deel venster **schijven** onder **gegevens schijven** de optie  **bestaande schijven bijvoegen**.
 1. Klik op de vervolg keuzelijst voor de **naam** van de schijf en selecteer een schijf in de lijst met beschik bare beheerde schijven. 
 
 1. Klik op **Opslaan** om de bestaande beheerde schijf te koppelen en de VM-configuratie bij te werken:

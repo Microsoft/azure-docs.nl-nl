@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/06/2019
 ms.author: terrylan
-ms.openlocfilehash: 98ba7c63e057e1f6b1f37a6529b6e94e2f514d6d
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 86874a60d48ddcbdaca5ae779ad554ee58cc233b
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701028"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498843"
 ---
 # <a name="azure-operational-security-best-practices"></a>Best practices voor Azure Operational Security
 Dit artikel bevat een reeks operationele aanbevolen procedures voor het beveiligen van uw gegevens, toepassingen en andere assets in Azure.
@@ -195,7 +195,7 @@ Het gebruik van [service-eind punten](../../virtual-network/virtual-network-serv
 
 Vaak zien we de on-premises resources van klanten die zijn aangevallen samen met hun resources in Azure. Als u een on-premises omgeving verbindt met Azure, minimaliseert u de bloot stelling van on-premises resources naar het open bare Internet.
 
-Azure heeft twee DDoS- [service aanbiedingen](../../virtual-network/ddos-protection-overview.md) die bescherming bieden tegen netwerk aanvallen:
+Azure heeft twee DDoS- [service aanbiedingen](../../ddos-protection/ddos-protection-overview.md) die bescherming bieden tegen netwerk aanvallen:
 
 - Basis beveiliging is standaard zonder extra kosten geïntegreerd in Azure. De schaal en de capaciteit van het wereld wijd geïmplementeerde Azure-netwerk bieden bescherming tegen veelvoorkomende aanvallen via netwerk lagen via de controle van het verkeer en de real-time-oplossing. Basic vereist geen gebruikers configuratie of wijzigingen in de toepassing en helpt bij het beveiligen van alle Azure-Services, waaronder PaaS Services als Azure DNS.
 - Standaard beveiliging biedt geavanceerde mogelijkheden voor DDoS-beperking tegen netwerk aanvallen. Het is automatisch afgestemd op het beveiligen van uw specifieke Azure-resources. De beveiliging is eenvoudig in te scha kelen tijdens het maken van virtuele netwerken. Dit kan ook worden gedaan na het maken en er hoeven geen toepassings-of resource wijzigingen te worden aangebracht.

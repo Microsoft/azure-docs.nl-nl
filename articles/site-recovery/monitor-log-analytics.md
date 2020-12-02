@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/15/2019
 ms.author: raynew
-ms.openlocfilehash: 7d11fa8605d9cd5f335b6be56097caf7a5222bbd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e3d3ce8218030bc8ba6c59b26b7360bf2299e02a
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89006938"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499812"
 ---
 # <a name="monitor-site-recovery-with-azure-monitor-logs"></a>Site Recovery bewaken met Azure Monitor-logboeken
 
@@ -36,7 +36,7 @@ U hebt het volgende nodig:
 
 - Ten minste één computer die wordt beveiligd in een Recovery Services kluis.
 - Een Log Analytics-werk ruimte om Site Recovery-logboeken op te slaan. [Meer informatie over](../azure-monitor/learn/quick-create-workspace.md) het instellen van een werk ruimte.
-- Een basis memorandum van het schrijven, uitvoeren en analyseren van logboek query's in Log Analytics. [Meer informatie](../azure-monitor/log-query/get-started-portal.md).
+- Een basis memorandum van het schrijven, uitvoeren en analyseren van logboek query's in Log Analytics. [Meer informatie](../azure-monitor/log-query/log-analytics-tutorial.md).
 
 U wordt aangeraden de [algemene controle vragen](monitoring-common-questions.md) te bekijken voordat u begint.
 
@@ -46,7 +46,7 @@ U wordt aangeraden de [algemene controle vragen](monitoring-common-questions.md)
 
     ![Scherm afbeelding met de optie diagnostische instelling toevoegen.](./media/monitoring-log-analytics/add-diagnostic.png)
 
-2. Geef in **Diagnostische instellingen**een naam op en schakel het selectie vakje **verzenden naar log Analytics**in.
+2. Geef in **Diagnostische instellingen** een naam op en schakel het selectie vakje **verzenden naar log Analytics** in.
 3. Selecteer het abonnement Azure Monitor logboeken en de Log Analytics-werk ruimte.
 4. Selecteer **Azure Diagnostics** in de wissel knop.
 5. Selecteer in de lijst Logboeken alle logboeken met het voor voegsel **AzureSiteRecovery**. Klik vervolgens op **OK**.
@@ -79,7 +79,7 @@ De gegevens voor het verloop en de upload frequentie worden gestart in de werk r
 U haalt gegevens op uit logboeken met behulp van logboek query's die zijn geschreven met de [Kusto-query taal](../azure-monitor/log-query/get-started-queries.md). In deze sectie vindt u enkele voor beelden van algemene query's die u kunt gebruiken voor Site Recovery bewaking.
 
 > [!NOTE]
-> Enkele voor beelden gebruiken **replicationProviderName_s** ingesteld op **A2A**. Hiermee worden virtuele Azure-machines opgehaald die worden gerepliceerd naar een secundaire Azure-regio met behulp van Site Recovery. In deze voor beelden kunt u **A2A** vervangen door **InMageAzureV2**als u on-premises virtuele VMware-machines of fysieke servers wilt ophalen die met site Recovery worden gerepliceerd naar Azure.
+> Enkele voor beelden gebruiken **replicationProviderName_s** ingesteld op **A2A**. Hiermee worden virtuele Azure-machines opgehaald die worden gerepliceerd naar een secundaire Azure-regio met behulp van Site Recovery. In deze voor beelden kunt u **A2A** vervangen door **InMageAzureV2** als u on-premises virtuele VMware-machines of fysieke servers wilt ophalen die met site Recovery worden gerepliceerd naar Azure.
 
 
 ### <a name="query-replication-health"></a>Status van query replicatie

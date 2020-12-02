@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/2/2019
 ms.author: terrylan
-ms.openlocfilehash: 91dfb3cb07cca8ec89c77dea43f1cd075db11bbf
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: ed2cb967b24ce5abdebadfe29847ae1a16b4e745
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95014761"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498741"
 ---
 # <a name="azure-virtual-machines-security-overview"></a>Overzicht van Azure Virtual Machines-beveiliging
 Dit artikel bevat een overzicht van de belangrijkste Azure-beveiligings functies die kunnen worden gebruikt met virtuele machines.
@@ -117,7 +117,7 @@ Site Recovery:
 Meer informatie:
 
 * [Wat is Azure Site Recovery?](../../site-recovery/site-recovery-overview.md)
-* [Hoe werkt Azure Site Recovery?](/azure/site-recovery/azure-to-azure-architecture)
+* [Hoe werkt Azure Site Recovery?](../../site-recovery/azure-to-azure-architecture.md)
 * [Welke workloads worden beveiligd door Azure Site Recovery?](../../site-recovery/site-recovery-workload.md)
 
 ## <a name="virtual-networking"></a>Virtueel netwerk
@@ -128,7 +128,7 @@ Een virtueel Azure-netwerk is een logische constructie die boven op de fysieke A
 
 Meer informatie:
 
-* [Overzicht van Azure-netwerk beveiliging](network-overview.md)
+* [Overzicht van Azure-netwerkbeveiliging](network-overview.md)
 * [Overzicht van Virtual Network](../../virtual-network/virtual-networks-overview.md)
 * [Netwerk functies en partnerschappen voor bedrijfs scenario's](https://azure.microsoft.com/blog/networking-enterprise/)
 

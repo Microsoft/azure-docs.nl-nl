@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.date: 11/27/2018
 ms.author: cynthn
 ms.topic: conceptual
-ms.openlocfilehash: 83d291ae72e79ec3600015fac07ee4ab80fe5df4
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: b7f6d30ffa849f78b0f7baa2d84e4fb01f3bf192
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843550"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500339"
 ---
 # <a name="secure-and-use-policies-on-virtual-machines-in-azure"></a>Beveiligen en beleidsregels gebruiken op virtuele machines in Azure
 
@@ -41,7 +41,7 @@ Versleuteling heeft geen invloed op de prestaties van Managed disks. Er zijn gee
 
 U kunt vertrouwen op door het platform beheerde sleutels voor de versleuteling van uw beheerde schijf of u kunt versleuteling beheren met uw eigen sleutels. Als u ervoor kiest om versleuteling met uw eigen sleutels te beheren, kunt u een door de *klant beheerde sleutel* opgeven die moet worden gebruikt voor het versleutelen en ontsleutelen van alle gegevens in Managed disks. 
 
-Raadpleeg de artikelen voor [Windows](windows/disk-encryption.md) of [Linux](linux/disk-encryption.md)voor meer informatie over versleuteling aan de server zijde.
+Raadpleeg de artikelen voor [Windows](./disk-encryption.md) of [Linux](./disk-encryption.md)voor meer informatie over versleuteling aan de server zijde.
 
 ### <a name="azure-disk-encryption"></a>Azure Disk Encryption
 
@@ -73,4 +73,4 @@ Met [op rollen gebaseerd toegangs beheer (Azure RBAC) van Azure](../role-based-a
 
 
 ## <a name="next-steps"></a>Volgende stappen
-- Door loop de stappen voor het bewaken van de beveiliging van virtuele machines met behulp van Azure Security Center voor [Linux](../security/fundamentals/overview.md) of [Windows](windows/tutorial-azure-security.md).
+- Door loop de stappen voor het bewaken van de beveiliging van virtuele machines met behulp van Azure Security Center voor [Linux](../security/fundamentals/overview.md) of [Windows](./tutorial-azure-security.md).

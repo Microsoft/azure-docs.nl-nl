@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 10/27/2020
 ms.author: olayemio
 ms.reviewer: cynthn
-ms.openlocfilehash: d15f58a2d87483e8e2fd6711481bfe8866ca1548
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: 74e1dc12be9bfec57d76357a335b46a55912f6df
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94920607"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500271"
 ---
 # <a name="troubleshoot-shared-image-galleries-in-azure"></a>Problemen met gedeelde afbeeldings galerieën in azure oplossen
 
@@ -137,7 +137,7 @@ Als u problemen ondervindt bij het uitvoeren van bewerkingen in de gedeelde afbe
 
 *Het ZRS-opslag account type wordt niet ondersteund in deze regio.*  
 **Oorzaak**: u hebt de standaard zone-redundante opslag (ZRS) gekozen in een regio die deze nog niet ondersteunt.  
-**Tijdelijke oplossing**: Wijzig het type opslag account in **Premium \_ LRS** of **Standard \_ LRS**. Raadpleeg onze documentatie voor de meest recente [lijst met regio's](/azure/storage/common/storage-redundancy#zone-redundant-storage) waarvoor ZRS preview is ingeschakeld.
+**Tijdelijke oplossing**: Wijzig het type opslag account in **Premium \_ LRS** of **Standard \_ LRS**. Raadpleeg onze documentatie voor de meest recente [lijst met regio's](../storage/common/storage-redundancy.md#zone-redundant-storage) waarvoor ZRS preview is ingeschakeld.
 
 ## <a name="creating-or-updating-image-versions"></a>Installatie kopie versies maken of bijwerken ##
 

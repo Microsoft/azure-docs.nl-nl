@@ -4,7 +4,7 @@
   items:
     - name: Wat zijn schaalsets voor virtuele machines?
       href: overview.md
-- name: Snelstartgidsen
+- name: Quickstarts
   items:
     - name: Maken in Azure Portal
       href: quick-create-portal.md
@@ -176,7 +176,7 @@
           href: ../virtual-machines/disks-types.md
           maintainContext: true
         - name: Versleuteling
-          href: ../virtual-machines/windows/disk-encryption.md?toc=%2fazure%2fvirtual-machine-scale-sets%2ftoc.json
+          href: ../virtual-machines/disk-encryption.md?toc=%2fazure%2fvirtual-machine-scale-sets%2ftoc.json
           maintainContext: true
         - name: Prestaties van Premium Storage
           href: ../virtual-machines/premium-storage-performance.md

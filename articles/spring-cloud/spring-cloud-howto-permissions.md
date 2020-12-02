@@ -7,15 +7,15 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 09/04/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: edd9898580c60199b761b24b172a366069f09cb2
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 0c0b3bd81e0f73a7879382e28516378bd722bc17
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92516185"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498639"
 ---
 # <a name="how-to-use-permissions-in-azure-spring-cloud"></a>Machtigingen gebruiken in azure lente Cloud
-In dit artikel wordt beschreven hoe u aangepaste rollen maakt die machtigingen voor Azure lente-cloud resources delegeren. Aangepaste rollen breiden [ingebouwde rollen van Azure uit](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles) met diverse aandelen machtigingen.
+In dit artikel wordt beschreven hoe u aangepaste rollen maakt die machtigingen voor Azure lente-cloud resources delegeren. Aangepaste rollen breiden [ingebouwde rollen van Azure uit](../role-based-access-control/built-in-roles.md) met diverse aandelen machtigingen.
 
 De volgende aangepaste rollen worden geïmplementeerd:
 
@@ -66,7 +66,7 @@ Selecteer in **micro soft. AppPlatform/lente**:
 * Lezen: Azure lente-Cloud service-exemplaar ophalen
 * Overige: test sleutels voor de Azure-veer Cloud service-instantie weer geven
 
-Selecteer in **micro soft. AppPlatform/lente/apps**het volgende:
+Selecteer in **micro soft. AppPlatform/lente/apps** het volgende:
 * Lezen: Microsoft Azure lente-Cloud toepassing lezen
 * Overige: ophalen van Microsoft Azure lente-URL voor bron toepassing
 
@@ -116,7 +116,7 @@ Selecteer in **micro soft. AppPlatform/lente**:
 * Overige: test sleutels voor de Azure-veer Cloud service-instantie weer geven
 * Overige: de test sleutel voor het Cloud service-exemplaar van Azure lente opnieuw genereren
 
-Selecteer in **micro soft. AppPlatform/lente/apps**het volgende:
+Selecteer in **micro soft. AppPlatform/lente/apps** het volgende:
 * Schrijven: Schrijf Microsoft Azure lente-Cloud toepassing
 * Verwijderen: Microsoft Azure lente-Cloud toepassing verwijderen
 * Lezen: Microsoft Azure lente-Cloud toepassing lezen
@@ -170,7 +170,7 @@ Selecteer in **micro soft. AppPlatform/lente**:
 * Lezen: Azure lente-Cloud service-exemplaar ophalen
 * Overige: test sleutels voor de Azure-veer Cloud service-instantie weer geven
 
-Selecteer in **micro soft. AppPlatform/lente/apps**het volgende:
+Selecteer in **micro soft. AppPlatform/lente/apps** het volgende:
 * Lezen: Microsoft Azure lente-Cloud toepassing lezen
 
 Selecteer in **micro soft. AppPlatform/apps/implementaties**:
@@ -211,7 +211,7 @@ Selecteer in **micro soft. AppPlatform/lente**:
 * Overige: test sleutels voor de Azure-veer Cloud service-instantie weer geven
 * Overige: de test sleutel voor het Cloud service-exemplaar van Azure lente opnieuw genereren
 
-Selecteer in **micro soft. AppPlatform/lente/apps**het volgende:
+Selecteer in **micro soft. AppPlatform/lente/apps** het volgende:
 * Schrijven: Schrijf Microsoft Azure lente-Cloud toepassing
 * Verwijderen: Microsoft Azure lente-Cloud toepassing verwijderen
 * Lezen: Microsoft Azure lente-Cloud toepassing lezen
@@ -257,9 +257,9 @@ Selecteer in **micro soft. AppPlatform/sku's**:
 
 
 ## <a name="see-also"></a>Zie ook
-* [Aangepaste Azure-rollen maken of bijwerken met behulp van Azure Portal](https://docs.microsoft.com/azure/role-based-access-control/custom-roles-portal)
+* [Aangepaste Azure-rollen maken of bijwerken met behulp van Azure Portal](../role-based-access-control/custom-roles-portal.md)
 
 Zie voor meer informatie over drie methoden voor het definiëren van aangepaste machtigingen:
-* [Een rol klonen](https://docs.microsoft.com/azure/role-based-access-control/custom-roles-portal#clone-a-role)
-* [De procedure vanaf het begin uitvoeren](https://docs.microsoft.com/azure/role-based-access-control/custom-roles-portal#start-from-scratch)
-* [Starten vanuit JSON](https://docs.microsoft.com/azure/role-based-access-control/custom-roles-portal#start-from-json)
+* [Een rol klonen](../role-based-access-control/custom-roles-portal.md#clone-a-role)
+* [De procedure vanaf het begin uitvoeren](../role-based-access-control/custom-roles-portal.md#start-from-scratch)
+* [Starten vanuit JSON](../role-based-access-control/custom-roles-portal.md#start-from-json)

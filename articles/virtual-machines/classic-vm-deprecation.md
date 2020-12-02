@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/10/2020
 ms.author: tagore
-ms.openlocfilehash: 730a29ff579ce6a1970ceafad5891611b52c059d
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 7ed2a672f0f7149240e799b5529a7a3a6836a702
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91972285"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499302"
 ---
 # <a name="migrate-your-iaas-resources-to-azure-resource-manager-by-march-1-2023"></a>Migreer uw IaaS-resources naar Azure Resource Manager op 1 maart 2023 
 
@@ -45,12 +45,12 @@ Begin met het plannen van de migratie naar Azure Resource Manager, vandaag.
    - U kunt ook een query uitvoeren op Azure-resource grafiek door de [Portal](https://portal.azure.com/#blade/HubsExtension/ArgQueryBlade/query/resources%0A%7C%20where%20type%20%3D%3D%20%22microsoft.classiccompute%2Fvirtualmachines%22) of [Power shell](../governance/resource-graph/concepts/work-with-data.md) te gebruiken om de lijst met alle gemarkeerde vm's (klassiek) en gerelateerde informatie voor de geselecteerde abonnementen weer te geven. 
    - Op 8 februari en 2 september 2020 hebben we e-mail berichten verzonden naar abonnements eigenaren met een lijst met alle abonnementen die deze Vm's (klassiek) bevatten. Gebruik ze om deze lijst samen te stellen. 
 
-1. Meer [informatie](./windows/migration-classic-resource-manager-overview.md) over het migreren van uw [Linux](./linux/migration-classic-resource-manager-plan.md) -en [Windows](./windows/migration-classic-resource-manager-plan.md) -vm's (klassiek) naar Azure Resource Manager. Zie [Veelgestelde vragen over klassieke Azure Resource Manager migratie](./migration-classic-resource-manager-faq.md)voor meer informatie.
+1. Meer [informatie](./migration-classic-resource-manager-overview.md) over het migreren van uw [Linux](./migration-classic-resource-manager-plan.md) -en [Windows](./migration-classic-resource-manager-plan.md) -vm's (klassiek) naar Azure Resource Manager. Zie [Veelgestelde vragen over klassieke Azure Resource Manager migratie](./migration-classic-resource-manager-faq.md)voor meer informatie.
 
-1. Het is raadzaam om de planning te starten met het [hulp programma voor migratie van platform ondersteuning](./windows/migration-classic-resource-manager-overview.md) om uw bestaande vm's te migreren met drie eenvoudige stappen: valideren, voorbereiden en door voeren. Het hulp programma is ontworpen voor het migreren van uw virtuele machines binnen een minimum aan zonder uitval tijd. 
+1. Het is raadzaam om de planning te starten met het [hulp programma voor migratie van platform ondersteuning](./migration-classic-resource-manager-overview.md) om uw bestaande vm's te migreren met drie eenvoudige stappen: valideren, voorbereiden en door voeren. Het hulp programma is ontworpen voor het migreren van uw virtuele machines binnen een minimum aan zonder uitval tijd. 
 
    1. De eerste stap, validate, heeft geen invloed op uw bestaande implementatie en biedt een lijst van alle niet-ondersteunde scenario's voor migratie. 
-   1. Door loop de [lijst met tijdelijke oplossingen](./windows/migration-classic-resource-manager-overview.md#unsupported-features-and-configurations) om uw implementatie te herstellen en deze gereed te maken voor migratie. 
+   1. Door loop de [lijst met tijdelijke oplossingen](./migration-classic-resource-manager-overview.md#unsupported-features-and-configurations) om uw implementatie te herstellen en deze gereed te maken voor migratie. 
    1. In het ideale geval nadat alle validatie fouten zijn opgelost, moet u geen problemen ondervinden tijdens de stappen voor het voorbereiden en door voeren. Nadat het door voeren is voltooid, wordt uw implementatie Live gemigreerd naar Azure Resource Manager en kan deze vervolgens worden beheerd via nieuwe Api's die worden weer gegeven door Azure Resource Manager. 
 
    Als het hulp programma voor migratie niet geschikt is voor uw migratie, kunt u [andere compute-aanbiedingen](/azure/architecture/guide/technology-choices/compute-decision-tree) voor de migratie verkennen. Omdat er veel Azure Compute-aanbiedingen zijn, en ze verschillen van elkaar, kunnen we geen door het platform ondersteunde migratie paden aanbieden.  

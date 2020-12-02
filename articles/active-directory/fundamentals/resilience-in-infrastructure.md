@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ad97a822aaa6477616a6661a579df6c4ec82729
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f65ab02e06319519548eaa2c02120691a0ceef02
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919573"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498554"
 ---
 # <a name="build-resilience-in-your-identity-and-access-management-infrastructure"></a>Maak flexibiliteit in uw infra structuur voor identiteits-en toegangs beheer
 
@@ -40,11 +40,11 @@ In de context van uw infra structuur voor identiteiten is de mogelijkheid om te 
 
 ## <a name="why-worry-about-disruption"></a>Waarom is er een probleem met de onderbreking?
 
-Elke aanroep van het verificatie systeem is onderhevig aan onderbrekingen als een onderdeel in de keten van de aanroep van Azure AD mislukt. Dit betekent dat als een deel van uw infra structuur een probleem werk heeft, kan worden onderbroken, omdat gebruikers geen toegang hebben tot de toepassingen die ze nodig hebben. Daarom is het verminderen van het aantal verificatie aanroepen en het aantal afhankelijkheden in deze aanroepen belang rijk voor uw tolerantie. Ontwikkel aars van toepassingen kunnen bepalen hoe vaak tokens worden aangevraagd. Werk met uw ontwikkel aars bijvoorbeeld om ervoor te zorgen dat ze waar mogelijk Azure AD Managed-identiteiten voor hun toepassingen gebruiken. 
+Elke aanroep van het verificatie systeem is onderhevig aan onderbrekingen als een onderdeel van de aanroep mislukt. Wanneer de authenticatie wordt verstoord door de onderliggende onderdeel fouten, hebben uw gebruikers geen toegang tot hun toepassingen. Daarom is het verminderen van het aantal verificatie aanroepen en het aantal afhankelijkheden in deze aanroepen belang rijk voor uw tolerantie. Ontwikkel aars van toepassingen kunnen bepalen hoe vaak tokens worden aangevraagd. Werk met uw ontwikkel aars bijvoorbeeld om ervoor te zorgen dat ze waar mogelijk Azure AD Managed-identiteiten voor hun toepassingen gebruiken. 
 
 In een verificatie systeem op basis van tokens, zoals Azure AD, moet de toepassing (client) van een gebruiker een beveiligings token van het identiteits systeem verkrijgen voordat het toegang heeft tot een toepassing of een andere bron. Gedurende de geldigheids periode kan een client hetzelfde token meerdere keren aanbieden voor toegang tot de toepassing.
 
-Wanneer het token dat aan de toepassing wordt gepresenteerd, verloopt, wordt het token door de toepassing geweigerd en moet de client een nieuw token van Azure AD verkrijgen. Voor het verkrijgen van een nieuw token is mogelijk gebruikers interactie vereist, zoals referentie prompts. Het verminderen van de frequentie van verificatie aanroepen met langere tokens vermindert dit risico. U moet echter de levens duur van het token balanceren met het risico dat door minder beleids evaluaties is gemaakt. Voor meer informatie over het beheren van de levens duur van tokens raadpleegt u dit artikel over het [optimaliseren van herauthenticatie prompts](https://docs.microsoft.com/azure/active-directory/authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime).
+Wanneer het token dat aan de toepassing wordt gepresenteerd, verloopt, wordt het token door de toepassing geweigerd en moet de client een nieuw token van Azure AD verkrijgen. Voor het verkrijgen van een nieuw token is mogelijk gebruikers interactie vereist, zoals referentie prompts of voor andere vereisten van het verificatie systeem. Het verminderen van de frequentie van verificatie aanroepen met langere tokens vermindert onnodige interacties. U moet echter de levens duur van het token balanceren met het risico dat door minder beleids evaluaties is gemaakt. Voor meer informatie over het beheren van de levens duur van tokens raadpleegt u dit artikel over het [optimaliseren van herauthenticatie prompts](https://docs.microsoft.com/azure/active-directory/authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime).
 
 ## <a name="ways-to-increase-resilience"></a>Manieren om de tolerantie te verhogen
 In het volgende diagram ziet u zes concrete manieren waarop u de tolerantie kunt verhogen. Elke methode wordt gedetailleerd uitgelegd in de artikelen die in het gedeelte volgende stappen van dit artikel zijn gekoppeld.

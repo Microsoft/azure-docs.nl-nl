@@ -8,19 +8,19 @@ ms.topic: article
 ms.author: terrylan
 manager: rkarlin
 ms.date: 11/10/2020
-ms.openlocfilehash: 73ae811c17a578cafc557b0cda9e98b101dd5c03
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: f4906d4e0590df047bac4ee15cb0e996a59c3d5b
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94557652"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498860"
 ---
 # <a name="measured-boot-and-host-attestation"></a>Gemeten opstarten en host-Attestation
 In dit artikel wordt beschreven hoe micro soft de integriteit en beveiliging van hosts garandeert door middel van gemeten opstarten en host Attestation.
 
 ## <a name="measured-boot"></a>Gemeten opstart
 
-De [Trusted Platform Module](https://docs.microsoft.com/windows/security/information-protection/tpm/trusted-platform-module-top-node) (TPM) is een onrecht matige proef, cryptografisch beveiligd controle onderdeel met firmware geleverd door een vertrouwde derde partij. Het logboek met opstart configuratie bevat hash-aaneengeschakelde metingen die zijn vastgelegd in de platform configuratie registers (PCR) wanneer de host de laatste keer de Boots trapping sequentie heeft gestaan. In de volgende afbeelding ziet u dit proces. Incrementeel het toevoegen van een eerder gehashte meting aan de hash van de volgende meting en het uitvoeren van het hash-algoritme voor de samenvoeg bewerking maakt hash-koppeling.
+De [Trusted Platform Module](/windows/security/information-protection/tpm/trusted-platform-module-top-node) (TPM) is een onrecht matige proef, cryptografisch beveiligd controle onderdeel met firmware geleverd door een vertrouwde derde partij. Het logboek met opstart configuratie bevat hash-aaneengeschakelde metingen die zijn vastgelegd in de platform configuratie registers (PCR) wanneer de host de laatste keer de Boots trapping sequentie heeft gestaan. In de volgende afbeelding ziet u dit proces. Incrementeel het toevoegen van een eerder gehashte meting aan de hash van de volgende meting en het uitvoeren van het hash-algoritme voor de samenvoeg bewerking maakt hash-koppeling.
 
 ![Diagram waarin de hash-koppeling van de Attestation-service van de host wordt weer gegeven.](./media/measured-boot-host-attestation/hash-chaining.png)
 
@@ -54,8 +54,8 @@ UEFI [Secure boot](secure-boot.md) zorgt ervoor dat alleen betrouw bare software
 ## <a name="next-steps"></a>Volgende stappen
 Zie voor meer informatie over de mogelijkheden van platform integriteit en-beveiliging:
 
-- [Firmware beveiliging](firmware.md)
+- [Firmware-beveiliging](firmware.md)
 - [Beveiligd opstarten](secure-boot.md)
 - [Project Cerberus](project-cerberus.md)
 - [Versleuteling 'at rest'](encryption-atrest.md)
-- [Hyper Visor beveiliging](hypervisor.md)
+- [Hypervisor-beveiliging](hypervisor.md)

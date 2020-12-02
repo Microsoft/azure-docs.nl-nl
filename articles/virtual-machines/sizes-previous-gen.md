@@ -6,14 +6,14 @@ ms.subservice: sizes
 author: mimckitt
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 10/02/2020
+ms.date: 11/01/2020
 ms.author: mimckitt
-ms.openlocfilehash: 45bcfdb544d3951feb40a821b601ce60ecc0feaf
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 90bc98d63b45e43c9325eed4fe019b18f52d0de8
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93356770"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500288"
 ---
 # <a name="previous-generations-of-virtual-machine-sizes"></a>Vorige generaties virtuele machine grootten
 
@@ -64,7 +64,7 @@ MBps = 10^6 bytes per seconde en GiB = 1024^3 bytes.
 
 ## <a name="nvv2-series"></a>NVv2-serie
 
-**Aanbeveling voor nieuwere grootte** : [NVv3-serie](nvv3-series.md)
+**Aanbeveling voor nieuwere grootte**: [NVv3-serie](nvv3-series.md)
 
 De virtuele machines uit de NVv2-serie worden aangedreven door [Nvidia Tesla M60](https://images.nvidia.com/content/tesla/pdf/188417-Tesla-M60-DS-A4-fnl-Web.pdf) gpu's en de NVIDIA Grid-technologie met Intel Broadwell cpu's. Deze virtuele machines zijn gericht op GPU-versnelde grafische toepassingen en virtuele Bureau bladen waar klanten hun gegevens willen visualiseren, de resultaten kunnen simuleren om te bekijken, te werken met CAD of inhoud te genereren en te streamen. Daarnaast kunnen deze virtuele machines single Precision-werk belastingen uitvoeren, zoals code ring en rendering. Virtuele machines van NVv2 ondersteunen Premium Storage en komen twee maal zoveel systeem geheugen (RAM) te staan in vergelijking met de bijbehorende voorafgaande NV-serie.  
 
@@ -86,7 +86,7 @@ Zie [het formaat van een virtuele Linux-machine wijzigen](linux/change-vm-size.m
 
 ### <a name="basic-a"></a>Basic A  
 
-**Aanbeveling voor nieuwere grootte** : [Av2-serie](av2-series.md)
+**Aanbeveling voor nieuwere grootte**: [Av2-serie](av2-series.md)
 
 Premium Storage: niet ondersteund
 
@@ -116,7 +116,7 @@ In het klassieke implementatiemodel verschillen sommige namen van VM-grootten en
 
 ### <a name="a-series"></a>A-serie  
 
-**Aanbeveling voor nieuwere grootte** : [Av2-serie](av2-series.md)
+**Aanbeveling voor nieuwere grootte**: [Av2-serie](av2-series.md)
 
 ACU: 50-100
 
@@ -141,7 +141,7 @@ Premium Storage caching: niet ondersteund
 
 ### <a name="a-series---compute-intensive-instances"></a>A-serie: rekenintensieve exemplaren  
 
-**Aanbeveling voor nieuwere grootte** : [Av2-serie](av2-series.md)
+**Aanbeveling voor nieuwere grootte**: [Av2-serie](av2-series.md)
 
 ACU: 225
 
@@ -161,13 +161,13 @@ Grootten uit de A8-A11- en H-serie worden ook wel *rekenintensieve exemplaren* g
 <sup>1</sup> Voor MPI-toepassingen wordt een toegewijd RDMA-back-end-netwerk ingeschakeld door FDR InfiniBand-netwerk. Dit biedt een zeer lage latentie en hoge band breedte.  
 
 > [!NOTE]
-> De A8-A11-Vm's worden gepland voor buiten gebruiks telling op 3/2021. We raden u ten zeerste aan geen nieuwe A8-A11-Vm's te maken. Migreer alle bestaande A8-A11-Vm's naar nieuwere en krachtige computing VM-grootten zoals H, HB, HC, HBv2 en de grootte van Compute-VM'S voor algemeen gebruik, zoals D, E en F voor een betere prijs-prestatie verhouding. Zie voor meer informatie [HPC-migratie handleiding](https://azure.microsoft.com/resources/hpc-migration-guide/).
+> De [A8-A11-vm's worden gepland voor buiten gebruiks telling op 3/2021](https://azure.microsoft.com/updates/a8-a11-azure-virtual-machine-sizes-will-be-retired-on-march-1-2021/). We raden u ten zeerste aan geen nieuwe A8-A11-Vm's te maken. Migreer alle bestaande A8-A11-Vm's naar nieuwere en krachtige computing VM-grootten zoals H, HB, HC, HBv2 en de grootte van Compute-VM'S voor algemeen gebruik, zoals D, E en F voor een betere prijs-prestatie verhouding. Zie voor meer informatie [HPC-migratie handleiding](https://azure.microsoft.com/resources/hpc-migration-guide/).
 
 <br>
 
 ### <a name="d-series"></a>D-serie  
 
-**Nieuwere grootte aanbeveling** : [Dav4-Series](dav4-dasv4-series.md), [Dv4-serie](dv4-dsv4-series.md) en [Ddv4-serie](ddv4-ddsv4-series.md)
+**Nieuwere grootte aanbeveling**: [Dav4-Series](dav4-dasv4-series.md), [Dv4-serie](dv4-dsv4-series.md) en [Ddv4-serie](ddv4-ddsv4-series.md)
 
 ACU: 160-250 <sup>1</sup>
 
@@ -188,7 +188,7 @@ Premium Storage caching: niet ondersteund
 
 ### <a name="d-series---memory-optimized"></a>D-Series-geoptimaliseerd voor geheugen  
 
-**Nieuwere grootte aanbeveling** : [Dav4-Series](dav4-dasv4-series.md), [Dv4-serie](dv4-dsv4-series.md) en [Ddv4-serie](ddv4-ddsv4-series.md)
+**Nieuwere grootte aanbeveling**: [Dav4-Series](dav4-dasv4-series.md), [Dv4-serie](dv4-dsv4-series.md) en [Ddv4-serie](ddv4-ddsv4-series.md)
 
 ACU: 160-250 <sup>1</sup>
 
@@ -209,7 +209,7 @@ Premium Storage caching: niet ondersteund
 
 ### <a name="preview-dc-series"></a>Voor beeld: DC-serie
 
-**Aanbeveling voor nieuwere grootte** : [DCsv2-serie](dcv2-series.md)
+**Aanbeveling voor nieuwere grootte**: [DCsv2-serie](dcv2-series.md)
 
 Premium Storage: ondersteund
 
@@ -224,12 +224,12 @@ De DC-serie gebruikt de nieuwste generatie van 3,7 GHz Intel XEON E-2176G-proces
 
 > [!IMPORTANT]
 >
-> Vm's uit de DC-serie zijn [twee vm's van de tweede generatie](./linux/generation-2.md#creating-a-generation-2-vm) en ondersteunen alleen `Gen2` installatie kopieën.
+> Vm's uit de DC-serie zijn [twee vm's van de tweede generatie](./generation-2.md#creating-a-generation-2-vm) en ondersteunen alleen `Gen2` installatie kopieën.
 
 
 ### <a name="ds-series"></a>DS-serie  
 
-**Nieuwere grootte aanbeveling** : [Dasv4-Series](dav4-dasv4-series.md), [Dsv4-serie](dv4-dsv4-series.md) en [Ddsv4-serie](ddv4-ddsv4-series.md)
+**Nieuwere grootte aanbeveling**: [Dasv4-Series](dav4-dasv4-series.md), [Dsv4-serie](dv4-dsv4-series.md) en [Ddsv4-serie](ddv4-ddsv4-series.md)
 
 ACU: 160-250 <sup>1</sup>
 
@@ -250,7 +250,7 @@ Premium Storage caching: ondersteund
 
 ### <a name="ds-series---memory-optimized"></a>DS-Series-geoptimaliseerd voor geheugen  
 
-**Nieuwere grootte aanbeveling** : [Dasv4-Series](dav4-dasv4-series.md), [Dsv4-serie](dv4-dsv4-series.md) en [Ddsv4-serie](ddv4-ddsv4-series.md)
+**Nieuwere grootte aanbeveling**: [Dasv4-Series](dav4-dasv4-series.md), [Dsv4-serie](dv4-dsv4-series.md) en [Ddsv4-serie](ddv4-ddsv4-series.md)
 
 ACU: 160-250 <sup>1, 2</sup>
 
@@ -272,7 +272,7 @@ Premium Storage caching: ondersteund
 
 ### <a name="ls-series"></a>Ls-serie
 
-**Aanbeveling voor nieuwere grootte** : [Lsv2-serie](lsv2-series.md)
+**Aanbeveling voor nieuwere grootte**: [Lsv2-serie](lsv2-series.md)
 
 De Ls-serie biedt maximaal 32 vCPU's en maakt gebruik van een [Intel Xeon®-processor uit de E5 v3-familie](https://www.intel.com/content/www/us/en/processors/xeon/xeon-e5-solutions.html). De Ls-serie heeft dezelfde CPU-prestaties als de G/GS-serie en wordt geleverd met 8 GiB geheugen per vCPU.
 
@@ -297,7 +297,7 @@ De maximale schijf doorvoer die mogelijk is met Vm's uit de LS-serie kan worden 
 
 ### <a name="gs-series"></a>GS-serie
 
-**Nieuwere grootte aanbeveling** : [Easv4-serie](eav4-easv4-series.md), [Esv4-Serie](ev4-esv4-series.md), [Edsv4-serie](edv4-edsv4-series.md) en [M-serie](m-series.md)
+**Nieuwere grootte aanbeveling**: [Easv4-serie](eav4-easv4-series.md), [Esv4-Serie](ev4-esv4-series.md), [Edsv4-serie](edv4-edsv4-series.md) en [M-serie](m-series.md)
 
 ACU: 180-240 <sup>1</sup>
 
@@ -323,7 +323,7 @@ Premium Storage caching: ondersteund
 
 ### <a name="g-series"></a>G-serie
 
-**Nieuwere grootte aanbeveling** : [Eav4-Series](eav4-easv4-series.md), [Ev4-Serie](ev4-esv4-series.md) en [Edv4-](edv4-edsv4-series.md) Series en [M-serie](m-series.md)
+**Nieuwere grootte aanbeveling**: [Eav4-Series](eav4-easv4-series.md), [Ev4-Serie](ev4-esv4-series.md) en [Edv4-](edv4-edsv4-series.md) Series en [M-serie](m-series.md)
 
 ACU: 180 - 240
 
@@ -343,7 +343,7 @@ Premium Storage caching: niet ondersteund
 <br>
 
 ### <a name="nv-series"></a>NV-serie
-**Nieuwe aanbeveling** : [NVv3-Series](nvv3-series.md) en [NVv4-serie](nvv4-series.md)
+**Nieuwe aanbeveling**: [NVv3-Series](nvv3-series.md) en [NVv4-serie](nvv4-series.md)
 
 De virtuele machines van de NV-serie worden aangedreven door [Nvidia Tesla M60](https://images.nvidia.com/content/tesla/pdf/188417-Tesla-M60-DS-A4-fnl-Web.pdf) gpu's en de NVIDIA Grid-technologie voor desktop-versnelde toepassingen en virtuele Bureau bladen waar klanten hun gegevens of simulaties kunnen visualiseren. Gebruikers kunnen hun grafische intensieve werk stromen op de NV-exemplaren visualiseren om de superieure grafische mogelijkheden te verkrijgen en daarnaast ook werk belastingen met één precisie, zoals code ring en rendering, uit te voeren. Virtuele machines van de NV-serie worden ook aangedreven door de Intel Xeon E5-2690 v3-Cpu's (Haswell).
 
@@ -367,7 +367,7 @@ Updates voor het behouden van geheugen: niet ondersteund
 <br>
 
 ### <a name="nc-series"></a>NC-serie
-**Nieuwere grootte aanbeveling** : [NC T4 v3-serie](nct4-v3-series.md)
+**Nieuwere grootte aanbeveling**: [NC T4 v3-serie](nct4-v3-series.md)
 
 Virtuele machines in de NC-serie worden aangedreven door de [Nvidia Tesla K80](https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/tesla-product-literature/Tesla-K80-BoardSpec-07317-001-v05.pdf) -kaart en de Intel Xeon E5-2690 v3-processor (Haswell). Gebruikers kunnen sneller gegevens belichten door gebruik te maken van CUDA voor energie onderzoek toepassingen, crash simulaties, Ray traceed rendering, dieper leren en meer. De NC24r-configuratie biedt een netwerk interface met lage latentie en hoge door Voer die is geoptimaliseerd voor nauw gekoppelde werk belastingen op parallelle computers.
 
@@ -394,7 +394,7 @@ Virtuele machines in de NC-serie worden aangedreven door de [Nvidia Tesla K80](h
 
 
 ### <a name="ncv2-series"></a>NCv2-serie
-**Nieuwere grootte aanbeveling** : [NC T4 v3-Series](nct4-v3-series.md) en [NC V100 v3-serie](ncv3-series.md)
+**Nieuwere grootte aanbeveling**: [NC T4 v3-Series](nct4-v3-series.md) en [NC V100 v3-serie](ncv3-series.md)
 
 Virtuele machines uit de NCv2-serie worden aangedreven door NVIDIA Tesla P100 Gpu's. Deze Gpu's kunnen meer dan twee maal de reken prestaties van de NC-serie bieden. Klanten kunnen profiteren van deze bijgewerkte Gpu's voor traditionele HPC-workloads, zoals het maken van tank modellen, DNA-sequentiëren, eiwithoudende analyse, Monte Carlo-simulaties en andere. Naast de Gpu's worden de virtuele machines uit de NCv2-serie ook aangedreven door de Intel Xeon E5-2690 v4-Cpu's (Broadwell).
 
@@ -422,7 +422,7 @@ De NC24rs v2-configuratie biedt een netwerk interface met lage latentie en hoge 
 <br>
 
 ### <a name="nd-series"></a>ND-serie
-**Nieuwere grootte aanbeveling** : [NDv2-Series](ndv2-series.md) en [NC V100 v3-serie](ncv3-series.md)
+**Nieuwere grootte aanbeveling**: [NDv2-Series](ndv2-series.md) en [NC V100 v3-serie](ncv3-series.md)
 
 De virtuele machines uit de ND-serie vormen een nieuwe toevoeging aan de GPU-familie die is ontworpen voor AI en diep gaande werk belastingen. Ze bieden uitstekende prestaties voor training en demijnen. ND-instanties worden aangedreven door [Nvidia Tesla P40](https://images.nvidia.com/content/pdf/tesla/184427-Tesla-P40-Datasheet-NV-Final-Letter-Web.pdf) -Gpu's en Intel Xeon E5-2690 v4-Cpu's (Broadwell). Deze instanties bieden uitstekende prestaties voor drijvende-komma bewerkingen met één precisie, voor AI-workloads die gebruikmaken van Microsoft Cognitive Toolkit, tensor flow, Caffe en andere frameworks. De ND-serie biedt ook een veel grotere GPU-geheugen grootte (24 GB), waardoor u veel grotere Neural net-modellen kunt aanpassen. Net als de NC-serie biedt de ND-serie een configuratie met een secundaire netwerk met lage latentie en een hoge door Voer via RDMA en InfiniBand-connectiviteit, zodat u grootschalige trainings taken kunt uitvoeren die veel Gpu's bespannen.
 

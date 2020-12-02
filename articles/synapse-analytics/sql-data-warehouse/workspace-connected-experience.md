@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 11/23/2020
 ms.author: anvang
 ms.reviewer: jrasnick
-ms.openlocfilehash: f3c40e4c7b00a5c78872a60af25e3b19fe08f324
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 5efb1df378df323585bc0ca1094451cdb095fe4e
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96466796"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499778"
 ---
 # <a name="enabling-synapse-workspace-features-on-an-existing-dedicated-sql-pool-formerly-sql-dw"></a>Functies van Synapse-werk ruimte inschakelen op een bestaande toegewezen SQL-groep (voorheen SQL DW)
 
@@ -44,7 +44,7 @@ De volgende informatie is van toepassing wanneer u een speciale SQL-DW (voorheen
 
 - **Netwerk beveiliging** Als de Synapse-werk ruimte die u hebt ingeschakeld voor uw bestaande toegewezen SQL-groep (voorheen SQL DW) is ingeschakeld voor beveiliging tegen gegevens infiltratie. Een beheerde persoonlijke eindpunt verbinding maken vanuit de werk ruimte naar de logische SQL-Server. De verbindings aanvraag van het particuliere eind punt goed keuren om communicatie tussen de server en de werk ruimte mogelijk te maken.
 - **Studio** SQL-groepen in de **Data hub** een toegewezen SQL-groep die is ingeschakeld voor een werk ruimte (voorheen SQL DW), kunnen worden geïdentificeerd via de knop info in de data hub. 
-- **een nieuwe toegewezen SQL-groep maken (voorheen SQL DW)** Nieuwe toegewezen SQL-groepen kunnen worden gemaakt via de Synapse-werk ruimte en Studio nadat de werkruimte functie is ingeschakeld en de inrichting van een nieuwe groep wordt uitgevoerd op de logische SQL-Server. De nieuwe resources worden weer gegeven in de portal en Studio wanneer het inrichten is voltooid.      
+- **Een nieuwe toegewezen SQL-groep maken (voorheen SQL DW)** Nieuwe toegewezen SQL-groepen kunnen worden gemaakt via de Synapse-werk ruimte en Studio nadat de werkruimte functie is ingeschakeld en de inrichting van een nieuwe groep wordt uitgevoerd op de logische SQL-Server. De nieuwe resources worden weer gegeven in de portal en Studio wanneer het inrichten is voltooid.      
 
 ## <a name="next-steps"></a>Volgende stappen
 [Functies van Synapse-werk ruimte](workspace-connected-create.md) inschakelen in uw bestaande toegewezen SQL-groep (voorheen SQL DW)

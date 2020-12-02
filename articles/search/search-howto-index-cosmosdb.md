@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/11/2020
-ms.openlocfilehash: aed1aa03527481014a63c636181725b91b17a1e8
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: be7c6ec9dbc577143e6c7219580f42c876f536bc
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96003885"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499965"
 ---
 # <a name="how-to-index-cosmos-db-data-using-an-indexer-in-azure-cognitive-search"></a>Cosmos DB-gegevens indexeren met behulp van een indexeerfunctie in Azure Cognitive Search 
 
@@ -24,13 +24,13 @@ ms.locfileid: "96003885"
 > [Rest API Preview-versies](search-api-preview.md) bieden deze functies. Er is momenteel beperkte ondersteuning voor portals en geen ondersteuning voor de .NET-SDK.
 
 > [!WARNING]
-> Alleen Cosmos DB verzamelingen waarvoor een [indexerings beleid](/azure/cosmos-db/index-policy) is ingesteld op [consistent](/azure/cosmos-db/index-policy#indexing-mode) , worden ondersteund door Azure Cognitive Search. Het indexeren van verzamelingen met een Lazy-indexerings beleid wordt niet aanbevolen en kan leiden tot ontbrekende gegevens. Verzamelingen waarvoor indexeren is uitgeschakeld, worden niet ondersteund.
+> Alleen Cosmos DB verzamelingen waarvoor een [indexerings beleid](../cosmos-db/index-policy.md) is ingesteld op [consistent](../cosmos-db/index-policy.md#indexing-mode) , worden ondersteund door Azure Cognitive Search. Het indexeren van verzamelingen met een Lazy-indexerings beleid wordt niet aanbevolen en kan leiden tot ontbrekende gegevens. Verzamelingen waarvoor indexeren is uitgeschakeld, worden niet ondersteund.
 
 In dit artikel wordt beschreven hoe u een Azure Cosmos DB [Indexeer functie](search-indexer-overview.md) configureert om inhoud te extra heren en deze te doorzoeken in azure Cognitive Search. Met deze werk stroom wordt een Azure Cognitive Search-index gemaakt en wordt deze geladen met bestaande tekst die is geëxtraheerd uit Azure Cosmos DB. 
 
-Omdat de terminologie verwarrend kan zijn, is het een goed idee dat [Azure Cosmos DB indexering](/azure/cosmos-db/index-overview) en [Azure Cognitive Search indexeren](search-what-is-an-index.md) verschillende bewerkingen zijn, uniek zijn voor elke service. Voordat u begint met het indexeren van Azure Cognitive Search, moet uw Azure Cosmos DB-data base al bestaan en gegevens bevatten.
+Omdat de terminologie verwarrend kan zijn, is het een goed idee dat [Azure Cosmos DB indexering](../cosmos-db/index-overview.md) en [Azure Cognitive Search indexeren](search-what-is-an-index.md) verschillende bewerkingen zijn, uniek zijn voor elke service. Voordat u begint met het indexeren van Azure Cognitive Search, moet uw Azure Cosmos DB-data base al bestaan en gegevens bevatten.
 
-Met de Cosmos DB Indexeer functie in azure Cognitive Search kunt u [Azure Cosmos DB-items](../cosmos-db/databases-containers-items.md#azure-cosmos-items) die toegankelijk zijn via verschillende protocollen, verkennen. 
+Met de Cosmos DB Indexeer functie in azure Cognitive Search kunt u [Azure Cosmos DB-items](../cosmos-db/account-databases-containers-items.md#azure-cosmos-items) die toegankelijk zijn via verschillende protocollen, verkennen. 
 
 + Voor [SQL API](../cosmos-db/sql-query-getting-started.md), die algemeen beschikbaar is, kunt u de [Portal](#cosmos-indexer-portal), [rest API](/rest/api/searchservice/indexer-operations)of [.NET SDK](/dotnet/api/azure.search.documents.indexes.models.searchindexer) gebruiken om de gegevens bron en Indexeer functie te maken.
 
@@ -130,7 +130,7 @@ U kunt de REST API gebruiken om Azure Cosmos DB gegevens te indexeren, het volge
 > [!NOTE]
 > Voor het indexeren van gegevens uit Cosmos DB Gremlin API of Cosmos DB Cassandra-API moet u eerst toegang tot de gefeedte previews aanvragen door [dit formulier](https://aka.ms/azure-cognitive-search/indexer-preview)in te vullen. Zodra de aanvraag is verwerkt, ontvangt u instructies voor het gebruik van de [rest API versie 2020-06-30-preview](search-api-preview.md) om de gegevens bron te maken.
 
-Eerder in dit artikel wordt vermeld dat [Azure Cosmos DB](/azure/cosmos-db/index-overview) indexering en indexering van [Azure Cognitive Search](search-what-is-an-index.md) een afzonderlijke bewerking zijn. Voor het indexeren van Cosmos DB worden standaard alle documenten automatisch geïndexeerd, behalve met de Cassandra-API. Als u automatisch indexeren uitschakelt, kan alleen toegang worden verkregen tot documenten via hun eigen koppelingen of door query's met behulp van de document-ID. Voor het indexeren van Azure-Cognitive Search moet Cosmos DB automatisch indexeren zijn ingeschakeld in de verzameling die wordt geïndexeerd door Azure Cognitive Search. Wanneer u zich aanmeldt voor de Cosmos DB Cassandra-API Indexeer functie preview, krijgt u instructies voor het instellen van Cosmos DB indexeren.
+Eerder in dit artikel wordt vermeld dat [Azure Cosmos DB](../cosmos-db/index-overview.md) indexering en indexering van [Azure Cognitive Search](search-what-is-an-index.md) een afzonderlijke bewerking zijn. Voor het indexeren van Cosmos DB worden standaard alle documenten automatisch geïndexeerd, behalve met de Cassandra-API. Als u automatisch indexeren uitschakelt, kan alleen toegang worden verkregen tot documenten via hun eigen koppelingen of door query's met behulp van de document-ID. Voor het indexeren van Azure-Cognitive Search moet Cosmos DB automatisch indexeren zijn ingeschakeld in de verzameling die wordt geïndexeerd door Azure Cognitive Search. Wanneer u zich aanmeldt voor de Cosmos DB Cassandra-API Indexeer functie preview, krijgt u instructies voor het instellen van Cosmos DB indexeren.
 
 > [!WARNING]
 > Azure Cosmos DB is de volgende generatie DocumentDB. Eerder met API-versie **2017-11-11** kunt u de `documentdb` syntaxis gebruiken. Dit betekent dat u uw gegevens bron type kunt opgeven als `cosmosdb` of `documentdb` . Met ingang van API-versie **2019-05-06** worden de Azure Cognitive Search-api's en-Portal alleen ondersteund `cosmosdb` als in dit artikel wordt geadviseerd. Dit betekent dat het gegevens bron type moet zijn `cosmosdb` Als u verbinding wilt maken met een Cosmos DB eind punt.
@@ -391,7 +391,7 @@ In het volgende voor beeld wordt een gegevens bron gemaakt met een voorlopig ver
 
 ## <a name="next-steps"></a><a name="NextSteps"></a>Volgende stappen
 
-Gefeliciteerd U hebt geleerd hoe u Azure Cosmos DB met Azure Cognitive Search integreert met behulp van een Indexeer functie.
+Gefeliciteerd! U hebt geleerd hoe u Azure Cosmos DB met Azure Cognitive Search integreert met behulp van een Indexeer functie.
 
 * Zie de [pagina Azure Cosmos DB Service](https://azure.microsoft.com/services/cosmos-db/)voor meer informatie over Azure Cosmos db.
 * Zie de [pagina zoek service](https://azure.microsoft.com/services/search/)voor meer informatie over Azure Cognitive Search.

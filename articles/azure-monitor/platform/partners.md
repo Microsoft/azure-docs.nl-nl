@@ -4,12 +4,12 @@ description: Meer informatie over de partners van Azure Monitor en hoe u toegang
 ms.subservice: ''
 ms.topic: conceptual
 ms.date: 09/21/2020
-ms.openlocfilehash: d603e130d4e65667edb34121a4c89b7b0e02b819
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: 6e707e77f4618d71cb2fa3f32b05895b97658f76
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94636738"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500237"
 ---
 # <a name="azure-monitor-partner-integrations"></a>Integraties van Azure Monitor-partner
 
@@ -263,7 +263,7 @@ Verminder incidenten en MTTR met het AIOps-platform om lawaai te elimineren, de 
 
 ![SignalFX-logo](./media/partners/signalfx.png)
 
-SignalFx is de leider in realtime operationele informatie voor gegevensgestuurde DevOps. De service detecteert en verzamelt metrische gegevens over elk onderdeel in de Cloud. Het vervangt de traditionele punt gereedschappen en biedt real-time inzicht in de dynamische omgevingen van vandaag. Dankzij het uiterst schaal bare SignalFx platform is het SaaS-platform geoptimaliseerd voor architecturen en micro Services op basis van architectuur en biedt het krachtige visualisatie, proactieve waarschuwingen en samen werking van sorteren-mogelijkheden voor organisaties van elke omvang. SignalFx kan rechtstreeks worden geïntegreerd met Azure Monitor en via open source-connectors, zoals *telegrafie* , *Statistieken* en *verzamelde* , zodat u de beste Dash boards, analyses en waarschuwingen voor Azure kunt krijgen.
+SignalFx is de leider in realtime operationele informatie voor gegevensgestuurde DevOps. De service detecteert en verzamelt metrische gegevens over elk onderdeel in de Cloud. Het vervangt de traditionele punt gereedschappen en biedt real-time inzicht in de dynamische omgevingen van vandaag. Dankzij het uiterst schaal bare SignalFx platform is het SaaS-platform geoptimaliseerd voor architecturen en micro Services op basis van architectuur en biedt het krachtige visualisatie, proactieve waarschuwingen en samen werking van sorteren-mogelijkheden voor organisaties van elke omvang. SignalFx kan rechtstreeks worden geïntegreerd met Azure Monitor en via open source-connectors, zoals *telegrafie*, *Statistieken* en *verzamelde* , zodat u de beste Dash boards, analyses en waarschuwingen voor Azure kunt krijgen.
 
 [Documentatie voor signalfx](https://docs.signalfx.com/en/latest/getting-started/send-data.html#connect-to-azure)
 
@@ -310,6 +310,20 @@ Sumo Logic is een beveiligde, Cloud systeem eigen machine voor gegevens analyse,
 Turbonomic levert werkbelasting automatisering voor hybride Clouds door tegelijkertijd de prestaties, kosten en naleving in realtime te optimaliseren. Turbonomic helpt organisaties in hun Azure-omgeving te elastisch door voortdurend het vermogen te optimaliseren om ervoor te zorgen dat toepassingen voortdurend de bronnen krijgen die ze nodig hebben om hun SLA te leveren en niets meer over compute, opslag en netwerk voor de IaaS-en PaaS-laag. Organisaties kunnen migraties simuleren, werk belastingen op de juiste schaal schalen en Datacenter bronnen buiten gebruik stellen voor een verantwoorde migratie naar Azure-tijd, binnen het budget, terwijl de prestaties en naleving worden gegarandeerd. Turbonomic is API-gestuurde en wordt uitgevoerd als een virtuele machine zonder agent in Azure en on-premises.
 
 [Turbonomic-Inleiding](https://turbonomic.com/)
+
+## <a name="partner-tools-with-event-hub-integration"></a>Partner hulpprogramma's met Event hub-integratie
+
+Met Azure Monitor voor het door sturen van bewakings gegevens naar een Azure Event hub kunt u eenvoudig integreren met een aantal externe SIEM en controle hulpprogramma's. De volgende partners zijn bekend als integratie via event hub. 
+
+| Hulpprogramma | Gehost in azure | Beschrijving |
+|:---|:---| :---|
+|  IBM QRadar | Nee | Het Microsoft Azure DSM en Microsoft Azure Event hub-protocol kunnen worden gedownload via [de website van IBM-ondersteuning](https://www.ibm.com/support). Meer informatie over de integratie met Azure vindt u in de [configuratie van QRADAR DSM](https://www.ibm.com/support/knowledgecenter/SS42VS_DSM/c_dsm_guide_microsoft_azure_overview.html?cp=SS42VS_7.3.0). |
+| Splunk | Nee | [Microsoft Azure Add-On voor Splunk](https://splunkbase.splunk.com/app/3757/) is een open-source project dat beschikbaar is in Splunkbase. <br><br> Als u een invoeg toepassing in uw Splunk-exemplaar niet kunt installeren, als u bijvoorbeeld een proxy gebruikt of wordt uitgevoerd op Splunk Cloud, kunt u deze gebeurtenissen door sturen naar de Splunk HTTP-gebeurtenis verzamelaar met de [Azure-functie voor Splunk](https://github.com/Microsoft/AzureFunctionforSplunkVS), die wordt geactiveerd door nieuwe berichten in de Event hub. |
+| SumoLogic | Nee | Instructies voor het instellen van SumoLogic om gegevens van een Event Hub te gebruiken, zijn beschikbaar in [Logboeken verzamelen voor de Azure audit-app vanuit Event hub](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure-Audit/02Collect-Logs-for-Azure-Audit-from-Event-Hub). |
+| ArcSight | Nee | De ArcSight Azure Event hub Smart connector is beschikbaar als onderdeel van [de verzameling van de ArcSight slimme connector](https://community.softwaregrp.com/t5/Discussions/Announcing-General-Availability-of-ArcSight-Smart-Connectors-7/m-p/1671852). |
+| Syslog-server | Nee | Als u Azure Monitor gegevens rechtstreeks naar een syslog-server wilt streamen, kunt u een [oplossing gebruiken op basis van een Azure-functie](https://github.com/miguelangelopereira/azuremonitor2syslog/).
+| LogRhythm | Nee| Instructies voor het instellen van LogRhythm voor het verzamelen van logboeken van een Event Hub zijn [hier](https://logrhythm.com/six-tips-for-securing-your-azure-cloud-environment/)beschikbaar. 
+|Logz.io | Ja | Zie voor meer informatie aan de slag [met bewaking en logboek registratie met behulp van Logz.io voor java-apps die worden uitgevoerd op Azure](/azure/developer/java/fundamentals/java-get-started-with-logzio)
 
 
 ## <a name="next-steps"></a>Volgende stappen

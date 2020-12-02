@@ -10,12 +10,12 @@ ms.author: robinsh
 ms.custom:
 - amqp
 - mqtt
-ms.openlocfilehash: 9010ff582f05e81e17e280e20f180ceccf0e746f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5a43eb2537ebc09ffcb524a4426d7a8c9bec560b
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81733203"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499999"
 ---
 # <a name="develop-for-constrained-devices-using-azure-iot-c-sdk"></a>Ontwikkelen voor beperkte apparaten met behulp van de Azure IoT C-SDK
 
@@ -29,6 +29,9 @@ C SDK is beschikbaar in pakket vorm van apt-get, NuGet en MBED. Als u beperkte a
 ## <a name="building-the-c-sdk-for-constrained-devices"></a>De C SDK bouwen voor beperkte apparaten
 
 Bouw de C SDK voor beperkte apparaten.
+
+> [!NOTE]
+> De embedded C SDK is een alternatief voor beperkte apparaten die ondersteuning bieden voor de aanpak van uw eigen netwerk (BYON). IoT-ontwikkel aars hebben de vrijheid om de MQTT-client, TLS en socket van hun keuze te maken om een oplossing voor een apparaat te creëren. Meer [informatie over de embedded C SDK](https://github.com/Azure/azure-sdk-for-c/tree/master/sdk/docs/iot).
 
 ### <a name="prerequisites"></a>Vereisten
 

@@ -8,14 +8,14 @@ ms.date: 04/24/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: contperfq1
-ms.openlocfilehash: 839ba1f8a5215c9059cfeff6e2158165b154f1f7
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 3b0acd683309ceb105c49dc5b0bd493ce2e461b9
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289353"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500424"
 ---
-# <a name="introduction-to-azure-managed-disks"></a>Inleiding tot beheerde Azure-schijven
+# <a name="introduction-to-azure-managed-disks"></a>Inleiding tot Azure Managed disks
 
 Azure Managed disks zijn opslag volumes op blok niveau die worden beheerd door Azure en worden gebruikt met Azure Virtual Machines. Managed disks zijn vergelijkbaar met een fysieke schijf op een on-premises server, maar zijn gevirtualiseerd. Met Managed disks hoeft u alleen maar de schijf grootte en het schijf type op te geven en de schijf in te richten. Wanneer u de schijf hebt ingericht, wordt de rest door Azure afgehandeld.
 
@@ -31,7 +31,7 @@ Beheerde schijven zijn ontworpen voor een beschikbaarheid van 99,999%. Beheerde 
 
 ### <a name="simple-and-scalable-vm-deployment"></a>Eenvoudige en schaalbare VM-implementatie
 
-Met beheerde schijven kunt u maximaal 50.000 VM- **schijven** van een type in een abonnement per regio maken, zodat u duizenden **VM's** kunt maken in één abonnement. Deze functie verhoogt ook de schaalbaarheid van [schaalsets voor virtuele machines](../virtual-machine-scale-sets/overview.md) omdat u maximaal 1.000 VM's in een schaalset voor virtuele machines kunt maken met behulp van een Marketplace-installatiekopie.
+Met beheerde schijven kunt u maximaal 50.000 VM-**schijven** van een type in een abonnement per regio maken, zodat u duizenden **VM's** kunt maken in één abonnement. Deze functie verhoogt ook de schaalbaarheid van [schaalsets voor virtuele machines](../virtual-machine-scale-sets/overview.md) omdat u maximaal 1.000 VM's in een schaalset voor virtuele machines kunt maken met behulp van een Marketplace-installatiekopie.
 
 ### <a name="integration-with-availability-sets"></a>Integratie met beschikbaarheidssets
 
@@ -71,7 +71,7 @@ Beheerde schijven bieden twee verschillende soorten versleuteling. De eerste is 
 
 Met versleuteling aan serverzijde kunt u inactieve gegevens versleutelen en kunt u uw gegevens zodanig beschermen dat wordt voldaan aan de beveiligings- en nalevingsverplichtingen van de organisatie. SSE is standaard ingeschakeld voor alle beheerde schijven, momentopnamen en installatiekopieën in alle regio's waar beheerde schijven beschikbaar zijn. (Tijdelijke schijven worden daarentegen niet versleuteld door versleuteling aan serverzijde tenzij u versleuteling inschakelt op de host; zie [Schijfrollen: tijdelijke schijven](#temporary-disk)).
 
-U kunt Azure toestaan uw sleutels voor u te beheren (dit zijn door het platform beheerde sleutels) of u kunt de sleutels zelf beheren (door de klant beheerde sleutels). Lees het artikel [Versleuteling aan serverzijde van Azure Disk Storage](windows/disk-encryption.md) voor meer informatie.
+U kunt Azure toestaan uw sleutels voor u te beheren (dit zijn door het platform beheerde sleutels) of u kunt de sleutels zelf beheren (door de klant beheerde sleutels). Lees het artikel [Versleuteling aan serverzijde van Azure Disk Storage](./disk-encryption.md) voor meer informatie.
 
 
 #### <a name="azure-disk-encryption"></a>Azure Disk Encryption
@@ -96,7 +96,7 @@ Deze schijf heeft een maximale capaciteit van 4.095 GiB.
 
 ### <a name="temporary-disk"></a>Tijdelijke schijf
 
-De meeste Vm's bevatten een tijdelijke schijf, die geen beheerde schijf is. De tijdelijke schijf biedt kortetermijnbeveiliging voor toepassingen en processen en is bedoeld om alleen gegevens op te slaan, zoals pagina-of Wissel bestanden. Gegevens op de tijdelijke schijf kunnen verloren gaan tijdens een [onderhoudsgebeurtenis](./manage-availability.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json#understand-vm-reboots---maintenance-vs-downtime) of wanneer u een [virtuele machine opnieuw implementeert](troubleshooting/redeploy-to-new-node-windows.md?toc=/azure/virtual-machines/windows/toc.json). Tijdens een geslaagde standaard herstart van de virtuele machine blijven de gegevens op de tijdelijke schijf behouden. Voor meer informatie over virtuele machines zonder tijdelijke schijven raadpleegt u [Azure VM-grootten met geen lokale tijdelijke schijf](azure-vms-no-temp-disk.md).
+De meeste Vm's bevatten een tijdelijke schijf, die geen beheerde schijf is. De tijdelijke schijf biedt kortetermijnbeveiliging voor toepassingen en processen en is bedoeld om alleen gegevens op te slaan, zoals pagina-of Wissel bestanden. Gegevens op de tijdelijke schijf kunnen verloren gaan tijdens een [onderhoudsgebeurtenis](./manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#understand-vm-reboots---maintenance-vs-downtime) of wanneer u een [virtuele machine opnieuw implementeert](troubleshooting/redeploy-to-new-node-windows.md?toc=/azure/virtual-machines/windows/toc.json). Tijdens een geslaagde standaard herstart van de virtuele machine blijven de gegevens op de tijdelijke schijf behouden. Voor meer informatie over virtuele machines zonder tijdelijke schijven raadpleegt u [Azure VM-grootten met geen lokale tijdelijke schijf](azure-vms-no-temp-disk.md).
 
 Op virtuele machines van Azure Linux is de tijdelijke schijf doorgaans /dev/sdb en op virtuele Windows-machines is de tijdelijke schijf standaard D:. De tijdelijke schijf wordt niet versleuteld door versleuteling aan serverzijde tenzij u versleuteling inschakelt op de host.
 

@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 09/06/2016
 ms.author: rclaus
 ms.subservice: disks
-ms.openlocfilehash: fceef1fa9f79ead0ffbbfd7de17b21b750659fc9
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 1e3551834e7664d5036fa8a5e0497e5a37f61c2f
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92370233"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498503"
 ---
 # <a name="optimize-your-linux-vm-on-azure"></a>Uw Linux-VM optimaliseren voor Azure
 Het maken van een virtuele Linux-machine (VM) is eenvoudig vanuit de opdracht regel of vanuit de portal. In deze zelf studie ziet u hoe u ervoor kunt zorgen dat u deze hebt ingesteld om de prestaties van het Microsoft Azure platform te optimaliseren. In dit onderwerp wordt een Ubuntu-Server-VM gebruikt, maar u kunt ook virtuele Linux-machine maken met behulp van [uw eigen installatie kopieën als sjablonen](create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).  
@@ -29,9 +29,9 @@ Op basis van de VM-grootte kunt u Maxi maal 16 extra schijven op a-Series, 32-sc
 
 Als u de hoogste IOps wilt benutten op Premium Storage schijven waarop de cache-instellingen zijn ingesteld op **alleen-lezen** of op **geen**, moet u **belemmeringen** uitschakelen bij het koppelen van het bestands systeem in Linux. U hebt geen obstakels nodig omdat de schrijf bewerkingen naar Premium Storage schijven duurzaam zijn voor deze cache-instellingen.
 
-* Als u **reiserFS**gebruikt, schakelt u belemmeringen uit met behulp van de optie voor het koppelen `barrier=none` (voor het inschakelen van belemmeringen `barrier=flush` )
-* Als u **ext3/ext4**gebruikt, schakelt u belemmeringen uit met de optie voor het koppelen `barrier=0` (voor het inschakelen van belemmeringen `barrier=1` )
-* Als u **xfs**gebruikt, schakelt u belemmeringen uit met de optie voor het koppelen `nobarrier` (voor het inschakelen van barrières gebruikt u de optie `barrier` )
+* Als u **reiserFS** gebruikt, schakelt u belemmeringen uit met behulp van de optie voor het koppelen `barrier=none` (voor het inschakelen van belemmeringen `barrier=flush` )
+* Als u **ext3/ext4** gebruikt, schakelt u belemmeringen uit met de optie voor het koppelen `barrier=0` (voor het inschakelen van belemmeringen `barrier=1` )
+* Als u **xfs** gebruikt, schakelt u belemmeringen uit met de optie voor het koppelen `nobarrier` (voor het inschakelen van barrières gebruikt u de optie `barrier` )
 
 ## <a name="unmanaged-storage-account-considerations"></a>Overwegingen voor onbeheerd opslag account
 De standaard actie bij het maken van een virtuele machine met Azure CLI is het gebruik van Azure Managed Disks.  Deze schijven worden verwerkt door het Azure-platform en vereisen geen voor bereiding of locatie om ze op te slaan.  Voor niet-beheerde schijven is een opslag account vereist en er zijn een aantal extra prestatie overwegingen.  Zie voor meer informatie over beheerde schijven [overzicht Azure Managed Disks](../managed-disks-overview.md).  De volgende sectie geeft een overzicht van de prestatie overwegingen alleen wanneer u niet-beheerde schijven gebruikt.  De standaard en Aanbevolen opslag oplossing is om beheerde schijven te gebruiken.
@@ -150,9 +150,9 @@ echo 'echo noop >/sys/block/sda/queue/scheduler' >> /etc/rc.local
 Ubuntu 18,04 met de door Azure afgestemde kernel maakt gebruik van I/O-planners met meerdere wacht rijen. In dat scenario `none` is de juiste selectie in plaats van `noop` . Zie [Ubuntu I/O-planners](https://wiki.ubuntu.com/Kernel/Reference/IOSchedulers)voor meer informatie.
 
 ## <a name="using-software-raid-to-achieve-higher-iops"></a>Software-RAID gebruiken om hogere I/ops te krijgen
-Als uw werk belasting meer IOps vereist dan één schijf kan bieden, moet u een software matige RAID-configuratie van meerdere schijven gebruiken. Omdat Azure schijf tolerantie al uitvoert op de lokale Fabric-laag, bereikt u het hoogste prestatie niveau van een RAID-0-Stripe-configuratie.  U kunt schijven inrichten en maken in de Azure-omgeving en deze koppelen aan uw virtuele Linux-machine voordat u partitioneert, de schijven formatteert en koppelt.  Meer informatie over het configureren van een software-RAID-installatie op uw virtuele Linux-machine in azure vindt u in het document **[Software RAID in Linux configureren](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)** .
+Als uw werk belasting meer IOps vereist dan één schijf kan bieden, moet u een software matige RAID-configuratie van meerdere schijven gebruiken. Omdat Azure schijf tolerantie al uitvoert op de lokale Fabric-laag, bereikt u het hoogste prestatie niveau van een RAID-0-Stripe-configuratie.  U kunt schijven inrichten en maken in de Azure-omgeving en deze koppelen aan uw virtuele Linux-machine voordat u partitioneert, de schijven formatteert en koppelt.  Meer informatie over het configureren van een software-RAID-installatie op uw virtuele Linux-machine in azure vindt u in het document **[Software RAID in Linux configureren](/previous-versions/azure/virtual-machines/linux/configure-raid?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)** .
 
-Als alternatief voor een traditionele RAID-configuratie kunt u er ook voor kiezen om Logical Volume Manager (LVM) te installeren om een aantal fysieke schijven te configureren in één gestripte logische opslag volume. In deze configuratie worden lees-en schrijf bewerkingen gedistribueerd naar meerdere schijven in de volume groep (vergelijkbaar met RAID0). Uit het oogpunt van prestaties is het waarschijnlijk dat u uw logische volumes wilt verwijderen zodat Lees-en schrijf bewerkingen gebruikmaken van alle gekoppelde gegevens schijven.  Meer informatie over het configureren van een gesegmenteerd logisch volume op uw virtuele Linux-machine in azure vindt u in de **[LVM configureren op een virtuele Linux-machine in azure](configure-lvm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)** document.
+Als alternatief voor een traditionele RAID-configuratie kunt u er ook voor kiezen om Logical Volume Manager (LVM) te installeren om een aantal fysieke schijven te configureren in één gestripte logische opslag volume. In deze configuratie worden lees-en schrijf bewerkingen gedistribueerd naar meerdere schijven in de volume groep (vergelijkbaar met RAID0). Uit het oogpunt van prestaties is het waarschijnlijk dat u uw logische volumes wilt verwijderen zodat Lees-en schrijf bewerkingen gebruikmaken van alle gekoppelde gegevens schijven.  Meer informatie over het configureren van een gesegmenteerd logisch volume op uw virtuele Linux-machine in azure vindt u in de **[LVM configureren op een virtuele Linux-machine in azure](/previous-versions/azure/virtual-machines/linux/configure-lvm?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)** document.
 
 ## <a name="next-steps"></a>Volgende stappen
 Houd er rekening mee dat, net als bij alle optimalisatie-discussies, tests moeten worden uitgevoerd voor en na elke wijziging om de impact van de wijziging te meten.  Optimalisatie is een stapsgewijs proces dat verschillende resultaten heeft op verschillende computers in uw omgeving.  Wat werkt voor één configuratie, werkt mogelijk niet voor anderen.
@@ -160,4 +160,4 @@ Houd er rekening mee dat, net als bij alle optimalisatie-discussies, tests moete
 Enkele handige koppelingen naar aanvullende bronnen:
 
 * [Gebruikershandleiding voor Azure Linux Agent](../extensions/agent-linux.md)
-* [Software-RAID op Linux configureren](configure-raid.md)
+* [Software-RAID op Linux configureren](/previous-versions/azure/virtual-machines/linux/configure-raid)

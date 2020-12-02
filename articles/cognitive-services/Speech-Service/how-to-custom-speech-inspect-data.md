@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.author: erhopf
-ms.openlocfilehash: a3ff2a1f92cabb61f58d70b732738e613afa7cd9
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 87bc411903604a7068f346604853a2a61c9a6f1c
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95025630"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499183"
 ---
 # <a name="inspect-custom-speech-data"></a>Custom Speech-gegevens controleren
 
@@ -35,7 +35,7 @@ Volg deze instructies om een test te maken:
 3. Klik op **test toevoegen**.
 4. Selecteer **kwaliteit controleren (alleen audio gegevens)**. Geef de test een naam, beschrijving en selecteer uw audio gegevensset.
 5. Selecteer Maxi maal twee modellen die u wilt testen.
-6. Klik op **Create**.
+6. Klik op **Maken**.
 
 Nadat een test is gemaakt, kunt u zien hoe een model de door u opgegeven audio gegevensset transcribeert of resultaten vergelijken van twee modellen naast elkaar.
 
@@ -99,9 +99,9 @@ De bestanden die naar gegevens worden geëxporteerd, worden gebruikt als een mer
 
 - [Uw gegevens evalueren](how-to-custom-speech-evaluate-data.md)
 - [Uw model trainen](how-to-custom-speech-train-model.md)
-- [Uw model verbeteren](how-to-custom-speech-improve-accuracy.md)
-- [Uw model implementeren](how-to-custom-speech-deploy-model.md)
+- [Uw model verbeteren](./how-to-custom-speech-evaluate-data.md)
+- [Uw model implementeren](./how-to-custom-speech-train-model.md)
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+## <a name="additional-resources"></a>Aanvullende resources
 
 - [Test gegevens voorbereiden voor Custom Speech](./how-to-custom-speech-test-and-train.md)

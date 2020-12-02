@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: how-to
 ms.date: 09/12/2019
 ms.author: cynthn
-ms.openlocfilehash: 05241715663ac2cbb90e16f345398f863541e6ed
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: efcfb2fd431dd9626ddcf918127964672b0e5ce0
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91972200"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500475"
 ---
 # <a name="install-and-configure-remote-desktop-to-connect-to-a-linux-vm-in-azure"></a>Extern bureaublad installeren en configureren om verbinding te maken met een virtuele Linux-machine in azure
 Virtuele Linux-machines (Vm's) in Azure worden meestal beheerd vanaf de opdracht regel met behulp van een SSH-verbinding (Secure Shell). Wanneer u geen ervaring hebt met Linux of voor snelle probleemoplossings scenario's, is het gebruik van extern bureau blad mogelijk eenvoudiger. In dit artikel wordt beschreven hoe u een desktop-omgeving ([xfce](https://www.xfce.org)) en extern bureau blad ([xrdp](http://xrdp.org)) installeert en configureert voor uw virtuele Linux-machine met behulp van het Resource Manager-implementatie model.
@@ -73,7 +73,7 @@ sudo service xrdp restart
 
 
 ## <a name="set-a-local-user-account-password"></a>Een wacht woord voor een lokale gebruikers account instellen
-Als u een wacht woord hebt gemaakt voor uw gebruikers account tijdens het maken van de VM, slaat u deze stap over. Als u alleen SSH-sleutel verificatie gebruikt en geen wacht woord voor een lokale account hebt ingesteld, geeft u een wacht woord op voordat u xrdp gebruikt om u aan te melden bij uw VM. xrdp kan geen SSH-sleutels voor verificatie accepteren. In het volgende voor beeld wordt een wacht woord voor het gebruikers account *azureuser*opgegeven:
+Als u een wacht woord hebt gemaakt voor uw gebruikers account tijdens het maken van de VM, slaat u deze stap over. Als u alleen SSH-sleutel verificatie gebruikt en geen wacht woord voor een lokale account hebt ingesteld, geeft u een wacht woord op voordat u xrdp gebruikt om u aan te melden bij uw VM. xrdp kan geen SSH-sleutels voor verificatie accepteren. In het volgende voor beeld wordt een wacht woord voor het gebruikers account *azureuser* opgegeven:
 
 ```bash
 sudo passwd azureuser
@@ -84,7 +84,7 @@ sudo passwd azureuser
 
 
 ## <a name="create-a-network-security-group-rule-for-remote-desktop-traffic"></a>Een regel voor de netwerk beveiligings groep voor Extern bureaublad verkeer maken
-Als u wilt toestaan dat Extern bureaublad verkeer uw virtuele Linux-machine bereikt, moet er een regel voor de netwerk beveiligings groep worden gemaakt waarmee TCP op poort 3389 uw virtuele machine kan bereiken. Zie [Wat is een netwerk beveiligings groep?](../../virtual-network/network-security-groups-overview.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) voor meer informatie over regels voor netwerk beveiligings groepen. U kunt ook [de Azure Portal gebruiken om een regel voor een netwerk beveiligings groep te maken](../windows/nsg-quickstart-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Als u wilt toestaan dat Extern bureaublad verkeer uw virtuele Linux-machine bereikt, moet er een regel voor de netwerk beveiligings groep worden gemaakt waarmee TCP op poort 3389 uw virtuele machine kan bereiken. Zie [Wat is een netwerk beveiligings groep?](../../virtual-network/network-security-groups-overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) voor meer informatie over regels voor netwerk beveiligings groepen. U kunt ook [de Azure Portal gebruiken om een regel voor een netwerk beveiligings groep te maken](../windows/nsg-quickstart-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 In het volgende voor beeld wordt een regel voor een netwerk beveiligings groep gemaakt met [AZ VM Open-Port](/cli/azure/vm#az-vm-open-port) op poort *3389*. Open vanuit de Azure CLI, niet de SSH-sessie naar uw virtuele machine, de volgende regel voor de netwerk beveiligings groep:
 

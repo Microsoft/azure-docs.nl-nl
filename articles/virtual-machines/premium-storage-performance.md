@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/05/2020
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 6519f9d549c513e03400366447812a170f9ab41c
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: acdddcd95883d13393838a47281fb888ac2f9274
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91978659"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500390"
 ---
 # <a name="azure-premium-storage-design-for-high-performance"></a>Azure Premium-opslag: ontwerpen voor hoge prestaties
 
@@ -152,7 +152,7 @@ Zie [grootten voor virtuele machines in azure](sizes.md)voor meer informatie ove
 | **Prestatie factoren** | &nbsp; | &nbsp; | &nbsp; |
 | **I/o-grootte** |Bij een kleinere IO-grootte wordt een hogere IOPS als resultaat verkregen. |Grotere IO-grootte om een hogere door voer te leveren. | &nbsp;|
 | **VM-grootte** |Gebruik een VM-grootte die IOPS groter is dan de vereiste van uw toepassing. |Gebruik een VM-grootte met een doorvoer limiet van meer dan uw toepassings vereiste. |Gebruik een VM-grootte die groter is dan de vereiste schaal limieten. |
-| **Schijf grootte** |Gebruik een schijf grootte met IOPS die groter is dan de vereiste van uw toepassing. |Gebruik een schijf grootte met een doorvoer limiet van meer dan uw toepassings vereiste. |Gebruik een schijf grootte die hoger is dan de vereiste voor uw toepassing. |
+| **Schijfgrootte** |Gebruik een schijf grootte met IOPS die groter is dan de vereiste van uw toepassing. |Gebruik een schijf grootte met een doorvoer limiet van meer dan uw toepassings vereiste. |Gebruik een schijf grootte die hoger is dan de vereiste voor uw toepassing. |
 | **Schaal limieten voor VM'S en schijven** |De limiet voor IOPS van de gekozen VM-grootte moet groter zijn dan het totale aantal IOPS dat wordt aangestuurd door de opslag schijven die eraan zijn gekoppeld. |De doorvoer limiet van de gekozen VM-grootte moet groter zijn dan de totale door Voer die wordt aangestuurd door de Premium-opslag schijven die eraan zijn gekoppeld. |De schaal limieten van de gekozen VM-grootte moeten groter zijn dan de totale schaal limieten van gekoppelde Premium Storage-schijven. |
 | **Schijf cache** |Schakel alleen-lezen cache op Premium-opslag schijven in met zware bewerkingen om meer Lees-IOPS te krijgen. | &nbsp; |Schakel alleen-lezen cache op Premium-opslag schijven met kant-en-klare bewerkingen uit om zeer weinig lees latentie te verkrijgen. |
 | **Schijf striping** |Gebruik meerdere schijven en strip deze samen om een gecombineerde hogere IOPS en doorvoer limiet te verkrijgen. De gecombineerde limiet per VM moet hoger zijn dan de gecombineerde limieten van gekoppelde Premium-schijven. | &nbsp; | &nbsp; |
@@ -222,7 +222,7 @@ Als u echter dezelfde toepassing op Premium Storage hebt gehost, hebt u een klei
 
 Onderstaande tabel bevat een overzicht van de kosten analyse van dit scenario voor Standard en Premium Storage.
 
-| &nbsp; | **Standard** | **Premium** |
+| &nbsp; | **Standard** | **Ultieme** |
 | --- | --- | --- |
 | **Kosten van VM per maand** |$1.570,58 (standaard \_ D14) |$1.003,66 (standaard \_ DS13) |
 | **Kosten van schijven per maand** |$1.638,40 (32 x 1 TB schijven) |$544,34 (4 x P30 schijven) |
@@ -307,9 +307,9 @@ Als voor beeld kunt u deze richt lijnen Toep assen op SQL Server die worden uitg
 
 Voor alle Premium-Ssd's of Ultra disks kunt u ' obstakels ' voor bestands systemen op de schijf uitschakelen om de prestaties te verbeteren wanneer het bekend is dat er geen caches zijn die gegevens kunnen verliezen.  Als de cache van Azure disk is ingesteld op ReadOnly of geen, kunt u belemmeringen uitschakelen.  Maar als caching is ingesteld op ReadWrite, moeten belemmeringen ingeschakeld blijven om de schrijf duurzaamheid te garanderen.  Obstakels zijn doorgaans standaard ingeschakeld, maar u kunt belemmeringen uitschakelen met een van de volgende methoden, afhankelijk van het bestands systeem type:
 
-* Gebruik voor **reiserFS**de optie blok keren = geen koppeling om belemmeringen uit te scha kelen.  Als u belemmeringen expliciet wilt inschakelen, gebruikt u ring = flush.
-* Voor **ext3/ext4**gebruikt u de optie blok keren = 0 om belemmeringen uit te scha kelen.  Als u belemmeringen expliciet wilt inschakelen, gebruikt u blok = 1.
-* Gebruik voor **xfs**de optie voor het koppelen van de ring om belemmeringen uit te scha kelen.  Gebruik een barrière om belemmeringen expliciet in te scha kelen.  Houd er rekening mee dat in latere versies van Linux-kernel het ontwerp van XFS-bestands systeem altijd zorgt voor duurzaamheid en het uitschakelen van belemmeringen geen effect heeft.  
+* Gebruik voor **reiserFS** de optie blok keren = geen koppeling om belemmeringen uit te scha kelen.  Als u belemmeringen expliciet wilt inschakelen, gebruikt u ring = flush.
+* Voor **ext3/ext4** gebruikt u de optie blok keren = 0 om belemmeringen uit te scha kelen.  Als u belemmeringen expliciet wilt inschakelen, gebruikt u blok = 1.
+* Gebruik voor **xfs** de optie voor het koppelen van de ring om belemmeringen uit te scha kelen.  Gebruik een barrière om belemmeringen expliciet in te scha kelen.  Houd er rekening mee dat in latere versies van Linux-kernel het ontwerp van XFS-bestands systeem altijd zorgt voor duurzaamheid en het uitschakelen van belemmeringen geen effect heeft.  
 
 ## <a name="disk-striping"></a>Schijf striping
 
@@ -319,7 +319,7 @@ In Windows kunt u opslag ruimten gebruiken om schijven samen te strepen. U moet 
 
 Belang rijk: het gebruik van Serverbeheer gebruikers interface kunt u het totale aantal kolommen instellen op 8 voor een striped volume. Wanneer u meer dan acht schijven koppelt, gebruikt u Power shell om het volume te maken. Met behulp van Power shell kunt u het aantal kolommen instellen dat gelijk is aan het aantal schijven. Als er bijvoorbeeld 16 schijven in één stripeset zijn ingesteld; Geef 16 kolommen op in de para meter *NumberOfColumns* van de Power shell-cmdlet *New-VirtualDisk* .
 
-Gebruik in Linux het MDADM-hulp programma om schijven samen te strippen. Zie [Software RAID op Linux configureren](linux/configure-raid.md)voor gedetailleerde stappen voor het verwijderen van schijven in Linux.
+Gebruik in Linux het MDADM-hulp programma om schijven samen te strippen. Zie [Software RAID op Linux configureren](/previous-versions/azure/virtual-machines/linux/configure-raid)voor gedetailleerde stappen voor het verwijderen van schijven in Linux.
 
 *Streepgrootte*  
 Een belang rijke configuratie van schijf striping is de Stripe-grootte. De Stripe-grootte of blok grootte is het kleinste deel van de gegevens dat een toepassing op een striped volume kan adresseren. De Stripe-grootte die u configureert, is afhankelijk van het type toepassing en het bijbehorende aanvraag patroon. Als u de verkeerde Stripe-grootte kiest, kan dit leiden tot een onjuiste uitlijning van IO, wat leidt tot verminderde prestaties van uw toepassing.

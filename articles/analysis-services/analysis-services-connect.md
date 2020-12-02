@@ -4,16 +4,16 @@ description: Meer informatie over hoe u verbinding kunt maken met en gegevens ku
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 09/04/2020
+ms.date: 12/01/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.custom: references_regions
-ms.openlocfilehash: 93b1e9a2ea052a39e891cf9084b632f434c341df
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 4abe1e9c6f9d7b62792936f816b9c46a937be41a
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92013692"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499421"
 ---
 # <a name="connecting-to-servers"></a>Verbinding maken met servers
 
@@ -21,7 +21,7 @@ In dit artikel wordt beschreven hoe u verbinding maakt met een server met behulp
 
 ## <a name="client-libraries"></a>Clientbibliotheken
 
-[De nieuwste client bibliotheken ophalen](/analysis-services/client-libraries?view=azure-analysis-services-current)
+[De nieuwste client bibliotheken ophalen](/analysis-services/client-libraries?view=azure-analysis-services-current&preserve-view=true)
 
 Alle verbindingen met een server, ongeacht het type, vereisen bijgewerkte AMO-, ADOMD.NET-en OLEDB-client bibliotheken om verbinding te maken met en een interface met een Analysis Services-server. Voor SSMS, Visual Studio, Excel 2016 en hoger, en Power BI, worden de meest recente client bibliotheken geïnstalleerd of bijgewerkt met maandelijkse releases. In sommige gevallen is het echter mogelijk dat een toepassing niet de meest recente heeft. Bijvoorbeeld wanneer beleids regels updates vertragen of Microsoft 365 updates op het uitgestelde kanaal staan.
 
@@ -35,11 +35,11 @@ Wanneer u een Analysis Services-server maakt in azure, geeft u een unieke naam e
 ```
 <protocol>://<region>/<servername>
 ```
- Waarbij het protocol de teken reeks **asazure**is, is de regio de URI waarin de server is gemaakt (bijvoorbeeld westus.asazure.Windows.net) en servername de naam is van uw unieke server in de regio.
+ Waarbij het protocol de teken reeks **asazure** is, is de regio de URI waarin de server is gemaakt (bijvoorbeeld westus.asazure.Windows.net) en servername de naam is van uw unieke server in de regio.
 
 ### <a name="get-the-server-name"></a>De server naam ophalen
 
-Kopieer de volledige naam van de server in **Azure Portal** > server > **overzicht**van de server  >  **naam**. Als andere gebruikers in uw organisatie ook verbinding maken met deze server, kunt u deze naam met de server delen. Wanneer u een server naam opgeeft, moet het volledige pad worden gebruikt.
+Kopieer de volledige naam van de server in **Azure Portal** > server > **overzicht** van de server  >  **naam**. Als andere gebruikers in uw organisatie ook verbinding maken met deze server, kunt u deze naam met de server delen. Wanneer u een server naam opgeeft, moet het volledige pad worden gebruikt.
 
 ![Servernaam bepalen in Azure](./media/analysis-services-deploy/aas-deploy-get-server-name.png)
 
@@ -79,7 +79,7 @@ Met oudere versies van Excel kunnen gebruikers verbinding maken met een Azure An
 
 ## <a name="connect-as-a-linked-server-from-sql-server"></a>Verbinding maken als een gekoppelde server van SQL Server
 
-SQL Server kunt verbinding maken met een Azure Analysis Services resource als een [gekoppelde server](/sql/relational-databases/linked-servers/create-linked-servers-sql-server-database-engine) door MSOLAP op te geven als de gegevens bron provider. Voordat u een gekoppelde server verbinding configureert, moet u ervoor zorgen dat u de meest recente [Msolap-client bibliotheek](/analysis-services/client-libraries?view=azure-analysis-services-current) (provider) installeert. 
+SQL Server kunt verbinding maken met een Azure Analysis Services resource als een [gekoppelde server](/sql/relational-databases/linked-servers/create-linked-servers-sql-server-database-engine) door MSOLAP op te geven als de gegevens bron provider. Voordat u een gekoppelde server verbinding configureert, moet u ervoor zorgen dat u de meest recente [Msolap-client bibliotheek](/analysis-services/client-libraries?view=azure-analysis-services-current&preserve-view=true) (provider) installeert. 
 
 Voor gekoppelde server verbindingen met Azure Analysis Services moet de MSOLAP-provider worden geïnstantieerd buiten het SQL Server proces. Zorg ervoor dat bij het configureren van de opties voor de gekoppelde server de optie inschakeling **toestaan** **niet is geselecteerd**.
 

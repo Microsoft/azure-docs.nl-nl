@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: dd755e1bc220d61aa540a0e7da9e3f174bde9d76
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ba971919037230cb6c09e627fde448647063b5b9
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91652921"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498418"
 ---
 # <a name="lsv2-series"></a>Lsv2-serie
 
@@ -51,7 +51,7 @@ Bursting: ondersteund<br>
 
 <sup>4</sup> virtuele machines uit de Lsv2-serie bieden geen host-cache voor gegevens schijven omdat het geen voor deel is van de Lsv2-workloads.
 
-<sup>vijf</sup> vm's [uit de Lsv2](linux/disk-bursting.md) -serie kunnen de schijf prestaties Maxi maal 30 minuten per keer oplopen. 
+<sup>vijf</sup> vm's [uit de Lsv2](./disk-bursting.md) -serie kunnen de schijf prestaties Maxi maal 30 minuten per keer oplopen. 
 
 voor <sup>6</sup> vm's met meer dan 64 vcpu's is een van de volgende ondersteunde gast besturingssystemen vereist:
 

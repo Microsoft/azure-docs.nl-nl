@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 08/20/2020
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: 7098744fe012c994e311696a376cd7ed0dc9ac53
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9520196c8dce9ea511c2f3b799bd12b34c6f988f
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89076613"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499744"
 ---
 # <a name="add-a-disk-to-a-linux-vm"></a>Een schijf toevoegen aan een virtuele Linux-machine
 
@@ -70,7 +70,7 @@ sdb     1:0:1:0      14G
 sdc     3:0:0:0      50G
 ```
 
-Hier `sdc` is de schijf die we willen, omdat deze 50G is. Als u niet zeker weet op welke schijf het formaat is gebaseerd, gaat u naar de pagina VM in de portal, selecteert u **schijven**en controleert u het LUN-nummer voor de schijf onder **gegevens schijven**. 
+Hier `sdc` is de schijf die we willen, omdat deze 50G is. Als u niet zeker weet op welke schijf het formaat is gebaseerd, gaat u naar de pagina VM in de portal, selecteert u **schijven** en controleert u het LUN-nummer voor de schijf onder **gegevens schijven**. 
 
 
 ### <a name="format-the-disk"></a>De schijf Format teren
@@ -182,4 +182,4 @@ Er zijn twee manieren om ondersteuning voor het verkleinen van de virtuele Linux
 ## <a name="next-steps"></a>Volgende stappen
 
 * Bekijk de aanbevelingen voor het [optimaliseren van uw Linux-machine](optimization.md) om ervoor te zorgen dat uw Linux-VM correct is geconfigureerd.
-* Breid uw opslag capaciteit uit door extra schijven toe te voegen en [RAID te configureren](configure-raid.md) voor extra prestaties.
+* Breid uw opslag capaciteit uit door extra schijven toe te voegen en [RAID te configureren](/previous-versions/azure/virtual-machines/linux/configure-raid) voor extra prestaties.

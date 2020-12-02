@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 06/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 06a84621c4d6abbf361eba232c776c167dc46265
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 9d62195759de2d43e863c1cb2c4c3ef911bb52c6
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91970606"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498520"
 ---
 # <a name="azure-disk-encryption-for-linux-virtual-machines-faq"></a>Veelgestelde vragen over Azure Disk Encryption voor virtuele Linux-machines
 
@@ -57,14 +57,14 @@ Nee, Azure Disk Encryption worden alleen gekoppelde volumes versleuteld.
 
 ## <a name="what-is-storage-server-side-encryption"></a>Wat is versleuteling van opslag server zijde?
 
-Versleuteling van de opslag server versleutelt Azure Managed disks in Azure Storage. Beheerde schijven worden standaard versleuteld met versleuteling aan de server zijde met een door het platform beheerde sleutel (vanaf 10 juni 2017). U kunt versleuteling van beheerde schijven met uw eigen sleutels beheren door een door de klant beheerde sleutel op te geven. Zie voor meer informatie: [versleuteling aan de server zijde van Azure Managed disks](disk-encryption.md).
+Versleuteling van de opslag server versleutelt Azure Managed disks in Azure Storage. Beheerde schijven worden standaard versleuteld met versleuteling aan de server zijde met een door het platform beheerde sleutel (vanaf 10 juni 2017). U kunt versleuteling van beheerde schijven met uw eigen sleutels beheren door een door de klant beheerde sleutel op te geven. Zie voor meer informatie: [versleuteling aan de server zijde van Azure Managed disks](../disk-encryption.md).
  
 ## <a name="how-is-azure-disk-encryption-different-from-storage-server-side-encryption-with-customer-managed-key-and-when-should-i-use-each-solution"></a>Hoe wijkt Azure Disk Encryption af van de versleuteling van opslag server met door de klant beheerde sleutel en wanneer moet ik elke oplossing gebruiken?
 
 Azure Disk Encryption biedt end-to-end-versleuteling voor de besturingssysteem schijf, gegevens schijven en de tijdelijke schijf, met behulp van een door de klant beheerde sleutel.
 - Als uw vereisten het versleutelen van alle bovenstaande en end-to-end-versleuteling bevatten, gebruikt u Azure Disk Encryption. 
-- Als uw vereisten het versleutelen van alleen gegevens in rust met door de klant beheerde sleutel bevatten, gebruikt u [versleuteling aan de server zijde met door de klant beheerde sleutels](disk-encryption.md). U kunt een schijf niet versleutelen met zowel Azure Disk Encryption als opslag server versleuteling met door de klant beheerde sleutels. 
-- Als uw Linux-distributie niet wordt vermeld onder [ondersteunde besturings systemen voor Azure Disk Encryption](disk-encryption-overview.md#supported-operating-systems) of als u een scenario gebruikt dat wordt genoemd in de [niet-ondersteunde scenario's voor Windows](disk-encryption-linux.md#unsupported-scenarios), overweegt u [versleuteling aan de server zijde met door de klant beheerde sleutels](disk-encryption.md).
+- Als uw vereisten het versleutelen van alleen gegevens in rust met door de klant beheerde sleutel bevatten, gebruikt u [versleuteling aan de server zijde met door de klant beheerde sleutels](../disk-encryption.md). U kunt een schijf niet versleutelen met zowel Azure Disk Encryption als opslag server versleuteling met door de klant beheerde sleutels. 
+- Als uw Linux-distributie niet wordt vermeld onder [ondersteunde besturings systemen voor Azure Disk Encryption](disk-encryption-overview.md#supported-operating-systems) of als u een scenario gebruikt dat wordt genoemd in de [niet-ondersteunde scenario's voor Windows](disk-encryption-linux.md#unsupported-scenarios), overweegt u [versleuteling aan de server zijde met door de klant beheerde sleutels](../disk-encryption.md).
 - Als het beleid van uw organisatie toestaat dat u inhoud in rust versleutelt met een door Azure beheerde sleutel, is er geen actie vereist: de inhoud wordt standaard versleuteld. Voor beheerde schijven wordt de inhoud in de opslag standaard versleuteld met versleuteling aan de server zijde met door het platform beheerde sleutel. De sleutel wordt beheerd door de Azure Storage-service. 
 
 

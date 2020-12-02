@@ -8,12 +8,12 @@ author: grantomation
 ms.author: b-grodel
 keywords: Aro, open Shift, AZ Aro, Red Hat, CLI, Azure file
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: a3e2a994311334d410aeffd55e7f6febaa85d6e4
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: db87e61166da87300a5e1fb8433a42f3f47cf832
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842665"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96493821"
 ---
 # <a name="create-an-azure-files-storageclass-on-azure-red-hat-openshift-4"></a>Een Azure Files StorageClass maken in Azure Red Hat OpenShift 4
 
@@ -23,7 +23,7 @@ In dit artikel maakt u een StorageClass voor Azure Red Hat open Shift 4 waarmee 
 > * De vereisten instellen en de benodigde hulpprogram ma's installeren
 > * Een Azure Red Hat open Shift 4-StorageClass maken met de Azure-bestands inrichting
 
-Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u Azure CLI 2.6.0 of hoger gebruiken voor deze zelfstudie. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
+Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u Azure CLI 2.6.0 of hoger gebruiken voor deze zelfstudie. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren](/cli/azure/install-azure-cli?view=azure-cli-latest) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 

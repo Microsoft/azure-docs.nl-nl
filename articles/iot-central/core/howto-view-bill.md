@@ -3,17 +3,17 @@ title: Uw factuur beheren en converteren van het gratis prijs plan in azure IoT 
 description: Als beheerder leert u hoe u uw factuur kunt beheren en hoe u het gratis prijs plan kunt verplaatsen naar een Standard-prijs plan in uw Azure IoT Central-toepassing
 author: dominicbetts
 ms.author: dobett
-ms.date: 12/09/2019
+ms.date: 11/23/2019
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: 515f5f665e947ff9594cce6dbbaea9b5e0c50ebf
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8f46c402c8c25a144cd4c12137aeabfdfa31e096
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995740"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96463144"
 ---
 # <a name="manage-your-bill-in-an-iot-central-application"></a>Uw factuur beheren in een IoT Central-toepassing
 
@@ -59,7 +59,7 @@ In het gedeelte prijzen kunt u uw Azure IoT-prijs plan op elk gewenst moment bij
 
 1. Selecteer het **plan** en selecteer vervolgens **Opslaan** om te upgraden of Down graden.
 
-## <a name="view-your-bill"></a>Uw factuur bekijken
+## <a name="view-your-bill"></a>Uw factuur weergeven
 
 1. Selecteer de juiste Azure Active Directory en vervolgens het Azure-abonnement dat u wilt gebruiken voor uw toepassing die gebruikmaakt van een betaald abonnement.
 

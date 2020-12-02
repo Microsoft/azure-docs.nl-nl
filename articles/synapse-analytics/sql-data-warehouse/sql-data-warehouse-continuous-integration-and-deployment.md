@@ -1,6 +1,6 @@
 ---
-title: Continue integratie en implementatie
-description: Data Warehouse DevOps-ervaring op ondernemings niveau voor gegevens opslag met ingebouwde ondersteuning voor continue integratie en implementatie met behulp van Azure-pijp lijnen.
+title: Continue integratie en implementatie voor toegewezen SQL-groep
+description: Data base DevOps-ervaring op ondernemings niveau voor exclusieve SQL-groep in azure Synapse Analytics met ingebouwde ondersteuning voor continue integratie en implementatie met behulp van Azure-pijp lijnen.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -11,14 +11,14 @@ ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 061be5addd0c236db5d982e6103e3cf455b9c361
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 35f503e7214fa91962c91c35611fc9447302f9fc
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92480527"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462813"
 ---
-# <a name="continuous-integration-and-deployment-for-data-warehousing"></a>Continue integratie en implementatie voor gegevens opslag
+# <a name="continuous-integration-and-deployment-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Continue integratie en implementatie voor een toegewezen SQL-groep in azure Synapse Analytics
 
 In deze eenvoudige zelf studie wordt uitgelegd hoe u het SSDT-data base project (SQL Server Data Tools) integreert met Azure DevOps en Azure-pijp lijnen kunt gebruiken om doorlopende integratie en implementatie in te stellen. Deze zelf studie is de tweede stap bij het bouwen van uw continue integratie-en implementatie pijplijn voor gegevens opslag.
 
@@ -60,7 +60,7 @@ Op dit moment hebt u een eenvoudige omgeving waar elke check-in voor de hoofd ve
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Synapse SQL-groeps architectuur](massively-parallel-processing-mpp-architecture.md) verkennen
-- Snel [een SQL-groep maken](create-data-warehouse-portal.md)
+- Bekijk de architectuur van de [exclusieve SQL-groep (voorheen SQL DW)](massively-parallel-processing-mpp-architecture.md)
+- Snel [een toegewezen SQL-groep maken (voorheen SQL DW)](create-data-warehouse-portal.md)
 - [Voorbeeldgegevens laden](load-data-from-azure-blob-storage-using-polybase.md)
 - [Video's verkennen](sql-data-warehouse-videos.md)

@@ -10,19 +10,19 @@ ms.subservice: sql-dw
 ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019, devx-track-csharp
-ms.openlocfilehash: 637078cf67a2880e452ff02be63f3908bd601158
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: azure-synapse, seo-lt-2019, devx-track-csharp
+ms.openlocfilehash: c7377ea82ed4e36daeb2347fa3e9b1931acdbfa9
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89016288"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462833"
 ---
-# <a name="connection-strings-for-synapse-sql-pool"></a>Verbindings reeksen voor de SQL-groep Synapse
+# <a name="connection-strings-for-sql-pools-in-azure-synapse"></a>Verbindings reeksen voor SQL-groepen in azure Synapse
 
-U kunt verbinding maken met een SQL-groep met verschillende toepassings protocollen, zoals [ADO.net](/dotnet/framework/data/adonet?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json), [ODBC](/sql/connect/odbc/windows/microsoft-odbc-driver-for-sql-server-on-windows?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), [php](/sql/connect/php/overview-of-the-php-sql-driver?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)en [JDBC](/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). Hieronder ziet u enkele voorbeelden van verbindingsreeksen voor elk protocol.  U kunt ook de Azure-portal gebruiken om een verbindingsreeks te bouwen.  
+U kunt verbinding maken met een SQL-groep in azure Synapse met verschillende toepassings protocollen, zoals [ADO.net](/dotnet/framework/data/adonet?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json), [ODBC](/sql/connect/odbc/windows/microsoft-odbc-driver-for-sql-server-on-windows?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), [php](/sql/connect/php/overview-of-the-php-sql-driver?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)en [JDBC](/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). Hieronder ziet u enkele voorbeelden van verbindingsreeksen voor elk protocol.  U kunt ook de Azure-portal gebruiken om een verbindingsreeks te bouwen.  
 
-Als u een verbindingsreeks wilt bouwen met behulp van de Azure-portal, gaat u naar uw databaseblade en klikt u onder *Essentials* op *Databaseverbindingsreeksen weergeven*.
+Als u uw connection string wilt bouwen met behulp van de Azure Portal, gaat u naar de Blade van de SQL-groep en klikt u onder *Essentials* op *database verbindings reeksen weer geven*.
 
 ## <a name="sample-adonet-connection-string"></a>Voorbeeld van ADO.NET-verbindingsreeks
 

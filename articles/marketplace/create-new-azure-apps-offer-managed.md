@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 11/06/2020
-ms.openlocfilehash: 85f5beb6188b1f6987934f1c39c579d5a3028a5e
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 61ee0b769664d1f574177e27b5b1fb10e9845035
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579484"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96463106"
 ---
 # <a name="configure-a-managed-application-plan"></a>Een beheerd toepassings abonnement configureren
 
@@ -78,7 +78,7 @@ U kunt elk plan zodanig configureren dat het zichtbaar is voor iedereen of allee
 > [!NOTE]
 > Als u een privé-abonnement publiceert, kunt u de zicht baarheid later wijzigen in openbaar. Wanneer u echter een openbaar abonnement publiceert, kunt u de zicht baarheid niet wijzigen in privé.
 
-Voer een van de volgende handelingen uit onder **plan zicht baarheid** :
+Voer een van de volgende handelingen uit onder **plan zicht baarheid**:
 
 - Als u het plan openbaar wilt maken, selecteert u het **open bare** keuze rondje (ook wel een _keuze rondje_ genoemd).
 - Als u het plan privé wilt maken, selecteert u het **persoonlijke** keuze rondje en voegt u de id's van het Azure-abonnement hand matig of met een CSV-bestand toe.
@@ -135,10 +135,10 @@ Schakel het selectie vakje **just-in-time-toegang inschakelen** in om JIT-toegan
 
 Selecteer de **volledige** of **incrementele** implementatie modus.
 
-- In de **volledige** modus leidt een herimplementatie van de toepassing door de klant tot het verwijderen van resources in de beheerde resource groep als de resources niet zijn gedefinieerd in de [mainTemplate.jsop](/azure/azure-resource-manager/managed-applications/publish-service-catalog-app?tabs=azure-powershell#create-the-arm-template.md).
+- In de **volledige** modus leidt een herimplementatie van de toepassing door de klant tot het verwijderen van resources in de beheerde resource groep als de resources niet zijn gedefinieerd in de [mainTemplate.jsop](../azure-resource-manager/managed-applications/publish-service-catalog-app.md?tabs=azure-powershell#create-the-arm-template).
 - In de **incrementele** modus blijven bestaande resources ongewijzigd wanneer de toepassing opnieuw wordt geïmplementeerd.
 
-Zie [Azure Resource Manager-implementatie modi](/azure/azure-resource-manager/deployment-modes)voor meer informatie over de implementatie modi.
+Zie [Azure Resource Manager-implementatie modi](../azure-resource-manager/templates/deployment-modes.md)voor meer informatie over de implementatie modi.
 
 ### <a name="provide-a-notification-endpoint-url"></a>Een URL voor een meldings eindpunt opgeven
 

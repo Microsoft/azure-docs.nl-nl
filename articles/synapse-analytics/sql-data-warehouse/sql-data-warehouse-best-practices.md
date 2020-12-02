@@ -1,6 +1,6 @@
 ---
-title: Aanbevolen procedures voor Synapse SQL pool in azure Synapse Analytics (voorheen SQL DW)
-description: Aanbevelingen en aanbevolen procedures voor het ontwikkelen van oplossingen voor SQL-groep in azure Synapse Analytics (voorheen SQL DW).
+title: Aanbevolen procedures voor een toegewezen SQL-groep (voorheen SQL DW)
+description: Aanbevelingen en aanbevolen procedures voor het ontwikkelen van oplossingen voor een toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics.
 services: synapse-analytics
 author: mlee3gsd
 manager: craigg
@@ -10,16 +10,16 @@ ms.subservice: sql-dw
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: cf841da85dc929366991d6aed8f3d400ab3b31cc
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 9802e6553d553aae4f13194dc9951d1a17af6f66
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92489639"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462887"
 ---
-# <a name="best-practices-for-synapse-sql-pool-in-azure-synapse-analytics-formerly-sql-dw"></a>Aanbevolen procedures voor Synapse SQL pool in azure Synapse Analytics (voorheen SQL DW)
+# <a name="best-practices-for-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Aanbevolen procedures voor een toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics
 
-Dit artikel is een verzameling aanbevolen procedures om u te helpen optimaal te profiteren van de implementatie van uw [SQL-groep](sql-data-warehouse-overview-what-is.md) .  Het doel van dit artikel is om u een aantal basis richtlijnen te geven en belang rijke gebieden van focus te markeren.  
+Dit artikel bevat een verzameling aanbevolen procedures om u te helpen optimaal te profiteren van uw [specifieke SQL-groep (voorheen SQL DW)-](sql-data-warehouse-overview-what-is.md) implementatie.  Het doel van dit artikel is om u een aantal basis richtlijnen te geven en belang rijke gebieden van focus te markeren.  
 
 ## <a name="reduce-cost-with-pause-and-scale"></a>Kosten verlagen met onderbreken en schalen
 
@@ -27,7 +27,7 @@ Zie [Compute beheren](sql-data-warehouse-manage-compute-overview.md) voor meer i
 
 ## <a name="maintain-statistics"></a>Statistieken bijhouden
 
-SQL-groep kan zo worden geconfigureerd dat er automatisch statistieken worden gedetecteerd en gemaakt voor kolommen.  De query plannen die door de Optimizer zijn gemaakt, zijn alleen net zo goed als de beschik bare statistieken.  
+Een toegewezen SQL-groep (voorheen SQL DW) kan zo worden geconfigureerd dat er automatisch statistieken worden gedetecteerd en gemaakt voor kolommen.  De query plannen die door de Optimizer zijn gemaakt, zijn alleen net zo goed als de beschik bare statistieken.  
 
 We raden u aan AUTO_CREATE_STATISTICS voor uw data bases in te scha kelen en de statistieken dagelijks of na elke belasting te laten bijwerken om ervoor te zorgen dat statistieken voor kolommen die worden gebruikt in uw query's altijd up-to-date zijn.
 
@@ -40,7 +40,7 @@ Zie ook [tabel statistieken beheren](sql-data-warehouse-tables-statistics.md), [
 
 ## <a name="use-dmvs-to-monitor-and-optimize-your-queries"></a>Gebruik DMV’s om uw query’s te controleren en te optimaliseren
 
-De SQL-groep heeft verschillende Dmv's die kunnen worden gebruikt voor het bewaken van de uitvoering van query's.  U kunt de werk belasting controleren met Dmv's-artikel Details stapsgewijze instructies voor het bekijken van de details van een query die wordt uitgevoerd.  
+Een toegewezen SQL-groep (voorheen SQL DW) heeft verschillende Dmv's die kunnen worden gebruikt voor het bewaken van de uitvoering van query's.  U kunt de [werk belasting controleren met dmv's](sql-data-warehouse-manage-monitor.md) -artikel Details stapsgewijze instructies voor het bekijken van de details van een query die wordt uitgevoerd.  
 
 Als u snel query’s wilt vinden in de DMV's, kunt u proberen de optie LABEL te gebruiken bij uw query’s.
 
@@ -62,7 +62,7 @@ Zie ook [Invoegen](/sql/t-sql/statements/insert-transact-sql?toc=/azure/synapse-
 
 ## <a name="use-polybase-to-load-and-export-data-quickly"></a>PolyBase gebruiken om snel gegevens te laden en te exporteren
 
-De SQL-groep ondersteunt het laden en exporteren van gegevens via verschillende hulpprogram ma's, waaronder Azure Data Factory, poly base en BCP.  Voor kleine hoeveelheden gegevens waarbij prestaties niet belangrijk zijn, kunnen al deze toepassingen aan uw vereisten voldoen.  Wanneer u echter grote volumes aan gegevens laadt of exporteert of snelle prestaties vereist zijn, is PolyBase de beste keuze.  
+Een toegewezen SQL-groep (voorheen SQL DW) ondersteunt het laden en exporteren van gegevens via verschillende hulpprogram ma's, waaronder Azure Data Factory, poly base en BCP.  Voor kleine hoeveelheden gegevens waarbij prestaties niet belangrijk zijn, kunnen al deze toepassingen aan uw vereisten voldoen.  Wanneer u echter grote volumes aan gegevens laadt of exporteert of snelle prestaties vereist zijn, is PolyBase de beste keuze.  
 
 Poly Base is ontworpen om gebruik te maken van gedistribueerde aard van het systeem en zorgt ervoor dat gegevens sneller worden geladen en geëxporteerd dan andere hulp middelen.  PolyBase-loads kunnen worden uitgevoerd met behulp van CTAS of INSERT INTO.   
 
@@ -74,13 +74,13 @@ Azure Data Factory biedt ook ondersteuning voor poly base-belastingen en kan soo
 > [!NOTE]
 > Als u de door voer wilt maximaliseren bij het gebruik van gzip-tekst bestanden, moet u bestanden opdelen in 60 of meer bestanden om de parallelle kracht van uw belasting te maximaliseren.  Voor een snellere totale doorvoer, kunt u overwegen gegevens gelijktijdig te laden.
 
-Zie ook [gegevens laden](design-elt-data-loading.md), [hand leiding voor het gebruik van poly base](guidance-for-loading-data.md), [het laden van patronen en strategieën, het](https://blogs.msdn.microsoft.com/sqlcat/20../../)laden van [gegevens met Azure Data Factory]( ../../data-factory/load-azure-sql-data-warehouse.md), het [verplaatsen van gegevens met Azure Data Factory](../../data-factory/transform-data-using-machine-learning.md), het maken van een [externe BESTANDS indeling](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)en het maken van een [tabel als Select (CTAS)](sql-data-warehouse-develop-ctas.md).
+Zie ook [gegevens laden](design-elt-data-loading.md), [gids voor gebruik van poly base](guidance-for-loading-data.md), [toegewezen SQL-groep voor het laden van patronen en strategieën, het](https://blogs.msdn.microsoft.com/sqlcat/20../../) [laden van gegevens met Azure Data Factory]( ../../data-factory/load-azure-sql-data-warehouse.md), het [verplaatsen van gegevens met Azure Data Factory](../../data-factory/transform-data-using-machine-learning.md), het maken van een [externe BESTANDS indeling](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)en het maken van een [tabel als Select (CTAS)](sql-data-warehouse-develop-ctas.md).
 
 ## <a name="load-then-query-external-tables"></a>Externe tabellen laden en vervolgens query’s uitvoeren
 
 PolyBase, ook wel bekend als externe tabellen, kan de snelste manier zijn om gegevens te laden, maar het is niet optimaal voor query’s. Poly base-tabellen ondersteunen momenteel alleen Azure Blob-bestanden en Azure Data Lake opslag. Deze bestanden worden niet door rekenresources ondersteunt.  
 
-Als gevolg hiervan kan de SQL-groep dit werk niet verhelpen en daarom moet het hele bestand lezen door het naar TempDB te laden om de gegevens te kunnen lezen.  Indien u meerdere query’s uitvoert voor deze gegevens, kunt u beter de gegevens eenmalig laden en query’s op de lokale tabel toepassen.
+Als gevolg hiervan kan een toegewezen SQL-groep dit werk niet verhelpen en daarom moet het hele bestand lezen door het naar TempDB te laden om de gegevens te kunnen lezen.  Indien u meerdere query’s uitvoert voor deze gegevens, kunt u beter de gegevens eenmalig laden en query’s op de lokale tabel toepassen.
 
 Zie ook [hand leiding voor het gebruik van poly base](guidance-for-loading-data.md).
 
@@ -101,9 +101,9 @@ Zie ook [tabel Overzicht](sql-data-warehouse-tables-overview.md), [tabel distrib
 
 ## <a name="do-not-over-partition"></a>Niet te veel partities maken
 
-Hoewel het partitioneren van gegevens effectief kan zijn voor het onderhouden van uw gegevens via partitie wisseling of het optimaliseren van scans met behulp van partitie-eliminatie, waardoor er te veel partities zijn, kunnen de query's worden vertraagd.  Vaak is een strategie voor het partitioneren van hoge granulariteit, die mogelijk goed werkt op SQL Server mogelijk niet goed in de SQL-groep.  
+Hoewel het partitioneren van gegevens effectief kan zijn voor het onderhouden van uw gegevens via partitie wisseling of het optimaliseren van scans met behulp van partitie-eliminatie, waardoor er te veel partities zijn, kunnen de query's worden vertraagd.  Vaak is een strategie voor een zeer nauw keurige partitionering, die mogelijk goed werkt op SQL Server mogelijk niet goed werken in een toegewezen SQL-groep (voorheen SQL DW).  
 
-Te veel partities kunnen ook geclusterde columnstore-indexen minder effectief maken als elke partitie minder dan 1 miljoen rijen bevat.  Houd er achter de schermen rekening mee dat de SQL-pool uw gegevens naar 60 data bases partitioneert, dus als u een tabel met 100-partities maakt, resulteert dit in een van de meeste 6000-partities.  
+Te veel partities kunnen ook geclusterde columnstore-indexen minder effectief maken als elke partitie minder dan 1 miljoen rijen bevat.  Houd er achter de schermen rekening mee dat exclusieve SQL pool uw gegevens naar 60-data bases partitioneert, dus als u een tabel met 100-partities maakt, resulteert dit in werkelijkheid in 6000 partities.  
 
 Elke workload is verschillend, en daarom kunt u het beste experimenteren met partities om te zien wat het beste werkt voor uw workload.  Overweeg een lagere granulatie dan die in SQL Server misschien wel effectief was.  U zou bijvoorbeeld wekelijkse of maandelijkse partities kunnen gebruiken in plaats van dagelijkse partities.
 
@@ -145,13 +145,13 @@ Zie ook [tijdelijke tabellen](sql-data-warehouse-tables-temporary.md), [Create T
 
 ## <a name="optimize-clustered-columnstore-tables"></a>Geclusterde columnstore-tabellen optimaliseren
 
-Geclusterde column Store-indexen zijn een van de meest efficiënte manieren om uw gegevens in de SQL-groep op te slaan.  Tabellen in SQL-groep worden standaard gemaakt als geclusterde column Store.  Een goede segmentkwaliteit is belangrijk om de beste resultaten te behalen voor query’s voor columnstore-tabellen.  
+Geclusterde column Store-indexen zijn een van de meest efficiënte manieren om uw gegevens op te slaan in een toegewezen SQL-groep.  Tabellen in een toegewezen SQL-groep worden standaard gemaakt als geclusterde column Store.  Een goede segmentkwaliteit is belangrijk om de beste resultaten te behalen voor query’s voor columnstore-tabellen.  
 
 Wanneer rijen naar columnstore-tabellen worden geschreven onder geheugendruk, kan dit ten koste gaan van de kwaliteit van columnstore-segmenten.  Segmentkwaliteit kan worden gemeten aan de hand van het aantal rijen in een gecomprimeerde rijengroep.  Zie de [oorzaken van slechte kwaliteit van Column store-index](sql-data-warehouse-tables-index.md#causes-of-poor-columnstore-index-quality) in het artikel [tabel indexen](sql-data-warehouse-tables-index.md) voor stapsgewijze instructies voor het detecteren en verbeteren van segment kwaliteit voor geclusterde column Store-tabellen.  
 
 Omdat column Store-segmenten van hoge kwaliteit belang rijk zijn, is het een goed idee om gebruikers-Id's te gebruiken die zich in de middel lange of grote resource klasse bevinden voor het laden van gegevens. Als u lagere [Data Warehouse-eenheden](what-is-a-data-warehouse-unit-dwu-cdwu.md) gebruikt, wilt u een grotere resource klasse toewijzen aan de gebruiker die u wilt laden.
 
-Aangezien column Store-tabellen in het algemeen geen gegevens naar een gecomprimeerd column Store-segment pushen totdat er meer dan 1.000.000 rijen per tabel zijn en elke tabel van de SQL-groep is gepartitioneerd in 60-tabellen, is voor column Store-tabellen geen query nodig tenzij de tabel meer dan 60.000.000 rijen bevat.  Voor tabellen met minder dan 60 miljoen rijen is het meestal niet nodig om een columnstore-index te hebben.  Het is misschien ook niet verkeerd.  
+Aangezien column Store-tabellen in het algemeen geen gegevens naar een gecomprimeerd column Store-segment pushen totdat er meer dan 1.000.000 rijen per tabel zijn en elke toegewezen SQL-groeps tabel is gepartitioneerd in 60-tabellen, is voor column Store-tabellen geen query nodig tenzij de tabel meer dan 60.000.000 rijen heeft.  Voor tabellen met minder dan 60 miljoen rijen is het meestal niet nodig om een columnstore-index te hebben.  Het is misschien ook niet verkeerd.  
 
 Als u uw gegevens partitioneert, houd er dan ook rekening mee dat elke partitie 1 miljoen rijen nodig heeft om voordeel te halen uit een geclusterde columnstore-index.  Als een tabel 100 partities heeft, moet deze ten minste 6.000.000.000 rijen hebben om te profiteren van een geclusterde column Store (60 distributies *100 partities* 1.000.000 rijen).  
 
@@ -164,7 +164,7 @@ Zie ook [Tabel-indexen](sql-data-warehouse-tables-index.md), [Gids columnstore-i
 
 ## <a name="use-larger-resource-class-to-improve-query-performance"></a>Een grotere resourceklasse gebruiken om queryprestaties te verbeteren
 
-De SQL-groep gebruikt resource groepen als manier om geheugen aan query's toe te wijzen.  Alle gebruikers worden uit het vak toegewezen aan de kleine resource klasse, die 100 MB aan geheugen per distributie toekent.  Omdat er altijd 60 distributies zijn en aan elke distributie een minimum van 100 MB is toegekend, is de totale geheugentoewijzing systeembreed 6000 MB, of net onder 6 GB.  
+De toegewezen SQL-groep gebruikt resource groepen als manier om geheugen aan query's toe te wijzen.  Alle gebruikers worden uit het vak toegewezen aan de kleine resource klasse, die 100 MB aan geheugen per distributie toekent.  Omdat er altijd 60 distributies zijn en aan elke distributie een minimum van 100 MB is toegekend, is de totale geheugentoewijzing systeembreed 6000 MB, of net onder 6 GB.  
 
 Bepaalde query’s, zoals grote samenvoegingen of loads naar geclusterde columnstore-tabellen, profiteren van grotere geheugentoewijzingen.  Sommige query's, zoals zuivere scans, kunnen geen voor deel opleveren.  Het gebruik van grotere resource klassen vermindert echter de gelijktijdigheid, dus u kunt dit in overweging nemen voordat u al uw gebruikers naar een grote resource klasse verplaatst.
 

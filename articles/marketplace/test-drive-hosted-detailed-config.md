@@ -7,12 +7,12 @@ ms.topic: article
 author: trkeya
 ms.author: trkeya
 ms.date: 11/06/2020
-ms.openlocfilehash: 9e8aecfe8b16d8af755d3f4c3c71b875d4e8ec40
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 88779f67a2fa9b18f0177a1459b32c672343bb57
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95751246"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462945"
 ---
 # <a name="detailed-configuration-for-hosted-test-drives"></a>Gedetailleerde configuratie voor gehoste test stations
 
@@ -29,7 +29,7 @@ In dit artikel wordt beschreven hoe u een gehoste test drive configureert voor D
 
     - **Type test drive** : Kies **micro soft hosted (Dynamics 365 voor Customer engagement & PowerApps)**. Dit geeft aan dat micro soft de service zal hosten en onderhouden die de test drive gebruikers inrichting en het ongedaan maken van de inrichting uitvoert.
 
-5. Verleen Microsoft AppSource toestemming om test drive gebruikers in uw Tenant in te richten en deze ongedaan te maken met behulp van [deze instructies](https://docs.microsoft.com/azure/marketplace/test-drive-azure-subscription-setup). In deze stap genereert u de **Azure AD-App-ID** en **Azure AD-App sleutel** waarden die hieronder worden genoemd.
+5. Verleen Microsoft AppSource toestemming om test drive gebruikers in uw Tenant in te richten en deze ongedaan te maken met behulp van [deze instructies](./test-drive-azure-subscription-setup.md). In deze stap genereert u de **Azure AD-App-ID** en **Azure AD-App sleutel** waarden die hieronder worden genoemd.
 6. Vul deze velden in op de pagina **technische configuratie van test station** .
 
     [![De pagina met de test drive technische configuratie.](media/test-drive/technical-config-details.png)](media/test-drive/technical-config-details.png#lightbox)
@@ -81,7 +81,7 @@ In dit artikel wordt beschreven hoe u een gehoste test drive configureert voor D
     - **Azure Active Directory Tenant naam** : de naam van de Azure-Tenant voor uw Dynamics 365-exemplaar. Gebruik de indeling `<tenantname>.onmicrosoft.com`. Voorbeeld waarde: `testdrive.onmicrosoft.com` .
     - **Azure Active Directory toepassings-id** : de id van de Azure Active Directory (AD)-app die u in stap 5 hebt gemaakt. Voorbeeld waarde: `53852862-a2ae-4e43-9461-faa49650a096` .
     - **Azure Active Directory client geheim** van de toepassing: geheim voor de Azure AD-app die u in stap 5 hebt gemaakt. Voorbeeld waarde: `IJUgaIOfq9b9LbUjeQmzNBW4VGn6grr1l/n3aMrnfdk=` .
-    - **Rechts persoon van proef versie** : Geef een rechts persoon op om een proef gebruiker toe te wijzen. U kunt een nieuw item maken bij [het maken of wijzigen van een rechts persoon](https://technet.microsoft.com/library/hh242184.aspx).
+    - **Rechts persoon van proef versie** : Geef een rechts persoon op om een proef gebruiker toe te wijzen. U kunt een nieuw item maken bij [het maken of wijzigen van een rechts persoon](/dynamicsax-2012/appuser-itpro/create-or-modify-a-legal-entity).
     - **Rolnaam** : de AOT-naam (Toepassingsobjectstructuur) van de aangepaste Dynamics 365-beveiligingsrol die u hebt gemaakt voor test drive. Dit is de rol die wordt toegewezen aan gebruikers tijdens hun test drive.
 
         :::image type="content" source="./media/test-drive/security-config.png" alt-text="De pagina Beveiliging configuratie.":::

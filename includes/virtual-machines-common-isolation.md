@@ -1,6 +1,6 @@
 ---
-title: bestand opnemen
-description: bestand opnemen
+title: Include-bestand
+description: Include-bestand
 services: virtual-machines
 author: styli365
 ms.service: virtual-machines
@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/05/2020
 ms.author: sttsinar
 ms.custom: include file
-ms.openlocfilehash: 3d65b574fc1479d000d347020823166a4d4b968b
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: bd31152c6742271658cf4fd7ac2a5e2957651c84
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94410574"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96477746"
 ---
 Azure Compute biedt virtuele machine grootten die zijn geïsoleerd voor een specifiek hardwaretype en die zijn toegewezen aan één klant. De geïsoleerde grootten Live en worden gebruikt voor het genereren van specifieke hardware en worden afgeschaft wanneer het genereren van de hardware buiten gebruik wordt gesteld.
 
@@ -25,10 +25,13 @@ Daarnaast kunnen klanten er ook voor kiezen om de resources van deze Vm's te ond
 De huidige, geïsoleerde virtuele-machine-aanbiedingen omvatten:
 * Standard_E64is_v3
 * Standard_E64i_v3
+* Standard_E80ids_v4
+* Standard_E80is_v4
 * Standard_M128ms
 * Standard_GS5
 * Standard_G5
 * Standard_F72s_v2
+
 
 > [!NOTE]
 > Geïsoleerde VM-grootten hebben een beperkte levens duur van de hardware. Zie hieronder voor meer informatie
@@ -47,22 +50,22 @@ Net als geïsoleerde VM-grootten zijn hardwarematige grootten een periode van 12
 
 ## <a name="faq"></a>Veelgestelde vragen
 ### <a name="q-is-the-size-going-to-get-retired-or-only-isolation-feature-is"></a>V: is de grootte van de buiten gebruik gestelde of alleen ' isolatie functie '?
-**A** : als de grootte van de virtuele machine niet het subscript ' i ' heeft, wordt alleen de ' isolatie functie ' buiten gebruik gesteld. Als er geen isolatie nodig is, wordt er geen actie ondernomen en blijft de virtuele machine werken zoals verwacht. Voor beelden zijn Standard_DS15_v2, Standard_D15_v2, Standard_M128ms enzovoort. Als de grootte van de virtuele machine ' i ' bevat, wordt de grootte buiten gebruik gesteld.
+**A**: als de grootte van de virtuele machine niet het subscript ' i ' heeft, wordt alleen de ' isolatie functie ' buiten gebruik gesteld. Als er geen isolatie nodig is, wordt er geen actie ondernomen en blijft de virtuele machine werken zoals verwacht. Voor beelden zijn Standard_DS15_v2, Standard_D15_v2, Standard_M128ms enzovoort. Als de grootte van de virtuele machine ' i ' bevat, wordt de grootte buiten gebruik gesteld.
 
 ### <a name="q-is-there-a-downtime-when-my-vm-lands-on-a-non-isolated-hardware"></a>V: is er sprake van uitval tijd wanneer mijn VM-land op een niet-geïsoleerde hardware wordt gehouden?
-**A** : als er geen isolatie nodig is, hoeft u geen actie te ondernemen en treedt er geen uitval tijd op.
+**A**: als er geen isolatie nodig is, hoeft u geen actie te ondernemen en treedt er geen uitval tijd op.
 
 ### <a name="q-is-there-any-cost-delta-for-moving-to-a-non-isolated-virtual-machine"></a>V: is er sprake van een kosten verschil voor de overstap naar een niet-geïsoleerde virtuele machine?
-**A** : Nee
+**A**: Nee
 
 ### <a name="q-when-are-the-other-isolated-sizes-going-to-retire"></a>V: wanneer zijn de andere geïsoleerde grootten buiten gebruik gesteld?
-**A** : de officiële afschaffing van de geïsoleerde omvang is een periode van 12 maanden van tevoren.
+**A**: de officiële afschaffing van de geïsoleerde omvang is een periode van 12 maanden van tevoren.
 
 ### <a name="q-im-an-azure-service-fabric-customer-relying-on-the-silver-or-gold-durability-tiers-does-this-change-impact-me"></a>V: Ik ben een Azure Service Fabric klant die afhankelijk is van de laag met Silver of Gold-duurzaamheid. Is dit van invloed op mijn wijzigingen?
-**A** : Nee. De garanties die worden geboden door de [duurzaamheids lagen](../articles/service-fabric/service-fabric-cluster-capacity.md#durability-characteristics-of-the-cluster) van service Fabric blijven werken, zelfs na deze wijziging. Als u voor andere redenen fysieke hardware-isolatie nodig hebt, moet u mogelijk nog een van de hierboven beschreven acties uitvoeren. 
+**A**: Nee. De garanties die worden geboden door de [duurzaamheids lagen](../articles/service-fabric/service-fabric-cluster-capacity.md#durability-characteristics-of-the-cluster) van service Fabric blijven werken, zelfs na deze wijziging. Als u voor andere redenen fysieke hardware-isolatie nodig hebt, moet u mogelijk nog een van de hierboven beschreven acties uitvoeren. 
  
 ### <a name="q-what-are-the-milestones-for-d15_v2-or-ds15_v2-isolation-retirement"></a>V: wat zijn de mijl palen voor D15_v2 of DS15_v2 buiten gebruik stellen? 
-**A** : 
+**A**: 
  
 | Datum | Actie |
 |---|---| 

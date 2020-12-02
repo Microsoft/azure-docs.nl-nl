@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/07/2019
 ms.author: Zhchia
-ms.openlocfilehash: 4e115de4f86baba9559730d94f45ab7b17cc4379
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a5bd3c39c293880e31ebe63f85b3814725f6027a
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96002201"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96347290"
 ---
 # <a name="tutorial-configure-spaceiq-for-automatic-user-provisioning"></a>Zelfstudie: SpaceIQ configureren voor automatische gebruikersinrichting
 

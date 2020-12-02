@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: ramkris
-ms.openlocfilehash: 7621a19b510d302454465f9fcbacec27a14dddf9
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 9855a53ebdf7501907b3e1e63d59823d3a0b0209
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340172"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96463119"
 ---
 # <a name="azure-synapse-link-for-azure-cosmos-db-near-real-time-analytics-use-cases"></a>Azure Synapse Link voor Azure Cosmos DB: Use cases voor bijna realtime analyses
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -53,9 +53,9 @@ Op basis van de vorige architectuur kunt u de volgende use-cases gebruiken met S
 
   Synapse link voor Azure Cosmos DB maakt geavanceerde business intelligence (BI)/Reporting-scenario's mogelijk:
 
-  * Query's uitvoeren op operationele gegevens uit Azure Cosmos DB Analytical Store met behulp van systeem eigen integratie met Synapse SQL serverloze en volledige onduidelijkheid van T-SQL-taal.
+  * Query's uitvoeren op operationele gegevens uit Azure Cosmos DB Analytical Store door gebruik te maken van systeem eigen integratie met serverloze SQL-pool en een volledige uitdrukking van de T-SQL-taal.
 
-  * Model en publiceer automatisch vernieuwen van BI-Dash boards over Azure Cosmos DB via Synapse SQL serverloze ondersteuning voor bekende BI-hulpprogram ma's. Bijvoorbeeld Azure Analysis Services, Power BI Premium, enzovoort.
+  * Model en publiceer automatisch vernieuwen van BI-Dash boards over Azure Cosmos DB via serverloze ondersteuning van SQL-groepen voor bekende BI-hulpprogram ma's. Bijvoorbeeld Azure Analysis Services, Power BI Premium, enzovoort.
 
 Hier volgen enkele richt lijnen voor gegevens integratie voor het uitvoeren van batch-& streaminggegevens in Azure Cosmos DB:
 
@@ -143,4 +143,4 @@ Raadpleeg de volgende documenten voor meer informatie:
 
 * [Apache Spark in Azure Synapse Analytics](../synapse-analytics/spark/apache-spark-concepts.md)
 
-* [Ondersteuning voor SQL serverloze runtime in azure Synapse Analytics](../synapse-analytics/sql/on-demand-workspace-overview.md)
+* [SQL pool runtime-ondersteuning zonder server in azure Synapse Analytics](../synapse-analytics/sql/on-demand-workspace-overview.md)

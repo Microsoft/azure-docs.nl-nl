@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: fca18a58ccb8d4e2f10b5db606ad01a97c2d5bac
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 03c7efd390d4714680ed2ccd54d297b8137aaafc
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94359922"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348667"
 ---
 # <a name="tutorial-configure-smartfile-for-automatic-user-provisioning"></a>Zelfstudie: SmartFile configureren voor automatische gebruikersinrichting
 

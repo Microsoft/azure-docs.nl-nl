@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 290990e312a7f591539686ecce1eec1ac742dd60
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c0dcaec9c8e9a310af1fd6fc319e0784694610e2
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95999294"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96463090"
 ---
 # <a name="move-data-from-amazon-redshift-using-azure-data-factory"></a>Gegevens verplaatsen van Amazon Redshift met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -61,12 +61,12 @@ De volgende tabel bevat beschrijvingen van de JSON-elementen die specifiek zijn 
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| **type** |Deze eigenschap moet worden ingesteld op **AmazonRedshift**. |Yes |
-| **naam** |Het IP-adres of de hostnaam van de Amazon Redshift-server. |Yes |
+| **type** |Deze eigenschap moet worden ingesteld op **AmazonRedshift**. |Ja |
+| **naam** |Het IP-adres of de hostnaam van de Amazon Redshift-server. |Ja |
 | **Importeer** |Het nummer van de TCP-poort die de Amazon Redshift-server gebruikt om te Luis teren naar client verbindingen. |Nee (de standaard waarde is 5439) |
-| **enddatabase** |De naam van de Amazon Redshift-data base. |Yes |
-| **gebruikers** |De naam van de gebruiker die toegang heeft tot de data base. |Yes |
-| **password** |Het wacht woord voor het gebruikers account. |Yes |
+| **enddatabase** |De naam van de Amazon Redshift-data base. |Ja |
+| **gebruikers** |De naam van de gebruiker die toegang heeft tot de data base. |Ja |
+| **password** |Het wacht woord voor het gebruikers account. |Ja |
 
 ## <a name="dataset-properties"></a>Eigenschappen van gegevensset
 
@@ -87,7 +87,7 @@ Voor kopieer activiteit, wanneer de bron van het type **AmazonRedshiftSource** i
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
 | **ophalen** | Gebruik de aangepaste query om de gegevens te lezen. |Nee (als de eigenschap **TableName** van een gegevensset is opgegeven) |
-| **redshiftUnloadSettings** | Bevat de eigenschappen groep wanneer de Redshift **Unload** opdracht wordt gebruikt. | No |
+| **redshiftUnloadSettings** | Bevat de eigenschappen groep wanneer de Redshift **Unload** opdracht wordt gebruikt. | Nee |
 | **s3LinkedServiceName** | Amazon S3 om te gebruiken als een tijdelijke opslag. De gekoppelde service wordt opgegeven met behulp van een Azure Data Factory naam van het type **awsaccesskey worden**. | Vereist wanneer de eigenschap **redshiftUnloadSettings** wordt gebruikt |
 | **Bucket** | Hiermee wordt de Bucket van Amazon S3 aangegeven die moet worden gebruikt om de tussenliggende gegevens op te slaan. Als deze eigenschap niet wordt gegeven, wordt door de Kopieer activiteit automatisch een Bucket gegenereerd. | Vereist wanneer de eigenschap **redshiftUnloadSettings** wordt gebruikt |
 
@@ -101,7 +101,7 @@ U kunt ook het type **RelationalSource** gebruiken, dat Amazon Redshift bevat, m
 
 De opdracht Amazon Redshift [**UNload**](https://docs.aws.amazon.com/redshift/latest/dg/r_UNLOAD.html) verwijdert de resultaten van een query naar een of meer bestanden in Amazon S3. Deze opdracht wordt aanbevolen door Amazon voor het kopiëren van grote gegevens sets van RedShift.
 
-**Voor beeld: gegevens kopiëren van Amazon Redshift naar Azure Synapse Analytics (voorheen SQL Data Warehouse)**
+**Voor beeld: gegevens kopiëren van Amazon Redshift naar Azure Synapse Analytics**
 
 In dit voor beeld worden gegevens van Amazon Redshift naar Azure Synapse Analytics gekopieerd. In het voor beeld worden de opdracht Redshift **Unload** , Copyed data en micro soft poly base gebruikt.
 
@@ -333,7 +333,7 @@ De volgende toewijzingen worden gebruikt wanneer Kopieer activiteit de gegevens 
 | INTEGER |Int32 |
 | BIGINT |Int64 |
 | DECIMAL |Decimaal |
-| REAL |Enkelvoudig |
+| REAL |Enkel |
 | DUBBELE PRECISIE |Dubbel |
 | BOOLEAN |Tekenreeks |
 | CHAR |Tekenreeks |

@@ -11,12 +11,12 @@ author: NilsPohlmann
 ms.date: 10/21/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperfq1
-ms.openlocfilehash: 452904e18a0910c2dd4781ca978042e0cdd4996d
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 57806ecaf4b0e295457c78faaff6033126ddb2c8
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630121"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96463020"
 ---
 # <a name="create-and-run-machine-learning-pipelines-with-azure-machine-learning-sdk"></a>machine learning-pijp lijnen maken en uitvoeren met Azure Machine Learning SDK
 
@@ -24,7 +24,7 @@ ms.locfileid: "94630121"
 
 In dit artikel leert u hoe u een [machine learning pijp lijn](concept-ml-pipelines.md) kunt maken en uitvoeren met behulp van de [Azure machine learning SDK](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py). Gebruik **ml-pijp lijnen** om een werk stroom te maken die verschillende stadia van de ml combineert. Publiceer vervolgens die pijp lijn voor later gebruik of delen met anderen. Houd ML-pijp lijnen bij om te zien hoe uw model in de praktijk wordt uitgevoerd en om gegevens drift te detecteren. ML-pijp lijnen zijn ideaal voor batch Score scenario's, met behulp van verschillende reken processen, het opnieuw gebruiken van stappen in plaats van deze opnieuw uit te voeren, evenals het delen van werk stromen met anderen.
 
-Hoewel u een ander type pijp lijn kunt gebruiken, een [Azure-pijp lijn](/azure/devops/pipelines/targets/azure-machine-learning?context=azure%252fmachine-learning%252fservice%252fcontext%252fml-context&preserve-view=true&tabs=yaml&view=azure-devops) voor de CI/cd-automatisering van ml-taken, wordt dat soort pijp lijn niet opgeslagen in uw werk ruimte. [Vergelijk deze verschillende pijp lijnen](concept-ml-pipelines.md#which-azure-pipeline-technology-should-i-use).
+Hoewel u een ander type pijp lijn kunt gebruiken, een [Azure-pijp lijn](/azure/devops/pipelines/targets/azure-machine-learning?context=azure%2fmachine-learning%2fservice%2fcontext%2fml-context&preserve-view=true&tabs=yaml&view=azure-devops) voor de CI/cd-automatisering van ml-taken, wordt dat soort pijp lijn niet opgeslagen in uw werk ruimte. [Vergelijk deze verschillende pijp lijnen](concept-ml-pipelines.md#which-azure-pipeline-technology-should-i-use).
 
 De ML pijp lijnen die u maakt, zijn zichtbaar voor de leden van uw Azure Machine Learning- [werk ruimte](how-to-manage-workspace.md). 
 
@@ -110,7 +110,7 @@ output_data1 = PipelineData(
 ## <a name="set-up-a-compute-target"></a>Een reken doel instellen
 
 
-In Azure Machine Learning verwijst de term __Compute__ (of __Compute target__ ) naar de computers of clusters die de reken stappen in uw machine learning pijp lijn uitvoeren.   Zie [Compute-doelen voor model training](concept-compute-target.md#train) voor een volledige lijst met Compute-doelen en [Maak reken doelen](how-to-create-attach-compute-studio.md) voor het maken en koppelen aan uw werk ruimte.   Het proces voor het maken en of koppelen van een reken doel is hetzelfde, of u nu een model traint of een pijplijn stap uitvoert. Nadat u het reken doel hebt gemaakt en gekoppeld, gebruikt u het `ComputeTarget` object in de [pijplijn stap](#steps).
+In Azure Machine Learning verwijst de term __Compute__ (of __Compute target__) naar de computers of clusters die de reken stappen in uw machine learning pijp lijn uitvoeren.   Zie [Compute-doelen voor model training](concept-compute-target.md#train) voor een volledige lijst met Compute-doelen en [Maak reken doelen](how-to-create-attach-compute-studio.md) voor het maken en koppelen aan uw werk ruimte.   Het proces voor het maken en of koppelen van een reken doel is hetzelfde, of u nu een model traint of een pijplijn stap uitvoert. Nadat u het reken doel hebt gemaakt en gekoppeld, gebruikt u het `ComputeTarget` object in de [pijplijn stap](#steps).
 
 > [!IMPORTANT]
 > Het uitvoeren van beheer bewerkingen op Compute-doelen wordt niet ondersteund vanuit externe taken. Omdat machine learning-pijp lijnen worden verzonden als een externe taak, mag u geen beheer bewerkingen gebruiken op reken doelen vanuit de pijp lijn.

@@ -7,21 +7,21 @@ ms.topic: article
 ms.date: 11/09/2020
 author: sayantanroy83
 ms.author: sroy
-ms.openlocfilehash: 5e2bdec8b3c628f1d470acb3e27bb18eabbc71ac
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 563ccdb0633f94acccf3ade9faf1c40c28f108ac
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94565535"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462926"
 ---
 # <a name="usage-dashboard-in-commercial-marketplace-analytics"></a>Dashboard Gebruik in Commerciële marketplace-analyses
 
 Dit artikel bevat informatie over het gebruiks dashboard in partner centrum. In dit dash board wordt alle virtuele machine (VM) weer gegeven met genormaliseerd gebruik, onbewerkt gebruik en metrische facturerings gegevens op drie afzonderlijke tabbladen: genormaliseerd gebruik van de VM, het onbewerkte gebruik van de VM en het facturerings gebruik met data limiet.
 
-Voor toegang tot het gebruiks dashboard in Partner Center, onder **commerciële Marketplace** , **[Analyze](https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/summary)** selecteert u  >  **gebruik** analyseren.
+Voor toegang tot het gebruiks dashboard in Partner Center, onder **commerciële Marketplace**, **[Analyze](https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/summary)** selecteert u  >  **gebruik** analyseren.
 
 >[!NOTE]
-> Zie voor gedetailleerde definities van analyse terminologie [Commercial Marketplace Analytics terminologie en common questions](./partner-center-portal/faq-terminology.md)(Engelstalig).
+> Zie voor gedetailleerde definities van analyse terminologie [Commercial Marketplace Analytics terminologie en common questions](./analytics-faq.md)(Engelstalig).
 
 ## <a name="usage-dashboard"></a>Dashboard voor gebruik
 
@@ -171,13 +171,13 @@ Het rapport widgets en exporteren voor het onbewerkte VM-gebruik zijn vergelijkb
 
 Op het tabblad gebruik in de **Data limiet** worden gebruiks gegevens weer gegeven voor aanbiedings typen waarbij gebruik wordt gemeten door de dimensie per meter. SaaS-aanbieding type overschrijding wordt momenteel weer gegeven. Het tabblad geeft grafische voors tellingen van overschrijding-trends voor het gebruik van SaaS-data limieten:
 
-- **Overschrijding trend per meter dimensie** : geeft de maandelijkse overschrijding trend weer voor de geselecteerde meter dimensie van een aanbieding. De X-as vertegenwoordigt de maand en de Y-as vertegenwoordigt de hoeveelheid van het overschrijding gebruik. De meet eenheid van de aangepaste meter wordt ook weer gegeven op de Y-as.
+- **Overschrijding trend per meter dimensie**: geeft de maandelijkse overschrijding trend weer voor de geselecteerde meter dimensie van een aanbieding. De X-as vertegenwoordigt de maand en de Y-as vertegenwoordigt de hoeveelheid van het overschrijding gebruik. De meet eenheid van de aangepaste meter wordt ook weer gegeven op de Y-as.
 
     :::image type="content" source="./media/usage-dashboard/metered-usage.png" alt-text="Illustreert het genormaliseerde gebruik van de VM-gebruiks grafiek in het gebruiks dashboard.":::
 
-- **Overschrijding trend per SKU** : vertegenwoordigt de trend van het gebruiks aantal van de geselecteerde meter dimensie per SKU/abonnementen. De vijf meest voorkomende plannen met de hoogste hoeveelheid gebruik voor de geselecteerde aanbieding worden weer gegeven.
+- **Overschrijding trend per SKU**: vertegenwoordigt de trend van het gebruiks aantal van de geselecteerde meter dimensie per SKU/abonnementen. De vijf meest voorkomende plannen met de hoogste hoeveelheid gebruik voor de geselecteerde aanbieding worden weer gegeven.
 
-- **Overschrijding trend per klant** : het leider bord van de klant vertegenwoordigt een gestapelde lijst met klanten met de hoogste gebruiks uren en wordt weer gegeven op een _Leader Board_ , gerangschikt op het hoogste gebruik van de aangepaste meter. Selecteer een klant in het prik bord om de overschrijding-gebruiks trend van een geselecteerde meter dimensie weer te geven.
+- **Overschrijding trend per klant**: het leider bord van de klant vertegenwoordigt een gestapelde lijst met klanten met de hoogste gebruiks uren en wordt weer gegeven op een _Leader Board_, gerangschikt op het hoogste gebruik van de aangepaste meter. Selecteer een klant in het prik bord om de overschrijding-gebruiks trend van een geselecteerde meter dimensie weer te geven.
 
     :::image type="content" source="./media/usage-dashboard/metered-usage-by-customers.png" alt-text="Illustreert het diagram gebruik in de data limiet per klant op het gebruiks dashboard.":::
 
@@ -194,4 +194,4 @@ Als u meerdere aanbiedingen hebt die gebruikmaken van aangepaste meters, worden 
 - Voor virtuele machine (VM) zijn metrische gegevens over gebruik en gefactureerde facturering, Zie [gebruiks dashboard in commerciële Marketplace-analyses](usage-dashboard.md).
 - Zie [dash board downloaden in Commercial Marketplace Analytics](./partner-center-portal/downloads-dashboard.md)voor een lijst met Download aanvragen voor de afgelopen 30 dagen.
 - Zie [beoordeling & revisies Analytics dash board in partner centrum](./partner-center-portal/ratings-reviews.md)voor een geconsolideerde weer gave van feedback van klanten voor aanbiedingen op Azure Marketplace en Microsoft AppSource.
-- Zie voor veelgestelde vragen over de analyse van commerciële Marketplace en voor een uitgebreid woorden boek met informatie over de [terminologie van commerciële Marketplace en veelgestelde vragen](./partner-center-portal/faq-terminology.md).
+- Zie voor veelgestelde vragen over de analyse van commerciële Marketplace en voor een uitgebreid woorden boek met informatie over de [terminologie van commerciële Marketplace en veelgestelde vragen](./analytics-faq.md).

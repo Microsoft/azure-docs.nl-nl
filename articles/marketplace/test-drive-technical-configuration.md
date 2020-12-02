@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 08/13/2019
 author: trkeya
 ms.author: trkeya
-ms.openlocfilehash: de85e4eb553f623790b472e79f8f97487ba96b48
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 553eba3898a5ea42e5d478603e35e82c68abcab1
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95751110"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462891"
 ---
 # <a name="test-drive-technical-configuration"></a>Technische configuratie van test drive
 
@@ -38,9 +38,9 @@ Micro soft kan de complexiteit van het instellen van een test drive verwijderen 
 
 - **Rolnaam** (vereist): Geef de beveiligingsrol naam op die u hebt gedefinieerd in uw aangepaste Dynamics 365 test drive, die wordt toegewezen aan de gebruiker tijdens hun test drive (bijvoorbeeld test station-Role).
 
-Volg [deze instructies](https://docs.microsoft.com/azure/marketplace/test-drive-azure-subscription-setup)voor meer informatie over het instellen van uw Dynamics 365-omgeving voor test drive en het verlenen van AppSource-machtiging voor het inrichten en ongedaan maken van test drive gebruikers in uw Tenant.
+Volg [deze instructies](./test-drive-azure-subscription-setup.md)voor meer informatie over het instellen van uw Dynamics 365-omgeving voor test drive en het verlenen van AppSource-machtiging voor het inrichten en ongedaan maken van test drive gebruikers in uw Tenant.
 
-Voor stapsgewijze instructies voor het weer geven en configureren van uw gehoste test drive gaat u naar de pagina [gedetailleerde configuratie voor gehoste test drive](https://docs.microsoft.com/azure/marketplace/test-drive-hosted-detailed-config) .
+Voor stapsgewijze instructies voor het weer geven en configureren van uw gehoste test drive gaat u naar de pagina [gedetailleerde configuratie voor gehoste test drive](./test-drive-hosted-detailed-config.md) .
 
 ## <a name="logic-app-test-drive"></a>test drive van logische app
 
@@ -95,7 +95,7 @@ De optie voor het **testen van stations** vindt u op het tabblad **test station*
 
 Als u uw test drive momenteel in partner centrum maakt, selecteert u **concept opslaan** voordat u doorgaat.
 
-Voor stapsgewijze instructies voor het weer geven en configureren van uw gehoste test drive gaat u naar de pagina [gedetailleerde configuratie voor gehoste test drive](https://docs.microsoft.com/azure/marketplace/test-drive-hosted-detailed-config) .
+Voor stapsgewijze instructies voor het weer geven en configureren van uw gehoste test drive gaat u naar de pagina [gedetailleerde configuratie voor gehoste test drive](./test-drive-hosted-detailed-config.md) .
 
 ## <a name="additional-resources"></a>Aanvullende resources
 

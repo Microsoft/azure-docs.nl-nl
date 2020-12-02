@@ -1,5 +1,5 @@
 ---
-title: Trans acties in Synapse SQL-pool gebruiken
+title: Trans acties in azure Synapse Analytics SQL-groep gebruiken
 description: Dit artikel bevat tips voor het implementeren van trans acties en het ontwikkelen van oplossingen in Synapse SQL-pool.
 services: synapse-analytics
 author: XiaoyuMSFT
@@ -9,17 +9,18 @@ ms.topic: conceptual
 ms.subservice: sql-dw
 ms.date: 03/22/2019
 ms.author: xiaoyul
+ms.custom: azure-synapse
 ms.reviewer: igorstan
-ms.openlocfilehash: 40a9e5268b7fccc5c01775c10e55eee47f1aaf3d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b5a3c0863bb35f0988d7928bb9a2857f6aceded6
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85213377"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96463199"
 ---
-# <a name="use-transactions-in-synapse-sql-pool"></a>Trans acties in Synapse SQL-pool gebruiken
+# <a name="use-transactions-in-a-sql-pool-in-azure-synapse"></a>Trans acties gebruiken in een SQL-groep in azure Synapse 
 
-Dit artikel bevat tips voor het implementeren van trans acties en het ontwikkelen van oplossingen in de SQL-groep.
+Dit artikel bevat tips voor het implementeren van trans acties en het ontwikkelen van oplossingen in een SQL-groep.
 
 ## <a name="what-to-expect"></a>Wat u kunt verwachten
 
@@ -27,7 +28,7 @@ Zoals verwacht, ondersteunt de SQL-groep trans acties als onderdeel van de werk 
 
 ## <a name="transaction-isolation-levels"></a>Trans actie-isolatie niveaus
 
-De SQL-Groep implementeert zure trans acties. Het isolatie niveau van de transactionele ondersteuning is standaard om niet-doorgevoerd te lezen.  U kunt deze wijzigen om doorgevoerde MOMENTOPNAME isolatie te lezen door de optie READ_COMMITTED_SNAPSHOT data base in te scha kelen voor een gebruikers database wanneer deze is verbonden met de hoofd database.  
+De SQL-Groep implementeert zure trans acties. Het isolatie niveau van de transactionele ondersteuning is standaard om niet-doorgevoerd te lezen.  U kunt deze wijzigen om doorgevoerde MOMENTOPNAME isolatie te lezen door de optie READ_COMMITTED_SNAPSHOT data base in te scha kelen voor een gebruikers-SQL-groep wanneer deze is verbonden met de hoofd database.  
 
 Wanneer deze optie is ingeschakeld, worden alle trans acties in deze data base uitgevoerd onder Lees-VASTGELEGDe snap shot-isolatie en wordt het lezen van niet-toegewezen op sessie niveau niet in rekening gehouden. Raadpleeg [ALTER data base set Options (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-set-options?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) voor meer informatie.
 
@@ -51,7 +52,7 @@ In de volgende tabel zijn twee hypo Thesen gemaakt:
 | DW300c |2.25 |60 |135 |9.000.000 |540.000.000 |
 | DW400c |3 |60 |180 |12.000.000 |720.000.000 |
 | DW500c |3,75 |60 |225 |15.000.000 |900.000.000 |
-| DW1000c |7.5 |60 |450 |30.000.000 |1.800.000.000 |
+| DW1000c |7,5 |60 |450 |30.000.000 |1.800.000.000 |
 | DW1500c |11,25 |60 |675 |45.000.000 |2.700.000.000 |
 | DW2000c |15 |60 |900 |60.000.000 |3.600.000.000 |
 | DW2500c |18,75 |60 |1125 |75.000.000 |4.500.000.000 |
@@ -73,7 +74,7 @@ In de volgende tabel zijn twee hypo Thesen gemaakt:
 | DW400 |3 |60 |180 |12.000.000 |720.000.000 |
 | DW500 |3,75 |60 |225 |15.000.000 |900.000.000 |
 | DW600 |4.5 |60 |270 |18.000.000 |1.080.000.000 |
-| DW1000 |7.5 |60 |450 |30.000.000 |1.800.000.000 |
+| DW1000 |7,5 |60 |450 |30.000.000 |1.800.000.000 |
 | DW1200 |9 |60 |540 |36.000.000 |2.160.000.000 |
 | DW1500 |11,25 |60 |675 |45.000.000 |2.700.000.000 |
 | DW2000 |15 |60 |900 |60.000.000 |3.600.000.000 |

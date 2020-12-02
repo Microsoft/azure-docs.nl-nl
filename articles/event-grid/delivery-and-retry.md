@@ -3,12 +3,12 @@ title: Azure Event Grid levering en probeer het opnieuw
 description: Hierin wordt beschreven hoe Azure Event Grid gebeurtenissen levert en hoe er niet-bezorgde berichten worden verwerkt.
 ms.topic: conceptual
 ms.date: 10/29/2020
-ms.openlocfilehash: 9a7bde33e322183f86c3c51d30bb004d06fa1406
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 51473cf457a1c713e6694edd23c344be8c4d439e
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96345350"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96463235"
 ---
 # <a name="event-grid-message-delivery-and-retry"></a>Bericht bezorging Event Grid en probeer het opnieuw
 
@@ -57,7 +57,7 @@ Voor meer informatie over het gebruik van Azure CLI met Event Grid raadpleegt [u
 
 Wanneer EventGrid een fout ontvangt voor een gebeurtenis bezorgings poging, bepaalt EventGrid of het een nieuwe levering of onbestelbare letter moet doen of de gebeurtenis wilt verwijderen op basis van het type fout. 
 
-Als de fout die wordt geretourneerd door het geabonneerde eind punt, configuratie gerelateerde fout is die niet kan worden opgelost met nieuwe pogingen (bijvoorbeeld als het eind punt wordt verwijderd), EventGrid het een gebeurtenis die niet kan worden uitgevoerd, of de gebeurtenis als de Dead-letter niet is geconfigureerd.
+Als de fout die wordt geretourneerd door het geabonneerde eind punt, configuratie gerelateerde fout is die niet kan worden opgelost met nieuwe pogingen (bijvoorbeeld als het eind punt wordt verwijderd), voert EventGrid de gebeurtenis onbestelbare berichten uit of verwijdert u de gebeurtenis als de onbestelbare letter niet is geconfigureerd.
 
 Hier volgen de typen eind punten waarvoor het nieuwe pogingen niet gebeurt:
 

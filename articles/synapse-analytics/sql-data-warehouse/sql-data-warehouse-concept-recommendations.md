@@ -1,5 +1,5 @@
 ---
-title: Synapse SQL-aanbevelingen
+title: Aanbevelingen voor de toegewezen SQL-groep Azure Advisor
 description: Meer informatie over Synapse SQL-aanbevelingen en hoe deze worden gegenereerd
 services: synapse-analytics
 author: kevinvngo
@@ -11,18 +11,18 @@ ms.date: 06/26/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: e4564005e3b9cc9673cc20596d4114d102174b9e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 667629b7f613b11f40528b039c7525339b7a62d0
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85482850"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462867"
 ---
-# <a name="synapse-sql-recommendations"></a>Synapse SQL-aanbevelingen
+# <a name="azure-advisor-recommendations-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Aanbevelingen voor Azure Advisor voor toegewezen SQL-groep in azure Synapse Analytics
 
-In dit artikel worden de Synapse SQL-aanbevelingen beschreven die worden aangeboden via Azure Advisor.  
+In dit artikel worden de aanbevelingen voor de exclusieve SQL-groep beschreven die beschikbaar zijn in Azure Advisor.  
 
-Synapse SQL biedt aanbevelingen om ervoor te zorgen dat de werk belasting van uw data warehouse consistent is geoptimaliseerd voor prestaties. Aanbevelingen worden nauw geïntegreerd met [Azure Advisor](../../advisor/advisor-performance-recommendations.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) om u te voorzien van best practices direct binnen de [Azure Portal](https://aka.ms/Azureadvisor). Synapse SQL verzamelt telemetrie-en oppervlak aanbevelingen voor uw actieve workload op een dagelijks uitgebracht. De ondersteunde aanbevelings scenario's worden hieronder beschreven, samen met het Toep assen van aanbevolen acties.
+Exclusieve SQL-groep biedt aanbevelingen om ervoor te zorgen dat de werk belasting van uw data warehouse consistent is geoptimaliseerd voor prestaties. Aanbevelingen worden nauw geïntegreerd met [Azure Advisor](../../advisor/advisor-performance-recommendations.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) om u te voorzien van best practices direct binnen de [Azure Portal](https://aka.ms/Azureadvisor). De toegewezen SQL-groep verzamelt telemetrie-en Opper vlakken aanbevelingen voor uw actieve workload op een dagelijks uitgebracht. De ondersteunde aanbevelings scenario's worden hieronder beschreven, samen met het Toep assen van aanbevolen acties.
 
 U kunt [uw aanbevelingen](https://aka.ms/Azureadvisor) vandaag nog controleren. 
 
@@ -73,4 +73,4 @@ De prestaties van query's kunnen afnemen wanneer er hoge TempDB-conflicten zijn.
 
 ## <a name="data-loading-misconfiguration"></a>Onjuiste configuratie van gegevens laden
 
-U moet altijd gegevens laden van een opslag account in dezelfde regio als uw SQL-groep om latentie te minimaliseren. Gebruik de [instructie Copy voor gegevens opname met hoge door Voer](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) en Splits uw gefaseerde bestanden in uw opslag account om de door voer te maximaliseren. Als u de instructie COPY niet kunt gebruiken, gebruikt u de SqlBulkCopy-API of BCP met een hoge Batch grootte voor een betere door voer. Raadpleeg de volgende [documentatie](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/guidance-for-loading-data)voor meer informatie over het laden van gegevens. 
+U moet altijd gegevens laden van een opslag account in dezelfde regio als uw toegewezen SQL-groep om latentie te minimaliseren. Gebruik de [instructie Copy voor gegevens opname met hoge door Voer](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) en Splits uw gefaseerde bestanden in uw opslag account om de door voer te maximaliseren. Als u de instructie COPY niet kunt gebruiken, gebruikt u de SqlBulkCopy-API of BCP met een hoge Batch grootte voor een betere door voer. Raadpleeg de volgende [documentatie](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/guidance-for-loading-data)voor meer informatie over het laden van gegevens. 

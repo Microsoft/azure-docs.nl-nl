@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 06/24/2019
 ms.author: alkohli
-ms.openlocfilehash: 9636c76caf2302b872a2ecbb8e2e4bacfc1408a6
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 6455e4c9fa9460e47e3be7c860f89be540a514b0
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91952128"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453067"
 ---
 # <a name="manage-access-power-and-connectivity-mode-for-your-azure-stack-edge-pro"></a>De toegang, de kracht en de connectiviteits modus voor uw Azure Stack Edge Pro beheren
 
@@ -46,7 +46,7 @@ Volg deze stappen in de lokale gebruikers interface om het wacht woord van het a
 
 Voor de werk stroom opnieuw instellen is niet vereist dat de gebruiker het oude wacht woord intrekt en is nuttig wanneer het wacht woord verloren is gegaan. Deze werk stroom wordt uitgevoerd in de Azure Portal.
 
-1. Ga in het Azure Portal naar **overzicht > het beheerders wachtwoord opnieuw**in te stellen.
+1. Ga in het Azure Portal naar **overzicht > het beheerders wachtwoord opnieuw** in te stellen.
 
     ![Wachtwoord opnieuw instellen](media/azure-stack-edge-manage-access-power-connectivity-mode/reset-password-1.png)
 
@@ -68,7 +68,7 @@ Bij het genereren van de activerings sleutel voor het Azure Stack Edge Pro-appar
 
 U moet toegang hebben `User` tot Active Directory Tenant als u dit moet kunnen doen `Read all directory objects` . U kunt geen gast gebruiker zijn omdat ze geen machtigingen hebben voor `Read all directory objects` . Als u een gast bent, worden de bewerkingen, zoals het genereren van een activerings sleutel, het maken van een share op uw Azure Stack Edge Pro-apparaat, het maken van een gebruiker, het configureren van de Edge Compute-functie, het opnieuw instellen van het wacht woord voor het apparaat, niet meer uitgevoerd.
 
-Zie [Microsoft Graph permissions Reference](https://docs.microsoft.com/graph/permissions-reference)(Engelstalig) voor meer informatie over het verlenen van toegang aan gebruikers om de API te Microsoft Graph.
+Zie [Microsoft Graph permissions Reference](/graph/permissions-reference)(Engelstalig) voor meer informatie over het verlenen van toegang aan gebruikers om de API te Microsoft Graph.
 
 ### <a name="register-resource-providers"></a>Resourceprovider registreren
 
@@ -114,7 +114,7 @@ Naast de standaard modus volledig verbonden, kan het apparaat ook worden uitgevo
 Voer de volgende stappen uit om de modus apparaat te wijzigen:
 
 1. Ga in de lokale web-UI van uw apparaat naar **configuratie > Cloud instellingen**.
-2. Selecteer in de vervolg keuzelijst de modus waarin u het apparaat wilt bedienen. U kunt een **volledig verbonden**, **gedeeltelijk verbonden**en **volledig losgekoppelde**selectie selecteren. Als u het apparaat wilt uitvoeren in een gedeeltelijk niet-verbonden modus, schakelt u **Azure Portal-beheer**in.
+2. Selecteer in de vervolg keuzelijst de modus waarin u het apparaat wilt bedienen. U kunt een **volledig verbonden**, **gedeeltelijk verbonden** en **volledig losgekoppelde** selectie selecteren. Als u het apparaat wilt uitvoeren in een gedeeltelijk niet-verbonden modus, schakelt u **Azure Portal-beheer** in.
 
     ![Connectiviteits modus](media/azure-stack-edge-manage-access-power-connectivity-mode/connectivity-mode.png)
  

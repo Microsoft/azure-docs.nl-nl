@@ -1,24 +1,21 @@
 ---
-title: Wat is Azure Cosmos DB Analytical Store (preview)?
+title: Wat is Azure Cosmos DB Analytical Store?
 description: Meer informatie over Azure Cosmos DB transactionele (op rijen gebaseerde) en analytische (op kolommen gebaseerde) opslag. Voor delen van de analytische opslag, invloed op de prestaties voor grootschalige workloads en automatische synchronisatie van gegevens van transactionele opslag naar een analytische opslag
 author: Rodrigossz
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 09/22/2020
+ms.date: 11/30/2020
 ms.author: rosouz
 ms.custom: seo-nov-2020
-ms.openlocfilehash: 9cde9586d453632ceaa61de7c095a5f95d1ea2e4
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 5dc233348188791404f826870b235d2bdfa4c202
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337403"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452855"
 ---
-# <a name="what-is-azure-cosmos-db-analytical-store-preview"></a>Wat is Azure Cosmos DB Analytical Store (preview)?
+# <a name="what-is-azure-cosmos-db-analytical-store"></a>Wat is Azure Cosmos DB Analytical Store?
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
-
-> [!IMPORTANT]
-> Azure Cosmos DB Analytical Store is momenteel beschikbaar als preview-versie. Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Zie voor meer informatie [aanvullende gebruiks voorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Azure Cosmos DB Analytical Store is een volledig geïsoleerde column Store voor het inschakelen van grootschalige analyses op basis van operationele gegevens in uw Azure Cosmos DB, zonder dat dit invloed heeft op uw transactionele werk belastingen. 
 
@@ -36,7 +33,7 @@ De ETL-pijp lijnen worden ook complex wanneer er updates worden verwerkt in de o
 
 Azure Cosmos DB Analytical Store verhelpt de complexiteits-en latentie uitdagingen die zich voordoen met de traditionele ETL-pijp lijnen. Met Azure Cosmos DB Analytical Store kunnen uw operationele gegevens automatisch worden gesynchroniseerd in een afzonderlijk kolom archief. De indeling van Column Store is geschikt voor grootschalige analytische query's die op een geoptimaliseerde manier worden uitgevoerd, wat resulteert in het verbeteren van de latentie van dergelijke query's.
 
-Met de koppeling Azure Synapse kunt u nu geen ETL-HTAP-oplossingen bouwen door rechtstreeks een koppeling te maken met Azure Cosmos DB Analytical Store van Synapse Analytics. Zo kunt u bijna realtime grootschalige analyses uitvoeren op uw operationele gegevens.
+Met de koppeling Azure Synapse kunt u nu geen ETL-HTAP-oplossingen bouwen door rechtstreeks een koppeling te maken met Azure Cosmos DB Analytical Store vanuit Azure Synapse Analytics. Zo kunt u bijna realtime grootschalige analyses uitvoeren op uw operationele gegevens.
 
 ## <a name="features-of-analytical-store"></a>Functies van de analytische opslag 
 
@@ -153,12 +150,12 @@ Hier volgt een overzicht van alle eigenschaps gegevens typen en de bijbehorende 
 | Dubbel |  ".float64" |    24,99|
 | Matrix | ". matrix" |    ["a", "b"]|
 |Binair | '. binary ' |0|
-|Booleaans    | ". BOOL"   |Waar|
+|Boolean    | ". BOOL"   |Waar|
 |Int32  | ". Int32"  |123|
 |Int64  | ". int64"  |255486129307|
 |Null   | ". null"   | null|
 |Tekenreeks|    ". teken reeks" | "ABC"|
-|Tijdstempel |    '. time stamp ' |  Tijds tempel (0, 0)|
+|Timestamp |    '. time stamp ' |  Tijds tempel (0, 0)|
 |DateTime   |". datum"    | ISODate ("2020-08-21T07:43:07.375 Z")|
 |ObjectId   |'. objectId '    | ObjectId ("5f3f7b59330ec25c132623a2")|
 |Document   |'. object ' |    {"a": "a"}|
@@ -181,10 +178,10 @@ Verificatie met het analytische archief is hetzelfde als het transactionele Arch
 
 De analytische opslag is geoptimaliseerd voor schaal baarheid, elasticiteit en prestaties voor analytische werk belastingen zonder enige afhankelijkheid op de reken tijden. De opslag technologie wordt zelf beheerd om uw analyse werkbelastingen te optimaliseren zonder hand matige inspanningen.
 
-Als u het analytische opslag systeem loskoppelt van het analytische berekenings systeem, kunnen gegevens in Azure Cosmos DB-analytische opslag tegelijk worden opgevraagd bij de verschillende analyse-runtimes die worden ondersteund door Azure Synapse Analytics. Vanaf nu, ondersteunt Synapse Analytics Apache Spark en SQL Server zonder Azure Cosmos DB-analytische opslag.
+Als u het analytische opslag systeem loskoppelt van het analytische berekenings systeem, kunnen gegevens in Azure Cosmos DB-analytische opslag tegelijk worden opgevraagd bij de verschillende analyse-runtimes die worden ondersteund door Azure Synapse Analytics. Vanaf nu ondersteunt Azure Synapse Analytics Apache Spark en serverloze SQL-groep met Azure Cosmos DB-analytische opslag.
 
 > [!NOTE]
-> U kunt alleen lezen uit de analytische opslag met behulp van Synapse Analytics run time. U kunt de gegevens terugschrijven naar uw transactionele archief als een te leveren laag.
+> U kunt alleen lezen uit de analytische opslag met behulp van Azure Synapse Analytics-uitvoerings tijd. U kunt de gegevens terugschrijven naar uw transactionele archief als een te leveren laag.
 
 ## <a name="pricing"></a><a id="analytical-store-pricing"></a> Koers
 
@@ -194,10 +191,7 @@ In de analytische opslag wordt een prijs model op basis van verbruik gevolgd waa
 
 * Analytische schrijf bewerkingen: de volledig beheerde synchronisatie van operationele gegevens updates naar het analytische archief vanuit het transactionele archief (automatische synchronisatie)
 
-* Analytische Lees bewerkingen: de Lees bewerkingen die worden uitgevoerd voor het analytische archief van Synapse Analytics Spark en SQL serverloze uitvoerings tijden.
-
-> [!NOTE]
-> Azure Cosmos DB Analytical Store is momenteel beschikbaar in open bare Preview gratis van kosten.
+* Analytische Lees bewerkingen: de Lees bewerkingen die worden uitgevoerd voor het analytische archief vanuit een Azure Synapse Analytics Spark-groep en de uitvoerings tijd van de serverloze SQL-pool.
 
 Prijzen voor een analytische opslag zijn gescheiden van het prijs model voor de transactie opslag. Er is geen concept van het ingerichte RUs in de analytische opslag. Zie [Azure Cosmos DB-pagina met prijzen](https://azure.microsoft.com/pricing/details/cosmos-db/)voor meer informatie over het prijs model voor de analytische opslag.
 

@@ -7,12 +7,12 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.custom: references_regions
 ms.date: 10/21/2020
-ms.openlocfilehash: 5790094571563d3ca8576480a6296a73756fb6a6
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 7420a7c6355fbcd70ce57fbb36ab29d1241df31f
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94540413"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453334"
 ---
 # <a name="monitoring-in-azure-database-for-mariadb"></a>Bewaking in Azure Database for MariaDB
 Het bewaken van gegevens over uw servers helpt u bij het oplossen en optimaliseren van uw werk belasting. Azure Database for MariaDB biedt diverse metrische gegevens die inzicht geven in het gedrag van uw server.
@@ -67,7 +67,6 @@ Meer informatie over het instellen van meldingen in het document [geplande onder
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie het [overzicht van Azure-metrische](../monitoring-and-diagnostics/monitoring-overview-metrics.md)gegevens voor meer informatie over het openen en exporteren van metrische gegevens met behulp van de Azure Portal, rest API of cli.
+- Zie het [overzicht van Azure-metrische](../azure-monitor/platform/data-platform.md)gegevens voor meer informatie over het openen en exporteren van metrische gegevens met behulp van de Azure Portal, rest API of cli.
 - Zie [waarschuwingen instellen](howto-alert-metric.md) voor hulp bij het maken van een waarschuwing op metrische gegevens.
 - Meer informatie over [geplande onderhouds meldingen](./concepts-planned-maintenance-notification.md) in azure database for MariaDB.
-

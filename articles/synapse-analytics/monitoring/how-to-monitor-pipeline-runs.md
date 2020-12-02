@@ -6,19 +6,19 @@ author: matt1883
 ms.service: synapse-analytics
 ms.topic: how-to
 ms.subservice: monitoring
-ms.date: 10/27/2020
+ms.date: 11/30/2020
 ms.author: mahi
 ms.reviewer: mahi
-ms.openlocfilehash: 61d860def7209908e65e9456a4bcde87eed522fc
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: dbd890117c78274392d5745e0563332371b404c5
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746383"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452584"
 ---
 # <a name="use-synapse-studio-to-monitor-your-workspace-pipeline-runs"></a>Synapse Studio gebruiken om de pipeline-uitvoeringen van uw werk ruimte te controleren
 
-Met Azure Synapse Analytics kunt u complexe pijp lijnen maken die uw gegevens verplaatsing, gegevens transformatie en reken activiteiten binnen uw oplossing kunnen automatiseren en integreren. U kunt deze pijp lijnen ontwerpen en bewaken met behulp van Synapse Studio (preview).
+Met Azure Synapse Analytics kunt u complexe pijp lijnen maken die uw gegevens verplaatsing, gegevens transformatie en reken activiteiten binnen uw oplossing kunnen automatiseren en integreren. U kunt deze pijp lijnen ontwerpen en bewaken met behulp van Synapse Studio.
 
 In dit artikel wordt uitgelegd hoe u uw pijplijn uitvoeringen kunt bewaken, zodat u op de hoogte blijft van de meest recente status, problemen en voortgang van uw pijp lijnen.
 
@@ -41,8 +41,6 @@ Selecteer **pijplijn uitvoeringen** om de lijst met pijplijn uitvoeringen weer t
 U kunt de lijst met pijplijn uitvoeringen filteren op degene waarin u bent geïnteresseerd. Met de filters boven aan het scherm kunt u een veld opgeven waarop u wilt filteren.
 
 U kunt bijvoorbeeld de weer gave filteren om alleen de pijplijn uitvoeringen weer te geven voor de pijp lijn met de naam ' vakantie ':
-
-![Knop filteren](./media/common/filter-button.png)
 
 ![Voorbeeld filter](./media/how-to-monitor-pipeline-runs/filter-example.png)
 

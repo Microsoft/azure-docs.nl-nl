@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 7/17/2020
-ms.openlocfilehash: 0863ccda9f292f3da9f7064a78ba700ab5962eb2
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: bd7d08e4f65612b9a76b63e8153603d043209ad3
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96014632"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453375"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-mariadb"></a>Service-eindpunten en -regels voor virtuele netwerken gebruiken voor Azure Database for MariaDB
 
@@ -112,7 +112,7 @@ Voor Azure Database for MariaDB heeft de functie regels voor virtuele netwerken 
 
 - De regels voor virtuele netwerken zijn alleen van toepassing op Azure Resource Manager virtuele netwerken. en niet op [klassieke implementatie model][resource-manager-deployment-model-568f] netwerken.
 
-- Als u de service-eind punten voor virtuele netwerken inschakelt om Azure Database for MariaDB met behulp van het tag **micro soft. SQL** -service, worden ook de eind punten ingeschakeld voor alle Azure data base-services: Azure Database for MariaDB, Azure Database for MySQL, Azure Database for PostgreSQL, Azure SQL database en Azure Synapse Analytics (voorheen SQL Data Warehouse).
+- Als u de service-eind punten van het virtuele netwerk inschakelt voor Azure Database for MariaDB met behulp van het tag **micro soft. SQL** -service, worden ook de eind punten ingeschakeld voor alle Azure data base-services: Azure Database for MariaDB, Azure Database for MySQL, Azure Database for PostgreSQL, Azure SQL database en Azure Synapse Analytics.
 
 - Ondersteuning voor VNet-service-eind punten is alleen voor servers met Algemeen en geoptimaliseerd voor geheugen.
 

@@ -1,26 +1,26 @@
 ---
-title: Retail-gegevens van Contoso laden in Synapse SQL
-description: Gebruik poly base-en T-SQL-opdrachten om twee tabellen uit de Retail gegevens van Contoso in Synapse SQL te laden.
+title: Retail-gegevens van Contoso laden in toegewezen SQL-groepen
+description: Gebruik poly base-en T-SQL-opdrachten om twee tabellen uit de Retail gegevens van Contoso te laden in toegewezen SQL-groepen.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
-ms.date: 04/17/2018
+ms.date: 11/20/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 904ce55f376e42156b014056b1226512b2784742
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bbe61444404b16a09a1e0d2bdead72ac53a60744
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89461694"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452887"
 ---
-# <a name="load-contoso-retail-data-to-synapse-sql"></a>Retail-gegevens van Contoso laden in Synapse SQL 
+# <a name="load-contoso-retail-data-into-dedicated-sql-pools-in-azure-synapse-analytics"></a>Retail-gegevens van Contoso in speciale SQL-groepen in azure Synapse Analytics laden
 
-In deze zelf studie leert u hoe u poly base-en T-SQL-opdrachten gebruikt om twee tabellen uit de Retail gegevens van Contoso te laden in Synapse SQL.
+In deze zelf studie leert u hoe u poly base-en T-SQL-opdrachten gebruikt om twee tabellen uit de Retail gegevens van Contoso te laden in toegewezen SQL-groepen.
 
 In deze zelfstudie gaat u:
 
@@ -30,11 +30,11 @@ In deze zelfstudie gaat u:
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Als u deze zelf studie wilt uitvoeren, hebt u een Azure-account nodig dat al een Synapse-SQL heeft. Als u geen data warehouse hebt ingericht, raadpleegt u [een Data Warehouse maken en firewall regel op server niveau instellen](create-data-warehouse-portal.md).
+Als u deze zelf studie wilt uitvoeren, hebt u een Azure-account nodig dat al een toegewezen SQL-groep heeft. Als u geen data warehouse hebt ingericht, raadpleegt u [een Data Warehouse maken en firewall regel op server niveau instellen](create-data-warehouse-portal.md).
 
 ## <a name="configure-the-data-source"></a>De gegevens bron configureren
 
-Poly base maakt gebruik van externe T-SQL-objecten om de locatie en kenmerken van de externe gegevens te definiëren. De definities voor externe objecten worden opgeslagen in Synapse SQL. De gegevens worden extern opgeslagen.
+Poly base maakt gebruik van externe T-SQL-objecten om de locatie en kenmerken van de externe gegevens te definiëren. De definities voor externe objecten worden opgeslagen in toegewezen SQL-groepen. De gegevens worden extern opgeslagen.
 
 ## <a name="create-a-credential"></a>Een referentie maken
 
@@ -274,7 +274,7 @@ ORDER BY
 
 ## <a name="optimize-columnstore-compression"></a>Column Store-compressie optimaliseren
 
-Synapse SQL slaat de tabel standaard op als een geclusterde column store-index. Nadat het laden is voltooid, zijn sommige gegevens rijen mogelijk niet gecomprimeerd naar de column Store.  Er zijn verschillende redenen waarom dit kan gebeuren. Zie [Column Store-indexen beheren](sql-data-warehouse-tables-index.md)voor meer informatie.
+Standaard worden in toegewezen SQL-groepen de tabel opgeslagen als een geclusterde column store-index. Nadat het laden is voltooid, zijn sommige gegevens rijen mogelijk niet gecomprimeerd naar de column Store.  Er zijn verschillende redenen waarom dit kan gebeuren. Zie [Column Store-indexen beheren](sql-data-warehouse-tables-index.md)voor meer informatie.
 
 Als u de query prestaties en column Store-compressie wilt optimaliseren na een laad opdracht, bouwt u de tabel opnieuw op om ervoor te zorgen dat de column store-index alle rijen kan comprimeren.
 

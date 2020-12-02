@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 09/16/2020
 ms.author: robinsh
-ms.openlocfilehash: c53f78702aeb5404bd353274ddb29b9356229fae
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: ab9e122ba0b2b50203a2d66ae14f03f3b6300f96
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92145768"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452340"
 ---
 # <a name="weather-forecast-using-the-sensor-data-from-your-iot-hub-in-azure-machine-learning-studio-classic"></a>Weers voorspelling met behulp van de sensor gegevens van uw IoT-hub in Azure Machine Learning Studio (klassiek)
 
@@ -46,7 +46,7 @@ U leert hoe u Azure Machine Learning Studio (klassiek) kunt gebruiken voor de we
   - Een Azure IoT hub onder uw abonnement.
   - Een client toepassing die berichten verzendt naar uw Azure IoT hub.
 - Een [Azure machine learning Studio (klassiek)-](https://studio.azureml.net/) account.
-- Een [Azure Storage-account](../storage/common/storage-account-overview.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json#types-of-storage-accounts)is de voor keur voor een **v2-account voor algemeen gebruik** , maar alle Azure Storage-accounts die ondersteuning bieden voor Azure Blob Storage, werken ook.
+- Een [Azure Storage-account](../storage/common/storage-account-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#types-of-storage-accounts)is de voor keur voor een **v2-account voor algemeen gebruik** , maar alle Azure Storage-accounts die ondersteuning bieden voor Azure Blob Storage, werken ook.
 
 > [!Note]
 > In dit artikel worden Azure Stream Analytics en verschillende andere betaalde Services gebruikt. Er worden extra kosten in rekening gebracht in Azure Stream Analytics wanneer gegevens moeten worden overgebracht tussen Azure-regio's. Daarom is het raadzaam om ervoor te zorgen dat uw resource groep, IoT Hub, en Azure Storage account--en de Machine Learning Studio (klassieke) werk ruimte en Azure Stream Analytics taak later in deze zelf studie worden toegevoegd. Deze bevinden zich allemaal in dezelfde Azure-regio. U kunt de regionale ondersteuning voor Azure Machine Learning Studio (klassiek) en andere Azure-Services controleren op de [pagina Azure product beschik baarheid per regio](https://azure.microsoft.com/global-infrastructure/services/?products=machine-learning-studio&regions=all).
@@ -106,7 +106,7 @@ In deze sectie valideert u het model, stelt u een voorspellende webservice in op
 
    ![Voer het experiment uit om de stappen te valideren](media/iot-hub-weather-forecast-machine-learning/run-experiment.png)
 
-1. Selecteer **Web Service**  >  **Predictive webservice**instellen. Het diagram voor het voorspellende experiment wordt geopend.
+1. Selecteer **Web Service**  >  **Predictive webservice** instellen. Het diagram voor het voorspellende experiment wordt geopend.
 
    ![Het weers voorspelling model in Azure Machine Learning Studio (klassiek) implementeren](media/iot-hub-weather-forecast-machine-learning/predictive-experiment.png)
 
@@ -154,7 +154,7 @@ In deze sectie valideert u het model, stelt u een voorspellende webservice in op
 
 1. Open de taak Stream Analytics.
 1. Selecteer onder **Taaktopologie** de optie **Invoer**.
-1. Selecteer in het deel venster **invoer** de optie **stroom invoer toevoegen**en selecteer vervolgens **IOT hub** in de vervolg keuzelijst. Kies in het deel venster **Nieuw invoer** de **optie IOT hub selecteren uit uw abonnementen** en voer de volgende gegevens in:
+1. Selecteer in het deel venster **invoer** de optie **stroom invoer toevoegen** en selecteer vervolgens **IOT hub** in de vervolg keuzelijst. Kies in het deel venster **Nieuw invoer** de **optie IOT hub selecteren uit uw abonnementen** en voer de volgende gegevens in:
 
    **Invoer alias**: de unieke alias voor de invoer.
 
@@ -162,7 +162,7 @@ In deze sectie valideert u het model, stelt u een voorspellende webservice in op
 
    **IOT hub**: Selecteer de IOT-hub in uw abonnement.
 
-   **Naam van beleid voor gedeelde toegang**: Selecteer  **service**. (U kunt ook **iothubowner**gebruiken.)
+   **Naam van beleid voor gedeelde toegang**: Selecteer  **service**. (U kunt ook **iothubowner** gebruiken.)
 
    **Consumenten groep**: Selecteer de Consumer groep die u hebt gemaakt.
 
@@ -175,7 +175,7 @@ In deze sectie valideert u het model, stelt u een voorspellende webservice in op
 ### <a name="add-an-output-to-the-stream-analytics-job"></a>Een uitvoer aan de Stream Analytics-taak toevoegen
 
 1. Selecteer onder **Taaktopologie** de optie **Uitvoer**.
-1. Selecteer in het deel venster **outputs** de optie **toevoegen**en selecteer vervolgens **Blob Storage/Data Lake Storage** in de vervolg keuzelijst. Kies in het deel venster **nieuwe uitvoer** de optie **opslag selecteren bij uw abonnementen** en voer de volgende gegevens in:
+1. Selecteer in het deel venster **outputs** de optie **toevoegen** en selecteer vervolgens **Blob Storage/Data Lake Storage** in de vervolg keuzelijst. Kies in het deel venster **nieuwe uitvoer** de optie **opslag selecteren bij uw abonnementen** en voer de volgende gegevens in:
 
    **Uitvoeralias**: de alias die uniek is voor de uitvoer.
 
@@ -193,8 +193,8 @@ In deze sectie valideert u het model, stelt u een voorspellende webservice in op
 
 ### <a name="add-a-function-to-the-stream-analytics-job-to-call-the-web-service-you-deployed"></a>Een functie toevoegen aan de Stream Analytics-taak om de door u geïmplementeerde webservice aan te roepen
 
-1. Selecteer **functies**onder **taak topologie**.
-1. Selecteer in het deel venster **functies** de optie **toevoegen**en selecteer vervolgens **Azure-ml Studio** in de vervolg keuzelijst. (Zorg ervoor dat u **azure ml Studio**selecteert, niet de **Azure ml-service**.) Kies in het deel venster **Nieuw functie** de **instellingen voor Azure machine learning functie hand matig** en voer de volgende gegevens in:
+1. Selecteer **functies** onder **taak topologie**.
+1. Selecteer in het deel venster **functies** de optie **toevoegen** en selecteer vervolgens **Azure-ml Studio** in de vervolg keuzelijst. (Zorg ervoor dat u **azure ml Studio** selecteert, niet de **Azure ml-service**.) Kies in het deel venster **Nieuw functie** de **instellingen voor Azure machine learning functie hand matig** en voer de volgende gegevens in:
 
    **Functie alias**: Enter `machinelearning` .
 
@@ -215,7 +215,7 @@ In deze sectie valideert u het model, stelt u een voorspellende webservice in op
    WITH machinelearning AS (
       SELECT EventEnqueuedUtcTime, temperature, humidity, machinelearning(temperature, humidity) as result from [YourInputAlias]
    )
-   Select System.Timestamp time, CAST (result.[temperature] AS FLOAT) AS temperature, CAST (result.[humidity] AS FLOAT) AS humidity, CAST (result.[scored probabilities] AS FLOAT ) AS 'probabalities of rain'
+   Select System.Timestamp time, CAST (result.[temperature] AS FLOAT) AS temperature, CAST (result.[humidity] AS FLOAT) AS humidity, CAST (result.[scored probabilities] AS FLOAT ) AS 'probabalities of rain'
    Into [YourOutputAlias]
    From machinelearning
    ```
@@ -227,11 +227,11 @@ In deze sectie valideert u het model, stelt u een voorspellende webservice in op
 1. Selecteer **Query opslaan**.
 
 > [!Note]
-> Als u **test query**selecteert, wordt het volgende bericht weer gegeven: query's testen met machine learning-functies worden niet ondersteund. Wijzig de query en probeer het opnieuw. U kunt dit bericht negeren en **OK** selecteren om het bericht venster te sluiten. Zorg ervoor dat u de query opslaat voordat u doorgaat naar de volgende sectie.
+> Als u **test query** selecteert, wordt het volgende bericht weer gegeven: query's testen met machine learning-functies worden niet ondersteund. Wijzig de query en probeer het opnieuw. U kunt dit bericht negeren en **OK** selecteren om het bericht venster te sluiten. Zorg ervoor dat u de query opslaat voordat u doorgaat naar de volgende sectie.
 
 ### <a name="run-the-stream-analytics-job"></a>De Stream Analytics-taak uitvoeren
 
-Selecteer in de taak Stream Analytics **overzicht** in het linkerdeel venster. **Selecteer vervolgens**start  >  **nu**starten  >  **Start**. Zodra de taak kan worden gestart, wordt de taakstatus veranderd van **Gestopt** naar **In uitvoering**.
+Selecteer in de taak Stream Analytics **overzicht** in het linkerdeel venster. **Selecteer vervolgens** start  >  **nu** starten  >  **Start**. Zodra de taak kan worden gestart, wordt de taakstatus veranderd van **Gestopt** naar **In uitvoering**.
 
 ![De Stream Analytics-taak uitvoeren](media/iot-hub-weather-forecast-machine-learning/run-stream-analytics-job.png)
 

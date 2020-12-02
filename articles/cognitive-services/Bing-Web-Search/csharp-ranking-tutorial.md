@@ -12,19 +12,19 @@ ms.topic: tutorial
 ms.date: 06/24/2020
 ms.author: aahi
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c6b6aea6a3b0856b3db345e20b87d2a12ad055e1
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: 077c715616e377d8b296e53fdd5a861f944ab940
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94380327"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349500"
 ---
 # <a name="build-a-console-app-search-client-in-c"></a>Een zoekclient voor console-app maken in C#
 
 > [!WARNING]
-> Bing Search-API's worden van Cognitive Services naar Bing Search Services verplaatst. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht volgens het proces dat [hier](https://aka.ms/cogsvcs/bingmove) is beschreven.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services verplaatst. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht volgens het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
 > Bing Search-API's ingericht met behulp van Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
-> Zie [Bing Search Services](https://aka.ms/cogsvcs/bingmigration) voor migratie-instructies.
+> Zie [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
 Deze zelfstudie laat zien hoe u een eenvoudige .NET Core-console-app bouwt waarmee gebruikers query's kunnen uitvoeren op de Bing Web Search-API en gerangschikte resultaten kunnen weergeven.
 
@@ -63,12 +63,12 @@ Met JSON.net kunt u werken met de JSON-antwoorden die zijn geretourneerd door de
 In deze zelfstudie wordt gebruikgemaakt van de `System.Web`-assembly. Voeg een verwijzing toe naar deze assembly aan uw project:
 
 - Klik in **Solution Explorer** met de rechtermuisknop op **Verwijzingen** en selecteer **Verwijzing toevoegen…** .
-- Selecteer **Assembly's > Framework** , schuif omlaag en controleer **System.Web**
+- Selecteer **Assembly's > Framework**, schuif omlaag en controleer **System.Web**
 - Selecteer **OK**
 
 ## <a name="add-some-necessary-using-statements"></a>Enkele vereiste instructies toevoegen
 
-Voor de code in deze zelfstudie zijn drie extra instructies vereist. Voeg deze instructies toe onder de bestaande `using`-instructies bovenaan **Program.cs** :
+Voor de code in deze zelfstudie zijn drie extra instructies vereist. Voeg deze instructies toe onder de bestaande `using`-instructies bovenaan **Program.cs**:
 
 ```csharp
 using System.Web;
@@ -283,7 +283,7 @@ Deze methode:
 - Lussen over de `rankingResponse`-groepen die het antwoord bevat
 - De items in elke groep worden weergegeven door `DisplaySpecificResults(...)` aan te roepen
 
-Voeg de volgende twee methoden toe in **Program.cs** :
+Voeg de volgende twee methoden toe in **Program.cs**:
 
 ```csharp
 static void DisplaySpecificResults(Newtonsoft.Json.Linq.JToken resultIndex, Newtonsoft.Json.Linq.JToken items, string title, params string[] fields)

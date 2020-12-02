@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 08/03/2020
 ms.author: matjazl
-ms.openlocfilehash: d013af82a862f1bc6b5324e7523aeea5593a4f94
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 31ae5b780bf451e29a97f04202f804db27fc387a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030659"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452943"
 ---
 # <a name="frequently-asked-questions-about-the-azure-api-for-fhir"></a>Veelgestelde vragen over de Azure API voor FHIR
 
@@ -31,7 +31,7 @@ Ja, de gegevens worden opgeslagen in beheerde data bases in Azure. De Azure API 
 We ondersteunen momenteel Microsoft Azure Active Directory als id-provider.
 
 ### <a name="what-is-the-recovery-point-objective-rpo-for-the-azure-api-for-fhir"></a>Wat is het beoogde herstel punt (RPO) voor de Azure API voor FHIR?
-De Azure-API voor FHIR wordt ondersteund door Cosmos DB als onze persistentie provider. Als gevolg hiervan is de RPO voor de service gelijk aan [Cosmos DB (één regio)](https://docs.microsoft.com/azure/cosmos-db/consistency-levels) en is < 240 minuten.
+De Azure-API voor FHIR wordt ondersteund door Cosmos DB als onze persistentie provider. Als gevolg hiervan is de RPO voor de service gelijk aan [Cosmos DB (één regio)](../cosmos-db/consistency-levels.md) en is < 240 minuten.
 
 ### <a name="what-fhir-version-do-you-support"></a>Welke FHIR-versie wordt ondersteund?
 

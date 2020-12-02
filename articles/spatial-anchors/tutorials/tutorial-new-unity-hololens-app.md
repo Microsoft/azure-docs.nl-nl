@@ -1,19 +1,19 @@
 ---
 title: 'Zelfstudie: Een nieuwe HoloLens Unity-app maken'
 description: In deze zelfstudie leert u hoe u een HoloLens Unity-app maakt met behulp van Azure Spatial Anchors.
-author: craigktreasure
-manager: vriveras
+author: msftradford
+manager: MehranAzimi-msft
 services: azure-spatial-anchors
-ms.author: crtreasu
-ms.date: 08/17/2020
+ms.author: parkerra
+ms.date: 11/20/2020
 ms.topic: tutorial
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: e94ced70ad17286612328884d03d4d1253b7818b
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: ee0bf9b4ce009f37dd1931d4ed030defa24e7d38
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92096535"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "95996254"
 ---
 # <a name="tutorial-step-by-step-instructions-to-create-a-new-hololens-unity-app-using-azure-spatial-anchors"></a>Zelfstudie: Stapsgewijze instructies voor het maken van een nieuwe HoloLens Unity-app met behulp van Azure Spatial Anchors
 
@@ -44,7 +44,7 @@ We gaan nu enkele Unity-projectinstellingen instellen die ons helpen de Windows 
 
 We gaan eerst kwaliteitsinstellingen voor onze toepassing instellen.
 1. Selecteer **Edit** > **Project Settings** > **Quality**
-2. Klik in de kolom onder het logo van **Windows Store** op de pijl op de **Default**rij en selecteer **Very Low**. U weet dat de instelling correct wordt toegepast wanneer het vak in de kolom **Windows Store** en de rij **Very Low** groen is.
+2. Klik in de kolom onder het logo van **Windows Store** op de pijl op de **Default** rij en selecteer **Very Low**. U weet dat de instelling correct wordt toegepast wanneer het vak in de kolom **Windows Store** en de rij **Very Low** groen is.
 
 We moeten onze Unity-app configureren zodat deze een detailweergave in plaats van een 2D-weergave gebruikt. We kunnen een detailweergave maken door ondersteuning voor Virtual Reality in te schakelen voor Unity die op de Windows 10 SDK is gericht.
 1. Ga naar **Edit** > **Project Settings** > **Player**.

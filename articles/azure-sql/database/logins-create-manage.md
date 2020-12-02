@@ -13,19 +13,19 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: sstein
 ms.date: 03/23/2020
-ms.openlocfilehash: 940ea0ac471604b22c64dc008eebd8b580121cf7
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: d03bce1566d4f56a576c980723571f587296236f
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92782736"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452428"
 ---
-# <a name="authorize-database-access-to-sql-database-sql-managed-instance-and-azure-synapse-analytics"></a>Database toegang tot SQL Database, SQL Managed instance en Azure Synapse Analytics autoriseren
+# <a name="authorize-database-access-to-sql-database-sql-managed-instance-and-azure-synapse-analytics"></a>Databasetoegang verlenen tot SQL Database, SQL Managed Instance, en Azure Synapse Analytics
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
 In dit artikel vindt u meer informatie over:
 
-- Opties voor het configureren van Azure SQL Database, Azure SQL Managed instance en Azure Synapse Analytics (voorheen SQL Data Warehouse) om gebruikers in staat te stellen beheer taken uit te voeren en toegang te krijgen tot de gegevens die zijn opgeslagen in deze data bases.
+- Opties voor het configureren van Azure SQL Database, Azure SQL Managed instance en Azure Synapse Analytics om gebruikers in staat te stellen beheer taken uit te voeren en toegang te krijgen tot de gegevens die zijn opgeslagen in deze data bases.
 - De configuratie van toegang en autorisatie na het maken van een nieuwe server.
 - Aanmeldingen en gebruikers accounts toevoegen aan de hoofd database en gebruikers accounts en vervolgens deze accounts beheer machtigingen verlenen.
 - Het toevoegen van gebruikers accounts in gebruikers databases, hetzij gekoppeld aan aanmeldingen of als opgenomen gebruikers accounts.
@@ -46,7 +46,7 @@ Wanneer een gebruiker probeert verbinding te maken met een Data Base, bieden ze 
 
   Met deze verificatie methode verzendt de gebruiker de naam van een gebruikers account en vraagt de service de referentie gegevens te gebruiken die zijn opgeslagen in Azure Active Directory (Azure AD).
 
-**Aanmeldingen en gebruikers** : een gebruikers account in een Data Base kan worden gekoppeld aan een aanmelding die is opgeslagen in de hoofd database of kan een gebruikers naam zijn die is opgeslagen in een afzonderlijke data base.
+**Aanmeldingen en gebruikers**: een gebruikers account in een Data Base kan worden gekoppeld aan een aanmelding die is opgeslagen in de hoofd database of kan een gebruikers naam zijn die is opgeslagen in een afzonderlijke data base.
 
 - Een **aanmelding** is een afzonderlijk account in de hoofd database, waaraan een gebruikers account in een of meer data bases kan worden gekoppeld. Bij een aanmelding worden de aanmeldingsgegevens voor het gebruikersaccount bij de aanmelding opgeslagen.
 - Een **gebruikers account** is een afzonderlijk account in een Data Base die mogelijk wel, maar niet is gekoppeld aan een aanmelding. Bij een gebruikersaccount dat niet is gekoppeld aan een aanmelding, worden de aanmeldingsgegevens opgeslagen met het gebruikersaccount.
@@ -68,7 +68,7 @@ Als u de beheerders accounts voor een Data Base wilt identificeren, opent u de A
 ![Scherm afbeelding die de menu optie Eigenschappen markeert.](./media/logins-create-manage/sql-admins2.png)
 
 > [!IMPORTANT]
-> De aanmeldings naam van de beheerder kan niet worden gewijzigd nadat deze is gemaakt. Als u het wacht woord voor de server beheerder opnieuw wilt instellen, gaat u naar de [Azure Portal](https://portal.azure.com), klikt u op **SQL-servers** , selecteert u de server in de lijst en klikt u vervolgens op **wacht woord opnieuw instellen** . Als u het wacht woord voor het beheerde exemplaar van SQL wilt herstellen, gaat u naar de Azure Portal, klikt u op het exemplaar en klikt u op **wacht woord opnieuw instellen** . U kunt ook Power shell of de Azure CLI gebruiken.
+> De aanmeldings naam van de beheerder kan niet worden gewijzigd nadat deze is gemaakt. Als u het wacht woord voor de server beheerder opnieuw wilt instellen, gaat u naar de [Azure Portal](https://portal.azure.com), klikt u op **SQL-servers**, selecteert u de server in de lijst en klikt u vervolgens op **wacht woord opnieuw instellen**. Als u het wacht woord voor het beheerde exemplaar van SQL wilt herstellen, gaat u naar de Azure Portal, klikt u op het exemplaar en klikt u op **wacht woord opnieuw instellen**. U kunt ook Power shell of de Azure CLI gebruiken.
 
 ## <a name="create-additional-logins-and-users-having-administrative-permissions"></a>Extra aanmeldingen en gebruikers met beheerders machtigingen maken
 
@@ -125,7 +125,7 @@ Voor voor beelden van het maken van aanmeldingen en gebruikers raadpleegt u:
 - [Aanmelding voor Azure SQL Database maken](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-current#examples-1)
 - [Aanmelding maken voor Azure SQL Managed instance](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current#examples-2)
 - [Aanmelding voor Azure Synapse maken](/sql/t-sql/statements/create-login-transact-sql?view=azure-sqldw-latest#examples-3)
-- [Gebruiker maken](/sql/t-sql/statements/create-user-transact-sql#examples)
+- [Create user](/sql/t-sql/statements/create-user-transact-sql#examples)
 - [In azure AD opgenomen gebruikers maken](authentication-aad-configure.md#create-contained-users-mapped-to-azure-ad-identities)
 
 > [!TIP]
@@ -137,7 +137,7 @@ Nadat u een gebruikers account in een Data Base hebt gemaakt, op basis van een a
 
 - **Vaste database rollen**
 
-  Voeg het gebruikers account toe aan een [vaste databaserol](/sql/relational-databases/security/authentication-access/database-level-roles). Er zijn negen vaste database rollen, elk met een gedefinieerde set machtigingen. De meest voorkomende vaste database rollen zijn: **db_owner** , **db_ddladmin** , **db_datawriter** , **db_datareader** , **db_denydatawriter** en **db_denydatareader** . **db_owner** wordt doorgaans gebruikt voor het verlenen van volledige machtigingen aan slechts enkele gebruikers. De andere vaste databaserollen zijn handig voor het snel verkrijgen van een eenvoudige database voor ontwikkeldoeleinden, maar worden niet aanbevolen voor de meeste productiedatabases. Met de **db_datareader** vaste databaserol wordt bijvoorbeeld lees toegang verleend aan elke tabel in de data base, wat meer is dan strikt nood zakelijk is.
+  Voeg het gebruikers account toe aan een [vaste databaserol](/sql/relational-databases/security/authentication-access/database-level-roles). Er zijn negen vaste database rollen, elk met een gedefinieerde set machtigingen. De meest voorkomende vaste database rollen zijn: **db_owner**, **db_ddladmin**, **db_datawriter**, **db_datareader**, **db_denydatawriter** en **db_denydatareader**. **db_owner** wordt doorgaans gebruikt voor het verlenen van volledige machtigingen aan slechts enkele gebruikers. De andere vaste databaserollen zijn handig voor het snel verkrijgen van een eenvoudige database voor ontwikkeldoeleinden, maar worden niet aanbevolen voor de meeste productiedatabases. Met de **db_datareader** vaste databaserol wordt bijvoorbeeld lees toegang verleend aan elke tabel in de data base, wat meer is dan strikt nood zakelijk is.
 
   - Een gebruiker toevoegen aan een vaste databaserol:
 

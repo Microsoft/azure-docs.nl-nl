@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
 zone_pivot_groups: programming-languages-set-twenty-six
-ms.openlocfilehash: 8d8da39f038f465030a2dced092ab1b008e30e5e
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 3aa236570e518b142adb8382387a8cdea4fc08a0
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95511448"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453277"
 ---
 # <a name="iot-plug-and-play-device-developer-guide"></a>Ontwikkelaars handleiding voor IoT Plug en Play-apparaten
 
@@ -67,8 +67,8 @@ Zodra de implementatie van uw apparaat of module is voltooid, gebruikt u [Azure 
 Nu u hebt geleerd over IoT Plug en Play Device Development, zijn hier enkele aanvullende bronnen:
 
 - [DTDL (Digital Twins Definition Language)](https://github.com/Azure/opendigitaltwins-dtdl)
-- [Apparaat-SDK voor C](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/)
-- [IoT-REST API](https://docs.microsoft.com/rest/api/iothub/device)
+- [Apparaat-SDK voor C](/azure/iot-hub/iot-c-sdk-ref/)
+- [IoT-REST API](/rest/api/iothub/device)
 - [Model onderdelen](concepts-components.md)
 - [De DTDL-hulpprogram ma's voor ontwerpen installeren en gebruiken](howto-use-dtdl-authoring-tools.md)
 - [Ontwikkelaars handleiding voor IoT Plug en Play-service](concepts-developer-guide-service.md)

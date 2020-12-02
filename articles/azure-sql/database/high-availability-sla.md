@@ -12,12 +12,12 @@ author: sashan
 ms.author: sashan
 ms.reviewer: sstein, sashan
 ms.date: 10/28/2020
-ms.openlocfilehash: 6b6ae2ffca420dc126d56c0f1cfed9188dec0e47
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: e5e58f8592fcf8627870c3a574335bbe34394064
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185603"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452467"
 ---
 # <a name="high-availability-for-azure-sql-database-and-sql-managed-instance"></a>Hoge Beschik baarheid voor Azure SQL Database en SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -112,7 +112,7 @@ Zie voor meer informatie over hoge Beschik baarheid in grootschalige [Data Base 
 
 ## <a name="accelerated-database-recovery-adr"></a>Versneld database herstel (ADR)
 
-[Versneld database herstel (ADR)](../accelerated-database-recovery.md) is een nieuwe functie van een data base-engine waarmee de beschik baarheid van de data base aanzienlijk wordt verbeterd, met name in de aanwezigheid van langlopende trans acties. ADR is momenteel beschikbaar voor Azure SQL Database, Azure SQL Managed instance en Azure Synapse Analytics (voorheen SQL Data Warehouse).
+[Versneld database herstel (ADR)](../accelerated-database-recovery.md) is een nieuwe functie van een data base-engine waarmee de beschik baarheid van de data base aanzienlijk wordt verbeterd, met name in de aanwezigheid van langlopende trans acties. ADR is momenteel beschikbaar voor Azure SQL Database, Azure SQL Managed instance en Azure Synapse Analytics.
 
 ## <a name="testing-application-fault-resiliency"></a>Toepassings fout tolerantie testen
 

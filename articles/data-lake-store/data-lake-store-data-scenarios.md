@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: twooley
-ms.openlocfilehash: fe911ac8985f9997125eb5149348b50a7fa83222
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 702a59f768bfe978e1a7708d91c6b6b1bb9c92fe
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92109252"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452239"
 ---
 # <a name="using-azure-data-lake-storage-gen1-for-big-data-requirements"></a>Azure Data Lake Storage Gen1 gebruiken voor big data vereisten
 
@@ -61,7 +61,7 @@ U kunt ook gegevens van relationele data bases bron. Over een bepaalde tijd verz
 ### <a name="web-server-log-data-upload-using-custom-applications"></a>Webserver logboek gegevens (uploaden met aangepaste toepassingen)
 Dit type gegevensset wordt specifiek genoemd, omdat analyse van webserver logboek gegevens een veelvoorkomende use-case is voor big data toepassingen en grote hoeveel heden logboek bestanden moeten worden geüpload naar Data Lake Storage Gen1. U kunt een van de volgende hulpprogram ma's gebruiken om uw eigen scripts of toepassingen te schrijven voor het uploaden van gegevens.
 
-* [Azure-CLI](data-lake-store-get-started-cli-2.0.md)
+* [Azure CLI](data-lake-store-get-started-cli-2.0.md)
 * [Azure PowerShell](data-lake-store-get-started-powershell.md)
 * [Azure Data Lake Storage Gen1 .NET SDK](data-lake-store-get-started-net-sdk.md)
 * [Azure Data Factory](../data-factory/copy-activity-overview.md)
@@ -81,7 +81,7 @@ Grote hoeveel heden gegevens kunnen worden opgeslagen in bestaande Hadoop-cluste
 | Methode | Details | Voordelen | Overwegingen |
 | --- | --- | --- | --- |
 | Azure Data Factory (ADF) gebruiken om gegevens rechtstreeks vanuit Hadoop-clusters naar Azure Data Lake Storage Gen1 te kopiëren |[ADF ondersteunt HDFS als een gegevens bron](../data-factory/connector-hdfs.md) |ADF biedt kant-en-klare ondersteuning voor HDFS en de eerste klasse end-to-end-beheer en-bewaking |Vereist dat Data Management Gateway on-premises of in het IaaS-cluster wordt geïmplementeerd |
-| Gegevens exporteren uit Hadoop als bestanden. Kopieer de bestanden vervolgens naar Azure Data Lake Storage Gen1 met behulp van het juiste mechanisme. |U kunt bestanden kopiëren naar Azure Data Lake Storage Gen1 met behulp van: <ul><li>[Azure PowerShell voor Windows-besturings systeem](data-lake-store-get-started-powershell.md)</li><li>[Azure-CLI](data-lake-store-get-started-cli-2.0.md)</li><li>Aangepaste app met een Data Lake Storage Gen1 SDK</li></ul> |Snel om aan de slag te gaan. Kan aangepaste uploads uitvoeren |Proces voor meerdere stappen waarbij meerdere technologieën betrokken zijn. Het beheer en de bewaking groeien in de loop van de tijd, op basis van de aangepaste aard van de hulpprogram ma's |
+| Gegevens exporteren uit Hadoop als bestanden. Kopieer de bestanden vervolgens naar Azure Data Lake Storage Gen1 met behulp van het juiste mechanisme. |U kunt bestanden kopiëren naar Azure Data Lake Storage Gen1 met behulp van: <ul><li>[Azure PowerShell voor Windows-besturings systeem](data-lake-store-get-started-powershell.md)</li><li>[Azure CLI](data-lake-store-get-started-cli-2.0.md)</li><li>Aangepaste app met een Data Lake Storage Gen1 SDK</li></ul> |Snel om aan de slag te gaan. Kan aangepaste uploads uitvoeren |Proces voor meerdere stappen waarbij meerdere technologieën betrokken zijn. Het beheer en de bewaking groeien in de loop van de tijd, op basis van de aangepaste aard van de hulpprogram ma's |
 | Gebruik Distcp om gegevens van Hadoop naar Azure Storage te kopiëren. Kopieer vervolgens gegevens van Azure Storage naar Data Lake Storage Gen1 met behulp van het juiste mechanisme. |U kunt gegevens kopiëren van Azure Storage naar Data Lake Storage Gen1 met behulp van: <ul><li>[Azure Data Factory](../data-factory/copy-activity-overview.md)</li><li>[Hulp programma AdlCopy](data-lake-store-copy-data-azure-storage-blob.md)</li><li>[Apache DistCp uitgevoerd op HDInsight-clusters](data-lake-store-copy-data-wasb-distcp.md)</li></ul> |U kunt open source-hulpprogram ma's gebruiken. |Proces voor meerdere stappen waarbij meerdere technologieën zijn vereist |
 
 ### <a name="really-large-datasets"></a>Zeer grote gegevens sets
@@ -121,7 +121,7 @@ In dergelijke gevallen kunt u een van de volgende opties gebruiken:
 
 U kunt ook de volgende methoden gebruiken om uw eigen script/toepassing te schrijven om gegevens van Data Lake Storage Gen1 te downloaden.
 
-* [Azure-CLI](data-lake-store-get-started-cli-2.0.md)
+* [Azure CLI](data-lake-store-get-started-cli-2.0.md)
 * [Azure PowerShell](data-lake-store-get-started-powershell.md)
 * [Azure Data Lake Storage Gen1 .NET SDK](data-lake-store-get-started-net-sdk.md)
 
@@ -130,5 +130,5 @@ U kunt een combi natie van Services gebruiken om visuele weer gaven te maken van
 
 ![Gegevens visualiseren in Data Lake Storage Gen1](./media/data-lake-store-data-scenarios/visualize-data.png "Gegevens visualiseren in Data Lake Storage Gen1")
 
-* U kunt beginnen met [Azure Data Factory om gegevens te verplaatsen van data Lake Storage gen1 naar Azure Synapse Analytics (voorheen SQL Data Warehouse)](../data-factory/copy-activity-overview.md)
+* U kunt beginnen met [Azure Data Factory om gegevens te verplaatsen van data Lake Storage gen1 naar Azure Synapse Analytics](../data-factory/copy-activity-overview.md)
 * Daarna kunt u [Power bi integreren met Azure Synapse Analytics](/power-bi/connect-data/service-azure-sql-data-warehouse-with-direct-connect) om een visuele weer gave van de gegevens te maken.

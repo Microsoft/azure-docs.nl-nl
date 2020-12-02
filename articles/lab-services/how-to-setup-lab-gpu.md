@@ -5,12 +5,12 @@ author: nicolela
 ms.topic: article
 ms.date: 06/26/2020
 ms.author: nicolela
-ms.openlocfilehash: 264d103cd5f1459a6d29a35a1ecefc595285587a
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 8293ed1bfb53895b9631d9730fb75a2364457180
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/01/2020
-ms.locfileid: "96433985"
+ms.locfileid: "96452372"
 ---
 # <a name="set-up-a-lab-with-gpu-virtual-machines"></a>Een Lab instellen met GPU virtual machines
 
@@ -28,16 +28,16 @@ In dit proces hebt u de mogelijkheid om een **visualisatie** of **reken** gpu's 
 
 Zoals beschreven in de volgende tabel is de *reken* GPU-grootte bedoeld voor computerintensieve toepassingen.  Het [diepe leer proces van het type natuurlijke taal verwerking](./class-type-deep-learning-natural-language-processing.md) maakt bijvoorbeeld gebruik van de grootte van de **kleine GPU (Compute)** .  De reken-GPU is geschikt voor dit type klasse, omdat studenten gebruikmaken van een diep geleerde frameworks en hulpprogram ma's die door de [Data Science virtual machine-afbeelding](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-dsvm.ubuntu-1804) worden verschaft om diepe leer modellen met grote gegevens sets te trainen.
 
-| Grootte | Kernen | RAM | Description | 
+| Grootte | Kernen | RAM | Beschrijving | 
 | ---- | ----- | --- | ----------- | 
 | Kleine GPU (Compute) | -&nbsp;6 &nbsp; kernen<br>-&nbsp;56 &nbsp; GB &nbsp; RAM-geheugen  | [Standard_NC6](../virtual-machines/nc-series.md) |Deze grootte is het meest geschikt voor computerintensieve toepassingen zoals kunst matige intelligentie (AI) en diep gaande lessen. |
 
 De grootte van de *visualisatie* GPU is bedoeld voor grafische intensieve toepassingen.  Bijvoorbeeld, het [type SOLIDWORKS engineering](./class-type-solidworks.md) wordt weer gegeven met behulp van de grootte van de **kleine GPU (visualisatie)** .  De visualisatie GPU is geschikt voor dit type klasse, omdat studenten communiceren met de SOLIDWORKS 3D computer-aided design (CAD)-omgeving voor het model leren en visualiseren van effen objecten.
 
-| Grootte | Kernen | RAM | Description | 
+| Grootte | Kernen | RAM | Beschrijving | 
 | ---- | ----- | --- | ----------- | 
 | Kleine GPU (visualisatie) | -&nbsp;6 &nbsp; kernen<br>-&nbsp;56 &nbsp; GB &nbsp; RAM-geheugen  | [Standard_NV6](../virtual-machines/nv-series.md) | Deze grootte is het meest geschikt voor externe visualisatie, streaming, games en code ring waarbij frameworks zoals OpenGL en DirectX worden gebruikt. |
-| Gemiddelde GPU (visualisatie) | -&nbsp;12 &nbsp; kernen<br>-&nbsp;112 &nbsp; GB &nbsp; RAM-geheugen  | [Standard_NV12](../virtual-machines/nv-series.md?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) | Deze grootte is het meest geschikt voor externe visualisatie, streaming, games en code ring waarbij frameworks zoals OpenGL en DirectX worden gebruikt. |
+| Gemiddelde GPU (visualisatie) | -&nbsp;12 &nbsp; kernen<br>-&nbsp;112 &nbsp; GB &nbsp; RAM-geheugen  | [Standard_NV12](../virtual-machines/nv-series.md?bc=%2fazure%2fvirtual-machines%2flinux%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) | Deze grootte is het meest geschikt voor externe visualisatie, streaming, games en code ring waarbij frameworks zoals OpenGL en DirectX worden gebruikt. |
 
 > [!NOTE]
 > Sommige van deze VM-grootten worden niet weer geven in de lijst wanneer u een leslokaal Lab maakt. De lijst wordt ingevuld op basis van de huidige capaciteit van de locatie van het lab. Als de maker van het lab-account [een locatie voor het lab](allow-lab-creator-pick-lab-location.md)kan kiezen, kunt u proberen een andere locatie voor het lab te kiezen en te controleren of de VM-grootte beschikbaar is. Zie [producten beschikbaar per regio](https://azure.microsoft.com/regions/services/?products=virtual-machines)voor de beschik baarheid van vm's.
@@ -76,7 +76,7 @@ Ga als volgt te werk om stuur Programma's hand matig te installeren voor de reke
 1. Nadat u de Stuur Programma's en andere software hebt geïnstalleerd die voor uw klasse zijn vereist, selecteert u **publiceren** om de vm's van uw studenten te maken.
 
 > [!NOTE]
-> Als u een Linux-installatie kopie gebruikt nadat u het installatie programma hebt gedownload, installeert u de Stuur Programma's door de instructies in [CUDA-Stuur Programma's installeren in Linux](../virtual-machines/linux/n-series-driver-setup.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json#install-cuda-drivers-on-n-series-vms)te volgen.
+> Als u een Linux-installatie kopie gebruikt nadat u het installatie programma hebt gedownload, installeert u de Stuur Programma's door de instructies in [CUDA-Stuur Programma's installeren in Linux](../virtual-machines/linux/n-series-driver-setup.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#install-cuda-drivers-on-n-series-vms)te volgen.
 
 #### <a name="install-the-visualization-gpu-drivers"></a>De visualisatie GPU-Stuur Programma's installeren
 
@@ -86,7 +86,7 @@ Ga als volgt te werk om stuur Programma's hand matig te installeren voor de groo
 1. Nadat uw Lab is gemaakt, maakt u verbinding met de VM van de sjabloon om de juiste Stuur Programma's te installeren.
 1. Installeer de raster Stuur Programma's die door micro soft worden meegeleverd met de sjabloon-VM door de instructies voor uw besturings systeem te volgen:
    -  [Windows NVIDIA-raster Stuur Programma's](../virtual-machines/windows/n-series-driver-setup.md#nvidia-grid-drivers)
-   -  [Linux NVIDIA-raster Stuur Programma's](../virtual-machines/linux/n-series-driver-setup.md?toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json#nvidia-grid-drivers)
+   -  [Linux NVIDIA-raster Stuur Programma's](../virtual-machines/linux/n-series-driver-setup.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#nvidia-grid-drivers)
   
 1. Start de sjabloon-VM opnieuw op.
 1. Controleer of de Stuur Programma's correct zijn geïnstalleerd door de instructies in de sectie [de geïnstalleerde Stuur Programma's valideren](how-to-setup-lab-gpu.md#validate-the-installed-drivers) te volgen.

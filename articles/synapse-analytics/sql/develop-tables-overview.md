@@ -10,22 +10,22 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 1c12727e08c6ec9075aa6c1e256279ab7596417b
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 33eb5977ecb373a0dba87c26cacea247f541be8f
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324533"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452728"
 ---
 # <a name="design-tables-using-synapse-sql-in-azure-synapse-analytics"></a>Tabellen ontwerpen met behulp van Synapse SQL in azure Synapse Analytics
 
-Dit document bevat belang rijke concepten voor het ontwerpen van tabellen met exclusieve SQL-groep en serverloze SQL-groep (preview).  
+Dit document bevat belang rijke concepten voor het ontwerpen van tabellen met een exclusieve SQL-groep en serverloze SQL-groep.  
 
-[Serverloze SQL-groep (preview)](on-demand-workspace-overview.md) is een query service over de gegevens in uw data Lake. Het bevat geen lokale opslag voor gegevens opname. Een [toegewezen SQL-groep](best-practices-sql-pool.md) vertegenwoordigt een verzameling analytische resources die worden ingericht wanneer Synapse SQL wordt gebruikt. De grootte van een toegewezen SQL-groep wordt bepaald door data warehousing units (DWU).
+Een [serverloze SQL-groep](on-demand-workspace-overview.md) is een query service voor de gegevens in uw data Lake. Het bevat geen lokale opslag voor gegevens opname. Een [toegewezen SQL-groep](best-practices-sql-pool.md) vertegenwoordigt een verzameling analytische resources die worden ingericht wanneer Synapse SQL wordt gebruikt. De grootte van een toegewezen SQL-pool wordt bepaald door DWU’s (Data Warehousing Unit).
 
 De volgende tabel bevat de onderwerpen die relevant zijn voor een exclusieve SQL-groep versus serverloze SQL-groep:
 
-| Onderwerp                                                        | toegewezen SQL-groep | SQL-groep zonder server |
+| Onderwerp                                                        | toegewezen SQL-groep | serverloze SQL-pool |
 | ------------------------------------------------------------ | ------------------ | ----------------------- |
 | [Tabel categorie bepalen](#determine-table-category)        | Ja                | Nee                      |
 | [Schema namen](#schema-names)                                | Ja                | Ja                     |
@@ -76,7 +76,7 @@ Als u de organisatie van de tabellen in de toegewezen SQL-groep wilt weer geven,
 | WideWorldImportersDW-tabel  | Tabel type | toegewezen SQL-groep |
 |:-----|:-----|:------|:-----|
 | Plaats | Dimensie | WWI. DimCity |
-| Bestellen | Fact | WWI. FactOrder |
+| Volgorde | Fact | WWI. FactOrder |
 
 ## <a name="table-persistence"></a>Tabel persistentie
 

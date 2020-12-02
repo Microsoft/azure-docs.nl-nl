@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 author: iqshahmicrosoft
 ms.author: iqshah
 ms.date: 10/19/2020
-ms.openlocfilehash: 5124e7084a8e878e54e594424ec0926410f002ca
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: eb290b8c154c40388bfb3e7f9cbac7b645aa9609
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94682482"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452682"
 ---
 # <a name="troubleshoot-virtual-machine-certification"></a>Problemen met certificering van virtuele machines oplossen
 
@@ -32,7 +32,7 @@ Deze fout treedt op wanneer u een basis installatie kopie gebruikt die deel uitm
 U kunt dit probleem oplossen door de installatie kopie op te halen uit Azure Marketplace en er wijzigingen in aan te brengen. Raadpleeg voor meer informatie de volgende artikelen:
 
 - [Linux-installatie kopieën](../virtual-machines/linux/endorsed-distros.md?toc=/azure/virtual-machines/linux/toc.json)
-- [Windows-installatie kopieën](azure-vm-create-using-approved-base.md)
+- [Windows-installatiekopieën](azure-vm-create-using-approved-base.md)
 
 > [!Note]
 > Als u een Linux-basis installatie kopie gebruikt die niet afkomstig is van Azure Marketplace, kunt u de eerste partitie met 2048 KB verrekenen. Hierdoor kan de niet-opgemaakte ruimte worden gebruikt voor het toevoegen van nieuwe facturerings gegevens en kan Azure door gaan met het publiceren van uw VM naar Azure Marketplace.  
@@ -474,7 +474,7 @@ Als alle installatie kopieën die vanuit Azure Marketplace worden gemaakt, opnie
 
 * Voor **Windows** kunt u Windows-installatie kopieën generaliseren met behulp van `sysreptool` .
 
-  `sysreptool`Zie [overzicht van systeem voorbereiding (Sysprep)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview)voor meer informatie over het hulp programma.
+  `sysreptool`Zie [overzicht van systeem voorbereiding (Sysprep)](/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview)voor meer informatie over het hulp programma.
 
 ## <a name="datadisk-errors"></a>DataDisk-fouten
 

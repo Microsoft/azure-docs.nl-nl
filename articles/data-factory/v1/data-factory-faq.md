@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: de4661bcfd7106d515480e39dc4660f44f469a3d
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 81c1b84bff04e62f2dabeb3880f4103112139ee0
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92631696"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453565"
 ---
 # <a name="azure-data-factory---frequently-asked-questions"></a>Veelgestelde vragen over Azure Data Factory
 > [!NOTE]
@@ -26,7 +26,7 @@ ms.locfileid: "92631696"
 
 ## <a name="general-questions"></a>Algemene vragen
 ### <a name="what-is-azure-data-factory"></a>Wat is Azure Data Factory?
-Data Factory is een service voor gegevens integratie **in de Cloud waarmee de verplaatsing en trans formatie van gegevens worden geautomatiseerd** . Net als bij een fabriek die apparatuur uitvoert om grond stoffen te maken en deze te transformeren in voltooide producten, Data Factory worden bestaande services die onbewerkte gegevens verzamelen, omgezet in kant-en-klare informatie.
+Data Factory is een service voor gegevens integratie **in de Cloud waarmee de verplaatsing en trans formatie van gegevens worden geautomatiseerd**. Net als bij een fabriek die apparatuur uitvoert om grond stoffen te maken en deze te transformeren in voltooide producten, Data Factory worden bestaande services die onbewerkte gegevens verzamelen, omgezet in kant-en-klare informatie.
 
 Met Data Factory kunt u gegevensgestuurde werk stromen maken om gegevens te verplaatsen tussen zowel on-premises als in de cloud opgeslagen gegevens, en gegevens verwerken/transformeren met behulp van reken services zoals Azure HDInsight en Azure Data Lake Analytics. Nadat u een pijp lijn hebt gemaakt die de actie uitvoert die u nodig hebt, kunt u deze zo plannen dat deze regel matig wordt uitgevoerd (elk uur, dagelijks, wekelijks, enzovoort).   
 
@@ -41,7 +41,7 @@ Zie de [pagina met prijs informatie voor Data Factory][adf-pricing-details] voor
 * Voor een zelf studie over het **transformeren van gegevens** met HDInsight Hive-activiteit. Bekijk [gegevens verwerken door Hive-script uit te voeren in een Hadoop-cluster](data-factory-build-your-first-pipeline.md)
 
 ### <a name="what-is-the-data-factorys-region-availability"></a>Wat is de beschik baarheid van de beData Factorys regio?
-Data Factory is beschikbaar in **VS West** en **Europa-Noord** . De compute-en opslag services die door de gegevens fabrieken worden gebruikt, kunnen zich in andere regio's bevindt. Zie [ondersteunde regio's](data-factory-introduction.md#supported-regions).
+Data Factory is beschikbaar in **VS West** en **Europa-Noord**. De compute-en opslag services die door de gegevens fabrieken worden gebruikt, kunnen zich in andere regio's bevindt. Zie [ondersteunde regio's](data-factory-introduction.md#supported-regions).
 
 ### <a name="what-are-the-limits-on-number-of-data-factoriespipelinesactivitiesdatasets"></a>Wat zijn de limieten voor het aantal gegevens fabrieken/pijp lijnen/activiteiten/gegevens sets?
 Zie de sectie **Azure Data Factory limieten** van het artikel [Azure-abonnement en service limieten, quota's en beperkingen](../../azure-resource-manager/management/azure-subscription-service-limits.md#data-factory-limits) .
@@ -72,7 +72,7 @@ De volgende tabel bevat een lijst met reken omgevingen die worden ondersteund do
 | [Azure Batch](data-factory-compute-linked-services.md#azure-batch-linked-service) |[DotNet](data-factory-use-custom-activities.md) |
 | [Azure Machine Learning Studio (klassiek)](data-factory-compute-linked-services.md#azure-machine-learning-studio-classic-linked-service) |[Studio-activiteiten (klassiek): batch uitvoering en resource bijwerken](data-factory-azure-ml-batch-execution-activity.md) |
 | [Azure Data Lake Analytics](data-factory-compute-linked-services.md#azure-data-lake-analytics-linked-service) |[Data Lake Analytics U-SQL](data-factory-usql-activity.md) |
-| [Azure SQL](data-factory-compute-linked-services.md#azure-sql-linked-service), [Azure Synapse Analytics (voorheen SQL Data Warehouse)](data-factory-compute-linked-services.md#azure-synapse-analytics-linked-service), [SQL Server](data-factory-compute-linked-services.md#sql-server-linked-service) |[Opgeslagen procedure](data-factory-stored-proc-activity.md) |
+| [Azure SQL](data-factory-compute-linked-services.md#azure-sql-linked-service), [Azure Synapse Analytics](data-factory-compute-linked-services.md#azure-synapse-analytics-linked-service), [SQL Server](data-factory-compute-linked-services.md#sql-server-linked-service) |[Opgeslagen procedure](data-factory-stored-proc-activity.md) |
 
 ### <a name="how-does-azure-data-factory-compare-with-sql-server-integration-services-ssis"></a>Hoe kan Azure Data Factory vergelijken met SQL Server Integration Services (SSIS)? 
 Raadpleeg de presentatie over [Azure Data Factory vs. SSIS](https://www.sqlbits.com/Sessions/Event15/Azure_Data_Factory_vs_SSIS) van een van onze mvp's (de meest waardevolle professionals): Reza rad. Sommige van de recente wijzigingen in Data Factory worden mogelijk niet weer gegeven in het diamodel. We voegen continu meer mogelijkheden toe aan Azure Data Factory. We voegen continu meer mogelijkheden toe aan Azure Data Factory. Deze updates worden opgenomen in de vergelijking van technologieën van micro soft die later dit jaar worden geïntegreerd.   
@@ -141,7 +141,7 @@ In het bovenstaande voor beeld vertegenwoordigen otherLinkedServiceName1 en othe
 ### <a name="why-are-my-input-slices-not-in-ready-state"></a>Waarom zijn mijn invoer segmenten niet de status gereed?
 Bij een veelvoorkomende fout wordt er geen **externe** eigenschap ingesteld op **True** in de invoer-gegevensset wanneer de invoer gegevens zich buiten het Data Factory bevinden (niet gemaakt door de Data Factory).
 
-In het volgende voor beeld hoeft u alleen **extern** in te stellen op True in **dataset1** .  
+In het volgende voor beeld hoeft u alleen **extern** in te stellen op True in **dataset1**.  
 
 **DataFactory1** Pijp lijn 1: dataset1-> activiteit1-> dataset2-> activiteit2-> dataset3-pijp lijn 2: dataset3-> activiteit3-> dataset4
 

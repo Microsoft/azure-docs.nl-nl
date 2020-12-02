@@ -1,6 +1,6 @@
 ---
 title: Data Warehouse-sorterings typen
-description: Sorterings typen die worden ondersteund voor een toegewezen SQL-groep in azure Synapse Analytics.
+description: Sorterings typen die worden ondersteund voor een toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics.
 services: synapse-analytics
 author: antvgski
 manager: igorstan
@@ -11,16 +11,16 @@ ms.date: 12/04/2019
 ms.author: anvang
 ms.reviewer: jrasnick
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 8d76d70c4c84f1d63d4643e1fba3f66d3541beff
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 39b89f8d303c10eead63839420141a74d3d3c74c
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305261"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452771"
 ---
-# <a name="database-collation-support-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Ondersteuning voor database sortering voor toegewezen SQL-groep in azure Synapse Analytics 
+# <a name="database-collation-support-for-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Ondersteuning voor database sortering voor toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics 
 
-U kunt de standaard sortering van de data base wijzigen van de Azure Portal wanneer u een nieuwe toegewezen SQL-groeps database maakt. Hierdoor is het nog eenvoudiger om een nieuwe Data Base te maken met behulp van een van de ondersteunde database sorteringen van 3800.
+U kunt de standaard sortering van de data base wijzigen van de Azure Portal wanneer u een nieuwe toegewezen SQL-groep maakt (voorheen SQL DW). Hierdoor is het nog eenvoudiger om een nieuwe Data Base te maken met behulp van een van de ondersteunde database sorteringen van 3800.
 
 Met sorteringen kunt u de land instelling, de code pagina, de sorteer volgorde en de teken gevoeligheids regels voor gegevens typen op basis van tekens opgeven. Nadat u hebt gekozen, nemen alle kolommen en expressies die sorteer gegevens vereisen de gekozen sortering van de data base-instelling over. De standaard overname kan worden overschreven door expliciet een andere sortering voor een gegevens type op basis van een teken te vermelden.
 

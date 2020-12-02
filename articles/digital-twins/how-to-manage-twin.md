@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/21/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 9e00e0e5a34eecd6974e8919ce0d0e16f48757f3
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: ba444a497fa4fccab6b8dec1fadb3383420e4d49
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94540965"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452968"
 ---
 # <a name="manage-digital-twins"></a>Digitale tweelingen beheren
 
@@ -99,7 +99,7 @@ U kunt toegang krijgen tot de gegevens van een digitale dubbele manier door de m
 ```csharp
 object result = await client.GetDigitalTwin(id);
 ```
-Deze aanroep retourneert dubbele gegevens als een sterk getypeerd object type, zoals `BasicDigitalTwin` . Hier volgt een voor beeld van hoe u dit kunt gebruiken om dubbele details te bekijken:
+Deze aanroep retourneert dubbele gegevens als een sterk getypeerd object type, zoals `BasicDigitalTwin` . `BasicDigitalTwin` is een serialisatiefunctie voor serialisatie die deel uitmaakt van de SDK, waardoor de belangrijkste dubbele meta gegevens en eigenschappen in een vooraf geparseerd formulier worden geretourneerd. Hier volgt een voor beeld van hoe u dit kunt gebruiken om dubbele details te bekijken:
 
 ```csharp
 Response<BasicDigitalTwin> twin = client.GetDigitalTwin("myRoomId");
@@ -140,7 +140,7 @@ Bekijk het volgende model (geschreven in [Digital Apparaatdubbels Definition Lan
     ]
 }
 ```
-Het resultaat van het aanroepen van `object result = await client.GetDigitalTwinAsync("my-moon");` een *maan* -type van twee kan er als volgt uitzien:
+Het resultaat van het aanroepen van `object result = await client.GetDigitalTwinAsync("my-moon");` een *maan*-type van twee kan er als volgt uitzien:
 
 ```json
 {
@@ -176,21 +176,7 @@ De gedefinieerde eigenschappen van de digitale twee worden geretourneerd als eig
     - Synchronisatie status voor elke Beschrijf bare eigenschap. Dit is vooral nuttig voor apparaten, waar het mogelijk is dat de service en het apparaat afwijkende statussen hebben (bijvoorbeeld wanneer een apparaat offline is). Deze eigenschap is op dit moment alleen van toepassing op fysieke apparaten die zijn verbonden met IoT Hub. Met de gegevens in de sectie meta gegevens is het mogelijk inzicht te krijgen in de volledige status van een eigenschap, evenals de laatste gewijzigde tijds tempels. Zie voor meer informatie over de synchronisatie status [deze IOT hub zelf studie over het](../iot-hub/tutorial-device-twins.md) synchroniseren van de Apparaatstatus.
     - Servicespecifieke meta gegevens, zoals van IoT Hub of Azure Digital Apparaatdubbels. 
 
-U kunt de geretourneerde JSON voor het dubbele parseren met behulp van een JSON-parserings bibliotheek van uw keuze, zoals `System.Text.Json` .
-
-U kunt ook de klasse voor serialisatie helper gebruiken `BasicDigitalTwin` die deel uitmaakt van de SDK, waardoor de belangrijkste dubbele meta gegevens en eigenschappen in het vooraf geparseerde formulier worden geretourneerd. Hier volgt een voorbeeld:
-
-```csharp
-Response<BasicDigitalTwin> twin = client.GetDigitalTwin(twin_Id);
-Console.WriteLine($"Model id: {twin.Metadata.ModelId}");
-foreach (string prop in twin.Contents.Keys)
-{
-    if (twin.Contents.TryGetValue(prop, out object value))
-        Console.WriteLine($"Property '{prop}': {value}");
-}
-```
-
-Meer informatie over de hulp klassen voor serialisatie vindt u in [*How to: gebruik de Azure Digital Apparaatdubbels api's en sdk's*](how-to-use-apis-sdks.md).
+Meer informatie over de serialisatie helper-klassen vindt u `BasicDigitalTwin` in de [*instructies: gebruik de Azure Digital apparaatdubbels Api's en sdk's*](how-to-use-apis-sdks.md).
 
 ## <a name="view-all-digital-twins"></a>Alle digitale apparaatdubbels weer geven
 

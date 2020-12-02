@@ -11,14 +11,14 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 11/22/2019
 ms.author: negoe
-ms.reviewer: nacanuma
+ms.reviewer: marsma, nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: 566c429fc70ae3f0fc18f024b745d8142535932c
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 2f631ad650b20110084ff902043447f26c2d4ab3
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96348404"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453592"
 ---
 # <a name="use-msal-in-a-national-cloud-environment"></a>MSAL gebruiken in een nationale cloud omgeving
 
@@ -150,9 +150,9 @@ Uw python-toepassing voor MSAL inschakelen voor soevereine Clouds:
     "authority": "https://login.microsoftonline.us/Enter_the_Tenant_Info_Here"
     ```
 
-- Voor het aanroepen van micro soft Graph is een specifieke URL voor het eind punt van een grafiek vereist die afhankelijk is van de cloud die u gebruikt. Als u Microsoft Graph eind punten voor alle nationale Clouds wilt vinden, raadpleegt u de [Microsoft Graph en de basis-eind punten van de service grafiek Verkenner](/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints).
+- Het aanroepen van de Microsoft Graph-API vereist een eind punt-URL die specifiek is voor de cloud die u gebruikt. Als u Microsoft Graph eind punten voor alle nationale Clouds wilt vinden, raadpleegt u de [Microsoft Graph en de basis-eind punten van de service grafiek Verkenner](/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints).
 
-    Hier volgt een voor beeld van een eind punt van een grafiek, met bereik:
+    Hier volgt een voor beeld van een Microsoft Graph-eind punt, met bereik:
 
     ```json
     "endpoint" : "https://graph.microsoft.us/v1.0/me"
@@ -173,7 +173,7 @@ Hier volgt een voor beeld van een instantie:
 "authority": "https://login.microsoftonline.us/Enter_the_Tenant_Info_Here"
 ```
 
-- Voor het aanroepen van micro soft Graph is een specifieke URL voor het eind punt van een grafiek vereist die afhankelijk is van de cloud die u gebruikt. Als u Microsoft Graph eind punten voor alle nationale Clouds wilt vinden, raadpleegt u de [Microsoft Graph en de basis-eind punten van de service grafiek Verkenner](/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints).
+- Het aanroepen van de Microsoft Graph-API vereist een eind punt-URL die specifiek is voor de cloud die u gebruikt. Als u Microsoft Graph eind punten voor alle nationale Clouds wilt vinden, raadpleegt u de [Microsoft Graph en de basis-eind punten van de service grafiek Verkenner](/graph/deployments#microsoft-graph-and-graph-explorer-service-root-endpoints).
 
 Hier volgt een voor beeld van een eind punt van een grafiek, met bereik:
 
@@ -222,9 +222,10 @@ if let application = try? MSALPublicClientApplication(configuration: config) { /
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over:
+Zie [National Cloud-verificatie-eind punten](authentication-national-cloud.md) voor een lijst met de Azure Portal url's en Token-eind punten voor elke Cloud.
 
-- [Verificatie in nationale Clouds](authentication-national-cloud.md)
+Documentatie voor nationale Cloud:
+
 - [Azure Government](../../azure-government/index.yml)
 - [Azure China 21Vianet](/azure/china/)
 - [Azure Duitsland](../../germany/index.yml)

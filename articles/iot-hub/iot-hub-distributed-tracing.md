@@ -13,12 +13,12 @@ ms.custom:
 - mqtt
 - fasttrack-edit
 - iot
-ms.openlocfilehash: efc4d07e9e3a64a36f2ecf3fa0000379bef380f9
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: f8d37cf8f23de1d0535c7a9ff4a95ac217eddf74
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92538575"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452397"
 ---
 # <a name="trace-azure-iot-device-to-cloud-messages-with-distributed-tracing-preview"></a>Azure IoT-apparaat-naar-Cloud-berichten traceren met gedistribueerde tracering (voor beeld)
 
@@ -55,17 +55,17 @@ In deze sectie configureert u een IoT Hub voor het registreren van gedistribueer
 
 1. Ga in het [Azure Portal](https://portal.azure.com/)naar uw IOT-hub.
 
-1. Schuif in het linkerdeel venster voor uw IoT-hub omlaag naar het gedeelte **bewaking** en klik op **Diagnostische instellingen** .
+1. Schuif in het linkerdeel venster voor uw IoT-hub omlaag naar het gedeelte **bewaking** en klik op **Diagnostische instellingen**.
 
-1. Klik op **Diagnostische instelling toevoegen** .
+1. Klik op **Diagnostische instelling toevoegen**.
 
-1. Voer in het veld **naam** een naam in voor een nieuwe diagnostische instelling. Bijvoorbeeld **DistributedTracingSettings** .
+1. Voer in het veld **naam** een naam in voor een nieuwe diagnostische instelling. Bijvoorbeeld **DistributedTracingSettings**.
 
 1. Kies een of meer van de volgende opties om te bepalen waar de logboek registratie wordt verzonden:
 
-    - **Archiveren naar een opslag account** : Configureer een opslag account om de logboek gegevens te bevatten.
-    - **Streamen naar een event hub** : configureer een event hub om de logboek gegevens te bevatten.
-    - **Verzenden naar log Analytics** : Configureer een log Analytics-werk ruimte om de logboek gegevens te bevatten.
+    - **Archiveren naar een opslag account**: Configureer een opslag account om de logboek gegevens te bevatten.
+    - **Streamen naar een event hub**: configureer een event hub om de logboek gegevens te bevatten.
+    - **Verzenden naar log Analytics**: Configureer een log Analytics-werk ruimte om de logboek gegevens te bevatten.
 
 1. Selecteer in de sectie **logboek** de bewerkingen waarvoor u logboek registratie gegevens wilt.
 
@@ -183,7 +183,7 @@ Deze instructies zijn voor het bouwen van het voor beeld in Windows. Zie voor an
 
 Het is **niet** eenvoudig om een voor beeld van de gedistribueerde tracerings functie te bekijken zonder de C SDK te gebruiken. Daarom wordt deze methode niet aanbevolen.
 
-Eerst moet u alle IoT Hub protocol primitieven in uw berichten implementeren door de ontwikkelaars gids te volgen om [IOT hub berichten te maken en te lezen](iot-hub-devguide-messages-construct.md). Bewerk vervolgens de protocol eigenschappen in de MQTT/AMQP-berichten om toe te voegen `tracestate` als **systeem eigenschap** . Met name:
+Eerst moet u alle IoT Hub protocol primitieven in uw berichten implementeren door de ontwikkelaars gids te volgen om [IOT hub berichten te maken en te lezen](iot-hub-devguide-messages-construct.md). Bewerk vervolgens de protocol eigenschappen in de MQTT/AMQP-berichten om toe te voegen `tracestate` als **systeem eigenschap**. Met name:
 
 * Voor MQTT voegt `%24.tracestate=timestamp%3d1539243209` u toe aan het bericht onderwerp, waar `1539243209` moet worden vervangen door de aanmaak tijd van het bericht in de Unix-Time Stamp-indeling. Zie als voor beeld de implementatie [in de C SDK](https://github.com/Azure/azure-iot-sdk-c/blob/6633c5b18710febf1af7713cf1a336fd38f623ed/iothub_client/src/iothubtransport_mqtt_common.c#L761)
 * Voor AMQP, toevoegen `key("tracestate")` en `value("timestamp=1539243209")` als aantekening van een bericht. Zie [hier](https://github.com/Azure/azure-iot-sdk-c/blob/6633c5b18710febf1af7713cf1a336fd38f623ed/iothub_client/src/uamqp_messaging.c#L527)voor een referentie-implementatie.
@@ -196,19 +196,19 @@ Als u het percentage berichten wilt wijzigen dat moet worden getraceerd vanuit d
 
 ### <a name="update-using-the-portal"></a>Bijwerken met behulp van de portal
 
-1. Ga in [Azure Portal](https://portal.azure.com/)naar uw IOT-hub en klik vervolgens op **IOT-apparaten** .
+1. Ga in [Azure Portal](https://portal.azure.com/)naar uw IOT-hub en klik vervolgens op **IOT-apparaten**.
 
 1. Klik op uw apparaat.
 
-1. Zoek naar **gedistribueerde tracering inschakelen (preview)** en selecteer **inschakelen** .
+1. Zoek naar **gedistribueerde tracering inschakelen (preview)** en selecteer **inschakelen**.
 
     ![Gedistribueerde tracering inschakelen in Azure Portal](./media/iot-hub-distributed-tracing/azure-portal.png)
 
 1. Kies een **sampling frequentie** tussen 0% en 100%.
 
-1. Klik op **Opslaan** .
+1. Klik op **Opslaan**.
 
-1. Wacht een paar seconden en klik op **vernieuwen** . Als u het apparaat hebt bevestigd, wordt het pictogram synchroniseren weer gegeven.
+1. Wacht een paar seconden en klik op **vernieuwen**. Als u het apparaat hebt bevestigd, wordt het pictogram synchroniseren weer gegeven.
 
 1. Ga terug naar het console venster voor de app voor telemetrie-berichten. Berichten die worden verzonden met `tracestate` in de toepassings eigenschappen worden weer gegeven.
 
@@ -222,7 +222,7 @@ Als u het percentage berichten wilt wijzigen dat moet worden getraceerd vanuit d
 
 1. Open VS code en [stel IoT Hub Connection String](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit#user-content-prerequisites)in.
 
-1. Vouw het apparaat uit en zoek naar de **instelling voor gedistribueerde tracering (preview)** . Klik daaronder op **Update gedistribueerde tracerings instelling (preview)** van SubNode.
+1. Vouw het apparaat uit en zoek naar de **instelling voor gedistribueerde tracering (preview)**. Klik daaronder op **Update gedistribueerde tracerings instelling (preview)** van SubNode.
 
     ![Gedistribueerde tracering inschakelen in azure IoT Hub-extensie](./media/iot-hub-distributed-tracing/update-distributed-tracing-setting-1.png)
 
@@ -295,7 +295,7 @@ In onderstaande afbeelding ziet u gedistribueerde tracering in de app-toewijzing
 
 ### <a name="context"></a>Context
 
-Veel IoT-oplossingen, waaronder onze eigen [referentie architectuur](https://aka.ms/iotrefarchitecture) (alleen Engels), volgen doorgaans een variant van de [micro service-architectuur](/azure/architecture/microservices/). Naarmate een IoT-oplossing complexer wordt, kunt u een dozijn of meer micro Services gebruiken. Deze micro Services kunnen al dan niet afkomstig zijn van Azure. Het herkennen van IoT-berichten die worden verwijderd of vertraagd, kan lastig worden. U hebt bijvoorbeeld een IoT-oplossing die gebruikmaakt van vijf verschillende Azure-Services en 1500 actieve apparaten. Elk apparaat verzendt 10 apparaat-naar-Cloud-berichten per seconde (voor een totaal van 15.000 berichten/seconde), maar u ziet dat uw web-app alleen 10.000 berichten per seconde ziet. Waar is het probleem? Hoe vindt u de culprit?
+Veel IoT-oplossingen, waaronder onze eigen [referentie architectuur](/azure/architecture/reference-architectures/iot) (alleen Engels), volgen doorgaans een variant van de [micro service-architectuur](/azure/architecture/microservices/). Naarmate een IoT-oplossing complexer wordt, kunt u een dozijn of meer micro Services gebruiken. Deze micro Services kunnen al dan niet afkomstig zijn van Azure. Het herkennen van IoT-berichten die worden verwijderd of vertraagd, kan lastig worden. U hebt bijvoorbeeld een IoT-oplossing die gebruikmaakt van vijf verschillende Azure-Services en 1500 actieve apparaten. Elk apparaat verzendt 10 apparaat-naar-Cloud-berichten per seconde (voor een totaal van 15.000 berichten/seconde), maar u ziet dat uw web-app alleen 10.000 berichten per seconde ziet. Waar is het probleem? Hoe vindt u de culprit?
 
 ### <a name="distributed-tracing-pattern-in-microservice-architecture"></a>Gedistribueerd tracerings patroon in micro service-architectuur
 

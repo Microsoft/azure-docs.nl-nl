@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: e96fa932185a6689c360fe86d519a45581059118
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: e988b88f222750bc7de505a24eb44877eea4d966
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95912634"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452439"
 ---
 # <a name="azure-services-that-support-azure-data-lake-storage-gen2"></a>Azure-Services die ondersteuning bieden voor Azure Data Lake Storage Gen2
 
@@ -39,7 +39,7 @@ Deze tabel geeft een lijst van de Azure-Services die u kunt gebruiken met Azure 
 |HDInsight |Algemeen beschikbaar|Ja|Ja|[Azure Data Lake Storage Gen2 gebruiken met Azure HDInsight-clusters](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)<br>[De HDFS CLI gebruiken met Data Lake Storage Gen2](data-lake-storage-use-hdfs-data-lake-storage.md) <br>[Zelf studie: gegevens extra heren, transformeren en laden met behulp van Apache Hive in azure HDInsight](data-lake-storage-tutorial-extract-transform-load-hive.md)|
 |IoT Hub |Algemeen beschikbaar|Nee|Ja|[IoT Hub bericht routering gebruiken om apparaat-naar-Cloud-berichten te verzenden naar verschillende eind punten](../../iot-hub/iot-hub-devguide-messages-d2c.md)|
 |Power BI|Algemeen beschikbaar|Ja|Ja|[Gegevens analyseren in Data Lake Storage Gen2 met behulp van Power BI](/power-query/connectors/datalakestorage)|
-|Azure Synapse Analytics (voorheen Azure SQL Data Warehouse)|Algemeen beschikbaar|Ja|Ja|[Gebruiken met Azure Synapse Analytics (voorheen SQL Data Warehouse)](../../azure-sql/database/vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
+|Azure Synapse Analytics (voorheen Azure SQL Data Warehouse)|Algemeen beschikbaar|Ja|Ja|[Gebruiken met Azure Synapse Analytics](../../azure-sql/database/vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
 |SQL Server Integration Services (SSIS)|Algemeen beschikbaar|Ja|Ja|[Verbindings beheer Azure Storage](/sql/integration-services/connection-manager/azure-storage-connection-manager?view=sql-server-2017)|
 |Azure Data Explorer|Algemeen beschikbaar|Ja|Ja|[Query's uitvoeren op gegevens in Azure Data Lake met behulp van Azure Data Explorer](/azure/data-explorer/data-lake-query-data)|
 |Azure Cognitive Search|Preview|Ja|Ja|[Index-en zoek Azure Data Lake Storage Gen2 documenten (preview-versie)](../../search/search-howto-index-azure-data-lake-storage.md)|

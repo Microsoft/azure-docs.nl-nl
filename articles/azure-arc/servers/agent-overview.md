@@ -1,14 +1,14 @@
 ---
 title: Overzicht van de verbonden computer Windows-agent
 description: Dit artikel bevat een gedetailleerd overzicht van de beschik bare Azure Arc-servers agent, die ondersteuning biedt voor het bewaken van virtuele machines die worden gehost in hybride omgevingen.
-ms.date: 09/30/2020
+ms.date: 12/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: 8a66f99f535013b8aac52fdee43b91a8c734b10a
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 1bc9546e6db35153424ba670f8157adb86d19b71
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94577580"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452957"
 ---
 # <a name="overview-of-azure-arc-enabled-servers-agent"></a>Overzicht van de agent voor servers met Azure Arc ingeschakeld
 
@@ -31,7 +31,7 @@ Het pakket met de Azure Connected machine agent bevat verschillende logische ond
     * De gast toewijzing wordt gedurende 14 dagen lokaal opgeslagen. In de periode van 14 dagen worden beleids toewijzingen opnieuw toegepast als de verbonden machine agent opnieuw verbinding maakt met de service.
     * Toewijzingen worden na 14 dagen verwijderd en worden na de periode van 14 dagen niet opnieuw aan de computer toegewezen.
 
-* De extensie agent beheert VM-extensies, met inbegrip van installeren, verwijderen en bijwerken. Uitbrei dingen worden gedownload van Azure en gekopieerd naar de `%SystemDrive%\AzureConnectedMachineAgent\ExtensionService\downloads` map in Windows, en voor Linux naar `/opt/GC_Ext/downloads` . In Windows wordt de uitbrei ding geïnstalleerd op het volgende pad `%SystemDrive%\Packages\Plugins\<extension>` en op Linux wordt de extensie geïnstalleerd `/var/lib/waagent/<extension>` .
+* De extensie agent beheert VM-extensies, met inbegrip van installeren, verwijderen en bijwerken. Uitbrei dingen worden gedownload van Azure en gekopieerd naar de `%SystemDrive%\%ProgramFiles%\AzureConnectedMachineAgent\ExtensionService\downloads` map in Windows, en voor Linux naar `/opt/GC_Ext/downloads` . In Windows wordt de uitbrei ding geïnstalleerd op het volgende pad `%SystemDrive%\Packages\Plugins\<extension>` en op Linux wordt de extensie geïnstalleerd `/var/lib/waagent/<extension>` .
 
 ## <a name="download-agents"></a>Agents downloaden
 
@@ -170,9 +170,9 @@ Na de installatie van de verbonden machine-agent voor Windows, worden de volgend
     |%ProgramData%\AzureConnectedMachineAgent |Bevat de configuratie bestanden voor de agent.|
     |%ProgramData%\AzureConnectedMachineAgent\Tokens |Bevat de verkregen tokens.|
     |%ProgramData%\AzureConnectedMachineAgent\Config |Bevat het configuratie bestand van de agent waarin de `agentconfig.json` registratie gegevens van de service worden vastgelegd.|
-    |%SystemDrive%\Program Files\ArcConnectedMachineAgent\ExtensionService\GC | Installatiepad met de bestanden van de gast configuratie agent. |
+    |%ProgramFiles%\ArcConnectedMachineAgent\ExtensionService\GC | Installatiepad met de bestanden van de gast configuratie agent. |
     |%ProgramData%\GuestConfig |Bevat het beleid (toegepast) van Azure.|
-    |%SystemDrive%\AzureConnectedMachineAgent\ExtensionService\downloads | Uitbrei dingen worden uit Azure gedownload en hier gekopieerd.|
+    |%ProgramFiles%\AzureConnectedMachineAgent\ExtensionService\downloads | Uitbrei dingen worden uit Azure gedownload en hier gekopieerd.|
 
 * De volgende Windows-Services worden tijdens de installatie van de agent gemaakt op de doel machine.
 
@@ -183,7 +183,7 @@ Na de installatie van de verbonden machine-agent voor Windows, worden de volgend
 
 * De volgende omgevings variabelen worden tijdens de installatie van de agent gemaakt.
 
-    |Name |Standaardwaarde |Beschrijving |
+    |Naam |Standaardwaarde |Beschrijving |
     |-----|--------------|------------|
     |IDENTITY_ENDPOINT |http://localhost:40342/metadata/identity/oauth2/token ||
     |IMDS_ENDPOINT |http://localhost:40342 ||
@@ -196,14 +196,14 @@ Na de installatie van de verbonden machine-agent voor Windows, worden de volgend
     |%ProgramData%\AzureConnectedMachineAgent\Log\azcmagent.log |Bevat de uitvoer van de azcmagent-hulp programma-opdrachten wanneer het argument uitgebreid (-v) wordt gebruikt.|
     |%ProgramData%\GuestConfig\ gc_agent_logs \ gc_agent. log |Registreert gegevens van de DSC-service activiteit,<br> met name de connectiviteit tussen de HIMDS-service en Azure Policy.|
     |% Program Data% \GuestConfig\gc_agent_logs\gc_agent_telemetry.txt |Registreert gegevens over de telemetrie van DSC-service en uitgebreide logboek registratie.|
-    |%SystemDrive%\ProgramData\GuestConfig\ ext_mgr_logs|Registreert gegevens over het onderdeel van de extensie agent.|
-    |%SystemDrive%\ProgramData\GuestConfig\ extension_logs\<Extension>|Registreert gegevens van de geïnstalleerde uitbrei ding.|
+    |%ProgramData%\GuestConfig\ ext_mgr_logs|Registreert gegevens over het onderdeel van de extensie agent.|
+    |%ProgramData%\GuestConfig\ extension_logs\<Extension>|Registreert gegevens van de geïnstalleerde uitbrei ding.|
 
 * De lokale beveiligings groep **hybride agent extensie toepassingen** wordt gemaakt.
 
 * Tijdens het verwijderen van de agent worden de volgende artefacten niet verwijderd.
 
-    * *%ProgramData%\AzureConnectedMachineAgent\Log
+    * %ProgramData%\AzureConnectedMachineAgent\Log
     * %ProgramData%\AzureConnectedMachineAgent en submappen
     * %ProgramData%\GuestConfig
 
@@ -245,7 +245,7 @@ Na de installatie van de verbonden machine agent voor Linux worden de volgende a
 
 * De volgende omgevings variabelen worden tijdens de installatie van de agent gemaakt. Deze variabelen worden ingesteld in `/lib/systemd/system.conf.d/azcmagent.conf` .
 
-    |Name |Standaardwaarde |Beschrijving |
+    |Naam |Standaardwaarde |Beschrijving |
     |-----|--------------|------------|
     |IDENTITY_ENDPOINT |http://localhost:40342/metadata/identity/oauth2/token ||
     |IMDS_ENDPOINT |http://localhost:40342 ||

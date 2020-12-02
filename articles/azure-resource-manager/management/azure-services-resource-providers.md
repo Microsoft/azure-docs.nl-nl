@@ -2,19 +2,21 @@
 title: Resource providers door Azure-Services
 description: Een lijst met alle naam ruimten van de resource provider voor Azure Resource Manager en toont de Azure-service voor die naam ruimte.
 ms.topic: conceptual
-ms.date: 11/30/2020
-ms.openlocfilehash: fffac8fef8742cf1f151de06ba6b528035a6668d
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.date: 12/01/2020
+ms.openlocfilehash: faea6badc24d0152e94fc507cafdb15932d1ea3e
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/01/2020
-ms.locfileid: "96436824"
+ms.locfileid: "96452624"
 ---
 # <a name="resource-providers-for-azure-services"></a>Resource providers for Azure services (Resourceproviders voor Azure-services)
 
 In dit artikel wordt uitgelegd hoe naam ruimten van de resource provider worden toegewezen aan Azure-Services.
 
 ## <a name="match-resource-provider-to-service"></a>Overeenkomende resource provider voor service
+
+De resource providers die zijn gemarkeerd met **-geregistreerd** , worden standaard geregistreerd voor uw abonnement. Zie [registratie](#registration)voor meer informatie.
 
 | Naam ruimte van resource provider | Azure-service |
 | --------------------------- | ------------- |

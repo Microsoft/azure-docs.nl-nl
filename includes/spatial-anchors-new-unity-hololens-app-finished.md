@@ -1,17 +1,17 @@
 ---
-author: craigktreasure
-manager: vriveras
+author: msftradford
+manager: MehranAzimi-msft
 services: azure-spatial-anchors
-ms.date: 06/22/2020
+ms.date: 11/20/2020
 ms.topic: include
-ms.author: crtreasu
+ms.author: parkerra
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: aed5b18a1241aa914f49e7613bd8a6f4a03eff2b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1986764a44a98208ee79819fa200034ec34370bf
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87375426"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95996255"
 ---
 ## <a name="putting-everything-together"></a>Alles bij elkaar
 
@@ -405,4 +405,4 @@ public class AzureSpatialAnchorsScript : MonoBehaviour
 In deze zelfstudie leert u meer over het gebruik van Azure Spatial Anchors in een nieuwe Unity HoloLens-app. Ga verder met de volgende zelfstudie voor meer informatie over het gebruik van Azure Spatial Anchors in een nieuwe Android-app.
 
 > [!div class="nextstepaction"]
-> [Een nieuwe app voor Android starten](/azure/spatial-anchors/tutorials/tutorial-new-android-app)
+> [Een nieuwe app voor Android starten](../articles/spatial-anchors/tutorials/tutorial-new-android-app.md)

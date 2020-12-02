@@ -1,6 +1,6 @@
 ---
-title: Verbinding maken met VSTS
-description: Query's uitvoeren voor Azure Synapse Analytics met Visual Studio.
+title: Verbinding maken met een toegewezen SQL-groep (voorheen SQL DW) met VSTS
+description: Een exclusieve SQL-groep (voorheen SQL DW) opvragen in azure Synapse Analytics met Visual Studio.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -11,14 +11,14 @@ ms.date: 08/15/2019
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 59e0aed3ceda369909c6a4aecd03637a82a2dd1b
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: c55f8483ba54ecf9778693b364603d642ddb3deb
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305383"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452319"
 ---
-# <a name="connect-to-azure-synapse-analytics-with-visual-studio-and-ssdt"></a>Verbinding maken met Azure Synapse Analytics met Visual Studio en SSDT
+# <a name="connect-to-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-with-visual-studio-and-ssdt"></a>Verbinding maken met een toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics met Visual Studio en SSDT
 
 > [!div class="op_single_selector"]
 > * [Azure Data Studio](../sql/get-started-azure-data-studio.md)
@@ -29,16 +29,16 @@ ms.locfileid: "93305383"
 > 
 > 
 
-Gebruik Visual Studio om binnen een paar minuten een specifieke SQL-groep in azure Synapse op te vragen. Deze methode maakt gebruik van de uitbrei ding SQL Server Data Tools (SSDT) in Visual Studio 2019. 
+Gebruik Visual Studio om binnen een paar minuten een specifieke SQL-groep (voorheen SQL DW) in azure Synapse op te vragen. Deze methode maakt gebruik van de uitbrei ding SQL Server Data Tools (SSDT) in Visual Studio 2019. 
 
 ## <a name="prerequisites"></a>Vereisten
 Voor deze zelfstudie hebt u het volgende nodig:
 
-* Een bestaande exclusieve SQL-groep. Zie [een toegewezen SQL-groep maken](create-data-warehouse-portal.md)om er een te maken.
+* Een bestaande exclusieve SQL-groep (voorheen SQL DW). Zie [een toegewezen SQL-groep maken (voorheen SQL DW)](create-data-warehouse-portal.md)om er een te maken.
 * SSDT voor Visual Studio. Als u Visual Studio hebt, hebt u waarschijnlijk al SSDT voor Visual Studio. Voor installatie-instructies en -opties raadpleegt u [Visual Studio en SSDT installeren](sql-data-warehouse-install-visual-studio.md).
-* De volledig gekwalificeerde SQL-servernaam. Zie [verbinding maken met een toegewezen SQL-groep](../sql/connect-overview.md)om deze informatie te vinden.
+* De volledig gekwalificeerde SQL-servernaam. Zie [verbinding maken met een toegewezen SQL-groep (voorheen SQL DW)](sql-data-warehouse-connect-overview.md)om deze informatie te vinden.
 
-## <a name="1-connect-to-your-dedicated-sql-pool"></a>1. Maak verbinding met uw toegewezen SQL-groep
+## <a name="1-connect-to-your-dedicated-sql-pool-formerly-sql-dw"></a>1. Maak verbinding met uw toegewezen SQL-groep (voorheen SQL DW)
 1. Open Visual Studio 2019.
 2. Open SQL Server-objectverkenner door SQL Server-objectverkenner **weer geven** te selecteren  >  **SQL Server Object Explorer**.
    
@@ -80,4 +80,4 @@ Nu er een verbinding met uw database is ingesteld, gaat u een query schrijven.
 ## <a name="next-steps"></a>Volgende stappen
 Nu u weet hoe u verbinding maakt en een query uitvoert, kunt u proberen [de gegevens te visualiseren met Power BI](sql-data-warehouse-get-started-visualize-with-power-bi.md).
 
-Zie [verifiëren voor exclusieve SQL-groep](sql-data-warehouse-authentication.md)om uw omgeving te configureren voor Azure Active Directory-verificatie.
+Zie verifiëren voor een [toegewezen SQL-groep (voorheen SQL DW)](sql-data-warehouse-authentication.md)om uw omgeving te configureren voor Azure Active Directory-verificatie.

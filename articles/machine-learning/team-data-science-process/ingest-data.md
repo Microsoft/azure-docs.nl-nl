@@ -11,16 +11,16 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: f8eab59d810fb825dbebf80d01d8efd2dd0a9841
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 46e911ad6bdf5a478d46e425f8700740ece56c6e
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "76720534"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452656"
 ---
 # <a name="load-data-into-storage-environments-for-analytics"></a>Gegevens voor analysedoeleinden in opslagomgevingen laden
 
-Voor het proces van de team data Science moeten gegevens in elke fase op de meest geschikte manier worden opgenomen of geladen. Gegevens bestemmingen kunnen Azure Blob Storage, SQL Azure-data bases, SQL Server op Azure VM, HDInsight (Hadoop), Synapse Analytics en Azure Machine Learning zijn. 
+Voor het proces van de team data Science moeten gegevens in elke fase op de meest geschikte manier worden opgenomen of geladen. Gegevens bestemmingen kunnen Azure Blob Storage, SQL Azure-data bases, SQL Server op Azure VM, HDInsight (Hadoop), Azure Synapse Analytics en Azure Machine Learning zijn. 
 
 In de volgende artikelen wordt beschreven hoe u gegevens opneemt in verschillende doel omgevingen waarin de gegevens worden opgeslagen en verwerkt.
 

@@ -11,19 +11,19 @@ ms.topic: tutorial
 ms.date: 03/05/2020
 ms.author: aahi
 ms.custom: devx-track-js
-ms.openlocfilehash: c47a4fbf51b14d9a13237f77c75dbf2839fb5f80
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: ff54d605fd81fa640314d99359f1aabacf7a469e
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94381283"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350378"
 ---
 # <a name="tutorial-create-a-single-page-app-using-the-bing-web-search-api"></a>Zelfstudie: Een app van één pagina maken met de Bing Webzoekopdrachten-API
 
 > [!WARNING]
-> Bing Search-API's worden van Cognitive Services naar Bing Search Services verplaatst. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht volgens het proces dat [hier](https://aka.ms/cogsvcs/bingmove) is beschreven.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services verplaatst. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht volgens het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
 > Bing Search-API's ingericht met behulp van Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
-> Zie [Bing Search Services](https://aka.ms/cogsvcs/bingmigration) voor migratie-instructies.
+> Zie [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
 Deze app met één pagina laat zien hoe u zoekresultaten uit de Bing Webzoekopdrachten-API ophaalt, parseert en weergeeft. De zelfstudie gebruikt standaard HTML en CSS en is gericht op de JavaScript-code. Op [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/tree/master/Tutorials/Bing-Web-Search) zijn HTML-, CSS- en JS-bestanden met snelstartinstructies beschikbaar.
 
@@ -136,7 +136,7 @@ function bingSearchOptions(form) {
 
 `SafeSearch` kan worden ingesteld op `strict`, `moderate` of `off`, waarbij `moderate` de standaardinstelling voor Bing Web Search is. In dit formulier wordt een selectievakje met twee statussen gebruikt: `strict` of `moderate`.
 
-Als een van de **Promoten** -selectievakjes is geselecteerd, wordt de `answerCount`-parameter toegevoegd aan de query. `answerCount` is vereist wanneer u de `promote`-parameter gebruikt. In dit fragment is de waarde ingesteld op `9` zodat alle beschikbare resultaattypen worden geretourneerd.
+Als een van de **Promoten**-selectievakjes is geselecteerd, wordt de `answerCount`-parameter toegevoegd aan de query. `answerCount` is vereist wanneer u de `promote`-parameter gebruikt. In dit fragment is de waarde ingesteld op `9` zodat alle beschikbare resultaattypen worden geretourneerd.
 > [!NOTE]
 > Het promoten van een resultaattype kan *niet garanderen* dat dit type in de zoekresultaten komt te staan. In plaats daarvan verhoogt u met promotie de beoordeling van dat soort resultaten in vergelijking met hun normale beoordeling. Als u de zoekopdrachten wilt beperken tot een bepaald type resultaten, gebruikt u de `responseFilter`-queryparameter of roept een specifieker eindpunt aan zoals Bing Image Search of Bing News Search.
 

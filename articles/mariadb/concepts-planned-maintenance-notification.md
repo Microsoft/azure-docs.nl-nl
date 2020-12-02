@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 10/21/2020
-ms.openlocfilehash: 1c9ae694fefcede599331d5d57a298bda4739f53
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: c290236dfe7e88999847f8cb0d66b2d3c868c1ab
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94920522"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453286"
 ---
 # <a name="planned-maintenance-notification-in-azure-database-for-mariadb"></a>Melding over gepland onderhoud in Azure Database for MariaDB
 
@@ -61,7 +61,7 @@ U kunt de geplande onderhouds melding controleren op Azure Portal of waarschuwin
 7. Zorg ervoor dat regel inschakelen bij maken is ingesteld op Ja.
 8. Selecteer **waarschuwings regel maken** om uw waarschuwing te volt ooien
 
-Zie [waarschuwingen voor activiteiten logboek maken voor service meldingen](../service-health/alerts-activity-log-service-notifications.md)voor gedetailleerde stappen voor het maken van **service Health-waarschuwingen**.
+Zie [waarschuwingen voor activiteiten logboek maken voor service meldingen](../service-health/alerts-activity-log-service-notifications-portal.md)voor gedetailleerde stappen voor het maken van **service Health-waarschuwingen**.
 
 ## <a name="can-i-cancel-or-postpone-planned-maintenance"></a>Kan ik gepland onderhoud annuleren of uitstellen?
 

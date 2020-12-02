@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: tutorial
 ms.date: 11/09/2020
-ms.openlocfilehash: 322db4e1535e763f4c3e7c87afaa370471ba0b66
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.openlocfilehash: 3801bb44fed6bf24788957c41de77c89b3025ae8
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94376295"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351109"
 ---
 # <a name="tutorial-add-your-knowledge-base-to-power-virtual-agents"></a>Zelfstudie: uw Knowledge Base toevoegen aan Power Virtual Agents
 Maak een bot met [Power Virtual Agents](https://powervirtualagents.microsoft.com/) en breid deze uit om antwoorden uit uw Knowledge Base op te halen.
@@ -53,7 +53,7 @@ Hier volgt een overzicht van de stappen die nodig zijn om een agent in Power Vir
     * Roep een actie aan (in Power Automate).
 * In de portal van [Power Automate](https://us.flow.microsoft.com/):
     * Zoek de sjabloon _Generate answers using QnA Maker_.
-    * Gebruik de sjabloon om de stroom te configureren voor het gebruik van [GenerateAnswer van QnA Maker](https://docs.microsoft.com/connectors/cognitiveservicesqnamaker/).
+    * Gebruik de sjabloon om de stroom te configureren voor het gebruik van [GenerateAnswer van QnA Maker](/connectors/cognitiveservicesqnamaker/).
         * In QnA Maker gepubliceerde gegevens van de Knowledge Base:
             * Id van de Knowledge Base
             * Eindpunthost voor QnA Maker-resource
@@ -258,6 +258,6 @@ Als u klaar bent met de Knowledge Base, verwijdert u de QnA Maker-resources in d
 [Analytische gegevens verkrijgen voor uw knowledge base](../How-To/get-analytics-knowledge-base.md)
 
 Meer informatie over:
-* [Power Virtual Agents](https://docs.microsoft.com/power-virtual-agents/)
-* [Power Automate](https://docs.microsoft.com/power-automate/)
-* [QnA Maker-connector](https://us.flow.microsoft.com/connectors/shared_cognitiveservicesqnamaker/qna-maker/) en de [instellingen voor de connector](https://docs.microsoft.com/connectors/cognitiveservicesqnamaker/)
+* [Power Virtual Agents](/power-virtual-agents/)
+* [Power Automate](/power-automate/)
+* [QnA Maker-connector](https://us.flow.microsoft.com/connectors/shared_cognitiveservicesqnamaker/qna-maker/) en de [instellingen voor de connector](/connectors/cognitiveservicesqnamaker/)

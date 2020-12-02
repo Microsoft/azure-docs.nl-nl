@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/27/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 742c69709eee19a37abdb3e5330cd7fb8ce315b7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 65584b2a6a3bdfbb863c26dac688b20279c4b54d
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89436388"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452289"
 ---
 # <a name="add-fault-tolerance-in-copy-activity-by-skipping-incompatible-rows"></a>Fout tolerantie in Kopieer activiteit toevoegen door incompatibele rijen over te slaan
 
@@ -48,7 +48,7 @@ De Kopieer activiteit ondersteunt drie scenario's voor het detecteren, overs Laa
     Bijvoorbeeld: gegevens kopiëren van een SQL-Server naar een SQL database. Er wordt een primaire sleutel gedefinieerd in de Sink-SQL database, maar er is geen dergelijke primaire sleutel gedefinieerd in de SQL-bron server. De dubbele rijen die aanwezig zijn in de bron, kunnen niet naar de Sink worden gekopieerd. Met de Kopieer activiteit wordt alleen de eerste rij van de bron gegevens naar de Sink gekopieerd. De volgende bron rijen die de dubbele primaire-sleutel waarde bevatten, worden gedetecteerd als incompatibel en worden overgeslagen.
 
 >[!NOTE]
->Deze functie is niet van toepassing wanneer Kopieer activiteit is geconfigureerd voor het aanroepen van het mechanisme voor het laden van externe gegevens [, waaronder Azure Synapse Analytics (voorheen SQL Data Warehouse) poly base](data-factory-azure-sql-data-warehouse-connector.md#use-polybase-to-load-data-into-azure-synapse-analytics) of [Amazon Redshift Unload](data-factory-amazon-redshift-connector.md#use-unload-to-copy-data-from-amazon-redshift). Voor het laden van gegevens in azure Synapse Analytics met poly Base, gebruikt u ondersteuning voor systeem eigen fout tolerantie van poly Base door '[polyBaseSettings](data-factory-azure-sql-data-warehouse-connector.md#sqldwsink)' op te geven in de Kopieer activiteit.
+>Deze functie is niet van toepassing wanneer Kopieer activiteit is geconfigureerd voor het aanroepen van het mechanisme voor het laden van externe gegevens, waaronder [Azure Synapse Analytics poly base](data-factory-azure-sql-data-warehouse-connector.md#use-polybase-to-load-data-into-azure-synapse-analytics) of [Amazon Redshift Unload](data-factory-amazon-redshift-connector.md#use-unload-to-copy-data-from-amazon-redshift). Voor het laden van gegevens in azure Synapse Analytics met poly Base, gebruikt u ondersteuning voor systeem eigen fout tolerantie van poly Base door '[polyBaseSettings](data-factory-azure-sql-data-warehouse-connector.md#sqldwsink)' op te geven in de Kopieer activiteit.
 
 ## <a name="configuration"></a>Configuratie
 In het volgende voor beeld wordt een JSON-definitie geboden voor het overs laan van de niet-compatibele rijen in een Kopieer activiteit:
@@ -71,7 +71,7 @@ In het volgende voor beeld wordt een JSON-definitie geboden voor het overs laan 
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| **enableSkipIncompatibleRow** | Het overs laan van incompatibele rijen tijdens het kopiëren inschakelen of niet. | True<br/>False (standaard) | Nee |
+| **enableSkipIncompatibleRow** | Het overs laan van incompatibele rijen tijdens het kopiëren inschakelen of niet. | Waar<br/>False (standaard) | Nee |
 | **redirectIncompatibleRowSettings** | Een groep eigenschappen die kan worden opgegeven wanneer u de niet-compatibele rijen wilt vastleggen. | &nbsp; | Nee |
 | **linkedServiceName** | De gekoppelde service van Azure Storage om het logboek op te slaan dat de overgeslagen rijen bevat. | De naam van een gekoppelde [opslag](data-factory-azure-blob-connector.md#azure-storage-linked-service) -of [azurestoragesas zijn](data-factory-azure-blob-connector.md#azure-storage-sas-linked-service) -service, die verwijst naar het opslag exemplaar dat u wilt gebruiken om het logboek bestand op te slaan. | Nee |
 | **path** | Het pad naar het logboek bestand dat de overgeslagen rijen bevat. | Geef het pad op naar de Blob-opslag die u wilt gebruiken om de niet-compatibele gegevens te registreren. Als u geen pad opgeeft, maakt de service een container voor u. | Nee |

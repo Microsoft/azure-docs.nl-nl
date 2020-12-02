@@ -10,19 +10,19 @@ ms.subservice: bing-custom-search
 ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: aahi
-ms.openlocfilehash: 25d716513c7ceb9311588b75b0fad1c68bf71bfd
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: a789cb3fde05d12a8793196043f1c246bbab6559
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93081107"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96342410"
 ---
 # <a name="tutorial-build-a-custom-search-web-page"></a>Zelfstudie: Een Aangepaste zoekopdrachten-webpagina bouwen
 
 > [!WARNING]
-> Bing Search-API's worden van Cognitive Services naar Bing Search Services verplaatst. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht volgens het proces dat [hier](https://aka.ms/cogsvcs/bingmove) is beschreven.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services verplaatst. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht volgens het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
 > Bing Search-API's ingericht met behulp van Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
-> Zie [Bing Search Services](https://aka.ms/cogsvcs/bingmigration) voor migratie-instructies.
+> Zie [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
 Met Bing Aangepaste zoekopdrachten kunt u op maat gemaakte zoekervaringen maken voor onderwerpen die u interesseren. Als u bijvoorbeeld een website over martial arts hebt die een zoekervaring biedt, kunt u de domeinen, subsites en webpagina's opgeven waarin Bing moet zoeken. Uw gebruikers zien dan zoekresultaten die zijn afgestemd op de inhoud die ze interessant vinden in plaats van dat ze door pagina's met algemene zoekresultaten moeten bladeren die mogelijk niet-relevante inhoud bevatten. 
 
@@ -143,7 +143,7 @@ In de rest van deze zelfstudie wordt het volgende toegelicht: **Optie 1: JavaScr
   
 2. Selecteer in het menu **Bestand** de optie **Nieuw** en kies vervolgens **Project**.  
   
-3. Selecteer **Visual C# / Web / ASP.NET Core Web Application** in het venster **New Project** , geef het project een naam en klik vervolgens op **OK**.  
+3. Selecteer **Visual C# / Web / ASP.NET Core Web Application** in het venster **New Project**, geef het project een naam en klik vervolgens op **OK**.  
   
    ![Schermafbeelding van het dialoogvenster New Project](./media/custom-search-new-project.png)  
   

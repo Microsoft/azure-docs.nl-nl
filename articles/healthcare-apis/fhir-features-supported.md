@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 02/07/2019
 ms.author: cavoeg
-ms.openlocfilehash: 3aea2322129c383a385168c54001464da5dae276
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 9a4c331d82695aecb53990fd604ade82f3361959
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95520081"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452920"
 ---
 # <a name="features"></a>Functies
 
@@ -49,7 +49,7 @@ Eerdere versies die momenteel worden ondersteund, zijn onder andere: `3.0.2`
 | haalt                         | Gedeeltelijk   | Gedeeltelijk   | Gedeeltelijk   | `self` en `next` worden ondersteund                     |
 | schakels                 | Nee        | Nee        | Nee        |                                                     |
 
-## <a name="search"></a>Zoeken
+## <a name="search"></a>Search
 
 Alle typen zoek parameters worden ondersteund. 
 
@@ -59,9 +59,9 @@ Alle typen zoek parameters worden ondersteund.
 | Datum/datum/tijd         | Ja       | Ja       | Ja       |         |
 | Tekenreeks                | Ja       | Ja       | Ja       |         |
 | Token                 | Ja       | Ja       | Ja       |         |
-| Referentie             | Ja       | Ja       | Ja       |         |
+| Naslaginformatie             | Ja       | Ja       | Ja       |         |
 | Composite             | Ja       | Ja       | Ja       |         |
-| Hoeveelheid              | Ja       | Ja       | Ja       |         |
+| Aantal              | Ja       | Ja       | Ja       |         |
 | URI                   | Ja       | Ja       | Ja       |         |
 | Specifiek               | Nee        | Nee        | Nee        |         |
 
@@ -135,7 +135,7 @@ Op dit moment worden de toegestane acties voor een bepaalde rol *globaal* toegep
 
 ## <a name="service-limits"></a>Servicelimieten
 
-* [**Aanvraag eenheden (RUs)**](https://docs.microsoft.com/azure/cosmos-db/concepts-limits) : u kunt maxi maal 10.000 RUs configureren in de portal voor Azure API voor FHIR. U hebt mini maal 400 RUs of 10 RUs/GB nodig, afhankelijk van wat groter is. Als u meer dan 10.000 RUs nodig hebt, kunt u een ondersteunings ticket plaatsen om dit te verg root. De Maxi maal beschik bare waarde is 1.000.000.
+* [**Aanvraag eenheden (RUs)**](../cosmos-db/concepts-limits.md) : u kunt maxi maal 10.000 RUs configureren in de portal voor Azure API voor FHIR. U hebt mini maal 400 RUs of 10 RUs/GB nodig, afhankelijk van wat groter is. Als u meer dan 10.000 RUs nodig hebt, kunt u een ondersteunings ticket plaatsen om dit te verg root. De Maxi maal beschik bare waarde is 1.000.000.
 
 * **Gelijktijdige verbindingen** en **instanties** : door dafault hebt u vijf gelijktijdige verbindingen op twee instanties in het cluster (voor een totaal van 10 gelijktijdige aanvragen). Als u denkt dat u meer gelijktijdige aanvragen nodig hebt, opent u een ondersteunings ticket met informatie over uw behoeften.
 

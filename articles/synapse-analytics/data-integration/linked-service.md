@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: feabfe505601276269c2774e3b39dd5cbaa32087
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: fb3c7dd7b3d7e8e42e230eedcd0d1b43af104327
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96022918"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452524"
 ---
 # <a name="secure-a-linked-service-with-private-links"></a>Een gekoppelde service beveiligen met persoonlijke koppelingen
 
@@ -69,7 +69,7 @@ U hebt nu een beveiligde en particuliere verbinding tot stand gebracht tussen Sy
 ## <a name="next-steps"></a>Volgende stappen
 
 
-Zie [beheerde persoonlijke eind punten](../security/synapse-workspace-managed-private-endpoints.md)voor meer informatie over het beheerde persoonlijke eind punt in Synapse Analytics.
+Zie [beheerde persoonlijke eind punten](../security/synapse-workspace-managed-private-endpoints.md)voor meer informatie over het beheerde persoonlijke eind punt in azure Synapse Analytics.
 
 
-Zie de [gegevens opnemen in een Data Lake](data-integration-data-lake.md) artikel voor meer informatie over gegevens integratie voor Synapse Analytics.
+Zie voor meer informatie over gegevens integratie voor Azure Synapse Analytics de [opname gegevens in een Data Lake](data-integration-data-lake.md) -artikel.

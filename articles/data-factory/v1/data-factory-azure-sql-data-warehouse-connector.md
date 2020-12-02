@@ -1,6 +1,6 @@
 ---
-title: Gegevens kopiëren van/naar Azure Synapse Analytics (voorheen SQL Data Warehouse)
-description: Meer informatie over het kopiëren van gegevens naar/van Azure Synapse Analytics (voorheen SQL Data Warehouse) met Azure Data Factory
+title: Gegevens kopiëren van/naar Azure Synapse Analytics
+description: Meer informatie over het kopiëren van gegevens naar/van Azure Synapse Analytics met behulp van Azure Data Factory
 services: data-factory
 documentationcenter: ''
 author: linda33wj
@@ -12,14 +12,14 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 55582fb8c4fc80ab005a01ec015035963404e639
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 0d071599b72f6a71bdff815f514311fb87f53d5b
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637408"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452353"
 ---
-# <a name="copy-data-to-and-from-azure-synapse-analytics-formerly-sql-data-warehouse-using-azure-data-factory"></a>Gegevens kopiëren van en naar Azure Synapse Analytics (voorheen SQL Data Warehouse) met Azure Data Factory
+# <a name="copy-data-to-and-from-azure-synapse-analytics-using-azure-data-factory"></a>Gegevens kopiëren van en naar Azure Synapse Analytics met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
 > * [Versie 1:](data-factory-azure-sql-data-warehouse-connector.md)
 > * [Versie 2 (huidige versie)](../connector-azure-sql-data-warehouse.md)
@@ -37,12 +37,12 @@ U kunt gegevens **uit Azure Synapse Analytics** kopiëren naar de volgende gegev
 
 [!INCLUDE [data-factory-supported-sinks](../../../includes/data-factory-supported-sinks.md)]
 
-U kunt gegevens uit de volgende gegevens archieven kopiëren **naar Azure Synapse Analytics** :
+U kunt gegevens uit de volgende gegevens archieven kopiëren **naar Azure Synapse Analytics**:
 
 [!INCLUDE [data-factory-supported-sources](../../../includes/data-factory-supported-sources.md)]
 
 > [!TIP]
-> Wanneer u gegevens van SQL Server of Azure SQL Database naar Azure Synapse Analytics kopieert en u de tabel niet in het doel archief bevindt, Data Factory kunt u de tabel in Synapse Analytics automatisch maken met behulp van het schema van de tabel in de gegevens opslag van de bron. Zie [automatische tabel maken](#auto-table-creation) voor meer informatie.
+> Wanneer u gegevens van SQL Server of Azure SQL Database naar Azure Synapse Analytics kopieert en u de tabel niet in het doel archief bevindt, Data Factory kunt u de tabel in azure Synapse Analytics automatisch maken met behulp van het schema van de tabel in de gegevens opslag van de bron. Zie [automatische tabel maken](#auto-table-creation) voor meer informatie.
 
 ## <a name="supported-authentication-type"></a>Ondersteund verificatie type
 Azure Synapse Analytics-connector ondersteunen basis verificatie.
@@ -50,13 +50,13 @@ Azure Synapse Analytics-connector ondersteunen basis verificatie.
 ## <a name="getting-started"></a>Aan de slag
 U kunt een pijp lijn maken met een Kopieer activiteit die gegevens verplaatst van/naar een Azure Synapse-analyse met behulp van verschillende hulpprogram ma's/Api's.
 
-De eenvoudigste manier om een pijp lijn te maken waarmee gegevens naar/van Azure Synapse Analytics worden gekopieerd, is door de wizard gegevens kopiëren te gebruiken. Zie [zelf studie: gegevens laden in Synapse Analytics met Data Factory](../load-azure-sql-data-warehouse.md) voor een snelle walkthrough over het maken van een pijp lijn met behulp van de wizard gegevens kopiëren.
+De eenvoudigste manier om een pijp lijn te maken waarmee gegevens naar/van Azure Synapse Analytics worden gekopieerd, is door de wizard gegevens kopiëren te gebruiken. Zie [zelf studie: gegevens laden in azure Synapse Analytics met Data Factory](../load-azure-sql-data-warehouse.md) voor een snelle walkthrough over het maken van een pijp lijn met behulp van de wizard gegevens kopiëren.
 
-U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio** , **Azure PowerShell** , **Azure Resource Manager sjabloon** , **.net API** en **rest API** . Zie [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit.
+U kunt ook de volgende hulpprogram ma's gebruiken om een pijp lijn te maken: **Visual Studio**, **Azure PowerShell**, **Azure Resource Manager sjabloon**, **.net API** en **rest API**. Zie [zelf studie Kopieer activiteit](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md) voor stapsgewijze instructies voor het maken van een pijp lijn met een Kopieer activiteit.
 
 Ongeacht of u de hulpprogram ma's of Api's gebruikt, voert u de volgende stappen uit om een pijp lijn te maken waarmee gegevens uit een brongegevens archief naar een Sink-gegevens archief worden verplaatst:
 
-1. Maak een **Data Factory** . Een data factory kan een of meer pijp lijnen bevatten. 
+1. Maak een **Data Factory**. Een data factory kan een of meer pijp lijnen bevatten. 
 2. Maak **gekoppelde services** om invoer-en uitvoer gegevens archieven te koppelen aan uw Data Factory. Als u bijvoorbeeld gegevens kopieert van een Azure Blob-opslag naar een Azure Synapse Analytics, maakt u twee gekoppelde services om uw Azure-opslag account en Azure Synapse Analytics te koppelen aan uw data factory. Zie de sectie [Eigenschappen van gekoppelde service](#linked-service-properties) voor gekoppelde service-eigenschappen die specifiek zijn voor Azure Synapse Analytics. 
 3. Gegevens **sets** maken om invoer-en uitvoer gegevens voor de Kopieer bewerking weer te geven. In het voor beeld in de laatste stap maakt u een gegevensset om de BLOB-container en de map op te geven die de invoer gegevens bevat. En u maakt een andere gegevensset om de tabel op te geven in de Azure Synapse Analytics die de gegevens bevat die zijn gekopieerd uit de Blob-opslag. Zie de sectie [Eigenschappen](#dataset-properties) van gegevensset voor eigenschappen van een gegevensset die specifiek zijn voor Azure Synapse Analytics.
 4. Maak een **pijp lijn** met een Kopieer activiteit die een gegevensset als invoer en een gegevensset als uitvoer gebruikt. In het eerder genoemde voor beeld gebruikt u BlobSource als bron en SqlDWSink als Sink voor de Kopieer activiteit. En als u kopieert van Azure Synapse Analytics naar Azure Blob Storage, gebruikt u SqlDWSource en BlobSink in de Kopieer activiteit. Zie de sectie [Eigenschappen van Kopieer](#copy-activity-properties) activiteit voor meer informatie over de eigenschappen van de Kopieer activiteit die specifiek zijn voor Azure Synapse Analytics. Voor meer informatie over het gebruik van een gegevens archief als een bron of sink klikt u op de koppeling in de vorige sectie voor uw gegevens archief.
@@ -146,7 +146,7 @@ GO
 | --- | --- | --- | --- |
 | sqlWriterCleanupScript |Geef een query op voor de Kopieer activiteit die moet worden uitgevoerd, zodat de gegevens van een specifiek segment worden opgeruimd. Zie de [sectie REPEAT baarheid](#repeatability-during-copy)voor meer informatie. |Een query-instructie. |Nee |
 | allowPolyBase |Hiermee wordt aangegeven of poly base (indien van toepassing) moet worden gebruikt in plaats van BULKINSERT-mechanisme. <br/><br/> **Het gebruik van poly Base is de aanbevolen manier om gegevens in azure Synapse Analytics te laden.** Zie [poly Base gebruiken om gegevens te laden in de sectie Azure Synapse Analytics](#use-polybase-to-load-data-into-azure-synapse-analytics) voor beperkingen en Details. |Waar <br/>False (standaard) |Nee |
-| polyBaseSettings |Een groep eigenschappen die kan worden opgegeven wanneer de eigenschap **allowPolybase** is ingesteld op **True** . |&nbsp; |Nee |
+| polyBaseSettings |Een groep eigenschappen die kan worden opgegeven wanneer de eigenschap **allowPolybase** is ingesteld op **True**. |&nbsp; |Nee |
 | rejectValue |Hiermee geeft u het aantal of percentage rijen op dat kan worden afgewezen voordat de query mislukt. <br/><br/>Meer informatie over de opties voor het afwijzen van poly bases vindt u in de sectie **argumenten** van het onderwerp [externe tabel maken (Transact-SQL)](/sql/t-sql/statements/create-external-table-transact-sql) . |0 (standaard), 1, 2,... |Nee |
 | rejectType |Hiermee wordt aangegeven of de optie rejectValue is opgegeven als een letterlijke waarde of een percentage. |Waarde (standaard), percentage |Nee |
 | rejectSampleValue |Bepaalt het aantal rijen dat moet worden opgehaald voordat de poly base het percentage geweigerde rijen opnieuw berekent. |1, 2,... |Ja, als **rejectType** een **percentage** is |
@@ -193,14 +193,14 @@ Azure Synapse Analytics poly Base ondersteunt direct Azure Blob en Azure Data La
 
 Als niet aan de vereisten wordt voldaan, worden de instellingen door Azure Data Factory gecontroleerd en wordt automatisch teruggeleid naar het BULKINSERT-mechanisme voor het verplaatsen van gegevens.
 
-1. De **gekoppelde bron service** is van het type: **opslag** of **AzureDataLakeStore met Service-Principal-verificatie** .
-2. De **invoer-gegevensset** is van het type: **AzureBlob** of **AzureDataLakeStore** , en de notatie type onder `type` Eigenschappen is **OrcFormat** , **ParquetFormat** of **TextFormat** met de volgende configuraties:
+1. De **gekoppelde bron service** is van het type: **opslag** of **AzureDataLakeStore met Service-Principal-verificatie**.
+2. De **invoer-gegevensset** is van het type: **AzureBlob** of **AzureDataLakeStore**, en de notatie type onder `type` Eigenschappen is **OrcFormat**, **ParquetFormat** of **TextFormat** met de volgende configuraties:
 
    1. `rowDelimiter` moet **\n** zijn.
-   2. `nullValue` is ingesteld op een **lege teken reeks** ("") of `treatEmptyAsNull` is ingesteld op **True** .
-   3. `encodingName` is ingesteld op **UTF-8** , de **standaard** waarde.
+   2. `nullValue` is ingesteld op een **lege teken reeks** ("") of `treatEmptyAsNull` is ingesteld op **True**.
+   3. `encodingName` is ingesteld op **UTF-8**, de **standaard** waarde.
    4. `escapeChar`, `quoteChar` , `firstRowAsHeader` en `skipLineCount` zijn niet opgegeven.
-   5. `compression` kan **geen compressie** , **gzip** of **Deflate** zijn.
+   5. `compression` kan **geen compressie**, **gzip** of **Deflate** zijn.
 
       ```JSON
       "typeProperties": {
@@ -314,7 +314,7 @@ Data Factory maakt de tabel in het doel archief met dezelfde tabel naam in de ge
 | SmallMoney | SmallMoney |
 | Binair | Binair |
 | Varbinary | Varbinary (Maxi maal 8000) |
-| Date | Date |
+| Datum | Date |
 | DateTime | DateTime |
 | DateTime2 | DateTime2 |
 | Tijd | Tijd |
@@ -346,7 +346,7 @@ De toewijzing is hetzelfde als de [SQL Server gegevens type toewijzing voor ADO.
 | --- | --- |
 | bigint |Int64 |
 | binair |Byte [] |
-| bit |Boolean-waarde |
+| bit |Boolean |
 | char |Teken reeks, char [] |
 | date |DateTime |
 | Datum/tijd |DateTime |
@@ -511,7 +511,7 @@ Gegevens worden elk uur naar een nieuwe BLOB geschreven (frequentie: uur, interv
 
 **Kopieer activiteit in een pijp lijn met SqlDWSource en BlobSink:**
 
-De pijp lijn bevat een Kopieer activiteit die is geconfigureerd voor het gebruik van de invoer-en uitvoer gegevens sets en die is gepland om elk uur te worden uitgevoerd. In de JSON-definitie van de pijp lijn is het **bron** type ingesteld op **SqlDWSource** en het **sink** -type is ingesteld op **BlobSink** . Met de SQL-query die is opgegeven voor de eigenschap **SqlReaderQuery** selecteert u de gegevens in het afgelopen uur om te kopiëren.
+De pijp lijn bevat een Kopieer activiteit die is geconfigureerd voor het gebruik van de invoer-en uitvoer gegevens sets en die is gepland om elk uur te worden uitgevoerd. In de JSON-definitie van de pijp lijn is het **bron** type ingesteld op **SqlDWSource** en het **sink** -type is ingesteld op **BlobSink**. Met de SQL-query die is opgegeven voor de eigenschap **SqlReaderQuery** selecteert u de gegevens in het afgelopen uur om te kopiëren.
 
 ```JSON
 {
@@ -695,7 +695,7 @@ In het voor beeld worden gegevens gekopieerd naar een tabel met de naam ' MyTabl
 ```
 **Kopieer activiteit in een pijp lijn met BlobSource en SqlDWSink:**
 
-De pijp lijn bevat een Kopieer activiteit die is geconfigureerd voor het gebruik van de invoer-en uitvoer gegevens sets en die is gepland om elk uur te worden uitgevoerd. In de JSON-definitie van de pijp lijn is het **bron** type ingesteld op **BlobSource** en het **sink** -type is ingesteld op **SqlDWSink** .
+De pijp lijn bevat een Kopieer activiteit die is geconfigureerd voor het gebruik van de invoer-en uitvoer gegevens sets en die is gepland om elk uur te worden uitgevoerd. In de JSON-definitie van de pijp lijn is het **bron** type ingesteld op **BlobSource** en het **sink** -type is ingesteld op **SqlDWSink**.
 
 ```JSON
 {

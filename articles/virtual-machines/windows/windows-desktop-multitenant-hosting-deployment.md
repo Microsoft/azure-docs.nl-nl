@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 1/24/2018
 ms.author: xujing
-ms.openlocfilehash: ceb8b8b31963317ccbbd1aee9f1b2606afc5a5db
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 5631cbdd0b1eae343899be2147720d980e605dbb
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96010246"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452722"
 ---
 # <a name="how-to-deploy-windows-10-on-azure-with-multitenant-hosting-rights"></a>Windows 10 implementeren op Azure met multi tenant-hosting rechten 
 Voor klanten met Windows 10 Enter prise E3/E5 per gebruiker of Windows Virtual Desktop Access per gebruiker (licenties voor gebruikers abonnement of licenties voor gebruikers abonnementen), kunt u met multi tenant hosting rechten voor Windows 10 uw Windows 10-licenties naar de Cloud brengen en Windows 10-Virtual Machines op Azure uitvoeren zonder dat u voor een andere licentie betaalt. Zie [multi tenant-hosting voor Windows 10](https://www.microsoft.com/en-us/CloudandHosting/licensing_sca.aspx)voor meer informatie.
@@ -32,6 +32,15 @@ Voor implementaties van Power shell, CLI en Azure Resource Manager-sjabloon kunt
 | Windows 10 Pro N  | MicrosoftWindowsDesktop | Windows-10  | RS2-ProN  |
 | Windows 10 Pro    | MicrosoftWindowsDesktop | Windows-10  | RS3-Pro   |
 | Windows 10 Pro N  | MicrosoftWindowsDesktop | Windows-10  | RS3-ProN  |
+
+## <a name="qualify-for-multi-tenant-hosting-rights"></a>Kom in aanmerking voor multi tenant-hosting rechten 
+Om in aanmerking te komen voor multi tenant-hosting rechten en om Windows 10-installatie kopieën uit te voeren op Azure-gebruikers, moet een van de volgende abonnementen zijn: 
+
+-   Microsoft 365 E3/E5/F3/a3/A5
+-   Windows 10 Enter prise E3/E5 
+-   Windows 10-onderwijs a3/A5
+-   Windows VDA E3/E5
+
 
 ## <a name="uploading-windows-10-vhd-to-azure"></a>Windows 10 VHD uploaden naar Azure
 Als u een gegeneraliseerde virtuele harde schijf met Windows 10 uploadt, moet u er rekening mee houden dat Windows 10 geen ingebouwd Administrator-account standaard is ingeschakeld. Als u het ingebouwde Administrator account wilt inschakelen, neemt u de volgende opdracht op als onderdeel van de aangepaste script extensie.

@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: article
 ms.date: 07/15/2020
 ms.author: alkohli
-ms.openlocfilehash: a1a0462b82629b16bd8ccbe269fb1a917357d542
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4deeec1b6c9db80c15b001efb7b40bdb4bb9d515
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90883503"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452645"
 ---
 # <a name="azure-stack-edge-pro-system-requirements"></a>Systeem vereisten voor Azure Stack Edge Pro
 
@@ -62,7 +62,7 @@ Gebruik de volgende tabel voor poort configuratie voor de servers die als host f
 |----------|-----------|------------|----------|----------|
 | TCP 443 (HTTPS)| Uit       | WAN        | Ja      | Uitgaand openen voor IoT Edge inrichting. Deze configuratie is vereist wanneer u hand matige scripts of een Azure IoT Device Provisioning Service (DPS) gebruikt.|
 
-Voor volledige informatie gaat u naar de [firewall-en poort configuratie regels voor IOT Edge-implementatie](https://docs.microsoft.com/azure/iot-edge/troubleshoot).
+Voor volledige informatie gaat u naar de [firewall-en poort configuratie regels voor IOT Edge-implementatie](../iot-edge/troubleshoot.md).
 
 ## <a name="url-patterns-for-firewall-rules"></a>URL-patronen voor firewall regels
 

@@ -1,6 +1,6 @@
 ---
-title: Prestaties van Column store-index verbeteren
-description: Verminder de geheugen vereisten of verg root het beschik bare geheugen om het aantal rijen binnen elke Rijg roep te maximaliseren.
+title: Prestaties van Column store-index verbeteren voor toegewezen SQL-groep
+description: Verminder de geheugen vereisten of verg root het beschik bare geheugen om het aantal rijen binnen elke Rijg roep in de toegewezen SQL-groep te maximaliseren.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -11,14 +11,14 @@ ms.date: 03/22/2019
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 5308599f43788b35dbe278ddbbea2253c2f94cb7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6984ad41c07f7790a746dbd197c18dce2aa83e2f
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88797765"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453715"
 ---
-# <a name="maximizing-rowgroup-quality-for-columnstore"></a>Maximale Rijg roep-kwaliteit voor column Store
+# <a name="maximizing-rowgroup-quality-for-columnstore-indexes-in-dedicated-sql-pool"></a>Maximale Rijg roep-kwaliteit voor column Store-indexen in toegewezen SQL-groep 
 
 De kwaliteit van de Rijg roep wordt bepaald door het aantal rijen in een Rijg roep. Het verg Roten van het beschik bare geheugen kan het aantal rijen dat een column store-index in elke Rijg roep wordt gecomprimeerd, maximaliseren.  Gebruik deze methoden voor het verbeteren van de compressie frequentie en de query prestaties voor column Store-indexen.
 
@@ -99,7 +99,7 @@ Het Maxi maal vereiste geheugen voor het comprimeren van één Rijg roep is onge
 
 Lange teken reeksen worden gecomprimeerd met een compressie methode die is ontworpen voor het comprimeren van tekst. Deze compressie methode maakt gebruik van een *woorden lijst* om tekst patronen op te slaan. De maximale grootte van een woorden lijst is 16 MB. Er is slechts één woorden lijst voor elke lange teken reeks kolom in de Rijg roep.
 
-Zie voor een uitgebreide bespreking van Column Store-geheugen vereisten de video [Synapse SQL pool scaling: configuratie en richt lijnen](https://channel9.msdn.com/Events/Ignite/2016/BRK3291).
+Zie voor een uitgebreide beschrijving van Column Store-geheugen vereisten de video- [toegewezen SQL-pool schalen: configuratie en begeleiding](https://channel9.msdn.com/Events/Ignite/2016/BRK3291).
 
 ## <a name="ways-to-reduce-memory-requirements"></a>Manieren om geheugen vereisten te reduceren
 
@@ -122,7 +122,7 @@ Aanvullende geheugen vereisten voor teken reeks compressie:
 
 ### <a name="avoid-over-partitioning"></a>Vermijd overschrijdende partitionering
 
-Column Store-indexen maken een of meer Rijg roepen per partitie. Voor SQL-groep in azure Synapse Analytics neemt het aantal partities toe, omdat de gegevens worden gedistribueerd en elke distributie wordt gepartitioneerd.
+Column Store-indexen maken een of meer Rijg roepen per partitie. Voor een toegewezen SQL-groep in azure Synapse Analytics neemt het aantal partities toe, omdat de gegevens worden gedistribueerd en elke distributie wordt gepartitioneerd.
 
 Als de tabel te veel partities heeft, zijn er mogelijk niet voldoende rijen om de Rijg roepen in te vullen. Het ontbreken van rijen maakt geen geheugen druk tijdens compressie. Maar het resulteert in Rijg roepen die de beste prestaties van Column Store-query's niet behalen.
 
@@ -165,4 +165,4 @@ Als u de geheugen toekenning voor een laad query wilt verg Roten, kunt u het aan
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie het [overzicht van prestaties](cheat-sheet.md)voor meer manieren om de prestaties voor de SQL-groep te verbeteren.
+Zie het [overzicht van prestaties](cheat-sheet.md)voor meer manieren om de prestaties van een toegewezen SQL-groep te verbeteren.

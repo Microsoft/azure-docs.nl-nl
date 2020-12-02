@@ -11,19 +11,19 @@ ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: aahi
 ms.custom: devx-track-js
-ms.openlocfilehash: 8d5352a79d2920701c96289f6162c1466f0f9f75
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 6a2c69735c36c06cdf72efc812aa1ac4020ff00a
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94367570"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96342223"
 ---
 # <a name="tutorial-get-search-suggestions-on-a-web-page"></a>Zelfstudie: Zoeksuggesties weergeven op een webpagina
 
 > [!WARNING]
-> Bing Search-API's worden van Cognitive Services naar Bing Search Services verplaatst. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht volgens het proces dat [hier](https://aka.ms/cogsvcs/bingmove) is beschreven.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services verplaatst. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht volgens het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
 > Bing Search-API's ingericht met behulp van Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
-> Zie [Bing Search Services](https://aka.ms/cogsvcs/bingmigration) voor migratie-instructies.
+> Zie [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
 In deze zelfstudie bouwen we een webpagina waarmee gebruikers aanvragen kunnen versturen naar de Automatische suggestie-API voor Bing.
 
@@ -124,7 +124,7 @@ De helperfunctie getSubscriptionKeyLocalStorage probeert eerst om de sleutel voo
     }
 ```
 
-De helperfunctie getSubscriptionKey accepteert één parameter: **invalidate**. Als **invalidate** is ingesteld op **true** , verwijdert getSubscriptionKey de cookie die de sleutel voor de Automatische suggestie-API voor Bing bevat. Als **invalidate** is ingesteld op **false** , retourneert getSubscriptionKey de waarde van de sleutel voor de Automatische suggestie-API voor Bing.
+De helperfunctie getSubscriptionKey accepteert één parameter: **invalidate**. Als **invalidate** is ingesteld op **true**, verwijdert getSubscriptionKey de cookie die de sleutel voor de Automatische suggestie-API voor Bing bevat. Als **invalidate** is ingesteld op **false**, retourneert getSubscriptionKey de waarde van de sleutel voor de Automatische suggestie-API voor Bing.
 
 ```html
     function getSubscriptionKey(invalidate) {
@@ -272,7 +272,7 @@ Maak een HTML-formulier met een tekstveld. Verwerk de gebeurtenis `oninput` en r
 </form>
 ```
 
-Voeg de HTML-tag **div** toe, die we gebruiken om de resultaten weer te geven. In de JavaScript die we eerder hebben gedefinieerd, wordt er verwezen naar deze **div** -tag.
+Voeg de HTML-tag **div** toe, die we gebruiken om de resultaten weer te geven. In de JavaScript die we eerder hebben gedefinieerd, wordt er verwezen naar deze **div**-tag.
 
 ```html
 <h2>Results</h2>

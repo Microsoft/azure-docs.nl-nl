@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 91755dd1b5eea9f72978e09a605fc47d41ff3dee
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: dfe8863f38da0aeb701b063f051a199e27745eeb
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371712"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453359"
 ---
 # <a name="transform-data-in-azure-data-factory-version-1"></a>Gegevens transformeren in Azure Data Factory versie 1
 > [!div class="op_single_selector"]
@@ -65,7 +65,7 @@ In de loop van de tijd moeten de voorspellende modellen in de Studio (klassieke)
 Zie [Azure machine learning Studio (klassieke) activiteiten gebruiken](data-factory-azure-ml-batch-execution-activity.md) voor meer informatie over deze studio-activiteiten (klassiek). 
 
 ## <a name="stored-procedure-activity"></a>Opgeslagen procedure activiteit
-U kunt de SQL Server opgeslagen procedure-activiteit in een Data Factory-pijp lijn gebruiken om een opgeslagen procedure in een van de volgende gegevens archieven aan te roepen: Azure SQL Database, Azure Synapse Analytics (voorheen SQL Data Warehouse), SQL Server data base in uw onderneming of een Azure-VM. Zie het artikel [opgeslagen procedure-activiteit](data-factory-stored-proc-activity.md) voor meer informatie.  
+U kunt de SQL Server opgeslagen procedure-activiteit in een Data Factory-pijp lijn gebruiken voor het aanroepen van een opgeslagen procedure in een van de volgende gegevens archieven: Azure SQL Database, Azure Synapse Analytics, SQL Server data base in uw onderneming of een Azure-VM. Zie het artikel [opgeslagen procedure-activiteit](data-factory-stored-proc-activity.md) voor meer informatie.  
 
 ## <a name="data-lake-analytics-u-sql-activity"></a>Data Lake Analytics U-SQL-activiteit
 Met Data Lake Analytics U-SQL-activiteit wordt een U-SQL-script op een Azure Data Lake Analytics cluster uitgevoerd. Zie [het artikel Data Analytics U-SQL-activiteit](data-factory-usql-activity.md) voor meer informatie. 
@@ -79,7 +79,7 @@ U kunt een aangepaste activiteit maken om R-scripts uit te voeren op uw HDInsigh
 U maakt een gekoppelde service voor de compute-omgeving en gebruikt vervolgens de gekoppelde service wanneer u een trans formatie-activiteit definieert. Er zijn twee soorten reken omgevingen die door Data Factory worden ondersteund. 
 
 1. **Op aanvraag**: in dit geval wordt de computer omgeving volledig beheerd door Data Factory. Het wordt automatisch gemaakt door de Data Factory-service voordat een taak wordt verzonden om gegevens te verwerken en te worden verwijderd wanneer de taak is voltooid. U kunt gedetailleerde instellingen van de compute-omgeving op aanvraag voor taak uitvoering, Cluster beheer en acties voor Boots traping configureren en beheren. 
-2. **Neem uw eigen**werk: in dit geval kunt u uw eigen computer omgeving (bijvoorbeeld HDInsight-cluster) registreren als een gekoppelde service in Data Factory. De computer omgeving wordt beheerd door u en de Data Factory-service gebruikt deze om de activiteiten uit te voeren. 
+2. **Neem uw eigen** werk: in dit geval kunt u uw eigen computer omgeving (bijvoorbeeld HDInsight-cluster) registreren als een gekoppelde service in Data Factory. De computer omgeving wordt beheerd door u en de Data Factory-service gebruikt deze om de activiteiten uit te voeren. 
 
 Zie het artikel [Compute linked Services](data-factory-compute-linked-services.md) voor meer informatie over Compute-services die door Data Factory worden ondersteund. 
 
@@ -92,7 +92,7 @@ Azure Data Factory ondersteunt de volgende activiteiten voor gegevens transforma
 | [Pig](data-factory-pig-activity.md) |HDInsight [Hadoop] |
 | [MapReduce](data-factory-map-reduce.md) |HDInsight [Hadoop] |
 | [Hadoop-streaming](data-factory-hadoop-streaming-activity.md) |HDInsight [Hadoop] |
-| [Azure Machine Learning Studio (klassieke) activiteiten: batch uitvoering en resource bijwerken](data-factory-azure-ml-batch-execution-activity.md) |Azure VM |
+| [Azure Machine Learning Studio (klassiek) activiteiten: Batchuitvoering en resource bijwerken](data-factory-azure-ml-batch-execution-activity.md) |Azure VM |
 | [Opgeslagen procedure](data-factory-stored-proc-activity.md) |Azure SQL, Azure Synapse Analytics of SQL Server |
 | [Data Lake Analytics U-SQL](data-factory-usql-activity.md) |Azure Data Lake Analytics |
 | [DotNet](data-factory-use-custom-activities.md) |HDInsight [Hadoop] of Azure Batch |

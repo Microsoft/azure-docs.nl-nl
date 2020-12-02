@@ -1,15 +1,15 @@
 ---
-author: ramonarguelles
+author: msftradford
 ms.service: azure-spatial-anchors
 ms.topic: include
-ms.date: 1/29/2019
-ms.author: rgarcia
-ms.openlocfilehash: e357e832affb50756eb42bc5ec593f1ca4501754
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.date: 11/20/2020
+ms.author: parkerra
+ms.openlocfilehash: 6e7b14db50b5ea068935effdf9e1d760ec6da9f1
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92548126"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185287"
 ---
 Open **Build Settings** door **File** > **Build Settings** te selecteren.
 

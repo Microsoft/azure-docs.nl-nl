@@ -10,12 +10,12 @@ ms.date: 09/10/2020
 ms.author: ruxu
 ms.reviewer: ''
 zone_pivot_groups: programming-languages-spark-all-minus-sql
-ms.openlocfilehash: ff294c0227bb6a830a5aef2379248714a7f2f64a
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: fee7e244e26a59a773a5d5c9c74e23acd4113ee6
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/01/2020
-ms.locfileid: "96435192"
+ms.locfileid: "96446695"
 ---
 # <a name="introduction-to-microsoft-spark-utilities"></a>Inleiding tot micro soft Spark-Hulpprogram Ma's
 
@@ -879,6 +879,6 @@ Env.GetClusterId()
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Voor beelden van Synapse-voorbeeld notitieblokken bekijken](https://github.com/Azure-Samples/Synapse/tree/master/Notebooks)
-- [Quickstart: Een Apache Spark-pool (preview) maken in Azure Synapse Analytics met behulp van webhulpprogramma's](../quickstart-apache-spark-notebook.md)
+- [Quickstart: Een Apache Spark-pool maken in Azure Synapse Analytics met behulp van webhulpprogramma's](../quickstart-apache-spark-notebook.md)
 - [Wat is Apache Spark in Azure Synapse Analytics?](apache-spark-overview.md)
 - [Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics)

@@ -11,14 +11,14 @@ ms.date: 03/18/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 05551f39203f2c070dd2ede0740135d6963aedcf
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: fea314d595fb39a1e35dec8ab24533ad4b893f98
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93323573"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96448067"
 ---
-# <a name="indexing-tables-using-dedicated-sql-pool-in-azure-synapse-analytics"></a>Tabellen indexeren met een toegewezen SQL-groep in azure Synapse Analytics
+# <a name="indexing-dedicated-sql-pool-tables-in-azure-synapse-analytics"></a>Unieke SQL-pool tabellen indexeren in azure Synapse Analytics
 
 Aanbevelingen en voor beelden voor het indexeren van tabellen in een toegewezen SQL-groep.
 

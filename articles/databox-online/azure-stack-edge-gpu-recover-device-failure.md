@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 10/06/2020
 ms.author: alkohli
-ms.openlocfilehash: 91efdac9d17e679226f10012bbff9b5b6676ff0e
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: bf4d0a845b7f26c82ba3940d6613a33bcacf9187
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92205575"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96448333"
 ---
 # <a name="recover-from-a-failed-azure-stack-edge-pro-gpu-device"></a>Herstellen van een mislukt Azure Stack Edge Pro GPU-apparaat 
 
@@ -81,7 +81,7 @@ Als u een potentiële apparaatfout wilt voorbereiden, hebt u mogelijk een van de
 
 | Back-upoplossingen        | Ondersteund besturings systeem   | Naslaginformatie                                                                |
 |-------------------------|----------------|--------------------------------------------------------------------------|
-| Microsoft Azure Recovery Services-agent (MARS) voor Azure Backup | Windows        | [Informatie over de MARS-agent](/azure/backup/backup-azure-about-mars)    |
+| Microsoft Azure Recovery Services-agent (MARS) voor Azure Backup | Windows        | [Informatie over de MARS-agent](../backup/backup-azure-about-mars.md)    |
 | Cohesity                | Windows, Linux | [Korte Microsoft Azure-integratie, oplossing voor back-up en herstel](https://www.cohesity.com/solution/cloud/azure) <br>Neem contact op met Cohesity voor meer informatie.                          |
 | CommVault               | Windows, Linux | https://www.commvault.com/azure <br> Neem contact op met CommVault voor meer informatie.
 | Veritas                 | Windows, Linux | http://veritas.com/azure <br> Neem contact op met Veritas voor meer informatie.                    |

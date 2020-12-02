@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 09/04/2020
 ms.author: alkohli
-ms.openlocfilehash: 745d0df07b6d0d01acf0d564df8c242e16f3f56d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2b49659f67e779b6eb8079492b47fef9419ca6b1
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90890985"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447507"
 ---
 # <a name="create-custom-vm-images-for-your-azure-stack-edge-pro-device"></a>Aangepaste VM-installatiekopiën maken voor uw Azure Stack Edge Pro-apparaat
 
@@ -42,7 +42,7 @@ Voer de volgende stappen uit om een installatiekopie voor een Windows-VM te make
     
         `c:\windows\system32\sysprep\sysprep.exe /oobe /generalize /shutdown /mode:vm`
    
-       U kunt ook verwijzen naar [Overzicht van Sysprep (systeemvoorbereiding)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview).
+       U kunt ook verwijzen naar [Overzicht van Sysprep (systeemvoorbereiding)](/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview).
 
 Gebruik deze VHD om nu een virtuele machine te maken en te implementeren op uw Azure Stack Edge Pro-apparaat.
 
@@ -76,7 +76,7 @@ Gebruik deze VHD om nu een virtuele machine te maken en te implementeren op uw A
 |[Ubuntu Server](https://azuremarketplace.microsoft.com/marketplace/apps/canonical.ubuntuserver) |Ubuntu Server is de meest populaire Linux-distributie voor cloudomgevingen ter wereld.|Canonical|
 |[Debian 8 "Jessie"](https://azuremarketplace.microsoft.com/marketplace/apps/credativ.debian) |Debian GNU/Linux is een van de populairste Linux-distributies.     |credativ|
 
-Ga voor een volledige lijst met installatiekopiën op de Azure Marketplace die kunnen werken (nog niet getest) naar [Azure Marketplace-items die beschikbaar zijn voor Azure Stack Hub](https://docs.microsoft.com/azure-stack/operator/azure-stack-marketplace-azure-items?view=azs-1910).
+Ga voor een volledige lijst met installatiekopiën op de Azure Marketplace die kunnen werken (nog niet getest) naar [Azure Marketplace-items die beschikbaar zijn voor Azure Stack Hub](/azure-stack/operator/azure-stack-marketplace-azure-items?view=azs-1910).
 
 
 ## <a name="next-steps"></a>Volgende stappen

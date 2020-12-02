@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: troubleshooting
 ms.date: 08/11/2020
 ms.author: alkohli
-ms.openlocfilehash: 3087c209b844d691173edbbd8a993c1d0aae319b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: be7d477d08b025fd450bfa859e8eb677ba680143
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90903636"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96446374"
 ---
 # <a name="troubleshoot-your-azure-stack-edge-pro-ordering-issues"></a>Problemen met uw Azure Stack Edge Pro-volg orde oplossen
 
@@ -33,7 +33,7 @@ In deze zelfstudie leert u het volgende:
 
 ![Niet-ondersteund abonnement of regio](media/azure-stack-edge-troubleshoot-ordering/azure-stack-edge-troubleshoot-ordering-01.png)
 
-**Voorgestelde oplossing:**  Zorg ervoor dat u een ondersteund abonnement hebt gebruikt, zoals [micro soft Enterprise Agreement (EA)](https://azure.microsoft.com/overview/sales-number/), [Cloud Solution Provider (CSP)](https://docs.microsoft.com/partner-center/azure-plan-lp)of [Microsoft Azure sponsorship](https://azure.microsoft.com/offers/ms-azr-0036p/). Betalen per gebruik-abonnementen worden niet ondersteund. Zie [Azure stack Edge-resource vereisten](azure-stack-edge-deploy-prep.md#prerequisites)voor meer informatie.
+**Voorgestelde oplossing:**  Zorg ervoor dat u een ondersteund abonnement hebt gebruikt, zoals [micro soft Enterprise Agreement (EA)](https://azure.microsoft.com/overview/sales-number/), [Cloud Solution Provider (CSP)](/partner-center/azure-plan-lp)of [Microsoft Azure sponsorship](https://azure.microsoft.com/offers/ms-azr-0036p/). Betalen per gebruik-abonnementen worden niet ondersteund. Zie [Azure stack Edge-resource vereisten](azure-stack-edge-deploy-prep.md#prerequisites)voor meer informatie.
 
 Er is de mogelijkheid dat micro soft per geval een upgrade voor een abonnements type kan toestaan. Neem contact op met [micro soft ondersteuning](https://azure.microsoft.com/support/options/) om uw behoeften te begrijpen en deze limieten op de juiste manier aan te passen.
 

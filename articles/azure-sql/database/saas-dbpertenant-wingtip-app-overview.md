@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/24/2018
-ms.openlocfilehash: 3abfffcfb47a9530b6a04762624eee9d6ee9bc81
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 09651ed5c7472c12d82108fdbd450cca6e84349f
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92780458"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447084"
 ---
 # <a name="introduction-to-a-multitenant-saas-app-that-uses-the-database-per-tenant-pattern-with-azure-sql-database"></a>Inleiding tot een multi tenant SaaS-app die gebruikmaakt van het data base-per-Tenant patroon met Azure SQL Database
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -37,7 +37,7 @@ Als u de zelf studies doorloopt en met de app werkt, kunt u zich richten op de S
 
 ## <a name="sql-database-wingtip-saas-tutorials"></a>SQL Database Wingtip SaaS-zelf studies
 
-Nadat u de app hebt geïmplementeerd, moet u de volgende zelf studies voor het maken van de eerste implementatie verkennen. Deze zelf studies verkennen algemene SaaS-patronen die gebruikmaken van ingebouwde functies van SQL Database, Azure Synapse Analytics (voorheen SQL Data Warehouse) en andere Azure-Services. Zelf studies bevatten Power shell-scripts met gedetailleerde uitleg. De uitleg vereenvoudigt de inzichten en implementatie van dezelfde SaaS-beheer patronen in uw toepassingen.
+Nadat u de app hebt geïmplementeerd, moet u de volgende zelf studies voor het maken van de eerste implementatie verkennen. Deze zelf studies verkennen algemene SaaS-patronen die gebruikmaken van ingebouwde functies van SQL Database, Azure Synapse Analytics en andere Azure-Services. Zelf studies bevatten Power shell-scripts met gedetailleerde uitleg. De uitleg vereenvoudigt de inzichten en implementatie van dezelfde SaaS-beheer patronen in uw toepassingen.
 
 
 | Zelfstudie | Beschrijving |

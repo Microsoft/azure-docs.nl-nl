@@ -8,16 +8,16 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: dobett
-ms.openlocfilehash: f5d816b3d44a6fadd8dd462a14e62de4cdac2a00
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 6585718a549c0e0a6eac1ab50788798e1021fef9
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995927"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96446809"
 ---
 # <a name="use-the-azureiotsolutionscom-site-to-deploy-your-solution-accelerator"></a>De azureiotsolutions.com-site gebruiken voor het implementeren van uw oplossings versneller
 
-U kunt Azure IoT-oplossings Accelerators implementeren voor uw Azure-abonnement vanuit [AzureIoTSolutions.com](https://www.azureiotsolutions.com/Accelerators). AzureIoTSolutions.com fungeert als host voor de micro soft open source-en Partner Solution Accelerators. Deze oplossings versnellers worden uitgelijnd met de [Azure IOT-referentie architectuur](https://aka.ms/iotrefarchitecture). U kunt de site gebruiken om snel een oplossings versneller te implementeren als een demo-of productie omgeving.
+U kunt Azure IoT-oplossings Accelerators implementeren voor uw Azure-abonnement vanuit [AzureIoTSolutions.com](https://www.azureiotsolutions.com/Accelerators). AzureIoTSolutions.com fungeert als host voor de micro soft open source-en Partner Solution Accelerators. Deze oplossings versnellers worden uitgelijnd met de [Azure IOT-referentie architectuur](/azure/architecture/reference-architectures/iot). U kunt de site gebruiken om snel een oplossings versneller te implementeren als een demo-of productie omgeving.
 
 ![AzureIoTSolutions.com](media/iot-accelerators-permissions/iotsolutionscom.png)
 

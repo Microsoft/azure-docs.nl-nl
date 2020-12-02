@@ -1,16 +1,16 @@
 ---
 title: Ondersteunde regio's voor gekoppelde Log Analytics-werkruimte
 description: In dit artikel worden de ondersteunde regio toewijzingen beschreven tussen een Automation-account en een Log Analytics-werk ruimte, aangezien deze betrekking hebben op bepaalde functies van Azure Automation.
-ms.date: 10/19/2020
+ms.date: 12/01/2020
 services: automation
 ms.topic: conceptual
 ms.custom: references_regions
-ms.openlocfilehash: 23e5293301a2fc311565d0c1c8ec5fd92bebe9b2
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 25ddf562f92ca96a505432a58f137657a2bbc4bd
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183563"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96446973"
 ---
 # <a name="supported-regions-for-linked-log-analytics-workspace"></a>Ondersteunde regio's voor gekoppelde Log Analytics-werkruimte
 
@@ -31,6 +31,7 @@ De volgende tabel bevat de ondersteunde toewijzingen:
 |---|---|
 |**VS**||
 |Oost,<sup>1</sup>|EastUS2|
+|EastUS2<sup>2</sup>|EastUS|
 |WestUS2|WestUS2|
 |SouthCentralUS|SouthCentralUS|
 |WestCentralUS|WestCentralUS|
@@ -40,7 +41,7 @@ De volgende tabel bevat de ondersteunde toewijzingen:
 |AustraliaSoutheast|AustraliaSoutheast|
 |SoutheastAsia|SoutheastAsia|
 |CentralIndia|CentralIndia|
-|ChinaEast2<sup>2</sup>|ChinaEast2|
+|ChinaEast2<sup>3</sup>|ChinaEast2|
 |JapanEast|JapanEast|
 |**Europa**||
 |UKSouth|UKSouth|
@@ -48,11 +49,13 @@ De volgende tabel bevat de ondersteunde toewijzingen:
 |SwitzerlandNorth|SwitzerlandNorth|
 |**US Gov**||
 |USGovVirginia|USGovVirginia|
-|USGovArizona<sup>2</sup>|USGovArizona|
+|USGovArizona<sup>3</sup>|USGovArizona|
 
 <sup>1</sup> -oostus toewijzing voor log Analytics-werk ruimten aan Automation-accounts is niet exact een regionale toewijzing, maar is de juiste toewijzing.
 
-<sup>2</sup> in deze regio wordt alleen updatebeheer ondersteund en andere functies, zoals wijzigingen bijhouden en inventaris, zijn op dit moment niet beschikbaar.
+<sup>2</sup> EastUS2 toewijzing voor log Analytics-werk ruimten aan Automation-accounts is niet exact een regionale toewijzing, maar is de juiste toewijzing.
+
+<sup>3</sup> in deze regio wordt alleen updatebeheer ondersteund en andere functies, zoals wijzigingen bijhouden en inventaris, zijn op dit moment niet beschikbaar.
 
 ## <a name="unlink-a-workspace"></a>Een werk ruimte ontkoppelen
 

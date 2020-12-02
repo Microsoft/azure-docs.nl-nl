@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to, contperfq1, automl
 ms.date: 08/20/2020
-ms.openlocfilehash: 57b54fbe20df4eb74ee17c7b5ac83d773114463b
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 8c6a27f0cfaafe7e6c1181651e672d0e828af855
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/01/2020
-ms.locfileid: "96437368"
+ms.locfileid: "96444490"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Automatisch een time-series-prognose model trainen
 
@@ -128,7 +128,7 @@ Automatische machine learning probeert automatisch verschillende modellen en alg
 >[!Tip]
 > Traditionele regressie modellen worden ook getest als onderdeel van het aanbevelings systeem voor het voors pellen van experimenten. Zie de [tabel ondersteunde](how-to-configure-auto-train.md#supported-models) modellen voor de volledige lijst met modellen. 
 
-Modellen| Description | Voordelen
+Modellen| Beschrijving | Voordelen
 ----|----|---
 Prophet (preview-versie)|Prophet werkt het beste met een tijd reeks met krachtige seizoensgebonden effecten en verschillende seizoenen historische gegevens. Als u gebruik wilt maken van dit model, installeert u het lokaal met `pip install fbprophet` . | Nauw keurige & snelle, robuuste uitbijters, ontbrekende gegevens en dramatische wijzigingen in uw tijd reeks.
 Automatische ARIMA (preview-versie)|Automatisch herlopend, geïntegreerd zwevend gemiddelde (ARIMA) wordt het beste uitgevoerd wanneer de gegevens stationair zijn. Dit betekent dat de statistische eigenschappen, zoals het gemiddelde en de variantie, constant zijn in de hele set. Als u bijvoorbeeld een munten spiegelt, is de kans dat u koppen krijgt, 50%, ongeacht of u vandaag, morgen of volgend jaar spiegelt.| Ideaal voor univariate-Series, aangezien de vorige waarden worden gebruikt om de toekomstige waarden te voors pellen.
@@ -154,7 +154,7 @@ De volgende tabel bevat een overzicht van deze aanvullende para meters. Zie de [
 
 
 De volgende code, 
-* Maakt gebruik van de- [`ForecastingParameters`](https://docs.microsoft.com/python/api/azureml-automl-core/azureml.automl.core.forecasting_parameters.forecastingparameters?preserve-view=true&view=azure-ml-py) klasse om de para meters voor de voor spellingen van uw experiment training te definiëren
+* Maakt gebruik van de- [`ForecastingParameters`](/python/api/azureml-automl-core/azureml.automl.core.forecasting_parameters.forecastingparameters?preserve-view=true&view=azure-ml-py) klasse om de para meters voor de voor spellingen van uw experiment training te definiëren
 * Hiermee stelt `time_column_name` u de `day_datetime` waarde in op het veld in de gegevensset. 
 * Hiermee definieert `time_series_id_column_names` u de para meter voor `"store"` . Dit zorgt ervoor dat er **twee afzonderlijke time-series groepen** worden gemaakt voor de gegevens. een voor Store A en B.
 * Hiermee stelt `forecast_horizon` u de 50 in op om te voors pellen voor de hele testset. 

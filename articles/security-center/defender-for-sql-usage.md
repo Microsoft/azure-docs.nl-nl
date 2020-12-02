@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: d37c362da484a2a7e400da8f87dd0a37f0f80d3a
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: a80747a88087e1ad3a70f198a260e41a6848e34f
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/01/2020
-ms.locfileid: "96436722"
+ms.locfileid: "96445665"
 ---
 # <a name="azure-defender-for-sql-servers-on-machines"></a>Azure Defender voor SQL-servers op computers 
 
@@ -108,7 +108,7 @@ U kunt de resultaten van de evaluatie van de beveiligings problemen rechtstreeks
     In elke weer gave worden de beveiligings controles gesorteerd op **Ernst**. Klik op een specifieke beveiligings controle om het deel venster Details te bekijken met een **Beschrijving**, het probleem te **verhelpen** en andere gerelateerde informatie, zoals **impact** of **Bench Mark**.
 
 ## <a name="azure-defender-for-sql-alerts"></a>Azure Defender voor SQL-waarschuwingen
-Waarschuwingen worden gegenereerd door ongebruikelijke en mogelijk schadelijke pogingen om SQL-machines te openen of misbruik te maken. Deze gebeurtenissen kunnen waarschuwingen activeren die worden weer gegeven in de [sectie waarschuwingen voor SQL database en Azure Synapse Analytics (voorheen SQL Data Warehouse) van de pagina met waarschuwingen](alerts-reference.md#alerts-sql-db-and-warehouse).
+Waarschuwingen worden gegenereerd door ongebruikelijke en mogelijk schadelijke pogingen om SQL-machines te openen of misbruik te maken. Deze gebeurtenissen kunnen waarschuwingen activeren die worden weer gegeven in de [sectie waarschuwingen voor SQL database en Azure Synapse Analytics van de pagina met waarschuwingen](alerts-reference.md#alerts-sql-db-and-warehouse).
 
 ## <a name="explore-and-investigate-security-alerts"></a>Beveiligings waarschuwingen verkennen en onderzoeken
 
@@ -128,7 +128,7 @@ Azure Defender voor SQL-waarschuwingen zijn beschikbaar op de pagina waarschuwin
 
 Zie het volgende artikel voor verwante materialen:
 
-- [Beveiligings waarschuwingen voor SQL Database en Azure Synapse Analytics (voorheen SQL Data Warehouse)](alerts-reference.md#alerts-sql-db-and-warehouse)
+- [Beveiligings waarschuwingen voor SQL Database en Azure Synapse Analytics](alerts-reference.md#alerts-sql-db-and-warehouse)
 - [E-mailmeldingen voor beveiligingswaarschuwingen instellen](security-center-provide-security-contact-details.md)
 - [Meer informatie over Azure Sentinel](../sentinel/index.yml)
 - [Gegevens beveiligings pakket van Azure Security Center](../azure-sql/database/azure-defender-for-sql.md)

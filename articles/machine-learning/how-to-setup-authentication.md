@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 11/05/2020
 ms.topic: conceptual
 ms.custom: how-to, has-adal-ref, devx-track-js, devx-track-azurecli, contperfq2
-ms.openlocfilehash: 7fa6beacf4456145e312494a72dad321dfef3754
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: ca8a36584c09d850ed1daab8cba301b244f76526
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843924"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447019"
 ---
 # <a name="set-up-authentication-for-azure-machine-learning-resources-and-workflows"></a>Verificatie instellen voor Azure Machine Learning-resources en -werkstromen
 
@@ -67,7 +67,7 @@ De eenvoudigste manier om een SP te maken en toegang te verlenen tot uw werk rui
 
     Als de CLI uw standaardbrowser kan openen, gebeurt dat ook en wordt er een aanmeldingspagina gedownload. Anders moet u een browser openen en de aanwijzingen op de opdrachtregel volgen. Dit omvat het bladeren naar [https://aka.ms/devicelogin](https://aka.ms/devicelogin) en het invoeren van een autorisatiecode.
 
-    Als u meerdere Azure-abonnementen hebt, kunt u de `az account set -s <subscription name or ID>` opdracht gebruiken om het abonnement in te stellen. Zie [meerdere Azure-abonnementen gebruiken](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest)voor meer informatie.
+    Als u meerdere Azure-abonnementen hebt, kunt u de `az account set -s <subscription name or ID>` opdracht gebruiken om het abonnement in te stellen. Zie [meerdere Azure-abonnementen gebruiken](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest)voor meer informatie.
 
     Zie [Aanmelden met Azure cli](/cli/azure/authenticate-azure-cli?preserve-view=true&view=azure-cli-latest)voor andere verificatie methoden.
 
@@ -184,7 +184,7 @@ De meeste voor beelden in de documentatie en voor beelden gebruiken interactieve
 > interactive_auth = InteractiveLoginAuthentication(tenant_id="your-tenant-id")
 > ```
 
-Wanneer u de Azure CLI gebruikt, `az login` wordt de opdracht gebruikt om de CLI-sessie te verifiëren. Zie [aan de slag met Azure cli](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli)voor meer informatie.
+Wanneer u de Azure CLI gebruikt, `az login` wordt de opdracht gebruikt om de CLI-sessie te verifiëren. Zie [aan de slag met Azure cli](/cli/azure/get-started-with-azure-cli)voor meer informatie.
 
 > [!TIP]
 > Als u de SDK gebruikt vanuit een omgeving waarin u zich eerder interactief hebt geverifieerd met behulp van Azure CLI, kunt u de `AzureCliAuthentication` klasse gebruiken om te verifiëren bij de werk ruimte met de referenties die in de cache zijn opgeslagen door de cli:

@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 11/20/2018
 ms.topic: conceptual
-ms.openlocfilehash: 1bd08596a30db7322a72b4269fddfe0b9df19119
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 27a65d8a499f6eba130dc9537de3cb2b3dc3abe8
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "61447167"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96446773"
 ---
 # <a name="remote-monitoring-architectural-choices"></a>Architectuurkeuzes voor Externe bewaking
 
@@ -23,7 +23,7 @@ De oplossings versneller voor externe controle van Azure IoT is een open-source,
 - Apparaatbeheer
 - Streamverwerking
 
-De oplossing voor externe controle volgt de aanbevolen [Azure IOT-referentie architectuur](https://aka.ms/iotrefarchitecture).
+De oplossing voor externe controle volgt de aanbevolen [Azure IOT-referentie architectuur](/azure/architecture/reference-architectures/iot).
 
 In dit artikel worden de belangrijkste architectuur en technische keuzes beschreven die in elk van de subsystemen voor externe bewaking zijn gemaakt. De technische keuzen die micro soft in de oplossing voor controle op afstand heeft gemaakt, zijn echter niet de enige manier om een IoT-oplossing voor externe bewaking te implementeren. U dient rekening te houden met de technische implementatie als basis lijn voor het bouwen van een succes volle toepassing en moet u deze wijzigen in:
 
@@ -86,4 +86,4 @@ Alternatieven voor docker zijn onder andere hosting van micro Services in PaaS s
 
 * Implementeer [hier](https://www.azureiotsolutions.com/)uw oplossing voor externe controle.
 * Verken GitHub-code in [C#](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/) en [Java](https://github.com/Azure/azure-iot-pcs-remote-monitoring-java/).  
-* Meer informatie over de IoT-referentie architectuur [vindt u hier](https://aka.ms/iotrefarchitecture).
+* Meer informatie over de IoT-referentie architectuur [vindt u hier](/azure/architecture/reference-architectures/iot).

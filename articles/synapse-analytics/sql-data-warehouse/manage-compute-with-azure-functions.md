@@ -1,6 +1,6 @@
 ---
 title: 'Zelf studie: Compute beheren met Azure Functions'
-description: Azure Functions gebruiken om de reken kracht van uw SQL-groep in azure Synapse Analytics te beheren.
+description: Het gebruik van Azure Functions voor het beheren van de reken kracht van uw toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics.
 services: synapse-analytics
 author: julieMSFT
 manager: craigg
@@ -11,26 +11,26 @@ ms.date: 04/27/2018
 ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: bc615322c11a456699d2364cf44cad40e086e851
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f0731f0deaf46ec419cfe43037804e10f2b73fd4
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96022476"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96448384"
 ---
-# <a name="use-azure-functions-to-manage-compute-resources-in-azure-synapse-analytics-sql-pool"></a>Azure Functions gebruiken om reken resources te beheren in azure Synapse Analytics SQL-groep
+# <a name="use-azure-functions-to-manage-compute-resources-for-your-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Azure Functions gebruiken om reken resources te beheren voor uw toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics
 
-In deze zelf studie wordt gebruikgemaakt van Azure Functions om reken resources te beheren voor een SQL-groep in azure Synapse Analytics.
+In deze zelf studie wordt gebruikgemaakt van Azure Functions om reken resources te beheren voor een toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics.
 
-Als u Azure functie-app wilt gebruiken met SQL-pool, moet u een [Service-Principal-account](../../active-directory/develop/howto-create-service-principal-portal.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) maken met toegang tot Inzender onder hetzelfde abonnement als uw exemplaar van SQL-groep.
+Als u een Azure-functie-app wilt gebruiken met een toegewezen SQL-groep (voorheen SQL DW), moet u een [Service-Principal-account](../../active-directory/develop/howto-create-service-principal-portal.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)maken. Voor het Service-Principal-account is Inzender toegang vereist onder hetzelfde abonnement als uw toegewezen exemplaar van de SQL-groep (voorheen SQL DW).
 
 ## <a name="deploy-timer-based-scaling-with-an-azure-resource-manager-template"></a>Schalen op basis van een timer met een Azure Resource Manager sjabloon implementeren
 
 Als u de sjabloon wilt implementeren, hebt u de volgende informatie nodig:
 
-- De naam van de resource groep waaraan uw exemplaar van SQL-groep is in
-- De naam van de server waar de SQL-pool instantie zich bevindt
-- De naam van het exemplaar van de SQL-groep
+- De naam van de resource groep waaraan uw toegewezen SQL-groep (voorheen SQL DW) is gekoppeld
+- De naam van de server waaraan uw toegewezen SQL-groep (voorheen SQL DW)-exemplaar is
+- Naam van uw toegewezen SQL-groep (voorheen SQL DW)-exemplaar
 - Tenant-id (directory-id) van de Azure Active Directory
 - Abonnements-id
 - Toepassings-id van de service-principal
@@ -48,13 +48,13 @@ Nadat u de sjabloon hebt geïmplementeerd, moet u drie nieuwe resources vinden: 
 
    ![Functies die met sjabloon zijn geïmplementeerd](./media/manage-compute-with-azure-functions/five-functions.png)
 
-2. Selecteer *DWScaleDownTrigger* of *DWScaleUpTrigger*, afhankelijk van of u de tijd voor omhoog of omlaag schalen wilt wijzigen. Selecteer integreren in de vervolg keuzelijst.
+2. Selecteer *DWScaleDownTrigger* of *DWScaleUpTrigger* om omhoog of omlaag te schalen. Selecteer integreren in de vervolg keuzelijst.
 
    ![Integreren als functie selecteren](./media/manage-compute-with-azure-functions/select-integrate.png)
 
 3. De waarde die momenteel moeten worden weergegeven is *%ScaleDownTime%* of *%ScaleUpTime%*. Deze waarden geven aan dat de planning is gebaseerd op waarden die zijn gedefinieerd in de [Toepassingsinstellingen](../../azure-functions/functions-how-to-use-azure-function-app-settings.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). U kunt deze waarde nu negeren en de planning wijzigen in uw voorkeurs tijd op basis van de volgende stappen.
 
-4. Voeg in het plannings gebied het tijdstip toe waarop de CRON-expressie u wilt weer geven hoe vaak Azure Synapse Analytics moet worden geschaald.
+4. Voeg in het gebied schema de CRON-expressie toe die u wilt laten zien hoe vaak Azure Synapse Analytics moet worden geschaald.
 
    ![Functieplanning wijzigen](./media/manage-compute-with-azure-functions/change-schedule.png)
 
@@ -70,11 +70,11 @@ Nadat u de sjabloon hebt geïmplementeerd, moet u drie nieuwe resources vinden: 
 
 1. Ga naar de functie-app-service. Als u de sjabloon met de standaardwaarden hebt geïmplementeerd, wordt *DWOperations* de naam van deze service. Als de functie-app is geopend, ziet u dat er vijf functies voor de functie-app-service zijn geïmplementeerd.
 
-2. Selecteer *DWScaleDownTrigger* of *DWScaleUpTrigger*, afhankelijk van of u de rekenwaarde voor omhoog of omlaag schalen wilt wijzigen. Na het selecteren van de functies, moet in het deelvenster het bestand *index.js* te zien zijn.
+2. Selecteer *DWScaleDownTrigger* of *DWScaleUpTrigger* om de reken waarde omhoog of omlaag te schalen. Na het selecteren van de functies, moet in het deelvenster het bestand *index.js* te zien zijn.
 
    ![Rekenniveau van functietrigger wijzigen](././media/manage-compute-with-azure-functions/index-js.png)
 
-3. Wijzig de waarde van *ServiceLevelObjective* tot het gewenste niveau en druk op Opslaan. Deze waarde is het reken niveau dat door uw data warehouse-instantie wordt geschaald op basis van de planning die is gedefinieerd in de sectie integreren.
+3. Wijzig de waarde van *ServiceLevelObjective* in het gewenste niveau en selecteer Opslaan. De *ServiceLevelObjective* is het reken niveau dat door uw data warehouse-instantie wordt geschaald op basis van de planning die is gedefinieerd in de sectie integreren.
 
 ## <a name="use-pause-or-resume-instead-of-scale"></a>Onderbreken of Hervatten gebruiken in plaats van Schalen
 
@@ -84,7 +84,7 @@ De functies die momenteel standaard zijn ingeschakeld zijn *DWScaleDownTrigger* 
 
    ![Deelvenster Functies](./media/manage-compute-with-azure-functions/functions-pane.png)
 
-2. Klik op de schuifschakelaar van de trigger(s) die u wilt inschakelen.
+2. Selecteer in de scha kelen tussen de overeenkomende triggers die u wilt inschakelen.
 
 3. Ga naar de tabbladen *Integreren* van de bijbehorende triggers om de planning te wijzigen.
 
@@ -114,17 +114,17 @@ Er zijn momenteel slechts twee schaalfuncties in de sjabloon opgenomen. Met deze
 5. Stel de bewerkings variabele als volgt in op het gewenste gedrag:
 
    ```JavaScript
-   // Resume the SQL pool instance
+   // Resume the dedicated SQL pool (formerly SQL DW) instance
    var operation = {
        "operationType": "ResumeDw"
    }
 
-   // Pause the SQL pool instance
+   // Pause the dedicated SQL pool (formerly SQL DW) instance
    var operation = {
        "operationType": "PauseDw"
    }
 
-   // Scale the SQL pool instance to DW600c
+   // Scale the dedicated SQL pool (formerly SQL DW)l instance to DW600c
    var operation = {
        "operationType": "ScaleDw",
        "ServiceLevelObjective": "DW600c"
@@ -169,4 +169,4 @@ Omhoog schalen op 8 a.m. naar DW1000c, omlaag schalen naar DW600c op 4 p.m. op d
 
 Meer informatie over [Timer trigger](../../azure-functions/functions-create-scheduled-function.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) Azure functions.
 
-De [opslag plaats voor beelden](https://github.com/Microsoft/sql-data-warehouse-samples)van SQL-pool wordt uitgecheckt.
+Bekijk de [opslag plaats](https://github.com/Microsoft/sql-data-warehouse-samples)van de voor beelden van een toegewezen SQL-groep (voorheen SQL DW).

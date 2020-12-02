@@ -1,6 +1,6 @@
 ---
-title: Workloadclassificatie
-description: Richt lijnen voor het gebruik van classificatie voor het beheren van gelijktijdigheids-, urgentie-en reken bronnen voor query's in azure Synapse Analytics.
+title: Classificatie van werk belasting voor toegewezen SQL-groep
+description: Richt lijnen voor het gebruik van classificatie voor het beheren van de query gelijktijdigheids, urgentie en reken resources voor een toegewezen SQL-groep in azure Synapse Analytics.
 services: synapse-analytics
 author: ronortloff
 manager: craigg
@@ -11,14 +11,14 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 6b66b8a9fb3b5eb7dc78c00ba084e8609877dec7
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: bf19e2d1674d0a0c2102280b28b5549505c1dfab
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93323880"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447760"
 ---
-# <a name="azure-synapse-analytics-workload-classification"></a>Classificatie van Azure Synapse Analytics-workloads
+# <a name="workload-classification-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Werk belasting classificatie voor toegewezen SQL-groep in azure Synapse Analytics
 
 In dit artikel wordt het classificatie proces voor de werk belasting uitgelegd van het toewijzen van een werkbelasting groep en urgentie aan inkomende aanvragen met exclusieve SQL-groepen in azure Synapse.
 
@@ -36,7 +36,7 @@ Niet alle instructies worden geclassificeerd omdat ze geen bronnen nodig hebben 
 
 ## <a name="classification-process"></a>Classificatie proces
 
-De classificatie voor de toegewezen SQL-groep in azure Synapse wordt vandaag bereikt door gebruikers toe te wijzen aan een rol waaraan een bijbehorende resource klasse is toegewezen met behulp van [sp_addrolemember](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). De mogelijkheid om aanvragen te kenmerken buiten een aanmelding bij een resource klasse is beperkt met deze mogelijkheid. Een rijkere methode voor classificatie is nu beschikbaar met de [classificatie syntaxis CREATE WORKLOAD](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) .  Met deze syntaxis kunnen gebruikers van een toegewezen SQL-groep prioriteit toewijzen en hoeveel systeem bronnen worden toegewezen aan een aanvraag via de `workload_group` para meter.
+De classificatie voor de toegewezen SQL-groep wordt vandaag bereikt door gebruikers toe te wijzen aan een rol waaraan een bijbehorende resource klasse is toegewezen met behulp van [sp_addrolemember](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). De mogelijkheid om aanvragen te kenmerken buiten een aanmelding bij een resource klasse is beperkt met deze mogelijkheid. Een rijkere methode voor classificatie is nu beschikbaar met de [classificatie syntaxis CREATE WORKLOAD](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) .  Met deze syntaxis kunnen gebruikers van een toegewezen SQL-groep prioriteit toewijzen en hoeveel systeem bronnen worden toegewezen aan een aanvraag via de `workload_group` para meter.
 
 > [!NOTE]
 > De classificatie wordt per aanvraag geëvalueerd. Meerdere aanvragen in één sessie kunnen op verschillende manieren worden geclassificeerd.

@@ -7,14 +7,14 @@ author: julieMSFT
 ms.author: jrasnick
 ms.service: synapse-analytics
 ms.custom: subject-policy-reference
-ms.openlocfilehash: fda3a9fc3c5a2620fe9fe3bcd63ae94875282122
-ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
+ms.openlocfilehash: 655cf05ece748ae66ffd99bb170c59af74fb1f07
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96296082"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96446751"
 ---
-# <a name="azure-policy-built-in-definitions-for-azure-synapse-analytics-workspace-preview"></a>Azure Policy ingebouwde definities voor Azure Synapse Analytics (preview-versie van de werk ruimte)
+# <a name="azure-policy-built-in-definitions-for-azure-synapse-analytics"></a>Azure Policy ingebouwde definities voor Azure Synapse Analytics 
 
 Deze pagina bevat een index van [Azure Policy](../governance/policy/overview.md) ingebouwde beleids definities voor Azure Synapse. Zie [Ingebouwde Azure Policy-definities](../governance/policy/samples/built-in-policies.md) voor aanvullende ingebouwde modules voor Azure Policy voor andere services.
 

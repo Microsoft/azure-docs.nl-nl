@@ -10,13 +10,13 @@ ms.subservice: sql-dw
 ms.date: 05/09/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: d9349c5d1c4e6255dc0854537bb7e93e3e636ce8
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.custom: seo-lt-2019, azure-synapse
+ms.openlocfilehash: e7fc89dcc0e7938ea2958d5c804abe82e20f186d
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321068"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447941"
 ---
 # <a name="table-statistics-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Tabel statistieken voor exclusieve SQL-groep in azure Synapse Analytics
 
@@ -72,7 +72,7 @@ Om te voor komen dat de prestaties meetbaar zijn, moet u ervoor zorgen dat de st
 > [!NOTE]
 > Het maken van statistieken wordt geregistreerd in [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) onder een andere gebruikers context.
 
-Wanneer er automatische statistieken worden gemaakt, worden de volgende notatie toegepast: _WA_Sys_ <kolom-id van 8 cijfers in hex>_<tabel-ID van 8 cijfers in hexadecimale>. U kunt de statistieken weer geven die al zijn gemaakt door de [DBCC SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) -opdracht uit te voeren:
+Wanneer er automatische statistieken worden gemaakt, worden de volgende notatie toegepast: _WA_Sys_<kolom-id van 8 cijfers in hex>_<tabel-ID van 8 cijfers in hexadecimale>. U kunt de statistieken weer geven die al zijn gemaakt door de [DBCC SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) -opdracht uit te voeren:
 
 ```sql
 DBCC SHOW_STATISTICS (<table_name>, <target>)
@@ -101,7 +101,7 @@ Deze vraag is niet een die kan worden beantwoord door de leeftijd van de gegeven
 
 Er is geen dynamische beheer weergave om te bepalen of de gegevens in de tabel zijn gewijzigd sinds de laatste keer dat de statistieken zijn bijgewerkt.  U kunt met behulp van de volgende twee query's bepalen of uw statistieken verouderd zijn.
 
-**Query 1:**  Bepaal het verschil tussen het aantal rijen uit de statistieken ( **stats_row_count** ) en het werkelijke aantal rijen ( **actual_row_count** ). 
+**Query 1:**  Bepaal het verschil tussen het aantal rijen uit de statistieken (**stats_row_count**) en het werkelijke aantal rijen (**actual_row_count**). 
 
 ```sql
 select 
@@ -282,13 +282,13 @@ Als u een statistieken object met meerdere kolommen wilt maken, gebruikt u de vo
 > [!NOTE]
 > Het histogram dat wordt gebruikt om het aantal rijen in het query resultaat te schatten, is alleen beschikbaar voor de eerste kolom die wordt vermeld in de definitie van het statistieken-object.
 
-In dit voor beeld is het histogram voor de *product \_ categorie*. Statistieken voor meerdere kolommen worden berekend voor *product \_ categorie* -en *product \_ sub_category* :
+In dit voor beeld is het histogram voor de *product \_ categorie*. Statistieken voor meerdere kolommen worden berekend voor *product \_ categorie* -en *product \_ sub_category*:
 
 ```sql
 CREATE STATISTICS stats_2cols ON table1 (product_category, product_sub_category) WHERE product_category > '2000101' AND product_category < '20001231' WITH SAMPLE = 50 PERCENT;
 ```
 
-Omdat er een correlatie bestaat tussen *product \_ categorie* en *product \_ \_ subcategorie* , kan een statistieken object met meerdere kolommen nuttig zijn als deze kolommen tegelijkertijd worden gebruikt.
+Omdat er een correlatie bestaat tussen *product \_ categorie* en *product \_ \_ subcategorie*, kan een statistieken object met meerdere kolommen nuttig zijn als deze kolommen tegelijkertijd worden gebruikt.
 
 ### <a name="create-statistics-on-all-columns-in-a-table"></a>Statistieken maken voor alle kolommen in een tabel
 
@@ -312,11 +312,11 @@ CREATE STATISTICS stats_col2 on dbo.table2 (col2);
 CREATE STATISTICS stats_col3 on dbo.table3 (col3);
 ```
 
-### <a name="use-a-stored-procedure-to-create-statistics-on-all-columns-in-a-database"></a>Een opgeslagen procedure gebruiken om statistieken te maken voor alle kolommen in een Data Base
+### <a name="use-a-stored-procedure-to-create-statistics-on-all-columns-in-a-sql-pool"></a>Een opgeslagen procedure gebruiken om statistieken te maken voor alle kolommen in een SQL-groep
 
-De toegewezen SQL-groep heeft geen door het systeem opgeslagen procedure die gelijk is aan sp_create_stats in SQL Server. Met deze opgeslagen procedure maakt u één kolom statistieken-object op elke kolom van de data base waarvoor nog geen statistieken zijn.
+De toegewezen SQL-groep heeft geen door het systeem opgeslagen procedure die gelijk is aan sp_create_stats in SQL Server. Met deze opgeslagen procedure maakt u één kolom statistieken-object op elke kolom in een SQL-groep die nog geen statistieken heeft.
 
-Het volgende voor beeld helpt u aan de slag te gaan met uw database ontwerp. U kunt deze aanpassen aan uw behoeften.
+Het volgende voor beeld helpt u aan de slag te gaan met het ontwerp van uw SQL-groep. U kunt deze aanpassen aan uw behoeften.
 
 ```sql
 CREATE PROCEDURE    [dbo].[prc_sqldw_create_stats]
@@ -539,7 +539,7 @@ AND     st.[user_created] = 1
 
 DBCC SHOW_STATISTICS () toont de gegevens binnen een statistiek object. Deze gegevens zijn afkomstig uit drie delen:
 
-- Koptekst
+- Header
 - Dichtheids vector
 - Histogram
 

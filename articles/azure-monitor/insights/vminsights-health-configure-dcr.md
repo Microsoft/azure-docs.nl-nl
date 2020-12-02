@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/15/2020
-ms.openlocfilehash: 2bbc57d8ddc004c1926da7e0037efdc1fcf2d76e
-ms.sourcegitcommit: 5ae2f32951474ae9e46c0d46f104eda95f7c5a06
+ms.openlocfilehash: 55e5a587a0ad02fa1f8993027b46162a14a58832
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95318096"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96448240"
 ---
 # <a name="configure-monitoring-in-azure-monitor-for-vms-guest-health-using-data-collection-rules-preview"></a>Bewaking configureren in Azure Monitor voor VM's status van de gast met behulp van regels voor gegevens verzameling (preview)
 Met [Azure monitor voor VM's gast status](vminsights-health-overview.md) kunt u de status van een virtuele machine weer geven zoals gedefinieerd door een set prestatie metingen die regel matig worden steek proeven. In dit artikel wordt beschreven hoe u de standaard bewaking op meerdere virtuele machines kunt wijzigen met behulp van regels voor het verzamelen van gegevens.
@@ -20,7 +20,7 @@ Met [Azure monitor voor VM's gast status](vminsights-health-overview.md) kunt u 
 ## <a name="monitors"></a>Monitors
 De status van een virtuele machine wordt bepaald door de status van het [totaliseren](vminsights-health-overview.md#health-rollup-policy) van de monitor. Er zijn twee soorten monitors in Azure Monitor voor VM's gast status, zoals wordt weer gegeven in de volgende tabel.
 
-| Monitor | Description |
+| Controleren | Beschrijving |
 |:---|:---|
 | Unit-monitor | Meet een aspect van een resource of toepassing. Dit kan een prestatie meter item controleren om de prestaties van de resource of de beschik baarheid te bepalen. |
 | Aggregaatmonitor | Groepeert meerdere monitors om één geaggregeerde status te bieden. Een aggregaatmonitor kan een of meer unit monitors en andere geaggregeerde monitors bevatten. |
@@ -47,11 +47,11 @@ In de volgende tabel worden de eigenschappen beschreven die op elke monitor kunn
 De volgende tabel bevat de standaard configuratie voor elke monitor. Deze standaard configuratie kan niet rechtstreeks worden gewijzigd, maar u kunt [onderdrukkingen](#overrides) definiëren waarmee de monitor configuratie voor bepaalde virtuele machines wordt gewijzigd.
 
 
-| Monitor | Ingeschakeld | Waarschuwingen | Waarschuwing | Kritiek | Evaluatie frequentie | Lookback | Evaluatie type | Min-voor beeld | Maximum aantal steek proeven |
+| Controleren | Ingeschakeld | Waarschuwingen | Waarschuwing | Kritiek | Evaluatie frequentie | Lookback | Evaluatie type | Min-voor beeld | Maximum aantal steek proeven |
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|:---|
 | CPU-gebruik  | Waar | Niet waar | Geen | \> 90%    | 60 sec. | 240 SEC | Min. | 2 | 3 |
-| Beschikbaar geheugen | Waar | Niet waar | Geen | \< 100 MB | 60 sec. | 240 SEC | Max | 2 | 3 |
-| Bestandssysteem      | Waar | Niet waar | Geen | \< 100 MB | 60 sec. | 120 sec | Max | 1 | 1 |
+| Beschikbaar geheugen | Waar | Niet waar | Geen | \< 100 MB | 60 sec. | 240 SEC | Max. | 2 | 3 |
+| Bestandssysteem      | Waar | Niet waar | Geen | \< 100 MB | 60 sec. | 120 sec | Max. | 1 | 1 |
 
 
 ## <a name="overrides"></a>Overschrijvingen
@@ -103,9 +103,9 @@ De gast status wordt geïmplementeerd als een uitbrei ding van de Azure Monitor-
 | Element | Vereist | Beschrijving |
 |:---|:---|:---|
 | `name` | Ja | Door de gebruiker gedefinieerde teken reeks voor de extensie. |
-| `streams` | Yes | Lijst met stromen waarnaar de gast status gegevens worden verzonden. Dit moet **micro soft-HealthStateChange** omvatten.  |
-| `extensionName` | Yes | De naam van de extensie. Dit moet **HealthExtension** zijn. |
-| `extensionSettings` | Yes | Matrix van `healthRuleOverride` elementen die moeten worden toegepast op de standaard configuratie. |
+| `streams` | Ja | Lijst met stromen waarnaar de gast status gegevens worden verzonden. Dit moet **micro soft-HealthStateChange** omvatten.  |
+| `extensionName` | Ja | De naam van de extensie. Dit moet **HealthExtension** zijn. |
+| `extensionSettings` | Ja | Matrix van `healthRuleOverride` elementen die moeten worden toegepast op de standaard configuratie. |
 
 
 ## <a name="extensionsettings-element"></a>Geldige-element
@@ -122,8 +122,8 @@ Bevat de instellingen voor de extensie.
 | Element | Vereist | Beschrijving |
 |:---|:---|:---|
 | `schemaVersion` | Ja | Teken reeks die door micro soft is gedefinieerd om het verwachte schema van het element weer te geven. Momenteel moet worden ingesteld op 1,0 |
-| `contentVersion` | No | De teken reeks die door de gebruiker is gedefinieerd om verschillende versies van de status configuratie, indien nodig, bij te houden. |
-| `healthRuleOverrides` | Yes | Matrix van `healthRuleOverride` elementen die moeten worden toegepast op de standaard configuratie. |
+| `contentVersion` | Nee | De teken reeks die door de gebruiker is gedefinieerd om verschillende versies van de status configuratie, indien nodig, bij te houden. |
+| `healthRuleOverrides` | Ja | Matrix van `healthRuleOverride` elementen die moeten worden toegepast op de standaard configuratie. |
 
 ## <a name="healthrulesoverrides-element"></a>healthRulesOverrides-element
 Bevat een of meer `healthRuleOverride` elementen die elk een onderdrukking definiëren.
@@ -143,10 +143,10 @@ Bevat een of meer `healthRuleOverride` elementen die elk een onderdrukking defin
 | Element | Vereist | Beschrijving |
 |:---|:---|:---|
 | `scopes` | Ja | Lijst met een of meer bereiken waarmee de virtuele machines worden opgegeven waarop deze onderdrukking van toepassing is. Hoewel de DCR is gekoppeld aan een virtuele machine, moet de virtuele machine binnen een bereik vallen zodat de onderdrukking kan worden toegepast. |
-| `monitors` | Yes | Lijst met een of meer teken reeksen die bepalen welke monitors deze onderdrukking zullen ontvangen.  |
-| `monitorConfiguration` | No | Configuratie voor de monitor, inclusief statussen en hoe deze worden berekend. |
-| `alertConfiguration` | No | Configuratie van waarschuwingen voor de monitor. |
-| `isEnabled` | No | Hiermee wordt bepaald of monitor is ingeschakeld of niet. Uitgeschakelde monitor schakelt over naar speciale *Uitgeschakelde* status en statussen uitgeschakeld, tenzij u deze opnieuw inschakelt. Als u dit weglaat, wordt de status van de monitor overgenomen van de bovenliggende monitor in de hiërarchie. |
+| `monitors` | Ja | Lijst met een of meer teken reeksen die bepalen welke monitors deze onderdrukking zullen ontvangen.  |
+| `monitorConfiguration` | Nee | Configuratie voor de monitor, inclusief statussen en hoe deze worden berekend. |
+| `alertConfiguration` | Nee | Configuratie van waarschuwingen voor de monitor. |
+| `isEnabled` | Nee | Hiermee wordt bepaald of monitor is ingeschakeld of niet. Uitgeschakelde monitor schakelt over naar speciale *Uitgeschakelde* status en statussen uitgeschakeld, tenzij u deze opnieuw inschakelt. Als u dit weglaat, wordt de status van de monitor overgenomen van de bovenliggende monitor in de hiërarchie. |
 
 
 ## <a name="scopes-element"></a>element bereiken
@@ -227,12 +227,12 @@ Als er minder steek proeven zijn in het lookback-interval dan `minSamples` , wor
 | Element | Verplicht | Beschrijving | 
 |:---|:---|:---|
 | `evaluationFrequencySecs` | Nee | Hiermee wordt de frequentie voor de status evaluatie gedefinieerd. Elke monitor wordt geëvalueerd op het moment dat de agent wordt gestart en volgens een regel matig interval dat door deze para meter wordt gedefinieerd. |
-| `lookbackSecs`   | No | Grootte van lookback-venster in seconden. |
-| `evaluationType` | No | `min` – minimale waarde uit de volledige Voorbeeldset halen<br>`max` -maximum waarde van de volledige Voorbeeldset halen<br>`avg` : gemiddelde waarden instellen voor steek proeven<br>`all` : elke enkele waarde in de set vergelijken met drempel waarden. De status van monitor switches als en alleen als alle voor beelden in de set voldoen aan de drempel waarde. |
-| `minSamples`     | No | Minimum aantal waarden dat moet worden gebruikt om de waarde te berekenen. |
-| `maxSamples`     | No | Het maximum aantal waarden dat moet worden gebruikt om de waarde te berekenen. |
-| `warningCondition`  | No | Drempel waarde en vergelijkings logica voor de waarschuwings voorwaarde. |
-| `criticalCondition` | No | Drempel waarde en vergelijkings logica voor de kritieke situatie. |
+| `lookbackSecs`   | Nee | Grootte van lookback-venster in seconden. |
+| `evaluationType` | Nee | `min` – minimale waarde uit de volledige Voorbeeldset halen<br>`max` -maximum waarde van de volledige Voorbeeldset halen<br>`avg` : gemiddelde waarden instellen voor steek proeven<br>`all` : elke enkele waarde in de set vergelijken met drempel waarden. De status van monitor switches als en alleen als alle voor beelden in de set voldoen aan de drempel waarde. |
+| `minSamples`     | Nee | Minimum aantal waarden dat moet worden gebruikt om de waarde te berekenen. |
+| `maxSamples`     | Nee | Het maximum aantal waarden dat moet worden gebruikt om de waarde te berekenen. |
+| `warningCondition`  | Nee | Drempel waarde en vergelijkings logica voor de waarschuwings voorwaarde. |
+| `criticalCondition` | Nee | Drempel waarde en vergelijkings logica voor de kritieke situatie. |
 
 
 ## <a name="warningcondition-element"></a>warningCondition-element
@@ -249,8 +249,8 @@ Hiermee worden de drempel-en vergelijkings logica voor de waarschuwings voorwaar
 | Eigenschap | Verplicht | Beschrijving | 
 |:---|:---|:---|
 | `isEnabled` | Nee | Hiermee wordt aangegeven of voor waarde is ingeschakeld. Als deze eigenschap is ingesteld op **False**, wordt de voor waarde uitgeschakeld, hoewel de drempel waarde en de operator eigenschappen kunnen worden ingesteld. |
-| `threshold` | No | Definieert drempel om de geëvalueerde waarde te vergelijken. |
-| `operator`  | No | Definieert de vergelijkings operator die in de drempel expressie moet worden gebruikt. Mogelijke waarden: >, <, >=, <=, = =. |
+| `threshold` | Nee | Definieert drempel om de geëvalueerde waarde te vergelijken. |
+| `operator`  | Nee | Definieert de vergelijkings operator die in de drempel expressie moet worden gebruikt. Mogelijke waarden: >, <, >=, <=, = =. |
 
 
 ## <a name="criticalcondition-element"></a>criticalCondition-element
@@ -267,110 +267,12 @@ Hiermee worden de drempel-en vergelijkings logica voor de kritieke voor waarde g
 | Eigenschap | Verplicht | Beschrijving | 
 |:---|:---|:---|
 | `isEnabled` | Nee | Hiermee wordt aangegeven of voor waarde is ingeschakeld. Als deze eigenschap is ingesteld op **False**, wordt de voor waarde uitgeschakeld, hoewel de drempel waarde en de operator eigenschappen kunnen worden ingesteld. |
-| `threshold` | No | Definieert drempel om de geëvalueerde waarde te vergelijken. |
-| `operator`  | No | Definieert de vergelijkings operator die in de drempel expressie moet worden gebruikt. Mogelijke waarden: >, <, >=, <=, = =. |
+| `threshold` | Nee | Definieert drempel om de geëvalueerde waarde te vergelijken. |
+| `operator`  | Nee | Definieert de vergelijkings operator die in de drempel expressie moet worden gebruikt. Mogelijke waarden: >, <, >=, <=, = =. |
 
 ## <a name="sample-data-collection-rule"></a>Regel voor het verzamelen van voorbeeld gegevens
-De volgende voorbeeld regel voor het verzamelen van gegevens toont een voor beeld van een onderdrukking om de bewaking te configureren.
+Zie [een virtuele machine inschakelen met de Resource Manager-sjabloon](vminsights-health-enable.md#enable-a-virtual-machine-using-resource-manager-template)voor een voor beeld van een regel voor het verzamelen van gegevens.
 
-
-```json
-{
-  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
-    "defaultHealthDataCollectionRuleName": {
-      "type": "string",
-      "metadata": {
-        "description": "Specifies the name of the data collection rule to create."
-      },
-      "defaultValue": "Microsoft-VMInsights-Health"
-    },
-    "destinationWorkspaceResourceId": {
-      "type": "string",
-      "metadata": {
-        "description": "Specifies the Azure resource ID of the Log Analytics workspace to use to store virtual machine health data."
-      }
-    },
-    "dataCollectionRuleLocation": {
-      "type": "string",
-      "metadata": {
-        "description": "The location code in which the data collection rule should be deployed. Examples: eastus, westeurope, etc"
-      }
-    }
-  },
-  "resources": [
-    {
-      "type": "Microsoft.Insights/dataCollectionRules",
-      "name": "[parameters('defaultHealthDataCollectionRuleName')]",
-      "location": "[parameters('dataCollectionRuleLocation')]",
-      "apiVersion": "2019-11-01-preview",
-      "properties": {
-        "description": "Data collection rule for VM Insights health.",
-        "dataSources": {
-          "performanceCounters": [
-              {
-                  "name": "VMHealthPerfCounters",
-                  "streams": [ "Microsoft-Perf" ],
-                  "scheduledTransferPeriod": "PT1M",
-                  "samplingFrequencyInSeconds": 60,
-                  "counterSpecifiers": [
-                      "\\LogicalDisk(*)\\% Free Space",
-                      "\\Memory\\Available Bytes",
-                      "\\Processor(_Total)\\% Processor Time"
-                  ]
-              }
-          ],
-          "extensions": [
-            {
-              "name": "Microsoft-VMInsights-Health",
-              "streams": [
-                "Microsoft-HealthStateChange"
-              ],
-              "extensionName": "HealthExtension",
-              "extensionSettings": {
-                "schemaVersion": "1.0",
-                "contentVersion": "",
-                "healthRuleOverrides": [
-                  {
-                    "scopes": [ "*" ],
-                    "monitors": ["root"],
-                    "alertConfiguration": {
-                      "isEnabled": true
-                    }
-                  }
-                ]
-              },
-              "inputDataSources": [
-                  "VMHealthPerfCounters"
-              ]
-
-            }
-          ]
-        },
-        "destinations": {
-          "logAnalytics": [
-            {
-              "workspaceResourceId": "[parameters('destinationWorkspaceResourceId')]",
-              "name": "Microsoft-HealthStateChange-Dest"
-            }
-          ]
-        },                  
-        "dataFlows": [
-          {
-            "streams": [
-              "Microsoft-HealthStateChange"
-            ],
-            "destinations": [
-              "Microsoft-HealthStateChange-Dest"
-            ]
-          }
-        ]
-      }
-    }
-  ]
-}
-```
 
 ## <a name="next-steps"></a>Volgende stappen
 

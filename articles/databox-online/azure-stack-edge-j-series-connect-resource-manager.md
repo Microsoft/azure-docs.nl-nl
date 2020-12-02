@@ -8,18 +8,18 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: 5cf406dc0577f477858dd8a6570f7975747112e0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 048f2585d8e9ac1b10293083bda0900e7ce468bb
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90891219"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447596"
 ---
 # <a name="connect-to-azure-resource-manager-on-your-azure-stack-edge-pro-device"></a>Verbinding maken met Azure Resource Manager op uw Azure Stack Edge Pro-apparaat
 
 <!--[!INCLUDE [applies-to-skus](../../includes/azure-stack-edge-applies-to-all-sku.md)]-->
 
-Azure Resource Manager biedt een Management-laag waarmee u resources in uw Azure-abonnement kunt maken, bijwerken en verwijderen. Het Azure Stack Edge Pro-apparaat ondersteunt dezelfde Azure Resource Manager Api's om Vm's te maken, bij te werken en te verwijderen in een lokaal abonnement. Met deze ondersteuning kunt u het apparaat beheren op een manier die overeenkomt met de Cloud. 
+Azure Resource Manager biedt een beheerlaag waarmee u resources in uw Azure-abonnement kunt maken, bijwerken en verwijderen. Het Azure Stack Edge Pro-apparaat ondersteunt dezelfde Azure Resource Manager Api's om Vm's te maken, bij te werken en te verwijderen in een lokaal abonnement. Met deze ondersteuning kunt u het apparaat beheren op een manier die overeenkomt met de Cloud. 
 
 In deze zelf studie wordt beschreven hoe u verbinding maakt met de lokale Api's op uw Azure Stack Edge Pro-apparaat via Azure Resource Manager met behulp van Azure PowerShell.
 
@@ -138,9 +138,9 @@ Uw Windows-client moet aan de volgende vereisten voldoen:
 
     Vergelijk de **primaire** versie en zorg ervoor dat deze 5,0 of hoger is.
 
-    Zie [Een upgrade uitvoeren van een bestaande Windows PowerShell-versie](https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell) als u met een verouderde versie werkt.
+    Zie [Een upgrade uitvoeren van een bestaande Windows PowerShell-versie](/powershell/scripting/install/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell) als u met een verouderde versie werkt.
 
-    Als u \' geen Power shell 5,0 hebt, volgt u de [installatie van Windows Power shell](https://docs.microsoft.com/powershell/scripting/install/installing-windows-powershell?view=powershell-6).
+    Als u \' geen Power shell 5,0 hebt, volgt u de [installatie van Windows Power shell](/powershell/scripting/install/installing-windows-powershell?view=powershell-6).
 
     Hieronder ziet u een voorbeeld van de uitvoer.
 
@@ -175,11 +175,11 @@ Uw Windows-client moet aan de volgende vereisten voldoen:
     PSGallery                 Trusted              https://www.powershellgallery.com/api/v2
     ```
     
-Als uw opslag plaats niet wordt vertrouwd of als u meer informatie nodig hebt, raadpleegt u [de PowerShell Gallery-toegankelijkheid valideren](https://docs.microsoft.com/azure-stack/operator/azure-stack-powershell-install?view=azs-1908#2-validate-the-powershell-gallery-accessibility).
+Als uw opslag plaats niet wordt vertrouwd of als u meer informatie nodig hebt, raadpleegt u [de PowerShell Gallery-toegankelijkheid valideren](/azure-stack/operator/azure-stack-powershell-install?view=azs-1908#2-validate-the-powershell-gallery-accessibility).
 
 ## <a name="step-4-set-up-azure-powershell-on-the-client"></a>Stap 4: Azure PowerShell instellen op de client 
 
-<!--1. Verify the API profile of the client and identify which version of the Azure PowerShell modules and libraries to include on your client. In this example, the client system will be running Azure Stack 1904 or later. For more information, see [Azure Resource Manager API profiles](https://docs.microsoft.com/azure-stack/user/azure-stack-version-profiles?view=azs-1908#azure-resource-manager-api-profiles).-->
+<!--1. Verify the API profile of the client and identify which version of the Azure PowerShell modules and libraries to include on your client. In this example, the client system will be running Azure Stack 1904 or later. For more information, see [Azure Resource Manager API profiles](/azure-stack/user/azure-stack-version-profiles?view=azs-1908#azure-resource-manager-api-profiles).-->
 
 1. U installeert Azure PowerShell modules op uw client die met uw apparaat werken.
 
@@ -297,9 +297,9 @@ Controleer of de naam van het eind punt is omgezet op de client die u gebruikt o
 Stel de Azure Resource Manager omgeving in en controleer of uw apparaat naar client communicatie via Azure Resource Manager prima werkt. Voer de volgende stappen uit om deze verificatie uit te voeren:
 
 
-1. Gebruik de `Add-AzureRmEnvironment` cmdlet om te controleren of de communicatie via Azure Resource Manager correct werkt en de API-aanroepen via de poort die is toegewezen voor Azure Resource Manager-443.
+1. Gebruik de cmdlet `Add-AzureRmEnvironment` om ervoor te zorgen dat de communicatie via Azure Resource Manager goed werkt en de API-aanroepen worden uitgevoerd via de poort die is toegewezen voor Azure Resource Manager - 443.
 
-    De `Add-AzureRmEnvironment` cmdlet voegt eind punten en meta gegevens toe om Azure Resource Manager-cmdlets in te scha kelen om verbinding te maken met een nieuw exemplaar van Azure Resource Manager. 
+    Met de cmdlet `Add-AzureRmEnvironment` voegt u eindpunten en metagegevens toe om Azure Resource Manager-cmdlets te gebruiken om verbinding te maken met een nieuw exemplaar van Azure Resource Manager. 
 
 
     > [!IMPORTANT]
@@ -327,13 +327,13 @@ Stel de Azure Resource Manager omgeving in en controleer of uw apparaat naar cli
     Set-AzureRMEnvironment -Name <Environment Name>
     ```
     
-    Ga naar [set-AzureRMEnvironment](https://docs.microsoft.com/powershell/module/azurerm.profile/set-azurermenvironment?view=azurermps-6.13.0)voor meer informatie.
+    Ga naar [set-AzureRMEnvironment](/powershell/module/azurerm.profile/set-azurermenvironment?view=azurermps-6.13.0)voor meer informatie.
 
     - Definieer de omgeving inline voor elke cmdlet die u uitvoert. Dit zorgt ervoor dat alle API-aanroepen via de juiste omgeving worden uitgevoerd. Standaard worden de aanroepen via Azure openbaar, maar u wilt dat deze door de omgeving die u instelt voor Azure Stack Edge Pro-apparaat.
 
     - Zie voor meer informatie over [het scha kelen tussen AzureRM-omgevingen](#switch-environments).
 
-2. Roep de Api's van het lokale apparaat aan om de verbindingen met Azure Resource Manager te verifiëren. 
+2. Roep de API's van het lokale apparaat aan om de verbindingen met Azure Resource Manager te verifiëren. 
 
     1. Deze referenties gelden voor een lokale machine account en worden alleen gebruikt voor API-toegang.
 

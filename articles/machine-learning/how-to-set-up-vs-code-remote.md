@@ -10,12 +10,12 @@ ms.custom: how-to
 ms.author: jmartens
 author: j-martens
 ms.date: 11/16/2020
-ms.openlocfilehash: 2abad31173992a891e908bdbb61c37e905907d69
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 0afbf32f80a3d19f6db457f398a213a634cfa3d4
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94697575"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447049"
 ---
 # <a name="connect-to-an-azure-machine-learning-compute-instance-in-visual-studio-code-preview"></a>Verbinding maken met een Azure Machine Learning Compute-instantie in Visual Studio code (preview)
 
@@ -41,7 +41,7 @@ Verbinding maken met een reken instantie:
 1. Wanneer de geïntegreerde laptop ervaring wordt geladen, selecteert u **Jupyter server**.
 
     > [!div class="mx-imgBorder"]
-    > ![Azure Machine Learning externe Jupyter notebook server-vervolg keuzelijst starten](media/how-to-set-up-vs-code-remote/launch-server-selection-dropdown.png)
+    > ![Azure Machine Learning externe Jupyter Notebook server-vervolg keuzelijst starten](media/how-to-set-up-vs-code-remote/launch-server-selection-dropdown.png)
 
     U kunt ook het opdracht palet gebruiken:
 
@@ -58,7 +58,7 @@ Verbinding maken met een reken instantie:
 > [!IMPORTANT]
 > U **moet** een cel uitvoeren om de verbinding tot stand te brengen.
 
-U kunt nu door gaan met het uitvoeren van cellen in uw Jupyter-notebook.
+Op dit moment kunt u door gaan met het uitvoeren van cellen in uw Jupyter Notebook.
 
 > [!TIP]
 > U kunt ook werken met python-script bestanden (. py) met Jupyter-achtige code cellen. Zie [Visual Studio code python Interactive documentation](https://code.visualstudio.com/docs/python/jupyter-support-py)(Engelstalig) voor meer informatie.

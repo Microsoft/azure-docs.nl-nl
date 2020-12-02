@@ -11,16 +11,16 @@ ms.subservice: core
 ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperfq1
-ms.openlocfilehash: cb10eb0f89ce37bc484c8570995ebaa098c696f1
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 492d1370a228fc4fc80880102899c9207a514f57
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94541297"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447194"
 ---
 # <a name="configure-and-submit-training-runs"></a>Trainingsuitvoering configureren en verzenden
 
-In dit artikel leert u hoe u Azure Machine Learning uitvoeringen kunt configureren en verzenden om uw modellen te trainen.
+In dit artikel leert u hoe u Azure Machine Learning uitvoeringen kunt configureren en verzenden om uw modellen te trainen. De code fragmenten van een programma bevatten uitleg over de belangrijkste onderdelen van de configuratie en het indienen van een trainings script.  Gebruik vervolgens een van de [voorbeeld notitieblokken](#notebooks) om de volledige end-to-end-werk voorbeelden te vinden.
 
 Bij het trainen is het gebruikelijk om te beginnen op de lokale computer en vervolgens te schalen naar een Cloud cluster. Met Azure Machine Learning kunt u uw script uitvoeren op verschillende reken doelen zonder dat u uw trainings script hoeft te wijzigen.
 
@@ -38,10 +38,10 @@ Een [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig?pres
 
 U verzendt uw trainings experiment met een ScriptRunConfig-object.  Dit object bevat:
 
-* **source_directory** : de bron directory die uw trainings script bevat
-* **script** : het trainings script dat moet worden uitgevoerd
-* **compute_target** : het Compute-doel om uit te voeren
-* **omgeving** : de omgeving die moet worden gebruikt bij het uitvoeren van het script
+* **source_directory**: de bron directory die uw trainings script bevat
+* **script**: het trainings script dat moet worden uitgevoerd
+* **compute_target**: het Compute-doel om uit te voeren
+* **omgeving**: de omgeving die moet worden gebruikt bij het uitvoeren van het script
 * en een aantal extra Configureer bare opties (Zie de [referentie documentatie](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py) voor meer informatie)
 
 ## <a name="train-your-model"></a><a id="submit"></a>Uw model trainen
@@ -152,7 +152,7 @@ run.wait_for_completion(show_output=True)
 > Zie [moment opnamen](concept-azure-machine-learning-architecture.md#snapshots)voor meer informatie over moment opnamen.
 
 > [!IMPORTANT]
-> **Speciale mappen** Twee mappen, *uitvoer* en *Logboeken* , een speciale behandeling ontvangen door Azure machine learning. Wanneer u tijdens de training bestanden schrijft naar mappen met de naam *outputs* en *Logboeken* die relatief zijn ten opzichte van de hoofdmap ( `./outputs` en `./logs` respectievelijk), worden de bestanden automatisch geüpload naar de uitvoerings geschiedenis, zodat u er toegang tot hebt zodra de uitvoering is voltooid.
+> **Speciale mappen** Twee mappen, *uitvoer* en *Logboeken*, een speciale behandeling ontvangen door Azure machine learning. Wanneer u tijdens de training bestanden schrijft naar mappen met de naam *outputs* en *Logboeken* die relatief zijn ten opzichte van de hoofdmap ( `./outputs` en `./logs` respectievelijk), worden de bestanden automatisch geüpload naar de uitvoerings geschiedenis, zodat u er toegang tot hebt zodra de uitvoering is voltooid.
 >
 > Als u artefacten wilt maken tijdens de training (zoals model bestanden, controle punten, gegevens bestanden of geplote afbeeldingen), schrijft u deze naar de `./outputs` map.
 >
@@ -164,7 +164,7 @@ run.wait_for_completion(show_output=True)
 
 Wanneer u begint met het uitvoeren van een training waarbij de bronmap een lokale Git-opslag plaats is, wordt informatie over de opslag plaats opgeslagen in de uitvoerings geschiedenis. Zie [Git-integratie voor Azure machine learning](concept-train-model-git-integration.md)voor meer informatie.
 
-## <a name="notebook-examples"></a>Voor beelden van notebooks
+## <a name="notebook-examples"></a><a name="notebooks"></a>Voor beelden van notebooks
 
 Bekijk deze notebooks voor voor beelden van het configureren van uitvoeringen voor verschillende trainings scenario's:
 * [Training over diverse reken doelen](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training)

@@ -10,12 +10,12 @@ author: sdgilley
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.custom: how-to, fasttrack-edit
-ms.openlocfilehash: 9524577d40c3b6b65bb3c3c8ff9e257b015ed90d
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 4425fdf488665ad555c73c59682041cb23a9ca66
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95012938"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447330"
 ---
 # <a name="create-and-manage-azure-machine-learning-workspaces"></a>Azure Machine Learning-werk ruimten maken en beheren 
 
@@ -30,7 +30,7 @@ Als uw behoeften veranderen of vereisten voor automatisering verhogen, kunt u oo
 
 ## <a name="limitations"></a>Beperkingen
 
-* Wanneer u een nieuwe werk ruimte maakt, kunt u de werk ruimte toestaan de Azure-Services te maken die deze automatisch vereist of bestaande Services biedt. Wanneer u bestaande services levert, moeten deze services allemaal deel uitmaken van hetzelfde Azure-abonnement als de werk ruimte.
+[!INCLUDE [register-namespace](../../includes/machine-learning-register-namespace.md)]
 
 ## <a name="create-a-workspace"></a>Een werkruimte maken
 

@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 09/07/2020
 ms.author: alkohli
-ms.openlocfilehash: c27f6ef47b8e4db83ceb63e308e318803800f8a5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c12935a4b0b9cbbf088ba7b9c5ea804be0ce85a1
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90890709"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447360"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-using-azure-cli-and-python"></a>VM's implementeren op uw GPU-apparaat voor Azure Stack Edge Pro met behulp van Azure CLI en Python
 
@@ -117,7 +117,7 @@ Voordat u een virtuele machine op uw Azure Stack Edge Pro-apparaat gaat maken en
 
 ### <a name="verify-profile-and-install-azure-cli"></a>Profiel controleren en Azure CLI installeren
 
-<!--1. Verify the API profile of the client and identify which version of the modules and libraries to include on your client. In this example, the client system will be running Azure Stack 1904 or later. For more information, see [Azure Resource Manager API profiles](https://docs.microsoft.com/azure-stack/user/azure-stack-version-profiles?view=azs-1908#azure-resource-manager-api-profiles).-->
+<!--1. Verify the API profile of the client and identify which version of the modules and libraries to include on your client. In this example, the client system will be running Azure Stack 1904 or later. For more information, see [Azure Resource Manager API profiles](/azure-stack/user/azure-stack-version-profiles?view=azs-1908#azure-resource-manager-api-profiles).-->
 
 1. Installeer Azure CLI op uw clientcomputer. In dit voorbeeld is Azure CLI 2.0.80 geïnstalleerd. Als u de versie van Azure CLI wilt controleren, voert u de opdracht `az --version` uit.
 
@@ -147,7 +147,7 @@ Voordat u een virtuele machine op uw Azure Stack Edge Pro-apparaat gaat maken en
     PS C:\windows\system32>
     ```
 
-    Als u Azure CLI nog niet hebt, kunt u Azure CLI downloaden en [installeren in Windows](https://docs.microsoft.com/cli/azure/install-azure-cli-windows?view=azure-cli-latest). U kunt Azure CLI uitvoeren via de Windows-opdrachtprompt of via Windows PowerShell.
+    Als u Azure CLI nog niet hebt, kunt u Azure CLI downloaden en [installeren in Windows](/cli/azure/install-azure-cli-windows?view=azure-cli-latest). U kunt Azure CLI uitvoeren via de Windows-opdrachtprompt of via Windows PowerShell.
 
 2. Noteer de locatie van Python voor de CLI. U hebt deze nodig om de locatie van het basisvertrouwensarchief voor certificaten voor Azure CLI te bepalen.
 
@@ -308,7 +308,7 @@ Voordat u een virtuele machine op uw Azure Stack Edge Pro-apparaat gaat maken en
     PS C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2>
     ```
 
-4. Meld u aan bij uw Azure Stack Edge Pro-omgeving door de opdracht `az login` uit te voeren. U kunt zich aanmelden bij de Azure Stack Edge Pro-omgeving als een gebruiker of als een [service-principal](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals).
+4. Meld u aan bij uw Azure Stack Edge Pro-omgeving door de opdracht `az login` uit te voeren. U kunt zich aanmelden bij de Azure Stack Edge Pro-omgeving als een gebruiker of als een [service-principal](../active-directory/develop/app-objects-and-service-principals.md).
 
    Voer de volgende stappen uit om u aan te melden als een *gebruiker*:
 

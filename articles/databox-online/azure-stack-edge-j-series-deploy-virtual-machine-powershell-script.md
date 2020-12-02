@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: cd877a91c7c082ce7845394f2636857f33b7940f
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 957274e6080ab4b77e6528386fe0b24b2d877219
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578753"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447303"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-azure-powershell-script"></a>Vm's implementeren op uw Azure Stack Edge Pro GPU-apparaat via Azure PowerShell script
 
@@ -54,7 +54,7 @@ Voordat u begint met het maken en beheren van een virtuele machine op uw Azure S
     
         ![Hosts-bestand in Windows Verkenner](media/azure-stack-edge-j-series-connect-resource-manager/hosts-file.png)
     
-    2. Voeg de volgende vermeldingen toe aan uw **hosts** -bestand, waarbij u de juiste waarden voor uw apparaat invoert:
+    2. Voeg de volgende vermeldingen toe aan uw **hosts**-bestand, waarbij u de juiste waarden voor uw apparaat invoert:
     
         ```
         <Azure consistent services VIP> login.<appliance name>.<DNS domain>
@@ -83,7 +83,7 @@ Voordat u begint met het maken en beheren van een virtuele machine op uw Azure S
 
     `Uninstall-Module -Name Azure.Storage`
 
-5. [Down load AzCopy 10](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10#download-azcopy) naar uw Windows-client. Noteer deze locatie als u deze als een para meter wilt door geven tijdens het uitvoeren van het script.
+5. [Down load AzCopy 10](../storage/common/storage-use-azcopy-v10.md#download-azcopy) naar uw Windows-client. Noteer deze locatie als u deze als een para meter wilt door geven tijdens het uitvoeren van het script.
 
 6. Zorg ervoor dat op uw Windows-client TLS 1,2 of hoger wordt uitgevoerd.
 

@@ -1,6 +1,6 @@
 ---
-title: Power shell-& REST-Api's
-description: Zoek de bovenste Power shell-cmdlets voor de Azure Synapse Analytics SQL-groep, inclusief het onderbreken en hervatten van een Data Base.
+title: Power shell-& REST-Api's voor toegewezen SQL-groep (voorheen SQL DW)
+description: Top Power shell-cmdlets voor een toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics, inclusief het onderbreken en hervatten van een Data Base.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, devx-track-azurepowershell
-ms.openlocfilehash: aaf290fac71fec0ff4106e3f8a1895dd65b94e09
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bb26ac0071a50095f8e93ce0cc25da0055bdbac8
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89072890"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96448226"
 ---
-# <a name="powershell--rest-apis-for-azure-synapse-analytics-sql-pool"></a>Power shell & REST-Api's voor Azure Synapse Analytics SQL-groep
+# <a name="powershell--rest-apis-for-for-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Power shell-& REST-Api's voor voor exclusieve SQL-groep (voorheen SQL DW) in azure Synapse Analytics 
 
-Veel beheer taken van de SQL-groep van Azure Synapse Analytics kunnen worden beheerd met behulp van Azure PowerShell-cmdlets of REST-Api's.  Hieronder ziet u enkele voor beelden van het gebruik van Power shell-opdrachten voor het automatiseren van algemene taken in uw SQL-groep.  Zie het artikel [schaal baarheid met rest beheren](sql-data-warehouse-manage-compute-rest-api.md)voor een aantal goede rest-voor beelden.
+Veel specifieke beheer taken van de SQL-groep kunnen worden beheerd met behulp van Azure PowerShell-cmdlets of REST-Api's.  Hieronder ziet u enkele voor beelden van het gebruik van Power shell-opdrachten voor het automatiseren van algemene taken in uw toegewezen SQL-groep (voorheen SQL DW).  Zie het artikel [schaal baarheid met rest beheren](sql-data-warehouse-manage-compute-rest-api.md)voor een aantal goede rest-voor beelden.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 

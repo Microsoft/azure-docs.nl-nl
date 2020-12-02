@@ -12,12 +12,12 @@ author: joesackmsft
 ms.author: josack
 ms.reviewer: sstein
 ms.date: 02/13/2019
-ms.openlocfilehash: fe49dce276a15d9d7bc8ddaa5618c0e43dec62e9
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: b34ac24cb26bf5db4a49a5ad5b531deb252f4695
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94841220"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96446119"
 ---
 # <a name="new-dba-in-the-cloud--managing-azure-sql-database-after-migration"></a>Nieuwe DBA in de Cloud: Azure SQL Database na migratie beheren
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -106,7 +106,7 @@ Er zijn twee verificatie methoden beschikbaar in SQL Database:
 
 De traditionele Windows-verificatie wordt niet ondersteund. Azure Active Directory (Azure AD) is een gecentraliseerde service voor identiteits-en toegangs beheer. Zo kunt u eenvoudig een eenmalige aanmelding (SSO) voor alle mede werkers in uw organisatie bieden. Dit betekent dat de referenties worden gedeeld in alle Azure-Services voor een eenvoudigere verificatie. 
 
-Azure AD biedt ondersteuning voor [Azure AD-multi-factor Authentication](authentication-mfa-ssms-overview.md) en met een [paar klikken](../../active-directory/hybrid/how-to-connect-install-express.md) Azure AD kan worden geïntegreerd met Windows Server Active Directory. SQL-verificatie werkt precies zoals u deze in het verleden hebt gebruikt. U geeft een gebruikers naam en wacht woord op en u kunt gebruikers verifiëren voor elke Data Base op een bepaalde server. Hierdoor kunnen SQL Database en Azure Synapse Analytics (voorheen SQL Data Warehouse) gebruikers accounts voor Multi-Factor Authentication en gast aanbieden binnen een Azure AD-domein. Als u al een on-premises Active Directory hebt, kunt u de adres lijst met Azure Active Directory om uw directory uit te breiden naar Azure.
+Azure AD biedt ondersteuning voor [Azure AD-multi-factor Authentication](authentication-mfa-ssms-overview.md) en met een [paar klikken](../../active-directory/hybrid/how-to-connect-install-express.md) Azure AD kan worden geïntegreerd met Windows Server Active Directory. SQL-verificatie werkt precies zoals u deze in het verleden hebt gebruikt. U geeft een gebruikers naam en wacht woord op en u kunt gebruikers verifiëren voor elke Data Base op een bepaalde server. Hierdoor kunnen SQL Database en Azure Synapse Analytics Multi-Factor Authentication-en gast gebruikers accounts binnen een Azure AD-domein aanbieden. Als u al een on-premises Active Directory hebt, kunt u de adres lijst met Azure Active Directory om uw directory uit te breiden naar Azure.
 
 |**Als u...**|**SQL Database/Azure Synapse Analytics**|
 |---|---|
@@ -169,7 +169,7 @@ Versleuteling biedt een sterk mechanisme om uw gevoelige gegevens van indringers
 In SQL Database zijn uw gegevens in de gegevens en logboek bestanden op het opslag subsysteem standaard volledig en altijd versleuteld via [transparent Data Encryption [TDe]](/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql). Uw back-ups worden ook versleuteld. Bij TDE zijn er geen wijzigingen vereist voor uw toepassings zijde die toegang tot deze gegevens heeft. De versleuteling en ontsleuteling gebeurt transparant; Daarom is dit de naam.
 Voor het beveiligen van uw gevoelige gegevens in-Flight en op rest, SQL Database een functie met de naam [Always encrypted (AE)](/sql/relational-databases/security/encryption/always-encrypted-database-engine)biedt. AE is een vorm van versleuteling aan de client zijde waarmee gevoelige kolommen in uw data base worden versleuteld (zodat ze in een gecodeerde tekst worden omgezet naar database beheerders en niet-gemachtigde gebruikers). De server ontvangt de versleutelde gegevens om te beginnen met. De sleutel voor Always Encrypted wordt ook opgeslagen aan de client zijde, zodat alleen geautoriseerde clients de gevoelige kolommen kunnen ontsleutelen. De server-en gegevens beheerders kunnen de gevoelige gegevens niet zien omdat de versleutelings sleutels zijn opgeslagen op de client. Met AE worden gevoelige kolommen in de tabel end-to-end versleuteld, van niet-geautoriseerde clients naar de fysieke schijf. AE ondersteunt vandaag nog gelijkheids vergelijkingen, zodat Dba's de versleutelde kolommen kan doorzoeken als onderdeel van hun SQL-opdrachten. Always Encrypted kan worden gebruikt met diverse opties voor sleutel opslag, zoals [Azure Key Vault](always-encrypted-azure-key-vault-configure.md), Windows-certificaat archief en lokale hardware security modules.
 
-|**Kenmerken**|**Altijd versleuteld**|**Transparante gegevensversleuteling**|
+|**Kenmerken**|**Altijd versleuteld**|**Transparent Data Encryption**|
 |---|---|---|
 |**Versleutelings bereik**|End-to-end|At-rest-gegevens|
 |**De server kan toegang krijgen tot gevoelige gegevens**|Nee|Ja, omdat versleuteling voor de Data-at-rest is|

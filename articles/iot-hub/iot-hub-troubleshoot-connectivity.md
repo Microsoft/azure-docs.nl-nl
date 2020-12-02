@@ -15,12 +15,12 @@ ms.custom:
 - 'Role: Technical Support'
 - fasttrack-edit
 - iot
-ms.openlocfilehash: b179bb3566cc19b8033a56348db34cd1f05cee10
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 81558526500f3c01e975d9a963b4a6a98ec6d753
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506393"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96446406"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-disconnects-with-azure-iot-hub"></a>De verbinding met Azure IoT Hub controleren, vaststellen en problemen oplossen
 
@@ -58,7 +58,7 @@ Bekijk de volgende onderwerpen voor meer informatie over het bewaken van verbind
 
 * Zie voor een zelf studie over het best Ellen van apparaat verbindings gebeurtenissen de [verbindings gebeurtenissen van het apparaat best Ellen van Azure IOT hub met behulp van Azure Cosmos DB](iot-hub-how-to-order-connection-state-events.md).
 
-* Voor een zelf studie over het verzenden van e-mail meldingen raadpleegt [u e-mail meldingen over Azure IOT hub-gebeurtenissen verzenden met behulp van Event grid en Logic apps](/azure/event-grid/publish-iot-hub-events-to-logic-apps) in de Event grid documentatie.
+* Voor een zelf studie over het verzenden van e-mail meldingen raadpleegt [u e-mail meldingen over Azure IOT hub-gebeurtenissen verzenden met behulp van Event grid en Logic apps](../event-grid/publish-iot-hub-events-to-logic-apps.md) in de Event grid documentatie.
 
 ## <a name="azure-monitor-route-connection-events-to-logs"></a>Azure Monitor: verbindings gebeurtenissen naar Logboeken routeren
 
@@ -94,7 +94,7 @@ Nadat u een diagnostische instelling hebt gemaakt om IoT Hub bron logboeken naar
 
 1. Selecteer **Logboeken** onder **bewaking** in het linkerdeel venster van uw IOT-hub.
 
-1. Als u verbindings fouten logboeken voor IoT Hub wilt isoleren, voert u de volgende query in de query-editor in en selecteert u vervolgens **uitvoeren** :
+1. Als u verbindings fouten logboeken voor IoT Hub wilt isoleren, voert u de volgende query in de query-editor in en selecteert u vervolgens **uitvoeren**:
 
     ```kusto
     AzureDiagnostics

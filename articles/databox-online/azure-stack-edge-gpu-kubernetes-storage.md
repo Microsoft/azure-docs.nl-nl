@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 08/27/2020
+ms.date: 11/04/2020
 ms.author: alkohli
-ms.openlocfilehash: ff2a473ca008e9b283d03ebb05f35122473d778a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 34165071238ca3edf78ab9cca43639c23ce5ed2a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90899275"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96448708"
 ---
 # <a name="kubernetes-storage-management-on-your-azure-stack-edge-pro-gpu-device"></a>Kubernetes-opslag beheer op uw Azure Stack Edge Pro GPU-apparaat
 
@@ -41,9 +41,9 @@ Om te begrijpen hoe opslag wordt beheerd voor Kubernetes, moet één inzicht heb
 
 Het inrichten van opslag kan statisch of dynamisch zijn. Elk van de inrichtings typen wordt beschreven in de volgende secties.
 
-## <a name="staticprovisioning"></a>Statische inrichting
+## <a name="static-provisioning"></a>Statische inrichting
 
-Kubernetes-cluster beheerders kunnen de opslag statisch inrichten. Hiertoe kunnen ze back-end gebruiken op basis van SMB/NFS-bestands systemen of gebruikmaken van iSCSI-schijven die lokaal worden gekoppeld via het netwerk in een on-premises omgeving, of zelfs Azure Files-of Azure-schijven in de Cloud gebruiken. Dit type opslag wordt standaard niet ingericht en cluster beheerders moeten deze inrichting plannen en beheren. 
+Kubernetes-clusterbeheerders kunnen de opslag statisch inrichten. Hiertoe kunnen ze back-end gebruiken op basis van SMB/NFS-bestands systemen of gebruikmaken van iSCSI-schijven die lokaal worden gekoppeld via het netwerk in een on-premises omgeving, of zelfs Azure Files-of Azure-schijven in de Cloud gebruiken. Dit type opslag wordt standaard niet ingericht en cluster beheerders moeten deze inrichting plannen en beheren. 
  
 Hier volgt een diagram waarin wordt getoond hoe statisch ingerichte opslag wordt verbruikt in Kubernetes: 
 
@@ -58,7 +58,7 @@ De volgende stappen worden uitgevoerd:
 1. **PVC koppelen aan de container**: zodra de PVC is gebonden aan de HW, kunt u dit PVC koppelen aan een pad in uw container. Wanneer de toepassings logica in de container van/naar dit pad wordt gelezen/geschreven, worden de gegevens naar de SMB-opslag geschreven.
  
 
-## <a name="dynamicprovisioning"></a>Dynamische inrichting
+## <a name="dynamic-provisioning"></a>Dynamische inrichting
 
 Hier volgt een diagram waarin wordt getoond hoe statisch ingerichte opslag wordt verbruikt in Kubernetes: 
 
@@ -104,6 +104,26 @@ spec:
 ```
 
 Zie [een stateful toepassing implementeren met behulp van statische inrichting op uw Azure stack Edge Pro via kubectl](azure-stack-edge-gpu-deploy-stateful-application-static-provision-kubernetes.md)voor meer informatie.
+
+Om toegang te krijgen tot dezelfde statisch ingerichte opslag, zijn de overeenkomstige opties voor volume koppeling voor opslag bindingen voor IoT als volgt. Het `/home/input` is het pad waar het volume toegankelijk is in de container.
+
+```
+{
+"HostConfig": {
+"Mounts": [
+{
+"Target": "/home/input",
+"Source": "<nfs-or-smb-share-name-here>",
+"Type": "volume"
+},
+{
+"Target": "/home/output",
+"Source": "<nfs-or-smb-share-name-here>",
+"Type": "volume"
+}]
+}
+}
+```
 
 Azure Stack Edge Pro heeft ook een ingebouwde `StorageClass` naam `ase-node-local` die gebruikmaakt van een opslag voor gegevens schijven die is gekoppeld aan het Kubernetes-knoop punt. Dit `StorageClass` biedt ondersteuning voor dynamische inrichting. U kunt een `StorageClass` verwijzing maken in de pod-toepassingen en een hw wordt automatisch voor u gemaakt. Zie het [Kubernetes-dash board](azure-stack-edge-gpu-monitor-kubernetes-dashboard.md) voor meer informatie `ase-node-local StorageClass` .
 

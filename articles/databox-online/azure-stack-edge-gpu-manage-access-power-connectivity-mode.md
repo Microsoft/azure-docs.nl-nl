@@ -6,18 +6,21 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 09/09/2020
+ms.date: 11/04/2020
 ms.author: alkohli
-ms.openlocfilehash: b66a184abce53c31fade19fc9e10ffe4c7ff8415
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 38dcb32b2993838f8c3f13334e0bc44e9146f113
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94532440"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96448636"
 ---
 # <a name="manage-access-power-and-connectivity-mode-for-your-azure-stack-edge-pro-gpu"></a>Toegang, kracht en connectiviteits modus beheren voor uw Azure Stack Edge Pro GPU
 
 In dit artikel wordt beschreven hoe u de modus toegang, kracht en connectiviteit beheert voor uw Azure Stack Edge Pro met GPU-apparaat. Deze bewerkingen worden uitgevoerd via de lokale webgebruikersinterface of de Azure Portal.
+
+Dit artikel is van toepassing op Azure Stack Edge Pro GPU, Azure Stack Edge Pro R en Azure Stack Edge mini-R-apparaten.
+
 
 In dit artikel leert u het volgende:
 
@@ -31,6 +34,8 @@ In dit artikel leert u het volgende:
 ## <a name="manage-device-access"></a>Apparaattoegang beheren
 
 De toegang tot uw Azure Stack Edge Pro-apparaat wordt bepaald door het gebruik van een wacht woord voor het apparaat. U kunt het wacht woord wijzigen via de lokale webgebruikersinterface. U kunt het wacht woord van het apparaat ook opnieuw instellen in de Azure Portal.
+
+De toegang tot gegevens op de schijven van het apparaat wordt ook bepaald door versleuteling-at-rest-sleutels.
 
 ### <a name="change-device-password"></a>Wachtwoord voor apparaat wijzigen
 
@@ -54,6 +59,40 @@ Voor de werk stroom opnieuw instellen is niet vereist dat de gebruiker het oude 
 
 2. Voer het nieuwe wacht woord in en bevestig het. Het opgegeven wacht woord moet tussen 8 en 16 tekens lang zijn. Het wacht woord moet drie van de volgende tekens bevatten: hoofd letters, kleine letters, cijfers en speciale tekens. Selecteer **Opnieuw instellen**.
 
+    ![Wacht woord 2 opnieuw instellen](media/azure-stack-edge-manage-access-power-connectivity-mode/reset-password-2.png)
+
+### <a name="manage-access-to-device-data"></a>Toegang tot apparaatgegevens beheren
+
+Voor de Azure Stack Edge Pro R-en Azure Stack Edge mini R-apparaten wordt de toegang tot apparaatgegevens bepaald met behulp van versleuteling-at-rest-sleutels voor de stations van het apparaat. Nadat u het apparaat voor versleuteling-op-rest hebt geconfigureerd, wordt de optie versleutelings-op-rest sleutels beschikbaar gemaakt in de lokale gebruikers interface van het apparaat. 
+
+Met deze bewerking kunt u de sleutels voor BitLocker-volumes `HcsData` en `HcsInternal` alle zelf versleutelde stations op het apparaat wijzigen.
+
+Volg deze stappen om de sleutels voor versleuteling op rest te draaien.
+
+1. Ga in de lokale gebruikers interface van het apparaat naar de pagina **aan de slag** . Op de tegel **beveiliging** selecteert u **versleuteling-at-rest: de optie sleutels draaien** . Deze optie is alleen beschikbaar nadat u de sleutels voor versleuteling op rest hebt geconfigureerd.
+
+    ![Selecteer sleutels draaien voor versleuteling-at-rest op de pagina aan de slag](media/azure-stack-edge-gpu-manage-access-power-connectivity-mode/rotate-encryption-keys-1.png)
+
+1. U kunt uw eigen BitLocker-sleutels gebruiken of de door het systeem gegenereerde sleutels gebruiken.  
+
+    Als u uw eigen sleutel wilt opgeven, voert u een teken reeks met een lange basis-64-code van 32 tekens in. De invoer is vergelijkbaar met wat u zou doen wanneer u de versleuteling voor de eerste keer configureert.
+
+    ![Uw eigen code ring-at-rest-sleutel nemen](media/azure-stack-edge-gpu-manage-access-power-connectivity-mode/rotate-encryption-keys-2.png)
+
+    U kunt er ook voor kiezen om een door het systeem gegenereerde sleutel te gebruiken.
+
+    ![Door het systeem gegenereerde versleuteling-at-rest-sleutel gebruiken](media/azure-stack-edge-gpu-manage-access-power-connectivity-mode/rotate-encryption-keys-3.png)
+
+1. Selecteer **Toepassen**. De sleutel beveiligingen worden gedraaid.
+
+    ![De nieuwe sleutel voor versleuteling op rest Toep assen](media/azure-stack-edge-gpu-manage-access-power-connectivity-mode/rotate-encryption-keys-4.png)
+
+1. Wanneer u wordt gevraagd het sleutel bestand te downloaden en op te slaan, selecteert u **downloaden en door gaan**. 
+
+    ![Het sleutel bestand downloaden en voortzetten](media/azure-stack-edge-gpu-manage-access-power-connectivity-mode/rotate-encryption-keys-5.png)
+
+    Sla het `.json` sleutel bestand op een veilige locatie op. Dit bestand wordt gebruikt om een potentieel toekomstig herstel van het apparaat mogelijk te maken.
+
     ![Scherm afbeelding wordt weer gegeven in het dialoog venster wacht woord voor apparaat opnieuw instellen.](media/azure-stack-edge-manage-access-power-connectivity-mode/reset-password-2.png)
 
 ## <a name="manage-resource-access"></a>Toegang tot de bedrijfsresources
@@ -69,7 +108,7 @@ Bij het genereren van de activerings sleutel voor het Azure Stack Edge Pro-appar
 
 U moet toegang hebben `User` tot Active Directory Tenant als u dit moet kunnen doen `Read all directory objects` . U kunt geen gast gebruiker zijn omdat ze geen machtigingen hebben voor `Read all directory objects` . Als u een gast bent, worden de bewerkingen, zoals het genereren van een activerings sleutel, het maken van een share op uw Azure Stack Edge Pro-apparaat, het maken van een gebruiker, het configureren van de Edge Compute-functie, het opnieuw instellen van het wacht woord voor het apparaat, niet meer uitgevoerd.
 
-Zie [Microsoft Graph permissions Reference](https://docs.microsoft.com/graph/permissions-reference)(Engelstalig) voor meer informatie over het verlenen van toegang aan gebruikers om de API te Microsoft Graph.
+Zie [Microsoft Graph permissions Reference](/graph/permissions-reference)(Engelstalig) voor meer informatie over het verlenen van toegang aan gebruikers om de API te Microsoft Graph.
 
 ### <a name="register-resource-providers"></a>Resourceprovider registreren
 
@@ -115,7 +154,7 @@ Naast de standaard modus volledig verbonden, kan het apparaat ook worden uitgevo
 Voer de volgende stappen uit om de modus apparaat te wijzigen:
 
 1. Ga in de lokale web-UI van uw apparaat naar **configuratie > Cloud**.
-2. Selecteer in de vervolg keuzelijst de modus waarin u het apparaat wilt bedienen. U kunt een **volledig verbonden** , **gedeeltelijk verbonden** en **volledig losgekoppelde** selectie selecteren. Als u het apparaat wilt uitvoeren in een gedeeltelijk niet-verbonden modus, schakelt u **Azure Portal-beheer** in.
+2. Selecteer in de vervolg keuzelijst de modus waarin u het apparaat wilt bedienen. U kunt een **volledig verbonden**, **gedeeltelijk verbonden** en **volledig losgekoppelde** selectie selecteren. Als u het apparaat wilt uitvoeren in een gedeeltelijk niet-verbonden modus, schakelt u **Azure Portal-beheer** in.
 
  
 ## <a name="manage-power"></a>Energie beheren

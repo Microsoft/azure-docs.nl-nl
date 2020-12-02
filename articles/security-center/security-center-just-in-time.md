@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 07/12/2020
 ms.author: memildin
-ms.openlocfilehash: 9a01dabbd0a3e9d76caaead544be655b9505030d
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 55e9d2d1af863084b080c2de7833712413221050
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289208"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96445639"
 ---
 # <a name="secure-your-management-ports-with-just-in-time-access"></a>Beheerpoorten beveiligen met just-in-time-toegang
 
@@ -89,9 +89,9 @@ Vanuit Security Center kunt u de JIT-VM-toegang inschakelen en configureren.
 
     Voor elke poort (aangepast en standaard) wordt in het deel venster **poort configuratie toevoegen** de volgende opties geboden:
 
-    - **Protocol** -het protocol dat is toegestaan op deze poort wanneer een aanvraag wordt goedgekeurd
-    - **Toegestane bron-ip's** -de IP-bereiken die op deze poort zijn toegestaan wanneer een aanvraag wordt goedgekeurd
-    - **Maximale aanvraag tijd** : de maximale tijd van het venster voor het openen van een specifieke poort
+    - **Protocol**-het protocol dat is toegestaan op deze poort wanneer een aanvraag wordt goedgekeurd
+    - **Toegestane bron-ip's**-de IP-bereiken die op deze poort zijn toegestaan wanneer een aanvraag wordt goedgekeurd
+    - **Maximale aanvraag tijd**: de maximale tijd van het venster voor het openen van een specifieke poort
 
      1. Stel de poort beveiliging in op uw behoeften.
 
@@ -300,7 +300,7 @@ Voer het volgende uit in Power shell:
 
     ```azurepowershell
     $JitPolicyVm1 = (@{
-        id="/SUBSCRIPTIONID/resourceGroups/RESOURCEGROUP/providers/Microsoft.Compute/virtualMachines/VMNAME";
+        id="/subscriptions/SUBSCRIPTIONID/resourceGroups/RESOURCEGROUP/providers/Microsoft.Compute/virtualMachines/VMNAME";
         ports=(@{
            number=22;
            endTimeUtc="2020-07-15T17:00:00.3658798Z";

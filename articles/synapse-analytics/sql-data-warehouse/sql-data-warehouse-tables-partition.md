@@ -11,12 +11,12 @@ ms.date: 03/18/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 39a1f41d97b1f4576d5877e4f35c99b3e189e3b2
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: f65c1d6fda09d7762a59fb5a932a72ad706a767a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93314512"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96448019"
 ---
 # <a name="partitioning-tables-in-dedicated-sql-pool"></a>Partitioneren van tabellen in toegewezen SQL-groep
 
@@ -30,7 +30,7 @@ Partitioneren kan gebruikmaken van gegevens onderhoud en query prestaties. Of de
 
 ### <a name="benefits-to-loads"></a>Te laden voor delen
 
-Het belangrijkste voor deel van partitionering in een toegewezen SQL-groep is het verbeteren van de efficiëntie en prestaties van het laden van gegevens door het gebruik van het verwijderen van partities, scha kelen en samen voegen. In de meeste gevallen worden gegevens gepartitioneerd in een datum kolom die nauw is verbonden met de volg orde waarin de gegevens in de-Data Base worden geladen. Een van de grootste voor delen van het gebruik van partities voor het onderhouden van gegevens is het vermijden van transactie logboek registratie. Hoewel het eenvoudig is om gegevens in te voegen, bij te werken of te verwijderen, kan dit de eenvoudigste benadering zijn, met een beetje goed en moeite, met partitioneren tijdens het laad proces en de prestaties aanzienlijk kunnen verbeteren.
+Het belangrijkste voor deel van partitionering in een toegewezen SQL-groep is het verbeteren van de efficiëntie en prestaties van het laden van gegevens door het gebruik van het verwijderen van partities, scha kelen en samen voegen. In de meeste gevallen worden gegevens gepartitioneerd in een datum kolom die nauw is verbonden met de volg orde waarin de gegevens in de SQL-groep worden geladen. Een van de grootste voor delen van het gebruik van partities voor het onderhouden van gegevens is het vermijden van transactie logboek registratie. Hoewel het eenvoudig is om gegevens in te voegen, bij te werken of te verwijderen, kan dit de eenvoudigste benadering zijn, met een beetje goed en moeite, met partitioneren tijdens het laad proces en de prestaties aanzienlijk kunnen verbeteren.
 
 Het wisselen van partities kan worden gebruikt om een sectie van een tabel snel te verwijderen of te vervangen.  Een tabel met verkoop feiten kan bijvoorbeeld alleen gegevens bevatten over de afgelopen 36 maanden. Aan het einde van elke maand worden de oudste verkoop gegevens uit de tabel verwijderd.  Deze gegevens kunnen worden verwijderd met behulp van een instructie DELETE om de gegevens voor de oudste maand te verwijderen. 
 
@@ -355,7 +355,7 @@ Als u wilt voor komen dat uw tabel wordt **geroestd** in uw broncode beheer syst
     DROP TABLE #partitions;
     ```
 
-Met deze methode blijft de code in broncode beheer statisch en kunnen de grens waarden voor partitioneren dynamisch zijn. na verloop van tijd in ontwikkeling met de data base.
+Met deze methode blijft de code in broncode beheer statisch en kunnen de grens waarden voor partitioneren dynamisch zijn. in de loop van de tijd met het ontwikkelen van de SQL-groep.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -1,6 +1,6 @@
 ---
-title: Architectuur van Azure Synapse Analytics (voorheen SQL DW)
-description: Meer informatie over hoe Azure Synapse Analytics (voorheen SQL DW) gedistribueerde mogelijkheden voor verwerking van query's combineert met Azure Storage om hoge prestaties en schaal baarheid te garanderen.
+title: De architectuur van de exclusieve SQL-groep (voorheen SQL DW)
+description: Meer informatie over hoe toegewezen SQL-pool (voorheen SQL DW) in azure Synapse Analytics combineert verwerkings mogelijkheden voor gedistribueerde query's met Azure Storage om hoge prestaties en schaal baarheid te garanderen.
 services: synapse-analytics
 author: mlee3gsd
 manager: craigg
@@ -10,49 +10,44 @@ ms.subservice: sql-dw
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 1d32aa011e9e816f97b050d43f9558af0cf82e90
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 45c7f89f773095a102429c07f7441223de3c2dec
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93319659"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96448253"
 ---
-# <a name="azure-synapse-analytics-formerly-sql-dw-architecture"></a>Architectuur van Azure Synapse Analytics (voorheen SQL DW)
+# <a name="dedicated-sql-pool-formerly-sql-dw-architecture-in-azure-synapse-analytics"></a>Exclusieve architectuur van een SQL-groep (voorheen SQL DW) in azure Synapse Analytics
 
-Azure Synapse is een oneindige analyseservice die bedrijfsgegevensopslag en big data-analyses combineert. Deze geeft u de vrijheid om op schaal gegevens op te vragen over uw voorwaarden, met behulp van serverloze on-demand of ingerichte resources. Azure Synapse brengt deze twee werelden samen met een uniforme ervaring om gegevens op te nemen, voor te bereiden, te beheren en te leveren voor directe BI- en machine learning-behoeften.
+Azure Synapse Analytics is een analyseservice die datawarehousing voor ondernemingen en big data-analyses combineert. Het biedt u de vrijheid om gegevens op basis van uw voor waarden op te vragen.
 
- Azure Synapse heeft vier onderdelen:
+> [!NOTE]
+>Verken de [Azure Synapse Analytics-documentatie](../overview-what-is.md).
+>
 
-- Synapse SQL: op T-SQL gebaseerde analyses volt ooien
-
-  - Toegewezen SQL-groep (betalen per DWU ingericht): algemeen beschikbaar
-  - Serverloze SQL-groep (betalen per TB verwerkte) – (preview-versie)
-- Spark: diep geïntegreerde Apache Spark (preview-versie)
-- Gegevens integratie: hybride gegevens integratie (preview-versie)
-- Studio: uniforme gebruikers ervaring.  (Preview)
 
 > [!VIDEO https://www.youtube.com/embed/PlyQ8yOb8kc]
 
 ## <a name="synapse-sql-architecture-components"></a>Synapse SQL-architectuur onderdelen
 
-[Synapse SQL](sql-data-warehouse-overview-what-is.md#dedicated-sql-pool-in-azure-synapse) maakt gebruik van een scale-out architectuur voor het distribueren van reken kundige verwerking van gegevens over meerdere knoop punten. De schaal eenheid is een abstractie van reken kracht die wordt aangeduid als [Data Warehouse-eenheid](what-is-a-data-warehouse-unit-dwu-cdwu.md). Compute staat los van de opslag, waarmee u de reken kracht onafhankelijk van de gegevens in uw systeem kunt schalen.
+Een [toegewezen SQL-groep (voorheen SQL DW)](sql-data-warehouse-overview-what-is.md) maakt gebruik van een scale-out architectuur voor het distribueren van reken processen van gegevens over meerdere knoop punten. De schaal eenheid is een abstractie van reken kracht die wordt aangeduid als [Data Warehouse-eenheid](what-is-a-data-warehouse-unit-dwu-cdwu.md). Compute staat los van de opslag, waarmee u de reken kracht onafhankelijk van de gegevens in uw systeem kunt schalen.
 
-![Synapse SQL-architectuur](./media/massively-parallel-processing-mpp-architecture/massively-parallel-processing-mpp-architecture.png)
+![De architectuur van de exclusieve SQL-groep (voorheen SQL DW)](./media/massively-parallel-processing-mpp-architecture/massively-parallel-processing-mpp-architecture.png)
 
-Synapse SQL maakt gebruik van een architectuur op basis van een knoop punt. Toepassingen maken verbinding met T-SQL-opdrachten en geven ze aan een besturings element knoop punt. Dit is het enige invoer punt voor Synapse SQL. Het controle knooppunt fungeert als host voor de gedistribueerde query-engine, waarmee query's voor parallelle verwerking worden geoptimaliseerd. vervolgens worden bewerkingen aan reken knooppunten door gegeven om hun werk parallel uit te voeren.
+Een toegewezen SQL-groep (voorheen SQL DW) maakt gebruik van een architectuur op basis van een knoop punt. Toepassingen maken verbinding met T-SQL-opdrachten en geven ze een besturings element. Het controle knooppunt fungeert als host voor de gedistribueerde query-engine, waarmee query's voor parallelle verwerking worden geoptimaliseerd. vervolgens worden bewerkingen aan reken knooppunten door gegeven om hun werk parallel uit te voeren.
 
 De rekenknooppunten slaan alle gebruikersgegevens op in Azure Storage en voeren de parallelle query's uit. De DMS (Data Movement Service) is een interne service op systeemniveau die de gegevens naar de knooppunten verplaatst om tegelijkertijd query's te kunnen uitvoeren en nauwkeurige resultaten te retourneren.
 
-Bij gebruik van een ontkoppelde opslag en reken kracht kunt u met Synapse SQL pool One het volgende doen:
+Bij het gebruik van een toegewezen SQL-groep (voorheen SQL DW) kan een exclusieve opslag en reken kracht worden gebruikt:
 
 - Reken kracht onafhankelijk van de grootte van uw opslag behoeften.
-- De reken kracht binnen een SQL-groep (Data Warehouse) verg Roten of verkleinen zonder gegevens te verplaatsen.
+- Verg root of verklein reken kracht binnen een toegewezen SQL-groep (voorheen SQL DW) zonder gegevens te hoeven verplaatsen.
 - De rekencapaciteit onderbreekt terwijl gegevens intact blijven, zodat u alleen betaalt voor opslag.
 - De rekencapaciteit hervat tijdens werktijden.
 
 ### <a name="azure-storage"></a>Azure Storage
 
-Synapse SQL maakt gebruik van Azure Storage om uw gebruikers gegevens veilig te maken.  Omdat uw gegevens worden opgeslagen en beheerd door Azure Storage, worden er afzonderlijke kosten in rekening gebracht voor uw opslag verbruik. De gegevens worden in **distributies** Shard om de prestaties van het systeem te optimaliseren. U kunt kiezen welk sharding-patroon u wilt gebruiken om de gegevens te distribueren wanneer u de tabel definieert. Deze sharding-patronen worden ondersteund:
+De exclusieve SQL-groep SQL (voorheen SQL DW) maakt gebruik van Azure Storage om uw gebruikers gegevens veilig te maken.  Omdat uw gegevens worden opgeslagen en beheerd door Azure Storage, worden er afzonderlijke kosten in rekening gebracht voor uw opslag verbruik. De gegevens worden in **distributies** Shard om de prestaties van het systeem te optimaliseren. U kunt kiezen welk sharding-patroon u wilt gebruiken om de gegevens te distribueren wanneer u de tabel definieert. Deze sharding-patronen worden ondersteund:
 
 - Hash
 - Round Robin
@@ -76,7 +71,7 @@ Gegevens verplaatsings service (DMS) is de gegevens transport technologie die de
 
 Een distributie is de basiseenheid voor opslag en verwerking van parallelle query's die op gedistribueerde gegevens worden uitgevoerd. Wanneer Synapse SQL een query uitvoert, wordt het werk onderverdeeld in 60 kleinere query's die parallel worden uitgevoerd.
 
-Elk van de 60 kleinere query's worden uitgevoerd op een van de gegevens distributies. Elk Compute-knoop punt beheert een of meer van de 60-distributies. Een SQL-groep met maximale Compute-resources heeft één distributie per reken knooppunt. Een SQL-groep met minimale Compute-resources heeft alle distributies op één reken knooppunt.  
+Elk van de 60 kleinere query's worden uitgevoerd op een van de gegevens distributies. Elk Compute-knoop punt beheert een of meer van de 60-distributies. Een toegewezen SQL-groep (voorheen SQL DW) met een maximum reken resource heeft één distributie per reken knooppunt. Een toegewezen SQL-groep (voorheen SQL DW) met minimale Compute-resources heeft alle distributies op één reken knooppunt.  
 
 ## <a name="hash-distributed-tables"></a>Met hash gedistribueerde tabellen
 
@@ -112,7 +107,7 @@ In het onderstaande diagram ziet u een gerepliceerde tabel die in de cache wordt
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u een beetje weet over Azure Synapse, leert u hoe u snel [een SQL-groep maakt](create-data-warehouse-portal.md) en [voorbeeld gegevens laadt](load-data-from-azure-blob-storage-using-polybase.md). Als u niet bekend bent met Azure, kan de [Azure-woordenlijst](../../azure-glossary-cloud-terminology.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) handig zijn bij het opzoeken van nieuwe terminologie. Of Bekijk enkele van deze andere Azure Synapse-resources.  
+Nu u een beetje kent over Azure Synapse, leert u hoe u snel [een toegewezen SQL-groep (voorheen SQL DW) maakt](create-data-warehouse-portal.md) en [voorbeeld gegevens laadt](load-data-from-azure-blob-storage-using-polybase.md). Als u niet bekend bent met Azure, kan de [Azure-woordenlijst](../../azure-glossary-cloud-terminology.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) handig zijn bij het opzoeken van nieuwe terminologie. Of Bekijk enkele van deze andere Azure Synapse-resources.  
 
 - [Succesverhalen van klanten](https://azure.microsoft.com/case-studies/?service=sql-data-warehouse)
 - [Blogs](https://azure.microsoft.com/blog/tag/azure-sql-data-warehouse/)

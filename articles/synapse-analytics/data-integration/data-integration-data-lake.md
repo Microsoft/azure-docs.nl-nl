@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: daperlov
 ms.reviewer: jrasnick
-ms.openlocfilehash: f06777e559187a57bfe0625cde700f30fb636a2b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 495300d677d6d898bfc916e5115b801c815bd587
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95974456"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461487"
 ---
 # <a name="ingest-data-into-azure-data-lake-storage-gen2"></a>Gegevens opnemen in Azure Data Lake Storage Gen2 
 
@@ -67,9 +67,9 @@ In deze stap moet u de pijp lijn die u in de vorige stap hebt gepubliceerd hand 
 1. Selecteer op de werkbalk de optie **Trigger toevoegen** en selecteer vervolgens **Nu activeren**. Selecteer op de pagina **pijplijn uitvoering** de optie **volt ooien**.  
 1. Ga naar het tabblad **Controle** in de zijbalk aan de linkerkant. U ziet een pijplijn die wordt geactiveerd door een handmatige trigger. U kunt via de links in de kolom **Acties** details van de activiteiten bekijken en de pijplijn opnieuw uitvoeren.
 1. Selecteer de link **Uitvoeringen van activiteit weergeven** in de kolom **Acties** om de activiteituitvoeringen te zien die zijn gekoppeld aan de pijplijnuitvoering. Omdat er in dit voorbeeld slechts één activiteit is, ziet u slechts één vermelding in de lijst. Selecteer de link **Details** (pictogram van een bril) in de kolom **Acties** om details over de kopieerbewerking te zien. Selecteer de **pijp lijn wordt** aan de bovenkant uitgevoerd om terug te gaan naar de weer gave pijplijn uitvoeringen. Selecteer **Vernieuwen** om de weergave te vernieuwen.
-1. Controleer of uw gegevens correct zijn geschreven in de toegewezen SQL-groep.
+1. Controleer of uw gegevens correct zijn geschreven in de toegewezen SQL-pool.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie voor meer informatie over gegevens integratie voor Synapse Analytics de [opname van gegevens in een speciaal artikel voor een SQL-groep](data-integration-sql-pool.md) .
+Zie voor meer informatie over gegevens integratie voor Azure Synapse Analytics het [opnemen van gegevens in een specifiek artikel over een SQL-groep](data-integration-sql-pool.md) .

@@ -1,6 +1,6 @@
 ---
-title: Parquet-bestanden doorzoeken met serverloze SQL-pool (preview)
-description: In dit artikel leert u hoe u een query kunt uitvoeren op Parquet-bestanden met serverloze SQL-pool (preview).
+title: Parquet-bestanden doorzoeken met serverloze SQL-groep
+description: In dit artikel leert u hoe u een query kunt uitvoeren op Parquet-bestanden met serverloze SQL-pool.
 services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 97b34d85e4628c0ef01dd02d3a9be85da7f8291e
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 20bfbaeea48711a680877e4d5d8f618e84eb12d7
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685610"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462573"
 ---
-# <a name="query-parquet-files-using-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Een query uitvoeren op Parquet-bestanden met serverloze SQL-pool (preview) in azure Synapse Analytics
+# <a name="query-parquet-files-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Parquet-bestanden doorzoeken met serverloze SQL-pool in azure Synapse Analytics
 
-In dit artikel leert u hoe u een query schrijft met behulp van serverloze SQL-pool (preview) waarmee Parquet-bestanden worden gelezen.
+In dit artikel leert u hoe u een query schrijft met behulp van een serverloze SQL-groep die Parquet-bestanden gaat lezen.
 
 ## <a name="quickstart-example"></a>Quick start-voor beeld
 
@@ -38,8 +38,8 @@ from openrowset(
 Zorg ervoor dat u toegang tot dit bestand hebt. Als uw bestand is beveiligd met een SAS-sleutel of een aangepaste Azure-identiteit, moet u de [referentie voor het server niveau voor SQL-aanmelding](develop-storage-files-storage-access-control.md?tabs=shared-access-signature#server-scoped-credential)instellen.
 
 > [!IMPORTANT]
-> Zorg ervoor dat u een UTF-8-database sortering gebruikt (bijvoorbeeld `Latin1_General_100_CI_AS_SC_UTF8` ), omdat de teken reeks waarden in PARQUET-bestanden worden gecodeerd met UTF-8-code ring.
-> De tekst codering in het PARQUET-bestand en de sortering kunnen onverwachte conversie fouten tot gevolg hebben.
+> Zorg ervoor dat u een UTF-8-database sortering gebruikt, `Latin1_General_100_CI_AS_SC_UTF8` omdat de teken reeks waarden in PARQUET-bestanden worden gecodeerd met UTF-8-code ring.
+> Het verschil tussen de tekst codering in het PARQUET-bestand en de sortering kan onverwachte conversie fouten tot gevolg hebben.
 > U kunt eenvoudig de standaard sortering van de huidige data base wijzigen met behulp van de volgende T-SQL-instructie: `alter database current collate Latin1_General_100_CI_AI_SC_UTF8`
 
 ### <a name="data-source-usage"></a>Gebruik van gegevens bronnen

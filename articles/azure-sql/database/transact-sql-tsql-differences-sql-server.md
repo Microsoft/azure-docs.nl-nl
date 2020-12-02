@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 12/03/2018
-ms.openlocfilehash: 4fdbf3bf1d9f740654fa694de03315b876116429
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 1e286b2329cb98d580bbf64071ff8767db304a00
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92784878"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461885"
 ---
 # <a name="resolving-transact-sql-differences-during-migration-to-sql-database"></a>Verschillen in Transact-SQL oplossen tijdens de migratie naar SQL Database
 
@@ -45,7 +45,7 @@ De belangrijkste DDL-instructies (Data Definition Language) zijn beschikbaar, ma
 Naast Transact-SQL-instructies die betrekking hebben op de niet-ondersteunde functies die worden beschreven in [Azure SQL database functie vergelijking](features-comparison.md), worden de volgende instructies en groepen instructies niet ondersteund. Als dat het geval is, moet u, als uw data base wordt gemigreerd, gebruikmaken van een van de volgende functies, uw T-SQL opnieuw bezorgen om deze T-SQL-functies en-instructies te elimineren.
 
 - Systeemobjecten sorteren
-- Gerelateerde verbinding: endpoint-instructies. SQL Database biedt geen ondersteuning voor Windows-verificatie, maar biedt wel ondersteuning voor vergelijk bare Azure Active Directory-verificatie. Voor sommige verificatietypen is de nieuwste versie van SSMS vereist. Zie [verbinding maken met SQL database of Azure Azure Synapse Analytics (voorheen SQL Data Warehouse) met behulp van Azure Active Directory-verificatie](authentication-aad-overview.md)voor meer informatie.
+- Gerelateerde verbinding: endpoint-instructies. SQL Database biedt geen ondersteuning voor Windows-verificatie, maar biedt wel ondersteuning voor vergelijk bare Azure Active Directory-verificatie. Voor sommige verificatietypen is de nieuwste versie van SSMS vereist. Zie [verbinding maken met SQL database of Azure Azure Synapse Analytics met behulp van Azure Active Directory-verificatie](authentication-aad-overview.md)voor meer informatie.
 - Databaseoverschrijdende query’s met drie of vier onderdeelnamen. (Alleen-lezen query’s die databaseoverschrijdend zijn worden ondersteund dankzij [elastische databasequery’s](elastic-query-overview.md).)
 - Databaseoverschrijdend het eigendom koppelen, instelling `TRUSTWORTHY`
 - `EXECUTE AS LOGIN` Gebruik in plaats daarvan 'EXECUTE AS USER'.
@@ -82,7 +82,7 @@ Zie [Naslaginformatie voor Transact-SQL (database-engine)](/sql/t-sql/language-r
 
 ### <a name="about-the-applies-to-tags"></a>Over het label 'Van toepassing op'
 
-De Transact-SQL-Naslag informatie bevat artikelen die betrekking hebben op SQL Server versies 2008 van de huidige versie. Onder de titel van het artikel ziet u een pictogram balk met de vier SQL Server-platformen en de betreffende toepas baarheid. Beschikbaarheidsgroepen zijn bijvoorbeeld geïntroduceerd in SQL Server 2012. In het artikel [beschikbaarheids groep maken](/sql/t-sql/statements/create-availability-group-transact-sql) wordt aangegeven dat de instructie van toepassing is op **SQL Server (te beginnen met 2012)** . De instructie is niet van toepassing op SQL Server 2008, SQL Server 2008 R2, Azure SQL Database, Azure Azure Synapse Analytics (voorheen SQL Data Warehouse) of parallel data warehouse.
+De Transact-SQL-Naslag informatie bevat artikelen die betrekking hebben op SQL Server versies 2008 van de huidige versie. Onder de titel van het artikel ziet u een pictogram balk met de vier SQL Server-platformen en de betreffende toepas baarheid. Beschikbaarheidsgroepen zijn bijvoorbeeld geïntroduceerd in SQL Server 2012. In het artikel [beschikbaarheids groep maken](/sql/t-sql/statements/create-availability-group-transact-sql) wordt aangegeven dat de instructie van toepassing is op **SQL Server (te beginnen met 2012)**. De instructie is niet van toepassing op SQL Server 2008, SQL Server 2008 R2, Azure SQL Database, Azure Azure Synapse Analytics of parallel data warehouse.
 
 In sommige gevallen kan het algemene onderwerp van een artikel in een product worden gebruikt, maar er zijn kleine verschillen tussen producten. De verschillen worden als toepasselijk aangegeven op middel punt in het artikel. In sommige gevallen kan het algemene onderwerp van een artikel in een product worden gebruikt, maar er zijn kleine verschillen tussen producten. De verschillen worden als toepasselijk aangegeven op middel punt in het artikel. Het artikel TRIGGER maken is bijvoorbeeld beschikbaar in SQL Database. Maar de optie **alle server** voor triggers op server niveau geeft aan dat triggers op server niveau niet kunnen worden gebruikt in SQL database. Gebruik in plaats daarvan triggers op database niveau.
 

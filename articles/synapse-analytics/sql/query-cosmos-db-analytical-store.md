@@ -9,14 +9,18 @@ ms.subservice: sql
 ms.date: 09/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: eda05cbdf2f5b077fd6cf217a00cc58b1c6eda27
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 439337233e24dfcae2c8c911a9224fd3394d6846
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94986637"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462699"
 ---
 # <a name="query-azure-cosmos-db-data-with-a-serverless-sql-pool-in-azure-synapse-link-preview"></a>Azure Cosmos DB gegevens opvragen met een serverloze SQL-groep in azure Synapse link preview
+
+> [!IMPORTANT]
+> Er is momenteel een preview-versie van serverloze SQL-groeps ondersteuning voor de Azure Synapse-koppeling voor de Azure Cosmos DB. Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Zie voor meer informatie [aanvullende gebruiks voorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
 
 Met een serverloze SQL-pool kunt u gegevens in uw Azure Cosmos DB containers die in bijna realtime zijn ingeschakeld, analyseren zonder dat dit van invloed [is op de](../../cosmos-db/synapse-link.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) prestaties van uw transactionele werk belastingen. Het biedt een bekende T-SQL-syntaxis voor het opvragen van gegevens uit de [analytische opslag](../../cosmos-db/analytical-store-introduction.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) en de geïntegreerde connectiviteit met een breed scala aan Business Intelligence (BI) en ad-hoc query Programma's via de T-SQL-interface.
 
@@ -258,7 +262,7 @@ Azure Cosmos DB-accounts van de SQL-API (core) ondersteunen JSON-eigenschaps typ
 
 | Azure Cosmos DB eigenschaps type | SQL-kolom Type |
 | --- | --- |
-| Booleaans | bit |
+| Boolean | bit |
 | Geheel getal | bigint |
 | Decimaal | float |
 | Tekenreeks | varchar (UTF-8-database sortering) |

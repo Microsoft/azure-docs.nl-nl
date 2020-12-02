@@ -9,12 +9,12 @@ ms.date: 10/08/2020
 ms.author: tamram
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 2eed5a8ad783d325ef040b3a358e80a6517f08e8
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 9638d4f8a44b044bb02d3f77d259860128d2e9db
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92783637"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462242"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Firewalls en virtuele netwerken voor Azure Storage configureren
 
@@ -64,9 +64,9 @@ U kunt de standaard regels voor netwerk toegang voor opslag accounts beheren via
 
 1. Ga naar het opslagaccount dat u wilt beveiligen.
 
-1. Klik op het menu instellingen met de naam **firewalls en virtuele netwerken** .
+1. Klik op het menu instellingen met de naam **firewalls en virtuele netwerken**.
 
-1. Als u de toegang standaard wilt weigeren, kiest u toegang vanaf **geselecteerde netwerken** toestaan. Als u verkeer van alle netwerken wilt toestaan, verleent u toegang vanaf **Alle netwerken** .
+1. Als u de toegang standaard wilt weigeren, kiest u toegang vanaf **geselecteerde netwerken** toestaan. Als u verkeer van alle netwerken wilt toestaan, verleent u toegang vanaf **Alle netwerken**.
 
 1. Klik op **Opslaan** om uw wijzigingen toe te passen.
 
@@ -148,18 +148,18 @@ U kunt regels voor virtuele netwerken voor opslag accounts beheren via de Azure 
 
 1. Ga naar het opslagaccount dat u wilt beveiligen.
 
-1. Klik op het menu instellingen met de naam **firewalls en virtuele netwerken** .
+1. Klik op het menu instellingen met de naam **firewalls en virtuele netwerken**.
 
-1. Controleer of u hebt geselecteerd voor toegang tot **geselecteerde netwerken** .
+1. Controleer of u hebt geselecteerd voor toegang tot **geselecteerde netwerken**.
 
-1. Als u toegang wilt verlenen tot een virtueel netwerk met een nieuwe netwerk regel, klikt u onder **virtuele netwerken** op **bestaand virtueel netwerk toevoegen** , selecteert u **virtuele netwerken** en **subnetten** opties en klikt u vervolgens op **toevoegen** . Als u een nieuw virtueel netwerk wilt maken en toegang wilt verlenen, klikt u op **nieuw virtueel netwerk toevoegen** . Geef de benodigde informatie op voor het maken van het nieuwe virtuele netwerk en klik vervolgens op **maken** .
+1. Als u toegang wilt verlenen tot een virtueel netwerk met een nieuwe netwerk regel, klikt u onder **virtuele netwerken** op **bestaand virtueel netwerk toevoegen**, selecteert u **virtuele netwerken** en **subnetten** opties en klikt u vervolgens op **toevoegen**. Als u een nieuw virtueel netwerk wilt maken en toegang wilt verlenen, klikt u op **nieuw virtueel netwerk toevoegen**. Geef de benodigde informatie op voor het maken van het nieuwe virtuele netwerk en klik vervolgens op **maken**.
 
     > [!NOTE]
     > Als een service-eind punt voor Azure Storage niet eerder is geconfigureerd voor het geselecteerde virtuele netwerk en subnetten, kunt u deze configureren als onderdeel van deze bewerking.
     >
     > Momenteel worden alleen virtuele netwerken die deel uitmaken van dezelfde Azure Active Directory Tenant weer gegeven voor selectie tijdens het maken van de regel. Als u toegang wilt verlenen tot een subnet in een virtueel netwerk dat deel uitmaakt van een andere Tenant, gebruikt u Power shell, CLI of REST Api's.
 
-1. Als u een virtuele netwerk-of subnet-regel wilt verwijderen, klikt u op **...** om het context menu voor het virtuele netwerk of subnet te openen en klik op **verwijderen** .
+1. Als u een virtuele netwerk-of subnet-regel wilt verwijderen, klikt u op **...** om het context menu voor het virtuele netwerk of subnet te openen en klik op **verwijderen**.
 
 1. Klik op **Opslaan** om uw wijzigingen toe te passen.
 
@@ -241,12 +241,12 @@ U kunt regels voor virtuele netwerken voor opslag accounts beheren via de Azure 
 
 U kunt opslag accounts configureren om toegang toe te staan vanaf specifieke IP-adresbereiken voor het open bare Internet. Deze configuratie verleent toegang tot specifieke op internet gebaseerde services en on-premises netwerken en blokkeert algemeen Internet verkeer.
 
-Geef toegestane Internet adresbereiken op met behulp van [CIDR-notatie](https://tools.ietf.org/html/rfc4632) in de vorm *16.17.18.0/24* of als afzonderlijke IP-adressen, zoals *16.17.18.19* .
+Geef toegestane Internet adresbereiken op met behulp van [CIDR-notatie](https://tools.ietf.org/html/rfc4632) in de vorm *16.17.18.0/24* of als afzonderlijke IP-adressen, zoals *16.17.18.19*.
 
    > [!NOTE]
    > Kleine adresbereiken die gebruikmaken van de grootte van het voor voegsel/31 of/32, worden niet ondersteund. Deze bereiken moeten worden geconfigureerd met behulp van afzonderlijke IP-adres regels.
 
-IP-netwerk regels zijn alleen toegestaan voor **open bare Internet** -IP-adressen. IP-adresbereiken die zijn gereserveerd voor particuliere netwerken (zoals gedefinieerd in [RFC 1918](https://tools.ietf.org/html/rfc1918#section-3)) zijn niet toegestaan in IP-regels. Particuliere netwerken bevatten adressen die beginnen met _10. *_ , _172,16. *_  -  _172,31. *_ en _192,168. *_ .
+IP-netwerk regels zijn alleen toegestaan voor **open bare Internet** -IP-adressen. IP-adresbereiken die zijn gereserveerd voor particuliere netwerken (zoals gedefinieerd in [RFC 1918](https://tools.ietf.org/html/rfc1918#section-3)) zijn niet toegestaan in IP-regels. Particuliere netwerken bevatten adressen die beginnen met _10. *_, _172,16. *_  -  _172,31. *_ en _192,168. *_.
 
    > [!NOTE]
    > IP-netwerk regels hebben geen invloed op aanvragen die afkomstig zijn uit dezelfde Azure-regio als het opslag account. Gebruik [regels voor virtuele netwerken](#grant-access-from-a-virtual-network) om aanvragen van dezelfde regio toe te staan.
@@ -272,11 +272,11 @@ U kunt IP-netwerk regels voor opslag accounts beheren via de Azure Portal, Power
 
 1. Ga naar het opslagaccount dat u wilt beveiligen.
 
-1. Klik op het menu instellingen met de naam **firewalls en virtuele netwerken** .
+1. Klik op het menu instellingen met de naam **firewalls en virtuele netwerken**.
 
-1. Controleer of u hebt geselecteerd voor toegang tot **geselecteerde netwerken** .
+1. Controleer of u hebt geselecteerd voor toegang tot **geselecteerde netwerken**.
 
-1. Als u toegang tot een IP-adres bereik voor Internet wilt verlenen, voert u het adres bereik of het adres bereik (in CIDR-indeling) in onder **firewall**  >  **adressen** .
+1. Als u toegang tot een IP-adres bereik voor Internet wilt verlenen, voert u het adres bereik of het adres bereik (in CIDR-indeling) in onder **firewall**  >  **adressen**.
 
 1. Als u een IP-netwerk regel wilt verwijderen, klikt u op het prullenbak pictogram naast het adres bereik.
 
@@ -358,7 +358,7 @@ U kunt IP-netwerk regels voor opslag accounts beheren via de Azure Portal, Power
 
 ## <a name="exceptions"></a>Uitzonderingen
 
-Met netwerk regels kunt u een beveiligde omgeving maken voor verbindingen tussen uw toepassingen en uw gegevens voor de meeste scenario's. Sommige toepassingen zijn echter afhankelijk van Azure-Services die niet uniek kunnen worden geïsoleerd met de regels voor het virtuele netwerk of IP-adres. Maar dergelijke services moeten aan de opslag worden verleend om de functionaliteit van de volledige toepassing mogelijk te maken. In dergelijke situaties kunt u gebruikmaken van de * *_vertrouwde micro soft-Services toestaan..._* _ instelling om dergelijke services toegang te bieden tot uw gegevens, Logboeken of analyses.
+Met netwerk regels kunt u een beveiligde omgeving maken voor verbindingen tussen uw toepassingen en uw gegevens voor de meeste scenario's. Sommige toepassingen zijn echter afhankelijk van Azure-Services die niet uniek kunnen worden geïsoleerd met de regels voor het virtuele netwerk of IP-adres. Maar dergelijke services moeten aan de opslag worden verleend om de functionaliteit van de volledige toepassing mogelijk te maken. In dergelijke situaties kunt u gebruikmaken van de **_vertrouwde micro soft-Services toestaan..._* _ instelling om dergelijke services toegang te bieden tot uw gegevens, Logboeken of analyses.
 
 ### <a name="trusted-microsoft-services"></a>Vertrouwde micro soft-Services
 
@@ -393,13 +393,13 @@ Met de instelling **vertrouwde micro soft-Services toestaan...** kunt u ook een 
 | Azure Container Registry Tasks | Micro soft. ContainerRegistry/registers | ACR-taken hebben toegang tot opslag accounts tijdens het maken van container installatie kopieën. |
 | Azure Data Factory             | Micro soft. DataFactory/fabrieken        | Hiermee hebt u toegang tot opslag accounts via de ADF-runtime. |
 | Azure Data Share               | Microsoft.DataShare/accounts           | Hiermee wordt toegang tot opslag accounts via een gegevens share toegestaan. |
-| Azure IoT Hub                  | Micro soft. devices/IotHubs              | Hiermee kunnen gegevens van een IoT-hub worden geschreven naar de Blob-opslag. [Meer informatie](../../iot-hub/virtual-network-support.md#egress-connectivity-to-storage-account-endpoints-for-routing) |
+| Azure IoT Hub                  | Microsoft.Devices/IotHubs              | Hiermee kunnen gegevens van een IoT-hub worden geschreven naar de Blob-opslag. [Meer informatie](../../iot-hub/virtual-network-support.md#egress-connectivity-to-storage-account-endpoints-for-routing) |
 | Azure Logic Apps               | Microsoft.Logic/workflows              | Hiermee kunnen logische apps toegang krijgen tot opslag accounts. [Meer informatie](../../logic-apps/create-managed-service-identity.md#authenticate-access-with-managed-identity). |
 | Azure Machine Learning-service | Microsoft.MachineLearningServices      | Geautoriseerde Azure Machine Learning-werk ruimten schrijven experiment-uitvoer, modellen en logboeken naar Blob Storage en lezen de gegevens. [Meer informatie](../../machine-learning/how-to-network-security-overview.md#secure-the-workspace-and-associated-resources). | 
-| Azure Synapse Analytics (voorheen Azure SQL Data Warehouse)       | Microsoft.Sql                          | Staat het importeren en exporteren van gegevens uit specifieke SQL-data bases toe met behulp van de instructie COPY of poly base. [Meer informatie](../../azure-sql/database/vnet-service-endpoint-rule-overview.md). |
+| Azure Synapse Analytics       | Microsoft.Sql                          | Staat het importeren en exporteren van gegevens uit specifieke SQL-data bases toe met behulp van de instructie COPY of poly base. [Meer informatie](../../azure-sql/database/vnet-service-endpoint-rule-overview.md). |
 | Azure SQL Database       | Microsoft.Sql                          | Staat het [importeren](/sql/t-sql/statements/bulk-insert-transact-sql#f-importing-data-from-a-file-in-azure-blob-storage) van gegevens uit opslag accounts toe en het [schrijven](../../azure-sql/database/audit-write-storage-account-behind-vnet-firewall.md) van controle gegevens naar opslag accounts achter de firewall. |
 | Azure Stream Analytics         | Microsoft.StreamAnalytics             | Hiermee staat u toe dat gegevens van een streaming-taak naar de Blob-opslag worden geschreven. [Meer informatie](../../stream-analytics/blob-output-managed-identity.md). |
-| Azure Synapse Analytics        | Micro soft. Synapse/werk ruimten          | Hiermee schakelt u toegang tot gegevens in Azure Storage van Synapse Analytics. |
+| Azure Synapse Analytics        | Micro soft. Synapse/werk ruimten          | Hiermee schakelt u toegang tot gegevens in Azure Storage van Azure Synapse Analytics. |
 
 
 ### <a name="storage-analytics-data-access"></a>Opslag Analytics-gegevens toegang
@@ -414,9 +414,9 @@ U kunt netwerk regel uitzonderingen beheren via de Azure Portal, Power shell of 
 
 1. Ga naar het opslagaccount dat u wilt beveiligen.
 
-1. Klik op het menu instellingen met de naam **firewalls en virtuele netwerken** .
+1. Klik op het menu instellingen met de naam **firewalls en virtuele netwerken**.
 
-1. Controleer of u hebt geselecteerd voor toegang tot **geselecteerde netwerken** .
+1. Controleer of u hebt geselecteerd voor toegang tot **geselecteerde netwerken**.
 
 1. Selecteer onder **uitzonde ringen** de uitzonde ringen die u wilt verlenen.
 

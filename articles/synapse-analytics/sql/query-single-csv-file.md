@@ -1,6 +1,6 @@
 ---
-title: CSV-bestanden doorzoeken met serverloze SQL-groep (preview-versie)
-description: In dit artikel leert u hoe u met een serverloze SQL-groep (preview) een query kunt uitvoeren op enkelvoudige CSV-bestanden met verschillende bestands indelingen.
+title: CSV-bestanden doorzoeken met serverloze SQL-groep
+description: In dit artikel leert u hoe u met een serverloze SQL-groep een query kunt uitvoeren op enkelvoudige CSV-bestanden met verschillende bestands indelingen.
 services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 9faff6589466c7cbe78a11c283139acb72bce4bb
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: f2f0cdf307e91fb40c55d4a98139bad1a5eca886
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685644"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462587"
 ---
 # <a name="query-csv-files"></a>Query uitvoeren op CSV-bestanden
 
-In dit artikel leert u hoe u een query kunt uitvoeren op één CSV-bestand met serverloze SQL-groep (preview) in azure Synapse Analytics. CSV-bestanden hebben mogelijk verschillende indelingen: 
+In dit artikel leert u hoe u een query kunt uitvoeren op één CSV-bestand met serverloze SQL-groep in azure Synapse Analytics. CSV-bestanden hebben mogelijk verschillende indelingen: 
 
 - Met en zonder een veldnamenrij
 - Door komma's en tabs gescheiden waarden
@@ -48,7 +48,7 @@ Wordt `firstrow` gebruikt voor het overs laan van de eerste rij in het CSV-besta
 
 > [!IMPORTANT]
 > Als uw CSV-bestand UTF-8-tekens bevat, moet u ervoor zorgen dat u een UTF-8-database sortering gebruikt (bijvoorbeeld `Latin1_General_100_CI_AS_SC_UTF8` ).
-> De tekst codering in het bestand en de sortering kunnen onverwachte conversie fouten tot gevolg hebben.
+> Het verschil tussen tekst codering in het bestand en de sortering kan onverwachte conversie fouten tot gevolg hebben.
 > U kunt eenvoudig de standaard sortering van de huidige data base wijzigen met behulp van de volgende T-SQL-instructie: `alter database current collate Latin1_General_100_CI_AI_SC_UTF8`
 
 ### <a name="data-source-usage"></a>Gebruik van gegevens bronnen

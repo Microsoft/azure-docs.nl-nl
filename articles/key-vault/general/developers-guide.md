@@ -8,12 +8,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/05/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 596de459b888bb9973aca1c7d72f2f9e24c966eb
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 6fa9f5d86d3640bf3ae0233e7d6d8a00752f5b6d
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96013969"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460802"
 ---
 # <a name="azure-key-vault-developers-guide"></a>Gids voor Azure Key Vault-ontwikkelaars
 
@@ -120,7 +120,7 @@ De volgende artikelen en scenario's bevatten toepassingsspecifieke richt lijnen 
 - Certificaten implementeren op Vm's vanuit Key Vault- [Windows](../../virtual-machines/extensions/key-vault-windows.md), [Linux](../../virtual-machines/extensions/key-vault-linux.md) : een Cloud toepassing die wordt uitgevoerd in een VM in azure, heeft een certificaat nodig. Hoe krijgt u dit certificaat vandaag nog aan deze VM?
 - [Azure web app-certificaat implementeren via Key Vault](../../app-service/configure-ssl-certificate.md#import-a-certificate-from-key-vault)
 - Wijs een toegangs beleid toe ([cli](assign-access-policy-cli.md)  |  [Power shell](assign-access-policy-powershell.md)  |  -[Portal](assign-access-policy-portal.md)). 
-- Het [gebruik van Key Vault zacht verwijderen met CLI](soft-delete-cli.md) begeleidt u bij het gebruik en de levens cyclus van een sleutel kluis en verschillende sleutel kluis objecten waarvoor het zacht verwijderen is ingeschakeld.
+- Het [gebruik van Key Vault zacht verwijderen met CLI](./key-vault-recovery.md) begeleidt u bij het gebruik en de levens cyclus van een sleutel kluis en verschillende sleutel kluis objecten waarvoor het zacht verwijderen is ingeschakeld.
 - [Veilige waarden (zoals wacht woorden) door geven tijdens de implementatie](../../azure-resource-manager/templates/key-vault-parameter.md) : wanneer u tijdens de implementatie een beveiligde waarde (zoals een wacht woord) moet door geven als een para meter, kunt u die waarde opslaan als een geheim in een Azure Key Vault en naar de waarde in andere Resource Manager-sjablonen verwijzen.
 
 ## <a name="integrated-with-key-vault"></a>Geïntegreerd met Key Vault

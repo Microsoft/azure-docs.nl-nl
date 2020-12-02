@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 11/09/2020
 author: sayantanroy83
 ms.author: sroy
-ms.openlocfilehash: 9821cc8905caa9576662a192fc704c53b35af82d
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 878fa181ff09d547ef6594a238e9c1d883cc89b7
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94564868"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460488"
 ---
 # <a name="customers-dashboard-in-commercial-marketplace-analytics"></a>Dash board klanten in commerciële Marketplace-analyse
 
@@ -21,7 +21,7 @@ Dit artikel bevat informatie over het dash board klanten in partner centrum. Dit
 Voor toegang tot het dash board klanten in Partner Center, onder **commerciële Marketplace** , selecteert u **[Analyze](https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/summary)**  >  **klanten** analyseren.
 
 >[!NOTE]
-> Zie voor gedetailleerde definities van analyse terminologie [Commercial Marketplace Analytics terminologie en common questions](./partner-center-portal/faq-terminology.md)(Engelstalig).
+> Zie voor gedetailleerde definities van analyse terminologie [Commercial Marketplace Analytics terminologie en common questions](./analytics-faq.md)(Engelstalig).
 
 ## <a name="customers-dashboard"></a>Klantendashboard
 
@@ -58,7 +58,7 @@ In deze sectie vindt u de groei trend van uw klanten voor de geselecteerde reken
 
 [![Illustreert de widget klanten op de pagina klanten.](./media/customer-dashboard/customers-widget.png)](./media/customer-dashboard/customers-widget.png#lightbox)
 
-Er zijn drie _typen klanten_ : nieuw, bestaand en overlopend.
+Er zijn drie _typen klanten_: nieuw, bestaand en overlopend.
 
 - Een nieuwe klant heeft een of meer van uw aanbiedingen voor de eerste keer in de geselecteerde maand opgehaald.
 - Een bestaande klant heeft een of meer van uw aanbiedingen aangeschaft vóór de maand geselecteerd.
@@ -180,4 +180,4 @@ De pagina filters van de klant worden toegepast op het pagina niveau van de klan
 - Voor virtuele machine (VM) zijn metrische gegevens over gebruik en gefactureerde facturering, Zie [gebruiks dashboard in commerciële Marketplace-analyses](./usage-dashboard.md).
 - Zie [dash board downloaden in Commercial Marketplace Analytics](./partner-center-portal/downloads-dashboard.md)voor een lijst met Download aanvragen voor de afgelopen 30 dagen.
 - Zie [beoordeling & revisies Analytics dash board in partner centrum](./partner-center-portal/ratings-reviews.md)voor een geconsolideerde weer gave van feedback van klanten voor aanbiedingen op Azure Marketplace en Microsoft AppSource.
-- Zie voor veelgestelde vragen over de analyse van commerciële Marketplace en voor een uitgebreid woorden boek met informatie over de [terminologie van commerciële Marketplace en veelgestelde vragen](./partner-center-portal/faq-terminology.md).
+- Zie voor veelgestelde vragen over de analyse van commerciële Marketplace en voor een uitgebreid woorden boek met informatie over de [terminologie van commerciële Marketplace en veelgestelde vragen](./analytics-faq.md).

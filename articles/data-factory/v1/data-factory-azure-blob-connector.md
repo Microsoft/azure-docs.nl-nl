@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 01/05/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: a77a4808390f816bc3a6646520f4b542bee89d4c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: fa6e19fd9759d6e489d0945b5521a2e0ae3881e0
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96001723"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462648"
 ---
 # <a name="copy-data-to-or-from-azure-blob-storage-using-azure-data-factory"></a>Gegevens kopiëren naar of van Azure Blob Storage met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -31,7 +31,7 @@ ms.locfileid: "96001723"
 In dit artikel wordt uitgelegd hoe u de Kopieer activiteit in Azure Data Factory kunt gebruiken om gegevens te kopiëren van en naar Azure Blob Storage. Het is gebaseerd op het artikel [activiteiten voor gegevens verplaatsing](data-factory-data-movement-activities.md) , dat een algemeen overzicht geeft van de verplaatsing van gegevens met de Kopieer activiteit.
 
 ## <a name="overview"></a>Overzicht
-U kunt gegevens van elk ondersteund bron gegevens archief kopiëren naar Azure Blob Storage of van Azure Blob Storage naar elk ondersteund Sink-gegevens archief. De volgende tabel bevat een lijst met gegevens archieven die worden ondersteund als bronnen of sinks op basis van de Kopieer activiteit. U kunt bijvoorbeeld gegevens verplaatsen **van** een SQL Server Data Base of een data base in Azure SQL database **naar** een Azure Blob-opslag. En u kunt gegevens kopiëren **van** Azure Blob-opslag **naar** Azure Synapse Analytics (voorheen SQL Data Warehouse) of een Azure Cosmos DB-verzameling.
+U kunt gegevens van elk ondersteund bron gegevens archief kopiëren naar Azure Blob Storage of van Azure Blob Storage naar elk ondersteund Sink-gegevens archief. De volgende tabel bevat een lijst met gegevens archieven die worden ondersteund als bronnen of sinks op basis van de Kopieer activiteit. U kunt bijvoorbeeld gegevens verplaatsen **van** een SQL Server Data Base of een data base in Azure SQL database **naar** een Azure Blob-opslag. En u kunt gegevens kopiëren **van** Azure Blob-opslag **naar** Azure Synapse Analytics of een Azure Cosmos DB verzameling.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -83,11 +83,11 @@ De sectie **typeProperties** verschilt voor elk type gegevensset en bevat inform
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| folderPath |Pad naar de container en de map in de Blob-opslag. Voor beeld: myblobcontainer\myblobfolder\ |Yes |
-| fileName |De naam van de blob. Bestands naam is optioneel en hoofdletter gevoelig.<br/><br/>Als u een bestands naam opgeeft, werkt de activiteit (inclusief kopie) voor de specifieke blob.<br/><br/>Als er geen bestands naam is opgegeven, wordt met Copy alle blobs in de folderPath voor invoer gegevensset opgenomen.<br/><br/>Als er geen **Bestands naam** is opgegeven voor een uitvoer-gegevensset en **preserveHierarchy** niet is opgegeven in de activiteit sink, zou de naam van het gegenereerde bestand de volgende indeling hebben: `Data.<Guid>.txt` (bijvoorbeeld:: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt |No |
-| partitionedBy |partitionedBy is een optionele eigenschap. U kunt deze gebruiken om een dynamische folderPath en een bestands naam op te geven voor time series-gegevens. Zo kan folderPath voor elk uur aan gegevens worden para meters. Zie de [sectie partitionedBy eigenschap gebruiken](#using-partitionedby-property) voor meer informatie en voor beelden. |No |
-| indeling | De volgende indelings typen worden ondersteund: **TextFormat**, **JsonFormat**, **Avro Format**, **OrcFormat**, **ParquetFormat**. Stel de eigenschap **type** onder indeling in op een van deze waarden. Zie voor meer informatie secties [tekst indeling](data-factory-supported-file-and-compression-formats.md#text-format), [JSON-indeling](data-factory-supported-file-and-compression-formats.md#json-format), [Avro](data-factory-supported-file-and-compression-formats.md#avro-format)-indeling, [Orc-indeling](data-factory-supported-file-and-compression-formats.md#orc-format)en Parquet- [indeling](data-factory-supported-file-and-compression-formats.md#parquet-format) . <br><br> Als u bestanden wilt **kopiëren als-zich bevindt** tussen archieven op basis van bestanden (binaire kopie), slaat u de sectie indeling in de gegevensset voor invoer en uitvoer over. |No |
-| compressie | Geef het type en compressie niveau voor de gegevens op. Ondersteunde typen zijn: **gzip**, **Deflate**, **bzip2** en **ZipDeflate**. Ondersteunde niveaus zijn: **optimaal** en **snelst**. Zie [Bestands-en compressie-indelingen in azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support)voor meer informatie. |No |
+| folderPath |Pad naar de container en de map in de Blob-opslag. Voor beeld: myblobcontainer\myblobfolder\ |Ja |
+| fileName |De naam van de blob. Bestands naam is optioneel en hoofdletter gevoelig.<br/><br/>Als u een bestands naam opgeeft, werkt de activiteit (inclusief kopie) voor de specifieke blob.<br/><br/>Als er geen bestands naam is opgegeven, wordt met Copy alle blobs in de folderPath voor invoer gegevensset opgenomen.<br/><br/>Als er geen **Bestands naam** is opgegeven voor een uitvoer-gegevensset en **preserveHierarchy** niet is opgegeven in de activiteit sink, zou de naam van het gegenereerde bestand de volgende indeling hebben: `Data.<Guid>.txt` (bijvoorbeeld:: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt |Nee |
+| partitionedBy |partitionedBy is een optionele eigenschap. U kunt deze gebruiken om een dynamische folderPath en een bestands naam op te geven voor time series-gegevens. Zo kan folderPath voor elk uur aan gegevens worden para meters. Zie de [sectie partitionedBy eigenschap gebruiken](#using-partitionedby-property) voor meer informatie en voor beelden. |Nee |
+| indeling | De volgende indelings typen worden ondersteund: **TextFormat**, **JsonFormat**, **Avro Format**, **OrcFormat**, **ParquetFormat**. Stel de eigenschap **type** onder indeling in op een van deze waarden. Zie voor meer informatie secties [tekst indeling](data-factory-supported-file-and-compression-formats.md#text-format), [JSON-indeling](data-factory-supported-file-and-compression-formats.md#json-format), [Avro](data-factory-supported-file-and-compression-formats.md#avro-format)-indeling, [Orc-indeling](data-factory-supported-file-and-compression-formats.md#orc-format)en Parquet- [indeling](data-factory-supported-file-and-compression-formats.md#parquet-format) . <br><br> Als u bestanden wilt **kopiëren als-zich bevindt** tussen archieven op basis van bestanden (binaire kopie), slaat u de sectie indeling in de gegevensset voor invoer en uitvoer over. |Nee |
+| compressie | Geef het type en compressie niveau voor de gegevens op. Ondersteunde typen zijn: **gzip**, **Deflate**, **bzip2** en **ZipDeflate**. Ondersteunde niveaus zijn: **optimaal** en **snelst**. Zie [Bestands-en compressie-indelingen in azure Data Factory](data-factory-supported-file-and-compression-formats.md#compression-support)voor meer informatie. |Nee |
 
 ### <a name="using-partitionedby-property"></a>De eigenschap partitionedBy gebruiken
 Zoals vermeld in de vorige sectie, kunt u een dynamische folderPath en-bestands naam opgeven voor tijdreeks gegevens met de eigenschap **partitionedBy** , [Data Factory functies en de systeem variabelen](data-factory-functions-variables.md).
@@ -129,13 +129,13 @@ Zie het artikel [pijp lijnen maken](data-factory-create-pipelines.md) voor een v
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| recursieve |Geeft aan of de gegevens recursief worden gelezen uit de submappen of alleen vanuit de opgegeven map. |True (standaard waarde), False |No |
+| recursieve |Geeft aan of de gegevens recursief worden gelezen uit de submappen of alleen vanuit de opgegeven map. |True (standaard waarde), False |Nee |
 
 **BlobSink** ondersteunt de volgende eigenschappen **typeProperties** sectie:
 
 | Eigenschap | Beschrijving | Toegestane waarden | Vereist |
 | --- | --- | --- | --- |
-| copyBehavior |Hiermee wordt het Kopieer gedrag gedefinieerd wanneer de bron BlobSource of File System is. |<b>PreserveHierarchy</b>: behoudt de bestands hiërarchie in de doelmap. Het relatieve pad van het bron bestand naar de bronmap is identiek aan het relatieve pad van het doel bestand naar de doelmap.<br/><br/><b>FlattenHierarchy</b>: alle bestanden in de bronmap bevinden zich in het eerste niveau van de doelmap. De doel bestanden hebben een automatisch gegenereerde naam. <br/><br/><b>MergeFiles</b>: alle bestanden van de bronmap worden samengevoegd met één bestand. Als de naam van het bestand of de blob is opgegeven, is de naam van het samengevoegde bestand de opgegeven naam. anders wordt de bestands naam automatisch gegenereerd. |No |
+| copyBehavior |Hiermee wordt het Kopieer gedrag gedefinieerd wanneer de bron BlobSource of File System is. |<b>PreserveHierarchy</b>: behoudt de bestands hiërarchie in de doelmap. Het relatieve pad van het bron bestand naar de bronmap is identiek aan het relatieve pad van het doel bestand naar de doelmap.<br/><br/><b>FlattenHierarchy</b>: alle bestanden in de bronmap bevinden zich in het eerste niveau van de doelmap. De doel bestanden hebben een automatisch gegenereerde naam. <br/><br/><b>MergeFiles</b>: alle bestanden van de bronmap worden samengevoegd met één bestand. Als de naam van het bestand of de blob is opgegeven, is de naam van het samengevoegde bestand de opgegeven naam. anders wordt de bestands naam automatisch gegenereerd. |Nee |
 
 **BlobSource** ondersteunt ook deze twee eigenschappen voor achterwaartse compatibiliteit.
 

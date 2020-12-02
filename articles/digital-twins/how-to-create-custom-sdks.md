@@ -8,12 +8,12 @@ ms.date: 4/24/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: devx-track-js
-ms.openlocfilehash: 158d22ffb3bc5486e0523c07cc2c022c49f2ee9c
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: c1dbdc4761c107a8e5028a43ead9710d45526016
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93145596"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461180"
 ---
 # <a name="create-custom-sdks-for-azure-digital-twins-using-autorest"></a>Aangepaste Sdk's voor Azure Digital Apparaatdubbels maken met auto rest
 
@@ -47,7 +47,7 @@ Voer de volgende stappen uit om auto rest te gebruiken voor het Swagger-bestand 
 autorest --input-file=digitaltwins.json --<language> --output-folder=ADTApi --add-credentials --azure-arm --namespace=ADTApi
 ```
 
-Als gevolg hiervan ziet u een nieuwe map met de naam *ADTApi* in uw werkmap. De gegenereerde SDK-bestanden hebben de naam ruimte *ADTApi* . U kunt die naam ruimte blijven gebruiken via de rest van de voor beelden van het gebruik in dit artikel.
+Als gevolg hiervan ziet u een nieuwe map met de naam *ADTApi* in uw werkmap. De gegenereerde SDK-bestanden hebben de naam ruimte *ADTApi*. U kunt die naam ruimte blijven gebruiken via de rest van de voor beelden van het gebruik in dit artikel.
 
 Auto rest ondersteunt een breed scala aan taal code generators.
 
@@ -64,7 +64,7 @@ Dit zijn de stappen:
 3. Klik in Solution Explorer met de rechter muisknop op het *ADTApi* -project van de gegenereerde oplossing en kies *> bestaand item toevoegen...*
 4. Zoek de map waar u de SDK hebt gegenereerd en selecteer de bestanden op het hoofd niveau
 5. Klik op OK
-6. Voeg een map toe aan het project (Klik met de rechter muisknop op het project in Solution Explorer en kies *> nieuwe map toevoegen* )
+6. Voeg een map toe aan het project (Klik met de rechter muisknop op het project in Solution Explorer en kies *> nieuwe map toevoegen*)
 7. De mappen *modellen* een naam
 8. Klik met de rechter muisknop op de map *modellen* in Solutions Explorer en selecteer *> bestaand item toevoegen...*
 9. Selecteer de bestanden in de map *modellen* van de gegenereerde SDK en druk op OK
@@ -73,7 +73,7 @@ Als u de SDK wilt bouwen, moet uw project over de volgende verwijzingen beschikk
 * `Microsoft.Rest.ClientRuntime`
 * `Microsoft.Rest.ClientRuntime.Azure`
 
-Als u deze wilt toevoegen, opent u *Hulpprogram ma's > NuGet Package Manager > NuGet-pakketten beheren voor oplossing...* .
+Als u deze wilt toevoegen, opent u *Hulpprogram ma's > NuGet Package Manager > NuGet-pakketten beheren voor oplossing...*.
 
 1. Controleer in het deel venster of het tabblad *Bladeren* is geselecteerd
 2. Zoek naar *micro soft. rest*
@@ -102,7 +102,7 @@ Hier volgt een code fragment dat probeert een dubbele fout op te tellen en event
 ```csharp
 try
 {
-    await client.DigitalTwins.AddAsync(id, initData);
+    await client.CreateOrReplaceDigitalTwinAsync<BasicDigitalTwin>(id, initData);
     Console.WriteLine($"Created a twin successfully: {id}");
 }
 catch (ErrorResponseException e)

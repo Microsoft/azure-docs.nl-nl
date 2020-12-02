@@ -1,6 +1,6 @@
 ---
 title: Prestaties afstemmen door resultatensets op te slaan in de cache
-description: Overzicht van de cache functie voor resultaat sets voor Synapse SQL-pool in azure Synapse Analytics
+description: Overzicht van de cache functie voor het instellen van resultaten voor een toegewezen SQL-groep in azure Synapse Analytics
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 10/10/2019
 ms.author: xiaoyul
 ms.reviewer: nidejaco;
 ms.custom: azure-synapse
-ms.openlocfilehash: 933ec541e358f1839c1b4d24acd19e439ea26375
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 2b54277d0306244dc4ab6740fdd30e52668dd63c
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92541278"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460781"
 ---
 # <a name="performance-tuning-with-result-set-caching"></a>Prestaties afstemmen door resultatensets op te slaan in de cache
 
-Als de cache voor het instellen van de resultatenset is ingeschakeld, slaat Synapse SQL de query resultaten in de gebruikers database automatisch op voor herhaaldelijk gebruik.  Op deze manier kunnen volgende query's worden uitgevoerd om resultaten rechtstreeks uit de persistente cache te halen, zodat herberekening niet nodig is.   Caching van resultaten sets verbetert de query prestaties en vermindert het gebruik van reken resources.  Daarnaast gebruiken query's die in de cache opgeslagen resultaten zijn ingesteld geen gelijktijdigheids sleuven en worden dus niet met bestaande gelijktijdigheids limieten geteld. Voor de beveiliging hebben gebruikers alleen toegang tot de resultaten in de cache als ze dezelfde machtigingen voor gegevens toegang hebben als de gebruikers die de in de cache opgeslagen resultaten maken.  
+Als de cache voor het instellen van de resultatenset is ingeschakeld, slaat de toegewezen SQL-groep automatisch query resultaten in de gebruikers database op voor herhaaldelijk gebruik.  Op deze manier kunnen volgende query's worden uitgevoerd om resultaten rechtstreeks uit de persistente cache te halen, zodat herberekening niet nodig is.   Caching van resultaten sets verbetert de query prestaties en vermindert het gebruik van reken resources.  Daarnaast gebruiken query's die in de cache opgeslagen resultaten zijn ingesteld geen gelijktijdigheids sleuven en worden dus niet met bestaande gelijktijdigheids limieten geteld. Voor de beveiliging hebben gebruikers alleen toegang tot de resultaten in de cache als ze dezelfde machtigingen voor gegevens toegang hebben als de gebruikers die de in de cache opgeslagen resultaten maken.  
 
 ## <a name="key-commands"></a>Belangrijkste opdrachten
 
@@ -47,7 +47,7 @@ Zodra de caching van de resultatenset voor een Data Base is ingeschakeld, worden
 > - Als de gegevens in de volg orde van kolommen niet uniek zijn, is er geen garanteed voor rijen met dezelfde waarden in de volg orde van kolommen, ongeacht of cache voor het instellen van de resultatenset is ingeschakeld of uitgeschakeld.
 
 > [!IMPORTANT]
-> De bewerkingen voor het maken van een cache met resultaten en het ophalen van gegevens uit de cache vindt plaats op het knoop punt beheer van een exemplaar van een Synapse SQL-groep.
+> De bewerkingen voor het maken van een cache met resultaten en het ophalen van gegevens uit de cache vindt plaats op het knoop punt beheer van een toegewezen exemplaar van SQL-groep.
 > Wanneer het in cache plaatsen van de resultatenset is ingeschakeld, kan het uitvoeren van query's die een grote resultatenset retour neren (bijvoorbeeld >1GB), hoge vertraging veroorzaken op het beheer knooppunt en de algehele query respons op het exemplaar vertragen.  Deze query's worden vaak gebruikt tijdens het verkennen van gegevens of ETL-bewerkingen. Om te voor komen dat het controle knooppunt stressert en het prestatie probleem veroorzaakt, moeten gebruikers de resultatenset cache uitschakelen in de Data Base voordat deze typen query's worden uitgevoerd.  
 
 Voer deze query uit voor de tijd die nodig is voor de cache bewerkingen van de resultatenset voor een query:
@@ -85,7 +85,7 @@ WHERE request_id = <'Your_Query_Request_ID'>
 
 De maximale grootte van de cache voor de resultatenset is 1 TB per data base.  De resultaten in de cache worden automatisch ongeldig gemaakt wanneer de onderliggende query gegevens veranderen.  
 
-Het verwijderen van de cache wordt door Synapse SQL automatisch na deze planning beheerd:
+De verwijdering van de cache wordt beheerd door een toegewezen SQL-groep, waarbij automatisch de volgende planning wordt gemaakt:
 
 - Elke 48 uur als de resultatenset niet is gebruikt of ongeldig is gemaakt.
 - Wanneer de cache voor de resultatenset de maximum grootte nadert.

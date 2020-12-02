@@ -11,18 +11,18 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 12/14/2018
-ms.openlocfilehash: be3b82765f2f5268a75147e8e1ef6de34aeb8ff2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8d1ff372009c6158f2148847dd77126bcb4d189f
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89441065"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461232"
 ---
 # <a name="bulk-copy-from-a-database-with-a-control-table"></a>Bulksgewijs kopiëren van een Data Base met een controle tabel
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
-Als u gegevens van een Data Warehouse in Oracle Server, Netezza, Teradata of SQL Server naar Azure Synapse Analytics (voorheen SQL Data Warehouse) wilt kopiëren, moet u enorme hoeveel heden gegevens uit meerdere tabellen laden. Normaal gesp roken moeten de gegevens in elke tabel worden gepartitioneerd, zodat u rijen met meerdere threads parallel vanuit één tabel kunt laden. In dit artikel wordt een sjabloon beschreven voor gebruik in deze scenario's.
+Als u gegevens wilt kopiëren van een Data Warehouse in Oracle Server, Netezza, Teradata of SQL Server naar Azure Synapse Analytics, moet u grote hoeveel heden gegevens uit meerdere tabellen laden. Normaal gesp roken moeten de gegevens in elke tabel worden gepartitioneerd, zodat u rijen met meerdere threads parallel vanuit één tabel kunt laden. In dit artikel wordt een sjabloon beschreven voor gebruik in deze scenario's.
 
  >! Opmerking Als u gegevens wilt kopiëren van een klein aantal tabellen met relatief klein gegevens volume naar Azure Synapse Analytics, is het efficiënter om de [Azure Data Factory gegevens kopiëren tool](copy-data-tool.md)te gebruiken. De sjabloon die in dit artikel wordt beschreven, is meer dan u nodig hebt voor dat scenario.
 
@@ -48,7 +48,7 @@ De laatste drie para meters, waarmee het pad in uw doel archief wordt gedefiniee
 
 ## <a name="how-to-use-this-solution-template"></a>Deze oplossings sjabloon gebruiken
 
-1. Maak een controle tabel in SQL Server of Azure SQL Database om de partitie lijst van de bron database op te slaan voor bulk kopieën. In het volgende voor beeld zijn er vijf partities in de bron database. Drie partities zijn voor de *datasource_table*en twee zijn voor de *project_table*. De kolom *LastModifytime* wordt gebruikt voor het partitioneren van de gegevens in tabel *datasource_table* van de bron database. De query die wordt gebruikt voor het lezen van de eerste partitie is ' Select * from datasource_table where LastModifytime >= ' ' 2015-01-01 00:00:00 ' ' en LastModifytime <= ' ' 2015-12-31 23:59:59.999 ' '. U kunt een vergelijk bare query gebruiken om gegevens uit andere partities te lezen.
+1. Maak een controle tabel in SQL Server of Azure SQL Database om de partitie lijst van de bron database op te slaan voor bulk kopieën. In het volgende voor beeld zijn er vijf partities in de bron database. Drie partities zijn voor de *datasource_table* en twee zijn voor de *project_table*. De kolom *LastModifytime* wordt gebruikt voor het partitioneren van de gegevens in tabel *datasource_table* van de bron database. De query die wordt gebruikt voor het lezen van de eerste partitie is ' Select * from datasource_table where LastModifytime >= ' ' 2015-01-01 00:00:00 ' ' en LastModifytime <= ' ' 2015-12-31 23:59:59.999 ' '. U kunt een vergelijk bare query gebruiken om gegevens uit andere partities te lezen.
 
      ```sql
             Create table ControlTableForTemplate
@@ -86,7 +86,7 @@ De laatste drie para meters, waarmee het pad in uw doel archief wordt gedefiniee
 
     ![De pijp lijn controleren](media/solution-template-bulk-copy-with-control-table/BulkCopyfromDB_with_ControlTable6.png)
 
-7. Selecteer **debug**, voer de **para meters**in en selecteer **volt ooien**.
+7. Selecteer **debug**, voer de **para meters** in en selecteer **volt ooien**.
 
     ![Klik op * * fout opsporing * *](media/solution-template-bulk-copy-with-control-table/BulkCopyfromDB_with_ControlTable7.png)
 

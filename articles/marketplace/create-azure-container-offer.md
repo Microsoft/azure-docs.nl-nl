@@ -7,12 +7,12 @@ ms.topic: how-to
 author: keferna
 ms.author: keferna
 ms.date: 06/17/2020
-ms.openlocfilehash: 76211e2aaf27fd28500bb539c94fa409b239e785
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: bcb334074d842fa5c35e4619f1c5d654405388a7
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95759011"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96459572"
 ---
 # <a name="create-an-azure-container-offer-in-azure-marketplace"></a>Een Azure Container-aanbieding maken in Azure Marketplace
 
@@ -133,7 +133,7 @@ Op deze pagina kunt u de details van het aanbod definiëren dat wordt weer gegev
 > [!NOTE]
 > De details van de aanbieding hoeven niet in het Engels te staan als de beschrijving van de aanbieding begint met de woord groep ' deze toepassing is alleen beschikbaar in [niet-Engelse taal] '. Het is ook handig om een nuttige koppeling te bieden om inhoud te bieden in een andere taal dan die wordt gebruikt in de details van de aanbieding.
 
-### <a name="name"></a>Name
+### <a name="name"></a>Naam
 
 De naam die u hier opgeeft, wordt weer gegeven als de titel van uw aanbieding. Dit veld is vooraf ingevuld met de tekst die u hebt ingevoerd in het vak **aanbiedings alias** wanneer u de aanbieding hebt gemaakt. U kunt deze naam later wijzigen.
 
@@ -151,7 +151,7 @@ Een korte beschrijving van uw aanbieding. Dit kan Maxi maal 100 tekens lang zijn
 
 Een gedetailleerde beschrijving van uw aanbieding. Dit kan Maxi maal 256 tekens lang zijn en wordt gebruikt in Zoek resultaten voor Marketplace.
 
-### <a name="description"></a>Description
+### <a name="description"></a>Beschrijving
 
 [!INCLUDE [Long description-1](./includes/long-description-1.md)]
 
@@ -291,7 +291,7 @@ Op dit tabblad kunt u kiezen in welke Clouds het plan beschikbaar is. Uw antwoor
 
 Alle abonnementen voor Azure-container aanbiedingen worden automatisch beschikbaar gemaakt in **Azure Global**.  Uw abonnement kan door klanten worden gebruikt in alle wereld wijde Azure-regio's die gebruikmaken van de commerciële Marketplace. Zie [geografische Beschik baarheid en valuta ondersteuning](marketplace-geo-availability-currencies.md)voor meer informatie.
 
-Selecteer de optie [Azure Government](/azure/azure-government/documentation-government-welcome.md) om uw oplossing hier weer te geven. Dit is een community-Cloud met gecontroleerde toegang voor klanten van de Amerikaanse federale, staats-en lokale of tribale overheids instanties en partners die in aanmerking komen voor de overheid. Als uitgever bent u verantwoordelijk voor nalevings controles, beveiligings maatregelen en aanbevolen procedures voor deze Cloud community. Azure Government maakt gebruik van fysiek geïsoleerde data centers en netwerken (alleen in de Verenigde Staten). Voordat u naar Azure Government [publiceert](/azure/azure-government/documentation-government-manage-marketplace-partners.md) , moet u de oplossing in dat gebied testen en bevestigen, omdat de resultaten mogelijk verschillend zijn. Vraag een proef account aan [Microsoft Azure Government proef versie](https://azure.microsoft.com/global-infrastructure/government/request/)om uw oplossing te maken en te testen.
+Selecteer de optie [Azure Government](../azure-government/documentation-government-welcome.md) om uw oplossing hier weer te geven. Dit is een community-Cloud met gecontroleerde toegang voor klanten van de Amerikaanse federale, staats-en lokale of tribale overheids instanties en partners die in aanmerking komen voor de overheid. Als uitgever bent u verantwoordelijk voor nalevings controles, beveiligings maatregelen en aanbevolen procedures voor deze Cloud community. Azure Government maakt gebruik van fysiek geïsoleerde data centers en netwerken (alleen in de Verenigde Staten). Voordat u naar Azure Government [publiceert](../azure-government/documentation-government-manage-marketplace-partners.md) , moet u de oplossing in dat gebied testen en bevestigen, omdat de resultaten mogelijk verschillend zijn. Vraag een proef account aan [Microsoft Azure Government proef versie](https://azure.microsoft.com/global-infrastructure/government/request/)om uw oplossing te maken en te testen.
 
 > [!NOTE]
 > Nadat uw plan is gepubliceerd en beschikbaar is in een specifieke regio, kunt u die regio niet verwijderen.
@@ -357,11 +357,11 @@ Geef de volgende informatie op het tabblad Details van de **afbeeldings opslagpl
 
 **Azure-abonnements-id** : Geef de abonnements-id op waar het gebruik wordt gerapporteerd en de services worden gefactureerd voor de Azure container Registry die uw container installatie kopie bevatten. U kunt deze ID vinden op de [pagina Abonnementen](https://ms.portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) in het Azure Portal.
 
-**Naam van de Azure-resource groep** : Geef de naam van de [resource groep](/azure/azure-resource-manager/management/manage-resource-groups-portal.md) op die de Azure container Registry bevat met de container installatie kopie. De resource groep moet toegankelijk zijn in de abonnements-ID (hierboven). U vindt de naam op de pagina [resource groepen](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceGroups) in de Azure Portal.
+**Naam van de Azure-resource groep** : Geef de naam van de [resource groep](../azure-resource-manager/management/manage-resource-groups-portal.md) op die de Azure container Registry bevat met de container installatie kopie. De resource groep moet toegankelijk zijn in de abonnements-ID (hierboven). U vindt de naam op de pagina [resource groepen](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceGroups) in de Azure Portal.
 
-**Azure container Registry naam** : Geef de naam op van de [Azure container Registry](/azure/container-registry/container-registry-intro.md) met de container installatie kopie. Het container register moet zich bevinden in de Azure-resource groep die u eerder hebt ingesteld. Neem alleen de register naam op, niet de volledige naam van de aanmeldings server. Zorg ervoor dat u **azurecr.io** weglaat uit de naam. U kunt de register naam vinden op de [pagina container registers](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.ContainerRegistry%2Fregistries) in de Azure Portal.
+**Azure container Registry naam** : Geef de naam op van de [Azure container Registry](../container-registry/container-registry-intro.md) met de container installatie kopie. Het container register moet zich bevinden in de Azure-resource groep die u eerder hebt ingesteld. Neem alleen de register naam op, niet de volledige naam van de aanmeldings server. Zorg ervoor dat u **azurecr.io** weglaat uit de naam. U kunt de register naam vinden op de [pagina container registers](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.ContainerRegistry%2Fregistries) in de Azure Portal.
 
-**Gebruikers naam van de beheerder voor de Azure container Registry** : Geef de [gebruikers naam](/azure/container-registry/container-registry-authentication.md#admin-account)van de beheerder op die is gekoppeld aan de Azure container Registry met de container installatie kopie. De gebruikers naam en het wacht woord zijn vereist om ervoor te zorgen dat uw bedrijf toegang heeft tot het REGI ster. Als u de gebruikers naam en het wacht woord van de beheerder wilt ophalen, stelt u de eigenschap **beheerder** in op **True** met behulp van de Azure Command-Line interface (CLI). U kunt optioneel een **admin-gebruiker** instellen om in azure Portal in te **scha kelen** .
+**Gebruikers naam van de beheerder voor de Azure container Registry** : Geef de [gebruikers naam](../container-registry/container-registry-authentication.md#admin-account)van de beheerder op die is gekoppeld aan de Azure container Registry met de container installatie kopie. De gebruikers naam en het wacht woord zijn vereist om ervoor te zorgen dat uw bedrijf toegang heeft tot het REGI ster. Als u de gebruikers naam en het wacht woord van de beheerder wilt ophalen, stelt u de eigenschap **beheerder** in op **True** met behulp van de Azure Command-Line interface (CLI). U kunt optioneel een **admin-gebruiker** instellen om in azure Portal in te **scha kelen** .
 
  :::image type="content" source="./partner-center-portal/media/azure-create-container-offer-images/azure-create-12-update-container-registry-edit.png" alt-text="Illustreert het dialoog venster update container Registry.":::
 
@@ -369,7 +369,7 @@ Geef de volgende informatie op het tabblad Details van de **afbeeldings opslagpl
 
 :::image type="content" source="./partner-center-portal/media/azure-create-container-offer-images/azure-create-13-access-keys.png" alt-text="Illustreert het menu toegangs sleutel.":::
 
-**De naam van de opslag plaats in de Azure container Registry**. Geef de naam op van de Azure Container Registry opslag plaats met uw installatie kopie. Neem de naam van de opslag plaats op wanneer u de installatie kopie naar het REGI ster pusht. U kunt de naam van de opslag plaats vinden door naar de pagina [container Registry](https://azure.microsoft.com/services/container-registry/)  >  **opslagplaatsen** te gaan. Zie [container register opslagplaatsen weer geven in azure Portal](/azure/container-registry/container-registry-repositories.md)voor meer informatie.
+**De naam van de opslag plaats in de Azure container Registry**. Geef de naam op van de Azure Container Registry opslag plaats met uw installatie kopie. Neem de naam van de opslag plaats op wanneer u de installatie kopie naar het REGI ster pusht. U kunt de naam van de opslag plaats vinden door naar de pagina [container Registry](https://azure.microsoft.com/services/container-registry/)  >  **opslagplaatsen** te gaan. Zie [container register opslagplaatsen weer geven in azure Portal](../container-registry/container-registry-repositories.md)voor meer informatie.
 
 > [!NOTE]
 > Nadat de naam is ingesteld, kan deze niet meer worden gewijzigd. Gebruik een unieke naam voor elke aanbieding in uw account.

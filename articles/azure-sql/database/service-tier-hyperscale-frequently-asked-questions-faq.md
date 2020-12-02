@@ -11,12 +11,12 @@ author: dimitri-furman
 ms.author: dfurman
 ms.reviewer: ''
 ms.date: 03/03/2020
-ms.openlocfilehash: 400dd66827e82c1ede496526c49977e6f5383487
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 4ea1982e7545f4ac39a5ecd15dc9e19a582ae31c
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92780186"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96459642"
 ---
 # <a name="azure-sql-database-hyperscale-faq"></a>Veelgestelde vragen over Azure SQL Database grootschalige
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -46,7 +46,7 @@ De vCore-gebaseerde service lagen worden gedifferentieerd op basis van de beschi
 |  **Resourcetype** ||Door SQL Database/SQL beheerd exemplaar | Individuele database | Door SQL Database/SQL beheerd exemplaar |
 | **Reken grootte**|SQL Database * | 1 tot 80 vCores | 1 tot 80 vCores * | 1 tot 80 vCores |
 | **Reken grootte**|SQL Managed Instance | 8, 16, 24, 32, 40, 64, 80 vCores | N.v.t. | 8, 16, 24, 32, 40, 64, 80 vCores |
-| **Opslag type** | Alles |Premium externe opslag (per instantie) | Niet-gekoppelde opslag met lokale SSD-cache (per instantie) | Super snelle lokale SSD-opslag (per instantie) |
+| **Opslagtype** | Alles |Premium externe opslag (per instantie) | Niet-gekoppelde opslag met lokale SSD-cache (per instantie) | Super snelle lokale SSD-opslag (per instantie) |
 | **Opslag grootte** | SQL Database *| 5 GB – 4 TB | Tot 100 TB | 5 GB – 4 TB |
 | **Opslag grootte** | SQL Managed Instance  | 32 GB – 8 TB | N.v.t. | 32 GB – 4 TB |
 | **IOPS** | Individuele database | 500 IOPS per vCore met 7000 maximum aantal IOPS | Grootschalige is een architectuur met meerdere lagen met caching op meerdere niveaus. Effectief IOPS is afhankelijk van de werk belasting. | 5000 IOPS met 200.000 maximum aantal IOPS|
@@ -118,7 +118,7 @@ Grootschalige ondersteunt alle SQL Server workloads, maar is voornamelijk geopti
 
 Als u op dit moment interactieve Analytics-query's uitvoert met SQL Server als Data Warehouse, is grootschalige een fantastische optie omdat u een kleine en middel grote data warehouse kunt hosten (zoals een aantal TB tot 100 TB) tegen lagere kosten, en u kunt uw SQL Server Data Warehouse-workloads migreren naar grootschalige met minimale T-SQL-code wijzigingen.
 
-Als u gegevens analyse uitvoert op een grote schaal met complexe query's en langere opname snelheden van meer dan 100 MB/s, of met behulp van PDW (parallel data warehouse), Teradata of andere data warehouses met een enorme parallelle verwerking (MPP), kan Azure Synapse Analytics (voorheen SQL Data Warehouse) de beste keuze zijn.
+Als u gegevens analyse uitvoert op een grote schaal met complexe query's en langere opname snelheden van meer dan 100 MB/s, of met behulp van PDW (parallel data warehouse), Teradata of andere data warehouses met een enorme parallelle verwerking (MPP), is Azure Synapse Analytics mogelijk de beste keuze.
   
 ## <a name="hyperscale-compute-questions"></a>Vragen over grootschalige compute
 

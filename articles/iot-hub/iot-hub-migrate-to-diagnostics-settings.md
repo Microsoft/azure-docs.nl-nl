@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 03/11/2019
 ms.author: kgremban
-ms.openlocfilehash: eb53e7052db6d4de365864184b9bd2e6585b7e2d
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: dfd819d82f5e35183802e33e5d423cad4de36c38
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94412105"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461589"
 ---
 # <a name="migrate-your-iot-hub-from-operations-monitoring-to-azure-monitor-resource-logs"></a>Migreer uw IoT Hub van operations monitoring naar Azure Monitor resource logs
 
@@ -29,7 +29,7 @@ Als u uw IoT Hub in de Azure Portal wilt bijwerken, maakt u eerst een diagnostis
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com) en ga naar uw IoT Hub.
 
-1. Selecteer in het linkerdeel venster, onder **bewaking** , **instellingen voor diagnostische gegevens**. Selecteer vervolgens **Diagnostische instelling toevoegen**.
+1. Selecteer in het linkerdeel venster, onder **bewaking**, **instellingen voor diagnostische gegevens**. Selecteer vervolgens **Diagnostische instelling toevoegen**.
 
    :::image type="content" source="media/iot-hub-migrate-to-diagnostics-settings/open-diagnostic-settings.png" alt-text="Schermopname waarin Diagnostische instellingen in de sectie Bewaking is gemarkeerd.":::
 
@@ -49,9 +49,9 @@ Als u uw IoT Hub in de Azure Portal wilt bijwerken, maakt u eerst een diagnostis
 
 1. Selecteer **Opslaan** om de instellingen op te slaan.
 
-Nieuwe instellingen worden in ongeveer 10 minuten van kracht. Daarna worden logboeken weer gegeven in de geconfigureerde bestemming. Zie [logboek gegevens verzamelen en gebruiken van uw Azure-resources](/azure/azure-monitor/platform/platform-logs-overview)voor meer informatie over het configureren van diagnostiek.
+Nieuwe instellingen worden in ongeveer 10 minuten van kracht. Daarna worden logboeken weer gegeven in de geconfigureerde bestemming. Zie [logboek gegevens verzamelen en gebruiken van uw Azure-resources](../azure-monitor/platform/platform-logs-overview.md)voor meer informatie over het configureren van diagnostiek.
 
-Zie [Diagnostische instellingen](/azure/azure-monitor/platform/diagnostic-settings) in de Azure monitor-documentatie voor meer informatie over het maken van diagnostische instellingen, met inbegrip van Power shell en de Azure cli.
+Zie [Diagnostische instellingen](../azure-monitor/platform/diagnostic-settings.md) in de Azure monitor-documentatie voor meer informatie over het maken van diagnostische instellingen, met inbegrip van Power shell en de Azure cli.
 
 ### <a name="turn-off-operations-monitoring"></a>Bewaking van bewerkingen uitschakelen
 

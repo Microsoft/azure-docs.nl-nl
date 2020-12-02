@@ -10,15 +10,15 @@ ms.subservice: sql-dw
 ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: 2e76f48466d084d448cceea0490e44041e7d062e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: seo-lt-2019, azure-synapse
+ms.openlocfilehash: f61f2932ad9c6342a81ec05df335e9ea4d659fce
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85212136"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461983"
 ---
-# <a name="connect-to-synapse-sql-pool-with-sqlcmd"></a>Verbinding maken met de Synapse SQL-groep met Sqlcmd
+# <a name="connect-to-sql-pool-in-azure-synapse-analytics-with-sqlcmd"></a>Verbinding maken met SQL-groep in azure Synapse Analytics met Sqlcmd
 
 > [!div class="op_single_selector"]
 >
@@ -32,10 +32,10 @@ Gebruik het opdracht regel programma [Sqlcmd] [Sqlcmd] om verbinding te maken me
 
 ## <a name="1-connect"></a>1. Verbinding maken
 
-Om aan de slag te gaan met [Sqlcmd] [Sqlcmd], opent u de opdracht prompt en voert u **Sqlcmd** in, gevolgd door de Connection String voor de data base van uw SQL-groep. De verbindingstekenreeks moet de volgende parameters bevatten:
+Om aan de slag te gaan met [Sqlcmd] [Sqlcmd], opent u de opdracht prompt en voert u **Sqlcmd** in, gevolgd door de Connection String voor uw SQL-groep. De verbindingstekenreeks moet de volgende parameters bevatten:
 
 * **Server (-S):** Server in de notatie `<`Servernaam`>`.database.windows.net
-* **Data Base (-d):** Database naam.
+* **Data Base (-d):** Naam van de SQL-groep.
 * **Id's van aanhalings tekens inschakelen (-I):** Id's tussen aanhalings tekens moeten zijn ingeschakeld om verbinding te maken met een exemplaar van een SQL-groep.
 
 Als u gebruik wilt maken van SQL Server-verificatie, moet u de gebruikersnaam- en wachtwoordparameters toevoegen:

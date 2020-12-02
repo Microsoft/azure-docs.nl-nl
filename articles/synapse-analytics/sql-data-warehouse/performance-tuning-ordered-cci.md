@@ -1,6 +1,6 @@
 ---
 title: Prestaties afstemmen met geordende en geclusterde columnstore-index
-description: Aanbevelingen en overwegingen die u moet weten wanneer u geordende geclusterde column store-index gebruikt om de query prestaties te verbeteren.
+description: Aanbevelingen en overwegingen die u moet weten wanneer u geordende geclusterde column store-index gebruikt om de query prestaties te verbeteren in toegewezen SQL-groepen.
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -11,22 +11,22 @@ ms.date: 09/05/2019
 ms.author: xiaoyul
 ms.reviewer: nibruno; jrasnick
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 48db8541ebad19e3b22b737f7e92dcc980708ef6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: afb6efcee2ad4f5cf25a411eed353ff2fc27d75c
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91841591"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460791"
 ---
 # <a name="performance-tuning-with-ordered-clustered-columnstore-index"></a>Prestaties afstemmen met geordende en geclusterde columnstore-index  
 
-Wanneer gebruikers een query uitvoeren op een column Store-tabel in Synapse SQL-pool, controleert de Optimizer de minimum-en maximum waarden die zijn opgeslagen in elk segment.  Segmenten die zich buiten de grenzen van het query-predikaat bevinden, worden niet van de schijf naar het geheugen gelezen.  Een query kan betere prestaties krijgen als het aantal segmenten dat moet worden gelezen en de totale grootte klein zijn.   
+Wanneer gebruikers een query op een column Store-tabel in een toegewezen SQL-groep uitvoeren, controleert de Optimizer de minimum-en maximum waarden die zijn opgeslagen in elk segment.  Segmenten die zich buiten de grenzen van het query-predikaat bevinden, worden niet van de schijf naar het geheugen gelezen.  Een query kan betere prestaties krijgen als het aantal segmenten dat moet worden gelezen en de totale grootte klein zijn.   
 
 ## <a name="ordered-vs-non-ordered-clustered-columnstore-index"></a>Besteld versus niet-bestelde geclusterde column store-index
 
 Standaard maakt een intern onderdeel (Indexing Builder) voor elke tabel die is gemaakt zonder een index optie, een niet-bestelde geclusterde column store-index (CCI).  De gegevens in elke kolom worden gecomprimeerd in een afzonderlijk CCI Rijg roep-segment.  Er zijn meta gegevens van de waarden van elk segment, waardoor segmenten die zich buiten de grenzen van het query predicaat bevinden, niet kunnen worden gelezen van de schijf tijdens de uitvoering van de query.  CCI biedt het hoogste niveau van gegevens compressie en vermindert de grootte van segmenten om te lezen zodat query's sneller kunnen worden uitgevoerd. Omdat de opbouw functie voor indexen echter geen gegevens sorteert voordat ze naar segmenten worden gecomprimeerd, kunnen segmenten met overlappende cellenbereiken optreden, waardoor query's meer segmenten van de schijf worden gelezen en langer duren.  
 
-Wanneer u een besteld CCI maakt, sorteert de Synapse SQL-engine de bestaande gegevens in het geheugen door de volg orde van de sleutel (s) voordat de index Builder ze comprimeert in index segmenten.  Met gesorteerde gegevens is het segment overlappend, zodat query's een efficiëntere segment eliminatie kunnen hebben, waardoor de prestaties sneller worden, omdat het aantal segmenten dat moet worden gelezen van de schijf kleiner is.  Als alle gegevens in een keer in het geheugen kunnen worden gesorteerd, kan segment overlappend worden vermeden.  Als gevolg van grote tabellen in data warehouses, treedt dit scenario vaak niet op.  
+Wanneer u een besteld CCI maakt, worden de bestaande gegevens in het geheugen gesorteerd op basis van de volg orde van de sleutel (s) voordat de index Builder ze comprimeert in index segmenten.  Met gesorteerde gegevens is het segment overlappend, zodat query's een efficiëntere segment eliminatie kunnen hebben, waardoor de prestaties sneller worden, omdat het aantal segmenten dat moet worden gelezen van de schijf kleiner is.  Als alle gegevens in een keer in het geheugen kunnen worden gesorteerd, kan segment overlappend worden vermeden.  Als gevolg van grote tabellen in data warehouses, treedt dit scenario vaak niet op.  
 
 Als u de segment bereiken voor een kolom wilt controleren, voert u de volgende opdracht uit met de tabel naam en de naam van de kolom:
 
@@ -50,7 +50,7 @@ ORDER BY o.name, pnp.distribution_id, cls.min_data_id
 ```
 
 > [!NOTE] 
-> In een geordende CCI-tabel worden de nieuwe gegevens die voortkomen uit dezelfde batch DML of het laden van gegevens die worden geladen binnen die batch gesorteerd. er is geen algemene Sorteer bewerking voor alle gegevens in de tabel.  Gebruikers kunnen het bestelde CCI opnieuw bouwen om alle gegevens in de tabel te sorteren.  In Synapse SQL is de column store-index opnieuw gebaseerd op een offline bewerking.  Voor een gepartitioneerde tabel is het opnieuw maken van één partitie per keer voltooid.  Gegevens in de partitie die opnieuw worden opgebouwd, zijn offline en zijn pas beschikbaar als het opnieuw opbouwen is voltooid voor die partitie. 
+> In een geordende CCI-tabel worden de nieuwe gegevens die voortkomen uit dezelfde batch DML of het laden van gegevens die worden geladen binnen die batch gesorteerd. er is geen algemene Sorteer bewerking voor alle gegevens in de tabel.  Gebruikers kunnen het bestelde CCI opnieuw bouwen om alle gegevens in de tabel te sorteren.  In de toegewezen SQL-groep is het opnieuw maken van Column store-index een offline bewerking.  Voor een gepartitioneerde tabel is het opnieuw maken van één partitie per keer voltooid.  Gegevens in de partitie die opnieuw worden opgebouwd, zijn offline en zijn pas beschikbaar als het opnieuw opbouwen is voltooid voor die partitie. 
 
 ## <a name="query-performance"></a>Queryprestaties
 

@@ -10,12 +10,12 @@ metadata:
   author: mingshen-ms
   ms.author: mingshen
   ms.date: 09/02/2020
-  ms.openlocfilehash: ee2bb685ba1313bcb54d8f32c2952a03258829b3
-  ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+  ms.openlocfilehash: b8b7de41dce5c36cb41db247e177fa5084878fb1
+  ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 11/11/2020
-  ms.locfileid: "94491542"
+  ms.lasthandoff: 12/01/2020
+  ms.locfileid: "96462482"
 landingContent:
 - title: Werken in de commerciële marketplace
   linkLists:
@@ -60,15 +60,15 @@ landingContent:
   - linkListType: how-to-guide
     links:
     - text: Dashboard voor samenvattingen
-      url: ./partner-center-portal/summary-dashboard.md
+      url: ./summary-dashboard.md
     - text: Dashboard voor Marketplace-inzichten
-      url: ./partner-center-portal/insights-dashboard.md
+      url: ./insights-dashboard.md
     - text: Dashboard voor gebruik
-      url: ./partner-center-portal/usage-dashboard.md
+      url: ./usage-dashboard.md
     - text: Dashboard voor klanten
-      url: ./partner-center-portal/customer-dashboard.md
+      url: ./customer-dashboard.md
     - text: Dashboard voor orders
-      url: ./partner-center-portal/orders-dashboard.md
+      url: ./orders-dashboard.md
     - text: Dashboard voor downloads
       url: ./partner-center-portal/downloads-dashboard.md
     - text: Dashboard voor classificaties en beoordelingen
@@ -82,7 +82,7 @@ landingContent:
     - text: Aanbiedingen van virtuele machines
       url: ./marketplace-virtual-machines.md
     - text: Azure-toepassingsaanbiedingen
-      url: ./partner-center-portal/create-new-azure-apps-offer.md
+      url: ./create-new-azure-apps-offer.md
     - text: Dynamics 365 for Customer Engagement- en PowerApps-aanbiedingen
       url: ./partner-center-portal/create-new-customer-engagement-offer.md
     - text: Dynamics 365 Business Central-aanbiedingen

@@ -3,18 +3,18 @@ title: Connectiviteits instellingen voor Azure SQL Database en Azure Synapse Ana
 description: In dit artikel worden de keuze van de versie Transport Layer Security (TLS) en de proxy versus omleidings instellingen voor Azure SQL Database en Azure Synapse Analytics uitgelegd.
 services: sql-database
 ms.service: sql-database
-titleSuffix: Azure SQL Database and Azure Synapse Analytics (formerly SQL Data Warehouse)
+titleSuffix: Azure SQL Database and Azure Synapse Analytics
 ms.topic: how-to
 author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: sstein, vanto
 ms.date: 07/06/2020
-ms.openlocfilehash: 9856d71a6398bcea5b979788846afce17e7955f7
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: e3422f468d1355245fb31e8f04d5f8625f583c37
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94412971"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462188"
 ---
 # <a name="azure-sql-connectivity-settings"></a>Azure SQL-Verbindings instellingen
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -33,7 +33,7 @@ De connectiviteits instellingen zijn toegankelijk via het scherm **firewalls en 
 
 ## <a name="deny-public-network-access"></a>Openbare netwerktoegang weigeren
 
-Wanneer het **weigeren van open bare netwerk toegang** is ingesteld op **Ja** , zijn alleen verbindingen via persoonlijke eind punten toegestaan. Als deze instelling **niet** is ingesteld (standaard), kunnen klanten verbinding maken met behulp van open bare eind punten (met firewall regels op basis van IP of met firewall regels op basis van een virtueel netwerk) of privé-eind punten (met behulp van een persoonlijke Azure-koppeling), zoals beschreven in het [overzicht van netwerk toegang](network-access-controls-overview.md).
+Wanneer het **weigeren van open bare netwerk toegang** is ingesteld op **Ja**, zijn alleen verbindingen via persoonlijke eind punten toegestaan. Als deze instelling **niet** is ingesteld (standaard), kunnen klanten verbinding maken met behulp van open bare eind punten (met firewall regels op basis van IP of met firewall regels op basis van een virtueel netwerk) of privé-eind punten (met behulp van een persoonlijke Azure-koppeling), zoals beschreven in het [overzicht van netwerk toegang](network-access-controls-overview.md).
 
  ![Diagram waarin de connectiviteit wordt weer gegeven wanneer open bare netwerk toegang weigeren is ingesteld op Ja en wanneer het weigeren van open bare netwerk toegang is ingesteld op Nee.][2]
 
@@ -48,7 +48,7 @@ Please set up private endpoints and retry the operation.
 > [!NOTE]
 > Als u firewall regels voor virtuele netwerken wilt definiëren op een logische server die al is geconfigureerd met persoonlijke eind punten, stelt u **toegang tot open bare netwerk weigeren** in op **Nee**.
 
-Wanneer het **weigeren van open bare netwerk toegang** is ingesteld op **Ja** , zijn alleen verbindingen via persoonlijke eind punten toegestaan. Alle verbindingen via open bare eind punten worden geweigerd met een fout bericht van de volgende strekking:  
+Wanneer het **weigeren van open bare netwerk toegang** is ingesteld op **Ja**, zijn alleen verbindingen via persoonlijke eind punten toegestaan. Alle verbindingen via open bare eind punten worden geweigerd met een fout bericht van de volgende strekking:  
 
 ```output
 Error 47073
@@ -57,7 +57,7 @@ The public network interface on this server is not accessible.
 To connect to this server, use the Private Endpoint from inside your virtual network.
 ```
 
-Wanneer het **weigeren van open bare netwerk toegang** is ingesteld op **Ja** , worden pogingen om firewall regels toe te voegen of bij te werken, geweigerd met een fout bericht dat vergelijkbaar is met het volgende:
+Wanneer het **weigeren van open bare netwerk toegang** is ingesteld op **Ja**, worden pogingen om firewall regels toe te voegen of bij te werken, geweigerd met een fout bericht dat vergelijkbaar is met het volgende:
 
 ```output
 Error 42101
@@ -104,7 +104,7 @@ az sql server update -n sql-server-name -g sql-server-group --set publicNetworkA
 
 Met de instelling minimale versie van [Transport Layer Security (TLS)](https://support.microsoft.com/help/3135244/tls-1-2-support-for-microsoft-sql-server) kunnen klanten kiezen welke versie van TLS door hun SQL database wordt gebruikt.
 
-Op dit moment ondersteunen we TLS 1,0, 1,1 en 1,2. Als u een minimale TLS-versie instelt, zorgt u ervoor dat nieuwe TLS-versies worden ondersteund. Als u bijvoorbeeld een TLS-versie kiest die groter is dan 1,1, worden alleen verbindingen met TLS 1,1 en 1,2 geaccepteerd en worden verbindingen met TLS-1,0 geweigerd. Nadat u hebt getest om te bevestigen dat uw toepassingen deze ondersteunen, raden we u aan de minimale TLS-versie in te stellen op 1,2. Deze versie bevat oplossingen voor beveiligings problemen in vorige versies en is de hoogste versie van TLS die wordt ondersteund in Azure SQL Database.
+Momenteel bieden we ondersteuning voor TLS 1.0, 1.1 en TLS 1.2. Door een minimale TLS-versie in te stellen zorgt u ervoor dat nieuwere versies van TLS worden ondersteund. Als u bijvoorbeeld een TLS-versie kiest die hoger is dan 1.1, betekent dit dat alleen verbindingen via TLS 1.1 en 1.2 worden geaccepteerd. Verbindingen via TLS 1.0 worden geweigerd. Als u hebt getest of uw toepassingen inderdaad ondersteuning bieden voor TLS 1.2, raden we u aan de minimale TLS-versie hierop in te stellen. Deze versie omvat oplossingen voor beveiligingsproblemen in eerdere versies, en is de hoogste versie van TLS die wordt ondersteund in Azure SQL Database.
 
 > [!IMPORTANT]
 > De standaard waarde voor de minimale TLS-versie is alle versies toestaan. Nadat u een versie van TLS afdwingt, is het niet mogelijk om terug te keren naar de standaard waarde.

@@ -9,15 +9,16 @@ ms.date: 11/18/2020
 ms.author: midesa
 ms.reviewer: jrasnick
 ms.subservice: spark
-ms.openlocfilehash: 4387aadd70ddb373df1bdfa61cbe9ed7f2af283d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: bad71cfeb8f15f463bb9659be704374325d1f50a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919720"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461997"
 ---
 # <a name="azure-synapse-analytics-notebooks"></a>Azure Synapse Analytics-notebooks
-Een Synapse Studio-Notebook (preview-versie) is een webinterface waarmee u bestanden kunt maken die live code, visualisaties en tekst verhalen bevatten. Notebooks zijn een goede plaats om ideeën te valideren en snelle experimenten te gebruiken om inzicht te krijgen in uw gegevens. 
+
+Een Synapse Studio-notebook is een webinterface waarmee u bestanden kunt maken die live code, visualisaties en tekst verhalen bevatten. Notebooks zijn een goede plaats om ideeën te valideren en snelle experimenten te gebruiken om inzicht te krijgen in uw gegevens. 
 
 Met een Azure Synapse Studio-notebook kunt u het volgende doen:
 

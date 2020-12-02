@@ -11,12 +11,12 @@ author: MayMSFT
 ms.reviewer: nibaccam
 ms.date: 11/03/2020
 ms.custom: how-to, contperfq1, devx-track-python, data4ml
-ms.openlocfilehash: 3c8e18a3a216240a624b3b14f5e2e397d6c06012
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: c85989dc02bddd136c56a81993df7a507a84d3b4
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94961325"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460273"
 ---
 # <a name="connect-to-storage-services-on-azure"></a>Verbinding maken met Storage services in azure
 
@@ -80,7 +80,7 @@ Data stores ondersteunen momenteel het opslaan van verbindings gegevens naar de 
 
 We raden u aan een gegevens opslag voor een [Azure Blob-container](../storage/blobs/storage-blobs-introduction.md)te maken. Zowel Standard-als Premium-opslag zijn beschikbaar voor blobs. Hoewel Premium-opslag duurder is, kunnen de snellere doorvoer snelheden de snelheid van uw trainings uitvoeringen verbeteren, met name als u traint voor een grote gegevensset. Voor informatie over de kosten van opslag accounts raadpleegt u de [Azure-prijs calculator](https://azure.microsoft.com/pricing/calculator/?service=machine-learning-service).
 
-[Azure data Lake Storage Gen2](../storage/blobs/data-lake-storage-introduction.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json) is gebaseerd op Azure Blob-opslag en ontworpen voor enter prise Big data-analyses. De toevoeging van een [hiërarchische naamruimte](../storage/blobs/data-lake-storage-namespace.md) aan Blob Storage vormt een fundamenteel onderdeel van Data Lake Storage Gen2. Met de hiërarchische naamruimte worden objecten/bestanden georganiseerd in een hiërarchie met mappen voor efficiënte toegang tot de gegevens.
+[Azure data Lake Storage Gen2](../storage/blobs/data-lake-storage-introduction.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) is gebaseerd op Azure Blob-opslag en ontworpen voor enter prise Big data-analyses. De toevoeging van een [hiërarchische naamruimte](../storage/blobs/data-lake-storage-namespace.md) aan Blob Storage vormt een fundamenteel onderdeel van Data Lake Storage Gen2. Met de hiërarchische naamruimte worden objecten/bestanden georganiseerd in een hiërarchie met mappen voor efficiënte toegang tot de gegevens.
 
 ## <a name="storage-access-and-permissions"></a>Toegang tot en machtigingen voor opslag
 
@@ -112,7 +112,7 @@ U vindt de account sleutel, het SAS-token en de gegevens van de Service-Principa
 > * Als u de toegangs sleutels voor een Azure Storage account (account sleutel of SAS-token) wilt wijzigen, moet u ervoor zorgen dat u de nieuwe referenties synchroniseert met uw werk ruimte en de gegevens opslag die ermee zijn verbonden. Meer informatie over [het synchroniseren van uw bijgewerkte referenties](how-to-change-storage-access-key.md). 
 ### <a name="permissions"></a>Machtigingen
 
-Voor Azure Blob-container en Azure Data Lake gen 2-opslag, moet u ervoor zorgen dat uw verificatie referenties toegang hebben tot **BLOB-gegevens lezer voor opslag** . Meer informatie over [Storage BLOB data Reader](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-reader). Een SAS-token voor het account is standaard ingesteld op geen machtigingen. 
+Voor Azure Blob-container en Azure Data Lake gen 2-opslag, moet u ervoor zorgen dat uw verificatie referenties toegang hebben tot **BLOB-gegevens lezer voor opslag** . Meer informatie over [Storage BLOB data Reader](../role-based-access-control/built-in-roles.md#storage-blob-data-reader). Een SAS-token voor het account is standaard ingesteld op geen machtigingen. 
 * Voor **Lees toegang** voor gegevens moet uw verificatie referenties mini maal lijst-en lees machtigingen voor containers en objecten hebben. 
 
 * Voor het **schrijven** van gegevens is het schrijven en toevoegen van machtigingen ook vereist.

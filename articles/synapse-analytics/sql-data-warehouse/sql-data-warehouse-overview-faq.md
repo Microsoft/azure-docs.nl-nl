@@ -1,6 +1,6 @@
 ---
-title: Veelgestelde vragen over Azure Synapse Analytics (voorheen SQL DW)
-description: In dit artikel vindt u een overzicht van de veelgestelde vragen over Azure Synapse Analytics (voorheen SQL DW) van klanten en ontwikkel aars.
+title: Veelgestelde vragen over een toegewezen SQL-groep (voorheen SQL DW)
+description: In dit artikel vindt u een lijst met veelgestelde vragen over een toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics van klanten en ontwikkel aars.
 services: synapse-analytics
 author: mlee3gsd
 manager: craigg
@@ -10,14 +10,14 @@ ms.subservice: sql-dw
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: d1e2f82ecd80579d19f3a8793db64f6b8a17a440
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: c8f8ae81f6f030245899ec82dbe16b29846dab23
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93323603"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460522"
 ---
-# <a name="azure-synapse-analytics-formerly-sql-dw-frequently-asked-questions"></a>Veelgestelde vragen over Azure Synapse Analytics (voorheen SQL DW)
+# <a name="dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-frequently-asked-questions"></a>Toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics Veelgestelde vragen
 
 ## <a name="general"></a>Algemeen
 
@@ -27,11 +27,11 @@ A. Azure Synapse is een analyse service waarmee gegevens opslag en Big data-anal
 
 V. Wat is er gebeurd met Azure SQL Data Warehouse?
 
-A. Azure Synapse wordt Azure SQL Data Warehouse ontwikkeld. We hebben hetzelfde toonaangevende data warehouse gebruikt voor een geheel nieuw niveau van prestaties en mogelijkheden. U kunt door gaan met het uitvoeren van uw bestaande Data Warehouse-workloads in productie met Azure Synapse. Zie [Wat is Azure Synapse Analytics](sql-data-warehouse-overview-what-is.md) voor meer informatie.
+A. Azure Synapse wordt Azure SQL Data Warehouse ontwikkeld. We hebben hetzelfde toonaangevende data warehouse gebruikt voor een geheel nieuw niveau van prestaties en mogelijkheden. U kunt door gaan met het uitvoeren van uw bestaande Data Warehouse-workloads in productie met een toegewezen SQL-groep (voorheen SQL DW) in azure Synapse. Zie [Wat is Azure Synapse Analytics](sql-data-warehouse-overview-what-is.md) voor meer informatie.
 
-V. Wat is een toegewezen SQL-groep?
+V. Wat is een toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics?
 
-A. De toegewezen SQL-groep verwijst naar de functies voor Enter prise data warehousing die algemeen beschikbaar zijn met Azure Synapse. Zie voor meer informatie, [Wat is Azure Synapse Analytics](sql-data-warehouse-overview-what-is.md).
+A. De toegewezen SQL-groep (voorheen SQL DW) verwijst naar de functies voor Enter prise data warehousing die algemeen beschikbaar zijn met Azure Synapse. Zie voor meer informatie, [Wat is Azure Synapse Analytics](sql-data-warehouse-overview-what-is.md).
 
 V. Hoe kan ik aan de slag met Azure Synapse?
 
@@ -49,7 +49,7 @@ V. Kan ik Power BI verbinding maken?
 
 A. Ja. Hoewel Power BI directe query met Azure Synapse ondersteunt, is het niet bedoeld voor een groot aantal gebruikers of realtime-gegevens. Als u de prestaties van Power BI verder wilt optimaliseren, kunt u Power BI gebruiken boven op Azure Analysis Services of Analysis Service IaaS.
 
-V. Wat zijn de capaciteits limieten voor een toegewezen SQL-groep?
+V. Wat zijn een toegewezen SQL-groep (voorheen SQL DW) capaciteits limieten?
 
 A. Bekijk onze huidige [capaciteits limieten](sql-data-warehouse-service-capacity-limits.md) pagina.
 
@@ -83,15 +83,15 @@ A. Veel functies worden ondersteund. Functies die niet worden ondersteund, kunne
 
 ## <a name="tooling-and-administration"></a>Hulp middelen en beheer
 
-V. Ondersteunt de exclusieve SQL-groep REST-Api's?
+V. Ondersteunt de exclusieve SQL-groep (voorheen SQL DW) REST-Api's?
 
-A. Ja. De meeste REST-functionaliteit die met SQL Database kan worden gebruikt, is ook beschikbaar met een toegewezen SQL-groep. U vindt API-informatie binnen REST-documentatie pagina's of [data bases](/rest/api/sql/databases?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
+A. Ja. De meeste REST-functionaliteit die met SQL Database kan worden gebruikt, is ook beschikbaar met een toegewezen SQL-groep (voorheen SQL DW). U vindt API-informatie binnen REST-documentatie pagina's of [data bases](/rest/api/sql/databases?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 
 ## <a name="loading"></a>Laden
 
 V. Welke client Stuur Programma's worden ondersteund?
 
-A. Stuur programma-ondersteuning voor toegewezen SQL-groep vindt u op de pagina [verbindings reeksen](../sql/connection-strings.md)
+A. Stuur programma-ondersteuning voor toegewezen SQL-groep (voorheen SQL DW) vindt u op de pagina [verbindings reeksen](sql-data-warehouse-connection-strings.md)
 
 V: welke bestands indelingen worden ondersteund door poly base?
 
@@ -107,8 +107,8 @@ A: Nee, poly base werkt alleen met de opslag onderdelen.
 
 V: kan ik verbinding maken met HDI?
 
-A: HDI kan ADLS of WASB als de HDFS-laag gebruiken. Als u als uw HDFS-laag hebt, kunt u die gegevens laden in een toegewezen SQL-groep. U kunt echter geen pushdown berekening genereren voor het HDI-exemplaar.
+A: HDI kan ADLS of WASB als de HDFS-laag gebruiken. Als u als uw HDFS-laag hebt, kunt u die gegevens in een toegewezen SQL-groep (voorheen SQL DW) laden. U kunt echter geen pushdown berekening genereren voor het HDI-exemplaar.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie onze pagina [overzicht](sql-data-warehouse-overview-faq.md) voor meer informatie over Azure Synapse als geheel.
+Zie onze pagina [overzicht](sql-data-warehouse-overview-what-is.md) voor meer informatie over de toegewezen SQL-groep (voorheen SQL DW) in azure Synapse.

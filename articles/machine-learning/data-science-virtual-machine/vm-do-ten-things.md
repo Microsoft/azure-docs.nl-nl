@@ -10,12 +10,12 @@ author: lobrien
 ms.author: laobri
 ms.topic: conceptual
 ms.date: 05/08/2020
-ms.openlocfilehash: 766da55f2589e2a8eb09e0f1b1c9a0a5027c8c3c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 1e263886d0cc199bb30fd28877be32209ab32a22
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96002762"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462393"
 ---
 # <a name="data-science-with-a-windows-data-science-virtual-machine"></a>Data Wetenschappen met een Windows-Data Science Virtual Machine
 
@@ -252,8 +252,8 @@ De gegevens worden als een gegevens frame gelezen:
 ![Scherm afbeelding van de eerste 10 rijen met gegevens](./media/vm-do-ten-things/IPNB_data_readin.png)
 
 
-### <a name="azure-synapse-analytics-formerly-sql-dw-and-databases"></a>Azure Synapse Analytics (voorheen SQL DW) en data bases
-Azure Synapse Analytics (voorheen SQL DW) is een elastisch data warehouse als een service met een SQL Server ervaring op bedrijfs niveau.
+### <a name="azure-synapse-analytics-and-databases"></a>Azure Synapse Analytics en data bases
+Azure Synapse Analytics is een elastisch data warehouse als een service met een SQL Server ervaring op bedrijfs niveau.
 
 U kunt Azure Synapse Analytics inrichten door de instructies in [dit artikel](../../synapse-analytics/sql-data-warehouse/create-data-warehouse-portal.md)te volgen. Nadat u Azure Synapse Analytics hebt ingericht, kunt u [deze procedure](../team-data-science-process/sqldw-walkthrough.md) gebruiken om gegevens te uploaden, te verkennen en te model leren met behulp van gegevens in azure Synapse Analytics.
 

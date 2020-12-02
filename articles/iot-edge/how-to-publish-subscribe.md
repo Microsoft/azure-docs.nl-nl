@@ -10,12 +10,12 @@ ms.date: 11/09/2020
 ms.topic: conceptual
 ms.service: iot-edge
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: ecb034ae621c935c3ebcd5b480e116c2cb1d864f
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: acde6f401404596212b713f248bb6d11c25b4671
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/01/2020
-ms.locfileid: "96435532"
+ms.locfileid: "96461422"
 ---
 # <a name="publish-and-subscribe-with-azure-iot-edge"></a>Publiceren en abonneren met Azure IoT Edge
 
@@ -31,7 +31,7 @@ U kunt Azure IoT Edge MQTT Broker gebruiken voor het publiceren en abonneren van
 - Een **IOT hub** van de SKU F1, S1, S2 of S3.
 - Een **IOT edge apparaat hebben met versie 1,2 of hoger**. Omdat IoT Edge MQTT Broker momenteel beschikbaar is in de open bare preview, stelt u de volgende omgevings variabelen in op True in de edgeHub-container om de MQTT Broker in te scha kelen:
 
-   | Name | Waarde |
+   | Naam | Waarde |
    | - | - |
    | `experimentalFeatures__enabled` | `true` |
    | `experimentalFeatures__mqttBrokerEnabled` | `true` |

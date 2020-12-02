@@ -13,16 +13,16 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 08/06/2020
+ms.date: 12/01/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref, devx-track-azurecli
-ms.openlocfilehash: c41ec06b1f985296377d27dcbe72b5f41224809b
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 4d7debce83928e21072c981b007e8048bfc4c594
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94835404"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460936"
 ---
 # <a name="faqs-and-known-issues-with-managed-identities-for-azure-resources"></a>Veelgestelde vragen en bekende problemen met beheerde identiteiten voor Azure-resources
 
@@ -85,6 +85,46 @@ Nee. Beheerde identiteiten bieden momenteel geen ondersteuning voor scenario's m
 - Door het systeem toegewezen beheerde identiteit: u hebt schrijf machtigingen nodig voor de resource. Voor virtuele machines hebt u bijvoorbeeld Microsoft. Compute/virtualMachines/write nodig. Deze actie is opgenomen in resource-specifieke ingebouwde rollen als [Inzender voor virtuele machines](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor).
 - Door de gebruiker toegewezen beheerde identiteit: u hebt schrijf machtigingen nodig voor de resource. Voor virtuele machines hebt u bijvoorbeeld Microsoft. Compute/virtualMachines/write nodig. Naast de roltoewijzing voor [beheerde identiteits operatoren](../../role-based-access-control/built-in-roles.md#managed-identity-operator) via de beheerde identiteit.
 
+### <a name="how-do-i-prevent-the-creation-of-user-assigned-managed-identities"></a>Hoe kan ik voor komen dat door de gebruiker toegewezen beheerde identiteiten worden gemaakt?
+
+U kunt ervoor zorgen dat uw gebruikers door de gebruiker toegewezen beheerde identiteiten maken met behulp van [Azure Policy](../../governance/policy/overview.md)
+
+- Ga naar het [Azure Portal](https://portal.azure.com) en ga naar **beleid**.
+- **Definities** kiezen
+- Selecteer **+ beleids definitie** en voer de benodigde gegevens in.
+- In de sectie beleids regel plakken
+
+```json
+{
+  "mode": "All",
+  "policyRule": {
+    "if": {
+      "field": "type",
+      "equals": "Microsoft.ManagedIdentity/userAssignedIdentities"
+    },
+    "then": {
+      "effect": "deny"
+    }
+  },
+  "parameters": {}
+}
+
+```
+
+Nadat u het beleid hebt gemaakt, wijst u het toe aan de resource groep die u wilt gebruiken.
+
+- Navigeer naar resource groepen.
+- Zoek de resource groep die u gebruikt voor het testen.
+- Kies **beleid** in het menu links.
+- **Beleid toewijzen** selecteren
+- In de sectie **basis beginselen** vindt u het volgende:
+    - **Bereik** De resource groep die wordt gebruikt voor het testen van
+    - **Beleids definitie**: het beleid dat we eerder hebben gemaakt.
+- Laat alle andere instellingen op de standaard waarden staan en kies **controleren + maken** .
+
+Op dit moment mislukt elke poging om een door de gebruiker toegewezen beheerde identiteit in de resource groep te maken.
+
+  ![Beleids schending](./media/known-issues/policy-violation.png)
 
 ## <a name="known-issues"></a>Bekende problemen
 

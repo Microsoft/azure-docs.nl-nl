@@ -5,12 +5,12 @@ author: emaher
 ms.topic: article
 ms.date: 06/26/2020
 ms.author: enewman
-ms.openlocfilehash: bed43e586beff890f0aa8947140ae7d8e50439f3
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 32079d6dc31cf3fcad66976737630472129b4271
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94659825"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462416"
 ---
 # <a name="set-up-a-lab-to-teach-database-management-for-relational-databases"></a>Stel een lab in om database beheer te leren voor relationele data bases
 
@@ -20,7 +20,7 @@ In dit artikel laten we zien hoe u een virtuele-machine sjabloon kunt instellen 
 
 ## <a name="lab-configuration"></a>Lab-configuratie
 
-Als u dit Lab wilt instellen, hebt u een Azure-abonnement en een Lab-account nodig om aan de slag te gaan. Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint. Zodra u een Azure-abonnement hebt ontvangen, kunt u een nieuw Lab-account maken in Azure Lab Services. Zie [zelf studie voor het instellen van een Lab-account](tutorial-setup-lab-account.md)voor meer informatie over het maken van een nieuw Lab-account.  U kunt ook een bestaand Lab-account gebruiken.
+Als u dit Lab wilt instellen, hebt u een Azure-abonnement en een Lab-account nodig om aan de slag te gaan. Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint. Zodra u een Azure-abonnement hebt ontvangen, kunt u een nieuw Lab-account maken in Azure Lab Services. Zie [zelf studie voor het instellen van een Lab-account](tutorial-setup-lab-account.md)voor meer informatie over het maken van een nieuw Lab-account.  U kunt ook een bestaand Lab-account gebruiken.
 
 ### <a name="lab-account-settings"></a>Instellingen van Lab-account
 
@@ -41,7 +41,7 @@ Gebruik de instellingen in de onderstaande tabel bij het instellen van een leslo
 
 ## <a name="template-machine-configuration"></a>Configuratie van de sjabloon machine
 
-Als u MySQL wilt installeren op Windows Server 2019, kunt u de stappen volgen die worden beschreven in [install en run mysql community server op een virtuele machine](/previous-versions/azure/virtual-machines/windows/classic/mysql-2008r2?toc=%252fazure%252fvirtual-machines%252fwindows%252fclassic%252ftoc.json#install-and-run-mysql-community-server-on-the-virtual-machine).
+Als u MySQL wilt installeren op Windows Server 2019, kunt u de stappen volgen die worden beschreven in [install en run mysql community server op een virtuele machine](/previous-versions/azure/virtual-machines/windows/classic/mysql-2008r2?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json#install-and-run-mysql-community-server-on-the-virtual-machine).
 
 SQL Server 2019 is vooraf geïnstalleerd in de installatie kopie van de virtuele machine die u hebt gekozen bij het maken van het nieuwe lab.
 

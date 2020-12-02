@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: article
 ms.date: 03/02/2020
 ms.author: alkohli
-ms.openlocfilehash: c177de3a862370f4d1daa19c6560950b66b18352
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8b36bb34f4c9081d807998cb8287797443625a6b
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91826841"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460300"
 ---
 # <a name="azure-stack-edge-pro-technical-specifications"></a>Technische specificaties van Azure Stack Edge Pro
 
@@ -34,7 +34,7 @@ Een veld Programmeer bare gate array (FPGA) is opgenomen op elk Azure Stack Edge
 
 | Specificatie           | Waarde                  |
 |-------------------------|----------------------------|
-| FPGA   | Intel Arria 10 <br> Beschik bare DNN-modellen (diepe Neural Network) zijn hetzelfde als die [van Cloud FPGA-exemplaren](https://docs.microsoft.com/azure/machine-learning/how-to-deploy-fpga-web-service#whats-supported-on-azure).|
+| FPGA   | Intel Arria 10 <br> Beschik bare DNN-modellen (diepe Neural Network) zijn hetzelfde als die [van Cloud FPGA-exemplaren](../machine-learning/how-to-deploy-fpga-web-service.md#fpga-support-in-azure).|
 
 ## <a name="power-supply-unit-specifications"></a>Specificaties van voedings eenheid voor voeding
 
@@ -43,7 +43,7 @@ Het Azure Stack Edge Pro-apparaat heeft twee 100-240 V-energievoedings eenheden 
 | Specificatie           | 750 W PSU                  |
 |-------------------------|----------------------------|
 | Maximale uitvoer kracht    | 750 W                     |
-| Frequency               | 50/60 Hz                   |
+| Frequentie               | 50/60 Hz                   |
 | Selectie van voltage bereik | Automatisch variërend: 100-240 V AC |
 | Hot pluggable           | Ja                        |
 

@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 robots: noindex
 ms.date: 01/22/2018
-ms.openlocfilehash: 24e468007e0e5ea849ac4d7f945b0aaf6377e580
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: b7f0a352afeb4a2e58d97bd5278115673f6b6df6
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92633804"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461694"
 ---
 # <a name="azure-data-factory---net-api-change-log"></a>Azure Data Factory-.NET API-wijzigings logboek
 > [!NOTE]
@@ -75,7 +75,7 @@ Toevoegingen van functies:
 ### <a name="feature-additions"></a>Functie toevoegingen
 * Het nieuwe StorageFormat type [OrcFormat](/dotnet/api/microsoft.azure.management.datafactories.models.orcformat) -type is toegevoegd om bestanden te kopiëren in de indeling van de geoptimaliseerde rij in kolommen (Orc).
 * Voeg de eigenschappen [AllowPolyBase](/dotnet/api/microsoft.azure.management.datafactories.models.sqldwsink) en PolyBaseSettings toe aan SqlDWSink.
-  * Hiermee schakelt u het gebruik van poly base in voor het kopiëren van gegevens naar Azure Synapse Analytics (voorheen SQL Data Warehouse).
+  * Hiermee schakelt u het gebruik van poly base in voor het kopiëren van gegevens naar Azure Synapse Analytics.
 
 ## <a name="version-461"></a>Versie 4.6.1
 ### <a name="bug-fixes"></a>Opgeloste fouten
@@ -181,5 +181,5 @@ De naam van de volgende klassen is gewijzigd. De nieuwe namen bevinden zich in d
 * **Lijst** PIJPLIJN-API retourneert alleen de samen vatting van een pijp lijn in plaats van volledige details. Bijvoorbeeld: activiteiten in een pijp lijn-samen vatting bevatten alleen naam en type.
 
 ### <a name="feature-additions"></a>Functie toevoegingen
-* De klasse [SqlDWSink](/dotnet/api/microsoft.azure.management.datafactories.models.sqldwsink) ondersteunt twee nieuwe eigenschappen, **SliceIdentifierColumnName** en **SqlWriterCleanupScript** , ter ondersteuning van idempotent-kopie naar Azure Azure Synapse Analytics. Zie het artikel over [Azure Synapse Analytics](data-factory-azure-sql-data-warehouse-connector.md) voor meer informatie over deze eigenschappen.
-* We ondersteunen nu het uitvoeren van een opgeslagen procedure voor Azure SQL Database en Azure Synapse Analytics-bronnen als onderdeel van de Kopieer activiteit. De klassen [SqlSource](/dotnet/api/microsoft.azure.management.datafactories.models.sqlsource) en [SqlDWSource](/dotnet/api/microsoft.azure.management.datafactories.models.sqldwsource) hebben de volgende eigenschappen: **SqlReaderStoredProcedureName** en **StoredProcedureParameters** . Raadpleeg de [Azure SQL database](data-factory-azure-sql-connector.md#sqlsource) -en [Azure Synapse Analytics](data-factory-azure-sql-data-warehouse-connector.md#sqldwsource) -artikelen over Azure.com voor meer informatie over deze eigenschappen.
+* De klasse [SqlDWSink](/dotnet/api/microsoft.azure.management.datafactories.models.sqldwsink) ondersteunt twee nieuwe eigenschappen, **SliceIdentifierColumnName** en **SqlWriterCleanupScript**, ter ondersteuning van idempotent-kopie naar Azure Azure Synapse Analytics. Zie het artikel over [Azure Synapse Analytics](data-factory-azure-sql-data-warehouse-connector.md) voor meer informatie over deze eigenschappen.
+* We ondersteunen nu het uitvoeren van een opgeslagen procedure voor Azure SQL Database en Azure Synapse Analytics-bronnen als onderdeel van de Kopieer activiteit. De klassen [SqlSource](/dotnet/api/microsoft.azure.management.datafactories.models.sqlsource) en [SqlDWSource](/dotnet/api/microsoft.azure.management.datafactories.models.sqldwsource) hebben de volgende eigenschappen: **SqlReaderStoredProcedureName** en **StoredProcedureParameters**. Raadpleeg de [Azure SQL database](data-factory-azure-sql-connector.md#sqlsource) -en [Azure Synapse Analytics](data-factory-azure-sql-data-warehouse-connector.md#sqldwsource) -artikelen over Azure.com voor meer informatie over deze eigenschappen.

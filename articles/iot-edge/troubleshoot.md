@@ -8,12 +8,12 @@ ms.date: 11/12/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: daae45c9eca45022225ea47aa048815d5eff70c4
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 035cf5be4471cad7ac11eb8ce9a8a0ecb13a68da
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94964504"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462370"
 ---
 # <a name="troubleshoot-your-iot-edge-device"></a>Problemen met uw IoT Edge apparaat oplossen
 
@@ -81,7 +81,7 @@ Zie [IOT Edge Security daemon en runtime bijwerken](how-to-update-iot-edge.md)vo
 
 ## <a name="verify-the-installation-of-iot-edge-on-your-devices"></a>De installatie van IoT Edge op uw apparaten controleren
 
-U kunt de installatie van IoT Edge op uw apparaten controleren door [de edgeAgent-module te controleren](https://docs.microsoft.com/azure/iot-edge/how-to-monitor-module-twins).
+U kunt de installatie van IoT Edge op uw apparaten controleren door [de edgeAgent-module te controleren](./how-to-monitor-module-twins.md).
 
 Voer de volgende opdracht uit [Azure Cloud shell](https://shell.azure.com/)om de meest recente edgeAgent-module te verkrijgen:
 
@@ -89,7 +89,7 @@ Voer de volgende opdracht uit [Azure Cloud shell](https://shell.azure.com/)om de
    az iot hub module-twin show --device-id <edge_device_id> --module-id $edgeAgent --hub-name <iot_hub_name>
    ```
 
-Met deze opdracht worden alle edgeAgent- [gerapporteerde eigenschappen](https://docs.microsoft.com/azure/iot-edge/module-edgeagent-edgehub)uitgevoerd. Hier volgen enkele nuttige items om de status van het apparaat te controleren:
+Met deze opdracht worden alle edgeAgent- [gerapporteerde eigenschappen](./module-edgeagent-edgehub.md)uitgevoerd. Hier volgen enkele nuttige items om de status van het apparaat te controleren:
 
 * runtime status
 * Start tijd van runtime

@@ -1,6 +1,6 @@
 ---
-title: Een query uitvoeren op geneste Parquet-typen met serverloze SQL-pool (preview-versie)
-description: In dit artikel leert u hoe u een query kunt uitvoeren op geneste Parquet-typen met behulp van serverloze SQL-pool (preview).
+title: Parquet geneste typen doorzoeken met serverloze SQL-groep
+description: In dit artikel leert u hoe u een query kunt uitvoeren op geneste Parquet-typen met behulp van serverloze SQL-pool.
 services: synapse-analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 426c95638422fa4260508aa81bb47a7c9565e6eb
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 91f612ba7f19deb739dbb6004e275ea044a5a3d3
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685712"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462557"
 ---
-# <a name="query-nested-types-in-parquet-and-json-files-by-using-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Geneste typen in Parquet-en JSON-bestanden zoeken met behulp van serverloze SQL-pool (preview) in azure Synapse Analytics
+# <a name="query-nested-types-in-parquet-and-json-files-by-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Geneste typen in Parquet-en JSON-bestanden doorzoeken met serverloze SQL-groep in azure Synapse Analytics
 
-In dit artikel leert u hoe u een query schrijft met behulp van serverloze SQL-pool (preview) in azure Synapse Analytics. Met de query worden geneste Parquet-typen gelezen.
+In dit artikel leert u hoe u een query schrijft met behulp van serverloze SQL-pool in azure Synapse Analytics. Met de query worden geneste Parquet-typen gelezen.
 Geneste typen zijn complexe structuren die objecten of matrices vertegenwoordigen. Geneste typen kunnen worden opgeslagen in: 
 - [Parquet](query-parquet-files.md), waar u meerdere complexe kolommen kunt hebben die matrices en objecten bevatten.
 - Hiërarchische [json-bestanden](query-json-files.md), waar u een complex JSON-document als één kolom kunt lezen.
@@ -117,7 +117,7 @@ FROM
 
 Het resultaat wordt weer gegeven in de volgende tabel:
 
-|titel  | first_author_name | body_text | complex_column |
+|title  | first_author_name | body_text | complex_column |
 | --- | --- | --- | --- |
 | Aanvullende informatie een eco-epidemiolo... | Julien   | -Afbeelding S1: Phylogeny van... | `{    "paper_id": "000b7d1517ceebb34e1e3e817695b6de03e2fa78",    "metadata": {        "title": "Supplementary Information An eco-epidemiological study of Morbilli-related paramyxovirus infection in Madagascar bats reveals host-switching as the dominant macro-evolutionary mechanism",        "authors": [            {                "first": "Julien"` |
 

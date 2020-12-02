@@ -11,19 +11,19 @@ ms.topic: conceptual
 author: DavidTrigano
 ms.author: datrigan
 ms.reviewer: vanto
-ms.date: 09/21/2020
+ms.date: 12/01/2020
 tags: azure-synapse
-ms.openlocfilehash: ab974b0f68e831e672329f8af5ae1cb6a5fdbd4c
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: c3f1209c2c903399617bd60258cc152a6ce90b80
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92672074"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462075"
 ---
 # <a name="data-discovery--classification"></a>Gegevensdetectie en -classificatie
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
-Gegevens detectie & classificatie is ingebouwd in Azure SQL Database, Azure SQL Managed instance en Azure Synapse Analytics. Het biedt geavanceerde mogelijkheden voor het detecteren, classificeren, labelen en rapporteren van gevoelige gegevens in uw data bases.
+Gegevens detectie & classificatie is ingebouwd in Azure SQL Database, Azure SQL Managed instance en Azure Synapse Analytics. De functie biedt geavanceerde mogelijkheden voor het detecteren, classificeren, labelen en rapporteren van gevoelige gegevens in uw database.
 
 Uw meest gevoelige gegevens kunnen bedrijfs-, financiële, gezondheids zorg of persoonlijke informatie bevatten. Het detecteren en classificeren van deze gegevens kan een draai functie spelen in de aanpak van de gegevens beveiliging van uw organisatie. Dit kan dienen als infrastructuur om:
 
@@ -55,8 +55,8 @@ In deze sectie worden de stappen beschreven voor:
 
 De classificatie bevat twee meta gegevens kenmerken:
 
-- **Labels** : de belangrijkste classificatie kenmerken, die worden gebruikt voor het definiëren van het gevoeligheids niveau van de gegevens die zijn opgeslagen in de kolom.  
-- **Informatie typen** : kenmerken die meer gedetailleerde informatie geven over het type gegevens dat in de kolom is opgeslagen.
+- **Labels**: de belangrijkste classificatie kenmerken, die worden gebruikt voor het definiëren van het gevoeligheids niveau van de gegevens die zijn opgeslagen in de kolom.  
+- **Informatie typen**: kenmerken die meer gedetailleerde informatie geven over het type gegevens dat in de kolom is opgeslagen.
 
 ### <a name="define-and-customize-your-classification-taxonomy"></a>Uw classificatie taxonomie definiëren en aanpassen
 
@@ -77,7 +77,9 @@ Nadat u het beleid voor de hele organisatie hebt gedefinieerd, kunt u afzonderli
 
 1. Ga naar [Azure Portal](https://portal.azure.com).
 
-1. Ga naar **gegevens detectie & classificatie** onder de kop beveiliging in het deel venster Azure SQL database. Het tabblad Overzicht bevat een samen vatting van de huidige classificatie status van de data base. De samen vatting bevat een gedetailleerde lijst met alle geclassificeerde kolommen, die u ook kunt filteren om alleen specifieke schema onderdelen, informatie typen en labels weer te geven. Als u nog geen kolommen hebt geclassificeerd, [gaat u verder met stap 4](#step-4).
+1. Ga naar **gegevens detectie & classificatie** onder de kop **beveiliging** in het deel venster Azure SQL database. Het tabblad Overzicht bevat een samen vatting van de huidige classificatie status van de data base. De samen vatting bevat een gedetailleerde lijst met alle geclassificeerde kolommen, die u ook kunt filteren om alleen specifieke schema onderdelen, informatie typen en labels weer te geven. Als u nog geen kolommen hebt geclassificeerd, [gaat u verder met stap 4](#step-4).
+
+    ![Overzicht](./media/data-discovery-and-classification-overview/data-discovery-and-classification.png)
 
 1. Als u een rapport in Excel-indeling wilt downloaden, selecteert u **exporteren** in het bovenste menu van het deel venster.
 
@@ -93,6 +95,8 @@ Nadat u het beleid voor de hele organisatie hebt gedefinieerd, kunt u afzonderli
 
    - Selecteer **geselecteerde aanbevelingen accepteren** om de geselecteerde aanbevelingen toe te passen.
 
+   ![Aanbevelingen voor classificatie](./media/data-discovery-and-classification-overview/recommendation.png)
+
 1. U kunt kolommen ook hand matig classificeren, als een alternatief of naast de classificatie op basis van aanbevelingen:
 
    1. Selecteer **classificatie toevoegen** in het bovenste menu van het deel venster.
@@ -101,7 +105,10 @@ Nadat u het beleid voor de hele organisatie hebt gedefinieerd, kunt u afzonderli
 
    1. Selecteer **classificatie toevoegen** onder aan het context venster.
 
-1. Als u de classificatie wilt volt ooien en de database kolommen persistent wilt labelen (labelen) met de nieuwe meta gegevens van de classificatie, selecteert u **Opslaan** in het bovenste menu van het venster.
+   ![Classificatie hand matig toevoegen](./media/data-discovery-and-classification-overview/manually-add-classification.png)
+
+
+1. Als u de classificatie wilt volt ooien en de database kolommen persistent wilt labelen (labelen) met de nieuwe meta gegevens van de classificatie, selecteert u **Opslaan** op de pagina **classificatie** .
 
 ## <a name="audit-access-to-sensitive-data"></a><a id="audit-sensitive-data"></a>Toegang tot gevoelige gegevens controleren
 

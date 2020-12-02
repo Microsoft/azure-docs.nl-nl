@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/06/2020
-ms.openlocfilehash: 2f32fc9ffb8be5b71bfe84a4f0e946e68e8fcd03
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: a915b5a348e3167d2cf81906b19abd9850584ce9
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94577818"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460981"
 ---
 # <a name="plan-an-azure-managed-application-for-an-azure-application-offer"></a>Een door Azure beheerde toepassing plannen voor een Azure-toepassings aanbieding
 
@@ -32,7 +32,7 @@ Gebruik een Azure-toepassing: beheerd toepassings plan wanneer aan de volgende v
 | ------------ | ------------- |
 | Een Azure-abonnement | Beheerde toepassingen moeten worden geïmplementeerd op het abonnement van een klant, maar kunnen worden beheerd door derden. |
 | Facturering en meting | De resources zijn opgenomen in het Azure-abonnement van een klant. Vm's die gebruikmaken van het betalen per gebruik-betalings model, worden door micro soft gefactureerd met de klant via het Azure-abonnement van de klant. <br><br> Voor uw Vm's met uw eigen licentie, factureert micro soft kosten voor de infra structuur die in het abonnement van de klant worden gemaakt, maar u kunt ook de kosten voor software licenties ook rechtstreeks aan de klant door geven. |
-| Azure-compatibele virtuele harde schijf (VHD) | Vm's moeten zijn gebouwd op Windows of Linux. Zie voor meer informatie:<br> • [Een Azure VM-technische Asset maken](/azure/marketplace/partner-center-portal/vm-certification-issues-solutions#how-to-address-a-vulnerability-or-exploit-in-a-vm-offer.md) (voor Windows-vhd's).<br> •  [Linux-distributies die zijn goedgekeurd op Azure](/azure/virtual-machines/linux/endorsed-distros) (voor Linux-vhd's). |
+| Azure-compatibele virtuele harde schijf (VHD) | Vm's moeten zijn gebouwd op Windows of Linux. Zie voor meer informatie:<br> • [Een Azure VM-technische Asset maken](./azure-vm-create-certification-faq.md#address-a-vulnerability-or-an-exploit-in-a-vm-offer) (voor Windows-vhd's).<br> •  [Linux-distributies die zijn goedgekeurd op Azure](../virtual-machines/linux/endorsed-distros.md) (voor Linux-vhd's). |
 | Gebruikskenmerken van klanten | Alle nieuwe aanbiedingen van Azure Application moeten ook een GUID voor [klant gebruik van Azure-partners](azure-partner-customer-usage-attribution.md) bevatten. Zie voor meer informatie over het gebruik van de klant en hoe u deze functie inschakelt, de [klant gebruiks toewijzing van Azure-partners](azure-partner-customer-usage-attribution.md). |
 | Implementatie pakket | U hebt een implementatie pakket nodig waarmee klanten uw abonnement kunnen implementeren. Als u meerdere plannen maakt waarvoor dezelfde technische configuratie nodig is, kunt u hetzelfde pakket gebruiken. Zie de volgende sectie: implementatie pakket voor meer informatie. |
 |||
@@ -46,8 +46,8 @@ Het implementatie pakket bevat alle sjabloon bestanden die nodig zijn voor dit p
 
 Alle Azure-toepassingen moeten deze twee bestanden in de hoofdmap van een zip-archief bevatten:
 
-- Een resource manager-sjabloon bestand [ met de naammainTemplate.jsop](/azure/azure-resource-manager/managed-applications/publish-service-catalog-app?tabs=azure-powershell#create-the-arm-template.md). Met deze sjabloon worden de resources gedefinieerd die moeten worden geïmplementeerd in het Azure-abonnement van de klant. Voor voor beelden van Resource Manager-sjablonen raadpleegt u de [Azure Quick Start-sjablonen galerie](https://azure.microsoft.com/documentation/templates/) of de bijbehorende [github: Azure Resource Manager Quick](https://github.com/azure/azure-quickstart-templates) start-sjablonen opslag plaats.
-- Een definitie van de gebruikers interface voor de Azure-toepassing voor het maken van toepassingen met de naam [createUiDefinition.jsop](/azure/azure-resource-manager/managed-application-createuidefinition-overview). In de gebruikersinterface geeft u elementen op waarmee consumenten parameterwaarden kunnen opgeven.
+- Een resource manager-sjabloon bestand [ met de naammainTemplate.jsop](../azure-resource-manager/managed-applications/publish-service-catalog-app.md?tabs=azure-powershell#create-the-arm-template). Met deze sjabloon worden de resources gedefinieerd die moeten worden geïmplementeerd in het Azure-abonnement van de klant. Voor voor beelden van Resource Manager-sjablonen raadpleegt u de [Azure Quick Start-sjablonen galerie](https://azure.microsoft.com/documentation/templates/) of de bijbehorende [github: Azure Resource Manager Quick](https://github.com/azure/azure-quickstart-templates) start-sjablonen opslag plaats.
+- Een definitie van de gebruikers interface voor de Azure-toepassing voor het maken van toepassingen met de naam [createUiDefinition.jsop](../azure-resource-manager/managed-applications/create-uidefinition-overview.md). In de gebruikersinterface geeft u elementen op waarmee consumenten parameterwaarden kunnen opgeven.
 
 De maximale bestands grootte die wordt ondersteund zijn:
 
@@ -58,7 +58,7 @@ Alle nieuwe aanbiedingen van Azure Application moeten ook een GUID voor [klant g
 
 ## <a name="azure-regions"></a>Azure-regio's
 
-U kunt uw abonnement publiceren naar de open bare Azure-regio, de Azure Government regio of beide. Voordat u naar [Azure Government](/azure/azure-government/documentation-government-manage-marketplace-partners)publiceert, moet u het abonnement testen en valideren in de omgeving, omdat bepaalde eind punten kunnen verschillen. Als u uw abonnement wilt instellen en testen, vraagt u een proef account aan bij [Microsoft Azure Government proef versie](https://azure.microsoft.com/global-infrastructure/government/request/).
+U kunt uw abonnement publiceren naar de open bare Azure-regio, de Azure Government regio of beide. Voordat u naar [Azure Government](../azure-government/documentation-government-manage-marketplace-partners.md)publiceert, moet u het abonnement testen en valideren in de omgeving, omdat bepaalde eind punten kunnen verschillen. Als u uw abonnement wilt instellen en testen, vraagt u een proef account aan bij [Microsoft Azure Government proef versie](https://azure.microsoft.com/global-infrastructure/government/request/).
 
 Als uitgever bent u verantwoordelijk voor nalevings controles, beveiligings maatregelen en aanbevolen procedures. Azure Government maakt gebruik van fysiek geïsoleerde data centers en netwerken (alleen in de Verenigde Staten).
 
@@ -87,14 +87,14 @@ Prijzen worden ingesteld in USD (USD = Verenigde Staten dollar) worden omgezet i
 
 ## <a name="just-in-time-jit-access"></a>Just-in-time-toegang
 
-Met JIT-toegang kunt u verhoogde toegang tot de resources van een beheerde toepassing aanvragen voor het oplossen van problemen of onderhoud. U hebt altijd alleen-lezen toegang tot de resources, maar gedurende een bepaalde periode kunt u meer toegang hebben. Zie [just-in-time-toegang inschakelen en aanvragen voor Azure Managed Applications](/azure/managed-applications/request-just-in-time-access)voor meer informatie.
+Met JIT-toegang kunt u verhoogde toegang tot de resources van een beheerde toepassing aanvragen voor het oplossen van problemen of onderhoud. U hebt altijd alleen-lezen toegang tot de resources, maar gedurende een bepaalde periode kunt u meer toegang hebben. Zie [just-in-time-toegang inschakelen en aanvragen voor Azure Managed Applications](../azure-resource-manager/managed-applications/request-just-in-time-access.md)voor meer informatie.
 
 > [!NOTE]
 > Informatie die de gebruiker moet zien, zelfs als skimmingBe ervoor zorgt dat u het bestand bijwerkt `createUiDefinition.json` om deze functie te kunnen ondersteunen.
 
 ## <a name="deployment-mode"></a>Implementatie modus
 
-U kunt een beheerd toepassings plan configureren om de **volledige** of **incrementele** implementatie modus te gebruiken. In de volledige modus leidt een herimplementatie van de toepassing door de klant tot het verwijderen van resources in de beheerde resource groep als de resources niet zijn gedefinieerd in de [mainTemplate.jsop](/azure/azure-resource-manager/managed-applications/publish-service-catalog-app?tabs=azure-powershell#create-the-arm-template.md). In de incrementele modus blijven bestaande resources ongewijzigd wanneer de toepassing opnieuw wordt geïmplementeerd. Zie [Azure Resource Manager implementatie modi](/azure/azure-resource-manager/templates/deployment-modes)voor meer informatie.
+U kunt een beheerd toepassings plan configureren om de **volledige** of **incrementele** implementatie modus te gebruiken. In de volledige modus leidt een herimplementatie van de toepassing door de klant tot het verwijderen van resources in de beheerde resource groep als de resources niet zijn gedefinieerd in de [mainTemplate.jsop](../azure-resource-manager/managed-applications/publish-service-catalog-app.md?tabs=azure-powershell#create-the-arm-template). In de incrementele modus blijven bestaande resources ongewijzigd wanneer de toepassing opnieuw wordt geïmplementeerd. Zie [Azure Resource Manager implementatie modi](../azure-resource-manager/templates/deployment-modes.md)voor meer informatie.
 
 ## <a name="notification-endpoint-url"></a>URL van meldings eindpunt
 
@@ -104,7 +104,7 @@ U kunt optioneel een HTTPS-webhook-eind punt opgeven voor het ontvangen van meld
 
 U kunt optioneel opgeven welke acties klanten kunnen uitvoeren op de beheerde resources naast de `*/read` acties die standaard beschikbaar zijn.
 
-Als u deze optie kiest, moet u de acties voor het besturings element of de toegestane gegevens opgeven, of beide. Zie voor meer informatie [over het weigeren van toewijzingen voor Azure-resources](/azure/role-based-access-control/deny-assignments). Zie [Bewerkingen voor de resourceprovider van Azure Resource Manager](/azure/role-based-access-control/resource-provider-operations) voor beschikbare acties. Als u bijvoorbeeld wilt toestaan dat consumenten virtuele machines opnieuw opstarten, moet u `Microsoft.Compute/virtualMachines/restart/action` toevoegen aan de toegestane acties.
+Als u deze optie kiest, moet u de acties voor het besturings element of de toegestane gegevens opgeven, of beide. Zie voor meer informatie [over het weigeren van toewijzingen voor Azure-resources](../role-based-access-control/deny-assignments.md). Zie [Bewerkingen voor de resourceprovider van Azure Resource Manager](../role-based-access-control/resource-provider-operations.md) voor beschikbare acties. Als u bijvoorbeeld wilt toestaan dat consumenten virtuele machines opnieuw opstarten, moet u `Microsoft.Compute/virtualMachines/restart/action` toevoegen aan de toegestane acties.
 
 ## <a name="choose-who-can-manage-the-application"></a>Kies wie de toepassing kan beheren
 
@@ -113,14 +113,14 @@ U moet aangeven wie een beheerde toepassing kan beheren in elk van de geselectee
 - **Azure Active Directory TENANT-** id: de id van de Azure AD-Tenant (ook wel bekend als Directory-id) die de identiteiten bevat van de gebruikers, groepen of toepassingen waaraan u machtigingen wilt verlenen. U kunt uw Azure AD-Tenant-ID vinden op de Azure Portal, in [Eigenschappen voor Azure Active Directory](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Properties).
 - **Autorisaties** : voeg de Azure Active Directory object-id toe van elke gebruiker, groep of toepassing waaraan u machtigingen wilt verlenen voor de beheerde resource groep. Identificeer de gebruiker op basis van de principal-ID, die u kunt vinden op de [blade Azure Active Directory gebruikers op de Azure Portal](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/AllUsers).
 
-Voor elke Principal-ID koppelt u een van de ingebouwde rollen van Azure AD (eigenaar of bijdrager). Met de rol die u selecteert, worden de machtigingen beschreven die de principal heeft op de resources in het abonnement van de klant. Zie [Ingebouwde rollen in Azure](/azure/role-based-access-control/built-in-roles) voor meer informatie. Zie [aan de slag met RBAC in de Azure Portal](/azure/role-based-access-control/overview)voor meer informatie over op rollen gebaseerd toegangs beheer (RBAC).
+Voor elke Principal-ID koppelt u een van de ingebouwde rollen van Azure AD (eigenaar of bijdrager). Met de rol die u selecteert, worden de machtigingen beschreven die de principal heeft op de resources in het abonnement van de klant. Zie [Ingebouwde rollen in Azure](../role-based-access-control/built-in-roles.md) voor meer informatie. Zie [aan de slag met RBAC in de Azure Portal](../role-based-access-control/overview.md)voor meer informatie over op rollen gebaseerd toegangs beheer (RBAC).
 
 > [!NOTE]
 > Hoewel u Maxi maal 100 autorisaties per Azure-regio kunt toevoegen, is het over het algemeen eenvoudiger om een Active Directory gebruikers groep te maken en de ID op te geven in de principal-ID. Zo kunt u meer gebruikers toevoegen aan de beheer groep nadat het plan is geïmplementeerd en de nood zaak voor het bijwerken van het plan beperken om meer autorisaties toe te voegen.
 
 ## <a name="policy-settings"></a>Beleidsinstellingen
 
-U kunt [Azure-beleid](/azure/governance/policy) Toep assen op uw beheerde toepassing om nalevings vereisten voor de geïmplementeerde oplossing op te geven. Zie [Voorbeelden van Azure Policy](/azure/governance/policy/samples) voor beleidsdefinities en de indeling van de parameterwaarden.
+U kunt [Azure-beleid](../governance/policy/index.yml) Toep assen op uw beheerde toepassing om nalevings vereisten voor de geïmplementeerde oplossing op te geven. Zie [Voorbeelden van Azure Policy](../governance/policy/samples/index.md) voor beleidsdefinities en de indeling van de parameterwaarden.
 
 U kunt Maxi maal vijf beleids regels en slechts één exemplaar van elk beleids type configureren. Voor sommige beleids typen zijn aanvullende para meters vereist.
 

@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: ec619681f1eebc51da85d31ad15f1db25cfd3cbc
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 570281e31c70b2f5f85a858f9dd424f93ee86029
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917916"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460055"
 ---
 # <a name="integrate-key-vault-with-azure-private-link"></a>Sleutelkluis integreren met Azure Private Link
 
@@ -226,14 +226,14 @@ Aliases:  <your-key-vault-name>.vault.azure.net
 
 * Controleer of u een privé-DNS-zoneresource hebt. 
     1. U moet een privé-DNS-zoneresource hebben met de exacte naam: privatelink.vaultcore.azure.net. 
-    2. Zie de volgende koppeling voor meer informatie over het instellen hiervan. [Privé-DNS-zones](https://docs.microsoft.com/azure/dns/private-dns-privatednszone)
+    2. Zie de volgende koppeling voor meer informatie over het instellen hiervan. [Privé-DNS-zones](../../dns/private-dns-privatednszone.md)
     
 * Controleer of de privé-DNS-zone niet is gekoppeld aan het virtuele netwerk. Dit kan het probleem zijn als het openbare IP-adres nog steeds wordt geretourneerd. 
     1. Als de privé-DNS-zone niet is gekoppeld aan het virtuele netwerk, retourneert de DNS-query die afkomstig is van het virtuele netwerk het openbare IP-adres van de sleutelkluis. 
     2. Navigeer naar de privé-DNS-zoneresource in de Azure-portal en klik op de optie Virtuele netwerkkoppelingen. 
     4. Het virtuele netwerk waarmee aanroepen van de sleutelkluis worden uitgevoerd, moet worden weergegeven. 
     5. Als dat niet het geval is, voegt u het toe. 
-    6. Zie het volgende document voor gedetailleerde stappen: [Het virtuele netwerk koppelen aan de privé-DNS-zone](https://docs.microsoft.com/azure/dns/private-dns-getstarted-portal#link-the-virtual-network)
+    6. Zie het volgende document voor gedetailleerde stappen: [Het virtuele netwerk koppelen aan de privé-DNS-zone](../../dns/private-dns-getstarted-portal.md#link-the-virtual-network)
 
 * Controleer of in de privé-DNS-zone geen A-record voor de sleutelkluis ontbreekt. 
     1. Navigeer naar de pagina Privé-DNS-zone. 

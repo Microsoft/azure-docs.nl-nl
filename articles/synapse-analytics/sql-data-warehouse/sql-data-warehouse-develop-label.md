@@ -1,32 +1,30 @@
 ---
 title: Labels gebruiken voor instrument query's
-description: Tips voor het gebruik van labels voor instrument query's in Synapse SQL pool voor het ontwikkelen van oplossingen.
+description: Tips voor het gebruik van labels voor instrumentatie query's voor toegewezen SQL-groepen in azure Synapse Analytics.
 services: synapse-analytics
-author: XiaoyuMSFT
+author: MSTehrani
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
 ms.date: 04/17/2018
-ms.author: xiaoyul
+ms.author: emtehran
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: 91b6dac5fba4bb8dfd8cf4a3bb4e5952f8388bb5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: seo-lt-2019, azure-synapse
+ms.openlocfilehash: 7958caf71658dcdcbf31bac84697931e9049452f
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89459144"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462752"
 ---
-# <a name="using-labels-to-instrument-queries-in-synapse-sql-pool"></a>Labels gebruiken voor instrument query's in de SQL-groep Synapse
+# <a name="using-labels-to-instrument-queries-for-dedicated-sql-pools-in-azure-synapse-analytics"></a>Labels gebruiken voor instrumentatie query's voor toegewezen SQL-groepen in azure Synapse Analytics
 
-In dit artikel vindt u tips voor het ontwikkelen van oplossingen met behulp van labels voor instrument query's in de SQL-groep.
-
-Tips voor het gebruik van labels voor instrument query's in azure Synapse Analytics voor het ontwikkelen van oplossingen.
+In dit artikel vindt u tips voor het ontwikkelen van oplossingen met behulp van labels voor het verzenden van query's in toegewezen SQL-groepen.
 
 ## <a name="what-are-labels"></a>Wat zijn labels?
 
-SQL-pool ondersteunt een concept met de naam query labels. We kijken naar een voor beeld voordat u naar een andere diepte gaat:
+De toegewezen SQL-groep ondersteunt een concept met de naam query labels. We kijken naar een voor beeld voordat u naar een andere diepte gaat:
 
 ```sql
 SELECT *

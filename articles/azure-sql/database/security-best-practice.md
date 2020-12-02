@@ -10,12 +10,12 @@ ms.author: vanto
 ms.topic: article
 ms.date: 09/21/2020
 ms.reviewer: ''
-ms.openlocfilehash: 803c9a98f0dc10ff8218ac7b7c20dcb117700034
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 1217d3af855e96b6d6a0f403c2ff351a6b957d9a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187099"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96459663"
 ---
 # <a name="playbook-for-addressing-common-security-requirements-with-azure-sql-database-and-azure-sql-managed-instance"></a>Playbook voor het adresseren van algemene beveiligings vereisten met Azure SQL Database en Azure SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -33,7 +33,7 @@ Dit document bevat richt lijnen voor het oplossen van algemene beveiligings vere
 
 ### <a name="deployment-offers-not-covered-in-this-guide"></a>Implementatie aanbiedingen die niet worden behandeld in deze hand leiding
 
-- Azure Synapse Analytics (voorheen Azure SQL Data Warehouse)
+- Azure Synapse Analytics
 - Azure SQL-Vm's (IaaS)
 - SQL Server
 
@@ -376,7 +376,7 @@ Schei ding van taken is niet beperkt tot de gegevens in een Data Base, maar beva
 
 - Zorg ervoor dat u alle bron code-wijzigingen kent. Code kan zich in T-SQL-scripts bevindt. Dit kan ad-hoc opdrachten zijn om uit te voeren of te worden geïmplementeerd in formulieren van weer gaven, functies, triggers en opgeslagen procedures. Het kan een onderdeel zijn van SQL Agent-taak definities (stappen). Het kan ook worden uitgevoerd vanuit SSIS-pakketten, Azure Data Factory en andere services.
 
-## <a name="data-protection"></a>Gegevensbescherming
+## <a name="data-protection"></a>Gegevensbeveiliging
 
 Gegevens beveiliging is een reeks mogelijkheden voor het beveiligen van belang rijke informatie tegen inbreuk door versleuteling of het afwijzen van een schijf.
 

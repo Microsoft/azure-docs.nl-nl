@@ -16,12 +16,12 @@ ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 02/13/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: e8258aeef33be9192608f0d4cb29b46f08da64e2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4f8de6389a04448579672b84e91f0bb4dd0f4ce2
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89010627"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460460"
 ---
 # <a name="token-based-http2-authentication-for-apns"></a>Verificatie op basis van tokens (HTTP/2) voor APNS
 
@@ -52,7 +52,7 @@ Als u verificatie op basis van tokens wilt inschakelen, hebt u de volgende eigen
 
 ### <a name="key-identifier"></a>Sleutel-id
 
-U kunt de sleutel-ID verkrijgen op de pagina **sleutels** onder **certificaten, id's & profielen**in uw Apple Developer-account:
+U kunt de sleutel-ID verkrijgen op de pagina **sleutels** onder **certificaten, id's & profielen** in uw Apple Developer-account:
 
 ![Certificaten](./media/notification-hubs-push-notification-http2-token-authentification/keys.png)
 
@@ -78,7 +78,7 @@ Op tokens gebaseerde referenties bestaan uit de volgende velden:
 
 * **Sleutel-id**: de id van de persoonlijke sleutel die is gegenereerd in de Apple Developer-portal. bijvoorbeeld `2USFGKSKLT` .
 * **Team-ID**: ook wel het voor voegsel of het voor voegsel van de app genoemd. Dit is de id voor de organisatie in de Apple Developer-portal. bijvoorbeeld `S4V3D7CHJR` .
-* **Bundel-id**: ook wel de app-id genoemd. Dit is de bundel-id voor de toepassing. bijvoorbeeld `com.example.myapp` . Houd er rekening mee dat u één sleutel voor veel apps kunt gebruiken. Deze waarde wordt toegewezen aan de `apns-topic` http-header bij het verzenden van een melding en wordt gebruikt om de specifieke toepassing te richten. Houd er rekening mee dat u de waarde van expliciet niet kunt instellen `apns-topic` .
+* **Bundel-id**: ook wel de app-id genoemd. Dit is de bundel-id voor de toepassing. bijvoorbeeld `com.example.myapp` . Houd er rekening mee dat u slechts één sleutel voor één app kunt gebruiken. Deze waarde wordt toegewezen aan de `apns-topic` http-header bij het verzenden van een melding en wordt gebruikt om de specifieke toepassing te richten. U kunt de waarde van expliciet niet instellen `apns-topic` .
 * **Token**: ook wel de ' sleutel ' of ' persoonlijke sleutel ' genoemd. Dit wordt opgehaald uit het. P8-bestand dat is gegenereerd op de Apple Developer-portal. Voor de sleutel moet APNS zijn ingeschakeld (deze is geselecteerd in de Apple-ontwikkelaars portal bij het genereren van de sleutel). Voor de waarde moet de PEM-kop/-voet tekst worden verwijderd wanneer u deze aan de NH-Portal/API levert.
 * **Eind punt**: dit is een wissel knop in de blade notification hubs Portal en een teken reeks veld in de API. Geldige waarden zijn `https://api.development.push.apple.com:443/3/device` of `https://api.sandbox.push.apple.com:443/3/device` . Notification Hubs gebruikt deze waarde voor de productie-of sandbox-omgeving voor het verzenden van meldingen. Dit moet overeenkomen met het `aps-environment` recht in de app, anders worden de tokens van de APNS-apparaten gegenereerd die niet overeenkomen met de omgeving en kunnen de meldingen niet worden verzonden.
 

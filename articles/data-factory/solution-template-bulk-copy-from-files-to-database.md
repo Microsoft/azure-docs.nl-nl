@@ -8,12 +8,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/08/2020
-ms.openlocfilehash: c7f4cba10117efef4099b3524b49cae313593a9a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ecf3c3954bd77962e56ee289b623806efb352410
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89442709"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461269"
 ---
 # <a name="bulk-copy-from-files-to-database"></a>Bulkgewijs kopiëren van bestanden naar database
 
@@ -55,11 +55,11 @@ De sjabloon definieert de volgende twee para meters:
     ![De pijp lijn controleren](media/solution-template-bulk-copy-from-files-to-database/new-pipeline.png)
 
     > [!NOTE]
-    > Als u **Azure Synapse Analytics (voorheen SQL DW)** hebt gekozen als de gegevens bestemming in **stap 2** hierboven, moet u een verbinding met Azure Blob Storage voor fase ring opgeven, zoals vereist door Azure Synapse Analytics (voorheen SQL Data Warehouse) poly base. Zoals in de volgende scherm afbeelding wordt weer gegeven, genereert de sjabloon *automatisch een opslagpad* voor uw Blob Storage. Controleer of de container is gemaakt na de uitvoering van de pijp lijn.
+    > Als u **Azure Synapse Analytics (voorheen SQL DW)** hebt gekozen als de gegevens bestemming in **stap 2** hierboven, moet u een verbinding met Azure Blob Storage voor fase ring opgeven, zoals vereist door Azure Synapse Analytics poly base. Zoals in de volgende scherm afbeelding wordt weer gegeven, genereert de sjabloon *automatisch een opslagpad* voor uw Blob Storage. Controleer of de container is gemaakt na de uitvoering van de pijp lijn.
         
     ![Poly base-instelling](media/solution-template-bulk-copy-from-files-to-database/staging-account.png)
 
-5. Selecteer **debug**, voer de **para meters**in en selecteer **volt ooien**.
+5. Selecteer **debug**, voer de **para meters** in en selecteer **volt ooien**.
 
     ![Klik op * * fout opsporing * *](media/solution-template-bulk-copy-from-files-to-database/debug-run.png)
 

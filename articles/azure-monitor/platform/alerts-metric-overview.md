@@ -1,17 +1,17 @@
 ---
-title: 'Begrijpen hoe waarschuwingen voor metrische gegevens werken in Azure Monitor:'
+title: Begrijpen hoe metrische waarschuwingen werken in Azure Monitor.
 description: Bekijk een overzicht van wat u met metrische waarschuwingen kunt doen en hoe ze werken in Azure Monitor.
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.subservice: alerts
-ms.openlocfilehash: 3581c1f1660527bfbf2ae598349e30001962b1b4
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 066ffff5979e658a7c06fe10bd668a9fac839a14
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92342175"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460841"
 ---
-# <a name="understand-how-metric-alerts-work-in-azure-monitor"></a>Begrijpen hoe metrische waarschuwingen werken in Azure Monitor
+# <a name="understand-how-metric-alerts-work-in-azure-monitor"></a>Begrijpen hoe waarschuwingen voor metrische gegevens werken in Azure Monitor
 
 Metrische waarschuwingen in Azure Monitor werken bovenop meerdere dimensies. Deze metrische gegevens zijn mogelijk [platform metrieken](alerts-metric-near-real-time.md#metrics-and-dimensions-supported), [aangepaste metrische gegevens](./metrics-custom-overview.md), [populaire logboeken van Azure monitor geconverteerd naar metrische gegevens](./alerts-metric-logs.md) en Application Insights metrische gegevens. Metrische waarschuwingen bepalen regel matig of er voor waarden in een of meer metrische time-series waar zijn en u wordt gewaarschuwd wanneer aan de evaluaties wordt voldaan. Metrische waarschuwingen zijn stateful, dat wil zeggen dat ze alleen meldingen verzenden wanneer de status wordt gewijzigd.
 
@@ -176,6 +176,7 @@ In dit [artikel](./alerts-metric-near-real-time.md#metrics-and-dimensions-suppor
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Meer informatie over het maken, weer geven en beheren van metrische waarschuwingen in azure](alerts-metric.md)
+- [Meer informatie over het maken van waarschuwingen in azure Montior Metrics Explorer](./metrics-charts.md#create-alert-rules)
 - [Meer informatie over het implementeren van metrische waarschuwingen met behulp van Azure Resource Manager sjablonen](./alerts-metric-create-templates.md)
 - [Meer informatie over actie groepen](action-groups.md)
 - [Meer informatie over het type voor waarde van dynamische drempel waarden](alerts-dynamic-thresholds.md)

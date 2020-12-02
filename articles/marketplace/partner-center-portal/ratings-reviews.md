@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/11/2019
 author: mingshen-ms
 ms.author: mingshen
-ms.openlocfilehash: ff46c5e2d434a75bf71d6216ce81b34de878ba80
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d7b64ce907cd68d1d6850f90df49b347f3b0270d
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89419177"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461007"
 ---
 # <a name="ratings--reviews-analytics-dashboard-in-partner-center"></a>Beoordelings & beoordelingen analyse dashboard in partner centrum
 
@@ -22,7 +22,7 @@ Dit artikel bevat informatie over het dash board beoordelingen & beoordelingen i
 - Beoordelingen worden op het tabblad Recensies op de pagina product weergave van de aanbieding in azure Marketplace of AppSource geplaatst. Klanten kunnen hun naam of anoniem op post toevoegen.  
 
 >[!NOTE]
-> Zie [Veelgestelde vragen en terminologie voor de analyse van commerciële Marketplace](./faq-terminology.md)voor gedetailleerde definities van analyse terminologie.
+> Zie [Veelgestelde vragen en terminologie voor de analyse van commerciële Marketplace](../analytics-faq.md)voor gedetailleerde definities van analyse terminologie.
 
 ## <a name="access-the-dashboard"></a>Het dash board openen
 
@@ -55,9 +55,9 @@ Beoordelingen worden in chronologische volg orde weer gegeven wanneer ze zijn ge
 ## <a name="next-steps"></a>Volgende stappen
 
 - Voor een overzicht van analyse rapporten die beschikbaar zijn in de commerciële Marketplace van partner Center raadpleegt u [Analytics voor de commerciële Marketplace in Partner Center](./analytics.md).
-- Zie [Summary dash board in Commercial Marketplace Analytics](./summary-dashboard.md)voor grafieken, trends en waarden van statistische gegevens die de Marketplace-activiteiten voor uw aanbieding samenvatten.
-- Voor informatie over uw orders in een grafische en download bare indeling raadpleegt u het [dash board orders in Commercial Marketplace Analytics](./orders-dashboard.md).
-- Voor virtuele machine (VM) zijn metrische gegevens over gebruik en gefactureerde facturering, Zie [gebruiks dashboard in commerciële Marketplace-analyses](./usage-dashboard.md).
-- Zie [klanten dashboard in Commercial Marketplace Analytics](./customer-dashboard.md)voor gedetailleerde informatie over uw klanten, waaronder groei trends.
+- Zie [Summary dash board in Commercial Marketplace Analytics](../summary-dashboard.md)voor grafieken, trends en waarden van statistische gegevens die de Marketplace-activiteiten voor uw aanbieding samenvatten.
+- Voor informatie over uw orders in een grafische en download bare indeling raadpleegt u het [dash board orders in Commercial Marketplace Analytics](../orders-dashboard.md).
+- Voor virtuele machine (VM) zijn metrische gegevens over gebruik en gefactureerde facturering, Zie [gebruiks dashboard in commerciële Marketplace-analyses](../usage-dashboard.md).
+- Zie [klanten dashboard in Commercial Marketplace Analytics](../customer-dashboard.md)voor gedetailleerde informatie over uw klanten, waaronder groei trends.
 - Zie [dash board downloaden in Commercial Marketplace Analytics](./downloads-dashboard.md)voor een lijst met Download aanvragen voor de afgelopen 30 dagen.
-- Zie [Veelgestelde vragen en terminologie voor de analyse van commerciële Marketplace](./faq-terminology.md)voor veelgestelde vragen over commerciële Marketplace-analyses en voor een uitgebreid woorden boek met gegevens termen.
+- Zie [Veelgestelde vragen en terminologie voor de analyse van commerciële Marketplace](../analytics-faq.md)voor veelgestelde vragen over commerciële Marketplace-analyses en voor een uitgebreid woorden boek met gegevens termen.

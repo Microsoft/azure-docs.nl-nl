@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 6cda99bfcb883dd42aa813d6edb922f2701ed1fe
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: e48b1357b8576baca0e8defca94f4c5248c6f74e
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352198"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461284"
 ---
 # <a name="azure-security-baseline-for-azure-data-factory"></a>Azure-beveiligings basislijn voor Azure Data Factory
 
@@ -578,7 +578,7 @@ Als privé-koppeling beschikbaar is, gebruikt u privé-eind punten om alle resou
 
 **Richt lijnen**: als de gegevens opslag in de Cloud https of TLS ondersteunt, worden alle gegevens overdrachten tussen services voor gegevens verplaatsing in Data Factory en een gegevens archief in de Cloud via Secure Channel https of TLS. Gebruikte TLS-versie is 1,2.
 
-Voor alle verbindingen met Azure SQL Database en Azure Synapse Analytics (voorheen SQL Data Warehouse) is versleuteling (SSL/TLS) vereist terwijl gegevens onderweg naar en van de Data Base worden verzonden. Wanneer u een pijp lijn ontwerpt met behulp van JSON, voegt u de eigenschap Encryption toe en stelt u deze in op True in de connection string. Voor Azure Storage kunt u HTTPS gebruiken in de connection string.
+Alle verbindingen met Azure SQL Database en Azure Synapse Analytics vereisen versleuteling (SSL/TLS) wanneer gegevens onderweg naar en van de Data Base worden verzonden. Wanneer u een pijp lijn ontwerpt met behulp van JSON, voegt u de eigenschap Encryption toe en stelt u deze in op True in de connection string. Voor Azure Storage kunt u HTTPS gebruiken in de connection string.
 
 * [Informatie over versleuteling in transit in Azure Data Factory](./data-movement-security-considerations.md)
 
@@ -656,7 +656,7 @@ U kunt referenties of geheime waarden opslaan in een Azure Key Vault en deze geb
 
 * [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
 
-* [Azure Storage-analyselogboeken](../storage/common/storage-analytics-logging.md)
+* [Logboekregistratie van Azure Opslaganalyse](../storage/common/storage-analytics-logging.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 

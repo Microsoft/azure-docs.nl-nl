@@ -6,12 +6,12 @@ ms.author: jife
 ms.service: data-share
 ms.topic: conceptual
 ms.date: 10/15/2020
-ms.openlocfilehash: efb86dbcbe7619ff6727c5e7374835dc3fc7d731
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: ed4b4d9c1de1e9024e8ea86d4661b42d6c68b0ae
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92220496"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461002"
 ---
 # <a name="roles-and-requirements-for-azure-data-share"></a>Rollen en vereisten voor Azure Data Share 
 
@@ -43,7 +43,7 @@ Voor delen op basis van SQL moet een SQL-gebruiker worden gemaakt van een extern
 |**SQL Database type**|**SQL-gebruikers machtiging voor de gegevens provider**|**SQL-gebruikers machtiging voor gegevens verbruiker**|
 |---|---|---|
 |Azure SQL Database | db_datareader | db_datareader, db_datawriter db_ddladmin
-|Azure Synapse Analytics (voorheen SQL DW) | db_datareader | db_datareader, db_datawriter db_ddladmin
+|Azure Synapse Analytics | db_datareader | db_datareader, db_datawriter db_ddladmin
 |
 
 ### <a name="data-provider"></a>Gegevens provider
@@ -59,13 +59,13 @@ Volg de onderstaande stappen voor het maken van een roltoewijzing voor de beheer
 1. Navigeer naar de Azure-gegevens opslag.
 1. Selecteer **Access Control (IAM)**.
 1. Selecteer **een roltoewijzing toevoegen**.
-1. Selecteer onder *rol*de rol in de bovenstaande tabel met roltoewijzingen (bijvoorbeeld voor opslag account, selecteer *BLOB-gegevens lezer voor opslag*).
-1. Typ onder *selecteren*de naam van uw Azure-gegevens share-resource.
+1. Selecteer onder *rol* de rol in de bovenstaande tabel met roltoewijzingen (bijvoorbeeld voor opslag account, selecteer *BLOB-gegevens lezer voor opslag*).
+1. Typ onder *selecteren* de naam van uw Azure-gegevens share-resource.
 1. Klik op *Opslaan*.
 
 Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure Portal](../role-based-access-control/role-assignments-portal.md#add-a-role-assignment)voor meer informatie over de toewijzing van rollen. Als u gegevens deelt met behulp van REST-Api's, kunt u een roltoewijzing maken met behulp van API door te verwijzen naar [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de rest API](../role-based-access-control/role-assignments-rest.md). 
 
-Voor SQL-bronnen moet een SQL-gebruiker worden gemaakt op basis van een externe provider in SQL Database met dezelfde naam als de Azure-gegevens share bron tijdens het verbinden met SQL database met behulp van Azure Active Directory-verificatie. Aan deze gebruiker moet *db_datareader* machtiging worden verleend. Een voorbeeld script samen met andere vereisten voor het delen van SQL-bestanden vindt u in de [share van Azure SQL database of Synapse Analytics](how-to-share-from-sql.md) zelf studie. 
+Voor SQL-bronnen moet een SQL-gebruiker worden gemaakt op basis van een externe provider in SQL Database met dezelfde naam als de Azure-gegevens share bron tijdens het verbinden met SQL database met behulp van Azure Active Directory-verificatie. Aan deze gebruiker moet *db_datareader* machtiging worden verleend. Een voorbeeld script met andere vereisten voor delen op basis van SQL vindt u in de [share van Azure SQL database of de Azure Synapse Analytics](how-to-share-from-sql.md) -zelf studie. 
 
 ### <a name="data-consumer"></a>Gegevens verbruiker
 Als u gegevens wilt ontvangen, moet de beheerde identiteit van de consument gegevens share bron toegang krijgen tot de Azure-doel gegevens opslag. In het geval van een opslag account krijgt de beheerde identiteit van de gegevens share bron bijvoorbeeld de rol Storage BLOB data Inzender. 
@@ -79,13 +79,13 @@ Volg de onderstaande stappen voor het maken van een roltoewijzing voor de beheer
 1. Navigeer naar de Azure-gegevens opslag.
 1. Selecteer **Access Control (IAM)**.
 1. Selecteer **een roltoewijzing toevoegen**.
-1. Selecteer onder *rol*de rol in de bovenstaande tabel met roltoewijzingen (bijvoorbeeld voor opslag account, selecteer *BLOB-gegevens lezer voor opslag*).
-1. Typ onder *selecteren*de naam van uw Azure-gegevens share-resource.
+1. Selecteer onder *rol* de rol in de bovenstaande tabel met roltoewijzingen (bijvoorbeeld voor opslag account, selecteer *BLOB-gegevens lezer voor opslag*).
+1. Typ onder *selecteren* de naam van uw Azure-gegevens share-resource.
 1. Klik op *Opslaan*.
 
 Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure Portal](../role-based-access-control/role-assignments-portal.md#add-a-role-assignment)voor meer informatie over de toewijzing van rollen. Als u gegevens ontvangt met behulp van REST-Api's, kunt u een roltoewijzing maken met behulp van API door te verwijzen naar [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de rest API](../role-based-access-control/role-assignments-rest.md). 
 
-Voor een op SQL gebaseerd doel moet een SQL-gebruiker worden gemaakt van een externe provider in SQL Database met dezelfde naam als de Azure-gegevens share bron tijdens het verbinden met SQL database met behulp van Azure Active Directory-verificatie. Deze gebruiker moet worden toegekend *db_datareader, db_datawriter db_ddladmin* machtiging. Een voorbeeld script samen met andere vereisten voor het delen van SQL-bestanden vindt u in de [share van Azure SQL database of Synapse Analytics](how-to-share-from-sql.md) zelf studie. 
+Voor een op SQL gebaseerd doel moet een SQL-gebruiker worden gemaakt van een externe provider in SQL Database met dezelfde naam als de Azure-gegevens share bron tijdens het verbinden met SQL database met behulp van Azure Active Directory-verificatie. Deze gebruiker moet worden toegekend *db_datareader, db_datawriter db_ddladmin* machtiging. Een voorbeeld script met andere vereisten voor delen op basis van SQL vindt u in de [share van Azure SQL database of de Azure Synapse Analytics](how-to-share-from-sql.md) -zelf studie. 
 
 ## <a name="resource-provider-registration"></a>Registratie van resource provider 
 

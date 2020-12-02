@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 06/19/2020
 ms.author: trkeya
 author: trkeya
-ms.openlocfilehash: 0b445f9d4fdda0b1fac9dcdb4344533cfd7d37a9
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: fd3fa04d2d7e868476838788dd9cf0e27c07aeca
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491236"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461766"
 ---
 # <a name="azure-resource-manager-test-drive"></a>Azure Resource Manager test drive
 
@@ -37,7 +37,7 @@ Een implementatie sjabloon bevat alle Azure-resources waaruit uw oplossing besta
 - **Azure Resource Manager-sjabloon testen** : Upload de. zip met uw Azure Resource Manager sjabloon. Meer informatie over het maken van een Azure Resource Manager sjabloon in het Quick Start-artikel [Azure Resource Manager sjablonen maken en implementeren met behulp van de Azure Portal](../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md).
 
     > [!note]
-    > Als u wilt publiceren, is het belang rijk om de opmaak van de ARM-sjabloon te valideren. Er zijn twee manieren om dit te doen (1) met behulp van een [online API-hulp programma](https://docs.microsoft.com/rest/api/resources/deployments/validate) of (2) met een [test implementatie](https://docs.microsoft.com/azure/azure-resource-manager/templates/deploy-portal).
+    > Als u wilt publiceren, is het belang rijk om de opmaak van de ARM-sjabloon te valideren. Er zijn twee manieren om dit te doen (1) met behulp van een [online API-hulp programma](/rest/api/resources/deployments/validate) of (2) met een [test implementatie](../azure-resource-manager/templates/deploy-portal.md).
 
 - **Duur van test drive** (vereist): Voer het aantal uren in dat het test drive actief blijft. De test drive wordt automatisch beëindigd nadat deze periode is verstreken. Gebruik alleen hele getallen (bijvoorbeeld ' 2 ' uur is geldig, ' 1,5 ' is niet).
 
@@ -76,7 +76,7 @@ U kunt een geldige naam voor de para meters gebruiken. test drive herkent parame
 | Meta gegevens type   | Parameter type  | Beschrijving     | Voorbeeld waarde    |
 |---|---|---|---|
 | **baseuri**     | tekenreeks          | Basis-URI van uw implementatie pakket| `https:\//\<\..\>.blob.core.windows.net/\<\..\>` |
-| **gebruikersnaam**    | tekenreeks          | Nieuwe wille keurige gebruikers naam.| admin68876      |
+| **gebruikers**    | tekenreeks          | Nieuwe wille keurige gebruikers naam.| admin68876      |
 | **password**    | beveiligde teken reeks    | Nieuw wille keurig wacht woord | LP! ACS \^ 2kh     |
 | **sessie-id**   | tekenreeks          | Unieke test drive sessie-ID (GUID)    | b8c8693e-5673-449c-badd-257a405a6dee |
 
@@ -240,7 +240,7 @@ En gebruik deze locatie voor elke resource voor een specifiek Lab-exemplaar:
 
 Zorg ervoor dat uw abonnement alle gewenste resources in elk van de geselecteerde regio's mag implementeren. Zorg er ook voor dat uw installatie kopieën voor virtuele machines beschikbaar zijn in alle regio's die u gaat inschakelen. anders werkt uw implementatie sjabloon niet voor bepaalde regio's.
 
-### <a name="outputs"></a>Uitvoerwaarden
+### <a name="outputs"></a>Uitvoer
 
 Normaal gesp roken kunt u met Resource Manager-sjablonen implementeren zonder dat er uitvoer wordt geproduceerd. Dit komt doordat u alle waarden kent die u gebruikt om sjabloon parameters te vullen en u kunt altijd hand matig eigenschappen van een resource controleren.
 
@@ -352,7 +352,7 @@ Nu alle test drive velden zijn voltooid, publiceert u uw aanbieding **opnieuw** 
 
 Verwijder geen test drive exemplaren die zijn ingericht voor uw klanten. de test drive-service zal deze resource groepen automatisch opschonen nadat een klant deze heeft voltooid.
 
-Zodra u vertrouwd bent met uw preview-aanbieding, is het tijd om **Live te gaan** ! Er is een laatste controle proces om de volledige end-to-end-ervaring te controleren. Als we het aanbod afwijzen, sturen we een e-mail naar de technische contact persoon voor uw aanbieding waarin wordt uitgelegd wat er moet worden opgelost.
+Zodra u vertrouwd bent met uw preview-aanbieding, is het tijd om **Live te gaan**! Er is een laatste controle proces om de volledige end-to-end-ervaring te controleren. Als we het aanbod afwijzen, sturen we een e-mail naar de technische contact persoon voor uw aanbieding waarin wordt uitgelegd wat er moet worden opgelost.
 
 ## <a name="next-steps"></a>Volgende stappen
 

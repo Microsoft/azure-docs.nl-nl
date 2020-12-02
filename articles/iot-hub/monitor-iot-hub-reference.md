@@ -6,12 +6,12 @@ ms.author: robinsh
 ms.topic: reference
 ms.service: iot-hub
 ms.date: 10/22/2020
-ms.openlocfilehash: 03941c3abe833deb218844cc60e2f04556fccc22
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 609c44991e7deca183321758fabdef80b71210c5
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93078200"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460854"
 ---
 # <a name="monitoring-azure-iot-hub-data-reference"></a>Naslag informatie over Azure IoT Hub-gegevens bewaken
 
@@ -19,13 +19,13 @@ Zie [azure IOT hub bewaken](monitor-iot-hub.md) voor meer informatie over het ve
 
 ## <a name="metrics"></a>Metrische gegevens
 
-In deze sectie vindt u alle automatisch verzamelde platform gegevens voor Azure IoT Hub. De naam ruimte van de resource provider voor IoT Hub metrische gegevens is **micro soft. devices** en de type naam ruimte is **IoTHubs** .
+In deze sectie vindt u alle automatisch verzamelde platform gegevens voor Azure IoT Hub. De naam ruimte van de resource provider voor IoT Hub metrische gegevens is **micro soft. devices** en de type naam ruimte is **IoTHubs**.
 
 In de volgende subsecties worden de IoT Hub platform metrieken per algemene categorie en weer gegeven op basis van de weergave naam die ze in de Azure Portal met behulp van hebben. Informatie wordt ook verstrekt die relevant is voor de metrische gegevens die in elke Subsectie worden weer gegeven.
 
-U kunt ook een enkele tabel vinden met een lijst met alle IoT Hub platform metrieken per metrische naam onder [micro soft. devices/IotHubs](/azure/azure-monitor/platform/metrics-supported#microsoftdevicesiothubs) in de Azure monitor-documentatie. Houd er rekening mee dat deze tabel niet alle informatie bevat, zoals [ondersteunde aggregaties](#supported-aggregations) voor bepaalde metrische gegevens, die in dit artikel beschikbaar zijn.
+U kunt ook een enkele tabel vinden met een lijst met alle IoT Hub platform metrieken per metrische naam onder [micro soft. devices/IotHubs](../azure-monitor/platform/metrics-supported.md#microsoftdevicesiothubs) in de Azure monitor-documentatie. Houd er rekening mee dat deze tabel niet alle informatie bevat, zoals [ondersteunde aggregaties](#supported-aggregations) voor bepaalde metrische gegevens, die in dit artikel beschikbaar zijn.
 
-Zie [ondersteunde metrische gegevens met Azure monitor](/azure/azure-monitor/platform/metrics-supported)voor meer informatie over metrische gegevens die door andere Azure-Services worden ondersteund.
+Zie [ondersteunde metrische gegevens met Azure monitor](../azure-monitor/platform/metrics-supported.md)voor meer informatie over metrische gegevens die door andere Azure-Services worden ondersteund.
 
 **Onderwerpen in dit gedeelte**
 
@@ -51,71 +51,71 @@ De kolom **aggregatie type** in elke tabel komt overeen met de standaard aggrega
 
 Voor de meeste metrische gegevens zijn alle aggregatie typen geldig. bij metrische waarden tellen, die met de waarde **aantal** van een **eenheids** kolom, zijn echter slechts enkele aggregaties geldig. Metrische gegevens over het aantal kunnen een van de volgende twee typen zijn:
 
-* Voor metrische gegevens van **één punt** telt IOT hub een enkel data-punt registreren--in feite een 1--elke keer dat de gemeten bewerking plaatsvindt. Azure Monitor worden deze gegevens punten vervolgens op basis van de opgegeven granulariteit opgeteld. Voor beelden van metrische gegevens met **één punt** zijn *telemetriegegevens* die zijn verzonden en *C2D bericht leveringen zijn voltooid* . Voor deze metrische gegevens is het enige relevante samenvoegings type totaal (Sum). Met de portal kunt u minimum, maximum en gemiddeld kiezen. deze waarden zullen echter altijd 1 zijn.
+* Voor metrische gegevens van **één punt** telt IOT hub een enkel data-punt registreren--in feite een 1--elke keer dat de gemeten bewerking plaatsvindt. Azure Monitor worden deze gegevens punten vervolgens op basis van de opgegeven granulariteit opgeteld. Voor beelden van metrische gegevens met **één punt** zijn *telemetriegegevens* die zijn verzonden en *C2D bericht leveringen zijn voltooid*. Voor deze metrische gegevens is het enige relevante samenvoegings type totaal (Sum). Met de portal kunt u minimum, maximum en gemiddeld kiezen. deze waarden zullen echter altijd 1 zijn.
 
-* Voor de metrische gegevens van **moment opnamen** tellen IOT hub een totaal aantal registreren wanneer de gemeten bewerking plaatsvindt. Op dit moment zijn er drie **moment opname** -metrische gegevens gegenereerd door IOT hub: het *totale aantal gebruikte berichten* , de *totale hoeveelheid apparaten (preview)* en *verbonden apparaten (preview)* . Omdat deze metrische gegevens elke keer dat ze worden verzonden, een totale hoeveelheid bevatten, is het opsommen van de opgegeven granulatie niet zinvol. Azure Monitor kunt u het gemiddelde, het minimum en het maximum voor het aggregatie type voor deze metrische gegevens selecteren.
+* Voor de metrische gegevens van **moment opnamen** tellen IOT hub een totaal aantal registreren wanneer de gemeten bewerking plaatsvindt. Op dit moment zijn er drie **moment opname** -metrische gegevens gegenereerd door IOT hub: het *totale aantal gebruikte berichten*, de *totale hoeveelheid apparaten (preview)* en *verbonden apparaten (preview)*. Omdat deze metrische gegevens elke keer dat ze worden verzonden, een totale hoeveelheid bevatten, is het opsommen van de opgegeven granulatie niet zinvol. Azure Monitor kunt u het gemiddelde, het minimum en het maximum voor het aggregatie type voor deze metrische gegevens selecteren.
 
 ### <a name="cloud-to-device-command-metrics"></a>Metrische gegevens van de opdracht Cloud naar apparaat
 
-|Weergave naam voor metrische gegevens|Metrisch gegeven|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
+|Weergave naam voor metrische gegevens|Gegevens|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
 |---|---|---|---|---|---|
 |C2D-berichten verlopen (preview-versie)|C2DMessagesExpired|Aantal|Totaal|Aantal verlopen Cloud-naar-apparaat-berichten|Geen|
 |C2D-bericht leveringen voltooid|C2D. commands. OUTuitgang. complete. geslaagd|Aantal|Totaal|Aantal bezorgingen van Cloud-naar-apparaat-berichten voltooid door het apparaat|Geen|
 |C2D-berichten zijn afgebroken|C2D. commands. uitgangs. Abandon. geslaagd|Aantal|Totaal|Aantal Cloud-naar-apparaat-berichten die zijn afgebroken door het apparaat|Geen|
 |Geweigerde C2D-berichten|C2D. commands. uitgangs. reject. geslaagd|Aantal|Totaal|Aantal Cloud-naar-apparaat-berichten dat door het apparaat is geweigerd|Geen|
 
-Voor metrische gegevens met een **eenheids** waarde van het **aantal** , is alleen totaal (Sum)-aggregatie geldig. De minimum-, maximum-en gemiddelde aggregaties retour neren altijd 1. Zie [ondersteunde aggregaties](#supported-aggregations)voor meer informatie.
+Voor metrische gegevens met een **eenheids** waarde van het **aantal**, is alleen totaal (Sum)-aggregatie geldig. De minimum-, maximum-en gemiddelde aggregaties retour neren altijd 1. Zie [ondersteunde aggregaties](#supported-aggregations)voor meer informatie.
 
 ### <a name="cloud-to-device-direct-methods-metrics"></a>Metrische gegevens voor directe methoden van de Cloud naar een apparaat
 
-|Weergave naam voor metrische gegevens|Metrisch gegeven|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
+|Weergave naam voor metrische gegevens|Gegevens|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
 |---|---|---|---|---|---|
 |Mislukte directe aanroepen van methode|C2D. methods. failure|Aantal|Totaal|Het aantal mislukte direct-methode aanroepen.|Geen|
-|Aanvraag grootte van directe-methode aanroepen|C2D. methods. requestSize|Bytes|Average|Het aantal voltooide direct-methode aanvragen.|Geen|
-|Antwoord grootte van directe methode aanroepen|C2D. methods. responseSize|Bytes|Average|Het aantal voltooide direct-methode reacties.|Geen|
+|Aanvraag grootte van directe-methode aanroepen|C2D. methods. requestSize|Bytes|Gemiddeld|Het aantal voltooide direct-methode aanvragen.|Geen|
+|Antwoord grootte van directe methode aanroepen|C2D. methods. responseSize|Bytes|Gemiddeld|Het aantal voltooide direct-methode reacties.|Geen|
 |Geslaagde directe aanroepen van de methode|C2D. methods. geslaagd|Aantal|Totaal|Het aantal voltooide direct-methode aanroepen.|Geen|
 
 Voor metrische gegevens met een **eenheids** waarde **van het totale aantal (** Sum) is aggregatie geldig. De minimum-, maximum-en gemiddelde aggregaties retour neren altijd 1. Zie [ondersteunde aggregaties](#supported-aggregations)voor meer informatie.
 
 ### <a name="cloud-to-device-twin-operations-metrics"></a>Metrische gegevens van de Cloud naar het apparaat dubbele bewerkingen
 
-|Weergave naam voor metrische gegevens|Metrisch gegeven|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
+|Weergave naam voor metrische gegevens|Gegevens|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
 |---|---|---|---|---|---|
 |Mislukte dubbele Lees bewerkingen van back-end|C2D. dubbele. Read. failure|Aantal|Totaal|Het aantal mislukte back-end-geïnitieerde dubbele Lees bewerkingen.|Geen|
 |Mislukte dubbele updates van back-end|C2D. dubbele. update. failure|Aantal|Totaal|Het aantal niet-geslaagde, door de back-end geïnitieerde dubbele updates.|Geen|
-|Reactie grootte van dubbele Lees bewerkingen van de back-end|C2D. dubbele. Lees. grootte|Bytes|Average|Het aantal geslaagde back-end-geïnitieerde dubbele Lees bewerkingen.|Geen|
-|Grootte van dubbele updates van back-end|C2D. dubbele. update. grootte|Bytes|Average|De totale grootte van alle geslaagde back-end-geïnitieerde twee-updates.|Geen|
+|Reactie grootte van dubbele Lees bewerkingen van de back-end|C2D. dubbele. Lees. grootte|Bytes|Gemiddeld|Het aantal geslaagde back-end-geïnitieerde dubbele Lees bewerkingen.|Geen|
+|Grootte van dubbele updates van back-end|C2D. dubbele. update. grootte|Bytes|Gemiddeld|De totale grootte van alle geslaagde back-end-geïnitieerde twee-updates.|Geen|
 |Geslaagde dubbele Lees bewerkingen van back-end|C2D. dubbele. lezen. geslaagd|Aantal|Totaal|Het aantal geslaagde back-end-geïnitieerde dubbele Lees bewerkingen.|Geen|
 |Geslaagde dubbele updates van back-end|C2D. dubbele. update. geslaagd|Aantal|Totaal|Het aantal geslaagde, door de back-end gestarte dubbele updates.|Geen|
 
-Voor metrische gegevens met een **eenheids** waarde van het **aantal** , is alleen totaal (Sum)-aggregatie geldig. De minimum-, maximum-en gemiddelde aggregaties retour neren altijd 1. Zie [ondersteunde aggregaties](#supported-aggregations)voor meer informatie.
+Voor metrische gegevens met een **eenheids** waarde van het **aantal**, is alleen totaal (Sum)-aggregatie geldig. De minimum-, maximum-en gemiddelde aggregaties retour neren altijd 1. Zie [ondersteunde aggregaties](#supported-aggregations)voor meer informatie.
 
 ### <a name="configurations-metrics"></a>Metrische configuratie gegevens
 
-|Weergave naam voor metrische gegevens|Metrisch gegeven|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
+|Weergave naam voor metrische gegevens|Gegevens|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
 |---|---|---|---|---|---|
 |Metrische configuratie gegevens|configuraties|Aantal|Totaal|Het totale aantal ruwe verwerkingen dat is uitgevoerd voor apparaatconfiguratie en IoT Edge implementatie op een set doel apparaten. Dit omvat ook het aantal bewerkingen dat het apparaat dubbel of de module heeft gewijzigd vanwege deze configuraties.|Geen|
 
-Voor metrische gegevens met een **eenheids** waarde van het **aantal** , is alleen totaal (Sum)-aggregatie geldig. De minimum-, maximum-en gemiddelde aggregaties retour neren altijd 1. Zie [ondersteunde aggregaties](#supported-aggregations)voor meer informatie.
+Voor metrische gegevens met een **eenheids** waarde van het **aantal**, is alleen totaal (Sum)-aggregatie geldig. De minimum-, maximum-en gemiddelde aggregaties retour neren altijd 1. Zie [ondersteunde aggregaties](#supported-aggregations)voor meer informatie.
 
 ### <a name="daily-quota-metrics"></a>Metrische gegevens per dag quotum
 
-|Weergave naam voor metrische gegevens|Metrisch gegeven|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
+|Weergave naam voor metrische gegevens|Gegevens|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
 |---|---|---|---|---|---|
 |Totale hoeveelheid gegevens gebruik van apparaat|deviceDataUsage|Bytes|Totaal|Verzonden bytes van en naar apparaten die zijn verbonden met IotHub|Geen|
 |Totaal gebruik van apparaatgegevens (preview-versie)|deviceDataUsageV2|Bytes|Totaal|Verzonden bytes van en naar apparaten die zijn verbonden met IotHub|Geen|
-|Totaal aantal gebruikte berichten|dailyMessageQuotaUsed|Aantal|Average|Het totale aantal berichten dat momenteel wordt gebruikt. Dit is een cumulatieve waarde die elke dag opnieuw wordt ingesteld op nul om 00:00 UTC.|Geen|
+|Totaal aantal gebruikte berichten|dailyMessageQuotaUsed|Aantal|Gemiddeld|Het totale aantal berichten dat momenteel wordt gebruikt. Dit is een cumulatieve waarde die elke dag opnieuw wordt ingesteld op nul om 00:00 UTC.|Geen|
 
 Voor het *totale aantal gebruikte berichten* worden alleen de minimum-, maximum-en gemiddelde aggregaties ondersteund. Zie [ondersteunde aggregaties](#supported-aggregations)voor meer informatie.
 
 ### <a name="device-metrics"></a>Metrische gegevens van apparaat
 
-|Weergave naam voor metrische gegevens|Metrisch gegeven|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
+|Weergave naam voor metrische gegevens|Gegevens|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
 |---|---|---|---|---|---|
 |Totaal aantal apparaten (afgeschaft)|apparaten. totalDevices|Aantal|Totaal|Aantal apparaten dat is geregistreerd bij uw IoT-hub|Geen|
 |Verbonden apparaten (afgeschaft) |apparaten. connectedDevices. allProtocol|Aantal|Totaal|Aantal apparaten dat is verbonden met uw IoT-hub|Geen|
-|Totaal aantal apparaten (preview-versie)|totalDeviceCount|Aantal|Average|Aantal apparaten dat is geregistreerd bij uw IoT-hub|Geen|
-|Verbonden apparaten (preview-versie)|connectedDeviceCount|Aantal|Average|Aantal apparaten dat is verbonden met uw IoT-hub|Geen|
+|Totaal aantal apparaten (preview-versie)|totalDeviceCount|Aantal|Gemiddeld|Aantal apparaten dat is geregistreerd bij uw IoT-hub|Geen|
+|Verbonden apparaten (preview-versie)|connectedDeviceCount|Aantal|Gemiddeld|Aantal apparaten dat is verbonden met uw IoT-hub|Geen|
 
 Voor het *totale aantal apparaten (afgeschaft)* en *verbonden apparaten (afgeschaft)* is alleen totale (Sum) aggregatie geldig. De minimum-, maximum-en gemiddelde aggregaties retour neren altijd 1. Zie [ondersteunde aggregaties](#supported-aggregations)voor meer informatie.
 
@@ -125,39 +125,39 @@ Voor het *totale aantal apparaten (preview)* en *verbonden apparaten (preview)* 
 
 ### <a name="device-telemetry-metrics"></a>Metrische gegevens over de telemetrie van apparaten
 
-|Weergave naam voor metrische gegevens|Metrisch gegeven|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
+|Weergave naam voor metrische gegevens|Gegevens|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
 |---|---|---|---|---|---|
 |Aantal beperkings fouten|D2C. telemetrie. ingress. sendThrottle|Aantal|Totaal|Aantal beperkings fouten door doorvoer vertraging van apparaat|Geen|
 |Verzend pogingen voor telemetrie-berichten|D2C. telemetrie. ingress. allProtocol|Aantal|Totaal|Aantal pogingen voor het verzenden van apparaat-naar-Cloud-telemetrie naar uw IoT hub|Geen|
 |Verzonden telemetriegegevens|D2C. telemetrie. ingress. geslaagd|Aantal|Totaal|Aantal te verzenden apparaat-naar-Cloud-telemetrie-berichten naar uw IoT-hub|Geen|
 
-Voor metrische gegevens met een **eenheids** waarde van het **aantal** , is alleen totaal (Sum)-aggregatie geldig. De minimum-, maximum-en gemiddelde aggregaties retour neren altijd 1. Zie [ondersteunde aggregaties](#supported-aggregations)voor meer informatie.
+Voor metrische gegevens met een **eenheids** waarde van het **aantal**, is alleen totaal (Sum)-aggregatie geldig. De minimum-, maximum-en gemiddelde aggregaties retour neren altijd 1. Zie [ondersteunde aggregaties](#supported-aggregations)voor meer informatie.
 
 ### <a name="device-to-cloud-twin-operations-metrics"></a>Gegevens van het apparaat naar de Cloud voor dubbele bewerkingen
 
-|Weergave naam voor metrische gegevens|Metrisch gegeven|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
+|Weergave naam voor metrische gegevens|Gegevens|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
 |---|---|---|---|---|---|
 |Mislukte dubbele Lees bewerkingen van apparaten|D2C. dubbele. Read. failure|Aantal|Totaal|Het aantal apparaten dat niet kan worden gestart, dubbele Lees bewerkingen.|Geen|
 |Mislukte dubbele updates van apparaten|D2C. dubbele. update. failure|Aantal|Totaal|Het aantal apparaten dat door een apparaat is gestart en dubbele updates heeft uitgevoerd.|Geen|
-|Reactie grootte van dubbele Lees bewerkingen van apparaten|D2C. dubbele. Lees. grootte|Bytes|Average|Het aantal gestarte dubbele Lees bewerkingen voor alle geslaagde apparaten.|Geen|
-|Grootte van dubbele updates van apparaten|D2C. dubbele. update. grootte|Bytes|Average|De totale grootte van alle geslaagde, door het apparaat geïnitieerde dubbele updates.|Geen|
+|Reactie grootte van dubbele Lees bewerkingen van apparaten|D2C. dubbele. Lees. grootte|Bytes|Gemiddeld|Het aantal gestarte dubbele Lees bewerkingen voor alle geslaagde apparaten.|Geen|
+|Grootte van dubbele updates van apparaten|D2C. dubbele. update. grootte|Bytes|Gemiddeld|De totale grootte van alle geslaagde, door het apparaat geïnitieerde dubbele updates.|Geen|
 |Geslaagde dubbele Lees bewerkingen van apparaten|D2C. dubbele. lezen. geslaagd|Aantal|Totaal|De telling van alle geslaagde apparaten met dubbele Lees bewerkingen.|Geen|
 |Geslaagde dubbele updates van apparaten|D2C. dubbele. update. geslaagd|Aantal|Totaal|De telling van alle geslaagde, door het apparaat geïnitieerde dubbele updates.|Geen|
 
-Voor metrische gegevens met een **eenheids** waarde van het **aantal** , is alleen totaal (Sum)-aggregatie geldig. De minimum-, maximum-en gemiddelde aggregaties retour neren altijd 1. Zie [ondersteunde aggregaties](#supported-aggregations)voor meer informatie.
+Voor metrische gegevens met een **eenheids** waarde van het **aantal**, is alleen totaal (Sum)-aggregatie geldig. De minimum-, maximum-en gemiddelde aggregaties retour neren altijd 1. Zie [ondersteunde aggregaties](#supported-aggregations)voor meer informatie.
 
 ### <a name="event-grid-metrics"></a>Metrische gegevens van gebeurtenis raster
 
-|Weergave naam voor metrische gegevens|Metrisch gegeven|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
+|Weergave naam voor metrische gegevens|Gegevens|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
 |---|---|---|---|---|---|
-|Event Grid leveringen (preview-versie)|EventGridDeliveries|Aantal|Totaal|Het aantal IoT Hub gebeurtenissen dat is gepubliceerd op Event Grid. Gebruik de dimensie resultaat voor het aantal geslaagde en mislukte aanvragen. De dimensie type-tekst geeft het soort gebeurtenis weer ( https://aka.ms/ioteventgrid) .|Resultaat,<br/>EventType<br>*Zie [metrische dimensies](#metric-dimensions)voor meer informatie* .|
-|Event Grid latentie (preview-versie)|EventGridLatency|Milliseconden|Average|De gemiddelde latentie (in milliseconden) vanaf het moment waarop de IOT hub-gebeurtenis werd gegenereerd toen de gebeurtenis werd gepubliceerd in Event Grid. Dit getal is een gemiddelde tussen alle gebeurtenis typen. Gebruik de dimensie type type om de latentie van een specifiek soort gebeurtenis weer te geven.|EventType<br>*Zie [metrische dimensies](#metric-dimensions)voor meer informatie* .|
+|Event Grid leveringen (preview-versie)|EventGridDeliveries|Aantal|Totaal|Het aantal IoT Hub gebeurtenissen dat is gepubliceerd op Event Grid. Gebruik de dimensie resultaat voor het aantal geslaagde en mislukte aanvragen. De dimensie type-tekst geeft het soort gebeurtenis weer ( https://aka.ms/ioteventgrid) .|Resultaat,<br/>EventType<br>*Zie [metrische dimensies](#metric-dimensions)voor meer informatie*.|
+|Event Grid latentie (preview-versie)|EventGridLatency|Milliseconden|Gemiddeld|De gemiddelde latentie (in milliseconden) vanaf het moment waarop de IOT hub-gebeurtenis werd gegenereerd toen de gebeurtenis werd gepubliceerd in Event Grid. Dit getal is een gemiddelde tussen alle gebeurtenis typen. Gebruik de dimensie type type om de latentie van een specifiek soort gebeurtenis weer te geven.|EventType<br>*Zie [metrische dimensies](#metric-dimensions)voor meer informatie*.|
 
-Voor metrische gegevens met een **eenheids** waarde van het **aantal** , is alleen totaal (Sum)-aggregatie geldig. De minimum-, maximum-en gemiddelde aggregaties retour neren altijd 1. Zie [ondersteunde aggregaties](#supported-aggregations)voor meer informatie.
+Voor metrische gegevens met een **eenheids** waarde van het **aantal**, is alleen totaal (Sum)-aggregatie geldig. De minimum-, maximum-en gemiddelde aggregaties retour neren altijd 1. Zie [ondersteunde aggregaties](#supported-aggregations)voor meer informatie.
 
 ### <a name="jobs-metrics"></a>Metrische gegevens van taken
 
-|Weergave naam voor metrische gegevens|Metrisch gegeven|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
+|Weergave naam voor metrische gegevens|Gegevens|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
 |---|---|---|---|---|---|
 |Voltooide taken|Jobs. voltooid|Aantal|Totaal|Het aantal voltooide taken.|Geen|
 |Mislukte aanroepen naar lijst taken|Jobs. listJobs. failure|Aantal|Totaal|Het aantal mislukte aanroepen naar lijst taken.|Geen|
@@ -172,22 +172,22 @@ Voor metrische gegevens met een **eenheids** waarde van het **aantal** , is alle
 |Voltooide taak annuleringen|Jobs. cancelJob. geslaagd|Aantal|Totaal|Het aantal geslaagde aanroepen om een taak te annuleren.|Geen|
 |Geslaagde taak query's|Jobs. queryJobs. geslaagd|Aantal|Totaal|Het aantal geslaagde aanroepen naar query taken.|Geen|
 
-Voor metrische gegevens met een **eenheids** waarde van het **aantal** , is alleen totaal (Sum)-aggregatie geldig. De minimum-, maximum-en gemiddelde aggregaties retour neren altijd 1. Zie [ondersteunde aggregaties](#supported-aggregations)voor meer informatie.
+Voor metrische gegevens met een **eenheids** waarde van het **aantal**, is alleen totaal (Sum)-aggregatie geldig. De minimum-, maximum-en gemiddelde aggregaties retour neren altijd 1. Zie [ondersteunde aggregaties](#supported-aggregations)voor meer informatie.
 
 ### <a name="routing-metrics"></a>Routerings metrieken
 
-|Weergave naam voor metrische gegevens|Metrisch gegeven|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
+|Weergave naam voor metrische gegevens|Gegevens|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
 |---|---|---|---|---|---|
-| Bezorgings pogingen routeren (preview) |RoutingDeliveries | Aantal | Totaal |Dit is de metrische gegevens van de route ring. Gebruik de dimensies om de leverings status voor een bepaald eind punt of voor een specifieke routerings bron te identificeren.| Resultaat,<br>RoutingSource,<br>EndpointType,<br>FailureReasonCategory,<br>EndpointName<br>*Zie [metrische dimensies](#metric-dimensions)voor meer informatie* . |
-| Grootte van bezorgings gegevens in bytes (preview-versie)|RoutingDataSizeInBytesDelivered| Bytes | Totaal |Het totale aantal bytes dat wordt gerouteerd door IoT Hub naar het aangepaste eind punt en het ingebouwde eind punt. Gebruik de dimensies om gegevens grootte te identificeren die naar een bepaald eind punt of voor een specifieke routerings bron worden doorgestuurd.| RoutingSource,<br>EndpointType<br>EndpointName<br>*Zie [metrische dimensies](#metric-dimensions)voor meer informatie* .|
-| Routerings latentie (preview-versie) |RoutingDeliveryLatency| Milliseconden | Average |Dit is de metrische gegevens van de bezorgings latentie van de route ring. Gebruik de dimensies om de latentie voor een bepaald eind punt of voor een specifieke routerings bron te identificeren.| RoutingSource,<br>EndpointType,<br>EndpointName<br>*Zie [metrische dimensies](#metric-dimensions)voor meer informatie* .|
+| Bezorgings pogingen routeren (preview) |RoutingDeliveries | Aantal | Totaal |Dit is de metrische gegevens van de route ring. Gebruik de dimensies om de leverings status voor een bepaald eind punt of voor een specifieke routerings bron te identificeren.| Resultaat,<br>RoutingSource,<br>EndpointType,<br>FailureReasonCategory,<br>EndpointName<br>*Zie [metrische dimensies](#metric-dimensions)voor meer informatie*. |
+| Grootte van bezorgings gegevens in bytes (preview-versie)|RoutingDataSizeInBytesDelivered| Bytes | Totaal |Het totale aantal bytes dat wordt gerouteerd door IoT Hub naar het aangepaste eind punt en het ingebouwde eind punt. Gebruik de dimensies om gegevens grootte te identificeren die naar een bepaald eind punt of voor een specifieke routerings bron worden doorgestuurd.| RoutingSource,<br>EndpointType<br>EndpointName<br>*Zie [metrische dimensies](#metric-dimensions)voor meer informatie*.|
+| Routerings latentie (preview-versie) |RoutingDeliveryLatency| Milliseconden | Gemiddeld |Dit is de metrische gegevens van de bezorgings latentie van de route ring. Gebruik de dimensies om de latentie voor een bepaald eind punt of voor een specifieke routerings bron te identificeren.| RoutingSource,<br>EndpointType,<br>EndpointName<br>*Zie [metrische dimensies](#metric-dimensions)voor meer informatie*.|
 |Route ring: blobs die aan de opslag worden geleverd|D2C. endpoints. outwaar. storage. blobs|Aantal|Totaal|Het aantal keren dat IoT Hub route ring blobs naar opslag eindpunten heeft geleverd.|Geen|
 |Route ring: gegevens worden geleverd aan de opslag|D2C. endpoints. out. storage. bytes|Bytes|Totaal|De hoeveelheid gegevens (bytes) IoT Hub route ring die aan de opslag eindpunten wordt geleverd.|Geen|
-|Route ring: bericht latentie voor Event hub|D2C. endpoints. latentie. Event hubs|Milliseconden|Average|De gemiddelde latentie (in milliseconden) tussen bericht binnenkomend naar IoT Hub en het bericht wordt binnengebracht in aangepaste eind punten van het type Event hub. Dit omvat geen berichten routes naar het ingebouwde eind punt (gebeurtenissen).|Geen|
-|Route ring: bericht latentie voor Service Bus wachtrij|D2C. endpoints. latentie. serviceBusQueues|Milliseconden|Average|De gemiddelde latentie (in milliseconden) tussen het binnenkomen van berichten IoT Hub en het binnenkomen van berichten in een Service Bus wachtrij-eind punt.|Geen|
-|Route ring: bericht latentie voor Service Bus onderwerp|D2C. endpoints. latentie. serviceBusTopics|Milliseconden|Average|De gemiddelde latentie (in milliseconden) tussen het binnenkomen van berichten IoT Hub en het binnenkomen van berichten in een eind punt van een Service Bus onderwerp.|Geen|
-|Route ring: bericht latentie voor berichten/gebeurtenissen|D2C. endpoints. latentie. builtIn. Events|Milliseconden|Average|De gemiddelde latentie (in milliseconden) tussen het binnenkomen van berichten IoT Hub en het binnenkomen van berichten in het ingebouwde eind punt (berichten/gebeurtenissen) en de terugval route.|Geen|
-|Route ring: bericht latentie voor opslag|D2C. endpoints. latentie. opslag|Milliseconden|Average|De gemiddelde latentie (in milliseconden) tussen het binnenkomen van berichten IoT Hub en het binnenkomen van berichten in een opslag eindpunt.|Geen|
+|Route ring: bericht latentie voor Event hub|D2C. endpoints. latentie. Event hubs|Milliseconden|Gemiddeld|De gemiddelde latentie (in milliseconden) tussen bericht binnenkomend naar IoT Hub en het bericht wordt binnengebracht in aangepaste eind punten van het type Event hub. Dit omvat geen berichten routes naar het ingebouwde eind punt (gebeurtenissen).|Geen|
+|Route ring: bericht latentie voor Service Bus wachtrij|D2C. endpoints. latentie. serviceBusQueues|Milliseconden|Gemiddeld|De gemiddelde latentie (in milliseconden) tussen het binnenkomen van berichten IoT Hub en het binnenkomen van berichten in een Service Bus wachtrij-eind punt.|Geen|
+|Route ring: bericht latentie voor Service Bus onderwerp|D2C. endpoints. latentie. serviceBusTopics|Milliseconden|Gemiddeld|De gemiddelde latentie (in milliseconden) tussen het binnenkomen van berichten IoT Hub en het binnenkomen van berichten in een eind punt van een Service Bus onderwerp.|Geen|
+|Route ring: bericht latentie voor berichten/gebeurtenissen|D2C. endpoints. latentie. builtIn. Events|Milliseconden|Gemiddeld|De gemiddelde latentie (in milliseconden) tussen het binnenkomen van berichten IoT Hub en het binnenkomen van berichten in het ingebouwde eind punt (berichten/gebeurtenissen) en de terugval route.|Geen|
+|Route ring: bericht latentie voor opslag|D2C. endpoints. latentie. opslag|Milliseconden|Gemiddeld|De gemiddelde latentie (in milliseconden) tussen het binnenkomen van berichten IoT Hub en het binnenkomen van berichten in een opslag eindpunt.|Geen|
 |Route ring: berichten worden bezorgd bij Event hub|D2C. endpoints. uitgangs. Event hubs|Aantal|Totaal|Het aantal keren dat IoT Hub route ring berichten heeft geleverd aan aangepaste eind punten van het type Event hub. Dit omvat geen berichten routes naar het ingebouwde eind punt (gebeurtenissen).|Geen|
 |Route ring: berichten worden bezorgd bij Service Bus wachtrij|D2C. endpoints. uitgangs. serviceBusQueues|Aantal|Totaal|Het aantal keren dat IoT Hub route ring berichten heeft geleverd aan Service Bus-wachtrij-eind punten.|Geen|
 |Route ring: berichten die worden bezorgd bij Service Bus onderwerp|D2C. endpoints. uitgangs. serviceBusTopics|Aantal|Totaal|Het aantal keren dat IoT Hub route ring berichten heeft geleverd aan Service Bus onderwerp-eind punten.|Geen|
@@ -199,17 +199,17 @@ Voor metrische gegevens met een **eenheids** waarde van het **aantal** , is alle
 |Route ring: telemetrie-berichten incompatibel|D2C. telemetrie. uitgangs. ongeldig|Aantal|Totaal|Het aantal keren dat IoT Hub route ring geen berichten kan leveren als gevolg van incompatibiliteit met het eind punt. Een bericht is niet compatibel met een eind punt wanneer IOT hub het bericht aan een eind punt probeert af te leveren en mislukt met een niet-tijdelijke fout. Ongeldige berichten worden niet opnieuw geprobeerd. Deze waarde omvat geen nieuwe pogingen.|Geen|
 |Route ring: telemetriegegevens van zwevende berichten |D2C. telemetrie.. zwevend|Aantal|Totaal|Het aantal keren dat berichten zijn verwijderd door IoT Hub route ring omdat deze niet overeenkomen met een routerings query wanneer terugval route is uitgeschakeld.|Geen|
 
-Voor metrische gegevens met een **eenheids** waarde van het **aantal** , is alleen totaal (Sum)-aggregatie geldig. De minimum-, maximum-en gemiddelde aggregaties retour neren altijd 1. Zie [ondersteunde aggregaties](#supported-aggregations)voor meer informatie.
+Voor metrische gegevens met een **eenheids** waarde van het **aantal**, is alleen totaal (Sum)-aggregatie geldig. De minimum-, maximum-en gemiddelde aggregaties retour neren altijd 1. Zie [ondersteunde aggregaties](#supported-aggregations)voor meer informatie.
 
 ### <a name="twin-query-metrics"></a>Dubbele metrische query gegevens
 
-|Weergave naam voor metrische gegevens|Metrisch gegeven|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
+|Weergave naam voor metrische gegevens|Gegevens|Eenheid|Aggregatietype|Beschrijving|Afmetingen|
 |---|---|---|---|---|---|
 |Mislukte dubbele query's|twinQueries. failure|Aantal|Totaal|Het aantal mislukte dubbele query's.|Geen|
 |Geslaagde dubbele query's|twinQueries. geslaagd|Aantal|Totaal|Het aantal geslaagde dubbele query's.|Geen|
-|Resultaat grootte van dubbele query's|twinQueries.resultSize|Bytes|Average|Het totaal van de resultaat grootte van alle geslaagde dubbele query's.|Geen|
+|Resultaat grootte van dubbele query's|twinQueries.resultSize|Bytes|Gemiddeld|Het totaal van de resultaat grootte van alle geslaagde dubbele query's.|Geen|
 
-Voor metrische gegevens met een **eenheids** waarde van het **aantal** , is alleen totaal (Sum)-aggregatie geldig. De minimum-, maximum-en gemiddelde aggregaties retour neren altijd 1. Zie [ondersteunde aggregaties](#supported-aggregations)voor meer informatie.
+Voor metrische gegevens met een **eenheids** waarde van het **aantal**, is alleen totaal (Sum)-aggregatie geldig. De minimum-, maximum-en gemiddelde aggregaties retour neren altijd 1. Zie [ondersteunde aggregaties](#supported-aggregations)voor meer informatie.
 
 ## <a name="metric-dimensions"></a>Metrische dimensies
 
@@ -219,17 +219,17 @@ Azure IoT Hub heeft de volgende dimensies die zijn gekoppeld aan een aantal metr
 |---|---|
 ||
 |**EndpointName**| De naam van het eind punt.|
-|**EndpointType**|Een van de volgende: **Event hubs** , **serviceBusQueues** , **cosmosDB** , **serviceBusTopics** . **Builtin** of **blobStorage** .|
-|**EventType**| Een van de volgende Event Grid gebeurtenis typen: **micro soft. devices. DeviceCreated** . **Micro soft. devices. DeviceDeleted** , **micro soft. devices. DeviceConnected** , **micro soft. devices. DeviceDisconnected** , of **micro soft. devices. DeviceTelemetry** . Zie [gebeurtenis typen](iot-hub-event-grid.md#event-types)voor meer informatie.|
-|**FailureReasonCategory**| Een van de volgende waarden: **ongeldig** , **verwijderd** , **zwevend** of **Null** .|
-|**Resultaat**| **Geslaagd** of **mislukt** .|
+|**EndpointType**|Een van de volgende: **Event hubs**, **serviceBusQueues**, **cosmosDB**, **serviceBusTopics**. **Builtin** of **blobStorage**.|
+|**Type**| Een van de volgende Event Grid gebeurtenis typen: **micro soft. devices. DeviceCreated**. **Micro soft. devices. DeviceDeleted**, **micro soft. devices. DeviceConnected**, **micro soft. devices. DeviceDisconnected**, of **micro soft. devices. DeviceTelemetry**. Zie [gebeurtenis typen](iot-hub-event-grid.md#event-types)voor meer informatie.|
+|**FailureReasonCategory**| Een van de volgende waarden: **ongeldig**, **verwijderd**, **zwevend** of **Null**.|
+|**Resultaat**| **Geslaagd** of **mislukt**.|
 |**RoutingSource**| Apparaat-berichten<br>Dubbele wijzigings gebeurtenissen<br>Levenscyclus gebeurtenissen van apparaat|
 
-Zie voor meer informatie over metrische dimensies [multi-dimensionale metrische gegevens](/azure/azure-monitor/platform/data-platform-metrics#multi-dimensional-metrics).
+Zie voor meer informatie over metrische dimensies [multi-dimensionale metrische gegevens](../azure-monitor/platform/data-platform-metrics.md#multi-dimensional-metrics).
 
 ## <a name="resource-logs"></a>Resourcelogboeken
 
-In deze sectie vindt u een lijst met alle bron logboek categorie typen en schema's die zijn verzameld voor Azure IoT Hub. De resource provider en het type voor alle IoT Hub Logboeken is [micro soft. devices/IotHubs](/azure/azure-monitor/platform/resource-logs-categories#microsoftdevicesiothubs).
+In deze sectie vindt u een lijst met alle bron logboek categorie typen en schema's die zijn verzameld voor Azure IoT Hub. De resource provider en het type voor alle IoT Hub Logboeken is [micro soft. devices/IotHubs](../azure-monitor/platform/resource-logs-categories.md#microsoftdevicesiothubs).
 
 **Onderwerpen in dit gedeelte**
 
@@ -384,7 +384,7 @@ Deze categorie kan geen fouten ondervangen die rechtstreeks optreden terwijl het
 
 ### <a name="routes"></a>Routes
 
-In de categorie [bericht routering](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-d2c) worden fouten bijgehouden die optreden tijdens de bericht route-evaluatie en de eindpunt status, zoals wordt waargenomen door IOT hub. Deze categorie bevat gebeurtenissen zoals:
+In de categorie [bericht routering](./iot-hub-devguide-messages-d2c.md) worden fouten bijgehouden die optreden tijdens de bericht route-evaluatie en de eindpunt status, zoals wordt waargenomen door IOT hub. Deze categorie bevat gebeurtenissen zoals:
 
 * Een regel resulteert in "niet-gedefinieerd",
 * IoT Hub markeert een eind punt als Dead of
@@ -689,4 +689,4 @@ Zie de [Naslag informatie over Azure monitor logboek tabel](/azure/azure-monitor
 ## <a name="see-also"></a>Zie ook
 
 * Zie [azure IOT hub bewaken](monitor-iot-hub.md) voor een beschrijving van het controleren van Azure IOT hub.
-* Zie [Azure-resources bewaken met Azure monitor](/azure/azure-monitor/insights/monitor-azure-resource) voor meer informatie over het bewaken van Azure-resources.
+* Zie [Azure-resources bewaken met Azure monitor](../azure-monitor/insights/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.

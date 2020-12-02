@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.custom: mvc, devx-track-azurecli
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 7aa84336a3d71349c127ad15a90af98ffe2133fe
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.openlocfilehash: 1b17729437b238b98f60e2cd97664fa6aafcccd4
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94980232"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462455"
 ---
 # <a name="how-to-certify-iot-plug-and-play-devices"></a>IoT Plug en Play-apparaten certificeren
 
@@ -42,9 +42,9 @@ Om aan de certificerings vereisten te voldoen, moet uw apparaat:
 - U kunt telemetrie, eigenschappen of opdrachten implementeren volgens de IoT-Plug en Play Conventie.
 - Beschrijf de interacties van het apparaat met een [DTDL v2](https://aka.ms/dtdl) -model.
 - Publiceer het model en alle vereiste interfaces in de [opslag plaats van het open bare Azure IOT-model](https://devicemodels.azureiotsolutions.com/)
-- De model-ID verzenden tijdens de [registratie van DPS](concepts-developer-guide-device-csharp.md#dps-payload) in de nettolading van de DPS-inrichting.
-- De model-ID tijdens de [MQTT-verbinding](concepts-developer-guide-device-csharp.md#model-id-announcement)aankondigen.
-- Alle modellen van apparaten moeten compatibel zijn met [Azure IOT Central](https://aka.ms/pnp-iotc-getstarted).
+- De model-ID verzenden tijdens de [registratie van DPS](./concepts-developer-guide-device.md#dps-payload) in de nettolading van de DPS-inrichting.
+- De model-ID tijdens de [MQTT-verbinding](./concepts-developer-guide-device.md#model-id-announcement)aankondigen.
+- Alle modellen van apparaten moeten compatibel zijn met [Azure IOT Central](../iot-central/core/overview-iot-central-developer.md).
 
 > [!NOTE]
 > Op dit moment ondersteunt Azure IoT Central de gegevens typen **matrix** en **georuimtelijke** DTDL niet volledig.

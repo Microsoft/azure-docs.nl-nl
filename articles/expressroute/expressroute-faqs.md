@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 12/13/2019
 ms.author: duau
-ms.openlocfilehash: 7b7362d9315d8228e56dc85b2da22e0d507fa8ae
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: ef5b065425fa05d016c1b1c1688cc28508f32d30
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96339786"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462042"
 ---
 # <a name="expressroute-faq"></a>Veelgestelde vragen ExpressRoute
 
@@ -46,8 +46,9 @@ Nee. U kunt een VPN-verbinding kopen van elke snelheid van uw service provider. 
 
 ### <a name="if-i-pay-for-an-expressroute-circuit-of-a-given-bandwidth-do-i-have-the-ability-to-use-more-than-my-procured-bandwidth"></a>Als ik voor een ExpressRoute-circuit van een bepaalde band breedte betaal, heb ik dan de mogelijkheid om meer dan mijn beschik bare band breedte te gebruiken?
 
-Ja, u kunt Maxi maal twee keer de bandbreedte limiet gebruiken die u hebt aangeschaft met behulp van de band breedte die beschikbaar is op de secundaire verbinding van uw ExpressRoute-circuit. De ingebouwde redundantie van uw circuit wordt geconfigureerd met behulp van primaire en secundaire verbindingen, elk van de aangeschafte band breedte, op twee micro soft Enter prise Edge-routers (Msee's). De band breedte die beschikbaar is via uw secundaire verbinding, kan zo nodig worden gebruikt voor extra verkeer. Omdat de secundaire verbinding is bedoeld voor redundantie, is deze echter niet gegarandeerd en mag niet worden gebruikt voor extra verkeer gedurende een langere periode. Zie [hier](./expressroute-optimize-routing.md#solution-use-as-path-prepending)voor meer informatie over het gebruik van beide verbindingen om verkeer te verzenden.
-Als u van plan bent om de primaire verbinding alleen te gebruiken om verkeer te verzenden, wordt de band breedte van de verbinding vast en wordt geprobeerd het abonnement te verbreken, waardoor het pakket verloren gaat. Als verkeer via een ExpressRoute-gateway loopt, is de band breedte voor de SKU vast en niet bursteel.
+Ja, u kunt Maxi maal twee keer de bandbreedte limiet gebruiken die u hebt aangeschaft met behulp van de band breedte die beschikbaar is op de secundaire verbinding van uw ExpressRoute-circuit. De ingebouwde redundantie van uw circuit wordt geconfigureerd met behulp van primaire en secundaire verbindingen, elk van de aangeschafte band breedte, op twee micro soft Enter prise Edge-routers (Msee's). De band breedte die beschikbaar is via uw secundaire verbinding, kan zo nodig worden gebruikt voor extra verkeer. Omdat de secundaire verbinding is bedoeld voor redundantie, is deze echter niet gegarandeerd en mag niet worden gebruikt voor extra verkeer gedurende een langere periode. Zie voor meer informatie over het gebruik van beide verbindingen voor het verzenden van verkeer [gebruiken als pad voor in behandeling](./expressroute-optimize-routing.md#solution-use-as-path-prepending).
+
+Als u van plan bent om alleen de primaire verbinding te gebruiken om verkeer te verzenden, wordt de band breedte van de verbinding vast en wordt geprobeerd het abonnement te verbreken, waardoor het pakket langer wordt. Als verkeer via een ExpressRoute-gateway loopt, is de band breedte voor de gateway-SKU vast en niet bursteel. Zie [over ExpressRoute virtuele netwerk gateways](expressroute-about-virtual-network-gateways.md#aggthroughput)voor de band breedte van elke gateway-SKU.
 
 ### <a name="can-i-use-the-same-private-network-connection-with-virtual-network-and-other-azure-services-simultaneously"></a>Kan ik dezelfde particuliere netwerk verbinding gebruiken met het virtuele netwerk en andere Azure-Services tegelijk?
 

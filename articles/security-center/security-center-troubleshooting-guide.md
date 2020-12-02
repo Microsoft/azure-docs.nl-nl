@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 09/10/2019
 ms.author: memildin
-ms.openlocfilehash: 6646b8a563cfe156a23b47011a769c6df015a286
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 64b39dfa581b242fbb490d61b388f2bf260976ef
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92340339"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460418"
 ---
 # <a name="azure-security-center-troubleshooting-guide"></a>Handleiding voor het oplossen van problemen met Azure Security Center
 
@@ -29,7 +29,7 @@ Waarschuwings typen:
 
 * VMBA (Virtual Machine Behavioral Analysis)
 * Netwerkanalyse
-* Analyse van SQL Database en Azure Synapse Analytics (voorheen SQL Data Warehouse)
+* Analyse van SQL Database en Azure Synapse Analytics
 * Contextuele informatie
 
 Afhankelijk van de soorten waarschuwingen, kunnen klanten met behulp van de volgende resources de benodigde gegevens verzamelen om de waarschuwing te onderzoeken:
@@ -64,7 +64,7 @@ Als u de Services Management Console (Services. msc) opent, ziet u ook de Log An
 
 Als u wilt zien welke versie van de agent u hebt, opent u **taak beheer**, gaat u naar het tabblad **processen** en gaat u naar de **log Analytics Agent-service**, klikt u erop met de rechter muisknop en klikt u op **Eigenschappen**. Op het tabblad **Details** kunt u de bestandsversie vinden, zoals hieronder wordt weergegeven:
 
-![Bestand](./media/security-center-troubleshooting-guide/security-center-troubleshooting-guide-fig6.png)
+![File](./media/security-center-troubleshooting-guide/security-center-troubleshooting-guide-fig6.png)
 
 ## <a name="log-analytics-agent-installation-scenarios"></a>Installatie scenario's voor Log Analytics agent
 
@@ -94,7 +94,7 @@ Er zijn twee installatie scenario's die verschillende resultaten kunnen oplevere
 | Agent reageert niet of ID ontbreekt | Security Center kan de beveiligingsgegevens die zijn gescand van de virtuele machine niet ophalen, zelfs niet als de agent is geïnstalleerd. | De agent rapporteert geen gegevens, ook de heartbeat niet. De agent is mogelijk beschadigd of het verkeer wordt geblokkeerd. Het is ook mogelijk dat de agent gegevens rapporteert, maar er ontbreekt een Azure-Resource-ID zodat de gegevens niet overeenkomen met de Azure-VM. Zie [probleemoplossings handleiding voor log Analytics-agent voor Linux](https://github.com/Microsoft/OMS-Agent-for-Linux/blob/master/docs/Troubleshooting.md#im-not-seeing-any-linux-data-in-the-oms-portal)voor meer informatie over het oplossen van problemen met Linux. Zie [Troubleshooting Windows Virtual Machines](../virtual-machines/extensions/oms-windows.md#troubleshoot-and-support) (Problemen met virtuele Windows-machines oplossen) voor het oplossen van problemen in Windows. |
 | Agent niet geïnstalleerd | Gegevensverzameling is uitgeschakeld. | Schakel het verzamelen van gegevens in het beveiligings beleid in of installeer de Log Analytics agent hand matig. |
 
-## <a name="troubleshooting-monitoring-agent-network-requirements"></a>Problemen oplossen met de netwerkvereisten voor de Monitoring Agent <a name="mon-network-req"></a>
+## <a name="troubleshooting-monitoring-agent-network-requirements"></a>Problemen met de netwerk vereisten voor de bewakings agent oplossen <a name="mon-network-req"></a>
 
 Agents kunnen alleen verbinding maken met Security Center en zich daarbij registreren als ze toegang hebben tot netwerkbronnen, inclusief de poortnummers en domein-URL's.
 

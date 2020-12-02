@@ -3,14 +3,14 @@ title: Variabelen in Azure Automation beheren
 description: In dit artikel leest u hoe u kunt werken met variabelen in runbooks en DSC-configuraties.
 services: automation
 ms.subservice: shared-capabilities
-ms.date: 10/05/2020
+ms.date: 12/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: 4749fcb6698ff1716f2cae257cc0efad458bf9a9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5be0d45843eed8c7c0d7d9b6dc4655de01e914c3
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91766190"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461449"
 ---
 # <a name="manage-variables-in-azure-automation"></a>Variabelen in Azure Automation beheren
 
@@ -26,10 +26,10 @@ Automation-variabelen zijn handig voor de volgende scenario's:
 
 Azure Automation persistente variabelen en maakt deze beschikbaar, zelfs als een runbook-of DSC-configuratie mislukt. Dit gedrag maakt het mogelijk dat een runbook of DSC-configuratie een waarde instelt die vervolgens wordt gebruikt door een ander runbook of door hetzelfde runbook of de DSC-configuratie de volgende keer dat deze wordt uitgevoerd.
 
-Azure Automation elke versleutelde variabele veilig op te slaan. Wanneer u een variabele maakt, kunt u de versleuteling en opslag opgeven door Azure Automation als een beveiligd activum. Nadat u de variabele hebt gemaakt, kunt u de versleutelings status niet meer wijzigen zonder de variabele opnieuw te maken. Een Azure Security Center aanbeveling is het versleutelen van alle Azure Automation variabelen, zoals beschreven in de variabelen van het [Automation-account moeten worden versleuteld](../../security-center/recommendations-reference.md#recs-computeapp).
+Azure Automation elke versleutelde variabele veilig op te slaan. Wanneer u een variabele maakt, kunt u de versleuteling en opslag opgeven door Azure Automation als een beveiligd activum. Nadat u de variabele hebt gemaakt, kunt u de versleutelings status niet meer wijzigen zonder de variabele opnieuw te maken. Als u met Automation-account variabelen gevoelige gegevens opslaat die nog niet zijn versleuteld, moet u deze verwijderen en opnieuw maken als versleutelde variabelen. Een Azure Security Center aanbeveling is het versleutelen van alle Azure Automation variabelen, zoals beschreven in de variabelen van het [Automation-account moeten worden versleuteld](../../security-center/recommendations-reference.md#recs-computeapp). Als u niet-versleutelde variabelen hebt die u wilt uitsluiten van deze beveiligings aanbeveling, raadpleegt u [een resource uitsluiten van aanbevelingen en beveiligde scores](../../security-center/exempt-resource.md) om een uitzonderings regel te maken.
 
 >[!NOTE]
->Beveilig assets in Azure Automation referenties, certificaten, verbindingen en versleutelde variabelen bevatten. Deze assets worden versleuteld en opgeslagen in Azure Automation met behulp van een unieke sleutel die wordt gegenereerd voor elk Automation-account. Azure Automation slaat de sleutel op in de door het systeem beheerde Key Vault. Voordat u een beveiligde Asset opslaat, laadt Automation de sleutel van Key Vault en gebruikt deze om de Asset te versleutelen. 
+>Beveilig assets in Azure Automation referenties, certificaten, verbindingen en versleutelde variabelen bevatten. Deze assets worden versleuteld en opgeslagen in Azure Automation met behulp van een unieke sleutel die wordt gegenereerd voor elk Automation-account. Azure Automation slaat de sleutel op in de door het systeem beheerde Key Vault. Voordat u een beveiligde Asset opslaat, laadt Automation de sleutel van Key Vault en gebruikt deze om de Asset te versleutelen.
 
 ## <a name="variable-types"></a>Typen variabelen
 
@@ -38,7 +38,7 @@ Wanneer u een variabele met de Azure Portal maakt, moet u een gegevens type in d
 * Tekenreeks
 * Geheel getal
 * DateTime
-* Booleaans
+* Boolean
 * Null
 
 De variabele is niet beperkt tot het opgegeven gegevens type. U moet de variabele instellen met behulp van Windows Power shell als u een waarde van een ander type wilt opgeven. Als u opgeeft `Not defined` , wordt de waarde van de variabele ingesteld op null. U moet de waarde instellen met de cmdlet [set-AzAutomationVariable](/powershell/module/az.automation/set-azautomationvariable) of de interne `Set-AutomationVariable` cmdlet.

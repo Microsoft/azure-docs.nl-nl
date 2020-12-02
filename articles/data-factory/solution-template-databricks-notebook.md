@@ -11,24 +11,24 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 04/27/2020
-ms.openlocfilehash: f9dc11bd046bdc3a8913b4b05f1b68b84c9736c4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1c20508d27d03c00a6842979731fb905bbaa9def
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89438446"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461254"
 ---
 # <a name="transformation-with-azure-databricks"></a>Transformatie met Azure Databricks
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
-In deze zelf studie maakt u een end-to-end-pijp lijn die de activiteiten **validatie**, **kopie gegevens**en **notebook** bevat in azure Data Factory.
+In deze zelf studie maakt u een end-to-end-pijp lijn die de activiteiten **validatie**, **kopie gegevens** en **notebook** bevat in azure Data Factory.
 
 - **Validatie** zorgt ervoor dat de bron-gegevensset gereed is voor het gebruik van downstream voordat u de kopieer-en analyse taak start.
 
 - **Kopieer gegevens** dupliceert de bron-gegevensset naar de Sink-opslag, die is gekoppeld als DBFS in de Azure Databricks notebook. Op deze manier kan de gegevensset rechtstreeks worden gebruikt door Spark.
 
-- **Notebook** activeert de Databricks-notebook waarmee de gegevensset wordt getransformeerd. Het voegt ook de gegevensset toe aan een verwerkte map of Azure Azure Synapse Analytics (voorheen SQL Data Warehouse).
+- **Notebook** activeert de Databricks-notebook waarmee de gegevensset wordt getransformeerd. Het voegt ook de gegevensset toe aan een verwerkte map of Azure Azure Synapse Analytics.
 
 Ter vereenvoudiging maakt de sjabloon in deze zelf studie geen geplande trigger. U kunt indien nodig een invoeg toepassing toevoegen.
 
@@ -56,34 +56,34 @@ Een **trans formatie** -notitie blok importeren in uw Databricks-werk ruimte:
 
    Ga in het geïmporteerde notitie blok naar **opdracht 5** , zoals wordt weer gegeven in het volgende code fragment.
 
-   - Vervang `<storage name>` en `<access key>` door uw eigen opslag verbindings gegevens.
+   - Vervang `<storage name>` en `<access key>` door uw eigen opslag verbindings gegevens.
    - Gebruik het opslag account bij de `sinkdata` container.
 
     ```python
-    # Supply storageName and accessKey values  
-    storageName = "<storage name>"  
-    accessKey = "<access key>"  
+    # Supply storageName and accessKey values  
+    storageName = "<storage name>"  
+    accessKey = "<access key>"  
 
-    try:  
-      dbutils.fs.mount(  
-        source = "wasbs://sinkdata\@"+storageName+".blob.core.windows.net/",  
-        mount_point = "/mnt/Data Factorydata",  
-        extra_configs = {"fs.azure.account.key."+storageName+".blob.core.windows.net": accessKey})  
+    try:  
+      dbutils.fs.mount(  
+        source = "wasbs://sinkdata\@"+storageName+".blob.core.windows.net/",  
+        mount_point = "/mnt/Data Factorydata",  
+        extra_configs = {"fs.azure.account.key."+storageName+".blob.core.windows.net": accessKey})  
 
-    except Exception as e:  
-      # The error message has a long stack track. This code tries to print just the relevant line indicating what failed.
+    except Exception as e:  
+      # The error message has a long stack track. This code tries to print just the relevant line indicating what failed.
 
-    import re
-    result = re.findall(r"\^\s\*Caused by:\s*\S+:\s\*(.*)\$", e.message, flags=re.MULTILINE)
-    if result:
-      print result[-1] \# Print only the relevant error message
-    else:  
-      print e \# Otherwise print the whole stack trace.  
+    import re
+    result = re.findall(r"\^\s\*Caused by:\s*\S+:\s\*(.*)\$", e.message, flags=re.MULTILINE)
+    if result:
+      print result[-1] \# Print only the relevant error message
+    else:  
+      print e \# Otherwise print the whole stack trace.  
     ```
 
 1. Genereer een **Databricks-toegangs token** voor Data Factory om toegang te krijgen tot Databricks.
    1. Selecteer in de werk ruimte Databricks uw gebruikers profiel pictogram in de rechter bovenhoek.
-   1. **Gebruikers instellingen**selecteren.
+   1. **Gebruikers instellingen** selecteren.
     ![Menu opdracht voor gebruikers instellingen](media/solution-template-Databricks-notebook/user-setting.png)
    1. Selecteer **nieuw token genereren** onder het tabblad **toegangs tokens** .
    1. Selecteer **genereren**.
@@ -130,19 +130,19 @@ In de nieuwe pijp lijn worden de meeste instellingen automatisch geconfigureerd 
 
    ![Waarde van bron gegevensset](media/solution-template-Databricks-notebook/validation-settings.png)
 
-1. Controleer in het bestand **gegevens kopiëren** **naar BLOB**de tabbladen **bron** en **sink** . Wijzig de instellingen indien nodig.
+1. Controleer in het bestand **gegevens kopiëren** **naar BLOB** de tabbladen **bron** en **sink** . Wijzig de instellingen indien nodig.
 
    - Tabblad Bron van **bron** ![](media/solution-template-Databricks-notebook/copy-source-settings.png)
 
    - Tabblad Sink van **sink** ![](media/solution-template-Databricks-notebook/copy-sink-settings.png)
 
-1. Controleer de paden en instellingen naar behoefte in de **trans formatie**van de **notitieblok** activiteit en werk deze bij.
+1. Controleer de paden en instellingen naar behoefte in de **trans formatie** van de **notitieblok** activiteit en werk deze bij.
 
    **Databricks gekoppelde service** moet vooraf zijn ingevuld met de waarde uit een vorige stap, zoals wordt weer gegeven: ![ gevulde waarde voor de gekoppelde Databricks-service](media/solution-template-Databricks-notebook/notebook-activity.png)
 
    De instellingen van het **notitie blok** controleren:
   
-    1. Selecteer het tabblad **instellingen** . Controleer bij **pad naar notebook**of het standaardpad juist is. Mogelijk moet u bladeren en het juiste pad voor het notitie blok kiezen.
+    1. Selecteer het tabblad **instellingen** . Controleer bij **pad naar notebook** of het standaardpad juist is. Mogelijk moet u bladeren en het juiste pad voor het notitie blok kiezen.
 
        ![Pad naar notebook](media/solution-template-Databricks-notebook/notebook-settings.png)
 

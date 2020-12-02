@@ -9,23 +9,23 @@ ms.topic: conceptual
 ms.subservice: sql-dw
 ms.date: 09/05/2019
 ms.author: xiaoyul
-ms.reviewer: nibruno; jrasnick
-ms.openlocfilehash: 0e807a01f575615967a039d360505a4f090cd1fd
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.reviewer: nibruno; jrasnick; azure-synapse
+ms.openlocfilehash: 902f0ac96349cf3e30ec12aeda02130afc2b800c
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92478317"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460749"
 ---
 # <a name="performance-tune-with-materialized-views"></a>Prestaties afstemmen met gerealiseerde weer gaven
 
-Gerealiseerde weer gaven in Synapse SQL-pool bieden een lage onderhouds methode voor complexe analytische query's om snelle prestaties te krijgen zonder dat er query's worden gewijzigd. In dit artikel vindt u de algemene richt lijnen voor het gebruik van gerealiseerde weer gaven.
+Gerealiseerde weer gaven in azure Synapse SQL pool bieden een lage onderhouds methode voor complexe analytische query's om snelle prestaties te krijgen zonder dat er query's worden gewijzigd. In dit artikel vindt u de algemene richt lijnen voor het gebruik van gerealiseerde weer gaven.
 
 ## <a name="materialized-views-vs-standard-views"></a>Gerealiseerde weer gaven versus standaard weergaven
 
-De SQL-groep ondersteunt standaard en gerealiseerde weer gaven.  Beide zijn virtuele tabellen die zijn gemaakt met SELECT-expressies en worden weer gegeven als logische tabellen.  Met weer gaven wordt de complexiteit van common data computing ingekapseld en wordt een abstractie laag aan berekenings wijzigingen toegevoegd, zodat u geen query's hoeft te schrijven.  
+SQL-groep in azure Synapse ondersteunt standaard-en gerealiseerde weer gaven.  Beide zijn virtuele tabellen die zijn gemaakt met SELECT-expressies en worden weer gegeven als logische tabellen.  Met weer gaven wordt de complexiteit van common data computing ingekapseld en wordt een abstractie laag aan berekenings wijzigingen toegevoegd, zodat u geen query's hoeft te schrijven.  
 
-Een standaard weergave berekent de gegevens telkens wanneer de weer gave wordt gebruikt.  Er zijn geen gegevens opgeslagen op schijf. Personen gebruiken meestal standaard weergaven als een hulp middel waarmee u de logische objecten en query's in een Data Base kunt ordenen.  Als u een standaard weergave wilt gebruiken, moet er direct naar een query worden verwezen.
+Een standaard weergave berekent de gegevens telkens wanneer de weer gave wordt gebruikt.  Er zijn geen gegevens opgeslagen op schijf. Personen gebruiken meestal standaard weergaven als een hulp middel waarmee u de logische objecten en query's in een SQL-groep kunt ordenen.  Als u een standaard weergave wilt gebruiken, moet er direct naar een query worden verwezen.
 
 Met een gerealiseerde weer gave worden de gegevens in de SQL-groep, net als in een tabel, opgeslagen en bewaard.  Telkens wanneer een gerealiseerde weer gave wordt gebruikt, is er geen herberekening nodig.  Daarom kunnen query's die gebruikmaken van alle of subset van de gegevens in gerealiseerde weer gaven, betere prestaties krijgen.  Daarnaast kunt u met query's gebruikmaken van een gerealiseerde weer gave zonder dat hiervoor direct een verwijzing wordt gemaakt. u hoeft geen toepassings code te wijzigen.  
 
@@ -79,7 +79,7 @@ Ten opzichte van andere afstemmings opties, zoals schalen en statistieken, is he
 
 **U hebt verschillende strategieën voor het distribueren van gegevens nodig voor snellere query prestaties**
 
-Synapse SQL is een systeem voor gedistribueerde query verwerking.  Gegevens in een SQL-tabel worden verdeeld over 60 knoop punten met behulp van een van de drie [distributie strategieën](sql-data-warehouse-tables-distribute.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) (hash, round_robin of gerepliceerd).   
+Azure Synapse Analytics is een systeem voor gedistribueerde query verwerking.  Gegevens in een SQL-tabel worden verdeeld over 60 knoop punten met behulp van een van de drie [distributie strategieën](sql-data-warehouse-tables-distribute.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) (hash, round_robin of gerepliceerd).   
 
 De gegevens distributie is opgegeven bij de aanmaak tijd van de tabel en blijft ongewijzigd totdat de tabel wordt verwijderd. Gerealiseerde weer gave van een virtuele tabel op schijf ondersteunt hash-en round_robin gegevens distributies.  Gebruikers kunnen een gegevens distributie kiezen die afwijkt van de basis tabellen, maar wel optimaal is voor de prestaties van query's die de weer gaven het meest gebruiken.  
 
@@ -97,11 +97,11 @@ Bekijk deze aanbevelingen met betrekking tot uw workload behoeften.  De ideale g
 
 **Houd rekening met de verhouding tussen snellere query's en de kosten**
 
-Voor elke gerealiseerde weer gave zijn er kosten voor de gegevens opslag en de kosten voor het onderhouden van de weer gave.  Naarmate gegevens wijzigingen in basis tabellen worden aangebracht, neemt de grootte van de gerealiseerde weer gave toe en wordt de fysieke structuur ook gewijzigd.  Om te voor komen dat de query prestaties verslechteren, wordt elke gerealiseerde weer gave afzonderlijk beheerd door de SQL-groeps engine.  
+Voor elke gerealiseerde weer gave zijn er kosten voor de gegevens opslag en de kosten voor het onderhouden van de weer gave.  Naarmate gegevens wijzigingen in basis tabellen worden aangebracht, neemt de grootte van de gerealiseerde weer gave toe en wordt de fysieke structuur ook gewijzigd.  Om te voor komen dat de query prestaties verslechteren, wordt elke gerealiseerde weer gave afzonderlijk beheerd door de SQL Analytics-engine.  
 
 De werk belasting van de onderhouds taken is hoger wanneer het aantal gerealiseerde weer gaven en basis tabel wijzigingen toeneemt.   Gebruikers moeten controleren of de kosten die zijn gemaakt voor alle gerealiseerde weer gaven, kunnen worden gecompenseerd door de prestatie verbetering van de query.  
 
-U kunt deze query uitvoeren voor de lijst met gerealiseerde weer gaven in een Data Base:
+U kunt deze query uitvoeren voor de lijst met gerealiseerde weer gaven in een SQL-groep:
 
 ```sql
 SELECT V.name as materialized_view, V.object_id
@@ -141,7 +141,7 @@ GROUP BY A, C
 
 **Niet alle prestatie afstemming vereist een query wijziging**
 
-Het optimalisatie programma voor SQL-groepen kan automatisch geïmplementeerde gerealiseerde weer gaven gebruiken om de query prestaties te verbeteren.  Deze ondersteuning wordt op transparante wijze toegepast op query's die niet verwijzen naar de weer gaven en query's die niet worden ondersteund in gerealiseerde weer gaven.  Er is geen query wijziging nodig. U kunt het geschatte uitvoerings plan van een query controleren om te bevestigen of een gerealiseerde weer gave wordt gebruikt.  
+De SQL Analytics Optimizer kan automatisch geïmplementeerde gerealiseerde weer gaven gebruiken om de query prestaties te verbeteren.  Deze ondersteuning wordt op transparante wijze toegepast op query's die niet verwijzen naar de weer gaven en query's die niet worden ondersteund in gerealiseerde weer gaven.  Er is geen query wijziging nodig. U kunt het geschatte uitvoerings plan van een query controleren om te bevestigen of een gerealiseerde weer gave wordt gebruikt.  
 
 **Gerealiseerde weer gaven bewaken**
 
@@ -151,7 +151,7 @@ Om te voor komen dat de prestaties van query's teruglopen, is het een goed idee 
 
 **Gerealiseerde weer gave en caching van resultaten sets**
 
-Deze twee functies worden rond dezelfde tijd geïntroduceerd in de SQL-groep voor het afstemmen van de query prestaties.  Cache voor de resultatenset wordt gebruikt voor het ophalen van een hoge gelijktijdigheid en snelle respons van herhaalde query's tegen statische gegevens.  
+Deze twee functies worden op dezelfde tijd geïntroduceerd in SQL Analytics voor het afstemmen van query prestaties.  Cache voor de resultatenset wordt gebruikt voor het ophalen van een hoge gelijktijdigheid en snelle respons van herhaalde query's tegen statische gegevens.  
 
 Om het resultaat in de cache te kunnen gebruiken, moet de vorm van de cache die query vraagt overeenkomen met de query die de cache heeft geproduceerd.  Daarnaast moet het resultaat in de cache op de hele query worden toegepast.  
 

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/28/2020
-ms.openlocfilehash: bb978f30104b1e38bd8930ccb058c4057d394e51
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: d6c3dbc28da7bee0bc24a6dc24608c78e480c20e
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92899668"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462163"
 ---
 # <a name="extract-transform-and-load-etl-at-scale"></a>Uitpakken, transformeren en laden (ETL) op de juiste schaal
 
@@ -86,7 +86,7 @@ Voor het uploaden van gegevens sets in het terabyte-bereik kan de netwerk latent
 
 ### <a name="azure-synapse-analytics"></a>Azure Synapse Analytics
 
-Azure Synapse Analytics (voorheen SQL DW) is een geschikte keuze voor het opslaan van voorbereide resultaten. U kunt Azure HDInsight gebruiken om deze services uit te voeren voor Azure Synapse Analytics.
+Azure Synapse Analytics is een geschikte keuze voor het opslaan van voor bereide resultaten. U kunt Azure HDInsight gebruiken om deze services uit te voeren voor Azure Synapse Analytics.
 
 Azure Synapse Analytics is een relationeel database archief dat is geoptimaliseerd voor analytische werk belastingen. Het wordt geschaald op basis van gepartitioneerde tabellen. Tabellen kunnen worden gepartitioneerd op meerdere knoop punten. De knoop punten worden geselecteerd op het moment van maken. Ze kunnen worden geschaald na het feit, maar dat is een actief proces waarvoor gegevens verplaatsing nodig is. Zie [Compute in azure Synapse Analytics beheren](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-manage-compute-overview.md)voor meer informatie.
 

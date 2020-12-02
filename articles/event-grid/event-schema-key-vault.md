@@ -3,12 +3,12 @@ title: Azure Key Vault als Event Grid bron
 description: Hierin worden de eigenschappen en schema's beschreven die voor Azure Key Vault gebeurtenissen worden gegeven met Azure Event Grid
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: b3d961228429c1f84e45c1df9147fa1687ab5074
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 605502794f2f3aa4f4edd14b49efda5003b91146
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91324073"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460392"
 ---
 # <a name="azure-key-vault-as-event-grid-source"></a>Azure Key Vault als Event Grid bron
 
@@ -35,7 +35,7 @@ Een Azure Key Vault-account genereert de volgende gebeurtenis typen:
 
 ### <a name="event-examples"></a>Gebeurtenis voorbeelden
 
-In het volgende voor beeld wordt schema voor **micro soft. SecretNewVersionCreated**weer gegeven:
+In het volgende voor beeld wordt schema voor **micro soft. SecretNewVersionCreated** weer gegeven:
 
 ```JSON
 [
@@ -85,5 +85,5 @@ Een gebeurtenis heeft de volgende gegevens op het hoogste niveau:
 
 * Zie [Wat is Event grid?](overview.md)voor een inleiding tot Azure Event grid.
 * Zie [Event grid-abonnements schema](subscription-creation-schema.md)voor meer informatie over het maken van een Azure Event grid-abonnement.
-* Zie [Wat is Azure Key Vault?](../key-vault/general/overview.md) voor meer informatie over de sleutel kluis.
+* Zie [Wat is Azure Key Vault?](../key-vault/general/overview.md) voor meer informatie over Key Vault.
 

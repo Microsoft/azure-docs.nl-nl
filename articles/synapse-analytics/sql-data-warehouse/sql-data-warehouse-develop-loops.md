@@ -1,34 +1,34 @@
 ---
 title: T-SQL-lussen gebruiken
-description: Tips voor het ontwikkelen van oplossingen met behulp van T-SQL-lussen en cursors vervangen in Synapse SQL-pool.
+description: Tips voor het ontwikkelen van oplossingen met behulp van T-SQL-lussen en cursors vervangen voor exclusieve SQL-groepen in azure Synapse Analytics.
 services: synapse-analytics
-author: XiaoyuMSFT
+author: MSTehrani
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
 ms.date: 04/17/2018
-ms.author: xiaoyul
+ms.author: emtehran
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: 25dad01a54b6ffe08656379340f58e0fe70ec666
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: seo-lt-2019, azure-synapse
+ms.openlocfilehash: 3477b3095414248afa9fbc7417ab707c94f35546
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85213411"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462721"
 ---
-# <a name="using-t-sql-loops-in-synapse-sql-pool"></a>T-SQL-lussen gebruiken in Synapse SQL-pool
+# <a name="using-t-sql-loops-for-dedicated-sql-pools-in-azure-synapse-analytics"></a>T-SQL-lussen gebruiken voor toegewezen SQL-groepen in azure Synapse Analytics
 
-In dit artikel vindt u tips voor het ontwikkelen van oplossingen van een SQL-groep met T-SQL-lussen en het vervangen van cursors.
+In dit artikel vindt u tips voor het ontwikkelen van exclusieve SQL-groeps oplossingen met behulp van T-SQL-lussen en het vervangen van cursors.
 
 ## <a name="purpose-of-while-loops"></a>Doel van WHILE-lussen
 
-Synapse SQL pool ondersteunt de [while](/sql/t-sql/language-elements/while-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) -lus voor het herhaaldelijk uitvoeren van instructie blokken. Deze lus wordt voortgezet zolang de opgegeven voor waarden waar zijn of totdat de code de lus met behulp van het sleutel woord desplit verbreekt.
+Exclusieve SQL-groepen in azure Synapse ondersteunen de [while](/sql/t-sql/language-elements/while-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) -lus voor het herhaaldelijk uitvoeren van instructie blokken. Deze lus wordt voortgezet zolang de opgegeven voor waarden waar zijn of totdat de code de lus met behulp van het sleutel woord desplit verbreekt.
 
 Lussen zijn handig voor het vervangen van cursors die zijn gedefinieerd in SQL-code. Gelukkig zijn bijna alle cursors die in SQL-code zijn geschreven van het besnelde, alleen-lezen RAS. En lussen zijn dus een geweldig alternatief voor het vervangen van cursors.
 
-## <a name="replacing-cursors-in-synapse-sql-pool"></a>Cursors in Synapse SQL-pool vervangen
+## <a name="replacing-cursors-in-dedicated-sql-pool"></a>Cursors vervangen in toegewezen SQL-groep
 
 Voordat u eerst aan de slag gaat, moet u echter de volgende vraag stellen: ' kan deze cursor herschrijven om op sets gebaseerde bewerkingen te gebruiken? '
 

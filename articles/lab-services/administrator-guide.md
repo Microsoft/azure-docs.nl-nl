@@ -3,12 +3,12 @@ title: Azure Lab Services-beheerders handleiding | Microsoft Docs
 description: Deze hand leiding helpt beheerders die Lab-accounts maken en beheren met behulp van Azure Lab Services.
 ms.topic: article
 ms.date: 10/20/2020
-ms.openlocfilehash: 08d2fea719ad67f666ea9da09721dc3f7ab54768
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 3ad3ee38a6c08a6af85822d76012cc6dfc34ff4e
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95999277"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462473"
 ---
 # <a name="azure-lab-services---administrator-guide"></a>Azure Lab Services-beheerders handleiding
 IT-beheerders die de cloud resources van een universiteit beheren, zijn normaal gesp roken verantwoordelijk voor het instellen van het lab-account voor hun school. Nadat ze een Lab-account hebben ingesteld, maken beheerders of docenten de Labs die zijn opgenomen in het account. Dit artikel bevat een overzicht op hoog niveau van de betrokken Azure-resources en de richt lijnen voor het maken van deze.
@@ -167,14 +167,14 @@ Wanneer beheerders of Lab-makers een lab maken, kunnen ze kiezen uit verschillen
 
 | Grootte | Specificaties | Reeks | Voorgesteld gebruik |
 | ---- | ----- | ------ | ------------- |
-| Klein| <ul><li>2 &nbsp; kernen</li><li>3,5 gigabyte (GB) RAM-geheugen</li> | [Standard_A2_v2](../virtual-machines/av2-series.md?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) | Het meest geschikt voor de opdracht regel, het openen van webbrowser, webservers met weinig verkeer, kleine tot middel grote data bases. |
-| Normaal | <ul><li>4 &nbsp; kernen</li><li>7 &nbsp; GB &nbsp; RAM-geheugen</li> | [Standard_A4_v2](../virtual-machines/av2-series.md?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) | Het meest geschikt voor relationele data bases, caching in het geheugen en analyse. |
-| Gemiddeld (geneste virtualisatie) | <ul><li>4 &nbsp; kernen</li><li>16 &nbsp; GB &nbsp; RAM-geheugen</li></ul> | [Standard_D4s_v3](../virtual-machines/dv3-dsv3-series.md?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json#dsv3-series) | Het meest geschikt voor relationele data bases, caching in het geheugen en analyse.
+| Klein| <ul><li>2 &nbsp; kernen</li><li>3,5 gigabyte (GB) RAM-geheugen</li> | [Standard_A2_v2](../virtual-machines/av2-series.md?bc=%2fazure%2fvirtual-machines%2flinux%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) | Het meest geschikt voor de opdracht regel, het openen van webbrowser, webservers met weinig verkeer, kleine tot middel grote data bases. |
+| Normaal | <ul><li>4 &nbsp; kernen</li><li>7 &nbsp; GB &nbsp; RAM-geheugen</li> | [Standard_A4_v2](../virtual-machines/av2-series.md?bc=%2fazure%2fvirtual-machines%2flinux%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) | Het meest geschikt voor relationele data bases, caching in het geheugen en analyse. |
+| Gemiddeld (geneste virtualisatie) | <ul><li>4 &nbsp; kernen</li><li>16 &nbsp; GB &nbsp; RAM-geheugen</li></ul> | [Standard_D4s_v3](../virtual-machines/dv3-dsv3-series.md?bc=%2fazure%2fvirtual-machines%2flinux%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#dsv3-series) | Het meest geschikt voor relationele data bases, caching in het geheugen en analyse.
 | Groot | <ul><li>8 &nbsp; kernen</li><li>16 &nbsp; GB &nbsp; RAM-geheugen</li></ul>  | [Standard_A8_v2](../virtual-machines/av2-series.md) | Het meest geschikt voor toepassingen die snellere Cpu's nodig hebben, betere prestaties van de lokale schijf, grote data bases, grote geheugen caches.  Deze grootte biedt ook ondersteuning voor geneste virtualisatie. |
-| Groot (geneste virtualisatie) | <ul><li>8 &nbsp; kernen</li><li>32 &nbsp; GB &nbsp; RAM-geheugen</li></ul>  | [Standard_D8s_v3](../virtual-machines/dv3-dsv3-series.md?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json#dsv3-series) | Het meest geschikt voor toepassingen die snellere Cpu's nodig hebben, betere prestaties van de lokale schijf, grote data bases, grote geheugen caches. |
+| Groot (geneste virtualisatie) | <ul><li>8 &nbsp; kernen</li><li>32 &nbsp; GB &nbsp; RAM-geheugen</li></ul>  | [Standard_D8s_v3](../virtual-machines/dv3-dsv3-series.md?bc=%2fazure%2fvirtual-machines%2flinux%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#dsv3-series) | Het meest geschikt voor toepassingen die snellere Cpu's nodig hebben, betere prestaties van de lokale schijf, grote data bases, grote geheugen caches. |
 | Kleine GPU (visualisatie) | <ul><li>6 &nbsp; kernen</li><li>56 &nbsp; GB &nbsp; RAM-geheugen</li>  | [Standard_NV6](../virtual-machines/nv-series.md) | Het meest geschikt voor externe visualisatie, streaming, games en code ring met behulp van frameworks zoals OpenGL en DirectX. |
 | Kleine GPU (Compute) | <ul><li>6 &nbsp; kernen</li><li>56 &nbsp; GB &nbsp; RAM-geheugen</li></ul>  | [Standard_NC6](../virtual-machines/nc-series.md) |Het meest geschikt voor computer-intensieve toepassingen, zoals AI en diepe learning. |
-| Gemiddelde GPU (visualisatie) | <ul><li>12 &nbsp; kernen</li><li>112 &nbsp; GB &nbsp; RAM-geheugen</li></ul>  | [Standard_NV12](../virtual-machines/nv-series.md?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json) | Het meest geschikt voor externe visualisatie, streaming, games en code ring met behulp van frameworks zoals OpenGL en DirectX. |
+| Gemiddelde GPU (visualisatie) | <ul><li>12 &nbsp; kernen</li><li>112 &nbsp; GB &nbsp; RAM-geheugen</li></ul>  | [Standard_NV12](../virtual-machines/nv-series.md?bc=%2fazure%2fvirtual-machines%2flinux%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) | Het meest geschikt voor externe visualisatie, streaming, games en code ring met behulp van frameworks zoals OpenGL en DirectX. |
 
 ## <a name="manage-identity"></a>Identiteit beheren
 

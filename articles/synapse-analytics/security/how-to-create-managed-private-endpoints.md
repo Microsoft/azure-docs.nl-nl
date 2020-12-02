@@ -8,14 +8,14 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 919b8fb89e9189df7cb1964cbe0149dc6945ad2d
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: e0309b4c96b2ae25eb568e390717ba76cfd84fa5
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93323165"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461322"
 ---
-# <a name="create-a-managed-private-endpoint-to-your-data-source-preview"></a>Een beheerd persoonlijk eind punt maken voor uw gegevens bron (preview-versie)
+# <a name="create-a-managed-private-endpoint-to-your-data-source"></a>Een beheerd persoonlijk eind punt maken voor uw gegevens bron
 
 In dit artikel leert u hoe u een beheerd persoonlijk eind punt maakt voor uw gegevens bron in Azure. Zie [beheerde persoonlijke eind punten](./synapse-workspace-managed-private-endpoints.md) voor meer informatie.
 

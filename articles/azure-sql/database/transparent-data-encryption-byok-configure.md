@@ -12,17 +12,17 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 03/12/2019
-ms.openlocfilehash: 40572d50f7653539758ff892019e7e65b0ffa6dd
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: b4480f3d28cb89165a6ba3c5b26b10b1aba9765c
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96324887"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461849"
 ---
 # <a name="powershell-and-the-azure-cli-enable-transparent-data-encryption-with-customer-managed-key-from-azure-key-vault"></a>Power shell en Azure CLI: Schakel Transparent Data Encryption in met door de klant beheerde sleutel van Azure Key Vault
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
-In dit artikel wordt beschreven hoe u een sleutel gebruikt uit Azure Key Vault voor Transparent Data Encryption (TDE) op Azure SQL Database of Azure Synapse Analytics (voorheen SQL Data Warehouse). Voor meer informatie over de TDE met ondersteuning voor Azure Key Vault Integration-Bring Your Own Key (BYOK), gaat u naar [TDe met door de klant beheerde sleutels in azure Key Vault](transparent-data-encryption-byok-overview.md).
+In dit artikel wordt beschreven hoe u een sleutel gebruikt uit Azure Key Vault voor Transparent Data Encryption (TDE) op Azure SQL Database of Azure Synapse Analytics. Voor meer informatie over de TDE met ondersteuning voor Azure Key Vault Integration-Bring Your Own Key (BYOK), gaat u naar [TDe met door de klant beheerde sleutels in azure Key Vault](transparent-data-encryption-byok-overview.md).
 
 > [!NOTE] 
 > Azure SQL ondersteunt nu het gebruik van een RSA-sleutel die is opgeslagen in een beheerde HSM als TDE-Protector. Deze functie is beschikbaar als **open bare preview**. Azure Key Vault Managed HSM is een volledig beheerde, Maxi maal beschik bare, door standaarden compatibele Cloud service met één Tenant waarmee u cryptografische sleutels voor uw Cloud toepassingen kunt beveiligen met behulp van FIPS 140-2 level 3 gevalideerd Hsm's. Meer informatie over [beheerde hsm's](../../key-vault/managed-hsm/index.yml).

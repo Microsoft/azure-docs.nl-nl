@@ -11,14 +11,14 @@ ms.topic: conceptual
 author: monhaber
 ms.author: ronmat
 ms.reviewer: vanto, sstein
-ms.date: 09/21/2020
+ms.date: 12/01/2020
 tags: azure-synapse
-ms.openlocfilehash: f83b9515e16fcf2c2158586297545206d57e1a6e
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 931e914cd3c184136395a9bb9a7e148a90e9fb91
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92785116"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461937"
 ---
 # <a name="advanced-threat-protection-for-azure-sql-database-sql-managed-instance-and-azure-synapse-analytics"></a>Geavanceerde bedreigings beveiliging voor Azure SQL Database, SQL Managed instance en Azure Synapse Analytics
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -35,7 +35,7 @@ Voor een volledige onderzoek is het raadzaam om controle in te scha kelen, waarm
 
 ## <a name="alerts"></a>Waarschuwingen
 
-Advanced Threat Protection voor Azure SQL Database detecteert afwijkende activiteiten die een ongebruikelijke en potentieel schadelijke pogingen om toegang te krijgen tot of misbruik te maken van data bases. Zie de [waarschuwingen voor SQL database en Azure Synapse Analytics (voorheen SQL Data Warehouse) in azure Security Center](../../security-center/alerts-reference.md#alerts-sql-db-and-warehouse)voor een lijst met waarschuwingen voor Azure SQL database.
+Advanced Threat Protection voor Azure SQL Database detecteert afwijkende activiteiten die een ongebruikelijke en potentieel schadelijke pogingen om toegang te krijgen tot of misbruik te maken van data bases. Zie de [waarschuwingen voor SQL database en Azure Synapse Analytics in azure Security Center](../../security-center/alerts-reference.md#alerts-sql-db-and-warehouse)voor een lijst met waarschuwingen voor Azure SQL database.
 
 ## <a name="explore-detection-of-a-suspicious-event"></a>Detectie van een verdachte gebeurtenis verkennen
 
@@ -58,6 +58,10 @@ U ontvangt een e-mail melding wanneer er afwijkende database activiteiten worden
 Geavanceerde bedreigings beveiliging integreert de waarschuwingen met [Azure Security Center](https://azure.microsoft.com/services/security-center/). Live SQL Advanced Threat Protection-tegels in de data base en SQL Azure Defender-blades in de Azure Portal de status van actieve bedreigingen bijhouden.
 
 Klik op **Geavanceerde bedreigings beveiliging waarschuwing** om de pagina Azure Security Center waarschuwingen te starten en een overzicht te krijgen van actieve SQL-bedreigingen die zijn gedetecteerd op de data base.
+
+:::image type="content" source="media/azure-defender-for-sql/advanced-threat-protection-alerts.png" alt-text="geavanceerde beveiligings waarschuwingen voor bedreigingen in het overzicht van de data base":::
+
+:::image type="content" source="media/azure-defender-for-sql/advanced-threat-protection.png" alt-text="geavanceerde beveiliging tegen bedreigingen in Security Center":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

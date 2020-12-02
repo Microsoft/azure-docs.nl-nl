@@ -1,5 +1,5 @@
 ---
-title: Wat is beveiliging op kolom niveau voor Azure Synapse?
+title: Beveiliging op kolom niveau voor toegewezen SQL-groep
 description: Met Column-Level Security kunnen klanten de toegang tot database tabel kolommen beheren op basis van de uitvoerings context of het groepslid maatschap van de gebruiker, het ontwerp en de code ring van de beveiliging in uw toepassing vereenvoudigen, en kunt u beperkingen voor kolom toegang implementeren.
 services: synapse-analytics
 author: julieMSFT
@@ -12,19 +12,19 @@ ms.author: jrasnick
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 tags: azure-synapse
-ms.openlocfilehash: f8bb40f9c80a0785c81c7aeacf783553bf73aa90
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 817a912dabfc5365eabe8e0dabd7e0b40e40c525
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91259880"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462507"
 ---
-# <a name="column-level-security"></a>Beveiliging op kolom niveau
+# <a name="column-level-security"></a>Beveiliging op kolomniveau
 
 Met Column-Level beveiliging kunnen klanten de toegang tot tabel kolommen beheren op basis van de uitvoerings context of het groepslid maatschap van de gebruiker.
 
 > [!VIDEO https://www.youtube.com/embed/OU_ESg0g8r8]
-Omdat deze video is gepost, is [beveiliging op rijniveau](/sql/relational-databases/security/row-level-security?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) beschikbaar geworden voor Azure Synapse.
+Omdat deze video is gepost, is de [beveiliging op rijniveau](/sql/relational-databases/security/row-level-security?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) beschikbaar voor exclusieve SQL-groep in azure Synapse.
 
 Beveiliging op kolom niveau vereenvoudigt het ontwerp en de code ring van beveiliging in uw toepassing, zodat u kolom toegang kunt beperken voor het beveiligen van gevoelige gegevens. Bijvoorbeeld, om ervoor te zorgen dat specifieke gebruikers alleen toegang hebben tot bepaalde kolommen van een tabel die relevant is voor hun afdeling. De logica van de toegangs beperking bevindt zich in de database laag, in plaats van dat de gegevens in een andere toepassingslaag worden verwijderd. De-data base past de toegangs beperkingen toe telkens wanneer gegevens toegang vanuit een wille keurige laag wordt uitgevoerd. Deze beperking zorgt ervoor dat uw beveiliging betrouwbaarder en robuuster wordt door de surface area van uw algehele beveiligings systeem te verminderen. Daarnaast elimineert beveiliging op kolom niveau ook de nood zaak van de introductie van weer gaven om kolommen uit te filteren voor het opleggen van toegangs beperkingen voor de gebruikers.
 
@@ -85,5 +85,5 @@ SELECT * FROM Membership;
 
 Hier volgen enkele voor beelden van de manier waarop beveiliging op kolom niveau momenteel wordt gebruikt:
 
-- Met een onderneming met financiële services kunnen alleen account beheerders toegang hebben tot sofi-nummers (Social Security Number) van klanten, telefoon nummers en andere persoons gegevens (PII).
+- Met een onderneming met financiële services kunnen alleen account beheerders toegang hebben tot sofi-nummer (Social Security Number), telefoon nummers en andere persoonlijke gegevens van klanten.
 - Een Health Care-provider staat toe dat alleen artsen en verpleegt toegang hebben tot gevoelige medische records en dat leden van de facturerings afdeling deze gegevens niet kunnen bekijken.

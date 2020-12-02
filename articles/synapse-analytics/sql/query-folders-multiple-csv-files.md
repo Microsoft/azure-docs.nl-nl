@@ -1,6 +1,6 @@
 ---
-title: Zoek mappen en meerdere bestanden met behulp van een serverloze SQL-groep (preview-versie)
-description: Serverloze SQL-groep (preview) ondersteunt het lezen van meerdere bestanden/mappen met behulp van joker tekens, die vergelijkbaar zijn met de joker tekens die in Windows-besturings systeem worden gebruikt.
+title: Query's uitvoeren op mappen en meerdere bestanden met serverloze SQL-groep
+description: Een serverloze SQL-groep ondersteunt het lezen van meerdere bestanden/mappen met behulp van joker tekens, die vergelijkbaar zijn met de joker tekens die in Windows-besturings systeem worden gebruikt.
 services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 9d15d681a114b0f364e8e33adc786b4d0ba7df0e
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 83c4d88e1a87f6b546e26dd55da338a36f16ebe4
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94684556"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462618"
 ---
 # <a name="query-folders-and-multiple-files"></a>Query uitvoeren op mappen en meerdere bestanden  
 
-In dit artikel leert u hoe u een query schrijft met behulp van serverloze SQL-pool (preview) in azure Synapse Analytics.
+In dit artikel leert u hoe u een query schrijft met behulp van serverloze SQL-pool in azure Synapse Analytics.
 
 Een serverloze SQL-groep ondersteunt het lezen van meerdere bestanden/mappen met behulp van joker tekens, die vergelijkbaar zijn met de joker tekens die in Windows-besturings systeem worden gebruikt. Er is echter meer flexibiliteit aanwezig omdat meerdere joker tekens zijn toegestaan.
 

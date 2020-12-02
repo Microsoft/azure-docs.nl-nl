@@ -11,12 +11,12 @@ author: nibaccam
 ms.reviewer: nibaccam
 ms.date: 09/22/2020
 ms.custom: how-to, data4ml
-ms.openlocfilehash: e97546e678b3b7bf7932600ea53d09557493685c
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 554c815e6384115d56611e497f49a2c97ed15e38
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93359864"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461442"
 ---
 # <a name="connect-to-data-with-the-azure-machine-learning-studio"></a>Verbinding maken met gegevens met behulp van de Azure Machine Learning Studio
 
@@ -118,7 +118,7 @@ Het gegevens Profiel van Azure Machine Learning gegevensset bevat met name het v
 |Type distributie| In-line waarde van het aantal typen in een kolom. Nullen zijn hun eigen type, waardoor deze visualisatie nuttig is voor het detecteren van oneven of ontbrekende waarden.
 |Type|Het type van de kolom is afgeleid. Mogelijke waarden zijn: teken reeksen, booleans, datums en decimalen.
 |Min.| Minimum waarde van de kolom. Lege vermeldingen worden weer gegeven voor functies waarvan het type geen inherente ordening (zoals Boole-waarden) heeft.
-|Max| De maximum waarde van de kolom. 
+|Max.| De maximum waarde van de kolom. 
 |Aantal| Totaal aantal ontbrekende en niet-ontbrekende vermeldingen in de kolom.
 |Niet-ontbrekend aantal| Het aantal vermeldingen in de kolom die niet ontbreken. Lege teken reeksen en fouten worden beschouwd als waarden, zodat ze niet bijdragen aan het aantal niet-ontbrekende items.
 |Kwantielen| Geschatte waarden bij elke quantile om een idee te geven van de distributie van de gegevens.
@@ -138,9 +138,9 @@ Als uw gegevens opslag account zich in een **virtueel netwerk** bevindt, moet u 
 
 ### <a name="access-validation"></a>Toegangs validatie
 
-**Als onderdeel van het proces voor het maken en registreren van de eerste Data Store** , Azure machine learning automatisch gevalideerd of de onderliggende opslag service bestaat en de door de gebruiker opgegeven principal (gebruikers naam, Service-Principal of SAS-token) heeft toegang tot de opgegeven opslag.
+**Als onderdeel van het proces voor het maken en registreren van de eerste Data Store**, Azure machine learning automatisch gevalideerd of de onderliggende opslag service bestaat en de door de gebruiker opgegeven principal (gebruikers naam, Service-Principal of SAS-token) heeft toegang tot de opgegeven opslag.
 
-**Nadat Data Store is gemaakt** , wordt deze validatie alleen uitgevoerd voor methoden waarvoor toegang tot de onderliggende opslag container is vereist. **niet** elke keer dat de objecten gegevens opslag worden opgehaald. Validatie vindt bijvoorbeeld plaats als u bestanden wilt downloaden uit uw gegevens archief. maar als u de standaard gegevens opslag gewoon wilt wijzigen, vindt validatie niet plaats.
+**Nadat Data Store is gemaakt**, wordt deze validatie alleen uitgevoerd voor methoden waarvoor toegang tot de onderliggende opslag container is vereist. **niet** elke keer dat de objecten gegevens opslag worden opgehaald. Validatie vindt bijvoorbeeld plaats als u bestanden wilt downloaden uit uw gegevens archief. maar als u de standaard gegevens opslag gewoon wilt wijzigen, vindt validatie niet plaats.
 
 Als u uw toegang tot de onderliggende opslag service wilt verifiëren, kunt u uw account sleutel, SAS-tokens (Shared Access signatures) of Service-Principal opgeven op basis van het gegevens opslag type dat u wilt maken. De [opslag type matrix](how-to-access-data.md#matrix) bevat de ondersteunde verificatie typen die overeenkomen met elk type gegevens opslag.
 
@@ -160,7 +160,7 @@ U vindt de account sleutel, het SAS-token en de gegevens van de Service-Principa
 
 ### <a name="permissions"></a>Machtigingen
 
-Voor Azure Blob-container en Azure Data Lake gen 2-opslag, moet u ervoor zorgen dat uw verificatie referenties toegang hebben tot **BLOB-gegevens lezer voor opslag** . Meer informatie over [Storage BLOB data Reader](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-reader). Een SAS-token voor het account is standaard ingesteld op geen machtigingen. 
+Voor Azure Blob-container en Azure Data Lake gen 2-opslag, moet u ervoor zorgen dat uw verificatie referenties toegang hebben tot **BLOB-gegevens lezer voor opslag** . Meer informatie over [Storage BLOB data Reader](../role-based-access-control/built-in-roles.md#storage-blob-data-reader). Een SAS-token voor het account is standaard ingesteld op geen machtigingen. 
 * Voor **Lees toegang** voor gegevens moet uw verificatie referenties mini maal lijst-en lees machtigingen voor containers en objecten hebben. 
 
 * Voor het **schrijven** van gegevens is het schrijven en toevoegen van machtigingen ook vereist.

@@ -6,12 +6,12 @@ ms.author: robinsh
 ms.topic: conceptual
 ms.service: iot-hub
 ms.date: 11/06/2020
-ms.openlocfilehash: dc239843c4ed597949b4ba00c44ec84fc70741a8
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 2fabf75f74ccf57f57e7b47720ceda8885420842
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94357603"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460903"
 ---
 # <a name="monitoring-azure-iot-hub"></a>Azure IoT Hub controleren
 
@@ -29,9 +29,9 @@ De informatie die wordt weer gegeven in het deel venster Overzicht is handig, ma
 
 ## <a name="what-is-azure-monitor"></a>Wat is Azure Monitor?
 
-Azure IoT Hub maakt bewakings gegevens met behulp van [Azure monitor](/azure/azure-monitor/overview). Dit is een volledige stack monitoring-service in azure die een volledige set functies biedt om uw Azure-resources te controleren naast bronnen in andere Clouds en on-premises.
+Azure IoT Hub maakt bewakings gegevens met behulp van [Azure monitor](../azure-monitor/overview.md). Dit is een volledige stack monitoring-service in azure die een volledige set functies biedt om uw Azure-resources te controleren naast bronnen in andere Clouds en on-premises.
 
-Begin met het artikel [bewaking van Azure-resources met Azure monitor](/azure/azure-monitor/insights/monitor-azure-resource), waarin de volgende concepten worden beschreven:
+Begin met het artikel [bewaking van Azure-resources met Azure monitor](../azure-monitor/insights/monitor-azure-resource.md), waarin de volgende concepten worden beschreven:
 
 - Wat is Azure Monitor?
 - Kosten die zijn gekoppeld aan bewaking
@@ -43,7 +43,7 @@ In de volgende secties vindt u een beschrijving van de specifieke gegevens die z
 
 ## <a name="monitoring-data"></a>Bewakingsgegevens
 
-In azure IoT Hub worden dezelfde soorten bewakings gegevens verzameld als andere Azure-resources die worden beschreven in [gegevens van Azure-resources bewaken](/azure/azure-monitor/insights/monitor-azure-resource#monitoring-data-from-Azure-resources).
+In azure IoT Hub worden dezelfde soorten bewakings gegevens verzameld als andere Azure-resources die worden beschreven in [gegevens van Azure-resources bewaken](../azure-monitor/insights/monitor-azure-resource.md#monitoring-data).
 
 Zie informatie over [Azure IOT hub-gegevens bewaken](monitor-iot-hub-reference.md) voor gedetailleerde informatie over de metrische gegevens en logboeken die zijn gemaakt door Azure IOT hub.
 
@@ -67,31 +67,31 @@ In de volgende scherm afbeelding ziet u een diagnostische instelling voor het ro
 
 :::image type="content" source="media/monitor-iot-hub/diagnostic-setting-portal.png" alt-text="Het deel venster Diagnostische instellingen voor een IoT-hub.":::
 
-Zie [Diagnostische instelling maken voor het verzamelen van platform logboeken en metrische gegevens in azure](/azure/azure-monitor/platform/diagnostic-settings) voor het gedetailleerde proces voor het maken van een diagnostische instelling met behulp van de Azure Portal, CLI of Power shell. Wanneer u een diagnostische instelling maakt, geeft u op welke categorieën logboeken u wilt verzamelen. De categorieën voor Azure IoT Hub worden vermeld onder [resource Logboeken in de referentie Azure IOT hub-gegevens controleren](monitor-iot-hub-reference.md#resource-logs).
+Zie [Diagnostische instelling maken voor het verzamelen van platform logboeken en metrische gegevens in azure](../azure-monitor/platform/diagnostic-settings.md) voor het gedetailleerde proces voor het maken van een diagnostische instelling met behulp van de Azure Portal, CLI of Power shell. Wanneer u een diagnostische instelling maakt, geeft u op welke categorieën logboeken u wilt verzamelen. De categorieën voor Azure IoT Hub worden vermeld onder [resource Logboeken in de referentie Azure IOT hub-gegevens controleren](monitor-iot-hub-reference.md#resource-logs).
 
 Houd rekening met de volgende punten wanneer u de metrische gegevens van het platform IoT Hub naar andere locaties:
 
 - De volgende platform metrieken kunnen niet worden geëxporteerd via Diagnostische instellingen: *verbonden apparaten (preview)* en *totale aantal apparaten (preview)*.
 
-- Multidimensionale metrische gegevens, zoals bepaalde [routerings metrieken](monitor-iot-hub-reference.md#routing-metrics), worden momenteel geëxporteerd als afgevlaktte eendimensionale metrische gegevens die worden geaggregeerd over dimensie waarden. Zie [platform metrieken naar andere locaties exporteren](/azure/azure-monitor/platform/metrics-supported#exporting-platform-metrics-to-other-locations)voor meer informatie.
+- Multidimensionale metrische gegevens, zoals bepaalde [routerings metrieken](monitor-iot-hub-reference.md#routing-metrics), worden momenteel geëxporteerd als afgevlaktte eendimensionale metrische gegevens die worden geaggregeerd over dimensie waarden. Zie [platform metrieken naar andere locaties exporteren](../azure-monitor/platform/metrics-supported.md#exporting-platform-metrics-to-other-locations)voor meer informatie.
 
 ## <a name="analyzing-metrics"></a>Metrische gegevens analyseren
 
-U kunt metrische gegevens voor Azure IoT Hub analyseren met metrische gegevens uit andere Azure-Services met behulp van metrische gegevens Verkenner door **metrische gegevens** te openen in het menu **Azure monitor** . Zie [aan de slag met Azure Metrics Explorer](/azure/azure-monitor/platform/metrics-getting-started) voor meer informatie over het gebruik van dit hulp programma.
+U kunt metrische gegevens voor Azure IoT Hub analyseren met metrische gegevens uit andere Azure-Services met behulp van metrische gegevens Verkenner door **metrische gegevens** te openen in het menu **Azure monitor** . Zie [aan de slag met Azure Metrics Explorer](../azure-monitor/platform/metrics-getting-started.md) voor meer informatie over het gebruik van dit hulp programma.
 
 In Azure Portal kunt u **metrische gegevens** selecteren onder **bewaking** in het linkerdeel venster van uw IOT-hub voor het openen van metrische gegevens Verkenner scoped, standaard ingesteld op de platform metrische gegevens die worden verzonden door uw IOT-hub:
 
 :::image type="content" source="media/monitor-iot-hub/metrics-portal.png" alt-text="De pagina metrische gegevens Verkenner voor een IoT-hub.":::
 
-Zie [metrische gegevens in de naslag informatie over azure IOT hub](monitor-iot-hub-reference.md#metrics)voor Azure voor een lijst met de platform statistieken die worden verzameld voor IOT hub. Zie [ondersteunde metrische gegevens met Azure monitor](/azure/azure-monitor/platform/metrics-supported)voor een lijst van de platform metrische gegevens die voor alle Azure-Services worden verzameld.
+Zie [metrische gegevens in de naslag informatie over azure IOT hub](monitor-iot-hub-reference.md#metrics)voor Azure voor een lijst met de platform statistieken die worden verzameld voor IOT hub. Zie [ondersteunde metrische gegevens met Azure monitor](../azure-monitor/platform/metrics-supported.md)voor een lijst van de platform metrische gegevens die voor alle Azure-Services worden verzameld.
 
 Voor IoT Hub platform-metrische gegevens die worden verzameld in eenheden van aantal, zijn sommige aggregaties mogelijk niet beschikbaar of bruikbaar. Zie [ondersteunde aggregaties in de informatie over Azure IOT hub-gegevens bewaken](monitor-iot-hub-reference.md#supported-aggregations)voor meer informatie.
 
-Enkele IoT Hub metrische gegevens, zoals [routerings metrieken](monitor-iot-hub-reference.md#routing-metrics), zijn multidimensionaal. U kunt voor deze metrische gegevens [filters](/azure/azure-monitor/platform/metrics-charts#apply-filters-to-charts) Toep assen en [splitsen](/azure/azure-monitor/platform/metrics-charts#apply-splitting-to-a-chart) op uw diagrammen op basis van een dimensie.
+Enkele IoT Hub metrische gegevens, zoals [routerings metrieken](monitor-iot-hub-reference.md#routing-metrics), zijn multidimensionaal. U kunt voor deze metrische gegevens [filters](../azure-monitor/platform/metrics-charts.md#apply-filters-to-charts) Toep assen en [splitsen](../azure-monitor/platform/metrics-charts.md#apply-splitting-to-a-chart) op uw diagrammen op basis van een dimensie.
 
 ## <a name="analyzing-logs"></a>Logboeken analyseren
 
-Gegevens in Azure Monitor logboeken worden opgeslagen in tabellen waarin elke tabel een eigen set unieke eigenschappen heeft. De gegevens in deze tabellen zijn gekoppeld aan een Log Analytics-werk ruimte en kunnen worden opgevraagd in Log Analytics. Voor meer informatie over Azure Monitor-logboeken raadpleegt u [Azure monitor logs-overzicht](/azure/azure-monitor/platform/data-platform-logs) in de Azure monitor-documentatie. 
+Gegevens in Azure Monitor logboeken worden opgeslagen in tabellen waarin elke tabel een eigen set unieke eigenschappen heeft. De gegevens in deze tabellen zijn gekoppeld aan een Log Analytics-werk ruimte en kunnen worden opgevraagd in Log Analytics. Voor meer informatie over Azure Monitor-logboeken raadpleegt u [Azure monitor logs-overzicht](../azure-monitor/platform/data-platform-logs.md) in de Azure monitor-documentatie. 
 
 Als u gegevens wilt omleiden naar Azure Monitor logboeken, moet u een diagnostische instelling maken om bron Logboeken of platform metrieken te verzenden naar een Log Analytics-werk ruimte. Zie [verzameling en route ring](#collection-and-routing)voor meer informatie.
 
@@ -101,17 +101,17 @@ In Azure Portal kunt u **Logboeken** selecteren onder **bewaking** in het linker
 
 Zie voor een lijst met tabellen die worden gebruikt door Azure Monitor logboeken en query's die kunnen worden doorzocht door Log Analytics [Azure monitor logboeken tabellen in de referentie Azure IOT hub-gegevens bewaken](monitor-iot-hub-reference.md#azure-monitor-logs-tables).
 
-Alle resource Logboeken in Azure Monitor hebben dezelfde velden die worden gevolgd door servicespecifieke velden. Het algemene schema wordt beschreven in [Azure monitor resource-logboek schema](https://docs.microsoft.com/azure/azure-monitor/platform/resource-logs-schema#top-level-resource-logs-schema). U vindt het schema en de categorieën van resource logboeken die zijn verzameld voor Azure IoT Hub in [resource Logboeken in de gegevens referentie van azure IOT hub bewaken](monitor-iot-hub-reference.md#resource-logs).
+Alle resource Logboeken in Azure Monitor hebben dezelfde velden die worden gevolgd door servicespecifieke velden. Het algemene schema wordt beschreven in [Azure monitor resource-logboek schema](../azure-monitor/platform/resource-logs-schema.md#top-level-common-schema). U vindt het schema en de categorieën van resource logboeken die zijn verzameld voor Azure IoT Hub in [resource Logboeken in de gegevens referentie van azure IOT hub bewaken](monitor-iot-hub-reference.md#resource-logs).
 
-Het [activiteiten logboek](/azure/azure-monitor/platform/activity-log) is een platform logboek in azure dat inzicht biedt in gebeurtenissen op abonnements niveau. U kunt deze onafhankelijk bekijken of door sturen naar Azure Monitor-logboeken, waar u veel complexere query's kunt uitvoeren met behulp van Log Analytics.  
+Het [activiteiten logboek](../azure-monitor/platform/activity-log.md) is een platform logboek in azure dat inzicht biedt in gebeurtenissen op abonnements niveau. U kunt deze onafhankelijk bekijken of door sturen naar Azure Monitor-logboeken, waar u veel complexere query's kunt uitvoeren met behulp van Log Analytics.  
 
 Houd rekening met de volgende punten wanneer u de metrische gegevens van het IoT Hub platform wilt omleiden naar Azure Monitor-logboeken:
 
 - De volgende platform metrieken kunnen niet worden geëxporteerd via Diagnostische instellingen: *verbonden apparaten (preview)* en *totale aantal apparaten (preview)*.
 
-- Multidimensionale metrische gegevens, zoals bepaalde [routerings metrieken](monitor-iot-hub-reference.md#routing-metrics), worden momenteel geëxporteerd als afgevlaktte eendimensionale metrische gegevens die worden geaggregeerd over dimensie waarden. Zie [platform metrieken naar andere locaties exporteren](/azure/azure-monitor/platform/metrics-supported#exporting-platform-metrics-to-other-locations)voor meer informatie.
+- Multidimensionale metrische gegevens, zoals bepaalde [routerings metrieken](monitor-iot-hub-reference.md#routing-metrics), worden momenteel geëxporteerd als afgevlaktte eendimensionale metrische gegevens die worden geaggregeerd over dimensie waarden. Zie [platform metrieken naar andere locaties exporteren](../azure-monitor/platform/metrics-supported.md#exporting-platform-metrics-to-other-locations)voor meer informatie.
 
-Zie voor een aantal algemene query's met IoT Hub voor [beelden van Kusto-query's](#sample-kusto-queries). Zie [overzicht van logboek query's in azure monitor](/azure/azure-monitor/log-query/log-query-overview)voor gedetailleerde informatie over het gebruik van log Analytics query's.
+Zie voor een aantal algemene query's met IoT Hub voor [beelden van Kusto-query's](#sample-kusto-queries). Zie [overzicht van logboek query's in azure monitor](../azure-monitor/log-query/log-query-overview.md)voor gedetailleerde informatie over het gebruik van log Analytics query's.
 
 ### <a name="sdk-version-in-iot-hub-logs"></a>SDK-versie in IoT Hub-logboeken
 
@@ -152,7 +152,7 @@ AzureDiagnostics
 ### <a name="sample-kusto-queries"></a>Voor beeld van Kusto-query's
 
 > [!IMPORTANT]
-> Wanneer u **Logboeken** selecteert in het menu IOT hub, wordt log Analytics geopend met het query bereik dat is ingesteld op de huidige IOT-hub. Dit betekent dat logboek query's alleen gegevens van die bron bevatten. Als u een query wilt uitvoeren die gegevens uit andere IoT-hubs of-gegevens uit andere Azure-Services bevat, selecteert u **Logboeken** in het **Azure monitor** menu. Zie de [logboek query bereik en het tijds bereik in Azure Monitor Log Analytics](/azure/azure-monitor/log-query/scope/) voor meer informatie.
+> Wanneer u **Logboeken** selecteert in het menu IOT hub, wordt log Analytics geopend met het query bereik dat is ingesteld op de huidige IOT-hub. Dit betekent dat logboek query's alleen gegevens van die bron bevatten. Als u een query wilt uitvoeren die gegevens uit andere IoT-hubs of-gegevens uit andere Azure-Services bevat, selecteert u **Logboeken** in het **Azure monitor** menu. Zie de [logboek query bereik en het tijds bereik in Azure Monitor Log Analytics](../azure-monitor/log-query/scope.md) voor meer informatie.
 
 Hieronder vindt u query's die u kunt gebruiken om uw IoT-hub te bewaken.
 
@@ -288,13 +288,13 @@ class Program
 
 ## <a name="alerts"></a>Waarschuwingen
 
-Azure Monitor waarschuwingen geven u proactief op de hoogte wanneer er belang rijke voor waarden worden gevonden in uw bewakings gegevens. Hiermee kunt u problemen in uw systeem identificeren en oplossen voordat uw klanten ze opmerken. U kunt waarschuwingen instellen voor [metrische gegevens](/azure/azure-monitor/platform/alerts-metric-overview), [Logboeken](/azure/azure-monitor/platform/alerts-unified-log)en het [activiteiten logboek](/azure/azure-monitor/platform/activity-log-alerts). Verschillende soorten waarschuwingen hebben voor delen en nadelen.
+Azure Monitor waarschuwingen geven u proactief op de hoogte wanneer er belang rijke voor waarden worden gevonden in uw bewakings gegevens. Hiermee kunt u problemen in uw systeem identificeren en oplossen voordat uw klanten ze opmerken. U kunt waarschuwingen instellen voor [metrische gegevens](../azure-monitor/platform/alerts-metric-overview.md), [Logboeken](../azure-monitor/platform/alerts-unified-log.md)en het [activiteiten logboek](../azure-monitor/platform/activity-log-alerts.md). Verschillende soorten waarschuwingen hebben voor delen en nadelen.
 
 Wanneer u een waarschuwings regel maakt op basis van de metrische gegevens van het platform, moet u er rekening mee houden dat voor IoT Hub-platform metrische gegevens die worden verzameld in aantal eenheden, sommige aggregaties mogelijk niet beschikbaar of bruikbaar zijn. Zie [ondersteunde aggregaties in de informatie over Azure IOT hub-gegevens bewaken](monitor-iot-hub-reference.md#supported-aggregations)voor meer informatie.
 
 ## <a name="monitor-per-device-disconnects-with-event-grid"></a>Verbroken verbindingen per apparaat met Event Grid
 
-Azure Monitor biedt een metrische, *verbonden apparaten* die u kunt gebruiken om het aantal apparaten dat is verbonden met uw IOT hub te bewaken en een waarschuwing te activeren wanneer het aantal verbonden apparaten onder een drempel waarde daalt. Hoewel dit voldoende is voor sommige scenario's, biedt [Azure Event grid](/azure/event-grid/) een bewakings oplossing met lage latentie per apparaat die u kunt gebruiken om de verbindingen van apparaten en infra structuur te controleren.
+Azure Monitor biedt een metrische, *verbonden apparaten* die u kunt gebruiken om het aantal apparaten dat is verbonden met uw IOT hub te bewaken en een waarschuwing te activeren wanneer het aantal verbonden apparaten onder een drempel waarde daalt. Hoewel dit voldoende is voor sommige scenario's, biedt [Azure Event grid](../event-grid/index.yml) een bewakings oplossing met lage latentie per apparaat die u kunt gebruiken om de verbindingen van apparaten en infra structuur te controleren.
 
 Met Event Grid kunt u zich abonneren op de IoT Hub [ **DeviceConnected** -en **DeviceDisconnected** -gebeurtenissen](iot-hub-event-grid.md#event-types) om waarschuwingen te activeren en de verbindings status van een apparaat te bewaken. Event Grid biedt veel lagere gebeurtenis latentie dan Azure Monitor, en u kunt bewaken per apparaat, in plaats van het totale aantal verbonden apparaten. Deze factoren maken Event Grid de voorkeurs methode voor het bewaken van verbindingen voor kritieke apparaten en infra structuur. Het is raadzaam om Event Grid te gebruiken voor het bewaken van apparaat verbindingen in productie omgevingen.
 
@@ -304,4 +304,4 @@ Voor meer informatie over het bewaken van verbindingen met Event Grid en Azure M
 
 - Zie [Azure IOT hub data Reference bewaken](monitor-iot-hub-reference.md) voor een verwijzing naar de metrische gegevens, logboeken en andere belang rijke waarden die zijn gemaakt door [Service naam].
 
-- Zie [Azure-resources bewaken met Azure monitor](/azure/azure-monitor/insights/monitor-azure-resource) voor meer informatie over het bewaken van Azure-resources.
+- Zie [Azure-resources bewaken met Azure monitor](../azure-monitor/insights/monitor-azure-resource.md) voor meer informatie over het bewaken van Azure-resources.

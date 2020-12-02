@@ -1,5 +1,5 @@
 ---
-title: Een query uitvoeren op JSON-bestanden met serverloze SQL-groep (preview-versie)
+title: JSON-bestanden bevragen met serverloze SQL-groep
 description: In deze sectie wordt uitgelegd hoe u JSON-bestanden kunt lezen met serverloze SQL-pool in azure Synapse Analytics.
 services: synapse-analytics
 author: azaricstefan
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: d071bbabf630dd326ae46f4c840f8e60f957f9fe
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 5703e4ac3d4a545041c7d258f0b1f0e7c79a33b5
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685627"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462613"
 ---
-# <a name="query-json-files-using-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Gegevens in JSON-bestanden opvragen met serverloze SQL-pool (preview) in azure Synapse Analytics
+# <a name="query-json-files-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Een query uitvoeren op JSON-bestanden met serverloze SQL-groep in azure Synapse Analytics
 
-In dit artikel leert u hoe u een query schrijft met behulp van serverloze SQL-pool (preview) in azure Synapse Analytics. Het doel van de query is het lezen van JSON-bestanden met [OPENrowset](develop-openrowset.md). 
+In dit artikel leert u hoe u een query schrijft met behulp van serverloze SQL-pool in azure Synapse Analytics. Het doel van de query is het lezen van JSON-bestanden met [OPENrowset](develop-openrowset.md). 
 - Standaard JSON-bestanden waarin meerdere JSON-documenten worden opgeslagen als een JSON-matrix.
 - Door line gescheiden JSON-bestanden, waarbij JSON-documenten worden gescheiden met een nieuwe-regel teken. Algemene uitbrei dingen voor deze typen bestanden zijn `jsonl` , `ldjson` en `ndjson` .
 

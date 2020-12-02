@@ -1,6 +1,6 @@
 ---
 title: Score machine learning modellen met voor spel
-description: Meer informatie over het beoordelen van machine learning modellen met behulp van de T-SQL-functie voors PELLEn in Synapse SQL.
+description: Meer informatie over het beoordelen van machine learning modellen met behulp van de T-SQL-functie voors PELLEn in een toegewezen SQL-groep.
 services: synapse-analytics
 author: anumjs
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 07/21/2020
 ms.author: anjangsh
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: a8caf6cd5072b4c098adff57194784491c92bb0a
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 7b35997e763434d7ae4d849c33d358d1593d7e33
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325377"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460533"
 ---
 # <a name="score-machine-learning-models-with-predict"></a>Score machine learning modellen met voor spel
 
-Synapse SQL biedt u de mogelijkheid om machine learning modellen te scoren met behulp van de vertrouwde T-SQL-taal. Met T-SQL-voor [spel](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest)kunt u uw bestaande machine learning-modellen getraind met historische gegevens en ze een score geven binnen de beveiligde grenzen van uw data warehouse. De functie voors PELLEn heeft een [ONNX-model (open Neural Network Exchange)](https://onnx.ai/) en gegevens als invoer. Deze functie elimineert de stap voor het verplaatsen van waardevolle gegevens buiten het Data Warehouse voor een score. Het is erop gericht om data professionals in staat te stellen om eenvoudig machine learning modellen te implementeren met de vertrouwde T-SQL-interface en naadloos samen te werken met gegevens wetenschappers die samen werken met het juiste Framework voor hun taak.
+Een toegewezen SQL-groep biedt u de mogelijkheid om machine learning modellen te scoren met behulp van de vertrouwde T-SQL-taal. Met T-SQL-voor [spel](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest)kunt u uw bestaande machine learning-modellen getraind met historische gegevens en ze een score geven binnen de beveiligde grenzen van uw data warehouse. De functie voors PELLEn heeft een [ONNX-model (open Neural Network Exchange)](https://onnx.ai/) en gegevens als invoer. Deze functie elimineert de stap voor het verplaatsen van waardevolle gegevens buiten het Data Warehouse voor een score. Het is erop gericht om data professionals in staat te stellen om eenvoudig machine learning modellen te implementeren met de vertrouwde T-SQL-interface en naadloos samen te werken met gegevens wetenschappers die samen werken met het juiste Framework voor hun taak.
 
 > [!NOTE]
 > Deze functionaliteit wordt momenteel niet ondersteund in een serverloze SQL-groep.
@@ -31,9 +31,9 @@ Voor de functionaliteit moet het model buiten Synapse SQL worden getraind. Nadat
 
 ## <a name="training-the-model"></a>Het model trainen
 
-Synapse SQL verwacht een vooraf getraind model. Houd rekening met de volgende factoren wanneer u een machine learning model wilt trainen dat wordt gebruikt voor het uitvoeren van voor spellingen in Synapse SQL.
+De toegewezen SQL-Groep verwacht een vooraf getraind model. Houd rekening met de volgende factoren wanneer u een machine learning model wilt trainen dat wordt gebruikt voor het uitvoeren van voor spellingen in een toegewezen SQL-groep.
 
-- Synapse SQL ondersteunt alleen ONNX-indelings modellen. ONNX is een open-source model indeling waarmee u modellen tussen verschillende Frameworks kunt uitwisselen om interoperabiliteit mogelijk te maken. U kunt uw bestaande modellen converteren naar de ONNX-indeling met behulp van frameworks die de systeem eigen ondersteuning bieden of pakketten converteren. Bijvoorbeeld [sklearn-onnx-](https://github.com/onnx/sklearn-onnx) pakket converteren scikit-modellen naar onnx. [ONNX github-opslag plaats](https://github.com/onnx/tutorials#converting-to-onnx-format) bevat een lijst met ondersteunde frameworks en voor beelden.
+- De toegewezen SQL-pool ondersteunt alleen ONNX-indelings modellen. ONNX is een open-source model indeling waarmee u modellen tussen verschillende Frameworks kunt uitwisselen om interoperabiliteit mogelijk te maken. U kunt uw bestaande modellen converteren naar de ONNX-indeling met behulp van frameworks die de systeem eigen ondersteuning bieden of pakketten converteren. Bijvoorbeeld [sklearn-onnx-](https://github.com/onnx/sklearn-onnx) pakket converteren scikit-modellen naar onnx. [ONNX github-opslag plaats](https://github.com/onnx/tutorials#converting-to-onnx-format) bevat een lijst met ondersteunde frameworks en voor beelden.
 
    Als u gebruikmaakt van [automatische ml](https://docs.microsoft.com/azure/machine-learning/concept-automated-ml) voor training, moet u de para meter *ENABLE_ONNX_COMPATIBLE_MODELS* instellen op True om een onnx-indelings model te maken. [Automatische machine learning notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb) toont een voor beeld van hoe u AutoML kunt gebruiken om een machine learning model van ONNX-indeling te maken.
 
@@ -47,7 +47,7 @@ Synapse SQL verwacht een vooraf getraind model. Houd rekening met de volgende fa
 
 ## <a name="loading-the-model"></a>Het model laden
 
-Het model wordt opgeslagen in een Synapse SQL-gebruikers tabel als een hexadecimale teken reeks. Aanvullende kolommen, zoals ID en beschrijving, kunnen worden toegevoegd in de model tabel om het model te identificeren. Gebruik varbinary (max) als het gegevens type van de kolom model. Hier volgt een code voorbeeld voor een tabel die kan worden gebruikt voor het opslaan van modellen:
+Het model wordt als een hexadecimale teken reeks opgeslagen in een exclusieve SQL-groeps gebruikers tabel. Aanvullende kolommen, zoals ID en beschrijving, kunnen worden toegevoegd in de model tabel om het model te identificeren. Gebruik varbinary (max) als het gegevens type van de kolom model. Hier volgt een code voorbeeld voor een tabel die kan worden gebruikt voor het opslaan van modellen:
 
 ```sql
 -- Sample table schema for storing a model and related data
@@ -66,7 +66,7 @@ GO
 
 ```
 
-Wanneer het model is geconverteerd naar een hexadecimale teken reeks en de definitie van de tabel, gebruikt u de [Kopieer opdracht](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) of poly Base om het model in de SQL-tabel Synapse te laden. In het volgende code voorbeeld wordt de Kopieer opdracht gebruikt om het model te laden.
+Zodra het model is geconverteerd naar een hexadecimale teken reeks en de definitie van de tabel, gebruikt u de [Kopieer opdracht](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) of poly Base om het model in de toegewezen SQL-groeps tabel te laden. In het volgende code voorbeeld wordt de Kopieer opdracht gebruikt om het model te laden.
 
 ```sql
 -- Copy command to load hexadecimal string of the model from Azure Data Lake storage location

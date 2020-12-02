@@ -9,12 +9,12 @@ ms.date: 01/02/2019
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
-ms.openlocfilehash: e491b89ec5e6488228dd8befed669a13842f9d15
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: a1159da782a8cb822bf726173ad0d0bcd9da844a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93288555"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460896"
 ---
 # <a name="virtual-network-service-endpoints-for-azure-key-vault"></a>Virtuele netwerk service-eind punten voor Azure Key Vault
 
@@ -54,7 +54,7 @@ Zie [Azure Key Vault firewalls en virtuele netwerken configureren](network-secur
 > Houd rekening met de volgende configuratielimieten:
 > * Er zijn maximaal 127 regels voor virtuele netwerken en 127 IPv4-regels toegestaan. 
 > * Kleine adresbereiken die de voorvoegselgrootten /31 of /32 gebruiken, worden niet ondersteund. Configureer deze bereiken in plaats hiervan door afzonderlijke IP-adresregels te gebruiken.
-> * IP-netwerkregels zijn alleen toegestaan voor openbare IP-adressen. IP-adresbereiken die zijn gereserveerd voor privénetwerken (zoals gedefinieerd in RFC 1918) zijn niet toegestaan in IP-regels. Privénetwerken omvatten adressen die beginnen met **10.** , **172.16-31** , en **192.168.** . 
+> * IP-netwerkregels zijn alleen toegestaan voor openbare IP-adressen. IP-adresbereiken die zijn gereserveerd voor privénetwerken (zoals gedefinieerd in RFC 1918) zijn niet toegestaan in IP-regels. Privénetwerken omvatten adressen die beginnen met **10.** , **172.16-31**, en **192.168.** . 
 > * Momenteel worden alleen IPv4-adressen ondersteund.
 
 ## <a name="trusted-services"></a>Vertrouwde services
@@ -71,7 +71,7 @@ Hier volgt een lijst met vertrouwde services die toegang mogen hebben tot een sl
 |Exchange Online & share point online|Toegang tot de klant sleutel toestaan voor de code ring van Azure Storage-service met de code van de [klant](/microsoft-365/compliance/customer-key-overview).|
 |Azure Information Protection|Toegang tot de Tenant sleutel voor [Azure Information Protection toestaan.](/azure/information-protection/what-is-information-protection)|
 |Azure App Service|[Implementeer het Azure web app-certificaat via Key Vault](https://azure.github.io/AppService/2016/05/24/Deploying-Azure-Web-App-Certificate-through-Key-Vault.html).|
-|Azure SQL Database|[Transparent Data Encryption met Bring your own Key ondersteuning voor Azure SQL database en Azure Synapse Analytics (voorheen SQL Data Warehouse)](../../azure-sql/database/transparent-data-encryption-byok-overview.md?view=sql-server-2017&viewFallbackFrom=azuresqldb-current).|
+|Azure SQL Database|[Transparent Data Encryption met Bring your own Key ondersteuning voor Azure SQL database en Azure Synapse Analytics](../../azure-sql/database/transparent-data-encryption-byok-overview.md?view=sql-server-2017&viewFallbackFrom=azuresqldb-current).|
 |Azure Storage|[Storage service Encryption door de klant beheerde sleutels gebruiken in azure Key Vault](../../storage/common/customer-managed-keys-configure-key-vault.md).|
 |Azure Data Lake Store|[Versleuteling van gegevens in azure data Lake Store](../../data-lake-store/data-lake-store-encryption.md) met een door de klant beheerde sleutel.|
 |Azure Databricks|[Snelle, eenvoudige en samen werkende, Apache Spark-gebaseerde analyse service](/azure/databricks/scenarios/what-is-azure-databricks)|

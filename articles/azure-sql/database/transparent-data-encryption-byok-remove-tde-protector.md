@@ -12,12 +12,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 02/24/2020
-ms.openlocfilehash: a879ac81859c855bb7b7bc2eddb1e3c9b62adb34
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 31298be4d50c7f562e2e2b9adbf889b165b197e5
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321414"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461854"
 ---
 # <a name="remove-a-transparent-data-encryption-tde-protector-using-powershell"></a>Een Transparent Data Encryption-Protector (TDE) verwijderen met behulp van Power shell
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -35,13 +35,13 @@ Houd er rekening mee dat wanneer de TDE-Protector wordt verwijderd in Key Vault,
 Deze hand leiding gaat over twee benaderingen, afhankelijk van het gewenste resultaat na een reactie op incidenten:
 
 - De data bases in Azure SQL Database/Azure Synapse Analytics **ontoegankelijk** maken.
-- De data bases in Azure SQL Database/Azure Azure Synapse Analytics (voorheen SQL Data Warehouse) niet **toegankelijk** maken.
+- De data bases in Azure SQL Database/Azure Azure Synapse Analytics **ontoegankelijk** maken.
 
 ## <a name="prerequisites"></a>Vereisten
 
 - U moet een Azure-abonnement hebben en een beheerder zijn voor dat abonnement
 - Azure PowerShell moet zijn geïnstalleerd en worden uitgevoerd.
-- In deze hand leiding wordt ervan uitgegaan dat u al een sleutel gebruikt uit Azure Key Vault als de TDE-Protector voor een Azure SQL Database of Azure Synapse (voorheen SQL Data Warehouse). Zie [transparent Data Encryption met BYOK-ondersteuning](transparent-data-encryption-byok-overview.md) voor meer informatie.
+- In deze hand leiding wordt ervan uitgegaan dat u al een sleutel gebruikt uit Azure Key Vault als de TDE-Protector voor een Azure SQL Database of Azure Synapse. Zie [transparent Data Encryption met BYOK-ondersteuning](transparent-data-encryption-byok-overview.md) voor meer informatie.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 

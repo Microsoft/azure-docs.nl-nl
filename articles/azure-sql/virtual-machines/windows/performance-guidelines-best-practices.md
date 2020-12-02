@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
-ms.date: 10/18/2019
+ms.date: 11/09/2020
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 6a6b39d540427b7c3400fded62431c914db23bb3
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 2cff67dde7cfe9e015cd25b26811410ce6e686e9
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96327318"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462535"
 ---
 # <a name="performance-guidelines-for-sql-server-on-azure-virtual-machines"></a>Prestatierichtlijnen voor SQL Server op Azure Virtual Machines
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -29,9 +29,9 @@ Dit artikel bevat richt lijnen voor het optimaliseren van SQL Server prestaties 
 
 ## <a name="overview"></a>Overzicht
 
- Bij het uitvoeren van SQL Server op Azure Virtual Machines raden we u aan om dezelfde opties voor het afstemmen van de prestaties van de data base te blijven gebruiken die van toepassing zijn op SQL Server in on-premises server omgevingen. De prestaties van een relationele database in een openbare cloud zijn echter afhankelijk van vele factoren, zoals de grootte van een virtuele machine en de configuratie van de gegevensschijven.
+Bij het uitvoeren van SQL Server op Azure Virtual Machines raden we u aan om dezelfde opties voor het afstemmen van de prestaties van de data base te blijven gebruiken die van toepassing zijn op SQL Server in on-premises server omgevingen. De prestaties van een relationele database in een openbare cloud zijn echter afhankelijk van vele factoren, zoals de grootte van een virtuele machine en de configuratie van de gegevensschijven.
 
-[SQL Server installatie kopieën die zijn ingericht in de Azure Portal](sql-vm-create-portal-quickstart.md) algemene aanbevolen procedures voor opslag configuratie (Zie [opslag configuratie voor SQL Server virtuele machines (vm's)](storage-configuration.md)) voor meer informatie over het configureren van opslag. Na het inrichten kunt u overwegen om andere optimalisaties toe te passen die in dit artikel worden besproken. Baseer uw keuzes op uw werk belasting en controleer door testen.
+[SQL Server installatie kopieën die zijn ingericht in de Azure Portal](sql-vm-create-portal-quickstart.md) algemene [Aanbevolen procedures](storage-configuration.md)voor opslag configuratie volgen. Na het inrichten kunt u overwegen om andere optimalisaties toe te passen die in dit artikel worden besproken. Baseer uw keuzes op uw werk belasting en controleer door testen.
 
 > [!TIP]
 > Er is doorgaans een afweging tussen het optimaliseren van kosten en het optimaliseren van de prestaties. Dit artikel is gericht op het ophalen van de *beste* prestaties voor SQL Server op Azure virtual machines. Als uw werk belasting minder veeleisend is, is het mogelijk dat u niet elke optimalisatie nodig hebt die hieronder wordt vermeld. Houd rekening met de prestatie behoeften, kosten en werkbelasting patronen wanneer u deze aanbevelingen evalueert.
@@ -40,23 +40,167 @@ Dit artikel bevat richt lijnen voor het optimaliseren van SQL Server prestaties 
 
 Hieronder vindt u een snelle controle lijst voor optimale prestaties van SQL Server op Azure Virtual Machines:
 
-| Onderwerp | Optimalisaties |
+| Gebied | Optimalisaties |
 | --- | --- |
-| [VM-grootte](#vm-size-guidance) | -Gebruik VM-grootten met vier of meer vCPU, zoals [E4S_v3](../../../virtual-machines/ev3-esv3-series.md) of hoger, of [DS12_v2](../../../virtual-machines/dv2-dsv2-series-memory.md) of hoger.<br/><br/> - [Es-, EAS-, DS-en das-reeksen](../../../virtual-machines/sizes-general.md) bieden het optimale geheugen om de vCPU verhouding die is vereist voor de prestaties van de OLTP-werk belasting. <br/><br/> - De [M-serie](../../../virtual-machines/m-series.md) biedt het hoogste geheugen om de vCPU verhouding te bieden die nodig is voor essentiële prestaties en is ideaal voor Data Warehouse-workloads. <br/><br/> -Verzamel de [limieten](../../../virtual-machines/sizes-general.md) voor [IOPS](../../../virtual-machines/premium-storage-performance.md#iops), [door Voer](../../../virtual-machines/premium-storage-performance.md#throughput) en [latentie](../../../virtual-machines/premium-storage-performance.md#latency) van de doel belasting op piek tijden door de [controle lijst voor toepassings prestatie vereisten](../../../virtual-machines/premium-storage-performance.md#application-performance-requirements-checklist) te volgen en selecteer vervolgens de VM-grootte die kan worden geschaald naar de prestatie vereisten van uw werk belasting.|
-| [Storage](#storage-guidance) | -Raadpleeg de blog [optimalisatie voor OLTP-prestaties](https://techcommunity.microsoft.com/t5/SQL-Server/Optimize-OLTP-Performance-with-SQL-Server-on-Azure-VM/ba-p/916794)voor gedetailleerde tests van SQL Server prestaties op Azure virtual machines met TPC-E en TPC_C-benchmarks. <br/><br/> - [Premium ssd's](https://techcommunity.microsoft.com/t5/SQL-Server/Optimize-OLTP-Performance-with-SQL-Server-on-Azure-VM/ba-p/916794) gebruiken voor de beste prijs-en prestatie voordelen. [Alleen-lezen cache](../../../virtual-machines/premium-storage-performance.md#disk-caching) configureren voor gegevens bestanden en geen cache voor het logboek bestand. <br/><br/> -Gebruik [Ultra schijven](../../../virtual-machines/disks-types.md#ultra-disk) als er minder dan 1 MS-opslag latenties zijn vereist voor de werk belasting. Zie [migreren naar ultra Disk](storage-migrate-to-ultradisk.md) voor meer informatie. <br/><br/> -Verzamel de vereisten voor de opslag latentie voor SQL Server gegevens, logboeken en tijdelijke DB-bestanden door [de toepassing te bewaken](../../../virtual-machines/premium-storage-performance.md#application-performance-requirements-checklist) voordat u het schijf type kiest. Als <1ms-opslag latenties zijn vereist, gebruikt u ultra disks, anders gebruikt u Premium SSD. Als lage latenties alleen vereist zijn voor het logboek bestand en niet voor gegevens bestanden, moet u [de ultra Disk](../../../virtual-machines/disks-enable-ultra-ssd.md) alleen voor het logboek bestand voorzien van de vereiste IOPS en doorvoer niveaus. <br/><br/> -  [Premium-bestands shares](failover-cluster-instance-premium-file-share-manually-configure.md) worden aanbevolen als gedeelde opslag voor een SQL Server failover-cluster exemplaar. Premium-bestands shares bieden geen ondersteuning voor caching en bieden beperkte prestaties ten opzichte van Premium SSD-schijven. Kies Premium SSD-Managed disks via Premium-bestands shares voor zelfstandige SQL-instanties; gebruik Premium-bestands shares voor de gedeelde opslag van het failover-cluster exemplaar voor een gemakkelijke onderhouds-en schaal baarheid. <br/><br/> -Standaard opslag wordt alleen aanbevolen voor ontwikkelings-en test doeleinden of voor back-upbestanden en mag niet worden gebruikt voor productie werkbelastingen. <br/><br/> -Houd het [opslag account](../../../storage/common/storage-account-create.md) en SQL Server virtuele machine in dezelfde regio.<br/><br/> -Schakel Azure [geo-redundante opslag](../../../storage/common/storage-redundancy.md) (geo-replicatie) uit voor het opslag account.  |
-| [Disks](#disks-guidance) | -Gebruik Mini maal 2 [Premium SSD-schijven](../../../virtual-machines/disks-types.md#premium-ssd) (1 voor het logboek bestand en 1 voor gegevens bestanden). <br/><br/> -Voor werk belastingen die <1 MS IO-latenties vereisen, schakelt u schrijf versnelling voor M-serie in en overweegt u Ultra-SSD schijven te gebruiken voor es-en DS-serie. <br/><br/> - [Alleen-lezen cache](../../../virtual-machines/premium-storage-performance.md#disk-caching) inschakelen op de schijven die als host dienen voor de gegevens bestanden.<br/><br/> -Voeg een extra gratis IOPS/doorvoer capaciteit van 20% toe dan is vereist bij het [configureren van opslag voor SQL Server gegevens, logboeken en tempdb-bestanden](storage-configuration.md) <br/><br/> -Vermijd het gebruik van besturings systeem of tijdelijke schijven voor database opslag of logboek registratie.<br/><br/> -Schakel caching niet in op een of meer schijven die als host optreden voor het logboek bestand.  **Belang rijk**: Stop de SQL Server-service wanneer u de cache-instellingen voor een Azure virtual machines schijf wijzigt.<br/><br/> -Meerdere Azure-gegevens schijven Stripe om de opslag doorvoer te verg root.<br/><br/> -Indeling met gedocumenteerde toewijzings grootten. <br/><br/> -Sla TempDB op het lokale SSD- `D:\` station op voor essentiële SQL Server workloads (nadat u de juiste VM-grootte hebt gekozen). Als u de virtuele machine maakt op basis van de sjablonen Azure Portal of Azure Quick Start en [tijdelijke data base op de lokale schijf plaatst](https://techcommunity.microsoft.com/t5/SQL-Server/Announcing-Performance-Optimized-Storage-Configuration-for-SQL/ba-p/891583) , hoeft u geen verdere actie te ondernemen. voor alle andere gevallen volgt u de stappen in de blog voor het  [gebruik van ssd's voor het opslaan van tempdb](https://cloudblogs.microsoft.com/sqlserver/2014/09/25/using-ssds-in-azure-vms-to-store-sql-server-tempdb-and-buffer-pool-extensions/) om fouten te voor komen na het opnieuw opstarten. Als de capaciteit van het lokale station niet voldoende is voor de grootte van uw tijdelijke data base, plaatst u de tijdelijke data base op een opslag groep die is [striped](../../../virtual-machines/premium-storage-performance.md) op Premium SSD-schijven met [alleen-lezen cache](../../../virtual-machines/premium-storage-performance.md#disk-caching)opslag. |
-| [I/O](#io-guidance) |-Database pagina compressie inschakelen.<br/><br/> -Schakel de initialisatie van Instant file in voor gegevens bestanden.<br/><br/> -Beperk de automatische groei van de data base.<br/><br/> -Autoverkleinen van de data base uitschakelen.<br/><br/> -Alle data bases verplaatsen naar gegevens schijven, inclusief systeem databases.<br/><br/> -Verplaats SQL Server fouten logboek en traceer bestands mappen naar gegevens schijven.<br/><br/> -Standaard back-ups en database bestands locaties configureren.<br/><br/> - [Vergrendelde pagina's in het geheugen inschakelen](/sql/database-engine/configure-windows/enable-the-lock-pages-in-memory-option-windows?view=sql-server-2017).<br/><br/> -SQL Server prestatie verbeteringen Toep assen. |
+| [VM-grootte](#vm-size-guidance) | -Gebruik VM-grootten met vier of meer vCPU zoals de [Standard_M8-4 MS](/../../virtual-machines/m-series), de [E4ds_v4](../../../virtual-machines/edv4-edsv4-series.md#edv4-series)of de [DS12_v2](../../../virtual-machines/dv2-dsv2-series-memory.md#dsv2-series-11-15) of hoger. <br/><br/> -De grootte van virtuele machines die zijn [geoptimaliseerd voor geheugen](../../../virtual-machines/sizes-memory.md) gebruiken voor de beste prestaties van SQL Server werk belastingen. <br/><br/> -De [DSv2 11-15](../../../virtual-machines/dv2-dsv2-series-memory.md), de [Edsv4](../../../virtual-machines/edv4-edsv4-series.md) -serie, de [M-](../../../virtual-machines/m-series.md)en de [Mv2-](../../../virtual-machines/mv2-series.md) serie bieden de optimale geheugen-naar-vCore-verhouding die vereist is voor OLTP-workloads. Virtuele machines uit de M-serie bieden de hoogste geheugen-naar-vCore verhouding die is vereist voor essentiële workloads en is ook ideaal voor Data Warehouse-workloads. <br/><br/> -Er is mogelijk een hogere geheugen-naar-vCore-verhouding vereist voor bedrijfs kritieke en Data Warehouse-workloads. <br/><br/> -Maak gebruik van de Azure virtual machine Marketplace-installatie kopieën als de SQL Server instellingen en opslag opties zijn geconfigureerd voor optimale prestaties van SQL Server. <br/><br/> -De prestatie kenmerken van de doel-workload verzamelen en deze gebruiken om de juiste VM-grootte voor uw bedrijf te bepalen.|
+| [Storage](#storage-guidance) | -Raadpleeg de blog [optimalisatie voor OLTP-prestaties](https://techcommunity.microsoft.com/t5/SQL-Server/Optimize-OLTP-Performance-with-SQL-Server-on-Azure-VM/ba-p/916794)voor gedetailleerde tests van SQL Server prestaties op Azure virtual machines met TPC-E en TPC_C-benchmarks. <br/><br/> - [Premium ssd's](https://techcommunity.microsoft.com/t5/SQL-Server/Optimize-OLTP-Performance-with-SQL-Server-on-Azure-VM/ba-p/916794) gebruiken voor de beste prijs-en prestatie voordelen. [Alleen-lezen cache](../../../virtual-machines/premium-storage-performance.md#disk-caching) configureren voor gegevens bestanden en geen cache voor het logboek bestand. <br/><br/> -Gebruik [Ultra schijven](../../../virtual-machines/disks-types.md#ultra-disk) als er minder dan 1 MS-geheugen latentie vereist is voor de werk belasting. Zie [migreren naar ultra Disk](storage-migrate-to-ultradisk.md) voor meer informatie. <br/><br/> -Verzamel de vereisten voor de opslag latentie voor SQL Server gegevens, logboeken en tijdelijke DB-bestanden door [de toepassing te bewaken](../../../virtual-machines/premium-storage-performance.md#application-performance-requirements-checklist) voordat u het schijf type kiest. Als < 1-MS-geheugen latenties vereist zijn, gebruikt u ultra schijven, anders gebruikt u Premium SSD. Als lage latenties alleen vereist zijn voor het logboek bestand en niet voor gegevens bestanden, moet u [de ultra Disk](../../../virtual-machines/disks-enable-ultra-ssd.md) alleen voor het logboek bestand voorzien van de vereiste IOPS en doorvoer niveaus. <br/><br/>  -Standaard opslag wordt alleen aanbevolen voor ontwikkelings-en test doeleinden of voor back-upbestanden en mag niet worden gebruikt voor productie werkbelastingen. <br/><br/> -Houd het [opslag account](../../../storage/common/storage-account-create.md) en SQL Server virtuele machine in dezelfde regio.<br/><br/> -Schakel Azure [geo-redundante opslag](../../../storage/common/storage-redundancy.md) (geo-replicatie) uit voor het opslag account.  |
+| [Disks](#disks-guidance) | -Gebruik Mini maal 2 [Premium SSD-schijven](../../../virtual-machines/disks-types.md#premium-ssd) (1 voor het logboek bestand en 1 voor gegevens bestanden). <br/><br/> -Voor werk belastingen die < 1 MS IO-latentie vereisen, schakelt u schrijf versnelling voor M-serie in en overweegt u Ultra-SSD schijven voor es-en DS-serie te gebruiken. <br/><br/> - [Alleen-lezen cache](../../../virtual-machines/premium-storage-performance.md#disk-caching) inschakelen op de schijven die als host dienen voor de gegevens bestanden.<br/><br/> -Voeg een extra gratis IOPS/doorvoer capaciteit van 20% toe dan is vereist bij het [configureren van opslag voor SQL Server gegevens, logboeken en tempdb-bestanden](storage-configuration.md) <br/><br/> -Vermijd het gebruik van besturings systeem of tijdelijke schijven voor database opslag of logboek registratie.<br/><br/> -Schakel caching niet in op een of meer schijven die als host optreden voor het logboek bestand.  **Belang rijk**: Stop de SQL Server-service wanneer u de cache-instellingen voor een Azure virtual machines schijf wijzigt.<br/><br/> -Meerdere Azure-gegevens schijven Stripe om de opslag doorvoer te verg root.<br/><br/> -Indeling met gedocumenteerde toewijzings grootten. <br/><br/> -Sla TempDB op het lokale SSD- `D:\` station op voor essentiële SQL Server workloads (nadat u de juiste VM-grootte hebt gekozen). Als u de virtuele machine maakt op basis van de sjablonen Azure Portal of Azure Quick Start en [tijdelijke data base op de lokale schijf plaatst](https://techcommunity.microsoft.com/t5/SQL-Server/Announcing-Performance-Optimized-Storage-Configuration-for-SQL/ba-p/891583), hebt u geen verdere actie nodig. voor alle andere gevallen volgt u de stappen in de blog voor het  [gebruik van ssd's voor het opslaan van tempdb](https://cloudblogs.microsoft.com/sqlserver/2014/09/25/using-ssds-in-azure-vms-to-store-sql-server-TempDB-and-buffer-pool-extensions/) om fouten te voor komen na het opnieuw opstarten. Als de capaciteit van het lokale station niet voldoende is voor de grootte van uw tijdelijke data base, plaatst u de tijdelijke data base op een opslag groep die is [striped](../../../virtual-machines/premium-storage-performance.md) op Premium SSD-schijven met [alleen-lezen cache](../../../virtual-machines/premium-storage-performance.md#disk-caching)opslag. |
+| [I/O](#io-guidance) |-Database pagina compressie inschakelen.<br/><br/> -Schakel de initialisatie van Instant file in voor gegevens bestanden.<br/><br/> -Beperk de automatische groei van de data base.<br/><br/> -Autoverkleinen van de data base uitschakelen.<br/><br/> -Alle data bases verplaatsen naar gegevens schijven, inclusief systeem databases.<br/><br/> -Verplaats SQL Server fouten logboek en traceer bestands mappen naar gegevens schijven.<br/><br/> -Standaard back-ups en database bestands locaties configureren.<br/><br/> - [Vergrendelde pagina's in het geheugen inschakelen](/sql/database-engine/configure-windows/enable-the-lock-pages-in-memory-option-windows).<br/><br/> -Evalueer en pas de [meest recente cumulatieve updates](/sql/database-engine/install-windows/latest-updates-for-microsoft-sql-server) toe op de geïnstalleerde versie van SQL Server. |
 | [Functie-specifiek](#feature-specific-guidance) | -Maak rechtstreeks een back-up naar Azure Blob-opslag.<br/><br/>- [Back-ups van bestands momentopnamen](/sql/relational-databases/backup-restore/file-snapshot-backups-for-database-files-in-azure) gebruiken voor data bases die groter zijn dan 12 TB. <br/><br/>-Gebruik meerdere tijdelijke DB-bestanden, 1 bestand per kern, Maxi maal 8 bestanden.<br/><br/>-Stel het maximale server geheugen in op 90% of tot 50 GB voor het besturings systeem. <br/><br/>-Zacht NUMA inschakelen. |
 
+
+<br/>
 Raadpleeg de details en richt lijnen in de volgende secties voor meer informatie over *hoe* en *Waarom* u deze optimalisaties wilt maken.
+<br/><br/>
+
+## <a name="getting-started"></a>Aan de slag
+
+Als u een nieuw SQL Server maakt op de virtuele machine van Azure en niet migreert naar een huidig bron systeem, maakt u uw nieuwe SQL Server VM op basis van de vereisten van uw leverancier.  De leveranciers vereisten voor een SQL Server virtuele machine zijn hetzelfde als wat u on-premises implementeert. 
+
+Als u een nieuwe SQL Server VM maakt met een nieuwe toepassing die is gemaakt voor de Cloud, kunt u uw SQL Server virtuele machine eenvoudig groter of kleiner maken naarmate uw gegevens en gebruiks vereisten worden gegroeid.
+Start de ontwikkel omgevingen met de D-serie, de B-serie of de Av2-serie en breid uw omgeving uit gedurende een periode. 
+
+Het aanbevolen minimum voor een productie-OLTP-omgeving is 4 vCore, 32 GB geheugen en een geheugen-naar-vCore-verhouding van 8. Voor nieuwe omgevingen begint u met 4 vCore machines en schaalt u op 8, 16, 32 vCores of meer wanneer uw gegevens-en reken vereisten veranderen. Voor OLTP-door Voer is het doel SQL Server Vm's met 5000 IOPS voor elke vCore. 
+
+Gebruik de SQL Server VM Marketplace-installatie kopieën met de opslag configuratie in de portal. Dit maakt het eenvoudiger om de benodigde opslag groepen te maken om de grootte, IOPS en door voer te verkrijgen die nodig zijn voor uw workloads. Het is belang rijk om SQL Server Vm's te kiezen die ondersteuning bieden voor Premium Storage en Premium Storage-caching. Zie de sectie [opslag](#storage-guidance) voor meer informatie. 
+
+SQL Server Data Warehouse en bedrijfs kritieke omgevingen moeten vaak groter worden dan de 8-vCore verhouding. Voor middel grote omgevingen kunt u kiezen voor een verhouding van 16 kern geheugens en een verhouding van 32-tot-geheugen voor grotere data warehouse omgevingen. 
+
+SQL Server Data Warehouse-omgevingen profiteren vaak van de parallelle verwerking van grotere machines. Daarom zijn de M-serie en de Mv2-serie Strong opties voor grotere data warehouse omgevingen.
 
 ## <a name="vm-size-guidance"></a>Richt lijnen voor VM-grootte
 
-Begin met het verzamelen van de vereisten voor CPU, geheugen en opslag doorvoer van de werk belasting op piek tijden. \LogicalDisk\Disk Lees bewerkingen per seconde en \LogicalDisk\Disk schrijf bewerkingen per seconde kunnen worden gebruikt voor het verzamelen van de vereisten voor lezen en schrijven IOPS en \LogicalDisk\Disk bytes per seconde kunnen worden gebruikt voor het verzamelen van [vereisten voor opslag doorvoer](../../../virtual-machines/premium-storage-performance.md#disk-caching) voor gegevens, logboeken en tijdelijke DB-bestanden. Nadat de vereisten voor IOPS en door Voer op pieken zijn gedefinieerd, evalueren VM-grootten deze capaciteit. Als voor uw werk belasting bijvoorbeeld 20 KB Lees-IOPS is vereist en het aantal IOPS op piek schrijven, kunt u E16s_v3 kiezen (met Maxi maal 32 KB in de cache opgeslagen en 25600 niet-opgeslagen IOPS) of M16_s (met Maxi maal 20 KB in cache opgeslagen en niet-opgeslagen IOPS) met 2 P30-schijven. Zorg ervoor dat u zowel de door Voer als de IOPS-vereisten van de werk belasting begrijpt, aangezien Vm's verschillende schaal limieten hebben voor IOPS en door voer.<br/><br/>[DSv_3](../../../virtual-machines/dv3-dsv3-series.md) en [Es_v3-serie](../../../virtual-machines/ev3-esv3-series.md) worden gehost op hardware voor algemeen gebruik met Intel Haswell-of Broadwell-processors. De [M-serie](../../../virtual-machines/m-series.md) biedt het hoogste aantal vCPU en geheugen voor de grootste SQL Server werk belastingen en wordt gehost op hardware die is geoptimaliseerd voor geheugen met Skylake-processor familie. Deze VM-reeks biedt ondersteuning voor Premium-opslag, die wordt aanbevolen voor de beste prestaties met de Lees cache op hostniveau. Zowel de Es_v3 als de M-serie zijn ook beschikbaar in [beperkte kern grootten](../../../virtual-machines/constrained-vcpu.md), waarmee geld wordt bespaard op workloads met een lagere reken kracht en hoge opslag capaciteit. 
+Gebruik de vCPU-en geheugen configuratie van uw bron machine als basis lijn voor het migreren van een huidige on-premises SQL Server Data Base naar SQL Server op virtuele machines van Azure. Breng uw kern licentie naar Azure om te profiteren van de [Azure Hybrid Benefit](https://azure.microsoft.com/pricing/hybrid-benefit/) en bespaar op SQL Server licentie kosten.
+
+**Micro soft raadt een geheugen-naar-vCore-verhouding van 8 aan als uitgangs punt voor productie-SQL Server workloads.** Kleinere verhoudingen zijn acceptabel voor niet-productiewerk belastingen. 
+
+Kies een [geoptimaliseerd voor geheugen](../../../virtual-machines/sizes-memory.md), [algemeen gebruik](../../../virtual-machines/sizes-general.md), [opslag geoptimaliseerd](../../../virtual-machines/sizes-storage.md), of beperkte grootte van [vCore](../../../virtual-machines/constrained-vcpu.md) virtuele machine die optimaal is voor SQL Server prestaties op basis van uw workload (OLTP of Data Warehouse). 
+
+### <a name="memory-optimized"></a>Geoptimaliseerd geheugen
+
+De [grootte van virtuele machines](../../../virtual-machines/sizes-memory.md) die zijn geoptimaliseerd voor geheugen, is een primair doel voor SQL Server vm's en de aanbevolen keuze van micro soft. De virtuele machines die zijn geoptimaliseerd voor geheugen bieden betere geheugen-naar-CPU-verhoudingen en opties voor gemiddeld naar groot aantal caches. 
+
+#### <a name="m-and-mv2-series"></a>M-en Mv2-serie
+
+De [M-serie](../../../virtual-machines/m-series.md) biedt vCore aantallen en geheugen voor een aantal van de grootste SQL Server workloads.  
+
+De [Mv2-serie](../../../virtual-machines/mv2-series.md) heeft het hoogste aantal vCore en het geheugen en wordt aanbevolen voor bedrijfs kritieke en Data Warehouse-workloads. Instanties van de Mv2-serie zijn geoptimaliseerd voor geheugen die ongeëvenaarde reken prestaties bieden ter ondersteuning van grote in-memory data bases en workloads met een hoge geheugen-naar-CPU-verhouding die ideaal is voor relationele database servers, grote caches en analyses in het geheugen.
+
+Het [Standard_M64ms](../../../virtual-machines/m-series.md) heeft bijvoorbeeld 28 geheugen-naar-vCore-verhouding.
+
+Enkele van de functies van de M-en Mv2-serie voor SQL Server prestaties zijn onder andere [Premium Storage](../../../virtual-machines/premium-storage-performance.md) en [Premium Storage](../../../virtual-machines/premium-storage-performance.md#disk-caching) -ondersteuning voor opslag, ondersteuning voor [hoge schijven](../../../virtual-machines/disks-enable-ultra-ssd.md) en [Schrijf versnelling](../../../virtual-machines/how-to-enable-write-accelerator.md).
+
+#### <a name="edsv4-series"></a>Edsv4-serie
+
+De [Edsv4-serie](../../../virtual-machines/edv4-edsv4-series.md) is ontworpen voor geheugenintensieve toepassingen. Deze Vm's hebben een grote lokale opslag capaciteit, een hoge IOPS van lokale schijven, Maxi maal 504 GiB aan RAM-geheugen en een verbeterde reken kracht vergeleken met de vorige Ev3/Esv3-grootten met Gen2-Vm's. Er is een bijna consistent geheugen-naar-vCore-verhouding van 8 op deze virtuele machines, wat ideaal is voor standaard SQL Server workloads. 
+
+Deze VM-serie is ideaal voor geheugenintensieve bedrijfs toepassingen en-toepassingen die profiteren van een lage latentie en een hoge snelheid voor lokale opslag.
+
+De virtuele machines uit de Edsv4-serie ondersteunen [Premium-opslag](../../../virtual-machines/premium-storage-performance.md)en [Premium Storage-caching](../../../virtual-machines/premium-storage-performance.md#disk-caching).
+
+#### <a name="dsv2-series-11-15"></a>DSv2-serie 11-15
+
+De [DSv2-serie 11-15](../../../virtual-machines/dv2-dsv2-series-memory.md#dsv2-series-11-15) heeft dezelfde geheugen-en schijf configuraties als de vorige D-serie. Deze reeks heeft een consistent geheugen-naar-CPU-verhouding van 7 op alle virtuele machines. 
+
+De [DSv2-serie 11-15](../../../virtual-machines/dv2-dsv2-series-memory.md#dsv2-series-11-15) biedt ondersteuning voor [Premium Storage](../../../virtual-machines/premium-storage-performance.md) en [Premium Storage-caching](../../../virtual-machines/premium-storage-performance.md#disk-caching). dit wordt ten zeerste aanbevolen voor optimale prestaties.
+
+### <a name="general-purpose"></a>Algemeen gebruik
+
+De grootten van [virtuele machines voor algemeen gebruik](../../../virtual-machines/sizes-general.md) zijn ontworpen om evenwichtige geheugen-naar-vCore-ratio's te bieden voor kleinere workloads op instap niveau, zoals ontwikkelen en testen, webservers en kleinere database servers. 
+
+Vanwege de kleinere geheugen-naar-vCore-verhoudingen met de virtuele machines voor algemene doel einden, is het belang rijk om zorgvuldig op geheugen gebaseerde prestatie meter items te controleren om ervoor te zorgen dat SQL Server de benodigde buffer cache kunt ophalen. Zie de [basis lijn van geheugen prestaties](#memory) voor meer informatie. 
+
+Omdat de eerste aanbeveling voor productie werkbelastingen een geheugen-naar-vCore-verhouding van 8 is, is de mini maal aanbevolen configuratie voor een virtuele machine voor algemeen gebruik met SQL Server 4 vCPU en 32 GB geheugen. 
+
+#### <a name="ddsv4-series"></a>Ddsv4-serie
+
+De [Ddsv4-serie](../../../virtual-machines/ddv4-ddsv4-series.md) biedt een billijke combi natie van vCPU, geheugen en tijdelijke schijven, maar met een kleinere ondersteuning voor geheugen-naar-vCore. 
+
+De Ddsv4 Vm's bevatten een lagere latentie en een hogere snelheid voor lokale opslag.
+
+Deze computers zijn ideaal voor gelijktijdige SQL-en app-implementaties waarvoor snelle toegang tot tijdelijke opslag en relationele data bases is vereist. Er is een standaard geheugen-naar-vCore-verhouding van 4 voor alle virtuele machines in deze serie. 
+
+Daarom is het raadzaam om gebruik te maken van de D8ds_v4 als de eerste virtuele machine in deze serie, met 8 vCores en 32 GB aan geheugen. De grootste computer is de D64ds_v4, met 64 vCores en 256 GB geheugen.
+
+De virtuele machines uit de [Ddsv4-serie](../../../virtual-machines/ddv4-ddsv4-series.md) ondersteunen [Premium-opslag](../../../virtual-machines/premium-storage-performance.md) en [Premium Storage-caching](../../../virtual-machines/premium-storage-performance.md#disk-caching).
+
+> [!NOTE]
+> De [Ddsv4-serie](../../../virtual-machines/ddv4-ddsv4-series.md) heeft niet de geheugen-naar-vCore-verhouding van 8 die wordt aanbevolen voor SQL Server workloads. Zo kunt u overwegen om deze virtuele machines alleen te gebruiken voor kleinere toepassingen en werk belastingen.
+
+#### <a name="b-series"></a>B-serie
+
+De grootten van de virtuele machines van de [B-serie](../../../virtual-machines/sizes-b-series-burstable.md) zijn ideaal voor werk belastingen die geen consistente prestaties nodig hebben, zoals het testen van concepten en zeer kleine toepassings-en ontwikkelings servers. 
+
+De meeste van de grote machine grootten van de [B-Series](../../../virtual-machines/sizes-b-series-burstable.md) hebben een geheugen-naar-vCore-verhouding van 4. De grootste van deze computers is het [Standard_B20ms](../../../virtual-machines/sizes-b-series-burstable.md) met 20 vCores en 80 GB geheugen.
+
+Deze serie is uniek omdat de apps tijdens kantoor uren kunnen worden **gebursteerd** met bursteer bare tegoeden die variëren op basis van de grootte van de machine. 
+
+Wanneer de tegoeden zijn uitgeput, keert de VM terug naar de prestaties van de basislijn machine.
+
+Het voor deel van de B-serie is de besparingen die u kunt realiseren in vergelijking met de andere VM-grootten in andere reeksen, met name als u de verwerkings kracht spaarzaam nodig hebt.
+
+Deze reeks biedt ondersteuning voor [Premium-opslag](../../../virtual-machines/premium-storage-performance.md), maar **biedt geen ondersteuning** voor [Premium Storage-caching](../../../virtual-machines/premium-storage-performance.md#disk-caching).
+
+> [!NOTE] 
+> De [bursted B-Series](../../../virtual-machines/sizes-b-series-burstable.md) heeft niet de geheugen-naar-vCore-verhouding van 8 die wordt aanbevolen voor SQL Server workloads. Overweeg het gebruik van deze virtuele machines voor kleinere toepassingen, webservers en ontwikkel werkbelastingen.
+
+#### <a name="av2-series"></a>Av2-serie
+
+De virtuele machines uit de [Av2-serie](../../../virtual-machines/av2-series.md) zijn het meest geschikt voor werk belastingen op instap niveau, zoals ontwikkelen en testen, webservers met weinig verkeer, kleine tot middel grote app-data bases en proof-of-concepten.
+
+Alleen de [Standard_A2m_v2](../../../virtual-machines/av2-series.md) (2 VCores en 16GBs van het geheugen), [Standard_A4m_v2](../../../virtual-machines/av2-series.md) (4 vCores en 32GBs van het geheugen) en de [Standard_A8m_v2](../../../virtual-machines/av2-series.md) (8 vCores en 64GBs aan geheugen) hebben een goede geheugen-naar-vCore-verhouding van 8 voor deze belangrijkste drie virtuele machines. 
+
+Deze virtuele machines zijn goede opties voor kleinere ontwikkel-en test SQL Server machines. 
+
+De 8 vCore- [Standard_A8m_v2](../../../virtual-machines/av2-series.md) is mogelijk ook een goede optie voor kleine toepassingen en webservers.
+
+> [!NOTE] 
+> De Av2-serie biedt geen ondersteuning voor Premium-opslag en is daarom niet aanbevolen voor productie SQL Server workloads, zelfs met de virtuele machines met een geheugen-naar-vCore-verhouding van 8.
+
+### <a name="storage-optimized"></a>Geoptimaliseerde opslag
+
+De [grootten voor opslag geoptimaliseerde vm's](../../../virtual-machines/sizes-storage.md) zijn bedoeld voor specifieke use cases. Deze virtuele machines zijn specifiek ontworpen met geoptimaliseerde schijf doorvoer en IO. Deze serie van virtuele machines is bedoeld voor big data scenario's, gegevens opslag en grote transactionele data bases. 
+
+#### <a name="lsv2-series"></a>Lsv2-serie
+
+De [Lsv2-serie](../../../virtual-machines/lsv2-series.md) biedt een hoge door Voer, lage latentie en lokale NVMe-opslag. De virtuele machines uit de Lsv2-serie zijn geoptimaliseerd voor het gebruik van de lokale schijf op het knoop punt dat rechtstreeks aan de virtuele machine is gekoppeld, in plaats van duurzame gegevens schijven te gebruiken. 
+
+Deze virtuele machines zijn sterke opties voor big data-, Data Warehouse-, rapportage-en ETL-workloads. De hoge door Voer en IOPs van de lokale NVMe-opslag is een goede use-case voor het verwerken van bestanden die worden geladen in uw data base en andere scenario's waarin de bron gegevens opnieuw kunnen worden gemaakt op basis van het bron systeem of andere opslag plaatsen, zoals Azure Blob Storage of Azure Data Lake. [Lsv2-serie](../../../virtual-machines/lsv2-series.md) Vm's kunnen de schijf prestaties ook Maxi maal 30 minuten per keer opruimen.
+
+De grootte van deze virtuele machines van 8 tot 80 vCPU met 8 GiB geheugen per vCPU en voor elke 8 Vcpu's is 1,92 TB van NVMe SSD. Dit betekent dat er voor de grootste virtuele machine van deze serie een [L80s_v2](../../../virtual-machines/lsv2-series.md)is. er is 80 vCPU-en 640-geheugenpen met 10X 1.92 TB NVMe-opslag.  Er is een consistent geheugen-naar-vCore-verhouding van 8 op al deze virtuele machines.
+
+De NVMe-opslag is tijdelijk wat betekent dat gegevens op deze schijven verloren gaan als u de virtuele machine opnieuw opstart.
+
+De Lsv2-en LS-reeks bieden ondersteuning voor [Premium-opslag](../../../virtual-machines/premium-storage-performance.md), maar niet voor Premium Storage-caching. Het maken van een lokale cache om IOPs te verhogen, wordt niet ondersteund. 
+
+> [!WARNING]
+> Het opslaan van uw gegevens bestanden op de tijdelijke NVMe-opslag kan leiden tot verlies van gegevens wanneer de toewijzing van de virtuele machine ongedaan wordt gemaakt. 
+
+### <a name="constrained-vcores"></a>Beperkte vCores
+
+Hoge prestaties van SQL Server werk belastingen hebben vaak een grotere hoeveelheid geheugen, i/o en door voer zonder het hogere aantal vCore nodig. 
+
+De meeste OLTP-workloads zijn toepassings databases die worden aangedreven door grote aantallen kleinere trans acties. Met OLTP-workloads wordt slechts een kleine hoeveelheid gegevens gelezen of gewijzigd, maar de volumes van trans acties die door het aantal gebruikers worden aangestuurd, zijn veel hoger. Het is belang rijk om de SQL Server geheugen beschikbaar te stellen voor het plannen van de cache, recent gebruikte gegevens op te slaan voor prestaties en ervoor te zorgen dat fysieke Lees bewerkingen snel in het geheugen kunnen worden gelezen. 
+
+Deze OLTP-omgevingen hebben een grotere hoeveelheid geheugen, snelle opslag en de I/O-band breedte nodig om optimaal te kunnen werken. 
+
+Azure biedt VM-grootten met [beperkte vCPU-aantallen](../../../virtual-machines/constrained-vcpu.md), zodat dit prestatie niveau kan worden gehandhaafd zonder de hogere SQL Server licentie kosten. 
+
+Dit helpt de licentie kosten te beheren door de beschik bare vCores te verminderen en tegelijkertijd hetzelfde geheugen, dezelfde opslag en I/O-band breedte van de bovenliggende virtuele machine te behouden.
+
+Het aantal vCPU kan worden beperkt tot een half tot één kwar taal van de oorspronkelijke VM-grootte. Het verminderen van de vCores die beschikbaar is voor de virtuele machine, leidt tot hogere geheugen-naar-vCore-verhoudingen.
+
+Deze nieuwe VM-grootten hebben een achtervoegsel dat het aantal actieve Vcpu's opgeeft, zodat het gemakkelijker te identificeren is. 
+
+De [M64-32MS](../../../virtual-machines/constrained-vcpu.md) vereist bijvoorbeeld alleen licenties van 32 SQL Server vCores met het geheugen, de io en de door Voer van de [M64ms](../../../virtual-machines/m-series.md) en de [M64-16 MS](../../../virtual-machines/constrained-vcpu.md) vereist een licentie van 16 vCores.  Hoewel de [M64-16 MS](../../../virtual-machines/constrained-vcpu.md) een kwart van de SQL Server licentie kosten van de M64ms heeft, zijn de reken kosten van de virtuele machine hetzelfde.
+
+> [!NOTE] 
+> - Gemiddeld tot grote data warehouse-werk belastingen kunnen nog steeds profiteren van [beperkte vCore-vm's](../../../virtual-machines/constrained-vcpu.md), maar data warehouse-workloads worden vaak gekenmerkt door minder gebruikers en processen die grotere hoeveel heden gegevens adresseren via query abonnementen die parallel worden uitgevoerd. 
+> - De reken kosten, met inbegrip van de licentie voor het besturings systeem, blijven hetzelfde als de bovenliggende virtuele machine. 
 
 ## <a name="storage-guidance"></a>Richtlijnen voor Azure Storage
 
-Raadpleeg de blog [optimalisatie voor OLTP-prestaties](https://techcommunity.microsoft.com/t5/SQL-Server/Optimize-OLTP-Performance-with-SQL-Server-on-Azure-VM/ba-p/916794)voor gedetailleerde tests van SQL Server prestaties op Azure virtual machines met TPC-E en TPC_C-benchmarks. 
+Raadpleeg de blog [optimalisatie OLTP-prestaties](https://techcommunity.microsoft.com/t5/SQL-Server/Optimize-OLTP-Performance-with-SQL-Server-on-Azure-VM/ba-p/916794)voor gedetailleerde tests van SQL Server prestaties op Azure virtual machines met TPC-E en TPC-C-benchmarks. 
 
 Azure Blob-cache met Premium Ssd's wordt aanbevolen voor alle productie werkbelastingen. 
 
@@ -85,7 +229,7 @@ Het standaard beleid voor opslaan in cache op de besturingssysteem schijf is **l
 
 Het tijdelijke opslag station, aangeduid als het **D** -station, wordt niet persistent gemaakt in Azure Blob-opslag. Sla uw gebruikers database bestanden of gebruikers transactie logboek bestanden niet op in het station **D**:.
 
-Plaats TempDB op het lokale SSD `D:\` -station voor essentiële SQL Server workloads (nadat u de juiste VM-grootte hebt gekozen). Als u de virtuele machine maakt op basis van de sjablonen Azure Portal of Azure Quick Start en [tijdelijke data base op de lokale schijf plaatst](https://techcommunity.microsoft.com/t5/SQL-Server/Announcing-Performance-Optimized-Storage-Configuration-for-SQL/ba-p/891583), hebt u geen verdere actie nodig. voor alle andere gevallen volgt u de stappen in de blog voor het  [gebruik van ssd's voor het opslaan van tempdb](https://cloudblogs.microsoft.com/sqlserver/2014/09/25/using-ssds-in-azure-vms-to-store-sql-server-tempdb-and-buffer-pool-extensions/) om fouten te voor komen na het opnieuw opstarten. Als de capaciteit van het lokale station niet voldoende is voor de grootte van uw tijdelijke data base, plaatst u de tijdelijke data base op een opslag groep die is [striped](../../../virtual-machines/premium-storage-performance.md) op Premium SSD-schijven met [alleen-lezen cache](../../../virtual-machines/premium-storage-performance.md#disk-caching)opslag.
+Plaats TempDB op het lokale SSD `D:\` -station voor essentiële SQL Server workloads (nadat u de juiste VM-grootte hebt gekozen). Als u de virtuele machine maakt op basis van de sjablonen Azure Portal of Azure Quick Start en [tijdelijke data base op de lokale schijf plaatst](https://techcommunity.microsoft.com/t5/SQL-Server/Announcing-Performance-Optimized-Storage-Configuration-for-SQL/ba-p/891583), hebt u geen verdere actie nodig. voor alle andere gevallen volgt u de stappen in de blog voor het  [gebruik van ssd's voor het opslaan van tempdb](https://cloudblogs.microsoft.com/sqlserver/2014/09/25/using-ssds-in-azure-vms-to-store-sql-server-TempDB-and-buffer-pool-extensions/) om fouten te voor komen na het opnieuw opstarten. Als de capaciteit van het lokale station niet voldoende is voor de grootte van uw tijdelijke data base, plaatst u de tijdelijke data base op een opslag groep die is [striped](../../../virtual-machines/premium-storage-performance.md) op Premium SSD-schijven met [alleen-lezen cache](../../../virtual-machines/premium-storage-performance.md#disk-caching)opslag.
 
 Voor virtuele machines die Premium Ssd's ondersteunen, kunt u TempDB ook opslaan op een schijf die ondersteuning biedt voor Premium Ssd's met lees cache ingeschakeld.
 
@@ -142,7 +286,7 @@ Voor virtuele machines die Premium Ssd's ondersteunen, kunt u TempDB ook opslaan
      > [!WARNING]
      > Stop de SQL Server-service bij het wijzigen van de cache-instelling van Azure Virtual Machines schijven om te voor komen dat de data base wordt beschadigd.
 
-* **NTFS Allocation Unit Size**: bij het format teren van de gegevens schijf wordt aanbevolen dat u een 64-KB-Allocation Unit Size gebruikt voor gegevens-en logboek bestanden en Tempdb. Als TempDB op de tijdelijke schijf wordt geplaatst (D:\ station) de prestaties die worden verkregen door gebruik te maken van dit station, wegen de nood zaak van een 64K Allocation Unit Size. 
+* **NTFS Allocation Unit Size**: bij het format teren van de gegevens schijf wordt aanbevolen dat u een 64-KB-Allocation Unit Size gebruikt voor gegevens-en logboek bestanden en Tempdb. Als TempDB op de tijdelijke schijf wordt geplaatst (D:\ station) de prestaties die worden verkregen door gebruik te maken van dit station, wegen de nood zaak van een Allocation Unit Size van 64 KB. 
 
 * **Best practices voor schijf beheer**: wanneer u een gegevens schijf verwijdert of het cache type wijzigt, stopt u de SQL Server-service tijdens de wijziging. Wanneer de cache-instellingen worden gewijzigd op de besturingssysteem schijf, stopt Azure de virtuele machine, wijzigt het cache type en start de VM opnieuw op. Wanneer de cache-instellingen van een gegevens schijf zijn gewijzigd, wordt de VM niet gestopt, maar wordt de gegevens schijf losgekoppeld van de virtuele machine tijdens de wijziging en vervolgens opnieuw gekoppeld.
 
@@ -210,10 +354,61 @@ Tekenen van overbelaste systemen kunnen, maar zijn niet beperkt tot, uitputting 
 
 
 
+## <a name="collect-performance-baseline"></a>Prestaties van basis lijn verzamelen
+
+Voor een meer prescriptieve aanpak verzamelt u prestatie meter items met PerfMon/LogMan en Capture SQL Server wacht statistieken om de algemene belasting en mogelijke knel punten van de bron omgeving beter te begrijpen. 
+
+Begin met het verzamelen van de CPU, het geheugen, de [IOPS](../../../virtual-machines/premium-storage-performance.md#iops), de [door Voer](../../../virtual-machines/premium-storage-performance.md#throughput)en [latentie](../../../virtual-machines/premium-storage-performance.md#latency) van de bron-workload op piek tijden na de [controle lijst](../../../virtual-machines/premium-storage-performance.md#application-performance-requirements-checklist)voor de prestaties van de toepassing. 
+
+Verzamel gegevens tijdens piek uren, zoals werk belastingen tijdens uw dagelijkse werk belasting, maar ook andere High Load-processen, zoals het beëindigen van de dagelijkse verwerking en weekend ETL-workloads. Overweeg om uw resources te verg Roten voor ongewoon veel werk belastingen, zoals het beëindigen van een kwart verwerking, en pas de schaal aan nadat de werk belasting is voltooid. 
+
+Gebruik de analyse van prestaties om de [VM-grootte](../../../virtual-machines/sizes-memory.md) te selecteren die kan worden geschaald naar de prestatie vereisten van uw werk belasting.
+
+
+### <a name="iops-and-throughput"></a>IOPS en door Voer
+
+SQL Server prestaties zijn sterk afhankelijk van het I/O-subsysteem. Tenzij uw data base in het fysieke geheugen past, brengt SQL Server voortdurend database pagina's uit en uit de buffer groep. De gegevens bestanden voor SQL Server moeten anders worden behandeld. Toegang tot logboek bestanden is opeenvolgend, behalve wanneer een trans actie moet worden teruggedraaid wanneer gegevens bestanden, inclusief TempDB, wille keurig worden geopend. Als u een langzaam I/O-subsysteem hebt, kunnen uw gebruikers prestatie problemen ondervinden, zoals trage reactie tijden en taken die niet worden voltooid als gevolg van time-outs. 
+
+De virtuele machines van Azure Marketplace hebben logboek bestanden op een fysieke schijf die standaard gescheiden is van de gegevens bestanden. Het aantal TempDB-gegevens bestanden en de grootte voldoen aan aanbevolen procedures en zijn gericht op de tijdelijke D:/ station.. 
+
+De volgende prestatie meter items kunnen helpen bij het valideren van de i/o-door Voer die vereist is voor uw SQL Server: 
+* **\LogicalDisk\Disk Lees bewerkingen per seconde** (IOPS lezen en schrijven)
+* **\LogicalDisk\Disk schrijf bewerkingen per seconde** (IOPS lezen en schrijven) 
+* **\LogicalDisk\Disk bytes per seconde** (doorvoer vereisten voor de gegevens, het logboek en tempdb-bestanden)
+
+Met behulp van IOPS-en doorvoer vereisten op piek niveaus kunt u de VM-grootten evalueren die overeenkomen met de capaciteit van uw metingen. 
+
+Als voor uw werk belasting 20 K Lees-IOPS en 10K-IOPS zijn vereist, kunt u E16s_v3 kiezen (met Maxi maal 32 KB in cache opgeslagen en 25600 niet-opgeslagen IOPS) of M16_s (met Maxi maal 20 KB in cache opgeslagen en niet-opgeslagen IOPS) met 2 P30 schijven die zijn gestripd met opslag ruimten. 
+
+Zorg ervoor dat u zowel de door Voer als de IOPS-vereisten van de werk belasting begrijpt, aangezien Vm's verschillende schaal limieten hebben voor IOPS en door voer.
+
+### <a name="memory"></a>Geheugen
+
+Volg zowel het externe geheugen dat door het besturings systeem wordt gebruikt als het geheugen dat intern door SQL Server wordt gebruikt. Het identificeren van de belasting van een van beide onderdelen helpt bij het formaat van virtuele machines en het identificeren van kansen voor het afstemmen. 
+
+De volgende prestatie meter items kunnen helpen bij het valideren van de geheugen status van een SQL Server virtuele machine: 
+* [\Memory\Available mega bytes](/azure/monitoring/infrastructure-health/vmhealth-windows/winserver-memory-availmbytes)
+* [\SQLServer: geheugen Manager\Target server geheugen (KB)](/sql/relational-databases/performance-monitor/sql-server-buffer-manager-object)
+* [\SQLServer: geheugen Manager\Total server geheugen (KB)](/sql/relational-databases/performance-monitor/sql-server-buffer-manager-object)
+* [\SQLServer: buffer Manager\Lazy schrijf bewerkingen per seconde](/sql/relational-databases/performance-monitor/sql-server-buffer-manager-object)
+* [\SQLServer: buffer Bufferbeheer\gelezen Life verwachting](/sql/relational-databases/performance-monitor/sql-server-buffer-manager-object)
+
+### <a name="compute--processing"></a>Berekenen/verwerken
+
+Compute in azure wordt anders beheerd dan on-premises. On-premises servers zijn voor het laatst enkele jaren gebouwd zonder een upgrade vanwege de overhead van het management en de kosten voor het verkrijgen van nieuwe hardware. Door virtualisatie worden enkele van deze problemen verholpen, maar toepassingen zijn geoptimaliseerd voor het meest voor deel van de onderliggende hardware, wat betekent dat een belang rijke wijziging in het Resource verbruik een herverdeling van de gehele fysieke omgeving vereist. 
+
+Dit is geen uitdaging in azure waarbij een nieuwe virtuele machine in een andere reeks hardware en zelfs in een andere regio gemakkelijk te vinden is. 
+
+In azure wilt u zo veel mogelijk gebruikmaken van de resources van de virtuele machines, daarom moeten virtuele machines van Azure zodanig worden geconfigureerd dat de gemiddelde CPU zo hoog mogelijk wordt, zonder dat dit van invloed is op de werk belasting. 
+
+De volgende prestatie meter items kunnen helpen bij het valideren van de reken status van een SQL Server virtuele machine:
+* **\Processor Information (_Total) \% processor tijd**
+* **\Process (SQLSERVR) \% processor tijd**
+
+> [!NOTE] 
+> In het ideale geval kunt u zich richten op het gebruik van 80% van uw reken kracht, met pieken boven 90%, maar niet meer dan 100% gedurende langere tijd. Het is belang rijk dat u alleen de berekenings behoeften van de toepassing inricht en vervolgens wilt schalen of verlagen wanneer het bedrijf dit vereist. 
 
 ## <a name="next-steps"></a>Volgende stappen
-
-Zie [richt lijnen voor opslag configuratie voor SQL Server op Azure virtual machines](/archive/blogs/sqlserverstorageengine/storage-configuration-guidelines-for-sql-server-on-azure-vm) voor meer informatie over opslag en prestaties.
 
 Zie [beveiligings overwegingen voor SQL Server op Azure virtual machines](security-considerations-best-practices.md)voor aanbevolen procedures voor beveiliging.
 

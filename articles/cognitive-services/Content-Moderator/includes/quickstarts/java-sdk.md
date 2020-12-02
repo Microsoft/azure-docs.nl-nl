@@ -11,12 +11,12 @@ ms.topic: include
 ms.date: 10/16/2020
 ms.custom: devx-track-java, cog-serv-seo-aug-2020
 ms.author: pafarley
-ms.openlocfilehash: 6f5d1fd8a179f88677ddd6d7b1875f60836ade51
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 30360253c0b1aa34c4af1e5efdf3cf9b4d8baaa0
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92918707"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96356491"
 ---
 Ga aan de slag met de Azure Content Moderator-clientbibliotheek voor Java. Voer deze stappen uit om het Maven-pakket te installeren en de voorbeeldcode voor basistaken uit te proberen. 
 
@@ -48,7 +48,7 @@ Maak in een consolevenster (zoals cmd, PowerShell of Bash) een nieuwe map voor d
 mkdir myapp && cd myapp
 ```
 
-Voer de opdracht `gradle init` uit vanuit uw werkmap. Met deze opdracht maakt u essentiële buildbestanden voor Gradle, inclusief *build.gradle.kts* , dat tijdens runtime wordt gebruikt om de toepassing te maken en te configureren.
+Voer de opdracht `gradle init` uit vanuit uw werkmap. Met deze opdracht maakt u essentiële buildbestanden voor Gradle, inclusief *build.gradle.kts*, dat tijdens runtime wordt gebruikt om de toepassing te maken en te configureren.
 
 ```console
 gradle init --type basic
@@ -103,7 +103,7 @@ Maak in de klasse **ContentModeratorQuickstart** van de toepassing variabelen vo
 > [!IMPORTANT]
 > Ga naar Azure Portal. Als de [productnaam]-resource die u in de sectie **Vereisten** hebt gemaakt, is geïmplementeerd, klikt u op de knop **Naar de resource gaan** onder **Volgende stappen**. U vindt uw sleutel en eindpunt op de pagina **Sleutel en eindpunt** van de resource, onder **Resourcebeheer**. 
 >
-> Vergeet niet de sleutel uit uw code te verwijderen wanneer u klaar bent, en plaats deze sleutel nooit in het openbaar. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Zie het artikel Cognitive Services [Beveiliging](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-security) voor meer informatie.
+> Vergeet niet de sleutel uit uw code te verwijderen wanneer u klaar bent, en plaats deze sleutel nooit in het openbaar. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Zie het artikel Cognitive Services [Beveiliging](../../../cognitive-services-security.md) voor meer informatie.
 
 Voeg in de **hoofdmethode** van de toepassing aanroepen toe voor de methoden die in deze quickstart worden gebruikt. U definieert deze later.
 
@@ -147,7 +147,7 @@ Maak in een nieuwe methode een **[BodyModelModel](/java/api/com.microsoft.azure.
 
 ### <a name="define-helper-class"></a>Helperklasse definiëren
 
-Voeg vervolgens in uw *ContentModeratorQuickstart.java* -bestand de volgende klassedefinitie toe aan de klasse **ContentModeratorQuickstart**. Deze binnenste klasse wordt gebruikt in het proces voor afbeeldingsmoderatie.
+Voeg vervolgens in uw *ContentModeratorQuickstart.java*-bestand de volgende klassedefinitie toe aan de klasse **ContentModeratorQuickstart**. Deze binnenste klasse wordt gebruikt in het proces voor afbeeldingsmoderatie.
 
 [!code-java[](~/cognitive-services-quickstart-code/java/ContentModerator/src/main/java/ContentModeratorQuickstart.java?name=snippet_evaluationdata)]
 

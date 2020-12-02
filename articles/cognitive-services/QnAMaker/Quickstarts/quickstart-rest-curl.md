@@ -7,16 +7,16 @@ ms.date: 11/09/2020
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: RESTCURL2020FEB27
 ms.topic: quickstart
-ms.openlocfilehash: 021628b92f1068743b097a455306df742f308f86
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 7592b9fb509f39504ad2399d0e939ceca1156221
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427680"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351092"
 ---
 # <a name="quickstart-use-curl-and-rest-to-manage-knowledge-base"></a>Snelstart: cURL en REST gebruiken om Knowledge Base te beheren
 
-In deze quickstart wordt beschreven hoe u uw Knowledge Base maakt, publiceert en er query's op uitvoert. Met QnA Maker worden automatisch vragen en antwoorden opgehaald uit semi-gestructureerde inhoud, zoals veelgestelde vragen, vanuit [gegevensbronnen](../Concepts/knowledge-base.md). Het model voor de knowledge base wordt gedefinieerd in de JSON die in de hoofdtekst van de API-aanvraag wordt verzonden.
+In deze quickstart wordt beschreven hoe u uw Knowledge Base maakt, publiceert en er query's op uitvoert. Met QnA Maker worden automatisch vragen en antwoorden opgehaald uit semi-gestructureerde inhoud, zoals veelgestelde vragen, vanuit [gegevensbronnen](../index.yml). Het model voor de knowledge base wordt gedefinieerd in de JSON die in de hoofdtekst van de API-aanvraag wordt verzonden.
 
 [!INCLUDE [Custom subdomains notice](../../../../includes/cognitive-services-custom-subdomains-note.md)]
 
@@ -54,7 +54,7 @@ Als u een Knowledge Base wilt maken met de REST API's en cURL, hebt u de volgend
 |--|--|--|
 |QnA Maker-resourcenaam|URL|gebruikt voor het maken van een URL|
 |QnA Maker-resourcesleutel|Param `-h` voor de header `Ocp-Apim-Subscription-Key`|Verifiëren bij QnA Maker-service|
-|JSON met een beschrijving van de Knowledge Base|Param `-d`|[Voorbeelden](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/create#examples) van JSON|
+|JSON met een beschrijving van de Knowledge Base|Param `-d`|[Voorbeelden](/rest/api/cognitiveservices/qnamaker/knowledgebase/create#examples) van JSON|
 |Grootte van de JSON in bytes|Param `-h` voor de header `Content-Size`||
 
 De cURL-opdracht wordt uitgevoerd vanuit een BASH-shell. Bewerk deze opdracht met uw eigen resourcenaam, resourcesleutel, JSON-waarden en JSON-grootte.
@@ -89,7 +89,7 @@ Als u een Knowledge Base wilt maken met de REST API's en cURL, hebt u de volgend
 |--|--|--|
 |QnA Maker-resourcenaam|URL|gebruikt voor het maken van een URL|
 |QnA Maker-resourcesleutel|Param `-h` voor de header `Ocp-Apim-Subscription-Key`|Verifiëren bij QnA Maker-service|
-|JSON met een beschrijving van de Knowledge Base|Param `-d`|[Voorbeelden](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/create#examples) van JSON|
+|JSON met een beschrijving van de Knowledge Base|Param `-d`|[Voorbeelden](/rest/api/cognitiveservices/qnamaker/knowledgebase/create#examples) van JSON|
 |Grootte van de JSON in bytes|Param `-h` voor de header `Content-Size`||
 
 De cURL-opdracht wordt uitgevoerd vanuit een BASH-shell. Bewerk deze opdracht met uw eigen resourcenaam, resourcesleutel, JSON-waarden en JSON-grootte.
@@ -322,7 +322,7 @@ Een antwoord krijgen van de Knowledge Base wordt vanuit een afzonderlijke runtim
 |QnA Maker-resourcenaam|URL|gebruikt voor het maken van een URL|
 |QnA Maker-runtimesleutel|Param `-h` voor de header `Authorization`|De sleutel maakt deel uit van een tekenreeks die het woord `Endpointkey ` bevat. Verifiëren bij QnA Maker-service|
 |Knowledge Base-id|URL-route|`/knowledgebases/REPLACE-WITH-YOUR-KNOWLEDGE-BASE-ID`|
-|JSON die query beschrijft|Param `-d`|[Parameters voor aanvraagbody](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer#request-body) en [voorbeelden](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer#examples) van JSON|
+|JSON die query beschrijft|Param `-d`|[Parameters voor aanvraagbody](/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer#request-body) en [voorbeelden](/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer#examples) van JSON|
 |Grootte van de JSON in bytes|Param `-h` voor de header `Content-Size`||
 
 De cURL-opdracht wordt uitgevoerd vanuit een BASH-shell. Bewerk deze opdracht met uw eigen resourcenaam, resourcesleutel en Knowledge Base-id.
@@ -347,7 +347,7 @@ Een antwoord krijgen van de Knowledge Base wordt vanuit een afzonderlijke runtim
 |QnA Maker-resourcenaam|URL|gebruikt voor het maken van een URL|
 |QnA Maker-resourcesleutel|Param `-h` voor de header `Ocp-Apim-Subscription-Key`|Verifiëren bij QnA Maker-service|
 |Knowledge Base-id|URL-route|`/knowledgebases/REPLACE-WITH-YOUR-KNOWLEDGE-BASE-ID`|
-|JSON die query beschrijft|Param `-d`|[Parameters voor aanvraagbody](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer#request-body) en [voorbeelden](https://docs.microsoft.com/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer#examples) van JSON|
+|JSON die query beschrijft|Param `-d`|[Parameters voor aanvraagbody](/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer#request-body) en [voorbeelden](/rest/api/cognitiveservices/qnamakerruntime/runtime/generateanswer#examples) van JSON|
 |Grootte van de JSON in bytes|Param `-h` voor de header `Content-Size`||
 
 De cURL-opdracht wordt uitgevoerd vanuit een BASH-shell. Bewerk deze opdracht met uw eigen resourcenaam, resourcesleutel en Knowledge Base-id.
@@ -414,11 +414,11 @@ De antwoordstatus is 204 zonder resultaten. Gebruik de opdrachtregelparameter `-
 
 ## <a name="additional-resources"></a>Aanvullende bronnen
 
-* Referentiedocumentatie voor [creatie](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker4.0/knowledgebase)
-* Referentiedocumentatie voor [runtime](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker4.0/runtime)
+* Referentiedocumentatie voor [creatie](/rest/api/cognitiveservices/qnamaker4.0/knowledgebase)
+* Referentiedocumentatie voor [runtime](/rest/api/cognitiveservices/qnamaker4.0/runtime)
 * [Voorbeelden van BASH-scripts met cURL](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/curl/QnAMaker)
 
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Naslaginformatie over REST-API voor QnA Maker (V4)](https://go.microsoft.com/fwlink/?linkid=2092179)
+> [Naslaginformatie over REST-API voor QnA Maker (V4)](/rest/api/cognitiveservices/qnamaker4.0/knowledgebase)

@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: quickstart
 ms.date: 11/09/2020
-ms.openlocfilehash: b22c73b3f0626b9938608e88c3382e3f5e8d97fc
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: f1712a51fcd35c348f6177b670a7686898a0c78b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427476"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96346135"
 ---
 # <a name="quickstart-create-train-and-publish-your-qna-maker-knowledge-base"></a>Quickstart: Uw QnA Maker-knowledge base maken, trainen en publiceren
 
@@ -212,5 +212,4 @@ Verwijder de QnA Maker- en Bot-framework-resources in Azure Portal als u niet ve
 Voor meer informatie:
 
 * [Markdown-indeling in antwoorden](../reference-markdown-format.md)
-* QnA Maker-[gegevensbronnen](../concepts/knowledge-base.md).
-
+* QnA Maker-[gegevensbronnen](../index.yml).

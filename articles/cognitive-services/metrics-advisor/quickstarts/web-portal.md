@@ -10,12 +10,12 @@ ms.subservice: metrics-advisor
 ms.topic: quickstart
 ms.date: 09/30/2020
 ms.author: mbullwin
-ms.openlocfilehash: 0afd8fab6072e1563d2b2f277e8a53b56a8161c2
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 5dbf98d363429e6d22a0b7719cdc669deebd21a0
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92048233"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348633"
 ---
 # <a name="quickstart-monitor-your-first-metric-using-the-web-portal"></a>Quickstart: Uw eerste metrische gegevens controleren met behulp van de webportal
 
@@ -155,5 +155,5 @@ Na het maken van een hook bepaalt een waarschuwingsinstelling hoe en welke waars
 - [Uw gegevensfeeds onboarden](../how-tos/onboard-your-data.md)
     - [Gegevensfeeds beheren](../how-tos/manage-data-feeds.md)
     - [Configuraties voor verschillende gegevens bronnen](../data-feeds-from-different-sources.md)
-- [De REST API of clientbibliotheken gebruiken](rest-api.md)
+- [De REST API of clientbibliotheken gebruiken](./rest-api-and-client-library.md)
 - [Metrische gegevens configureren en detectieconfiguratie afstemmen](../how-tos/configure-metrics.md)

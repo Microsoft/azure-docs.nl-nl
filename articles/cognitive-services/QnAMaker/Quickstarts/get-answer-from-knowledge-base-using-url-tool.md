@@ -9,12 +9,12 @@ ms.subservice: qna-maker
 zone_pivot_groups: URL-test-interface
 ms.topic: quickstart
 ms.date: 07/16/2020
-ms.openlocfilehash: 6d03870a24e25327b43c14e57715cdaea23e700d
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: c934aca046ada07e0d6cda44221cc81a8eb4e57d
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87132879"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96345746"
 ---
 # <a name="quickstart-get-an-answer-from-knowledge-base"></a>Quickstart: Een antwoord ophalen uit Knowledge Base
 
@@ -35,7 +35,7 @@ ms.locfileid: "87132879"
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Knowledge Base testen met batchbestand](batch-testing.md)
+> [Knowledge Base testen met batchbestand](../index.yml)
 
 Meer informatie over metagegevens:
 * [Creatie: metagegevens toevoegen aan QnA-paar](../How-To/edit-knowledge-base.md#add-metadata)

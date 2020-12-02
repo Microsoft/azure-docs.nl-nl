@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 05/26/2020
 ms.custom: cog-serv-seo-aug-2020
 keywords: qna maker, chatbots met weinig code, gesprekken met meerdere paden
-ms.openlocfilehash: 6a5ea51086e3ab532966c9cea9eb866334494bba
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 9655f64da455fb7a7124a97e6dc2d1d8437d05b7
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91874421"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353133"
 ---
 # <a name="what-is-qna-maker"></a>Wat is QnA Maker?
 
@@ -22,14 +22,14 @@ QnA Maker wordt vaak gebruikt voor het bouwen van pratende clienttoepassingen, w
 
 ## <a name="when-to-use-qna-maker"></a>Wanneer kunt u QnA Maker gebruiken
 
-* **Wanneer u statische informatie hebt** - Gebruik QnA Maker als u statische informatie hebt in uw Knowledge Base van antwoorden. Deze Knowledge Base is aangepast aan uw behoeften, die u hebt opgebouwd met documenten zoals [PDF’s en URL’s](../concepts/content-types.md).
+* **Wanneer u statische informatie hebt** - Gebruik QnA Maker als u statische informatie hebt in uw Knowledge Base van antwoorden. Deze Knowledge Base is aangepast aan uw behoeften, die u hebt opgebouwd met documenten zoals [PDF’s en URL’s](../index.yml).
 * **Wanneer u hetzelfde antwoord wilt geven op een aanvraag, vraag of opdracht** - wanneer verschillende gebruikers dezelfde vraag verzenden, wordt hetzelfde antwoord geretourneerd.
 * **Als u statische informatie wilt filteren op basis van metagegevens** - [metagegevens](../how-to/metadata-generateanswer-usage.md)-tags toevoegen om extra filteropties te bieden die relevant zijn voor de gebruikers van uw clienttoepassing en de informatie. Algemene metagegevens bevatten [smalltalk](../how-to/chit-chat-knowledge-base.md), inhoudstype of indeling, doel van de inhoud en de recentheid van de inhoud.
 * **Wanneer u een bot-gesprek wat statische informatie bevat, wilt beheren**, gebruikt uw Knowledge Base de gesprekstekst of opdracht van de gebruiker en beantwoordt deze. Als het antwoord deel uitmaakt van een vooraf bepaalde gespreksstroom die in uw Knowledge Base wordt weergegeven met [context met meerdere paden](../how-to/multiturn-conversation.md), kan de bot deze stroom eenvoudig leveren.
 
 ## <a name="what-is-a-knowledge-base"></a>Wat is een Knowledge Base?
 
-QnA Maker [importeert uw inhoud](../concepts/knowledge-base.md) in een Knowledge Base met vraag- en antwoordparen. Het importeerproces extraheert informatie over de relatie tussen de onderdelen van uw gestructureerde en semi-gestructureerde inhoud om relaties tussen de vraag- en antwoordparen te suggereren. U kunt deze vraag- en antwoordparen bewerken of nieuwe paren toevoegen.
+QnA Maker [importeert uw inhoud](../index.yml) in een Knowledge Base met vraag- en antwoordparen. Het importeerproces extraheert informatie over de relatie tussen de onderdelen van uw gestructureerde en semi-gestructureerde inhoud om relaties tussen de vraag- en antwoordparen te suggereren. U kunt deze vraag- en antwoordparen bewerken of nieuwe paren toevoegen.
 
 De inhoud van het vraag- en antwoordpaar bevat:
 * Alle andere vormen van de vraag

@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: overview
 ms.date: 07/16/2020
-ms.openlocfilehash: 2016d6dfedef68c334758660e9affa0ad9b9d4a3
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 2c159e25195c5f144187268b4355c1078695e809
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94505237"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96345522"
 ---
 # <a name="whats-new-in-qna-maker"></a>Nieuwe functies in QnA Maker
 
@@ -56,17 +56,17 @@ Lees meer over de nieuwe functies van QnA Maker.
 
 ### <a name="november-2019"></a>November 2019
 
-* [US Government-cloudondersteuning](https://docs.microsoft.com/azure/azure-government/documentation-government-services-aiandcognitiveservices#qna-maker) voor QnA Maker
-* Functie voor [gesprek met meerdere paden](https://docs.microsoft.com/azure/cognitive-services/qnamaker/how-to/multiturn-conversation) in GA
-* [Ondersteuning van smalltalk](https://docs.microsoft.com/azure/cognitive-services/qnamaker/how-to/chit-chat-knowledge-base#language-support) beschikbaar voor Tier 1-talen
+* [US Government-cloudondersteuning](../../azure-government/compare-azure-government-global-azure.md#guidance-for-developers) voor QnA Maker
+* Functie voor [gesprek met meerdere paden](./how-to/multiturn-conversation.md) in GA
+* [Ondersteuning van smalltalk](./how-to/chit-chat-knowledge-base.md#language-support) beschikbaar voor Tier 1-talen
 
 ### <a name="october-2019"></a>Oktober 2019
 
-* [De taal expliciet instellen](./how-to/language-knowledge-base.md#select-language-when-creating-first-knowledge-base) voor alle Knowledge Bases in de service QnA Maker.
+* [De taal expliciet instellen](./index.yml) voor alle Knowledge Bases in de service QnA Maker.
 
 ### <a name="september-2019"></a>September 2019
 
-* Importeren en exporteren met behulp van de [XLS-bestandsindeling](concepts/content-types.md)
+* Importeren en exporteren met behulp van de [XLS-bestandsindeling](./index.yml)
 
 ### <a name="june-2019"></a>Juni 2019
 

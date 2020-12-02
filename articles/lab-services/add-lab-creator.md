@@ -3,15 +3,15 @@ title: Een gebruiker toevoegen als een Lab-Maker in Azure Lab Services
 description: In dit artikel wordt beschreven hoe u een gebruiker toevoegt aan de rol Lab Creator voor een Lab-account in Azure Lab Services. De Lab-makers kunnen Labs maken binnen dit lab-account.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 5fdeb33dab60a2fb9f1680295c355e2c7c0e775a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a6c89483744f943926f126701d28988358627a27
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91399479"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96435957"
 ---
 # <a name="add-lab-creators-to-a-lab-account-in-azure-lab-services"></a>Lab-makers toevoegen aan een Lab-account in Azure Lab Services
-In dit artikel wordt beschreven hoe u gebruikers toevoegt als Lab-makers aan een Lab-account in Azure Lab Services. Deze gebruiken vervolgens kunnen klassikale Labs maken in het lab-account. 
+In dit artikel wordt beschreven hoe u gebruikers toevoegt als Lab-makers aan een Lab-account in Azure Lab Services. Deze toepassingen kunnen vervolgens Labs maken in het lab-account. 
 
 ## <a name="add-microsoft-user-account-to-lab-creator-role"></a>Micro soft-gebruikers account toevoegen aan rol Lab Creator
 Om een leslokaallab in een labaccount in te kunnen stellen, moet de gebruiker lid zijn van de rol **Labmaker** in het labaccount. Het account dat u hebt gebruikt voor het maken van het lab-account wordt automatisch toegevoegd aan deze rol. Als u van plan bent een leslokaallab te maken met hetzelfde gebruikersaccount, kunt u deze stap overslaan. Als u een ander gebruikersaccount wilt gebruiken om een leslokaallab te maken, voert u de volgende stappen uit: 
@@ -49,15 +49,15 @@ Als u zich wilt aanmelden voor een Microsoft-account, moeten docenten het gaan [
 
 
 ### <a name="using-a-github-account"></a>Een GitHub-account gebruiken
-Docenten kunnen ook een bestaand GitHub-account gebruiken om zich te registreren bij een leslokaal Lab en zich aan te melden. Als aan de docent al een Microsoft-account is gekoppeld aan hun GitHub-account, kunnen ze zich aanmelden en hun wacht woord opgeven, zoals in de vorige sectie wordt weer gegeven. Als ze hun GitHub-account nog niet aan een Microsoft-account hebben gekoppeld, moeten ze **aanmeldings opties**selecteren:
+Docenten kunnen ook een bestaand GitHub-account gebruiken om zich te registreren bij een leslokaal Lab en zich aan te melden. Als aan de docent al een Microsoft-account is gekoppeld aan hun GitHub-account, kunnen ze zich aanmelden en hun wacht woord opgeven, zoals in de vorige sectie wordt weer gegeven. Als ze hun GitHub-account nog niet aan een Microsoft-account hebben gekoppeld, moeten ze **aanmeldings opties** selecteren:
 
 ![Koppeling voor aanmeldings opties](./media/how-to-configure-student-usage/signin-options.png)
 
-Selecteer **Aanmelden met github**op de pagina **aanmeldings opties** .
+Selecteer **Aanmelden met github** op de pagina **aanmeldings opties** .
 
 ![Aanmelden met GitHub-koppeling](./media/how-to-configure-student-usage/signin-github.png)
 
-Ten slotte wordt er gevraagd om een Microsoft-account te maken dat is gekoppeld aan het GitHub-account. Dit gebeurt automatisch wanneer de docent **volgende**selecteert.  De docent wordt dan onmiddellijk aangemeld en is verbonden met het leslokaal Lab.
+Ten slotte wordt er gevraagd om een Microsoft-account te maken dat is gekoppeld aan het GitHub-account. Dit gebeurt automatisch wanneer de docent **volgende** selecteert.  De docent wordt dan onmiddellijk aangemeld en is verbonden met het leslokaal Lab.
 
 
 ## <a name="next-steps"></a>Volgende stappen
@@ -66,4 +66,4 @@ Zie de volgende artikelen:
 - [Labs maken en beheren als labeigenaar](how-to-manage-classroom-labs.md)
 - [Sjablonen instellen en publiceren als labeigenaar](how-to-create-manage-template.md)
 - [Het gebruik van een lab configureren en beheren als labeigenaar](how-to-configure-student-usage.md)
-- [Als test gebruiker toegang krijgen tot klassikale Labs](how-to-use-classroom-lab.md)
+- [Als test gebruiker, Access Labs](how-to-use-classroom-lab.md)

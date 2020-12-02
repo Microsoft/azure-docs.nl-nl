@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: jmartens
 author: j-martens
 ms.date: 09/10/2020
-ms.openlocfilehash: 53a30f92adaf25d87897e98834cda2d5f92b874c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 03825e0f091df01b98355dd6789eb5c9cb2897b0
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96012268"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96444537"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
@@ -43,7 +43,7 @@ Zie [de lijst met bekende problemen](resource-known-issues.md) met bekende bugs 
     + Verbeterde documentatie voor `OutputDatasetConfig.register_on_complete` om te bepalen wat er gebeurt wanneer de naam al bestaat.
     + Het opgeven van invoer-en uitvoer namen van een gegevensset die de kans op conflicten met gemeen schappelijke omgevings variabelen hebben, resulteren nu in een waarschuwing
     + De para meter is opnieuw bedoelt `grant_workspace_access` bij het registreren van gegevens opslag. Stel deze in op `True` om toegang te krijgen tot gegevens achter het virtuele netwerk vanaf machine learning Studio.
-      [Meer informatie](https://docs.microsoft.com/azure/machine-learning/how-to-enable-studio-virtual-network)
+      [Meer informatie](./how-to-enable-studio-virtual-network.md)
     + De API van de gekoppelde service is verfijnd. In plaats van een resource-id op te geven, hebben we drie afzonderlijke para meters sub_id, RG en de naam gedefinieerd in de configuratie.
     + Als u wilt dat klanten zelf problemen met token beschadiging kunnen oplossen, kunt u de synchronisatie van werk ruimte-tokens op een open bare manier inschakelen.
     + Met deze wijziging kan een lege teken reeks worden gebruikt als waarde voor een script_param
@@ -109,8 +109,8 @@ Meer informatie over de [segmentatie van afbeeldings instanties](how-to-label-im
 
 ### <a name="azure-machine-learning-studio-notebooks-experience-october-update"></a>Ervaring met Azure Machine Learning Studio notitie blokken (update van oktober)
 + **Nieuwe functies**
-  + [Volledige ondersteuning voor virtueel netwerk](https://docs.microsoft.com/azure/machine-learning/how-to-enable-studio-virtual-network)
-  + [Focus modus](https://docs.microsoft.com/azure/machine-learning/how-to-run-jupyter-notebooks#focus-mode)
+  + [Volledige ondersteuning voor virtueel netwerk](./how-to-enable-studio-virtual-network.md)
+  + [Focus modus](./how-to-run-jupyter-notebooks.md#focus-mode)
   + Notitie blokken opslaan CTRL-S
   + Regel nummers
 
@@ -797,7 +797,7 @@ U kunt nu machine learning-notitie blokken en bestanden rechtstreeks maken, bewe
 
 Toegang tot de volgende webgebaseerde hulp middelen voor ontwerpen vanuit Studio:
     
-| Webgebaseerd hulp programma  |     Description  |
+| Webgebaseerd hulp programma  |     Beschrijving  |
 |---|---|
 | Azure ML Studio-notebooks   |     Eerste in-class ontwerpen voor notebook-bestanden en biedt ondersteuning voor alle bewerkingen die beschikbaar zijn in de Azure ML python SDK. | 
 
@@ -1309,7 +1309,7 @@ Vanuit de Studio kunt u Azure Machine Learning assets trainen, testen, implement
 
 Toegang tot de volgende webgebaseerde hulp middelen voor ontwerpen vanuit Studio:
 
-| Webgebaseerd hulp programma | Description | 
+| Webgebaseerd hulp programma | Beschrijving | 
 |-|-|-|
 | VM van notebook (preview-versie) | Volledig beheerd werk station in de Cloud | 
 | [Automatische machine learning](tutorial-first-experiment-automated-ml.md) (preview-versie) | Geen code-ervaring voor het automatiseren van de ontwikkeling van machine learning modellen | 

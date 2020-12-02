@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/27/2020
 ms.author: yelevin
-ms.openlocfilehash: e80f7d26fb7ab598651d08b4c1b6478b2ae75e3b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a7405824d2477d2d39c45a56ae545e58a090c321
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87563055"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436603"
 ---
 # <a name="connect-azure-sentinel-to-aws-cloudtrail"></a>Azure Sentinel verbinden met AWS CloudTrail
 
@@ -42,7 +42,7 @@ U moet schrijf machtiging hebben voor de Azure Sentinel-werk ruimte.
 
 1. Volg de instructies onder **configuratie** met behulp van de volgende stappen.
  
-1.  Selecteer in uw Amazon Web Services-console onder **beveiliging, identiteit & naleving**de optie **iam**.
+1.  Selecteer in uw Amazon Web Services-console onder **beveiliging, identiteit & naleving** de optie **iam**.
 
     ![AWS1](./media/connect-aws/aws-1.png)
 
@@ -74,17 +74,17 @@ U moet schrijf machtiging hebben voor de Azure Sentinel-werk ruimte.
 
     ![AWS8](./media/connect-aws/aws-8.png)
 
-1.  Kopieer de **functie Arn**. Plak in de Azure Sentinel-Portal in het scherm Amazon Web Services-connector het in de **rol om een veld toe te voegen** en op **toevoegen**te klikken.
+1.  Kopieer de **functie Arn**. Plak in de Azure Sentinel-Portal in het scherm Amazon Web Services-connector het in de **rol om een veld toe te voegen** en op **toevoegen** te klikken.
 
     ![AWS9](./media/connect-aws/aws-9.png)
 
 1. Als u het relevante schema in Log Analytics voor AWS gebeurtenissen wilt gebruiken, zoekt u naar **AWSCloudTrail**.
 
-
+    > [!IMPORTANT]
+    > Vanaf 1 december 2020 is het veld **AwsRequestId** vervangen door het veld **AwsRequestId_** (het toegevoegde onderstrepings teken). De gegevens in het veld Old **AwsRequestId** blijven behouden aan het einde van de opgegeven Bewaar periode van de klant.
 
 ## <a name="next-steps"></a>Volgende stappen
 In dit document hebt u geleerd hoe u AWS CloudTrail verbindt met Azure Sentinel. Zie de volgende artikelen voor meer informatie over Azure Sentinel:
 - Meer informatie over het [verkrijgen van inzicht in uw gegevens en mogelijke bedreigingen](quickstart-get-visibility.md).
 - Ga aan de slag met [het detecteren van bedreigingen met Azure Sentinel](tutorial-detect-threats-built-in.md).
 - [Gebruik werkmappen](tutorial-monitor-your-data.md) om uw gegevens te bewaken.
-

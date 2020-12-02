@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/13/2020
-ms.openlocfilehash: 23cf8a79c4978ccb3a65ad968b2ed5a01bb3d0ec
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: 554b3ad1dbe1e736300387aefde195b9054ab326
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93242327"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437096"
 ---
 # <a name="azure-database-for-mysql-data-encryption-with-a-customer-managed-key"></a>Gegevens versleuteling Azure Database for MySQL met een door de klant beheerde sleutel
 
@@ -36,9 +36,9 @@ Gegevens versleuteling met door de klant beheerde sleutels voor Azure Database f
 
 ## <a name="terminology-and-description"></a>Terminologie en beschrijving
 
-**Gegevens versleutelings sleutel (dek)** : een symmetrische AES256-sleutel die wordt gebruikt om een partitie of gegevens blok te versleutelen. Het versleutelen van elk gegevens blok met een andere sleutel maakt crypto-analyse aanvallen lastiger. Toegang tot DEKs is vereist voor de resource provider of het toepassings exemplaar dat een specifiek blok versleutelt en ontsleutelt. Wanneer u een DEK vervangt door een nieuwe sleutel, moeten alleen de gegevens in het bijbehorende blok opnieuw worden versleuteld met de nieuwe sleutel.
+**Gegevens versleutelings sleutel (dek)**: een symmetrische AES256-sleutel die wordt gebruikt om een partitie of gegevens blok te versleutelen. Het versleutelen van elk gegevens blok met een andere sleutel maakt crypto-analyse aanvallen lastiger. Toegang tot DEKs is vereist voor de resource provider of het toepassings exemplaar dat een specifiek blok versleutelt en ontsleutelt. Wanneer u een DEK vervangt door een nieuwe sleutel, moeten alleen de gegevens in het bijbehorende blok opnieuw worden versleuteld met de nieuwe sleutel.
 
-Sleutel versleutelings **sleutel (KEK)** : een versleutelings sleutel die wordt gebruikt om de DEKs te versleutelen. Een KEK die nooit verlaat Key Vault laat de DEKs zelf versleutelen en beheren. De entiteit die toegang heeft tot de KEK, kan afwijken van de entiteit waarvoor de DEK is vereist. Omdat de KEK is vereist voor het ontsleutelen van de DEKs, is de KEK een specifiek punt waarmee DEKs effectief kan worden verwijderd door het verwijderen van de KEK.
+Sleutel versleutelings **sleutel (KEK)**: een versleutelings sleutel die wordt gebruikt om de DEKs te versleutelen. Een KEK die nooit verlaat Key Vault laat de DEKs zelf versleutelen en beheren. De entiteit die toegang heeft tot de KEK, kan afwijken van de entiteit waarvoor de DEK is vereist. Omdat de KEK is vereist voor het ontsleutelen van de DEKs, is de KEK een specifiek punt waarmee DEKs effectief kan worden verwijderd door het verwijderen van de KEK.
 
 De DEKs, versleuteld met de KEKs, worden afzonderlijk opgeslagen. Alleen een entiteit met toegang tot de KEK kan deze DEKs ontsleutelen. Zie [beveiliging in versleuteling op rest](../security/fundamentals/encryption-atrest.md)voor meer informatie.
 
@@ -48,9 +48,9 @@ De DEKs, versleuteld met de KEKs, worden afzonderlijk opgeslagen. Alleen een ent
 
 Voor een MySQL-server voor het gebruik van door de klant beheerde sleutels die zijn opgeslagen in Key Vault voor versleuteling van de DEK, geeft een Key Vault beheerder de volgende toegangs rechten voor de server:
 
-* **ophalen** : voor het ophalen van het open bare onderdeel en de eigenschappen van de sleutel in de sleutel kluis.
-* **wrapKey** : de dek kan worden versleuteld. De versleutelde DEK wordt opgeslagen in de Azure Database for MySQL.
-* **sleutel uitpakken** : de dek kan worden ontsleuteld. Azure Database for MySQL moet de ontsleutelde DEK hebben om de gegevens te versleutelen/ontsleutelen
+* **ophalen**: voor het ophalen van het open bare onderdeel en de eigenschappen van de sleutel in de sleutel kluis.
+* **wrapKey**: de dek kan worden versleuteld. De versleutelde DEK wordt opgeslagen in de Azure Database for MySQL.
+* **sleutel uitpakken**: de dek kan worden ontsleuteld. Azure Database for MySQL moet de ontsleutelde DEK hebben om de gegevens te versleutelen/ontsleutelen
 
 De sleutel kluis beheerder kan [logboek registratie van Key Vault controle gebeurtenissen ook inschakelen](../azure-monitor/insights/key-vault-insights-overview.md), zodat ze later kunnen worden gecontroleerd.
 
@@ -61,14 +61,17 @@ Wanneer de server is geconfigureerd voor het gebruik van de door de klant beheer
 Hier volgen de vereisten voor het configureren van Key Vault:
 
 * Key Vault en Azure Database for MySQL moeten deel uitmaken van dezelfde Azure Active Directory (Azure AD)-Tenant. Cross-Tenant Key Vault en server interacties worden niet ondersteund. Als u de Key Vault resource later wilt verplaatsen, moet u de gegevens versleuteling opnieuw configureren.
-* Schakel de functie voor het voorlopig verwijderen van de sleutel kluis in om te beschermen tegen gegevens verlies als een onbedoelde sleutel (of Key Vault) wordt verwijderd. Voorlopig verwijderde bronnen worden 90 dagen bewaard, tenzij de gebruiker deze in de tussen tijd herstelt of verwijdert. De herstel-en opschoon acties hebben hun eigen machtigingen die zijn gekoppeld aan een Key Vault toegangs beleid. De functie voor voorlopig verwijderen is standaard uitgeschakeld, maar u kunt deze inschakelen via Power shell of de Azure CLI (Houd er rekening mee dat u deze niet via de Azure Portal hoeft in te scha kelen).
+* Schakel de [voorlopig verwijderen] ((. /Key-Vault/General/soft-delete-overview.MD) op de sleutel kluis met de Bewaar periode ingesteld op **90 dagen**, om gegevens verlies te beschermen als een onbedoelde sleutel (of Key Vault) wordt verwijderd. Voorlopig verwijderde resources worden standaard 90 dagen bewaard, tenzij de Bewaar periode expliciet is ingesteld op <= 90 dagen. De herstel-en opschoon acties hebben hun eigen machtigingen die zijn gekoppeld aan een Key Vault toegangs beleid. De functie voor voorlopig verwijderen is standaard uitgeschakeld, maar u kunt deze inschakelen via Power shell of de Azure CLI (Houd er rekening mee dat u deze niet via de Azure Portal hoeft in te scha kelen).
+* Schakel de functie [beveiliging opschonen](../key-vault/general/soft-delete-overview.md#purge-protection) in op de sleutel kluis waarbij de Bewaar periode is ingesteld op **90 dagen**. Het opschonen van de beveiliging kan alleen worden ingeschakeld wanneer het voorlopig verwijderen is ingeschakeld. Deze kan worden ingeschakeld via Azure CLI of Power shell. Wanneer het leegmaken van de beveiliging is ingeschakeld, kan een kluis of een object in de verwijderde status pas worden verwijderd nadat de Bewaar periode is verstreken. Voorlopig verwijderde kluizen en objecten kunnen nog steeds worden hersteld, zodat het Bewaar beleid wordt gevolgd. 
 * Verleen de Azure Database for MySQL toegang tot de sleutel kluis met de machtigingen Get, wrapKey en sleutel uitpakken met behulp van de unieke beheerde identiteit. In de Azure Portal wordt de unieke service-identiteit automatisch gemaakt wanneer gegevens versleuteling is ingeschakeld op de MySQL. Zie [Configure Data Encryption for MySQL](howto-data-encryption-portal.md) voor gedetailleerde stapsgewijze instructies voor het gebruik van de Azure Portal.
 
 Hieronder vindt u de vereisten voor het configureren van de door de klant beheerde sleutel:
 
 * De door de klant beheerde sleutel die moet worden gebruikt voor het versleutelen van de DEK kan alleen asymmetrisch zijn: RSA 2048.
-* De datum en tijd waarop de sleutel wordt geactiveerd, moeten in het verleden liggen. De verval datum (indien ingesteld) moet een datum en tijd in de toekomst zijn.
+* De datum en tijd waarop de sleutel wordt geactiveerd, moeten in het verleden liggen. De verval datum is niet ingesteld.
 * De sleutel moet de *ingeschakelde* status hebben.
+* Voor de sleutel moet [zacht verwijderen](../key-vault/general/soft-delete-overview.md) met de Bewaar periode zijn ingesteld op **90 dagen**.
+* Voor de u moet de functie voor [opschonen zijn ingeschakeld](../key-vault/general/soft-delete-overview.md#purge-protection).
 * Als u [een bestaande sleutel](/rest/api/keyvault/ImportKey/ImportKey) in de sleutel kluis importeert, moet u deze opgeven in de ondersteunde bestands indelingen ( `.pfx` , `.byok` , `.backup` ).
 
 ## <a name="recommendations"></a>Aanbevelingen
@@ -80,7 +83,7 @@ Wanneer u gegevens versleuteling gebruikt door gebruik te maken van een door de 
 * Zorg ervoor dat Key Vault en Azure Database for MySQL zich in dezelfde regio bevinden, zodat u snel toegang hebt tot DEK-terugloop en uitpakkende bewerkingen.
 * Vergrendel de Azure-sleutel kluis alleen op **privé-eind punten en geselecteerde netwerken** en sta alleen *vertrouwde micro soft* -Services toe om de bronnen te beveiligen.
 
-    :::image type="content" source="media/concepts-data-access-and-security-data-encryption/keyvault-trusted-service.png" alt-text="Diagram waarin een overzicht van Bring Your Own Key wordt weer gegeven":::
+    :::image type="content" source="media/concepts-data-access-and-security-data-encryption/keyvault-trusted-service.png" alt-text="Trusted-service-with-Azure":::
 
 Hier vindt u aanbevelingen voor het configureren van een door de klant beheerde sleutel:
 
@@ -90,7 +93,7 @@ Hier vindt u aanbevelingen voor het configureren van een door de klant beheerde 
 
 ## <a name="inaccessible-customer-managed-key-condition"></a>Niet-toegankelijke door de klant beheerde sleutel voorwaarde
 
-Wanneer u gegevens versleuteling configureert met een door de klant beheerde sleutel in Key Vault, is continue toegang tot deze sleutel vereist voor de server om online te blijven. Als de server geen toegang meer heeft tot de door de klant beheerde sleutel in Key Vault, begint de server binnen 10 minuten alle verbindingen te weigeren. De server geeft een bijbehorend fout bericht en wijzigt de status van de server in niet- *toegankelijk* . Een van de redenen waarom de server deze status kan bereiken, is:
+Wanneer u gegevens versleuteling configureert met een door de klant beheerde sleutel in Key Vault, is continue toegang tot deze sleutel vereist voor de server om online te blijven. Als de server geen toegang meer heeft tot de door de klant beheerde sleutel in Key Vault, begint de server binnen 10 minuten alle verbindingen te weigeren. De server geeft een bijbehorend fout bericht en wijzigt de status van de server in niet- *toegankelijk*. Een van de redenen waarom de server deze status kan bereiken, is:
 
 * Als er een herstel server voor een punt in de tijd wordt gemaakt voor uw Azure Database for MySQL waarvoor gegevens versleuteling is ingeschakeld, heeft de zojuist gemaakte server de status niet *toegankelijk* . U kunt dit oplossen via [Azure Portal](howto-data-encryption-portal.md#using-data-encryption-for-restore-or-replica-servers) of [cli](howto-data-encryption-cli.md#using-data-encryption-for-restore-or-replica-servers).
 * Als we een lees replica maken voor uw Azure Database for MySQL waarvoor gegevens versleuteling is ingeschakeld, heeft de replica server de status niet *toegankelijk* . U kunt dit oplossen via [Azure Portal](howto-data-encryption-portal.md#using-data-encryption-for-restore-or-replica-servers) of [cli](howto-data-encryption-cli.md#using-data-encryption-for-restore-or-replica-servers).
@@ -135,11 +138,11 @@ Voor Azure Database for MySQL is de ondersteuning voor het versleutelen van gege
 * Deze functie wordt alleen ondersteund in regio's en servers die opslag ondersteunen tot 16 TB. Raadpleeg de sectie opslag [hier](concepts-pricing-tiers.md#storage) in de documentatie voor de lijst met Azure-regio's die opslag tot 16TB ondersteunen.
 
     > [!NOTE]
-    > - Alle nieuwe MySQL-servers die zijn gemaakt in de hierboven vermelde regio's, ondersteuning voor versleuteling met klant Manager-sleutels is **beschikbaar** . De PITR-server (Point-in-time) is niet in aanmerking komende, of de Lees replica is niet in theorie ' nieuw '.
+    > - Alle nieuwe MySQL-servers die zijn gemaakt in de hierboven vermelde regio's, ondersteuning voor versleuteling met klant Manager-sleutels is **beschikbaar**. De PITR-server (Point-in-time) is niet in aanmerking komende, of de Lees replica is niet in theorie ' nieuw '.
     > - Als u wilt valideren of uw ingerichte server Maxi maal 16TB ondersteunt, gaat u naar de Blade prijs categorie in de portal en ziet u de maximale opslag grootte die wordt ondersteund door uw ingerichte server. Als u de schuif regelaar omhoog kunt verplaatsen naar 4 TB, ondersteunt uw server mogelijk geen versleuteling met door de klant beheerde sleutels. De gegevens worden echter te allen tijde versleuteld met behulp van service beheerde sleutels. Neem contact op met AskAzureDBforMySQL@service.microsoft.com Als u vragen hebt.
 
 * Versleuteling wordt alleen ondersteund met de cryptografische sleutel RSA 2048.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over [het instellen van gegevens versleuteling met een door de klant beheerde sleutel voor uw Azure-Data Base voor MySQL met behulp van de Azure Portal](howto-data-encryption-portal.md).
+Meer informatie over het instellen van gegevens versleuteling met een door de klant beheerde sleutel voor uw Azure-Data Base voor MySQL met behulp van de [Azure Portal](howto-data-encryption-portal.md) en [Azure cli](howto-data-encryption-cli.md).

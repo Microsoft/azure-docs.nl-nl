@@ -1,19 +1,19 @@
 ---
 title: Continue integratie en continue implementatie naar Azure IoT Edge-apparaten-Azure IoT Edge
 description: Continue integratie en continue implementatie instellen met behulp van YAML-Azure IoT Edge met Azure DevOps, Azure-pijp lijnen
-author: shizn
+author: kgremban
 manager: philmea
 ms.author: kgremban
 ms.date: 08/20/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 57031d4ccdfdba73b8b36c8dc943280a8280ffcc
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 444ab8ccfe5a8441a4fd7d280e33d8e929d9387d
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92048522"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96435886"
 ---
 # <a name="continuous-integration-and-continuous-deployment-to-azure-iot-edge-devices"></a>Continue integratie en continue implementatie naar Azure IoT Edge-apparaten
 
@@ -32,15 +32,15 @@ In dit artikel leert u hoe u de ingebouwde [Azure IOT Edge taken](/azure/devops/
 
 Tenzij anders aangegeven, verkennen de procedures in dit artikel niet alle beschik bare functies via taak parameters. Raadpleeg de volgende artikelen voor meer informatie:
 
-* [Taak versie](/azure/devops/pipelines/process/tasks?tabs=classic&view=azure-devops#task-versions)
+* [Taak versie](/azure/devops/pipelines/process/tasks?tabs=yaml#task-versions)
 * **Geavanceerd** : Geef modules op die u niet wilt maken, indien van toepassing.
-* [Beheer opties](/azure/devops/pipelines/process/tasks?tabs=classic&view=azure-devops#task-control-options)
-* [Omgevings variabelen](/azure/devops/pipelines/process/variables?tabs=yaml%252cbatch&view=azure-devops#environment-variables)
-* [Uitvoer variabelen](/azure/devops/pipelines/process/variables?tabs=yaml%252cbatch&view=azure-devops#use-output-variables-from-tasks)
+* [Beheer opties](/azure/devops/pipelines/process/tasks?tabs=yaml#task-control-options)
+* [Omgevings variabelen](/azure/devops/pipelines/process/variables?tabs=yaml#environment-variables)
+* [Uitvoer variabelen](/azure/devops/pipelines/process/variables?tabs=yaml#use-output-variables-from-tasks)
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een Azure opslag plaatsen-opslag plaats. Als u er nog geen hebt, kunt u [een nieuwe Git-opslag plaats in uw project maken](/azure/devops/repos/git/create-new-repo?tabs=new-nav&view=vsts). Voor dit artikel hebt u een opslag plaats gemaakt met de naam **IoTEdgeRepo**.
+* Een Azure opslag plaatsen-opslag plaats. Als u er nog geen hebt, kunt u [een nieuwe Git-opslag plaats in uw project maken](/azure/devops/repos/git/create-new-repo). Voor dit artikel hebt u een opslag plaats gemaakt met de naam **IoTEdgeRepo**.
 * Een IoT Edge oplossing die is doorgevoerd en gepusht naar uw opslag plaats. Als u een nieuwe voorbeeld oplossing wilt maken voor het testen van dit artikel, volgt u de stappen in [modules voor ontwikkel-en fout opsporing in Visual Studio code](how-to-vs-code-develop-module.md) of [ontwikkel en debug C#-modules in Visual Studio](./how-to-visual-studio-develop-module.md). Voor dit artikel hebben we een oplossing in onze opslag plaats gemaakt met de naam **IoTEdgeSolution**, die de code bevat voor een module met de naam **filtermodule**.
 
    Voor dit artikel hoeft u alleen de map Solution te maken die is gemaakt door de IoT Edge sjablonen in Visual Studio code of Visual Studio. U hoeft deze code niet te bouwen, te pushen, te implementeren of te debuggen voordat u doorgaat. Deze processen worden ingesteld in azure-pijp lijnen.
@@ -50,7 +50,7 @@ Tenzij anders aangegeven, verkennen de procedures in dit artikel niet alle besch
 * Een container register waar u module installatie kopieën kunt pushen. U kunt [Azure container Registry](../container-registry/index.yml) of een REGI ster van derden gebruiken.
 * Een actieve Azure [IOT-hub](../iot-hub/iot-hub-create-through-portal.md) met ten minste twee IOT edge-apparaten voor het testen van de afzonderlijke test-en productie-implementatie fasen. U kunt de Quick Start-artikelen volgen om een IoT Edge apparaat te maken in [Linux](quickstart-linux.md) of [Windows](quickstart.md)
 
-Zie [uw code delen met Visual Studio en Azure opslag plaatsen](/azure/devops/repos/git/share-your-code-in-git-vs?view=vsts) voor meer informatie over het gebruik van Azure opslag plaatsen
+Zie [uw code delen met Visual Studio en Azure opslag plaatsen](/azure/devops/repos/git/share-your-code-in-git-vs) voor meer informatie over het gebruik van Azure opslag plaatsen
 
 ## <a name="create-a-build-pipeline-for-continuous-integration"></a>Een build-pijp lijn maken voor continue integratie
 
@@ -64,7 +64,7 @@ In deze sectie maakt u een nieuwe build-pijp lijn. U configureert de pijp lijn z
 
     ![Een nieuwe build-pijp lijn maken met behulp van de knop nieuwe pijp lijn](./media/how-to-continuous-integration-continuous-deployment/add-new-pipeline.png)
 
-3. Selecteer op de pagina **waar is uw code? de** optie **Azure opslag plaatsen `YAML` Git **. Als u de klassieke editor wilt gebruiken om de build-pijp lijnen van uw project te maken, raadpleegt u de [klassieke hand leiding](how-to-continuous-integration-continuous-deployment-classic.md)voor de editor.
+3. Selecteer op de pagina **waar is uw code? de** optie **Azure opslag plaatsen `YAML` Git**. Als u de klassieke editor wilt gebruiken om de build-pijp lijnen van uw project te maken, raadpleegt u de [klassieke hand leiding](how-to-continuous-integration-continuous-deployment-classic.md)voor de editor.
 
 4. Selecteer de opslag plaats waarvoor u een pijp lijn maakt.
 
@@ -112,13 +112,13 @@ In deze sectie maakt u een nieuwe build-pijp lijn. U configureert de pijp lijn z
        | --- | --- |
        | Bronmap | De bronmap waaruit moet worden gekopieerd. Empty is de hoofdmap van de opslag plaats. Variabelen gebruiken als bestanden zich niet in de opslag plaats bevinden. Bijvoorbeeld: `$(agent.builddirectory)`.
        | Inhoud | Twee regels toevoegen: `deployment.template.json` en `**/module.json` . |
-       | Doelmap | Geef de variabele op `$(Build.ArtifactStagingDirectory)` . Zie [Build Varia bles](/azure/devops/pipelines/build/variables?tabs=yaml&view=azure-devops#build-variables) voor meer informatie over de beschrijving. |
+       | Doelmap | Geef de variabele op `$(Build.ArtifactStagingDirectory)` . Zie [Build Varia bles](/azure/devops/pipelines/build/variables?tabs=yaml#build-variables) voor meer informatie over de beschrijving. |
 
    * Taak: **Build-artefacten publiceren**
 
        | Parameter | Beschrijving |
        | --- | --- |
-       | Pad voor publiceren | Geef de variabele op `$(Build.ArtifactStagingDirectory)` . Zie [Build Varia bles](/azure/devops/pipelines/build/variables?tabs=yaml&view=azure-devops#build-variables) voor meer informatie over de beschrijving. |
+       | Pad voor publiceren | Geef de variabele op `$(Build.ArtifactStagingDirectory)` . Zie [Build Varia bles](/azure/devops/pipelines/build/variables?tabs=yaml#build-variables) voor meer informatie over de beschrijving. |
        | Naam van het artefact | Geef de standaard naam op: `drop` |
        | Publicatie locatie artefact | De standaard locatie gebruiken: `Azure Pipelines` |
 

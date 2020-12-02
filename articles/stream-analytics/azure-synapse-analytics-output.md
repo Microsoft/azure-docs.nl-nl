@@ -7,16 +7,16 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/25/2020
-ms.openlocfilehash: 0b3bec9c4d4476b95279e35953ff89177f4488d4
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 63d03559b2a30020ed2e8bd1cd030855b8fb20b7
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305842"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96445106"
 ---
 # <a name="azure-synapse-analytics-output-from-azure-stream-analytics"></a>Azure Synapse Analytics-uitvoer van Azure Stream Analytics
 
-[Azure Synapse Analytics](https://azure.microsoft.com/services/synapse-analytics) (voorheen SQL Data Warehouse) is een oneindige analyse service waarmee bedrijfs gegevensopslag en Big data-analyses worden gecombineerd. 
+[Azure Synapse Analytics](https://azure.microsoft.com/services/synapse-analytics) is een oneindig analyse service waarmee bedrijfs gegevensopslag en Big data-analyses worden gecombineerd. 
 
 Azure Stream Analytics-taken kunnen worden uitgevoerd naar een specifieke SQL-groeps tabel in azure Synapse Analytics en kunnen doorvoer snelheden tot 200 MB per seconde verwerken. Dit biedt ondersteuning voor de meest veeleisende, realtime analyse-en hot-path gegevens verwerking voor werk belastingen, zoals rapportage en dash boarding.  
 

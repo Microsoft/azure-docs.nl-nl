@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 955e77bc947baed889de24ce34e7acec737164f6
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: f13dfa4221f8f09c24cce3a451f3180d15ee3b99
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92097300"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96435754"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Procedure: de implementatie van uw hybride Azure Active Directory-koppeling plannen
 
@@ -105,6 +105,8 @@ Als uw Windows 10-domein aangesloten apparaten zijn die zijn [geregistreerd](ove
 - Hybride Azure AD-deelname wordt ondersteund voor FIPS-compatibele TPM 2,0 en wordt niet ondersteund voor TPM 1,2. Als uw apparaten FIPS-compatibele TPM 1,2 hebben, moet u ze uitschakelen voordat u verdergaat met hybride Azure AD-deelname. Micro soft biedt geen hulpprogram ma's voor het uitschakelen van de FIPS-modus voor Tpm's omdat deze afhankelijk is van de TPM-fabrikant. Neem contact op met uw OEM voor ondersteuning. 
 
 - Vanaf de release van Windows 10 1903 worden Tpm's 1,2 niet gebruikt in combi natie met hybride Azure AD-deelname en-apparaten met die Tpm's. dit wordt beschouwd als als ze geen TPM hebben.
+
+- UPN-wijzigingen worden alleen ondersteund bij het starten van de update voor Windows 10 2004. Voor apparaten met een update van Windows 10 2004 hebben gebruikers problemen met eenmalige aanmelding en voorwaardelijke toegang op hun apparaten. Om dit probleem op te lossen, moet u het apparaat uit Azure AD loskoppelen (Voer ' dsregcmd/leave ' uit met verhoogde bevoegdheden) en opnieuw lid worden (automatisch uitgevoerd). Gebruikers die zich aanmelden met Windows hello voor bedrijven, hebben echter niet te maken met dit probleem.
 
 ## <a name="review-controlled-validation-of-hybrid-azure-ad-join"></a>Gecontroleerde validatie van hybride Azure AD-deelname controleren
 

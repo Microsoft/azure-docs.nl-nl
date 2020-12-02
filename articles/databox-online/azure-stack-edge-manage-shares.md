@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 03/25/2019
 ms.author: alkohli
-ms.openlocfilehash: d7ff32b33a8eab5c6729d84d38fec2e5b2c87449
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4d43b70c8f958ad37b6ac2d0ee043d5f07d11da9
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91777204"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96444593"
 ---
 # <a name="use-the-azure-portal-to-manage-shares-on-azure-stack-edge-pro"></a>De Azure Portal gebruiken om shares te beheren op Azure Stack Edge Pro
 
@@ -51,10 +51,10 @@ Voer in de Azure Portal de volgende stappen uit om een share te maken.
 
 4. Geef het **opslagaccount** op waar de share zich bevindt. In het opslagaccount met de naam van de share wordt een container gemaakt, als deze nog niet bestaat. Als de container al bestaat, wordt de bestaande container gebruikt.
 
-5. Kies in de vervolg keuzelijst de **opslag service** van blok-blob, pagina-BLOB of bestanden. Het type service dat u kiest, is afhankelijk van de indeling waarin u de gegevens in Azure wilt opslaan. In dit geval willen we bijvoorbeeld dat de gegevens zich bevinden als blok-blobs in Azure. Daarom selecteren we **blok-BLOB**. Als u **pagina-BLOB**kiest, moet u ervoor zorgen dat uw gegevens 512 bytes zijn uitgelijnd. Gebruik de **pagina-BLOB** voor VHD'S of VHDX die altijd 512 bytes zijn uitgelijnd.
+5. Kies in de vervolg keuzelijst de **opslag service** van blok-blob, pagina-BLOB of bestanden. Het type service dat u kiest, is afhankelijk van de indeling waarin u de gegevens in Azure wilt opslaan. In dit geval willen we bijvoorbeeld dat de gegevens zich bevinden als blok-blobs in Azure. Daarom selecteren we **blok-BLOB**. Als u **pagina-BLOB** kiest, moet u ervoor zorgen dat uw gegevens 512 bytes zijn uitgelijnd. Gebruik de **pagina-BLOB** voor VHD'S of VHDX die altijd 512 bytes zijn uitgelijnd.
 
    > [!IMPORTANT]
-   > Controleer of voor het Azure-opslagaccount dat u gebruikt geen onveranderbaarheidsbeleid is ingesteld als u het account gebruikt in combinatie met een Azure Stack Edge Pro- of Data Box Gateway-apparaat. Zie [Beleid voor onveranderbaarheid instellen en beheren voor blobopslag](https://docs.microsoft.com/azure/storage/blobs/storage-blob-immutability-policies-manage) voor meer informatie.
+   > Controleer of voor het Azure-opslagaccount dat u gebruikt geen onveranderbaarheidsbeleid is ingesteld als u het account gebruikt in combinatie met een Azure Stack Edge Pro- of Data Box Gateway-apparaat. Zie [Beleid voor onveranderbaarheid instellen en beheren voor blobopslag](../storage/blobs/storage-blob-immutability-policies-manage.md) voor meer informatie.
 
 6. Deze stap hangt af van of u een SMB- of een NFS-share gaat maken.
    - **Als u een SMB-share maakt**: maak in het veld **All privilege local user** (Lokale gebruiker met alle bevoegdheden) een keuze uit **Nieuwe maken** of **Bestaande gebruiken**. Als u een nieuwe lokale gebruiker maakt, geeft u de **gebruikersnaam** en het **wachtwoord** op en bevestigt u het wachtwoord. Hiermee worden de bevoegdheden aan de lokale gebruiker toegewezen. Als u de bevoegdheden hier hebt toegewezen, kunt u Verkenner gebruiken om de bevoegdheden te wijzigen.
@@ -68,7 +68,7 @@ Voer in de Azure Portal de volgende stappen uit om een share te maken.
 
 7. Gebruik het lokale koppel punt om eenvoudig toegang te krijgen tot de shares van Edge Compute-modules. Selecteer **de berekening delen met Edge gebruiken** zodat de share automatisch wordt gekoppeld nadat deze is gemaakt. Als deze optie is geselecteerd, kan de module Edge ook de compute met het lokale koppel punt gebruiken.
 
-8. Klik op **Maken** om de share te maken. U ontvangt een melding als wordt begonnen met het maken van de share. Als de share met de opgegeven instellingen is gemaakt, wordt de blade **Shares** bijgewerkt in overeenstemming met de nieuwe share.
+8. Klik op **maken** om de share te maken. U ontvangt een melding als wordt begonnen met het maken van de share. Nadat de share is gemaakt met de opgegeven instellingen, wordt de Blade **shares** bijgewerkt zodat deze overeenkomen met de nieuwe share.
 
 ## <a name="add-a-local-share"></a>Een lokale share toevoegen
 
@@ -92,7 +92,7 @@ Voer in de Azure Portal de volgende stappen uit om een share te maken.
 
    ![Lokale share maken](media/azure-stack-edge-manage-shares/add-local-share-2.png)
 
-    U ziet een melding dat de share wordt gemaakt. Als de share met de opgegeven instellingen is gemaakt, wordt de blade **Shares** bijgewerkt in overeenstemming met de nieuwe share.
+    U ziet een melding dat de share wordt gemaakt. Nadat de share is gemaakt met de opgegeven instellingen, wordt de Blade **shares** bijgewerkt zodat deze overeenkomen met de nieuwe share.
 
    ![Blade met updates shares weer geven](media/azure-stack-edge-manage-shares/add-local-share-3.png)
     
@@ -112,11 +112,11 @@ Als u een share hebt gemaakt voordat u Compute hebt geconfigureerd op uw Azure S
 
    ![Koppeling selecteren](media/azure-stack-edge-manage-shares/select-mount.png)
 
-3. Selecteer **Ja**als u om bevestiging wordt gevraagd. Hiermee wordt de share gekoppeld.
+3. Selecteer **Ja** als u om bevestiging wordt gevraagd. Hiermee wordt de share gekoppeld.
 
    ![Bevestig bevestiging](media/azure-stack-edge-manage-shares/confirm-mount.png)
 
-4. Nadat de share is gekoppeld, gaat u naar de lijst met shares. U ziet dat de kolom **gebruikt voor Compute** de status van de share als **ingeschakeld**weergeeft.
+4. Nadat de share is gekoppeld, gaat u naar de lijst met shares. U ziet dat de kolom **gebruikt voor Compute** de status van de share als **ingeschakeld** weergeeft.
 
    ![Share gekoppeld](media/azure-stack-edge-manage-shares/share-mounted.png)
 
@@ -136,7 +136,7 @@ Voer de volgende stappen uit in de Azure Portal om een share te ontkoppelen.
 
    ![Ontkoppelen selecteren](media/azure-stack-edge-manage-shares/select-unmount.png)
 
-3. Selecteer **Ja**als u om bevestiging wordt gevraagd. Hiermee wordt de share ontkoppeld.
+3. Selecteer **Ja** als u om bevestiging wordt gevraagd. Hiermee wordt de share ontkoppeld.
 
    ![Ontkoppelen bevestigen](media/azure-stack-edge-manage-shares/confirm-unmount.png)
 

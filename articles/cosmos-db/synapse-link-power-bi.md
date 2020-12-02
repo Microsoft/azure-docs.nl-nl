@@ -1,24 +1,27 @@
 ---
 title: Power BI en serverloze SQL-groep voor het analyseren van Azure Cosmos DB gegevens met een Synapse-koppeling
-description: Meer informatie over het bouwen van een Synapse SQL serverloze data base en weer gaven via de Synapse-koppeling voor Azure Cosmos DB, het opvragen van de Azure Cosmos DB containers en het bouwen van een model met Power BI over die weer gaven.
+description: Meer informatie over het maken van een serverloze SQL-groeps database en weer gaven via de Synapse-koppeling voor Azure Cosmos DB, het opvragen van de Azure Cosmos DB containers en het bouwen van een model met Power BI over die weer gaven.
 author: ArnoMicrosoft
 ms.service: cosmos-db
 ms.topic: how-to
-ms.date: 09/22/2020
+ms.date: 11/30/2020
 ms.author: acomet
-ms.openlocfilehash: 55a73ada39f4f48aeb22c5482bd85d1092d54c35
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 959070ca431c3397779a2a22c16f03b3adebbb35
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93342246"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96444511"
 ---
-# <a name="use-power-bi-and-serverless-synapse-sql-pool-to-analyze-azure-cosmos-db-data-with-synapse-link-preview"></a>Power BI en serverloze Synapse SQL-groep gebruiken om Azure Cosmos DB gegevens te analyseren met Synapse-koppeling (preview-versie) 
+# <a name="use-power-bi-and-serverless-synapse-sql-pool-preview-to-analyze-azure-cosmos-db-data-with-synapse-link"></a>Power BI en serverloze Synapse SQL-pool (preview) gebruiken om Azure Cosmos DB gegevens te analyseren met Synapse-koppeling 
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
 
 In dit artikel leert u hoe u een serverloze SQL-pool database en weer gaven kunt maken via de Synapse-koppeling voor Azure Cosmos DB. U voert een query uit op de Azure Cosmos DB containers en bouwt vervolgens een model met Power BI over die weer gaven om die query weer te geven.
 
 In dit scenario gebruikt u dummy gegevens over de verkoop van Surface-producten in een Retail Store van partners. U gaat de omzet per winkel analyseren op basis van de nabijheid van grote gezinnen en de impact van de reclame voor een specifieke week. In dit artikel maakt u twee weer gaven met de naam **RetailSales** en **StoreDemographics** en een query ertussen. U kunt de voorbeeld product gegevens ophalen uit deze [github](https://github.com/Azure-Samples/Synapse/tree/master/Notebooks/PySpark/Synapse%20Link%20for%20Cosmos%20DB%20samples/Retail/RetailData) opslag plaats.
+
+> [!IMPORTANT]
+> Er is momenteel een preview-versie van Synapse-SQL-pool ondersteuning voor Azure Synapse-koppeling voor de Azure Cosmos DB. Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Zie voor meer informatie [aanvullende gebruiks voorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -55,7 +58,7 @@ Create database RetailCosmosDB
 
 Maak vervolgens meerdere weer gaven in verschillende Synapse-koppelingen die zijn ingeschakeld voor Azure Cosmos-containers. Met weer gaven kunt u T-SQL gebruiken om lid te worden van en query's uitvoeren op Azure Cosmos DB gegevens in verschillende containers.  Zorg ervoor dat u de **RetailCosmosDB** -data base selecteert bij het maken van de weer gaven.
 
-De volgende scripts laten zien hoe u weer gaven maakt voor elke container. Voor eenvoud gebruiken we de functie [automatische schema](analytical-store-introduction.md#analytical-schema) dematen van Synapse SQL serverloos via Synapse-koppeling ingeschakelde containers:
+De volgende scripts laten zien hoe u weer gaven maakt voor elke container. Voor het gemak gebruiken we de functie [automatisch schema](analytical-store-introduction.md#analytical-schema) innemen van de SERVERloze SQL-groep via Synapse-koppeling ingeschakelde containers:
 
 
 ### <a name="retailsales-view"></a>Weer gave RetailSales:
@@ -118,7 +121,7 @@ Open vervolgens het Power BI bureau blad en maak verbinding met het serverloze S
 
 1. Selecteer de gewenste verificatie methode, zoals Azure AD.
 
-1. Selecteer de **RetailCosmosDB** -data base en de weer gaven **RetailSales** , **StoreDemographics** .
+1. Selecteer de **RetailCosmosDB** -data base en de weer gaven **RetailSales**, **StoreDemographics** .
 
 1. Selecteer **laden** om de twee weer gaven in de direct query-modus te laden.
 

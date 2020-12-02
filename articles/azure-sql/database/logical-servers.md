@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 03/12/2019
-ms.openlocfilehash: 38133a63d65e45a4d1c83e9752dcaa01a86da33e
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: e0736e58983d4c28b8f2f4a20241cd36ac84fdfa
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92782889"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96445371"
 ---
 # <a name="what-is-a-logical-sql-server-in-azure-sql-database-and-azure-synapse"></a>Wat is een logische SQL-Server in Azure SQL Database en Azure Synapse?
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -26,7 +26,7 @@ In Azure SQL Database en Azure Synapse Analytics is een server een logische cons
 
 Deze server verschilt van een SQL Server exemplaar dat u mogelijk kent in de on-premises wereld. Er zijn met name geen garanties met betrekking tot de locatie van de data bases of Data Warehouse-data bases ten opzichte van de server die deze beheert. Bovendien geven Azure SQL Database noch Azure Synapse toegang tot of functies op exemplaar niveau toe. De instantie databases in een beheerd exemplaar zijn daarentegen allemaal fysiek op dezelfde manier als u bekend bent met SQL Server op de on-premises of virtuele machine wereld.
 
-Wanneer u een server maakt, geeft u een aanmeldings account voor de server en het wacht woord op die beheerders rechten heeft voor de hoofd database op die server en alle data bases die op die server worden gemaakt. Dit eerste account is een SQL-aanmeldings account. Azure SQL Database en Synapse Analytics bieden ondersteuning voor SQL-verificatie en Azure Active Directory verificatie voor verificatie. Zie [data bases en aanmeldingen beheren in Azure SQL database](logins-create-manage.md)voor meer informatie over aanmeldingen en verificatie. Windows-verificatie wordt niet ondersteund.
+Wanneer u een server maakt, geeft u een aanmeldings account voor de server en het wacht woord op die beheerders rechten heeft voor de hoofd database op die server en alle data bases die op die server worden gemaakt. Dit eerste account is een SQL-aanmeldings account. Azure SQL Database en Azure Synapse Analytics bieden ondersteuning voor SQL-verificatie en Azure Active Directory verificatie voor verificatie. Zie [data bases en aanmeldingen beheren in Azure SQL database](logins-create-manage.md)voor meer informatie over aanmeldingen en verificatie. Windows-verificatie wordt niet ondersteund.
 
 Een server in SQL Database en Azure Synapse:
 

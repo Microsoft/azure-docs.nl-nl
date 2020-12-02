@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/21/2020
 author: mingshen-ms
 ms.author: mingshen
-ms.openlocfilehash: e8f9a8e1d10e39e37480e06a25fcc0e203a104ec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5ddcd7e5c3e5651062f88b261e7003fb0dd2ef3b
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89378726"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96435991"
 ---
 # <a name="marketplace-metering-service-authentication-strategies"></a>Verificatie strategieën voor Marketplace-meet service
 
@@ -54,24 +54,24 @@ Zie [Azure Active Directory toegangs tokens](../../active-directory/develop/acce
 
 |  **Parameternaam** |  **Vereist**  |  **Beschrijving**          |
 |  ------------------ |--------------- | ------------------------  |
-|  `tenantId`         |   True         | De Tenant-ID van de geregistreerde Azure AD-toepassing.   |
+|  `tenantId`         |   Waar         | De Tenant-ID van de geregistreerde Azure AD-toepassing.   |
 | | | |
 
 #### <a name="request-header"></a>*Aanvraag header*
 
 |  **Headernaam**    |  **Vereist**  |  **Beschrijving**          |
 |  ------------------ |--------------- | ------------------------  |
-|  `Content-Type`     |   True         | Het inhouds type dat is gekoppeld aan de aanvraag. De standaardwaarde is `application/x-www-form-urlencoded`.  |
+|  `Content-Type`     |   Waar         | Het inhouds type dat is gekoppeld aan de aanvraag. De standaardwaarde is `application/x-www-form-urlencoded`.  |
 | | | |
 
 #### <a name="request-body"></a>*Aanvraagbody*
 
 |  **Eigenschapsnaam**  |  **Vereist**  |  **Beschrijving**          |
 |  ------------------ |--------------- | ------------------------  |
-|  `Grant_type`       |   True         | Toekennings type. Gebruik `client_credentials`. |
-|  `Client_id`        |   True         | Client/App-ID die is gekoppeld aan de Azure AD-app.|
-|  `client_secret`    |   True         | Geheim dat is gekoppeld aan de Azure AD-app.  |
-|  `Resource`         |   True         | Doel resource waarvoor het token wordt aangevraagd. Gebruik `20e940b3-4c77-4b0b-9a53-9e16a1b010a7`. |
+|  `Grant_type`       |   Waar         | Toekennings type. Gebruik `client_credentials`. |
+|  `Client_id`        |   Waar         | Client/App-ID die is gekoppeld aan de Azure AD-app.|
+|  `client_secret`    |   Waar         | Geheim dat is gekoppeld aan de Azure AD-app.  |
+|  `Resource`         |   Waar         | Doel resource waarvoor het token wordt aangevraagd. Gebruik `20e940b3-4c77-4b0b-9a53-9e16a1b010a7`. |
 | | | |
 
 #### <a name="response"></a>*Response*
@@ -155,5 +155,5 @@ Volg de onderstaande stappen om te verifiëren met behulp van een Windows-VM,
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Een Azure-toepassingsaanbieding maken](./create-new-azure-apps-offer.md)
+* [Een Azure-toepassingsaanbieding maken](../create-new-azure-apps-offer.md)
 * [Een SaaS-aanbieding plannen](../plan-saas-offer.md)

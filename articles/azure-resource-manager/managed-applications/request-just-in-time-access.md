@@ -5,12 +5,12 @@ author: MSEvanhi
 ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: evanhi
-ms.openlocfilehash: 5e1a929924e2c291e0044da99f3ae5d7d1c3b894
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f839eb04e0c036b5059e35fac16d9c702646cbd7
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91371559"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96435685"
 ---
 # <a name="enable-and-request-just-in-time-access-for-azure-managed-applications"></a>Just-in-time-toegang inschakelen en aanvragen voor Azure Managed Applications
 
@@ -72,7 +72,7 @@ Zorg er bij het maken van uw aanbieding in het partner centrum voor dat u JIT-to
 
 1. Meld u aan bij de portal voor commerciële Marketplace in het [partner centrum](https://partner.microsoft.com/dashboard/commercial-marketplace/overview).
 
-1. Volg de stappen in [een Azure-toepassings aanbieding maken](../../marketplace/partner-center-portal/create-new-azure-apps-offer.md)voor hulp bij het maken van een nieuwe beheerde toepassing.
+1. Volg de stappen in [een Azure-toepassings aanbieding maken](../../marketplace/create-new-azure-apps-offer.md)voor hulp bij het maken van een nieuwe beheerde toepassing.
 
 1. Schakel op de pagina **technische configuratie** het selectie vakje **just-in-time-toegang inschakelen** in.
 
@@ -88,7 +88,7 @@ Een JIT-toegangs aanvraag verzenden:
 
 1. Selecteer **JIT-toegang** voor de beheerde toepassing waartoe u toegang wilt.
 
-1. Selecteer in **aanmerking komende rollen**en selecteer **activeren** in de kolom Actie voor de gewenste rol.
+1. Selecteer in **aanmerking komende rollen** en selecteer **activeren** in de kolom Actie voor de gewenste rol.
 
    ![De aanvraag voor toegang activeren](./media/request-just-in-time-access/send-request.png)
 

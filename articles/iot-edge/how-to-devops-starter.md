@@ -1,18 +1,18 @@
 ---
 title: CI/CD-pijp lijn met Azure DevOps starter-Azure IoT Edge | Microsoft Docs
 description: Met Azure DevOps Starter kunt u eenvoudig aan de slag met Azure. U kunt in een paar snelle stappen een Azure IoT Edge-app van uw keuze starten.
-author: shizn
+author: kgremban
 ms.author: kgremban
 ms.date: 08/25/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: d57c1828b9456851d37a65b88eb5f8ea860a80fe
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 97dc0fe5a3720a41dd63583c222762d832d636ea
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92045853"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436994"
 ---
 # <a name="create-a-cicd-pipeline-for-iot-edge-with-azure-devops-starter"></a>Een CI/CD-pijp lijn maken voor IoT Edge met Azure DevOps starter
 
@@ -26,13 +26,13 @@ In DevOps Starter wordt een CI/CD-pijplijn gemaakt in Azure DevOps. U kunt een n
 
 1. Meld u aan bij de [Microsoft Azure-portal](https://portal.azure.com).
 
-1. Selecteer in het linkerdeel venster **een resource maken**en zoek naar **DevOps starter**.  
+1. Selecteer in het linkerdeel venster **een resource maken** en zoek naar **DevOps starter**.  
 
 1. Selecteer **Maken**.
 
 ## <a name="create-a-new-application-pipeline"></a>Een nieuwe toepassings pijplijn maken
 
-1. Uw Azure IOT Edge module (s) kunnen worden geschreven in [C#](tutorial-csharp-module.md), [Node.js](tutorial-node-module.md), [python](tutorial-python-module.md), [C](tutorial-c-module.md) en [Java](tutorial-java-module.md). Selecteer de taal van uw voor keur om een nieuwe toepassing te starten: **.net**, **Node.js**, **python**, **C**of **Java**. Selecteer **Volgende** om door te gaan.
+1. Uw Azure IOT Edge module (s) kunnen worden geschreven in [C#](tutorial-csharp-module.md), [Node.js](tutorial-node-module.md), [python](tutorial-python-module.md), [C](tutorial-c-module.md) en [Java](tutorial-java-module.md). Selecteer de taal van uw voor keur om een nieuwe toepassing te starten: **.net**, **Node.js**, **python**, **C** of **Java**. Selecteer **Volgende** om door te gaan.
 
    ![Taal selecteren voor het maken van een nieuwe toepassing](./media/how-to-devops-starter/select-language.png)
 
@@ -62,7 +62,7 @@ In DevOps Starter wordt een CI/CD-pijplijn gemaakt in Azure DevOps. U kunt een n
 
    ![Naam en project maken](media/how-to-devops-starter/create-project.png)
 
-Na een paar minuten wordt het DevOps-start dashboard weer gegeven in de Azure Portal. Selecteer de naam van uw project om de voortgang weer te geven. U moet de pagina mogelijk vernieuwen. Een voor beeld-IoT Edge toepassing wordt ingesteld in een opslag plaats in uw Azure DevOps-organisatie, een build wordt uitgevoerd en uw toepassing wordt geïmplementeerd op het IoT Edge apparaat. Dit dashboard biedt meer inzicht in uw codeopslagplaats, CI/CD-pijplijn en toepassing in Azure.
+Na enkele minuten wordt het DevOps Starter-dashboard weergegeven in Azure Portal. Selecteer de naam van uw project om de voortgang weer te geven. U moet de pagina mogelijk vernieuwen. Een voor beeld-IoT Edge toepassing wordt ingesteld in een opslag plaats in uw Azure DevOps-organisatie, een build wordt uitgevoerd en uw toepassing wordt geïmplementeerd op het IoT Edge apparaat. Dit dashboard biedt meer inzicht in uw codeopslagplaats, CI/CD-pijplijn en toepassing in Azure.
 
    ![Project in Azure Portal weer geven](./media/how-to-devops-starter/portal.png)
 
@@ -74,14 +74,14 @@ DevOps starter heeft een Git-opslag plaats gemaakt voor uw project in azure opsl
 
    ![In azure opslag plaatsen gegenereerde opslag plaats weer geven](./media/how-to-devops-starter/view-repositories.png)
 
-> [!NOTE]
-> In de volgende stappen wordt uitgelegd hoe u de webbrowser gebruikt om code wijzigingen aan te brengen. Als u uw opslag plaats lokaal wilt klonen, selecteert u **klonen** in de rechter bovenhoek van het venster. Gebruik de meegeleverde URL om uw Git-opslag plaats te klonen in Visual Studio code of uw favoriete ontwikkel programma.
+   > [!NOTE]
+   > In de volgende stappen wordt uitgelegd hoe u de webbrowser gebruikt om code wijzigingen aan te brengen. Als u uw opslag plaats lokaal wilt klonen, selecteert u **klonen** in de rechter bovenhoek van het venster. Gebruik de meegeleverde URL om uw Git-opslag plaats te klonen in Visual Studio code of uw favoriete ontwikkel programma.
 
 2. De opslag plaats bevat al code voor een module met de naam **FilterModule** op basis van de toepassings taal die u hebt gekozen tijdens het maken van het proces. Open de **modules/FilterModule/module.jsin** het bestand.
 
    ![module.jsopenen voor een bestand in azure opslag plaatsen](./media/how-to-devops-starter/open-module-json.png)
 
-3. U ziet dat in dit bestand [Azure DevOps build-variabelen](/azure/devops/pipelines/build/variables?view=vsts#build-variables) worden gebruikt in de **versie** parameter. Deze configuratie zorgt ervoor dat er een nieuwe versie van de module wordt gemaakt telkens wanneer een nieuwe build wordt uitgevoerd.
+3. U ziet dat in dit bestand [Azure DevOps build-variabelen](/azure/devops/pipelines/build/variables#build-variables) worden gebruikt in de **versie** parameter. Deze configuratie zorgt ervoor dat er een nieuwe versie van de module wordt gemaakt telkens wanneer een nieuwe build wordt uitgevoerd.
 
 ## <a name="examine-the-cicd-pipeline"></a>De CI/CD-pijplijn onderzoeken
 
@@ -101,7 +101,7 @@ In de vorige secties heeft Azure DevOps starter automatisch een volledige CI/CD-
 
    ![De pijplijn Details bewerken](./media/how-to-devops-starter/edit-build-pipeline.png)
 
-5. Selecteer **& wachtrij opslaan**en selecteer vervolgens **Opslaan**. Het is optioneel om een opmerking te plaatsen.
+5. Selecteer **& wachtrij opslaan** en selecteer vervolgens **Opslaan**. Het is optioneel om een opmerking te plaatsen.
 
 6. Selecteer **Triggers** in het menu Build pijplijn. In DevOps Starter is automatisch een CI-trigger gemaakt en met elke doorvoering naar de opslagplaats wordt een nieuwe build gestart.  U kunt desgewenst kiezen of u vertakkingen van het CI-proces wilt opnemen of uitsluiten.
 
@@ -109,7 +109,7 @@ In de vorige secties heeft Azure DevOps starter automatisch een volledige CI/CD-
 
 8. Selecteer **geschiedenis**. Het deel venster Historie bevat een audittrail van recente wijzigingen aan de build. Azure Pipelines houdt alle wijzigingen in de build-pijplijn bij en biedt de mogelijkheid om versies te vergelijken.
 
-9. Wanneer u klaar bent met het verkennen van de build-pijp lijn, gaat u naar de bijbehorende release pijplijn. Selecteer **releases** onder **pijp lijnen**en selecteer vervolgens **bewerken** om de details van de pijp lijn weer te geven.
+9. Wanneer u klaar bent met het verkennen van de build-pijp lijn, gaat u naar de bijbehorende release pijplijn. Selecteer **releases** onder **pijp lijnen** en selecteer vervolgens **bewerken** om de details van de pijp lijn weer te geven.
 
     ![Release pijplijn weer geven](media/how-to-devops-starter/release-pipeline.png)
 

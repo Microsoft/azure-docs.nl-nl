@@ -2,13 +2,13 @@
 title: Resource providers door Azure-Services
 description: Een lijst met alle naam ruimten van de resource provider voor Azure Resource Manager en toont de Azure-service voor die naam ruimte.
 ms.topic: conceptual
-ms.date: 11/17/2020
-ms.openlocfilehash: 7c8e535978bff38146caee1a3b5177d5befaa6a1
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.date: 11/30/2020
+ms.openlocfilehash: fffac8fef8742cf1f151de06ba6b528035a6668d
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185858"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436824"
 ---
 # <a name="resource-providers-for-azure-services"></a>Resource providers for Azure services (Resourceproviders voor Azure-services)
 
@@ -20,7 +20,7 @@ In dit artikel wordt uitgelegd hoe naam ruimten van de resource provider worden 
 | --------------------------- | ------------- |
 | Micro soft. AAD | [Azure Active Directory Domain Services](../../active-directory-domain-services/index.yml) |
 | Micro soft. Addons | baan |
-| Micro soft. ADHybridHealthService<sup>1</sup> | [Azure Active Directory](../../active-directory/index.yml) |
+| Micro soft. ADHybridHealthService- [geregistreerd](#registration) | [Azure Active Directory](../../active-directory/index.yml) |
 | Microsoft.Advisor | [Azure Advisor](../../advisor/index.yml) |
 | Micro soft. AlertsManagement | [Azure Monitor](../../azure-monitor/index.yml) |
 | Microsoft.AnalysisServices | [Azure Analysis Services](../../analysis-services/index.yml) |
@@ -28,7 +28,7 @@ In dit artikel wordt uitgelegd hoe naam ruimten van de resource provider worden 
 | Micro soft. AppConfiguration | [Azure App Configuration](../../azure-app-configuration/index.yml) |
 | Micro soft. AppPlatform | [Azure Spring Cloud](../../spring-cloud/spring-cloud-overview.md) |
 | Micro soft. Attestation | Azure Attestation-service |
-| Micro soft. Authorization<sup>1</sup> | [Azure Resource Manager](../index.yml) |
+| Micro soft. autorisatie- [geregistreerd](#registration) | [Azure Resource Manager](../index.yml) |
 | Microsoft.Automation | [Automation](../../automation/index.yml) |
 | Micro soft. AutonomousSystems | [Autonome systemen](https://www.microsoft.com/ai/autonomous-systems) |
 | Micro soft. AVS | [Azure VMware Solution](../../azure-vmware/index.yml) |
@@ -37,7 +37,7 @@ In dit artikel wordt uitgelegd hoe naam ruimten van de resource provider worden 
 | Micro soft. AzureStack | baan |
 | Micro soft. AzureStackHCI | [Azure Stack HCI](/azure-stack/hci/overview) |
 | Microsoft.Batch | [Batch](../../batch/index.yml) |
-| Micro soft. facturering<sup>1</sup> | [Kostenbeheer en facturering](/azure/billing/) |
+| Micro soft. facturering- [geregistreerd](#registration) | [Kostenbeheer en facturering](/azure/billing/) |
 | Microsoft.BingMaps | [Bing Maps](/BingMaps/#pivot=main&panel=BingMapsAPI) |
 | Micro soft. Block Chain | [Azure Blockchain-service](../../blockchain/workbench/index.yml) |
 | Micro soft. BlockchainTokens | [Azure Blockchain Tokens](https://azure.microsoft.com/services/blockchain-tokens/) |
@@ -52,15 +52,15 @@ In dit artikel wordt uitgelegd hoe naam ruimten van de resource provider worden 
 | Micro soft. ClassicInfrastructureMigrate | Migratie van het klassieke implementatie model |
 | Microsoft.ClassicNetwork | Het virtuele netwerk van het klassieke implementatie model |
 | Microsoft.ClassicStorage | Klassieke implementatie model opslag |
-| Micro soft. ClassicSubscription<sup>1</sup> | Klassiek implementatiemodel |
+| Micro soft. ClassicSubscription- [geregistreerd](#registration) | Klassiek implementatiemodel |
 | Microsoft.CognitiveServices | [Cognitive Services](../../cognitive-services/index.yml) |
-| Micro soft. commerce<sup>1</sup> | baan |
-| Microsoft.Compute | [Virtual Machines](../../virtual-machines/index.yml)<br />[Virtuele-machineschaalsets](../../virtual-machine-scale-sets/index.yml) |
-| Micro soft. verbruik<sup>1</sup> | [Cost Management](/azure/cost-management/) |
+| Micro soft. commerce- [geregistreerd](#registration) | baan |
+| Microsoft.Compute | [Virtual Machines](../../virtual-machines/index.yml)<br />[Virtual Machine Scale Sets](../../virtual-machine-scale-sets/index.yml) |
+| Micro soft. verbruik- [geregistreerd](#registration) | [Cost Management](/azure/cost-management/) |
 | Micro soft. ContainerInstance | [Container Instances](../../container-instances/index.yml) |
 | Microsoft.ContainerRegistry | [Container Registry](../../container-registry/index.yml) |
 | Microsoft.ContainerService | [Azure Kubernetes Service (AKS)](../../aks/index.yml) |
-| Micro soft. CostManagement<sup>1</sup> | [Cost Management](/azure/cost-management/) |
+| Micro soft. CostManagement- [geregistreerd](#registration) | [Cost Management](/azure/cost-management/) |
 | Micro soft. CostManagementExports | [Cost Management](/azure/cost-management/) |
 | Micro soft. CustomerLockbox | [Klanten-lockbox voor Microsoft Azure](../../security/fundamentals/customer-lockbox-overview.md) |
 | Micro soft. CustomProviders | [Aangepaste Azure-providers](../custom-providers/overview.md) |
@@ -90,7 +90,7 @@ In dit artikel wordt uitgelegd hoe naam ruimten van de resource provider worden 
 | Micro soft. EnterpriseKnowledgeGraph | Enter prise-kennis grafiek |
 | Micro soft. EventGrid | [Event Grid](../../event-grid/index.yml) |
 | Microsoft.EventHub | [Event Hubs](../../event-hubs/index.yml) |
-| Micro soft. features<sup>1</sup> | [Azure Resource Manager](../index.yml) |
+| Micro soft. features- [geregistreerd](#registration) | [Azure Resource Manager](../index.yml) |
 | Microsoft.GuestConfiguration | [Azure Policy](../../governance/policy/index.yml) |
 | Micro soft. HanaOnAzure | [SAP HANA on Azure Large Instances](../../virtual-machines/workloads/sap/hana-overview-architecture.md) |
 | Micro soft. HardwareSecurityModules | [Azure Dedicated HSM](../../dedicated-hsm/index.yml) |
@@ -120,7 +120,7 @@ In dit artikel wordt uitgelegd hoe naam ruimten van de resource provider worden 
 | Micro soft. Maps | [Azure Maps](../../azure-maps/index.yml) |
 | Micro soft. Marketplace | baan |
 | Micro soft. MarketplaceApps | baan |
-| Micro soft. MarketplaceOrdering<sup>1</sup> | baan |
+| Micro soft. MarketplaceOrdering- [geregistreerd](#registration) | baan |
 | Microsoft.Media | [Media Services](../../media-services/index.yml) |
 | Micro soft. Microservices4Spring | [Azure Spring Cloud](../../spring-cloud/spring-cloud-overview.md) |
 | Micro soft. migrate | [Azure Migrate](../../migrate/migrate-services-overview.md) |
@@ -135,7 +135,7 @@ In dit artikel wordt uitgelegd hoe naam ruimten van de resource provider worden 
 | Microsoft.OperationsManagement | [Azure Monitor](../../azure-monitor/index.yml) |
 | Micro soft. peering | [Azure Peering Service](../../peering-service/index.yml) |
 | Microsoft.PolicyInsights | [Azure Policy](../../governance/policy/index.yml) |
-| Micro soft. Portal<sup>1</sup> | [Azure-portal](../../azure-portal/index.yml) |
+| Micro soft. Portal- [geregistreerd](#registration) | [Azure Portal](../../azure-portal/index.yml) |
 | Micro soft. PowerBI | [Power BI](/power-bi/power-bi-overview) |
 | Micro soft. PowerBIDedicated | [Power BI Embedded](/azure/power-bi-embedded/) |
 | Micro soft. PowerPlatform | [Power Platform](/power-platform/) |
@@ -144,15 +144,15 @@ In dit artikel wordt uitgelegd hoe naam ruimten van de resource provider worden 
 | Microsoft.RecoveryServices | [Azure Site Recovery](../../site-recovery/index.yml) |
 | Micro soft. RedHatOpenShift | [Azure Red Hat OpenShift](../../virtual-machines/linux/openshift-get-started.md) |
 | Microsoft.Relay | [Azure Relay](../../azure-relay/relay-what-is-it.md) |
-| Micro soft. ResourceGraph<sup>1</sup> | [Azure Resource Graph](../../governance/resource-graph/index.yml) |
+| Micro soft. ResourceGraph- [geregistreerd](#registration) | [Azure Resource Graph](../../governance/resource-graph/index.yml) |
 | Microsoft.ResourceHealth | [Azure Service Health](../../service-health/index.yml) |
-| Micro soft. resources<sup>1</sup> | [Azure Resource Manager](../index.yml) |
+| Micro soft. resources- [geregistreerd](#registration) | [Azure Resource Manager](../index.yml) |
 | Micro soft. SaaS | baan |
 | Microsoft.Scheduler | [Scheduler](../../scheduler/index.yml) |
 | Microsoft.Search | [Azure Cognitive Search](../../search/index.yml) |
 | Microsoft.Security | [Beveiligingscentrum](../../security-center/index.yml) |
 | Micro soft. SecurityInsights | [Azure Sentinel](../../sentinel/index.yml) |
-| Micro soft. SerialConsole<sup>1</sup> | [Azure Serial console voor Windows](../../virtual-machines/troubleshooting/serial-console-windows.md) |
+| Micro soft. SerialConsole- [geregistreerd](#registration) | [Azure Serial console voor Windows](../../virtual-machines/troubleshooting/serial-console-windows.md) |
 | Microsoft.ServiceBus | [Service Bus](/azure/service-bus/) |
 | Micro soft. ServiceFabric | [Service Fabric](../../service-fabric/index.yml) |
 | Micro soft. ServiceFabricMesh | [Service Fabric Mesh](../../service-fabric-mesh/index.yml) |
@@ -168,7 +168,7 @@ In dit artikel wordt uitgelegd hoe naam ruimten van de resource provider worden 
 | Microsoft.StorSimple | [StorSimple](../../storsimple/index.yml) |
 | Microsoft.StreamAnalytics | [Azure Stream Analytics](../../stream-analytics/index.yml) |
 | Micro soft. Subscription | baan |
-| micro soft. ondersteuning<sup>1</sup> | baan |
+| micro soft. ondersteuning- [geregistreerd](#registration) | baan |
 | Micro soft. Synapse | [Azure Synapse Analytics](/azure/sql-data-warehouse/) |
 | Micro soft. TimeSeriesInsights | [Azure Time Series Insights](../../time-series-insights/index.yml) |
 | Micro soft. token | Token |
@@ -181,9 +181,14 @@ In dit artikel wordt uitgelegd hoe naam ruimten van de resource provider worden 
 | Micro soft. WindowsDefenderATP | [Microsoft Defender Advanced Threat Protection](../../security-center/security-center-wdatp.md) |
 | Micro soft. WindowsESU | Uitgebreide beveiligings updates |
 | Micro soft. WindowsIoT | [Windows 10 IoT Core Services](/windows-hardware/manufacture/iot/iotcoreservicesoverview) |
-| Micro soft. WorkloadMonitor<sup>1</sup> | [Azure Monitor](../../azure-monitor/index.yml) |
+| Micro soft. WorkloadMonitor | [Azure Monitor](../../azure-monitor/index.yml) |
 
-<sup>1</sup> standaard geregistreerd
+## <a name="registration"></a>Registratie
+
+De bovenstaande bronnen providers die zijn gemarkeerd met **-geregistreerd** , worden standaard geregistreerd voor uw abonnement. Als u de andere resource providers wilt gebruiken, moet u [deze registreren](resource-providers-and-types.md). Veel bron providers worden echter voor u geregistreerd wanneer u bepaalde acties uitvoert. Als u bijvoorbeeld een bron maakt via de portal, registreert de portal automatisch alle niet-geregistreerde resource providers die nodig zijn. Bij het implementeren van resources via een [Azure Resource Manager sjabloon](../templates/overview.md), worden alle vereiste resource providers ook geregistreerd.
+
+> [!IMPORTANT]
+> Registreer alleen een resource provider wanneer u er klaar voor bent om deze te gebruiken. Met de registratie stap kunt u de minimale bevoegdheden binnen uw abonnement behouden. Een kwaadwillende gebruiker kan geen resource providers gebruiken die niet zijn geregistreerd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

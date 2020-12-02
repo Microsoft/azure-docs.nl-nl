@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 10/23/2019
-ms.openlocfilehash: 02fd0a4c7d931f439ab85af8d90de323105e21f2
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: c45445415f3eaa7cb0f9069dd5f64b57c19e5836
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93096696"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437147"
 ---
 # <a name="migrate-hundreds-of-terabytes-of-data-into-azure-cosmos-db"></a>Honderden terabytes aan gegevens migreren naar Azure Cosmos DB 
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -29,11 +29,11 @@ Azure Cosmos DB migratie strategieën op dit moment verschillen op basis van de 
 
 De bestaande hulpprogram ma's voor het migreren van gegevens naar Azure Cosmos DB hebben enkele beperkingen die bijzonder duidelijk worden op grote schaal bewerkingen:
 
- * **Beperkte mogelijkheden voor uitschalen** : om terabytes aan gegevens zo snel mogelijk naar Azure Cosmos DB te migreren en de volledige ingerichte door Voer effectief te verbruiken, moeten de migratie-clients voor onbepaalde tijd kunnen uitschalen.  
+ * **Beperkte mogelijkheden voor uitschalen**: om terabytes aan gegevens zo snel mogelijk naar Azure Cosmos DB te migreren en de volledige ingerichte door Voer effectief te verbruiken, moeten de migratie-clients voor onbepaalde tijd kunnen uitschalen.  
 
-* **Geen voortgang van bijhouden en controleren** : het is belang rijk om de voortgang van de migratie bij te houden en te controleren op het moment dat u grote gegevens sets migreert. Anders moet elke fout die tijdens de migratie optreedt, de migratie stoppen en moet u het proces helemaal opnieuw starten. Het is niet productief om het hele migratie proces opnieuw te starten wanneer 99% van de service al is voltooid.  
+* **Geen voortgang van bijhouden en controleren**: het is belang rijk om de voortgang van de migratie bij te houden en te controleren op het moment dat u grote gegevens sets migreert. Anders moet elke fout die tijdens de migratie optreedt, de migratie stoppen en moet u het proces helemaal opnieuw starten. Het is niet productief om het hele migratie proces opnieuw te starten wanneer 99% van de service al is voltooid.  
 
-* **Geen wachtrij met onbestelbare berichten** : in grote gegevens sets kunnen er in sommige gevallen problemen optreden met delen van de bron gegevens. Daarnaast kunnen er tijdelijke problemen zijn met de client of het netwerk. Een van deze gevallen zou ertoe kunnen leiden dat de volledige migratie niet kan worden uitgevoerd. Hoewel de meeste migratie hulpprogramma's robuuste pogingen bieden die zich tegen tijdelijke problemen beschermen, is het niet altijd voldoende. Als er bijvoorbeeld minder dan 0,01% van de brongegevens documenten groter is dan 2 MB, wordt het schrijven van het document in Azure Cosmos DB mislukt. In het ideale geval is het handig voor het migratie programma om deze ' mislukte ' documenten op te slaan in een andere wachtrij met onbestelbare berichten. Dit kan worden verwerkt na de migratie. 
+* **Geen wachtrij met onbestelbare berichten**: in grote gegevens sets kunnen er in sommige gevallen problemen optreden met delen van de bron gegevens. Daarnaast kunnen er tijdelijke problemen zijn met de client of het netwerk. Een van deze gevallen zou ertoe kunnen leiden dat de volledige migratie niet kan worden uitgevoerd. Hoewel de meeste migratie hulpprogramma's robuuste pogingen bieden die zich tegen tijdelijke problemen beschermen, is het niet altijd voldoende. Als er bijvoorbeeld minder dan 0,01% van de brongegevens documenten groter is dan 2 MB, wordt het schrijven van het document in Azure Cosmos DB mislukt. In het ideale geval is het handig voor het migratie programma om deze ' mislukte ' documenten op te slaan in een andere wachtrij met onbestelbare berichten. Dit kan worden verwerkt na de migratie. 
 
 Veel van deze beperkingen worden vastgesteld voor hulpprogram ma's zoals Azure Data Factory, Azure Data Migration Services. 
 
@@ -142,12 +142,6 @@ Nadat de vereisten zijn voltooid, kunt u gegevens migreren met de volgende stapp
 6. Sommige van deze fouten kunnen worden veroorzaakt door onjuiste documenten in de bron gegevens. Deze moeten worden aangeduid en opgelost. Vervolgens moet u de import stap op de mislukte partities opnieuw uitvoeren om ze opnieuw op te nemen. 
 
 Nadat de migratie is voltooid, kunt u controleren of het aantal documenten in Azure Cosmos DB hetzelfde is als het aantal documenten in de bron database. In dit voor beeld is de totale grootte in Azure Cosmos DB 65 terabytes. Na de migratie kan indexering selectief worden ingeschakeld en het RUs kan worden verlaagd naar het niveau dat nodig is voor de bewerkingen van de werk belasting.
-
-## <a name="contact-the-azure-cosmos-db-team"></a>Contact opnemen met het Azure Cosmos DB team
-Hoewel u deze hand leiding kunt volgen om grote gegevens sets naar Azure Cosmos DB te migreren voor grootschalige migraties, is het raadzaam om het Azure Cosmos DB-product team te bereiken om de gegevens modellen en een algemene architectuur beoordeling te valideren. Op basis van uw gegevensset en werk belasting kan het product team ook andere prestaties en kosten optimalisaties Voorst Ellen die van toepassing kunnen zijn op u. Als u contact wilt opnemen met het Azure Cosmos DB team voor hulp bij grootschalige migraties, kunt u een ondersteunings ticket openen onder het probleem type ' algemeen advies ' en ' grote (TB +) migraties ', zoals hieronder wordt weer gegeven.
-
-:::image type="content" source="./media/migrate-cosmosdb-data/supporttopic.png" alt-text="Migratie Hulpprogramma's instellen":::
-
 
 ## <a name="next-steps"></a>Volgende stappen
 

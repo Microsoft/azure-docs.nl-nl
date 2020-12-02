@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/26/2020
 author: mingshen-ms
 ms.author: mingshen
-ms.openlocfilehash: e29aeb7570ad6daba9d6fc652291471fa246bf0a
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: b75964f8cfc41efc35858284dbffded3aa406eb6
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92674628"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436059"
 ---
 # <a name="marketplace-metered-billing-apis"></a>Facturerings-Api's met geplaatste Marketplace
 
@@ -20,7 +20,7 @@ De gefactureerde facturerings-Api's moeten worden gebruikt wanneer de uitgever a
 
 Zie voor meer informatie over het maken van aangepaste meet dimensies voor SaaS, [SaaS-data limiet voor gefactureerd](saas-metered-billing.md).
 
-Zie de [sectie technische configuratie van een nieuwe Azure-apps-aanbieding maken](create-new-azure-apps-offer.md#technical-configuration)voor meer informatie over het maken van aangepaste meet dimensies voor een Azure-toepassing aanbieding met een beheerd app-abonnement.
+Voor meer informatie over het maken van aangepaste meting dimensies voor een Azure-toepassing aanbieding met een abonnement op een beheerde app raadpleegt u [de installatie Details van uw Azure-toepassings aanbieding configureren](../create-new-azure-apps-offer.md#configure-your-azure-application-offer-setup-details).
 
 ## <a name="enforcing-tls-12-note"></a>Opmerking over het afdwingen van TLS 1,2
 
@@ -34,7 +34,7 @@ Er kan slechts één gebruiks gebeurtenis voor elk uur van een kalenderdag worde
 
 Er kan slechts één gebruiks gebeurtenis worden verzonden voor elk uur van een kalenderdag per resource. Als er in een uur meer dan één eenheid wordt verbruikt, kunt u alle eenheden die in het uur zijn verbruiken, verzamelen en vervolgens in één gebeurtenis verzenden. Gebruiks gebeurtenissen kunnen gedurende de afgelopen 24 uur alleen worden verzonden. Als u een gebruiks gebeurtenis op elk gewenst moment tussen 8:00 en 8:59:59 (en wordt geaccepteerd) en een extra gebeurtenis voor dezelfde dag tussen 8:00 en 8:59:59 verzendt, wordt deze als een duplicaat afgewezen.
 
-**Post** : `https://marketplaceapi.microsoft.com/api/usageEvent?api-version=<ApiVersion>`
+**Post**: `https://marketplaceapi.microsoft.com/api/usageEvent?api-version=<ApiVersion>`
 
 *Query parameters:*
 

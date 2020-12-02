@@ -3,14 +3,14 @@ title: Toepassingsinstellingen
 description: Configureer uw toepassings- en versie-instellingen in de LUIS-portal, zoals uitingsnormalisatie en app-privacy.
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: quickstart
-ms.date: 05/17/2020
-ms.openlocfilehash: 0a07e423b5307934938727cd8ccc475989e04362
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.topic: conceptual
+ms.date: 11/30/2020
+ms.openlocfilehash: aabe05924e781fbab5f92bd620ddcd566365f7e8
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91309622"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436637"
 ---
 # <a name="application-and-version-settings"></a>Instellingen voor toepassingen en versies
 

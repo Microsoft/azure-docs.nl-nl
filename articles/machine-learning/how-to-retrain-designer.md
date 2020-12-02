@@ -10,12 +10,12 @@ author: likebupt
 ms.date: 04/06/2020
 ms.topic: conceptual
 ms.custom: how-to, designer
-ms.openlocfilehash: d8ef4d9f768d6fdcf976c9317d1abec3d4533824
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: d754674fe3aa65fa9fd8540b05083979ce96aff8
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94554798"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437113"
 ---
 # <a name="retrain-models-with-azure-machine-learning-designer"></a>Modellen opnieuw trainen met Azure Machine Learning Designer
 
@@ -47,7 +47,11 @@ De pijp lijn die in dit artikel wordt gebruikt, is een gewijzigde versie van de 
 
 ## <a name="create-a-pipeline-parameter"></a>Een pijplijn parameter maken
 
-Maak pijplijn parameters om variabelen dynamisch in runtime in te stellen. Voor dit voor beeld wijzigt u het pad van de trainings gegevens van een vaste waarde naar een para meter, zodat u uw model op verschillende gegevens kunt trainen.
+Pijplijn parameters worden gebruikt voor het bouwen van veelzijdige pijp lijnen die later opnieuw kunnen worden ingediend met verschillende parameter waarden. Bij sommige veelvoorkomende scenario's worden gegevens sets of sommige Hyper-para meters voor het opnieuw trainen bijgewerkt. Maak pijplijn parameters om variabelen dynamisch in runtime in te stellen. 
+
+Pijplijn parameters kunnen worden toegevoegd aan de gegevens bron-of module parameters in een pijp lijn. Wanneer de pijp lijn opnieuw wordt ingediend, kunnen de waarden van deze para meters worden opgegeven.
+
+Voor dit voor beeld wijzigt u het pad van de trainings gegevens van een vaste waarde naar een para meter, zodat u uw model op verschillende gegevens kunt trainen. U kunt ook andere module parameters toevoegen als pijplijn parameters op basis van uw use-case.
 
 1. Selecteer de module **gegevens importeren** .
 
@@ -60,31 +64,22 @@ Maak pijplijn parameters om variabelen dynamisch in runtime in te stellen. Voor 
 
 1. Mouseover het veld **pad** en selecteer het beletsel teken boven het veld met het **pad** dat wordt weer gegeven.
 
-    ![Scherm afbeelding die laat zien hoe u een pijplijn parameter maakt](media/how-to-retrain-designer/add-pipeline-parameter.png)
-
 1. Selecteer **toevoegen aan pijplijn parameter**.
 
 1. Geef een parameter naam en een standaard waarde op.
 
-   > [!NOTE]
-   > U kunt de pijplijn parameters inspecteren en bewerken door het tandwiel pictogram **instellingen** naast de titel van uw pijp lijn concept te selecteren. 
+   ![Scherm afbeelding die laat zien hoe u een pijplijn parameter maakt](media/how-to-retrain-designer/add-pipeline-parameter.png)
 
 1. Selecteer **Opslaan**.
 
+   > [!NOTE]
+   > U kunt ook een module parameter losmaken van de pijplijn parameter in het deel venster module details, vergelijkbaar met het toevoegen van pijplijn parameters.
+   >
+   > U kunt de pijplijn parameters inspecteren en bewerken door het tandwiel pictogram **instellingen** naast de titel van uw pijp lijn concept te selecteren. 
+   >    - Nadat u de koppeling hebt verbroken, kunt u de pijplijn parameter verwijderen in het deel venster **instellingen** .
+   >    - U kunt ook een pijplijn parameter toevoegen in het deel venster **instellingen** en vervolgens Toep assen op een van de para meters van een module.
+
 1. Verzend de pijplijn uitvoering.
-
-## <a name="find-a-trained-model"></a>Een getraind model zoeken
-
-De ontwerp functie slaat alle pijplijn uitvoer, inclusief getrainde modellen, op in het standaard opslag account voor de werk ruimte. U kunt getrainde modellen ook rechtstreeks openen in de ontwerp functie:
-
-1. Wacht totdat de pijp lijn is uitgevoerd.
-1. Selecteer de module **Train Model**.
-1. Selecteer in het detail venster van de module, rechts van het canvas, **uitvoer en logboeken**.
-1. U kunt uw model vinden in **andere uitvoer** samen met uitvoerings Logboeken.
-1. U kunt ook het pictogram **uitvoer weer geven** selecteren. Hier kunt u de instructie in het dialoog venster volgen om rechtstreeks naar uw gegevens opslag te gaan. 
-
-> [!div class="mx-imgBorder"]
-> ![Scherm afbeelding die laat zien hoe het getrainde model kan worden gedownload](./media/how-to-retrain-designer/trained-model-view-output.png)
 
 ## <a name="publish-a-training-pipeline"></a>Een trainings pijplijn publiceren
 

@@ -3,16 +3,16 @@ title: Voor beeld klassen typen op Azure Lab Services | Microsoft Docs
 description: Biedt een aantal typen klassen waarvoor u Labs kunt instellen met behulp van Azure Lab Services.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 1c2caac35125c3f69c2257750bac417971af5dbd
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 7ebc89c040be732c230f0c3f54f68fb91466eb68
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94490981"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436399"
 ---
 # <a name="class-types-overview---azure-lab-services"></a>Overzicht van klassen typen-Azure Lab Services
 
-Met Azure Lab Services kunt u klassikale test omgevingen snel instellen in de Cloud. De artikelen in deze sectie bieden richt lijnen voor het instellen van verschillende typen klassikale Labs met behulp van Azure Lab Services.
+Met Azure Lab Services kunt u klassikale test omgevingen snel instellen in de Cloud. De artikelen in deze sectie bieden richt lijnen voor het instellen van verschillende soorten Labs met behulp van Azure Lab Services.
 
 ## <a name="big-data-analytics"></a>Big data-analyse
 U kunt een GPU-Lab instellen om een big data Analytics-klasse te leren. Met dit type klasse leren cursisten hoe ze grote hoeveel heden gegevens verwerken en de algoritmen voor machine-en statistische lessen Toep assen om gegevens inzichten af te leiden. Een belang rijke doel stelling voor studenten is het leren gebruiken van hulpprogram ma's voor gegevens analyse, zoals het open-source software pakket van Apache Hadoop waarmee u big data kunt opslaan, beheren en verwerken. 

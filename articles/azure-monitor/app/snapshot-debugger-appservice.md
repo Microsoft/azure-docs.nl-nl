@@ -6,16 +6,16 @@ author: brahmnes
 ms.author: bfung
 ms.date: 03/26/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 6928da704236c4bb5492f99a4a5327bf297a323d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6d111379cbeb0ea4eeac9ea0868b6d263a0a540c
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84676836"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96435719"
 ---
 # <a name="enable-snapshot-debugger-for-net-apps-in-azure-app-service"></a>Snapshot Debugger voor .NET-apps in Azure App Service inschakelen
 
-Snapshot Debugger werkt momenteel voor ASP.NET-en ASP.NET Core-apps die worden uitgevoerd op Azure App Service op Windows-service plannen.
+Snapshot Debugger werkt momenteel voor ASP.NET-en ASP.NET Core-apps die worden uitgevoerd op Azure App Service op Windows-service plannen. Het is raadzaam om uw toepassing uit te voeren op de laag basis service of hoger wanneer u het fout opsporingsprogramma voor moment opnamen gebruikt. Voor de meeste toepassingen hebben de gratis en gedeelde service lagen onvoldoende geheugen om moment opnamen op te slaan.
 
 ## <a name="enable-snapshot-debugger"></a><a id="installation"></a> Snapshot Debugger inschakelen
 Volg de onderstaande instructies om Snapshot Debugger voor een app in te scha kelen. Als u een ander type Azure-service gebruikt, zijn hier instructies voor het inschakelen van Snapshot Debugger op andere ondersteunde platforms:

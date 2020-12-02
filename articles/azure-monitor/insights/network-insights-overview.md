@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: KumudD
 ms.author: kumud
 ms.date: 11/25/2020
-ms.openlocfilehash: 2f262b328efcc341c93f1e5c31cab8cbd3ecbf6b
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 5a2238f5c1561abb1e11d69aa6d0bfe761097c64
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96184634"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437300"
 ---
 # <a name="azure-monitor-for-networks"></a>Azure Monitor voor netwerken
 Azure Monitor voor netwerken biedt een uitgebreid overzicht van de [status](../../service-health/resource-health-checks-resource-types.md) en [metrische gegevens](../platform/metrics-supported.md) voor alle geïmplementeerde netwerk bronnen, zonder dat hiervoor configuratie is vereist. Het biedt ook toegang tot netwerk bewakings mogelijkheden zoals [verbindings monitor](../../network-watcher/connection-monitor-preview.md), [flow logboek registratie voor netwerk beveiligings groepen (nsg's)](../../network-watcher/network-watcher-nsg-flow-logging-overview.md)en [Traffic Analytics](../../network-watcher/traffic-analytics.md). En het biedt andere [Diagnostische](../../network-watcher/network-watcher-monitoring-overview.md#diagnostics) functies voor het netwerk.
@@ -26,7 +26,7 @@ Azure Monitor voor netwerken is gestructureerd rond de volgende belang rijke ond
 
 De pagina **overzicht** van Azure monitor voor netwerken biedt een eenvoudige manier om de inventaris van uw netwerk bronnen te visualiseren, samen met resource status en waarschuwingen. Het is onderverdeeld in vier functionele gebieden: zoeken en filteren, resource status en metrische gegevens, waarschuwingen en afhankelijkheids weergave.
 
-[ ![ Scherm opname van de pagina overzicht](media/network-insights-overview/overview.png)](media/network-insights-overview/overview.png)#lightbox)
+[![Schermopname met de pagina Overzicht](media/network-insights-overview/overview.png)](media/network-insights-overview/overview.png#lightbox)
 
 ### <a name="search-and-filtering"></a>Zoeken en filteren
 U kunt de weer gave resource status en waarschuwingen aanpassen met behulp van filters als **abonnement**, **resource groep** en **type**.

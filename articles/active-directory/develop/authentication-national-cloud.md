@@ -11,14 +11,14 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 08/28/2019
 ms.author: negoe
-ms.reviewer: negoe,celested
+ms.reviewer: marsma, negoe,celested
 ms.custom: aaddev,references_regions
-ms.openlocfilehash: d27498748f03fb101d165351ec80c77d57f78f1a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: da1ea6462d22242d23629bcec192d7760314dfed
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88141496"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96444817"
 ---
 # <a name="national-clouds"></a>Nationale clouds
 
@@ -60,8 +60,8 @@ De volgende tabel bevat de basis-Url's voor de Azure AD-eind punten die worden g
 
 U kunt aanvragen indienen bij de autorisatie-of Token-eind punten van Azure AD met behulp van de juiste regiospecifieke basis-URL. Bijvoorbeeld voor Azure Duitsland:
 
-  - Het gebruikelijke eind punt voor autorisatie is `https://login.microsoftonline.de/common/oauth2/v2.0/authorize` .
-  - Token common-eind punt is `https://login.microsoftonline.de/common/oauth2/v2.0/token` .
+- Het gebruikelijke eind punt voor autorisatie is `https://login.microsoftonline.de/common/oauth2/v2.0/authorize` .
+- Token common-eind punt is `https://login.microsoftonline.de/common/oauth2/v2.0/token` .
 
 Vervang voor toepassingen met één Tenant "common" in de vorige Url's door uw Tenant-ID of-naam. Een voorbeeld is `https://login.microsoftonline.de/contoso.com`.
 
@@ -76,9 +76,10 @@ Als u wilt weten hoe u een toepassing bouwt met behulp van het micro soft-identi
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over:
+Meer informatie over het gebruik [van de micro soft Authentication Library (MSAL) in een nationale cloud omgeving](msal-national-cloud.md).
+
+Documentatie voor nationale Cloud:
 
 - [Azure Government](../../azure-government/index.yml)
 - [Azure China 21Vianet](/azure/china/)
 - [Azure Duitsland](../../germany/index.yml)
-- [Basis beginselen van Azure AD-verificatie](./authentication-vs-authorization.md)

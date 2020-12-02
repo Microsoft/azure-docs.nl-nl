@@ -13,19 +13,19 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/15/2020
 ms.author: memildin
-ms.openlocfilehash: 2ea9fdcb11bd88755c0972fa166d1d94068ce60e
-ms.sourcegitcommit: 18046170f21fa1e569a3be75267e791ca9eb67d0
+ms.openlocfilehash: 64fa6c72e3bc37276dd108e3981bbefb5a2021a7
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/16/2020
-ms.locfileid: "94638791"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96444515"
 ---
 # <a name="faq---questions-about-data-collection-agents-and-workspaces"></a>Veelgestelde vragen: vragen over het verzamelen van gegevens, agents en werk ruimten
 
 Security Center verzamelt gegevens van uw virtuele machines van Azure (Vm's), schaal sets voor virtuele machines, IaaS containers en niet-Azure-computers (inclusief lokale computers) om te controleren op beveiligings problemen en bedreigingen. De gegevens worden verzameld met behulp van de Log Analytics-agent, die verschillende configuraties en gebeurtenislogboeken met betrekking tot beveiliging van de machine leest en de gegevens kopieert naar uw werkruimte voor analyse.
 
 
-## <a name="am-i-billed-for-azure-monitor-logs-on-the-workspaces-created-by-security-center"></a>Ben ik gefactureerd voor Azure Monitor-logboeken op de werk ruimten die door Security Center zijn gemaakt?
+## <a name="am-i-billed-for-azure-monitor-logs-on-the-workspaces-created-by-security-center"></a>Word ik gefactureerd voor Azure Monitor-logboeken in de werkruimten die door Security Center zijn gemaakt?
 
 Nee. Werk ruimten die zijn gemaakt door Security Center en die zijn geconfigureerd voor Azure Monitor-logboeken per knoop punt, worden niet in rekening gebracht Azure Monitor logboek kosten. Security Center facturering is altijd gebaseerd op uw Security Center beveiligings beleid en de oplossingen die zijn geïnstalleerd op een werk ruimte:
 
@@ -70,7 +70,7 @@ Windows-of Linux IaaS-Vm's komen in aanmerking als:
 - De virtuele machine wordt niet gebruikt als een apparaat zoals Web Application Firewall of een firewall van de volgende generatie.
 
 
-## <a name="where-is-the-default-log-analytics-workspace-created"></a>Waar is de standaard Log Analytics werkruimte gemaakt?
+## <a name="where-is-the-default-log-analytics-workspace-created"></a>Waar wordt de standaard Log Analytics-werkruimte gemaakt?
 
 De locatie van de standaardwerk ruimte is afhankelijk van uw Azure-regio:
 
@@ -86,15 +86,15 @@ De locatie van de standaardwerk ruimte is afhankelijk van uw Azure-regio:
 - Voor Vm's in Australië is de locatie van de werk ruimte Australië
 
 
-## <a name="what-data-is-collected-by-the-log-analytics-agent"></a>Welke gegevens worden verzameld door de Log Analytics-agent?
+## <a name="what-security-events-are-collected-by-the-log-analytics-agent"></a>Welke beveiligings gebeurtenissen worden door de Log Analytics-agent verzameld?
 
-Zie [wat wordt bewaakt door Azure monitor?](../azure-monitor/monitor-reference.md#azure-services)voor een volledige lijst van de toepassingen en services die door de agent worden bewaakt.
+Zie voor een volledige lijst met de beveiligings gebeurtenissen die door de agent [worden verzameld welke gebeurtenis typen worden opgeslagen voor de instellingen voor de beveiligings gebeurtenissen ' common ' en ' minimal '?](security-center-enable-data-collection.md#what-event-types-are-stored-for-common-and-minimal).
 
 > [!IMPORTANT]
-> Houd er rekening mee dat voor sommige services, zoals Azure Firewall, als u logboek registratie hebt ingeschakeld en een intensieve-bron hebt gekozen voor aanmelding (bijvoorbeeld door het logboek in te stellen op *uitgebreid* ), u mogelijk belang rijke gevolgen voor uw log Analytics werkruimte opslag nodig hebt. 
+> Houd er rekening mee dat voor sommige services, zoals Azure Firewall, als u logboek registratie hebt ingeschakeld en een intensieve-bron hebt gekozen voor aanmelding (bijvoorbeeld door het logboek in te stellen op *uitgebreid*), u mogelijk belang rijke gevolgen voor uw log Analytics werkruimte opslag nodig hebt. 
 
 
-## <a name="can-i-delete-the-default-workspaces-created-by-security-center"></a>Kan ik de standaardwerk ruimten verwijderen die zijn gemaakt door Security Center?
+## <a name="can-i-delete-the-default-workspaces-created-by-security-center"></a>Kan ik de standaard werkruimten verwijderen die zijn gemaakt door Security Center?
 
 **Het is niet raadzaam de standaardwerk ruimte te verwijderen.** Security Center gebruikt de standaardwerk ruimte voor het opslaan van beveiligings gegevens van uw virtuele machines. Als u een werk ruimte verwijdert, kan Security Center deze gegevens niet verzamelen. sommige beveiligings aanbevelingen en-waarschuwingen zijn niet beschikbaar.
 
@@ -250,7 +250,7 @@ Als u het hebt ingeschakeld, maar nu wilt uitschakelen:
 
 ## <a name="how-do-i-enable-data-collection"></a>Gegevens verzameling Hoe kan ik inschakelen?
 
-U kunt het verzamelen van gegevens voor uw Azure-abonnement inschakelen in het beveiligings beleid. Om het verzamelen van gegevens in te scha kelen. [Meld u aan bij de Azure Portal](https://portal.azure.com), selecteer **bladeren** , selecteer **Security Center** en selecteer **beveiligings beleid**. Selecteer het abonnement waarvoor u automatische inrichting wilt inschakelen. Wanneer u een beveiligings beleid voor abonnementen selecteert **: gegevens verzamelen** wordt geopend. Onder **automatische inrichting** selecteert u **aan**.
+U kunt het verzamelen van gegevens voor uw Azure-abonnement inschakelen in het beveiligings beleid. Om het verzamelen van gegevens in te scha kelen. [Meld u aan bij de Azure Portal](https://portal.azure.com), selecteer **bladeren**, selecteer **Security Center** en selecteer **beveiligings beleid**. Selecteer het abonnement waarvoor u automatische inrichting wilt inschakelen. Wanneer u een beveiligings beleid voor abonnementen selecteert **: gegevens verzamelen** wordt geopend. Onder **automatische inrichting** selecteert u **aan**.
 
 
 ## <a name="what-happens-when-data-collection-is-enabled"></a>Wat gebeurt er wanneer gegevens verzameling is ingeschakeld?

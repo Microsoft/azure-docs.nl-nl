@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to, contperfq1, automl
 ms.date: 08/20/2020
-ms.openlocfilehash: 0bbb18a82de508f79cd2fd5dde58c1cf33520950
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 57b54fbe20df4eb74ee17c7b5ac83d773114463b
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94887396"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437368"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Automatisch een time-series-prognose model trainen
 
@@ -128,7 +128,7 @@ Automatische machine learning probeert automatisch verschillende modellen en alg
 >[!Tip]
 > Traditionele regressie modellen worden ook getest als onderdeel van het aanbevelings systeem voor het voors pellen van experimenten. Zie de [tabel ondersteunde](how-to-configure-auto-train.md#supported-models) modellen voor de volledige lijst met modellen. 
 
-Modellen| Beschrijving | Voordelen
+Modellen| Description | Voordelen
 ----|----|---
 Prophet (preview-versie)|Prophet werkt het beste met een tijd reeks met krachtige seizoensgebonden effecten en verschillende seizoenen historische gegevens. Als u gebruik wilt maken van dit model, installeert u het lokaal met `pip install fbprophet` . | Nauw keurige & snelle, robuuste uitbijters, ontbrekende gegevens en dramatische wijzigingen in uw tijd reeks.
 Automatische ARIMA (preview-versie)|Automatisch herlopend, geïntegreerd zwevend gemiddelde (ARIMA) wordt het beste uitgevoerd wanneer de gegevens stationair zijn. Dit betekent dat de statistische eigenschappen, zoals het gemiddelde en de variantie, constant zijn in de hele set. Als u bijvoorbeeld een munten spiegelt, is de kans dat u koppen krijgt, 50%, ongeacht of u vandaag, morgen of volgend jaar spiegelt.| Ideaal voor univariate-Series, aangezien de vorige waarden worden gebruikt om de toekomstige waarden te voors pellen.
@@ -146,6 +146,7 @@ De volgende tabel bevat een overzicht van deze aanvullende para meters. Zie de [
 |`forecast_horizon`|Hiermee definieert u hoeveel Peri Oden voorwaarts u wilt ramen. De horizon ligt in eenheden van de tijd reeks frequentie. Eenheden zijn gebaseerd op het tijds interval van uw trainings gegevens, bijvoorbeeld maandelijks, wekelijks dat de Forecaster moet voors pellen.|✓|
 |`enable_dnn`|[DNNs voor het maken van prognoses]().||
 |`time_series_id_column_names`|De kolom namen die worden gebruikt voor het uniek identificeren van de tijd reeks in gegevens die meerdere rijen met dezelfde tijds tempel hebben. Als er geen tijd reeks-id's zijn gedefinieerd, wordt ervan uitgegaan dat de gegevensset één keer wordt gebruikt. Zie de [energy_demand_notebook](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning/forecasting-energy-demand)voor meer informatie over één time-serie.||
+|`freq`| De frequentie van de time series-gegevensset. Deze para meter vertegenwoordigt de periode waarmee gebeurtenissen worden verwacht, zoals dagelijks, wekelijks, jaarlijks, enzovoort. De frequentie moet een alias met een [Panda-offset](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#dateoffset-objects)zijn.||
 |`target_lags`|Het aantal rijen dat de doel waarden moeten worden vertraagd op basis van de frequentie van de gegevens. De vertraging wordt weer gegeven als een lijst of één geheel getal. Er moet een vertraging worden gebruikt wanneer de relatie tussen de onafhankelijke variabelen en de afhankelijke variabele standaard niet overeenkomt met of correleert. ||
 |`feature_lags`| De functies voor vertraging worden automatisch bepaald door automatische MILLILITERs wanneer `target_lags` ze zijn ingesteld en `feature_lags` ingesteld op `auto` . Het inschakelen van functie lags kan helpen de nauw keurigheid te verbeteren. Functie lags zijn standaard uitgeschakeld. ||
 |`target_rolling_window_size`|*n* historische Peri Oden die moeten worden gebruikt voor het genereren van prognose waarden, <= grootte van de Trainingsset. Als u dit weglaat, is *n* de volledige grootte van de Trainingsset. Geef deze para meter op als u alleen een bepaalde hoeveelheid geschiedenis wilt beschouwen bij het trainen van het model. Meer informatie over het [samen voegen van target-rollen](#target-rolling-window-aggregation).||
@@ -297,7 +298,7 @@ from azureml.automl.core.forecasting_parameters import ForecastingParameters
 forecast_parameters = ForecastingParameters(time_column_name='day_datetime', 
                                             forecast_horizon=50,
                                             short_series_handling_config='auto',
-                                            freq = 50
+                                            freq = '7',
                                             target_lags='auto')
 ```
 De volgende tabel bevat een overzicht van de beschik bare instellingen voor `short_series_handling_config` .

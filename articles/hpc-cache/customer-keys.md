@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 07/20/2020
 ms.author: v-erkel
-ms.openlocfilehash: 8bce19e384e600e95b8306dcbba38652b4432bc9
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 90af33a01450002c7d36a4ab4cf4a3da647068c5
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92340526"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96444569"
 ---
 # <a name="use-customer-managed-encryption-keys-for-azure-hpc-cache"></a>Door de klant beheerde versleutelings sleutels gebruiken voor Azure HPC-cache
 
@@ -20,7 +20,7 @@ U kunt Azure Key Vault gebruiken om de eigendom te bepalen van de sleutels die w
 > [!NOTE]
 > Alle gegevens die zijn opgeslagen in azure, met inbegrip van de cache schijven, worden standaard versleuteld met behulp van door micro soft beheerde sleutels. U hoeft alleen de stappen in dit artikel uit te voeren als u de sleutels wilt beheren die worden gebruikt voor het versleutelen van uw gegevens.
 
-De HPC-cache van Azure wordt ook beveiligd door de [VM-host-versleuteling](../virtual-machines/linux/disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data) op de beheerde schijven die uw gegevens in de cache bevatten, zelfs als u een klant sleutel toevoegt voor de cache schijven. Het toevoegen van een door de klant beheerde sleutel voor dubbele versleuteling biedt een extra beveiligings niveau voor klanten met hoge beveiligings behoeften. Lees de [versleuteling aan de server zijde van Azure Disk Storage](../virtual-machines/linux/disk-encryption.md) voor meer informatie.
+De HPC-cache van Azure wordt ook beveiligd door de [VM-host-versleuteling](../virtual-machines/disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data) op de beheerde schijven die uw gegevens in de cache bevatten, zelfs als u een klant sleutel toevoegt voor de cache schijven. Het toevoegen van een door de klant beheerde sleutel voor dubbele versleuteling biedt een extra beveiligings niveau voor klanten met hoge beveiligings behoeften. Lees de [versleuteling aan de server zijde van Azure Disk Storage](../virtual-machines/disk-encryption.md) voor meer informatie.
 
 Deze functie is alleen beschikbaar in een aantal Azure-regio's waar Azure HPC cache beschikbaar is. Raadpleeg de lijst met [Beschik baarheid van regio's](hpc-cache-overview.md#region-availability) voor meer informatie.
 
@@ -144,7 +144,7 @@ Nadat u de nieuwe waarden voor de versleutelings sleutel hebt gekozen, klikt u o
 In deze artikelen wordt uitgelegd hoe u Azure Key Vault en door de klant beheerde sleutels gebruikt voor het versleutelen van gegevens in Azure:
 
 * [Overzicht van Azure Storage-versleuteling](../storage/common/storage-service-encryption.md)
-* [Schijf versleuteling met door de klant beheerde sleutels](../virtual-machines/linux/disk-encryption.md#customer-managed-keys) : Documentatie voor het gebruik van Azure Key Vault met Managed disks, een soortgelijk scenario voor de HPC-cache van Azure
+* [Schijf versleuteling met door de klant beheerde sleutels](../virtual-machines/disk-encryption.md#customer-managed-keys) : Documentatie voor het gebruik van Azure Key Vault met Managed disks, een soortgelijk scenario voor de HPC-cache van Azure
 
 ## <a name="next-steps"></a>Volgende stappen
 

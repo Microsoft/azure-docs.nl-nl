@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/22/2020
 ms.author: mingshen
 author: mingshen-ms
-ms.openlocfilehash: b82478338603750a76718da956d74e23d242692e
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: d015cec30e516541b50c2acfac38fad898965e1b
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896531"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436348"
 ---
 # <a name="managed-application-metered-billing"></a>Factuur voor beheerde toepassing met data limiet 
 
@@ -22,7 +22,7 @@ Met de Marketplace-meet service kunt u beheerde toepassings abonnementen maken v
 
 Om ervoor te zorgen dat een beheerd toepassings abonnement gebruikmaakt van facturering met data limiet, moet dit:
 
-* Voldoen aan de vereisten van de aanbieding, zoals beschreven in [een Azure-toepassings aanbieding maken](create-new-azure-apps-offer.md).
+* Voldoen aan de vereisten van de aanbieding, zoals beschreven in [een Azure-toepassings aanbieding maken](../create-new-azure-apps-offer.md).
 * **Prijzen** voor het opladen van klanten configureren voor de kosten per maand voor uw service. De prijs kan nul zijn als u geen vaste kosten wilt in rekening brengen en in plaats daarvan volledig wilt vertrouwen op factuur met data limiet.
 * **Facturerings dimensies** instellen voor de meter gebeurtenissen die door de klant worden betaald boven op het vaste tarief.
 * Integreer met de [api's van de Marketplace-meet service](./marketplace-metering-service-apis.md) om micro soft te informeren over factureer bare gebeurtenissen.
@@ -56,11 +56,11 @@ Een Azure-klant die zich abonneert op een CoA-service kan rapporten per maand an
 
 Facturerings dimensies worden gebruikt om aan de klant te communiceren over hoe ze worden gefactureerd voor het gebruik van de software.  Deze dimensies worden ook gebruikt om gebruiks gebeurtenissen te communiceren met micro soft. Ze worden als volgt gedefinieerd:
 
-* **Dimensie-id** : de onveranderbare id waarnaar wordt verwezen tijdens het verzenden van gebruiks gebeurtenissen.
-* **Dimensie naam** : de weergave naam die aan de dimensie is gekoppeld, bijvoorbeeld ' verzonden tekst berichten '.
-* **Maat eenheid** : de beschrijving van de facturerings eenheid, bijvoorbeeld ' per SMS-bericht ' of ' per 100 e-mail berichten '.
-* **Prijs per eenheid** : de prijs voor één eenheid van de dimensie.
-* **Inbegrepen hoeveelheid voor maandelijkse periode** : de hoeveelheid dimensie die per maand wordt opgenomen voor klanten die de terugkerende maandelijkse kosten betalen, moet een geheel getal zijn.
+* **Dimensie-id**: de onveranderbare id waarnaar wordt verwezen tijdens het verzenden van gebruiks gebeurtenissen.
+* **Dimensie naam**: de weergave naam die aan de dimensie is gekoppeld, bijvoorbeeld ' verzonden tekst berichten '.
+* **Maat eenheid**: de beschrijving van de facturerings eenheid, bijvoorbeeld ' per SMS-bericht ' of ' per 100 e-mail berichten '.
+* **Prijs per eenheid**: de prijs voor één eenheid van de dimensie.
+* **Inbegrepen hoeveelheid voor maandelijkse periode**: de hoeveelheid dimensie die per maand wordt opgenomen voor klanten die de terugkerende maandelijkse kosten betalen, moet een geheel getal zijn.
 
 Facturerings dimensies worden gedeeld in alle abonnementen voor een aanbieding. Sommige kenmerken zijn van toepassing op de dimensie over alle plannen en andere kenmerken zijn specifiek voor een plan.
 
@@ -79,7 +79,7 @@ De andere kenmerken van een dimensie zijn specifiek voor elk plan en kunnen vers
 Dimensies hebben ook twee speciale concepten: ' enabled ' en ' infinite '.
 
 * **Ingeschakeld** geeft aan dat dit plan deelneemt aan deze dimensie.  U kunt deze optie uitschakelen als u een nieuw abonnement maakt dat geen gebruiks gebeurtenissen op basis van deze dimensie verzendt. Daarnaast worden nieuwe dimensies die zijn toegevoegd nadat een plan voor het eerst werd gepubliceerd, weer gegeven als ' niet ingeschakeld ' in het al gepubliceerde abonnement.  Een uitgeschakelde dimensie wordt niet weer gegeven in een lijst met dimensies voor een plan dat door klanten wordt gezien.
-* **Oneindig** , vertegenwoordigd door het oneindigheids teken ' ∞ ', geeft aan dat dit plan deelneemt aan deze dimensie, zonder gebruik van een Data limiet voor deze dimensie. Als u aan uw klanten wilt aangeven dat de functionaliteit die wordt vertegenwoordigd door deze dimensie, in het plan is opgenomen, maar zonder limiet voor gebruik.  Een dimensie met oneindig gebruik wordt weer gegeven in een lijst met dimensies voor een plan dat door klanten wordt weer gegeven.  Voor dit abonnement worden nooit kosten in rekening gebracht.
+* **Oneindig**, vertegenwoordigd door het oneindigheids teken ' ∞ ', geeft aan dat dit plan deelneemt aan deze dimensie, zonder gebruik van een Data limiet voor deze dimensie. Als u aan uw klanten wilt aangeven dat de functionaliteit die wordt vertegenwoordigd door deze dimensie, in het plan is opgenomen, maar zonder limiet voor gebruik.  Een dimensie met oneindig gebruik wordt weer gegeven in een lijst met dimensies voor een plan dat door klanten wordt weer gegeven.  Voor dit abonnement worden nooit kosten in rekening gebracht.
 
 >[!Note] 
 >De volgende scenario's worden expliciet ondersteund:  <br> -U kunt een nieuwe dimensie toevoegen aan een nieuw plan.  De nieuwe dimensie wordt niet ingeschakeld voor al gepubliceerde plannen. <br> -U kunt een abonnement publiceren met een vast maand tarief en zonder dimensies, en vervolgens een nieuw plan toevoegen en een nieuwe dimensie voor dat plan configureren. De nieuwe dimensie wordt niet ingeschakeld voor al gepubliceerde plannen.

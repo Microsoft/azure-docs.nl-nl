@@ -8,12 +8,12 @@ ms.author: kgremban
 ms.date: 3/27/2020
 ms.topic: conceptual
 ms.service: iot-edge
-ms.openlocfilehash: 1883ffdff20bbbef8efec1440854f01a21a281dc
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 2ae6d46198d979f91de5bf31d389f75961b4ab88
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994516"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437164"
 ---
 # <a name="use-visual-studio-2019-to-develop-and-debug-modules-for-azure-iot-edge"></a>Visual Studio 2019 gebruiken voor het ontwikkelen en opsporen van fouten in modules voor Azure IoT Edge
 
@@ -32,7 +32,7 @@ Dit artikel laat u zien hoe u met de Azure IoT Edge-Hulpprogram Ma's voor Visual
 
 In dit artikel wordt ervan uitgegaan dat u een computer of virtuele machine met Windows gebruikt als uw ontwikkel computer. Op Windows-computers kunt u Windows-of linux-modules ontwikkelen. Voor het ontwikkelen van Windows-modules gebruikt u een Windows-computer met versie 1809/build 17763 of hoger. Voor het ontwikkelen van linux-modules gebruikt u een Windows-computer die voldoet aan de [vereisten voor docker Desktop](https://docs.docker.com/docker-for-windows/install/#what-to-know-before-you-install).
 
-Omdat in dit artikel Visual Studio 2019 als belangrijkste ontwikkel programma wordt gebruikt, installeert u Visual Studio. Zorg ervoor dat u de **Azure-ontwikkel** -en bureaublad ontwikkeling opneemt **met C++** -workloads in uw Visual Studio 2019-installatie. U kunt [Visual Studio 2019 wijzigen](/visualstudio/install/modify-visual-studio?view=vs-2019) om de vereiste werk belastingen toe te voegen.
+Omdat in dit artikel Visual Studio 2019 als belangrijkste ontwikkel programma wordt gebruikt, installeert u Visual Studio. Zorg ervoor dat u de **Azure-ontwikkel** -en bureaublad ontwikkeling opneemt **met C++** -workloads in uw Visual Studio 2019-installatie. U kunt [Visual Studio 2019 wijzigen](/visualstudio/install/modify-visual-studio?view=vs-2019&preserve-view=true) om de vereiste werk belastingen toe te voegen.
 
 Nadat uw Visual Studio 2019 gereed is, hebt u ook de volgende hulpprogram ma's en onderdelen nodig:
 

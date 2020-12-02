@@ -12,12 +12,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 07/31/2020
-ms.openlocfilehash: f82c3b894a54dc08b0f6dd73108d6f4b2c17f8d6
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: e8388832985ca3b27baea008ff1a9bdd5df06964
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93359830"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96445108"
 ---
 # <a name="create-azure-machine-learning-datasets"></a>Azure Machine Learning-gegevenssets maken
 
@@ -124,7 +124,7 @@ mnist_ds = Dataset.File.from_files(path=web_paths)
 Als u gegevens sets in het experiment opnieuw wilt gebruiken en delen in uw werk ruimte, moet [u uw gegevensset registreren](#register-datasets). 
 
 > [!TIP] 
-> Upload bestanden uit een lokale map en maak een FileDataset in één methode met de open bare preview-methode, [upload_directory ()](/python/api/azureml-core/azureml.data.filedataset?preserve-view=true&view=azure-ml-py#methods). Deze methode is een [experimentele](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#stable-vs-experimental) preview-functie en kan op elk gewenst moment worden gewijzigd. 
+> Upload bestanden uit een lokale map en maak een FileDataset in één methode met de open bare preview-methode, [upload_directory ()](/python/api/azureml-core/azureml.data.dataset_factory.filedatasetfactory?preserve-view=true&view=azure-ml-py#upload-directory-src-dir--target--pattern-none--overwrite-false--show-progress-true-). Deze methode is een [experimentele](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#stable-vs-experimental) preview-functie en kan op elk gewenst moment worden gewijzigd. 
 > 
 >  Met deze methode worden gegevens naar uw onderliggende opslag geüpload, waardoor opslag kosten in rekening worden gebracht. 
 ### <a name="create-a-tabulardataset"></a>Een TabularDataset maken
@@ -208,7 +208,7 @@ dataset = Dataset.Tabular.from_delimited_files(path = [(datastore, ('data/prepar
 ```
 
 > [!TIP]
-> Maak en Registreer een TabularDataset van een in het geheugen Spark-of Panda-data frame met één methode met open bare preview-methoden, [`register_spark_dataframe()`](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py#methods) en [`register_pandas_dataframe()`](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py#methods) . Deze registratie methoden zijn [experimentele](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#stable-vs-experimental) preview-functies en kunnen op elk gewenst moment worden gewijzigd. 
+> Maak en Registreer een TabularDataset van een in het geheugen Spark-of Panda-data frame met één methode met open bare preview-methoden, [`register_spark_dataframe()`](/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory?preserve-view=true&view=azure-ml-py#methods) en [`register_pandas_dataframe()`](/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory?preserve-view=true&view=azure-ml-py#methods) . Deze registratie methoden zijn [experimentele](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#stable-vs-experimental) preview-functies en kunnen op elk gewenst moment worden gewijzigd. 
 > 
 >  Met deze methoden worden gegevens naar uw onderliggende opslag geüpload, waardoor opslag kosten in rekening worden gebracht. 
 

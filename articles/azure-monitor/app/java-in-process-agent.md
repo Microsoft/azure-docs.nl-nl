@@ -3,12 +3,12 @@ title: Azure Monitor Application Insights java
 description: Bewaking van toepassings prestaties voor Java-toepassingen die worden uitgevoerd in een omgeving zonder dat code hoeft te worden gewijzigd. Gedistribueerde tracering en toepassings toewijzing.
 ms.topic: conceptual
 ms.date: 03/29/2020
-ms.openlocfilehash: 36e2b419da2bccdf2f5f13227457172cf644994c
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 7046e4a1aeeda5e537208c79858c95c79e188348
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96351534"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437198"
 ---
 # <a name="java-codeless-application-monitoring-azure-monitor-application-insights"></a>Azure Monitor Application Insights voor de bewaking van Java-toepassingen
 
@@ -127,104 +127,124 @@ Zie [configuratie opties](./java-standalone-config.md) voor volledige informatie
 * Micrometer (met inbegrip van gegevens over de veer boot-klep)
 * Metrische gegevens van JMX
 
-## <a name="sending-custom-telemetry-from-your-application"></a>Aangepaste telemetrie van uw toepassing verzenden
+## <a name="send-custom-telemetry-from-your-application"></a>Aangepaste telemetrie verzenden vanuit uw toepassing
 
 Met ons doel in 3.0 + kunt u uw aangepaste telemetrie verzenden met behulp van standaard-Api's.
 
-We ondersteunen micrometer, OpenTelemetry-API en de populaire logboek registratie raamwerken. Application Insights Java 3,0 wordt de telemetrie automatisch vastgelegd en correleren samen met alle automatisch verzamelde telemetrie.
+We ondersteunen micrometer, populaire logging frameworks en de Application Insights Java 2. x SDK tot nu toe.
+Application Insights Java 3,0 wordt de telemetrie die via deze Api's wordt verzonden automatisch vastgelegd en correleert deze met automatisch verzamelde telemetrie.
 
 ### <a name="supported-custom-telemetry"></a>Ondersteunde aangepaste telemetrie
 
-De volgende tabel bevat momenteel ondersteunde aangepaste typen telemetrie die u kunt inschakelen om de Java 3,0-agent aan te vullen. Om samen te vatten worden aangepaste metrische gegevens ondersteund via micrometer, aangepaste uitzonde ringen en traceringen kunnen worden ingeschakeld via logging frameworks, en elk type van de aangepaste telemetrie wordt ondersteund via de [Application Insights Java 2. x SDK](#sending-custom-telemetry-using-application-insights-java-sdk-2x). 
+De volgende tabel bevat momenteel ondersteunde aangepaste typen telemetrie die u kunt inschakelen om de Java 3,0-agent aan te vullen. Om samen te vatten worden aangepaste metrische gegevens ondersteund via micrometer, aangepaste uitzonde ringen en traceringen kunnen worden ingeschakeld via logging frameworks, en elk type van de aangepaste telemetrie wordt ondersteund via de [Application Insights Java 2. x SDK](#send-custom-telemetry-using-application-insights-java-2x-sdk).
 
 |                     | Micrometer | Log4j, logback, JUL | 2. x SDK |
 |---------------------|------------|---------------------|---------|
-| **Aangepaste gebeurtenissen**   |            |                     |  Ja    |
+| **Aangepaste gebeurtenissen**   |            |                     |  Yes    |
 | **Aangepaste metrische gegevens**  |  Ja       |                     |  Ja    |
-| **Afhankelijkheden**    |            |                     |  Ja    |
+| **Afhankelijkheden**    |            |                     |  Yes    |
 | **Uitzonderingen**      |            |  Ja                |  Ja    |
-| **Paginaweergaven**      |            |                     |  Ja    |
-| **Aanvragen**        |            |                     |  Ja    |
+| **Paginaweergaven**      |            |                     |  Yes    |
+| **Aanvragen**        |            |                     |  Yes    |
 | **Traceringen**          |            |  Ja                |  Ja    |
 
 Er is op dit moment geen planning voor het vrijgeven van een SDK met Application Insights 3,0.
 
-Application Insights Java 3,0 wordt al geluisterd naar telemetrie die wordt verzonden naar de Application Insights Java SDK 2. x. Deze functionaliteit is een belang rijk onderdeel van het upgrade verhaal voor bestaande 2. x-gebruikers, en het vult een belang rijke tussen ruimte in onze aangepaste telemetrie-ondersteuning totdat de OpenTelemetry-API GA is.
+Application Insights Java 3,0 wordt al geluisterd naar telemetrie die wordt verzonden naar de Application Insights Java 2. x SDK. Deze functionaliteit is een belang rijk onderdeel van het upgrade verhaal voor bestaande 2. x-gebruikers, en het vult een belang rijke tussen ruimte in onze aangepaste telemetrie-ondersteuning totdat de OpenTelemetry-API GA is.
 
-## <a name="sending-custom-telemetry-using-application-insights-java-sdk-2x"></a>Aangepaste telemetrie verzenden met Application Insights Java SDK 2. x
+### <a name="send-custom-metrics-using-micrometer"></a>Aangepaste metrische gegevens verzenden met micrometer
+
+Voeg micrometer toe aan uw toepassing:
+
+```xml
+<dependency>
+  <groupId>io.micrometer</groupId>
+  <artifactId>micrometer-core</artifactId>
+  <version>1.6.1</version>
+</dependency>
+```
+
+Gebruik het [globale REGI ster](https://micrometer.io/docs/concepts#_global_registry) van micrometer om een meter te maken:
+
+```java
+static final Counter counter = Metrics.counter("test_counter");
+```
+
+en gebruiken voor het vastleggen van metrische gegevens:
+
+```java
+counter.increment();
+```
+
+### <a name="send-custom-traces-and-exceptions-using-your-favorite-logging-framework"></a>Aangepaste traceringen en uitzonde ringen verzenden met uw favoriete Framework voor logboek registratie
+
+Log4j, logback en Java. util. logging zijn automatisch instrumenteel en logboek registratie die via deze logboek registratie raamwerken wordt uitgevoerd, wordt automatisch verzameld als traceer-en uitzonderings-telemetrie.
+
+Logboek registratie wordt standaard alleen verzameld wanneer de logboek registratie wordt uitgevoerd op het niveau van de INFO of hierboven.
+Zie de [configuratie opties](./java-standalone-config.md#auto-collected-logging) voor het wijzigen van dit niveau.
+
+Als u aangepaste dimensies aan uw logboeken wilt koppelen, kunt u [Log4j 1 MDC](https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/MDC.html), [Log4j 2 MDC](https://logging.apache.org/log4j/2.x/manual/thread-context.html)of [Logback MDC](http://logback.qos.ch/manual/mdc.html)gebruiken, en Application Insights Java 3,0 worden deze MDC-eigenschappen automatisch vastgelegd als aangepaste dimensies op de tracering en uitzonde ring van de telemetrie.
+
+### <a name="send-custom-telemetry-using-application-insights-java-2x-sdk"></a>Aangepaste telemetrie verzenden met Application Insights Java 2. x SDK
 
 Toevoegen `applicationinsights-core-2.6.0.jar` aan uw toepassing (alle 2. x-versies worden ondersteund door Application Insights Java 3,0, maar het is een goed idee om de nieuwste te gebruiken als u een keuze hebt):
 
 ```xml
-  <dependency>
-    <groupId>com.microsoft.azure</groupId>
-    <artifactId>applicationinsights-core</artifactId>
-    <version>2.6.0</version>
-  </dependency>
+<dependency>
+  <groupId>com.microsoft.azure</groupId>
+  <artifactId>applicationinsights-core</artifactId>
+  <version>2.6.0</version>
+</dependency>
 ```
 
 Een TelemetryClient maken:
 
   ```java
-private static final TelemetryClient telemetryClient = new TelemetryClient();
+static final TelemetryClient telemetryClient = new TelemetryClient();
 ```
 
-en gebruiken voor het verzenden van aangepaste telemetrie.
+en gebruiken om aangepaste telemetrie te verzenden:
 
-### <a name="events"></a>Gebeurtenissen
+##### <a name="events"></a>Gebeurtenissen
 
-  ```java
+```java
 telemetryClient.trackEvent("WinGame");
 ```
-### <a name="metrics"></a>Metrische gegevens
 
-U kunt metrische telemetriegegevens verzenden via [micrometer](https://micrometer.io):
+##### <a name="metrics"></a>Metrische gegevens
 
 ```java
-  Counter counter = Metrics.counter("test_counter");
-  counter.increment();
+telemetryClient.trackMetric("queueLength", 42.0);
 ```
 
-U kunt ook Application Insights Java SDK 2. x gebruiken:
+##### <a name="dependencies"></a>Afhankelijkheden
 
 ```java
-  telemetryClient.trackMetric("queueLength", 42.0);
+boolean success = false;
+long startTime = System.currentTimeMillis();
+try {
+    success = dependency.call();
+} finally {
+    long endTime = System.currentTimeMillis();
+    RemoteDependencyTelemetry telemetry = new RemoteDependencyTelemetry();
+    telemetry.setTimestamp(new Date(startTime));
+    telemetry.setDuration(new Duration(endTime - startTime));
+    telemetryClient.trackDependency(telemetry);
+}
 ```
 
-### <a name="dependencies"></a>Afhankelijkheden
+##### <a name="logs"></a>Logboeken
 
 ```java
-  boolean success = false;
-  long startTime = System.currentTimeMillis();
-  try {
-      success = dependency.call();
-  } finally {
-      long endTime = System.currentTimeMillis();
-      RemoteDependencyTelemetry telemetry = new RemoteDependencyTelemetry();
-      telemetry.setTimestamp(new Date(startTime));
-      telemetry.setDuration(new Duration(endTime - startTime));
-      telemetryClient.trackDependency(telemetry);
-  }
+telemetryClient.trackTrace(message, SeverityLevel.Warning, properties);
 ```
 
-### <a name="logs"></a>Logboeken
-U kunt aangepaste logboek-telemetrie verzenden via uw favoriete Framework voor logboek registratie.
-
-U kunt ook Application Insights Java SDK 2. x gebruiken:
+##### <a name="exceptions"></a>Uitzonderingen
 
 ```java
-  telemetryClient.trackTrace(message, SeverityLevel.Warning, properties);
-```
-
-### <a name="exceptions"></a>Uitzonderingen
-U kunt aangepaste telemetrie voor uitzonde ringen verzenden via uw favoriete Framework voor logboek registratie.
-
-U kunt ook Application Insights Java SDK 2. x gebruiken:
-
-```java
-  try {
-      ...
-  } catch (Exception e) {
-      telemetryClient.trackException(e);
-  }
+try {
+    ...
+} catch (Exception e) {
+    telemetryClient.trackException(e);
+}
 ```

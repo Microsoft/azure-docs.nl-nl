@@ -3,12 +3,12 @@ title: Door de gebruiker gedefinieerde functies in sjablonen
 description: Hierin wordt beschreven hoe u door de gebruiker gedefinieerde functies definieert en gebruikt in een Azure Resource Manager sjabloon (ARM-sjabloon).
 ms.topic: conceptual
 ms.date: 03/09/2020
-ms.openlocfilehash: c0d62abb5362d51a77db872c11416b04dcfb3f97
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 12199aca788438e4558ed2c607b866f0dc723e2a
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353473"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436960"
 ---
 # <a name="user-defined-functions-in-arm-template"></a>Door de gebruiker gedefinieerde functies in ARM-sjabloon
 
@@ -103,8 +103,7 @@ Bij het definiëren van een gebruikers functie gelden enkele beperkingen:
 * De functie kan de functie [Reference](template-functions-resource.md#reference) of een van de [lijst](template-functions-resource.md#list) functies niet gebruiken.
 * Para meters voor de functie kunnen geen standaard waarden hebben.
 
-
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [inzicht krijgen in de structuur en de syntaxis van Azure Resource Manager-sjablonen](template-syntax.md)voor meer informatie over de beschik bare eigenschappen voor door de gebruiker gedefinieerde functies.
-* Zie [Azure Resource Manager-sjabloon functies](template-functions.md)voor een lijst met de beschik bare sjabloon functies.
+* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor meer informatie over de beschik bare eigenschappen voor door de gebruiker gedefinieerde functies.
+* Zie [arm-sjabloon functies](template-functions.md)voor een lijst met de beschik bare sjabloon functies.

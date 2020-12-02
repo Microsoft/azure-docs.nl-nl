@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: 236a604c2c1cecfb18a2d82c3796a88cc4341a34
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: d37c362da484a2a7e400da8f87dd0a37f0f80d3a
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94636381"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436722"
 ---
 # <a name="azure-defender-for-sql-servers-on-machines"></a>Azure Defender voor SQL-servers op computers 
 
@@ -105,14 +105,14 @@ U kunt de resultaten van de evaluatie van de beveiligings problemen rechtstreeks
 
     * Selecteer de gewenste Data Base voor een overzicht van de beveiligings problemen die zijn gegroepeerd op een specifieke SQL database.
 
-    In elke weer gave worden de beveiligings controles gesorteerd op **Ernst**. Klik op een specifieke beveiligings controle om het deel venster Details te bekijken met een **Beschrijving** , het probleem te **verhelpen** en andere gerelateerde informatie, zoals **impact** of **Bench Mark**.
+    In elke weer gave worden de beveiligings controles gesorteerd op **Ernst**. Klik op een specifieke beveiligings controle om het deel venster Details te bekijken met een **Beschrijving**, het probleem te **verhelpen** en andere gerelateerde informatie, zoals **impact** of **Bench Mark**.
 
 ## <a name="azure-defender-for-sql-alerts"></a>Azure Defender voor SQL-waarschuwingen
 Waarschuwingen worden gegenereerd door ongebruikelijke en mogelijk schadelijke pogingen om SQL-machines te openen of misbruik te maken. Deze gebeurtenissen kunnen waarschuwingen activeren die worden weer gegeven in de [sectie waarschuwingen voor SQL database en Azure Synapse Analytics (voorheen SQL Data Warehouse) van de pagina met waarschuwingen](alerts-reference.md#alerts-sql-db-and-warehouse).
 
 ## <a name="explore-and-investigate-security-alerts"></a>Beveiligings waarschuwingen verkennen en onderzoeken
 
-Azure Defender-waarschuwingen zijn beschikbaar op de pagina waarschuwingen van Security Center, het tabblad Beveiliging van de resource, het [Azure Defender-dash board](azure-defender-dashboard.md)of via de directe koppeling in de e-mail waarschuwingen.
+Azure Defender voor SQL-waarschuwingen zijn beschikbaar op de pagina waarschuwingen van Security Center, het tabblad Beveiliging van de resource, het [Azure Defender-dash board](azure-defender-dashboard.md)of via de directe koppeling in de e-mail waarschuwingen.
 
 1. Als u waarschuwingen wilt weer geven, selecteert u **beveiligings waarschuwingen** in het menu van Security Center en selecteert u een waarschuwing.
 

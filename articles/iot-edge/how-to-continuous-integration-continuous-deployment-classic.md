@@ -8,12 +8,12 @@ ms.date: 08/26/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 1866f3360b90a96b5e3f215eb7669a1451262bd8
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: b9b842b94d66cf91ad836b8ae61df1b3d3f34293
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92046006"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96435940"
 ---
 # <a name="continuous-integration-and-continuous-deployment-to-azure-iot-edge-devices-classic-editor"></a>Continue integratie en continue implementatie naar Azure IoT Edge apparaten (klassieke editor)
 
@@ -32,15 +32,15 @@ In dit artikel leert u hoe u de ingebouwde [Azure IOT Edge taken](/azure/devops/
 
 Tenzij anders aangegeven, verkennen de procedures in dit artikel niet alle beschik bare functies via taak parameters. Raadpleeg de volgende artikelen voor meer informatie:
 
-* [Taak versie](/azure/devops/pipelines/process/tasks?tabs=classic&view=azure-devops#task-versions)
+* [Taak versie](/azure/devops/pipelines/process/tasks?tabs=classic#task-versions)
 * **Geavanceerd** : Geef modules op die u niet wilt maken, indien van toepassing.
-* [Beheer opties](/azure/devops/pipelines/process/tasks?tabs=classic&view=azure-devops#task-control-options)
-* [Omgevings variabelen](/azure/devops/pipelines/process/variables?tabs=yaml%252cbatch&view=azure-devops#environment-variables)
-* [Uitvoer variabelen](/azure/devops/pipelines/process/variables?tabs=yaml%252cbatch&view=azure-devops#use-output-variables-from-tasks)
+* [Beheer opties](/azure/devops/pipelines/process/tasks?tabs=classic#task-control-options)
+* [Omgevings variabelen](/azure/devops/pipelines/process/variables?tabs=classic#environment-variables)
+* [Uitvoer variabelen](/azure/devops/pipelines/process/variables?tabs=classic#use-output-variables-from-tasks)
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een Azure opslag plaatsen-opslag plaats. Als u er nog geen hebt, kunt u [een nieuwe Git-opslag plaats in uw project maken](/azure/devops/repos/git/create-new-repo?tabs=new-nav&view=vsts). Voor dit artikel hebt u een opslag plaats gemaakt met de naam **IoTEdgeRepo**.
+* Een Azure opslag plaatsen-opslag plaats. Als u er nog geen hebt, kunt u [een nieuwe Git-opslag plaats in uw project maken](/azure/devops/repos/git/create-new-repo). Voor dit artikel hebt u een opslag plaats gemaakt met de naam **IoTEdgeRepo**.
 * Een IoT Edge oplossing die is doorgevoerd en gepusht naar uw opslag plaats. Als u een nieuwe voorbeeld oplossing wilt maken voor het testen van dit artikel, volgt u de stappen in [modules voor ontwikkel-en fout opsporing in Visual Studio code](how-to-vs-code-develop-module.md) of [ontwikkel en debug C#-modules in Visual Studio](./how-to-visual-studio-develop-module.md). Voor dit artikel hebben we een oplossing in onze opslag plaats gemaakt met de naam **IoTEdgeSolution**, die de code bevat voor een module met de naam **filtermodule**.
 
    Voor dit artikel hoeft u alleen de map Solution te maken die is gemaakt door de IoT Edge sjablonen in Visual Studio code of Visual Studio. U hoeft deze code niet te bouwen, te pushen, te implementeren of te debuggen voordat u doorgaat. Deze processen worden ingesteld in azure-pijp lijnen.
@@ -84,7 +84,7 @@ In deze sectie maakt u een nieuwe build-pijp lijn. U configureert de pijp lijn z
 
    * Als u uw modules wilt maken in platform amd64 voor Linux-containers, kiest u **Ubuntu-16,04**
 
-   * Als u uw modules in platform amd64 voor Windows 1809-containers wilt maken, moet u [zelf-hostende agent instellen in Windows](/azure/devops/pipelines/agents/v2-windows?view=vsts).
+   * Als u uw modules in platform amd64 voor Windows 1809-containers wilt maken, moet u [zelf-hostende agent instellen in Windows](/azure/devops/pipelines/agents/v2-windows).
 
    * Als u uw modules in platform arm32v7 of arm64 voor Linux-containers wilt maken, moet u [zelf-hostende agent instellen in Linux](https://devblogs.microsoft.com/iotdev/setup-azure-iot-edge-ci-cd-pipeline-with-arm-agent).
 
@@ -122,7 +122,7 @@ In deze sectie maakt u een nieuwe build-pijp lijn. U configureert de pijp lijn z
     | Bewerking | Selecteer **installatie kopieën van push module**. |
     | Container register type | Gebruik het standaard type: `Azure Container Registry` . |
     | Azure-abonnement | Kies uw abonnement. |
-    | Azure Container Registry | Selecteer het type container register dat u gebruikt om de module installatie kopieën op te slaan. Afhankelijk van het register type dat u kiest, verandert het formulier. Als u **Azure container Registry**selecteert, gebruikt u de vervolg keuzelijst om het Azure-abonnement en de naam van uw container register te selecteren. Als u **algemene container Registry**kiest, selecteert u **Nieuw** om een register service verbinding te maken. |
+    | Azure Container Registry | Selecteer het type container register dat u gebruikt om de module installatie kopieën op te slaan. Afhankelijk van het register type dat u kiest, verandert het formulier. Als u **Azure container Registry** selecteert, gebruikt u de vervolg keuzelijst om het Azure-abonnement en de naam van uw container register te selecteren. Als u **algemene container Registry** kiest, selecteert u **Nieuw** om een register service verbinding te maken. |
     | .template.jsvoor bestand | Selecteer het beletsel teken (**...**) en navigeer naar het **deployment.template.js** bestand in de opslag plaats met uw IOT EDGE oplossing. |
     | Standaard platform | Selecteer het juiste besturings systeem voor uw modules op basis van uw doel-IoT Edge apparaat. |
     | Register referentie toevoegen aan implementatie manifest | Geef waar op om de register referentie voor het pushen van docker-installatie kopieën naar het implementatie manifest toe te voegen. |
@@ -136,14 +136,14 @@ In deze sectie maakt u een nieuwe build-pijp lijn. U configureert de pijp lijn z
     | Weergavenaam | De standaard naam gebruiken of aanpassen |
     | Bronmap | De map met de bestanden die moeten worden gekopieerd. |
     | Inhoud | Twee regels toevoegen: `deployment.template.json` en `**/module.json` . Deze twee bestanden dienen als invoer voor het genereren van het IoT Edge implementatie manifest. |
-    | Doelmap | Geef de variabele op `$(Build.ArtifactStagingDirectory)` . Zie [Build Varia bles](/azure/devops/pipelines/build/variables?tabs=yaml&view=azure-devops#build-variables) voor meer informatie over de beschrijving. |
+    | Doelmap | Geef de variabele op `$(Build.ArtifactStagingDirectory)` . Zie [Build Varia bles](/azure/devops/pipelines/build/variables#build-variables) voor meer informatie over de beschrijving. |
 
 10. Selecteer de taak **Build-artefacten publiceren** om deze te bewerken. Geef het pad naar de map voor het klaarzetten van artefacten naar de taak zodat het pad naar de release pijplijn kan worden gepubliceerd.
 
     | Parameter | Beschrijving |
     | --- | --- |
     | Weergavenaam | Gebruik de standaard naam of aanpassen. |
-    | Pad voor publiceren | Geef de variabele op `$(Build.ArtifactStagingDirectory)` . Zie [Build Varia bles](/azure/devops/pipelines/build/variables?tabs=yaml&view=azure-devops#build-variables) voor meer informatie. |
+    | Pad voor publiceren | Geef de variabele op `$(Build.ArtifactStagingDirectory)` . Zie [Build Varia bles](/azure/devops/pipelines/build/variables#build-variables) voor meer informatie. |
     | Naam van het artefact | Standaard naam gebruiken: **verwijderen** |
     | Publicatie locatie artefact | De standaard locatie gebruiken: **Azure-pijp lijnen** |
 

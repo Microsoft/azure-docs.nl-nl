@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 10/30/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: e5e433fd857f638c1c13e4545c19e0b6314ee62e
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: 5f0dc73877d7742d4fc6a0c5b9bcf0529d475e0a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93146503"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96445262"
 ---
 # <a name="troubleshoot-synapse-studio-connectivity-with-powershell"></a>Problemen met de Synapse Studio-verbinding oplossen met Power shell
 
-Azure Synapse Studio (preview) is afhankelijk van een aantal web-API-eind punten om goed te werken. Deze hand leiding helpt u bij het identificeren van de oorzaken van verbindings problemen wanneer u het volgende bent:
+Azure Synapse Studio is afhankelijk van een aantal web-API-eind punten om goed te werken. Deze hand leiding helpt u bij het identificeren van de oorzaken van verbindings problemen wanneer u het volgende bent:
 - het configureren van uw lokale netwerk (zoals netwerk achter een bedrijfs firewall) voor toegang tot Azure Synapse Studio.
 - Er zijn verbindings problemen met Azure Synapse Studio.
 

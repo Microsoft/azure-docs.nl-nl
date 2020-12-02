@@ -6,14 +6,14 @@ ms.author: thweiss
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 01/21/2020
+ms.date: 11/30/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 936e98b3efa27f2d0a85c373ccae0ab223f4fd95
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 7d50185169b22a136ce81bd3aebae235cf49498b
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340903"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436620"
 ---
 # <a name="secure-access-to-data-in-azure-cosmos-db"></a>Beveiligde toegang tot gegevens in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -169,7 +169,7 @@ De entiteit kan nu Azure Cosmos DB resources lezen.
 
 ## <a name="delete-or-export-user-data"></a>Gebruikers gegevens verwijderen of exporteren
 
-Azure Cosmos DB kunt u zoeken, selecteren, wijzigen en verwijderen van persoonlijke gegevens die zich in data base of verzamelingen bevinden. Azure Cosmos DB biedt Api's om persoons gegevens te vinden en te verwijderen. het is uw verantwoordelijkheid om de Api's te gebruiken en de logica te definiëren die is vereist om de persoonlijke gegevens te wissen. Elke API voor meerdere modellen (SQL, MongoDB, Gremlin, Cassandra, tabel) biedt verschillende taal-Sdk's die methoden bevatten voor het zoeken en verwijderen van persoonlijke gegevens. U kunt ook de [TTL-functie (time to Live)](time-to-live.md) zo instellen dat gegevens na een bepaalde periode automatisch worden verwijderd, zonder dat er extra kosten in rekening worden gebracht.
+Als database service kunt u met Azure Cosmos DB zoeken, selecteren, wijzigen en verwijderen van gegevens die zich in uw data base of containers bevinden. Het is echter uw verantwoordelijkheid om de opgegeven Api's te gebruiken en om zo nodig de logica te definiëren die vereist is voor het zoeken en wissen van persoonlijke gegevens. Elke API voor meerdere modellen (SQL, MongoDB, Gremlin, Cassandra, tabel) biedt verschillende taal-Sdk's die methoden bevatten voor het zoeken en verwijderen van gegevens op basis van aangepaste predikaten. U kunt ook de [TTL-functie (time to Live)](time-to-live.md) zo instellen dat gegevens na een bepaalde periode automatisch worden verwijderd, zonder dat er extra kosten in rekening worden gebracht.
 
 [!INCLUDE [GDPR-related guidance](../../includes/gdpr-dsr-and-stp-note.md)]
 

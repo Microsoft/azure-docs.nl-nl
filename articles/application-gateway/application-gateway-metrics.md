@@ -2,17 +2,17 @@
 title: Azure Monitor metrische gegevens voor Application Gateway
 description: Meer informatie over het gebruik van metrische gegevens voor het bewaken van de prestaties van de toepassings gateway
 services: application-gateway
-author: abshamsft
+author: surajmb
 ms.service: application-gateway
 ms.topic: article
 ms.date: 06/06/2020
-ms.author: absha
-ms.openlocfilehash: c072e7c1339a2217a3c167be3237029bd71429c2
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.author: surmb
+ms.openlocfilehash: be629d9f8441ad40fe15f005f4aeb0ec5565a7ec
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93397736"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437062"
 ---
 # <a name="metrics-for-application-gateway"></a>Metrische gegevens voor Application Gateway
 
@@ -40,7 +40,7 @@ Application Gateway biedt verschillende ingebouwde metrische gegevens voor de ti
 
   Het tijds interval tussen het begin van het tot stand brengen van een verbinding met de back-endserver en het ontvangen van de eerste byte van de reactie header. 
 
-  Dit is een benadering van de som van de *back-uptijd* , het tijdstip van de aanvraag om de back-end te bereiken van Application Gateway, de tijd die door de back-end-toepassing wordt gebruikt om te reageren (het tijdstip waarop de server inhoud heeft gegenereerd, mogelijk database query's op te halen), en de tijd die wordt ingenel door de eerste byte Application Gateway van de back-end.
+  Dit is een benadering van de som van de *back-uptijd*, het tijdstip van de aanvraag om de back-end te bereiken van Application Gateway, de tijd die door de back-end-toepassing wordt gebruikt om te reageren (het tijdstip waarop de server inhoud heeft gegenereerd, mogelijk database query's op te halen), en de tijd die wordt ingenel door de eerste byte Application Gateway van de back-end.
 
 - **Reactie tijd laatste byte van back-end**
 
@@ -62,7 +62,7 @@ Application Gateway biedt verschillende ingebouwde metrische gegevens voor de ti
 
 Deze metrische gegevens kunnen worden gebruikt om te bepalen of de waargenomen vertraging wordt veroorzaakt door het client netwerk, de Application Gateway prestaties, het back-end netwerk en de back-endserver TCP-stack verzadiging, back-end-toepassings prestaties of grote bestands grootte.
 
-Als er bijvoorbeeld sprake is van een piek in de back-end voor de *reactie tijd* van een time-out voor de back-end, maar de trend van de *moment verbinding* voor het verbinden stabiel is, kan deze worden uitgesteld dat de toepassings gateway naar de back-end-latentie en de tijd die nodig is om de verbinding tot stand te brengen stabiel is. Daarentegen, als de piek in de *back-end-byte-reactie tijd* is gekoppeld aan een corresponderende Prikker in back- *End Connect time* , kan deze worden afgeleid dat het netwerk tussen Application Gateway-en back-endserver of de TCP-stack van de back-endserver verzadigd is. 
+Als er bijvoorbeeld sprake is van een piek in de back-end voor de *reactie tijd* van een time-out voor de back-end, maar de trend van de *moment verbinding* voor het verbinden stabiel is, kan deze worden uitgesteld dat de toepassings gateway naar de back-end-latentie en de tijd die nodig is om de verbinding tot stand te brengen stabiel is. Daarentegen, als de piek in de *back-end-byte-reactie tijd* is gekoppeld aan een corresponderende Prikker in back- *End Connect time*, kan deze worden afgeleid dat het netwerk tussen Application Gateway-en back-endserver of de TCP-stack van de back-endserver verzadigd is. 
 
 Als u een piek in de *reactie tijd van de laatste byte* van de back-end hebt gezien, maar de *back-end-reactie tijd* van de backend stabiel is, kan deze worden afgeleid door een groter bestand dat wordt aangevraagd.
 
@@ -162,7 +162,7 @@ De volgende metrische gegevens zijn beschikbaar voor Application Gateway:
 
 - **Mislukte aanvragen**
 
-  Het aantal aanvragen dat Application Gateway heeft geleverd met 5xx-server fout codes. Dit omvat de 5xx-codes die worden gegenereerd op basis van de Application Gateway en de 5xx-codes die worden gegenereerd op basis van de back-end. Het aantal aanvragen kan verder worden gefilterd om het aantal weer te geven per/specifieke back-end-groep-combi natie van http-instellingen.
+  Het aantal aanvragen dat is mislukt vanwege verbindings problemen. Dit aantal bevat aanvragen die zijn mislukt omdat de HTTP-instelling voor het aanvragen van een time-out is overschreden en aanvragen die zijn mislukt vanwege verbindings problemen tussen de toepassings gateway en de back-end. Dit aantal bevat geen fouten omdat er geen gezonde back-end beschikbaar is. 4xx-en 5xx-antwoorden van de back-end worden ook niet beschouwd als onderdeel van deze metriek.
 
 - **Reactie status**
 
@@ -214,7 +214,7 @@ In het volgende voor beeld wordt stapsgewijs uitgelegd hoe u een waarschuwings r
 
 2. Vul op de pagina **regel toevoegen** de naam, de voor waarde en de meldings secties in en selecteer **OK**.
 
-   * Selecteer in de **voor waarden** kiezer een van de vier waarden: **groter dan** , **groter dan of gelijk** aan, **kleiner dan** of **kleiner dan of gelijk aan**.
+   * Selecteer in de **voor waarden** kiezer een van de vier waarden: **groter dan**, **groter dan of gelijk** aan, **kleiner dan** of **kleiner dan of gelijk aan**.
 
    * Selecteer in de **periode** kiezer een periode van vijf minuten tot zes uur.
 

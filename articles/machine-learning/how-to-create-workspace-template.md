@@ -10,12 +10,12 @@ ms.custom: how-to, devx-track-azurecli, devx-track-azurepowershell
 ms.author: larryfr
 author: Blackmist
 ms.date: 09/30/2020
-ms.openlocfilehash: f07efcc18f3eff7e40232941befb563cd236266b
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: bd9199bc73e56ec36343b30d9b24f0b48799835e
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95013032"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96445183"
 ---
 # <a name="use-an-azure-resource-manager-template-to-create-a-workspace-for-azure-machine-learning"></a>Een Azure Resource Manager sjabloon gebruiken om een werk ruimte te maken voor Azure Machine Learning
 
@@ -41,7 +41,7 @@ Zie [een toepassing implementeren met Azure Resource Manager sjabloon](../azure-
 
 ## <a name="limitations"></a>Beperkingen
 
-* Wanneer u een nieuwe werk ruimte maakt, kunt u de werk ruimte toestaan de Azure-Services te maken die deze automatisch vereist of bestaande Services biedt. Wanneer u bestaande services levert, moeten deze services allemaal deel uitmaken van hetzelfde Azure-abonnement als de werk ruimte.
+[!INCLUDE [register-namespace](../../includes/machine-learning-register-namespace.md)]
 
 ## <a name="workspace-resource-manager-template"></a>Werkruimte Resource Manager-sjabloon
 
@@ -89,7 +89,7 @@ Als u uw sjabloon wilt implementeren, moet u een resource groep maken.
 
 Zie de sectie [Azure Portal](#use-the-azure-portal) als u de Graphical User Interface wilt gebruiken.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
 ```azurecli
 az group create --name "examplegroup" --location "eastus"
@@ -105,7 +105,7 @@ New-AzResourceGroup -Name "examplegroup" -Location "eastus"
 
 Zodra de resource groep is gemaakt, implementeert u de sjabloon met de volgende opdracht:
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
 ```azurecli
 az deployment group create \
@@ -133,7 +133,7 @@ Standaard zijn alle resources die zijn gemaakt als onderdeel van de sjabloon nie
 > [!IMPORTANT]
 > Als u een bestaand Azure Storage account wilt gebruiken, kan het geen Premium-account zijn (Premium_LRS en Premium_GRS). Het kan ook geen hiërarchische naam ruimte hebben (gebruikt met Azure Data Lake Storage Gen2). Geen enkele Premium-opslag of hiërarchische naam ruimte wordt ondersteund met het standaard opslag account van de werk ruimte. Geen enkele Premium-opslag of hiërarchische naam ruimten worden ondersteund met het _standaard_ opslag account van de werk ruimte. U kunt Premium-opslag of een hiërarchische naam ruimte gebruiken met _niet-standaard_ opslag accounts.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
 ```azurecli
 az deployment group create \
@@ -186,7 +186,7 @@ __Als u de waarden__ voor de `cmk_keyvault` (ID van de Key Vault) en de `resourc
 
 1. Als u de Key Vault-ID wilt ophalen, gebruikt u de volgende opdracht:  
 
-    # <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)   
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)   
 
     ```azurecli 
     az keyvault show --name <keyvault-name> --query 'id' --output tsv   
@@ -203,7 +203,7 @@ __Als u de waarden__ voor de `cmk_keyvault` (ID van de Key Vault) en de `resourc
 
 1. Als u de waarde voor de URI voor de door de klant beheerde sleutel wilt ophalen, gebruikt u de volgende opdracht:    
 
-    # <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)   
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)   
 
     ```azurecli 
     az keyvault key show --vault-name <keyvault-name> --name <key-name> --query 'key.kid' --output tsv  
@@ -227,7 +227,7 @@ Als u het gebruik van door de klant beheerde sleutels wilt inschakelen, stelt u 
 * **cmk_keyvault** de `cmk_keyvault` waarde die in de vorige stappen is verkregen.
 * **resource_cmk_uri** de `resource_cmk_uri` waarde die in de vorige stappen is verkregen.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
 ```azurecli
 az deployment group create \
@@ -287,7 +287,7 @@ Als uw gekoppelde resources zich niet achter een virtueel netwerk bevinden, kunt
 > [!IMPORTANT]
 > Het gebruik van een Azure Machine Learning werk ruimte met een persoonlijke koppeling is niet beschikbaar in de regio's Azure Government regio's en Azure China 21Vianet.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
 ```azurecli
 az deployment group create \
@@ -317,7 +317,7 @@ New-AzResourceGroupDeployment `
 
 Als u een bron achter een nieuw virtueel netwerk wilt implementeren, stelt u de **vnetOption** in op **Nieuw** samen met de instellingen van het virtuele netwerk voor de betreffende resource. In de onderstaande implementatie ziet u hoe u een werk ruimte implementeert met de opslag account bron achter een nieuw virtueel netwerk.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
 ```azurecli
 az deployment group create \
@@ -351,7 +351,7 @@ New-AzResourceGroupDeployment `
 
 U kunt ook meerdere of alle afhankelijke resources achter een virtueel netwerk implementeren.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
 ```azurecli
 az deployment group create \
@@ -438,7 +438,7 @@ Als u een werk ruimte wilt implementeren met bestaande gekoppelde resources, moe
 
 1. Schakel service-eind punten in voor de resources.
 
-    # <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
     ```azurecli
     az network vnet subnet update --resource-group "examplegroup" --vnet-name "examplevnet" --name "examplesubnet" --service-endpoints "Microsoft.Storage"
@@ -458,7 +458,7 @@ Als u een werk ruimte wilt implementeren met bestaande gekoppelde resources, moe
 
 1. De werk ruimte implementeren
 
-    # <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
     ```azurecli
     az deployment group create \
@@ -543,7 +543,7 @@ New-AzResourceGroupDeployment `
 
 --- -->
 
-## <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+## <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
 1. Volg de stappen in [resources implementeren vanuit aangepaste sjabloon](../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template). Wanneer u op het scherm __een sjabloon selecteren__ klikt, kiest u in de vervolg keuzelijst de sjabloon **201-machine learning-Advanced** .
 1. Selecteer __sjabloon selecteren__ om de sjabloon te gebruiken. Geef de volgende vereiste informatie en alle andere para meters op, afhankelijk van uw implementatie scenario.
@@ -553,7 +553,7 @@ New-AzResourceGroupDeployment `
    * Regio: Selecteer de Azure-regio waar de resources worden gemaakt.
    * Werkruimte naam: de naam die moet worden gebruikt voor de Azure Machine Learning werk ruimte die wordt gemaakt. De naam van de werk ruimte moet tussen de 3 en 33 tekens lang zijn. De naam mag alleen alfanumerieke tekens en '-' bevatten.
    * Locatie: Selecteer de locatie waar de resources worden gemaakt.
-1. Selecteer __Controleren + maken__.
+1. Selecteer __Controleren en maken__.
 1. Ga in het scherm __bekijken en maken__ naar de vermelde voor waarden en selecteer __maken__.
 
 Zie [resources implementeren vanuit een aangepaste sjabloon](../azure-resource-manager/templates/deploy-portal.md#deploy-resources-from-custom-template)voor meer informatie.

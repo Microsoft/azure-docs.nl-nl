@@ -1,17 +1,17 @@
 ---
-title: Klassikale Labs in Azure Lab Services — Veelgestelde vragen | Microsoft Docs
-description: In dit artikel vindt u antwoorden op veelgestelde vragen over klassikale Labs in Azure Lab Services.
+title: 'Labs in Azure Lab Services: veelgestelde vragen | Microsoft Docs'
+description: In dit artikel vindt u antwoorden op veelgestelde vragen over Labs in Azure Lab Services.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: ca35d70bc1106e46df4e3c68889b03679fd54b86
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 757af8f30e9a71a3889d9f625c87a002af2e1302
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85443295"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437181"
 ---
-# <a name="classroom-labs-in-azure-lab-services--frequently-asked-questions-faq"></a>Klassikale Labs in Azure Lab Services: veelgestelde vragen (FAQ)
-Krijg antwoorden op enkele van de meest voorkomende vragen over klassikale Labs in Azure Lab Services. 
+# <a name="labs-in-azure-lab-services--frequently-asked-questions-faq"></a>Labs in Azure Lab Services: veelgestelde vragen (FAQ)
+Krijg antwoorden op enkele van de meest voorkomende vragen over Labs in Azure Lab Services. 
 
 ## <a name="quotas"></a>Quota
 
@@ -29,13 +29,14 @@ Nee. Niet alle virtuele machines. Alleen de Vm's die aan gebruikers zijn toegewe
 ## <a name="lab-accounts"></a>Labaccounts
 
 ### <a name="why-am-i-not-able-to-create-a-lab-because-of-unavailability-of-the-address-range"></a>Waarom kan ik geen Lab maken vanwege niet-beschik baarheid van het adres bereik? 
-Klassikale Labs kan virtuele lab-Vm's maken binnen een IP-adres bereik dat u opgeeft bij het maken van uw Lab-account in de Azure Portal. Wanneer een adres bereik wordt verstrekt, wordt elk lab dat is gemaakt na de 512 IP-adressen voor Lab-Vm's toegewezen. Het adres bereik voor het lab-account moet groot genoeg zijn voor alle Labs die u wilt maken onder het lab-account. 
+
+Met Labs kunnen Lab-Vm's worden gemaakt binnen een IP-adres bereik dat u opgeeft bij het maken van uw Lab-account in de Azure Portal. Wanneer een adres bereik wordt verstrekt, wordt elk lab dat is gemaakt na de 512 IP-adressen voor Lab-Vm's toegewezen. Het adres bereik voor het lab-account moet groot genoeg zijn voor alle Labs die u wilt maken onder het lab-account. 
 
 Als u bijvoorbeeld een blok van/19-10.0.0.0/19 hebt, is dit adres bereik geschikt voor 8192 IP-adressen en 16 Labs (8192/512 = 16 Labs). In dit geval mislukt het maken van het Lab bij het maken van een 17-Lab.
 
 ### <a name="what-port-ranges-should-i-open-on-my-organizations-firewall-setting-to-connect-to-lab-virtual-machines-via-rdpssh"></a>Welke poortbereiken moet ik openen in de firewall instelling van mijn organisatie om verbinding te maken met virtuele lab-machines via RDP/SSH?
 
-De poorten zijn: 49152 – 65535. Klassikale Labs bevindt zich achter een load balancer. Elk lab heeft één openbaar IP-adres en elke virtuele machine in het lab heeft een unieke poort. 
+De poorten zijn: 49152 – 65535. Labs bevindt zich achter een load balancer. Elk lab heeft één openbaar IP-adres en elke virtuele machine in het lab heeft een unieke poort. 
 
 U kunt ook het privé-IP-adres van elke virtuele machine weer geven op het tabblad **virtuele-machine groep** van de start pagina voor Lab in de Azure Portal. Als u een Lab opnieuw publiceert, wordt het open bare IP-adres van het lab niet gewijzigd, maar worden het privé-IP en het poort nummer van elke virtuele machine in het lab gewijzigd. Meer informatie vindt u in het artikel: [firewall-instellingen voor Azure Lab Services](how-to-configure-firewall-settings.md).
 

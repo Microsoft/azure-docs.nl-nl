@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/11/2019
 ms.author: mingshen
 author: mingshen-ms
-ms.openlocfilehash: 351a9742e9d839a8e217fdea35cad922acc3339f
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: ede4e5dd781851c781407a8acea640e3e501f259
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93095669"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436382"
 ---
 # <a name="handling-review-feedback-for-azure-application-offers"></a>Feedback over het verwerken van beoordeling voor Azure-toepassings aanbiedingen
 
@@ -39,7 +39,7 @@ Gebruik de volgende procedure om de problemen te bekijken die worden beschreven 
     [![Start pagina pull-aanvraag](./media/pr-home-page-thumb.png)](./media/pr-home-page.png)
     <br/> *Klik op deze afbeelding om uit te breiden.*
 
-1. Beschrijving Selecteer aan de rechter kant van het venster in het sectie **beleid** het probleem bericht (in dit voor beeld: **beleids validatie mislukt** ) om de details op laag niveau van het probleem te onderzoeken, inclusief de bijbehorende logboek bestanden. Fouten worden doorgaans weer gegeven aan de onderkant van de logboek bestanden.
+1. Beschrijving Selecteer aan de rechter kant van het venster in het sectie **beleid** het probleem bericht (in dit voor beeld: **beleids validatie mislukt**) om de details op laag niveau van het probleem te onderzoeken, inclusief de bijbehorende logboek bestanden. Fouten worden doorgaans weer gegeven aan de onderkant van de logboek bestanden.
 
 1. Selecteer in het menu aan de linkerkant van de start pagina de optie **bestanden** om de lijst bestanden weer te geven waaruit de technische activa voor deze aanbieding bestaan. De micro soft-revisoren moeten opmerkingen hebben toegevoegd waarin de gedetecteerde kritieke problemen worden beschreven. In het volgende voor beeld zijn er twee problemen ontdekt.
 
@@ -57,4 +57,4 @@ Gebruik de volgende procedure om de problemen te bekijken die worden beschreven 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nadat u de kritieke problemen hebt gecorrigeerd die in de beoordelings PR (s) zijn beschreven, moet u [uw Azure-app-aanbieding opnieuw publiceren](./create-new-azure-apps-offer.md#publish).
+Nadat u de kritieke problemen hebt gecorrigeerd die in de beoordelings PR (s) zijn beschreven, moet u [uw Azure-app-aanbieding opnieuw publiceren](../create-new-azure-apps-offer.md).

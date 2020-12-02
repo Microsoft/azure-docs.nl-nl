@@ -8,12 +8,12 @@ author: vikrambmsft
 ms.author: vikramb
 ms.date: 11/4/2020
 ms.custom: devx-track-terraform
-ms.openlocfilehash: 3728fdd07172f2402ddb1dc7434ddb1993b984b1
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: e9e630f4199e0bfb67509f008f403c0a7a490887
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95999872"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436688"
 ---
 # <a name="commercial-marketplace-partner-and-customer-usage-attribution"></a>Commerciële Marketplace-partner en toewijzing van klant gebruik
 
@@ -32,7 +32,7 @@ De toewijzing van klant gebruik ondersteunt drie implementatie opties:
 >
 >- De toewijzing van klant gebruik is voor nieuwe implementaties en biedt geen ondersteuning voor het coderen van bestaande resources die al zijn geïmplementeerd.
 >
->- De toewijzing van klant gebruik is vereist voor [Azure-toepassing](./partner-center-portal/create-new-azure-apps-offer.md) aanbiedingen die naar Azure Marketplace worden gepubliceerd.
+>- De toewijzing van klant gebruik is vereist voor [Azure-toepassing](./create-new-azure-apps-offer.md) aanbiedingen die naar Azure Marketplace worden gepubliceerd.
 >
 >- Niet alle Azure-Services zijn compatibel met de gebruiks toewijzing van de klant. Azure Kubernetes Services (AKS) en VM Scale Sets hebben vandaag bekende problemen die een minder rapportage van het gebruik veroorzaken.
 
@@ -64,7 +64,7 @@ De GUID'S moeten worden geregistreerd in het partner centrum om het gebruik van 
 Nadat u een GUID hebt toegevoegd aan de sjabloon of in de gebruikers agent en de GUID registreert in Partner Center, worden toekomstige implementaties bijgehouden.
 
 > [!NOTE]
-> Als u uw [Azure-toepassing](./partner-center-portal/create-new-azure-apps-offer.md) -aanbod publiceert naar Azure Marketplace via partner centrum, wordt een nieuwe GUID die wordt gebruikt in uw sjabloon automatisch geregistreerd bij het partner centrum-profiel wanneer de sjabloon wordt geüpload.  
+> Als u uw [Azure-toepassing](./create-new-azure-apps-offer.md) -aanbod publiceert naar Azure Marketplace via partner centrum, wordt een nieuwe GUID die wordt gebruikt in uw sjabloon automatisch geregistreerd bij het partner centrum-profiel wanneer de sjabloon wordt geüpload.  
 
 1. Meld u aan bij [Partner Center](https://partner.microsoft.com/dashboard).
 
@@ -90,7 +90,7 @@ Veel partner oplossingen worden geïmplementeerd met Azure Resource Manager sjab
 > [!NOTE]
 > Zie voor meer informatie over het maken en publiceren van oplossings sjablonen.
 > * [Maak en implementeer uw eerste Resource Manager-sjabloon](../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md).
->* [Azure-toepassing aanbieding](./partner-center-portal/create-new-azure-apps-offer.md).
+>* [Azure-toepassing aanbieding](./create-new-azure-apps-offer.md).
 >* Video: [oplossings sjablonen en beheerde toepassingen voor Azure Marketplace bouwen](https://channel9.msdn.com/Events/Build/2018/BRK3603).
 
 

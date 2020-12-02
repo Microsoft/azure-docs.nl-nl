@@ -12,12 +12,12 @@ ms.date: 04/20/2020
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: e4fa4b64c6519df90d5883e8c5760b3ed2ce0337
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a079cfe155119a6afe8575767dd3e7c09a564f9a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90004456"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96445626"
 ---
 # <a name="set-up-sign-in-for-a-specific-azure-active-directory-organization-in-azure-active-directory-b2c"></a>Aanmelden instellen voor een specifieke Azure Active Directory organisatie in Azure Active Directory B2C
 
@@ -42,15 +42,15 @@ Als u een Azure Active Directory (Azure AD) als een [ID-provider](authorization-
 
 1. Voor **Client-id** voert u de toepassings-id in die u eerder hebt genoteerd.
 1. Voor **Clientgeheim** voert u het clientgeheim in dat u eerder hebt genoteerd.
-1. Voer voor het **bereik**de in `openid profile` .
-1. Behoud de standaard waarden voor het **antwoord type**en de **antwoord modus**.
+1. Voer voor het **bereik** de in `openid profile` .
+1. Behoud de standaard waarden voor het **antwoord type** en de **antwoord modus**.
 1. Beschrijving Voer in voor de **domein Hint** `contoso.com` . Zie voor meer informatie [instellen van direct aanmelden met Azure Active Directory B2C](direct-signin.md#redirect-sign-in-to-a-social-provider).
-1. Selecteer onder **claim toewijzing van de identiteits provider**de volgende claims:
+1. Selecteer onder **claim toewijzing van de identiteits provider** de volgende claims:
 
     * **Gebruikers-id**: *oid*
     * **Weergavenaam**: *name*
     * **Voornaam**: *given_name*
     * **Achternaam**: *family_name*
-    * **E-mail**: *unique_name*
+    * **E-mail**: *preferred_username*
 
 1. Selecteer **Opslaan**.

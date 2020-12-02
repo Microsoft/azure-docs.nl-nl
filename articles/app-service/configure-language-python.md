@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.date: 11/16/2020
 ms.reviewer: astay; kraigb
 ms.custom: mvc, seodec18, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 149f8deb8839b3adce3555300c94b8ebdf587100
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: f12ed42755af64f024fdcb0452173134f7b58482
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94873842"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183733"
 ---
 # <a name="configure-a-linux-python-app-for-azure-app-service"></a>Een Linux Python-app voor Azure App Service configureren
 
@@ -126,10 +126,10 @@ In de volgende tabel vindt u een beschrijving van de relevante productie-instell
 
 | Django-instelling | Instructies voor Azure |
 | --- | --- |
-| `SECRET_KEY` | Sla de waarde op in een App Service-instelling, zoals wordt beschreven op [App-instellingen openen als omgevingsvariabelen](#access-app-settings-as-environment-variables). U kunt ook [de waarde opslaan als een geheim in Azure Key Vault](/azure/key-vault/secrets/quick-create-python). |
+| `SECRET_KEY` | Sla de waarde op in een App Service-instelling, zoals wordt beschreven op [App-instellingen openen als omgevingsvariabelen](#access-app-settings-as-environment-variables). U kunt ook [de waarde opslaan als een geheim in Azure Key Vault](../key-vault/secrets/quick-create-python.md). |
 | `DEBUG` | Maak een `DEBUG`-instelling op App Service met de waarde 0 (false) en laad de waarde als een omgevingsvariabele. Maak in uw ontwikkelomgeving een `DEBUG`-omgevingsvariabele met de waarde 1 (niet waar). |
 | `ALLOWED_HOSTS` | In een productieomgeving is voor Django vereist dat u de URL van de app opneemt in de `ALLOWED_HOSTS`-matrix van *settings.py*. U kunt deze URL tijdens runtime ophalen met de code, `os.environ['WEBSITE_HOSTNAME']`. App Service stelt de omgevingsvariabele `WEBSITE_HOSTNAME` automatisch in op de URL van de app. |
-| `DATABASES` | Definieer instellingen in App Service voor de databaseverbinding en laad deze als omgevingsvariabelen om de woordenlijst [`DATABASES`](https://docs.djangoproject.com/en/3.1/ref/settings/#std:setting-DATABASES) in te vullen. U kunt de waarden (met name de gebruikersnaam en het wachtwoord) ook opslaan als [Azure Key Vault-geheimen](/azure/key-vault/secrets/quick-create-python). |
+| `DATABASES` | Definieer instellingen in App Service voor de databaseverbinding en laad deze als omgevingsvariabelen om de woordenlijst [`DATABASES`](https://docs.djangoproject.com/en/3.1/ref/settings/#std:setting-DATABASES) in te vullen. U kunt de waarden (met name de gebruikersnaam en het wachtwoord) ook opslaan als [Azure Key Vault-geheimen](../key-vault/secrets/quick-create-python.md). |
 
 ## <a name="container-characteristics"></a>Containerkenmerken
 

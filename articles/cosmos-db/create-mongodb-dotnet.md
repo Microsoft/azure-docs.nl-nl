@@ -9,12 +9,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 10/15/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 510ff971c5d5924f2266dc93035f42e545906761
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 5d3c73bdc107ce1971e2958073ad5c100c6bf6bd
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93076234"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349194"
 ---
 # <a name="quickstart-build-a-net-web-app-using-azure-cosmos-dbs-api-for-mongodb"></a>Quickstart: Met de API van Azure Cosmos DB voor MongoDB een .NET-web-app maken 
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -136,11 +136,11 @@ Ga nu terug naar Azure Portal om de verbindingsreeksinformatie op te halen en ko
 
 2. Open het bestand **Dal.cs** in de map **DAL**. 
 
-3. Kopieer uw **gebruikersnaam** van de portal (gebruik de kopieerknop) en geef deze waarde aan de **gebruikersnaam** in uw **Dal.cs** -bestand. 
+3. Kopieer uw **gebruikersnaam** van de portal (gebruik de kopieerknop) en geef deze waarde aan de **gebruikersnaam** in uw **Dal.cs**-bestand. 
 
-4. Kopieer vervolgens de waarde van **host** van de portal en geef deze waarde aan de **host** in uw **Dal.cs** -bestand. 
+4. Kopieer vervolgens de waarde van **host** van de portal en geef deze waarde aan de **host** in uw **Dal.cs**-bestand. 
 
-5. Kopieer ten slotte de waarde van **wachtwoord** van de portal en geef deze waarde aan het **wachtwoord** in uw **Dal.cs** -bestand. 
+5. Kopieer ten slotte de waarde van **wachtwoord** van de portal en geef deze waarde aan het **wachtwoord** in uw **Dal.cs**-bestand. 
 
 U hebt uw app nu bijgewerkt met alle informatie die nodig is voor de communicatie met Cosmos DB. 
     
@@ -169,4 +169,4 @@ U hebt uw app nu bijgewerkt met alle informatie die nodig is voor de communicati
 In deze snelstart hebt u geleerd hoe u een Cosmos DB-account kunt maken, hoe u een verzameling kunt maken en hoe u een console-app kunt uitvoeren. Nu kunt u aanvullende gegevens in uw Cosmos database importeren. 
 
 > [!div class="nextstepaction"]
-> [MongoDB-gegevens importeren in Azure Cosmos DB](../dms/tutorial-mongodb-cosmos-db.md?toc=%252fazure%252fcosmos-db%252ftoc.json%253ftoc%253d%252fazure%252fcosmos-db%252ftoc.json)
+> [MongoDB-gegevens importeren in Azure Cosmos DB](../dms/tutorial-mongodb-cosmos-db.md?toc=%2fazure%2fcosmos-db%2ftoc.json%253ftoc%253d%2fazure%2fcosmos-db%2ftoc.json)

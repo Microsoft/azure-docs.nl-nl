@@ -11,12 +11,12 @@ ms.date: 10/30/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ef6f6068bce7a676e55eca10ae9198b2238a143
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 640367d1b833f61e8a83fe9ce6b14d6d799cf9b9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93134982"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96172449"
 ---
 # <a name="what-is-provisioning"></a>Wat is inrichting?
 
@@ -42,10 +42,10 @@ Het inrichten van HR naar Azure AD omvat het maken van objecten (meestal gebruik
 
 Het meest voorkomende scenario is wanneer een nieuwe werknemer toetreedt tot uw bedrijf en deze wordt ingevoerd in het HR-systeem.  Als dit het geval is, worden ze automatisch ingericht als een nieuwe gebruiker in Azure AD, zonder dat er administratieve betrokkenheid nodig is voor elke nieuwe werknemer.  Inrichting vanuit HR kan, over het algemeen, voorkomen in de volgende scenario's.
 
-- **Nieuwe medewerkers aannemen** : wanneer een nieuwe werknemer wordt toegevoegd aan een HR-systeem, wordt automatisch een gebruikersaccount gemaakt. Dit gebeurt in Active Directory, Azure AD en optioneel in mappen voor andere toepassingen die worden ondersteund in Azure AD, met een terugschrijfbewerking van het e-mailadres naar het HR-systeem.
-- **Updates van kenmerken en profielen van werknemers** : wanneer de record van een werknemer wordt bijgewerkt in het HR-systeem (zoals naam, functie of manager), wordt het gebruikersaccount automatisch bijgewerkt in Active Directory, Azure AD en optioneel in andere toepassingen die worden ondersteund in Azure AD.
+- **Nieuwe medewerkers aannemen**: wanneer een nieuwe werknemer wordt toegevoegd aan een HR-systeem, wordt automatisch een gebruikersaccount gemaakt. Dit gebeurt in Active Directory, Azure AD en optioneel in mappen voor andere toepassingen die worden ondersteund in Azure AD, met een terugschrijfbewerking van het e-mailadres naar het HR-systeem.
+- **Updates van kenmerken en profielen van werknemers**: wanneer de record van een werknemer wordt bijgewerkt in het HR-systeem (zoals naam, functie of manager), wordt het gebruikersaccount automatisch bijgewerkt in Active Directory, Azure AD en optioneel in andere toepassingen die worden ondersteund in Azure AD.
 - **Beëindiging van dienstverband** : wanneer een dienstverband in HR wordt beëindigd, worden aanmeldpogingen van het gebruikersaccount automatisch geblokkeerd of wordt het account automatisch verwijderd uit Active Directory, Azure AD en andere toepassingen.
-- **Opnieuw aannemen van werknemers** : wanneer een werknemer opnieuw wordt ingeschakeld in de cloud van HR, kan zijn oude account automatisch opnieuw worden geactiveerd of opnieuw worden ingericht (afhankelijk van uw voorkeur).
+- **Opnieuw aannemen van werknemers**: wanneer een werknemer opnieuw wordt ingeschakeld in de cloud van HR, kan zijn oude account automatisch opnieuw worden geactiveerd of opnieuw worden ingericht (afhankelijk van uw voorkeur).
 
 Er zijn drie implementatieopties voor inrichten op basis van HR met Azure AD:
 
@@ -59,7 +59,7 @@ Zie [Wat is een inrichten op basis van HR?](what-is-hr-driven-provisioning.md) v
 
 ![App-inrichting](media/what-is-provisioning/cloud-3b.png)
 
-In Azure AD verwijst de term **[app-inrichting](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning)** naar het automatisch maken van kopieën van gebruikersidentiteiten. Dit gebeurt in de toepassingen waarvoor gebruikers toegang nodig hebben en voor toepassingen met een eigen gegevensarchief, buiten Azure AD of Active Directory. Naast het maken van gebruikersidentiteiten omvat app-inrichting het onderhoud en de verwijdering van gebruikersidentiteiten binnen die toepassingen, wanneer de gebruikersstatus of rollen wijzigen. Veelvoorkomende scenario's zijn onder andere het inrichten van een Azure AD-gebruiker in toepassingen zoals [Dropbox](https://docs.microsoft.com/azure/active-directory/saas-apps/dropboxforbusiness-provisioning-tutorial), [SalesForce](https://docs.microsoft.com/azure/active-directory/saas-apps/salesforce-provisioning-tutorial) en [ServiceNow](https://docs.microsoft.com/azure/active-directory/saas-apps/servicenow-provisioning-tutorial), omdat deze toepassingen een eigen gebruikersopslagplaats hebben die van Azure AD afgescheiden is.
+In Azure AD verwijst de term **[app-inrichting](../app-provisioning/user-provisioning.md)** naar het automatisch maken van kopieën van gebruikersidentiteiten. Dit gebeurt in de toepassingen waarvoor gebruikers toegang nodig hebben en voor toepassingen met een eigen gegevensarchief, buiten Azure AD of Active Directory. Naast het maken van gebruikersidentiteiten omvat app-inrichting het onderhoud en de verwijdering van gebruikersidentiteiten binnen die toepassingen, wanneer de gebruikersstatus of rollen wijzigen. Veelvoorkomende scenario's zijn onder andere het inrichten van een Azure AD-gebruiker in toepassingen zoals [Dropbox](../saas-apps/dropboxforbusiness-provisioning-tutorial.md), [SalesForce](../saas-apps/salesforce-provisioning-tutorial.md) en [ServiceNow](../saas-apps/servicenow-provisioning-tutorial.md), omdat deze toepassingen een eigen gebruikersopslagplaats hebben die van Azure AD afgescheiden is.
 
 Zie [Wat is app-inrichting?](what-is-app-provisioning.md) voor meer informatie.
 

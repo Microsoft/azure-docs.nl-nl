@@ -5,12 +5,12 @@ ms.date: 02/07/2020
 ms.topic: quickstart
 ms.custom: devx-track-python, devx-track-js
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: b709981e199d63c32426381ba48665402de820ce
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 1729e0b27dd50519359cf6a39bfa81ba7b3b41e9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422702"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185144"
 ---
 # <a name="connect-azure-functions-to-azure-storage-using-visual-studio-code"></a>Azure Functions verbinden met Azure Storage met behulp van Visual Studio Code
 
@@ -55,7 +55,7 @@ In dit artikel wordt ervan uitgegaan dat u al bent aangemeld bij uw Azure-abonne
 
 ## <a name="download-the-function-app-settings"></a>De instellingen voor functie-apps downloaden
 
-In het [vorige snelstartgids-artikel](functions-create-first-function-vs-code.md)hebt u een functie-app gemaakt in Azure, met het vereiste Storage-account. De verbindingsreeks voor dit account wordt veilig opgeslagen in de app-instellingen in Azure. In dit artikel schrijft u berichten naar een opslagwachtrij in hetzelfde account. Als u verbinding wilt maken met uw Storage-account wanneer u de functie lokaal uitvoert, moet u de app-instellingen downloaden naar het bestand local.settings.json. 
+In het [vorige snelstartgids-artikel](./create-first-function-vs-code-csharp.md)hebt u een functie-app gemaakt in Azure, met het vereiste Storage-account. De verbindingsreeks voor dit account wordt veilig opgeslagen in de app-instellingen in Azure. In dit artikel schrijft u berichten naar een opslagwachtrij in hetzelfde account. Als u verbinding wilt maken met uw Storage-account wanneer u de functie lokaal uitvoert, moet u de app-instellingen downloaden naar het bestand local.settings.json. 
 
 1. Druk op de toets F1 om het opdrachtpalet te openen, zoek naar de opdracht `Azure Functions: Download Remote Settings....` en voer deze uit. 
 

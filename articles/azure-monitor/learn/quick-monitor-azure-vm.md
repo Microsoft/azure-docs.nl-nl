@@ -7,12 +7,12 @@ ms.topic: quickstart
 author: bwren
 ms.author: bwren
 ms.date: 03/10/2020
-ms.openlocfilehash: 11475de159cf3d59923d6f2129aa46ddf0ef8f2c
-ms.sourcegitcommit: 07166a1ff8bd23f5e1c49d4fd12badbca5ebd19c
+ms.openlocfilehash: ef0e3a451a5687278acaf1e857012027a5e657a3
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90084427"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186759"
 ---
 # <a name="quickstart-monitor-an-azure-virtual-machine-with-azure-monitor"></a>Een virtuele Azure-machine bewaken met Azure Monitor
 [Azure Monitor](../overview.md) begint met het verzamelen van gegevens van virtuele Azure-machines op het moment dat ze worden gemaakt. In deze quickstart krijgt u een beknopt overzicht van de gegevens die automatisch worden verzameld voor een Azure-VM, en ziet u hoe u deze kunt weergeven in de Azure-portal. Vervolgens schakelt u [Azure Monitor voor VM's](../insights/vminsights-overview.md) in voor de VM. Hierdoor worden agents op de VM in staat gesteld gegevens van het gastbesturingssysteem te verzamelen en te analyseren, waaronder processen en de bijbehorende afhankelijkheden.
@@ -107,4 +107,4 @@ Wanneer u een nieuwe Log Analytics-werkruimte maakt, moet deze worden geconfigur
 In deze quickstart hebt u Azure Monitor voor VM’s ingeschakeld voor een virtuele machine, en de Log Analytics-werkruimte geconfigureerd om gebeurtenissen te verzamelen voor het gastbesturingssysteem. Voor informatie over het weergeven en analyseren van de gegevens gaat u verder met de zelfstudie.
 
 > [!div class="nextstepaction"]
-> [Gegevens weergeven of analyseren in Log Analytics](../log-query/get-started-portal.md)
+> [Gegevens weergeven of analyseren in Log Analytics](../log-query/log-analytics-tutorial.md)

@@ -6,12 +6,12 @@ ms.topic: overview
 author: bwren
 ms.author: bwren
 ms.date: 11/11/2020
-ms.openlocfilehash: 4fa00bffc35c4ed67ce70751c8882b74ad6b01a1
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: bf15e380eb1a88acc39ca63165d18d04a260b35d
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95534497"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185892"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Wat is er nieuw de documentatie van Azure Monitor?
 
@@ -230,7 +230,7 @@ In dit artikel vindt u een lijst met Azure Monitor-artikelen die nieuw of aanzie
 - [Door klant beheerde sleutel van Azure Monitor](platform/customer-managed-keys.md) - Er is een foutbericht en sectie over CMK-configuratie voor query's toegevoegd.
 - [Azure Monitor HTTP Data Collector API](platform/data-collector-api.md) - Python 3-voorbeeld toegevoegd.
 - [Het bijhouden van query's optimaliseren in Azure Monitor](log-query/query-optimization.md) - Sectie toegevoegd over het voorkomen van meerdere datascans bij het gebruik van subquery's.
-- [Zelfstudie: Aan de slag met de Log Analytics-query's](log-query/get-started-portal.md) - Video toegevoegd.
+- [Zelfstudie: Aan de slag met de Log Analytics-query's](./log-query/log-analytics-tutorial.md) - Video toegevoegd.
 
 ### <a name="platform-logs"></a>Platformlogboeken
 - [Diagnostische instellingen maken om logboeken en metrische gegevens van het platform te verzenden naar verschillende bestemmingen](platform/diagnostic-settings.md) - Video toegevoegd.

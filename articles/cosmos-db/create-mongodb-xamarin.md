@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 10/09/2020
 ms.author: masoucou
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 94cf54e689f845f77c54d1d3c7710e079594f556
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 339c6177de6e83f463efbc97e88a36ed4c52d97b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93098940"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349092"
 ---
 # <a name="quickstart-build-a-xamarinforms-app-with-net-sdk-and-azure-cosmos-dbs-api-for-mongodb"></a>Snelstartgids: Een Xamarin.Forms-app ontwikkelen met de .NET SDK en Azure Cosmos DB-API voor MongoDB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -168,7 +168,7 @@ Ga nu terug naar Azure Portal om de verbindingsreeksinformatie op te halen en ko
 
 2. Open het bestand **APIKeys.cs** in de directory **Helpers** van het project **TaskList.Core**.
 
-3. Kopieer de waarde van uw **primaire verbindingsreeks** uit de portal (met behulp van de knop Kopiëren) en maak deze de waarde van het veld **ConnectionString** in uw **APIKeys.cs** -bestand.
+3. Kopieer de waarde van uw **primaire verbindingsreeks** uit de portal (met behulp van de knop Kopiëren) en maak deze de waarde van het veld **ConnectionString** in uw **APIKeys.cs**-bestand.
 
 4. Verwijder `&replicaSet=globaldb` uit de verbindingsreeks. U krijgt een runtime-fout als u die waarde niet uit de querytekenreeks verwijdert.
 
@@ -186,7 +186,7 @@ U hebt uw app nu bijgewerkt met alle informatie die nodig is voor de communicati
 3. Klik met de rechtermuisknop op **TaskList.Android** en selecteer **Instellen als opstartproject**.
 4. Druk op F5 om te beginnen met de foutopsporing van de toepassing.
 5. Als u op iOS wilt werken, wordt uw machine eerst verbonden met een Mac (hier zijn [instructies](/xamarin/ios/get-started/installation/windows/introduction-to-xamarin-ios-for-visual-studio) over hoe u dat kunt doen).
-6. Klik met de rechtermuisknop op **TaskList.iOS** -project en selecteer **Instellen als opstartproject**.
+6. Klik met de rechtermuisknop op **TaskList.iOS**-project en selecteer **Instellen als opstartproject**.
 7. Klik op F5 om te beginnen met de foutopsporing van de toepassing.
 
 ### <a name="visual-studio-for-mac"></a>Visual Studio voor Mac
@@ -207,4 +207,4 @@ U hebt uw app nu bijgewerkt met alle informatie die nodig is voor de communicati
 In deze Quick Start hebt u geleerd hoe een Azure Cosmos DB-account kunt maken en een Xamarin.Forms-app kunt uitvoeren met de API voor MongoDB. Nu kunt u aanvullende gegevens in uw Cosmos DB-account importeren.
 
 > [!div class="nextstepaction"]
-> [Gegevens importeren in Azure Cosmos DB die zijn geconfigureerd met Azure Cosmos DB-API voor MongoDB](../dms/tutorial-mongodb-cosmos-db.md?toc=%252fazure%252fcosmos-db%252ftoc.json%253ftoc%253d%252fazure%252fcosmos-db%252ftoc.json)
+> [Gegevens importeren in Azure Cosmos DB die zijn geconfigureerd met Azure Cosmos DB-API voor MongoDB](../dms/tutorial-mongodb-cosmos-db.md?toc=%2fazure%2fcosmos-db%2ftoc.json%253ftoc%253d%2fazure%2fcosmos-db%2ftoc.json)

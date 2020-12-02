@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/06/2020
 ms.author: mlottner
-ms.openlocfilehash: 3f84f3121d9982205ecf51ec64cfe332b6a5ad42
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 786fcd1a0c6d7df2c38a086a830a63f7179d7d40
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90944759"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352504"
 ---
 # <a name="quickstart-onboard-azure-defender-for-iot-service-in-iot-hub"></a>Quickstart: De Azure Defender for IoT-service onboarden in IoT Hub
 
-In dit artikel wordt uitgelegd hoe u de Defender for IoT-service in uw bestaande IoT-hub inschakelt. Als u momenteel niet over een Azure IoT-hub beschikt, raadpleegt u [Een Azure IoT-hub maken met Azure Portal](https://docs.microsoft.com/azure/iot-hub/iot-hub-create-through-portal) om aan de slag te gaan.
+In dit artikel wordt uitgelegd hoe u de Defender for IoT-service in uw bestaande IoT-hub inschakelt. Als u momenteel niet over een Azure IoT-hub beschikt, raadpleegt u [Een Azure IoT-hub maken met Azure Portal](../iot-hub/iot-hub-create-through-portal.md) om aan de slag te gaan.
 
 > [!NOTE]
 > Defender for IoT biedt momenteel alleen ondersteuning voor IoT-hubs van de Standard-laag.

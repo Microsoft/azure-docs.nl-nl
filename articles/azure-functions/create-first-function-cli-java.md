@@ -6,12 +6,12 @@ ms.topic: quickstart
 ms.custom:
 - devx-track-java
 - devx-track-azurecli
-ms.openlocfilehash: 5c8993bdf892ceb7d9886d0d2b97063dedec720c
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: db24fa4721e2e502c5098b415c4cf06da80f697d
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94635548"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96175675"
 ---
 # <a name="quickstart-create-a-java-function-in-azure-from-the-command-line"></a>Quickstart: Een Java-functie maken in Azure vanaf de opdrachtregel
 
@@ -34,7 +34,7 @@ Voordat u begint, moet u het volgende hebben:
 
 + [Azure CLI](/cli/azure/install-azure-cli) versie 2.4 of hoger.
 
-+ [Java Developer Kit](https://aka.ms/azure-jdks), versie 8 of 11. De omgevingsvariabele `JAVA_HOME` moet zijn ingesteld op de installatielocatie van de juiste versie van de JDK.     
++ [Java Developer Kit](/azure/developer/java/fundamentals/java-jdk-long-term-support), versie 8 of 11. De omgevingsvariabele `JAVA_HOME` moet zijn ingesteld op de installatielocatie van de juiste versie van de JDK.     
 
 + [Apache Maven](https://maven.apache.org), versie 3.0 of hoger.
 

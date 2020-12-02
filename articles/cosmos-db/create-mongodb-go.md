@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-mongo
 ms.devlang: go
 ms.topic: quickstart
 ms.date: 04/24/2020
-ms.openlocfilehash: a11ea9cee69e5aa7b275012176084530f4a209e6
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 548deeec456537c64dc5d8ebe95ed1e4802e91c5
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93076288"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349211"
 ---
 # <a name="quickstart-connect-a-go-application-to-azure-cosmos-dbs-api-for-mongodb"></a>Quickstart: Een Go-toepassing koppelen aan de API van Azure Cosmos DB voor MongoDB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -259,7 +259,7 @@ Maak een [resourcegroep](../azure-resource-manager/management/overview.md) met d
 
 In het volgende voorbeeld wordt een resourcegroep gemaakt in de regio Europa - west. Kies een unieke naam voor de resourcegroep.
 
-Als u van Azure Cloud Shell gebruikmaakt, selecteert u **Uitproberen** , volgt u de aanwijzingen op het scherm om u aan te melden en kopieert u de opdracht naar de opdrachtprompt.
+Als u van Azure Cloud Shell gebruikmaakt, selecteert u **Uitproberen**, volgt u de aanwijzingen op het scherm om u aan te melden en kopieert u de opdracht naar de opdrachtprompt.
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location "West Europe"
@@ -458,4 +458,4 @@ De `todo` die u zojuist hebt verwijderd, mag niet aanwezig zijn
 In deze quickstart hebt u geleerd hoe u een Azure Cosmos DB MongoDB API-account maakt met behulp van Azure Cloud Shell en hoe u een app met Go-opdrachtregels kunt maken en uitvoeren om `todo`'s te beheren. Nu kunt u aanvullende gegevens in uw Azure Cosmos DB-account importeren.
 
 > [!div class="nextstepaction"]
-> [MongoDB-gegevens importeren in Azure Cosmos DB](../dms/tutorial-mongodb-cosmos-db.md?toc=%252fazure%252fcosmos-db%252ftoc.json%253ftoc%253d%252fazure%252fcosmos-db%252ftoc.json)
+> [MongoDB-gegevens importeren in Azure Cosmos DB](../dms/tutorial-mongodb-cosmos-db.md?toc=%2fazure%2fcosmos-db%2ftoc.json%253ftoc%253d%2fazure%2fcosmos-db%2ftoc.json)

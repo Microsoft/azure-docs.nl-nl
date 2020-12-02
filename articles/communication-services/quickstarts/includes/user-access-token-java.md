@@ -10,12 +10,12 @@ ms.date: 08/20/2020
 ms.topic: include
 ms.custom: include file
 ms.author: tchladek
-ms.openlocfilehash: 6be69a1ec20ed859769c944a2f66de1310c09507
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: e7968f4ab01706aa5f8d7d016d93a1b9de2e74b6
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94915144"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325287"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -134,8 +134,7 @@ List<String> scopes = new ArrayList<>(Arrays.asList("voip"));
 CommunicationUserToken response = communicationIdentityClient.issueToken(identity, scopes);
 OffsetDateTime expiresOn = response.getExpiresOn();
 String token = response.getToken();
-String identityId = response.getUser().getId();
-System.out.println("\nIssued a access token with 'voip' scope for identity with ID: " + identityId + ": " + token);
+System.out.println("\nIssued an access token with 'voip' scope that expires at: " + expiresOn + ": " + token);
 ```
 
 Toegangstokens zijn kortdurende referenties die opnieuw moeten worden uitgegeven. Als u dit niet doet, kan dit leiden tot onderbrekingen van de gebruikerservaring van uw toepassing. De antwoordeigenschap `expiresAt` geeft de levensduur van het toegangstoken aan.
@@ -156,7 +155,7 @@ In sommige gevallen kunt u toegangstokens expliciet intrekken. Wanneer de gebrui
 
 ```java  
 communicationIdentityClient.revokeTokens(identity, OffsetDateTime.now());
-System.out.println("\nRevoked access tokens for the user with ID: " + identity.getId());
+System.out.println("\nSuccessfully revoked all access tokens for identity with ID: " + identity.getId());
 ```
 
 ## <a name="delete-an-identity"></a>Een identiteit verwijderen
@@ -165,7 +164,7 @@ Als u een identiteit verwijdert, worden alle actieve toegangstokens ingetrokken 
 
 ```java
 communicationIdentityClient.deleteUser(identity);
-System.out.println("\nSuccessfully deleted the identity with ID: " + identity.getId());
+System.out.println("\nDeleted the identity with ID: " + identity.getId());
 ```
 
 ## <a name="run-the-code"></a>De code uitvoeren

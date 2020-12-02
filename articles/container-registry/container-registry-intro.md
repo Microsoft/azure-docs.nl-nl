@@ -6,12 +6,12 @@ ms.topic: overview
 ms.date: 02/10/2020
 ms.author: stevelas
 ms.custom: seodec18, mvc
-ms.openlocfilehash: d54c939f0ecc78d7734345b23fd2b75f150243c1
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: b5c81d8b2e6d7eac2dcd9070bf1f448340ea1a18
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148495"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96341262"
 ---
 # <a name="introduction-to-private-docker-container-registries-in-azure"></a>Inleiding tot privé-Docker-containerregisters in Azure
 
@@ -36,20 +36,20 @@ Azure biedt hulpprogramma's met inbegrip van Azure-opdrachtregelinterface, Azure
 
 ## <a name="key-features"></a>Belangrijke functies
 
-* **Registerservicelaag** : maak een of meerdere containerregisters in uw Azure-abonnement. Registers zijn beschikbaar in drie lagen: [Basic, Standard en Premium](container-registry-skus.md), die alle ondersteuning bieden voor integratie van webhooks, registerverificatie met Azure Active Directory en functionaliteit voor verwijderen. Maak een register op dezelfde Azure-locatie als uw implementaties om te profiteren van lokale opslag dichtbij in het netwerk van uw containerinstallatiekopieën. Gebruik de [geo-replicatie](container-registry-geo-replication.md)functie van Premium-registers voor geavanceerde replicatie- en distributiescenario's voor containerinstallatiekopieën. 
+* **Registerservicelaag**: maak een of meerdere containerregisters in uw Azure-abonnement. Registers zijn beschikbaar in drie lagen: [Basic, Standard en Premium](container-registry-skus.md), die alle ondersteuning bieden voor integratie van webhooks, registerverificatie met Azure Active Directory en functionaliteit voor verwijderen. Maak een register op dezelfde Azure-locatie als uw implementaties om te profiteren van lokale opslag dichtbij in het netwerk van uw containerinstallatiekopieën. Gebruik de [geo-replicatie](container-registry-geo-replication.md)functie van Premium-registers voor geavanceerde replicatie- en distributiescenario's voor containerinstallatiekopieën. 
 
-* **Beveiliging en toegang** : u meldt u aan bij een register met de Azure CLI- of de standaard `docker login`-opdracht. Azure Container Registry draagt installatiekopieën over via HTTPS en ondersteunt TLS om clientverbindingen te beveiligen. 
+* **Beveiliging en toegang**: u meldt u aan bij een register met de Azure CLI- of de standaard `docker login`-opdracht. Azure Container Registry draagt installatiekopieën over via HTTPS en ondersteunt TLS om clientverbindingen te beveiligen. 
 
   > [!IMPORTANT]
   > Vanaf 13 januari 2020 moeten voor Azure Container Registry alle beveiligde verbindingen van servers en toepassingen TLS 1.2 gebruiken. Schakel TLS 1.2 in met een recente docker-client (versie 18.03.0 of hoger). Ondersteuning voor TLS 1.0 en 1.1 wordt buiten gebruik gesteld. 
 
   U kunt [toegang beheren](container-registry-authentication.md) tot een containerregister met behulp van een Azure-identiteit, een door Azure Active Directory ondersteunde [service-principal](../active-directory/develop/app-objects-and-service-principals.md) of een opgegeven beheeraccount. Gebruik op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC) om gebruikers of systemen nauwkeurige machtigingen toe te kennen voor een register.
 
-  Beveiligingsfuncties van de Premium-servicelaag omvatten onder meer [inhoudsvertrouwen](container-registry-content-trust.md) voor het ondertekenen van installatiekopietags en [firewalls en virtuele netwerken (preview)](container-registry-vnet.md) om toegang tot het register te beperken. Azure Security Center kan eventueel worden geïntegreerd met Azure Container Registry om [installatiekopieën te scannen](../security-center/defender-for-container-registries-introduction.md?bc=%252fazure%252fcontainer-registry%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fcontainer-registry%252ftoc.json) wanneer een installatiekopie naar een register wordt gepusht.
+  Beveiligingsfuncties van de Premium-servicelaag omvatten onder meer [inhoudsvertrouwen](container-registry-content-trust.md) voor het ondertekenen van installatiekopietags en [firewalls en virtuele netwerken (preview)](container-registry-vnet.md) om toegang tot het register te beperken. Azure Security Center kan eventueel worden geïntegreerd met Azure Container Registry om [installatiekopieën te scannen](../security-center/defender-for-container-registries-introduction.md?bc=%2fazure%2fcontainer-registry%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fcontainer-registry%2ftoc.json) wanneer een installatiekopie naar een register wordt gepusht.
 
-* **Ondersteunde installatiekopieën en artefacten** : elke installatiekopie die is opgeslagen in een opslagplaats is een alleen-lezenmomentopname van een met Docker compatibele container. Azure-containerregisters kunnen zowel Windows- als Linux-installatiekopieën bevatten. U beheert de namen van de installatiekopieën voor al uw containerimplementaties. Gebruik standaard-[Docker-opdrachten](https://docs.docker.com/engine/reference/commandline/) om installatiekopieën naar een opslagplaats te pushen of een installatiekopie uit een opslagplaats op te halen. Naast Docker-containerinstallatiekopieën slaat Azure Container Registry [gerelateerde inhoudsindelingen](container-registry-image-formats.md) op, zoals [Helm-grafieken](container-registry-helm-repos.md) en installatiekopieën gebouwd volgens de [Specificatie voor de installatiekopie-indeling Open Container Initiative (OCI)](https://github.com/opencontainers/image-spec/blob/master/spec.md).
+* **Ondersteunde installatiekopieën en artefacten**: elke installatiekopie die is opgeslagen in een opslagplaats is een alleen-lezenmomentopname van een met Docker compatibele container. Azure-containerregisters kunnen zowel Windows- als Linux-installatiekopieën bevatten. U beheert de namen van de installatiekopieën voor al uw containerimplementaties. Gebruik standaard-[Docker-opdrachten](https://docs.docker.com/engine/reference/commandline/) om installatiekopieën naar een opslagplaats te pushen of een installatiekopie uit een opslagplaats op te halen. Naast Docker-containerinstallatiekopieën slaat Azure Container Registry [gerelateerde inhoudsindelingen](container-registry-image-formats.md) op, zoals [Helm-grafieken](container-registry-helm-repos.md) en installatiekopieën gebouwd volgens de [Specificatie voor de installatiekopie-indeling Open Container Initiative (OCI)](https://github.com/opencontainers/image-spec/blob/master/spec.md).
 
-* **Installatiekopieën automatisch bouwen** : gebruik [Azure Container Registry-taken](container-registry-tasks-overview.md) (ACR-taken) om het ontwikkelen, testen, pushen en implementeren van installatiekopieën in Azure te stroomlijnen. Gebruik bijvoorbeeld ACR-taken om uw interne ontwikkelingsactiviteiten uit te breiden naar de cloud door `docker build`-bewerkingen te offloaden naar Azure. Configureer buildtaken om uw container-OS- en frameworkpatchingpijplijn te automatiseren en automatisch installatiekopieën te maken wanneer uw team code met bronbeheer doorvoert.
+* **Installatiekopieën automatisch bouwen**: gebruik [Azure Container Registry-taken](container-registry-tasks-overview.md) (ACR-taken) om het ontwikkelen, testen, pushen en implementeren van installatiekopieën in Azure te stroomlijnen. Gebruik bijvoorbeeld ACR-taken om uw interne ontwikkelingsactiviteiten uit te breiden naar de cloud door `docker build`-bewerkingen te offloaden naar Azure. Configureer buildtaken om uw container-OS- en frameworkpatchingpijplijn te automatiseren en automatisch installatiekopieën te maken wanneer uw team code met bronbeheer doorvoert.
 
   [Taken met meerdere stappen](container-registry-tasks-overview.md#multi-step-tasks) biedt een stapsgewijze taakdefinitie en -uitvoering voor het ontwikkelen, testen en patchen van containerinstallatiekopieën in de cloud. Taakstappen definiëren afzonderlijke ontwikkel- en pushbewerkingen voor containerinstallatiekopieën. Ze kunnen ook de uitvoering definiëren van een of meer containers, waarbij elke stap de container als uitvoeringsomgeving gebruikt.
 

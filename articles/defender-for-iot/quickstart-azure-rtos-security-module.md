@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/24/2020
 ms.author: rkarlin
-ms.openlocfilehash: 38e78b80fd14aec7557b563b2b33faf7d51bd114
-ms.sourcegitcommit: 6a4687b86b7aabaeb6aacdfa6c2a1229073254de
+ms.openlocfilehash: 321c8d2b9e58aba943c5bf19adf54d6359c5be96
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91759729"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351773"
 ---
 # <a name="quickstart-security-module-for-azure-rtos-preview"></a>Quickstart: Beveiligingsmodule voor Azure RTOS (preview)
 
-In dit artikel worden de vereisten beschreven waaraan u moet voldoen voordat u aan de slag gaat en wordt uitgelegd hoe u de beveiligingsmodule voor Azure RTOS-service in een Azure IoT-hub inschakelt. Als u momenteel niet over een Azure IoT-hub beschikt, raadpleegt u [Een Azure IoT-hub maken met Azure Portal](https://docs.microsoft.com/azure/iot-hub/iot-hub-create-through-portal) om aan de slag te gaan.
+In dit artikel worden de vereisten beschreven waaraan u moet voldoen voordat u aan de slag gaat en wordt uitgelegd hoe u de beveiligingsmodule voor Azure RTOS-service in een Azure IoT-hub inschakelt. Als u momenteel niet over een Azure IoT-hub beschikt, raadpleegt u [Een Azure IoT-hub maken met Azure Portal](../iot-hub/iot-hub-create-through-portal.md) om aan de slag te gaan.
 
 > [!NOTE]
 > De beveiligingsmodule voor Azure RTOS wordt alleen ondersteund in Azure IoT-hubs van de Standard-laag.
@@ -49,7 +49,7 @@ Er is een Azure IoT Hub-verbinding nodig om aan de slag te gaan.
 1. Kopieer de IoT-verbindingstekenreeks naar het [configuratiebestand](how-to-azure-rtos-security-module.md).
 
 
-De verbindingsreferenties worden opgehaald uit de gebruikerstoepassingsconfiguratie **HOST_NAME**, **DEVICE_ID**en **DEVICE_SYMMETRIC_KEY**.
+De verbindingsreferenties worden opgehaald uit de gebruikerstoepassingsconfiguratie **HOST_NAME**, **DEVICE_ID** en **DEVICE_SYMMETRIC_KEY**.
 
 De beveiligingsmodule voor Azure RTOS maakt gebruik van Azure IoT-middlewareverbindingen op basis van het **MQTT**-protocol.
 
@@ -63,10 +63,10 @@ Log Analytics-opname in Azure IoT Hub is standaard uitgeschakeld in de Azure Def
 1. Selecteer **Gegevensverzameling**. 
 1. Zet in de optie **Werkruimteconfiguratie** de wisselknop op **Aan**. 
 1. Maak een nieuwe Log Analytics-werkruimte of koppel een bestaande werkruimte. Zorg ervoor dat de optie **Toegang tot onbewerkte beveiligingsgegevens** is geselecteerd. 
- :::image type="content" source="media/quickstart/azure-rtos-data-collection-on.png" alt-text="Toegang tot de optie voor het verzamelen van gegevens voor Azure RTOS":::
+ :::image type="content" source="media/quickstart/azure-rtos-data-collection-on.png" alt-text="Azure RTOS-configuratie met de opties voor gegevensverzameling en onbewerkte beveiligingsgegevens die beide zijn geselecteerd":::
 1. Selecteer **Opslaan**
 1. Ga terug naar de lijst met Azure-resources en controleer of de door u gemaakte of gekoppelde Log Analytics-werkruimte is ingeschakeld voor de Azure IoT-hub.
-    :::image type="content" source="media/quickstart/verify-azure-resource-list.png" alt-text="Toegang tot de optie voor het verzamelen van gegevens voor Azure RTOS"::: 
+    :::image type="content" source="media/quickstart/verify-azure-resource-list.png" alt-text="Controleer in de lijst met Azure-resources of de juiste Log Analytics-werkruimte is toegevoegd voor een Azure IoT-hub"::: 
 
 ## <a name="next-steps"></a>Volgende stappen
 

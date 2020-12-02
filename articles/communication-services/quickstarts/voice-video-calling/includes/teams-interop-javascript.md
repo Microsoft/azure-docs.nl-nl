@@ -5,12 +5,12 @@ ms.author: mikben
 ms.date: 10/10/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: ab13e02c9154dbfc1bd28872f1bd6f993019a604
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 820659c513674dc04e914c8f1094afab4f5a89e2
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94915285"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96356457"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -22,7 +22,7 @@ ms.locfileid: "94915285"
 De interoperabiliteitsfunctie van Teams bevindt zich op dit moment in de beperkte preview. Als u deze functie wilt inschakelen voor uw Communication Services-resource, kunt u [acsfeedback@microsoft.com](mailto:acsfeedback@microsoft.com) e-mailen met:
 
 1. De abonnements-id van het Azure-abonnement dat uw Communication Services-resource bevat.
-2. De tenant-id van uw Teams. De eenvoudigste manier om dit te verkrijgen is door [een koppeling naar het Team te verkrijgen en te delen](https://support.microsoft.com/office/create-a-link-or-a-code-for-joining-a-team-11b0de3b-9288-4cb4-bc49-795e7028296f#:~:text=Create%20a%20link%20If%20you%E2%80%99re%20a%20team%20owner%2C,link%20into%20any%20browser%20to%20join%20the%20team).
+2. De tenant-id van uw Teams. De eenvoudigste manier om dit te verkrijgen is door [een koppeling naar het Team te verkrijgen en te delen](https://support.microsoft.com/office/create-a-link-or-a-code-for-joining-a-team-11b0de3b-9288-4cb4-bc49-795e7028296f).
 
 U moet lid zijn van de organisatie die eigenaar is van beide entiteiten om deze functie te kunnen gebruiken.
 

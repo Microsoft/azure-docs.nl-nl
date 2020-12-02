@@ -5,12 +5,12 @@ author: tfitzmac
 ms.topic: overview
 ms.date: 07/12/2019
 ms.author: tomfitz
-ms.openlocfilehash: 7641c1e3bc3620b294c2953b993e9179a4875536
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 65b8c21251f092311150a50480f5abecb1ad7c17
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91951805"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96434563"
 ---
 # <a name="azure-managed-applications-overview"></a>Overzicht van Azure Managed Applications
 
@@ -49,7 +49,7 @@ Zie [Een beheerde toepassing voor intern verbruik publiceren](publish-service-ca
 
 Leveranciers die voor hun services betaald willen krijgen, kunnen een beheerde toepassing beschikbaar maken via de Azure Marketplace. Nadat de leverancier een toepassing heeft gepubliceerd, is deze beschikbaar voor gebruikers buiten de organisatie. Op deze manier kunnen MSP's (providers van beheerde services), ISV's (onafhankelijke softwareleveranciers) en SI's (systeemintegrators) hun oplossingen aanbieden aan alle Azure-klanten.
 
-Zie [Marketplace-toepassing maken](../../marketplace/partner-center-portal/create-new-azure-apps-offer.md) voor meer informatie over het publiceren van beheerde toepassingen in de Microsoft Azure Marketplace.
+Zie [Marketplace-toepassing maken](../../marketplace/create-new-azure-apps-offer.md) voor meer informatie over het publiceren van beheerde toepassingen in de Microsoft Azure Marketplace.
 
 ## <a name="resource-groups-for-managed-applications"></a>Resourcegroepen voor beheerde toepassingen
 
@@ -71,7 +71,7 @@ De consument heeft volledige toegang tot de resourcegroep en gebruikt deze om de
 
 Deze resourcegroep bevat alle resources die de beheerde toepassing nodig heeft. Deze resourcegroep bevat bijvoorbeeld de virtuele machines, opslagaccounts en virtuele netwerken voor de oplossing. De consument heeft beperkte toegang tot deze resourcegroep omdat de consument de afzonderlijke resources voor de beheerde toepassing niet beheert. De toegang van de uitgever tot deze resourcegroep komt overeen met de rol die is opgegeven in de definitie van de beheerde toepassing. De uitgever kan bijvoorbeeld de rol van eigenaar of bijdrager voor deze resourcegroep aanvragen. De toegang is permanent of beperkt geldig.
 
-Bij het publiceren van de [beheerde toepassing op Marketplace](../../marketplace/partner-center-portal/create-new-azure-apps-offer.md) kan de uitgever consumenten de mogelijkheid geven om specifieke acties uit te voeren op resources in de beheerde resourcegroep. De uitgever kan bijvoorbeeld opgeven dat gebruikers virtuele machines opnieuw kunnen starten. Acties die groter zijn dan lees-acties, worden nog steeds geweigerd. Wijzigingen in resources in een beheerde resourcegroep door een consument met verleende machtigingen zijn onderhevig aan de [Azure Policy](../../governance/policy/overview.md)-toewijzingen binnen de tenants van de consument die zijn gekoppeld aan de beheerde resourcegroep.
+Bij het publiceren van de [beheerde toepassing op Marketplace](../../marketplace/create-new-azure-apps-offer.md) kan de uitgever consumenten de mogelijkheid geven om specifieke acties uit te voeren op resources in de beheerde resourcegroep. De uitgever kan bijvoorbeeld opgeven dat gebruikers virtuele machines opnieuw kunnen starten. Acties die groter zijn dan lees-acties, worden nog steeds geweigerd. Wijzigingen in resources in een beheerde resourcegroep door een consument met verleende machtigingen zijn onderhevig aan de [Azure Policy](../../governance/policy/overview.md)-toewijzingen binnen de tenants van de consument die zijn gekoppeld aan de beheerde resourcegroep.
 
 Wanneer de gebruiker de beheerde toepassing verwijdert, wordt ook de beheerde resourcegroep verwijderd.
 

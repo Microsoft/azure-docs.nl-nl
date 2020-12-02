@@ -6,12 +6,12 @@ ms.topic: quickstart
 ms.custom:
 - devx-track-python
 - devx-track-azurecli
-ms.openlocfilehash: 0aea0425123cab4da1939e85a2cfd6071f772737
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: 5f8bf6fb6f464bcb74d34e2d99fac16c24b12615
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95795757"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96175709"
 ---
 # <a name="quickstart-create-a-python-function-in-azure-from-the-command-line"></a>Quickstart: Een Python-functie maken in Azure vanaf de opdrachtregel
 
@@ -203,7 +203,7 @@ Gebruik de volgende opdrachten om deze items te maken. Zowel Azure CLI als Power
     New-AzResourceGroup -Name AzureFunctionsQuickstart-rg -Location westeurope
     ```
 
-    Met de opdracht [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) maakt u een resourcegroep. Over het algemeen maakt u een resourcegroep en resources in een regio bij u in de buurt, waarbij u een beschikbare regio gebruikt die wordt geretourneerd door de cmdlet [Get-AzLocation](https://docs.microsoft.com/powershell/module/az.resources/get-azlocation).
+    Met de opdracht [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) maakt u een resourcegroep. Over het algemeen maakt u een resourcegroep en resources in een regio bij u in de buurt, waarbij u een beschikbare regio gebruikt die wordt geretourneerd door de cmdlet [Get-AzLocation](/powershell/module/az.resources/get-azlocation).
 
     ---
 

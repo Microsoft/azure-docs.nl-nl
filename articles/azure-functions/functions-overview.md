@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 11/20/2020
 ms.author: cshoe
 ms.custom: contperfq2
-ms.openlocfilehash: 6713c0d45a8b5363122c726d1d31e5c479ba8fff
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 514f2e9a82a50f95f9c054c6a54e7b5af3c0af15
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95504638"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96167774"
 ---
 # <a name="introduction-to-azure-functions"></a>Een inleiding tot Azure Functions
 
@@ -38,7 +38,7 @@ Hier volgt een veelvoorkomende, _maar geen volledige_ set scenario's voor Azure 
 | --- | --- |
 | **Een web-API bouwen** | Een eindpunt voor uw webtoepassingen implementeren met de [HTTP-trigger](./functions-bindings-http-webhook.md) |
 | **Uploads van bestanden verwerken** | Code uitvoeren wanneer een bestand wordt geüpload of gewijzigd in [blob-opslag](./functions-bindings-storage-blob.md) |
-| **Een serverloze werkstroom maken** | Een reeks functies koppelen met behulp van [duurzame functies](./durable-functions-overview.md) |
+| **Een serverloze werkstroom maken** | Een reeks functies koppelen met behulp van [duurzame functies](./durable/durable-functions-overview.md) |
 | **Reageren op wijzigingen in de database** | Aangepaste logica uitvoeren wanneer een document wordt gemaakt of bijgewerkt in [Cosmos DB](./functions-bindings-cosmosdb-v2.md) |
 | **Geplande taken uitvoeren** | Code uitvoeren op [vaste tijdstippen](./functions-bindings-timer.md) |
 | **Betrouwbare berichtenwachtrijsystemen maken** | Berichtenwachtrijen verwerken met behulp van [Queue Storage](./functions-bindings-storage-queue.md), [Service Bus](./functions-bindings-service-bus.md) of [Event Hubs](./functions-bindings-event-hubs.md) |

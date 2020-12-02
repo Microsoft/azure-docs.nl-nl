@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/08/2019
 ms.author: mlottner
-ms.openlocfilehash: 822e9dc237dd6f4d73e1860c6a0b240fb94c3105
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 74e0e8daa662f4dd49f1886972236b5b0a3b100a
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90943832"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348854"
 ---
 # <a name="quickstart-create-an-azureiotsecurity-module-twin"></a>Quickstart: Een azureiotsecurity-moduledubbel maken
 
@@ -31,7 +31,7 @@ Apparaatdubbels spelen een belangrijke rol voor zowel apparaatbeheer als procesa
 Defender for IoT biedt volledige integratie met uw bestaande IoT-beheerplatform, zodat u de beveiligingsstatus van uw apparaten kunt beheren en ook de bestaande apparaten kunt gebruiken.
 Defender for IoT-integratie wordt bereikt door gebruik te maken van het IoT Hub-dubbelmechanisme.
 
-Zie [IoT Hub-moduledubbels](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-module-twins) voor meer informatie over het algemene concept van moduledubbels in Azure IoT Hub.
+Zie [IoT Hub-moduledubbels](../iot-hub/iot-hub-devguide-module-twins.md) voor meer informatie over het algemene concept van moduledubbels in Azure IoT Hub.
 
 Defender for IoT maakt gebruik van het moduledubbelmechanisme en onderhoudt een beveiligingsmodule met de naam _azureiotsecurity_ voor al uw apparaten.
 

@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc, fasttrack-edit
 ms.date: 09/16/2020
 ms.author: yelevin
-ms.openlocfilehash: 26a29524e0bf329a368b3cd2281dd9b070b42a14
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 369847810cdb7f7e93a13f5d410f226d3663080d
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660811"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96188578"
 ---
 # <a name="quickstart-get-started-with-azure-sentinel"></a>Quickstart: Aan de slag met Azure Sentinel
 
@@ -91,12 +91,11 @@ U kunt een volledig nieuwe werkmap maken of een ingebouwde werkmap gebruiken als
 Met de volgende voorbeeldquery kunt u trends vergelijken van verkeer voor verschillende weken. U kunt eenvoudig aanpassen voor welke apparaatleverancier en gegevensbron u de query wilt uitvoeren. In dit voorbeeld wordt SecurityEvent van Windows gebruikt. U kunt de query aanpassen voor uitvoering op AzureActivity of CommonSecurityLog op elke andere firewall.
 
 ```console
- |where DeviceVendor == "Palo Alto Networks":
-  // week over week query
-  SecurityEvent
-  | where TimeGenerated > ago(14d)
-  | summarize count() by bin(TimeGenerated, 1d)
-  | extend Week = iff(TimeGenerated>ago(7d), "This Week", "Last Week"), TimeGenerated = iff(TimeGenerated>ago(7d), TimeGenerated, TimeGenerated + 7d)
+// week over week query
+SecurityEvent
+| where TimeGenerated > ago(14d)
+| summarize count() by bin(TimeGenerated, 1d)
+| extend Week = iff(TimeGenerated>ago(7d), "This Week", "Last Week"), TimeGenerated = iff(TimeGenerated>ago(7d), TimeGenerated, TimeGenerated + 7d)
 ```
 
 Mogelijk wilt u een query maken die gegevens uit meerdere bronnen combineert. U kunt een query maken om te controleren of Azure Active Directory-auditlogboeken informatie bevatten over nieuwe gebruikers die zojuist zijn gemaakt. Daarna kunt u de logboeken van Azure controleren om na te gaan of deze gebruikers binnen 24 uur nadat ze zijn toegevoegd, hun roltoewijzing hebben gewijzigd. Deze verdachte activiteit zou in dit dashboard worden weergegeven:

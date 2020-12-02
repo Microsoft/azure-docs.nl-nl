@@ -4,12 +4,12 @@ description: Lees hoe u een uitvoerbinding toevoegt om functies uit uw C#-klasse
 ms.date: 07/22/2019
 ms.topic: quickstart
 ms.custom: mvc
-ms.openlocfilehash: 0711516143839dbcdbafec56ab1d9643b4b8cdc7
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 635392212027c73e5aa954eb671be31228796a0d
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92167118"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185127"
 ---
 # <a name="connect-functions-to-azure-storage-using-visual-studio"></a>Functies verbinden met Azure Storage met behulp van Visual Studio
 
@@ -29,7 +29,7 @@ Voordat u aan dit artikel begint, moet u het volgende doen:
 
 ## <a name="download-the-function-app-settings"></a>De instellingen voor functie-apps downloaden
 
-In het [vorige snelstartgids-artikel](functions-create-first-function-vs-code.md)hebt u een functie-app gemaakt in Azure, met het vereiste Storage-account. De verbindingsreeks voor dit account wordt veilig opgeslagen in de app-instellingen in Azure. In dit artikel schrijft u berichten naar een opslagwachtrij in hetzelfde account. Als u verbinding wilt maken met uw Storage-account wanneer u de functie lokaal uitvoert, moet u de app-instellingen downloaden naar het bestand *local.settings.json*. 
+In het [vorige snelstartgids-artikel](./create-first-function-vs-code-csharp.md)hebt u een functie-app gemaakt in Azure, met het vereiste Storage-account. De verbindingsreeks voor dit account wordt veilig opgeslagen in de app-instellingen in Azure. In dit artikel schrijft u berichten naar een opslagwachtrij in hetzelfde account. Als u verbinding wilt maken met uw Storage-account wanneer u de functie lokaal uitvoert, moet u de app-instellingen downloaden naar het bestand *local.settings.json*. 
 
 1. Klik in **Solution Explorer** met de rechtermuisknop op het project en selecteer **Publiceren**. 
 

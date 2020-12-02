@@ -11,12 +11,12 @@ ms.date: 10/30/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eaf033f7da7a5bd4882d0c78a2321640aa64d8ac
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 1ffe8c1397525348e472e965a407909fee36152d
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94646556"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96168444"
 ---
 # <a name="what-is-hr-driven-provisioning"></a>Wat is inrichten op basis van HR?
 
@@ -35,7 +35,7 @@ Op dit moment maken on-premises HR-inrichtingsoplossingen van Microsoft gebruik 
 
 Met MIM kunt u gebruikers uit uw on-premises HR-systemen inrichten voor Active Directory of Azure AD.
 
-Zie de documentatie voor [Microsoft Identity Manager](https://docs.microsoft.com/microsoft-identity-manager/microsoft-identity-manager-2016) voor informatie over Microsoft Identity Manager en de systemen die erdoor worden ondersteund.
+Zie de documentatie voor [Microsoft Identity Manager](/microsoft-identity-manager/microsoft-identity-manager-2016) voor informatie over Microsoft Identity Manager en de systemen die erdoor worden ondersteund.
 
 [!INCLUDE [active-directory-hr-provisioning.md](../../../includes/active-directory-hr-provisioning.md)]
 

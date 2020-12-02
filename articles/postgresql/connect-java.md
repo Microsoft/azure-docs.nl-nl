@@ -9,11 +9,11 @@ ms.topic: quickstart
 ms.devlang: java
 ms.date: 08/17/2020
 ms.openlocfilehash: 42547338c0f5f2f3105833b12e499d40b6209b05
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93341413"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184702"
 ---
 # <a name="quickstart-use-java-and-jdbc-with-azure-database-for-postgresql"></a>Quickstart: Java en JDBC gebruiken met Azure Database for PostgreSQL
 
@@ -360,7 +360,7 @@ Als u nu de main-klasse uitvoert, zou dit de volgende uitvoer moeten opleveren:
 
 Laten we de gegevens lezen die u eerder hebt ingevoegd om te controleren of onze code goed werkt.
 
-Voeg in het bestand *src/main/java/DemoApplication.java* , na de methode `insertData`, de volgende methode toe om gegevens te lezen uit de database:
+Voeg in het bestand *src/main/java/DemoApplication.java*, na de methode `insertData`, de volgende methode toe om gegevens te lezen uit de database:
 
 ```java
 private static Todo readData(Connection connection) throws SQLException {
@@ -404,7 +404,7 @@ Als u nu de main-klasse uitvoert, zou dit de volgende uitvoer moeten opleveren:
 
 Laten we de gegevens bijwerken die we eerder hebben ingevoegd.
 
-Voeg in het bestand *src/main/java/DemoApplication.java* , na de methode `readData`, de volgende methode toe om gegevens bij te werken in de database:
+Voeg in het bestand *src/main/java/DemoApplication.java*, na de methode `readData`, de volgende methode toe om gegevens bij te werken in de database:
 
 ```java
 private static void updateData(Todo todo, Connection connection) throws SQLException {
@@ -448,7 +448,7 @@ Als u nu de main-klasse uitvoert, zou dit de volgende uitvoer moeten opleveren:
 
 Laten we ten slotte de gegevens verwijderen die we eerder hebben ingevoegd.
 
-Voeg in het bestand *src/main/java/DemoApplication.java* , na de methode `updateData`, de volgende methode toe om gegevens te verwijderen uit de database:
+Voeg in het bestand *src/main/java/DemoApplication.java*, na de methode `updateData`, de volgende methode toe om gegevens te verwijderen uit de database:
 
 ```java
 private static void deleteData(Todo todo, Connection connection) throws SQLException {

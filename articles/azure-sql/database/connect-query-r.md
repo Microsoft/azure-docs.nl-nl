@@ -14,12 +14,12 @@ ms.reviewer: davidph, sstein
 manager: cgronlun
 ms.date: 05/29/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 62f1015bc945b5c01f719d7e96e6446c49ac8b8a
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 2e32a4abeae78aa7105f21ecffbb18c2eae841a4
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675155"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185620"
 ---
 # <a name="quickstart-use-r-with-azure-sql-database-machine-learning-services-preview-to-query-a-database"></a>Quickstart: R gebruiken met Azure SQL Database Machine Learning Services (preview) om een query uit te voeren op een database 
 
@@ -37,7 +37,7 @@ In deze snelstart gebruikt u R met Azure SQL Database Machine Learning Services 
 - [SQL Server Management Studio](/sql/ssms/sql-server-management-studio-ssms) (SSMS)
 
 > [!IMPORTANT]
-> De scripts in dit artikel zijn geschreven voor gebruik met de **Adventure Works** -database.
+> De scripts in dit artikel zijn geschreven voor gebruik met de **Adventure Works**-database.
 
 Machine Learning Services met R is een functie van Azure SQL Database die wordt gebruikt voor het uitvoeren van in-database R-scripts. Zie [R-project](https://www.r-project.org/) voor meer informatie.
 
@@ -47,9 +47,9 @@ Haal de verbindingsgegevens op die u nodig hebt om verbinding te maken met de da
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
-2. Navigeer naar de pagina **SQL-databases** of **Met SQL beheerde exemplaren** .
+2. Navigeer naar de pagina **SQL-databases** of **Met SQL beheerde exemplaren**.
 
-3. Bekijk op de pagina **Overzicht** de volledig gekwalificeerde servernaam naast **Servernaam** voor een database in Azure SQL Database, of de volledig gekwalificeerde servernaam naast **Host** voor een beheerd exemplaar in Azure SQL Managed Instance. Als u de servernaam of hostnaam wilt kopiëren, plaatst u de muisaanwijzer erboven en selecteert u het pictogram **Kopiëren** .
+3. Bekijk op de pagina **Overzicht** de volledig gekwalificeerde servernaam naast **Servernaam** voor een database in Azure SQL Database, of de volledig gekwalificeerde servernaam naast **Host** voor een beheerd exemplaar in Azure SQL Managed Instance. Als u de servernaam of hostnaam wilt kopiëren, plaatst u de muisaanwijzer erboven en selecteert u het pictogram **Kopiëren**.
 
 ## <a name="create-code-to-query-your-database"></a>Code maken om query's uit te voeren op uw database
 
@@ -78,10 +78,10 @@ Haal de verbindingsgegevens op die u nodig hebt om verbinding te maken met de da
 
 1. Voer de opgeslagen procedure [sp_execute_external_script](/sql/relational-databases/system-stored-procedures/sp-execute-external-script-transact-sql) uit.
 
-1. Controleer of de bovenste twintig rijen Categorie/Product worden geretourneerd in het venster **Berichten** .
+1. Controleer of de bovenste twintig rijen Categorie/Product worden geretourneerd in het venster **Berichten**.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Uw eerste database ontwerpen in Azure SQL Database](design-first-database-tutorial.md)
 - [Azure SQL Database Machine Learning Services (met R)](../managed-instance/machine-learning-services-overview.md)
-- [Eenvoudige R-scripts maken en uitvoeren in Azure SQL Database Machine Learning Services (preview)](/sql/machine-learning/tutorials/quickstart-r-create-script?context=%252fazure%252fazure-sql%252fmanaged-instance%252fcontext%252fml-context)
+- [Eenvoudige R-scripts maken en uitvoeren in Azure SQL Database Machine Learning Services (preview)](/sql/machine-learning/tutorials/quickstart-r-create-script?context=%2fazure%2fazure-sql%2fmanaged-instance%2fcontext%2fml-context)

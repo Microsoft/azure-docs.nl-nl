@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 10/16/2020
 ms.custom: subject-armqs, devx-track-azurecli
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: c8542bfe3d1393917a63e4a1feae7d6dfc223031
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 5be4cea7d8ddb00a4c8a22a696dbdce1c062765c
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746187"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183019"
 ---
 # <a name="quickstart-create-app-service-app-using-an-arm-template"></a>Quickstart: App Service-app maken met behulp van een ARM-sjabloon
 
@@ -21,13 +21,13 @@ Aan de slag met [Azure App Service](overview.md) door een app in de cloud te imp
 
  [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Als uw omgeving voldoet aan de vereisten en u bekend bent met het gebruik van ARM-sjablonen, selecteert u de knop **Implementeren naar Azure** . De sjabloon wordt in Azure Portal geopend.
+Als uw omgeving voldoet aan de vereisten en u bekend bent met het gebruik van ARM-sjablonen, selecteert u de knop **Implementeren naar Azure**. De sjabloon wordt in Azure Portal geopend.
 
-Gebruik de volgende knop voor implementatie in **Linux** :
+Gebruik de volgende knop voor implementatie in **Linux**:
 
 [![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-app-service-docs-linux%2Fazuredeploy.json)
 
-Gebruik de volgende knop voor implementatie in **Windows** :
+Gebruik de volgende knop voor implementatie in **Windows**:
 
 [![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-app-service-docs-windows%2Fazuredeploy.json)
 
@@ -145,7 +145,7 @@ Blader naar `http://<app_name>.azurewebsites.net/` en controleer of deze is gema
 > [PHP met MySQL](tutorial-php-mysql-app.md)
 
 > [!div class="nextstepaction"]
-> [Verbinding maken met Azure SQL-database met Java](../azure-sql/database/connect-query-java.md?toc=%252fazure%252fjava%252ftoc.json)
+> [Verbinding maken met Azure SQL-database met Java](../azure-sql/database/connect-query-java.md?toc=%2fazure%2fjava%2ftoc.json)
 
 > [!div class="nextstepaction"]
 > [Aangepast domein toewijzen](app-service-web-tutorial-custom-domain.md)

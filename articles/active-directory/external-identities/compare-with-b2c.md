@@ -12,12 +12,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 420cc2bc38d079fa95f6b90ed20cb31e994f4ea3
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.openlocfilehash: 6be0720b7eafb251b262d5cd182bdf06e201402d
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93027071"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96173070"
 ---
 # <a name="what-are-external-identities-in-azure-active-directory"></a>Wat zijn externe identiteiten in Azure Active Directory?
 
@@ -51,7 +51,7 @@ Beveilig en beheer klanten en partners buiten de grenzen van uw organisatie met 
 
 ## <a name="about-multitenant-applications"></a>Over multitenant-toepassingen
 
-Als u een app als een service levert en u de gebruikersaccounts van uw klanten niet wilt beheren, is een app voor meerdere tenants waarschijnlijk de juiste keuze voor u. Wanneer u toepassingen ontwikkelt die bedoeld zijn voor andere Azure AD-tenants, kunt u gebruikers van één organisatie (één tenant) of gebruikers van elke organisatie die al een Azure AD-tenant heeft (multitenant-toepassingen) als doel instellen. App-registraties in Azure Active Directory zijn standaard voor één tenant, maar u kunt uw registratie multitenant maken. Deze multitenant-toepassing wordt door uzelf eenmaal geregistreerd in uw eigen Azure Active Directory. Maar vervolgens kan elke gebruiker van Azure Active Directory van elke organisatie de toepassing gebruiken zonder dat u er iets extra voor hoeft te doen. Zie [Identiteitsbeheer in multitenant-toepassingen](https://docs.microsoft.com/azure/architecture/multitenant-identity/), [Instructiegids](../develop/howto-convert-app-to-be-multi-tenant.md) voor meer informatie.
+Als u een app als een service levert en u de gebruikersaccounts van uw klanten niet wilt beheren, is een app voor meerdere tenants waarschijnlijk de juiste keuze voor u. Wanneer u toepassingen ontwikkelt die bedoeld zijn voor andere Azure AD-tenants, kunt u gebruikers van één organisatie (één tenant) of gebruikers van elke organisatie die al een Azure AD-tenant heeft (multitenant-toepassingen) als doel instellen. App-registraties in Azure Active Directory zijn standaard voor één tenant, maar u kunt uw registratie multitenant maken. Deze multitenant-toepassing wordt door uzelf eenmaal geregistreerd in uw eigen Azure Active Directory. Maar vervolgens kan elke gebruiker van Azure Active Directory van elke organisatie de toepassing gebruiken zonder dat u er iets extra voor hoeft te doen. Zie [Identiteitsbeheer in multitenant-toepassingen](/azure/architecture/multitenant-identity/), [Instructiegids](../develop/howto-convert-app-to-be-multi-tenant.md) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

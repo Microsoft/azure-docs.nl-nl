@@ -462,7 +462,7 @@ Document ID: 3 , Language: Chinese_Simplified
 > In versie `3.1`:
 > * Entiteitskoppeling is een aanvraag die los staat van NER.
 
-Maak een matrix met tekenreeksen die het document bevat dat u wilt analyseren. Roep de methode `recognizeEntities()` van de client aan en haal het `RecognizeEntitiesResult`-object op. Blader door de lijst met resultaten, en druk naam, id, gegevensbron, URL en overeenkomsten voor de entiteit af.
+Maak een matrix met tekenreeksen die het document bevat dat u wilt analyseren. Roep de methode `recognizeEntities()` van de client aan en haal het `RecognizeEntitiesResult`-object op. Blader door de lijst met resultaten, en druk naam, type, subtype, offset, lengte en score voor de entiteit af.
 
 ```javascript
 async function entityRecognition(client){
@@ -604,7 +604,7 @@ Redacted Text:  The employee's phone number is **************.
 > In versie `3.0`:
 > * Entiteitskoppeling is een aanvraag die los staat van NER.
 
-Maak een matrix met tekenreeksen die het document bevat dat u wilt analyseren. Roep de methode `recognizeEntities()` van de client aan en haal het `RecognizeEntitiesResult`-object op. Blader door de lijst met resultaten, en druk naam, id, gegevensbron, URL en overeenkomsten voor de entiteit af.
+Maak een matrix met tekenreeksen die het document bevat dat u wilt analyseren. Roep de methode `recognizeEntities()` van de client aan en haal het `RecognizeEntitiesResult`-object op. Blader door de lijst met resultaten, en druk naam, type, subtype, offset, lengte en score voor de entiteit af.
 
 ```javascript
 async function entityRecognition(client){

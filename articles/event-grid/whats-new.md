@@ -3,12 +3,12 @@ title: Wat is nieuw? Releaseopmerkingen voor Azure Event Grid
 description: Ontdek wat er nieuw is in Azure Event Grid, zoals de laatste opmerkingen bij de release, bekende problemen, opgeloste problemen, verminderde functionaliteit en aankomende wijzigingen.
 ms.topic: overview
 ms.date: 07/23/2020
-ms.openlocfilehash: 1edfa3e2bc4c8adae113b2215b7fb0483fba4c02
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 7528cef7007704bbf434f16622707da8920eec2b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87172688"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350004"
 ---
 # <a name="whats-new-in-azure-event-grid"></a>Wat is er nieuw in Azure Event Grid?
 
@@ -40,7 +40,7 @@ Azure Event Grid wordt doorlopend verder verbeterd. Om u op de hoogte te houden 
 - Deze release bevat aanvullende bugfixes om de kwaliteit te verbeteren.
 - Als versie 5.3.1-preview komt deze release overeen met de API-versie 2020-04-01-preview, die de volgende nieuwe functionaliteiten bevat: 
     - [Ondersteuning voor IP-filtering bij het publiceren van gebeurtenissen naar domeinen en onderwerpen](configure-firewall.md)
-    - [Partneronderwerpen](partner-topics-overview.md)
+    - [Partneronderwerpen](./partner-events-overview.md)
     - [Systeemonderwerpen als bijgehouden resources in de Azure-portal](system-topics.md)
     - [Levering van gebeurtenissen met beheerde service-identiteit](managed-service-identity.md) 
     - [Ondersteuning Private Link-service](configure-private-endpoints.md)
@@ -49,7 +49,7 @@ Azure Event Grid wordt doorlopend verder verbeterd. Om u op de hoogte te houden 
 - Deze release bevat verschillende bugfixes om de kwaliteit te verbeteren.
 - Als versie 5.3.0-preview komt deze release overeen met de API-versie 2020-04-01-preview, die de volgende nieuwe functionaliteiten bevat: 
     - [Ondersteuning voor IP-filtering bij het publiceren van gebeurtenissen naar domeinen en onderwerpen](configure-firewall.md)
-    - [Partneronderwerpen](partner-topics-overview.md)
+    - [Partneronderwerpen](./partner-events-overview.md)
     - [Systeemonderwerpen als bijgehouden resources in de Azure-portal](system-topics.md)
     - [Levering van gebeurtenissen met beheerde service-identiteit](managed-service-identity.md) 
     - [Ondersteuning Private Link-service](configure-private-endpoints.md)
@@ -59,7 +59,7 @@ Azure Event Grid wordt doorlopend verder verbeterd. Om u op de hoogte te houden 
 - Als versie 5.2.0-preview komt deze release overeen met de API-versie 2020-04-01-preview.
 - De release voegt ondersteuning toe voor de volgende nieuwe functies: 
     - [Ondersteuning voor IP-filtering bij het publiceren van gebeurtenissen naar domeinen en onderwerpen](configure-firewall.md)
-    - [Partneronderwerpen](partner-topics-overview.md)
+    - [Partneronderwerpen](./partner-events-overview.md)
     - [Systeemonderwerpen als bijgehouden resources in de Azure-portal](system-topics.md)
     - [Levering van gebeurtenissen met beheerde service-identiteit](managed-service-identity.md) 
     - [Ondersteuning Private Link-service](configure-private-endpoints.md)

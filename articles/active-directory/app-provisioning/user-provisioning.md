@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 11/25/2019
 ms.author: kenwith
 ms.reviewer: arvinh, celested
-ms.openlocfilehash: b6eb571c7c37a628d11f07b4e1b207e38830250b
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 5b593add9c9d7be446798eecdd03b396c3fe513a
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88235397"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96174727"
 ---
 # <a name="what-is-automated-saas-app-user-provisioning-in-azure-ad"></a>Wat is geautomatiseerde gebruikersinrichting voor SaaS-toepassing in Azure AD?
 
@@ -59,7 +59,7 @@ Azure AD bevat vooraf geïntegreerde ondersteuning voor veel populaire SaaS-toep
 
    ![Logo van Salesforce](./media/user-provisioning/gallery-app-logos.png)
 
-   Als u een nieuwe toepassing wilt aanvragen voor inrichting, kunt u [een aanvraag indienen voor integratie van uw app met onze app-galerie](../azuread-dev/howto-app-gallery-listing.md). Voor een aanvraag voor gebruikersinrichting moet de toepassing een SCIM-compatibel eindpunt hebben. Vraag de leverancier van de toepassing de SCIM-standaard te volgen zodat de app snel kan worden geïmplementeerd op ons platform.
+   Als u een nieuwe toepassing wilt aanvragen voor inrichting, kunt u [een aanvraag indienen voor integratie van uw app met onze app-galerie](../develop/v2-howto-app-gallery-listing.md). Voor een aanvraag voor gebruikersinrichting moet de toepassing een SCIM-compatibel eindpunt hebben. Vraag de leverancier van de toepassing de SCIM-standaard te volgen zodat de app snel kan worden geïmplementeerd op ons platform.
 
 * **Toepassingen die ondersteuning bieden voor SCIM 2.0**. Zie [Een SCIM-eindpunt bouwen en gebruikersinrichting configureren](use-scim-to-provision-users-and-groups.md) voor meer informatie over het algemeen verbinden van toepassingen die gebruikmaken van SCIM 2.0-API’s voor gebruikersbeheer.
 

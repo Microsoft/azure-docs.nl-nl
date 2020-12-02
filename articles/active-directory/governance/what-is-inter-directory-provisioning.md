@@ -11,12 +11,12 @@ ms.date: 10/30/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4cbca2d00d10b6595b8a1d13251dd88c65667541
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: df199afd85c788299334087321c3edac8482698d
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93134939"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96168505"
 ---
 # <a name="what-is-inter-directory-provisioning"></a>Wat is directory-inrichting?
 
@@ -35,7 +35,7 @@ Azure AD biedt momenteel ondersteuning voor drie methoden voor het uitvoeren van
 
 - [Azure AD Connect Cloud-inrichten](../cloud-provisioning/what-is-cloud-provisioning.md) - een nieuwe Microsoft-agent die is ontworpen om uw doelstellingen voor een hybride identiteit te realiseren.  Het biedt een lichtgewicht inter-directory-inrichtingservaring tussen Active Directory en Azure AD.
 
-- [Microsoft Identity Manager](https://docs.microsoft.com/microsoft-identity-manager/microsoft-identity-manager-2016) - de on-premises oplossing voor identiteits- en toegangsbeheer van Microsoft waarmee u de gebruikers, referenties, het beleid en de toegang binnen uw organisatie kunt beheren. Daarnaast biedt MIM geavanceerde mogelijkheden voor inter-directory-inrichting om hybride identiteitsomgevingen te maken voor Active Directory, Azure AD en andere directory's.
+- [Microsoft Identity Manager](/microsoft-identity-manager/microsoft-identity-manager-2016) - de on-premises oplossing voor identiteits- en toegangsbeheer van Microsoft waarmee u de gebruikers, referenties, het beleid en de toegang binnen uw organisatie kunt beheren. Daarnaast biedt MIM geavanceerde mogelijkheden voor inter-directory-inrichting om hybride identiteitsomgevingen te maken voor Active Directory, Azure AD en andere directory's.
 
 ### <a name="key-benefits"></a>Belangrijkste voordelen
 
@@ -45,11 +45,11 @@ Deze mogelijkheid inter-directory-inrichting biedt de volgende belangrijke zakel
 - [Pass through-verificatie](../hybrid/how-to-connect-pta.md): een aanmeldingsmethode waarmee gebruikers hetzelfde wachtwoord on-premises en in de cloud kunnen gebruiken, zonder dat er een extra infrastructuur van een federatieve omgeving vereist is.
 - [Integratie van Federation](../hybrid/how-to-connect-fed-whatis.md) - kan worden gebruikt om een hybride omgeving te configureren met behulp van een on-premises AD FS-infrastructuur. Het onderdeel biedt ook beheermogelijkheden voor AD FS, zoals het verlengen van certificaten en aanvullende implementaties van AD FS-servers.
 - [Synchronisatie](../hybrid/how-to-connect-sync-whatis.md): verantwoordelijk voor het maken van gebruikers, groepen en andere objecten.  Het kan ook gebruikt worden om te controleren of de identiteitsinformatie van uw on-premises gebruikers en groepen overeenkomt met de cloud.  Deze synchronisatie bevat ook wachtwoord-hashes.
-- [Statuscontrole](../hybrid/whatis-hybrid-identity-health.md) - biedt robuuste bewaking en een centrale locatie in de Azure Portal om deze activiteit weer te geven. 
+- [Statuscontrole](../hybrid/whatis-azure-ad-connect.md) - biedt robuuste bewaking en een centrale locatie in de Azure Portal om deze activiteit weer te geven. 
 
 
 ## <a name="next-steps"></a>Volgende stappen 
-- [Wat is beheer van identiteitslevenscycli](what-is-identity-lifecycle-management.md)
+- [Wat is Beheer van identiteitslevenscycli](what-is-identity-lifecycle-management.md)
 - [Wat is inrichting?](what-is-provisioning.md)
 - [Wat is inrichting op basis van HR?](what-is-hr-driven-provisioning.md)
 - [Wat is app-inrichting?](what-is-app-provisioning.md)

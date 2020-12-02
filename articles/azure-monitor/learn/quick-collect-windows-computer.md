@@ -13,12 +13,12 @@ ms.topic: quickstart
 ms.date: 08/22/2019
 ms.author: bwren
 ms.custom: mvc, seo-javascript-october2019
-ms.openlocfilehash: 726caa0c4a7bbd6b8d0c17ffdfade5f9cc3c2a34
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 9cd92075c7e0c4450dbee750fd31efb394dd24f7
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89020368"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186742"
 ---
 # <a name="collect-data-from-a-windows-computer-in-a-hybrid-environment-with-azure-monitor"></a>Gegevens verzamelen van een Windows-computer in een hybride omgeving met Azure Monitor
 
@@ -165,5 +165,4 @@ Nu u bezig bent met het verzamelen van operationele gegevens en prestatiegegeven
 Voor informatie over het weergeven en analyseren van de gegevens gaat u verder met de zelfstudie:
 
 > [!div class="nextstepaction"]
-> [Gegevens weergeven of analyseren in Log Analytics](../log-query/get-started-portal.md)
-
+> [Gegevens weergeven of analyseren in Log Analytics](../log-query/log-analytics-tutorial.md)

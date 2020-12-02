@@ -7,12 +7,12 @@ keywords: azure automation, DSC, powershell, statusconfiguratie, updatebeheer, b
 ms.date: 10/18/2018
 ms.custom: mvc
 ms.topic: overview
-ms.openlocfilehash: 24aeb37cf868bed5d4211bc9b459a4736ceea4b2
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: e3986b7e8fc70f8662bed40b076897caa6165744
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92205333"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182815"
 ---
 # <a name="an-introduction-to-azure-automation"></a>Een inleiding tot Azure Automation
 
@@ -43,7 +43,7 @@ Wijzigingen bijhouden en Inventaris combineren functies voor het bijhouden van w
 
 ## <a name="update-management"></a>Updatebeheer
 
-Azure Automation bevat de functie [Updatebeheer](update-management/update-mgmt-overview.md) voor Windows- en Linux-systemen in hybride omgevingen. Updatebeheer geeft u inzicht in de updatevereisten voor Azure en andere clouds en on-premises. Met de functie kunt u geplande implementaties maken voor het organiseren van de installatie van updates binnen een gedefinieerd onderhoudsvenster. Als een update niet mag worden geïnstalleerd op een computer, kunt u de functie Updatebeheer gebruiken om deze uit te sluiten van een implementatie.
+Azure Automation bevat de functie [Updatebeheer](./update-management/overview.md) voor Windows- en Linux-systemen in hybride omgevingen. Updatebeheer geeft u inzicht in de updatevereisten voor Azure en andere clouds en on-premises. Met de functie kunt u geplande implementaties maken voor het organiseren van de installatie van updates binnen een gedefinieerd onderhoudsvenster. Als een update niet mag worden geïnstalleerd op een computer, kunt u de functie Updatebeheer gebruiken om deze uit te sluiten van een implementatie.
 
 ## <a name="shared-capabilities"></a>Gedeelde functionaliteit
 

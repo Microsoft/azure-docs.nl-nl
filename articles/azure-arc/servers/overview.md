@@ -4,12 +4,12 @@ description: Lees meer informatie over het gebruik van Azure Arc voor servers om
 keywords: azure automation, DSC, powershell, configuratie van gewenste status, updatebeheer, bijhouden van wijzigingen, inventaris, runbooks, python, grafisch, hybride
 ms.date: 11/12/2020
 ms.topic: overview
-ms.openlocfilehash: 2df970f7c94f1e306243aba1480ee7023b8f76c1
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 8368f89b8e471698ede3e9e8eb691e69f494b6e2
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94578719"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96183393"
 ---
 # <a name="what-is-azure-arc-enabled-servers"></a>Wat zijn servers met Azure Arc?
 
@@ -29,7 +29,7 @@ Wanneer u uw machine verbindt met servers met Azure Arc, kunt u de volgende conf
 
 - Vereenvoudig de implementatie met andere Azure-services zoals Azure Automation [State Configuration](../../automation/automation-dsc-overview.md) en Azure Monitor Log Analytics-werkruimte door gebruik te maken van de ondersteunde [Azure VM-extensies](manage-vm-extensions.md) voor uw niet-Azure Windows- of Linux-machine. Dit omvat het uitvoeren van configuratie na de implementatie of software-installatie met behulp van de aangepaste scriptextensie.
 
-- Gebruik [Updatebeheer](../../automation/update-management/update-mgmt-overview.md) in Azure Automation om updates van het besturingssysteem voor uw Windows- en Linux-servers te beheren
+- Gebruik [Updatebeheer](../../automation/update-management/overview.md) in Azure Automation om updates van het besturingssysteem voor uw Windows- en Linux-servers te beheren
 
     > [!NOTE]
     > Op dit moment wordt het rechtstreeks inschakelen van Updatebeheer vanaf een server met Azure Arc niet ondersteund. Raadpleeg [Updatebeheer inschakelen vanuit uw Automation-account](../../automation/update-management/enable-from-automation-account.md) om te zien wat de vereisten zijn en hoe u updatebeheer voor uw server inschakelt.

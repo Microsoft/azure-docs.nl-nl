@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 05/08/2020
 ms.author: chez
 ms.reviewer: mariozi
-ms.openlocfilehash: c7d3dae2b7da2fcc14e86eb4965ebd99fd7bf681
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: f1a7bffc05d83b30fe9e5bcd6e17bf6bc0192e1d
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88650571"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348939"
 ---
 # <a name="encrypt-azure-data-factory-with-customer-managed-keys"></a>Azure Data Factory versleutelen met door de klant beheerde sleutels
 
@@ -47,8 +47,8 @@ In de volgende lijst worden de genummerde stappen in het diagram uitgelegd:
 
 Voor het gebruik van door de klant beheerde sleutels met Data Factory moeten op de Key Vault twee eigenschappen worden ingesteld, __Voorlopig verwijderen__ en __Niet leegmaken__. Deze eigenschappen kunnen worden ingeschakeld met PowerShell of Azure CLI in een nieuwe of bestaande sleutelkluis. Voor meer informatie over het inschakelen van deze eigenschappen voor een bestaande sleutelkluis raadpleegt u de secties _Voorlopig verwijderen inschakelen_ en _Beveiliging tegen leegmaken inschakelen_ in een van de volgende artikelen:
 
-- [Voorlopig verwijderen gebruiken met PowerShell](../key-vault/general/soft-delete-powershell.md)
-- [Voorlopig verwijderen gebruiken met CLI](../key-vault/general/soft-delete-cli.md)
+- [Voorlopig verwijderen gebruiken met PowerShell](../key-vault/general/key-vault-recovery.md)
+- [Voorlopig verwijderen gebruiken met CLI](../key-vault/general/key-vault-recovery.md)
 
 Als u een nieuwe Azure Key Vault maakt via Azure Portal, kunnen __Voorlopig verwijderen__ en __Niet leegmaken__ als volgt worden ingeschakeld:
 
@@ -56,7 +56,7 @@ Als u een nieuwe Azure Key Vault maakt via Azure Portal, kunnen __Voorlopig verw
 
 ### <a name="grant-data-factory-access-to-azure-key-vault"></a>Data Factory-toegang verlenen tot Azure Key Vault
 
-Zorg ervoor dat Azure Key Vault en Azure Data Factory zich in dezelfde Azure Active Directory-tenant (Azure AD) en in de _dezelfde regio_bevinden. Ken vanuit Azure Key Vault-toegangsbeheer de Managed Service Identity (MSI) van de data factory de volgende machtigingen toe: _Ophalen_, _Sleutel uitpakken_en _Sleutel inpakken_. Deze machtigingen zijn vereist om door de klant beheerde sleutels in Data Factory in te schakelen.
+Zorg ervoor dat Azure Key Vault en Azure Data Factory zich in dezelfde Azure Active Directory-tenant (Azure AD) en in de _dezelfde regio_ bevinden. Ken vanuit Azure Key Vault-toegangsbeheer de Managed Service Identity (MSI) van de data factory de volgende machtigingen toe: _Ophalen_, _Sleutel uitpakken_ en _Sleutel inpakken_. Deze machtigingen zijn vereist om door de klant beheerde sleutels in Data Factory in te schakelen.
 
   ![Schermopname van Data Factory-toegang tot Key Vault inschakelen](media/enable-customer-managed-key/02-access-policy-factory-managed-identities.png)
 

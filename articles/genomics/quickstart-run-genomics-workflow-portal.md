@@ -9,12 +9,12 @@ ms.service: genomics
 ms.topic: quickstart
 ms.date: 01/11/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: 4beb1c31f34ec4e8d26228cfe4f30f5109a1b60c
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 85665dbda2ed11ffa04b71e4317f2b34b83d317f
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93394540"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349364"
 ---
 # <a name="quickstart-run-a-workflow-through-the-microsoft-genomics-service"></a>Quickstart: Een werkstroom uitvoeren via de Microsoft Genomics-service
 
@@ -112,7 +112,7 @@ De Microsoft Genomics-service verwacht leesbewerkingen voor eindsequenties (FAST
 [https://msgensampledata.blob.core.windows.net/small/chr21_1.fq.gz](https://msgensampledata.blob.core.windows.net/small/chr21_1.fq.gz)
 [https://msgensampledata.blob.core.windows.net/small/chr21_2.fq.gz](https://msgensampledata.blob.core.windows.net/small/chr21_2.fq.gz)
 
-U dient binnen uw opslagaccount een blob-container te maken voor uw invoergegevens en een tweede blob-container voor de uitvoergegevens.  Upload de invoergegevens naar uw blob-container voor invoer. U kunt hiervoor verschillende hulpprogramma's gebruiken, waaronder [Microsoft Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/), [BlobPorter](https://github.com/Azure/blobporter) en [AzCopy](../storage/common/storage-use-azcopy-v10.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json). 
+U dient binnen uw opslagaccount een blob-container te maken voor uw invoergegevens en een tweede blob-container voor de uitvoergegevens.  Upload de invoergegevens naar uw blob-container voor invoer. U kunt hiervoor verschillende hulpprogramma's gebruiken, waaronder [Microsoft Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/), [BlobPorter](https://github.com/Azure/blobporter) en [AzCopy](../storage/common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json). 
 
 ## <a name="run-a-workflow-through-the-microsoft-genomics-service-using-the-msgen-python-client"></a>Een werkstroom uitvoeren via de Microsoft Genomics-service met behulp van de Python-client `msgen`
 
@@ -125,7 +125,7 @@ Als u graag GATK4 wilt uitvoeren, stelt u de parameter `process_name` in op `gat
 
 De Genomics-service voert standaard VCF-bestanden uit. Als u graag gVCF-uitvoer wilt in plaats van VCF-uitvoer (gelijk aan `-emitRefConfidence` in GATK 3.x en `emit-ref-confidence` in GATK 4.x), voegt u de parameter `emit_ref_confidence` toe aan uw *config.txt* en stelt u deze in op `gvcf`, zoals wordt weergegeven in de vorige afbeelding.  Als u weer terug wilt naar VCF-uitvoer, verwijdert u deze uit het bestand *config.txt* of stelt u de parameter `emit_ref_confidence` in op `none`. 
 
-`bgzip` is een hulpprogramma waarmee het VCF- of gVCF-bestand wordt gecomprimeerd en `tabix` een index voor het gecomprimeerde bestand maakt. De Genomics-service voert standaard `bgzip` gevolgd door `tabix` uit voor '.g.vcf'-uitvoer, maar voert deze hulpprogramma's niet standaard uit voor '.vcf '-uitvoer. Wanneer u de service uitvoert, resulteert dit in '.gz'- (bgzip-uitvoer) en 'tbi'-bestanden (tabix-uitvoer). Het argument is een Booleaanse waarde, die standaard is ingesteld op False voor '.vcf'-uitvoer en standaard is ingesteld op True voor '.g.vcf'-uitvoer. Als u dit wilt gebruiken op de opdrachtregel, geeft u `-bz` of `--bgzip-output` op als `true` (voer bgzip en tabix uit) of `false`. Als u dit argument wilt gebruiken in het bestand *config.txt* , voegt u `bgzip_output: true` of `bgzip_output: false` toe aan het bestand.
+`bgzip` is een hulpprogramma waarmee het VCF- of gVCF-bestand wordt gecomprimeerd en `tabix` een index voor het gecomprimeerde bestand maakt. De Genomics-service voert standaard `bgzip` gevolgd door `tabix` uit voor '.g.vcf'-uitvoer, maar voert deze hulpprogramma's niet standaard uit voor '.vcf '-uitvoer. Wanneer u de service uitvoert, resulteert dit in '.gz'- (bgzip-uitvoer) en 'tbi'-bestanden (tabix-uitvoer). Het argument is een Booleaanse waarde, die standaard is ingesteld op False voor '.vcf'-uitvoer en standaard is ingesteld op True voor '.g.vcf'-uitvoer. Als u dit wilt gebruiken op de opdrachtregel, geeft u `-bz` of `--bgzip-output` op als `true` (voer bgzip en tabix uit) of `false`. Als u dit argument wilt gebruiken in het bestand *config.txt*, voegt u `bgzip_output: true` of `bgzip_output: false` toe aan het bestand.
 
 ### <a name="submit-your-workflow-to-the-microsoft-genomics-service-using-the-msgen-python-client"></a>Uw werkstroom verzenden naar de Microsoft Genomics-service met behulp van de Python-client `msgen`
 

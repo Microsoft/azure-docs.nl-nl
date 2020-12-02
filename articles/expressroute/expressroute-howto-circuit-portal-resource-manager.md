@@ -8,11 +8,11 @@ ms.topic: quickstart
 ms.date: 10/21/2020
 ms.author: duau
 ms.openlocfilehash: b0fd844021e7398e061072d7939b782616580c1c
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92368686"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185195"
 ---
 # <a name="quickstart-create-and-modify-an-expressroute-circuit"></a>Snelstart: Een ExpressRoute-circuit maken en wijzigen
 
@@ -41,13 +41,13 @@ U kunt een ExpressRoute-circuit maken door de optie voor het maken van een nieuw
 
     :::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/create-expressroute-circuit-menu.png" alt-text="Een ExpressRoute-circuit maken":::
 
-2. Nadat u **ExpressRoute** hebt geselecteerd, ziet u de pagina **ExpressRoute maken**. Geef de **resourcegroep**, **regio** en **naam** op voor het circuit. Selecteer vervolgens**Volgende: Configuratie >** .
+2. Nadat u **ExpressRoute** hebt geselecteerd, ziet u de pagina **ExpressRoute maken**. Geef de **resourcegroep**, **regio** en **naam** op voor het circuit. Selecteer vervolgens **Volgende: Configuratie >** .
 
-    :::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-create-basic.png" alt-text="Een ExpressRoute-circuit maken":::
+    :::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-create-basic.png" alt-text="Configureer de resourcegroep en regio":::
 
 3. Wanneer u de waarden op deze pagina invult, moet u ervoor zorgen dat u de juiste SKU-laag (Lokaal, Standard of Premium) en het juiste factureringsmodel voor datameting (Onbeperkt of Naar gebruik) opgeeft.
 
-    :::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-create-configuration.png" alt-text="Een ExpressRoute-circuit maken":::
+    :::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-create-configuration.png" alt-text="Het circuit configureren":::
     
     * **Poorttype** bepaalt of u verbinding maakt met een serviceprovider of rechtstreeks met het wereldwijde netwerk van Microsoft op een peeringlocatie.
     * **Nieuw maken of importeren vanuit klassiek** bepaalt of er een nieuw circuit wordt gemaakt of dat u een klassiek circuit migreert naar Azure Resource Manager.
@@ -74,17 +74,17 @@ U kunt een ExpressRoute-circuit maken door de optie voor het maken van een nieuw
 
 U kunt alle circuits bekijken die u hebt gemaakt, door in het menu aan de linkerkant **Alle services> Netwerken> ExpressRoute-circuits** te selecteren.
 
-:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-menu.png" alt-text="Een ExpressRoute-circuit maken":::
+:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-menu.png" alt-text="Expressroute-circuitmenu":::
 
 Alle Expressroute-circuits die in het abonnement worden gemaakt, verschijnen hier.
 
-:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-list.png" alt-text="Een ExpressRoute-circuit maken":::
+:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-list.png" alt-text="Expressroute-circuitlijst":::
 
 **De eigenschappen weergeven**
 
 U kunt de eigenschappen van het circuit bekijken door het circuit te selecteren. Op de pagina **Overzicht** voor uw circuit wordt de servicesleutel weergegeven in het veld Servicesleutel. Raadpleeg de servicesleutel voor uw circuit en geef deze door aan de serviceprovider om het inrichtingsproces te voltooien. De servicesleutel is specifiek voor uw circuit.
 
-:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-overview.png" alt-text="Een ExpressRoute-circuit maken":::
+:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-overview.png" alt-text="Eigenschappen weergeven":::
 
 ### <a name="send-the-service-key-to-your-connectivity-provider-for-provisioning"></a>De servicesleutel voor inrichting verzenden naar de connectiviteitsprovider
 
@@ -95,7 +95,7 @@ Wanneer u een nieuw ExpressRoute-circuit maakt, heeft het circuit de volgende st
 Providerstatus: **Niet ingericht**<BR>
 Circuitstatus: **Ingeschakeld**
 
-:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-overview-provisioning-state.png" alt-text="Een ExpressRoute-circuit maken":::
+:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-overview-provisioning-state.png" alt-text="Het inrichtingsproces starten":::
 
 Wanneer de connectiviteitsprovider bezig is met het inschakelen van uw circuit, verandert de status van het circuit in:
 
@@ -111,7 +111,7 @@ Circuitstatus: **Ingeschakeld**
 
 U kunt de eigenschappen van het gewenste circuit bekijken door het circuit te selecteren. Controleer de **Providerstatus** en zorg ervoor dat deze is gewijzigd in **Ingericht** voordat u doorgaat.
 
-:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/provisioned.png" alt-text="Een ExpressRoute-circuit maken":::
+:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/provisioned.png" alt-text="Circuit- en providerstatus":::
 
 ### <a name="create-your-routing-configuration"></a>De routeringsconfiguratie maken
 
@@ -159,7 +159,7 @@ U kunt de volgende taken uitvoeren zonder dat dit resulteert in downtime:
 
 Selecteer **Configuratie** als u een ExpressRoute-circuit wilt wijzigen.
 
-:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-configuration.png" alt-text="Een ExpressRoute-circuit maken":::
+:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-configuration.png" alt-text="Circuit wijzigen":::
 
 ## <a name="deprovisioning-an-expressroute-circuit"></a><a name="delete"></a>De inrichting van een ExpressRoute-circuit ongedaan maken
 
@@ -174,7 +174,7 @@ Als de serviceprovider van het circuit de inrichtingsstatus **Inrichten** of **I
 
 U kunt uw ExpressRoute-circuit verwijderen door het pictogram **Verwijderen** te selecteren. Zorg ervoor dat de providerstatus *Niet ingericht* is voordat u doorgaat.
 
-:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-delete.png" alt-text="Een ExpressRoute-circuit maken":::
+:::image type="content" source="./media/expressroute-howto-circuit-portal-resource-manager/expressroute-circuit-delete.png" alt-text="Circuit verwijderen":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

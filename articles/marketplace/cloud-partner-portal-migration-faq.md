@@ -7,12 +7,12 @@ ms.topic: article
 author: mingshen-ms
 ms.author: mingshen
 ms.date: 07/14/2020
-ms.openlocfilehash: f0546a76974e429b625ba03fdf4598da7d32c990
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 8346edd0f6016f1751a392213e5d6321f875baf2
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/01/2020
-ms.locfileid: "96433364"
+ms.locfileid: "96455656"
 ---
 # <a name="frequently-asked-questions-about-transitioning-from-the-cloud-partner-portal-to-partner-center"></a>Veelgestelde vragen over overgang van de Cloud Partner-portal naar het partner centrum
 
@@ -22,7 +22,7 @@ De Cloud Partner-portal is overgegaan naar het partner centrum. Partner centrum 
 
 U kunt nu door gaan met zakendoen in Partner Center:
 
-| Onderwerp<img src="" width=200px> | Wijzigingen |
+| Gebied<img src="" width=200px> | Wijzigingen |
 | --- | --- |
 | Account | U hoeft geen nieuw partner centrum-account te maken. u kunt uw bestaande Cloud Partner-portal referenties gebruiken om u aan te melden bij het partner centrum, waar u nu uw account, gebruikers, machtigingen en facturering beheert. De gegevens voor de publicatie overeenkomst en het bedrijfs profiel worden gemigreerd naar uw nieuwe partner centrum-account, samen met alle informatie over het profiel voor uitbetaling, gebruikers accounts en machtigingen en actieve aanbiedingen. Meer informatie over [het beheren van uw commerciële Marketplace-account in Partner Center](partner-center-portal/manage-account.md). |
 | Aanbieding voor publicatie en aanbod beheer | Uw aanbiedings gegevens zijn verplaatst van de Cloud Partner-portal naar het partner centrum. U hebt nu toegang tot uw aanbiedingen in partner centrum. Dit biedt een verbeterde gebruikers ervaring en intuïtieve interface. Meer informatie over [het bijwerken van een bestaande aanbieding in de commerciële Marketplace](partner-center-portal/update-existing-offer.md). |
@@ -77,19 +77,19 @@ Voor de aanbiedings typen die in Partner Center worden ondersteund, zijn alle aa
 
 | Type aanbieding <img src="" width=150px>| Verplaatst naar het partner centrum? <img src="" width=100px>| Volgende stappen |
 | --- | --- | --- |
-| SaaS | Yes | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het plannen van een SaaS-aanbieding voor de commerciële Marketplace](plan-saas-offer.md). |
-| Virtuele machine | Yes | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het plannen van een aanbieding voor een virtuele machine](marketplace-virtual-machines.md). |
-| Azure-toepassing | Yes | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het maken van een Azure-toepassings aanbieding](create-new-azure-apps-offer.md). |
+| SaaS | Ja | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het plannen van een SaaS-aanbieding voor de commerciële Marketplace](plan-saas-offer.md). |
+| Virtuele machine | Ja | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het plannen van een aanbieding voor een virtuele machine](marketplace-virtual-machines.md). |
+| Azure-toepassing | Ja | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het maken van een Azure-toepassings aanbieding](create-new-azure-apps-offer.md). |
 | Dynamics 365 Business Central | Ja | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het maken van een Dynamics 365 Business Central-aanbieding](partner-center-portal/create-new-business-central-offer.md). |
-| Dynamics 365 voor klant betrokkenheid & PowerApps | Yes | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het maken van een Dynamics 365 voor klant Engagement & PowerApps-aanbieding](partner-center-portal/create-new-customer-engagement-offer.md). |
-| Dynamics 365 for Operations | Yes | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het maken van een Dynamics 365 voor de aanbieding](partner-center-portal/create-new-operations-offer.md). |
-| Power BI-app | Yes | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie vindt u in [een Power bi-app maken voor AppSource](partner-center-portal/create-power-bi-app-offer.md). |
-| Module IoT Edge | Yes | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het maken, configureren en publiceren van een IOT Edge module aanbod in azure Marketplace](partner-center-portal/azure-iot-edge-module-creation.md). |
-| Container | Yes | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het maken van een Azure-container aanbieding](partner-center-portal/create-azure-container-offer.md). |
-| Adviesservice | Yes | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het maken van een advies service-aanbieding](partner-center-portal/create-consulting-service-offer.md). |
-| Beheerde service | Yes | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het maken van een beheerde service aanbieding](partner-center-portal/create-new-managed-service-offer.md). |
-| Door Dynamics NAV beheerde service | No | Micro soft heeft Dynamics NAV managed service ontwikkeld in [dynamics 365 Business Central](/dynamics365/business-central/), zodat we de aanbiedingen van Dynamics NAV Managed Service Live kunnen ontvangen van AppSource. Deze aanbiedingen kunnen niet meer worden gedetecteerd door klanten en zijn niet verplaatst naar het partner centrum. Als u uw aanbiedingen beschikbaar wilt maken in AppSource, past u deze toe aan Dynamics 365 Business Central-aanbiedingen en verzendt u deze in [Partner Center](https://partner.microsoft.com/). Meer informatie over [het maken van een Dynamics 365 Business Central-aanbieding](partner-center-portal/create-new-business-central-offer.md). |
-| Cortana Intelligence | No | Micro soft heeft het overzicht van de product handleiding voor Cortana Intelligence ontwikkeld, zodat we Cortana Intelligence Live-aanbiedingen van AppSource niet meer vermelden. Deze aanbiedingen kunnen niet meer worden gedetecteerd door klanten en zijn niet verplaatst naar het partner centrum. Als u uw aanbiedingen beschikbaar wilt stellen in de commerciële Marketplace, kunt u uw aanbiedingen aanpassen aan SaaS-aanbiedingen (Software as a Service) en deze verzenden in het [partner centrum](https://partner.microsoft.com/). Meer informatie over de [controle lijst voor het maken van SaaS-aanbiedingen in partner centrum](./plan-saas-offer.md). |
+| Dynamics 365 voor klant betrokkenheid & PowerApps | Ja | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het maken van een Dynamics 365 voor klant Engagement & PowerApps-aanbieding](partner-center-portal/create-new-customer-engagement-offer.md). |
+| Dynamics 365 for Operations | Ja | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het maken van een Dynamics 365 voor de aanbieding](partner-center-portal/create-new-operations-offer.md). |
+| Power BI-app | Ja | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie vindt u in [een Power bi-app maken voor AppSource](partner-center-portal/create-power-bi-app-offer.md). |
+| Module IoT Edge | Ja | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het maken, configureren en publiceren van een IOT Edge module aanbod in azure Marketplace](partner-center-portal/azure-iot-edge-module-creation.md). |
+| Container | Ja | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het maken van een Azure-container aanbieding](./create-azure-container-offer.md). |
+| Adviesservice | Ja | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het maken van een advies service-aanbieding](./create-consulting-service-offer.md). |
+| Beheerde service | Ja | Meld u aan bij Partner Center om nieuwe aanbiedingen te maken en aanbiedingen te beheren die zijn gemaakt in Cloud Partner-portal. Meer informatie over [het maken van een beheerde service aanbieding](partner-center-portal/create-new-managed-service-offer.md). |
+| Door Dynamics NAV beheerde service | Nee | Micro soft heeft Dynamics NAV managed service ontwikkeld in [dynamics 365 Business Central](/dynamics365/business-central/), zodat we de aanbiedingen van Dynamics NAV Managed Service Live kunnen ontvangen van AppSource. Deze aanbiedingen kunnen niet meer worden gedetecteerd door klanten en zijn niet verplaatst naar het partner centrum. Als u uw aanbiedingen beschikbaar wilt maken in AppSource, past u deze toe aan Dynamics 365 Business Central-aanbiedingen en verzendt u deze in [Partner Center](https://partner.microsoft.com/). Meer informatie over [het maken van een Dynamics 365 Business Central-aanbieding](partner-center-portal/create-new-business-central-offer.md). |
+| Cortana Intelligence | Nee | Micro soft heeft het overzicht van de product handleiding voor Cortana Intelligence ontwikkeld, zodat we Cortana Intelligence Live-aanbiedingen van AppSource niet meer vermelden. Deze aanbiedingen kunnen niet meer worden gedetecteerd door klanten en zijn niet verplaatst naar het partner centrum. Als u uw aanbiedingen beschikbaar wilt stellen in de commerciële Marketplace, kunt u uw aanbiedingen aanpassen aan SaaS-aanbiedingen (Software as a Service) en deze verzenden in het [partner centrum](https://partner.microsoft.com/). Meer informatie over de [controle lijst voor het maken van SaaS-aanbiedingen in partner centrum](./plan-saas-offer.md). |
 
 ## <a name="i-cant-find-my-cloud-partner-portal-offers-in-partner-center"></a>Ik kan mijn Cloud Partner-portal aanbiedingen niet vinden in het partner centrum
 

@@ -12,18 +12,18 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, sstein
 ms.date: 08/17/2020
-ms.openlocfilehash: c5caf48dd4e2860ec5f4815eb38629ad66391a2c
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 5558480f568e802637deb30c9f1b41c00826c9b5
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94990105"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96454492"
 ---
 # <a name="configure-and-manage-azure-ad-authentication-with-azure-sql"></a>Azure AD-verificatie configureren en beheren met Azure SQL
 
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
-In dit artikel wordt beschreven hoe u een Azure Active Directory-exemplaar (Azure AD) maakt en vult en vervolgens Azure AD gebruikt met [Azure SQL database](sql-database-paas-overview.md), [Azure SQL Managed instance](../managed-instance/sql-managed-instance-paas-overview.md)en [azure Synapse Analytics (voorheen SQL Data Warehouse)](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md). Zie [Azure Active Directory-verificatie](authentication-aad-overview.md)voor een overzicht.
+In dit artikel wordt beschreven hoe u een Azure Active Directory-exemplaar (Azure AD) maakt en vult en vervolgens Azure AD gebruikt met [Azure SQL database](sql-database-paas-overview.md), [Azure SQL Managed instance](../managed-instance/sql-managed-instance-paas-overview.md)en [Azure Synapse Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md). Zie [Azure Active Directory-verificatie](authentication-aad-overview.md)voor een overzicht.
 
 ## <a name="azure-ad-authentication-methods"></a>Azure AD-verificatie methoden
 
@@ -190,7 +190,7 @@ Voer de volgende Azure PowerShell opdrachten uit om een Azure AD-beheerder in te
 
 De cmdlets die worden gebruikt voor het inrichten en beheren van Azure AD-beheerder voor uw SQL Managed instance worden weer gegeven in de volgende tabel:
 
-| Naam van cmdlet | Description |
+| Naam van cmdlet | Beschrijving |
 | --- | --- |
 | [Set-AzSqlInstanceActiveDirectoryAdministrator](/powershell/module/az.sql/set-azsqlinstanceactivedirectoryadministrator) |Richt een Azure AD-beheerder in voor het beheerde exemplaar van SQL in het huidige abonnement. (Moet afkomstig zijn van het huidige abonnement)|
 | [Remove-AzSqlInstanceActiveDirectoryAdministrator](/powershell/module/az.sql/remove-azsqlinstanceactivedirectoryadministrator) |Hiermee verwijdert u een Azure AD-beheerder voor het beheerde exemplaar van SQL in het huidige abonnement. |
@@ -214,7 +214,7 @@ Met de volgende opdracht wordt de Azure AD-beheerder voor het SQL Managed instan
 Remove-AzSqlInstanceActiveDirectoryAdministrator -ResourceGroupName "ResourceGroup01" -InstanceName "ManagedInstanceName01" -Confirm -PassThru
 ```
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 U kunt ook een Azure AD-beheerder inrichten voor het beheerde exemplaar van SQL door de volgende CLI-opdrachten aan te roepen:
 
@@ -279,7 +279,7 @@ Als u Power shell-cmdlets wilt uitvoeren, moet Azure PowerShell zijn geïnstalle
 
 Cmdlets die worden gebruikt voor het inrichten en beheren van Azure AD-beheerder voor SQL Database en Azure Synapse:
 
-| Naam van cmdlet | Description |
+| Naam van cmdlet | Beschrijving |
 | --- | --- |
 | [Set-AzSqlServerActiveDirectoryAdministrator](/powershell/module/az.sql/set-azsqlserveractivedirectoryadministrator) |Richt een Azure Active Directory beheerder in voor de server die als host fungeert voor SQL Database of Azure Synapse. (Moet afkomstig zijn van het huidige abonnement) |
 | [Remove-AzSqlServerActiveDirectoryAdministrator](/powershell/module/az.sql/remove-azsqlserveractivedirectoryadministrator) |Hiermee verwijdert u een Azure Active Directory beheerder voor de server die als host fungeert voor SQL Database of Azure Synapse.|
@@ -320,7 +320,7 @@ In het volgende voor beeld wordt een Azure AD-beheerder verwijderd:
 Remove-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" -ServerName "demo_server"
 ```
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 U kunt een Azure AD-beheerder inrichten door de volgende CLI-opdrachten aan te roepen:
 

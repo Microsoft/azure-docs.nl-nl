@@ -11,19 +11,19 @@ ms.topic: quickstart
 ms.date: 05/22/2020
 ms.author: aahi
 ms.custom: devx-track-python
-ms.openlocfilehash: de29b4bfc15fdec30acd043564e99ebe6e02454d
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: c5112cab286d4a72f2b4063c78e7ceeae16ed588
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93094078"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353830"
 ---
 # <a name="quickstart-search-for-videos-using-the-bing-video-search-rest-api-and-python"></a>Quickstart: Video's zoeken met de Bing Video's zoeken-REST-API en Python
 
 > [!WARNING]
-> Bing Search-API's worden van Cognitive Services naar Bing Search Services verplaatst. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht volgens het proces dat [hier](https://aka.ms/cogsvcs/bingmove) is beschreven.
-> Bing Search-API's ingericht met behulp van Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
-> Zie [Bing Search Services](https://aka.ms/cogsvcs/bingmigration) voor migratie-instructies.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services verplaatst. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
+> Bing Search-API's die zijn ingericht met Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
+> Raadpleeg [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
 Gebruik deze quickstart om uw eerste aanroep naar de Bing Video’s zoeken-API te maken. Deze eenvoudige Python-toepassing stuurt een HTTP-videozoekquery naar de API en geeft het JSON-antwoord weer. Hoewel deze toepassing in Python is geschreven, is de API een RESTful-webservice die compatibel is met vrijwel elke programmeertaal. 
 

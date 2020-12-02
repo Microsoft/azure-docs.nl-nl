@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 11/18/2020
-ms.openlocfilehash: c2a9dbb5fa821d408835cd1bcbf3e6afdade36e1
-ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
+ms.openlocfilehash: 17648b9bc973285764bb0bd6242506122a043780
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96317483"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96454256"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Door de klant beheerde sleutel van Azure Monitor 
 
@@ -78,11 +78,11 @@ Customer-Managed-sleutel configuratie wordt niet ondersteund in Azure Portal en 
 
 Sommige van de configuratie stappen worden asynchroon uitgevoerd, omdat ze niet snel kunnen worden voltooid. De `status` in-antwoord bevat kan een van de volgende zijn: InProgress, bijwerken, verwijderen, geslaagd of mislukt, inclusief de fout code.
 
-# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 N.v.t.
 
@@ -153,11 +153,11 @@ KeyVaultProperties in cluster bijwerken met sleutel-id-Details.
 
 De bewerking is asynchroon en kan enige tijd duren.
 
-# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli
 az monitor log-analytics cluster update --name "cluster-name" --resource-group "resource-group-name" --key-name "key-name" --key-vault-uri "key-uri" --key-version "key-version"
@@ -277,11 +277,11 @@ Wanneer u uw eigen opslag (BYOS) meebrengt en deze aan uw werk ruimte koppelt, w
 
 Een opslag account voor een *query* aan uw werk ruimte koppelen: *opgeslagen Zoek opdrachten* query's worden opgeslagen in uw opslag account. 
 
-# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli
 $storageAccountId = '/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.Storage/storageAccounts/<storage name>'
@@ -321,11 +321,11 @@ Na de configuratie wordt een nieuwe *opgeslagen zoek opdracht* opgeslagen in uw 
 
 Een opslag account voor *waarschuwingen* aan uw werk ruimte koppelen: query's voor *logboek waarschuwingen* worden opgeslagen in uw opslag account. 
 
-# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli
 $storageAccountId = '/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.Storage/storageAccounts/<storage name>'
@@ -373,11 +373,11 @@ Meer informatie over [klanten-lockbox voor Microsoft Azure](../../security/funda
 
 - **Alle clusters in een resource groep ophalen**
   
-  # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+  # <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
   N.v.t.
 
-  # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+  # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
   ```azurecli
   az monitor log-analytics cluster list --resource-group "resource-group-name"
@@ -435,11 +435,11 @@ Meer informatie over [klanten-lockbox voor Microsoft Azure](../../security/funda
 
 - **Alle clusters in een abonnement ophalen**
 
-  # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+  # <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
   N.v.t.
 
-  # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+  # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
   ```azurecli
   az monitor log-analytics cluster list
@@ -468,11 +468,11 @@ Meer informatie over [klanten-lockbox voor Microsoft Azure](../../security/funda
 
   Wanneer het gegevens volume naar uw gekoppelde werk ruimten in de loop van de tijd verandert en u het capaciteits reserverings niveau op de juiste wijze wilt bijwerken. Volg de [update cluster](#update-cluster-with-key-identifier-details) en geef de nieuwe capaciteits waarde op. Dit kan binnen het bereik van 1000 tot 3000 GB per dag zijn en in stappen van 100. Voor een niveau hoger dan 3000 GB per dag, bereikt u uw micro soft-contact persoon om dit in te scha kelen. Houd er rekening mee dat u geen volledige REST-aanvraag tekst hoeft op te geven, maar moet de SKU bevatten:
 
-  # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+  # <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
   N.v.t.
 
-  # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+  # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
   ```azurecli
   az monitor log-analytics cluster update --name "cluster-name" --resource-group "resource-group-name" --sku-capacity daily-ingestion-gigabyte
@@ -509,11 +509,11 @@ Meer informatie over [klanten-lockbox voor Microsoft Azure](../../security/funda
   
   Volg de [update cluster](#update-cluster-with-key-identifier-details) en geef de nieuwe waarde voor billingType op. Houd er rekening mee dat u de volledige REST-aanvraag tekst niet hoeft op te geven en moet de *billingType* bevatten:
 
-  # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+  # <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
   N.v.t.
 
-  # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+  # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
   N.v.t.
 
@@ -543,11 +543,11 @@ Meer informatie over [klanten-lockbox voor Microsoft Azure](../../security/funda
 
   Deze bewerking is asynchroon en kan enige tijd worden voltooid.
 
-  # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+  # <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
   N.v.t.
 
-  # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+  # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
   ```azurecli
   az monitor log-analytics workspace linked-service delete --resource-group "resource-group-name" --name "cluster-name" --workspace-name "workspace-name"
@@ -572,11 +572,11 @@ Meer informatie over [klanten-lockbox voor Microsoft Azure](../../security/funda
   
   Een Get-bewerking uitvoeren op de werk ruimte en bekijken of de eigenschap *clusterResourceId* aanwezig is in de reactie onder *functies*. Een gekoppelde werk ruimte heeft de eigenschap *clusterResourceId* .
 
-  # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+  # <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
   N.v.t.
 
-  # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+  # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
   ```azurecli
   az monitor log-analytics cluster show --resource-group "resource-group-name" --name "cluster-name"
@@ -603,11 +603,11 @@ Meer informatie over [klanten-lockbox voor Microsoft Azure](../../security/funda
   
   De bewerking ontkoppelen is asynchroon en kan Maxi maal 90 minuten duren.
 
-  # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+  # <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
   N.v.t.
 
-  # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+  # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
   ```azurecli
   az monitor log-analytics cluster delete --resource-group "resource-group-name" --name "cluster-name"
@@ -656,6 +656,12 @@ Meer informatie over [klanten-lockbox voor Microsoft Azure](../../security/funda
 
 - Werkruimte koppeling naar cluster zal mislukken als deze is gekoppeld aan een ander cluster.
 
+- Lockbox is momenteel niet beschikbaar in China. 
+
+- [Dubbele versleuteling](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption) wordt automatisch geconfigureerd voor clusters die zijn gemaakt van oktober 2020 in ondersteunde regio's. U kunt controleren of uw cluster is geconfigureerd voor dubbele versleuteling door een GET-aanvraag op het cluster en de waarde van de eigenschap te bestuderen `"isDoubleEncryptionEnabled"` . Dit geldt `true` voor clusters waarvoor dubbele versleuteling is ingeschakeld. 
+  - Als u een cluster maakt en er een fout melding krijgt met de naam ' <regio-name> ondersteunt geen dubbele versleuteling voor clusters. ' kunt u het cluster nog steeds maken zonder dubbele versleuteling. Voeg `"properties": {"isDoubleEncryptionEnabled": false}` de eigenschap toe aan de hoofd tekst van de rest-aanvraag.
+  - De instelling voor dubbele versleuteling kan niet worden gewijzigd nadat het cluster is gemaakt.
+
 ## <a name="troubleshooting"></a>Problemen oplossen
 
 - Gedrag met Key Vault Beschik baarheid
@@ -682,10 +688,6 @@ Meer informatie over [klanten-lockbox voor Microsoft Azure](../../security/funda
 - Sommige bewerkingen zijn lang en kunnen even duren: Dit zijn clusters maken, cluster sleutel updates en cluster verwijdering. U kunt de bewerkings status op twee manieren controleren:
   1. Wanneer u REST gebruikt, kopieert u de waarde van de Azure-AsyncOperation-URL uit het antwoord en volgt u de controle van de [asynchrone bewerkings status](#asynchronous-operations-and-status-check).
   2. Verzend aanvraag verzenden naar cluster of werk ruimte en Bekijk het antwoord. Niet-gekoppelde werk ruimte heeft bijvoorbeeld niet de *clusterResourceId* onder *functies*.
-
-- [Dubbele versleuteling](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption) wordt automatisch geconfigureerd voor clusters die zijn gemaakt van oktober 2020 in ondersteunde regio's. U kunt controleren of uw cluster is geconfigureerd voor dubbele versleuteling door een GET-aanvraag op het cluster en de waarde van de eigenschap te bestuderen `"isDoubleEncryptionEnabled"` . Dit geldt `true` voor clusters waarvoor dubbele versleuteling is ingeschakeld. 
-  - Als u een cluster maakt en er een fout melding krijgt met de naam ' <regio-name> ondersteunt geen dubbele versleuteling voor clusters. ' kunt u het cluster nog steeds maken zonder dubbele versleuteling. Voeg toe `"properties": {"isDoubleEncryptionEnabled": false}` in de hoofd tekst van de rest-aanvraag.
-  - De instelling voor dubbele versleuteling kan niet worden gewijzigd nadat het cluster is gemaakt.
 
 - Foutberichten
   

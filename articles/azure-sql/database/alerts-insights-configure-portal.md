@@ -11,12 +11,12 @@ author: aamalvea
 ms.author: aamalvea
 ms.reviewer: jrasnik, sstein
 ms.date: 05/04/2020
-ms.openlocfilehash: 64bef8a1cd4353ed9602c36cf728a0d727458251
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 512f6044e46fba49ea1c63a89d11135751e7ce43
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675137"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96455979"
 ---
 # <a name="create-alerts-for-azure-sql-database-and-azure-synapse-analytics-using-the-azure-portal"></a>Waarschuwingen maken voor Azure SQL Database en Azure Synapse Analytics met behulp van de Azure Portal
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -24,7 +24,7 @@ ms.locfileid: "92675137"
 
 ## <a name="overview"></a>Overzicht
 
-Dit artikel laat u zien hoe u waarschuwingen instelt voor data bases in Azure SQL Database en Azure Synapse Analytics (voorheen SQL Data Warehouse) met behulp van de Azure Portal. Waarschuwingen kunnen u een e-mail sturen of een webhook aanroepen wanneer bepaalde metrische gegevens (zoals de grootte van de data base of het CPU-gebruik) de drempel waarde hebben bereikt.
+In dit artikel wordt beschreven hoe u waarschuwingen instelt voor data bases in Azure SQL Database en Azure Synapse Analytics met behulp van de Azure Portal. Waarschuwingen kunnen u een e-mail sturen of een webhook aanroepen wanneer bepaalde metrische gegevens (zoals de grootte van de data base of het CPU-gebruik) de drempel waarde hebben bereikt.
 
 > [!NOTE]
 > Zie [Create Alerts for Azure SQL Managed instance](../managed-instance/alerts-create.md)(Engelstalig) voor Azure SQL Managed instance-specifieke instructies.
@@ -57,13 +57,13 @@ U kunt informatie over waarschuwings regels configureren en ophalen met behulp v
 3. Selecteer de knop **nieuwe waarschuwings regel** om de pagina **regel maken** te openen.
   ![Regel maken](./media/alerts-insights-configure-portal/create-rule.png)
 
-4. Klik in de sectie **voor waarde** op **toevoegen** .
+4. Klik in de sectie **voor waarde** op **toevoegen**.
   ![Voor waarde definiëren](./media/alerts-insights-configure-portal/create-rule.png)
 5. Selecteer een signaal op de pagina **signaal logica configureren** .
   ![Signaal selecteren](./media/alerts-insights-configure-portal/select-signal.png)
-6. Na het selecteren van een signaal, zoals **CPU-percentage** , wordt de pagina **signaal logica configureren** weer gegeven.
+6. Na het selecteren van een signaal, zoals **CPU-percentage**, wordt de pagina **signaal logica configureren** weer gegeven.
   ![Signaallogica configureren](./media/alerts-insights-configure-portal/configure-signal-logic.png)
-7. Op deze pagina configureert u dat drempel type, operator, aggregatie type, drempel waarde, aggregatie granulatie en frequentie van de evaluatie. Klik vervolgens op **Gereed** .
+7. Op deze pagina configureert u dat drempel type, operator, aggregatie type, drempel waarde, aggregatie granulatie en frequentie van de evaluatie. Klik vervolgens op **Gereed**.
 8. Selecteer op de **regel maken** een bestaande **actie groep** of maak een nieuwe groep. Met een actie groep kunt u de actie definiëren die moet worden uitgevoerd wanneer er een waarschuwings voorwaarde optreedt.
   ![Actie groep definiëren](./media/alerts-insights-configure-portal/action-group.png)
 

@@ -1,6 +1,6 @@
 ---
 title: Verificatie via Azure Active Directory
-description: Meer informatie over het gebruik van Azure Active Directory voor verificatie met Azure SQL Database, Azure SQL Managed instance en Azure Synapse Analytics
+description: Meer informatie over het gebruik van Azure Active Directory voor verificatie met Azure SQL Database, Azure SQL Managed instance en Synapse SQL in azure Synapse Analytics
 services: sql-database
 ms.service: sql-db-mi
 ms.subservice: security
@@ -11,18 +11,18 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, sstein
 ms.date: 04/23/2020
-ms.openlocfilehash: a57de3d6beda5336f480f20137a9ccaa014b012d
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: a636c0e2a41b636f30ada14d4f16a022f2890b71
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675081"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96454300"
 ---
 # <a name="use-azure-active-directory-authentication"></a>Azure Active Directory-verificatie gebruiken
 
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
-Azure Active Directory-verificatie (Azure AD) is een mechanisme voor het maken van verbinding met [Azure SQL database](sql-database-paas-overview.md), [Azure SQL Managed instance](../managed-instance/sql-managed-instance-paas-overview.md)en [azure Synapse Analytics (voorheen SQL Data Warehouse)](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) met behulp van identiteiten in azure AD.
+Azure Active Directory-verificatie (Azure AD) is een mechanisme voor het maken van verbinding met [Azure SQL database](sql-database-paas-overview.md), [Azure SQL Managed instance](../managed-instance/sql-managed-instance-paas-overview.md)en [Synapse SQL in azure Synapse Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) met behulp van identiteiten in azure AD.
 
 > [!NOTE]
 > Dit artikel is van toepassing op Azure SQL Database, SQL Managed instance en Azure Synapse Analytics.
@@ -61,7 +61,7 @@ De configuratiestappen omvatten de volgende procedures voor het configureren en 
 6. Maak verbinding met uw data base met behulp van Azure AD-identiteiten.
 
 > [!NOTE]
-> Zie [Azure AD configureren met Azure SQL database](authentication-aad-configure.md)voor meer informatie over het maken en vullen van Azure AD en het configureren van Azure ad met Azure SQL database, SQL Managed instance en Azure Synapse.
+> Zie [Azure AD met Azure SQL database configureren](authentication-aad-configure.md)voor meer informatie over het maken en vullen van Azure AD en het configureren van Azure ad met Azure SQL database, SQL Managed instance en Synapse SQL in azure Synapse Analytics.
 
 ## <a name="trust-architecture"></a>Architectuur van vertrouwensrelatie
 
@@ -153,7 +153,7 @@ De volgende verificatie methoden worden ondersteund voor Azure AD-server-princip
   - Het toevoegen van Azure AD-server-principals (aanmeldingen) voor een SQL Managed instance biedt de mogelijkheid om meerdere Azure AD server-principals (aanmeldingen) te maken die kunnen worden toegevoegd aan de `sysadmin` rol.
 - Alleen een Azure AD-beheerder voor de server kan voor het eerst verbinding maken met de server of het beheerde exemplaar met behulp van een Azure Active Directory-account. De Active Directory-beheerder kan vervolgens nieuwe Azure AD-databasegebruikers configureren.
 - Het is raadzaam om de time-out voor de verbinding in te stellen op 30 seconden.
-- SQL Server 2016 Management Studio en SQL Server Data Tools voor Visual Studio 2015 (versie 14.0.60311.1 van april 2016 of later) ondersteunen Azure Active Directory-verificatie. (Azure AD-verificatie wordt ondersteund door de **.NET Framework-gegevensprovider voor SqlServer** ; minimaal .NET Framework versie 4.6). Daarom kunnen de nieuwste versies van deze hulpprogram ma's en gegevenslaag toepassingen (DAC en BACPAC) gebruikmaken van Azure AD-verificatie.
+- SQL Server 2016 Management Studio en SQL Server Data Tools voor Visual Studio 2015 (versie 14.0.60311.1 van april 2016 of later) ondersteunen Azure Active Directory-verificatie. (Azure AD-verificatie wordt ondersteund door de **.NET Framework-gegevensprovider voor SqlServer**; minimaal .NET Framework versie 4.6). Daarom kunnen de nieuwste versies van deze hulpprogram ma's en gegevenslaag toepassingen (DAC en BACPAC) gebruikmaken van Azure AD-verificatie.
 - Vanaf versie 15.0.1, [sqlcmd utility](/sql/tools/sqlcmd-utility) en [bcp Utility](/sql/tools/bcp-utility) ondersteunen Active Directory interactieve verificatie met multi-factor Authentication.
 - SQL Server Data Tools voor Visual Studio 2015 vereist minimaal de versie van april 2016 van de hulpmiddelen voor gegevens (versie 14.0.60311.1). Op dit moment worden Azure AD-gebruikers niet weer gegeven in SSDT Objectverkenner. Als tijdelijke oplossing kunt u de gebruikers weergeven in [sys.database_principals](/sql/relational-databases/system-catalog-views/sys-database-principals-transact-sql).
 - [Microsoft JDBC Driver 6.0 voor SQL Server](https://www.microsoft.com/download/details.aspx?id=11774) ondersteunt Azure AD-verificatie. Zie ook [De verbindingseigenschappen instellen](/sql/connect/jdbc/setting-the-connection-properties).

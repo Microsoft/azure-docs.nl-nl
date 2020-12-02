@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/10/2019
 ms.author: mingshen
 author: mingshen-ms
-ms.openlocfilehash: 87f27f316914f3efce5a750f50471c65dceca84e
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 9863ed24da9e427f885a4794bda7e103b0c1cc8e
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93127838"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96455456"
 ---
 # <a name="partner-center-submission-api-to-onboard-azure-apps-in-partner-center"></a>Partner Center-API voor het indienen van Azure-apps in het partner centrum
 
@@ -43,7 +43,7 @@ Als u de Microsoft Store indienings-API wilt gebruiken, moet u een Azure AD-toep
 1. Koppel in partner centrum het [partner centrum-account van uw organisatie aan de Azure AD-Directory van uw organisatie](/windows/uwp/publish/associate-azure-ad-with-partner-center).
 1. Voeg vervolgens vanaf de pagina **gebruikers** in de sectie **account instellingen** van het partner centrum [de Azure AD-toepassing toe](/windows/uwp/publish/add-users-groups-and-azure-ad-applications#add-azure-ad-applications-to-your-partner-center-account) die de app of service vertegenwoordigt die u gaat gebruiken voor toegang tot inzendingen voor uw partner centrum-account. Zorg ervoor dat u deze toepassing de rol **Manager** toewijst. Als de toepassing nog niet bestaat in uw Azure AD-adres lijst, kunt u [een nieuwe Azure AD-toepassing maken in partner centrum](/windows/uwp/publish/add-users-groups-and-azure-ad-applications#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account).
 1. Ga terug naar de pagina **gebruikers** , klik op de naam van uw Azure AD-toepassing om naar de toepassings instellingen te gaan en kopieer de **Tenant-ID** en **client-id-** waarden.
-1. Klik op **nieuwe sleutel toevoegen** . Kopieer de **sleutel** waarde op het volgende scherm. Nadat u deze pagina verlaat, hebt u geen toegang meer tot deze gegevens. Zie [sleutels voor een Azure AD-toepassing beheren](/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys)voor meer informatie.
+1. Klik op **nieuwe sleutel toevoegen**. Kopieer de **sleutel** waarde op het volgende scherm. Nadat u deze pagina verlaat, hebt u geen toegang meer tot deze gegevens. Zie [sleutels voor een Azure AD-toepassing beheren](/windows/uwp/publish/add-users-groups-and-azure-ad-applications#manage-keys)voor meer informatie.
 
 ### <a name="step-2-obtain-an-azure-ad-access-token"></a>Stap 2: een Azure AD-toegangs token verkrijgen
 
@@ -73,5 +73,5 @@ https://apidocs.microsoft.com/services/partneringestion/
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie over het maken van een [technische Asset](create-azure-container-technical-assets.md) voor het maken van een Azure-VM
-* Meer informatie over het maken van een [Azure-container aanbieding](create-azure-container-offer.md)
+* Meer informatie over het maken van een [technische Asset](../create-azure-container-technical-assets.md) voor het maken van een Azure-VM
+* Meer informatie over het maken van een [Azure-container aanbieding](../create-azure-container-offer.md)

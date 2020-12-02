@@ -12,20 +12,20 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 08/27/2019
-ms.openlocfilehash: 094e40fe55e1ba51b0539d740ecb449a8327d6a6
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 4f90299daed46d06dad9ab37103e3b8f53763ed4
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94841237"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96454388"
 ---
 # <a name="configure-multi-factor-authentication-for-sql-server-management-studio-and-azure-ad"></a>Multi-factor Authentication configureren voor SQL Server Management Studio en Azure AD
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
-Dit artikel laat u zien hoe u Azure Active Directory (Azure AD) multi-factor Authentication (MFA) kunt gebruiken met SQL Server Management Studio (SSMS). Azure AD MFA kan worden gebruikt bij het verbinden van SSMS of SqlPackage.exe op [Azure SQL database](sql-database-paas-overview.md), [Azure SQL Managed instance](../managed-instance/sql-managed-instance-paas-overview.md) en [azure Synapse Analytics (voorheen SQL Data Warehouse)](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md). Zie voor een overzicht van multi-factor Authentication [universele verificatie met SQL database, SQL Managed instance en Azure Synapse (SSMS-ondersteuning voor MFA)](../database/authentication-mfa-ssms-overview.md).
+Dit artikel laat u zien hoe u Azure Active Directory (Azure AD) multi-factor Authentication (MFA) kunt gebruiken met SQL Server Management Studio (SSMS). Azure AD MFA kan worden gebruikt bij het verbinden van SSMS of SqlPackage.exe op [Azure SQL database](sql-database-paas-overview.md), [Azure SQL Managed instance](../managed-instance/sql-managed-instance-paas-overview.md) en [Azure Synapse Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md). Zie voor een overzicht van multi-factor Authentication [universele verificatie met SQL database, SQL Managed instance en Azure Synapse (SSMS-ondersteuning voor MFA)](../database/authentication-mfa-ssms-overview.md).
 
 > [!IMPORTANT]
-> Data bases in Azure SQL Database, Azure SQL Managed instance en Azure Synapse (voorheen SQL Data Warehouse) worden gezamenlijk genoemd in de rest van dit artikel als data bases en de server verwijst naar de [Server](logical-servers.md) die als host fungeert voor de data bases voor Azure SQL database en Azure Synapse.
+> Data bases in Azure SQL Database, Azure SQL Managed instance en Azure Synapse worden gezamenlijk in de rest van dit artikel vermeld als data bases en de server verwijst naar de [Server](logical-servers.md) die als host fungeert voor de data bases voor Azure SQL database en Azure Synapse.
 
 ## <a name="configuration-steps"></a>Configuratiestappen
 

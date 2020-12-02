@@ -7,18 +7,16 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 10/10/2019
 ms.author: cynthn
-ms.openlocfilehash: 3df7d3d01dcd5e5b097eba53ef0dae29e86fd0a5
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: cddc7f4f453f22b0cb36b1d3a1e9c2fba2dcabaf
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91973254"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96455097"
 ---
 # <a name="create-a-windows-vm-from-a-specialized-disk-by-using-powershell"></a>Een virtuele Windows-machine maken vanaf een speciale schijf met PowerShell
 
 Maak een nieuwe virtuele machine door een speciale beheerde schijf als de besturingssysteem schijf te koppelen. Een gespecialiseerde schijf is een kopie van een virtuele harde schijf (VHD) van een bestaande VM die de gebruikers accounts, toepassingen en andere status gegevens van uw oorspronkelijke virtuele machine bevat. 
-
-Wanneer u een speciale VHD gebruikt om een nieuwe virtuele machine te maken, behoudt de nieuwe VM de computer naam van de oorspronkelijke VM. Andere computerspecifieke informatie wordt ook bewaard en, in sommige gevallen, kan deze dubbele informatie problemen veroorzaken. Wanneer u een virtuele machine kopieert, moet u zich bewust zijn van de typen computerspecifieke informatie die uw toepassingen gebruiken.
 
 U hebt verschillende mogelijkheden:
 * [Gebruik een bestaande beheerde schijf](#option-1-use-an-existing-disk). Deze optie is handig als u een VM hebt die niet goed werkt. U kunt de virtuele machine verwijderen en vervolgens de beheerde schijf opnieuw gebruiken om een nieuwe virtuele machine te maken. 
@@ -28,6 +26,11 @@ U hebt verschillende mogelijkheden:
 U kunt ook de Azure Portal gebruiken om [een nieuwe VM te maken op basis van een gespecialiseerde VHD](create-vm-specialized-portal.md).
 
 In dit artikel wordt beschreven hoe u beheerde schijven gebruikt. Zie [een virtuele machine maken op basis van een speciale VHD in een opslag account](/previous-versions/azure/virtual-machines/windows/sa-create-vm-specialized)als u een oudere implementatie hebt waarvoor een opslag account is vereist.
+
+> [!IMPORTANT]
+> 
+> Wanneer u een speciale schijf gebruikt om een nieuwe virtuele machine te maken, behoudt de nieuwe VM de computer naam van de oorspronkelijke VM. Andere computerspecifieke informatie (bijvoorbeeld CMID) wordt ook bewaard en, in sommige gevallen, kan deze dubbele informatie problemen veroorzaken. Wanneer u een virtuele machine kopieert, moet u zich bewust zijn van de typen computerspecifieke informatie die uw toepassingen gebruiken.  
+> Gebruik daarom geen gespecialiseerde schijf als u meerdere Vm's wilt maken. Maak in plaats daarvan [een installatie kopie](capture-image-resource.md) voor grotere implementaties en [gebruik vervolgens de installatie kopie om meerdere vm's te maken](create-vm-generalized-managed.md).
 
 We raden u aan om het aantal gelijktijdige implementaties te beperken tot 20 virtuele machines vanaf één VHD of moment opname. 
 
@@ -150,7 +153,7 @@ Maak netwerken en andere VM-resources die moeten worden gebruikt door de nieuwe 
 
 Maak het [virtuele netwerk](../../virtual-network/virtual-networks-overview.md) en het subnet voor de VM.
 
-1. Maak het subnet. In dit voor beeld wordt een subnet met de naam *mySubNet*gemaakt in de resource groep *myDestinationResourceGroup*en wordt het adres voorvoegsel van het subnet ingesteld op *10.0.0.0/24*.
+1. Maak het subnet. In dit voor beeld wordt een subnet met de naam *mySubNet* gemaakt in de resource groep *myDestinationResourceGroup* en wordt het adres voorvoegsel van het subnet ingesteld op *10.0.0.0/24*.
    
     ```powershell
     $subnetName = 'mySubNet'
@@ -159,7 +162,7 @@ Maak het [virtuele netwerk](../../virtual-network/virtual-networks-overview.md) 
        -AddressPrefix 10.0.0.0/24
     ```
     
-2. Maak het virtuele netwerk. In dit voor beeld wordt de naam van het virtuele netwerk ingesteld op *myVnetName*, de locatie van *VS-West*en het adres voorvoegsel voor het virtuele netwerk naar *10.0.0.0/16*. 
+2. Maak het virtuele netwerk. In dit voor beeld wordt de naam van het virtuele netwerk ingesteld op *myVnetName*, de locatie van *VS-West* en het adres voorvoegsel voor het virtuele netwerk naar *10.0.0.0/16*. 
    
     ```powershell
     $vnetName = "myVnetName"
@@ -261,7 +264,7 @@ RequestId IsSuccessStatusCode StatusCode ReasonPhrase
 ```
 
 ### <a name="verify-that-the-vm-was-created"></a>Controleren of de virtuele machine is gemaakt
-U ziet de zojuist gemaakte vm in de [Azure Portal](https://portal.azure.com) onder **Browse**  >  **virtuele machines**bladeren of met behulp van de volgende Power shell-opdrachten.
+U ziet de zojuist gemaakte vm in de [Azure Portal](https://portal.azure.com) onder **Browse**  >  **virtuele machines** bladeren of met behulp van de volgende Power shell-opdrachten.
 
 ```powershell
 $vmList = Get-AzVM -ResourceGroupName $destinationResourceGroup

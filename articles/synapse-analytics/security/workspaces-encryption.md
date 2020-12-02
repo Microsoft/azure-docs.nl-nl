@@ -8,17 +8,17 @@ ms.subservice: security
 ms.date: 11/19/2020
 ms.author: nanditav
 ms.reviewer: jrasnick
-ms.openlocfilehash: 17dbdbbef45e0068601835197a1177ee20d98ca3
-ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
+ms.openlocfilehash: a6ea3925f3b6bc786be6a4855b2f3bfb6b402d70
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96296755"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96455182"
 ---
-# <a name="encryption-for-azure-synapse-analytics-workspaces-preview"></a>Versleuteling voor Azure Synapse Analytics (voor beeld van werk ruimten)
+# <a name="encryption-for-azure-synapse-analytics-workspaces"></a>Versleuteling voor Azure Synapse Analytics-werk ruimten
 
 In dit artikel worden de volgende onderwerpen beschreven:
-* Versleuteling van gegevens in rust in azure Synapse Analytics-werk ruimten.
+* Versleuteling van data-at-rest in Synapse Analytics-werk ruimten.
 * Configuratie van Synapse-werk ruimten om versleuteling in te scha kelen met een door de klant beheerde sleutel.
 * Sleutels beheren die worden gebruikt voor het versleutelen van gegevens in werk ruimten.
 

@@ -1,6 +1,6 @@
 ---
-title: Uw workload analyseren
-description: Technieken voor het analyseren van de query prioriteit voor uw werk belasting in azure Synapse Analytics.
+title: Analyseer uw werk belasting voor de toegewezen SQL-groep
+description: Technieken voor het analyseren van de query prioriteit voor een toegewezen SQL-groep in azure Synapse Analytics.
 services: synapse-analytics
 author: ronortloff
 manager: craigg
@@ -11,20 +11,20 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: c547263be8c61d75491d1517b58c03b6365ef929
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 14c3ad30bac7cec4c11822d825323bb9db2ba440
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85208396"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96454530"
 ---
-# <a name="analyze-your-workload-in-azure-synapse-analytics"></a>Analyseer uw werk belasting in azure Synapse Analytics
+# <a name="analyze-your-workload-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Analyseer uw werk belasting voor de exclusieve SQL-groep in azure Synapse Analytics
 
-Technieken voor het analyseren van uw Synapse SQL-werk belasting in azure Synapse Analytics. 
+Technieken voor het analyseren van uw toegewezen werk belasting van een SQL-groep in azure Synapse Analytics. 
 
 ## <a name="resource-classes"></a>Resourceklassen
 
-Synapse SQL biedt resource klassen om systeem bronnen aan query's toe te wijzen.  Zie [resource klassen & workload Management](resource-classes-for-workload-management.md)voor meer informatie over resource klassen.  Query's wachten of de resource klasse die aan een query is toegewezen, meer resources nodig heeft dan momenteel beschikbaar zijn.
+De toegewezen SQL-groep biedt resource klassen voor het toewijzen van systeem bronnen aan query's.  Zie [resource klassen & workload Management](resource-classes-for-workload-management.md)voor meer informatie over resource klassen.  Query's wachten of de resource klasse die aan een query is toegewezen, meer resources nodig heeft dan momenteel beschikbaar zijn.
 
 ## <a name="queued-query-detection-and-other-dmvs"></a>Detectie van query's in de wachtrij en andere Dmv's
 
@@ -63,7 +63,7 @@ WHERE   r.name IN ('mediumrc','largerc','xlargerc')
 ;
 ```
 
-Synapse SQL heeft de volgende wacht typen:
+De toegewezen SQL-groep heeft de volgende wacht typen:
 
 * **LocalQueriesConcurrencyResourceType**: query's die buiten het Framework voor gelijktijdigheids sleuven vallen. DMV query's en systeem functies zoals `SELECT @@VERSION` voor beelden van lokale query's.
 * **UserConcurrencyResourceType**: query's die binnen het Framework voor gelijktijdigheids sleuven zitten. Query's voor de tabellen van de eind gebruiker zijn voor beelden die gebruikmaken van dit resource type.
@@ -153,4 +153,4 @@ FROM    sys.dm_pdw_wait_stats w
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [een Data Base beveiligen in Synapse SQL](sql-data-warehouse-overview-manage-security.md)voor meer informatie over het beheren van database gebruikers en beveiliging. Zie [indexen opnieuw samen stellen om de segment kwaliteit te verbeteren](sql-data-warehouse-tables-index.md#rebuilding-indexes-to-improve-segment-quality)voor meer informatie over hoe grotere resource klassen de geclusterde column store-index kwaliteit kunnen verbeteren.
+Zie voor meer informatie over het beheren van database gebruikers en-beveiliging, [een speciale SQL-groep (voorheen SQL DW) beveiligen](sql-data-warehouse-overview-manage-security.md). Zie [indexen opnieuw samen stellen om de segment kwaliteit te verbeteren](sql-data-warehouse-tables-index.md#rebuilding-indexes-to-improve-segment-quality)voor meer informatie over hoe grotere resource klassen de geclusterde column store-index kwaliteit kunnen verbeteren.

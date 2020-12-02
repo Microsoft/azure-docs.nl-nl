@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/29/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python,contperfq1, automl
-ms.openlocfilehash: f4546433f5bd20e2f001d6d868d8adfb4b9bf8c0
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: b03eb8015d318471cf8bf11fc5a3cd94044d2cfe
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94920369"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96455582"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Geautomatiseerde ML-experimenten configureren in Python
 
@@ -46,7 +46,7 @@ Voor dit artikel hebt u het volgende nodig:
     Als u de SDK wilt installeren, kunt u 
     * Maak een reken instantie, waarmee de SDK automatisch wordt geïnstalleerd en vooraf is geconfigureerd voor ML-werk stromen. Zie [een Azure machine learning Compute-exemplaar maken en beheren](how-to-create-manage-compute-instance.md) voor meer informatie. 
 
-    * [Installeer het `automl` pakket zelf](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/README.md#setup-using-a-local-conda-environment), dat de [standaard installatie](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py#default-install&preserve-view=true) van de SDK bevat.
+    * [Installeer het `automl` pakket zelf](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/README.md#setup-using-a-local-conda-environment), dat de [standaard installatie](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py#default-install) van de SDK bevat.
 
 ## <a name="select-your-experiment-type"></a>Het type experimenten selecteren
 

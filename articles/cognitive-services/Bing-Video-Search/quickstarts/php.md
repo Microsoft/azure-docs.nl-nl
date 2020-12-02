@@ -10,19 +10,19 @@ ms.subservice: bing-video-search
 ms.topic: quickstart
 ms.date: 05/22/2020
 ms.author: aahi
-ms.openlocfilehash: 8362f5b4d3436e83cbd033fcc3cd088d52122b58
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: 213dec3498b76f7331f40cb24f0c796175a3fbb3
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94379851"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96353847"
 ---
 # <a name="quickstart-search-for-videos-using-the-bing-video-search-rest-api-and-php"></a>Snelstart: Video's zoeken met de Bing Video's zoeken-REST API en PHP
 
 > [!WARNING]
-> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](https://aka.ms/cogsvcs/bingmove) is beschreven.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
 > Bing Search-API's die zijn ingericht met Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
-> Raadpleeg [Bing Search Services](https://aka.ms/cogsvcs/bingmigration) voor migratie-instructies.
+> Raadpleeg [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
 Gebruik deze quickstart om uw eerste aanroep naar de Bing Video’s zoeken-API te maken. Deze eenvoudige PHP-toepassing stuurt een HTTP-videozoekquery naar de API en geeft het JSON-antwoord weer. De voorbeeldcode is geschreven om te werken met PHP 5.6.
 

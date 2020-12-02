@@ -9,18 +9,18 @@ ms.topic: how-to
 author: rmatchoro
 ms.author: ronmat
 ms.reviewer: vanto
-ms.date: 09/21/2020
-ms.openlocfilehash: 68ab5c820f3a67a7fd332557d47918d2a7aa4b62
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.date: 12/01/2020
+ms.openlocfilehash: 1425003c718ca52c0bea712e9d25cd3e4c035cf1
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92789417"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453962"
 ---
 # <a name="configure-advanced-threat-protection-for-azure-sql-database"></a>Geavanceerde bedreigings beveiliging voor Azure SQL Database configureren
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
-[Advanced Threat Protection](threat-detection-overview.md) voor Azure SQL database detecteert afwijkende activiteiten die een ongebruikelijke en potentieel schadelijke pogingen om toegang te krijgen tot of misbruik te maken van data bases. Geavanceerde beveiliging tegen bedreigingen kan leiden tot **mogelijke SQL-injecties** , **toegang vanaf ongebruikelijke locatie of Data Center** , **toegang tot een onbekende principal of mogelijk schadelijke toepassing** en **SQL-referenties** voor de beveiligings aanval: Bekijk meer informatie in de [waarschuwingen voor geavanceerde bedreigingen](threat-detection-overview.md#alerts).
+[Advanced Threat Protection](threat-detection-overview.md) voor Azure SQL database detecteert afwijkende activiteiten die een ongebruikelijke en potentieel schadelijke pogingen om toegang te krijgen tot of misbruik te maken van data bases. Geavanceerde beveiliging tegen bedreigingen kan leiden tot **mogelijke SQL-injecties**, **toegang vanaf ongebruikelijke locatie of Data Center**, **toegang tot een onbekende principal of mogelijk schadelijke toepassing** en **SQL-referenties** voor de beveiligings aanval: Bekijk meer informatie in de [waarschuwingen voor geavanceerde bedreigingen](threat-detection-overview.md#alerts).
 
 U kunt meldingen over de gedetecteerde bedreigingen ontvangen via [e-mail meldingen](threat-detection-overview.md#explore-detection-of-a-suspicious-event) of [Azure Portal](threat-detection-overview.md#explore-alerts-in-the-azure-portal)
 
@@ -29,11 +29,13 @@ U kunt meldingen over de gedetecteerde bedreigingen ontvangen via [e-mail meldin
 ## <a name="set-up-advanced-threat-protection-in-the-azure-portal"></a>Geavanceerde beveiliging tegen bedreigingen instellen in de Azure Portal
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-2. Ga naar de configuratie pagina van de server die u wilt beveiligen. Selecteer in de beveiligings instellingen **Security Center** .
-3. Op de pagina **Azure Defender** -configuratie:
+2. Ga naar de configuratie pagina van de server die u wilt beveiligen. Selecteer **Security Center** in de beveiligings instellingen.
+3. Op de pagina **Azure Defender voor SQL** -configuratie:
 
-   - Schakel Azure Defender op de server in.
-   - Geef in het tekstvak **waarschuwingen verzenden naar** een lijst met e-mail berichten op voor het ontvangen van beveiligings waarschuwingen bij de detectie van afwijkende database activiteiten in de **instellingen voor geavanceerde beveiliging tegen bedreigingen** .
+   - Schakel **Azure Defender voor SQL** op de server in.
+   - Geef in de **instellingen voor geavanceerde bedreigingen beveiliging** de lijst met e-mail berichten op waarvoor beveiligings waarschuwingen moeten worden ontvangen bij het detecteren van afwijkende database activiteiten in het tekstvak **waarschuwingen verzenden naar** .
+   
+   :::image type="content" source="media/azure-defender-for-sql/set-up-advanced-threat-protection.png" alt-text="geavanceerde bedreigings beveiliging instellen":::
 
 ## <a name="set-up-advanced-threat-protection-using-powershell"></a>Advanced Threat Protection instellen met behulp van PowerShell
 

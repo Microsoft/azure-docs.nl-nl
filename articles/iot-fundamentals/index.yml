@@ -10,12 +10,12 @@ metadata:
   author: philmea
   ms.author: philmea
   ms.date: 09/04/2019
-  ms.openlocfilehash: 205037ce6f7fa2a221cc80be200698bbc9e20cc4
-  ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+  ms.openlocfilehash: 06f84e9c24c7ba76420b3d033cb3f1436730ba8c
+  ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 11/23/2020
-  ms.locfileid: "95484063"
+  ms.lasthandoff: 12/01/2020
+  ms.locfileid: "96453044"
 highlightedContent:
   items:
   - title: Wat is Azure IoT?
@@ -124,7 +124,7 @@ conceptualContent:
     - url: ../iot-pnp/overview-iot-plug-and-play.md
       itemType: overview
       text: Wat is IoT Plug en Play?
-    - url: ../iot-pnp/quickstart-connect-device-node.md
+    - url: ../iot-pnp/quickstart-connect-device.md
       itemType: quickstart
       text: Een voorbeeldapparaat verbinden met IoT Hub
     - url: ../iot-pnp/concepts-developer-guide-device.md

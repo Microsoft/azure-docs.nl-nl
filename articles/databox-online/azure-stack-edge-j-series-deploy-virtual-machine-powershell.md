@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 08/28/2020
 ms.author: alkohli
-ms.openlocfilehash: aa492acdedc2d131d28c894031de2181e87a2f3e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ed6b77f77c9df0bb69edeb7451022605f1633aa3
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90890696"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96454315"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-via-azure-powershell"></a>Implementeer Vm's op uw Azure Stack Edge Pro GPU-apparaat via Azure PowerShell
 
@@ -103,7 +103,7 @@ Dit abonnement wordt gebruikt om de virtuele machines te implementeren.
     
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Maak een Azure-resourcegroep met behulp van de opdracht [New-AzureRmResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup). Een resource groep is een logische container waarin de Azure-resources, zoals opslag account, schijf, beheerde schijf, worden geïmplementeerd en beheerd.
+Maak een Azure-resourcegroep met behulp van de opdracht [New-AzureRmResourceGroup](/powershell/module/az.resources/new-azresourcegroup). Een resource groep is een logische container waarin de Azure-resources, zoals opslag account, schijf, beheerde schijf, worden geïmplementeerd en beheerd.
 
 > [!IMPORTANT]
 > Alle resources worden gemaakt op dezelfde locatie als die van het apparaat en de locatie is ingesteld op **DBELocal**.
@@ -187,7 +187,7 @@ U hebt de BLOB-URI in het hosts-bestand al toegevoegd voor de client die u gebru
 
 ## <a name="install-certificates"></a>Certificaten installeren
 
-Als u *https*gebruikt, moet u de juiste certificaten op uw apparaat installeren. In dit geval installeert u het BLOB-eindpunt certificaat. Zie certificaten maken en uploaden in [certificaten beheren](azure-stack-edge-j-series-manage-certificates.md)voor meer informatie.
+Als u *https* gebruikt, moet u de juiste certificaten op uw apparaat installeren. In dit geval installeert u het BLOB-eindpunt certificaat. Zie certificaten maken en uploaden in [certificaten beheren](azure-stack-edge-j-series-manage-certificates.md)voor meer informatie.
 
 ## <a name="upload-a-vhd"></a>Een VHD uploaden
 
@@ -227,7 +227,7 @@ $DiskConfig = New-AzureRmDiskConfig -Location DBELocal -CreateOption Import –S
 New-AzureRMDisk -ResourceGroupName <Resource group name> -DiskName <Disk name> -Disk $DiskConfig
 ```
 
-Hieronder ziet u een voorbeeld van de uitvoer. Ga naar [New-AzureRmDisk](https://docs.microsoft.com/powershell/module/azurerm.compute/new-azurermdisk?view=azurermps-6.13.0)voor meer informatie over deze cmdlet.
+Hieronder ziet u een voorbeeld van de uitvoer. Ga naar [New-AzureRmDisk](/powershell/module/azurerm.compute/new-azurermdisk?view=azurermps-6.13.0)voor meer informatie over deze cmdlet.
 
 ```powershell
 Tags               :
@@ -267,7 +267,7 @@ Set-AzureRmImageOsDisk -Image $imageConfig -OsType 'Linux' -OsState 'Generalized
 New-AzureRmImage -Image $imageConfig -ImageName <Image name>  -ResourceGroupName <Resource group name>
 ```
 
-Hieronder ziet u een voorbeeld van de uitvoer. Ga naar [New-AzureRmImage](https://docs.microsoft.com/powershell/module/azurerm.compute/new-azurermimage?view=azurermps-6.13.0)voor meer informatie over deze cmdlet.
+Hieronder ziet u een voorbeeld van de uitvoer. Ga naar [New-AzureRmImage](/powershell/module/azurerm.compute/new-azurermimage?view=azurermps-6.13.0)voor meer informatie over deze cmdlet.
 
 ```powershell
 New-AzureRmImage -Image Microsoft.Azure.Commands.Compute.Automation.Models.PSImage -ImageName ig191113014333  -ResourceGroupName rg191113014333
@@ -406,7 +406,7 @@ $VirtualMachine = Set-AzureRmVMSourceImage -VM $VirtualMachine -Id $image
 New-AzureRmVM -ResourceGroupName <Resource Group Name> -Location DBELocal -VM $VirtualMachine -Verbose
 ```
 
-## <a name="connect-to-a-vm"></a>Verbinding maken met een VM
+## <a name="connect-to-a-vm"></a>Verbinding maken met een virtuele machine
 
 Afhankelijk van of u een Windows-of een Linux-VM hebt gemaakt, kunnen de stappen om verbinding te maken verschillend zijn.
 
@@ -463,7 +463,7 @@ Voer de volgende cmdlet uit om een virtuele machine die wordt uitgevoerd op uw a
 `Start-AzureRmVM [-Name] <String> [-ResourceGroupName] <String>`
 
 
-Ga naar [Start-AzureRmVM](https://docs.microsoft.com/powershell/module/azurerm.compute/start-azurermvm?view=azurermps-6.13.0)voor meer informatie over deze cmdlet.
+Ga naar [Start-AzureRmVM](/powershell/module/azurerm.compute/start-azurermvm?view=azurermps-6.13.0)voor meer informatie over deze cmdlet.
 
 ### <a name="suspend-or-shut-down-the-vm"></a>De virtuele machine onderbreken of afsluiten
 
@@ -475,7 +475,7 @@ Stop-AzureRmVM [-Name] <String> [-StayProvisioned] [-ResourceGroupName] <String>
 ```
 
 
-Ga naar de [cmdlet stop-AzureRmVM](https://docs.microsoft.com/powershell/module/azurerm.compute/stop-azurermvm?view=azurermps-6.13.0)voor meer informatie over deze cmdlet.
+Ga naar de [cmdlet stop-AzureRmVM](/powershell/module/azurerm.compute/stop-azurermvm?view=azurermps-6.13.0)voor meer informatie over deze cmdlet.
 
 ### <a name="add-a-data-disk"></a>Een gegevens schijf toevoegen
 
@@ -495,7 +495,7 @@ Voer de volgende cmdlet uit om een virtuele machine van uw apparaat te verwijder
 Remove-AzureRmVM [-Name] <String> [-ResourceGroupName] <String>
 ```
 
-Ga naar de [cmdlet Remove-AzureRmVm](https://docs.microsoft.com/powershell/module/azurerm.compute/remove-azurermvm?view=azurermps-6.13.0)voor meer informatie over deze cmdlet.
+Ga naar de [cmdlet Remove-AzureRmVm](/powershell/module/azurerm.compute/remove-azurermvm?view=azurermps-6.13.0)voor meer informatie over deze cmdlet.
 
 
 ## <a name="supported-vm-sizes"></a>Ondersteunde VM-grootten
@@ -553,7 +553,7 @@ Stel op de client die wordt gebruikt voor toegang tot uw Azure Stack Edge Pro-ap
 
 ### <a name="on-windows-client"></a>Op Windows-client 
 
-`$Env:AZCOPY_DEFAULT_SERVICE_API_VERSION = "2017-11-09"`
+`$Env:AZCOPY_DEFAULT_SERVICE_API_VERSION = "2017-11-09"`
 
 ### <a name="on-linux-client"></a>Op Linux-client
 
@@ -567,4 +567,4 @@ Voer de volgende stappen uit om te controleren of de omgevings variabele voor Az
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Azure Resource Manager-cmdlets](https://docs.microsoft.com/powershell/module/azurerm.resources/?view=azurermps-6.13.0)
+[Azure Resource Manager-cmdlets](/powershell/module/azurerm.resources/?view=azurermps-6.13.0)

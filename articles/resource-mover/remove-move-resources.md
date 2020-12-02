@@ -5,14 +5,14 @@ manager: evansma
 author: rayne-wiselman
 ms.service: resource-move
 ms.topic: how-to
-ms.date: 09/08/2020
+ms.date: 11/30/2020
 ms.author: raynew
-ms.openlocfilehash: 38a633a7a11ac29271231679e7075920e1f33a70
-ms.sourcegitcommit: ba7fafe5b3f84b053ecbeeddfb0d3ff07e509e40
+ms.openlocfilehash: 63548e2bf470c012e0dd8a5f879a51eeb631f453
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91945940"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96459272"
 ---
 # <a name="manage-move-collections-and-resource-groups"></a>Verplaats verzamelingen en resource groepen beheren
 
@@ -22,11 +22,11 @@ In dit artikel wordt beschreven hoe u resources verwijdert uit een Verplaats ver
 
 U kunt resources in een verzameling voor verplaatsen in de resource-verhuizer-portal als volgt verwijderen:
 
-1. Selecteer in **meerdere regio's**alle resources die u uit de verzameling wilt verwijderen en selecteer **verwijderen**. 
+1. Selecteer in **meerdere regio's** alle resources die u uit de verzameling wilt verwijderen en selecteer **verwijderen**. 
 
     ![Te verwijderen knop](./media/remove-move-resources/portal-select-resources.png)
 
-2. Klik in **resources verwijderen**op **verwijderen**.
+2. Klik in **resources verwijderen** op **verwijderen**.
 
     ![Knop om resources uit een verplaatsings verzameling te verwijderen](./media/remove-move-resources/remove-portal.png)
 
@@ -43,12 +43,11 @@ U kunt als volgt een resource (in ons voor beeld van de PSDemoVM-machines) verwi
 
 ```azurepowershell-interactive
 # Remove a resource using the resource ID
-Remove-AzResourceMoverMoveResource -SubscriptionId  <subscription-id> -ResourceGroupName RegionMoveRG-centralus-westcentralus  -MoveCollectionName MoveCollection-centralus-westcentralus - Name PSDemoVM
+Remove-AzResourceMoverMoveResource -SubscriptionId  <subscription-id> -ResourceGroupName RegionMoveRG-centralus-westcentralus  -MoveCollectionName MoveCollection-centralus-westcentralus -Name PSDemoVM
 ```
-**Verwachte uitvoer** 
- ![ Uitvoer tekst nadat een resource is verwijderd uit een verzameling voor verplaatsen](./media/remove-move-resources/remove-resource.png)
+**Verwachte uitvoer**
 
-
+![Uitvoer tekst nadat een resource is verwijderd uit een verzameling voor verplaatsen](./media/remove-move-resources/remove-resource.png)
 
 ## <a name="remove-a-collection-powershell"></a>Een verzameling verwijderen (Power shell)
 
@@ -59,9 +58,11 @@ Verwijder een volledige verzameling voor verplaatsen met behulp van Power shell,
 
     ```azurepowershell-interactive
     # Remove a resource using the resource ID
-    Remove-AzResourceMoverMoveResource -SubscriptionId  <subscription-id> -ResourceGroupName RegionMoveRG-centralus-westcentralus  -MoveCollectionName MoveCollection-centralus-westcentralus 
+    Remove-AzResourceMoverMoveCollection -SubscriptionId <subscription-id> -ResourceGroupName RegionMoveRG-centralus-westcentralus -MoveCollectionName MoveCollection-centralus-westcentralus
     ```
-    **Verwachte uitvoer** ![ Uitvoer tekst na het verwijderen van een verzameling voor verplaatsen](./media/remove-move-resources/remove-collection.png)
+    **Verwachte uitvoer**
+    
+    ![Uitvoer tekst na het verwijderen van een verzameling voor verplaatsen](./media/remove-move-resources/remove-collection.png)
 
 ## <a name="vm-resource-state-after-removing"></a>Resource status van de VM na het verwijderen
 

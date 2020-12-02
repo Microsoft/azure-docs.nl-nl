@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 11/09/2020
 author: sayantanroy83
 ms.author: sroy
-ms.openlocfilehash: 8f85e9c77cc6fed7e2763f694664332b124d0780
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 9089fee7565633b198043efeed929fc7446437d5
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94561791"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96458287"
 ---
 # <a name="marketplace-insights-dashboard-in-commercial-marketplace-analytics"></a>Dashboard Inzichten marketplace in Commerciële marketplace-analyses
 
@@ -20,7 +20,7 @@ Dit artikel bevat informatie over het Marketplace Insights-dash board in het par
 
 Voor toegang tot het **Marketplace Insights** -dash board in Partner Center, onder commerciële Marketplace, selecteert u **[Analyze](https://partner.microsoft.com/dashboard/commercial-marketplace/analytics/summary)**  >  **Marketplace Insights** analyseren.
 
-Zie voor gedetailleerde definities van analyse terminologie [Commercial Marketplace Analytics terminologie en common questions](./partner-center-portal/faq-terminology.md)(Engelstalig).
+Zie voor gedetailleerde definities van analyse terminologie [Commercial Marketplace Analytics terminologie en common questions](./analytics-faq.md)(Engelstalig).
 
 ## <a name="marketplace-insights-dashboard"></a>Dashboard voor Marketplace-inzichten
 
@@ -54,29 +54,29 @@ U vindt de selectie van een maand bereik in de rechter bovenhoek van elke pagina
 
 Het organigram Insights- **bezoekers** diagram geeft een telling weer van de _pagina bezoeken_ en _unieke bezoekers_ voor de geselecteerde reken periode.
 
-**Pagina bezoekers** : dit nummer geeft het aantal afzonderlijke gebruikers sessies op de aanbiedings pagina (Product detail pagina) voor een geselecteerde reken periode aan. De indica toren rood en groen vertegenwoordigen het groei percentage van de pagina bezoeken. Het trend diagram vertegenwoordigt het aantal maanden tot maanden van pagina bezoeken.
+**Pagina bezoekers**: dit nummer geeft het aantal afzonderlijke gebruikers sessies op de aanbiedings pagina (Product detail pagina) voor een geselecteerde reken periode aan. De indica toren rood en groen vertegenwoordigen het groei percentage van de pagina bezoeken. Het trend diagram vertegenwoordigt het aantal maanden tot maanden van pagina bezoeken.
 
-**Unieke bezoekers** : dit nummer vertegenwoordigt het aantal afzonderlijke bezoekers tijdens de geselecteerde reken periode voor de aanbieding (en) in azure Marketplace en AppSource. Een bezoeker die een of meer product detail pagina's heeft bezocht, wordt als één unieke bezoeker beschouwd.
+**Unieke bezoekers**: dit nummer vertegenwoordigt het aantal afzonderlijke bezoekers tijdens de geselecteerde reken periode voor de aanbieding (en) in azure Marketplace en AppSource. Een bezoeker die een of meer product detail pagina's heeft bezocht, wordt als één unieke bezoeker beschouwd.
 
 [![Illustreert de bezoekers grafiek op het Marketplace Insights-dash board.](./media/insights-dashboard/visitors.png)](./media/insights-dashboard/visitors.png#lightbox)
 
 ### <a name="call-to-actions-trend"></a>Actie trend aanroepen
 
-Dit nummer geeft het aantal aanroepen van de knop **actie aan die** is voltooid op de pagina aanbiedings vermelding (Product detail pagina). _Aanroepen naar actie_ worden geteld wanneer gebruikers de knoppen **nu downloaden** , **gratis proef versie** , **contact opnemen** of **station testen** selecteren.
+Dit nummer geeft het aantal aanroepen van de knop **actie aan die** is voltooid op de pagina aanbiedings vermelding (Product detail pagina). _Aanroepen naar actie_ worden geteld wanneer gebruikers de knoppen **nu downloaden**, **gratis proef versie**, **contact opnemen** of **station testen** selecteren.
 
 [![Illustreert de oproep naar actie grafiek op het Marketplace Insights-dash board.](./media/insights-dashboard/call-to-actions-trend.png)](./media/insights-dashboard/call-to-actions-trend.png#lightbox)
 
 ### <a name="page-visits-and-call-to-actions-against-offers-referral-domains-and-campaign-ids"></a>Pagina bezoeken en aanroepen naar acties voor aanbiedingen, referentie domeinen en campagne-Id's
 
-**Referentie domeinen** : als u een specifiek referentie domein selecteert, ziet u de maandelijkse trend van pagina bezoeken en aanroepen naar actie op de grafiek aan de rechter kant.
+**Referentie domeinen**: als u een specifiek referentie domein selecteert, ziet u de maandelijkse trend van pagina bezoeken en aanroepen naar actie op de grafiek aan de rechter kant.
 
 :::image type="content" source="./media/insights-dashboard/referral-domain.png" alt-text="Illustreert het overzicht van het domein Referral op het Marketplace Insights-dash board.":::
 
-**Aanbiedingen** : Selecteer een specifieke aanbieding om de maandelijkse trend van de pagina bezoeken te bekijken en aanroepen naar actie op de grafiek aan de rechter kant.
+**Aanbiedingen**: Selecteer een specifieke aanbieding om de maandelijkse trend van de pagina bezoeken te bekijken en aanroepen naar actie op de grafiek aan de rechter kant.
 
 :::image type="content" source="./media/insights-dashboard/offer-alias.png" alt-text="Illustreert het diagram van de aanbiedings alias op het Marketplace Insights-dash board.":::
 
-**Campagne-id's** : door een specifieke campagne-id te selecteren, moet u inzicht hebben in het succes van de campagne. Voor elke campagne moet u de maandelijkse trend van de pagina bezoeken en aanroepen naar actie aan de rechter kant kunnen zien.
+**Campagne-id's**: door een specifieke campagne-id te selecteren, moet u inzicht hebben in het succes van de campagne. Voor elke campagne moet u de maandelijkse trend van de pagina bezoeken en aanroepen naar actie aan de rechter kant kunnen zien.
 
 :::image type="content" source="./media/insights-dashboard/campaign.png" alt-text="Illustreert het campagne diagram op het Marketplace Insights-dash board.":::
 
@@ -112,4 +112,4 @@ Deze tabel bevat een overzicht van de bezoeken van de pagina en de aanroepen naa
 - Zie [klanten dashboard in Commercial Marketplace Analytics](./customer-dashboard.md)voor gedetailleerde informatie over uw klanten, waaronder groei trends.
 - Zie [dash board downloaden in Commercial Marketplace Analytics](./partner-center-portal/downloads-dashboard.md)voor een lijst met Download aanvragen voor de afgelopen 30 dagen.
 - Voor een geconsolideerde weer gave van feedback van klanten voor aanbiedingen op Azure Marketplace en AppSource raadpleegt u [beoordelingen & beoordelingen Analytics dash board in partner centrum](./partner-center-portal/ratings-reviews.md).
-- Zie voor veelgestelde vragen over de analyse van commerciële Marketplace en voor een uitgebreid woorden boek met informatie over de [terminologie van commerciële Marketplace en veelgestelde vragen](./partner-center-portal/faq-terminology.md).
+- Zie voor veelgestelde vragen over de analyse van commerciële Marketplace en voor een uitgebreid woorden boek met informatie over de [terminologie van commerciële Marketplace en veelgestelde vragen](./analytics-faq.md).

@@ -8,12 +8,12 @@ ms.date: 11/02/2020
 author: parthpandyaMSFT
 ms.author: parthp
 ms.custom: contperfq2
-ms.openlocfilehash: ccdc87d03181bad1aba4dd362a651fa42381343a
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 39a9b363c847b615bfbe049b4b47628e8688c607
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95542283"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96458112"
 ---
 # <a name="create-a-commercial-marketplace-account-in-partner-center"></a>Een commercieel Marketplace-account maken in het partner centrum
 
@@ -114,7 +114,7 @@ U hebt nu een commercieel Marketplace-account gemaakt in het partner centrum. Ga
 >
 >Afzonderlijke accounts zijn voor ontwikkel aars die aan hun eigen werkzaamheden werken. Bedrijfs accounts zijn voor organisaties en bedrijven. Met bedrijfs accounts krijgt u toegang tot het verzenden van apps met aanvullende functionaliteit.
 >
-> Om te controleren of u gemachtigd bent om het account in te stellen voor uw bedrijf, hebben we extra verificatie van bedrijfs accounts nodig nadat u zich hebt geregistreerd. Deze verificatie kan enkele dagen tot een paar weken duren en bevat vaak een telefoon gesprek naar uw bedrijf. Met beide typen accounts kunt u apps, invoeg toepassingen en services verzenden. Zie [account typen, locaties en kosten](https://docs.microsoft.com/windows/uwp/publish/account-types-locations-and-fees)voor meer informatie.
+> Om te controleren of u gemachtigd bent om het account in te stellen voor uw bedrijf, hebben we extra verificatie van bedrijfs accounts nodig nadat u zich hebt geregistreerd. Deze verificatie kan enkele dagen tot een paar weken duren en bevat vaak een telefoon gesprek naar uw bedrijf. Met beide typen accounts kunt u apps, invoeg toepassingen en services verzenden. Zie [account typen, locaties en kosten](/windows/uwp/publish/account-types-locations-and-fees)voor meer informatie.
 
 Wanneer u zich registreert voor het commerciële Marketplace-programma met hetzelfde account als uw ontwikkelaars programma, kunt u al uw bestaande programma registraties bekijken in het linkerdeel venster van partner Center.
 

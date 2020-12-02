@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/22/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 59f68909e2f3704fea5c38e3f1535f5996b284ab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c2620b52c426871b0ec85e3db237be2d373d42f1
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87097342"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96458700"
 ---
 # <a name="add-tags-to-digital-twins"></a>Tags toevoegen aan digitale apparaatdubbels 
 
@@ -69,13 +69,13 @@ Zodra Tags zijn toegevoegd aan digitale apparaatdubbels, kunnen de tags worden g
 Hier volgt een query om alle apparaatdubbels op te halen die zijn gelabeld als ' Red ': 
 
 ```sql
-select * from digitaltwins where is_defined(tags.red) 
+SELECT * FROM digitaltwins WHERE is_defined(tags.red) 
 ```
 
 U kunt ook labels combi neren voor complexere query's. Hier volgt een query voor het ophalen van alle apparaatdubbels die worden afgerond en niet rood: 
 
 ```sql
-select * from digitaltwins where not is_defined(tags.red) and is_defined(tags.round) 
+SELECT * FROM digitaltwins WHERE NOT is_defined(tags.red) AND is_defined(tags.round) 
 ```
 
 ## <a name="value-tags"></a>Waarde-labels 
@@ -127,13 +127,13 @@ Net als bij markeringen Tags kunt u de apparaatdubbels gebruiken om de waarde in
 In het bovenstaande voor beeld `red` wordt gebruikt als markerings code. Hier volgt een query om alle apparaatdubbels op te halen die zijn gelabeld als ' Red ': 
 
 ```sql
-select * from digitaltwins where is_defined(tags.red) 
+SELECT * FROM digitaltwins WHERE is_defined(tags.red) 
 ```
 
 Hier volgt een query om alle entiteiten te verkrijgen die klein zijn (waarde-tag) en niet rood: 
 
 ```sql
-select * from digitaltwins where not is_defined(tags.red) and tags.size = 'small' 
+SELECT * FROM digitaltwins WHERE NOT is_defined(tags.red) AND tags.size = 'small' 
 ```
 
 ## <a name="next-steps"></a>Volgende stappen

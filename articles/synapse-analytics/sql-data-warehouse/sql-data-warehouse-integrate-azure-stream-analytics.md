@@ -1,6 +1,6 @@
 ---
-title: Azure Stream Analytics gebruiken
-description: Tips voor het gebruik van Azure Stream Analytics met uw data warehouse in azure Synapse voor het ontwikkelen van real-time oplossingen.
+title: Azure Stream Analytics gebruiken in een toegewezen SQL-groep
+description: Tips voor het gebruik van Azure Stream Analytics met een toegewezen SQL-groep in azure Synapse voor het ontwikkelen van realtime-oplossingen.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -11,18 +11,18 @@ ms.date: 9/25/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 3ead3393218255808eb67983251fcf9f2561c82c
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 8fbe546beb1004214e544f8eb160884c0f64ef9e
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95020177"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96458220"
 ---
-# <a name="use-azure-stream-analytics-with-azure-synapse-analytics"></a>Azure Stream Analytics met Azure Synapse Analytics gebruiken
+# <a name="use-azure-stream-analytics-with-dedicated-sql-pool-in-azure-synapse-analytics"></a>Azure Stream Analytics gebruiken met een toegewezen SQL-groep in azure Synapse Analytics
 
 Azure Stream Analytics is een volledig beheerde service met lage latentie en een Maxi maal beschik bare, schaal bare complexe gebeurtenis verwerking via streaming-gegevens in de Cloud. Lees de [Inleiding tot Azure stream Analytics voor](../../stream-analytics/stream-analytics-introduction.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)meer informatie over de basis principes. U kunt vervolgens leren hoe u een end-to-end-oplossing maakt met Stream Analytics door de zelf studie [aan de slag met Azure stream Analytics](../../stream-analytics/stream-analytics-real-time-fraud-detection.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) te volgen.
 
-In dit artikel leert u hoe u uw data warehouse kunt gebruiken als een uitvoer filter voor gegevens opname met hoge door Voer met Azure Stream Analytics-taken.
+In dit artikel leert u hoe u uw toegewezen SQL-pool kunt gebruiken als een uitvoer filter voor gegevens opname met hoge door Voer met Azure Stream Analytics-taken.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -32,9 +32,9 @@ In dit artikel leert u hoe u uw data warehouse kunt gebruiken als een uitvoer fi
     2. Toepassing voor gebeurtenis Generator configureren en starten
     3. Een Stream Analytics-taak inrichten
     4. Taak invoer en-query opgeven
-* Synapse toegewezen SQL-groep voor uw data warehouse: als u een nieuw data warehouse wilt maken, volgt u de stappen in de [Quick Start om een nieuw data warehouse te maken](create-data-warehouse-portal.md).
+* Exclusieve SQL-groep: als u een nieuwe toegewezen SQL-groep wilt maken, volgt u de stappen in de [Snelstartgids: een speciale SQL-groep maken](../quickstart-create-sql-pool-portal.md).
 
-## <a name="specify-streaming-output-to-point-to-your-data-warehouse"></a>Streaming-uitvoer opgeven zodat deze naar uw data warehouse verwijst
+## <a name="specify-streaming-output-to-point-to-your-dedicated-sql-pool"></a>Streaming-uitvoer opgeven zodat deze verwijst naar uw toegewezen SQL-groep
 
 ### <a name="step-1"></a>Stap 1
 
@@ -52,8 +52,8 @@ Voer de volgende waarden in:
 
 * *Uitvoer alias*: Voer een beschrijvende naam in voor deze taak uitvoer.
 * *Abonnement*:
-  * Als uw data warehouse zich in hetzelfde abonnement bevindt als de Stream Analytics taak, klikt u op ***Selecteer Azure Synapse Analytics van uw abonnementen** _.
-  _ Als uw data warehouse zich in een ander abonnement bevindt, klikt u op on hand matig Azure Synapse Analytics-instellingen opgeven.
+  * Als uw toegewezen SQL-groep zich in hetzelfde abonnement bevindt als de Stream Analytics taak, klikt u op ***Select Azure Synapse Analytics van uw abonnementen** _.
+  _ Als uw toegewezen SQL-groep zich in een ander abonnement bevindt, klikt u op on Azure Synapse Analytics-instellingen hand matig opgeven.
 * *Data Base*: Selecteer de doel database in de vervolg keuzelijst.
 * *Gebruikers naam*: Geef de gebruikers naam op van een account met schrijf machtigingen voor de data base.
 * *Wacht woord*: Geef het wacht woord op voor het opgegeven gebruikers account.
@@ -64,7 +64,7 @@ Voer de volgende waarden in:
 
 ### <a name="step-4"></a>Stap 4
 
-Voordat u een test kunt uitvoeren, moet u de tabel in uw data warehouse maken.  Voer het volgende script uit om de tabel te maken met behulp van SQL Server Management Studio (SSMS) of de keuze van een query programma.
+Voordat u een test kunt uitvoeren, moet u de tabel in uw toegewezen SQL-groep maken.  Voer het volgende script uit om de tabel te maken met behulp van SQL Server Management Studio (SSMS) of de keuze van een query programma.
 
 ```sql
 CREATE TABLE SensorLog
@@ -123,4 +123,4 @@ Klik op de knop _ *_Start_** in het deel venster taak starten.
 ## <a name="next-steps"></a>Volgende stappen
 
 Zie voor een overzicht van integratie [andere services integreren](sql-data-warehouse-overview-integrate.md).
-Zie [ontwerp beslissingen en coderings technieken voor data warehouses](sql-data-warehouse-overview-develop.md)voor meer tips voor ontwikkel aars.
+Zie [ontwerp beslissingen en coderings technieken voor exclusieve SQL-groep](sql-data-warehouse-overview-develop.md)voor meer tips voor ontwikkel aars.

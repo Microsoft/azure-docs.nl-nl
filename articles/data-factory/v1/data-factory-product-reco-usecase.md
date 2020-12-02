@@ -12,12 +12,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 3d9d41e80f78af7087c80592d927c193e494eab8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b458b8d76111db6b32d188d9784e56d7fae303b9
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89442391"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96456844"
 ---
 # <a name="use-case---product-recommendations"></a>Gebruiks voorbeeld-product aanbevelingen
 Azure Data Factory is een van de vele services die worden gebruikt voor het implementeren van de Cortana Intelligence Suite oplossings versnellers.  Zie [Cortana Intelligence Suite](https://www.microsoft.com/cortanaanalytics) -pagina voor meer informatie over deze suite. In dit document beschrijven we een algemene use-case die Azure-gebruikers al hebben opgelost en geïmplementeerd met Azure Data Factory en andere Cortana Intelligence-onderdeel Services.
@@ -41,7 +41,7 @@ Ten slotte moeten de detail handel de effectiviteit van hun aanpak meten door de
 ## <a name="solution-overview"></a>Overzicht van de oplossing
 Dit voor beeld is het gebruik van cases opgelost en geïmplementeerd door echte Azure-gebruikers met behulp van Azure Data Factory en andere Cortana Intelligence onderdeel Services, waaronder [HDInsight](https://azure.microsoft.com/services/hdinsight/) en [Power bi](https://powerbi.microsoft.com/).
 
-De online winkel maakt gebruik van een Azure Blob Store, een on-premises SQL Server, Azure SQL Database en een relationele data Mart als gegevens opslag opties in de werk stroom.  Het BLOB-archief bevat klant gegevens, gedrags gegevens van klant en gegevens over product gegevens. De gegevens van product informatie bevatten product informatie over het merk en een product catalogus die on-premises is opgeslagen in een Azure Synapse Analytics (voorheen SQL Data Warehouse). 
+De online winkel maakt gebruik van een Azure Blob Store, een on-premises SQL Server, Azure SQL Database en een relationele data Mart als gegevens opslag opties in de werk stroom.  Het BLOB-archief bevat klant gegevens, gedrags gegevens van klant en gegevens over product gegevens. De gegevens van product informatie bevatten product informatie over het merk en een product catalogus die on-premises is opgeslagen in een Azure Synapse-analyse. 
 
 Alle gegevens worden gecombineerd en gevoederd in een systeem voor product aanbevelingen voor het leveren van persoonlijke aanbevelingen op basis van interesses en acties van klanten, terwijl de gebruiker door producten in de catalogus op de website bladert. De klanten zien ook producten die verwant zijn aan het product dat ze bekijken op basis van de algemene gebruiks patronen van de website die niet zijn gerelateerd aan een gebruiker.
 

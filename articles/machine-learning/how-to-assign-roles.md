@@ -11,12 +11,12 @@ ms.author: nigup
 author: nishankgu
 ms.date: 11/09/2020
 ms.custom: how-to, seodec18, devx-track-azurecli, contperfq2
-ms.openlocfilehash: 8af3da5d04f9aaafc18299f4837660694ee34b51
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 0719f2d9200741798c798aca4b4196812f1229c9
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96345266"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96458440"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>De toegang tot een Azure Machine Learning-werkruimte beheren
 
@@ -27,7 +27,7 @@ In dit artikel leert u hoe u de toegang (autorisatie) beheert voor een Azure Mac
 >
 > * [Toegang tot Azure Kubernetes-cluster resources beheren](../aks/azure-ad-rbac.md)
 > * [Azure RBAC gebruiken voor Kubernetes-autorisatie](../aks/manage-azure-rbac.md)
-> * [Azure RBAC gebruiken voor toegang tot BLOB-gegevens](/azure/storage/common/storage-auth-aad-rbac-portal)
+> * [Azure RBAC gebruiken voor toegang tot BLOB-gegevens](../storage/common/storage-auth-aad-rbac-portal.md)
 
 > [!WARNING]
 > Het Toep assen van sommige functies kan de functionaliteit van de gebruikers interface in Azure Machine Learning Studio beperken voor andere gebruikers. Als de rol van een gebruiker bijvoorbeeld niet de mogelijkheid heeft om een reken instantie te maken, is de optie voor het maken van een reken instantie niet beschikbaar in Studio. Dit gedrag wordt verwacht en voor komt dat de gebruiker probeert bewerkingen uit te voeren die een fout bericht krijgen dat de toegang is geweigerd.
@@ -55,7 +55,7 @@ Als u eigenaar bent van een werk ruimte, kunt u rollen toevoegen en verwijderen 
 - [PowerShell](../role-based-access-control/role-assignments-powershell.md)
 - [Azure-CLI](../role-based-access-control/role-assignments-cli.md)
 - [REST API](../role-based-access-control/role-assignments-rest.md)
-- [Azure Resource Manager sjablonen](../role-based-access-control/role-assignments-template.md)
+- [Azure Resource Manager-sjablonen](../role-based-access-control/role-assignments-template.md)
 
 Als u de [Azure machine learning cli](reference-azure-machine-learning-cli.md)hebt geïnstalleerd, kunt u de CLI-opdrachten gebruiken om rollen toe te wijzen aan gebruikers:
 

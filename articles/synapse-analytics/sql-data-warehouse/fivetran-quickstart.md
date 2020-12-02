@@ -1,6 +1,6 @@
 ---
-title: 'Quick Start: Fivetran en Data Warehouse'
-description: Ga aan de slag met Fivetran en een Azure Synapse Analytics-Data Warehouse.
+title: 'Snelstartgids: Fivetran en toegewezen SQL-pool (voorheen SQL DW)'
+description: Ga aan de slag met Fivetran en toegewezen SQL-pool (voorheen SQL DW) in azure Synapse Analytics.
 services: synapse-analytics
 author: mlee3gsd
 manager: craigg
@@ -11,22 +11,22 @@ ms.date: 10/12/2018
 ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 96e679c0b284cc649dbde3fba1b640f4e09df05e
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f332c3b0bd53d80d4a8471f53c56ecab611787c1
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96001844"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96456375"
 ---
-# <a name="quickstart-fivetran-with-data-warehouse"></a>Quick Start: Fivetran met Data Warehouse 
+# <a name="quickstart-fivetran-with-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Quick Start: Fivetran met toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics 
 
-In deze Quick Start wordt beschreven hoe u een nieuwe Fivetran-gebruiker instelt voor gebruik met een Azure Synapse Analytics-Data Warehouse dat is ingericht met een SQL-groep. In het artikel wordt ervan uitgegaan dat u een bestaand Data Warehouse hebt.
+In deze Quick Start wordt beschreven hoe u een nieuwe Fivetran-gebruiker instelt voor gebruik met een toegewezen SQL-groep (voorheen SQL DW). In dit artikel wordt ervan uitgegaan dat u een bestaande, toegewezen SQL-groep hebt (voorheen SQL DW).
 
 ## <a name="set-up-a-connection"></a>Een verbinding instellen
 
-1. Zoek de volledig gekwalificeerde server naam en database naam die u gebruikt om verbinding te maken met uw data warehouse.
+1. Zoek de volledig gekwalificeerde server naam en database naam die u gebruikt om verbinding te maken met uw toegewezen SQL-groep (voorheen SQL DW).
     
-    Als u hulp nodig hebt bij het vinden van deze informatie, raadpleegt u [verbinding maken met uw data warehouse](../sql/connect-overview.md).
+    Zie [verbinding maken met uw toegewezen SQL-groep (voorheen SQL DW)](sql-data-warehouse-connection-strings.md)als u hulp nodig hebt bij het vinden van deze informatie.
 
 2. Kies in de installatie wizard of u rechtstreeks verbinding wilt maken met uw data base of met behulp van een SSH-tunnel.
 
@@ -34,13 +34,13 @@ In deze Quick Start wordt beschreven hoe u een nieuwe Fivetran-gebruiker instelt
 
    Als u ervoor kiest om verbinding te maken via een SSH-tunnel, maakt Fivetran verbinding met een afzonderlijke server in uw netwerk. De server biedt een SSH-tunnel voor uw data base. U moet deze methode gebruiken als uw data base zich in een niet-toegankelijk subnet in een virtueel netwerk bevindt.
 
-3. Voeg het IP-adres **52.0.2.4** toe aan de firewall op server niveau voor het toestaan van binnenkomende verbindingen met uw data warehouse-instantie van Fivetran.
+3. Voeg het IP-adres **52.0.2.4** toe aan de firewall op server niveau zodat binnenkomende verbindingen met uw toegewezen SQL-groep (voorheen SQL DW) van Fivetran worden toegestaan.
 
    Zie [Een serverfirewallregel maken](create-data-warehouse-portal.md#create-a-server-level-firewall-rule) voor meer informatie.
 
 ## <a name="set-up-user-credentials"></a>Gebruikers referenties instellen
 
-1. Maak verbinding met uw data warehouse met behulp van SQL Server Management Studio (SSMS) of het hulp programma dat u wilt gebruiken. Meld u aan als een server beheerder gebruiker. Voer vervolgens de volgende SQL-opdrachten uit om een gebruiker te maken voor Fivetran:
+1. Maak verbinding met uw toegewezen SQL-groep (voorheen SQL DW) met behulp van SQL Server Management Studio (SSMS) of het hulp programma dat u wilt gebruiken. Meld u aan als een server beheerder gebruiker. Voer vervolgens de volgende SQL-opdrachten uit om een gebruiker te maken voor Fivetran:
 
     - In de hoofd database: 
     
@@ -48,7 +48,7 @@ In deze Quick Start wordt beschreven hoe u een nieuwe Fivetran-gebruiker instelt
       CREATE LOGIN fivetran WITH PASSWORD = '<password>'; 
       ```
 
-    - In de Data Warehouse-Data Base:
+    - In de toegewezen SQL-groep (voorheen SQL DW) Data Base:
 
       ```sql
       CREATE USER fivetran_user_without_login without login;
@@ -56,7 +56,7 @@ In deze Quick Start wordt beschreven hoe u een nieuwe Fivetran-gebruiker instelt
       GRANT IMPERSONATE on USER::fivetran_user_without_login to fivetran;
       ```
 
-2. Ken de Fivetran-gebruiker de volgende machtigingen toe aan uw data warehouse:
+2. Ken de Fivetran-gebruiker de volgende machtigingen toe aan uw toegewezen SQL-groep (voorheen SQL DW):
 
     ```sql
     GRANT CONTROL to fivetran;
@@ -77,7 +77,7 @@ In deze Quick Start wordt beschreven hoe u een nieuwe Fivetran-gebruiker instelt
 
 ## <a name="connect-from-fivetran"></a>Verbinding maken vanaf Fivetran
 
-Als u vanuit uw Fivetran-account verbinding wilt maken met uw data warehouse, voert u de referenties in die u gebruikt om toegang te krijgen tot uw data warehouse: 
+Als u verbinding wilt maken met uw toegewezen SQL-groep (voorheen SQL DW) vanuit uw Fivetran-account, voert u de referenties in die u gebruikt om toegang te krijgen tot uw toegewezen SQL-groep (voorheen SQL DW): 
 
 * Host (uw server naam).
 * Importeer.

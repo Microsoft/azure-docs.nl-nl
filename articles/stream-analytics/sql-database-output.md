@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/25/2020
-ms.openlocfilehash: 9d5ddb508740cf5fec670d258926419512e3d549
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: ac2c9cb1710c4b4f67ba2aa06707d08cc45d4907
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93129827"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96459245"
 ---
 # <a name="azure-sql-database-output-from-azure-stream-analytics"></a>Azure SQL Database uitvoer van Azure Stream Analytics
 
@@ -35,11 +35,11 @@ De volgende tabel bevat de namen van de eigenschappen en de bijbehorende beschri
 |Partitie schema overnemen| Een optie voor het overnemen van het partitie schema van uw vorige query stap, om een volledig parallelle topologie met meerdere schrijvers voor de tabel in te scha kelen. Zie [Azure stream Analytics uitvoer naar Azure SQL database](stream-analytics-sql-output-perf.md)voor meer informatie.|
 |Maximum aantal batches| De aanbevolen bovengrens voor het aantal records dat wordt verzonden met elke bulksgewijze insert-trans actie.|
 
-Er zijn twee adapters die uitvoer van Azure Stream Analytics naar Azure Synapse Analytics (voorheen SQL Data Warehouse): SQL Database en Azure Synapse. Als een van de volgende voor waarden van toepassing is, kunt u het beste de Azure Synapse Analytics-adapter kiezen in plaats van de SQL Database adapter:
+Er zijn twee adapters die uitvoer van Azure Stream Analytics naar Azure Synapse Analytics: SQL Database en Azure Synapse. Als een van de volgende voor waarden van toepassing is, kunt u het beste de Azure Synapse Analytics-adapter kiezen in plaats van de SQL Database adapter:
 
-* **Door Voer** : als de verwachte door Voer nu of in de toekomst groter is dan 10 MB per seconde, gebruikt u de Azure Synapse-uitvoer optie voor betere prestaties.
+* **Door Voer**: als de verwachte door Voer nu of in de toekomst groter is dan 10 MB per seconde, gebruikt u de Azure Synapse-uitvoer optie voor betere prestaties.
 
-* **Invoer partities** : als u acht of meer invoer partities hebt, gebruikt u de Azure Synapse-uitvoer optie voor beter uitschalen.
+* **Invoer partities**: als u acht of meer invoer partities hebt, gebruikt u de Azure Synapse-uitvoer optie voor beter uitschalen.
 
 ## <a name="partitioning"></a>Partitionering
 
@@ -47,7 +47,7 @@ Partitioneren moet zijn ingeschakeld en is gebaseerd op de component PARTITION B
 
 ## <a name="output-batch-size"></a>Grootte van uitvoer batch
 
-U kunt de maximale bericht grootte configureren met behulp van **maximum aantal batches** . De standaard waarde is 10.000 en de minimale standaard waarde is 100 rijen per afzonderlijke bulk invoer. Zie [Azure SQL-limieten](../azure-sql/database/resource-limits-logical-server.md)voor meer informatie. Elke batch wordt in eerste instantie bulksgewijs ingevoegd met een maximum aantal batches. Batch is gesplitst in tweeën (totdat het minimale aantal batches is) op basis van Herhaal bare fouten van SQL.
+U kunt de maximale bericht grootte configureren met behulp van **maximum aantal batches**. De standaard waarde is 10.000 en de minimale standaard waarde is 100 rijen per afzonderlijke bulk invoer. Zie [Azure SQL-limieten](../azure-sql/database/resource-limits-logical-server.md)voor meer informatie. Elke batch wordt in eerste instantie bulksgewijs ingevoegd met een maximum aantal batches. Batch is gesplitst in tweeën (totdat het minimale aantal batches is) op basis van Herhaal bare fouten van SQL.
 
 ## <a name="next-steps"></a>Volgende stappen
 

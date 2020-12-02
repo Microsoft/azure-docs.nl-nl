@@ -9,14 +9,14 @@ ms.subservice: synapse-link
 ms.date: 04/21/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 3434953de3460d3eff066768474f03aa0e14165e
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 0e4bcc13a2eaddbf394d8468b29eeff475119e2d
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96004990"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96459026"
 ---
-# <a name="connect-to-azure-synapse-link-preview-for-azure-cosmos-db"></a>Verbinding maken met Azure Synapse Link (preview) voor Azure Cosmos DB
+# <a name="connect-to-azure-synapse-link-for-azure-cosmos-db"></a>Verbinding maken met Azure Synapse Link voor Azure Cosmos DB
 
 In dit artikel wordt beschreven hoe u toegang krijgt tot een Azure Cosmos DB-database vanuit Azure Synapse Analytics Studio met behulp van Azure Synapse Link.
 

@@ -1,30 +1,30 @@
 ---
-title: Aanbevolen procedures voor het laden van gegevens voor de SQL-groep Synapse
-description: Aanbevelingen en prestatie optimalisaties voor het laden van gegevens met behulp van de Synapse SQL-pool.
+title: Aanbevolen procedures voor het laden van gegevens voor toegewezen SQL-groepen
+description: Aanbevelingen en prestatie optimalisaties voor het laden van gegevens met behulp van exclusieve SQL-groepen in azure Synapse Analytics.
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
-ms.date: 02/04/2020
+ms.date: 11/20/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 34a536ea535fa222340bd004253ee54b9c13bea9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 39625914f179dfc8d5511b9a3d386cc8332b7efa
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89441218"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96456298"
 ---
-# <a name="best-practices-for-loading-data-using-synapse-sql-pool"></a>Aanbevolen procedures voor het laden van gegevens met behulp van de Synapse SQL-pool
+# <a name="best-practices-for-loading-data-using-dedicated-sql-pools-in-azure-synapse-analytics"></a>Aanbevolen procedures voor het laden van gegevens met behulp van exclusieve SQL-groepen in azure Synapse Analytics
 
-In dit artikel leert u aanbevelingen en prestatie optimalisaties voor het laden van gegevens met behulp van de SQL-groep.
+In dit artikel leert u aanbevelingen en prestatie optimalisaties voor het laden van gegevens met een exclusieve SQL-groep.
 
 ## <a name="preparing-data-in-azure-storage"></a>Gegevens voorbereiden in Azure Storage
 
-Als u de latentie wilt minimaliseren, gaat u naar uw opslaglaag en uw SQL-groep.
+Als u de latentie wilt minimaliseren, gaat u naar uw opslaglaag en uw toegewezen SQL-groep.
 
 Bij het exporteren van gegevens in een ORC-bestandsindeling kunnen er Java-geheugenfouten optreden wanneer er grote tekstkolommen zijn. U kunt deze beperking omzeilen door slechts een subset van de kolommen te exporteren.
 
@@ -34,7 +34,7 @@ Splits grote gecomprimeerde bestanden in kleinere gecomprimeerde bestanden.
 
 ## <a name="running-loads-with-enough-compute"></a>Laadtaken uitvoeren met voldoende rekenkracht
 
-Voer voor de hoogste laadsnelheid slechts één taak tegelijk uit. Als dat niet het geval is, voert u tegelijkertijd een mini maal aantal loads uit. Als u een grote laad taak verwacht, kunt u de SQL-groep vóór de belasting verg Roten of verkleinen.
+Voer voor de hoogste laadsnelheid slechts één taak tegelijk uit. Als dat niet het geval is, voert u tegelijkertijd een mini maal aantal loads uit. Als u een grote laad taak verwacht, kunt u overwegen om uw toegewezen SQL-groep vóór de belasting te schalen.
 
 Als u loads wilt uitvoeren met geschikte rekenresources, maakt u gebruikers voor het laadproces die zijn aangewezen voor het uitvoeren van loads. Classificeer elke laad gebruiker naar een specifieke werkbelasting groep. Als u een belasting wilt uitvoeren, meldt u zich aan als een van de laad gebruikers en voert u de belasting uit. De belasting wordt uitgevoerd met de werkbelasting groep van de gebruiker.  
 
@@ -47,10 +47,10 @@ In dit voor beeld wordt een door een gebruiker geclassificeerde belasting gemaak
    CREATE LOGIN loader WITH PASSWORD = 'a123STRONGpassword!';
 ```
 
-Verbinding maken met de SQL-groep en een gebruiker aanmaken. In de volgende code wordt ervan uitgegaan dat u bent verbonden met de data base met de naam mySampleDataWarehouse. Hier ziet u hoe u een gebruiker met de naam loader maakt en de gebruiker machtigingen geeft om tabellen te maken en te laden met behulp van de [instructie Copy](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest). Vervolgens wordt de gebruiker geclassificeerd met de werkbelasting groep DataLoads met het maximum aantal resources. 
+Verbinding maken met de toegewezen SQL-groep en een gebruiker aanmaken. In de volgende code wordt ervan uitgegaan dat u bent verbonden met de data base met de naam mySampleDataWarehouse. Hier ziet u hoe u een gebruiker met de naam loader maakt en de gebruiker machtigingen geeft om tabellen te maken en te laden met behulp van de [instructie Copy](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest). Vervolgens wordt de gebruiker geclassificeerd met de werkbelasting groep DataLoads met het maximum aantal resources. 
 
 ```sql
-   -- Connect to the SQL pool
+   -- Connect to the dedicated SQL pool
    CREATE USER loader FOR LOGIN loader;
    GRANT ADMINISTER DATABASE BULK OPERATIONS TO loader;
    GRANT INSERT ON <yourtablename> TO loader;
@@ -76,7 +76,7 @@ Als u een belasting wilt uitvoeren met resources voor de werkbelasting groep lad
 
 ## <a name="allowing-multiple-users-to-load-polybase"></a>Meerdere gebruikers toestaan om te laden (poly base)
 
-Er zijn vaak meerdere gebruikers nodig om gegevens in een SQL-groep te laden. Bij het laden met de [Create Table als Select (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (poly base) zijn machtigingen vereist van de-data base.  De CONTROL-machtiging biedt beheertoegang tot alle schema's.
+Het is vaak nood zakelijk dat meerdere gebruikers gegevens laden naar een toegewezen SQL-groep. Bij het laden met de [Create Table als Select (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (poly base) zijn machtigingen vereist van de-data base.  De CONTROL-machtiging biedt beheertoegang tot alle schema's.
 
 Mogelijk wilt u niet alle gebruikers die laadtaken uitvoeren, beheertoegang tot alle schema's verlenen. Als u machtigingen wilt beperken, kunt u de instructie DENY CONTROL gebruiken.
 
@@ -91,9 +91,9 @@ User_A en user_B zijn nu uitgesloten van het schema van de andere afdeling.
 
 ## <a name="loading-to-a-staging-table"></a>Laden naar een faseringstabel
 
-Als u de snelste laad snelheid voor het verplaatsen van gegevens naar een SQL-groeps tabel wilt verzorgen, laadt u gegevens in een faserings tabel.  Definieer de faseringstabel als een heap en gebruik round-robin voor de distributieoptie.
+Als u de snelste laad snelheid voor het verplaatsen van gegevens naar een exclusieve SQL-groeps tabel wilt verzorgen, laadt u gegevens in een faserings tabel.  Definieer de faseringstabel als een heap en gebruik round-robin voor de distributieoptie.
 
-Houd er rekening mee dat laden meestal een proces in twee stappen is waarin u eerst naar een faserings tabel laadt en vervolgens de gegevens invoegt in een tabel van een SQL-groep voor productie. Als de productietabel een hash-distributiepunt gebruikt, is de totale tijd voor het laden en invoegen mogelijk sneller als u de faseringstabel met de hash-distributie definieert.
+Houd er rekening mee dat laden meestal een proces in twee stappen is waarin u eerst naar een faserings tabel laadt en vervolgens de gegevens invoegt in een tabel met een toegewezen SQL-groep voor productie. Als de productietabel een hash-distributiepunt gebruikt, is de totale tijd voor het laden en invoegen mogelijk sneller als u de faseringstabel met de hash-distributie definieert.
 
 Het laden naar de faseringstabel duurt langer, maar de tweede stap van het invoegen van de rijen in de productietabel leidt niet tot de verplaatsing van gegevens in de distributies.
 
@@ -111,7 +111,7 @@ Bij geheugenbelasting kan het zijn dat de columnstore-index de maximale compress
 
 ## <a name="increase-batch-size-when-using-sqlbulkcopy-api-or-bcp"></a>Batch grootte verg Roten bij gebruik van SqLBulkCopy-API of BCP
 
-Bij het laden met de instructie COPY wordt de hoogste door Voer met de SQL-groep geboden. Als u de te laden kopie niet kunt gebruiken en u de [SqLBulkCopy-API](/dotnet/api/system.data.sqlclient.sqlbulkcopy?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) of [bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)moet gebruiken, kunt u overwegen om de Batch grootte te verg Roten voor een betere door voer.
+Het laden met de instructie COPY biedt de hoogste door Voer met toegewezen SQL-groepen. Als u de te laden kopie niet kunt gebruiken en u de [SqLBulkCopy-API](/dotnet/api/system.data.sqlclient.sqlbulkcopy?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) of [bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)moet gebruiken, kunt u overwegen om de Batch grootte te verg Roten voor een betere door voer.
 
 > [!TIP]
 > Een batch grootte tussen 100 K en 1M rijen is de aanbevolen basis lijn voor het bepalen van de optimale grootte van de batch capaciteit.

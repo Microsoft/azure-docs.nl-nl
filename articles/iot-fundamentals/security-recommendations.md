@@ -12,12 +12,12 @@ ms.custom:
 - security-recommendations
 - amqp
 - mqtt
-ms.openlocfilehash: 5a7fc2a5a5a6be7695fa816f28e3cdf61c5839f2
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: a1de3a71253b1a82b4423bff279fbf3f7e378da4
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92208262"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96457611"
 ---
 # <a name="security-recommendations-for-azure-internet-of-things-iot-deployment"></a>Beveiligings aanbevelingen voor de implementatie van Azure Internet of Things (IoT)
 
@@ -40,7 +40,7 @@ Enkele van de aanbevelingen in dit artikel kunnen automatisch worden bewaakt doo
 
 | Aanbeveling | Opmerkingen | Ondersteund door ASC |
 |-|----|--|
-| Toegangs beheer voor de hub bepalen | [Begrijp en definieer het type toegang](iot-security-deployment.md#securing-the-cloud) dat elk onderdeel in uw IOT hub oplossing heeft, op basis van de functionaliteit. De toegestane machtigingen zijn *REGI ster lezen*, *RegistryReadWrite*, *ServiceConnect*en *DeviceConnect*. Standaard [beleid voor gedeelde toegang in uw IOT-hub](../iot-hub/iot-hub-devguide-security.md#access-control-and-permissions) kan ook helpen bij het definiëren van de machtigingen voor elk onderdeel op basis van de bijbehorende rol. | - |
+| Toegangs beheer voor de hub bepalen | [Begrijp en definieer het type toegang](iot-security-deployment.md#securing-the-cloud) dat elk onderdeel in uw IOT hub oplossing heeft, op basis van de functionaliteit. De toegestane machtigingen zijn *REGI ster lezen*, *RegistryReadWrite*, *ServiceConnect* en *DeviceConnect*. Standaard [beleid voor gedeelde toegang in uw IOT-hub](../iot-hub/iot-hub-devguide-security.md#access-control-and-permissions) kan ook helpen bij het definiëren van de machtigingen voor elk onderdeel op basis van de bijbehorende rol. | - |
 | Toegangs beheer voor back-end-services bepalen | Gegevens die door uw IoT Hub-oplossing zijn opgenomen, kunnen worden gebruikt door andere Azure-Services, zoals [Cosmos DB](../cosmos-db/index.yml), [Stream Analytics](../stream-analytics/index.yml), [app service](../app-service/index.yml), [Logic apps](../logic-apps/index.yml)en [Blob-opslag](../storage/blobs/storage-blobs-introduction.md). Zorg ervoor dat u de juiste toegangs machtigingen begrijpt en toestaat, zoals gedocumenteerd voor deze services. | - |
 
 ## <a name="data-protection"></a>Gegevensbeveiliging
@@ -63,8 +63,8 @@ Enkele van de aanbevelingen in dit artikel kunnen automatisch worden bewaakt doo
 | Aanbeveling | Opmerkingen | Ondersteund door ASC |
 |-|----|--|
 | Onbevoegde toegang tot uw apparaten controleren |  De logboek functie van het besturings systeem van het apparaat gebruiken om inbreuken op de beveiliging of fysieke manipulatie van het apparaat of de poorten te controleren. | - |
-| Uw IoT-oplossing bewaken vanuit de Cloud | Bewaak de algehele status van uw IoT Hub oplossing met behulp [van de metrische gegevens in azure monitor](../iot-hub/iot-hub-metrics.md). | - |
-| Diagnostische gegevens instellen | Bekijk nauw keurig uw bewerkingen door gebeurtenissen in uw oplossing te registreren en vervolgens de diagnostische logboeken naar Azure Monitor te verzenden om inzicht te krijgen in de prestaties. Lees [monitor en diagnose problemen in uw IOT-hub](../iot-hub/iot-hub-monitor-resource-health.md) voor meer informatie. | - |
+| Uw IoT-oplossing bewaken vanuit de Cloud | Bewaak de algehele status van uw IoT Hub oplossing met behulp [van de metrische gegevens in azure monitor](../iot-hub/monitor-iot-hub.md). | - |
+| Diagnostische gegevens instellen | Bekijk nauw keurig uw bewerkingen door gebeurtenissen in uw oplossing te registreren en vervolgens de diagnostische logboeken naar Azure Monitor te verzenden om inzicht te krijgen in de prestaties. Lees [monitor en diagnose problemen in uw IOT-hub](../iot-hub/monitor-iot-hub.md) voor meer informatie. | - |
 
 ## <a name="next-steps"></a>Volgende stappen
 

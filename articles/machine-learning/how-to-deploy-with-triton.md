@@ -11,12 +11,12 @@ ms.date: 09/23/2020
 ms.topic: conceptual
 ms.reviewer: larryfr
 ms.custom: deploy, devx-track-azurecli
-ms.openlocfilehash: 8e479367a04e105ae2111ce66707999aff7ef960
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: b47b8f9d9429f38fb8b5da6d8f9083736f230fcb
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96302460"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96458273"
 ---
 # <a name="high-performance-serving-with-triton-inference-server-preview"></a>Hoge prestaties met een Triton-inrichtings server (preview-versie) 
 
@@ -53,7 +53,7 @@ Voordat u Triton voor uw eigen model probeert te gebruiken, is het belang rijk o
 
 ### <a name="setting-the-number-of-workers"></a>Het aantal werk rollen instellen
 
-Stel de omgevings variabele in om het aantal werk nemers in uw implementatie in te stellen `WORKER_COUNT` . Als u een [omgevings](/python/api/azureml-core/azureml.core.environment.environment?view=azure-ml-py&preserve-view=true) object hebt aangeroepen `env` , kunt u het volgende doen:
+Stel de omgevings variabele in om het aantal werk nemers in uw implementatie in te stellen `WORKER_COUNT` . Als u een [omgevings](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py) object hebt aangeroepen `env` , kunt u het volgende doen:
 
 ```{py}
 env.environment_variables["WORKER_COUNT"] = "1"
@@ -180,7 +180,7 @@ model = Model.register(
     workspace=ws
 ```
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 ```azurecli
 az ml model register --model-path='triton' \
@@ -283,7 +283,7 @@ print(local_service.state)
 print(local_service.scoring_uri)
 ```
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 > [!TIP]
 > Zie voor meer informatie over het maken van een Afleidings configuratie het [schema](./reference-azure-machine-learning-cli.md#inference-configuration-schema)voor het afstellen van interferentie.

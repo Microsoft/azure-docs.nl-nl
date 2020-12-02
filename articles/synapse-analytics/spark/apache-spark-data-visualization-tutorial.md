@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.subservice: machine-learning
 ms.date: 10/20/2020
 ms.author: midesa
-ms.openlocfilehash: 820dd8b607f5ec2fdc44d25063e0a941f76237ad
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8735514b639cb0322a83ffb19d661027327c0f73
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919744"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96458774"
 ---
 # <a name="analyze-data-with-apache-spark"></a>Gegevens analyseren met Apache Spark
 
@@ -99,7 +99,7 @@ Naast de ingebouwde opties voor notitieblok grafieken kunt u ook populaire open-
 
 > [!Note]
 > 
-> Elke Azure Synapse Analytics-Apache Spark groep bevat standaard een set veelgebruikte en standaard bibliotheken. U kunt de volledige lijst met bibliotheken weer geven in [Azure Synapse runtime](../spark/apache-spark-version-support.md). documentatie. Daarnaast kunt u, om derden of lokaal gemaakte code beschikbaar te maken voor uw toepassingen, [een bibliotheek installeren](../spark/apache-spark-azure-portal-add-libraries.md) op een van uw Spark-Pools (preview-versie).
+> Elke Azure Synapse Analytics-Apache Spark groep bevat standaard een set veelgebruikte en standaard bibliotheken. U kunt de volledige lijst met bibliotheken weer geven in [Azure Synapse runtime](../spark/apache-spark-version-support.md). documentatie. Daarnaast kunt u [een bibliotheek](../spark/apache-spark-azure-portal-add-libraries.md) op een van de Spark-Pools installeren om derden of lokaal gemaakte code beschikbaar te maken voor uw toepassingen.
 >
 
 1. Om de ontwikkeling eenvoudiger en goedkoperer te maken, wordt de gegevensset ook voor beelden weer geven. We gebruiken de ingebouwde Apache Spark sampling-mogelijkheid. Daarnaast is voor zowel Seaborn als matplotlib een Panda data frame-of numpy-matrix vereist. Om een Panda data frame te verkrijgen, gebruiken we de ```toPandas()``` opdracht om onze data frame te converteren.

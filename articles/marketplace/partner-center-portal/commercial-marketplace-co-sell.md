@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: palanis-MSFT
 ms.author: palanis
 ms.date: 10/28/2020
-ms.openlocfilehash: 2a648b4f4c614fc64fa7817102215720e51abe7f
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: d303a5d5b9779a2003b12d063c97c36a90576dd3
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93095595"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96456634"
 ---
 # <a name="co-sell-option-in-partner-center"></a>Optie voor collectieve verkoop in Partnercentrum
 
@@ -20,7 +20,7 @@ Het is volledig optioneel om informatie op het tabblad samen verkopen op te geve
 
 De optie voor co-selling in Partner Center is momenteel beschikbaar voor sommige aanbiedings typen. Ondersteuning voor aanvullende aanbiedings typen wordt na verloop van tijd beschikbaar gesteld.
 
-| **Aanbiedings type** | **Pagina voor co-sell beschikbaar in partner centrum** |
+| **Type aanbieding** | **Pagina voor co-sell beschikbaar in partner centrum** |
 |    -----------------------    |    -----------------------------  |
 | Software as a Service (SaaS) |      Nu verkrijgbaar      |
 | Dynamics 365 voor klant betrokkenheid & PowerApps      |     Nu verkrijgbaar      |
@@ -83,10 +83,10 @@ U kunt uw contact personen opgeven door de CSV-sjabloon te downloaden van het pa
 
 U kunt ook uw bestaande lijst met contact personen van een aanbieding exporteren en vervolgens wijzigingen aanbrengen in dat bestand.
 
-* *Naam (vereist)* : de naam van de contact persoon.
-* *E-mail adres (vereist)* : het e-mail adres van de contact persoon.
-* *Taak titel (vereist)* : functie titel.
-* *Rol (vereist)* : gebruik een van de volgende rollen.
+* *Naam (vereist)*: de naam van de contact persoon.
+* *E-mail adres (vereist)*: het e-mail adres van de contact persoon.
+* *Taak titel (vereist)*: functie titel.
+* *Rol (vereist)*: gebruik een van de volgende rollen.
 
     | **Role**    | **Beschrijving**  |
     | :------------------- | :-------------------|
@@ -108,7 +108,7 @@ Het referentie architectuur diagram is een model dat de infra structuur vertegen
 
 Het document kan worden gemaakt via meerdere hulpprogram ma's. Micro soft Visio wordt aangeraden, omdat het meerdere stencils bevat die Azure-architectuur modellen weer gegeven.
 
-Een handig uitgangs punt voor het bouwen van referentie architectuur diagrammen is het gebruik van de [Azure Architecture-modellen](https://docs.microsoft.com/azure/architecture/browse/).
+Een handig uitgangs punt voor het bouwen van referentie architectuur diagrammen is het gebruik van de [Azure Architecture-modellen](/azure/architecture/browse/).
 
 ### <a name="typical-components-of-a-reference-architecture-diagram"></a>Typische onderdelen van een referentie architectuur diagram
 - Cloud Services die uw aanbieding hosten en ermee werken, waaronder het genereren van Azure-verbruik

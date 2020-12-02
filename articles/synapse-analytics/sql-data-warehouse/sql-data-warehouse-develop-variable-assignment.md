@@ -1,30 +1,30 @@
 ---
 title: Variabelen toewijzen
-description: In dit artikel vindt u essentiële tips voor het toewijzen van T-SQL-variabelen in de SQL-groep.
+description: In dit artikel vindt u belang rijke tips voor het toewijzen van T-SQL-variabelen voor toegewezen SQL-groepen in azure Synapse Analytics.
 services: synapse-analytics
-author: XiaoyuMSFT
+author: MSTehrani
 manager: craigg
 ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: sql-dw
 ms.date: 04/17/2018
-ms.author: xiaoyul
+ms.author: emtehran
 ms.reviewer: igorstan
-ms.custom: seo-lt-2019
-ms.openlocfilehash: 0cbadc10fb817c70bd259397c840aae68abc2d54
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: seo-lt-2019, azure-synapse
+ms.openlocfilehash: 87448ea737c11af13a52632e5bf4f67dc54d9ae3
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85213326"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96459227"
 ---
-# <a name="assign-variables-in-synapse-sql-pool"></a>Variabelen toewijzen in de SQL-groep Synapse
+# <a name="assign-variables-for-dedicated-sql-pools-in-azure-synapse-analytics"></a>Variabelen toewijzen voor toegewezen SQL-groepen in azure Synapse Analytics
 
-In dit artikel vindt u essentiële tips voor het toewijzen van T-SQL-variabelen in de SQL-groep.
+In dit artikel vindt u essentiële tips voor het toewijzen van T-SQL-variabelen in een toegewezen SQL-groep.
 
 ## <a name="set-variables-with-declare"></a>Variabelen instellen met DECLAReren
 
-Variabelen in de SQL-groep worden ingesteld met behulp van de `DECLARE` instructie of de `SET` instructie. Initialisatie van variabelen met DECLAReren is een van de meest flexibele manieren om een variabele waarde in de SQL-groep in te stellen.
+Variabelen in een toegewezen SQL-groep worden ingesteld met behulp van de `DECLARE` instructie of de `SET` instructie. Initialisatie van variabelen met DECLAReren is een van de meest flexibele manieren om een variabele waarde in de SQL-groep in te stellen.
 
 ```sql
 DECLARE @v  int = 0

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 24c2fe9b6bbb0b5a40edd395bfe669abfc8c9adc
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 0ab0e64d9a088a332ba037dccf01dc445998ebfb
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183172"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96457560"
 ---
 # <a name="azure-analysis-services-samples"></a>Azure Analysis Services-voor beelden
 
@@ -28,7 +28,7 @@ De [Analysis Services](https://github.com/Microsoft/Analysis-Services) opslag pl
 
 ## <a name="sample-database-on-azure"></a>Voorbeeld database in azure
 
-Azure Synapse Analytics (voorheen SQL Data Warehouse) biedt een voor beeld van een AdventureWorksDW-data base die kan worden opgenomen in een ingerichte resource. Zie [Quick Start: een toegewezen SQL-groep maken en een query uitvoeren in azure Synapse Analytics ](../synapse-analytics/sql-data-warehouse/create-data-warehouse-portal.md)voor meer informatie.
+Azure Synapse Analytics biedt een voor beeld van een AdventureWorksDW-data base die kan worden opgenomen in een ingerichte resource. Zie [Quick Start: een toegewezen SQL-groep maken en een query uitvoeren in azure Synapse Analytics ](../synapse-analytics/sql-data-warehouse/create-data-warehouse-portal.md)voor meer informatie.
 
 ## <a name="sample-databases-on-github"></a>Voorbeeld databases op GitHub
 

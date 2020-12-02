@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: pafarley
-ms.openlocfilehash: 5c8af8ddb7a0870de37b73cbe09965ee63c88ba1
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: eb1be4c78be0eb7fb943700b168fa82ede4d3861
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353745"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96458385"
 ---
 # <a name="form-recognizer-prebuilt-invoice-model"></a>Vooraf gebouwd factuur model voor formulier herkenning
 
@@ -45,7 +45,7 @@ U hebt een Azure-abonnement nodig ([Maak er een gratis](https://azure.microsoft.
 
 ## <a name="the-analyze-invoice-operation"></a>De bewerking factuur analyseren
 
-Met de bewerking voor het [analyseren van facturen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/AnalyzeInvoiceAsync) wordt een afbeelding of PDF van een factuur als invoer gebruikt en worden de waarden van de rente opgehaald. De aanroep retourneert een veld met een antwoord header met de naam `Operation-Location` . De `Operation-Location` waarde is een URL die de resultaat-id bevat die in de volgende stap moet worden gebruikt.
+Met de bewerking voor het [analyseren van facturen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/5ed8c9843c2794cbb1a96291) wordt een afbeelding of PDF van een factuur als invoer gebruikt en worden de waarden van de rente opgehaald. De aanroep retourneert een veld met een antwoord header met de naam `Operation-Location` . De `Operation-Location` waarde is een URL die de resultaat-id bevat die in de volgende stap moet worden gebruikt.
 
 |Reactie header| Resultaten-URL |
 |:-----|:----|
@@ -53,7 +53,7 @@ Met de bewerking voor het [analyseren van facturen](https://westcentralus.dev.co
 
 ## <a name="the-get-analyze-invoice-result-operation"></a>De resultaat bewerking analyse van factuur ophalen
 
-De tweede stap bestaat uit het aanroepen van de bewerking [analyse van factuur resultaat ophalen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/GetAnalyzeInvoiceResult) . Met deze bewerking wordt de resultaat-ID gebruikt die is gemaakt door de bewerking voor het analyseren van een factuur. Er wordt een JSON-antwoord geretourneerd dat een **status** veld met de volgende mogelijke waarden bevat. U roept deze bewerking iteratief aan tot deze met de **geslaagde** waarde wordt geretourneerd. Gebruik een interval van 3 tot 5 seconden om te voor komen dat het aantal aanvragen per seconde (RPS) wordt overschreden.
+De tweede stap bestaat uit het aanroepen van de bewerking [analyse van factuur resultaat ophalen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/5ed8c9acb78c40a2533aee83) . Met deze bewerking wordt de resultaat-ID gebruikt die is gemaakt door de bewerking voor het analyseren van een factuur. Er wordt een JSON-antwoord geretourneerd dat een **status** veld met de volgende mogelijke waarden bevat. U roept deze bewerking iteratief aan tot deze met de **geslaagde** waarde wordt geretourneerd. Gebruik een interval van 3 tot 5 seconden om te voor komen dat het aantal aanvragen per seconde (RPS) wordt overschreden.
 
 |Veld| Type | Mogelijke waarden |
 |:-----|:----:|:----|

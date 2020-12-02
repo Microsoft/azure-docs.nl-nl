@@ -3,16 +3,16 @@ title: Service kosten verminderen met behulp van Azure Advisor
 description: Gebruik Azure Advisor om de kosten van uw Azure-implementaties te optimaliseren.
 ms.topic: article
 ms.date: 09/27/2020
-ms.openlocfilehash: 454ed02c06511b55f9f592bbe6fe5ab08605d752
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 767c82c818535304552c1c98ff50a252acc0d08a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075906"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96458510"
 ---
 # <a name="reduce-service-costs-by-using-azure-advisor"></a>Service kosten verminderen met behulp van Azure Advisor
 
-Azure Advisor helpt u uw totale Azure-uitgaven te optimaliseren en te reduceren door inactieve en gelaagde bronnen te identificeren.U kunt aanbevelingen ontvangen op het tabblad **kosten** van het Advisor-dash board.
+Azure Advisor helpt u uw totale Azure-uitgaven te optimaliseren en te reduceren door inactieve en gelaagde bronnen te identificeren. U kunt aanbevelingen ontvangen op het tabblad **kosten** van het Advisor-dash board.
 
 ## <a name="optimize-virtual-machine-spend-by-resizing-or-shutting-down-underutilized-instances"></a>Uitgaven aan virtuele machines optimaliseren door de grootte ervan te wijzigen of door onderbenutte instanties af te sluiten 
 
@@ -71,7 +71,7 @@ Advisor analyseert uw Azure Blob-opslag en Azure Data Lake opslag gebruik in de 
 ### <a name="mariadb-mysql-and-postgresql-reserved-capacity"></a>Gereserveerde capaciteit voor MariaDB, MySQL en PostgreSQL
 Advisor analyseert uw gebruiks patronen voor Azure Database for MariaDB, Azure Database for MySQL en Azure Database for PostgreSQL in de afgelopen 30 dagen. Vervolgens wordt gereserveerde capaciteits aankopen aanbevolen die de kosten optimaliseren. Door gebruik te maken van gereserveerde capaciteit, kunt u MariaDB, MySQL en PostgreSQL per uur kopen en besparen op uw huidige kosten. Gereserveerde capaciteit is een facturerings voordeel en is automatisch van toepassing op nieuwe en bestaande implementaties. Advisor berekent spaar bedragen voor afzonderlijke abonnementen met behulp van een reserverings prijs van drie jaar en de gebruiks patronen die in de afgelopen 30 dagen zijn waargenomen. Aanbevelingen voor Shared scopes zijn beschikbaar voor gereserveerde capaciteits aankopen en kunnen de besparingen verhogen.
 
-### <a name="azure-synapse-analytics-formerly-sql-data-warehouse-reserved-capacity"></a>Gereserveerde capaciteit van Azure Synapse Analytics (voorheen SQL Data Warehouse)
+### <a name="azure-synapse-analytics-reserved-capacity"></a>Gereserveerde capaciteit van Azure Synapse Analytics
 Advisor analyseert uw Azure Synapse Analytics-gebruiks patronen in de afgelopen 30 dagen en raadt u aan om gereserveerde capaciteits aankopen te doen die de kosten optimaliseren. Door gebruik te maken van gereserveerde capaciteit, kunt u het gebruik van Synapse analyses vooraf kopen en besparen op uw kosten op aanvraag. Gereserveerde capaciteit is een facturerings voordeel en is automatisch van toepassing op nieuwe en bestaande implementaties. Advisor berekent spaar bedragen voor afzonderlijke abonnementen met behulp van een reserverings prijs van drie jaar en de gebruiks patronen die in de afgelopen 30 dagen zijn waargenomen. Aanbevelingen voor Shared scopes zijn beschikbaar voor gereserveerde capaciteits aankopen en kunnen de besparingen verhogen.
 
 ## <a name="delete-unassociated-public-ip-addresses-to-save-money"></a>Niet-gekoppelde open bare IP-adressen verwijderen om geld te besparen

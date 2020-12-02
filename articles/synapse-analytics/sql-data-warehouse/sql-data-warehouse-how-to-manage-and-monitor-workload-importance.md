@@ -1,6 +1,6 @@
 ---
-title: Het belang van workload beheren en bewaken
-description: Meer informatie over het beheren en bewaken van de urgentie van het aanvraag niveau in azure Synapse Analytics.
+title: Urgentie van werk belasting in toegewezen SQL-groep beheren en bewaken
+description: Meer informatie over het beheren en bewaken van een toegewezen SQL-groep voor de urgentie op aanvraag niveau voor Azure Synapse Analytics.
 services: synapse-analytics
 author: ronortloff
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 43006456142728287ddf4adba1fbb9b45f5ccc89
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fb0a5fbf33b48521882646bf8fb5eb3fe5dacca6
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85211966"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96459204"
 ---
-# <a name="manage-and-monitor-workload-importance-in-azure-synapse-analytics"></a>De urgentie van werk belastingen in azure Synapse Analytics beheren en bewaken
+# <a name="manage-and-monitor-workload-importance-in-dedicated-sql-pool-for-azure-synapse-analytics"></a>De urgentie van werk belastingen in de toegewezen SQL-groep voor Azure Synapse Analytics beheren en bewaken
 
-Synapse SQL-aanvraag niveau urgentie in azure Synapse beheren en bewaken met behulp van Dmv's-en catalogus weergaven.
+Beheer en bewaak de toegewijde aanvraag niveau prioriteit van een SQL-groep in azure Synapse met behulp van Dmv's en catalogus weergaven.
 
 ## <a name="monitor-importance"></a>Controle prioriteit
 

@@ -2,13 +2,13 @@
 title: Virtuele Azure-machines verplaatsen naar een nieuw abonnement of een nieuwe resource groep
 description: Gebruik Azure Resource Manager om virtuele machines te verplaatsen naar een nieuwe resource groep of een nieuw abonnement.
 ms.topic: conceptual
-ms.date: 11/25/2020
-ms.openlocfilehash: ace1fb6bf3944df539ec8f7301357e67d2b315a9
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.date: 12/01/2020
+ms.openlocfilehash: b1032b5a632bcac82cb9ae1f1b3df7b49f5463f5
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96184073"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96456313"
 ---
 # <a name="move-guidance-for-virtual-machines"></a>Richt lijnen voor het verplaatsen van virtuele machines
 
@@ -20,6 +20,7 @@ De volgende scenario's worden nog niet ondersteund:
 
 * Virtual Machine Scale Sets met een standaard-SKU Load Balancer of een open bare standaard-SKU kan niet worden verplaatst.
 * Virtuele machines in een bestaand virtueel netwerk kunnen niet worden verplaatst naar een nieuw abonnement wanneer u niet alle resources in het virtuele netwerk verplaatst.
+* Virtuele machines die zijn gemaakt op basis van Marketplace-resources waarvoor plannen zijn gekoppeld, kunnen niet worden verplaatst naar abonnementen. Zie [virtuele machines met Marketplace-abonnementen](#virtual-machines-with-marketplace-plans)voor een mogelijke tijdelijke oplossing.
 * Virtuele machines met lage prioriteit en virtuele-machine schaal sets met lage prioriteit kunnen niet worden verplaatst over resource groepen of-abonnementen.
 * Virtuele machines in een beschikbaarheidsset kunnen niet afzonderlijk worden verplaatst.
 

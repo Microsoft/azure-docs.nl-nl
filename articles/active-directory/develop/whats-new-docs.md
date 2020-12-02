@@ -5,22 +5,36 @@ description: Nieuwe en bijgewerkte documentatie voor het micro soft Identity-pla
 services: active-directory
 author: mmacy
 manager: CelesteDG
-ms.date: 11/03/2020
+ms.date: 12/01/2020
 ms.service: active-directory
 ms.subservice: develop
 ms.topic: reference
 ms.workload: identity
 ms.author: marsma
-ms.openlocfilehash: d5865810dafef9ce2bb525a8f1b6cdbdb1a86566
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 108cd5f74b7b560534baf8f55f7d07ebb6557e7f
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322568"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96457160"
 ---
 # <a name="microsoft-identity-platform-docs-whats-new"></a>Micro soft Identity platform docs: What's New
 
 Welkom bij wat is er nieuw in de documentatie voor micro soft Identity platform. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden.
+
+## <a name="november-2020"></a>November 2020
+
+### <a name="new-articles"></a>Nieuwe artikelen
+
+- [Continue toegang-Api's voor evaluatie inschakelen in uw toepassingen](app-resilience-continuous-access-evaluation.md)
+
+### <a name="updated-articles"></a>Bijgewerkte artikelen
+
+- [Toegangs tokens van micro soft Identity platform](access-tokens.md)
+- [Configuratie opties voor toepassingen (MSAL)](msal-client-application-configuration.md)
+- [Procedure: optionele claims voor uw app opgeven](active-directory-optional-claims.md)
+- [Uw app publiceren in de app-galerie van Azure AD](v2-howto-app-gallery-listing.md)
+- [Procedure: app-rollen toevoegen aan uw toepassing en deze ontvangen in het token](howto-add-app-roles-in-azure-ad-apps.md)
 
 ## <a name="october-2020"></a>Oktober 2020
 
@@ -67,23 +81,3 @@ Welkom bij wat is er nieuw in de documentatie voor micro soft Identity platform.
 - [Quickstart: Een clienttoepassing configureren voor toegang tot een web-API](quickstart-configure-app-access-web-apis.md)
 - [Quickstart: Een toepassing configureren om een web-API beschikbaar te maken](quickstart-configure-app-expose-web-apis.md)
 - [Snelstart: Een toepassing registreren bij het Microsoft-identiteitsplatform](quickstart-register-app.md)
-
-## <a name="august-2020"></a>Augustus 2020
-
-### <a name="new-articles"></a>Nieuwe artikelen
-
-- [Android-toepassingen migreren die een Broker gebruiken van ADAL.NET naar MSAL.NET](msal-net-migration-android-broker.md)
-- [Uitzonde ringen en fouten in MSAL voor Android afhandelen](msal-android-handling-exceptions.md)
-
-### <a name="updated-articles"></a>Bijgewerkte artikelen
-
-- [IOS-toepassingen migreren die gebruikmaken van Microsoft Authenticator van ADAL.NET naar MSAL.NET](msal-net-migration-ios-broker.md)
-- [Microsoft Authenticator of Intune-bedrijfsportal gebruiken in Xamarin-toepassingen](msal-net-use-brokers-with-xamarin-apps.md)
-- [Configuratie vereisten en tips voor probleem oplossing voor Xamarin Android met MSAL.NET](msal-net-xamarin-android-considerations.md)
-- [Een mobiele app configureren die web-Api's aanroept](scenario-mobile-app-configuration.md)
-- [Procedure: claims aanpassen die worden verzonden in tokens voor een specifieke app in een Tenant (preview-versie)](active-directory-claims-mapping.md)
-- [Referenties voor verificatie certificaat voor micro soft-identiteits platform](active-directory-certificate-credentials.md)
-- [Omleidings-URI (antwoord-URL) beperkingen en beperkingen](reply-url.md)
-- [Quickstart: Een toepassing configureren om een web-API beschikbaar te maken](quickstart-configure-app-expose-web-apis.md)
-- [Microsoft Identity Platform-video's](identity-videos.md)
-- [Quickstart: Een ASP.NET-web-API aanroepen die wordt beveiligd door Microsoft-identiteitsplatform](quickstart-v2-dotnet-native-aspnet.md)

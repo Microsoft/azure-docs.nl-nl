@@ -1,6 +1,6 @@
 ---
-title: Aanbevolen procedures voor de serverloze SQL-groep (preview-versie)
-description: Aanbevelingen en aanbevolen procedures voor het werken met serverloze SQL-groep (preview).
+title: Best practices voor serverloze SQL-pools
+description: Aanbevelingen en aanbevolen procedures voor het werken met serverloze SQL-groep.
 services: synapse-analytics
 author: filippopovic
 manager: craigg
@@ -10,16 +10,16 @@ ms.subservice: sql
 ms.date: 05/01/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: ddf9d689316d3c95c322aa3a967af53621a2e00f
-ms.sourcegitcommit: 18046170f21fa1e569a3be75267e791ca9eb67d0
+ms.openlocfilehash: b8b93471b6d7f2555cfd71e524718ed0ea1ee191
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/16/2020
-ms.locfileid: "94638866"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96457901"
 ---
-# <a name="best-practices-for-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Aanbevolen procedures voor de serverloze SQL-pool (preview) in azure Synapse Analytics
+# <a name="best-practices-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Aanbevolen procedures voor serverloze SQL-groepen in azure Synapse Analytics
 
-In dit artikel vindt u een verzameling aanbevolen procedures voor het gebruik van serverloze SQL-groepen (preview). Een serverloze SQL-groep is een resource in azure Synapse Analytics.
+In dit artikel vindt u een verzameling aanbevolen procedures voor het gebruik van serverloze SQL-groepen. Een serverloze SQL-groep is een resource in azure Synapse Analytics.
 
 ## <a name="general-considerations"></a>Algemene overwegingen
 
@@ -129,7 +129,7 @@ U kunt een met prestaties geoptimaliseerde parser gebruiken wanneer u CSV-bestan
 
 ## <a name="manually-create-statistics-for-csv-files"></a>Hand matig statistieken maken voor CSV-bestanden
 
-Een serverloze SQL-groep is afhankelijk van de statistieken voor het genereren van optimale query-uitvoerings plannen. Statistieken worden automatisch gemaakt voor kolommen in Parquet-bestanden wanneer dat nodig is. Op dit moment worden er geen statistieken automatisch gemaakt voor kolommen in CSV-bestanden. u moet statistieken hand matig maken voor kolommen die u in query's gebruikt, met name die in DISTINCT, samen voegen, waar, sorteren op en groeperen op. Controleer de [statistieken in de serverloze SQL-groep](develop-tables-statistics.md#statistics-in-serverless-sql-pool-preview) voor meer informatie.
+Een serverloze SQL-groep is afhankelijk van de statistieken voor het genereren van optimale query-uitvoerings plannen. Statistieken worden automatisch gemaakt voor kolommen in Parquet-bestanden wanneer dat nodig is. Op dit moment worden er geen statistieken automatisch gemaakt voor kolommen in CSV-bestanden. u moet statistieken hand matig maken voor kolommen die u in query's gebruikt, met name die in DISTINCT, samen voegen, waar, sorteren op en groeperen op. Controleer [statistieken in serverloze SQL-groep] (ontwikkeling-Tables-Statistics. MD # Statistics-in-serverloze-SQL-pool voor meer informatie.
 
 ## <a name="use-cetas-to-enhance-query-performance-and-joins"></a>CETAS gebruiken om de query prestaties te verbeteren en samen te voegen
 

@@ -12,25 +12,25 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 4e6b0afab5c86131575d0e3d12b9984a8463f5a3
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 68c9e594201f0d0689a289e13f2c4ebf909c2f87
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321105"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96457105"
 ---
 # <a name="load-1-tb-into-azure-synapse-analytics-under-15-minutes-with-data-factory"></a>1 TB in azure Synapse Analytics onder 15 minuten laden met Data Factory
 > [!NOTE]
-> Dit artikel is van toepassing op versie 1 van Data Factory. Als u de huidige versie van de Data Factory-service gebruikt, raadpleegt u [gegevens kopiëren naar of van Azure Synapse Analytics (voorheen SQL Data Warehouse) met behulp van Data Factory](../connector-azure-sql-data-warehouse.md).
+> Dit artikel is van toepassing op versie 1 van Data Factory. Als u de huidige versie van de Data Factory-service gebruikt, raadpleegt u [gegevens kopiëren naar of van Azure Synapse Analytics met behulp van Data Factory](../connector-azure-sql-data-warehouse.md).
 
 
 [Azure Synapse Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md) is een schaal bare Cloud database die grote hoeveel heden gegevens kan verwerken, zowel relationele als niet-relationeel.  Azure Synapse Analytics is gebaseerd op de MPP-architectuur (enorm parallel processing) en is geoptimaliseerd voor bedrijfsdata Warehouse-workloads.  De service biedt de flexibiliteit van de cloud om opslag te schalen en onafhankelijk te berekenen.
 
 Aan de slag met Azure Synapse Analytics is nu nog eenvoudiger dan ooit gebruik te maken van **Azure Data Factory**.  Azure Data Factory is een volledig beheerde service voor gegevens integratie in de Cloud, die kan worden gebruikt voor het vullen van Azure Synapse Analytics met de gegevens van uw bestaande systeem en het besparen van uw kost bare tijd bij het evalueren van Azure Synapse Analytics en het bouwen van uw analyse oplossingen. Hier volgen de belangrijkste voor delen van het laden van gegevens in azure Synapse Analytics met behulp van Azure Data Factory:
 
-* **Eenvoudig in te stellen** : 5-stap intuïtieve wizard zonder scripting vereist.
-* **Ondersteuning voor uitgebreide gegevens opslag** : ingebouwde ondersteuning voor een uitgebreide set on-premises en cloud-gebaseerde gegevens archieven.
-* **Beveiligd en compatibel** : gegevens worden overgebracht via https of ExpressRoute, en wereld wijde service-aanwezigheid zorgt ervoor dat uw gegevens nooit de geografische grens verlaten
+* **Eenvoudig in te stellen**: 5-stap intuïtieve wizard zonder scripting vereist.
+* **Ondersteuning voor uitgebreide gegevens opslag**: ingebouwde ondersteuning voor een uitgebreide set on-premises en cloud-gebaseerde gegevens archieven.
+* **Beveiligd en compatibel**: gegevens worden overgebracht via https of ExpressRoute, en wereld wijde service-aanwezigheid zorgt ervoor dat uw gegevens nooit de geografische grens verlaten
 * **Ongeëvenaarde prestaties met poly base** – het gebruik van poly Base is de meest efficiënte manier om gegevens te verplaatsen naar Azure Synapse Analytics. Met behulp van de functie voor het maken van een staging-BLOB kunt u hoge laad snelheden realiseren van alle typen gegevens opslag, behalve voor Azure Blob Storage, die standaard door poly Base wordt ondersteund.
 
 Dit artikel laat u zien hoe u met behulp van Data Factory wizard kopiëren 1 TB gegevens van Azure Blob Storage in azure Synapse Analytics in minder dan 15 minuten kunt laden bij een door Voer van meer dan 1,2 GBps.
@@ -116,8 +116,8 @@ In dit artikel vindt u stapsgewijze instructies voor het verplaatsen van gegeven
 3. In het deel venster **nieuw Data Factory** :
 
    1. Voer **LoadIntoSQLDWDataFactory** in als **naam**.
-       De naam van de Azure-gegevensfactory moet wereldwijd uniek zijn. Als het volgende fout bericht wordt weer gegeven: **naam van Data Factory "LoadIntoSQLDWDataFactory" is niet beschikbaar** , wijzigt u de naam van de Data Factory (bijvoorbeeld yournameLoadIntoSQLDWDataFactory) en probeert u het opnieuw. Raadpleeg het onderwerp [Data Factory - Naamgevingsregels](data-factory-naming-rules.md) voor meer informatie over naamgevingsregels voor Data Factory-artefacten.  
-   2. Selecteer uw Azure- **abonnement**.
+       De naam van de Azure-gegevensfactory moet wereldwijd uniek zijn. Als het volgende fout bericht wordt weer gegeven: **naam van Data Factory "LoadIntoSQLDWDataFactory" is niet beschikbaar**, wijzigt u de naam van de Data Factory (bijvoorbeeld yournameLoadIntoSQLDWDataFactory) en probeert u het opnieuw. Raadpleeg het onderwerp [Data Factory - Naamgevingsregels](data-factory-naming-rules.md) voor meer informatie over naamgevingsregels voor Data Factory-artefacten.  
+   2. Selecteer uw Azure-**abonnement**.
    3. Voer een van de volgende stappen uit voor de resourcegroep:
       1. Selecteer **Bestaande gebruiken** om een bestaande resourcegroep te selecteren.
       2. Selecteer **Nieuwe maken** als u een naam voor een resourcegroep wilt typen.
@@ -137,7 +137,7 @@ In dit artikel vindt u stapsgewijze instructies voor het verplaatsen van gegeven
 ## <a name="step-1-configure-data-loading-schedule"></a>Stap 1: planning voor het laden van gegevens configureren
 De eerste stap is het configureren van de planning voor het laden van gegevens.  
 
-Op de pagina **Eigenschappen** :
+Op de pagina **Eigenschappen**:
 
 1. **CopyFromBlobToAzureSqlDataWarehouse** voor **taak naam** invoeren
 2. Selecteer de optie **nu uitvoeren** .   
@@ -202,7 +202,7 @@ In deze sectie wordt beschreven hoe u de bestemming configureert: `lineitem` tab
 
     ![Wizard kopiëren-geslaagd dialoog venster](media/data-factory-load-sql-data-warehouse/succeeded-info.png)
 
-## <a name="best-practices"></a>Aanbevolen procedures
+## <a name="best-practices"></a>Best practices
 Hier volgen enkele aanbevolen procedures voor het uitvoeren van uw Azure Synapse Analytics-Data Base:
 
 * Gebruik een grotere resource klasse wanneer u deze in een geclusterde column Store-INDEX laadt.

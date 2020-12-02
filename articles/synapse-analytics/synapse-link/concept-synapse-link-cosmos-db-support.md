@@ -9,14 +9,14 @@ ms.subservice: synapse-link
 ms.date: 09/15/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: fa05f8a8b05a0acddae906a93c90c42424466969
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 3d12e60e2aeee667b89d56589870d53366772014
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322592"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96459034"
 ---
-# <a name="azure-synapse-link-preview-for-azure-cosmos-db-supported-features"></a>Ondersteunde functies van Azure Synapse Link (preview) voor Azure Cosmos DB
+# <a name="azure-synapse-link-for-azure-cosmos-db-supported-features"></a>Ondersteunde functies van Azure Synapse Link voor Azure Cosmos DB
 
 In dit artikel worden de functies beschreven die momenteel worden ondersteund in Azure Synapse Link voor Azure Cosmos DB.
 
@@ -31,9 +31,9 @@ Er zijn twee typen containers in Azure Cosmos DB:
 
 U kunt verbinding maken met een Azure Cosmos DB-container zonder de Synapse-koppeling in te scha kelen. In dit scenario kunt u alleen lezen/schrijven naar de transactionele Store. Hier volgt een lijst met de momenteel ondersteunde functies in de Synapse-koppeling voor Azure Cosmos DB. 
 
-| Categorie              | Beschrijving |[Spark](https://docs.microsoft.com/azure/synapse-analytics/sql/on-demand-workspace-overview) | [Serverloze SQL](https://docs.microsoft.com/azure/synapse-analytics/sql/on-demand-workspace-overview) |
+| Categorie              | Beschrijving |[Apache Spark-pool](https://docs.microsoft.com/azure/synapse-analytics/sql/on-demand-workspace-overview) | [Serverloze SQL-pool](https://docs.microsoft.com/azure/synapse-analytics/sql/on-demand-workspace-overview) |
 | -------------------- | ----------------------------------------------------------- |----------------------------------------------------------- | ----------------------------------------------------------- |
-| **Ondersteuning tijdens uitvoeringen** |Ondersteunde Azure Synapse runtime voor toegang tot Azure Cosmos DB| ✓ | ✓ |
+| **Ondersteuning tijdens uitvoeringen** |Ondersteunde Azure Synapse runtime voor toegang tot Azure Cosmos DB| ✓ | Preview |
 | **API-ondersteuning voor Azure Cosmos DB** | Ondersteund Azure Cosmos DB-API-soort | SQL / MongoDB | SQL / MongoDB |
 | **Object**  |Objecten, zoals een tabel, die kunnen worden gemaakt en rechtstreeks naar de Azure Cosmos DB-container verwijzen| Data frame, weer gave, tabel | Weergave |
 | **Lezen**    | Type Azure Cosmos DB container dat kan worden gelezen | OLTP / HTAP | HTAP  |
@@ -53,12 +53,12 @@ U kunt verbinding maken met een Azure Cosmos DB-container zonder de Synapse-kopp
 | **Streaming-dataframe naar een container schrijven** |Gegevens streamen met behulp van de wijzigingenfeed in Azure Cosmos DB|✓| ✓ |
 
 
-## <a name="supported-code-generated-actions-for-sql-serverless"></a>Ondersteunde met code gegenereerde acties voor serverloze SQL
+## <a name="supported-code-generated-actions-for-serverless-sql-pool"></a>Ondersteunde door code gegenereerde acties voor een serverloze SQL-groep
 
 | Bewegen              | Beschrijving |OLTP |HTAP |
 | -------------------- | ----------------------------------------------------------- |----------------------------------------------------------- |----------------------------------------------------------- |
 | **Gegevens verkennen** |Gegevens verkennen uit een container met bekende T-SQL-syntaxis en automatische schema-deinterferentie|X| ✓ |
-| **Weer gaven maken en BI-rapporten bouwen** |Een SQL-weer gave maken voor directe toegang tot een container voor BI via Synapse SQL serverloos |X| ✓ |
+| **Weer gaven maken en BI-rapporten bouwen** |Een SQL-weer gave maken voor directe toegang tot een container voor BI via serverloze SQL-groep |X| ✓ |
 | **Samen voegen met ongelijksoortige gegevens bronnen en Cosmos DB gegevens** | Sla de resultaten op van het lezen van gegevens uit Cosmos DB containers samen met gegevens in Azure Blob Storage of Azure Data Lake Storage met behulp van CETAS |X| ✓ |
 
 ## <a name="next-steps"></a>Volgende stappen

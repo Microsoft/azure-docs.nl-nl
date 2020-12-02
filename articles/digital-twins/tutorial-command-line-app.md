@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 5/8/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: d7c95317667999ac17803f08575e68641100b967
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a9d8c42432d619ab120afd0bd5734f6fa269b514
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023251"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96458107"
 ---
 # <a name="tutorial-explore-azure-digital-twins-with-a-sample-client-app"></a>Zelfstudie: Azure Digital Twins verkennen met een voorbeeldclient-app
 
@@ -47,9 +47,9 @@ Gebruik in het Visual Studio-venster waar het project _**AdtE2ESample**_ open is
 
 Selecteer *Room.json* om het in het bewerkingsvenster te openen, en pas het als volgt aan:
 
-* **Werk het versienummer bij** om aan te geven dat u een meer up-to-date versie van dit model maakt. U doet dit door de *1* aan het einde van de `@id`-waarde rte veranderen in een *2*. Elk nummer dat hoger is dan het huidige versienummer werkt ook.
-* **Wijzig een eigenschap**. Wijzig de naam van eigenschap `Humidity` in *HumidityLevel* (of iets anders als u dat wilt. Als u iets anders gebruikt dan *HumidityLevel*, onthoud dan wat u hebt gebruikt en gebruik het overal in de zelfstudie in plaats van *HumidityLevel*).
-* **Voeg een eigenschap toe**. Plak onder de eigenschap `HumidityLevel` die eindigt op regel 15 de volgende code om de eigenschap `RoomName` toe te voegen aan de ruimte:
+1. **Werk het versienummer bij** om aan te geven dat u een meer up-to-date versie van dit model maakt. U doet dit door de *1* aan het einde van de `@id`-waarde rte veranderen in een *2*. Elk nummer dat hoger is dan het huidige versienummer werkt ook.
+1. **Wijzig een eigenschap**. Wijzig de naam van eigenschap `Humidity` in *HumidityLevel* (of iets anders als u dat wilt. Als u iets anders gebruikt dan *HumidityLevel*, onthoud dan wat u hebt gebruikt en gebruik het overal in de zelfstudie in plaats van *HumidityLevel*).
+1. **Voeg een eigenschap toe**. Plak onder de eigenschap `HumidityLevel` die eindigt op regel 15 de volgende code om de eigenschap `RoomName` toe te voegen aan de ruimte:
 
     ```json
     ,
@@ -59,13 +59,13 @@ Selecteer *Room.json* om het in het bewerkingsvenster te openen, en pas het als 
       "schema": "string"
     }
     ```
-* **Voeg een relatie toe**. Plak onder de eigenschap `RoomName` die u zojuist hebt toegevoegd de volgende code om de mogelijkheid toe te voegen dat deze tweeling *contains*-relaties kan maken met andere tweelingen:
+1. **Voeg een relatie toe**. Plak onder de eigenschap `RoomName` die u zojuist hebt toegevoegd de volgende code om de mogelijkheid toe te voegen dat deze tweeling *contains*-relaties kan maken met andere tweelingen:
 
     ```json
     ,
     {
       "@type": "Relationship",
-      "name": "contains",
+      "name": "contains"
     }
     ```
 

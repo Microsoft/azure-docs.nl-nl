@@ -9,16 +9,16 @@ ms.date: 10/16/2020
 ms.author: midesa
 ms.reviewer: jrasnick
 ms.subservice: spark
-ms.openlocfilehash: 27881b048a738d4de2acb57dcc4c2dad1f4d5b24
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 62610e1b86671021e66891ae232bacbd4b3e40ed
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/01/2020
-ms.locfileid: "96435362"
+ms.locfileid: "96458822"
 ---
 # <a name="manage-libraries-for-apache-spark-in-azure-synapse-analytics"></a>Bibliotheken voor Apache Spark beheren in azure Synapse Analytics
 
-Bibliotheken bieden herbruikbare code die u mogelijk wilt toevoegen aan uw Program ma's of projecten. Als u derden of lokaal gemaakte code beschikbaar wilt maken voor uw toepassingen, kunt u een bibliotheek installeren op een van uw serverloze Apache Spark Pools (preview). Zodra een bibliotheek is geïnstalleerd voor een Spark-groep, is deze beschikbaar voor alle sessies die gebruikmaken van dezelfde groep. 
+Bibliotheken bieden herbruikbare code die u mogelijk wilt toevoegen aan uw Program ma's of projecten. Als u derden of lokaal gemaakte code beschikbaar wilt maken voor uw toepassingen, kunt u een bibliotheek installeren op een van uw serverloze Apache Spark groepen. Zodra een bibliotheek is geïnstalleerd voor een Spark-groep, is deze beschikbaar voor alle sessies die gebruikmaken van dezelfde groep. 
 
 ## <a name="before-you-begin"></a>Voordat u begint
 - Als u bibliotheken wilt installeren en bijwerken, moet u de machtigingen voor de **gegevens eigenaar** van de **Storage BLOB-data bijdrager** of opslag-BLOB hebben voor het primaire Gen2-opslag account dat is gekoppeld aan de Azure Synapse Analytics-werk ruimte.
@@ -26,11 +26,11 @@ Bibliotheken bieden herbruikbare code die u mogelijk wilt toevoegen aan uw Progr
 ## <a name="default-installation"></a>Standaard installatie
 Apache Spark in azure Synapse Analytics beschikt over een volledige Anacondas-installatie plus extra bibliotheken. De lijst met volledige bibliotheken vindt u op [Apache Spark-versie ondersteuning](apache-spark-version-support.md). 
 
-Wanneer een Spark-exemplaar wordt gestart, worden deze bibliotheken automatisch opgenomen. Extra python en aangepaste ingebouwde pakketten kunnen worden toegevoegd op het niveau van de Spark-pool (preview).
+Wanneer een Spark-exemplaar wordt gestart, worden deze bibliotheken automatisch opgenomen. Extra python en aangepaste ingebouwde pakketten kunnen worden toegevoegd op het niveau van de Spark-groep.
 
 
 ## <a name="manage-python-packages"></a>Python-pakketten beheren
-Wanneer u de bibliotheken hebt geïdentificeerd die u wilt gebruiken voor uw Spark-toepassing, kunt u deze in een Spark-groep (preview-versie) installeren. 
+Zodra u de bibliotheken hebt geïdentificeerd die u wilt gebruiken voor uw Spark-toepassing, kunt u deze in een Spark-groep installeren. 
 
  Een *requirements.txt* -bestand (uitvoer van de `pip freeze` opdracht) kan worden gebruikt voor het bijwerken van de virtuele omgeving. De pakketten die in dit bestand voor installatie of upgrade worden vermeld, worden vanaf PyPi gedownload op het moment dat de pool wordt gestart. Dit vereisten bestand wordt gebruikt wanneer een Spark-exemplaar wordt gemaakt vanuit die Spark-groep.
 
@@ -54,7 +54,7 @@ alabaster==0.7.10
 Tijdens het ontwikkelen van uw Spark-toepassing is het mogelijk dat u bestaande of nieuwe bibliotheken moet bijwerken. Bibliotheken kunnen worden bijgewerkt tijdens of na het maken van de groep.
 
 #### <a name="install-packages-during-pool-creation"></a>Pakketten installeren tijdens het maken van een groep
-U kunt als volgt bibliotheken installeren op een Spark-groep (preview) tijdens het maken van de groep:
+Bibliotheken installeren op een Spark-groep tijdens het maken van de groep:
    
 1. Ga vanuit het Azure Portal naar uw Azure Synapse Analytics-werk ruimte.
    
@@ -66,7 +66,7 @@ U kunt als volgt bibliotheken installeren op een Spark-groep (preview) tijdens h
  
 
 #### <a name="install-packages-from-the-synapse-workspace"></a>Pakketten installeren vanuit de Synapse-werk ruimte
-Als u extra bibliotheken wilt bijwerken of toevoegen aan een Spark-groep (preview) van de Azure Synapse Analytics-portal:
+Als u extra bibliotheken wilt bijwerken of toevoegen aan een Spark-groep in de Azure Synapse Analytics-portal:
 
 1.  Ga vanuit het Azure Portal naar uw Azure Synapse Analytics-werk ruimte.
    
@@ -79,7 +79,7 @@ Als u extra bibliotheken wilt bijwerken of toevoegen aan een Spark-groep (previe
     ![Python-bibliotheken toevoegen in Synapse](./media/apache-spark-azure-portal-add-libraries/apache-spark-azure-portal-update.png)
    
 #### <a name="install-packages-from-the-azure-portal"></a>Pakketten van de Azure Portal installeren
-Als u een bibliotheek wilt installeren op een Spark-pool (preview), rechtstreeks vanuit de Azure Portal:
+Een bibliotheek rechtstreeks vanuit de Azure Portal op een Spark-groep installeren:
    
  1. Ga vanuit het Azure Portal naar uw Azure Synapse Analytics-werk ruimte.
    

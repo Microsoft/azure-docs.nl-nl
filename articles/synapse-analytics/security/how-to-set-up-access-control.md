@@ -1,5 +1,5 @@
 ---
-title: Uw Synapse-werk ruimte beveiligen (preview-versie)
+title: Uw Synapse-werkruimte beveiligen
 description: In dit artikel leert u hoe u rollen en toegangs beheer kunt gebruiken om activiteiten te beheren en toegang te krijgen tot gegevens in de Synapse-werk ruimte.
 services: synapse-analytics
 author: matt1883
@@ -9,20 +9,20 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: mahi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 79a4db1f7d4be88260ea41ce1090007bc66cc7c8
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 25e191af919c5880045a6c4c7c79b675cf02520e
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556026"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96458720"
 ---
-# <a name="secure-your-synapse-workspace-preview"></a>Uw Synapse-werk ruimte beveiligen (preview-versie) 
+# <a name="secure-your-synapse-workspace"></a>Uw Synapse-werkruimte beveiligen 
 
 In dit artikel leert u hoe u rollen en toegangs beheer kunt gebruiken om activiteiten en toegang tot gegevens te beheren. Door deze instructies te volgen, is toegangs beheer in azure Synapse Analytics vereenvoudigd. U hoeft alleen maar gebruikers toe te voegen aan of te verwijderen uit een van de drie beveiligings groepen.
 
 ## <a name="overview"></a>Overzicht
 
-Als u een Synapse-werk ruimte (preview-versie) wilt beveiligen, volgt u een patroon voor het configureren van de volgende items:
+Als u een Synapse-werk ruimte wilt beveiligen, volgt u een patroon voor het configureren van de volgende items:
 
 - Azure-rollen (zoals de ingebouwde eigenaar, Inzender, enz.)
 - Synapse-rollen: deze rollen zijn uniek voor Synapse en zijn niet gebaseerd op Azure-functies. Er zijn drie rollen:

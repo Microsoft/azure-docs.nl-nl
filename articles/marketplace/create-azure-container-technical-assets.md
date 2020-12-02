@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: keferna
 ms.author: keferna
 ms.date: 11/30/2020
-ms.openlocfilehash: 30f9eac0a0e88092a243b4d9421d2a4f33b07841
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 014bcd6fc519c267cdf17e9e98b850425c25ead6
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95759003"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96459336"
 ---
 # <a name="prepare-your-azure-container-technical-assets"></a>De technische activa van uw Azure-container voorbereiden
 
@@ -20,7 +20,7 @@ Dit artikel bevat technische bronnen en aanbevelingen om u te helpen bij het mak
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Raadpleeg de [documentatie van Azure container instances](/azure/container-instances/)voor Quick starts, zelf studies en voor beelden.
+Raadpleeg de [documentatie van Azure container instances](../container-instances/index.yml)voor Quick starts, zelf studies en voor beelden.
 
 ## <a name="fundamental-technical-knowledge"></a>Fundamentele technische kennis
 
@@ -43,7 +43,7 @@ Kies een of beide van de volgende script omgevingen om uw container installatie 
 
 U wordt aangeraden deze hulpprogram ma's toe te voegen aan uw ontwikkel omgeving:
 
-- [Azure Storage Explorer](/azure/vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=windows)
+- [Azure Storage Explorer](../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=windows)
 - [Visual Studio Code](https://code.visualstudio.com/)
   - Extensie: [Azure Resource Manager-Hulpprogram ma's](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)
   - Extensie: [beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
@@ -55,9 +55,9 @@ Bekijk de beschik bare hulpprogram ma's op de pagina [Azure Ontwikkelhulpprogram
 
 U kunt geen installatie kopie implementeren naar Azure Container Instances vanuit een on-premises REGI ster.
 
-- Als u al een werkende container in uw lokale REGI ster hebt, maakt u een Azure-REGI ster en uploadt u de container installatie kopie naar de Azure Container Registry. Zie voor meer informatie [zelf studie: container installatie kopieën bouwen en implementeren in de Cloud met Azure container Registry taken](/azure/container-registry/container-registry-tutorial-quick-task.md).
+- Als u al een werkende container in uw lokale REGI ster hebt, maakt u een Azure-REGI ster en uploadt u de container installatie kopie naar de Azure Container Registry. Zie voor meer informatie [zelf studie: container installatie kopieën bouwen en implementeren in de Cloud met Azure container Registry taken](../container-registry/container-registry-tutorial-quick-task.md).
 
-- Als u nog geen container installatie kopie hebt en u de bestaande toepassing wilt container plaatsen of een nieuwe toepassing op basis van een container wilt maken, moet u de bron code van de toepassing klonen vanuit GitHub, een container installatie kopie maken uit de toepassings bron en de installatie kopie testen in een lokale docker-omgeving. Zie [zelf studie: een container installatie kopie maken voor implementatie naar Azure container instances voor](/azure/container-instances/container-instances-tutorial-prepare-app.md)meer informatie.
+- Als u nog geen container installatie kopie hebt en u de bestaande toepassing wilt container plaatsen of een nieuwe toepassing op basis van een container wilt maken, moet u de bron code van de toepassing klonen vanuit GitHub, een container installatie kopie maken uit de toepassings bron en de installatie kopie testen in een lokale docker-omgeving. Zie [zelf studie: een container installatie kopie maken voor implementatie naar Azure container instances voor](../container-instances/container-instances-tutorial-prepare-app.md)meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

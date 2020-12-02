@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: 0da49a6f5299ef4e53b06acd5ce3fb838915a661
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: e995cd8f300787a19934e9b9eeae1dea73e8576c
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92633923"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96457082"
 ---
 # <a name="azure-data-factory---security-considerations-for-data-movement"></a>Azure Data Factory-beveiligings overwegingen voor gegevens verplaatsing
 
@@ -28,7 +28,7 @@ In dit artikel wordt een basis beveiligings infrastructuur beschreven die servic
 
 In een Data Factory-oplossing maakt u een of meer gegevens[pijplijnen](data-factory-create-pipelines.md). Een pijplijn is een logische groep activiteiten die samen een taak uitvoeren. Deze pijp lijnen bevinden zich in de regio waar de data factory is gemaakt. 
 
-Hoewel Data Factory alleen beschikbaar is in de regio's **VS-West** , VS- **Oost** en **Europa-Noord** , is de service voor gegevens verplaatsing [wereld wijd beschikbaar in meerdere regio's](data-factory-data-movement-activities.md#global). Data Factory-service zorgt ervoor dat de gegevens geen geografisch gebied/regio verlaten, tenzij u de service expliciet een alternatieve regio laat gebruiken als de service voor gegevens verplaatsing nog niet is geïmplementeerd in die regio. 
+Hoewel Data Factory alleen beschikbaar is in de regio's **VS-West**, VS- **Oost** en **Europa-Noord** , is de service voor gegevens verplaatsing [wereld wijd beschikbaar in meerdere regio's](data-factory-data-movement-activities.md#global). Data Factory-service zorgt ervoor dat de gegevens geen geografisch gebied/regio verlaten, tenzij u de service expliciet een alternatieve regio laat gebruiken als de service voor gegevens verplaatsing nog niet is geïmplementeerd in die regio. 
 
 Azure Data Factory zichzelf geen gegevens opslaat, met uitzonde ring van de gekoppelde service referenties voor gegevens archieven in de Cloud, die zijn versleuteld met behulp van certificaten. Hiermee kunt u gegevensgestuurde werk stromen maken om de verplaatsing van gegevens te organiseren tussen [ondersteunde gegevens archieven](data-factory-data-movement-activities.md#supported-data-stores-and-formats) en gegevens verwerking met behulp van [Compute Services](data-factory-compute-linked-services.md) in andere regio's of in een on-premises omgeving. U kunt hiermee ook [werk stromen bewaken en beheren](data-factory-monitor-manage-pipelines.md) met zowel programmatische als gebruikersinterface mechanismen.
 
@@ -42,26 +42,26 @@ Ga naar het [vertrouwens centrum van micro soft](https://microsoft.com/en-us/tru
 
 In dit artikel worden beveiligings overwegingen in de volgende twee scenario's voor het verplaatsen van gegevens besproken: 
 
-- **Cloud scenario** : in dit scenario zijn uw bron en doel openbaar toegankelijk via internet. Dit zijn onder andere beheerde services voor Cloud opslag, zoals Azure Storage, Azure Synapse Analytics (voorheen SQL Data Warehouse), Azure SQL Database, Azure Data Lake Store, Amazon S3, Amazon Redshift, SaaS-services zoals Sales Force, en webprotocols zoals FTP en OData. [Hier](data-factory-data-movement-activities.md#supported-data-stores-and-formats)vindt u een volledige lijst met ondersteunde gegevens bronnen.
-- **Hybride scenario** : in dit scenario bevindt uw bron of doel zich achter een firewall of in een on-premises bedrijfs netwerk, of het gegevens archief bevindt zich in een particulier netwerk/virtueel netwerk (meestal de bron) en is niet openbaar toegankelijk. Database servers die worden gehost op virtuele machines vallen ook onder dit scenario.
+- **Cloud scenario**: in dit scenario zijn uw bron en doel openbaar toegankelijk via internet. Dit zijn onder andere beheerde services voor Cloud opslag, zoals Azure Storage, Azure Synapse Analytics, Azure SQL Database, Azure Data Lake Store, Amazon S3, Amazon Redshift, SaaS-services zoals Sales Force, en webprotocols zoals FTP en OData. [Hier](data-factory-data-movement-activities.md#supported-data-stores-and-formats)vindt u een volledige lijst met ondersteunde gegevens bronnen.
+- **Hybride scenario**: in dit scenario bevindt uw bron of doel zich achter een firewall of in een on-premises bedrijfs netwerk, of het gegevens archief bevindt zich in een particulier netwerk/virtueel netwerk (meestal de bron) en is niet openbaar toegankelijk. Database servers die worden gehost op virtuele machines vallen ook onder dit scenario.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="cloud-scenarios"></a>Cloud scenario's
 ### <a name="securing-data-store-credentials"></a>Referenties voor gegevens opslag beveiligen
-Azure Data Factory beschermt uw referenties voor uw gegevens Archief door ze te **versleutelen** met behulp van **certificaten die door micro soft worden beheerd** . Deze certificaten worden elke **twee jaar** geroteerd (inclusief verlenging van het certificaat en de migratie van referenties). Deze versleutelde referenties worden veilig opgeslagen in een **Azure Storage beheerd door Azure Data Factory beheer Services** . Raadpleeg [Azure Storage Security Overview](../../storage/blobs/security-recommendations.md)(Engelstalig) voor meer informatie over Azure Storage beveiliging.
+Azure Data Factory beschermt uw referenties voor uw gegevens Archief door ze te **versleutelen** met behulp van **certificaten die door micro soft worden beheerd**. Deze certificaten worden elke **twee jaar** geroteerd (inclusief verlenging van het certificaat en de migratie van referenties). Deze versleutelde referenties worden veilig opgeslagen in een **Azure Storage beheerd door Azure Data Factory beheer Services**. Raadpleeg [Azure Storage Security Overview](../../storage/blobs/security-recommendations.md)(Engelstalig) voor meer informatie over Azure Storage beveiliging.
 
 ### <a name="data-encryption-in-transit"></a>Gegevens versleuteling tijdens overdracht
 Als de gegevens opslag in de Cloud HTTPS of TLS ondersteunt, worden alle gegevens overdrachten tussen services voor gegevens verplaatsing in Data Factory en een gegevens archief in de Cloud via Secure Channel HTTPS of TLS.
 
 > [!NOTE]
-> Alle verbindingen met **Azure SQL database** en **Azure Synapse Analytics** vereisen altijd VERSLEUTELING (SSL/TLS) wanneer gegevens onderweg naar en van de Data Base worden verzonden. Bij het ontwerpen van een pijp lijn met behulp van een JSON-editor, voegt u de **versleutelings** eigenschap toe en stelt u deze in op **true** in de **Connection String** . Wanneer u de [wizard kopiëren](data-factory-azure-copy-wizard.md)gebruikt, wordt deze eigenschap standaard ingesteld door de wizard. Voor **Azure Storage** kunt u **https** gebruiken in de Connection String.
+> Alle verbindingen met **Azure SQL database** en **Azure Synapse Analytics** vereisen altijd VERSLEUTELING (SSL/TLS) wanneer gegevens onderweg naar en van de Data Base worden verzonden. Bij het ontwerpen van een pijp lijn met behulp van een JSON-editor, voegt u de **versleutelings** eigenschap toe en stelt u deze in op **true** in de **Connection String**. Wanneer u de [wizard kopiëren](data-factory-azure-copy-wizard.md)gebruikt, wordt deze eigenschap standaard ingesteld door de wizard. Voor **Azure Storage** kunt u **https** gebruiken in de Connection String.
 
 ### <a name="data-encryption-at-rest"></a>Versleuteling van inactieve gegevens
 Sommige gegevens archieven ondersteunen de versleuteling van gegevens in rust. U wordt aangeraden om het mechanisme voor gegevens versleuteling in te scha kelen voor deze gegevens archieven. 
 
 #### <a name="azure-synapse-analytics"></a>Azure Synapse Analytics
-Transparent Data Encryption (TDE) in azure Synapse Analytics helpt bij het beschermen tegen de dreiging van schadelijke activiteiten door realtime-versleuteling en ontsleuteling van uw gegevens in rust uit te voeren. Dit gedrag is transparant voor de client. Zie [een Data Base beveiligen in Synapse Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-manage-security.md)voor meer informatie.
+Transparent Data Encryption (TDE) in azure Synapse Analytics helpt bij het beschermen tegen de dreiging van schadelijke activiteiten door realtime-versleuteling en ontsleuteling van uw gegevens in rust uit te voeren. Dit gedrag is transparant voor de client. Zie [een Data Base beveiligen in azure Synapse Analytics](../../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-manage-security.md)voor meer informatie.
 
 #### <a name="azure-sql-database"></a>Azure SQL Database
 Azure SQL Database biedt ook ondersteuning voor transparent Data Encryption (TDE), dat helpt bij het beveiligen van de dreiging van schadelijke activiteiten door realtime-versleuteling en ontsleuteling van de gegevens uit te voeren zonder dat de toepassing hoeft te worden gewijzigd. Dit gedrag is transparant voor de client. Zie [transparent Data Encryption met Azure SQL database](/sql/relational-databases/security/encryption/transparent-data-encryption-with-azure-sql-database)voor meer informatie. 
@@ -93,7 +93,7 @@ De referenties voor uw on-premises gegevens archieven worden lokaal opgeslagen (
 
 - Gebruik **onbewerkte tekst** (minder veilig) via HTTPS via de wizard Azure Portal/kopiëren. De referenties worden door gegeven als tekst zonder opmaak naar de on-premises gateway.
 - **Java script Cryptography-bibliotheek van de wizard kopiëren** gebruiken.
-- Met behulp **van een klik-eenmaal gebaseerde credentials Manager-app** . De Click-toepassing wordt uitgevoerd op de on-premises computer die toegang heeft tot de gateway en waarmee referenties voor het gegevens archief worden ingesteld. Deze optie en de volgende zijn de veiligste opties. De referentie beheer-app gebruikt standaard de poort 8050 op de computer met de gateway voor beveiligde communicatie.  
+- Met behulp **van een klik-eenmaal gebaseerde credentials Manager-app**. De Click-toepassing wordt uitgevoerd op de on-premises computer die toegang heeft tot de gateway en waarmee referenties voor het gegevens archief worden ingesteld. Deze optie en de volgende zijn de veiligste opties. De referentie beheer-app gebruikt standaard de poort 8050 op de computer met de gateway voor beveiligde communicatie.  
 - Gebruik de Power shell-cmdlet [New-AzDataFactoryEncryptValue](/powershell/module/az.datafactory/New-azDataFactoryEncryptValue) om referenties te versleutelen. De cmdlet maakt gebruik van het certificaat dat door de gateway is geconfigureerd voor het versleutelen van de referenties. U kunt de versleutelde referenties die door deze cmdlet worden geretourneerd, gebruiken en deze toevoegen aan het **EncryptedCredential** -element van de **Connections Tring** in het JSON-bestand dat u gebruikt met de cmdlet [New-AzDataFactoryLinkedService](/powershell/module/az.datafactory/new-azdatafactorylinkedservice) of in het json-code fragment in de Data Factory editor van de portal. Deze optie en de toepassing waarop u kunt klikken, zijn de veiligste opties. 
 
 #### <a name="javascript-cryptography-library-based-encryption"></a>Versleuteling op basis van Java script Cryptography-bibliotheek
@@ -106,7 +106,7 @@ U kunt de wizard voor op één keer gebaseerde referentie beheer-app starten van
   
 ![HTTPS-poort voor de gateway](media/data-factory-data-movement-security-considerations/https-port-for-gateway.png)
 
-Data Management Gateway gebruikt momenteel één **certificaat** . Dit certificaat wordt gemaakt tijdens de installatie van de gateway (dit is van toepassing op Data Management Gateway gemaakt na november 2016 en versie 2.4. xxxx. x of hoger). U kunt dit certificaat vervangen door uw eigen SSL/TLS-certificaat. Dit certificaat wordt gebruikt door de toepassing voor referentie beheer voor klikken om veilig verbinding te maken met de gateway computer voor het instellen van referenties voor gegevens archieven. De referenties van het gegevens archief worden veilig on-premises opgeslagen door gebruik te maken van de Windows [DPAPI](/previous-versions/ms995355(v=msdn.10)) op de computer met de gateway. 
+Data Management Gateway gebruikt momenteel één **certificaat**. Dit certificaat wordt gemaakt tijdens de installatie van de gateway (dit is van toepassing op Data Management Gateway gemaakt na november 2016 en versie 2.4. xxxx. x of hoger). U kunt dit certificaat vervangen door uw eigen SSL/TLS-certificaat. Dit certificaat wordt gebruikt door de toepassing voor referentie beheer voor klikken om veilig verbinding te maken met de gateway computer voor het instellen van referenties voor gegevens archieven. De referenties van het gegevens archief worden veilig on-premises opgeslagen door gebruik te maken van de Windows [DPAPI](/previous-versions/ms995355(v=msdn.10)) op de computer met de gateway. 
 
 > [!NOTE]
 > Oudere gateways die zijn geïnstalleerd vóór november 2016 of versie 2.3. xxxx. x blijven referenties gebruiken die zijn versleuteld en opgeslagen in de Cloud. Zelfs als u de gateway naar de nieuwste versie bijwerkt, worden de referenties niet gemigreerd naar een on-premises computer    
@@ -117,7 +117,7 @@ Data Management Gateway gebruikt momenteel één **certificaat** . Dit certifica
 | > = 2.4. xxxx. x | On-premises | Beveiligd via DPAPI | 
   
 
-### <a name="encryption-in-transit"></a>Versleuteling tijdens overdracht
+### <a name="encryption-in-transit"></a>Versleuteling 'in transit'
 Alle gegevens overdrachten zijn via Secure Channel **https** en **TLS via TCP** om te voor komen dat man-in-the-middle-aanvallen optreden tijdens de communicatie met Azure-Services.
  
 U kunt ook [IPSec VPN](../../vpn-gateway/vpn-gateway-about-vpn-devices.md) of [Express route](../../expressroute/expressroute-introduction.md) gebruiken om het communicatie kanaal te beveiligen tussen uw on-premises netwerk en Azure.
@@ -147,7 +147,7 @@ De volgende installatie kopieën tonen het gebruik van Data Management Gateway v
 #### <a name="firewall-requirements-for-on-premisesprivate-network"></a>Firewall vereisten voor on-premises/particulier netwerk  
 In een onderneming wordt een **bedrijfs firewall** uitgevoerd op de centrale router van de organisatie. En **Windows Firewall** wordt uitgevoerd als een daemon op de lokale computer waarop de gateway is geïnstalleerd. 
 
-De volgende tabel bevat de **uitgaande poort** -en domein vereisten voor de **bedrijfs firewall** .
+De volgende tabel bevat de **uitgaande poort** -en domein vereisten voor de **bedrijfs firewall**.
 
 | Domeinnamen | Uitgaande poorten | Beschrijving |
 | ------------ | -------------- | ----------- | 
@@ -160,7 +160,7 @@ De volgende tabel bevat de **uitgaande poort** -en domein vereisten voor de **be
 > [!NOTE] 
 > Mogelijk moet u poorten/filter domeinen op het niveau van de bedrijfs firewall beheren zoals vereist door de respectieve gegevens bronnen. In deze tabel worden alleen Azure SQL Database, Azure Synapse Analytics, Azure Data Lake Store als voor beeld gebruikt.   
 
-De volgende tabel bevat de **Binnenkomende poort** vereisten voor de **Windows Firewall** .
+De volgende tabel bevat de **Binnenkomende poort** vereisten voor de **Windows Firewall**.
 
 | Poorten voor inkomend verkeer | Beschrijving | 
 | ------------- | ----------- | 

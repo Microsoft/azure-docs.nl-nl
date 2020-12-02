@@ -11,12 +11,12 @@ ms.date: 03/19/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 036cb15cf16b5f90dc17ccdce378a073a398d403
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0cf40990d59aff984226244f520e6f8f937713fd
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86181332"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96456482"
 ---
 # <a name="design-guidance-for-using-replicated-tables-in-synapse-sql-pool"></a>Ontwerp richtlijnen voor het gebruik van gerepliceerde tabellen in de Synapse SQL-pool
 
@@ -26,13 +26,13 @@ In dit artikel worden aanbevelingen gedaan voor het ontwerpen van gerepliceerde 
 
 ## <a name="prerequisites"></a>Vereisten
 
-In dit artikel wordt ervan uitgegaan dat u bekend bent met de concepten voor gegevens distributie en gegevens verplaatsing in de SQL-groep.Zie het artikel over de [architectuur](massively-parallel-processing-mpp-architecture.md) voor meer informatie.
+In dit artikel wordt ervan uitgegaan dat u bekend bent met de concepten voor gegevens distributie en gegevens verplaatsing in de SQL-groep.  Zie het artikel over de [architectuur](massively-parallel-processing-mpp-architecture.md) voor meer informatie.
 
-Als onderdeel van het tabel ontwerp begrijpt u zoveel mogelijk informatie over uw gegevens en de manier waarop de gegevens worden opgevraagd.Denk bijvoorbeeld aan de volgende vragen:
+Als onderdeel van het tabel ontwerp begrijpt u zoveel mogelijk informatie over uw gegevens en de manier waarop de gegevens worden opgevraagd.  Denk bijvoorbeeld aan de volgende vragen:
 
 - Hoe groot is de tabel?
 - Hoe vaak is de tabel vernieuwd?
-- Heb ik feiten-en dimensie tabellen in een SQL pool-data base?
+- Heb ik feiten-en dimensie tabellen in een SQL-groep?
 
 ## <a name="what-is-a-replicated-table"></a>Wat is een gerepliceerde tabel?
 
@@ -51,8 +51,8 @@ Overweeg het gebruik van een gerepliceerde tabel wanneer:
 
 Gerepliceerde tabellen leveren mogelijk niet de beste query prestaties als:
 
-- De tabel bevat regel matig insert-, update-en delete-bewerkingen.Voor de Data Manipulation Language (DML)-bewerkingen moet de gerepliceerde tabel opnieuw worden opgebouwd.Een regel matig gebouw kan leiden tot tragere prestaties.
-- De data base van de SQL-groep wordt regel matig geschaald. Het schalen van een SQL pool-data base wijzigt het aantal reken knooppunten, waardoor de gerepliceerde tabel wordt opnieuw samengesteld.
+- De tabel bevat regel matig insert-, update-en delete-bewerkingen. Voor de Data Manipulation Language (DML)-bewerkingen moet de gerepliceerde tabel opnieuw worden opgebouwd. Een regel matig gebouw kan leiden tot tragere prestaties.
+- De SQL-pool wordt regel matig geschaald. Het schalen van een SQL-groep wijzigt het aantal reken knooppunten, waardoor de gerepliceerde tabel wordt opnieuw samengesteld.
 - De tabel heeft een groot aantal kolommen, maar gegevens bewerkingen hebben doorgaans slechts een klein aantal kolommen. In dit scenario, in plaats van de hele tabel te repliceren, is het mogelijk effectiever om de tabel te distribueren en vervolgens een index te maken voor de veelgebruikte kolommen. Wanneer een query gegevens verplaatsing vereist, verplaatst de SQL-groep alleen gegevens voor de aangevraagde kolommen.
 
 ## <a name="use-replicated-tables-with-simple-query-predicates"></a>Gerepliceerde tabellen gebruiken met eenvoudige query predikaten
@@ -174,8 +174,8 @@ Deze query gebruikt de [sys.pdw_replicated_table_cache_state](/sql/relational-da
 
 ```sql
 SELECT [ReplicatedTable] = t.[name]
-  FROM sys.tables t  
-  JOIN sys.pdw_replicated_table_cache_state c  
+  FROM sys.tables t  
+  JOIN sys.pdw_replicated_table_cache_state c  
     ON c.object_id = t.object_id
   JOIN sys.pdw_table_distribution_properties p
     ON p.object_id = t.object_id

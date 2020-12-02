@@ -3,20 +3,20 @@ title: Wachten op activiteit in Azure Data Factory
 description: De wait-activiteit pauzeert de uitvoering van de pijp lijn voor de opgegeven periode.
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/12/2018
-ms.openlocfilehash: e6158938d01b6e5da74ed046d2a74e0dfd827f47
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 12c9027067c00a3db84e6610a0d73090cc011713
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81417909"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96485906"
 ---
 # <a name="execute-wait-activity-in-azure-data-factory"></a>Wacht activiteit uitvoeren in Azure Data Factory
 Als u een Wait Activity in een pijplijn gebruikt, wacht de pijplijn tot de opgegeven periode voorbij is voordat de volgende activiteiten worden uitgevoerd. 
@@ -24,7 +24,7 @@ Als u een Wait Activity in een pijplijn gebruikt, wacht de pijplijn tot de opgeg
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```json
 {

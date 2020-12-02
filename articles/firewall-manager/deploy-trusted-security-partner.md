@@ -5,14 +5,14 @@ services: firewall-manager
 author: vhorne
 ms.service: firewall-manager
 ms.topic: how-to
-ms.date: 06/30/2020
+ms.date: 12/01/2020
 ms.author: victorh
-ms.openlocfilehash: 3323f73c137905fbe677c68d3830d7f609fa0172
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 906687e08c9f31890a9ecec9154079e704512832
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85611574"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96485719"
 ---
 # <a name="deploy-a-security-partner-provider"></a>Een beveiligingspartnerprovider implementeren
 
@@ -21,7 +21,11 @@ Met *aanbieders van beveiligings partners* in azure firewall Manager kunt u uw v
 Zie [Wat zijn beveiligings partner providers?](trusted-security-partners.md) voor meer informatie over ondersteunde scenario's en best practice richt lijnen.
 
 
-Geïntegreerde SECaaS-partners (Security as a Service) van derden zijn nu beschikbaar in alle open bare Cloud regio's van Azure. **Zscaler** -integratie is algemeen verkrijgbaar vanaf 3 juli 2020. **Check Point** is een ondersteunde SECaaS-partner en is beschikbaar in preview op 3 juli 2020. **iboss** -integratie is in het algemeen beschikbaar op 31 juli 2020.
+Geïntegreerde SECaaS-partners (Security as a Service) van derden zijn nu beschikbaar: 
+
+- **Zscaler**
+- **[Check Point](check-point-overview.md)**
+- **iboss**
 
 ## <a name="deploy-a-third-party-security-provider-in-a-new-hub"></a>Een beveiligings provider van derden implementeren in een nieuwe hub
 
@@ -55,7 +59,7 @@ Zodra de hub is gemaakt en de beveiligings partner is ingesteld, gaat u door met
 
 U kunt ook een bestaande hub in een virtueel WAN selecteren en deze converteren naar een *beveiligde virtuele hub*.
 
-1. Selecteer in **aan de slag**de optie **beveiligde virtuele hubs weer geven**.
+1. Selecteer in **aan de slag** de optie **beveiligde virtuele hubs weer geven**.
 2. Selecteer **bestaande hubs converteren**.
 3. Selecteer een abonnement en een bestaande hub. Volg de overige stappen voor het implementeren van een provider van derden in een nieuwe hub.
 
@@ -81,8 +85,8 @@ Om tunnels in te stellen voor de VPN Gateway van de virtuele hub, hebben externe
 1. Volg de instructies van uw partner om de installatie te volt ooien. Dit omvat het verzenden van AAD-gegevens om de hub te detecteren en er verbinding mee te maken, het uitzonderings beleid bij te werken en de connectiviteits status en logboeken te controleren.
 
    - [Zscaler: configureer Microsoft Azure virtuele WAN-integratie](https://help.zscaler.com/zia/configuring-microsoft-azure-virtual-wan-integration).
-   - [Controle punt (preview): configureer Microsoft Azure virtuele WAN-integratie](https://sc1.checkpoint.com/documents/Infinity_Portal/WebAdminGuides/EN/CloudGuard-Connect-Azure-Virtual-WAN/Default.htm).
-   - [iboss (preview): configureer Microsoft Azure virtuele WAN-integratie](https://www.iboss.com/blog/securing-microsoft-azure-with-iboss-saas-network-security). 
+   - [Controle punt: configureer Microsoft Azure virtuele WAN-integratie](https://sc1.checkpoint.com/documents/Infinity_Portal/WebAdminGuides/EN/CloudGuard-Connect-Azure-Virtual-WAN/Default.htm).
+   - [iboss: configureer Microsoft Azure virtuele WAN-integratie](https://www.iboss.com/blog/securing-microsoft-azure-with-iboss-saas-network-security). 
    
 2. U kunt de status voor het maken van de tunnel bekijken in de Azure Virtual WAN-Portal in Azure. Zodra de tunnels **zijn verbonden** met Azure en de Partner Portal, gaat u door met de volgende stappen om routes in te stellen om te selecteren welke branches en VNets Internet verkeer naar de partner moeten verzenden.
 
@@ -95,7 +99,7 @@ Om tunnels in te stellen voor de VPN Gateway van de virtuele hub, hebben externe
 3. Selecteer de hub en navigeer naar **router instellingen**.
 
    Wanneer u een provider van derden op de hub implementeert, wordt de hub geconverteerd naar een *beveiligde virtuele hub*. Dit zorgt ervoor dat de provider van derden een ' 0.0.0.0/0-route (standaard) adverteert naar de hub. VNet-verbindingen en sites die zijn verbonden met de hub, krijgen deze route echter alleen als u zich aanmeldt op welke verbindingen deze standaard route moeten worden verkregen.
-4. Onder **Internet verkeer**selecteert u **VNet-naar-Internet** of **vertakking-naar-Internet** of beide, zodat routes worden geconfigureerd via de derde partij.
+4. Onder **Internet verkeer** selecteert u **VNet-naar-Internet** of **vertakking-naar-Internet** of beide, zodat routes worden geconfigureerd via de derde partij.
 
    Hiermee wordt alleen aangegeven welk type verkeer moet worden doorgestuurd naar de hub, maar dit is niet van invloed op de routes op VNets of branches. Deze routes worden standaard niet door gegeven aan alle VNets/vertakkingen die zijn gekoppeld aan de hub.
 5. U moet **beveiligde verbindingen** selecteren en de verbindingen selecteren waarop deze routes moeten worden ingesteld. Hiermee wordt aangegeven welke VNets/branches Internet verkeer naar de externe provider kunnen gaan verzenden.

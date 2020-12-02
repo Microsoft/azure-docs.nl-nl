@@ -5,12 +5,12 @@ ms.date: 06/10/2019
 ms.topic: conceptual
 hide_comments: true
 hideEdit: true
-ms.openlocfilehash: 01574407801c0a6b0a5e0ddc438af4d3965dc090
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 9960f15f2f91b51b73727ab421eb58dddc5bb2b3
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93131544"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96485566"
 ---
 # <a name="service-fabric-releases"></a>Service Fabric releases
 
@@ -18,7 +18,7 @@ ms.locfileid: "93131544"
 - <a href="https://github.com/Azure/service-fabric-issues" target="blank">Bijhouden van problemen</a> 
 - <a href="/azure/service-fabric/service-fabric-support" target="blank">Ondersteuningsopties</a> 
 - <a href="/azure/service-fabric/service-fabric-versions" target="blank">Ondersteunde versies</a> 
-- <a href="https://azure.microsoft.com/resources/samples/?service=service-fabric&sort=0" target="blank">Codevoorbeelden</a>
+- <a href="https://azure.microsoft.com/resources/samples/?service=service-fabric&sort=0" target="blank">Code voorbeelden</a>
 
 In dit artikel vindt u meer informatie over de nieuwste releases en updates voor de Service Fabric runtime en Sdk's.
 
@@ -29,22 +29,22 @@ Met trots kondigen we aan dat 7,2-versie van de Service Fabric runtime is begonn
 ## <a name="what-is-new-in-service-fabric-7"></a>Wat is er nieuw in-Service Fabric 7.?
 Deze release is geladen met belang rijke functies en verbeteringen. Enkele van de belangrijkste functies zijn hieronder gemarkeerd:
 ## <a name="key-announcements-in-72"></a>Belang rijke aankondigingen in 7,2
-- **Voor beeld** : [**service Fabric beheerde clusters**](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-managed-clusters-are-now-in-public-preview/ba-p/1721572) zijn nu beschikbaar als open bare preview. Service Fabric beheerde clusters zijn gericht op het vereenvoudigen van het implementeren en beheren van clusters door de onderliggende resources die samen een Service Fabric cluster vormen, in te kapselen in één ARM-resource. Zie [service Fabric Managed cluster Overview](https://docs.microsoft.com/azure/service-fabric/overview-managed-cluster)(Engelstalig) voor meer informatie.
-- **Voor beeld** : [**ondersteuning voor stateless Services met een aantal exemplaren dat groter is dan het aantal knoop punten**](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-resource-manager-advanced-placement-rules-placement-policies) is nu beschikbaar als open bare preview. Met een plaatsings beleid kan meerdere stateless instanties van een partitie op een knoop punt worden gemaakt.
+- **Voor beeld**: [**service Fabric beheerde clusters**](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-managed-clusters-are-now-in-public-preview/ba-p/1721572) zijn nu beschikbaar als open bare preview. Service Fabric beheerde clusters zijn gericht op het vereenvoudigen van het implementeren en beheren van clusters door de onderliggende resources die samen een Service Fabric cluster vormen, in te kapselen in één ARM-resource. Zie [service Fabric Managed cluster Overview](./overview-managed-cluster.md)(Engelstalig) voor meer informatie.
+- **Voor beeld**: [**ondersteuning voor stateless Services met een aantal exemplaren dat groter is dan het aantal knoop punten**](./service-fabric-cluster-resource-manager-advanced-placement-rules-placement-policies.md) is nu beschikbaar als open bare preview. Met een plaatsings beleid kan meerdere stateless instanties van een partitie op een knoop punt worden gemaakt.
 - [**FabricObserver (fo) 3,0**](https://aka.ms/sf/fabricobserver) is nu beschikbaar.
     - U kunt nu FabricObserver uitvoeren in Linux-en Windows-clusters.
     - U kunt nu aangepaste waarnemers-invoeg toepassingen maken. Raadpleeg het [Leesmij-bestand voor plugins](https://github.com/microsoft/service-fabric-observer/blob/master/Documentation/Plugins.md) en het [voorbeeld project voor de invoeg toepassing](https://github.com/microsoft/service-fabric-observer/tree/master/SampleObserverPlugin) voor meer informatie en code.
     - U kunt nu de instelling van een waarnemer wijzigen via de upgrade van de toepassings parameters. Dit betekent dat u niet meer hoeft te implementeren om specifieke instellingen voor de waarnemer te wijzigen. Bekijk het voor [beeld](https://github.com/microsoft/service-fabric-observer/blob/master/Documentation/Using.md#parameterUpdates).
 - [**Ondersteuning voor Ubuntu 18,04 Onebox-container installatie kopieën**](https://hub.docker.com/_/microsoft-service-fabric-onebox).
-- **Voor beeld** : de [ **Naslag informatie voor de sleutel kluis voor service Fabric toepassingen ondersteunt **alleen versie-geheimen** . Geheimen zonder versies worden niet ondersteund.**](https://docs.microsoft.com/azure/service-fabric/service-fabric-keyvault-references)
+- **Voor beeld**: de [ **Naslag informatie voor de sleutel kluis voor service Fabric toepassingen ondersteunt **alleen versie-geheimen**. Geheimen zonder versies worden niet ondersteund.**](./service-fabric-keyvault-references.md)
 - Voor SF SDK is de nieuwste VS 2019-update 16.7.6 of 16,8 Preview 4 vereist om nieuwe .NET Framework stateless/actor-projecten te kunnen maken. Als u niet de nieuwste VS update hebt, gebruikt u na het maken van het service project pakket beheer om micro soft. ServiceFabric. Services (versie 4.2. x) te installeren voor stateful/stateless projecten en micro soft. ServiceFabric. actors (versie 4.2. x) voor actor projecten van nuget.org.
-- **RunToCompletion** : Service Fabric ondersteunt het concept van Run to completion voor uitvoer bare gast bestanden. Als deze update eenmaal is uitgevoerd, worden de cluster resources die zijn toegewezen aan deze replica, vrijgegeven.
-- [**Ondersteuning van resource governance is verbeterd**](https://docs.microsoft.com/azure/service-fabric/service-fabric-resource-governance): aanvragen en limieten voor de CPU-en geheugen resources worden toegestaan.
+- **RunToCompletion**: Service Fabric ondersteunt het concept van Run to completion voor uitvoer bare gast bestanden. Als deze update eenmaal is uitgevoerd, worden de cluster resources die zijn toegewezen aan deze replica, vrijgegeven.
+- [**Ondersteuning van resource governance is verbeterd**](./service-fabric-resource-governance.md): aanvragen en limieten voor de CPU-en geheugen resources worden toegestaan.
 
 ### <a name="service-fabric-72-releases"></a>Service Fabric 7,2 releases
 | Releasedatum | Release | Meer informatie |
 |---|---|---|
-| 21 oktober 2020 | [Azure Service Fabric 7,2](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-2-release/ba-p/1805653)  | [Opmerkingen bij de release](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-72-releasenotes.md)|
+| 21 oktober 2020 | [Azure Service Fabric 7,2](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-2-release/ba-p/1805653)  | [Releaseopmerkingen](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-72-releasenotes.md)|
 
 ### <a name="service-fabric-71"></a>Service Fabric 7,1
 Als gevolg van de huidige COVID-crisis, en rekening houdend met de uitdagingen van onze klanten, maken we 7,1 beschikbaar, maar worden er geen automatische upgrade van de clusters ingesteld die automatisch worden bijgewerkt. De automatische upgrades worden onderbroken tot verdere kennisgeving, om ervoor te zorgen dat klanten upgrades kunnen Toep assen wanneer ze het meest geschikt zijn om onverwachte onderbrekingen te voor komen.
@@ -73,13 +73,13 @@ We zijn enthousiast om de volgende versie van Service Fabric aan te kondigen. De
 ### <a name="improve-application-life-cycle-experience"></a>De levens cyclus van toepassingen verbeteren
 
 - **[Voor beeld: aanvraag](./service-fabric-application-upgrade-advanced.md#avoid-connection-drops-during-stateless-service-planned-downtime)** verwerkings stop: tijdens geplande service onderhoud, zoals service-upgrades of het deactiveren van knoop punten, wilt u toestaan dat de Services verbindingen zonder problemen kunnen verbreken. Met deze functie wordt een tijds duur voor het sluiten van een exemplaar toegevoegd in de service configuratie. Tijdens geplande bewerkingen verwijdert SF het adres van de service uit detectie en wordt deze duur gewacht voordat de service wordt afgesloten.
-- **[Automatische detectie en taak verdeling van subclusteren](./cluster-resource-manager-subclustering.md)** : subclustering treedt op wanneer Services met verschillende plaatsings beperkingen een gemeen schappelijke [metrische belasting](./service-fabric-cluster-resource-manager-metrics.md)hebben. Als de belasting van de verschillende sets knoop punten aanzienlijk verschilt, is het Service Fabric cluster resource manager van mening dat het cluster niet meer in balans is, zelfs wanneer het het best mogelijke saldo heeft vanwege de plaatsings beperkingen. Als gevolg hiervan wordt geprobeerd het cluster opnieuw in balans te brengen, waardoor onnodig service bewegingen mogelijk worden veroorzaakt (omdat het evenwicht niet aanzienlijk kan worden verbeterd). Vanaf deze release zal cluster resource manager nu proberen om deze sorteringen automatisch te detecteren en te begrijpen wanneer het onevenwicht kan worden verholpen en wanneer in plaats daarvan dingen moeten worden overgelaten omdat er geen aanzienlijke verbetering kan worden aangebracht.  
+- **[Automatische detectie en taak verdeling van subclusteren](./cluster-resource-manager-subclustering.md)**: subclustering treedt op wanneer Services met verschillende plaatsings beperkingen een gemeen schappelijke [metrische belasting](./service-fabric-cluster-resource-manager-metrics.md)hebben. Als de belasting van de verschillende sets knoop punten aanzienlijk verschilt, is het Service Fabric cluster resource manager van mening dat het cluster niet meer in balans is, zelfs wanneer het het best mogelijke saldo heeft vanwege de plaatsings beperkingen. Als gevolg hiervan wordt geprobeerd het cluster opnieuw in balans te brengen, waardoor onnodig service bewegingen mogelijk worden veroorzaakt (omdat het evenwicht niet aanzienlijk kan worden verbeterd). Vanaf deze release zal cluster resource manager nu proberen om deze sorteringen automatisch te detecteren en te begrijpen wanneer het onevenwicht kan worden verholpen en wanneer in plaats daarvan dingen moeten worden overgelaten omdat er geen aanzienlijke verbetering kan worden aangebracht.  
 - [**Verschillende verplaatsings kosten voor secundaire replica's**](./service-fabric-cluster-resource-manager-movement-cost.md): we hebben een nieuwe waarde voor de VeryHigh voor de verplaatsing geïntroduceerd die in sommige scenario's extra flexibiliteit biedt om te bepalen of een afzonderlijke plaatsings kosten moeten worden gebruikt voor secundaire replica's.
 - Ingeschakelde methode voor het testen van de [**liveiteit**](./probes-codepackage.md) voor container toepassingen. Met de duur van de online-test kunt u de levens duur van de container toepassing aankondigen. Wanneer deze niet tijdig reageren, wordt de computer opnieuw opgestart.
 - [**Uitvoeren naar voltooid/eenmaal voor services**](./run-to-completion.md)**
 
 ### <a name="image-store-improvements"></a>Image Store verbeteringen
- - Service Fabric 7,1 gebruikt **aangepaste Trans Port om standaard bestands overdracht tussen knoop punten te beveiligen** . De afhankelijkheid op SMB-bestands share is verwijderd uit versie 7,1. De beveiligde SMB-bestands shares zijn nog steeds aanwezig op knoop punten die Image Store service replica bevatten voor de keuze van de klant, van de standaard instelling en voor de upgrade en Down graden naar de oude versie.
+ - Service Fabric 7,1 gebruikt **aangepaste Trans Port om standaard bestands overdracht tussen knoop punten te beveiligen**. De afhankelijkheid op SMB-bestands share is verwijderd uit versie 7,1. De beveiligde SMB-bestands shares zijn nog steeds aanwezig op knoop punten die Image Store service replica bevatten voor de keuze van de klant, van de standaard instelling en voor de upgrade en Down graden naar de oude versie.
        
  ### <a name="reliable-collections-improvements"></a>Verbeteringen van betrouw bare verzamelingen
 
@@ -93,11 +93,11 @@ We zijn enthousiast om de volgende versie van Service Fabric aan te kondigen. De
 ### <a name="service-fabric-71-releases"></a>Service Fabric 7,1 releases
 | Releasedatum | Release | Meer informatie |
 |---|---|---|
-| 20 april 2020 | [Azure Service Fabric 7,1](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-1-release/ba-p/1311373)  | [Opmerkingen bij de release](https://github.com/microsoft/service-fabric/tree/master/release_notes/Service-Fabric-71-releasenotes.md)|
-| 16 juni 2020 | [Microsoft Azure Service Fabric 7,1 eerst vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-1-first-refresh-release/ba-p/1466517) | [Opmerkingen bij de release](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-71CU1-releasenotes.md)
-| 20 juli 2020 | [Microsoft Azure Service Fabric 7,1 seconde vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-1-second-refresh-release/ba-p/1534246) | [Opmerkingen bij de release](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-71CU2-releasenotes.md)
-| 12 augustus 2020 | [Microsoft Azure Service Fabric 7,1 derde vernieuwing](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-1-third-refresh-release/ba-p/1587586) | [Opmerkingen bij de release](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-71CU3-releasenotes.md)
-| 10 september 2020 | [Microsoft Azure 7,1 Service Fabric vierde vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-1-fourth-refresh-release/ba-p/1653859)  | [Opmerkingen bij de release](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-71CU5-releasenotes.md)|
+| 20 april 2020 | [Azure Service Fabric 7,1](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-1-release/ba-p/1311373)  | [Releaseopmerkingen](https://github.com/microsoft/service-fabric/tree/master/release_notes/Service-Fabric-71-releasenotes.md)|
+| 16 juni 2020 | [Microsoft Azure Service Fabric 7,1 eerst vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-1-first-refresh-release/ba-p/1466517) | [Releaseopmerkingen](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-71CU1-releasenotes.md)
+| 20 juli 2020 | [Microsoft Azure Service Fabric 7,1 seconde vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-1-second-refresh-release/ba-p/1534246) | [Releaseopmerkingen](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-71CU2-releasenotes.md)
+| 12 augustus 2020 | [Microsoft Azure Service Fabric 7,1 derde vernieuwing](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-1-third-refresh-release/ba-p/1587586) | [Releaseopmerkingen](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-71CU3-releasenotes.md)
+| 10 september 2020 | [Microsoft Azure 7,1 Service Fabric vierde vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-1-fourth-refresh-release/ba-p/1653859)  | [Releaseopmerkingen](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-71CU5-releasenotes.md)|
 
 ### <a name="service-fabric-70"></a>Service Fabric 7,0
 
@@ -110,13 +110,13 @@ Dit is de meest recente versie van Service Fabric en wordt geladen met belang ri
 ### <a name="key-announcements"></a>Belang rijke aankondigingen
  - [**KeyVaultReference-ondersteuning voor toepassings geheimen (preview-versie)**](./service-fabric-keyvault-references.md): Service Fabric toepassingen die [beheerde identiteiten](./concepts-managed-identity.md) hebben ingeschakeld, kunnen nu rechtstreeks verwijzen naar een Key Vault geheime URL als omgevings variabele, toepassings parameter of container opslagplaats referentie. Service Fabric zal het geheim automatisch oplossen met behulp van de beheerde identiteit van de toepassing. 
      
-- **Verbeterde beveiliging van upgrades voor stateless Services** : als u de beschik baarheid tijdens een upgrade van een toepassing wilt garanderen, hebben we nieuwe configuraties geïntroduceerd om het [minimum aantal instanties te definiëren voor stateless Services](/dotnet/api/system.fabric.description.statelessservicedescription?view=azure-dotnet) die beschikbaar moeten worden gesteld. Voorheen was deze waarde 1 voor alle services en kan deze niet worden gewijzigd. Met deze nieuwe beveiligings controle per service kunt u ervoor zorgen dat uw services een minimum aantal exemplaren bewaren tijdens de upgrade van toepassingen, cluster upgrades en andere onderhouds werkzaamheden die afhankelijk zijn van de status-en veiligheids controles van Service Fabric.
+- **Verbeterde beveiliging van upgrades voor stateless Services**: als u de beschik baarheid tijdens een upgrade van een toepassing wilt garanderen, hebben we nieuwe configuraties geïntroduceerd om het [minimum aantal instanties te definiëren voor stateless Services](/dotnet/api/system.fabric.description.statelessservicedescription?view=azure-dotnet) die beschikbaar moeten worden gesteld. Voorheen was deze waarde 1 voor alle services en kan deze niet worden gewijzigd. Met deze nieuwe beveiligings controle per service kunt u ervoor zorgen dat uw services een minimum aantal exemplaren bewaren tijdens de upgrade van toepassingen, cluster upgrades en andere onderhouds werkzaamheden die afhankelijk zijn van de status-en veiligheids controles van Service Fabric.
   
 - [**Resource limieten voor gebruikers services**](./service-fabric-resource-governance.md#enforcing-the-resource-limits-for-user-services): gebruikers kunnen resource limieten instellen voor de gebruikers services op een knoop punt om te voor komen dat scenario's zoals bron uitputting van de service Fabric systeem services. 
   
 - [**Zeer hoge service kosten**](./service-fabric-cluster-resource-manager-movement-cost.md) voor een replica type. Replica's met zeer hoge verplaatsings kosten worden alleen verplaatst als er een beperkings schending in het cluster is die op een andere manier niet kan worden opgelost. Raadpleeg het gekoppelde document voor meer informatie over wanneer het gebruik van een zeer hoge transport kosten redelijk is en voor aanvullende overwegingen.
   
--  **Aanvullende controle van de cluster beveiliging** : in deze release hebben we een Configureer bare quorum controle voor het Seed-knoop punt geïntroduceerd. Zo kunt u aanpassen hoeveel Seed-knoop punten beschikbaar moeten zijn tijdens de cluster levenscyclus-en beheer scenario's. Bewerkingen die het cluster onder de geconfigureerde waarde zouden nemen, worden geblokkeerd. Vandaag de standaard waarde is altijd een quorum van de Seed-knoop punten, bijvoorbeeld als u 7 Seed-knoop punten hebt, een bewerking die u onder 5 Seed-knoop punten zou nemen, wordt standaard geblokkeerd. Met deze wijziging kunt u de minimale veilige waarde 6 instellen, waardoor slechts één Seed-knoop punt tegelijk kan worden ingewisseld.
+-  **Aanvullende controle van de cluster beveiliging**: in deze release hebben we een Configureer bare quorum controle voor het Seed-knoop punt geïntroduceerd. Zo kunt u aanpassen hoeveel Seed-knoop punten beschikbaar moeten zijn tijdens de cluster levenscyclus-en beheer scenario's. Bewerkingen die het cluster onder de geconfigureerde waarde zouden nemen, worden geblokkeerd. Vandaag de standaard waarde is altijd een quorum van de Seed-knoop punten, bijvoorbeeld als u 7 Seed-knoop punten hebt, een bewerking die u onder 5 Seed-knoop punten zou nemen, wordt standaard geblokkeerd. Met deze wijziging kunt u de minimale veilige waarde 6 instellen, waardoor slechts één Seed-knoop punt tegelijk kan worden ingewisseld.
    
 - Er is ondersteuning toegevoegd voor [**het beheer van de service voor back-up en herstel in service Fabric Explorer**](./service-fabric-backuprestoreservice-quickstart-azurecluster.md). Hierdoor kunnen de volgende activiteiten rechtstreeks vanuit SFX worden uitgevoerd: de service Backup en Restore detecteren, back-upbeleid maken, automatische back-ups inschakelen, ad hoc-back-ups uitvoeren, herstel bewerkingen activeren en bladeren door bestaande back-ups.
 
@@ -130,10 +130,10 @@ Daarnaast bevat deze release andere nieuwe functies, oplossingen voor problemen 
 
 | Releasedatum | Release | Meer informatie |
 |---|---|---|
-| 18 november 2019 | [Azure Service Fabric 7,0](https://techcommunity.microsoft.com/t5/Azure-Service-Fabric/Service-Fabric-7-0-Release/ba-p/1015482)  | [Opmerkingen bij de release](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service_Fabric_ReleaseNotes_70.md)|
-| 30 januari 2020 | [Release van Azure Service Fabric 7,0 vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-0-second-refresh-release/ba-p/1137690)  | [Opmerkingen bij de release](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-70CU2-releasenotes.md)|
-| 6 februari 2020 | [Release van Azure Service Fabric 7,0 vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-0-third-refresh-release/ba-p/1156508)  | [Opmerkingen bij de release](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-70CU3-releasenotes.md)|
-| 2 maart 2020 | [Release van Azure Service Fabric 7,0 vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-0-fourth-refresh-release/ba-p/1205414)  | [Opmerkingen bij de release](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-70CU4-releasenotes.md)
+| 18 november 2019 | [Azure Service Fabric 7,0](https://techcommunity.microsoft.com/t5/Azure-Service-Fabric/Service-Fabric-7-0-Release/ba-p/1015482)  | [Releaseopmerkingen](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service_Fabric_ReleaseNotes_70.md)|
+| 30 januari 2020 | [Release van Azure Service Fabric 7,0 vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-0-second-refresh-release/ba-p/1137690)  | [Releaseopmerkingen](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-70CU2-releasenotes.md)|
+| 6 februari 2020 | [Release van Azure Service Fabric 7,0 vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-0-third-refresh-release/ba-p/1156508)  | [Releaseopmerkingen](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-70CU3-releasenotes.md)|
+| 2 maart 2020 | [Release van Azure Service Fabric 7,0 vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/azure-service-fabric-7-0-fourth-refresh-release/ba-p/1205414)  | [Releaseopmerkingen](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-70CU4-releasenotes.md)
 
 ### <a name="service-fabric-65"></a>Service Fabric 6,5
 
@@ -152,7 +152,7 @@ Hier is what's nieuw in Service Fabric 6,5:
 
 - Er zijn [replica levenscyclus gebeurtenissen](service-fabric-diagnostics-event-generation-operational.md#replica-events) voor stateful services toegevoegd.
 
-- [Betere zicht baarheid van de status van het Seed-knoop punt](service-fabric-understand-and-troubleshoot-with-system-health-reports.md#seed-node-status), inclusief waarschuwingen op cluster niveau als een Seed-knoop punt een slechte status heeft (niet *beschikbaar* , *verwijderd* of *onbekend* ).
+- [Betere zicht baarheid van de status van het Seed-knoop punt](service-fabric-understand-and-troubleshoot-with-system-health-reports.md#seed-node-status), inclusief waarschuwingen op cluster niveau als een Seed-knoop punt een slechte status heeft (niet *beschikbaar*, *verwijderd* of *onbekend*).
 
 - Met [service Fabric hulp programma voor nood herstel](https://github.com/Microsoft/Service-Fabric-AppDRTool) van de toepassing kunnen service Fabric stateful Services snel worden hersteld wanneer het primaire cluster een nood geval tegen komt. Gegevens van een primair cluster worden voortdurend gesynchroniseerd met de secundaire stand-by-toepassing met periodieke back-ups en herstel bewerkingen.
 
@@ -168,10 +168,10 @@ Zie de [release opmerkingen voor Service Fabric 6,5](https://github.com/Azure/se
 
 | Releasedatum | Release | Meer informatie |
 |---|---|---|
-| 11 juni 2019 | [Azure Service Fabric 6,5](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric)  | [Opmerkingen bij de release](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service_Fabric_ReleaseNotes_65.pdf)|
-| 2 juli 2019 | [Release van Azure Service Fabric 6,5 vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric)  | [Opmerkingen bij de release](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service_Fabric_ReleaseNotes_65CU1.pdf)  |
-| 29 juli 2019 | [Release van Azure Service Fabric 6,5 vernieuwen](https://techcommunity.microsoft.com/t5/Azure-Service-Fabric/Azure-Service-Fabric-6-5-Second-Refresh-Release/ba-p/800523)  | [Opmerkingen bij de release](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service_Fabric_ReleaseNotes_65CU2.pdf)  |
-| Augustus 23, 2019 | [Release van Azure Service Fabric 6,5 vernieuwen](https://techcommunity.microsoft.com/t5/Azure-Service-Fabric/Azure-Service-Fabric-6-5-Third-Refresh-Release/ba-p/818599)  | [Opmerkingen bij de release](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service_Fabric_ReleaseNotes_65CU3.pdf)  |
+| 11 juni 2019 | [Azure Service Fabric 6,5](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric)  | [Releaseopmerkingen](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service_Fabric_ReleaseNotes_65.pdf)|
+| 2 juli 2019 | [Release van Azure Service Fabric 6,5 vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric)  | [Releaseopmerkingen](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service_Fabric_ReleaseNotes_65CU1.pdf)  |
+| 29 juli 2019 | [Release van Azure Service Fabric 6,5 vernieuwen](https://techcommunity.microsoft.com/t5/Azure-Service-Fabric/Azure-Service-Fabric-6-5-Second-Refresh-Release/ba-p/800523)  | [Releaseopmerkingen](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service_Fabric_ReleaseNotes_65CU2.pdf)  |
+| Augustus 23, 2019 | [Release van Azure Service Fabric 6,5 vernieuwen](https://techcommunity.microsoft.com/t5/Azure-Service-Fabric/Azure-Service-Fabric-6-5-Third-Refresh-Release/ba-p/818599)  | [Releaseopmerkingen](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service_Fabric_ReleaseNotes_65CU3.pdf)  |
 | 14 okt 2019 | [Release van Azure Service Fabric 6,5 vernieuwen](https://techcommunity.microsoft.com/t5/Azure-Service-Fabric/Azure-Service-Fabric-6-5-Fifth-Refresh-Release/ba-p/913296)  | [Opmerkingen bij de release] (https://github.com/microsoft/service-fabric/blob/master/release_notes/Service_Fabric_ReleaseNotes_65CU5.md  |
 
 
@@ -181,10 +181,10 @@ Zie de [release opmerkingen voor Service Fabric 6,5](https://github.com/Azure/se
 
 | Releasedatum | Release | Meer informatie |
 |---|---|---|
-| 30 november 2018 | [Azure Service Fabric 6,4](https://blogs.msdn.microsoft.com/azureservicefabric/2018/11/30/azure-service-fabric-6-4-release/)  | [Opmerkingen bij de release](https://msdnshared.blob.core.windows.net/media/2018/12/Service-Fabric-6.4-Release.pdf)|
-| 12 december 2018 | [Azure Service Fabric 6,4-release voor Windows-clusters vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric)  | [Opmerkingen bij de release](https://msdnshared.blob.core.windows.net/media/2018/12/Links.pdf)  |
-| 4 februari 2019 | [Release van Azure Service Fabric 6,4 vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric) | [Opmerkingen bij de release](https://msdnshared.blob.core.windows.net/media/2019/02/Service-Fabric-6.4CU3-Release-Notes.pdf) |
-| 4 maart 2019 | [Release van Azure Service Fabric 6,4 vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric) | [Opmerkingen bij de release](https://msdnshared.blob.core.windows.net/media/2019/03/Service-Fabric-6.4CU4-Release-Notes.pdf)
-| 8 april 2019 | [Release van Azure Service Fabric 6,4 vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric) | [Opmerkingen bij de release](https://msdnshared.blob.core.windows.net/media/2019/04/Service-Fabric-6.4CU5-ReleaseNotes3.pdf)
-| 2 mei 2019 | [Release van Azure Service Fabric 6,4 vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric) | [Opmerkingen bij de release](https://msdnshared.blob.core.windows.net/media/2019/05/Service-Fabric-64CU6-Release-Notes-V2.pdf)
-| 28 mei 2019 | [Release van Azure Service Fabric 6,4 vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric) | [Opmerkingen bij de release](https://msdnshared.blob.core.windows.net/media/2019/05/Service_Fabric_64CU7_Release_Notes1.pdf)
+| 30 november 2018 | [Azure Service Fabric 6,4](https://blogs.msdn.microsoft.com/azureservicefabric/2018/11/30/azure-service-fabric-6-4-release/)  | [Releaseopmerkingen](https://msdnshared.blob.core.windows.net/media/2018/12/Service-Fabric-6.4-Release.pdf)|
+| 12 december 2018 | [Azure Service Fabric 6,4-release voor Windows-clusters vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric)  | [Releaseopmerkingen](https://msdnshared.blob.core.windows.net/media/2018/12/Links.pdf)  |
+| 4 februari 2019 | [Release van Azure Service Fabric 6,4 vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric) | [Releaseopmerkingen](https://msdnshared.blob.core.windows.net/media/2019/02/Service-Fabric-6.4CU3-Release-Notes.pdf) |
+| 4 maart 2019 | [Release van Azure Service Fabric 6,4 vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric) | [Releaseopmerkingen](https://msdnshared.blob.core.windows.net/media/2019/03/Service-Fabric-6.4CU4-Release-Notes.pdf)
+| 8 april 2019 | [Release van Azure Service Fabric 6,4 vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric) | [Releaseopmerkingen](https://msdnshared.blob.core.windows.net/media/2019/04/Service-Fabric-6.4CU5-ReleaseNotes3.pdf)
+| 2 mei 2019 | [Release van Azure Service Fabric 6,4 vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric) | [Releaseopmerkingen](https://msdnshared.blob.core.windows.net/media/2019/05/Service-Fabric-64CU6-Release-Notes-V2.pdf)
+| 28 mei 2019 | [Release van Azure Service Fabric 6,4 vernieuwen](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric) | [Releaseopmerkingen](https://msdnshared.blob.core.windows.net/media/2019/05/Service_Fabric_64CU7_Release_Notes1.pdf)

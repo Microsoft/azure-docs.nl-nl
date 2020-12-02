@@ -3,20 +3,20 @@ title: Webactiviteit in Azure Data Factory
 description: Meer informatie over het gebruik van webactiviteit, een van de controle stroom activiteiten die door Data Factory worden ondersteund om een REST-eind punt vanuit een pijp lijn aan te roepen.
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/19/2018
-ms.openlocfilehash: e74361d6fb3eb1f9708f39f198506d16c7c046c4
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 8ee23adf569a6afafc57dac786cd907a3481abde
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92635096"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96485788"
 ---
 # <a name="web-activity-in-azure-data-factory"></a>Webactiviteit in Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -73,7 +73,7 @@ De WebActivity kan worden gebruikt om een aangepast REST-eindpunt aan te roepen 
 Eigenschap | Beschrijving | Toegestane waarden | Vereist
 -------- | ----------- | -------------- | --------
 naam | De naam van de Web-activiteit | Tekenreeks | Ja
-type | Moet worden ingesteld op **webactiviteit** . | Tekenreeks | Ja
+type | Moet worden ingesteld op **webactiviteit**. | Tekenreeks | Ja
 method | Rest API-methode voor het doel eindpunt. | Tekenreeks. <br/><br/>Ondersteunde typen: ' GET ', ' POST ', ' PUT ' | Ja
 url | Doel eindpunt en-pad | Teken reeks (of expressie met het resultType van de teken reeks). Voor de activiteit wordt een time-out van één minuut met een fout weergegeven als er geen respons van het eindpunt wordt ontvangen. | Ja
 koppen | Kopteksten die naar de aanvraag worden verzonden. U kunt bijvoorbeeld de taal en het type van een aanvraag instellen: `"headers" : { "Accept-Language": "en-us", "Content-Type": "application/json" }` . | Teken reeks (of expressie met het resultType van de teken reeks) | Ja, content-type-header is vereist. `"headers":{ "Content-Type":"application/json"}`

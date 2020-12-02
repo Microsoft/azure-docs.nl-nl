@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/16/2020
 ms.author: Zhchia
-ms.openlocfilehash: bd8145c11ce73d5c5ee42d5dee17897a8520197e
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 70b60d340e3af8d726915db513e30eaff26ed217
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96181857"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96347579"
 ---
 # <a name="tutorial-configure-oracle-cloud-infrastructure-console-for-automatic-user-provisioning"></a>Zelfstudie: Oracle Cloud Infrastructure-console configureren voor automatische inrichting van gebruikers
 
@@ -106,7 +106,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
     ![Schermopname van de vervolgkeuzelijst Inrichtingsmodus met de optie Automatisch gemarkeerd.](common/provisioning-automatic.png)
 
-5. Voer onder de sectie **Beheerdersreferenties** de **Tenant-URL** in de indeling `https://<IdP ID>.identity.oraclecloud.com/admin/v1` in. Bijvoorbeeld `https://idcs-0bfd023ff2xx4a98a760fa2c31k92b1d.identity.oraclecloud.com/admin/v1`. Voer de waarde van de token voor het geheim in die eerder in **Token voor geheim** is opgehaald. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met de Oracle Cloud Infrastructure-console. Als de verbinding mislukt, moet u controleren of uw Oracle Cloud Infrastructure-console-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
+5. Voer in de sectie **Beheerdersreferenties** de **Tenant-URL** in de indeling `https://<IdP ID>.identity.oraclecloud.com/admin/v1` in. Bijvoorbeeld `https://idcs-0bfd023ff2xx4a98a760fa2c31k92b1d.identity.oraclecloud.com/admin/v1`. Voer de waarde van de token voor het geheim in die eerder in **Token voor geheim** is opgehaald. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met de Oracle Cloud Infrastructure-console. Als de verbinding mislukt, moet u controleren of uw Oracle Cloud Infrastructure-console-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
     ![Schermopname met het dialoogvenster Beheerdersreferenties, waarin u uw Tenant U R L en Token voor geheim kunt invoeren.](./media/oracle-cloud-infratstructure-console-provisioning-tutorial/provisioning.png)
 

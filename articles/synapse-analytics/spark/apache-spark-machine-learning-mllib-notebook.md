@@ -9,18 +9,18 @@ ms.topic: tutorial
 ms.subservice: machine-learning
 ms.date: 04/15/2020
 ms.author: euang
-ms.openlocfilehash: d7c5bd2d1918ecebe2d2aabc213de43e7cdb1fef
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 595b3a57594401df6b61db1fcf8ee16be98ef364
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93306968"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95900415"
 ---
 # <a name="tutorial-build-a-machine-learning-app-with-apache-spark-mllib-and-azure-synapse-analytics"></a>Zelfstudie: Een machine learning-app bouwen met Apache Spark MLlib en Azure Synapse Analytics
 
 In dit artikel leert u hoe u Apache Spark [MLlib](https://spark.apache.org/mllib/) kunt gebruiken om een machine learning-toepassing te maken die eenvoudige voorspellende analyse uitvoert voor Azure Open Datasets. Spark biedt ingebouwde machine learning-bibliotheken. In dit voorbeeld wordt gebruikgemaakt van *classificatie* via logistieke regressie.
 
-MLlib is een Spark-kernbibliotheek met veel hulpprogramma's die nuttig zijn voor machine learning-taken, waaronder hulpprogramma's die geschikt zijn voor:
+SparkML en MLlib zijn Spark-kernbibliotheken met veel hulpprogramma's die nuttig zijn voor machine learning-taken, waaronder hulpprogramma's die geschikt zijn voor:
 
 - Classificatie
 - Regressie
@@ -31,9 +31,9 @@ MLlib is een Spark-kernbibliotheek met veel hulpprogramma's die nuttig zijn voor
 
 ## <a name="understand-classification-and-logistic-regression"></a>Classificatie en logistieke regressie begrijpen
 
-*Classificatie* , een populaire machine learning-taak, is het proces waarbij invoergegevens worden gesorteerd in categorieën. Het is de taak van een algoritme voor classificatie om uit te vinden hoe *labels* moeten worden toegewezen aan invoergegevens die u opgeeft. U kunt een machine learning-algoritme bijvoorbeeld beschouwen als een algoritme dat informatie over aandelen accepteert als invoer, en de aandelen opsplitst in twee categorieën: aandelen die u beter kunt verkopen en aandelen die u beter kunt behouden.
+*Classificatie*, een populaire machine learning-taak, is het proces waarbij invoergegevens worden gesorteerd in categorieën. Het is de taak van een algoritme voor classificatie om uit te vinden hoe *labels* moeten worden toegewezen aan invoergegevens die u opgeeft. U kunt een machine learning-algoritme bijvoorbeeld beschouwen als een algoritme dat informatie over aandelen accepteert als invoer, en de aandelen opsplitst in twee categorieën: aandelen die u beter kunt verkopen en aandelen die u beter kunt behouden.
 
-*Logistieke regressie* is een algoritme dat u kunt gebruiken voor classificatie. De logistieke regressie-API van Spark is handig voor *binaire classificatie* , of voor het classificeren van invoergegevens in één van twee groepen. Zie [Wikipedia](https://en.wikipedia.org/wiki/Logistic_regression) voor meer informatie over logistieke regressies.
+*Logistieke regressie* is een algoritme dat u kunt gebruiken voor classificatie. De logistieke regressie-API van Spark is handig voor *binaire classificatie*, of voor het classificeren van invoergegevens in één van twee groepen. Zie [Wikipedia](https://en.wikipedia.org/wiki/Logistic_regression) voor meer informatie over logistieke regressies.
 
 Samengevat: het proces van logistieke regressie produceert een *logistieke functie* die kan worden gebruikt om de waarschijnlijkheid te voorspellen dat een invoervector behoort in de ene of in de andere groep.
 
@@ -46,10 +46,10 @@ In dit voorbeeld gebruikt u Spark om een voorspellende analyse uit te voeren voo
 
 In de volgende stappen ontwikkelt u een model om te voorspellen of voor een bepaalde trip een fooi is betaald of niet.
 
-## <a name="create-an-apache-spark-mllib-machine-learning-app"></a>Een machine learning-app maken in Apache Spark MLlib
+## <a name="create-an-apache-spark--machine-learning-model"></a>Een machine learning-model in Apache Spark maken
 
 1. Maak een notebook met behulp van de PySpark-kernel. Zie [Een notebook maken](../quickstart-apache-spark-notebook.md#create-a-notebook) voor de instructies.
-2. Importeer de typen die zijn vereist voor deze toepassing. Kopieer en plak de volgende code in een lege cel, en druk vervolgens op **SHIFT + ENTER** , of voer de cel uit met behulp van het blauwe pictogram Afspelen.
+2. Importeer de typen die zijn vereist voor deze toepassing. Kopieer en plak de volgende code in een lege cel, en druk vervolgens op **SHIFT + ENTER**, of voer de cel uit met behulp van het blauwe pictogram Afspelen.
 
     ```python
     import matplotlib.pyplot as plt
@@ -109,44 +109,6 @@ Het maken van een tijdelijke tabel of weergave biedt verschillende toegangspaden
 ```Python
 sampled_taxi_df.createOrReplaceTempView("nytaxi")
 ```
-
-## <a name="understand-the-data"></a>De gegevens begrijpen
-
-Normaal gesproken doorloopt u op dit punt een fase van *EDA* (Exploratory Data Analysis) om een begrip van de gegevens te ontwikkelen. De volgende code geeft drie verschillende visualisaties van de gegevens weer met betrekking tot fooien, die leiden tot conclusies over de status en kwaliteit van de gegevens.
-
-```python
-# The charting package needs a Pandas dataframe or numpy array do the conversion
-sampled_taxi_pd_df = sampled_taxi_df.toPandas()
-
-# Look at tips by amount count histogram
-ax1 = sampled_taxi_pd_df['tipAmount'].plot(kind='hist', bins=25, facecolor='lightblue')
-ax1.set_title('Tip amount distribution')
-ax1.set_xlabel('Tip Amount ($)')
-ax1.set_ylabel('Counts')
-plt.suptitle('')
-plt.show()
-
-# How many passengers tipped by various amounts
-ax2 = sampled_taxi_pd_df.boxplot(column=['tipAmount'], by=['passengerCount'])
-ax2.set_title('Tip amount by Passenger count')
-ax2.set_xlabel('Passenger count')
-ax2.set_ylabel('Tip Amount ($)')
-plt.suptitle('')
-plt.show()
-
-# Look at the relationship between fare and tip amounts
-ax = sampled_taxi_pd_df.plot(kind='scatter', x= 'fareAmount', y = 'tipAmount', c='blue', alpha = 0.10, s=2.5*(sampled_taxi_pd_df['passengerCount']))
-ax.set_title('Tip amount by Fare amount')
-ax.set_xlabel('Fare Amount ($)')
-ax.set_ylabel('Tip Amount ($)')
-plt.axis([-2, 80, -2, 20])
-plt.suptitle('')
-plt.show()
-```
-
-![Histogram](./media/apache-spark-machine-learning-mllib-notebook/apache-spark-mllib-eda-histogram.png)
-![Box-and-whisker-plot](./media/apache-spark-machine-learning-mllib-notebook/apache-spark-mllib-eda-box-whisker.png)
-![Spreidingsplot](./media/apache-spark-machine-learning-mllib-notebook/apache-spark-mllib-eda-scatter.png)
 
 ## <a name="prepare-the-data"></a>De gegevens voorbereiden
 
@@ -272,7 +234,7 @@ plt.ylabel('True Positive Rate')
 plt.show()
 ```
 
-![ROC-curve voor het logistieke regressiemodel over fooien](./media/apache-spark-machine-learning-mllib-notebook/apache-spark-mllib-nyctaxi-roc.png "ROC-curve voor het logistieke regressiemodel over fooien")
+![ROC-curve voor het logistieke regressiemodel over fooien](./media/apache-spark-machine-learning-mllib-notebook/nyc-taxi-roc.png)
 
 ## <a name="shut-down-the-spark-instance"></a>Het Spark-exemplaar afsluiten
 

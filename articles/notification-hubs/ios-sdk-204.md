@@ -9,11 +9,11 @@ ms.service: notification-hubs
 ms.reviewer: thsomasu
 ms.lastreviewed: 06/01/2020
 ms.openlocfilehash: ffa562a734e0e6f898aaff89622362080bf1a053
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91318191"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96001351"
 ---
 # <a name="tutorial-send-push-notifications-to-ios-apps-using-azure-notification-hubs-version-204"></a>Zelfstudie: Pushmeldingen verzenden naar iOS-apps met Azure Notification Hubs (versie 2.0.4)
 
@@ -43,21 +43,40 @@ Zorg ervoor dat u voordat u verder gaat, de vorige zelfstudie over hoe u aan de 
 
 ## <a name="connect-your-ios-app-to-notification-hubs"></a>Uw iOS-app verbinden met Notification Hubs
 
-1. Maak in Xcode een nieuw iOS-project en selecteer de sjabloon  **Single View Application**  (Toepassing met één weergave).
+1. Maak in Xcode een nieuw iOS-project en selecteer de sjabloon **Single View Application** (Toepassing met één weergave).
 
    :::image type="content" source="media/ios-sdk/image1.png" alt-text="Sjabloon selecteren":::
 
-2. Bij het instellen van de opties voor het nieuwe project moet u dezelfde  **productnaam**  en  **organisatie-id**  gebruiken als bij het instellen van de bundel-id in de Apple Developer-portal.
+2. Bij het instellen van de opties voor het nieuwe project moet u dezelfde **productnaam** en **organisatie-id** gebruiken als bij het instellen van de bundel-id in de Apple Developer-portal.
 
-3. Selecteer onder Projectnavigator de naam van uw project onder  **Doelen**en ga vervolgens naar het tabblad  **Ondertekening en mogelijkheden** . Zorg ervoor dat u het juiste  **team**  voor uw Apple Developer-account selecteert. XCode moet automatisch het profiel voor inrichting openen dat u eerder op basis van uw bundel-id hebt gemaakt.
+3. Selecteer onder Projectnavigator de naam van uw project onder **Doelen** en ga vervolgens naar het tabblad **Ondertekening en mogelijkheden**. Zorg ervoor dat u het juiste **team** voor uw Apple Developer-account selecteert. XCode moet automatisch het profiel voor inrichting openen dat u eerder op basis van uw bundel-id hebt gemaakt.
 
-   Als u het nieuwe profiel voor inrichting dat u hebt gemaakt in Xcode niet ziet, vernieuwt u de profielen voor uw identiteit voor ondertekening. Klik op  **Xcode**  in de menubalk, klik op  **Preferences** (Voorkeuren), klik op het tabblad  **Account**  en klik op de knop  **View Details**  (Details weergeven), klik op uw identiteit voor ondertekening en klik vervolgens op de knop voor vernieuwen in de rechterbenedenhoek.
+   Als u het nieuwe profiel voor inrichting dat u hebt gemaakt in Xcode niet ziet, vernieuwt u de profielen voor uw identiteit voor ondertekening. Klik op **Xcode** in de menubalk, klik op **Preferences** (Voorkeuren), klik op het tabblad **Account** en klik op de knop **View Details** (Details weergeven), klik op uw identiteit voor ondertekening en klik vervolgens op de knop voor vernieuwen in de rechterbenedenhoek.
 
-   :::image type="content" source="media/ios-sdk/image2.png" alt-text="Sjabloon selecteren":::
+   :::image type="content" source="media/ios-sdk/image2.png" alt-text="Details weergeven":::
 
-4. Selecteer op het tabblad  **Ondertekenen en mogelijkheden**  de optie  **+ Mogelijkheid**. Dubbelklik op  **Pushmeldingen**  om deze optie in te schakelen.
+4. Selecteer op het tabblad **Ondertekenen en mogelijkheden** de optie **+ Mogelijkheid**. Dubbelklik op **Pushmeldingen** om deze optie in te schakelen.
 
-   :::image type="content" source="media/ios-sdk/image3.png" alt-text="Sjabloon selecteren"
+   :::image type="content" source="media/ios-sdk/image3.png" alt-text="Mogelijkheid":::
+
+5. Voeg de Azure Notification Hubs SDK-modules toe.
+
+   U kunt de Azure Notification Hubs-SDK integreren in uw app met behulp van [Cocoapods](https://cocoapods.org/) of door de binaire bestanden handmatig toe te voegen aan uw project.
+
+   - Integratie via Cocoapods: Voeg de volgende afhankelijkheden toe aan uw podfile om de Azure Notification Hubs-SDK op te nemen in uw app:
+
+      ```ruby
+      pod 'AzureNotificationHubs-iOS'
+      ```
+
+      - Voer pod install uit om uw zojuist gedefinieerde pod te installeren en uw .xcworkspace te openen.
+
+         Als er tijdens het uitvoeren van de pod-installatie een fout optreedt, zoals **Kan geen specificatie vinden voor AzureNotificationHubs-iOS-** , moet u `pod repo update` uitvoeren om de nieuwste pods uit de Cocoapods-opslagplaats op te halen. Voer daarna de pod-installatie uit.
+
+   - Integratie via Carthage: Voeg de volgende afhankelijkheden toe aan uw Cartfile om de Azure Notification Hubs-SDK in uw app op te nemen:
+
+      ```ruby
+      github "Azure/azure-notificationhubs-ios"
       ```
 
       - Werk vervolgens de build-afhankelijkheden bij:
@@ -66,17 +85,17 @@ Zorg ervoor dat u voordat u verder gaat, de vorige zelfstudie over hoe u aan de 
       $ carthage update
       ```
 
-      Raadpleeg de [Carthage-opslagplaats in GitHub](https://github.com/Carthage/Carthage) voor meer informatie over het gebruik van Carthage.
+      Raadpleeg de [Carthage-opslagplaats in GitHub](https://github.com/Carthage/Carthage) voor meer informatie over het gebruik van Carthage.
 
    - Integratie door de binaire bestanden naar uw project te kopiëren: U kunt de integratie uitvoeren door de binaire bestanden in uw project te kopiëren. Dit doet u als volgt:
 
-        - Download het  [Azure Notification Hubs SDK](https://github.com/Azure/azure-notificationhubs-android/releases) -framework dat als zip-bestand wordt aangeboden en pak het bestand uit.
+        - Download het [Azure Notification Hubs SDK-framework](https://github.com/Azure/azure-notificationhubs-android/releases) als een zip-bestand wordt aangeboden en pak het bestand uit.
 
-        - Klik met de rechtermuisknop op uw project in Xcode en klik op de optie  **Add Files to**  (Bestanden toevoegen aan) om de map  **WindowsAzureMessaging.framework**  aan uw Xcode-project toe te voegen. Selecteer  **Options**  (Opties), zorg ervoor dat  **Copy items if needed**  (Bestanden kopiëren indien nodig) is geselecteerd en klik op  **Add** (Toevoegen).
+        - Klik met de rechtermuisknop op uw project in Xcode en klik op de optie **Add Files to** (Bestanden toevoegen aan) om de map **WindowsAzureMessaging.framework** aan uw Xcode-project toe te voegen. Selecteer **Options** (Opties), zorg ervoor dat **Copy items if needed** (Copy items if needed) is geselecteerd en klik op **Add** (Toevoegen).
 
-          :::image type="content" source="media/ios-sdk/image4.png" alt-text="Sjabloon selecteren":::
+          :::image type="content" source="media/ios-sdk/image4.png" alt-text="Framework toevoegen":::
 
-6. Voeg een nieuw headerbestand toe aan uw project met de naam  **Constants.h**. Klik daarvoor met de rechtermuisknop op de naam van het project en selecteer  **Nieuw bestand...** . Selecteer vervolgens **Header File** (Headerbestand). Dit bestand bevat de constanten voor uw Notification Hub. Selecteer daarna  **Next** (Volgende). Noem het bestand **Constants.h**.
+6. Voeg een nieuw headerbestand toe aan uw project met de naam **Constants.h**. Klik daarvoor met de rechtermuisknop op de naam van het project en selecteer **Nieuw bestand...** . Selecteer vervolgens **Header File** (Headerbestand). Dit bestand bevat de constanten voor uw Notification Hub. Selecteer vervolgens **Volgende**. Noem het bestand **Constants.h**.
 
 7. Voeg de volgende code toe aan het bestand Constants.h:
 
@@ -89,15 +108,21 @@ Zorg ervoor dat u voordat u verder gaat, de vorige zelfstudie over hoe u aan de 
    #endif /* Constants_h */
    ```
 
-8. Voeg het implementatiebestand voor Constants.h toe. Klik daarvoor met de rechtermuisknop op de naam van het project en selecteer  **Nieuw bestand...** . Selecteer  **Objective-C File** (Objective-C-bestand) en selecteer vervolgens  **Next** (Volgende). Geef het bestand de naam  **Constants.m**.
+8. Voeg het implementatiebestand voor Constants.h toe. Klik daarvoor met de rechtermuisknop op de naam van het project en selecteer **Nieuw bestand...** . Selecteer **Objective-C-bestand** en selecteer vervolgens **Volgende**. Geef het bestand de naam **Constants.m**.
 
-   :::image type="content" source="media/ios-sdk/image5.png" alt-text="Sjabloon selecteren"
+   :::image type="content" source="media/ios-sdk/image5.png" alt-text="Implementatiebestand toevoegen":::
+
+9. Open het bestand **Constants.m** en vervang de inhoud door de volgende code. Vervang de tijdelijke aanduidingen voor letterlijke tekenreeks `NotificationHubConnectionString` en `NotificationHubConnectionString` en vervang respectievelijk de naam van de hub en de **DefaultListenSharedAccessSignature**, die u eerder hebt verkregen via de portal:
+
+   ```objc
+   #import <Foundation/Foundation.h>
+   #import "Constants.h"
 
    NSString* const NHInfoConnectionString = @"NotificationHubConnectionString";
    NSString* const NHInfoHubName = @"NotificationHubName";NSString* const NHUserDefaultTags = @"notification_tags";
    ```
 
-10. Open uw projectbestand  **AppDelegate.h**  en vervang de inhoud door de volgende code:
+10. Open uw projectbestand **AppDelegate.h** en vervang de inhoud door de volgende code:
 
     ```objc
     #import <UIKit/UIKit.h>
@@ -114,20 +139,20 @@ Zorg ervoor dat u voordat u verder gaat, de vorige zelfstudie over hoe u aan de 
     @end
     ```
 
-11. Voeg in het projectbestand **AppDelegate.m**  de volgende `import` -instructies toe:
+11. Open het projectbestand **AppDelegate.m** en voeg de volgende `import` instructies toe:
 
     ```objc
     #import "Constants.h"
     #import "NotificationDetailViewController.h"
     ```
 
-12. Voeg daarnaast in uw **AppDelegate.m** -bestand de volgende regel code toe aan de  `didFinishLaunchingWithOptions` -methode op basis van uw versie van iOS. Deze code registreert uw apparaatingang met APNs:
+12. Voeg daarnaast in uw **AppDelegate.m**-bestand de volgende regel code toe aan de methode `didFinishLaunchingWithOptions` op basis van uw versie van iOS. Deze code registreert uw apparaatingang met APNs:
 
     ```objc
     [[UNUserNotificationCenter currentNotificationCenter] setDelegate:self];
     ```
 
-13. Vervang in hetzelfde  **AppDelegate.m** -bestand de code na  `didFinishLaunchingWithOptions`  door de volgende code:
+13. Vervang in hetzelfde **AppDelegate.m**-bestand de code na `didFinishLaunchingWithOptions` door de volgende code:
 
     ```objc
     // Tells the app that a remote notification arrived that indicates there is data to be fetched.
@@ -271,11 +296,11 @@ Zorg ervoor dat u voordat u verder gaat, de vorige zelfstudie over hoe u aan de 
     @end
     ```
 
-    Deze code maakt verbinding met de Notification Hub via de verbindingsgegevens die u hebt opgegeven in  **Constants.h**. Er wordt vervolgens een apparaattoken aan de Notification Hub toegekend, zodat de hub meldingen kan verzenden.
+    Deze code maakt verbinding met de Notification Hub via de verbindingsgegevens die u hebt opgegeven in **Constants.h**. Er wordt vervolgens een apparaattoken aan de Notification Hub toegekend, zodat de hub meldingen kan verzenden.
 
 ### <a name="create-notificationdetailviewcontroller-header-file"></a>NotificationDetailViewController-headerbestand maken
 
-1. Voeg, net als in de vorige instructies, een ander header-bestand toe met de naam  **NamedNotificationDetailViewController.h**. Vervang de inhoud van het nieuwe headerbestand door de volgende code:
+1. Voeg, net als in de vorige instructies, een ander header-bestand toe met de naam **NamedNotificationDetailViewController.h**. Vervang de inhoud van het nieuwe headerbestand door de volgende code:
 
    ```objc
    #import <UIKit/UIKit.h>
@@ -297,7 +322,7 @@ Zorg ervoor dat u voordat u verder gaat, de vorige zelfstudie over hoe u aan de 
    NS_ASSUME_NONNULL_END
    ```
 
-2. Voeg het implementatiebestand  **NotificationDetailViewController.m** toe. Vervang de inhoud van het bestand door de volgende code, waarmee de UIViewController-methoden worden geïmplementeerd:
+2. Voeg het implementatiebestand **NotificationDetailViewController.m** toe. Vervang de inhoud van het bestand door de volgende code, waarmee de UIViewController-methoden worden geïmplementeerd:
 
    ```objc
    #import "NotificationDetailViewController.h"
@@ -362,14 +387,14 @@ Zorg ervoor dat u voordat u verder gaat, de vorige zelfstudie over hoe u aan de 
 
 ### <a name="viewcontroller"></a>ViewController
 
-1. Voeg in het projectbestand **ViewController.m**  de volgende `import` -instructies toe:
+1. Open het projectbestand **ViewController.h** en voeg de volgende `import` instructies toe:
 
    ```objc
    #import <WindowsAzureMessaging/WindowsAzureMessaging.h>
    #import <UserNotifications/UserNotifications.h>
    ```
 
-2. Voeg daarnaast in **ViewController.h**de volgende eigenschapsdeclaraties toe na de `@interface` -declaratie:
+2. Voeg daarnaast in **ViewController.h** de volgende eigenschapsdeclaraties toe na de declaratie `@interface`:
 
    ```objc
    @property (strong, nonatomic) IBOutlet UITextField *tagsTextField;
@@ -377,7 +402,7 @@ Zorg ervoor dat u voordat u verder gaat, de vorige zelfstudie over hoe u aan de 
    @property (strong, nonatomic) IBOutlet UIButton *unregisterButton;
    ```
 
-3. Vervang de inhoud van het implementatiebestand **ViewController.m** van het project door de volgende code:
+3. Vervang de inhoud van het implementatiebestand **ViewController.m** van het project door de volgende code:
 
    ```objc
    #import "ViewController.h"
@@ -423,32 +448,32 @@ Zorg ervoor dat u voordat u verder gaat, de vorige zelfstudie over hoe u aan de 
 
 ## <a name="send-test-push-notifications"></a>Testpushmeldingen verzenden
 
-U kunt ontvangst van meldingen in uw app testen met de optie  **Test verzenden**  in  [Azure Portal](https://portal.azure.com/). Er wordt dan een pushmelding als test naar uw apparaat verzonden.
+U kunt ontvangst van meldingen in uw app testen met de optie **Test verzenden** in [Azure-portal](https://portal.azure.com/). Er wordt dan een pushmelding als test naar uw apparaat verzonden.
 
-:::image type="content" source="media/ios-sdk/image6.png" alt-text="Sjabloon selecteren":::
+:::image type="content" source="media/ios-sdk/image6.png" alt-text="Verzenden testen":::
 
 Pushmeldingen worden gewoonlijk in een back-endservice zoals Mobile Apps of ASP.NET verzonden met een compatibele bibliotheek. U kunt de REST API ook rechtstreeks gebruiken om meldingsberichten te verzenden als er geen bibliotheek beschikbaar is voor uw back-end.
 
 Hier volgt een lijst met andere zelfstudies die u mogelijk kunt bekijken voor het verzenden van meldingen:
 
-- Azure Mobile Apps: Zie  [Pushmeldingen toevoegen aan uw iOS-app](/previous-versions/azure/app-service-mobile/app-service-mobile-ios-get-started-push) voor een voorbeeld van hoe u meldingen verzendt vanuit een back-end van Mobile Apps die is geïntegreerd met Notification Hubs.
-- ASP.NET: zie  [Gebruik Notification Hubs om pushmeldingen naar gebruikers te verzenden](notification-hubs-aspnet-backend-ios-apple-apns-notification.md).
-- Azure Notification Hubs Java-SDK: zie  [Notification Hubs gebruiken vanuit Java](notification-hubs-java-push-notification-tutorial.md)  voor het verzenden van meldingen vanuit Java. Dit is getest in Eclipse voor Android-ontwikkeling.
-- PHP: zie  [Notification Hubs gebruiken vanuit PHP](notification-hubs-php-push-notification-tutorial.md).
+- Azure Mobile Apps: Zie [Pushmeldingen toevoegen aan uw iOS-app](/previous-versions/azure/app-service-mobile/app-service-mobile-ios-get-started-push) voor een voorbeeld van hoe u meldingen verzendt vanuit een back-end van Mobile Apps die is geïntegreerd met Notification Hubs.
+- ASP.NET: [Gebruik Notification Hubs om pushmeldingen naar gebruikers te verzenden](notification-hubs-aspnet-backend-ios-apple-apns-notification.md).
+- Azure Notification Hubs Java SDK: zie [How to use Notification Hubs from Java](notification-hubs-java-push-notification-tutorial.md) (Notification Hubs gebruiken vanuit Java) voor het verzenden van meldingen vanuit Java. Dit is getest in Eclipse voor Android-ontwikkeling.
+- PHP: zie [How to use Notification Hubs from PHP](notification-hubs-php-push-notification-tutorial.md) (Notification Hubs gebruiken vanuit PHP).
 
 ## <a name="verify-that-your-app-receives-push-notifications"></a>Controleren of uw app pushmeldingen ontvangt
 
 Als u pushmeldingen op iOS wilt testen, moet u de app implementeren op een fysiek iOS-apparaat. U kunt geen Apple pushmeldingen verzenden via de iOS-simulator.
 
-1. Voer de app uit, controleer of de registratie is gelukt en druk vervolgens op  **OK**.
+1. Voer de app uit en controleer of de registratie is gelukt en druk vervolgens op **OK**.
 
-   :::image type="content" source="media/ios-sdk/image7.png" alt-text="Sjabloon selecteren":::
+   :::image type="content" source="media/ios-sdk/image7.png" alt-text="Registreren":::
 
-2. Verzend vervolgens als test een pushmelding vanuit  [Azure Portal](https://portal.azure.com/), zoals in de vorige sectie wordt beschreven.
+2. Verzend vervolgens als test een pushmelding vanuit [Azure Portal](https://portal.azure.com/), zoals in de vorige sectie wordt beschreven.
 
 3. De pushmelding wordt verzonden naar alle apparaten die zijn geregistreerd voor het ontvangen van meldingen van de specifieke meldingenhub.
 
-   :::image type="content" source="media/ios-sdk/image8.png" alt-text="Sjabloon selecteren":::
+   :::image type="content" source="media/ios-sdk/image8.png" alt-text="Test verzenden":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

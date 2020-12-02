@@ -4,12 +4,12 @@ description: Hiermee wordt een overzicht gegeven van de ondersteuning voor herst
 ms.topic: article
 ms.date: 11/29/2020
 ms.author: raynew
-ms.openlocfilehash: 64e8d4d00efa52b10d4543d36af7874f61dc3455
-ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
+ms.openlocfilehash: f0aebd09c06677aeba7cddda246e3e37992e0d9e
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96317534"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96485277"
 ---
 # <a name="support-matrix-for-azure-vm-disaster-recovery-between-azure-regions"></a>Ondersteuningsmatrix voor herstel na noodgeval van Azure-VM's tussen Azure-regio's
 
@@ -20,7 +20,7 @@ In dit artikel vindt u een overzicht van de ondersteuning en vereisten voor hers
 
 **Implementatie** |  **Ondersteuning**
 --- | ---
-**Azure-portal** | Ondersteund.
+**Azure Portal** | Ondersteund.
 **PowerShell** | Ondersteund. [Meer informatie](azure-to-azure-powershell.md)
 **REST API** | Ondersteund.
 **CLI** | Momenteel niet ondersteund
@@ -196,7 +196,7 @@ Azure Gallery-installatie kopieën-derde partij gepubliceerd | Ondersteund | Wor
 Aangepaste installatie kopieën-externe partij gepubliceerd | Ondersteund | Wordt ondersteund als de virtuele machine wordt uitgevoerd op een ondersteund besturings systeem.
 Vm's die zijn gemigreerd met behulp van Site Recovery | Ondersteund | Als een VMware-VM of fysieke machine met Site Recovery is gemigreerd naar Azure, moet u de oudere versie van Mobility service op de computer verwijderen en de computer opnieuw opstarten voordat u deze naar een andere Azure-regio repliceert.
 Azure RBAC-beleid | Niet ondersteund | Beleid voor toegangs beheer op basis van rollen (Azure RBAC) op Vm's wordt niet gerepliceerd naar de failover-VM in de doel regio.
-Uitbreidingen | Niet ondersteund | Uitbrei dingen worden niet gerepliceerd naar de failover-VM in de doel regio. Deze moet hand matig worden geïnstalleerd na een failover.
+Extensies | Niet ondersteund | Uitbrei dingen worden niet gerepliceerd naar de failover-VM in de doel regio. Deze moet hand matig worden geïnstalleerd na een failover.
 Proximity-plaatsings groepen | Ondersteund | Virtuele machines die zich in een proximity-plaatsings groep bevinden, kunnen worden beveiligd met Site Recovery.
 
 
@@ -234,7 +234,7 @@ Coole en warme opslag | Niet ondersteund | VM-schijven worden niet ondersteund i
 Opslagruimten | Ondersteund |
 Versleuteling op rest (SSE) | Ondersteund | SSE is de standaard instelling voor opslag accounts.
 Versleuteling in rust (CMK) | Ondersteund | Zowel software-als HSM-sleutels worden ondersteund voor beheerde schijven
-Dubbele versleuteling bij rest | Ondersteund | Meer informatie over ondersteunde regio's voor [Windows](../virtual-machines/windows/disk-encryption.md) en [Linux](../virtual-machines/linux/disk-encryption.md)
+Dubbele versleuteling bij rest | Ondersteund | Meer informatie over ondersteunde regio's voor [Windows](../virtual-machines/disk-encryption.md) en [Linux](../virtual-machines/disk-encryption.md)
 Azure Disk Encryption (ADE) voor Windows-besturings systeem | Ondersteund voor virtuele machines met beheerde schijven. | Vm's met niet-beheerde schijven worden niet ondersteund. <br/><br/> Met HSM beveiligde sleutels worden niet ondersteund. <br/><br/> Het versleutelen van afzonderlijke volumes op één schijf wordt niet ondersteund. |
 Azure Disk Encryption (ADE) voor Linux-besturings systeem | Ondersteund voor virtuele machines met beheerde schijven. | Vm's met niet-beheerde schijven worden niet ondersteund. <br/><br/> Met HSM beveiligde sleutels worden niet ondersteund. <br/><br/> Het versleutelen van afzonderlijke volumes op één schijf wordt niet ondersteund. <br><br> Bekend probleem bij het inschakelen van replicatie. [Meer informatie.](./azure-to-azure-troubleshoot-errors.md#enable-protection-failed-as-the-installer-is-unable-to-find-the-root-disk-error-code-151137) |
 Rotatie van SAS-sleutel | Niet ondersteund | Als de SAS-sleutel voor opslag accounts is geroteerd, moet de klant de replicatie uitschakelen en opnieuw inschakelen. |

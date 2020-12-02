@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 09/20/2020
 ms.author: juergent
 ms.reviewer: cynthn
-ms.openlocfilehash: 38f6cf039de2404c7b3eeecc74ee33233f4a2058
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 5638b60b60f3952ab40fa000e457082f4748ac35
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965286"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484342"
 ---
 # <a name="considerations-for-azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Overwegingen voor de implementatie van Azure Virtual Machines DBMS voor SAP-workloads
 [1114181]:https://launchpad.support.sap.com/#/notes/1114181
@@ -160,8 +160,8 @@ Als uw IOPS-vereiste groter is dan wat een enkele VHD kan bieden, kunt u het aan
 >
 > Alleen MDADM en Logical Volume Manager (LVM) worden ondersteund voor het bouwen van een software-RAID op Linux. Zie voor meer informatie:
 >
-> - [Software-RAID op Linux configureren](../../linux/configure-raid.md) met behulp van MDADM
-> - [LVM configureren op een virtuele Linux-machine in azure](../../linux/configure-lvm.md) met behulp van LVM
+> - [Software-RAID op Linux configureren](/previous-versions/azure/virtual-machines/linux/configure-raid) met behulp van MDADM
+> - [LVM configureren op een virtuele Linux-machine in azure](/previous-versions/azure/virtual-machines/linux/configure-lvm) met behulp van LVM
 >
 >
 

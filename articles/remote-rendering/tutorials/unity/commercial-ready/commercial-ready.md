@@ -5,12 +5,12 @@ author: FlorianBorn71
 ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
-ms.openlocfilehash: 0ff6d064b6bfabbd8a648c23b5648aae9b12a11d
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 7258b37c9d92f25227eac678dde77963e644e64b
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207492"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483314"
 ---
 # <a name="tutorial-creating-a-commercial-ready-azure-remote-rendering-application"></a>Zelfstudie: Een Azure Remote Rendering-toepassing maken die commercieel gereed is
 
@@ -54,7 +54,7 @@ Azure biedt resourcetagging, waarmee het verbruik van de Azure Remote Rendering-
 
 Zie voor meer informatie over naamgeving en taggen van resources:
 
-* [Handleiding voor beslissingen over naamgeving en taggen van resources](/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=%252fazure%252fazure-resource-manager%252fmanagement%252ftoc.json)
+* [Handleiding voor beslissingen over naamgeving en taggen van resources](/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=%2fazure%2fazure-resource-manager%2fmanagement%2ftoc.json)
 
 ### <a name="diagnostics"></a>Diagnostiek
 
@@ -255,7 +255,7 @@ Veel Enterprise-klanten eisen uit veiligheidsoverwegingen dat uw Azure Stack kan
 Voor meer informatie:
 
 * [Azure Marketplace](https://azure.microsoft.com/marketplace/)
-* [Zelfstudie: Door Azure beheerde toepassingen in Marketplace publiceren](../../../../marketplace/partner-center-portal/create-new-azure-apps-offer.md)
+* [Zelfstudie: Door Azure beheerde toepassingen in Marketplace publiceren](../../../../marketplace/create-new-azure-apps-offer.md)
 
 ### <a name="security"></a>Beveiliging
 

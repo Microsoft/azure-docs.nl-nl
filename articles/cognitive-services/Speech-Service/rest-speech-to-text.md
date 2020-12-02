@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/13/2020
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 89e5fa180b011cbedebc25a5e5d555a2190805f8
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: dff7ff0afd6c236645731dc7edd936b0b808716b
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95015355"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483917"
 ---
 # <a name="speech-to-text-rest-api"></a>REST API voor spraak-naar-tekst
 
@@ -58,13 +58,13 @@ Deze para meters kunnen worden opgenomen in de query reeks van de REST-aanvraag.
 | `language` | Hiermee wordt de gesp roken taal aangegeven die wordt herkend. Zie [ondersteunde talen](language-support.md#speech-to-text). | Vereist |
 | `format` | Geeft de resultaat indeling aan. Geaccepteerde waarden zijn `simple` en `detailed` . Eenvoudige resultaten zijn onder andere `RecognitionStatus` , `DisplayText` , en `Offset` `Duration` . Gedetailleerde antwoorden zijn vier verschillende weer gaven van weergave tekst. De standaardinstelling is `simple`. | Optioneel |
 | `profanity` | Hiermee geeft u op hoe scheld woorden in de herkennings resultaten moet worden afgehandeld. Geaccepteerde waarden zijn `masked` , waarbij de woorden met sterretjes worden vervangen, `removed` waardoor alle woorden van het resultaat worden verwijderd of `raw` , waarbij de scheld woorden in het resultaat wordt opgenomen. De standaardinstelling is `masked`. | Optioneel |
-| `cid` | Wanneer u de [Custom speech Portal](how-to-custom-speech.md) gebruikt om aangepaste modellen te maken, kunt u aangepaste modellen gebruiken via hun **eind punt-id** op de pagina **implementatie** . Gebruik de **eind punt-id** als argument voor de `cid` query teken reeks parameter. | Optioneel |
+| `cid` | Wanneer u de [Custom speech Portal](./custom-speech-overview.md) gebruikt om aangepaste modellen te maken, kunt u aangepaste modellen gebruiken via hun **eind punt-id** op de pagina **implementatie** . Gebruik de **eind punt-id** als argument voor de `cid` query teken reeks parameter. | Optioneel |
 
 ## <a name="request-headers"></a>Aanvraagheaders
 
 Deze tabel bevat de vereiste en optionele kopteksten voor aanvragen voor spraak naar tekst.
 
-|Header| Description | Vereist/optioneel |
+|Header| Beschrijving | Vereist/optioneel |
 |------|-------------|---------------------|
 | `Ocp-Apim-Subscription-Key` | De abonnementssleutel voor de Speech-service. | Deze header of `Authorization` is vereist. |
 | `Authorization` | Een autorisatie token dat wordt voorafgegaan door het woord `Bearer` . Zie [Verificatie](#authentication) voor meer informatie. | Deze header of `Ocp-Apim-Subscription-Key` is vereist. |

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 09/04/2020
 ms.author: v-demjoh
-ms.openlocfilehash: 9101944a567df5000d3584ed48eff24e4c5e0057
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 572b3b3459e1d837130f3c987d45ee45629f37ad
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89565800"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96485073"
 ---
 # <a name="test-a-model-using-an-audio-file-in-speech-studio"></a>Een model testen met behulp van een audiobestand in Speech Studio
 
@@ -23,7 +23,7 @@ In deze instructies gebruikt u Speech Studio om spraak uit een audiobestand om t
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voordat u de Speech-portal gebruikt, [volgt u deze instructies om een Azure-account te maken en u te abonneren op de Speech-service](../how-to-custom-speech.md#set-up-your-azure-account). Dit uniforme abonnement biedt u toegang tot spraak-naar-tekst, tekst-naar-spraak, spraakomzetting en de Custom Speech-portal.
+Voordat u de Speech-portal gebruikt, [volgt u deze instructies om een Azure-account te maken en u te abonneren op de Speech-service](../custom-speech-overview.md#set-up-your-azure-account). Dit uniforme abonnement biedt u toegang tot spraak-naar-tekst, tekst-naar-spraak, spraakomzetting en de Custom Speech-portal.
 
 ## <a name="download-an-audio-file"></a>Een audiobestand downloaden
 

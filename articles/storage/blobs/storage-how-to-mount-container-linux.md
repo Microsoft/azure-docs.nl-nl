@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 2/1/2019
 ms.author: ripohane
 ms.reviewer: dineshm
-ms.openlocfilehash: 0de8d8d5ff0f14d0268dbcca743f4d06ed877903
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 331ceb6124463604989116ce84bc73acd8cfb22f
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95544391"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483246"
 ---
 # <a name="how-to-mount-blob-storage-as-a-file-system-with-blobfuse"></a>Blob-opslag koppelen als een bestands systeem met blobfuse
 
@@ -30,7 +30,7 @@ In deze hand leiding wordt beschreven hoe u blobfuse gebruikt en hoe u een BLOB 
 ## <a name="install-blobfuse-on-linux"></a>Blobfuse installeren in Linux
 Blobfuse binaire bestanden zijn beschikbaar in [de micro soft-software opslagplaatsen voor Linux](/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software) voor Ubuntu-en RHEL-distributies. Als u blobfuse voor deze distributies wilt installeren, configureert u een van de opslag plaatsen in de lijst. U kunt ook de binaire bestanden van de bron code maken na de [Azure Storage installatie stappen](https://github.com/Azure/azure-storage-fuse/wiki/1.-Installation#option-2---build-from-source) als er geen binaire bestanden beschikbaar zijn voor uw distributie.
 
-Blobfuse ondersteunt de installatie op Ubuntu 14,04, 16,04 en 18,04. Voer deze opdracht uit om ervoor te zorgen dat er een van de volgende versies is geïmplementeerd:
+Blobfuse ondersteunt de installatie op Ubuntu 14,04, 16,04, 18,04 en 20,04. Voer deze opdracht uit om ervoor te zorgen dat er een van de volgende versies is geïmplementeerd:
 ```
 lsb_release -a
 ```

@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 11/26/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b8b8d100eb2ff16e8f8b7a734ad493ed4faddd33
-ms.sourcegitcommit: 5e2f5efba1957ba40bd951c3dcad42f4a00734ff
+ms.openlocfilehash: 8c4aa608e892867daaf954284a9dfce997a9ae1f
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96299527"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484274"
 ---
 # <a name="sap-hana-azure-virtual-machine-storage-configurations"></a>Configuraties van SAP HANA in virtuele Azure-machineopslag
 
@@ -112,7 +112,7 @@ Het samen voegen van een aantal Azure-Vhd's onder een Stripe-set is cumulatief v
 
 
 ### <a name="azure-burst-functionality-for-premium-storage"></a>Azure burst-functionaliteit voor Premium-opslag
-Voor Azure Premium-opslag schijven die kleiner zijn dan of gelijk zijn aan 512 GiB in capaciteit, wordt burst-functionaliteit aangeboden. De exacte manier waarop schijf bursting werkt, wordt beschreven in het artikel [schijf bursting](../../linux/disk-bursting.md). Wanneer u het artikel leest, begrijpt u het concept van het aantal beschik bare IOPS en door Voer in de tijden dat de I/O-werk belasting lager is dan de nominale IOPS en de door Voer van de schijven (Zie [prijzen voor beheerde schijven](https://azure.microsoft.com/pricing/details/managed-disks/)voor meer informatie over de nominale door Voer). U gaat de Delta van IOPS en door Voer samen voegen tussen het huidige gebruik en de nominale waarden van de schijf. De bursts zijn beperkt tot Maxi maal 30 minuten.
+Voor Azure Premium-opslag schijven die kleiner zijn dan of gelijk zijn aan 512 GiB in capaciteit, wordt burst-functionaliteit aangeboden. De exacte manier waarop schijf bursting werkt, wordt beschreven in het artikel [schijf bursting](../../disk-bursting.md). Wanneer u het artikel leest, begrijpt u het concept van het aantal beschik bare IOPS en door Voer in de tijden dat de I/O-werk belasting lager is dan de nominale IOPS en de door Voer van de schijven (Zie [prijzen voor beheerde schijven](https://azure.microsoft.com/pricing/details/managed-disks/)voor meer informatie over de nominale door Voer). U gaat de Delta van IOPS en door Voer samen voegen tussen het huidige gebruik en de nominale waarden van de schijf. De bursts zijn beperkt tot Maxi maal 30 minuten.
 
 De ideale gevallen waarin deze burst-functionaliteit kan worden gepland in, zijn waarschijnlijk de volumes of schijven die gegevens bestanden voor de verschillende DBMS bevatten. De I/O-werk belasting verwacht op die volumes, vooral met kleine tot middel grote systemen, moet er als volgt uitzien:
 
@@ -134,7 +134,7 @@ Met name op kleinere DBMS-systemen waarbij uw werk belasting enkele honderden tr
 > SAP HANA certificering voor virtuele machines uit de M-serie van Azure bestaat uitsluitend met Azure Write Accelerator voor het **/Hana/log** -volume. Als gevolg hiervan wordt het productie scenario SAP HANA implementaties op virtuele machines uit de d-serie van Azure M naar verwachting geconfigureerd met Azure Write Accelerator voor het **/Hana/log** -volume.  
 
 > [!NOTE]
-> In scenario's waarbij Azure Premium Storage betrokken is, implementeren we burst-mogelijkheden in de configuratie. Zorg ervoor dat u bij het gebruik van hulpprogram ma's voor opslag testen van ongeacht welke vorm of elk formulier gebruikmaakt van de manier waarop [Azure Premium schijf bursting werkt](../../linux/disk-bursting.md) . Als u de opslag tests uitvoert die worden geleverd via het SAP HWCCT-of HCMT-hulp programma, zullen we niet verwachten dat alle tests aan de criteria voldoen omdat sommige tests de bursting-tegoed overschrijden die u kunt verzamelen. Met name wanneer alle tests opeenvolgend worden uitgevoerd zonder te onderbreken.
+> In scenario's waarbij Azure Premium Storage betrokken is, implementeren we burst-mogelijkheden in de configuratie. Zorg ervoor dat u bij het gebruik van hulpprogram ma's voor opslag testen van ongeacht welke vorm of elk formulier gebruikmaakt van de manier waarop [Azure Premium schijf bursting werkt](../../disk-bursting.md) . Als u de opslag tests uitvoert die worden geleverd via het SAP HWCCT-of HCMT-hulp programma, zullen we niet verwachten dat alle tests aan de criteria voldoen omdat sommige tests de bursting-tegoed overschrijden die u kunt verzamelen. Met name wanneer alle tests opeenvolgend worden uitgevoerd zonder te onderbreken.
 
 
 > [!NOTE]

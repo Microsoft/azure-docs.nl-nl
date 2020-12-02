@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 06/26/2020
 ms.author: rajosh
-ms.openlocfilehash: 834fd32d17c4a5ff112dd11a331a59336d7cbcb7
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: f9fdff54cbd795c6aeda1708dcae8d00022a6a43
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92315259"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483501"
 ---
 # <a name="create-an-azure-vmware-solution-avs-assessment"></a>Een evaluatie van een Azure VMware-oplossing (AVS) maken
 
@@ -21,7 +21,7 @@ In dit artikel wordt beschreven hoe u een evaluatie van een Azure VMware-oplossi
 
 ## <a name="before-you-start"></a>Voordat u begint
 
-- Zorg ervoor dat u een Azure Migrate project hebt [gemaakt](how-to-add-tool-first-time.md) .
+- Zorg ervoor dat u een Azure Migrate project hebt [gemaakt](./create-manage-projects.md) .
 - Als u al een project hebt gemaakt, moet u ervoor zorgen dat u het Azure Migrate: Server Assessment Tool hebt [toegevoegd](how-to-assess.md) .
 - Als u een beoordeling wilt maken, moet u een Azure Migrate apparaat voor [VMware](how-to-set-up-appliance-vmware.md)instellen, dat de on-premises machines detecteert en de meta gegevens en prestaties naar Azure migrate verzendt: Server Assessment. [Meer informatie](migrate-appliance.md).
 - U kunt [de meta gegevens van de server ook importeren](./tutorial-discover-import.md) in CSV-indeling (door komma's gescheiden waarden).
@@ -58,7 +58,7 @@ Voer de evaluatie van de Azure VMware-oplossing (AVS) als volgt uit:
 
     ![Scherm afbeelding toont Azure Migrate servers met beoordeling geselecteerd onder evaluatie hulpprogramma's.](./media/how-to-create-assessment/assess.png)
 
-3. In **servers beoordelen**selecteert u het beoordelings type als ' Azure VMware-oplossing (AVS) ', selecteert u de detectie bron en geeft u de naam van de evaluatie op.
+3. In **servers beoordelen** selecteert u het beoordelings type als ' Azure VMware-oplossing (AVS) ', selecteert u de detectie bron en geeft u de naam van de evaluatie op.
 
     ![Basisprincipes evaluatie](./media/how-to-create-avs-assessment/assess-servers-avs.png)
 
@@ -101,7 +101,7 @@ Een evaluatie van de Azure VMware-oplossing (AVS) beschrijft:
 
 ### <a name="review-azure-vmware-solution-avs-readiness"></a>Gereedheid voor de Azure VMware-oplossing (AVS) controleren
 
-1. Controleer in **Azure Readiness**of de vm's gereed zijn voor migratie naar AVS.
+1. Controleer in **Azure Readiness** of de vm's gereed zijn voor migratie naar AVS.
 
 2. Controleer de VM-status:
     - **Gereed voor AVS**: de machine kan worden gemigreerd naar Azure (AVS) zonder wijzigingen. Deze wordt gestart in AVS met volledige AVS-ondersteuning.

@@ -12,16 +12,16 @@ ms.workload: identity
 ms.date: 08/28/2019
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40
-ms.openlocfilehash: 9ff43202bdace577024413c9cc177de2997a0ad5
-ms.sourcegitcommit: d479ad7ae4b6c2c416049cb0e0221ce15470acf6
+ms.openlocfilehash: 0dad7add63102d462a2111f1ecf12ae43dae123c
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91627938"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95996182"
 ---
 # <a name="tutorial-add-sign-in-to-microsoft-to-an-aspnet-web-app"></a>Zelfstudie: Aanmelding bij Microsoft toevoegen aan een ASP.NET-web-app
 
-Deze handleiding toont hoe u aanmelding bij Microsoft implementeert met behulp van een ASP.NET MVC-oplossing met behulp van een traditionele toepassing op basis van een webbrowser en OpenID Connect.
+In deze zelfstudie bouwt u een ASP.NET MVC-web-app die gebruikers aanmeldt met behulp van de Open Web Interface voor .NET-middleware (OWIN) en het Microsoft-identiteitsplatform.
 
 Wanneer u deze handleiding hebt voltooid, kunt u aanmeldingen met persoonlijke accounts van bijvoorbeeld outlook.com en live.com aanvaarden. Daarnaast kunnen ook werk- en schoolaccounts van elk bedrijf of elke organisatie geïntegreerd met het Microsoft Identity Platform zich aanmelden bij uw app.
 
@@ -87,7 +87,7 @@ De volgende stappen worden gebruikt om een opstartklasse van OWIN-middleware te 
 
 > [!TIP]
 > Ga als volgt te werk als uw project geen `Startup.cs`-bestand bevat in de hoofdmap:
-> 1. Klik met de rechtermuisknop op de hoofdmap van het project en selecteer vervolgens **** Toevoegen  > **Nieuw item** > **OWIN-opstartklasse**.<br/>
+> 1. Klik met de rechtermuisknop op de hoofdmap van het project en selecteer vervolgens Toevoegen  > **Nieuw item** > **OWIN-opstartklasse**.<br/>
 > 2. Noem deze **Startup.cs**.
 >
 >> Zorg dat de geselecteerde klasse een OWIN-opstartklasse is, en geen C#-standaardklasse. Bevestig dit door te controleren of u [assembly: OwinStartup(typeof({NameSpace}.Startup))] ziet boven de naamruimte.
@@ -372,7 +372,7 @@ Volg deze stappen om de toepassing te registreren en de registratiegegevens van 
 1. Open Visual Studio en doe het volgende:
    1. Selecteer het project in Solution Explorer en bekijk het venster Eigenschappen (druk op F4 als u het venster Eigenschappen niet ziet).
    1. Wijzig SSL ingeschakeld in `True`.
-   1. Klik met de rechtermuisknop op het project in Visual Studio, selecteer **Eigenschappen**en selecteer vervolgens het tabblad **Web**. Wijzig in het onderdeel **Servers** de instelling **Project-URL** instelling voor de **SSL-URL**.
+   1. Klik met de rechtermuisknop op het project in Visual Studio, selecteer **Eigenschappen** en selecteer vervolgens het tabblad **Web**. Wijzig in het onderdeel **Servers** de instelling **Project-URL** instelling voor de **SSL-URL**.
    1. Kopieer de SSL-URL. In de volgende stap gaat u deze URL toevoegen aan de lijst met omleidings-URL's van het registratieportaal.<br/><br/>![Projecteigenschappen](media/active-directory-develop-guidedsetup-aspnetwebapp-configure/vsprojectproperties.png)<br />
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com) met een werk- of schoolaccount of met een persoonlijk Microsoft-account.
 1. Als u via uw account toegang hebt tot meer dan één tenant, selecteert u uw account in de rechterbovenhoek en stelt u de portalsessie in op de door u gewenste Azure Active Directory-tenant.
@@ -380,7 +380,7 @@ Volg deze stappen om de toepassing te registreren en de registratiegegevens van 
 1. Selecteer **Nieuwe registratie**.
 1. Wanneer de pagina **Een toepassing registreren** verschijnt, voert u de registratiegegevens van de toepassing in:
    1. Voer in de *sectie **Naam**** een beschrijvende toepassingsnaam. Deze wordt zichtbaar voor gebruikers van de app, zoals **ASPNET-Tutorial**.
-   1. Voeg de SSL-URL die u hebt gekopieerd uit Visual Studio in stap 1 (bijvoorbeeld `https://localhost:44368/`) toe aan **Antwoord-URL**en selecteer **Registreren**.
+   1. Voeg de SSL-URL die u hebt gekopieerd uit Visual Studio in stap 1 (bijvoorbeeld `https://localhost:44368/`) toe aan **Antwoord-URL** en selecteer **Registreren**.
 1. Selecteer het menu **Verificatie**, selecteer **ID-tokens** in onder **Impliciete toekenning** en selecteer vervolgens **Opslaan**.
 1. Voeg het volgende toe aan het bestand web.config, dat zich bevindt in de hoofdmap in het onderdeel `configuration\appSettings`:
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 754e23a7d3f4bdf27f273927a5bc3b3658940d90
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: dc4ef937a032a5156164eaee59908c9ee0319fdb
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94359227"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350157"
 ---
 # <a name="tutorial-configure-templafy-for-automatic-user-provisioning"></a>Zelfstudie: Templafy configureren voor automatische gebruikersinrichting
 

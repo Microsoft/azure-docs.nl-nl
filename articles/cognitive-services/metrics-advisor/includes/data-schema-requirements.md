@@ -9,14 +9,14 @@ ms.subservice: metrics-advisor
 ms.topic: include
 ms.date: 09/10/2020
 ms.author: mbullwin
-ms.openlocfilehash: c754efef02cdad6edbf047c5de9f1af6d758f137
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 4c55c25621df1925b6ed6c374d8af88551eb1e46
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92043193"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96231426"
 ---
-Metrics Monitor is een service voor het detecteren, diagnosticeren en analyseren van anomalieën in tijdreeksen. Het is een AI-service waarin uw gegevens worden gebruikt voor het trainen van het gebruikte model. De service accepteert tabellen van geaggregeerde gegevens met de volgende kolommen:
+Metrics Advisor is een service voor het detecteren, diagnosticeren en analyseren van anomalieën in tijdreeksen. Het is een AI-service waarin uw gegevens worden gebruikt voor het trainen van het gebruikte model. De service accepteert tabellen van geaggregeerde gegevens met de volgende kolommen:
 
 * **Meting** (vereist): een of meer kolommen met numerieke waarden.
 * **Tijdstempel** (optioneel): nul of een kolom met het type `DateTime` of `String`. Als deze kolom niet is ingesteld, wordt het tijdstempel ingesteld op de begintijd van elke opnameperiode. Geef het tijdstempel op in de indeling `yyyy-MM-ddTHH:mm:ssZ`. 

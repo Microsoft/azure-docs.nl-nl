@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: overview
 ms.date: 11/23/2020
 ms.author: trbye
-ms.openlocfilehash: 291ac7804109b098b556e38c57ca493ba74f1b14
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 3b20773de62f036b507f1612f2b38d613d54ba2f
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95528887"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96485192"
 ---
 # <a name="what-is-the-speech-service"></a>Wat is de Speech-service?
 
@@ -49,7 +49,7 @@ Voor de volgende stappen hebt u zowel een Microsoft-account als een Azure-accoun
 Zodra u een Microsoft-account hebt, gaat u naar de [Azure-aanmeldingspagina](https://azure.microsoft.com/free/ai/), selecteert u **Gratis starten** en maakt u een nieuw Azure-account met behulp van een Microsoft-account. Hier volgt een video van hoe u zich kunt [aanmelden voor een gratis Azure-account](https://www.youtube.com/watch?v=GWT2R1C_uUU).
 
 > [!NOTE]
-> Wanneer u zich aanmeldt voor een gratis Azure-account, krijgt u dit met $ 200 aan servicetegoed dat u kunt toepassen op een betaald abonnement op de spraakservice, dat maximaal 30 dagen geldig is. Als uw tegoed aan het einde van de 30 dagen bijna op of verlopen is, worden uw Azure-services uitgeschakeld. Als u gebruik wilt blijven maken van Azure-services, moet u uw account upgraden. Zie [Uw gratis Azure-account upgraden](https://docs.microsoft.com/azure/cost-management-billing/manage/upgrade-azure-subscription) voor meer informatie. 
+> Wanneer u zich aanmeldt voor een gratis Azure-account, krijgt u dit met $ 200 aan servicetegoed dat u kunt toepassen op een betaald abonnement op de spraakservice, dat maximaal 30 dagen geldig is. Als uw tegoed aan het einde van de 30 dagen bijna op of verlopen is, worden uw Azure-services uitgeschakeld. Als u gebruik wilt blijven maken van Azure-services, moet u uw account upgraden. Zie [Uw gratis Azure-account upgraden](../../cost-management-billing/manage/upgrade-azure-subscription.md) voor meer informatie. 
 >
 > De spraakservice heeft twee servicecategorieën: gratis (f0) en abonnement (s0), die verschillende beperkingen en voordelen hebben. Als u de gratis prijscategorie van de spraakservice met een laag volume kiest, kunt u dit gratis abonnement ook houden nadat uw gratis proefperiode of servicetegoed is verlopen. Zie [Prijzen van Cognitive Services - spraakservice](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/) voor meer informatie.
 
@@ -70,8 +70,8 @@ Ga als volgt te werk om een spraakserviceresource (prijscategorie gratis of beta
 1. Selecteer **Maken** en voer vervolgens de volgende handelingen uit:
 
    - Geef een unieke naam op voor uw nieuwe resource. De naam helpt u om onderscheid te maken tussen meerdere abonnementen die aan dezelfde service zijn gekoppeld.
-   - Kies het Azure-abonnement waaraan de nieuwe resource wordt gekoppeld om te bepalen hoe de kosten worden gefactureerd. Hier vindt u de inleiding voor [het maken van een Azure-abonnement](https://docs.microsoft.com/azure/cost-management-billing/manage/create-subscription#create-a-subscription-in-the-azure-portal) in Azure Portal.
-   - Kies de [regio](regions.md) waarin de resource wordt gebruikt. Azure is een wereldwijd cloudplatform dat algemeen beschikbaar is in veel regio's over de hele wereld. Als u de beste prestaties wilt, selecteert u een regio die zich het dichtst bij u bevindt of waar uw toepassing wordt uitgevoerd. De beschikbaarheid van de spraakservice kan per regio verschillen. Zorg ervoor dat u uw resource in een ondersteunde regio maakt. Zie de [ondersteuning per regio voor spraakservices](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#speech-to-text-text-to-speech-and-translation).
+   - Kies het Azure-abonnement waaraan de nieuwe resource wordt gekoppeld om te bepalen hoe de kosten worden gefactureerd. Hier vindt u de inleiding voor [het maken van een Azure-abonnement](../../cost-management-billing/manage/create-subscription.md#create-a-subscription-in-the-azure-portal) in Azure Portal.
+   - Kies de [regio](regions.md) waarin de resource wordt gebruikt. Azure is een wereldwijd cloudplatform dat algemeen beschikbaar is in veel regio's over de hele wereld. Als u de beste prestaties wilt, selecteert u een regio die zich het dichtst bij u bevindt of waar uw toepassing wordt uitgevoerd. De beschikbaarheid van de spraakservice kan per regio verschillen. Zorg ervoor dat u uw resource in een ondersteunde regio maakt. Zie de [ondersteuning per regio voor spraakservices](./regions.md#speech-to-text-text-to-speech-and-translation).
    - Kies gratis (F0) of betaald (S0) als prijscategorie. Selecteer **Volledige prijsgegevens weergeven** voor volledige informatie over prijzen en quota voor gebruik voor elke prijscategorie of zie de [prijzen voor spraakservices](https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/). Zie de [limieten voor Azure Cognitive Services](../../azure-resource-manager/management/azure-subscription-service-limits.md#azure-cognitive-services-limits) voor meer informatie over resourcelimieten.
    - Maak een nieuwe resourcegroep voor dit spraakabonnement of wijs het abonnement toe aan een bestaande resourcegroep. Met resourcegroepen kunt u de verschillende Azure-abonnementen ordenen.
    - Selecteer **Maken**. Hiermee gaat u naar het implementatieoverzicht en worden berichten over de voortgang van de implementatie weergegeven.  
@@ -112,7 +112,7 @@ Nu u een begin hebt gemaakt met de spraakservice, kunt u onze zelfstudies prober
 
 - [Zelfstudie: Intenties van gesproken inhoud herkennen met de Speech SDK en LUIS, C#](how-to-recognize-intents-from-speech-csharp.md)
 - [Zelfstudie: Spraak inschakelen voor uw bot met de Speech SDK, C#](tutorial-voice-enable-your-bot-speech-sdk.md)
-- [Zelfstudie: Een Flask-app maken om tekst te vertalen, sentiment te analyseren en vertaalde tekst in spraak om te zetten](../translator/tutorial-build-flask-app-translation-synthesis.md?bc=%252fazure%252fcognitive-services%252fspeech-service%252fbreadcrumb%252ftoc.json%252c%252fen-us%252fazure%252fbread%252ftoc.json&toc=%252fazure%252fcognitive-services%252fspeech-service%252ftoc.json%252c%252fen-us%252fazure%252fcognitive-services%252fspeech-service%252ftoc.json)
+- [Zelfstudie: Een Flask-app maken om tekst te vertalen, sentiment te analyseren en vertaalde tekst in spraak om te zetten](../translator/tutorial-build-flask-app-translation-synthesis.md?bc=%2fazure%2fcognitive-services%2fspeech-service%2fbreadcrumb%2ftoc.json%252c%2fen-us%2fazure%2fbread%2ftoc.json&toc=%2fazure%2fcognitive-services%2fspeech-service%2ftoc.json%252c%2fen-us%2fazure%2fcognitive-services%2fspeech-service%2ftoc.json)
 
 ## <a name="get-sample-code"></a>Voorbeeldcode ophalen
 

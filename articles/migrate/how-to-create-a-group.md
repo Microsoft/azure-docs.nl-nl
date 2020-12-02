@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 07/17/2019
 ms.author: hamusa
-ms.openlocfilehash: 867124a08bbad88b7dac5386ee6bc1c9c4d99c12
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 420259929afc50b2884bf075212402d80b6b52f4
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85549920"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483535"
 ---
 # <a name="create-a-group-for-assessment"></a>Een groep maken voor evaluatie
 
@@ -35,14 +35,14 @@ U kunt een groep maken op het moment dat u [een evaluatie maakt](how-to-create-a
 
 Als u hand matig een groep wilt maken buiten het maken van een beoordeling, doet u het volgende:
 
-1. Klik in het Azure Migrate project > **overzicht**op **servers evalueren en migreren**. Klik in **Azure migrate: Server evaluatie**op **groepen**
+1. Klik in het Azure Migrate project > **overzicht** op **servers evalueren en migreren**. Klik in **Azure migrate: Server evaluatie** op **groepen**
     - Als u het Azure Migrate: Server Assessment nog niet hebt toegevoegd, klikt u hierop om het toe te voegen. [Meer informatie](how-to-assess.md).
-    - Als u nog geen Azure Migrate project hebt gemaakt, kunt u [meer informatie](how-to-add-tool-first-time.md)vinden.
+    - Als u nog geen Azure Migrate project hebt gemaakt, kunt u [meer informatie](./create-manage-projects.md)vinden.
 
     ![Groepen selecteren](./media/how-to-create-a-group/select-groups.png)
 
 2. Klik op het **groeps** pictogram.
-3. Geef in **groep maken**een groeps naam op en selecteer bij **apparaatnaam**het Azure migrate apparaat dat u voor machine detectie gebruikt.
+3. Geef in **groep maken** een groeps naam op en selecteer bij **apparaatnaam** het Azure migrate apparaat dat u voor machine detectie gebruikt.
 4. Selecteer in de lijst computer de machines die u wilt toevoegen aan de groep > **maken**.
 
     ![Groep maken](./media/how-to-create-a-group/create-group.png)
@@ -66,7 +66,7 @@ Als u al een [afhankelijkheids toewijzing hebt ingesteld](how-to-create-group-ma
 
     - Als u de afhankelijkheids toewijzing al hebt ingesteld, klikt u op de pagina groep op **afhankelijkheden weer geven** om de toewijzing van de groeps afhankelijke map te openen.
 
-3. Nadat u op **afhankelijkheden weer geven**hebt geklikt, wordt in de groep afhankelijkheids kaart het volgende weer gegeven:
+3. Nadat u op **afhankelijkheden weer geven** hebt geklikt, wordt in de groep afhankelijkheids kaart het volgende weer gegeven:
 
     - Inkomende (clients) en uitgaande (servers) TCP-verbindingen naar en van alle computers in de groep waarvoor de afhankelijkheids agenten zijn geïnstalleerd.
     - Afhankelijke computers waarop geen afhankelijkheids agenten zijn geïnstalleerd, worden gegroepeerd op poort nummers.
@@ -89,4 +89,3 @@ Als u al een [afhankelijkheids toewijzing hebt ingesteld](how-to-create-group-ma
 ## <a name="next-steps"></a>Volgende stappen
 
 Meer informatie over het instellen en gebruiken van [afhankelijkheids toewijzing](how-to-create-group-machine-dependencies.md) voor het maken van groepen met hoge betrouw baarheid.
-

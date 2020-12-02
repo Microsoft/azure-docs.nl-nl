@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 08/20/2020
 ms.author: tamram
 ms.reviewer: fryu
-ms.openlocfilehash: 49a89228afd3b46f38afafb8ff16bc63a40dd35b
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: ce0ea938cac4afa043b8770a4d6a98f08ec145ec
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94635208"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484886"
 ---
 # <a name="prevent-shared-key-authorization-for-an-azure-storage-account-preview"></a>Verificatie van gedeelde sleutels voor een Azure Storage account voor komen (preview-versie)
 
@@ -77,7 +77,7 @@ Azure Storage legt vastgelegde gegevens vast over aanvragen voor het opslag acco
 
 Als u aanvragen wilt registreren voor uw Azure Storage-account om te controleren hoe ze zijn geautoriseerd, kunt u Azure Storage logboek registratie gebruiken in Azure Monitor (preview). Zie [Azure Storage bewaken](../blobs/monitor-blob-storage.md)voor meer informatie.
 
-Azure Storage logboek registratie in Azure Monitor ondersteunt het gebruik van logboek query's voor het analyseren van logboek gegevens. Als u een query wilt uitvoeren op Logboeken, kunt u een Azure Log Analytics-werk ruimte gebruiken. Zie [zelf studie: aan de slag met log Analytics query's](../../azure-monitor/log-query/get-started-portal.md)voor meer informatie over logboek query's.
+Azure Storage logboek registratie in Azure Monitor ondersteunt het gebruik van logboek query's voor het analyseren van logboek gegevens. Als u een query wilt uitvoeren op Logboeken, kunt u een Azure Log Analytics-werk ruimte gebruiken. Zie [zelf studie: aan de slag met log Analytics query's](../../azure-monitor/log-query/log-analytics-tutorial.md)voor meer informatie over logboek query's.
 
 #### <a name="create-a-diagnostic-setting-in-the-azure-portal"></a>Een diagnostische instelling maken in de Azure Portal
 
@@ -88,9 +88,9 @@ Als u Azure Storage gegevens wilt registreren met Azure Monitor en deze wilt ana
 1. Ga in Azure Portal naar uw opslagaccount.
 1. Selecteer in de sectie controle de optie **Diagnostische instellingen (preview)**.
 1. Selecteer de Azure Storage-service waarvoor u aanvragen wilt registreren. Kies bijvoorbeeld **BLOB** om aanvragen te registreren bij Blob Storage.
-1. Selecteer **Diagnostische instelling toevoegen**.
+1. Selecteer **Diagnostische instellingen toevoegen**.
 1. Geef een naam op voor de diagnostische instelling.
-1. Onder **categorie Details** , in de sectie **logboek** , kiest u **StorageRead** , **StorageWrite** en **StorageDelete** om alle gegevens aanvragen bij de geselecteerde service te registreren.
+1. Onder **categorie Details**, in de sectie **logboek** , kiest u **StorageRead**, **StorageWrite** en **StorageDelete** om alle gegevens aanvragen bij de geselecteerde service te registreren.
 1. Selecteer onder **doel gegevens** **verzenden naar log Analytics**. Selecteer uw abonnement en de Log Analytics werk ruimte die u eerder hebt gemaakt, zoals wordt weer gegeven in de volgende afbeelding.
 
     :::image type="content" source="media/shared-key-authorization-prevent/create-diagnostic-setting-logs.png" alt-text="Scherm afbeelding die laat zien hoe u een diagnostische instelling voor logboek registratie aanvragen maakt":::
@@ -135,7 +135,7 @@ Voer de volgende stappen uit om de verificatie van de gedeelde sleutel voor een 
 
     :::image type="content" source="media/shared-key-authorization-prevent/shared-key-access-portal.png" alt-text="Scherm afbeelding die laat zien hoe toegang tot gedeelde sleutels voor accounts niet kan worden toegestaan":::
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Als u de verificatie van gedeelde sleutels voor een opslag account met Azure CLI niet wilt toestaan, installeert u Azure CLI versie 2.9.1 of hoger. Zie [De Azure CLI installeren](/cli/azure/install-azure-cli) voor meer informatie. Configureer vervolgens de eigenschap **allowSharedKeyAccess** voor een nieuw of bestaand opslag account.
 
@@ -217,7 +217,7 @@ Sommige hulpprogram ma's van Azure bieden de mogelijkheid om Azure AD-autorisati
 | AzCopy | Ondersteund voor Blob Storage. Zie [kiezen hoe u autorisatie referenties opgeeft](storage-use-azcopy-v10.md#choose-how-youll-provide-authorization-credentials) in de AzCopy-documentatie voor meer informatie over het autoriseren van AzCopy-bewerkingen. |
 | Azure Storage Explorer | Alleen ondersteund voor Blob Storage en alleen Azure Data Lake Storage Gen2. Azure AD-toegang tot de wachtrij opslag wordt niet ondersteund. Zorg ervoor dat u de juiste Azure AD-Tenant selecteert. Zie [aan de slag met Storage Explorer](../../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=windows#sign-in-to-azure) voor meer informatie. |
 | Azure PowerShell | Ondersteund. Zie [Power shell-opdrachten uitvoeren met Azure AD-referenties voor toegang tot blobgegevens](../blobs/authorize-data-operations-powershell.md) of [Power shell-opdrachten uitvoeren met Azure AD-referenties voor toegang tot wachtrij gegevens](../queues/authorize-data-operations-powershell.md)voor meer informatie over het autoriseren van Power shell-opdrachten voor BLOB-of wachtrij bewerkingen met Azure AD. |
-| Azure CLI | Ondersteund. Zie [Azure cli-opdrachten uitvoeren met Azure AD-referenties voor toegang tot BLOB-of wachtrij gegevens](authorize-data-operations-cli.md)voor meer informatie over het autoriseren van Azure cli-opdrachten met Azure AD voor toegang tot Blob-en wachtrij gegevens. |
+| Azure CLI | Ondersteund. Zie [Azure cli-opdrachten uitvoeren met Azure AD-referenties voor toegang tot BLOB-of wachtrij gegevens](../blobs/authorize-data-operations-cli.md)voor meer informatie over het autoriseren van Azure cli-opdrachten met Azure AD voor toegang tot Blob-en wachtrij gegevens. |
 | Azure IoT Hub | Ondersteund. Zie [IOT hub-ondersteuning voor virtuele netwerken](../../iot-hub/virtual-network-support.md)voor meer informatie. |
 | Azure Cloud Shell | Azure Cloud Shell is een geïntegreerde shell in de Azure Portal. Azure Cloud Shell hosts bestanden voor persistentie in een Azure-bestands share in een opslag account. Deze bestanden worden niet meer toegankelijk als de autorisatie van de gedeelde sleutel niet is toegestaan voor dat opslag account. Zie [verbinding maken met de opslag van uw Microsoft Azure-bestanden](../../cloud-shell/overview.md#connect-your-microsoft-azure-files-storage)voor meer informatie. <br /><br /> Als u de opdrachten in Azure Cloud Shell wilt uitvoeren om opslag accounts te beheren waarvoor gedeelde-sleutel toegang niet is toegestaan, moet u eerst controleren of u de benodigde machtigingen voor deze accounts hebt gekregen via Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Zie [Wat is Azure Role-based Access Control (Azure RBAC)?](../../role-based-access-control/overview.md)voor meer informatie. |
 
@@ -239,7 +239,7 @@ Azure-metrische gegevens en logboek registratie Azure Monitor geen onderscheid m
 - Een SAS-token of een account-SAS-token is geautoriseerd met gedeelde sleutel en is niet toegestaan op een aanvraag voor Blob-opslag wanneer de eigenschap **AllowSharedKeyAccess** is ingesteld op **False**.
 - Een SAS voor gebruikers overdracht is geautoriseerd met Azure AD en is toegestaan op een aanvraag voor Blob-opslag wanneer de eigenschap **AllowSharedKeyAccess** is ingesteld op **False**.
 
-Wanneer u het verkeer naar uw opslag account evalueert, moet u er rekening mee houden dat metrische gegevens en logboeken zoals beschreven in [het type verificatie dat door client toepassingen wordt gebruikt](#detect-the-type-of-authorization-used-by-client-applications) , aanvragen kunnen bevatten die zijn gemaakt met een SAS voor gebruikers overdracht. Voor meer informatie over hoe Azure Storage reageert op een SAS wanneer de eigenschap **AllowSharedKeyAccess** is ingesteld op **Onwaar** , Zie [begrijpen hoe het niet toestaan van gedeelde sleutels van invloed is op SAS-tokens](#understand-how-disallowing-shared-key-affects-sas-tokens).
+Wanneer u het verkeer naar uw opslag account evalueert, moet u er rekening mee houden dat metrische gegevens en logboeken zoals beschreven in [het type verificatie dat door client toepassingen wordt gebruikt](#detect-the-type-of-authorization-used-by-client-applications) , aanvragen kunnen bevatten die zijn gemaakt met een SAS voor gebruikers overdracht. Voor meer informatie over hoe Azure Storage reageert op een SAS wanneer de eigenschap **AllowSharedKeyAccess** is ingesteld op **Onwaar**, Zie [begrijpen hoe het niet toestaan van gedeelde sleutels van invloed is op SAS-tokens](#understand-how-disallowing-shared-key-affects-sas-tokens).
 
 ### <a name="requests-with-sas-tokens-are-permitted-for-queues-tables-and-files-when-allowsharedkeyaccess-is-false"></a>Aanvragen met SAS-tokens zijn toegestaan voor wacht rijen, tabellen en bestanden wanneer AllowSharedKeyAccess is ingesteld op False
 

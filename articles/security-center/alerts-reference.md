@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/01/2020
+ms.date: 11/22/2020
 ms.author: memildin
-ms.openlocfilehash: 3cc64d2721f73da36fdc4fce009cccb5fdfd6b6b
-ms.sourcegitcommit: 65d518d1ccdbb7b7e1b1de1c387c382edf037850
+ms.openlocfilehash: 6d001e638b00cace1dd81d9631f498a911ca19a4
+ms.sourcegitcommit: 5ae2f32951474ae9e46c0d46f104eda95f7c5a06
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94372690"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96014598"
 ---
 # <a name="security-alerts---a-reference-guide"></a>Referentiegids met beveiligingswaarschuwingen
 
@@ -160,6 +160,9 @@ Onderaan deze pagina staat een tabel met een beschrijving van de Azure Security 
 |**Exploitation of Xorg vulnerability [seen multiple times]** (Misbruik van Xorg-beveiligingsprobleem [meerdere keren gezien])|Bij analyse van hostgegevens op %{Compromised Host} is voor de gebruiker van Xorg vastgesteld dat deze verdachte argumenten gebruikt. Aanvallers kunnen deze techniek gebruiken bij pogingen om bevoegdheden te verhogen. Dit gedrag is [x] keer gezien vandaag op de volgende computers: [computernamen]|-|Normaal|
 |**Exposed Docker daemon detected** (Weergegeven Docker-daemon gedetecteerd)|Computerlogboeken geven aan dat uw Docker-daemon (dockerd) een TCP-socket weergeeft. De Docker-configuratie gebruikt standaard geen versleuteling of verificatie wanneer een TCP-socket wordt ingeschakeld. Dit biedt volledige toegang tot de Docker-daemon door iedereen die toegang heeft tot de relevante poort.|-|Normaal|
 |**Failed SSH brute force attack** (Mislukte Brute Force-aanval via SSH)|Er zijn mislukte Brute Force-aanvallen gedetecteerd van de volgende aanvallers: %{Attackers}. Aanvallers hebben geprobeerd om met de volgende gebruikersnamen toegang te krijgen tot de host: %{Accounts used on failed sign in to host attempts}.|-|Normaal|
+| **Fileless Attack Behavior Detected** (Gedrag gedetecteerd dat wijst op bestandsloze aanvallen)<br>(AppServices_FilelessAttackBehaviorDetection)| Het geheugen van het hieronder vermelde proces bevat gedragingen die veel worden gebruikt bij bestandsloze aanvallen.<br>Enkele voorbeelden van specifiek gedrag: {lijst van waargenomen gedrag}                                                                                                                                                                                                                                                                                                                             | Uitvoering                             | Normaal   |
+| **Fileless Attack Technique Detected** (Bestandsloze aanvallen gedetecteerd)<br>(VM_FilelessAttackTechnique.Linux)| Het geheugen van het hieronder aangegeven proces bevat bewijs van bestandsloze aanvallen. Bestandsloze aanvallen worden gebruikt door aanvallers om code uit te voeren terwijl ze detectie door beveiligingssoftware omzeilen.<br>Enkele voorbeelden van specifiek gedrag: {lijst van waargenomen gedrag}                                                                                                                                                                                                                            | Uitvoering                             | Hoog     |
+| **Fileless Attack Toolkit Detected** (Toolkit voor bestandsloze aanvallen gedetecteerd)<br>(VM_FilelessAttackToolkit.Linux)| Het geheugen van het hieronder vermelde proces bevat een toolkit voor bestandsloze aanvallen: {naam van toolkit}. Toolkits voor bestandsloze aanvallen zijn meestal niet aanwezig in het bestandssysteem waardoor ze lastig kunnen worden gedetecteerd door traditionele antivirussoftware.<br>Enkele voorbeelden van specifiek gedrag: {lijst van waargenomen gedrag}                                                                                                                                                                                    | Defense Evasion / Execution             | Hoog     |
 |**Hidden file execution detected** (Uitvoering van verborgen bestand gedetecteerd)|Analyse van hostgegevens heeft aangetoond dat een verborgen bestand is uitgevoerd door %{user name}. Dit kan een legitieme activiteit zijn, maar ook een indicatie van een geïnfecteerde host.|-|Informatief|
 |**Indicators associated with DDOS toolkit detected [seen multiple times]** (Indicatoren die zijn gekoppeld aan DDOS-toolkit gedetecteerd [meerdere keren gezien])|Bij analyse van hostgegevens op %{Compromised Host} zijn bestandsnamen gedetecteerde die deel uitmaken van een toolkit die bekend is van malware die DDoS-aanvallen kan starten, poorten en services kan openen, en volledige controle over het geïnfecteerde systeem kan overnemen. Dit kan overigens ook een legitieme activiteit zijn. Dit gedrag is [x] keer gezien vandaag op de volgende computers: [computernamen]|-|Normaal|
 |**Indicators associated with DDOS toolkit detected** (Indicatoren die zijn gekoppeld aan DDOS-toolkit gedetecteerd)|Bij analyse van hostgegevens op %{Compromised Host} zijn bestandsnamen gedetecteerde die deel uitmaken van een toolkit die bekend is van malware die DDoS-aanvallen kan starten, poorten en services kan openen, en volledige controle over het geïnfecteerde systeem kan overnemen. Dit kan overigens ook een legitieme activiteit zijn.|-|Normaal|

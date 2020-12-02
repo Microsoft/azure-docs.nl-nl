@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/05/2020
 ms.author: depadia
-ms.openlocfilehash: ee7cc1c81bd35bf2b51c712c3a60a046435ee700
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 0c2deb1ae1d41f8daaed8856f97c4b458930c616
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94951280"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484376"
 ---
 # <a name="sap-businessobjects-bi-platform-planning-and-implementation-guide-on-azure"></a>Handleiding voor SAP BusinessObjects BI-platformplanning en implementatie in Azure
 
@@ -267,4 +267,4 @@ Voor een data base-as-a-service-aanbieding heeft elke nieuw gemaakte data base (
 - [Implementatie van SAP BusinessObjects BI-platform op Linux](businessobjects-deployment-guide-linux.md)
 - [Azure Virtual Machines planning en implementatie voor SAP](planning-guide.md)
 - [Azure Virtual Machines-implementatie voor SAP](deployment-guide.md)
-- [Azure Virtual Machines DBMS-implementatie voor SAP](dbms-guide.md)
+- [Azure Virtual Machines DBMS-implementatie voor SAP](./dbms_guide_general.md)

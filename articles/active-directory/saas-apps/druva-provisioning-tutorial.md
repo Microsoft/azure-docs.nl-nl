@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: 5579a9d96828caa1453547e7c2e11b8f0d717d2a
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 2ef564ae61aab10e1d100ccaf2547248e4a6a8e8
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94359303"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352164"
 ---
 # <a name="tutorial-configure-druva-for-automatic-user-provisioning"></a>Zelfstudie: Druva configureren voor automatische gebruikersinrichting
 
@@ -95,7 +95,7 @@ Als u Druva wilt configureren voor het automatisch inrichten van gebruikers met 
 In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in Druva te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
 > [!TIP]
-> U kunt er ook voor kiezen om eenmalige aanmelding op basis van SAML in te schakelen voor Druva, waarvoor u de instructies in de [Zelfstudie eenmalige aanmelding voor Druva](druva-tutorial.md) moet volgen. Eenmalige aanmelding kan onafhankelijk van automatische inrichting van gebruikers worden geconfigureerd, maar deze twee functies vullen elkaar aan.
+> U kunt er ook voor kiezen om eenmalige aanmelding op basis van SAML in te schakelen voor Druva, waarvoor u de instructies in de [zelfstudie Eenmalige aanmelding voor Druva](druva-tutorial.md) moet volgen. Eenmalige aanmelding kan onafhankelijk van automatische inrichting van gebruikers worden geconfigureerd, maar deze twee functies vullen elkaar aan.
 
 ### <a name="to-configure-automatic-user-provisioning-for-druva-in-azure-ad"></a>Automatische gebruikersinrichting configureren voor Druva in Azure AD:
 

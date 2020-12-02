@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: fc44b7a49785a24460ea11f07e5248b266f5dfad
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 7008cfcdeb4615b42839f92a6df71357f9acf911
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92793004"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484988"
 ---
 # <a name="storage-account-overview"></a>Overzicht van opslagaccounts
 
@@ -32,7 +32,7 @@ V2-opslag accounts voor algemeen gebruik ondersteunen de nieuwste functies van A
 
 - Blobs (alle typen: blok keren, toevoegen, pagina)
 - Data Lake Gen2
-- Bestanden
+- Files
 - Disks
 - Wachtrijen
 - Tabellen
@@ -49,7 +49,7 @@ V2-opslag accounts voor algemeen gebruik bieden meerdere toegangs lagen voor het
 V1-opslag accounts voor algemeen gebruik bieden toegang tot alle Azure Storage-services, maar hebben mogelijk niet de nieuwste functies of de laagste prijzen per gigabyte. V1-opslag accounts voor algemeen gebruik ondersteunen deze Azure Storage services:
 
 - Blobs (alle typen)
-- Bestanden
+- Files
 - Disks
 - Wachtrijen
 - Tabellen
@@ -138,7 +138,7 @@ Als uw opslag account voor algemeen gebruik bijvoorbeeld *mystorageaccount* heet
 > [!NOTE]
 > Blok-Blob en Blob Storage-accounts bieden alleen het Blob service-eind punt.
 
-Maak de URL voor toegang tot een object in een opslag account door de locatie van het object in het opslag account toe te voegen aan het eind punt. Een blobadres kan bijvoorbeeld de volgende indeling hebben: http:// *mystorageaccount* .blob.core.windows.net/ *mycontainer*/*myblob* .
+Maak de URL voor toegang tot een object in een opslag account door de locatie van het object in het opslag account toe te voegen aan het eind punt. Een blobadres kan bijvoorbeeld de volgende indeling hebben: http://*mystorageaccount*.blob.core.windows.net/*mycontainer*/*myblob*.
 
 U kunt uw opslag account ook configureren voor het gebruik van een aangepast domein voor blobs. Zie [een aangepaste domein naam configureren voor uw Azure Storage-account](../blobs/storage-custom-domain-name.md)voor meer informatie.  
 
@@ -167,7 +167,7 @@ Wanneer u een upgrade uitvoert naar een v2-account voor algemeen gebruik van een
 
 ### <a name="azcopy"></a>AzCopy
 
-AzCopy is een Windows-opdrachtregelprogramma dat is  ontworpen voor het high-performance kopiëren van gegevens van en naar Azure Storage. U kunt AzCopy gebruiken om gegevens te kopiëren naar een Blob Storage-account vanuit een bestaand opslag account voor algemeen gebruik of om gegevens van on-premises opslag apparaten te uploaden. Zie [gegevens overdragen met het AzCopy-hulp programma van Command-Line](./storage-use-azcopy-v10.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json)voor meer informatie.
+AzCopy is een Windows-opdrachtregelprogramma dat is  ontworpen voor het high-performance kopiëren van gegevens van en naar Azure Storage. U kunt AzCopy gebruiken om gegevens te kopiëren naar een Blob Storage-account vanuit een bestaand opslag account voor algemeen gebruik of om gegevens van on-premises opslag apparaten te uploaden. Zie [gegevens overdragen met het AzCopy-hulp programma van Command-Line](./storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)voor meer informatie.
 
 ### <a name="data-movement-library"></a>Bibliotheek voor gegevensverplaatsing
 

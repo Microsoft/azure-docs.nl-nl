@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/06/2020
 ms.author: nichola
 ms.reviewer: ''
-ms.openlocfilehash: cf5a7a5902484536d0cf2a1844be469f29e15f4b
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 86c379316737b7718b62165a6feb93ca3a0e9954
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96348463"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484036"
 ---
 # <a name="how-to-use-continuous-access-evaluation-enabled-apis-in-your-applications"></a>Api's voor continue toegang voor evaluatie gebruiken in uw toepassingen
 
@@ -27,9 +27,9 @@ In dit artikel wordt beschreven hoe u met CAE ingeschakelde Api's in uw toepassi
 
 ## <a name="implementation-considerations"></a>Afwegingen bij de implementatie
 
-Als u de evaluatie van continue toegang wilt gebruiken, moet uw app en de resource-API waartoe toegang wordt verkregen, zijn ingeschakeld voor CAE. Door de code voor te bereiden voor het gebruik van een gecaete resource, is het echter niet mogelijk om Api's te gebruiken waarvoor geen CAE is ingeschakeld. 
+Als u de evaluatie van continue toegang wilt gebruiken, moet uw app en de resource-API waartoe toegang wordt verkregen, zijn ingeschakeld voor CAE. Door de code voor te bereiden voor het gebruik van een gecaete resource, is het echter niet mogelijk om Api's te gebruiken waarvoor geen CAE is ingeschakeld.
 
-Als een resource-API de CAE implementeert en uw toepassing declareert, kan de CAE worden afgehandeld. uw app haalt CAE-tokens voor die bron op. Daarom moet uw toepassing, als u uw app-CAE wilt declareren, de CAE-claim Challenge afhandelen voor alle resource-Api's die micro soft Identity Access tokens accepteren. Als u geen CAE-antwoorden in deze API-aanroepen afhandelt, kan uw app in een lus een API-aanroep opnieuw proberen met een token dat nog steeds in de geretourneerde levens duur van het token staat, maar is ingetrokken door de CAE-functie. 
+Als een resource-API de CAE implementeert en uw toepassing declareert, kan de CAE worden afgehandeld. uw app haalt CAE-tokens voor die bron op. Daarom moet uw toepassing, als u uw app-CAE wilt declareren, de CAE-claim Challenge afhandelen voor alle resource-Api's die micro soft Identity Access tokens accepteren. Als u geen CAE-antwoorden in deze API-aanroepen afhandelt, kan uw app in een lus een API-aanroep opnieuw proberen met een token dat nog steeds in de geretourneerde levens duur van het token staat, maar is ingetrokken door de CAE-functie.
 
 ## <a name="the-code"></a>De code
 
@@ -116,4 +116,4 @@ U kunt uw toepassing testen door u aan te melden bij een gebruiker voor de toepa
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [evaluatie van continue toegang](/conditional-access/concept-continuous-access-evaluation.md)voor meer informatie.
+Zie [evaluatie van continue toegang](../conditional-access/concept-continuous-access-evaluation.md)voor meer informatie.

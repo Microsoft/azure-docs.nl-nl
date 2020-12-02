@@ -12,12 +12,12 @@ ms.date: 09/15/2020
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.custom: contperfq2
-ms.openlocfilehash: 19942e5400be63dfde48b9653282fb93bcb1ec42
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: f524eae791ab3944fb326b867e5f6823a35b432c
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96174812"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348191"
 ---
 # <a name="tutorial---build-a-scim-endpoint-and-configure-user-provisioning-with-azure-ad"></a>Zelfstudie: een SCIM-eind punt bouwen en gebruikers inrichten met Azure AD
 
@@ -199,29 +199,21 @@ Deze sectie bevat voorbeelden van SCIM-aanvragen die worden verzonden door de Az
   - [Gebruiker maken](#create-user) ([Aanvraag](#request) / [Antwoord](#response))
   - [Gebruiker ophalen](#get-user) ([Aanvraag](#request-1) / [Antwoord](#response-1))
   - [Gebruiker ophalen op basis van query](#get-user-by-query) ([Aanvraag](#request-2) / [Antwoord](#response-2))
-  - [Gebruiker ophalen op basis van query: nul resultaten](#get-user-by-query---zero-results) ([Aanvraag](#request-3)
-/ [Antwoord](#response-3))
-  - [Gebruiker bijwerken [eigenschappen met meerdere waarden]](#update-user-multi-valued-properties) ([Aanvraag](#request-4) /  [Antwoord](#response-4))
-  - [Gebruiker bijwerken [eigenschappen met één waarde]](#update-user-single-valued-properties) ([Aanvraag](#request-5)
-/ [Antwoord](#response-5)) 
-  - [Gebruiker uitschakelen](#disable-user) ([Aanvraag](#request-14) / 
-[Antwoord](#response-14))
-  - [Gebruiker verwijderen](#delete-user) ([Aanvraag](#request-6) / 
-[Antwoord](#response-6))
+  - [Gebruiker ophalen op basis van query: nul resultaten](#get-user-by-query---zero-results) ([Aanvraag](#request-3) / [Antwoord](#response-3))
+  - [Gebruiker bijwerken [eigenschappen met meerdere waarden]](#update-user-multi-valued-properties) ([Aanvraag](#request-4) / [Antwoord](#response-4))
+  - [Gebruiker bijwerken [eigenschappen met één waarde]](#update-user-single-valued-properties) ([Aanvraag](#request-5) / [Antwoord](#response-5)) 
+  - [Gebruiker uitschakelen](#disable-user) ([Aanvraag](#request-14) / [Antwoord](#response-14))
+  - [Gebruiker verwijderen](#delete-user) ([Aanvraag](#request-6) / [Antwoord](#response-6))
 
 
 [Groepsbewerkingen](#group-operations)
   - [Groep maken](#create-group) ([Aanvraag](#request-7) / [Antwoord](#response-7))
   - [Groep ophalen](#get-group) ( [Aanvraag](#request-8) / [Antwoord](#response-8))
   - [Groep ophalen op basis van displayName](#get-group-by-displayname) ([Aanvraag](#request-9) / [Antwoord](#response-9))
-  - [Groep bijwerken [niet-leden kenmerken]](#update-group-non-member-attributes) ([Aanvraag](#request-10) /
- [Antwoord](#response-10))
-  - [Groep bijwerken [leden toevoegen]](#update-group-add-members) ([Aanvraag](#request-11) /
-[Antwoord](#response-11))
-  - [Groep bijwerken [leden verwijderen]](#update-group-remove-members) ([Aanvraag](#request-12) /
-[Antwoord](#response-12))
-  - [Groep verwijderen](#delete-group) ([Aanvraag](#request-13) /
-[Antwoord](#response-13))
+  - [Groep bijwerken [kenmerken voor niet-leden]](#update-group-non-member-attributes) ([Aanvraag](#request-10) / [Antwoord](#response-10))
+  - [Groep bijwerken [leden toevoegen]](#update-group-add-members) ([Aanvraag](#request-11) / [Antwoord](#response-11))
+  - [Groep bijwerken [leden verwijderen]](#update-group-remove-members) ([Aanvraag](#request-12) / [Antwoord](#response-12))
+  - [Groep verwijderen](#delete-group) ([Aanvraag](#request-13) / [Antwoord](#response-13))
 
 ### <a name="user-operations"></a>Gebruikersbewerkingen
 

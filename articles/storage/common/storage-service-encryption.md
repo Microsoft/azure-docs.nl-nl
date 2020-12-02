@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: bc0a556841c3c6ee91ae472087aaaf7c74009b67
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: da1acc6316d7af87ffe35b9560919c324373591a
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92785779"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484597"
 ---
 # <a name="azure-storage-encryption-for-data-at-rest"></a>Azure Storage-versleuteling voor inactieve gegevens
 
@@ -32,7 +32,7 @@ Elke blok-blob, een toevoeg-BLOB of een pagina-blob die na 20 oktober 2017 is ge
 
 Zie [crypto GRAFIE API: Next Generation](/windows/desktop/seccng/cng-portal)(Engelstalig) voor meer informatie over de onderliggende cryptografische modules Azure Storage versleuteling.
 
-Voor informatie over versleuteling en sleutel beheer voor Azure Managed disks, Zie [Server versleuteling van Azure Managed disks](../../virtual-machines/windows/disk-encryption.md) voor Windows-vm's of [versleuteling aan de server zijde van Azure Managed disks](../../virtual-machines/linux/disk-encryption.md) voor Linux-vm's.
+Voor informatie over versleuteling en sleutel beheer voor Azure Managed disks, Zie [Server versleuteling van Azure Managed disks](../../virtual-machines/disk-encryption.md) voor Windows-vm's of [versleuteling aan de server zijde van Azure Managed disks](../../virtual-machines/disk-encryption.md) voor Linux-vm's.
 
 ## <a name="about-encryption-key-management"></a>Over het beheer van versleutelings sleutels
 

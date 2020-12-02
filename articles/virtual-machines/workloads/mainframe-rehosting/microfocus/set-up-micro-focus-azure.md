@@ -12,12 +12,12 @@ ms.date: 06/29/2020
 tags: ''
 keywords: ''
 ms.service: multiple
-ms.openlocfilehash: bd8da9ae7e31fb60ba0ca553f5aa304ccd3621d2
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: d9e5f9b531fc28caf8f3162a70318927d40bb923
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93127175"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483059"
 ---
 # <a name="install-micro-focus-enterprise-server-50-and-enterprise-developer-50-on-azure"></a>Micro Focus Enter prise Server 5,0 en Enter prise Developer 5,0 op Azure installeren
 
@@ -42,12 +42,12 @@ Bekijk de volgende vereisten voordat u aan de slag gaat:
     > [!Note]
     > Er zijn enkele opties voor het beheren van de toegang tot uw Vm's:
     > -   Een best practice is het instellen van [Azure Bastion](https://azure.microsoft.com/services/azure-bastion/).
-    > -   Een [VPN-tunnel (virtueel particulier netwerk) voor site-naar-site](../../../../vpn-gateway/vpn-gateway-tutorial-vpnconnection-powershell.md) .
+    > -   Een [VPN-tunnel (virtueel particulier netwerk) voor site-naar-site](../../../../vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md) .
     > -   Een JumpBox-VM.
 
 ## <a name="install-enterprise-server"></a>Enterprise-server installeren
 
-1.  Voor betere beveiliging en beheer kunt u overwegen om een nieuwe resource groep te maken voor dit project, bijvoorbeeld **RGMicroFocusEntServer** . Gebruik het eerste deel van de naam in azure om het type resource te kiezen, zodat het gemakkelijker is om een lijst te maken.
+1.  Voor betere beveiliging en beheer kunt u overwegen om een nieuwe resource groep te maken voor dit project, bijvoorbeeld **RGMicroFocusEntServer**. Gebruik het eerste deel van de naam in azure om het type resource te kiezen, zodat het gemakkelijker is om een lijst te maken.
 
 2.  Hiermee maakt u een virtuele machine. Selecteer in azure Marketplace de virtuele machine en het besturings systeem dat u wilt. Hier volgt een aanbevolen installatie:
 
@@ -87,7 +87,7 @@ Controleer na de installatie of er aanvullende updates zijn als een aantal verei
 
 1.  Start het micro focus licentie beheer.
 
-2.  Selecteer **Start** \> licentie beheer voor Start **micro focus licentie beheer** \> **License Administration** en klik vervolgens op het tabblad **installeren** . Kies het type licentie-indeling dat u wilt uploaden: een licentie bestand of een licentie code van 16 tekens. Bijvoorbeeld: voor een bestand, in **licentie bestand** , bladert u naar het *- `mflic` bestand dat u eerder hebt geüpload naar de virtuele machine en selecteert u **Licenties installeren** .
+2.  Selecteer **Start** \> licentie beheer voor Start **micro focus licentie beheer** \> **License Administration** en klik vervolgens op het tabblad **installeren** . Kies het type licentie-indeling dat u wilt uploaden: een licentie bestand of een licentie code van 16 tekens. Bijvoorbeeld: voor een bestand, in **licentie bestand**, bladert u naar het *- `mflic` bestand dat u eerder hebt geüpload naar de virtuele machine en selecteert u **Licenties installeren**.
 
     ![Scherm afbeelding toont het dialoog venster micro focus licentie beheer waarin u licenties installeren kunt selecteren.](media/install-image-3.png)
 
@@ -97,9 +97,9 @@ Controleer na de installatie of er aanvullende updates zijn als een aantal verei
 
 ## <a name="install-enterprise-developer-on-the-developer-machine"></a>Enter prise Developer installeren op de ontwikkelaars computer
 
-1.  Selecteer de resource groep die u eerder hebt gemaakt (bijvoorbeeld **RGMicroFocusEntServer** ) en selecteer vervolgens de installatie kopie voor ontwikkel aars.
+1.  Selecteer de resource groep die u eerder hebt gemaakt (bijvoorbeeld **RGMicroFocusEntServer**) en selecteer vervolgens de installatie kopie voor ontwikkel aars.
 
-2.  Als u zich wilt aanmelden bij de virtuele machine, gaat u naar de sectie **overzicht** en selecteert u **verbinding maken** . Met deze aanmelding wordt een RDP-sessie gestart. Meld u aan met de referenties die u hebt gemaakt voor de virtuele machine.
+2.  Als u zich wilt aanmelden bij de virtuele machine, gaat u naar de sectie **overzicht** en selecteert u **verbinding maken**. Met deze aanmelding wordt een RDP-sessie gestart. Meld u aan met de referenties die u hebt gemaakt voor de virtuele machine.
 
 3.  Laad vanuit de RDP-sessie de volgende twee bestanden (Sleep en zet deze indien gewenst):
 
@@ -117,7 +117,7 @@ Controleer na de installatie of er aanvullende updates zijn als een aantal verei
 
 6.  Start de micro focus-licentie beheer net zoals u dat voor de Enter prise-server hebt gedaan. Kies **Start** \> licentie beheer starten met **micro focus licentie beheer** \> **License Administration** en klik op het tabblad **installeren** .
 
-7.  Kies het type licentie-indeling dat u wilt uploaden: een licentie bestand of een licentie code van 16 tekens. Bijvoorbeeld, voor een bestand, in **licentie bestand** , bladert u naar het `mflic` bestand dat eerder is geüpload naar de virtuele machine en selecteer  **Licenties installeren** .
+7.  Kies het type licentie-indeling dat u wilt uploaden: een licentie bestand of een licentie code van 16 tekens. Bijvoorbeeld, voor een bestand, in **licentie bestand**, bladert u naar het `mflic` bestand dat eerder is geüpload naar de virtuele machine en selecteer  **Licenties installeren**.
 
     ![Het dialoog venster micro focus licentie beheer](media/install-image-7.png)
 

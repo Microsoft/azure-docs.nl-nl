@@ -9,14 +9,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/28/2020
-ms.author: duau
-ms.openlocfilehash: d533b8fed47b1790cc35429613179f440f1fac51
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.date: 11/23/2020
+ms.author: yuajia
+ms.openlocfilehash: cd99be40700ab1c34176f2bf7497e4debf5cd424
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91961745"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483794"
 ---
 # <a name="monitoring-metrics-and-logs-in-azure-front-door"></a>Metrische gegevens en logboeken bewaken in azure front deur
 
@@ -31,14 +31,14 @@ Metrische gegevens zijn een functie voor bepaalde Azure-resources waarmee u pres
 
 | Gegevens | Weergave naam voor metrische gegevens | Eenheid | Dimensies | Beschrijving |
 | --- | --- | --- | --- | --- |
-| RequestCount | Aantal aanvragen | Count | Http status</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Het aantal client aanvragen dat door de voor deur wordt geleverd.  |
+| RequestCount | Aantal aanvragen | Aantal | Http status</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Het aantal client aanvragen dat door de voor deur wordt geleverd.  |
 | RequestSize | Aanvraag grootte | Bytes | Http status</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Het aantal bytes dat is verzonden als aanvragen van clients naar de voor deur. |
 | ResponseSize | Grootte van antwoord | Bytes | Http status</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | Het aantal bytes dat is verzonden als reacties van de voor deur naar clients. |
 | TotalLatency | Totale latentie | Milliseconden | Http status</br>HttpStatusGroup</br>ClientRegion</br>ClientCountry | De totale tijd van de client aanvraag die wordt ontvangen door de voor deur tot de laatste reactie byte die van AFD naar de client is verzonden. |
-| BackendRequestCount | Aantal back-aanvragen | Count | Http status</br>HttpStatusGroup</br>Back-end | Het aantal aanvragen dat van de voor deur naar de back-end wordt verzonden. |
+| BackendRequestCount | Aantal back-aanvragen | Aantal | Http status</br>HttpStatusGroup</br>Back-end | Het aantal aanvragen dat van de voor deur naar de back-end wordt verzonden. |
 | BackendRequestLatency | Latentie van back-upaanvraag | Milliseconden | Back-end | De tijd die wordt berekend vanaf het moment dat de aanvraag door de voor deur naar de back-end is verzonden tot de voor deur de laatste reactie byte van de back-end heeft ontvangen. |
 | BackendHealthPercentage | Back-status percentage | Percentage | Back-end</br>Hosts | Het percentage geslaagde status tests van front-deur naar back-end. |
-| WebApplicationFirewallRequestCount | Aantal aanvragen voor Web Application firewall | Count | PolicyName</br>RuleName</br>Bewerking | Het aantal client aanvragen dat is verwerkt door de beveiligingslaag van de toepassingslaag. |
+| WebApplicationFirewallRequestCount | Aantal aanvragen voor Web Application firewall | Aantal | PolicyName</br>RuleName</br>Actie | Het aantal client aanvragen dat is verwerkt door de beveiligingslaag van de toepassingslaag. |
 
 ## <a name="activity-logs"></a><a name="activity-log"></a>Activiteiten logboeken
 
@@ -52,7 +52,7 @@ U krijgt toegang tot activiteiten Logboeken in uw voor deur of in alle logboeken
 1. Selecteer uw voor deur-exemplaar.
 2. Selecteer **Activiteitenlogboek**.
 
-    :::image type="content" source="./media/front-door-diagnostics/activity-log.png" alt-text="Activiteiten logboek":::
+    :::image type="content" source="./media/front-door-diagnostics/activity-log.png" alt-text="Activiteitenlogboek":::
 
 3. Kies een filter bereik en selecteer vervolgens **Toep assen**.
 
@@ -61,7 +61,7 @@ Diagnostische logboeken bieden uitgebreide informatie over bewerkingen en fouten
 
 Activiteiten logboeken bieden inzicht in de bewerkingen die worden uitgevoerd op Azure-resources. Diagnostische logboeken bieden inzicht in de bewerkingen die uw resource heeft voltooid. Zie [Azure monitor Diagnostische logboeken](../azure-monitor/platform/platform-logs-overview.md)voor meer informatie.
 
-:::image type="content" source="./media/front-door-diagnostics/diagnostic-log.png" alt-text="Activiteiten logboek":::
+:::image type="content" source="./media/front-door-diagnostics/diagnostic-log.png" alt-text="Diagnostische logboeken":::
 
 Diagnostische logboeken voor uw front-deur configureren:
 
@@ -91,10 +91,11 @@ De voor deur bevat momenteel Diagnostische logboeken (batched per uur). Diagnost
 | RulesEngineMatchNames | De namen van de regels die de aanvraag heeft gevonden. |
 | Exemplaar | De TLS/SSL-protocol versie die wordt gebruikt door de aanvraag of null als er geen versleuteling is. |
 | SentToOriginShield </br> (afgeschaft) * **Zie opmerkingen bij afschaffing in de volgende sectie.**| Als dit het geval is, betekent dit dat de aanvraag is beantwoord van de oorspronkelijke schild in de cache in plaats van de Edge-pop. Schild van oorsprong is een bovenliggende cache die wordt gebruikt om de verhouding van de cache treffers te verbeteren. |
-| isReceivedFromClient | Als deze waarde True is, betekent dit dat de aanvraag afkomstig is van de client. Als de waarde False is, is de aanvraag een Missing in de rand (Child POP) en wordt gereageerd vanaf het afschermen van de oorsprong (bovenliggende POP). 
+| isReceivedFromClient | Als deze waarde True is, betekent dit dat de aanvraag afkomstig is van de client. Als de waarde False is, is de aanvraag een Missing in de rand (Child POP) en wordt gereageerd vanaf het afschermen van de oorsprong (bovenliggende POP). |
 | TimeTaken | De tijds duur van de eerste byte van de aanvraag naar de laatste byte van de reactie, in seconden. |
 | TrackingReference | De unieke verwijzings reeks die een aanvraag identificeert die wordt geleverd door de voor deur, ook verzonden als X-Azure-ref-header naar de client. Vereist voor het zoeken naar details in de logboeken van de toegang voor een specifieke aanvraag. |
 | User agent | Het browser type dat door de client wordt gebruikt. |
+| Info | Dit veld bevat het specifieke type fout voor verdere probleem oplossing. </br> Mogelijke waarden zijn: </br> **Fout**: geeft aan dat er geen fout is gevonden. </br> **CertificateError**: algemene SSL-certificaat fout.</br> **CertificateNameCheckFailed**: de hostnaam in het SSL-certificaat is ongeldig of komt niet overeen. </br> **ClientDisconnected**: de aanvraag is mislukt vanwege een client netwerk verbinding. </br> **UnspecifiedClientError**: algemene client fout. </br> **InvalidRequest**: ongeldige aanvraag. Dit kan gebeuren vanwege een ongeldige header, hoofd tekst en URL. </br> **DNSFailure**: DNS-fout. </br> **DNSNameNotResolved**: de server naam of het adres kan niet worden omgezet. </br> **OriginConnectionAborted**: de verbinding met de oorsprong is abrupt gestopt. </br> **OriginConnectionError**: algemene verbindings fout van oorsprong. </br> **OriginConnectionRefused**: de verbinding met de oorsprong kan niet tot stand worden gebracht. </br> **OriginError**: fout met algemene oorsprong. </br> **OriginInvalidResponse**: oorsprong heeft een ongeldige of niet-herkende reactie geretourneerd. </br> **OriginTimeout**: de time-outperiode voor de oorspronkelijke aanvraag is verlopen. </br> **ResponseHeaderTooBig**: de oorsprong heeft te groot van een reactie header geretourneerd. </br> **RestrictedIP**: de aanvraag is geblokkeerd vanwege een beperkt IP-adres. </br> **SSLHandshakeError**: kan geen verbinding maken met de oorsprong vanwege een SSL-hand Shake fout. </br> **UnspecifiedError**: er is een fout opgetreden die niet overeenkomt met de fouten in de tabel. |
 
 ### <a name="sent-to-origin-shield-deprecation"></a>Verzonden naar afkomst van oorsprong afschermen
 De onbewerkte logboek eigenschap **isSentToOriginShield** is afgeschaft en vervangen door een nieuw veld **isReceivedFromClient**. Gebruik het nieuwe veld als u het afgeschafte veld al gebruikt. 
@@ -120,12 +121,12 @@ Als de waarde ONWAAR is, betekent dit dat de aanvraag wordt gereageerd van het a
 
 | Scenario's | Aantal logboek vermeldingen | POP | BackendHostname | isReceivedFromClient | CacheStatus |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| Routerings regel zonder caching ingeschakeld | 1 | POP-code van rand | Back-end waar de aanvraag is doorgestuurd | True | CONFIG_NOCACHE |
-| Routerings regel met caching ingeschakeld. Cache treffer aan de rand POP | 1 | POP-code van rand | Leeg | True | BEZOCHT |
-| Routerings regel met caching ingeschakeld. Geen geheugen meer in de POP-context, maar cache is aanwezig in de POP van de bovenliggende cache | 2 | 1. POP-code van rand</br>2. POP-code van bovenliggende cache | 1. POP-hostnaam van bovenliggende cache</br>2. empty | 1. True</br>2. onwaar | 1. MIS</br>2. DRUK |
-| Routerings regel met caching ingeschakeld. Geen geheugen meer aanwezig in de Edge-POP, maar gedeeltelijke cache treffers in de bovenliggende cache POP | 2 | 1. POP-code van rand</br>2. POP-code van bovenliggende cache | 1. POP-hostnaam van bovenliggende cache</br>2. back-end waarmee cache kan worden gevuld | 1. True</br>2. onwaar | 1. MIS</br>2. PARTIAL_HIT |
+| Routerings regel zonder caching ingeschakeld | 1 | POP-code van rand | Back-end waar de aanvraag is doorgestuurd | Waar | CONFIG_NOCACHE |
+| Routerings regel met caching ingeschakeld. Cache treffer aan de rand POP | 1 | POP-code van rand | Leeg | Waar | BEZOCHT |
+| Routerings regel met caching ingeschakeld. Cache missers bij Edge POP, maar cache treffers in bovenliggende cache POP | 2 | 1. POP-code van rand</br>2. POP-code van bovenliggende cache | 1. POP-hostnaam van bovenliggende cache</br>2. empty | 1. True</br>2. onwaar | 1. MIS</br>2. DRUK |
+| Routerings regel met caching ingeschakeld. Caches missen bij Edge POP, maar gedeeltelijke cache treffers in bovenliggende cache POP | 2 | 1. POP-code van rand</br>2. POP-code van bovenliggende cache | 1. POP-hostnaam van bovenliggende cache</br>2. back-end waarmee cache kan worden gevuld | 1. True</br>2. onwaar | 1. MIS</br>2. PARTIAL_HIT |
 | Routerings regel met caching ingeschakeld. Cache PARTIAL_HIT bij Edge-POP, maar cache is actief op POP van bovenliggende cache | 2 | 1. POP-code van rand</br>2. POP-code van bovenliggende cache | 1. POP-code van rand</br>2. POP-code van bovenliggende cache | 1. True</br>2. onwaar | 1. PARTIAL_HIT</br>2. DRUK |
-| Routerings regel met caching ingeschakeld. Missers in cache aan zowel de rand als de bovenliggende cache | 2 | 1. POP-code van rand</br>2. POP-code van bovenliggende cache | 1. POP-code van rand</br>2. POP-code van bovenliggende cache | 1. True</br>2. onwaar | 1. MIS</br>2. MIS |
+| Routerings regel met caching ingeschakeld. Cache missers bij zowel de rand als de bovenliggende cache | 2 | 1. POP-code van rand</br>2. POP-code van bovenliggende cache | 1. POP-code van rand</br>2. POP-code van bovenliggende cache | 1. True</br>2. onwaar | 1. MIS</br>2. MIS |
 
 > [!NOTE]
 > In het geval van cache scenario's wordt de waarde voor de cache status partial_hit wanneer een aantal bytes voor een aanvraag wordt opgehaald van de front-deur rand of de oorspronkelijke schild cache, terwijl sommige van de bytes van de oorsprong voor grote objecten worden opgehaald.

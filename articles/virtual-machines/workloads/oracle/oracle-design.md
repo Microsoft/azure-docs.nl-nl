@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 08/02/2018
 ms.author: kegorman
 ms.reviewer: cynthn
-ms.openlocfilehash: 6b7c280d9ff5f4d8a3c35eb11e080bf2f9f287c0
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 5e9ddecd694a9051e746d07cbc1bee4d98bf5829
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94959166"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484427"
 ---
 # <a name="design-and-implement-an-oracle-database-in-azure"></a>Een Oracle-data base ontwerpen en implementeren in azure
 
@@ -138,7 +138,7 @@ Op basis van de vereisten voor de netwerk bandbreedte zijn er verschillende gate
 - De netwerk latentie is hoger vergeleken met een on-premises implementatie. Het verminderen van netwerk round trips kan de prestaties aanzienlijk verbeteren.
 - Consolidatie van toepassingen die hoge trans acties of ' intensieve-apps hebben op dezelfde virtuele machine om retouren te verminderen.
 - Gebruik Virtual Machines met [versneld netwerken](../../../virtual-network/create-vm-accelerated-networking-cli.md) voor betere netwerk prestaties.
-- Voor bepaalde Linux-distributies kunt u [ondersteuning voor knippen/](../../linux/configure-lvm.md#trimunmap-support)ontkoppelen inschakelen.
+- Voor bepaalde Linux-distributies kunt u [ondersteuning voor knippen/](/previous-versions/azure/virtual-machines/linux/configure-lvm#trimunmap-support)ontkoppelen inschakelen.
 - Installeer [Oracle Enter prise Manager](https://www.oracle.com/technetwork/oem/enterprise-manager/overview/index.html) op een afzonderlijke virtuele machine.
 - Zeer grote pagina's zijn standaard niet ingeschakeld op Linux. Overweeg om zeer grote pagina's in te scha kelen en in te stellen `use_large_pages = ONLY` op de Oracle DB. Dit kan helpen om de prestaties te verbeteren. Meer informatie vindt u [hier](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/refrn/USE_LARGE_PAGES.html#GUID-1B0F4D27-8222-439E-A01D-E50758C88390).
 

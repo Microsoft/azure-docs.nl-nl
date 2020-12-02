@@ -11,12 +11,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 10/21/2020
 ms.author: inhenkel
-ms.openlocfilehash: cdc6cbbea8b222007d94ecac99902bc4498a42fe
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 4ddb02bbcf284566550517f8fa343a728e2275a9
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94505254"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483624"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Release opmerkingen bij Azure Media Services v3
 
@@ -51,7 +51,7 @@ Zie [video-en audio bestanden analyseren](analyzing-video-audio-files-concept.md
 
 Updates van de meeste eigenschappen zijn nu toegestaan wanneer Live-gebeurtenissen worden gestopt. Daarnaast mogen gebruikers een voor voegsel opgeven voor de statische hostnaam voor de invoer en preview-Url's van de live-gebeurtenis. VanityUrl wordt nu aangeroepen `useStaticHostName` om het doel van de eigenschap beter weer te geven.
 
-Live-gebeurtenissen hebben nu de status stand-by.  Bekijk [Live Events en live outputs in Media Services](https://docs.microsoft.com/azure/media-services/latest/live-events-outputs-concept).
+Live-gebeurtenissen hebben nu de status stand-by.  Bekijk [Live Events en live outputs in Media Services](./live-events-outputs-concept.md).
 
 Een live-gebeurtenis ondersteunt het ontvangen van verschillende invoer hoogte-breedte verhoudingen. Met de stretch-modus kunnen klanten het stretch gedrag voor de uitvoer opgeven.
 
@@ -427,7 +427,7 @@ De volgende functies zijn aanwezig in de .NET SDK:
 
 Ga naar het artikel van de [Azure Media Services-community](media-services-community.md) voor verschillende manieren om vragen te stellen, feedback te geven en updates voor Media Services op te halen.
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 [Migratie richtlijnen voor het overstappen van Media Services versie 2 naar v3](migrate-from-v2-to-v3.md#known-issues).
 

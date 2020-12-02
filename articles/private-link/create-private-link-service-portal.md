@@ -8,12 +8,12 @@ ms.service: private-link
 ms.topic: quickstart
 ms.date: 02/03/2020
 ms.author: allensu
-ms.openlocfilehash: 0d873401d377a03581a319769604f3d976f365be
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 5b7bc8be89068f0d3cf6722c36ae7fd5cc560736
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87927235"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96012115"
 ---
 # <a name="quickstart-create-a-private-link-service-by-using-the-azure-portal"></a>Snelstart: Een Private Link-service maken met behulp van de Azure-portal
 
@@ -139,7 +139,7 @@ In deze sectie maakt u een Private Link-service achter een standaard load balanc
 
 1. In **Private Link-centrum: overzicht** > **Uw eigen service beschikbaar stellen zodat anderen kunnen verbinden**, selecteert u **Start**.
 
-1. Typ of selecteer onder **Een private link-service maken - Basisbeginselen**de volgende gegevens:
+1. Typ of selecteer onder **Een private link-service maken - Basisbeginselen** de volgende gegevens:
 
     | Instelling           | Waarde                                                                        |
     |-------------------|------------------------------------------------------------------------------|
@@ -182,4 +182,4 @@ Wanneer u klaar bent met het gebruik van de Private Link-service, verwijdert u d
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze quickstart hebt u een interne Azure load balancer en een Private Link-service gemaakt. In deze quickstart leert u [een privé-eindpunt maken met behulp van Azure Portal](https://docs.microsoft.com/azure/private-link/create-private-endpoint-portal).
+In deze quickstart hebt u een interne Azure load balancer en een Private Link-service gemaakt. In deze quickstart leert u [een privé-eindpunt maken met behulp van Azure Portal](./create-private-endpoint-portal.md).

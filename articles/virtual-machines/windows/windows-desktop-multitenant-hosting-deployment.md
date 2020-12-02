@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 1/24/2018
 ms.author: xujing
-ms.openlocfilehash: 5631cbdd0b1eae343899be2147720d980e605dbb
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 5bd41396cf075f83fd37a4276f7a30223ec8c1f3
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452722"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96482940"
 ---
 # <a name="how-to-deploy-windows-10-on-azure-with-multitenant-hosting-rights"></a>Windows 10 implementeren op Azure met multi tenant-hosting rechten 
 Voor klanten met Windows 10 Enter prise E3/E5 per gebruiker of Windows Virtual Desktop Access per gebruiker (licenties voor gebruikers abonnement of licenties voor gebruikers abonnementen), kunt u met multi tenant hosting rechten voor Windows 10 uw Windows 10-licenties naar de Cloud brengen en Windows 10-Virtual Machines op Azure uitvoeren zonder dat u voor een andere licentie betaalt. Zie [multi tenant-hosting voor Windows 10](https://www.microsoft.com/en-us/CloudandHosting/licensing_sca.aspx)voor meer informatie.
@@ -36,9 +36,11 @@ Voor implementaties van Power shell, CLI en Azure Resource Manager-sjabloon kunt
 ## <a name="qualify-for-multi-tenant-hosting-rights"></a>Kom in aanmerking voor multi tenant-hosting rechten 
 Om in aanmerking te komen voor multi tenant-hosting rechten en om Windows 10-installatie kopieën uit te voeren op Azure-gebruikers, moet een van de volgende abonnementen zijn: 
 
--   Microsoft 365 E3/E5/F3/a3/A5
--   Windows 10 Enter prise E3/E5 
--   Windows 10-onderwijs a3/A5
+-   Microsoft 365 E3/E5 
+-   Microsoft 365 F3 
+-   Microsoft 365 a3/A5 
+-   Windows 10 Enter prise E3/E5
+-   Windows 10-onderwijs a3/A5 
 -   Windows VDA E3/E5
 
 

@@ -3,12 +3,12 @@ title: Ontdek apps, functies en onderdelen op on-premises servers met Azure Migr
 description: Meer informatie over het detecteren van apps, functies en onderdelen op on-premises servers met Azure Migrate server-evaluatie.
 ms.topic: article
 ms.date: 06/10/2020
-ms.openlocfilehash: 6bdc26ac3a27026183e889bf258e2e1a5dadebfb
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 960877ac4eab4d8f23b5616dc04628142964b46a
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92315201"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483450"
 ---
 # <a name="discover-machine-apps-roles-and-features"></a>Machine-apps,-functies en-functies detecteren
 
@@ -23,14 +23,14 @@ Het detecteren van de inventaris van apps, rollen en functies die worden uitgevo
 ## <a name="before-you-start"></a>Voordat u begint
 
 - Zorg ervoor dat u:
-    - Een Azure Migrate-project [gemaakt](how-to-add-tool-first-time.md) .
+    - Een Azure Migrate-project [gemaakt](./create-manage-projects.md) .
     - Het hulp programma voor het evalueren van Azure Migrate: Server is [toegevoegd](how-to-assess.md) aan een project.
 - Bekijk [ondersteuning en vereisten voor app-detectie](migrate-support-matrix-vmware.md#vmware-requirements).
 - Zorg ervoor dat de virtuele machines waarop de app-detectie wordt uitgevoerd, Power shell-versie 2,0 of hoger hebben geïnstalleerd en dat er VMware-Hulpprogram Ma's (later dan 10.2.0) is geïnstalleerd.
 - Controleer de [vereisten](migrate-appliance.md) voor het implementeren van het Azure migrate apparaat.
 
 
-## <a name="deploy-the-azure-migrate-appliance"></a>Het Azure Migrate apparaat implementeren
+## <a name="deploy-the-azure-migrate-appliance"></a>Het Azure Migrate-apparaat implementeren
 
 1. [Bekijk](migrate-appliance.md#appliance---vmware) de vereisten voor het implementeren van het Azure migrate apparaat.
 2. Bekijk de Azure-Url's die het apparaat nodig heeft voor toegang tot de [open bare](migrate-appliance.md#public-cloud-urls) en [overheids Clouds](migrate-appliance.md#government-cloud-urls).
@@ -54,7 +54,7 @@ Voeg het gebruikers account als volgt toe:
 
 1. Open de app voor het beheren van apparaten. 
 2. Navigeer naar het deel venster **vCenter-gegevens opgeven** .
-3. Klik in **toepassing en afhankelijkheden van Vm's detecteren**op **referenties toevoegen**
+3. Klik in **toepassing en afhankelijkheden van Vm's detecteren** op **referenties toevoegen**
 3. Kies het **besturings systeem**, geef een beschrijvende naam op voor het account en het **User name** / **wacht woord** voor de gebruikers naam
 6. Klik op **Opslaan**.
 7. Klik op **opslaan en detectie starten**.
@@ -66,14 +66,14 @@ Voeg het gebruikers account als volgt toe:
 
 Nadat de detectie is beëindigd, kunt u de app-inventaris bekijken en exporteren in de Azure Portal als u referenties hebt ingesteld voor app-detectie.
 
-1. Klik in **Azure migrate servers**  >  **Azure migrate: Server evaluatie**op de weer gegeven aantal om de pagina **gedetecteerde servers** te openen.
+1. Klik in **Azure migrate servers**  >  **Azure migrate: Server evaluatie** op de weer gegeven aantal om de pagina **gedetecteerde servers** te openen.
 
     > [!NOTE]
     > In deze fase kunt u ook een afhankelijkheids analyse instellen voor gedetecteerde computers, zodat u afhankelijkheden kunt visualiseren tussen computers die u wilt beoordelen. Meer [informatie](concepts-dependency-visualization.md) over afhankelijkheids analyse.
 
-2. In **gedetecteerde toepassingen**klikt u op het aantal weer gegeven.
-3. In de **toepassings inventaris**kunt u de gedetecteerde apps, rollen en functies bekijken.
-4. Als u de inventaris wilt exporteren, klikt u op **app-inventaris exporteren**in **gedetecteerde servers**.
+2. In **gedetecteerde toepassingen** klikt u op het aantal weer gegeven.
+3. In de **toepassings inventaris** kunt u de gedetecteerde apps, rollen en functies bekijken.
+4. Als u de inventaris wilt exporteren, klikt u op **app-inventaris exporteren** in **gedetecteerde servers**.
 
 De app-inventarisatie wordt geëxporteerd en gedownload in Excel-indeling. Op de **inventarisatie** pagina van de toepassing worden alle apps weer gegeven die op alle computers zijn gedetecteerd.
 

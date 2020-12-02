@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/17/2020
 ms.author: oliversc
 ms.custom: seodec18
-ms.openlocfilehash: e786c4caae13ffaa541697d083158e17d42383fb
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
+ms.openlocfilehash: c6cc033e4814553020957310224a8ed4cdacbc8e
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96122554"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483951"
 ---
 # <a name="speech-service-release-notes"></a>Release opmerkingen bij de spraak service
 
@@ -40,14 +40,13 @@ ms.locfileid: "96122554"
 
 **Nieuwe functies**
 - **Linux**: er is ondersteuning toegevoegd voor Debian 10 en Ubuntu 20,04 LTS.
-- **Python/objectief-C**: er is ondersteuning toegevoegd voor de `KeywordRecognizer` API. [Hier](https://docs.microsoft.com/azure/cognitive-services/speech-service/custom-keyword-basics)wordt de documentatie weer gegeven.
+- **Python/objectief-C**: er is ondersteuning toegevoegd voor de `KeywordRecognizer` API. [Hier](./custom-keyword-basics.md)wordt de documentatie weer gegeven.
 - **C++/Java/C #**: er is ondersteuning toegevoegd om een `HttpHeader` sleutel/waarde in te stellen via `ServicePropertyChannel::HttpHeader` .
-- **Java script**: er is ondersteuning toegevoegd voor de `ConversationTranscriber` API. Lees [hier](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-use-conversation-transcription?pivots=programming-language-javascript)de documentatie. 
-- **C++/c #**: nieuwe `AudioDataStream FromWavFileInput` methode toegevoegd (om te lezen. WAV-bestanden) [hier (C++)](https://docs.microsoft.com/cpp/cognitive-services/speech/audiodatastream) en [hier (C#)](
-https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.audiodatastream?view=azure-dotnet).
--  **C++/c #/Java/python/Objective-C/Swift**: er is een `stopSpeakingAsync()` methode toegevoegd om de tekst-naar-spraak-synthese te stoppen. Lees de referentie documentatie [hier (C++)](https://docs.microsoft.com/cpp/cognitive-services/speech/microsoft-cognitiveservices-speech-namespace), [hier (C#](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech?view=azure-dotnet)), hier ( [Java)](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech), [hier (python)](https://docs.microsoft.com/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech?view=azure-python), en [hier (objectief-C/Swift)](https://docs.microsoft.com/objectivec/cognitive-services/speech/).
-- **C#, C++, Java**: een `FromDialogServiceConnector()` functie toegevoegd aan de `Connection` klasse die kan worden gebruikt voor het bewaken van verbindings-en verbreken van gebeurtenissen voor `DialogServiceConnector` . Lees de referentie documentatie [hier (C#)](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.connection?view=azure-dotnet), [hier (C++)](https://docs.microsoft.com/cpp/cognitive-services/speech/connection), en [hier (Java)](https://docs.microsoft.com/java/api/com.microsoft.cognitiveservices.speech.connection).
-- **C++/c #/Java/python/Objective-C/Swift**: er is ondersteuning toegevoegd voor de beoordeling van de uitspraak, waarmee de uitspraak van een stem wordt geëvalueerd en feedback wordt gegeven over de nauw keurigheid en fluency van gesp roken audio. Lees de documentatie [hier](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-pronunciation-assessment).
+- **Java script**: er is ondersteuning toegevoegd voor de `ConversationTranscriber` API. Lees [hier](./how-to-use-conversation-transcription.md?pivots=programming-language-javascript)de documentatie. 
+- **C++/c #**: nieuwe `AudioDataStream FromWavFileInput` methode toegevoegd (om te lezen. WAV-bestanden) [hier (C++)](/cpp/cognitive-services/speech/audiodatastream) en [hier (C#)](/dotnet/api/microsoft.cognitiveservices.speech.audiodatastream?view=azure-dotnet).
+-  **C++/c #/Java/python/Objective-C/Swift**: er is een `stopSpeakingAsync()` methode toegevoegd om de tekst-naar-spraak-synthese te stoppen. Lees de referentie documentatie [hier (C++)](/cpp/cognitive-services/speech/microsoft-cognitiveservices-speech-namespace), [hier (C#](/dotnet/api/microsoft.cognitiveservices.speech?view=azure-dotnet)), hier ( [Java)](/java/api/com.microsoft.cognitiveservices.speech), [hier (python)](/python/api/azure-cognitiveservices-speech/azure.cognitiveservices.speech?view=azure-python), en [hier (objectief-C/Swift)](/objectivec/cognitive-services/speech/).
+- **C#, C++, Java**: een `FromDialogServiceConnector()` functie toegevoegd aan de `Connection` klasse die kan worden gebruikt voor het bewaken van verbindings-en verbreken van gebeurtenissen voor `DialogServiceConnector` . Lees de referentie documentatie [hier (C#)](/dotnet/api/microsoft.cognitiveservices.speech.connection?view=azure-dotnet), [hier (C++)](/cpp/cognitive-services/speech/connection), en [hier (Java)](/java/api/com.microsoft.cognitiveservices.speech.connection).
+- **C++/c #/Java/python/Objective-C/Swift**: er is ondersteuning toegevoegd voor de beoordeling van de uitspraak, waarmee de uitspraak van een stem wordt geëvalueerd en feedback wordt gegeven over de nauw keurigheid en fluency van gesp roken audio. Lees de documentatie [hier](how-to-pronunciation-assessment.md).
 
 **Laatste wijziging**
 - **Java script**: PullAudioOutputStream. Read () heeft een wijziging van het retour type van een interne belofte naar een systeem eigen Java script-belofte.
@@ -83,7 +82,7 @@ https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.audioda
 Blijf op de hoogte.
 
 ## <a name="speech-cli-also-known-as-spx-2020-october-release"></a>Speech CLI (ook wel SPX genoemd): 2020-oktober release
-SPX is de opdracht regel interface voor het gebruik van de service Azure speech zonder code te schrijven. Down load [hier](https://docs.microsoft.com/azure/cognitive-services/speech-service/spx-basics)de nieuwste versie. <br>
+SPX is de opdracht regel interface voor het gebruik van de service Azure speech zonder code te schrijven. Down load [hier](./spx-basics.md)de nieuwste versie. <br>
 
 **Nieuwe functies**
 - `spx csr dataset upload --kind audio|language|acoustic` -gegevens sets maken op basis van lokale gegevens, niet alleen vanuit Url's.

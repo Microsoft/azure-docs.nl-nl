@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 06/30/2020
 ms.author: radeltch
 ms.reviewer: cynthn
-ms.openlocfilehash: 5bb40ec930731b58d457500d83b66c7a187b44d8
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: bcb912a24dfb2a5e78719cf9010fd23afe0df185
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94957432"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484393"
 ---
 # <a name="azure-monitor-for-sap-solutions-preview"></a>Azure monitor voor SAP-oplossingen (preview-versie)
 
@@ -35,7 +35,7 @@ Ondersteunde data bases:
 - SAP HANA-database
 - Micro soft SQL Server
 
-Azure Monitor voor SAP-oplossingen maakt gebruik van de kracht van bestaande [Azure monitor](../../../azure-monitor/overview.md) mogelijkheden, zoals log Analytics en [werkmappen](../../../azure-monitor/platform/workbooks-overview.md) , om extra bewakings mogelijkheden te bieden. Klanten kunnen [aangepaste visualisaties](../../../azure-monitor/platform/workbooks-overview.md#getting-started) maken door de standaard werkmappen te bewerken die worden meegeleverd door Azure monitor voor SAP-oplossingen, [aangepaste query's](../../../azure-monitor/log-query/get-started-portal.md) te schrijven en [aangepaste waarschuwingen](../../../azure-monitor/learn/tutorial-response.md) te maken met behulp van Azure log Analytics-werk ruimte, profiteren van de [flexibele Bewaar periode](../../../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period) en het koppelen van bewakings gegevens met hun ticket systeem.
+Azure Monitor voor SAP-oplossingen maakt gebruik van de kracht van bestaande [Azure monitor](../../../azure-monitor/overview.md) mogelijkheden, zoals log Analytics en [werkmappen](../../../azure-monitor/platform/workbooks-overview.md) , om extra bewakings mogelijkheden te bieden. Klanten kunnen [aangepaste visualisaties](../../../azure-monitor/platform/workbooks-overview.md#getting-started) maken door de standaard werkmappen te bewerken die worden meegeleverd door Azure monitor voor SAP-oplossingen, [aangepaste query's](../../../azure-monitor/log-query/log-analytics-tutorial.md) te schrijven en [aangepaste waarschuwingen](../../../azure-monitor/learn/tutorial-response.md) te maken met behulp van Azure log Analytics-werk ruimte, profiteren van de [flexibele Bewaar periode](../../../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period) en het koppelen van bewakings gegevens met hun ticket systeem.
 
 ## <a name="what-data-does-azure-monitor-for-sap-solutions-collect"></a>Welke gegevens worden Azure Monitor voor SAP-oplossingen verzameld?
 

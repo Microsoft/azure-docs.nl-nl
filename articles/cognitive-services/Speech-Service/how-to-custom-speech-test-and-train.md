@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/27/2020
 ms.author: trbye
-ms.openlocfilehash: cd9b85f22866c529b66fa6df07bd524516726086
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: a5457dc94082f089d3adf02c9614d05d2c5db244
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92165329"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484002"
 ---
 # <a name="prepare-data-for-custom-speech"></a>Gegevens voorbereiden voor Custom Speech
 
@@ -204,4 +204,4 @@ Gebruik de volgende tabel om ervoor te zorgen dat het gerelateerde gegevens best
 * [Uw gegevens controleren](how-to-custom-speech-inspect-data.md)
 * [Uw gegevens evalueren](how-to-custom-speech-evaluate-data.md)
 * [Uw model trainen](how-to-custom-speech-train-model.md)
-* [Uw model implementeren](how-to-custom-speech-deploy-model.md)
+* [Uw model implementeren](./how-to-custom-speech-train-model.md)

@@ -8,12 +8,12 @@ ms.subservice: blobs
 ms.topic: conceptual
 ms.date: 06/24/2019
 ms.author: alkohli
-ms.openlocfilehash: a0efc6f6f6d4ae6355fbb42fbc7e13ad7c078cf3
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 19a4645e2bde4cf6b9f9a78123b334c290581ac4
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92792885"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484529"
 ---
 # <a name="solutions-for-periodic-data-transfer"></a>Oplossingen voor periodieke gegevensoverdracht
  
@@ -23,26 +23,26 @@ Voor een overzicht van alle beschik bare opties voor gegevens overdracht gaat u 
 
 ## <a name="recommended-options"></a>Aanbevolen opties
 
-De aanbevolen opties voor periodieke gegevens overdracht vallen in twee categorieën, afhankelijk van het feit of de overdracht terugkerend of doorlopend is.
+De aanbevolen opties voor periodieke gegevensoverdracht kunnen worden onderverdeeld in twee categorieën, afhankelijk van of de overdracht terugkerend of continu is.
 
-- **Scripted/programmatische hulpprogram ma's** : voor gegevens overdracht die met regel matige tussen pozen plaatsvindt, gebruikt u het script en Program Ma's zoals AzCopy en Azure Storage rest-api's. Deze hulpprogram ma's zijn gericht op IT-professionals en ontwikkel aars.
+- **Scripted/programmatische hulpprogram ma's** : voor gegevens overdracht die met regel matige tussen pozen plaatsvindt, gebruikt u het script en Program Ma's zoals AzCopy en Azure Storage rest-api's. Deze hulpprogramma's zijn ontworpen voor IT-professionals en ontwikkelaars.
 
-    - **AzCopy** : gebruik dit opdracht regel programma om eenvoudig gegevens te kopiëren van en naar Azure-blobs,-bestanden en-tabel opslag met optimale prestaties. AzCopy ondersteunt gelijktijdigheid en parallellisme, en de mogelijkheid om Kopieer bewerkingen te hervatten wanneer deze worden onderbroken.
+    - **AzCopy** : gebruik dit opdracht regel programma om eenvoudig gegevens te kopiëren van en naar Azure-blobs,-bestanden en-tabel opslag met optimale prestaties. AzCopy biedt ondersteuning voor gelijktijdigheid en parallellisme, en de mogelijkheid om kopieerbewerkingen te hervatten als deze worden onderbroken.
     - **Azure Storage rest api's/sdk's** : wanneer u een toepassing bouwt, kunt u de toepassing ontwikkelen tegen Azure Storage rest api's en de Azure-sdk's gebruiken die in meerdere talen worden aangeboden. De REST-Api's kunnen ook gebruikmaken van de Azure Storage gegevens verplaatsings bibliotheek die speciaal is ontworpen voor het snel kopiëren van gegevens van en naar Azure.
 
-- **Voortdurende hulp middelen voor gegevens opname** : voor continue, doorlopende opname van gegevens kunt u een van data Box apparaat voor online overdracht of Azure Data Factory selecteren. Deze hulpprogram ma's worden ingesteld door IT-professionals en kunnen de gegevens overdracht transparant automatiseren.
+- **Voortdurende hulp middelen voor gegevens opname** : voor continue, doorlopende opname van gegevens kunt u een van data Box apparaat voor online overdracht of Azure Data Factory selecteren. Deze hulpprogramma's worden ingesteld door IT-professionals en kunnen de gegevensoverdracht op transparante wijze automatiseren.
 
-    - **Azure Data Factory** -Data Factory moet worden gebruikt voor het uitschalen van een overdrachts bewerking en als er sprake is van indelings-en bewakings mogelijkheden voor bedrijfs kwaliteit. Gebruik Azure Data Factory om een Cloud pijplijn in te stellen die regel matig bestanden overbrengt tussen verschillende Azure-Services, on-premises of een combi natie van deze twee. Met Azure Data Factory kunt u gegevensgestuurde werk stromen organiseren die gegevens uit verschillende gegevens archieven opnemen en gegevens verplaatsing en gegevens transformatie automatiseren.
-    - **Azure data Box-familie voor online overdrachten** : Data Box Edge en data Box gateway zijn online netwerk apparaten waarmee gegevens kunnen worden verplaatst van en naar Azure. Data Box Edge een Edge Compute-functie (kunst matige intelligentie) gebruiken om gegevens vooraf te verwerken vóór het uploaden. Data Box Gateway is een virtuele versie van het apparaat met dezelfde mogelijkheden voor gegevens overdracht.
+    - **Azure Data Factory** -Data Factory moet worden gebruikt voor het uitschalen van een overdrachts bewerking en als er sprake is van indelings-en bewakings mogelijkheden voor bedrijfs kwaliteit. Gebruik Azure Data Factory om een cloudpijplijn in te stellen waarmee regelmatig bestanden worden overgebracht tussen verschillende Azure-services, on-premises, of een combinatie van deze twee. Met Azure Data Factory kunt u gegevensgestuurde werkstromen indelen waarmee gegevens worden opgenomen uit verschillende gegevensarchieven, en kunt u de verplaatsing en transformatie van gegevens automatiseren.
+    - **Azure data Box-familie voor online overdrachten** : Data Box Edge en data Box gateway zijn online netwerk apparaten waarmee gegevens kunnen worden verplaatst van en naar Azure. Data Box Edge maakt gebruik van Edge-computing met AI (kunstmatige intelligentie) om gegevens eerst te verwerken vóór de upload. Data Box Gateway is een virtuele versie van het apparaat met dezelfde mogelijkheden voor gegevensoverdracht.
 
 
 ## <a name="comparison-of-key-capabilities"></a>Vergelijking van de belangrijkste mogelijkheden
 
-De volgende tabel bevat een overzicht van de verschillen in de belangrijkste mogelijkheden.
+In de volgende tabel worden de verschillen tussen de belangrijkste mogelijkheden samengevat.
 
 ### <a name="scriptedprogrammatic-network-data-transfer"></a>Script-en programmatische netwerk gegevens overdracht
 
-| Mogelijkheid                  | AzCopy                                 | Azure Storage REST-Api's       |
+| Mogelijkheid                  | AzCopy                                 | Azure Storage REST API's       |
 |-----------------------------|----------------------------------------|-------------------------------|
 | Vorm factor                 | Opdracht regel programma van micro soft       | Klanten ontwikkelen op basis van opslag <br> REST-Api's met behulp van Azure-client bibliotheken |
 | Eerste eenmalige installatie     | Minimaal                                | Gemiddelde ontwikkelings inspanning van variabele    |
@@ -55,7 +55,7 @@ De volgende tabel bevat een overzicht van de verschillen in de belangrijkste mog
 | Functie                                       | Data Box Gateway | Data Box Edge   | Azure Data Factory        |
 |----------------------------------|-----------------------------------------|--------------------------|---------------------------|
 | Vorm factor                                   | Virtueel apparaat             | Fysiek apparaat          | Service in Azure Portal, on-premises agent                                                            |
-| Hardware                                      | Uw Hyper Visor            | Geleverd door micro soft    | N.v.t.                                                            |
+| Hardware                                      | Uw Hyper Visor            | Geleverd door micro soft    | NA                                                            |
 | Initiële installatie-inspanning                          | Laag (<30 minuten)            | Gemiddeld (~ paar uur) | Groot (~ dagen)                                                 |
 | Gegevensindeling                                   | Azure-blobs, Azure Files   | Azure-blobs, Azure Files | [Ondersteunt 70 en data connectors voor gegevens archieven en-indelingen](../../data-factory/copy-activity-overview.md#supported-data-stores-and-formats)|
 | Vooraf verwerkte gegevens                           | Nee                         | Ja, via Edge compute    | Ja                                                           |
@@ -65,7 +65,7 @@ De volgende tabel bevat een overzicht van de verschillen in de belangrijkste mog
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Gegevens overdragen met AzCopy](./storage-use-azcopy-v10.md?toc=%252fazure%252fstorage%252ftables%252ftoc.json).
+- [Gegevens overdragen met AzCopy](./storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2ftables%2ftoc.json).
 - [Meer informatie over gegevens overdracht met rest-api's voor opslag](/dotnet/api/overview/azure/storage).
 - Meer informatie over:
     - [Gegevens overdragen met Data Box Gateway](../../databox-online/data-box-gateway-deploy-add-shares.md).

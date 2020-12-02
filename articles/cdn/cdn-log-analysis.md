@@ -9,14 +9,14 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 7/22/2020
+ms.date: 11/30/2020
 ms.author: allensu
-ms.openlocfilehash: 169889dbb87d00fdde44ff72c0d2004c331604ab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2c593cda7761ce1defa6bdb31e0dbb528b9e5eca
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87073039"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483985"
 ---
 # <a name="analyze-azure-cdn-usage-patterns"></a>Gebruikspatronen van Azure CDN analyseren
 
@@ -31,7 +31,7 @@ Met een standaard Profiel van micro soft kunt u onbewerkte logboeken inschakelen
 
 Met Azure Log Analytics kunt u metrische gegevens over bewaking bekijken en waarschuwingen instellen. 
 
-Zie [Azure CDN onbewerkte HTTP-logboeken](enable-raw-logs.md)voor meer informatie.
+Zie [Azure CDN onbewerkte HTTP-logboeken](monitoring-and-access-log.md)voor meer informatie.
 
 
 ## <a name="core-analytics-via-azure-diagnostic-logs"></a>Kern analyse via Diagnostische logboeken van Azure
@@ -50,7 +50,7 @@ In de aangepaste rapporten wordt het aantal treffers of gegevens overgezet voor 
 
 ## <a name="azure-cdn-premium-from-verizon-reports"></a>Azure CDN Premium van Verizon-rapporten
 
-Met **Azure CDN Premium van Verizon**kunt u ook toegang krijgen tot de volgende rapporten:
+Met **Azure CDN Premium van Verizon** kunt u ook toegang krijgen tot de volgende rapporten:
    * [Geavanceerde HTTP-rapporten](cdn-advanced-http-reports.md)
    * [Realtime statistieken](cdn-real-time-stats.md)
    * [Prestaties van Azure CDN Edge-knoop punt](cdn-edge-performance.md)
@@ -61,6 +61,4 @@ In dit artikel hebt u geleerd over de verschillende opties voor analyse rapporte
 Zie voor meer informatie over Azure CDN en de andere Azure-Services die in dit artikel worden genoemd:
 
 * [Wat is Azure CDN?](cdn-overview.md)
-* [Onbewerkte HTTP-logboeken Azure CDN](enable-raw-logs.md)
-
-
+* [Onbewerkte HTTP-logboeken Azure CDN](monitoring-and-access-log.md)

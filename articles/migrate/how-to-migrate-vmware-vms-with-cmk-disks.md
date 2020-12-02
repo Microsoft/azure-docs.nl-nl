@@ -7,12 +7,12 @@ ms.manager: carmonm
 ms.topic: article
 ms.date: 03/12/2020
 ms.author: raynew
-ms.openlocfilehash: 01f30305529e7f142be0ca6ddffa0f5a12a235bb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 89b795011460ee2803d07d14b9c2abe9c8ffca55
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86260009"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483348"
 ---
 # <a name="migrate-vmware-vms-to-azure-vms-enabled-with-server-side-encryption-and-customer-managed-keys"></a>Virtuele VMware-machines migreren naar Azure-Vm's die zijn ingeschakeld met versleuteling aan de server zijde en door de klant beheerde sleutels
 
@@ -22,12 +22,12 @@ Met de Azure Migrate Server Migration Portal-ervaring kunt u [virtuele VMware-ma
 
 In de voor beelden in dit artikel wordt gebruikgemaakt van [Azure PowerShell](/powershell/azure/new-azureps-module-az) om de taken uit te voeren die nodig zijn voor het maken en implementeren van de Resource Manager-sjabloon.
 
-Meer [informatie](../virtual-machines/windows/disk-encryption.md) over server side Encryption (SSE) met door de klant beheerde sleutels (CMK) voor beheerde schijven.
+Meer [informatie](../virtual-machines/disk-encryption.md) over server side Encryption (SSE) met door de klant beheerde sleutels (CMK) voor beheerde schijven.
 
 ## <a name="prerequisites"></a>Vereisten
 
 - [Bekijk de zelf studie over de](tutorial-migrate-vmware.md) migratie van virtuele VMware-machines naar Azure met agentloze replicatie om inzicht te krijgen in de vereisten van het hulp programma.
-- [Volg deze instructies](how-to-add-tool-first-time.md) om een Azure migrate project te maken en het **Azure migrate:** hulp programma voor server migratie toe te voegen aan het project.
+- [Volg deze instructies](./create-manage-projects.md) om een Azure migrate project te maken en het **Azure migrate:** hulp programma voor server migratie toe te voegen aan het project.
 - [Volg deze instructies](how-to-set-up-appliance-vmware.md) om het Azure migrate apparaat in te stellen voor VMware in uw on-premises omgeving en om de detectie te volt ooien.
 
 ## <a name="prepare-for-replication"></a>Replicatie voorbereiden

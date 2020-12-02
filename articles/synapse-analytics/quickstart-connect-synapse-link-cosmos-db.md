@@ -10,11 +10,11 @@ ms.date: 04/21/2020
 ms.author: acomet
 ms.reviewer: jrasnick
 ms.openlocfilehash: 14c71d5888aefc11485c03935c5d8c7ff7d17045
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92090553"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "95995876"
 ---
 # <a name="quickstart-connect-to-azure-synapse-link-for-azure-cosmos-db"></a>Quickstart: Verbinding maken met Azure Synapse Link voor Azure Cosmos DB
 
@@ -41,16 +41,16 @@ Het verbinden van een Azure Cosmos DB-database wordt uitgevoerd als gekoppelde s
 
 Vanuit Data Object Explorer kunt u rechtstreeks verbinding maken met een Azure Cosmos DB-database door de volgende stappen uit te voeren:
 
-1. Selecteer het pictogram ***+*** bij de optie Gegevens
-2. Selecteer **Verbinding maken met externe gegevens**
+1. Selecteer het pictogram *_+_* bij de optie Gegevens
+2. Selecteer *Verbinding maken met externe gegevens**
 3. Selecteer de API waarmee u verbinding wilt maken: SQL of MongoDB
-4. Selecteer ***Doorgaan***
+4. Selecteer *_Doorgaan_*
 5. Geef de gekoppelde service een naam. De naam wordt weergegeven in Object Explorer en wordt tijdens Synapse-uitvoeringen gebruikt om verbinding te maken met de database en containers. We raden u aan een beschrijvende naam te gebruiken.
-6. Selecteer de **Cosmos DB-accountnaam** en **databasenaam**
-7. Als er geen regio is opgegeven, worden Synapse-uitvoeringen gerouteerd naar de dichtstbijzijnde regio waar de analytische opslag is ingeschakeld (optioneel). U kunt echter ook handmatig instellen in welke regio u wilt dat gebruikers toegang krijgen tot de analytische opslag van Cosmos DB. Selecteer **Aanvullende verbindingseigenschappen** en vervolgens **Nieuw**. Schrijf ***PreferredRegions*** onder **Naam van eigenschap** en stel de **waarde** in op de gewenste regio (voorbeeld: WestUS2, zonder spatie tussen woorden en getal)
-8. Selecteer ***Maken***
+6. Selecteer de *Cosmos DB-accountnaam* en **databasenaam**
+7. Als er geen regio is opgegeven, worden Synapse-uitvoeringen gerouteerd naar de dichtstbijzijnde regio waar de analytische opslag is ingeschakeld (optioneel). U kunt echter ook handmatig instellen in welke regio u wilt dat gebruikers toegang krijgen tot de analytische opslag van Cosmos DB. Selecteer **Aanvullende verbindingseigenschappen** en vervolgens **Nieuw**. Schrijf **_PreferredRegions_*onder **Naam van eigenschap** en stel de* waarde** in op de gewenste regio (voorbeeld: WestUS2, zonder spatie tussen woorden en getal)
+8. Selecteer *_Maken_*
 
-Azure Cosmos DB-databases worden weergegeven op het tabblad **Gekoppeld** in de sectie Azure Cosmos DB. U kunt een Azure Cosmos DB-container met HTAP onderscheiden van een alleen-OLTP-container, met behulp van de volgende pictogrammen:
+Azure Cosmos DB-databases worden weergegeven op het tabblad *Gekoppeld* in de sectie Azure Cosmos DB. U kunt een Azure Cosmos DB-container met HTAP onderscheiden van een alleen-OLTP-container, met behulp van de volgende pictogrammen:
 
 **Synapse-container**:
 

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: sngun
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: e4e2ba15dad7459ba3f7926a965292be37249054
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 528cab915a1ac3918146e428e9ae6b3c401324c8
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93097359"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "96010346"
 ---
 # <a name="tutorial-develop-an-aspnet-core-mvc-web-application-with-azure-cosmos-db-by-using-net-sdk"></a>Zelfstudie: Een ASP.NET Core MVC-webtoepassing ontwikkelen met Azure Cosmos DB met behulp van de .NET SDK
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -74,7 +74,7 @@ In het volgende gedeelte maakt u een nieuwe ASP.NET Core MVC-toepassing.
 
    :::image type="content" source="./media/sql-api-dotnet-application/asp-net-mvc-tutorial-new-project-dialog.png" alt-text="Nieuw project voor ASP.NET Core-webtoepassing maken":::
 
-1. In **Uw nieuwe project configureren** , geeft u het project de naam *TODO* en selecteert u **Maken**.
+1. In **Uw nieuwe project configureren**, geeft u het project de naam *TODO* en selecteert u **Maken**.
 
 1. Kies in **Een nieuwe ASP.NET Core-webtoepassing maken** de optie **Webtoepassing (model-weergave-controller)** . Selecteer **Maken** om door te gaan.
 
@@ -132,7 +132,7 @@ Nu gaan we de volgende weergaven toevoegen.
 
 1. Klik met de rechtermuisknop op de lege map **Item** en selecteer vervolgens **Toevoegen** > **Weergave**.
 
-1. Breng de volgende wijzigingen aan in **MVC-weergave toevoegen** :
+1. Breng de volgende wijzigingen aan in **MVC-weergave toevoegen**:
 
    * Voer *Maken* in bij **Naam weergeven**.
    * Selecteer **Maken** in **Sjabloon**.
@@ -150,9 +150,9 @@ Nu gaan we de volgende weergaven toevoegen.
 
 1. Klik vanuit de **Solution Explorer** met de rechtermuisknop opnieuw op de map **Item** en selecteer **Toevoegen** > **Weergave**.
 
-1. Breng de volgende wijzigingen aan in **MVC-weergave toevoegen** :
+1. Breng de volgende wijzigingen aan in **MVC-weergave toevoegen**:
 
-   * Typ in het vak **Weergavenaam** : *Verwijderen*.
+   * Typ in het vak **Weergavenaam**: *Verwijderen*.
    * Selecteer in het vak **Sjabloon** de optie **Verwijderen**.
    * Selecteer in het vak **Modelklasse** de optie **Item (todo.Models)** .
    * Selecteer **Een indelingspagina gebruiken** en voer *~/Views/Shared/_Layout. cshtml* in.
@@ -166,7 +166,7 @@ Nu gaan we de volgende weergaven toevoegen.
 
 1. Klik in **Solution Explorer** met de rechtermuisknop opnieuw op de map **Item** en selecteer **Toevoegen** > **Weergave**.
 
-1. Geef de volgende waarden op in **MVC-weergave toevoegen** :
+1. Geef de volgende waarden op in **MVC-weergave toevoegen**:
 
    * Voer in **Weergavenaam** in: *Details*.
    * Selecteer in **Sjabloon** de optie **Details**.
@@ -181,7 +181,7 @@ Nu gaan we de volgende weergaven toevoegen.
 
 1. Klik vanuit de **Solution Explorer** met de rechtermuisknop opnieuw op de map **Item** en selecteer **Toevoegen** > **Weergave**.
 
-1. Breng de volgende wijzigingen aan in **MVC-weergave toevoegen** :
+1. Breng de volgende wijzigingen aan in **MVC-weergave toevoegen**:
 
    * Typ in het vak **Weergavenaam***Bewerken*.
    * Selecteer in het vak **Sjabloon** de optie **Bewerken**.
@@ -199,7 +199,7 @@ En tot slot voert u de volgende stappen uit om een weergave toe te voegen om all
 
 1. Klik vanuit de **Solution Explorer** met de rechtermuisknop opnieuw op de map **Item** en selecteer **Toevoegen** > **Weergave**.
 
-1. Breng de volgende wijzigingen aan in **MVC-weergave toevoegen** :
+1. Breng de volgende wijzigingen aan in **MVC-weergave toevoegen**:
 
    * In het vak **Weergavenaam** typt u *Index*.
    * Selecteer in het vak **Sjabloon** de optie **Lijst**.
@@ -211,7 +211,7 @@ En tot slot voert u de volgende stappen uit om een weergave toe te voegen om all
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-core-web-app/src/Views/Item/Index.cshtml":::
 
-Zodra u deze stappen hebt voltooid, sluit u alle *cshtml* -documenten in Visual Studio.
+Zodra u deze stappen hebt voltooid, sluit u alle *cshtml*-documenten in Visual Studio.
 
 ### <a name="declare-and-initialize-services"></a><a name="initialize-services"></a>Services declareren en initialiseren
 
@@ -227,11 +227,11 @@ Allereerst voegen we een klasse toe die de logica bevat voor de verbinding met e
 
 1. Klik met de rechtermuisknop op de map **Services** en selecteer **Toevoegen** > **Klasse**. Noem de nieuwe klasse *ICosmoDbService* en selecteer **Toevoegen**.
 
-1. Voeg de volgende code toe aan klasse *ICosmosDbService* :
+1. Voeg de volgende code toe aan klasse *ICosmosDbService*:
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-core-web-app/src/Services/ICosmosDbService.cs":::
 
-1. Open het bestand *Startup.cs* in uw oplossing en voeg de volgende methode toe **InitializeCosmosClientInstanceAsync** , waarmee de configuratie wordt gelezen en de client wordt geïnitialiseerd.
+1. Open het bestand *Startup.cs* in uw oplossing en voeg de volgende methode toe **InitializeCosmosClientInstanceAsync**, waarmee de configuratie wordt gelezen en de client wordt geïnitialiseerd.
 
    :::code language="csharp" source="~/samples-cosmosdb-dotnet-core-web-app/src/Startup.cs" id="InitializeCosmosClientInstanceAsync" :::
 
@@ -317,7 +317,7 @@ Nu de volledige toepassing correct werkt met Azure Cosmos DB, kunt u de web-app 
 
 Een andere optie is het maken van een nieuw profiel:
 
-1. Klik in **Solution Explorer** met de rechtermuisknop op het project en selecteer **Publiceren** , net als in de vorige procedure.
+1. Klik in **Solution Explorer** met de rechtermuisknop op het project en selecteer **Publiceren**, net als in de vorige procedure.
   
 1. Selecteer **App Service** in **Kies een publicatiedoel**.
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/07/2019
 ms.author: Zhchia
-ms.openlocfilehash: a93e2a88201f32ed99698f2bfbab631c81ed8b35
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: da3ad4f70e0cc41fe95327eb74093c1471c877bd
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94357705"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96351568"
 ---
 # <a name="tutorial-configure-zscaler-private-access-zpa-for-automatic-user-provisioning"></a>Zelfstudie: Zscaler Private Access (ZPA) configureren voor het automatisch inrichten van gebruikers
 
@@ -78,7 +78,7 @@ Voordat u automatische inrichting van gebruikers configureert en inschakelt, moe
 
     ![Zscaler Private Access (ZPA) token maken](media/zscaler-private-access-provisioning-tutorial/token.png)
 
-8.  Als u de **Tenant-URL** wilt vinden, gaat u naar **Beheer > IdP-configuratie**. Klik op de naam van de zojuist toegevoegde IdP-configuratie die wordt weergegeven op de pagina.
+8.  Als u de **Tenant-URL** wilt vinden, gaat u naar **Beheer > IDP-configuratie**. Klik op de naam van de zojuist toegevoegde IdP-configuratie die wordt weergegeven op de pagina.
 
     ![Zscaler Private Access (ZPA) IdP-naam](media/zscaler-private-access-provisioning-tutorial/idpname.png)
 

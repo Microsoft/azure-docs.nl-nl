@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.custom: contperfq1
 ms.date: 10/13/2020
 ms.author: allensu
-ms.openlocfilehash: 5a2d7f9f60253916eae808a7f65bc4b4b289bd67
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 3f4791c5cbcf731e118bac4bf692adcad7e9ff44
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94694777"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483586"
 ---
 # <a name="using-snat-for-outbound-connections"></a>SNAT gebruiken voor uitgaande verbindingen
 
@@ -182,8 +182,6 @@ Zie [Wat is azure Virtual Network NAT](../virtual-network/nat-overview.md)? voor
 
 ## <a name="constraints"></a>Beperkingen
 
-*   Poorten worden na 15 seconden vrijgegeven als een **eerste TCP** -bericht wordt ontvangen of verzonden
-*   Poorten worden na 240 seconden vrijgegeven als een **FINACK** wordt ontvangen of verzonden
 *   Wanneer een verbinding niet-actief is zonder dat er nieuwe pakketten worden verzonden, worden de poorten na 4 tot 120 minuten vrijgegeven.
   * Deze drempel waarde kan worden geconfigureerd via uitgaande regels.
 *   Elk IP-adres biedt 64.000 poorten die kunnen worden gebruikt voor SNAT.

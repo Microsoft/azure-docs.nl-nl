@@ -3,12 +3,12 @@ title: Afhankelijkheids analyse op basis van een agent instellen in de evaluatie
 description: In dit artikel wordt beschreven hoe u een afhankelijkheids analyse op basis van een agent instelt in Azure Migrate server-evaluatie.
 ms.topic: how-to
 ms.date: 11/25/2020
-ms.openlocfilehash: 58c1aeea00ae033def0f45d220c12d13cc28b4b2
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: 1ab5d639d68b5ce2298f907ef8346488e16b4020
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96302842"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483467"
 ---
 # <a name="set-up-dependency-visualization"></a>Visualisatie van afhankelijkheid instellen
 
@@ -21,7 +21,7 @@ In dit artikel wordt beschreven hoe u een afhankelijkheids analyse op basis van 
     - [Fysieke servers](migrate-support-matrix-physical.md#agent-based-dependency-analysis-requirements)
     - [Virtuele Hyper-V-machines](migrate-support-matrix-hyper-v.md#agent-based-dependency-analysis-requirements).
 - Zorg ervoor dat:
-    - Een Azure Migrate project hebben. Als u dit niet doet, [maakt](how-to-add-tool-first-time.md) u er nu een.
+    - Een Azure Migrate project hebben. Als u dit niet doet, [maakt](./create-manage-projects.md) u er nu een.
     - Controleer of u het Azure Migrate: Server Assessment Tool hebt [toegevoegd](how-to-assess.md) aan het project.
     - Stel een [Azure migrate apparaat](migrate-appliance.md) in om on-premises machines te detecteren. Het apparaat detecteert on-premises machines en verstuurt meta gegevens en prestatie gegevens naar Azure Migrate: Server evaluatie. Stel een apparaat in voor:
         - [VMware](how-to-set-up-appliance-vmware.md) Virtuele.
@@ -147,7 +147,7 @@ Nadat u de groep hebt gemaakt, wordt u aangeraden agents op alle computers in de
 U kunt een query uitvoeren op afhankelijkheids gegevens die zijn vastgelegd door Servicetoewijzing in de werk ruimte Log Analytics die aan het Azure Migrate project is gekoppeld. Log Analytics wordt gebruikt om Azure Monitor-logboek query's te schrijven en uit te voeren.
 
 - [Meer informatie over het](../azure-monitor/insights/service-map.md#log-analytics-records) zoeken naar servicetoewijzing gegevens in log Analytics.
-- [Bekijk een overzicht van het](../azure-monitor/log-query/get-started-queries.md)  schrijven van logboek query's in [log Analytics](../azure-monitor/log-query/get-started-portal.md).
+- [Bekijk een overzicht van het](../azure-monitor/log-query/get-started-queries.md)  schrijven van logboek query's in [log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md).
 
 Voer een query uit voor afhankelijkheids gegevens als volgt:
 

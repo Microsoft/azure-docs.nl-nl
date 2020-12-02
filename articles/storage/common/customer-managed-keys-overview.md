@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 2b474ae184374a2c91dcba15517048556686ec35
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 8eaadc031039b22e209db1023c65da39e1e096b1
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92782226"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483280"
 ---
 # <a name="customer-managed-keys-for-azure-storage-encryption"></a>Door de klant beheerde sleutels voor Azure Storage versleuteling
 
@@ -113,7 +113,7 @@ Als u de toegang tot door de klant beheerde sleutels wilt intrekken, gebruikt u 
 
 ## <a name="customer-managed-keys-for-azure-managed-disks"></a>Door de klant beheerde sleutels voor Azure Managed disks
 
-Door de klant beheerde sleutels zijn ook beschikbaar voor het beheren van versleuteling van Azure Managed disks. Door de klant beheerde sleutels gedragen zich anders voor Managed disks dan voor Azure Storage resources. Zie versleuteling aan de [server zijde van Azure Managed disks](../../virtual-machines/windows/disk-encryption.md) voor Windows of [server side Encryption of Azure Managed disks](../../virtual-machines/linux/disk-encryption.md) for Linux voor meer informatie.
+Door de klant beheerde sleutels zijn ook beschikbaar voor het beheren van versleuteling van Azure Managed disks. Door de klant beheerde sleutels gedragen zich anders voor Managed disks dan voor Azure Storage resources. Zie versleuteling aan de [server zijde van Azure Managed disks](../../virtual-machines/disk-encryption.md) voor Windows of [server side Encryption of Azure Managed disks](../../virtual-machines/disk-encryption.md) for Linux voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

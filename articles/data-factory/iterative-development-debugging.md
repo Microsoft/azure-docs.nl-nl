@@ -7,14 +7,14 @@ ms.service: data-factory
 services: data-factory
 documentationcenter: ''
 ms.workload: data-services
-author: djpmsft
-ms.author: daperlov
-ms.openlocfilehash: f1f81af715bc4b2248a24076f3b12a74d0ee73e3
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+author: dcstwh
+ms.author: weetok
+ms.openlocfilehash: 9b28fb24439354e09e5262281a99cd9dc0153a04
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93102065"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96485243"
 ---
 # <a name="iterative-development-and-debugging-with-azure-data-factory"></a>Iteratief ontwikkelen en fouten opsporen met Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -44,7 +44,7 @@ Wanneer een test uitvoering slaagt, voegt u meer activiteiten aan uw pijp lijn t
 
 ### <a name="setting-breakpoints"></a>Onderbrekings punten instellen
 
-Met Azure Data Factory kunt u fouten opsporen in een pijp lijn totdat u een bepaalde activiteit op het pijp lijn teken hebt bereikt. Plaats een onderbrekings punt op de activiteit tot u wilt testen en selecteer **fout opsporing** . Data Factory zorgt ervoor dat de test alleen wordt uitgevoerd tot de activiteit onderbrekings punt op het pijp lijn-canvas. Deze functie voor het *opsporen van fouten* is handig wanneer u niet de volledige pijp lijn wilt testen, maar alleen een subset van activiteiten in de pijp lijn.
+Met Azure Data Factory kunt u fouten opsporen in een pijp lijn totdat u een bepaalde activiteit op het pijp lijn teken hebt bereikt. Plaats een onderbrekings punt op de activiteit tot u wilt testen en selecteer **fout opsporing**. Data Factory zorgt ervoor dat de test alleen wordt uitgevoerd tot de activiteit onderbrekings punt op het pijp lijn-canvas. Deze functie voor het *opsporen van fouten* is handig wanneer u niet de volledige pijp lijn wilt testen, maar alleen een subset van activiteiten in de pijp lijn.
 
 ![Onderbrekings punten op het pijp lijn papier](media/iterative-development-debugging/iterative-development-3.png)
 

@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 06/22/2017
 ms.author: cynthn
 ms.custom: devx-track-python
-ms.openlocfilehash: 402a61b4b5335c19d75cd1182243783453a0e7fa
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: a7117d30eb1774753f21e82ad5f812a7309d8386
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91974852"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483093"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-python"></a>Windows-Vm's maken en beheren in azure met behulp van python
 
@@ -38,7 +38,7 @@ Het duurt ongeveer 20 minuten om deze stappen uit te voeren.
 
 ## <a name="install-packages"></a>Pakketten installeren
 
-1. Klik in Solution Explorer onder *myPythonProject*met de rechter muisknop op **python-omgevingen**en selecteer vervolgens **virtuele omgeving toevoegen**.
+1. Klik in Solution Explorer onder *myPythonProject* met de rechter muisknop op **python-omgevingen** en selecteer vervolgens **virtuele omgeving toevoegen**.
 2. Accepteer op het scherm virtuele omgeving toevoegen de standaard naam van de *env*, Controleer of *Python 3,6 (64-bits)* is geselecteerd voor de basis-interpreter en klik vervolgens op **maken**.
 3. Klik met de rechter muisknop op de *env* -omgeving die u hebt gemaakt, klik op **python-pakket installeren**, Voer *Azure* in het zoekvak in en druk op ENTER.
 
@@ -88,7 +88,7 @@ Voordat u met deze stap begint, moet u ervoor zorgen dat u een [Active Directory
         return credentials
     ```
 
-    Vervang de **toepassings-id**, **verificatie sleutel**en **Tenant-id** door de waarden die u eerder hebt verzameld tijdens het maken van uw Azure Active Directory Service-Principal.
+    Vervang de **toepassings-id**, **verificatie sleutel** en **Tenant-id** door de waarden die u eerder hebt verzameld tijdens het maken van uw Azure Active Directory Service-Principal.
 
 5. Als u de functie die u eerder hebt toegevoegd wilt aanroepen, voegt u deze code toe onder de **if** -instructie aan het einde van het. py-bestand:
 
@@ -492,7 +492,7 @@ Veel aspecten van de implementatie moeten worden overwogen bij het bepalen van d
 
 ### <a name="add-a-data-disk-to-the-vm"></a>Een gegevensschijf toevoegen aan de virtuele machine
 
-Virtuele machines kunnen een of meer [gegevens schijven](../managed-disks-overview.md?toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json) hebben die zijn opgeslagen als vhd's.
+Virtuele machines kunnen een of meer [gegevens schijven](../managed-disks-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) hebben die zijn opgeslagen als vhd's.
 
 1. Als u een gegevens schijf aan de virtuele machine wilt toevoegen, voegt u deze functie toe na de variabelen in het. py-bestand: 
 
@@ -553,7 +553,7 @@ Omdat er in rekening worden gebracht voor resources die worden gebruikt in azure
     delete_resources(resource_group_client)
     ```
 
-3. Sla *myPythonProject.py*op.
+3. Sla *myPythonProject.py* op.
 
 ## <a name="run-the-application"></a>De toepassing uitvoeren
 

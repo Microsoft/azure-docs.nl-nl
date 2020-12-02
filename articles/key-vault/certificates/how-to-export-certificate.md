@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.custom: mvc, devx-track-azurecli
 ms.date: 08/11/2020
 ms.author: sebansal
-ms.openlocfilehash: e7ea3ef16b60e53450436bda66ce3dde091c81c2
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 4339e8217702e9f25877bc8c250b5363e2c59a42
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93289558"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96483692"
 ---
 # <a name="export-certificates-from-azure-key-vault"></a>Certificaten exporteren uit Azure Key Vault
 
@@ -33,8 +33,8 @@ Wanneer er een Key Vault-certificaat wordt gemaakt, worden er ook een adresseerb
 
 Nadat een Key Vault-certificaat is gemaakt, kan het worden opgehaald uit het adresseerbare geheim met de privésleutel. Haal het certificaat op in PFX- of PEM-indeling.
 
-- **Exporteerbaar** : Het beleid dat wordt gebruikt voor het maken van het certificaat geeft aan dat de sleutel exporteerbaar is.
-- **Niet-exporteerbaar** : Het beleid dat wordt gebruikt voor het maken van het certificaat geeft aan dat de sleutel niet-exporteerbaar is. In dit geval maakt de persoonlijke sleutel geen deel uit van de waarde wanneer deze wordt opgehaald als geheim.
+- **Exporteerbaar**: Het beleid dat wordt gebruikt voor het maken van het certificaat geeft aan dat de sleutel exporteerbaar is.
+- **Niet-exporteerbaar**: Het beleid dat wordt gebruikt voor het maken van het certificaat geeft aan dat de sleutel niet-exporteerbaar is. In dit geval maakt de persoonlijke sleutel geen deel uit van de waarde wanneer deze wordt opgehaald als geheim.
 
 Ondersteunde sleuteltypen: RSA, RSA-HSM, EC, EC-HSM, oct ([hier](/rest/api/keyvault/createcertificate/createcertificate#jsonwebkeytype) genoemd) Exporteren is alleen toegestaan met RSA, EC. HSM-sleutels zouden niet exporteerbaar zijn.
 
@@ -83,7 +83,7 @@ Gebruik deze opdracht in Azure PowerShell om het certificaat de naam **TestCert0
 
 ```azurepowershell
 $cert = Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01"
-$secret = Get-AzKeyVaultSecret -VaultName $vaultName -Name $cert.Name
+$secret = Get-AzKeyVaultSecret -VaultName "ContosoKV01" -Name $cert.Name
 $secretValueText = '';
 $ssPtr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secret.SecretValue)
 try {
@@ -102,7 +102,7 @@ $pfxFileByte = $x509Cert.Export($type, $password)
 ```
 
 Met deze opdracht wordt de hele keten met certificaten met een persoonlijke sleutel geëxporteerd. Het certificaat is beveiligd met een wachtwoord.
-Zie [Get-AzKeyVaultCertificate - Voorbeeld 2](/powershell/module/az.keyvault/Get-AzKeyVaultCertificate?view=azps-4.4.0)voor meer informatie over de **Get-AzKeyVaultCertificate** -opdracht en para meters.
+Zie [Get-AzKeyVaultCertificate - Voorbeeld 2](/powershell/module/az.keyvault/Get-AzKeyVaultCertificate?view=azps-4.4.0)voor meer informatie over de **Get-AzKeyVaultCertificate**-opdracht en para meters.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 

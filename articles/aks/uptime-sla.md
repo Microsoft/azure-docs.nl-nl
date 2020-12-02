@@ -5,12 +5,12 @@ services: container-service
 ms.topic: conceptual
 ms.date: 06/24/2020
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: dd1836220b5fd5a0af2d4ece3d9bc3932f1ae554
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: f8ec80d178af274c285371b4f53820eb9e41ccf7
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748871"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96519158"
 ---
 # <a name="azure-kubernetes-service-aks-uptime-sla"></a>SLA voor uptime van Azure Kubernetes service (AKS)
 
@@ -27,11 +27,14 @@ Klanten kunnen nog steeds onbeperkte gratis clusters met een serviceniveau doels
 
 SLA voor uptime is beschikbaar in open bare regio's en Azure Government regio's waar [AKS wordt ondersteund](https://azure.microsoft.com/global-infrastructure/services/?products=kubernetes-service).
 
-* Azure China 21Vianet wordt momenteel niet ondersteund.
-
 ## <a name="limitations"></a>Beperkingen
 
-* Persoonlijke clusters worden momenteel niet ondersteund.
+Particuliere clusters worden alleen ondersteund in de volgende regio's:
+ *  VS - oost
+ *  VS - west
+ *  VS - west 2
+ *  VS - noord-centraal
+ *  VS - west-centraal
 
 ## <a name="sla-terms-and-conditions"></a>SLA-voor waarden
 
@@ -48,7 +51,7 @@ SLA voor uptime is een betaalde functie en ingeschakeld per cluster. De prijzen 
 
 Als u een nieuw cluster wilt maken met de SLA voor de uptime, gebruikt u de Azure CLI.
 
-In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *eastus* :
+In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *eastus*:
 
 ```azurecli-interactive
 # Create a resource group

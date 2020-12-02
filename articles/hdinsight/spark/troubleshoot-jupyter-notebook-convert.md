@@ -1,5 +1,5 @@
 ---
-title: Kan geen Jupyter-notebook maken in azure HDInsight
+title: Kan geen Jupyter Notebook maken in azure HDInsight
 description: Meer informatie over de stappen voor probleem oplossing en mogelijke oplossingen voor problemen bij interactie met Azure HDInsight-clusters.
 author: hrasheed-msft
 ms.author: hrasheed
@@ -7,20 +7,20 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: troubleshooting
 ms.date: 02/11/2020
-ms.openlocfilehash: 50a77e240315796d0d4c98fc8fba8edfc9cd2b7d
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 41eefd18419969c6e8c54ba68ce6c0d1eeb7832b
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92545528"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96519192"
 ---
-# <a name="unable-to-create-jupyter-notebook-in-azure-hdinsight"></a>Kan geen Jupyter-notebook maken in azure HDInsight
+# <a name="unable-to-create-jupyter-notebook-in-azure-hdinsight"></a>Kan geen Jupyter Notebook maken in azure HDInsight
 
 In dit artikel worden de stappen beschreven voor het oplossen van problemen en mogelijke oplossingen voor problemen bij het werken met Azure HDInsight-clusters.
 
 ## <a name="issue"></a>Probleem
 
-Wanneer u een Jupyter-notebook start, wordt er een fout bericht met de volgende strekking weer gegeven:
+Wanneer u een Jupyter Notebook start, wordt er een fout bericht met de volgende strekking weer gegeven:
 
 ```error
 Cannot convert notebook to v5 because that version doesn't exist
@@ -50,7 +50,7 @@ Een versie komt niet overeen.
     version_info = (4, 0, 3)
     ```
 
-    Sla de wijzigingen op door **CTRL + X** , **Y** , **Enter** in te voeren.
+    Sla de wijzigingen op door **CTRL + X**, **Y**, **Enter** in te voeren.
 
 1. Navigeer in een webbrowser naar `https://CLUSTERNAME.azurehdinsight.net/#/main/services/JUPYTER`, waarbij `CLUSTERNAME` de naam van uw cluster is.
 

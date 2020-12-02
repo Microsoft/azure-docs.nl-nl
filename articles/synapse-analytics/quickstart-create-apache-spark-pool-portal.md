@@ -9,12 +9,12 @@ ms.subservice: spark
 ms.date: 04/15/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: e84afc949a84da90a4799d7db3b3e7ad3e0057a3
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 3fc7a7f137701590e4bddd791a3fdd2d1eaeca4a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93323558"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461602"
 ---
 # <a name="quickstart-create-a-new-serverless-apache-spark-pool-using-the-azure-portal"></a>Quickstart: Een nieuwe Apache Spark-pool maken met behulp van Azure Portal
 
@@ -47,7 +47,7 @@ Meld u aan bij [Azure Portal](https://portal.azure.com/)
 
 1. Selecteer in de Synapse-werkruimte waar u de Apache Spark-pool wilt maken de opdracht **Nieuwe Apache Spark-pool** in de bovenste balk.
     ![Overzicht van de Synapse-werkruimte met een rood vak rond de opdracht om een nieuwe Apache Spark-pool te maken](media/quickstart-create-apache-spark-pool/create-spark-pool-portal-01.png)
-2. Voer de volgende gegevens in op het tabblad **Basisinformatie** :
+2. Voer de volgende gegevens in op het tabblad **Basisinformatie**:
 
     |Instelling | Voorgestelde waarde | Beschrijving |
     | :------ | :-------------- | :---------- |
@@ -89,7 +89,7 @@ Volg de onderstaande stappen om de Apache Spark-pool uit de werkruimte te verwij
 Ga als volgt te werk om de Apache Spark-pool te verwijderen:
 
 1. Navigeer naar de blade Apache Spark-pools in de werkruimte.
-2. Selecteer de Apache Spark-pool die u wilt verwijderen (in dit geval **contosospark** ).
+2. Selecteer de Apache Spark-pool die u wilt verwijderen (in dit geval **contosospark**).
 3. Druk op **Verwijderen**.
  ![Lijst met Apache Spark-pools, waarbij de zojuist gemaakte groep is geselecteerd.](media/quickstart-create-apache-spark-pool/create-spark-pool-portal-08.png)
 4. Bevestig dat u de werkruimte wilt verwijderen en selecteer de knop **Verwijderen**.
@@ -99,4 +99,4 @@ Ga als volgt te werk om de Apache Spark-pool te verwijderen:
 ## <a name="next-steps"></a>Volgende stappen
 
 - Zie [Quickstart: Een Apache Spark-notebook maken](quickstart-apache-spark-notebook.md).
-- Zie [Quickstart: Een toegewezen Synapse SQL-pool maken met behulp van Azure Portal](quickstart-create-sql-pool-portal.md).
+- Zie [Quickstart: Een toegewezen SQL-pool maken met behulp van Azure Portal](quickstart-create-sql-pool-portal.md).

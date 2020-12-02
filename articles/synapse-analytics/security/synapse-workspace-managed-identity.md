@@ -8,14 +8,14 @@ ms.subservice: security
 ms.date: 10/16/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 4100640fd619d9d971ac1c7083eedef8e2125fc3
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 5506a54193efc813927663533ddfd89be3ddf40a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92738248"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461294"
 ---
-# <a name="azure-synapse-workspace-managed-identity-preview"></a>Beheerde identiteit voor Azure Synapse-werkruimte (preview)
+# <a name="azure-synapse-workspace-managed-identity"></a>Beheerde identiteit voor Azure Synapse-werkruimte
 
 In dit artikel vindt u meer informatie over beheerde identiteiten in de Azure Synapse-werkruimte.
 

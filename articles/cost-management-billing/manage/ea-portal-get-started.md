@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/28/2020
 ms.author: banders
 ms.custom: contperfq1
-ms.openlocfilehash: 15e45143d1da5ac405b3e408df197ab04b4dea39
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 0f4f4d934361f1e59eceaaccca680f0cf155bb04
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94412269"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348956"
 ---
 # <a name="get-started-with-the-azure-enterprise-portal"></a>Aan de slag met de Azure Enterprise-portal
 
@@ -44,33 +44,33 @@ Voor het beheren van het gebruik en de uitgaven van uw organisatie kunnen Azure-
 - Afdelingsbeheerder (alleen lezen)
 - Accounteigenaar
 
-Elke rol heeft andere gebruikerslimieten en -machtigingen. Zie [De organisatiestructuur en machtigingen per rol](https://docs.microsoft.com/azure/cost-management-billing/manage/understand-ea-roles#organization-structure-and-permissions-by-role) voor meer informatie.
+Elke rol heeft andere gebruikerslimieten en -machtigingen. Zie [De organisatiestructuur en machtigingen per rol](./understand-ea-roles.md#organization-structure-and-permissions-by-role) voor meer informatie.
 
 ## <a name="activate-your-enrollment-create-a-subscription-and-other-administrative-tasks"></a>Uw inschrijving activeren, een abonnement maken, en andere beheertaken
 
-Zie [Beheer van de Azure EA-portal](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-administration) voor meer informatie over het activeren van uw inschrijving, het maken van een afdeling of abonnement, het toevoegen van beheerders en accounteigenaren, en andere beheertaken.
+Zie [Beheer van de Azure EA-portal](./ea-portal-administration.md) voor meer informatie over het activeren van uw inschrijving, het maken van een afdeling of abonnement, het toevoegen van beheerders en accounteigenaren, en andere beheertaken.
 
-Zie [Azure Enterprise-overdrachten](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-transfers) als u meer wilt weten over het overdragen van een Enterprise-abonnement naar een abonnement met betalen per gebruik.
+Zie [Azure Enterprise-overdrachten](./ea-transfers.md) als u meer wilt weten over het overdragen van een Enterprise-abonnement naar een abonnement met betalen per gebruik.
 
 ## <a name="view-usage-summary-and-download-reports"></a>Gebruiksoverzicht weergeven en rapporten downloaden
 
 U kunt uw Azure EA-factuur beheren en er actie op ondernemen. Uw factuur is een representatie van uw rekening en moet worden gecontroleerd om te zien of deze klopt.
 
-Zie [Facturen voor Azure Enterprise-inschrijvingen](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-enrollment-invoices) om een gebruiksoverzicht te bekijken, rapporten te downloaden en inschrijvingsfacturen te beheren.
+Zie [Facturen voor Azure Enterprise-inschrijvingen](./ea-portal-enrollment-invoices.md) om een gebruiksoverzicht te bekijken, rapporten te downloaden en inschrijvingsfacturen te beheren.
 
 ## <a name="now-that-youre-familiar-with-the-basics-here-are-some-additional-links-to-help-you-get-onboarded"></a>Nu u bekend bent met de basisprincipes, volgen hier een aantal aanvullende koppelingen om u te helpen met de onboarding.
 
-[Azure EA-prijzen](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-pricing-overview) biedt details over hoe gebruik wordt berekend en gaat over kosten voor verschillende Azure-services in de Enterprise Agreement waar de berekeningen ingewikkelder zijn.
+[Azure EA-prijzen](./ea-pricing-overview.md) biedt details over hoe gebruik wordt berekend en gaat over kosten voor verschillende Azure-services in de Enterprise Agreement waar de berekeningen ingewikkelder zijn.
 
-Zie [Gereserveerde VM-exemplaren in Azure EA](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-vm-reservations) als u meer wilt weten over hoe u met Azure-reserveringen voor gereserveerde VM-exemplaren geld kunt besparen met uw Enterprise-inschrijving.
+Zie [Gereserveerde VM-exemplaren in Azure EA](./ea-portal-vm-reservations.md) als u meer wilt weten over hoe u met Azure-reserveringen voor gereserveerde VM-exemplaren geld kunt besparen met uw Enterprise-inschrijving.
 
-Zie [REST-API's in Azure Enterprise](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-rest-apis) voor informatie over welke REST-API's u moet gebruiken met uw Azure Enterprise-inschrijving en hoe u veelvoorkomende problemen met REST-API's oplost.
+Zie [REST-API's in Azure Enterprise](./ea-portal-rest-apis.md) voor informatie over welke REST-API's u moet gebruiken met uw Azure Enterprise-inschrijving en hoe u veelvoorkomende problemen met REST-API's oplost.
 
-In [Azure EA-overeenkomsten en -aanpassingen](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-agreements) wordt beschreven hoe Azure EA-overeenkomsten en -aanpassingen van invloed kunnen zijn op uw toegang, gebruik en betalingen voor Azure-services.
+In [Azure EA-overeenkomsten en -aanpassingen](./ea-portal-agreements.md) wordt beschreven hoe Azure EA-overeenkomsten en -aanpassingen van invloed kunnen zijn op uw toegang, gebruik en betalingen voor Azure-services.
 
-In [Azure Marketplace](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-azure-marketplace) wordt uitgelegd hoe EA-klanten en -partners de Marketplace-kosten kunnen bekijken en Azure Marketplace-aankopen kunnen inschakelen.
+In [Azure Marketplace](./ea-azure-marketplace.md) wordt uitgelegd hoe EA-klanten en -partners de Marketplace-kosten kunnen bekijken en Azure Marketplace-aankopen kunnen inschakelen.
 
-Zie [Beheer van de Azure EA-portal voor partners](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-partner-portal-administration) voor een uitleg over de algemene taken die een EA-partnerbeheerder uitvoert in de Azure EA-portal.
+Zie [Beheer van de Azure EA-portal voor partners](./ea-partner-portal-administration.md) voor een uitleg over de algemene taken die een EA-partnerbeheerder uitvoert in de Azure EA-portal.
 
 ## <a name="get-started-on-azure-ea---faq"></a>Aan de slag met Azure EA - Veelgestelde vragen
 
@@ -132,7 +132,7 @@ U kunt binnen uw Azure EA-inschrijving net zoveel afdelingen maken als u nodig h
 
 Nadat u afdelingen en abonnementen hebt gemaakt, kunt u gegevens bekijken in het gebruiksrapport. Deze informatie kan u helpen bij het bijhouden van gebruik en het beheren van kosten en uitgaven op afdelingsniveau.
 
-U kunt gebruiksgegevens ook bekijken via de rapportage-API. Raadpleeg [Azure Enterprise REST API’s](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-rest-apis) voor gedetailleerde informatie en voorbeeldcode.
+U kunt gebruiksgegevens ook bekijken via de rapportage-API. Raadpleeg [Azure Enterprise REST API’s](./ea-portal-rest-apis.md) voor gedetailleerde informatie en voorbeeldcode.
 
 ### <a name="can-i-set-a-spending-quota-and-get-alerts-as-i-approach-my-limit"></a>Kan ik een bestedingsquotum instellen en meldingen krijgen als ik in de buurt kom van mijn limiet?
 
@@ -144,7 +144,7 @@ Selecteer een afdeling en vervolgens het pictogram Bewerken om een bestedingsquo
 
 Als u _resourcegroepen_ en _tags_ gebruikt, wordt deze informatie bijgehouden op serviceniveau en kunt u de gegevens raadplegen in het downloadbare CSV-bestand met gedetailleerde gebruiksinformatie. Zie het gedeelte [Gebruiksrapport downloaden](https://ea.azure.com/report/downloadusage) in de Azure Enterprise-portal.
 
-U kunt de gegevens ook raadplegen via een API. Raadpleeg [Azure Enterprise REST API’s](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-rest-apis) voor gedetailleerde informatie en voorbeeldcode.
+U kunt de gegevens ook raadplegen via een API. Raadpleeg [Azure Enterprise REST API’s](./ea-portal-rest-apis.md) voor gedetailleerde informatie en voorbeeldcode.
 
 > [!NOTE]
 > U kunt alleen tags toepassen op resources die ondersteuning bieden voor Azure Resource Manager-bewerkingen. Als u een virtuele machine, virtueel netwerk of opslag hebt gemaakt via het klassieke implementatiemodel (zoals via de klassieke portal), kunt u geen tag op die resource toepassen. U moet deze resources opnieuw implementeren via de Resource Manager om tags te ondersteunen. Tags worden wel door alle andere resources ondersteund.

@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 04/15/2020
 ms.author: vvasic
 ms.reviewer: jrasnick
-ms.openlocfilehash: 460fed7244ba8094da41ae6b5b8161de3d9efe65
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: efa160eb422658aeeb2eea3ad3c1d305b4b9f8be
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93317280"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462403"
 ---
 # <a name="sql-authentication"></a>SQL-verificatie
 
@@ -29,7 +29,7 @@ Azure Active Directory-verificatie biedt één centrale plaats voor gebruikersbe
 
 ## <a name="administrative-accounts"></a>Beheerdersaccounts
 
-Er zijn twee beheerdersaccounts ( **serverbeheerder** en **Active Directory-beheerder** ) die als beheerder fungeren. Als u deze beheerdersaccounts voor uw SQL-server wilt identificeren, opent u Azure Portal en gaat u naar het tabblad Eigenschappen van uw Synapse SQL.
+Er zijn twee beheerdersaccounts (**serverbeheerder** en **Active Directory-beheerder**) die als beheerder fungeren. Als u deze beheerdersaccounts voor uw SQL-server wilt identificeren, opent u Azure Portal en gaat u naar het tabblad Eigenschappen van uw Synapse SQL.
 
 ![SQL Server-beheerders](./media/sql-authentication/sql-admins.png)
 
@@ -51,7 +51,7 @@ De accounts van de **serverbeheerder** en de **Azure AD-beheerder** hebben de vo
 - Deze accounts kunnen leden aan de rollen `dbmanager` en `loginmanager` toevoegen en verwijderen.
 - Deze accounts kunnen de `sys.sql_logins`-systeemtabel weergeven.
 
-## <a name="serverless-sql-pool-preview"></a>[Serverloze SQL-pool (preview-versie)](#tab/serverless)
+## <a name="serverless-sql-pool"></a>[Serverloze SQL-pool](#tab/serverless)
 
 U kunt de volgende instructies gebruiken om de gebruikers te beheren die toegang hebben tot serverloze SQL-pools.
 
@@ -127,7 +127,7 @@ Nu kan de gebruiker verbinding maken met de `master`-database en nieuwe database
 
 ### <a name="login-managers"></a>Aanmelding managers
 
-De andere beheerdersrol is de rol voor aanmeldingsbeheerder. Leden van deze rol kunnen nieuwe aanmeldingen maken in de hoofddatabase. Desgewenst kunt u dezelfde stappen doorlopen (een aanmelding maken, een gebruiker maken en een gebruiker toevoegen aan de rol **loginmanager** ), zodat een gebruiker nieuwe aanmeldingen kan maken in de hoofddatabase. Gewoonlijk zijn aanmeldingen niet nodig omdat Microsoft het gebruik aanbeveelt van gebruikers van ingesloten databases. Hiervoor wordt verificatie op databaseniveau gebruikt, in plaats van gebruik te maken van gebruikers op basis van aanmelding. Zie [Ingesloten databasegebruikers: een draagbare database maken](/sql/relational-databases/security/contained-database-users-making-your-database-portable?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) voor meer informatie.
+De andere beheerdersrol is de rol voor aanmeldingsbeheerder. Leden van deze rol kunnen nieuwe aanmeldingen maken in de hoofddatabase. Desgewenst kunt u dezelfde stappen doorlopen (een aanmelding maken, een gebruiker maken en een gebruiker toevoegen aan de rol **loginmanager**), zodat een gebruiker nieuwe aanmeldingen kan maken in de hoofddatabase. Gewoonlijk zijn aanmeldingen niet nodig omdat Microsoft het gebruik aanbeveelt van gebruikers van ingesloten databases. Hiervoor wordt verificatie op databaseniveau gebruikt, in plaats van gebruik te maken van gebruikers op basis van aanmelding. Zie [Ingesloten databasegebruikers: een draagbare database maken](/sql/relational-databases/security/contained-database-users-making-your-database-portable?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) voor meer informatie.
 
 ---
 
@@ -187,7 +187,7 @@ Voor efficiënt toegangsbeheer gebruikt u machtigingen die zijn toegewezen aan g
 
 - Als u SQL Server-verificatie gebruikt, maakt u gebruikers van ingesloten databases in de database. Plaats een of meer databasegebruikers in een [databaserol](/sql/relational-databases/security/authentication-access/database-level-roles?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) en wijs vervolgens [machtigingen](/sql/relational-databases/security/permissions-database-engine?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) toe aan de databaserol.
 
-Bij de databaserollen kan het gaan om de ingebouwde rollen als **db_owner** , **db_ddladmin** , **db_datawriter** , **db_datareader** , **db_denydatawriter** en **db_denydatareader**. **db_owner** wordt doorgaans gebruikt voor het verlenen van volledige machtigingen aan slechts enkele gebruikers. De andere vaste databaserollen zijn handig voor het snel verkrijgen van een eenvoudige database voor ontwikkeldoeleinden, maar worden niet aanbevolen voor de meeste productiedatabases. 
+Bij de databaserollen kan het gaan om de ingebouwde rollen als **db_owner**, **db_ddladmin**, **db_datawriter**, **db_datareader**, **db_denydatawriter** en **db_denydatareader**. **db_owner** wordt doorgaans gebruikt voor het verlenen van volledige machtigingen aan slechts enkele gebruikers. De andere vaste databaserollen zijn handig voor het snel verkrijgen van een eenvoudige database voor ontwikkeldoeleinden, maar worden niet aanbevolen voor de meeste productiedatabases. 
 
 De vaste databaserol **db_datareader** verleent bijvoorbeeld leestoegang tot alle tabellen in de database, wat doorgaans meer is dan strikt noodzakelijk. 
 
@@ -206,7 +206,7 @@ Start met de lijst van machtigingen in [Machtigingen (Database-engine)](https://
 Bij het beheren van aanmeldingen en gebruikers in SQL Database, moet u de volgende zaken overwegen:
 
 - U moet zijn verbonden met de **hoofd** database bij het uitvoeren van de `CREATE/ALTER/DROP DATABASE`-instructies.
-- De databasegebruiker die overeenkomt met de aanmelding van de **Serverbeheerder** , kan niet worden gewijzigd of verwijderd.
+- De databasegebruiker die overeenkomt met de aanmelding van de **Serverbeheerder**, kan niet worden gewijzigd of verwijderd.
 - Amerikaans Engels is de standaardtaal van de aanmelding van de **serverbeheerder**.
 - Alleen de beheerders (aanmelding van **serverbeheerder** of Azure AD-beheerder) en de leden van de databaserol **dbmanager** in de **hoofddatabase** zijn gemachtigd om de instructies `CREATE DATABASE` en `DROP DATABASE` uit te voeren.
 - U moet zijn verbonden met de hoofddatabase bij het uitvoeren van de `CREATE/ALTER/DROP LOGIN`-instructies. Het gebruik van aanmeldingen wordt echter afgeraden. Gebruik in plaats daarvan ingesloten databasegebruikers.

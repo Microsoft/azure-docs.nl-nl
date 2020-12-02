@@ -10,12 +10,12 @@ ms.subservice: billing
 ms.topic: troubleshooting
 ms.date: 08/20/2020
 ms.author: v-miegge
-ms.openlocfilehash: 91b3b7b71524c76006ad4d431774e05e47fd0266
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 85f6e64cb20a14b9cd03776d138872d6a4191535
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131068"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96344484"
 ---
 # <a name="troubleshoot-issues-when-you-sign-up-for-a-new-account-in-azure-portal-or-azure-account-center"></a>Problemen oplossen wanneer u een nieuw account registreert in de Azure-portal of in het Azure-accountcentrum
 
@@ -76,8 +76,8 @@ U kunt dit probleem oplossen door het volgende te controleren:
 
 #### <a name="you-see-the-message-your-current-account-type-is-not-supported"></a>U ziet het bericht 'Uw huidige accounttype wordt niet ondersteund'
 
-Dit probleem kan zich voordoen als het account is geregistreerd in een [niet-beheerde Azure AD-directory](../../active-directory/users-groups-roles/directory-self-service-signup.md) en niet is opgenomen in de Azure AD-directory van uw organisatie.
-U kunt dit probleem oplossen door het Azure-account te registreren met behulp van een ander account of door de niet-beheerde AD-directory over te nemen. Zie [Een niet-beheerde directory overnemen als beheerder in Azure Active Directory](../../active-directory/users-groups-roles/domains-admin-takeover.md) voor meer informatie.
+Dit probleem kan zich voordoen als het account is geregistreerd in een [niet-beheerde Azure AD-directory](../../active-directory/enterprise-users/directory-self-service-signup.md) en niet is opgenomen in de Azure AD-directory van uw organisatie.
+U kunt dit probleem oplossen door het Azure-account te registreren met behulp van een ander account of door de niet-beheerde AD-directory over te nemen. Zie [Een niet-beheerde directory overnemen als beheerder in Azure Active Directory](../../active-directory/enterprise-users/domains-admin-takeover.md) voor meer informatie.
 
 ## <a name="identity-verification-by-phone"></a>Identiteitverificatie via telefoon
 

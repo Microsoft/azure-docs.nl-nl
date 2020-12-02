@@ -7,12 +7,12 @@ ms.reviewer: logicappspm
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 10/30/2020
-ms.openlocfilehash: 7433c51b45b0d8459ad1959b29f61660537b8851
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 9d402599c4d6732ce92b8c64af6f660bcedbc4ba
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337454"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96455053"
 ---
 # <a name="quickstart-create-your-first-logic-apps-workflow---azure-portal"></a>Quickstart: Uw eerste werkstroom voor Logic Apps bouwen - Azure Portal
 
@@ -112,7 +112,7 @@ Uw logische app is nu live, maar kan alleen de RSS-feed controleren. [Voeg vervo
 
 ## <a name="add-the-send-email-action"></a>De actie 'E-mail verzenden' toevoegen
 
-Nadat u [een trigger voor uw logische app hebt toegevoegd](#add-rss-trigger), moet u vervolgens een [actie](../logic-apps/logic-apps-overview.md#logic-app-concepts) toevoegen. Dit doet u om het antwoord te bepalen wanneer uw logische app de RSS-feed controleert en er een nieuw item wordt weergegeven. U kunt ook logische apps maken met veel complexere acties, zoals in de zelfstudie voor het [verwerken van e-mails met Logic Apps, Azure Functions en Azure Storage](/azure/logic-apps/tutorial-process-email-attachments-workflow).
+Nadat u [een trigger voor uw logische app hebt toegevoegd](#add-rss-trigger), moet u vervolgens een [actie](../logic-apps/logic-apps-overview.md#logic-app-concepts) toevoegen. Dit doet u om het antwoord te bepalen wanneer uw logische app de RSS-feed controleert en er een nieuw item wordt weergegeven. U kunt ook logische apps maken met veel complexere acties, zoals in de zelfstudie voor het [verwerken van e-mails met Logic Apps, Azure Functions en Azure Storage](./tutorial-process-email-attachments-workflow.md).
 
 > [!NOTE]
 > In dit voorbeeld wordt gebruikgemaakt van Office 365 Outlook als e-mailservice. Als u een andere, ondersteunde e-mail service in uw logische app gebruikt, kan de gebruikersinterface er anders uitzien. De basisconcepten voor het maken van verbinding met een andere e-mailservice blijven echter ongewijzigd.
@@ -154,7 +154,7 @@ Nadat u [een trigger voor uw logische app hebt toegevoegd](#add-rss-trigger), mo
 
       ![Schermopname van Logic Apps Designer met de actie 'Een e-mail verzenden' en de cursor in het vak voor de eigenschap 'Onderwerp'.](./media/quickstart-create-first-logic-app-workflow/send-email-subject.png)
 
-   1. Selecteer in de lijst **Dynamische inhoud toevoegen** **Feedtitel** , die deel is van de triggeruitvoer **Wanneer een feeditem wordt gepubliceerd**. Uw e-mailmelding gebruikt deze uitvoer om de titel van het RSS-item op te halen.
+   1. Selecteer in de lijst **Dynamische inhoud toevoegen** **Feedtitel**, die deel is van de triggeruitvoer **Wanneer een feeditem wordt gepubliceerd**. Uw e-mailmelding gebruikt deze uitvoer om de titel van het RSS-item op te halen.
 
       ![Schermopname van Logic Apps Designer met de actie 'Een e-mail verzenden' en de cursor in het vak voor de eigenschap 'Onderwerp' met een lijst met geopende dynamische inhoud en de geselecteerde uitvoer 'Feedtitel'.](./media/quickstart-create-first-logic-app-workflow/send-email-subject-dynamic-content.png)
 
@@ -167,9 +167,9 @@ Nadat u [een trigger voor uw logische app hebt toegevoegd](#add-rss-trigger), mo
 
       ![Schermopname van Logic Apps Designer met de actie 'Een e-mail verzenden' en een voorbeeld van een e-mailonderwerp met opgenomen eigenschap 'Feedtitel'.](./media/quickstart-create-first-logic-app-workflow/send-email-feed-title.png)
 
-      Als een 'For each'-lus in de ontwerpfunctie wordt weergegeven, hebt u een token voor een matrix geselecteerd, bijvoorbeeld het token **Categories-Item**. Voor dit type tokens voegt de ontwerpfunctie automatisch deze lus toe rond de actie die verwijst naar dat token. Op die manier wordt dezelfde actie uitgevoerd voor elk matrixitem. Selecteer het **beletselteken** ( **...** ) op de titelbalk van de lus en kies vervolgens **Verwijderen** om de lus te verwijderen.
+      Als een 'For each'-lus in de ontwerpfunctie wordt weergegeven, hebt u een token voor een matrix geselecteerd, bijvoorbeeld het token **Categories-Item**. Voor dit type tokens voegt de ontwerpfunctie automatisch deze lus toe rond de actie die verwijst naar dat token. Op die manier wordt dezelfde actie uitgevoerd voor elk matrixitem. Selecteer het **beletselteken** (**...**) op de titelbalk van de lus en kies vervolgens **Verwijderen** om de lus te verwijderen.
 
-   1. Voer in het vak **Body** de inhoud voor de body van de e-mail in. In dit voorbeeld bevat de inhoud drie eigenschappen met beschrijvende tekst voor elke: `Title:`, de eigenschap **feedtitel** , `Date published:`, de eigenschap **Feed gepubliceerd op** , en `Link:` (de eigenschap **Primaire feedlink** ). Als u lege regels wilt toevoegen in een invoervak, drukt u op Shift + Enter.
+   1. Voer in het vak **Body** de inhoud voor de body van de e-mail in. In dit voorbeeld bevat de inhoud drie eigenschappen met beschrijvende tekst voor elke: `Title:`, de eigenschap **feedtitel**, `Date published:`, de eigenschap **Feed gepubliceerd op**, en `Link:` (de eigenschap **Primaire feedlink**). Als u lege regels wilt toevoegen in een invoervak, drukt u op Shift + Enter.
 
       | Eigenschap | Beschrijving |
       |----------|-------------|

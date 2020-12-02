@@ -9,12 +9,12 @@ ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.reviewer: boalcsva
 ms.custom: contperfq1
-ms.openlocfilehash: f18f1184f921aca4f2c1e33ac00dcf14c63b24eb
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: bb8a52a2258143e1c68ca46ac31a8c986b1bcfe7
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95893355"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96457129"
 ---
 # <a name="azure-ea-portal-administration"></a>Beheer van Azure EA Portal
 
@@ -282,13 +282,13 @@ Met Azure EA Portal kunt u de kosten en het gebruik van Azure EA beheren. Er zij
 
 Elke rol heeft een ander toegangs- en autoriteitsniveau.
 
-Zie [Enterprise-gebruikersrollen](/azure/cost-management-billing/manage/understand-ea-roles#enterprise-user-roles) voor meer informatie over rollen.
+Zie [Enterprise-gebruikersrollen](./understand-ea-roles.md#enterprise-user-roles) voor meer informatie over rollen.
 
 ## <a name="add-an-azure-ea-account"></a>Een Azure EA-account toevoegen
 
 Het Azure EA-account is een organisatie-eenheid in de Azure EA-portal. Dit account wordt gebruikt om abonnementen te beheren en rapporten te maken. Voor toegang tot en het gebruik van Azure-services moet u een account maken of laten maken.
 
-Zie [Een account toevoegen](https://docs.microsoft.com/azure/cost-management-billing/manage/ea-portal-administration#add-an-account) voor meer informatie over Azure-accounts.
+Zie [Een account toevoegen](#add-an-account) voor meer informatie over Azure-accounts.
 
 ## <a name="enterprise-devtest-offer"></a>Aanbieding voor Enterprise Dev/Test
 
@@ -361,7 +361,7 @@ Als u een abonnement waarvoor u de accounteigenaar bent, wilt verwijderen, doet 
 
 Alleen accountbeheerders kunnen abonnementen opzeggen.
 
-Zie voor meer informatie [Wat gebeurt er nadat ik mijn abonnement heb opgezegd?](cancel-azure-subscription.md#what-happens-after-i-cancel-my-subscription)
+Zie voor meer informatie [Wat gebeurt er nadat ik mijn abonnement heb opgezegd?](cancel-azure-subscription.md#what-happens-after-subscription-cancellation)
 
 ## <a name="delete-an-account"></a>Een account verwijderen
 

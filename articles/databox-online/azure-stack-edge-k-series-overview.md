@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: overview
 ms.date: 09/23/2020
 ms.author: alkohli
-ms.openlocfilehash: 4bae9e28a22a99d092db2bf887f0cd790e04c52a
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 23ec79b7e3989c9749edf98d930ad8305324c9da
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91318553"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96454005"
 ---
 # <a name="what-is-the-azure-stack-edge-mini-r"></a>Wat is de Azure Stack Edge Mini R?
 
@@ -45,43 +45,41 @@ Azure Stack Edge Mini R biedt de volgende mogelijkheden:
 
 Hier volgen de verschillende scenario's waarbij Azure Stack Edge Mini R kan worden gebruikt voor snelle machine learning-deductie aan de rand en het voorbewerken van gegevens voordat deze naar Azure worden verzonden.
 
-- **Deductie met Azure Machine Learning** : met Azure Stack Edge Mini R kunt u ML-modellen uitvoeren om snel resultaten te verkrijgen op basis waarvan actie kan worden ondernomen voordat de gegevens naar de cloud worden verzonden. De volledige gegevensset kan desgewenst worden overgedragen om uw ML-modellen te blijven trainen en verbeteren. Zie [Hardware-versnelde Azure ML-modellen implementeren op Azure Stack Edge Mini R](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-fpga-web-service#deploy-to-a-local-edge-server) voor meer informatie over het gebruiken van de met hardware versnelde Azure ML-modellen op het Azure Stack Edge Mini R-apparaat.
+- **Deductie met Azure Machine Learning**: met Azure Stack Edge Mini R kunt u ML-modellen uitvoeren om snel resultaten te verkrijgen op basis waarvan actie kan worden ondernomen voordat de gegevens naar de cloud worden verzonden. De volledige gegevensset kan desgewenst worden overgedragen om uw ML-modellen te blijven trainen en verbeteren. Zie [Hardware-versnelde Azure ML-modellen implementeren op Azure Stack Edge Mini R](../machine-learning/how-to-deploy-fpga-web-service.md#deploy-to-a-local-edge-server) voor meer informatie over het gebruiken van de met hardware versnelde Azure ML-modellen op het Azure Stack Edge Mini R-apparaat.
 
-- **Gegevens voorbewerken** : transformeer gegevens voordat deze naar Azure worden verzonden via compute-opties zoals containerwerkbelastingen en virtuele machines om een meer op maat gemaakte gegevensset te maken. Voorverwerking kan worden gebruikt om:
+- **Gegevens voorbewerken**: transformeer gegevens voordat deze naar Azure worden verzonden via compute-opties zoals containerwerkbelastingen en virtuele machines om een meer op maat gemaakte gegevensset te maken. Voorverwerking kan worden gebruikt om:
 
     - Gegevens samen te voegen.
     - Gegevens te wijzigen, bijvoorbeeld om persoonlijke gegevens te verwijderen.
     - Een subset van gegevens maken voor het optimaliseren van opslag en bandbreedte, of voor verdere analyse.
     - IoT-gebeurtenissen te analyseren en erop te reageren.
 
-- **Gegevens via een netwerk naar Azure overdragen** : Gebruik Azure Stack Edge Mini R om gegevens gemakkelijk en snel naar Azure over te dragen voor verdere berekeningen en analyses of voor archivering.
+- **Gegevens via een netwerk naar Azure overdragen**: Gebruik Azure Stack Edge Mini R om gegevens gemakkelijk en snel naar Azure over te dragen voor verdere berekeningen en analyses of voor archivering.
 
 ## <a name="components"></a>Onderdelen
 
 De Azure Stack Edge Mini R-oplossing bestaat uit een Azure Stack Edge-resource, een ultra draagbaar robuust Azure Stack Edge Mini R-fysiek apparaat en een lokale webinterface.
 
-* **Fysiek Azure Stack Edge Mini R-apparaat** : een uiterst draagbaar, robuust apparaat voor rekenprocessen en opslag, geleverd door Microsoft. Het apparaat heeft een ingebouwde batterij en weegt minder dan 7 lbs.
+* **Fysiek Azure Stack Edge Mini R-apparaat**: een uiterst draagbaar, robuust apparaat voor rekenprocessen en opslag, geleverd door Microsoft. Het apparaat heeft een ingebouwde batterij en weegt minder dan 7 lbs.
 
     ![Azure Stack Edge Mini R-apparaat](media/azure-stack-edge-k-series-overview/perspective-view-1.png)
 
-* **Azure Stack Edge-resource** : een resource in de Azure Portal waarmee u een robuust Azure Stack Edge Mini R-apparaat kunt beheren via een webinterface waartoe u toegang hebt vanaf verschillende geografische locaties. Gebruik de Azure Stack Edge-resource om resources te maken en beheren, apparaten en waarschuwingen te bekijken en beheren, en shares te beheren.  
+* **Azure Stack Edge-resource**: een resource in de Azure Portal waarmee u een robuust Azure Stack Edge Mini R-apparaat kunt beheren via een webinterface waartoe u toegang hebt vanaf verschillende geografische locaties. Gebruik de Azure Stack Edge-resource om resources te maken en beheren, apparaten en waarschuwingen te bekijken en beheren, en shares te beheren.  
 
-* **Lokale Azure Stack Edge Pro R-webinterface** : een lokale gebruikersinterface in de browser op uw Azure Stack Edge Mini R-apparaat die voornamelijk bedoeld is voor de eerste configuratie van het apparaat. Gebruik de lokale webinterface ook om diagnoses uit te voeren, het Azure Stack Edge Pro-apparaat uit te schakelen of opnieuw op te starten, logboeken met kopieerbewerkingen te bekijken en contact op te nemen met Microsoft Ondersteuning om een serviceaanvraag in te dienen.
+* **Lokale Azure Stack Edge Pro R-webinterface**: een lokale gebruikersinterface in de browser op uw Azure Stack Edge Mini R-apparaat die voornamelijk bedoeld is voor de eerste configuratie van het apparaat. Gebruik de lokale webinterface ook om diagnoses uit te voeren, het Azure Stack Edge Pro-apparaat uit te schakelen of opnieuw op te starten, logboeken met kopieerbewerkingen te bekijken en contact op te nemen met Microsoft Ondersteuning om een serviceaanvraag in te dienen.
 
 
 ## <a name="region-availability"></a>Beschikbaarheid in regio’s
 
 Het fysieke Azure Stack Edge Mini R-apparaat, de Azure-resource en het doelopslagaccount waarnaar u gegevens overdraagt hoeven zich niet allemaal in dezelfde regio te bevinden.
 
-- **Beschikbaarheid van resources** : ga voor een lijst van alle regio's waarin de Azure Stack Edge-resource beschikbaar is naar [Azure-producten beschikbaar per regio](https://azure.microsoft.com/global-infrastructure/services/?products=databox&regions=all). 
+- **Beschikbaarheid van resources**: ga voor een lijst van alle regio's waarin de Azure Stack Edge-resource beschikbaar is naar [Azure-producten beschikbaar per regio](https://azure.microsoft.com/global-infrastructure/services/?products=databox&regions=all). 
 
-- **Beschikbaarheid van het apparaat** : om een lijst in te zien van alle landen/regio's waar het Azure Stack Edge Mini R-apparaat beschikbaar is, gaat u naar de sectie Beschikbaarheid op het tabblad Azure Stack Edge Mini R voor [Azure Stack Edge Mini R-prijzen](https://azure.microsoft.com/pricing/details/azure-stack/edge/#azureStackEdgeMiniR).
+- **Beschikbaarheid van het apparaat**: om een lijst in te zien van alle landen/regio's waar het Azure Stack Edge Mini R-apparaat beschikbaar is, gaat u naar de sectie Beschikbaarheid op het tabblad Azure Stack Edge Mini R voor [Azure Stack Edge Mini R-prijzen](https://azure.microsoft.com/pricing/details/azure-stack/edge/#azureStackEdgeMiniR).
 
-- **Doelopslagaccounts** : De opslagaccounts waarin de gegevens worden opgeslagen, zijn beschikbaar in alle Azure-regio’s. De regio's waar de opslagaccounts Azure Stack Edge Mini R-gegevens opslaan, moeten zich voor optimale prestaties dicht bij het apparaat bevinden. Een opslagaccount dat zich ver van het apparaat vandaan bevindt, resulteert in lange latenties en tragere prestaties.
+- **Doelopslagaccounts**: De opslagaccounts waarin de gegevens worden opgeslagen, zijn beschikbaar in alle Azure-regio’s. De regio's waar de opslagaccounts Azure Stack Edge Mini R-gegevens opslaan, moeten zich voor optimale prestaties dicht bij het apparaat bevinden. Een opslagaccount dat zich ver van het apparaat vandaan bevindt, resulteert in lange latenties en tragere prestaties.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - De [Systeemvereisten voor Azure Stack Edge Mini R ](azure-stack-edge-gpu-system-requirements.md) lezen.
-
-

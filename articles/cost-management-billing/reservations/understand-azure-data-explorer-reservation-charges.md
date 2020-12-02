@@ -7,12 +7,12 @@ ms.reviewer: orspodek
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 02/12/2020
-ms.openlocfilehash: af2dc8378d1f1fe952a568ecb4bd89d088e3e3d3
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: b222e4ff519fbe2fbb4fa58b39555ac9fead0917
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92147240"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352912"
 ---
 # <a name="understand-how-the-reservation-discount-is-applied-to-azure-data-explorer"></a>Reserveringskorting toepassen op Azure Data Explorer
 
@@ -29,7 +29,7 @@ Wanneer u een resource afsluit, wordt de reserveringskorting automatisch toegepa
 Een reserveringskorting wordt op uurbasis toegepast op Azure Data Explorer-markeringen. Voor Azure Data Explorer-resources die niet het volledige uur worden uitgevoerd, wordt de korting automatisch toegepast op andere Data Explorer-resources die overeenkomen met de reserveringskenmerken. De korting kan worden toegepast op Azure Data Explorer-resources die gelijktijdig worden uitgevoerd. Als u geen Azure Data Explorer-resources hebt die het hele uur worden uitgevoerd en voldoen aan de reserveringsvoorwaarden, profiteert u niet optimaal van de korting voor de reserveringscapaciteit voor dat uur.
 
 > [!NOTE]
-> * Het wordt **sterk aanbevolen** om [reserveringscapaciteit](../../virtual-machines/windows/prepay-reserved-vm-instances.md) aan te schaffen voor virtuele machines die worden gebruikt voor het Azure Data Explorer-cluster om de besparingen met gereserveerde capaciteit te maximaliseren.
+> * Het wordt **sterk aanbevolen** om [reserveringscapaciteit](../../virtual-machines/prepay-reserved-vm-instances.md) aan te schaffen voor virtuele machines die worden gebruikt voor het Azure Data Explorer-cluster om de besparingen met gereserveerde capaciteit te maximaliseren.
 > * Met de aankoop van een reservering worden kortingen toegepast op alle regio's.
 
 ## <a name="examples"></a>Voorbeelden

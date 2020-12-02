@@ -8,12 +8,12 @@ ms.reviewer: yashesvi
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: 300ac0996d9dcb9ecb07abd3392447e393c1781b
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 050984d58137ec03996572d2de41115073e4ab2b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151614"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96338160"
 ---
 # <a name="manage-reservations-for-azure-resources"></a>Reserveringen voor Azure-resources beheren
 
@@ -64,7 +64,7 @@ Als de gebruiker een uitwisseling of een restitutie wil uitvoeren, moet deze per
 U kunt het toegangsbeheer voor een reservering als volgt delegeren:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-2. Selecteer**Alle services** > **Reservering** om de reserveringen te bekijken waartoe u toegang hebt.
+2. Selecteer **Alle services** > **Reservering** om de reserveringen te bekijken waartoe u toegang hebt.
 3. Selecteer de reservering waarvoor u de toegang wilt delegeren aan andere gebruikers.
 4. Klik op **Toegangsbeheer (IAM)** .
 5. Selecteer **Roltoewijzing toevoegen** > **Rol** > **Eigenaar**. Als u beperkte toegang wilt geven, selecteert u een andere rol.
@@ -168,7 +168,7 @@ Raadpleeg de volgende artikelen voor meer informatie over Azure-reserveringen:
 - [Wat zijn reserveringen voor Azure?](save-compute-costs-reservations.md)
 
 Een serviceabonnement kopen:
-- [Vooruitbetalen voor Virtual Machines met Azure Reserved VM Instances](../../virtual-machines/windows/prepay-reserved-vm-instances.md)
+- [Vooruitbetalen voor Virtual Machines met Azure Reserved VM Instances](../../virtual-machines/prepay-reserved-vm-instances.md)
 - [Vooruitbetalen voor compute-resources van SQL Database met gereserveerde capaciteit voor Azure SQL Database](../../azure-sql/database/reserved-capacity-overview.md)
 - [Vooruitbetalen voor Azure Cosmos DB-resources met gereserveerde capaciteit van Azure Cosmos DB](../../cosmos-db/cosmos-db-reserved-capacity.md)
 

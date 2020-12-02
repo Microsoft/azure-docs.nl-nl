@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc,subject-armqs
 ms.date: 10/14/2020
 ms.author: sebansal
-ms.openlocfilehash: c16fc475e4982724ebc9f4f55301b6fc56dfb7c7
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 73c52963df65dc4037f087a93108ccfacb3fb5d4
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95017006"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461558"
 ---
 # <a name="quickstart-create-an-azure-key-vault-and-a-key-by-using-arm-template-preview"></a>Quickstart: Een Azure-sleutelkluis en een sleutel maken met behulp van een ARM-sjabloon (preview)
 
@@ -26,7 +26,7 @@ ms.locfileid: "95017006"
 Voor het voltooien van dit artikel, is het volgende vereist:
 
 - Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
-- Voor de gebruiker moet de rol ingebouwde RBAC zijn toegewezen, bijvoorbeeld. inzender. [Klik hier voor meer informatie](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
+- Voor de gebruiker moet de rol ingebouwde RBAC zijn toegewezen, bijvoorbeeld. inzender. [Klik hier voor meer informatie](../../role-based-access-control/role-assignments-portal.md)
 - Uw Azure AD-gebruikersobject-id is in de sjabloon nodig om machtigingen te kunnen configureren. Met de volgende procedure wordt de object-id (GUID) opgehaald.
 
     1. Voer de volgende Azure PowerShell- of de Azure CLI-opdracht uit door **Proberen** te selecteren en het script vervolgens in het shell-deelvenster te plakken. Plak het script door met de rechtermuisknop op de shell te klikken en **Plakken** te selecteren.

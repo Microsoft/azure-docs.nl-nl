@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 09/03/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 212e5fb62043c2ffe2b8876249a6aad1d224411d
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 3d7e6357fd8f1091509cbf27875c028d3af310cb
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685848"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96445907"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-the-azure-portal"></a>Quickstart: Een geheim uit Azure Key Vault instellen en ophalen met behulp van de Azure Portal
 
@@ -45,13 +45,13 @@ Volg de stappen om een geheim toe te voegen aan de kluis:
 1. Klik op **Genereren/importeren**.
 1. Kies in het scherm **Een geheim maken** de volgende waarden:
     - **Uploadopties**: Handmatig.
-    - **Naam**: Typ een naam voor het nieuwe geheim. De geheime naam moet uniek zijn binnen een Key Vault. De naam moet een reeks van 1-127 tekens zijn die begint met een letter en alleen 0-9, a-z, A-Z en - bevat. Zie voor meer informatie over naamgeving [Key Vault-objecten, -id's en -versiebeheer](https://docs.microsoft.com/azure/key-vault/general/about-keys-secrets-certificates#objects-identifiers-and-versioning)
+    - **Naam**: Typ een naam voor het nieuwe geheim. De geheime naam moet uniek zijn binnen een Key Vault. De naam moet een reeks van 1-127 tekens zijn die begint met een letter en alleen 0-9, a-z, A-Z en - bevat. Zie voor meer informatie over naamgeving [Key Vault-objecten, -id's en -versiebeheer](../general/about-keys-secrets-certificates.md#objects-identifiers-and-versioning)
     - **Waarde**: Typ een waarde voor het nieuwe geheim. Key Vault-API's accepteert en retourneert waarden als tekenreeksen. 
     - Houd voor de overige waarden de standaardwaarden aan. Klik op **Create**.
 
 Zodra u het bericht ontvangt dat het geheim met succes is gemaakt, kunt u erop klikken in de lijst. 
 
-Zie voor meer informatie over geheimen en kenmerken [Over Azure Key Vault-geheimen](https://docs.microsoft.com/azure/key-vault/secrets/about-secrets)
+Zie voor meer informatie over geheimen en kenmerken [Over Azure Key Vault-geheimen](./about-secrets.md)
 
 ## <a name="retrieve-a-secret-from-key-vault"></a>Een geheim lezen uit Key Vault
 
@@ -75,7 +75,7 @@ Als u die niet meer nodig hebt, verwijdert u de resourcegroep. Hierdoor worden o
 3. Typ in het vak **TYP DE NAAM VAN DE RESOURCEGROEP** de naam van de resourcegroep en selecteer **Verwijderen**.
 
 > [!NOTE]
-> Het is belangrijk te weten dat wanneer een geheim, sleutel, certificaat of sleutelkluis wordt verwijderd, dit kan worden hersteld voor een configureerbare periode van 7 tot 90 kalender dagen. Als er geen configuratie is opgegeven, wordt de standaard herstelperiode ingesteld op 90 dagen. Dit biedt gebruikers voldoende tijd om een onbedoeld geheim te verwijderen en te reageren. Voor meer informatie over het verwijderen en herstellen van sleutelkluizen en sleutelkluisobjecten raadpleegt u [Overzicht van voorlopig verwijderen in Azure Key Vault](https://docs.microsoft.com/azure/key-vault/general/soft-delete-overview)
+> Het is belangrijk te weten dat wanneer een geheim, sleutel, certificaat of sleutelkluis wordt verwijderd, dit kan worden hersteld voor een configureerbare periode van 7 tot 90 kalender dagen. Als er geen configuratie is opgegeven, wordt de standaard herstelperiode ingesteld op 90 dagen. Dit biedt gebruikers voldoende tijd om een onbedoeld geheim te verwijderen en te reageren. Voor meer informatie over het verwijderen en herstellen van sleutelkluizen en sleutelkluisobjecten raadpleegt u [Overzicht van voorlopig verwijderen in Azure Key Vault](../general/soft-delete-overview.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 

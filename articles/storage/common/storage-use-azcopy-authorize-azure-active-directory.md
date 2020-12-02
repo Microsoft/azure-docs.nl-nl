@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 11/03/2020
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: 89aab37b750a61bd21ba9af23875536a8cfbff4a
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: b13b5e1e27e9717066ff8f1aa8e245e8d9f54bbb
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94414554"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498112"
 ---
 # <a name="authorize-access-to-blobs-with-azcopy-and-azure-active-directory-azure-ad"></a>Toegang verlenen tot blobs met AzCopy en Azure Active Directory (Azure AD)
 
@@ -42,7 +42,7 @@ Deze rollen kunnen worden toegewezen aan uw beveiligingsprincipal in een van dez
 - Resourcegroep
 - Abonnement
 
-Zie [de Azure Portal gebruiken om een Azure-rol toe te wijzen voor toegang tot Blob-en wachtrij gegevens](./storage-auth-aad-rbac-portal.md?toc=%252fazure%252fstorage%252fblobs%252ftoc.json)voor meer informatie over het controleren en toewijzen van rollen.
+Zie [de Azure Portal gebruiken om een Azure-rol toe te wijzen voor toegang tot Blob-en wachtrij gegevens](./storage-auth-aad-rbac-portal.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)voor meer informatie over het controleren en toewijzen van rollen.
 
 > [!NOTE]
 > Houd er rekening mee dat de toewijzingen van Azure-rollen Maxi maal vijf minuten kunnen worden door gegeven.

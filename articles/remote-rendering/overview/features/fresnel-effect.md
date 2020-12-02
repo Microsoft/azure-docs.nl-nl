@@ -1,19 +1,19 @@
 ---
-title: Fresnel effect
+title: Fresnel-effect
 description: Pagina met uitleg over functies voor het effect Fresnel material
 author: jumeder
 ms.author: jumeder
 ms.date: 11/09/2020
 ms.topic: article
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 0596d118d1f3c09bc295891f023fe9990f3f1e05
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: c8ecd3afc95cf4b8054cd7db3530c15afebea3ce
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94557703"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498231"
 ---
-# <a name="fresnel-effect"></a>Fresnel effect
+# <a name="fresnel-effect"></a>Fresnel-effect
 
 De functie Fresnel effect materiaal is een niet-fysiek juist, ad-hoc-effect. De functie is gebaseerd op de fysieke observatie van objecten die bij deze hoeken meer reflecties oplopen. Fresnel reflectie zelf is al fysiek opgenomen in het [PBR-materiaal model](../../overview/features/pbr-materials.md) dat wordt gebruikt in azure rendering op afstand. Daarentegen is de functie Fresnel effect materiaal slechts een additief kleur effect zonder afhankelijkheid van [verlichting](../../overview/features/lights.md) of de [lucht omgeving](../../overview/features/sky.md).
 
@@ -21,7 +21,7 @@ Het Fresnel-effect geeft objecten die zijn gekleurd als gevolg van de randen toe
 
 ## <a name="enabling-the-fresnel-effect"></a>Het effect Fresnel inschakelen
 
-Als u de functie Fresnel effect wilt gebruiken, moet deze worden ingeschakeld op de desbetreffende materialen. U kunt deze inschakelen door de FresnelEffect-bit van de [PbrMaterialFeatures](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.pbrmaterialfeatures) in te stellen op het [PBR-materiaal](../../overview/features/pbr-materials.md). Hetzelfde patroon is van toepassing op de [ColorMaterialFeatures](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering) en het [kleur materiaal](../../overview/features/color-materials.md). Zie de sectie code voorbeelden voor een demonstratie van het gebruik.
+Als u de functie Fresnel effect wilt gebruiken, moet deze worden ingeschakeld op de desbetreffende materialen. U kunt deze inschakelen door de FresnelEffect-bit van de [PbrMaterialFeatures](/dotnet/api/microsoft.azure.remoterendering.pbrmaterialfeatures) in te stellen op het [PBR-materiaal](../../overview/features/pbr-materials.md). Hetzelfde patroon is van toepassing op de [ColorMaterialFeatures](/dotnet/api/microsoft.azure.remoterendering) en het [kleur materiaal](../../overview/features/color-materials.md). Zie de sectie code voorbeelden voor een demonstratie van het gebruik.
 
 Na het inschakelen is het Fresnel-effect direct zichtbaar. Standaard is de glanzend wit (1, 1, 1, 1) en een exponent van 1. U kunt deze instellingen aanpassen met behulp van de onderstaande para meter-Setters.
 
@@ -93,10 +93,10 @@ void SetFresnelEffect(ApiHandle<AzureSession> session, ApiHandle<Material> mater
 
 ## <a name="api-documentation"></a>API-documentatie
 
-* [C#-PbrMaterialFeatures](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.pbrmaterialfeatures)
-* [C++ PbrMaterialFeatures](https://docs.microsoft.com/cpp/api/remote-rendering/pbrmaterialfeatures)
-* [C#-ColorMaterialFeatures](https://docs.microsoft.com/dotnet/api/microsoft.azure.remoterendering.colormaterialfeatures)
-* [C++ ColorMaterialFeatures](https://docs.microsoft.com/cpp/api/remote-rendering/colormaterialfeatures)
+* [C#-PbrMaterialFeatures](/dotnet/api/microsoft.azure.remoterendering.pbrmaterialfeatures)
+* [C++ PbrMaterialFeatures](/cpp/api/remote-rendering/pbrmaterialfeatures)
+* [C#-ColorMaterialFeatures](/dotnet/api/microsoft.azure.remoterendering.colormaterialfeatures)
+* [C++ ColorMaterialFeatures](/cpp/api/remote-rendering/colormaterialfeatures)
 
 ## <a name="next-steps"></a>Volgende stappen
 

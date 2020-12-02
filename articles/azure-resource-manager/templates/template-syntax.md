@@ -2,13 +2,13 @@
 title: Sjabloon structuur en syntaxis
 description: Hierin worden de structuur en eigenschappen van Azure Resource Manager sjablonen (ARM-sjablonen) beschreven met declaratieve JSON-syntaxis.
 ms.topic: conceptual
-ms.date: 11/24/2020
-ms.openlocfilehash: c0e1e3225d63d0463164a3ed599fb0b760367123
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.date: 12/01/2020
+ms.openlocfilehash: ce36d725b3844fcd4c8d43a9f044423611d44fbd
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353490"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96497874"
 ---
 # <a name="understand-the-structure-and-syntax-of-arm-templates"></a>Informatie over de structuur en de syntaxis van ARM-sjablonen
 
@@ -283,7 +283,7 @@ U definieert resources met de volgende structuur:
 |:--- |:--- |:--- |
 | regeling | Nee | Een Booleaanse waarde die aangeeft of de resource wordt ingericht tijdens deze implementatie. Wanneer `true` wordt de bron gemaakt tijdens de implementatie. Wanneer `false` wordt de resource overgeslagen voor deze implementatie. Zie [voor waarde](conditional-resource-deployment.md). |
 | type |Ja |Het type van de resource. Deze waarde is een combi natie van de naam ruimte van de resource provider en het resource type (zoals **micro soft. Storage/Storage accounts**). Zie [Naslag informatie over sjablonen](/azure/templates/)om beschik bare waarden te bepalen. Voor een onderliggende resource is de notatie van het type afhankelijk van of het is genest binnen de bovenliggende resource of buiten de bovenliggende resource is gedefinieerd. Zie [Setnaam en -type voor onderliggende resources](child-resource-name-type.md). |
-| apiVersion |Ja |De versie van de REST API die moet worden gebruikt voor het maken van de resource. Zie [Naslag informatie over sjablonen](/azure/templates/)om beschik bare waarden te bepalen. |
+| apiVersion |Ja |De versie van de REST API die moet worden gebruikt voor het maken van de resource. Wanneer u een nieuwe sjabloon maakt, stelt u deze waarde in op de meest recente versie van de resource die u implementeert. Zolang de sjabloon zo nodig werkt, blijft dezelfde API-versie gebruiken. Door door te gaan met het gebruik van dezelfde API-versie, minimaliseert u het risico van een nieuwe API-versie waardoor de werking van uw sjabloon wordt gewijzigd. Overweeg de API-versie alleen bij te werken als u een nieuwe functie wilt gebruiken die wordt geïntroduceerd in een latere versie. Zie [Naslag informatie over sjablonen](/azure/templates/)om beschik bare waarden te bepalen. |
 | naam |Ja |De naam van de resource. De naam moet volgen op de URI-onderdeel beperkingen die zijn gedefinieerd in RFC3986. Azure-Services die de resource naam beschikbaar maken voor externe partijen, valideren de naam om ervoor te zorgen dat het geen poging is om een andere identiteit te vervalsen. Voor een onderliggende resource is de notatie van de naam afhankelijk van of deze is genest binnen de bovenliggende resource of buiten de bovenliggende resource is gedefinieerd. Zie [Setnaam en -type voor onderliggende resources](child-resource-name-type.md). |
 | aantekeningen |Nee |Uw notities voor het documenteren van de resources in uw sjabloon. Zie [opmerkingen in sjablonen](template-syntax.md#comments)voor meer informatie. |
 | location |Varieert |Ondersteunde geo-locaties van de gegeven bron. U kunt een van de beschik bare locaties selecteren, maar normaal gesp roken is het een goed idee om er een te kiezen die zich dicht bij uw gebruikers bevindt. Doorgaans is het zinvol om resources te plaatsen die met elkaar in dezelfde regio communiceren. Voor de meeste resource typen is een locatie vereist, maar sommige typen (zoals een roltoewijzing) vereisen geen locatie. Zie [resource locatie instellen](resource-location.md). |
@@ -296,7 +296,7 @@ U definieert resources met de volgende structuur:
 | properties |Nee |Resource-specifieke configuratie-instellingen. De waarden voor de eigenschappen zijn gelijk aan de waarden die u opgeeft in de hoofd tekst van de aanvraag voor de REST API bewerking (PUT-methode) om de resource te maken. U kunt ook een Kopieer matrix opgeven om meerdere exemplaren van een eigenschap te maken. Zie [Naslag informatie over sjablonen](/azure/templates/)om beschik bare waarden te bepalen. |
 | resources |Nee |Onderliggende bronnen die afhankelijk zijn van de resource die wordt gedefinieerd. Alleen resource typen opgeven die zijn toegestaan voor het schema van de bovenliggende resource. De afhankelijkheid van de bovenliggende resource is niet geïmpliceerd. Deze afhankelijkheid moet expliciet worden gedefinieerd. Zie [Setnaam en -type voor onderliggende resources](child-resource-name-type.md). |
 
-## <a name="outputs"></a>Uitvoerwaarden
+## <a name="outputs"></a>Uitvoer
 
 In de sectie outputs geeft u de waarden op die worden geretourneerd door de implementatie. Normaal gesp roken retourneert u waarden van resources die zijn geïmplementeerd.
 
@@ -351,7 +351,7 @@ Voor inline opmerkingen kunt u of gebruiken, `//` `/* ... */` maar deze syntaxis
   ],
 ```
 
-In Visual Studio code kan de [uitbrei ding van de Azure Resource Manager-Hulpprogram ma's](quickstart-create-templates-use-visual-studio-code.md) automatisch een resource manager-sjabloon detecteren en de taal modus dienovereenkomstig wijzigen. Als u in de rechter benedenhoek van VS code **Azure Resource Manager-sjabloon** ziet, kunt u de inline opmerkingen gebruiken. De inline opmerkingen worden niet meer als ongeldig gemarkeerd.
+In Visual Studio code kan de [uitbrei ding van de Azure Resource Manager-Hulpprogram ma's](quickstart-create-templates-use-visual-studio-code.md) automatisch een arm-sjabloon detecteren en de taal modus wijzigen. Als u in de rechter benedenhoek van VS code **Azure Resource Manager-sjabloon** ziet, kunt u de inline opmerkingen gebruiken. De inline opmerkingen worden niet meer als ongeldig gemarkeerd.
 
 ![Visual Studio code Azure Resource Manager-sjabloon modus](./media/template-syntax/resource-manager-template-editor-mode.png)
 

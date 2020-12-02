@@ -3,12 +3,12 @@ title: Live video Analytics implementeren op een IoT Edge apparaat-Azure
 description: In dit artikel worden de stappen beschreven die u helpen bij het implementeren van live video Analytics op uw IoT Edge-apparaat. U kunt dit bijvoorbeeld doen als u toegang hebt tot een lokale Linux-machine en/of eerder een Azure Media Services-account hebt gemaakt.
 ms.topic: how-to
 ms.date: 09/09/2020
-ms.openlocfilehash: a64fc11d7afa70d5200fdbd24bd3facdb8a95a7e
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 4fa4a9643976ba513b025706cacec26b2a50afb5
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92019576"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498316"
 ---
 # <a name="deploy-live-video-analytics-on-an-iot-edge-device"></a>Live video Analytics implementeren op een IoT Edge apparaat
 
@@ -23,8 +23,8 @@ In dit artikel worden de stappen beschreven die u helpen bij het implementeren v
 * Een x86-64-of een ARM64-apparaat met een van de [ondersteunde Linux-besturings systemen](../../iot-edge/support.md#operating-systems)
 * Azure-abonnement waarvoor u [eigenaars bevoegdheden](../../role-based-access-control/built-in-roles.md#owner) hebt
 * [IoT Hub maken en instellen](../../iot-hub/iot-hub-create-through-portal.md)
-* [IoT Edge-apparaat registreren](../../iot-edge/how-to-register-device.md)
-* [Installeer de Azure IoT Edge runtime op op Debian gebaseerde Linux-systemen](../../iot-edge/how-to-install-iot-edge-linux.md)
+* [IoT Edge-apparaat registreren](../../iot-edge/how-to-manual-provision-symmetric-key.md)
+* [Installeer de Azure IoT Edge runtime op op Debian gebaseerde Linux-systemen](../../iot-edge/how-to-install-iot-edge.md)
 * [Een Azure Media Services-account maken](../latest/create-account-howto.md)
 
     * Gebruik een van deze regio's: VS-Oost 2, VS-West, VS-midden, VS-West, Japan-Oost, VS-West, VS-West 2, westelijk-Centraal VS, Canada-oost, UK-zuid, Frankrijk-centraal, Frankrijk-zuid, Zwitserland-noord, Zwitserland-west en Japan-West.
@@ -99,7 +99,7 @@ De Azure Portal begeleidt u bij het maken van een implementatie manifest en het 
 
 #### <a name="configure-a-deployment-manifest"></a>Een implementatie manifest configureren
 
-Een implementatie manifest is een JSON-document waarin wordt beschreven welke modules moeten worden geïmplementeerd, hoe gegevens stromen tussen de modules en gewenste eigenschappen van de module apparaatdubbels. De Azure Portal heeft een wizard die u helpt bij het maken van een implementatie manifest. Het bevat drie stappen die zijn georganiseerd in tabbladen: **modules**, **routes**en **revisie + maken**.
+Een implementatie manifest is een JSON-document waarin wordt beschreven welke modules moeten worden geïmplementeerd, hoe gegevens stromen tussen de modules en gewenste eigenschappen van de module apparaatdubbels. De Azure Portal heeft een wizard die u helpt bij het maken van een implementatie manifest. Het bevat drie stappen die zijn georganiseerd in tabbladen: **modules**, **routes** en **revisie + maken**.
 
 #### <a name="add-modules"></a>Modules toevoegen
 
@@ -113,7 +113,7 @@ Een implementatie manifest is een JSON-document waarin wordt beschreven welke mo
     ![Scherm afbeelding toont het tabblad module-instellingen.](./media/deploy-iot-edge-device/add.png)
     
     > [!TIP]
-    > Selecteer **toevoegen** totdat u waarden hebt opgegeven op de tabbladen **module-instellingen**, **container maken**en **module dubbele instellingen** , zoals beschreven in deze procedure.
+    > Selecteer **toevoegen** totdat u waarden hebt opgegeven op de tabbladen **module-instellingen**, **container maken** en **module dubbele instellingen** , zoals beschreven in deze procedure.
     
     > [!WARNING]
     > Azure IoT Edge is hoofdletter gevoelig wanneer u aanroepen naar modules uitvoert. Noteer de exacte teken reeks die u gebruikt als de module naam.

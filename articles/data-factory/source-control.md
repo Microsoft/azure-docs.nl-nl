@@ -4,19 +4,19 @@ description: Meer informatie over het configureren van broncode beheer in Azure 
 services: data-factory
 ms.service: data-factory
 ms.workload: data-services
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: anandsub
 ms.reviewer: ''
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/02/2020
-ms.openlocfilehash: 37982d1c28d445d40fa9d53a2a1eb076fbbf7f2f
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: d219ff8469c471a37deb47e0f217292d70e8f0f9
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94566704"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96497109"
 ---
 # <a name="source-control-in-azure-data-factory"></a>Broncode beheer in Azure Data Factory
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
@@ -203,7 +203,7 @@ Zodra u deze stappen hebt uitgevoerd, kan uw fabriek verbinding maken met zowel 
 
 ## <a name="version-control"></a>Versiebeheer
 
-Met versie besturings systemen (ook wel bekend als _broncode beheer_ ) kunnen ontwikkel aars samen werken aan code en wijzigingen bijhouden die zijn aangebracht in de code basis. Broncode beheer is een essentieel hulp programma voor projecten met meerdere ontwikkel aars.
+Met versie besturings systemen (ook wel bekend als _broncode beheer_) kunnen ontwikkel aars samen werken aan code en wijzigingen bijhouden die zijn aangebracht in de code basis. Broncode beheer is een essentieel hulp programma voor projecten met meerdere ontwikkel aars.
 
 ### <a name="creating-feature-branches"></a>Functie vertakkingen maken
 
@@ -260,7 +260,7 @@ Het is raadzaam om Azure Key Vault te gebruiken voor het opslaan van verbindings
 
 Het gebruik van Key Vault-of MSI-verificatie zorgt ook voor continue integratie en implementatie, omdat u deze geheimen niet hoeft op te geven tijdens de implementatie van Resource Manager-sjablonen.
 
-## <a name="troubleshooting-git-integration"></a>Problemen met git-integratie oplossen
+## <a name="troubleshooting-git-integration"></a>Problemen met Git-integratie oplossen
 
 ### <a name="stale-publish-branch"></a>Verouderde publicatie vertakking
 
@@ -268,7 +268,7 @@ Als de publicatie vertakking niet is gesynchroniseerd met de Master vertakking e
 
 1. Uw huidige Git-opslag plaats verwijderen
 1. Configureer Git opnieuw met dezelfde instellingen, maar zorg ervoor dat **bestaande Data Factory resources importeren in opslag plaats** is geselecteerd en kies **nieuwe vertakking**
-1. Een pull-aanvraag maken om de wijzigingen aan de collaboration Branch samen te voegen 
+1. Een pull-aanvraag maken om de wijzigingen in de samenwerkingsvertakking samen te voegen 
 
 Hieronder ziet u enkele voor beelden van situaties die een verouderde publicatie vertakking kunnen veroorzaken:
 - Een gebruiker heeft meerdere vertakkingen. In één functie vertakking hebben ze een gekoppelde service verwijderd die niet Azure gekoppeld is (niet Azure gekoppelde services onmiddellijk worden gepubliceerd, ongeacht of ze in Git of niet zijn) en nooit de functie vertakking in de vertakking samen te voegen.

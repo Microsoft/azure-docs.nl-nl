@@ -3,20 +3,20 @@ title: Gegevens fabrieken bewaken met behulp van Azure Monitor
 description: Meer informatie over het gebruik van Azure Monitor om/Azure Data Factory-pijp lijnen te bewaken door Diagnostische logboeken in te scha kelen met informatie van Data Factory.
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 07/13/2020
-ms.openlocfilehash: af274c9c50b514befb4a3ce5930877edf964d976
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 35d2073dca21b4a0d48a43bed9933bb7549cf8f3
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92638088"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96497891"
 ---
 # <a name="monitor-and-alert-data-factory-by-using-azure-monitor"></a>Data Factory bewaken en waarschuwen door gebruik te maken van Azure Monitor
 
@@ -34,9 +34,9 @@ Zie [Overzicht van Azure Monitor](../azure-monitor/overview.md) voor meer inform
 
 Data Factory Stores-pijp lijn-gegevens slechts 45 dagen worden uitgevoerd. Gebruik Azure Monitor als u deze gegevens gedurende een langere periode wilt blijven gebruiken. Met monitor kunt u Diagnostische logboeken voor analyse naar meerdere verschillende doelen routeren.
 
-* **Opslag account** : Sla uw Diagnostische logboeken op in een opslag account voor controle of hand matige inspectie. U kunt de diagnostische instellingen gebruiken om de Bewaar tijd in dagen op te geven.
-* **Event hub** : de logboeken naar Azure Event hubs streamen. De logboeken worden ingevoerd in een partner service/aangepaste analyse oplossing, zoals Power BI.
-* **Log Analytics** : Analyseer de logboeken met log Analytics. De integratie van Data Factory met Azure Monitor is handig in de volgende scenario's:
+* **Opslag account**: Sla uw Diagnostische logboeken op in een opslag account voor controle of hand matige inspectie. U kunt de diagnostische instellingen gebruiken om de Bewaar tijd in dagen op te geven.
+* **Event hub**: de logboeken naar Azure Event hubs streamen. De logboeken worden ingevoerd in een partner service/aangepaste analyse oplossing, zoals Power BI.
+* **Log Analytics**: Analyseer de logboeken met log Analytics. De integratie van Data Factory met Azure Monitor is handig in de volgende scenario's:
   * U wilt complexe query's schrijven naar een uitgebreide set metrische gegevens die worden gepubliceerd door Data Factory om te bewaken. U kunt met behulp van monitor aangepaste waarschuwingen maken voor deze query's.
   * U wilt controleren op gegevens fabrieken. U kunt gegevens van meerdere gegevens fabrieken naar een enkele werk ruimte van de monitor routeren.
 
@@ -50,15 +50,15 @@ Diagnostische instellingen voor uw data factory maken of toevoegen.
 
 1. Selecteer de data factory waarvoor u een diagnostische instelling wilt instellen.
 
-1. Als er geen instellingen zijn op de geselecteerde data factory, wordt u gevraagd een instelling te maken. Selecteer **Diagnostische gegevens inschakelen** .
+1. Als er geen instellingen zijn op de geselecteerde data factory, wordt u gevraagd een instelling te maken. Selecteer **Diagnostische gegevens inschakelen**.
 
    ![Een diagnostische instelling maken als er geen instellingen zijn](media/data-factory-monitor-oms/monitor-oms-image1.png)
 
-   Als er bestaande instellingen zijn op de data factory, ziet u een lijst met instellingen die al zijn geconfigureerd op de data factory. Selecteer **Diagnostische instelling toevoegen** .
+   Als er bestaande instellingen zijn op de data factory, ziet u een lijst met instellingen die al zijn geconfigureerd op de data factory. Selecteer **Diagnostische instellingen toevoegen**.
 
    ![Een diagnostische instelling toevoegen als er instellingen bestaan](media/data-factory-monitor-oms/add-diagnostic-setting.png)
 
-1. Geef een naam op voor de instelling, selecteer **verzenden naar log Analytics** en selecteer een werk ruimte in **log Analytics werk ruimte** .
+1. Geef een naam op voor de instelling, selecteer **verzenden naar log Analytics** en selecteer een werk ruimte in **log Analytics werk ruimte**.
 
     * In de _Diagnostische_ modus van Azure stroomt Diagnostische logboeken in de tabel _AzureDiagnostics_ .
 
@@ -82,7 +82,7 @@ Diagnostische instellingen voor uw data factory maken of toevoegen.
     > [!NOTE]
     > Omdat een Azure-logboek tabel niet meer dan 500 kolommen kan bevatten, raden we u **ten zeerste** aan de _resource-specifieke modus_ te selecteren. Zie [log Analytics bekende beperkingen](../azure-monitor/platform/resource-logs.md#column-limit-in-azurediagnostics)voor meer informatie.
 
-1. Selecteer **Opslaan** .
+1. Selecteer **Opslaan**.
 
 Na enkele ogen blikken wordt de nieuwe instelling weer gegeven in de lijst met instellingen voor deze data factory. Diagnostische logboeken worden naar die werk ruimte gestreamd zodra er nieuwe gebeurtenis gegevens worden gegenereerd. Maxi maal 15 minuten kan verstrijken tussen het moment dat een gebeurtenis wordt verzonden en wanneer deze wordt weer gegeven in Log Analytics.
 
@@ -94,7 +94,7 @@ Deze oplossing biedt een overzicht van de algemene status van uw Data Factory, m
 * De mogelijkheid om in te zoomen op data factory-activiteit uitvoeringen per type
 * Samen vatting van data factory bovenste pijp lijn, activiteiten fouten
 
-1. Ga naar **Azure Marketplace** , kies **Analytics** filter en zoek naar **Azure Data Factory Analytics (preview)**
+1. Ga naar **Azure Marketplace**, kies **Analytics** filter en zoek naar **Azure Data Factory Analytics (preview)**
 
    ![Ga naar ' Azure Marketplace ', voer ' Analytics filter ' in en selecteer ' Azure Data Factory Analytics (preview).](media/data-factory-monitor-oms/monitor-oms-image3.png)
 
@@ -102,7 +102,7 @@ Deze oplossing biedt een overzicht van de algemene status van uw Data Factory, m
 
    ![Meer informatie over ' Azure Data Factory Analytics (preview) '](media/data-factory-monitor-oms/monitor-oms-image4.png)
 
-1. Selecteer **maken** en maak of selecteer de **log Analytics werk ruimte** .
+1. Selecteer **maken** en maak of selecteer de **log Analytics werk ruimte**.
 
    ![Een nieuwe oplossing maken](media/data-factory-monitor-oms/monitor-log-analytics-image-5.png)
 
@@ -127,7 +127,7 @@ U kunt de voor gaande metrische gegevens visualiseren, de query's achter deze me
 ![Grafische weer gave van de pijp lijn wordt uitgevoerd door data factory "](media/data-factory-monitor-oms/monitor-oms-image8.png)
 
 > [!NOTE]
-> Met Azure Data Factory Analytics (preview) worden Diagnostische logboeken naar _resource-specifieke_ doel tabellen verzonden. U kunt query's schrijven op basis van de volgende tabellen: _ADFPipelineRun_ , _ADFTriggerRun_ en _ADFActivityRun_ .
+> Met Azure Data Factory Analytics (preview) worden Diagnostische logboeken naar _resource-specifieke_ doel tabellen verzonden. U kunt query's schrijven op basis van de volgende tabellen: _ADFPipelineRun_, _ADFTriggerRun_ en _ADFActivityRun_.
 
 ## <a name="data-factory-metrics"></a>Data Factory metrische gegevens
 
@@ -274,11 +274,11 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 | **storageAccountId** |Tekenreeks | De resource-ID van het opslag account waarnaar u Diagnostische logboeken wilt verzenden. |
 | **Servicebusruleid kunnen** |Tekenreeks | De service bus-regel-ID van de service bus-naam ruimte waarin u Event Hubs wilt maken voor het streamen van Diagnostische logboeken. De regel-ID heeft de indeling `{service bus resource ID}/authorizationrules/{key name}` .|
 | **workspaceId** | Complex type | Een matrix met metrische tijd korrels en het Bewaar beleid. De waarde van deze eigenschap is leeg. |
-|**metrics**| Parameter waarden van de pijplijn uitvoering worden door gegeven aan de aangeroepen pijp lijn| Een JSON-object waarmee parameter namen worden toegewezen aan argument waarden. |
+|**metrische gegevens**| Parameter waarden van de pijplijn uitvoering worden door gegeven aan de aangeroepen pijp lijn| Een JSON-object waarmee parameter namen worden toegewezen aan argument waarden. |
 | **hout**| Complex type| De naam van een diagnostische logboek categorie voor een resource type. Als u de lijst met diagnostische logboek categorieën voor een resource wilt ophalen, voert u de bewerking Diagnostische instellingen ophalen uit. |
 | **category**| Tekenreeks| Een matrix met logboek categorieën en het Bewaar beleid. |
 | **timeGrain** | Tekenreeks | De granulatie van metrische gegevens, die worden vastgelegd in de ISO 8601-duur notatie. De waarde van de eigenschap moet `PT1M` een minuut zijn. |
-| **ingeschakeld**| Boolean-waarde | Hiermee wordt aangegeven of de verzameling van de categorie metrisch of logboek is ingeschakeld voor deze resource. |
+| **ingeschakeld**| Boolean | Hiermee wordt aangegeven of de verzameling van de categorie metrisch of logboek is ingeschakeld voor deze resource. |
 | **retentionPolicy**| Complex type| Hierin wordt het Bewaar beleid voor een metrische of logboek categorie beschreven. Deze eigenschap wordt alleen gebruikt voor opslag accounts. |
 |**resterende**| Int| Het aantal dagen dat de metrische gegevens of logboeken moeten worden bewaard. Als de waarde van de eigenschap 0 is, worden de logboeken permanent bewaard. Deze eigenschap wordt alleen gebruikt voor opslag accounts. |
 

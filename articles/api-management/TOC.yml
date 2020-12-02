@@ -80,6 +80,8 @@
       href: observability.md
     - name: CI/CD met ARM-sjablonen
       href: devops-api-development-templates.md
+    - name: Voorlopig verwijderen
+      href: soft-delete.md
 - name: Instructiegidsen
   items:
     - name: API's definiëren

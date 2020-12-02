@@ -10,12 +10,12 @@ ms.date: 11/03/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: 5f772bd996b126a4cd7182a2ce088c2d3edc8e7d
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 683f0e070ad77add62ed76eabd70b42ba15f012e
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93312017"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498129"
 ---
 # <a name="enforce-a-minimum-required-version-of-transport-layer-security-tls-for-requests-to-a-storage-account"></a>Een mini maal vereiste versie van Transport Layer Security (TLS) afdwingen voor aanvragen van een opslag account
 
@@ -35,7 +35,7 @@ Wanneer u een minimum versie van TLS afdwingt voor uw opslag account, is het ris
 
 Als u aanvragen wilt registreren voor uw Azure Storage-account en de TLS-versie wilt bepalen die wordt gebruikt door de client, kunt u Azure Storage logboek registratie gebruiken in Azure Monitor (preview). Zie [Azure Storage bewaken](../blobs/monitor-blob-storage.md)voor meer informatie.
 
-Azure Storage logboek registratie in Azure Monitor ondersteunt het gebruik van logboek query's voor het analyseren van logboek gegevens. Als u een query wilt uitvoeren op Logboeken, kunt u een Azure Log Analytics-werk ruimte gebruiken. Zie [zelf studie: aan de slag met log Analytics query's](../../azure-monitor/log-query/get-started-portal.md)voor meer informatie over logboek query's.
+Azure Storage logboek registratie in Azure Monitor ondersteunt het gebruik van logboek query's voor het analyseren van logboek gegevens. Als u een query wilt uitvoeren op Logboeken, kunt u een Azure Log Analytics-werk ruimte gebruiken. Zie [zelf studie: aan de slag met log Analytics query's](../../azure-monitor/log-query/log-analytics-tutorial.md)voor meer informatie over logboek query's.
 
 Als u Azure Storage gegevens wilt registreren met Azure Monitor en deze wilt analyseren met Azure Log Analytics, moet u eerst een diagnostische instelling maken die aangeeft welke typen aanvragen en voor welke opslag Services u gegevens wilt registreren. Voer de volgende stappen uit om een diagnostische instelling te maken in de Azure Portal:
 
@@ -44,7 +44,7 @@ Als u Azure Storage gegevens wilt registreren met Azure Monitor en deze wilt ana
 1. Ga in Azure Portal naar uw opslagaccount.
 1. Selecteer in de sectie controle de optie **Diagnostische instellingen (preview)**.
 1. Selecteer de Azure Storage-service waarvoor u aanvragen wilt registreren. Kies bijvoorbeeld **BLOB** om aanvragen te registreren bij Blob Storage.
-1. Selecteer **Diagnostische instelling toevoegen**.
+1. Selecteer **Diagnostische instellingen toevoegen**.
 1. Geef een naam op voor de diagnostische instelling.
 1. Kies onder **categorie Details** in de sectie **logboek** welke typen aanvragen moeten worden geregistreerd. U kunt aanvragen voor lezen, schrijven en verwijderen vastleggen in een logboek. Als u bijvoorbeeld **StorageRead** en **StorageWrite** kiest, worden de lees-en schrijf aanvragen geregistreerd voor de geselecteerde service.
 1. Selecteer onder **doel gegevens** **verzenden naar log Analytics**. Selecteer uw abonnement en de Log Analytics werk ruimte die u eerder hebt gemaakt, zoals wordt weer gegeven in de volgende afbeelding.
@@ -135,7 +135,7 @@ Set-AzStorageAccount -ResourceGroupName $rgName `
 (Get-AzStorageAccount -ResourceGroupName $rgName -Name $accountName).MinimumTlsVersion
 ```
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Als u de minimale TLS-versie wilt configureren voor een opslag account met Azure CLI, installeert u Azure CLI versie 2.9.0 of hoger. Zie [De Azure CLI installeren](/cli/azure/install-azure-cli) voor meer informatie. Configureer vervolgens de eigenschap **minimumTlsVersion** voor een nieuw of bestaand opslag account. Geldige waarden voor **minimumTlsVersion** zijn `TLS1_0` , `TLS1_1` en `TLS1_2` .
 
@@ -173,7 +173,7 @@ Als u de minimum versie TLS wilt configureren voor een opslag account met een sj
 
 1. Kies in het Azure Portal **een resource maken**.
 1. Typ in **de Marketplace zoeken de** **sjabloon implementatie** en druk vervolgens op **Enter**.
-1. Kies **Sjabloonimlementatie (implementeren met aangepaste sjablonen) (preview)** , kies **maken** en kies vervolgens **uw eigen sjabloon bouwen in de editor**.
+1. Kies **Sjabloonimlementatie (implementeren met aangepaste sjablonen) (preview)**, kies **maken** en kies vervolgens **uw eigen sjabloon bouwen in de editor**.
 1. Plak in de sjabloon editor in de volgende JSON om een nieuw account te maken en stel de minimale TLS-versie in op TLS 1,2. Vergeet niet om de tijdelijke aanduidingen tussen punt haken te vervangen door uw eigen waarden.
 
     ```json

@@ -2,13 +2,13 @@
 title: Overzicht van sjablonen
 description: Beschrijft de voor delen van het gebruik van Azure Resource Manager sjablonen (ARM-sjablonen) voor de implementatie van resources.
 ms.topic: conceptual
-ms.date: 06/22/2020
-ms.openlocfilehash: e25404fc74456f99a4d41c25786b34b6e1f3edda
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.date: 12/01/2020
+ms.openlocfilehash: da091d09f6d242d4b98903a8dcd76fe305e578b8
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96342325"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96497993"
 ---
 # <a name="what-are-arm-templates"></a>Wat zijn ARM-sjablonen?
 
@@ -80,13 +80,13 @@ Wanneer u een sjabloon implementeert, zet Resource Manager de sjabloon om in RES
 "resources": [
   {
     "type": "Microsoft.Storage/storageAccounts",
-    "apiVersion": "2016-01-01",
+    "apiVersion": "2019-04-01",
     "name": "mystorageaccount",
     "location": "westus",
     "sku": {
       "name": "Standard_LRS"
     },
-    "kind": "Storage",
+    "kind": "StorageV2",
     "properties": {}
   }
 ]
@@ -96,17 +96,19 @@ De definitie wordt geconverteerd naar de volgende REST API-bewerking, die wordt 
 
 ```HTTP
 PUT
-https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/mystorageaccount?api-version=2016-01-01
+https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/mystorageaccount?api-version=2019-04-01
 REQUEST BODY
 {
   "location": "westus",
   "sku": {
     "name": "Standard_LRS"
   },
-  "kind": "Storage",
+  "kind": "StorageV2",
   "properties": {}
 }
 ```
+
+U ziet dat de **apiVersion** die u in de sjabloon voor de resource hebt ingesteld, wordt gebruikt als de API-versie voor de rest-bewerking. U kunt de sjabloon herhaaldelijk implementeren en de betrouw baarheid blijven gebruiken. Als u dezelfde API-versie gebruikt, hoeft u zich geen zorgen te maken over het afbreken van wijzigingen die in latere versies kunnen worden geïntroduceerd.
 
 ## <a name="template-design"></a>Sjabloon ontwerp
 
@@ -114,7 +116,7 @@ U kunt helemaal zelf bepalen hoe u sjablonen en resourcegroepen definieert en ho
 
 ![sjabloon met drie lagen](./media/overview/3-tier-template.png)
 
-Maar u hoeft uw volledige infrastructuur niet te definiëren in één sjabloon. Vaak is het handiger om uw implementatievereisten te verdelen over een aantal gerichte sjablonen met een specifiek doel. U kunt deze sjablonen eenvoudig opnieuw gebruiken voor verschillende oplossingen. Voor het implementeren van een bepaalde oplossing kunt u een basissjabloon gebruiken die is gekoppeld aan alle vereiste sjablonen. In de volgende afbeelding ziet u hoe u een oplossing met drie lagen kunt implementeren via een bovenliggende sjabloon die drie geneste sjablonen bevat.
+Maar u hoeft uw volledige infrastructuur niet te definiëren in één sjabloon. Vaak is het handiger om uw implementatievereisten te verdelen over een aantal gerichte sjablonen met een specifiek doel. U kunt deze sjablonen eenvoudig opnieuw gebruiken voor verschillende oplossingen. Als u een bepaalde oplossing wilt implementeren, maakt u een hoofd sjabloon waarmee alle vereiste sjablonen worden gekoppeld. In de volgende afbeelding ziet u hoe u een oplossing met drie lagen kunt implementeren via een bovenliggende sjabloon die drie geneste sjablonen bevat.
 
 ![sjabloon met geneste lagen](./media/overview/nested-tiers-template.png)
 

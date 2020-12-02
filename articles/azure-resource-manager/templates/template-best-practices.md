@@ -2,13 +2,13 @@
 title: Aanbevolen procedures voor sjablonen
 description: Hierin worden aanbevolen benaderingen beschreven voor het ontwerpen van Azure Resource Manager sjablonen. Biedt suggesties om veelvoorkomende problemen te voor komen bij het gebruik van sjablonen.
 ms.topic: conceptual
-ms.date: 07/10/2020
-ms.openlocfilehash: 1121c66e0bcd7de39afd5bea85866fd9ad007ce4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/01/2020
+ms.openlocfilehash: c62bde8fc8cfc79330d13b7b2ff4f778dadf1339
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87809252"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96497976"
 ---
 # <a name="arm-template-best-practices"></a>Aanbevolen procedures voor ARM-sjablonen
 
@@ -87,11 +87,9 @@ De informatie in deze sectie kan nuttig zijn wanneer u met [para meters](templat
    },
    ```
 
-* Gebruik geen para meter voor de API-versie voor een resource type. De resource-eigenschappen en-waarden kunnen variëren per versie nummer. IntelliSense in een code-editor kan het juiste schema niet bepalen wanneer de API-versie is ingesteld op een para meter. In plaats daarvan wordt de API-versie in de sjabloon vastgelegd.
-
 * Gebruik `allowedValues` spaarzaam. Gebruik deze alleen wanneer u moet controleren of sommige waarden niet zijn opgenomen in de toegestane opties. Als u `allowedValues` te breed gebruikt, kunt u geldige implementaties blok keren door de lijst niet up-to-date te houden.
 
-* Wanneer een parameter naam in uw sjabloon overeenkomt met een para meter in de Power shell-implementatie opdracht, wordt deze naam conflicten opgelost door de achtervoegsel **FromTemplate** toe te voegen aan de sjabloon parameter. Als u bijvoorbeeld een para meter met de naam **ResourceGroupName** in uw sjabloon opneemt, wordt er een conflict veroorzaakt met de para meter **ResourceGroupName** in de cmdlet [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) . Tijdens de implementatie wordt u gevraagd om een waarde voor **ResourceGroupNameFromTemplate**op te geven.
+* Wanneer een parameter naam in uw sjabloon overeenkomt met een para meter in de Power shell-implementatie opdracht, wordt deze naam conflicten opgelost door de achtervoegsel **FromTemplate** toe te voegen aan de sjabloon parameter. Als u bijvoorbeeld een para meter met de naam **ResourceGroupName** in uw sjabloon opneemt, wordt er een conflict veroorzaakt met de para meter **ResourceGroupName** in de cmdlet [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) . Tijdens de implementatie wordt u gevraagd om een waarde voor **ResourceGroupNameFromTemplate** op te geven.
 
 ### <a name="security-recommendations-for-parameters"></a>Beveiligings aanbevelingen voor para meters
 
@@ -146,8 +144,6 @@ De volgende informatie kan nuttig zijn wanneer u met [variabelen](template-varia
 
 * Gebruik variabelen voor waarden die u maakt op basis van een complexe schikking van sjabloon functies. De sjabloon is gemakkelijker te lezen wanneer de complexe expressie alleen in variabelen wordt weer gegeven.
 
-* Gebruik geen variabelen voor `apiVersion` op een resource. De API-versie bepaalt het schema van de resource. Vaak kunt u de versie niet wijzigen zonder de eigenschappen van de resource te wijzigen.
-
 * U kunt de functie [Reference](template-functions-resource.md#reference) niet gebruiken in de sectie **Varia bles** van de sjabloon. De **verwijzings** functie heeft zijn waarde afgeleid van de runtime status van de resource. Variabelen worden echter opgelost tijdens het eerst parseren van de sjabloon. Bouw waarden die de **verwijzings** functie rechtstreeks nodig hebben in het gedeelte **resources** of **uitvoer** van de sjabloon.
 
 * Variabelen voor resource namen bevatten die uniek moeten zijn.
@@ -155,6 +151,16 @@ De volgende informatie kan nuttig zijn wanneer u met [variabelen](template-varia
 * Gebruik een [copy-lus in variabelen](copy-variables.md) om een herhaald patroon van JSON-objecten te maken.
 
 * Ongebruikte variabelen verwijderen.
+
+## <a name="api-version"></a>API-versie
+
+Stel de `apiVersion` eigenschap in op een in code vastgelegde API-versie voor het bron type. Wanneer u een nieuwe sjabloon maakt, raden we u aan om de nieuwste API-versie voor een resource type te gebruiken. Zie [Naslag informatie over sjablonen](/azure/templates/)om beschik bare waarden te bepalen.
+
+Als uw sjabloon werkt zoals verwacht, kunt u het beste dezelfde API-versie gebruiken. Als u dezelfde API-versie gebruikt, hoeft u zich geen zorgen te maken over het afbreken van wijzigingen die in latere versies kunnen worden geïntroduceerd.
+
+Gebruik geen para meter voor de API-versie. De resource-eigenschappen en-waarden kunnen variëren per API-versie. IntelliSense in een code-editor kan het juiste schema niet bepalen wanneer de API-versie is ingesteld op een para meter. Als u een API-versie doorgeeft die niet overeenkomt met de eigenschappen in uw sjabloon, mislukt de implementatie.
+
+Gebruik geen variabelen voor de API-versie. Gebruik met name niet de [functie providers](template-functions-resource.md#providers) voor het dynamisch ophalen van API-versies tijdens de implementatie. De dynamisch opgehaalde API-versie komt mogelijk niet overeen met de eigenschappen in uw sjabloon.
 
 ## <a name="resource-dependencies"></a>Bronafhankelijkheden
 

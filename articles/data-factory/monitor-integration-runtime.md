@@ -7,15 +7,15 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 08/11/2020
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: anandsub
-ms.openlocfilehash: 3c7765d65b63c9cee83a76a13448506f61aa8472
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 4eb9b0077d1d0591953a40d98a220d7aa0683de7
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637153"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96497942"
 ---
 # <a name="monitor-an-integration-runtime-in-azure-data-factory"></a>Een IR bewaken in Azure Data Factory
 
@@ -72,7 +72,7 @@ Deze sectie bevat beschrijvingen voor eigenschappen die door de Get-AzDataFactor
 
 ### <a name="properties"></a>Eigenschappen
 
-De volgende tabel bevat beschrijvingen van de bewakings eigenschappen voor **elk knoop punt** :
+De volgende tabel bevat beschrijvingen van de bewakings eigenschappen voor **elk knoop punt**:
 
 | Eigenschap | Beschrijving | 
 | -------- | ----------- | 
@@ -82,7 +82,7 @@ De volgende tabel bevat beschrijvingen van de bewakings eigenschappen voor **elk
 | Beschikbaar geheugen | Beschikbaar geheugen op een zelf-hostend Integration runtime-knoop punt. Deze waarde is een bijna realtime moment opname. | 
 | CPU-gebruik | CPU-gebruik van een zelf-hostend Integration runtime-knoop punt. Deze waarde is een bijna realtime moment opname. |
 | Netwerken (in/uit) | Netwerk gebruik van een zelf-hostend Integration runtime-knoop punt. Deze waarde is een bijna realtime moment opname. | 
-| Gelijktijdige taken (uitvoeren/beperken) | **Wordt uitgevoerd** . Aantal taken of taken dat op elk knoop punt wordt uitgevoerd. Deze waarde is een bijna realtime moment opname. <br/><br/>**Limiet** . De limiet is het maximale aantal gelijktijdige taken voor elk knoop punt. Deze waarde wordt gedefinieerd op basis van de grootte van de machine. U kunt de limiet verhogen voor het opschalen van gelijktijdige taak uitvoering in geavanceerde scenario's, wanneer activiteiten een time-out hebben, zelfs wanneer de CPU, het geheugen of het netwerk wordt gebruikt. Deze mogelijkheid is ook beschikbaar met een zelf-hostende Integration runtime met één knoop punt. |
+| Gelijktijdige taken (uitvoeren/beperken) | **Wordt uitgevoerd**. Aantal taken of taken dat op elk knoop punt wordt uitgevoerd. Deze waarde is een bijna realtime moment opname. <br/><br/>**Limiet**. De limiet is het maximale aantal gelijktijdige taken voor elk knoop punt. Deze waarde wordt gedefinieerd op basis van de grootte van de machine. U kunt de limiet verhogen voor het opschalen van gelijktijdige taak uitvoering in geavanceerde scenario's, wanneer activiteiten een time-out hebben, zelfs wanneer de CPU, het geheugen of het netwerk wordt gebruikt. Deze mogelijkheid is ook beschikbaar met een zelf-hostende Integration runtime met één knoop punt. |
 | Rol | Er zijn twee soorten rollen in een zelf-hostende Integration runtime met meerdere knoop punten: dispatcher en worker. Alle knoop punten zijn werk nemers, wat betekent dat ze allemaal kunnen worden gebruikt om taken uit te voeren. Er is slechts één dispatcher-knoop punt, dat wordt gebruikt om taken/taken uit te geven vanuit Cloud Services en deze te verzenden naar verschillende worker-knoop punten. Het dispatcher-knoop punt is ook een worker-knoop punt. |
 
 Sommige instellingen van de eigenschappen maken meer indruk wanneer er twee of meer knoop punten aanwezig zijn in de zelf-hostende Integration runtime (dat wil zeggen, in een scenario voor schalen).
@@ -234,7 +234,7 @@ Selecteer vervolgens de naam van uw Azure-SSIS IR om de pagina controle te opene
 
 #### <a name="status-tile"></a>STATUS tegel
 
-Op de **status** tegel van de pagina Azure-SSIS IR bewaking ziet u de algehele status, bijvoorbeeld **actief** of **gestopt** . Als u de status actief selecteert, **wordt** er een venster weer gegeven met de knop Live **stoppen** om de Azure-SSIS IR te stoppen. Als u de status **stopped** selecteert, wordt er een venster weer gegeven met de knop Live **Start** om uw Azure-SSIS IR te starten. Het pop-upvenster bevat ook de knop **Execute SSIS package** om automatisch een ADF-pijp lijn te genereren met activiteit voor het uitvoeren van SSIS-pakketten die op uw Azure-SSIS IR wordt uitgevoerd (Zie [SSIS-packs uitvoeren als uitvoering van SSIS-pakket activiteiten in ADF-pijp lijnen](./how-to-invoke-ssis-package-ssis-activity.md)) en het tekstvak **resource-id** , van waaruit u uw Azure-SSIS IR resource-id () kunt kopiëren `/subscriptions/YourAzureSubscripton/resourcegroups/YourResourceGroup/providers/Microsoft.DataFactory/factories/YourADF/integrationruntimes/YourAzureSSISIR` . Het achtervoegsel van de Azure-SSIS IR Resource-ID die uw ADF-en Azure-SSIS IR-namen bevat vormt een cluster-ID die kan worden gebruikt voor het aanschaffen van extra Premium/gelicentieerde SSIS-onderdelen van onafhankelijke software leveranciers (Isv's) en deze aan uw Azure-SSIS IR te koppelen (Zie [Premium/gelicentieerde onderdelen op uw Azure-SSIS IR installeren](./how-to-develop-azure-ssis-ir-licensed-components.md)).
+Op de **status** tegel van de pagina Azure-SSIS IR bewaking ziet u de algehele status, bijvoorbeeld **actief** of **gestopt**. Als u de status actief selecteert, **wordt** er een venster weer gegeven met de knop Live **stoppen** om de Azure-SSIS IR te stoppen. Als u de status **stopped** selecteert, wordt er een venster weer gegeven met de knop Live **Start** om uw Azure-SSIS IR te starten. Het pop-upvenster bevat ook de knop **Execute SSIS package** om automatisch een ADF-pijp lijn te genereren met activiteit voor het uitvoeren van SSIS-pakketten die op uw Azure-SSIS IR wordt uitgevoerd (Zie [SSIS-packs uitvoeren als uitvoering van SSIS-pakket activiteiten in ADF-pijp lijnen](./how-to-invoke-ssis-package-ssis-activity.md)) en het tekstvak **resource-id** , van waaruit u uw Azure-SSIS IR resource-id () kunt kopiëren `/subscriptions/YourAzureSubscripton/resourcegroups/YourResourceGroup/providers/Microsoft.DataFactory/factories/YourADF/integrationruntimes/YourAzureSSISIR` . Het achtervoegsel van de Azure-SSIS IR Resource-ID die uw ADF-en Azure-SSIS IR-namen bevat vormt een cluster-ID die kan worden gebruikt voor het aanschaffen van extra Premium/gelicentieerde SSIS-onderdelen van onafhankelijke software leveranciers (Isv's) en deze aan uw Azure-SSIS IR te koppelen (Zie [Premium/gelicentieerde onderdelen op uw Azure-SSIS IR installeren](./how-to-develop-azure-ssis-ir-licensed-components.md)).
 
 ![De tegel Azure-SSIS IR STATUS bewaken](media/monitor-integration-runtime/monitor-azure-ssis-integration-runtime-status.png)
 

@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ad45d5f0e313c06619fa9c998515e434de957ea
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 08c4020fc03f89b2c583a2458c70e18ecbbe0ba1
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997559"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498061"
 ---
 # <a name="redirect-hard-coded-links-for-apps-published-with-azure-ad-application-proxy"></a>In code vastgelegde koppelingen omleiden voor apps die zijn gepubliceerd met Azure AD-toepassingsproxy
 
@@ -86,28 +86,28 @@ Er zijn twee algemene typen interne koppelingen in on-premises toepassingen:
 - **Relatieve interne koppelingen** die verwijzen naar een gedeelde bron in een lokale bestands structuur, zoals `/claims/claims.html` . Deze koppelingen werken automatisch in apps die zijn gepubliceerd via toepassings proxy en blijven werken met of zonder koppelings conversie. 
 - **Hardcoded interne koppelingen** naar andere on-premises apps zoals `http://expenses` of gepubliceerde bestanden zoals `http://expenses/logo.jpg` . De functie voor het vertalen van koppelingen werkt op in code vastgelegde interne koppelingen en wijzigt ze zodat ze verwijzen naar de externe Url's die externe gebruikers nodig hebben om door te gaan.
 
-De volledige lijst met HTML-code tags die toepassings proxy ondersteunt koppelings vertalingen voor zijn onder andere:
-* een
-* audio
-* base
-* knop
-* div
-* Insluiten
-* formulieren
-* kader
-* horen
-* html
-* iframe
-* afbeelding
-* input
-* koppelen
-* formulier
-* metatag
-* object
-* script
-* source
-* bijhouden
-* Video
+De volledige lijst met kenmerken in HTML-code tags die toepassings proxy ondersteunt koppelings vertalingen voor zijn onder andere:
+* a (HREF)
+* Audio (SRC)
+* basis (HREF)
+* knop (formaction)
+* div (Data-background, Style, data-src)
+* insluiten (SRC)
+* formulier (actie)
+* frame (SRC)
+* Head (profiel)
+* HTML (manifest)
+* iframe (longdesc, src)
+* img (longdesc, src)
+* invoer (formaction, src, value)
+* koppeling (HREF)
+* menu item (pictogram)
+* Meta (inhoud)
+* object (archief, gegevens, code basis)
+* script (SRC)
+* Bron (SRC)
+* bijhouden (SRC)
+* Video (src, poster)
 
 Daarnaast wordt het URL-kenmerk ook omgezet in CSS.
 

@@ -4,16 +4,16 @@ description: Hierin wordt beschreven hoe u een Azure Analysis Services resource 
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: how-to
-ms.date: 06/09/2020
+ms.date: 12/01/2020
 ms.author: owend
 ms.reviewer: minewiskan
 ms.custom: references_regions
-ms.openlocfilehash: 1f7ecf960ae94fae4d829e73daf051b9062e478d
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 049ff6d14c3967481eb73037814082fa261154e3
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92018191"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96497925"
 ---
 # <a name="move-analysis-services-to-a-different-region"></a>Analysis Services verplaatsen naar een andere regio
 
@@ -71,9 +71,9 @@ De sjabloon bevat configuratie-eigenschappen van de bron server.
 
 Een sjabloon exporteren via de Azure-portal:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
-2. Selecteer **alle resources**en selecteer vervolgens uw Analysis Services-server.
+2. Selecteer **alle resources** en selecteer vervolgens uw Analysis Services-server.
 
 3. Selecteer > **instellingen**  >  **sjabloon exporteren**.
 
@@ -88,7 +88,7 @@ Een sjabloon exporteren via de Azure-portal:
 
 Een sjabloon exporteren met behulp van Power shell:
 
-1. Meld u aan bij uw Azure-abonnement met de opdracht [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-2.5.0) en volg de instructies op het scherm:
+1. Meld u aan bij uw Azure-abonnement met de opdracht [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) en volg de instructies op het scherm:
 
    ```azurepowershell-interactive
    Connect-AzAccount
@@ -123,7 +123,7 @@ Een Shared Access Signature ophalen met behulp van de portal:
 
 1. Selecteer in de portal het opslag account dat wordt gebruikt om een back-up te maken van uw server database.
 
-2. Selecteer **Storage Explorer**en vouw vervolgens **BLOB-containers**uit. 
+2. Selecteer **Storage Explorer** en vouw vervolgens **BLOB-containers** uit. 
 
 3. Klik met de rechter muisknop op uw opslag container en selecteer vervolgens **Shared Access Signature ophalen**.
 
@@ -131,7 +131,7 @@ Een Shared Access Signature ophalen met behulp van de portal:
 
 4. Selecteer in **Shared Access Signature** **maken**. Standaard verloopt de SAS over 24 uur.
 
-5. Kopieer de **URI**en sla deze op. 
+5. Kopieer de **URI** en sla deze op. 
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
@@ -177,7 +177,7 @@ De sjabloon wijzigen:
 
 #### <a name="regions"></a>Regio's
 
-Zie [Azure-locaties](https://azure.microsoft.com/global-infrastructure/locations/)voor meer informatie over Azure-regio's. Als u regio's wilt ophalen met behulp van Power shell, voert u de opdracht [Get-AzLocation](/powershell/module/az.resources/get-azlocation?view=azps-1.8.0) uit.
+Zie [Azure-locaties](https://azure.microsoft.com/global-infrastructure/locations/)voor meer informatie over Azure-regio's. Als u regio's wilt ophalen met behulp van Power shell, voert u de opdracht [Get-AzLocation](/powershell/module/az.resources/get-azlocation) uit.
 
 ```azurepowershell-interactive
    Get-AzLocation | format-table 
@@ -191,7 +191,7 @@ Als u een nieuwe server bron in een andere regio wilt implementeren, gebruikt u 
 
 1. Selecteer in de portal **een resource maken**.
 
-2. Typ in **de Marketplace zoeken de** **sjabloon implementatie**en druk vervolgens op **Enter**.
+2. Typ in **de Marketplace zoeken de** **sjabloon implementatie** en druk vervolgens op **Enter**.
 
 3. Selecteer **Sjabloonimlementatie**.
 
@@ -199,7 +199,7 @@ Als u een nieuwe server bron in een andere regio wilt implementeren, gebruikt u 
 
 5. Selecteer **Bouw uw eigen sjabloon in de editor**.
 
-6. Selecteer **bestand laden**en volg de instructies voor het laden van de **template.jsvoor** het bestand dat u hebt geëxporteerd en gewijzigd.
+6. Selecteer **bestand laden** en volg de instructies voor het laden van de **template.jsvoor** het bestand dat u hebt geëxporteerd en gewijzigd.
 
 7. Controleer of in de sjabloon editor de juiste eigenschappen voor de nieuwe doel server worden weer gegeven.
 
@@ -209,7 +209,7 @@ Als u een nieuwe server bron in een andere regio wilt implementeren, gebruikt u 
 
     - **Abonnement**: selecteer het Azure-abonnement.
     
-    - **Resource groep**: Selecteer **nieuwe maken**en voer vervolgens de naam van een resource groep in. U kunt een bestaande resource groep selecteren, die er nog geen Analysis Services server met dezelfde naam bevat.
+    - **Resource groep**: Selecteer **nieuwe maken** en voer vervolgens de naam van een resource groep in. U kunt een bestaande resource groep selecteren, die er nog geen Analysis Services server met dezelfde naam bevat.
     
     - **Locatie**: Selecteer de regio die u in de sjabloon hebt opgegeven.
 
@@ -264,7 +264,7 @@ Optioneel: nadat u de model database hebt hersteld, verwerkt u het model en de t
 
 1. Klik in SSMS met de rechter muisknop op de model database > **process-data base**.
 
-2. Vouw **tabellen**uit, klik met de rechter muisknop op een tabel. Selecteer in **proces tabel (len)** alle tabellen en selecteer vervolgens **OK**.
+2. Vouw **tabellen** uit, klik met de rechter muisknop op een tabel. Selecteer in **proces tabel (len)** alle tabellen en selecteer vervolgens **OK**.
 
 ## <a name="verify"></a>Verifiëren
 
@@ -278,7 +278,7 @@ Optioneel: nadat u de model database hebt hersteld, verwerkt u het model en de t
 
 Optioneel: [ALM Toolkit](http://alm-toolkit.com/) is een *open source* -hulp programma voor het vergelijken en beheren van Power BI gegevens sets *en* Analysis Services tabellaire model databases. Gebruik de Toolkit om verbinding te maken met zowel de bron-als de doel server database en vergelijk. Als uw database migratie is voltooid, worden model objecten dezelfde definitie. 
 
-:::image type="content" source="media/move-between-regions/alm-toolkit.png" alt-text="SAS ophalen":::
+:::image type="content" source="media/move-between-regions/alm-toolkit.png" alt-text="ALM Toolkit":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -288,7 +288,7 @@ Nadat u hebt gecontroleerd of de client toepassingen verbinding kunnen maken met
 
 De bron server verwijderen uit de portal:
 
-Selecteer **verwijderen**op de pagina **overzicht** van de bron server.
+Selecteer **verwijderen** op de pagina **overzicht** van de bron server.
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 

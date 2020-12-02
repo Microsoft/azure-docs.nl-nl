@@ -6,24 +6,23 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 09/16/2020
-ms.openlocfilehash: d261640dfdb59b2b06cfe3066fca26640a0bed54
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: a68501bd1189993b4dd0c2acdecaa7434fa51dcc
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94874641"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96488031"
 ---
 # <a name="azure-monitor-logs-dedicated-clusters"></a>Azure Monitor logboeken toegewezen clusters
 
-Azure Monitor logboeken toegewezen clusters zijn een implementatie optie die beschikbaar is voor het verbeteren van klanten met een hoog volume. Klanten die meer dan 4 TB gegevens per dag opnemen, zullen toegewezen clusters gebruiken. Klanten met toegewezen clusters kunnen de werk ruimten kiezen die worden gehost op deze clusters.
+Azure Monitor logboeken toegewezen clusters zijn een implementatie optie waarmee u de mogelijkheid biedt om klanten van Azure Monitor-logboeken te kunnen ervaren. Klanten met toegewezen clusters kunnen de werk ruimten kiezen die worden gehost op deze clusters.
 
-Met uitzonde ring van de ondersteuning voor hoog volume zijn er andere voor delen van het gebruik van speciale clusters:
+De mogelijkheden waarvoor speciale clusters zijn vereist zijn:
 
-- **Frequentie limiet** : een klant kan alleen hogere [opname frequentie limieten](../service-limits.md#data-ingestion-volume-rate) hebben op een toegewezen cluster.
-- **Functies** : bepaalde bedrijfs functies zijn alleen beschikbaar voor speciale clusters, met name door de klant beheerde sleutels (CMK) en lockbox-ondersteuning. 
-- **Consistentie** : klanten hebben hun eigen toegewezen resources en er is geen invloed op de andere klanten die worden uitgevoerd op dezelfde gedeelde infra structuur.
-- **Kosten efficiëntie** : het is mogelijk rendabeler om een toegewezen cluster te gebruiken, omdat de toegewezen capaciteits reserverings lagen rekening houden met alle cluster opname en van toepassing zijn op alle werk ruimten, zelfs als deze klein zijn en niet in aanmerking komen voor de korting op capaciteits reservering.
-- Query's in **meerdere werk ruimten** worden sneller uitgevoerd als alle werk ruimten zich op hetzelfde cluster bevinden.
+- Door de **[klant beheerde sleutels](../platform/customer-managed-keys.md)** : de cluster gegevens versleutelen met behulp van sleutels die worden verstrekt en beheerd door de klant.
+- **[Lockbox](../platform/customer-managed-keys.md#customer-lockbox-preview)** : klanten kunnen micro soft support engineers toegangs aanvragen voor gegevens beheren.
+- **[Dubbele versleuteling](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption)** beschermt tegen een scenario waarbij een van de versleutelings algoritmen of-sleutels mogelijk is aangetast. In dit geval blijft de extra laag versleuteling uw gegevens beveiligen.
+- **[Meerdere werk ruimten](../log-query/cross-workspace-query.md)** : als een klant meer dan één werk ruimte gebruikt voor productie, kan het zinvol zijn om een toegewezen cluster te gebruiken. Query's in meerdere werk ruimten worden sneller uitgevoerd als alle werk ruimten zich op hetzelfde cluster bevinden. Het kan ook rendabeler zijn om toegewezen cluster te gebruiken, omdat de toegewezen capaciteits reserverings lagen rekening houden met alle cluster opname en van toepassing zijn op alle werk ruimten, zelfs als ze klein zijn en niet in aanmerking komen voor de korting voor capaciteits reservering.
 
 Voor toegewezen clusters moeten klanten een capaciteit van ten minste 1 TB gegevens opname per dag door voeren. Migratie naar een toegewezen cluster is eenvoudig. Er is geen gegevens verlies of onderbreking van de service. 
 

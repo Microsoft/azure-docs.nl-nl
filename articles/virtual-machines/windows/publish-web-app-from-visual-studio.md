@@ -10,12 +10,12 @@ ms.workload: azure-vs
 ms.topic: how-to
 ms.date: 11/03/2017
 ms.author: ghogen
-ms.openlocfilehash: bdc03e8c136606ab7768705b0c8dbcc97782966f
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 7cf2474c9ca005d85cea28f2b8fa1e23836b191f
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96008885"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96487555"
 ---
 # <a name="publish-an-aspnet-web-app-to-an-azure-vm-from-visual-studio"></a>Een ASP.NET-Web-app publiceren naar een Azure VM vanuit Visual Studio
 
@@ -26,7 +26,7 @@ Als u Visual Studio wilt gebruiken om een ASP.NET-project te publiceren op een v
 
 - De machine moet worden geconfigureerd voor het uitvoeren van een ASP.NET-webtoepassing en moet webdeploy hebben geïnstalleerd. Zie [een ASP.net-VM maken met Webdeploy](https://github.com/aspnet/Tooling/blob/AspNetVMs/docs/create-asp-net-vm-with-webdeploy.md)voor meer informatie.
 
-- Voor de virtuele machine moet een DNS-naam zijn geconfigureerd. Zie [een Fully Qualified Domain name maken in de Azure portal voor een Windows-VM](portal-create-fqdn.md)voor meer informatie.
+- Voor de virtuele machine moet een DNS-naam zijn geconfigureerd. Zie [een Fully Qualified Domain name maken in de Azure portal voor een Windows-VM](../create-fqdn.md)voor meer informatie.
 
 ## <a name="publish-your-aspnet-web-app-to-the-azure-vm-using-visual-studio"></a>Uw ASP.NET-Web-app publiceren naar de Azure-VM met behulp van Visual Studio
 In de volgende sectie wordt beschreven hoe u een bestaande ASP.NET-webtoepassing publiceert naar een virtuele machine van Azure.

@@ -7,61 +7,61 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: ae0930e0845e8e8bd6dc4571dc3e8e27491a7be6
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: e4da0b288bca2517e4e0f58569215709a5f71a5e
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94408789"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96487759"
 ---
 # <a name="security-control-v2-governance-and-strategy"></a>Beveiligings controle v2: governance en strategie
 
 Governance en strategie biedt richt lijnen voor het garanderen van een samenhangende beveiligings strategie en een gedocumenteerde governance aanpak om beveiligings verzekeringen te hand haven, inclusief het instellen van rollen en verantwoordelijkheden voor de verschillende Cloud beveiligings functies, uniforme technische strategie en ondersteunings beleid en-standaarden.
 
-## <a name="gs-1-define-asset-management-and-data-protection-strategy"></a>GS-1: de strategie voor Asset Management en gegevens bescherming definiëren
+## <a name="gs-1-define-asset-management-and-data-protection-strategy"></a>GS-1: Strategie voor asset-management en gegevensbescherming definiëren
 
 | Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
 |--|--|--|--|
 | GS-1 | 2, 13 | SC, AC |
 
-Zorg ervoor dat u een duidelijke strategie documenteert en communiceert voor continue bewaking en bescherming van systemen en gegevens. Volg prioriteiten voor detectie, beoordeling, beveiliging en bewaking van bedrijfs kritieke gegevens en systemen. 
+Zorg ervoor dat u een duidelijke strategie documenteert en communiceert voor continue bewaking en bescherming van systemen en gegevens. Ken hogere prioriteiten toe aan de detectie, beoordeling, beveiliging en bewaking van bedrijfskritieke gegevens en systemen. 
 
-Deze strategie moet gedocumenteerde richt lijnen, beleid en standaarden bevatten voor de volgende elementen: 
+Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten voor de volgende elementen: 
 
-- Standaard gegevens classificatie in overeenstemming met de zakelijke Risico's
+- Standaard voor gegevensclassificatie in overeenstemming met de bedrijfsrisico's
 
-- Zicht baarheid van beveiligings organisaties in Risico's en activa-inventaris 
+- Inzicht van beveiligingsorganisaties in risico's en asset-inventaris 
 
-- Goed keuring van beveiligings organisaties van Azure-Services voor gebruik 
+- Goedkeuring door beveiligingsorganisaties van Azure-services voor gebruik 
 
-- Beveiliging van assets via hun levens cyclus
+- Beveiliging van assets op grond van hun levenscyclus
 
-- Vereiste strategie voor toegangs beheer in overeenstemming met organisatie gegevens classificatie
+- Vereiste strategie voor toegangsbeheer in overeenstemming met gegevensclassificatie van organisatie
 
-- Gebruik van functies voor gegevens bescherming van Azure native en derden
+- Gebruik van voorzieningen voor gegevensbescherming van Azure en derden
 
-- Gegevens versleutelings vereisten voor in-transit-en rest-use cases
+- Vereisten voor gegevensversleutelings van gegevens in-transit en at-rest
 
-- Juiste cryptografische normen
+- Juiste cryptografische standaarden
 
-Zie voor meer informatie de volgende verwijzingen:
-- [Aanbeveling van Azure-beveiligings architectuur-opslag, gegevens en versleuteling](/azure/architecture/framework/security/storage-data-encryption?amp;bc=%252fsecurity%252fcompass%252fbreadcrumb%252ftoc.json&toc=%252fsecurity%252fcompass%252ftoc.json)
+Raadpleeg de volgende bronnen voor meer informatie:
+- [Azure Security Architecture Recommendation - Storage, data, and encryption](/azure/architecture/framework/security/storage-data-encryption?amp;bc=%2fsecurity%2fcompass%2fbreadcrumb%2ftoc.json&toc=%2fsecurity%2fcompass%2ftoc.json) (Aanbeveling voor Azure-beveiligingsarchitectuur: opslag, gegevens en versleuteling)
 
-- [Basis beginselen van Azure-beveiliging-Azure-gegevens beveiliging,-versleuteling en-opslag](../fundamentals/encryption-overview.md)
+- [Azure Security Fundamentals - Azure Data security, encryption, and storage](../fundamentals/encryption-overview.md) (Basisprincipes van Azure-beveiliging: Azure-gegevensbeveiliging, -versleuteling en -opslag)
 
-- [Cloud-acceptatie Framework-aanbevolen procedures voor Azure Data Security en versleuteling](../fundamentals/data-encryption-best-practices.md?amp;bc=%252fazure%252fcloud-adoption-framework%252f_bread%252ftoc.json&toc=%252fazure%252fcloud-adoption-framework%252ftoc.json)
+- [Cloud Adoption Framework - Azure data security and encryption best practices](../fundamentals/data-encryption-best-practices.md?amp;bc=%2fazure%2fcloud-adoption-framework%2f_bread%2ftoc.json&toc=%2fazure%2fcloud-adoption-framework%2ftoc.json) (Cloud Adoption Framework: best practices voor Azure-gegevensbeveiliging en -versleuteling)
 
-- [Azure Security Bench Mark-Asset Management](security-controls-v2-asset-management.md)
+- [Azure Security Benchmark - Asset management](security-controls-v2-asset-management.md) (Azure Security Benchmark: assetmanagement)
 
-- [Azure Security Bench Mark-gegevens beveiliging](security-controls-v2-data-protection.md)
+- [Azure Security Benchmark - Data Protection](security-controls-v2-data-protection.md) (Azure Security Benchmark: gegevensbeveiliging)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Alle belanghebbenden](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)
 
-## <a name="gs-2-define-enterprise-segmentation-strategy"></a>GS-2: ondernemings segmentatie strategie definiëren
+## <a name="gs-2-define-enterprise-segmentation-strategy"></a>GS-2: Segmentatiestrategie van bedrijf definiëren
 
 | Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
 |--|--|--|--|
@@ -69,59 +69,59 @@ Zie voor meer informatie de volgende verwijzingen:
 
 Stel een bedrijfs strategie in om de toegang tot assets te segmenteren met een combi natie van identiteits-, netwerk-, toepassings-, abonnements-, beheer groep-en andere besturings elementen.
 
-Houd de nood zaak van beveiligings scheiding zorgvuldig bij met de nood zaak om de dagelijkse werking van de systemen in te scha kelen die met elkaar moeten communiceren en toegang hebben tot gegevens.
+Zorg dat u een nauwgezette afweging maakt tussen de noodzaak om de beveiliging van de rest te scheiden en de noodzaak om systemen die met elkaar moeten kunnen communiceren en toegang moeten hebben tot gegevens, in staat te stellen om hun dagelijkse werklast uit te voeren.
 
-Zorg ervoor dat de segmentatie strategie consistent wordt geïmplementeerd in alle controle typen, zoals netwerk beveiliging, identiteits-en toegangs modellen, en toepassings machtigingen/toegangs modellen en besturings elementen voor menselijke processen.
+Zorg ervoor dat de segmentatiestrategie consistent wordt geïmplementeerd voor alle typen besturingselementen, zoals voor netwerkbeveiliging, identiteits- en toegangsmodellen, toepassingsbevoegdheden/toegangsmodellen evenals besturingselementen voor door mensen uitgevoerde processen.
 
-- [Richt lijnen voor segmentatie strategie in azure (video)](/security/compass/microsoft-security-compass-introduction#azure-components-and-reference-model-2151)
+- [Richtlijnen voor segmentatiestrategie in Azure (video)](/security/compass/microsoft-security-compass-introduction#azure-components-and-reference-model-2151)
 
-- [Richt lijnen voor segmentatie strategie in azure (document)](/security/compass/governance#enterprise-segmentation-strategy)
+- [Richtlijnen voor segmentatiestrategie in Azure (document)](/security/compass/governance#enterprise-segmentation-strategy)
 
-- [Netwerk segmentatie uitlijnen met strategie voor bedrijfs segmentatie](/security/compass/network-security-containment#align-network-segmentation-with-enterprise-segmentation-strategy)
+- [Netwerksegmentatie afstemmen op segmentatiestrategie van bedrijf](/security/compass/network-security-containment#align-network-segmentation-with-enterprise-segmentation-strategy)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Alle belanghebbenden](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)
 
-## <a name="gs-3-define-security-posture-management-strategy"></a>GS-3: beveiligings strategie voor postuur-beheer definiëren
+## <a name="gs-3-define-security-posture-management-strategy"></a>GS-3: Strategie voor het beheer van beveiligingspostuur definiëren
 
 | Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
 |--|--|--|--|
 | GS-3 | 20, 3, 5 | RA, CM, SC |
 
-U kunt de Risico's voor uw afzonderlijke assets en de omgeving die ze hosten, voortdurend meten en beperken. Volg prioriteiten voor hoogwaardige assets en zeer belichte aanvallen, zoals gepubliceerde toepassingen, netwerk binnenkomend en uitgevende punten, gebruikers-en beheerders eindpunten, enzovoort.
+U kunt de Risico's voor uw afzonderlijke assets en de omgeving die ze hosten, voortdurend meten en beperken. Ken hogere prioriteiten toe aan hoogwaardige assets en assets die zeer kwetsbaar zijn voor aanvallen, zoals gepubliceerde toepassingen, punten voor binnenkomend en uitgaand netwerkverkeer, gebruikers- en beheerderseindpunten enzovoort.
 
-- [Azure Security Bench Mark-postuur en beveiligings beheer](security-controls-v2-posture-vulnerability-management.md)
+- [Azure Security Benchmark: beveiligingspostuur en beveiligingsproblemen beheren](security-controls-v2-posture-vulnerability-management.md)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Alle belanghebbenden](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)
 
-## <a name="gs-4-align-organization-roles-responsibilities-and-accountabilities"></a>GS-4: organisatie rollen, verantwoordelijkheden en accountabilities uitlijnen
+## <a name="gs-4-align-organization-roles-responsibilities-and-accountabilities"></a>GS-4: Organisatierollen, verantwoordelijkheden en aansprakelijkheden afstemmen
 
 | Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
 |--|--|--|--|
 | GS-4 | N.v.t. | PL, PM |
 
-Zorg ervoor dat u een duidelijke strategie voor rollen en verantwoordelijkheden in uw beveiligings organisatie documenteert en communiceert. Volg prioriteiten voor een duidelijke verantwoordelijkheid voor beveiligings beslissingen, het trainen van iedereen op het gedeelde verantwoordelijkheids model en technische teams op technologie om de cloud te beveiligen.
+Zorg ervoor dat u een duidelijke strategie voor rollen en verantwoordelijkheden in uw beveiligings organisatie documenteert en communiceert. Ken een hoge prioriteiten toe aan het verschaffen van duidelijkheid over wie aansprakelijk is voor beveiligingsbeslissingen. Bied opleidingen aan iedereen over het gedeelde verantwoordelijkheidsmodel en biedt technische teams trainingen over technologie ter beveiliging van de cloud.
 
-- [Best Practice voor Azure-beveiliging 1: personen: teams trainen in Cloud Security traject](/azure/cloud-adoption-framework/security/security-top-10#1-people-educate-teams-about-the-cloud-security-journey)
+- [Best practice voor Azure-beveiliging 1: personen: Teams trainen inzake het cloudbeveiligingstraject](/azure/cloud-adoption-framework/security/security-top-10#1-people-educate-teams-about-the-cloud-security-journey)
 
-- [Aanbevolen beveiligings procedure voor Azure-gebruikers: teams in de Cloud-beveiligings technologie trainen](/azure/cloud-adoption-framework/security/security-top-10#2-people-educate-teams-on-cloud-security-technology)
+- [Best practice voor Azure-beveiliging 2: personen: Teams trainen inzake cloudbeveiligingstechnologie](/azure/cloud-adoption-framework/security/security-top-10#2-people-educate-teams-on-cloud-security-technology)
 
-- [Best Practice voor Azure-beveiliging 3-proces: verantwoordelijkheid toewijzen voor Cloud beveiligings beslissingen](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
+- [Azure Security Best Practice 3 - proces: Aansprakelijkheid toewijzen voor beslissingen over cloudbeveiliging](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Alle belanghebbenden](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)
 
-## <a name="gs-5-define-network-security-strategy"></a>GS-5: netwerk beveiligings strategie definiëren
+## <a name="gs-5-define-network-security-strategy"></a>GS-5: Strategie voor netwerkbeveiliging definiëren
 
 | Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
 |--|--|--|--|
@@ -129,37 +129,37 @@ Zorg ervoor dat u een duidelijke strategie voor rollen en verantwoordelijkheden 
 
 Stel een Azure-netwerk beveiligings benadering in als onderdeel van de algehele strategie voor het toegangs beheer van uw organisatie.  
 
-Deze strategie moet gedocumenteerde richt lijnen, beleid en standaarden bevatten voor de volgende elementen: 
+Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten voor de volgende elementen: 
 
-- Gecentraliseerd netwerk beheer en beveiligings verantwoordelijkheid
+- Gecentraliseerd netwerkbeheer en verantwoordelijkheid voor beveiliging
 
-- Segment model voor virtuele netwerken dat is afgestemd op de strategie voor bedrijfs segmentatie
+- Model voor segmentatie van virtueel netwerk afgestemd op segmentatiestrategie van bedrijf
 
-- Herstel strategie in verschillende scenario's voor bedreigingen en aanvallen
+- Herstelstrategie voor verschillende scenario's met bedreigingen en aanvallen
 
-- Internet-en ingangs-en uitgangs strategie
+- Strategie voor internetrand en inkomend en uitgaand verkeer
 
-- Hybride Cloud en on-premises interconnectiviteit-strategie
+- Strategie voor hybride cloud- en on-premises interconnectiviteit
 
-- Up-to-date netwerk beveiligings artefacten (zoals netwerk diagrammen, referentie netwerk architectuur)
+- Up-to-date netwerkbeveiligingsartefacten (zoals netwerkdiagrammen, architectuur van referentienetwerk)
 
-Zie voor meer informatie de volgende verwijzingen:
+Raadpleeg de volgende bronnen voor meer informatie:
 
-- [Aanbevolen procedures voor Azure-beveiliging 11-architectuur. Eén uniforme beveiligings strategie](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
+- [Azure Security Best Practice 11: architectuur. Eén uniforme beveiligingsstrategie](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
-- [Azure Security Bench Mark-netwerk beveiliging](security-controls-v2-network-security.md)
+- [Azure Security Benchmark: netwerkbeveiliging](security-controls-v2-network-security.md)
 
-- [Overzicht van Azure-netwerk beveiliging](../fundamentals/network-overview.md)
+- [Overzicht van Azure-netwerkbeveiliging](../fundamentals/network-overview.md)
 
-- [Strategie voor bedrijfs netwerk architectuur](/azure/cloud-adoption-framework/ready/enterprise-scale/architecture)
+- [Strategie voor architectuur van bedrijfsnetwerk](/azure/cloud-adoption-framework/ready/enterprise-scale/architecture)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Alle belanghebbenden](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)
 
-## <a name="gs-6-define-identity-and-privileged-access-strategy"></a>GS-6: identiteits-en bevoorrechte toegangs strategie definiëren
+## <a name="gs-6-define-identity-and-privileged-access-strategy"></a>GS-6: Strategie voor het gebruik van identiteiten en uitgebreide toegang definiëren
 
 | Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
 |--|--|--|--|
@@ -167,72 +167,72 @@ Zie voor meer informatie de volgende verwijzingen:
 
 Stel een Azure Identity and privileged Access benaderingen in als onderdeel van de algehele strategie voor beveiligings beheer van uw organisatie.  
 
-Deze strategie moet gedocumenteerde richt lijnen, beleid en standaarden bevatten voor de volgende elementen: 
+Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten voor de volgende elementen: 
 
-- Een gecentraliseerd identiteits-en verificatie systeem en de interconnectiviteit daarvan met andere interne en externe identiteits systemen
+- Een gecentraliseerd identiteits- en verificatiesysteem en bijbehorende interconnectiviteit met andere interne en externe identiteitssystemen
 
-- Sterke authenticatie methoden in verschillende use-cases en-voor waarden
+- Krachtige verificatiemethoden in verschillende gebruiksscenario's en onder verschillende voorwaarden
 
-- Beveiliging van gebruikers met hoge bevoegdheden
+- Bescherming van gebruikers met zeer uitgebreide bevoegdheden
 
-- Bewaking en verwerking van afwijkende gebruikers activiteiten  
+- Bewaking en verwerking van afwijkende gebruikersactiviteiten  
 
-- Beoordelings-en afstemmings proces voor gebruikers-id en-toegang
+- Proces voor het beoordelen en op elkaar afstemmen van de identiteit en toegangsrechten van gebruikers
 
-Zie voor meer informatie de volgende verwijzingen:
+Raadpleeg de volgende bronnen voor meer informatie:
 
-- [Azure Security Bench Mark-Identity Management](security-controls-v2-identity-management.md)
+- [Azure Security Benchmark: Identity management](security-controls-v2-identity-management.md) (Azure Security Benchmark: identiteitsbeheer)
 
-- [Azure Security-benchmark-privileged Access](security-controls-v2-privileged-access.md)
+- [Azure Security Benchmark - Privileged access](security-controls-v2-privileged-access.md) (Azure Security Benchmark: uitgebreide toegang)
 
-- [Aanbevolen procedures voor Azure-beveiliging 11-architectuur. Eén uniforme beveiligings strategie](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
+- [Azure Security Best Practice 11: architectuur. Eén uniforme beveiligingsstrategie](/azure/cloud-adoption-framework/security/security-top-10#11-architecture-establish-a-single-unified-security-strategy)
 
-- [Overzicht van Azure Identity Management-beveiliging](../fundamentals/identity-management-overview.md)
+- [Overzicht van beveiliging met Azure-identiteitsbeheer](../fundamentals/identity-management-overview.md)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Alle belanghebbenden](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)
 
-## <a name="gs-7-define-logging-and-threat-response-strategy"></a>GS-7: vastleggen van de logboek registratie en de reactie op bedreigingen
+## <a name="gs-7-define-logging-and-threat-response-strategy"></a>GS-7: Strategie voor logboekregistratie en respons op bedreigingen definiëren
 
 | Azure-ID | CIS-besturings elementen v 7.1-ID ('s) | NIST SP800-53 R4-ID ('s) |
 |--|--|--|--|
 | GS-7 | 19 | IR, AU, RA, SC |
 
-Stel een strategie voor logboek registratie en reactie op bedreigingen in om bedreigingen snel te detecteren en op te lossen tijdens het voldoen aan nalevings vereisten. Volg prioriteiten om analisten te voorzien van waarschuwingen met hoge kwaliteit en naadloze ervaring, zodat ze zich kunnen concentreren op bedreigingen in plaats van integratie en hand matige stappen. 
+Stel een strategie voor logboek registratie en reactie op bedreigingen in om bedreigingen snel te detecteren en op te lossen tijdens het voldoen aan nalevings vereisten. Stel prioriteiten om analisten te voorzien van waarschuwingen van hoge kwaliteit en naadloze ervaringen, zodat ze zich kunnen concentreren op bedreigingen in plaats van integratie en handmatige stappen. 
 
-Deze strategie moet gedocumenteerde richt lijnen, beleid en standaarden bevatten voor de volgende elementen: 
+Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten voor de volgende elementen: 
 
-- De rol en verantwoordelijkheden van de organisatie voor beveiligings bewerkingen (SecOps) 
+- De rol en verantwoordelijkheden van de personen of groepen die binnen de organisatie beveiligingsactiviteiten (SecOps) uitvoeren 
 
-- Een goed gedefinieerd respons proces voor incidenten dat wordt afgestemd op het NIST of een ander branche raamwerk 
+- Een goed gedefinieerd proces voor het reageren op incidenten dat is afgestemd op het NIST of een ander framework binnen de branche 
 
-- Vastleggen en bewaren in Logboeken voor ondersteuning van detectie van bedreigingen, reacties op incidenten en nalevings behoeften
+- Logboekregistratie en retentie om ondersteuning te bieden voor de detectie van bedreigingen, het reageren op incidenten en het naleven van regelgeving
 
-- Gecentraliseerde zicht baarheid van en correlatie-informatie over bedreigingen, met behulp van SIEM, systeem eigen Azure-mogelijkheden en andere bronnen 
+- Informatie en correlatiegegevens over bedreigingen die centraal beschikbaar zijn via SIEM, systeemeigen Azure-mogelijkheden en andere bronnen 
 
-- Communicatie-en meldings abonnement met uw klanten, leveranciers en open bare partijen
+- Communicatie- en meldingenplan met uw klanten, leveranciers en openbaar belanghebbenden
 
-- Gebruik van Azure native en platforms van derden voor het verwerken van incidenten, zoals logboek registratie en detectie van bedreigingen, forensische, herstel en uitroeiing van aanvallen
+- Gebruik van systeemeigen Azure-platforms en platforms van derden voor het afhandelen van incidenten, zoals logboekregistratie en detectie van bedreigingen, forensische onderzoeken en het oplossen en uitschakelen van aanvallen
 
-- Processen voor het verwerken van incidenten en activiteiten na incidenten, zoals geleerde lessen en bewijs behoud
+- Processen voor het afhandelen van incidenten en activiteiten na incidenten, zoals geleerde lessen en het bewaren van bewijsmateriaal
 
-Zie voor meer informatie de volgende verwijzingen:
-- [Azure Security Bench Mark-logboek registratie en detectie van bedreigingen](security-controls-v2-logging-threat-detection.md)
+Raadpleeg de volgende bronnen voor meer informatie:
+- [Azure Security Benchmark: logboekregistratie en detectie van bedreigingen](security-controls-v2-logging-threat-detection.md)
 
-- [Azure Security Bench Mark-incident respons](security-controls-v2-incident-response.md)
+- [Azure Security Benchmark: respons op incidenten](security-controls-v2-incident-response.md)
 
-- [Aanbevolen procedure voor Azure-beveiliging 4-proces. Reactie processen voor incidenten bijwerken voor Cloud](/azure/cloud-adoption-framework/security/security-top-10#3-process-assign-accountability-for-cloud-security-decisions)
+- [Azure Security Best Practice 4: proces. Processen voor respons op incidenten bijwerken voor de cloud](/azure/cloud-adoption-framework/security/security-top-10#3-process-assign-accountability-for-cloud-security-decisions)
 
-- [Hand leiding Azure-acceptatie raamwerk, logboek registratie en rapportage](/azure/cloud-adoption-framework/decision-guides/logging-and-reporting/)
+- [Handleiding framework voor Azure-acceptatie, logboekregistratie en rapportagebeslissingen](/azure/cloud-adoption-framework/decision-guides/logging-and-reporting/)
 
-- [Schaal, beheer en bewaking van Azure Enter prise](/azure/cloud-adoption-framework/ready/enterprise-scale/management-and-monitoring)
+- [Schaalaanpassing, beheer en bewaking van Azure Enterprise](/azure/cloud-adoption-framework/ready/enterprise-scale/management-and-monitoring)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Alle belanghebbenden](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)
 
@@ -244,7 +244,7 @@ Zie voor meer informatie de volgende verwijzingen:
 
 Stel een Azure-strategie voor back-up en herstel in voor uw organisatie. 
 
-Deze strategie moet gedocumenteerde richt lijnen, beleid en standaarden bevatten voor de volgende elementen: 
+Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten voor de volgende elementen: 
 
 - Definities van de beoogde herstel tijd (RTO) en Recovery Point Objective (RPO) in overeenstemming met uw bedrijfs tolerantie doelstellingen
 
@@ -252,15 +252,15 @@ Deze strategie moet gedocumenteerde richt lijnen, beleid en standaarden bevatten
 
 - Beveiliging van back-ups met behulp van toegangs beheer en gegevens versleuteling
 
-Zie voor meer informatie de volgende verwijzingen:
+Raadpleeg de volgende bronnen voor meer informatie:
 - [Azure Security Bench Mark-back-up en herstel](security-controls-v2-backup-recovery.md)
 
 - [Azure Well-Architecture Framework: back-up en herstel na nood gevallen voor Azure-toepassingen](/azure/architecture/framework/resiliency/backup-and-recovery)
 
 - [Azure-acceptatie Framework-bedrijfs continuïteit en herstel na nood gevallen](/azure/cloud-adoption-framework/ready/enterprise-scale/business-continuity-and-disaster-recovery)
 
-**Verantwoordelijkheid** : klant
+**Verantwoordelijkheid**: Klant
 
-**Beveiligings belanghebbenden van klanten** ( [meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
+**Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
 - [Alle belanghebbenden](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)

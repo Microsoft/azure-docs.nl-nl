@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 11/26/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 05b2747dc21e2aedf16c6ca6e6c31af03b38c81f
-ms.sourcegitcommit: 5e2f5efba1957ba40bd951c3dcad42f4a00734ff
+ms.openlocfilehash: e07876f9e28e7f3245f2524b5ef5da08de085ec1
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96299510"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96486467"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Azure gebruiken om SAP-werkbelasting scenario's te hosten en uit te voeren
 
@@ -80,12 +80,12 @@ In deze sectie vindt u documenten over PowerBI-integratie in SAP-gegevens bronne
 
 ## <a name="change-log"></a>Wijzigingen logboek
 
-- 11/26/2020: [SAP Hana Azure virtual machine-opslag configuraties](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage) en- [Azure Storage typen aanpassen voor SAP-workload](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/planning-guide-storage) om enkele VM-service- [sla's](https://azure.microsoft.com/support/legal/sla/virtual-machines) te wijzigen
-- 11/05/2020: koppeling wijzigen in nieuwe SAP opmerking over HANA ondersteunde bestandssysteem typen in [SAP Hana opslag configuraties van virtuele Azure-machines](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage) 
-- 10/26/2020: enkele tabellen wijzigen voor Azure Premium-opslag configuratie om de ingerichte versus burst-door Voer in [SAP Hana opslag configuraties van virtuele Azure-machines](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage) te verduidelijken
+- 11/26/2020: [SAP Hana Azure virtual machine-opslag configuraties](./hana-vm-operations-storage.md) en- [Azure Storage typen aanpassen voor SAP-workload](./planning-guide-storage.md) om enkele VM-service- [sla's](https://azure.microsoft.com/support/legal/sla/virtual-machines) te wijzigen
+- 11/05/2020: koppeling wijzigen in nieuwe SAP opmerking over HANA ondersteunde bestandssysteem typen in [SAP Hana opslag configuraties van virtuele Azure-machines](./hana-vm-operations-storage.md) 
+- 10/26/2020: enkele tabellen wijzigen voor Azure Premium-opslag configuratie om de ingerichte versus burst-door Voer in [SAP Hana opslag configuraties van virtuele Azure-machines](./hana-vm-operations-storage.md) te verduidelijken
 - 10/22/2020: wijziging in [ha voor SAP NW op Azure-vm's op SLES voor SAP-toepassingen](./high-availability-guide-suse.md), [ha voor SAP NW op Azure vm's op SLES met ANF](./high-availability-guide-suse-netapp-files.md), [ha voor SAP NW op Azure vm's op RHEL voor SAP-toepassingen](./high-availability-guide-rhel.md) en [ha voor SAP NW op Azure vm's op RHEL met ANF](./high-availability-guide-rhel-netapp-files.md) om de aanbeveling voor net.IPv4.tcp_keepalive_time aan te passen  
 - 10/16/2020: wijziging in [ha van IBM DB2 LUW op Azure vm's op SLES met pacemaker](./dbms-guide-ha-ibm.md), [ha voor SAP NW op Azure vm's op RHEL voor SAP-toepassingen](./high-availability-guide-rhel.md), [ha van IBM Db2 LUW op Azure vm's op RHEL](./high-availability-guide-rhel-ibm-db2-luw.md), [ha voor SAP NW op Azure vm's op RHEL multi-sid guide](./high-availability-guide-rhel-multi-sid.md), [ha voor SAP NW](./high-availability-guide-rhel-netapp-files.md)op [Azure](./sap-hana-high-availability-netapp-files-red-hat.md) Vm's op RHEL met ANF, ha [voor SAP NW op Azure vm's op SLES voor SAP-toepassingen,](./high-availability-guide-suse.md)ha [voor SAP NnW op Azure Vm's op SLES multi-sid Guide,](./high-availability-guide-suse-multi-sid.md)ha [voor SAP NW op Azure vm's op SLES met ANF voor SAP-toepassingen,](./high-availability-guide-suse-netapp-files.md)ha [voor NFS op Azure vm's op](./high-availability-guide-suse-nfs.md)SLES, ha van [SAP Hana op Azure vm's op](./sap-hana-high-availability.md)SLES SAP Hana , [Ha van SAP Hana op Azure-vm's op RHEL](./sap-hana-high-availability-rhel.md), [SAP Hana scale-out HSR met pacemaker op virtuele machines van Azure op RHEL](./sap-hana-high-availability-scale-out-hsr-rhel.md), de [Azure-infra structuur voor SAP ASCS/SCS met de wsfc-en gedeelde schijf](./sap-high-availability-infrastructure-wsfc-shared-disk.md), de [multi-sid ha-hand leiding voor SAP ASCS/SCS met wsfc-en Azure Shared Disk](./sap-ascs-ha-multi-sid-wsfc-azure-shared-disk.md) en de [multi-sid ha-hand leiding voor SAP ASCS/SCS met wsfc-en gedeelde schijf](./sap-ascs-ha-multi-sid-wsfc-shared-disk.md) 
-- 10/16/2020: Documentatie toevoegen voor het beheren van opslag momentopnamen van HANA grote instanties in [back-up en herstel van SAP Hana in Hana grote instanties](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-backup-restore)
+- 10/16/2020: Documentatie toevoegen voor het beheren van opslag momentopnamen van HANA grote instanties in [back-up en herstel van SAP Hana in Hana grote instanties](./hana-backup-restore.md)
 - 10/15/2020: release van het SAP BusinessObjects BI-platform op de Azure-documentatie, [SAP BUSINESSOBJECTS BI platform planning and Deployment Guide (Engelstalig) in azure](businessobjects-deployment-guide.md) en [SAP BusinessObjects BI platform Deployment Guide voor Linux op Azure](businessobjects-deployment-guide-linux.md)
 - 10/05/2020: release van [SAP Hana scale-out-HSR met pacemaker op Azure vm's](./sap-hana-high-availability-scale-out-hsr-rhel.md) in de configuratie handleiding voor RHEL
 - 09/30/2020: wijziging in [hoge Beschik baarheid van SAP Hana op virtuele machines van Azure op RHEL](./sap-hana-high-availability-rhel.md), [ha voor SAP Hana scale-up met ANF op RHEL](./sap-hana-high-availability-netapp-files-red-hat.md) en [instellen pacemaker op RHEL in azure](./high-availability-guide-rhel-pacemaker.md) om de instructies voor RHEL 8,1 aan te passen

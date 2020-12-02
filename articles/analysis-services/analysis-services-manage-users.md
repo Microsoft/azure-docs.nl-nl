@@ -4,15 +4,15 @@ description: In dit artikel wordt beschreven hoe Azure Analysis Services Azure A
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 12/01/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: b40be802f30bac8438f10c4ab60e1c196c9f7164
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 551bae56565140da3754e74a23b1cc18087f1171
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94833789"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96487436"
 ---
 # <a name="authentication-and-user-permissions"></a>Verificatie en gebruikersmachtigingen
 
@@ -24,7 +24,7 @@ Azure Analysis Services ondersteunt [Azure AD B2B-samen werking](../active-direc
 
 ## <a name="authentication"></a>Verificatie
 
-Alle client toepassingen en hulpprogram ma's gebruiken een of meer van de Analysis Services- [client bibliotheken](/analysis-services/client-libraries?view=azure-analysis-services-current) (AMO, MSOLAP, ADOMD) om verbinding te maken met een server. 
+Alle client toepassingen en hulpprogram ma's gebruiken een of meer van de Analysis Services- [client bibliotheken](/analysis-services/client-libraries?view=azure-analysis-services-current&preserve-view=true) (AMO, MSOLAP, ADOMD) om verbinding te maken met een server. 
 
 Alle drie client bibliotheken ondersteunen zowel interactieve als Azure AD-stroom en niet-interactieve verificatie methoden. De twee niet-interactieve methoden, Active Directory wacht woord en Active Directory geïntegreerde verificatie methoden kunnen worden gebruikt in toepassingen die gebruikmaken van AMOMD en MSOLAP. Deze twee methoden resulteren nooit in pop-updialoogvensters.
 

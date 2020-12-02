@@ -10,19 +10,19 @@ ms.subservice: bing-local-business
 ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: rosh
-ms.openlocfilehash: 2a9c6b924f564c96c6018fbc395ad226a383280f
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 9791d99598fe3d043c42a37e2f4993edd6c5b3ba
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94364646"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96487130"
 ---
 # <a name="bing-local-business-search-api-v7-reference"></a>Naslag informatie Bing Local Business Search API V7
 
 > [!WARNING]
-> Bing Zoeken-API's van Cognitive Services naar Bing Search-Services verplaatsen. Vanaf **30 oktober 2020** moeten nieuwe exemplaren van Bing Search worden ingericht volgens het proces dat [hier](https://aka.ms/cogsvcs/bingmove)wordt beschreven.
-> Bing Zoeken-API's ingericht met Cognitive Services wordt voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst gebeurt.
-> Zie [Bing Search Services](https://aka.ms/cogsvcs/bingmigration)voor migratie-instructies.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
+> Bing Search-API's die zijn ingericht met Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
+> Raadpleeg [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
 De lokale Business Search-API stuurt een zoek query naar Bing om resultaten te verkrijgen die restaurants, Hotels of andere lokale bedrijven bevatten. Voor plaatsen kan de query de naam van de lokale onderneming of een categorie opgeven (bijvoorbeeld restaurants dichtbij). Entiteitsresultaten zijn personen, plaatsen of dingen. Plaats in deze context zijn bedrijfs entiteiten, Staten, landen/regio's enz.  
 
@@ -55,7 +55,7 @@ Voor de aanvraag moet het HTTPS-protocol worden gebruikt.
 ## <a name="headers"></a>Kopteksten  
 Hieronder ziet u de kopteksten die een aanvraag en antwoord kan bevatten.  
   
-|Koptekst|Beschrijving|  
+|Header|Beschrijving|  
 |------------|-----------------|  
 |Accepteren|Optionele aanvraagheader.<br /><br /> Het standaard media type is Application/JSON. Als u wilt opgeven dat het antwoord [JSON-LD](https://json-ld.org/)gebruikt, stelt u de Accept-header in op Application/LD + JSON.|  
 |<a name="acceptlanguage"></a>Accept-Language|Optionele aanvraagheader.<br /><br /> Een door komma's gescheiden lijst met talen die moet worden gebruikt voor gebruikersinterfacetekenreeksen. De lijst is in aflopende volgorde van voorkeur. Zie [RFC2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html) voor meer informatie, waaronder de verwachte indeling.<br /><br /> Deze header en de queryparameter [setLang](#setlang) sluiten elkaar uit&mdash;geef ze niet beide op.<br /><br /> Als u deze header instelt, moet u ook de queryparameter cc opgeven. Om de markt te bepalen waarvoor resultaten moeten worden geretourneerd, gebruikt Bing de eerste ondersteunde taal die wordt gevonden in de lijst en combineert deze met de parameterwaarde `cc`. Als de lijst geen ondersteunde taal bevat, vindt Bing de dichtstbijzijnde taal en markt die de aanvraag ondersteunen, of gebruikt een geaggregeerde of standaardmarkt voor de resultaten. Zie de header BingAPIs-Market om de markt te bepalen die Bing heeft gebruikt.<br /><br /> Gebruik deze header en de queryparameter `cc` alleen als u meerdere talen opgeeft. Gebruik anders de queryparameters [mkt](#mkt) en [setLang](#setlang).<br /><br /> Een gebruikersinterfacetekenreeks is een tekenreeks die wordt gebruikt als label in een gebruikersinterface. Er zijn maar weinig gebruikersinterfacetekenreeksen in de JSON-antwoordobjecten. De opgegeven taal wordt toegepast op koppelingen naar Bing.com-eigenschappen in de antwoordobjecten.|  
@@ -172,10 +172,10 @@ Hiermee wordt de query context gedefinieerd die door Bing voor de aanvraag wordt
   
 |Element|Beschrijving|Type|  
 |-------------|-----------------|----------|  
-|adultIntent|Een Booleaanse waarde die aangeeft of de opgegeven query volwassen intentie heeft. De waarde is **True** als de query volwassen intentie heeft; anders **False**.|Booleaans|  
+|adultIntent|Een Booleaanse waarde die aangeeft of de opgegeven query volwassen intentie heeft. De waarde is **True** als de query volwassen intentie heeft; anders **False**.|Boolean|  
 |alterationOverrideQuery|De query teken reeks die moet worden gebruikt om Bing te dwingen de oorspronkelijke teken reeks te gebruiken. Als de query reeks bijvoorbeeld *Saling Downwind* is, is de query reeks opheffen *+ Saling Downwind*. Vergeet niet om de query teken reeks te coderen die resulteert in *% 2Bsaling + Downwind*.<br /><br /> Dit veld wordt alleen opgenomen als de oorspronkelijke query reeks een spel fout bevat.|Tekenreeks|  
 |alteredQuery|De query teken reeks die door Bing wordt gebruikt om de query uit te voeren. Bing gebruikt de gewijzigde query reeks als de oorspronkelijke query reeks spel fouten bevat. Als de query reeks bijvoorbeeld is `saling downwind` , wordt de gewijzigde query reeks `sailing downwind` .<br /><br /> Dit veld wordt alleen opgenomen als de oorspronkelijke query reeks een spel fout bevat.|Tekenreeks|  
-|askUserForLocation|Een Booleaanse waarde die aangeeft of Bing de locatie van de gebruiker nodig heeft om nauw keurige resultaten te leveren. Als u de locatie van de gebruiker hebt opgegeven met behulp van de [x-MSEdge-client](#clientip) en [x-Search-locatie](#location) headers, kunt u dit veld negeren.<br /><br /> Voor locatie bewuste query's, zoals ' nu weer geven ' of ' restaurants vlakbij ' waarvoor de locatie van de gebruiker voor nauw keurige resultaten nodig is, wordt dit veld ingesteld op **True**.<br /><br /> Voor locatie bewuste query's die de locatie bevatten (bijvoorbeeld ' Seattle weer '), is dit veld ingesteld op **Onwaar**. Dit veld wordt ook ingesteld op **Onwaar** voor query's die geen locatie ondervinden, zoals ' best verkochte '.|Booleaans|  
+|askUserForLocation|Een Booleaanse waarde die aangeeft of Bing de locatie van de gebruiker nodig heeft om nauw keurige resultaten te leveren. Als u de locatie van de gebruiker hebt opgegeven met behulp van de [x-MSEdge-client](#clientip) en [x-Search-locatie](#location) headers, kunt u dit veld negeren.<br /><br /> Voor locatie bewuste query's, zoals ' nu weer geven ' of ' restaurants vlakbij ' waarvoor de locatie van de gebruiker voor nauw keurige resultaten nodig is, wordt dit veld ingesteld op **True**.<br /><br /> Voor locatie bewuste query's die de locatie bevatten (bijvoorbeeld ' Seattle weer '), is dit veld ingesteld op **Onwaar**. Dit veld wordt ook ingesteld op **Onwaar** voor query's die geen locatie ondervinden, zoals ' best verkochte '.|Boolean|  
 |originalQuery|De query reeks zoals opgegeven in de aanvraag.|Tekenreeks|  
 
 ### <a name="identifiable"></a>Persoonlijke
@@ -218,7 +218,7 @@ Houd er rekening mee dat als de service een DOS-aanval (Denial of service) vermo
 |Naam|Waarde|Type|  
 |----------|-----------|----------|  
 |_type|Type hint, die is ingesteld op SearchResponse.|Tekenreeks|  
-|gelegenheden|Een lijst met entiteiten die relevant zijn voor de zoek query.|JSON-object|  
+|plaatst|Een lijst met entiteiten die relevant zijn voor de zoek query.|JSON-object|  
 |queryContext|Een object dat de query reeks bevat die Bing heeft gebruikt voor de aanvraag.<br /><br /> Dit object bevat de query reeks die is ingevoerd door de gebruiker. Het kan ook een gewijzigde query reeks bevatten die Bing heeft gebruikt voor de query als de query reeks een spel fout bevat.|[QueryContext](#querycontext)|  
 
 

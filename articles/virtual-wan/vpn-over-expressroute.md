@@ -7,12 +7,12 @@ ms.service: virtual-wan
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: cherylmc
-ms.openlocfilehash: 6c6f71277c276bed603989774637bd95999de333
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: b8dde3ed76587e2343edaec8626287853ec6ef9b
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023518"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96487504"
 ---
 # <a name="expressroute-encryption-ipsec-over-expressroute-for-virtual-wan"></a>ExpressRoute-versleuteling: IPsec over ExpressRoute voor virtuele WAN
 
@@ -95,7 +95,7 @@ De site bron is hetzelfde als de niet-ExpressRoute VPN-sites voor een virtueel W
 
    Als BGP is ingeschakeld, wordt dit toegepast op alle verbindingen die zijn gemaakt voor deze site in Azure. Het configureren van BGP op een virtueel WAN is gelijk aan het configureren van BGP op een Azure VPN-gateway. 
    
-   Uw on-premises BGP-peer adres *mag niet* gelijk zijn aan het IP-adres van uw VPN naar het apparaat of de adres ruimte van het virtuele netwerk van de VPN-site. Gebruik een ander IP-adres op het VPN-apparaat voor uw BGP-peer-IP. Het kan een adres zijn dat is toegewezen aan de loopback-interface op het apparaat. Het kan echter *geen* APIPA zijn (169,254.*x*. *x*)-adres. Specificeer dit adres in de bijbehorende lokale netwerk gateway die de locatie vertegenwoordigt. Zie [Over BGP met Azure VPN-gateway](../vpn-gateway/vpn-gateway-bgp-overview.md) voor BGP-vereisten.
+   Uw on-premises BGP-peer adres *mag niet* gelijk zijn aan het IP-adres van uw VPN naar het apparaat of de adres ruimte van het virtuele netwerk van de VPN-site. Gebruik een ander IP-adres op het VPN-apparaat voor uw BGP-peer-IP. Het kan een adres zijn dat is toegewezen aan de loopback-interface op het apparaat. Het kan echter *geen* APIPA zijn (169,254.*x*. *x*)-adres. Geef dit adres op in de bijbehorende VPN-site die de locatie vertegenwoordigt. Zie [Over BGP met Azure VPN-gateway](../vpn-gateway/vpn-gateway-bgp-overview.md) voor BGP-vereisten.
 
 1. Selecteer **volgende: controleren + maken >** om de instellings waarden te controleren en de VPN-site te maken. Als u **hubs** hebt geselecteerd om verbinding te maken, wordt de verbinding tot stand gebracht tussen het on-premises netwerk en de hub VPN-gateway.
 

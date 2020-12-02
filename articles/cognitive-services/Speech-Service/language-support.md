@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/26/2020
 ms.author: trbye
 ms.custom: references_regions
-ms.openlocfilehash: a430333f57b3734e5977db5c104c8f6d37bfd3c4
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 27cf5fef027b1e4786c0ff77f9f673bafea15f98
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94949085"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96487266"
 ---
 # <a name="language-and-voice-support-for-the-speech-service"></a>Taal-en spraak ondersteuning voor de spraak service
 
@@ -26,7 +26,7 @@ Taal ondersteuning is afhankelijk van de functionaliteit van de spraak service. 
 
 Zowel de micro soft Speech SDK als de REST API ondersteunen de volgende talen (land instellingen). 
 
-Om de nauw keurigheid te verbeteren, wordt aanpassing aangeboden voor een subset van de talen via het uploaden van **Audio en Transcripten met menselijke labels** of **gerelateerde tekst: zinnen**. Zie aan de [slag met Custom speech](how-to-custom-speech.md)voor meer informatie over aanpassingen.
+Om de nauw keurigheid te verbeteren, wordt aanpassing aangeboden voor een subset van de talen via het uploaden van **Audio en Transcripten met menselijke labels** of **gerelateerde tekst: zinnen**. Zie aan de [slag met Custom speech](./custom-speech-overview.md)voor meer informatie over aanpassingen.
 
 <!--
 To get the AM and ML bits:
@@ -435,4 +435,4 @@ Raadpleeg de volgende tabel voor ondersteunde talen voor de verschillende Speake
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Een gratis Azure-account maken](https://azure.microsoft.com/free/cognitive-services/)
-* [Zie spraak herkennen in C #](~/articles/cognitive-services/Speech-Service/quickstarts/speech-to-text-from-microphone.md?pivots=programming-language-chsarp)
+* [Zie spraak herkennen in C #](./get-started-speech-to-text.md?pivots=programming-language-chsarp)

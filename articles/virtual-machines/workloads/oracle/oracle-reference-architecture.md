@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 12/13/2019
 ms.author: kegorman
 ms.reviewer: cynthn
-ms.openlocfilehash: 86f3ef8ccac83cdc939cff5572dd81e78137d396
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 83da8cbf3a87570cfb967e0a6c8da3f0f2ed1766
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968720"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96486739"
 ---
 # <a name="reference-architectures-for-oracle-database-enterprise-edition-on-azure"></a>Referentie architecturen voor Oracle Database Enterprise Edition op Azure
 
@@ -207,12 +207,12 @@ Tijdens de eerste aanvraag verbindt de toepassings server met de Shard Director 
 
 Wanneer u uw Oracle-workloads op Azure implementeert, zorgt micro soft voor alle patches op het niveau van de host-OS. Elk gepland onderhoud op besturingssysteem niveau wordt vooraf aan klanten meegedeeld om de klant in staat te stellen voor dit geplande onderhoud. Twee servers van twee verschillende Beschikbaarheidszones worden nooit tegelijkertijd patches uitgevoerd. Zie [de beschik baarheid van virtuele machines beheren](../../manage-availability.md) voor meer informatie over het onderhoud en de reparatie van de VM. 
 
-Het patchen van het besturings systeem van de virtuele machine kan worden geautomatiseerd met behulp van [Azure Automation updatebeheer](../../../automation/update-management/update-mgmt-overview.md). Het patchen en onderhouden van uw Oracle-data base kan worden geautomatiseerd en gepland met behulp van [Azure-pijp lijnen](/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops) of [Azure Automation updatebeheer](../../../automation/update-management/update-mgmt-overview.md) om de downtime te minimaliseren. Zie [continue levering en Blue/groen-implementaties](/azure/devops/learn/what-is-continuous-delivery) om te begrijpen hoe deze kunnen worden gebruikt in de context van uw Oracle-data bases.
+Het patchen van het besturings systeem van de virtuele machine kan worden geautomatiseerd met behulp van [Azure Automation updatebeheer](../../../automation/update-management/overview.md). Het patchen en onderhouden van uw Oracle-data base kan worden geautomatiseerd en gepland met behulp van [Azure-pijp lijnen](/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops) of [Azure Automation updatebeheer](../../../automation/update-management/overview.md) om de downtime te minimaliseren. Zie [continue levering en Blue/groen-implementaties](/azure/devops/learn/what-is-continuous-delivery) om te begrijpen hoe deze kunnen worden gebruikt in de context van uw Oracle-data bases.
 
 ## <a name="architecture-and-design-considerations"></a>Architectuur-en ontwerp overwegingen
 
 - Overweeg het gebruik van hyperthreaded [geheugen geoptimaliseerde virtuele machine](../../sizes-memory.md) met [beperkte kern vcpu's](../../../virtual-machines/constrained-vcpu.md) voor uw Oracle database-VM om de licentie kosten op te slaan en de prestaties te maximaliseren. Gebruik meerdere Premium-of Ultra-schijven (Managed disks) voor prestaties en beschik baarheid.
-- Wanneer u beheerde schijven gebruikt, kan de naam van de schijf/apparaat worden gewijzigd bij het opnieuw opstarten. Het is raadzaam om de UUID van het apparaat te gebruiken in plaats van de naam om ervoor te zorgen dat uw koppelingen behouden blijven tijdens het opnieuw opstarten. Meer informatie vindt u [hier](../../../virtual-machines/linux/configure-raid.md#add-the-new-file-system-to-etcfstab).
+- Wanneer u beheerde schijven gebruikt, kan de naam van de schijf/apparaat worden gewijzigd bij het opnieuw opstarten. Het is raadzaam om de UUID van het apparaat te gebruiken in plaats van de naam om ervoor te zorgen dat uw koppelingen behouden blijven tijdens het opnieuw opstarten. Meer informatie vindt u [hier](/previous-versions/azure/virtual-machines/linux/configure-raid#add-the-new-file-system-to-etcfstab).
 - Gebruik beschikbaarheids zones voor maximale Beschik baarheid in-regio.
 - Overweeg het gebruik van ultra schijven (indien beschikbaar) of Premium-schijven voor uw Oracle-data base.
 - Overweeg een stand-by Oracle-data base in een andere Azure-regio in te stellen met behulp van Oracle Data Guard.

@@ -4,19 +4,19 @@ description: Meer informatie over hoe u een Office-gegevens verbindings bestand 
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/30/2019
+ms.date: 12/01/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 039783fc10fb08523dc81e13b5f6f456fa8d0c97
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 8fa657f3b343cdf49723dc68601bb1c9513ff504
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92014763"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96487334"
 ---
 # <a name="create-an-office-data-connection-file"></a>Een Office-gegevens verbindings bestand maken
 
-In dit artikel wordt beschreven hoe u een Office-gegevens verbindings bestand maakt om verbinding te maken met een Azure Analysis Services-server vanuit Excel 2016-versie nummer 16.0.7369.2117 of eerder of Excel 2013. Er is ook een bijgewerkte [Msolap. 7-provider](/analysis-services/client-libraries?view=azure-analysis-services-current) vereist.
+In dit artikel wordt beschreven hoe u een Office-gegevens verbindings bestand maakt om verbinding te maken met een Azure Analysis Services-server vanuit Excel 2016-versie nummer 16.0.7369.2117 of eerder of Excel 2013. Er is ook een bijgewerkte [Msolap. 7-provider](/analysis-services/client-libraries?view=azure-analysis-services-current&preserve-view=true) vereist.
 
 
 1. Kopieer het onderstaande voorbeeld verbindings bestand en plak het in een tekst editor. 
@@ -29,7 +29,7 @@ In dit artikel wordt beschreven hoe u een Office-gegevens verbindings bestand ma
 
 3. `<odc:CommandText>Model</odc:CommandText>`Wijzig in `Model` de naam van uw model of perspectief. 
 
-4. Sla het bestand op met een `.odc` extensie in de \\ map C:\Users*username*\Documents\My data sources.
+4. Sla het bestand op met een `.odc` extensie in de \\ map C:\Users *username*\Documents\My data sources.
 
 5. Klik met de rechter muisknop op het bestand en klik vervolgens op **openen in Excel**. Of Klik in Excel op het lint met **gegevens** op **bestaande verbindingen**, selecteer het bestand en klik vervolgens op **openen**.
 

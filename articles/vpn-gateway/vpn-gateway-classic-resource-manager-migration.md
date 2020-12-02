@@ -14,17 +14,17 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/06/2020
 ms.author: amsriva
-ms.openlocfilehash: b9154b124f89a8b672c58d5e7bce28c0833e8a8c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c9d7fb8be1894ffa5f8c35e16e1ed3aa0949b3ff
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84988034"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96488201"
 ---
 # <a name="vpn-gateway-classic-to-resource-manager-migration"></a>Migratie van klassieke en Resource Manager VPN Gateway
 VPN-gateways kunnen nu worden gemigreerd van het klassieke naar het Resource Manager-implementatie model. U kunt meer lezen over Azure Resource Manager [functies en voor delen](../azure-resource-manager/management/overview.md). In dit artikel wordt beschreven hoe u migreert van klassieke implementaties naar het nieuwere model op basis van Resource Manager. 
 
-VPN-gateways worden gemigreerd als onderdeel van de VNet-migratie van klassiek naar Resource Manager. Deze migratie vindt één VNet per keer plaats. Er is geen extra vereiste voor de migratie van hulpprogram ma's of vereisten. Migratie stappen zijn identiek aan bestaande VNet-migratie en worden beschreven op de [pagina IaaS resources-migratie](../virtual-machines/windows/migration-classic-resource-manager-ps.md). Er is geen uitval tijd tijdens de migratie en daarom blijven bestaande workloads functioneren zonder verlies van on-premises connectiviteit tijdens de migratie. Het open bare IP-adres dat is gekoppeld aan de VPN-gateway, verandert tijdens het migratie proces niet. Dit betekent dat u de on-premises router niet opnieuw hoeft te configureren nadat de migratie is voltooid.  
+VPN-gateways worden gemigreerd als onderdeel van de VNet-migratie van klassiek naar Resource Manager. Deze migratie vindt één VNet per keer plaats. Er is geen extra vereiste voor de migratie van hulpprogram ma's of vereisten. Migratie stappen zijn identiek aan bestaande VNet-migratie en worden beschreven op de [pagina IaaS resources-migratie](../virtual-machines/migration-classic-resource-manager-ps.md). Er is geen uitval tijd tijdens de migratie en daarom blijven bestaande workloads functioneren zonder verlies van on-premises connectiviteit tijdens de migratie. Het open bare IP-adres dat is gekoppeld aan de VPN-gateway, verandert tijdens het migratie proces niet. Dit betekent dat u de on-premises router niet opnieuw hoeft te configureren nadat de migratie is voltooid.  
 
 Het model in Resource Manager wijkt af van het klassieke model en bestaat uit virtuele netwerk gateways, lokale netwerk gateways en verbindings bronnen. Deze vertegenwoordigen de VPN-gateway zelf, de lokale site die de on-premises adres ruimte en connectiviteit tussen de twee heeft. Zodra de migratie is voltooid, zijn de gateways niet meer beschikbaar in het klassieke model en kunnen alle beheer bewerkingen op virtuele netwerk gateways, lokale netwerk gateways en verbindings objecten worden uitgevoerd met het Resource Manager-model.
 
@@ -66,5 +66,4 @@ Omdat we VNet transformeren naar VNet-connectiviteit zonder dat hiervoor lokale 
 * Stel een expliciete verbinding in van het betreffende VNet naar de lokale netwerk gateway die de on-premises locatie vertegenwoordigt. Hiervoor moet ook de configuratie van de on-premises router worden gewijzigd om de IPsec-tunnel te maken en te configureren.
 
 ## <a name="next-steps"></a>Volgende stappen
-Nadat u hebt geprofiteerd van de ondersteuning van VPN-gateway migratie, gaat u naar door het [platform ondersteunde migratie van IaaS-resources van klassiek naar Resource Manager](../virtual-machines/windows/migration-classic-resource-manager-ps.md) om aan de slag te gaan.
-
+Nadat u hebt geprofiteerd van de ondersteuning van VPN-gateway migratie, gaat u naar door het [platform ondersteunde migratie van IaaS-resources van klassiek naar Resource Manager](../virtual-machines/migration-classic-resource-manager-ps.md) om aan de slag te gaan.

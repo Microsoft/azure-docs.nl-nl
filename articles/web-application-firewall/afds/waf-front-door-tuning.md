@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/11/2020
 ms.author: mohitku
 ms.reviewer: tyao
-ms.openlocfilehash: a24f9e78de34b17977a1876cbefb473cc2610db0
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 4c710792dd7966fad76b33954fdf7c2253cf18f0
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95549947"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96488235"
 ---
 # <a name="tuning-web-application-firewall-waf-for-azure-front-door"></a>Retuning Web Application firewall (WAF) voor Azure front deur
  
@@ -136,7 +136,7 @@ Een voor deel van het gebruik van een uitsluitings lijst is dat alleen de overee
  
 Het is belang rijk om te overwegen dat uitsluitingen een globale instelling zijn. Dit betekent dat de geconfigureerde uitsluiting geldt voor al het verkeer dat via uw WAF wordt door gegeven, niet alleen een specifieke Web-app of-URI. Dit kan bijvoorbeeld een probleem zijn als *1 = 1* een geldige aanvraag is in de hoofd tekst van een bepaalde web-app, maar niet voor anderen onder hetzelfde WAF-beleid. Als het zinvol is om verschillende uitsluitings lijsten te gebruiken voor verschillende toepassingen, kunt u overwegen om verschillende WAF-beleids regels te gebruiken voor elke toepassing en deze toe te passen op de front-end van elke toepassing.
  
-Wanneer u uitsluitings lijsten voor beheerde regels configureert, kunt u ervoor kiezen om alle regels in een regelset, alle regels in een regel groep of een afzonderlijke regel uit te sluiten. Een uitsluitings lijst kan worden geconfigureerd met behulp van [Power shell](https://docs.microsoft.com/powershell/module/az.frontdoor/New-AzFrontDoorWafManagedRuleExclusionObject?view=azps-4.7.0&viewFallbackFrom=azps-3.5.0), [Azure cli](https://docs.microsoft.com/cli/azure/ext/front-door/network/front-door/waf-policy/managed-rules/exclusion?view=azure-cli-latest#ext_front_door_az_network_front_door_waf_policy_managed_rules_exclusion_add), [rest API](https://docs.microsoft.com/rest/api/frontdoorservice/webapplicationfirewall/policies/createorupdate)of de Azure Portal.
+Wanneer u uitsluitings lijsten voor beheerde regels configureert, kunt u ervoor kiezen om alle regels in een regelset, alle regels in een regel groep of een afzonderlijke regel uit te sluiten. Een uitsluitings lijst kan worden geconfigureerd met behulp van [Power shell](/powershell/module/az.frontdoor/New-AzFrontDoorWafManagedRuleExclusionObject?view=azps-4.7.0&viewFallbackFrom=azps-3.5.0), [Azure cli](/cli/azure/ext/front-door/network/front-door/waf-policy/managed-rules/exclusion?view=azure-cli-latest#ext_front_door_az_network_front_door_waf_policy_managed_rules_exclusion_add), [rest API](/rest/api/frontdoorservice/webapplicationfirewall/policies/createorupdate)of de Azure Portal.
 
 * Uitsluitingen op regel niveau
   * Het Toep assen van uitsluitingen op regel niveau betekent dat de opgegeven uitsluitingen niet alleen worden geanalyseerd op die afzonderlijke regel, terwijl deze nog steeds wordt geanalyseerd door alle andere regels in de regelset. Dit is het meest gedetailleerde niveau voor uitsluitingen en kan worden gebruikt voor het afstemmen van de beheerde regelset op basis van de informatie die u in de WAF-Logboeken vindt bij het oplossen van problemen met een gebeurtenis.
@@ -193,7 +193,7 @@ Het uitschakelen van een regel is een voor deel wanneer u er zeker van bent dat 
  
 Het uitschakelen van een regel is echter een algemene instelling die van toepassing is op alle frontend-hosts die zijn gekoppeld aan het WAF-beleid. Wanneer u ervoor kiest om een regel uit te scha kelen, worden er mogelijk beveiligings lekken weer gegeven zonder beveiliging of detectie voor andere frontend-hosts die zijn gekoppeld aan het WAF-beleid.
  
-Als u Azure PowerShell wilt gebruiken om een beheerde regel uit te scha kelen, raadpleegt u de documentatie van het [`PSAzureManagedRuleOverride`](https://docs.microsoft.com/powershell/module/az.frontdoor/new-azfrontdoorwafmanagedruleoverrideobject?view=azps-4.7.0&preserve-view=true) object. Als u Azure CLI wilt gebruiken, raadpleegt u de [`az network front-door waf-policy managed-rules override`](https://docs.microsoft.com/cli/azure/ext/front-door/network/front-door/waf-policy/managed-rules/override?view=azure-cli-latest&preserve-view=true) documentatie.
+Als u Azure PowerShell wilt gebruiken om een beheerde regel uit te scha kelen, raadpleegt u de documentatie van het [`PSAzureManagedRuleOverride`](/powershell/module/az.frontdoor/new-azfrontdoorwafmanagedruleoverrideobject?preserve-view=true&view=azps-4.7.0) object. Als u Azure CLI wilt gebruiken, raadpleegt u de [`az network front-door waf-policy managed-rules override`](/cli/azure/ext/front-door/network/front-door/waf-policy/managed-rules/override?preserve-view=true&view=azure-cli-latest) documentatie.
 
 ![WAF-regels](../media/waf-front-door-tuning/waf-rules.png)
 

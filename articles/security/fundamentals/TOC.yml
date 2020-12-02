@@ -72,7 +72,7 @@
     - name: Aanbevolen procedures
       href: network-best-practices.md
     - name: Best practices voor DDoS Protection
-      href: 'https://docs.microsoft.com/azure/ddos-protection/fundamental-best-practices'
+      href: ../../ddos-protection/fundamental-best-practices.md
     - name: DDoS Protection-beveiligingsbasislijn
       href: ddos-protection-security-baseline.md
     - name: Dangling DNS en overname van subdomein

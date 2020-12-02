@@ -2,19 +2,19 @@
 title: Activiteit in Azure Data Factory scha kelen
 description: Met de activiteit switch kunt u de verwerkings stroom beheren op basis van een voor waarde.
 services: data-factory
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 10/08/2019
-ms.openlocfilehash: 4f839de6e276727fa910f91eccc34601cf34f85c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fd5bb37d54183020e233774a778d27f5d4588bb4
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81418011"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96486001"
 ---
 # <a name="switch-activity-in-azure-data-factory"></a>Activiteit in Azure Data Factory scha kelen
 
@@ -22,7 +22,7 @@ ms.locfileid: "81418011"
 
 De switch-activiteit biedt dezelfde functionaliteit als een switch-instructie in programmeer talen. Er wordt een reeks activiteiten geëvalueerd die overeenkomen met een aanvraag die overeenkomt met de evaluatie van de voor waarde.
 
-## <a name="syntax"></a>Syntaxis
+## <a name="syntax"></a>Syntax
 
 ```json
 

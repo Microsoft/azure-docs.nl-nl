@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 10/05/2020
 ms.author: depadia
-ms.openlocfilehash: 17b978d3f4faebd3870868bceeea4572288ecb07
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 647009854ef5a0c0811fc303914f724272f1a3f5
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965354"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96486654"
 ---
 # <a name="sap-businessobjects-bi-platform-deployment-guide-for-linux-on-azure"></a>Handleiding voor SAP BusinessObjects BI-platformimplementatie voor Linux in Azure
 
@@ -615,7 +615,7 @@ Raadpleeg de [DBMS-implementatie handleidingen voor de SAP-werk belasting](dbms_
 
 File Repository Server (FRS) verwijst naar de schijf mappen waarin inhoud zoals rapporten, universums en verbindingen worden opgeslagen. Het wordt gedeeld op alle toepassings servers van dat systeem. U moet er dus voor zorgen dat deze Maxi maal beschikbaar is.
 
-In azure kunt u kiezen voor [Azure Premium-bestanden](../../../storage/files/storage-files-introduction.md) of [Azure NetApp files](../../../azure-netapp-files/azure-netapp-files-introduction.md) voor bestands shares die zijn ontworpen om Maxi maal beschikbaar te zijn en zeer duurzaam zijn. Zie de sectie [Redundantie](https://docs.microsoft.com/azure/storage/files/storage-files-planning#redundancy) voor Azure files voor meer informatie.
+In azure kunt u kiezen voor [Azure Premium-bestanden](../../../storage/files/storage-files-introduction.md) of [Azure NetApp files](../../../azure-netapp-files/azure-netapp-files-introduction.md) voor bestands shares die zijn ontworpen om Maxi maal beschikbaar te zijn en zeer duurzaam zijn. Zie de sectie [Redundantie](../../../storage/files/storage-files-planning.md#redundancy) voor Azure files voor meer informatie.
 
 > [!NOTE]
 > Het SMB-protocol voor Azure Files is algemeen beschikbaar, maar de NFS-protocol ondersteuning voor Azure Files is momenteel in de preview-versie. Zie voor meer informatie [NFS 4,1-ondersteuning voor Azure files is nu](https://azure.microsoft.com/en-us/blog/nfs-41-support-for-azure-files-is-now-in-preview/) beschikbaar als preview-versie
@@ -667,7 +667,7 @@ Azure Site Recovery-service kan worden gebruikt om Virtual Machines met web-en B
 
   U kunt Azure NetApp Files replicatie voor meerdere regio's gebruiken. Dit is momenteel als [Preview-versie](https://azure.microsoft.com/en-us/blog/azure-netapp-files-cross-region-replication-and-new-enhancements-in-preview/) die gebruikmaakt van de NetApp SnapMirror®-technologie. Daarom worden alleen gewijzigde blokken via het netwerk verzonden met een gecomprimeerde, efficiënte indeling. Deze bedrijfs technologie minimaliseert de hoeveelheid gegevens die nodig zijn voor replicatie over de regio's, waardoor de kosten voor gegevens overdracht worden bespaard. Ook wordt de replicatie tijd verkort, zodat u een kleinere herstel punt doelstelling (RPO) kunt krijgen. Raadpleeg de [vereisten en overwegingen voor het gebruik van replicatie tussen regio's](../../../azure-netapp-files/cross-region-replication-requirements-considerations.md) voor meer informatie.
 
-- **Azure Premium-bestanden** ondersteunen alleen lokaal redundante (LRS) en zone redundante opslag (ZRS). Voor de DR-strategie van Azure Premium-bestanden kunt u [AzCopy](../../../storage/common/storage-use-azcopy-v10.md) of [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.storage/) gebruiken om uw bestanden te kopiëren naar een ander opslag account in een andere regio. Zie [nood herstel en failover van het opslag account](../../../storage/common/storage-disaster-recovery-guidance.md) voor meer informatie.
+- **Azure Premium-bestanden** ondersteunen alleen lokaal redundante (LRS) en zone redundante opslag (ZRS). Voor de DR-strategie van Azure Premium-bestanden kunt u [AzCopy](../../../storage/common/storage-use-azcopy-v10.md) of [Azure PowerShell](/powershell/module/az.storage/) gebruiken om uw bestanden te kopiëren naar een ander opslag account in een andere regio. Zie [nood herstel en failover van het opslag account](../../../storage/common/storage-disaster-recovery-guidance.md) voor meer informatie.
 
 #### <a name="cms-database"></a>CMS-data base
 
@@ -695,4 +695,4 @@ Hier volgt een aanbeveling voor herstel na nood gevallen van elke laag die in di
 - [Herstel na nood geval instellen voor een implementatie van SAP-apps met meerdere lagen](../../../site-recovery/site-recovery-sap.md)
 - [Azure Virtual Machines planning en implementatie voor SAP](planning-guide.md)
 - [Azure Virtual Machines-implementatie voor SAP](deployment-guide.md)
-- [Azure Virtual Machines DBMS-implementatie voor SAP](dbms-guide.md)
+- [Azure Virtual Machines DBMS-implementatie voor SAP](./dbms_guide_general.md)

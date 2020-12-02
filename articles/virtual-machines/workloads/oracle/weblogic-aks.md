@@ -8,18 +8,18 @@ ms.topic: article
 ms.date: 10/28/2020
 ms.author: rezar
 ms.reviewer: cynthn
-ms.openlocfilehash: a57d5a00fad9a17e01b96ebdf395fb7a4b857935
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: cf44ad8d81656248329d993d86e9922dc4985258
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968686"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96486671"
 ---
 # <a name="what-are-solutions-for-running-oracle-weblogic-server-on-the-azure-kubernetes-service"></a>Wat zijn oplossingen voor het uitvoeren van Oracle WebLogic Server op de Azure Kubernetes-service?
 
 Op deze pagina worden de oplossingen beschreven voor het uitvoeren van Oracle WebLogic Server (WLS) op de Azure Kubernetes-service (AKS). Deze oplossingen worden gezamenlijk ontwikkeld en ondersteund door Oracle en micro soft.
 
-Het is ook mogelijk om WebLogic Server uit te voeren op Azure Virtual Machines. De oplossingen hiervoor worden beschreven in [dit micro soft-artikel](/azure/virtual-machines/workloads/oracle/oracle-weblogic).
+Het is ook mogelijk om WebLogic Server uit te voeren op Azure Virtual Machines. De oplossingen hiervoor worden beschreven in [dit micro soft-artikel](./oracle-weblogic.md).
 
 WebLogic Server is een toonaangevende Java-toepassings server waarop enkele van de meest essentiële zakelijke Java-toepassingen over de hele wereld worden uitgevoerd. WebLogic Server vormt de middleware Foundation voor de Oracle-software suite. Oracle en micro soft zijn van belang om WebLogic Server-klanten keuze en flexibiliteit te bieden voor het uitvoeren van werk belastingen op Azure als een toonaangevend Cloud platform.
 

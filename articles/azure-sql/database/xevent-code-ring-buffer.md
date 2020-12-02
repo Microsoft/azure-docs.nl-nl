@@ -7,16 +7,16 @@ ms.subservice: performance
 ms.custom: sqldbrb=1
 ms.devlang: PowerShell
 ms.topic: sample
-author: MightyPen
-ms.author: genemi
-ms.reviewer: jrasnik
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: sstein
 ms.date: 12/19/2018
-ms.openlocfilehash: d73efd7a64d0118cea11ca9b0a35f659ce7fee6a
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: a646588616b874e40b1ed2a5a0b5e691b075075d
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791287"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96487300"
 ---
 # <a name="ring-buffer-target-code-for-extended-events-in-azure-sql-database"></a>Ringbuffer-doelcode voor uitgebreide gebeurtenissen in Azure SQL Database
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -28,10 +28,10 @@ U wilt een volledig codevoorbeeld voor de eenvoudigste snelle manier om informat
 Dit onderwerp bevat een voorbeeld van Transact-SQL-code waarmee de volgende acties worden uitgevoerd:
 
 1. Maken van een tabel met gegevens voor een demonstratie.
-2. Maken van een sessie voor een bestaande uitgebreide gebeurtenis, namelijk **sqlserver.sql_statement_starting** .
+2. Maken van een sessie voor een bestaande uitgebreide gebeurtenis, namelijk **sqlserver.sql_statement_starting**.
 
    * De gebeurtenis is beperkt tot SQL-instructies die een bepaalde UPDATE-tekenreeks bevatten: **instructies ZOALS: %UPDATE tabEmployee%** .
-   * Kiezen voor het verzenden van de gebeurtenisuitvoer naar een Ringbuffer-doel of -type, namelijk **package0.ring_buffer** .
+   * Kiezen voor het verzenden van de gebeurtenisuitvoer naar een Ringbuffer-doel of -type, namelijk **package0.ring_buffer**.
 3. Starten van de gebeurtenissessie.
 4. Uitgeven van een aantal eenvoudige SQL UPDATE-instructies.
 5. Uitgeven van een SQL SELECT-instructie om gebeurtenisuitvoer op te halen uit de Ringbuffer.
@@ -46,7 +46,7 @@ Dit onderwerp bevat een voorbeeld van Transact-SQL-code waarmee de volgende acti
 * Een Azure-account en -abonnement. U  kunt zich aanmelden voor een [gratis proefversie](https://azure.microsoft.com/pricing/free-trial/). 
 * Een willekeurige database waarin u een tabel kunt maken.
   
-  * U kunt optioneel in enkele minuten [een **AdventureWorksLT** -demonstratiedatabase maken](single-database-create-quickstart.md).
+  * U kunt optioneel in enkele minuten [een **AdventureWorksLT**-demonstratiedatabase maken](single-database-create-quickstart.md).
 * SQL Server Management Studio (ssms.exe), liefst de meest recente versie van de maandelijkse update.
   U kunt de meest recente ssms.exe downloaden op:
   
@@ -218,9 +218,9 @@ GO
 
 We hebben `ssms.exe` gebruikt om het codevoorbeeld uit te voeren.
 
-Om de resultaten te bekijken hebben we op de cel geklikt onder de kolomkop **target_data_XML** .
+Om de resultaten te bekijken hebben we op de cel geklikt onder de kolomkop **target_data_XML**.
 
-Vervolgens hebben we in het resultatendeelvenster op de cel geklikt onder de kolomkop **target_data_XML** . Met deze klik is nog een tabblad Bestand gemaakt in ssms.exe waarop de inhoud van de resultaatcel wordt weergegeven, als XML.
+Vervolgens hebben we in het resultatendeelvenster op de cel geklikt onder de kolomkop **target_data_XML**. Met deze klik is nog een tabblad Bestand gemaakt in ssms.exe waarop de inhoud van de resultaatcel wordt weergegeven, als XML.
 
 De uitvoer wordt weergegeven in het volgende blok. Het lijkt lang, maar het zijn slechts twee **\<event>** -elementen.
 

@@ -14,21 +14,20 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 06/16/2020
+ms.date: 12/01/2020
 ms.author: radeltch
-ms.openlocfilehash: a6b62e9c894c25b2c3cd064524881ae5db51ec5a
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 9c9979699b5bcb3636adc0f9b58331568ea9cad1
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968533"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96486299"
 ---
 # <a name="public-endpoint-connectivity-for-virtual-machines-using-azure-standard-load-balancer-in-sap-high-availability-scenarios"></a>Connectiviteit van open bare eind punten voor Virtual Machines met behulp van Azure Standard Load Balancer in scenario's met hoge Beschik baarheid van SAP
 
 Het bereik van dit artikel is het beschrijven van configuraties, waarmee de uitgaande verbinding met open bare eind punten kan worden ingeschakeld. De configuraties zijn voornamelijk in de context van hoge Beschik baarheid met pacemaker voor SUSE/RHEL.  
 
-Als u pacemaker gebruikt met Azure Fence agent in uw oplossing met hoge Beschik baarheid, moeten de virtuele machines een uitgaande verbinding hebben met de Azure-beheer-API.  
-Het artikel bevat verschillende opties waarmee u de optie kunt selecteren die het meest geschikt is voor uw scenario.  
+Als u pacemaker gebruikt met Azure Fence agent in uw oplossing met hoge Beschik baarheid, moeten de virtuele machines een uitgaande verbinding hebben met de Azure-beheer-API. Het artikel bevat verschillende opties waarmee u de optie kunt selecteren die het meest geschikt is voor uw scenario.  
 
 ## <a name="overview"></a>Overzicht
 
@@ -42,12 +41,12 @@ Wanneer Vm's zonder open bare IP-adressen in de back-end-groep van intern (geen 
 
 Als aan een virtuele machine een openbaar IP-adres is toegewezen of als de virtuele machine zich in de back-endadresgroep van een load balancer met een openbaar IP-adres bevindt, heeft deze een uitgaande verbinding met open bare eind punten.  
 
-SAP-systemen bevatten vaak gevoelige Bedrijfs gegevens. Het is zelden acceptabel voor Vm's die fungeren als host voor SAP van een openbaar IP-adres. Op hetzelfde moment zijn er scenario's waarin uitgaande verbindingen van de VM naar open bare eind punten zouden moeten worden gemaakt.  
+SAP-systemen bevatten vaak gevoelige Bedrijfs gegevens. Het is zelden acceptabel dat Vm's die fungeren als host voor SAP-systemen toegankelijk zijn via open bare IP-adressen. Op hetzelfde moment zijn er scenario's waarin uitgaande verbindingen van de VM naar open bare eind punten zouden moeten worden gemaakt.  
 
 Voor beelden van scenario's waarbij toegang tot het open bare Azure-eind punt is vereist:  
-- Azure Fence agent gebruiken als een omheinings mechanisme in pacemaker-clusters
-- Azure Backup
-- Azure Site Recovery  
+- De Azure Fence-agent vereist toegang tot **Management.Azure.com** en **login.microsoftonline.com**  
+- [Azure Backup](https://docs.microsoft.com/azure/backup/tutorial-backup-sap-hana-db#set-up-network-connectivity)
+- [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-about-networking#outbound-connectivity-for-urls)  
 - De open bare opslag plaats gebruiken voor het patchen van het besturings systeem
 - De SAP-toepassings gegevens stroom vereist mogelijk een uitgaande verbinding naar het open bare eind punt
 
@@ -70,7 +69,7 @@ Lees eerst de volgende documenten:
 * [Virtuele netwerken-door de gebruiker gedefinieerde regels](../../../virtual-network/virtual-networks-udr-overview.md#user-defined) : Azure-routerings concepten en-regels  
 * [Service tags voor beveiligings groepen](../../../virtual-network/network-security-groups-overview.md#service-tags) : Vereenvoudig uw netwerk beveiligings groepen en firewall configuratie met Service Tags
 
-## <a name="additional-external-azure-standard-load-balancer-for-outbound-connections-to-internet"></a>Extra externe Azure-Standard Load Balancer voor uitgaande verbindingen met Internet
+## <a name="option-1-additional-external-azure-standard-load-balancer-for-outbound-connections-to-internet"></a>Optie 1: extra externe Azure-Standard Load Balancer voor uitgaande verbindingen met Internet
 
 Een optie voor het behalen van uitgaande connectiviteit met open bare eind punten, zonder inkomende connectiviteit met de virtuele machine vanaf een openbaar eind punt toe te staan, is het maken van een tweede load balancer met een openbaar IP-adres, het toevoegen van de virtuele machines aan de back-end-pool van de tweede load balancer en alleen [Uitgaande regels](../../../load-balancer/load-balancer-outbound-connections.md#outboundrules)definiëren.  
 Gebruik [netwerk beveiligings groepen](../../../virtual-network/network-security-groups-overview.md) om de open bare eind punten te beheren die toegankelijk zijn voor uitgaande oproepen van de virtuele machine.  
@@ -120,7 +119,7 @@ De configuratie zou er als volgt uitzien:
 
    Zie [beveiligings groepen ](../../../virtual-network/network-security-groups-overview.md)voor meer informatie over Azure-netwerk beveiligings groepen. 
 
-## <a name="azure-firewall-for-outbound-connections-to-internet"></a>Azure Firewall voor uitgaande verbindingen met Internet
+## <a name="option-2-azure-firewall-for-outbound-connections-to-internet"></a>Optie 2: Azure Firewall voor uitgaande verbindingen met Internet
 
 Een andere optie voor het behalen van uitgaande connectiviteit naar open bare eind punten, zonder inkomende connectiviteit met de virtuele machine vanaf een openbaar eind punt toe te staan, is met Azure Firewall. Azure Firewall is een beheerde service met ingebouwde hoge Beschik baarheid en kan meerdere Beschikbaarheidszones omvatten.  
 U moet ook de door de [gebruiker gedefinieerde route](../../../virtual-network/virtual-networks-udr-overview.md#custom-routes)implementeren die is gekoppeld aan het subnet waar vm's en de azure-Load Balancer worden geïmplementeerd, naar de Azure-firewall wijzen om het verkeer via de Azure firewall te routeren.  
@@ -170,7 +169,7 @@ De architectuur ziet er als volgt uit:
    1. Route naam: ToMyAzureFirewall, adres voorvoegsel: **0.0.0.0/0**. Type volgende hop: Selecteer een virtueel apparaat. Adres van volgende hop: Voer het privé-IP-adres in van de firewall die u hebt geconfigureerd: **11.97.1.4**.  
    1. Opslaan
 
-## <a name="using-proxy-for-pacemaker-calls-to-azure-management-api"></a>Proxy gebruiken voor pacemaker-aanroepen naar Azure Management API
+## <a name="option-3-using-proxy-for-pacemaker-calls-to-azure-management-api"></a>Optie 3: proxy gebruiken voor pacemaker-aanroepen naar Azure Management API
 
 U kunt proxy gebruiken om pacemaker-aanroepen naar de open bare Azure Management API-eind punt toe te staan.  
 
@@ -221,9 +220,9 @@ Voer de volgende stappen uit op alle cluster knooppunten om pacemaker toe te sta
      sudo pcs property set maintenance-mode=false
      ```
 
-## <a name="other-solutions"></a>Andere oplossingen
+## <a name="other-options"></a>Andere opties
 
-Als uitgaand verkeer wordt gerouteerd via firewall van derden:
+Als uitgaand verkeer via een derde partij wordt doorgestuurd, firewall proxy op basis van de URL:
 
 - Als u Azure Fence agent gebruikt, moet u ervoor zorgen dat de firewall configuratie uitgaande verbindingen met de Azure Management API toestaat: `https://management.azure.com` en `https://login.microsoftonline.com`   
 - Als u de infra structuur van de Azure Public Cloud update van SUSE gebruikt voor het Toep assen van updates en patches, raadpleegt u [Azure Public Cloud update-101 infra structuur](https://suse.com/c/azure-public-cloud-update-infrastructure-101/)

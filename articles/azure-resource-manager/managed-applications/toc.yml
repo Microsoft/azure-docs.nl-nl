@@ -31,6 +31,10 @@
       href: concepts-built-in-policy.md
     - name: Roldefinitie-artefact
       href: concepts-custom-role-definition.md
+    - name: Beveiliging
+      items:
+        - name: Beveiligingsbasislijn
+          href: security-baseline.md
 - name: Instructiegidsen
   items:
     - name: Uitgevers
@@ -40,7 +44,7 @@
         - name: Portal-interface testen
           href: test-createuidefinition.md
         - name: Een Azure-toepassingsaanbieding maken
-          href: ../../marketplace/partner-center-portal/create-new-azure-apps-offer.md?toc=/azure/azure-resource-manager/managed-applications/toc.json
+          href: ../../marketplace/create-new-azure-apps-offer.md?toc=/azure/azure-resource-manager/managed-applications/toc.json
         - name: Just-in-time-toegang aanvragen
           href: request-just-in-time-access.md
         - name: Bestaand virtueel netwerk gebruiken

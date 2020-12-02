@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 05/30/2019
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 8b7490723d3930a151abf1d3f72bb957e02e5988
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: d88792f50e0e79dd0313694cf979761054551eac
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91975498"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96487521"
 ---
 # <a name="migrate-azure-vms-to-managed-disks-in-azure"></a>Virtuele Azure-machines migreren naar Managed Disks in azure
 
@@ -27,7 +27,7 @@ In de volgende scenario's kunt u migreren naar Managed Disks:
 |---------|---------|
 |Zelfstandige virtuele machines en virtuele machines in een beschikbaarheidsset naar beheerde schijven converteren     |[Vm's converteren voor het gebruik van beheerde schijven](convert-unmanaged-to-managed-disks.md)         |
 |Eén VM van het klassieke naar het Resource Manager-model op beheerde schijven converteren     |[Een virtuele machine maken op basis van een klassieke VHD](create-vm-specialized-portal.md)         |
-|Alle virtuele machines in een vNet converteren van klassiek naar Resource Manager op beheerde schijven     |[Migreer IaaS-resources van klassiek naar Resource Manager](migration-classic-resource-manager-ps.md) en [Converteer vervolgens een virtuele machine van niet-beheerde schijven naar beheerde schijven](convert-unmanaged-to-managed-disks.md)         |
+|Alle virtuele machines in een vNet converteren van klassiek naar Resource Manager op beheerde schijven     |[Migreer IaaS-resources van klassiek naar Resource Manager](../migration-classic-resource-manager-ps.md) en [Converteer vervolgens een virtuele machine van niet-beheerde schijven naar beheerde schijven](convert-unmanaged-to-managed-disks.md)         |
 |Vm's upgraden met standaard niet-beheerde schijven naar virtuele machines met beheerde Premium-schijven     | Converteer eerst [een virtuele Windows-machine van niet-beheerde schijven naar beheerde schijven](convert-unmanaged-to-managed-disks.md). [Werk vervolgens het opslag type van een beheerde schijf bij](convert-disk-storage.md).         |
 
 [!INCLUDE [classic-vm-deprecation](../../../includes/classic-vm-deprecation.md)]

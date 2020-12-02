@@ -13,14 +13,14 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 09/29/2020
+ms.date: 12/01/2020
 ms.author: radeltch
-ms.openlocfilehash: 6e906e6c86d615852191e2fd65a2b1a58695ed34
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: b111dae035e7a055628642fe7c460734199ff608
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968550"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96486339"
 ---
 # <a name="setting-up-pacemaker-on-red-hat-enterprise-linux-in-azure"></a>Pacemaker instellen voor Red Hat Enterprise Linux in azure
 
@@ -69,6 +69,7 @@ Lees eerst de volgende SAP-opmerkingen en-documenten:
   * [Installeren en configureren van een Red Hat Enterprise Linux 7,4 (en hoger) High-Availability cluster op Microsoft Azure](https://access.redhat.com/articles/3252491)
   * [Overwegingen bij het aannemen van RHEL 8-hoge Beschik baarheid en clusters](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/considerations_in_adopting_rhel_8/high-availability-and-clusters_considerations-in-adopting-rhel-8)
   * [SAP S/4HANA ASCS/ERS met zelfstandige server 2 (ENSA2) configureren in pacemaker op RHEL 7,6](https://access.redhat.com/articles/3974941)
+  * [RHEL voor SAP-aanbiedingen op Azure](https://access.redhat.com/articles/5456301)
 
 ## <a name="cluster-installation"></a>Cluster installatie
 
@@ -80,7 +81,7 @@ Lees eerst de volgende SAP-opmerkingen en-documenten:
 
 De volgende items worden voorafgegaan door **[A]** , van toepassing op alle knoop punten, **[1]** -alleen van toepassing op knoop punt 1 of **[2]** -alleen van toepassing op knoop punt 2.
 
-1. **[A]** registreren. Deze stap is niet vereist als u gebruikmaakt van installatie kopieën met RHEL 8. x HA.  
+1. **[A]** registreren. Deze stap is niet vereist als u gebruikmaakt van RHEL SAP HA-installatie kopieën.  
 
    Registreer uw virtuele machines en koppel deze aan een groep die opslag plaatsen voor RHEL 7 bevat.
 
@@ -90,9 +91,9 @@ De volgende items worden voorafgegaan door **[A]** , van toepassing op alle knoo
    sudo subscription-manager attach --pool=&lt;pool id&gt;
    </code></pre>
 
-   Door een pool aan een Azure Marketplace PAYG RHEL-installatie kopie te koppelen, wordt u in feite gefactureerd voor uw RHEL-gebruik: eenmaal voor de PAYG-installatie kopie en eenmaal voor het RHEL recht van de groep die u koppelt. Azure biedt nu BYOS RHEL-installatie kopieën om dit te verhelpen. Meer informatie vindt u [hier](../redhat/byos.md).
+   Door een pool aan een Azure Marketplace PAYG RHEL-installatie kopie te koppelen, wordt u in feite gefactureerd voor uw RHEL-gebruik: eenmaal voor de PAYG-installatie kopie en eenmaal voor het RHEL recht van de groep die u koppelt. Azure biedt nu BYOS RHEL-installatie kopieën om dit te verhelpen. Meer informatie vindt u [hier](../redhat/byos.md).  
 
-1. **[A]** Schakel RHEL in voor SAP opslag plaatsen. Deze stap is niet vereist als u gebruikmaakt van installatie kopieën met RHEL 8. x HA.  
+1. **[A]** Schakel RHEL in voor SAP opslag plaatsen. Deze stap is niet vereist als u gebruikmaakt van RHEL SAP HA-installatie kopieën.  
 
    Schakel de volgende opslag plaatsen in om de vereiste pakketten te installeren.
 

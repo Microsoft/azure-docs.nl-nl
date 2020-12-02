@@ -7,16 +7,16 @@ ms.topic: how-to
 ms.author: rogarana
 ms.service: virtual-machines-windows
 ms.subservice: disks
-ms.openlocfilehash: f967d061ece5887457375b4e93469809f6a575f9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2eed2ee11f3a90e81d9ee845af2aa28620567603
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88814770"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96488303"
 ---
 # <a name="azure-powershell---enable-customer-managed-keys-with-server-side-encryption---managed-disks"></a>Azure PowerShell-door de klant beheerde sleutels inschakelen met versleuteling aan server zijde-beheerde schijven
 
-Met Azure Disk Storage kunt u uw eigen sleutels beheren wanneer u gebruikmaakt van SSE (server side Encryption) voor beheerde schijven, indien gewenst. Zie de sectie door de [klant beheerde sleutels](disk-encryption.md#customer-managed-keys) in ons artikel over schijf versleuteling voor conceptuele informatie over SSE met door de klant beheerde sleutels en andere beheerde schijf versleutelings typen.
+Met Azure Disk Storage kunt u uw eigen sleutels beheren wanneer u gebruikmaakt van SSE (server side Encryption) voor beheerde schijven, indien gewenst. Zie de sectie door de [klant beheerde sleutels](../disk-encryption.md#customer-managed-keys) in ons artikel over schijf versleuteling voor conceptuele informatie over SSE met door de klant beheerde sleutels en andere beheerde schijf versleutelings typen.
 
 ## <a name="restrictions"></a>Beperkingen
 

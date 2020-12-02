@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: bd69f239a1c65040c44da776186ab8d955f5e333
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 3a232f8e8c35e265a8243ac79e465c03f6b9650e
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94693176"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96487861"
 ---
 # <a name="security-control-network-security"></a>Beveiligings beheer: netwerk beveiliging
 
@@ -76,7 +76,7 @@ Gebruik Azure Security Center just-in-time-netwerk toegang om Nsg's te configure
 
 Gebruik Azure Security Center adaptieve netwerk beveiliging om NSG-configuraties aan te bevelen die poorten en bron-Ip's beperken op basis van daad werkelijk verkeer en bedreigings informatie.
 
-- [DDoS-beveiliging configureren](../../virtual-network/manage-ddos-protection.md)
+- [DDoS-beveiliging configureren](../../ddos-protection/manage-ddos-protection.md)
 
 - [Azure Firewall implementeren](../../firewall/tutorial-firewall-deploy-portal.md)
 

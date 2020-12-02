@@ -4,16 +4,16 @@ description: Ontdek hoe u de Azure Queue Java v12-bibliotheek kunt gebruiken om 
 author: mhopkins-msft
 ms.custom: devx-track-java
 ms.author: mhopkins
-ms.date: 09/10/2020
+ms.date: 12/01/2020
 ms.service: storage
 ms.subservice: queues
 ms.topic: quickstart
-ms.openlocfilehash: 25b6bdcb293379e3206cc6714fae65fe40f6e6c5
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 4c96b84aa53d2a9f4d6e44ac84cf0ce9e0ecac04
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93345598"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96491924"
 ---
 # <a name="quickstart-azure-queue-storage-client-library-v12-for-java"></a>Quickstart: Azure Queue Storage-clientbibliotheek v12 voor Java
 
@@ -33,7 +33,7 @@ Aanvullende bronnen:
 - [API-referentiedocumentatie](/java/api/overview/azure/storage-queue-readme)
 - [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/storage/azure-storage-queue)
 - [Pakket (Maven)](https://mvnrepository.com/artifact/com.azure/azure-storage-queue)
-- [Voorbeelden](../common/storage-samples-java.md?toc=%252fazure%252fstorage%252fqueues%252ftoc.json#queue-samples)
+- [Voorbeelden](../common/storage-samples-java.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json#queue-samples)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -50,15 +50,31 @@ In dit gedeelte wordt uitgelegd hoe u een project voorbereidt voor gebruik met d
 
 Maak een Java-toepassing met de naam *queues-quickstart-v12*.
 
-1. Gebruik in een consolevenster (zoals cmd, PowerShell of Bash) Maven om een nieuwe console-app te maken met de naam *queues-quickstart-v12*. Typ de volgende **mvn** -opdracht om een 'Hallo wereld!' te maken. Java-project.
+1. Gebruik in een consolevenster (zoals cmd, PowerShell of Bash) Maven om een nieuwe console-app te maken met de naam *queues-quickstart-v12*. Typ de volgende **mvn**-opdracht om een 'Hallo wereld!' te maken. Java-project.
 
-   ```console
-   mvn archetype:generate -DgroupId=com.queues.quickstart \
-                          -DartifactId=queues-quickstart-v12 \
-                          -DarchetypeArtifactId=maven-archetype-quickstart \
-                          -DarchetypeVersion=1.4 \
-                          -DinteractiveMode=false
-   ```
+    # <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+    ```powershell
+    mvn archetype:generate `
+        --define interactiveMode=n `
+        --define groupId=com.queues.quickstart `
+        --define artifactId=queues-quickstart-v12 `
+        --define archetypeArtifactId=maven-archetype-quickstart `
+        --define archetypeVersion=1.4
+    ```
+
+    # <a name="bash"></a>[Bash](#tab/bash)
+
+    ```bash
+    mvn archetype:generate \
+        --define interactiveMode=n \
+        --define groupId=com.queues.quickstart \
+        --define artifactId=queues-quickstart-v12 \
+        --define archetypeArtifactId=maven-archetype-quickstart \
+        --define archetypeVersion=1.4
+    ```
+
+    ---
 
 1. De uitvoer van het project zou er ongeveer als volgt moeten uitzien:
 
@@ -362,7 +378,7 @@ Done
 
 Wanneer de app pauzeert voordat deze berichten ontvangt, controleert u uw opslagaccount in de [Azure-portal](https://portal.azure.com). Verifieer dat de berichten in de wachtrij staan.
 
-Druk op de **Enter** -toets om de berichten te ontvangen en verwijderen. Druk nogmaals op de **Enter** -toets wanneer u daarom wordt gevraagd, om de wachtrij te verwijderen en de demo te voltooien.
+Druk op de **Enter**-toets om de berichten te ontvangen en verwijderen. Druk nogmaals op de **Enter**-toets wanneer u daarom wordt gevraagd, om de wachtrij te verwijderen en de demo te voltooien.
 
 ## <a name="next-steps"></a>Volgende stappen
 

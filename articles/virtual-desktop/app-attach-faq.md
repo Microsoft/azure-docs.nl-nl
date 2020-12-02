@@ -8,24 +8,28 @@ ms.topic: conceptual
 ms.date: 08/17/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: a63d7f067665836910b91b2911db522f0a92bbb1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 73fb9bf436c043e903977fafbb5a502e2edc5488
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88556270"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96518682"
 ---
 # <a name="msix-app-attach-faq"></a>Veelgestelde vragen over het koppelen van MSIX-apps
 
 In dit artikel vindt u antwoorden op veelgestelde vragen over MSIX app attach voor Windows virtueel bureau blad.
 
+## <a name="whats-the-difference-between-msix-and-msix-app-attach"></a>Wat is het verschil tussen de MSIX-en MSIX-app-koppeling?
+
+MSIX is een verpakkings indeling voor apps, terwijl MSIX app attach de functie is die MSIX-pakketten levert aan uw implementatie.
+
 ## <a name="does-msix-app-attach-use-fslogix"></a>Maakt MSIX-app gebruik van FSLogix?
 
-MSIX app attach maakt geen gebruik van FSLogix. App attach en FSLogix zijn echter ontworpen om samen te werken om een naadloze gebruikers ervaring te bieden.
+MSIX app attach maakt geen gebruik van FSLogix. MSIX app attach en FSLogix zijn echter ontworpen om samen te werken om een naadloze gebruikers ervaring te bieden.
 
 ## <a name="can-i-use-msix-app-attach-outside-of-windows-virtual-desktop"></a>Kan ik MSIX app-koppeling buiten het virtuele bureau blad van Windows gebruiken?
 
-Ja, MSIX app attach is een functie die deel uitmaakt van Windows 10 Enter prise en kan worden gebruikt buiten het virtuele bureau blad van Windows. Er is echter geen beheer vlak voor de MSIX-app die zich buiten het virtuele bureau blad van Windows bevindt.
+De Api's die aan Power MSIX app attach zijn gekoppeld, zijn beschikbaar voor Windows 10 Enter prise. Deze Api's kunnen worden gebruikt buiten het virtuele bureau blad van Windows. Er is echter geen beheer vlak voor de MSIX-app die zich buiten het virtuele bureau blad van Windows bevindt.
 
 ## <a name="how-do-i-get-an-msix-package"></a>Hoe kan ik een MSIX-pakket ophalen?
 
@@ -33,8 +37,41 @@ Uw software leverancier geeft u een MSIX-pakket. U kunt ook niet-MSIX-pakketten 
 
 ## <a name="which-operating-systems-support-msix-app-attach"></a>Welke besturings systemen ondersteunen MSIX-app koppelen?
 
-Windows 10 Enter prise en Windows 10 Enter prise multi-session.
+Windows 10 Enter prise en Windows 10 Enter prise multi-session, versie 2004 of hoger.
+
+## <a name="is-msix-app-attach-currently-generally-available"></a>Is MSIX app attach momenteel algemeen beschikbaar?
+
+MSIX app attach maakt deel uit van Windows 10 Enter prise en Windows 10 Enter prise multi-session, versie 2004 of hoger. Beide besturings systemen zijn momenteel algemeen beschikbaar. 
+
+## <a name="can-i-use-msix-app-attach-outside-of-windows-virtual-desktop"></a>Kan ik MSIX app-koppeling buiten het virtuele bureau blad van Windows gebruiken?
+
+MSIX en MSIX app attach-Api's maken deel uit van Windows 10 Enter prise en Windows 10 Enter prise multi-session, versie 2004 en hoger. We bieden momenteel geen beheer software voor een MSIX-app die zich buiten het virtuele bureau blad van Windows bevindt.
+
+## <a name="can-i-run-two-versions-of-the-same-application-at-the-same-time"></a>Kan ik op hetzelfde moment twee versies van dezelfde toepassing uitvoeren?
+
+Voor twee versies van dezelfde MSIX-toepassingen die gelijktijdig moeten worden uitgevoerd, moet de MSIX-pakket familie die in het appxmanifest.xml bestand is gedefinieerd, voor elke app verschillend zijn.
+
+## <a name="should-i-disable-auto-update-when-using-msix-app-attach"></a>Moet ik automatisch bijwerken uitschakelen wanneer ik een MSIX-app toevoeg?
+
+Ja. MSIX app attach biedt geen ondersteuning voor automatische updates voor MSIX-toepassingen.
+
+## <a name="how-do-permissions-work-with-msix-app-attach"></a>Hoe werken machtigingen met MSIX-app koppelen?
+
+Alle virtuele machines (Vm's) in een hostgroep die gebruikmaakt van een MSIX-app-koppeling, moeten lees machtigingen hebben op de bestands share waar de MSIX-installatie kopieën worden opgeslagen. Als ook Azure Files wordt gebruikt, moeten ze zowel op rollen gebaseerd toegangs beheer (RBAC) als nieuwe technologieën voor bestands systeem (NTFS) worden verleend.
+
+## <a name="can-i-use-msix-app-attach-for-http-or-https"></a>Kan ik de MSIX-app attach voor HTTP of HTTPs gebruiken?
+
+Alle virtuele machines die deel uitmaken van een hostgroep die gebruikmaakt van een MSIX-app-koppeling, moeten lees machtigingen hebben op de bestands share waar MSIX-installatie kopieën worden opgeslagen. Als Azure Files wordt gebruikt, moet zowel RBAC-als NTFS-machtigingen worden verleend.
+
+## <a name="can-i-restage-the-same-msix-application"></a>Kan ik dezelfde MSIX-toepassing opnieuw instellen?
+
+Ja. U kunt toepassingen die u al hebt gestage, opnieuw bezetten en dit zou geen fouten moeten veroorzaken.
+
+## <a name="does-msix-app-attach-support-self-signed-certificates"></a>Ondersteunt MSIX-app zelfondertekende certificaten?
+
+Het gebruik van de MSIX-app attach via HTTP of HTTPs wordt momenteel niet ondersteund.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u meer wilt weten over het toevoegen van MSIX-apps, raadpleegt u onze [overzichts](what-is-app-attach.md) [woordenlijst](app-attach-glossary.md). U kunt ook aan de slag met het [instellen van een app-koppeling](app-attach.md).
+Als u meer wilt weten over het toevoegen van MSIX-apps, raadpleegt u het [overzicht](what-is-app-attach.md) en de [verklarende woorden lijst](app-attach-glossary.md). U kunt ook aan de slag met het [instellen van een app-koppeling](app-attach.md).

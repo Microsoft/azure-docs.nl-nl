@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: vamahtan
 ms.author: vamahtan
-ms.date: 11/20/2020
-ms.openlocfilehash: 9d6970331024ea0cd08e890cc62507d9eb230678
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.date: 12/2/2020
+ms.openlocfilehash: 99b5e7bee93ffee14585f048506104ec313b9bff
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95016327"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96518524"
 ---
 # <a name="co-sell-partner-engagement"></a>Betrokkenheid van partner bij collectieve verkoop
 
@@ -24,7 +24,7 @@ Het programma voor co-verkoop is beschikbaar voor software die is **gebouwd met 
 
     ![Diagram waarin wordt getoond hoe co-selling gebeurt wanneer verkoop leads worden gedeeld, geaccepteerd en gewonnen voor door micro soft beheerde klanten.](./media/marketplace-publishers-guide/marketplace-co-sell-v2.png)
 
-- **Gemotiveerd verkopen** IP-oplossingen kunnen prikkels voor micro soft-veld verkopers verdienen wanneer ze worden verkocht in samen werking met micro soft-verkoop teams, naast de Marketplace-voor delen die hieronder worden weer gegeven.</li></ul>
+- **Gemotiveerd verkopen** Met IP-aanbiedingen kunnen gebruikers van micro soft-velden profiteren wanneer ze worden verkocht in samen werking met micro soft-verkoop teams, naast de onderstaande Marketplace-voor delen.</li></ul>
 
 ## <a name="marketplace-benefits-for-incentivized-offers"></a>Marketplace-voor delen voor gemotiveerd-aanbiedingen
 
@@ -67,7 +67,7 @@ Start uw directe verkoop traject rechtstreeks in het partner centrum volgens ond
 
     :::image type="content" source="media/co-sell/co-sell-listing-section.png" alt-text="Deze afbeelding toont de sectie vermelding van het tabblad samen verkopen.":::  
 
-1. Geef details op over uw aanbieding en upload onderpand in het gedeelte **documenten** . Micro soft-verkopers gebruiken deze informatie om uw aanbieding te adviseren en te verkopen. (*Vereist: klant één semafoon en presentatie deck van de klant.*)
+1. Geef details op over uw aanbieding en upload onderpand in het gedeelte **documenten** . Micro soft-verkopers gebruiken deze informatie om uw aanbieding te adviseren en te verkopen. *(Vereist: oplossing/bied één paginerings-en oplossings-en aanbod aanbieding. Vereist voor het bereiken van Azure IP gemotiveerd-status: referentie architectuur diagram.)*
 
     :::image type="content" source="media/co-sell/co-sell-documents-section.png" alt-text="Deze afbeelding toont de sectie documenten op het tabblad samen verkopen.":::
 

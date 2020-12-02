@@ -13,12 +13,12 @@ ms.date: 08/20/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019, devx-track-azurecli
-ms.openlocfilehash: 9ecac482c138447a3a9dc99193fb131b688993e4
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 28bacb923578fa0c631aa7b5092e0d11f98b1dcf
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556604"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96518410"
 ---
 # <a name="use-azure-portal-to-configure-an-availability-group-preview-for-sql-server-on-azure-vm"></a>Azure Portal gebruiken om een beschikbaarheids groep te configureren voor SQL Server op een Azure VM 
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -59,7 +59,7 @@ Als u al een cluster hebt, kunt u deze sectie overs Laan en het bestaande cluste
 
 Als u nog geen bestaand cluster hebt, maakt u dit met behulp van de Azure Portal door de volgende stappen uit te voeren:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com). 
 1. Navigeer naar de resource van de [virtuele SQL-machines](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.SqlVirtualMachine%2FSqlVirtualMachines) . 
 1. Selecteer **hoge Beschik baarheid** onder **instellingen**. 
 1. Selecteer **+ nieuw Windows Server-failovercluster** om de pagina **Windows-failovercluster configureren** te openen.  
@@ -90,7 +90,7 @@ Als u al een cluster hebt geconfigureerd in uw SQL Server VM-omgeving, kunt u he
 
 Voer hiervoor de volgende stappen uit:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com). 
 1. Navigeer naar de resource van de [virtuele SQL-machines](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.SqlVirtualMachine%2FSqlVirtualMachines) . 
 1. Selecteer **hoge Beschik baarheid** onder **instellingen**. 
 1. Selecteer een **bestaand Windows Server-failovercluster onboarding** om de pagina **onboarding Windows Server failover cluster** te openen. 
@@ -100,14 +100,11 @@ Voer hiervoor de volgende stappen uit:
 1. Controleer de instellingen voor uw cluster. 
 1. Selecteer **Toep assen** om het cluster vrij te maken en selecteer vervolgens **Ja** bij de prompt om door te gaan.
 
-
-
-
 ## <a name="create-availability-group"></a>Beschikbaarheids groep maken
 
 Nadat het cluster is gemaakt of onboarded, maakt u de beschikbaarheids groep met behulp van de Azure Portal. Voer hiervoor de volgende stappen uit:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com). 
 1. Navigeer naar de resource van de [virtuele SQL-machines](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.SqlVirtualMachine%2FSqlVirtualMachines) . 
 1. Selecteer **hoge Beschik baarheid** onder **instellingen**. 
 1. Selecteer **+ nieuwe always on-beschikbaarheids groep** om de pagina **beschikbaarheids groep maken** te openen.
@@ -162,7 +159,7 @@ Nadat de data bases zijn toegevoegd, kunt u de status van uw beschikbaarheids gr
 
 Voer de volgende stappen uit om meer SQL Server Vm's toe te voegen aan het cluster: 
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com). 
 1. Navigeer naar de resource van de [virtuele SQL-machines](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.SqlVirtualMachine%2FSqlVirtualMachines) . 
 1. Selecteer **hoge Beschik baarheid** onder **instellingen**. 
 1. Selecteer **Windows Server-failovercluster configureren** om de pagina **Windows Server-failovercluster configureren** te openen. 
@@ -207,7 +204,7 @@ Verwijder vervolgens de meta gegevens van het cluster uit de uitbrei ding SQL Ia
 # Remove the cluster from the SQL VM RP metadata
 # example: az sql vm group delete --name Cluster --resource-group SQLVM-RG
 
-az sql vm group delete --name <cluster name> Cluster --resource-group <resource group name>
+az sql vm group delete --name <cluster name> --resource-group <resource group name>
 ```
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
@@ -235,7 +232,7 @@ Verwijder vervolgens de meta gegevens van het cluster uit de uitbrei ding SQL Ia
 # Remove the cluster metadata
 # example: Remove-AzSqlVMGroup -ResourceGroupName "SQLVM-RG" -Name "Cluster"
 
-Remove-AzSqlVMGroup -ResourceGroupName "<resource group name>" -Name "<cluster name> "
+Remove-AzSqlVMGroup -ResourceGroupName "<resource group name>" -Name "<cluster name>"
 ```
 
 ---
@@ -250,7 +247,7 @@ Wijzigingen in de cluster-en beschikbaarheids groep via de portal worden uitgevo
 
 Voer de volgende stappen uit om de logboeken voor de implementatie weer te geven en de implementatie geschiedenis te controleren:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure Portal](https://portal.azure.com).
 1. Navigeer naar uw resource groep.
 1. Selecteer **implementaties** onder **instellingen**.
 1. Selecteer de implementatie van belang voor meer informatie over de implementatie. 

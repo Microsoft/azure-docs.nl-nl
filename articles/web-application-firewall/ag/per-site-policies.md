@@ -8,12 +8,12 @@ ms.service: web-application-firewall
 ms.date: 09/16/2020
 ms.author: victorh
 ms.topic: conceptual
-ms.openlocfilehash: 3ac0540856d8cb8ccba6f1d176292d634d2dc80f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fc15c8deb7aea3256cc0077fbdc3ce1a2492b1b2
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91856599"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96519022"
 ---
 # <a name="configure-per-site-waf-policies-using-azure-powershell"></a>WAF-beleid per site configureren met behulp van Azure PowerShell
 
@@ -28,7 +28,7 @@ In dit artikel leert u het volgende:
 * Het netwerk instellen
 * Een WAF-beleid maken
 * Een toepassingsgateway maken met WAF ingeschakeld
-* Het WAF-beleid wereld wijd, per site en per URI (preview-versie) Toep assen
+* Het WAF-beleid globaal, per site en per URI Toep assen 
 * Een virtuele-machineschaalset maken
 * Een opslagaccount maken en diagnostische gegevens configureren
 * De toepassingsgateway testen
@@ -249,7 +249,7 @@ $appgw = New-AzApplicationGateway `
   -FirewallPolicy $wafPolicyGlobal
 ```
 
-### <a name="apply-a-per-uri-policy-preview"></a>Een beleid per URI Toep assen (preview-versie)
+### <a name="apply-a-per-uri-policy"></a>Beleid per URI Toep assen
 
 Als u een per-URI-beleid wilt Toep assen, maakt u gewoon een nieuw beleid en past u het toe op de regel configuratie van het pad. 
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/17/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 6107ffea4fe4d615a42973ab1b231ca9f6b5241f
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 7132eae073f3d53a104536076ae801ec9ff93e5f
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92674948"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96518665"
 ---
 # <a name="msix-app-attach-glossary"></a>Woorden lijst voor het toevoegen van MSIX-apps
 
@@ -75,7 +75,7 @@ In Windows Virtual Desktop voegt een MSIX-pakket toe aan een hostgroep.
 
 In Windows Virtual Desktop moet een gepubliceerd MSIX-pakket worden toegewezen aan een gebruikers-of gebruikers groep van een Active Directory-domein-service (AD DS) of Azure Active Directory (Azure AD).
 
-## <a name="staging"></a>Faseren
+## <a name="staging"></a>Staging
 
 Fase ring omvat twee dingen:
 
@@ -109,6 +109,18 @@ Met destaging wordt het besturings systeem gewaarschuwd dat een MSIX-pakket of-t
 ## <a name="cim"></a>VRACHT
 
 . CIM is een nieuwe bestands extensie die is gekoppeld aan een samengesteld installatie kopie bestand systeem (CimFS). Het koppelen en ontkoppelen van CIM-bestanden verloopt sneller dan die VHD-bestanden. CIM verbruikt ook minder CPU en geheugen dan VHD.
+
+Een CIM-bestand is een bestand met een. CIM-uitbrei ding die meta gegevens en ten minste zes extra bestanden bevat die actuele gegevens bevatten. De bestanden in het CIM-bestand hebben geen extensies. De volgende tabel bevat een lijst met voorbeeld bestanden die u in een CIM zou zoeken:
+
+| Bestandsnaam | Extensie | Grootte |
+|-----------|-----------|------|
+| VSC | VRACHT | 1 kB |
+| objectid_b5742e0b-1b98-40b3-94a6-9cb96f497e56_0 | NA | 27 KB |
+| objectid_b5742e0b-1b98-40b3-94a6-9cb96f497e56_1 | NA | 20 KB |
+| objectid_b5742e0b-1b98-40b3-94a6-9cb96f497e56_2 | NA | 42 KB |
+| region_b5742e0b-1b98-40b3-94a6-9cb96f497e56_0 | NA | 428 KB |
+| region_b5742e0b-1b98-40b3-94a6-9cb96f497e56_1 | NA | 217 KB |
+| region_b5742e0b-1b98-40b3-94a6-9cb96f497e56_2 | NA | 264.132 KB |
 
 De volgende tabel is een prestatie vergelijking tussen VHD en CimFS. Deze getallen zijn het resultaat van een test uitvoering met 500 300 MB aan bestanden in elke indeling die wordt uitgevoerd op een DSv4-machine.
 

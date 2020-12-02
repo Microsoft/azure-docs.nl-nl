@@ -7,12 +7,12 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 03/30/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: ac87e8394eaa609f7c57eaf9d83fe11a2bdb04f6
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 6d9abc67035b4581a028d8e59ef080b4f1ffa5b9
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96435821"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96519039"
 ---
 # <a name="data-encryption-for-azure-database-for-mysql-by-using-the-azure-cli"></a>Gegevens versleuteling voor Azure Database for MySQL met behulp van de Azure CLI
 
@@ -24,7 +24,7 @@ Meer informatie over het gebruik van de Azure CLI voor het instellen en beheren 
 * Maak een sleutel kluis en een sleutel die moet worden gebruikt voor een door de klant beheerde sleutel. Schakel ook leegmaken van beveiliging en zacht verwijderen in op de sleutel kluis.
 
   ```azurecli-interactive
-  az keyvault create -g <resource_group> -n <vault_name> --enable-soft-delete true -enable-purge-protection true
+  az keyvault create -g <resource_group> -n <vault_name> --enable-soft-delete true --enable-purge-protection true
   ```
 
 * In de gemaakte Azure Key Vault maakt u de sleutel die wordt gebruikt voor de gegevens versleuteling van de Azure Database for MySQL.
@@ -55,7 +55,8 @@ Meer informatie over het gebruik van de Azure CLI voor het instellen en beheren 
   * Geen verval datum
   * Niet uitgeschakeld
   * **Get**-, **wrap**-en **Unwrap** -bewerkingen uitvoeren
-  * het kenmerk recoverylevel is ingesteld op **herstellen**.
+  * kenmerk recoverylevel is ingesteld op **hersteld** (hiervoor moet voorlopig verwijderen zijn ingeschakeld met de Bewaar periode ingesteld op 90 dagen)
+  * Beveiliging opschonen ingeschakeld
 
 U kunt de bovenstaande kenmerken van de sleutel controleren met behulp van de volgende opdracht:
 

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/28/2018
 ms.author: wgries
 ms.custom: include file
-ms.openlocfilehash: ad9f3a115ed226b492a08dae29db61029d9098eb
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 03cf20e5c796a7092dc16c466934f377c945ad48
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95563219"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96509500"
 ---
 Een opslagaccount is een gedeelde opslaggroep waarin u Azure-bestandsshares of andere opslagresources, zoals blobs of wachtrijen, kunt implementeren. Een opslagaccount kan een onbeperkt aantal shares bevatten. Een share kan een onbeperkt aantal bestanden opslaan, tot de capaciteitslimiet van het opslagaccount.
 
@@ -30,7 +30,7 @@ Een opslagaccount maken:
     > [!NOTE]
     > In deze quickstart wordt een standaardbestandsshare gemaakt. Als u Premium-bestandsshares wilt gebruiken, selecteert u in plaats hiervan **Premium**.
 
-1. Selecteer **StorageV2** bij **Soort account**. Zie [Azure Storage-accounts begrijpen](../articles/storage/common/storage-account-overview.md?toc=%252fazure%252fstorage%252ffiles%252ftoc.json) voor meer informatie over de verschillende soorten opslagaccounts.
+1. Selecteer **StorageV2** bij **Soort account**. Zie [Azure Storage-accounts begrijpen](../articles/storage/common/storage-account-overview.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) voor meer informatie over de verschillende soorten opslagaccounts.
 
     > [!NOTE]
     > In deze quickstart wordt een v2-account voor algemeen gebruik gemaakt. Als u Premium-bestandsshares wilt gebruiken, selecteert u in plaats hiervan **FileStorage**.

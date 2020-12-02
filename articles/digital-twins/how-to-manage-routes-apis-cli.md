@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 11/18/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 3db475b5eb0c584f86c8810e9c993e4d5d7b497e
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 7016abc9d52aa12b497d29f605fe351ee3f6a2dd
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452900"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96519102"
 ---
 # <a name="manage-endpoints-and-routes-in-azure-digital-twins-apis-and-cli"></a>Eind punten en routes beheren in azure Digital Apparaatdubbels (Api's en CLI)
 
@@ -90,47 +90,59 @@ az dt endpoint create eventhub --endpoint-name <Event-Hub-endpoint-name> --event
 
 Wanneer een eind punt een gebeurtenis binnen een bepaalde tijds periode niet kan leveren of nadat de gebeurtenis een bepaald aantal keren is geprobeerd, kan de gebeurtenis worden verzonden naar een opslag account. Dit proces wordt **onbestelbare berichten** genoemd.
 
-Zie voor meer informatie over onbestelbare berichten [*concepten: gebeurtenis routes*](concepts-route-events.md#dead-letter-events).
+Zie voor meer informatie over onbestelbare berichten [*concepten: gebeurtenis routes*](concepts-route-events.md#dead-letter-events). Ga verder met de rest van deze sectie voor instructies over het instellen van een eind punt met onbestelbare berichten.
 
 #### <a name="set-up-storage-resources"></a>Opslag resources instellen
 
-Voordat u de locatie van de onbestelbare letter instelt, moet u een [opslag account](../storage/common/storage-account-create.md?tabs=azure-portal) hebben met een [container](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container) die is ingesteld in uw Azure-account. U geeft de URL voor deze container op wanneer u later het eind punt maakt.
-De onbestelbare letter wordt gegeven als container-URL met een [SAS-token](../storage/common/storage-sas-overview.md). Dit token heeft alleen `write` machtigingen nodig voor de doel container in het opslag account. De volledig opgemaakte URL heeft de volgende indeling: `https://<storageAccountname>.blob.core.windows.net/<containerName>?<SASToken>`
+Voordat u de locatie van de onbestelbare letter instelt, moet u een [opslag account](../storage/common/storage-account-create.md?tabs=azure-portal) hebben met een [container](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container) die is ingesteld in uw Azure-account. 
+
+U geeft de URL voor deze container op wanneer u later het eind punt maakt. De locatie van de onbestelbare berichten wordt aan het eind punt gegeven als container-URL met een [SAS-token](../storage/common/storage-sas-overview.md). Dat token moet `write` toestemming hebben voor de doel container in het opslag account. De volledig opgemaakte URL heeft de volgende indeling: `https://<storageAccountname>.blob.core.windows.net/<containerName>?<SASToken>` .
 
 Volg de onderstaande stappen om deze opslag resources in uw Azure-account in te stellen, zodat u de eindpunt verbinding kunt instellen in de volgende sectie.
 
-1. Volg [dit artikel](../storage/common/storage-account-create.md?tabs=azure-portal) om een opslag account te maken en de naam van het opslag account op te slaan om deze later te gebruiken.
-2. Maak een container met behulp van [dit artikel](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container) en sla de container naam op om deze later te gebruiken bij het instellen van de verbinding tussen de container en het eind punt.
-3. Maak vervolgens een SAS-token voor uw opslag account. Begin met het navigeren naar uw opslag account in de [Azure Portal](https://ms.portal.azure.com/#home) (u kunt deze naam vinden met de zoek balk van de portal).
-4. Kies op de pagina opslag account de koppeling _gedeelde toegangs handtekening_ in de linkernavigatiebalk om de juiste machtigingen voor het genereren van SAS-token te selecteren.
-5. Selecteer de gewenste instellingen voor _toegestane Services_ en _toegestane bron typen_. U moet ten minste één vak in elke categorie selecteren. Kies voor toegestane machtigingen **schrijven** (u kunt ook andere machtigingen selecteren als u dat wilt).
-Stel de overige instellingen echter wel in.
-6. Selecteer vervolgens de knop _SAS en Connection String genereren_ om het SAS-token te genereren. Hiermee genereert u onder aan dezelfde pagina verschillende SA'S-en connection string waarden onder de instellingen die u selecteert. Schuif omlaag om de waarden weer te geven en gebruik het pictogram kopiëren naar klem bord om de **SAS-token** waarde te kopiëren. Sla het bestand op om het later te gebruiken.
+1. Volg de stappen in [*een opslag account maken*](../storage/common/storage-account-create.md?tabs=azure-portal) voor het maken van een **opslag account** in uw Azure-abonnement. Noteer de naam van het opslag account om deze later te gebruiken.
+2. Volg de stappen in [*een container maken*](../storage/blobs/storage-quickstart-blobs-portal.md#create-a-container) voor het maken van een **container** in het nieuwe opslag account. Noteer de naam van de container om deze later te gebruiken.
+3. Maak vervolgens een **SAS-token** voor uw opslag account dat door het eind punt kan worden gebruikt om het te openen. Begin met het navigeren naar uw opslag account in de [Azure Portal](https://ms.portal.azure.com/#home) (u kunt deze naam vinden met de zoek balk van de portal).
+4. Kies op de pagina opslag account de koppeling _gedeelde toegangs handtekening_ in de linkernavigatiebalk om het instellen van het SAS-token te starten.
 
-:::image type="content" source="./media/how-to-manage-routes-apis-cli/generate-sas-token.png" alt-text="De pagina opslag account in de Azure Portal alle instellings selectie voor het genereren van een SAS-token." lightbox="./media/how-to-manage-routes-apis-cli/generate-sas-token.png":::
+    :::image type="content" source="./media/how-to-manage-routes-apis-cli/generate-sas-token-1.png" alt-text="De pagina voor het opslag account in de Azure Portal" lightbox="./media/how-to-manage-routes-apis-cli/generate-sas-token-1.png":::
 
-:::image type="content" source="./media/how-to-manage-routes-apis-cli/copy-sas-token.png" alt-text="SAS-token kopiëren voor gebruik in het onbestelbare geheim." lightbox="./media/how-to-manage-routes-apis-cli/copy-sas-token.png":::
+1. Selecteer op de *pagina gedeelde toegangs handtekening* onder *toegestane Services* en *toegestane bron typen* welke instellingen u wilt gebruiken. U moet ten minste één vak in elke categorie selecteren. Kies onder *toegestane machtigingen* de optie **schrijven** (u kunt ook andere machtigingen selecteren als u dat wilt).
+1. Stel de gewenste waarden in voor de resterende instellingen.
+1. Wanneer u klaar bent, selecteert u de knop _SAS genereren en Connection String_ om het SAS-token te genereren. 
 
+    :::image type="content" source="./media/how-to-manage-routes-apis-cli/generate-sas-token-2.png" alt-text="De pagina opslag account in de Azure Portal alle instellings selectie voor het genereren van een SAS-token en het markeren van de knop SAS en connection string genereren" lightbox="./media/how-to-manage-routes-apis-cli/generate-sas-token-2.png"::: 
+
+1. Hiermee genereert u onder aan dezelfde pagina verschillende SA'S-en connection string waarden onder de instellingen die u selecteert. Schuif omlaag om de waarden weer te geven en gebruik het pictogram *kopiëren naar klem bord* om de **SAS-token** waarde te kopiëren. Sla het bestand op om het later te gebruiken.
+
+    :::image type="content" source="./media/how-to-manage-routes-apis-cli/copy-sas-token.png" alt-text="SAS-token kopiëren voor gebruik in het onbestelbare geheim." lightbox="./media/how-to-manage-routes-apis-cli/copy-sas-token.png":::
+    
 #### <a name="configure-the-endpoint"></a>Het eind punt configureren
 
-Onbestelbare letter-eind punten worden gemaakt met behulp van Azure Resource Manager-Api's. Wanneer u een eind punt maakt, moet u de documentatie van de [Azure Resource Manager api's](/rest/api/digital-twins/controlplane/endpoints/digitaltwinsendpoint_createorupdate) gebruiken om de vereiste aanvraag parameters in te vullen. Voeg ook de `deadLetterSecret` toe aan het object Properties in de **hoofd tekst** van de aanvraag, die een container-URL en SAS-token voor uw opslag account bevat.
+Als u een eind punt wilt maken waarvoor onbestelbare berichten zijn ingeschakeld, moet u het eind punt maken met behulp van de Azure Resource Manager-Api's. 
+
+1. Gebruik eerst de documentatie van de [Azure Resource Manager api's](/rest/api/digital-twins/controlplane/endpoints/digitaltwinsendpoint_createorupdate) om een aanvraag in te stellen voor het maken van een eind punt en vul de vereiste aanvraag parameters in. 
+
+1. Voeg vervolgens een `deadLetterSecret` veld toe aan het eigenschappen object in de **hoofd tekst** van de aanvraag. Stel deze waarde in op basis van de onderstaande sjabloon, waarmee een URL wordt gemaakt op basis van de naam van het opslag account, de container naam en de SAS-token waarde die u in de [vorige sectie](#set-up-storage-resources)hebt verzameld.
       
-```json
-{
-  "properties": {
-    "endpointType": "EventGrid",
-    "TopicEndpoint": "https://contosoGrid.westus2-1.eventgrid.azure.net/api/events",
-    "accessKey1": "xxxxxxxxxxx",
-    "accessKey2": "xxxxxxxxxxx",
-    "deadLetterSecret":"https://<storageAccountname>.blob.core.windows.net/<containerName>?<SASToken>"
-  }
-}
-```
+    ```json
+    {
+      "properties": {
+        "endpointType": "EventGrid",
+        "TopicEndpoint": "https://contosoGrid.westus2-1.eventgrid.azure.net/api/events",
+        "accessKey1": "xxxxxxxxxxx",
+        "accessKey2": "xxxxxxxxxxx",
+        "deadLetterSecret":"https://<storageAccountname>.blob.core.windows.net/<containerName>?<SASToken>"
+      }
+    }
+    ```
+1. Verzend de aanvraag om het eind punt te maken.
+
 Zie de Azure Digital Apparaatdubbels REST API-documentatie: [endpoints-DigitalTwinsEndpoint CreateOrUpdate](/rest/api/digital-twins/controlplane/endpoints/digitaltwinsendpoint_createorupdate)voor meer informatie over het structureren van deze aanvraag.
 
 ### <a name="message-storage-schema"></a>Schema voor bericht opslag
 
-Onbestelbare berichten worden opgeslagen in de volgende indeling in uw opslag account:
+Zodra het eind punt met onbestelbare berichten is ingesteld, worden niet-gestuurde meldingen opgeslagen in de volgende indeling in uw opslag account:
 
 `{container}/{endpointName}/{year}/{month}/{day}/{hour}/{eventId}.json`
 

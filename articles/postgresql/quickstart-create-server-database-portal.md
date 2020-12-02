@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 10/18/2020
-ms.openlocfilehash: 42e15da2fd31d163bc8822a347101704b27e1222
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 000ab3e3911c65554622a48d34abda79d60411df
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92913389"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492383"
 ---
 # <a name="quickstart-create-an-azure-database-for-postgresql-server-by-using-the-azure-portal"></a>Quickstart: Een Azure Database for PostgreSQL-server maken met behulp van de Azure-portal
 
@@ -65,7 +65,7 @@ Ga naar [Azure Portal](https://portal.azure.com/) om een enkele Azure Database f
 [Ondervindt u problemen? Laat het ons weten.](https://aka.ms/postgres-doc-feedback)
 
 ## <a name="configure-a-firewall-rule"></a>Een firewallregel configureren
-De server die u maakt, is standaard niet openbaar toegankelijk. U moet toegang tot uw IP-adres verlenen. Ga in de Azure-portal naar uw serverresource en selecteer **Verbindingsbeveiliging** in het linkermenu van uw serverresource. Zie [Resources openen](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resources-portal#open-resources) als u niet weet hoe u uw resource moet vinden.
+De server die u maakt, is standaard niet openbaar toegankelijk. U moet toegang tot uw IP-adres verlenen. Ga in de Azure-portal naar uw serverresource en selecteer **Verbindingsbeveiliging** in het linkermenu van uw serverresource. Zie [Resources openen](../azure-resource-manager/management/manage-resources-portal.md#open-resources) als u niet weet hoe u uw resource moet vinden.
 
 > [!div class="mx-imgBorder"]
 > :::image type="content" source="./media/quickstart-create-database-portal/add-current-ip-firewall.png" alt-text="Schermopname waarin firewallregels voor verbindingsbeveiliging worden weergegeven.":::

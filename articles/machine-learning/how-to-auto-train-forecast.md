@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to, contperfq1, automl
 ms.date: 08/20/2020
-ms.openlocfilehash: 8c6a27f0cfaafe7e6c1181651e672d0e828af855
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 605e8cd57ab5863c1011082f0f2dbd93d078980b
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96444490"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96518937"
 ---
 # <a name="auto-train-a-time-series-forecast-model"></a>Automatisch een time-series-prognose model trainen
 
@@ -286,19 +286,19 @@ Bekijk een voor beeld van een python-code met behulp van de [samenvoeg functie v
 
 ### <a name="short-series-handling"></a>Verwerking van de korte serie
 
-Voor automatische ML wordt een tijd reeks in rekening gehouden met een **korte serie** als er onvoldoende gegevens punten zijn voor het uitvoeren van de trein-en validerings fasen van model ontwikkeling. Het aantal gegevens punten varieert voor elk experiment en is afhankelijk van de max_horizon, het aantal Kruistabel validaties en de lengte van het model lookback. Dit is het maximale aantal geschiedenis dat nodig is voor het bouwen van de functies van de tijd reeks. Raadpleeg de [documentatie over short_series_handling_config](/python/api/azureml-automl-core/azureml.automl.core.forecasting_parameters.forecastingparameters?preserve-view=true&view=azure-ml-py#short-series-handling-configuration)voor de exacte berekening.
+Voor automatische ML wordt een tijd reeks in rekening gehouden met een **korte serie** als er onvoldoende gegevens punten zijn voor het uitvoeren van de trein-en validerings fasen van model ontwikkeling. Het aantal gegevens punten varieert voor elk experiment en is afhankelijk van de max_horizon, het aantal Kruistabel validaties en de lengte van het model lookback. Dit is het maximale aantal geschiedenis dat nodig is voor het bouwen van de functies van de tijd reeks. Raadpleeg de [documentatie over short_series_handling_configuration](/python/api/azureml-automl-core/azureml.automl.core.forecasting_parameters.forecastingparameters?preserve-view=true&view=azure-ml-py#short-series-handling-configuration)voor de exacte berekening.
 
-Automatische ML biedt de verwerking van korte reeksen standaard met de `short_series_handling_config` para meter in het `ForecastingParameters` object. 
+Automatische ML biedt de verwerking van korte reeksen standaard met de `short_series_handling_configuration` para meter in het `ForecastingParameters` object. 
 
-Als u de verwerking van de korte serie wilt inschakelen, `freq` moet u ook de para meter definiëren. Als u het standaard gedrag wilt wijzigen, `short_series_handling_config = auto` werkt u de `short_series_handling_config` para meter in uw `ForecastingParameter` object bij.  
+Als u de verwerking van de korte serie wilt inschakelen, `freq` moet u ook de para meter definiëren. Als u een frequentie wilt definiëren, worden deze ingesteld `freq='H'` . Bekijk [hier](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#dateoffset-objects)de opties voor de frequentie reeks. Als u het standaard gedrag wilt wijzigen, `short_series_handling_configuration = 'auto'` werkt u de `short_series_handling_configuration` para meter in uw `ForecastingParameter` object bij.  
 
 ```python
 from azureml.automl.core.forecasting_parameters import ForecastingParameters
 
 forecast_parameters = ForecastingParameters(time_column_name='day_datetime', 
                                             forecast_horizon=50,
-                                            short_series_handling_config='auto',
-                                            freq = '7',
+                                            short_series_handling_configuration='auto',
+                                            freq = 'H',
                                             target_lags='auto')
 ```
 De volgende tabel bevat een overzicht van de beschik bare instellingen voor `short_series_handling_config` .
@@ -306,7 +306,7 @@ De volgende tabel bevat een overzicht van de beschik bare instellingen voor `sho
 |Instelling|Beschrijving
 |---|---
 |`auto`| Het volgende is het standaard gedrag voor verwerking van de korte serie <li> *Als alle reeksen kort zijn*, moet u de gegevens aanvullen. <br> <li> *Als niet alle reeksen kort zijn*, verwijdert u de korte reeks. 
-|`pad`| Als `short_series_handling_config = pad` , worden met automatische ml dummy waarden toegevoegd aan elke korte reeks die wordt gevonden. Hieronder vindt u een lijst met de kolom typen en hoe deze worden aangevuld met: <li>Object kolommen met NaNs <li> Numerieke kolommen met 0 <li> Boole/Logic-kolommen met de waarde ONWAAR <li> De doel kolom wordt aangevuld met wille keurige waarden met een gemiddelde van nul en een standaard deviatie van 1. 
+|`pad`| Als `short_series_handling_config = pad` , vervolgens worden door automatische ml wille keurige waarden toegevoegd aan elke korte reeks die wordt gevonden. Hieronder vindt u een lijst met de kolom typen en hoe deze worden aangevuld met: <li>Object kolommen met NaNs <li> Numerieke kolommen met 0 <li> Boole/Logic-kolommen met de waarde ONWAAR <li> De doel kolom wordt aangevuld met wille keurige waarden met een gemiddelde van nul en een standaard deviatie van 1. 
 |`drop`| Als `short_series_handling_config = drop` , wordt de korte serie door automatische ml gezakt en wordt deze niet gebruikt voor training of voor spellingen. Voor spellingen voor deze reeksen worden NaN geretourneerd.
 |`None`| Er wordt geen reeks opgevuld of verwijderd
 

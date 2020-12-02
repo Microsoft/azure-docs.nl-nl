@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 11/09/2020
 ms.author: spelluru
 ms.custom: devx-track-js
-ms.openlocfilehash: 56bed63a9030135966a208dd1ad9b4c45cde328d
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: aac3b6339c318c76e9b0c9abd0bc3778f2563a6f
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95811697"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498690"
 ---
 # <a name="quickstart-service-bus-topics-and-subscriptions-with-nodejs-and-the-preview-azureservice-bus-package"></a>Quickstart: Service Bus-onderwerpen en-abonnementen gebruiken met Node.js en het previewpakket azure/service-bus
 In deze zelfstudie leert u hoe u het [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus)-pakket in een JavaScript-programma kunt gebruiken om berichten te versturen naar een Service Bus-onderwerp en berichten te ontvangen van een Service Bus-abonnement naar dat onderwerp.
@@ -208,4 +208,4 @@ Raadpleeg de volgende documentatie en voorbeelden:
 
 - [Azure Service Bus-clientbibliotheek voor Python](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/servicebus/service-bus/README.md)
 - [Voorbeelden](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/servicebus/service-bus/samples). De map **javascript** heeft JavaScript-voorbeelden en de map **typescript** heeft TypeScript-voor beelden. 
-- [Referentiedocumentatie voor Azure Service Bus](https://docs.microsoft.com/javascript/api/overview/azure/service-bus)
+- [Referentiedocumentatie voor Azure Service Bus](/javascript/api/overview/azure/service-bus)

@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 11/09/2020
 ms.author: spelluru
 ms.custom: devx-track-js
-ms.openlocfilehash: ec5bb299bed5545c3935b2f0ae28a50de9d79c45
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: 3f37fcc6d58eb1c206aef6db15c7826cfdcda274
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95808881"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96489425"
 ---
 # <a name="send-messages-to-and-receive-messages-from-azure-service-bus-queues-javascript"></a>Berichten verzenden naar en berichten ontvangen van Azure Service Bus-wachtrijen (JavaScript)
 In deze zelfstudie leert u hoe u het pakket [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus) in een JavaScript-programma kunt gebruiken om berichten van en naar een Service Bus-wachtrij te ontvangen en verzenden.
@@ -207,4 +207,4 @@ Raadpleeg de volgende documentatie en voorbeelden:
 
 - [Azure Service Bus-clientbibliotheek voor Python](https://github.com/Azure/azure-sdk-for-js/blob/master/sdk/servicebus/service-bus/README.md)
 - [Voorbeelden](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/servicebus/service-bus/samples). De map **javascript** heeft JavaScript-voorbeelden en de map **typescript** heeft TypeScript-voor beelden. 
-- [Referentiedocumentatie voor Azure Service Bus](https://docs.microsoft.com/javascript/api/overview/azure/service-bus)
+- [Referentiedocumentatie voor Azure Service Bus](/javascript/api/overview/azure/service-bus)

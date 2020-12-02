@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 11/25/2020
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: e919db24a70b0ed69aca6977865cc76c0c9c5845
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: dd7616bdc07aee86ac56a2f2fe0ac282838c58b4
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182458"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96518852"
 ---
 # <a name="azure-resource-manager-template-specs-preview"></a>Azure Resource Manager sjabloon specificaties (preview-versie)
 
@@ -21,7 +21,7 @@ Een sjabloon specificatie is een resource type voor het opslaan van een Azure Re
 Als u de sjabloon specificatie wilt implementeren, gebruikt u standaard Azure-hulpprogram ma's zoals Power shell, Azure CLI, Azure Portal, REST en andere ondersteunde Sdk's en clients. U gebruikt dezelfde opdrachten als voor de sjabloon.
 
 > [!NOTE]
-> Sjabloonspecificaties is momenteel beschikbaar als preview-versie. Als u deze wilt gebruiken, moet u de nieuwste versie van PowerShell of Azure CLI installeren. Gebruik voor Azure PowerShell de [versie 5.0.0 of hoger](/powershell/azure/install-az-ps). Gebruik voor Azure CLI de [versie 2.14.2 of hoger](/cli/azure/install-azure-cli).
+> Sjabloonspecificaties is momenteel beschikbaar als preview-versie. Als u deze wilt gebruiken met Azure PowerShell, moet u [versie 5.0.0 of hoger](/powershell/azure/install-az-ps)installeren. Als u deze wilt gebruiken met Azure CLI, gebruikt u [versie 2.14.2 of hoger](/cli/azure/install-azure-cli).
 
 ## <a name="why-use-template-specs"></a>Waarom sjabloon specificaties gebruiken?
 

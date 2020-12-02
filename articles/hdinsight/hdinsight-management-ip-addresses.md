@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 08/11/2020
-ms.openlocfilehash: 35f2f82b4fe6862f0d023a70b32c964698b0c0eb
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 682db0ef52e624a23d95aa18a007f05a78f39677
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92547806"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96518784"
 ---
 # <a name="hdinsight-management-ip-addresses"></a>IP-adressen beheren met HDInsight
 
@@ -32,7 +32,7 @@ In de volgende secties worden de specifieke IP-adressen besproken die moeten wor
 
 ## <a name="azure-dns-service"></a>Azure DNS-service
 
-Als u de door Azure verschafte DNS-service gebruikt, moet u toegang toestaan vanuit __168.63.129.16__ op poort 53. Zie voor meer informatie de [naam omzetting voor vm's en rollen instanties](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md) document. Als u aangepaste DNS gebruikt, kunt u deze stap overs Laan.
+Als u de door Azure verschafte DNS-service gebruikt, verleent u toegang tot __168.63.129.16__ op poort 53 voor TCP-en UDP-verbindingen. Zie voor meer informatie de [naam omzetting voor vm's en rollen instanties](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md) document. Als u aangepaste DNS gebruikt, kunt u deze stap overs Laan.
 
 ## <a name="health-and-management-services-all-regions"></a>Status-en beheer Services: alle regio's
 
@@ -83,7 +83,7 @@ Verkeer toestaan van de IP-adressen die worden vermeld voor de Azure HDInsight-s
 | &nbsp; | VS - noord-centraal | 157.56.8.38</br>157.55.213.99 | \*: 443 | Inkomend |
 | &nbsp; | VS - west-centraal | 52.161.23.15</br>52.161.10.167 | \*: 443 | Inkomend |
 | &nbsp; | VS - west | 13.64.254.98</br>23.101.196.19 | \*: 443 | Inkomend |
-| &nbsp; | West US 2 | 52.175.211.210</br>52.175.222.222 | \*: 443 | Inkomend |
+| &nbsp; | US - west 2 | 52.175.211.210</br>52.175.222.222 | \*: 443 | Inkomend |
 | &nbsp; | VAE - noord | 65.52.252.96</br>65.52.252.97 | \*: 443 | Inkomend |
 | &nbsp; | UAE - centraal | 20.37.76.96</br>20.37.76.99 | \*: 443 | Inkomend |
 

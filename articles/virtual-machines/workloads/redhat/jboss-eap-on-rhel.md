@@ -8,12 +8,12 @@ ms.service: virtual-machines-linux
 ms.subservice: workloads
 ms.assetid: 8a4df7bf-be49-4198-800e-db381cda98f5
 ms.date: 10/30/2020
-ms.openlocfilehash: ce07a0667b1fd4b439f061966e4ee0b1112578c4
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: bab84b12c871c621b5a317ba8b47f9b18c91bff3
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94413204"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500186"
 ---
 # <a name="deploy-enterprise-java-applications-to-azure-with-jboss-eap-on-red-hat-enterprise-linux"></a>Zakelijke Java-toepassingen implementeren in Azure met JBoss EAP op Red Hat Enterprise Linux
 
@@ -31,7 +31,7 @@ JBoss EAP en RHEL bevatten alles wat u nodig hebt om zakelijke Java-toepassingen
 
   Als u geen EAP-rechten hebt, moet u een [JBoss EAP-evaluatieabonnement verkrijgen](https://access.redhat.com/products/red-hat-jboss-enterprise-application-platform/evaluation) voordat u aan de slag gaat. Als u een nieuw Red Hat-abonnement wilt maken, gaat u naar [Red Hat Customer Portal](https://access.redhat.com/) en stelt u een account in.
 
-* De [Azure CLI](https://docs.microsoft.com/cli/azure/overview).
+* De [Azure CLI](/cli/azure/overview).
 
 * RHEL-opties. Kies tussen betalen per gebruik (PAYG) of uw eigen abonnement (BYOS). Met BYOS moet u uw [Red Hat Cloud Access](https://access.redhat.com/) RHEL Gold-installatiekopie activeren voordat u de quickstart-sjabloon implementeert.
 
@@ -164,9 +164,9 @@ Als u BYOS wilt gebruiken voor het RHEL-besturingssysteem, moet u een geldig Red
 
    1. Wacht tot Red Hat Gold-installatiekopieën beschikbaar zijn in uw Azure-abonnement. Deze installatiekopieën zijn doorgaans binnen drie uur na verzending beschikbaar.
     
-3. Accepteer de Azure Marketplace-voorwaarden voor RHEL BYOS-installatiekopieën. U kunt dit proces voltooien door de volgende Azure CLI-opdrachten uit te voeren. Raadpleeg de documentatie over [RHEL BYOS Gold-installatiekopieën in Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/redhat/byos) voor meer informatie. Het is belangrijk dat u de nieuwste versie van Azure CLI uitvoert.
+3. Accepteer de Azure Marketplace-voorwaarden voor RHEL BYOS-installatiekopieën. U kunt dit proces voltooien door de volgende Azure CLI-opdrachten uit te voeren. Raadpleeg de documentatie over [RHEL BYOS Gold-installatiekopieën in Azure](./byos.md) voor meer informatie. Het is belangrijk dat u de nieuwste versie van Azure CLI uitvoert.
 
-   1. Open een Azure CLI-sessie en verifieer met uw Azure-account. Zie [Aanmelden met Azure CLI](https://docs.microsoft.com/cli/azure/authenticate-azure-cli) voor hulp.
+   1. Open een Azure CLI-sessie en verifieer met uw Azure-account. Zie [Aanmelden met Azure CLI](/cli/azure/authenticate-azure-cli) voor hulp.
 
    1. Controleer of de RHEL BYOS-installatiekopieën beschikbaar zijn in uw abonnement door de volgende CLI-opdracht uit te voeren. Als u hier geen resultaten krijgt, zorgt u ervoor dat uw Azure-abonnement is geactiveerd voor RHEL BYOS-installatiekopieën.
    
@@ -203,7 +203,7 @@ U kunt de sjabloon op de volgende manieren implementeren:
   New-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -TemplateUri <raw link to the template which can be obtained from github>
   ```
  
-  Zie de [documentatie over PowerShell](https://docs.microsoft.com/powershell/azure/) voor meer informatie over het installeren en configureren van Azure PowerShell.  
+  Zie de [documentatie over PowerShell](/powershell/azure/) voor meer informatie over het installeren en configureren van Azure PowerShell.  
 
 - **Azure CLI**. Voer de volgende opdrachten uit om de sjabloon te implementeren:
 
@@ -215,7 +215,7 @@ U kunt de sjabloon op de volgende manieren implementeren:
   az group deployment create --resource-group <my-resource-group> --template-uri <raw link to the template which can be obtained from github>
   ```
 
-  Bekijk [De CLI installeren](https://docs.microsoft.com/cli/azure/install-azure-cli) voor meer informatie over het installeren en configureren van de Azure CLI.
+  Bekijk [De CLI installeren](/cli/azure/install-azure-cli) voor meer informatie over het installeren en configureren van de Azure CLI.
 
 - **Azure-portal**. U kunt implementeren op Azure Portal door naar de Azure-quickstart-sjablonen te gaan zoals vermeld in de volgende sectie. Zodra u in de quickstart bent, selecteert u de knop **Implementeren naar Azure** of **Bladeren op GitHub**.
 
@@ -231,10 +231,10 @@ U kunt beginnen met een van de volgende quickstart-sjablonen voor JBoss EAP op R
 
 ## <a name="resource-links"></a>Resource-links
 
-* [Azure Hybrid Benefit](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing)
-* [Een Java-app voor Azure App Service configureren](https://docs.microsoft.com/azure/app-service/configure-language-java)
+* [Azure Hybrid Benefit](../../windows/hybrid-use-benefit-licensing.md)
+* [Een Java-app voor Azure App Service configureren](../../../app-service/configure-language-java.md)
 * [JBoss EAP op Azure Red Hat OpenShift](https://azure.microsoft.com/services/openshift/)
-* [JBoss EAP op Azure App Service Linux](https://docs.microsoft.com/azure/app-service/quickstart-java)
+* [JBoss EAP op Azure App Service Linux](../../../app-service/quickstart-java.md)
 * [JBoss EAP op Azure App Service implementeren](https://github.com/JasonFreeberg/jboss-on-app-service)
 
 ## <a name="next-steps"></a>Volgende stappen
@@ -242,6 +242,6 @@ U kunt beginnen met een van de volgende quickstart-sjablonen voor JBoss EAP op R
 * Meer informatie over [JBoss EAP 7.2](https://access.redhat.com/documentation/red_hat_jboss_enterprise_application_platform/7.2/).
 * Meer informatie over [JBoss EAP 7.3](https://access.redhat.com/documentation/red_hat_jboss_enterprise_application_platform/7.3/).
 * Meer informatie over [Red Hat-abonnementsbeheer](https://access.redhat.com/products/red-hat-subscription-management).
-* Meer informatie over [Red Hat-werkbelastingen op Azure](https://aka.ms/rhel-docs).
+* Meer informatie over [Red Hat-werkbelastingen op Azure](./overview.md).
 * [JBoss EAP implementeren op een RHEL VM of virtuele-machineschaalset van Azure Marketplace](https://aka.ms/AMP-JBoss-EAP).
 * [JBoss EAP implementeren op een RHEL VM of virtuele-machineschaalset op basis van Azure-quickstart-sjablonen](https://aka.ms/Quickstart-JBoss-EAP).

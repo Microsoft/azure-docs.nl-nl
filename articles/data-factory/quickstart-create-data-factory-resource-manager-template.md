@@ -5,18 +5,18 @@ services: data-factory
 ms.service: data-factory
 tags: azure-resource-manager
 ms.workload: data-services
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 ms.reviewer: maghan, jingwang
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 07/16/2020
-ms.openlocfilehash: eb423ebd354adeb8273755d34323b283d53eb8b5
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 0a9c4f6d9e98e721370f54dfbe261025cf186b6c
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87283891"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96497483"
 ---
 # <a name="quickstart-create-an-azure-data-factory-using-arm-template"></a>Quickstart: Een Azure Data Factory maken op basis van een ARM-sjabloon
 
@@ -94,23 +94,23 @@ Meer voorbeelden van Azure Data Factory-sjablonen vindt u in de [galerie met qui
 
 1. Selecteer **Naar de resourcegroep gaan**.
 
-    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-go-to-resource-group.png" alt-text="ADF ARM-sjabloon implementeren":::
+    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-go-to-resource-group.png" alt-text="Resourcegroep":::
 
 2.  Verifieer dat uw Azure Data Factory is gemaakt.
     1. De naam van uw Azure Data Factory heeft de indeling - datafactory\<uniqueid\>.
 
-    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-sample.png" alt-text="ADF ARM-sjabloon implementeren":::
+    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-sample.png" alt-text="Data Factory-voorbeeld":::
 
 2. Verifieer dat uw opslagaccount is gemaakt.
     1. De naam van uw opslagaccount heeft de indeling - storage\<uniqueid\>.
 
-    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-storage-account.png" alt-text="ADF ARM-sjabloon implementeren":::
+    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-storage-account.png" alt-text="Opslagaccount":::
 
 3. Selecteer het gemaakte opslagaccount en selecteer vervolgens **Containers**.
     1. Selecteer op de pagina **Containers** de blobcontainer die u hebt gemaakt.
         1. De naam van uw blobcontainer heeft de indeling - blob\<uniqueid\>.
 
-    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-blob-container.png" alt-text="ADF ARM-sjabloon implementeren":::
+    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-blob-container.png" alt-text="Blobcontainer":::
 
 ### <a name="upload-a-file"></a>Bestand uploaden
 
@@ -126,7 +126,7 @@ Meer voorbeelden van Azure Data Factory-sjablonen vindt u in de [galerie met qui
 
 6. Selecteer het pictogram **Sluiten** (**X**) om de pagina **Blob uploaden** te sluiten.
 
-    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-upload-blob-file.png" alt-text="ADF ARM-sjabloon implementeren":::
+    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-upload-blob-file.png" alt-text="Bestand uploaden naar invoermap":::
 
 Laat de containerpagina openstaan, want u kunt deze aan het eind van deze quickstart gebruiken om de uitvoer te verifiëren.
 
@@ -136,17 +136,17 @@ Laat de containerpagina openstaan, want u kunt deze aan het eind van deze quicks
 
 2. Selecteer de tegel **Maken en bewaken**. 
 
-    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-author-monitor-tile.png" alt-text="ADF ARM-sjabloon implementeren":::
+    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-author-monitor-tile.png" alt-text="Maken en bewaken":::
 
 2. Selecteer het tabblad **Auteur** :::image type="icon" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-author.png" border="false":::.
 
 3. Selecteer de gemaakte pijplijn - ArmtemplateSampleCopyPipeline.
 
-    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-pipelines.png" alt-text="ADF ARM-sjabloon implementeren":::
+    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-pipelines.png" alt-text="ARM-sjabloonpijplijn":::
 
 4. Selecteer **Trigger toevoegen** > **Nu activeren**.
 
-    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-trigger-now.png" alt-text="ADF ARM-sjabloon implementeren":::
+    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-trigger-now.png" alt-text="Trigger":::
 
 5. In het rechterdeelvenster onder **Pijplijnuitvoering** selecteert u **OK**.
 
@@ -156,7 +156,7 @@ Laat de containerpagina openstaan, want u kunt deze aan het eind van deze quicks
 
 2. U ziet de uitvoering van de activiteiten die zijn gekoppeld aan de pijplijnuitvoering. In deze QuickStart heeft de pijplijn slechts één activiteit en wel van het type Kopiëren. Daarom ziet u een uitvoering voor die activiteit.
 
-    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-successful-run.png" alt-text="ADF ARM-sjabloon implementeren":::
+    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-successful-run.png" alt-text="Geslaagde uitvoering":::
 
 ### <a name="verify-the-output-file"></a>Het uitvoerbestand verifiëren
 
@@ -168,7 +168,7 @@ De uitvoermap wordt automatisch door de pijplijn gemaakt in de blobcontainer. Ve
 
 3. Controleer of het bestand **emp.txt** naar de uitvoermap is gekopieerd. 
 
-    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-output.png" alt-text="ADF ARM-sjabloon implementeren":::
+    :::image type="content" source="media/quickstart-create-data-factory-resource-manager-template/data-factory-arm-template-output.png" alt-text="Uitvoer":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

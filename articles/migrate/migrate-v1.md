@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 11/19/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 53a10123bf3304ab9c949146d7cad6b904c8323d
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: c87290b36ec77e834a0d0fcd99e9a8bdb05675b5
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92317211"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96494695"
 ---
 # <a name="work-with-the-previous-version-of-azure-migrate"></a>Werken met de vorige versie van Azure Migrate
 
@@ -31,7 +31,7 @@ Er zijn twee versies van de Azure Migrate-service:
 
 ## <a name="upgrade-between-versions"></a>Upgrade tussen versies
 
-U kunt projecten of onderdelen in de vorige versie niet upgraden naar de nieuwe versie. U moet [een nieuw Azure Migrate-project maken](create-manage-projects.md) en daar [hulpprogramma's voor evaluatie en migratie aan toevoegen](how-to-add-tool-first-time.md). Gebruik de zelfstudies om te begrijpen hoe u de beschikbare hulpprogramma’s voor evaluatie en migratie kunt gebruiken. Als er een Log Analytics-werkruimte aan een Klassiek project was gekoppeld, kunt u deze aan een project in de huidige versie koppelen nadat u het Klassieke project hebt verwijderd.
+U kunt projecten of onderdelen in de vorige versie niet upgraden naar de nieuwe versie. U moet [een nieuw Azure Migrate-project maken](create-manage-projects.md) en daar [hulpprogramma's voor evaluatie en migratie aan toevoegen](./create-manage-projects.md). Gebruik de zelfstudies om te begrijpen hoe u de beschikbare hulpprogramma’s voor evaluatie en migratie kunt gebruiken. Als er een Log Analytics-werkruimte aan een Klassiek project was gekoppeld, kunt u deze aan een project in de huidige versie koppelen nadat u het Klassieke project hebt verwijderd.
 
 ## <a name="find-projects-from-previous-version"></a>Projecten uit de vorige versie zoeken
 
@@ -207,7 +207,7 @@ Als u afhankelijkheidsvisualisatie wilt instellen, koppelt u een Log Analytics-w
 
 Als u afhankelijkheidsvisualisatie wilt gebruiken, koppelt u een Log Analytics-werkruimte aan een migratieproject. U kunt alleen een werkruimte maken of koppelen in hetzelfde abonnement als waar het migratieproject wordt gemaakt.
 
-1. Als u een Log Analytics-werkruimte aan een project wilt koppelen, klikt u in **Overzicht**> **Essentials**op **Vereist configuratie**.
+1. Als u een Log Analytics-werkruimte aan een project wilt koppelen, klikt u in **Overzicht**> **Essentials** op **Vereist configuratie**.
 2. U kunt een nieuwe werkruimte maken of een bestaande koppelen:
   - Geef een naam op om een nieuwe werkruimte te maken. De werkruimte wordt gemaakt in een regio in dezelfde [Azure-geografie](https://azure.microsoft.com/global-infrastructure/geographies/) als het migratieproject.
   - Wanneer u een bestaande werkruimte koppelt, kunt u kiezen uit alle beschikbare werkruimten in hetzelfde abonnement als het migratieproject. Er worden alleen werkruimten weergegeven die zijn gemaakt in een [door Servicetoewijzing ondersteunde regio](../azure-monitor/insights/vminsights-configure-workspace.md#supported-regions). Als u een werkruimte wilt koppelen, moet u ervoor zorgen dat u 'Lezer'-toegang hebt tot de werkruimte.
@@ -219,7 +219,7 @@ Als u afhankelijkheidsvisualisatie wilt gebruiken, koppelt u een Log Analytics-w
 
 Nadat u een werkruimte hebt geconfigureerd, downloadt en installeert u agents op elke on-premises machine die u wilt evalueren. Als u machines zonder internetverbinding hebt, moet u bovendien [Log Analytics-gateway](../azure-monitor/platform/gateway.md) downloaden en installeren op deze machines.
 
-1. Klik in **Overzicht**op **Beheer** > **Machines**, en selecteer de gewenste machine.
+1. Klik in **Overzicht** op **Beheer** > **Machines**, en selecteer de gewenste machine.
 2. Klik in de kolom **Afhankelijkheden** op **Agents installeren**.
 3. Download en installeer op de pagina **Afhankelijkheden** de MMA (Microsoft Monitoring Agent) en de afhankelijkheidsagent op elke VM die u wilt evalueren.
 4. Kopieer de werkruimte-id en -sleutel. U hebt deze nodig wanneer u de MMA installeert op de on-premises machine.
@@ -303,12 +303,12 @@ Afhankelijkheidsgegevens die door Servicetoewijzing zijn vastgelegd, zijn beschi
 De Kusto-query's uitvoeren:
 
 1. Nadat u de agents hebt geïnstalleerd, gaat u naar de portal en klikt u op **Overzicht**.
-2. Ga in **Overzicht**naar de sectie **Essentials** van het project en klik op de werkruimtenaam naast **OMS-werkruimte**.
+2. Ga in **Overzicht** naar de sectie **Essentials** van het project en klik op de werkruimtenaam naast **OMS-werkruimte**.
 3. Klik op de werkruimtepagina van Log Analytics op **Algemeen** > **Logboeken**.
 4. Schrijf uw query om afhankelijkheidsgegevens te verzamelen met behulp van Azure Monitor-logboeken. In de volgende sectie vindt u enkele voorbeeldquery's.
 5. Voer de query uit door op Uitvoeren te klikken. 
 
-[Meer informatie](../azure-monitor/log-query/get-started-portal.md) over het schrijven van Kusto-query's. 
+[Meer informatie](../azure-monitor/log-query/log-analytics-tutorial.md) over het schrijven van Kusto-query's. 
 
 ### <a name="sample-azure-monitor-logs-queries"></a>Voorbeeldquery's voor Azure Monitor-logboeken
 

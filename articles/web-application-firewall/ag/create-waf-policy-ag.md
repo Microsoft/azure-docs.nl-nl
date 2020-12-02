@@ -7,12 +7,12 @@ author: vhorne
 ms.service: web-application-firewall
 ms.date: 02/08/2020
 ms.author: victorh
-ms.openlocfilehash: 5705eedfb919c792c558384f6309325dcded4b43
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 26078c3757e42c3e290a5f4122461b287582fb80
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86146607"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96518818"
 ---
 # <a name="create-web-application-firewall-policies-for-application-gateway"></a>Een firewall beleid voor webtoepassingen voor Application Gateway maken
 
@@ -23,17 +23,15 @@ U kunt zoveel beleids regels maken als u wilt. Als u een beleid hebt gemaakt, mo
 Als op uw Application Gateway een beleid is toegepast en u vervolgens een ander beleid toepast op een listener op die Application Gateway, wordt het beleid van de listener van kracht, maar alleen voor de listener (s) waaraan ze zijn toegewezen. Het Application Gateway beleid is nog steeds van toepassing op alle andere listeners waaraan geen specifiek beleid is toegewezen. 
 
    > [!NOTE]
-   > WAF-beleidsregels per URI zijn beschikbaar als openbare preview. Dit betekent dat deze functie onderhevig is aan de aanvullende gebruiksvoorwaarden van Microsoft. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
-   > [!NOTE]
    > Zodra een firewall beleid is gekoppeld aan een WAF, moet er altijd een beleid zijn dat aan die WAF is gekoppeld. U kunt dat beleid overschrijven, maar het ontkoppelen van een beleid van de WAF wordt niet volledig ondersteund. 
 
 Alle nieuwe WAF-instellingen van de firewall voor webtoepassingen (aangepaste regels, beheerde rulset-configuraties, uitsluitingen, enzovoort) Live binnen een WAF-beleid. Als u een bestaande WAF hebt, zijn deze instellingen mogelijk nog aanwezig in de WAF-configuratie. Zie [uw WAF config migreren naar een WAF-beleid](#migrate) verderop in dit artikel voor meer informatie over het overstappen op het nieuwe WAF-beleid. 
 
-## <a name="create-a-policy"></a>Een beleid maken
+## <a name="create-a-policy"></a>Beleid maken
 
 Maak eerst een Basic-WAF-beleid met een beheerde standaard regelset (DRS) met behulp van de Azure Portal.
 
-1. Selecteer in de linkerbovenhoek van de Portal de optie **een resource maken**. Zoek naar **WAF**, selecteer **Web Application firewall**en selecteer vervolgens **maken**.
+1. Selecteer in de linkerbovenhoek van de Portal de optie **een resource maken**. Zoek naar **WAF**, selecteer **Web Application firewall** en selecteer vervolgens **maken**.
 2. Op de pagina **een WAF-beleid maken** , tabblad **basis** gegevens, voer de volgende informatie in of Selecteer deze, accepteer de standaard waarden voor de overige instellingen en selecteer vervolgens **controleren + maken**:
 
    |Instelling  |Waarde  |
@@ -67,7 +65,7 @@ Door Azure beheerde OWASP-regels zijn standaard ingeschakeld. Als u een afzonder
 
 ## <a name="custom-rules"></a>Aangepaste regels
 
-Als u een aangepaste regel wilt maken, selecteert u **aangepaste regel toevoegen** onder het tabblad **aangepaste regels** . Hiermee opent u de pagina aangepaste regel configuratie. De volgende scherm afbeelding toont een voor beeld van een aangepaste regel die is geconfigureerd voor het blok keren van een aanvraag als de query reeks de tekst *blockme*bevat.
+Als u een aangepaste regel wilt maken, selecteert u **aangepaste regel toevoegen** onder het tabblad **aangepaste regels** . Hiermee opent u de pagina aangepaste regel configuratie. De volgende scherm afbeelding toont een voor beeld van een aangepaste regel die is geconfigureerd voor het blok keren van een aanvraag als de query reeks de tekst *blockme* bevat.
 
 [![Aangepaste regel ](../media/create-waf-policy-ag/edit-custom-rule.png) bewerken](../media/create-waf-policy-ag/edit-custom-rule-lrg.png#lightbox)
 

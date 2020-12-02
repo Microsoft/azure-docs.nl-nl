@@ -3,12 +3,12 @@ title: Aan de slag met Live Video Analytics in IoT Edge - Azure
 description: Deze quickstart laat zien hoe u aan de slag kunt met Live Video Analytics in IoT Edge. Leer hoe u beweging kunt detecteren in een live-videostream.
 ms.topic: quickstart
 ms.date: 04/27/2020
-ms.openlocfilehash: 2d426952e92951185c43b68266196a6764f4f601
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: e67c717a4476ab9191471483d9aa8e8f222cd750
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92125010"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498265"
 ---
 # <a name="quickstart-get-started---live-video-analytics-on-iot-edge"></a>Quickstart: Over Live Video Analytics in IoT Edge
 
@@ -39,7 +39,7 @@ Voor deze zelfstudie hebt u de volgende Azure-resources nodig:
 * IoT Hub
 * Storage-account
 * Azure Media Services-account
-* Een Linux-VM in Azure, waarop [IoT Edge-runtime](../../iot-edge/how-to-install-iot-edge-linux.md) is geïnstalleerd
+* Een Linux-VM in Azure, waarop [IoT Edge-runtime](../../iot-edge/how-to-install-iot-edge.md) is geïnstalleerd
 
 Voor deze quickstart wordt u aangeraden gebruik te maken van het [installatiescript voor Live Video Analytics-resources](https://github.com/Azure/live-video-analytics/tree/master/edge/setup) om de vereiste Azure-resources in uw Azure-abonnement te implementeren. Voer hiervoor de volgende stappen uit:
 
@@ -48,7 +48,11 @@ Voor deze quickstart wordt u aangeraden gebruik te maken van het [installatiescr
 1. Selecteer in de vervolgkeuzelijst aan de linkerkant van het Cloud Shell-venster **Bash** als uw omgeving.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/quickstarts/env-selector.png" alt-text="Live Video Analytics op basis van bewegingsdetectie"
+    > :::image type="content" source="./media/quickstarts/env-selector.png" alt-text="Omgevingsselector":::
+1. Voer de volgende opdracht uit.
+
+    ```
+    bash -c "$(curl -sL https://aka.ms/lva-edge/setup-resources-for-samples)"
     ```
     
 Als het script is voltooid, ziet u alle vereiste resources in uw abonnement. In de scriptuitvoer bevat een tabel met resources de naam van de IoT-hub. Zoek naar het resourcetype `Microsoft.Devices/IotHubs` en noteer de naam. U hebt deze naam nodig in de volgende stap. 
@@ -77,20 +81,20 @@ Nu zijn de modules geïmplementeerd, maar zijn er geen mediagrafieken actief.
 Volg deze instructies om verbinding te maken met uw IoT-hub met behulp van de Azure IoT Tools-extensie.
 
 1. Open in Visual Studio Code het tabblad **Extensies** (of druk op Ctrl+Shift+X) en zoek naar Azure IoT Hub.
-1. Klik met de rechtermuisknop en selecteer **Extensie-instellingen** .
+1. Klik met de rechtermuisknop en selecteer **Extensie-instellingen**.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/run-program/extensions-tab.png" alt-text="Live Video Analytics op basis van bewegingsdetectie":::
+    > :::image type="content" source="./media/run-program/extensions-tab.png" alt-text="Extensie-instellingen":::
 1. Zoek 'Uitgebreid bericht tonen' en schakel deze optie in.
 
     > [!div class="mx-imgBorder"]
-    > :::image type="content" source="./media/run-program/show-verbose-message.png" alt-text="Live Video Analytics op basis van bewegingsdetectie":::
-1. Selecteer **Weergave** > **Explorer** . Of selecteer Ctrl+Shift+E.
-1. Selecteer **Azure IoT Hub** in de linkerbenedenhoek van het tabblad **Verkenner** .
-1. Selecteer het pictogram **Meer opties** om het contextmenu weer te geven. Selecteer vervolgens **IoT Hub-verbindingsreeks instellen** .
+    > :::image type="content" source="./media/run-program/show-verbose-message.png" alt-text="Uitgebreid bericht tonen":::
+1. Selecteer **Weergave** > **Explorer**. Of selecteer Ctrl+Shift+E.
+1. Selecteer **Azure IoT Hub** in de linkerbenedenhoek van het tabblad **Verkenner**.
+1. Selecteer het pictogram **Meer opties** om het contextmenu weer te geven. Selecteer vervolgens **IoT Hub-verbindingsreeks instellen**.
 1. Wanneer er een invoervak verschijn,. voert u uw IoT Hub-verbindingsreeks in. U kunt de verbindingstekenreeks ophalen van *~/clouddrive/lva-sample/appSettings.json* in Cloud Shell.
 
-Als er verbinding is gemaakt, wordt de lijst met edge-apparaten weergegeven. U zou ten minste één apparaat met de naam **lva-sample-device** moeten zien. U kunt nu uw IoT Edge-apparaten beheren en interactief werken met Azure IoT Hub via het contextmenu. Om de modules die op het edge-apparaat zijn geïmplementeerd te bekijken, vouwt u het knooppunt **Modules** uit onder **Iva-sample-device** .
+Als er verbinding is gemaakt, wordt de lijst met edge-apparaten weergegeven. U zou ten minste één apparaat met de naam **lva-sample-device** moeten zien. U kunt nu uw IoT Edge-apparaten beheren en interactief werken met Azure IoT Hub via het contextmenu. Om de modules die op het edge-apparaat zijn geïmplementeerd te bekijken, vouwt u het knooppunt **Modules** uit onder **Iva-sample-device**.
 
 ![Knooppunt lva-sample-device](./media/quickstarts/lva-sample-device-node.png)
 
@@ -105,7 +109,7 @@ U kunt de module gebruiken om live-videostreams te analyseren door directe metho
 
 Om alle [grafiektopologieën](media-graph-concept.md#media-graph-topologies-and-instances) in de module op te sommen:
 
-1. Klik in de Visual Studio Code met de rechtermuisknop op de module **lvaEdge** en selecteer **Module directe methode aanroepen** .
+1. Klik in de Visual Studio Code met de rechtermuisknop op de module **lvaEdge** en selecteer **Module directe methode aanroepen**.
 1. Voer in het vak dat verschijnt *GraphTopologyList* in.
 1. Kopieer de volgende JSON-nettolading en plak deze in het vak. Selecteer vervolgens de Enter-toets.
 
@@ -526,7 +530,7 @@ Volg deze stappen om de resultaten te bekijken.
 
 1. Open het venster **Verkenner** in Visual Studio Code. Zoek naar **Azure IoT Hub** in de linkerbenedenhoek.
 2. Vouw het knooppunt **Apparaten** uit.
-3. Klik met de rechtermuisknop op **Iva-sample-device** en selecteer vervolgens **Bewaking van ingebouwde gebeurtenisbewaking starten** .
+3. Klik met de rechtermuisknop op **Iva-sample-device** en selecteer vervolgens **Bewaking van ingebouwde gebeurtenisbewaking starten**.
 
     ![Bewaking van IOT Hub-gebeurtenissen starten](./media/quickstarts/start-monitoring-iothub-events.png)
     
@@ -581,7 +585,7 @@ Let op deze details:
 * De sectie `body` bevat gegevens over de analytische gebeurtenis. In dit geval is de gebeurtenis een deductiegebeurtenis en bevat de hoofdtekst daarom `timestamp`- en `inferences`-gegevens.
 * De sectie `inferences` aan dat het `type` `motion` is. Het biedt aanvullende gegevens over de `motion`-gebeurtenis.
 
-Als u de mediagrafiek even uitvoert, verschijnt het volgende bericht in het venster **UITVOER** .
+Als u de mediagrafiek even uitvoert, verschijnt het volgende bericht in het venster **UITVOER**.
 
 ```
 [IoTHubMonitor] [7:47:45 AM] Message received from [lva-sample-device/lvaEdge]:

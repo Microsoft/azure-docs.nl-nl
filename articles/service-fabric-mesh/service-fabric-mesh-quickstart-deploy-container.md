@@ -5,12 +5,12 @@ author: georgewallace
 ms.author: gwallace
 ms.date: 11/27/2018
 ms.topic: quickstart
-ms.openlocfilehash: 0c6bb8ba680612acbd497598b3e56efa5c28244a
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: c81b53b68c689f4b890d2ff628f38b734aea63dc
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93146242"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499880"
 ---
 # <a name="quickstart-deploy-hello-world-to-service-fabric-mesh"></a>Quickstart: Hallo wereld implementeren in Service Fabric Mesh
 
@@ -45,7 +45,7 @@ az group create --name myResourceGroup --location eastus
 >[!NOTE]
 > Met ingang van 2 november 2020 zijn [snelheidslimieten voor downloaden van toepassing](https://docs.docker.com/docker-hub/download-rate-limit/) op anonieme en geverifieerde aanvragen bij Docker Hub, vanuit accounts van gratis Docker-abonnementen. Deze aanvragen worden afgedwongen op IP-adres. 
 > 
-> Deze sjablonen maken gebruik van openbare installatiekopieën van Docker Hub. Houd er rekening mee dat er limieten kunnen gelden. Zie [Verifiëren met Docker Hub](https://docs.microsoft.com/azure/container-registry/buffer-gate-public-content#authenticate-with-docker-hub) voor meer informatie.
+> Deze sjablonen maken gebruik van openbare installatiekopieën van Docker Hub. Houd er rekening mee dat er limieten kunnen gelden. Zie [Verifiëren met Docker Hub](../container-registry/buffer-gate-public-content.md#authenticate-with-docker-hub) voor meer informatie.
 
 Maak uw toepassing in de resourcegroep met de opdracht `az mesh deployment create`.  Voer het volgende uit:
 

@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/13/2020
-ms.openlocfilehash: 87dff3bbb4a7ff5e40a06d1b63bdc38987d727fe
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: f9b9681b08f5864dc34bbf1c35dc6919129c24cb
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492689"
+ms.locfileid: "96518801"
 ---
 # <a name="azure-database-for-mysql-data-encryption-with-a-customer-managed-key"></a>Gegevens versleuteling Azure Database for MySQL met een door de klant beheerde sleutel
 
@@ -61,7 +61,7 @@ Wanneer de server is geconfigureerd voor het gebruik van de door de klant beheer
 Hier volgen de vereisten voor het configureren van Key Vault:
 
 * Key Vault en Azure Database for MySQL moeten deel uitmaken van dezelfde Azure Active Directory (Azure AD)-Tenant. Cross-Tenant Key Vault en server interacties worden niet ondersteund. Als u de Key Vault resource later wilt verplaatsen, moet u de gegevens versleuteling opnieuw configureren.
-* Schakel de [voorlopig verwijderen] ((. /Key-Vault/General/soft-delete-overview.MD) op de sleutel kluis met de Bewaar periode ingesteld op **90 dagen**, om gegevens verlies te beschermen als een onbedoelde sleutel (of Key Vault) wordt verwijderd. Voorlopig verwijderde resources worden standaard 90 dagen bewaard, tenzij de Bewaar periode expliciet is ingesteld op <= 90 dagen. De herstel-en opschoon acties hebben hun eigen machtigingen die zijn gekoppeld aan een Key Vault toegangs beleid. De functie voor voorlopig verwijderen is standaard uitgeschakeld, maar u kunt deze inschakelen via Power shell of de Azure CLI (Houd er rekening mee dat u deze niet via de Azure Portal hoeft in te scha kelen).
+* Schakel de functie voor [voorlopig verwijderen](../key-vault/general/soft-delete-overview.md) in op de sleutel kluis waarbij de Bewaar periode is ingesteld op **90 dagen** om te beschermen tegen gegevens verlies als een onbedoelde sleutel (of Key Vault) wordt verwijderd. Voorlopig verwijderde resources worden standaard 90 dagen bewaard, tenzij de Bewaar periode expliciet is ingesteld op <= 90 dagen. De herstel-en opschoon acties hebben hun eigen machtigingen die zijn gekoppeld aan een Key Vault toegangs beleid. De functie voor voorlopig verwijderen is standaard uitgeschakeld, maar u kunt deze inschakelen via Power shell of de Azure CLI (Houd er rekening mee dat u deze niet via de Azure Portal hoeft in te scha kelen).
 * Schakel de functie [beveiliging opschonen](../key-vault/general/soft-delete-overview.md#purge-protection) in op de sleutel kluis waarbij de Bewaar periode is ingesteld op **90 dagen**. Het opschonen van de beveiliging kan alleen worden ingeschakeld wanneer het voorlopig verwijderen is ingeschakeld. Deze kan worden ingeschakeld via Azure CLI of Power shell. Wanneer het leegmaken van de beveiliging is ingeschakeld, kan een kluis of een object in de verwijderde status pas worden verwijderd nadat de Bewaar periode is verstreken. Voorlopig verwijderde kluizen en objecten kunnen nog steeds worden hersteld, zodat het Bewaar beleid wordt gevolgd. 
 * Verleen de Azure Database for MySQL toegang tot de sleutel kluis met de machtigingen Get, wrapKey en sleutel uitpakken met behulp van de unieke beheerde identiteit. In de Azure Portal wordt de unieke service-identiteit automatisch gemaakt wanneer gegevens versleuteling is ingeschakeld op de MySQL. Zie [Configure Data Encryption for MySQL](howto-data-encryption-portal.md) voor gedetailleerde stapsgewijze instructies voor het gebruik van de Azure Portal.
 
@@ -70,8 +70,8 @@ Hieronder vindt u de vereisten voor het configureren van de door de klant beheer
 * De door de klant beheerde sleutel die moet worden gebruikt voor het versleutelen van de DEK kan alleen asymmetrisch zijn: RSA 2048.
 * De datum en tijd waarop de sleutel wordt geactiveerd, moeten in het verleden liggen. De verval datum is niet ingesteld.
 * De sleutel moet de *ingeschakelde* status hebben.
-* Voor de sleutel moet [zacht verwijderen](../key-vault/general/soft-delete-overview.md) met de Bewaar periode zijn ingesteld op **90 dagen**.
-* Voor de u moet de functie voor [opschonen zijn ingeschakeld](../key-vault/general/soft-delete-overview.md#purge-protection).
+* Voor de sleutel moet [zacht verwijderen](../key-vault/general/soft-delete-overview.md) met de Bewaar periode zijn ingesteld op **90 dagen**. Hiermee wordt impliciet het vereiste sleutel kenmerk recoveryLevel: ' Recoverable ' ingesteld. Als de retentie is ingesteld op < 90 dagen, recoveryLevel: "CustomizedRecoverable", wat niet de vereiste is, dus zorg ervoor dat de Bewaar periode is ingesteld op **90 dagen**.
+* Voor de sleutel moet de [beveiliging leegmaken zijn ingeschakeld](../key-vault/general/soft-delete-overview.md#purge-protection).
 * Als u [een bestaande sleutel](/rest/api/keyvault/ImportKey/ImportKey) in de sleutel kluis importeert, moet u deze opgeven in de ondersteunde bestands indelingen ( `.pfx` , `.byok` , `.backup` ).
 
 ## <a name="recommendations"></a>Aanbevelingen

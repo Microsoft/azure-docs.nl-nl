@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.custom: mvc, devx-track-azurecli
 ms.date: 07/01/2020
-ms.openlocfilehash: 4e50560d2f090c99d1f354ebbc11ab2357dd61e8
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: 48ef9cc48f48cec92ae57774e5d89e300ee43385
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94874726"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96485371"
 ---
 # <a name="quickstart-create-an-azure-stream-analytics-job-using-the-azure-cli"></a>Quickstart: een Azure Stream Analytics-taak maken via de Azure CLI
 
@@ -94,7 +94,7 @@ Met de volgende Azure CLI-codeblokken wordt een blob-opslagaccount gemaakt dat w
    az storage account keys list -g streamanalyticsrg -n <storage-account>
    ```
 
-3. Gebruik de opdracht [az storage container create](/cli/azure/storage/container) om een container te maken voor het opslaan van blobs. U gebruikt de sleutel voor het opslagaccount om de bewerking voor het maken van de container te autoriseren. Zie [Toegang verlenen tot blob- of wachtrijgegevens met Azure CLI](../storage/common/authorize-data-operations-cli.md) voor meer informatie over het autoriseren van gegevensbewerkingen met Azure CLI.
+3. Gebruik de opdracht [az storage container create](/cli/azure/storage/container) om een container te maken voor het opslaan van blobs. U gebruikt de sleutel voor het opslagaccount om de bewerking voor het maken van de container te autoriseren. Zie [Toegang verlenen tot blob- of wachtrijgegevens met Azure CLI](../storage/blobs/authorize-data-operations-cli.md) voor meer informatie over het autoriseren van gegevensbewerkingen met Azure CLI.
 
    ```azurecli
    az storage container create \

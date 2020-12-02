@@ -11,19 +11,19 @@ ms.date: 04/14/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 219893859d05eb419bc862484a9083abf8c26db7
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: bbb4298d0d9a9d7589c4a2055b4d55a0b852f951
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95997712"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96518206"
 ---
 # <a name="hybrid-identity-considerations-for-the-azure-government-cloud"></a>Overwegingen voor hybride identiteit voor de Azure Government Cloud
 
 In dit artikel worden overwegingen beschreven voor het integreren van een hybride omgeving met de Microsoft Azure Government Cloud. Deze informatie wordt verstrekt als referentie voor beheerders en architecten die samen werken met de Azure Government Cloud.
 
 > [!NOTE]
-> Als u een on-premises Microsoft Azure Active Directory-omgeving (Azure AD) wilt integreren met de Azure Government Cloud, moet u een upgrade uitvoeren naar de nieuwste versie van [Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594).
+> Als u een micro soft Active Directory-omgeving (on-premises of gehost in een IaaS die deel uitmaakt van dezelfde Cloud instantie) wilt integreren met de Azure Government Cloud, moet u een upgrade uitvoeren naar de nieuwste versie van [Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594).
 
 Raadpleeg de [documentatie](/office365/enterprise/office-365-u-s-government-dod-endpoints)voor een volledige lijst van Verenigde Staten overheids-eind punten.
 

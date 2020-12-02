@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2018
 ms.author: damendo
-ms.openlocfilehash: 25f4ae0dbfd7827a36dede6a889c342ea490e273
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: f27f2a6319bf2648546a62c2566d938db657738f
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94948473"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96518461"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Veelgestelde vragen over Traffic Analytics
 
@@ -69,7 +69,7 @@ U kunt Traffic Analytics voor Nsg's gebruiken in een van de volgende ondersteund
 - VS - oost
 - VS - oost 2
 - VS - noord-centraal
-- South Central US
+- VS - zuid-centraal
 - Central US
 - VS - west
 - VS - west 2
@@ -97,7 +97,7 @@ De Log Analytics-werk ruimte moet in de volgende regio's bestaan:
 - VS - oost
 - VS - oost 2
 - VS - noord-centraal
-- South Central US
+- VS - zuid-centraal
 - Central US
 - VS - west
 - VS - west 2
@@ -112,7 +112,7 @@ De Log Analytics-werk ruimte moet in de volgende regio's bestaan:
 - Azië - zuidoost 
 - Korea - centraal
 - India - centraal
-- Japan East
+- Japan - oost
 - VS (overheid) - Virginia
 - China - oost 2
 
@@ -401,3 +401,6 @@ De pagina topologie virtuele subnetwerken bevat twee hoofd secties:
 - Als u wilt overstappen op andere gemarkeerde knoop punten in de topologie weergave, gebruikt u de `Shift+Right arrow` sleutel voor voorwaarts verplaatsen. 
 - Focus wordt op gemarkeerde knoop punten verplaatst naar het **vak informatie** van het knoop punt. Focus gaat standaard naar de knop **meer details** in het **dialoog venster informatie**. Als u verder wilt gaan in de weer gave van het **vak** , gebruikt u `Right arrow` en de `Left arrow` toetsen om respectievelijk vooruit en achteruit te gaan. Wanneer `Enter` u op hetzelfde effect klikt, wordt de knop prioriteit geselecteerd in het **dialoog venster informatie**.
 - Wanneer u een van deze knoop punten selecteert, kunt u alle verbindingen met één voor één bekijken door op de toets te drukken `Shift+Left arrow` . Focus wordt verplaatst naar het **vak informatie** van deze verbinding. De focus kan op elk gewenst moment worden teruggedraaid naar het knoop punt door opnieuw op te drukken `Shift+Right arrow` .
+
+## <a name="are-classic-nsgs-supported"></a>Worden klassieke Nsg's ondersteund?
+Nee, Traffic Analytics biedt geen ondersteuning voor klassieke NSG. Het is raadzaam om IaaS-resources van klassiek naar Azure Resource Manager te migreren omdat klassieke resources worden [afgeschaft](https://docs.microsoft.com/azure/virtual-machines/classic-vm-deprecation). Raadpleeg dit artikel voor meer informatie [over het migreren](https://docs.microsoft.com/azure/virtual-machines/migration-classic-resource-manager-overview)van.

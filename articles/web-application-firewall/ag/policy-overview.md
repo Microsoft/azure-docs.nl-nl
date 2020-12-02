@@ -7,21 +7,16 @@ author: winthrop28
 ms.service: web-application-firewall
 ms.date: 11/20/2020
 ms.author: victorh
-ms.openlocfilehash: b546b043b856fd6ec69acd63fd69a01c48d0553b
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 59ca0b85ba2aff29bdb2ad3379c1054041d2b4cb
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94990122"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96518733"
 ---
 # <a name="azure-web-application-firewall-waf-policy-overview"></a>Overzicht van het beleid voor Azure Web Application firewall (WAF)
 
 Web Application firewall-beleid bevat alle WAF-instellingen en-configuraties. Dit omvat uitsluitingen, aangepaste regels, beheerde regels, enzovoort. Deze beleids regels worden vervolgens gekoppeld aan een toepassings gateway (globaal), een listener (per site) of een op een pad gebaseerde regel (per URI) die ze van kracht kunnen laten worden.
-
-> [!NOTE]
-> Azure Web Application firewall (WAF) per URI-beleid bevindt zich in de open bare preview.
-> 
-> Deze openbare preview-versie wordt aangeboden zonder serviceovereenkomst en moet niet worden gebruikt voor productieworkloads. Bepaalde functies worden mogelijk niet ondersteund, zijn mogelijk beperkt of zijn mogelijk niet beschikbaar op alle Azure-locaties. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 Er is geen limiet voor het aantal beleids regels dat u kunt maken. Wanneer u een beleid maakt, moet dit zijn gekoppeld aan een toepassings gateway om van kracht te worden. Het kan worden gekoppeld aan elke combi natie van toepassings gateways, listeners en regels op basis van een pad.
 

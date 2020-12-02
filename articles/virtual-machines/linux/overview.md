@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.date: 11/14/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 95e4ac884e0eda3b4f469484226962e3fd2e2eea
-ms.sourcegitcommit: 051908e18ce42b3b5d09822f8cfcac094e1f93c2
+ms.openlocfilehash: 54982189a5da584c7daf66855ffb655e403a455a
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94375377"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500509"
 ---
 # <a name="linux-virtual-machines-in-azure"></a>Virtuele Linux-machines in Azure
 
@@ -114,7 +114,7 @@ Azure biedt ondersteuning voor [cloud init](https://cloud-init.io/) voor de mees
 * [Overzicht van Virtual Network](../../virtual-network/virtual-networks-overview.md)
 * [IP-adressen in Azure](../../virtual-network/public-ip-addresses.md)
 * [Poorten openen voor een Linux-VM in Azure](nsg-quickstart.md)
-* [Een Fully Qualified Domain Name maken in Azure Portal](portal-create-fqdn.md)
+* [Een Fully Qualified Domain Name maken in Azure Portal](../create-fqdn.md)
 
 
 ## <a name="data-residency"></a>Gegevenslocatie

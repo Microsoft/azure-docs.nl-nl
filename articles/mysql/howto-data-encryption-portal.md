@@ -7,12 +7,12 @@ ms.service: mysql
 ms.topic: how-to
 ms.date: 01/13/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 9de4a4534551c4a41b2c81c1d10fecf6118ff868
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 00670746c1686bca354adc989ddce6c9dd336491
+ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96434512"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96519056"
 ---
 # <a name="data-encryption-for-azure-database-for-mysql-by-using-the-azure-portal"></a>Gegevens versleuteling voor Azure Database for MySQL met behulp van de Azure Portal
 
@@ -44,7 +44,8 @@ Meer informatie over het gebruik van de Azure Portal voor het instellen en beher
   * Geen verval datum
   * Niet uitgeschakeld
   * **Get**-, **wrap**-en **Unwrap** -bewerkingen uitvoeren
-  * het kenmerk recoverylevel is ingesteld op **herstellen**.
+  * kenmerk recoverylevel is ingesteld op **hersteld** (hiervoor moet voorlopig verwijderen zijn ingeschakeld met de Bewaar periode ingesteld op 90 dagen)
+  * Beveiliging opschonen ingeschakeld
 
 U kunt de bovenstaande kenmerken van de sleutel controleren met behulp van de volgende opdracht:
 

@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 09/16/2020
-ms.openlocfilehash: c4ddffa5f9e9ff4b313f05c9cedb3cb207695225
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 4765c0c43cfd9760eb5b4392604bfaeedc69c388
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93129700"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96511437"
 ---
 # <a name="introduction-to-stream-analytics-windowing-functions"></a>Inleiding tot Stream Analytics-venster functies
 
@@ -36,7 +36,7 @@ HoppingWindow-functies worden gebruikt om met een vaste tijdstuur vooruit te gaa
 
 ## <a name="sliding-window"></a>Schuif venster
 
-Verschuiving van Vensters, in tegens telling tot Tumblingvenstertriggers-of verspringen-Vensters, uitvoer gebeurtenissen alleen voor tijdstippen waarop de inhoud van het venster daad werkelijk wordt gewijzigd. Met andere woorden, wanneer er een gebeurtenis in het venster wordt ingevoerd of afgesloten. Elk venster heeft ten minste één gebeurtenis, zoals in het geval van verspringen Windows, gebeurtenissen kunnen tot meer dan één sliding window behoren
+Verschuiving van Vensters, in tegens telling tot Tumblingvenstertriggers-of verspringen-Vensters, uitvoer gebeurtenissen alleen voor tijdstippen waarop de inhoud van het venster daad werkelijk wordt gewijzigd. Met andere woorden, wanneer er een gebeurtenis in het venster wordt ingevoerd of afgesloten. Daarom heeft elk venster ten minste één gebeurtenis. Net als bij verspringen Windows kunnen gebeurtenissen tot meer dan één sliding window behoren.
 
 ![Stream Analytics sliding window](media/stream-analytics-window-functions/stream-analytics-window-functions-sliding-intro.png)
 

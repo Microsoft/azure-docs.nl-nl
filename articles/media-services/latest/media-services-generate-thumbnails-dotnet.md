@@ -11,21 +11,21 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 08/31/2020
+ms.date: 12/01/2020
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5e4ad7ba75edd1899cbe2d7cd7d3b1b6c124ce35
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 887ac4197321b4015eff7cc839abd8f57ae67760
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89267646"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96512015"
 ---
 # <a name="how-to-generate-thumbnails-using-encoder-standard-with-net"></a>Miniaturen genereren met behulp van encoder Standard met .NET
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
-U kunt Media Encoder Standard gebruiken om een of meer miniaturen te genereren op basis van uw invoer video in [JPEG](https://en.wikipedia.org/wiki/JPEG)-, [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics)-of [BMP](https://en.wikipedia.org/wiki/BMP_file_format) -afbeeldings bestands indelingen.
+U kunt Media Encoder Standard gebruiken om een of meer miniaturen te genereren op basis van uw invoer video in [JPEG](https://en.wikipedia.org/wiki/JPEG) -of [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics) -afbeeldings bestands indelingen.
 
 ## <a name="recommended-reading-and-practice"></a>Aanbevolen Lees-en praktijk
 

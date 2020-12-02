@@ -10,12 +10,12 @@ ms.service: security-center
 ms.topic: overview
 ms.date: 09/15/2020
 ms.author: memildin
-ms.openlocfilehash: d03416f390abb8656ac1aed81419864443122ce6
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
+ms.openlocfilehash: 7d59c0e751054522f4c54fe059f19aa0a941464e
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96122419"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96489995"
 ---
 # <a name="additional-threat-protections-in-azure-security-center"></a>Extra bedreigingsbeveiliging in Azure Security Center
 Naast de ingebouwde [Azure Defender-beveiligingsmethoden](azure-defender.md) biedt Azure Security Center de volgende mogelijkheden voor bedreigingsbeveiliging.
@@ -89,7 +89,7 @@ Van DDoS-aanvallen (Distributed Denial of service) is het bekend dat ze eenvoudi
 
 Met een DDoS-aanval wordt geprobeerd de resources van een toepassing uit te putten, waardoor de toepassing niet meer beschikbaar is voor legitieme gebruikers. DDoS-aanvallen kunnen worden gericht op elk eindpunt dat kan worden bereikt via internet.
 
-U kunt zich tegen DDoS-aanvallen beschermen door een licentie voor Azure DDoS Protection aan te schaffen en ervoor te zorgen dat u de aanbevolen procedures voor het ontwerpen van toepassingen volgt. DDoS Protection biedt verschillende servicelagen. Zie het [Overzicht van Azure DDoS Protection](../virtual-network/ddos-protection-overview.md) voor meer informatie.
+U kunt zich tegen DDoS-aanvallen beschermen door een licentie voor Azure DDoS Protection aan te schaffen en ervoor te zorgen dat u de aanbevolen procedures voor het ontwerpen van toepassingen volgt. DDoS Protection biedt verschillende servicelagen. Zie het [Overzicht van Azure DDoS Protection](../ddos-protection/ddos-protection-overview.md) voor meer informatie.
 
 Zie de [Referentietabel met waarschuwingen](alerts-reference.md#alerts-azureddos) voor een lijst met waarschuwingen voor Azure DDoS Protection.
 

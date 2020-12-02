@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/16/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: 046cca4e683a8f14893bf48ac8601b138a7c28a7
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: daa7c657a47414b01197bed3644caefeda98af1c
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630274"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96512168"
 ---
 # <a name="storsimple-8100-and-8600-migration-to-azure-file-sync"></a>StorSimple 8100 en 8600 migratie naar Azure File Sync
 
@@ -175,7 +175,7 @@ Er zijn verschillende replicatie-instellingen beschikbaar. Meer informatie over 
 Kies alleen een van de volgende twee opties:
 
 * *Lokaal redundante opslag (LRS)*.
-* *Zone redundant Storage (ZRS)* , die niet beschikbaar is in alle Azure-regio's.
+* *Zone redundant Storage (ZRS)*, die niet beschikbaar is in alle Azure-regio's.
 
 > [!NOTE]
 > Alleen LRS-en ZRS-redundantie typen zijn compatibel met de grote 100-TiB capaciteit Azure-bestands shares.
@@ -320,8 +320,8 @@ Aan het einde van fase 3 voert u de taken van de gegevens transformatie service 
 
 Er zijn twee belang rijke strategieën voor het openen van uw Azure-bestands shares:
 
-* **Azure file sync** : [Implementeer Azure file sync](#deploy-azure-file-sync) op een on-premises Windows Server-exemplaar. Azure File Sync heeft alle voor delen van een lokale cache, net als bij StorSimple.
-* **Direct share-toegang** : [direct delen-toegang implementeren](#deploy-direct-share-access). Gebruik deze strategie als uw toegangs scenario voor een bepaalde Azure-bestands share geen gebruikmaken van lokale cache of als u niet langer de mogelijkheid hebt om een on-premises Windows Server-exemplaar te hosten. Hier blijven uw gebruikers en apps toegang tot SMB-shares via het SMB-protocol. Deze shares bevinden zich niet meer op een on-premises server, maar rechtstreeks in de Cloud.
+* **Azure file sync**: [Implementeer Azure file sync](#deploy-azure-file-sync) op een on-premises Windows Server-exemplaar. Azure File Sync heeft alle voor delen van een lokale cache, net als bij StorSimple.
+* **Direct share-toegang**: [direct delen-toegang implementeren](#deploy-direct-share-access). Gebruik deze strategie als uw toegangs scenario voor een bepaalde Azure-bestands share geen gebruikmaken van lokale cache of als u niet langer de mogelijkheid hebt om een on-premises Windows Server-exemplaar te hosten. Hier blijven uw gebruikers en apps toegang tot SMB-shares via het SMB-protocol. Deze shares bevinden zich niet meer op een on-premises server, maar rechtstreeks in de Cloud.
 
 U moet al bepalen welke optie het meest geschikt is voor u in [fase 1](#phase-1-prepare-for-migration) van deze hand leiding.
 
@@ -419,7 +419,7 @@ U kunt de Azure Portal gebruiken om te zien wanneer uw naam ruimte volledig is a
 
 * Meld u aan bij de Azure Portal en ga naar de synchronisatie groep. Controleer de synchronisatie status van uw synchronisatie groep en server eindpunt.
 * De interessante richting wordt gedownload. Als het server-eind punt nieuw is ingericht, wordt de **eerste synchronisatie** weer gegeven, wat aangeeft dat de naam ruimte nog steeds niet beschikbaar is.
-Nadat dit is gewijzigd in een andere, maar een **initiële synchronisatie** , wordt uw naam ruimte volledig ingevuld op de server. U kunt nu door gaan met een lokale RoboCopy.
+Nadat dit is gewijzigd in een andere, maar een **initiële synchronisatie**, wordt uw naam ruimte volledig ingevuld op de server. U kunt nu door gaan met een lokale RoboCopy.
 
 #### <a name="windows-server-event-viewer"></a>Windows Server-Logboeken
 
@@ -427,9 +427,9 @@ U kunt ook de Logboeken op uw Windows Server-exemplaar gebruiken om te zien wann
 
 1. Open de **Logboeken** en ga naar **toepassingen en services**.
 1. Ga naar en open **Microsoft\FileSync\Agent\Telemetry**.
-1. Zoek naar de meest recente **gebeurtenis 9102** , die overeenkomt met een voltooide synchronisatie sessie.
+1. Zoek naar de meest recente **gebeurtenis 9102**, die overeenkomt met een voltooide synchronisatie sessie.
 1. Selecteer **Details** en bevestig dat u op zoek bent naar een gebeurtenis waar de **SyncDirection** -waarde wordt **gedownload**.
-1. Voor het moment waarop uw naam ruimte het downloaden van de server heeft voltooid, is er één gebeurtenis met **scenario** , de waarde **FullGhostedSync** en **HResult**  =  **0**.
+1. Voor het moment waarop uw naam ruimte het downloaden van de server heeft voltooid, is er één gebeurtenis met **scenario**, de waarde **FullGhostedSync** en **HResult**  =  **0**.
 1. Als u deze gebeurtenis hebt gemist, kunt u ook andere **9102-gebeurtenissen** zoeken met **SyncDirection**  =  **down load** en **scenario**  =  **"RegularSync"**. Als u een van deze gebeurtenissen zoekt, geeft u ook aan dat de naam ruimte is gedownload en dat de synchronisatie is voltooid naar reguliere synchronisatie sessies, ongeacht of er op dit moment iets is om te synchroniseren.
 
 ### <a name="a-final-robocopy"></a>Een laatste RoboCopy
@@ -448,7 +448,7 @@ Op dit moment zijn er verschillen tussen uw on-premises Windows Server-exemplaar
 RoboCopy heeft verschillende para meters. In het volgende voor beeld wordt een voltooide opdracht weer geven en een lijst met redenen voor het kiezen van deze para meters.
 
 ```console
-Robocopy /MT:16 /UNILOG:<file name> /TEE /B /MIR /COPYALL /DCOPY:DAT <SourcePath> <Dest.Path>
+Robocopy /MT:16 /UNILOG:<file name> /TEE /NP /B /MIR /COPYALL /DCOPY:DAT <SourcePath> <Dest.Path>
 ```
 
 Achtergrondbitmap
@@ -475,6 +475,14 @@ Achtergrondbitmap
    :::column-end:::
    :::column span="1":::
       Uitvoer naar console venster. Wordt gebruikt in combi natie met uitvoer naar een logboek bestand.
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="1":::
+      /NP
+   :::column-end:::
+   :::column span="1":::
+      Laat de logboek registratie van de voortgang ongewijzigd om het logboek leesbaar te blijven.
    :::column-end:::
 :::row-end:::
 :::row:::

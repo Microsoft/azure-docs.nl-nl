@@ -8,12 +8,12 @@ ms.date: 07/24/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: zezha-msft
-ms.openlocfilehash: a5c0d8bb47b337b0415565a0b6dad5c6822d0b94
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: fd71f4eb56974b93637c23eddc81e5f33ce788b8
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92781733"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96512151"
 ---
 # <a name="azcopy-copy"></a>azcopy copy
 
@@ -107,6 +107,14 @@ Bestanden en mappen uploaden met behulp van een SAS-token en Joker tekens (*):
 ```azcopy
 azcopy cp "/path/*foo/*bar*" "https://[account].blob.core.windows.net/[container]/[path/to/directory]?[SAS]" --recursive
 ```
+
+Upload bestanden en mappen naar Azure Storage account en stel de tags voor de query teken reeks in op de blob. 
+
+- Voor het instellen van Tags {Key = "verwijderen verwijderen", val = "foo"} en {Key = "verwijderen verwijderen 2", val = "Bar"}, gebruikt u de volgende syntaxis: `azcopy cp "/path/*foo/*bar*" "https://[account].blob.core.windows.net/[container]/[path/to/directory]?[SAS]" --blob-tags="bla%20bla=foo&bla%20bla%202=bar"`
+    
+- Sleutels en waarden zijn URL-code ring en de sleutel-waardeparen worden gescheiden door een en-teken (' & ')
+
+- Tijdens het instellen van tags op de blobs zijn er in SAS extra machtigingen (niet voor Tags), zonder dat de service een autorisatie fout meer krijgt.
 
 Een enkel bestand downloaden met behulp van OAuth-verificatie. Als u zich nog niet hebt aangemeld bij AzCopy, voert `azcopy login` u de opdracht uit voordat u de volgende opdracht uitvoert.
 
@@ -214,9 +222,19 @@ Kopieer een subset van buckets met behulp van een Joker teken (*) in de Bucket n
 - azcopy cp "https://s3.amazonaws.com/[bucket*name]/" "https://[destaccount].blob.core.windows.net?[SAS]" --recursive
 ```
 
+Bestanden en mappen overzetten naar Azure Storage-account en de opgegeven query-teken reeks gecodeerde Tags op de BLOB instellen. 
+
+- Voor het instellen van Tags {Key = "verwijderen verwijderen", val = "foo"} en {Key = "verwijderen verwijderen 2", val = "Bar"}, gebruikt u de volgende syntaxis: `azcopy cp "https://[account].blob.core.windows.net/[source_container]/[path/to/directory]?[SAS]" "https://[account].blob.core.windows.net/[destination_container]/[path/to/directory]?[SAS]" --blob-tags="bla%20bla=foo&bla%20bla%202=bar"`
+        
+- Sleutels en waarden zijn URL-code ring en de sleutel-waardeparen worden gescheiden door een en-teken (' & ')
+    
+- Tijdens het instellen van tags op de blobs zijn er in SAS extra machtigingen (niet voor Tags), zonder dat de service een autorisatie fout meer krijgt.
+
 ## <a name="options"></a>Opties
 
 **--back-up** Hiermee activeert u de SeBackupPrivilege van Windows voor uploads of SeRestorePrivilege voor down loads, zodat AzCopy alle bestanden, ongeacht hun machtigingen voor het bestands systeem, kan zien en lezen, en alle machtigingen kunt herstellen. Vereist dat het account dat AzCopy gebruikt, al over deze machtigingen beschikt (bijvoorbeeld beheerders rechten heeft of lid is van de `Backup Operators` groep). Met deze vlag worden de bevoegdheden geactiveerd die het account al heeft.
+
+**--BLOB-Tags** reeksen instellen labels op blobs om gegevens in uw opslag account te categoriseren.
 
 **--BLOB-type** teken reeks definieert het type BLOB bij het doel. Dit wordt gebruikt voor het uploaden van blobs en bij het kopiëren tussen accounts (standaard `Detect` ). Geldige waarden zijn `Detect` :,, `BlockBlob` `PageBlob` en `AppendBlob` . Bij het kopiëren tussen accounts, veroorzaakt de waarde `Detect` AzCopy dat het type bron-BLOB wordt gebruikt om het type van de doel-BLOB te bepalen. Bij het uploaden van een bestand wordt `Detect` Hiermee bepaald of het bestand een VHD-of VHDX-bestand is op basis van de bestands extensie. Als het bestand eer een VHD-of VHDX-bestand is, wordt het bestand door AzCopy als een pagina-BLOB beschouwd. (standaard ' detecteren ')
 

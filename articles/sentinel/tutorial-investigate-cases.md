@@ -14,19 +14,17 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/23/2019
 ms.author: yelevin
-ms.openlocfilehash: c1873e21db1c586453dc9e9fe890268d8797303a
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: aa9160f01ed0040123bd8ac932cfd2443f557bb6
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92367003"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96511726"
 ---
 # <a name="tutorial-investigate-incidents-with-azure-sentinel"></a>Zelf studie: incidenten onderzoeken met Azure Sentinel
 
 > [!IMPORTANT]
-> De onderzoek grafiek is momenteel beschikbaar als open bare preview.
-> Deze functie wordt zonder service level agreement gegeven en wordt niet aanbevolen voor productie werkbelastingen.
-> Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+> De onderzoek grafiek is momenteel beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of op andere wijze nog niet beschikbaar zijn in algemene Beschik baarheid.
 
 
 Deze zelf studie helpt u bij het onderzoeken van incidenten met Azure Sentinel. Nadat u uw gegevens bronnen hebt verbonden met Azure Sentinel, wilt u een melding ontvangen wanneer er iets verdacht is. Hiervoor kunt u met Azure Sentinel geavanceerde waarschuwings regels maken waarmee incidenten worden gegenereerd die u kunt toewijzen en onderzoeken.
@@ -46,7 +44,7 @@ Een incident kan meerdere waarschuwingen bevatten. Het is een aggregatie van all
 
 ## <a name="how-to-investigate-incidents"></a>Incidenten onderzoeken
 
-1. Selecteer **incidenten**. Op de pagina **incidenten** kunt u zien hoeveel incidenten u hebt, hoeveel er zijn geopend, hoeveel er openstaan en hoeveel u hebt ingesteld op **in uitvoering**en hoeveel er zijn gesloten. Voor elk incident ziet u de tijd waarop het probleem is opgetreden en de status van het incident. Bekijk de ernst om te bepalen welke incidenten het eerst moeten worden verwerkt.
+1. Selecteer **incidenten**. Op de pagina **incidenten** kunt u zien hoeveel incidenten u hebt, hoeveel er zijn geopend, hoeveel er openstaan en hoeveel u hebt ingesteld op **in uitvoering** en hoeveel er zijn gesloten. Voor elk incident ziet u de tijd waarop het probleem is opgetreden en de status van het incident. Bekijk de ernst om te bepalen welke incidenten het eerst moeten worden verwerkt.
 
     ![Ernst van incident weer geven](media/tutorial-investigate-cases/incident-severity.png)
 
@@ -72,7 +70,7 @@ In het onderzoek diagram kunnen analisten de juiste vragen stellen voor elk onde
   
 In het onderzoek diagram vindt u het volgende:
 
-- **Visuele context van onbewerkte gegevens: in**de Live, visuele grafiek worden entiteits relaties weer gegeven die automatisch zijn geëxtraheerd uit de onbewerkte gegevens. Zo kunt u eenvoudig verbindingen tussen verschillende gegevens bronnen weer geven.
+- **Visuele context van onbewerkte gegevens: in** de Live, visuele grafiek worden entiteits relaties weer gegeven die automatisch zijn geëxtraheerd uit de onbewerkte gegevens. Zo kunt u eenvoudig verbindingen tussen verschillende gegevens bronnen weer geven.
 
 - **Volledige detectie van het onderzoek bereik**: Breid uw onderzoek uit met behulp van ingebouwde onderzoek query's om het volledige bereik van een schending te behalen.
 
@@ -83,7 +81,9 @@ De onderzoek grafiek gebruiken:
 1. Selecteer een incident en selecteer vervolgens **onderzoeken**. Hiermee gaat u naar het onderzoek diagram. De grafiek bevat een illustrerende kaart van de entiteiten die rechtstreeks zijn verbonden met de waarschuwing en elke resource die u hebt verbonden.
 
    > [!IMPORTANT] 
-   > U kunt het incident alleen onderzoeken als u de velden voor entiteits toewijzing hebt gebruikt bij het instellen van de analyse regel. Het onderzoek diagram vereist dat uw oorspronkelijke incident entiteiten bevat.
+   > - U kunt het incident alleen onderzoeken als u de velden voor entiteits toewijzing hebt gebruikt bij het instellen van de analyse regel. Het onderzoek diagram vereist dat uw oorspronkelijke incident entiteiten bevat.
+   >
+   > - Azure Sentinel ondersteunt momenteel het onderzoeken van **incidenten tot 30 dagen oud**.
 
    ![Kaart weergeven](media/tutorial-investigate-cases/map1.png)
 
@@ -99,7 +99,7 @@ De onderzoek grafiek gebruiken:
 
     ![Gerelateerde waarschuwingen weer geven](media/tutorial-investigate-cases/related-alerts.png)
 
-1. Voor elke onderzoek query kunt u de optie selecteren voor het openen van de onbewerkte gebeurtenis resultaten en de query die in Log Analytics wordt gebruikt door **gebeurtenissen \> **te selecteren.
+1. Voor elke onderzoek query kunt u de optie selecteren voor het openen van de onbewerkte gebeurtenis resultaten en de query die in Log Analytics wordt gebruikt door **gebeurtenissen \>** te selecteren.
 
 1. Om het incident te begrijpen, biedt de grafiek een parallelle tijd lijn.
 
@@ -123,7 +123,7 @@ Zodra u een bepaald incident hebt opgelost (bijvoorbeeld wanneer uw onderzoek de
 
 Nadat u de juiste classificatie hebt gekozen, voegt u een beschrijvende tekst in het veld **Opmerking** toe. Dit is handig in het geval dat u terug naar dit incident moet verwijzen. Klik op **Toep assen** wanneer u klaar bent en het incident wordt gesloten.
 
-:::image type="content" source="media/tutorial-investigate-cases/closing-reasons-comment-apply.png" alt-text="Scherm opname van de classificaties die beschikbaar zijn in de lijst classificatie selecteren.":::
+:::image type="content" source="media/tutorial-investigate-cases/closing-reasons-comment-apply.png" alt-text="{alt-text}":::
 
 ## <a name="next-steps"></a>Volgende stappen
 In deze zelf studie hebt u geleerd hoe u aan de slag gaat met het onderzoeken van incidenten met behulp van Azure Sentinel. Ga verder met de zelf studie voor het [reageren op bedreigingen met behulp van automatische playbooks](tutorial-respond-threats-playbook.md).

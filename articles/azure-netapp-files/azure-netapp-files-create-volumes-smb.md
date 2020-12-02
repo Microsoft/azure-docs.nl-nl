@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 09/24/2020
+ms.date: 12/01/2020
 ms.author: b-juche
-ms.openlocfilehash: 9740506da2c03996db756175551867ed43575a7c
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 682a97738e94c2a8188b4976a229d6a850a5b6ac
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94488176"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96511998"
 ---
 # <a name="create-an-smb-volume-for-azure-netapp-files"></a>Een SMB-volume maken voor Azure NetApp Files
 
@@ -31,7 +31,7 @@ U dient al een capaciteitspool te hebben ingesteld.
 Er moet een subnet zijn gedelegeerd aan Azure NetApp Files.  
 [Een subnet delegeren aan Azure NetApp Files](azure-netapp-files-delegate-subnet.md)
 
-## <a name="requirements-for-active-directory-connections"></a>Vereisten voor Active Directory verbindingen
+## <a name="requirements-for-active-directory-connections"></a>Vereisten voor Active Directory-verbindingen
 
  U moet Active Directory verbindingen maken voordat u een SMB-volume maakt. De vereisten voor Active Directory verbindingen zijn als volgt: 
 
@@ -84,7 +84,7 @@ Er moet een subnet zijn gedelegeerd aan Azure NetApp Files.
 
 * Azure NetApp Files ondersteunt [LDAP-ondertekening](/troubleshoot/windows-server/identity/enable-ldap-signing-in-windows-server), waarmee het LDAP-verkeer tussen de Azure NetApp files-service en de doel [Active Directory domein controllers](/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview)veilig kan worden verzonden. Als u de richt lijnen van micro soft Advisor [ADV190023](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV190023) voor LDAP-ondertekening volgt, moet u de functie voor LDAP-ondertekening inschakelen in azure NetApp files door het selectie vakje **LDAP** in het venster [lid worden van Active Directory](#create-an-active-directory-connection) in te scha kelen. 
 
-    Configuratie van [LDAP-kanaal binding](https://support.microsoft.com/help/4034879/how-to-add-the-ldapenforcechannelbinding-registry-entry) heeft geen invloed op de Azure NetApp files-service. 
+    Configuratie van [LDAP-kanaal binding](https://support.microsoft.com/help/4034879/how-to-add-the-ldapenforcechannelbinding-registry-entry) heeft alleen invloed op de Azure NetApp files-service. Als u echter zowel LDAP-kanaal binding als beveiligde LDAP gebruikt (bijvoorbeeld LDAPS of `start_tls` ), mislukt het maken van het SMB-volume.
 
 Zie Azure NetApp Files [SMB Veelgestelde vragen](./azure-netapp-files-faqs.md#smb-faqs) over extra AD-informatie. 
 
@@ -119,10 +119,10 @@ Er zijn aanvullende AADDS-overwegingen van toepassing op Azure NetApp Files:
 
 Wanneer u een Active Directory verbinding maakt, moet u rekening houden met de volgende specifieke voor AADDS:
 
-* In het menu AADDS vindt u informatie over de **primaire** DNS-, **secundaire DNS** -en **AD DNS-domein naam** .  
+* In het menu AADDS vindt u informatie over de **primaire** DNS-, **secundaire DNS**-en **AD DNS-domein naam** .  
 Voor DNS-servers worden er twee IP-adressen gebruikt voor het configureren van de Active Directory-verbinding. 
 * Het **pad voor de organisatie-eenheid** is `OU=AADDC Computers` .  
-Deze instelling wordt geconfigureerd in de **Active Directory verbindingen** onder **NetApp-account** :
+Deze instelling wordt geconfigureerd in de **Active Directory verbindingen** onder **NetApp-account**:
 
   ![Pad naar de organisatie-eenheid](../media/azure-netapp-files/azure-netapp-files-org-unit-path.png)
 

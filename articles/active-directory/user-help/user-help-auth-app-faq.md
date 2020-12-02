@@ -9,15 +9,15 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
 ms.topic: end-user-help
-ms.date: 10/20/2020
+ms.date: 12/01/2020
 ms.author: curtand
 ms.reviewer: olhaun
-ms.openlocfilehash: 65bd5a89d132a575817480d0609109a3f379e969
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: f0cb7d4ebe428da4a370433b3e90a829f30489db
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94833959"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96512202"
 ---
 # <a name="frequently-asked-questions-faq-about-the-microsoft-authenticator-app"></a>Veelgestelde vragen over de Microsoft Authenticator-app
 
@@ -32,6 +32,14 @@ De Microsoft Authenticator-app heeft de Azure Authenticator-app vervangen en de 
 **V**: wordt een apparaat geregistreerd om het bedrijf of de service toegang te geven tot mijn apparaat?
 
 **A**: het registreren van een apparaat geeft uw apparaat toegang tot de services van uw organisatie en biedt uw organisatie geen toegang tot uw apparaat.
+
+## <a name="too-many-app-permissions"></a>Te veel app-machtigingen
+
+**V**: waarom verzoekt de app zoveel machtigingen?
+
+**A**: Hier vindt u de volledige lijst met machtigingen die kunnen worden gevraagd en hoe deze worden gebruikt door de app. De specifieke machtigingen die u ziet, zijn afhankelijk van het type telefoon dat u hebt.
+
+- **Locatie**. Soms wil uw organisatie uw locatie weten voordat u toegang krijgt tot bepaalde bronnen. Deze machtiging wordt door de app alleen aangevraagd als uw organisatie een beleid heeft waarvoor de locatie is vereist. 
 
 ### <a name="legacy-apns-support-deprecated"></a>Verouderde APNs-ondersteuning afgeschaft
 
@@ -110,7 +118,7 @@ De Microsoft Authenticator-app heeft de Azure Authenticator-app vervangen en de 
 
 **A**: Nee, meldingen werken alleen met micro soft-accounts en Azure Active Directory-accounts. Als uw werk of school gebruikmaakt van Azure AD-accounts, kunnen ze deze functie uitschakelen.
 
-### <a name="backup-and-recovery"></a>Back-ups maken en herstellen
+### <a name="backup-and-recovery"></a>Back-up en herstel
 
 **V**: Ik heb een nieuw apparaat of ik heb mijn apparaat teruggezet vanuit een back-up. Hoe kan ik mijn accounts in verificator opnieuw instellen?
 

@@ -9,13 +9,13 @@ ms.topic: reference
 ms.custom: devx-track-python
 author: likebupt
 ms.author: keli19
-ms.date: 10/21/2020
-ms.openlocfilehash: e0da478e221fe392135362cd74cbdd8baca101ef
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.date: 12/02/2020
+ms.openlocfilehash: 360f0ce60a35bc96c6dd8e46d636f07124d01255
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93421359"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96511913"
 ---
 # <a name="execute-python-script-module"></a>Python-script module uitvoeren
 
@@ -37,7 +37,7 @@ Azure Machine Learning maakt gebruik van de Anaconda-distributie van python, met
 
 Zie de sectie [vooraf geïnstalleerde Python-pakketten](#preinstalled-python-packages)voor een volledige lijst.
 
-Als u pakketten wilt installeren die zich niet in de vooraf geïnstalleerde lijst bevinden (bijvoorbeeld *scikit-misc* ), voegt u de volgende code toe aan het script: 
+Als u pakketten wilt installeren die zich niet in de vooraf geïnstalleerde lijst bevinden (bijvoorbeeld *scikit-misc*), voegt u de volgende code toe aan het script: 
 
 ```python
 import os
@@ -59,6 +59,36 @@ if spec is None:
 
 > [!WARNING]
 > De excute python-script module biedt geen ondersteuning voor het installeren van pakketten die afhankelijk zijn van extra systeem eigen bibliotheken met opdracht als ' apt-get ', zoals Java, PyODBC en etc. Dit is omdat deze module wordt uitgevoerd in een eenvoudige omgeving met python vooraf geïnstalleerd en met niet-beheerders machtigingen.  
+
+## <a name="access-to-registered-datasets"></a>Toegang tot geregistreerde gegevens sets
+
+U kunt de volgende voorbeeld code gebruiken om toegang te krijgen tot de [geregistreerde gegevens sets](../how-to-create-register-datasets.md) in uw werk ruimte:
+
+```Python
+def azureml_main(dataframe1 = None, dataframe2 = None):
+
+    # Execution logic goes here
+    print(f'Input pandas.DataFrame #1: {dataframe1}')
+    from azureml.core import Run
+    run = Run.get_context(allow_offline=True)
+    ws = run.experiment.workspace
+
+    from azureml.core import Dataset
+    dataset = Dataset.get_by_name(ws, name='test-register-tabular-in-designer')
+    dataframe1 = dataset.to_pandas_dataframe()
+     
+    # If a zip file is connected to the third input port,
+    # it is unzipped under "./Script Bundle". This directory is added
+    # to sys.path. Therefore, if your zip file contains a Python file
+    # mymodule.py you can import it using:
+    # import mymodule
+
+    # Return value must be of a sequence of pandas.DataFrame
+    # E.g.
+    #   -  Single return value: return dataframe1,
+    #   -  Two return values: return dataframe1, dataframe2
+    return dataframe1,
+```
 
 ## <a name="upload-files"></a>Bestanden uploaden
 De script module voor het uitvoeren van python ondersteunt het uploaden van bestanden met behulp van de [Azure machine learning PYTHON SDK](/python/api/azureml-core/azureml.core.run%28class%29?preserve-view=true&view=azure-ml-py#upload-file-name--path-or-stream-).
@@ -197,9 +227,9 @@ De resultaten van alle berekeningen door de Inge sloten python-code moeten worde
 
 De module retourneert twee gegevens sets:  
   
-+ De **resultaten gegevensset 1** , zoals gedefinieerd door het eerste geretourneerde Panda-gegevens frame in een python-script.
++ De **resultaten gegevensset 1**, zoals gedefinieerd door het eerste geretourneerde Panda-gegevens frame in een python-script.
 
-+ **Resulterende gegevensset 2** , gedefinieerd door het tweede geretourneerde gegevens frame van Panda, in een python-script.
++ **Resulterende gegevensset 2**, gedefinieerd door het tweede geretourneerde gegevens frame van Panda, in een python-script.
 
 ## <a name="preinstalled-python-packages"></a>Vooraf geïnstalleerde Python-pakketten
 De vooraf geïnstalleerde pakketten zijn:

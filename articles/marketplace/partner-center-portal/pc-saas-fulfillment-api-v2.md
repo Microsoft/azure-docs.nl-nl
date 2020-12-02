@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 06/10/2020
 author: mingshen-ms
 ms.author: mingshen
-ms.openlocfilehash: d6449a00886b7366bcd1f6e2fcec910fd3cb38db
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 1ea326cc4537176c0ddcff070f4dc3b3f77f4b58
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461037"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96512032"
 ---
 # <a name="saas-fulfillment-apis-version-2-in-the-commercial-marketplace"></a>SaaS-fulfillment-Api's versie 2 in de commerciële Marketplace
 
@@ -20,7 +20,7 @@ In dit artikel vindt u meer informatie over de Api's waarmee partners hun softwa
 
 ## <a name="managing-the-saas-subscription-life-cycle"></a>De levens cyclus van het SaaS-abonnement beheren
 
-De commerciële Marketplace beheert de volledige levens cyclus van een SaaS-abonnement na de aankoop door de eind gebruiker.  Het maakt gebruik van de landings pagina, de fulfillment Api's, de operations-Api's en de webhook als mechanisme om de daad werkelijke activering, het gebruik, de updates en de annulering van het SaaS-abonnement te best uren.  De factuur van de eind gebruiker is gebaseerd op de status van de SaaS-abonnement die micro soft onderhoudt. 
+De commerciële Marketplace beheert de volledige levens cyclus van een SaaS-abonnement na de aankoop door de eind gebruiker. Het maakt gebruik van de landings pagina, de fulfillment Api's, de operations-Api's en de webhook als mechanisme om de daad werkelijke activering, het gebruik, de updates en de annulering van het SaaS-abonnement te best uren. De factuur van de eind gebruiker is gebaseerd op de status van de SaaS-abonnement die micro soft onderhoudt. 
 
 ### <a name="states-of-a-saas-subscription"></a>Statussen van een SaaS-abonnement
 
@@ -44,11 +44,11 @@ Een voor beeld van een dergelijke aanroep is `https://contoso.com/signup?token=<
 
 De URL van de landings pagina moet elke dag, elke dag, en nu op elk moment nieuwe oproepen van micro soft ontvangen. Als de landings pagina niet beschikbaar is, kunnen klanten zich niet aanmelden voor de SaaS-service en deze gebruiken.
 
-Vervolgens moet de uitgever het *token* terugsturen naar micro soft door de [API voor SaaS-conflicten](#resolve-a-purchased-subscription)aan te roepen en het token in te voeren als de waarde van de `x-ms-marketplace-token header` para meter header.  Als gevolg van de API-aanroep omzetten, wordt het token uitgewisseld voor details van de SaaS-aankoop, zoals de unieke ID van de aankoop, de gekochte aanbiedings-ID en de aangeschafte plan-ID.
+Vervolgens moet de uitgever het *token* terugsturen naar micro soft door de [API voor SaaS-conflicten](#resolve-a-purchased-subscription)aan te roepen en het token in te voeren als de waarde van de `x-ms-marketplace-token header` para meter header. Als gevolg van de API-aanroep omzetten, wordt het token uitgewisseld voor details van de SaaS-aankoop, zoals de unieke ID van de aankoop, de gekochte aanbiedings-ID en de aangeschafte plan-ID.
 
 Op de landings pagina moet de klant zijn aangemeld bij het nieuwe of bestaande SaaS-account via Azure Active Directory (SSO) eenmalige aanmelding (Azure AD).
 
-De uitgever moet SSO implementeren om de gebruikers ervaring te bieden die micro soft voor deze stroom vereist. Zorg ervoor dat u de multi tenant Azure AD-toepassing gebruikt en zowel werk-als school accounts of persoonlijke micro soft-accounts wilt toestaan bij het configureren van SSO.  Deze vereiste geldt alleen voor de landings pagina voor gebruikers die worden omgeleid naar de SaaS-service wanneer ze zich al hebben aangemeld met micro soft-referenties. SSO is niet vereist voor alle aanmeldingen bij de SaaS-service.
+De uitgever moet SSO implementeren om de gebruikers ervaring te bieden die micro soft voor deze stroom vereist. Zorg ervoor dat u de multi tenant Azure AD-toepassing gebruikt en zowel werk-als school accounts of persoonlijke micro soft-accounts wilt toestaan bij het configureren van SSO. Deze vereiste geldt alleen voor de landings pagina voor gebruikers die worden omgeleid naar de SaaS-service wanneer ze zich al hebben aangemeld met micro soft-referenties. SSO is niet vereist voor alle aanmeldingen bij de SaaS-service.
 
 > [!NOTE]
 >Als voor SSO vereist is dat een beheerder machtigingen moet verlenen voor een app, moet de beschrijving van de aanbieding in Partner Center worden vermeld dat toegang op beheerders niveau is vereist. Deze mede deling is om te voldoen aan het [beleid voor commerciële Marketplace-certificering](/legal/marketplace/certification-policies#10003-authentication-options).
@@ -82,11 +82,11 @@ Alleen een actief abonnement kan worden bijgewerkt. Terwijl het abonnement wordt
 
 ##### <a name="update-initiated-from-the-commercial-marketplace"></a>Update gestart vanuit de commerciële Marketplace
 
-In deze stroom wijzigt de klant het abonnement of de hoeveelheid stoelen van de Azure Portal of Microsoft 365 beheer centrum.  
+In deze stroom wijzigt de klant het abonnement of de hoeveelheid stoelen van de Azure Portal of Microsoft 365 beheer centrum.
 
-1. Nadat een update is ingevoerd, roept micro soft de webhook-URL van de uitgever aan, die in het veld **verbindings webhook** in het partner centrum is geconfigureerd, met een geschikte waarde voor *actie* en andere relevante para meters.  
+1. Nadat een update is ingevoerd, roept micro soft de webhook-URL van de uitgever aan, die in het veld **verbindings webhook** in het partner centrum is geconfigureerd, met een geschikte waarde voor *actie* en andere relevante para meters. 
 1. De uitgever moet de vereiste wijzigingen aanbrengen in de SaaS-service en micro soft waarschuwen wanneer dit is voltooid door de [update status van de bewerkings-API aan](#update-the-status-of-an-operation)te roepen.
-1. Als de patch wordt verzonden met de status *mislukt* , wordt het update proces niet voltooid aan de kant van micro soft.  Het SaaS-abonnement blijft het bestaande abonnement en de hoeveelheid stoelen.
+1. Als de patch wordt verzonden met de status *mislukt* , wordt het update proces niet voltooid aan de kant van micro soft. Het SaaS-abonnement blijft het bestaande abonnement en de hoeveelheid stoelen.
 
 > [!NOTE]
 > De uitgever moet een PATCH aanroepen om [de status van de bewerkings-API](#update-the-status-of-an-operation) met een fout-en geslaagde reactie *binnen een periode van 10 seconden* na ontvangst van de webhook-melding bij te werken. Als de PATCH van de bewerkings status niet binnen tien seconden wordt ontvangen, wordt het wijzigings plan *automatisch als geslaagd gerepareerd*. 
@@ -101,7 +101,7 @@ In deze stroom wijzigt de klant het abonnement of het aantal stoelen dat is geko
 
 1. De uitgevers code moet de API voor het [wijzigings plan](#change-the-plan-on-the-subscription) en/of de [API voor wijzigings hoeveelheid](#change-the-quantity-of-seats-on-the-saas-subscription) aanroepen voordat de aangevraagde wijziging aan de kant van de uitgever wordt aangebracht. 
 
-1. Micro soft past de wijziging toe op het abonnement en waarschuwt de uitgever via de **verbindings-webhook** om dezelfde wijziging toe te passen.  
+1. Micro soft past de wijziging toe op het abonnement en waarschuwt de uitgever via de **verbindings-webhook** om dezelfde wijziging toe te passen.
 
 1. Alleen dan moet de uitgever de vereiste wijziging aanbrengen in het SaaS-abonnement en micro soft op de hoogte stellen wanneer de wijziging plaatsvindt door de [update status van de bewerkings-API aan](#update-the-status-of-an-operation)te roepen.
 
@@ -113,7 +113,7 @@ In het volgende diagram ziet u de volg orde van de API-aanroepen voor een update
 
 Deze status geeft aan dat de betaling van een klant voor de SaaS-service niet is ontvangen. De uitgever ontvangt een melding van deze wijziging in de status van de SaaS-abonnementen van micro soft. De melding wordt uitgevoerd via een aanroep van webhook met de *actie* parameter ingesteld op *opgeschort*.
 
-De uitgever kan mogelijk geen wijzigingen aanbrengen in de SaaS-service aan de kant van de uitgever. U wordt aangeraden deze informatie beschikbaar te maken voor de opgeschorte klant en limieten of om de toegang van de klant tot de SaaS-service te blok keren.  Er is een kans dat de betaling nooit wordt ontvangen.
+De uitgever kan mogelijk geen wijzigingen aanbrengen in de SaaS-service aan de kant van de uitgever. U wordt aangeraden deze informatie beschikbaar te maken voor de opgeschorte klant en limieten of om de toegang van de klant tot de SaaS-service te blok keren. Er is een kans dat de betaling nooit wordt ontvangen.
 
 Micro soft geeft de klant een respijt periode van 30 dagen voordat het abonnement automatisch wordt geannuleerd. Wanneer een abonnement de status *onderbroken* heeft:
 
@@ -126,26 +126,26 @@ De status van het abonnement wordt gewijzigd in opgeschort op de micro soft-webs
 
 Deze actie geeft aan dat het betalings instrument van de klant opnieuw geldig is, er is een betaling gedaan voor het SaaS-abonnement en het abonnement wordt opnieuw ingesteld. In dat geval: 
 
-1. Micro soft roept webhook aan met een *actie* parameter ingesteld op de waarde voor het opnieuw *invoeren* .  
+1. Micro soft roept webhook aan met een *actie* parameter ingesteld op de waarde voor het opnieuw *invoeren* .
 1. De uitgever zorgt ervoor dat het abonnement weer volledig operationeel is aan de kant van de uitgever.
-1. De uitgever roept de [API-bewerkings-api's](#update-the-status-of-an-operation) met de status geslaagd aan.  
+1. De uitgever roept de [API-bewerkings-api's](#update-the-status-of-an-operation) met de status geslaagd aan.
 1. Het herstelproces is geslaagd en de klant wordt opnieuw gefactureerd voor het SaaS-abonnement. 
 
 Als de patch wordt verzonden met de status *mislukt* , wordt het herstel proces niet voltooid op de micro soft-kant en blijft het abonnement *onderbroken*.
 
-Alleen een opgeschort abonnement kan worden hersteld.  Het opgeschorte SaaS-abonnement blijft in een *onderbroken* status terwijl het wordt hersteld.  Nadat deze bewerking is voltooid, wordt de status van het abonnement *actief*.
+Alleen een opgeschort abonnement kan worden hersteld. Het opgeschorte SaaS-abonnement blijft in een *onderbroken* status terwijl het wordt hersteld. Nadat deze bewerking is voltooid, wordt de status van het abonnement *actief*.
 
 #### <a name="renewed-subscribed"></a>Vernieuwd (*geabonneerd*)
 
-Het SaaS-abonnement wordt automatisch door micro soft vernieuwd aan het einde van de abonnements periode van een maand of een jaar.  De standaard instelling voor automatisch vernieuwen is *waar* voor alle SaaS-abonnementen. Actieve SaaS-abonnementen worden nog steeds vernieuwd met een gewone uitgebracht. Micro soft waarschuwt de uitgever niet wanneer een abonnement wordt vernieuwd. Een klant kan automatische verlenging voor een SaaS-abonnement uitschakelen via de Microsoft 365 beheer portal of via de Azure Portal.  In dit geval wordt het SaaS-abonnement automatisch geannuleerd aan het einde van de huidige facturerings periode.  Klanten kunnen het SaaS-abonnement ook op elk gewenst moment annuleren.
+Het SaaS-abonnement wordt automatisch door micro soft vernieuwd aan het einde van de abonnements periode van een maand of een jaar. De standaard instelling voor automatisch vernieuwen is *waar* voor alle SaaS-abonnementen. Actieve SaaS-abonnementen worden nog steeds vernieuwd met een gewone uitgebracht. Micro soft waarschuwt de uitgever niet wanneer een abonnement wordt vernieuwd. Een klant kan automatische verlenging voor een SaaS-abonnement uitschakelen via de beheer portal van Microsoft 365. In dit geval wordt het SaaS-abonnement automatisch geannuleerd aan het einde van de huidige facturerings periode. Klanten kunnen het SaaS-abonnement ook op elk gewenst moment annuleren.
 
-Alleen actieve abonnementen worden automatisch verlengd.  Abonnementen blijven actief tijdens het vernieuwings proces en als de automatische verlenging slaagt.  Na de verlenging worden de begin-en eind datum van de abonnements periode bijgewerkt naar de datums van de nieuwe periode.
+Alleen actieve abonnementen worden automatisch verlengd. Abonnementen blijven actief tijdens het vernieuwings proces en als de automatische verlenging slaagt. Na de verlenging worden de begin-en eind datum van de abonnements periode bijgewerkt naar de datums van de nieuwe periode.
 
 Als een automatische vernieuwing mislukt vanwege een probleem met de betaling, wordt het abonnement *onderbroken* en wordt de uitgever hiervan op de hoogte gebracht.
 
 #### <a name="canceled-unsubscribed"></a>Geannuleerd (*afgemeld*) 
 
-Abonnementen bereiken deze status als reactie op een expliciete klant-of CSP-actie door de annulering van een abonnement van de Publisher-site, het Azure Portal of het beheer centrum van Microsoft 365.  Een abonnement kan ook impliciet worden geannuleerd als gevolg van een niet-betaalde contributie, na 30 dagen na de *onderbroken* status.
+Abonnementen bereiken deze status als reactie op een expliciete klant-of CSP-actie door de annulering van een abonnement van de Publisher-site, het Azure Portal of het beheer centrum van Microsoft 365. Een abonnement kan ook impliciet worden geannuleerd als gevolg van een niet-betaalde contributie, na 30 dagen na de *onderbroken* status.
 
 Nadat de uitgever een aanroep van een annulerings webhook heeft ontvangen, moeten de klant gegevens voor herstel op aanvraag ten minste zeven dagen worden bewaard. Alleen vervolgens kunnen klant gegevens worden verwijderd.
 
@@ -163,7 +163,7 @@ In deze sectie worden de SaaS-abonnementen en Operations Api's gedocumenteerd.
 * Een lijst met apps ophalen die in behandeling zijn en die wachten op bevestiging door de uitgever.
 
 > [!NOTE]
-> De versie van de TLS-versie 1,2 wordt binnenkort afgedwongen als de minimale versie voor HTTPS-communicatie. Zorg ervoor dat u deze TLS-versie in uw code gebruikt.  TLS-versies 1,0 en 1,1 zullen binnenkort worden afgeschaft.
+> De versie van de TLS-versie 1,2 wordt binnenkort afgedwongen als de minimale versie voor HTTPS-communicatie. Zorg ervoor dat u deze TLS-versie in uw code gebruikt. TLS-versies 1,0 en 1,1 zullen binnenkort worden afgeschaft.
 
 ### <a name="subscription-apis"></a>Abonnements-Api's
 

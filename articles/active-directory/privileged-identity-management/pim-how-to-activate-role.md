@@ -10,22 +10,22 @@ ms.service: active-directory
 ms.topic: how-to
 ms.workload: identity
 ms.subservice: pim
-ms.date: 07/06/2020
+ms.date: 11/18/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 38992c15c23216aa81cda566a333d8e45f90b17e
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 079dcdc9d1667809779489c5d1126bc85cafb881
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96004684"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96511309"
 ---
 # <a name="activate-my-azure-ad-roles-in-pim"></a>Mijn Microsoft Azure AD-rollen activeren in PIM
 
 Azure Active Directory (Azure AD) Privileged Identity Management (PIM) vereenvoudigt de manier waarop bedrijven bevoorrechte toegang tot resources in azure AD en andere micro soft-onlineservices zoals Microsoft 365 of Microsoft Intune beheren.  
 
-Als u in aanmerking komt voor een administratieve rol, moet u de roltoewijzing activeren wanneer u geprivilegieerde acties moet uitvoeren. Als u bijvoorbeeld af en toe Microsoft 365 functies beheert, is het mogelijk dat beheerders van de bevoegde rol van uw organisatie u niet een permanente globale beheerder maken, omdat die rol ook van invloed is op andere services. In plaats daarvan komt u in aanmerking voor Azure AD-rollen zoals Exchange Online-beheerder. U kunt aanvragen om die rol te activeren als u de juiste bevoegdheden nodig hebt, en u hebt beheerders controle voor een vooraf bepaalde periode.
+Als u *in aanmerking komt* voor een administratieve rol, moet u de roltoewijzing *activeren* wanneer u geprivilegieerde acties moet uitvoeren. Als u bijvoorbeeld af en toe Microsoft 365 functies beheert, is het mogelijk dat beheerders van uw organisatie niet een permanente globale beheerder maken, omdat die rol ook van invloed is op andere services. In plaats daarvan komt u in aanmerking voor Azure AD-rollen zoals Exchange Online-beheerder. U kunt aanvragen om die rol te activeren als u de juiste bevoegdheden nodig hebt, en u hebt beheerders controle voor een vooraf bepaalde periode.
 
 Dit artikel is voor beheerders die hun Azure AD-rol moeten activeren in Privileged Identity Management.
 
@@ -56,19 +56,19 @@ Wanneer u een Azure AD-rol wilt aannemen, kunt u activering aanvragen door **mij
 
     ![Azure AD-rollen-mijn in aanmerking komende rollen lijst](./media/pim-how-to-activate-role/activate-link.png)
 
-1. Selecteer **activeren** om de pagina activeren te openen.
+1. Selecteer **activeren** om het deel venster activeren te openen.
 
     ![Azure AD-rollen: de activerings pagina bevat de duur en het bereik](./media/pim-how-to-activate-role/activate-page.png)
 
-1. Als voor uw rol multi-factor Authentication is vereist, selecteert u **uw identiteit verifiëren voordat u doorgaat**. U hoeft slechts één keer per sessie te authenticeren.
-
-    ![Mijn identiteit met MFA verifiëren voordat de functie wordt geactiveerd](./media/pim-resource-roles-activate-your-roles/resources-my-roles-mfa.png)
-
-1. Selecteer **Mijn identiteit verifiëren** en volg de instructies voor aanvullende beveiligings verificatie.
+1. Selecteer **aanvullende verificatie vereist**"* * en volg de instructies voor aanvullende beveiligings verificatie. U hoeft slechts één keer per sessie te verifiëren.
 
     ![Scherm om beveiligings verificatie te bieden, zoals een pincode](./media/pim-resource-roles-activate-your-roles/resources-mfa-enter-code.png)
 
-1. Als u een kleiner bereik wilt opgeven, selecteert u **bereik** om het deel venster filter te openen. In het deel venster filter kunt u de Azure AD-resources opgeven waartoe u toegang nodig hebt. Het is een best practice om alleen toegang aan te vragen voor de resources die u nodig hebt.
+1. Na multi-factor Authentication selecteert u **activeren voordat u doorgaat**.
+
+    ![Mijn identiteit met MFA verifiëren voordat de rol wordt geactiveerd](./media/pim-how-to-activate-role/activate-role-mfa-banner.png)
+
+1. Als u een kleiner bereik wilt opgeven, selecteert u **bereik** om het deel venster filter te openen. In het deel venster filter kunt u de Azure AD-resources opgeven waartoe u toegang nodig hebt. Het is een best practice om toegang te vragen tot de minste bronnen die u nodig hebt.
 
 1. Geef indien nodig een aangepaste begin tijd voor de activering op. De functie Azure AD wordt na de geselecteerde tijd geactiveerd.
 
@@ -126,9 +126,9 @@ Wanneer u een Azure AD-rol nodig hebt, kunt u activering aanvragen met behulp va
 
 1. Open **Azure AD privileged Identity Management**. Zie voor meer informatie over het toevoegen van de Privileged Identity Management tegel aan uw dash board [beginnen met privileged Identity Management](pim-getting-started.md).
 
-1. Klik op **Azure AD-rollen**.
+1. Selecteer **Azure AD-rollen**.
 
-1. Klik op **mijn rollen** om een lijst weer te geven met de Azure AD-rollen die u in aanmerking komt.
+1. Selecteer **mijn rollen** om een lijst weer te geven met de Azure AD-rollen die u in aanmerking komt.
 
     ![Azure AD-rollen: mijn rollen met een lijst met in aanmerking komende of actieve rollen](./media/pim-how-to-activate-role/directory-roles-my-roles.png)
 
@@ -136,17 +136,17 @@ Wanneer u een Azure AD-rol nodig hebt, kunt u activering aanvragen met behulp va
 
     ![Azure AD-rollen: mijn lijst met in aanmerking komende rollen met de koppeling activeren](./media/pim-how-to-activate-role/directory-roles-my-roles-activate.png)
 
-1. Klik op **activeren** om het deel venster activerings Details voor rollen te openen.
+1. Selecteer **activeren** om het deel venster activerings Details voor rollen te openen.
 
-1. Als voor uw rol multi-factor Authentication (MFA) is vereist, klikt **u op uw identiteit verifiëren voordat u doorgaat**. U hoeft slechts één keer per sessie te authenticeren.
+1. Als voor uw rol multi-factor Authentication (MFA) is vereist, selecteert u **uw identiteit verifiëren voordat u doorgaat**. U hoeft slechts één keer per sessie te authenticeren.
 
     ![Mijn identiteits venster met MFA controleren voordat de functie wordt geactiveerd](./media/pim-how-to-activate-role/directory-roles-my-roles-mfa.png)
 
-1. Klik op **Mijn identiteit verifiëren** en volg de instructies voor aanvullende beveiligings verificatie.
+1. Selecteer **Mijn identiteit verifiëren** en volg de instructies voor aanvullende beveiligings verificatie.
 
     ![Pagina aanvullende beveiligings verificatie waarin wordt gevraagd hoe u contact met u kunt opnemen](./media/pim-how-to-activate-role/additional-security-verification.png)
 
-1. Klik op **activeren** om het deel venster activering te openen.
+1. Selecteer **activeren** om het deel venster activering te openen.
 
     ![Activerings deel venster om begin tijd, duur, ticket en reden op te geven](./media/pim-how-to-activate-role/directory-roles-activate.png)
 
@@ -158,13 +158,13 @@ Wanneer u een Azure AD-rol nodig hebt, kunt u activering aanvragen met behulp va
 
     ![Het deel venster activering is voltooid met een aangepaste start tijd, duur, ticket en reden](./media/pim-how-to-activate-role/directory-roles-activation-pane.png)
 
-1. Klik op **Activeren**.
+1. Selecteer **Activate**.
 
     Als voor de rol geen goed keuring is vereist, wordt een **activerings status** venster weer gegeven waarin de status van de activering wordt weer gegeven.
 
     ![Pagina activerings status met de drie fasen van activering](./media/pim-how-to-activate-role/activation-status.png)
 
-    Zodra alle fasen zijn voltooid, klikt u op de koppeling **Afmelden** om u af te melden bij de Azure Portal. Wanneer u zich opnieuw bij de portal aanmeldt, kunt u nu de rol gebruiken.
+    Zodra alle fasen zijn voltooid, selecteert u de koppeling **Afmelden** om u af te melden bij de Azure Portal. Wanneer u zich opnieuw bij de portal aanmeldt, kunt u nu de rol gebruiken.
 
     Als voor de [functie goed keuring vereist is](./azure-ad-pim-approval-workflow.md) , wordt in de rechter bovenhoek van uw browser gemeld dat de aanvraag goed keuring in behandeling is.
 
@@ -174,9 +174,9 @@ U kunt de status van de in behandeling zijnde aanvragen weer geven om te activer
 
 1. Open Azure AD Privileged Identity Management.
 
-1. Klik op **Azure AD-rollen**.
+1. Selecteer **Azure AD-rollen**.
 
-1. Klik op **mijn aanvragen** om een lijst met uw aanvragen weer te geven.
+1. Selecteer **mijn aanvragen** om een lijst met uw aanvragen weer te geven.
 
     ![Azure AD-rollen: mijn aanvragen lijst](./media/pim-how-to-activate-role/directory-roles-my-requests.png)
 
@@ -188,13 +188,13 @@ Als u de beheerders taken vroegtijdig voltooit, kunt u een rol ook hand matig de
 
 1. Open Azure AD Privileged Identity Management.
 
-1. Klik op **Azure AD-rollen**.
+1. Selecteer **Azure AD-rollen**.
 
-1. Klik op **mijn rollen**.
+1. Selecteer **mijn rollen**.
 
-1. Klik op **actieve rollen** om uw lijst met actieve rollen weer te geven.
+1. Selecteer **actieve rollen** om uw lijst met actieve rollen weer te geven.
 
-1. Zoek de rol die u wilt gebruiken en klik vervolgens op **deactiveren**.
+1. Zoek de rol die u wilt gebruiken en selecteer **deactiveren**.
 
 ## <a name="cancel-a-pending-request-previous-version"></a>Een aanvraag in behandeling annuleren (vorige versie)
 
@@ -202,13 +202,13 @@ Als u geen activering van een rol vereist waarvoor goed keuring is vereist, kunt
 
 1. Open Azure AD Privileged Identity Management.
 
-1. Klik op **Azure AD-rollen**.
+1. Selecteer **Azure AD-rollen**.
 
-1. Klik op **mijn aanvragen**.
+1. Selecteer **mijn aanvragen**.
 
-1. Klik op de knop **Annuleren** voor de functie die u wilt annuleren.
+1. Selecteer de knop **Annuleren** voor de functie die u wilt annuleren.
 
-    Wanneer u op Annuleren klikt, wordt de aanvraag geannuleerd. Als u de functie opnieuw wilt activeren, moet u een nieuwe aanvraag indienen voor activering.
+    Wanneer u **Annuleren** selecteert, wordt de aanvraag geannuleerd. Als u de functie opnieuw wilt activeren, moet u een nieuwe aanvraag indienen voor activering.
 
    ![De lijst met mijn aanvragen met de knop Annuleren gemarkeerd](./media/pim-how-to-activate-role/directory-role-cancel.png)
 

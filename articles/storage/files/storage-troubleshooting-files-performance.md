@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 11/16/2020
 ms.author: gunjanj
 ms.subservice: files
-ms.openlocfilehash: 5a35d939c12639770e25c3096c77f13d31310f85
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 90942e4deebdc65fe26ce94f04a15fe2b8c0684c
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492009"
+ms.locfileid: "96512066"
 ---
 # <a name="troubleshoot-azure-file-shares-performance-issues"></a>Prestatie problemen met Azure file shares oplossen
 
@@ -74,11 +74,12 @@ Als de toepassing die u gebruikt één thread heeft, kan deze instelling leiden 
 
 ### <a name="cause"></a>Oorzaak
 
-De virtuele client machine (VM) bevindt zich in een andere regio dan de bestands share.
+De virtuele client machine (VM) bevindt zich in een andere regio dan de bestands share. Een andere reden voor een hoge latentie kan zijn vanwege de latentie die door de client of het netwerk is veroorzaakt.
 
 ### <a name="solution"></a>Oplossing
 
 - Voer de toepassing uit vanaf een virtuele machine die zich in dezelfde regio bevindt als de bestands share.
+- Bekijk voor uw opslag account de metrische gegevens voor de trans actie **SuccessE2ELatency** en  **SuccessServerLatency** via **Azure monitor** in azure Portal. Een groot verschil tussen de metrische waarden SuccessE2ELatency en SuccessServerLatency is een indicatie van de latentie die waarschijnlijk wordt veroorzaakt door het netwerk of de client. Bekijk [metrische gegevens over trans acties](storage-files-monitoring-reference.md#transaction-metrics) in de referentie voor Azure files bewaking.
 
 ## <a name="client-unable-to-achieve-maximum-throughput-supported-by-the-network"></a>De client kan geen maximale door voer worden gerealiseerd die door het netwerk wordt ondersteund
 

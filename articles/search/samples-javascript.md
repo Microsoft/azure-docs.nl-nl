@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/17/2020
-ms.openlocfilehash: 234c70fffb6f353c670d23624cc446fdaf6bd886
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 09a9ca2ad1b1f1e5578ecc5d35a85c81b32a5b1a
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498962"
+ms.locfileid: "96511743"
 ---
 # <a name="javascript-code-samples-for-azure-cognitive-search"></a>Java script-code voorbeelden voor Azure Cognitive Search
 
@@ -25,7 +25,7 @@ Meer informatie over de Java script-code voorbeelden die de functies en function
 | [Azure-samples/Azure-Search-java script-voor beelden](https://github.com/Azure-Samples/azure-search-javascript-samples) | Code voorbeelden die betrekking hebben op procedures, waaronder [Quick Start: een zoek index maken in Java script](search-get-started-javascript.md).|
 
 > [!Tip]
-> Gebruik de voor beelden van de [browser](/samples/browse/?languages=csharp&products=azure-cognitive-search) om te zoeken naar micro soft-code voorbeelden in github, gefilterd op product, service en taal.
+> Gebruik de voor beelden van de [browser](/samples/browse/?languages=javascript&products=azure-cognitive-search) om te zoeken naar micro soft-code voorbeelden in github, gefilterd op product, service en taal.
 
 ## <a name="javascript-sdk-samples"></a>Java script SDK-voor beelden
 

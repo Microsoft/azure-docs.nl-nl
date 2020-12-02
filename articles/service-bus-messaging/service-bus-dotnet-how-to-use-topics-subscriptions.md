@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.tgt_pltfrm: dotnet
 ms.date: 11/13/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5ddfca1186025f4118013815af7bbf7f500951ce
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: 5dfdf846410e9b622f3ef1e9006aa9846de9979c
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95809245"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498707"
 ---
 # <a name="send-messages-to-an-azure-service-bus-topic-and-receive-messages-from-subscriptions-to-the-topic-net"></a>Berichten verzenden naar een Azure Service Bus-onderwerp en berichten ontvangen van abonnementen op het onderwerp (.NET)
 In deze zelfstudie leert u hoe u een .NET Core-consoletoepassing kunt maken die berichten verzendt naar een Service Bus-onderwerp en berichten ontvangt van een abonnement op het onderwerp. 
@@ -151,7 +151,7 @@ Start Visual Studio en maak een nieuwe **Consoletoepassing (.NET Core)** voor C#
             await SendMessageBatchToTopicAsync();
         }
     ```
-5. Voer de toepassing uit. In dat geval moet de volgende uitvoer worden weergegeven:
+5. Voer de toepassing uit. U moet de volgende uitvoer zien:
 
     ```console
     Sent a single message to the topic: mytopic
@@ -270,5 +270,4 @@ Raadpleeg de volgende documentatie en voorbeelden:
 
 - [Azure Service Bus-clientbibliotheek voor .NET - Leesmij](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/servicebus/Azure.Messaging.ServiceBus)
 - [Voorbeelden op GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/sdk/servicebus/Azure.Messaging.ServiceBus/samples)
-- [.NET-API-referentie](https://docs.microsoft.com/dotnet/api/azure.messaging.servicebus?view=azure-dotnet-preview&preserve-view=true)
-
+- [.NET-API-referentie](/dotnet/api/azure.messaging.servicebus?preserve-view=true&view=azure-dotnet-preview)

@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/22/2020
+ms.date: 11/30/2020
 ms.author: memildin
-ms.openlocfilehash: a80747a88087e1ad3a70f198a260e41a6848e34f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 07a94685fb3655aa5aa21a8658b9d975c764daff
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96445665"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96512274"
 ---
 # <a name="azure-defender-for-sql-servers-on-machines"></a>Azure Defender voor SQL-servers op computers 
 
@@ -30,7 +30,7 @@ U ziet waarschuwingen wanneer er verdachte database activiteiten, potentiële kw
 
 |Aspect|Details|
 |----|:----|
-|Releasestatus:|Preview<br>[!INCLUDE [Legalese](../../includes/security-center-preview-legal-text.md)] |
+|Releasestatus:|Algemeen verkrijgbaar (GA)|
 |Prijzen:|**Azure Defender voor SQL-servers op computers** wordt gefactureerd zoals wordt weer gegeven op [de pagina met prijzen](security-center-pricing.md)|
 |Beveiligde SQL-versies:|Azure SQL Server (alle versies die worden gedekt door micro soft support)|
 |Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov<br>![Nee](./media/icons/no-icon.png) China Gov, Other Gov|
@@ -68,7 +68,7 @@ Beide worden hieronder beschreven.
 
         ![Uw niet-standaard werkruimte zoeken op titel](./media/security-center-advanced-iaas-data/pricing-and-settings-workspaces.png)
 
-1. Stel de optie voor **Azure Defender voor SQL-servers op computers (preview)** in **op** aan. 
+1. Stel de optie voor **Azure Defender voor SQL-servers op machines** in **op aan**. 
 
     ![Security Center prijs pagina met optionele abonnementen](media/security-center-advanced-iaas-data/sql-servers-on-vms-in-pricing-small.png)
 
@@ -79,7 +79,7 @@ Beide worden hieronder beschreven.
 
 
 1. U kunt ook e-mail meldingen configureren voor beveiligings waarschuwingen. 
-    U kunt een lijst met ontvangers instellen om een e-mail melding te ontvangen wanneer Security Center waarschuwingen worden gegenereerd. Het e-mail bericht bevat een directe koppeling naar de waarschuwing in Azure Security Center met alle relevante informatie. Zie [e-mail meldingen instellen voor beveiligings waarschuwingen](security-center-provide-security-contact-details.md)voor meer informatie.
+    U kunt een lijst met ontvangers instellen om een e-mail melding te ontvangen wanneer Security Center waarschuwingen worden gegenereerd. Het e-mail bericht bevat een directe SK naar de waarschuwing in Azure Security Center met alle relevante informatie. Zie [e-mail meldingen instellen voor beveiligings waarschuwingen](security-center-provide-security-contact-details.md)voor meer informatie.
 
 
 

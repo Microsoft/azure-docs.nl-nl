@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 06/22/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 186b1c46303be59e191a1754361e07a2003b997a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cfeb040893ae2be5842959ed8458bd713bebe6ee
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87036179"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96512134"
 ---
 # <a name="os-start-up--computer-restarted-unexpectedly-or-encountered-an-unexpected-error"></a>Opstarten met het besturings systeem: de computer is onverwacht opnieuw opgestart of er is een onverwachte fout opgetreden
 
@@ -37,31 +37,27 @@ Wanneer u [Diagnostische gegevens over opstarten](./boot-diagnostics.md) gebruik
 
 ## <a name="cause"></a>Oorzaak
 
-Er wordt geprobeerd een [gegeneraliseerde installatie kopie](/windows-hardware/manufacture/desktop/sysprep--generalize--a-windows-installation)te starten met de computer, maar er is een probleem opgetreden vanwege een aangepast antwoord bestand (unattend.xml) dat wordt verwerkt. Aangepaste antwoordbestanden worden niet ondersteund in Azure. 
+Er wordt geprobeerd een [gegeneraliseerde installatie kopie](/windows-hardware/manufacture/desktop/sysprep--generalize--a-windows-installation)te starten met de computer, maar er is een probleem opgetreden vanwege een aangepast antwoord bestand (Unattend.xml) dat wordt verwerkt. **Aangepaste antwoord bestanden worden niet ondersteund in azure**. 
 
 Het antwoord bestand is een speciaal XML-bestand met instellings definities en-waarden voor de configuratie-instellingen die u wilt automatiseren tijdens de installatie van een installatie van een Windows Server-besturings systeem. De configuratie opties bevatten instructies voor het partitioneren van schijven, waar u de Windows-installatie kopie kunt vinden die moet worden geïnstalleerd, de product codes die moeten worden toegepast en andere opdrachten die u wilt uitvoeren.
 
-In Azure worden aangepaste antwoord bestanden niet ondersteund. Als u een aangepast **Unattend.xml** bestand hebt opgegeven met behulp van de `sysprep /unattend:<your file’s name>` optie, kan deze fout optreden.
+Opnieuw worden aangepaste antwoord bestanden niet ondersteund in Azure. Deze situatie treedt dus op wanneer een installatie kopie is voor bereid voor gebruik in azure, maar u hebt een aangepast Unattend.xml bestand opgegeven met behulp van **Sysprep** met een vlag die vergelijkbaar is met de volgende opdracht:
 
-Gebruik in azure de optie **systeem OOBE (out-of-Box Experience) opgeven** in **Sysprep.exe**of gebruik in `sysprep /oobe` plaats van het Unattend.xml bestand.
+`sysprep /oobe /generalize /unattend:<your file’s name> /shutdown`
 
-Dit probleem wordt meestal gemaakt wanneer u **Sysprep.exe** gebruikt met een on-premises VM om een gegeneraliseerde VM naar Azure te uploaden. In dit geval is het wellicht ook belang rijk om een gegeneraliseerde virtuele machine goed te uploaden.
+Gebruik in azure de optie **systeem OOBE (out-of-Box Experience) invoeren** in de **gebruikers interface van het hulp programma voor systeem voorbereiding** of gebruiken in `sysprep /oobe` plaats van het Unattend.xml-bestand.
+
+Dit probleem wordt meestal gemaakt tijdens het gebruik van Sysprep met een on-premises VM om een gegeneraliseerde VM naar Azure te uploaden. In dit geval is het wellicht ook belang rijk om een gegeneraliseerde virtuele machine goed te uploaden.
 
 ## <a name="solution"></a>Oplossing
 
-### <a name="replace-unattended-answer-file-option"></a>Optie voor antwoord bestand voor installatie zonder toezicht vervangen
+### <a name="do-not-use-unattendxml"></a>Gebruik niet Unattend.xml
 
-Deze situatie doet zich voor wanneer een afbeelding is voor bereid voor gebruik in azure, maar een aangepast antwoord bestand heeft gebruikt dat niet wordt ondersteund in azure, en u hebt **Sysprep** gebruikt met een vlag die vergelijkbaar is met de volgende opdracht:
-
-`sysprep /oobe /generalize /unattend:<NameOfYourAnswerFile.XML> /shutdown`
-
-- Vervang in de vorige opdracht door `<NameOfYourAnswerFile.XML>` de naam van het bestand.
-
-U kunt dit probleem oplossen door [de Azure-richt lijnen voor het voorbereiden/vastleggen van een installatie kopie](../windows/upload-generalized-managed.md) te volgen en een nieuwe gegeneraliseerde installatie kopie voor te bereiden. Gebruik bij Sysprep geen `/unattend:<answerfile>` vlag. Gebruik in plaats daarvan alleen de onderstaande vlaggen:
+U kunt dit probleem oplossen door [de Azure-richt lijnen voor het voorbereiden/vastleggen van een installatie kopie](../windows/upload-generalized-managed.md) te volgen en een nieuwe gegeneraliseerde installatie kopie voor te bereiden. Gebruik bij Sysprep **geen `/unattend:<your file’s name>` vlag**. Gebruik in plaats daarvan alleen de onderstaande vlaggen:
 
 `sysprep /oobe /generalize /shutdown`
 
-- **Out-of-Box-Experience** (OOBE) is de ondersteunde instelling voor virtuele Azure-machines.
+- Out-of-Box-Experience (OOBE) is de ondersteunde instelling voor virtuele Azure-machines.
 
 U kunt ook de **gebruikers interface van het hulp programma voor systeem voorbereiding** gebruiken om dezelfde taak uit te voeren als de bovenstaande opdracht door de opties te selecteren die hieronder worden weer gegeven:
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/24/2020
 ms.author: terrylan
-ms.openlocfilehash: dfacf124f8db0e5323c9abff56c4a78f85f6f014
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: af61b6ee1e69d175f47170df30f75832033d61d5
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88816130"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96489714"
 ---
 # <a name="penetration-testing"></a>Penetratietesten
 
@@ -46,7 +46,7 @@ U kunt onder andere de volgende standaard tests uitvoeren:
 Een soort pen test die u niet kunt uitvoeren, is een [DOS-aanval (Denial of service)](https://en.wikipedia.org/wiki/Denial-of-service_attack) . Deze test omvat het initiëren van een DoS-aanval zelf of het uitvoeren van gerelateerde tests die het type DoS-aanval kunnen bepalen, demonstreren of simuleren.
 
 >[!Note]
->Micro soft heeft een samen werking met BreakingPoint-Cloud voor het bouwen van een interface waarmee u verkeer kunt genereren op basis van DDoS Protection open bare IP-adressen voor simulaties. Zie [Validate DDoS Detection](../../virtual-network/manage-ddos-protection.md#validate-ddos-detection)(Engelstalig) voor meer informatie over de Cloud simulatie van het onderbrekings punt.
+>Micro soft heeft een samen werking met BreakingPoint-Cloud voor het bouwen van een interface waarmee u verkeer kunt genereren op basis van DDoS Protection open bare IP-adressen voor simulaties. Zie [Validate DDoS Detection](../../ddos-protection/manage-ddos-protection.md#validate-and-test)(Engelstalig) voor meer informatie over de Cloud simulatie van het onderbrekings punt.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 10/16/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 079a1aed500014b5ec3f14c1cf6ece97e104558e
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: e46aa79bc84f3eba218932c1e8a463584de3f1bb
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94958520"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96488949"
 ---
 # <a name="cluster-an-sap-ascsscs-instance-on-a-windows-failover-cluster-by-using-a-cluster-shared-disk-in-azure"></a>Een SAP ASCS/SCS-exemplaar op een Windows-failovercluster clusteren met behulp van een gedeelde cluster schijf in azure
 
@@ -52,7 +52,7 @@ De Azure Load Balancer-service biedt een *interne Load Balancer* voor Azure. Met
 Implementeer de interne load balancer in de resource groep die de cluster knooppunten bevat. Configureer vervolgens alle benodigde regels voor het door sturen van poorten met behulp van de test poorten van de interne load balancer. Clients kunnen verbinding maken via de naam van de virtuele host. De DNS-server zet het IP-adres van het cluster op en de interne load balancer verwerkt poort door sturen naar het actieve knoop punt van het cluster.
 
 > [!IMPORTANT]
-> Zwevend IP wordt niet ondersteund voor een secundaire IP-configuratie in een NIC in scenario's voor taak verdeling. Zie beperkingen voor [Azure Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-multivip-overview#limitations)voor meer informatie. Als u een extra IP-adres voor de virtuele machine nodig hebt, implementeert u een tweede NIC.  
+> Zwevend IP wordt niet ondersteund voor een secundaire IP-configuratie in een NIC in scenario's voor taak verdeling. Zie beperkingen voor [Azure Load Balancer](../../../load-balancer/load-balancer-multivip-overview.md#limitations)voor meer informatie. Als u een extra IP-adres voor de virtuele machine nodig hebt, implementeert u een tweede NIC.  
 
 ![Afbeelding 1: configuratie van Windows Failover Clustering in azure zonder een gedeelde schijf][sap-ha-guide-figure-1001]
 

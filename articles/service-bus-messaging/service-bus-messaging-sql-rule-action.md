@@ -3,16 +3,16 @@ title: Regel voor Azure Service Bus abonnement de SQL-actie syntaxis | Microsoft
 description: Dit artikel bevat een verwijzing voor de syntaxis van de SQL-regel actie. De acties worden geschreven in de syntaxis op basis van SQL-taal die wordt uitgevoerd op een bericht.
 ms.topic: article
 ms.date: 11/24/2020
-ms.openlocfilehash: a156a9d8f18a7763f03c63b56681fa25ce6de289
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: 7ce3332fb1a2025e89135e5e42e72d4afe1e7a5e
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95808851"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96489391"
 ---
 # <a name="subscription-rule-sql-action-syntax"></a>Syntaxis van SQL-actie voor abonnements regel
 
-Een *SQL-actie* wordt gebruikt om de meta gegevens van een bericht te manipuleren nadat een bericht is geselecteerd door een filter van een abonnements regel. Het is een tekst expressie die wordt geleaneerd op een subset van de SQL-92-standaard. Actie-expressies worden gebruikt met het `sqlExpression` element van de eigenschap Action van een service bus `Rule` in een [Azure Resource Manager sjabloon](service-bus-resource-manager-namespace-topic-with-rule.md)of het argument van de Azure cli- `az servicebus topic subscription rule create` opdracht [`--action-sql-expression`](https://docs.microsoft.com/cli/azure/servicebus/topic/subscription/rule?view=azure-cli-latest&preserve-view=true#az_servicebus_topic_subscription_rule_create) , en verschillende SDK-functies waarmee abonnements regels kunnen worden beheerd.
+Een *SQL-actie* wordt gebruikt om de meta gegevens van een bericht te manipuleren nadat een bericht is geselecteerd door een filter van een abonnements regel. Het is een tekst expressie die wordt geleaneerd op een subset van de SQL-92-standaard. Actie-expressies worden gebruikt met het `sqlExpression` element van de eigenschap Action van een service bus `Rule` in een [Azure Resource Manager sjabloon](service-bus-resource-manager-namespace-topic-with-rule.md)of het argument van de Azure cli- `az servicebus topic subscription rule create` opdracht [`--action-sql-expression`](/cli/azure/servicebus/topic/subscription/rule?preserve-view=true&view=azure-cli-latest#az_servicebus_topic_subscription_rule_create) , en verschillende SDK-functies waarmee abonnements regels kunnen worden beheerd.
   
   
 ```  
@@ -185,7 +185,7 @@ Booleaanse constanten worden vertegenwoordigd door de tref woorden `TRUE` of `FA
   
 Teken reeks constanten worden tussen enkele aanhalings tekens geplaatst en bevatten geldige Unicode-tekens. Een enkel aanhalings teken in een teken reeks constante wordt weer gegeven als twee enkele aanhalings tekens.  
   
-## <a name="function"></a>-functie  
+## <a name="function"></a>functieassembly  
   
 ```  
 <function> :=  

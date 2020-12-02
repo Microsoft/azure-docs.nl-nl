@@ -162,6 +162,8 @@
           href: expressroute-howto-coexist-resource-manager.md
         - name: Een zone-redundante VNet-gateway maken in Azure-beschikbaarheidszones
           href: ../vpn-gateway/create-zone-redundant-vnet-gateway.md?toc=%2fazure%2fexpressroute%2ftoc.json
+    - name: Kosten voorspellen en beheren
+      href: plan-manage-cost.md
     - name: Verplaatsen van klassiek naar Resource Manager
       items:
         - name: Een circuit van klassiek naar Resource Manager verplaatsen

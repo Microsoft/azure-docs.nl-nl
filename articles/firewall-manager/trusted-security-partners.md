@@ -5,24 +5,24 @@ author: vhorne
 ms.service: firewall-manager
 services: firewall-manager
 ms.topic: conceptual
-ms.date: 06/30/2020
+ms.date: 12/01/2020
 ms.author: victorh
-ms.openlocfilehash: 3c09e75a98e5342ab54710e05466755d86705b2a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 923c6b685d20ff68788e7d9cfcb45ebaecb535e3
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91399428"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96490105"
 ---
 # <a name="what-are-security-partner-providers"></a>Wat zijn beveiligingspartnerproviders?
 
-Met *aanbieders van beveiligings partners* in azure firewall Manager kunt u uw vertrouwde, eersteklas SECaaS-aanbiedingen (Security as a Service) van derden gebruiken om de Internet toegang voor uw gebruikers te beveiligen.
+Met *aanbieders van beveiligings partners* in azure firewall Manager kunt u gebruikmaken van uw vertrouwde, eersteklas SECaaS-aanbiedingen (Security as a Service) van derden om de Internet toegang voor uw gebruikers te beveiligen.
 
 Met een snelle configuratie kunt u een hub met een ondersteunde beveiligings partner beveiligen en Internet verkeer van uw virtuele netwerken (VNets) of vertakkings locaties binnen een regio routeren en filteren. U kunt dit doen met geautomatiseerde route beheer zonder door de gebruiker gedefinieerde routes (Udr's) in te stellen en te beheren.
 
 U kunt beveiligde hubs implementeren die zijn geconfigureerd met de beveiligings partner van uw keuze in meerdere Azure-regio's om connectiviteit en beveiliging voor uw gebruikers overal ter wereld in deze regio's te krijgen. Met de mogelijkheid om de aanbieding van de beveiligings partner voor Internet/SaaS-toepassings verkeer te gebruiken en Azure Firewall voor privé verkeer in de beveiligde hubs, kunt u nu beginnen met het bouwen van uw beveiligings rand op Azure die dicht bij uw wereld wijd gedistribueerde gebruikers en toepassingen ligt.
 
-De ondersteunde beveiligings partners zijn **ZScaler**, **Check Point** (preview) en **iboss** (preview).
+De ondersteunde beveiligings partners zijn **Zscaler**, **[Check Point](check-point-overview.md)** en **iboss**.
 
 ![Beveiligingspartnerproviders](media/trusted-security-partners/trusted-security-partners.png)
 

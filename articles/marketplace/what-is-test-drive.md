@@ -7,12 +7,12 @@ ms.topic: article
 author: trkeya
 ms.author: trkeya
 ms.date: 06/19/2020
-ms.openlocfilehash: 304e1ab475213bde2644c8241905408ade5672ed
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 193e7bd78046a1d73cb55171c15c9cb6a7278297
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94489961"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96490037"
 ---
 # <a name="what-is-a-test-drive"></a>Wat is een test drive?
 
@@ -24,7 +24,7 @@ Uw klanten profiteren ook van een test drive. Door hen in staat te stellen uw pr
 
 Test stations zijn beheerde instanties die uw oplossing of toepassing op aanvraag starten voor klanten die het verzoek indienen. Zodra een test drive-exemplaar is toegewezen, is het beschikbaar voor gebruik door die klant voor een bepaalde periode. Nadat de periode is beëindigd, wordt deze verwijderd om ruimte te maken voor een andere klant.
 
-Als uitgever kunt u de test drive-instellingen beheren en configureren in partner centrum. De technische configuratie gegevens variëren afhankelijk van het type aanbieding. Zie de technische configuratie van het [test station](https://docs.microsoft.com/azure/marketplace/test-drive-technical-configuration)voor gedetailleerde richt lijnen.
+Als uitgever kunt u de test drive-instellingen beheren en configureren in partner centrum. De technische configuratie gegevens variëren afhankelijk van het type aanbieding. Zie de technische configuratie van het [test station](./test-drive-technical-configuration.md)voor gedetailleerde richt lijnen.
 
 Potentiële klanten ontdekken uw test drive als een CTA in uw aanbieding op [AppSource](https://appsource.microsoft.com/en-US/). Ze bieden hun contact gegevens en gaan akkoord met de voor waarden en het privacybeleid van uw aanbieding. vervolgens krijgt u toegang tot uw vooraf geconfigureerde omgeving om deze te proberen voor een bepaalde periode. Klanten ontvangen een praktijk gerichte, zelf-begeleide proef versie van de belangrijkste functies en voor delen van uw product en u ontvangt een waardevolle lead.
 
@@ -43,7 +43,7 @@ Er zijn verschillende test stations beschikbaar op de commerciële Marketplace v
 - Logische app (alleen in ondersteunings modus)
 - Power BI
 
-Zie [technische configuratie van test station](https://docs.microsoft.com/azure/marketplace/test-drive-technical-configuration)voor meer informatie over het configureren van een van deze test stations. 
+Zie [technische configuratie van test station](./test-drive-technical-configuration.md)voor meer informatie over het configureren van een van deze test stations. 
 
 ### <a name="azure-resource-manager-test-drive"></a>Azure Resource Manager test drive
 
@@ -65,7 +65,7 @@ Een gehoste test drive verwijdert de complexiteit van Setup door micro soft host
 
 ### <a name="logic-app-test-drive"></a>test drive van logische app
 
-Dit type test drive wordt niet gehost door micro soft en gebruikt ARM-sjablonen (Azure Resource Manager) voor Dynamics AX/CRM-aanbiedings typen. U moet de ARM-sjabloon uitvoeren om de vereiste resources in uw Azure-abonnement te maken. Het test station van de logische app bevindt zich momenteel alleen in de ondersteunings modus en wordt niet aanbevolen door micro soft voor meer informatie over het configureren van een test schijf voor een logische app, Zie [technische configuratie testen](https://docs.microsoft.com/azure/marketplace/test-drive-technical-configuration).
+Dit type test drive wordt niet gehost door micro soft en gebruikt ARM-sjablonen (Azure Resource Manager) voor Dynamics AX/CRM-aanbiedings typen. U moet de ARM-sjabloon uitvoeren om de vereiste resources in uw Azure-abonnement te maken. Het test station van de logische app bevindt zich momenteel alleen in de ondersteunings modus en wordt niet aanbevolen door micro soft voor meer informatie over het configureren van een test schijf voor een logische app, Zie [technische configuratie testen](./test-drive-technical-configuration.md).
 
 ### <a name="power-bi-test-drive"></a>Power BI test drive
 

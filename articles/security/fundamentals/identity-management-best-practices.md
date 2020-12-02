@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2019
 ms.author: terrylan
-ms.openlocfilehash: 94cb40522a9e463fea2efae329daf910b5386cdd
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: bf593eab54233ab65435585485dd8e3940f5addb
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94832599"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96489816"
 ---
 # <a name="azure-identity-management-and-access-control-security-best-practices"></a>Aanbevolen procedures voor de beveiliging van Azure Identity Management en Access Control
 
@@ -229,12 +229,12 @@ Het beveiligen van bevoegde toegang is een kritieke eerste stap bij het beveilig
 
 Geprivilegieerde accounts zijn accounts die IT-systemen beheren en beheren. Cyber aanvallers richten zich op deze accounts om toegang te krijgen tot de gegevens en systemen van een organisatie. Voor het beveiligen van bevoegde toegang moet u de accounts en systemen isoleren van het risico dat ze worden blootgesteld aan een kwaadwillende gebruiker.
 
-We raden u aan een plan te ontwikkelen en te volgen om bevoegde toegang te beveiligen tegen Cyber aanvallers. Raadpleeg voor meer informatie over het maken van een gedetailleerd schema voor het beveiligen van identiteiten en toegang die worden beheerd of gerapporteerd in azure AD, Microsoft Azure, Microsoft 365 en andere Cloud Services, de [beveiliging van bevoegde toegang voor hybride en Cloud implementaties in azure AD](../../active-directory/users-groups-roles/directory-admin-roles-secure.md).
+We raden u aan een plan te ontwikkelen en te volgen om bevoegde toegang te beveiligen tegen Cyber aanvallers. Raadpleeg voor meer informatie over het maken van een gedetailleerd schema voor het beveiligen van identiteiten en toegang die worden beheerd of gerapporteerd in azure AD, Microsoft Azure, Microsoft 365 en andere Cloud Services, de [beveiliging van bevoegde toegang voor hybride en Cloud implementaties in azure AD](../../active-directory/roles/security-planning.md).
 
-Hieronder vindt u een overzicht van de aanbevolen procedures [voor het beveiligen van bevoegde toegang voor hybride en Cloud implementaties in azure AD](../../active-directory/users-groups-roles/directory-admin-roles-secure.md):
+Hieronder vindt u een overzicht van de aanbevolen procedures [voor het beveiligen van bevoegde toegang voor hybride en Cloud implementaties in azure AD](../../active-directory/roles/security-planning.md):
 
 **Aanbevolen procedure**: toegang tot geprivilegieerde accounts beheren, beheren en bewaken.   
-**Details**: Schakel [Azure AD privileged Identity Management](../../active-directory/users-groups-roles/directory-admin-roles-secure.md)in. Nadat u Privileged Identity Management hebt ingeschakeld, ontvangt u een e-mail bericht met meldingen voor de gewijzigde rol van de toegang. Deze meldingen geven een vroegtijdige waarschuwing wanneer extra gebruikers worden toegevoegd aan rollen met zeer privileged in uw Directory.
+**Details**: Schakel [Azure AD privileged Identity Management](../../active-directory/roles/security-planning.md)in. Nadat u Privileged Identity Management hebt ingeschakeld, ontvangt u een e-mail bericht met meldingen voor de gewijzigde rol van de toegang. Deze meldingen geven een vroegtijdige waarschuwing wanneer extra gebruikers worden toegevoegd aan rollen met zeer privileged in uw Directory.
 
 **Aanbevolen procedure**: Zorg ervoor dat alle essentiële beheerders accounts worden beheerd in azure AD-accounts.
 **Details**: Verwijder alle consumenten accounts uit essentiële beheerders rollen (bijvoorbeeld micro soft-accounts zoals hotmail.com, live.com en Outlook.com).
@@ -261,10 +261,10 @@ Hieronder vindt u een overzicht van de aanbevolen procedures [voor het beveilige
 **Aanbevolen procedure**: Definieer ten minste twee nood toegangs accounts.   
 **Details**: met behulp van accounts voor toegang tot een nood geval kunnen organisaties bevoorrechte toegang in een bestaande Azure Active Directory omgeving beperken. Deze accounts zijn zeer privileged en worden niet toegewezen aan specifieke personen. Accounts voor toegang in nood gevallen zijn beperkt tot scenario's waarin normale beheerders accounts niet kunnen worden gebruikt. Organisaties moeten het gebruik van het calamiteiten account beperken tot alleen de benodigde hoeveelheid tijd.
 
-Evalueer de accounts die zijn toegewezen of die in aanmerking komen voor de rol van globale beheerder. Als u geen alleen-Cloud accounts met behulp van het `*.onmicrosoft.com` domein (bedoeld voor nood toegang) ziet, maakt u deze. Zie [Beheer accounts voor nood toegang beheren in azure AD](../../active-directory/users-groups-roles/directory-emergency-access.md)voor meer informatie.
+Evalueer de accounts die zijn toegewezen of die in aanmerking komen voor de rol van globale beheerder. Als u geen alleen-Cloud accounts met behulp van het `*.onmicrosoft.com` domein (bedoeld voor nood toegang) ziet, maakt u deze. Zie [Beheer accounts voor nood toegang beheren in azure AD](../../active-directory/roles/security-emergency-access.md)voor meer informatie.
 
 **Best Practice**: Stel een "sche glas"-proces in voor een nood geval.
-**Details**: Volg de stappen in het [beveiligen van bevoegde toegang voor hybride en Cloud implementaties in azure AD](../../active-directory/users-groups-roles/directory-admin-roles-secure.md).
+**Details**: Volg de stappen in het [beveiligen van bevoegde toegang voor hybride en Cloud implementaties in azure AD](../../active-directory/roles/security-planning.md).
 
 **Aanbevolen procedure**: vereisen dat alle essentiële beheerders accounts een wacht woord hebben (bij voor keur) of vereisen dat multi-factor Authentication.
 **Details**: gebruik de [Microsoft Authenticator-app](../../active-directory/authentication/howto-authentication-passwordless-phone.md) om u aan te melden bij een Azure ad-account zonder een wacht woord te gebruiken. Net als [Windows hello voor bedrijven](/windows/security/identity-protection/hello-for-business/hello-identity-verification)gebruikt de Microsoft Authenticator verificatie op basis van een sleutel om een gebruikers referentie in te scha kelen die is gekoppeld aan een apparaat en gebruikmaakt van biometrische verificatie of een pincode.
@@ -284,25 +284,25 @@ Azure AD Multi-Factor Authentication vereisen bij aanmelding voor alle afzonderl
 **Details**: gebruik Microsoft 365 aanvals versie of een aanbieding van derden om realistische aanvals scenario's uit te voeren in uw organisatie. Dit kan u helpen kwets bare gebruikers te vinden voordat een echte aanval plaatsvindt.
 
 **Aanbevolen procedure**: Neem stappen om de meest gebruikte aanvals technieken te verhelpen.  
-**Detail**: [micro soft-accounts in beheerders rollen identificeren die moeten worden overgeschakeld naar werk-of school accounts](../../active-directory/users-groups-roles/directory-admin-roles-secure.md#identify-microsoft-accounts-in-administrative-roles-that-need-to-be-switched-to-work-or-school-accounts)  
+**Detail**: [micro soft-accounts in beheerders rollen identificeren die moeten worden overgeschakeld naar werk-of school accounts](../../active-directory/roles/security-planning.md#identify-microsoft-accounts-in-administrative-roles-that-need-to-be-switched-to-work-or-school-accounts)  
 
-[Zorg ervoor dat afzonderlijke gebruikers accounts en e-mail berichten worden doorgestuurd voor globale beheerders accounts](../../active-directory/users-groups-roles/directory-admin-roles-secure.md)  
+[Zorg ervoor dat afzonderlijke gebruikers accounts en e-mail berichten worden doorgestuurd voor globale beheerders accounts](../../active-directory/roles/security-planning.md)  
 
-[Zorg ervoor dat de wacht woorden van de beheerders accounts onlangs zijn gewijzigd](../../active-directory/users-groups-roles/directory-admin-roles-secure.md#ensure-the-passwords-of-administrative-accounts-have-recently-changed)  
+[Zorg ervoor dat de wacht woorden van de beheerders accounts onlangs zijn gewijzigd](../../active-directory/roles/security-planning.md#ensure-the-passwords-of-administrative-accounts-have-recently-changed)  
 
-[Wachtwoord hash synchronisatie inschakelen](../../active-directory/users-groups-roles/directory-admin-roles-secure.md#turn-on-password-hash-synchronization)  
+[Wachtwoord hash synchronisatie inschakelen](../../active-directory/roles/security-planning.md#turn-on-password-hash-synchronization)  
 
-[Multi-Factor Authentication vereisen voor gebruikers in alle geprivilegieerde rollen en gebruikers die ze kunnen belichten](../../active-directory/users-groups-roles/directory-admin-roles-secure.md#require-multi-factor-authentication-mfa-for-users-in-all-privileged-roles-as-well-as-exposed-users)  
+[Multi-Factor Authentication vereisen voor gebruikers in alle geprivilegieerde rollen en gebruikers die ze kunnen belichten](../../active-directory/roles/security-planning.md#require-multi-factor-authentication-for-users-in-privileged-roles-and-exposed-users)  
 
-[Uw Microsoft 365 beveiligde score verkrijgen (als u Microsoft 365 gebruikt)](../../active-directory/users-groups-roles/directory-admin-roles-secure.md#obtain-your-office-365-secure-score-if-using-office-365)  
+[Uw Microsoft 365 beveiligde score verkrijgen (als u Microsoft 365 gebruikt)](../../active-directory/roles/security-planning.md#obtain-your-microsoft-365-secure-score-if-using-microsoft-365)  
 
-[Raadpleeg de Microsoft 365 Security Guidance (als u Microsoft 365 gebruikt)](../../active-directory/users-groups-roles/directory-admin-roles-secure.md#review-the-office-365-security-and-compliance-guidance-if-using-office-365)  
+[Raadpleeg de Microsoft 365 Security Guidance (als u Microsoft 365 gebruikt)](../../active-directory/roles/security-planning.md#review-the-microsoft-365-security-and-compliance-guidance-if-using-microsoft-365)  
 
-[Bewaking van Microsoft 365 activiteiten configureren (als u Microsoft 365 gebruikt)](../../active-directory/users-groups-roles/directory-admin-roles-secure.md#configure-office-365-activity-monitoring-if-using-office-365)  
+[Bewaking van Microsoft 365 activiteiten configureren (als u Microsoft 365 gebruikt)](../../active-directory/roles/security-planning.md#configure-microsoft-365-activity-monitoring-if-using-microsoft-365)  
 
-[Eigen aren van incidenten/nood-antwoord plannen vastleggen](../../active-directory/users-groups-roles/directory-admin-roles-secure.md#establish-incidentemergency-response-plan-owners)  
+[Eigen aren van incidenten/nood-antwoord plannen vastleggen](../../active-directory/roles/security-planning.md#establish-incidentemergency-response-plan-owners)  
 
-[On-premises geprivilegieerde beheerders accounts beveiligen](../../active-directory/users-groups-roles/directory-admin-roles-secure.md#turn-on-password-hash-synchronization)
+[On-premises geprivilegieerde beheerders accounts beveiligen](../../active-directory/roles/security-planning.md#turn-on-password-hash-synchronization)
 
 Als u geen beveiligde toegang hebt, is het mogelijk dat u te veel gebruikers hebt in zeer beschermde rollen en kwetsbaarder is voor aanvallen. Kwaadwillende actoren, met inbegrip van Cyber aanvallers, vaak doel beheerders accounts en andere elementen van bevoegde toegang om toegang te krijgen tot gevoelige gegevens en systemen door referentie diefstal te gebruiken.
 

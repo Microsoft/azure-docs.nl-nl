@@ -1,18 +1,18 @@
 ---
 title: Overzicht van gegevens stroom transformatie toewijzen
 description: Een overzicht van de verschillende trans formaties die beschikbaar zijn in de toewijzing van gegevens stroom
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: anandsub
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 10/27/2020
-ms.openlocfilehash: 6fe85db6612a16099f61cb52fe9c5864882f35b3
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 9d44890e84e97a413543a4291d1331fee0f04841
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92892924"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96490871"
 ---
 # <a name="mapping-data-flow-transformation-overview"></a>Overzicht van gegevens stroom transformatie toewijzen
 
@@ -20,7 +20,7 @@ ms.locfileid: "92892924"
 
 Hieronder ziet u een lijst van de trans formaties die momenteel worden ondersteund in de toewijzing van gegevens stroom. Klik op elke trans formaties voor meer informatie over de configuratie gegevens.
 
-| Name | Categorie | Beschrijving |
+| Naam | Categorie | Beschrijving |
 | ---- | -------- | ----------- |
 | [Samenvoegen](data-flow-aggregate.md) | Schema wijziging | Definieer verschillende typen aggregaties, zoals som, MIN, maximum en aantal, gegroepeerd op bestaande of berekende kolommen. | 
 | [Rij wijzigen](data-flow-alter-row.md) | Rij-aanpassing | Stel insert-, Delete-, update-en upsert-beleid in op rijen. |
@@ -39,6 +39,6 @@ Hieronder ziet u een lijst van de trans formaties die momenteel worden ondersteu
 | [Sorteren](data-flow-sort.md) | Rij-aanpassing | Binnenkomende rijen op de huidige gegevens stroom sorteren |
 | [Bron](data-flow-source.md) | - | Een gegevens bron voor de gegevens stroom |
 | [Surrogaatsleutel](data-flow-surrogate-key.md) | Schema wijziging | Een wille keurige sleutel waarde voor niet-zakelijk nummer toevoegen |
-| [Union](data-flow-union.md) | Meerdere invoer/uitvoer | Meerdere gegevens stromen verticaal combi neren |
+| [Réunion](data-flow-union.md) | Meerdere invoer/uitvoer | Meerdere gegevens stromen verticaal combi neren |
 | [Draaitabel opheffen](data-flow-unpivot.md) | Schema wijziging | Kolommen in rijwaarden draaien |
 | [Venster](data-flow-window.md) | Schema wijziging |  Definieer op venster gebaseerde aggregaties van kolommen in uw gegevens stromen. |

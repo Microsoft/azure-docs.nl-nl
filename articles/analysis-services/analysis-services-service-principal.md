@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 5d114017d5e5dfecfe20afc69849763a87aadd41
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: b04b9ababfe0e4c2a60d14044b9d3ee120837dc5
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92015314"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96491040"
 ---
 # <a name="automation-with-service-principals"></a>Automatisering met service-principals
 
@@ -24,14 +24,14 @@ Analysis Services biedt ook ondersteuning voor bewerkingen die worden uitgevoerd
 
 ## <a name="create-service-principals"></a>Service-principals maken
  
-Service-principals kunnen worden gemaakt in de Azure Portal of met behulp van Power shell. Voor meer informatie zie:
+Service-principals kunnen worden gemaakt in de Azure Portal of met behulp van Power shell. Raadpleeg voor meer informatie:
 
 [Service-principal maken - Azure Portal](../active-directory/develop/howto-create-service-principal-portal.md)   
 [Service-principal maken - PowerShell](../active-directory/develop/howto-authenticate-service-principal-powershell.md)
 
 ## <a name="store-credential-and-certificate-assets-in-azure-automation"></a>Referentie-en certificaat assets opslaan in Azure Automation
 
-Referenties van de Service-Principal en certificaten kunnen veilig worden opgeslagen in Azure Automation voor runbook-bewerkingen. Voor meer informatie zie:
+Referenties van de Service-Principal en certificaten kunnen veilig worden opgeslagen in Azure Automation voor runbook-bewerkingen. Raadpleeg voor meer informatie:
 
 [Referentie-assets in Azure Automation](../automation/shared-resources/credentials.md)   
 [Verbindingsassets in Azure Automation](../automation/shared-resources/certificates.md)
@@ -92,7 +92,7 @@ Invoke-ProcessTable -Server "asazure://westcentralus.asazure.windows.net/myserve
 
 ### <a name="amo-and-adomd"></a>AMO en ADOMD 
 
-Wanneer u verbinding maakt met clienttoepassingen en web-apps, bieden [AMO- en ADOMD-clientbibliotheken](/analysis-services/client-libraries?view=azure-analysis-services-current) versie 15.0.2 en hogere versies van installeerbare pakketten van NuGet, ondersteuning voor het gebruik van service-principals in verbindingsreeksen met de volgende syntaxis: `app:AppID` en wachtwoord of `cert:thumbprint`. 
+Wanneer u verbinding maakt met clienttoepassingen en web-apps, bieden [AMO- en ADOMD-clientbibliotheken](/analysis-services/client-libraries?view=azure-analysis-services-current&preserve-view=true) versie 15.0.2 en hogere versies van installeerbare pakketten van NuGet, ondersteuning voor het gebruik van service-principals in verbindingsreeksen met de volgende syntaxis: `app:AppID` en wachtwoord of `cert:thumbprint`. 
 
 In het volgende voorbeeld worden `appID` en een `password` gebruikt voor het uitvoeren van een bewerking voor het vernieuwen van een modeldatabase:
 

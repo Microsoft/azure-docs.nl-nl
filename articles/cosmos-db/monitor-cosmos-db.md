@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/23/2020
 ms.author: sngun
 ms.custom: subject-monitoring
-ms.openlocfilehash: 550418761e91a8292761d7595ff32d939c0d542e
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 9410a38f7bc7a787fc439b5ad51f4a49f76771f8
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350395"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96488779"
 ---
 # <a name="monitor-azure-cosmos-db"></a>Azure Cosmos DB controleren
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -83,7 +83,7 @@ De metrische gegevens en logboeken die u kunt verzamelen, worden besproken in de
 
 Azure Cosmos DB biedt een aangepaste ervaring voor het werken met metrische gegevens. U kunt metrische gegevens voor Azure Cosmos DB met metrische gegevens uit andere Azure-Services analyseren door **metrische gegevens** te openen in het menu **Azure monitor** . Zie [aan de slag met Azure Metrics Explorer](../azure-monitor/platform/metrics-getting-started.md) voor meer informatie over het gebruik van dit hulp programma. U kunt ook afhandelen hoe u de latentie aan de [server zijde](monitor-server-side-latency.md), het [gebruik van aanvraag eenheden](monitor-request-unit-usage.md)en het [gebruik van genormaliseerde aanvraag eenheden](monitor-normalized-request-units.md) voor uw Azure Cosmos DB-resources bewaken.
 
-Zie voor een overzicht van de platform gegevens die voor Azure Cosmos DB zijn verzameld, [bewaking Azure Cosmos DB Data Reference Metrics] monitor-Cosmos-DB-Naslag informatie. MD # Metrics) artikel.
+Zie voor een overzicht van de platform gegevens die voor Azure Cosmos DB worden verzameld, het artikel [bewaking Azure Cosmos DB Data Reference Metrics](monitor-cosmos-db-reference.md#metrics) .
 
 Alle metrische gegevens voor Azure Cosmos DB bevinden zich in de naam ruimte **Cosmos DB standaard metrische gegevens**. U kunt de volgende dimensies met deze metrische gegevens gebruiken bij het toevoegen van een filter aan een grafiek:
 
@@ -97,7 +97,7 @@ Ter referentie ziet u een lijst met [alle metrische resource gegevens die worden
 
 ### <a name="view-operation-level-metrics-for-azure-cosmos-db"></a>Metrische gegevens van het bewerkings niveau voor Azure Cosmos DB weer geven
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
 1. Selecteer **monitor** in de navigatie balk aan de linkerkant en selecteer **metrische gegevens**.
 
@@ -176,7 +176,7 @@ Azure Monitor waarschuwingen geven u proactief op de hoogte wanneer er belang ri
 
 De volgende tabel bevat bijvoorbeeld enkele waarschuwings regels voor uw resources. U kunt een gedetailleerde lijst met waarschuwings regels van de Azure Portal vinden. Zie [het artikel waarschuwingen configureren](create-alerts.md) voor meer informatie.  
 
-| Waarschuwingstype | Conditie | Beschrijving  |
+| Waarschuwingstype | Voorwaarde | Beschrijving  |
 |:---|:---|:---|
 |Frequentie limiet voor aanvraag eenheden (metrische waarschuwing) |Dimensie naam: status code, operator: is gelijk aan, dimensie waarden: 429  | Waarschuwingen als de container of data base de ingerichte doorvoer limiet heeft overschreden. |
 |Er is een failover uitgevoerd voor de regio |Operator: groter dan, aggregatie type: aantal, drempel waarde: 1 | Als er een failover wordt uitgevoerd voor een enkele regio. Deze waarschuwing is handig als u automatische failover niet hebt ingeschakeld. |

@@ -15,14 +15,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/29/2018
 ms.author: terrylan
-ms.openlocfilehash: 526947c4d2db9fd87727fdd60c33bcaa9e75c6ff
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 8a82fd6e6dc1bea0804c429f3af46884f004de69
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94699862"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96489765"
 ---
-# <a name="azure-network-security-overview"></a>Overzicht van Azure-netwerk beveiliging
+# <a name="azure-network-security-overview"></a>Overzicht van Azure-netwerkbeveiliging
 
 Netwerk beveiliging kan worden gedefinieerd als het proces van het beveiligen van bronnen tegen onbevoegde toegang of aanvallen door besturings elementen toe te passen op netwerk verkeer. Het doel is om ervoor te zorgen dat alleen rechtmatig verkeer wordt toegestaan. Azure bevat een robuuste netwerk infrastructuur ter ondersteuning van uw toepassings-en service connectiviteits vereisten. De netwerk verbinding is mogelijk tussen bronnen in azure, tussen on-premises en Azure gehoste resources, en naar en van Internet en Azure.
 
@@ -332,7 +332,7 @@ Micro soft biedt DDoS-beveiliging **, ook wel bekend als onderdeel** van het Azu
 
 Meer informatie:
 
-* [Overzicht van DDOS-beveiliging](../../virtual-network/ddos-protection-overview.md)
+* [Overzicht van DDOS-beveiliging](../../ddos-protection/ddos-protection-overview.md)
 
 ## <a name="azure-front-door"></a>Azure Front Door
 

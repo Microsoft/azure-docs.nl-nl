@@ -9,14 +9,14 @@ ms.devlang: sqldbrb=2
 ms.topic: how-to
 author: danimir
 ms.author: danil
-ms.reviewer: jrasnik, sstein
+ms.reviewer: wiassaf, sstein
 ms.date: 04/06/2020
-ms.openlocfilehash: b1e1de694b6333a350d034b08225aeea117ae703
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 999bb83af6937d4a7b3d7ee8207e2fd689a23d35
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790471"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96490803"
 ---
 # <a name="configure-streaming-export-of-azure-sql-database-and-sql-managed-instance-diagnostic-telemetry"></a>Streaming-export van Azure SQL Database en SQL Managed instance diagnostische telemetrie configureren
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -50,23 +50,23 @@ Naast het streamen van de export van het Intelligent Insights-logboek, kunt u oo
 | [SQLInsights](#intelligent-insights-dataset): bevat intelligent Insights prestaties voor een Data Base. Zie [intelligent Insights](intelligent-insights-overview.md)voor meer informatie. | Ja | Ja |
 
 > [!NOTE]
-> Diagnostische instellingen kunnen niet worden geconfigureerd voor de **systeem databases** , zoals Master-, msdb-, model-, resource-en tempdb-data bases.
+> Diagnostische instellingen kunnen niet worden geconfigureerd voor de **systeem databases**, zoals Master-, msdb-, model-, resource-en tempdb-data bases.
 
 ## <a name="streaming-export-destinations"></a>Streaming-export doelen
 
 Deze diagnostische telemetrie kan worden gestreamd naar een van de volgende Azure-resources voor analyse.
 
-- **[Log Analytics-werk ruimte](#stream-into-sql-analytics)** :
+- **[Log Analytics-werk ruimte](#stream-into-sql-analytics)**:
 
   Gegevens die naar een [log Analytics-werk ruimte](../../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace) zijn gestreamd, kunnen worden gebruikt door [SQL Analytics](../../azure-monitor/insights/azure-sql.md). SQL Analytics is een alleen-Cloud bewakings oplossing die intelligente bewaking biedt over uw data bases, waaronder prestatie rapporten, waarschuwingen en aanbevelingen voor risico beperking. Gegevens die naar een Log Analytics-werk ruimte zijn gestreamd, kunnen worden geanalyseerd met andere bewakings gegevens die zijn verzameld en biedt u ook de mogelijkheid om andere Azure Monitor functies, zoals waarschuwingen en visualisaties, te gebruiken.
-- **[Azure Event hubs](#stream-into-event-hubs)** :
+- **[Azure Event hubs](#stream-into-event-hubs)**:
 
   Gegevens die naar een [Azure Event hub](../../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs)zijn gestreamd, bieden de volgende functionaliteit:
 
-  - **Stream-logboeken naar logboek registraties van derden en telemetrie-systemen** : streamen al uw metrische gegevens en bron logboeken naar een enkele Event hub voor het pipeen van informatie over het logboek naar een Siem of log Analytics-hulp programma van derden.
-  - **Een aangepast telemetrie-en logboek registratie platform bouwen** : met de uiterst schaal bare publicatie van Event hubs kunt u de metrische gegevens en bron logboeken flexibel vastleggen in een aangepast telemetrie-platform. Zie [het ontwerp en de grootte van een telemetrie-platform op wereld wijd schalen op Azure Event hubs](https://azure.microsoft.com/documentation/videos/build-2015-designing-and-sizing-a-global-scale-telemetry-platform-on-azure-event-Hubs/) voor meer informatie.
-  - **Bekijk de service status door gegevens te streamen naar Power bi** : gebruik Event Hubs, Stream Analytics en Power bi om uw diagnostische gegevens te transformeren naar bijna realtime inzichten op uw Azure-Services. Zie [Stream Analytics en Power BI: een real-time analyse dashboard voor het streamen van gegevens](../../stream-analytics/stream-analytics-power-bi-dashboard.md) voor meer informatie over deze oplossing.
-- **[Azure Storage](#stream-into-azure-storage)** :
+  - **Stream-logboeken naar logboek registraties van derden en telemetrie-systemen**: streamen al uw metrische gegevens en bron logboeken naar een enkele Event hub voor het pipeen van informatie over het logboek naar een Siem of log Analytics-hulp programma van derden.
+  - **Een aangepast telemetrie-en logboek registratie platform bouwen**: met de uiterst schaal bare publicatie van Event hubs kunt u de metrische gegevens en bron logboeken flexibel vastleggen in een aangepast telemetrie-platform. Zie [het ontwerp en de grootte van een telemetrie-platform op wereld wijd schalen op Azure Event hubs](https://azure.microsoft.com/documentation/videos/build-2015-designing-and-sizing-a-global-scale-telemetry-platform-on-azure-event-Hubs/) voor meer informatie.
+  - **Bekijk de service status door gegevens te streamen naar Power bi**: gebruik Event Hubs, Stream Analytics en Power bi om uw diagnostische gegevens te transformeren naar bijna realtime inzichten op uw Azure-Services. Zie [Stream Analytics en Power BI: een real-time analyse dashboard voor het streamen van gegevens](../../stream-analytics/stream-analytics-power-bi-dashboard.md) voor meer informatie over deze oplossing.
+- **[Azure Storage](#stream-into-azure-storage)**:
 
   Met gegevens die naar [Azure Storage](../../azure-monitor/platform/resource-logs.md#send-to-azure-storage) worden gestreamd kunt u grote hoeveel heden diagnostische telemetrie archiveren voor een fractie van de kosten van de vorige twee stroomsgewijze opties.
 
@@ -116,18 +116,18 @@ De elastische pool container heeft een eigen telemetrie gescheiden van elke tele
 Voer de volgende stappen uit om streaming van diagnostische telemetrie in te scha kelen voor een elastische pool-resource:
 
 1. Ga naar de resource voor **elastische Pools** in azure Portal.
-2. Selecteer **instellingen voor diagnostische gegevens** .
+2. Selecteer **instellingen voor diagnostische gegevens**.
 3. Schakel **Diagnostische gegevens inschakelen in** als er geen eerdere instellingen zijn of selecteer **instelling bewerken** om een vorige instelling te bewerken.
 
    ![Diagnostische gegevens inschakelen voor elastische Pools](./media/metrics-diagnostic-telemetry-logging-streaming-export-configure/diagnostics-settings-container-elasticpool-enable.png)
 
 4. Voer een instellings naam in voor uw eigen verwijzing.
-5. Selecteer een doel resource voor de streaming diagnostische gegevens: **archiveren naar opslag account** , **streamen naar een event hub** of **verzenden naar log Analytics** .
+5. Selecteer een doel resource voor de streaming diagnostische gegevens: **archiveren naar opslag account**, **streamen naar een event hub** of **verzenden naar log Analytics**.
 6. Voor log Analytics selecteert **u configureren** en maakt u een nieuwe werk ruimte door te selecteren **+ nieuwe werk ruimte maken** of een bestaande werk ruimte te selecteren.
 7. Schakel het selectie vakje in voor telemetrie van elastische groeps diagnostiek: **basis** gegevens.
    ![Diagnostische gegevens configureren voor elastische Pools](./media/metrics-diagnostic-telemetry-logging-streaming-export-configure/diagnostics-settings-container-elasticpool-selection.png)
 
-8. Selecteer **Opslaan** .
+8. Selecteer **Opslaan**.
 9. Daarnaast kunt u streaming van diagnostische telemetrie configureren voor elke data base in de elastische pool die u wilt bewaken door de stappen te volgen die in de volgende sectie worden beschreven.
 
 > [!IMPORTANT]
@@ -144,19 +144,19 @@ U kunt een database resource instellen om de volgende diagnostische telemetrie t
 Voer de volgende stappen uit om streaming van diagnostische telemetrie in te scha kelen voor één of een gegroepeerde Data Base:
 
 1. Ga naar Azure **SQL database** resource.
-2. Selecteer **instellingen voor diagnostische gegevens** .
+2. Selecteer **instellingen voor diagnostische gegevens**.
 3. Schakel **Diagnostische gegevens inschakelen in** als er geen eerdere instellingen zijn of selecteer **instelling bewerken** om een vorige instelling te bewerken. U kunt Maxi maal drie parallelle verbindingen maken voor het streamen van diagnostische telemetrie.
 4. Selecteer **Diagnostische instelling toevoegen** om parallelle streaming van diagnostische gegevens te configureren voor meerdere resources.
 
    ![Diagnostische gegevens inschakelen voor afzonderlijke en gepoolde data bases](./media/metrics-diagnostic-telemetry-logging-streaming-export-configure/diagnostics-settings-database-sql-enable.png)
 
 5. Voer een instellings naam in voor uw eigen verwijzing.
-6. Selecteer een doel resource voor de streaming diagnostische gegevens: **archiveren naar opslag account** , **streamen naar een event hub** of **verzenden naar log Analytics** .
-7. Schakel voor de standaard bewakings ervaring op basis van gebeurtenissen de volgende selectie vakjes in voor de telemetrie van het logboek voor database diagnostiek: **SQLInsights** , **AutomaticTuning** , **QueryStoreRuntimeStatistics** , **QueryStoreWaitStatistics** , **Errors** , **DatabaseWaitStatistics** , **time-outs** , **blokken** en **deadlocks** .
+6. Selecteer een doel resource voor de streaming diagnostische gegevens: **archiveren naar opslag account**, **streamen naar een event hub** of **verzenden naar log Analytics**.
+7. Schakel voor de standaard bewakings ervaring op basis van gebeurtenissen de volgende selectie vakjes in voor de telemetrie van het logboek voor database diagnostiek: **SQLInsights**, **AutomaticTuning**, **QueryStoreRuntimeStatistics**, **QueryStoreWaitStatistics**, **Errors**, **DatabaseWaitStatistics**, **time-outs**, **blokken** en **deadlocks**.
 8. Voor een geavanceerde bewakings ervaring op basis van één minuut selecteert u het selectie vakje voor **basis** metrische gegevens.
 
    ![Diagnostische gegevens configureren voor Azure SQL Database](./media/metrics-diagnostic-telemetry-logging-streaming-export-configure/diagnostics-settings-database-sql-selection.png)
-9. Selecteer **Opslaan** .
+9. Selecteer **Opslaan**.
 10. Herhaal deze stappen voor elke Data Base die u wilt bewaken.
 
 > [!TIP]
@@ -180,19 +180,19 @@ De container Managed instance heeft zijn eigen telemetrie gescheiden van de tele
 Voer de volgende stappen uit om streaming van diagnostische telemetrie voor een beheerde exemplaar bron in te scha kelen:
 
 1. Ga naar de bron van het **beheerde exemplaar** in azure Portal.
-2. Selecteer **instellingen voor diagnostische gegevens** .
+2. Selecteer **instellingen voor diagnostische gegevens**.
 3. Schakel **Diagnostische gegevens inschakelen in** als er geen eerdere instellingen zijn of selecteer **instelling bewerken** om een vorige instelling te bewerken.
 
    ![Diagnostische gegevens inschakelen voor een beheerd exemplaar](./media/metrics-diagnostic-telemetry-logging-streaming-export-configure/diagnostics-settings-container-mi-enable.png)
 
 4. Voer een instellings naam in voor uw eigen verwijzing.
-5. Selecteer een doel resource voor de streaming diagnostische gegevens: **archiveren naar opslag account** , **streamen naar een event hub** of **verzenden naar log Analytics** .
+5. Selecteer een doel resource voor de streaming diagnostische gegevens: **archiveren naar opslag account**, **streamen naar een event hub** of **verzenden naar log Analytics**.
 6. Voor log Analytics selecteert **u configureren** en maakt u een nieuwe werk ruimte door te selecteren **+ nieuwe werk ruimte maken** of een bestaande werk ruimte te gebruiken.
-7. Schakel het selectie vakje voor de telemetrie van exemplaar diagnose in: **ResourceUsageStats** .
+7. Schakel het selectie vakje voor de telemetrie van exemplaar diagnose in: **ResourceUsageStats**.
 
    ![Diagnostische gegevens configureren voor een beheerd exemplaar](./media/metrics-diagnostic-telemetry-logging-streaming-export-configure/diagnostics-settings-container-mi-selection.png)
 
-8. Selecteer **Opslaan** .
+8. Selecteer **Opslaan**.
 9. Daarnaast kunt u streaming van diagnostische telemetrie configureren voor elke exemplaar database binnen het beheerde exemplaar dat u wilt bewaken door de stappen te volgen die in de volgende sectie worden beschreven.
 
 > [!IMPORTANT]
@@ -209,7 +209,7 @@ U kunt een bron van een exemplaar database instellen om de volgende diagnostisch
 Voer de volgende stappen uit om streaming van diagnostische telemetrie in te scha kelen voor een exemplaar database:
 
 1. Ga naar de **Data Base** van het exemplaar van het beheerde exemplaar.
-2. Selecteer **instellingen voor diagnostische gegevens** .
+2. Selecteer **instellingen voor diagnostische gegevens**.
 3. Schakel **Diagnostische gegevens inschakelen in** als er geen eerdere instellingen zijn of selecteer **instelling bewerken** om een vorige instelling te bewerken.
    - U kunt Maxi maal drie (3) parallelle verbindingen maken voor het streamen van diagnostische telemetrie.
    - Selecteer **+ Diagnostische instelling toevoegen** om parallelle streaming van diagnostische gegevens te configureren voor meerdere resources.
@@ -217,10 +217,10 @@ Voer de volgende stappen uit om streaming van diagnostische telemetrie in te sch
    ![Diagnostische gegevens inschakelen voor exemplaar databases](./media/metrics-diagnostic-telemetry-logging-streaming-export-configure/diagnostics-settings-database-mi-enable.png)
 
 4. Voer een instellings naam in voor uw eigen verwijzing.
-5. Selecteer een doel resource voor de streaming diagnostische gegevens: **archiveren naar opslag account** , **streamen naar een event hub** of **verzenden naar log Analytics** .
-6. Schakel de selectie vakjes voor de telemetrie van de data base diagnostische gegevens in: **SQLInsights** , **QueryStoreRuntimeStatistics** , **QueryStoreWaitStatistics** en **Errors** .
+5. Selecteer een doel resource voor de streaming diagnostische gegevens: **archiveren naar opslag account**, **streamen naar een event hub** of **verzenden naar log Analytics**.
+6. Schakel de selectie vakjes voor de telemetrie van de data base diagnostische gegevens in: **SQLInsights**, **QueryStoreRuntimeStatistics**, **QueryStoreWaitStatistics** en **Errors**.
    ![Diagnostische gegevens voor exemplaar databases configureren](./media/metrics-diagnostic-telemetry-logging-streaming-export-configure/diagnostics-settings-database-mi-selection.png)
-7. Selecteer **Opslaan** .
+7. Selecteer **Opslaan**.
 8. Herhaal deze stappen voor elke instantie database die u wilt bewaken.
 
 > [!TIP]
@@ -349,7 +349,7 @@ U kunt de streaming-export van deze diagnostische telemetrie configureren met be
 
    ![Azure SQL-analyse configureren in de portal](./media/metrics-diagnostic-telemetry-logging-streaming-export-configure/sql-analytics-configuration-blade.png)
 
-4. Selecteer **OK** om te bevestigen en selecteer vervolgens **maken** .
+4. Selecteer **OK** om te bevestigen en selecteer vervolgens **maken**.
 
 ### <a name="configure-the-resource-to-record-metrics-and-resource-logs"></a>De bron configureren voor het vastleggen van metrische gegevens en resource logboeken
 

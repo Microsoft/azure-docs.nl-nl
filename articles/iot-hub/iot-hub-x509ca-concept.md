@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 09/18/2017
 ms.author: eustacea
-ms.openlocfilehash: c707f6108c73a268bcac18c45afb70ae17185bb8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 877200cbafbe68fa6161025572abfddad651e172
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91308109"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96490717"
 ---
 # <a name="conceptual-understanding-of-x509-ca-certificates-in-the-iot-industry"></a>Conceptuele uitleg van X. 509 CA-certificaten in de IoT-industrie
 
@@ -40,6 +40,8 @@ Een onderscheidings kenmerk van de X. 509 CA-verificatie is een een-op-veel-rela
 Een ander belang rijk kenmerk van de X. 509 CA-verificatie is een vereenvoudiging van de logistiek van toeleverings ketens. Voor de beveiliging van apparaten is het vereist dat elk apparaat een uniek geheim als basis voor vertrouwens relatie bevat. In verificatie op basis van certificaten is dit geheim een persoonlijke sleutel. Een typische stroom voor de fabricage van apparaten omvat meerdere stappen en bewaarders. Het veilig beheren van persoonlijke sleutels van apparaten in meerdere beheerders en het onderhouden van vertrouwen is moeilijk en kostbaar. Het gebruik van certificerings instanties lost dit probleem op door elke beheerder te ondertekenen in een cryptografische vertrouwens keten in plaats van deze te belasten met persoonlijke sleutels van apparaten. Elke beheerder op zijn beurt apparaten ondertekent aan de respectieve proces stap van de productie stroom. Het totale resultaat is een optimale toeleverings keten met ingebouwde verantwoordelijkheid voor het gebruik van de cryptografische vertrouwens keten. Het is een goed idee dat dit proces de meest beveiliging oplevert wanneer apparaten hun unieke persoonlijke sleutels beveiligen. Daarom is het raadzaam om het gebruik van HSM (hardware Secure modules) te gebruiken voor het intern genereren van persoonlijke sleutels die het licht van de dag nooit zullen zien.
 
 Dit artikel biedt een end-to-end-weer gave van het gebruik van de X. 509 CA-verificatie, van de instelling van de toeleverings keten tot de verbinding met het apparaat en het gebruik van een echt wereld voorbeeld om inzicht te krijgen in versterken.
+
+U kunt ook inschrijvings groepen gebruiken met Azure IoT Hub Device Provisioning Service (DPS) voor het afhandelen van het inrichten van apparaten naar hubs. Zie [zelf studie: meerdere X. 509-apparaten inrichten met registratie groepen](../iot-dps/tutorial-custom-hsm-enrollment-group-x509.md)voor meer informatie over het gebruik van DPS om X. 509-certificaat apparaten in te richten.
 
 ## <a name="introduction"></a>Inleiding
 
@@ -75,7 +77,7 @@ Het proces voor het maken van een Self-Signed X. 509 CA-certificaat is vergelijk
 
 ## <a name="register-the-x509-certificate-to-iot-hub"></a>Het X. 509-certificaat registreren bij IoT Hub
 
-Bedrijf-X moet de certificerings instantie X. 509 registreren bij IoT Hub, waar deze moet worden gebruikt voor het verifiëren van Smart X-widgets wanneer ze verbinding maken. Dit is een eenmalig proces waarmee u een wille keurig aantal Smart-X-widget apparaten kunt verifiëren en beheren. Dit proces is eenmalig vanwege een een-op-veel-relatie tussen instantie certificaten en apparaten en vormt ook een van de belangrijkste voor delen van het gebruik van de X. 509 CA-verificatie methode. Het is ook mogelijk om afzonderlijke certificaat vingerafdrukten te uploaden voor elk apparaat met een slimme X-widget, waardoor de operationele kosten worden toegevoegd.
+Bedrijf-X moet de certificerings instantie X. 509 registreren bij IoT Hub, waar deze moet worden gebruikt voor het verifiëren van Smart X-widgets wanneer ze verbinding maken. Dit is een eenmalig proces waarmee u een wille keurig aantal Smart-X-widget apparaten kunt verifiëren en beheren. Dit is een eenmalig proces vanwege een een-op-veel-relatie tussen CA-certificaat en apparaat certificaten die zijn ondertekend door het CA-certificaat of een tussenliggend certificaat. Deze relatie vormt een van de belangrijkste voor delen van het gebruik van de X. 509 CA-verificatie methode. Het is ook mogelijk om afzonderlijke certificaat vingerafdrukten te uploaden voor elk apparaat met een slimme X-widget, waardoor de operationele kosten worden toegevoegd.
 
 Het registreren van het X. 509-CA-certificaat is een proces dat uit twee stappen bestaat, het uploaden van het certificaat en het certificaat.
 

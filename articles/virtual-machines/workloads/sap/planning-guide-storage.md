@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 11/26/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 325e28b9fde349fc4bf01d2b130bee0be0684962
-ms.sourcegitcommit: 5e2f5efba1957ba40bd951c3dcad42f4a00734ff
+ms.openlocfilehash: 6982b782fdd6b5b269c1562c54be3478c58bbce9
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96299595"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500994"
 ---
 # <a name="azure-storage-types-for-sap-workload"></a>Azure Storage-typen voor SAP-workload
 Azure heeft talloze opslag typen die in de mogelijkheden, door Voer, latentie en prijzen aanzienlijk verschillen. Sommige opslag typen zijn niet of zijn beperkt bruikbaar voor SAP-scenario's. Dat zijn verschillende Azure Storage-typen goed geschikt of geoptimaliseerd voor specifieke SAP-werkbelasting scenario's. Met name voor SAP HANA hebben sommige Azure Storage-typen gecertificeerd voor het gebruik met SAP HANA. In dit document gaan we de verschillende soorten opslag door lopen en de mogelijkheden en bruikbaarheid van SAP-workloads en SAP-onderdelen beschrijven.
@@ -164,7 +164,7 @@ Azure Premium Storage voldoet niet aan de SAP HANA opslag latentie-Kpi's met de 
 
 
 ### <a name="azure-burst-functionality-for-premium-storage"></a>Azure burst-functionaliteit voor Premium-opslag
-Voor Azure Premium-opslag schijven die kleiner zijn dan of gelijk zijn aan 512 GiB in capaciteit, wordt burst-functionaliteit aangeboden. De exacte manier waarop schijf bursting werkt, wordt beschreven in het artikel [schijf bursting](../../linux/disk-bursting.md). Wanneer u het artikel leest, begrijpt u het concept van het aantal beschik bare IOPS en door Voer in de tijden dat de I/O-werk belasting lager is dan de nominale IOPS en de door Voer van de schijven (Zie [prijzen voor beheerde schijven](https://azure.microsoft.com/pricing/details/managed-disks/)voor meer informatie over de nominale door Voer). U gaat de Delta van IOPS en door Voer samen voegen tussen het huidige gebruik en de nominale waarden van de schijf. De bursts zijn beperkt tot Maxi maal 30 minuten.
+Voor Azure Premium-opslag schijven die kleiner zijn dan of gelijk zijn aan 512 GiB in capaciteit, wordt burst-functionaliteit aangeboden. De exacte manier waarop schijf bursting werkt, wordt beschreven in het artikel [schijf bursting](../../disk-bursting.md). Wanneer u het artikel leest, begrijpt u het concept van het aantal beschik bare IOPS en door Voer in de tijden dat de I/O-werk belasting lager is dan de nominale IOPS en de door Voer van de schijven (Zie [prijzen voor beheerde schijven](https://azure.microsoft.com/pricing/details/managed-disks/)voor meer informatie over de nominale door Voer). U gaat de Delta van IOPS en door Voer samen voegen tussen het huidige gebruik en de nominale waarden van de schijf. De bursts zijn beperkt tot Maxi maal 30 minuten.
 
 De ideale gevallen waarin deze burst-functionaliteit kan worden gepland in, zijn waarschijnlijk de volumes of schijven die gegevens bestanden voor de verschillende DBMS bevatten. De I/O-werk belasting verwacht op die volumes, vooral met kleine tot middel grote systemen, moet er als volgt uitzien:
 
@@ -376,4 +376,3 @@ Lees de artikelen:
 
 - [Overwegingen voor de implementatie van Azure Virtual Machines DBMS voor SAP-workloads](./dbms_guide_general.md)
 - [Configuraties van SAP HANA in virtuele Azure-machineopslag](./hana-vm-operations-storage.md)
- 

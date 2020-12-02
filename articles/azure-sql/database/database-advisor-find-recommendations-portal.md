@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: how-to
 author: danimir
 ms.author: danil
-ms.reviewer: jrasnik, sstein
+ms.reviewer: wiassaf, sstein
 ms.date: 12/19/2018
-ms.openlocfilehash: 6ad8f3e146c13e7b88752b8ef6d514346542ce26
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 748ac448ad8bf5c06e5be8b7a4a8b00a9b7af84b
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92672266"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500883"
 ---
 # <a name="find-and-apply-performance-recommendations"></a>Aanbevelingen voor prestaties zoeken en Toep assen
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -86,9 +86,9 @@ Als uw lijst met aanbevelingen items bevat die u uit de lijst wilt verwijderen, 
 
 Desgewenst kunt u verwijderde items weer toevoegen aan de lijst met **aanbevelingen** :
 
-1. Klik op de pagina **aanbevelingen** op **Genegeerde weer gave** .
+1. Klik op de pagina **aanbevelingen** op **Genegeerde weer gave**.
 2. Selecteer een verwijderd item uit de lijst om de details ervan weer te geven.
-3. Klik eventueel op **ongedaan maken verwijderen** om de index weer toe te voegen aan de hoofd lijst met **aanbevelingen** .
+3. Klik eventueel op **ongedaan maken verwijderen** om de index weer toe te voegen aan de hoofd lijst met **aanbevelingen**.
 
 > [!NOTE]
 > Als SQL Database [automatisch afstemmen](automatic-tuning-overview.md) is ingeschakeld en u hand matig een aanbeveling uit de lijst hebt verwijderd, wordt deze aanbeveling nooit automatisch toegepast. Het verwijderen van een aanbeveling is een handige manier voor gebruikers om automatisch afstemmen in te scha kelen wanneer is vereist dat een specifieke aanbeveling niet moet worden toegepast.
@@ -98,7 +98,7 @@ Desgewenst kunt u verwijderde items weer toevoegen aan de lijst met **aanbevelin
 
 U kunt uw data base zo instellen dat aanbevelingen automatisch worden geïmplementeerd. Wanneer er aanbevelingen beschikbaar komen, worden ze automatisch toegepast. Net als bij alle aanbevelingen die worden beheerd door de service, wordt de aanbeveling teruggedraaid als de invloed van de prestaties negatief is.
 
-1. Klik op de pagina **aanbevelingen** op **automatiseren** :
+1. Klik op de pagina **aanbevelingen** op **automatiseren**:
 
    ![Advisor-instellingen](./media/database-advisor-find-recommendations-portal/settings.png)
 2. Selecteer de acties die moeten worden geautomatiseerd:
@@ -112,13 +112,13 @@ Wanneer u de gewenste configuratie hebt geselecteerd, klikt u op Toep assen.
 
 ### <a name="manually-apply-recommendations-through-t-sql"></a>Aanbevelingen hand matig Toep assen via T-SQL
 
-Selecteer een aanbeveling en klik vervolgens op **script weer geven** . Voer dit script uit op uw data base om de aanbeveling hand matig toe te passen.
+Selecteer een aanbeveling en klik vervolgens op **script weer geven**. Voer dit script uit op uw data base om de aanbeveling hand matig toe te passen.
 
 *Indexen die hand matig worden uitgevoerd, worden niet bewaakt en gevalideerd voor de prestaties van de service* , zodat u deze indexen na het maken kunt bewaken om te controleren of ze zo nodig prestatie voordelen bieden en aanpassen of verwijderen. Zie [Create Index (Transact-SQL) (Engelstalig)](/sql/t-sql/statements/create-index-transact-sql)voor meer informatie over het maken van indexen. Daarnaast blijven hand matig toegepaste aanbevelingen actief en worden deze weer gegeven in de lijst met aanbevelingen voor 24-48 uur. voordat het systeem ze automatisch intrekt. Als u een aanbeveling eerder wilt verwijderen, kunt u deze hand matig negeren.
 
 ### <a name="canceling-recommendations"></a>Aanbevelingen annuleren
 
-Aanbevelingen met de status in **behandeling** , **valideren** of **geslaagd** kunnen worden geannuleerd. Aanbevelingen met de status **bezig met uitvoeren** kunnen niet worden geannuleerd.
+Aanbevelingen met de status in **behandeling**, **valideren** of **geslaagd** kunnen worden geannuleerd. Aanbevelingen met de status **bezig met uitvoeren** kunnen niet worden geannuleerd.
 
 1. Selecteer een aanbeveling in het gebied **afstemmings geschiedenis** om de pagina met **Details over aanbevelingen** te openen.
 2. Klik op **Annuleren** om het proces van het Toep assen van de aanbeveling af te breken.
@@ -132,7 +132,7 @@ Het Toep assen van een aanbeveling wordt mogelijk niet onmiddellijk uitgevoerd. 
 | In behandeling |De opdracht aanbeveling Toep assen is ontvangen en is gepland voor uitvoering. |
 | Uitvoeren |De aanbeveling wordt toegepast. |
 | Valideren |Aanbeveling is toegepast en de service meet de voor delen. |
-| Geslaagd |De aanbeveling is toegepast en de voor delen zijn gemeten. |
+| Success |De aanbeveling is toegepast en de voor delen zijn gemeten. |
 | Fout |Er is een fout opgetreden tijdens het Toep assen van de aanbeveling. Dit kan een tijdelijk probleem zijn, of mogelijk een schema wijziging aan de tabel en het script is niet meer geldig. |
 | Herstellen |De aanbeveling is toegepast, maar is niet-uitgevoerd en wordt automatisch teruggezet. |
 | Hersteld |De aanbeveling is hersteld. |
@@ -168,7 +168,7 @@ Controleer uw aanbevelingen en pas deze toe om de prestaties te verfijnen. Data 
 * Bekijk de [aanbevelingen voor prestaties](database-advisor-implement-performance-recommendations.md) voor een overzicht van Azure SQL database prestatie aanbevelingen.
 * Zie [query performance Insights](query-performance-insight-use.md) voor meer informatie over het weer geven van de prestatie-impact van uw meest voorkomende query's.
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+## <a name="additional-resources"></a>Aanvullende resources
 
 * [Query Store](/sql/relational-databases/performance/monitoring-performance-by-using-the-query-store)
 * [CREATE INDEX](/sql/t-sql/statements/create-index-transact-sql)

@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: how-to
 author: danimir
 ms.author: danil
-ms.reviewer: jrasnik, sstein
+ms.reviewer: wiassaf, sstein
 ms.date: 06/03/2019
-ms.openlocfilehash: cdc43add2e57e45a32b0b42ead8c3107d93c193f
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: a373a28a180b2a6c72f6a291b9d1437a2e88d9ff
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675242"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500951"
 ---
 # <a name="email-notifications-for-automatic-tuning"></a>E-mail meldingen voor automatisch afstemmen
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -41,16 +41,16 @@ Als u Azure Automation wilt gebruiken, is de eerste stap het maken van een Autom
 Volg deze stappen om een Azure Automation-account te maken via de methode voor het selecteren en configureren van een Automation-app vanuit Azure Marketplace:
 
 1. Meld u aan bij de Azure-portal.
-1. Klik in de linkerbovenhoek op ' **+ een resource maken** '.
-1. Zoek naar ' **Automation** ' (druk op ENTER).
+1. Klik in de linkerbovenhoek op '**+ een resource maken**'.
+1. Zoek naar '**Automation**' (druk op ENTER).
 1. Klik op de Automation-app in de zoek resultaten.
 
     ![Azure Automation toevoegen](./media/automatic-tuning-email-notifications-configure/howto-email-01.png)
 
-1. Klik in het deel venster een Automation-account maken op **maken** .
+1. Klik in het deel venster een Automation-account maken op **maken**.
 1. Vul de vereiste gegevens in: Voer een naam in voor dit Automation-account, selecteer uw Azure-abonnements-ID en Azure-resources die moeten worden gebruikt voor het uitvoeren van het Power shell-script.
-1. Voor de optie ' **Azure uitvoeren als-account maken** ' selecteert u **Ja** om het type account te configureren waarmee het Power shell-script wordt uitgevoerd met de Help van Azure Automation. Zie [Run as-account](../../automation/manage-runas-account.md)voor meer informatie over account typen.
-1. Het maken van het Automation-account volt ooien door te klikken op **maken** .
+1. Voor de optie '**Azure uitvoeren als-account maken**' selecteert u **Ja** om het type account te configureren waarmee het Power shell-script wordt uitgevoerd met de Help van Azure Automation. Zie [Run as-account](../../automation/manage-runas-account.md)voor meer informatie over account typen.
+1. Het maken van het Automation-account volt ooien door te klikken op **maken**.
 
 > [!TIP]
 > Noteer de naam van uw Azure Automation-account, abonnements-ID en resources (zoals kopiëren en plakken naar een Klad blok) precies zoals deze zijn ingevoerd tijdens het maken van de Automation-app. U hebt deze gegevens later nodig.
@@ -70,16 +70,16 @@ De volgende stap is het maken van een Runbook in Azure Automation waarin het Pow
 Voer de volgende stappen uit om een nieuw Azure Automation runbook te maken:
 
 1. Open het Azure Automation-account dat u in de vorige stap hebt gemaakt.
-1. Klik in het deel venster Automation-account op de menu opdracht " **Runbooks** " aan de linkerkant om een nieuw Azure Automation runbook te maken met het Power shell-script. Zie [een nieuw Runbook maken](../../automation/manage-runbooks.md#create-a-runbook)voor meer informatie over het maken van Automation-runbooks.
-1. Als u een nieuw runbook wilt toevoegen, klikt u op de menu optie **+ een Runbook toevoegen** en klikt u vervolgens op de **snelle invoer – een nieuw runbook maken** .
-1. Typ in het deel venster Runbook de naam van uw Runbook (voor het doel van dit voor beeld wordt ' **AutomaticTuningEmailAutomation** ' gebruikt), selecteer het type Runbook als **Power shell** en schrijf een beschrijving van dit runbook om het doel ervan te beschrijven.
+1. Klik in het deel venster Automation-account op de menu opdracht "**Runbooks**" aan de linkerkant om een nieuw Azure Automation runbook te maken met het Power shell-script. Zie [een nieuw Runbook maken](../../automation/manage-runbooks.md#create-a-runbook)voor meer informatie over het maken van Automation-runbooks.
+1. Als u een nieuw runbook wilt toevoegen, klikt u op de menu optie **+ een Runbook toevoegen** en klikt u vervolgens op de **snelle invoer – een nieuw runbook maken**.
+1. Typ in het deel venster Runbook de naam van uw Runbook (voor het doel van dit voor beeld wordt '**AutomaticTuningEmailAutomation**' gebruikt), selecteer het type Runbook als **Power shell** en schrijf een beschrijving van dit runbook om het doel ervan te beschrijven.
 1. Klik op de knop **maken** om het maken van een nieuw runbook te volt ooien.
 
     ![Azure Automation-runbook toevoegen](./media/automatic-tuning-email-notifications-configure/howto-email-03.png)
 
 Volg deze stappen om een Power shell-script te laden in het runbook dat is gemaakt:
 
-1. In het deel venster **Power shell-Runbook bewerken** selecteert u **RUNBOOKS** in de menu structuur en vouwt u de weer gave uit totdat u de naam van uw Runbook ziet (in dit voor beeld " **AutomaticTuningEmailAutomation** "). Selecteer dit runbook.
+1. In het deel venster **Power shell-Runbook bewerken** selecteert u **RUNBOOKS** in de menu structuur en vouwt u de weer gave uit totdat u de naam van uw Runbook ziet (in dit voor beeld "**AutomaticTuningEmailAutomation**"). Selecteer dit runbook.
 1. Kopieer de volgende Power shell-script code op de eerste regel van het Power shell-Runbook bewerken (te beginnen met het nummer 1). Dit Power shell-script wordt meegeleverd als-is om aan de slag te gaan. Wijzig het script in uw behoeften.
 
 In de koptekst van het Power shell-script moet u vervangen `<SUBSCRIPTION_ID_WITH_DATABASES>` door de id van uw Azure-abonnement. Zie [de GUID van uw Azure-abonnement ophalen](/archive/blogs/mschray/getting-your-azure-subscription-guid-new-portal)voor meer informatie over het ophalen van uw Azure-abonnements-id.
@@ -185,44 +185,44 @@ Met de bovenstaande stappen wordt het Power shell-script voor het ophalen van aa
 
 Voor het volt ooien van de oplossing kunt u als laatste stap een automatiserings stroom maken in Microsoft Flow die bestaat uit drie acties (taken):
 
-- ' **Azure Automation-taak maken** ': wordt gebruikt om het Power shell-script uit te voeren voor het ophalen van aanbevelingen voor automatische afstemming binnen het Azure Automation runbook.
-- ' **Azure Automation taak uitvoer ophalen** ': wordt gebruikt voor het ophalen van uitvoer van het uitgevoerde Power shell-script.
-- " **Office 365 Outlook: een E-mail verzenden** ": wordt gebruikt om e-mail te verzenden. E-mail berichten worden verzonden met behulp van het werk-of school account van de persoon die de stroom maakt.
+- '**Azure Automation-taak maken**': wordt gebruikt om het Power shell-script uit te voeren voor het ophalen van aanbevelingen voor automatische afstemming binnen het Azure Automation runbook.
+- '**Azure Automation taak uitvoer ophalen**': wordt gebruikt voor het ophalen van uitvoer van het uitgevoerde Power shell-script.
+- "**Office 365 Outlook: een E-mail verzenden**": wordt gebruikt om e-mail te verzenden. E-mail berichten worden verzonden met behulp van het werk-of school account van de persoon die de stroom maakt.
 
 Zie aan de slag [met Microsoft flow](/flow/getting-started)voor meer informatie over Microsoft flow mogelijkheden.
 
 De vereiste voor deze stap is om u aan te melden voor een [Microsoft flow](https://flow.microsoft.com) -account en u aan te melden. Voer de volgende stappen uit om een **nieuwe stroom** in te stellen in de oplossing:
 
-1. De menu opdracht ' **mijn stromen** ' openen.
-1. Selecteer in mijn stromen de koppeling ' **+ geen lege** pagina ' boven aan de pagina.
-1. Klik onder aan de pagina op de koppeling **zoeken naar honderden connectors en triggers** .
-1. Typ in het zoek veld ' **recurrence** ' en selecteer ' **schema-recurrence** ' in de zoek resultaten om de taak voor het uitvoeren van e-mail berichten te plannen.
+1. De menu opdracht '**mijn stromen**' openen.
+1. Selecteer in mijn stromen de koppeling '**+ geen lege** pagina ' boven aan de pagina.
+1. Klik onder aan de pagina op de koppeling **zoeken naar honderden connectors en triggers**.
+1. Typ in het zoek veld '**recurrence**' en selecteer '**schema-recurrence**' in de zoek resultaten om de taak voor het uitvoeren van e-mail berichten te plannen.
 1. Selecteer in het deel venster terugkeer patroon in het veld frequentie de plannings frequentie voor deze stroom die moet worden uitgevoerd, zoals automatische e-mail verzenden per minuut, uur, dag, week enzovoort.
 
 De volgende stap bestaat uit het toevoegen van drie taken (maken, ophalen en verzenden van e-mail) naar de zojuist gemaakte terugkerende stroom. Voer de volgende stappen uit om de vereiste taken aan de stroom toe te voegen:
 
 1. Maak een actie om het Power shell-script uit te voeren voor het ophalen van de aanbevelingen
 
-   - Selecteer **+ nieuwe stap** , gevolgd door **een actie toevoegen** in het deel venster terugkeer patroon.
-   - Typ in het zoek veld **Automation** en selecteer in de zoek resultaten **Azure Automation-taak maken** .
-   - Configureer de taak eigenschappen in het deel venster taak maken. Voor deze configuratie hebt u details nodig van uw Azure-abonnements-ID, resource groep en Automation-account dat **eerder is vastgelegd** in het **deel venster Automation-account** . Zie voor meer informatie over de beschik bare opties in deze sectie [Azure Automation-taak maken](/connectors/azureautomation/#create-job).
+   - Selecteer **+ nieuwe stap**, gevolgd door **een actie toevoegen** in het deel venster terugkeer patroon.
+   - Typ in het zoek veld **Automation** en selecteer in de zoek resultaten **Azure Automation-taak maken**.
+   - Configureer de taak eigenschappen in het deel venster taak maken. Voor deze configuratie hebt u details nodig van uw Azure-abonnements-ID, resource groep en Automation-account dat **eerder is vastgelegd** in het **deel venster Automation-account**. Zie voor meer informatie over de beschik bare opties in deze sectie [Azure Automation-taak maken](/connectors/azureautomation/#create-job).
    - U voltooit deze actie door op **stroom opslaan** te klikken.
 
 2. Een actie maken om de uitvoer op te halen uit het uitgevoerde Power shell-script
 
-   - Selecteer **+ nieuwe stap** , gevolgd door **een actie toevoegen** in het deel venster terugkeer patroon
-   - Typ in het zoek veld **Automation** en selecteer in de zoek resultaten **Azure Automation-taak uitvoer ophalen** . Zie [Azure Automation-taak uitvoer ophalen](/connectors/azureautomation/#get-job-output)voor meer informatie over de beschik bare opties in deze sectie.
+   - Selecteer **+ nieuwe stap**, gevolgd door **een actie toevoegen** in het deel venster terugkeer patroon
+   - Typ in het zoek veld **Automation** en selecteer in de zoek resultaten **Azure Automation-taak uitvoer ophalen**. Zie [Azure Automation-taak uitvoer ophalen](/connectors/azureautomation/#get-job-output)voor meer informatie over de beschik bare opties in deze sectie.
    - Velden invullen die vereist zijn (vergelijkbaar met het maken van de vorige taak): Vul uw Azure-abonnements-ID, resource groep en Automation-account in (zoals ingevoerd in het deel venster Automation-account).
-   - Klik in het veld **taak-id** voor het menu **dynamische inhoud** om weer te geven. Selecteer in dit menu de optie **taak-id** .
+   - Klik in het veld **taak-id** voor het menu **dynamische inhoud** om weer te geven. Selecteer in dit menu de optie **taak-id**.
    - U voltooit deze actie door op **stroom opslaan** te klikken.
 
 3. Een actie maken om e-mail te verzenden met behulp van Office 365-integratie
 
-   - Selecteer **+ nieuwe stap** , gevolgd door **een actie toevoegen** in het deel venster terugkeer patroon.
-   - Typ in het zoek veld ' **een e-mail verzenden** ' en selecteer ' **Office 365 Outlook – een e-mail verzenden** ' uit de zoek resultaten.
+   - Selecteer **+ nieuwe stap**, gevolgd door **een actie toevoegen** in het deel venster terugkeer patroon.
+   - Typ in het zoek veld '**een e-mail verzenden**' en selecteer '**Office 365 Outlook – een e-mail verzenden**' uit de zoek resultaten.
    - Typ in het veld **aan** in het e-mail adres waarnaar u het e-mail bericht wilt verzenden.
    - Typ in het veld **onderwerp** het onderwerp van uw e-mail adres, bijvoorbeeld ' automatische afstemming aanbevelingen voor e-mail berichten '.
-   - Klik in het veld **hoofd tekst** voor het menu **dynamische inhoud** om weer te geven. Selecteer in dit menu onder ' **taak uitvoer ophalen** ' de optie ' **inhoud** '.
+   - Klik in het veld **hoofd tekst** voor het menu **dynamische inhoud** om weer te geven. Selecteer in dit menu onder '**taak uitvoer ophalen**' de optie '**inhoud**'.
    - U voltooit deze actie door op **stroom opslaan** te klikken.
 
 > [!TIP]
@@ -232,7 +232,7 @@ In het bovenstaande worden de stappen voor het configureren van de werk stroom v
 
 ![Berichten stroom voor automatisch afstemmen weer geven](./media/automatic-tuning-email-notifications-configure/howto-email-05.png)
 
-Als u de stroom wilt testen, klikt u in de rechter bovenhoek van het deel venster stroom op **nu uitvoeren** .
+Als u de stroom wilt testen, klikt u in de rechter bovenhoek van het deel venster stroom op **nu uitvoeren**.
 
 De statistieken voor het uitvoeren van de geautomatiseerde taken, weer geven van geslaagde e-mail meldingen die worden verzonden, kunnen worden weer gegeven in het deel venster stroom analyse.
 

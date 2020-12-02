@@ -5,12 +5,12 @@ ms.date: 08/03/2020
 ms.topic: include
 ms.service: virtual-machines-linux
 manager: daberry
-ms.openlocfilehash: 5c028fc1abd77bda1a41857a7a7c77da1ad1b2d2
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: eb864837e9063aa39827abf61f7efece4c909118
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96027241"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96509521"
 ---
 Met gestandaardiseerde installatie kopieën van virtuele machines kunnen organisaties migreren naar de Cloud en zorgen voor consistentie in de implementaties. Installatie kopieën bevatten doorgaans vooraf gedefinieerde beveiligings-en configuratie-instellingen en de benodigde software. Voor het instellen van uw eigen Imaging-pijp lijn zijn tijd, infra structuur en configuratie vereist, maar met Azure VM Image Builder kunt u een eenvoudige configuratie bieden waarmee uw installatie kopie wordt beschreven, verzonden naar de service en de installatie kopie wordt gebouwd en gedistribueerd.
  
@@ -57,7 +57,7 @@ AIB biedt ondersteuning voor Azure Marketplace Base OS-basis installatie kopieë
 
 Ondersteuning voor RHEL Iso's wordt niet meer ondersteund.
 
-## <a name="how-it-works"></a>Uitleg
+## <a name="how-it-works"></a>Hoe werkt het?
 
 De opbouw functie voor installatie kopieën van Azure is een volledig beheerde Azure-service die toegankelijk is voor een Azure-resource provider. Het Azure Image Builder-proces bestaat uit drie hoofd onderdelen: bron, aanpassen en distribueren. deze worden weer gegeven in een sjabloon. In het onderstaande diagram ziet u de onderdelen, met een aantal eigenschappen. 
  
@@ -84,7 +84,7 @@ Als u de identiteit hebt die u nodig hebt om deze machtigingen te verlenen, kunt
 De machtigingen worden [hier](https://github.com/danielsollondon/azvmimagebuilder/blob/master/aibPermissions.md#azure-vm-image-builder-permissions-explained-and-requirements)uitgebreid beschreven en de voor beelden laten zien hoe dit wordt geïmplementeerd.
 
 > [!Note]
-> Eerder met AIB zou u de SPN van AIB gebruiken en de SPN-machtigingen verlenen aan de installatie kopie resource groepen. We gaan weg van dit model om toekomstige mogelijkheden te bieden. Van 26 mei 2020, de opbouw functie voor installatie kopieën accepteert geen sjablonen die geen door de gebruiker toegewezen identiteit hebben, bestaande sjablonen moeten opnieuw worden ingediend bij de service met een [gebruikers identiteit](../articles/virtual-machines/linux/image-builder-json.md?bc=%252fazure%252fvirtual-machines%252fwindows%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252fwindows%252ftoc.json#identity). In deze voor beelden ziet u al hoe u een door de gebruiker toegewezen identiteit kunt maken en toevoegen aan een sjabloon. Raadpleeg deze [documentatie](https://github.com/danielsollondon/azvmimagebuilder#service-updates-and-latest-release-information) voor meer informatie over deze wijziging en releases van updates.
+> Eerder met AIB zou u de SPN van AIB gebruiken en de SPN-machtigingen verlenen aan de installatie kopie resource groepen. We gaan weg van dit model om toekomstige mogelijkheden te bieden. Van 26 mei 2020, de opbouw functie voor installatie kopieën accepteert geen sjablonen die geen door de gebruiker toegewezen identiteit hebben, bestaande sjablonen moeten opnieuw worden ingediend bij de service met een [gebruikers identiteit](../articles/virtual-machines/linux/image-builder-json.md?bc=%2fazure%2fvirtual-machines%2fwindows%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#identity). In deze voor beelden ziet u al hoe u een door de gebruiker toegewezen identiteit kunt maken en toevoegen aan een sjabloon. Raadpleeg deze [documentatie](https://github.com/danielsollondon/azvmimagebuilder#service-updates-and-latest-release-information) voor meer informatie over deze wijziging en releases van updates.
 
 ## <a name="costs"></a>Kosten
 U maakt een aantal reken-, netwerk-en opslag kosten bij het maken, maken en opslaan van installatie kopieën met Azure Image Builder. Deze kosten zijn vergelijkbaar met de kosten die zijn gemaakt bij het hand matig maken van aangepaste installatie kopieën. Voor de resources worden er kosten in rekening gebracht voor uw Azure-tarieven. 

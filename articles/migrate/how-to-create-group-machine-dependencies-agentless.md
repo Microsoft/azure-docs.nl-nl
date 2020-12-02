@@ -3,12 +3,12 @@ title: Afhankelijkheids analyse zonder agent instellen in de evaluatie van Azure
 description: Een afhankelijkheids analyse zonder agent instellen in de evaluatie van Azure Migrate server.
 ms.topic: how-to
 ms.date: 6/08/2020
-ms.openlocfilehash: 8893b0f41bb7a06c02a6c2aa28002980144b582a
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 722ad4cc27132815c1416331aaf0691754ccee05
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93337690"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500781"
 ---
 # <a name="analyze-machine-dependencies-agentless"></a>Machine-afhankelijkheden analyseren (zonder agents)
 
@@ -31,7 +31,7 @@ In dit artikel wordt beschreven hoe u analyse van agentloze afhankelijkheden ins
 
 - [Bekijk](migrate-support-matrix-vmware.md#dependency-analysis-requirements-agentless) ondersteunde besturings systemen en de vereiste machtigingen.
 - Zorg ervoor dat:
-    - Een Azure Migrate project hebben. Als u dit niet doet, [maakt](how-to-add-tool-first-time.md) u er nu een.
+    - Een Azure Migrate project hebben. Als u dit niet doet, [maakt](./create-manage-projects.md) u er nu een.
     - Controleer of u het Azure Migrate: Server Assessment Tool hebt [toegevoegd](how-to-assess.md) aan het project.
     - Stel een [Azure migrate apparaat](migrate-appliance.md) in om on-premises machines te detecteren. [Stel een apparaat](how-to-set-up-appliance-vmware.md) in voor VMware-vm's. Het apparaat detecteert on-premises machines en verstuurt meta gegevens en prestatie gegevens naar Azure Migrate: Server evaluatie.
 - Controleer of VMware-Hulpprogram Ma's (hoger dan 10,2) is geïnstalleerd op elke virtuele machine die u wilt analyseren.
@@ -49,7 +49,7 @@ Voeg het gebruikers account toe aan het apparaat.
 1. Open de app voor het beheren van apparaten. 
 2. Navigeer naar het deel venster **vCenter-gegevens opgeven** .
 3. Klik in **toepassing en afhankelijkheden van Vm's detecteren** op **referenties toevoegen**
-3. Kies het **besturings systeem** , geef een beschrijvende naam op voor het account en het **User name** / **wacht woord** voor de gebruikers naam
+3. Kies het **besturings systeem**, geef een beschrijvende naam op voor het account en het **User name** / **wacht woord** voor de gebruikers naam
 6. Klik op **Opslaan**.
 7. Klik op **opslaan en detectie starten**.
 

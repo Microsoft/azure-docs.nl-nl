@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: conceptual
 author: danimir
 ms.author: danil
-ms.reviewer: jrasnik, sstein
+ms.reviewer: wiassaf, sstein
 ms.date: 03/10/2020
-ms.openlocfilehash: b1ef29eb71ccd945552550f64e5ae95bc85be44d
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 79ccf0f8aae7e915601081f875cea294de52d787
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92672116"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500849"
 ---
 # <a name="database-advisor-performance-recommendations-for-azure-sql-database"></a>Aanbevelingen voor Database Advisor prestaties voor Azure SQL Database
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -29,10 +29,10 @@ Overzicht van prestaties biedt een samen vatting van de prestaties van uw data b
 
 ![Overzicht van prestaties voor Azure SQL Database](./media/database-advisor-implement-performance-recommendations/performance-overview-annotated.png)
 
-- De tegel **aanbevelingen** biedt een overzicht van de aanbevelingen voor het afstemmen van uw data base (de eerste drie aanbevelingen worden weer gegeven als er meer zijn). Als u op deze tegel klikt, gaat u naar **[Opties voor prestatie aanbeveling](database-advisor-find-recommendations-portal.md#viewing-recommendations)** .
+- De tegel **aanbevelingen** biedt een overzicht van de aanbevelingen voor het afstemmen van uw data base (de eerste drie aanbevelingen worden weer gegeven als er meer zijn). Als u op deze tegel klikt, gaat u naar **[Opties voor prestatie aanbeveling](database-advisor-find-recommendations-portal.md#viewing-recommendations)**.
 - De tegel **activiteit afstemmen** biedt een samen vatting van de lopende en voltooide afstemmings acties voor uw data base, waarmee u een kort overzicht krijgt van de geschiedenis van de afstemmings activiteit. Als u op deze tegel klikt, gaat u naar de weer gave volledige afstemmings geschiedenis voor uw data base.
 - De tegel **automatisch afstemmen** toont de **[configuratie voor automatisch afstemmen](automatic-tuning-enable.md)** van uw data base (afstemmings opties die automatisch worden toegepast op uw data base). Als u op deze tegel klikt, wordt het dialoog venster automatiserings configuratie geopend.
-- De tegel **database query's** bevat een samen vatting van de query prestaties voor uw data base (algemeen DTU-gebruik en meest voorkomende query's in de resource). Als u op deze tegel klikt, gaat u **[query Performance Insight](query-performance-insight-use.md)** .
+- De tegel **database query's** bevat een samen vatting van de query prestaties voor uw data base (algemeen DTU-gebruik en meest voorkomende query's in de resource). Als u op deze tegel klikt, gaat u **[query Performance Insight](query-performance-insight-use.md)**.
 
 ## <a name="performance-recommendation-options"></a>Opties voor prestatie aanbeveling
 
@@ -105,7 +105,7 @@ De aanbeveling schema probleem oplossen wordt weer gegeven wanneer Azure SQL Dat
 
 | SQL-fout code | Bericht |
 | --- | --- |
-| 201 |De procedure of functie *verwacht para meter* , maar deze is niet opgegeven. |
+| 201 |De procedure of functie *verwacht para meter*, maar deze is niet opgegeven. |
 | 207 |Ongeldige kolom naam *. |
 | 208 |Ongeldige object naam ' * '. |
 | 213 |Kolom naam of-nummer van opgegeven waarden komt niet overeen met tabel definitie. |

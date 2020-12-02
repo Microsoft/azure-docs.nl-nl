@@ -10,19 +10,19 @@ ms.subservice: bing-visual-search
 ms.topic: conceptual
 ms.date: 09/25/2018
 ms.author: scottwhi
-ms.openlocfilehash: f32c7a97036319dcae610fd0baa2dad48763d8ae
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 6d93b6d024fc966f3b260602f4798a2d77669a35
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93094928"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96501155"
 ---
 # <a name="language-and-region-support-for-the-bing-visual-search-api"></a>Ondersteuning van talen en regio's voor de Bing Visual Search-API
 
 > [!WARNING]
-> Bing Zoeken-API's van Cognitive Services naar Bing Search-Services verplaatsen. Vanaf **30 oktober 2020** moeten nieuwe exemplaren van Bing Search worden ingericht volgens het proces dat [hier](https://aka.ms/cogsvcs/bingmove)wordt beschreven.
-> Bing Zoeken-API's ingericht met Cognitive Services wordt voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst gebeurt.
-> Zie [Bing Search Services](https://aka.ms/cogsvcs/bingmigration)voor migratie-instructies.
+> Bing Search-API's worden van Cognitive Services naar Bing Search Services overgezet. Vanaf **30 oktober 2020** moeten nieuwe instanties van Bing Search worden ingericht overeenkomstig het proces dat [hier](/bing/search-apis/bing-web-search/create-bing-search-service-resource) is beschreven.
+> Bing Search-API's die zijn ingericht met Cognitive Services, worden voor de komende drie jaar of tot het einde van uw Enterprise Agreement ondersteund, afhankelijk van wat het eerst afloopt.
+> Raadpleeg [Bing Search Services](/bing/search-apis/bing-web-search/create-bing-search-service-resource) voor migratie-instructies.
 
 Bing Visual Search-API ondersteunt meer dan drie dozijn landen/regio's, veel met meer dan één taal. Elke aanvraag moet het land/de regio en de taal van de gebruiker bevatten. Als u de markt van de gebruiker weet, kan Bing de juiste resultaten retour neren. Als u geen land/regio en taal opgeeft, maakt Bing een beste poging om het land/de regio en taal van de gebruiker te bepalen. Omdat de resultaten mogelijk koppelingen naar Bing bevatten, is het mogelijk dat het land/de regio en de taal een voor keur hebben van een gelokaliseerde Bing gebruikers ervaring als de gebruiker op de Bing-koppelingen klikt.
 

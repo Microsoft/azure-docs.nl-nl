@@ -7,16 +7,16 @@ ms.subservice: performance
 ms.custom: sqldbrb=1
 ms.devlang: ''
 ms.topic: reference
-author: MightyPen
-ms.author: genemi
-ms.reviewer: jrasnik
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: sstein
 ms.date: 12/19/2018
-ms.openlocfilehash: 0c89dc28a330e319e18a6289e5f6759c56e46ae8
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 139673e46421aa0dc19298697872fbff5fe587af
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791270"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96501206"
 ---
 # <a name="extended-events-in-azure-sql-database"></a>Uitgebreide gebeurtenissen in Azure SQL Database 
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -81,7 +81,7 @@ De functie Extended Events wordt ondersteund door verschillende [catalogus weerg
 | **sys.database_event_session_targets** |Retourneert een rij voor elk gebeurtenis doel voor een gebeurtenis sessie. |
 | **sys.database_event_sessions** |Retourneert een rij voor elke gebeurtenis sessie in de data base. |
 
-In Microsoft SQL Server hebben vergelijk bare catalogus weergaven namen die *. server \_* bevatten in plaats van *. \_ Data Base* . Het naam patroon is net als **sys.server_event_%** .
+In Microsoft SQL Server hebben vergelijk bare catalogus weergaven namen die *. server \_* bevatten in plaats van *. \_ Data Base*. Het naam patroon is net als **sys.server_event_%**.
 
 ## <a name="new-dynamic-management-views-dmvs"></a>Nieuwe dynamische beheer weergaven [(dmv's)](/sql/relational-databases/system-dynamic-management-views/system-dynamic-management-views)
 
@@ -97,7 +97,7 @@ Azure SQL Database heeft [dynamische beheer weergaven (dmv's)](/sql/relational-d
 
 In Microsoft SQL Server worden vergelijk bare catalogus weergaven benoemd zonder het *\_ Data Base* -gedeelte van de naam, zoals:
 
-- **sys.dm_xe_sessions** in plaats van naam<br/>**sys.dm_xe_database_sessions** .
+- **sys.dm_xe_sessions** in plaats van naam<br/>**sys.dm_xe_database_sessions**.
 
 ### <a name="dmvs-common-to-both"></a>Gemeen schappelijk Dmv's voor beide
 

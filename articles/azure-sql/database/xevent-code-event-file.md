@@ -7,16 +7,16 @@ ms.subservice: performance
 ms.custom: sqldbrb=1
 ms.devlang: PowerShell
 ms.topic: sample
-author: MightyPen
-ms.author: genemi
-ms.reviewer: jrasnik
+author: WilliamDAssafMSFT
+ms.author: wiassaf
+ms.reviewer: sstein
 ms.date: 06/06/2020
-ms.openlocfilehash: 9674b7188251312056812ac8e1dcae5885579e2a
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: d7a57f98551cf91ed87858caba0907471bcf6b12
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791304"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96501223"
 ---
 # <a name="event-file-target-code-for-extended-events-in-azure-sql-database"></a>Doelcode voor een gebeurtenisbestand voor uitgebreide gebeurtenissen in Azure SQL Database
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -44,7 +44,7 @@ In dit onderwerp ziet u een codevoorbeeld in twee fasen:
 - Een Azure-account en -abonnement. U  kunt zich aanmelden voor een [gratis proefversie](https://azure.microsoft.com/pricing/free-trial/). 
 - Een willekeurige database waarin u een tabel kunt maken.
   
-  - U kunt optioneel in enkele minuten [een **AdventureWorksLT** -demonstratiedatabase maken](single-database-create-quickstart.md).
+  - U kunt optioneel in enkele minuten [een **AdventureWorksLT**-demonstratiedatabase maken](single-database-create-quickstart.md).
 
 - SQL Server Management Studio (ssms.exe), liefst de meest recente versie van de maandelijkse update.
   U kunt de meest recente ssms.exe downloaden op:
@@ -54,7 +54,7 @@ In dit onderwerp ziet u een codevoorbeeld in twee fasen:
 
 - U moet de [Azure PowerShell-modules](https://go.microsoft.com/?linkid=9811175) hebben geïnstalleerd.
 
-  - De modules bieden opdrachten, zoals **New-AzStorageAccount** .
+  - De modules bieden opdrachten, zoals **New-AzStorageAccount**.
 
 ## <a name="phase-1-powershell-code-for-azure-storage-container"></a>Fase 1: PowerShell-code voor Azure Storage-container
 
@@ -62,10 +62,10 @@ Deze PowerShell is fase 1 van het codevoorbeeld in twee fasen.
 
 Het script begint met opdrachten om op te schonen na een mogelijke vorige uitvoering, en kan opnieuw worden uitgevoerd.
 
-1. Plak het PowerShell-script in een eenvoudige teksteditor, zoals Notepad.exe, en sla het script op als een bestand met de extensie **.ps1** .
+1. Plak het PowerShell-script in een eenvoudige teksteditor, zoals Notepad.exe, en sla het script op als een bestand met de extensie **.ps1**.
 2. Start PowerShell ISE als een Beheerder.
 3. Typ bij de prompt<br/>`Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser`<br/>en druk vervolgens op Enter.
-4. Open in PowerShell ISE het bestand **.ps1** . Voer het script uit.
+4. Open in PowerShell ISE het bestand **.ps1**. Voer het script uit.
 5. Het script start eerst een nieuw venster waarin u zich aanmeldt bij Azure.
 
    - Als u het script opnieuw uitvoert zonder de sessie te onderbreken, krijgt u de handige optie om de opdracht **Add-AzureAccount** uit te commentariëren.
@@ -258,7 +258,7 @@ Met het PowerShell-script is een aantal benoemde waarden afgedrukt toen het scri
 6. Sla deze op, en voer het script uit.
 
 > [!WARNING]
-> De waarde van de SAS-sleutel die is gegenereerd op basis van het voorafgaande PowerShell-script, kan beginnen met een ? (vraagteken). Wanneer u gebruikmaakt van de SAS-sleutel in het volgende T-SQL-script, moet u *de ? aan het begin verwijderen* . Anders worden uw inspanningen mogelijk geblokkeerd op basis van de beveiliging.
+> De waarde van de SAS-sleutel die is gegenereerd op basis van het voorafgaande PowerShell-script, kan beginnen met een ? (vraagteken). Wanneer u gebruikmaakt van de SAS-sleutel in het volgende T-SQL-script, moet u *de ? aan het begin verwijderen*. Anders worden uw inspanningen mogelijk geblokkeerd op basis van de beveiliging.
 
 ### <a name="transact-sql-code"></a>Transact-SQL-code
 
@@ -451,7 +451,7 @@ GO
 
 ## <a name="output"></a>Uitvoer
 
-Wanneer het Transact-SQL-script wordt voltooid, klikt u op een cel onder de kolomkop **event_data_XML** . Er wordt één **\<event>** -element wordt weergegeven, waarin één UPDATE-element te zien is.
+Wanneer het Transact-SQL-script wordt voltooid, klikt u op een cel onder de kolomkop **event_data_XML**. Er wordt één **\<event>** -element wordt weergegeven, waarin één UPDATE-element te zien is.
 
 Hier is één **\<event>** -element dat is gegenereerd tijdens het testen:
 
@@ -506,9 +506,9 @@ Een uitleg van geavanceerde opties voor het weergeven van gegevens uit uitgebrei
 
 Stel dat u het voorafgaande Transact-SQL-voorbeeld wilt uitvoeren in Microsoft SQL Server.
 
-- Voor eenvoud moet u het gebruik van de Azure Storage-container volledig vervangen door een eenvoudig bestand zoals *C:\myeventdata.xel* . Het bestand wordt geschreven naar de lokale harde schijf van de computer waarop SQL Server wordt gehost.
-- U hebt geen Transact-SQL-instructies nodig voor **CREATE MASTER KEY** en **CREATE CREDENTIAL** .
-- In de **CREATE EVENT SESSION** -instructie, in het bijbehorende **ADD TARGET** -component, vervangt u de Http-waarde die is toegewezen aan **filename=** , door de tekenreeks voor het volledige pad, zoals *C:\myfile.xel* .
+- Voor eenvoud moet u het gebruik van de Azure Storage-container volledig vervangen door een eenvoudig bestand zoals *C:\myeventdata.xel*. Het bestand wordt geschreven naar de lokale harde schijf van de computer waarop SQL Server wordt gehost.
+- U hebt geen Transact-SQL-instructies nodig voor **CREATE MASTER KEY** en **CREATE CREDENTIAL**.
+- In de **CREATE EVENT SESSION**-instructie, in het bijbehorende **ADD TARGET**-component, vervangt u de Http-waarde die is toegewezen aan **filename=** , door de tekenreeks voor het volledige pad, zoals *C:\myfile.xel*.
   
   - Er hoeft geen Azure Storage-account te worden gebruikt.
 

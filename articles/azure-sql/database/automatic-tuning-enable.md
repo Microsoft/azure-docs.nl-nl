@@ -9,20 +9,20 @@ ms.devlang: ''
 ms.topic: how-to
 author: danimir
 ms.author: danil
-ms.reviewer: jrasnik, sstein
+ms.reviewer: wiassaf, sstein
 ms.date: 12/03/2019
-ms.openlocfilehash: 35fc4b18ee5a98270f715a969354df2be5000150
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 35e2a73b0cfae104cee417e7d4a159e7fd169a17
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91444084"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500900"
 ---
 # <a name="enable-automatic-tuning-in-the-azure-portal-to-monitor-queries-and-improve-workload-performance"></a>Automatisch afstemmen inschakelen in de Azure Portal om query's te bewaken en de prestaties van de werk belasting te verbeteren
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
 
 
-Azure SQL Database beheert automatisch gegevens services die voortdurend uw query's bewaken en identificeert de actie die u kunt uitvoeren om de prestaties van uw workload te verbeteren. U kunt aanbevelingen bekijken en deze hand matig Toep assen of Azure SQL Database corrigerende acties automatisch Toep assen. dit wordt ook wel de **automatische afstemmings modus**genoemd.
+Azure SQL Database beheert automatisch gegevens services die voortdurend uw query's bewaken en identificeert de actie die u kunt uitvoeren om de prestaties van uw workload te verbeteren. U kunt aanbevelingen bekijken en deze hand matig Toep assen of Azure SQL Database corrigerende acties automatisch Toep assen. dit wordt ook wel de **automatische afstemmings modus** genoemd.
 
 Automatisch afstemmen kan worden ingeschakeld op de server of op het niveau van de data base via:
 
@@ -62,7 +62,7 @@ Opties voor automatisch afstemmen op een server worden toegepast op alle data ba
 
 ### <a name="rest-api"></a>REST-API
 
-Zie [automatisch afstemmen bijwerken en HTTP-methoden ophalen](/rest/api/sql/serverautomatictuning)voor meer informatie over het gebruik van een rest API om automatisch afstemmen op een **Server**in te scha kelen.
+Zie [automatisch afstemmen bijwerken en HTTP-methoden ophalen](/rest/api/sql/serverautomatictuning)voor meer informatie over het gebruik van een rest API om automatisch afstemmen op een **Server** in te scha kelen.
 
 ## <a name="enable-automatic-tuning-on-an-individual-database"></a>Automatisch afstemmen inschakelen voor een afzonderlijke data base
 

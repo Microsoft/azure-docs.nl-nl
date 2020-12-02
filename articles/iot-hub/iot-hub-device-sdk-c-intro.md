@@ -13,16 +13,19 @@ ms.custom:
 - mqtt
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
-ms.openlocfilehash: 24f1332e940929cff6aeb6a0d5d3c43e28d36f22
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 9b870e21ffd5c6a8261b6731b939b5dff558256d
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92149172"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96501189"
 ---
 # <a name="azure-iot-device-sdk-for-c"></a>Azure IoT Device SDK voor C
 
-De **Azure IOT Device SDK** is een set bibliotheken die is ontworpen om het proces van het verzenden van berichten naar en het ontvangen van berichten van de **Azure IOT hub** -service te vereenvoudigen. Er zijn verschillende variaties van de SDK, die elk gericht zijn op een specifiek platform, maar in dit artikel wordt de **Azure IOT Device SDK voor C**beschreven.
+De **Azure IOT Device SDK** is een set bibliotheken die is ontworpen om het proces van het verzenden van berichten naar en het ontvangen van berichten van de **Azure IOT hub** -service te vereenvoudigen. Er zijn verschillende variaties van de SDK, die elk gericht zijn op een specifiek platform, maar in dit artikel wordt de **Azure IOT Device SDK voor C** beschreven.
+
+> [!NOTE]
+> De embedded C SDK is een alternatief voor beperkte apparaten die ondersteuning bieden voor de aanpak van uw eigen netwerk (BYON). IoT-ontwikkel aars hebben de vrijheid om de MQTT-client, TLS en socket van hun keuze te maken om een oplossing voor een apparaat te creëren. Meer [informatie over de embedded C SDK](https://github.com/Azure/azure-sdk-for-c/tree/master/sdk/docs/iot).
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-partial.md)]
 
@@ -126,7 +129,7 @@ static const char* connectionString = "[device connection string]";
 
 In de **map iothub- \_ client** in de [Azure-IOT-SDK-c-](https://github.com/azure/azure-iot-sdk-c) opslag plaats bevindt zich een map met voor **beelden** die een toepassing bevat met de naam **iothub \_ client \_ sample \_ mqtt**.
 
-De Windows-versie van de iothub_client-voor ** \_ beelden \_ iothub_convenience_sample** toepassing bevat de volgende Visual Studio-oplossing:
+De Windows-versie van de iothub_client-voor **\_ beelden \_ iothub_convenience_sample** toepassing bevat de volgende Visual Studio-oplossing:
 
   ![Solution Explorer van Visual Studio](./media/iot-hub-device-sdk-c-intro/iothub-client-sample-mqtt.png)
 
@@ -142,14 +145,14 @@ Deze oplossing bevat één project. Er zijn vier NuGet-pakketten geïnstalleerd 
 
 U hebt altijd het pakket **micro soft. Azure. C. SharedUtility** nodig wanneer u met de SDK werkt. In dit voor beeld wordt het MQTT-protocol gebruikt. Daarom moet u de pakketten **micro soft. Azure. umqtt** en **micro soft. Azure. IoTHub. MqttTransport** gebruiken (er zijn equivalente pakketten voor AMQP en https). Omdat in het voor beeld de **IoTHubClient** -bibliotheek wordt gebruikt, moet u ook het pakket **micro soft. Azure. IoTHub. IoTHubClient** in uw oplossing toevoegen.
 
-U kunt de implementatie voor de voorbeeld toepassing vinden in het bron bestand iothub_client-voor ** \_ beelden \_ iothub_convenience_sample** .
+U kunt de implementatie voor de voorbeeld toepassing vinden in het bron bestand iothub_client-voor **\_ beelden \_ iothub_convenience_sample** .
 
 In de volgende stappen wordt deze voorbeeld toepassing gebruikt om u te helpen bij wat u nodig hebt om de **IoTHubClient** -bibliotheek te gebruiken.
 
 ### <a name="initialize-the-library"></a>De bibliotheek initialiseren
 
 > [!NOTE]
-> Voordat u aan de slag gaat met de Bibliotheken, moet u mogelijk bepaalde platformspecifieke initialisaties uitvoeren. Als u bijvoorbeeld van plan bent AMQP in Linux te gebruiken, moet u de OpenSSL-bibliotheek initialiseren. De voor beelden in de [github-opslag plaats](https://github.com/Azure/azure-iot-sdk-c) roepen de functie **platform \_ init** van het hulp programma aan wanneer de client wordt gestart en roept de functie voor het ** \_ deinit** van het platform aan voordat deze wordt afgesloten. Deze functies worden gedeclareerd in het bestand platform. h header. Bekijk de definities van deze functies voor uw doel platform in de [opslag plaats](https://github.com/Azure/azure-iot-sdk-c) om te bepalen of u een platformspecifieke initialisatie code moet gebruiken in uw-client.
+> Voordat u aan de slag gaat met de Bibliotheken, moet u mogelijk bepaalde platformspecifieke initialisaties uitvoeren. Als u bijvoorbeeld van plan bent AMQP in Linux te gebruiken, moet u de OpenSSL-bibliotheek initialiseren. De voor beelden in de [github-opslag plaats](https://github.com/Azure/azure-iot-sdk-c) roepen de functie **platform \_ init** van het hulp programma aan wanneer de client wordt gestart en roept de functie voor het **\_ deinit** van het platform aan voordat deze wordt afgesloten. Deze functies worden gedeclareerd in het bestand platform. h header. Bekijk de definities van deze functies voor uw doel platform in de [opslag plaats](https://github.com/Azure/azure-iot-sdk-c) om te bepalen of u een platformspecifieke initialisatie code moet gebruiken in uw-client.
 
 Wijs eerst een IoT Hub client ingang toe om te gaan werken met de bibliotheken:
 
@@ -166,7 +169,7 @@ else
 
 U geeft een kopie van het apparaat door connection string u hebt verkregen van het hulp programma Device Explorer naar deze functie. U wijst ook het communicatie protocol aan dat moet worden gebruikt. In dit voor beeld wordt MQTT gebruikt, maar AMQP en HTTPS zijn ook opties.
 
-Wanneer u een geldige **IOTHUB- \_ client \_ ingang**hebt, kunt u beginnen met het aanroepen van de api's voor het verzenden en ontvangen van berichten van en naar IOT hub.
+Wanneer u een geldige **IOTHUB- \_ client \_ ingang** hebt, kunt u beginnen met het aanroepen van de api's voor het verzenden en ontvangen van berichten van en naar IOT hub.
 
 ### <a name="send-messages"></a>Berichten verzenden
 
@@ -216,7 +219,7 @@ do
 } while (g_continueRunning);
 ```
 
-Telkens wanneer u een bericht verzendt, geeft u een verwijzing op naar een call back-functie die wordt aangeroepen wanneer de gegevens worden verzonden. In dit voor beeld wordt de call back-functie **SendConfirmationCallback**genoemd. In het volgende code fragment wordt deze call back-functie weer gegeven:
+Telkens wanneer u een bericht verzendt, geeft u een verwijzing op naar een call back-functie die wordt aangeroepen wanneer de gegevens worden verzonden. In dit voor beeld wordt de call back-functie **SendConfirmationCallback** genoemd. In het volgende code fragment wordt deze call back-functie weer gegeven:
 
 ```c
 static void SendConfirmationCallback(IOTHUB_CLIENT_CONFIRMATION_RESULT result, void* userContextCallback)
@@ -356,7 +359,7 @@ Net als bij het vorige voor beeld bevat dit een aantal NuGet-pakketten:
 
 U hebt de meeste van deze pakketten in het vorige voor beeld gezien, maar **micro soft. Azure. IoTHub. serializer** is nieuw. Dit pakket is vereist wanneer u de **serialisatiefunctie** -bibliotheek gebruikt.
 
-U kunt de implementatie van de voorbeeld toepassing vinden in het bestand iothub_client-voor ** \_ beelden \_ iothub_convenience_sample** .
+U kunt de implementatie van de voorbeeld toepassing vinden in het bestand iothub_client-voor **\_ beelden \_ iothub_convenience_sample** .
 
 In de volgende secties vindt u een overzicht van de belangrijkste onderdelen van dit voor beeld.
 
@@ -415,7 +418,7 @@ END_NAMESPACE(WeatherStation);
 
 De **begin \_ naam ruimte** -en **End- \_ naam ruimte** -macro's nemen de naam ruimte van het model als een argument. Er wordt naar verwachting alles tussen deze macro's is de definitie van uw model of modellen en de gegevens structuren die de modellen gebruiken.
 
-In dit voor beeld is er één model met de naam **ContosoAnemometer**. Dit model definieert twee stukjes gegevens die uw apparaat kan verzenden naar IoT Hub: **DeviceID** en **WindSpeed**. Er worden ook drie acties (berichten) gedefinieerd die uw apparaat kan ontvangen: **TurnFanOn**, **TurnFanOff**en **SetAirResistance**. Elk gegevens element heeft een type en elke actie heeft een naam (en optioneel een set para meters).
+In dit voor beeld is er één model met de naam **ContosoAnemometer**. Dit model definieert twee stukjes gegevens die uw apparaat kan verzenden naar IoT Hub: **DeviceID** en **WindSpeed**. Er worden ook drie acties (berichten) gedefinieerd die uw apparaat kan ontvangen: **TurnFanOn**, **TurnFanOff** en **SetAirResistance**. Elk gegevens element heeft een type en elke actie heeft een naam (en optioneel een set para meters).
 
 De gegevens en acties die in het model zijn gedefinieerd, definiëren een API-Opper vlak dat u kunt gebruiken om berichten te verzenden naar IoT Hub en te reageren op berichten die naar het apparaat worden verzonden. Het gebruik van dit model wordt het best geïnterpreteerd door een voor beeld.
 
@@ -428,7 +431,7 @@ myWeather->DeviceId = "myFirstDevice";
 myWeather->WindSpeed = avgWindSpeed + (rand() % 4 + 2);
 ```
 
-Met het model dat u eerder hebt gedefinieerd, kunt u de waarden instellen door leden van een **struct**in te stellen. Serialiseren vervolgens het bericht dat u wilt verzenden:
+Met het model dat u eerder hebt gedefinieerd, kunt u de waarden instellen door leden van een **struct** in te stellen. Serialiseren vervolgens het bericht dat u wilt verzenden:
 
 ```c
 unsigned char* destination;
@@ -562,7 +565,7 @@ EXECUTE_COMMAND_RESULT SetAirResistance(ContosoAnemometer* device, int Position)
 
 U ziet hoe de naam van de functie overeenkomt met de naam van de actie in het model en dat de para meters van de functie overeenkomen met de para meters die zijn opgegeven voor de actie. De eerste para meter is altijd vereist en bevat een verwijzing naar het exemplaar van uw model.
 
-Wanneer het apparaat een bericht ontvangt dat overeenkomt met deze hand tekening, wordt de bijbehorende functie aangeroepen. Daarom hoeft u niet alleen de standaard code van **IoTHubMessage**op te nemen, maar het ontvangen van berichten is slechts een kwestie van het definiëren van een eenvoudige functie voor elke actie die in uw model is gedefinieerd.
+Wanneer het apparaat een bericht ontvangt dat overeenkomt met deze hand tekening, wordt de bijbehorende functie aangeroepen. Daarom hoeft u niet alleen de standaard code van **IoTHubMessage** op te nemen, maar het ontvangen van berichten is slechts een kwestie van het definiëren van een eenvoudige functie voor elke actie die in uw model is gedefinieerd.
 
 ### <a name="uninitialize-the-library"></a>De initialisatie van de bibliotheek ongedaan te doen
 

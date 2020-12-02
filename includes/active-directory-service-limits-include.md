@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/10/2020
 ms.author: curtand
 ms.custom: include file
-ms.openlocfilehash: 42dfa499e0a44d0b468d3a234e9dc88904c361b0
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 47d994a572d2fb0a76e1b6a713b61b70cccbd659
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96027350"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96509312"
 ---
 Hier vindt u de beperkingen voor gebruik en andere servicelimieten voor de Azure Active Directory-service (Azure AD).
 
@@ -30,4 +30,4 @@ Hier vindt u de beperkingen voor gebruik en andere servicelimieten voor de Azure
 | Toegangsvenster |Er is geen limiet voor het aantal toepassingen dat per gebruiker kan worden weergegeven in het toegangsvenster, ongeacht de toegewezen licenties.  |
 | Rapporten | Er kunnen maximaal 1000 rijen worden bekeken of gedownload in elk rapport. Aanvullende gegevens worden afgekapt. |
 | Beheereenheden | Een Azure AD-resources kan lid zijn van maximaal 30 beheereenheden. |
-| Azure AD-rollen en -machtigingen | <ul><li>Er kunnen maximaal 30 [aangepaste Azure AD-rollen](/azure/active-directory//users-groups-roles/roles-custom-overview?context=azure%252factive-directory%252fusers-groups-roles%252fcontext%252fugr-context) in een Azure AD-organisatie worden gemaakt.</li><li>Een groep kan niet worden toegevoegd als [groepseigenaar](../articles/active-directory/fundamentals/users-default-permissions.md?context=azure%252factive-directory%252fusers-groups-roles%252fcontext%252fugr-context#object-ownership).</li><li>De mogelijkheid van gebruikers om tenantgegevens van andere gebruikers te lezen kan niet worden beperkt, behalve door in de hele Azure AD-organisatie de toegang van alle gebruikers die geen beheerder zijn tot alle tenantgegevens uit te schakelen (niet aanbevolen). Zie [De standaardmachtigingen voor lidgebruikers beperken](../articles/active-directory/fundamentals/users-default-permissions.md?context=azure%252factive-directory%252fusers-groups-roles%252fcontext%252fugr-context#restrict-member-users-default-permissions) voor meer informatie.</li><li>Het kan 15 minuten duren of het kan nodig zijn af en weer aan te melden voordat toevoegingen of intrekkingen van beheerdersrollidmaatschappen van kracht worden.</li></ul> |
+| Azure AD-rollen en -machtigingen | <ul><li>Er kunnen maximaal 30 [aangepaste Azure AD-rollen](/azure/active-directory//users-groups-roles/roles-custom-overview?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context) in een Azure AD-organisatie worden gemaakt.</li><li>Een groep kan niet worden toegevoegd als [groepseigenaar](../articles/active-directory/fundamentals/users-default-permissions.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context#object-ownership).</li><li>De mogelijkheid van gebruikers om tenantgegevens van andere gebruikers te lezen kan niet worden beperkt, behalve door in de hele Azure AD-organisatie de toegang van alle gebruikers die geen beheerder zijn tot alle tenantgegevens uit te schakelen (niet aanbevolen). Zie [De standaardmachtigingen voor lidgebruikers beperken](../articles/active-directory/fundamentals/users-default-permissions.md?context=azure%2factive-directory%2fusers-groups-roles%2fcontext%2fugr-context#restrict-member-users-default-permissions) voor meer informatie.</li><li>Het kan 15 minuten duren of het kan nodig zijn af en weer aan te melden voordat toevoegingen of intrekkingen van beheerdersrollidmaatschappen van kracht worden.</li></ul> |

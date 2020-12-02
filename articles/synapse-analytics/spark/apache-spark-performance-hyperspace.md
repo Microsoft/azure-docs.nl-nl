@@ -10,12 +10,12 @@ ms.date: 08/12/2020
 ms.author: euang
 ms.reviewer: euang
 zone_pivot_groups: programming-languages-spark-all-minus-sql
-ms.openlocfilehash: e3baa9782cac6c410e83eec63e801d6bf5e6f822
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 6795828f4fd3a77a7bc6d8de208848d5f4ee3bee
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030710"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96501036"
 ---
 # <a name="hyperspace-an-indexing-subsystem-for-apache-spark"></a>Hyper Space: een subsysteem voor indexering voor Apache Spark
 
@@ -1296,7 +1296,7 @@ In de volgende cel ziet u een voor beeld met HTML. De gemarkeerde sectie vertege
 
 ```scala
 spark.conf.set("spark.hyperspace.explain.displayMode", "html")
-hyperspace.explain(eqJoin) { displayHTML }
+hyperspace.explain(eqJoin)(displayHTML(_))
 ```
 
 ::: zone-end

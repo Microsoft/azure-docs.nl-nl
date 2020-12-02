@@ -4,15 +4,15 @@ description: Meer informatie over het implementeren van een tabellair model op e
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 05/19/2020
+ms.date: 12/01/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 45ea75b65e75f9bac4d6d4839ffe7fa095e3b25d
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 9df10760164dcd0d207663c14107f72c46b76d25
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92018773"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96501240"
 ---
 # <a name="deploy-a-model-from-visual-studio"></a>Een model implementeren vanuit Visual Studio
 
@@ -39,7 +39,7 @@ In **Azure Portal** > server > **Overview** > **Servernaam**,kopieer de serverna
 
 ## <a name="to-deploy-from-visual-studio"></a>Implementeren vanuit Visual Studio
 
-1. Klik in Visual Studio > **Solution Explorer**met de rechter muisknop op de > **Eigenschappen**van het project. Plak vervolgens in **implementatie**  >  **Server** de naam van de server.   
+1. Klik in Visual Studio > **Solution Explorer** met de rechter muisknop op de > **Eigenschappen** van het project. Plak vervolgens in **implementatie**  >  **Server** de naam van de server.   
    
     ![Servernaam plakken in de eigenschap Deployment Server](./media/analysis-services-deploy/aas-deploy-deployment-server-property.png)
 2. Klik in **Solution Explorer** met de rechtermuisknop op **Properties** en klik vervolgens op **Deploy**. U wordt mogelijk gevraagd u aan te melden bij Azure.
@@ -63,4 +63,4 @@ Als de implementatie mislukt bij een tabel, komt dat waarschijnlijk omdat de ser
 
 Uw tabellaire model is nu geïmplementeerd op de server en dus kunt u verbinding gaan maken met het model. U kunt er [verbinding mee maken met SQL Server Management Studio (SSMS)](analysis-services-manage.md) om deze te beheren. [Maak verbinding met een clienthulpprogramma](analysis-services-connect.md) zoals Power BI, Power BI Desktop of Excel om rapporten te gaan maken.   
 
-Zie voor meer informatie over geavanceerde implementatie methoden [tabellaire model oplossingen implementeren](/analysis-services/deployment/tabular-model-solution-deployment?view=azure-analysis-services-current).
+Zie voor meer informatie over geavanceerde implementatie methoden [tabellaire model oplossingen implementeren](/analysis-services/deployment/tabular-model-solution-deployment?view=azure-analysis-services-current&preserve-view=true).

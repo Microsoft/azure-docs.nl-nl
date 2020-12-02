@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 3932a1dee0eee16e7d64ff4c6085919d85b431ab
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 5c00d08fcaeed8eba5b9732c9196b9abddc32b36
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843261"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500713"
 ---
 # <a name="azure-security-baseline-for-virtual-machine-scale-sets"></a>Azure-beveiligings basislijn voor Virtual Machine Scale Sets
 
@@ -40,9 +40,9 @@ Als u een specifieke use-case voor een gecentraliseerde firewall hebt, kunt Azur
 
 * [Azure Firewall implementeren en configureren](../firewall/tutorial-firewall-deploy-portal.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="12-monitor-and-log-the-configuration-and-traffic-of-virtual-networks-subnets-and-network-interfaces"></a>1,2: de configuratie en het verkeer van virtuele netwerken, subnetten en netwerk interfaces bewaken en vastleggen
 
@@ -52,9 +52,9 @@ Als u een specifieke use-case voor een gecentraliseerde firewall hebt, kunt Azur
 
 * [Informatie over de netwerk beveiliging die wordt verschaft door Azure Security Center](../security-center/security-center-network-recommendations.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="13-protect-critical-web-applications"></a>1,3: essentiële webtoepassingen beveiligen
 
@@ -66,9 +66,9 @@ U kunt ook Azure Web Application firewall (WAF) voor essentiële webtoepassingen
 
 * [Een toepassings gateway met een Web Application firewall maken met behulp van de Azure Portal](../web-application-firewall/ag/application-gateway-web-application-firewall-portal.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="14-deny-communications-with-known-malicious-ip-addresses"></a>1,4: communicatie met bekende schadelijke IP-adressen weigeren
 
@@ -76,7 +76,7 @@ U kunt ook Azure Web Application firewall (WAF) voor essentiële webtoepassingen
 
 U kunt de just-in-time-netwerk toegang van Azure Security Center gebruiken om de bloot stelling van Windows Virtual Machines aan de goedgekeurde IP-adressen te beperken gedurende een beperkte periode. U kunt ook Azure Security Center adaptieve netwerk beveiliging gebruiken om NSG-configuraties aan te bevelen die poorten en bron-Ip's beperken op basis van daad werkelijk verkeer en bedreigings informatie.
 
-* [DDoS-beveiliging configureren](../virtual-network/manage-ddos-protection.md)
+* [DDoS-beveiliging configureren](../ddos-protection/manage-ddos-protection.md)
 
 * [Azure Firewall implementeren](../firewall/tutorial-firewall-deploy-portal.md)
 
@@ -86,9 +86,9 @@ U kunt de just-in-time-netwerk toegang van Azure Security Center gebruiken om de
 
 * [Meer informatie over Azure Security Center just-in-time-netwerk Access Control](../security-center/security-center-just-in-time.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="15-record-network-packets"></a>1,5: netwerk pakketten opnemen
 
@@ -98,9 +98,9 @@ U kunt de just-in-time-netwerk toegang van Azure Security Center gebruiken om de
 
 * [Network Watcher inschakelen](../network-watcher/network-watcher-create.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="16-deploy-network-based-intrusion-detectionintrusion-prevention-systems-idsips"></a>1,6: op netwerk gebaseerde inbreuk detectie/indringings systemen (ID'S/IP-adressen) implementeren
 
@@ -112,9 +112,9 @@ U kunt de just-in-time-netwerk toegang van Azure Security Center gebruiken om de
 
 * [Waarschuwingen configureren met Azure Firewall](../firewall/threat-intel.md)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="17-manage-traffic-to-web-applications"></a>1,7: verkeer naar webtoepassingen beheren
 
@@ -128,9 +128,9 @@ U kunt de just-in-time-netwerk toegang van Azure Security Center gebruiken om de
 
 * [De taak verdeling van laag 7 met Azure Web Application-gateways begrijpen](../application-gateway/overview.md)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="18-minimize-complexity-and-administrative-overhead-of-network-security-rules"></a>1,8: de complexiteit en administratieve overhead van netwerk beveiligings regels minimaliseren
 
@@ -138,9 +138,9 @@ U kunt de just-in-time-netwerk toegang van Azure Security Center gebruiken om de
 
 * [Service Tags begrijpen en gebruiken](../virtual-network/service-tags-overview.md)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1,9: standaard beveiligings configuraties voor netwerk apparaten onderhouden
 
@@ -154,9 +154,9 @@ U kunt de just-in-time-netwerk toegang van Azure Security Center gebruiken om de
 
 * [Een Azure Blueprint maken](../governance/blueprints/create-blueprint-portal.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="110-document-traffic-configuration-rules"></a>1,10: configuratie regels voor het document verkeer
 
@@ -168,9 +168,9 @@ U kunt de just-in-time-netwerk toegang van Azure Security Center gebruiken om de
 
 * [Een NSG maken met een beveiligings configuratie](../virtual-network/tutorial-filter-network-traffic.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1,11: gebruik automatische hulpprogram ma's om netwerk bron configuraties te bewaken en wijzigingen te detecteren
 
@@ -186,9 +186,9 @@ Gebruik Azure Policy om configuraties te valideren (en/of te herstellen) voor ne
 
 * [Voor beelden Azure Policy voor netwerken](../governance/policy/samples/built-in-policies.md#network)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ## <a name="logging-and-monitoring"></a>Logboekregistratie en bewaking
 
@@ -202,9 +202,9 @@ Gebruik Azure Policy om configuraties te valideren (en/of te herstellen) voor ne
 
 * [Tijd synchronisatie configureren voor Azure Linux-reken resources](../virtual-machines/linux/time-sync.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: gedeeld
+**Verantwoordelijkheid**: Gedeeld
 
 ### <a name="22-configure-central-security-log-management"></a>2,2: Centraal beveiligings logboek beheer configureren
 
@@ -226,9 +226,9 @@ Als uw organisatie de gegevens van het beveiligings logboek van de virtuele mach
 
 * [Virtuele machines in azure controleren](../azure-monitor/insights/monitor-vm-azure.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="23-enable-audit-logging-for-azure-resources"></a>2,3: controle logboek registratie inschakelen voor Azure-resources
 
@@ -246,9 +246,9 @@ Voor geavanceerde zicht baarheid van de toepassingen en services die worden onde
 
 * [Overzicht van Application Insights](../azure-monitor/app/app-insights-overview.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="24-collect-security-logs-from-operating-systems"></a>2,4: beveiligings logboeken verzamelen van besturings systemen
 
@@ -260,9 +260,9 @@ Als uw organisatie de gegevens van het beveiligings logboek van de virtuele mach
 
 * [Virtuele machines in azure controleren](../azure-monitor/insights/monitor-vm-azure.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="25-configure-security-log-storage-retention"></a>2,5: Bewaar beveiliging van het beveiligings logboek configureren
 
@@ -272,9 +272,9 @@ Als uw organisatie de gegevens van het beveiligings logboek van de virtuele mach
 
 * [De Bewaar periode van Log Analytics Workspace configureren](../azure-monitor/platform/manage-cost-storage.md)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="26-monitor-and-review-logs"></a>2,6: Logboeken bewaken en controleren
 
@@ -284,13 +284,13 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derde
 
 * [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-* [Log Analytics-werk ruimte begrijpen](../azure-monitor/log-query/get-started-portal.md)
+* [Log Analytics-werk ruimte begrijpen](../azure-monitor/log-query/log-analytics-tutorial.md)
 
 * [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="27-enable-alerts-for-anomalous-activities"></a>2,7: waarschuwingen inschakelen voor afwijkende activiteiten
 
@@ -304,9 +304,9 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derde
 
 * [Een waarschuwing over logboek gegevens van log Analytics](../azure-monitor/learn/tutorial-response.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="28-centralize-anti-malware-logging"></a>2,8: registratie van anti-malware centraliseren
 
@@ -318,19 +318,19 @@ U kunt ook gegevens in-of uitschakelen voor Azure Sentinel of een SIEM van derde
 
 * [Instructies voor het voorbereiden van Linux-servers naar Azure Security Center](../security-center/quickstart-onboard-machines.md)
 
-* [Volgende koppeling bevat de aanbevolen beveiligings richtlijnen van micro soft, die kunnen dienen als een lijst met criteria voor de geselecteerde beveiligings software](../virtual-machines/linux/security-recommendations.md)
+* [Volgende koppeling bevat de aanbevolen beveiligings richtlijnen van micro soft, die kunnen dienen als een lijst met criteria voor de geselecteerde beveiligings software](../virtual-machines/security-recommendations.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="29-enable-dns-query-logging"></a>2,9: DNS-query logboek registratie inschakelen
 
 **Richt lijnen**: Implementeer een oplossing van derden van Azure Marketplace voor de DNS-registratie oplossing conform uw organisatie.
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="210-enable-command-line-audit-logging"></a>2,10: controle logboek registratie op opdracht regel inschakelen
 
@@ -344,9 +344,9 @@ Voor virtuele Linux-machines kunt u de console logboek registratie hand matig co
 
 * [Syslog-gegevensbronnen in Azure Monitor](../azure-monitor/platform/data-sources-syslog.md)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ## <a name="identity-and-access-control"></a>Identiteits- en toegangsbeheer
 
@@ -360,17 +360,17 @@ Voor virtuele Linux-machines kunt u de console logboek registratie hand matig co
 
 * [Informatie over privileged Identity Manager](../active-directory/privileged-identity-management/pim-deployment-plan.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="32-change-default-passwords-where-applicable"></a>3,2: standaard wachtwoorden wijzigen indien van toepassing
 
 **Hulp**: de virtuele-machine schaalset en Azure Active Directory van Azure bevatten niet het concept standaard wachtwoord. Klant die verantwoordelijk is voor toepassingen van derden en Marketplace-services die standaard wachtwoorden gebruiken.
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="33-use-dedicated-administrative-accounts"></a>3,3: speciale beheerders accounts gebruiken
 
@@ -380,9 +380,9 @@ Voor virtuele Linux-machines kunt u de console logboek registratie hand matig co
 
 * [Informatie over privileged Identity Manager](../active-directory/privileged-identity-management/pim-deployment-plan.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="34-use-azure-active-directory-single-sign-on-sso"></a>3,4: gebruik Azure Active Directory eenmalige aanmelding (SSO)
 
@@ -392,21 +392,21 @@ Voor virtuele Linux-machines kunt u de console logboek registratie hand matig co
 
 * [Identiteit en toegang bewaken in Azure Security Center](../security-center/security-center-identity-access.md)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="35-use-multi-factor-authentication-for-all-azure-active-directory-based-access"></a>3,5: multi-factor Authentication gebruiken voor alle op Azure Active Directory gebaseerde toegang
 
 **Richt lijnen**: Schakel Azure AD MFA in en volg Azure Security Center aanbevelingen voor identiteits-en toegangs beheer.
 
-* [MFA inschakelen in azure](../active-directory/authentication/howto-mfa-getstarted.md)
+* [MFA inschakelen in Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
 * [Identiteit en toegang bewaken in Azure Security Center](../security-center/security-center-identity-access.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="36-use-secure-azure-managed-workstations-for-administrative-tasks"></a>3,6: beveiligde, door Azure beheerde werk stations gebruiken voor beheer taken
 
@@ -414,11 +414,11 @@ Voor virtuele Linux-machines kunt u de console logboek registratie hand matig co
 
 * [Meer informatie over privileged Access workstations](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
 
-* [MFA inschakelen in azure](../active-directory/authentication/howto-mfa-getstarted.md)
+* [MFA inschakelen in Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="37-log-and-alert-on-suspicious-activities-from-administrative-accounts"></a>3,7: Logboeken en waarschuwingen voor verdachte activiteiten van beheerders accounts
 
@@ -428,13 +428,13 @@ Voor virtuele Linux-machines kunt u de console logboek registratie hand matig co
 
 * [Meer informatie over Azure Security Center risico detecties (verdachte activiteiten)](../active-directory/identity-protection/overview-identity-protection.md)
 
-* [Azure-activiteiten logboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
+* [Azure-activiteitenlogboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 * [Actie groepen configureren voor aangepaste waarschuwingen en meldingen](../azure-monitor/platform/action-groups.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="38-manage-azure-resources-from-only-approved-locations"></a>3,8: Azure-resources alleen beheren vanaf goedgekeurde locaties
 
@@ -442,21 +442,21 @@ Voor virtuele Linux-machines kunt u de console logboek registratie hand matig co
 
 * [Benoemde locaties configureren in azure](../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="39-use-azure-active-directory"></a>3,9: Azure Active Directory gebruiken
 
 **Hulp**: gebruik Azure Active Directory (Azure AD) als centrale verificatie-en autorisatie systeem. Azure AD beveiligt gegevens door gebruik te maken van sterke versleuteling voor gegevens in rust en onderweg. Azure AD bevat ook zouten, hashes en veilige gebruikers referenties. U kunt beheerde identiteiten gebruiken om te verifiëren bij elke service die ondersteuning biedt voor Azure AD-verificatie, met inbegrip van Key Vault, zonder enige referenties in uw code. Uw code die wordt uitgevoerd op een virtuele machine, kan de beheerde identiteit gebruiken om toegangs tokens aan te vragen voor services die ondersteuning bieden voor Azure AD-verificatie.
 
-* [Een Azure AD-exemplaar maken en configureren](../active-directory-domain-services/tutorial-create-instance.md)
+* [Een Azure AD-instantie maken en configureren](../active-directory-domain-services/tutorial-create-instance.md)
 
 * [Overzicht van beheerde identiteiten voor Azure-resources](../active-directory/managed-identities-azure-resources/overview.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="310-regularly-review-and-reconcile-user-access"></a>3,10: regel matig gebruikers toegang controleren en afstemmen
 
@@ -464,39 +464,39 @@ Voor virtuele Linux-machines kunt u de console logboek registratie hand matig co
 
 * [Beoordelingen over Azure Identity Access gebruiken](../active-directory/governance/access-reviews-overview.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="311-monitor-attempts-to-access-deactivated-credentials"></a>3,11: controle pogingen om toegang te krijgen tot gedeactiveerde referenties
 
 **Richt lijnen**: Diagnostische instellingen configureren voor Azure Active Directory om de audit logboeken en aanmeldings logboeken te verzenden naar een log Analytics-werk ruimte. Gebruik Azure Monitor ook om logboeken te controleren en query's uit te voeren op logboek gegevens van virtuele Azure-machines.
 
-* [Log Analytics-werk ruimte begrijpen](../azure-monitor/log-query/get-started-portal.md)
+* [Log Analytics-werk ruimte begrijpen](../azure-monitor/log-query/log-analytics-tutorial.md)
 
-* [Azure-activiteiten logboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
+* [Azure-activiteitenlogboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 * [Aangepaste query's uitvoeren in Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
 
 * [Virtuele machines in azure controleren](../azure-monitor/insights/monitor-vm-azure.md)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="312-alert-on-account-sign-in-behavior-deviation"></a>3,12: waarschuwing voor de afwijking van het aanmeldings gedrag van het account
 
 **Hulp**: gebruik de functies voor risico-en identiteits beveiliging van Azure Active Directory om automatische antwoorden te configureren op gedetecteerde verdachte acties die betrekking hebben op de resources van uw opslag account. Schakel automatische antwoorden via Azure Sentinel in om de beveiligings reacties van uw organisatie te implementeren.
 
-* [Risk ante aanmeldingen voor Azure AD weer geven](../active-directory/identity-protection/overview-identity-protection.md)
+* [Riskante Azure AD-aanmeldingen weergeven](../active-directory/identity-protection/overview-identity-protection.md)
 
 * [Risico beleid voor identiteits beveiliging configureren en inschakelen](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
 * [Azure-Sentinel onboarden](../sentinel/quickstart-onboard.md)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="313-provide-microsoft-with-access-to-relevant-customer-data-during-support-scenarios"></a>3,13: micro soft biedt toegang tot relevante klant gegevens tijdens ondersteunings scenario's
 
@@ -504,11 +504,11 @@ Voor virtuele Linux-machines kunt u de console logboek registratie hand matig co
 
 * [Wat is Klanten-lockbox?](../security/fundamentals/customer-lockbox-overview.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
-## <a name="data-protection"></a>Gegevensbescherming
+## <a name="data-protection"></a>Gegevensbeveiliging
 
 *Zie [beveiligings beheer: gegevens beveiliging](../security/benchmarks/security-control-data-protection.md)voor meer informatie.*
 
@@ -518,9 +518,9 @@ Voor virtuele Linux-machines kunt u de console logboek registratie hand matig co
 
 * [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4,2: systemen isoleren die gevoelige informatie opslaan of verwerken
 
@@ -540,9 +540,9 @@ Voor virtuele Linux-machines kunt u de console logboek registratie hand matig co
 
 * [Waarschuwing of waarschuwing configureren en weigeren met Azure Firewall](../firewall/threat-intel.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="43-monitor-and-block-unauthorized-transfer-of-sensitive-information"></a>4,3: niet-geautoriseerde overdracht van gevoelige gegevens controleren en blok keren
 
@@ -550,11 +550,11 @@ Voor virtuele Linux-machines kunt u de console logboek registratie hand matig co
 
 Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt micro soft alle inhoud van de klant als gevoelig voor de bescherming tegen verlies en bloot stelling van klant gegevens. Om ervoor te zorgen dat klant gegevens binnen Azure veilig blijven, heeft micro soft een reeks robuuste besturings elementen en mogelijkheden voor gegevens bescherming geïmplementeerd en onderhouden.
 
-* [Informatie over beveiliging van klanten in azure](../security/fundamentals/protection-customer-data.md)
+* [Informatie over beveiliging van klantgegevens in Azure](../security/fundamentals/protection-customer-data.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="44-encrypt-all-sensitive-information-in-transit"></a>4,4: alle gevoelige gegevens in de overdracht versleutelen
 
@@ -564,17 +564,17 @@ Micro soft maakt gebruik van het Transport Layer Security (TLS)-protocol voor he
 
 * [In-transit versleuteling in Vm's](../security/fundamentals/encryption-overview.md#in-transit-encryption-in-vms)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: gedeeld
+**Verantwoordelijkheid**: Gedeeld
 
 ### <a name="45-use-an-active-discovery-tool-to-identify-sensitive-data"></a>4,5: een actief detectie hulpprogramma gebruiken om gevoelige gegevens te identificeren
 
 **Richt lijnen**: gebruik een actief detectie hulpprogramma van derden om alle gevoelige informatie te identificeren die is opgeslagen, verwerkt of verzonden door de technologie systemen van de organisatie, met inbegrip van degenen die zich op locatie of op een externe service provider bevinden en werk de gevoelige informatie-inventaris van de organisatie bij.
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4,6: Azure RBAC gebruiken om de toegang tot resources te beheren
 
@@ -584,17 +584,17 @@ Micro soft maakt gebruik van het Transport Layer Security (TLS)-protocol voor he
 
 * [Ingebouwde Azure-rollen](../role-based-access-control/built-in-roles.md#virtual-machine-contributor)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="47-use-host-based-data-loss-prevention-to-enforce-access-control"></a>4,7: voor komen dat gegevens verlies op basis van host wordt gebruikt voor het afdwingen van toegangs beheer
 
 **Hulp**: Implementeer een hulp programma van derden, zoals een geautomatiseerde oplossing voor het voor komen van gegevens verlies op basis van een host, om toegangs controles af te dwingen om het risico van gegevens schendingen te beperken.
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="48-encrypt-sensitive-information-at-rest"></a>4,8: gevoelige informatie op rest versleutelen
 
@@ -602,9 +602,9 @@ Micro soft maakt gebruik van het Transport Layer Security (TLS)-protocol voor he
 
 * [Azure Disk Encryption voor Virtual Machine Scale Sets](./disk-encryption-overview.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4,9: wijzigingen in essentiële Azure-resources vastleggen en waarschuwen
 
@@ -612,11 +612,11 @@ Micro soft maakt gebruik van het Transport Layer Security (TLS)-protocol voor he
 
 * [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
 
-* [Azure Storage-analyselogboeken](../storage/common/storage-analytics-logging.md)
+* [Logboekregistratie van Azure Opslaganalyse](../storage/common/storage-analytics-logging.md)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ## <a name="vulnerability-management"></a>Beheer van beveiligingsproblemen
 
@@ -628,9 +628,9 @@ Micro soft maakt gebruik van het Transport Layer Security (TLS)-protocol voor he
 
 * [Aanbevelingen voor de evaluatie van Azure Security Center-beveiligings problemen implementeren](../security-center/deploy-vulnerability-assessment-vm.md)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="52-deploy-automated-operating-system-patch-management-solution"></a>5,2: geautomatiseerde oplossing voor patch beheer voor besturings systemen implementeren
 
@@ -638,9 +638,9 @@ Micro soft maakt gebruik van het Transport Layer Security (TLS)-protocol voor he
 
 * [Automatische upgrades van besturings systemen voor virtuele-machine schaal sets in azure](./virtual-machine-scale-sets-automatic-upgrade.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="53-deploy-automated-patch-management-solution-for-third-party-software-titles"></a>5,3: Implementeer een oplossing voor geautomatiseerd patch beheer voor software titels van derden
 
@@ -648,17 +648,17 @@ Micro soft maakt gebruik van het Transport Layer Security (TLS)-protocol voor he
 
 * [Virtual Machine Scale Sets gebruiken met de Azure DSC-uitbrei ding](./virtual-machine-scale-sets-dsc.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="54-compare-back-to-back-vulnerability-scans"></a>5,4: vergelijken van back-to-back-problemen
 
 **Richt lijnen**: scan resultaten met consistente intervallen exporteren en de resultaten vergelijken om te controleren of beveiligings problemen zijn opgelost. Bij het gebruik van aanbevelingen voor beveiligings beheer die worden voorgesteld door Azure Security Center, kan de klant in de portal van de geselecteerde oplossing draaien om historische scan gegevens weer te geven.
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="55-use-a-risk-rating-process-to-prioritize-the-remediation-of-discovered-vulnerabilities"></a>5,5: een risico classificatie proces gebruiken om prioriteit te geven aan het herstel van ontdekte beveiligings problemen
 
@@ -666,9 +666,9 @@ Micro soft maakt gebruik van het Transport Layer Security (TLS)-protocol voor he
 
 * [Azure Security Center beveiligde Score begrijpen](../security-center/secure-score-security-controls.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ## <a name="inventory-and-asset-management"></a>Inventarisatie en asset-management
 
@@ -684,9 +684,9 @@ Micro soft maakt gebruik van het Transport Layer Security (TLS)-protocol voor he
 
 * [Meer informatie over Azure RBAC](../role-based-access-control/overview.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="62-maintain-asset-metadata"></a>6,2: meta gegevens van activa onderhouden
 
@@ -694,9 +694,9 @@ Micro soft maakt gebruik van het Transport Layer Security (TLS)-protocol voor he
 
 * [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="63-delete-unauthorized-azure-resources"></a>6,3: niet-geautoriseerde Azure-resources verwijderen
 
@@ -708,17 +708,17 @@ Micro soft maakt gebruik van het Transport Layer Security (TLS)-protocol voor he
 
 * [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="64-define-and-maintain-inventory-of-approved-azure-resources"></a>6,4: de inventaris van goedgekeurde Azure-resources definiëren en onderhouden
 
 **Richt lijnen**: een inventaris van goedgekeurde Azure-resources en goedgekeurde software voor reken resources maken conform onze organisatorische behoeften.
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6,5: monitor voor niet-goedgekeurde Azure-resources
 
@@ -732,9 +732,9 @@ Daarnaast gebruikt u de resource grafiek van Azure voor het opvragen/detecteren 
 
 * [Query's maken met Azure Graph](../governance/resource-graph/first-query-portal.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="66-monitor-for-unapproved-software-applications-within-compute-resources"></a>6,6: monitor voor niet-goedgekeurde software toepassingen binnen reken resources
 
@@ -746,9 +746,9 @@ Momenteel zijn besturings elementen voor adaptieve toepassingen niet beschikbaar
 
 * [Azure VM-inventaris inschakelen](../automation/automation-tutorial-installed-software.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="67-remove-unapproved-azure-resources-and-software-applications"></a>6,7: niet-goedgekeurde Azure-resources en software toepassingen verwijderen
 
@@ -756,21 +756,21 @@ Momenteel zijn besturings elementen voor adaptieve toepassingen niet beschikbaar
 
 * [Een inleiding tot Azure Automation](../automation/automation-intro.md)
 
-* [Wijzigingen in uw omgeving bijhouden met de Wijzigingen bijhouden oplossing](../automation/change-tracking.md)
+* [Wijzigingen in uw omgeving bijhouden met de Wijzigingen bijhouden oplossing](../automation/change-tracking/overview.md)
 
 * [Overzicht van Azure Automation status configuratie](../automation/automation-dsc-overview.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="68-use-only-approved-applications"></a>6,8: alleen goedgekeurde toepassingen gebruiken
 
 **Hulp**: momenteel zijn besturings elementen voor adaptieve toepassingen niet beschikbaar voor Virtual Machine Scale sets. Gebruik software van derden om het gebruik te beheren voor alleen goedgekeurde toepassingen.
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="69-use-only-approved-azure-services"></a>6,9: alleen goedgekeurde Azure-Services gebruiken
 
@@ -782,9 +782,9 @@ Momenteel zijn besturings elementen voor adaptieve toepassingen niet beschikbaar
 
 * [Een specifiek resource type weigeren met Azure Policy](../governance/policy/samples/index.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="610-maintain-an-inventory-of-approved-software-titles"></a>6,10: een inventaris van goedgekeurde software titels onderhouden
 
@@ -792,9 +792,9 @@ Momenteel zijn besturings elementen voor adaptieve toepassingen niet beschikbaar
 
 * [Azure Security Center adaptieve toepassings besturings elementen gebruiken](../security-center/security-center-adaptive-application.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="611-limit-users-ability-to-interact-with-azure-resource-manager"></a>6,11: de mogelijkheid van gebruikers om te communiceren met Azure Resource Manager beperken
 
@@ -802,9 +802,9 @@ Momenteel zijn besturings elementen voor adaptieve toepassingen niet beschikbaar
 
 * [Voorwaardelijke toegang configureren om de toegang tot Azure Resource Manager te blok keren](../role-based-access-control/conditional-access-azure-management.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="612-limit-users-ability-to-execute-scripts-within-compute-resources"></a>6,12: de mogelijkheid van gebruikers om scripts uit te voeren binnen reken bronnen beperken
 
@@ -812,9 +812,9 @@ Momenteel zijn besturings elementen voor adaptieve toepassingen niet beschikbaar
 
 * [De uitvoering van Power shell-scripts beheren in Windows-omgevingen](/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6,13: toepassingen met een hoog risico fysiek of logisch scheiden
 
@@ -834,9 +834,9 @@ Momenteel zijn besturings elementen voor adaptieve toepassingen niet beschikbaar
 
 * [Handleiding voor beslissingen over abonnementen](/azure/cloud-adoption-framework/decision-guides/subscriptions/)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ## <a name="secure-configuration"></a>Veilige configuratie
 
@@ -850,9 +850,9 @@ Momenteel zijn besturings elementen voor adaptieve toepassingen niet beschikbaar
 
 * [Informatie over het downloaden van de VM-sjabloon](../virtual-machines/windows/download-template.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="72-establish-secure-operating-system-configurations"></a>7,2: veilige configuraties van besturings systemen instellen
 
@@ -862,9 +862,9 @@ Momenteel zijn besturings elementen voor adaptieve toepassingen niet beschikbaar
 
 * [Azure Security Center aanbevelingen herstellen](../security-center/security-center-remediate-recommendations.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="73-maintain-secure-azure-resource-configurations"></a>7,3: Beveilig Azure-resource configuraties onderhouden
 
@@ -876,9 +876,9 @@ Momenteel zijn besturings elementen voor adaptieve toepassingen niet beschikbaar
 
 * [Wat zijn Azure Policy effecten?](../governance/policy/concepts/effects.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="74-maintain-secure-operating-system-configurations"></a>7,4: veilige configuraties van besturings systemen onderhouden
 
@@ -898,9 +898,9 @@ In de meeste gevallen kunnen de micro soft-sjablonen voor virtuele machines in c
 
 * [Een aangepaste VM-VHD uploaden naar Azure](/azure-stack/operator/azure-stack-add-vm-image?view=azs-1910)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: gedeeld
+**Verantwoordelijkheid**: Gedeeld
 
 ### <a name="75-securely-store-configuration-of-azure-resources"></a>7,5: de configuratie van Azure-resources veilig opslaan
 
@@ -910,9 +910,9 @@ In de meeste gevallen kunnen de micro soft-sjablonen voor virtuele machines in c
 
 * [Over machtigingen en groepen in azure DevOps](/azure/devops/organizations/security/about-permissions)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="76-securely-store-custom-operating-system-images"></a>7,6: aangepaste installatie kopieën van een besturings systeem veilig opslaan
 
@@ -922,9 +922,9 @@ In de meeste gevallen kunnen de micro soft-sjablonen voor virtuele machines in c
 
 * [Azure RBAC configureren](../role-based-access-control/quickstart-assign-role-user-portal.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="77-deploy-configuration-management-tools-for-azure-resources"></a>7,7: hulpprogram ma's voor configuratie beheer voor Azure-resources implementeren
 
@@ -932,9 +932,9 @@ In de meeste gevallen kunnen de micro soft-sjablonen voor virtuele machines in c
 
 * [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="78-deploy-configuration-management-tools-for-operating-systems"></a>7,8: hulpprogram ma's voor configuratie beheer voor besturings systemen implementeren
 
@@ -942,9 +942,9 @@ In de meeste gevallen kunnen de micro soft-sjablonen voor virtuele machines in c
 
 * [Onboarding van machines voor beheer door Azure Automation status configuratie](../automation/automation-dsc-onboarding.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="79-implement-automated-configuration-monitoring-for-azure-resources"></a>7,9: geautomatiseerde configuratie bewaking voor Azure-resources implementeren
 
@@ -954,9 +954,9 @@ In de meeste gevallen kunnen de micro soft-sjablonen voor virtuele machines in c
 
 * [Aan de slag met de configuratie van de Azure Automation-status](../automation/automation-dsc-getting-started.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="710-implement-automated-configuration-monitoring-for-operating-systems"></a>7,10: geautomatiseerde configuratie bewaking voor besturings systemen implementeren
 
@@ -964,9 +964,9 @@ In de meeste gevallen kunnen de micro soft-sjablonen voor virtuele machines in c
 
 * [Onboarding van machines voor beheer door Azure Automation status configuratie](../automation/automation-dsc-onboarding.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="711-manage-azure-secrets-securely"></a>7,11: Azure-geheimen veilig beheren
 
@@ -980,9 +980,9 @@ In de meeste gevallen kunnen de micro soft-sjablonen voor virtuele machines in c
 
 * [Toegangs beleid voor Key Vault toewijzen](../key-vault/general/assign-access-policy-portal.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="712-manage-identities-securely-and-automatically"></a>7,12: identiteiten veilig en automatisch beheren
 
@@ -990,19 +990,19 @@ In de meeste gevallen kunnen de micro soft-sjablonen voor virtuele machines in c
 
 * [Beheerde identiteiten configureren](../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="713-eliminate-unintended-credential-exposure"></a>7,13: onbedoelde referentie blootstelling elimineren
 
-**Richt lijnen**: referentie scanner implementeren om referenties in code te identificeren. Referentie scanner stimuleert ook het verplaatsen van gedetecteerde referenties naar veiliger locaties, zoals Azure Key Vault.
+**Richt lijnen**: referentie scanner implementeren om referenties in code te identificeren. Door het gebruik van Credential Scanner worden gebruikers ook aangemoedigd om gedetecteerde referenties naar veiligere locaties, zoals Azure Key Vault, te verplaatsen.
 
 * [Referentie scanner instellen](https://secdevtools.azurewebsites.net/helpcredscan.html)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ## <a name="malware-defense"></a>Beveiliging tegen malware
 
@@ -1014,15 +1014,15 @@ In de meeste gevallen kunnen de micro soft-sjablonen voor virtuele machines in c
 
 * [Micro soft antimalware configureren voor Cloud Services en Virtual Machines](../security/fundamentals/antimalware.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="82-pre-scan-files-to-be-uploaded-to-non-compute-azure-resources"></a>8,2: scan bestanden die moeten worden geüpload naar niet-reken resources van Azure
 
 **Richt lijnen**: niet van toepassing op virtuele machines van Azure omdat het een reken resource is.
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
 **Verantwoordelijkheid**: niet van toepassing
 
@@ -1036,11 +1036,11 @@ U hebt een hulp programma van derden nodig voor beveiliging tegen schadelijke so
 
 * [Microsoft Defender Advanced Threat Protection](/windows/security/threat-protection/microsoft-defender-atp/onboard-configure)
 
-* [Micro soft antimalware configureren voor Cloud Services en Virtual Machines](../virtual-machines/linux/security-recommendations.md)
+* [Micro soft antimalware configureren voor Cloud Services en Virtual Machines](../virtual-machines/security-recommendations.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ## <a name="data-recovery"></a>Gegevensherstel
 
@@ -1054,9 +1054,9 @@ U hebt een hulp programma van derden nodig voor beveiliging tegen schadelijke so
 
 * [Inleiding tot Azure Automation](../automation/automation-intro.md)
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="92-perform-complete-system-backups-and-backup-any-customer-managed-keys"></a>9,2: volledige back-ups van het systeem uitvoeren en een back-up maken van door de klant beheerde sleutels
 
@@ -1072,9 +1072,9 @@ Schakel Azure Backup en doel-Azure-Virtual Machines (VM) in, evenals de gewenste
 
 * [Hoe kan ik een back-up maken van sleutel kluis sleutels in azure?](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="93-validate-all-backups-including-customer-managed-keys"></a>9,3: alle back-ups valideren, inclusief door de klant beheerde sleutels
 
@@ -1090,9 +1090,9 @@ Als u gebruikmaakt van Azure Disk Encryption, kunt u de schaal sets van virtuele
 
 * [Schijf versleuteling inschakelen voor Azure Virtual Machine Scale Sets](./disk-encryption-overview.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="94-ensure-protection-of-backups-and-customer-managed-keys"></a>9,4: zorg voor de bescherming van back-ups en door de klant beheerde sleutels
 
@@ -1102,9 +1102,9 @@ Als u gebruikmaakt van Azure Disk Encryption, kunt u de schaal sets van virtuele
 
 * [Overzicht van de beveiliging van zacht verwijderen Azure Key Vault en opschonen](../key-vault/general/soft-delete-overview.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ## <a name="incident-response"></a>Reageren op incidenten
 
@@ -1112,7 +1112,7 @@ Als u gebruikmaakt van Azure Disk Encryption, kunt u de schaal sets van virtuele
 
 ### <a name="101-create-an-incident-response-guide"></a>10,1: een hand leiding voor reactie op incidenten maken
 
-**Hulp**: een antwoord gids voor incidenten maken voor uw organisatie. Zorg ervoor dat er schriftelijke incidenten abonnementen zijn die alle werk rollen definiëren, evenals fasen van incident handling/management van detectie tot een beoordeling van het incident.
+**Richtlijnen**: Stel voor uw organisatie een responshandleiding op voor gebruik bij incidenten. Zorg ervoor dat er schriftelijke responsplannen zijn waarin alle rollen van het personeel worden gedefinieerd, evenals alle fasen in het afhandelen/managen van incidenten, vanaf de detectie van het incident tot een evaluatie ervan achteraf.
 
 * [Richt lijnen voor het bouwen van uw eigen beveiligings incident antwoord proces](https://msrc-blog.microsoft.com/2019/07/01/inside-the-msrc-building-your-own-security-incident-response-process/)
 
@@ -1120,33 +1120,33 @@ Als u gebruikmaakt van Azure Disk Encryption, kunt u de schaal sets van virtuele
 
 * [De verwerkings handleiding voor het computer beveiligings incident van het NIST gebruiken om u te helpen bij het maken van uw eigen reactie plan voor incidenten](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="102-create-an-incident-scoring-and-prioritization-procedure"></a>10,2: een beoordelings procedure voor incidenten en prioriteits procedures maken
 
 **Hulp**: Security Center wijst aan elke waarschuwing een Ernst toe om u te helpen bepalen welke waarschuwingen het eerst moeten worden onderzocht. De ernst is gebaseerd op de manier waarop vertrouwen Security Center is in de zoek actie of het analyse programma dat wordt gebruikt om de waarschuwing te geven, evenals het betrouwbaarheids niveau dat er schadelijke bedoelingen zijn achter de activiteit die tot de waarschuwing heeft geleid.
 
-Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld productie, niet-productie) met behulp van tags en maak een naamgevings systeem om Azure-resources duidelijk te identificeren en te categoriseren, met name voor de verwerking van gevoelige gegevens. Het is uw verantwoordelijkheid om prioriteit te geven aan het herstel van waarschuwingen op basis van de ernst van de Azure-resources en-omgeving waar het incident heeft plaatsgevonden.
+Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld productie, niet-productie) met behulp van tags en maak een naamgevings systeem om Azure-resources duidelijk te identificeren en te categoriseren, met name voor de verwerking van gevoelige gegevens. Het is uw verantwoordelijkheid om prioriteit te geven aan het oplossen van waarschuwingen op basis van de ernst van de Azure-resources en -omgeving waarin het incident heeft plaatsgevonden.
 
 * [Beveiligingswaarschuwingen in Azure Security Center](../security-center/security-center-alerts-overview.md)
 
 * [Tags gebruiken om Azure-resources te organiseren](../azure-resource-manager/management/tag-resources.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="103-test-security-response-procedures"></a>10,3: procedures voor beveiligings antwoorden testen
 
-**Richt lijnen**: oefent oefeningen uit om de respons mogelijkheden van uw systeem te testen op een reguliere uitgebracht om uw Azure-resources te beschermen. Identificeer zwakke punten en tussen ruimten en wijzig zo nodig het schema.
+**Richt lijnen**: oefent oefeningen uit om de respons mogelijkheden van uw systeem te testen op een reguliere uitgebracht om uw Azure-resources te beschermen. Stel vast waar zich zwakke plekken en hiaten bevinden, en wijzig zo nodig het plan.
 
 * [Publicatie van het NIST-hand leiding voor test-, trainings-en oefen Programma's voor IT-plannen en-mogelijkheden](https://csrc.nist.gov/publications/detail/sp/800-84/final)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="104-provide-security-incident-contact-details-and-configure-alert-notifications-for-security-incidents"></a>10,4: contact gegevens van het beveiligings incident opgeven en waarschuwings meldingen configureren voor beveiligings incidenten
 
@@ -1154,9 +1154,9 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 * [De Azure Security Center Security-contact persoon instellen](../security-center/security-center-provide-security-contact-details.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="105-incorporate-security-alerts-into-your-incident-response-system"></a>10,5: beveiligings waarschuwingen opnemen in uw reactie systeem van uw incident
 
@@ -1166,9 +1166,9 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 * [Waarschuwingen streamen naar Azure Sentinel](../sentinel/connect-azure-security-center.md)
 
-**Azure Security Center bewaking**: Ja
+**Monitoring door Azure Security Center**: Ja
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="106-automate-the-response-to-security-alerts"></a>10,6: de reactie op beveiligings waarschuwingen automatiseren
 
@@ -1176,9 +1176,9 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 * [Werk stroom automatisering en Logic Apps configureren](../security-center/workflow-automation.md)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ## <a name="penetration-tests-and-red-team-exercises"></a>Penetratietests en Red Team-oefeningen
 
@@ -1188,15 +1188,15 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 **Richt lijnen**: Volg de micro soft-regels om ervoor te zorgen dat de indringings tests niet worden geschonden door het micro soft-beleid. Gebruik de strategie van micro soft en de uitvoering van de implementatie van de indringing van een live site in de Cloud, services en toepassingen die door micro soft worden beheerd.
 
-* [Regels van betrokkenheid voor het testen van indringing](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
+* [Regels voor het inzetten van penetratietests](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
 
-* [Microsoft Cloud rode teams](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
+* [Microsoft Cloud Red Teaming](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: gedeeld
+**Verantwoordelijkheid**: Gedeeld
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - Zie de [Azure Security-Bench Mark](../security/benchmarks/overview.md)
-- Meer informatie over [Azure-beveiligings basislijnen](../security/benchmarks/security-baselines-overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)

@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 11/19/2020
 ms.author: nanditav
 ms.reviewer: jrasnick
-ms.openlocfilehash: a6ea3925f3b6bc786be6a4855b2f3bfb6b402d70
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: d9a9d3c303739e68b5b8ef28053d6cf0b071f955
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96455182"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96501053"
 ---
 # <a name="encryption-for-azure-synapse-analytics-workspaces"></a>Versleuteling voor Azure Synapse Analytics-werk ruimten
 
@@ -47,13 +47,13 @@ De gegevens in de volgende Synapse-onderdelen worden versleuteld met de door de 
 U kunt werk ruimten configureren om dubbele versleuteling in te scha kelen met een door de klant beheerde sleutel op het moment dat de werk ruimte wordt gemaakt. Selecteer de optie dubbele versleuteling inschakelen met een door de klant beheerde sleutel op het tabblad Beveiliging bij het maken van uw nieuwe werk ruimte. U kunt ervoor kiezen om een sleutel-id-URI in te voeren of een selectie te selecteren in een lijst met sleutel kluizen in **dezelfde regio** als de werk ruimte. Voor de Key Vault zelf moet de **beveiliging opschonen zijn ingeschakeld**.
 
 > [!IMPORTANT]
-> Op dit moment kan de configuratie-instelling voor dubbele versleuteling niet meer worden gewijzigd nadat de werk ruimte is gemaakt.
+> De configuratie-instelling voor dubbele versleuteling kan niet worden gewijzigd nadat de werk ruimte is gemaakt.
 
 :::image type="content" source="./media/workspaces-encryption/workspaces-encryption.png" alt-text="Dit diagram toont de optie die moet worden geselecteerd om een werk ruimte in te scha kelen voor dubbele versleuteling met een door de klant beheerde sleutel.":::
 
 ### <a name="key-access-and-workspace-activation"></a>Toegang tot sleutels en de werk ruimte activeren
 
-Het Azure Synapse-versleutelings model met door de klant beheerde sleutels omvat de werk ruimte die toegang heeft tot de sleutels in Azure Key Vault om zo nodig te versleutelen en te ontsleutelen. De sleutels worden toegankelijk gemaakt voor de werk ruimte via een toegangs beleid of Azure Key Vault RBAC-toegang ([Preview](../../key-vault/general/rbac-guide.md)). Wanneer u machtigingen verleent via een Azure Key Vault toegangs beleid, kiest u de optie ' alleen toepassing ' tijdens het maken van een beleid.
+Het Azure Synapse-versleutelings model met door de klant beheerde sleutels omvat de werk ruimte die toegang heeft tot de sleutels in Azure Key Vault om zo nodig te versleutelen en te ontsleutelen. De sleutels worden toegankelijk gemaakt voor de werk ruimte via een toegangs beleid of Azure Key Vault RBAC-toegang ([Preview](../../key-vault/general/rbac-guide.md)). Wanneer u machtigingen verleent via een Azure Key Vault toegangs beleid, kiest u de optie [' alleen toepassing '](../../key-vault/general/secure-your-key-vault.md#key-vault-authentication-options) tijdens het maken van het beleid (Selecteer de beheerde identiteit van de werk ruimte en voeg deze niet toe als een geautoriseerde toepassing).
 
  De beheerde identiteit van de werk ruimte moet de benodigde machtigingen hebben voor de sleutel kluis voordat de werk ruimte kan worden geactiveerd. Deze gefaseerde benadering voor het activeren van werk ruimten zorgt ervoor dat de gegevens in de werk ruimte worden versleuteld met de door de klant beheerde sleutel. Versleuteling kan worden in-of uitgeschakeld voor toegewezen SQL-groepen. elke groep is standaard niet ingeschakeld voor versleuteling.
 
@@ -76,6 +76,9 @@ Nadat uw werk ruimte (met dubbele versleuteling is ingeschakeld) is gemaakt, bli
 U kunt de door de klant beheerde sleutel die wordt gebruikt voor het versleutelen van gegevens van de **versleutelings pagina in** de Azure portal wijzigen. Hier kunt u ook een nieuwe sleutel kiezen met behulp van een sleutel-id of een sleutel kluis selecteren waartoe u toegang hebt in dezelfde regio als de werk ruimte. Als u een sleutel in een andere sleutel kluis kiest uit de sjablonen die eerder zijn gebruikt, verleent u de werk ruimte Managed Identity ' Get ', ' wrap ' en ' Unwrap ' voor de nieuwe sleutel kluis. De werk ruimte valideert de toegang tot de nieuwe sleutel kluis en alle gegevens in de werk ruimte worden opnieuw versleuteld met de nieuwe sleutel.
 
 :::image type="content" source="./media/workspaces-encryption/workspace-encryption-management.png" alt-text="Dit diagram toont de sectie werkruimte versleuteling in de Azure Portal.":::
+
+>[!IMPORTANT]
+>Wanneer u de versleutelings sleutel van een werk ruimte wijzigt, behoudt u de sleutel totdat u deze in de werk ruimte vervangt door een nieuwe sleutel. Dit is om het ontsleutelen van gegevens met de oude sleutel toe te staan voordat deze opnieuw wordt versleuteld met de nieuwe sleutel.
 
 Azure Key kluizen-beleids regels voor automatische, periodieke rotatie van sleutels of acties op de sleutels kunnen resulteren in het maken van nieuwe sleutel versies. U kunt ervoor kiezen om alle gegevens in de werk ruimte opnieuw te versleutelen met de meest recente versie van de actieve sleutel. Als u het opnieuw wilt versleutelen, wijzigt u de sleutel in de Azure Portal naar een tijdelijke sleutel en gaat u terug naar de sleutel die u wilt gebruiken voor versleuteling. Als voor beeld: als u gegevens versleuteling wilt bijwerken met de nieuwste versie van actieve sleutel Key1, wijzigt u de door de klant beheerde sleutel van de werk ruimte in de tijdelijke sleutel, Key2. Wacht totdat de versleuteling is voltooid. Schakel vervolgens de door de klant beheerde sleutel terug naar Key1-data in de werk ruimte en versleuteld met de meest recente versie van Key1.
 

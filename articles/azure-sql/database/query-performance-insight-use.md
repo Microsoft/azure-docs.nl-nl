@@ -9,14 +9,14 @@ ms.devlang: ''
 ms.topic: how-to
 author: danimir
 ms.author: danil
-ms.reviewer: jrasnik, sstein
+ms.reviewer: wiassaf, sstein
 ms.date: 03/10/2020
-ms.openlocfilehash: c88b777e08bc165caefa14fe28d43c498e3fefcd
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: a016781e5b05c8f43c043bf1f3368a58064e43ad
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790369"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96501257"
 ---
 # <a name="query-performance-insight-for-azure-sql-database"></a>Query Performance Insight voor Azure SQL Database
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -41,15 +41,15 @@ Voor Query Performance Insight moet het [query archief](/sql/relational-database
 
 U hebt de volgende machtigingen voor [Azure op rollen gebaseerde toegangs beheer (Azure RBAC)](../../role-based-access-control/overview.md) nodig voor het gebruik van query Performance Insight:
 
-* De machtigingen **lezer** , **eigenaar** , **Inzender** , **SQL DB-Inzender** of **SQL Server Inzender** zijn vereist voor het weer geven van de meest voorkomende query's en grafieken van de resource.
-* De machtigingen **eigenaar** , **bijdrager** , **SQL DB-Inzender** of **SQL Server Inzender** zijn vereist om query tekst weer te geven.
+* De machtigingen **lezer**, **eigenaar**, **Inzender**, **SQL DB-Inzender** of **SQL Server Inzender** zijn vereist voor het weer geven van de meest voorkomende query's en grafieken van de resource.
+* De machtigingen **eigenaar**, **bijdrager**, **SQL DB-Inzender** of **SQL Server Inzender** zijn vereist om query tekst weer te geven.
 
 ## <a name="use-query-performance-insight"></a>Query Performance Insight gebruiken
 
 Query Performance Insight is gemakkelijk te gebruiken:
 
 1. Open de [Azure Portal](https://portal.azure.com/) en zoek een Data Base die u wilt bekijken.
-2. Open in het menu aan de linkerkant de optie **intelligent prestaties**  >  **query Performance Insight** .
+2. Open in het menu aan de linkerkant de optie **intelligent prestaties**  >  **query Performance Insight**.
   
    ![Query Performance Insight in het menu](./media/query-performance-insight-use/tile.png)
 
@@ -86,8 +86,8 @@ Query Performance Insight worden standaard de vijf meest voorkomende query's van
    > Voor een nauw keurigere vergelijking (Maxi maal één minuut) kunt u een aangepast DTU-gebruiks diagram maken:
    >
    > 1. Selecteer **Azure SQL database**  >  **bewaking** in het Azure Portal.
-   > 2. Selecteer **Metrische gegevens** .
-   > 3. Selecteer **+ grafiek toevoegen** .
+   > 2. Selecteer **Metrische gegevens**.
+   > 3. Selecteer **+ grafiek toevoegen**.
    > 4. Selecteer het DTU-percentage in de grafiek.
    > 5. Selecteer bovendien **laatste 24 uur** in het menu linksboven en wijzig deze in één minuut.
    >
@@ -160,7 +160,7 @@ Langlopende query's hebben de grootste mogelijkheid om bronnen langer te vergren
 Langlopende query's identificeren:
 
 1. Open het tabblad **aangepast** in query Performance Insight voor de geselecteerde data base.
-2. Wijzig de metrische gegevens in **duur** .
+2. Wijzig de metrische gegevens in **duur**.
 3. Het aantal query's en het observatie interval selecteren.
 4. Selecteer de aggregatie functie:
 
@@ -177,9 +177,9 @@ Langlopende query's identificeren:
    >
    > Als u meer informatie wilt over het gebruik van data base-DTU met meer details (Maxi maal één minuut), kunt u een aangepaste grafiek maken in de Azure Portal:
    >
-   > 1. Selecteer **Azure SQL database**  >  **bewaking** .
-   > 2. Selecteer **Metrische gegevens** .
-   > 3. Selecteer **+ grafiek toevoegen** .
+   > 1. Selecteer **Azure SQL database**  >  **bewaking**.
+   > 2. Selecteer **Metrische gegevens**.
+   > 3. Selecteer **+ grafiek toevoegen**.
    > 4. Selecteer het DTU-percentage in de grafiek.
    > 5. Selecteer bovendien **laatste 24 uur** in het menu linksboven en wijzig deze in één minuut.
    >
@@ -197,7 +197,7 @@ Veel gegevensgestuurde websites hebben bijvoorbeeld een zeer grote toegang tot d
 Voor het identificeren van regel matig uitgevoerde query's (' intensieve '):
 
 1. Open het tabblad **aangepast** in query Performance Insight voor de geselecteerde data base.
-2. Wijzig de metrische gegevens in het **aantal uitvoeringen** .
+2. Wijzig de metrische gegevens in het **aantal uitvoeringen**.
 3. Het aantal query's en het observatie interval selecteren.
 4. Selecteer de knop **ga >** om de aangepaste weer gave te bekijken.
 
@@ -238,14 +238,14 @@ Het tweede geval treedt op wanneer query Store niet is ingeschakeld, of para met
 
 Er zijn twee typen Bewaar beleid:
 
-* **Op basis van grootte** : als dit beleid is ingesteld op **automatisch** , worden de gegevens automatisch opgeschoond wanneer de maximale grootte wordt bereikt.
-* **Op basis van tijd** : standaard is dit beleid ingesteld op 30 dagen. Als er geen ruimte meer is op de query opslag, worden de query gegevens ouder dan 30 dagen verwijderd.
+* **Op basis van grootte**: als dit beleid is ingesteld op **automatisch**, worden de gegevens automatisch opgeschoond wanneer de maximale grootte wordt bereikt.
+* **Op basis van tijd**: standaard is dit beleid ingesteld op 30 dagen. Als er geen ruimte meer is op de query opslag, worden de query gegevens ouder dan 30 dagen verwijderd.
 
 U kunt het vastleg beleid instellen op:
 
-* **Alle** : in query Store worden alle query's vastgelegd.
-* **Automatisch** : in query Store worden niet-frequente query's en query's met een onbeduidende compilatie-en uitvoerings duur genegeerd. De drempel waarden voor het aantal uitvoeringen, de compilatie duur en de runtime duur worden intern bepaald. Dit is de standaard optie.
-* **Geen** : de query Store stopt met het vastleggen van nieuwe query's, maar er worden nog steeds runtime statistieken voor al vastgelegde query's verzameld.
+* **Alle**: in query Store worden alle query's vastgelegd.
+* **Automatisch**: in query Store worden niet-frequente query's en query's met een onbeduidende compilatie-en uitvoerings duur genegeerd. De drempel waarden voor het aantal uitvoeringen, de compilatie duur en de runtime duur worden intern bepaald. Dit is de standaard optie.
+* **Geen**: de query Store stopt met het vastleggen van nieuwe query's, maar er worden nog steeds runtime statistieken voor al vastgelegde query's verzameld.
 
 U kunt het beste alle beleids regels instellen op **automatisch** en het opschonings beleid tot 30 dagen door de volgende opdrachten uit [SSMS](/sql/ssms/download-sql-server-management-studio-ssms) of de Azure Portal uit te voeren. (Vervang door `YourDB` de naam van de data base.)
 

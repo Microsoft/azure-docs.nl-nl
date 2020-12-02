@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 08/10/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ac75ab31f8c9cdd9405115db4f5c35d28707e29f
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 06d20dd47ceb71b51e226d662892eab06b072685
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94950360"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500934"
 ---
 # <a name="sap-workloads-on-azure-planning-and-deployment-checklist"></a>SAP-workloads op Azure: controle lijst voor planning en implementatie
 
@@ -243,8 +243,8 @@ In deze fase verzamelt u wat u hebt ervaren en geleerd tijdens uw implementaties
     - Azure Premium Storage wordt gebruikt voor latentie gevoelige schijven of als de [Sla met één virtuele machine van 99,9%](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/) is vereist.
     - Azure Write Accelerator is correct geïmplementeerd.
         - Zorg ervoor dat de virtuele machines, opslag ruimten of stripesets, op de juiste wijze zijn gebouwd op schijven die Write Accelerator hebben.
-        - Controleer de [configuratie van de software-RAID op Linux](../../linux/configure-raid.md).
-        - Controleer de [configuratie van LVM op Linux-vm's in azure](../../linux/configure-lvm.md).
+        - Controleer de [configuratie van de software-RAID op Linux](/previous-versions/azure/virtual-machines/linux/configure-raid).
+        - Controleer de [configuratie van LVM op Linux-vm's in azure](/previous-versions/azure/virtual-machines/linux/configure-lvm).
     - [Azure Managed disks](https://azure.microsoft.com/services/managed-disks/) worden uitsluitend gebruikt.
     - Vm's zijn geïmplementeerd in de juiste beschikbaarheids sets en Beschikbaarheidszones.
     - [Versneld netwerken van Azure](https://azure.microsoft.com/blog/maximize-your-vm-s-performance-with-accelerated-networking-now-generally-available-for-both-windows-and-linux/) is ingeschakeld op de virtuele machines die worden gebruikt in de SAP-toepassingslaag en de SAP-DBMS-laag.

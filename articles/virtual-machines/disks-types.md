@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: virtual-machines
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: ef481b73b6dc42bc35252c08ae8d63b9de95b2ba
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 1a7e8e71e26af241d16095a5fa1e6a02a7e3d4c2
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96325091"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500764"
 ---
 # <a name="what-disk-types-are-available-in-azure"></a>Welke schijftypen zijn beschikbaar in Azure?
 
@@ -84,7 +84,7 @@ Wanneer u een Premium Storage-schijf inricht, bent u, in tegenstelling tot stand
 
 Premium-SSD grootten die kleiner zijn dan P30 bieden nu schijf bursting en kunnen de IOPS per schijf tot 3.500 en de band breedte van Maxi maal 170 MB/s. Bursting wordt geautomatiseerd en werkt op basis van een tegoed systeem. Tegoeden worden automatisch opgeteld in een burst-Bucket wanneer het schijf verkeer lager is dan het ingerichte prestatie doel en de tegoeden automatisch worden gebruikt wanneer het verkeer groter wordt dan het doel, tot de maximale burst-limiet. De maximale burst-limiet bepaalt het maximum van schijf-IOPS & band breedte, zelfs als u burst-tegoeden hebt om te gebruiken. Schijf bursting biedt betere tolerantie voor onvoorspelbare wijzigingen van i/o-patronen. U kunt dit het beste gebruiken voor het opstarten van de besturingssysteem schijf en toepassingen met piekige-verkeer.    
 
-Schijven die ondersteuning bieden voor bursting, worden standaard ingeschakeld voor nieuwe implementaties van toepasselijke schijf grootten, zonder dat de gebruiker actie hoeft te ondernemen. Voor bestaande schijven van de toepasselijke grootten kunt u bursting met een van de volgende twee opties inschakelen: Ontkoppel en koppel de schijf opnieuw of stop de gekoppelde VM. Alle burst-toepasselijke schijf grootten beginnen met een volledige burst-credit Bucket wanneer de schijf is gekoppeld aan een virtuele machine die een maximale duur van Maxi maal 30 minuten ondersteunt. Zie [Premium-SSD bursting](linux/disk-bursting.md)voor meer informatie over hoe bursting werkt op Azure-schijven. 
+Schijven die ondersteuning bieden voor bursting, worden standaard ingeschakeld voor nieuwe implementaties van toepasselijke schijf grootten, zonder dat de gebruiker actie hoeft te ondernemen. Voor bestaande schijven van de toepasselijke grootten kunt u bursting met een van de volgende twee opties inschakelen: Ontkoppel en koppel de schijf opnieuw of stop de gekoppelde VM. Alle burst-toepasselijke schijf grootten beginnen met een volledige burst-credit Bucket wanneer de schijf is gekoppeld aan een virtuele machine die een maximale duur van Maxi maal 30 minuten ondersteunt. Zie [Premium-SSD bursting](./disk-bursting.md)voor meer informatie over hoe bursting werkt op Azure-schijven. 
 
 ### <a name="transactions"></a>Transacties
 

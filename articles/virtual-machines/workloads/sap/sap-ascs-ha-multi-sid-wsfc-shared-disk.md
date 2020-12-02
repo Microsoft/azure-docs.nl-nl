@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 10/16/2020
 ms.author: radeltch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9998c4a9c37d30a35acaad8972b9345c5e251e42
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: bd0c2e720736feb9faf129237ba960dedda08c6f
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94950530"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500985"
 ---
 # <a name="sap-ascsscs-instance-multi-sid-high-availability-with-windows-server-failover-clustering-and-shared-disk-on-azure"></a>SAP ASCS/SCS instance multi-SID hoge Beschik baarheid met Windows Server Failover Clustering en gedeelde schijf op Azure
 
@@ -44,7 +44,7 @@ In dit artikel wordt uitgelegd hoe u vanuit één ASCS/SCS-installatie kunt over
 Zie de sectie ' persoonlijke front-end IP per load balancer ' in [netwerk limieten: Azure Resource Manager][networking-limits-azure-resource-manager]voor meer informatie over limieten voor load balancers.
 
 > [!IMPORTANT]
-> Zwevend IP wordt niet ondersteund voor een secundaire IP-configuratie in een NIC in scenario's voor taak verdeling. Zie beperkingen voor [Azure Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-multivip-overview#limitations)voor meer informatie. Als u een extra IP-adres voor de virtuele machine nodig hebt, implementeert u een tweede NIC.  
+> Zwevend IP wordt niet ondersteund voor een secundaire IP-configuratie in een NIC in scenario's voor taak verdeling. Zie beperkingen voor [Azure Load Balancer](../../../load-balancer/load-balancer-multivip-overview.md#limitations)voor meer informatie. Als u een extra IP-adres voor de virtuele machine nodig hebt, implementeert u een tweede NIC.  
 
 [!INCLUDE [updated-for-az](../../../../includes/updated-for-az.md)]
 

@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 07/15/2019
 ms.author: raynew
-ms.openlocfilehash: c4132ca675af136d7fd50b8ddd02277919a5ed28
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 534619ace09b4e11934062a591adf8d9ab6f77ad
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91361089"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96500798"
 ---
 # <a name="create-an-azure-vm-assessment"></a>Een Azure VM-evaluatie maken
 
@@ -21,7 +21,7 @@ In dit artikel wordt beschreven hoe u een Azure VM-evaluatie maakt voor on-premi
 
 ## <a name="before-you-start"></a>Voordat u begint
 
-- Zorg ervoor dat u een Azure Migrate project hebt [gemaakt](how-to-add-tool-first-time.md) .
+- Zorg ervoor dat u een Azure Migrate project hebt [gemaakt](./create-manage-projects.md) .
 - Als u al een project hebt gemaakt, moet u ervoor zorgen dat u het Azure Migrate: Server Assessment Tool hebt [toegevoegd](how-to-assess.md) .
 - Als u een beoordeling wilt maken, moet u een Azure Migrate apparaat instellen voor [VMware](how-to-set-up-appliance-vmware.md) of [Hyper-V](how-to-set-up-appliance-hyper-v.md). Het apparaat detecteert on-premises machines en verstuurt meta gegevens en prestatie gegevens naar Azure Migrate: Server evaluatie. [Meer informatie](migrate-appliance.md).
 

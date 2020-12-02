@@ -3,20 +3,20 @@ title: 'Data Factory zelf studie: eerste gegevens pijplijn '
 description: In deze Azure Data Factory zelf studie wordt uitgelegd hoe u een data factory maakt en plant waarmee gegevens worden verwerkt met behulp van Hive-script op een Hadoop-cluster.
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/22/2018
-ms.openlocfilehash: 80644ed2d655544fa176a7be92aec3c01aa3bf14
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a79872c11d76a74932fe232fa3f7818edc58ffcc
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75966077"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96496208"
 ---
 # <a name="tutorial-build-your-first-pipeline-to-transform-data-using-hadoop-cluster"></a>Zelf studie: uw eerste pijp lijn maken om gegevens te transformeren met een Hadoop-cluster
 > [!div class="op_single_selector"]
@@ -40,13 +40,13 @@ In deze zelfstudie voert u de volgende stappen uit:
 1. Maak een **Data Factory**. Een data factory kan een of meer gegevens pijplijnen bevatten waarmee gegevens worden verplaatst en getransformeerd.
 
     In deze zelf studie maakt u een pijp lijn in de data factory.
-2. Een **pijp lijn**maken. Een pijplijn kan een of meer activiteiten bevatten (bijvoorbeeld: kopieeractiviteit, HDInsight Hive-activiteit). In dit voor beeld wordt gebruikgemaakt van de HDInsight Hive-activiteit die een Hive-script uitvoert op een HDInsight Hadoop-cluster. Het script maakt eerst een tabel die verwijst naar de onbewerkte weblogboek gegevens die zijn opgeslagen in Azure Blob-opslag en partitioneert de onbewerkte gegevens vervolgens per jaar en maand.
+2. Een **pijp lijn** maken. Een pijplijn kan een of meer activiteiten bevatten (bijvoorbeeld: kopieeractiviteit, HDInsight Hive-activiteit). In dit voor beeld wordt gebruikgemaakt van de HDInsight Hive-activiteit die een Hive-script uitvoert op een HDInsight Hadoop-cluster. Het script maakt eerst een tabel die verwijst naar de onbewerkte weblogboek gegevens die zijn opgeslagen in Azure Blob-opslag en partitioneert de onbewerkte gegevens vervolgens per jaar en maand.
 
     In deze zelf studie gebruikt de pijp lijn de Hive-activiteit voor het transformeren van gegevens door een Hive-query uit te voeren op een Azure HDInsight Hadoop cluster.
-3. **Gekoppelde services**maken. U maakt een gekoppelde service om een gegevensopslag of een rekenservice te koppelen aan de gegevensfactory. In een gegevensopslag zoals Azure Storage worden invoer-/uitvoergegevens bewaard van activiteiten in de pijplijn. Een compute-service zoals een HDInsight Hadoop-cluster verwerkt/transformeert gegevens.
+3. **Gekoppelde services** maken. U maakt een gekoppelde service om een gegevensopslag of een rekenservice te koppelen aan de gegevensfactory. In een gegevensopslag zoals Azure Storage worden invoer-/uitvoergegevens bewaard van activiteiten in de pijplijn. Een compute-service zoals een HDInsight Hadoop-cluster verwerkt/transformeert gegevens.
 
     In deze zelf studie maakt u twee gekoppelde services: **Azure Storage** en **Azure HDInsight**. De Azure Storage gekoppelde service koppelt een Azure Storage account dat de invoer-en uitvoer gegevens voor de data factory bevat. Gekoppelde Azure HDInsight-Services koppelen een Azure HDInsight-cluster dat wordt gebruikt om gegevens te transformeren naar het data factory.
-3. Invoer-en uitvoer **gegevens sets**maken. Een invoergegevensset vertegenwoordigt de invoer voor een activiteit in de pijplijn en een uitvoergegevensset vertegenwoordigt de uitvoer voor de activiteit.
+3. Invoer-en uitvoer **gegevens sets** maken. Een invoergegevensset vertegenwoordigt de invoer voor een activiteit in de pijplijn en een uitvoergegevensset vertegenwoordigt de uitvoer voor de activiteit.
 
     In deze zelf studie geven de invoer-en uitvoer gegevens sets de locatie op van de invoer-en uitvoer data in de Azure-Blob Storage. De Azure Storage gekoppelde service geeft aan wat Azure Storage-account wordt gebruikt. Een invoer-gegevensset geeft aan waar de invoer bestanden zich bevinden en een uitvoer gegevensset geeft aan waar de uitvoer bestanden worden geplaatst.
 
@@ -80,7 +80,7 @@ Van de hierboven weer gegeven voorbeeld regels wordt de eerste (met 2016-01-01) 
 Voordat u met deze zelfstudie begint, moet u aan de volgende vereisten voldoen:
 
 1. U moet beschikken over een **Azure-abonnement**. Als u geen Azure-abonnement hebt, kunt u in enkele minuten een gratis proefaccount maken. Zie het artikel [Gratis proefversie](https://azure.microsoft.com/pricing/free-trial/) voor informatie over het verkrijgen van een gratis proefaccount.
-2. U moet gebruikmaken van **Azure Storage**. U gebruikt een Azure-opslagaccount om de gegevens in deze zelfstudie op te slaan. Zie het artikel [Een opslagaccount maken](../../storage/common/storage-account-create.md) als u geen account Azure-opslagaccount hebt. Nadat u het opslag account hebt gemaakt, noteert u de **account naam** en de **toegangs sleutel**. Zie [toegangs sleutels voor opslag accounts beheren](../../storage/common/storage-account-keys-manage.md)voor meer informatie over het ophalen van toegangs sleutels voor opslag accounts.
+2. U moet gebruikmaken van **Azure Storage**. U gebruikt een Azure-opslagaccount om de gegevens in deze zelfstudie op te slaan. Zie het artikel [Een opslagaccount maken](../../storage/common/storage-account-create.md) als u geen account Azure-opslagaccount hebt. Nadat u het opslag account hebt gemaakt, noteert u de **account naam** en de **toegangs sleutel**. Zie voor informatie over het ophalen van de toegangssleutels voor het opslagaccount [Toegangssleutels voor opslagaccounts beheren](../../storage/common/storage-account-keys-manage.md).
 3. Down load en controleer het Hive-query bestand (**HQL**) dat zich bevindt op: [https://adftutorialfiles.blob.core.windows.net/hivetutorial/partitionweblogs.hql](https://adftutorialfiles.blob.core.windows.net/hivetutorial/partitionweblogs.hql) . Met deze query worden invoer gegevens getransformeerd om uitvoer gegevens te produceren.
 4. Down load en controleer het voorbeeld invoer bestand (**input. log**) dat zich bevindt in: [https://adftutorialfiles.blob.core.windows.net/hivetutorial/input.log](https://adftutorialfiles.blob.core.windows.net/hivetutorial/input.log)
 5. Maak een BLOB-container met de naam **adfgetstarted** in uw Azure Blob Storage.

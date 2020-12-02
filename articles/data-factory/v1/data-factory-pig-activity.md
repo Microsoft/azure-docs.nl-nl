@@ -3,8 +3,8 @@ title: Gegevens transformeren met behulp van Pig-activiteit in Azure Data Factor
 description: Meer informatie over hoe u de Pig-activiteit in Azure Data Factory v1 kunt gebruiken om Pig-scripts uit te voeren op een op aanvraag/uw eigen HDInsight-cluster.
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: maghan
 ms.assetid: 5af07a1a-2087-455e-a67b-a79841b4ada5
@@ -12,12 +12,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: c94d66bf98645e12a6c603f2b35d229080717734
-ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
+ms.openlocfilehash: 0ad84a0e848abda1b786958947b4081b11b139a7
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94616855"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96495342"
 ---
 # <a name="transform-data-using-pig-activity-in-azure-data-factory"></a>Gegevens transformeren met behulp van Pig-activiteit in Azure Data Factory
 > [!div class="op_single_selector" title1="Transformatie activiteiten"]
@@ -84,15 +84,15 @@ Met de HDInsight Pig-activiteit in een Data Factory [pijp lijn](data-factory-cre
 
 | Eigenschap | Beschrijving | Vereist |
 | --- | --- | --- |
-| naam |Naam van de activiteit |Yes |
-| beschrijving |Tekst waarin wordt beschreven waarvoor de activiteit wordt gebruikt |No |
-| type |HDinsightPig |Yes |
-| invoer |Een of meer invoer waarden die worden gebruikt door de Pig-activiteit |No |
-| uitvoer |Een of meer uitvoer die wordt geproduceerd door de Pig-activiteit |Yes |
-| linkedServiceName |Verwijzing naar het HDInsight-cluster dat is geregistreerd als een gekoppelde service in Data Factory |Yes |
-| script |Inline van het Pig-script opgeven |No |
-| scriptPath |Sla het Pig-script op in een Azure Blob-opslag en geef het pad naar het bestand op. Gebruik de eigenschap script of scriptPath. Beide kunnen niet tegelijk worden gebruikt. De bestands naam is hoofdletter gevoelig. |No |
-| compliant |Para meters opgeven als sleutel/waarde-paren voor het verwijzen binnen het Pig-script |No |
+| naam |Naam van de activiteit |Ja |
+| beschrijving |Tekst waarin wordt beschreven waarvoor de activiteit wordt gebruikt |Nee |
+| type |HDinsightPig |Ja |
+| invoer |Een of meer invoer waarden die worden gebruikt door de Pig-activiteit |Nee |
+| uitvoer |Een of meer uitvoer die wordt geproduceerd door de Pig-activiteit |Ja |
+| linkedServiceName |Verwijzing naar het HDInsight-cluster dat is geregistreerd als een gekoppelde service in Data Factory |Ja |
+| script |Inline van het Pig-script opgeven |Nee |
+| scriptPath |Sla het Pig-script op in een Azure Blob-opslag en geef het pad naar het bestand op. Gebruik de eigenschap script of scriptPath. Beide kunnen niet tegelijk worden gebruikt. De bestands naam is hoofdletter gevoelig. |Nee |
+| compliant |Para meters opgeven als sleutel/waarde-paren voor het verwijzen binnen het Pig-script |Nee |
 
 ## <a name="example"></a>Voorbeeld
 Laten we eens kijken naar een voor beeld van een spel logboek analyse waarin u de tijd wilt identificeren die wordt besteed aan spelers die games spelen die door uw bedrijf worden gestart.
@@ -210,7 +210,7 @@ Ga als volgt te werk om het Pig-script te gebruiken:
       }
     }
     ```
-* In het Pig-script raadpleegt u de para meters met behulp van ' **$parameterName** ', zoals wordt weer gegeven in het volgende voor beeld:
+* In het Pig-script raadpleegt u de para meters met behulp van '**$parameterName**', zoals wordt weer gegeven in het volgende voor beeld:
 
     ```
     PigSampleIn = LOAD '$Input' USING PigStorage(',') AS (ProfileID:chararray, SessionStart:chararray, Duration:int, SrcIPAddress:chararray, GameType:chararray);

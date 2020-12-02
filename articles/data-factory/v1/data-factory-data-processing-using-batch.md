@@ -3,8 +3,8 @@ title: Grootschalige gegevens sets verwerken met behulp van Data Factory en batc
 description: Hierin wordt beschreven hoe u enorme hoeveel heden gegevens in een Azure Data Factory pijp lijn verwerkt met behulp van de parallelle verwerkings capaciteit van Azure Batch.
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 2abc04a6a4ad6ee1c3e910db0a6be11b8150d52e
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 365de79db450eda897621ccde3b92478ed93ecc3
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96001691"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96496157"
 ---
 # <a name="process-large-scale-datasets-by-using-data-factory-and-batch"></a>Grootschalige gegevens sets verwerken met behulp van Data Factory en batch
 > [!NOTE]
@@ -122,7 +122,7 @@ Maak een batch-pool met ten minste twee reken knooppunten.
 
    f. Selecteer **OK** om de groep te maken.
 
-#### <a name="azure-storage-explorer"></a>Azure Opslagverkenner
+#### <a name="azure-storage-explorer"></a>Azure Storage Explorer
 U gebruikt [Azure Storage Explorer 6](https://azurestorageexplorer.codeplex.com/) of [CloudXplorer](https://clumsyleaf.com/products/cloudxplorer) (van ClumsyLeaf-software) om de gegevens in uw opslag projecten te controleren en te wijzigen. U kunt ook de gegevens in de logboeken van uw in de Cloud gehoste toepassingen controleren en wijzigen.
 
 1. Maak een container met de naam **mycontainer** met persoonlijke toegang (geen anonieme toegang).

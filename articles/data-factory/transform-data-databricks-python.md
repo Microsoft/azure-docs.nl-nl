@@ -7,23 +7,23 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 03/15/2018
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 ms.reviewer: maghan
 manager: anandsub
 ms.custom: devx-track-python
-ms.openlocfilehash: a42c7d911793e1b4ef4183c5d1f02f8be7d4ded3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7e80fad02a186173868a6aa78aedeac0801f199a
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87872290"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96496872"
 ---
 # <a name="transform-data-by-running-a-python-activity-in-azure-databricks"></a>Gegevens transformeren door een python-activiteit uit te voeren in Azure Databricks
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
 
-Met de activiteit python Azure Databricks in een [Data Factory-pijp lijn](concepts-pipelines-activities.md) wordt een python-bestand in uw Azure Databricks-cluster uitgevoerd. In dit artikel vindt u een overzicht van het artikel over de [activiteiten voor gegevens transformatie](transform-data.md)   , dat een algemene informatie bevat over de gegevens transformatie en de ondersteunde transformatie activiteiten.Azure Databricks is een beheerd platform voor het uitvoeren van Apache Spark.
+Met de activiteit python Azure Databricks in een [Data Factory-pijp lijn](concepts-pipelines-activities.md) wordt een python-bestand in uw Azure Databricks-cluster uitgevoerd. In dit artikel vindt u een overzicht van het artikel over de [activiteiten voor gegevens transformatie](transform-data.md) , dat een algemene informatie bevat over de gegevens transformatie en de ondersteunde transformatie activiteiten. Azure Databricks is een beheerd platform voor het uitvoeren van Apache Spark.
 
 Bekijk de volgende video voor een inleiding en demonstratie van deze functie van 11 minuten:
 
@@ -67,9 +67,9 @@ In de volgende tabel worden de JSON-eigenschappen beschreven die in de JSON-defi
 |Eigenschap|Beschrijving|Vereist|
 |---|---|---|
 |naam|De naam van de activiteit in de pijp lijn.|Ja|
-|description|Tekst die beschrijft wat de activiteit doet.|Nee|
+|beschrijving|Tekst die beschrijft wat de activiteit doet.|Nee|
 |type|Voor Databricks python-activiteit is het type activiteit DatabricksSparkPython.|Ja|
-|linkedServiceName|De naam van de gekoppelde Databricks-service waarop de python-activiteit wordt uitgevoerd. Zie het artikel [Compute linked Services](compute-linked-services.md)(Engelstalig) voor meer informatie over deze gekoppelde service   .|Ja|
+|linkedServiceName|De naam van de gekoppelde Databricks-service waarop de python-activiteit wordt uitgevoerd. Zie het artikel [Compute linked Services](compute-linked-services.md) (Engelstalig) voor meer informatie over deze gekoppelde service.|Ja|
 |pythonFile|De URI van het python-bestand dat moet worden uitgevoerd. Alleen DBFS-paden worden ondersteund.|Ja|
 |parameters|Opdracht regel parameters die worden door gegeven aan het python-bestand. Dit is een matrix met teken reeksen.|Nee|
 |bibliotheken|Een lijst met bibliotheken die op het cluster moeten worden geïnstalleerd waarmee de taak wordt uitgevoerd. Dit kan een matrix zijn met <teken reeks, object>|Nee|

@@ -3,8 +3,8 @@ title: Gegevens pijplijnen bewaken en beheren-Azure
 description: Meer informatie over het gebruik van de app voor bewaking en beheer voor het bewaken en beheren van Azure-gegevens fabrieken en-pijp lijnen.
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: maghan
 ms.assetid: f3f07bc4-6dc3-4d4d-ac22-0be62189d578
@@ -12,12 +12,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: e378c1e25fb434e689eadd91e9e8562ffe7e61fd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: afab2b03d31045b9f49f357b49d15368cde898da
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91570091"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96495698"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-monitoring-and-management-app"></a>Azure Data Factory pijp lijnen bewaken en beheren met behulp van de app voor bewaking en beheer
 > [!div class="op_single_selector"]
@@ -47,7 +47,7 @@ U ziet dat de app voor bewaking en beheer geopend is in een afzonderlijk venster
 ![App voor controle en beheer](./media/data-factory-monitor-manage-app/AppLaunched.png)
 
 > [!NOTE]
-> Als u ziet dat de webbrowser is vastgelopen bij "autoriseren...", schakelt u het selectie vakje cookies van derden **en site gegevens blok keren** uit, maakt u een uitzonde ring voor **login.microsoftonline.com**en probeert u de app opnieuw te openen.
+> Als u ziet dat de webbrowser is vastgelopen bij "autoriseren...", schakelt u het selectie vakje cookies van derden **en site gegevens blok keren** uit, maakt u een uitzonde ring voor **login.microsoftonline.com** en probeert u de app opnieuw te openen.
 
 
 In de lijst activiteit Windows in het middelste deel venster ziet u een activiteiten venster voor elke uitvoering van een activiteit. Als u bijvoorbeeld de activiteit hebt gepland om vijf uur per uur te worden uitgevoerd, ziet u vijf activiteiten Vensters die zijn gekoppeld aan vijf gegevens segmenten. Ga als volgt te werk als u geen activiteit Vensters in de lijst onderaan ziet:
@@ -58,7 +58,7 @@ In de lijst activiteit Windows in het middelste deel venster ziet u een activite
 Als u geen Data Factory toepassing hebt om deze stappen te testen met, gaat u naar de zelf studie: [gegevens kopiëren van Blob Storage naar SQL database met Data Factory](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
 ## <a name="understand-the-monitoring-and-management-app"></a>Meer informatie over de app voor bewaking en beheer
-Er zijn drie tabbladen aan de linkerkant: **resource Explorer**, **bewakings weergaven**en **waarschuwingen**. Het eerste tabblad (**resource Explorer**) is standaard geselecteerd.
+Er zijn drie tabbladen aan de linkerkant: **resource Explorer**, **bewakings weergaven** en **waarschuwingen**. Het eerste tabblad (**resource Explorer**) is standaard geselecteerd.
 
 ### <a name="resource-explorer"></a>Resource Verkenner
 U ziet het volgende:
@@ -66,7 +66,7 @@ U ziet het volgende:
 * De resource Explorer- **structuur weergave** in het linkerdeel venster.
 * De **diagram weergave** bovenaan in het middelste deel venster.
 * De lijst met **activiteiten** onder in het middelste deel venster.
-* De tabbladen **Eigenschappen**, **activiteiten venster Verkenner**en **script** in het rechterdeel venster.
+* De tabbladen **Eigenschappen**, **activiteiten venster Verkenner** en **script** in het rechterdeel venster.
 
 In resource Explorer ziet u alle resources (pijp lijnen, gegevens sets, gekoppelde services) in de data factory in een structuur weergave. Wanneer u een object in resource Explorer selecteert:
 
@@ -244,7 +244,7 @@ U kunt het tabblad **script** gebruiken om de JSON-definitie van de geselecteerd
 ![Script tabblad](./media/data-factory-monitor-manage-app/ScriptTab.png)
 
 ## <a name="use-system-views"></a>Systeem weergaven gebruiken
-De bewakings-en beheer-app bevat vooraf ontwikkelde systeem weergaven (Windows**recente**activiteiten, **mislukte activiteit**Vensters, Windows **activiteiten in uitvoering**) waarmee u recente/mislukte/lopende activiteiten Vensters voor uw Data Factory kunt weer geven.
+De bewakings-en beheer-app bevat vooraf ontwikkelde systeem weergaven (Windows **recente** activiteiten, **mislukte activiteit** Vensters, Windows **activiteiten in uitvoering**) waarmee u recente/mislukte/lopende activiteiten Vensters voor uw Data Factory kunt weer geven.
 
 Ga naar het tabblad **controle weergaven** aan de linkerkant door erop te klikken.
 
@@ -266,7 +266,7 @@ Wijzig de instellingen voor de **Start tijd** en de **eind tijd** op de opdracht
 >
 >
 
-Klik in de **lijst activiteit Windows**op de naam van een kolom (bijvoorbeeld: status).
+Klik in de **lijst activiteit Windows** op de naam van een kolom (bijvoorbeeld: status).
 
 ![Menu voor de lijst met activiteiten van Windows](./media/data-factory-monitor-manage-app/ActivityWindowsListColumnMenu.png)
 

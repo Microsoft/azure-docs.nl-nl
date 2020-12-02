@@ -3,8 +3,8 @@ title: MapReduce-programma aanroepen vanuit Azure Data Factory
 description: Meer informatie over hoe u gegevens kunt verwerken door MapReduce-Program ma's uit te voeren op een Azure HDInsight-cluster vanuit een Azure-data factory.
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: maghan
 ms.assetid: c34db93f-570a-44f1-a7d6-00390f4dc0fa
@@ -12,12 +12,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 089a2e6a0b90c1682e2ebdd146626c93cec35f77
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 8bdcaf20330a3700681fd96f858370dd7dcdf4c7
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636847"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96495426"
 ---
 # <a name="invoke-mapreduce-programs-from-data-factory"></a>MapReduce-Program Ma's aanroepen vanuit Data Factory
 > [!div class="op_single_selector" title1="Transformatie activiteiten"]
@@ -49,7 +49,7 @@ Zie [Pig](data-factory-pig-activity.md) en [Hive](data-factory-hive-activity.md)
 ## <a name="json-for-hdinsight-mapreduce-activity"></a>JSON voor HDInsight MapReduce-activiteit
 In de JSON-definitie voor de HDInsight-activiteit: 
 
-1. Stel het **type** van de **activiteit** in op **HDInsight** .
+1. Stel het **type** van de **activiteit** in op **HDInsight**.
 2. Geef de naam op van de klasse voor de eigenschap **className** .
 3. Geef het pad naar het JAR-bestand op, inclusief de bestands naam voor de eigenschap **jarFilePath** .
 4. Geef de gekoppelde service op die verwijst naar de Azure-Blob Storage die het JAR-bestand bevat voor de eigenschap **jarLinkedService** .   
@@ -181,9 +181,9 @@ De pijp lijn in dit voor beeld heeft geen invoer. U geeft een uitvoer gegevensse
 ### <a name="pipeline"></a>Pijplijn
 De pijp lijn in dit voor beeld heeft maar één activiteit van het type: HDInsightMapReduce. Enkele van de belang rijke eigenschappen in de JSON zijn: 
 
-| Eigenschap | Opmerkingen |
+| Eigenschap | Notities |
 |:--- |:--- |
-| type |Het type moet zijn ingesteld op **HDInsightMapReduce** . |
+| type |Het type moet zijn ingesteld op **HDInsightMapReduce**. |
 | className |De naam van de klasse is: **WordCount** |
 | jarFilePath |Het pad naar het jar-bestand met de klasse. Als u de volgende code kopieert/plakt, vergeet dan niet om de naam van het cluster te wijzigen. |
 | jarLinkedService |Azure Storage gekoppelde service die het jar-bestand bevat. Deze gekoppelde service verwijst naar de opslag die is gekoppeld aan het HDInsight-cluster. |

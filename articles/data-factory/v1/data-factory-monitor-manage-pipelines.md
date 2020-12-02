@@ -3,20 +3,20 @@ title: Pijp lijnen bewaken en beheren met behulp van de Azure Portal en Power sh
 description: Meer informatie over het gebruik van de Azure Portal en Azure PowerShell voor het bewaken en beheren van de Azure-gegevens fabrieken en-pijp lijnen die u hebt gemaakt.
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 04/30/2018
-ms.openlocfilehash: 4473df318f65c0e0097aed298d0be57e3bca382b
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 2a30c755bc19849ad3a821cbbc75b787a3b0bb98
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636932"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96495851"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-azure-portal-and-powershell"></a>Azure Data Factory pijp lijnen bewaken en beheren met behulp van de Azure Portal en Power shell
 > [!div class="op_single_selector"]
@@ -79,7 +79,7 @@ U kunt inzoomen, uitzoomen, passend maken, inzoomen op 100%, de indeling van het
 ### <a name="view-the-state-of-each-activity-inside-a-pipeline"></a>De status van elke activiteit in een pijp lijn weer geven
 U kunt de huidige status van een activiteit weer geven door de status weer te geven van de gegevens sets die door de activiteit worden geproduceerd.
 
-Door te dubbel klikken op de **OutputBlobTable** in het **diagram** , kunt u alle segmenten zien die worden geproduceerd door verschillende activiteiten, in een pijp lijn. U kunt zien dat de Kopieer activiteit met succes is uitgevoerd voor de laatste acht uur en dat de segmenten zijn gemaakt met de status **gereed** .  
+Door te dubbel klikken op de **OutputBlobTable** in het **diagram**, kunt u alle segmenten zien die worden geproduceerd door verschillende activiteiten, in een pijp lijn. U kunt zien dat de Kopieer activiteit met succes is uitgevoerd voor de laatste acht uur en dat de segmenten zijn gemaakt met de status **gereed** .  
 
 ![Status van de pijp lijn](./media/data-factory-monitor-manage-pipelines/state-of-pipeline.png)
 
@@ -163,9 +163,9 @@ Nadat u een data factory hebt geïmplementeerd en de pijp lijnen een geldige act
 
 De status overgangs stroom van de gegevensset in data factory is het volgende: wachtende > in uitvoering/in uitvoering (valideren)-> Ready/failed.
 
-Het segment begint met een **wacht** status. er wordt gewacht tot aan de voor waarden wordt voldaan voordat deze wordt uitgevoerd. Vervolgens wordt de activiteit uitgevoerd en wordt het segment de status **in uitvoering** heeft. De uitvoering van de activiteit kan slagen of mislukken. Het segment is gemarkeerd als **gereed** of **mislukt** , op basis van het resultaat van de uitvoering.
+Het segment begint met een **wacht** status. er wordt gewacht tot aan de voor waarden wordt voldaan voordat deze wordt uitgevoerd. Vervolgens wordt de activiteit uitgevoerd en wordt het segment de status **in uitvoering** heeft. De uitvoering van de activiteit kan slagen of mislukken. Het segment is gemarkeerd als **gereed** of **mislukt**, op basis van het resultaat van de uitvoering.
 
-U kunt het segment opnieuw instellen om terug te gaan van de status **gereed** of **mislukt** in de **wacht** stand. U kunt ook de segment status markeren om **over te slaan** , waardoor de activiteit niet kan worden uitgevoerd en niet verwerkt.
+U kunt het segment opnieuw instellen om terug te gaan van de status **gereed** of **mislukt** in de **wacht** stand. U kunt ook de segment status markeren om **over te slaan**, waardoor de activiteit niet kan worden uitgevoerd en niet verwerkt.
 
 ## <a name="pause-and-resume-pipelines"></a>Pijp lijnen onderbreken en hervatten
 U kunt uw pijp lijnen beheren door gebruik te maken van Azure PowerShell. U kunt pijp lijnen bijvoorbeeld onderbreken en hervatten door Azure PowerShell-cmdlets uit te voeren. 
@@ -205,7 +205,7 @@ Azure Data Factory biedt uitgebreide mogelijkheden voor het opsporen en oplossen
 Als de uitvoering van de activiteit in een pijp lijn mislukt, heeft de gegevensset die wordt geproduceerd door de pijp lijn een fout status vanwege de fout. U kunt fouten opsporen en problemen oplossen in Azure Data Factory met behulp van de volgende methoden.
 
 #### <a name="use-the-azure-portal-to-debug-an-error"></a>De Azure Portal gebruiken om een fout op te lossen
-1. Klik op de Blade **tabel** op het probleem segment waarvan de **status** is ingesteld op **mislukt** .
+1. Klik op de Blade **tabel** op het probleem segment waarvan de **status** is ingesteld op **mislukt**.
 
    ![Blade met de tabel met een probleem segment](./media/data-factory-monitor-manage-pipelines/table-blade-with-error.png)
 2. Klik op de Blade **gegevens segment** op de uitvoering van de activiteit die is mislukt.
@@ -216,8 +216,8 @@ Als de uitvoering van de activiteit in een pijp lijn mislukt, heeft de gegevenss
    ![Blade Details uitvoering van activiteit met fout](./media/data-factory-monitor-manage-pipelines/activity-run-details-with-error.png)     
 
 #### <a name="use-powershell-to-debug-an-error"></a>Power shell gebruiken om een fout op te lossen
-1. Start **PowerShell** .
-2. Voer de opdracht **Get-AzDataFactorySlice** uit om de segmenten en hun status weer te geven. Als het goed is, ziet u een segment met de status **mislukt** .        
+1. Start **PowerShell**.
+2. Voer de opdracht **Get-AzDataFactorySlice** uit om de segmenten en hun status weer te geven. Als het goed is, ziet u een segment met de status **mislukt**.        
 
     ```powershell   
     Get-AzDataFactorySlice [-ResourceGroupName] <String> [-DataFactoryName] <String> [-DatasetName] <String> [-StartDateTime] <DateTime> [[-EndDateTime] <DateTime> ] [-Profile <AzureProfile> ] [ <CommonParameters>]
@@ -309,7 +309,7 @@ Set-AzDataFactorySliceStatus -ResourceGroupName ADF -DataFactoryName WikiADF -Da
 
     ![Een nieuwe waarschuwing maken](media/data-factory-monitor-manage-pipelines/v1alerts-image2.png)
 
-3.  Definieer de **waarschuwings voorwaarde** . (Zorg ervoor dat u **gegevens fabrieken** selecteert in het veld **filteren op resource type** .) U kunt ook waarden voor **dimensies** opgeven.
+3.  Definieer de **waarschuwings voorwaarde**. (Zorg ervoor dat u **gegevens fabrieken** selecteert in het veld **filteren op resource type** .) U kunt ook waarden voor **dimensies** opgeven.
 
     ![De waarschuwings voorwaarde definiëren-doel selecteren](media/data-factory-monitor-manage-pipelines/v1alerts-image3.png)
 
@@ -321,7 +321,7 @@ Set-AzDataFactorySliceStatus -ResourceGroupName ADF -DataFactoryName WikiADF -Da
 
     ![De waarschuwings Details definiëren](media/data-factory-monitor-manage-pipelines/v1alerts-image6.png)
 
-5.  Definieer de **actie groep** .
+5.  Definieer de **actie groep**.
 
     ![De actie groep definiëren-een nieuwe actie groep maken](media/data-factory-monitor-manage-pipelines/v1alerts-image7.png)
 

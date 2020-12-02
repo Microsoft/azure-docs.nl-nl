@@ -3,20 +3,20 @@ title: Machine Learning modellen bijwerken met behulp van Azure Data Factory
 description: Hierin wordt beschreven hoe u voorspellende pijp lijnen maakt met behulp van Azure Data Factory v1 en Azure Machine Learning Studio (klassiek)
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/22/2018
-ms.openlocfilehash: c456c7eb31e1e8e66aa3276a0cb5f6f8b39efa9a
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 556936eb6e8c1c1c2dd1fab4ce7dfc1b648710b7
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92631747"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96496599"
 ---
 # <a name="updating-azure-machine-learning-studio-classic-models-using-update-resource-activity"></a>Azure Machine Learning Studio-modellen (klassiek) bijwerken met resource activiteit bijwerken
 
@@ -42,7 +42,7 @@ Dit artikel vormt een aanvulling op het belangrijkste Azure Data Factory-Azure M
 Na verloop van tijd moeten de voorspellende modellen in de Azure Machine Learning Studio (klassieke) Score experimenten opnieuw worden getraind met nieuwe invoer gegevens sets. Wanneer u klaar bent met opnieuw trainen, wilt u de Score-webservice bijwerken met het opnieuw getrainde ML-model. De gebruikelijke stappen voor het inschakelen van training en het bijwerken van Studio-modellen (klassiek) via webservices zijn:
 
 1. Maak een experiment in [Azure machine learning Studio (klassiek)](https://studio.azureml.net).
-2. Wanneer u tevreden bent met het model, gebruikt u Azure Machine Learning Studio (klassiek) voor het publiceren van webservices voor zowel het **trainings experiment** als het scoren/ **voorspellende experiment** .
+2. Wanneer u tevreden bent met het model, gebruikt u Azure Machine Learning Studio (klassiek) voor het publiceren van webservices voor zowel het **trainings experiment** als het scoren/**voorspellende experiment**.
 
 In de volgende tabel worden de webservices beschreven die in dit voor beeld worden gebruikt.  Zie [Software modellen opnieuw trainen Azure machine learning Studio (klassiek)](../../machine-learning/classic/retrain-machine-learning-model.md) voor meer informatie.
 
@@ -53,7 +53,7 @@ In de volgende afbeelding ziet u de relatie tussen training en Score eindpunten 
 
 ![Webservices](./media/data-factory-azure-ml-batch-execution-activity/web-services.png)
 
-U kunt de **training-webservice** aanroepen met behulp van de klassieke activiteit voor het **uitvoeren van Azure machine learning Studio (klassiek)** . Het aanroepen van een training-webservice is hetzelfde als het aanroepen van een Azure Machine Learning Studio (klassieke) webservice (Score Web Service) voor het scoren van gegevens. De voor gaande secties bevatten informatie over het aanroepen van een Azure Machine Learning Studio (klassieke) webservice van een Azure Data Factory pijp lijn. 
+U kunt de **training-webservice** aanroepen met behulp van de klassieke activiteit voor het **uitvoeren van Azure machine learning Studio (klassiek)**. Het aanroepen van een training-webservice is hetzelfde als het aanroepen van een Azure Machine Learning Studio (klassieke) webservice (Score Web Service) voor het scoren van gegevens. De voor gaande secties bevatten informatie over het aanroepen van een Azure Machine Learning Studio (klassieke) webservice van een Azure Data Factory pijp lijn. 
 
 U kunt de **Score-webservice** aanroepen met behulp van de activiteit voor het bijwerken van de **bron van Azure machine learning Studio (klassiek)** om de webservice bij te werken met het nieuwe getrainde model. De volgende voor beelden bieden gekoppelde service definities: 
 
@@ -208,7 +208,7 @@ Het volgende JSON-code fragment definieert een gekoppelde Studio-service die ver
 }
 ```
 
-In **Azure machine learning Studio (klassiek)** gaat u als volgt te werk om waarden op te halen voor **mlEndpoint** en **apiKey** :
+In **Azure machine learning Studio (klassiek)** gaat u als volgt te werk om waarden op te halen voor **mlEndpoint** en **apiKey**:
 
 1. Klik op **WEBservices** in het menu links.
 2. Klik op de training-webservice in de lijst met **webservices** .
@@ -260,7 +260,7 @@ Met de activiteit Studio (klassiek) update resource wordt geen uitvoer gegeneree
 ```
 
 ### <a name="pipeline"></a>Pijplijn
-De pijp lijn heeft twee activiteiten: **AzureMLBatchExecution** en **AzureMLUpdateResource** . De activiteit voor het uitvoeren van de batch uitvoering van Azure Machine Learning Studio (klassiek) neemt de trainings gegevens als invoer en produceert een iLearner-bestand als uitvoer. De activiteit roept de training-webservice (trainings experiment beschikbaar als een webservice) aan met de gegevens voor het invoeren van de training en ontvangt het ilearner-bestand van de webservice. De placeholderBlob is slechts een dummy-uitvoer gegevensset die wordt vereist door de Azure Data Factory-service om de pijp lijn uit te voeren.
+De pijp lijn heeft twee activiteiten: **AzureMLBatchExecution** en **AzureMLUpdateResource**. De activiteit voor het uitvoeren van de batch uitvoering van Azure Machine Learning Studio (klassiek) neemt de trainings gegevens als invoer en produceert een iLearner-bestand als uitvoer. De activiteit roept de training-webservice (trainings experiment beschikbaar als een webservice) aan met de gegevens voor het invoeren van de training en ontvangt het ilearner-bestand van de webservice. De placeholderBlob is slechts een dummy-uitvoer gegevensset die wordt vereist door de Azure Data Factory-service om de pijp lijn uit te voeren.
 
 ![pijplijn diagram](./media/data-factory-azure-ml-batch-execution-activity/update-activity-pipeline-diagram.png)
 

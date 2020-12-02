@@ -2,20 +2,20 @@
 title: Data Factory functies en systeem variabelen
 description: Geeft een lijst van Azure Data Factory functies en systeem variabelen
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: cbc7fd22915af1c9645d915a9898679a3a7c30d0
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 9b5f91655367e866858a04b941cec4ee61dfe180
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92631509"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96495647"
 ---
 # <a name="azure-data-factory---functions-and-system-variables"></a>Azure Data Factory-functies en systeem variabelen
 > [!NOTE]
@@ -80,18 +80,18 @@ De volgende tabellen geven een lijst van alle functies in Azure Data Factory:
 | Tijd |AddHours (X, Y) |X: DateTime <br/><br/>Y: int |Voegt Y-uren toe aan de opgegeven tijd X. <br/><br/>Voorbeeld: `9/5/2013 12:00:00 PM + 2 hours = 9/5/2013 2:00:00 PM` |
 | Tijd |AddMinutes (X, Y) |X: DateTime <br/><br/>Y: int |Voegt Y minuten toe aan X.<br/><br/>Voorbeeld: `9/15/2013 12: 00:00 PM + 15 minutes = 9/15/2013 12: 15:00 PM` |
 | Tijd |StartOfHour (X) |X: datetime |Hiermee wordt de begin tijd voor het uur opgehaald dat wordt vertegenwoordigd door de uur component van X. <br/><br/>Voorbeeld: `StartOfHour of 9/15/2013 05: 10:23 PM is 9/15/2013 05: 00:00 PM` |
-| Date |AddDays (X, Y) |X: DateTime<br/><br/>Y: int |Voegt Y-dagen toe aan X. <br/><br/>Voor beeld: 9/15/2013 12:00:00 uur + 2 dagen = 9/17/2013 12:00:00 PM.<br/><br/>U kunt de dagen ook aftrekken door Y als een negatief getal op te geven.<br/><br/>Bijvoorbeeld: `9/15/2013 12:00:00 PM - 2 days = 9/13/2013 12:00:00 PM`. |
-| Date |AddMonths (X, Y) |X: DateTime<br/><br/>Y: int |Voegt Y-maanden toe aan X.<br/><br/>`Example: 9/15/2013 12:00:00 PM + 1 month = 10/15/2013 12:00:00 PM`.<br/><br/>U kunt ook maanden aftrekken door Y als een negatief getal op te geven.<br/><br/>Bijvoorbeeld: `9/15/2013 12:00:00 PM - 1 month = 8/15/2013 12:00:00 PM`.|
-| Date |AddQuarters (X, Y) |X: DateTime <br/><br/>Y: int |Voegt Y * 3 maanden toe aan X.<br/><br/>Voorbeeld: `9/15/2013 12:00:00 PM + 1 quarter = 12/15/2013 12:00:00 PM` |
-| Date |AddWeeks (X, Y) |X: DateTime<br/><br/>Y: int |Voegt Y * 7 dagen toe aan X<br/><br/>Voor beeld: 9/15/2013 12:00:00 uur + 1 week = 9/22/2013 12:00:00 uur<br/><br/>U kunt ook weken aftrekken door Y als een negatief getal op te geven.<br/><br/>Bijvoorbeeld: `9/15/2013 12:00:00 PM - 1 week = 9/7/2013 12:00:00 PM`. |
-| Date |AddYears (X, Y) |X: DateTime<br/><br/>Y: int |Voegt Y-jaren toe aan X.<br/><br/>`Example: 9/15/2013 12:00:00 PM + 1 year = 9/15/2014 12:00:00 PM`<br/><br/>U kunt ook jaren aftrekken door Y als een negatief getal op te geven.<br/><br/>Bijvoorbeeld: `9/15/2013 12:00:00 PM - 1 year = 9/15/2012 12:00:00 PM`. |
-| Date |Dag (X) |X: DateTime |Hiermee wordt het dag gedeelte van X opgehaald.<br/><br/>Bijvoorbeeld: `Day of 9/15/2013 12:00:00 PM is 9`. |
-| Date |DayOfWeek (X) |X: DateTime |Hiermee wordt het onderdeel dag van de week van X opgehaald.<br/><br/>Bijvoorbeeld: `DayOfWeek of 9/15/2013 12:00:00 PM is Sunday`. |
-| Date |DayOfYear (X) |X: DateTime |Hiermee wordt de dag in het jaar opgehaald die wordt vertegenwoordigd door het jaar gedeelte van X.<br/><br/>Voorbeelden:<br/>`12/1/2015: day 335 of 2015`<br/>`12/31/2015: day 365 of 2015`<br/>`12/31/2016: day 366 of 2016 (Leap Year)` |
-| Date |DaysInMonth (X) |X: DateTime |Hiermee worden de dagen in de maand opgehaald die worden vertegenwoordigd door het onderdeel month van para meter X.<br/><br/>Bijvoorbeeld: `DaysInMonth of 9/15/2013 are 30 since there are 30 days in the September month`. |
-| Date |EndOfDay (X) |X: DateTime |Hiermee wordt de datum/tijd opgehaald die het einde van de dag vertegenwoordigt (dag van het onderdeel) van X.<br/><br/>Bijvoorbeeld: `EndOfDay of 9/15/2013 05:10:23 PM is 9/15/2013 11:59:59 PM`. |
-| Date |EndOfMonth (X) |X: DateTime |Hiermee wordt het einde van de maand opgehaald die wordt vertegenwoordigd door het onderdeel maand van para meter X. <br/><br/>Voor beeld: `EndOfMonth of 9/15/2013 05:10:23 PM is 9/30/2013 11:59:59 PM` (datum tijd die het einde van de maand september aangeeft) |
-| Date |StartOfDay (X) |X: DateTime |Hiermee wordt het begin van de dag opgehaald die wordt vertegenwoordigd door het onderdeel dag van para meter X.<br/><br/>Bijvoorbeeld: `StartOfDay of 9/15/2013 05:10:23 PM is 9/15/2013 12:00:00 AM`. |
+| Datum |AddDays (X, Y) |X: DateTime<br/><br/>Y: int |Voegt Y-dagen toe aan X. <br/><br/>Voor beeld: 9/15/2013 12:00:00 uur + 2 dagen = 9/17/2013 12:00:00 PM.<br/><br/>U kunt de dagen ook aftrekken door Y als een negatief getal op te geven.<br/><br/>Bijvoorbeeld: `9/15/2013 12:00:00 PM - 2 days = 9/13/2013 12:00:00 PM`. |
+| Datum |AddMonths (X, Y) |X: DateTime<br/><br/>Y: int |Voegt Y-maanden toe aan X.<br/><br/>`Example: 9/15/2013 12:00:00 PM + 1 month = 10/15/2013 12:00:00 PM`.<br/><br/>U kunt ook maanden aftrekken door Y als een negatief getal op te geven.<br/><br/>Bijvoorbeeld: `9/15/2013 12:00:00 PM - 1 month = 8/15/2013 12:00:00 PM`.|
+| Datum |AddQuarters (X, Y) |X: DateTime <br/><br/>Y: int |Voegt Y * 3 maanden toe aan X.<br/><br/>Voorbeeld: `9/15/2013 12:00:00 PM + 1 quarter = 12/15/2013 12:00:00 PM` |
+| Datum |AddWeeks (X, Y) |X: DateTime<br/><br/>Y: int |Voegt Y * 7 dagen toe aan X<br/><br/>Voor beeld: 9/15/2013 12:00:00 uur + 1 week = 9/22/2013 12:00:00 uur<br/><br/>U kunt ook weken aftrekken door Y als een negatief getal op te geven.<br/><br/>Bijvoorbeeld: `9/15/2013 12:00:00 PM - 1 week = 9/7/2013 12:00:00 PM`. |
+| Datum |AddYears (X, Y) |X: DateTime<br/><br/>Y: int |Voegt Y-jaren toe aan X.<br/><br/>`Example: 9/15/2013 12:00:00 PM + 1 year = 9/15/2014 12:00:00 PM`<br/><br/>U kunt ook jaren aftrekken door Y als een negatief getal op te geven.<br/><br/>Bijvoorbeeld: `9/15/2013 12:00:00 PM - 1 year = 9/15/2012 12:00:00 PM`. |
+| Datum |Dag (X) |X: DateTime |Hiermee wordt het dag gedeelte van X opgehaald.<br/><br/>Bijvoorbeeld: `Day of 9/15/2013 12:00:00 PM is 9`. |
+| Datum |DayOfWeek (X) |X: DateTime |Hiermee wordt het onderdeel dag van de week van X opgehaald.<br/><br/>Bijvoorbeeld: `DayOfWeek of 9/15/2013 12:00:00 PM is Sunday`. |
+| Datum |DayOfYear (X) |X: DateTime |Hiermee wordt de dag in het jaar opgehaald die wordt vertegenwoordigd door het jaar gedeelte van X.<br/><br/>Voorbeelden:<br/>`12/1/2015: day 335 of 2015`<br/>`12/31/2015: day 365 of 2015`<br/>`12/31/2016: day 366 of 2016 (Leap Year)` |
+| Datum |DaysInMonth (X) |X: DateTime |Hiermee worden de dagen in de maand opgehaald die worden vertegenwoordigd door het onderdeel month van para meter X.<br/><br/>Bijvoorbeeld: `DaysInMonth of 9/15/2013 are 30 since there are 30 days in the September month`. |
+| Datum |EndOfDay (X) |X: DateTime |Hiermee wordt de datum/tijd opgehaald die het einde van de dag vertegenwoordigt (dag van het onderdeel) van X.<br/><br/>Bijvoorbeeld: `EndOfDay of 9/15/2013 05:10:23 PM is 9/15/2013 11:59:59 PM`. |
+| Datum |EndOfMonth (X) |X: DateTime |Hiermee wordt het einde van de maand opgehaald die wordt vertegenwoordigd door het onderdeel maand van para meter X. <br/><br/>Voor beeld: `EndOfMonth of 9/15/2013 05:10:23 PM is 9/30/2013 11:59:59 PM` (datum tijd die het einde van de maand september aangeeft) |
+| Datum |StartOfDay (X) |X: DateTime |Hiermee wordt het begin van de dag opgehaald die wordt vertegenwoordigd door het onderdeel dag van para meter X.<br/><br/>Bijvoorbeeld: `StartOfDay of 9/15/2013 05:10:23 PM is 9/15/2013 12:00:00 AM`. |
 | DateTime |Van (X) |X: teken reeks |Teken reeks X naar een datum tijd parseren. |
 | DateTime |Maten (X) |X: DateTime |Hiermee wordt de eigenschap Ticks van de para meter X opgehaald. Eén streepje is gelijk aan 100 nano seconden. De waarde van deze eigenschap vertegenwoordigt het aantal maat streepjes dat sinds 12:00:00 middernacht, 1 januari 0001 is verstreken. |
 | Tekst |Indeling (X) |X: teken reeks variabele |Hiermee wordt de tekst opgemaakt (gebruik `\\'` combi natie met escape `'` -teken).|

@@ -3,20 +3,20 @@ title: Gegevens sets maken in Azure Data Factory
 description: Meer informatie over het maken van gegevens sets in Azure Data Factory, met voor beelden die gebruikmaken van eigenschappen zoals offset en anchorDateTime.
 services: data-factory
 documentationcenter: ''
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: jroth
 ms.reviewer: maghan
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/10/2018
-ms.openlocfilehash: 45150e00db1885a4ca4d083a8a54cbfd4da0bb10
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 9bf6ff2971de57338dc299d48e24f6ffebd4b6b5
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96456927"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96495936"
 ---
 # <a name="datasets-in-azure-data-factory-version-1"></a>Gegevens sets in Azure Data Factory (versie 1)
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]

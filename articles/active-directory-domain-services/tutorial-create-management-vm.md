@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/06/2020
 ms.author: joflore
-ms.openlocfilehash: cc183a047023e5377d7a45088b7c9ae2407f6829
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 52a97b824824d8e9eaf79cfa4a447494bf1525cf
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91967117"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96175148"
 ---
 # <a name="tutorial-create-a-management-vm-to-configure-and-administer-an-azure-active-directory-domain-services-managed-domain"></a>Zelfstudie: Een beheer-VM maken om een door Azure AD Domain Services beheerd domein te configureren en te beheren
 
@@ -160,4 +160,4 @@ Schakel het veilige Lightweight Directory Access Protocol (LDAPS) in om veilig m
 [associate-azure-ad-tenant]: ../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md
 [create-azure-ad-ds-instance]: tutorial-create-instance.md
 [create-join-windows-vm]: join-windows-vm.md
-[azure-bastion]: ../bastion/bastion-create-host-portal.md
+[azure-bastion]: ../bastion/tutorial-create-host-portal.md

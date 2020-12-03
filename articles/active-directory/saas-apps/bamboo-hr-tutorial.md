@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/02/2020
 ms.author: jeedes
-ms.openlocfilehash: 8025728ffc40aca27807068eff29f5a889a8d76e
-ms.sourcegitcommit: 46c5ffd69fa7bc71102737d1fab4338ca782b6f1
+ms.openlocfilehash: 3926e98cb55d1afd80caf4af5d67910b66c09cdd
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94331393"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96180333"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bamboohr"></a>Zelfstudie: Azure Active Directory-integratie met BambooHR
 
@@ -178,9 +178,9 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 2. Ga rechtstreeks naar de aanmeldings-URL van BambooHR en start de aanmeldingsstroom daar.
 
-3. U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u in Toegangsvenster op de BambooHR-tegel klikt, wordt u omgeleid naar de aanmeldings-URL voor BambooHR. Zie [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+3. U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u in Toegangsvenster op de BambooHR-tegel klikt, wordt u omgeleid naar de aanmeldings-URL voor BambooHR. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Wanneer u BambooHR hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor in realtime beveiliging wordt geboden tegen exfiltratie en infiltratie van gevoelige gegevens van uw organisatie. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+Wanneer u BambooHR hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor in realtime beveiliging wordt geboden tegen exfiltratie en infiltratie van gevoelige gegevens van uw organisatie. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

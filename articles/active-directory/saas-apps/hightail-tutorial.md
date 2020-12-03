@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/06/2020
 ms.author: jeedes
-ms.openlocfilehash: 138eecce6160cb272356a626d10ce3d19f41229a
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 29f2610c371ecd567a18dc70e51b3eb34754d8ff
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686290"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96180853"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-hightail"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met Hightail
 
@@ -185,9 +185,9 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Klik op **Deze app testen** in Azure Portal. U wordt automatisch aangemeld bij de instantie van Hightail waarvoor u eenmalige aanmelding hebt ingesteld 
 
-U kunt ook het Microsoft-toegangsvenster gebruiken om de toepassing in een willekeurige modus te testen. U kunt op de Hightail-tegel klikken in het Toegangsvenster. Als er geconfigureerd is in SP-modus, wordt u omgeleid naar de aanmeldingspagina van de applicatie. Hier kunt u de aanmeldingsstroom initiëren. Als er geconfigureerd is in IDP-modus, wordt u automatisch aangemeld bij de instantie van Hightail waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+U kunt ook het Microsoft-toegangsvenster gebruiken om de toepassing in een willekeurige modus te testen. U kunt op de Hightail-tegel klikken in het Toegangsvenster. Als er geconfigureerd is in SP-modus, wordt u omgeleid naar de aanmeldingspagina van de applicatie. Hier kunt u de aanmeldingsstroom initiëren. Als er geconfigureerd is in IDP-modus, wordt u automatisch aangemeld bij de instantie van Hightail waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u Hightail hebt geconfigureerd, kunt u sessiebeheer afdwingen. Hierdoor wordt uw organisatie in real time beveiligd tegen exfiltratie en infiltratie van gevoelige gegevens. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+Zodra u Hightail hebt geconfigureerd, kunt u sessiebeheer afdwingen. Hierdoor wordt uw organisatie in real time beveiligd tegen exfiltratie en infiltratie van gevoelige gegevens. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

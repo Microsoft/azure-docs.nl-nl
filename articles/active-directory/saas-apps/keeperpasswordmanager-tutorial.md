@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/13/2020
 ms.author: jeedes
-ms.openlocfilehash: ef49a8a3ac1779071a4d4906bfd053530063102d
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: b70c50e7c2900f884dd4d91c6650205bc626326e
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94984461"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96178036"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-keeper-password-manager--digital-vault"></a>Zelfstudie: Azure Active Directory-integratie met Keeper Password Manager & Digital Vault
 
@@ -157,7 +157,7 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * U kunt rechtstreeks naar de aanmeldings-URL voor de toepassing gaan en de aanmelding vanaf daar initiëren.
 
-* U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u de tegel **Keeper Password Manager & Digital Vault** in het Toegangsvenster selecteert, wordt u omgeleid naar de aanmeldings-URL voor de toepassing. Zie [Aanmelden bij en het starten van apps vanuit de Mijn apps-portal](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) voor meer informatie over het Toegangsvenster.
+* U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u de tegel **Keeper Password Manager & Digital Vault** in het Toegangsvenster selecteert, wordt u omgeleid naar de aanmeldings-URL voor de toepassing. Zie [Aanmelden bij en het starten van apps vanuit de Mijn apps-portal](../user-help/my-apps-portal-end-user-access.md) voor meer informatie over het Toegangsvenster.
 
 
 ## <a name="next-steps"></a>Volgende stappen

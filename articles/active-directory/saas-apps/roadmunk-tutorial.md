@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/28/2020
 ms.author: jeedes
-ms.openlocfilehash: 26424106098a8385faff5ab6d3de33d98576ef4e
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: a7f4682be2f7fbf308aba32768efa932f27b7a87
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94381300"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96181694"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-roadmunk"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Roadmunk
 
@@ -171,12 +171,10 @@ In dit gedeelte geeft u B.Simon toestemming voor het gebruik eenmalige aanmeldin
 
 In deze sectie test u met behulp van het toegangsvenster de configuratie voor eenmalige aanmelding van Azure AD.
 
-Wanneer u in de Mijn apps-portal op de tegel **Roadmunk** klikt, wordt u automatisch aangemeld bij het Roadmunk-account waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Aanmelden bij en het starten van apps vanuit de Mijn apps-portal](https://docs.microsoft.com/azure/active-directory/user-help/my-apps-portal-end-user-access) voor meer informatie.
+Wanneer u in de Mijn apps-portal op de tegel **Roadmunk** klikt, wordt u automatisch aangemeld bij het Roadmunk-account waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Aanmelden bij en het starten van apps vanuit de Mijn apps-portal](../user-help/my-apps-portal-end-user-access.md) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Nadat u Roadmunk hebt geconfigureerd, kunt u sessiebeheer afdwingen. Sessiebeheer beschermt in realtime tegen de exfiltratie en infiltratie van gevoelige bedrijfsgegevens. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. 
 
-Meer informatie over het [afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+Meer informatie over het [afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

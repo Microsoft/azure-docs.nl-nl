@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/09/2020
 ms.author: jeedes
-ms.openlocfilehash: 9bebb11c3a1162a0a7b72140f7d3812f86f793ce
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.openlocfilehash: 9272114dd472717e59680b40c07d8435dea19682
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95791367"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96181965"
 ---
 # <a name="tutorial-integrate-azure-ad-single-sign-on-sso-with-netsuite"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met NetSuite
 
@@ -253,7 +253,7 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 - Klik op Deze toepassing testen in de Azure Portal. U wordt automatisch aangemeld bij het exemplaar van NestSuite waarvoor u eenmalige aanmelding hebt ingesteld
 
-- U kunt Microsoft Mijn apps gebruiken. Wanneer u in de Mijn apps op de tegel NetSuite klikt, zou u automatisch moeten worden aangemeld bij het exemplaar van in het toegangsvenster waarvoor u de eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+- U kunt Microsoft Mijn apps gebruiken. Wanneer u in de Mijn apps op de tegel NetSuite klikt, zou u automatisch moeten worden aangemeld bij het exemplaar van in het toegangsvenster waarvoor u de eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -12,11 +12,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f02ec2220827fbec8c981ab3a1859d633675a6f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91313260"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96176202"
 ---
 # <a name="tutorial--integrate-a-single-ad-forest-using-pass-through-authentication-pta"></a>Zelfstudie:  Een enkele AD-forest integreren met pass-through-verificatie (PTA)
 
@@ -188,7 +188,7 @@ Nu moeten we een Azure Active Directory-tenant maken, zodat we onze gebruikers k
 2. Selecteer het **plus-pictogram (+)** en zoek naar **Azure Active Directory**.
 3. Selecteer **Azure Active Directory** in de zoekresultaten.
 4. Selecteer **Maken**.</br>
-![Schermopname die laat zien hoe u een Azure Active Directory-account maakt.](media/tutorial-password-hash-sync/create1.png)</br>
+![Schermopname waarin u ziet hoe u een Azure Active Directory-account maakt.](media/tutorial-password-hash-sync/create1.png)</br>
 5. Geef een **naam op voor de organisatie**, evenals een **oorspronkelijke domeinnaam**. Selecteer vervolgens **Maken**. Er wordt nu een map aangemaakt.
 6. Als die klaar is, klikt u op de koppeling **hier** om de adreslijst te beheren.
 
@@ -196,7 +196,7 @@ Nu moeten we een Azure Active Directory-tenant maken, zodat we onze gebruikers k
 De Microsoft Azure Active Directory-tenant is klaar en we gaan nu een globale beheerdersaccount maken.  Dit account wordt gebruikt voor het maken van het Azure AD-Connector-account tijdens de installatie van Azure Active Directory Connect.  Het Azure AD-Connector-account wordt gebruikt voor het wegschrijven van gegevens naar Microsoft Azure Active Directory.   Ga als volgt te werk om het globale beheerdersaccount te maken.
 
 1.  Onder **Beheren**, selecteer **Gebruikers**.</br>
-![Schermopname van de geselecteerde Gebruikersoptie in de sectie Beheren waar u een globale beheerder maakt in Azure Active Directory.](media/tutorial-password-hash-sync/gadmin1.png)</br>
+![Schermopname van de geselecteerde optie Gebruiker in de sectie Beheren waar u een globale beheerder maakt in Azure Active Directory.](media/tutorial-password-hash-sync/gadmin1.png)</br>
 2.  Selecteer **Alle gebruikers** en selecteer vervolgens **+ Nieuwe gebruiker**.
 3.  Geef een naam en gebruikersnaam op voor deze gebruiker. Dit is de globale beheerder voor de tenant. U moet ook de **Maprol** wijzigen naar **Globale beheerder.** U kunt ook het tijdelijke wachtwoord weergeven. Selecteer **Maken** wanneer u klaar bent.</br>
 ![Schermopname van de knop Maken die u selecteert bij het maken van een globale beheerder in Azure Active Directory.](media/tutorial-password-hash-sync/gadmin2.png)</br>

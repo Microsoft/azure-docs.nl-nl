@@ -4,12 +4,12 @@ description: In dit artikel wordt beschreven hoe AWS-VM's naar Azure migreert me
 ms.topic: tutorial
 ms.date: 08/19/2020
 ms.custom: MVC
-ms.openlocfilehash: 62bfad2cc92e7af61a10360878ebaa3093897e97
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 12785d1e65caf11b24102d2a9c186fe0adcb1fd3
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92310726"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302662"
 ---
 # <a name="discover-assess-and-migrate-amazon-web-services-aws-vms-to-azure"></a>Amazon Web Services-VM's (AWS) ontdekken, beoordelen en migreren naar Azure
 
@@ -77,7 +77,7 @@ Zo bereidt u Azure voor op migratie met Azure Migrate: tool Server Migration van
 
 **Taak** | **Details**
 --- | ---
-**Maak een Azure Migrate-project** | Uw Azure-account heeft Inzender- of Eigenaarsmachtigingen nodig om een project te maken.
+**Maak een Azure Migrate-project** | Uw Azure-account heeft inzender- of eigenaarsmachtigingen nodig [om een nieuw project te maken](https://docs.microsoft.com/azure/migrate/create-manage-projects).
 **Machtigingen verifiëren voor uw Azure-account** | U hebt voor uw Azure-account machtigingen nodig om een virtuele machine te maken en naar een beheerde Azure-schijf te schrijven.
 
 ### <a name="assign-permissions-to-create-project"></a>Machtigingen toewijzen voor het maken van een project
@@ -125,30 +125,6 @@ Bereid de implementatie van het apparaat als volgt voor:
 
 - Het replicatieapparaat maakt gebruik van MySQL. Bekijk de [opties](migrate-replication-appliance.md#mysql-installation) voor het installeren van MySQL op het apparaat.
 - Controleer de vereiste Azure-URL's voor het replicatieapparaat om toegang te krijgen tot [openbare](migrate-replication-appliance.md#url-access) clouds en [overheidsclouds](migrate-replication-appliance.md#azure-government-url-access).
-
-## <a name="add-the-server-migration-tool"></a>Het hulpprogramma Server Migration toevoegen
-
-Stel een Azure Migrate-project in en voeg daarna het hulpprogramma Server Migration eraan toe.
-
-1. Zoek in de Azure-portal in **Alle services** naar **Azure Migrate**.
-2. Onder **Services** selecteert u **Azure Migrate**.
-3. Klik in **Overzicht** op **Servers evalueren en migreren**.
-4. Klik onder **Servers detecteren, evalueren en migreren** op **Servers evalueren en migreren**.
-
-    ![Servers detecteren en evalueren](./media/tutorial-migrate-physical-virtual-machines/assess-migrate.png)
-
-5. Klik in **Servers detecteren, evalueren en migreren** op **Hulpprogramma's toevoegen**.
-6. Selecteer in **Project migreren** uw Azure-abonnement en maak een resourcegroep als u er nog geen hebt.
-7. Geef in **Projectdetails** de projectnaam en geografie op waarin u het project wilt maken en klik op **Volgende**. Bekijk ondersteunde geografische regio's voor [openbare](migrate-support-matrix.md#supported-geographies-public-cloud) clouds en [overheidsclouds](migrate-support-matrix.md#supported-geographies-azure-government).
-    - Het geografische gebied voor het project wordt alleen gebruikt om de metagegevens op te slaan die worden verzameld van AWS-computers.
-    - Wanneer u een migratie uitvoert, kunt u elke gewenste doelregio selecteren.
-
-    ![Een Azure Migrate-project maken](./media/tutorial-migrate-physical-virtual-machines/migrate-project.png)
-
-8. Selecteer in **Evaluatieprogramma selecteren** de optie **Het toevoegen van een evaluatieprogramma voorlopig overslaan** > **Volgende**.
-9. Selecteer in **Migratieprogramma selecteren** de optie **Azure Migrate: Server Migration** > **Volgende**.
-10. Controleer in **Beoordelen en hulpprogramma's toevoegen** de instellingen en klik op **Hulpmiddelen toevoegen**
-11. Nadat u het hulpprogramma hebt toegevoegd, wordt het weergegeven in het Azure Migrate-project > **Servers** > **Migratieprogramma's**.
 
 ## <a name="set-up-the-replication-appliance"></a>Het replicatieapparaat instellen
 

@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: tutorial
 ms.date: 10/23/2020
 ms.author: dech
-ms.openlocfilehash: 7823c63cf618808cb1ab4400c39f4bc64b7af338
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 1cee4d2ad1bc7f362a045a5991624ec43521b8d2
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427527"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96341645"
 ---
 # <a name="tutorial-use-data-migration-tool-to-migrate-your-data-to-azure-cosmos-db"></a>Zelfstudie: Hulpprogramma voor gegevensmigratie gebruiken voor het migreren van uw gegevens naar Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -24,7 +24,7 @@ Deze zelfstudie bevat instructies over het gebruik van het Azure Cosmos DB-hulpp
 
 * **[SQL-API](./introduction.md)** : u kunt een van de bronopties in het hulpprogramma voor gegevensmigratie gebruiken om op kleine schaal gegevens te importeren. [Meer informatie over migratieopties voor het importeren van gegevens op grote schaal](cosmosdb-migrationchoices.md).
 * **[Table-API](table-introduction.md)** : u kunt het hulpprogramma voor gegevensmigratie of [AzCopy](table-import.md#migrate-data-by-using-azcopy) gebruiken om gegevens te importeren. Zie [Gegevens importeren voor gebruik met de Azure Cosmos DB Table-API](table-import.md) voor meer informatie.
-* **[API van Azure Cosmos DB voor MongoDB](mongodb-introduction.md)** : het hulpprogramma voor gegevensmigratie biedt geen ondersteuning voor de API van Azure Cosmos DB voor MongoDB, noch als bron noch als doel. Raadpleeg [MongoDB-gegevens migreren naar een Cosmos-database met de API van Cosmos DB voor MongoDB](../dms/tutorial-mongodb-cosmos-db.md?toc=%252fazure%252fcosmos-db%252ftoc.json%253ftoc%253d%252fazure%252fcosmos-db%252ftoc.json) voor instructies voor het migreren van de gegevens naar of uit verzamelingen in Azure Cosmos DB. U kunt het hulpprogramma voor gegevensmigratie nog wel gebruiken om gegevens vanaf MongoDB te exporteren naar Azure Cosmos DB SQL-API-verzamelingen voor gebruik met de SQL-API.
+* **[API van Azure Cosmos DB voor MongoDB](mongodb-introduction.md)** : het hulpprogramma voor gegevensmigratie biedt geen ondersteuning voor de API van Azure Cosmos DB voor MongoDB, noch als bron noch als doel. Raadpleeg [MongoDB-gegevens migreren naar een Cosmos-database met de API van Cosmos DB voor MongoDB](../dms/tutorial-mongodb-cosmos-db.md?toc=%2fazure%2fcosmos-db%2ftoc.json%253ftoc%253d%2fazure%2fcosmos-db%2ftoc.json) voor instructies voor het migreren van de gegevens naar of uit verzamelingen in Azure Cosmos DB. U kunt het hulpprogramma voor gegevensmigratie nog wel gebruiken om gegevens vanaf MongoDB te exporteren naar Azure Cosmos DB SQL-API-verzamelingen voor gebruik met de SQL-API.
 * **[Cassandra-API](graph-introduction.md)** : het hulpprogramma voor gegevensmigratie is geen ondersteund importprogramma voor Cassandra-API-accounts. [Meer informatie over migratieopties voor het importeren van gegevens in Cassandra-API](cosmosdb-migrationchoices.md#azure-cosmos-db-cassandra-api)
 * **[Gremlin-API](graph-introduction.md)** : het hulpprogramma voor gegevensmigratie is momenteel geen ondersteund importprogramma voor Gremlin API-accounts. [Meer informatie over migratieopties voor het importeren van gegevens in Gremlin-API](cosmosdb-migrationchoices.md#other-apis) 
 
@@ -70,8 +70,8 @@ Het hulpprogramma voor importeren bevat een grafische gebruikersinterface (dtui.
 
 De broncode van het hulpprogramma voor migratie is beschikbaar op GitHub in [deze opslagplaats](https://github.com/azure/azure-documentdb-datamigrationtool). U kunt de oplossing lokaal downloaden en compileren, of u kunt [een vooraf gecompileerd binair bestand downloaden](https://aka.ms/csdmtool). Vervolgens voert u een van de volgende opdrachten uit:
 
-* **Dtui.exe** : grafische-interfaceversie van het hulpprogramma
-* **Dt.exe** : opdrachtregelversie van het hulpprogramma
+* **Dtui.exe**: grafische-interfaceversie van het hulpprogramma
+* **Dt.exe**: opdrachtregelversie van het hulpprogramma
 
 ## <a name="select-data-source"></a>Gegevensbron selecteren
 
@@ -131,7 +131,7 @@ dt.exe /s:JsonFile /s.Files:D:\\CompanyData\\Companies.json /t:DocumentDBBulk /t
 ## <a name="import-from-mongodb"></a><a id="MongoDB"></a>Importeren vanaf MongoDB
 
 > [!IMPORTANT]
-> Volg deze [instructies](../dms/tutorial-mongodb-cosmos-db.md?toc=%252fazure%252fcosmos-db%252ftoc.json%253ftoc%253d%252fazure%252fcosmos-db%252ftoc.json) als u importeert naar een Cosmos DB-account dat is geconfigureerd met de API van Azure Cosmos DB voor MongoDB.
+> Volg deze [instructies](../dms/tutorial-mongodb-cosmos-db.md?toc=%2fazure%2fcosmos-db%2ftoc.json%253ftoc%253d%2fazure%2fcosmos-db%2ftoc.json) als u importeert naar een Cosmos DB-account dat is geconfigureerd met de API van Azure Cosmos DB voor MongoDB.
 
 Met de importoptie voor MongoDB-bronnen kunt u importeren vanuit een enkele MongoDB-verzameling, eventueel documenten filteren met een query, en de documentstructuur wijzigen met een projectie.  
 
@@ -159,7 +159,7 @@ dt.exe /s:MongoDB /s.ConnectionString:mongodb://<dbuser>:<dbpassword>@<host>:<po
 ## <a name="import-mongodb-export-files"></a><a id="MongoDBExport"></a>MongoDB-exportbestanden
 
 > [!IMPORTANT]
-> Volg deze [instructies](../dms/tutorial-mongodb-cosmos-db.md?toc=%252fazure%252fcosmos-db%252ftoc.json%253ftoc%253d%252fazure%252fcosmos-db%252ftoc.json) als u importeert naar een Azure Cosmos DB-account met ondersteuning voor MongoDB.
+> Volg deze [instructies](../dms/tutorial-mongodb-cosmos-db.md?toc=%2fazure%2fcosmos-db%2ftoc.json%253ftoc%253d%2fazure%2fcosmos-db%2ftoc.json) als u importeert naar een Azure Cosmos DB-account met ondersteuning voor MongoDB.
 
 Met de importoptie voor MongoDB-export van JSON-bronbestanden kunt u een of meer JSON-bestanden importeren die zijn geproduceerd vanaf het hulpprogramma mongoexport.  
 
@@ -386,7 +386,7 @@ De verbindingsreeks van het Azure Cosmos DB-account kan worden opgehaald uit de 
 > [!NOTE]
 > Gebruik de opdracht Verifiëren om te controleren of de Azure Cosmos DB-instantie die is opgegeven in het verbindingsreeksveld, kan worden geopend.
 
-Als u wilt importeren naar één verzameling, voert u de naam in van de verzameling waaruit gegevens moeten worden geïmporteerd en klikt u op de knop Toevoegen. Als u meer dan één verzameling wilt importeren, voert u ofwel de verzamelingsnaam afzonderlijk in of gebruikt u de volgende syntaxis om meer dan één verzameling op te geven: *collection_prefix* [begin index - eind index]. Houd rekening met de volgende richtlijnen wanneer u meer dan één verzameling opgeeft met de hiervoor genoemde syntaxis:
+Als u wilt importeren naar één verzameling, voert u de naam in van de verzameling waaruit gegevens moeten worden geïmporteerd en klikt u op de knop Toevoegen. Als u meer dan één verzameling wilt importeren, voert u ofwel de verzamelingsnaam afzonderlijk in of gebruikt u de volgende syntaxis om meer dan één verzameling op te geven: *collection_prefix*[begin index - eind index]. Houd rekening met de volgende richtlijnen wanneer u meer dan één verzameling opgeeft met de hiervoor genoemde syntaxis:
 
 1. Alleen bereiknaampatronen met gehele getallen worden ondersteund. Wanneer u bijvoorbeeld collection[0-3] opgeeft, worden de volgende verzamelingen gemaakt: collection0, collection1, collection2, collection3.
 2. U kunt een verkorte syntaxis gebruiken: met collection[3] maakt u dezelfde set verzamelingen die in stap 1 worden genoemd.
@@ -445,7 +445,7 @@ U kunt de verbindingsreeks voor het Azure Cosmos DB-account ophalen op de pagina
 > [!NOTE]
 > Gebruik de opdracht Verifiëren om te controleren of de Azure Cosmos DB-instantie die is opgegeven in het verbindingsreeksveld, kan worden geopend.
 
-Als u wilt importeren naar één verzameling, voert u de naam in van de verzameling waarin gegevens moeten worden geïmporteerd, en klikt u op de knop Toevoegen. Als u naar meer dan één verzameling wilt importeren, voert u elke verzamelingsnaam afzonderlijk in. U kunt ook de volgende syntaxis gebruiken om meer dan één verzameling op te geven: *collection_prefix* [begin index - eind index]. Houd rekening met de volgende richtlijnen wanneer u meer dan één verzameling opgeeft met de hiervoor genoemde syntaxis:
+Als u wilt importeren naar één verzameling, voert u de naam in van de verzameling waarin gegevens moeten worden geïmporteerd, en klikt u op de knop Toevoegen. Als u naar meer dan één verzameling wilt importeren, voert u elke verzamelingsnaam afzonderlijk in. U kunt ook de volgende syntaxis gebruiken om meer dan één verzameling op te geven: *collection_prefix*[begin index - eind index]. Houd rekening met de volgende richtlijnen wanneer u meer dan één verzameling opgeeft met de hiervoor genoemde syntaxis:
 
 1. Alleen bereiknaampatronen met gehele getallen worden ondersteund. Wanneer u bijvoorbeeld collection[0-3] opgeeft, worden de volgende verzamelingen gemaakt: collection0, collection1, collection2, collection3.
 2. U kunt een verkorte syntaxis gebruiken: met collection[3] maakt u dezelfde set verzamelingen die in stap 1 worden genoemd.

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/31/2020
 ms.author: jeedes
-ms.openlocfilehash: b7ee726c9a5501235123a393d144c56a0342a5ee
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: af001ddd8dc468d06706e63eaf092d1179fe3fdc
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748406"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96181370"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workday"></a>Zelfstudie: Integratie van eenmalige aanmelding (SSO) van Azure Active Directory met Workday
 
@@ -90,7 +90,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     > Dit zijn niet de echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL en afmeldings-URL. Uw antwoord-URL moet een subdomein hebben, zoals www, wd2, wd3, wd3-impl, wd5 of wd5-impl.
     > Iets zoals `http://www.myworkday.com` gebruiken werkt, maar `http://myworkday.com` niet. Neem contact op met het [Workday-ondersteuningsteam](https://www.workday.com/en-us/partners-services/services/support.html) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
-1. In de Workday-toepassing worden de SAML-asserties in een specifieke indeling verwacht. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van uw SAML-tokenkenmerken. In de volgende schermafbeelding ziet u de lijst met standaardkenmerken, waarbij **nameidentifier** is toegewezen aan **user.userprincipalname**. In de Workday-toepassing wordt verwacht dat **nameidentifier** is toegewezen aan **user.mail** , **UPN** enzovoort. Daarom moet u de kenmerktoewijzing bewerken door op het pictogram **Bewerken** te klikken en de kenmerktoewijzing te wijzigen.
+1. In de Workday-toepassing worden de SAML-asserties in een specifieke indeling verwacht. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van uw SAML-tokenkenmerken. In de volgende schermafbeelding ziet u de lijst met standaardkenmerken, waarbij **nameidentifier** is toegewezen aan **user.userprincipalname**. In de Workday-toepassing wordt verwacht dat **nameidentifier** is toegewezen aan **user.mail**, **UPN** enzovoort. Daarom moet u de kenmerktoewijzing bewerken door op het pictogram **Bewerken** te klikken en de kenmerktoewijzing te wijzigen.
 
     ![Schermopname die Gebruikerskenmerken toont met het pictogram Bewerken geselecteerd.](common/edit-attribute.png)
 
@@ -119,9 +119,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
@@ -162,9 +162,9 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
     ![SAML-id-providers 1](./media/workday-tutorial/IC7829271.png "SAML-id-providers")
 
-    * Typ in het tekstvak **Id-providernaam** de naam van een provider (bijvoorbeeld *SPInitiatedSSO* ).
+    * Typ in het tekstvak **Id-providernaam** de naam van een provider (bijvoorbeeld *SPInitiatedSSO*).
 
-    * Kopieer in de sectie **Workday instellen** van het Azure Portal de **Azure AD-id** -waarde en plak deze in het tekstvak **Verlener**.
+    * Kopieer in de sectie **Workday instellen** van het Azure Portal de **Azure AD-id**-waarde en plak deze in het tekstvak **Verlener**.
 
     * Open in de Azure Portal het gedownloade **Certificaat** in Kladblok en plak de inhoud in het tekstvak **x.509 Certificaat**.
 
@@ -189,7 +189,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
     ![SAML-id-providers 3](./media/workday-tutorial/saml-identity-provider-3.png "SAML-id-providers")
 
-    * Kopieer in de sectie **Workday instellen** van het Azure Portal de **Aanmeldings-URL** -waarde en plak deze in het tekstvak **IdP SSO Service-URL**.
+    * Kopieer in de sectie **Workday instellen** van het Azure Portal de **Aanmeldings-URL**-waarde en plak deze in het tekstvak **IdP SSO Service-URL**.
 
     * In het tekstvak **Gebruikt voor omgevingen** selecteert u de gewenste omgevingsnamen in de vervolgkeuzelijst.
 
@@ -214,7 +214,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 1. Meld u als beheerder aan bij de Workday-bedrijfssite.
 
-1. Klik in de rechter bovenhoek op **Profiel** , selecteer **Home** en klik op **Map** op het tabblad **Toepassingen**. 
+1. Klik in de rechter bovenhoek op **Profiel**, selecteer **Home** en klik op **Map** op het tabblad **Toepassingen**. 
 
 1. Selecteer op de pagina **Map** **Werkrollen zoeken** op het tabblad weergave.
 
@@ -237,8 +237,8 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 2. Ga rechtstreeks naar de aanmeldings-URL van Workday en initieer daar de aanmeldingsstroom.
 
-3. U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u op de tegel Workday klikt in het toegangsvenster, zou u automatisch moeten worden aangemeld bij het exemplaar van Workday waarvoor u de eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+3. U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u op de tegel Workday klikt in het toegangsvenster, zou u automatisch moeten worden aangemeld bij het exemplaar van Workday waarvoor u de eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u Workday hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-aad)
+Zodra u Workday hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-aad)

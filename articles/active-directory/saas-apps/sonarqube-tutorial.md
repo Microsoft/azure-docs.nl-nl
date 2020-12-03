@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/29/2020
 ms.author: jeedes
-ms.openlocfilehash: 455c15ec97d5621b51a4d8af87cc3a2968dd65dd
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: f756e738989775bf9c06b44a03f002c14f42e3ac
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93095969"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182322"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sonarqube"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Sonarqube
 
@@ -170,8 +170,8 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 2. Ga rechtstreeks naar de aanmeldings-URL van Sonarqube en start daar de aanmeldingsstroom.
 
-3. U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u in Toegangsvenster op de Sonarqube-tegel klikt, wordt u omgeleid naar de aanmeldings-URL voor Sonarqube. Zie [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+3. U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u in Toegangsvenster op de Sonarqube-tegel klikt, wordt u omgeleid naar de aanmeldings-URL voor Sonarqube. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Wanneer u Sonarqube hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor realtime beveiliging wordt geboden tegen exfiltratie en infiltratie van gevoelige gegevens van uw organisatie. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+* Wanneer u Sonarqube hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor realtime beveiliging wordt geboden tegen exfiltratie en infiltratie van gevoelige gegevens van uw organisatie. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

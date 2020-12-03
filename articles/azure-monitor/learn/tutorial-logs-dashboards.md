@@ -7,12 +7,12 @@ author: bwren
 ms.author: bwren
 ms.date: 05/28/2020
 ms.custom: mvc
-ms.openlocfilehash: d38a4ba04529e70ecfd772eef7f60179041f0273
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 880d173c6eef9d267e8860ebad805e071706de42
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87927365"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186147"
 ---
 # <a name="create-and-share-dashboards-of-log-analytics-data"></a>Dashboards van Log Analytics-gegevens maken en delen
 
@@ -30,7 +30,7 @@ Om het voorbeeld in deze zelfstudie uit te voeren, moet u een bestaande virtuele
 Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azure.com). 
 
 ## <a name="create-a-shared-dashboard"></a>Een gedeeld dashboard maken
-Selecteer **Dashboard** om uw standaard[dashboard](../../azure-portal/azure-portal-dashboards.md) te openen. Uw dashboard ziet er anders uit dan het onderstaande voorbeeld.
+Selecteer **Dashboard** om uw standaard [dashboard](../../azure-portal/azure-portal-dashboards.md) te openen. Uw dashboard ziet er anders uit dan het onderstaande voorbeeld.
 
 ![Dashboard in Azure-portal](media/tutorial-logs-dashboards/log-analytics-portal-dashboard.png)
 
@@ -57,7 +57,7 @@ Wanneer u een dashboard maakt, is het standaard persoonlijk. Dat betekent dat u 
 U wordt gevraagd een abonnement en resourcegroep te kiezen waarnaar uw dashboard zal worden gepubliceerd. Voor het gemak helpt de publicatie-ervaring van de portal u naar een patroon waar u dashboards kunt plaatsen in een resourcegroep die **dashboards** wordt genoemd.  Controleer het geselecteerde abonnement en klik op **Publiceren**.  Toegang tot de informatie die wordt weergegeven in het dashboard wordt geregeld met [op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md).   
 
 ## <a name="visualize-a-log-query"></a>Een logboekquery visualiseren
-[Log Analytics](../log-query/get-started-portal.md) is een speciale portal die wordt gebruikt voor het werken met logboekquery's en de bijbehorende resultaten. Voorbeelden van functies zijn de mogelijkheid om een query van meerdere regels te bewerken, code selectief uit te voeren, contextafhankelijke Intellisense en slimme analyse. In deze zelfstudie gebruikt u Log Analytics om een grafische prestatieweergave te maken, slaat u deze op voor gebruik in een toekomstige query en maakt u de weergave vast aan het gedeelde dashboard dat u eerder hebt gemaakt.
+[Log Analytics](../log-query/log-analytics-tutorial.md) is een speciale portal die wordt gebruikt voor het werken met logboekquery's en de bijbehorende resultaten. Voorbeelden van functies zijn de mogelijkheid om een query van meerdere regels te bewerken, code selectief uit te voeren, contextafhankelijke Intellisense en slimme analyse. In deze zelfstudie gebruikt u Log Analytics om een grafische prestatieweergave te maken, slaat u deze op voor gebruik in een toekomstige query en maakt u de weergave vast aan het gedeelde dashboard dat u eerder hebt gemaakt.
 
 Open Log Analytics door **Logboeken** te selecteren in het menu van Azure Monitor. U ziet een nieuwe lege query.
 

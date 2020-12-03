@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/27/2020
 ms.author: jeedes
-ms.openlocfilehash: b8538031570d201e57186930b713816821848bc1
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 29ffaaa1b1b6efbcd5523a76018c92645e13d187
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93133229"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96181791"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-perimeterx"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory (SSO) integreren met PerimeterX
 
@@ -156,11 +156,9 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 1. Klik op Deze toepassing testen in Azure Portal. U wordt automatisch aangemeld bij de instantie van PerimeterX waarvoor u eenmalige aanmelding hebt ingesteld
 
-1. U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u op de tegel van PerimeterX klikt in het toegangsvenster, wordt u automatisch aangemeld bij het exemplaar van PerimeterX waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+1. U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u op de tegel van PerimeterX klikt in het toegangsvenster, wordt u automatisch aangemeld bij het exemplaar van PerimeterX waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u PerimeterX hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+Zodra u PerimeterX hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

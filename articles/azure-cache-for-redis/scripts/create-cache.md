@@ -9,12 +9,12 @@ ms.topic: sample
 ms.date: 08/30/2017
 ms.author: yegu
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 7d6adcb0fb7b79dfffc413a1f89655eee14c70c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 77a03ac7ca47e3ba40242adfbd5d57d9dbd21f30
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87502848"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184141"
 ---
 # <a name="create-an-azure-cache-for-redis"></a>Een Azure Cache voor Redis-instantie maken
 
@@ -34,12 +34,12 @@ In dit script worden de volgende opdrachten gebruikt voor het maken van een reso
 
 | Opdracht | Opmerkingen |
 |---|---|
-| [az group create](https://docs.microsoft.com/cli/azure/group) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
-| [az redis create](https://docs.microsoft.com/cli/azure/redis) | Een exemplaar van Azure Cache voor Redis maken. |
+| [az group create](/cli/azure/group) | Hiermee maakt u een resourcegroep waarin alle resources worden opgeslagen. |
+| [az redis create](/cli/azure/redis) | Een exemplaar van Azure Cache voor Redis maken. |
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Raadpleeg de [documentatie van Azure CLI](https://docs.microsoft.com/cli/azure) voor meer informatie over de Azure CLI.
+Raadpleeg de [documentatie van Azure CLI](/cli/azure) voor meer informatie over de Azure CLI.
 
 Aanvullende voorbeelden van CLI-scripts voor Azure Cache voor Redis vindt u in de [documentatie van Azure Cache voor Redis](../cli-samples.md).

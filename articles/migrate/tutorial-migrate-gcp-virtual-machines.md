@@ -4,12 +4,12 @@ description: In dit artikel wordt beschreven hoe u GCP-VM's kunt migreren naar A
 ms.topic: tutorial
 ms.date: 08/19/2020
 ms.custom: MVC
-ms.openlocfilehash: 2caebb5dda87a34d003f7f2bd208fff427c98431
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 0093bb453131eb87172021a976b8019a23e445f1
+ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92315887"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96302587"
 ---
 # <a name="discover-assess-and-migrate-google-cloud-platform-gcp-vms-to-azure"></a>GCP-VM’s (Google Cloud Platform) ontdekken, evalueren en migreren naar Azure
 
@@ -44,12 +44,12 @@ U stelt als volgt een evaluatie in:
         - Voor Linux-machines:
             1. Aanmelden bij elke Linux-machine.
             2. Open het bestand sshd_config: vi /etc/ssh/sshd_config
-            3. Ga in het bestand naar de regel **PasswordAuthentication** en wijzig de waarde in **yes** .
+            3. Ga in het bestand naar de regel **PasswordAuthentication** en wijzig de waarde in **yes**.
             4. Sla het bestand op en sluit het. Start de ssh-service opnieuw.
     - Als u een rootgebruiker gebruikt voor het detecteren van uw Linux-VM's, moet u ervoor zorgen dat rootaanmelding is toegestaan op de VM's.
         1. Aanmelden bij elke Linux-machine
         2. Open het bestand sshd_config: vi /etc/ssh/sshd_config
-        3. Ga in het bestand naar de regel **PermitRootLogin** en wijzig de waarde in **yes** .
+        3. Ga in het bestand naar de regel **PermitRootLogin** en wijzig de waarde in **yes**.
         4. Sla het bestand op en sluit het. Start de ssh-service opnieuw.
 
 2. Volg vervolgens deze [zelfstudie](./tutorial-assess-gcp.md) om een Azure Migrate-project en -apparaat in te stellen om GCP-VM's te ontdekken en te evalueren.
@@ -74,13 +74,13 @@ Zo bereidt u Azure voor op migratie met Azure Migrate: tool Server Migration van
 
 **Taak** | **Details**
 --- | ---
-**Maak een Azure Migrate-project** | Uw Azure-account heeft Inzender- of Eigenaarsmachtigingen nodig om een project te maken.
+**Maak een Azure Migrate-project** | Uw Azure-account heeft inzender- of eigenaarsmachtigingen nodig [om een nieuw project te maken](https://docs.microsoft.com/azure/migrate/create-manage-projects).
 **Machtigingen verifiëren voor uw Azure-account** | U hebt voor uw Azure-account machtigingen nodig om een virtuele machine te maken en naar een beheerde Azure-schijf te schrijven.
 
 ### <a name="assign-permissions-to-create-project"></a>Machtigingen toewijzen voor het maken van een project
 
 1. Open in de Azure-portal het abonnement en selecteer **Toegangsbeheer (IAM)** .
-2. In **Toegang controleren** , zoekt u het relevante account en klikt u hierop om machtigingen weer te geven.
+2. In **Toegang controleren**, zoekt u het relevante account en klikt u hierop om machtigingen weer te geven.
 3. U moet de machtigingen **Inzender** of **Eigenaar** hebben.
     - Als u net pas een gratis Azure-account hebt gemaakt, bent u de eigenaar van uw abonnement.
     - Als u niet de eigenaar van het abonnement bent, kunt u met de eigenaar samenwerken om de rol toe te wijzen.
@@ -105,8 +105,8 @@ Om GCP voor te bereiden op migratie naar Azure moet u een replicatieapparaat voo
 
 Azure Migrate: Server Migration gebruikt het replicatieapparaat om machines naar Azure te repliceren. Met het replicatieapparaat worden de volgende onderdelen uitgevoerd.
 
-- **Configuratieserver** : De configuratieserver coördineert de communicatie tussen de GCP-VM’s en Azure, en beheert de gegevensreplicatie.
-- **Processerver** : De processerver fungeert als replicatiegateway. Deze ontvangt replicatiegegevens, optimaliseert de gegevens met caching, compressie en versleuteling, en verzendt ze naar het account voor cacheopslag in Azure.
+- **Configuratieserver**: De configuratieserver coördineert de communicatie tussen de GCP-VM’s en Azure, en beheert de gegevensreplicatie.
+- **Processerver**: De processerver fungeert als replicatiegateway. Deze ontvangt replicatiegegevens, optimaliseert de gegevens met caching, compressie en versleuteling, en verzendt ze naar het account voor cacheopslag in Azure.
 
 Bereid de implementatie van het apparaat als volgt voor:
 
@@ -123,69 +123,45 @@ Bereid de implementatie van het apparaat als volgt voor:
 - Het replicatieapparaat maakt gebruik van MySQL. Bekijk de [opties](migrate-replication-appliance.md#mysql-installation) voor het installeren van MySQL op het apparaat.
 - Controleer de vereiste Azure-URL's voor het replicatieapparaat om toegang te krijgen tot [openbare](migrate-replication-appliance.md#url-access) clouds en [overheidsclouds](migrate-replication-appliance.md#azure-government-url-access).
 
-## <a name="add-the-server-migration-tool"></a>Het hulpprogramma Server Migration toevoegen
-
-Stel een Azure Migrate-project in en voeg daarna het hulpprogramma Server Migration eraan toe.
-
-1. Zoek in de Azure-portal in **Alle services** naar **Azure Migrate** .
-2. Onder **Services** selecteert u **Azure Migrate** .
-3. Klik in **Overzicht** op **Servers evalueren en migreren** .
-4. Klik onder **Servers detecteren, evalueren en migreren** op **Servers evalueren en migreren** .
-
-    ![Servers detecteren en evalueren](./media/tutorial-migrate-physical-virtual-machines/assess-migrate.png)
-
-5. Klik in **Servers detecteren, evalueren en migreren** op **Hulpprogramma's toevoegen** .
-6. Selecteer in **Project migreren** uw Azure-abonnement en maak een resourcegroep als u er nog geen hebt.
-7. Geef in **Projectdetails** de projectnaam en geografie op waarin u het project wilt maken en klik op **Volgende** . Bekijk ondersteunde geografische regio's voor [openbare](migrate-support-matrix.md#supported-geographies-public-cloud) clouds en [overheidsclouds](migrate-support-matrix.md#supported-geographies-azure-government).
-    - Het geografische gebied voor het project wordt alleen gebruikt om de metagegevens op te slaan die worden verzameld van GCP-machines.
-    - Wanneer u een migratie uitvoert, kunt u elke gewenste doelregio selecteren.
-
-    ![Een Azure Migrate-project maken](./media/tutorial-migrate-physical-virtual-machines/migrate-project.png)
-
-8. Selecteer in **Evaluatieprogramma selecteren** de optie **Het toevoegen van een evaluatieprogramma voorlopig overslaan** > **Volgende** .
-9. Selecteer in **Migratieprogramma selecteren** de optie **Azure Migrate: Server Migration** > **Volgende** .
-10. Controleer in **Beoordelen en hulpprogramma's toevoegen** de instellingen en klik op **Hulpmiddelen toevoegen**
-11. Nadat u het hulpprogramma hebt toegevoegd, wordt het weergegeven in het Azure Migrate-project > **Servers** > **Migratieprogramma's** .
-
 ## <a name="set-up-the-replication-appliance"></a>Het replicatieapparaat instellen
 
 De eerste stap van de migratie is het instellen van het replicatieapparaat. Als u het apparaat voor de migratie van GCP-VM's wilt instellen, downloadt u het installatiebestand voor het apparaat. Vervolgens voert u het uit op de [VM die u hebt voorbereid](#prepare-a-machine-for-the-replication-appliance).
 
 ### <a name="download-the-replication-appliance-installer"></a>Het installatieprogramma voor het replicatieapparaat downloaden
 
-1. In het Azure Migrate-project > **Servers** , in **Azure Migrate: Server Migration** , klikt u op **Ontdekken** .
+1. In het Azure Migrate-project > **Servers**, in **Azure Migrate: Server Migration**, klikt u op **Ontdekken**.
 
     ![VM's detecteren](./media/tutorial-migrate-physical-virtual-machines/migrate-discover.png)
 
-2. In **Machines ontdekken** > **Zijn uw machines gevirtualiseerd?** selecteert u **Niet gevirtualiseerd/Anders** .
+2. In **Machines ontdekken** > **Zijn uw machines gevirtualiseerd?** selecteert u **Niet gevirtualiseerd/Anders**.
 3. Selecteer in **Doelregio** de Azure-regio waarnaar u de machines wilt migreren.
-4. Selecteer **Bevestig dat de doelregio voor migratie <regionaam> is** .
-5. Klik op **Resources maken** . Hiermee maakt u een Azure Site Recovery-kluis op de achtergrond.
+4. Selecteer **Bevestig dat de doelregio voor migratie <regionaam> is**.
+5. Klik op **Resources maken**. Hiermee maakt u een Azure Site Recovery-kluis op de achtergrond.
     - Als u migratie al hebt ingesteld met Azure Migrate Server Migration, kunt u deze doeloptie niet configureren, omdat er eerder resources zijn ingesteld.
     - U kunt de doelregio voor dit project niet wijzigen nadat u op deze knop hebt geklikt.
     - Als u uw virtuele machines naar een andere regio wilt migreren, moet u een nieuw/ander Azure Migrate-project maken.
 
-6. Selecteer in **Wilt u een nieuw replicatieapparaat installeren?** **Een replicatieapparaat installeren** .
+6. Selecteer in **Wilt u een nieuw replicatieapparaat installeren?** **Een replicatieapparaat installeren**.
 7. Download in **De software voor het replicatie apparaat downloaden en installeren** het installatieprogramma voor het apparaat en de registratiesleutel. U moet de sleutel opgeven om het apparaat te kunnen registreren. De sleutel blijft na de download vijf dagen geldig.
 
     ![Provider downloaden](media/tutorial-migrate-physical-virtual-machines/download-provider.png)
 
 8. Kopieer het installatiebestand voor het apparaat en het sleutelbestand naar de Windows Server 2016-machine of Windows Server 2012 GCP-VM die u voor het replicatieapparaat hebt gemaakt.
 9. Voer het installatiebestand voor het replicatieapparaat uit, zoals is beschreven in de volgende procedure.  
-    9.1. Selecteer onder **Voordat u begint** de optie **De configuratieserver en processerver installeren** . Selecteer vervolgens **Volgende** .   
-    9.2 Selecteer in **Softwarelicentie van derden** de optie **Ik ga akkoord met de licentieovereenkomst van de derde partij** , en selecteer vervolgens **Volgende** .   
-    9.3 Selecteer in **Registratie** de optie **Bladeren** en ga naar de locatie waar u het registratiesleutelbestand voor de kluis hebt opgeslagen. Selecteer **Next** .  
-    9.4 Selecteer in **Internetinstellingen** de optie **Rechtstreeks verbinding maken met Azure Site Recovery zonder proxyserver** . Selecteer vervolgens **Volgende** .  
-    9.5 Op de pagina **Controle op vereisten** worden controles voor verschillende items uitgevoerd. Wanneer dit is voltooid, selecteert u **Volgende** .  
-    9.6 Geef in **MySQL-configuratie** een wachtwoord op voor de MySQL-database en selecteer **Volgende** .  
-    9.7 Selecteer in **Details van omgeving** de optie **Nee** . U hoeft uw VM's niet te beveiligen. Selecteer vervolgens **Volgende** .  
+    9.1. Selecteer onder **Voordat u begint** de optie **De configuratieserver en processerver installeren**. Selecteer vervolgens **Volgende**.   
+    9.2 Selecteer in **Softwarelicentie van derden** de optie **Ik ga akkoord met de licentieovereenkomst van de derde partij**, en selecteer vervolgens **Volgende**.   
+    9.3 Selecteer in **Registratie** de optie **Bladeren** en ga naar de locatie waar u het registratiesleutelbestand voor de kluis hebt opgeslagen. Selecteer **Next**.  
+    9.4 Selecteer in **Internetinstellingen** de optie **Rechtstreeks verbinding maken met Azure Site Recovery zonder proxyserver**. Selecteer vervolgens **Volgende**.  
+    9.5 Op de pagina **Controle op vereisten** worden controles voor verschillende items uitgevoerd. Wanneer dit is voltooid, selecteert u **Volgende**.  
+    9.6 Geef in **MySQL-configuratie** een wachtwoord op voor de MySQL-database en selecteer **Volgende**.  
+    9.7 Selecteer in **Details van omgeving** de optie **Nee**. U hoeft uw VM's niet te beveiligen. Selecteer vervolgens **Volgende**.  
     9.8 Selecteer in **Installatielocatie** de optie **Volgende** om de standaardinstelling te accepteren.  
     9.9 Selecteer in **Netwerkselectie** de optie **Volgende** om de standaardinstelling te accepteren.  
-    9.10 Selecteer in **Samenvatting** de optie **Installeren** .   
-    9.11 Bij **Voortgang van de installatie** ziet u informatie over hoe de installatie vordert. Wanneer dit is voltooid, selecteert u **Voltooien** . Er wordt een venster weergegeven met daarin een bericht over opnieuw opstarten. Selecteer **OK** .   
+    9.10 Selecteer in **Samenvatting** de optie **Installeren**.   
+    9.11 Bij **Voortgang van de installatie** ziet u informatie over hoe de installatie vordert. Wanneer dit is voltooid, selecteert u **Voltooien**. Er wordt een venster weergegeven met daarin een bericht over opnieuw opstarten. Selecteer **OK**.   
     9.12 Vervolgens wordt een bericht weergegeven over de wachtwoordzin voor de configuratieserververbinding. Kopieer de wachtwoordzin naar het klembord en sla de wachtwoordzin op in een tijdelijk tekst bestand op de bron-VM's. U hebt deze wachtwoordzin later nodig tijdens het installatieproces van de Mobility-service.
 10. Wanneer de installatie is voltooid, wordt de wizard Apparaat configureren automatisch gestart (u kunt de wizard ook handmatig starten met behulp van de cspsconfigtool-snelkoppeling die op het bureaublad van het apparaat is gemaakt). Gebruik het tabblad Accounts beheren van de wizard om accountgegevens toe te voegen die moeten worden gebruikt voor de push-installatie van de Mobility-service. In deze zelfstudie wordt de Mobility-service handmatig geïnstalleerd op de te repliceren bron-VM's. Daarom moet u in deze stap een dummyaccount maken en doorgaan. U kunt de volgende gegevens opgeven voor het maken van het dummy-account: 'guest' als de beschrijvende naam, 'username' als de gebruikersnaam en 'password' als het wachtwoord voor het account. U gebruikt dit dummy-account in de fase waarin u de replicatie gaat inschakelen. 
-11. Nadat het apparaat na de installatie opnieuw is opgestart in **Machines detecteren** , selecteert u het nieuwe apparaat in **Configuratieserver selecteren** en klikt u op **Registratie voltooien** . Bij het voltooien van de registratie worden enkele laatste taken uitgevoerd om het replicatieapparaat voor te bereiden.
+11. Nadat het apparaat na de installatie opnieuw is opgestart in **Machines detecteren**, selecteert u het nieuwe apparaat in **Configuratieserver selecteren** en klikt u op **Registratie voltooien**. Bij het voltooien van de registratie worden enkele laatste taken uitgevoerd om het replicatieapparaat voor te bereiden.
 
     ![Registratie voltooien](./media/tutorial-migrate-physical-virtual-machines/finalize-registration.png)
 
@@ -194,7 +170,7 @@ De eerste stap van de migratie is het instellen van het replicatieapparaat. Als 
 Er moet een Mobility-serviceagent zijn geïnstalleerd op de bron-GCP-VM's die moeten worden gemigreerd. De installatieprogramma's voor de agent zijn beschikbaar op het replicatieapparaat. Na het vinden van het juiste installatie programma installeert u de agent op elke computer die u wilt migreren. Ga als volgt te werk:
 
 1. Meld u aan bij het replicatieapparaat.
-2. Ga naar **%ProgramData%\ASR\home\svsystems\pushinstallsvc\repository** .
+2. Ga naar **%ProgramData%\ASR\home\svsystems\pushinstallsvc\repository**.
 3. Zoek het installatieprogramma voor het besturingssysteem en de versie van de bron-GCP-VM's. Controleer [ondersteunde besturingssystemen](../site-recovery/vmware-physical-azure-support-matrix.md#replicated-machines).
 4. Kopieer het installatiebestand naar de bron-GCP-VM die u wilt migreren.
 5. U hebt zo dadelijk het tekstbestand met de wachtwoordzin nodig dat is gemaakt tijdens de installatie van het replicatieapparaat.
@@ -246,43 +222,43 @@ Er moet een Mobility-serviceagent zijn geïnstalleerd op de bron-GCP-VM's die mo
 > [!NOTE]
 > Via de portal kunt u maximaal 10 VM's voor replicatie tegelijk toevoegen. Als u meer VM's tegelijk wilt repliceren, kunt u ze toevoegen in batches van 10.
 
-1. In het Azure Migrate-project > **Servers** , **Azure Migrate: Servermigratie** klikt u op **Repliceren** .
+1. In het Azure Migrate-project > **Servers**, **Azure Migrate: Servermigratie** klikt u op **Repliceren**.
 
     ![VM's repliceren](./media/tutorial-migrate-physical-virtual-machines/select-replicate.png)
 
-2. Selecteer in **Repliceren** > **Broninstellingen** > **Zijn uw machines gevirtualiseerd?** **Niet gevirtualiseerd/Overige** .
+2. Selecteer in **Repliceren** > **Broninstellingen** > **Zijn uw machines gevirtualiseerd?** **Niet gevirtualiseerd/Overige**.
 3. In **On-premises apparaat** selecteert u de naam van het Azure Migrate-apparaat dat u instelt.
 4. Selecteer in **Processerver** de naam van het replicatieapparaat. 
-5. Selecteer bij **Gastreferenties** het dummy-account dat eerder is gemaakt tijdens het [configureren van het installatieprogramma voor de replicatiefunctie](#download-the-replication-appliance-installer) om de Mobility-service handmatig te installeren (push-installatie wordt niet ondersteund). Klik vervolgens op **Volgende: Virtuele machines** .   
+5. Selecteer bij **Gastreferenties** het dummy-account dat eerder is gemaakt tijdens het [configureren van het installatieprogramma voor de replicatiefunctie](#download-the-replication-appliance-installer) om de Mobility-service handmatig te installeren (push-installatie wordt niet ondersteund). Klik vervolgens op **Volgende: Virtuele machines**.   
  
     ![Instellingen repliceren](./media/tutorial-migrate-physical-virtual-machines/source-settings.png)
 6. Houd bij **Virtuele machines** in **Migratie-instellingen importeren uit een evaluatie?** de standaardinstelling **Nee, ik geef de migratie-instellingen handmatig op** aan.
-7. Controleer elke virtuele machine die u wilt migreren. Klik vervolgens op **Volgende: Doelinstellingen** .
+7. Controleer elke virtuele machine die u wilt migreren. Klik vervolgens op **Volgende: Doelinstellingen**.
 
     ![VM's selecteren](./media/tutorial-migrate-physical-virtual-machines/select-vms.png)
 
 8. Selecteer in **Doelinstellingen** het abonnement en de doelregio waarnaar u migreert en geef de resourcegroep op waarin de Azure-VM's na de migratie moeten worden geplaatst.
 9. Selecteer in **Virtual Network** het Azure VNet/subnet waaraan de Azure-VM's na migratie worden toegevoegd.
-10. Selecteer in **Beschikbaarheidsopties** :
+10. Selecteer in **Beschikbaarheidsopties**:
     -  Beschikbaarheidszone, om de gemigreerde computer vast te maken aan een specifieke beschikbaarheidszone in de regio. Gebruik deze optie om servers te distribueren die een toepassingslaag met meerdere knooppunten in de beschikbaarheidszones vormen. Als u deze optie selecteert, moet u op het tabblad Compute de beschikbaarheidszone opgeven die moet worden gebruikt voor elk van de geselecteerde computers. Deze optie is alleen beschikbaar als de doelregio die voor de migratie is geselecteerd, ondersteuning biedt voor beschikbaarheidszones
     -  Beschikbaarheidsset, om de gemigreerde machine in een beschikbaarheidsset te plaatsen. De doelresourcegroep die is geselecteerd, moet een of meer beschikbaarheidssets bevatten om deze optie te kunnen gebruiken.
     - Er is geen optie voor infrastructuurredundantie vereist als u geen van deze beschikbaarheidsconfiguraties nodig hebt voor de gemigreerde computers.
-11. In **Azure Hybrid Benefit** :
-    - Selecteer **Nee** als u Azure Hybrid Benefit niet wilt toepassen. Klik op **Volgende** .
-    - Selecteer **Ja** als u Windows Server-computers hebt die worden gedekt met actieve softwareverzekering of Windows Server-abonnementen en u het voordeel wilt toepassen op de machines die u migreert. Klik op **Volgende** .
+11. In **Azure Hybrid Benefit**:
+    - Selecteer **Nee** als u Azure Hybrid Benefit niet wilt toepassen. Klik op **Volgende**.
+    - Selecteer **Ja** als u Windows Server-computers hebt die worden gedekt met actieve softwareverzekering of Windows Server-abonnementen en u het voordeel wilt toepassen op de machines die u migreert. Klik op **Volgende**.
 
     ![Doelinstellingen](./media/tutorial-migrate-physical-virtual-machines/target-settings.png)
 
 12. Controleer bij **Compute** naam, grootte, type besturingssysteemschijf en beschikbaarheidsconfiguratie van de VM (indien geselecteerd in de vorige stap). VM's moeten voldoen aan de [Azure-vereisten](migrate-support-matrix-physical-migration.md#azure-vm-requirements).
 
-    - **VM-grootte** : Als u evaluatie-aanbevelingen gebruikt, bevat het vervolgkeuzemenu voor de VM-grootte de aanbevolen grootte. Anders kiest Azure Migrate een grootte op basis van de dichtstbijzijnde overeenkomst in het Azure-abonnement. U kunt ook handmatig een grootte kiezen in **Azure VM-grootte** .
-    - **Besturingssysteemschijf** : Geef de besturingssysteemschijf (opstarten) voor de VM op. De besturingssysteemschijf is de schijf die de bootloader en het installatieprogramma van het besturingssysteem bevat.
-    - **Beschikbaarheidszone** : Geef de beschikbaarheidszone op die moet worden gebruikt.
-    - **Beschikbaarheidsset** : Geef de beschikbaarheidsset op die moet worden gebruikt.
+    - **VM-grootte**: Als u evaluatie-aanbevelingen gebruikt, bevat het vervolgkeuzemenu voor de VM-grootte de aanbevolen grootte. Anders kiest Azure Migrate een grootte op basis van de dichtstbijzijnde overeenkomst in het Azure-abonnement. U kunt ook handmatig een grootte kiezen in **Azure VM-grootte**.
+    - **Besturingssysteemschijf**: Geef de besturingssysteemschijf (opstarten) voor de VM op. De besturingssysteemschijf is de schijf die de bootloader en het installatieprogramma van het besturingssysteem bevat.
+    - **Beschikbaarheidszone**: Geef de beschikbaarheidszone op die moet worden gebruikt.
+    - **Beschikbaarheidsset**: Geef de beschikbaarheidsset op die moet worden gebruikt.
 
 ![Rekeninstellingen](./media/tutorial-migrate-physical-virtual-machines/compute-settings.png)
 
-13. Geef in **Schijven** op of de VM-schijven moeten worden gerepliceerd in Azure en selecteer het schijftype (standaard SSD/HDD of premium beheerde schijven) in Azure. Klik op **Volgende** .
+13. Geef in **Schijven** op of de VM-schijven moeten worden gerepliceerd in Azure en selecteer het schijftype (standaard SSD/HDD of premium beheerde schijven) in Azure. Klik op **Volgende**.
     - U kunt schijven uitsluiten van replicatie.
     - Als u schijven uitsluit, zijn deze na migratie niet beschikbaar in de Azure-VM. 
 
@@ -291,7 +267,7 @@ Er moet een Mobility-serviceagent zijn geïnstalleerd op de bron-GCP-VM's die mo
 14. Controleer in **Replicatie controleren en beginnen** de instellingen en klik op **Repliceren** om de eerste replicatie van de servers te beginnen.
 
 > [!NOTE]
-> U kunt de replicatie-instellingen op elk gewenst moment bijwerken voordat de replicatie begint, **Beheren** > **Machines repliceren** . De instellingen kunnen niet meer worden gewijzigd nadat de replicatie is begonnen.
+> U kunt de replicatie-instellingen op elk gewenst moment bijwerken voordat de replicatie begint, **Beheren** > **Machines repliceren**. De instellingen kunnen niet meer worden gewijzigd nadat de replicatie is begonnen.
 
 ## <a name="track-and-monitor-replication-status"></a>Traceer en bewaak replicatiestatus
 
@@ -301,7 +277,7 @@ Er moet een Mobility-serviceagent zijn geïnstalleerd op de bron-GCP-VM's die mo
 
 U kunt de taakstatus volgen in de portalmeldingen.
 
-U kunt de replicatiestatus controleren door te klikken op **Replicerende servers** in **Azure Migrate: Server Migration** .  
+U kunt de replicatiestatus controleren door te klikken op **Replicerende servers** in **Azure Migrate: Server Migration**.  
 
 ![Replicatie controleren](./media/tutorial-migrate-physical-virtual-machines/replicating-servers.png)
 
@@ -315,18 +291,18 @@ Wanneer de deltareplicatie begint, kunt u een testmigratie voor de virtuele mach
 
 Ga als volgt te werk om een testmigratie uit te voeren:
 
-1. In **Migratiedoelen** > **Servers** > **Azure Migrate: Servermigratie** klikt u op **Gemigreerde servers testen** .
+1. In **Migratiedoelen** > **Servers** > **Azure Migrate: Servermigratie** klikt u op **Gemigreerde servers testen**.
 
      ![Gemigreerde servers testen](./media/tutorial-migrate-physical-virtual-machines/test-migrated-servers.png)
 
-2. Klik met de rechtermuisknop op de te testen VM en klik vervolgens op **Migratie testen** .
+2. Klik met de rechtermuisknop op de te testen VM en klik vervolgens op **Migratie testen**.
 
     ![Migratie testen](./media/tutorial-migrate-physical-virtual-machines/test-migrate.png)
 
 3. Selecteer in **Migratie testen** het Azure Vnet waarin de Azure-VM zich na migratie bevindt. We raden u aan geen productie-VNet te gebruiken.
 4. De taak **Migratie testen** wordt gestart. Houd de taak in portalmeldingen in de gaten.
-5. Nadat de migratie is voltooid, bekijkt u de gemigreerde Azure-VM in **Virtuele machines** in de Azure-portal. De machinenaam heeft het achtervoegsel **-Test** .
-6. Nadat de test is afgerond, klikt u met de rechtermuisknop op de Azure-VM in **Machines repliceren** en klikt u op **Testmigratie opschonen** .
+5. Nadat de migratie is voltooid, bekijkt u de gemigreerde Azure-VM in **Virtuele machines** in de Azure-portal. De machinenaam heeft het achtervoegsel **-Test**.
+6. Nadat de test is afgerond, klikt u met de rechtermuisknop op de Azure-VM in **Machines repliceren** en klikt u op **Testmigratie opschonen**.
 
     ![Migratie opschonen](./media/tutorial-migrate-physical-virtual-machines/clean-up.png)
 
@@ -335,19 +311,19 @@ Ga als volgt te werk om een testmigratie uit te voeren:
 
 Nadat u hebt geverifieerd dat de testmigratie naar verwachting werkt, kunt u de GCP-VM's migreren.
 
-1. In het Azure Migrate-project > **Servers** > **Azure Migrate: Servermigratie** klikt u op **Servers repliceren** .
+1. In het Azure Migrate-project > **Servers** > **Azure Migrate: Servermigratie** klikt u op **Servers repliceren**.
 
     ![Servers repliceren](./media/tutorial-migrate-physical-virtual-machines/replicate-servers.png)
 
-2. Klik in **Machines repliceren** met de rechtermuisknop op de VM > **Migreren** .
-3. In **Migreren** > **Virtuele machines afsluiten en geplande migratie uitvoeren zonder gegevensverlies** selecteert u **Ja** > **OK** .
-    - Als u de VM niet wilt afsluiten, selecteert u **Nee** .
+2. Klik in **Machines repliceren** met de rechtermuisknop op de VM > **Migreren**.
+3. In **Migreren** > **Virtuele machines afsluiten en geplande migratie uitvoeren zonder gegevensverlies** selecteert u **Ja** > **OK**.
+    - Als u de VM niet wilt afsluiten, selecteert u **Nee**.
 4. Er wordt een migratietaak gestart voor de VM. U kunt de taakstatus weergeven door rechtsboven op de portalpagina op het belpictogram te klikken of door naar de taakpagina van het hulpprogramma Server Migration te gaan (klik op Overzicht op de tegel van het hulpprogramma > selecteer Taken in het linkermenu).
 5. Wanneer de taak is afgerond, kunt u de VM bekijken en beheren vanaf de pagina Virtuele machines.
 
 ### <a name="complete-the-migration"></a>Migratie voltooien
 
-1. Nadat de migratie is voltooid, klikt u met de rechtermuisknop op de VM > **Migratie stoppen** . Er gebeurt nu het volgende:
+1. Nadat de migratie is voltooid, klikt u met de rechtermuisknop op de VM > **Migratie stoppen**. Er gebeurt nu het volgende:
     - Stopt de replicatie voor de GCP-VM.
     - Verwijdert de GCP-VM uit de telling van **Replicerende servers** in Azure Migrate: Server Migration.
     - De informatie over de replicatiestatus voor de virtuele machine wordt opgeschoond.

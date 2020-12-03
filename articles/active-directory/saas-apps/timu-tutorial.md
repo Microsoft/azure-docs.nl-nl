@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/10/2020
 ms.author: jeedes
-ms.openlocfilehash: 68acc1ad45605512232ee3dae6f5027133270c01
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 903150a199bac1189274cadc9755b38873cde73e
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686318"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182101"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-timu"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met TIMU
 
@@ -148,11 +148,9 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Ga rechtstreeks naar de aanmeldings-URL van TIMU en start de aanmeldingsstroom daar.
 
-* U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u in het toegangsvenster op de tegel TIMU klikt, wordt u omgeleid naar de aanmeldings-URL voor TIMU. Zie [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u in het toegangsvenster op de tegel TIMU klikt, wordt u omgeleid naar de aanmeldings-URL voor TIMU. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u TIMU hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+Zodra u TIMU hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

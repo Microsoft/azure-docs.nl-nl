@@ -15,11 +15,11 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b82dcc633f0f2bb13cb84f80873117f9eb94a24f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91313159"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96176117"
 ---
 # <a name="tutorial--integrate-a-single-ad-forest-using-password-hash-sync-phs"></a>Zelfstudie:  Een enkele AD-forest integreren met synchronisatie van wachtwoord-hashes (PHS)
 

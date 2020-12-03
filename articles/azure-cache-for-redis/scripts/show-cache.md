@@ -9,12 +9,12 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.date: 08/30/2017
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 8874a17b40b60a194811630b2f93d2be9d7faf7f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8901847a1c214b257243c4da0a74897061409bee
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87494703"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96184243"
 ---
 # <a name="get-details-of-an-azure-cache-for-redis"></a>Details opvragen van een exemplaar van Azure Cache voor Redis
 
@@ -32,11 +32,11 @@ In dit script worden de volgende opdrachten gebruikt om de details op te vragen 
 
 | Opdracht | Opmerkingen |
 |---|---|
-| [az redis show](https://docs.microsoft.com/cli/azure/redis) | Details opvragen van een exemplaar van Azure Cache voor Redis. |
+| [az redis show](/cli/azure/redis) | Details opvragen van een exemplaar van Azure Cache voor Redis. |
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Raadpleeg de [documentatie van Azure CLI](https://docs.microsoft.com/cli/azure) voor meer informatie over de Azure CLI.
+Raadpleeg de [documentatie van Azure CLI](/cli/azure) voor meer informatie over de Azure CLI.
 
 Aanvullende voorbeelden van CLI-scripts voor Azure Cache voor Redis vindt u in de [documentatie van Azure Cache voor Redis](../cli-samples.md).

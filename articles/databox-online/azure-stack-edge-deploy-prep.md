@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 07/22/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: 224131d1b17c4ed34ee847638633a5a1a494ccaf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 12879b22e255384701b0cd265b50ed34d5e198c9
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90894133"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96345539"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-stack-edge-pro"></a>Zelfstudie: Voorbereidingen voor de implementatie van Azure Stack Edge Pro  
 
@@ -53,18 +53,18 @@ Hier volgen de configuratievereisten voor uw Azure Stack Edge-resource, uw Azure
 
 Zorg voordat u begint voor het volgende:
 
-* Uw Microsoft Azure-abonnement is ingeschakeld voor een Azure Stack Edge-resource. Zorg dat een ondersteund abonnement gebruikt zoals [Microsoft Enterprise Agreement (EA)](https://azure.microsoft.com/overview/sales-number/), [Cloud Solution Provider (CSP)](https://docs.microsoft.com/partner-center/azure-plan-lp) of [Microsoft Azure Sponsorship](https://azure.microsoft.com/offers/ms-azr-0036p/). Abonnementen waar u betaalt per gebruik worden niet ondersteund.
+* Uw Microsoft Azure-abonnement is ingeschakeld voor een Azure Stack Edge-resource. Zorg dat een ondersteund abonnement gebruikt zoals [Microsoft Enterprise Agreement (EA)](https://azure.microsoft.com/overview/sales-number/), [Cloud Solution Provider (CSP)](/partner-center/azure-plan-lp) of [Microsoft Azure Sponsorship](https://azure.microsoft.com/offers/ms-azr-0036p/). Abonnementen waar u betaalt per gebruik worden niet ondersteund.
 
 * U hebt toegang als eigenaar of inzender op het niveau van de resourcegroep voor de Azure Stack Edge/Data Box Gateway, IoT Hub en Azure Storage-resources.
 
-  * U moet een **Eigenaar** op abonnementsniveau zijn om Inzender-toegang te verlenen. Als u Inzender-toegang wilt verlenen aan iemand anders, gaat u in de Azure-portal naar **Alle services** > **Abonnementen** > **Access Control (IAM)**  >  **+Toevoegen** > **Roltoewijzing toevoegen**. Zie [Zelfstudie: Toegang tot Azure-resources verlenen aan een gebruiker met behulp van de Azure-portal](https://docs.microsoft.com/azure/role-based-access-control/quickstart-assign-role-user-portal).
+  * U moet een **Eigenaar** op abonnementsniveau zijn om Inzender-toegang te verlenen. Als u Inzender-toegang wilt verlenen aan iemand anders, gaat u in de Azure-portal naar **Alle services** > **Abonnementen** > **Access Control (IAM)**  >  **+Toevoegen** > **Roltoewijzing toevoegen**. Zie [Zelfstudie: Toegang tot Azure-resources verlenen aan een gebruiker met behulp van de Azure-portal](../role-based-access-control/quickstart-assign-role-user-portal.md).
 
   * Als u een Azure Stack Eedge / Data Box Gateway resource wilt maken, moet u machtigingen hebben als inzender (of hoger) op het niveau van de resourcegroep. U moet er ook voor zorgen dat de `Microsoft.DataBoxEdge`-resourceprovider is geregistreerd. Ga voor meer informatie over het registreren van een resourceprovider naar [Resourceprovider registreren](azure-stack-edge-manage-access-power-connectivity-mode.md#register-resource-providers).
   * Als u een IoT Hub-resource wilt maken, moet u ervoor zorgen dat de provider Microsoft.Devices is geregistreerd. Ga voor meer informatie over het registreren naar [Resourceprovider registreren](azure-stack-edge-manage-access-power-connectivity-mode.md#register-resource-providers).
   * Als u een resource voor een Storage-account wilt maken, moet u een toegangsbereik van een inzender of hoger hebben op het niveau van de resourcegroep. Azure Storage is standaard een geregistreerde resourceprovider.
-* U hebt beheerder-of gebruikerstoegang tot Azure Active Directory Graph API. Zie [Azure Active Directory Graph API](https://docs.microsoft.com/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-) voor meer informatie.
+* U hebt beheerder-of gebruikerstoegang tot Azure Active Directory Graph API. Zie [Azure Active Directory Graph API](/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-) voor meer informatie.
 * U hebt een Microsoft Azure Storage-account met toegangsreferenties.
-* U bent niet geblokkeerd door een Azure-beleid dat door uw systeembeheerder is ingesteld. Zie voor meer informatie over beleid [Quickstart: Een beleidstoewijzing maken om niet-conforme resources te identificeren](https://docs.microsoft.com/azure/governance/policy/assign-policy-portal).
+* U bent niet geblokkeerd door een Azure-beleid dat door uw systeembeheerder is ingesteld. Zie voor meer informatie over beleid [Quickstart: Een beleidstoewijzing maken om niet-conforme resources te identificeren](../governance/policy/assign-policy-portal.md).
 
 ### <a name="for-the-azure-stack-edge-pro-device"></a>Voor het Azure Stack Edge Pro-apparaat
 
@@ -96,7 +96,7 @@ Voer de volgende stappen uit in de Azure-portal om een Azure Stack Edge-resource
 1. Gebruik uw Microsoft Azure-referenties om u aan te melden op 
 
     - Ga naar de Azure-portal op deze URL: [https://portal.azure.com](https://portal.azure.com).
-    - Of de Azure Government Portal op deze URL: [https://portal.azure.us](https://portal.azure.us). Ga naar [Verbinding maken met Azure Government met behulp van de portal](https://docs.microsoft.com/azure/azure-government/documentation-government-get-started-connect-with-portal) voor meer informatie.
+    - Of de Azure Government Portal op deze URL: [https://portal.azure.us](https://portal.azure.us). Ga naar [Verbinding maken met Azure Government met behulp van de portal](../azure-government/documentation-government-get-started-connect-with-portal.md) voor meer informatie.
 
 2. Selecteer **En een resource maken** in het linkerdeelvenster. Zoek en selecteer **Azure Stack Edge / Data Box Gateway**. Selecteer **Maken**.
 3. Kies het abonnement dat u wilt gebruiken voor het Azure Stack Edge Pro-apparaat. Selecteer de regio waar u de Azure Stack Edge-resource wilt implementeren. Zie [Azure-producten die beschikbaar zijn per regio](https://azure.microsoft.com/global-infrastructure/services/?products=databox&regions=all) voor een lijst met alle regio's waar de Azure Stack Edge-resource beschikbaar is.
@@ -112,7 +112,7 @@ Voer de volgende stappen uit in de Azure-portal om een Azure Stack Edge-resource
     |Instelling  |Waarde  |
     |---------|---------|
     |Abonnement    |Dit wordt automatisch ingevuld op basis van de eerdere selectie. Abonnement is gekoppeld aan uw factureringsrekening. |
-    |Resourcegroep  |Maak een nieuwe groep of selecteer een bestaande groep.<br>Meer informatie over [Azure-resourcegroepen](../azure-resource-manager/resource-group-overview.md).     |
+    |Resourcegroep  |Maak een nieuwe groep of selecteer een bestaande groep.<br>Meer informatie over [Azure-resourcegroepen](../azure-resource-manager/management/overview.md).     |
 
 4. Voer de volgende **exemplaardetails** in of selecteer deze.
 

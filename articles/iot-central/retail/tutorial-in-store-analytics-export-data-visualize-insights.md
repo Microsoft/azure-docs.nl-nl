@@ -12,11 +12,11 @@ ms.author: dobett
 author: dominicbetts
 ms.date: 11/12/2019
 ms.openlocfilehash: f00448f19cc0a2118477a9527005548fea25537e
-ms.sourcegitcommit: b4f303f59bb04e3bae0739761a0eb7e974745bb7
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91651442"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187269"
 ---
 # <a name="tutorial-export-data-from-azure-iot-central-and-visualize-insights-in-power-bi"></a>Zelfstudie: Gegevens exporteren uit Azure IoT Central en inzichten visualiseren in Power BI
 
@@ -57,7 +57,7 @@ U hebt nu een resourcegroep met de naam **retail-store-analysis** in uw abonneme
 Voordat u de toepassing voor het controleren van de winkel kunt configureren voor het exporteren van telemetrie, moet u een Event Hub maken om de geëxporteerde gegevens te ontvangen. In de volgende stappen wordt uitgelegd hoe u een Event Hub maakt:
 
 1. Selecteer in Azure Portal **Een resource maken** linksboven in het scherm.
-1. Typ _Event Hubs_ in het vak **Marketplace doorzoeken**en druk op **Enter**.
+1. Typ _Event Hubs_ in het vak **Marketplace doorzoeken** en druk op **Enter**.
 1. Selecteer **Maken** op de pagina **Event Hubs**.
 1. Voer op de pagina **Naamruimte maken** de volgende stappen uit:
     * Voer een unieke naam in voor de naamruimte, zoals _uwnaam-retail-store-analysis_. Het systeem controleert of de naam beschikbaar is.
@@ -69,7 +69,7 @@ Voordat u de toepassing voor het controleren van de winkel kunt configureren voo
 1. Navigeer in de portal naar de resourcegroep **retail-store-analysis**. Wacht totdat de installatie is voltooid. Mogelijk moet u **Vernieuwen** selecteren om de implementatiestatus bij te werken. U kunt de status van het maken van de Event Hub-naamruimte ook controleren in **Meldingen**.
 1. Selecteer in de resourcegroep **retail-store-analysis** de **Event Hubs-naamruimte**. U ziet de startpagina voor uw **Event Hubs-naamruimte** in de portal.
 
-Nu u een **Event Hubs-naamruimte**hebt, kunt u een **Event Hub** maken voor gebruik met uw IoT Central-toepassing:
+Nu u een **Event Hubs-naamruimte** hebt, kunt u een **Event Hub** maken voor gebruik met uw IoT Central-toepassing:
 
 1. Selecteer op de startpagina voor uw **Event Hubs-naamruimte** in de portal de optie **+ Event Hub**.
 1. Voer op de pagina **Event Hub maken** _store-telemetry_ in als de naam en selecteer vervolgens **Maken**.
@@ -161,7 +161,7 @@ Voordat u de logische app maakt, hebt u de apparaat-id's nodig van de twee Ruuvi
 In de volgende stappen ziet u hoe u de logische app maakt in Azure Portal.
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com) en selecteer **Een resource maken** linksboven in het scherm.
-1. Typ _Logic App_ in het vak **Marketplace doorzoeken**en druk op **Enter**.
+1. Typ _Logic App_ in het vak **Marketplace doorzoeken** en druk op **Enter**.
 1. Selecteer op de pagina **Logische app** de optie **Maken**.
 1. Ga als volgt te werk op de pagina **Logische app**:
     * Voer een unieke naam in voor de logische app, zoals _uwnaam-retail-store-analysis_.
@@ -173,7 +173,7 @@ In de volgende stappen ziet u hoe u de logische app maakt in Azure Portal.
 1. Scrol omlaag op de pagina **Ontwerper van logische apps** en selecteer **Lege logische app**.
 1. Typ _Event Hubs_ in **Connectors en triggers doorzoeken**.
 1. Selecteer **Wanneer gebeurtenissen beschikbaar zijn in Event Hub** bij **Triggers**.
-1. Voer _Store telemetry_ in bij **Verbindingsnaam**en selecteer uw **Event Hubs-naamruimte**.
+1. Voer _Store telemetry_ in bij **Verbindingsnaam** en selecteer uw **Event Hubs-naamruimte**.
 1. Selecteer het beleid **RootManageSharedAccess** en selecteer **Maken**.
 1. Ga als volgt te werk in de actie **Wanneer gebeurtenissen beschikbaar zijn in Event Hub**:
     * Selecteer **store-telemetry** bij **Event Hub-naam**.
@@ -373,7 +373,7 @@ Als u de logica wilt toevoegen aan het ontwerp van de logische app, selecteert u
     ![Ontwerp van logische app](./media/tutorial-in-store-analytics-visualize-insights/logic-app.png)
 
 1. Selecteer **Switch by DeviceID** om de actie uit te vouwen. Selecteer vervolgens **Zone 1 environment** en daarna **Een actie toevoegen**.
-1. Typ **Power BI**in **Connectors en acties doorzoeken** en druk op **Enter**.
+1. Typ **Power BI** in **Connectors en acties doorzoeken** en druk op **Enter**.
 1. Selecteer de actie **Add rows to a dataset (preview)** .
 1. Selecteer **Aanmelden** en volg de aanwijzingen om u aan te melden bij uw Power BI-account.
 1. Als het aanmeldingsproces is voltooid, gaat u als volgt te werk in de actie **Add rows to a dataset**:
@@ -386,7 +386,7 @@ Als u de logica wilt toevoegen aan het ontwerp van de logische app, selecteert u
     * Selecteer het veld **Temperatuur** en selecteer vervolgens **Meer weergeven** naast **Telemetrie parseren**. Selecteer vervolgens **Temperatuur**.
     * Selecteer **Opslaan** om uw wijzigingen op te slaan. De actie **Zone 1 environment** ziet eruit als in de volgende schermopname: ![Zone 1 environment](./media/tutorial-in-store-analytics-visualize-insights/zone-1-action.png)
 1. Selecteer de actie **Zone 2 environment** en daarna **Een actie toevoegen**.
-1. Typ **Power BI**in **Connectors en acties doorzoeken** en druk op **Enter**.
+1. Typ **Power BI** in **Connectors en acties doorzoeken** en druk op **Enter**.
 1. Selecteer de actie **Add rows to a dataset (preview)** .
 1. Ga als volgt te werk in de actie **Add rows to a dataset 2**:
     * Selecteer **In-Store Analytics: betaling** als de werkruimte.
@@ -399,7 +399,7 @@ Als u de logica wilt toevoegen aan het ontwerp van de logische app, selecteert u
     Selecteer **Opslaan** om uw wijzigingen op te slaan.  De actie **Zone 2 environment** ziet eruit als in de volgende schermopname: ![Zone 2 environment](./media/tutorial-in-store-analytics-visualize-insights/zone-2-action.png)
 1. Selecteer de actie **Occupancy** en selecteer vervolgens de actie **Switch by Interface ID**.
 1. Selecteer de actie **Dwell Time interface** en selecteer **Een actie toevoegen**.
-1. Typ **Power BI**in **Connectors en acties doorzoeken** en druk op **Enter**.
+1. Typ **Power BI** in **Connectors en acties doorzoeken** en druk op **Enter**.
 1. Selecteer de actie **Add rows to a dataset (preview)** .
 1. Ga als volgt te werk in de actie **Add rows to a dataset**:
     * Selecteer **In-Store Analytics: betaling** als de werkruimte.
@@ -411,7 +411,7 @@ Als u de logica wilt toevoegen aan het ontwerp van de logische app, selecteert u
     * Selecteer het veld **Dwell Time 2** en selecteer vervolgens **Meer weergeven** naast **Telemetrie parseren**. Selecteer vervolgens **DwellTime2**.
     * Selecteer **Opslaan** om uw wijzigingen op te slaan. De actie **Dwell Time interface** ziet eruit als in de volgende schermopname: ![Schermopname met de actie "Dwell Time interface".](./media/tutorial-in-store-analytics-visualize-insights/occupancy-action-1.png)
 1. Selecteer de actie **People Count interface** en selecteer **Een actie toevoegen**.
-1. Typ **Power BI**in **Connectors en acties doorzoeken** en druk op **Enter**.
+1. Typ **Power BI** in **Connectors en acties doorzoeken** en druk op **Enter**.
 1. Selecteer de actie **Add rows to a dataset (preview)** .
 1. Ga als volgt te werk in de actie **Add rows to a dataset**:
     * Selecteer **In-Store Analytics: betaling** als de werkruimte.

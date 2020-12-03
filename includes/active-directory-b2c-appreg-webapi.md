@@ -5,16 +5,16 @@ ms.subservice: B2C
 ms.topic: include
 ms.date: 10/16/2019
 ms.author: mimart
-ms.openlocfilehash: 24f49885892fb69c14ebd589587470edd78eeefe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 86ca23b23d24174d22deafba68ce170bb7717926
+ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84298840"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96025861"
 ---
 Web-API-resources moeten worden geregistreerd in uw tenant voordat deze in staat zijn om beveiligde resourceaanvragen door clienttoepassingen die een toegangstoken aanbieden, kunnen accepteren en erop kunnen reageren.
 
-Als u een toepassing wilt registreren in de Azure AD B2C-tenant, kunt u de nieuwe uniforme ervaring voor **App-registraties** of de verouderde ervaring **Toepassingen (verouderd)** gebruiken. [Meer informatie over de nieuwe ervaring](https://aka.ms/b2cappregtraining).
+Als u een toepassing wilt registreren in de Azure AD B2C-tenant, kunt u de nieuwe uniforme ervaring voor **App-registraties** of de verouderde ervaring **Toepassingen (verouderd)** gebruiken. [Meer informatie over de nieuwe ervaring](../articles/active-directory-b2c/app-registrations-training-guide.md).
 
 #### <a name="app-registrations"></a>[App-registraties](#tab/app-reg-ga/)
 
@@ -42,7 +42,7 @@ Schakel vervolgens de impliciete toekenningsstroom in:
 1. Selecteer **Toepassingen (verouderd)** , en selecteer vervolgens **Toevoegen**.
 1. Voer een naam in voor de toepassing. Bijvoorbeeld *webapi1*.
 1. Selecteer **Ja** bij **Web-app/web-API**.
-1. Selecteer **ja**voor **Impliciete stroom toestaan**.
+1. Selecteer **ja** voor **Impliciete stroom toestaan**.
 1. Voer voor de **Antwoord-URL** een eindpunt in waarop Azure AD B2C tokens retourneert die door uw toepassing worden aangevraagd. In deze zelfstudie wordt het voorbeeld lokaal uitgevoerd en luistert dit op `https://localhost:5000`.
 1. Voeg voor **App-ID-URI** een id voor een API-eindpunt toe aan de weergegeven URI. Voer voor deze zelfstudie `api` in, zodat de volledige URI lijkt op `https://contosob2c.onmicrosoft.com/api`.
 1. Selecteer **Maken**.

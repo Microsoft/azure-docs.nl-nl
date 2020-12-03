@@ -10,11 +10,11 @@ ms.date: 08/28/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Azure Stack Edge Pro so I can use it to transform the data before sending it to Azure.
 ms.openlocfilehash: 75428b28095b0e425a1670caffcf960aa6ae58f6
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94504448"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185501"
 ---
 # <a name="tutorial-transform-data-with-azure-stack-edge-pro"></a>Zelfstudie: Gegevens transformeren met Azure Stack Edge Pro
 
@@ -90,7 +90,7 @@ Voor de eenvoudige implementatie in deze zelfstudie hebt u twee shares nodig: é
 
     3. Geef op de blade **Share toevoegen** een naam op voor de share en selecteer het sharetype.
     4. Als u de Edge-share wilt koppelen, schakelt u het selectievakje voor **De share met Edge-rekenproces** gebruiken.
-    5. Selecteer de **Storage-account** , **Storage-service** , een bestaande gebruiker en selecteer **Maken**.
+    5. Selecteer de **Storage-account**, **Storage-service**, een bestaande gebruiker en selecteer **Maken**.
 
         ![Een Edge-share toevoegen](./media/azure-stack-edge-j-series-deploy-configure-compute/add-edge-share-1.png) 
 

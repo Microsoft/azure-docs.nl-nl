@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/30/2020
 ms.author: jeedes
-ms.openlocfilehash: 84bf1b5ebac158135cf4e19cdbd0afdb181905d9
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 256685e035659cd0fac7fa5577d99f43f4761ea2
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93079218"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96180576"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-alibaba-cloud-service-role-based-sso"></a>Zelfstudie: Eenmalige aanmelding via Azure Active Directory integreren met Alibaba Cloud Service (eenmalige aanmelding op basis van rollen)
 
@@ -244,5 +244,4 @@ Nadat de voorgaande configuraties zijn voltooid, test u Alibaba Cloud Service (e
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u Alibaba Cloud Service (op rollen gebaseerde eenmalige aanmelding) configureert, kunt u sessiecontrole afdwingen om in real time de vertrouwelijke gegevens van uw organisatie te beschermen tegen exfiltratie en infiltratie. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
+Zodra u Alibaba Cloud Service (op rollen gebaseerde eenmalige aanmelding) configureert, kunt u sessiecontrole afdwingen om in real time de vertrouwelijke gegevens van uw organisatie te beschermen tegen exfiltratie en infiltratie. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

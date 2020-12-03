@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: ab13d53e54317bac15b9e1b0067cbd29f72eb3c1
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: c56f1ab546327aaf281ff3616fa489728f3885a6
+ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92319034"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96296944"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-agiloft"></a>Zelfstudie: Azure Active Directory-integratie met Agiloft
 
@@ -105,14 +105,12 @@ Als u eenmalige aanmelding van Azure AD met Agiloft wilt configureren, voert u d
     a. In het tekstvak **Id** typt u een URL met het volgende patroon:
 
     ```http
-    https://<subdomain>.saas.enterprisewizard.com/project/<KB_NAME>
-    https://<subdomain>.agiloft.com/project/<KB_NAME>
+    https://<subdomain>.agiloft.com/<KB_NAME>
     ```
 
     b. In het tekstvak **Antwoord-URL** typt u een URL met het volgende patroon:
 
     ```http
-    https://<subdomain>.saas.enterprisewizard.com:443/gui2/spsamlsso?project=<KB_NAME>
     https://<subdomain>.agiloft.com:443/gui2/spsamlsso?project=<KB_NAME>
     ```
 
@@ -123,7 +121,6 @@ Als u eenmalige aanmelding van Azure AD met Agiloft wilt configureren, voert u d
     In het tekstvak **Aanmeldings-URL** typt u een URL met het volgende patroon:
 
     ```http
-    https://<subdomain>.saas.enterprisewizard.com/gui2/samlssologin.jsp?project=<KB_NAME>
     https://<subdomain>.agiloft.com/gui2/samlssologin.jsp?project=<KB_NAME>
     ```
 
@@ -186,7 +183,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
-    a. Voer in het veld **Naam** **Britta Simon**in.
+    a. Voer in het veld **Naam** **Britta Simon** in.
   
     b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
     Bijvoorbeeld: BrittaSimon@contoso.com
@@ -211,7 +208,7 @@ In deze sectie stelt u Britta Simon in staat gebruik te maken van eenmalige aanm
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop**Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 

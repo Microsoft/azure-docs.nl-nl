@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/06/2020
 ms.author: jeedes
-ms.openlocfilehash: 87741420a693c22be7d549eb57dfeb834b0e6ca8
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 8d5881d838c4fe952206afb827fd60ed98dbba86
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686348"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96178298"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-hownow-webapp-sso"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met HowNow WebApp SSO
 
@@ -138,10 +138,8 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Ga rechtstreeks naar de aanmeldings-URL van HowNow WebApp SSO en initieer daar de aanmeldingsstroom.
 
-* U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u in Toegangsvenster op de HowNow WebApp SSO-tegel klikt, wordt u omgeleid naar de aanmeldings-URL voor HowNow WebApp SSO. Zie [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u in Toegangsvenster op de HowNow WebApp SSO-tegel klikt, wordt u omgeleid naar de aanmeldings-URL voor HowNow WebApp SSO. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u eenmalige aanmelding voor HowNow WebApp SSO hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+Zodra u eenmalige aanmelding voor HowNow WebApp SSO hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

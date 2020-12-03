@@ -9,12 +9,12 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto
 ms.date: 10/21/2020
-ms.openlocfilehash: 6231e4631c19aa3595fa85ca0aa7997861de65a3
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: e068ad01c07af4e5833399c0053da3362cd6aaa6
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675045"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96185637"
 ---
 # <a name="tutorial-create-azure-ad-users-using-azure-ad-applications"></a>Zelfstudie: Azure AD-gebruikers maken met behulp van Azure AD-toepassingen
 
@@ -44,7 +44,7 @@ In deze zelfstudie leert u het volgende:
 
 ## <a name="assign-an-identity-to-the-azure-sql-logical-server"></a>Wijs een identiteit toe aan de logische Azure SQL-server.
 
-1. Maak verbinding met de Azure Active Directory. U hebt uw Tenant-id nodig. Deze vindt u door in de [Azure-portal](https://portal.azure.com) naar uw **Azure Active Directory** -resource te gaan. In het deelvenster **Overzicht** ziet u de **Tenant-id**. Voer de volgende PowerShell-opdracht uit:
+1. Maak verbinding met de Azure Active Directory. U hebt uw Tenant-id nodig. Deze vindt u door in de [Azure-portal](https://portal.azure.com) naar uw **Azure Active Directory**-resource te gaan. In het deelvenster **Overzicht** ziet u de **Tenant-id**. Voer de volgende PowerShell-opdracht uit:
 
     - Vervang `<TenantId>` door de **Tenant-id**.
 
@@ -82,7 +82,7 @@ In deze zelfstudie leert u het volgende:
 
 1. U kunt de identiteit ook controleren door naar de [Azure-portal](https://portal.azure.com) te gaan.
 
-    - Ga onder de **Azure Active Directory** -resource naar **Bedrijfstoepassingen**. Typ de naam van de logische SQL-server. U ziet nu dat er een **object-id** is gekoppeld aan de resource.
+    - Ga onder de **Azure Active Directory**-resource naar **Bedrijfstoepassingen**. Typ de naam van de logische SQL-server. U ziet nu dat er een **object-id** is gekoppeld aan de resource.
     
     :::image type="content" source="media/authentication-aad-service-principals-tutorial/enterprise-applications-object-id.png" alt-text="object-id":::
 
@@ -169,9 +169,9 @@ Raadpleeg [Azure AD-beheerder inrichten (SQL Managed Instance)](authentication-a
 
 2. U moet ook een clientgeheim maken om u aan te melden. Volg deze handleiding om [een certificaat te uploaden of een geheim te maken voor aanmelden](../../active-directory/develop/howto-create-service-principal-portal.md#authentication-two-options).
 
-3. Leg de volgende informatie uit de toepassingsregistratie vast. Deze vindt u in het deelvenster **Overzicht** :
+3. Leg de volgende informatie uit de toepassingsregistratie vast. Deze vindt u in het deelvenster **Overzicht**:
     - **Toepassings-id**
-    - **Tenant-id** : dit is dezelfde id als eerder
+    - **Tenant-id**: dit is dezelfde id als eerder
 
 In deze zelfstudie wordt gebruikgemaakt van *AppSP* als de hoofd-service-principal en *myapp* als de tweede service-principal-gebruiker die met *AppSP* wordt gemaakt in Azure SQL. U moet twee toepassingen maken: *AppSP* en *myapp*.
 
@@ -179,7 +179,7 @@ Voor meer informatie over het maken van een Azure AD-toepassing, raadpleegt u he
 
 ### <a name="permissions-required-to-set-or-unset-the-azure-ad-admin"></a>Benodigde machtigingen voor het instellen of instellen ongedaan maken van de Azure AD-beheerder
 
-Er is een extra API-machtiging nodig om de service-principal een Azure AD-beheerder voor Azure SQL te laten instellen of de instelling ongedaan te laten maken. De Application API-machtiging [Directory.Read.All](https://docs.microsoft.com/graph/permissions-reference#application-permissions-18) moet worden toegevoegd aan uw toepassing in Azure AD.
+Er is een extra API-machtiging nodig om de service-principal een Azure AD-beheerder voor Azure SQL te laten instellen of de instelling ongedaan te laten maken. De Application API-machtiging [Directory.Read.All](/graph/permissions-reference#application-permissions-18) moet worden toegevoegd aan uw toepassing in Azure AD.
 
 :::image type="content" source="media/authentication-aad-service-principals-tutorial/aad-directory-reader-all-permissions.png" alt-text="Directory.Reader.All-machtigingen in Azure AD":::
 

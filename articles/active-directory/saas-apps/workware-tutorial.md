@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/21/2020
 ms.author: jeedes
-ms.openlocfilehash: f3f48695f0ef26b6e54073dbfc4bb0c61802fe58
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: f4996943fd95252be45f7a270d143f14e7f2d48a
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92904780"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96181268"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workware"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Workware
 
@@ -68,7 +68,7 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure Active Directory 
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in de Azure-portal, op de integratiepagina van de toepassing **Workware** , de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Zoek in de Azure-portal, op de integratiepagina van de toepassing **Workware**, de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
@@ -94,9 +94,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
@@ -120,7 +120,7 @@ Als u de functie voor eenmalige aanmelding wilt gebruiken in Workware, moet u de
 
 #### <a name="enable-sso-permissions-for-workware-system-administrators"></a>Machtigingen voor eenmalige aanmelding inschakelen voor systeembeheerders van Workware
 
-* Als u systeembeheerders van Workware toestemming wilt geven om verificatie via eenmalige aanmelding in te stellen, moet de bijbehorende machtiging worden ingeschakeld voor hen (in de categorie **Administration > System configuration permissions op het scherm System Settings > Permissions to Role** ).
+* Als u systeembeheerders van Workware toestemming wilt geven om verificatie via eenmalige aanmelding in te stellen, moet de bijbehorende machtiging worden ingeschakeld voor hen (in de categorie **Administration > System configuration permissions op het scherm System Settings > Permissions to Role**).
 
     ![Machtiging voor verificatie via eenmalige aanmelding](./media/workware-tutorial/permission.png)
 
@@ -164,11 +164,9 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Klik op Deze toepassing testen in de Azure-portal. U wordt automatisch aangemeld bij de instantie van Workware waarvoor u eenmalige aanmelding hebt ingesteld.
 
-* U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u op de tegel van Workware klikt in het toegangsvenster, zou u automatisch moeten worden aangemeld bij het exemplaar van Workware waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u op de tegel van Workware klikt in het toegangsvenster, zou u automatisch moeten worden aangemeld bij het exemplaar van Workware waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u Workware hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+Zodra u Workware hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

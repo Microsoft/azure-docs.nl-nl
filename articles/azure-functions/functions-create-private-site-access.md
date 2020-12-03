@@ -6,12 +6,12 @@ ms.author: cshoe
 ms.service: azure-functions
 ms.topic: tutorial
 ms.date: 06/17/2020
-ms.openlocfilehash: e367e4f2a704d8c718551fb031164520b3ff5bb3
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 75e3886e31592b0672487bacd5ff2266e07e39cd
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579127"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182497"
 ---
 # <a name="tutorial-establish-azure-functions-private-site-access"></a>Zelfstudie: Toegang tot privésite van Azure Functions tot stand brengen
 
@@ -113,7 +113,7 @@ De eerste stap in deze zelfstudie is het maken van een nieuwe virtuele machine i
     | _Subnet_ | AzureBastionSubnet | Het subnet in het virtuele netwerk waarop de nieuwe Bastion-hostresource wordt geïmplementeerd. U moet een subnet maken met de naamwaarde **AzureBastionSubnet**. Deze waarde geeft Azure aan op welk subnet de Bastion-resources moeten worden geïmplementeerd. U moet een subnet van minimaal **/27** of groter (/27, /26 enzovoort) gebruiken. |
 
     > [!NOTE]
-    > Raadpleeg de zelfstudie [Een Azure Bastion-host maken](../bastion/bastion-create-host-portal.md) voor een gedetailleerde, stapsgewijze handleiding voor het maken van een Azure Bastion-resource.
+    > Raadpleeg de zelfstudie [Een Azure Bastion-host maken](../bastion/tutorial-create-host-portal.md) voor een gedetailleerde, stapsgewijze handleiding voor het maken van een Azure Bastion-resource.
 
 1. Maak een subnet waarin Azure de Azure Bastion-host kan inrichten. Als u **Subnet-configuratie beheren** kiest, wordt een nieuw deelvenster geopend waarin u een nieuw subnet kunt definiëren.  Kies **+ Subnet** om een nieuw subnet te maken.
 1. Het subnet moet de naam **AzureBastionSubnet** hebben en het subnetvoorvoegsel moet ten minste **/27** zijn.  Selecteer **OK** om het subnet te maken.
@@ -194,9 +194,9 @@ De volgende stap in deze zelfstudie is het maken van een Azure-functie die door 
 
 1. Volg een van de volgende quickstarts om uw Azure Functions-app te maken en te implementeren.
 
-    * [Visual Studio Code](./functions-create-first-function-vs-code.md)
+    * [Visual Studio Code](./create-first-function-vs-code-csharp.md)
     * [Visual Studio](./functions-create-your-first-function-visual-studio.md)
-    * [Opdrachtregel](./functions-create-first-azure-function-azure-cli.md)
+    * [Opdrachtregel](./create-first-function-cli-csharp.md)
     * [Maven (Java)](./create-first-function-cli-java.md?tabs=bash,browser)
 
 1. Wanneer u uw Azure Functions-project publiceert, kiest u de resource van de functie-app die u eerder in deze zelfstudie hebt gemaakt.

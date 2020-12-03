@@ -12,11 +12,11 @@ ms.workload: infrastructure-services
 ms.date: 10/15/2020
 ms.author: duau
 ms.openlocfilehash: 29b3cdde328a994e5806df810db15b529a6da9af
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92208102"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96188663"
 ---
 # <a name="tutorial-configure-the-geographic-traffic-routing-method-using-traffic-manager"></a>Zelfstudie: De geografische verkeersrouteringsmethode configureren met Traffic Manager
 
@@ -37,7 +37,7 @@ In deze zelfstudie leert u het volgende:
 
 1. Meld u vanuit een browser aan bij [Azure Portal](https://portal.azure.com).
 
-1. Selecteer **+ Een resource maken** aan de linkerkant. Zoek naar **Traffic Manager-profiel** en selecteer **Maken** .
+1. Selecteer **+ Een resource maken** aan de linkerkant. Zoek naar **Traffic Manager-profiel** en selecteer **Maken**.
 
     :::image type="content" source="./media/traffic-manager-geographic-routing-method/create-traffic-manager.png" alt-text="Een Traffic Manager-profiel maken":::
 
@@ -46,23 +46,23 @@ In deze zelfstudie leert u het volgende:
     | Instelling         | Waarde                                              |
     | ---             | ---                                                |
     | Naam            | Geef een naam op voor het profiel. Deze naam moet uniek zijn binnen de trafficmanager.net-zone. Voor toegang tot uw Traffic Manager-profiel gebruikt u de DNS-naam `<profilename>.trafficmanager.net`. |    
-    | Routeringsmethode  | Selecteer **Geografisch** . |
+    | Routeringsmethode  | Selecteer **Geografisch**. |
     | Abonnement    | Selecteer uw abonnement. |
     | Resourcegroep   | Gebruik een bestaande resourcegroep of maak een nieuwe resourcegroep om dit profiel voor te maken. Als u ervoor kiest om een nieuwe resourcegroep te maken, gebruikt u de vervolgkeuzelijst *Locatie van resourcegroep* om de locatie van de resourcegroep op te geven. Deze instelling verwijst naar de locatie van de resourcegroep en heeft geen invloed op het Traffic Manager-profiel dat wereldwijd wordt geïmplementeerd. |
 
 1. Selecteer **Maken** om uw Traffic Manager-profiel te implementeren.
 
-    :::image type="content" source="./media/traffic-manager-geographic-routing-method/create-traffic-manager-profile.png" alt-text="Een Traffic Manager-profiel maken":::
+    :::image type="content" source="./media/traffic-manager-geographic-routing-method/create-traffic-manager-profile.png" alt-text="Pagina Een Traffic Manager-profiel maken":::
 
 ## <a name="add-endpoints"></a>Eindpunten toevoegen
 
 1. Selecteer het Traffic Manager-profiel in de lijst.
 
-    :::image type="content" source="./media/traffic-manager-geographic-routing-method/traffic-manager-list-geographic.png" alt-text="Een Traffic Manager-profiel maken":::
+    :::image type="content" source="./media/traffic-manager-geographic-routing-method/traffic-manager-list-geographic.png" alt-text="Geografische lijst in Traffic Manager":::
 
 1. Selecteer **Eindpunten** onder *Instellingen* en selecteer **+ Toevoegen** om een nieuw eindpunt toe te voegen.
 
-    :::image type="content" source="./media/traffic-manager-geographic-routing-method/add-geographic-endpoint.png" alt-text="Een Traffic Manager-profiel maken":::
+    :::image type="content" source="./media/traffic-manager-geographic-routing-method/add-geographic-endpoint.png" alt-text="Eindpunten toevoegen":::
 
 1. Typ of selecteer de volgende instellingen: 
 
@@ -81,25 +81,25 @@ In deze zelfstudie leert u het volgende:
 
 1. Gebruik in het gedeelte *Geo-toewijzing* de vervolgkeuzelijst om de regio's toe te voegen van waaruit u wilt dat verkeer naar dit eindpunt wordt gestuurd. Er moet ten minste één regio worden toegevoegd. U kunt meerdere regio's toewijzen.
 
-1. Herhaal de laatste stap voor alle eindpunten die u wilt toevoegen onder dit profiel en selecteer **Opslaan** .
+1. Herhaal de laatste stap voor alle eindpunten die u wilt toevoegen onder dit profiel en selecteer **Opslaan**.
 
-    :::image type="content" source="./media/traffic-manager-geographic-routing-method/traffic-manager-add-endpoint.png" alt-text="Een Traffic Manager-profiel maken":::
+    :::image type="content" source="./media/traffic-manager-geographic-routing-method/traffic-manager-add-endpoint.png" alt-text="Traffic Manager-eindpunt toevoegen":::
 
 ## <a name="use-the-traffic-manager-profile"></a>Het Traffic Manager-profiel gebruiken
 
 1.  Zoek in de zoekbalk van de portal de naam van het **Traffic Manager-profiel** dat u in het vorige gedeelte hebt gemaakt en selecteer het Traffic Manager-profiel in de weergegeven resultaten.
     
-    :::image type="content" source="./media/traffic-manager-geographic-routing-method/search-traffic-manager-profile.png" alt-text="Een Traffic Manager-profiel maken":::
+    :::image type="content" source="./media/traffic-manager-geographic-routing-method/search-traffic-manager-profile.png" alt-text="Traffic Manager-profiel zoeken":::
 
 1. Het **Traffic Manager-profiel** geeft de DNS-naam weer van het Traffic Manager-profiel dat u zojuist hebt gemaakt. Deze naam kan door clients worden gebruikt (bijvoorbeeld door ernaar te navigeren met een webbrowser) om naar het juiste eindpunt te gaan, zoals wordt bepaald door het routeringstype. Bij geografische routering kijkt Traffic Manager naar de bron-IP van de binnenkomende aanvraag en bepaalt het de regio van oorsprong. Als die regio is toegewezen aan een eindpunt, wordt er verkeer naar gerouteerd. Als deze regio niet aan een eindpunt is toegewezen, retourneert Traffic Manager een NODATA-queryreactie.
 
-    :::image type="content" source="./media/traffic-manager-geographic-routing-method/traffic-manager-geographic-overview.png" alt-text="Een Traffic Manager-profiel maken":::
+    :::image type="content" source="./media/traffic-manager-geographic-routing-method/traffic-manager-geographic-overview.png" alt-text="Overzicht van geografische Traffic Manager":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Als u het Traffic Manager-profiel niet meer nodig hebt, zoekt u het profiel op en selecteert u **Profiel verwijderen** .
+Als u het Traffic Manager-profiel niet meer nodig hebt, zoekt u het profiel op en selecteert u **Profiel verwijderen**.
 
-:::image type="content" source="./media/traffic-manager-geographic-routing-method/delete-traffic-manager-profile.png" alt-text="Een Traffic Manager-profiel maken":::
+:::image type="content" source="./media/traffic-manager-geographic-routing-method/delete-traffic-manager-profile.png" alt-text="Traffic Manager-profiel verwijderen":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

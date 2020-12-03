@@ -6,17 +6,17 @@ ms.topic: tutorial
 author: bwren
 ms.author: bwren
 ms.date: 10/24/2019
-ms.openlocfilehash: 8b3b6a41da6e3100739da920472d582711d1e9b1
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: a949c9b34e299e0dc4eccbb62f4b4ebb38d6ccb9
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95024378"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96186708"
 ---
 # <a name="get-started-with-log-queries-in-azure-monitor"></a>Aan de slag met logboekquery’s in Azure Monitor
 
 > [!NOTE]
-> U kunt deze oefening in uw eigen omgeving doorlopen als u gegevens verzamelt van ten minste één virtuele machine. Als dat niet het geval is, kunt u onze [demo-omgeving](https://ms.portal.azure.com/#blade/Microsoft_Azure_Monitoring_Logs/DemoLogsBlade) gebruiken. Deze bevat veel voorbeeldgegevens.  Raadpleeg het [deelvenster met opgeslagen voorbeeldquery’s](saved-queries.md) als u al weet hoe u een query in KQL kunt uitvoeren, maar alleen snel nuttige query's hoeft te maken op basis van resourcetype(n).
+> U kunt deze oefening in uw eigen omgeving doorlopen als u gegevens verzamelt van ten minste één virtuele machine. Als dat niet het geval is, kunt u onze [demo-omgeving](https://ms.portal.azure.com/#blade/Microsoft_Azure_Monitoring_Logs/DemoLogsBlade) gebruiken. Deze bevat veel voorbeeldgegevens.  Raadpleeg het [deelvenster met opgeslagen voorbeeldquery’s](./example-queries.md) als u al weet hoe u een query in KQL kunt uitvoeren, maar alleen snel nuttige query's hoeft te maken op basis van resourcetype(n).
 
 In deze zelfstudie leert u hoe u logboekquery's schrijft in Azure Monitor. U leert het volgende:
 
@@ -28,7 +28,7 @@ In deze zelfstudie leert u hoe u logboekquery's schrijft in Azure Monitor. U lee
 - Aangepaste velden definiëren en gebruiken
 - Resultaten samenvoegen en groeperen
 
-Raadpleeg [Aan de slag met Azure Monitor Log Analytics](get-started-portal.md) voor een zelfstudie over het gebruik van Log Analytics in de Azure Portal.<br>
+Raadpleeg [Aan de slag met Azure Monitor Log Analytics](./log-analytics-tutorial.md) voor een zelfstudie over het gebruik van Log Analytics in de Azure Portal.<br>
 Raadpleeg [Overzicht van logboekquery's in Azure Monitor](log-query-overview.md) voor meer informatie over logboekquery's in Azure Monitor.
 
 Volg hieronder een videoversie van deze zelfstudie:
@@ -170,9 +170,9 @@ In het vorige voorbeeld wordt deze uitvoer gegenereerd:
 
 U kunt **project** ook gebruiken om de namen van kolommen te wijzigen en nieuwe te definiëren. In het volgende voorbeeld wordt project gebruikt om het volgende te doen:
 
-* Alleen de oorspronkelijke kolommen *Computer* en *TimeGenerated* selecteren.
+* Selecteer alleen de oorspronkelijke kolommen *Computer* en *TimeGenerated*.
 * De kolom *Activity* weergeven als *EventDetails*.
-* Een nieuwe kolom maken met de naam *EventCode*. De functie **subtekenreeks()** wordt gebruikt om alleen de eerste vier tekens uit het veld Activiteit op te halen.
+* Maak een nieuwe kolom met de naam *EventCode*. De functie **subtekenreeks()** wordt gebruikt om alleen de eerste vier tekens uit het veld Activiteit op te halen.
 
 
 ```Kusto

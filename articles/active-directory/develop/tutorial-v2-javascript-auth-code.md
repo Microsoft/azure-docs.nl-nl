@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev, devx-track-js
-ms.openlocfilehash: 6b8a9cbfd3e7057f0d85d5f4e19fea3aa4fbe90b
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.openlocfilehash: 79fe821e2da494ab8c9e4cb407e2c2b025f75568
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94980215"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96169100"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-app-spa-using-auth-code-flow"></a>Zelfstudie: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een JavaScript-app met één pagina met behulp van autorisatiecodestroom
 
@@ -351,7 +351,7 @@ Wijzig de waarden in de sectie `graphConfig`, zoals hier wordt beschreven:
 
 - `Enter_the_Graph_Endpoint_Here` is het exemplaar van de Microsoft Graph API waarmee de toepassing moet communiceren.
   - Vervang beide exemplaren van deze teken reeks door `https://graph.microsoft.com` voor het **wereldwijde** Microsoft Graph API-eindpunt.
-  - Zie [Nationale cloudimplementaties](https://docs.microsoft.com/graph/deployments) in de Microsoft Graph-documentatie voor eindpunten in **nationale** cloudimplementaties.
+  - Zie [Nationale cloudimplementaties](/graph/deployments) in de Microsoft Graph-documentatie voor eindpunten in **nationale** cloudimplementaties.
 
 De waarden `graphMeEndpoint` en `graphMailEndpoint` in uw *authConfig.js* moeten er als volgt uitzien als u het wereldwijde eindpunt gebruikt:
 

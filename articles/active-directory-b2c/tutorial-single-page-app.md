@@ -11,18 +11,18 @@ ms.custom: mvc, seo-javascript-september2019, devx-track-js
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 705df6ddc6b665ac3d0d62ec3dad93e38f5e513e
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 6a9f3b864bd8aba2140c7d32d4b5474ff7b95f88
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94953097"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96171225"
 ---
 # <a name="tutorial-enable-authentication-in-a-single-page-application-with-azure-ad-b2c"></a>Zelfstudie: Verificatie inschakelen in een toepassing met één pagina met Azure AD B2C
 
 In deze zelfstudie wordt beschreven hoe u Azure Active Directory B2C (Azure AD B2C) gebruikt voor het registreren en aanmelden van gebruikers in een toepassing met één pagina door middel van onderstaande opties:
-* [OAuth 2.0-autorisatiecodestroom](https://docs.microsoft.com/azure/active-directory-b2c/authorization-code-flow) (met [MSAL.js 2.x](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser))
-* [OAuth 2.0-stroom voor impliciete toekenning](https://docs.microsoft.com/azure/active-directory-b2c/implicit-flow-single-page-application) (met [MSAL.js 1.x](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-core))
+* [OAuth 2.0-autorisatiecodestroom](./authorization-code-flow.md) (met [MSAL.js 2.x](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-browser))
+* [OAuth 2.0-stroom voor impliciete toekenning](./implicit-flow-single-page-application.md) (met [MSAL.js 1.x](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-core))
 
 Deze zelfstudie, de eerste in een tweedelige serie, bevat:
 
@@ -51,7 +51,7 @@ Daarnaast hebt u het volgende nodig voor uw lokale ontwikkelomgeving:
 
 ## <a name="update-the-application"></a>De toepassing bijwerken
 
-In de [tweede zelfstudie](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-register-spa) die u als onderdeel van de vereisten hebt voltooid, hebt u een toepassing met één pagina geregistreerd in Azure AD B2C. Als u communicatie wilt inschakelen voor het codevoorbeeld in deze zelfstudie, voegt u een antwoord-URL (ook wel een omleidings-URL genoemd) toe aan de registratie van de toepassing.
+In de [tweede zelfstudie](./tutorial-register-spa.md) die u als onderdeel van de vereisten hebt voltooid, hebt u een toepassing met één pagina geregistreerd in Azure AD B2C. Als u communicatie wilt inschakelen voor het codevoorbeeld in deze zelfstudie, voegt u een antwoord-URL (ook wel een omleidings-URL genoemd) toe aan de registratie van de toepassing.
 
 Als u een toepassing wilt bijwerken in de Azure AD B2C-tenant, kunt u de nieuwe uniforme ervaring voor **App-registraties** of de verouderde ervaring **Toepassingen (verouderd)** gebruiken. [Meer informatie over de nieuwe ervaring](./app-registrations-training-guide.md).
 
@@ -60,7 +60,7 @@ Als u een toepassing wilt bijwerken in de Azure AD B2C-tenant, kunt u de nieuwe 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Selecteer het filter **Map + Abonnement** in het bovenste menu en selecteer vervolgens de map die uw Azure AD B2C-tenant bevat.
 1. Selecteer **Azure AD B2C** in het linkermenu. Of selecteer **Alle services** en zoek naar en selecteer **Azure AD B2C**.
-1. Selecteer achtereenvolgens **App-registraties**, het tabblad **Apps in eigendom** en de app *spaapp1*.
+1. Selecteer achtereenvolgens **App-registraties**, het tabblad **Apps in eigendom** en de toepassing *spaapp1*.
 1. Selecteer onder **Toepassing met één pagina** de koppeling **URL toevoegen** en voer vervolgens `http://localhost:6420` in.
 1. Selecteer **Opslaan**.
 1. Selecteer **Overzicht**.

@@ -4,12 +4,12 @@ ms.service: container-registry
 ms.topic: include
 ms.date: 05/02/2019
 ms.author: danlep
-ms.openlocfilehash: 40cc1856a5e943ca5596e7d11712febadd30e3ec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 79e2ca71d6b8178be63c3429edba89cf3bb523e2
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "67133118"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96029983"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -21,7 +21,7 @@ In deze zelfstudie wordt ervan uitgegaan dat u de stappen in de [vorige zelfstud
 
 U moet een Azure-containerregister in uw Azure-abonnement hebben om deze zelfstudie te voltooien. Als u een register nodig hebt, zie dan de [vorige zelfstudie](../articles/container-registry/container-registry-tutorial-quick-task.md) of [Snelstartgids: Een containerregister maken met de Azure CLI](../articles/container-registry/container-registry-get-started-azure-cli.md).
 
-## <a name="create-a-github-personal-access-token"></a>Een persoonlijk toegangstoken van GitHub maken
+### <a name="create-a-github-personal-access-token"></a>Een persoonlijk toegangstoken van GitHub maken
 
 Als u een taak op een doorvoer naar een Git-opslagplaats wilt activeren, heeft ACR Tasks een persoonlijk toegangstoken (PAT) nodig voor toegang tot de opslagplaats. Als u nog geen PAT hebt, voert u de volgende stappen uit om er een in GitHub te genereren:
 

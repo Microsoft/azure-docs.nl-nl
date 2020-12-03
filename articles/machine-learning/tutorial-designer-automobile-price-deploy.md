@@ -2,20 +2,20 @@
 title: 'Zelfstudie: ML-modellen implementeren met de ontwerpfunctie'
 titleSuffix: Azure Machine Learning
 description: Bouw een predictive analytics-oplossing in de Azure Machine Learning-ontwerpfunctie. Ontdek hoe u een machine learning-model traint, een score geeft en implementeert met behulp van slepen-en-neerzettenmodules.
-author: peterclu
-ms.author: peterlu
+author: likebupt
+ms.author: keli19
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
-ms.date: 11/13/2020
+ms.date: 11/25/2020
 ms.custom: designer
-ms.openlocfilehash: 5a5d166e36b2870ceb081c1c6d2635e01ab43a4d
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 28358db2e538867957fcc8d4984cf1c028f9ab2c
+ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94592546"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96030358"
 ---
 # <a name="tutorial-deploy-a-machine-learning-model-with-the-designer"></a>Zelfstudie: Een Machine Learning-model implementeren met de ontwerpfunctie
 

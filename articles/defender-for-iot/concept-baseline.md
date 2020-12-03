@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/07/2019
 ms.author: mlottner
-ms.openlocfilehash: d97fa4c3c57f6f0dcc5c55b76d839308156c40fb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 75c6841b7fed354843b955a971f02946be349a02
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90936296"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96548882"
 ---
 # <a name="azure-defender-for-iot-baseline-and-custom-checks"></a>Azure Defender voor IoT-basis lijn en aangepaste controles
 
@@ -63,7 +63,7 @@ Aangepaste controles voor basis lijn configureren:
 ## <a name="baseline-custom-check-properties"></a>Aangepaste controle-eigenschappen van basis lijn
 
 | Naam| Status | Geldige waarden| Standaardwaarden| Beschrijving |
-|----------|------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|---------------|
+|------|-----|------|-----|-----|
 |baselineCustomChecksEnabled|Vereist: True |Geldige waarden: **Booleaans** |Standaard waarde: **False** |Het maximale tijds interval voor berichten met een hoge prioriteit wordt verzonden.|
 |baselineCustomChecksFilePath |Vereist: True|Geldige waarden: **teken reeks**, **Null** |Standaard waarde: **Null** |Volledig pad van de XML-configuratie voor basis lijn|
 |baselineCustomChecksFileHash |Vereist: True|Geldige waarden: **teken reeks**, **Null** |Standaard waarde: **Null** |`sha256sum` van het XML-configuratie bestand. Gebruik de [sha256sum-verwijzing](https://linux.die.net/man/1/sha256sum) voor aanvullende informatie. |

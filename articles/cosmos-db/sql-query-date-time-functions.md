@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/18/2020
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: d8b6e932f4cd5f4119d93f3fed7db524f65cbc1f
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: cfa81b6ec5f10218a70de6b9b55e502d87898194
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93338948"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96549171"
 ---
 # <a name="date-and-time-functions-azure-cosmos-db"></a>Datum-en tijd functies (Azure Cosmos DB)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -46,4 +46,4 @@ Met de volgende functies kunt u eenvoudig waarden voor DateTime, Time Stamp en T
 - [Systeem functies Azure Cosmos DB](sql-query-system-functions.md)
 - [Inleiding tot Azure Cosmos DB](introduction.md)
 - [Door de gebruiker gedefinieerde functies](sql-query-udfs.md)
-- [Statistische functies](sql-query-aggregates.md)
+- [Aggregaties](sql-query-aggregate-functions.md)

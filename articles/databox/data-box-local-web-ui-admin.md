@@ -6,34 +6,28 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 09/23/2020
+ms.date: 12/01/2020
 ms.author: alkohli
-ms.openlocfilehash: f5bcb5c42661c375372d4d0b17571d784152dd5f
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 751ac870996fa1a2805bb018c991f85525fd797d
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337284"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96548943"
 ---
 # <a name="use-the-local-web-ui-to-administer-your-data-box-and-data-box-heavy"></a>Gebruik de lokale web-UI voor het beheren van uw Data Box en Data Box Heavy
 
 In dit artikel worden enkele van de configuratie-en beheer taken beschreven die op Data Box en Data Box Heavy apparaten worden uitgevoerd. U kunt de Data Box en Data Box Heavy apparaten beheren via de Azure Portal gebruikers interface en de lokale webgebruikersinterface voor het apparaat. Dit artikel is gericht op taken die worden uitgevoerd met behulp van de lokale webgebruikersinterface.
 
-De lokale web-UI voor de Data Box en voor Data Box Heavy wordt gebruikt voor de initiële configuratie van het apparaat. U kunt ook de lokale web-UI gebruiken om het apparaat af te sluiten of opnieuw op te starten, diagnostische tests uit te voeren, software bij te werken, het kopiëren van logboeken te bekijken en een logboek pakket te genereren voor Microsoft Ondersteuning. Op een Data Box Heavy apparaat met twee onafhankelijke knoop punten, hebt u toegang tot twee afzonderlijke lokale web-UIs die overeenkomen met elk knoop punt van het apparaat.
-
-Dit artikel bevat de volgende zelfstudies:
-
-- Een ondersteuningspakket genereren
-- Apparaat uitschakelen of opnieuw opstarten
-- Materiaal lijst of manifest bestanden downloaden
-- Beschikbare capaciteit van het apparaat weergeven
-- De controlesomvalidatie overslaan
+De lokale web-UI voor Data Box en voor Data Box Heavy wordt gebruikt voor de initiële configuratie van het apparaat. U kunt ook de lokale web-UI gebruiken om het apparaat af te sluiten of opnieuw op te starten, diagnostische tests uit te voeren, software bij te werken, de kopie logboeken te bekijken, lokale gegevens van het apparaat te wissen en een ondersteunings pakket voor Microsoft Ondersteuning te genereren. Op een Data Box Heavy apparaat met twee onafhankelijke knoop punten, hebt u toegang tot twee afzonderlijke lokale web-UIs die overeenkomen met elk knoop punt van het apparaat.
 
 [!INCLUDE [Data Box feature is in preview](../../includes/data-box-feature-is-preview-info.md)]
 
 ## <a name="generate-support-package"></a>Ondersteuningspakket genereren
 
-Als u problemen met het apparaat ondervindt, kunt u een ondersteuningspakket maken vanuit het systeemlogboek. Microsoft Ondersteuning gebruikt dit pakket om het probleem op te lossen. Als u een ondersteunings pakket wilt genereren, voert u de volgende stappen uit:
+Als u problemen met het apparaat ondervindt, kunt u een ondersteuningspakket maken vanuit het systeemlogboek. Microsoft Ondersteuning gebruikt dit pakket om het probleem op te lossen.
+
+Als u een ondersteunings pakket wilt genereren, voert u de volgende stappen uit:
 
 1. Ga in de lokale web-UI naar **contact opnemen met ondersteuning** en selecteer **ondersteunings pakket maken**.
 
@@ -51,9 +45,29 @@ Als u problemen met het apparaat ondervindt, kunt u een ondersteuningspakket mak
 
     ![Ondersteuningspakket maken 5](media/data-box-local-web-ui-admin/create-support-package-5.png)
 
+## <a name="erase-local-data-from-your-device"></a>Lokale gegevens van uw apparaat wissen
+
+U kunt de lokale web-UI gebruiken om lokale gegevens van uw apparaat te wissen voordat u deze terugstuurt naar het Azure-Data Center.
+
+> [!IMPORTANT]
+> Het wissen van gegevens kan niet ongedaan worden gemaakt. Maak een back-up van de bestanden voordat u lokale gegevens van het apparaat wist.
+
+Voer de volgende stappen uit om lokale gegevens van uw apparaat te wissen:
+
+1. Ga in de lokale web-UI naar **gegevens wissen**.
+2. Voer het wacht woord van het apparaat in en selecteer **gegevens wissen**.
+
+    ![Optie gegevens wissen voor een apparaat](media/data-box-local-web-ui-admin/erase-local-data-1.png)
+
+3. Selecteer **Ja** in het bevestigings venster om door te gaan. Het wissen van gegevens kan tot 50 minuten duren.
+
+   Zorg ervoor dat u een back-up maakt van uw lokale gegevens voordat u deze wist van het apparaat. Het wissen van gegevens kan niet ongedaan worden gemaakt.
+
+    ![Prompt voor het bevestigen van gegevens wissen](media/data-box-local-web-ui-admin/erase-local-data-2.png)
+
 ## <a name="shut-down-or-restart-your-device"></a>Apparaat uitschakelen of opnieuw opstarten
 
-U kunt het apparaat afsluiten of opnieuw opstarten met behulp van de lokale webgebruikersinterface. We raden u aan de shares vóór de herstart offline te zetten op de host en vervolgens op het apparaat. Zo minimaliseert u de kans op beschadiging van gegevens. Zorg ervoor dat het kopiëren van de gegevens niet wordt uitgevoerd wanneer u het apparaat uitschakelt.
+U kunt het apparaat afsluiten of opnieuw opstarten met behulp van de lokale webgebruikersinterface. U wordt aangeraden de shares offline te zetten op de host en vervolgens op het apparaat. Zo minimaliseert u de kans op beschadiging van gegevens. Zorg ervoor dat het kopiëren van de gegevens niet wordt uitgevoerd wanneer u het apparaat uitschakelt.
 
 Voer de volgende stappen uit om uw apparaat af te sluiten.
 
@@ -153,7 +167,7 @@ U kunt deze lijst gebruiken om de bestanden die zijn geüpload naar het Azure St
 <file size="3603" crc64="0x7e34c25d5606693f">\databox\TOC.yml</file>
 ```
 
-Dit bestand bevat de lijst met alle bestanden die zijn gekopieerd op de Data Box of Data Box Heavy. In dit bestand is de *crc64* -waarde gerelateerd aan de controlesom die is gegenereerd voor het bijbehorende bestand.
+Dit bestand bevat de lijst met alle bestanden die zijn gekopieerd op de Data Box of Data Box Heavy. In dit bestand is de *crc64*-waarde gerelateerd aan de controlesom die is gegenereerd voor het bijbehorende bestand.
 
 ## <a name="view-available-capacity-of-the-device"></a>Beschikbare capaciteit van het apparaat weergeven
 
@@ -168,7 +182,7 @@ U kunt het apparaatdashboard gebruiken om de beschikbare en gebruikte capaciteit
 
 Er worden standaard controlesommen gegenereerd voor uw gegevens tijdens de voorbereiding voor verzending. In sommige zeldzame gevallen, afhankelijk van het gegevenstype (kleine bestandsgrootten), kan dit lang duren. In dergelijke gevallen kunt u de controlesom overslaan.
 
-De berekening van de controlesom tijdens de voor bereiding op verzen ding wordt alleen uitgevoerd voor import orders en niet voor export orders. 
+De berekening van de controlesom tijdens de voor bereiding op verzen ding wordt alleen uitgevoerd voor import orders en niet voor export orders.
 
 We raden u ten zeerste aan om de controlesom niet uit te schakelen, tenzij de prestaties te veel worden beïnvloed.
 

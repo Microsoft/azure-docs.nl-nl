@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/08/2020
 ms.author: rkarlin
-ms.openlocfilehash: 4189cb8628db58343c816535836af82825014b7e
-ms.sourcegitcommit: 93329b2fcdb9b4091dbd632ee031801f74beb05b
+ms.openlocfilehash: a8697094a3366e3b82ca65f1b962101243b22f84
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92096314"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96548916"
 ---
 # <a name="azure-defender-for-iot-architecture"></a>Azure Defender voor IoT-architectuur
 
@@ -79,7 +79,7 @@ De detectie van operationele incidenten detecteert operationele problemen zoals 
 Het beheren van Azure Defender voor IoT in hybride omgevingen geschiedt via twee beheer portals: 
 - Sensor console
 - De on-premises beheer console
-- Azure Portal
+- De Azure-portal
 
 #### <a name="sensor-console"></a>Sensor console
 Sensor detecties worden weer gegeven in de sensor console, waar ze kunnen worden weer gegeven, onderzocht en geanalyseerd in een netwerk kaart, inventarisatie van activa en in een uitgebreide reeks rapporten, bijvoorbeeld rapporten voor risico analyse, gegevens analyse query's en aanvals vectoren. U kunt ook de-console gebruiken om bedreigingen weer te geven en te verwerken die door sensor motoren zijn gedetecteerd, om gegevens door te sturen naar systemen van derden, gebruikers te beheren en meer.

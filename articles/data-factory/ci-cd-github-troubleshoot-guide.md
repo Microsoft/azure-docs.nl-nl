@@ -7,13 +7,13 @@ ms.reviewer: susabat
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: troubleshooting
-ms.date: 11/27/2020
-ms.openlocfilehash: e0b4b31a1d732cbd5cbfaa9b6e5e021caa3adf01
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.date: 12/03/2020
+ms.openlocfilehash: d5cf39cf91b69574fc1423cfe0942b567cf9a278
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96301965"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96548202"
 ---
 # <a name="troubleshoot-ci-cd-azure-devops-and-github-issues-in-adf"></a>Problemen met CI-CD-, Azure DevOps-en GitHub oplossen in ADF 
 
@@ -58,7 +58,7 @@ CI/CD-pijp lijn mislukt met de volgende fout:
 
 #### <a name="recommendation"></a>Aanbeveling
 
-De fout treedt op omdat er vaak een trigger wordt verwijderd die para meters bevat. de para meters zijn daarom niet beschikbaar in de ARM-sjabloon (omdat de trigger niet meer bestaat). Omdat de para meter zich niet meer in de ARM-sjabloon bevindt, moeten de overschreven para meters in de DevOps-pijp lijn worden bijgewerkt. Anders worden de para meters in de ARM-sjabloon gewijzigd, dan moeten ze de overschreven para meters in de DevOps-pijp lijn (in de implementatie taak) bijwerken.
+De fout treedt op omdat we vaak een trigger verwijderen, die para meters bevat. de para meters zijn daarom niet beschikbaar in de ARM-sjabloon (omdat de trigger niet meer bestaat). Omdat de para meter zich niet meer in de ARM-sjabloon bevindt, moeten de overschreven para meters in de DevOps-pijp lijn worden bijgewerkt. Anders worden de para meters in de ARM-sjabloon gewijzigd, dan moeten ze de overschreven para meters in de DevOps-pijp lijn (in de implementatie taak) bijwerken.
 
 ### <a name="updating-property-type-is-not-supported"></a>Het bijwerken van het eigenschaps type wordt niet ondersteund
 
@@ -107,7 +107,7 @@ Bij het publiceren van wijzigingen in een Data Factory wordt het volgende fout b
 
 U hebt de Git-configuratie losgekoppeld en opnieuw ingesteld met de vlag ' resources importeren ' geselecteerd, waarmee de Data Factory als synchroon wordt ingesteld. Dit betekent dat er geen wijzigingen worden gepubliceerd.
 
-**Oplossing**
+#### <a name="resolution"></a>Oplossing
 
 Ontkoppel Git-configuratie en stel deze opnieuw in en zorg ervoor dat u het selectie vakje ' bestaande resources importeren ' niet inschakelt.
 

@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: iot-central
 services: iot-central
 manager: philmea
-ms.openlocfilehash: 8f46c402c8c25a144cd4c12137aeabfdfa31e096
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 50d0119b08d2c76a5f6111e485408ebcdace83c6
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96463144"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96549018"
 ---
 # <a name="manage-your-bill-in-an-iot-central-application"></a>Uw factuur beheren in een IoT Central-toepassing
 
@@ -34,11 +34,11 @@ Voer de volgende stappen uit om dit self-service proces te volt ooien:
 
 1. Ga naar de pagina met **prijzen** in de sectie **beheer** .
 
-    ![Status van de proef versie](media/howto-view-bill/freetrialbilling.png)
+    :::image type="content" source="media/howto-view-bill/freetrialbilling.png" alt-text="Status van de proef versie":::
 
 1. Selecteer **converteren naar een betaald abonnement**.
 
-    ![Proef versie converteren](media/howto-view-bill/convert.png)
+    :::image type="content" source="media/howto-view-bill/convert.png" alt-text="Proef versie converteren":::
 
 1. Selecteer de juiste Azure Active Directory en vervolgens het Azure-abonnement dat u wilt gebruiken voor uw toepassing die gebruikmaakt van een betaald abonnement.
 
@@ -55,7 +55,7 @@ In het gedeelte prijzen kunt u uw Azure IoT-prijs plan op elk gewenst moment bij
 
 1. Ga naar de pagina met **prijzen** in de sectie **beheer** .
 
-    ![Prcing-abonnement upgraden](media/howto-view-bill/pricing.png)
+    :::image type="content" source="media/howto-view-bill/pricing.png" alt-text="Upgrade prijs plan":::
 
 1. Selecteer het **plan** en selecteer vervolgens **Opslaan** om te upgraden of Down graden.
 

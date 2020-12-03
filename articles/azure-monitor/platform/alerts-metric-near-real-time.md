@@ -5,14 +5,14 @@ author: harelbr
 ms.author: harelbr
 services: monitoring
 ms.topic: conceptual
-ms.date: 9/30/2020
+ms.date: 12/3/2020
 ms.subservice: alerts
-ms.openlocfilehash: d1a1a31d5894338e0deeed27fabcde9fdbf6f588
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: dfcc1f15ebec1337cfa7d484319c7b942ff052b2
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94566483"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96548236"
 ---
 # <a name="supported-resources-for-metric-alerts-in-azure-monitor"></a>Ondersteunde resources voor metrische waarschuwingen in Azure Monitor
 
@@ -46,7 +46,7 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 |Micro soft. ClassicStorage/Storage accounts/queueServices | Ja | Nee | |
 |Micro soft. ClassicStorage/Storage accounts/tableServices | Ja | Nee | |
 |Micro soft. CognitiveServices/accounts | Ja | Nee | [Cognitive Services](./metrics-supported.md#microsoftcognitiveservicesaccounts) |
-|Microsoft.Compute/virtualMachines | Yes | Ja<sup>1</sup> | [Virtual Machines](./metrics-supported.md#microsoftcomputevirtualmachines) |
+|Microsoft.Compute/virtualMachines | Ja | Ja<sup>1</sup> | [Virtual Machines](./metrics-supported.md#microsoftcomputevirtualmachines) |
 |Microsoft.Compute/virtualMachineScaleSets | Ja | Nee |[Schaal sets voor virtuele machines](./metrics-supported.md#microsoftcomputevirtualmachinescalesets) |
 |Micro soft. ContainerInstance/containerGroups | Ja| Nee | [Containergroepen](./metrics-supported.md#microsoftcontainerinstancecontainergroups) |
 |Micro soft. ContainerRegistry/registers | Nee | Nee | [Container registers](./metrics-supported.md#microsoftcontainerregistryregistries) |
@@ -85,7 +85,8 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 |Micro soft. Network/applicationGateways | Ja | Nee | [Toepassings gateways](./metrics-supported.md#microsoftnetworkapplicationgateways) |
 |Micro soft. Network/azurefirewalls | Ja | Nee | [Firewalls](./metrics-supported.md#microsoftnetworkazurefirewalls) |
 |Microsoft.Network/dnsZones | Nee | Nee | [DNS-zones](./metrics-supported.md#microsoftnetworkdnszones) |
-|Microsoft.Network/expressRouteCircuits | N.v.t. | Nee |[Express Route-circuits](./metrics-supported.md#microsoftnetworkexpressroutecircuits) |
+|Microsoft.Network/expressRouteCircuits | Ja | Nee |[ExpressRoute-circuits](./metrics-supported.md#microsoftnetworkexpressroutecircuits) |
+|Micro soft. Network/expressRoutePorts | Ja | Nee |[ExpressRoute Direct](./metrics-supported.md#microsoftnetworkexpressrouteports) |
 |Micro soft. Network/loadBalancers (alleen voor standaard-Sku's)| Ja| Nee | [Load balancers](./metrics-supported.md#microsoftnetworkloadbalancers) |
 |Micro soft. Network/natGateways| Nee | Nee | |
 |Micro soft. Network/privateEndpoints| Nee | Nee | |
@@ -102,11 +103,14 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 |Micro soft. SQL/managedInstances | Nee | Ja | [Beheerde SQL-exemplaren](./metrics-supported.md#microsoftsqlmanagedinstances) |
 |Microsoft.Sql/servers/databases | Nee | Ja | [SQL Databases](./metrics-supported.md#microsoftsqlserversdatabases) |
 |Micro soft. SQL/servers/elasticPools | Nee | Ja | [Elastische SQL-Pools](./metrics-supported.md#microsoftsqlserverselasticpools) |
-|Microsoft.Storage/storageAccounts |Ja | Nee | [Storage Accounts](./metrics-supported.md#microsoftstoragestorageaccounts)|
+|Microsoft.Storage/storageAccounts |Ja | Nee | [Opslag accounts](./metrics-supported.md#microsoftstoragestorageaccounts)|
 |Micro soft. Storage/Storage accounts/Services | Ja| Nee | [BLOB Services](./metrics-supported.md#microsoftstoragestorageaccountsblobservices), [Bestands Services](./metrics-supported.md#microsoftstoragestorageaccountsfileservices), [wachtrij Services](./metrics-supported.md#microsoftstoragestorageaccountsqueueservices) en [tabel Services](./metrics-supported.md#microsoftstoragestorageaccountstableservices)|
 |Micro soft. StorageCache/caches | Ja | Nee | |
 |Micro soft. StorageSync/storageSyncServices | Ja | Nee | [Opslag synchronisatie Services](./metrics-supported.md#microsoftstoragesyncstoragesyncservices) |
 |Micro soft. StreamAnalytics/streamingjobs | Ja | Nee | [Stream Analytics](./metrics-supported.md#microsoftstreamanalyticsstreamingjobs) |
+|Micro soft. Synapse/werk ruimten | Ja | Nee | [Synapse Analytics](./metrics-supported.md#microsoftsynapseworkspaces) |
+|Micro soft. Synapse/werk ruimten/bigDataPools | Ja | Nee | [Apache Spark Pools voor Synapse Analytics](./metrics-supported.md#microsoftsynapseworkspacesbigdatapools) |
+|Micro soft. Synapse/werk ruimten/sqlPools | Ja | Nee | [Synapse Analytics SQL-groepen](./metrics-supported.md#microsoftsynapseworkspacessqlpools) |
 |Micro soft. VMWareCloudSimple/informatie | Ja | Nee | [Virtuele CloudSimple-machines](./metrics-supported.md#microsoftvmwarecloudsimplevirtualmachines) |
 |Micro soft. Web/hostingEnvironments/multiRolePools | Ja | Nee | [Groepen met meerdere rollen App Service Environment](./metrics-supported.md#microsoftwebhostingenvironmentsmultirolepools)|
 |Micro soft. Web/hostingEnvironments/workerPools | Ja | Nee | [Werk groepen App Service Environment](./metrics-supported.md#microsoftwebhostingenvironmentsworkerpools)|

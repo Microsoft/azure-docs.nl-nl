@@ -11,18 +11,18 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/26/2019
+ms.date: 12/03/2020
 ms.author: mlottner
-ms.openlocfilehash: aec750d246ce99fa65431e23ef68e70418db0017
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7f7575697706363c082a4e6374b3df7a49e65cdf
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90936875"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96548848"
 ---
 # <a name="defender-for-iot-event-aggregation"></a>Defender voor IoT-gebeurtenis aggregatie
 
-Defender voor IoT-beveiligings agenten verzamelt gegevens en systeem gebeurtenissen van uw lokale apparaat en verzenden deze gegevens naar de Azure-Cloud voor verwerking en analyse. De beveiligings agent verzamelt veel soorten apparaatfuncties, waaronder nieuw proces en nieuwe verbindings gebeurtenissen. Het nieuwe proces en de nieuwe verbindings gebeurtenissen kunnen zich binnen een tweede keer regel matig voordoen op een apparaat, en hoewel belang rijk voor de robuuste en uitgebreide beveiliging, kan het aantal berichten dat beveiligings agenten voor verzen ding geforceerd snel worden bereikt of groter zijn dan uw IoT Hub quotum en kosten limieten. Deze gebeurtenissen bevatten echter zeer waardevolle beveiligings informatie die essentieel is voor het beveiligen van uw apparaat.
+Defender voor IoT-beveiligings agenten verzamelen gegevens en systeem gebeurtenissen van uw lokale apparaat en verzenden deze gegevens naar de Azure-Cloud voor verwerking en analyse. De beveiligings agent verzamelt veel soorten apparaatfuncties, waaronder nieuw proces en nieuwe verbindings gebeurtenissen. Het nieuwe proces en de nieuwe verbindings gebeurtenissen kunnen zich binnen een tweede keer regel matig voordoen op een apparaat, en hoewel belang rijk voor de robuuste en uitgebreide beveiliging, kan het aantal berichten dat beveiligings agenten voor verzen ding geforceerd snel worden bereikt of groter zijn dan uw IoT Hub quotum en kosten limieten. Deze gebeurtenissen bevatten echter zeer waardevolle beveiligings informatie die essentieel is voor het beveiligen van uw apparaat.
 
 Om het extra quotum en de kosten te verminderen terwijl uw apparaten beveiligd blijven, kunnen Defender voor IoT-agents dit type gebeurtenissen samen stellen.
 
@@ -44,7 +44,7 @@ De agent verhoogt het aantal treffers van deze specifieke gebeurtenis, wanneer d
 
 Gebeurtenissen worden alleen als identiek beschouwd wanneer aan de volgende voor waarden wordt voldaan:
 
-* ProcessCreate-gebeurtenissen: wanneer **commandline**, **uitvoer bare bestand**, **gebruikers naam**en **GebruikersID** identiek zijn
+* ProcessCreate-gebeurtenissen: wanneer **commandline**, **uitvoer bare bestand**, **gebruikers naam** en **GebruikersID** identiek zijn
 * ConnectionCreate-gebeurtenissen: wanneer **commandline**, **GebruikersID**, **Direction**, **lokaal adres**, **extern adres**, * * protocol en **doel poort** identiek zijn
 * ProcessTerminate-gebeurtenissen: wanneer het **uitvoer bare bestand** en de status van het **Afsluiten** identiek zijn
 
@@ -52,8 +52,8 @@ Gebeurtenissen worden alleen als identiek beschouwd wanneer aan de volgende voor
 
 Tijdens aggregatie worden gebeurtenis eigenschappen die niet worden geaggregeerd, verwijderd en weer gegeven in log Analytics met de waarde 0.
 
-* ProcessCreate-gebeurtenissen- **processId**en **parentProcessId** zijn ingesteld op 0
-* ConnectionCreate-gebeurtenissen- **processId**en **bron poort** zijn ingesteld op 0
+* ProcessCreate-gebeurtenissen- **processId** en **parentProcessId** zijn ingesteld op 0
+* ConnectionCreate-gebeurtenissen- **processId** en **bron poort** zijn ingesteld op 0
 
 ## <a name="event-aggregation-based-alerts"></a>Waarschuwingen op basis van gebeurtenis aggregatie
 

@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 09/08/2020
+ms.date: 11/13/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 4105698198e6fb7f4e3d3526ff9590ebca4898f1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 47a2aae39be93361e1e0e581efb56cc678b444cd
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91612163"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96549086"
 ---
 # <a name="object-replication-for-block-blobs"></a>Object replicatie voor blok-blobs
 
@@ -43,14 +43,36 @@ Voor object replicatie moeten de volgende Azure Storage-functies ook zijn ingesc
 
 Het inschakelen van wijzigings feed-en BLOB-versie beheer kan extra kosten in beslag nemen. Raadpleeg de [pagina met Azure Storage prijzen](https://azure.microsoft.com/pricing/details/storage/)voor meer informatie.
 
+## <a name="how-object-replication-works"></a>Werking van object replicatie
+
+Met object replicatie worden blok-blobs in een container asynchroon gekopieerd op basis van de regels die u configureert. De inhoud van de blob, alle versies die zijn gekoppeld aan de BLOB en de meta gegevens en eigenschappen van de BLOB zijn allemaal gekopieerd van de bron container naar de doel container.
+
+> [!IMPORTANT]
+> Omdat blok-BLOB-gegevens asynchroon worden gerepliceerd, worden het bron account en het doel account niet direct gesynchroniseerd. Er is momenteel geen SLA over hoe lang het duurt om gegevens naar het doel account te repliceren. U kunt de replicatie status op de bron-BLOB controleren om te bepalen of de replicatie is voltooid. Zie [de replicatie status van een BLOB controleren](object-replication-configure.md#check-the-replication-status-of-a-blob)voor meer informatie.
+
+### <a name="blob-versioning"></a>BLOB-versie beheer
+
+Voor object replicatie moet BLOB-versie beheer zijn ingeschakeld voor zowel de bron-als de doel account. Wanneer een gerepliceerde Blob in het bron account wordt gewijzigd, wordt een nieuwe versie van de BLOB gemaakt in het bron account dat de vorige status van de BLOB weergeeft, vóór wijziging. De huidige versie (of basis-blob) in het bron account weerspiegelt de meest recente updates. Zowel de bijgewerkte huidige versie als de nieuwe vorige versie worden gerepliceerd naar het doel account. Zie voor meer informatie over hoe schrijf bewerkingen van invloed zijn op BLOB-versies [versie beheer voor schrijf bewerkingen](versioning-overview.md#versioning-on-write-operations).
+
+Wanneer een BLOB in het bron account wordt verwijderd, wordt de huidige versie van de BLOB vastgelegd in een vorige versie en vervolgens verwijderd. Alle vorige versies van de BLOB blijven behouden, zelfs nadat de huidige versie is verwijderd. Deze status wordt gerepliceerd naar het doel account. Zie voor meer informatie over hoe delete-bewerkingen van invloed zijn op BLOB-versies [versie beheer op Delete-bewerkingen](versioning-overview.md#versioning-on-delete-operations).
+
+### <a name="snapshots"></a>Momentopnamen
+
+Object replicatie biedt geen ondersteuning voor BLOB-moment opnamen. Moment opnamen van een BLOB in het bron account worden niet gerepliceerd naar het doel account.
+
+### <a name="blob-tiering"></a>BLOB-lagen
+
+Object replicatie wordt ondersteund als de bron-en doel accounts zich in de warme of coole laag bevinden. De bron-en doel account kunnen verschillende lagen hebben. Object replicatie mislukt echter als een BLOB in het bron-of doel account is verplaatst naar de laag van het archief. Zie [toegangs lagen voor Azure Blob Storage-hot, cool en Archive](storage-blob-storage-tiers.md)voor meer informatie over blob-lagen.
+
+### <a name="immutable-blobs"></a>Onveranderbare blobs
+
+Object replicatie biedt geen ondersteuning voor onveranderbare blobs. Als een bron-of doel container een Bewaar beleid op basis van tijd of juridische bewaring heeft, mislukt de object replicatie. Zie voor meer informatie over onveranderbare blobs [bedrijfskritische BLOB-gegevens opslaan met onveranderbare opslag](storage-blob-immutable-storage.md).
+
 ## <a name="object-replication-policies-and-rules"></a>Beleid en regels voor object replicatie
 
 Wanneer u object replicatie configureert, maakt u een replicatie beleid dat het bron opslag account en het doel account opgeeft. Een replicatie beleid bevat een of meer regels die een bron container en een doel container opgeven en aangeven welke blok-blobs in de bron container worden gerepliceerd.
 
 Nadat u object replicatie hebt geconfigureerd, wordt door Azure Storage de wijziging van de feed voor het bron account periodiek gecontroleerd en worden schrijf-en verwijder bewerkingen naar het doel account asynchroon gerepliceerd. Replicatie latentie is afhankelijk van de grootte van de blok-blob die wordt gerepliceerd.
-
-> [!IMPORTANT]
-> Omdat blok-BLOB-gegevens asynchroon worden gerepliceerd, worden het bron account en het doel account niet direct gesynchroniseerd. Er is momenteel geen SLA over hoe lang het duurt om gegevens naar het doel account te repliceren.
 
 ### <a name="replication-policies"></a>Replicatie beleid
 

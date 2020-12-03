@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
-ms.openlocfilehash: e2ed3680a0867ab8f7e2ad41603883f07a4be427
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: fec3f25c4b401ff7c3bc73d249b716b9c12e6529
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94655745"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96548542"
 ---
 # <a name="step-2-configure-your-security-solution-to-send-cef-messages"></a>STAP 2: uw beveiligings oplossing configureren voor het verzenden van CEF-berichten
 
@@ -34,12 +34,13 @@ Als uw beveiligings oplossing al een bestaande connector heeft, gebruikt u de vo
 - [Cisco](connect-cisco.md)
 - [ExtraHop Reveal(x)](connect-extrahop.md)
 - [F5 ASM](connect-f5.md)  
+- [Force Point-producten](connect-forcepoint-casb-ngfw.md)
 - [Fortinet](connect-fortinet.md)
+- [Illusive Networks AMS](connect-illusive-attack-management-system.md)
 - [One Identity Safeguard](connect-one-identity.md)
 - [Palo Alto Networks](connect-paloalto.md)
 - [Deep Security van Trend Micro](connect-trend-micro.md)
-- [Zscaler](connect-zscaler.md)   
-
+- [Zscaler](connect-zscaler.md)
 ## <a name="configure-any-other-solution"></a>Andere oplossingen configureren
 
 Als er geen connector bestaat voor uw specifieke beveiligings oplossing, gebruikt u de volgende algemene instructies voor het door sturen van logboeken naar de CEF-agent.
@@ -50,12 +51,22 @@ Als er geen connector bestaat voor uw specifieke beveiligings oplossing, gebruik
     - Indeling = CEF
     - IP-adres: Zorg ervoor dat u de CEF-berichten verzendt naar het IP-adres van de virtuele machine die u voor dit doel hebt toegewezen.
 
-   > [!NOTE]
-   > Deze oplossing ondersteunt syslog RFC 3164 of RFC 5424.
+   Deze oplossing ondersteunt syslog RFC 3164 of RFC 5424.
 
-1. Zoek naar om het relevante schema in Log Analytics te gebruiken voor de CEF-gebeurtenissen `CommonSecurityLog` .
+1. Als u wilt zoeken naar CEF-gebeurtenissen in Log Analytics, voert u `CommonSecurityLog` in het query venster in.
 
 1. Ga door naar stap 3: de [verbinding valideren](connect-cef-verify.md).
+
+> [!NOTE]
+> **De bron van het veld TimeGenerated wijzigen**
+>
+> - Standaard vult de Log Analytics agent het veld *TimeGenerated* in het schema in met de tijd dat de agent de gebeurtenis van de syslog-daemon heeft ontvangen. Als gevolg hiervan wordt het tijdstip waarop de gebeurtenis op het bron systeem werd gegenereerd, niet vastgelegd in azure Sentinel.
+>
+> - U kunt echter de volgende opdracht uitvoeren, zodat het script wordt gedownload en uitgevoerd `TimeGenerated.py` . Met dit script wordt de Log Analytics-agent zo geconfigureerd dat het veld *TimeGenerated* wordt ingevuld met de oorspronkelijke tijd van de gebeurtenis op het bron systeem, in plaats van de tijd die door de agent is ontvangen.
+>
+>    ```bash
+>    wget -O TimeGenerated.py https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/TimeGenerated.py && python TimeGenerated.py {ws_id}
+>    ```
 
 ## <a name="next-steps"></a>Volgende stappen
 

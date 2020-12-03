@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/12/2020
-ms.openlocfilehash: d4983ecd1b8afe1ec6bd3cc31df8b711cebaddf1
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 00b5d220cdbc511a309d55cfca2049508049fa30
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350259"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96549001"
 ---
 # <a name="azure-hdinsight-release-notes"></a>Opmerkingen bij de release van Azure HDInsight
 
@@ -46,8 +46,9 @@ Het cluster type van HDInsight 3,6 ML-Services is de eind datum van de ondersteu
 ### <a name="disabled-vm-sizes"></a>Uitgeschakelde VM-grootten
 Vanaf november 16 2020 worden nieuwe klanten die clusters maken met behulp van standand_A8, standand_A9 standand_A10 en standand_A11 VM-grootten geblokkeerd door HDInsight. Bestaande klanten die deze VM-grootten in de afgelopen drie maanden hebben gebruikt, worden niet beïnvloed. Formulier wordt gestart 9 2021. HDInsight blokkeert alle klanten die clusters maken met behulp van standand_A8, standand_A9, standand_A10 en standand_A11 VM-grootten. Bestaande clusters worden uitgevoerd. Overweeg om over te stappen op HDInsight 4,0 om mogelijke onderbreking van systeem/ondersteuning te voor komen.
 
-### <a name="behavior-changes"></a>Gedrags wijzigingen
-Er is geen wijziging van het gedrag voor deze versie.
+## <a name="behavior-changes"></a>Gedrags wijzigingen
+### <a name="add-nsg-rule-checking-before-scaling-operation"></a>Controle van NSG-regel toevoegen vóór schaal bewerking
+Met HDInsight zijn netwerk beveiligings groepen (Nsg's) en Udr's-controle (User-defined routes) toegevoegd met een schaal bewerking. Dezelfde validatie wordt uitgevoerd voor het schalen van clusters behalve bij het maken van het cluster. Deze validatie helpt onvoorspelbare fouten te voor komen. Als de validatie niet is geslaagd, mislukt het schalen. Zie [IP-adressen voor HDInsight-beheer](https://docs.microsoft.com/azure/hdinsight/hdinsight-management-ip-addresses)voor meer informatie over het correct configureren van Nsg's en udr's.
 
 ## <a name="upcoming-changes"></a>Aanstaande wijzigingen
 De volgende wijzigingen worden uitgevoerd in toekomstige releases.

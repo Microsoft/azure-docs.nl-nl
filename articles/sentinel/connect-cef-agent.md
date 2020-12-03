@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2020
 ms.author: yelevin
-ms.openlocfilehash: 5374871a51586a573e9ab41121f3f2dd95baf876
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: ead878daaab977c77b3ab36f42ccfe4d01d7bc03
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94695245"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96548627"
 ---
 # <a name="step-1-deploy-the-log-forwarder"></a>Stap 1: de logboek-doorstuur server implementeren
 
@@ -57,6 +57,9 @@ In deze stap wijst en configureert u de Linux-computer waarmee de logboeken word
 1. Zorg ervoor dat het script wordt uitgevoerd en controleer of er geen fout-of waarschuwings berichten worden weer gegeven.
     - Mogelijk wordt er een bericht weer gegeven waarin u wordt gevraagd een opdracht uit te voeren om een probleem met de toewijzing van het *computer* veld te corrigeren. Zie de [uitleg in het implementatie script](#mapping-command) voor meer informatie.
 
+1. Ga verder met [stap 2: uw beveiligings oplossing configureren voor het door sturen van CEF-berichten](connect-cef-solution-config.md) .
+
+
 > [!NOTE]
 > **Dezelfde computer gebruiken voor het door sturen van zowel normale syslog- *als* CEF-berichten**
 >
@@ -67,7 +70,16 @@ In deze stap wijst en configureert u de Linux-computer waarmee de logboeken word
 > 1. U moet de volgende opdracht uitvoeren op die computers om de synchronisatie van de agent met de syslog-configuratie in azure Sentinel uit te scha kelen. Dit zorgt ervoor dat de configuratie wijziging die u in de vorige stap hebt aangebracht, niet wordt overschreven.<br>
 > `sudo su omsagent -c 'python /opt/microsoft/omsconfig/Scripts/OMS_MetaConfigHelper.py --disable'`
 
-Ga verder met [stap 2: uw beveiligings oplossing configureren voor het door sturen van CEF-berichten](connect-cef-solution-config.md) .
+> [!NOTE]
+> **De bron van het veld TimeGenerated wijzigen**
+>
+> - Standaard vult de Log Analytics agent het veld *TimeGenerated* in het schema in met de tijd dat de agent de gebeurtenis van de syslog-daemon heeft ontvangen. Als gevolg hiervan wordt het tijdstip waarop de gebeurtenis op het bron systeem werd gegenereerd, niet vastgelegd in azure Sentinel.
+>
+> - U kunt echter de volgende opdracht uitvoeren, zodat het script wordt gedownload en uitgevoerd `TimeGenerated.py` . Met dit script wordt de Log Analytics-agent zo geconfigureerd dat het veld *TimeGenerated* wordt ingevuld met de oorspronkelijke tijd van de gebeurtenis op het bron systeem, in plaats van de tijd die door de agent is ontvangen.
+>
+>    ```bash
+>    wget -O TimeGenerated.py https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/TimeGenerated.py && python TimeGenerated.py {ws_id}
+>    ```
 
 ## <a name="deployment-script-explained"></a>Uitleg bij implementatie script
 

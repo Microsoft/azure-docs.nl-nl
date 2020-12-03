@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/13/2019
 ms.author: girobins
 ms.custom: query-reference
-ms.openlocfilehash: 9dc3631b738da78df83113d89d23051033674d11
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 63d349c8cfff52932d51ce7143aba33521c43890
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93338364"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96549183"
 ---
 # <a name="mathematical-functions-azure-cosmos-db"></a>Wiskundige functies (Azure Cosmos DB)  
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -57,7 +57,7 @@ De volgende ingebouwde wiskundige functies voeren een berekening uit, meestal op
 * [SIGN](sql-query-sign.md)
 * [SIN](sql-query-sin.md)
 * [SQRT](sql-query-sqrt.md)
-* [WORTEL](sql-query-square.md)
+* [SQUARE](sql-query-square.md)
 * [TAN](sql-query-tan.md)
 * [TRUNC](sql-query-trunc.md)
 
@@ -69,4 +69,4 @@ Alle wiskundige functies, met uitzonde ring van ASELECT, zijn deterministische f
 - [Systeem functies Azure Cosmos DB](sql-query-system-functions.md)
 - [Inleiding tot Azure Cosmos DB](introduction.md)
 - [Door de gebruiker gedefinieerde functies](sql-query-udfs.md)
-- [Statistische functies](sql-query-aggregates.md)
+- [Aggregaties](sql-query-aggregate-functions.md)

@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: pharring
 ms.author: pharring
 ms.date: 11/10/2020
-ms.openlocfilehash: 89c13566c3710e56a4cd737d9aa03c6fb57edc93
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 73fea1e1928cf4e1bd5342aa0a4c885ccb5cf137
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542725"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96548168"
 ---
 # <a name="release-notes-for-microsoftapplicationinsightssnapshotcollector"></a>Opmerkingen bij de release voor micro soft. ApplicationInsights. SnapshotCollector
 
@@ -22,6 +22,11 @@ Voor fout rapporten en feedback opent u een probleem op GitHub op https://github
 
 ## <a name="release-notes"></a>Releaseopmerkingen
 
+## <a name="1374"></a>[1.3.7.4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector/1.3.7.4)
+Een punt versie om een probleem op te lossen dat is ontdekt bij het testen van het scenario voor de code in het test Azure App Service.
+### <a name="changes"></a>Wijzigingen
+- Het netcoreapp 3.0-doel is nu afhankelijk van micro soft. ApplicationInsights. AspNetCore >= 2.1.1 (voorheen >= 2.1.2).
+
 ## <a name="1373"></a>[1.3.7.3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector/1.3.7.3)
 Een punt versie voor het oplossen van een aantal problemen met hoge impact.
 ### <a name="bug-fixes"></a>Opgeloste fouten
@@ -30,9 +35,9 @@ Een punt versie voor het oplossen van een aantal problemen met hoge impact.
 
 ## <a name="137"></a>[1.3.7](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector/1.3.7)
 ### <a name="changes"></a>Wijzigingen
-Het netcoreapp 2.0-doel van SnapshotCollector is afhankelijk van micro soft. ApplicationInsights. AspNetCore >= 2.1.1 (opnieuw). Hiermee wordt de werking van het gedrag voor 1.3.5 hersteld. Er is geprobeerd om de app bij te werken in 1.3.6, maar er zijn enkele Azure App Service-scenario's opgedeeld.
+- Het netcoreapp 2.0-doel van SnapshotCollector is afhankelijk van micro soft. ApplicationInsights. AspNetCore >= 2.1.1 (opnieuw). Hiermee wordt de werking van het gedrag voor 1.3.5 hersteld. Er is geprobeerd om de app bij te werken in 1.3.6, maar er zijn enkele Azure App Service-scenario's opgedeeld.
 ### <a name="new-features"></a>Nieuwe functies
-Snapshot Collector leest en parseert de Connections Tring van de APPLICATIONINSIGHTS_CONNECTION_STRING omgevings variabele of van de TelemetryConfiguration. Dit wordt voornamelijk gebruikt om het eind punt in te stellen om verbinding te maken met de service snap shot. Zie de [documentatie voor verbindings reeksen](./sdk-connection-string.md)voor meer informatie.
+- Snapshot Collector leest en parseert de Connections Tring van de APPLICATIONINSIGHTS_CONNECTION_STRING omgevings variabele of van de TelemetryConfiguration. Dit wordt voornamelijk gebruikt om het eind punt in te stellen om verbinding te maken met de service snap shot. Zie de [documentatie voor verbindings reeksen](./sdk-connection-string.md)voor meer informatie.
 ### <a name="bug-fixes"></a>Opgeloste fouten
 - Is overgeschakeld naar het gebruik van httpclient maakt voor alle doelen behalve net45 omdat webaanvraag in sommige omgevingen is mislukt vanwege een incompatibel exemplaar (TLS 1,2 vereist).
 
@@ -60,20 +65,20 @@ Snapshot Collector leest en parseert de Connections Tring van de APPLICATIONINSI
 - Het toevoegen van een momentopname verzamelaar is eenvoudiger met behulp van AddSnapshotCollector (). Meer informatie vindt u [hier](./snapshot-debugger-appservice.md).
 - Gebruik de FISMA MD5-instelling voor het controleren van BLOB-blokken. Dit voor komt het standaard algoritme voor .NET MD5 crypto grafie dat niet beschikbaar is wanneer het besturings systeem is ingesteld op de FIPS-compatibele modus.
 - .NET Framework frames negeren bij het deoptimalisatieen van functie aanroepen. Dit gedrag kan worden bepaald door de configuratie-instelling DeoptimizeIgnoredModules.
-- Voeg `DeoptimizeMethodCount` een configuratie-instelling toe waarmee deoptimalisatie van meer dan één functie aanroep is toegestaan. Meer informatie
+- Voeg `DeoptimizeMethodCount` een configuratie-instelling toe waarmee deoptimalisatie van meer dan één functie aanroep is toegestaan. Meer informatie vindt u hier
 
 ## <a name="134"></a>[1.3.4](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector/1.3.4)
 - Gestructureerd instrumentatie sleutels toestaan.
 - Verhoog de SnapshotUploader-robuustheid: door gaan met opstarten, zelfs als oude Uploader-logboeken niet kunnen worden verplaatst.
 - Opnieuw inschakelen van rapportage aanvullende telemetrie wanneer SnapshotUploader.exe onmiddellijk afsluit (is uitgeschakeld in 1.3.3).
 - Vereenvoudig interne telemetrie.
-- _Experimentele functie_ : Snappoint verzamelings plannen: Voeg ' SnapshotOnFirstOccurence ' toe. Meer informatie [vindt u hier](https://gist.github.com/alexaloni/5b4d069d17de0dabe384ea30e3f21dfe).
+- _Experimentele functie_: Snappoint verzamelings plannen: Voeg ' SnapshotOnFirstOccurence ' toe. Meer informatie [vindt u hier](https://gist.github.com/alexaloni/5b4d069d17de0dabe384ea30e3f21dfe).
 
 ## <a name="133"></a>[1.3.3](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector/1.3.3)
 - Er is een probleem opgelost waardoor SnapshotUploader.exe niet meer reageert en geen moment opnamen voor .NET Core-Apps uploadt.
 
 ## <a name="132"></a>[1.3.2](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector/1.3.2)
-- _Experimentele functie_ : Snappoint verzamelings plannen. Meer informatie [vindt u hier](https://gist.github.com/alexaloni/5b4d069d17de0dabe384ea30e3f21dfe).
+- _Experimentele functie_: Snappoint verzamelings plannen. Meer informatie [vindt u hier](https://gist.github.com/alexaloni/5b4d069d17de0dabe384ea30e3f21dfe).
 - SnapshotUploader.exe wordt afgesloten wanneer de runtime het AppDomain verwijdert van waaruit SnapshotCollector wordt geladen, in plaats van te wachten tot het proces wordt afgesloten. Dit verbetert de betrouw baarheid van de Collector wanneer deze wordt gehost in IIS.
 - Voeg configuratie toe om meerdere SnapshotCollector-instanties die dezelfde instrumentatie sleutel gebruiken, toe te staan om hetzelfde SnapshotUploader-proces te delen: ShareUploaderProcess (standaard ingesteld op `true` ).
 - Meld extra telemetrie als SnapshotUploader.exe onmiddellijk afsluit.

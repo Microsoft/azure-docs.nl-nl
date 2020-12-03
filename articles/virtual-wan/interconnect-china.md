@@ -7,12 +7,12 @@ ms.service: virtual-wan
 ms.topic: conceptual
 ms.date: 12/01/2020
 ms.author: sukishen
-ms.openlocfilehash: a92dafe6237d0f061f837f07c5dcf2686b1a8a7e
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: 169477ffdf6fd593f1b6f01469c7303f8bd3a488
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/02/2020
-ms.locfileid: "96510728"
+ms.locfileid: "96531834"
 ---
 # <a name="interconnect-with-china-using-azure-virtual-wan-and-secure-hub"></a>Interconnect met China met behulp van Azure Virtual WAN en Secure hub
 
@@ -20,7 +20,7 @@ Bij het bekijken van veelvoorkomende auto's, productie, logistiek industrieën o
 
 In de meeste gevallen zijn klanten lastig met hoge latentie, lage band breedte, Insta Biel verbinding en hoge kosten die verbinding maken met buiten China (bijvoorbeeld Europe of de Verenigde Staten).
 
-Een reden hiervoor is de ' fantastische firewall van China ', waarmee het Chinese deel van het Internet wordt beschermd en verkeer wordt gefilterd op China. Bijna al het verkeer dat wordt uitgevoerd vanuit China dat is vasteland naar buiten China, met uitzonde ring van de speciale beheer zones zoals Hongkong en Macao, geeft de fantastische Firewall door. Het verkeer dat wordt uitgevoerd via Hong Kong en Macao heeft niet de volledige firewall, en wordt afgehandeld door een subset van de fantastische firewall.
+Een reden hiervoor is de ' fantastische firewall van China ', waarmee het Chinese deel van het Internet wordt beschermd en verkeer wordt gefilterd op China. Bijna al het verkeer dat vanuit de volks Republiek China naar buiten China loopt, wordt de fantastische Firewall door gegeven, met uitzonde ring van de speciale beheer zones zoals Hong Kong en Macao. Het verkeer dat wordt uitgevoerd via Hong Kong en Macao heeft niet de volledige firewall, en wordt afgehandeld door een subset van de fantastische firewall.
 
 :::image type="content" source="./media/interconnect-china/provider.png" alt-text="Diagram geeft de Interconnect van de provider weer.":::
 
@@ -71,13 +71,13 @@ De volgende lijst bevat de Internet-uitwisselingen die mogelijk zijn in Hongkong
 
 Wanneer u deze verbinding maakt, moet uw volgende BGP-hop voor micro soft-Services micro soft autonoom systeem nummer zijn (als #) 8075. Als u één locatie of SDWAN-oplossing gebruikt, is dat de keuze van de verbinding.
 
-Met de huidige wijzigingen ten aanzien van de onderlinge verbinding tussen het vasteland van China en Hong Kong, bouwen de meeste van deze netwerk providers een MPLS-brug tussen de vasteland-China en Hong Kong.
+Met de huidige wijzigingen ten aanzien van de onderlinge verbinding tussen China en Hong Kong SAR, bouwen de meeste van deze netwerk providers een MPLS-brug tussen China en Hong Kong SAR.
 
 U kunt zien dat site-naar-site-VPN-verbindingen binnen China zijn toegestaan en meestal stabiel zijn. Dit geldt ook voor de site-naar-site-verbindingen tussen filialen in de rest van de wereld. Providers maken nu een VPN-SDWAN aggregatie aan beide zijden en brug via MPLS ertussen.
 
 :::image type="content" source="./media/interconnect-china/china-mpls-bridge.png" alt-text="Diagram toont de MPLS-brug van China.":::
 
-In beide gevallen is het raadzaam dat u een tweede en een regel matige Internet-groepen in de Chinese vasteland hebt. Dit is het verdelen van het verkeer tussen ondernemings verkeer naar Cloud Services zoals Microsoft 365 en Azure, en door de wet gereguleerd Internet verkeer.
+In beide gevallen is het raadzaam dat u een tweede en een normale Internet-groepen in China hebt. Dit is het verdelen van het verkeer tussen ondernemings verkeer naar Cloud Services zoals Microsoft 365 en Azure, en door de wet gereguleerd Internet verkeer.
 
 Een compatibele netwerk architectuur in China kan er als volgt uitzien:
 

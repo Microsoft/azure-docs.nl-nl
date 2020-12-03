@@ -12,12 +12,12 @@ ms.date: 09/15/2020
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.custom: contperfq2
-ms.openlocfilehash: f524eae791ab3944fb326b867e5f6823a35b432c
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: ddce982f43a3c730d8c25527f4354983c36e89e8
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96348191"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96530818"
 ---
 # <a name="tutorial---build-a-scim-endpoint-and-configure-user-provisioning-with-azure-ad"></a>Zelfstudie: een SCIM-eind punt bouwen en gebruikers inrichten met Azure AD
 
@@ -1240,3 +1240,4 @@ We raden u aan om uw bestaande documentatie bij te werken en de integratie in uw
 * [Bereikfilters voor het inrichten van gebruikers](define-conditional-rules-for-provisioning-user-accounts.md)
 * [Meldingen over accountinrichting](user-provisioning.md)
 * [Lijst met handleidingen voor het integreren van SaaS-apps](../saas-apps/tutorial-list.md)
+

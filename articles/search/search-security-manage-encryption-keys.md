@@ -9,18 +9,18 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/02/2020
 ms.custom: references_regions
-ms.openlocfilehash: 4fb20b221858c4717d67e0777afbe5c067c00a69
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 8295e619cfda0d4b83a7356d5fd21d4b80f83849
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499608"
+ms.locfileid: "96530881"
 ---
 # <a name="configure-customer-managed-keys-for-data-encryption-in-azure-cognitive-search"></a>Door de klant beheerde sleutels voor gegevens versleuteling configureren in azure Cognitive Search
 
-Azure Cognitive Search versleutelt automatisch geïndexeerde inhoud met door [service beheerde sleutels](../security/fundamentals/encryption-atrest.md#azure-encryption-at-rest-components). Als er meer beveiliging nodig is, kunt u standaard versleuteling aanvullen met een extra versleutelings laag met behulp van sleutels die u in Azure Key Vault maakt en beheert. Dit artikel begeleidt u stapsgewijs door de stappen voor het instellen van CMK-versleuteling.
+Azure Cognitive Search versleutelt automatisch geïndexeerde inhoud met door [service beheerde sleutels](../security/fundamentals/encryption-atrest.md#azure-encryption-at-rest-components). Als er meer beveiliging nodig is, kunt u standaard versleuteling aanvullen met een extra versleutelings laag met behulp van sleutels die u in Azure Key Vault maakt en beheert. Dit artikel begeleidt u stapsgewijs door de stappen voor het instellen van door de klant beheerde sleutel versleuteling.
 
-CMK-versleuteling is afhankelijk van [Azure Key Vault](../key-vault/general/overview.md). U kunt uw eigen versleutelings sleutels maken en deze opslaan in een sleutel kluis, of u kunt de Api's van Azure Key Vault gebruiken om versleutelings sleutels te genereren. Met Azure Key Vault kunt u ook het sleutel gebruik controleren als u [logboek registratie inschakelt](../key-vault/general/logging.md).  
+Door de klant beheerde sleutel versleuteling is afhankelijk van [Azure Key Vault](../key-vault/general/overview.md). U kunt uw eigen versleutelings sleutels maken en deze opslaan in een sleutel kluis, of u kunt de Api's van Azure Key Vault gebruiken om versleutelings sleutels te genereren. Met Azure Key Vault kunt u ook het sleutel gebruik controleren als u [logboek registratie inschakelt](../key-vault/general/logging.md).  
 
 Versleuteling met door de klant beheerde sleutels wordt toegepast op afzonderlijke indexen of synoniemen kaarten wanneer deze objecten worden gemaakt en niet op het niveau van de zoek service zelf worden opgegeven. Alleen nieuwe objecten kunnen worden versleuteld. U kunt geen inhoud versleutelen die al bestaat.
 
@@ -31,21 +31,21 @@ Sleutels hoeven niet allemaal in dezelfde sleutel kluis te zijn. Eén zoek servi
 
 ## <a name="double-encryption"></a>Dubbele versleuteling
 
-Voor services die zijn gemaakt na 1 augustus 2020 en in specifieke regio's, geldt het bereik van CMK-versleuteling voor tijdelijke schijven, met [volledige dubbele versleuteling](search-security-overview.md#double-encryption), die momenteel beschikbaar is in deze regio's: 
+Voor services die zijn gemaakt na 1 augustus 2020 en in specifieke regio's, omvat het bereik van door de klant beheerde sleutel versleuteling tijdelijke schijven, met [volledige dubbele versleuteling](search-security-overview.md#double-encryption), die momenteel beschikbaar is in deze regio's: 
 
-+ West US 2
++ US - west 2
 + VS - oost
 + VS - zuid-centraal
 + VS (overheid) - Virginia
 + VS (overheid) - Arizona
 
-Als u een andere regio gebruikt, of een service die is gemaakt vóór 1 augustus, is uw CMK-versleuteling beperkt tot alleen de gegevens schijf, met uitzonde ring van de tijdelijke schijven die door de service worden gebruikt.
+Als u een andere regio gebruikt, of een service die is gemaakt vóór 1 augustus, is de beheerde sleutel versleuteling beperkt tot alleen de gegevens schijf, met uitzonde ring van de tijdelijke schijven die door de service worden gebruikt.
 
 ## <a name="prerequisites"></a>Vereisten
 
 De volgende hulpprogram ma's en services worden in dit scenario gebruikt.
 
-+ [Azure-Cognitive Search](search-create-service-portal.md) op een [factureer bare laag](search-sku-tier.md#tiers) (Basic of hoger, in een wille keurige regio).
++ [Azure-Cognitive Search](search-create-service-portal.md) op een [factureer bare laag](search-sku-tier.md#tier-descriptions) (Basic of hoger, in een wille keurige regio).
 + [Azure Key Vault](../key-vault/general/overview.md)kunt u een sleutel kluis maken met behulp van [Azure Portal](../key-vault//general/quick-create-portal.md), [Azure cli](../key-vault//general/quick-create-cli.md)of [Azure PowerShell](../key-vault//general/quick-create-powershell.md). in hetzelfde abonnement als Azure Cognitive Search. De sleutel kluis moet de beveiliging **voorlopig verwijderen** en **leegmaken** hebben ingeschakeld.
 + [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md). Als u er nog geen hebt, [stelt u een nieuwe Tenant](../active-directory/develop/quickstart-create-new-tenant.md)in.
 
@@ -56,7 +56,7 @@ U moet een zoek toepassing hebben die het versleutelde object kan maken. In deze
 
 ## <a name="1---enable-key-recovery"></a>1-sleutel herstel inschakelen
 
-Vanwege de aard van de versleuteling met door de klant beheerde sleutels kan niemand uw gegevens ophalen als uw sleutel kluis sleutel van Azure wordt verwijderd. Als u gegevens verlies wilt voor komen dat wordt veroorzaakt door onopzettelijke verwijderingen van Key Vault sleutels, moet u de beveiliging van zacht verwijderen en leegmaken inschakelen op de sleutel kluis. Zacht verwijderen is standaard ingeschakeld, zodat u alleen problemen ondervindt als u deze voor het doel heeft uitgeschakeld. Het opschonen van de beveiliging is niet standaard ingeschakeld, maar is wel vereist voor Azure Cognitive Search CMK-versleuteling. Zie voor meer informatie [voorlopig verwijderen](../key-vault/general/soft-delete-overview.md) en beveiligings overzichten [opschonen](../key-vault/general/soft-delete-overview.md#purge-protection) .
+Vanwege de aard van de versleuteling met door de klant beheerde sleutels kan niemand uw gegevens ophalen als uw sleutel kluis sleutel van Azure wordt verwijderd. Als u gegevens verlies wilt voor komen dat wordt veroorzaakt door onopzettelijke verwijderingen van Key Vault sleutels, moet u de beveiliging van zacht verwijderen en leegmaken inschakelen op de sleutel kluis. Zacht verwijderen is standaard ingeschakeld, zodat u alleen problemen ondervindt als u deze voor het doel heeft uitgeschakeld. Het opschonen van de beveiliging is niet standaard ingeschakeld, maar is wel vereist voor door de klant beheerde sleutel versleuteling in Cognitive Search. Zie voor meer informatie [voorlopig verwijderen](../key-vault/general/soft-delete-overview.md) en beveiligings overzichten [opschonen](../key-vault/general/soft-delete-overview.md#purge-protection) .
 
 U kunt beide eigenschappen instellen met behulp van de portal-, Power shell-of Azure CLI-opdrachten.
 
@@ -377,7 +377,7 @@ Voor waarden die voor komen dat u deze vereenvoudigde benadering kunt aannemen, 
 
 ## <a name="work-with-encrypted-content"></a>Werken met versleutelde inhoud
 
-Met CMK-versleuteling ziet u latentie voor zowel indexering als query's als gevolg van het extra versleutelen/ontsleutelen van het werk. Met Azure Cognitive Search worden geen versleutelings activiteiten geregistreerd, maar u kunt de toegang tot sleutels controleren via de sleutel kluis logboek registratie. Het is raadzaam [logboek registratie in te scha kelen](../key-vault/general/logging.md) als onderdeel van de sleutel kluis configuratie.
+Met door de klant beheerde sleutel versleuteling ziet u latentie voor zowel indexering als query's als gevolg van het extra versleutelen/ontsleutelen. Met Azure Cognitive Search worden geen versleutelings activiteiten geregistreerd, maar u kunt de toegang tot sleutels controleren via de sleutel kluis logboek registratie. Het is raadzaam [logboek registratie in te scha kelen](../key-vault/general/logging.md) als onderdeel van de sleutel kluis configuratie.
 
 Er wordt naar verwachting over een bepaalde periode gedraaid. Wanneer u sleutels roteert, is het belang rijk dat u deze volg orde volgt:
 

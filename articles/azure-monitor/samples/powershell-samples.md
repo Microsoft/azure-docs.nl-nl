@@ -7,12 +7,12 @@ author: bwren
 ms.author: bwren
 ms.date: 2/14/2018
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 74211df6f925aaa09a4c87a518056e8ef3206b87
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4f7ddf94bbd077912cf0d7c2adef2eac548274ca
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89078398"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96532275"
 ---
 # <a name="azure-monitor-powershell-samples"></a>Azure Monitor PowerShell-voorbeelden
 In dit artikel wordt beschreven hoe u PowerShell-opdrachten kunt gebruiken om toegang te krijgen tot Azure Monitor-functies.
@@ -94,7 +94,7 @@ Get-AzLog -Caller 'myname@company.com'
 Met de volgende opdracht worden de laatste 1000 gebeurtenissen uit het activiteitenlogboek opgehaald:
 
 ```powershell
-Get-AzLog -MaxRecord 10
+Get-AzLog -MaxRecord 1000
 ```
 
 `Get-AzLog` ondersteunt allerlei andere parameters. Zie de referentie `Get-AzLog` voor meer informatie.

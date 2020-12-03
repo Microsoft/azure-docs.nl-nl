@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 12/1/2020
 ms.author: billgib
 ms.reviewer: jrasnick
-ms.openlocfilehash: 55a1255ffa82aec8ea7b9e1ec2bbc6746b9b0636
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: bae214fb8eff9747bf3f79323d8eb9ce1cb6cdb7
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/02/2020
-ms.locfileid: "96523435"
+ms.locfileid: "96531595"
 ---
 # <a name="synapse-rbac-roles"></a>Synapse RBAC-rollen
 
@@ -28,12 +28,11 @@ De volgende wijzigingen zijn van toepassing op gebruikers die bekend zijn met de
 - **Nieuwe bereiken op een lager niveau** worden geïntroduceerd voor verschillende rollen.  Met deze bereiken kunnen rollen worden beperkt tot specifieke resources of objecten.
 
 >[!Note]
->- De nieuwe rollen en bereiken met een lager niveau zijn momenteel beschikbaar als preview-versie.  
->- De rollen Apache Spark beheerder en SQL-beheerder worden in een toekomstige versie vervangen door de nieuwe Synapse RBAC-rollen.  U wordt aangeraden de nieuwe preview-rollen, die volledig worden ondersteund, te gebruiken en feedback te geven over het gebruik ervan.
+>- De **nieuwe rollen en bereiken met een lager niveau zijn momenteel beschikbaar als preview-versie**.  U wordt aangeraden deze nieuwe rollen en bereiken te gebruiken, die volledig worden ondersteund en om feedback te geven over het gebruik ervan.
 
 ## <a name="built-in-synapse-rbac-roles-and-scopes"></a>Ingebouwde Synapse RBAC-rollen en-bereiken
 
-De volgende tabel beschrijft elke ingebouwde rol en de bereiken waarop deze rollen kunnen worden gebruikt.
+In de volgende tabel worden de ingebouwde rollen en de bereiken beschreven waarop ze kunnen worden gebruikt.
 
 >[!Note]
 > Gebruikers met elke Synapse RBAC-rol in elk bereik hebben automatisch de gebruikersrol Synapse in het bereik van de werk ruimte. 

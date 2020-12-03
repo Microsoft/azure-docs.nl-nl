@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/21/2020
-ms.openlocfilehash: 54e7a781ba9ed3cd4b53e1028c4a3bb79c256aed
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 533d4a83ea73b98e26a57febc077a607bcb25465
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96012609"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96532296"
 ---
 # <a name="collect-windows-and-linux-performance-data-sources-with-log-analytics-agent"></a>Windows-en Linux-prestatie gegevens bronnen met Log Analytics-agent verzamelen
 Prestatie meter items in Windows en Linux bieden inzicht in de prestaties van hardwareonderdelen, besturings systemen en toepassingen.  Azure Monitor kunt prestatie meter items van Log Analytics agents met veelvuldige intervallen verzamelen voor analyse van bijna realtime (NRT), naast het samen voegen van prestatie gegevens voor langere termijn analyse en rapportage.
@@ -28,7 +28,7 @@ Wanneer u voor het eerst Windows-of Linux-prestatie meter items voor een nieuwe 
 
 Voor Windows-prestatie meter items kunt u een specifiek exemplaar voor elk prestatie meter item kiezen. Voor Linux-prestatie meter items geldt het exemplaar van elk item dat u kiest, van toepassing op alle onderliggende items van het bovenliggende item. In de volgende tabel ziet u de algemene instanties die beschikbaar zijn voor de prestatie meter items Linux en Windows.
 
-| Exemplaarnaam | Description |
+| Exemplaarnaam | Beschrijving |
 | --- | --- |
 | \_Totaal |Totaal van alle exemplaren |
 | \* |Alle instanties |
@@ -50,15 +50,14 @@ Volg deze procedure om een nieuw Windows-prestatie meter item toe te voegen om t
 
 ### <a name="linux-performance-counters"></a>Linux-prestatie meter items
 
-![Linux-prestatie meter items configureren](media/data-sources-performance-counters/configure-linux.png)
+![Linux-prestatie meter items configureren](media/data-sources-performance-counters/configure-linux-1.png)
 
 Volg deze procedure om een nieuw Linux-prestatie meter item toe te voegen om te verzamelen.
 
-1. Standaard worden alle configuratie wijzigingen automatisch naar alle agents gepusht.  Voor Linux-agents wordt een configuratie bestand verzonden naar de gefluente gegevens verzamelaar.  Als u dit bestand hand matig op elke Linux-agent wilt wijzigen, schakelt u het selectie vakje de *onderstaande configuratie Toep assen op mijn Linux-machines* uit en volgt u de onderstaande instructies.
-2. Typ de naam van de teller in het tekstvak in de indeling *object (instantie) \counter*.  Wanneer u begint te typen, wordt er een overeenkomende lijst met algemene prestatie meter items weer gegeven.  U kunt een item in de lijst selecteren of een van uw eigen items typen.  
-3. Klik **+** of druk op **Enter** om de teller toe te voegen aan de lijst met andere tellers voor het object.
-4. Alle tellers voor een object gebruiken hetzelfde **steekproef interval**.  De standaardinstelling is 10 seconden.  U kunt dit wijzigen in een hogere waarde van Maxi maal 1800 seconden (30 minuten) als u de opslag vereisten van de verzamelde prestatie gegevens wilt reduceren.
-5. Wanneer u klaar bent met het toevoegen van items, klikt u op de knop **Opslaan** boven aan het scherm om de configuratie op te slaan.
+1. Typ de naam van de teller in het tekstvak in de indeling *object (instantie) \counter*.  Wanneer u begint te typen, wordt er een overeenkomende lijst met algemene prestatie meter items weer gegeven.  U kunt een item in de lijst selecteren of een van uw eigen items typen.  
+1. Klik **+** of druk op **Enter** om de teller toe te voegen aan de lijst met andere tellers voor het object.
+1. Alle tellers voor een object gebruiken hetzelfde **steekproef interval**.  De standaardinstelling is 10 seconden.  U kunt dit wijzigen in een hogere waarde van Maxi maal 1800 seconden (30 minuten) als u de opslag vereisten van de verzamelde prestatie gegevens wilt reduceren.
+1. Wanneer u klaar bent met het toevoegen van items, klikt u op de knop **Opslaan** boven aan het scherm om de configuratie op te slaan.
 
 #### <a name="configure-linux-performance-counters-in-configuration-file"></a>Linux-prestatie meter items configureren in het configuratie bestand
 In plaats van Linux-prestatie meter items te configureren met behulp van de Azure Portal, hebt u de mogelijkheid om configuratie bestanden te bewerken in de Linux-agent.  De prestatie gegevens die moeten worden verzameld, worden bepaald door de configuratie in **/etc/opt/Microsoft/omsagent/ \<workspace id\> /conf/omsagent.conf**.
@@ -78,7 +77,7 @@ Elk object, of elke categorie, van prestatie gegevens die moeten worden verzamel
 
 De para meters in dit element worden in de volgende tabel beschreven.
 
-| Parameters | Description |
+| Parameters | Beschrijving |
 |:--|:--|
 | object \_ naam | Object naam voor de verzameling. |
 | regex-exemplaar \_ |  Een *reguliere expressie* die definieert welke exemplaren moeten worden verzameld. De waarde: `.*` Hiermee geeft u alle exemplaren op. Als u metrische gegevens van de processor alleen voor het \_ totale exemplaar wilt verzamelen, kunt u opgeven `_Total` . Als u proces metrische gegevens alleen voor de crond-of sshd-instanties wilt verzamelen, kunt u het volgende opgeven: `(crond\|sshd)` . |
@@ -181,7 +180,7 @@ Hieronder volgt de standaard configuratie voor metrische gegevens over prestatie
 </source>
 ```
 
-## <a name="data-collection"></a>Gegevensverzameling
+## <a name="data-collection"></a>Gegevens verzamelen
 Azure Monitor verzamelt alle opgegeven prestatie meter items op het opgegeven steekproef interval voor alle agents waarop dat item is geïnstalleerd.  De gegevens worden niet geaggregeerd en de onbewerkte gegevens zijn beschikbaar in alle logboek query weergaven voor de duur die is opgegeven door de log Analytics-werk ruimte.
 
 ## <a name="performance-record-properties"></a>Eigenschappen van prestatie record
@@ -206,7 +205,7 @@ Prestatie records hebben het type **perf** en hebben de eigenschappen in de volg
 ## <a name="log-queries-with-performance-records"></a>Query's vastleggen met prestatie records
 De volgende tabel bevat verschillende voor beelden van logboek query's waarmee prestatie records worden opgehaald.
 
-| Query | Description |
+| Query’s uitvoeren | Beschrijving |
 |:--- |:--- |
 | Prestaties |Alle prestatie gegevens |
 | Perf &#124; waarbij computer = "mijn systeem" |Alle prestatie gegevens van een bepaalde computer |

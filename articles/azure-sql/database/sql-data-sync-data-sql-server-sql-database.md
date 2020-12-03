@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 08/20/2019
-ms.openlocfilehash: c77001707eda7c208ad19a014a1f0cff2b85b25d
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: b23b5a81fdff8a05742092f517128e08723103fc
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95736473"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96531136"
 ---
 # <a name="what-is-sql-data-sync-for-azure"></a>Wat is SQL Data Sync voor Azure?
 
@@ -63,12 +63,10 @@ Gegevens synchronisatie is niet de aanbevolen oplossing voor de volgende scenari
 | Herstel na noodgevallen | [Azure geo-redundante back-ups](automated-backups-overview.md) |
 | Schaal lezen | [Alleen-lezen replica's gebruiken om taken te verdelen over alleen-lezen query's (preview-versie)](read-scale-out.md) |
 | ETL (OLTP to OLAP) | [Azure Data Factory](https://azure.microsoft.com/services/data-factory/) of [SQL Server Integration Services](/sql/integration-services/sql-server-integration-services) |
-| Migratie van SQL Server naar Azure SQL Database | [Azure Database Migration Service](https://azure.microsoft.com/services/database-migration/) |
+| Migratie van SQL Server naar Azure SQL Database. SQL Data Sync kunnen echter worden gebruikt nadat de migratie is voltooid, om ervoor te zorgen dat de bron en het doel synchroon blijven.  | [Azure Database Migration Service](https://azure.microsoft.com/services/database-migration/) |
 |||
 
-
-
-## <a name="how-it-works"></a>Uitleg
+## <a name="how-it-works"></a>Hoe werkt het?
 
 - **Wijzigingen in de gegevens bijhouden:** Gegevens synchronisatie houdt wijzigingen bij met behulp van INSERT-, update-en delete-triggers. De wijzigingen worden vastgelegd in een tabel aan de kant van de gebruikers database. Houd er rekening mee dat BULK INSERT triggers niet standaard wordt geactiveerd. Als FIRE_TRIGGERS niet is opgegeven, worden er geen invoeg triggers uitgevoerd. Voeg de FIRE_TRIGGERS optie toe, zodat gegevens synchronisatie deze toevoegingen kan bijhouden. 
 - **Gegevens synchroniseren:** Gegevens synchronisatie is ontworpen in een hub-en spoke-model. De hub wordt met elk lid afzonderlijk gesynchroniseerd. Wijzigingen van de hub worden gedownload naar het lid en vervolgens worden wijzigingen van het lid geüpload naar de hub.

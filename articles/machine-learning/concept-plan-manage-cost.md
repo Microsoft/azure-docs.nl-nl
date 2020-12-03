@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/08/2020
-ms.openlocfilehash: a0e0f61da52ce00fb2eb4b4a7d95ab74082f9472
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 3eb9df0a0fde5d99bbeb3c2da182b5957fdea1e3
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94541705"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96532921"
 ---
 # <a name="plan-and-manage-costs-for-azure-machine-learning"></a>Kosten plannen en beheren voor Azure Machine Learning
 
@@ -35,13 +35,13 @@ Wanneer u uw machine learning modellen traint, gebruikt u beheerde Azure Machine
 
 ## <a name="prerequisites"></a>Vereisten
 
-Kostenanalyse biedt ondersteuning voor verschillende typen Azure-accounts. Zie voor de volledige lijst met ondersteunde accounttypen [Gegevens van Azure Cost Management begrijpen](../cost-management-billing/costs/understand-cost-mgt-data.md). Als u kostengegevens wilt weergeven, hebt u minimaal leestoegang voor uw Azure-account nodig. 
+Kostenanalyse biedt ondersteuning voor verschillende typen Azure-accounts. Zie voor de volledige lijst met ondersteunde accounttypen [Gegevens van Azure Cost Management begrijpen](../cost-management-billing/costs/understand-cost-mgt-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn). Als u kostengegevens wilt weergeven, hebt u minimaal leestoegang voor uw Azure-account nodig. 
 
-Zie [Toegang tot gegevens toewijzen](../cost-management-billing/costs/assign-access-acm-data.md) voor meer informatie over het toewijzen van toegang tot de gegevens in Azure Cost Management.
+Zie [Toegang tot gegevens toewijzen](../cost-management-billing/costs/assign-access-acm-data.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) voor meer informatie over het toewijzen van toegang tot de gegevens in Azure Cost Management.
 
-## <a name="estimate-costs"></a>Kosten schatten
+## <a name="estimate-costs-before-using-azure-machine-learning"></a>Kosten schatten vóór het gebruik van Azure Machine Learning
 
-Gebruik de [prijs calculator van Azure](https://azure.microsoft.com/pricing/calculator/) om de kosten te schatten voordat u de resources in een Azure machine learning-account maakt. Selecteer aan de linkerkant **AI + machine learning** en selecteer vervolgens **Azure machine learning** om te beginnen.  
+Gebruik de [prijs calculator van Azure](https://azure.microsoft.com/pricing/calculator?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) om de kosten te schatten voordat u de resources in een Azure machine learning-account maakt. Selecteer aan de linkerkant **AI + machine learning** en selecteer vervolgens **Azure machine learning** om te beginnen.  
 
 De volgende scherm afbeelding toont de kosten raming door gebruik te maken van de Calculator:
 
@@ -49,23 +49,58 @@ De volgende scherm afbeelding toont de kosten raming door gebruik te maken van d
 
 Wanneer u nieuwe resources aan uw werk ruimte toevoegt, keert u terug naar deze reken machine en voegt u hier dezelfde resource toe om uw kosten ramingen bij te werken.
 
-Zie [Azure machine learning prijzen](https://azure.microsoft.com/pricing/details/machine-learning/)voor meer informatie.
+Zie [Azure machine learning prijzen](https://azure.microsoft.com/pricing/details/machine-learning?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)voor meer informatie.
 
-## <a name="get-cost-alerts"></a>Kosten waarschuwingen ophalen
+## <a name="understand-the-full-billing-model-for-azure-machine-learning"></a>Het volledige facturerings model voor Azure Machine Learning begrijpen
 
-Maak [budgetten](../cost-management-billing/costs/tutorial-acm-create-budgets.md) om de kosten te beheren en [waarschuwingen](../cost-management-billing/costs/cost-mgt-alerts-monitor-usage-spending.md) te maken waarmee de betrokkenen automatisch worden geïnformeerd over uitgave afwijkingen en het overeden van Risico's. Waarschuwingen zijn gebaseerd op de vergelijking tussen uitgaven en drempelwaarden voor budgetten en kosten. Budgetten en waarschuwingen worden gemaakt voor Azure-abonnementen en-resource groepen, dus zijn ze nuttig als onderdeel van een strategie voor de kosten bewaking. Budgetten en waarschuwingen kunnen echter een beperkte functionaliteit hebben voor het beheren van afzonderlijke Azure-service kosten omdat ze zijn ontworpen om de kosten op een hoger niveau bij te houden.
+Azure Machine Learning wordt uitgevoerd op een Azure-infra structuur, waarmee de kosten samen met Azure Machine Learning worden samengevoegd wanneer u de nieuwe resource implementeert. Het is belang rijk om te begrijpen dat extra infra structuur kosten kan toenemen. U moet deze kosten beheren wanneer u wijzigingen aanbrengt in geïmplementeerde resources. 
 
-## <a name="monitor-costs"></a>Kosten bewaken
+### <a name="costs-that-typically-accrue-with-azure-machine-learning"></a>Kosten die normaal gesp roken toenemen met Azure Machine Learning
 
-Als u resources met Azure Machine Learning gebruikt, worden er kosten in rekening gebracht. De kosten voor de Azure resource usage-eenheid variëren per tijds interval (seconden, minuten, uren en dagen) of per aanvraag eenheids gebruik. Zodra het gebruik van Azure Machine Learning wordt gestart, worden de kosten in rekening gebracht. Bekijk deze kosten in het deel venster [kosten analyse](../cost-management-billing/costs/quick-acm-cost-analysis.md) in de Azure Portal.
+Wanneer u resources voor een Azure Machine Learning-werk ruimte maakt, worden er ook resources voor andere Azure-Services gemaakt. Dit zijn:
 
-U kunt de kosten in grafieken en tabellen weer geven voor verschillende tijds intervallen. U kunt ook kosten weer geven op basis van budgetten en geraamde kosten. Door over te scha kelen op meer weer gaven, kunt u uitgaven trends identificeren en zien waar overuitgave mogelijk is gebeurd. Als u budgetten hebt gemaakt, raadpleegt u waar ze zijn overschreden.  
+* [Azure container Registry](https://azure.microsoft.com/pricing/details/container-registry?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) Basis account
+* [Azure Block Blob Storage](https://azure.microsoft.com/pricing/details/storage/blobs?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) (algemeen gebruik v1)
+* [Key Vault](https://azure.microsoft.com/pricing/details/key-vault?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
+* [Application Insights](https://azure.microsoft.com/en-us/pricing/details/monitor?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
+ 
+### <a name="costs-might-accrue-after-resource-deletion"></a>Kosten kunnen toenemen na het verwijderen van resources
 
-Er wordt geen apart service gebied voor Machine Learning weer geven.  In plaats daarvan ziet u de verschillende resources die u hebt toegevoegd aan uw Machine Learning-werk ruimten. 
+Wanneer u een Azure Machine Learning-werk ruimte in de Azure Portal of met Azure CLI verwijdert, blijven de volgende resources bestaan. Ze blijven kosten voor samen voegen totdat u ze verwijdert.
 
-Houd er rekening mee dat de Machine Learning werk ruimte zelf geen directe kosten heeft, maar u wordt gefactureerd op beheerde reken resources. Als u labels aan de werk ruimten hebt toegevoegd, omdat er hiervoor geen directe kosten in zijn, wordt dit in het deel venster kosten analyse weer gegeven voor de werk ruimte. Voor nauw keurig kosten beheer via tags moet u de bijbehorende reken resources labelen.  
+* Azure Container Registry
+* Blob Storage Azure-blok kering
+* Key Vault
+* Application Insights
 
-## <a name="use-azure-machine-learning-compute-cluster-amlcompute"></a>Azure Machine Learning Compute-Cluster (AmlCompute) gebruiken
+Als u de werk ruimte samen met deze afhankelijke resources wilt verwijderen, gebruikt u de SDK:
+
+```python
+ws.delete(delete_dependent_resources=True)
+```
+
+Als u de Azure Kubernetes-service (AKS) in uw werk ruimte maakt, of als u reken resources aan uw werk ruimte koppelt, moet u deze afzonderlijk in [Azure Portal](https://portal.azure.com)verwijderen.
+
+### <a name="using-monetary-credit-with-azure-machine-learning"></a>Monetair tegoed gebruiken met Azure Machine Learning
+
+U kunt betalen voor Azure Machine Learning kosten met uw EA monetaire toezeg ging-tegoed. U kunt het tegoed van EA monetaire toezeg ging echter niet gebruiken om te betalen voor de kosten van producten en services van derden, waaronder die van de Azure Marketplace.
+
+
+## <a name="create-budgets"></a>Budgetten maken
+
+U kunt [budgetten](https://docs.microsoft.com/azure/cost-management/tutorial-acm-create-budgets?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) maken om kosten te beheren en [waarschuwingen](https://docs.microsoft.com/azure/cost-management/cost-mgt-alerts-monitor-usage-spending?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) te maken waarmee belanghebbenden automatisch worden geïnformeerd over afwijkende uitgaven en het risico om teveel uit te geven. Waarschuwingen zijn gebaseerd op de vergelijking tussen uitgaven en drempelwaarden voor budgetten en kosten. Budgetten en waarschuwingen worden gemaakt voor Azure-abonnementen en-resource groepen, dus zijn ze nuttig als onderdeel van een strategie voor de kosten bewaking. 
+
+Budgetten kunnen worden gemaakt met filters voor specifieke resources of services in azure als u meer granulariteit in uw bewaking wilt. Met filters kunt u ervoor zorgen dat u niet per ongeluk nieuwe resources maakt die u extra geld kosten. Zie [groeps-en filter opties](https://docs.microsoft.com/azure/cost-management-billing/costs/group-filter?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)voor meer informatie over de filter opties wanneer u een budget maakt.
+
+## <a name="export-cost-data"></a>Kostengegevens exporteren
+
+U kunt ook [uw kosten gegevens exporteren](https://docs.microsoft.com/azure/cost-management-billing/costs/tutorial-export-acm-data?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) naar een opslag account. Dit is handig wanneer u of anderen extra gegevens analyse voor kosten moeten uitvoeren. Een financiële teams kunnen de gegevens bijvoorbeeld analyseren met Excel of Power BI. U kunt uw kosten per dag, wekelijks of maandelijks exporteren en een aangepast datum bereik instellen. Het exporteren van kosten gegevens is de aanbevolen manier om kosten sets op te halen.
+
+## <a name="other-ways-to-manage-and-reduce-costs-for-azure-machine-learning"></a>Andere manieren om de kosten voor Azure Machine Learning te beheren en te verlagen
+
+Gebruik deze tips voor het gebruiken van kosten op uw machine learning reken resources.
+
+### <a name="use-azure-machine-learning-compute-cluster-amlcompute"></a>Azure Machine Learning Compute-Cluster (AmlCompute) gebruiken
 
 Met gegevens die voortdurend worden gewijzigd, moet u snelle en gestroomlijnde model training en retraining volgen om nauw keurige modellen te onderhouden. Doorlopende training is echter een kost prijs, met name voor diepe leer modellen op Gpu's. 
 
@@ -73,7 +108,7 @@ Azure Machine Learning gebruikers kunnen gebruikmaken van het beheerde Azure Mac
 
 Omdat deze reken groepen zich bevinden in de IaaS-infra structuur van Azure, kunt u uw training implementeren, schalen en beheren met dezelfde beveiligings-en nalevings vereisten als de rest van uw infra structuur.  Deze implementaties worden uitgevoerd in uw abonnement en voldoen aan de regels voor beheer. Meer informatie over [Azure machine learning Compute](how-to-create-attach-compute-cluster.md).
 
-## <a name="configure-training-clusters-for-autoscaling"></a>Trainings clusters configureren voor automatisch schalen
+### <a name="configure-training-clusters-for-autoscaling"></a>Trainings clusters configureren voor automatisch schalen
 
 Door clusters automatisch te schalen op basis van de vereisten van uw workload, kunt u uw kosten verlagen, zodat u alleen de gewenste functies gebruikt.
 
@@ -92,7 +127,7 @@ AmlCompute-clusters kunnen worden geconfigureerd voor uw gewijzigde werkbelastin
 az ml computetarget create amlcompute --name testcluster --vm-size Standard_NC6 --min-nodes 0 --max-nodes 5 --idle-seconds-before-scaledown 300
 ```
 
-## <a name="set-quotas-on-resources"></a>Quota instellen voor resources
+### <a name="set-quotas-on-resources"></a>Quota instellen voor resources
 
 AmlCompute wordt geleverd met een [quotum configuratie (of limiet)](how-to-manage-quotas.md#azure-machine-learning-compute). Dit quotum is van de VM-serie (bijvoorbeeld dv2-serie, NCv3-serie) en varieert per regio voor elk abonnement. Abonnementen beginnen met kleine standaard waarden om aan de slag te gaan, maar u kunt deze instelling gebruiken om te bepalen hoeveel Amlcompute resources beschikbaar zijn in uw abonnement. 
 
@@ -100,7 +135,7 @@ Configureer ook het [quotum van het werkruimte niveau per VM-serie](how-to-manag
 
 Als u quota's op het niveau van de werk ruimte wilt instellen, begint u in de [Azure Portal](https://portal.azure.com).  Selecteer een werk ruimte in uw abonnement en selecteer **gebruik en quota's** in het linkerdeel venster. Selecteer vervolgens het tabblad **Quota's configureren** om de quota's weer te geven. U hebt bevoegdheden nodig voor het abonnements bereik om het quotum in te stellen, omdat het een instelling is die van invloed is op meerdere werk ruimten.
 
-## <a name="set-run-autotermination-policies"></a>Beleid voor het uitvoeren van autoterminaters instellen 
+### <a name="set-run-autotermination-policies"></a>Beleid voor het uitvoeren van autoterminaters instellen 
 
 In sommige gevallen moet u uw trainings uitvoeringen configureren om de duur te beperken of ze vroegtijdig te beëindigen. Als u bijvoorbeeld gebruikmaakt van de ingebouwde afstemming-afstemming of geautomatiseerde machine learning van Azure Machine Learning.
 
@@ -109,7 +144,7 @@ Hier volgen enkele opties die u hebt:
 * Voor [afstemming tuning](how-to-tune-hyperparameters.md#early-termination)definieert u een beleid voor vroegtijdige beëindiging van een Bandit-beleid, een mediaan stop beleid of een selectie beleid voor afkap ping. Gebruik para meters zoals of als u afstemming-sweeps verder wilt beheren `max_total_runs` `max_duration_minutes` .
 * Stel voor [automatische machine learning](how-to-configure-auto-train.md#exit)soort gelijke afsluitings beleid in met behulp van de  `enable_early_stopping` vlag. Gebruik ook eigenschappen zoals `iteration_timeout_minutes` en `experiment_timeout_minutes` om de maximale duur van een uitvoering of voor het hele experiment te bepalen.
 
-## <a name="use-low-priority-vms"></a><a id="low-pri-vm"></a> Virtuele machines met lage prioriteit gebruiken
+### <a name="use-low-priority-vms"></a><a id="low-pri-vm"></a> Virtuele machines met lage prioriteit gebruiken
 
 Met Azure kunt u gebruikmaken van overtollige ongebruikte capaciteit als Low-Priority Vm's voor schaal sets voor virtuele machines, batch en de Machine Learning-service. Deze toewijzingen zijn pre-emptible, maar worden geleverd tegen een gereduceerde prijs vergeleken met toegewezen Vm's. Over het algemeen kunt u het beste Low-Priority Vm's gebruiken voor batch-workloads. U moet ze ook gebruiken waar onderbrekingen kunnen worden hersteld via opnieuw verzenden (voor batch destorie) of via het opnieuw opstarten (voor diepe trainingen met controle punten).
 
@@ -117,7 +152,7 @@ Low-Priority-Vm's hebben één quotum gescheiden van de toegewezen quota waarde,
 
  Low-Priority-Vm's werken niet voor reken instanties, omdat ze interactieve notitieblok ervaringen moeten ondersteunen.
 
-## <a name="use-reserved-instances"></a>Gereserveerde instanties gebruiken
+### <a name="use-reserved-instances"></a>Gereserveerde instanties gebruiken
 
 Een andere manier om geld te besparen op reken resources is een door Azure gereserveerd VM-exemplaar. Met deze aanbieding gaat u naar een periode van één of drie jaar. Deze kortingen variëren van Maxi maal 72% van de betalen naar gebruik-prijzen en worden direct toegepast op uw maandelijkse Azure-factuur.
 
@@ -126,7 +161,7 @@ Azure Machine Learning Compute ondersteunt gereserveerde instanties inherent. Al
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over:
-* [Resource quota beheren en verhogen](how-to-manage-quotas.md)
-* [Kosten beheren met kosten analyse](../cost-management-billing/costs/quick-acm-cost-analysis.md).
-* Maak Azure Machine Learning Compute met [SDK](how-to-create-attach-compute-cluster.md) of in [Studio](how-to-create-attach-compute-studio.md#amlcompute).
+- Meer informatie [over hoe u uw investering in de Cloud optimaliseert met Azure Cost Management](https://docs.microsoft.com/azure/cost-management-billing/costs/cost-mgt-best-practices?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+- Meer informatie over het beheren van kosten met [kosten analyse](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+- Meer informatie over hoe u [onverwachte kosten kunt voor komen](https://docs.microsoft.com/azure/cost-management-billing/manage/getting-started?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+- Neem de [Cost Management](https://docs.microsoft.com/learn/paths/control-spending-manage-bills?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) begeleide training door.

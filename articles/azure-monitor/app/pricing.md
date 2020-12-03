@@ -7,12 +7,12 @@ author: DaleKoetke
 ms.author: dalek
 ms.date: 5/7/2020
 ms.reviewer: mbullwin
-ms.openlocfilehash: b695205c08f9039fbf91eaeddb7622b784d81d12
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 69ac1e82c267dee521143c4ed5f6c2be4d32e2ea
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91400584"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96531323"
 ---
 # <a name="manage-usage-and-costs-for-application-insights"></a>Gebruik en kosten van Application Insights beheren
 
@@ -74,7 +74,7 @@ Application Insights kosten worden toegevoegd aan uw Azure-factuur. U kunt de de
 ### <a name="using-data-volume-metrics"></a>Gegevens volume metrieken gebruiken
 <a id="understanding-ingested-data-volume"></a>
 
-Als u meer wilt weten over uw gegevens volumes, selecteert u de **metrieken** voor uw Application Insights resource, voegt u een nieuwe grafiek toe. Voor de grafiek metriek, onder **metrische gegevens op basis van een logboek**, selecteert u het **gegevens punt volume**. Klik op **splitsing Toep assen**en selecteer Groeperen op ** `Telemetryitem` type**.
+Als u meer wilt weten over uw gegevens volumes, selecteert u de **metrieken** voor uw Application Insights resource, voegt u een nieuwe grafiek toe. Voor de grafiek metriek, onder **metrische gegevens op basis van een logboek**, selecteert u het **gegevens punt volume**. Klik op **splitsing Toep assen** en selecteer Groeperen op **`Telemetryitem` type**.
 
 ![Metrische gegevens gebruiken om te kijken naar het data volume](./media/pricing/10-billing.png)
 
@@ -148,7 +148,7 @@ union (AppAvailabilityResults),
       (AppRequests),
       (AppSystemEvents),
       (AppTraces)
-| where TimeGenerated >= startofday(ago(7d) and TimeGenerated < startofday(now())
+| where TimeGenerated >= startofday(ago(7d)) and TimeGenerated < startofday(now())
 | summarize sum(_BilledSize) by _ResourceId, bin(TimeGenerated, 1d)
 | render areachart
 ```
@@ -167,7 +167,7 @@ union (AppAvailabilityResults),
       (AppRequests),
       (AppSystemEvents),
       (AppTraces)
-| where TimeGenerated >= startofday(ago(7d) and TimeGenerated < startofday(now())
+| where TimeGenerated >= startofday(ago(7d)) and TimeGenerated < startofday(now())
 | where _ResourceId contains "<myAppInsightsResourceName>"
 | summarize sum(_BilledSize) by Type, bin(TimeGenerated, 1d)
 | render areachart
@@ -198,7 +198,7 @@ De hoeveelheid gegevens die u verzendt, kan worden beheerd met behulp van de vol
     
     Waarschuwings-e-mails over de dagelijkse limiet worden verzonden naar het account dat lid is van deze rollen voor uw Application Insights resource: ' ServiceAdmin ', ' AccountAdmin ', ' coadmin ', ' eigenaar '.
 
-    Wees voorzichtig bij het instellen van een daglimiet. Het is uw bedoeling om *nooit het dagelijkse kapje*te bereiken. Als u de daglimiet bereikt, verliest u gegevens voor de rest van de dag en kunt u uw toepassing niet bewaken. Als u de dagelijkse limiet wilt wijzigen, gebruikt u de optie **dagelijks volume limiet** . U kunt deze optie gebruiken in het deel venster **gebruik en geraamde kosten** (dit wordt verderop in het artikel meer gedetailleerder beschreven).
+    Wees voorzichtig bij het instellen van een daglimiet. Het is uw bedoeling om *nooit het dagelijkse kapje* te bereiken. Als u de daglimiet bereikt, verliest u gegevens voor de rest van de dag en kunt u uw toepassing niet bewaken. Als u de dagelijkse limiet wilt wijzigen, gebruikt u de optie **dagelijks volume limiet** . U kunt deze optie gebruiken in het deel venster **gebruik en geraamde kosten** (dit wordt verderop in het artikel meer gedetailleerder beschreven).
     
     We hebben de beperking verwijderd voor sommige abonnements typen waarvoor een tegoed is dat niet kan worden gebruikt voor Application Insights. Als er eerder een bestedings limiet voor het abonnement is, is het dialoog venster voor de dagelijkse Cap instructies om de bestedings limiet te verwijderen en het dagelijks kapje te activeren dat groter is dan 32,3 MB/dag.
     
@@ -280,14 +280,14 @@ Bij het verzenden van gegevens naar Application Insights kunnen kosten voor de g
 
 ## <a name="disable-daily-cap-e-mails"></a>Dagelijkse Cap-e-mails uitschakelen
 
-Als u de dagelijkse e-mails voor volume limieten wilt uitschakelen, selecteert u in het deel venster **gebruik en geschatte kosten** de optie **dagelijks Cap**onder het gedeelte **configureren** van uw Application Insights-resource. Er zijn instellingen voor het verzenden van e-mail berichten wanneer de limiet is bereikt, en wanneer een aanpasbaar waarschuwings niveau is bereikt. Als u alle e-mail berichten met betrekking tot het dagelijks volume wilt uitschakelen, schakelt u beide vakjes uit.
+Als u de dagelijkse e-mails voor volume limieten wilt uitschakelen, selecteert u in het deel venster **gebruik en geschatte kosten** de optie **dagelijks Cap** onder het gedeelte **configureren** van uw Application Insights-resource. Er zijn instellingen voor het verzenden van e-mail berichten wanneer de limiet is bereikt, en wanneer een aanpasbaar waarschuwings niveau is bereikt. Als u alle e-mail berichten met betrekking tot het dagelijks volume wilt uitschakelen, schakelt u beide vakjes uit.
 
 ## <a name="legacy-enterprise-per-node-pricing-tier"></a>Prijs categorie verouderde onderneming (per knoop punt)
 
 Voor vroege toepassers van Azure-toepassing Insights zijn er nog twee mogelijke prijs Categorieën: Basic en Enter prise. De prijs categorie Basic is hetzelfde als hierboven beschreven en is de standaardlaag. Dit omvat alle functies van de Enter prise-laag, zonder extra kosten. De laag basis is vooral afhankelijk van het volume van de gegevens die worden opgenomen.
 
 > [!NOTE]
-> De naam van deze verouderde prijs categorieën is gewijzigd. De Enter prise-prijs categorie wordt nu **per knoop punt** genoemd en de prijs categorie Basic wordt nu **per GB**aangeroepen. Deze nieuwe namen worden hieronder en in de Azure Portal gebruikt.  
+> De naam van deze verouderde prijs categorieën is gewijzigd. De Enter prise-prijs categorie wordt nu **per knoop punt** genoemd en de prijs categorie Basic wordt nu **per GB** aangeroepen. Deze nieuwe namen worden hieronder en in de Azure Portal gebruikt.  
 
 De laag per knoop punt (voorheen onderneming) heeft een kosten per knoop punt en elk knoop punt ontvangt een dagelijks gegevens toelage. In de prijs categorie per knoop punt worden er kosten in rekening gebracht voor gegevens die boven de inbegrepen limiet zijn opgenomen. Als u Operations Management Suite gebruikt, kiest u de laag per knoop punt.
 

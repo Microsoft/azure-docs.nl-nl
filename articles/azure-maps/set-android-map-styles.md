@@ -1,36 +1,36 @@
 ---
-title: Een kaart stijl instellen met behulp van Azure Maps Android SDK | Microsoft Azure kaarten
-description: Meer informatie over twee manieren om de stijl van een kaart in te stellen. Zie How to use the Azure Maps Android SDK in het indelings bestand of de klasse activity om de stijl aan te passen.
+title: Een kaart stijl instellen met behulp van Azure Maps Android SDK
+description: Meer informatie over twee manieren om de stijl van een kaart in te stellen. Zie How to use the Microsoft Azure Maps Android SDK in het indelings bestand of de klasse activity om de stijl aan te passen.
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 04/26/2019
-ms.topic: conceptual
+ms.date: 11/18/2020
+ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 15dbe7d30652d0ace78bca4dc053757d57361c1a
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 8c7689fb87575ac6e150f793b43f35e8bf6adc83
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895304"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96532470"
 ---
 # <a name="set-map-style-using-azure-maps-android-sdk"></a>Kaart stijl instellen met Azure Maps Android SDK
 
-In dit artikel ziet u twee manieren om kaart stijlen in te stellen met behulp van de Azure Maps Android SDK. Azure Maps heeft zes verschillende kaarten stijlen waaruit u kunt kiezen. Zie [ondersteunde kaart stijlen in azure Maps](./supported-map-styles.md)voor meer informatie over ondersteunde kaart stijlen.
-
+In dit artikel leest u hoe u kaart stijlen kunt instellen met behulp van de Azure Maps Android SDK. Azure Maps heeft zes verschillende kaarten stijlen waaruit u kunt kiezen. Zie [ondersteunde kaart stijlen in azure Maps](./supported-map-styles.md)voor meer informatie over ondersteunde kaart stijlen.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Om het proces in dit artikel te volt ooien, moet u [Azure Maps ANDROID SDK](./how-to-use-android-map-control-library.md) installeren om een kaart te laden.
+1. [Een Azure Maps-account maken](quick-demo-map-app.md#create-an-azure-maps-account)
+2. [Een primaire sleutel voor een abonnement verkrijgen](quick-demo-map-app.md#get-the-primary-key-for-your-account), ook wel bekend als de primaire sleutel of de abonnementssleutel.
+3. Down load en installeer de [Azure Maps ANDROID SDK](./how-to-use-android-map-control-library.md).
 
 
 ## <a name="set-map-style-in-the-layout"></a>Kaart stijl instellen in de lay-out
 
-U kunt een kaart stijl instellen in het indelings bestand voor uw activiteiten klasse. Wijzig de **indeling res > > activity_main.xml** , zodat deze er als volgt uitziet:
+U kunt een kaart stijl instellen in het indelings bestand voor uw activiteiten klasse. Bewerken `res > layout > activity_main.xml` , zodat deze er als volgt uitziet:
 
 ```XML
-<?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -51,26 +51,27 @@ U kunt een kaart stijl instellen in het indelings bestand voor uw activiteiten k
 </FrameLayout>
 ```
 
-`mapcontrol_style`Met het bovenstaande kenmerk stelt u de stijl van de kaart in op **grayscale_dark** . 
+`mapcontrol_style`Met het bovenstaande kenmerk stelt u de stijl van de kaart in op **grayscale_dark**.
 
-<center>
+:::image type="content" source="./media/set-android-map-styles/grayscale-dark.png" border="true" alt-text="Azure Maps, kaart afbeelding met stijl als grayscale_dark":::
 
-![stijl-grayscale_dark](./media/set-android-map-styles/grayscale-dark.png)</center>
+## <a name="set-map-style-in-the-mainactivity-class"></a>Kaart stijl instellen in de MainActivity-klasse
 
-## <a name="set-map-style-in-the-activity-class"></a>Kaart stijl instellen in de klasse activiteit
+De kaart stijl kan ook worden ingesteld in de MainActivity-klasse. Open het `java > com.example.myapplication > MainActivity.java` bestand en kopieer het volgende code fragment in de methode **onCreate ()** . Met deze code wordt de kaart stijl ingesteld op **satellite_road_labels**.
 
-Kaart stijl kan worden ingesteld in de klasse activity. Kopieer het volgende code fragment in de methode **onCreate ()** van uw `MainActivity.java` klasse. Met deze code wordt de kaart stijl ingesteld op **satellite_road_labels** .
+>[!WARNING]
+>Android Studio zijn mogelijk de vereiste klassen niet geïmporteerd.  Als gevolg hiervan bevat de code enkele onherleidbare-verwijzingen. Als u de vereiste klassen wilt importeren, houdt u de muis aanwijzer boven elke onopgeloste verwijzing en drukt u op `Alt + Enter` (Option + Return op een Mac).
 
 ```Java
 mapControl.onReady(map -> {
+
     //Set the camera of the map.
     map.setCamera(center(47.64, -122.33), zoom(14));
 
     //Set the style of the map.
-    map.setStyle(style(MapStyle.SATELLITE));
+    map.setStyle((style(SATELLITE_ROAD_LABELS)));
+       
 });
 ```
 
-<center>
-
-![stijl-satelliet-Road-labels](./media/set-android-map-styles/satellite-road-labels.png)</center>
+:::image type="content" source="./media/set-android-map-styles/satellite-road-labels.png" border="true" alt-text="Azure Maps, kaart afbeelding met stijl als satellite_road_labels":::

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/02/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 7deee88210acf700916961be7c4ccaf9477accf8
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 100871ab2188aa638c4c9f2b058021706c7741bb
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353439"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96531901"
 ---
 # <a name="azure-security-baseline-for-azure-cloud-services"></a>Azure-beveiligings basislijn voor Azure Cloud Services
 
@@ -36,7 +36,7 @@ Microsoft Azure Cloud Services (klassiek) kan niet in Azure Resource Manager vir
 
 - [Overzicht van de netwerk beveiligings groep](../virtual-network/network-security-groups-overview.md)
 
-- [Peering van virtuele netwerken](./cloud-services-connectivity-and-networking-faq.md?amp;preserve-view=#how-can-i-use-azure-resource-manager-virtual-networks-with-cloud-services)
+- [Peering van virtuele netwerken](./cloud-services-connectivity-and-networking-faq.md?preserve-view=true#how-can-i-use-azure-resource-manager-virtual-networks-with-cloud-services)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -58,7 +58,7 @@ Schakel logboeken stroom van de netwerk beveiligings groep in en verzend de logb
 
 - [Cloud Services configuratie bestand](schema-cscfg-file.md)
 
-- [Lijst met services die door Azure Policy worden ondersteund](/cli/azure/azure-services-the-azure-cli-can-manage?amp;preserve-view=)
+- [Lijst met services die door Azure Policy worden ondersteund](/cli/azure/azure-services-the-azure-cli-can-manage?preserve-view=)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -89,9 +89,9 @@ Voorkom binnenkomend verkeer naar de standaard-URL of de naam van uw Cloud Servi
 
 Configureer een regel voor het weigeren van regels voor klassieke abonnements beheerders toewijzingen. Nadat een intern eind punt is gedefinieerd, kan de communicatie standaard stromen van elke rol naar het interne eind punt van een rol zonder beperkingen. Als u de communicatie wilt beperken, moet u een NetworkTrafficRules-element toevoegen aan het element ServiceDefinition in het service definitie bestand.
 
-- [Hoe kan ik binnenkomend verkeer naar de standaard-URL van mijn Cloud service blok keren/uitschakelen](./cloud-services-connectivity-and-networking-faq.md?amp;preserve-view=#how-can-i-blockdisable-incoming-traffic-to-the-default-url-of-my-cloud-service)
+- [Hoe kan ik binnenkomend verkeer naar de standaard-URL van mijn Cloud service blok keren/uitschakelen](./cloud-services-connectivity-and-networking-faq.md?preserve-view=true#how-can-i-blockdisable-incoming-traffic-to-the-default-url-of-my-cloud-service)
 
-- [Azure DDOS-beveiliging](./cloud-services-connectivity-and-networking-faq.md?amp;preserve-view=#how-do-i-prevent-receiving-thousands-of-hits-from-unknown-ip-addresses-that-might-indicate-a-malicious-attack-to-the-cloud-service)
+- [Azure DDOS-beveiliging](./cloud-services-connectivity-and-networking-faq.md?preserve-view=true#how-do-i-prevent-receiving-thousands-of-hits-from-unknown-ip-addresses-that-might-indicate-a-malicious-attack-to-the-cloud-service)
 
 - [Een specifiek IP-adres blok keren](cloud-services-startup-tasks-common.md#block-a-specific-ip-address)
 
@@ -107,7 +107,7 @@ Logboek registratie van de stroom configureren in een netwerk beveiligings groep
 
 - [Logboek registratie van stromen configureren op een netwerk beveiligings groep](../virtual-machines/extensions/network-watcher-linux.md)
 
-- [Ga voor meer informatie over het configureren van stroom logboeken naar](/cli/azure/azure-services-the-azure-cli-can-manage?amp;preserve-view=)
+- [Ga voor meer informatie over het configureren van stroom logboeken naar](/cli/azure/azure-services-the-azure-cli-can-manage?preserve-view=)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -231,13 +231,13 @@ Bekijk de wijzigings geschiedenis voor sommige gebeurtenissen in het activiteite
 
 Azure Cloud Services kan worden bewaakt door Application Insights voor Beschik baarheid, prestaties, fouten en gebruik. Aangepaste grafieken kunnen worden toegevoegd aan Application Insights zodat u de gegevens kunt zien die het meest van belang zijn. Gegevens van rolinstantie kunnen worden verzameld met behulp van de Application Insights SDK in uw Azure Cloud Services-project. 
 
-- [Diagnostische gegevens inschakelen in Visual Studio vóór de implementatie](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines?amp;preserve-view=#to-turn-on-diagnostics-in-visual-studio-before-deployment)
+- [Diagnostische gegevens inschakelen in Visual Studio vóór de implementatie](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines?preserve-view=true#to-turn-on-diagnostics-in-visual-studio-before-deployment)
 
 - [Wijzigings overzicht weer geven](../azure-monitor/platform/activity-log.md#view-change-history)
 
 - [Application Insights voor Azure-Cloud service (klassiek)](../azure-monitor/app/cloudservices.md)
 
-- [Diagnostische gegevens instellen voor Azure-Cloud service (klassiek) en virtuele machines](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines?amp;preserve-view=true&toc=%2fazure%2fcloud-services%2ftoc.json)
+- [Diagnostische gegevens instellen voor Azure-Cloud service (klassiek) en virtuele machines](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines?preserve-view=true&toc=%2fazure%2fcloud-services%2ftoc.json)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -289,7 +289,7 @@ Met de diagnostische extensie van Azure worden gegevens verzameld en opgeslagen 
 
 **Richt lijnen**: micro soft antimalware voor Azure, beschermt Azure Cloud Services en virtuele machines. U hebt de mogelijkheid om ook beveiligings oplossingen van derden te implementeren, zoals fire walls van webtoepassingen, netwerk firewalls, antimalware, inbraak detectie en preventie systemen (ID'S of IP-adressen).
 
-- [Wat zijn de functies en mogelijkheden die Azure Basic IP'S/ID'S en DDOS biedt](./cloud-services-configuration-and-management-faq.md?amp;preserve-view=#what-are-the-features-and-capabilities-that-azure-basic-ipsids-and-ddos-provides)
+- [Wat zijn de functies en mogelijkheden die Azure Basic IP'S/ID'S en DDOS biedt](./cloud-services-configuration-and-management-faq.md?preserve-view=true#what-are-the-features-and-capabilities-that-azure-basic-ipsids-and-ddos-provides)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -353,7 +353,7 @@ Bekijk de verschillen tussen de beheer rollen van klassieke abonnementen.
 
 **Verantwoordelijkheid**: Klant
 
-## <a name="data-protection"></a>Gegevensbeveiliging
+## <a name="data-protection"></a>Gegevensbescherming
 
 *Zie [Azure Security Bench Mark: Data Protection](../security/benchmarks/security-control-data-protection.md)voor meer informatie.*
 
@@ -840,7 +840,7 @@ Schakel de antimalware-uitbrei ding in met een Power shell-script in de opstart 
 
 Kies de functie adaptieve toepassings beheer in Azure Security Center, een intelligente, geautomatiseerde, end-to-end oplossing. Het helpt uw computers te beschermen tegen malware en kunt u de pogingen om schadelijke toepassingen uit te voeren, blok keren of waarschuwen, met inbegrip van de apparaten die anders kunnen worden gemist door antimalware-oplossingen.
 
-- [Hoe kan ik een anti-malware-extensie voor mijn Azure Cloud Services op een geautomatiseerde manier toevoegen](./cloud-services-configuration-and-management-faq.md?amp;preserve-view=#how-can-i-add-an-antimalware-extension-for-my-cloud-services-in-an-automated-way)
+- [Hoe kan ik een anti-malware-extensie voor mijn Azure Cloud Services op een geautomatiseerde manier toevoegen](./cloud-services-configuration-and-management-faq.md?preserve-view=true#how-can-i-add-an-antimalware-extension-for-my-cloud-services-in-an-automated-way)
 
 - [Implementatie Scenario's voor antimalware](../security/fundamentals/antimalware.md#antimalware-deployment-scenarios)
 

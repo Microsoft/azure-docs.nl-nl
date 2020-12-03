@@ -7,12 +7,12 @@ ms.date: 09/25/2020
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
-ms.openlocfilehash: 30c26fcc48b1051944c181c0d24ae9e3c89ce477
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 6de0fc52ae265a47ca7f52d46e5f44b74c1277aa
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94565820"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96530915"
 ---
 # <a name="key-vault-authentication-fundamentals"></a>Basisprincipes van Key Vault-verificatie
 
@@ -116,8 +116,6 @@ Key Vault roltoewijzingen zijn een set van ingebouwde rollen toewijzingen van Az
 * U kunt Azure RBAC-machtigingen op schaal beheren door gebruikers toe te staan deze rollen toe te wijzen aan een abonnement, resource groep of een kluis niveau van individuele sleutels. Een gebruiker beschikt over de machtigingen voor het gegevens vlak van alle sleutel kluizen binnen het bereik van de RBAC-toewijzing van Azure. Dit elimineert de nood zaak om afzonderlijke toegangs beleid machtigingen per gebruiker/toepassing per sleutel kluis toe te wijzen.
 
 * De Azure RBAC-machtigingen zijn compatibel met Privileged Identity Management of PIM. Zo kunt u just-in-time-toegangs beheer configureren voor geprivilegieerde rollen als Key Vault beheerder. Dit is een best practice voor beveiliging en volgt de principal van de minimale bevoegdheid door permanente toegang tot uw sleutel kluizen te elimineren.
-
-* Azure RBAC-machtigingen zijn compatibel met machtigingen per object, zodat u kunt voor komen dat een gebruiker alleen bewerkingen uitvoert op een van de sleutel kluis objecten. Hierdoor kunnen meerdere toepassingen een kluis met één sleutel delen terwijl de toegang tussen toepassingen nog steeds wordt geïsoleerd.
 
 Raadpleeg de volgende documenten voor meer informatie over Azure RBAC voor Key Vault:
 

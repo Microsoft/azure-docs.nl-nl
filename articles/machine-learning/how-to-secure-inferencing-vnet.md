@@ -11,12 +11,12 @@ ms.author: peterlu
 author: peterclu
 ms.date: 10/23/2020
 ms.custom: contperfq4, tracking-python, contperfq1, devx-track-azurecli
-ms.openlocfilehash: 3bd4d328c6b0b73a51f325adde988c8f0988ea8a
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: fcaf8f62dcdc43a48ff2ae7ff790ac14ab42e8b6
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94873808"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96532887"
 ---
 # <a name="secure-an-azure-machine-learning-inferencing-environment-with-virtual-networks"></a>Een Azure Machine Learning-deductieomgeving beveiligen met virtuele netwerken
 
@@ -252,7 +252,9 @@ aks_target.wait_for_completion(show_output = True)
 Azure Container Instances worden dynamisch gemaakt bij het implementeren van een model. Als u wilt dat Azure Machine Learning ACI in het virtuele netwerk maakt, moet u __subnet delegering__ inschakelen voor het subnet dat wordt gebruikt door de implementatie.
 
 > [!WARNING]
-> Als Azure Container Instances in een virtueel netwerk wordt gebruikt, moet het virtuele netwerk zich in dezelfde resource groep bevinden als uw Azure Machine Learning-werk ruimte.
+> Wanneer u Azure Container Instances in een virtueel netwerk gebruikt, moet het virtuele netwerk:
+> * In dezelfde resource groep als uw Azure Machine Learning-werk ruimte.
+> * Als uw werk ruimte een __persoonlijk eind punt__ heeft, moet het virtuele netwerk dat wordt gebruikt voor de Azure container instances hetzelfde zijn als de naam die wordt gebruikt door het persoonlijke eind punt van de werk ruimte.
 >
 > Wanneer u Azure Container Instances in het virtuele netwerk gebruikt, kan de Azure Container Registry (ACR) voor uw werk ruimte zich ook niet in het virtuele netwerk bevinden.
 
@@ -265,7 +267,7 @@ Als u ACI wilt gebruiken in een virtueel netwerk naar uw werk ruimte, gebruikt u
 
 2. Implementeer het model met behulp van [AciWebservice.deploy_configuration ()](/python/api/azureml-core/azureml.core.webservice.aci.aciwebservice?preserve-view=true&view=azure-ml-py#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none--dns-name-label-none--primary-key-none--secondary-key-none--collect-model-data-none--cmk-vault-base-url-none--cmk-key-name-none--cmk-key-version-none--vnet-name-none--subnet-name-none-&preserve-view=true), gebruik de `vnet_name` `subnet_name` para meters en. Stel deze para meters in op de naam van het virtuele netwerk en het subnet waar u delegering hebt ingeschakeld.
 
-## <a name="limit-outbound-connectivity-from-the-virtual-network"></a>Uitgaande connectiviteit vanuit het virtuele netwerk beperken
+## <a name="limit-outbound-connectivity-from-the-virtual-network"></a>Uitgaande connectiviteit vanaf het virtuele netwerk beperken
 
 Als u de standaard regels voor uitgaande verbindingen niet wilt gebruiken en u de uitgaande toegang van uw virtuele netwerk wilt beperken, moet u toegang tot Azure Container Registry toestaan. Zorg er bijvoorbeeld voor dat uw netwerk beveiligings groepen (NSG) een regel bevat waarmee toegang tot het service label __AzureContainerRegistry. Region__ name waarbij {regionnaam} de naam is van een Azure-regio.
 

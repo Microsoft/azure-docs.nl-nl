@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/30/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 59d318b3e30b10d73e620a6b0793384dda80ef08
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: d841d3b922a5edd0257934566207187ae031c1b5
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96184056"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96532173"
 ---
 # <a name="azure-security-baseline-for-azure-resource-manager"></a>Azure-beveiligings basislijn voor Azure Resource Manager
 
@@ -37,7 +37,7 @@ De inhoud wordt gegroepeerd op de **beveiligings controles** die zijn gedefiniee
 
 - [Aan de slag met Azure Monitor en integratie van SIEM van derden](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -49,7 +49,7 @@ De inhoud wordt gegroepeerd op de **beveiligings controles** die zijn gedefiniee
 
 - [Logboek registratie en verschillende logboek typen in azure](../../azure-monitor/platform/platform-logs-overview.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -65,7 +65,7 @@ U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden
 
 - [Aangepaste query's uitvoeren in Azure Monitor](../../azure-monitor/log-query/get-started-queries.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Gedeeld
 
@@ -79,7 +79,7 @@ U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden
 
 - [Een waarschuwing over Log Analytics logboek gegevens](../../azure-monitor/learn/tutorial-response.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -91,9 +91,9 @@ U kunt ook gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden
 
 **Hulp**: met Azure op rollen gebaseerd toegangs beheer (RBAC) kunt u de toegang tot Azure-resources beheren via roltoewijzingen. U kunt deze rollen toewijzen aan gebruikers, groeperingen van service-principals en beheerde identiteiten. Er zijn vooraf gedefinieerde ingebouwde rollen voor bepaalde resources, en deze rollen kunnen worden geïnventariseerd of opgevraagd via hulpprogram ma's als Azure CLI, Azure PowerShell of de Azure Portal.
 
-- [Een directory-rol verkrijgen in azure AD met Power shell](/powershell/module/azuread/get-azureaddirectoryrole?amp;preserve-view=true&view=azureadps-2.0)
+- [Een directory-rol verkrijgen in azure AD met Power shell](/powershell/module/azuread/get-azureaddirectoryrole?preserve-view=true&view=azureadps-2.0)
 
-- [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember?amp;preserve-view=true&view=azureadps-2.0)
+- [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember?preserve-view=true&view=azureadps-2.0)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -125,7 +125,7 @@ U kunt ook Just-in-time-toegang inschakelen met behulp van Azure AD Privileged I
 
 - [Informatie over eenmalige aanmelding met Azure AD](../../active-directory/manage-apps/what-is-single-sign-on.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -133,7 +133,7 @@ U kunt ook Just-in-time-toegang inschakelen met behulp van Azure AD Privileged I
 
 **Hulp**: schakel Azure Active Directory multi-factor Authentication in en volg de aanbevelingen voor Azure Security Center identiteits-en toegangs beheer.
 
-- [Meervoudige verificatie inschakelen in Azure](../../active-directory/authentication/howto-mfa-getstarted.md)
+- [MFA inschakelen in Azure](../../active-directory/authentication/howto-mfa-getstarted.md)
 
 - [Identiteit en toegang bewaken in Azure Security Center](../../security-center/security-center-identity-access.md)
 
@@ -149,7 +149,7 @@ U kunt ook Just-in-time-toegang inschakelen met behulp van Azure AD Privileged I
 
 - [Azure AD MFA inschakelen](../../active-directory/authentication/howto-mfa-getstarted.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -171,7 +171,7 @@ U kunt ook Just-in-time-toegang inschakelen met behulp van Azure AD Privileged I
 
 - [De benoemde locaties van Azure AD configureren](../../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -181,7 +181,7 @@ U kunt ook Just-in-time-toegang inschakelen met behulp van Azure AD Privileged I
 
 - [De benoemde locaties van Azure AD configureren](../../active-directory/reports-monitoring/quickstart-configure-named-locations.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -205,7 +205,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 - [Azure-activiteiten logboeken integreren met Azure Monitor](../../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -219,7 +219,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 - [Azure-Sentinel onboarden](../../sentinel/quickstart-onboard.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -233,7 +233,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 - [Tags maken en gebruiken](./tag-resources.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -243,7 +243,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 - [RBAC configureren in Azure](../../role-based-access-control/role-assignments-portal.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -253,7 +253,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 - [Gegevens beveiliging in Azure Resource Manager begrijpen](azure-resource-manager-security-controls.md#data-protection)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -279,11 +279,11 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via Azure resource G
 
 - [Query's maken met Azure resource Graph](../../governance/resource-graph/first-query-portal.md)
 
-- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?amp;preserve-view=true&view=azps-4.8.0)
+- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?preserve-view=true&view=azps-4.8.0)
 
 - [Meer informatie over Azure RBAC](../../role-based-access-control/overview.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -293,7 +293,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via Azure resource G
 
 - [Zie voor meer informatie over het labelen van assets de hand leiding resource naamgeving en Tags toevoegen](/azure/cloud-adoption-framework/decision-guides/resource-tagging/?toc=%2fazure%2fazure-resource-manager%2fmanagement%2ftoc.json)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -314,7 +314,7 @@ Hieronder vindt u meer informatie over de Details
 
 - [Tags maken en gebruiken](./tag-resources.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -322,7 +322,7 @@ Hieronder vindt u meer informatie over de Details
 
 **Richt lijnen**: Maak een inventaris van goedgekeurde Azure-resources en goedgekeurde software voor reken resources conform uw organisatie behoeften.
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -330,13 +330,13 @@ Hieronder vindt u meer informatie over de Details
 
 **Hulp**: gebruik Azure Policy om beperkingen toe te voegen voor het type resources dat kan worden gemaakt in uw abonnementen.
 
-Gebruik Azure resource Graph om bronnen in hun abonnementen op te vragen en te detecteren.  Zorg ervoor dat alle Azure-resources die aanwezig zijn in de omgeving, zijn goedgekeurd.
+Gebruik Azure Resource Graph om resources binnen hun abonnementen op te vragen en te detecteren.  Zorg ervoor dat alle Azure-resources die aanwezig zijn in de omgeving, zijn goedgekeurd.
 
 - [Azure Policy configureren en beheren](../../governance/policy/tutorials/create-and-manage.md)
 
 - [Query's maken met Azure resource Graph](../../governance/resource-graph/first-query-portal.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -353,7 +353,7 @@ Hieronder vindt u meer informatie over de Details
 
 - [Een specifiek resource type weigeren met Azure Policy](../../governance/policy/samples/built-in-policies.md#general)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -363,7 +363,7 @@ Hieronder vindt u meer informatie over de Details
 
 - [Voorwaardelijke toegang configureren om de toegang tot Azure-bronnen beheer te blok keren](../../role-based-access-control/conditional-access-azure-management.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -371,7 +371,7 @@ Hieronder vindt u meer informatie over de Details
 
 **Richt lijnen**: niet van toepassing; deze aanbeveling is bedoeld voor reken resources.
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -387,7 +387,7 @@ Azure Resource Manager kunt de sjabloon in JavaScript Object Notation (JSON) exp
 
 U kunt ook de aanbevelingen van Azure Security Center gebruiken als een veilige configuratie basislijn voor uw Azure-resources.
 
-- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?amp;preserve-view=true&view=azps-4.8.0)
+- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?preserve-view=true&view=azps-4.8.0)
 
 - [Zelfstudie: Beleidsregels voor het afdwingen van naleving maken en beheren](../../governance/policy/tutorials/create-and-manage.md)
 
@@ -395,7 +395,7 @@ U kunt ook de aanbevelingen van Azure Security Center gebruiken als een veilige 
 
 - [Aanbevelingen voor beveiliging: een naslaggids](../../security-center/recommendations-reference.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -413,7 +413,7 @@ Daarnaast moet u, als beheerder, een abonnement, resource groep of resource verg
 
 - [Resources vergren delen om onverwachte wijzigingen te voor komen](lock-resources.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -421,11 +421,11 @@ Daarnaast moet u, als beheerder, een abonnement, resource groep of resource verg
 
 **Hulp**: Azure DevOps gebruiken om uw code veilig op te slaan en te beheren, zoals aangepaste Azure Policy definities, Azure Resource Manager sjablonen en desired state Configuration-scripts. Als u toegang wilt krijgen tot de resources die u beheert in azure DevOps, kunt u machtigingen verlenen of weigeren aan specifieke gebruikers, ingebouwde beveiligings groepen of groepen die zijn gedefinieerd in Azure Active Directory (Azure AD) als deze zijn geïntegreerd met Azure DevOps, of Active Directory als dit is geïntegreerd met TFS.
 
-- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow?amp;preserve-view=true&view=azure-devops)
+- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow?preserve-view=true&view=azure-devops)
 
 - [Over machtigingen en groepen in azure DevOps](/azure/devops/organizations/security/about-permissions)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -437,7 +437,7 @@ Daarnaast moet u, als beheerder, een abonnement, resource groep of resource verg
 
 - [Aliassen gebruiken](../../governance/policy/concepts/definition-structure.md#aliases)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -447,7 +447,7 @@ Daarnaast moet u, als beheerder, een abonnement, resource groep of resource verg
 
 - [Azure Policy configureren en beheren](../../governance/policy/tutorials/create-and-manage.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -455,13 +455,13 @@ Daarnaast moet u, als beheerder, een abonnement, resource groep of resource verg
 
 **Richt lijnen**: gebruik aanbevolen procedures bij het bouwen van uw arm-sjabloon. deze aanbevelingen helpen u bij het voor komen van veelvoorkomende problemen bij het gebruik van een arm-sjabloon voor het implementeren van een oplossing.
 
-Referentie scanner implementeren om referenties in code te identificeren. Referentie scanner stimuleert ook het verplaatsen van gedetecteerde referenties naar veiliger locaties, zoals Azure Key Vault. 
+Referentie scanner implementeren om referenties in code te identificeren. Door het gebruik van Credential Scanner worden gebruikers ook aangemoedigd om gedetecteerde referenties naar veiligere locaties, zoals Azure Key Vault, te verplaatsen. 
 
 - [Best practices voor het implementeren van sjabloon beveiliging](../templates/template-best-practices.md)
 
 - [Referentie scanner instellen](https://secdevtools.azurewebsites.net/helpcredscan.html)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -475,7 +475,7 @@ Referentie scanner implementeren om referenties in code te identificeren. Refere
 
 - [Resources implementeren met ARM-sjablonen en Azure Portal](../templates/deploy-portal.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -483,11 +483,11 @@ Referentie scanner implementeren om referenties in code te identificeren. Refere
 
 **Hulp**: Azure DevOps gebruiken om uw code veilig op te slaan en te beheren, zoals aangepaste Azure Policy definities, Azure Resource Manager sjablonen en desired state Configuration-scripts. Als u toegang wilt krijgen tot de resources die u beheert in azure DevOps, kunt u machtigingen verlenen of weigeren aan specifieke gebruikers, ingebouwde beveiligings groepen of groepen die zijn gedefinieerd in Azure Active Directory (Azure AD) als deze zijn geïntegreerd met Azure DevOps, of Active Directory als dit is geïntegreerd met TFS.
 
-- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow?amp;preserve-view=true&view=azure-devops)
+- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow?preserve-view=true&view=azure-devops)
 
 - [Over machtigingen en groepen in azure DevOps](/azure/devops/organizations/security/about-permissions)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -505,7 +505,7 @@ Referentie scanner implementeren om referenties in code te identificeren. Refere
 
 - [De verwerkings gids voor het computer beveiligings incident van het NIST gebruiken om u te helpen bij het maken van uw eigen reactie plan voor incidenten](https://csrc.nist.gov/publications/detail/sp/800-61/rev-2/final)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -515,7 +515,7 @@ Referentie scanner implementeren om referenties in code te identificeren. Refere
 
 - [Publicatie van het NIST-hand leiding voor het testen, trainen en uitoefenen van Program Ma's voor IT-plannen en-mogelijkheden](https://csrc.nist.gov/publications/detail/sp/800-84/final)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -527,7 +527,7 @@ Referentie scanner implementeren om referenties in code te identificeren. Refere
 
 - [Waarschuwingen streamen naar Azure Sentinel](../../sentinel/connect-azure-security-center.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -537,7 +537,7 @@ Referentie scanner implementeren om referenties in code te identificeren. Refere
 
 - [Werk stroom automatisering configureren in Security Center](../../security-center/workflow-automation.md)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Klant
 
@@ -547,17 +547,17 @@ Referentie scanner implementeren om referenties in code te identificeren. Refere
 
 ### <a name="111-conduct-regular-penetration-testing-of-your-azure-resources-and-ensure-remediation-of-all-critical-security-findings"></a>11,1: voert regel matig indringings tests van uw Azure-resources uit en zorgt voor herbemiddeling van alle essentiële beveiligings resultaten
 
-**Richt lijnen**: Volg de stappen voor het testen van de Microsoft Cloud indringings regels om ervoor te zorgen dat uw indringings tests niet worden geschonden door het micro soft-beleid. Volg de strategie en instructies van Microsoft voor Red Teaming en penetratietests van live sites voor cloudinfrastructuur, services en toepassingen die door Microsoft worden beheerd.
+**Richt lijnen**: Volg de stappen voor het testen van de Microsoft Cloud indringings regels om ervoor te zorgen dat uw indringings tests niet worden geschonden door het micro soft-beleid. Gebruik de strategie van Microsoft en de uitvoering van Red Teaming-activiteiten, en voer een penetratietest van de live site uit op basis van een infrastructuur, services en toepassingen die door Microsoft worden beheerd.
 
-- [Penetration Testing Rules of Engagement](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
+- [Regels voor het inzetten van penetratietests](https://www.microsoft.com/msrc/pentest-rules-of-engagement?rtc=1)
 
 - [Microsoft Cloud Red Teaming](https://gallery.technet.microsoft.com/Cloud-Red-Teaming-b837392e)
 
-**Monitoring door Azure Security Center**: Niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
 **Verantwoordelijkheid**: Gedeeld
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - Zie de [Azure Security-Bench Mark](../../security/benchmarks/overview.md)
-- Lees meer over [basislijnen voor de beveiliging van Azure](../../security/benchmarks/security-baselines-overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../../security/benchmarks/security-baselines-overview.md)

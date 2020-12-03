@@ -11,12 +11,12 @@ ms.date: 11/20/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 8b75345743bb398458752d03f853738df713b4f9
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 64ba24eb0eab581310122908fc05d1d671ac1d40
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96456438"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96531570"
 ---
 # <a name="data-loading-strategies-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Strategieën voor het laden van gegevens voor een toegewezen SQL-groep in azure Synapse Analytics
 
@@ -119,8 +119,9 @@ Gebruik de volgende SQL-gegevens type toewijzing bij het laden van Parquet-besta
 | [Complex type](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Fapache%2Fparquet-format%2Fblob%2Fmaster%2FLogicalTypes.md%23maps&data=02\|01\|kevin%40microsoft.com\|19f74d93f5ca45a6b73c08d7d7f5f111\|72f988bf86f141af91ab2d7cd011db47\|1\|0\|637215323617803168&sdata=FiThqXxjgmZBVRyigHzfh5V7Z%2BPZHjud2IkUUM43I7o%3D&reserved=0) |                  MAP                  |   varchar(max)   |
 
 >[!IMPORTANT] 
-> - SQL-toegewezen Pools bieden momenteel geen ondersteuning voor Parquet-gegevens typen met MICRO-en NANOS-precisie. 
-> - De volgende fout kan optreden als de typen niet overeenkomen tussen Parquet en SQL of als u niet-ondersteunde Parquet-gegevens typen hebt:  **"HdfsBridge:: recordReaderFillBuffer-onverwachte fout aangetroffen bij het invullen van de buffer voor record lezer: ClassCastException:...**
+>- SQL-toegewezen Pools bieden momenteel geen ondersteuning voor Parquet-gegevens typen met MICRO-en NANOS-precisie. 
+>- De volgende fout kan optreden als de typen niet overeenkomen tussen Parquet en SQL of als u niet-ondersteunde Parquet-gegevens typen hebt: **"HdfsBridge:: recordReaderFillBuffer-onverwachte fout aangetroffen bij het invullen van de buffer voor record lezer: ClassCastException:...**
+>- Het laden van een waarde buiten het bereik van 0-127 in een kolom tinyint voor de Parquet-en ORC-bestands indeling wordt niet ondersteund.
 
 Zie voor een voor beeld van het maken van externe objecten [externe tabellen maken](https://docs.microsoft.com/azure/synapse-analytics/sql/develop-tables-external-tables?tabs=sql-pool).
 

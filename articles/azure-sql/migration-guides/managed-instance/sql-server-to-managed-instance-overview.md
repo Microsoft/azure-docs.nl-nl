@@ -10,12 +10,12 @@ author: mokabiru
 ms.author: mokabiru
 ms.reviewer: MashaMSFT
 ms.date: 11/06/2020
-ms.openlocfilehash: 2241049e5c3cb5039a73c0f7637f7e3553d2e227
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 878d59445dde839ca9e702ac0c49af676e48a42f
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96326867"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96531187"
 ---
 # <a name="migration-overview-sql-server-to-sql-managed-instance"></a>Migratie overzicht: SQL Server naar een beheerd exemplaar van SQL
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlmi.md)]
@@ -63,7 +63,7 @@ Enkele algemene richt lijnen om u te helpen bij het kiezen van de juiste service
 U kunt reken-en opslag Resources kiezen tijdens de implementatie en deze vervolgens wijzigen nadat u de [Azure Portal](../../database/scale-resources.md) hebt gebruikt zonder uitval tijd voor uw toepassing. 
 
 > [!IMPORTANT]
-> Elk verschil in de [vereisten voor virtuele netwerken van het beheerde exemplaar](../../managed-instance/connectivity-architecture-overview.md#network-requirements) kan verhinderen dat u nieuwe instanties maakt of bestaande exemplaren gebruikt. Meer informatie over [het maken van nieuwe en het](../../managed-instance/virtual-network-subnet-create-arm-template.md?branch=release-ignite-arc-data)   configureren van [bestaande](../../managed-instance/vnet-existing-add-subnet.md?branch=release-ignite-arc-data)   netwerken. 
+> Elk verschil in de [vereisten voor virtuele netwerken van het beheerde exemplaar](../../managed-instance/connectivity-architecture-overview.md#network-requirements) kan verhinderen dat u nieuwe instanties maakt of bestaande exemplaren gebruikt. Meer informatie over [het maken van nieuwe en het](../../managed-instance/virtual-network-subnet-create-arm-template.md)   configureren van [bestaande](../../managed-instance/vnet-existing-add-subnet.md?branch=release-ignite-arc-data)   netwerken. 
 
 ### <a name="sql-server-vm-alternative"></a>SQL Server VM-alternatief
 

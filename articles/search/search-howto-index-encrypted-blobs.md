@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/02/2020
-ms.openlocfilehash: f0295c27f1d193b0dcd7829a11b4aabe0edb659b
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 4bab8def514df21d948d67f3cfba846c43917be2
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93286341"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96530932"
 ---
 # <a name="how-to-index-encrypted-blobs-using-blob-indexers-and-skillsets-in-azure-cognitive-search"></a>Versleutelde blobs indexeren met Blob-Indexeer functies en vaardig heden in azure Cognitive Search
 
@@ -36,7 +36,7 @@ In dit voor beeld wordt ervan uitgegaan dat u uw bestanden al naar Azure Blob St
 
 + [Azure Storage](https://azure.microsoft.com/services/storage/)
 + [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) in hetzelfde abonnement als Azure Cognitive Search. De sleutel kluis moet de beveiliging **voorlopig verwijderen** en **leegmaken** hebben ingeschakeld.
-+ [Azure-Cognitive Search](search-create-service-portal.md) op een [factureer bare laag](search-sku-tier.md#tiers) (Basic of hoger, in een wille keurige regio)
++ [Azure-Cognitive Search](search-create-service-portal.md) op een [factureer bare laag](search-sku-tier.md#tier-descriptions) (Basic of hoger, in een wille keurige regio)
 + [Azure-functie](https://azure.microsoft.com/services/functions/)
 + [Postman bureaublad-app](https://www.getpostman.com/)
 
@@ -52,7 +52,7 @@ In de DecryptBlobFile-vaardigheid wordt de URL en het SAS-token voor elke BLOB a
 
 1. Selecteer **het abonnement waar uw Azure Key Vault-exemplaar bestaat** (deze hand leiding werkt niet als u een ander abonnement selecteert) en selecteer een bestaande resource groep of maak een nieuwe. Als u een nieuwe wilt maken, moet u ook een regio selecteren waarop u wilt implementeren.
 
-1. Selecteer **controleren + maken** , zorg ervoor dat u akkoord gaat met de voor waarden en selecteer vervolgens **maken** om de Azure-functie te implementeren.
+1. Selecteer **controleren + maken**, zorg ervoor dat u akkoord gaat met de voor waarden en selecteer vervolgens **maken** om de Azure-functie te implementeren.
 
     ![ARM-sjabloon in Portal](media/indexing-encrypted-blob-files/arm-template.jpg "ARM-sjabloon in Portal")
 
@@ -82,7 +82,7 @@ In de DecryptBlobFile-vaardigheid wordt de URL en het SAS-token voor elke BLOB a
     
         ![Functie-URL](media/indexing-encrypted-blob-files/function-uri.jpg "Waar vind ik de URL van de Azure-functie?")
 
-    1. De host-sleutel code, die u kunt vinden door te navigeren naar **app-sleutels** , te klikken om de **standaard** sleutel weer te geven en de waarde te kopiëren.
+    1. De host-sleutel code, die u kunt vinden door te navigeren naar **app-sleutels**, te klikken om de **standaard** sleutel weer te geven en de waarde te kopiëren.
      
         ![Functie host-sleutel code](media/indexing-encrypted-blob-files/function-host-key.jpg "Waar vind ik de Azure function host-sleutel code")
 
@@ -128,29 +128,28 @@ Als u de waarde voor wilt ophalen `admin-key` , gebruikt u de Azure Cognitive Se
 
 ![Het tabblad met app-variabelen in Postman](media/indexing-encrypted-blob-files/postman-variables-window.jpg "Het venster met variabelen in Postman")
 
-
 | Variabele    | Waar te verkrijgen? |
 |-------------|-----------------|
 | `admin-key` | Op de pagina **Sleutels** van de Azure Cognitive Search-service.  |
-| `search-service-name` | De naam van de Azure Cognitive Search-service. De URL is `https://{{search-service-name}}.search.windows.net`. | 
-| `storage-connection-string` | Selecteer in het opslagaccount op het tabblad **Toegangssleutels** de **key1** >  **-verbindingstekenreeks**. | 
-| `storage-container-name` | De naam van de BLOB-container met de versleutelde bestanden die moeten worden geïndexeerd. | 
-| `function-uri` |  In de Azure-functie onder **Essentials** op de hoofd pagina. | 
-| `function-code` | Klik in de functie Azure, door te navigeren naar **app-sleutels** , op om de **standaard** sleutel weer te geven en de waarde te kopiëren. | 
+| `search-service-name` | De naam van de Azure Cognitive Search-service. De URL is `https://{{search-service-name}}.search.windows.net`. |
+| `storage-connection-string` | Selecteer in het opslagaccount op het tabblad **Toegangssleutels** de **key1** >  **-verbindingstekenreeks**. |
+| `storage-container-name` | De naam van de BLOB-container met de versleutelde bestanden die moeten worden geïndexeerd. |
+| `function-uri` |  In de Azure-functie onder **Essentials** op de hoofd pagina. |
+| `function-code` | Klik in de functie Azure, door te navigeren naar **app-sleutels**, op om de **standaard** sleutel weer te geven en de waarde te kopiëren. |
 | `api-version` | Laat deze staan op **2020-06-30**. |
-| `datasource-name` | Als **versleutelde blobs-DS** laten. | 
-| `index-name` | **Versleuteld-blobs-idx** laten staan. | 
-| `skillset-name` | **Versleuteld-blobs-SS** laten staan. | 
-| `indexer-name` | Zorg ervoor dat **versleutelde blobs-IXR**. | 
+| `datasource-name` | Als **versleutelde blobs-DS** laten. |
+| `index-name` | **Versleuteld-blobs-idx** laten staan. |
+| `skillset-name` | **Versleuteld-blobs-SS** laten staan. |
+| `indexer-name` | Zorg ervoor dat **versleutelde blobs-IXR**. |
 
 ### <a name="review-the-request-collection-in-postman"></a>De verzameling aanvragen weergeven in Postman
 
-Wanneer u deze hand leiding uitvoert, moet u vier HTTP-aanvragen doen: 
+Wanneer u deze hand leiding uitvoert, moet u vier HTTP-aanvragen doen:
 
-- **PUT-aanvraag om de index te maken** : Deze index bevat de gegevens die door Azure Cognitive Search worden gebruikt en geretourneerd.
-- **Post-aanvraag voor het maken van de gegevens bron** : deze gegevens bron verbindt uw Azure Cognitive Search-service met uw opslag account en daarom versleutelde BLOB-bestanden. 
+- **PUT-aanvraag om de index te maken**: Deze index bevat de gegevens die door Azure Cognitive Search worden gebruikt en geretourneerd.
+- **Post-aanvraag voor het maken van de gegevens bron**: deze gegevens bron verbindt uw Azure Cognitive Search-service met uw opslag account en daarom versleutelde BLOB-bestanden. 
 - De **aanvraag voor het maken van de vaardig heden plaatsen: in** de vaardig heden wordt de aangepaste vaardigheids definitie opgegeven voor de Azure-functie waarmee de BLOB-bestands gegevens worden ontsleuteld, en een [DocumentExtractionSkill](cognitive-search-skill-document-extraction.md) om de tekst uit elk document te extra heren nadat deze is ontsleuteld.
-- **PUT-aanvraag om de indexeerfunctie te maken** : Als de indexeerfunctie wordt uitgevoerd, worden de gegevens gelezen, wordt de vaardighedenset toegepast en worden de resultaten opgeslagen. U moet deze aanvraag als laatste uitvoeren.
+- **PUT-aanvraag om de indexeerfunctie te maken**: Als de indexeerfunctie wordt uitgevoerd, worden de gegevens gelezen, wordt de vaardighedenset toegepast en worden de resultaten opgeslagen. U moet deze aanvraag als laatste uitvoeren.
 
 De [bron code](https://github.com/Azure-Samples/azure-search-postman-samples/blob/master/index-encrypted-blobs/Index%20encrypted%20Blob%20files.postman_collection.json) bevat een postman-verzameling met de vier aanvragen, evenals een aantal nuttige opvolgings aanvragen. Als u de aanvragen wilt uitgeven, selecteert u in postman het tabblad voor de aanvragen en selecteert u **verzenden** voor elke aanvraag.
 

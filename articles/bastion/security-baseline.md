@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 85638d2ef3499ca71057879852eb582b950b7e2c
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 7849027c704c8b8d7d36a33cd58c84566ce96da3
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96325675"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96530949"
 ---
 # <a name="azure-security-baseline-for-azure-bastion"></a>Azure-beveiligings basislijn voor Azure Bastion
 
@@ -300,7 +300,7 @@ Opmerking: Er zijn mogelijk extra machtigingen vereist om inzicht te krijgen in 
 
 - [Verwijderen van Force-verbinding met een externe sessie verbreken](session-monitoring.md#view)
 
-- [Azure Network CLI](/powershell/module/az.network/?amp;preserve-view=true&view=azps-5.1.0#networking)
+- [Azure Network CLI](/powershell/module/az.network/?preserve-view=true&view=azps-5.1.0#networking)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -459,7 +459,7 @@ Exporteer de waarschuwingen en aanbevelingen van Azure Security Center met behul
 
 **Verantwoordelijkheid**: Klant
 
-### <a name="ir-4-detection-and-analysis--investigate-an-incident"></a>IR-4: Detectie en analyse: een incident onderzoeken
+### <a name="ir-4-detection-and-analysis--investigate-an-incident"></a>IR-4: Detectie en analyse - een incident onderzoeken
 
 **Richtlijnen**: Zorg ervoor dat analisten verschillende gegevensbronnen kunnen bevragen en gebruiken bij het onderzoeken van mogelijke incidenten, zodat ze een volledig beeld hebben van wat er is gebeurd. Er moeten verschillende logboeken worden verzameld om de activiteiten van een mogelijke aanvaller in de kill chain te volgen om zo blinde vlekken te voorkomen.  U moet er ook voor zorgen dat inzichten en resultaten worden vastgelegd voor andere analisten, zodat deze kunnen worden geraadpleegd als historische naslaginformatie.  
 
@@ -527,7 +527,7 @@ Daarnaast kunt u resources markeren met behulp van tags en een naamgevingssystee
 
 **Richt lijnen**: standaard beveiligings configuraties voor Azure Bastion definiëren en implementeren met Azure Policy. Gebruik Azure Policy aliassen in de naam ruimte ' micro soft. netwerk ' om aangepaste beleids regels te maken om de netwerk configuratie van uw Azure-Bastion te controleren of af te dwingen. Klanten kunnen ook veilige configuraties opzetten door gebruik te maken van Azure-blauw drukken of ARM-sjablonen om Bastion-bronnen veilig en consistent te implementeren.
 
-- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?amp;preserve-view=true&view=azps-4.8.0)
+- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?preserve-view=true&view=azps-4.8.0)
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
@@ -543,7 +543,7 @@ Daarnaast kunt u resources markeren met behulp van tags en een naamgevingssystee
 
 **Richt lijnen**: standaard beveiligings configuraties voor Azure Bastion definiëren en implementeren met Azure Policy. Gebruik Azure Policy aliassen in de naam ruimte ' micro soft. netwerk ' om aangepaste beleids regels te maken om de netwerk configuratie van uw Bastion-resources te controleren of af te dwingen.
 
-- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?amp;preserve-view=true&view=azps-4.8.0)
+- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?preserve-view=true&view=azps-4.8.0)
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
@@ -594,11 +594,11 @@ Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten 
 -   Juiste cryptografische standaarden
 
 Raadpleeg de volgende bronnen voor meer informatie:
-- [Azure Security Architecture Recommendation - Storage, data, and encryption](/azure/architecture/framework/security/storage-data-encryption?amp;bc=%2fsecurity%2fcompass%2fbreadcrumb%2ftoc.json&toc=%2fsecurity%2fcompass%2ftoc.json) (Aanbeveling voor Azure-beveiligingsarchitectuur: opslag, gegevens en versleuteling)
+- [Azure Security Architecture Recommendation - Storage, data, and encryption](/azure/architecture/framework/security/storage-data-encryption?bc=%2fsecurity%2fcompass%2fbreadcrumb%2ftoc.json&toc=%2fsecurity%2fcompass%2ftoc.json) (Aanbeveling voor Azure-beveiligingsarchitectuur: opslag, gegevens en versleuteling)
 
 - [Azure Security Fundamentals - Azure Data security, encryption, and storage](../security/fundamentals/encryption-overview.md) (Basisprincipes van Azure-beveiliging: Azure-gegevensbeveiliging, -versleuteling en -opslag)
 
-- [Cloud Adoption Framework - Azure data security and encryption best practices](../security/fundamentals/data-encryption-best-practices.md?amp;bc=%2fazure%2fcloud-adoption-framework%2f_bread%2ftoc.json&toc=%2fazure%2fcloud-adoption-framework%2ftoc.json) (Cloud Adoption Framework: best practices voor Azure-gegevensbeveiliging en -versleuteling)
+- [Cloud Adoption Framework - Azure data security and encryption best practices](../security/fundamentals/data-encryption-best-practices.md?bc=%2fazure%2fcloud-adoption-framework%2f_bread%2ftoc.json&toc=%2fazure%2fcloud-adoption-framework%2ftoc.json) (Cloud Adoption Framework: best practices voor Azure-gegevensbeveiliging en -versleuteling)
 
 - [Azure Security Benchmark - Asset management](/azure/security/benchmarks/security-controls-v2-asset-management) (Azure Security Benchmark: assetmanagement)
 

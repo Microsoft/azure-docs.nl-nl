@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: how-to
 ms.workload: identity
-ms.date: 11/04/2020
+ms.date: 12/02/2020
 ms.author: kenwith
 ms.reviewer: jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 6374164bb5049742d63a669b4c1e552c93967977
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 396d6f69673f8758d8d1302f8d10b8a92e5f50b4
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96173376"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96530746"
 ---
 # <a name="publish-your-app-to-the-azure-ad-app-gallery"></a>Uw app publiceren in de app-galerie van Azure AD
 
@@ -168,14 +168,25 @@ Zie [gebruikers verifiëren met WS-Federation in ASP.net core](/aspnet/core/secu
 
 Maak een webtoepassing met een HTML-aanmeldings pagina. Zorg ervoor dat uw toepassing formulier verificatie ondersteunt, zodat wachtwoord kluizen kan worden uitgevoerd om eenmalige aanmelding te kunnen werken zoals verwacht.
 
+## <a name="step-3---implement-scim-user-provisioning-in-your-app"></a>Stap 3: SCIM-gebruikers inrichting implementeren in uw app
+Ondersteuning van [scim](https://aka.ms/scimoverview) -inrichting is een optioneel, maar niet aanbevolen stap voor het bouwen van uw toepassing. Het ondersteunen van de SCIM-standaard is eenvoudig te doen en stelt klanten in staat om automatisch gebruikers accounts in uw app te maken en bij te werken, zonder dat ze hoeven te vertrouwen op hand matige processen, zoals het uploaden van CSV-bestanden. Daarnaast kunnen klanten het verwijderen van gebruikers automatiseren en groepslid maatschappen synchroon houden. Dit kan niet worden gerealiseerd met een oplossing zoals SAML JIT. 
 
-## <a name="step-3---create-your-azure-tenant-and-test-your-app"></a>Stap 3: uw Azure-Tenant maken en uw app testen
+### <a name="learn-about-scim"></a>Meer informatie over SCIM
+Zie voor meer informatie over de SCIM-standaarden en-voor delen voor uw klanten [inrichten met scim-aan de slag](https://aka.ms/scimoverview).
+
+### <a name="understand-the-azure-ad-scim-implementation"></a>Meer informatie over de Azure AD SCIM-implementatie
+Zie [een scim-eind punt bouwen en gebruikers inrichten met Azure AD configureren](https://docs.microsoft.com/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups)voor meer informatie over de implementatie van Azure AD scim.
+
+### <a name="implement-scim"></a>SCIM implementeren
+Azure AD bevat [referentie code](https://aka.ms/scimoverview) om u te helpen bij het bouwen van een scim-eind punt. Er zijn ook bibliotheken van derden/verwijzingen die u kunt vinden op github.  
+
+## <a name="step-4---create-your-azure-tenant-and-test-your-app"></a>Stap 4: uw Azure-Tenant maken en uw app testen
 
 U hebt een Azure AD-Tenant nodig om uw app te kunnen testen. Zie [Quick Start: een Tenant instellen](quickstart-create-new-tenant.md)om uw ontwikkel omgeving in te stellen.
 
 Een Azure AD-Tenant wordt ook geleverd met elk Microsoft 365-abonnement. Als u een gratis Microsoft 365 ontwikkel omgeving wilt instellen, raadpleegt u [lid worden van het Microsoft 365 ontwikkelaars programma](/office/developer-program/microsoft-365-developer-program).
 
-Zodra u een Tenant hebt, moet u toegang voor eenmalige aanmelding inschakelen en testen. 
+Zodra u een Tenant hebt, moet u eenmalige aanmelding en [inrichting](https://docs.microsoft.com/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups#step-4-integrate-your-scim-endpoint-with-the-azure-ad-scim-client)testen. 
 
 **Voor OIDC-of Oath-toepassingen** [registreert u uw toepassing](quickstart-register-app.md) als multi tenant-toepassing. Selecteer de optie accounts in een organisatorische map en persoonlijke micro soft-accounts in ondersteunde account typen.
 
@@ -184,7 +195,7 @@ Zodra u een Tenant hebt, moet u toegang voor eenmalige aanmelding inschakelen en
 U kunt indien nodig ook [een toepassing met één Tenant converteren naar meerdere tenants](howto-convert-app-to-be-multi-tenant.md) .
 
 
-## <a name="step-4---create-and-publish-documentation"></a>Stap 4: Documentatie maken en publiceren
+## <a name="step-5---create-and-publish-documentation"></a>Stap 5: Documentatie maken en publiceren
 
 ### <a name="documentation-on-your-site"></a>Documentatie op uw site
 
@@ -206,13 +217,14 @@ Het is raadzaam dat uw documentatie op uw site mini maal de volgende items bevat
 * Stappen voor test gebruikers testen
 * Probleemoplossings informatie, met inbegrip van fout codes en-berichten
 * Ondersteunings mechanismen voor klanten
+* Details over uw SCIM-eind punt, met inbegrip van de bronnen en kenmerken die worden ondersteund
 
 ### <a name="documentation-on-the-microsoft-site"></a>Documentatie op de micro soft-site
 
 Wanneer u uw toepassing opneemt met de Azure Active Directory toepassings galerie, waarmee uw toepassing ook wordt gepubliceerd in de Azure Marketplace, wordt door micro soft documentatie gegenereerd voor de wederzijdse klanten die het stapsgewijze proces bespreken. [Hier](../saas-apps/tutorial-list.md)kunt u een voor beeld bekijken. Deze documentatie wordt gemaakt op basis van uw inzending naar de galerie, en u kunt deze eenvoudig bijwerken als u wijzigingen aanbrengt in uw toepassing met behulp van uw GitHub-account.
 
 
-## <a name="step-5---submit-your-app"></a>Stap 5: uw app verzenden
+## <a name="step-6---submit-your-app"></a>Stap 6: uw app verzenden
 
 Nadat u hebt gecontroleerd of uw toepassings integratie werkt met Azure AD, moet u de aanvraag voor de toepassing indienen in de portal van het [micro soft-toepassings netwerk](https://microsoft.sharepoint.com/teams/apponboarding/Apps).
 
@@ -262,7 +274,7 @@ Als u uw toepassing wilt toevoegen aan de lijst in de galerie met behulp van wac
 
 ![Een SSO-toepassing voor wacht woorden in de galerie weer geven](./media/howto-app-gallery-listing/passwordsso.png)
 
-Als u een [SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md) 2,0-eind punt voor het inrichten van gebruikers implementeert, selecteert u de optie zoals weer gegeven. 
+Als u een [SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md) 2,0-eind punt voor het inrichten van gebruikers implementeert, selecteert u de optie zoals weer gegeven. Wanneer u het schema in de voorbereidings aanvraag levert, volgt u de instructies [hier](https://docs.microsoft.com/azure/active-directory/app-provisioning/export-import-provisioning-configuration) om uw schema te downloaden. We gebruiken het schema dat u hebt geconfigureerd bij het testen van de toepassing voor niet-galerijen om de galerie toepassing te bouwen. 
 
    ![Aanvraag voor gebruikers inrichting](./media/howto-app-gallery-listing/user-provisioning.png)
 
@@ -301,7 +313,7 @@ De tijd lijn voor het proces van het weer geven van een OpenID Connect Connect-t
 Voor eventuele escalaties verzendt u een e-mail naar het [Azure AD SSO-integratie team](mailto:SaaSApplicationIntegrations@service.microsoft.com)en wij zullen zo snel mogelijk reageren.
 
 
-## <a name="step-6---join-the-microsoft-partner-network"></a>Stap 6: deel nemen aan het micro soft Partner Network
+## <a name="step-7---join-the-microsoft-partner-network"></a>Stap 7: deel nemen aan het micro soft Partner Network
 De Microsoft Partner Network biedt directe toegang tot exclusieve resources, Program ma's, hulpprogram ma's en verbindingen. Zie [commerciële klanten bereiken](https://partner.microsoft.com/explore/commercial#gtm)om lid te worden van het netwerk en uw Go to Market-abonnement te maken.
 
 

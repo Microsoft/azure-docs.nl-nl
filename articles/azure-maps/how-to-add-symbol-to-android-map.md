@@ -1,19 +1,19 @@
 ---
-title: Een symbool laag toevoegen aan Android-kaarten | Microsoft Azure kaarten
-description: Meer informatie over het toevoegen van een markering aan een kaart. Bekijk een voor beeld waarin de Azure Maps Android SDK wordt gebruikt om een Symbol-laag toe te voegen die op punten gebaseerde gegevens uit een gegevens bron bevat.
+title: Een symbool laag aan een kaart toevoegen met Azure Maps Android SDK
+description: Meer informatie over het toevoegen van een markering aan een kaart. Bekijk een voor beeld waarin de Android SDK van Microsoft Azure Maps wordt gebruikt om een Symbol-laag toe te voegen die op punten gebaseerde gegevens uit een gegevens bron bevat.
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 04/26/2019
+ms.date: 11/24/2020
 ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: acd5f06a5383308ce736f2860810ebee7e5bce28
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 300a7968b2072459d6d7709e4d89388e1bcf59f3
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897106"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96531204"
 ---
 # <a name="add-a-symbol-layer-to-a-map-using-azure-maps-android-sdk"></a>Een symbool laag aan een kaart toevoegen met Azure Maps Android SDK
 
@@ -21,7 +21,9 @@ Dit artikel laat u zien hoe u punt gegevens van een gegevens bron kunt weer geve
 
 ## <a name="prerequisites"></a>Vereisten
 
-Als u de stappen in dit artikel volledig wilt volgen, moet u [Azure Maps ANDROID SDK](./how-to-use-android-map-control-library.md) installeren om een kaart te laden.
+1. [Een Azure Maps-account maken](quick-demo-map-app.md#create-an-azure-maps-account)
+2. [Een primaire sleutel voor een abonnement verkrijgen](quick-demo-map-app.md#get-the-primary-key-for-your-account), ook wel bekend als de primaire sleutel of de abonnementssleutel.
+3. Down load en installeer de [Azure Maps ANDROID SDK](./how-to-use-android-map-control-library.md).
 
 ## <a name="add-a-symbol-layer"></a>Een symboollaag toevoegen
 
@@ -62,7 +64,7 @@ Volg de onderstaande stappen om een markering op de kaart toe te voegen met behu
         //Create a point feature and add it to the data source.
         dataSource.add(Feature.fromGeometry(Point.fromLngLat(-122.33, 47.64)));
     
-        //Add a custom image icon to the map resources.
+        //Add a red custom image icon to the map resources.
         map.images.add("my-icon", R.drawable.mapcontrol_marker_red);
     
         //Create a symbol layer and add it to the map.
@@ -71,8 +73,6 @@ Volg de onderstaande stappen om een markering op de kaart toe te voegen met behu
         });
     
     ```
-    
-    In het bovenstaande code fragment wordt eerst een exemplaar van Azure Maps kaart besturings element opgehaald met de call back methode **onReady ()** . Vervolgens wordt een gegevens bron object gemaakt met behulp van de klasse **Data Source** en toegevoegd aan de kaart. Vervolgens wordt er een **functie** met een punt geometrie toegevoegd. Vervolgens wordt een rode afbeelding van de markering ingesteld als pictogram voor het symbool. Een **symbool laag** gebruikt tekst of pictogrammen voor het weer geven van op punten gebaseerde gegevens die in de gegevens bron zijn verpakt als symbool op de kaart. Er wordt vervolgens een symbool laag gemaakt en de gegevens bron wordt door gegeven om weer te geven en wordt vervolgens toegevoegd aan de lagen van de kaart.
     
     Nadat u het code fragment hierboven hebt toegevoegd, `MainActivity.java` ziet uw er als volgt uit:
     
@@ -165,19 +165,17 @@ Volg de onderstaande stappen om een markering op de kaart toe te voegen met behu
         }
     }
     ```
-    
-Als u de toepassing uitvoert, moet u op dit punt een markering op de kaart zien, zoals hier wordt weer gegeven:
 
-<center>
+Wanneer u de toepassing uitvoert, ziet u een markering op de kaart, zoals hier wordt weer gegeven:
 
-![Pincode van Android-kaart](./media/how-to-add-symbol-to-android-map/android-map-pin.png)</center>
+![Pincode van Android-kaart](./media/how-to-add-symbol-to-android-map/android-map-pin.png)
 
 > [!TIP]
 > Standaard optimaliseert symbool lagen de rendering van symbolen door symbolen te verbergen die elkaar overlappen. Wanneer u inzoomt, worden de verborgen symbolen zichtbaar. Als u deze functie wilt uitschakelen en alle symbolen op elk moment wilt weer geven, stelt `iconAllowOverlap` u de optie in op `true` .
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u meer dingen wilt toevoegen aan uw kaart, raadpleegt u:
+Zie voor informatie over het toevoegen van meer gegevens aan uw kaart:
 
 > [!div class="nextstepaction"]
 > [Vormen toevoegen aan een Android-kaart](./how-to-add-shapes-to-android-map.md)

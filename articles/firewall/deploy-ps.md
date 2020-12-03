@@ -4,15 +4,15 @@ description: In dit artikel vindt u informatie over het implementeren en configu
 services: firewall
 author: vhorne
 ms.service: firewall
-ms.date: 11/12/2020
+ms.date: 12/02/2020
 ms.author: victorh
 ms.topic: how-to
-ms.openlocfilehash: 18a7da6402d7835be8dbad0551973a262ab335c8
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: ca4e313d4836764009feccf5acfaefe48b01b55e
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660233"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96531759"
 ---
 # <a name="deploy-and-configure-azure-firewall-using-azure-powershell"></a>Azure Firewall implementeren en configureren met behulp van Azure PowerShell
 
@@ -65,7 +65,7 @@ New-AzResourceGroup -Name Test-FW-RG -Location "East US"
 
 ### <a name="create-a-virtual-network-and-azure-bastion-host"></a>Een virtueel netwerk en een Azure Bastion-host maken
 
-Dit virtuele netwerk heeft vier subnetten:
+Dit virtuele netwerk heeft drie subnetten:
 
 > [!NOTE]
 > De grootte van het subnet AzureFirewallSubnet is /26. Zie [Veelgestelde vragen over Azure Firewall](firewall-faq.md#why-does-azure-firewall-need-a-26-subnet-size) voor meer informatie over de grootte van het subnet.

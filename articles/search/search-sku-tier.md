@@ -1,5 +1,5 @@
 ---
-title: Een prijs categorie kiezen
+title: Kies een prijscategorie
 titleSuffix: Azure Cognitive Search
 description: 'Azure Cognitive Search kan worden ingericht in de volgende lagen: gratis, basis en standaard, en standaard is beschikbaar in verschillende resource configuraties en capaciteits niveaus.'
 manager: nitinme
@@ -7,19 +7,43 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 10/14/2020
-ms.openlocfilehash: 0acd0d1d463280cddc8c1f4bb389a056d474ea38
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.date: 12/01/2020
+ms.openlocfilehash: 1b23d6c7952e60ee693bb481fec04d358654632c
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92101270"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96530490"
 ---
 # <a name="choose-a-pricing-tier-for-azure-cognitive-search"></a>Een prijs categorie kiezen voor Azure Cognitive Search
 
-Wanneer u een Azure Cognitive Search-service maakt, [wordt er een resource gemaakt op basis](search-create-service-portal.md) van een prijs categorie die is vastgesteld voor de levens duur van de service. Lagen zijn onder meer gratis, Basic, Standard en opslag geoptimaliseerd. De geoptimaliseerde standaard-en opslag ruimte zijn beschikbaar met verschillende configuraties en capaciteit.
+Wanneer u [een zoek service maakt](search-create-service-portal.md), kiest u een prijs categorie die is vastgesteld voor de levens duur van de service. De laag die u selecteert, bepaalt het volgende:
 
-De meeste klanten beginnen met de gratis laag zodat ze de service kunnen evalueren. Na de evaluatie is het gebruikelijk om een tweede service te maken in een van de hogere lagen voor ontwikkelings-en productie-implementaties.
++ Aantal indexen en andere objecten (maximum limieten)
++ Grootte en snelheid van partities (fysieke opslag)
++ Factureerbaar percentage, vaste kosten dat ook flext met het aantal partities en replica's dat in gebruik is
+
+Daarnaast komen er enkele [Premium-functies](#premium-features) aan de vereisten voor de laag.
+
+## <a name="tier-descriptions"></a>Beschrijvingen van lagen
+
+Lagen zijn onder meer **gratis**, **Basic**, **Standard** en **opslag geoptimaliseerd**. De geoptimaliseerde standaard-en opslag ruimte zijn beschikbaar met verschillende configuraties en capaciteit.
+
+De volgende scherm afbeelding van Azure Portal toont de beschik bare lagen, minus prijzen (die u kunt vinden in de portal en op de [pagina met prijzen](https://azure.microsoft.com/pricing/details/search/). 
+
+![Prijs categorieën van Azure Cognitive Search](media/search-sku-tier/tiers.png "Prijs categorieën van Azure Cognitive Search")
+
+Met **gratis** maakt u een beperkte zoek service voor kleinere projecten, zoals zelf studies en code voorbeelden. Replica's en partities worden intern gedeeld tussen meerdere abonnees. U kunt een gratis service niet schalen of aanzienlijke werk belastingen uitvoeren.
+
+**Basic** en **Standard** zijn de meest gebruikte factureer bare lagen, waarbij **standaard** de standaard instelling is. Met speciale resources onder uw besturings element kunt u grotere projecten implementeren, de prestaties optimaliseren en de capaciteit verg Roten.
+
+Sommige lagen zijn geoptimaliseerd voor bepaalde typen werk. **Standaard 3 High density (S3 HD)** is bijvoorbeeld een *hosting modus* voor S3, waarbij de onderliggende hardware is geoptimaliseerd voor een groot aantal kleinere indexen en die is bedoeld voor multitenancy-scenario's. S3 HD heeft dezelfde kosten per eenheid als S3, maar de hardware is geoptimaliseerd voor snelle bestands Lees bewerkingen op een groot aantal kleinere indexen.
+
+**Opslag geoptimaliseerde** lagen bieden een grotere opslag capaciteit tegen een lagere prijs per TB dan de standaard lagen. De primaire balans is een hogere query latentie, die u moet valideren voor uw specifieke toepassings vereisten. Zie [overwegingen voor prestaties en optimalisatie](search-performance-optimization.md)voor meer informatie over de prestatie overwegingen van deze laag.
+
+Meer informatie over de verschillende lagen op de [pagina met prijzen](https://azure.microsoft.com/pricing/details/search/)vindt u in het artikel [service limieten in azure Cognitive Search](search-limits-quotas-capacity.md) en op de portal pagina wanneer u een service inricht.
+
+<a name="premium-features"></a>
 
 ## <a name="feature-availability-by-tier"></a>Beschik baarheid van functies per laag
 
@@ -35,34 +59,13 @@ In de volgende tabel worden de functie beperkingen voor de laag beschreven.
 
 De meeste functies zijn beschikbaar op elke laag, inclusief gratis, maar bron-intensieve functies werken mogelijk niet goed, tenzij u voldoende capaciteit hebt. [AI-verrijking](cognitive-search-concept-intro.md) heeft bijvoorbeeld langlopende vaardig heden waarvoor een time-out optreedt op een gratis service, tenzij de gegevensset klein is.
 
-## <a name="tiers"></a>Lagen
-
-De lagen worden onderscheiden door:
-
-+ Aantal indexen en Indexeer functies (maximum aantal)
-+ Grootte en snelheid van partities (fysieke opslag)
-
-De laag die u selecteert, bepaalt het factureer bare percentage. De volgende scherm afbeelding van Azure Portal toont de beschik bare lagen, minus prijzen (die u kunt vinden in de portal en op de [pagina met prijzen](https://azure.microsoft.com/pricing/details/search/). **Gratis**, **basis**en **standaard** zijn de meest voorkomende lagen.
-
-Met **gratis** kunt u een beperkte zoek service voor kleinere projecten maken, met inbegrip van Quick starts en zelf studies. Replica's en partities worden intern gedeeld tussen meerdere abonnees. U kunt een gratis service niet schalen of aanzienlijke werk belastingen uitvoeren.
-
-**Basic** en **Standard** zijn de meest gebruikte factureer bare lagen, waarbij **standaard** de standaard instelling is. Met speciale resources onder uw besturings element kunt u grotere projecten implementeren, de prestaties optimaliseren en de capaciteit instellen.
-
-![Prijs categorieën van Azure Cognitive Search](media/search-sku-tier/tiers.png "Prijs categorieën van Azure Cognitive Search")
-
-Sommige lagen zijn geoptimaliseerd voor bepaalde typen werk. **Standaard 3 High density (S3 HD)** is bijvoorbeeld een *hosting modus* voor S3, waarbij de onderliggende hardware is geoptimaliseerd voor een groot aantal kleinere indexen en die is bedoeld voor multitenancy-scenario's. S3 HD heeft dezelfde kosten per eenheid als S3, maar de hardware is geoptimaliseerd voor snelle bestands Lees bewerkingen op een groot aantal kleinere indexen.
-
-**Opslag geoptimaliseerde** lagen bieden een grotere opslag capaciteit tegen een lagere prijs per TB dan de standaard lagen. De primaire balans is een hogere query latentie, die u moet valideren voor uw specifieke toepassings vereisten.  Zie [overwegingen voor prestaties en optimalisatie](search-performance-optimization.md)voor meer informatie over de prestatie overwegingen van deze laag.
-
-Meer informatie over de verschillende lagen op de [pagina met prijzen](https://azure.microsoft.com/pricing/details/search/)vindt u in het artikel [service limieten in azure Cognitive Search](search-limits-quotas-capacity.md) en op de portal pagina wanneer u een service inricht.
-
 ## <a name="billable-events"></a>Factureer bare gebeurtenissen
 
 Een oplossing op basis van Azure Cognitive Search kan op de volgende manieren kosten in rekening worden gebracht:
 
-+ Kosten van de service zelf, met 24x7, op minimale configuratie (één partitie en replica)
++ [Kosten van de service](#service-costs) zelf, met 24x7, op minimale configuratie (één partitie en replica), tegen het basis tempo
 
-+ Capaciteit (replica's of partities) toevoegen
++ Capaciteit (replica's of partities) toevoegen, waarbij de kosten toenemen bij een toename van het factureer bare percentage
 
 + Bandbreedte kosten (uitgaande gegevens overdracht)
 
@@ -87,7 +90,7 @@ Wanneer u de kosten van een zoek oplossing wilt schatten, houd er dan rekening m
 Het gebruik van [Indexeer functies](search-indexer-overview.md) kan van invloed zijn op facturering, afhankelijk van de locatie van uw services. U kunt de kosten voor het uitvallen van gegevens volledig elimineren als u de Azure Cognitive Search-service in dezelfde regio maakt als uw gegevens. Hier vindt u informatie op de [pagina met bandbreedte prijzen](https://azure.microsoft.com/pricing/details/bandwidth/):
 
 + Micro soft brengt geen kosten in rekening voor alle inkomende gegevens van een service op Azure, of voor uitgaande gegevens van Azure Cognitive Search.
-+ In oplossingen voor meer dan één service worden er geen kosten in rekening gebracht voor gegevens die de bedrading overschrijden wanneer alle services zich in dezelfde regio bevinden.
++ In oplossingen met meerdere services worden er geen kosten in rekening gebracht voor gegevens die de bedrading overschrijden wanneer alle services zich in dezelfde regio bevinden.
 
 Kosten zijn van toepassing op uitgaande gegevens als de services zich in verschillende regio's bevinden. Deze kosten maken geen deel uit van uw Azure Cognitive Search-factuur. Deze worden hier vermeld, want als u gebruikmaakt van gegevens of AI-verrijkte Indexeer functies om gegevens uit verschillende regio's te halen, worden de kosten weer gegeven in uw algemene factuur.
 
@@ -149,7 +152,7 @@ In azure Cognitive Search is de capaciteit gestructureerd als *replica's* en *pa
 
 ### <a name="evaluating-capacity"></a>De capaciteit evalueren
 
-De capaciteit en de kosten voor het uitvoeren van de service hand matig. De lagen leggen limieten op twee niveaus vast: opslag en bronnen. U moet nadenken over beide omdat de limiet die u eerst bereikt de daad werkelijke limiet is.
+De capaciteit en de kosten voor het uitvoeren van de service hand matig. Lagen leggen limieten toe op twee niveaus: opslag en inhoud (aantal indexen, bijvoorbeeld). U moet nadenken over beide omdat de limiet die u eerst bereikt de daad werkelijke limiet is.
 
 Bedrijfs vereisten bepalen doorgaans het aantal indexen dat u nodig hebt. U hebt bijvoorbeeld een algemene index nodig voor een grote opslag ruimte van documenten. Of u hebt meerdere indexen nodig op basis van de regio-, toepassings-of Business-niche.
 

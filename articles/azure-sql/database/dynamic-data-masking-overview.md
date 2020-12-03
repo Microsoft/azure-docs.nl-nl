@@ -12,12 +12,12 @@ ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 08/04/2020
 tags: azure-synpase
-ms.openlocfilehash: 5442ddab5b4925e40250e63833a634006db7aead
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: f8d352dac98f953f7f6d8033d0d9e1376c4da313
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92781444"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96532241"
 ---
 # <a name="dynamic-data-masking"></a>Dynamische gegevensmaskering 
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -30,7 +30,7 @@ Een service medewerker in Call Center kan bijvoorbeeld bellers identificeren met
 
 ## <a name="dynamic-data-masking-basics"></a>Basis beginselen van dynamische gegevens maskering
 
-U stelt een beleid voor dynamische gegevens maskering in de Azure Portal in door de Blade **dynamische gegevens maskering** te selecteren onder **beveiliging** in het deel venster SQL database configuratie. Deze functie kan niet worden ingesteld met behulp van de portal voor Azure Synapse (gebruik Power shell of REST API) of een door SQL beheerd exemplaar. Zie [dynamische gegevens maskering](/sql/relational-databases/security/dynamic-data-masking)voor meer informatie.
+U stelt een beleid voor dynamische gegevens maskering in de Azure Portal in door de Blade **dynamische gegevens maskering** te selecteren onder **beveiliging** in het deel venster SQL database configuratie. Deze functie kan niet worden ingesteld met behulp van de portal voor SQL Managed instance (gebruik Power shell of REST API). Zie [dynamische gegevens maskering](/sql/relational-databases/security/dynamic-data-masking)voor meer informatie.
 
 ### <a name="dynamic-data-masking-permissions"></a>Machtigingen voor dynamische gegevens maskering
 

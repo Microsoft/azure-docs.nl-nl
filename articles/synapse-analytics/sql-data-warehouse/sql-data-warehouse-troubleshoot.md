@@ -11,12 +11,12 @@ ms.date: 11/13/2020
 ms.author: kevin
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 6da80ec4c9c3c4e6c95eb1c9001596ffe3dd5711
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: c69df88828a179cf1dce7bd35ac19c518b07903d
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96447843"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96530711"
 ---
 # <a name="troubleshooting-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Problemen met een toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics oplossen
 
@@ -45,6 +45,7 @@ In dit artikel vindt u veelvoorkomende problemen met de probleem oplossing in de
 | Probleem                                                        | Oplossing                                                   |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | Het exporteren van lege teken reeksen met CETAS resulteert in NULL-waarden in Parquet-en ORC-bestanden. Opmerking Als u lege teken reeksen exporteert uit kolommen met niet-NULL-beperkingen, resulteert CETAS in geweigerde records en kan het exporteren mislukken. | Verwijder lege teken reeksen of de kolom die het conflict veroorzaakt in de instructie SELECT van uw CETAS. |
+| Het laden van een waarde buiten het bereik van 0-127 in een kolom tinyint voor de Parquet-en ORC-bestands indeling wordt niet ondersteund. | Geef een groter gegevens type op voor de doel kolom.           |
 
 ## <a name="performance"></a>Prestaties
 

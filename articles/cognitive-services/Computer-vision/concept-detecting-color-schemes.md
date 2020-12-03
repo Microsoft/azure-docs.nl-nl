@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/08/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 57e01683cb8027c2a1f79e58bce03b3bb7dedadb
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 4e7774d2cd100931f92ff80066ebea4463c6f65c
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94538381"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96532649"
 ---
 # <a name="detect-color-schemes-in-images"></a>Kleuren schema's in afbeeldingen detecteren
 
@@ -75,12 +75,11 @@ In de volgende tabel ziet u de zwarte en witte evaluatie van Computer Vision in 
 
 | Installatiekopie | Zwart & wit? |
 |-------|----------------|
-|![Een zwarte en witte afbeelding van gebouwen in Manhattan](./Images/bw_buildings.png) | true |
-|![Een blauw huis en de voor tuin](./Images/house_yard.png) | false |
+|![Een zwarte en witte afbeelding van gebouwen in Manhattan](./Images/bw_buildings.png) | waar |
+|![Een blauw huis en de voor tuin](./Images/house_yard.png) | onjuist |
 
 ## <a name="use-the-api"></a>De API gebruiken
 
 De functie voor het detecteren van het kleuren schema maakt deel uit van de API voor het [analyseren van afbeeldingen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) . U kunt deze API aanroepen via een systeem eigen SDK of via REST-aanroepen. Neem `Color` in de query parameter **visualFeatures** op. Wanneer u vervolgens het volledige JSON-antwoord krijgt, parseert u de teken reeks voor de inhoud van de `"color"` sectie.
 
-* [Snelstartgids: Computer Vision .NET SDK](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
-* [Quick Start: een afbeelding analyseren (REST API)](./quickstarts/csharp-analyze.md)
+* [Snelstartgids: Computer Vision REST API of client bibliotheken](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)

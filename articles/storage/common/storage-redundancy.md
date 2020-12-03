@@ -6,22 +6,22 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 08/24/2020
+ms.date: 12/02/2020
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.openlocfilehash: fbc24db21ee43e3c2aef3d0164e8510a79508fd2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 57cde2c5c0a1caf7ad5182cad8db72ab8aa7c908
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89658583"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96531780"
 ---
-# <a name="azure-storage-redundancy"></a>Azure Storage redundantie
+# <a name="azure-storage-redundancy"></a>Azure Storage-redundantie
 
-Azure Storage slaat altijd meerdere kopieën van uw gegevens op, zodat deze beschermd zijn tegen geplande en niet-geplande gebeurtenissen, waaronder tijdelijke hardwarestoringen, netwerk-of energie storingen en enorme natuur rampen. Redundantie zorgt ervoor dat uw opslag account voldoet aan de [Service Level Agreement (Sla) voor Azure Storage,](https://azure.microsoft.com/support/legal/sla/storage/) zelfs in het geval van fouten.
+Azure Storage slaat altijd meerdere kopieën van uw gegevens op, zodat deze beschermd zijn tegen geplande en niet-geplande gebeurtenissen, waaronder tijdelijke hardwarestoringen, netwerk-of energie storingen en enorme natuur rampen. Redundantie zorgt ervoor dat uw opslag account voldoet aan de beschik baarheid en duurzaamheids doelen, zelfs in het geval van storingen.
 
-Wanneer u bepaalt welke optie voor redundantie het beste is voor uw scenario, kunt u rekening houden met de compromissen met lagere kosten en een hogere Beschik baarheid en duurzaamheid. De factoren waarmee u de gewenste redundantie optie kunt bepalen, zijn onder andere:  
+Bij het bepalen van de optie voor redundantie voor uw scenario, kunt u rekening houden met de compromissen met lagere kosten en een hogere Beschik baarheid. De factoren waarmee u de gewenste redundantie optie kunt bepalen, zijn onder andere:  
 
 - Hoe uw gegevens worden gerepliceerd in de primaire regio
 - Of uw gegevens worden gerepliceerd naar een tweede regio die geografisch onbereikbaar is naar de primaire regio, ter bescherming tegen regionale rampen
@@ -51,7 +51,7 @@ LRS is een goede keuze voor de volgende scenario's:
 
 Zone-redundante opslag (ZRS) repliceert uw Azure Storage gegevens synchroon over drie Azure-beschikbaarheids zones in de primaire regio. Elke beschikbaarheidszone is een afzonderlijke fysieke locatie met onafhankelijke voeding, koeling en netwerken. ZRS biedt duurzaamheid voor Azure Storage gegevens objecten van ten minste 99,9999999999% (12 9) gedurende een bepaald jaar.
 
-Met ZRS zijn uw gegevens nog steeds toegankelijk voor zowel lees-als schrijf bewerkingen, zelfs als een zone niet meer beschikbaar is. Als een zone niet meer beschikbaar is, onderneemt Azure netwerk updates, zoals DNS-distributie. Deze updates kunnen van invloed zijn op uw toepassing als u gegevens opent voordat de updates zijn voltooid. Bij het ontwerpen van toepassingen voor ZRS volgt u de procedures voor het afhandelen van tijdelijke fouten, waaronder het implementeren van beleid voor opnieuw proberen met exponentiële back-ups.
+Met ZRS zijn uw gegevens nog steeds toegankelijk voor zowel lees-als schrijf bewerkingen, zelfs als een zone niet meer beschikbaar is. Als een zone niet meer beschikbaar is, onderneemt Azure netwerk updates, zoals het opnieuw aanwijzen van DNS. Deze updates kunnen van invloed zijn op uw toepassing als u gegevens opent voordat de updates zijn voltooid. Bij het ontwerpen van toepassingen voor ZRS volgt u de procedures voor het afhandelen van tijdelijke fouten, waaronder het implementeren van beleid voor opnieuw proberen met exponentiële back-ups.
 
 Een schrijf aanvraag naar een opslag account dat ZRS gebruikt, gebeurt synchroon. De schrijf bewerking wordt alleen geretourneerd nadat de gegevens zijn geschreven naar alle replica's in de drie beschikbaarheids zones.
 
@@ -63,7 +63,7 @@ In de volgende tabel ziet u welke typen opslag accounts ZRS ondersteunen in welk
 
 | Type opslagaccount | Ondersteunde regio’s | Ondersteunde services |
 |--|--|--|
-| Algemeen gebruik v2<sup>1</sup> | Azië - zuidoost<br /> Australië - oost<br /> Europa - noord<br />  Europa - west<br /> Frankrijk - centraal<br /> Japan East<br /> Zuid-Afrika - noord<br /> Verenigd Koninkrijk Zuid<br /> US - centraal<br /> US - oost<br /> US - oost 2<br /> US - west 2 | Blok-blobs<br /> Pagina-blobs<sup>2</sup><br /> Bestands shares (standaard)<br /> Tabellen<br /> Wachtrijen<br /> |
+| Algemeen gebruik v2<sup>1</sup> | Azië - zuidoost<br /> Australië - oost<br /> Europa - noord<br />  Europa - west<br /> Frankrijk - centraal<br /> Japan - oost<br /> Zuid-Afrika - noord<br /> Verenigd Koninkrijk Zuid<br /> US - centraal<br /> US - oost<br /> US - oost 2<br /> US - west 2 | Blok-blobs<br /> Pagina-blobs<sup>2</sup><br /> Bestands shares (standaard)<br /> Tabellen<br /> Wachtrijen<br /> |
 | BlockBlobStorage<sup>1</sup> | Azië - zuidoost<br /> Australië - oost<br /> Europa - noord<br /> Europa - west<br /> US - oost <br /> US - oost 2 <br /> US - west 2| Alleen Premium-blok-blobs |
 | FileStorage | Azië - zuidoost<br /> Australië - oost<br /> Europa - noord<br /> Europa - west<br /> US - oost <br /> US - oost 2 <br /> US - west 2 | Premium-bestanden alleen shares |
 
@@ -153,11 +153,9 @@ In de volgende tabel worden de belangrijkste para meters voor elke redundantie o
 
 | Parameter | LRS | ZRS | GRS/RA-GRS | GZRS/RA-GZRS |
 |:-|:-|:-|:-|:-|
-| Percentage van de duurzaamheid van objecten in een bepaald jaar<sup>1</sup> | ten minste 99,999999999% (11 9) | ten minste 99,9999999999% (12 9) | ten minste 99.99999999999999% (16 9) | ten minste 99.99999999999999% (16 9) |
-| SLA voor Beschik baarheid voor lees aanvragen<sup>1</sup> | Ten minste 99,9% (99% voor de laag van de cool-toegang) | Ten minste 99,9% (99% voor de laag van de cool-toegang) | Ten minste 99,9% (99% voor de laag met coole toegang) voor GRS<br /><br />Ten minste 99,99% (99,9% voor de laag voor cool-toegang) voor RA-GRS | Ten minste 99,9% (99% voor de laag met coole toegang) voor GZRS<br /><br />Ten minste 99,99% (99,9% voor de laag voor cool-toegang) voor RA-GZRS |
-| SLA voor Beschik baarheid voor schrijf aanvragen<sup>1</sup> | Ten minste 99,9% (99% voor de laag van de cool-toegang) | Ten minste 99,9% (99% voor de laag van de cool-toegang) | Ten minste 99,9% (99% voor de laag van de cool-toegang) | Ten minste 99,9% (99% voor de laag van de cool-toegang) |
-
-<sup>1</sup> zie de [Azure Storage Sla](https://azure.microsoft.com/support/legal/sla/storage/)voor informatie over Azure Storage garanties voor duurzaamheid en beschik baarheid.
+| Percentage van de duurzaamheid van objecten in een bepaald jaar | ten minste 99,999999999% (11 9) | ten minste 99,9999999999% (12 9) | ten minste 99.99999999999999% (16 9) | ten minste 99.99999999999999% (16 9) |
+| Beschik baarheid voor lees aanvragen | Ten minste 99,9% (99% voor de laag van de cool-toegang) | Ten minste 99,9% (99% voor de laag van de cool-toegang) | Ten minste 99,9% (99% voor de laag met coole toegang) voor GRS<br /><br />Ten minste 99,99% (99,9% voor de laag voor cool-toegang) voor RA-GRS | Ten minste 99,9% (99% voor de laag met coole toegang) voor GZRS<br /><br />Ten minste 99,99% (99,9% voor de laag voor cool-toegang) voor RA-GZRS |
+| Beschik baarheid voor schrijf aanvragen | Ten minste 99,9% (99% voor de laag van de cool-toegang) | Ten minste 99,9% (99% voor de laag van de cool-toegang) | Ten minste 99,9% (99% voor de laag van de cool-toegang) | Ten minste 99,9% (99% voor de laag van de cool-toegang) |
 
 ### <a name="durability-and-availability-by-outage-scenario"></a>Duurzaamheid en beschik baarheid per uitval scenario
 
@@ -191,7 +189,7 @@ Zie [Azure Storage prijzen](https://azure.microsoft.com/pricing/details/storage/
 
 Azure Storage controleert regel matig de integriteit van gegevens die zijn opgeslagen met behulp van cyclische redundantie controles (CRCs). Als beschadigde gegevens worden gedetecteerd, wordt deze hersteld met behulp van redundante gegevens. Azure Storage berekent ook de controle sommen op al het netwerk verkeer om beschadiging van gegevens pakketten te detecteren bij het opslaan of ophalen van gegevens.
 
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 
 - [De eigenschap van de laatste synchronisatie tijd voor een opslag account controleren](last-sync-time-get.md)
 - [De redundantie optie voor een opslag account wijzigen](redundancy-migration.md)

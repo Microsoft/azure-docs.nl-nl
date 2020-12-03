@@ -9,12 +9,12 @@ ms.date: 01/02/2019
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
-ms.openlocfilehash: a1159da782a8cb822bf726173ad0d0bcd9da844a
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 9cbce00e2c2743aec57cd857b6f38d20bce33698
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460896"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96532904"
 ---
 # <a name="virtual-network-service-endpoints-for-azure-key-vault"></a>Virtuele netwerk service-eind punten voor Azure Key Vault
 
@@ -80,7 +80,7 @@ Hier volgt een lijst met vertrouwde services die toegang mogen hebben tot een sl
 |Azure Event Hubs|[Toegang verlenen tot een sleutel kluis voor het scenario door de klant beheerde sleutels](../../event-hubs/configure-customer-managed-key.md)|
 |Azure Service Bus|[Toegang verlenen tot een sleutel kluis voor het scenario door de klant beheerde sleutels](../../service-bus-messaging/configure-customer-managed-key.md)|
 |Azure Import/Export| [Door de klant beheerde sleutels gebruiken in Azure Key Vault voor de import/export-service](../../storage/common/storage-import-export-encryption-key-portal.md)
-|Azure Container Registry|[Register versleuteling met door de klant beheerde sleutels](../../container-registry/container-registry-customer-managed-keys.md)<br><br/>[Artefacten overdragen naar een ander REGI ster](../../container-registry/container-registry-transfer-images.md)
+|Azure Container Registry|[Register versleuteling met door de klant beheerde sleutels](../../container-registry/container-registry-customer-managed-keys.md)
 
 > [!NOTE]
 > U moet de relevante Key Vault toegangs beleid instellen zodat de bijbehorende services toegang krijgen tot Key Vault.

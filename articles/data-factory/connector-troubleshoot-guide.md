@@ -5,16 +5,16 @@ services: data-factory
 author: linda33wj
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 11/25/2020
+ms.date: 12/02/2020
 ms.author: jingwang
 ms.reviewer: craigg
 ms.custom: has-adal-ref
-ms.openlocfilehash: dcc84dc252001721a3848a008a3db80dcc7822d2
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: c90b7ce86e06669696a4b9f7e0b2f5287e9dd97e
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96301268"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96533193"
 ---
 # <a name="troubleshoot-azure-data-factory-connectors"></a>Problemen met Azure Data Factory-connectors oplossen
 
@@ -205,7 +205,7 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 - **Oplossing**: Voer de Kopieer activiteit na enkele minuten opnieuw uit.
                   
 
-## <a name="azure-synapse-analytics-formerly-sql-data-warehouseazure-sql-databasesql-server"></a>Azure Synapse Analytics (voorheen SQL Data Warehouse)/Azure SQL Database/SQL Server
+## <a name="azure-synapse-analyticsazure-sql-databasesql-server"></a>Azure Synapse Analytics/Azure SQL Database/SQL Server
 
 ### <a name="error-code--sqlfailedtoconnect"></a>Fout code: SqlFailedToConnect
 
@@ -488,7 +488,28 @@ In dit artikel worden algemene probleemoplossings methoden voor connectors in Az
 
 - **Aanbeveling**: Voer de pijp lijn opnieuw uit. Als het probleem blijft optreden, kunt u proberen om de parallelle uitvoering te verminderen. Als de service nog steeds niet werkt, neemt u contact op met Dynamics-ondersteuning.
 
+## <a name="excel-format"></a>Excel-indeling
 
+### <a name="timeout-or-slow-performance-when-parsing-large-excel-file"></a>Time-out of langzame prestaties bij het parseren van een groot Excel-bestand
+
+- **Symptomen**:
+
+    1. Wanneer u Excel-gegevensset maakt en een schema importeert vanuit verbinding/archief, voor beeld van gegevens, lijst of werk bladen vernieuwen, kunt u een time-outfout opvragen als het Excel-bestand groot is.
+    2. Wanneer u de Kopieer activiteit gebruikt om gegevens te kopiëren van een groot Excel-bestand (>= 100 MB) naar een ander gegevens archief, kunnen er trage prestaties of OOM problemen optreden.
+
+- **Oorzaak**: 
+
+    1. Voor bewerkingen zoals het importeren van schema, het weer geven van voor beelden van gegevens en het vermelden van werk bladen in Excel-gegevensset, is de time-out 100 en static. Voor een groot Excel-bestand kunnen deze bewerkingen niet worden voltooid binnen de time-outwaarde.
+
+    2. Met de ADF Copy-activiteit wordt het hele Excel-bestand in het geheugen gelezen en vervolgens vindt het opgegeven werk blad en de cellen om gegevens te lezen. Dit gedrag is te wijten aan het gebruik van de onderliggende SDK.
+
+- **Oplossing**: 
+
+    1. Voor het importeren van schema kunt u een kleiner voorbeeld bestand genereren dat een subset is van het oorspronkelijke bestand en kiest u schema importeren uit voorbeeld bestand in plaats van schema importeren uit verbinding/archief.
+
+    2. Voor het opgeven van workseet in de vervolg keuzelijst van het werk blad, klikt u op bewerken en voert u in plaats daarvan de blad naam/index in.
+
+    3. Als u een groot Excel-bestand (>100 MB) wilt kopiëren naar een ander archief, kunt u de Excel-bron gegevens stroom gebruiken die door sport streaming wordt gelezen en beter presteert.
 
 ## <a name="json-format"></a>JSON-indeling
 

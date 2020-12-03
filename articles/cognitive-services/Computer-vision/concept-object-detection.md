@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 04/17/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 1dfd1942c0c83433dab3c2091be29e62fbc05706
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 4269209017ecc0afa740bc3ed56cbdcbd915201e
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94540736"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96533839"
 ---
 # <a name="detect-common-objects-in-images"></a>Algemene objecten detecteren in installatie kopieën
 
@@ -99,5 +99,4 @@ Het is belang rijk dat u de beperkingen van object detectie noteert, zodat u de 
 
 De functie object detectie maakt deel uit van de API voor het [analyseren van afbeeldingen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) . U kunt deze API aanroepen via een systeem eigen SDK of via REST-aanroepen. Neem `Objects` in de query parameter **visualFeatures** op. Wanneer u vervolgens het volledige JSON-antwoord krijgt, parseert u de teken reeks voor de inhoud van de `"objects"` sectie.
 
-* [Snelstartgids: Computer Vision .NET SDK](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
-* [Quick Start: een afbeelding analyseren (REST API)](./quickstarts/csharp-analyze.md)
+* [Snelstartgids: Computer Vision REST API of client bibliotheken](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)

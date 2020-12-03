@@ -1,20 +1,20 @@
 ---
-title: 'Zelfstudie: automatische schaalaanpassing instellen voor microservicetoepassingen'
+title: Automatische schaalaanpassing instellen voor microservicetoepassingen
 description: In dit artikel wordt beschreven hoe u instellingen voor automatisch schalen instelt voor uw toepassingen met behulp van de Microsoft Azure-portal of de Azure CLI.
 author: MikeDodaro
 ms.author: brendm
 ms.service: spring-cloud
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 07/22/2020
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 6023d1ebd27ebaccacfce85ce0f49b7ef87e17ad
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: d59d5de0d98380be215747c7daa33721fcebf33c
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92742669"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96533822"
 ---
-# <a name="tutorial-set-up-autoscale-for-microservice-applications"></a>Zelfstudie: Automatische schaalaanpassing instellen voor microservicetoepassingen
+# <a name="set-up-autoscale-for-microservice-applications"></a>Automatische schaalaanpassing instellen voor microservicetoepassingen
 
 **Dit artikel is van toepassing op:** ✔️ Java ✔️ C#
 
@@ -34,7 +34,7 @@ Als u deze procedures wilt volgen, hebt u het volgende nodig:
 2. Ga naar de pagina **Overzicht** van Azure Spring Cloud.
 3. Selecteer dezelfde resourcegroep die uw service bevat.
 4. Selecteer het tabblad **Apps** onder **Instellingen** in het menu aan de linkerkant van het navigatievenster.
-5. Selecteer de toepassing waarvoor u automatische schaalaanpassing wilt instellen. Selecteer in dit voorbeeld de toepassing met de naam **demo** . Vervolgens ziet u de **Overzichtspagina** van de toepassing.
+5. Selecteer de toepassing waarvoor u automatische schaalaanpassing wilt instellen. Selecteer in dit voorbeeld de toepassing met de naam **demo**. Vervolgens ziet u de **Overzichtspagina** van de toepassing.
 6. Ga naar het tabblad **Scale out** onder **Instellingen** in het menu aan de linkerkant van het navigatievenster.
 7. Selecteer de implementatie waarvoor u automatische schaalaanpassing wilt instellen. U ziet nu de opties voor automatische schaalaanpassing die worden weergegeven in de volgende sectie.
 

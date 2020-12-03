@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/26/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: f6d17b007fcccd87aed17a9ec3ca039b9559ab6d
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 860bc9440547a4c62336ccc573859ec56b3400b5
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492230"
+ms.locfileid: "96533856"
 ---
 # <a name="azure-security-baseline-for-site-recovery"></a>Azure-beveiligings basislijn voor Site Recovery
 
@@ -164,9 +164,9 @@ Visualiseren en query's uitvoeren op logboek resultaten en waarschuwingen config
 
 **Hulp**: standaard worden er geen rollen toegewezen. Ze moeten expliciet worden toegewezen op basis van de bedrijfs behoeften. U kunt eventuele roltoewijzingen controleren met Power shell CLI of Azure Active Directory (Azure AD) om accounts te detecteren die lid zijn van beheer groepen.
 
-- [Een directory-rol verkrijgen in azure AD met Power shell](/powershell/module/azuread/get-azureaddirectoryrole?amp;preserve-view=true&view=azureadps-2.0)
+- [Een directory-rol verkrijgen in azure AD met Power shell](/powershell/module/azuread/get-azureaddirectoryrole?preserve-view=true&view=azureadps-2.0)
 
-- [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember?amp;preserve-view=true&view=azureadps-2.0)
+- [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember?preserve-view=true&view=azureadps-2.0)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -431,7 +431,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 - [Query's maken met Azure Graph](../governance/resource-graph/first-query-portal.md)
 
-- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?amp;preserve-view=true&view=azps-4.8.0)
+- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?preserve-view=true&view=azps-4.8.0)
 
 - [Meer informatie over Azure RBAC](../role-based-access-control/overview.md)
 
@@ -530,7 +530,7 @@ Als u aan uw bedrijfsnormen en serviceovereenkomsten wilt blijven voldoen, is he
 **Hulp**: Definieer en implementeer standaard beveiligings configuraties voor uw Recovery Services kluis met Azure Policy. 
 
 Gebruik Azure Policy aliassen in de naam ruimte ' micro soft. Recovery Services ' om aangepaste beleids regels te maken om te controleren of de configuratie van de Recovery Services-kluis resources van Site Recovery service af te dwingen.
-- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?amp;preserve-view=true&view=azps-4.8.0)
+- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?preserve-view=true&view=azps-4.8.0)
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
@@ -553,9 +553,9 @@ Gebruik Azure Policy aliassen in de naam ruimte ' micro soft. Recovery Services 
 
 **Hulp**: Kies Azure opslag plaatsen om uw code veilig op te slaan en te beheren als u aangepaste Azure Policy definities voor uw Recovery Services kluizen en gerelateerde resources gebruikt.
 
-- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow?amp;preserve-view=true&view=azure-devops)
+- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow?preserve-view=true&view=azure-devops)
 
-- [Documentatie voor Azure opslag plaatsen](/azure/devops/repos/?amp;preserve-view=true&view=azure-devops)
+- [Documentatie voor Azure opslag plaatsen](/azure/devops/repos/?preserve-view=true&view=azure-devops)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -656,7 +656,7 @@ Alle opslag resources die worden gebruikt door Site Recovery Services-meta gegev
 
 Dit valt buiten het bereik van de klant en Site Recovery team is het intern. De klant kan een back-up maken van Key Vault sleutels in Azure.
 
-- [Hoe kan ik een back-up maken van sleutel kluis sleutels in azure?](/powershell/module/az.keyvault/backup-azkeyvaultkey?amp;preserve-view=true&view=azps-4.8.0)
+- [Hoe kan ik een back-up maken van sleutel kluis sleutels in azure?](/powershell/module/az.keyvault/backup-azkeyvaultkey?preserve-view=true&view=azps-4.8.0)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -666,7 +666,7 @@ Dit valt buiten het bereik van de klant en Site Recovery team is het intern. De 
 
 **Richt lijnen**: test het periodiek herstellen van back-ups van door de klant beheerde sleutels.
 
-- [Sleutel kluis sleutels herstellen in azure](/powershell/module/az.keyvault/restore-azkeyvaultkey?amp;preserve-view=true&view=azps-4.8.0)
+- [Sleutel kluis sleutels herstellen in azure](/powershell/module/az.keyvault/restore-azkeyvaultkey?preserve-view=true&view=azps-4.8.0)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 

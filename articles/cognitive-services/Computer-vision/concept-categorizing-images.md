@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 04/17/2019
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 43359c47b4d2c1b8895938271c74dab03f7731f7
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 9721ffa807c9adbeb50839113bc64fd23d8eb13f
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94541773"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96533720"
 ---
 # <a name="categorize-images-by-subject-matter"></a>Afbeeldingen op onderwerp categoriseren
 
@@ -64,8 +64,7 @@ In de volgende tabel ziet u een typische installatie kopie en de categorie die w
 
 De categorisatie functie maakt deel uit van de API voor het [analyseren van afbeeldingen](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/56f91f2e778daf14a499f21b) . U kunt deze API aanroepen via een systeem eigen SDK of via REST-aanroepen. Neem `Categories` in de query parameter **visualFeatures** op. Wanneer u vervolgens het volledige JSON-antwoord krijgt, parseert u de teken reeks voor de inhoud van de `"categories"` sectie.
 
-* [Snelstartgids: Computer Vision .NET SDK](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
-* [Quick Start: een afbeelding analyseren (REST API)](./quickstarts/csharp-analyze.md)
+* [Snelstartgids: Computer Vision REST API of client bibliotheken](./quickstarts-sdk/client-library.md?pivots=programming-language-csharp)
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -6,13 +6,13 @@ ms.author: jeanb
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 5/11/2020
-ms.openlocfilehash: 3a08b73a74d30a99ba3c360f012d5917f1d0c8bf
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.date: 12/2/2020
+ms.openlocfilehash: 2cfd391daa13a100a56bb10b79b27eda80902374
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93129725"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96533602"
 ---
 # <a name="using-reference-data-for-lookups-in-stream-analytics"></a>Referentie gegevens gebruiken voor Zoek opdrachten in Stream Analytics
 
@@ -37,7 +37,7 @@ Referentie gegevens worden gemodelleerd als een reeks blobs (gedefinieerd in de 
 
 ### <a name="configure-blob-reference-data"></a>BLOB-referentie gegevens configureren
 
-Als u uw referentie gegevens wilt configureren, moet u eerst een invoer maken van het type **referentie gegevens** . In de onderstaande tabel wordt elke eigenschap uitgelegd die u moet opgeven tijdens het maken van de referentie gegevens invoer met de beschrijving:
+Als u uw referentie gegevens wilt configureren, moet u eerst een invoer maken van het type **referentie gegevens**. In de onderstaande tabel wordt elke eigenschap uitgelegd die u moet opgeven tijdens het maken van de referentie gegevens invoer met de beschrijving:
 
 |**Eigenschaps naam**  |**Beschrijving**  |
 |---------|---------|
@@ -111,13 +111,13 @@ U kunt [Azure SQL Managed instance](../azure-sql/managed-instance/sql-managed-in
 
 ## <a name="size-limitation"></a>Grootte beperken
 
-Het is raadzaam om referentie gegevens sets te gebruiken die kleiner zijn dan 300 MB voor de beste prestaties. Het gebruik van referentie gegevens van meer dan 300 MB wordt ondersteund in taken met 6 SUs of meer. Deze functionaliteit is beschikbaar als preview-versie en mag niet worden gebruikt in de productie omgeving. Het gebruik van een zeer grote referentie gegevens kan van invloed zijn op de prestaties van uw taak. Naarmate de complexiteit van de query toeneemt met stateful verwerking, zoals statistische gegevens over het venster, tijdelijke samen voegingen en tijdelijke analytische functies, wordt ervan uitgegaan dat de Maxi maal ondersteunde grootte van de referentie data afneemt. Als Azure Stream Analytics de referentie gegevens niet kan laden en complexe bewerkingen kunt uitvoeren, kan de taak geen geheugen meer gebruiken. In dergelijke gevallen is het gebruik van metrische gegevens van% en een bereik van 100%.    
+Het is raadzaam om referentie gegevens sets te gebruiken die kleiner zijn dan 300 MB voor de beste prestaties. Referentie gegevens sets 5 GB of lager worden ondersteund in taken met 6 SUs of meer. Het gebruik van een zeer grote referentie gegevens kan van invloed zijn op de end-to-end latentie van uw taak. Naarmate de complexiteit van de query toeneemt met stateful verwerking, zoals statistische gegevens over het venster, tijdelijke samen voegingen en tijdelijke analytische functies, wordt ervan uitgegaan dat de Maxi maal ondersteunde grootte van de referentie data afneemt. Als Azure Stream Analytics de referentie gegevens niet kan laden en complexe bewerkingen kunt uitvoeren, kan de taak geen geheugen meer gebruiken. In dergelijke gevallen is het gebruik van metrische gegevens van% en een bereik van 100%.    
 
 |**Aantal streaming-eenheden**  |**Aanbevolen grootte**  |
 |---------|---------|
 |1   |50 MB of lager   |
 |3   |150 MB of lager   |
-|6 en hoger   |300 MB of lager. Het gebruik van referentie gegevens groter dan 300 MB wordt ondersteund in Preview en kan invloed hebben op de prestaties van uw taak.    |
+|6 en hoger   |5 GB of lager.    |
 
 Ondersteuning voor compressie is niet beschikbaar voor referentie gegevens.
 

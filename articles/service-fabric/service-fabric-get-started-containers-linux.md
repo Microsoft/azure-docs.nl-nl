@@ -4,12 +4,12 @@ description: Maak uw eerste Linux-containertoepassing in Azure Service Fabric. B
 ms.topic: conceptual
 ms.date: 1/4/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: d085f8704850cdbb03e21b15b3cca7c8998b96fb
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 0481cc2d36f7882bbd8eea9b984c3dc388de5dee
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96004225"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96534077"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-linux"></a>Uw eerste Service Fabric-containertoepassing maken in Linux
 > [!div class="op_single_selector"]
@@ -87,10 +87,17 @@ if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)
 ```
 
-## <a name="build-the-image"></a>De installatiekopie bouwen
-Voer de opdracht `docker build` uit om de installatiekopie te maken waarmee de webtoepassing wordt uitgevoerd. Open een PowerShell-venster en ga naar *c:\temp\helloworldapp*. Voer de volgende opdracht uit:
+## <a name="login-to-docker-and-build-the-image"></a>Meld u aan bij docker en bouw de installatie kopie
 
-```bash
+Daarna maken we de installatie kopie die uw webtoepassing uitvoert. Bij het ophalen van open bare installatie kopieën van docker (zoals `python:2.7-slim` in onze Dockerfile), is het een best practice om te verifiëren met uw docker hub-account in plaats van een anonieme pull-aanvraag te doen.
+
+> [!NOTE]
+> Wanneer u regel matig anonieme pull-aanvragen maakt, ziet u mogelijk docker-fouten die vergelijkbaar zijn met `ERROR: toomanyrequests: Too Many Requests.` of `You have reached your pull rate limit.` worden geverifieerd bij docker hub om deze fouten te voor komen. Zie [open bare inhoud beheren met Azure container Registry](../container-registry/buffer-gate-public-content.md) voor meer informatie.
+
+Open een PowerShell-venster en navigeer naar de map met het bestand Dockerfile. Voer vervolgens de volgende opdrachten uit:
+
+```
+docker login
 docker build -t helloworldapp .
 ```
 

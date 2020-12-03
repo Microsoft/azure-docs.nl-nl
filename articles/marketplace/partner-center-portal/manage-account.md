@@ -7,12 +7,12 @@ ms.topic: article
 author: parthpandyaMSFT
 ms.author: parthp
 ms.date: 11/02/2020
-ms.openlocfilehash: 8b372cc0fc19c6bf163d9d4e61cde6ce74cb3f28
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: cc853285e193dd3ac4e348525b8bf0db9f8cb023
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95538377"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96533941"
 ---
 # <a name="manage-your-commercial-marketplace-account-in-partner-center"></a>Uw commerciële Marketplace-account beheren in het partner centrum
 
@@ -293,7 +293,7 @@ Als uw Azure AD-toepassing gegevens in Microsoft Azure AD leest en schrijft, is 
 De gebruikers van uw bedrijf kunnen de volgende rollen en machtigingen toewijzen aan het programma voor commerciële Marketplace in het partner centrum:
 
 - **Eigenaar**
-  - "Dit is de persoon die het account voor het eerst heeft gemaakt en volledige toegang heeft, inclusief de mogelijkheid om alle account gebruikers te maken en te bewerken en om alle financiële en account instellingen te wijzigen. Een account heeft meestal slechts één eigenaar. "
+  - Dit is de persoon die het account voor het eerst heeft gemaakt en volledige toegang heeft, inclusief de mogelijkheid om alle account gebruikers te maken en te bewerken en om alle financiële en account instellingen te wijzigen. Een account heeft meestal slechts één eigenaar.
 - **Manager**
   - Heeft toegang tot alle Microsoft-account functies behalve de instellingen voor belasting en betaling
   - Kan gebruikers, rollen en werk accounts (tenants) beheren

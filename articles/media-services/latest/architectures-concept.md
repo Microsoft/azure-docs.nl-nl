@@ -12,12 +12,12 @@ ms.workload: ''
 ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: inhenkel
-ms.openlocfilehash: e00079190371b3ae0e318aaadd8cf724d9d339d0
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: c14dbe4253696e01e99111a24319e455c1d551e9
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/02/2020
-ms.locfileid: "96512620"
+ms.locfileid: "96533992"
 ---
 # <a name="media-services-architectures"></a>Media Services architecturen
 
@@ -30,12 +30,6 @@ Met een oplossing voor live streamen kunt u video in realtime vastleggen en deze
 Deze oplossing is gebouwd op basis van de door Azure beheerde services: Media Services en Content Delivery Network. Deze services worden uitgevoerd in een omgeving met hoge Beschik baarheid, patches en worden ondersteund, zodat u zich kunt concentreren op uw oplossing in plaats van de omgeving waarin ze worden uitgevoerd in.
 
 Zie [digitale media live streamen](https://docs.microsoft.com/azure/architecture/solution-ideas/articles/digital-media-live-stream) in het Azure Architecture Center.
-
-## <a name="instant-broadcasting-on-serverless-architecture"></a>Instant Broadcasting op Serverloze architectuur
-
-Vereenvoudig een-op-veel realtime communicatie en updates met serverloze code. Deze architectuur maakt gebruik van Azure Functions, de seingevings service, een opslag account en een SQL database.
-
-Zie [Instant Broadcasting op serverloze architectuur](https://docs.microsoft.com/azure/architecture/solution-ideas/articles/instant-broadcasting-on-serverless-architecture) in het Azure Architecture Center.
 
 ## <a name="video-on-demand-digital-media"></a>Digitale video-on-demandmedia
 

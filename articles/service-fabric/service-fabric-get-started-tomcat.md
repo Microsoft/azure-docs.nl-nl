@@ -4,12 +4,12 @@ description: Maak een Linux-container om een toepassing beschikbaar te maken die
 ms.topic: conceptual
 ms.date: 6/08/2018
 ms.author: pepogors
-ms.openlocfilehash: 1a699f3b35970270a9800162a6d8717682a168ae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3de97bc277195dff2daf5868c0eb9aec5d6e27c0
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75614414"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96534026"
 ---
 # <a name="create-service-fabric-container-running-apache-tomcat-server-on-linux"></a>Service Fabric-container maken met Apache Tomcat server op Linux
 Apache Tomcat is een populaire, open-source implementatie van de Java-servlet en Java-Server technologieën. In dit artikel wordt beschreven hoe u een container bouwt met Apache Tomcat en een eenvoudige webtoepassing, de container implementeert in een Service Fabric cluster met Linux en verbinding maakt met de webtoepassing.  
@@ -52,9 +52,10 @@ Volg de stappen in deze sectie om een docker-installatie kopie te maken op basis
    Zie de [Dockerfile-referentie](https://docs.docker.com/engine/reference/builder/) voor meer informatie.
 
 
-4. Voer de `docker build` opdracht uit om de installatie kopie te maken waarmee uw webtoepassing wordt uitgevoerd:
+4. Meld u aan bij docker en voer de `docker build` opdracht uit om de installatie kopie te maken waarmee uw webtoepassing wordt uitgevoerd:
 
    ```bash
+   docker login
    docker build . -t tomcattest
    ```
 
@@ -99,7 +100,7 @@ Volg de stappen in deze sectie om een docker-installatie kopie te maken op basis
    ```
 
 ## <a name="push-the-tomcat-image-to-your-container-registry"></a>De tomcat-installatie kopie naar het container register pushen
-Nu u hebt gecontroleerd of de tomcat-installatie kopie wordt uitgevoerd in een container op uw ontwikkel computer, pusht u deze naar een opslag plaats in een container register. In dit artikel wordt gebruikgemaakt van Azure Container Registry voor het opslaan van de installatie kopie, maar u kunt elk gewenst container register gebruiken als u een aantal stappen hebt gewijzigd. In dit artikel wordt ervan uitgegaan dat de register naam *myregistry* is en dat de volledige register naam myregistry.azurecr.io is. Wijzig deze op de juiste manier voor uw scenario. 
+Nu u hebt gecontroleerd of de tomcat-installatie kopie wordt uitgevoerd in een container op uw ontwikkel computer, pusht u deze naar een opslag plaats in een container register om de onderbreking van de ontwikkelings-en implementatie werk stromen van uw installatie kopie te [verminderen](../container-registry/buffer-gate-public-content.md) . In dit artikel wordt gebruikgemaakt van Azure Container Registry voor het opslaan van de installatie kopie, maar u kunt elk gewenst container register gebruiken als u een aantal stappen hebt gewijzigd. In dit artikel wordt ervan uitgegaan dat de register naam *myregistry* is en dat de volledige register naam myregistry.azurecr.io is. Wijzig deze op de juiste manier voor uw scenario. 
 
 1. Voer uit `docker login` om u aan te melden bij uw container register met uw [register referenties](../container-registry/container-registry-authentication.md).
 
@@ -204,7 +205,7 @@ Nu u de tomcat-installatie kopie naar een container register hebt gepusht, kunt 
    * Gebruik `http://localhost:19080/Explorer` (Vervang *localhost* door het privé-IP-adres van de virtuele machine als u Vagrant op Mac OS X gebruikt) op een lokaal cluster.
    * Gebruik op een veilig Azure-cluster `https://PublicIPorFQDN:19080/Explorer` . 
     
-   Vouw het knoop punt **toepassingen** uit en houd er rekening mee dat er nu een vermelding is voor uw toepassings type, **ServiceFabricTomcatType**en een andere voor het eerste exemplaar van dat type. Het kan enkele minuten duren voordat de toepassing volledig is geïmplementeerd, dus een ogen blik geduld.
+   Vouw het knoop punt **toepassingen** uit en houd er rekening mee dat er nu een vermelding is voor uw toepassings type, **ServiceFabricTomcatType** en een andere voor het eerste exemplaar van dat type. Het kan enkele minuten duren voordat de toepassing volledig is geïmplementeerd, dus een ogen blik geduld.
 
    ![Service Fabric Explorer](./media/service-fabric-get-started-tomcat/service-fabric-explorer.png)
 

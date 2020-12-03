@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 10/09/2020
+ms.date: 12/02/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: blobs
-ms.openlocfilehash: 01a5c696a41b9361c35e7af90f68088acea2944b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f12a899d3b6daa3b233e6a799871afca1e24d046
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95913773"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96533741"
 ---
 # <a name="prevent-anonymous-public-read-access-to-containers-and-blobs"></a>Anonieme open bare Lees toegang voor containers en blobs voor komen
 
@@ -166,6 +166,8 @@ New-AzStorageContainer -Name $containerName -Permission Blob -Context $ctx
 
 Als u de instelling voor open bare toegang wilt controleren over een set opslag accounts met optimale prestaties, kunt u de Azure resource Graph Explorer gebruiken in de Azure Portal. Voor meer informatie over het gebruik van de resource Graph Explorer raadpleegt u [Quick Start: uw eerste resource grafiek query uitvoeren met Azure resource Graph Explorer](../../governance/resource-graph/first-query-portal.md).
 
+De eigenschap **AllowBlobPublicAccess** is niet standaard ingesteld voor een opslag account en retourneert geen waarde totdat u deze expliciet hebt ingesteld. Het opslag account staat open bare toegang toe wanneer de waarde van de eigenschap **Null** of **True** is.
+
 Als u de volgende query uitvoert in de resource Graph Explorer, wordt een lijst met opslag accounts geretourneerd en wordt de instelling voor open bare toegang voor elk account weer gegeven:
 
 ```kusto
@@ -174,6 +176,10 @@ resources
 | extend allowBlobPublicAccess = parse_json(properties).allowBlobPublicAccess
 | project subscriptionId, resourceGroup, name, allowBlobPublicAccess
 ```
+
+In de volgende afbeelding ziet u de resultaten van een query in een abonnement. Houd er rekening mee dat voor opslag accounts waarvan de eigenschap **AllowBlobPublicAccess** expliciet is ingesteld, deze in de resultaten wordt weer gegeven als **waar** of **Onwaar**. Als de eigenschap **AllowBlobPublicAccess** niet is ingesteld voor een opslag account, wordt deze weer gegeven als leeg (of null) in de query resultaten.
+
+:::image type="content" source="media/anonymous-read-access-prevent/check-public-access-setting-accounts.png" alt-text="Scherm opname van query resultaten voor open bare toegangs instelling voor opslag accounts":::
 
 ## <a name="use-azure-policy-to-audit-for-compliance"></a>Azure Policy gebruiken om te controleren op naleving
 

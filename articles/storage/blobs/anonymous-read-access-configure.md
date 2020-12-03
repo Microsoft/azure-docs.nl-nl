@@ -10,12 +10,12 @@ ms.date: 11/03/2020
 ms.author: tamram
 ms.reviewer: fryu
 ms.subservice: blobs
-ms.openlocfilehash: a808a6bb0d4dc75f02147bbfdd74d17b34e96f6e
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: feac7b890c973b1541c5362f860432687082953f
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93313982"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96533873"
 ---
 # <a name="configure-anonymous-public-read-access-for-containers-and-blobs"></a>Anonieme open bare Lees toegang voor containers en blobs configureren
 
@@ -53,7 +53,7 @@ Het niet toestaan van open bare toegang voor het opslag account voor komt anonie
 
 Als u open bare toegang voor een opslag account wilt toestaan of weigeren, configureert u de eigenschap **AllowBlobPublicAccess** van het account. Deze eigenschap is beschikbaar voor alle opslag accounts die zijn gemaakt met het Azure Resource Manager-implementatie model. Zie [overzicht van opslag accounts](../common/storage-account-overview.md)voor meer informatie.
 
-De eigenschap **AllowBlobPublicAccess** is niet standaard ingesteld en retourneert geen waarde voordat u deze expliciet hebt ingesteld. Het opslag account staat open bare toegang toe wanneer de waarde van de eigenschap **Null** of **True** is.
+De eigenschap **AllowBlobPublicAccess** is niet standaard ingesteld voor een opslag account en retourneert geen waarde totdat u deze expliciet hebt ingesteld. Het opslag account staat open bare toegang toe wanneer de waarde van de eigenschap **Null** of **True** is.
 
 # <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
@@ -133,7 +133,7 @@ Als u open bare toegang voor een opslag account met een sjabloon wilt toestaan o
 
 1. Kies in het Azure Portal **een resource maken**.
 1. Typ in **de Marketplace zoeken de** **sjabloon implementatie** en druk vervolgens op **Enter**.
-1. Kies **Sjabloonimlementatie (implementeren met aangepaste sjablonen) (preview)** , kies **maken** en kies vervolgens **uw eigen sjabloon bouwen in de editor**.
+1. Kies **Sjabloonimlementatie (implementeren met aangepaste sjablonen) (preview)**, kies **maken** en kies vervolgens **uw eigen sjabloon bouwen in de editor**.
 1. Plak in de sjabloon editor in de volgende JSON om een nieuw account te maken en stel de eigenschap **AllowBlobPublicAccess** in op **waar** of **Onwaar**. Vergeet niet om de tijdelijke aanduidingen tussen punt haken te vervangen door uw eigen waarden.
 
     ```json

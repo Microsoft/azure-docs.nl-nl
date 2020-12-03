@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/11/2020
 ms.author: pafarley
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: 73887515eea344e920455e3c24f3eae3d5ad515a
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 50cce15d14561bb1c8ebfdbbeeedd99dc8efcda1
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95013740"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96532989"
 ---
 # <a name="optical-character-recognition-ocr"></a>Optische tekenherkenning (OCR)
 
@@ -133,7 +133,7 @@ Zie het volgende voor beeld van een geslaagde JSON-reactie:
 ### <a name="read-32-preview-adds-text-line-style-latin-languages-only"></a>Lees 3,2 Preview tekst lijn stijl toevoegen (alleen Latijnse talen)
 De [lezen 3,2 Preview-API](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-1/operations/5d986960601faab4bf452005) voert een **vormgevings** object uit waarin wordt aangegeven of elke tekst regel moet worden afgedrukt of geschreven, samen met een betrouwbaarheids Score. Deze functie wordt alleen ondersteund voor Latijnse talen.
 
-Ga aan de slag met de Computer Vision de Quick Start van de [OCR SDK](./quickstarts-sdk/client-library.md) en [Lees rest API SNELSTARTGIDS](./QuickStarts/CSharp-hand-text.md) om de OCR-mogelijkheden in uw toepassingen te integreren.
+Ga aan de slag met de [Computer Vision rest API of de Quick](./quickstarts-sdk/client-library.md) start van de client bibliotheek om de OCR-mogelijkheden in uw toepassingen te integreren.
 
 ## <a name="supported-languages-for-print-text"></a>Ondersteunde talen voor afdruk tekst
 De [Lees-API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005) biedt ondersteuning voor het extra heren van gedrukte tekst in het Engels, Spaans, Duits, Frans, Italiaans, Portugees en Nederlandstalige talen.
@@ -197,7 +197,6 @@ Net als bij alle cognitieve services moeten ontwikkel aars die de Lees/OCR-Servi
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Ga aan de slag met de [Computer Vision Lees de Snelstartgids van SDK](./quickstarts-sdk/client-library.md) in C#, Java, java script of python.
-- Gebruik de [rest API Snelstartgids voor lezen](./QuickStarts/CSharp-hand-text.md) in C#, Java, java script of python voor meer informatie over het gebruik van de rest-api's.
+- Ga aan de slag met de [Computer Vision rest API of de Snelstartgids voor de client bibliotheek](./quickstarts-sdk/client-library.md).
 - Meer informatie over de [lees rest API](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005).
 - Meer informatie over de [open bare preview-versie van 3,2 rest API](https://westus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-2-preview-1/operations/5d986960601faab4bf452005) met toegevoegde ondersteuning voor vereenvoudigd Chinees en Japans.

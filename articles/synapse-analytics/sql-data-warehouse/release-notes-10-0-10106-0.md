@@ -12,12 +12,12 @@ ms.reviewer: jrasnick
 manager: craigg
 ms.custom: seo-lt-2019
 tags: azure-synapse
-ms.openlocfilehash: 18f8df90cd59a1fb32024ec93674fed7eb49519a
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: baf2734c2f3c4de86b75a20239ecf7440c61a632
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96451979"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96534043"
 ---
 # <a name="dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-release-notes"></a>Exclusieve SQL-groep (voorheen SQL DW) in azure Synapse Analytics-release opmerkingen
 
@@ -39,6 +39,13 @@ Zorg ervoor dat de juiste versie is geïnstalleerd in de opmerking bij de releas
 >
 > SELECT SERVERPROPERTY('EngineEdition')
 > ```
+
+## <a name="dec-2020"></a>Dec 2020
+
+| Service verbeteringen | Details |
+| --- | --- |
+|**Opgeslagen procedure sp_rename voor kolommen (preview-versie)**|Het wijzigen van de naam van een kolom zonder [CTAS](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-develop-ctas) is nog eenvoudiger geworden. Azure Synapse SQL heeft nu ondersteuning toegevoegd voor de door het systeem opgeslagen procedure sp_rename (preview) om de naam van een niet-distributie kolom in een gebruikers tabel te wijzigen. Deze functie is momenteel beschikbaar als preview-versie en wordt ondersteund in hulp bij GA. Zie [sp_rename](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-rename-transact-sql?view=azure-sqldw-latest)voor meer informatie.|
+|**Aanvullende para meter voor T-SQL-voor spel**|Met deze nieuwe release wordt een vereiste extra para meter ' RUNTIME ' toegevoegd voor de bestaande T-SQL-instructie voors PELLEn. Zie voor beelden in [T-SQL voors pellen](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest)voor het bijwerken van uw bestaande scripts.|
 
 ## <a name="oct-2020"></a>Okt 2020
 

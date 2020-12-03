@@ -8,18 +8,18 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 11/10/2020
+ms.date: 12/02/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 90fc356929a9ea5713a8d359dfaa83286017b8f8
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 260df85f3e380e40d153fc17ce77bd56ca068982
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445435"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96532819"
 ---
 # <a name="upgrade-to-azure-cognitive-search-net-sdk-version-11"></a>Upgrade uitvoeren naar Azure Cognitive Search .NET SDK versie 11
 
-Als u versie 10,0 of ouder van de [.NET SDK](/dotnet/api/overview/azure/search)gebruikt, helpt dit artikel bij het bijwerken naar versie 11.
+Als u versie 10,0 of ouder van de [.NET SDK](/dotnet/api/overview/azure/search)gebruikt, helpt dit artikel bij het upgraden naar versie 11 en de **Azure.Search.Documents** -client bibliotheek.
 
 Versie 11 is een volledig opnieuw ontworpen client bibliotheek, uitgebracht door het team van Azure SDK Development (eerdere versies zijn gemaakt door het Azure Cognitive Search Development-Team). De tape wisselaar is opnieuw ontworpen voor een grotere consistentie met andere Azure-client Bibliotheken, met een afhankelijkheid van [Azure. core](/dotnet/api/azure.core) en [System.Text.Jsop](/dotnet/api/system.text.json)en het implementeren van bekende benaderingen voor algemene taken.
 
@@ -49,7 +49,7 @@ Indien van toepassing, wijst de volgende tabel de client bibliotheken toe tussen
 |---------------------|------------------------------|------------------------------|
 | Client die wordt gebruikt voor query's en voor het vullen van een index. | [SearchIndexClient](/dotnet/api/azure.search.documents.indexes.searchindexclient) | [SearchClient](/dotnet/api/azure.search.documents.searchclient) |
 | Client die wordt gebruikt voor indexen, analyse functies, synoniemen | [SearchServiceClient](/dotnet/api/microsoft.azure.search.searchserviceclient) | [SearchIndexClient](/dotnet/api/azure.search.documents.indexes.searchindexclient) |
-| Client die wordt gebruikt voor Indexeer functies, gegevens bronnen, vaardig heden | [SearchServiceClient](/dotnet/api/microsoft.azure.search.searchserviceclient) | [SearchIndexerClient ( **Nieuw** )](/dotnet/api/azure.search.documents.indexes.searchindexerclient) |
+| Client die wordt gebruikt voor Indexeer functies, gegevens bronnen, vaardig heden | [SearchServiceClient](/dotnet/api/microsoft.azure.search.searchserviceclient) | [SearchIndexerClient (**Nieuw**)](/dotnet/api/azure.search.documents.indexes.searchindexerclient) |
 
 > [!Important]
 > `SearchIndexClient` bestaat in beide versies, maar ondersteunt verschillende dingen. Maak in versie 10 `SearchIndexClient` indexen en andere objecten. In versie 11 `SearchIndexClient` werkt met bestaande indexen. Om Verwar ring te voor komen bij het bijwerken van code, moet u mindful van de volg orde waarin de client verwijzingen worden bijgewerkt. Als u de volg orde van de [stappen voor het uitvoeren](#UpgradeSteps) van een upgrade volgt, moet u problemen met de vervanging van teken reeksen oplossen.
@@ -75,7 +75,7 @@ Naast de verschillen tussen de client (eerder vermeld en daarom wegge laten), he
 | [Veld](/dotnet/api/microsoft.azure.search.models.field) | [SearchField](/dotnet/api/azure.search.documents.indexes.models.searchfield) |
 | [Param1](/dotnet/api/microsoft.azure.search.models.datatype) | [SearchFieldDataType](/dotnet/api/azure.search.documents.indexes.models.searchfielddatatype) |
 | [ItemError](/dotnet/api/microsoft.azure.search.models.itemerror) | [SearchIndexerError](/dotnet/api/azure.search.documents.indexes.models.searchindexererror) |
-| [Procedures](/dotnet/api/microsoft.azure.search.models.analyzer) | [LexicalAnalyzer](/dotnet/api/azure.search.documents.indexes.models.lexicalanalyzer) (ook `AnalyzerName` naar `LexicalAnalyzerName` ) |
+| [Analyse](/dotnet/api/microsoft.azure.search.models.analyzer) | [LexicalAnalyzer](/dotnet/api/azure.search.documents.indexes.models.lexicalanalyzer) (ook `AnalyzerName` naar `LexicalAnalyzerName` ) |
 | [AnalyzeRequest](/dotnet/api/microsoft.azure.search.models.analyzerequest) | [AnalyzeTextOptions](/dotnet/api/azure.search.documents.indexes.models.analyzetextoptions) |
 | [StandardAnalyzer](/dotnet/api/microsoft.azure.search.models.standardanalyzer) | [LuceneStandardAnalyzer](/dotnet/api/azure.search.documents.indexes.models.lucenestandardanalyzer) |
 | [StandardTokenizer](/dotnet/api/microsoft.azure.search.models.standardtokenizer) | [LuceneStandardTokenizer](/dotnet/api/azure.search.documents.indexes.models.lucenestandardtokenizer) (ook `StandardTokenizerV2` naar `LuceneStandardTokenizerV2` ) |
@@ -141,7 +141,7 @@ De volgende versie 10-functies zijn nog niet beschikbaar in versie 11. Als u dez
 
 ## <a name="steps-to-upgrade"></a>Stappen voor het uitvoeren van een upgrade
 
-Met de volgende stappen kunt u aan de slag gaan met een code migratie door de eerste set vereiste taken uit te voeren, met name met betrekking tot client verwijzingen.
+Met de volgende stappen kunt u aan de slag gaan met een code migratie door de eerste set vereiste taken door lopen, met name met betrekking tot client verwijzingen.
 
 1. Installeer het [Azure.Search.Documents-pakket](https://www.nuget.org/packages/Azure.Search.Documents/) door met de rechter muisknop op uw project verwijzingen te klikken en vervolgens NuGet-pakketten beheren te selecteren. in Visual Studio.
 
@@ -170,7 +170,7 @@ Met de volgende stappen kunt u aan de slag gaan met een code migratie door de ee
 
 1. Voeg nieuwe client referenties toe voor Indexeer functie-gerelateerde objecten. Als u Indexeer functies, gegevens bronnen of vaardig heden gebruikt, wijzigt u de client verwijzingen naar [SearchIndexerClient](/dotnet/api/azure.search.documents.indexes.searchindexerclient). Deze client is nieuw in versie 11 en heeft geen ante cedent.
 
-1. Ga naar verzamelingen. In de nieuwe SDK zijn alle lijsten alleen-lezen om downstream-problemen te voor komen als de lijst Null-waarden bevat. De code moet worden gewijzigd om items toe te voegen aan een lijst. In plaats van teken reeksen toe te wijzen aan een eigenschap Select, voegt u deze bijvoorbeeld als volgt toe:
+1. Verzamelingen en lijsten reviseren. In de nieuwe SDK zijn alle lijsten alleen-lezen om downstream-problemen te voor komen als de lijst Null-waarden bevat. De code moet worden gewijzigd om items toe te voegen aan een lijst. In plaats van teken reeksen toe te wijzen aan een eigenschap Select, voegt u deze bijvoorbeeld als volgt toe:
 
    ```csharp
    var options = new SearchOptions
@@ -188,11 +188,13 @@ Met de volgende stappen kunt u aan de slag gaan met een code migratie door de ee
     options.Select.Add("LastRenovationDate");
    ```
 
+   SELECT, Facets, SearchFields, SourceFields, ScoringParameters en OrderBy zijn alle lijsten die nu opnieuw moeten worden samengesteld.
+
 1. Client Referenties bijwerken voor query's en gegevens import. Instanties van [SearchIndexClient](/dotnet/api/microsoft.azure.search.searchindexclient) moeten worden gewijzigd in [SearchClient](/dotnet/api/azure.search.documents.searchclient). Zorg ervoor dat u alle exemplaren onderschept voordat u verdergaat met de volgende stap om naam Verwar ring te voor komen.
 
-1. Update client verwijzingen voor index, Indexeer functie, synoniemen kaart en analyse-objecten. Instanties van [SearchServiceClient](/dotnet/api/microsoft.azure.search.searchserviceclient) moeten worden gewijzigd in [SearchIndexClient](/dotnet/api/microsoft.azure.search.searchindexclient). 
+1. Update client verwijzingen voor index, synoniemen kaart en analyse-objecten. Instanties van [SearchServiceClient](/dotnet/api/microsoft.azure.search.searchserviceclient) moeten worden gewijzigd in [SearchIndexClient](/dotnet/api/microsoft.azure.search.searchindexclient). 
 
-1. Werk zo veel mogelijk klassen, methoden en eigenschappen bij om de Api's van de nieuwe bibliotheek te gebruiken. De sectie [naam verschillen](#naming-differences) is een plek waar u begint, maar u kunt ook het [wijzigings logboek](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Azure.Search.Documents/CHANGELOG.md)controleren.
+1. Voor de rest van uw code werkt u klassen, methoden en eigenschappen bij om de Api's van de nieuwe bibliotheek te gebruiken. De sectie [naam verschillen](#naming-differences) is een plek waar u begint, maar u kunt ook het [wijzigings logboek](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Azure.Search.Documents/CHANGELOG.md)controleren.
 
    Als u problemen ondervindt bij het vinden van gelijkwaardige Api's, wordt een probleem in een logboek vastgelegd, [https://github.com/MicrosoftDocs/azure-docs/issues](https://github.com/MicrosoftDocs/azure-docs/issues) zodat de documentatie kan worden verbeterd of het probleem kan worden onderzocht.
 

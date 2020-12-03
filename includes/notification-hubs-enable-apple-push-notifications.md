@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 02/10/2020
 ms.author: sethm
 ms.custom: include file
-ms.openlocfilehash: 1cb7753f54e9c1334e35635c227f776041631f1d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7b5034f2163e8478d7ddb7b9271402b094a809d7
+ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88864670"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95564167"
 ---
 ## <a name="generate-the-certificate-signing-request-file"></a>Het bestand met de aanvraag voor certificaatondertekening genereren
 
@@ -78,9 +78,9 @@ Registreer uw app bij Apple en registreer u voor pushmeldingen om pushmeldingen 
 Er is een certificaat vereist om de Notification Hub te kunnen laten werken met **APNs**. Dit kan op een van de volgende twee manieren worden gedaan:
 
 1. Maak een **.p12** dat rechtstreeks kan worden geüpload naar de Notification Hub.  
-2. Maak een **.p8** dat kan worden gebruikt voor [op tokens gebaseerde verificatie](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-http2-token-authentification) (*de nieuwe methode*).
+2. Maak een **.p8** dat kan worden gebruikt voor [op tokens gebaseerde verificatie](../articles/notification-hubs/notification-hubs-push-notification-http2-token-authentication.md) (*de nieuwe methode*).
 
-De nieuwe methode heeft een aantal voordelen (ten opzichte van het gebruik van certificaten), zoals beschreven in [Op tokens gebaseerde (HTTP/2) verificatie voor APNs](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-push-notification-http2-token-authentification). Er worden echter stappen gegeven voor beide methoden. 
+De nieuwe methode heeft een aantal voordelen (ten opzichte van het gebruik van certificaten), zoals beschreven in [Op tokens gebaseerde (HTTP/2) verificatie voor APNs](../articles/notification-hubs/notification-hubs-push-notification-http2-token-authentication.md). Er worden echter stappen gegeven voor beide methoden. 
 
 ### <a name="option-1-creating-a-p12-push-certificate-that-can-be-uploaded-directly-to-notification-hub"></a>OPTIE 1: Een .p12-pushcertificaat maken dat rechtstreeks kan worden geüpload naar de Notification Hub
 
@@ -156,7 +156,7 @@ De nieuwe methode heeft een aantal voordelen (ten opzichte van het gebruik van c
     ```
 
     > [!NOTE]
-    > Dit is de **tokenwaarde** die later wordt gebruikt om **Notification Hub**te configureren. 
+    > Dit is de **tokenwaarde** die later wordt gebruikt om **Notification Hub** te configureren. 
 
 Aan het einde van deze stappen moet u de volgende informatie gebruiken voor later in [Uw Notification Hub configureren met APNs-gegevens](#configure-your-notification-hub-with-apns-information):
 
@@ -192,7 +192,7 @@ Aan het einde van deze stappen moet u de volgende informatie gebruiken voor late
 
 1. Selecteer vervolgens de apparaten die u voor de tests wilt gebruiken en selecteer **Doorgaan**.
 
-1. Kies ten slotte een naam voor het profiel in **Inrichtingsprofielnaam**en selecteer **Genereren**.
+1. Kies ten slotte een naam voor het profiel in **Inrichtingsprofielnaam** en selecteer **Genereren**.
 
     ![Een naam kiezen voor het inrichtingsprofiel](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-provisioning-name-profile.png)
 

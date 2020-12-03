@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 10/20/2020
+ms.date: 11/20/2020
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 394bad6623eeb4ce4b43cadd9bef53934ed7e852
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: dc4ec31a307d559fad84392522e6847aab1e3873
+ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92311634"
+ms.lasthandoff: 11/20/2020
+ms.locfileid: "94986914"
 ---
 |Naam |Beschrijving |Beleidsregels |Versie |
 |---|---|---|---|
@@ -18,7 +18,7 @@ ms.locfileid: "92311634"
 |[Azure Security-benchmark](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/asb_audit.json) |Dit initiatief omvat beleidsregels voor controles en implementatie van extensies van virtuele machines. De beleidsregels hebben betrekking op een subset van de aanbeveling voor Azure Security Benchmark. In aanstaande releases worden extra beleidsregels toegevoegd. U vindt meer informatie op [https://aka.ms/azsecbm](https://aka.ms/azsecbm). |136 |6.1.0-preview |
 |[Canada Federal PBMM](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/CanadaFederalPBMM_audit.json) |Dit initiatief omvat beleidsregels voor controles en implementatie van extensies van virtuele machines. De beleidsregels hebben betrekking op een subset van de federale PBMM-controles van Canada. In aanstaande releases worden extra beleidsregels toegevoegd. U vindt meer informatie op [https://aka.ms/canadafederalpbmm-blueprint](https://aka.ms/canadafederalpbmm-blueprint). |60 |3.0.0 |
 |[CIS Microsoft Azure Foundations Benchmark 1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/CISv1_1_0_audit.json) |Dit initiatief omvat de beleidsregels voor controle. De beleidsregels hebben betrekking op een subset van de aanbevelingen voor CIS Microsoft Azure Foundations Benchmark. In aanstaande releases worden extra beleidsregels toegevoegd. U vindt meer informatie op [https://aka.ms/cisazure-blueprint](https://aka.ms/cisazure-blueprint). |87 |7.1.0 |
-|[FedRAMP High](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/FedRAMP_H_audit.json) |Dit initiatief omvat de beleidsregels voor controles en implementatie van extensie van virtuele machines. De beleidsregels hebben betrekking op een subset van de FedRAMP H-controles. In aanstaande releases worden extra beleidsregels toegevoegd. U vindt meer informatie op [https://aka.ms/fedramph-blueprint](https://aka.ms/fedramph-blueprint). |72 |3.0.0 |
+|[FedRAMP High](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/FedRAMP_H_audit.json) |Dit initiatief omvat de beleidsregels voor controles en implementatie van extensie van virtuele machines. De beleidsregels hebben betrekking op een subset van de FedRAMP H-controles. In aanstaande releases worden extra beleidsregels toegevoegd. U vindt meer informatie op [https://aka.ms/fedramph-blueprint](https://aka.ms/fedramph-blueprint). |72 |3.0.1 |
 |[FedRAMP Moderate](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/FedRAMP_M_audit.json) |Dit initiatief omvat de beleidsregels voor controles en implementatie van extensies van virtuele machines. De beleidsregels hebben betrekking op een subset van de FedRAMP M-controles. In aanstaande releases worden extra beleidsregels toegevoegd. U vindt meer informatie op [https://aka.ms/fedrampm-blueprint](https://aka.ms/fedrampm-blueprint). |62 |3.0.0 |
 |[HITRUST/HIPAA](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/HIPAA_HITRUST_audit.json) |Dit initiatief omvat beleidsregels voor controles en implementatie van extensies van virtuele machines. De beleidsregels hebben betrekking op een subset van de HITRUST/HIPAA-controles. In aanstaande releases worden extra beleidsregels toegevoegd. U vindt meer informatie op [https://aka.ms/hipaa-blueprint](https://aka.ms/hipaa-blueprint). |121 |4.1.0 |
 |[IRS1075 september 2016](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/IRS1075_audit.json) |Dit initiatief omvat beleidsregels voor controles en implementatie van extensies van virtuele machines. De beleidsregels hebben betrekking op een subset van de controles van IRS1075 september 2016. In aanstaande releases worden extra beleidsregels toegevoegd. U vindt meer informatie op [https://aka.ms/irs1075-blueprint](https://aka.ms/irs1075-blueprint). |62 |3.0.0 |

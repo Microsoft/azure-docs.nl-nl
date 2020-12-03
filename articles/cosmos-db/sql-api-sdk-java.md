@@ -9,12 +9,12 @@ ms.topic: reference
 ms.date: 08/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-java
-ms.openlocfilehash: 87ff11c33c909c7398ebced54ec81907dab2d991
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 0b48b8d954b132caab96e5978c90687899ea04c2
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93080513"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96549222"
 ---
 # <a name="azure-cosmos-db-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB Java SDK voor SQL API: release opmerkingen en bronnen
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "93080513"
 Dit is de oorspronkelijke Azure Cosmos DB Java SDK v2 voor de SQL-API die synchrone bewerkingen ondersteunt.
 
 > [!IMPORTANT]  
-> Dit is *niet* de meest recente Java-SDK voor Azure Cosmos db. Overweeg [Azure Cosmos DB Java SDK v4](sql-api-sdk-java-v4.md) te gebruiken voor uw project. Als u een upgrade wilt uitvoeren, volgt u de instructies in de hand leiding [Migrate to Azure Cosmos DB Java SDK v4](migrate-java-v4-sdk.md) and the [reactor VS RxJava](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/master/reactor-rxjava-guide.md) . 
+> Dit is *niet* de meest recente Java-SDK voor Azure Cosmos db. Overweeg [Azure Cosmos DB Java SDK v4](sql-api-sdk-java-v4.md) te gebruiken voor uw project. Als u een upgrade wilt uitvoeren, volgt u de instructies in de hand leiding [Migrate to Azure Cosmos DB Java SDK v4](migrate-java-v4-sdk.md) and the [reactor VS RxJava](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/main/reactor-rxjava-guide.md) . 
 >
 
 | |  |
@@ -175,7 +175,7 @@ Dit is de oorspronkelijke Azure Cosmos DB Java SDK v2 voor de SQL-API die synchr
 * Er zijn enkele fouten in de sessie container opgelost die ertoe kunnen leiden dat een ' eigenaar-resource niet kan worden gevonden ' voor aanvragen onmiddellijk nadat de verzameling is gemaakt.
 
 ### <a name="195"></a><a name="1.9.5"></a>1.9.5
-* Er is ondersteuning toegevoegd voor aggregatie query's (aantal, MIN, MAX, SUM en AVG). Zie [ondersteuning voor aggregatie](sql-query-aggregates.md).
+* Er is ondersteuning toegevoegd voor aggregatie query's (aantal, MIN, MAX, SUM en AVG). Zie [ondersteuning voor aggregatie](sql-query-aggregate-functions.md).
 * Ondersteuning toegevoegd voor wijzigings invoer.
 * Er is ondersteuning toegevoegd voor verzamelings quotum gegevens via RequestOptions. setPopulateQuotaInfo.
 * Er is ondersteuning toegevoegd voor de logboek registratie van opgeslagen-procedure scripts via RequestOptions. setScriptLoggingEnabled.

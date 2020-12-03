@@ -111,8 +111,8 @@
     - name: Analyseren
       href: cdn-log-analysis.md
       items:
-        - name: Onbewerkte HTTP-logboeken
-          href: enable-raw-logs.md
+        - name: 'Bewaking, metrische gegevens en toegangslogboeken'
+          href: monitoring-and-access-log.md
         - name: Diagnostische logboeken van Azure
           href: cdn-azure-diagnostic-logs.md
         - name: Analytische hulpprogramma's voor Azure CDN van Verizon

@@ -1,6 +1,6 @@
-- name: Azure Synapse (voorbeeld van werkruimte)
-  href: overview-what-is.md
-- name: Overschakelen naar Azure Synapse (voorheen SQL DW)
+- name: Azure Synapse Analytics
+  href: index.yml
+- name: Overschakelen naar toegewezen SQL-pool (voorheen SQL DW)
   href: ./sql-data-warehouse/sql-data-warehouse-overview-what-is.md
 - name: Overzicht
   items:
@@ -9,8 +9,8 @@
       displayName: overview
     - name: Terminologie
       href: overview-terminology.md
-    - name: Releaseopmerkingen
-      href: release-notes.md
+    - name: Veelgestelde vragen
+      href: overview-faq.md
 - name: Snelstartgidsen
   expanded: true
   items:
@@ -125,17 +125,12 @@
                   displayname: 'access, control'
                 - name: 'Synapse-werkruimte: beheerde identiteit'
                   href: ./security/synapse-workspace-managed-identity.md
-        - name: 'Integratie van hulpprogramma''s (AI, ETL, BI)'
-          items:
-            - name: Probleem met Synapse Studio oplossen
-              href: troubleshoot/troubleshoot-synapse-studio.md
-            - name: Synapse Studio-verbindingsproblemen oplossen
-              href: troubleshoot/troubleshoot-synapse-studio-powershell.md
-              displayname: powershell
-            - name: Problemen met de connectiviteit tussen Synapse Studio en opslag oplossen
-              href: troubleshoot/troubleshoot-synapse-studio-and-storage-connectivity.md
     - name: Instructiegidsen
       items:
+        - name: Beheren en controleren
+          items:
+            - name: 'Metrische gegevens, waarschuwingen en logboeken van Azure Monitor'
+              href: monitoring/how-to-monitor-using-azure-monitor.md
         - name: Beveiligen
           items:
             - name: Toegangsbeheer beheren
@@ -156,6 +151,19 @@
                   href: ./data-integration/linked-service.md
                 - name: Verbinding maken met Synapse-werkruimte vanuit een afgeschermd netwerk
                   href: security/how-to-connect-to-workspace-from-restricted-network.md
+        - name: Problemen oplossen
+          items:
+            - name: Probleem met Synapse Studio oplossen
+              href: troubleshoot/troubleshoot-synapse-studio.md
+            - name: Synapse Studio-verbindingsproblemen oplossen
+              href: troubleshoot/troubleshoot-synapse-studio-powershell.md
+              displayname: powershell
+            - name: Problemen met de connectiviteit tussen Synapse Studio en opslag oplossen
+              href: troubleshoot/troubleshoot-synapse-studio-and-storage-connectivity.md
+            - name: Problemen met werkruimtes oplossen die door SDK zijn gemaakt
+              href: troubleshoot/workspaces-created-by-sdk.md
+            - name: Problemen oplossen met UTF-8-tekst uitlezen
+              href: troubleshoot/reading-utf8-text.md
 - name: Synapse SQL
   items:
     - name: Overzicht
@@ -175,6 +183,8 @@
           href: sql/overview-features.md
         - name: Modellen voor resourceverbruik
           href: sql/resource-consumption-models.md
+        - name: Capaciteitslimieten
+          href: ./sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
         - name: Kostenbeheer voor serverloze SQL-pool
           href: sql/data-processed.md
         - name: Best practices voor serverloze SQL-pools
@@ -183,10 +193,14 @@
           href: sql/best-practices-sql-pool.md
     - name: Snelstartgidsen
       items:
+        - name: Serverloze SQL-pools gebruiken
+          href: quickstart-sql-on-demand.md
         - name: Een toegewezen SQL-pool maken met Synapse Studio
           href: quickstart-create-sql-pool-studio.md
         - name: Een toegewezen SQL-pool maken met Azure Portal
           href: quickstart-create-sql-pool-portal.md
+        - name: Pauzeren en hervatten met Azure-portal
+          href: ./sql-data-warehouse/pause-and-resume-compute-portal.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
         - name: Gegevens laden met toegewezen SQL-pools
           items:
             - name: COPY-instructie
@@ -198,8 +212,20 @@
             - name: Synapse Studio
               href: quickstart-load-studio-sql-pool.md
               displayname: sql pool
-        - name: Serverloze SQL-pools gebruiken
-          href: quickstart-sql-on-demand.md
+        - name: Werklastbeheer
+          items:
+            - name: Workloadclassificatie maken
+              items:
+                - name: Portal
+                  href: ./sql-data-warehouse/quickstart-create-a-workload-classifier-portal.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+                - name: T-SQL
+                  href: ./sql-data-warehouse/quickstart-create-a-workload-classifier-tsql.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+            - name: Isolatie van workloads maken
+              items:
+                - name: Portal
+                  href: ./sql-data-warehouse/quickstart-configure-workload-isolation-portal.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+                - name: T-SQL
+                  href: ./sql-data-warehouse/quickstart-configure-workload-isolation-tsql.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
     - name: Zelfstudies
       items:
         - name: Een serverloze SQL-pool gebruiken om gegevens te analyseren
@@ -229,6 +255,7 @@
             - name: Gerealiseerde weergave
               items:
                 - name: Richtlijnen voor het afstemmen van prestaties
+                  displayname: 'materialized, view,'
                   href: sql/develop-materialized-view-performance-tuning.md
                 - name: Maken
                   href: /sql/t-sql/statements/create-materialized-view-as-select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
@@ -236,8 +263,23 @@
                 - name: Bewerken
                   href: /sql/t-sql/statements/alter-materialized-view-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
                   displayname: 'materialized, view'
+            - name: Geordende columnstore-index
+              items:
+                - name: Richtlijnen voor het afstemmen van prestaties
+                  displayname: 'CCI, clustered, column, store'
+                  href: ./sql-data-warehouse/performance-tuning-ordered-CCI.md
             - name: Caching van resultatenset
-              href: /sql/t-sql/statements/set-result-set-caching-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+              items:
+                - name: Richtlijnen voor het afstemmen van prestaties
+                  href: ./sql-data-warehouse/performance-tuning-result-set-caching.md
+                - name: Instellen voor een database
+                  href: /sql/t-sql/statements/alter-database-transact-sql-set-options?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest
+                - name: Instellen voor een sessie
+                  href: /sql/t-sql/statements/set-result-set-caching-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest
+                - name: Cachegrootte controleren
+                  href: /sql/t-sql/database-console-commands/dbcc-showresultcachespaceused-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest
+                - name: Cache opschonen
+                  href: /sql/t-sql/database-console-commands/dbcc-dropresultsetcache-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest
             - name: Machine learning-voorspellingen
               href: ./sql-data-warehouse/sql-data-warehouse-predict.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Tabellen
@@ -252,6 +294,8 @@
                   href: sql/develop-tables-data-types.md
                 - name: Gedistribueerde tabellen
                   href: ./sql-data-warehouse/sql-data-warehouse-tables-distribute.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+                - name: Tabelbeperkingen
+                  href: ./sql-data-warehouse/sql-data-warehouse-table-constraints.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
                 - name: Externe tabellen
                   href: sql/develop-tables-external-tables.md
                 - name: Indexen
@@ -276,8 +320,14 @@
                   href: sql/develop-stored-procedures.md
                 - name: Transacties
                   href: sql/develop-transactions.md
-                - name: Aanbevolen procedures voor transacties
-                  href: sql/develop-transaction-best-practices.md
+                - name: Transacties
+                  items:
+                    - name: Serverloze SQL-pool
+                      displayname: 'Transaction, best, practices'
+                      href: sql/develop-transaction-best-practices.md
+                    - name: Toegewezen SQL-pool
+                      displayname: 'Transactions, best, practices'
+                      href: ./sql-data-warehouse/sql-data-warehouse-develop-best-practices-transactions.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
                 - name: Door de gebruiker gedefinieerde schema's
                   href: sql/develop-user-defined-schemas.md
                 - name: Variabele toewijzing
@@ -306,6 +356,8 @@
               href: ./sql-data-warehouse/sql-data-warehouse-overview-manageability-monitoring.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Resourcegebruik en queryactiviteit
               href: ./sql-data-warehouse/sql-data-warehouse-concept-resource-utilization-query-activity.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+            - name: Aanbevelingen
+              href: ./sql-data-warehouse/sql-data-warehouse-concept-recommendations.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
         - name: Beveiliging
           items:
             - name: Database-toegangsbeheer
@@ -352,6 +404,10 @@
               href: ./backuprestore/restore-sql-pool.md
         - name: Beheren en bewaken
           items:
+            - name: SQL-aanvragen - Synapse Studio
+              href: monitoring/how-to-monitor-sql-requests.md
+            - name: SQL-pools - Synapse Studio
+              href: monitoring/how-to-monitor-sql-pools.md
             - name: Gen2-cache bewaken
               href: ./sql-data-warehouse/sql-data-warehouse-how-to-monitor-cache.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Uw workload bewaken - DMV's
@@ -366,8 +422,8 @@
                   href: ./sql-data-warehouse/sql-data-warehouse-how-to-configure-workload-importance.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
                 - name: Het belang van workload beheren en bewaken
                   href: ./sql-data-warehouse/sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-            - name: Upgraden naar Gen2
-              href: ./sql-data-warehouse/upgrade-to-latest-generation.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+                - name: Resourceklassen omzetten in werkbelastinggroepen
+                  href: ./sql-data-warehouse/sql-data-warehouse-how-to-convert-resource-classes-workload-groups.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
         - name: Gegevens opnemen en voorbereiden
           items:
             - name: In de datawarehouse
@@ -395,46 +451,58 @@
               items:
                 - name: Met de kopieeractiviteit
                   href: data-integration/data-integration-data-lake.md
+        - name: Wijzigingsbeheer en implementatie
+          items:
+            - name: Visual Studio SSDT installeren
+              href: ./sql-data-warehouse/sql-data-warehouse-install-visual-studio.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+            - name: Continue integratie en implementatie
+              href: ./sql-data-warehouse/sql-data-warehouse-continuous-integration-and-deployment.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
         - name: Externe gegevens ophalen
           items:
             - name: Overzicht
-              href: sql/query-data-storage.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+              href: sql/query-data-storage.md
               displayname: query
             - name: Query uitvoeren op CSV-bestanden
-              href: sql/query-single-csv-file.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+              href: sql/query-single-csv-file.md
             - name: Query uitvoeren op Parquet-bestanden
-              href: sql/query-parquet-files.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+              href: sql/query-parquet-files.md
             - name: Query uitvoeren op JSON-bestanden
-              href: sql/query-json-files.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+              href: sql/query-json-files.md
             - name: Query uitvoeren op geneste typen
-              href: sql/query-parquet-nested-types.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+              href: sql/query-parquet-nested-types.md
             - name: Query uitvoeren op mappen en meerdere bestanden
-              href: sql/query-folders-multiple-csv-files.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+              href: sql/query-folders-multiple-csv-files.md
               displayname: csv
             - name: Gepartitioneerde bestanden doorzoeken met behulp van metagegevens van bestanden
-              href: sql/query-specific-files.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+              href: sql/query-specific-files.md
             - name: Weergaven maken en gebruiken
-              href: sql/create-use-views.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+              href: sql/create-use-views.md
             - name: Externe tabellen maken en gebruiken
               href: sql/create-use-external-tables.md
             - name: Queryresultaten opslaan in opslag
               href: sql/create-external-table-as-select.md
-        - name: Hulpprogramma's verbinden met Synapse-werkruimtes
+        - name: Integreren
+          items:
+            - name: Gegevenspijplijnen bouwen
+              items:
+                - name: Een Azure Stream Analytics-taak toevoegen
+                  href: ./sql-data-warehouse/sql-data-warehouse-integrate-azure-stream-analytics.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+        - name: Hulpprogramma's om verbinding te maken met Synapse-werkruimtes
           items:
             - name: Overzicht
-              href: sql/connect-overview.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+              href: sql/connect-overview.md
             - name: Query's uitvoeren met Azure Data Studio
-              href: sql/get-started-azure-data-studio.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+              href: sql/get-started-azure-data-studio.md
             - name: Verbindingsreeksen
               href: sql/connection-strings.md
             - name: Query’s uitvoeren met Sqlcmd
               href: sql/get-started-connect-sqlcmd.md
             - name: Query's uitvoeren met SSMS
-              href: sql/get-started-ssms.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+              href: sql/get-started-ssms.md
             - name: Query’s uitvoeren bij Visual Studio
-              href: sql/get-started-visual-studio.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+              href: sql/get-started-visual-studio.md
             - name: Verbinding maken met Power BI Desktop
-              href: sql/get-started-power-bi-professional.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+              href: sql/get-started-power-bi-professional.md
 - name: Apache Spark
   items:
     - name: Overzicht
@@ -511,6 +579,10 @@
               href: ./spark/apache-spark-history-server.md
             - name: Spark-toepassingen bewaken
               href: monitoring/apache-spark-applications.md
+            - name: Apache Spark-pools
+              href: monitoring/how-to-monitor-spark-pools.md
+            - name: JSON analyseren met behulp van Apache Spark
+              href: how-to-analyze-complex-schema.md
         - name: Gegevens opnemen en voorbereiden
           items:
             - name: SQL Data Warehouse
@@ -641,7 +713,7 @@
               href: ../data-factory/connector-azure-sql-database.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Azure SQL Managed Instance
               href: ../data-factory/connector-azure-sql-database-managed-instance.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
-            - name: Azure Synapse Analytics (voorheen Azure SQL Data Warehouse)
+            - name: Azure Synapse Analytics
               href: ../data-factory/connector-azure-sql-data-warehouse.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
             - name: Azure-tabelopslag
               href: ../data-factory/connector-azure-table-storage.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
@@ -1003,15 +1075,23 @@
         - name: Gegevens visualiseren met Apache Spark
           href: ./spark/apache-spark-data-visualization-tutorial.md
           displayname: machine learning
-        - name: Wizard om modellen te beoordelen voor SQL-pools
+        - name: Wizard voor scoren gebruiken voor toegewezen SQL-pools
           href: machine-learning/tutorial-sql-pool-model-scoring-wizard.md
           displayname: machine learning
-        - name: Een regressie-experiment uitvoeren met Azure AutoML
+        - name: Een codevrij model trainen met Azure AutoML
+          href: ./machine-learning/tutorial-automl.md
+        - name: Een model in Python trainen met Azure AutoML
           href: ./spark/apache-spark-azure-machine-learning-tutorial.md
           displayname: machine learning
-        - name: Een machine learning-model maken met Apache Spark MLlib
+        - name: Een model maken met Apache Spark MLlib
           href: ./spark/apache-spark-machine-learning-mllib-notebook.md
           displayname: machine learning
+        - name: Sentimentanalyse met Cognitive Services
+          href: ./machine-learning/tutorial-cognitive-services-sentiment.md
+        - name: Anomaliedetectie met Cognitive Services
+          href: ./machine-learning/tutorial-cognitive-services-anomaly.md
+        - name: Cognitive Services voor Azure Synapse configureren
+          href: ./machine-learning/tutorial-configure-cognitive-services-synapse.md
 - name: Naslaginformatie
   items:
     - name: Azure CLI

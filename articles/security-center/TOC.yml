@@ -151,9 +151,9 @@
           href: security-center-network-recommendations.md
         - name: Identiteit en toegang beveiligen
           href: security-center-identity-access.md
-    - name: Azure Defender-waarschuwingen
+    - name: Meer informatie over beveiligingswaarschuwingen
       items:
-        - name: Overzicht van Azure Defender-waarschuwingen
+        - name: Overzicht van beveiligingswaarschuwingen
           href: security-center-alerts-overview.md
         - name: Verwijzingenlijst met waarschuwingen
           href: alerts-reference.md
@@ -244,7 +244,7 @@
           href: continuous-export.md
         - name: Een CSV-rapport van alle waarschuwingen downloaden
           href: continuous-export.md#manual-one-time-export-of-alerts-and-recommendations
-    - name: Azure Defender-waarschuwingen verwerken
+    - name: Beveiligingswaarschuwingen verwerken
       items:
         - name: Beveiligingswaarschuwingen beheren
           href: security-center-managing-and-responding-alerts.md

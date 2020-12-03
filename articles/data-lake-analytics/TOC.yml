@@ -68,7 +68,7 @@
             - name: Basisbeginselen
               href: data-lake-analytics-u-sql-get-started.md
             - name: Taalverwijzing
-              href: /u-sql/
+              href: 'https://docs.microsoft.com/u-sql'
             - name: Catalogus
               href: data-lake-analytics-u-sql-catalog.md
             - name: Door de gebruiker gedefinieerde operators
@@ -79,8 +79,6 @@
               href: data-lake-analytics-u-sql-r-extensions.md
             - name: Cognitieve extensies
               href: data-lake-analytics-u-sql-cognitive.md
-            - name: Handleiding voor programmeren
-              href: data-lake-analytics-u-sql-programmability-guide.md
         - name: Visual Studio
           items:
             - name: Installeren
@@ -115,6 +113,28 @@
               href: data-lake-analytics-u-sql-develop-with-python-r-csharp-in-vscode.md
             - name: Lokaal uitvoeren en fouten opsporen
               href: data-lake-tools-for-vscode-local-run-and-debug.md
+        - name: Handleiding voor programmeren
+          items:
+            - name: Overzicht van handleiding voor programmeren
+              href: data-lake-analytics-u-sql-programmability-guide.md
+            - name: Handleiding voor programmeren - UDT en UDAGG
+              href: data-lake-analytics-u-sql-programmability-guide-UDT-AGG.md
+            - name: Handleiding voor programmeren - UDO
+              items:
+                - name: Overzicht van door de gebruiker gedefinieerde objecten
+                  href: data-lake-analytics-u-sql-programmability-guide-UDO.md
+                - name: Door de gebruiker gedefinieerde extractor gebruiken
+                  href: data-lake-analytics-u-sql-programmability-guide-extractor.md
+                - name: Door de gebruiker gedefinieerde uitvoerder gebruiken
+                  href: data-lake-analytics-u-sql-programmability-guide-outputter.md
+                - name: Door de gebruiker gedefinieerde processor gebruiken
+                  href: data-lake-analytics-u-sql-programmability-guide-processor.md
+                - name: Door de gebruiker gedefinieerde toepassing gebruiken
+                  href: data-lake-analytics-u-sql-programmability-guide-applier.md
+                - name: Door de gebruiker gedefinieerde combineerder gebruiken
+                  href: data-lake-analytics-u-sql-programmability-guide-combiner.md
+                - name: Door de gebruiker gedefinieerde reduceerder gebruiken
+                  href: data-lake-analytics-u-sql-programmability-guide-reducer.md
     - name: U-SQL-taken plannen
       items:
         - name: Taken plannen met behulp van SSIS

@@ -106,6 +106,8 @@
       href: azure-advisor.md
     - name: Aanbevelingen oplossen
       href: azure-advisor-recommendations.md
+    - name: Azure Monitor voor Windows Virtual Desktop
+      href: azure-monitor.md
     - name: Een plan voor herstel na noodgevallen opzetten
       href: disaster-recovery.md
 - name: Concepten
@@ -150,6 +152,8 @@
           href: app-attach-glossary.md
         - name: Veelgestelde vragen
           href: app-attach-faq.md
+    - name: Azure Monitor-woordenlijst
+      href: azure-monitor-glossary.md
     - name: Gegevenslocaties
       href: data-locations.md
 - name: Problemen oplossen
@@ -170,6 +174,8 @@
       href: troubleshoot-powershell.md
     - name: Prestatieproblemen van afbeeldingen vaststellen
       href: remotefx-graphics-performance-counters.md
+    - name: Azure Monitor
+      href: troubleshoot-azure-monitor.md
 - name: Naslaginformatie
   items:
     - name: Aanbevolen procedures voor beveiliging

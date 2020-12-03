@@ -39,6 +39,8 @@
       href: restart-resize-error-troubleshooting.md
     - name: 'Services opnieuw starten, afsluiten of stoppen'
       href: boot-error-troubleshoot-windows.md
+    - name: Problemen met een volledige OS-schijf in een virtuele Linux-machine
+      href: os-disk-full-linux.md
 - name: Onverwacht opnieuw opstarten
   items:
     - name: Onverwacht opnieuw opstarten van VM's met gekoppelde VHD's

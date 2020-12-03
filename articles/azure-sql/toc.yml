@@ -617,7 +617,7 @@
                           items:
                             - name: Met SQL Database
                               href: database/saas-tenancy-tenant-analytics.md
-                            - name: Met Azure Synapse Analytics (voorheen SQL Data Warehouse)
+                            - name: Met Azure Synapse Analytics
                               href: database/saas-tenancy-tenant-analytics-adf.md
                     - name: Herstel na noodgevallen met geo-herstel
                       href: database/saas-dbpertenant-dr-geo-restore.md

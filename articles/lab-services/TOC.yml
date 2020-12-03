@@ -4,7 +4,7 @@
   items:
     - name: Over Lab-Services
       href: lab-services-overview.md
-- name: Snelstartgidsen
+- name: Quickstarts
   items:
     - name: Aan de slag
       href: get-started-manage-labs.md
@@ -20,11 +20,11 @@
       href: tutorial-track-usage.md
 - name: Concepten
   items:
-    - name: Overzicht van leslokaallabs
+    - name: Overzicht van labs
       href: classroom-labs-overview.md
-    - name: Concepten van leslokaallabs
+    - name: Labconcepten
       href: classroom-labs-concepts.md
-    - name: Basisbeginselen van de architectuur van leslokaallabs
+    - name: Basisbeginselen van labarchitectuur
       href: classroom-labs-fundamentals.md
     - name: Capaciteitslimieten
       href: capacity-limits.md
@@ -36,7 +36,7 @@
           href: classroom-labs-scenarios.md
         - name: Labservices gebruiken voor een hackathon
           href: hackathon-labs.md
-        - name: Leslokaallabs - klastypen
+        - name: labs - klassetypen
           items:
             - name: Overzicht van klastypen
               href: class-types.md
@@ -112,9 +112,9 @@
           href: lab-account-owner-support-information.md
         - name: Een aangepaste afbeelding uploaden naar Shared Image Gallery
           href: upload-custom-image-shared-image-gallery.md
-    - name: Leslokaallabs maken en configureren (onderwijzer)
+    - name: Labs maken en configureren (onderwijzer)
       items:
-        - name: Leslokaallabs maken en beheren
+        - name: Labs maken en beheren
           href: how-to-manage-classroom-labs.md
         - name: Dashboard gebruiken
           href: use-dashboard.md
@@ -150,9 +150,9 @@
           href: lab-creator-support-information.md
         - name: Toegang tot VM's van studenten vanuit de onderwijzerweergave
           href: instructor-access-virtual-machines.md
-    - name: Verbinding maken met VM's in leslokaallabs (student)
+    - name: Verbinding maken met VM's in labs (student)
       items:
-        - name: Leslokaallabs openen
+        - name: Toegang tot labs
           href: how-to-use-classroom-lab.md
         - name: Verbinding maken met virtuele Linux-machines
           href: how-to-use-remote-desktop-linux-student.md

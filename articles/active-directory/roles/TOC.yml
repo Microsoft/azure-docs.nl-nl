@@ -2,8 +2,10 @@
   href: index.yml
 - name: Overzicht
   items:
-    - name: Azure AD-rollen
+    - name: Wat is Azure AD RBAC?
       href: custom-overview.md
+    - name: Inzicht in de Azure AD-rollen
+      href: concept-understand-roles.md
 - name: Snelstartgidsen
   items:
     - name: Onbeperkte app-registraties maken
@@ -50,8 +52,6 @@
     - name: Aangepaste rollen
       expanded: true
       items:
-        - name: Overzicht van aangepaste rollen
-          href: custom-overview.md
         - name: Een aangepaste rol maken
           href: custom-create.md
         - name: Aangepaste roltoewijzingen weergeven

@@ -1,12 +1,12 @@
-- name: Azure Synapse (voorheen SQL DW)
-  href: index.yml
-- name: Overschakelen naar Azure Synapse (voorbeeld van werkruimte)
+- name: Toegewezen SQL-pool (voorheen SQL DW)
+  href: sql-data-warehouse-overview-what-is.md
+- name: Overschakelen naar Azure Synapse
   href: ../overview-what-is.md
 - name: Overzicht
   items:
-    - name: Wat is Azure Synapse Analytics?
+    - name: Wat is een toegewezen SQL-pool?
       href: sql-data-warehouse-overview-what-is.md
-    - name: Architectuur van Azure Synapse Analytics
+    - name: Architectuur van toegewezen SQL-pool
       href: massively-parallel-processing-mpp-architecture.md
     - name: Datawarehouse-eenheden
       href: what-is-a-data-warehouse-unit-dwu-cdwu.md
@@ -74,6 +74,12 @@
           href: pause-and-resume-compute-powershell.md
 - name: Concepten
   items:
+    - name: Ervaring voor Synapse-werkruimte
+      items:
+        - name: Overzicht
+          href: workspace-connected-experience.md
+        - name: Ondersteunde regio’s
+          href: workspace-connected-regions.md
     - name: Beveiliging
       items:
         - name: Overzicht
@@ -272,6 +278,10 @@
           href: sql-data-warehouse-overview-integrate.md
 - name: Instructiegidsen
   items:
+    - name: Ervaring voor Synapse-werkruimte
+      items:
+        - name: Een Synapse-werkruimte maken
+          href: workspace-connected-create.md
     - name: Beveiligen
       items:
         - name: Azure AD-verificatie configureren
@@ -384,9 +394,9 @@
       items:
         - name: Volledige naslaginformatie
           href: /sql/t-sql/language-reference?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest
-        - name: TSQL-taalelementen van Azure Synapse Analytics
+        - name: Taalelementen T-SQL
           href: sql-data-warehouse-reference-tsql-language-elements.md
-        - name: TSQL-instructies van Azure Synapse Analytics
+        - name: Overzichten T-SQL
           href: sql-data-warehouse-reference-tsql-statements.md
     - name: Systeemweergaven
       href: sql-data-warehouse-reference-tsql-system-views.md
@@ -394,6 +404,9 @@
       href: sql-data-warehouse-reference-powershell-cmdlets.md
     - name: REST-API’s
       href: sql-data-warehouse-manage-compute-rest-api.md
+    - name: Ingebouwde modules voor Azure Policy
+      displayName: 'samples, policies, definitions'
+      href: ../policy-reference.md
 - name: Resources
   items:
     - name: Azure-roadmap

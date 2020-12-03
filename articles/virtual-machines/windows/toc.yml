@@ -51,98 +51,6 @@
       href: tutorial-iis-sql.md
     - name: 16 - Webserver beveiligen met SSL
       href: tutorial-secure-web-server.md
-- name: Voorbeelden
-  items:
-    - name: Index van PowerShell
-      href: powershell-samples.md
-    - name: PowerShell
-      items:
-        - name: Maken
-          items:
-            - name: Snel
-              href: ./../scripts/virtual-machines-windows-powershell-sample-create-vm-quick.md
-            - name: Volledig geconfigureerde VM
-              href: ./../scripts/virtual-machines-windows-powershell-sample-create-vm.md
-            - name: Virtuele machine met hoge beschikbaarheid
-              href: ./../scripts/virtual-machines-windows-powershell-sample-create-nlb-vm.md
-            - name: Voorbeeld van aangepast script
-              href: ./../scripts/virtual-machines-windows-powershell-sample-create-vm-iis.md
-            - name: DSC gebruiken
-              href: ./../scripts/virtual-machines-windows-powershell-sample-create-iis-using-dsc.md
-            - name: VM vanaf VHD uploaden
-              href: ./../scripts/virtual-machines-windows-powershell-upload-generalized-script.md
-            - name: Een besturingssysteemschijf koppelen
-              href: ./../scripts/virtual-machines-powershell-sample-create-vm-from-managed-os-disks.md
-            - name: VM vanaf momentopname
-              href: ./../scripts/virtual-machines-windows-powershell-sample-create-vm-from-snapshot.md
-        - name: Opslag beheren
-          items:
-            - name: Een beheerde schijf maken op basis van een VHD
-              href: ../scripts/virtual-machines-powershell-sample-create-managed-disk-from-vhd.md
-            - name: Een beheerde schijf maken op basis van een momentopname
-              href: ../scripts/virtual-machines-powershell-sample-create-managed-disk-from-snapshot.md
-            - name: Een beheerde schijf kopiëren
-              href: ../scripts/virtual-machines-powershell-sample-copy-managed-disks-to-same-or-different-subscription.md
-            - name: Een momentopname als VHD exporteren naar een opslagaccount
-              href: ../scripts/virtual-machines-powershell-sample-copy-snapshot-to-storage-account.md
-            - name: De VHD van een beheerde schijf exporteren naar een opslagaccount
-              href: ../scripts/virtual-machines-powershell-sample-copy-managed-disks-vhd.md
-            - name: Een momentopname maken van een VHD
-              href: ../scripts/virtual-machines-powershell-sample-create-snapshot-from-vhd.md
-            - name: Een momentopname kopiëren
-              href: ../scripts/virtual-machines-powershell-sample-copy-snapshot-to-same-or-different-subscription.md
-        - name: Beveiligen
-          items:
-            - name: Een virtuele machine en de bijbehorende gegevensschijven versleutelen
-              href: ./../scripts/virtual-machines-windows-powershell-sample-encrypt-vm.md?
-        - name: Controleren
-          items:
-            - name: Azure Monitor
-              href: ./../scripts/virtual-machines-windows-powershell-sample-create-vm-oms.md
-            - name: Details verzamelen over alle virtuele machines in een abonnement
-              href: ../scripts/virtual-machines-powershell-sample-collect-vm-details.md
-    - name: Azure CLI-index
-      href: cli-samples.md
-    - name: CLI
-      items:
-        - name: Maken
-          items:
-            - name: Snel
-              href: ./../scripts/virtual-machines-windows-cli-sample-create-vm-quick-create.md
-            - name: Volledig geconfigureerde VM
-              href: ./../scripts/virtual-machines-windows-cli-sample-create-vm.md
-            - name: Virtuele machine met hoge beschikbaarheid
-              href: ./../scripts/virtual-machines-windows-cli-sample-nlb.md
-            - name: Voorbeeld van aangepast script
-              href: ./../scripts/virtual-machines-windows-cli-sample-create-vm-iis.md
-            - name: DSC-configuratie gebruiken
-              href: ./../scripts/virtual-machines-windows-cli-sample-create-iis-using-dsc.md
-        - name: Opslag beheren
-          items:
-            - name: Een beheerde schijf maken op basis van een VHD
-              href: ../scripts/virtual-machines-cli-sample-create-managed-disk-from-vhd.md
-            - name: Een beheerde schijf maken op basis van een momentopname
-              href: ../scripts/virtual-machines-cli-sample-create-managed-disk-from-snapshot.md
-            - name: Een beheerde schijf kopiëren
-              href: ../scripts/virtual-machines-cli-sample-copy-managed-disks-to-same-or-different-subscription.md
-            - name: Een momentopname als VHD exporteren naar een opslagaccount
-              href: ../scripts/virtual-machines-cli-sample-copy-snapshot-to-storage-account.md
-            - name: De VHD van een beheerde schijf exporteren naar een opslagaccount
-              href: ../scripts/virtual-machines-cli-sample-copy-managed-disks-vhd.md
-            - name: Momentopname kopiëren
-              href: ../scripts/virtual-machines-cli-sample-copy-snapshot-to-same-or-different-subscription.md
-        - name: Netwerk
-          items:
-            - name: Netwerkverkeer tussen virtuele machines beveiligen
-              href: ./../scripts/virtual-machines-windows-cli-sample-create-vm-nsg.md
-        - name: Beveiligen
-          items:
-            - name: Een virtuele machine en de bijbehorende gegevensschijven versleutelen
-              href: ./../scripts/virtual-machines-windows-cli-sample-encrypt-vm.md
-        - name: Controleren
-          items:
-            - name: Azure Monitor
-              href: ./../scripts/virtual-machines-windows-cli-sample-create-vm-oms.md
 - name: Concepten
   items:
     - name: Installatiekopieën
@@ -672,9 +580,6 @@
           href: change-drive-letter.md
         - name: Een beschikbaarheidsset wijzigen
           href: change-availability-set.md
-        - name: Een ARM-sjabloon exporteren
-          displayName: Azure Resource Manager
-          href: download-template.md
         - name: Azure VM-agent
           href: ../extensions/agent-windows.md
         - name: Speculatieve uitvoering beperken
@@ -951,6 +856,8 @@
           href: find-unattached-disks.md
         - name: Niet-gekoppelde schijven zoeken - Portal
           href: ../disks-find-unattached-portal.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+        - name: Azure Disks toewijzen aan gastschijven
+          href: azure-to-guest-disk-mapping.md
         - name: Veelgestelde vragen over schijven
           href: ../faq-for-disks.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
     - name: Netwerken beheren

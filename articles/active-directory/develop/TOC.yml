@@ -1,30 +1,26 @@
 - name: Documentatie voor Microsoft Identity Platform
   href: index.yml
 - name: Overzicht
+  expanded: true
   items:
     - name: Wat is het Microsoft Identity Platform?
       href: v2-overview.md
     - name: Wat is er nieuw in Docs?
       href: whats-new-docs.md
 - name: Snelstartgidsen
-  expanded: true
   items:
-    - name: Een tenant instellen
-      href: quickstart-create-new-tenant.md
-    - name: Een toepassing configureren
+    - name: Voorbereiden op ontwikkeling
       items:
-        - name: Een app registreren
+        - name: Een Azure AD-tenant verkrijgen
+          href: quickstart-create-new-tenant.md
+        - name: App of web-API registreren
           href: quickstart-register-app.md
-        - name: App configureren om een web-API weer te geven
+        - name: Bereiken beschikbaar maken in web-API-registratie
           href: quickstart-configure-app-expose-web-apis.md
-        - name: App configureren om een web-API te openen
+        - name: Bereikmachtigingen verlenen aan web-API
+          displayName: 'permissions, scp, scp claims'
           href: quickstart-configure-app-access-web-apis.md
-        - name: Accounts aanpassen die door een app worden ondersteund
-          href: quickstart-modify-supported-accounts.md
-        - name: Een app verwijderen
-          href: quickstart-remove-app.md
-    - name: Toepassingen met één pagina
-      displayName: SPA
+    - name: App met één pagina (SPA)
       items:
         - name: Angular
           href: quickstart-v2-angular.md
@@ -32,7 +28,7 @@
           href: quickstart-v2-javascript-auth-code.md
         - name: JavaScript - Impliciete stroom
           href: quickstart-v2-javascript.md
-    - name: Web-apps
+    - name: Web-app
       items:
         - name: ASP.NET
           href: quickstart-v2-aspnet-webapp.md
@@ -41,19 +37,18 @@
         - name: Node.js - MSAL | Preview
           href: quickstart-v2-nodejs-webapp-msal.md
         - name: Node.js - Passport.js
-          href: quickstart-v2-nodejs-webapp.md
           displayName: OIDC
         - name: Java
           href: quickstart-v2-java-webapp.md
         - name: Python
           href: quickstart-v2-python-webapp.md
-    - name: Web-API's
+    - name: Web-API
       items:
         - name: ASP.NET
           href: quickstart-v2-dotnet-native-aspnet.md
         - name: ASP.NET Core
           href: quickstart-v2-aspnet-core-web-api.md
-    - name: Mobiele apps en desktop-apps
+    - name: Mobiel en desktop
       items:
         - name: Android
           href: quickstart-v2-android.md
@@ -64,7 +59,7 @@
           href: quickstart-v2-uwp.md
         - name: .NET voor Windows Desktop
           href: quickstart-v2-windows-desktop.md
-    - name: Daemon-apps
+    - name: Daemon- of back-end-service
       items:
         - name: .NET Core-console (daemon)
           href: quickstart-v2-netcore-daemon.md
@@ -72,8 +67,7 @@
           href: quickstart-v2-python-daemon.md
 - name: Zelfstudies
   items:
-    - name: Toepassingen met één pagina
-      displayName: SPA
+    - name: App met één pagina (SPA)
       items:
         - name: Angular
           href: tutorial-v2-angular.md
@@ -83,13 +77,13 @@
           href: tutorial-v2-javascript-auth-code.md
         - name: JavaScript - Impliciete stroom
           href: tutorial-v2-javascript-spa.md
-    - name: Web-apps
+    - name: Web-app
       items:
         - name: ASP.NET
           href: tutorial-v2-asp-webapp.md
         - name: Blazor Server
           href: tutorial-blazor-server.md
-    - name: Mobiele apps en desktop-apps
+    - name: Mobiel en desktop
       items:
         - name: Android
           href: tutorial-v2-android.md
@@ -102,7 +96,7 @@
           href: tutorial-v2-windows-desktop.md
         - name: Modus voor gedeeld apparaat gebruiken in uw Android-app
           href: tutorial-v2-shared-device-mode.md
-    - name: Daemon-apps
+    - name: Daemon- of back-end-service
       items:
         - name: Webtoepassing met ASP.NET-daemon
           href: tutorial-v2-aspnet-daemon-web-app.md
@@ -120,21 +114,37 @@
           href: security-tokens.md
         - name: Toepassingsmodel
           href: application-model.md
-        - name: Aanmeldingsstroom voor apps
-          href: app-sign-in-flow.md
-    - name: Verificatiestromen en app-scenario's
+    - name: Verificatiebibliotheken
+      displayName: 'msal, microsoft.identity.web'
+      items:
+        - name: Microsoft Authentication Library (MSAL)
+          href: msal-overview.md
+        - name: Microsoft Identity Web-bibliotheek
+          href: microsoft-identity-web.md
+          displayName: 'auth, library, .NET Core, msal'
+    - name: App-scenario's en verificatiestromen
       displayName: Auth flows
       href: authentication-flows-app-scenarios.md
+    - name: Toepassingen en service-principals
+      href: app-objects-and-service-principals.md
     - name: Best practices voor identiteitsplatform
       href: identity-platform-integration-checklist.md
-    - name: Mobiele SSO (eenmalige aanmelding)
-      href: mobile-sso-support-overview.md
-      displayName: 'android, ios'
-    - name: Toepassingsscenario's
+    - name: Machtigingen en toestemming
+      displayName: Scopes
+      href: v2-permissions-and-consent.md
+    - name: Voorwaardelijke toegang
+      href: v2-conditional-access-dev-guide.md
+    - name: Automatisch gebruikers inrichten (SCIM)
+      href: ../app-provisioning/user-provisioning.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+- name: Uitleg
+  items:
+    - name: Uw app-scenario integreren
       displayName: App scenarios
       items:
         - name: Aanmeldingsdoelgroep
           href: v2-supported-account-types.md
+        - name: Aanmeldingsstroom voor apps
+          href: app-sign-in-flow.md
         - name: App met één pagina
           displayName: SPA
           items:
@@ -267,11 +277,33 @@
               href: scenario-mobile-call-api.md
             - name: Verplaatsen naar productie
               href: scenario-mobile-production.md
-    - name: Microsoft Authentication Library (MSAL)
+    - name: Werken met de Microsoft Authentication Library
+      displayName: MSAL
       items:
-        - name: Overzicht
-          href: msal-overview.md
-        - name: .NET
+        - Name: Alle platforms
+          items:
+            - name: Ondersteunde verificatiestromen
+              href: msal-authentication-flows.md
+            - name: Tokens verkrijgen en in cache opslaan
+              href: msal-acquire-cache-tokens.md
+            - name: Openbare en vertrouwelijke client-apps
+              href: msal-client-applications.md
+            - name: Toepassingsconfiguratie
+              href: msal-client-application-configuration.md
+            - name: Gedeelde apparaten
+              href: msal-shared-devices.md
+              displayName: 'shared device mode, firstline worker, frontline worker, flw'
+            - name: SameSite-cookiewijzigingen in Chrome-browser verwerken
+              href: howto-handle-samesite-cookie-changes-chrome-browser.md
+            - name: Bereiken voor web-API die v1.0-tokens accepteert
+              href: msal-v1-app-scopes.md
+            - name: Apps migreren van ADAL naar MSAL
+              href: msal-migration.md
+              displayName: migration
+            - name: Nationale clouds en MSAL
+              href: msal-national-cloud.md
+              displayName: 'china, germany, gov, 21vianet'
+        - name: MSAL.NET
           displayName: 'xamarin, ASP.NET Core'
           items:
             - name: Toepassingen initialiseren
@@ -294,7 +326,103 @@
               href: msal-handling-exceptions.md?tabs=dotnet
             - name: Logboekregistratie
               href: msal-logging.md?tabs=dotnet
-        - name: Android
+            - name: Een token uit de cache ophalen
+              href: msal-net-acquire-token-silently.md
+            - name: Serialisatie van tokencache
+              href: msal-net-token-cache-serialization.md
+            - name: De tokencache wissen
+              href: msal-net-clear-token-cache.md
+            - name: Een exemplaar maken van een openbare client-app
+              href: msal-net-instantiate-public-client-config-options.md
+            - name: Een exemplaar maken van een vertrouwelijke client met opties
+              href: msal-net-instantiate-confidential-client-config-options.md
+            - name: Toestemming verkrijgen voor verschillende resources
+              href: msal-net-user-gets-consent-for-multiple-resources.md
+            - name: Uw eigen HttpClient gebruiken
+              href: msal-net-provide-httpclient.md
+        - name: MSAL.js (JavaScript en Node.js)
+          items:
+            - name: Voorkomen dat pagina's opnieuw worden geladen
+              href: msal-js-avoid-page-reloads.md
+            - name: De aangepaste status in verificatieaanvragen doorgeven
+              href: msal-js-pass-custom-state-authentication-request.md
+            - name: Promptgedrag
+              href: msal-js-prompt-behavior.md
+            - name: SPA migreren van impliciet naar auth code-stroom
+              href: migrate-spa-implicit-to-auth-code.md
+              displayName: 'authorization, single-page app, 2.0'
+            - name: Toepassingen initialiseren - JavaScript
+              href: msal-js-initializing-client-applications.md
+            - name: Integreren met Azure AD B2C
+              href: msal-b2c-overview.md
+            - name: Migreren naar MSAL.js
+              href: msal-compare-msal-js-and-adal-js.md
+            - name: Eenmalige aanmelding met MSAL.js
+              href: msal-js-sso.md
+            - name: Overwegingen - IE
+              href: msal-js-use-ie-browser.md
+            - name: Bekende problemen - IE en Microsoft Edge
+              href: msal-js-known-issues-ie-edge-browsers.md
+            - name: Fouten en uitzonderingen verwerken
+              href: msal-handling-exceptions.md?tabs=javascript
+            - name: Logboekregistratie
+              href: msal-logging.md?tabs=javascript
+        - name: MSAL voor iOS en macOS
+          items:
+            - name: Verschillen tussen MSAL voor iOS en macOS
+              href: msal-differences-ios-macos.md
+            - name: Sleutelketen configureren
+              href: howto-v2-keychain-objc.md
+            - name: Browsers en WebView aanpassen
+              href: customize-webviews.md
+            - name: Aangepaste claims aanvragen
+              href: request-custom-claims.md
+            - name: URI-configuratie omleiden
+              href: redirect-uris-ios.md
+            - name: Integreren met Azure AD B2C
+              href: config-authority.md#b2c
+            - name: Migreren naar MSAL.iOS/macOS
+              href: migrate-objc-adal-msal.md
+            - name: Modus voor gedeeld apparaat voor iOS-apparaten
+              href: msal-ios-shared-devices.md
+              displayName: 'firstline worker, frontline worker, flw'
+            - name: SSO tussen MSAL-apps
+              href: single-sign-on-macos-ios.md
+            - name: SSO tussen ADAL- en MSAL-apps
+              href: sso-between-adal-msal-apps-macos-ios.md
+            - name: Problemen met SSL oplossen (MSAL iOS/macOS)
+              href: ssl-issues.md
+            - name: Fouten en uitzonderingen verwerken
+              href: msal-handling-exceptions.md?tabs=iosmacos
+            - name: Logboekregistratie
+              href: msal-logging.md?tabs=swift
+        - name: MSAL voor Python
+          items:
+            - name: Serialisatie van aangepaste tokencache
+              href: msal-python-token-cache-serialization.md
+            - name: Migreren naar MSAL Python
+              href: migrate-python-adal-msal.md
+            - name: ADFS-ondersteuning in MSAL voor Python
+              href: msal-python-adfs-support.md
+            - name: Fouten en uitzonderingen verwerken
+              href: msal-handling-exceptions.md?tabs=python
+            - name: Logboekregistratie
+              href: msal-logging.md?tabs=python
+        - name: MSAL voor Java
+          items:
+            - name: Serialisatie van aangepaste tokencache
+              href: msal-java-token-cache-serialization.md
+            - name: Accounts ophalen aan en verwijderen uit de tokencache
+              href: msal-java-get-remove-accounts-token-cache.md
+            - name: Migreren naar MSAL voor Java
+              href: migrate-adal-msal-java.md
+            - name: ADFS-ondersteuning in MSAL voor Java
+              href: msal-java-adfs-support.md
+            - name: Fouten en uitzonderingen verwerken
+              href: msal-handling-exceptions.md?tabs=java
+            - name: Logboekregistratie
+              href: msal-logging.md?tabs=java
+        - name: MSAL voor Android
           items:
             - name: Accounts en tenantprofielen
               href: accounts-overview.md
@@ -314,92 +442,107 @@
               displayName: 'android, mobile'
             - name: Logboekregistratie
               href: msal-logging.md?tabs=android
-        - name: iOS en macOS
+    - name: Tokens en claims aanpassen
+      items:
+        - name: Rolclaim configureren
+          href: active-directory-enterprise-app-role-management.md
+        - name: Claims aanpassen met behulp van Azure Portal
+          href: active-directory-saml-claims-customization.md
+        - name: Claims aanpassen met behulp van PowerShell
+          href: active-directory-claims-mapping.md
+        - name: Optionele claims configureren
+          href: active-directory-optional-claims.md
+        - name: Kenmerken van directory-schema-extensies gebruiken in claims
+          href: active-directory-schema-extensions.md
+        - name: Levensduur van tokens configureren
+          href: configure-token-lifetimes.md
+        - name: API's voor continue toegangsevaluatie gebruiken
+          href: app-resilience-continuous-access-evaluation.md
+          displayName: cae
+    - name: Browsercookiebeperkingen verwerken
+      items:
+        - name: ITP in Safari verwerken
+          href: reference-third-party-cookies-spas.md
+        - name: SameSite-cookiewijzigingen in Chrome verwerken
+          href: howto-handle-samesite-cookie-changes-chrome-browser.md
+    - name: Apps en services verifiëren
+      items:
+        - name: Een service-principal maken met Azure PowerShell
+          href: howto-authenticate-service-principal-powershell.md
+        - name: Een service-principal maken met Azure Portal
+          href: howto-create-service-principal-portal.md
+    - name: Aanmeldingen van meerdere tenants accepteren
+      items:
+        - name: Accounts aanpassen die door een app worden ondersteund
+          href: quickstart-modify-supported-accounts.md
+        - name: Aanmelden met meerdere tenants inschakelen
+          href: howto-convert-app-to-be-multi-tenant.md
+        - name: Het uitgeversdomein bijwerken
+          displayName: 'verified domain, verified publisher domain'
+          href: howto-configure-publisher-domain.md
+    - name: Toegang tot apps en resources toestaan
+      items:
+        - name: Uw app tot een groep gebruikers beperken
+          href: howto-restrict-your-app-to-a-set-of-users.md
+        - name: App-rollen toevoegen aan uw toepassing
+          href: howto-add-app-roles-in-azure-ad-apps.md
+    - name: De Microsoft Graph API gebruiken
+      href: microsoft-graph-intro.md
+    - name: Een app op de markt brengen
+      items:
+        - name: Huisstijlrichtlijnen volgen
+          displayName: Add branding
+          href: howto-add-branding-in-azure-ad-apps.md
+        - name: Servicevoorwaarden en privacyverklaring configureren
+          href: howto-add-terms-of-service-privacy-statement.md
+        - name: Verificatie van uitgever configureren voor uw app
           items:
-            - name: Integreren met Azure AD B2C
-              href: config-authority.md#b2c
-            - name: Migreren naar MSAL.iOS/macOS
-              href: migrate-objc-adal-msal.md
-            - name: Modus voor gedeeld apparaat voor iOS-apparaten
-              href: msal-ios-shared-devices.md
-              displayName: 'firstline worker, frontline worker, flw'
-            - name: SSO tussen MSAL-apps
-              href: single-sign-on-macos-ios.md
-            - name: SSO tussen ADAL- en MSAL-apps
-              href: sso-between-adal-msal-apps-macos-ios.md
-            - name: Problemen met SSL oplossen (MSAL iOS/macOS)
-              href: ssl-issues.md
-            - name: Fouten en uitzonderingen verwerken
-              href: msal-handling-exceptions.md?tabs=iosmacos
-            - name: Logboekregistratie
-              href: msal-logging.md?tabs=swift
-        - name: Java
-          items:
-            - name: Migreren naar MSAL voor Java
-              href: migrate-adal-msal-java.md
-            - name: ADFS-ondersteuning in MSAL voor Java
-              href: msal-java-adfs-support.md
-            - name: Fouten en uitzonderingen verwerken
-              href: msal-handling-exceptions.md?tabs=java
-            - name: Logboekregistratie
-              href: msal-logging.md?tabs=java
-        - name: JavaScript en Node.js
-          items:
-            - name: Toepassingen initialiseren - JavaScript
-              href: msal-js-initializing-client-applications.md
-            - name: Integreren met Azure AD B2C
-              href: msal-b2c-overview.md
-            - name: Migreren naar MSAL.js
-              href: msal-compare-msal-js-and-adal-js.md
-            - name: Eenmalige aanmelding met MSAL.js
-              href: msal-js-sso.md
-            - name: Overwegingen - IE
-              href: msal-js-use-ie-browser.md
-            - name: Bekende problemen - IE en Microsoft Edge
-              href: msal-js-known-issues-ie-edge-browsers.md
-            - name: Fouten en uitzonderingen verwerken
-              href: msal-handling-exceptions.md?tabs=javascript
-            - name: Logboekregistratie
-              href: msal-logging.md?tabs=javascript
-        - name: Python
-          items:
-            - name: Migreren naar MSAL Python
-              href: migrate-python-adal-msal.md
-            - name: ADFS-ondersteuning in MSAL voor Python
-              href: msal-python-adfs-support.md
-            - name: Fouten en uitzonderingen verwerken
-              href: msal-handling-exceptions.md?tabs=python
-            - name: Logboekregistratie
-              href: msal-logging.md?tabs=python
-        - Name: Alle platforms
-          items:
-            - name: Ondersteunde verificatiestromen
-              href: msal-authentication-flows.md
-            - name: Tokens verkrijgen en in cache opslaan
-              href: msal-acquire-cache-tokens.md
-            - name: Openbare en vertrouwelijke client-apps
-              href: msal-client-applications.md
-            - name: Toepassingsconfiguratie
-              href: msal-client-application-configuration.md
-            - name: Gedeelde apparaten
-              href: msal-shared-devices.md
-              displayName: 'shared device mode, firstline worker, frontline worker, flw'
-            - name: SameSite-cookiewijzigingen in Chrome-browser verwerken
-              href: howto-handle-samesite-cookie-changes-chrome-browser.md
-            - name: Bereiken voor web-API die v1.0-tokens accepteert
-              href: msal-v1-app-scopes.md
-            - name: Apps migreren van ADAL naar MSAL
-              href: msal-migration.md
-              displayName: migration
-    - name: Microsoft Identity Web-bibliotheek
-      href: microsoft-identity-web.md
-      displayName: 'auth, library, .NET Core'
+            - name: Uw app markeren als Uitgever geverifieerd
+              href: mark-app-as-publisher-verified.md
+            - name: Problemen met Verificatie van uitgever oplossen
+              href: troubleshoot-publisher-verification.md
+        - name: Publiceren naar een app-bron
+          href: v2-howto-get-appsource-certified.md
+        - name: Publiceren naar de Azure AD-app-galerie
+          href: v2-howto-app-gallery-listing.md
+        - name: Publiceren naar het Office 365-verkopersdashboard
+          href: /office/dev/store/use-the-seller-dashboard-to-submit-to-the-office-store
+    - name: Werken met Visual Studio
+      items:
+        - name: De verbonden Active Directory-service gebruiken
+          href: vs-active-directory-add-connected-service.md
+        - name: Aan de slag met .NET MVC-projecten
+          href: vs-active-directory-dotnet-getting-started.md
+        - name: Wat is er gebeurd met mijn .NET MVC-project?
+          href: vs-active-directory-dotnet-what-happened.md
+        - name: Aan de slag met WebAPI-projecten
+          href: vs-active-directory-webapi-getting-started.md
+        - name: Wat is er gebeurd met mijn WebAPI-project?
+          href: vs-active-directory-webapi-what-happened.md
+        - name: Fouten vaststellen tijdens verificatie
+          href: vs-active-directory-error.md
+    - name: Een app-registratie verwijderen
+      href: quickstart-remove-app.md
+- name: Naslaginformatie
+  items:
+    - name: Woordenlijst
+      href: developer-glossary.md
+    - name: Toepassingsconfiguratie
+      displayName: App configuration
+      items:
+        - name: Hoe en waarom apps worden toegevoegd aan Azure AD
+          href: active-directory-how-applications-are-added.md
+        - name: Beperkingen voor omleidings-URI en antwoord-URL
+          href: reply-url.md
+        - name: Validatieverschillen per ondersteunde accounttypen
+          href: supported-accounts-validation.md
+        - name: Apps met één tenant en apps met meerdere tenants
+          href: single-and-multi-tenant-apps.md
+        - name: Verificatie van uitgever
+          href: publisher-verification-overview.md
     - name: Verificatieprotocollen
       displayName: Auth protocol
       items:
-        - name: Toepassingstypen en OAuth 2.0
-          displayName: 'App types, OAuth'
-          href: v2-app-types.md
         - name: OAuth 2.0- en OpenID Connect-protocollen
           items:
             - name: OAuth 2.0- en OpenID Connect
@@ -445,27 +588,30 @@
               href: active-directory-saml-protocol-reference.md
             - name: SAML-tokens
               href: reference-saml-tokens.md
-    - name: Toepassingsconfiguratie
-      displayName: App configuration
-      items:
-        - name: Toepassingen en service-principals
-          displayName: 'Apps, service principals'
-          href: app-objects-and-service-principals.md
-        - name: Hoe en waarom apps worden toegevoegd aan Azure AD
-          href: active-directory-how-applications-are-added.md
-        - name: Beperkingen voor omleidings-URI en antwoord-URL
-          href: reply-url.md
-        - name: Validatieverschillen per ondersteunde accounttypen
-          href: supported-accounts-validation.md
-        - name: Apps met één tenant en apps met meerdere tenants
-          href: single-and-multi-tenant-apps.md
-        - name: Verificatie van uitgever
-          href: publisher-verification-overview.md
+    - name: Toepassingstypen en OAuth 2.0
+      displayName: 'App types, OAuth'
+      href: v2-app-types.md
+    - name: Manifest van de toepassing
+      href: reference-app-manifest.md
+      displayName: app manifest
+    - name: Android MSAL-configuratiebestand
+      href: msal-configuration.md
+    - name: Verificatiebibliotheken
+      displayName: 'MSAL, auth library, SDK'
+      href: reference-v2-libraries.md
+    - name: Identiteits- en toegangs-API's in Microsoft Graph
+      href: /graph/api/resources/azure-ad-overview
+    - name: Codes van verificatie- en autorisatiefouten
+      displayName: AADSTS
+      href: reference-aadsts-error-codes.md
+    - name: Wijzigingen die fouten veroorzaken
+      href: reference-breaking-changes.md
+    - name: Mobiele SSO (eenmalige aanmelding)
+      href: mobile-sso-support-overview.md
+      displayName: 'android, ios'
     - name: Machtigingen en toestemming
       displayName: Scopes
       items:
-        - name: Typen machtigingen en toestemmingen
-          href: v2-permissions-and-consent.md
         - name: Toestemmingsframework
           href: consent-framework.md
         - name: toestemming van de beheerder
@@ -473,24 +619,23 @@
         - name: Ervaringen met toepassingstoestemming
           displayName: App consent experiences
           href: application-consent-experience.md
-    - name: Voorwaardelijke toegang
-      href: v2-conditional-access-dev-guide.md
-    - name: Nationale clouds
-      items:
-        - name: Overzicht
-          href: authentication-national-cloud.md
-        - name: Verificatie
-          href: msal-national-cloud.md
+    - name: Nationale cloudverificatie-eindpunten
+      href: authentication-national-cloud.md
+      displayName: 'china, germany, gov, 21vianet'
     - name: Automatisch gebruikers inrichten (SCIM)
       items:
-        - name: Wat is automatische inrichting van gebruikers?
-          href: ../app-provisioning/user-provisioning.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
         - name: Een SCIM-eindpunt ontwikkelen en integreren
           href: ../app-provisioning/use-scim-to-provision-users-and-groups.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
         - name: Algemene scenario's voor inrichting
           href: ../app-provisioning/scim-graph-scenarios.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
         - name: Configuratie automatiseren met behulp van MS Graph
-          href: /graph/application-provisioning-configure-api?bc=%2fazure%2factive-directory%2fdevelop%2fbreadcrumb%2ftoc.json&toc=%2fazure%2factive-directory%2fdevelop%2ftoc.json
+          href: ../app-provisioning/application-provisioning-configure-api.md?toc=/azure/active-directory/develop/toc.json&bc=/azure/active-directory/develop/breadcrumb/toc.json
+- name: Resources
+  items:
+    - name: Video's
+      href: identity-videos.md
+    - name: Ontwikkelaarsblog van het Microsoft-identiteitsplatform
+      href: 'https://developer.microsoft.com/en-us/identity/blogs/'
     - name: Help-artikelen over de Azure-portal
       items:
         - name: Standaardlevensduur van tokens voor een zelf ontwikkelde toepassing
@@ -519,158 +664,6 @@
           href: active-directory-how-to-integrate.md
         - name: Eenmalige aanmelding voor een toepassing configureren
           href: registration-config-sso-how-to.md
-- name: Instructiegidsen
-  items:
-    - name: Verificatie
-      items:
-        - name: Rolclaim configureren
-          href: active-directory-enterprise-app-role-management.md
-        - name: Claims aanpassen - Portal
-          href: active-directory-saml-claims-customization.md
-        - name: Claims aanpassen - PowerShell
-          href: active-directory-claims-mapping.md
-        - name: Optionele claims configureren
-          href: active-directory-optional-claims.md
-        - name: Kenmerken van directory-schema-extensies gebruiken in claims
-          href: active-directory-schema-extensions.md
-        - name: Levensduur van tokens configureren
-          href: configure-token-lifetimes.md
-        - name: SameSite-cookiewijzigingen in Chrome-browser verwerken
-          href: howto-handle-samesite-cookie-changes-chrome-browser.md
-        - name: ITP in Safari verwerken
-          href: reference-third-party-cookies-spas.md
-        - name: API's voor continue toegangsevaluatie gebruiken
-          href: app-resilience-continuous-access-evaluation.md
-    - name: Toepassingsconfiguratie
-      displayName: App configuration
-      items:
-        - name: Van een app met één tenant een app met meerdere tenants maken
-          href: howto-convert-app-to-be-multi-tenant.md
-        - name: Een service-principal maken
-          items:
-            - name: Azure PowerShell gebruiken
-              href: howto-authenticate-service-principal-powershell.md
-            - name: Azure Portal gebruiken
-              href: howto-create-service-principal-portal.md
-        - name: Uw app tot een groep gebruikers beperken
-          href: howto-restrict-your-app-to-a-set-of-users.md
-        - name: App-rollen toevoegen aan uw toepassing
-          href: howto-add-app-roles-in-azure-ad-apps.md
-        - name: Huisstijlrichtlijnen volgen
-          displayName: Add branding
-          href: howto-add-branding-in-azure-ad-apps.md
-        - name: Uitgeversdomein bijwerken
-          href: howto-configure-publisher-domain.md
-          displayName: 'verified domain, verified publisher domain'
-        - name: Servicevoorwaarden en privacyverklaring configureren
-          href: howto-add-terms-of-service-privacy-statement.md
-        - name: Verificatie van uitgever configureren voor uw app
-          items:
-            - name: Uw app markeren als Uitgever geverifieerd
-              href: mark-app-as-publisher-verified.md
-            - name: Problemen met Verificatie van uitgever oplossen
-              href: troubleshoot-publisher-verification.md
-    - name: Werken met de Microsoft Authentication Library
-      displayName: MSAL
-      items:
-        - name: MSAL.NET
-          items:
-            - name: Een token uit de cache ophalen
-              href: msal-net-acquire-token-silently.md
-            - name: Serialisatie van tokencache
-              href: msal-net-token-cache-serialization.md
-            - name: De tokencache wissen
-              href: msal-net-clear-token-cache.md
-            - name: Een exemplaar maken van een openbare client-app
-              href: msal-net-instantiate-public-client-config-options.md
-            - name: Een exemplaar maken van een vertrouwelijke client met opties
-              href: msal-net-instantiate-confidential-client-config-options.md
-            - name: Toestemming verkrijgen voor verschillende resources
-              href: msal-net-user-gets-consent-for-multiple-resources.md
-            - name: Uw eigen HttpClient gebruiken
-              href: msal-net-provide-httpclient.md
-        - name: MSAL.js
-          items:
-            - name: Voorkomen dat pagina's opnieuw worden geladen
-              href: msal-js-avoid-page-reloads.md
-            - name: De aangepaste status in verificatieaanvragen doorgeven
-              href: msal-js-pass-custom-state-authentication-request.md
-            - name: Promptgedrag
-              href: msal-js-prompt-behavior.md
-            - name: SPA migreren van impliciet naar auth code-stroom
-              href: migrate-spa-implicit-to-auth-code.md
-              displayName: 'authorization, single-page app, 2.0'
-        - name: MSAL voor iOS en macOS
-          items:
-            - name: Verschillen tussen MSAL voor iOS en macOS
-              href: msal-differences-ios-macos.md
-            - name: Sleutelketen configureren
-              href: howto-v2-keychain-objc.md
-            - name: Browsers en WebView aanpassen
-              href: customize-webviews.md
-            - name: Aangepaste claims aanvragen
-              href: request-custom-claims.md
-            - name: URI-configuratie omleiden
-              href: redirect-uris-ios.md
-        - name: MSAL voor Python
-          items:
-            - name: Serialisatie van aangepaste tokencache
-              href: msal-python-token-cache-serialization.md
-        - name: MSAL voor Java
-          items:
-            - name: Serialisatie van aangepaste tokencache
-              href: msal-java-token-cache-serialization.md
-            - name: Accounts ophalen aan en verwijderen uit de tokencache
-              href: msal-java-get-remove-accounts-token-cache.md
-    - name: De Microsoft Graph API gebruiken
-      href: microsoft-graph-intro.md
-    - name: Werken met Visual Studio
-      items:
-        - name: De verbonden Active Directory-service gebruiken
-          href: vs-active-directory-add-connected-service.md
-        - name: Aan de slag met .NET MVC-projecten
-          href: vs-active-directory-dotnet-getting-started.md
-        - name: Wat is er gebeurd met mijn .NET MVC-project?
-          href: vs-active-directory-dotnet-what-happened.md
-        - name: Aan de slag met WebAPI-projecten
-          href: vs-active-directory-webapi-getting-started.md
-        - name: Wat is er gebeurd met mijn WebAPI-project?
-          href: vs-active-directory-webapi-what-happened.md
-        - name: Fouten vaststellen tijdens verificatie
-          href: vs-active-directory-error.md
-    - name: Een app op de markt brengen
-      items:
-        - name: Publiceren naar een app-bron
-          href: v2-howto-get-appsource-certified.md
-        - name: Publiceren naar de Azure AD-app-galerie
-          href: v2-howto-app-gallery-listing.md
-        - name: Publiceren naar het Office 365-verkopersdashboard
-          href: /office/dev/store/use-the-seller-dashboard-to-submit-to-the-office-store
-- name: Naslaginformatie
-  items:
-    - name: Manifest van de toepassing
-      href: reference-app-manifest.md
-      displayName: app manifest
-    - name: Android MSAL-configuratiebestand
-      href: msal-configuration.md
-    - name: Verificatiebibliotheken
-      displayName: 'MSAL, auth library, SDK'
-      href: reference-v2-libraries.md
-    - name: Identiteits- en toegangs-API's in Microsoft Graph
-      href: /graph/api/resources/azure-ad-overview
-    - name: Codes van verificatie- en autorisatiefouten
-      displayName: AADSTS
-      href: reference-aadsts-error-codes.md
-    - name: Wijzigingen die fouten veroorzaken
-      href: reference-breaking-changes.md
-- name: Resources
-  items:
-    - name: Woordenlijst
-      href: developer-glossary.md
-    - name: Video's
-      href: identity-videos.md
-    - name: Ontwikkelaarsblog van het Microsoft-identiteitsplatform
-      href: 'https://developer.microsoft.com/en-us/identity/blogs/'
     - name: Azure AD-blog
       href: 'https://cloudblogs.microsoft.com/enterprisemobility/?product=azure-active-directory'
     - name: Azure-roadmap

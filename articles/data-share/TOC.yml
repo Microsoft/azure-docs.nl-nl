@@ -45,7 +45,7 @@
       items:
         - name: Delen vanuit Azure Storage
           href: how-to-share-from-storage.md
-        - name: Delen vanuit Azure SQL Database of Synapse Analytics
+        - name: Delen vanuit Azure SQL Database of Azure Synapse Analytics
           href: how-to-share-from-sql.md
         - name: Delen vanuit Azure Data Explorer
           href: /azure/data-explorer/data-share

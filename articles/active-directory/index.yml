@@ -11,13 +11,13 @@ metadata:
   author: mtillman
   ms.author: mtillman
   manager: daveba
-  ms.date: 10/22/2020
-  ms.openlocfilehash: 741fe2c9cb2c4992b8c7b7b1905962b37b527917
-  ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+  ms.date: 12/01/2020
+  ms.openlocfilehash: 5261d535170feb5c0aaac3731cd27e0af7847cfa
+  ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 11/26/2020
-  ms.locfileid: "96180607"
+  ms.lasthandoff: 12/02/2020
+  ms.locfileid: "96498044"
 highlightedContent:
   items:
   - title: Wat is Azure AD?
@@ -35,9 +35,9 @@ highlightedContent:
   - title: Controlelijst voor Azure AD-implementatie
     itemType: concept
     url: ./fundamentals/active-directory-deployment-checklist-p2.md
-  - title: Een abonnement toevoegen aan uw tenant
-    itemType: how-to-guide
-    url: ./fundamentals/active-directory-how-subscriptions-associated-directory.md
+  - title: Tolerantie inbouwen in identiteit- en toegangsbeheer met Azure AD
+    itemType: overview
+    url: ./fundamentals/resilience-overview.md
 conceptualContent:
   items:
   - title: Toepassingsbeheer
@@ -267,9 +267,9 @@ conceptualContent:
   - title: Rollen
     links:
     - url: ./roles/groups-assign-role.md
-      itemType: how-to-guide
-      text: Een rol toewijzen aan een cloudgroep
-    - url: ./roles/custom-create.md
+      itemType: concept
+      text: Inzicht in de Azure AD-rollen
+    - url: ./roles/concept-understand-roles.md
       itemType: how-to-guide
       text: Een aangepaste rol maken
     - url: ./roles/groups-view-assignments.md

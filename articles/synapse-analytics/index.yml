@@ -1,0 +1,113 @@
+### YamlMime:Landing
+title: Azure Synapse Analytics
+summary: Azure Synapse is een oneindige analyseservice die bedrijfsgegevensopslag en big data-analyses combineert. Deze geeft u de vrijheid om op schaal gegevens op te vragen over uw voorwaarden, met behulp van serverloze on-demand of ingerichte resources.
+metadata:
+  title: Azure Synapse Analytics
+  description: Azure Synapse is een oneindige analyseservice die bedrijfsgegevensopslag en big data-analyses combineert. Deze geeft u de vrijheid om op schaal gegevens op te vragen over uw voorwaarden, met behulp van serverloze on-demand of ingerichte resources.
+  services: synapse-analytics
+  ms.service: synapse-analytics
+  ms.subservice: overview
+  ms.topic: landing-page
+  ms.collection: collection
+  author: julieMSFT
+  ms.author: jrasnick
+  ms.date: 12/01/2020
+  ms.openlocfilehash: 6de11d0830c332d19a133592b060caca1382b667
+  ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+  ms.translationtype: HT
+  ms.contentlocale: nl-NL
+  ms.lasthandoff: 12/01/2020
+  ms.locfileid: "96463339"
+landingContent:
+- title: Info over Azure Synapse Analytics
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Wat is Azure Synapse
+      url: overview-what-is.md
+    - text: Tips en best practices
+      url: overview-cheat-sheet.md
+    - text: Veelgestelde vragen
+      url: overview-faq.md
+- title: Synapse SQL
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure Synapse SQL-architectuur
+      url: ./sql/overview-architecture.md
+  - linkListType: quickstart
+    links:
+    - text: Serverloze SQL-pools gebruiken
+      url: quickstart-sql-on-demand.md
+    - text: Een toegewezen SQL-pool maken met Synapse Studio
+      url: quickstart-create-sql-pool-studio.md
+- title: Aan de slag met Azure Synapse Analytics
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Stap-voor-stap aan de slag gaan
+      url: get-started.md
+    - text: 'STAP 1: Een Synapse-werkruimte maken en instellen'
+      url: get-started-create-workspace.md
+    - text: 'STAP 2: Analyseren met een toegewezen SQL-pool'
+      url: get-started-analyze-sql-pool.md
+    - text: 'STAP 3: Analyseren met Apache Spark'
+      url: get-started-analyze-spark.md
+    - text: 'STAP 4: Analyseren met behulp van een serverloze SQL-pool'
+      url: get-started-analyze-sql-on-demand.md
+    - text: 'STAP 5: Gegevens analyseren in een opslagaccount'
+      url: get-started-analyze-storage.md
+    - text: 'STAP 6: Organiseren met pijplijnen'
+      url: get-started-pipelines.md
+    - text: 'STAP 7: Gegevens visualiseren met Power BI'
+      url: get-started-visualize-power-bi.md
+    - text: STAP 8 - Activiteiten controleren
+      url: get-started-monitor.md
+    - text: STEP 9 - Het kenniscentrum verkennen
+      url: get-started-knowledge-center.md
+- title: Apache Spark
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Apache Spark in Azure Synapse Analytics
+      url: ./spark/apache-spark-overview.md
+  - linkListType: quickstart
+    links:
+    - text: Een serverloze Apache Spark-pool maken met behulp van Synapse Studio
+      url: quickstart-create-apache-spark-pool-studio.md
+- title: Synapse Link
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Azure Synapse Link voor Azure Cosmos DB
+      url: ../cosmos-db/synapse-link.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+  - linkListType: quickstart
+    links:
+    - text: Verbinding maken met Azure Synapse Link voor Azure Cosmos DB
+      url: quickstart-connect-synapse-link-cosmos-db.md
+- title: Machine Learning
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Machine Learning in Azure Synapse
+      url: ./machine-learning/what-is-machine-learning.md
+  - linkListType: quickstart
+    links:
+    - text: Een nieuwe gekoppelde Azure Machine Learning-service maken
+      url: ./machine-learning/quickstart-integrate-azure-machine-learning.md
+  - linkListType: tutorial
+    links:
+    - text: Wizard om modellen te beoordelen voor SQL-pools
+      url: ./machine-learning/tutorial-sql-pool-model-scoring-wizard.md
+- title: Pijplijn en gegevensstroom
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Pijplijn en activiteiten
+      url: ../data-factory/concepts-pipelines-activities.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json
+  - linkListType: quickstart
+    links:
+    - text: Gegevens transformeren
+      url: quickstart-data-flow.md
+    - text: De gegevens laden in een SQL-pool
+      url: quickstart-copy-activity-load-sql-pool.md

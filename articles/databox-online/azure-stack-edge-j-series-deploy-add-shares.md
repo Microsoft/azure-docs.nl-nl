@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 08/28/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to add and connect to shares on Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: cd288926e6f7a3f454be2788479b5c9d414b167a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 68cac756a3c84d0360d475a4bf88a392e3961f1d
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91440289"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447566"
 ---
 # <a name="tutorial-transfer-data-via-shares-with-azure-stack-edge-pro-gpu"></a>Zelfstudie: Gegevens overdragen via shares met Azure Stack Edge Pro GPU
 
@@ -66,7 +66,7 @@ Ga als volgt te werk om een share te maken:
     Het type service dat u selecteert, is afhankelijk van de gewenste indeling voor de gegevens in Azure. In dit voorbeeld selecteren we **Blok-blob** omdat we de gegevens in Azure willen opslaan als blob-blokken. Als u **Pagina-blob** selecteert, moet u ervoor zorgen dat uw gegevens zijn uitgelijnd op 512 bytes. VHDX is bijvoorbeeld altijd op 512 bytes uitgelijnd.
 
    > [!IMPORTANT]
-   > Controleer of voor het Azure-opslagaccount dat u gebruikt geen onveranderbaarheidsbeleid is ingesteld als u het account gebruikt in combinatie met een Azure Stack Edge Pro- of Data Box Gateway-apparaat. Zie [Beleid voor onveranderbaarheid instellen en beheren voor blobopslag](https://docs.microsoft.com/azure/storage/blobs/storage-blob-immutability-policies-manage) voor meer informatie.
+   > Controleer of voor het Azure-opslagaccount dat u gebruikt geen onveranderbaarheidsbeleid is ingesteld als u het account gebruikt in combinatie met een Azure Stack Edge Pro- of Data Box Gateway-apparaat. Zie [Beleid voor onveranderbaarheid instellen en beheren voor blobopslag](../storage/blobs/storage-blob-immutability-policies-manage.md) voor meer informatie.
 
     e. Maak een nieuwe blobcontainer of gebruik een bestaande container in de vervolgkeuzelijst. Als u een blobcontainer maakt, moet u ook een naam voor die container opgeven. Als er nog geen container bestaat, wordt in het opslagaccount een container gemaakt met de naam van de zojuist gemaakte share.
    
@@ -198,5 +198,3 @@ Als u wilt leren hoe u gegevens kunt transformeren met behulp van Azure Stack Ed
 
 > [!div class="nextstepaction"]
 > [Gegevens transformeren met Azure Stack Edge Pro](./azure-stack-edge-j-series-deploy-configure-compute.md)
-
-

@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: tutorial
 ms.date: 10/02/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 5fe8bf70374a2eec639a0a9365f7d227cf259d06
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
+ms.openlocfilehash: 5a55a330f6f4fefb86f2c056cd0ca3b2ba5f4b29
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91667245"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499591"
 ---
 # <a name="tutorial-order-search-results-using-the-net-sdk"></a>Zelfstudie: Zoekresultaten toevoegen met behulp van de .NET SDK
 
@@ -965,7 +965,7 @@ Hier zijn drie voorbeelden van scoreprofielen. We gaan kijken hoe elk van deze v
 
 ### <a name="resources"></a>Resources
 
-Raadpleeg [Scoreprofielen toevoegen aan een Azure Cognitive Search-index](/azure/search/index-add-scoring-profiles) voor meer informatie.
+Raadpleeg [Scoreprofielen toevoegen aan een Azure Cognitive Search-index](./index-add-scoring-profiles.md) voor meer informatie.
 
 ## <a name="takeaways"></a>Opgedane kennis
 

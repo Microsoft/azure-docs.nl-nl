@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: db77df29d1b9b0adf07c7da377c028dee5312617
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 28b34ecaf51406b35c67d3838714691390f5adf7
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579195"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453063"
 ---
 # <a name="tutorial-create-a-hierarchy-of-iot-edge-devices-preview"></a>Zelfstudie: Een hiërarchie van IoT Edge-apparaten maken (preview)
 
@@ -50,10 +50,10 @@ In deze zelfstudie wordt voor het gemak een hiërarchie van twee apparaten gebru
 Als u een hiërarchie van IoT Edge-apparaten wilt maken, hebt u het volgende nodig:
 
 * Een computer (Windows of Linux) met internetverbinding.
-* Twee Linux-apparaten om te configureren als IoT Edge-apparaten. Als u geen apparaten beschikbaar hebt, kunt u [virtuele machines van Azure](https://docs.microsoft.com/azure/virtual-machines/linux/) gebruiken.
-* Een Azure-account met een geldig abonnement. Als u geen [Azure-abonnement](https://docs.microsoft.com/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing) hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
+* Twee Linux-apparaten om te configureren als IoT Edge-apparaten. Als u geen apparaten beschikbaar hebt, kunt u [virtuele machines van Azure](../virtual-machines/linux/index.yml) gebruiken.
+* Een Azure-account met een geldig abonnement. Als u geen [Azure-abonnement](../guides/developer/azure-developer-guide.md#understanding-accounts-subscriptions-and-billing) hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 * Een gratis of standaard [IoT-hub](../iot-hub/iot-hub-create-through-portal.md)-laag in Azure.
-* Azure CLI v2.3.1 met de Azure IoT-uitbreiding v0.10.6 of hoger geïnstalleerd. Deze zelfstudie maakt gebruik van de [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview). Als u niet bekend bent met de Azure Cloud Shell kunt u [een Snelstartgids bekijken voor meer informatie](https://docs.microsoft.com/azure/iot-edge/quickstart-linux#use-azure-cloud-shell).
+* Azure CLI v2.3.1 met de Azure IoT-uitbreiding v0.10.6 of hoger geïnstalleerd. Deze zelfstudie maakt gebruik van de [Azure Cloud Shell](../cloud-shell/overview.md). Als u niet bekend bent met de Azure Cloud Shell kunt u [een Snelstartgids bekijken voor meer informatie](./quickstart-linux.md#use-azure-cloud-shell).
 
 U kunt dit scenario ook proberen door het script [Azure IoT Edge voor Industrial IoT-voorbeeld](https://aka.ms/iotedge-nested-sample) te volgen, waarmee virtuele Azure-machines worden geïmplementeerd als vooraf geconfigureerde apparaten om een ​​fabrieksomgeving te simuleren.
 
@@ -188,8 +188,8 @@ Installeer IoT Edge door deze stappen op beide apparaten te volgen.
 1. De hsmlib-en IoT Edge-daemon installeren <!-- Update with proper image links on release -->
 
    ```bash
-   curl -L https://github.com/Azure/azure-iotedge/releases/download/1.2.0-rc1/libiothsm-std_1.2.0.rc1-1-1_debian9_amd64.deb -o libiothsm-std.deb
-   curl -L https://github.com/Azure/azure-iotedge/releases/download/1.2.0-rc1/iotedge_1.2.0_rc1-1_debian9_amd64.deb -o iotedge.deb
+   curl -L https://github.com/Azure/azure-iotedge/releases/download/1.2.0-rc2/libiothsm-std_1.2.0.rc2-1-1_debian9_amd64.deb -o libiothsm-std.deb
+   curl -L https://github.com/Azure/azure-iotedge/releases/download/1.2.0-rc2/iotedge_1.2.0_rc2-1_debian9_amd64.deb -o iotedge.deb
    sudo dpkg -i ./libiothsm-std.deb
    sudo dpkg -i ./iotedge.deb
    ```
@@ -261,7 +261,7 @@ Voltooi deze stappen en start de IoT Edge-service opnieuw om uw apparaten te con
      type: "docker"
      env: {}
      config:
-       image: "mcr.microsoft.com/azureiotedge-agent:1.2.0-rc1"
+       image: "mcr.microsoft.com/azureiotedge-agent:1.2.0-rc2"
        auth: {}
    ```
 
@@ -273,7 +273,7 @@ Voltooi deze stappen en start de IoT Edge-service opnieuw om uw apparaten te con
      type: "docker"
      env: {}
      config:
-       image: "<parent_device_fqdn_or_ip>:8000/azureiotedge-agent:1.2.0-rc1"
+       image: "<parent_device_fqdn_or_ip>:8000/azureiotedge-agent:1.2.0-rc2"
        auth: {}
    ```
 
@@ -295,7 +295,7 @@ De resterende stappen om de configuratie van de IoT Edge-runtime te voltooien en
 
 [In Azure Portal](https://ms.portal.azure.com/):
 
-1. Ga naar uw IoT-hub.
+1. Ga naar uw IoT Hub.
 
 1. Selecteer in het menu in het linkerdeelvenster, onder **Automatisch apparaatbeheer**, de optie **IoT Edge**.
 
@@ -305,7 +305,7 @@ De resterende stappen om de configuratie van de IoT Edge-runtime te voltooien en
 
 1. Selecteer **runtime-instellingen** naast het tandwielpictogram.
 
-1. Voer onder **Edge Hub** in het installatiekopieveld `mcr.microsoft.com/azureiotedge-hub:1.2.0-rc1` in.
+1. Voer onder **Edge Hub** in het installatiekopieveld `mcr.microsoft.com/azureiotedge-hub:1.2.0-rc2` in.
 
    ![De installatiekopie van de Edge Hub bewerken](./media/tutorial-nested-iot-edge/edge-hub-image.png)
 
@@ -318,7 +318,7 @@ De resterende stappen om de configuratie van de IoT Edge-runtime te voltooien en
 
    ![De omgevingsvariabelen van de Edge Hub bewerken](./media/tutorial-nested-iot-edge/edge-hub-environment-variables.png)
 
-1. Voer onder **Edge Agent** in het installatiekopieveld `mcr.microsoft.com/azureiotedge-agent:1.2.0-rc1` in. Selecteer **Opslaan**.
+1. Voer onder **Edge Agent** in het installatiekopieveld `mcr.microsoft.com/azureiotedge-agent:1.2.0-rc2` in. Selecteer **Opslaan**.
 
 1. Voeg de Docker-registermodule toe aan uw apparaat in de bovenste laag. Selecteer **+ Toevoegen** en kies **IoT Edge module** in de vervolgkeuzelijst. Geef de naam `registry` op voor uw Docker-registermodule en voer `registry:latest` in voor de installatiekopie-URI. Voeg vervolgens omgevingsvariabelen toe en maak opties om uw lokale registermodule te plaatsen in het Microsoft-containerregister om containerinstallatiekopieën te downloaden en om deze installatiekopieën in registry:5000 uit te voeren.
 
@@ -412,14 +412,14 @@ De resterende stappen om de configuratie van de IoT Edge-runtime te voltooien en
                    "systemModules": {
                        "edgeAgent": {
                            "settings": {
-                               "image": "mcr.microsoft.com/azureiotedge-agent:1.2.0-rc1",
+                               "image": "mcr.microsoft.com/azureiotedge-agent:1.2.0-rc2",
                                "createOptions": ""
                            },
                            "type": "docker"
                        },
                        "edgeHub": {
                            "settings": {
-                               "image": "mcr.microsoft.com/azureiotedge-hub:1.2.0-rc1",
+                               "image": "mcr.microsoft.com/azureiotedge-hub:1.2.0-rc2",
                                "createOptions": "{\"HostConfig\":{\"PortBindings\":{\"443/tcp\":[{\"HostPort\":\"443\"}],\"5671/tcp\":[{\"HostPort\":\"5671\"}],\"8883/tcp\":[{\"HostPort\":\"8883\"}]}}}"
                            },
                            "type": "docker",
@@ -478,7 +478,7 @@ U kunt zowel Azure Portal als de Azure CLI gebruiken om workloads van de cloud n
 
 1. Selecteer **runtime-instellingen** naast het tandwielpictogram.
 
-1. Voer onder **Edge Hub** in het installatiekopieveld `$upstream:8000/azureiotedge-hub:1.2.0-rc1` in.
+1. Voer onder **Edge Hub** in het installatiekopieveld `$upstream:8000/azureiotedge-hub:1.2.0-rc2` in.
 
 1. Voeg de volgende omgevingsvariabelen toe aan uw Edge Hub-module:
 
@@ -487,7 +487,7 @@ U kunt zowel Azure Portal als de Azure CLI gebruiken om workloads van de cloud n
     | `experimentalFeatures__enabled` | `true` |
     | `experimentalFeatures__nestedEdgeEnabled` | `true` |
 
-1. Voer onder **Edge Agent** in het installatiekopieveld `$upstream:8000/azureiotedge-agent:1.2.0-rc1` in. Selecteer **Opslaan**.
+1. Voer onder **Edge Agent** in het installatiekopieveld `$upstream:8000/azureiotedge-agent:1.2.0-rc2` in. Selecteer **Opslaan**.
 
 1. Voeg de temperatuursensormodule toe. Selecteer **+ Toevoegen** en kies **Marketplace Module** in de vervolgkeuzelijst. Zoek naar `Simulated Temperature Sensor` en selecteer de module.
 
@@ -534,14 +534,14 @@ U kunt zowel Azure Portal als de Azure CLI gebruiken om workloads van de cloud n
                    "systemModules": {
                        "edgeAgent": {
                            "settings": {
-                               "image": "$upstream:8000/azureiotedge-agent:1.2.0-rc1",
+                               "image": "$upstream:8000/azureiotedge-agent:1.2.0-rc2",
                                "createOptions": ""
                            },
                            "type": "docker"
                        },
                        "edgeHub": {
                            "settings": {
-                               "image": "$upstream:8000/azureiotedge-hub:1.2.0-rc1",
+                               "image": "$upstream:8000/azureiotedge-hub:1.2.0-rc2",
                                "createOptions": "{\"HostConfig\":{\"PortBindings\":{\"443/tcp\":[{\"HostPort\":\"443\"}],\"5671/tcp\":[{\"HostPort\":\"5671\"}],\"8883/tcp\":[{\"HostPort\":\"8883\"}]}}}"
                            },
                            "type": "docker",

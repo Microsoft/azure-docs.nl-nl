@@ -7,16 +7,16 @@ ms.date: 10/14/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: ca2319a78fb4c0c720a21e97944d5b75ada9d008
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: ad5c6f205fc832eb125e52b4135990fc58742e62
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96014992"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96453238"
 ---
 # <a name="preview-tutorial-create-and-connect-to-time-series-insights-gen2-to-store-visualize-and-analyze-iot-plug-and-play-device-telemetry"></a>Preview-zelfstudie: Time Series Insights Gen2 maken en er verbinding mee maken om telemetrie van IoT Plug and Play-apparaten op te slaan, te visualiseren en te analyseren
 
-In deze zelfstudie leert u hoe u een [Azure TSI Gen2](https://docs.microsoft.com/azure/time-series-insights/overview-what-is-tsi)-omgeving (Time Series Insights) maakt en juist configureert voor integratie met uw IoT Plug en Play-oplossing. Gebruik TSI om tijdreeksgegevens te verzamelen, te verwerken, op te slaan, te visualiseren en er query's op uit te voeren op IoT-schaal (Internet of Things).
+In deze zelfstudie leert u hoe u een [Azure TSI Gen2](../time-series-insights/overview-what-is-tsi.md)-omgeving (Time Series Insights) maakt en juist configureert voor integratie met uw IoT Plug en Play-oplossing. Gebruik TSI om tijdreeksgegevens te verzamelen, te verwerken, op te slaan, te visualiseren en er query's op uit te voeren op IoT-schaal (Internet of Things).
 
 Eerst richt u een TSI-omgeving in en verbindt u de IoT-hub als een streaming-gebeurtenisbron. Vervolgens voert u modelsynchronisatie uit om het [Time Series-model](../time-series-insights/concepts-model-overview.md) van uw TSI-omgeving te maken, op basis van de [DTDL](https://github.com/Azure/opendigitaltwins-dtdl)-voorbeeldmodelbestanden (Digital Twins Definition Language) die u hebt gebruikt voor de temperatuurregelings- en thermostaatapparaten.
 
@@ -39,7 +39,7 @@ Om de vereiste van het lokaal installeren van de Azure CLI te vermijden, kunt u 
 
 ## <a name="prepare-your-event-source"></a>Uw gebeurtenisbron voorbereiden
 
-De IoT Hub die u eerder hebt gemaakt, wordt de [gebeurtenisbron](https://docs.microsoft.com/azure/time-series-insights/concepts-streaming-ingestion-event-sources) van de TSI-omgeving.
+De IoT Hub die u eerder hebt gemaakt, wordt de [gebeurtenisbron](../time-series-insights/concepts-streaming-ingestion-event-sources.md) van de TSI-omgeving.
 
 > [!IMPORTANT]
 > Schakel eventuele bestaande IoT Hub-routes uit. Er treedt een bekend probleem op wanneer u een IoT-hub gebruikt als een TSI-gebeurtenisbron met [routering](../iot-hub/iot-hub-devguide-messages-d2c.md#routing-endpoints) geconfigureerd. Schakel alle routeringseindpunten tijdelijk uit. Wanneer de IoT-hub is verbonden met de TSI, kunt u deze weer inschakelen.
@@ -67,7 +67,7 @@ In deze sectie wordt beschreven hoe u een Azure Time Series Insights Gen2-omgevi
 
 De volgende opdracht:
 
-* Maakt een Azure Storage-account voor de [koude opslag](https://docs.microsoft.com/azure/time-series-insights/concepts-storage#cold-store) van uw omgeving, ontworpen voor langetermijnretentie en analyse van historische gegevens.
+* Maakt een Azure Storage-account voor de [koude opslag](../time-series-insights/concepts-storage.md#cold-store) van uw omgeving, ontworpen voor langetermijnretentie en analyse van historische gegevens.
   * Vervang `mytsicoldstore` door een unieke naam voor het koude opslagaccount.
 * Maakt een Azure Time Series Insights Gen2-omgeving, inclusief warme opslag met een bewaarperiode van zeven dagen en koude opslag met een oneindige bewaarperiode.
   * Vervang `my-tsi-env` door een unieke naam voor de TSI-omgeving.

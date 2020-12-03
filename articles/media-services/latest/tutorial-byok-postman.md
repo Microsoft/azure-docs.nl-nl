@@ -6,12 +6,12 @@ ms.author: inhenkel
 ms.service: media-services
 ms.topic: tutorial
 ms.date: 10/18/2020
-ms.openlocfilehash: 93bbd84c25f02ac1653a46ebb4a70c1dfa90c744
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: c8a5b682e2ac4879d2181bdb069cf554bad512d9
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686359"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498282"
 ---
 # <a name="tutorial-use-customer-managed-keys-or-byok-with-media-services-rest-api"></a>Zelfstudie: Door klant beheerde sleutels of BYOK gebruiken met Media Services REST API
 
@@ -43,8 +43,8 @@ Als u nog geen Azure-abonnement hebt, [maakt u een gratis proefaccount](https://
 
 ### <a name="register-a-service-principal-with-the-needed-permissions"></a>Registreer een service-principal met de benodigde machtigingen
 
-1. [Een service-principal maken](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
-1. Ga naar [Optie 2: Een nieuw toepassingsgeheim maken](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#authentication-two-options) om het geheim van de service-principal te verkrijgen.
+1. [Een service-principal maken](../../active-directory/develop/howto-create-service-principal-portal.md).
+1. Ga naar [Optie 2: Een nieuw toepassingsgeheim maken](../../active-directory/develop/howto-create-service-principal-portal.md#authentication-two-options) om het geheim van de service-principal te verkrijgen.
 
    > [!IMPORTANT]
    >Kopieer het geheim en sla het op voor later gebruik. U hebt geen toegang tot het geheim nadat u de geheime pagina in de portal verlaat.

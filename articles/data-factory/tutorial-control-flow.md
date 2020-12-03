@@ -2,8 +2,8 @@
 title: Vertakking in Azure Data Factory-pijplijn
 description: Leer de stroom van gegevens in Azure Data Factory beheren door activiteiten te vertakken en te koppelen.
 services: data-factory
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 manager: anandsub
 ms.reviewer: maghan
 ms.service: data-factory
@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 9/27/2019
-ms.openlocfilehash: 0a6fc68ddcb86c7ba768f59519cfb4273d381fab
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: ab7d17ee61d733483b6d3573e9bd69b1628c7940
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637697"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96496939"
 ---
 # <a name="branching-and-chaining-activities-in-a-data-factory-pipeline"></a>Activiteiten vertakken en koppelen in een Data Factory-pijplijn
 
@@ -148,7 +148,7 @@ Een C# .NET-consoletoepassing maken:
 
 ### <a name="create-a-data-factory"></a>Een gegevensfactory maken
 
-1. Een methode `CreateOrUpdateDataFactory` toevoegen aan uw bestand *Program.cs* :
+1. Een methode `CreateOrUpdateDataFactory` toevoegen aan uw bestand *Program.cs*:
 
    ```csharp
    static Factory CreateOrUpdateDataFactory(DataFactoryManagementClient client)
@@ -181,7 +181,7 @@ Een C# .NET-consoletoepassing maken:
 
 ## <a name="create-an-azure-storage-linked-service"></a>Een gekoppelde Azure Storage-service maken
 
-1. Een methode `StorageLinkedServiceDefinition` toevoegen aan uw bestand *Program.cs* :
+1. Een methode `StorageLinkedServiceDefinition` toevoegen aan uw bestand *Program.cs*:
 
    ```csharp
    static LinkedServiceResource StorageLinkedServiceDefinition(DataFactoryManagementClient client)
@@ -213,7 +213,7 @@ In dit gedeelte maakt u twee gegevenssets: één voor de bron en de andere voor 
 
 Voeg een methode toe waarmee een *Azure Blob-gegevensset* wordt gemaakt. Zie [Eigenschappen van een Azure Blob-gegevensset](connector-azure-blob-storage.md#dataset-properties) voor meer informatie over ondersteunde eigenschappen en details.
 
-Een methode `SourceBlobDatasetDefinition` toevoegen aan uw bestand *Program.cs* :
+Een methode `SourceBlobDatasetDefinition` toevoegen aan uw bestand *Program.cs*:
 
 ```csharp
 static DatasetResource SourceBlobDatasetDefinition(DataFactoryManagementClient client)
@@ -240,7 +240,7 @@ Let op het gebruik van parameters voor *FolderPath*. `sourceBlobContainer` is de
 
 ### <a name="create-a-dataset-for-a-sink-azure-blob"></a>Een gegevensset maken voor de sinkgegevens in Azure Blob
 
-1. Een methode `SourceBlobDatasetDefinition` toevoegen aan uw bestand *Program.cs* :
+1. Een methode `SourceBlobDatasetDefinition` toevoegen aan uw bestand *Program.cs*:
 
    ```csharp
    static DatasetResource SinkBlobDatasetDefinition(DataFactoryManagementClient client)

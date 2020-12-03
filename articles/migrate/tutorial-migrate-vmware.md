@@ -4,12 +4,12 @@ description: Leer hoe u een migratie zonder agent voor VMware-VM's uitvoert met 
 ms.topic: tutorial
 ms.date: 06/09/2020
 ms.custom: mvc
-ms.openlocfilehash: 3e263306cf18dfebe4b73f8d940b8eb5c99ed16f
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 202886bc0a7738f8211cfea6d90a380c7bac82b8
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92310639"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96492944"
 ---
 # <a name="migrate-vmware-vms-to-azure-agentless"></a>VMware-VM's migreren naar Azure (zonder agent)
 
@@ -38,24 +38,8 @@ Voordat u aan deze zelfstudie begint, dient u eerst:
 
 1. [Voltooi de eerste zelfstudie](./tutorial-discover-vmware.md) om Azure en VMware voor te bereiden voor migratie.
 2. U wordt aangeraden de tweede zelfstudie voor het [evalueren van VMware-VM’s](./tutorial-assess-vmware-azure-vm.md) te voltooien voordat u de VM’s migreert naar Azure, maar dit is niet verplicht. 
-
-
-## <a name="add-the-azure-migrate-server-migration-tool"></a>Het hulpprogramma Azure Migrate: Server Migration toevoegen
-
-Als u nog geen Azure Migrate-project hebt ingesteld, [doet u dit](how-to-add-tool-first-time.md) voordat u het hulpprogramma toevoegt. Als u een project hebt ingesteld, voegt u het hulpprogramma als volgt toe:
-
-1. Klik in het Azure Migrate-project op **Overzicht**. 
-2. In **Servers ontdekken, evalueren en migreren** klikt u op **Servers evalueren en migreren**.
-
-     ![Servers evalueren en migreren](./media/tutorial-migrate-vmware/assess-migrate.png)
-
-3. Selecteer in **Hulpprogramma's voor migratie** de optie **Klik hier om een hulpprogramma voor migratie toe te voegen wanneer u klaar bent om te migreren**.
-
-    ![Selecteer een hulpprogramma](./media/tutorial-migrate-vmware/select-migration-tool.png)
-
-4. In de lijst met hulpprogramma's selecteert u **Azure Migrate: Server Migration** > **Hulpprogramma toevoegen**
-
-    ![Hulpprogramma voor de migratie van servers](./media/tutorial-migrate-vmware/server-migration-tool.png)
+3. Ga naar het al gemaakte project of [maak een nieuw project](./create-manage-projects.md).
+4. Controleer de machtigingen voor uw Azure-account. U hebt voor uw Azure-account machtigingen nodig om een virtuele machine te maken en naar een beheerde Azure-schijf te schrijven.
 
 ## <a name="set-up-the-azure-migrate-appliance"></a>Het Azure Migrate-apparaat instellen
 

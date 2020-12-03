@@ -1,17 +1,17 @@
 ---
 title: Videozelfstudies om gegevens toe te wijzen
 description: Een lijst met videozelfstudies waarin concepten van toewijzingsgegevensstromen worden uitgelegd
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 ms.service: data-factory
 ms.topic: tutorial
 ms.date: 11/02/2020
-ms.openlocfilehash: 2fbdaa2329ba2765da7c7ad4023ef164a56aa497
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 605d740b56b4f1cd57ab705e442a8b3e3946fcff
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93359371"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96490700"
 ---
 # <a name="mapping-data-flow-video-tutorials"></a>Videozelfstudies om gegevens toe te wijzen
 

@@ -6,12 +6,12 @@ ms.author: bwren
 ms.subservice: metrics
 ms.topic: tutorial
 ms.date: 03/09/2020
-ms.openlocfilehash: 26b155484dafac4a63fe2a6c7ff292ee8bbacbc0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6ce9183fad50c43ea7070f5fa09e0d445caf89df
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91317205"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96451256"
 ---
 # <a name="tutorial-create-a-metrics-chart-in-azure-monitor"></a>Zelfstudie: Een grafiek met metrische gegevens maken in Azure Monitor
 Metrics Explorer is een functie van Azure Monitor in Azure Portal waarmee u grafieken kunt maken op basis van metrische waarden, trends visueel kunt correleren en pieken en dalen in metrische waarden kunt onderzoeken. Gebruik Metrics Explorer om de status en het gebruik van uw Azure-resources te onderzoeken of grafieken te tekenen op basis van aangepaste metrische gegevens. 
@@ -85,5 +85,5 @@ U kunt de stijl, titel en geavanceerde instellingen van de grafiek aanpassen. Wa
 Nu u hebt geleerd hoe u met metrische gegevens in Azure Monitor kunt werken, kunt u leren hoe u metrische gegevens kunt gebruiken om proactieve waarschuwingen te verzenden.
 
 > [!div class="nextstepaction"]
-> [Metrische waarschuwing maken, bekijken en beheren met Azure Monitor](../platform/alerts-metric.md)
+> [Metrische waarschuwing maken, bekijken en beheren met Azure Monitor](../platform/metrics-charts.md#create-alert-rules)
 

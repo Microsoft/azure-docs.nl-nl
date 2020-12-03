@@ -4,12 +4,12 @@ description: Meer informatie over het gebruik van Azure Custom Vision om een con
 ms.topic: tutorial
 ms.date: 09/08/2020
 zone_pivot_groups: ams-lva-edge-programming-languages
-ms.openlocfilehash: 685aab603b2589a97b4c80ef0f8c5860617f1147
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: b4d9f82d99542bde216f0eaa1459d0f6c1a52659
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358259"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498333"
 ---
 # <a name="tutorial-analyze-live-video-with-live-video-analytics-on-iot-edge-and-azure-custom-vision"></a>Zelfstudie: Live video analyseren met Live Video Analytics op IoT Edge en Azure Custom Vision
 
@@ -194,7 +194,7 @@ Klik met de rechtermuisknop op het Live Video Analytics-apparaat en selecteer **
 
 Als u de grafiektopologie voor deze zelfstudie in een browser opent, ziet u dat de waarde van `inferencingUrl` is ingesteld op `http://cv:80/image`. Deze instelling betekent dat de deductieserver resultaten retourneert na het detecteren van speelgoedwagens, als die er zijn, in de live video.
 
-1. Open in Visual Studio Code het tabblad **Extensies** (of druk op **Ctrl+Shift+X** ) en zoek naar Azure IoT Hub.
+1. Open in Visual Studio Code het tabblad **Extensies** (of druk op **Ctrl+Shift+X**) en zoek naar Azure IoT Hub.
 1. Klik met de rechtermuisknop en selecteer **Extensie-instellingen**.
 
     > [!div class="mx-imgBorder"]
@@ -204,9 +204,9 @@ Als u de grafiektopologie voor deze zelfstudie in een browser opent, ziet u dat 
     > [!div class="mx-imgBorder"]
     > :::image type="content" source="./media/run-program/show-verbose-message.png" alt-text="Schermopname van Uitgebreid bericht tonen.":::
 1. Selecteer de toets **F5** om een foutopsporingssessie te starten. U ziet de berichten die worden afgedrukt in het venster **TERMINAL**.
-1. De code operations.json wordt gestart met aanroepen naar de directe methoden `GraphTopologyList` en `GraphInstanceList`. Als u na het voltooien van vorige quickstarts resources hebt opgeschoond, worden er lege lijsten geretourneerd en wordt het proces gepauzeerd. Selecteer de **Enter** -toets om door te gaan.
+1. De code operations.json wordt gestart met aanroepen naar de directe methoden `GraphTopologyList` en `GraphInstanceList`. Als u na het voltooien van vorige quickstarts resources hebt opgeschoond, worden er lege lijsten geretourneerd en wordt het proces gepauzeerd. Selecteer de **Enter**-toets om door te gaan.
     
-   In het **TERMINAL** -venster wordt de volgende set aanroepen van directe methoden weergegeven:
+   In het **TERMINAL**-venster wordt de volgende set aanroepen van directe methoden weergegeven:
     
    * Een aanroep van `GraphTopologySet` waarin gebruik wordt gemaakt van de voorgaande `topologyUrl`.
    * Een aanroep van `GraphInstanceSet` waarin gebruik wordt gemaakt van de volgende hoofdtekst:
@@ -243,9 +243,9 @@ Als u de grafiektopologie voor deze zelfstudie in een browser opent, ziet u dat 
    * Een aanroep van `GraphInstanceActivate` waarmee de instantie van de grafiek en de videostroom worden gestart.
    * Een tweede aanroep van `GraphInstanceList` waarmee wordt weergegeven dat het grafiekexemplaar wordt uitgevoerd.
     
-1. De uitvoer in het **TERMINAL** -venster wordt onderbroken met de prompt **Druk op Enter om door te gaan**. Druk nog niet op **Enter**. Schuif omhoog om de nettoladingen voor het JSON-antwoord te zien voor de directe methoden die u hebt aangeroepen.
-1. Schakel naar het **UITVOER** -venster in Visual Studio Code. Er zijn berichten te zien die door de module Live Video Analytics in IoT Edge worden verzonden naar de IoT-hub. In de volgende sectie van deze zelfstudie worden deze berichten besproken.
-1. Het uitvoeren van de mediagraaf wordt vervolgd en de resultaten worden afgedrukt. Via de RTSP-simulator wordt de bronvideo continu herhaald. Als u de mediagrafiek wilt stoppen, keert u terug naar het **TERMINAL** -venster en drukt u op **Enter**.
+1. De uitvoer in het **TERMINAL**-venster wordt onderbroken met de prompt **Druk op Enter om door te gaan**. Druk nog niet op **Enter**. Schuif omhoog om de nettoladingen voor het JSON-antwoord te zien voor de directe methoden die u hebt aangeroepen.
+1. Schakel naar het **UITVOER**-venster in Visual Studio Code. Er zijn berichten te zien die door de module Live Video Analytics in IoT Edge worden verzonden naar de IoT-hub. In de volgende sectie van deze zelfstudie worden deze berichten besproken.
+1. Het uitvoeren van de mediagraaf wordt vervolgd en de resultaten worden afgedrukt. Via de RTSP-simulator wordt de bronvideo continu herhaald. Als u de mediagrafiek wilt stoppen, keert u terug naar het **TERMINAL**-venster en drukt u op **Enter**.
 Met de volgende reeks aanroepen worden resources opgeschoond:
     
    * Met een aanroep van `GraphInstanceDeactivate` wordt het graafexemplaar gedeactiveerd.
@@ -255,7 +255,7 @@ Met de volgende reeks aanroepen worden resources opgeschoond:
     
 ## <a name="interpret-the-results"></a>De resultaten interpreteren
 
-Wanneer u de mediagraaf uitvoert, worden de resultaten van het HTTP-extensieprocessor-knooppunt via het IoT Hub-sink-knooppunt naar de IoT-hub doorgevoerd. De berichten in het **UITVOER** -venster bevatten een hoofdgedeelte en een `applicationProperties`-gedeelte. Zie [IoT Hub-berichten maken en lezen](../../iot-hub/iot-hub-devguide-messages-construct.md) voor meer informatie.
+Wanneer u de mediagraaf uitvoert, worden de resultaten van het HTTP-extensieprocessor-knooppunt via het IoT Hub-sink-knooppunt naar de IoT-hub doorgevoerd. De berichten in het **UITVOER**-venster bevatten een hoofdgedeelte en een `applicationProperties`-gedeelte. Zie [IoT Hub-berichten maken en lezen](../../iot-hub/iot-hub-devguide-messages-construct.md) voor meer informatie.
 
 In de volgende berichten worden de eigenschappen van de toepassing en de inhoud van de hoofdtekst bepaald door de module Live Video Analytics.
 
@@ -391,6 +391,6 @@ Als u de andere zelfstudies of quickstarts wilt proberen, kunt u daarvoor de res
 Bekijk extra uitdagingen voor gevorderde gebruikers:
 
 * Gebruik een [IP-camera](https://en.wikipedia.org/wiki/IP_camera) met ondersteuning voor RTSP in plaats van de RTSP-simulator. U kunt zoeken naar IP-camera's die RTSP ondersteunen op de pagina met [ONVIF-compatibele](https://www.onvif.org/conformant-products/) producten. Zoek naar apparaten die voldoen aan de profielen G, S of T.
-* Gebruik een AMD64-of x64-Linux-apparaat (in plaats van een Azure Linux-VM). Dit apparaat moet zich in hetzelfde netwerk als de IP-camera bevinden. Volg de instructies in [Azure IoT Edge-runtime installeren op Linux](../../iot-edge/how-to-install-iot-edge-linux.md).
+* Gebruik een AMD64-of x64-Linux-apparaat (in plaats van een Azure Linux-VM). Dit apparaat moet zich in hetzelfde netwerk als de IP-camera bevinden. Volg de instructies in [Azure IoT Edge-runtime installeren op Linux](../../iot-edge/how-to-install-iot-edge.md).
 
 Registreer vervolgens het apparaat met IoT Hub door de instructies in [Uw eerste IoT Edge-module implementeren op een virtueel Linux-apparaat](../../iot-edge/quickstart-linux.md) te volgen.

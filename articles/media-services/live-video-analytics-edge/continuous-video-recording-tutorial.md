@@ -3,12 +3,12 @@ title: Zelfstudie voor continue video-opname in de cloud en afspelen vanuit de c
 description: In deze zelfstudie leert u hoe u Azure Live Video Analytics kunt gebruiken op Azure IoT Edge om continu video in de cloud op te nemen en een deel van die video te streamen met behulp van Azure Media Services.
 ms.topic: tutorial
 ms.date: 05/27/2020
-ms.openlocfilehash: 7e8bf1202e95cb4e76b54473f9d84076d24accea
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: c38ab1f32d1ef4e54cd8568ff17d325fabdefc31
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93346363"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498367"
 ---
 # <a name="tutorial-continuous-video-recording-to-the-cloud-and-playback-from-the-cloud"></a>Zelfstudie: Continue video-opname in de cloud en afspelen vanuit de cloud
 
@@ -49,7 +49,7 @@ Aan het einde van deze stappen hebt u relevante Azure-resources geïmplementeerd
 * Azure IoT Hub
 * Azure Storage-account
 * Azure Media Services-account
-* Linux-VM in Azure, met [IoT Edge-runtime](../../iot-edge/how-to-install-iot-edge-linux.md) geïnstalleerd
+* Linux-VM in Azure, met [IoT Edge-runtime](../../iot-edge/how-to-install-iot-edge.md) geïnstalleerd
 
 ## <a name="concepts"></a>Concepten
 
@@ -323,7 +323,7 @@ Zoals de naam al doet vermoeden, wordt de gebeurtenis RecordingStarted verzonden
 
 Deze gebeurtenis geeft aan dat er voldoende gegevens zijn weggeschreven naar de asset opdat afspeelapparaten of clients de video kunnen gaan afspelen.
 
-De onderwerpsectie in applicationProperties verwijst naar het AssetSink-knooppunt in de grafiek, waarop dit bericht is gegenereerd.
+De sectie subject in applicationProperties verwijst naar het knooppunt van de Assetsink in de graaf, waardoor dit bericht is gegenereerd.
 
 De hoofdtekstsectie bevat informatie over de uitvoerlocatie. In dit geval is het de naam van de Azure Media Services-asset waarin de video wordt vastgelegd.
 
@@ -385,4 +385,4 @@ Als u de andere zelfstudies wilt proberen, moet u de gemaakte resources bewaren.
 ## <a name="next-steps"></a>Volgende stappen
 
 * Gebruik een [IP-camera](https://en.wikipedia.org/wiki/IP_camera) met ondersteuning voor RTSP in plaats van de RTSP-simulator. U kunt zoeken naar IP-camera's met RTSP-ondersteuning op de pagina met [ONVIF-compatibele](https://www.onvif.org/conformant-products/) producten door te zoeken naar apparaten die voldoen aan de profielen G, S of T.
-* Gebruik een AMD64-of x64-Linux-apparaat (in plaats van een Azure Linux-VM). Dit apparaat moet zich in hetzelfde netwerk als de IP-camera bevinden. Volg de instructies in [Azure IoT Edge-runtime installeren op Linux](../../iot-edge/how-to-install-iot-edge-linux.md). Volg de instructies in de quickstart [Uw eerste IoT Edge-module implementeren op een virtueel Linux-apparaat](../../iot-edge/quickstart-linux.md) om het apparaat te registreren bij Azure IoT Hub.
+* Gebruik een AMD64-of x64-Linux-apparaat (in plaats van een Azure Linux-VM). Dit apparaat moet zich in hetzelfde netwerk als de IP-camera bevinden. Volg de instructies in [Azure IoT Edge-runtime installeren op Linux](../../iot-edge/how-to-install-iot-edge.md). Volg de instructies in de quickstart [Uw eerste IoT Edge-module implementeren op een virtueel Linux-apparaat](../../iot-edge/quickstart-linux.md) om het apparaat te registreren bij Azure IoT Hub.

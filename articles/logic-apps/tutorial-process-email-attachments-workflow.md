@@ -7,12 +7,12 @@ ms.reviewer: logicappspm
 ms.topic: tutorial
 ms.custom: mvc, devx-track-csharp
 ms.date: 02/27/2020
-ms.openlocfilehash: 38b4713383368f0c64983738f2ed65f60edb9e67
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7e58dcf8206ae9feab4d8a09517bf9efda244dd5
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91334086"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96451569"
 ---
 # <a name="tutorial-automate-tasks-to-process-emails-by-using-azure-logic-apps-azure-functions-and-azure-storage"></a>Zelfstudie: Automatiseer taken om e-mails te verwerken met behulp van Azure Logic Apps, Azure Functions en Azure Storage
 
@@ -160,7 +160,7 @@ Gebruik nu het codefragment in deze stappen om een Azure-functie te maken waarme
 
    ![Gemaakte functie-app](./media/tutorial-process-email-attachments-workflow/function-app-created.png)
 
-   U kunt ook [Azure CLI](../azure-functions/functions-create-first-azure-function-azure-cli.md) of [PowerShell- en Resource Manager-sjablonen](../azure-resource-manager/templates/deploy-powershell.md) gebruiken om een functie-app te maken.
+   U kunt ook [Azure CLI](../azure-functions/create-first-function-cli-csharp.md) of [PowerShell- en Resource Manager-sjablonen](../azure-resource-manager/templates/deploy-powershell.md) gebruiken om een functie-app te maken.
 
 1. Vouw in de lijst **Functie-apps** uw functie-app uit, als deze nog niet is uitgevouwen. Selecteer onder uw functie-app de optie **Functies**. Selecteer op de functiewerkbalk **Nieuwe functie**.
 

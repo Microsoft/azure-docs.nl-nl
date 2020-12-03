@@ -7,12 +7,12 @@ ms.author: allensu
 ms.service: private-link
 ms.topic: tutorial
 ms.date: 9/25/2020
-ms.openlocfilehash: 97795b2a693b68d1bd73a00f7b3e5ee3d4679545
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: eefef0eb61df9aa0597206b537f3d58e8b8b3213
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95522121"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484818"
 ---
 # <a name="tutorial-connect-to-a-storage-account-using-an-azure-private-endpoint"></a>Zelfstudie: Verbinding maken met een opslagaccount met behulp van een privé-eindpunt in Azure
 
@@ -222,7 +222,7 @@ In deze sectie gebruikt u de virtuele machine die u in de vorige stap hebt gemaa
 
     Er wordt een privé-IP-adres van **10.1.0.5** geretourneerd voor de naam van het opslagaccount.  Dit adres bevindt zich in het subnet van het virtuele netwerk dat u eerder hebt gemaakt.
 
-9. Installeer [Microsoft Azure Storage Explorer](../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=windows&toc=%252fazure%252fstorage%252fblobs%252ftoc.json) op de virtuele machine.
+9. Installeer [Microsoft Azure Storage Explorer](../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=windows&toc=%2fazure%2fstorage%2fblobs%2ftoc.json) op de virtuele machine.
 
 10. Selecteer **Voltooien** nadat **Microsoft Azure Storage Explorer** is geïnstalleerd.  Laat het selectievakje aangevinkt om de toepassing te openen.
 

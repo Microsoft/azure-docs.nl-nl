@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 10/21/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: 46c5271c8ded970442d1ae4022573473997d98af
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: cdfd012d5015e156439a1afa89e818bf82b64dc6
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427008"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96449324"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-stack-edge-pro-with-gpu"></a>Zelfstudie: Voorbereidingen voor de implementatie van Azure Stack Edge Pro met GPU 
 
@@ -66,7 +66,7 @@ Hier volgen de configuratievereisten voor uw Azure Stack Edge-resource, uw Azure
 
 Zorg voordat u begint voor het volgende:
 
-- Uw Microsoft Azure-abonnement is ingeschakeld voor een Azure Stack Edge-resource. Zorg dat een ondersteund abonnement gebruikt zoals [Microsoft Enterprise Agreement (EA)](https://azure.microsoft.com/overview/sales-number/), [Cloud Solution Provider (CSP)](https://docs.microsoft.com/partner-center/azure-plan-lp) of [Microsoft Azure Sponsorship](https://azure.microsoft.com/offers/ms-azr-0036p/). Abonnementen waar u betaalt per gebruik worden niet ondersteund. Zie [Wat is een Azure-aanbieding?](../cost-management-billing/manage/switch-azure-offer.md#what-is-an-azure-offer) om te achterhalen welk type Azure-abonnement u hebt.
+- Uw Microsoft Azure-abonnement is ingeschakeld voor een Azure Stack Edge-resource. Zorg dat een ondersteund abonnement gebruikt zoals [Microsoft Enterprise Agreement (EA)](https://azure.microsoft.com/overview/sales-number/), [Cloud Solution Provider (CSP)](/partner-center/azure-plan-lp) of [Microsoft Azure Sponsorship](https://azure.microsoft.com/offers/ms-azr-0036p/). Abonnementen waar u betaalt per gebruik worden niet ondersteund. Zie [Wat is een Azure-aanbieding?](../cost-management-billing/manage/switch-azure-offer.md#what-is-an-azure-offer) om te achterhalen welk type Azure-abonnement u hebt.
 - U hebt toegang als eigenaar of inzender op het niveau van de resourcegroep voor de Azure Stack Edge Pro-/Data Box Gateway-, IoT Hub- en Azure Storage-resources.
 
     - Als u een Azure Stack Eedge / Data Box Gateway resource wilt maken, moet u machtigingen hebben als inzender (of hoger) op het niveau van de resourcegroep. 
@@ -74,7 +74,7 @@ Zorg voordat u begint voor het volgende:
         - Als u een resourceprovider wilt registreren, gaat u in de Azure Portal naar **Home > Abonnementen > Uw abonnement > Resourceproviders**. 
         - Zoek naar de specifieke resourceprovider, bijvoorbeeld `Microsoft.DataBoxEdge`, en registreer de resourceprovider. 
     - Als u een resource voor een Storage-account wilt maken, moet u een toegangsbereik van een inzender of hoger hebben op het niveau van de resourcegroep. Azure Storage is standaard een geregistreerde resourceprovider.
-- U hebt beheerders- of gebruikerstoegang tot Azure Active Directory Graph API voor het genereren van bewerkingen voor een activeringssleutel of een referentie, zoals het maken van een share die gebruikmaakt van een opslagaccount. Zie [Azure Active Directory Graph API](https://docs.microsoft.com/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-) voor meer informatie.
+- U hebt beheerders- of gebruikerstoegang tot Azure Active Directory Graph API voor het genereren van bewerkingen voor een activeringssleutel of een referentie, zoals het maken van een share die gebruikmaakt van een opslagaccount. Zie [Azure Active Directory Graph API](/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-) voor meer informatie.
 
 
 ### <a name="for-the-azure-stack-edge-pro-device"></a>Voor het Azure Stack Edge Pro-apparaat
@@ -126,7 +126,7 @@ Voer de volgende stappen uit in de Azure-portal om een Azure Stack Edge-resource
     |Instelling  |Waarde  |
     |---------|---------|
     |Abonnement    |Dit wordt automatisch ingevuld op basis van de eerdere selectie. Abonnement is gekoppeld aan uw factureringsrekening. |
-    |Resourcegroep  |Maak een nieuwe groep of selecteer een bestaande groep.<br>Meer informatie over [Azure-resourcegroepen](../azure-resource-manager/resource-group-overview.md).     |
+    |Resourcegroep  |Maak een nieuwe groep of selecteer een bestaande groep.<br>Meer informatie over [Azure-resourcegroepen](../azure-resource-manager/management/overview.md).     |
 
 7. Voer de volgende **exemplaardetails** in of selecteer deze.
 
@@ -207,6 +207,3 @@ Ga naar de volgende zelfstudie om te lezen hoe u Azure Stack Edge Pro installeer
 
 > [!div class="nextstepaction"]
 > [Azure Stack Edge Pro installeren](./azure-stack-edge-gpu-deploy-install.md)
-
-
-

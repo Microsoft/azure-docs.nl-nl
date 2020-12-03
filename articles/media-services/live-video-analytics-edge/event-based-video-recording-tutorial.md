@@ -3,12 +3,12 @@ title: Zelfstudie voor video-opname op basis van gebeurtenissen in de cloud en a
 description: In deze zelfstudie leert u hoe u Azure Live Video Analytics in Azure IoT Edge kunt gebruiken om een video-opname op basis van gebeurtenissen te maken in de cloud, en deze af te spelen vanuit de cloud.
 ms.topic: tutorial
 ms.date: 05/27/2020
-ms.openlocfilehash: 03c97854673b369db9fe1cb026161a1e81a6bf31
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 84f6ef813fb1b2cc425e096212010717d0561aef
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93346636"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96498299"
 ---
 # <a name="tutorial-event-based-video-recording-to-the-cloud-and-playback-from-the-cloud"></a>Zelfstudie: Video-opname op basis van gebeurtenissen in de cloud en afspelen vanuit de cloud
 
@@ -52,7 +52,7 @@ Aan het einde van deze stappen hebt u relevante Azure-resources geïmplementeerd
 * Azure IoT Hub
 * Azure Storage-account
 * Azure Media Services-account
-* Linux-VM in Azure, met [IoT Edge-runtime](../../iot-edge/how-to-install-iot-edge-linux.md) geïnstalleerd
+* Linux-VM in Azure, met [IoT Edge-runtime](../../iot-edge/how-to-install-iot-edge.md) geïnstalleerd
 
 ## <a name="concepts"></a>Concepten
 
@@ -86,8 +86,8 @@ Controleer voordat u begint of u de derde stap in [Vereisten](#prerequisites) he
 
 In deze zelfstudie zijn de volgende bestanden van belang:
 
-* **~/clouddrive/lva-sample/edge-deployment/.env** : bevat eigenschappen waarvan Visual Studio Code gebruikmaakt om modules te implementeren op een Edge-apparaat.
-* **~/clouddrive/lva-sample/appsetting.json** : wordt gebruikt in Visual Studio Code voor het uitvoeren van de voorbeeldcode.
+* **~/clouddrive/lva-sample/edge-deployment/.env**: bevat eigenschappen waarvan Visual Studio Code gebruikmaakt om modules te implementeren op een Edge-apparaat.
+* **~/clouddrive/lva-sample/appsetting.json**: wordt gebruikt in Visual Studio Code voor het uitvoeren van de voorbeeldcode.
 
 U hebt de bestanden nodig voor de volgende stappen.
 
@@ -132,10 +132,10 @@ Blader in Visual Studio code naar src/edge. U ziet het. env-bestand dat u hebt g
 
 Open src/edge/deployment.objectCounter.template.json. Er zijn vier vermeldingen in de sectie **Modules** die overeenkomen met de items die worden vermeld in de vorige de sectie Concepten:
 
-* **lvaEdge** : dit is de Live Video Analytics in IoT Edge-module.
-* **yolov3** : dit is de AI-module die is gemaakt met behulp van het YOLO v3-model.
-* **rtspsim** : dit is de RTSP-simulator.
-* **objectCounter** : dit is de module die zoekt naar specifieke objecten in de resultaten van yolov3.
+* **lvaEdge**: dit is de Live Video Analytics in IoT Edge-module.
+* **yolov3**: dit is de AI-module die is gemaakt met behulp van het YOLO v3-model.
+* **rtspsim**: dit is de RTSP-simulator.
+* **objectCounter**: dit is de module die zoekt naar specifieke objecten in de resultaten van yolov3.
 
 Voor de objectCounter-module raadpleegt u de tekenreeks (${MODULES.objectCounter}) die wordt gebruikt voor de waarde voor ‘afbeelding’. Dit is gebaseerd op de [zelfstudie](../../iot-edge/tutorial-develop-for-linux.md) over het ontwikkelen van een IoT Edge-module. In Visual Studio code wordt automatisch herkend dat de code voor de deobjectCounter-module zich bevindt onder src/edge/modules/objectCounter. 
 
@@ -203,10 +203,10 @@ Volg deze stappen om de gebeurtenissen van de objectCounter-module en van de Liv
 
     `"topologyUrl" : "https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/evr-hubMessage-assets/topology.json"`
     
-1. Bewerk vervolgens onder de knooppunten **GraphInstanceSet** en **GraphTopologyDelete** :
+1. Bewerk vervolgens onder de knooppunten **GraphInstanceSet** en **GraphTopologyDelete**:
 
     `"topologyName" : "EVRtoAssetsOnObjDetect"`
-1. Start een foutopsporingssessie door F5 te selecteren. In het **TERMINAL** -venster ziet u enkele berichten verschijnen.
+1. Start een foutopsporingssessie door F5 te selecteren. In het **TERMINAL**-venster ziet u enkele berichten verschijnen.
 1. Het bestand operations.json begint met het uitvoeren van aanroepen naar GraphTopologyList en GraphInstanceList. Als u resources hebt opgeschoond na vorige quickstarts of zelfstudies, worden met deze actie lege lijsten geretourneerd en wordt er gepauzeerd zodat u op **ENTER** kunt drukken, zoals hieronder:
 
     ```
@@ -224,7 +224,7 @@ Volg deze stappen om de gebeurtenissen van de objectCounter-module en van de Liv
     Executing operation WaitForInput
     Press Enter to continue
     ```
-1. Wanneer u **Enter** selecteert in het **TERMINAL** -venster, wordt de volgende set met aanroepen met de directe methode gemaakt:
+1. Wanneer u **Enter** selecteert in het **TERMINAL**-venster, wordt de volgende set met aanroepen met de directe methode gemaakt:
    * Een aanroep van GraphTopologySet met behulp van de vorige topologyUrl
    * Een aanroep van GraphInstanceSet met behulp van de volgende hoofdtekst
      
@@ -256,11 +256,11 @@ Volg deze stappen om de gebeurtenissen van de objectCounter-module en van de Liv
    * Een aanroep van GraphInstanceActivate om het grafiekexemplaar te starten en de videostream te starten
    * Een tweede aanroep van GraphInstanceList om aan te geven dat het grafiekexemplaar actief is
      
-1. De uitvoer in het **TERMINAL** -venster wordt nu onderbroken met de prompt **Druk op ENTER** om door te gaan. Klik nog niet op **Enter**. Schuif omhoog om de nettoladingen voor het JSON-antwoord te zien voor de directe methoden die u hebt aangeroepen.
-1. Als u nu overschakelt naar het **UITVOER** -venster in Visual Studio Code, worden berichten die worden verzonden naar de IoT Hub, weergegeven door de Live Video Analytics in IoT Edge-module.
+1. De uitvoer in het **TERMINAL**-venster wordt nu onderbroken met de prompt **Druk op ENTER** om door te gaan. Klik nog niet op **Enter**. Schuif omhoog om de nettoladingen voor het JSON-antwoord te zien voor de directe methoden die u hebt aangeroepen.
+1. Als u nu overschakelt naar het **UITVOER**-venster in Visual Studio Code, worden berichten die worden verzonden naar de IoT Hub, weergegeven door de Live Video Analytics in IoT Edge-module.
 
    Deze berichten worden beschreven in de volgende sectie.
-1. Het grafiekexemplaar blijft de video uitvoeren en opnemen. Via de RTSP-simulator wordt de bronvideo continu herhaald. Bekijk de berichten zoals wordt beschreven in de volgende sectie. Ga vervolgens, om de opname te stoppen, terug naar het **TERMINAL** -venster en klik op **Enter**. De volgende reeks aanroepen wordt gedaan om resources op te schonen:
+1. Het grafiekexemplaar blijft de video uitvoeren en opnemen. Via de RTSP-simulator wordt de bronvideo continu herhaald. Bekijk de berichten zoals wordt beschreven in de volgende sectie. Ga vervolgens, om de opname te stoppen, terug naar het **TERMINAL**-venster en klik op **Enter**. De volgende reeks aanroepen wordt gedaan om resources op te schonen:
 
    * Een aanroep van GraphInstanceDeactivate om het grafiekexemplaar te deactiveren.
    * Een aanroep van GraphInstanceDelete om het exemplaar te verwijderen.
@@ -269,7 +269,7 @@ Volg deze stappen om de gebeurtenissen van de objectCounter-module en van de Liv
 
 ## <a name="interpret-the-results"></a>De resultaten interpreteren 
 
-Bij het uitvoeren van de mediagrafiek stuurt de Live Video Analytics in IoT Edge-module bepaalde diagnostische en operationele gebeurtenissen naar de IoT Edge-hub. Deze gebeurtenissen zijn de berichten die u ziet in het **UITVOER** -venster van Visual Studio Code. Deze bevatten een hoofdtekstsectie en een sectie applicationProperties. Zie [IoT Hub-berichten maken en lezen](../../iot-hub/iot-hub-devguide-messages-construct.md)als u wilt weten wat deze secties inhouden.
+Bij het uitvoeren van de mediagrafiek stuurt de Live Video Analytics in IoT Edge-module bepaalde diagnostische en operationele gebeurtenissen naar de IoT Edge-hub. Deze gebeurtenissen zijn de berichten die u ziet in het **UITVOER**-venster van Visual Studio Code. Deze bevatten een hoofdtekstsectie en een sectie applicationProperties. Zie [IoT Hub-berichten maken en lezen](../../iot-hub/iot-hub-devguide-messages-construct.md)als u wilt weten wat deze secties inhouden.
 
 In de volgende berichten worden de eigenschappen van de toepassing en de inhoud van de hoofdtekst door de module Live Video Analytics bepaald.
 
@@ -367,7 +367,7 @@ Wanneer het Asset Sink-knooppunt de video naar de asset heeft geüpload, wordt d
 }
 ```
 
-Deze gebeurtenis geeft aan dat er voldoende gegevens zijn weggeschreven naar de asset, en dat spelers of clients de video dus kunnen afspelen. De onderwerpsectie in applicationProperties verwijst naar het AssetSink-knooppunt in de grafiek, waarop dit bericht is gegenereerd. De hoofdtekstsectie bevat informatie over de uitvoerlocatie. In dit geval is het de naam van de Azure Media Services-asset waarin de video wordt vastgelegd.
+Deze gebeurtenis geeft aan dat er voldoende gegevens zijn weggeschreven naar de asset, en dat spelers of clients de video dus kunnen afspelen. De sectie subject in applicationProperties verwijst naar het knooppunt van de Assetsink in de graaf, waardoor dit bericht is gegenereerd. De hoofdtekstsectie bevat informatie over de uitvoerlocatie. In dit geval is het de naam van de Azure Media Services-asset waarin de video wordt vastgelegd.
 
 ### <a name="recordingstopped-event"></a>RecordingStopped-gebeurtenis
 
@@ -390,7 +390,7 @@ Als u de activeringsinstellingen (maximumActivationTime) voor het signaalpoortpr
 }
 ```
 
-Deze gebeurtenis geeft aan dat de opname is gestopt. De onderwerpsectie in applicationProperties verwijst naar het AssetSink-knooppunt in de grafiek, waarop dit bericht is gegenereerd. De hoofdtekstsectie bevat informatie over de uitvoerlocatie. In dit geval is het de naam van de Azure Media Services-asset waarin de video wordt vastgelegd.
+Deze gebeurtenis geeft aan dat de opname is gestopt. De sectie subject in applicationProperties verwijst naar het knooppunt van de Assetsink in de graaf, waardoor dit bericht is gegenereerd. De hoofdtekstsectie bevat informatie over de uitvoerlocatie. In dit geval is het de naam van de Azure Media Services-asset waarin de video wordt vastgelegd.
 
 ## <a name="media-services-asset"></a>Media Services-asset  
 
@@ -398,7 +398,7 @@ U kunt de Media Services-asset die met de grafiek is gemaakt, controleren door u
 
 1. Open uw webbrowser en ga naar de [Azure-portal](https://portal.azure.com/). Voer uw referenties in om u aan te melden bij de portal. De standaardweergave is uw service-dashboard.
 1. Zoek uw Media Services-account op tussen de resources in uw abonnement. Open het deelvenster Account.
-1. Selecteer **Assets** in de **Media Services** -lijst.
+1. Selecteer **Assets** in de **Media Services**-lijst.
 
     > [!div class="mx-imgBorder"]
     > :::image type="content" source="./media/continuous-video-recording-tutorial/assets.png" alt-text="Continue video-opname":::
@@ -424,4 +424,4 @@ Als u de andere zelfstudies wilt proberen, moet u de gemaakte resources bewaren.
 ## <a name="next-steps"></a>Volgende stappen
 
 * Gebruik een [IP-camera](https://en.wikipedia.org/wiki/IP_camera) met ondersteuning voor RTSP in plaats van de RTSP-simulator. U kunt zoeken naar IP-camera's met RTSP-ondersteuning op de pagina met [ONVIF-compatibele](https://www.onvif.org/conformant-products/) producten door te zoeken naar apparaten die voldoen aan de profielen G, S of T.
-* Gebruik een AMD64-of x64-Linux-apparaat (in plaats van een Azure Linux-VM). Dit apparaat moet zich in hetzelfde netwerk als de IP-camera bevinden. Volg de instructies in [Azure IoT Edge-runtime installeren op Linux](../../iot-edge/how-to-install-iot-edge-linux.md). Volg de instructies in de quickstart [Uw eerste IoT Edge-module implementeren op een virtueel Linux-apparaat](../../iot-edge/quickstart-linux.md) om het apparaat te registreren bij Azure IoT Hub.
+* Gebruik een AMD64-of x64-Linux-apparaat (in plaats van een Azure Linux-VM). Dit apparaat moet zich in hetzelfde netwerk als de IP-camera bevinden. Volg de instructies in [Azure IoT Edge-runtime installeren op Linux](../../iot-edge/how-to-install-iot-edge.md). Volg de instructies in de quickstart [Uw eerste IoT Edge-module implementeren op een virtueel Linux-apparaat](../../iot-edge/quickstart-linux.md) om het apparaat te registreren bij Azure IoT Hub.

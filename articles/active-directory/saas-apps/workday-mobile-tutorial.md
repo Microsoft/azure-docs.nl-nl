@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/31/2020
 ms.author: jeedes
-ms.openlocfilehash: e706649957bf427cd577d7995fb9ce104c687f4b
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: ef1ca41f54a15554a04fa3edf608bb13f5fb3398
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93378989"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96182016"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workday-mobile-application"></a>Zelfstudie: Integratie van eenmalige aanmelding (SSO) van Azure Active Directory met mobiele apps van Workday
 
@@ -33,13 +33,13 @@ In deze zelfstudie leert u hoe u Azure Active Directory (Azure AD), voorwaardeli
 Aan de slag:
 
 * Integreer Workday met Azure AD.
-* Lees [Integratie van eenmalige aanmelding (SSO) van Azure Active Directory met Workday](https://docs.microsoft.com/azure/active-directory/saas-apps/workday-tutorial).
+* Lees [Integratie van eenmalige aanmelding (SSO) van Azure Active Directory met Workday](./workday-tutorial.md).
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
 In deze zelfstudie configureert en test u het beleid voor voorwaardelijke toegang van Azure AD en Intune met de mobiele Workday-app.
 
-Voor het inschakelen van eenmalige aanmelding (SSO) kunt u de federatieve Workday-app configureren met Azure AD. Zie [Integratie van eenmalige aanmelding (SSO) van Azure Active Directory met Workday](https://docs.microsoft.com/azure/active-directory/saas-apps/workday-tutorial) voor meer informatie.
+Voor het inschakelen van eenmalige aanmelding (SSO) kunt u de federatieve Workday-app configureren met Azure AD. Zie [Integratie van eenmalige aanmelding (SSO) van Azure Active Directory met Workday](./workday-tutorial.md) voor meer informatie.
 
 > [!NOTE] 
 > Workday biedt geen ondersteuning voor app-beveiligingsbeleid van Intune. U moet Mobile Device Management gebruiken om gebruik te maken van voorwaardelijke toegang.
@@ -182,4 +182,3 @@ Als u ervoor wilt zorgen dat iOS-apparaten alleen kunnen worden aangemeld via Wo
 6. Kies onder **Platform** de optie **Android**.
 7. Kies onder **Gekoppelde app** de Workday for Android-app die u hebt toegevoegd.
 8. Selecteer **Configuratie-instellingen**. Selecteer **JSON-gegevens invoeren** onder **Indeling van configuratie-instellingen**.
-

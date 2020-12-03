@@ -8,12 +8,12 @@ ms.date: 3/12/2020
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 3a3518ba68c9474fc4a34390e6fd9a7d1e88f6c6
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: f261db8d40e1a1cc1737ff6a3f5c50da661b73e6
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94959591"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96433481"
 ---
 # <a name="tutorial-set-up-an-environment-for-machine-learning-on-iot-edge"></a>Zelfstudie: Een omgeving instellen voor machine learning op IoT Edge
 
@@ -39,7 +39,7 @@ De virtuele machine voor ontwikkeling wordt ingesteld met:
 * [.NET Core-SDK](https://dotnet.microsoft.com/)
 * [Python 3](https://www.python.org/)
 * [Visual Studio Code](https://code.visualstudio.com/)
-* [Azure PowerShell](/powershell/azure/?view=azps-1.1.0)
+* [Azure PowerShell](/powershell/azure/)
 * [VS Code-extensies](https://marketplace.visualstudio.com/search?target=VSCode)
   * [Azure IoT Tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools)
   * [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
@@ -83,7 +83,7 @@ Het duurt langer dan 30 minuten om de virtuele machine te maken en configureren.
 
    Het script wordt enkele minuten uitgevoerd terwijl de volgende stappen worden uitgevoerd:
 
-    1. hiermee wordt de [Az-module van Azure PowerShell](/powershell/azure/new-azureps-module-az?view=azps-1.1.0) geïnstalleerd.
+    1. hiermee wordt de [Az-module van Azure PowerShell](/powershell/azure/new-azureps-module-az) geïnstalleerd.
     1. U wordt gevraagd zich aan te melden bij Azure.
     1. Hiermee wordt de informatie voor het maken van uw virtuele machine bevestigd. Druk op **y** of **Enter** om door te gaan.
     1. Hiermee wordt de resourcegroep gemaakt als deze niet bestaat.

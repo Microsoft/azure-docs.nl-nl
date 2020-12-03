@@ -4,12 +4,12 @@ description: Maak een met HTTP geactiveerde serverloze PowerShell-functie om het
 ms.topic: tutorial
 ms.date: 06/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: ec4b2273f6be6ea4aabed2b660e0b7553f861d0d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7b94d583ca26b88d093810528d3193f20d765f1d
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89072040"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349245"
 ---
 # <a name="tutorial-use-an-http-triggered-azure-function-to-create-a-container-group"></a>Zelfstudie: Een met HTTP geactiveerde Azure-functie gebruiken om een containergroep te maken
 
@@ -27,13 +27,13 @@ In deze zelfstudie leert u procedures om het volgende te doen:
 
 ## <a name="prerequisites"></a>Vereisten
 
-Zie [Uw eerste functie maken in Azure met behulp van Visual Studio Code](../azure-functions/functions-create-first-function-vs-code.md?pivots=programming-language-powershell#configure-your-environment) voor vereisten voor het installeren en gebruiken van Visual Studio Code met de Azure Functions-extensie in uw besturingssysteem.
+Zie [Uw eerste functie maken in Azure met behulp van Visual Studio Code](../azure-functions/create-first-function-vs-code-csharp.md?pivots=programming-language-powershell#configure-your-environment) voor vereisten voor het installeren en gebruiken van Visual Studio Code met de Azure Functions-extensie in uw besturingssysteem.
 
 Aanvullende stappen in dit artikel gebruiken Azure PowerShell. Als u PowerShell wilt installeren of upgraden, raadpleegt u [Azure PowerShell installeren][azure-powershell-install] en [Aanmelden bij Azure](/powershell/azure/get-started-azureps#sign-in-to-azure).
 
 ## <a name="create-a-basic-powershell-function"></a>Een eenvoudige PowerShell-functie maken
 
-Volg de stappen in [Uw eerste PowerShell-functie maken in Azure](../azure-functions/functions-create-first-function-vs-code.md?pivots=programming-language-powershell) om een PowerShell-functie te maken met behulp van de HTTP-triggersjabloon. Gebruik de standaardnaam voor de Azure-functie: **HttpTrigger**. Zoals wordt getoond in de quickstart, moet u de functie testen, en het project publiceren in een functie-app in Azure. Dit voorbeeld is een eenvoudige, met HTTP geactiveerde functie waarmee een teksttekenreeks wordt geretourneerd. In latere stappen in dit artikel wijzigt u de functie voor het maken van een containergroep.
+Volg de stappen in [Uw eerste PowerShell-functie maken in Azure](../azure-functions/create-first-function-vs-code-csharp.md?pivots=programming-language-powershell) om een PowerShell-functie te maken met behulp van de HTTP-triggersjabloon. Gebruik de standaardnaam voor de Azure-functie: **HttpTrigger**. Zoals wordt getoond in de quickstart, moet u de functie testen, en het project publiceren in een functie-app in Azure. Dit voorbeeld is een eenvoudige, met HTTP geactiveerde functie waarmee een teksttekenreeks wordt geretourneerd. In latere stappen in dit artikel wijzigt u de functie voor het maken van een containergroep.
 
 In dit artikel wordt ervan uitgegaan dat u het project publiceert met de naam *myfunctionapp*, in een Azure-resourcegroep die automatisch een naam krijgt op basis van de naam van de functie-app (ook *myfunctionapp*). Vervang deze namen in latere stappen door een unieke naam voor uw functie-app en resourcegroep.
 

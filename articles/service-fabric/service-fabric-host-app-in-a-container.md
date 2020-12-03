@@ -3,12 +3,12 @@ title: Een .NET-app in een container implementeren in Azure Service Fabric
 description: Informatie over hoe u een bestaande .NET-toepassing in een container plaatst met behulp van Visual Studio en lokaal fouten opspoort in containers in Service Fabric. De in een container geplaatste toepassing wordt naar een Azure-containerregister gepusht en geïmplementeerd in een Service Fabric-cluster. Wanneer de toepassing is geïmplementeerd in Azure, gebruikt deze Azure SQL DB voor het persistent maken van gegevens.
 ms.topic: tutorial
 ms.date: 07/08/2019
-ms.openlocfilehash: b7c841c1185cb2e289a230eb1078a13d4ccd48f8
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 8be9de495fa6bc5689a2dba5384f5df3112cbb38
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92889932"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96485519"
 ---
 # <a name="tutorial-deploy-a-net-application-in-a-windows-container-to-azure-service-fabric"></a>Zelfstudie: Een .NET-toepassing in een Windows-container implementeren in Azure Service Fabric
 
@@ -47,7 +47,7 @@ In deze zelfstudie leert u het volgende:
 
 2. Klik op **Ja** als dat wordt gevraagd om Docker nu over te schakelen naar Windows-containers.
 
-   Het nieuwe Service Fabric-toepassingsproject **FabrikamFiber.CallCenterApplication** wordt in de oplossing gemaakt.  Er wordt een Dockerfile toegevoegd aan het bestaande **FabrikamFiber.Web** -project.  Ook wordt de map **PackageRoot** toegevoegd aan het project **FabrikamFiber.Web** , dat het servicemanifest en de instellingen voor de nieuwe FabrikamFiber.Web-service bevat.
+   Het nieuwe Service Fabric-toepassingsproject **FabrikamFiber.CallCenterApplication** wordt in de oplossing gemaakt.  Er wordt een Dockerfile toegevoegd aan het bestaande **FabrikamFiber.Web**-project.  Ook wordt de map **PackageRoot** toegevoegd aan het project **FabrikamFiber.Web**, dat het servicemanifest en de instellingen voor de nieuwe FabrikamFiber.Web-service bevat.
 
    De container is nu klaar om te worden gebouwd en verpakt in een Service Fabric-toepassing. Zodra u de installatiekopie van de container hebt gebouwd op uw computer, kunt u deze naar een containerregister pushen en naar elke host ophalen om te worden uitgevoerd.
 
@@ -109,7 +109,7 @@ Write-Host "Server name is $servername"
 
 ## <a name="update-the-web-config"></a>De webconfiguratie bijwerken
 
-Werk in het project **FabrikamFiber.Web** de verbindingsreeks in het bestand **web.config** bij om te verwijzen naar de SQL Server in de container.  Wijzig het *Server* -gedeelte van de verbindingsreeks in de naam van de server die door het vorige script is gemaakt. Deze moet ongeveer als volgt zijn: fab-fiber-751718376.database.windows.net. In de volgende XML hoeft u alleen het kenmerk `connectionString` bij te werken. De kenmerken `providerName` en `name` hoeven niet te worden gewijzigd.
+Werk in het project **FabrikamFiber.Web** de verbindingsreeks in het bestand **web.config** bij om te verwijzen naar de SQL Server in de container.  Wijzig het *Server*-gedeelte van de verbindingsreeks in de naam van de server die door het vorige script is gemaakt. Deze moet ongeveer als volgt zijn: fab-fiber-751718376.database.windows.net. In de volgende XML hoeft u alleen het kenmerk `connectionString` bij te werken. De kenmerken `providerName` en `name` hoeven niet te worden gewijzigd.
 
 ```xml
 <add name="FabrikamFiber-Express" connectionString="Server=<server name>,1433;Initial Catalog=call-center-db;Persist Security Info=False;User ID=ServerAdmin;Password=Password@123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" providerName="System.Data.SqlClient" />
@@ -118,7 +118,7 @@ Werk in het project **FabrikamFiber.Web** de verbindingsreeks in het bestand **w
 ```
 
 >[!NOTE]
->U een SQL Server naar keuze gebruiken voor lokale foutopsporing, zolang deze bereikbaar is vanaf de host. **localdb** biedt echter geen ondersteuning voor `container -> host`-communicatie. Als u een andere SQL-database wilt gebruiken tijdens het bouwen van een release-build van uw webtoepassing, voeg dan nog een verbindingsreeks toe aan uw *web.release.config* -bestand.
+>U een SQL Server naar keuze gebruiken voor lokale foutopsporing, zolang deze bereikbaar is vanaf de host. **localdb** biedt echter geen ondersteuning voor `container -> host`-communicatie. Als u een andere SQL-database wilt gebruiken tijdens het bouwen van een release-build van uw webtoepassing, voeg dan nog een verbindingsreeks toe aan uw *web.release.config*-bestand.
 
 ## <a name="run-the-containerized-application-locally"></a>De in een container geplaatste toepassing lokaal uitvoeren
 
@@ -158,9 +158,9 @@ Als u het cluster maakt, gaat u als volgt te werk:
 1. Klik met de rechtermuisknop op het toepassingsproject **FabrikamFiber.CallCenterApplication** in Solution Explorer en kies **Publiceren**.
 2. Meld u aan met behulp van uw Azure-account, zodat u toegang hebt tot uw abonnement(en).
 3. Selecteer onder de vervolgkeuzelijst voor het **verbindingseindpunt** de optie **Nieuw cluster maken...** .
-4. Wijzig de volgende instellingen in het dialoogvenster **Cluster maken** :
+4. Wijzig de volgende instellingen in het dialoogvenster **Cluster maken**:
 
-    a. Geef de naam van het cluster op in het veld **Clusternaam** , evenals het abonnement en de locatie die u wilt gebruiken. Noteer de naam van de clusterbrongroep.
+    a. Geef de naam van het cluster op in het veld **Clusternaam**, evenals het abonnement en de locatie die u wilt gebruiken. Noteer de naam van de clusterbrongroep.
 
     b. Optioneel: U kunt het aantal knooppunten wijzigen. Standaard beschikt u over drie knooppunten, het minimale aantal dat is vereist om Service Fabric-scenario's te kunnen testen.
 
@@ -169,7 +169,7 @@ Als u het cluster maakt, gaat u als volgt te werk:
     d. Selecteer het tabblad **VM-details**. Geef het wachtwoord op dat u wilt gebruiken voor de virtuele machines (VM's) die het cluster vormen. De gebruikersnaam en het wachtwoord kunnen worden gebruikt om een externe verbinding met de virtuele machines tot stand te brengen. U moet ook een VM-machinegrootte selecteren, en u kunt indien nodig de VM-installatiekopie wijzigen.
 
     > [!IMPORTANT]
-    > Kies een SKU die ondersteuning biedt voor actieve containers. Het besturingssysteem Windows Server op de clusterknooppunten moet compatibel zijn met het Windows Server-besturingssysteem van de container. Zie [Compatibiliteit tussen besturingssysteem van Windows Server-container en host-besturingssysteem](service-fabric-get-started-containers.md#windows-server-container-os-and-host-os-compatibility) voor meer informatie. In deze zelfstudie wordt standaard een Docker-installatiekopie op basis van Windows Server 2016 LTSC gebruikt. Containers op basis van deze installatiekopie kunnen worden uitgevoerd op clusters die zijn gemaakt met Windows Server 2016 Datacenter with Containers. Als u echter een cluster maakt of een bestaand cluster gebruikt op een andere versie van Windows Server, moet u de installatiekopie van het besturingssysteem wijzigen waarop de container is gebaseerd. Open de **dockerfile** in het project **FabrikamFiber.Web** Voeg een opmerking toe aan een eventuele `FROM`-instructie op basis van een vorige versie van Windows Server en voeg vanaf de [DockerHub-pagina Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore) een `FROM`-instructie toe op basis van de tag van de gewenste versie. Zie [Windows Server Core release info](https://docs.microsoft.com/windows-server/get-started/windows-server-release-info) (Informatie over de versie van Windows Server Core) voor meer informatie over versies, ondersteuningstijdlijnen en versiebeheer van Windows Server Core. 
+    > Kies een SKU die ondersteuning biedt voor actieve containers. Het besturingssysteem Windows Server op de clusterknooppunten moet compatibel zijn met het Windows Server-besturingssysteem van de container. Zie [Compatibiliteit tussen besturingssysteem van Windows Server-container en host-besturingssysteem](service-fabric-get-started-containers.md#windows-server-container-os-and-host-os-compatibility) voor meer informatie. In deze zelfstudie wordt standaard een Docker-installatiekopie op basis van Windows Server 2016 LTSC gebruikt. Containers op basis van deze installatiekopie kunnen worden uitgevoerd op clusters die zijn gemaakt met Windows Server 2016 Datacenter with Containers. Als u echter een cluster maakt of een bestaand cluster gebruikt op een andere versie van Windows Server, moet u de installatiekopie van het besturingssysteem wijzigen waarop de container is gebaseerd. Open de **dockerfile** in het project **FabrikamFiber.Web** Voeg een opmerking toe aan een eventuele `FROM`-instructie op basis van een vorige versie van Windows Server en voeg vanaf de [DockerHub-pagina Windows Server Core](https://hub.docker.com/_/microsoft-windows-servercore) een `FROM`-instructie toe op basis van de tag van de gewenste versie. Zie [Windows Server Core release info](/windows-server/get-started/windows-server-release-info) (Informatie over de versie van Windows Server Core) voor meer informatie over versies, ondersteuningstijdlijnen en versiebeheer van Windows Server Core. 
 
     e. Geef op het tabblad **Geavanceerd** de toepassingspoort aan die moet worden geopend in de load balancer wanneer het cluster wordt geïmplementeerd. Dit is de poort die u hebt genoteerd voordat u het cluster ging maken. U kunt ook een bestaande Application Insights-sleutel toevoegen die moet worden gebruikt om logboekbestanden naar door te sturen.
 

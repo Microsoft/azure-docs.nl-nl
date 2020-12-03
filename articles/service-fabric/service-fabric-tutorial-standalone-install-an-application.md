@@ -4,12 +4,12 @@ description: In deze zelfstudie leert u hoe u een toepassing kunt installeren in
 ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc
-ms.openlocfilehash: 0b35bd02af5e1c90cac2e94d31dfca2344f3cc85
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ae946321b34f12c816a717db4a3d07f57feefe52
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91840622"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96485357"
 ---
 # <a name="tutorial-deploy-an-application-on-your-service-fabric-standalone-cluster"></a>Zelfstudie: Een toepassing implementeren in een zelfstandig Service Fabric-cluster
 
@@ -50,7 +50,7 @@ Wanneer de toepassing is gedownload, kunt u deze rechtstreeks vanuit Visual Stud
 
 4. Klik met de rechtermuisknop op het toepassingsproject `Voting` in Solution Explorer en kies **Publiceren**
 
-5. Selecteer de vervolgkeuzelijst voor het **verbindingseindpunt** en voer de openbare DNS-naam van een van de knooppunten in uw cluster in.  Bijvoorbeeld `ec2-34-215-183-77.us-west-2.compute.amazonaws.com:19000`. Er wordt niet automatisch een FQDN (Fully Qualified Domain Name) toegewezen in Azure. U kunt deze echter eenvoudig [instellen op de overzichtspagina van de VM.](../virtual-machines/linux/portal-create-fqdn.md)
+5. Selecteer de vervolgkeuzelijst voor het **verbindingseindpunt** en voer de openbare DNS-naam van een van de knooppunten in uw cluster in.  Bijvoorbeeld `ec2-34-215-183-77.us-west-2.compute.amazonaws.com:19000`. Er wordt niet automatisch een FQDN (Fully Qualified Domain Name) toegewezen in Azure. U kunt deze echter eenvoudig [instellen op de overzichtspagina van de VM.](../virtual-machines/create-fqdn.md)
 
 6. Open uw voorkeursbrowser en typ het clusteradres in (het eindpunt van de verbinding, deze app wordt geïmplementeerd op poort 8080 - bijvoorbeeld ec2-34-215-183-77.us-west-2.compute.amazonaws.com:8080).
 

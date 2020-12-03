@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 09/10/2020
 ms.author: cshoe
-ms.openlocfilehash: 80a48a948c70db7344ac9cbc20474177309bd909
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 0086f7f68fd05d6925d19c7ab457fbc125e36be4
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95024225"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350225"
 ---
 # <a name="tutorial-building-a-static-web-app-with-blazor-in-azure-static-web-apps"></a>Zelfstudie: Een statische web-app bouwen met Blazor in Azure Static Web Apps
 
@@ -64,7 +64,7 @@ De bovenstaande configuratie zorgt ervoor dat aanvragen voor elke route in de ap
 In dit artikel wordt gebruikgemaakt van een GitHub-opslagplaatssjabloon, zodat u eenvoudig aan de slag kunt gaan. De sjabloon biedt een starters-app die wordt geïmplementeerd naar Azure Static Web Apps.
 
 1. Zorg ervoor dat u bent aangemeld bij GitHub en ga naar de volgende locatie om een nieuwe opslagplaats te maken:
-    - https://github.com/staticwebdev/blazor-starter/generate
+    - [https://github.com/staticwebdev/blazor-starter/generate](https://github.com/login?return_to=/staticwebdev/blazor-starter/generate)
 1. Geef uw opslagplaats de naam **mijn-eerste-statische-blazor-app**
 
 ## <a name="create-a-static-web-app"></a>Statische web-app maken

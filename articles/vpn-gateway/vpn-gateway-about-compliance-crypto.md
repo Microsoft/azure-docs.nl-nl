@@ -5,14 +5,14 @@ services: vpn-gateway
 author: yushwang
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 01/10/2020
+ms.date: 12/02/2020
 ms.author: yushwang
-ms.openlocfilehash: a77ee3c4301d278f98b571402514663dcfc9ca52
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 47d14c5ee7f6c4816bf15351e9cb28a2aaa72b4c
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94657921"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96546842"
 ---
 # <a name="about-cryptographic-requirements-and-azure-vpn-gateways"></a>Over cryptografische vereisten en Azure VPN-gateways
 
@@ -29,6 +29,8 @@ Wanneer IKEv1-en IKEv2-verbindingen worden toegepast op dezelfde VPN-gateway, wo
 ## <a name="about-ipsec-and-ike-policy-parameters-for-azure-vpn-gateways"></a>IPsec-en IKE-beleids parameters voor Azure VPN-gateways
 
 IPsec en IKE-protocol standaard bieden ondersteuning voor een breed scala van cryptografische algoritmen in verschillende combi Naties. Als u geen specifieke combi natie van cryptografische algoritmen en para meters aanvraagt, gebruiken Azure VPN-gateways een set standaard voorstellen. De standaard beleids sets zijn gekozen om de interoperabiliteit met een breed scala aan VPN-apparaten van derden in standaard configuraties te maximaliseren. Als gevolg hiervan kunnen de beleids regels en het aantal Voorst Ellen niet alle mogelijke combi Naties van beschik bare cryptografische algoritmen en sleutel sterkten beslaan.
+
+### <a name="default-policy"></a>Standaard beleid
 
 Het standaard beleid dat is ingesteld voor Azure VPN-gateway wordt weer gegeven in het artikel: [over VPN-apparaten en IPSec/IKE-para meters voor site-naar-site-VPN gateway verbindingen](vpn-gateway-about-vpn-devices.md).
 

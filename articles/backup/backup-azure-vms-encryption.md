@@ -3,12 +3,12 @@ title: Back-up en herstel van versleutelde virtuele Azure-machines
 description: Hierin wordt beschreven hoe u back-ups van versleutelde virtuele Azure-machines maakt en herstelt met de Azure Backup-service.
 ms.topic: conceptual
 ms.date: 08/18/2020
-ms.openlocfilehash: c4760a54d0200e48b2d6a38c963e9fc23925f7ff
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: ee7fedffd58ffb9e98f8c412833d151eb1a95530
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96324921"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96547148"
 ---
 # <a name="back-up-and-restore-encrypted-azure-virtual-machines"></a>Back-up en herstel van versleutelde virtuele Azure-machines
 
@@ -22,7 +22,11 @@ Standaard worden alle schijven in uw virtuele machines automatisch versleuteld m
 
 ## <a name="encryption-using-customer-managed-keys"></a>Versleuteling met door de klant beheerde sleutels
 
-Wanneer u schijven versleutelt met aangepaste sleutels (CMK), wordt de sleutel die wordt gebruikt voor het versleutelen van de schijven opgeslagen in de Azure Key Vault en door u beheerd. Storage Service Encryption (SSE) met CMK wijkt af van de versleuteling van Azure Disk Encryption (ADE). ADE maakt gebruik van de versleutelings hulpprogramma's van het besturings systeem. Met SSE worden gegevens in de opslag service versleuteld, zodat u elk besturings systeem of installatie kopieën voor uw virtuele machines kunt gebruiken. Zie [dit artikel](../virtual-machines/disk-encryption.md#customer-managed-keys)voor meer informatie over het versleutelen van Managed disks met door de klant beheerde sleutels.
+Wanneer u schijven versleutelt met door de klant beheerde sleutels (CMK), wordt de sleutel die wordt gebruikt voor het versleutelen van de schijven opgeslagen in de Azure Key Vault en door u beheerd. Storage Service Encryption (SSE) met CMK wijkt af van de versleuteling van Azure Disk Encryption (ADE). ADE maakt gebruik van de versleutelings hulpprogramma's van het besturings systeem. Met SSE worden gegevens in de opslag service versleuteld, zodat u elk besturings systeem of installatie kopieën voor uw virtuele machines kunt gebruiken.
+
+U hoeft geen expliciete acties uit te voeren voor back-up of herstel van Vm's die door de klant beheerde sleutels gebruiken voor het versleutelen van de schijven. De back-upgegevens voor deze virtuele machines die zijn opgeslagen in de kluis, worden versleuteld met dezelfde methoden als de [versleuteling die wordt gebruikt voor de kluis](encryption-at-rest-with-cmk.md).
+
+Zie [dit artikel](../virtual-machines/disk-encryption.md#customer-managed-keys)voor meer informatie over het versleutelen van Managed disks met door de klant beheerde sleutels.
 
 ## <a name="encryption-support-using-ade"></a>Ondersteuning voor versleuteling met behulp van ADE
 

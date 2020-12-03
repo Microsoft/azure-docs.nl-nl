@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 05/11/2020
 ms.author: anfeldma
 ms.custom: devx-track-java, contperfq2
-ms.openlocfilehash: 1f57e14893e6f43b98b0e45cc2bd2d49e31271d0
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: bfbf764aaf1061808d128d16e8a96b08e75fcfe6
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350344"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96545567"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-async-java-sdk-v2"></a>Tips voor betere prestaties voor Azure Cosmos DB async Java SDK v2
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -28,7 +28,7 @@ ms.locfileid: "96350344"
 
 
 > [!IMPORTANT]  
-> Dit is *niet* de meest recente Java-SDK voor Azure Cosmos db. U moet uw project upgraden naar [Azure Cosmos DB Java SDK v4](sql-api-sdk-java-v4.md) en vervolgens de Azure Cosmos DB Java SDK v4- [prestatie tips](performance-tips-java-sdk-v4-sql.md)lezen. Volg de instructies in de hand leiding [migratie naar Azure Cosmos DB Java SDK v4](migrate-java-v4-sdk.md) en [reactor versus RxJava](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/master/reactor-rxjava-guide.md) om een upgrade uit te voeren. 
+> Dit is *niet* de meest recente Java-SDK voor Azure Cosmos db. U moet uw project upgraden naar [Azure Cosmos DB Java SDK v4](sql-api-sdk-java-v4.md) en vervolgens de Azure Cosmos DB Java SDK v4- [prestatie tips](performance-tips-java-sdk-v4-sql.md)lezen. Volg de instructies in de hand leiding [migratie naar Azure Cosmos DB Java SDK v4](migrate-java-v4-sdk.md) en [reactor versus RxJava](https://github.com/Azure-Samples/azure-cosmos-java-sql-api-samples/blob/main/reactor-rxjava-guide.md) om een upgrade uit te voeren. 
 > 
 > De tips voor betere prestaties in dit artikel zijn alleen voor de Azure Cosmos DB asynchrone Java SDK v2. Zie de Azure Cosmos DB async Java SDK v2 [release opmerkingen](sql-api-sdk-async-java.md), de [maven-opslag plaats](https://mvnrepository.com/artifact/com.microsoft.azure/azure-cosmosdb)en Azure Cosmos DB async Java SDK v2 [Troubleshooting Guide (Engelstalig](troubleshoot-java-async-sdk.md) ) voor meer informatie.
 >
@@ -37,7 +37,7 @@ Azure Cosmos DB is een snelle en flexibele gedistribueerde data base die naadloo
 
 Als u daarom vraagt hoe u de prestaties van mijn Data Base kunt verbeteren? Houd rekening met de volgende opties:
 
-## <a name="networking"></a>Networking
+## <a name="networking"></a>Netwerken
 
 * **Verbindings modus: directe modus gebruiken**
     

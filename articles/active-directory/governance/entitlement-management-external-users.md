@@ -16,16 +16,16 @@ ms.date: 06/18/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7dd1234e13f77f1ea95327a0a489e9a97cdc0ffd
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 0fae7a62f062478c5fee45d172b88d0132f3a8f8
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92362498"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96546128"
 ---
-# <a name="govern-access-for-external-users-in-azure-ad-entitlement-management"></a>De toegang tot externe gebruikers bepalen in het beheer van rechten van Azure AD
+# <a name="govern-access-for-external-users-in-azure-ad-entitlement-management"></a>De toegang voor externe gebruikers bepalen in Rechtenbeheer van Azure AD
 
-Het Azure AD-rechts beheer maakt gebruik van [Azure AD Business-to-Business (B2B)](../external-identities/what-is-b2b.md) om samen te werken met mensen buiten uw organisatie in een andere adres lijst. Met Azure AD B2B verifiëren externe gebruikers hun basismap, maar hebben ze een weer gave in uw Directory. Met de weer gave in uw directory kan de gebruiker toegang krijgen tot uw resources.
+Het Azure AD-rechts beheer maakt gebruik van [Azure AD Business-to-Business (B2B)](../external-identities/what-is-b2b.md) om samen te werken met mensen buiten uw organisatie in een andere adres lijst. Met Azure AD B2B verifiëren externe gebruikers via hun thuismap, maar hebben ze een account in uw map. Met dat account in uw map kan de gebruiker toegang toegewezen krijgen tot uw resources.
 
 In dit artikel worden de instellingen beschreven die u kunt opgeven om de toegang voor externe gebruikers te bepalen.
 
@@ -84,7 +84,7 @@ Om ervoor te zorgen dat personen buiten uw organisatie toegangs pakketten kunnen
 - Als gasten toestaan andere gasten uit te nodigen voor uw directory, betekent dit dat bezoekers uitnodigen buiten het rechten beheer kunnen plaatsvinden. Het wordt aangeraden **gasten** in te stellen op **Nee** om alleen goed onderhevige uitnodigingen toe te staan.
 - Als u de lijst B2B allow gebruikt, moet u ervoor zorgen dat elk domein dat u wilt partner met behulp van rechten beheer, aan de lijst wordt toegevoegd. Als u de lijst voor het weigeren van B2B gebruikt, moet u er ook voor zorgen dat elk domein waarmee u een partner wilt maken, niet aan de lijst wordt toegevoegd.
 - Als u een recht beleid maakt voor **alle gebruikers** (alle verbonden organisaties en alle nieuwe externe gebruikers) en een gebruiker behoort niet tot een verbonden organisatie in uw directory, wordt er automatisch een verbonden organisatie voor gemaakt wanneer hij of zij het pakket aanvraagt. Alle instellingen voor het toestaan of weigeren van een B2B-lijst hebben prioriteit. Zorg er daarom voor dat u de domeinen die u wilt opnemen in dit beleid, opneemt in de lijst met toegestane gebruikers als u er een gebruikt en deze uitsluit van de lijst weigeren als u een lijst voor weigeren gebruikt.
-- Als u een rechten beheer beleid wilt maken dat **alle gebruikers** (alle verbonden organisaties en alle nieuwe externe gebruikers) bevat, moet u eerst de verificatie van eenmalige e-mail wachtwoord code voor uw Directory inschakelen. Zie voor meer informatie [verificatie via e-mail eenmalige wachtwoord code (preview-versie)](../external-identities/one-time-passcode.md#opting-in-to-the-preview).
+- Als u een rechten beheer beleid wilt maken dat **alle gebruikers** (alle verbonden organisaties en alle nieuwe externe gebruikers) bevat, moet u eerst de verificatie van eenmalige e-mail wachtwoord code voor uw Directory inschakelen. Zie voor meer informatie [verificatie via e-mail eenmalige wachtwoord code (preview-versie)](../external-identities/one-time-passcode.md).
 - Zie voor meer informatie over externe samenwerkings instellingen van Azure AD B2B externe [samen werking inschakelen en beheren wie gasten kan uitnodigen](../external-identities/delegate-invitations.md).
 
     ![Externe samenwerkings instellingen voor Azure AD](./media/entitlement-management-external-users/collaboration-settings.png)

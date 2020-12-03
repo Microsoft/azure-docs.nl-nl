@@ -5,31 +5,32 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 12/18/2019
+ms.date: 11/30/2020
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: elisol
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b87881ad5533724f08de3b2f348d1487f763ab04
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 0f9ea8b1c1346deee9fed591493607270f18ad5b
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92442164"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96547760"
 ---
 # <a name="azure-active-directory-b2b-best-practices"></a>Best practices voor Azure Active Directory B2B
 Dit artikel bevat aanbevelingen en aanbevolen procedures voor B2B-samen werking (Business-to-Business) in Azure Active Directory (Azure AD).
 
    > [!IMPORTANT]
-   > **Vanaf 31 maart 2021** heeft Microsoft geen ondersteuning meer voor het aflossen van uitnodigingen door het maken van niet-beheerde Azure AD-accounts en -tenants voor B2B-samenwerkingsscenario's. In de voorbereiding raden wij klanten aan om te kiezen voor de [verificatie van de eenmalige wachtwoordcode e-mailen](one-time-passcode.md). We waarderen uw feedback over deze openbare preview-functie en willen graag nog meer manieren te maken om samen te werken.
+   > **Vanaf 2021 maart** heeft micro soft geen ondersteuning meer voor het aflossen van uitnodigingen door het maken van niet-beheerde (' virale ' of ' just-in-time ') Azure AD-accounts en tenants voor B2B-samenwerkings scenario's. Op dat moment wordt de functie voor eenmalige e-mail wachtwoord code ingeschakeld voor alle bestaande tenants en standaard ingeschakeld voor nieuwe tenants. De functie voor eenmalige e-mail wachtwoord code wordt ingeschakeld, omdat deze een naadloze terugval verificatie methode biedt voor uw gast gebruikers. U hebt echter de mogelijkheid om deze functie uit te scha kelen als u deze niet wilt gebruiken. Zie voor meer informatie [verificatie via e-mail One-time wachtwoord code](one-time-passcode.md)
+
 
 ## <a name="b2b-recommendations"></a>B2B-aanbevelingen
 | Aanbeveling | Opmerkingen |
 | --- | --- |
 | Voor een optimale aanmeldings ervaring met id-providers | Als dat mogelijk is, moet u rechtstreeks met id-providers communiceren zodat gebruikers die worden uitgenodigd om zich aan te melden bij uw gedeelde apps en bronnen zonder dat ze micro soft-accounts (Msa's) of Azure AD-accounts hoeven te maken. U kunt de [Google Federation-functie](google-federation.md) gebruiken om B2B-gast gebruikers toe te staan zich aan te melden met hun Google-account. U kunt ook de [functie direct Federation (preview)](direct-federation.md) gebruiken om directe Federatie in te stellen met een organisatie waarvan de ID-provider (IDP) het SAML 2,0-of WS-Fed-protocol ondersteunt. |
-| Gebruik de functie voor eenmalige e-mail wachtwoord code (preview) voor B2B-gasten die niet op een andere manier kunnen verifiëren | Met de functie [voor eenmalige e-mail wachtwoord code (preview)](one-time-passcode.md) worden B2B-gast gebruikers geverifieerd wanneer ze niet kunnen worden geverifieerd via andere manieren, zoals Azure AD, een Microsoft-account (MSA) of Google Federatie. Wanneer de gast gebruiker een uitnodiging heeft ingewisseld of een gedeelde resource opent, kunnen ze een tijdelijke code aanvragen, die wordt verzonden naar hun e-mail adres. Vervolgens voeren ze deze code in om door te gaan met aanmelden. |
+| De functie voor eenmalige e-mail wachtwoord code gebruiken voor B2B-gasten die niet op andere wijze kunnen worden geverifieerd | Met de functie voor [eenmalige e-mail code](one-time-passcode.md) worden B2B-gast gebruikers geverifieerd wanneer ze niet kunnen worden geverifieerd via andere manieren, zoals Azure AD, een Microsoft-account (MSA) of Google Federatie. Wanneer de gast gebruiker een uitnodiging heeft ingewisseld of een gedeelde resource opent, kunnen ze een tijdelijke code aanvragen, die wordt verzonden naar hun e-mail adres. Vervolgens voeren ze deze code in om door te gaan met aanmelden. |
 | Huisstijl toevoegen aan uw aanmeldingspagina | U kunt uw aanmeldings pagina aanpassen zodat deze intuïtief is voor uw B2B-gast gebruikers. Zie [bedrijfs huisstijl toevoegen om u aan te melden en de pagina's van het toegangs venster](../fundamentals/customize-branding.md). |
 | Uw privacyverklaring toevoegen aan de B2B-gebruiker voor het inwisselen van gast gebruikers | U kunt de URL van de privacyverklaring van uw organisatie toevoegen aan de eerste keer dat een uitgenodigde gebruiker toestemming moet geven om door te gaan met uw privacy-voor waarden. Zie [How to: de privacygegevens van uw organisatie toevoegen in azure Active Directory](../fundamentals/active-directory-properties-area.md). |
 | De functie voor bulk-uitnodiging (preview) gebruiken om meerdere B2B-gast gebruikers tegelijkertijd uit te nodigen | U kunt meerdere gast gebruikers tegelijk uitnodigen voor uw organisatie met behulp van de preview-functie voor bulksgewijs uitnodigen in de Azure Portal. Met deze functie kunt u een CSV-bestand uploaden om B2B-gast gebruikers te maken en uitnodigingen bulksgewijs te verzenden. Zie [zelf studie voor het bulksgewijs uitnodigen van B2B-gebruikers](tutorial-bulk-invite.md). |

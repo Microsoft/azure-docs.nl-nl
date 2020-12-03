@@ -4,48 +4,44 @@ description: Problemen met webtests oplossen in Azure-toepassing Insights. Ontva
 ms.topic: conceptual
 author: lgayhardt
 ms.author: lagayhar
-ms.date: 04/28/2020
+ms.date: 11/19/2020
 ms.reviewer: sdash
-ms.openlocfilehash: 0ac8dd189bee1c1d4f5a7a4d0f7de68b085fbc56
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 368c45433247c441631bdf79bfc9caa28a41f1b4
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96015329"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96546744"
 ---
 # <a name="troubleshooting"></a>Problemen oplossen
 
 Dit artikel helpt u bij het oplossen van veelvoorkomende problemen die zich kunnen voordoen bij het gebruik van beschikbaarheids bewaking.
 
-## <a name="ssltls-errors"></a>SSL/TLS-fouten
+## <a name="troubleshooting-report-steps-for-ping-tests"></a>Probleemoplossings rapport stappen voor ping-tests
 
-|Symptoom/fout bericht| Mogelijke oorzaken|
-|--------|------|
-|Kan geen beveiligd SSL/TLS-kanaal maken  | SSL-versie. Alleen TLS 1,0, 1,1 en 1,2 worden ondersteund. **SSLv3 wordt niet ondersteund.**
-|TLSv 1.2-record laag: waarschuwing (niveau: onherstelbaar, beschrijving: ongeldige record-MAC)| Zie stack Exchange-thread voor [meer informatie](https://security.stackexchange.com/questions/39844/getting-ssl-alert-write-fatal-bad-record-mac-during-openssl-handshake).
-|Een URL die mislukt is, is een CDN (Content Delivery Network) | Dit kan worden veroorzaakt door een onjuiste configuratie in uw CDN |  
+Met het rapport problemen oplossen kunt u eenvoudig veelvoorkomende problemen vaststellen die ertoe leiden dat uw **ping-tests** mislukken.
 
-### <a name="possible-workaround"></a>Mogelijke tijdelijke oplossing
+![Animatie van navigeren vanuit het tabblad Beschik baarheid door een fout te selecteren in de end-to-end-transactie Details om het rapport voor probleem oplossing weer te geven](./media/troubleshoot-availability/availability-to-troubleshooter.gif)
 
-* Als de Url's die het probleem ondervinden, altijd tot afhankelijke resources zijn, is het raadzaam om **afhankelijke aanvragen** voor de webtest uit te scha kelen.
-
-## <a name="test-fails-only-from-certain-locations"></a>Test mislukt alleen op bepaalde locaties
-
-|Symptoom/fout bericht| Mogelijke oorzaken|
-|----|---------|
-|Een verbindings poging is mislukt omdat de verbonden partij na een bepaalde tijd niet goed heeft gereageerd  | Test agents op bepaalde locaties worden geblokkeerd door een firewall.|
-|    |Het opnieuw routeren van bepaalde IP-adressen vindt plaats via (load balancers, geo Traffic managers, Azure Express route). 
-|    |Als u Azure ExpressRoute gebruikt, zijn er scenario's waarin pakketten kunnen worden verwijderd in gevallen waarin [asymmetrische route ring plaatsvindt](../../expressroute/expressroute-asymmetric-routing.md).|
-
-## <a name="test-failure-with-a-protocol-violation-error"></a>Fout in de test fout met een schending van het Protocol
-
-|Symptoom/fout bericht| Mogelijke oorzaken| Mogelijke oplossingen |
-|----|---------|-----|
-|De server heeft een schending van het protocol doorgevoerd. Sectie = ResponseHeader Details = CR moet worden gevolgd door LF | Dit gebeurt wanneer er een onjuiste koptekst wordt gedetecteerd. Het is in het bijzonder dat sommige headers geen gebruikmaken van CRLF om het einde van de regel aan te geven, wat in strijd is met de HTTP-specificatie. Application Insights dwingt deze HTTP-specificatie af en mislukt de antwoorden met ongeldige headers.| a. Neem contact op met de website van de host provider/CDN-provider om de defecte servers te herstellen. <br> b. Als de mislukte aanvragen resources zijn (bijvoorbeeld stijl bestanden, afbeeldingen, scripts), kunt u overwegen het parseren van afhankelijke aanvragen uit te scha kelen. Als u dit doet, verliest u de mogelijkheid om de beschik baarheid van die bestanden te bewaken).
+1. Selecteer op het tabblad Beschik baarheid van uw Application Insights-resource de optie algemeen of een van de beschikbaarheids testen.
+2. Selecteer **mislukt** en vervolgens een test onder ' inzoomen ' aan de linkerkant of selecteer een van de punten in het spreidings diagram.
+3. Selecteer op de pagina end-to-end trans actie-Details een gebeurtenis onder "probleemoplossings rapport Samenvatting" selecteren **[Ga naar stap]** om het rapport voor probleem oplossing te bekijken.
 
 > [!NOTE]
-> De URL mislukt mogelijk niet bij browsers met een beperkte validatie van HTTP-headers. Zie dit blogbericht voor een gedetailleerde uitleg van dit probleem: http://mehdi.me/a-tale-of-debugging-the-linkedin-api-net-and-http-protocol-violations/  
+>  Als de stap voor het opnieuw gebruiken van verbinding aanwezig is, zijn er geen DNS-omzettings-, verbindings-en TLS-transport stappen aanwezig.
 
+|Stap | Foutbericht | Mogelijke oorzaak |
+|-----|---------------|----------------|
+| Verbinding opnieuw gebruiken | n.v.t. | Doorgaans afhankelijk van een eerder gemaakte verbinding, wat betekent dat de stap voor het testen van het web afhankelijk is. Daarom is er geen DNS-, verbindings-of SSL-stap vereist. |
+| DNS-resolutie | De externe naam kan niet worden omgezet: "uw URL" | Het DNS-omzettings proces is mislukt. Dit is waarschijnlijk het gevolg van onjuist geconfigureerde DNS-records of fouten in de tijdelijke DNS-server. |
+| Verbinding tot stand brengen | Een verbindings poging is mislukt omdat de verbonden partij niet goed heeft gereageerd na een bepaalde tijd. | Over het algemeen betekent dit dat uw server niet reageert op de HTTP-aanvraag. Een veelvoorkomende oorzaak is dat de test agents worden geblokkeerd door een firewall op uw server. Als u wilt testen binnen een Azure-Virtual Network, moet u de code van de beschikbaarheids service toevoegen aan uw omgeving.|
+| TLS-Trans Port  | De client en de server kunnen niet communiceren omdat ze niet beschikken over een gemeen schappelijk algoritme.| Alleen TLS 1,0, 1,1 en 1,2 worden ondersteund. SSL wordt niet ondersteund. Met deze stap worden geen SSL-certificaten gevalideerd en wordt alleen een beveiligde verbinding tot stand gebracht. Deze stap wordt alleen weer gegeven als er een fout optreedt. |
+| Antwoord header Ontvangen | Kan geen gegevens lezen uit de transport verbinding. De verbinding is gesloten. | Uw server heeft een protocol fout in de reactie header doorgevoerd. Bijvoorbeeld: verbinding die is gesloten door uw server wanneer het antwoord niet volledig is. |
+| Tekst van antwoord ontvangen | Kan geen gegevens lezen uit de transport verbinding: de verbinding is gesloten. | Uw server heeft een protocol fout in de antwoord tekst doorgevoerd. Bijvoorbeeld: verbinding die is gesloten door uw server wanneer het antwoord niet volledig is gelezen of als de segment grootte onjuist is in de gesegmenteerde antwoord tekst. |
+| Validatie limiet voor omleiding | Deze webpagina bevat te veel omleidingen. Deze lus wordt hier beëindigd omdat deze aanvraag de limiet voor automatische omleidingen overschrijdt. | Er geldt een limiet van 10 omleidingen per test. |
+| Validatie van status code | `200 - OK` komt niet overeen met de verwachte status `400 - BadRequest` . | De geretourneerde status code die als geslaagd is geteld. 200 is de code die aangeeft dat er een normale webpagina is geretourneerd. |
+| Validatie van inhoud | De vereiste tekst ' Hello ' is niet in het antwoord opgenomen. | De teken reeks is niet een exacte hoofdletter gevoelige overeenkomst in het antwoord, bijvoorbeeld de teken reeks ' Welkom! '. Dit moet een gewone teken reeks zijn zonder joker tekens (bijvoorbeeld een asterisk). Als uw pagina-inhoud wordt gewijzigd, moet u mogelijk de teken reeks bijwerken. Alleen Engelse tekens worden ondersteund met inhouds overeenkomsten. |
+  
 ## <a name="common-troubleshooting-questions"></a>Veelgestelde vragen over het oplossen van problemen
 
 ### <a name="site-looks-okay-but-i-see-test-failures-why-is-application-insights-alerting-me"></a>De site ziet er goed uit, maar ik constateer testfouten Waarom Application Insights waarschuwing?
@@ -54,7 +50,7 @@ Dit artikel helpt u bij het oplossen van veelvoorkomende problemen die zich kunn
 
    * Als u de conflicteert van ruis van tijdelijke netwerk problemen etc. wilt verminderen, moet u ervoor zorgen dat de configuratie voor test fouten opnieuw proberen is ingeschakeld. U kunt ook testen vanaf meer locaties en de drempel waarde voor waarschuwings regels dienovereenkomstig beheren om te voor komen dat er locatie-specifieke problemen optreden die onnodige waarschuwingen veroorzaken.
 
-   * Klik op een van de rode punten van de beschikbaarheids ervaring of een beschikbaarheids fout in de zoek Verkenner om de details te bekijken van de reden waarom de fout is gerapporteerd. Het test resultaat, samen met de gecorreleerde telemetrie aan de server zijde (indien ingeschakeld), helpt te begrijpen waarom de test is mislukt. Veelvoorkomende oorzaken van tijdelijke problemen zijn netwerk-of verbindings problemen.
+   * Klik op een van de rode stippen van de beschik baarheid van de beschikbaarheids diagram of een beschikbaarheids fout in de zoek Verkenner om de details te bekijken van de reden waarom de fout is gerapporteerd. Het test resultaat, samen met de gecorreleerde telemetrie aan de server zijde (indien ingeschakeld), helpt te begrijpen waarom de test is mislukt. Veelvoorkomende oorzaken van tijdelijke problemen zijn netwerk-of verbindings problemen.
 
    * Is de test time-out opgegaan? Tests worden na twee minuten afgebroken. Als uw ping-of multi-step-test langer dan twee minuten duurt, zullen we dit melden als een fout. U kunt de test opsplitsen in meerdere records die in korte duur kunnen worden voltooid.
 
@@ -134,4 +130,3 @@ Gebruik de nieuwe waarschuwings ervaring/bijna realtime waarschuwingen als u geb
 
 * [Webtest met meerdere stappen](availability-multistep.md)
 * [URL-ping-tests](monitor-web-app-availability.md)
-

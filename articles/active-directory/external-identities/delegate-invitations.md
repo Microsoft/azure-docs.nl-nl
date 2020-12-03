@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: how-to
-ms.date: 09/15/2020
+ms.date: 11/30/2020
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d5a983931bd372931eacff2f7b21f3358f536046
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 8a249102de6a5bff7354e339e604b7d2efebd4fb
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92362923"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96546168"
 ---
 # <a name="enable-b2b-external-collaboration-and-manage-who-can-invite-guests"></a>Externe B2B-samenwerking inschakelen en beheren wie gasten kan uitnodigen
 
@@ -41,37 +41,54 @@ Standaard kunnen alle gebruikers, inclusief gasten, gast gebruikers uitnodigen.
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) als een Tenant beheerder.
 2. Selecteer **Azure Active Directory**.
-3. Externe **identiteiten**  >  **externe instellingen voor samen werking**selecteren.
+3. Externe **identiteiten**  >  **externe instellingen voor samen werking** selecteren.
 
 4. Kies onder **toegangs beperkingen voor gast gebruikers (preview)** het toegangs niveau dat u wilt dat gast gebruikers hebben:
+  
+    ![Instellingen voor toegangs beperkingen van gast gebruikers](./media/delegate-invitations/guest-user-access.png)
 
    - **Gast gebruikers hebben dezelfde toegang als leden (ten opzichte van de meeste)**: met deze optie krijgen gasten dezelfde toegang tot Azure AD-resources en Directory gegevens als gebruikers van een lid.
 
    - **Gast gebruikers hebben beperkte toegang tot de eigenschappen en lidmaatschappen van Directory-objecten**: (standaard) met deze instelling worden gasten geblokkeerd voor bepaalde directory taken, zoals het inventariseren van gebruikers, groepen of andere Directory bronnen. Gasten kunnen lidmaatschap van alle niet-verborgen groepen zien.
 
    - **Toegang voor gast gebruikers is beperkt tot eigenschappen en lidmaatschappen van hun eigen Directory-objecten (het meest beperkend)**: met deze instelling hebben gasten alleen toegang tot hun eigen profielen. Gasten mogen geen profielen, groepen of groepslid maatschappen van andere gebruikers zien.
-  
-    ![Instellingen voor toegangs beperkingen van gast gebruikers](./media/delegate-invitations/guest-user-access.png)
 
-5. Kies onder **instellingen voor uitnodiging voor gast**de gewenste instellingen:
+
+5. Kies onder **instellingen voor uitnodiging voor gast** de gewenste instellingen:
+
+    ![Instellingen voor uitnodiging voor gast](./media/delegate-invitations/guest-invite-settings.png)
 
    - **Beheerders en gebruikers in de rol van de gast-uitnodiging kunnen uitnodigen**: als u beheerders en gebruikers in de rol ' gast uitnodiging ' wilt toestaan om gasten uit te nodigen, stelt u dit beleid in op **Ja**.
 
-   - **Leden kunnen uitnodigen**: Stel dit beleid in op **Ja**als u niet-beheerders leden van uw directory toestemming wilt geven gasten uit te nodigen.
+   - **Leden kunnen uitnodigen**: Stel dit beleid in op **Ja** als u niet-beheerders leden van uw directory toestemming wilt geven gasten uit te nodigen.
 
    - **Gasten kunnen uitnodigen**: als u gasten wilt toestaan andere gasten uit te nodigen, stelt u dit beleid in op **Ja**.
-
-   - **E-mail One-Time wachtwoord code voor gasten inschakelen (preview-versie)**: Zie [eenmalige verificatie van de e-mail (preview)](one-time-passcode.md)voor meer informatie over de functie voor eenmalige wachtwoord code.
-
-   - **Aanmelden via self-service voor gasten inschakelen via de gebruikers stromen (preview)**: Zie [een self-service voor het registreren van een selfservice gebruiker toevoegen aan een app (preview)](self-service-sign-up-user-flow.md)voor meer informatie over deze instelling.
 
    > [!NOTE]
    > Als **leden kunnen worden uitgenodigd** is ingesteld op **Nee** en **beheerders en gebruikers in de rol gast uitnodigingen kunnen worden uitgenodigd** is ingesteld op **Ja**, kunnen gebruikers in de rol **gast uitnodiging** nog steeds gasten uitnodigen.
 
-    ![Instellingen voor uitnodiging voor gast](./media/delegate-invitations/guest-invite-settings.png)
+6. Kies onder **e-mail eenmalige wachtwoord code voor gasten** de juiste instellingen (Zie [e-mail met eenmalige wachtwoord code verificatie](one-time-passcode.md)voor meer informatie):
 
-6. Kies onder **samenwerkings beperkingen**of u uitnodigingen wilt toestaan of weigeren aan de domeinen die u opgeeft. Zie [uitnodigingen voor B2B-gebruikers van specifieke organisaties toestaan of blok keren](allow-deny-list.md)voor meer informatie.
+   ![Instellingen voor eenmalige e-mail wachtwoord code](./media/delegate-invitations/email-otp-settings.png)
 
+   - **Eenmalige e-mail wachtwoord voor gasten automatisch inschakelen in maart 2021**. Prijs Als de functie voor eenmalige e-mail wachtwoord code nog niet is ingeschakeld voor uw Tenant, wordt deze in maart 2021 automatisch ingeschakeld. Er is geen verdere actie nodig als u de functie op dat moment wilt inschakelen. Als u de functie al hebt ingeschakeld of uitgeschakeld, is deze optie niet beschikbaar.
+
+   - **Eenmalige e-mail wachtwoord instellen voor gasten die nu effectief** zijn. Hiermee schakelt u de functie e-mail eenmalige wachtwoord code in voor uw Tenant.
+
+   - **Eenmalige e-mail wachtwoord voor gasten uitschakelen**. Hiermee schakelt u de functie e-mail eenmalige wachtwoord code voor uw Tenant uit en voor komt u dat de functie wordt ingeschakeld in maart 2021.
+
+   > [!NOTE]
+   > In plaats van de bovenstaande opties ziet u de volgende wissel knop als u deze functie hebt ingeschakeld of uitgeschakeld of als u eerder hebt gekozen voor de preview-versie:
+   >
+   >![Eenmalige E-mail inschakelen wacht woord voor wachtwoord registratie](media/delegate-invitations/enable-email-otp-opted-in.png)
+
+7. Onder **gast self-service inschakelen aanmelden via gebruikers stromen (preview)**, selecteert u **Ja** als u gebruikers stromen wilt maken waarmee gebruikers zich kunnen registreren voor apps. Zie [een self-service-aanmeldings stroom toevoegen aan een app (preview)](self-service-sign-up-user-flow.md)voor meer informatie over deze instelling.
+
+    ![Aanmelden via self-service via de instelling gebruikers stromen](./media/delegate-invitations/self-service-sign-up-setting.png)
+
+7. Kies onder **samenwerkings beperkingen** of u uitnodigingen wilt toestaan of weigeren aan de domeinen die u opgeeft. Zie [uitnodigingen voor B2B-gebruikers van specifieke organisaties toestaan of blok keren](allow-deny-list.md)voor meer informatie.
+
+    ![Instellingen voor samenwerkings beperkingen](./media/delegate-invitations/collaboration-restrictions.png)
 ## <a name="assign-the-guest-inviter-role-to-a-user"></a>De rol van de gast-uitnodiging toewijzen aan een gebruiker
 
 Met de rol gast uitnodiging kunt u afzonderlijke gebruikers de mogelijkheid geven om gasten uit te nodigen zonder hen een globale beheerder of andere beheerdersrol toe te wijzen. Wijs de rol van de gast-uitnodiging toe aan personen. Zorg er vervolgens voor dat u **beheerders en gebruikers instelt in de rol gast uitnodiging. Dit kan worden uitgenodigd** voor **Ja**.

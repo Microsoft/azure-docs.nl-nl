@@ -5,14 +5,14 @@ services: vpn-gateway
 author: yushwang
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 09/01/2020
+ms.date: 12/02/2020
 ms.author: yushwang
-ms.openlocfilehash: 92f589e6a587febc10a4b407fe3616aca42d27d3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ae498b39a421db19f0d4e0a8daca58730321b58c
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89318944"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96546808"
 ---
 # <a name="about-vpn-devices-and-ipsecike-parameters-for-site-to-site-vpn-gateway-connections"></a>VPN-apparaten en IPSec-/IKE-parameters voor site-naar-site-VPN-gateway-verbindingen
 
@@ -57,7 +57,7 @@ Raadpleeg de koppelingen die overeenkomen met de juiste familie voor meer inform
 | Juniper |J-serie |PolicyBased: JunOS 10.4r9<br>RouteBased: JunOS 11.4 |Ondersteund |[Configuratie script](vpn-gateway-download-vpndevicescript.md) |
 | Juniper |ISG |ScreenOS 6.3 |Ondersteund |[Configuratie script](vpn-gateway-download-vpndevicescript.md) |
 | Juniper |SSG |ScreenOS 6.2 |Ondersteund |[Configuratie script](vpn-gateway-download-vpndevicescript.md) |
-| Juniper |MX |JunOS 12. x|Ondersteund |[Configuratie script](vpn-gateway-download-vpndevicescript.md) |
+| Juniper |MX |JunOS 12.x|Ondersteund |[Configuratie script](vpn-gateway-download-vpndevicescript.md) |
 | Microsoft |Routering en Remote Access-Service |Windows Server 2012 |Niet compatibel |Ondersteund |
 | Open Systems AG |Mission Control Security Gateway |N.v.t. |[Configuratie handleiding](https://open-systems.com/wp-content/uploads/2019/12/OpenSystems-AzureVPNSetup-Installation-Guide.pdf) |Niet compatibel |
 | Palo Alto Networks |Alle apparaten waarop PAN-OS wordt uitgevoerd |PAN-OS<br>PolicyBased: 6.1.5 of hoger<br>RouteBased: 7.1.4 |Ondersteund |[Configuratie handleiding](https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000Cm6WCAS) |
@@ -112,13 +112,11 @@ Nadat u het bij het VPN-apparaat meegeleverde configuratievoorbeeld hebt gedownl
 | &lt;SP_AzureGatewayIpAddress&gt; |Deze informatie is specifiek voor uw virtuele netwerk en u vindt deze in de beheerportal als **IP-adres van gateway**. |
 | &lt;SP_PresharedKey&gt; |Deze informatie is specifiek voor uw virtuele netwerk en u vindt deze in de beheerportal onder Sleutel beheren. |
 
-## <a name="ipsecike-parameters"></a><a name="ipsec"></a>IPSec-/IKE-parameters
+## <a name="default-ipsecike-parameters"></a><a name="ipsec"></a>Standaard IPsec/IKE-para meters
 
-> [!IMPORTANT]
-> 1. De onderstaande tabellen bevatten de combinaties van algoritmen en parameters die in de standaardconfiguratie voor Azure VPN-gateways worden gebruikt. Voor op routes gebaseerde VPN-gateways die zijn gemaakt met het Azure Resource Management-implementatiemodel, kunt u voor elke afzonderlijke verbinding een aangepast beleid opgeven. Raadpleeg [Configure IPsec/IKE policy](vpn-gateway-ipsecikepolicy-rm-powershell.md) (IPsec/IKE-beleid configureren) voor gedetailleerde instructies.
->
-> 2. Bovendien moet u TCP **MSS** vastzetten op **1350**. Als uw VPN-apparaten het vastzetten van MSS niet ondersteunen, kunt u in plaats daarvan ook de **MTU** op de tunnelinterface **1400** instellen op bytes.
->
+De onderstaande tabellen bevatten de combi Naties van algoritmen en para meters die Azure VPN-gateways gebruiken in de standaard configuratie (**standaard beleid**). Voor op routes gebaseerde VPN-gateways die zijn gemaakt met het Azure Resource Management-implementatiemodel, kunt u voor elke afzonderlijke verbinding een aangepast beleid opgeven. Raadpleeg [Configure IPsec/IKE policy](vpn-gateway-ipsecikepolicy-rm-powershell.md) (IPsec/IKE-beleid configureren) voor gedetailleerde instructies.
+
+Daarnaast moet u TCP **MSS** op **1350** zetten. Als uw VPN-apparaten het vastzetten van MSS niet ondersteunen, kunt u in plaats daarvan ook de **MTU** op de tunnelinterface **1400** instellen op bytes.
 
 In de volgende tabellen:
 

@@ -7,14 +7,14 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.date: 09/08/2020
 ms.topic: how-to
-ms.author: a-sakand
-author: skandil
-ms.openlocfilehash: d801971ca62c416c66608b40aab3e8052fe941a1
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.author: nitinme
+author: nitinme
+ms.openlocfilehash: ae51dca466a9aaf489ba4628e13a5e13de25b9bc
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91931407"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96546859"
 ---
 # <a name="sign-in-to-luis-portal"></a>Aanmelden bij de LUIS-portal
 
@@ -36,13 +36,13 @@ Een account, dat niet aan een Azure-abonnement is gekoppeld, heeft het Azure-pic
 
 Met een account dat is gekoppeld aan een Azure-abonnement kunt u het te gebruiken abonnement en de resource selecteren.
 
-:::image type="content" source="media/sign-in/resource-selection.png" alt-text="Gedeeltelijk scherm: opname van de LUIS-navigatie balk met het pictogram van Azure.":::
+:::image type="content" source="media/sign-in/resource-selection.png" alt-text="Gedeeltelijke scherm opname van de LUIS-Portal met de vervolg keuzelijsten voor het maken van abonnementen en ontwerpen van resources.":::
 
 ## <a name="sign-in-with-account-associated-with-an-azure-subscription"></a>Aanmelden met een account dat is gekoppeld aan een Azure-abonnement
 
 1. Meld u aan bij de [Luis-Portal](https://www.luis.ai) en ga akkoord met de gebruiks voorwaarden.
 
-1. U hebt twee opties die u kunt aanmelden:
+1. U hebt twee opties bij het aanmelden:
 
     * Ga door met het gebruik van een Azure-resource. Dit is het aanbevolen pad en het is binnenkort het enige beschik bare pad. Met dit pad kunt u uw LUIS-account koppelen aan een Azure-ontwerp bron terwijl u zich aanmeldt door een bestaande resource in uw abonnement te kiezen of een nieuwe resource te maken. Dit komt overeen met het registreren van gemigreerd zonder dat het [migratie proces](luis-migration-authoring.md#what-is-migration) later hoeft te worden uitgevoerd. Alle gebruikers moeten worden gemigreerd op 2 november 2020.
 
@@ -50,11 +50,11 @@ Met een account dat is gekoppeld aan een Azure-abonnement kunt u het te gebruike
 
     [Meer informatie over ontwerpen en starter Keys](luis-how-to-azure-subscription.md#luis-resources). Beide resources bieden u 1.000.000 gratis ontwerp transacties en 1000 gratis Voorspellings eindpunt transacties.
 
-    :::image type="content" source="media/sign-in/signup-landing-page.png" alt-text="Gedeeltelijk scherm: opname van de LUIS-navigatie balk met het pictogram van Azure.":::
+    :::image type="content" source="media/sign-in/signup-landing-page.png" alt-text="Gedeeltelijk scherm: afbeelding om een type Language Understanding-ontwerp bron te kiezen.":::
 
 1. Een bestaande ontwerp bron gebruiken
 
-    :::image type="content" source="media/sign-in/signup-choose-resource.png" alt-text="Gedeeltelijk scherm: opname van de LUIS-navigatie balk met het pictogram van Azure.":::
+    :::image type="content" source="media/sign-in/signup-choose-resource.png" alt-text="Resource voor ontwerpen kiezen":::
 
     Als u al LUIS hebt in uw abonnement en u deze hebt gekoppeld aan uw LUIS-account tijdens het aanmelden, kiest u de optie **bestaande ontwerp bron gebruiken** en geeft u de volgende informatie op:
 
@@ -67,7 +67,7 @@ Met een account dat is gekoppeld aan een Azure-abonnement kunt u het te gebruike
 
 1. Een nieuwe ontwerp bron maken
 
-    :::image type="content" source="media/sign-in/signup-create-resource.png" alt-text="Gedeeltelijk scherm: opname van de LUIS-navigatie balk met het pictogram van Azure.":::
+    :::image type="content" source="media/sign-in/signup-create-resource.png" alt-text="Ontwerpresource maken":::
 
     Geef bij het **maken van een nieuwe ontwerpresource** de volgende informatie op:
 
@@ -76,9 +76,9 @@ Met een account dat is gekoppeld aan een Azure-abonnement kunt u het te gebruike
     * **Abonnements naam** : het abonnement dat wordt gekoppeld aan de resource. Als u meer dan één abonnement bij uw Tenant hebt, selecteert u de gewenste versie in de vervolg keuzelijst.
     * **Resource groep** : een aangepaste naam voor de resource groep die u in uw abonnement hebt gekozen. Met resourcegroepen kunt u Azure-resources groeperen voor toegang en beheer. Als u momenteel geen resource groep in uw abonnement hebt, mag u er geen in de LUIS-portal maken. Ga naar [Azure Portal](https://ms.portal.azure.com/#create/Microsoft.ResourceGroup) om er nog een te maken, gaat u naar Luis om door te gaan met het aanmeldings proces.
 
-1. Nadat u het pad hebt gekozen, kan het enkele seconden duren voordat een teken met de tekst ' uw account is gemigreerd ' wordt weer gegeven. Voltooi door **door gaan**te selecteren.
+1. Nadat u het pad hebt gekozen, kan het enkele seconden duren voordat een teken met de tekst ' uw account is gemigreerd ' wordt weer gegeven. Voltooi door **door gaan** te selecteren.
 
-    :::image type="content" source="media/sign-in/signup-confirm-2.png" alt-text="Gedeeltelijk scherm: opname van de LUIS-navigatie balk met het pictogram van Azure.":::
+    :::image type="content" source="media/sign-in/signup-confirm-2.png" alt-text="Ontwerp bron bevestigen":::
 
     > [!Note]
     > Als u een abonnement hebt en ten minste één bewerkings resource in de regio hetzelfde is als degene waarbij u zich aanmeldt in de portal, kunt u zich automatisch aanmelden bij LUIS gemigreerd en gekoppeld aan een resource zonder dat u moet kiezen welk pad moet worden gekozen.
@@ -88,9 +88,9 @@ Met een account dat is gekoppeld aan een Azure-abonnement kunt u het te gebruike
 
 1. Meld u aan bij de [Luis-Portal](https://www.luis.ai) en controleer of u akkoord gaat met de gebruiks voorwaarden.
 
-1. Voltooi door **door gaan**te selecteren. U wordt automatisch aangemeld met een proef-of-start sleutel. Dit betekent dat u uiteindelijk [uw account moet migreren](luis-migration-authoring.md#migration-steps) en uw toepassingen kunt koppelen aan een ontwerp bron. Als u het migratie proces wilt uitvoeren, moet u zich aanmelden voor een [gratis proef versie van Azure](https://azure.microsoft.com/free/).
+1. Voltooi door **door gaan** te selecteren. U wordt automatisch aangemeld met een proef-of-start sleutel. Dit betekent dat u uiteindelijk [uw account moet migreren](luis-migration-authoring.md#migration-steps) en uw toepassingen kunt koppelen aan een ontwerp bron. Als u het migratie proces wilt uitvoeren, moet u zich aanmelden voor een [gratis proef versie van Azure](https://azure.microsoft.com/free/).
 
-    :::image type="content" source="media/sign-in/signup-no-subscription.png" alt-text="Gedeeltelijk scherm: opname van de LUIS-navigatie balk met het pictogram van Azure.":::
+    :::image type="content" source="media/sign-in/signup-no-subscription.png" alt-text="Geen abonnements scenario":::
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 

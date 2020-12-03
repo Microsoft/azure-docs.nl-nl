@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: tisande
-ms.openlocfilehash: 71314e6999031f52ebbfc582b43684ab5a17a261
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: d9cafc100ddd4b553577c447e82334e6ee7d1b6d
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93338795"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96545414"
 ---
 # <a name="group-by-clause-in-azure-cosmos-db"></a>GROUP BY-component in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -41,7 +41,7 @@ De GROUP BY-component deelt de resultaten van de query op basis van de waarden v
 
 ## <a name="remarks"></a>Opmerkingen
   
-  Wanneer een query gebruikmaakt van een GROUP BY-component, kan de SELECT-component alleen de subset van eigenschappen en systeem functies bevatten die zijn opgenomen in de component GROUP BY. Een uitzonde ring bestaat uit [statistische systeem functies](sql-query-aggregates.md)die kunnen worden weer gegeven in de component SELECT zonder te zijn opgenomen in de component Group by. U kunt ook letterlijke waarden in de component SELECT altijd insluiten.
+  Wanneer een query gebruikmaakt van een GROUP BY-component, kan de SELECT-component alleen de subset van eigenschappen en systeem functies bevatten die zijn opgenomen in de component GROUP BY. Een uitzonde ring is een [statistische functie](sql-query-aggregate-functions.md)die kan worden weer gegeven in de component SELECT zonder dat deze is opgenomen in de component Group by. U kunt ook letterlijke waarden in de component SELECT altijd insluiten.
 
   De component GROUP BY moet na de component SELECT, FROM en WHERE en vóór de component OFFSET LIMIT staan. U kunt GROUP BY momenteel niet gebruiken met een ORDER BY-component, maar dit is gepland.
 
@@ -192,4 +192,4 @@ U ziet deze uitvoer:
 
 - [Aan de slag](sql-query-getting-started.md)
 - [SELECT-component](sql-query-select.md)
-- [Statistische functies](sql-query-aggregates.md)
+- [Statistische functies](sql-query-aggregate-functions.md)

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba22745923f1b157c477dce0b5704c7e278e748e
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 6eb63a4a0b7b7fdefd636d3460b182f8d907dd36
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96175998"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558926"
 ---
 # <a name="frequently-asked-questions-identity-protection-in-azure-active-directory"></a>Veelgestelde vragen over identiteits beveiliging in Azure Active Directory
 
@@ -82,9 +82,11 @@ Alle risico detecties worden beschreven in het artikel [Wat is risico](concept-i
 
 - Wanneer deze feedback wordt ontvangen, verplaatsen we de risico status aanmelden (niet de gebruiker) om veilig en risico niveau te **bevestigen** **-** .
 
-- Daarnaast bieden we de informatie aan onze machine learning systemen voor toekomstige verbeteringen in de risico beoordeling.
+- Daarnaast bieden we de informatie aan onze machine learning systemen voor toekomstige verbeteringen in de risico beoordeling. 
 
     > [!NOTE]
+    >Momenteel wordt het selecteren van veilig bevestigen op een aanmelding niet voor komen dat toekomstige aanmeldingen met dezelfde eigenschappen als riskant worden gemarkeerd. De beste manier om het systeem te trainen om de eigenschappen van een gebruiker te leren, is het gebruik van het Risk ante aanmeldings beleid met MFA. Wanneer een Risk ante aanmeldingen voor MFA wordt gevraagd en de gebruiker op de aanvraag reageert, kan de aanmelding slagen en helpt het systeem te trainen op het gedrag van de rechtmatige gebruiker.
+    >
     > Als u denkt dat de gebruiker niet heeft geknoeid, gebruikt u **gebruikers risico sluiten** op gebruikers niveau in plaats van **bevestigd veilig** op aanmeldings niveau. Als u het risico van gebruikers **negeert** voor het gebruikers niveau, sluit u het gebruikers risico en alle achterstallige Risk ante aanmeldingen en risico detecties.
 
 ### <a name="why-am-i-seeing-a-user-with-a-low-or-above-risk-score-even-if-no-risky-sign-ins-or-risk-detections-are-shown-in-identity-protection"></a>Waarom kan ik een gebruiker met een laag (of hoger) risico Score zien, zelfs als er geen Risk ante aanmeldingen of risico detecties worden weer gegeven in identiteits beveiliging?

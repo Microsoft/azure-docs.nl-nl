@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/20/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: b6aaad9cce330d755fb69f8be48737f9a8f6c4a7
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 38ab16fbadee245810a4486170dd54922c0c38f9
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96487742"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558909"
 ---
 # <a name="security-control-v2-network-security"></a>Beveiligings controle v2: netwerk beveiliging
 
@@ -126,7 +126,11 @@ Beveilig Azure-bronnen tegen aanvallen van externe netwerken, waaronder DDoS-aan
 
 **Beveiligings belanghebbenden van klanten** ([meer informatie](/azure/cloud-adoption-framework/organize/cloud-security#security-functions)):
 
-Geen
+- [Beveiligingsarchitectuur](/azure/cloud-adoption-framework/organize/cloud-security-architecture)
+
+- [Postuurbeheer](/azure/cloud-adoption-framework/organize/cloud-security-posture-management)  
+
+- [Toepassings beveiliging en DevOps](/azure/cloud-adoption-framework/organize/cloud-security-application-security-devsecops)
 
 ## <a name="ns-5-deploy-intrusion-detectionintrusion-prevention-systems-idsips"></a>NS-5: inbraak detectie/inbraak preventie systemen (ID'S/IP'S) implementeren
 

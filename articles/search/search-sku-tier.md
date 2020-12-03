@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/01/2020
-ms.openlocfilehash: 1b23d6c7952e60ee693bb481fec04d358654632c
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 3f2cbd7afe206866ae4d5b7c0925c8f3be9ab785
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96530490"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558807"
 ---
 # <a name="choose-a-pricing-tier-for-azure-cognitive-search"></a>Een prijs categorie kiezen voor Azure Cognitive Search
 
@@ -21,7 +21,7 @@ Wanneer u [een zoek service maakt](search-create-service-portal.md), kiest u een
 
 + Aantal indexen en andere objecten (maximum limieten)
 + Grootte en snelheid van partities (fysieke opslag)
-+ Factureerbaar percentage, vaste kosten dat ook flext met het aantal partities en replica's dat in gebruik is
++ Factureerbaar percentage, vaste maandelijkse kosten, maar ook een incrementele kosten als u partities of replica's toevoegt
 
 Daarnaast komen er enkele [Premium-functies](#premium-features) aan de vereisten voor de laag.
 

@@ -4,12 +4,12 @@ description: Meer informatie over hoe Azure App Service het besturings systeem e
 ms.topic: article
 ms.date: 02/02/2018
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: 31b2d39f5d0d125d2bf23ac72718d9b386b48923
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 8b52223aea0f0bdfecf58906ac192e893da3b47d
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94833483"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558484"
 ---
 # <a name="os-and-runtime-patching-in-azure-app-service"></a>Patches voor besturings systeem en uitvoering in Azure App Service
 
@@ -51,7 +51,7 @@ Runtime-updates en afschaffing worden hier aangekondigd:
 
 ### <a name="new-patch-updates"></a>Nieuwe patch updates
 
-Patch-updates voor .NET, PHP, Java SDK of Tomcat/jetty-versie worden automatisch toegepast door de bestaande installatie te overschrijven met de nieuwe versie. Node.js patch updates worden naast de bestaande versies geïnstalleerd (vergelijkbaar met de primaire en secundaire versies in de volgende sectie). Nieuwe python-patch versies kunnen hand matig worden geïnstalleerd via [site-extensies](https://azure.microsoft.com/blog/azure-web-sites-extensions/), naast de ingebouwde python-installaties.
+Patch-updates voor .NET, PHP, Java SDK of Tomcat-versie worden automatisch toegepast door de bestaande installatie te overschrijven met de nieuwste versie. Node.js patch updates worden naast de bestaande versies geïnstalleerd (vergelijkbaar met de primaire en secundaire versies in de volgende sectie). Nieuwe python-patch versies kunnen hand matig worden geïnstalleerd via [site-extensies](https://azure.microsoft.com/blog/azure-web-sites-extensions/), naast de ingebouwde python-installaties.
 
 ### <a name="new-major-and-minor-versions"></a>Nieuwe primaire en secundaire versies
 

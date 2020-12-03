@@ -6,13 +6,13 @@ ms.author: bagol
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
-ms.date: 11/22/2020
-ms.openlocfilehash: b286533da90565429f96c5701aaa72dab0fb21d0
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.date: 12/03/2020
+ms.openlocfilehash: 195ddfcc3c781c1866a7751f989c9460463edbb9
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/03/2020
-ms.locfileid: "96553277"
+ms.locfileid: "96558161"
 ---
 # <a name="automatically-label-your-data-in-azure-purview"></a>Voorzie uw gegevens automatisch in azure controle sfeer liggen
 
@@ -36,13 +36,7 @@ Controle sfeer liggen maakt gebruik van dezelfde classificaties, ook wel aangedu
 > Hoewel classificaties rechtstreeks overeenkomen (een sociaal-fiscaal nummer heeft een classificatie van het **sofi-nummer**), worden labels van gevoeligheid toegepast wanneer een of meer classificaties en scenario's samen worden gevonden. 
 > 
 
-Gevoeligheids labels in azure controle sfeer liggen kunnen worden gebruikt voor het volgende:
-
-- **Automatisch labels Toep assen** op bestanden en database kolommen
-
-- **Bepalen** wie uw gegevens wel en niet kunnen openen
-
-- **Beveiligings instellingen**, zoals versleuteling, afdwingen voor gelabelde gegevens
+Gevoeligheids labels in azure controle sfeer liggen kunnen worden gebruikt om automatisch labels toe te passen op bestanden en database kolommen.
 
 Zie voor meer informatie:
 

@@ -8,19 +8,23 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 11/19/2020
+ms.date: 12/02/2020
 ms.author: aahi
 ms.custom: references_regions
-ms.openlocfilehash: 8743e765a050bfc4a2ba93a1b3e0344a960edb76
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 157bef31b375db54f294284ca0a5d97cd7035b17
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966884"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558960"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Wat is er nieuw in de Text Analytics-API?
 
 De Text Analytics-API wordt doorlopend bijgewerkt. In dit artikel vindt u informatie over nieuwe releases en functies, zodat u op de hoogte blijft van recente ontwikkelingen.
+
+## <a name="december-2020"></a>December 2020
+
+* De prijs informatie voor de Text Analytics-API is [bijgewerkt](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/)
 
 ## <a name="november-2020"></a>November 2020
 
@@ -198,7 +202,7 @@ Er zijn nu extra entiteits typen beschikbaar in de open bare preview-service van
     * Organisatie
     * Leeftijd als subtype onder hoeveelheid
     * Datum als een subtype onder DateTime
-    * E-mail 
+    * Email 
     * Telefoon nummer (alleen VS)
     * URL
     * IP-adres
@@ -215,7 +219,7 @@ Er zijn nu extra entiteits typen beschikbaar in de open bare preview-service van
     * Uitgebreide detectie en categorisatie van entiteiten gevonden in tekst. 
     * Herkenning van de volgende nieuwe entiteits typen:
         * Telefoonnummer
-        * Het IP-adres
+        * IP-adres
 
 Koppeling van entiteit ondersteunt Engels en Spaans. NER taal ondersteuning varieert per entiteits type.
 
@@ -235,7 +239,7 @@ Het biedt ondersteuning voor Engels ( `en` ), Japans ( `ja` ), vereenvoudigd Chi
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Wat is Text Analytics-API?](overview.md)  
+* [Wat is de Text Analytics-API?](overview.md)  
 * [Voorbeeldgebruikerscenario's](text-analytics-user-scenarios.md)
 * [Sentimentanalyse](how-tos/text-analytics-how-to-sentiment-analysis.md)
 * [Taaldetectie](how-tos/text-analytics-how-to-language-detection.md)

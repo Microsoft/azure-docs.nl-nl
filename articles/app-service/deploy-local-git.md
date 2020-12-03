@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 06/18/2019
 ms.reviewer: dariac
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: 9650633e1eaffdb588b3a31cd5a2f305c36e7a25
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 84e257111e8da0546cf104e0cc5d3ac95a9294ba
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92741312"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558671"
 ---
 # <a name="local-git-deployment-to-azure-app-service"></a>Lokale Git-implementatie naar Azure App Service
 
@@ -31,9 +31,9 @@ Volg de stappen in deze hand leiding:
   git clone https://github.com/Azure-Samples/nodejs-docs-hello-world.git
   ```
 
-[!INCLUDE [Prepare repository](../../includes/app-service-deploy-prepare-repo.md)]
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [Prepare repository](../../includes/app-service-deploy-prepare-repo.md)]
 
 ## <a name="deploy-with-kudu-build-server"></a>Implementeren met kudu build server
 
@@ -80,7 +80,7 @@ Gebruik de URL die in de volgende stap wordt gebruikt om uw app te implementeren
    git remote add azure <url>
    ```
    
-1. Pushen naar de externe Azure met `git push azure master` . 
+1. Pushen naar de externe Azure met `git push azure main` . 
    
 1. Voer in het venster **Git-referentie beheer** uw wacht woord voor de [implementatie gebruiker](#configure-a-deployment-user)in, niet uw aanmeldings wachtwoord voor Azure.
    
@@ -100,26 +100,26 @@ Als uw account over de benodigde machtigingen beschikt, kunt u Azure-pijp lijnen
 
 Lokale Git-implementatie voor uw app inschakelen met Azure-pijp lijnen (preview):
 
-1. Zoek in het [Azure Portal](https://portal.azure.com)naar en selecteer **app Services** . 
+1. Zoek in het [Azure Portal](https://portal.azure.com)naar en selecteer **app Services**. 
 
 1. Selecteer uw Azure App Service-app en selecteer **implementatie centrum** in het menu links.
    
-1. Selecteer **lokale Git** op de pagina **implementatie centrum** en selecteer **door gaan** . 
+1. Selecteer **lokale Git** op de pagina **implementatie centrum** en selecteer **door gaan**. 
    
    ![Selecteer lokale Git en selecteer door gaan](media/app-service-deploy-local-git/portal-enable.png)
    
-1. Selecteer op de pagina **Build** -provider **Azure-pijp lijnen (preview)** en selecteer vervolgens **door gaan** . 
+1. Selecteer op de pagina **Build** -provider **Azure-pijp lijnen (preview)** en selecteer vervolgens **door gaan**. 
    
    ![Selecteer Azure-pijp lijnen (preview) en selecteer vervolgens door gaan.](media/app-service-deploy-local-git/pipeline-builds.png)
 
-1. Configureer op de pagina **configureren** een nieuwe Azure DevOps-organisatie of geef een bestaande organisatie op en selecteer **door gaan** .
+1. Configureer op de pagina **configureren** een nieuwe Azure DevOps-organisatie of geef een bestaande organisatie op en selecteer **door gaan**.
    
    > [!NOTE]
    > Als uw bestaande Azure DevOps-organisatie niet wordt weer gegeven, moet u deze mogelijk koppelen aan uw Azure-abonnement. Zie [uw CD release-pijp lijn definiëren](/azure/devops/pipelines/apps/cd/deploy-webdeploy-webapps#cd)voor meer informatie.
    
-1. Afhankelijk van de [prijs categorie](https://azure.microsoft.com/pricing/details/app-service/plans/)van uw app service-abonnement, ziet u mogelijk de pagina **implementeren naar staging** . Kies of u [implementatie sleuven wilt inschakelen](deploy-staging-slots.md)en selecteer **door gaan** .
+1. Afhankelijk van de [prijs categorie](https://azure.microsoft.com/pricing/details/app-service/plans/)van uw app service-abonnement, ziet u mogelijk de pagina **implementeren naar staging** . Kies of u [implementatie sleuven wilt inschakelen](deploy-staging-slots.md)en selecteer **door gaan**.
    
-1. Controleer de instellingen op de pagina **samen vatting** en selecteer vervolgens **volt ooien** .
+1. Controleer de instellingen op de pagina **samen vatting** en selecteer vervolgens **volt ooien**.
    
 1. Wanneer de Azure-pijp lijn gereed is, kopieert u de URL van de Git-opslag plaats vanaf de pagina **Deployment Center** , zodat u deze kunt gebruiken in de volgende stap. 
    
@@ -131,7 +131,7 @@ Lokale Git-implementatie voor uw app inschakelen met Azure-pijp lijnen (preview)
    git remote add azure <url>
    ```
    
-1. Pushen naar de externe Azure met `git push azure master` . 
+1. Pushen naar de externe Azure met `git push azure main` . 
    
 1. Meld u op de pagina **Git-referentie beheer** aan met uw VisualStudio.com-gebruikers naam. Zie [overzicht van Azure DevOps Services-verificatie](/vsts/git/auth-overview?view=vsts)voor andere verificatie methoden.
    
@@ -149,12 +149,12 @@ Mogelijk worden de volgende veelvoorkomende fout berichten weer geven wanneer u 
 ---|---|---|
 |`Unable to access '[siteURL]': Failed to connect to [scmAddress]`|De app is niet actief.|Start de app in het Azure Portal. Git-implementatie is niet beschikbaar wanneer de web-app is gestopt.|
 |`Couldn't resolve host 'hostname'`|De adres gegevens voor de externe Azure-computer zijn onjuist.|Gebruik de `git remote -v` opdracht om alle externe-en de bijbehorende URL weer te geven. Controleer of de URL voor de externe Azure juist is. Als dat nodig is, kunt u deze extern verwijderen en opnieuw maken met de juiste URL.|
-|`No refs in common and none specified; doing nothing. Perhaps you should specify a branch such as 'master'.`|U hebt geen vertakking opgegeven tijdens `git push` of u hebt geen waarde ingesteld `push.default` in `.gitconfig` .|Voer `git push` opnieuw uit en geef de hoofd vertakking op: `git push azure master` .|
-|`src refspec [branchname] does not match any.`|U hebt geprobeerd naar een andere vertakking dan Master te pushen op de externe Azure-server.|Voer `git push` opnieuw uit en geef de hoofd vertakking op: `git push azure master` .|
+|`No refs in common and none specified; doing nothing. Perhaps you should specify a branch such as 'main'.`|U hebt geen vertakking opgegeven tijdens `git push` of u hebt geen waarde ingesteld `push.default` in `.gitconfig` .|Voer `git push` opnieuw uit en geef de hoofd vertakking op: `git push azure main` .|
+|`src refspec [branchname] does not match any.`|U probeert te pushen naar een andere vertakking dan Main op de externe Azure.|Voer `git push` opnieuw uit en geef de hoofd vertakking op: `git push azure main` .|
 |`RPC failed; result=22, HTTP code = 5xx.`|Deze fout kan optreden als u probeert een grote Git-opslag plaats via HTTPS te pushen.|Wijzig de Git-configuratie op de lokale computer zodat deze `postBuffer` groter wordt. Bijvoorbeeld: `git config --global http.postBuffer 524288000`.|
-|`Error - Changes committed to remote repository but your web app not updated.`|U hebt een Node.js-app geïmplementeerd met een _package.jsin_ een bestand dat aanvullende vereiste modules bevat.|Bekijk de `npm ERR!` fout berichten vóór deze fout voor meer context over de fout. Hieronder vindt u de bekende oorzaken van deze fout en de bijbehorende `npm ERR!` berichten:<br /><br />**Onjuist gevormd package.jsbestand** : `npm ERR! Couldn't read dependencies.`<br /><br />**Systeem eigen module heeft geen binaire distributie voor Windows** :<br />`npm ERR! \cmd "/c" "node-gyp rebuild"\ failed with 1` <br />of <br />`npm ERR! [modulename@version] preinstall: \make || gmake\ `|
+|`Error - Changes committed to remote repository but your web app not updated.`|U hebt een Node.js-app geïmplementeerd met een _package.jsin_ een bestand dat aanvullende vereiste modules bevat.|Bekijk de `npm ERR!` fout berichten vóór deze fout voor meer context over de fout. Hieronder vindt u de bekende oorzaken van deze fout en de bijbehorende `npm ERR!` berichten:<br /><br />**Onjuist gevormd package.jsbestand**: `npm ERR! Couldn't read dependencies.`<br /><br />**Systeem eigen module heeft geen binaire distributie voor Windows**:<br />`npm ERR! \cmd "/c" "node-gyp rebuild"\ failed with 1` <br />of <br />`npm ERR! [modulename@version] preinstall: \make || gmake\ `|
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+## <a name="additional-resources"></a>Aanvullende resources
 
 - [Documentatie voor project kudu](https://github.com/projectkudu/kudu/wiki)
 - [Continue implementatie naar Azure App Service](deploy-continuous-deployment.md)

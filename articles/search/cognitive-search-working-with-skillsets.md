@@ -8,12 +8,12 @@ ms.author: vikurpad
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/15/2020
-ms.openlocfilehash: f1d8715fcadeda5ccd1a98192a70939b0c359c88
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b5a893ee1923ba4b2bec53b20fb164337bd65902
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84976673"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558110"
 ---
 # <a name="skillset-concepts-in-azure-cognitive-search"></a>De concepten van vaardig heden in azure Cognitive Search
 
@@ -222,8 +222,6 @@ De shaper-benadering is uitgebreider dan in line vorm, maar zorgt ervoor dat all
 Om het voor beeld uit te breiden, kunt u ervoor kiezen om de inline-vorm te verwijderen en een shaper-vaardigheid te gebruiken om een nieuw knoop punt voor de sleutel zinnen te maken. Als u een vorm wilt maken die in drie tabellen is geprojecteerd, namelijk,, `hotelReviewsDocument` `hotelReviewsPages` en `hotelReviewsKeyPhrases` , worden de twee opties beschreven in de volgende secties.
 
 #### <a name="shaper-skill-and-projection"></a>Shaper vaardig heden en projectie
-
-Deze 
 
 > [!Note]
 > Enkele van de kolommen uit de document tabel zijn uit dit voor beeld verwijderd voor de boog.

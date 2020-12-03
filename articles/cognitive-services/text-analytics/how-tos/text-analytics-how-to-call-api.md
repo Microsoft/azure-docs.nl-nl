@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 11/19/2020
+ms.date: 12/02/2020
 ms.author: aahi
-ms.openlocfilehash: 90a4da2aadbbdf07d851e4407d2d417fc76d32af
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: 5985c30973f703b897fa2eedc2be3b939d97900b
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96512321"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558994"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>De Text Analytics aanroepen REST API
 
@@ -52,9 +52,9 @@ Zie de onderstaande tabel om te zien welke functies asynchroon kunnen worden geb
 
 
 > [!NOTE]
-> Als u de eind punten wilt gebruiken, hebt u een Text Analytics resource met een [prijs categorie](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/) Standard (S) nodig `/analyze` `/health` .
+> * Als u de eind punten wilt gebruiken, hebt u een Text Analytics resource met een [prijs categorie](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/) Standard (S) nodig `/analyze` `/health` .
 
-1.  Ga eerst naar de [Azure Portal](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics) en maak een nieuwe Text Analytics resource als u er nog geen hebt. Kies de **prijs categorie Standard (S)** als u de `/analyze` eind punten wilt gebruiken `/health` .
+1.  Ga eerst naar de [Azure Portal](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics) en maak een nieuwe Text Analytics resource als u er nog geen hebt. Kies de **prijs categorie Standard (S)** als u de `/analyze` eind punten wilt gebruiken `/health` . Het `/analyze` eind punt is opgenomen in uw [prijs categorie](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/).
 
 2.  Selecteer de regio die u voor het eind punt wilt gebruiken.  Houd er rekening mee dat de `/analyze` `/health` eind punten alleen beschikbaar zijn in de volgende REGIO'S: VS-West 2, VS-Oost 2, VS-midden, Europa-noord en Europa-West.
 

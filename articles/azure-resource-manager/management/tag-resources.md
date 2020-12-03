@@ -2,14 +2,14 @@
 title: Label resources, resource groepen en abonnementen voor logische organisatie
 description: Laat zien hoe u Tags toepast om Azure-resources te organiseren voor facturering en beheer.
 ms.topic: conceptual
-ms.date: 11/20/2020
+ms.date: 12/03/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 9e9ef96a712e5ac2ba483170fb8ef9c89115b4f8
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: e47d3acf15ce5e4f5cb70444419b76beb21ae98b
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95972556"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558144"
 ---
 # <a name="use-tags-to-organize-your-azure-resources-and-management-hierarchy"></a>Tags gebruiken om uw Azure-resources en-beheer hiërarchie te organiseren
 
@@ -26,9 +26,11 @@ Zie voor meer informatie over het implementeren van een coderings strategie de [
 
 ## <a name="required-access"></a>Vereiste toegang
 
-Als u labels wilt Toep assen op een resource, moet u schrijf toegang hebben tot het resource type **micro soft. resources/Tags** . Met de rol van [Label Inzender](../../role-based-access-control/built-in-roles.md#tag-contributor) kunt u Tags Toep assen op een entiteit zonder dat u toegang hebt tot de entiteit zelf. Op dit moment kan de rol van label Inzender geen tags Toep assen op resources of resource groepen via de portal. Het kan labels Toep assen op abonnementen via de portal. Het ondersteunt alle label bewerkingen via Power shell en REST API.  
+Er zijn twee manieren om de vereiste toegang tot label bronnen te verkrijgen.
 
-De rol [Inzender](../../role-based-access-control/built-in-roles.md#contributor) verleent ook de vereiste toegang om labels toe te passen op een wille keurige entiteit. Als u labels wilt Toep assen op slechts één resource type, gebruikt u de rol Inzender voor die resource. Gebruik bijvoorbeeld de Inzender van de [virtuele machine](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor)om labels toe te passen op virtuele machines.
+- U kunt schrijf toegang hebben tot het resource type **micro soft. resources/Tags** . Met deze toegang kunt u een wille keurige resource labelen, zelfs als u geen toegang hebt tot de resource zelf. De rol van de [Label bijdrage](../../role-based-access-control/built-in-roles.md#tag-contributor) geeft deze toegang. Op dit moment kan de rol van label Inzender geen tags Toep assen op resources of resource groepen via de portal. Het kan labels Toep assen op abonnementen via de portal. Het ondersteunt alle label bewerkingen via Power shell en REST API.  
+
+- U kunt schrijf toegang hebben tot de resource zelf. De rol [Inzender](../../role-based-access-control/built-in-roles.md#contributor) verleent de vereiste toegang om labels toe te passen op een wille keurige entiteit. Als u labels wilt Toep assen op slechts één resource type, gebruikt u de rol Inzender voor die resource. Gebruik bijvoorbeeld de Inzender van de [virtuele machine](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor)om labels toe te passen op virtuele machines.
 
 ## <a name="powershell"></a>PowerShell
 
@@ -277,7 +279,7 @@ az tag create --resource-id $resource --tags Team=Compliance Environment=Product
 },
 ```
 
-Gebruik **AZ tag update** om tags toe te voegen aan een resource die al labels heeft. Stel de para meter **--Operation** in om **samen te voegen**.
+Gebruik om tags toe te voegen aan een resource die al labels bevat `az tag update` . Stel de `--operation` para meter in op `Merge` .
 
 ```azurecli-interactive
 az tag update --resource-id $resource --operation Merge --tags Dept=Finance Status=Normal
@@ -313,7 +315,7 @@ az tag update --resource-id $resource --operation Merge --tags Status=Green
 },
 ```
 
-Wanneer u de para meter **--Operation** instelt op **vervangen**, worden de bestaande tags vervangen door de nieuwe set tags.
+Wanneer u de `--operation` para meter instelt op `Replace` , worden de bestaande tags vervangen door de nieuwe set tags.
 
 ```azurecli-interactive
 az tag update --resource-id $resource --operation Replace --tags Project=ECommerce CostCenter=00123 Team=Web
@@ -406,7 +408,7 @@ az group list --tag Dept=Finance
 
 ### <a name="remove-tags"></a>Tags verwijderen
 
-Als u specifieke tags wilt verwijderen, gebruikt u **AZ tag update** en set **--Operation** om te **verwijderen**. Geef de labels op die u wilt verwijderen.
+Gebruik en stel in om specifieke tags te verwijderen `az tag update` `--operation` `Delete` . Geef de labels op die u wilt verwijderen.
 
 ```azurecli-interactive
 az tag update --resource-id $resource --operation Delete --tags Project=ECommerce Team=Web

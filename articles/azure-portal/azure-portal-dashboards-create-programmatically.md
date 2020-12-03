@@ -3,21 +3,21 @@ title: Programmatisch Azure-Dash boards maken
 description: Gebruik een dash board in de Azure Portal als sjabloon om programmatisch Azure-Dash boards te maken. Bevat een JSON-verwijzing.
 services: azure-portal
 documentationcenter: ''
-author: adamabmsft
+author: mgblythe
 manager: mtillman
 ms.service: azure-portal
 ms.devlang: NA
 ms.topic: how-to
 ms.tgt_pltfrm: NA
 ms.workload: na
-ms.date: 03/23/2020
+ms.date: 12/4/2020
 ms.author: mblythe
-ms.openlocfilehash: 7f52bd94a0286ea50d09ab7c77dce339e8a3ebf3
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 7e6819b01af3fc9357417a838fefce7f2c73dcce
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92089363"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558213"
 ---
 # <a name="programmatically-create-azure-dashboards"></a>Programmatisch Azure-Dash boards maken
 
@@ -658,3 +658,49 @@ In dit voor beeld wordt een dash board op zichzelf geïmplementeerd, maar met de
 ```
 
 Nu u een voor beeld hebt gezien van het gebruik van een geparametriseerde sjabloon voor het implementeren van een dash board, kunt u proberen de sjabloon te implementeren met behulp van de [Azure Resource Manager rest-api's](/rest/api/), de [Azure CLI](/cli/azure)of de [Azure PowerShell-opdrachten](/powershell/azure/get-started-azureps).
+
+## <a name="programmatically-create-a-dashboard-by-using-azure-cli"></a>Programmatisch een dash board maken met behulp van Azure CLI
+
+Bereid uw omgeving voor op Azure CLI.
+
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+- In deze voor beelden wordt het volgende dash board gebruikt: [portal-dashboard-template-testvm.jsop](https://raw.githubusercontent.com/Azure/azure-docs-powershell-samples/master/azure-portal/portal-dashboard-template-testvm.json). Vervang de inhoud tussen vier Kante haken door uw waarden.
+
+Voer de opdracht [AZ Portal dash board Create](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_create) uit om een dash board te maken:
+
+```azurecli
+az portal dashboard create --resource-group myResourceGroup --name 'Simple VM Dashboard' \
+   --input-path portal-dashboard-template-testvm.json --location centralus
+```
+
+U kunt een dash board bijwerken met behulp van de opdracht [AZ Portal dash board update](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_update) :
+
+```azurecli
+az portal dashboard update --resource-group myResourceGroup --name 'Simple VM Dashboard' \
+--input-path portal-dashboard-template-testvm.json --location centralus
+```
+
+Bekijk de details van een dash board door de opdracht [AZ Portal dash board show](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_show) uit te voeren:
+
+```azurecli
+az portal dashboard show --resource-group myResourceGroup --name 'Simple VM Dashboard'
+```
+
+Als u alle Dash boards voor het huidige abonnement wilt zien, gebruikt u [AZ Portal dash board List](/cli/azure/ext/portal/portal/dashboard#ext_portal_az_portal_dashboard_list):
+
+```azurecli
+az portal dashboard list
+```
+
+U kunt ook alle Dash boards voor een resource groep bekijken:
+
+```azurecli
+az portal dashboard list --resource-group myResourceGroup
+```
+
+## <a name="next-steps"></a>Volgende stappen
+
+Zie [Azure Portal instellingen en voor keuren beheren](set-preferences.md)voor meer informatie over Desk tops.
+
+Zie [AZ Portal dash board](/cli/azure/ext/portal/portal/dashboard)voor meer informatie over Azure CLI-ondersteuning voor dash boards.

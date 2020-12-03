@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 11/19/2020
+ms.date: 12/02/2020
 ms.author: aahi
 ms.custom: references_regions
-ms.openlocfilehash: e7f017c1f3dc189af2b0fc053912decca3459478
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 27af0ffdeb254dbb671a0618d0e9973336a7f529
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94952757"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96559011"
 ---
 # <a name="how-to-use-text-analytics-for-health-preview"></a>Procedure: Text Analytics gebruiken voor de status (preview)
 
@@ -28,6 +28,8 @@ Text Analytics status is een functie van de Text Analytics-API-service die relev
 
 * De API (asynchroon) van het web 
 * Een docker-container (synchroon)   
+
+> [!VIDEO https://channel9.msdn.com/Shows/AI-Show/Introducing-Text-Analytics-for-Health/player]
 
 ## <a name="features"></a>Functies
 
@@ -48,7 +50,7 @@ Met relatie-extractie worden betekenis volle verbindingen van concepten aangegev
 > ![Status RE](../media/ta-for-health/health-relation-extraction.png)
 
 
-### <a name="entity-linking"></a>[Entiteiten koppelen](#tab/entity-linking)
+### <a name="entity-linking"></a>[Entiteit koppelen](#tab/entity-linking)
 
 Entiteit koppelt disambiguates afzonderlijke entiteiten door benoemde entiteiten die worden vermeld in tekst te koppelen aan concepten die zijn gevonden in een vooraf gedefinieerde data base met concepten. Bijvoorbeeld het Unified medisch taal systeem (UMLS).
 
@@ -106,7 +108,7 @@ Text Analytics voor de status resulteert in een hogere kwaliteit wanneer u het k
 
 U moet JSON-documenten in deze indeling hebben: id, tekst en taal. 
 
-De documenten mogen niet meer dan 5.120 tekens per document bevatten. Zie het artikel over de [gegevens limieten](../concepts/data-limits.md?tabs=version-3) onder concepten voor het maximum aantal documenten dat is toegestaan in een verzameling. De verzameling is in de hoofdtekst van de aanvraag ingediend.
+De documenten mogen niet meer dan 5.120 tekens per document bevatten. Zie het artikel [gegevenslimieten](../concepts/data-limits.md?tabs=version-3) onder Concepten voor het maximum aantal documenten dat is toegestaan in een verzameling. De verzameling is in de hoofdtekst van de aanvraag ingediend.
 
 ### <a name="structure-the-api-request-for-the-hosted-asynchronous-web-api"></a>De API-aanvraag voor de gehoste asynchrone Web-API structureren
 

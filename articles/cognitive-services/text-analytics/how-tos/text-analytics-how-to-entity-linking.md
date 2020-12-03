@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: article
 ms.date: 11/19/2020
 ms.author: aahi
-ms.openlocfilehash: ef06faa17739153b2a04e777498e1de6e97c0646
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 804d739efa5ac96c0b2d7228573f031f324e590e
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94957092"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558977"
 ---
 # <a name="how-to-use-named-entity-recognition-in-text-analytics"></a>Benoemde entiteits herkenning gebruiken in Text Analytics
 
@@ -31,7 +31,7 @@ Herkenning van benoemde entiteiten (NER) is de mogelijkheid om verschillende ent
 
 ## <a name="personally-identifiable-information-pii"></a>Persoonlijk identificeer bare informatie (PII)
 
-De PII-functie maakt deel uit van NER en kan gevoelige entiteiten identificeren en redigeren in tekst die is gekoppeld aan een individuele persoon, zoals: telefoon nummer, e-mail adres, e-mail adres, paspoort nummer.  
+De PII-functie maakt deel uit van NER en kan gevoelige entiteiten identificeren en redigeren in tekst die is gekoppeld aan een individuele persoon, zoals: telefoon nummer, e-mail adres, e-mail adres, paspoort nummer.
 
 ## <a name="named-entity-recognition-features-and-versions"></a>Functies en versies van de benoemde entiteit herkenning
 

@@ -4,12 +4,12 @@ description: Meer informatie over het configureren van een aangepaste container 
 ms.topic: article
 ms.date: 09/22/2020
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: 9f71efbf7cc606efd598880e90ade3a549402245
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 2aece0550d7b78ac4312e71b2671de4a64e4b86b
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92787054"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96557923"
 ---
 # <a name="configure-a-custom-container-for-azure-app-service"></a>Een aangepaste container configureren voor Azure App Service
 
@@ -139,7 +139,17 @@ U kunt de *C:\home* -map in het bestands systeem van uw app gebruiken om bestand
 
 Wanneer permanente opslag is uitgeschakeld, worden er geen schrijf bewerkingen naar de `C:\home` Directory bewaard. [Docker-host-logboeken en container logboeken](#access-diagnostic-logs) worden opgeslagen in een standaard permanente gedeelde opslag die niet aan de container is gekoppeld. Wanneer permanente opslag is ingeschakeld, worden alle schrijf bewerkingen naar de `C:\home` Directory persistent gemaakt en kunnen alle exemplaren van een uitgeschaalde app worden geopend. logboeken zijn toegankelijk op `C:\home\LogFiles` .
 
-Permanente opslag is standaard *uitgeschakeld* en de instelling wordt niet weer gegeven in de toepassings instellingen. Als u deze wilt inschakelen, stelt u de `WEBSITES_ENABLE_APP_SERVICE_STORAGE` app-instelling in via de [Cloud shell](https://shell.azure.com). In bash:
+::: zone-end
+
+::: zone pivot="container-linux"
+
+U kunt de */Home* -map in het bestands systeem van uw app gebruiken om bestanden op te slaan tijdens het opnieuw opstarten en ze te delen met alle instanties. De `/home` in uw app is beschikbaar om uw container-app toegang te geven tot permanente opslag.
+
+Wanneer permanente opslag is uitgeschakeld, worden de schrijf bewerkingen naar de `/home` Directory niet opgeslagen in een app die opnieuw wordt gestart of over meerdere exemplaren. De enige uitzonde ring hierop is de `/home/LogFiles` map die wordt gebruikt voor het opslaan van de docker-en container Logboeken. Wanneer permanente opslag is ingeschakeld, worden alle schrijf bewerkingen naar de `/home` Directory persistent gemaakt en kunnen alle exemplaren van een uitgeschaalde app worden geopend.
+
+::: zone-end
+
+Permanente opslag is standaard uitgeschakeld en de instelling wordt niet weer gegeven in de app-instellingen. Als u deze wilt inschakelen, stelt u de `WEBSITES_ENABLE_APP_SERVICE_STORAGE` app-instelling in via de [Cloud shell](https://shell.azure.com). In bash:
 
 ```azurecli-interactive
 az webapp config appsettings set --resource-group <group-name> --name <app-name> --settings WEBSITES_ENABLE_APP_SERVICE_STORAGE=true
@@ -150,28 +160,6 @@ In PowerShell:
 ```azurepowershell-interactive
 Set-AzWebApp -ResourceGroupName <group-name> -Name <app-name> -AppSettings @{"WEBSITES_ENABLE_APP_SERVICE_STORAGE"=true}
 ```
-
-::: zone-end
-
-::: zone pivot="container-linux"
-
-U kunt de */Home* -map in het bestands systeem van uw app gebruiken om bestanden op te slaan tijdens het opnieuw opstarten en ze te delen met alle instanties. De `/home` in uw app is beschikbaar om uw container-app toegang te geven tot permanente opslag.
-
-Wanneer permanente opslag is uitgeschakeld, worden de schrijf bewerkingen naar de `/home` Directory niet opgeslagen in een app die opnieuw wordt gestart of over meerdere exemplaren. De enige uitzonde ring hierop is de `/home/LogFiles` map die wordt gebruikt voor het opslaan van de docker-en container Logboeken. Wanneer permanente opslag is ingeschakeld, worden alle schrijf bewerkingen naar de `/home` Directory persistent gemaakt en kunnen alle exemplaren van een uitgeschaalde app worden geopend.
-
-Permanente opslag is standaard *ingeschakeld* en de instelling wordt niet weer gegeven in de toepassings instellingen. Als u dit wilt uitschakelen, stelt u de `WEBSITES_ENABLE_APP_SERVICE_STORAGE` app-instelling in via de [Cloud shell](https://shell.azure.com). In bash:
-
-```azurecli-interactive
-az webapp config appsettings set --resource-group <group-name> --name <app-name> --settings WEBSITES_ENABLE_APP_SERVICE_STORAGE=false
-```
-
-In PowerShell:
-
-```azurepowershell-interactive
-Set-AzWebApp -ResourceGroupName <group-name> -Name <app-name> -AppSettings @{"WEBSITES_ENABLE_APP_SERVICE_STORAGE"=false}
-```
-
-::: zone-end
 
 > [!NOTE]
 > U kunt ook [uw eigen permanente opslag configureren](configure-connect-to-azure-storage.md).
@@ -212,7 +200,7 @@ Er zijn verschillende manieren om toegang te krijgen tot docker-logboeken:
 
 ### <a name="in-azure-portal"></a>In Azure Portal
 
-Docker-logboeken worden weer gegeven in de portal, op de pagina **container instellingen** van uw app. De logboeken worden afgekapt, maar u kunt alle logboeken downloaden door te klikken op **downloaden** . 
+Docker-logboeken worden weer gegeven in de portal, op de pagina **container instellingen** van uw app. De logboeken worden afgekapt, maar u kunt alle logboeken downloaden door te klikken op **downloaden**. 
 
 ### <a name="from-the-kudu-console"></a>Vanuit de kudu-console
 
@@ -325,7 +313,7 @@ SSH maakt veilige communicatie tussen een container en een client mogelijk. Als 
     ```
 
     > [!NOTE]
-    > Het *sshd_config* -bestand moet de volgende items bevatten:
+    > Het *sshd_config*-bestand moet de volgende items bevatten:
     > - `Ciphers`moet ten minste één item in deze lijst bevatten: `aes128-cbc,3des-cbc,aes256-cbc`.
     > - `MACs`moet ten minste één item in deze lijst bevatten: `hmac-sha1,hmac-sha1-96`.
 

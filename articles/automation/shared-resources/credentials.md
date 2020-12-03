@@ -3,18 +3,18 @@ title: Referenties beheren in Azure Automation
 description: In dit artikel leest u hoe u referentie-assets maakt en hoe u deze kunt gebruiken in een runbook of DSC-configuratie.
 services: automation
 ms.subservice: shared-capabilities
-ms.date: 09/10/2020
+ms.date: 12/03/2020
 ms.topic: conceptual
-ms.openlocfilehash: 4fbcf74c2c70d3dffd86728132d58430472271b0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ec35653f67c46a7032e834020d8e2ca4ab3125c8
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90004661"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558829"
 ---
 # <a name="manage-credentials-in-azure-automation"></a>Referenties beheren in Azure Automation
 
-Een Automation-referentie-Asset bevat een object dat beveiligings referenties bevat, zoals een gebruikers naam en een wacht woord. Runbooks en DSC-configuraties gebruiken cmdlets waarmee een [PSCredential](/dotnet/api/system.management.automation.pscredential) -object voor verificatie wordt geaccepteerd. Het is ook mogelijk om de gebruikers naam en het wacht woord van het `PSCredential` object op te halen om aan te geven aan bepaalde toepassingen of services waarvoor verificatie is vereist. 
+Een Automation-referentie-Asset bevat een object dat beveiligings referenties bevat, zoals een gebruikers naam en een wacht woord. Runbooks en DSC-configuraties gebruiken cmdlets waarmee een [PSCredential](/dotnet/api/system.management.automation.pscredential) -object voor verificatie wordt geaccepteerd. Het is ook mogelijk om de gebruikers naam en het wacht woord van het `PSCredential` object op te halen om aan te geven aan bepaalde toepassingen of services waarvoor verificatie is vereist.
 
 >[!NOTE]
 >Beveilig assets in Azure Automation referenties, certificaten, verbindingen en versleutelde variabelen bevatten. Deze assets worden versleuteld en opgeslagen in Azure Automation met behulp van een unieke sleutel die wordt gegenereerd voor elk Automation-account. Azure Automation slaat de sleutel op in de door het systeem beheerde Key Vault. Voordat u een beveiligde Asset opslaat, laadt Automation de sleutel van Key Vault en gebruikt deze om de Asset te versleutelen. 
@@ -44,7 +44,7 @@ De cmdlets in de volgende tabel worden gebruikt voor toegang tot referenties in 
 
 Als `PSCredential` u objecten in uw code wilt ophalen, moet u de `Orchestrator.AssetManagement.Cmdlets` module importeren. Zie [modules beheren in azure Automation](modules.md)voor meer informatie.
 
-```azurepowershell
+```powershell
 Import-Module Orchestrator.AssetManagement.Cmdlets -ErrorAction SilentlyContinue
 ```
 
@@ -69,15 +69,15 @@ U kunt een nieuw referentie-element maken met behulp van de Azure Portal of met 
 ### <a name="create-a-new-credential-asset-with-the-azure-portal"></a>Maak een nieuw referentie-element met de Azure Portal
 
 1. Klik vanuit uw Automation-account in het linkerdeel venster op **referenties** onder **gedeelde resources**.
-1. Selecteer **een referentie toevoegen**op de pagina **referenties** .
-2. Voer in het deel venster nieuwe referentie de juiste referentie naam in volgens uw naamgevings standaarden.
-3. Typ uw toegangs-ID in het veld **gebruikers naam** .
-4. Voor beide wachtwoord velden voert u uw geheime toegangs sleutel in.
+2. Selecteer **een referentie toevoegen** op de pagina **referenties** .
+3. Voer in het deel venster nieuwe referentie de juiste referentie naam in volgens uw naamgevings standaarden.
+4. Typ uw toegangs-ID in het veld **gebruikers naam** .
+5. Voor beide wachtwoord velden voert u uw geheime toegangs sleutel in.
 
     ![Nieuwe referentie maken](../media/credentials/credential-create.png)
 
-5. Als het selectie vakje multi-factor Authentication is ingeschakeld, schakelt u dit uit.
-6. Klik op **maken** om het nieuwe referentie-element op te slaan.
+6. Als het selectie vakje multi-factor Authentication is ingeschakeld, schakelt u dit uit.
+7. Klik op **maken** om het nieuwe referentie-element op te slaan.
 
 > [!NOTE]
 > Azure Automation biedt geen ondersteuning voor gebruikers accounts die gebruikmaken van multi-factor Authentication.
@@ -106,8 +106,7 @@ U kunt ook de methode [GetNetworkCredential](/dotnet/api/system.management.autom
 
 In het volgende voor beeld ziet u hoe u een Power shell-referentie gebruikt in een runbook. De referentie wordt opgehaald en de gebruikers naam en het wacht woord worden toegewezen aan variabelen.
 
-
-```azurepowershell
+```powershell
 $myCredential = Get-AutomationPSCredential -Name 'MyCredential'
 $userName = $myCredential.UserName
 $securePassword = $myCredential.Password
@@ -116,21 +115,20 @@ $password = $myCredential.GetNetworkCredential().Password
 
 U kunt ook een referentie gebruiken om te verifiëren bij Azure met [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). In de meeste gevallen moet u een [uitvoeren als-account](../manage-runas-account.md) gebruiken en de verbinding ophalen met [Get-AzAutomationConnection](../automation-connections.md).
 
-
-```azurepowershell
+```powershell
 $myCred = Get-AutomationPSCredential -Name 'MyCredential'
 $userName = $myCred.UserName
 $securePassword = $myCred.Password
 $password = $myCred.GetNetworkCredential().Password
 
-$myPsCred = New-Object System.Management.Automation.PSCredential ($userName,$password)
+$myPsCred = New-Object System.Management.Automation.PSCredential ($userName,$securePassword)
 
 Connect-AzAccount -Credential $myPsCred
 ```
 
 ### <a name="graphical-runbook-example"></a>Voor beeld van grafisch runbook
 
-U kunt een activiteit voor de interne `Get-AutomationPSCredential` cmdlet toevoegen aan een grafisch runbook door met de rechter muisknop op de referentie in het deel venster Bibliotheek van de grafische editor te klikken en **toevoegen aan canvas**te selecteren.
+U kunt een activiteit voor de interne `Get-AutomationPSCredential` cmdlet toevoegen aan een grafisch runbook door met de rechter muisknop op de referentie in het deel venster Bibliotheek van de grafische editor te klikken en **toevoegen aan canvas** te selecteren.
 
 ![Referentie-cmdlet toevoegen aan canvas](../media/credentials/credential-add-canvas.png)
 
@@ -145,7 +143,6 @@ DSC-configuraties in Azure Automation kunnen werken met referentie-assets met `G
 ## <a name="use-credentials-in-a-python-2-runbook"></a>Referenties gebruiken in een python 2-runbook
 
 In het volgende voor beeld ziet u een voor beeld van toegang tot referenties in Python 2-runbooks.
-
 
 ```python
 import automationassets

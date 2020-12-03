@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.date: 10/22/2020
 ms.author: bwren
-ms.openlocfilehash: dd4586128bf2ce657352c0a1d4608637ecf9dba9
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 69fda41249ced8518e430af8305c0cb10822b214
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96531221"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96559062"
 ---
 # <a name="azure-monitor-logs-overview"></a>Overzicht van Azure Monitor-logboeken
 Azure Monitor-Logboeken is een functie van Azure Monitor waarmee logboek-en prestatie gegevens van [bewaakte bronnen](../monitor-reference.md)worden verzameld en ingedeeld. Gegevens uit verschillende bronnen, zoals [platform logboeken](platform-logs-overview.md) van Azure-Services, logboek-en prestatie gegevens van [virtuele machines](agents-overview.md), en gebruiks-en prestatie gegevens van [toepassingen](../app/app-insights-overview.md) kunnen worden geconsolideerd in één werk ruimte, zodat ze kunnen worden geanalyseerd met behulp van een geavanceerde query taal die snel miljoenen records kan analyseren. U kunt een eenvoudige query uitvoeren waarbij alleen een specifieke set records wordt opgehaald of een geavanceerde gegevens analyse uit te voeren om essentiële patronen in uw bewakings gegevens te identificeren. Werk met logboek query's en hun resultaten interactief met Log Analytics, gebruik deze in een waarschuwings regel om proactief op de hoogte te worden gesteld van problemen of om hun resultaten te visualiseren in een werkmap of dash board.
@@ -42,7 +42,7 @@ Wanneer u een Log Analytics-werk ruimte hebt gemaakt, moet u verschillende bronn
 
 
 ## <a name="log-analytics-workspaces"></a>Log Analytics-werkruimten
-Gegevens die worden verzameld door Azure Monitor logboeken, worden opgeslagen in een meer [log Analytics-werk ruimten](./design-logs-deployment.md). De werk ruimte definieert de geografische locatie van de gegevens, toegangs rechten die bepalen welke gebruikers toegang hebben tot gegevens en configuratie-instellingen, zoals de prijs categorie en gegevens retentie.  
+Gegevens die worden verzameld door Azure Monitor logboeken, worden opgeslagen in een of meer [log Analytics-werk ruimten](./design-logs-deployment.md). De werk ruimte definieert de geografische locatie van de gegevens, toegangs rechten die bepalen welke gebruikers toegang hebben tot gegevens en configuratie-instellingen, zoals de prijs categorie en gegevens retentie.  
 
 U moet ten minste één werk ruimte maken om Azure Monitor-logboeken te kunnen gebruiken. Eén werk ruimte kan voldoende zijn voor al uw bewakings gegevens of u kunt ervoor kiezen om meerdere werk ruimten te maken, afhankelijk van uw vereisten. U kunt bijvoorbeeld één werk ruimte hebben voor uw productie gegevens en een andere voor het testen. 
 

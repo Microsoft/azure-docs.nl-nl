@@ -39,8 +39,6 @@
           href: storage-snapshots-files.md
         - name: Ontwikkeling
           items:
-            - name: Gelijktijdigheid beheren
-              href: ../common/storage-concurrency.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
             - name: Gedeelde sleutelverificatie
               href: /rest/api/storageservices/Authorization-for-the-Azure-Storage-Services
             - name: Shared Access Signatures (SAS)

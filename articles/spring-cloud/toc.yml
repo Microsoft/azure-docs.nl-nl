@@ -25,10 +25,6 @@
           href: spring-cloud-quickstart-logs-metrics-tracing.md
 - name: Zelfstudies
   items:
-    - name: Schaal van een app handmatig aanpassen
-      href: spring-cloud-tutorial-scale-manual.md
-    - name: Een app automatisch schalen
-      href: spring-cloud-tutorial-setup-autoscale.md
     - name: Waarschuwingen en actiegroepen
       href: spring-cloud-tutorial-alerts-action-groups.md
     - name: Circuit Breaker-dashboard
@@ -83,6 +79,12 @@
           href: spring-cloud-howto-start-stop-delete.md
         - name: Permanente opslag gebruiken
           href: spring-cloud-howto-persistent-storage.md
+    - name: Schalen
+      items:
+        - name: Schaal van een app handmatig aanpassen
+          href: spring-cloud-tutorial-scale-manual.md
+        - name: Een app automatisch schalen
+          href: spring-cloud-tutorial-setup-autoscale.md
         - name: Uitgaande openbare IP-adressen identificeren
           href: spring-cloud-howto-outbound-public-ip.md
     - name: Controleren
@@ -132,7 +134,19 @@
         - name: Spring Boot
           href: /azure/developer/java/migration/migrate-spring-boot-to-azure-spring-cloud
         - name: Tomcat
-          href: /azure/developer/java/migration/migrate-tomcat-to-azure-spring-cloud
+          href: 'https://docs.microsoft.com/azure/developer/java/migration/migrate-tomcat-to-azure-spring-cloud'
+- name: DevOps-implementatie
+  items:
+    - name: CI/CD met Azure DevOps
+      href: spring-cloud-howto-cicd.md
+    - name: CI/CD met GitHub Actions
+      href: spring-cloud-howto-github-actions.md
+    - name: Autorisatie met Key Vault in GitHub Actions
+      href: spring-cloud-github-actions-key-vault.md
+- name: Problemen oplossen
+  items:
+    - name: Handleiding voor het oplossen van problemen
+      href: spring-cloud-troubleshoot.md
 - name: Naslaginformatie
   items:
     - name: Azure CLI-invoegtoepassing

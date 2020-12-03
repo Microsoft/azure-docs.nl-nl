@@ -37,7 +37,7 @@ groups:
   - id: programming-language-java
     title: Java
   - id: programming-language-javascript
-    title: Javascript
+    title: JavaScript
   - id: programming-language-python
     title: Python
 - id: programming-languages-set-two
@@ -69,7 +69,7 @@ groups:
   - id: programming-language-python
     title: Python
   - id: programming-language-javascript
-    title: Javascript
+    title: JavaScript
 - id: programming-languages-set-four
   title: Programmeertalen
   prompt: Een programmeertaal kiezen
@@ -91,7 +91,7 @@ groups:
   - id: programming-language-go
     title: Aan de slag
   - id: programming-language-javascript
-    title: Javascript
+    title: JavaScript
   - id: programming-language-python
     title: Python
   - id: programming-language-ruby
@@ -103,7 +103,7 @@ groups:
   - id: programming-language-csharp
     title: C#
   - id: programming-language-javascript
-    title: Javascript
+    title: JavaScript
   - id: programming-language-python
     title: Python
 - id: programming-languages-set-seven
@@ -139,7 +139,7 @@ groups:
   - id: programming-language-python
     title: Python
   - id: programming-language-javascript
-    title: Javascript
+    title: JavaScript
   - id: programming-language-java
     title: Java
   - id: programming-language-other
@@ -153,7 +153,7 @@ groups:
   - id: programming-language-java
     title: Java
   - id: programming-language-javascript
-    title: Javascript
+    title: JavaScript
   - id: programming-language-python
     title: Python
 - id: programming-languages-set-eleven
@@ -181,7 +181,7 @@ groups:
   - id: programming-language-csharp
     title: C#
   - id: programming-language-javascript
-    title: Javascript
+    title: JavaScript
   - id: programming-language-python
     title: Python
   - id: programming-language-java
@@ -312,6 +312,22 @@ groups:
     title: JavaScript
   - id: programming-language-rest-api
     title: REST-API
+- id: programming-languages-computer-vision
+  title: Programmeertalen
+  prompt: Een programmeertaal kiezen.
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-python
+    title: Python
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-javascript
+    title: Javascript
+  - id: programming-language-go
+    title: Aan de slag
+  - id: programming-language-rest-api
+    title: REST-API
 - id: programming-languages-set-diberry-3core
   title: Programmeertalen
   prompt: Een programmeertaal kiezen
@@ -413,7 +429,7 @@ groups:
   - id: programming-language-python
     title: Python
   - id: programming-language-javascript
-    title: Javascript
+    title: JavaScript
   - id: programming-language-more
     title: Meer talen...
 - id: programming-languages-set-two-with-js-spx
@@ -713,7 +729,7 @@ groups:
   - id: programming-language-csharp
     title: C#
   - id: programming-language-javascript
-    title: Javascript
+    title: JavaScript
   - id: programming-language-java
     title: Java
   - id: programming-language-python
@@ -739,7 +755,7 @@ groups:
   - id: programming-language-csharp
     title: C#
   - id: programming-language-javascript
-    title: Javascript
+    title: JavaScript
   - id: programming-language-java-android
     title: Java (Android)
   - id: programming-language-ios
@@ -859,9 +875,9 @@ groups:
   - id: programming-languages-objectivec-swift
     title: Objective-C/Swift
 metadata:
-  ms.openlocfilehash: 865416b79c28956112e342fbf5d9e05aa3b2db08
-  ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+  ms.openlocfilehash: 23b11aa4d6726294c7f4482f53e5ce99d04eddd3
+  ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 11/23/2020
-  ms.locfileid: "95508040"
+  ms.lasthandoff: 12/02/2020
+  ms.locfileid: "96532870"

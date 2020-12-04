@@ -3,13 +3,12 @@ title: Resource model van Azure Service Fabric-toepassing
 description: Dit artikel bevat een overzicht van het beheren van een Azure Service Fabric-toepassing met behulp van Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 10/21/2019
-ms.custom: sfrev
-ms.openlocfilehash: 886b7d6b40bebf6234064b0627017db1d8cfe31f
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: f4fbd775ab479437c350dc24b9b5511f7a614c8b
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94888824"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576091"
 ---
 # <a name="service-fabric-application-resource-model"></a>Resource model van Service Fabric toepassing
 
@@ -40,13 +39,13 @@ Bekijk voor meer informatie [package a Application](service-fabric-package-apps.
 
 Vervolgens maakt u een resource manager-sjabloon, werkt u het parameter bestand bij met toepassings Details en implementeert u de sjabloon op het Service Fabric cluster. Voor [beelden verkennen](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/tree/master/ARM).
 
-### <a name="create-a-storage-account"></a>Create a storage account
+### <a name="create-a-storage-account"></a>Een opslagaccount maken
 
 Als u een toepassing wilt implementeren vanuit een resource manager-sjabloon, moet u een opslag account hebben. Het opslag account wordt gebruikt om de installatie kopie van de toepassing te faseren. 
 
 U kunt een bestaand opslag account opnieuw gebruiken of u kunt een nieuw opslag account maken voor het faseren van uw toepassingen. Als u een bestaand opslag account gebruikt, kunt u deze stap overs Laan. 
 
-![Create a storage account][CreateStorageAccount]
+![Een opslagaccount maken][CreateStorageAccount]
 
 ### <a name="configure-your-storage-account"></a>Uw opslag account configureren
 

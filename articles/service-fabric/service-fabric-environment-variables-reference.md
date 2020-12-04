@@ -1,16 +1,14 @@
 ---
 title: Azure Service Fabric-omgevings variabelen
 description: Meer informatie over omgevings variabelen in azure Service Fabric. Bevat een verwijzing naar een volledige lijst met variabelen en hun gebruik.
-author: mikkelhegn
 ms.topic: reference
 ms.date: 12/07/2017
-ms.author: mikhegn
-ms.openlocfilehash: b13522b1d9f2acd2aa3f7923c1b623fab696056d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b70249daa439b5a631b5a84b10c47f082ce75985
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75645681"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96574578"
 ---
 # <a name="service-fabric-environment-variables"></a>Omgevings variabelen Service Fabric
 

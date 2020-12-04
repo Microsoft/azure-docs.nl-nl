@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f705150f927a08b5ca2f91b702ee0853766ac23a
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: cfd7b5ac981fcb87d0fc929d944205dec9432b74
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96511114"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96575819"
 ---
 # <a name="how-to-manage-the-local-administrators-group-on-azure-ad-joined-devices"></a>De lokale groep Administrators beheren op apparaten die zijn toegevoegd aan Azure AD
 
@@ -81,7 +81,7 @@ Vanaf de update voor Windows 10 2004 kunt u Azure AD-groepen gebruiken voor het 
 
 Er is momenteel geen gebruikers interface in intune voor het beheren van dit beleid en ze moeten worden geconfigureerd met behulp van [aangepaste oma-URI-instellingen](/mem/intune/configuration/custom-settings-windows-10). Enkele overwegingen voor het gebruik van een van deze beleids regels: 
 
-- Voor het toevoegen van Azure AD-groepen via het beleid is de SID van de groep vereist die kan worden verkregen door de groups API uit te voeren. De SID wordt gedefinieerd door de eigenschap `securityIdentifier` in de groups API.
+- Voor het toevoegen van Azure AD-groepen via het beleid is de SID van de groep vereist die kan worden verkregen door de [Microsoft Graph-API voor groepen](/graph/api/resources/group?view=graph-rest-beta)uit te voeren. De SID wordt gedefinieerd door de eigenschap `securityIdentifier` in de API-reactie.
 - Wanneer het beleid voor beperkte groepen wordt afgedwongen, wordt het huidige lid van de groep die zich niet in de lijst met leden bevindt, verwijderd. Als u dit beleid afdwingt met nieuwe leden of groepen, worden de bestaande beheerders verwijderd, namelijk de gebruiker die lid is van het apparaat, de rol van Apparaatbeheer en de rol van globale beheerder van het apparaat. Als u wilt voor komen dat bestaande leden worden verwijderd, moet u deze configureren als onderdeel van de lijst met leden in het beleid voor beperkte groepen. Deze beperking is gericht als u het beleid lokale gebruikers en groepen gebruikt waarmee incrementele updates voor groepslid maatschappen worden toegestaan
 - Beheerders bevoegdheden die beide beleids regels gebruiken, worden alleen geëvalueerd voor de volgende bekende groepen op een Windows 10-apparaat-Administrators, gebruikers, gasten, hoofd gebruikers, Extern bureaublad gebruikers en gebruikers van extern beheer. 
 - Het beheren van lokale beheerders met Azure AD-groepen is niet van toepassing op hybride Azure AD-gekoppelde of Azure AD-geregistreerde apparaten.

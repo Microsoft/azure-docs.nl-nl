@@ -1,17 +1,15 @@
 ---
 title: Verbinding maken en communiceren met Services in azure Service Fabric
 description: Meer informatie over het oplossen, verbinden en communiceren met Services in Service Fabric.
-author: vturecek
 ms.topic: conceptual
 ms.date: 11/01/2017
-ms.author: vturecek
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 715089d40f584fbbaf23f674e4243c92c718e9d1
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 11f525eba89dc963deee0ba9a86566361ef644de
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92093324"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576295"
 ---
 # <a name="connect-and-communicate-with-services-in-service-fabric"></a>Verbinding maken en communiceren met Services in Service Fabric
 In Service Fabric wordt een service ergens in een Service Fabric cluster uitgevoerd, meestal verdeeld over meerdere Vm's. Het kan worden verplaatst van de ene locatie naar de andere, hetzij door de eigenaar van de service, hetzij automatisch door Service Fabric. Services zijn niet statisch gebonden aan een bepaalde machine of een bepaald adres.
@@ -62,11 +60,11 @@ Zie voor meer informatie over het gebruik van de reverse proxy-service [reverse 
 Services die met elkaar in een cluster verbinding maken, hebben doorgaans rechtstreeks toegang tot de eind punten van andere services, omdat de knoop punten in een cluster zich op hetzelfde lokale netwerk bevinden. In sommige omgevingen kan een cluster echter achter een load balancer dat het binnenkomend verkeer via een beperkt aantal poorten routeert. In dergelijke gevallen kunnen services nog steeds communiceren met elkaar en adressen omzetten met behulp van de Naming Service, maar er moeten extra stappen worden ondernomen om externe clients toe te staan verbinding te maken met Services.
 
 ## <a name="service-fabric-in-azure"></a>Service Fabric in azure
-Een Service Fabric cluster in azure wordt achter een Azure Load Balancer geplaatst. Alle externe verkeer naar het cluster moet worden door gegeven via de load balancer. De load balancer stuurt automatisch verkeer dat binnenkomt op een bepaalde poort naar een wille keurig *knoop punt* waarop dezelfde poort is geopend. De Azure Load Balancer weet alleen over poorten die op de *knoop punten*zijn geopend. het is niet bekend over poorten die door afzonderlijke *Services*worden geopend.
+Een Service Fabric cluster in azure wordt achter een Azure Load Balancer geplaatst. Alle externe verkeer naar het cluster moet worden door gegeven via de load balancer. De load balancer stuurt automatisch verkeer dat binnenkomt op een bepaalde poort naar een wille keurig *knoop punt* waarop dezelfde poort is geopend. De Azure Load Balancer weet alleen over poorten die op de *knoop punten* zijn geopend. het is niet bekend over poorten die door afzonderlijke *Services* worden geopend.
 
 ![Azure Load Balancer-en Service Fabric-topologie][3]
 
-Als u bijvoorbeeld extern verkeer op poort **80**wilt accepteren, moet u de volgende zaken configureren:
+Als u bijvoorbeeld extern verkeer op poort **80** wilt accepteren, moet u de volgende zaken configureren:
 
 1. Schrijf een service die luistert op poort 80. Configureer poort 80 in de ServiceManifest.xml van de service en open een listener in de service, bijvoorbeeld een zelf-hostende webserver.
 

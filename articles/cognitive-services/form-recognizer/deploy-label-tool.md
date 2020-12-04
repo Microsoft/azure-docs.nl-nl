@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: how-to
 ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: df800938d568af0b94cfb1d368ef32e9b085b6eb
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 543e6115be30963600d867bb9c2a03dfbb54e9f1
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92913106"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576550"
 ---
 # <a name="deploy-the-sample-labeling-tool"></a>Het voorbeeldhulpprogramma voor labelen implementeren
 
@@ -35,15 +35,15 @@ De snelste manier om gegevens labelen te beginnen, is het hulp programma voor he
 Voordat we aan de slag gaan, is het belang rijk te weten dat er twee manieren zijn om het hulp programma voor het labelen van het voor beeld te implementeren in een Azure container instance (ACI). Beide opties worden gebruikt voor het uitvoeren van het hulp programma labelen met ACI: 
 
 * [Azure Portal gebruiken](#azure-portal)
-* [Met behulp van de Azure CLI](#azure-cli)
+* [De Azure CLI gebruiken](#azure-cli)
 
 ### <a name="azure-portal"></a>Azure Portal
 
 Volg deze stappen om een nieuwe resource te maken met behulp van de Azure Portal: 
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/signin/index/).
-2. Selecteer **Een resource maken** . 
-3. Selecteer vervolgens **Web-app** . 
+2. Selecteer **Een resource maken**. 
+3. Selecteer vervolgens **Web-app**. 
 
    > [!div class="mx-imgBorder"]
    > ![Web-app selecteren](./media/quickstarts/formre-create-web-app.png)
@@ -136,7 +136,7 @@ DNS_NAME_LABEL=aci-demo-$RANDOM
 az container create \
   --resource-group <resource_group_name> \
   --name <name> \
-  --image mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:2.1.012970002-amd64-preview \
+  --image mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:latest-preview \
   --ports 3000 \
   --dns-name-label $DNS_NAME_LABEL \
   --location <region name> \

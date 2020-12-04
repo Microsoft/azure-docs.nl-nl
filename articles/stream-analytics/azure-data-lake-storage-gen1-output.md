@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/25/2020
-ms.openlocfilehash: 59b4a04231df3b93b093750cc6c9d70982a418a9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 688cd7c2e54a6b4c6b5a11705e10c33604324f09
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91665341"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576278"
 ---
 # <a name="azure-data-lake-storage-gen-1-output-from-azure-stream-analytics"></a>Azure Data Lake Storage-uitvoer van 1 tot en met Azure Stream Analytics
 
@@ -35,8 +35,8 @@ De volgende tabel geeft een lijst van eigenschaps namen en de bijbehorende besch
 | Serialisatie-indeling voor gebeurtenissen | De serialisatie-indeling voor uitvoer gegevens. JSON, CSV en Avro worden ondersteund.|
 | Encoding | Als u de CSV-of JSON-indeling gebruikt, moet u een code ring opgeven. UTF-8 is op dit moment de enige coderings indeling die wordt ondersteund.|
 | Scheidingsteken | Alleen van toepassing op CSV-serialisatie. Stream Analytics ondersteunt een aantal algemene scheidings tekens voor het serialiseren van CSV-gegevens. Ondersteunde waarden zijn komma, punt komma, spatie, tab en verticale streep.|
-| Indeling | Alleen van toepassing op JSON-serialisatie. Met **regel scheiding** wordt opgegeven dat de uitvoer wordt opgemaakt door elk JSON-object gescheiden door een nieuwe regel. Als u **regel gescheiden**selecteert, wordt de JSON één object per keer gelezen. De gehele inhoud zelf zou geen geldige JSON kunnen zijn.  **Matrix** geeft aan dat de uitvoer is ingedeeld als een matrix van JSON-objecten. Deze matrix wordt alleen gesloten wanneer de taak wordt gestopt of Stream Analytics is verplaatst naar het volgende tijd venster. Over het algemeen is het raadzaam om met regel-gescheiden JSON te gebruiken, omdat hiervoor geen speciale verwerking is vereist terwijl het uitvoer bestand nog wordt geschreven.|
-| Verificatiemodus | U kunt toegang tot uw Data Lake Storage-account verlenen met behulp van [beheerde identiteits](stream-analytics-managed-identities-adls.md) -of gebruikers token. Nadat u toegang hebt verleend, kunt u de toegang intrekken door het wacht woord van het gebruikers account te wijzigen, de Data Lake Storage uitvoer voor deze taak te verwijderen of de Stream Analytics-taak te verwijderen. |
+| Indeling | Alleen van toepassing op JSON-serialisatie. Met **regel scheiding** wordt opgegeven dat de uitvoer wordt opgemaakt door elk JSON-object gescheiden door een nieuwe regel. Als u **regel gescheiden** selecteert, wordt de JSON één object per keer gelezen. De gehele inhoud zelf zou geen geldige JSON kunnen zijn.  **Matrix** geeft aan dat de uitvoer is ingedeeld als een matrix van JSON-objecten. Deze matrix wordt alleen gesloten wanneer de taak wordt gestopt of Stream Analytics is verplaatst naar het volgende tijd venster. Over het algemeen is het raadzaam om met regel-gescheiden JSON te gebruiken, omdat hiervoor geen speciale verwerking is vereist terwijl het uitvoer bestand nog wordt geschreven.|
+| Verificatiemodus | U kunt toegang tot uw Data Lake Storage-account verlenen met behulp van [beheerde identiteit](stream-analytics-managed-identities-adls.md) (preview) of gebruikers token. Nadat u toegang hebt verleend, kunt u de toegang intrekken door het wacht woord van het gebruikers account te wijzigen, de Data Lake Storage uitvoer voor deze taak te verwijderen of de Stream Analytics-taak te verwijderen. |
 
 ## <a name="partitioning"></a>Partitionering
 

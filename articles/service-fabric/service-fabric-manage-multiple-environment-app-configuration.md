@@ -1,16 +1,14 @@
 ---
 title: Apps voor meerdere omgevingen beheren
 description: Azure Service Fabric-toepassingen kunnen worden uitgevoerd op clusters die omvangen van één computer tot duizenden computers. In sommige gevallen moet u uw toepassing anders configureren voor deze uiteenlopende omgevingen. In dit artikel wordt beschreven hoe u verschillende toepassings parameters per omgeving definieert.
-author: mikkelhegn
 ms.topic: conceptual
 ms.date: 02/23/2018
-ms.author: mikhegn
-ms.openlocfilehash: b6d6ff37024a3181a43b67d2af26b067225654fe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 51bc77abca8ce2b3878df1c1859203618d3e2e27
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86257476"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96574442"
 ---
 # <a name="manage-applications-for-multiple-environments"></a>Toepassingen voor meerdere omgevingen beheren
 

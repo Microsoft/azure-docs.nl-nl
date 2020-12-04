@@ -1,17 +1,15 @@
 ---
 title: Reliable Actors notities op serialisatie van het actor type
 description: Hierin worden de basis vereisten beschreven voor het definiëren van serialiseerbare klassen die kunnen worden gebruikt voor het definiëren van Service Fabric Reliable Actors status en interfaces
-author: vturecek
 ms.topic: conceptual
 ms.date: 11/02/2017
-ms.author: vturecek
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 33a15b3c6f570d3b4d36a205f91bce7b042f3bb4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2a1118e394046b217a288663659a2c910098e992
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89016577"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576006"
 ---
 # <a name="notes-on-service-fabric-reliable-actors-type-serialization"></a>Opmerkingen over Service Fabric Reliable Actors type serialisatie
 De argumenten van alle methoden, resultaat typen van de taken die worden geretourneerd door elke methode in een actor-interface, en objecten die zijn opgeslagen in de status Manager van een actor moeten [serialiseerbaar](/dotnet/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer)zijn. Dit geldt ook voor de argumenten van de methoden die in [actor-gebeurtenis interfaces](service-fabric-reliable-actors-events.md)zijn gedefinieerd. (De interface methoden van actor-gebeurtenissen retour neren altijd void.)

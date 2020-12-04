@@ -3,13 +3,12 @@ title: Overzicht van Azure en zelfstandige Service Fabric clusters
 description: U kunt Service Fabric clusters maken op alle Vm's of computers met Windows Server of Linux. Dit betekent dat u Service Fabric-toepassingen kunt implementeren en uitvoeren in elke omgeving waar u een set Windows Server-of Linux-computers hebt die met elkaar zijn verbonden, Microsoft Azure of met een Cloud provider.
 ms.topic: conceptual
 ms.date: 01/07/2020
-ms.custom: sfrev
-ms.openlocfilehash: 8313d75bb6398bbe614c6f56b494079548c99954
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d83ec139c367d9a539db173a42ae909f57d5d71a
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91842594"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576125"
 ---
 # <a name="comparing-azure-and-standalone-service-fabric-clusters-on-windows-server-and-linux"></a>Azure en zelfstandige Service Fabric clusters in Windows Server en Linux vergelijken
 

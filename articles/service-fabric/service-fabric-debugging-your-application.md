@@ -1,17 +1,15 @@
 ---
 title: Fouten opsporen in uw toepassing in Visual Studio
 description: Verbeter de betrouw baarheid en prestaties van uw services door deze te ontwikkelen en fouten op te sporen in Visual Studio op een lokaal ontwikkelings cluster.
-author: vturecek
 ms.topic: conceptual
 ms.date: 11/02/2017
-ms.author: vturecek
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 35c4875ca9bf3165fff84164eb3bb7ebe44cf932
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 0b7d08d610c883240abedc66c55abba64a74c8e3
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92093392"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576312"
 ---
 # <a name="debug-your-service-fabric-application-by-using-visual-studio"></a>Foutopsporing uitvoeren in uw Service Fabric-toepassing met behulp van Visual Studio
 > [!div class="op_single_selector"]
@@ -36,7 +34,7 @@ U kunt tijd en geld besparen door uw Azure Service Fabric-toepassing te implemen
 4. Het venster **diagnostische gebeurtenissen** wordt automatisch geopend, zodat u in realtime diagnostische gebeurtenissen kunt weer geven.
    
     ![Diagnostische gebeurtenissen in realtime weer geven][diagnosticevents]
-5. U kunt ook het venster **diagnostische gebeurtenissen** openen in Cloud Explorer.  Klik onder **service Fabric**met de rechter muisknop op een knoop punt en kies **streaming-traceringen weer geven**.
+5. U kunt ook het venster **diagnostische gebeurtenissen** openen in Cloud Explorer.  Klik onder **service Fabric** met de rechter muisknop op een knoop punt en kies **streaming-traceringen weer geven**.
    
     ![Het venster diagnostische gebeurtenissen openen][viewdiagnosticevents]
    
@@ -77,7 +75,7 @@ Als uw Service Fabric toepassingen worden uitgevoerd op een Service Fabric clust
     ![Fout opsporing op afstand inschakelen][enableremotedebugging]
    
     Met deze actie wordt het proces van het inschakelen van de uitbrei ding voor externe fout opsporing op uw cluster knooppunten en de vereiste netwerk configuraties gestart.
-2. Klik met de rechter muisknop op het cluster knooppunt in **Cloud Explorer**en kies **fout opsporing koppelen**
+2. Klik met de rechter muisknop op het cluster knooppunt in **Cloud Explorer** en kies **fout opsporing koppelen**
    
     ![Fout opsporingsprogramma koppelen][attachdebugger]
 3. Kies in het dialoog venster **aan proces koppelen** het proces dat u wilt opsporen en klik op **koppelen**
@@ -121,7 +119,7 @@ U kunt ook traceringen rechtstreeks vanuit een extern cluster knooppunt streamen
     ![Externe streaming-traceringen inschakelen][enablestreamingtraces]
    
     Met deze actie wordt het proces van het inschakelen van de uitbrei ding streaming-traceringen op uw cluster knooppunten en de vereiste netwerk configuraties gestart.
-2. Vouw het element **knoop punten** in **Cloud Explorer**uit, klik met de rechter muisknop op het knoop punt waarnaar u traceringen wilt streamen en kies **streaming-traceringen weer geven**
+2. Vouw het element **knoop punten** in **Cloud Explorer** uit, klik met de rechter muisknop op het knoop punt waarnaar u traceringen wilt streamen en kies **streaming-traceringen weer geven**
    
     ![Externe streaming-traceringen weer geven][viewremotestreamingtraces]
    

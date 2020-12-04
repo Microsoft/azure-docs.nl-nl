@@ -2,13 +2,13 @@
 title: Gebeurtenis filtering voor Azure Event Grid
 description: Hierin wordt beschreven hoe u gebeurtenissen filtert bij het maken van een Azure Event Grid-abonnement.
 ms.topic: conceptual
-ms.date: 07/07/2020
-ms.openlocfilehash: 837209d4197c271598155776b8d171a705e1f454
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/03/2020
+ms.openlocfilehash: bc3e84037693fcd909961ba409871d947ef1de7d
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86120089"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96574903"
 ---
 # <a name="understand-event-filtering-for-event-grid-subscriptions"></a>Gebeurtenis filters begrijpen voor Event Grid-abonnementen
 
@@ -117,6 +117,23 @@ De beschik bare Opera tors voor **teken reeksen** zijn:
 
 Alle teken reeks vergelijkingen zijn **niet** hoofdletter gevoelig.
 
+> [!NOTE]
+> Als de JSON van de gebeurtenis niet de geavanceerde filter sleutel bevat, wordt het filter evaulated **niet overeenkomt met** de volgende Opera tors: 
+> - NumberGreaterThan
+> - NumberGreaterThanOrEquals
+> - NumberLessThan
+> - NumberLessThanOrEquals
+> - NumberIn
+> - BoolEquals
+> - StringContains
+> - StringBeginsWith
+> - StringEndsWith
+> - StringIn
+> 
+>Het filter is evaulated die **overeenkomt met** de volgende Opera tors:
+> - NumberNotIn
+> - StringNotIn
+
 ### <a name="key"></a>Sleutel
 
 Voor gebeurtenissen in het Event Grid schema gebruikt u de volgende waarden voor de sleutel:
@@ -154,7 +171,7 @@ Geavanceerde filtering heeft de volgende beperkingen:
 * 5 geavanceerde filters en 25 filter waarden voor alle filters per Event grid-abonnement
 * 512 tekens per teken reeks waarde
 * Vijf waarden voor **in** en **niet in** Opera tors
-* Sleutels met een teken ** `.` (punt)** . Bijvoorbeeld: `http://schemas.microsoft.com/claims/authnclassreference` of `john.doe@contoso.com` . Er is momenteel geen ondersteuning voor Escape tekens in sleutels. 
+* Sleutels met een teken **`.` (punt)** . Bijvoorbeeld: `http://schemas.microsoft.com/claims/authnclassreference` of `john.doe@contoso.com` . Er is momenteel geen ondersteuning voor Escape tekens in sleutels. 
 
 Dezelfde sleutel kan in meer dan één filter worden gebruikt.
 

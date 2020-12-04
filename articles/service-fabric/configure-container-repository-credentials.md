@@ -3,13 +3,12 @@ title: Azure-Service Fabric-opslagplaats referenties voor container configureren
 description: Opslagplaats referenties configureren voor het downloaden van installatie kopieën uit het container register
 ms.topic: conceptual
 ms.date: 12/09/2019
-ms.custom: sfrev
-ms.openlocfilehash: 47a3fb39693bf6143d4033eed437f65b7e63eabb
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 0c6421fed88a3909db717c13a6b3faf51c4491cd
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91978676"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96574816"
 ---
 # <a name="configure-repository-credentials-for-your-application-to-download-container-images"></a>Opslagplaats referenties voor uw toepassing configureren om container installatie kopieën te downloaden
 

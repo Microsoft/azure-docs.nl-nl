@@ -1,16 +1,14 @@
 ---
 title: 'Test baarheid: Service communicatie'
 description: Service-to-service-communicatie is een essentieel integratie punt van een Service Fabric-toepassing. In dit artikel worden ontwerp overwegingen en test technieken besproken.
-author: vturecek
 ms.topic: conceptual
 ms.date: 11/02/2017
-ms.author: vturecek
-ms.openlocfilehash: 87b922cb9655588a22c739d26c9ce9e49d35781a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: fbf889422d69d031d777acd80cf3becfb3184568
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96007117"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96575921"
 ---
 # <a name="service-fabric-testability-scenarios-service-communication"></a>Service Fabric scenario's voor testen: Service communicatie
 Micro Services en service-georiënteerde architecturale modellen worden op natuurlijke wijze in azure Service Fabric. In deze typen gedistribueerde architecturen zijn onderdelen van micro service-toepassingen meestal samengesteld uit meerdere services die met elkaar moeten worden gecommuniceerd. In de eenvoudigste gevallen beschikt u over het algemeen over ten minste een stateless webservice en een stateful gegevens opslag service die moet communiceren.

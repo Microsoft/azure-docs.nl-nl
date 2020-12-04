@@ -11,24 +11,25 @@ ms.author: aashishb
 author: aashishb
 ms.date: 10/21/2020
 ms.custom: contperfq4, tracking-python
-ms.openlocfilehash: df4d777ad78240b3ca84c51152b37861c4ccc486
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: a90b98e8be976da9ee2669ab3b5fed4a890f0fb2
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94959999"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576609"
 ---
 # <a name="use-azure-machine-learning-studio-in-an-azure-virtual-network"></a>Azure Machine Learning Studio gebruiken in een virtueel Azure-netwerk
 
-In dit artikel leert u hoe u Azure Machine Learning Studio kunt gebruiken in een virtueel netwerk. In deze zelfstudie leert u procedures om het volgende te doen:
+In dit artikel leert u hoe u Azure Machine Learning Studio kunt gebruiken in een virtueel netwerk. De Studio bevat functies zoals AutoML, de ontwerper en gegevens labeling. Als u deze functies in een virtueel netwerk wilt gebruiken, moet u de stappen in dit artikel volgen.
+
+In dit artikel leert u het volgende:
 
 > [!div class="checklist"]
-> - Toegang tot de Studio vanaf een resource binnen een virtueel netwerk.
-> - Configureer persoonlijke eind punten voor opslag accounts.
 > - De Studio toegang geven tot gegevens die zijn opgeslagen in een virtueel netwerk.
+> - Toegang tot de Studio vanaf een resource binnen een virtueel netwerk.
 > - Krijg inzicht in de manier waarop de Studio opslag beveiliging beïnvloedt.
 
-Dit artikel is deel vijf uit een serie van vijf delen die u begeleidt bij het beveiligen van een Azure Machine Learning werk stroom. We raden u ten zeerste aan om in [deel één het overzicht van VNet](how-to-network-security-overview.md) te lezen om eerst inzicht te krijgen in de algehele architectuur. 
+Dit artikel is deel vijf uit een serie van vijf delen die u begeleidt bij het beveiligen van een Azure Machine Learning werk stroom. We raden u ten zeerste aan de vorige onderdelen te lezen om een virtuele netwerk omgeving in te stellen.
 
 Zie de andere artikelen in deze serie:
 
@@ -41,7 +42,7 @@ Zie de andere artikelen in deze serie:
 
 ## <a name="prerequisites"></a>Vereisten
 
-+ Lees het [overzicht van netwerk beveiliging](how-to-network-security-overview.md) voor inzicht in algemene scenario's voor virtuele netwerken en de algehele architectuur van virtuele netwerken.
++ Lees het [overzicht van netwerk beveiliging](how-to-network-security-overview.md) voor inzicht in algemene scenario's en architectuur voor het virtuele netwerk.
 
 + Een bestaand virtueel netwerk en subnet dat moet worden gebruikt.
 
@@ -49,21 +50,16 @@ Zie de andere artikelen in deze serie:
 
 + [Het virtuele netwerk is toegevoegd](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-service-endpoints)met een bestaand Azure Storage-account.
 
-## <a name="access-the-studio-from-a-resource-inside-the-vnet"></a>Toegang tot de Studio vanaf een resource binnen het VNet
+## <a name="configure-data-access-in-the-studio"></a>Gegevens toegang configureren in de Studio
 
-Als u de Studio opent vanuit een resource binnen een virtueel netwerk (bijvoorbeeld een reken instantie of virtuele machine), moet u uitgaand verkeer van het virtuele netwerk naar de Studio toestaan. 
+Sommige functies van Studio zijn standaard uitgeschakeld in een virtueel netwerk. Als u deze functies weer wilt inschakelen, moet u beheerde identiteit inschakelen voor opslag accounts die u wilt gebruiken in de Studio. 
 
-Als u bijvoorbeeld netwerk beveiligings groepen (NSG) gebruikt om uitgaand verkeer te beperken, voegt __u een regel__ toe aan een servicetag bestemming __AzureFrontDoor.__ front-end.
-
-## <a name="access-data-using-the-studio"></a>Toegang tot gegevens met behulp van Studio
-
-Nadat u een Azure Storage-account aan uw virtuele netwerk hebt toegevoegd met een [service-eind punt](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-service-endpoints) of een [persoonlijk eind punt](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-private-endpoints), moet u uw opslag account configureren voor het gebruik van [beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md) om de toegang tot uw gegevens te verlenen aan de Studio.
-
-Als u de beheerde identiteit niet inschakelt, wordt deze fout ook weer gegeven, `Error: Unable to profile this dataset. This might be because your data is stored behind a virtual network or your data does not support profile.` worden de volgende bewerkingen uitgeschakeld:
+De volgende bewerkingen zijn standaard uitgeschakeld in een virtueel netwerk:
 
 * Bekijk de gegevens in de Studio.
 * Gegevens visualiseren in de ontwerp functie.
-* Een AutoML-experiment verzenden.
+* Implementeer een model in de ontwerp functie ([standaard opslag account](#enable-managed-identity-authentication-for-default-storage-accounts)).
+* Een AutoML-experiment ([standaard opslag account](#enable-managed-identity-authentication-for-default-storage-accounts)) verzenden.
 * Een label project starten.
 
 De Studio ondersteunt het lezen van gegevens uit de volgende gegevensopslag typen in een virtueel netwerk:
@@ -73,34 +69,56 @@ De Studio ondersteunt het lezen van gegevens uit de volgende gegevensopslag type
 * Azure Data Lake Storage Gen2
 * Azure SQL Database
 
-### <a name="grant-workspace-managed-identity-__reader__-access-to-storage-private-link"></a>Toegang tot de beheerde __identiteit van__ de werk ruimte verlenen aan de persoonlijke opslag koppeling
+### <a name="configure-datastores-to-use-workspace-managed-identity"></a>Data stores configureren voor het gebruik van door werk ruimte beheerde identiteit
 
-Deze stap is alleen vereist als u het Azure Storage-account aan uw virtuele netwerk hebt toegevoegd met een [persoonlijk eind punt](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-private-endpoints). Zie de ingebouwde rol van [lezer](../role-based-access-control/built-in-roles.md#reader) voor meer informatie.
+Nadat u een Azure Storage-account aan uw virtuele netwerk hebt toegevoegd met een [service-eind punt](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-service-endpoints) of een [persoonlijk eind punt](how-to-secure-workspace-vnet.md#secure-azure-storage-accounts-with-private-endpoints), moet u uw gegevens opslag configureren voor het gebruik van [beheerde identiteits](../active-directory/managed-identities-azure-resources/overview.md) verificatie. Hierdoor kunnen de Studio-gegevens in uw opslag account worden geopend.
 
-### <a name="configure-datastores-to-use-workspace-managed-identity"></a>Data stores configureren voor het gebruik van beheerde identiteiten voor werk ruimten
-
-Azure Machine Learning maakt gebruik van [data stores](concept-data.md#datastores) om verbinding te maken met opslag accounts. Gebruik de volgende stappen om uw gegevens opslag te configureren voor het gebruik van beheerde identiteit. 
+Azure Machine Learning maakt gebruik van [data stores](concept-data.md#datastores) om verbinding te maken met opslag accounts. Gebruik de volgende stappen om een gegevens opslag te configureren voor het gebruik van beheerde identiteiten:
 
 1. Selecteer __gegevens opslag__ in de Studio.
 
-1. Selecteer __+ Nieuw gegevens archief__ als u een nieuwe gegevens opslag wilt maken.
+1. Als u een bestaande gegevens opslag wilt bijwerken, selecteert u de gegevens opslag en selecteert u __referenties bijwerken__.
 
-    Als u een bestaande gegevens opslag wilt bijwerken, selecteert u de gegevens opslag en selecteert u __referenties bijwerken__.
+    Selecteer __+ Nieuw gegevens archief__ als u een nieuwe gegevens opslag wilt maken.
 
-1. Selecteer in de instellingen voor gegevens archief de optie __Ja__  __Als u wilt dat Azure machine learning-service toegang heeft tot de opslag met behulp van een door werk ruimte beheerde identiteit__.
+1. Selecteer in de instellingen van Data Store de optie __Ja__ voor het  __gebruik van werk ruimte beheerde identiteit voor gegevens weergave en profileren in azure machine learning Studio__.
+
+    ![Scherm afbeelding die laat zien hoe identiteit van beheerde werk ruimte wordt ingeschakeld](./media/how-to-enable-studio-virtual-network/enable-managed-identity.png)
+
+Met deze stappen wordt de door de werk ruimte beheerde identiteit als __lezer__ aan de opslag service toegevoegd met behulp van Azure RBAC. Met __Reader__ toegang kan de werk ruimte Firewall instellingen ophalen om ervoor te zorgen dat gegevens het virtuele netwerk niet verlaten. Het kan tot tien minuten duren voordat wijzigingen zijn doorgevoerd.
+
+### <a name="enable-managed-identity-authentication-for-default-storage-accounts"></a>Beheerde identiteits verificatie inschakelen voor standaard opslag accounts
+
+Elke Azure Machine Learning-werk ruimte wordt geleverd met twee standaard-opslag accounts die worden gedefinieerd wanneer u uw werk ruimte maakt. De Studio gebruikt de standaard opslag accounts voor het opslaan van experiment-en model artefacten, die van belang zijn voor bepaalde functies in de Studio.
+
+In de volgende tabel wordt beschreven waarom u beheerde identiteits verificatie moet inschakelen voor de standaard opslag accounts voor uw werk ruimte.
+
+|Opslagaccount  | Notities  |
+|---------|---------|
+|Standaard-Blob-opslag voor werk ruimte| Hierin worden model assets van de ontwerp functie opgeslagen. U moet beheerde identiteits verificatie inschakelen voor dit opslag account om modellen te implementeren in de ontwerp functie. <br> <br> U kunt een designer-pijp lijn visualiseren en uitvoeren als er een niet-standaard gegevens opslag wordt gebruikt die is geconfigureerd voor het gebruik van beheerde identiteit. Als u echter probeert een getraind model te implementeren zonder beheerde identiteit in te scha kelen op de standaard gegevens opslag, mislukt de implementatie ongeacht andere gegevens opslag die in gebruik zijn.|
+|Standaard bestands Archief voor de werk ruimte| Hiermee worden AutoML-experiment-assets opgeslagen. U moet beheerde identiteits verificatie inschakelen voor dit opslag account om AutoML experimenten in te dienen. |
 
 
-Met deze stappen wordt de door de werk ruimte beheerde identiteit als __lezer__ aan de opslag service toegevoegd met behulp van Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Met __Reader__ toegang kan de werk ruimte Firewall instellingen ophalen en ervoor zorgen dat gegevens het virtuele netwerk niet verlaten.
+![Scherm afbeelding die laat zien waar standaard-gegevens opslag kan worden gevonden](./media/how-to-enable-studio-virtual-network/default-datastores.png)
 
-> [!NOTE]
-> Het kan tot tien minuten duren voordat deze wijzigingen van kracht worden.
+
+### <a name="grant-workspace-managed-identity-__reader__-access-to-storage-private-link"></a>Toegang tot de beheerde __identiteit van__ de werk ruimte verlenen aan de persoonlijke opslag koppeling
+
+Als uw Azure-opslag account gebruikmaakt van een persoonlijk eind punt, moet u de toegang tot de werkruimte beheerde identiteits **lezer** verlenen aan de privé-koppeling. Zie de ingebouwde rol van [lezer](../role-based-access-control/built-in-roles.md#reader) voor meer informatie. 
+
+Als uw opslag account gebruikmaakt van een service-eind punt, kunt u deze stap overs Laan.
+
+## <a name="access-the-studio-from-a-resource-inside-the-vnet"></a>Toegang tot de Studio vanaf een resource binnen het VNet
+
+Als u de Studio opent vanuit een resource binnen een virtueel netwerk (bijvoorbeeld een reken instantie of virtuele machine), moet u uitgaand verkeer van het virtuele netwerk naar de Studio toestaan. 
+
+Als u bijvoorbeeld netwerk beveiligings groepen (NSG) gebruikt om uitgaand verkeer te beperken, voegt __u een regel__ toe aan een servicetag bestemming __AzureFrontDoor.__ front-end.
 
 ## <a name="technical-notes-for-managed-identity"></a>Technische opmerkingen voor beheerde identiteit
 
-Het gebruik van beheerde identiteit voor toegang tot opslag Services heeft betrekking op enkele beveiligings overwegingen. In deze sectie worden de wijzigingen voor elk type opslag account beschreven.
+Het gebruik van beheerde identiteit voor toegang tot opslag Services is van invloed op de beveiligings overwegingen. In deze sectie worden de wijzigingen voor elk type opslag account beschreven. 
 
-> [!IMPORTANT]
-> Deze overwegingen zijn uniek voor het __type opslag account__ dat u wilt openen.
+Deze overwegingen zijn uniek voor het __type opslag account__ dat u wilt openen.
 
 ### <a name="azure-blob-storage"></a>Azure Blob Storage
 
@@ -124,23 +142,17 @@ Als u toegang wilt krijgen tot gegevens die zijn opgeslagen in een Azure SQL Dat
 
 Nadat u een SQL-Inge sloten gebruiker hebt gemaakt, moet u er machtigingen voor verlenen met behulp van de [opdracht T-SQL toewijzen](/sql/t-sql/statements/grant-object-permissions-transact-sql).
 
-### <a name="azure-machine-learning-designer-default-datastore"></a>Standaard gegevens opslag van Azure Machine Learning Designer
+### <a name="azure-machine-learning-designer-intermediate-module-output"></a>Uitvoer van de tussenliggende module van Azure Machine Learning Designer
 
-De ontwerp functie gebruikt het opslag account dat aan uw werk ruimte is gekoppeld om standaard uitvoer op te slaan. U kunt het echter opgeven om de uitvoer op te slaan in een gegevens opslag waartoe u toegang hebt. Als uw omgeving gebruikmaakt van virtuele netwerken, kunt u deze besturings elementen gebruiken om ervoor te zorgen dat uw gegevens veilig en toegankelijk blijven.
-
-Een nieuwe standaard opslag voor een pijp lijn instellen:
-
-1. Selecteer in een pijp lijn concept het **tandwiel pictogram instellingen** in de buurt van de titel van de pijp lijn.
-1. Selecteer de **Selecteer standaard gegevens opslag**.
-1. Geef een nieuwe gegevens opslag op.
-
-U kunt ook de standaard gegevens opslag per module negeren. Dit geeft u de controle over de opslag locatie voor elke afzonderlijke module.
+U kunt de uitvoer locatie opgeven voor elke module in de ontwerp functie. Gebruik dit om tussenliggende gegevens sets op te slaan op een afzonderlijke locatie voor beveiliging, logboek registratie of controle doeleinden. Uitvoer opgeven:
 
 1. Selecteer de module waarvan u de uitvoer wilt opgeven.
-1. Vouw de sectie **uitvoer instellingen** uit.
-1. Selecteer **standaard instellingen voor uitvoer negeren**.
-1. Selecteer **uitvoer instellingen instellen**.
-1. Geef een nieuwe gegevens opslag op.
+1. In het deel venster module-instellingen dat rechts wordt weer gegeven, selecteert u **uitvoer instellingen**.
+1. Geef de gegevens opslag op die u voor elke module-uitvoer wilt gebruiken.
+ 
+Zorg ervoor dat u toegang hebt tot de tussenliggende opslag accounts in uw virtuele netwerk. Anders mislukt de pijp lijn.
+
+U moet ook [beheerde identiteits verificatie inschakelen](#configure-datastores-to-use-workspace-managed-identity) voor tussenliggende opslag accounts om uitvoer gegevens te visualiseren.
 
 ## <a name="next-steps"></a>Volgende stappen
 

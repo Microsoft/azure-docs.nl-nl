@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 11/24/2020
-ms.openlocfilehash: 5c5be9089992104d27af3db84eb2c9a165f779f2
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 6432cc9affd34c0fa9b832aea91932a2b9e7540f
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/03/2020
-ms.locfileid: "96552881"
+ms.locfileid: "96576669"
 ---
 # <a name="supported-data-sources-and-file-types-in-azure-purview"></a>Ondersteunde gegevens bronnen en bestands typen in azure controle sfeer liggen
 
@@ -32,7 +32,7 @@ Azure controle sfeer liggen ondersteunt de volgende bronnen:
 | Azure Data Explorer                      | Service-principal                              | UX            |
 | Azure Data Lake Storage Gen1 (ADLS Gen1) | Service-Principal, MSI                              | UX            |
 | Azure Data Lake Storage Gen2 (ADLS Gen2) | Account sleutel, Service-Principal, MSI            | UX            |
-| Cosmos DB                                 | Account sleutel                                    | UX            |
+| Azure Cosmos DB                          | Account sleutel                                    | UX            |
 
 
 > [!Note]

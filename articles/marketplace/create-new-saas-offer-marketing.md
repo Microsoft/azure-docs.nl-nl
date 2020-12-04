@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 09/02/2020
-ms.openlocfilehash: c8fa2efe708823ff4154edfd58f1b18e0176a990
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4ccc5a63da40950fbf9f05e3e029393fce8814d7
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89380796"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576686"
 ---
 # <a name="how-to-market-your-saas-offer"></a>Uw SaaS-aanbieding in de handel brengen
 
@@ -23,9 +23,9 @@ In dit artikel worden aanvullende marketing opties beschreven die u kunt kiezen 
 
 Het is volledig optioneel om informatie op te geven over het **samen verkopen met micro soft** pagina. Maar het is wel nodig om de status gereed voor _samen verkoop_ en de voor _bereiding_ van de gecentraliseerde IP te bezorgen. De verkoop teams van micro soft gebruiken deze informatie om meer te weten te komen over uw oplossing bij de evaluatie van de geschiktheid voor klant behoeften. De informatie die u op dit tabblad verstrekt, is niet rechtstreeks beschikbaar voor klanten.
 
-Zie voor meer informatie en instructies voor het configureren **van het samen werken met micro soft** -tabblad de [optie co-sell in Partner Center](partner-center-portal/commercial-marketplace-co-sell.md).
+Zie voor meer informatie en instructies voor het configureren **van het samen werken met micro soft** -tabblad de [optie co-sell in Partner Center](commercial-marketplace-co-sell.md).
 
-## <a name="resell-through-csps"></a>Door de Csp's door verkopen
+## <a name="resell-through-csps"></a>Doorverkopen via CSP's
 
 Als u ervoor kiest om uw aanbieding beschikbaar te maken in het programma Cloud Solution Provider (CSP), kunnen Csp's uw product verkopen als onderdeel van een gebundelde oplossing aan hun klanten. Zie het [Cloud Solution Provider-programma](cloud-solution-providers.md)voor meer informatie over het opnieuw verkopen van uw aanbieding via het CSP-programma en stapsgewijze instructies voor het configureren van het tabblad **verkopen via csp's** .
 

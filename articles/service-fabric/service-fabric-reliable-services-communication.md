@@ -1,17 +1,15 @@
 ---
 title: Overzicht van Reliable Services communicatie
 description: Overzicht van het Reliable Services communicatie model, inclusief het openen van listeners voor services, het oplossen van eind punten en het communiceren tussen services.
-author: vturecek
 ms.topic: conceptual
 ms.date: 11/01/2017
-ms.author: vturecek
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9b45ceaed9f0d3d64a0fc6890549542acc6b1c21
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e7dc10055633c8e6dd2c645f28b774d5d5f3ac3f
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89018634"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96574323"
 ---
 # <a name="how-to-use-the-reliable-services-communication-apis"></a>De Reliable Services Communication Api's gebruiken
 Azure Service Fabric als platform is volledig neutraal over de communicatie tussen services. Alle protocollen en Stacks zijn acceptabel, van UDP tot HTTP. Het is aan de service ontwikkelaar om te kiezen hoe services moeten communiceren. Het Reliable Services Application Framework biedt ingebouwde communicatie stacks en Api's die u kunt gebruiken om uw aangepaste communicatie-onderdelen te bouwen.
@@ -340,7 +338,7 @@ Ten slotte is een uitzonderings-handler verantwoordelijk voor het bepalen van we
   * **Tijdelijke** uitzonde ringen zijn die eenvoudigweg opnieuw kunnen worden uitgevoerd zonder het adres van het service-eind punt opnieuw op te lossen. Hieronder vallen tijdelijke netwerk problemen of service fout reacties, behalve die aangeven dat het adres van het service-eind punt niet bestaat.
   * **Niet-tijdelijke** uitzonde ringen zijn die vereisen dat het adres van het service-eind punt opnieuw wordt opgelost. Dit zijn onder andere uitzonde ringen die aangeven dat het service-eind punt niet kan worden bereikt. Dit geeft aan dat de service naar een ander knoop punt is verplaatst.
 
-Het `TryHandleException` maakt een beslissing over een bepaalde uitzonde ring. Als het **niet weet** wat beslissingen nemen over een uitzonde ring, moet deze **Onwaar**retour neren. Als het beslist wat er moet worden **gedaan** , moet het het resultaat dienovereenkomstig instellen en **waar**retour neren.
+Het `TryHandleException` maakt een beslissing over een bepaalde uitzonde ring. Als het **niet weet** wat beslissingen nemen over een uitzonde ring, moet deze **Onwaar** retour neren. Als het beslist wat er moet worden **gedaan** , moet het het resultaat dienovereenkomstig instellen en **waar** retour neren.
 
 ```csharp
 class MyExceptionHandler : IExceptionHandler

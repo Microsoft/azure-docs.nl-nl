@@ -1,15 +1,14 @@
 ---
 title: 'Toepassings upgrade: serialisatie van gegevens'
 description: Aanbevolen procedures voor het serialiseren van gegevens en hoe dit van invloed is op upgrades van Rolling toepassingen.
-author: vturecek
 ms.topic: conceptual
 ms.date: 11/02/2017
-ms.openlocfilehash: d502e74139c543d4183a75faa6bea1948d9f3e56
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9474a0bf8041ac541389f782f60bf1220d690cde
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86247979"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96575632"
 ---
 # <a name="how-data-serialization-affects-an-application-upgrade"></a>Hoe gegevens serialisatie van toepassing is op een toepassings upgrade
 Bij een [upgrade van een rolling toepassing](service-fabric-application-upgrade.md)wordt de upgrade toegepast op een subset knoop punten, één upgrade domein per keer. Tijdens dit proces bevinden sommige upgrade domeinen zich op de nieuwere versie van uw toepassing. sommige upgrade domeinen bevinden zich op de oudere versie van uw toepassing. Tijdens de implementatie moet de nieuwe versie van uw toepassing de oude versie van uw gegevens kunnen lezen, en de oude versie van uw toepassing moet de nieuwe versie van uw gegevens kunnen lezen. Als de gegevens indeling niet voorwaarts en achterwaarts compatibel is, kan de upgrade mislukken of kunnen de gegevens verloren gaan of beschadigd raken. In dit artikel wordt beschreven wat uw gegevens indeling vormt en worden aanbevolen procedures geboden om ervoor te zorgen dat uw gegevens voorwaarts en achterwaarts compatibel zijn.

@@ -11,12 +11,12 @@ author: peterclu
 ms.date: 10/06/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, references_regions, contperfq1
-ms.openlocfilehash: fdfaef554e4e641656abd3fd2b4a5d3bbc519ccd
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 6398d23aeb0e26fbc336c0c1066078f327fa2f73
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325432"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576567"
 ---
 # <a name="virtual-network-isolation-and-privacy-overview"></a>Overzicht van virtuele netwerk isolatie en privacy
 
@@ -145,10 +145,11 @@ Als uw opslag zich in een VNet bevindt, moet u eerst aanvullende configuratie st
 
 * Bekijk de gegevens in de Studio.
 * Gegevens visualiseren in de ontwerp functie.
+* Implementeer een model in de ontwerp functie.
 * Een AutoML-experiment verzenden.
 * Een label project starten.
 
-Als u de volledige studio-functionaliteit wilt inschakelen binnen een VNet, raadpleegt [u Azure machine learning Studio gebruiken in een virtueel netwerk](how-to-enable-studio-virtual-network.md#access-data-using-the-studio). De Studio ondersteunt opslag accounts met behulp van service-eind punten of privé-eind punten.
+Als u de volledige studio-functionaliteit wilt inschakelen binnen een VNet, raadpleegt [u Azure machine learning Studio gebruiken in een virtueel netwerk](how-to-enable-studio-virtual-network.md#configure-data-access-in-the-studio). De Studio ondersteunt opslag accounts met behulp van service-eind punten of privé-eind punten.
 
 ### <a name="limitations"></a>Beperkingen
 - Bijkomend [gegevens labeling](how-to-create-labeling-projects.md#use-ml-assisted-labeling) biedt geen ondersteuning voor standaard opslag accounts die zijn beveiligd achter een virtueel netwerk. U moet een niet-standaard opslag account gebruiken voor het labelen van ML-gesteunde gegevens. Houd er rekening mee dat het niet-standaard opslag account kan worden beveiligd achter het virtuele netwerk. 

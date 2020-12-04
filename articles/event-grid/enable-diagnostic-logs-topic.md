@@ -2,21 +2,21 @@
 title: Azure Event Grid-Diagnostische logboeken voor onderwerpen of domeinen inschakelen
 description: In dit artikel vindt u stapsgewijze instructies voor het inschakelen van Diagnostische logboeken voor een Azure Event grid-onderwerp.
 ms.topic: how-to
-ms.date: 07/07/2020
-ms.openlocfilehash: 2d76d3ededd6d241197b26ac357c3b5406f43f02
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/03/2020
+ms.openlocfilehash: ff00c1438c49cbc9f9e67eba0cf0acef7991a5a4
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91297518"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576448"
 ---
 #  <a name="enable-diagnostic-logs-for-azure-event-grid-topics-or-domains"></a>Diagnostische logboeken inschakelen voor Azure Event grid-onderwerpen of-domeinen
-Met Diagnostische instellingen kunnen Event Grid gebruikers publicatie- **en bezorg fouten** logboeken vastleggen en weer geven in een opslag account, een event hub of een log Analytics-werk ruimte. In dit artikel vindt u stapsgewijze instructies voor het inschakelen van deze instellingen in een Event Grid onderwerp.
+In dit artikel vindt u stapsgewijze instructies voor het inschakelen van diagnostische instellingen voor Event Grid onderwerpen of domeinen.  Met deze instellingen kunt u **publicatie-en leverings fout** logboeken vastleggen en weer geven. 
 
 ## <a name="prerequisites"></a>Vereisten
 
 - Een onderwerp over een ingericht gebeurtenis raster
-- Een ingerichte bestemming voor het vastleggen van Diagnostische logboeken. Dit kan een van de volgende bestemmingen op dezelfde locatie zijn als het event grid-onderwerp:
+- Een ingerichte bestemming voor het vastleggen van Diagnostische logboeken. Dit kan een van de volgende bestemmingen zijn op dezelfde locatie als het event grid-onderwerp:
     - Azure Storage-account
     - Event Hub
     - Log Analytics-werkruimte
@@ -40,12 +40,12 @@ Met Diagnostische instellingen kunnen Event Grid gebruikers publicatie- **en bez
 6. Selecteer de opties **DeliveryFailures** en **PublishFailures** in de sectie **logboek** . 
     ![De fouten selecteren](./media/enable-diagnostic-logs-topic/log-failures.png)
 7. Schakel een of meer van de vastleg doelen in voor de logboeken en configureer ze vervolgens door een eerder gemaakte Capture-bron te selecteren. 
-    - Als u **archiveren naar een opslag account**selecteert, selecteert u **opslag account-configureren**en selecteert u vervolgens het opslag account in uw Azure-abonnement. 
+    - Als u **archiveren naar een opslag account** selecteert, selecteert u **opslag account-configureren** en selecteert u vervolgens het opslag account in uw Azure-abonnement. 
 
         ![Scherm opname van de pagina Diagnostische instellingen met ' archiveren naar een Azure-opslag account ' ingeschakeld en een opslag account geselecteerd.](./media/enable-diagnostic-logs-topic/archive-storage.png)
-    - Als u **Stream naar een event hub**selecteert, selecteert u **Event hub-configure**en selecteert u vervolgens de Event Hubs naam ruimte, Event hub en het toegangs beleid. 
+    - Als u **Stream naar een event hub** selecteert, selecteert u **Event hub-configure** en selecteert u vervolgens de Event Hubs naam ruimte, Event hub en het toegangs beleid. 
         ![Scherm opname van de pagina Diagnostische instellingen met ' stream to a Event Hub ' ingeschakeld.](./media/enable-diagnostic-logs-topic/archive-event-hub.png)
-    - Als u **verzenden naar log Analytics**selecteert, selecteert u de werk ruimte log Analytics.
+    - Als u **verzenden naar log Analytics** selecteert, selecteert u de werk ruimte log Analytics.
         ![Scherm opname van de pagina Diagnostische instellingen met de optie Send to Log Analytics.](./media/enable-diagnostic-logs-topic/send-log-analytics.png)
 8. Selecteer **Opslaan**. Selecteer vervolgens **X** in de rechter bovenhoek om de pagina te sluiten. 
 9. Ga nu terug naar de pagina **Diagnostische instellingen** en controleer of er een nieuwe vermelding wordt weer gegeven in de tabel **Diagnostische instellingen** . 
@@ -70,12 +70,12 @@ Met Diagnostische instellingen kunnen Event Grid gebruikers publicatie- **en bez
 7. Selecteer de **DeliveryFailures** in het gedeelte **logboek** . 
     ![Leverings fouten selecteren](./media/enable-diagnostic-logs-topic/system-topic-select-delivery-failures.png)
 6. Schakel een of meer van de vastleg doelen in voor de logboeken en configureer ze vervolgens door een eerder gemaakte Capture-bron te selecteren. 
-    - Als u **verzenden naar log Analytics**selecteert, selecteert u de werk ruimte log Analytics.
+    - Als u **verzenden naar log Analytics** selecteert, selecteert u de werk ruimte log Analytics.
         ![Verzenden naar Log Analytics](./media/enable-diagnostic-logs-topic/system-topic-select-log-workspace.png) 
-    - Als u **archiveren naar een opslag account**selecteert, selecteert u **opslag account-configureren**en selecteert u vervolgens het opslag account in uw Azure-abonnement. 
+    - Als u **archiveren naar een opslag account** selecteert, selecteert u **opslag account-configureren** en selecteert u vervolgens het opslag account in uw Azure-abonnement. 
 
         ![Archiveren naar een Azure Storage-account](./media/enable-diagnostic-logs-topic/system-topic-select-storage-account.png)
-    - Als u **Stream naar een event hub**selecteert, selecteert u **Event hub-configure**en selecteert u vervolgens de Event Hubs naam ruimte, Event hub en het toegangs beleid. 
+    - Als u **Stream naar een event hub** selecteert, selecteert u **Event hub-configure** en selecteert u vervolgens de Event Hubs naam ruimte, Event hub en het toegangs beleid. 
         ![Streamen naar een Event Hub](./media/enable-diagnostic-logs-topic/system-topic-select-event-hub.png)
 8. Selecteer **Opslaan**. Selecteer vervolgens **X** in de rechter bovenhoek om de pagina te sluiten. 
 9. Ga nu terug naar de pagina **Diagnostische instellingen** en controleer of er een nieuwe vermelding wordt weer gegeven in de tabel **Diagnostische instellingen** . 
@@ -87,10 +87,10 @@ Met Diagnostische instellingen kunnen Event Grid gebruikers publicatie- **en bez
 
 ## <a name="view-diagnostic-logs-in-azure-storage"></a>Diagnostische logboeken in Azure Storage weer geven 
 
-1. Wanneer u een opslag account hebt ingeschakeld als een vastleg doel en Event Grid de diagnostische logboeken gaat verzenden, ziet u nieuwe containers met de naam **Insights-logs-deliveryfailures** en **Insights-logs-publishfailures** in het opslag account. 
+1. Zodra u een opslag account als een vastleg doel hebt ingeschakeld, wordt Event Grid het verzenden van Diagnostische logboeken gestart. U ziet nieuwe containers met de naam **Insights-logs-deliveryfailures** en **Insights-logs-publishfailures** in het opslag account. 
 
     ![Opslag containers voor Diagnostische logboeken](./media/enable-diagnostic-logs-topic/storage-containers.png)
-2. Wanneer u door een van de containers navigeert, wordt er een BLOB in JSON-indeling weer in de vorm van een blobopslag. Het bestand bevat logboek vermeldingen voor een leverings fout of een fout bij het publiceren. Het navigatiepad vertegenwoordigt de **ResourceID** van het gebeurtenis grid-onderwerp en de tijds tempel (minuut niveau) waar de logboek vermeldingen werden gegenereerd. Het BLOB/JSON-bestand, dat kan worden gedownload, voldoet aan het schema dat in de volgende sectie wordt beschreven. 
+2. Wanneer u door een van de containers navigeert, wordt er een BLOB in JSON-indeling in de vorm van een blobopslag. Het bestand bevat logboek vermeldingen voor een leverings fout of een fout bij het publiceren. Het navigatiepad vertegenwoordigt de **ResourceID** van het gebeurtenis grid-onderwerp en de tijds tempel (minuut niveau) waar de logboek vermeldingen werden gegenereerd. Het BLOB/JSON-bestand, dat kan worden gedownload, voldoet aan het schema dat in de volgende sectie wordt beschreven. 
 
     [![JSON-bestand in de opslag ](./media/enable-diagnostic-logs-topic/select-json.png)](./media/enable-diagnostic-logs-topic/select-json.png)
 3. U ziet nu inhoud in het JSON-bestand zoals in het volgende voor beeld: 
@@ -102,9 +102,8 @@ Met Diagnostische instellingen kunnen Event Grid gebruikers publicatie- **en bez
         "eventSubscriptionName": "SAMPLEDESTINATION",
         "category": "DeliveryFailures",
         "operationName": "Deliver",
-        "message": "Message:outcome=NotFound, latencyInMs=2635, systemId=17284f7c-0044-46fb-84b7-59fda5776017, state=FilteredFailingDelivery, deliveryTime=11/1/2019 12:17:10 AM, deliveryCount=0, probationCount=0, deliverySchema=EventGridEvent, eventSubscriptionDeliverySchema=EventGridEvent, fields=InputEvent, EventSubscriptionId, DeliveryTime, State, Id, DeliverySchema, LastDeliveryAttemptTime, SystemId, fieldCount=, requestExpiration=1/1/0001 12:00:00 AM, delivered=False publishTime=11/1/2019 12:17:10 AM, eventTime=11/1/2019 12:17:09 AM, eventType=Type, deliveryTime=11/1/2019 12:17:10 AM, filteringState=FilteredWithRpc, inputSchema=EventGridEvent, publisher=DIAGNOSTICLOGSTEST-EASTUS.EASTUS-1.EVENTGRID.AZURE.NET, size=363, fields=Id, PublishTime, SerializedBody, EventType, Topic, Subject, FilteringHashCode, SystemId, Publisher, FilteringTopic, TopicCategory, DataVersion, MetadataVersion, InputSchema, EventTime, fieldCount=15, url=sb://diagnosticlogstesting-eastus.servicebus.windows.net/, deliveryResponse=NotFound: The messaging entity 'sb://diagnosticlogstesting-eastus.servicebus.windows.net/eh-diagnosticlogstest' could not be found. TrackingId:c98c5af6-11f0-400b-8f56-c605662fb849_G14, SystemTracker:diagnosticlogstesting-eastus.servicebus.windows.net:eh-diagnosticlogstest, Timestamp:2019-11-01T00:17:13, referenceId: ac141738a9a54451b12b4cc31a10dedc_G14:"
+        "message": "Message:outcome=NotFound, latencyInMs=2635, id=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx, systemId=xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx, state=FilteredFailingDelivery, deliveryTime=11/1/2019 12:17:10 AM, deliveryCount=0, probationCount=0, deliverySchema=EventGridEvent, eventSubscriptionDeliverySchema=EventGridEvent, fields=InputEvent, EventSubscriptionId, DeliveryTime, State, Id, DeliverySchema, LastDeliveryAttemptTime, SystemId, fieldCount=, requestExpiration=1/1/0001 12:00:00 AM, delivered=False publishTime=11/1/2019 12:17:10 AM, eventTime=11/1/2019 12:17:09 AM, eventType=Type, deliveryTime=11/1/2019 12:17:10 AM, filteringState=FilteredWithRpc, inputSchema=EventGridEvent, publisher=DIAGNOSTICLOGSTEST-EASTUS.EASTUS-1.EVENTGRID.AZURE.NET, size=363, fields=Id, PublishTime, SerializedBody, EventType, Topic, Subject, FilteringHashCode, SystemId, Publisher, FilteringTopic, TopicCategory, DataVersion, MetadataVersion, InputSchema, EventTime, fieldCount=15, url=sb://diagnosticlogstesting-eastus.servicebus.windows.net/, deliveryResponse=NotFound: The messaging entity 'sb://diagnosticlogstesting-eastus.servicebus.windows.net/eh-diagnosticlogstest' could not be found. TrackingId:c98c5af6-11f0-400b-8f56-c605662fb849_G14, SystemTracker:diagnosticlogstesting-eastus.servicebus.windows.net:eh-diagnosticlogstest, Timestamp:2019-11-01T00:17:13, referenceId: ac141738a9a54451b12b4cc31a10dedc_G14:"
     }
     ```
-
 ## <a name="next-steps"></a>Volgende stappen
 Zie [Diagnostische logboeken](diagnostic-logs.md)voor het logboek schema en andere conceptuele informatie over Diagnostische logboeken voor onderwerpen of domeinen.

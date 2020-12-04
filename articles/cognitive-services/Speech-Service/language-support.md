@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/26/2020
 ms.author: trbye
 ms.custom: references_regions
-ms.openlocfilehash: 27cf5fef027b1e4786c0ff77f9f673bafea15f98
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 9ef585d83c0606bedaf4c0a05c6c87fd52423b9a
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96487266"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96575530"
 ---
 # <a name="language-and-voice-support-for-the-speech-service"></a>Taal-en spraak ondersteuning voor de spraak service
 
@@ -41,12 +41,14 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 |Arabisch (Bahrein), modern, standaard  |`ar-BH` | Taalmodel                                   |
 |Arabisch (Egypte)                     |`ar-EG` | Taalmodel                                   |
 |Arabisch (Irak)                      |`ar-IQ` | Taalmodel                                   |
+|Arabisch (Israël)                              |`ar-IL` | Taalmodel                                                   |
 |Arabisch (Jordanië)                    |`ar-JO` | Taalmodel                                   |
 |Arabisch (Koeweit)                    |`ar-KW` | Taalmodel                                   |
 |Arabisch (Libanon)                   |`ar-LB` | Taalmodel                                   |
 |Arabisch (Oman)                      |`ar-OM` | Taalmodel                                   |
 |Arabisch (Qatar)                     |`ar-QA` | Taalmodel                                   |
 |Arabisch (Saoedi-Arabië)              |`ar-SA` | Taalmodel                                   |
+|Arabisch (status van Palestijnse)            |`ar-PS` | Taalmodel                                   |
 |Arabisch (Syrië)                     |`ar-SY` | Taalmodel                                   |
 |Arabisch (Verenigde Arabische Emiraten)      |`ar-AE` | Taalmodel                                   |
 |Bulgaars (Bulgarije)               |`bg-BG` | Taalmodel                                   |
@@ -64,6 +66,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 |Engels (India)                    |`en-IN` | Akoestisch model<br>Taalmodel                 |
 |Engels (Ierland)                  |`en-IE` | Taal model                                   |
 |Engels (Nieuw-Zeeland)              |`en-NZ` | Akoestisch model<br>Taalmodel                 |
+|Engels (Nigeria)                          |`en-NG` | Taal model                                                     |
 |Engels (Filipijnen)              |`en-PH` | Taal model                                   |
 |Engels (Singapore)                |`en-SG` | Taal model                                   |
 |Engels (Zuid-Afrika)             |`en-ZA` | Taal model                                   |
@@ -103,6 +106,7 @@ https://cris.ai -> Click on Adaptation Data -> scroll down to section "Pronuncia
 |Spaans (Dominicaanse Republiek)       |`es-DO` | Taal model                                   |
 |Spaans (Ecuador)                  |`es-EC` | Taal model                                   |
 |Spaans (El Salvador)              |`es-SV` | Taal model                                   |
+|Spaans (Equatoriaal-Guinea)            |`es-GQ` | Taal model                                   |
 |Spaans (Guatemala)                |`es-GT` | Taal model                                   |
 |Spaans (Honduras)                 |`es-HN` | Taal model                                   |
 |Spaans (Mexico)                   |`es-MX` | Akoestisch model<br>Taalmodel                 |

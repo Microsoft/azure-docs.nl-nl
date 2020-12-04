@@ -1,17 +1,15 @@
 ---
 title: Overzicht van Service Fabric Reliable Actors
 description: Inleiding tot het programmeer model Service Fabric Reliable Actors, op basis van het patroon van de virtuele actor.
-author: vturecek
 ms.topic: conceptual
 ms.date: 11/01/2017
-ms.author: vturecek
 ms.custom: devx-track-csharp
-ms.openlocfilehash: adb15d995cd2a9fd604aa6b91360adc88a2804e6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1a8a7003a69deaf6b74d6fbb8a3cf84b0a78eecf
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89007924"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576380"
 ---
 # <a name="introduction-to-service-fabric-reliable-actors"></a>Inleiding tot Service Fabric Reliable Actors
 Reliable Actors is een Service Fabric Application Framework op basis van het patroon van de [virtuele actor](https://research.microsoft.com/en-us/projects/orleans/) . De Reliable Actors-API biedt een programmeer model met één thread dat is gebaseerd op de mogelijkheden voor schaal baarheid en betrouw baarheid van Service Fabric.
@@ -124,13 +122,13 @@ Dit diagram volgt deze conventies:
 
 Enkele belang rijke punten om rekening mee te houden:
 
-* Hoewel *Method1* wordt uitgevoerd namens *ActorId2* als reactie op client aanvragen *xyz789*, arriveert een andere client aanvraag (*abc123*) die ook *Method1* moet uitvoeren door *ActorId2*. De tweede uitvoering van *Method1* begint echter pas als de vorige uitvoering is voltooid. Op dezelfde manier wordt een herinnering geregistreerd door *ActorId2* geactiveerd terwijl *Method1* wordt uitgevoerd in reactie op de *xyz789*van de client aanvraag. De retour aanroep van de herinnering wordt pas uitgevoerd nadat de uitvoering van *Method1* is voltooid. Dit komt door dat op basis van een op zichzelf gebaseerde gelijktijdigheid wordt afgedwongen voor *ActorId2*.
-* Op deze manier wordt ook gelijktijdigheid op basis van een op- *ActorId1*afgedwongen, zoals gedemonstreerd door de uitvoering van *Method1*, *Method2*en de timer-Call back uit naam van *ActorId1* . dit gebeurt op een seriële manier.
+* Hoewel *Method1* wordt uitgevoerd namens *ActorId2* als reactie op client aanvragen *xyz789*, arriveert een andere client aanvraag (*abc123*) die ook *Method1* moet uitvoeren door *ActorId2*. De tweede uitvoering van *Method1* begint echter pas als de vorige uitvoering is voltooid. Op dezelfde manier wordt een herinnering geregistreerd door *ActorId2* geactiveerd terwijl *Method1* wordt uitgevoerd in reactie op de *xyz789* van de client aanvraag. De retour aanroep van de herinnering wordt pas uitgevoerd nadat de uitvoering van *Method1* is voltooid. Dit komt door dat op basis van een op zichzelf gebaseerde gelijktijdigheid wordt afgedwongen voor *ActorId2*.
+* Op deze manier wordt ook gelijktijdigheid op basis van een op- *ActorId1* afgedwongen, zoals gedemonstreerd door de uitvoering van *Method1*, *Method2* en de timer-Call back uit naam van *ActorId1* . dit gebeurt op een seriële manier.
 * Het uitvoeren van *Method1* namens *ActorId1* overlapt met uitvoering namens *ActorId2*. Dit komt doordat gelijktijdigheid op basis van lagen alleen binnen een actor en niet tussen actors wordt afgedwongen.
 * In sommige van de methode/call back-uitvoeringen, de `Task` (C#)/ `CompletableFuture` (Java) geretourneerd door de methode/call back is voltooid nadat de methode is geretourneerd. In sommige andere gevallen is de asynchrone bewerking al voltooid op het moment dat de methode/retour aanroep wordt geretourneerd. In beide gevallen wordt de vergren deling per actor pas vrijgegeven nadat de methode/retour aanroep is geretourneerd en de asynchrone bewerking is voltooid.
 
 ### <a name="reentrancy"></a>Herintreding
-De actors-runtime maakt standaard herbetreedbaarheid mogelijk. Dit betekent dat als een actor-methode van *actor a* een methode aanroept op *actor B*, die op zijn beurt een andere methode op *actor A*aanroept. deze methode mag worden uitgevoerd. Dit is omdat deze deel uitmaakt van dezelfde logische aanroep keten context. Alle timer-en herinnerings aanroepen beginnen met de nieuwe logische aanroep context. Zie de [reliable actors herbetreedbaarheid](service-fabric-reliable-actors-reentrancy.md) voor meer informatie.
+De actors-runtime maakt standaard herbetreedbaarheid mogelijk. Dit betekent dat als een actor-methode van *actor a* een methode aanroept op *actor B*, die op zijn beurt een andere methode op *actor A* aanroept. deze methode mag worden uitgevoerd. Dit is omdat deze deel uitmaakt van dezelfde logische aanroep keten context. Alle timer-en herinnerings aanroepen beginnen met de nieuwe logische aanroep context. Zie de [reliable actors herbetreedbaarheid](service-fabric-reliable-actors-reentrancy.md) voor meer informatie.
 
 ### <a name="scope-of-concurrency-guarantees"></a>Bereik van gelijktijdigheids garanties
 De actors-runtime biedt deze gelijktijdigheids garanties in situaties waarin deze de aanroep van deze methoden regelt. Het biedt bijvoorbeeld deze garanties voor de aanroepen van de methode die worden uitgevoerd als reactie op een client aanvraag, en voor timer-en herinnering-retour aanroepen. Als de actor code deze methoden echter rechtstreeks aanroept buiten de mechanismen die worden geleverd door de actors-runtime, kan de runtime geen garanties bieden voor gelijktijdigheid. Als de methode bijvoorbeeld wordt aangeroepen in de context van een taak die niet is gekoppeld aan de taak die wordt geretourneerd door de actor-methoden, kan de runtime geen gelijktijdigheids garanties bieden. Als de methode wordt aangeroepen vanuit een thread die de actor zelf maakt, kan de runtime ook geen gelijktijdigheids garanties bieden. Om achtergrond bewerkingen uit te voeren, moeten actors voor [actor-timers en actor-herinneringen](service-fabric-reliable-actors-timers-reminders.md) die gebruikmaken van op beurt gebaseerde gelijktijdigheid, worden gebruikt.

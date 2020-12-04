@@ -1,16 +1,14 @@
 ---
 title: Problemen met de installatie van uw lokale Azure Service Fabric-cluster oplossen
 description: In dit artikel vindt u een aantal suggesties voor het oplossen van problemen met uw lokale ontwikkel cluster
-author: mikkelhegn
 ms.topic: conceptual
 ms.date: 02/23/2018
-ms.author: mikhegn
-ms.openlocfilehash: 76ca0bb7b81b3896538f08ff2ef52ed1ac6b363f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 20948cd1626c02d73fb6e9ef096b552bbab627fb
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87091603"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96575904"
 ---
 # <a name="troubleshoot-your-local-development-cluster-setup"></a>Problemen met de instellingen van uw lokale ontwikkelingscluster oplossen
 Als u een probleem ondervindt tijdens de interactie met uw lokale Azure Service Fabric Development-cluster, raadpleegt u de volgende suggesties voor mogelijke oplossingen.

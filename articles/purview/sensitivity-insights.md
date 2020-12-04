@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/24/2020
-ms.openlocfilehash: beaa231eddd57e29578a1d69ee30af05ce7c8d0f
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 74f4391fcd071ac510fc66b2f8bc36ec4549dc47
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/03/2020
-ms.locfileid: "96552887"
+ms.locfileid: "96575751"
 ---
 # <a name="sensitivity-label-insights-about-your-data-in-azure-purview"></a>Gevoeligheid label inzichten over uw gegevens in azure controle sfeer liggen
 
@@ -75,6 +75,7 @@ Controle sfeer liggen maakt gebruik van dezelfde classificaties, ook wel aangedu
    |**Labels op het hoogste niveau toegepast op tabellen**     | Hier worden de belangrijkste labels weer gegeven die worden toegepast op database tabellen in uw gegevens. |   
    |  **Activiteit labelen**  |  Geeft afzonderlijke grafieken weer voor bestanden en tabellen, elk met het aantal bestanden of tabellen die zijn gemarkeerd in het geselecteerde tijds bestek. <br>**Standaard**: 30 dagen<br>Selecteer de **tijd** filter boven de grafieken om een ander tijds bestek te selecteren dat u wilt weer geven.    |
    |    |    |
+
 ## <a name="sensitivity-labeling-insights-drilldown"></a>Gevoeligheid labelen Insights DrillDown
 
 Selecteer in een van de volgende **gevoeligheid labels Insights** -grafieken de koppeling **meer weer geven** om in te zoomen voor meer informatie:
@@ -98,6 +99,7 @@ Ga op een van de volgende manieren te werk om meer te weten te komen:
 |**Meer inzoomen**     | Als u wilt inzoomen op een specifiek label, selecteert u een naam in de kolom **gevoeligheids label** om het **label op bron** rapport weer te geven. <br><br>In dit rapport worden gegevens weer gegeven voor het geselecteerde label, met inbegrip van de bron naam, het bron type, de abonnements-ID en het aantal geclassificeerde bestanden en tabellen.      |
 |**Door assets bladeren**     |  Selecteer een of meer labels of bronnen, afhankelijk van het rapport dat u bekijkt, om door de activa te bladeren die zijn gevonden met een specifiek label of een specifieke bron **Browse assets** en selecteer vervolgens in :::image type="icon" source="media/insights/ico-browse-assets.png" border="false"::: de filters bladeren. <br><br>In de zoek resultaten worden alle gelabelde activa weer gegeven die voor het geselecteerde filter zijn gevonden.  Zie [Search the Azure controle sfeer liggen Data Catalog](how-to-search-catalog.md)voor meer informatie.       |
 | | |
+
 ## <a name="sensitivity-label-integration-with-microsoft-365-compliance"></a>Integratie van gevoeligheids label met Microsoft 365 naleving
 
 Sluit integratie met de [micro soft-Information Protection](/microsoft-365/compliance/information-protection) die in Microsoft 365 worden aangeboden, betekent dat controle sfeer liggen direct manieren om inzicht in uw gegevens te kunnen uitbreiden en uw gegevens kan classificeren en labelen.
@@ -108,15 +110,9 @@ Zie [uw gegevens automatisch labelen in azure controle sfeer liggen](create-sens
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over Azure controle sfeer liggen Insight-rapporten
-> [!div class="nextstepaction"]
-> [Inzichten in woorden lijst](glossary-insights.md)
+Meer informatie over deze Azure controle sfeer liggen Insight-rapporten:
 
-> [!div class="nextstepaction"]
-> [Inzichten scannen](scan-insights.md)
-
-> [!div class="nextstepaction"]
-> [Classificatie inzichten](./classification-insights.md)
-
-> [!div class="nextstepaction"]
-> [Inzichten voor bestands extensies](file-extension-insights.md)
+- [Inzichten in woorden lijst](glossary-insights.md)
+- [Inzichten scannen](scan-insights.md)
+- [Classificatie inzichten](./classification-insights.md)
+- [Inzichten voor bestands extensies](file-extension-insights.md)

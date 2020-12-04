@@ -8,15 +8,15 @@ ms.subservice: core
 ms.reviewer: jmartens
 author: nishankgu
 ms.author: nigup
-ms.date: 10/13/2020
+ms.date: 12/1/2020
 ms.topic: conceptual
 ms.custom: troubleshooting,contperfq4, contperfq2
-ms.openlocfilehash: d82cbafbbdeb379c8eb97494ca8d3243f356b7a1
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 18eb952d06d83b4604625a795be3c8512c3f90d7
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542113"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576584"
 ---
 # <a name="manage-and-increase-quotas-for-resources-with-azure-machine-learning"></a>Quota voor resources beheren en verg Roten met Azure Machine Learning
 
@@ -45,25 +45,29 @@ Naast het beheren van quota's, leert u hoe u de [kosten voor Azure machine learn
 
 In deze sectie vindt u informatie over de standaard-en maximum quotum limieten voor de volgende resources:
 
++ Azure Machine Learning assets
+  + Azure Machine Learning compute
+  + Azure Machine Learning pijp lijnen
 + Virtuele machines
-+ Azure Machine Learning compute
-+ Azure Machine Learning pijp lijnen
 + Azure Container Instances
 + Azure Storage
 
 > [!IMPORTANT]
 > Limieten zijn onderhevig aan wijzigingen. Zie [Azure-abonnement en service limieten, quota's en beperkingen](../azure-resource-manager/management/azure-subscription-service-limits.md) voor alle Azure voor de meest recente informatie.
 
-### <a name="virtual-machines"></a>Virtuele machines
-Elk Azure-abonnement heeft een limiet voor het aantal virtuele machines in alle services. De kernen van virtuele machines hebben een regionale limiet en een regionale limiet per grootte reeks. Beide limieten worden afzonderlijk afgedwongen.
+### <a name="azure-machine-learning-assets"></a>Azure Machine Learning assets
+De volgende limieten gelden voor assets per werk ruimte. 
 
-Neem bijvoorbeeld een abonnement met een limiet van 30 VM-cores voor US - oost, een limiet van 30 cores voor de A-serie en een limiet van 30 cores voor de D-serie. Dit abonnement mag 30 a1-vm's of 30 D1 Vm's implementeren, of een combi natie van de twee die niet meer dan 30 kernen overschrijdt.
+| **Resource** | **Maximumlimiet** |
+| --- | --- |
+| Gegevenssets | 10 miljoen |
+| Wordt uitgevoerd | 10 miljoen |
+| Modellen | 10 miljoen|
+| Artifacts | 10 miljoen |
 
-U kunt geen limieten genereren voor virtuele machines boven de waarden die in de volgende tabel worden weer gegeven.
+Daarnaast is de maximale **uitvoerings tijd** 30 dagen en het maximum aantal **metrische gegevens dat per run wordt geregistreerd** , 1.000.000.
 
-[!INCLUDE [azure-subscription-limits-azure-resource-manager](../../includes/azure-subscription-limits-azure-resource-manager.md)]
-
-### <a name="azure-machine-learning-compute"></a>Azure Machine Learning compute
+#### <a name="azure-machine-learning-compute"></a>Azure Machine Learning compute
 [Azure machine learning Compute](concept-compute-target.md#azure-machine-learning-compute-managed) heeft een standaard quotum limiet op het aantal kernen en het aantal unieke reken resources dat per regio in een abonnement is toegestaan. Dit quotum is gescheiden van het kern quotum van de virtuele machine uit de vorige sectie.
 
 [Vraag een quotum verhoging](#request-quota-increases) aan om de limieten in deze sectie te verhogen tot de maximum limiet die in de tabel wordt weer gegeven.
@@ -90,7 +94,7 @@ De volgende tabel bevat extra limieten die u niet meer kunt overschrijden.
 de maximale levens duur van <sup>1</sup> is de duur tussen het moment waarop een uitvoering wordt gestart en wanneer deze is voltooid. Voltooide uitvoeringen blijven voor onbepaalde tijd oneindig. Gegevens voor uitvoeringen die niet binnen de maximale levens duur zijn voltooid, zijn niet toegankelijk.
 <sup>2</sup> taken op een knoop punt met een lage prioriteit kunnen worden afgebroken wanneer er een capaciteits beperking is. U wordt aangeraden om controle punten in uw taak te implementeren.
 
-### <a name="azure-machine-learning-pipelines"></a>Azure Machine Learning pijp lijnen
+#### <a name="azure-machine-learning-pipelines"></a>Azure Machine Learning pijp lijnen
 [Azure machine learning pijp lijnen](concept-ml-pipelines.md) hebben de volgende limieten.
 
 | **Resource** | **Limiet** |
@@ -98,11 +102,20 @@ de maximale levens duur van <sup>1</sup> is de duur tussen het moment waarop een
 | Stappen in pijplijn | 30.000 |
 | Werk ruimten per resource groep | 800 |
 
+### <a name="virtual-machines"></a>Virtuele machines
+Elk Azure-abonnement heeft een limiet voor het aantal virtuele machines in alle services. De kernen van virtuele machines hebben een regionale limiet en een regionale limiet per grootte reeks. Beide limieten worden afzonderlijk afgedwongen.
+
+Neem bijvoorbeeld een abonnement met een limiet van 30 VM-cores voor US - oost, een limiet van 30 cores voor de A-serie en een limiet van 30 cores voor de D-serie. Dit abonnement mag 30 a1-vm's of 30 D1 Vm's implementeren, of een combi natie van de twee die niet meer dan 30 kernen overschrijdt.
+
+U kunt geen limieten genereren voor virtuele machines boven de waarden die in de volgende tabel worden weer gegeven.
+
+[!INCLUDE [azure-subscription-limits-azure-resource-manager](../../includes/azure-subscription-limits-azure-resource-manager.md)]
+
 ### <a name="container-instances"></a>Container Instances
 
 Zie [container instances limieten](../azure-resource-manager/management/azure-subscription-service-limits.md#container-instances-limits)voor meer informatie.
 
-### <a name="storage"></a>Storage
+### <a name="storage"></a>Opslag
 Azure Storage heeft een limiet van 250 opslag accounts per regio, per abonnement. Deze limiet is inclusief standaard-en Premium-opslag accounts.
 
 Als u de limiet wilt verhogen, kunt u een aanvraag indienen via [ondersteuning voor Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest/). Het Azure Storage team controleert uw aanvraag en kan Maxi maal 250 opslag accounts voor een regio goed keuren.

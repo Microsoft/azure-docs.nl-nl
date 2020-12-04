@@ -1,17 +1,15 @@
 ---
 title: Reliable Actors op Service Fabric
 description: Hierin wordt beschreven hoe Reliable Actors op Reliable Services worden gelaagd en de functies van het Service Fabric platform gebruikt.
-author: vturecek
 ms.topic: conceptual
 ms.date: 3/9/2018
-ms.author: vturecek
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 1cd90d4567bde6cd2c4f2a29e2d516b51b79e2af
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c3bd67e0f71e20a8b5a74b4b38e5b423a14dc08d
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89016611"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96575615"
 ---
 # <a name="how-reliable-actors-use-the-service-fabric-platform"></a>Hoe Reliable Actors het Service Fabric platform gebruiken?
 In dit artikel wordt uitgelegd hoe Reliable Actors werkt op het Azure Service Fabric-platform. Reliable Actors uitgevoerd in een framework dat wordt gehost in een implementatie van een stateful reliable-service met de naam *actor service*. De actor-service bevat alle onderdelen die nodig zijn voor het beheren van de levens cyclus en het verzenden van berichten voor uw actors:

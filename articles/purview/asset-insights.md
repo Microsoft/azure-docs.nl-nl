@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/20/2020
-ms.openlocfilehash: 5045a13bb932f5907584bae23e956374a5757a68
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: ac93d835b8dbdd5a12d031825dcb879160df5e95
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/03/2020
-ms.locfileid: "96553098"
+ms.locfileid: "96575343"
 ---
 # <a name="asset-insights-on-your-data-in-azure-purview"></a>Asset Insights op uw gegevens in azure controle sfeer liggen
 
@@ -20,9 +20,10 @@ In deze hand leiding wordt beschreven hoe u controle sfeer liggen Asset Insight-
 
 In deze hand leiding leert u het volgende:
 
-* Bekijk inzichten uit uw controle sfeer liggen-account.
-* Maak een weer gave van uw gegevens in vogel gaten.
-* Inzoomen voor meer informatie over het aantal activa.
+> [!div class="checklist"]
+> * Bekijk inzichten uit uw controle sfeer liggen-account.
+> * Maak een weer gave van uw gegevens in vogel gaten.
+> * Inzoomen voor meer informatie over het aantal activa.
 
 ## <a name="prerequisites"></a>Vereisten
 

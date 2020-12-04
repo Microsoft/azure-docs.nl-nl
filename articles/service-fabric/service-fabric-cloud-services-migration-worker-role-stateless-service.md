@@ -1,17 +1,15 @@
 ---
 title: Azure Cloud Services-apps converteren naar Service Fabric
 description: Deze hand leiding vergelijkt Cloud Services Web-en werk rollen en Service Fabric stateless Services om te migreren van Cloud Services naar Service Fabric.
-author: vturecek
 ms.topic: conceptual
 ms.date: 11/02/2017
-ms.author: vturecek
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 24a411403fc139a7e7fa6644690c57a3b2729bf5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cf593f793aabf2a0650684ed8d02fe02d756ec2b
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89002280"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96575734"
 ---
 # <a name="guide-to-converting-web-and-worker-roles-to-service-fabric-stateless-services"></a>Hand leiding voor het converteren van web-en werk rollen naar Service Fabric stateless Services
 In dit artikel wordt beschreven hoe u uw Cloud Services-Web-en-werk rollen migreert naar Service Fabric stateless Services. Dit is het eenvoudigste migratie traject van Cloud Services naar Service Fabric voor toepassingen waarvan de algehele architectuur op ongeveer dezelfde manier blijft.
@@ -31,7 +29,7 @@ De rol van een werk nemer vertegenwoordigt een staatloze werk belasting, wat bet
 ## <a name="web-role-to-stateless-service"></a>stateless service van webrol
 Net als bij de rol van werk nemer vertegenwoordigt een webrole ook een staatloze werk belasting, en kan deze dus niet worden toegewezen aan een Service Fabric stateless service. Maar in tegens telling tot webrollen biedt Service Fabric geen ondersteuning voor IIS. Als u een webtoepassing van een webrole naar een stateless service wilt migreren, moet u eerst verplaatsen naar een webframework dat zelf kan worden gehost en niet afhankelijk zijn van IIS of System. Web, zoals ASP.NET Core 1.
 
-| **App** | **Ondersteund** | **Migratie traject** |
+| **Toepassing** | **Ondersteund** | **Migratie traject** |
 | --- | --- | --- |
 | Webformulieren voor ASP.NET |Nee |Converteren naar ASP.NET Core 1 MVC |
 | ASP.NET MVC |Met migratie |Upgrade uitvoeren naar ASP.NET Core 1 MVC |

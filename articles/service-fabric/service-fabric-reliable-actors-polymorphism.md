@@ -1,17 +1,15 @@
 ---
 title: Polymorfisme in het Reliable Actors Framework
 description: Bouw hiërarchieën van .NET-interfaces en-typen in het Reliable Actors Framework om functionaliteit en API-definities opnieuw te gebruiken.
-author: vturecek
 ms.topic: conceptual
 ms.date: 11/02/2017
-ms.author: vturecek
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 7552609fc4c85cdd5033e67b1bab7fb58cb6ebf1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 568e306979e862c325264a4e12a64d95e6d13c5f
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89016560"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96575989"
 ---
 # <a name="polymorphism-in-the-reliable-actors-framework"></a>Polymorfisme in het Reliable Actors Framework
 Met het Reliable Actors-Framework kunt u actors bouwen met veel van de technieken die u zou gebruiken in een object georiënteerd ontwerp. Een van deze technieken is polymorfisme, waarmee typen en interfaces van meer algemene ouders kunnen worden overgenomen. Overname in het Reliable Actors Framework volgt in het algemeen het .NET-model met enkele extra beperkingen. In het geval van Java/Linux wordt het Java-model gevolgd.

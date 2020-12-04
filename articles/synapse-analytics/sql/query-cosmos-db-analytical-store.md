@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 09/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: 439337233e24dfcae2c8c911a9224fd3394d6846
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: a7e9cdb18d109abeef7d7d7237444ac55f9e7da1
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462699"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576346"
 ---
 # <a name="query-azure-cosmos-db-data-with-a-serverless-sql-pool-in-azure-synapse-link-preview"></a>Azure Cosmos DB gegevens opvragen met een serverloze SQL-groep in azure Synapse link preview
 
@@ -33,6 +33,12 @@ In dit artikel leert u hoe u een query schrijft met een serverloze SQL-groep die
 
 ## <a name="overview"></a>Overzicht
 
+Met serverloze SQL-pool kunt u een query uitvoeren op Azure Cosmos DB Analytical Storage met behulp van een `OPENROWSET` functie. 
+- `OPENROWSET` met inline-toets. Deze syntaxis kan worden gebruikt om Azure Cosmos DB verzamelingen op te vragen zonder dat er referenties moeten worden voor bereid.
+- `OPENROWSET` Deze referentie bevat de sleutel van het Cosmos DB-account. Deze syntaxis kan worden gebruikt om weer gaven te maken voor Azure Cosmos DB verzamelingen.
+
+### <a name="openrowset-with-key"></a>[OPENROWSET met sleutel](#tab/openrowset-key)
+
 Voor het ondersteunen van query's en het analyseren van gegevens in een Azure Cosmos DB-analytische opslag, gebruikt een serverloze SQL-pool de volgende `OPENROWSET` syntaxis:
 
 ```sql
@@ -45,17 +51,39 @@ OPENROWSET(
 
 De Azure Cosmos DB connection string geeft de Azure Cosmos DB account naam, de database naam, de hoofd sleutel voor het database account en een optionele regio naam aan de `OPENROWSET` functie op.
 
-> [!IMPORTANT]
-> Zorg ervoor dat u een UTF-8-database sortering gebruikt, bijvoorbeeld `Latin1_General_100_CI_AS_SC_UTF8` omdat de teken reeks waarden in een Azure Cosmos DB analytische archief worden gecodeerd als UTF-8-tekst.
-> Het verschil tussen tekst codering in het bestand en de sortering kan leiden tot onverwachte tekst conversie fouten.
-> U kunt eenvoudig de standaard sortering van de huidige data base wijzigen met behulp van de T-SQL-instructie `alter database current collate Latin1_General_100_CI_AI_SC_UTF8` .
-
 De connection string heeft de volgende indeling:
 ```sql
 'account=<database account name>;database=<database name>;region=<region name>;key=<database account master key>'
 ```
 
 De naam van de Azure Cosmos DB container is opgegeven zonder aanhalings tekens in de `OPENROWSET` syntaxis. Als de naam van de container speciale tekens bevat, bijvoorbeeld een streepje (-), moet de naam tussen vier Kante haken ( `[]` ) in de syntaxis worden geplaatst `OPENROWSET` .
+
+### <a name="openrowset-with-credential"></a>[OPENROWSET met referentie](#tab/openrowset-credential)
+
+U kunt `OPENROWSET` de syntaxis gebruiken die verwijst naar de referentie:
+
+```sql
+OPENROWSET( 
+       PROVIDER = 'CosmosDB',
+       CONNECTION = '<Azure Cosmos DB connection string without account key>',
+       OBJECT = '<Container name>',
+       [ CREDENTIAL | SERVER_CREDENTIAL ] = '<credential name>'
+    )  [ < with clause > ] AS alias
+```
+
+In dit geval bevat de Azure Cosmos DB connection string geen sleutel. De connection string heeft de volgende indeling:
+```sql
+'account=<database account name>;database=<database name>;region=<region name>'
+```
+
+Hoofd sleutel van database account wordt in referenties op server niveau of referentie data base-Scope geplaatst. 
+
+---
+
+> [!IMPORTANT]
+> Zorg ervoor dat u een UTF-8-database sortering gebruikt, bijvoorbeeld `Latin1_General_100_CI_AS_SC_UTF8` omdat de teken reeks waarden in een Azure Cosmos DB analytische archief worden gecodeerd als UTF-8-tekst.
+> Het verschil tussen tekst codering in het bestand en de sortering kan leiden tot onverwachte tekst conversie fouten.
+> U kunt eenvoudig de standaard sortering van de huidige data base wijzigen met behulp van de T-SQL-instructie `alter database current collate Latin1_General_100_CI_AI_SC_UTF8` .
 
 > [!NOTE]
 > Een serverloze SQL-groep biedt geen ondersteuning voor het uitvoeren van query's op een Azure Cosmos DB transactionele Store.
@@ -76,6 +104,9 @@ Volg de instructies in dit artikel voor informatie over het opvragen van Azure C
 
 De gemakkelijkste manier om gegevens in Azure Cosmos DB te verkennen, is door gebruik te maken van de functie voor automatische schema-deinterferentie. Door de `WITH` component van de instructie te weglaten `OPENROWSET` , kunt u het schema van de analytische opslag van de Azure Cosmos DB-container door geven aan de serverloze SQL-groep.
 
+
+### <a name="openrowset-with-key"></a>[OPENROWSET met sleutel](#tab/openrowset-key)
+
 ```sql
 SELECT TOP 10 *
 FROM OPENROWSET( 
@@ -83,6 +114,25 @@ FROM OPENROWSET(
        'account=MyCosmosDbAccount;database=covid;region=westus2;key=C0Sm0sDbKey==',
        EcdcCases) as documents
 ```
+
+### <a name="openrowset-with-credential"></a>[OPENROWSET met referentie](#tab/openrowset-credential)
+
+```sql
+/*  Setup - create server-level or database scoped credential with Azure Cosmos DB account key:
+    CREATE CREDENTIAL MyCosmosDbAccountCredential
+    WITH IDENTITY = 'SHARED ACCESS SIGNATURE', SECRET = 'C0Sm0sDbKey==';
+*/
+SELECT TOP 10 *
+FROM OPENROWSET(
+      PROVIDER = 'CosmosDB',
+      CONNECTION = 'account=MyCosmosDbAccount;database=covid;region=westus2',
+      OBJECT = 'EcdcCases',
+      SERVER_CREDENTIAL = 'MyCosmosDbAccountCredential'
+    ) with ( date_rep varchar(20), cases bigint, geo_id varchar(6) ) as rows
+```
+
+---
+
 In het vorige voor beeld hebben we de serverloze SQL-groep geïnstrueerd om verbinding te maken met de `covid` Data base in het Azure Cosmos DB account dat is `MyCosmosDbAccount` geverifieerd met behulp van de Azure Cosmos DB sleutel (de pop in het vorige voor beeld). Vervolgens hebben we het `EcdcCases` analytische archief van de container in de `West US 2` regio geopend. Omdat er geen projectie van specifieke eigenschappen is, retourneert de `OPENROWSET` functie alle eigenschappen uit de Azure Cosmos DB items.
 
 Ervan uitgaande dat de items in de Azure Cosmos DB container `date_rep` , `cases` , en `geo_id` Eigenschappen, de resultaten van deze query worden weer gegeven in de volgende tabel:
@@ -119,6 +169,7 @@ Stel dat we een aantal gegevens van de [ECDC COVID-gegevensset](https://azure.mi
 
 Deze platte JSON-documenten in Azure Cosmos DB kunnen worden weer gegeven als een set rijen en kolommen in Synapse SQL. `OPENROWSET`Met de functie kunt u een subset van eigenschappen opgeven die u wilt lezen en de exacte kolom typen in de `WITH` component:
 
+### <a name="openrowset-with-key"></a>[OPENROWSET met sleutel](#tab/openrowset-key)
 ```sql
 SELECT TOP 10 *
 FROM OPENROWSET(
@@ -127,7 +178,21 @@ FROM OPENROWSET(
        EcdcCases
     ) with ( date_rep varchar(20), cases bigint, geo_id varchar(6) ) as rows
 ```
-
+### <a name="openrowset-with-credential"></a>[OPENROWSET met referentie](#tab/openrowset-credential)
+```sql
+/*  Setup - create server-level or database scoped credential with Azure Cosmos DB account key:
+    CREATE CREDENTIAL MyCosmosDbAccountCredential
+    WITH IDENTITY = 'SHARED ACCESS SIGNATURE', SECRET = 'C0Sm0sDbKey==';
+*/
+SELECT TOP 10 *
+FROM OPENROWSET(
+      PROVIDER = 'CosmosDB',
+      CONNECTION = 'account=MyCosmosDbAccount;database=covid;region=westus2',
+      OBJECT = 'EcdcCases',
+      SERVER_CREDENTIAL = 'MyCosmosDbAccountCredential'
+    ) with ( date_rep varchar(20), cases bigint, geo_id varchar(6) ) as rows
+```
+---
 Het resultaat van deze query kan eruitzien als in de volgende tabel:
 
 | date_rep | meldingen | geo_id |
@@ -137,6 +202,26 @@ Het resultaat van deze query kan eruitzien als in de volgende tabel:
 | 2020-08-11 | 163 | RS |
 
 Zie de [regels voor SQL-type toewijzingen](#azure-cosmos-db-to-sql-type-mappings) aan het einde van het artikel voor meer informatie over de SQL-typen die moeten worden gebruikt voor Azure Cosmos DB waarden.
+
+## <a name="create-view"></a>Weer gave maken
+
+Wanneer u het schema hebt geïdentificeerd, kunt u een weer gave op uw Azure Cosmos DB gegevens voorbereiden. U moet uw Azure Cosmos DB-account sleutel in een afzonderlijke referentie plaatsen en deze referentie naar de `OPENROWSET` functie referentie. Bewaar uw account sleutel niet in de weergave definitie.
+
+```sql
+CREATE CREDENTIAL MyCosmosDbAccountCredential
+WITH IDENTITY = 'SHARED ACCESS SIGNATURE', SECRET = 'C0Sm0sDbKey==';
+GO
+CREATE OR ALTER VIEW EcdcCases
+AS SELECT *
+FROM OPENROWSET(
+      PROVIDER = 'CosmosDB',
+      CONNECTION = 'account=MyCosmosDbAccount;database=covid;region=westus2',
+      OBJECT = 'EcdcCases',
+      SERVER_CREDENTIAL = 'MyCosmosDbAccountCredential'
+    ) with ( date_rep varchar(20), cases bigint, geo_id varchar(6) ) as rows
+```
+
+Gebruik niet `OPENROWSET` zonder expliciet gedefinieerd schema, omdat dit van invloed kan zijn op de prestaties. Zorg ervoor dat u de kleinst mogelijke grootten voor uw kolommen gebruikt (bijvoorbeeld VARCHAR (100) in plaats van standaard VARCHAR (8000)). U moet een van de volgende UTF-8-sorteringen gebruiken als standaard database sortering of instellen als expliciete kolom sortering om [conversie probleem met UTF-8](/troubleshoot/reading-utf8-text)te voor komen. Sortering `Latin1_General_100_BIN2_UTF8` biedt de beste prestaties wanneer Yu filter gegevens gebruikt in bepaalde teken reeks kolommen.
 
 ## <a name="query-nested-objects-and-arrays"></a>Geneste objecten en matrices doorzoeken
 
@@ -262,7 +347,7 @@ Azure Cosmos DB-accounts van de SQL-API (core) ondersteunen JSON-eigenschaps typ
 
 | Azure Cosmos DB eigenschaps type | SQL-kolom Type |
 | --- | --- |
-| Boolean | bit |
+| Booleaans | bit |
 | Geheel getal | bigint |
 | Decimaal | float |
 | Tekenreeks | varchar (UTF-8-database sortering) |

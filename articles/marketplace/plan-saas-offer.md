@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 08/30/2020
-ms.openlocfilehash: 9034757539a3dfd8b5e43e97ec518479da396456
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: d2d890db3c246ad7f3d0a56a3df264d5f78bd54d
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917542"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571127"
 ---
 # <a name="how-to-plan-a-saas-offer-for-the-commercial-marketplace"></a>Een SaaS-aanbieding plannen voor de commerciële Marketplace
 
@@ -202,7 +202,7 @@ Om uw aanbieding gemakkelijker te maken, moet u enkele van deze items vooraf voo
   - PNG-bestand
   - Moet een bijschrift bevatten
 - **Media-Video's** (optioneel): u kunt Maxi maal vier Video's toevoegen aan de volgende vereisten, die uw aanbod demonstreren:
-  - Name
+  - Naam
   - URL: moet alleen worden gehost op YouTube of Vimeo.
   - Miniatuur: 1280 x 720. png-bestand
 
@@ -258,7 +258,7 @@ U kunt kiezen voor marketing-en verkoop kanalen die door micro soft worden onder
 
 - **Door sturen via csp's**: gebruik deze optie om de partners van Microsoft Cloud Solution Providers (CSP) in staat te stellen uw oplossing door te verkopen als onderdeel van een gebundelde aanbieding. Zie het [Cloud Solution Provider-programma](cloud-solution-providers.md) voor meer informatie.
 
-- **Samen verkopen met micro soft: met** deze optie kunnen micro soft verkoop teams uw door de klant in aanmerking komende oplossing door nemen bij de evaluatie van de behoeften van uw klanten. Zie [optie voor co-sell in het partner centrum](./partner-center-portal/commercial-marketplace-co-sell.md) voor gedetailleerde informatie over het voorbereiden van uw aanbieding voor evaluatie.
+- **Samen verkopen met micro soft: met** deze optie kunnen micro soft verkoop teams uw door de klant in aanmerking komende oplossing door nemen bij de evaluatie van de behoeften van uw klanten. Zie [optie voor co-sell in het partner centrum](commercial-marketplace-co-sell.md) voor gedetailleerde informatie over het voorbereiden van uw aanbieding voor evaluatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

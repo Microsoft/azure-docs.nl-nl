@@ -3,15 +3,15 @@ title: Taal pakketten installeren op Windows 10-Vm's in virtueel bureau blad van
 description: Taal pakketten installeren voor Vm's met meerdere sessies van Windows 10 in Windows virtueel bureau blad.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 11/06/2020
+ms.date: 12/03/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 10d79d08e3f6ed422f0354074ebc6e0acc125553
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: ca4b5486b54de28497ea41765337bfa19f12e3d7
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94354033"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573116"
 ---
 # <a name="add-language-packs-to-a-windows-10-multi-session-image"></a>Taal pakketten toevoegen aan een Windows 10-installatie kopie met meerdere sessies
 
@@ -34,20 +34,24 @@ U hebt de volgende zaken nodig om uw installatie kopieën met meerdere sessies v
      
      - Taal ISO:
         - [Windows 10, versie 1903 of 1909 taal pakket ISO](https://software-download.microsoft.com/download/pr/18362.1.190318-1202.19h1_release_CLIENTLANGPACKDVD_OEM_MULTI.iso)
-        - [Windows 10, versie 2004 taal pakket ISO](https://software-download.microsoft.com/download/pr/19041.1.191206-1406.vb_release_CLIENTLANGPACKDVD_OEM_MULTI.iso)
+        - [Windows 10, versie 2004 of 20H2 language pack ISO](https://software-download.microsoft.com/download/pr/19041.1.191206-1406.vb_release_CLIENTLANGPACKDVD_OEM_MULTI.iso)
 
      - Dom-schijf 1 ISO:
         - [Windows 10, versie 1903 of 1909 dom schijf 1 ISO](https://software-download.microsoft.com/download/pr/18362.1.190318-1202.19h1_release_amd64fre_FOD-PACKAGES_OEM_PT1_amd64fre_MULTI.iso)
-        - [Windows 10, versie 2004 dom schijf 1 ISO](https://software-download.microsoft.com/download/pr/19041.1.191206-1406.vb_release_amd64fre_FOD-PACKAGES_OEM_PT1_amd64fre_MULTI.iso)
+        - [Windows 10, versie 2004 of 20H2 dom schijf 1 ISO](https://software-download.microsoft.com/download/pr/19041.1.191206-1406.vb_release_amd64fre_FOD-PACKAGES_OEM_PT1_amd64fre_MULTI.iso)
         
      - ISO-apps voor Postvak in:
         - [Windows 10, versie 1903 of 1909 postvak in-apps ISO](https://software-download.microsoft.com/download/pr/18362.1.190318-1202.19h1_release_amd64fre_InboxApps.iso)
         - [Windows 10, versie 2004 postvak in-apps ISO](https://software-download.microsoft.com/download/pr/19041.1.191206-1406.vb_release_amd64fre_InboxApps.iso)
         - [Windows 10, versie 20H2 postvak in-apps ISO](https://software-download.microsoft.com/download/pr/19041.508.200905-1327.vb_release_svc_prod1_amd64fre_InboxApps.iso)
      
-     - Als u Windows 10, versie 2004 of 20H2 gebruikt, kunt u Local Experience Pack (LXP) Iso's gebruiken om nieuwe talen te downloaden. Gebruik de informatie in [talen toevoegen in Windows 10: bekende problemen](/windows-hardware/manufacture/desktop/language-packs-known-issue) als u wilt weten of u versie 9b of 9C moet downloaden:
-        - [Windows 10, versie 2004 of 20H2 **9b** LXP ISO](https://software-download.microsoft.com/download/pr/Win_10_2004_64_ARM64_MultiLang_LangPckAll_LIP_LXP_ONLY)
-        - [Windows 10, versie 2004 of 20H2 **9C** LXP ISO](https://software-download.microsoft.com/download/pr/Win_10_2004_32_64_ARM64_MultiLng_LngPkAll_LIP_9C_LXP_ONLY) 
+     - Als u ISO-bestanden van het lokale Experience Pack (LXP) gebruikt om uw installatie kopieën te lokaliseren, moet u ook de juiste LXP ISO voor de beste taal ervaring downloaden
+        - Als u werkt met Windows 10, versie 1903 of 1909:
+          - [Windows 10, versie 1903 of 1909 LXP ISO](https://software-download.microsoft.com/download/pr/Win_10_1903_32_64_ARM64_MultiLng_LngPkAll_LXP_ONLY.iso)
+        - Als u gebruikmaakt van Windows 10, versie 2004 of 20H2, gebruikt u de informatie in [talen toevoegen in Windows 10: bekende problemen](/windows-hardware/manufacture/desktop/language-packs-known-issue) om te achterhalen welke van de volgende LXP-iso's het meest geschikt is voor u:
+          - [Windows 10, versie 2004 of 20H2 **9b** LXP ISO](https://software-download.microsoft.com/download/pr/Win_10_2004_64_ARM64_MultiLang_LangPckAll_LIP_LXP_ONLY)
+          - [Windows 10, versie 2004 of 20H2 **9C** LXP ISO](https://software-download.microsoft.com/download/pr/Win_10_2004_32_64_ARM64_MultiLng_LngPkAll_LIP_9C_LXP_ONLY)
+          - [Windows 10, versie 2004 of 20H2 **10C** LXP ISO](https://software-download.microsoft.com/download/pr/LanguageExperiencePack.2010C.iso)
 
 - Een Azure Files share of bestands share op een virtuele machine met Windows-Bestands server
 
@@ -64,7 +68,7 @@ Voor het maken van de inhouds opslagplaats voor taal pakketten en FODs en een op
 
 3. Ga naar het taal pakket ISO en kopieer de inhoud van de **LocalExperiencePacks** -en x64-bestanden van het Pack **\\ lang** en plak de inhoud vervolgens in de bestands share.
 
-4. Ga naar het **bestand in de Dom ISO** , kopieer alle inhoud en plak het in de bestands share.
+4. Ga naar het **bestand in de Dom ISO**, kopieer alle inhoud en plak het in de bestands share.
 5. Ga naar de map **amd64fre** in de ISO-apps van het postvak in en kopieer de inhoud in de opslag plaats voor de apps in het postvak in die u hebt voor bereid.
 
      >[!NOTE]

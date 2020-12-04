@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/13/2019
 ms.author: allensu
-ms.openlocfilehash: 90fc35249daea51a08cb83143c6be024e78964a7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3b86f9bcbc863a78fd5f8f748e973a20ea709636
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91804007"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573167"
 ---
 # <a name="create-change-or-delete-a-public-ip-address-prefix"></a>Een voorvoegsel van een openbaar IP-adres maken, wijzigen of verwijderen
 
@@ -43,8 +43,8 @@ Voor voegsels voor open bare IP-adressen gelden kosten. Zie [prijzen](https://az
 
 1. Selecteer boven aan de linkerbovenhoek van de Portal de optie **+ een resource maken**.
 2. Geef het *open bare IP-voor voegsel* op in het vak in *de Marketplace zoeken* . Wanneer het **voor voegsel van een openbaar IP-adres** wordt weer gegeven in de zoek resultaten, selecteert u dit.
-3. Selecteer onder **voor voegsel openbaar IP-adres**de optie **maken**.
-4. Typ of selecteer waarden voor de volgende instellingen onder **openbaar IP-adres voorvoegsel maken**en selecteer vervolgens **maken**:
+3. Selecteer onder **voor voegsel openbaar IP-adres** de optie **maken**.
+4. Typ of selecteer waarden voor de volgende instellingen onder **openbaar IP-adres voorvoegsel maken** en selecteer vervolgens **maken**:
 
    |Instelling|Vereist?|Details|
    |---|---|---|
@@ -60,6 +60,9 @@ Voor voegsels voor open bare IP-adressen gelden kosten. Zie [prijzen](https://az
 |---|---|
 |CLI|[AZ Network Public-IP voorvoegsel Create](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-create)|
 |PowerShell|[New-AzPublicIpPrefix](/powershell/module/az.network/new-azpublicipprefix)|
+
+>[!NOTE]
+>In regio's met beschikbaarheids zones kunt u Power shell-of CLI-opdrachten gebruiken om een openbaar IP-adres voorvoegsel te maken als ofwel: niet-zonegebonden, gekoppeld aan een specifieke zone of om zone-redundantie te gebruiken.  Voor API-versie 2020-08-01 of hoger geldt dat als er geen zone parameter wordt gegeven, een niet-zonegebonden openbaar IP-adres voorvoegsel wordt gemaakt. Voor versies van de API die ouder zijn dan 2020-08-01, wordt een zone-redundant openbaar IP-adres voorvoegsel gemaakt. 
 
 ## <a name="create-a-static-public-ip-address-from-a-prefix"></a>Een statisch openbaar IP-adres maken op basis van een voor voegsel
 Wanneer u een voor voegsel maakt, moet u vaste IP-adressen maken op basis van het voor voegsel. Volg de onderstaande stappen om dit te doen.
@@ -101,7 +104,7 @@ U kunt ook de CLI-en PS-opdrachten hieronder met de para meters---Public-IP-pref
 
 Als u taken wilt uitvoeren op open bare IP-adres voorvoegsels, moet uw account worden toegewezen aan de rol [netwerk bijdrager](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) of aan een [aangepaste](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) rol waaraan de juiste acties in de volgende tabel zijn toegewezen:
 
-| Bewerking                                                            | Naam                                                           |
+| Actie                                                            | Naam                                                           |
 | ---------                                                         | -------------                                                  |
 | Micro soft. Network/publicIPPrefixes/lezen                           | Een voor voegsel van een openbaar IP-adres lezen                                |
 | Micro soft. Network/publicIPPrefixes/schrijven                          | Een voor voegsel voor een openbaar IP-adres maken of bijwerken                    |

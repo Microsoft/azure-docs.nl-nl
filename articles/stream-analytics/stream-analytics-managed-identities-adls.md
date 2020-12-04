@@ -7,14 +7,14 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 04/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: b20391c4d856a5c52b6017ae892ec0b86873dbca
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 82c5a246dca69c0723394e41058c4fc123bbb84e
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491882"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571943"
 ---
-# <a name="authenticate-stream-analytics-to-azure-data-lake-storage-gen1-using-managed-identities"></a>Stream Analytics verifiëren voor het Azure Data Lake Storage Gen1 met behulp van beheerde identiteiten
+# <a name="authenticate-stream-analytics-to-azure-data-lake-storage-gen1-using-managed-identities-preview"></a>Stream Analytics verifiëren voor het Azure Data Lake Storage Gen1 met behulp van beheerde identiteiten (preview-versie)
 
 Azure Stream Analytics ondersteunt beheerde identiteits verificatie met de gen1-uitvoer van Azure Data Lake Storage (ADLS). De identiteit is een beheerde toepassing die is geregistreerd in Azure Active Directory die een bepaalde Stream Analytics taak vertegenwoordigt, en kan worden gebruikt om te verifiëren bij een doel resource. Beheerde identiteiten elimineren de beperkingen van verificatie methoden op basis van gebruikers, zoals het opnieuw verifiëren als gevolg van wachtwoord wijzigingen of gebruikers token verloop die elke 90 dagen worden uitgevoerd. Daarnaast helpen beheerde identiteiten bij de automatisering van Stream Analytics taak implementaties die naar Azure Data Lake Storage Gen1 worden uitgevoerd.
 
@@ -84,7 +84,7 @@ In dit artikel ziet u drie manieren om beheerde identiteit in te scha kelen voor
 
    * Stel de machtigingen **schrijven** en **uitvoeren** automatisch in voor het pad ADLS gen1 voorvoegsel dat in de taak wordt gebruikt en wijs dit toe aan deze map en alle onderliggende items.
 
-5. U kunt de Resource Manager-sjablonen met de volgende eigenschap genereren met behulp van [Stream Analytics CI. CD Nuget package](https://www.nuget.org/packages/Microsoft.Azure.StreamAnalytics.CICD/) versie 1.5.0 of hoger op een build-machine (buiten Visual Studio). Volg de implementatie stappen voor de Resource Manager-sjabloon in de volgende sectie om de Service-Principal op te halen en toegang te verlenen tot de Service-Principal via Power shell.
+5. U kunt de Resource Manager-sjablonen met de volgende eigenschap genereren met behulp van [Stream Analytics CI.cd NuGet-pakket](https://www.nuget.org/packages/Microsoft.Azure.StreamAnalytics.CICD/) versie 1.5.0 of hoger op een build-machine (buiten Visual Studio). Volg de implementatie stappen voor de Resource Manager-sjabloon in de volgende sectie om de Service-Principal op te halen en toegang te verlenen tot de Service-Principal via Power shell.
 
 ## <a name="resource-manager-template-deployment"></a>Implementatie van Resource Manager-sjabloon
 
@@ -182,9 +182,9 @@ De beheerde identiteit die is gemaakt voor een Stream Analytics taak wordt allee
 ## <a name="limitations"></a>Beperkingen
 Deze functie biedt geen ondersteuning voor het volgende:
 
-1. **Multi tenant-toegang** : de service-principal die is gemaakt voor een bepaalde stream Analytics taak bevindt zich op de Azure Active Directory Tenant waarop de taak is gemaakt en kan niet worden gebruikt voor een resource die zich op een andere Azure Active Directory Tenant bevindt. Daarom kunt u alleen MSI gebruiken op ADLS gen 1-resources die zich in dezelfde Azure Active Directory Tenant bevinden als uw Azure Stream Analytics-taak. 
+1. **Multi tenant-toegang**: de service-principal die is gemaakt voor een bepaalde stream Analytics taak bevindt zich op de Azure Active Directory Tenant waarop de taak is gemaakt en kan niet worden gebruikt voor een resource die zich op een andere Azure Active Directory Tenant bevindt. Daarom kunt u alleen MSI gebruiken op ADLS gen 1-resources die zich in dezelfde Azure Active Directory Tenant bevinden als uw Azure Stream Analytics-taak. 
 
-2. Door **[gebruiker toegewezen identiteit](../active-directory/managed-identities-azure-resources/overview.md)** : wordt niet ondersteund. Dit betekent dat de gebruiker niet in staat is om hun eigen Service-Principal in te voeren om te worden gebruikt door hun Stream Analytics-taak. De service-principal wordt gegenereerd door Azure Stream Analytics.
+2. Door **[gebruiker toegewezen identiteit](../active-directory/managed-identities-azure-resources/overview.md)**: wordt niet ondersteund. Dit betekent dat de gebruiker niet in staat is om hun eigen Service-Principal in te voeren om te worden gebruikt door hun Stream Analytics-taak. De service-principal wordt gegenereerd door Azure Stream Analytics.
 
 ## <a name="next-steps"></a>Volgende stappen
 

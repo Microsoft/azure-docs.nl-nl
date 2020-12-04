@@ -7,17 +7,17 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 06/23/2020
-ms.openlocfilehash: 9f36502eb464f051cd50b51245db69fa76daa915
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.date: 12/03/2020
+ms.openlocfilehash: 79ba186351cc145e012658abc30572e99b123dbb
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499540"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573983"
 ---
-# <a name="partial-term-search-and-patterns-with-special-characters-wildcard-regex-patterns"></a>Zoeken op gedeeltelijke termen en patronen met speciale tekens (Joker teken, regex, patronen)
+# <a name="partial-term-search-and-patterns-with-special-characters-hyphens-wildcard-regex-patterns"></a>Zoeken op gedeeltelijke termen en patronen met speciale tekens (afbreek streepjes, joker tekens, regex, patronen)
 
-Een *gedeeltelijke zoek opdracht* verwijst naar query's die bestaan uit termen fragmenten, in plaats van een hele term, u hebt alleen het begin, het midden of het einde van de term (ook wel voor voegsel-, infix-of achtervoegsel query's genoemd). Een gedeeltelijke term zoeken kan een combi natie van fragmenten bevatten, vaak met speciale tekens, zoals streepjes of slashes die deel uitmaken van de query reeks. Veelvoorkomend gebruik: cases bevatten onderdelen van een telefoon nummer, URL, codes of afgebroken samengestelde woorden.
+Een *gedeeltelijke zoek opdracht* verwijst naar query's die bestaan uit termen fragmenten, in plaats van een hele term, u hebt alleen het begin, het midden of het einde van de term (ook wel voor voegsel-, infix-of achtervoegsel query's genoemd). Een gedeeltelijke zoek opdracht kan bestaan uit een combi natie van fragmenten, vaak met speciale tekens, zoals afbreek streepjes, streepjes of slashes die deel uitmaken van de query teken reeks. Veelvoorkomend gebruik: cases bevatten onderdelen van een telefoon nummer, URL, codes of afgebroken samengestelde woorden.
 
 Zoeken op gedeeltelijke termen en query teken reeksen die speciale tekens bevatten, kunnen problematisch zijn als de index geen tokens in de verwachte indeling heeft. Tijdens de [lexicale analyse fase](search-lucene-query-architecture.md#stage-2-lexical-analysis) van het indexeren (uitgaande van de standaard-Analyzer) worden speciale tekens verwijderd, worden samengestelde woorden opsplitst en wordt witruimte gewist. Dit kan ertoe leiden dat query's mislukken wanneer er geen overeenkomst wordt gevonden. Bijvoorbeeld: een telefoon nummer zoals `+1 (425) 703-6214` (tokend as `"1"` ,, `"425"` `"703"` ,) wordt `"6214"` niet weer gegeven in een `"3-62"` query omdat die inhoud niet echt in de index voor komt. 
 
@@ -26,7 +26,7 @@ De oplossing is het aanroepen van een Analyzer tijdens het indexeren waarbij een
 > [!TIP]
 > Als u bekend bent met postman en REST Api's, [downloadt u de query-voor beelden-verzameling voor het](https://github.com/Azure-Samples/azure-search-postman-samples/) opvragen van gedeeltelijke voor waarden en speciale tekens die in dit artikel worden beschreven.
 
-## <a name="what-is-partial-term-search-in-azure-cognitive-search"></a>Wat is het zoeken naar een gedeeltelijke term in azure Cognitive Search
+## <a name="about-partial-term-search"></a>Over het doorzoeken van de gedeeltelijke term
 
 Azure Cognitive Search scans voor hele tokens in de index en er wordt geen overeenkomst met een gedeeltelijke term gevonden tenzij u de tijdelijke aanduidingen voor joker tekens (en) opneemt `*` `?` , of de query opmaken als een reguliere expressie. Gedeeltelijke voor waarden zijn opgegeven met behulp van de volgende technieken:
 
@@ -45,15 +45,15 @@ Voor een gedeeltelijke term of patroon zoekopdracht en enkele andere query formu
 
 Als u wilt zoeken naar fragmenten of patronen of speciale tekens, kunt u de standaard-Analyzer vervangen door een aangepaste analyse functie die onder eenvoudigere token regels wordt uitgevoerd, waarbij de hele teken reeks in de index wordt bewaard. Als u een stap terug neemt, ziet de benadering er als volgt uit:
 
-+ Een veld definiëren voor het opslaan van een onbeschadigde versie van de teken reeks (ervan uitgaande dat u de query tijd wilt analyseren en niet-analyseerde tekst)
-+ Evalueer en kies uit de verschillende analyse functies die tokens op het juiste niveau van granulariteit genereren
-+ De analyse functie toewijzen aan het veld
-+ De index maken en testen
+1. Een veld definiëren voor het opslaan van een onbeschadigde versie van de teken reeks (ervan uitgaande dat u de query tijd wilt analyseren en niet-analyseerde tekst)
+1. Evalueer en kies uit de verschillende analyse functies die tokens op het juiste niveau van granulariteit genereren
+1. De analyse functie toewijzen aan het veld
+1. De index maken en testen
 
 > [!TIP]
 > Het evalueren van analyse functies is een iteratief proces dat veelvuldig opnieuw opgebouwde index vereist. U kunt deze stap eenvoudiger maken met behulp van Postman, de REST-Api's voor het maken van een [index](/rest/api/searchservice/create-index), het verwijderen van een [index](/rest/api/searchservice/delete-index), het[laden van documenten](/rest/api/searchservice/addupdate-or-delete-documents)en het zoeken van [documenten](/rest/api/searchservice/search-documents). Voor het laden van documenten moet de hoofd tekst van de aanvraag een kleine representatieve gegevensset bevatten die u wilt testen (bijvoorbeeld een veld met telefoon nummers of product codes). Met deze Api's in dezelfde postman-verzameling kunt u deze stappen snel door lopen.
 
-## <a name="duplicate-fields-for-different-scenarios"></a>Dubbele velden voor verschillende scenario's
+## <a name="1---create-a-dedicated-field"></a>1-een speciaal veld maken
 
 Analyseerers bepalen hoe termen worden getokend in een index. Omdat analyse functies per veld worden toegewezen, kunt u velden in uw index maken om te optimaliseren voor verschillende scenario's. U kunt bijvoorbeeld ' featureCode ' en ' featureCodeRegex ' definiëren voor het ondersteunen van normale Zoek opdrachten in volledige tekst op het eerste en geavanceerde patroon dat op het tweede punt overeenkomt. De analyse functies toegewezen aan elk veld bepalen hoe de inhoud van elk veld wordt getokend in de index.  
 
@@ -74,7 +74,9 @@ Analyseerers bepalen hoe termen worden getokend in een index. Omdat analyse func
 },
 ```
 
-## <a name="choose-an-analyzer"></a>Een analyse functie kiezen
+<a name="set-an-analyzer"></a>
+
+## <a name="2---set-an-analyzer"></a>2: een analyse functie instellen
 
 Bij het kiezen van een analyse functie die volledige-termijn tokens produceert, zijn de volgende analyse functies algemene keuzes:
 
@@ -98,7 +100,7 @@ U moet een gevulde index hebben om te kunnen werken met. Als u een bestaande ind
    }
     ```
 
-1. Evalueer het antwoord om te zien hoe de tekst binnen de index wordt getokend. U ziet dat elke term in kleine letters en uitsplitsing is. Alleen de query's die met deze tokens overeenkomen, retour neren dit document in de resultaten. Een query die "10 of" bevat, mislukt.
+1. Evalueer het antwoord om te zien hoe de tekst binnen de index wordt getokend. U ziet dat elke term kleine letters, afbreek streepjes en subtekenreeksen bevat die zijn opgesplitst in afzonderlijke tokens. Alleen de query's die met deze tokens overeenkomen, retour neren dit document in de resultaten. Een query die "10 of" bevat, mislukt.
 
     ```json
     {
@@ -152,7 +154,7 @@ U moet een gevulde index hebben om te kunnen werken met. Als u een bestaande ind
 > [!Important]
 > Houd er rekening mee dat query parsers vaak kleine letters in een zoek expressie bij het samen stellen van de query-structuur. Als u een analyse functie gebruikt die tijdens het indexeren geen kleine letters voor tekst invoer bevat en u niet de verwachte resultaten krijgt, kan dit de reden zijn. De oplossing is het toevoegen van een token filter met een lagere case, zoals beschreven in de sectie ' aangepaste analyse functies gebruiken ' hieronder.
 
-## <a name="configure-an-analyzer"></a>Een analyse functie configureren
+## <a name="3---configure-an-analyzer"></a>3-een analyse functie configureren
  
 Of u analyse functies wilt evalueren of vooruit wilt gaan met een specifieke configuratie, u moet de analyse op de veld definitie opgeven en mogelijk de Analyzer zelf configureren als u geen gebruik maakt van een ingebouwde analyse functie. Bij het wisselen van analyse functies moet u doorgaans de index opnieuw samen stellen (verwijderen, opnieuw maken en opnieuw laden). 
 
@@ -216,7 +218,7 @@ In het volgende voor beeld ziet u een aangepaste analyse functie die het tref wo
 > [!NOTE]
 > Het `keyword_v2` tokenizer `lowercase` -en Token filter zijn bekend bij het systeem en met behulp van de standaard configuraties. Daarom kunt u ernaar verwijzen met de naam zonder dat u ze eerst hoeft te definiëren.
 
-## <a name="build-and-test"></a>Bouwen en testen
+## <a name="4---build-and-test"></a>4-maken en testen
 
 Zodra u een index hebt gedefinieerd met analyse functies en veld definities die uw scenario ondersteunen, laadt u documenten met representatieve teken reeksen zodat u gedeeltelijke teken reeks query's kunt testen. 
 
@@ -228,7 +230,7 @@ In de vorige secties is de logica uitgelegd. In deze sectie wordt elke API besch
 
 + Met [documenten laden](/rest/api/searchservice/addupdate-or-delete-documents) worden documenten geïmporteerd die dezelfde structuur hebben als uw index, evenals Doorzoek bare inhoud. Na deze stap is de index gereed om query's uit te proberen of te testen.
 
-+ [Test Analyzer](/rest/api/searchservice/test-analyzer) is geïntroduceerd in [een Analyzer kiezen](#choose-an-analyzer). Test enkele van de teken reeksen in uw index met behulp van verschillende analyse functies om te begrijpen hoe de termen worden getokend.
++ [Test Analyzer](/rest/api/searchservice/test-analyzer) is geïntroduceerd in [set a Analyzer](#set-an-analyzer). Test enkele van de teken reeksen in uw index met behulp van verschillende analyse functies om te begrijpen hoe de termen worden getokend.
 
 + In [documenten zoeken](/rest/api/searchservice/search-documents) wordt uitgelegd hoe u een query aanvraag opbouwt met behulp van [eenvoudige syntaxis](query-simple-syntax.md) of de [volledige lucene-syntaxis](query-lucene-syntax.md) voor joker tekens en reguliere expressies.
 

@@ -4,21 +4,18 @@ description: Meer informatie over hoe u met Kubernetes-resources een Azure Kuber
 services: container-service
 ms.topic: article
 ms.date: 09/21/2020
-ms.openlocfilehash: ae617615a8ba83e311a416581fb41d3cb6ca1b05
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: cfd09e469de68a1eee7440773347e9fe58bf8619
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92635606"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571620"
 ---
 # <a name="access-kubernetes-resources-from-the-azure-portal-preview"></a>Toegang tot Kubernetes-resources via de Azure Portal (preview-versie)
 
 De Azure Portal bevat een Kubernetes resource Viewer (preview) voor eenvoudige toegang tot de Kubernetes-resources in uw Azure Kubernetes service (AKS)-cluster. Het weer geven van Kubernetes-resources in de Azure Portal reduceert de context wisseling tussen de Azure Portal en het `kubectl` opdracht regel programma, waarmee u de ervaring voor het weer geven en bewerken van uw Kubernetes-resources kunt stroom lijnen. De resource Viewer bevat momenteel meerdere resource typen, zoals implementaties, peulen en replica sets.
 
-De resource weergave Kubernetes van de Azure Portal vervangt de [AKS dashboard-invoeg toepassing][kubernetes-dashboard], die is ingesteld voor afschaffing.
-
->[!NOTE]
->De capabilty wordt momenteel niet ondersteund in [particuliere Azure Kubernetes-Service clusters](./private-clusters.md).
+De resource weergave Kubernetes van de Azure Portal vervangt de [AKS dashboard-invoeg toepassing][kubernetes-dashboard], die is afgeschaft.
 
 [!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 
@@ -46,19 +43,19 @@ In dit voor beeld gebruiken we onze voor beeld-AKS-cluster om de Azure stem-toep
 
 Zodra het YAML-bestand is toegevoegd, worden in de resource Viewer zowel Kubernetes-services weer gegeven die zijn gemaakt: de interne service (Azure-stem) als de externe service (Azure-stemmen) om toegang te krijgen tot de Azure stem-toepassing. De externe service bevat een gekoppeld extern IP-adres, zodat u de toepassing eenvoudig kunt bekijken in uw browser.
 
-:::image type="content" source="media/kubernetes-portal/portal-services.png" alt-text="Kubernetes pod-informatie die wordt weer gegeven in de Azure Portal." lightbox="media/kubernetes-portal/portal-services.png":::
+:::image type="content" source="media/kubernetes-portal/portal-services.png" alt-text="Informatie over Azure stem toepassingen die worden weer gegeven in de Azure Portal." lightbox="media/kubernetes-portal/portal-services.png":::
 
 ### <a name="monitor-deployment-insights"></a>Implementatie inzichten bewaken
 
 AKS-clusters met [Azure monitor voor containers][enable-monitor] ingeschakeld kunnen snel implementatie inzichten weer geven. In de weer gave Kubernetes bronnen kunnen gebruikers de live status van afzonderlijke implementaties zien, met inbegrip van CPU-en geheugen gebruik, evenals overgang naar Azure monitor voor meer gedetailleerde informatie. Hier volgt een voor beeld van implementatie Insights van een voor beeld van een AKS-cluster:
 
-:::image type="content" source="media/kubernetes-portal/deployment-insights.png" alt-text="Kubernetes pod-informatie die wordt weer gegeven in de Azure Portal." lightbox="media/kubernetes-portal/deployment-insights.png":::
+:::image type="content" source="media/kubernetes-portal/deployment-insights.png" alt-text="Implementatie Insights wordt weer gegeven in de Azure Portal." lightbox="media/kubernetes-portal/deployment-insights.png":::
 
 ## <a name="edit-yaml"></a>YAML bewerken
 
 De resource weergave Kubernetes bevat ook een YAML-editor. Met een ingebouwde YAML-editor kunt u services en implementaties bijwerken of maken vanuit de portal en wijzigingen direct Toep assen.
 
-:::image type="content" source="media/kubernetes-portal/service-editor.png" alt-text="Kubernetes pod-informatie die wordt weer gegeven in de Azure Portal.":::
+:::image type="content" source="media/kubernetes-portal/service-editor.png" alt-text="YAML-editor voor een Kubernetes-service die wordt weer gegeven in de Azure Portal.":::
 
 Nadat u de YAML hebt bewerkt, worden de wijzigingen toegepast door **revisie + opslaan** te selecteren, de wijzigingen te bevestigen en vervolgens opnieuw op te slaan.
 
@@ -80,7 +77,7 @@ Om toegang te krijgen tot de Kubernetes-resources, moet u toegang hebben tot het
 
 Voor bestaande clusters moet u mogelijk de resource weergave Kubernetes inschakelen. Als u de resource weergave wilt inschakelen, volgt u de aanwijzingen in de portal voor uw cluster.
 
-:::image type="content" source="media/kubernetes-portal/enable-resource-view.png" alt-text="Kubernetes pod-informatie die wordt weer gegeven in de Azure Portal." lightbox="media/kubernetes-portal/enable-resource-view.png":::
+:::image type="content" source="media/kubernetes-portal/enable-resource-view.png" alt-text="Azure Portal bericht om de resource weergave Kubernetes in te scha kelen." lightbox="media/kubernetes-portal/enable-resource-view.png":::
 
 > [!TIP]
 > De AKS-functie voor door de [**API server geautoriseerde IP-adresbereiken**](api-server-authorized-ip-ranges.md) kan worden toegevoegd om de API-server toegang alleen te beperken tot het open bare eind punt van de firewall. Een andere optie voor dergelijke clusters is het bijwerken `--api-server-authorized-ip-ranges` om toegang te bieden voor een lokale client computer of een IP-adres bereik (van waaruit de portal wordt gebladerd). U hebt het open bare IPv4-adres van de computer nodig om deze toegang toe te staan. U kunt dit adres vinden met de onderstaande opdracht of door te zoeken in ' wat is mijn IP-adres ' in een Internet browser.

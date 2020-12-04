@@ -1,7 +1,7 @@
 ---
 title: Wat is er nieuw in Azure Active Directory Business-to-Customer (B2C)
 description: Nieuwe en bijgewerkte documentatie voor de Azure Active Directory Business-to-Customer (B2C).
-ms.date: 11/10/2020
+ms.date: 12/03/2020
 ms.service: active-directory
 ms.subservice: B2C
 ms.topic: reference
@@ -9,16 +9,23 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: f89537d1e221ecc9a871343e863f021723965239
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 4c204ec33604ff5edd1551f9728c28e3dcab9a61
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550057"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571076"
 ---
 # <a name="azure-active-directory-b2c-whats-new"></a>Azure Active Directory B2C: wat is er nieuw
 
 Welkom bij wat is er nieuw in Azure Active Directory B2C documentatie. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden. Zie [what's New in azure Active Directory](../active-directory/fundamentals/whats-new.md)voor meer informatie over wat er nieuw is in de B2C-service.
+
+## <a name="november-2020"></a>November 2020
+
+### <a name="updated-articles"></a>Bijgewerkte artikelen
+- [Azure AD B2C met Azure Monitor bewaken](azure-monitor.md)
+- [Zelfstudie: Verificatie inschakelen in een toepassing met één pagina met Azure AD B2C](tutorial-single-page-app.md)
+
 
 ## <a name="october-2020"></a>Oktober 2020
 

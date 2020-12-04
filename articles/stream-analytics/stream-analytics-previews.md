@@ -7,12 +7,12 @@ ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 8/07/2020
-ms.openlocfilehash: 4179b06759802025f97bd32a355b788c96c9eddb
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: a32491453812d74d4bd93f3f97b7e6a32036f65f
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93123317"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573371"
 ---
 # <a name="azure-stream-analytics-preview-features"></a>Preview-functies Azure Stream Analytics
 
@@ -22,7 +22,7 @@ Dit artikel bevat een overzicht van alle functies die momenteel als preview-vers
 
 De volgende functies zijn beschikbaar in de open bare preview-versie. U kunt deze functies vandaag nog gebruiken, maar niet in uw productie omgeving.
 
-### <a name="authenticate-to-sql-database-output-with-managed-identities"></a>Verifiëren voor SQL Database uitvoer met beheerde identiteiten
+### <a name="authenticate-to-sql-database-output-with-managed-identities-preview"></a>Verifiëren voor SQL Database uitvoer met beheerde identiteiten (preview-versie)
 
 Azure Stream Analytics ondersteunt [beheerde identiteits verificatie](../active-directory/managed-identities-azure-resources/overview.md) voor Azure SQL database uitvoer-Sinks. Beheerde identiteiten elimineren de beperkingen van verificatie methoden op basis van gebruikers, zoals de nood zaak om opnieuw te verifiëren vanwege wachtwoord wijzigingen. 
 

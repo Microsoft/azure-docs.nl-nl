@@ -3,13 +3,12 @@ title: Een Azure Service Fabric-cluster beveiligen
 description: Meer informatie over beveiligings scenario's voor een Azure Service Fabric-cluster en de verschillende technologieën die u kunt gebruiken om ze te implementeren.
 ms.topic: conceptual
 ms.date: 08/14/2018
-ms.custom: sfrev
-ms.openlocfilehash: 642356f08a946cae5d2b2d395aaddd8e4dad27ed
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 6f7bb785184938fe5c1e20e3c915b0112c7723ee
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94682788"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573065"
 ---
 # <a name="service-fabric-cluster-security-scenarios"></a>Beveiligings scenario's voor Service Fabric cluster
 

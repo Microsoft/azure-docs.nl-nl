@@ -1,7 +1,7 @@
 ---
 title: Wat is er nieuw in Azure Active Directory toepassing inrichten
 description: Nieuwe en bijgewerkte documentatie voor het inrichten van de Azure Active Directory-toepassing.
-ms.date: 11/05/2020
+ms.date: 12/03/2020
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: reference
@@ -9,16 +9,24 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: 51a2facfdaccc6cb29264873e9ffd60fc48735da
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: fd9be81e8c23686695f8cdb49d873d5a663d69c4
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96174659"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571756"
 ---
 # <a name="azure-active-directory-application-provisioning-whats-new"></a>Azure Active Directory toepassing inrichten: wat is er nieuw
 
 Welkom bij wat er nieuw is in Azure Active Directory documentatie over het inrichten van toepassingen. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden. Zie [what's New in azure Active Directory](../fundamentals/whats-new.md)voor meer informatie over wat er nieuw is in de inrichtings service.
+
+## <a name="november-2020"></a>November 2020
+
+### <a name="updated-articles"></a>Bijgewerkte artikelen
+- [Zelfstudie - Kenmerktoewijzingen voor het inrichten van gebruikers aanpassen voor SaaS-toepassingen in Azure Active Directory](customize-application-attributes.md)
+- [Hoe inrichting werkt](how-provisioning-works.md)
+- [Zelfstudie: een SCIM-eind punt bouwen en gebruikers inrichten met Azure AD](use-scim-to-provision-users-and-groups.md)
+
 
 ## <a name="october-2020"></a>Oktober 2020
 

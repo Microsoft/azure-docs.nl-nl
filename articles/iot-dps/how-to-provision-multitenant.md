@@ -7,12 +7,12 @@ ms.date: 04/10/2019
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: bcdda8d1bd08a26dcdbec294be88fd4540670596
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d0c132d1aa7a37dc8e7620352bb7b9a078d79a09
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90531420"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571603"
 ---
 # <a name="how-to-provision-for-multitenancy"></a>Inrichten voor multitenancy 
 
@@ -20,7 +20,7 @@ In dit artikel wordt beschreven hoe u met behulp van een [toewijzings beleid](co
 
 * **Geolocatie/geolatentie**: wanneer een apparaat tussen locaties wordt verplaatst, wordt de netwerk latentie verbeterd doordat het apparaat wordt ingericht voor de IOT-hub die het dichtst bij elke locatie is. In dit scenario worden een groep IoT-hubs, die over verschillende regio's vallen, geselecteerd voor inschrijvingen. Het **laagste** toewijzings beleid voor de latentie is geselecteerd voor deze inschrijvingen. Dit beleid zorgt ervoor dat de Device Provisioning Service de latentie van het apparaat evalueert en de kast IoT-hub uit de groep van IoT-hubs bepaalt. 
 
-* **Multitenancy: apparaten**die worden gebruikt binnen een IOT-oplossing moeten mogelijk worden toegewezen aan een specifieke IOT-hub of groep van IOT-hubs. De oplossing vereist mogelijk dat alle apparaten voor een bepaalde Tenant communiceren met een specifieke groep IoT hubs. In sommige gevallen kan een Tenant eigenaar zijn van IoT-hubs en vereisen dat apparaten worden toegewezen aan hun IoT-hubs.
+* **Multitenancy: apparaten** die worden gebruikt binnen een IOT-oplossing moeten mogelijk worden toegewezen aan een specifieke IOT-hub of groep van IOT-hubs. De oplossing vereist mogelijk dat alle apparaten voor een bepaalde Tenant communiceren met een specifieke groep IoT hubs. In sommige gevallen kan een Tenant eigenaar zijn van IoT-hubs en vereisen dat apparaten worden toegewezen aan hun IoT-hubs.
 
 Het is gebruikelijk om deze twee scenario's te combi neren. Zo zal een multi tenant IoT-oplossing meestal Tenant apparaten toewijzen met behulp van een groep IoT-hubs die verspreid over verschillende regio's zijn. Deze Tenant apparaten kunnen worden toegewezen aan de IoT-hub in die groep, met de laagste latentie op basis van de geografische locatie.
 
@@ -38,11 +38,8 @@ In dit artikel wordt een voor beeld van een gesimuleerd apparaat uit de [Azure I
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Volt ooien van het [instellen van IOT hub Device Provisioning Service met de Azure Portal](./quick-setup-auto-provision.md) Snelstartgids.
-
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
+- Volt ooien van het [instellen van IOT hub Device Provisioning Service met de Azure Portal](./quick-setup-auto-provision.md) Snelstartgids.
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 ## <a name="create-two-regional-iot-hubs"></a>Twee regionale IoT-hubs maken
 
@@ -89,9 +86,9 @@ Ter vereenvoudiging wordt in dit artikel bij de registratie gebruikgemaakt van e
 
 2. Selecteer het tabblad **inschrijvingen beheren** en klik vervolgens op de knop **registratie groep toevoegen** boven aan de pagina. 
 
-3. Voer in **registratie groep toevoegen**de volgende gegevens in en klik op de knop **Opslaan** .
+3. Voer in **registratie groep toevoegen** de volgende gegevens in en klik op de knop **Opslaan** .
 
-    **Groeps naam**: Voer **Contoso-VS-devices**in.
+    **Groeps naam**: Voer **Contoso-VS-devices** in.
 
     **Attestation-type**: Selecteer **symmetrische sleutel**.
 
@@ -102,7 +99,7 @@ Ter vereenvoudiging wordt in dit artikel bij de registratie gebruikgemaakt van e
     ![Multi tenant-registratie groep voor symmetrische sleutel attest toevoegen](./media/how-to-provision-multitenant/create-multitenant-enrollment.png)
 
 
-4. Klik in de **groep inschrijving toevoegen**op **een nieuwe IOT-hub koppelen** om beide regionale hubs te koppelen.
+4. Klik in de **groep inschrijving toevoegen** op **een nieuwe IOT-hub koppelen** om beide regionale hubs te koppelen.
 
     **Abonnement**: als u meerdere abonnementen hebt, kiest u het abonnement waar u de regionale IOT-hubs hebt gemaakt.
 
@@ -131,7 +128,7 @@ Als u het opschonen eenvoudiger wilt maken, worden deze Vm's toegevoegd aan deze
 
     **--naam**: Voer een unieke naam in voor de VM van het lokale **Amerikaanse** land. 
 
-    **--Administrator-gebruikers**naam: gebruik uw eigen beheerders gebruikersnaam.
+    **--Administrator-gebruikers** naam: gebruik uw eigen beheerders gebruikersnaam.
 
     **--Administrator-wacht woord**: gebruik uw eigen beheerders wachtwoord.
 
@@ -152,7 +149,7 @@ Als u het opschonen eenvoudiger wilt maken, worden deze Vm's toegevoegd aan deze
 
     **--naam**: Voer een unieke naam in voor de VM van uw **VS-West** . 
 
-    **--Administrator-gebruikers**naam: gebruik uw eigen beheerders gebruikersnaam.
+    **--Administrator-gebruikers** naam: gebruik uw eigen beheerders gebruikersnaam.
 
     **--Administrator-wacht woord**: gebruik uw eigen beheerders wachtwoord.
 
@@ -191,7 +188,7 @@ Als u het opschonen eenvoudiger wilt maken, worden deze Vm's toegevoegd aan deze
 
 In deze sectie kloont u de Azure IoT C SDK op elke VM. De SDK bevat een voor beeld waarmee de inrichting van een Tenant apparaat van elke regio wordt gesimuleerd.
 
-1. Installeer **cmake**, **g + +**, **gcc**en [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) voor elke VM met behulp van de volgende opdrachten:
+1. Installeer **cmake**, **g + +**, **gcc** en [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) voor elke VM met behulp van de volgende opdrachten:
 
     ```bash
     sudo apt-get update

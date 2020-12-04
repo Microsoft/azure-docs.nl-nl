@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 12/1/2020
 ms.author: billgib
 ms.reviewer: jrasnick
-ms.openlocfilehash: bae214fb8eff9747bf3f79323d8eb9ce1cb6cdb7
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: a978113265e5e61c0fc09ef0daeb1da9826f294d
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96531595"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96572793"
 ---
 # <a name="synapse-rbac-roles"></a>Synapse RBAC-rollen
 
@@ -28,7 +28,7 @@ De volgende wijzigingen zijn van toepassing op gebruikers die bekend zijn met de
 - **Nieuwe bereiken op een lager niveau** worden geïntroduceerd voor verschillende rollen.  Met deze bereiken kunnen rollen worden beperkt tot specifieke resources of objecten.
 
 >[!Note]
->- De **nieuwe rollen en bereiken met een lager niveau zijn momenteel beschikbaar als preview-versie**.  U wordt aangeraden deze nieuwe rollen en bereiken te gebruiken, die volledig worden ondersteund en om feedback te geven over het gebruik ervan.
+>De **nieuwe Synapse RBAC-rollen en bereiken met een lager niveau zijn momenteel beschikbaar als preview-versie**.  U wordt aangeraden deze nieuwe rollen en bereiken te gebruiken, die volledig worden ondersteund en om feedback te geven over het gebruik ervan.
 
 ## <a name="built-in-synapse-rbac-roles-and-scopes"></a>Ingebouwde Synapse RBAC-rollen en-bereiken
 

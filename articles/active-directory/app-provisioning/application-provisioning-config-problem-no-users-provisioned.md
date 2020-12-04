@@ -8,15 +8,15 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: how-to
-ms.date: 04/20/2020
+ms.date: 12/03/2020
 ms.author: kenwith
 ms.reviewer: arvinh
-ms.openlocfilehash: 21f16a0b9c8b3b603735520d5dcdbf61601e1480
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 89a5838524daa1959ecf6b4fe3c17d6175ca8553
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994822"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571773"
 ---
 # <a name="no-users-are-being-provisioned"></a>Er worden geen gebruikers ingericht 
 >[!NOTE]
@@ -24,7 +24,7 @@ ms.locfileid: "95994822"
 >
 Nadat automatische inrichting is geconfigureerd voor een toepassing (waaronder controleren of de referenties van de app die zijn opgegeven voor Azure AD om verbinding te maken met de app geldig zijn), worden gebruikers en/of groepen ingericht voor de app. Inrichting wordt bepaald door de volgende zaken:
 
--   Welke gebruikers en groepen zijn **toegewezen** aan de toepassing. Houd er rekening mee dat het inrichten van geneste groepen of Microsoft 365 groepen niet wordt ondersteund. Zie [een gebruiker of groep toewijzen aan een bedrijfs-app in azure Active Directory](../manage-apps/assign-user-or-group-access-portal.md)voor meer informatie over de toewijzing.
+-   Welke gebruikers en groepen zijn **toegewezen** aan de toepassing. Houd er rekening mee dat het inrichten van geneste groepen niet wordt ondersteund. Zie [een gebruiker of groep toewijzen aan een bedrijfs-app in azure Active Directory](../manage-apps/assign-user-or-group-access-portal.md)voor meer informatie over de toewijzing.
 -   Of **kenmerk toewijzingen** zijn ingeschakeld, en geconfigureerd om geldige kenmerken van Azure ad te synchroniseren met de app. Zie voor meer informatie over kenmerk toewijzingen [aanpassen van kenmerk toewijzingen van gebruikers inrichting voor SaaS-toepassingen in azure Active Directory](customize-application-attributes.md).
 -   Hiermee wordt aangegeven of er een **bereik filter** aanwezig is waarmee gebruikers worden gefilterd op basis van specifieke kenmerk waarden. Zie voor meer informatie over het bereik van filters [kenmerk toepassing inrichten met bereik filters](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
   

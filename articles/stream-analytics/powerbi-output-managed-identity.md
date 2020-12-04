@@ -6,14 +6,14 @@ ms.author: sacedarb
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 3/10/2020
-ms.openlocfilehash: 469610d7195835a4b68e4d887c5be57a8926ba37
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: dd667202a329148e498d0e25ee15110de5d7448a
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94489502"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573405"
 ---
-# <a name="use-managed-identity-to-authenticate-your-azure-stream-analytics-job-to-power-bi"></a>Beheerde identiteit gebruiken om uw Azure Stream Analytics-taak te verifiëren voor Power BI
+# <a name="use-managed-identity-to-authenticate-your-azure-stream-analytics-job-to-power-bi-preview"></a>Beheerde identiteit gebruiken om uw Azure Stream Analytics-taak te verifiëren voor Power BI (preview)
 
 Met [beheerde identiteits verificatie](../active-directory/managed-identities-azure-resources/overview.md) voor uitvoer naar Power BI hebt stream Analytics-taken direct toegang tot een werk ruimte binnen uw Power bi-account. Met deze functie kunnen implementaties van Stream Analytics taken volledig worden geautomatiseerd, omdat het niet langer nodig is dat een gebruiker zich interactief aanmeldt bij Power BI via de Azure Portal. Daarnaast zijn langlopende taken die naar Power BI schrijven, nu beter worden ondersteund, omdat u de taak niet regel matig opnieuw moet autoriseren.
 
@@ -201,7 +201,7 @@ De Stream Analytics-taak kan ook worden toegevoegd als een bijdrager aan de werk
 ```http
 POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/users
 ```
-Aanvraagbody
+Aanvraagtekst
 ```json
 {
     "groupUserAccessRight": "Contributor",

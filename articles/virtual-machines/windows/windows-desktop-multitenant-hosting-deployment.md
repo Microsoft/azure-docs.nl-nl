@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 1/24/2018
 ms.author: xujing
-ms.openlocfilehash: 5bd41396cf075f83fd37a4276f7a30223ec8c1f3
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 101f2cfe57624502764d145351a6343cfdd2a334
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96482940"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96572861"
 ---
 # <a name="how-to-deploy-windows-10-on-azure-with-multitenant-hosting-rights"></a>Windows 10 implementeren op Azure met multi tenant-hosting rechten 
 Voor klanten met Windows 10 Enter prise E3/E5 per gebruiker of Windows Virtual Desktop Access per gebruiker (licenties voor gebruikers abonnement of licenties voor gebruikers abonnementen), kunt u met multi tenant hosting rechten voor Windows 10 uw Windows 10-licenties naar de Cloud brengen en Windows 10-Virtual Machines op Azure uitvoeren zonder dat u voor een andere licentie betaalt. Zie [multi tenant-hosting voor Windows 10](https://www.microsoft.com/en-us/CloudandHosting/licensing_sca.aspx)voor meer informatie.
@@ -112,7 +112,7 @@ LicenseType              :
 
 ## <a name="additional-information-about-joining-azure-ad"></a>Meer informatie over deelname aan Azure AD
 >[!NOTE]
->Azure richt zich op alle Windows-Vm's met het ingebouwde Administrator account, dat niet kan worden gebruikt om lid te worden van AAD. Zo werken *instellingen > Account > toegang tot werk of School > + Connect* niet. U moet als een tweede beheerders account worden gemaakt en aangemeld om hand matig lid te worden van Azure AD. U kunt Azure AD ook configureren met behulp van een inrichtings pakket, de koppeling is de sectie *volgende stappen* voor meer informatie.
+>Azure richt zich op alle Windows-Vm's met het ingebouwde Administrator account, dat niet kan worden gebruikt om lid te worden van AAD. Zo werken *instellingen > Account > toegang tot werk of School > + Connect* niet. U moet als een tweede beheerders account worden gemaakt en aangemeld om hand matig lid te worden van Azure AD. U kunt Azure AD ook configureren met behulp van een inrichtings pakket, met behulp van de koppeling in het gedeelte *volgende stappen* voor meer informatie.
 >
 >
 

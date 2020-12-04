@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 07/17/2020
 ms.author: thomasge
-ms.openlocfilehash: 1f8cb98ea36fdad9a67eca26c6fbea7ede1f811a
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 96a1eebbdcbf269b06d2ece77987ce7813f1d5f5
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94627877"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571059"
 ---
 # <a name="use-managed-identities-in-azure-kubernetes-service"></a>Beheerde identiteiten gebruiken in azure Kubernetes service
 
@@ -36,20 +36,20 @@ U moet de volgende bron hebben geïnstalleerd:
 
 AKS maakt gebruik van verschillende beheerde identiteiten voor ingebouwde services en invoeg toepassingen.
 
-| Identiteit                       | Name    | Gebruiksvoorbeeld | Standaard machtigingen | Uw eigen identiteit meenemen
+| Identiteit                       | Naam    | Toepassing | Standaard machtigingen | Uw eigen identiteit meenemen
 |----------------------------|-----------|----------|
 | Besturingsvlak | niet zichtbaar | Gebruikt door AKS voor beheerde netwerk bronnen, waaronder binnenloads voor binnenkomend verkeer en AKS beheerde open bare Ip's | Rol Inzender voor knooppunt resource groep | Preview
 | Kubelet | AKS-cluster naam-agent pool | Verificatie met Azure Container Registry (ACR) | N.V.T. (voor kubernetes v 1.15 +) | Momenteel niet ondersteund
-| Invoeg toepassing | AzureNPM | Geen identiteit vereist | NA | No
-| Invoeg toepassing | AzureCNI netwerk bewaking | Geen identiteit vereist | NA | No
-| Invoeg toepassing | azurepolicy (gate keeper) | Geen identiteit vereist | NA | No
-| Invoeg toepassing | azurepolicy | Geen identiteit vereist | NA | No
-| Invoeg toepassing | Calico | Geen identiteit vereist | NA | No
-| Invoeg toepassing | Dashboard | Geen identiteit vereist | NA | No
-| Invoeg toepassing | HTTPApplicationRouting | Hiermee worden de vereiste netwerk bronnen beheerd | Rol van lezer voor knooppunt resource groep, rol Inzender voor DNS-zone | No
-| Invoeg toepassing | Ingangs toepassings gateway | Hiermee worden de vereiste netwerk bronnen beheerd| Rol Inzender voor knooppunt resource groep | No
-| Invoeg toepassing | omsagent | Wordt gebruikt om AKS-metrische gegevens naar Azure Monitor te verzenden | Rol van uitgever voor metrische gegevens controleren | No
-| Invoeg toepassing | Virtual-Node (ACIConnector) | Beheert vereiste netwerk bronnen voor Azure Container Instances (ACI) | Rol Inzender voor knooppunt resource groep | No
+| Invoeg toepassing | AzureNPM | Geen identiteit vereist | NA | Nee
+| Invoeg toepassing | AzureCNI netwerk bewaking | Geen identiteit vereist | NA | Nee
+| Invoeg toepassing | azurepolicy (gate keeper) | Geen identiteit vereist | NA | Nee
+| Invoeg toepassing | azurepolicy | Geen identiteit vereist | NA | Nee
+| Invoeg toepassing | Calico | Geen identiteit vereist | NA | Nee
+| Invoeg toepassing | Dashboard | Geen identiteit vereist | NA | Nee
+| Invoeg toepassing | HTTPApplicationRouting | Hiermee worden de vereiste netwerk bronnen beheerd | Rol van lezer voor knooppunt resource groep, rol Inzender voor DNS-zone | Nee
+| Invoeg toepassing | Ingangs toepassings gateway | Hiermee worden de vereiste netwerk bronnen beheerd| Rol Inzender voor knooppunt resource groep | Nee
+| Invoeg toepassing | omsagent | Wordt gebruikt om AKS-metrische gegevens naar Azure Monitor te verzenden | Rol van uitgever voor metrische gegevens controleren | Nee
+| Invoeg toepassing | Virtual-Node (ACIConnector) | Beheert vereiste netwerk bronnen voor Azure Container Instances (ACI) | Rol Inzender voor knooppunt resource groep | Nee
 | OSS-project | Aad-pod-identiteit | Hiermee kunnen toepassingen veilig toegang krijgen tot Cloud bronnen met Azure Active Directory (AAD) | NA | Stappen voor het verlenen van machtigingen op https://github.com/Azure/aad-pod-identity#role-assignment .
 
 ## <a name="create-an-aks-cluster-with-managed-identities"></a>Een AKS-cluster maken met beheerde identiteiten
@@ -105,23 +105,35 @@ Haal tot slot referenties op voor toegang tot het cluster:
 ```azurecli-interactive
 az aks get-credentials --resource-group myResourceGroup --name myManagedCluster
 ```
-## <a name="update-an-existing-service-principal-based-aks-cluster-to-managed-identities"></a>Een bestaand AKS-cluster op basis van een Service-Principal bijwerken naar beheerde identiteiten
+## <a name="update-an-aks-cluster-to-managed-identities-preview"></a>Een AKS-cluster bijwerken naar beheerde identiteiten (preview-versie)
 
-U kunt nu een AKS-cluster met beheerde identiteiten bijwerken met behulp van de volgende CLI-opdrachten.
+U kunt nu een AKS-cluster met Service-principals bijwerken om met beheerde identiteiten te werken met behulp van de volgende CLI-opdrachten.
 
-Werk eerst de door het systeem toegewezen identiteit bij:
+Registreer eerst de functie vlag voor door het systeem toegewezen identiteit:
+
+```azurecli-interactive
+az feature register --namespace Microsoft.ContainerService -n MigrateToMSIClusterPreview
+```
+
+De door het systeem toegewezen identiteit bijwerken:
 
 ```azurecli-interactive
 az aks update -g <RGName> -n <AKSName> --enable-managed-identity
 ```
 
-Werk vervolgens de door de gebruiker toegewezen identiteit bij:
+De door de gebruiker toegewezen identiteit bijwerken:
+
+```azurecli-interactive
+az feature register --namespace Microsoft.ContainerService -n UserAssignedIdentityPreview
+```
+
+De door de gebruiker toegewezen identiteit bijwerken:
 
 ```azurecli-interactive
 az aks update -g <RGName> -n <AKSName> --enable-managed-identity --assign-identity <UserAssignedIdentityResourceID> 
 ```
 > [!NOTE]
-> Wanneer het toegewezen systeem of de door de gebruiker toegewezen identiteiten zijn bijgewerkt naar een beheerde identiteit, voert u een `az nodepool upgrade --node-image-only` op uw knoop punten uit om de update te volt ooien voor de beheerde identiteit.
+> Zodra de door het systeem toegewezen of door de gebruiker toegewezen identiteiten zijn bijgewerkt naar een beheerde identiteit, voert u een `az nodepool upgrade --node-image-only` op uw knoop punten uit om de update te volt ooien voor de beheerde identiteit.
 
 ## <a name="bring-your-own-control-plane-mi-preview"></a>Uw eigen besturings vlak instellen MI (preview-versie)
 De identiteit van een aangepast besturings element biedt toegang tot de bestaande identiteit voordat het cluster wordt gemaakt. Dit maakt scenario's mogelijk, zoals het gebruik van een aangepast VNET of outboundType van UDR met een beheerde identiteit.

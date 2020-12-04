@@ -1,17 +1,15 @@
 ---
 title: Azure Service Fabric-status beheren
 description: Meer informatie over het openen, opslaan en verwijderen van de status van een Azure Service Fabric reliable actor en overwegingen bij het ontwerpen van een toepassing.
-author: vturecek
 ms.topic: conceptual
 ms.date: 03/19/2018
-ms.author: vturecek
 ms.custom: devx-track-csharp
-ms.openlocfilehash: e97fadb374fc45110f5071aab48da0a57eef4284
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1e796232719342883efc2aa5dd377d586f3039ad
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89012786"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571314"
 ---
 # <a name="access-save-and-remove-reliable-actors-state"></a>Reliable Actors status openen, opslaan en verwijderen
 [Reliable actors](service-fabric-reliable-actors-introduction.md) zijn objecten met één thread die zowel de logica als de status kunnen inkapselen, en de status betrouwbaar kan onderhouden. Elk actor-exemplaar heeft een eigen [status Manager](service-fabric-reliable-actors-state-management.md): een gegevens structuur op basis van een woorden lijst die op betrouw bare wijze sleutel/waarde-paren opslaat. De status Manager is een wrapper rond een State-provider. U kunt deze gebruiken om gegevens op te slaan, ongeacht welke [persistentie-instelling](service-fabric-reliable-actors-state-management.md#state-persistence-and-replication) wordt gebruikt.

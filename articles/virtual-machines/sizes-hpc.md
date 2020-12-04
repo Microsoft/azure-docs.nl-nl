@@ -6,15 +6,15 @@ ms.service: virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 09/23/2020
+ms.date: 12/03/2020
 ms.author: amverma
 ms.reviewer: jushiman
-ms.openlocfilehash: 29033cbabfcfa00c9f8458cbc161af67df5806cb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 21b1004a347dec3a7f2a6460d8b853350bf36ff0
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91325960"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571042"
 ---
 # <a name="high-performance-computing-vm-sizes"></a>High Performance Computing VM-grootten
 
@@ -40,7 +40,7 @@ De meeste HPC VM-grootten (HBv2, HB, HC, H16r, H16mr, A8 en A9) beschikken over 
 Met deze interface kunnen de RDMA-compatibele instanties communiceren via een InfiniBand-netwerk (IB), op basis van de HDR-tarieven voor HBv2, EDR-tarieven voor HB, HC, NDv2, FDR-tarieven voor H16r, H16mr en andere RDMA-compatibele virtuele machines van de N-serie, en QDR tarieven voor A8 en A9 Vm's. Deze RDMA-mogelijkheden kunnen de schaal baarheid en prestaties van bepaalde MPI-toepassingen (Message Passing Interface) verhogen.
 
 > [!NOTE]
-> In azure HPC zijn er twee klassen Vm's, afhankelijk van het feit of SR-IOV is ingeschakeld voor InfiniBand. Momenteel zijn de SR-IOV voor InfiniBand ingeschakelde Vm's: HBv2, HB, HC, NCv3 en NDv2. Voor de rest van de InfiniBand ingeschakelde Vm's is SR-IOV momenteel niet ingeschakeld.
+> In azure HPC zijn er twee klassen Vm's, afhankelijk van het feit of SR-IOV is ingeschakeld voor InfiniBand. Op dit moment zijn voor bijna alle nieuwere, RDMA-compatibele of InfiniBand-Vm's in azure SR-IOV ingeschakeld, met uitzonde ring van H16r, H16mr, NC24r, A8, A9.
 > RDMA is alleen ingeschakeld via het InfiniBand-netwerk (IB) en wordt ondersteund voor alle virtuele machines met RDMA-functionaliteit.
 > IP over IB wordt alleen ondersteund op Vm's met SR-IOV-functionaliteit.
 > RDMA is niet ingeschakeld via het Ethernet-netwerk.
@@ -55,7 +55,7 @@ Met deze interface kunnen de RDMA-compatibele instanties communiceren via een In
 
    U kunt [Azure PowerShell](/powershell/azure/) -cmdlets gebruiken om de VM-extensie toe te voegen aan een virtuele machine. Zie [extensies en functies van virtuele machines](./extensions/overview.md)voor meer informatie. U kunt ook werken met uitbrei dingen voor virtuele machines die zijn geïmplementeerd in het [klassieke implementatie model](/previous-versions/azure/virtual-machines/windows/classic/agents-and-extensions-classic).
 
-- **Mpi** : met de VM-grootten van SR-IOV op Azure (HBV2, HB, HC, NCv3, NDv2) is bijna elke basis van mpi in combi natie met Mellanox OFED toegestaan. Op Vm's waarvoor geen SR-IOV is ingeschakeld, wordt in ondersteunde MPI-implementaties de micro soft Network direct (ND)-interface gebruikt voor communicatie tussen Vm's. Daarom worden alleen micro soft MPI (MS-MPI) 2012 R2 of hoger en Intel MPI 5. x-versies ondersteund. Latere versies (2017, 2018) van de Intel MPI runtime-bibliotheek kunnen al dan niet compatibel zijn met de Azure RDMA-Stuur Programma's. Zie [Setup mpi voor HPC](./workloads/hpc/setup-mpi.md) voor meer informatie over het instellen van MPI op HPC-Vm's in Azure.
+- **Mpi** : met de VM-grootten van SR-IOV in azure kunt u bijna alle mpi gebruiken met Mellanox OFED. Op Vm's waarvoor geen SR-IOV is ingeschakeld, wordt in ondersteunde MPI-implementaties de micro soft Network direct (ND)-interface gebruikt voor communicatie tussen Vm's. Daarom worden alleen micro soft MPI (MS-MPI) 2012 R2 of hoger en Intel MPI 5. x-versies ondersteund. Latere versies (2017, 2018) van de Intel MPI runtime-bibliotheek kunnen al dan niet compatibel zijn met de Azure RDMA-Stuur Programma's. Zie [Setup mpi voor HPC](./workloads/hpc/setup-mpi.md) voor meer informatie over het instellen van MPI op HPC-Vm's in Azure.
 
 - **RDMA-netwerk adres ruimte** : het RDMA-netwerk in azure behoudt de adres ruimte 172.16.0.0/16. Als u MPI-toepassingen wilt uitvoeren op instanties die zijn geïmplementeerd in een virtueel Azure-netwerk, moet u ervoor zorgen dat de adres ruimte van het virtuele netwerk het RDMA-netwerk niet overlapt.
 

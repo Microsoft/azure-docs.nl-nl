@@ -9,12 +9,12 @@ ms.author: marobert
 ms.date: 07/24/2020
 ms.topic: conceptual
 ms.service: azure-communication-services
-ms.openlocfilehash: 96e10bc19d59b60824a908c67816a21ca80326d0
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 4d6e02852dcd2d30a764417a4b5e0e012a1d2ab5
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94832803"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571093"
 ---
 # <a name="authenticate-to-azure-communication-services"></a>Verifiëren bij Azure Communication Services
 
@@ -58,9 +58,9 @@ Als u geen client bibliotheek gebruikt om HTTP-aanvragen te maken voor de REST A
     URLPathAndQuery + "\n"
     DateHeaderValue + ";" + HostHeaderValue + ";" + ContentHashHeaderValue
     ```
-1. Genereer een HMAC-256-hand tekening van de UTF-8-versleutelde teken reeks die u in de vorige stap hebt gemaakt. Vervolgens versleutelt u uw resultaten als base64. Houd er rekening mee dat u de sleutel van uw opslag account ook met base64 moet decoderen. Gebruik de volgende indeling (weer gegeven als pseudo-code):
+1. Genereer een HMAC-256-hand tekening van de UTF-8-versleutelde teken reeks die u in de vorige stap hebt gemaakt. Vervolgens versleutelt u uw resultaten als base64. U moet ook base64 gebruiken om uw toegangs sleutel te decoderen. Gebruik de volgende indeling (weer gegeven als pseudo-code):
     ```
-    Signature=Base64(HMAC-SHA256(UTF8(StringToSign), Base64.decode(<your_azure_storage_account_shared_key>)))
+    Signature=Base64(HMAC-SHA256(UTF8(StringToSign), Base64.decode(<your_access_key>)))
     ```
 1. Geef de autorisatie-header als volgt op:
     ```

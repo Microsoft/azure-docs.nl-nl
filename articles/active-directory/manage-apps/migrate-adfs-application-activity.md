@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 01/14/2019
 ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1245010ae0b21c5bb8e3ebd93a9fe851d48c858b
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 77a43d5bd5f2b228d5ed4384fc1efdca76f8ea0b
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94835506"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573881"
 ---
 # <a name="use-the-ad-fs-application-activity-report-preview-to-migrate-applications-to-azure-ad"></a>Het rapport AD FS toepassings activiteit (preview) gebruiken voor het migreren van toepassingen naar Azure AD
 
@@ -26,9 +26,10 @@ Veel organisaties gebruiken Active Directory Federation Services (AD FS) voor he
 
 Met het rapport AD FS toepassings activiteit (preview) in de Azure Portal kunt u snel zien welke van uw toepassingen kunnen worden gemigreerd naar Azure AD. Het evalueert alle AD FS-toepassingen voor compatibiliteit met Azure AD, controleert op eventuele problemen en biedt hulp bij het voorbereiden van afzonderlijke toepassingen voor migratie. Met het rapport AD FS toepassings activiteit kunt u het volgende doen:
 
-* **Ontdek AD FS toepassingen en bereik uw migratie.** In het rapport AD FS toepassings activiteit wordt een lijst weer gegeven met alle AD FS toepassingen in uw organisatie en wordt de gereedheid voor migratie naar Azure AD aangegeven.
+* **Ontdek AD FS toepassingen en bereik uw migratie.** In het rapport AD FS toepassings activiteit wordt een lijst weer gegeven met alle AD FS toepassingen in uw organisatie waarvoor een actieve gebruiker zich heeft aangemeld in de afgelopen 30 dagen. Het rapport geeft een gereedheid voor apps aan voor migratie naar Azure AD. In het rapport worden geen verwante relying party's van micro soft weer gegeven in AD FS zoals Office 365. Voor beelden van relying party's met de naam urn: Federation: MicrosoftOnline.
+
 * **Prioriteiten voor de migratie van toepassingen.** Ontvang het aantal unieke gebruikers dat zich heeft aangemeld bij de toepassing in de afgelopen 1, 7 of 30 dagen om te helpen de ernst of het risico van het migreren van de toepassing te bepalen.
-* **Voer migratie tests uit en los problemen op.** De rapportage service voert automatisch tests uit om te bepalen of een toepassing gereed is om te migreren. De resultaten worden weer gegeven in het rapport AD FS toepassings activiteit als migratie status. Als er mogelijke problemen met de migratie worden geïdentificeerd, krijgt u specifieke richt lijnen voor het oplossen van de problemen.
+* **Voer migratie tests uit en los problemen op.** De rapportage service voert automatisch tests uit om te bepalen of een toepassing gereed is om te migreren. De resultaten worden weer gegeven in het rapport AD FS toepassings activiteit als migratie status. Als de AD FS configuratie niet compatibel is met een Azure AD-configuratie, krijgt u specifieke richt lijnen voor het adresseren van de configuratie in azure AD.
 
 De gegevens voor de AD FS toepassings activiteit zijn beschikbaar voor gebruikers aan wie een van deze beheerders rollen is toegewezen: globale beheerder, rapport lezer, beveiligings lezer, toepassings beheerder of Cloud toepassings beheerder.
 
@@ -39,6 +40,9 @@ De gegevens voor de AD FS toepassings activiteit zijn beschikbaar voor gebruiker
 * De Azure AD Connect Health voor AD FS agent moet zijn geïnstalleerd.
    * [Meer informatie over Azure AD Connect Health](../hybrid/how-to-connect-health-adfs.md)
    * [Aan de slag met het instellen van Azure AD Connect Health en het installeren van de AD FS agent](../hybrid/how-to-connect-health-agent-install.md)
+
+>[!IMPORTANT] 
+>Er zijn een aantal redenen waarom u niet alle toepassingen ziet die u verwacht nadat u Azure AD Connect Health hebt geïnstalleerd. In het rapport AD FS toepassings activiteit wordt alleen AD FS relying party's met gebruikers aanmeldingen in de afgelopen 30 dagen weer gegeven. Daarnaast worden in het rapport geen micro soft gerelateerde relying party's weer gegeven, zoals Office 365.
 
 ## <a name="discover-ad-fs-applications-that-can-be-migrated"></a>AD FS toepassingen detecteren die kunnen worden gemigreerd 
 
@@ -121,6 +125,17 @@ De volgende tabel bevat alle claim regel tests die worden uitgevoerd op AD FS to
 |EXTERNAL_ATTRIBUTE_STORE      | De uitgifte-instructie gebruikt een andere kenmerk opslag dan Active Directory. Op dit moment kunnen Azure AD geen claims van een andere Active Directory of Azure AD in de bron opslaan. Als dit ertoe leidt dat u de migratie van toepassingen naar Azure AD blokkeert, [laat het ons weten](https://feedback.azure.com/forums/169401-azure-active-directory/suggestions/38695717-allow-to-source-user-attributes-from-external-dire).          |
 |UNSUPPORTED_ISSUANCE_CLASS      | De uitgifte-instructie gebruikt ADD om claims toe te voegen aan de set binnenkomende claims. In azure AD kan dit worden geconfigureerd als meerdere claim transformaties.Zie [claims aanpassen die zijn uitgegeven in het SAML-token voor zakelijke toepassingen](../develop/active-directory-claims-mapping.md)voor meer informatie.         |
 |UNSUPPORTED_ISSUANCE_TRANSFORMATION      | De uitgifte-instructie gebruikt reguliere expressies voor het transformeren van de waarde van de claim die moet worden verzonden.Voor een vergelijk bare functionaliteit in azure AD kunt u vooraf gedefinieerde trans formatie, zoals extractie (), Trim (), ToLower, onder andere gebruiken. Zie [claims aanpassen die zijn uitgegeven in het SAML-token voor zakelijke toepassingen](../develop/active-directory-saml-claims-customization.md)voor meer informatie.          |
+
+## <a name="troubleshooting"></a>Problemen oplossen
+
+### <a name="cant-see-all-my-ad-fs-applications-in-the-report"></a>Kan niet alle AD FS-toepassingen in het rapport weer geven
+
+ Als u Azure AD Connect status hebt geïnstalleerd, maar u nog steeds de vraag om de software te installeren ziet of als u niet alle AD FS toepassingen in het rapport kunt zien, is het mogelijk dat u geen actieve AD FS-toepassingen hebt of dat uw AD FS-toepassingen micro soft-toepassing zijn.
+ 
+ In het rapport AD FS toepassings activiteit worden alle AD FS toepassingen in uw organisatie weer gegeven met actieve gebruikers zich in de afgelopen 30 dagen aan. Daarnaast worden in het rapport geen micro soft-gerelateerde relying party's weer gegeven in AD FS zoals Office 365. Voor beelden van relying party's met de naam urn: Federation: MicrosoftOnline ', ' microsoftonline ', ' micro soft: winhello: CERT: Prov: Server ' wordt niet weer gegeven in de lijst.
+
+
+
 
 
 ## <a name="next-steps"></a>Volgende stappen

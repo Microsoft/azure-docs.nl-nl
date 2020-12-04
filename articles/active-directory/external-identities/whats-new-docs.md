@@ -1,7 +1,7 @@
 ---
 title: Wat is er nieuw in Azure Active Directory externe identiteiten
 description: Nieuwe en bijgewerkte documentatie voor de Azure Active Directory externe identiteiten.
-ms.date: 11/10/2020
+ms.date: 12/03/2020
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: reference
@@ -9,16 +9,24 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: f7c296b4a5bed0c3e599f59e9f0461295b86f197
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 35fa6909160ca707035ee9fc599e4035c2ae7981
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94550068"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573898"
 ---
 # <a name="azure-active-directory-external-identities-whats-new"></a>Externe identiteiten Azure Active Directory: wat is er nieuw
 
 Welkom bij wat er nieuw is in Azure Active Directory documentatie voor externe identiteiten. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden. Zie [what's New in azure Active Directory](../fundamentals/whats-new.md)voor meer informatie over wat er nieuw is in de externe identiteits service.
+
+## <a name="november-2020"></a>November 2020
+
+### <a name="updated-articles"></a>Bijgewerkte artikelen
+- [Microsoft 365 extern delen en Azure Active Directory (Azure AD) B2B-samen werking](o365-external-user.md)
+- [Lokaal beheerde partneraccounts toegang verlenen tot cloudresources met behulp van B2B-samenwerking in Azure AD](hybrid-on-premises-to-cloud.md)
+- [Eigenschappen van een Azure Active Directory B2B-samenwerkings gebruiker](user-properties.md)
+
 
 ## <a name="october-2020"></a>Oktober 2020
 

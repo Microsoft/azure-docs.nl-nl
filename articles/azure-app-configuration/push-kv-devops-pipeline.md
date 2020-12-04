@@ -7,12 +7,12 @@ ms.service: azure-app-configuration
 ms.topic: how-to
 ms.date: 07/27/2020
 ms.author: lcozzens
-ms.openlocfilehash: 936be917d5b494c9d71386440c711ef6c29ffb45
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 7c0f886f23bc24eeed54043e9a7ee5fb1f645172
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183495"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96572504"
 ---
 # <a name="push-settings-to-app-configuration-with-azure-pipelines"></a>Instellingen pushen naar app-configuratie met Azure-pijp lijnen
 
@@ -27,7 +27,7 @@ Met de [Push taak configuratie-Azure-app](https://marketplace.visualstudio.com/i
 
 ## <a name="create-a-service-connection"></a>Een service verbinding maken
 
-Met een service verbinding kunt u vanuit uw Azure DevOps-project toegang krijgen tot resources in uw Azure-abonnement.
+Met een [service verbinding](/azure/devops/pipelines/library/service-endpoints) kunt u vanuit uw Azure DevOps-project toegang krijgen tot resources in uw Azure-abonnement.
 
 1. Ga in azure DevOps naar het project met de doel pijplijn en open de **project instellingen** linksonder.
 1. Onder **pijp lijnen** selecteert u **service verbindingen** en selecteert u in de rechter bovenhoek **nieuwe service verbinding** .

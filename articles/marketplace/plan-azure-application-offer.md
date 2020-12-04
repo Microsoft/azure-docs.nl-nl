@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/06/2020
-ms.openlocfilehash: bcb8cc6da3d2fc631058386103575549e376a32c
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 4e256d97d055b56df8c917c841416e5c7eb52465
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452147"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573524"
 ---
 # <a name="plan-an-azure-application-offer-for-the-commercial-marketplace"></a>Een Azure-toepassing aanbieding plannen voor de commerciële Marketplace
 
@@ -210,7 +210,7 @@ Deze configuratie is vereist als u [batch-gebruiks gebeurtenis](partner-center-p
 U kunt kiezen voor marketing-en verkoop kanalen die door micro soft worden ondersteund. Wanneer u uw aanbieding in Partner Center maakt, ziet u twee tabbladen naar het einde van het proces:
 
 - **Door sturen via csp's**: gebruik deze optie om de partners van Microsoft Cloud Solution Providers (CSP) in staat te stellen uw oplossing door te verkopen als onderdeel van een gebundelde aanbieding. Zie het [Cloud Solution Provider-programma](./cloud-solution-providers.md) voor meer informatie.
-- **Samen verkopen met micro soft: met** deze optie kunnen micro soft verkoop teams uw door de klant in aanmerking komende oplossing door nemen bij de evaluatie van de behoeften van uw klanten. Zie [optie voor co-sell in het partner centrum](partner-center-portal/commercial-marketplace-co-sell.md) voor gedetailleerde informatie over het voorbereiden van uw aanbieding voor evaluatie. Zie [Cloud Solution Providers](cloud-solution-providers.md)(Engelstalig) voor meer informatie over het marketing uw aanbod via de micro soft CSP-partner kanalen.
+- **Samen verkopen met micro soft: met** deze optie kunnen micro soft verkoop teams uw door de klant in aanmerking komende oplossing door nemen bij de evaluatie van de behoeften van uw klanten. Zie [optie voor co-sell in het partner centrum](commercial-marketplace-co-sell.md) voor gedetailleerde informatie over het voorbereiden van uw aanbieding voor evaluatie. Zie [Cloud Solution Providers](cloud-solution-providers.md)(Engelstalig) voor meer informatie over het marketing uw aanbod via de micro soft CSP-partner kanalen.
 
 Zie [uw Cloud activiteiten uitbreiden met Azure Marketplace](https://azuremarketplace.microsoft.com/sell)voor meer informatie.
 

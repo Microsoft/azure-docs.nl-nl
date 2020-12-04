@@ -3,13 +3,12 @@ title: Een Azure Service Fabric-cluster upgraden
 description: Meer informatie over het bijwerken van de versie of configuratie van een Azure Service Fabric-cluster, het instellen van de cluster update modus, het bijwerken van certificaten, het toevoegen van toepassings poorten, het uitvoeren van besturingssysteem patches en wat u kunt verwachten wanneer de upgrades worden uitgevoerd.
 ms.topic: conceptual
 ms.date: 11/12/2018
-ms.custom: sfrev
-ms.openlocfilehash: d92ac90e0e41d534231bafbe991a05764dbee07d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 028c91f85a6e318f7ea686c1bcd50262eb7c6bf1
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82789552"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571025"
 ---
 # <a name="upgrading-and-updating-an-azure-service-fabric-cluster"></a>Een Azure Service Fabric-cluster upgraden en bijwerken
 

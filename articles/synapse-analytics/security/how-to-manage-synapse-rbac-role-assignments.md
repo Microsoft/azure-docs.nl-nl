@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 12/1/2020
 ms.author: billgib
 ms.reviewer: jrasnick
-ms.openlocfilehash: a4016751944e5b7ec5d32dc586e9034db99c9d73
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: f26b54a18ff137575cac208d70e4693c0b9914a8
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96523461"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96572283"
 ---
 # <a name="how-to-manage-synapse-rbac-role-assignments-in-synapse-studio"></a>Synapse RBAC-roltoewijzingen beheren in Synapse Studio
 
@@ -23,12 +23,13 @@ Dit artikel laat u zien hoe u Synapse RBAC-roltoewijzingen toevoegt en verwijder
 
 >[!Note]
 >- Als u de Synapse RBAC-roltoewijzingen wilt beheren, moet u de Synapse-beheerdersrol hebben in de werk ruimte of op een bereik op een lager niveau dat de objecten bevat die u wilt beheren. Als u een Synapse-beheerder bent in de werk ruimte, kunt u toegang verlenen tot alle objecten in de werk ruimte. 
->- Om u te helpen weer toegang te krijgen tot een werk ruimte in het geval dat er geen Synapse-beheerders zijn toegewezen of voor u beschikbaar zijn, kunnen gebruikers met machtigingen voor het beheren van **Azure RBAC** -roltoewijzingen in de werk ruimte ook **Synapse RBAC** -roltoewijzingen beheren, waardoor de toewijzing van Synapse-beheerder of andere roltoewijzingen in Synapse RBAC kan worden toegevoegd.
+>- **Gast gebruikers** van een andere AD-Tenant kunnen geen roltoewijzingen zien of beheren, zelfs niet als ze de Synapse-beheerdersrol hebben toegewezen.
+>- Om u te helpen opnieuw toegang te krijgen tot een werk ruimte in het geval dat er geen Synapse-beheerders zijn toegewezen of voor u beschikbaar zijn, kunnen gebruikers met machtigingen voor het beheren van **Azure RBAC** -roltoewijzingen in de werk ruimte ook **Synapse RBAC** -roltoewijzingen beheren, waardoor de toewijzing van Synapse-beheerder of andere Synapse-roltoewijzingen kan worden toegevoegd.
 >- Toegang tot SQL-groepen wordt beheerd met behulp van SQL-machtigingen.  Met uitzonde ring van de SQL-beheerders rollen Synapse beheerder en Synapse, verlenen Synapse RBAC-rollen geen toegang tot SQL-groepen.
 
 >[!important]
 >- Wijzigingen die zijn aangebracht in Synapse RBAC-roltoewijzingen, kunnen 2-5 minuten in beslag nemen. 
->- Als u Synapse RBAC-machtigingen beheert door het lidmaatschap van beveiligings groepen te wijzigen, worden wijzigingen in het lidmaatschap beheerd met behulp van Azure Active Directory.  Het kan enkele minuten duren voordat wijzigingen in het groepslid maatschap van kracht zijn.
+>- Als u Synapse RBAC-machtigingen beheert door het lidmaatschap van beveiligings groepen te wijzigen, worden wijzigingen in het lidmaatschap beheerd met behulp van Azure Active Directory.  Het kan 10-15 minuten of langer duren voordat wijzigingen in groepslid maatschappen van kracht worden.
 
 ## <a name="open-synapse-studio"></a>Synapse Studio openen  
 

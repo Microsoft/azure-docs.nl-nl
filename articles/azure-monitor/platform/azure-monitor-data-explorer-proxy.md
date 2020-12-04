@@ -7,12 +7,12 @@ ms.reviewer: bwren
 ms.subservice: logs
 ms.topic: conceptual
 ms.date: 12/02/2020
-ms.openlocfilehash: 8884fd56cfc1e18a0a358d6902f7f8bcbfc1f5d3
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 5cb2f7b3b07c20e09d61e97412bc35f03b15cb3b
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/03/2020
-ms.locfileid: "96552641"
+ms.locfileid: "96572147"
 ---
 # <a name="cross-resource-query-azure-data-explorer-using-azure-monitor"></a>Meerdere bronnen query's uitvoeren op Azure Data Explorer met Azure Monitor
 Azure Monitor ondersteunt query's van meerdere services tussen Azure Data Explorer, [Application Insights (AI)](/azure/azure-monitor/app/app-insights-overview)en [log Analytics (La)](/azure/azure-monitor/platform/data-platform-logs). U kunt vervolgens een query uitvoeren op uw Azure Data Explorer-cluster met behulp van Log Analytics/Application Insights-hulpprogram ma's en hiernaar verwijzen in een query voor query's op meerdere services. In dit artikel wordt beschreven hoe u een query voor meerdere services maakt.
@@ -20,7 +20,7 @@ Azure Monitor ondersteunt query's van meerdere services tussen Azure Data Explor
 De Azure Monitor cross-service stroom: :::image type="content" source="media\azure-data-explorer-monitor-proxy\azure-monitor-data-explorer-flow.png" alt-text="Azure monitor en azure Data Explorer cross service flow.":::
 
 >[!NOTE]
->* Azure Monitor proxy bevindt zich in een persoonlijke preview-AllowListing is vereist.
+>* Azure Monitor query's voor meerdere services worden uitgevoerd in de private preview-AllowListing is vereist.
 >* Neem contact op met het [service team](mailto:ADXProxy@microsoft.com) .
 ## <a name="cross-query-your-log-analytics-or-application-insights-resources-and-azure-data-explorer"></a>Query's uitvoeren op uw Log Analytics of Application Insights resources en Azure Data Explorer
 
@@ -66,9 +66,3 @@ Kusto Explorer meldt u automatisch aan bij de Tenant waarvan het gebruikers acco
 * [Query's schrijven](https://docs.microsoft.com/azure/data-explorer/write-queries)
 * [Query's uitvoeren op gegevens in Azure Monitor met behulp van Azure Data Explorer](https://docs.microsoft.com/azure/data-explorer/query-monitor-data)
 * [Query's tussen bronnen en logboeken uitvoeren in Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/cross-workspace-query)
-
-
-
-
-
-

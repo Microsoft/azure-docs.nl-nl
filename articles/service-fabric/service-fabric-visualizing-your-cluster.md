@@ -1,16 +1,14 @@
 ---
 title: Uw cluster visualiseren met Azure Service Fabric Explorer
 description: Service Fabric Explorer is een toepassing voor het inspecteren en beheren van Cloud toepassingen en knoop punten in een Microsoft Azure Service Fabric cluster.
-author: mikkelhegn
 ms.topic: conceptual
 ms.date: 01/24/2019
-ms.author: mikhegn
-ms.openlocfilehash: 5627aa614a7e2819b6f3cc1401c8458552e57219
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: a45aff305f97610cb2660c2e3f4b4427b905d7d4
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93085170"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96574052"
 ---
 # <a name="visualize-your-cluster-with-service-fabric-explorer"></a>Visualisern van uw cluster met Service Fabric Explorer
 
@@ -69,7 +67,7 @@ Het cluster bevat twee substructuren: één voor toepassingen en een andere voor
 
 U kunt de weer gave toepassing gebruiken om te navigeren door de logische hiërarchie van Service Fabric: toepassingen, services, partities en replica's.
 
-In het onderstaande voor beeld bestaat de toepassing **MyApp** uit twee services: **MyStatefulService** en **webservice** . Aangezien **MyStatefulService** is stateful, bevat het een partitie met één primaire en twee secundaire replica's. WebSvcService is daarentegen stateless en bevat één exemplaar.
+In het onderstaande voor beeld bestaat de toepassing **MyApp** uit twee services: **MyStatefulService** en **webservice**. Aangezien **MyStatefulService** is stateful, bevat het een partitie met één primaire en twee secundaire replica's. WebSvcService is daarentegen stateless en bevat één exemplaar.
 
 ![Toepassings weergave Service Fabric Explorer][sfx-application-tree]
 
@@ -83,7 +81,7 @@ In de knooppuntweergave ziet u de fysieke indeling van het cluster. Voor elk kno
 ## <a name="actions"></a>Acties
 Service Fabric Explorer biedt een snelle manier om acties op knoop punten, toepassingen en services in uw cluster aan te roepen.
 
-Als u bijvoorbeeld een toepassings exemplaar wilt verwijderen, kiest u de toepassing in de structuur aan de linkerkant en kiest u vervolgens **acties**  >  **toepassing verwijderen** .
+Als u bijvoorbeeld een toepassings exemplaar wilt verwijderen, kiest u de toepassing in de structuur aan de linkerkant en kiest u vervolgens **acties**  >  **toepassing verwijderen**.
 
 ![Een toepassing in Service Fabric Explorer verwijderen][sfx-delete-application]
 

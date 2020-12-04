@@ -10,12 +10,12 @@ ms.author: lazzeri
 author: FrancescaLazzeri
 ms.date: 09/22/2020
 ms.custom: contperfq1
-ms.openlocfilehash: 43b03abb2aac13358a2187a0a5dc570c1e45934e
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: c612e2a95e2596b2732ed8282037c8ded908a0a0
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96458487"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571382"
 ---
 # <a name="deep-learning-vs-machine-learning-in-azure-machine-learning"></a>Diep gaande informatie versus machine learning in Azure Machine Learning
 
@@ -93,8 +93,6 @@ Voor tekst analyse op basis van diepe leer methoden moet u grote hoeveel heden t
 
 Bedrijven gebruiken dieper leren om tekst analyse uit te voeren om de handel en naleving van de overheid te detecteren. Een ander algemeen voor beeld is een verzekerings fraude: tekst analyse is vaak gebruikt voor het analyseren van grote hoeveel heden documenten om de kans op fraude van een verzekerings claim te herkennen. 
 
-Meer informatie over het gebruik van een tensor flow-model in Azure Machine Learning: [geclassificeerde handgeschreven cijfers met behulp van een tensor flow-model](./how-to-train-tensorflow.md?WT.mc_id=docs-article-lazzeri)
-
 ## <a name="artificial-neural-networks"></a>Kunst matige Neural netwerken
 
 Kunst matige Neural netwerken worden gevormd door lagen van verbonden knoop punten. Uitgebreide leer modellen gebruiken Neural-netwerken met een groot aantal lagen. 
@@ -107,7 +105,7 @@ Het Feedforward Neural-netwerk is het meest eenvoudige type kunst matig Neural n
 
 ### <a name="recurrent-neural-network"></a>Recurrent Neural-netwerk
 
-Recurrente Neural Networks is een veelgebruikt Neural netwerk. In deze netwerken wordt de uitvoer van een laag opgeslagen en weer gegeven in de invoer laag om te helpen bij het voors pellen van het resultaat van de laag. Rehuidige Neural-netwerken hebben fantastische leer mogelijkheden. Ze worden veel gebruikt voor complexe taken, zoals het maken van een time series-prognose, het leren van hand schrift en het herkennen van taal.
+Recurrente Neural Networks is een veelgebruikt Neural netwerk. In deze netwerken wordt de uitvoer van een laag opgeslagen en weer gegeven in de invoer laag om te helpen bij het voors pellen van het resultaat van de laag. Rehuidige Neural-netwerken hebben fantastische leer mogelijkheden. Ze worden veel gebruikt voor complexe taken, zoals het maken van een time series-prognose, het leren van hand schrift en het herkennen van de taal.
 
 ### <a name="convolutional-neural-networks"></a>Convolutional Neural-netwerken
 
@@ -118,6 +116,9 @@ Convolutional Neural Networks zijn gebruikt in gebieden zoals video herkenning, 
 ## <a name="next-steps"></a>Volgende stappen
 
 In de volgende artikelen ziet u meer opties voor het gebruik van open-source uitgebreide leer modellen in [Azure machine learning](./index.yml?WT.mc_id=docs-article-lazzeri):
+
+
+- [Hand matige cijfers classificeren met behulp van een tensor flow-model](./how-to-train-tensorflow.md?WT.mc_id=docs-article-lazzeri) 
 
 - [Geclassificeerde handgeschreven cijfers door gebruik te maken van een tensor flow Estimator en Keras](./how-to-train-keras.md?WT.mc_id=docs-article-lazzeri)
 

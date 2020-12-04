@@ -12,12 +12,12 @@ ms.date: 04/07/2020
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperfq2
-ms.openlocfilehash: 2d041782e8df795acb120ba1357cec5ef204dc28
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 9032e4c04279d87bf4422d3a87d19fdbecec1a64
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94656324"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571790"
 ---
 # <a name="work-with-existing-on-premises-proxy-servers"></a>Werken met bestaande on-premises proxyservers
 
@@ -167,6 +167,9 @@ Nu ziet u al het verkeer dat via de proxy stroom loopt. Als u problemen ondervin
 De beste manier om verbindings problemen met connectors op te sporen en op te lossen is het maken van een netwerk vastleggen tijdens het starten van de connector service. Hier volgen enkele tips voor het vastleggen en filteren van netwerk traceringen.
 
 U kunt het controle programma van uw keuze gebruiken. Voor de doel einden van dit artikel hebben we micro soft Message Analyzer gebruikt.
+
+> [!NOTE]
+> [Micro soft Message Analyzer (MMA) is buiten gebruik gesteld](https://docs.microsoft.com/openspecs/blog/ms-winintbloglp/dd98b93c-0a75-4eb0-b92e-e760c502394f) en de Download pakketten zijn verwijderd van Microsoft.com-sites op 25 2019 november.  Er is op dit moment geen micro soft-vervanging voor micro soft Message Analyzer in ontwikkeling.  Voor een vergelijk bare functionaliteit kunt u overwegen een hulp programma voor netwerk protocol analyse van derden, zoals wireshark, te gebruiken.
 
 De volgende voor beelden zijn specifiek voor Message Analyzer, maar de principes kunnen worden toegepast op elk analyse programma.
 

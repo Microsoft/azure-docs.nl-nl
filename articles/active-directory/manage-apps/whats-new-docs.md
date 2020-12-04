@@ -1,7 +1,7 @@
 ---
 title: Wat is er nieuw in Azure Active Directory toepassings beheer
 description: Nieuwe en bijgewerkte documentatie voor het Azure Active Directory toepassings beheer.
-ms.date: 11/05/2020
+ms.date: 12/03/2020
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: reference
@@ -9,16 +9,26 @@ ms.workload: identity
 ms.author: kenwith
 author: kenwith
 manager: CelesteDG
-ms.openlocfilehash: 10861438334bc804d1b1e4b9a669280f7e09ffde
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 38602482f1a25f212829342fe691d7bb75666d31
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94654006"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571008"
 ---
 # <a name="azure-active-directory-application-management-whats-new"></a>Azure Active Directory toepassings beheer: wat is er nieuw
 
 Welkom bij wat er nieuw is in Azure Active Directory documentatie voor toepassings beheer. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden. Zie [Wat is er nieuw in azure Active Directory](../fundamentals/whats-new.md)voor meer informatie over wat er nieuw is in de Application Management-service.
+
+## <a name="november-2020"></a>November 2020
+
+### <a name="new-articles"></a>Nieuwe artikelen
+- [Eenmalige aanmelding op basis van een header voor on-premises apps met Azure AD-app proxy (preview-versie)](application-proxy-configure-single-sign-on-with-headers.md)
+
+### <a name="updated-articles"></a>Bijgewerkte artikelen
+- [Azure Active Directory toepassings beheer: wat is er nieuw](whats-new-docs.md)
+- [Problemen met aanmelden bij apps die zijn geconfigureerd voor eenmalige aanmelding op basis van SAML](application-sign-in-problem-federated-sso-gallery.md)
+
 
 ## <a name="october-2020"></a>Oktober 2020
 
@@ -32,9 +42,9 @@ Welkom bij wat er nieuw is in Azure Active Directory documentatie voor toepassin
 
 ### <a name="updated-articles"></a>Bijgewerkte artikelen
 
-- [Problemen bij het aanmelden bij geconfigureerde apps voor eenmalige aanmelding op basis van SAML](application-sign-in-problem-federated-sso-gallery.md)
+- [Problemen met aanmelden bij apps die zijn geconfigureerd voor eenmalige aanmelding op basis van SAML](application-sign-in-problem-federated-sso-gallery.md)
 - [Probleem bij het installeren van de connector voor de toepassingsproxyagent](application-proxy-connector-installation-problem.md)
-- [Toepassings verificatie van Active Directory Federation Services naar Azure Active Directory verplaatsen](migrate-adfs-apps-to-azure.md)
+- [Toepassingsverificatie verplaatsen van Active Directory Federation Services naar Azure Active Directory](migrate-adfs-apps-to-azure.md)
 - [Configureren hoe eindgebruikers toestemming geven voor toepassingen](configure-user-consent.md)
 
 
@@ -52,7 +62,7 @@ Welkom bij wat er nieuw is in Azure Active Directory documentatie voor toepassin
 - [Het beheren van toestemming voor toepassingen en het evalueren van toestemming aanvragen](manage-consent-requests.md)
 - [Apps weer geven met uw Azure AD-Tenant voor identiteits beheer](application-types.md)
 - [Begrijpen hoe gebruikers worden toegewezen aan apps in Azure Active Directory](ways-users-get-assigned-to-applications.md)
-- [Gebruikers toewijzing voor een app in Azure Active Directory beheren](assign-user-or-group-access-portal.md)
+- [Gebruikerstoewijzing beheren voor een app in Azure Active Directory](assign-user-or-group-access-portal.md)
 
 
 ## <a name="august-2020"></a>Augustus 2020
@@ -65,7 +75,7 @@ Welkom bij wat er nieuw is in Azure Active Directory documentatie voor toepassin
 - [Ervaringen van eind gebruikers voor toepassingen in Azure Active Directory](end-user-experiences.md)
 - [Toegang tot Self-service toepassingen gebruiken](access-panel-manage-self-service-access.md)
 - [Problemen oplossen bij het aanmelden bij een toepassing vanuit Azure AD mijn apps](application-sign-in-other-problem-access-panel.md)
-- [Problemen oplossen met eenmalige aanmelding op basis van wacht woorden in azure AD](troubleshoot-password-based-sso.md)
+- [Problemen oplossen met eenmalige aanmelding op basis van wachtwoord in Azure Active Directory](troubleshoot-password-based-sso.md)
 - [Een Azure Active Directory implementatie van mijn apps plannen](access-panel-deployment-plan.md)
 - [Wat is eenmalige aanmelding?](what-is-single-sign-on.md)
 - [Actie onderneemt over overbevoegd of verdachte toepassingen in Azure Active Directory](manage-application-permissions.md)

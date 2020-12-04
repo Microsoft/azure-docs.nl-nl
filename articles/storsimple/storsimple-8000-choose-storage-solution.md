@@ -7,12 +7,12 @@ ms.service: storsimple
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: alkohli
-ms.openlocfilehash: e6f5bb1c2716acbbac8d3e776eb9beda045fd881
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: f2de6dbba2548f0c281df35edf2883d0c00af667
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968737"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96571910"
 ---
 # <a name="compare-storsimple-with-azure-file-sync-and-data-box-edge-data-transfer-options"></a>StorSimple vergelijken met overdrachtsopties van Azure File Sync en Data Box Edge 
 
@@ -33,7 +33,7 @@ In dit document vindt u een overzicht van de opties voor on-premises gegevens ov
 |**Edge-rekenproces** |Niet beschikbaar |Niet beschikbaar |Ondersteunt het uitvoeren van containers met behulp van Azure IoT Edge    |
 |**Vorm factor**  |Fysiek apparaat   |Agent geïnstalleerd op Windows Server |Fysiek apparaat   |
 |**Hardware**     |Fysiek apparaat dat door micro soft is meegeleverd als onderdeel van de service | Klant |Fysiek apparaat dat door micro soft is meegeleverd als onderdeel van de service  |
-|**Gegevens indeling**  |Aangepaste notatie   |Files         |Blobs of bestanden    |
+|**Gegevens indeling**  |Aangepaste notatie   |Bestanden         |Blobs of bestanden    |
 |**Protocol ondersteuning** |iSCSI          |SMB, NFS    | SMB of NFS      |
 |**Prijzen**      |[StorSimple](https://azure.microsoft.com/pricing/details/storsimple/) |[Azure File Sync](https://azure.microsoft.com/pricing/details/storage/files/)  |[Data Box Edge](https://azure.microsoft.com/pricing/details/storage/databox/edge/)  |
 

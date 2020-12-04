@@ -4,12 +4,12 @@ description: Meer informatie over het schalen van uw resource web-app, Cloud ser
 ms.topic: conceptual
 ms.date: 07/07/2017
 ms.subservice: autoscale
-ms.openlocfilehash: dbfffd98cd05e3ab2efbbe33e05da208fdc05600
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: 364309301b403234936da1bac6e1b74af24c2fdb
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96518699"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573303"
 ---
 # <a name="get-started-with-autoscale-in-azure"></a>Aan de slag met automatisch schalen in azure
 In dit artikel wordt beschreven hoe u uw instellingen voor automatisch schalen instelt voor uw resource in de Microsoft Azure-portal.
@@ -131,16 +131,16 @@ Ontwikkel teams in grote ondernemingen moeten vaak voldoen aan de beveiligings v
 
 ### <a name="behavior"></a>Gedrag
 
-Wanneer het pad voor de status controle wordt gegeven, wordt door App Service het pad naar alle exemplaren gepingd. Als een geslaagde respons code niet wordt ontvangen na 5 pings, wordt dat exemplaar als ' beschadigd ' beschouwd. Een of meer beschadigde instanties worden uitgesloten van de load balancer draaiing. U kunt het vereiste aantal mislukte pings configureren met de `WEBSITE_HEALTHCHECK_MAXPINGFAILURES` app-instelling. Deze app-instelling kan worden ingesteld op een wille keurig geheel getal tussen 2 en 10. Als deze instelling is ingesteld op `2` , worden uw instanties van de Load Balancer na twee mislukte pings verwijderd. Bovendien, wanneer u omhoog of omlaag schaalt, App Service pingt het Health Check-pad om ervoor te zorgen dat de nieuwe exemplaren gereed zijn voor aanvragen voordat ze worden toegevoegd aan de load balancer.
+Wanneer het pad voor de status controle wordt gegeven, wordt door App Service het pad naar alle exemplaren gepingd. Als een geslaagde respons code niet wordt ontvangen na 5 pings, wordt dat exemplaar als ' beschadigd ' beschouwd. Een of meer beschadigde instanties worden uitgesloten van de load balancer draaiing als u naar twee of meer exemplaren hebt geschaald en gebruikmaakt van een [basis laag](../../app-service/overview-hosting-plans.md) of hoger. U kunt het vereiste aantal mislukte pings configureren met de `WEBSITE_HEALTHCHECK_MAXPINGFAILURES` app-instelling. Deze app-instelling kan worden ingesteld op een wille keurig geheel getal tussen 2 en 10. Als deze instelling is ingesteld op `2` , worden uw instanties van de Load Balancer na twee mislukte pings verwijderd. Bovendien, wanneer u omhoog of omlaag schaalt, App Service pingt het Health Check-pad om ervoor te zorgen dat de nieuwe exemplaren gereed zijn voor aanvragen voordat ze worden toegevoegd aan de load balancer.
 
 > [!NOTE]
-> Houd er rekening mee dat uw App Service plan moet worden uitgebreid naar twee of meer exemplaren zodat de load balancer uitsluiting kan worden uitgevoerd. Als u slechts één exemplaar hebt, wordt het niet verwijderd uit het load balancer, zelfs niet als het een slechte status heeft. 
+> Houd er rekening mee dat uw App Service plan moet worden uitgeschaald naar twee of meer exemplaren en een **eenvoudige laag of hoger** zijn om de Load Balancer uitzonde ring te laten optreden. Als u slechts één exemplaar hebt, wordt het niet verwijderd uit het load balancer, zelfs niet als het een slechte status heeft. 
 
 De resterende in orde zijnde instanties kunnen een grotere belasting hebben. Om te voor komen dat de resterende instanties overblijven, worden niet meer dan de helft van uw instanties uitgesloten. Als een App Service plan bijvoorbeeld wordt uitgeschaald naar vier instanties en 3 van de status niet in orde, wordt Maxi maal 2 uitgesloten van de loadbalancer-rotatie. De andere twee instanties (1 in orde en 1 zijn beschadigd) blijven aanvragen ontvangen. In het slechtste scenario waarbij alle instanties een slechte status hebben, wordt geen uitgesloten. Als u dit gedrag wilt overschrijven, kunt u de `WEBSITE_HEALTHCHECK_MAXUNHEALTHYWORKERPERCENT` app-instelling instellen op een waarde tussen `0` en `100` . Als u dit instelt op een hogere waarde, worden er meer beschadigde instanties verwijderd (de standaard waarde is 50).
 
 Als een exemplaar gedurende één uur niet in orde is, wordt het vervangen door een nieuw exemplaar. Er wordt Maxi maal één exemplaar per uur vervangen, met een maximum van drie exemplaren per dag per App Service plan.
 
-### <a name="monitoring"></a>Bewaking
+### <a name="monitoring"></a>Controleren
 
 Nadat u het Health Check-pad van uw toepassing hebt opgegeven, kunt u de status van uw site bewaken met behulp van Azure Monitor. Klik op de Blade **status controle** in de portal op de **metrische gegevens** in de bovenste werk balk. Hiermee opent u een nieuwe blade waar u de historische status van de site kunt zien en een nieuwe waarschuwings regel maakt. [Zie de gids over Azure monitor](../../app-service/web-sites-monitor.md)voor meer informatie over het bewaken van uw sites.
 

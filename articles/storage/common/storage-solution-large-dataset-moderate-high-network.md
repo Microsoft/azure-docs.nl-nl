@@ -8,12 +8,12 @@ ms.subservice: blobs
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: alkohli
-ms.openlocfilehash: 962bb7a4484f28d52ffd4f0cae985140ec2f0d28
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f1ded1ce87df1cb57960bbc99cd950ed7b3f97ee
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96006027"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573932"
 ---
 # <a name="data-transfer-for-large-datasets-with-moderate-to-high-network-bandwidth"></a>Gegevensoverdracht voor grote gegevenssets met gemiddelde tot grote netwerkbandbreedte
  
@@ -69,7 +69,7 @@ Als u offline gegevens overdracht gebruikt, gebruikt u de volgende tabel om inzi
 |    **Vorm factor**                  |    5 Ssd's per bestelling             |    1 X 50 kg. apparaat op computer formaat per bestelling    |    1 X ~ 500 kg. groot apparaat per order    |    Maxi maal 10 Hdd's/Ssd's per bestelling        |
 |    **Eerste instel tijd**               |    Beperkt <br>(15 minuten)            |    Laag tot gemiddeld <br> (<30 minuten)               |    Matig<br>(1-2 uur)               |    Gemiddeld tot moeilijk<br>variabeletype |
 |    **Gegevens verzenden naar Azure**           |    Ja                          |    Ja                                           |    Ja                                   |    Ja                                 |
-|    **Gegevens importeren uit Azure**           |    Nee                           |    Nee                                            |    Nee                                    |    Ja                                 |
+|    **Gegevens vanuit Azure exporteren**           |    Nee                           |    Nee                                            |    Nee                                    |    Ja                                 |
 |    **Versleuteling**                   |    AES 128-bits                  |    AES 256-bits                                   |    AES 256-bits                           |    AES 128-bits                         |
 |    **Hardware**                     |     Geleverd door micro soft          |    Geleverd door micro soft                            |    Geleverd door micro soft                    |    Klant verstrekt                   |
 |    **Netwerkinterface**            |    USB 3.1/SATA                 |    RJ 45, SFP +                                   |    RJ45, QSFP +                           |    SATA II/SATA III                    |
@@ -88,7 +88,7 @@ Als u online gegevens overdracht gebruikt, gebruikt u de tabel in de volgende se
 |    **Gegevenstype**              |    Azure-blobs, Azure Files, Azure-tabellen    |    Azure-blobs, Azure Files, Azure-tabellen    |    Azure-blobs, Azure Files                           |   Ondersteunt 70 en data connectors voor gegevens archieven en-indelingen    |
 |    **Vorm factor**            |    Opdrachtregelprogramma's                        |    Programmatische interface                    |    Micro soft levert een virtueel <br>of fysiek apparaat     |    Service in Azure Portal                                            |
 |    **Eerste eenmalige installatie** |    Probleem               |    Matig                       |    Eenvoudig (<30 minuten) tot gemiddeld (1-2 uur)            |    Dergaan                                                          |
-|    **Vooraf verwerkte gegevens**          |    Nee                                        |    Nee                                        |    Ja (met Edge Compute)                               |    Yes                                                                |
+|    **Vooraf verwerkte gegevens**          |    Nee                                        |    Nee                                        |    Ja (met Edge Compute)                               |    Ja                                                                |
 |    **Overdracht van andere Clouds**   |    Nee                                        |    Nee                                        |    Nee                                                    |    Ja                                                                |
 |    **Gebruikers type**                    |    IT-professionals of dev                                       |    Dev                                       |    IT pro                                                |    IT pro                                                             |
 |    **Prijzen**                      |    Er zijn gratis kosten voor het uitbrengen van gegevens van toepassing         |    Er zijn gratis kosten voor het uitbrengen van gegevens van toepassing         |    [Prijzen](https://azure.microsoft.com/pricing/details/storage/databox/edge/)                                               |    [Prijzen](https://azure.microsoft.com/pricing/details/data-factory/)                                                            |
@@ -102,7 +102,7 @@ Als u online gegevens overdracht gebruikt, gebruikt u de tabel in de volgende se
     - [Gegevens overdragen met data Box](../../databox/data-box-quickstart-portal.md).
 - [Gegevens overdragen met AzCopy](./storage-use-azcopy-v10.md).
 - Meer informatie over:
-    - [Gegevens overdragen met Data Box Gateway](../../databox-online/data-box-gateway-deploy-add-shares.md).
+    - [Gegevens overdragen met Data Box Gateway](../../databox-gateway/data-box-gateway-deploy-add-shares.md).
     - [Transformeer gegevens met data Box Edge voordat ze naar Azure worden verzonden](../../databox-online/azure-stack-edge-deploy-configure-compute.md).
 - [Meer informatie over het overdragen van gegevens met Azure Data Factory](../../data-factory/quickstart-create-data-factory-portal.md).
 - De REST-Api's gebruiken om gegevens over te dragen

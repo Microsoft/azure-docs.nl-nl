@@ -50,7 +50,7 @@
         - name: Betrokkenheid van partner bij collectieve verkoop
           href: marketplace-co-sell.md
         - name: Optie voor collectieve verkoop in Partnercentrum
-          href: partner-center-portal/commercial-marketplace-co-sell.md
+          href: commercial-marketplace-co-sell.md
         - name: Doorverkopen via CSP-partners
           href: cloud-solution-providers.md
         - name: Gids voor onboarding van Connect-programma
@@ -382,9 +382,9 @@
     - name: Ondersteunde landen en regio's
       href: sell-from-countries.md
     - name: Land- en regiocodes voor collectieve verkoop
-      href: partner-center-portal/commercial-marketplace-co-sell-countries.md
+      href: commercial-marketplace-co-sell-countries.md
     - name: Staatcodes voor collectieve verkoop
-      href: partner-center-portal/commercial-marketplace-co-sell-states.md
+      href: commercial-marketplace-co-sell-states.md
     - name: Categorieën en subcategorieën
       href: categories.md
     - name: Ondersteunde HTML-tags

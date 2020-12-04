@@ -1,5 +1,5 @@
 ---
-title: Verzoeken indienen met postman
+title: Verzoeken indienen met Postman
 titleSuffix: Azure Digital Twins
 description: Meer informatie over het configureren en gebruiken van Postman voor het testen van de Azure Digital Apparaatdubbels-Api's.
 ms.author: baanders
@@ -8,12 +8,12 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: how-to
 ms.date: 11/10/2020
-ms.openlocfilehash: f9be9dd94aad8c206b562f2c984ec944f70d3957
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 5dbe161af172b65919328fca0b272f3b658f1b32
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187930"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96600486"
 ---
 # <a name="how-to-use-postman-to-send-requests-to-the-azure-digital-twins-apis"></a>Postman gebruiken om aanvragen te verzenden naar de Azure Digital Apparaatdubbels-Api's
 
@@ -130,7 +130,7 @@ Als u een postman-aanvraag naar een van de Azure Digital Apparaatdubbels-Api's w
 
 Om door te gaan met een voorbeeld query, wordt in dit artikel de query-API (en de bijbehorende [referentie documentatie](/rest/api/digital-twins/dataplane/query/querytwins)) gebruikt om een query uit te voeren voor alle digitale apparaatdubbels in een exemplaar.
 
-1. Haal de aanvraag-URL en het type van de referentie documentatie op. Dit is een *bericht https://digitaltwins-name.digitaltwins.azure.net/query?api-version=2020-10-31* voor de query-API.
+1. Haal de aanvraag-URL en het type van de referentie documentatie op. Dit is een *bericht `https://digitaltwins-name.digitaltwins.azure.net/query?api-version=2020-10-31`* voor de query-API.
 1. Stel in postman het type voor de aanvraag in en voer de aanvraag-URL in, waarbij tijdelijke aanduidingen in de URL worden ingevuld zoals vereist. Hier gebruikt u de **hostnaam** van uw exemplaar in het gedeelte [*vereisten*](#prerequisites) .
     
    :::image type="content" source="media/how-to-use-postman/postman-request-url.png" alt-text="In de details van de nieuwe aanvraag is de query-URL uit de referentie documentatie ingevuld in het vak aanvraag-URL." lightbox="media/how-to-use-postman/postman-request-url.png":::

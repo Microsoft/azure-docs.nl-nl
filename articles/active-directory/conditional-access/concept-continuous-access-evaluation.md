@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jlu
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 706fa1666dc327955294fb350b673aed40d6bf48
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 8e21bac5dd78cb9c9f40e6b91ff80fedabb9bc75
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95520659"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602254"
 ---
 # <a name="continuous-access-evaluation"></a>Continue toegangsevaluatie
 
@@ -28,7 +28,7 @@ Voor een tijdige reactie op beleids schendingen of beveiligings problemen is een
 
 De eerste implementatie van voortdurende toegangs beoordeling is gericht op Exchange, teams en share point online.
 
-Als u uw toepassingen wilt voorbereiden op het gebruik van CAE, raadpleegt u [api's voor continue toegang gebruiken in uw toepassingen](/develop/app-resilience-continuous-access-evaluation.md).
+Als u uw toepassingen wilt voorbereiden op het gebruik van CAE, raadpleegt u [api's voor continue toegang gebruiken in uw toepassingen](/azure/active-directory/develop/app-resilience-continuous-access-evaluation).
 
 ### <a name="key-benefits"></a>Belangrijkste voordelen
 

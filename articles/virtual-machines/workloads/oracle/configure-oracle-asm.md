@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 08/02/2018
 ms.author: kegorman
 ms.reviewer: cynthn
-ms.openlocfilehash: e5593d530891e39404e0b9760861f2f22ae333d3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 6f0b58374ae3eb972993b544117d8cbb98371ce5
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95999991"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602611"
 ---
 # <a name="set-up-oracle-asm-on-an-azure-linux-virtual-machine"></a>Oracle ASM op een virtuele Azure Linux-machine instellen  
 
@@ -33,7 +33,7 @@ Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u voor 
 
 ### <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-U kunt een resourcegroep maken met de opdracht [az group create](/cli/azure/group). Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. In dit voor beeld wordt een resource groep met de naam *myResourceGroup* in de regio *eastus* .
+Gebruik de opdracht [AZ Group Create](/cli/azure/group) om een resource groep te maken. Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. In dit voor beeld wordt een resource groep met de naam *myResourceGroup* in de regio *eastus* .
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location eastus
@@ -345,7 +345,7 @@ Voor deze zelf studie is de standaard gebruiker *raster* en is de standaard groe
 
 Voer de volgende stappen uit om de Oracle Grid-infrastructuur software te downloaden en voor te bereiden:
 
-1. Down load de Oracle grid-infra structuur vanaf de [Oracle ASM-download pagina](https://www.oracle.com/technetwork/database/enterprise-edition/downloads/database12c-linux-download-2240591.html). 
+1. Down load de Oracle grid-infra structuur vanaf de [Oracle ASM-download pagina](https://www.oracle.com/database/technologies/oracle19c-linux-downloads.html). 
 
    Down load de twee zip-bestanden onder de down load met de titel **Oracle database 12c-versie 1 (12.1.0.2.0) voor linux x86-64**.
 

@@ -1,24 +1,42 @@
 ---
 title: Ondersteuning voor Azure IoT Hub TLS
-description: Aanbevolen procedures voor het gebruik van beveiligde TLS-verbindingen voor apparaten en services die communiceren met IoT Hub
+description: Meer informatie over het gebruik van beveiligde TLS-verbindingen voor apparaten en services die communiceren met IoT Hub
 services: iot-hub
 author: jlian
 ms.service: iot-fundamentals
 ms.topic: conceptual
-ms.date: 11/13/2020
+ms.date: 11/25/2020
 ms.author: jlian
-ms.openlocfilehash: c9dd66fe9d71f0a857e4b0821190bceb5d6d4680
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: ddb89f60c9fe380012c299afaafb6046bf6849c9
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628795"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602747"
 ---
-# <a name="tls-support-in-iot-hub"></a>TLS-ondersteuning in IoT Hub
+# <a name="transport-layer-security-tls-support-in-iot-hub"></a>Ondersteuning van Transport Layer Security (TLS) in IoT Hub
 
 IoT Hub gebruikt Transport Layer Security (TLS) om verbindingen van IoT-apparaten en-services te beveiligen. Er worden op dit moment drie versies van het TLS-protocol ondersteund, namelijk versie 1,0, 1,1 en 1,2.
 
-TLS 1,0 en 1,1 worden beschouwd als verouderd en zijn gepland voor afschaffing. Zie [TLS 1,0 en 1,1 voor IOT hub](iot-hub-tls-deprecating-1-0-and-1-1.md)afzien voor meer informatie. Het wordt ten zeerste aangeraden TLS 1,2 te gebruiken als de voor Keurs-TLS-versie wanneer u verbinding maakt met IoT Hub.
+TLS 1,0 en 1,1 worden beschouwd als verouderd en zijn gepland voor afschaffing. Zie [TLS 1,0 en 1,1 voor IOT hub](iot-hub-tls-deprecating-1-0-and-1-1.md)afzien voor meer informatie. Als u toekomstige problemen wilt voor komen, gebruikt u TLS 1,2 als enige TLS-versie wanneer u verbinding maakt met IoT Hub.
+
+## <a name="iot-hubs-server-tls-certificate"></a>TLS-certificaat van IoT Hub server
+
+Tijdens een TLS-Handshake biedt IoT Hub RSA-versleutelings server certificaten om clients te verbinden. De hoofdmap is de basis-CA van de Baltimore Cyber Trust. Recent was er een wijziging in de certificaat verleners door nieuwe tussenliggende certificerings instanties (ICAs). Zie [IOT hub TLS-certificaat update](https://azure.microsoft.com/updates/iot-hub-tls-certificate-update/) voor meer informatie.
+
+### <a name="elliptic-curve-cryptography-ecc-server-tls-certificate-preview"></a>TLS-certificaat (voor elliptische curve) (ECC)-server (preview)
+
+IoT Hub TLS-certificaat van de ECC-server is beschikbaar voor open bare preview. Hoewel een soort gelijke beveiliging biedt voor RSA-certificaten, gebruikt ECC-certificaat validatie (met alleen ECC-coderings suites) tot wel 40% minder reken kracht, geheugen en band breedte. Deze besparingen zijn belang rijk voor IoT-apparaten vanwege hun kleinere profielen en geheugen, en ter ondersteuning van use cases in omgevingen met beperkte netwerk bandbreedte. 
+
+Voor beeld van het ECC-server certificaat van IoT Hub:
+
+1. [Maak een nieuwe IOT-hub met de preview-modus op](iot-hub-preview-mode.md).
+1. [Configureer uw client](#tls-configuration-for-sdk-and-iot-edge) zo dat deze *alleen* ECDSA-coderings suites bevat en *sluit* alle RSA uit. Dit zijn de coderings suites voor de open bare preview van ECC-certificaten:
+    - `TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256`
+    - `TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384`
+    - `TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256`
+    - `TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384`
+1. Verbind uw client met de preview IoT-hub.
 
 ## <a name="tls-12-enforcement-available-in-select-regions"></a>TLS 1,2 afdwinging beschikbaar in geselecteerde regio's
 
@@ -88,7 +106,7 @@ Voor IoT-hubs die niet zijn geconfigureerd voor TLS 1,2-afdwinging, werkt TLS 1,
 
 Een-client kan een lijst met hogere coderings Suites suggereren voor gebruik tijdens `ClientHello` . Sommige hiervan worden mogelijk echter niet ondersteund door IoT Hub (bijvoorbeeld `ECDHE-ECDSA-AES256-GCM-SHA384` ). In dit geval probeert IoT Hub de voor keur van de client te volgen, maar onderhandelt uiteindelijk de coderings Suite met `ServerHello` .
 
-## <a name="use-tls-12-in-your-iot-hub-sdks"></a>TLS 1,2 gebruiken in uw IoT Hub Sdk's
+## <a name="tls-configuration-for-sdk-and-iot-edge"></a>TLS-configuratie voor SDK en IoT Edge
 
 Gebruik de onderstaande koppelingen voor het configureren van TLS 1,2 en toegestane code ringen in IoT Hub client-Sdk's.
 
@@ -100,11 +118,25 @@ Gebruik de onderstaande koppelingen voor het configureren van TLS 1,2 en toegest
 | Java     | Versie 1.19.0 of nieuwer            | [Koppeling](https://aka.ms/Tls_Java_SDK_IoT) |
 | Node.js   | Versie 1.12.2 of nieuwer            | [Koppeling](https://aka.ms/Tls_Node_SDK_IoT) |
 
-
-## <a name="use-tls-12-in-your-iot-edge-setup"></a>TLS 1,2 gebruiken in uw IoT Edge-installatie
-
 IoT Edge-apparaten kunnen worden geconfigureerd voor het gebruik van TLS 1,2 bij de communicatie met IoT Hub. Gebruik voor dit doel de pagina met de [IOT Edge documentatie](https://github.com/Azure/iotedge/blob/master/edge-modules/edgehub-proxy/README.md).
 
 ## <a name="device-authentication"></a>Apparaatverificatie
 
 Na een geslaagde TLS-Handshake kan IoT Hub een apparaat verifiëren met behulp van een symmetrische sleutel of een X. 509-certificaat. Voor verificatie op basis van een certificaat kan dit elk X. 509-certificaat zijn, inclusief ECC. IoT Hub valideert het certificaat met de vinger afdruk of certificerings instantie (CA) die u opgeeft. Zie [ondersteunde X. 509-certificaten](iot-hub-devguide-security.md#supported-x509-certificates)voor meer informatie.
+
+## <a name="tls-maximum-fragment-length-negotiation-preview"></a>Onderhandeling over maximale fragment lengte TLS (preview-versie)
+
+IoT Hub biedt ook ondersteuning voor de maximale lengte van TLS-onderhandeling, die ook wel TLS-frame grootte onderhandeling wordt genoemd. Deze functie is beschikbaar voor openbare preview. 
+
+Gebruik deze functie om de maximale lengte van de Lees bare tekst op te geven in een waarde die kleiner is dan de standaard instelling van 2 ^ 14 bytes. Na onderhandelingen hebben IoT Hub en de client de fragmentatie van berichten gestart om ervoor te zorgen dat alle fragmenten kleiner zijn dan de onderhandelde lengte. Dit gedrag is handig voor het berekenen of beperken van geheugen. Zie de [officiële TLS-extensie specificatie](https://tools.ietf.org/html/rfc6066#section-4)voor meer informatie.
+
+Officiële SDK-ondersteuning voor deze open bare preview-functie is nog niet beschikbaar. Om aan de slag te gaan
+
+1. [Maak een nieuwe IOT-hub met de preview-modus op](iot-hub-preview-mode.md).
+1. Configureer uw client om `SSL_CTX_set_tlsext_max_fragment_length` in te stellen op een van deze waarden: 2 ^ 9, 2 ^ 10, 2 ^ 11 en 2 ^ 12.
+1. Verbind uw client met de preview-IoT Hub.
+
+## <a name="next-steps"></a>Volgende stappen
+
+- Zie [toegang tot IOT hub beheren](iot-hub-devguide-security.md)voor meer informatie over IOT hub beveiliging en toegangs beheer.
+- Zie voor meer informatie over het gebruik van x509-certificaat voor verificatie van apparaten de [verificatie van apparaten met X. 509 CA-certificaten](iot-hub-x509ca-overview.md)

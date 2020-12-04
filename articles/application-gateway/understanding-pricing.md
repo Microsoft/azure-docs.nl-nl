@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.custom: references_regions
 ms.date: 09/01/2020
 ms.author: azhussai
-ms.openlocfilehash: 1d88379726cfb6c4218c38b9ccc87005609a9aba
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 89ba6b7a69c95951a083628f23be68d811c7768c
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89460742"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96601608"
 ---
 # <a name="understanding-pricing-for-azure-application-gateway-and-web-application-firewall"></a>Meer informatie over de prijzen voor Azure-toepassing gateway en Web Application firewall
 
@@ -254,9 +254,19 @@ Als de verwerkings capaciteit gelijk is aan 10 extra CUs beschikbaar is voor geb
 
 Vaste prijs = $0,246 * 730 (uur) = $179,58
 
-Variabele kosten = $0,008 * (3 (exemplaar eenheden) * 10 (capaciteits eenheden) + 5 (extra capaciteits eenheden)) * 730 (uur) = $204,4
+Variabele kosten = $0,008 * (3 (exemplaar eenheden) * 10 (capaciteits eenheden) + 10 (extra capaciteits eenheden)) * 730 (uur) = $233,6
 
-Totale kosten = $179,58 + $204,4 = $383,98
+Totale kosten = $179,58 + $233,6 = $413,18
+
+Echter, als de verwerkings capaciteit gelijk is aan slechts 7 extra CUs beschikbaar is voor gebruik binnen de 3 gereserveerde instanties.
+In dit scenario wordt de Application Gateway resource geschaald en kan dit leiden tot een toename van de latentie of aanvragen die worden verwijderd.
+
+Vaste prijs = $0,246 * 730 (uur) = $179,58
+
+Variabele kosten = $0,008 * (3 (exemplaar eenheden) * 10 (capaciteits eenheden) + 7 (extra capaciteits eenheden)) * 730 (uur) = $216,08
+
+Totale kosten = $179,58 + $216,08 = $395,66
+
 
 ![Diagram van hand matig schalen 2.](./media/pricing/manual-scale-2.png)
 

@@ -2,15 +2,15 @@
 title: Test cases voor test Toolkit
 description: Hierin worden de tests beschreven die worden uitgevoerd door de ARM-sjabloon test Toolkit.
 ms.topic: conceptual
-ms.date: 09/02/2020
+ms.date: 12/03/2020
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: dda8e92c17029126e7f473a6aee03acfc970e04b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ff9ad659e15a88725e4c3905ab6c623fda7610fd
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89378114"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96600901"
 ---
 # <a name="default-test-cases-for-arm-template-test-toolkit"></a>Standaard test cases voor ARM-sjabloon test Toolkit
 
@@ -137,9 +137,11 @@ In het volgende voor beeld wordt deze test **door gegeven** .
 
 Test naam: **locatie mag niet hardcoded zijn**
 
-Voor gebruikers van uw sjabloon zijn mogelijk beperkte regio's beschikbaar. Wanneer u de resource locatie instelt op `"[resourceGroup().location]"` , is de resource groep mogelijk gemaakt in een regio waartoe andere gebruikers geen toegang hebben. Deze gebruikers worden geblokkeerd voor het gebruik van de sjabloon.
+Uw sjablonen moeten een para meter met de naam Location hebben. Gebruik deze para meter om de locatie van resources in uw sjabloon in te stellen. In de hoofd sjabloon (met de naam azuredeploy.jsop of mainTemplate.jsop), kan deze para meter standaard worden ingesteld op de locatie van de resource groep. In gekoppelde of geneste sjablonen mag de locatie parameter geen standaard locatie hebben.
 
-Gebruik bij het definiëren van de locatie voor elke resource een para meter die standaard wordt ingesteld op de locatie van de resource groep. Door deze para meter op te geven, kunnen gebruikers de standaard waarde gebruiken als ze handig zijn, maar ook een andere locatie opgeven.
+Voor gebruikers van uw sjabloon zijn mogelijk beperkte regio's beschikbaar. Wanneer u de resource locatie permanent codeert, kunnen gebruikers worden geblokkeerd voor het maken van een resource in die regio. Gebruikers kunnen worden geblokkeerd, zelfs als u de resource locatie instelt op `"[resourceGroup().location]"` . De resource groep is mogelijk gemaakt in een regio waartoe andere gebruikers geen toegang hebben. Deze gebruikers worden geblokkeerd voor het gebruik van de sjabloon.
+
+Door een locatie parameter op te geven die standaard wordt ingesteld op de locatie van de resource groep, kunnen gebruikers de standaard waarde gebruiken als ze handig zijn, maar ook een andere locatie opgeven.
 
 In het volgende voor beeld wordt deze test **niet** uitgevoerd omdat de locatie van de resource is ingesteld op `resourceGroup().location` .
 
@@ -195,7 +197,7 @@ In het volgende voor beeld wordt een locatie parameter gebruikt, maar deze test 
 }
 ```
 
-Maak in plaats daarvan een para meter die standaard wordt ingesteld op de locatie van de resource groep, maar biedt gebruikers de mogelijkheid om een andere waarde op te geven. In het volgende voor beeld wordt deze test **door gegeven** .
+Maak in plaats daarvan een para meter die standaard wordt ingesteld op de locatie van de resource groep, maar biedt gebruikers de mogelijkheid om een andere waarde op te geven. In het volgende voor beeld wordt deze test **door gegeven** wanneer de sjabloon als hoofd sjabloon wordt gebruikt.
 
 ```json
 {
@@ -227,6 +229,8 @@ Maak in plaats daarvan een para meter die standaard wordt ingesteld op de locati
     "outputs": {}
 }
 ```
+
+Als het vorige voor beeld echter als een gekoppelde sjabloon wordt gebruikt, **mislukt** de test. Bij gebruik als gekoppelde sjabloon verwijdert u de standaard waarde.
 
 ## <a name="resources-should-have-location"></a>Resources moeten locatie hebben
 

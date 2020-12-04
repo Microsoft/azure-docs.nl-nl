@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.custom: devx-track-csharp, devx-track-js
 ms.date: 03/25/2019
 ms.author: cshoe
-ms.openlocfilehash: ff64d5c17174f8e1e67111ebca9ccf050deb2f26
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 2488a476fe40c2bf1f3e290b462babceff30a9b0
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94409651"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96601387"
 ---
 # <a name="strategies-for-testing-your-code-in-azure-functions"></a>Strategieën voor het testen van uw code in Azure Functions
 
@@ -28,7 +28,7 @@ De voor beeld-opslag plaats is beschikbaar op [github](https://github.com/Azure-
 
 ## <a name="c-in-visual-studio"></a>C# in Visual Studio
 
-In het volgende voor beeld wordt beschreven hoe u een C#-functie-app maakt in Visual Studio en voert en test met [xUnit](https://xunit.github.io).
+In het volgende voor beeld wordt beschreven hoe u een C#-functie-app maakt in Visual Studio en voert en test met [xUnit](https://github.com/xunit/xunit).
 
 ![Azure Functions testen met C# in Visual Studio](./media/functions-test-a-function/azure-functions-test-visual-studio-xunit.png)
 
@@ -39,7 +39,7 @@ Als u uw omgeving wilt instellen, maakt u een functie-en test-app. De volgende s
 1. [Een nieuwe functions-app maken](./functions-create-first-azure-function.md) en **hieraan** een naam toe te voegen
 2. [Maak een HTTP-functie op basis van de sjabloon](./functions-create-first-azure-function.md) en geef deze de naam **MyHttpTrigger**.
 3. [Maak een timer functie op basis van de sjabloon](./functions-create-scheduled-function.md) en noem deze **MyTimerTrigger**.
-4. [Maak een xUnit-test-app](https://xunit.github.io/docs/getting-started-dotnet-core) in de oplossing en geef deze de naam **Function. tests**.
+4. [Maak een xUnit-test-app](https://xunit.net/docs/getting-started/netcore/cmdline) in de oplossing en geef deze de naam **Function. tests**.
 5. Gebruik NuGet om een verwijzing toe te voegen vanuit de test-app naar [micro soft. AspNetCore. MVC](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc/)
 6. [Raadpleeg de *functions* -app](/visualstudio/ide/managing-references-in-a-project?view=vs-2017) vanuit *functions. app tests* .
 
@@ -107,11 +107,11 @@ namespace Functions.Tests
 
 De `ListLogger` klasse implementeert de volgende leden als een contract van de `ILogger` Interface:
 
-- **BeginScope** : bereiken voegen context toe aan uw logboek registratie. In dit geval wijst de test alleen naar het statische exemplaar op de `NullScope` klasse om de test te laten functioneren.
+- **BeginScope**: bereiken voegen context toe aan uw logboek registratie. In dit geval wijst de test alleen naar het statische exemplaar op de `NullScope` klasse om de test te laten functioneren.
 
-- **IsEnabled** : er wordt een standaard waarde van `false` gegeven.
+- **IsEnabled**: er wordt een standaard waarde van `false` gegeven.
 
-- **Log** : deze methode gebruikt de geleverde `formatter` functie om het bericht op te maken en vervolgens de resulterende tekst aan de verzameling toe te voegen `Logs` .
+- **Log**: deze methode gebruikt de geleverde `formatter` functie om het bericht op te maken en vervolgens de resulterende tekst aan de verzameling toe te voegen `Logs` .
 
 De `Logs` verzameling is een exemplaar van `List<string>` en wordt geïnitialiseerd in de constructor.
 
@@ -193,13 +193,13 @@ namespace Functions.Tests
 
 De `TestFactory` klasse implementeert de volgende leden:
 
-- **Gegevens** : deze eigenschap retourneert een [IEnumerable](/dotnet/api/system.collections.ienumerable) -verzameling van voorbeeld gegevens. De sleutel-waardeparen vertegenwoordigen waarden die worden door gegeven aan een query reeks.
+- **Gegevens**: deze eigenschap retourneert een [IEnumerable](/dotnet/api/system.collections.ienumerable) -verzameling van voorbeeld gegevens. De sleutel-waardeparen vertegenwoordigen waarden die worden door gegeven aan een query reeks.
 
-- **CreateDictionary** : deze methode accepteert een sleutel/waarde-paar als argumenten en retourneert een nieuwe `Dictionary` die wordt gebruikt om `QueryCollection` query teken reeks waarden weer te geven.
+- **CreateDictionary**: deze methode accepteert een sleutel/waarde-paar als argumenten en retourneert een nieuwe `Dictionary` die wordt gebruikt om `QueryCollection` query teken reeks waarden weer te geven.
 
-- **CreateHttpRequest** : met deze methode maakt u een HTTP-aanvraag die is geïnitialiseerd met de opgegeven query reeks parameters.
+- **CreateHttpRequest**: met deze methode maakt u een HTTP-aanvraag die is geïnitialiseerd met de opgegeven query reeks parameters.
 
-- **CreateLogger** : op basis van het logboek type retourneert deze methode een logger klasse die wordt gebruikt voor het testen. Hiermee worden `ListLogger` vastgelegde berichten bijgehouden die beschikbaar zijn voor evaluatie in tests.
+- **CreateLogger**: op basis van het logboek type retourneert deze methode een logger klasse die wordt gebruikt voor het testen. Hiermee worden `ListLogger` vastgelegde berichten bijgehouden die beschikbaar zijn voor evaluatie in tests.
 
 Maak ten slotte een nieuwe klasse in *functions. test* project met de naam **FunctionsTests.cs** en voer de volgende code in:
 
@@ -245,11 +245,11 @@ namespace Functions.Tests
 
 De leden die in deze klasse worden geïmplementeerd zijn:
 
-- **Http_trigger_should_return_known_string** : met deze test wordt een aanvraag met de query teken reeks waarden van `name=Bill` naar een http-functie gemaakt en wordt gecontroleerd of de verwachte reactie wordt geretourneerd.
+- **Http_trigger_should_return_known_string**: met deze test wordt een aanvraag met de query teken reeks waarden van `name=Bill` naar een http-functie gemaakt en wordt gecontroleerd of de verwachte reactie wordt geretourneerd.
 
-- **Http_trigger_should_return_string_from_member_data** : deze test maakt gebruik van xUnit-kenmerken om voorbeeld gegevens aan de http-functie toe te voegen.
+- **Http_trigger_should_return_string_from_member_data**: deze test maakt gebruik van xUnit-kenmerken om voorbeeld gegevens aan de http-functie toe te voegen.
 
-- **Timer_should_log_message** : met deze test wordt een exemplaar van gemaakt `ListLogger` en door gegeven aan een timer-functie. Zodra de functie is uitgevoerd, wordt het logboek gecontroleerd om te controleren of het verwachte bericht aanwezig is.
+- **Timer_should_log_message**: met deze test wordt een exemplaar van gemaakt `ListLogger` en door gegeven aan een timer-functie. Zodra de functie is uitgevoerd, wordt het logboek gecontroleerd om te controleren of het verwachte bericht aanwezig is.
 
 Als u toegang wilt krijgen tot toepassings instellingen in uw tests, kunt [inject](./functions-dotnet-dependency-injection.md) u een `IConfiguration` instantie met gemodelde omgevings variabele waarden in uw functie injecteren.
 

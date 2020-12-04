@@ -3,13 +3,15 @@ title: Java-traceer logboeken verkennen in Azure-toepassing Insights
 description: Log4J-of logback-traceringen zoeken in Application Insights
 ms.topic: conceptual
 ms.date: 05/18/2019
+author: MS-jgol
 ms.custom: devx-track-java
-ms.openlocfilehash: 7d219f4fcfd22d25babd8c9f6564f8dcd11d3144
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.author: jgol
+ms.openlocfilehash: fb91662dfcdeb404f51f91c1fef893dc72dcac73
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93377918"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96601047"
 ---
 # <a name="explore-java-trace-logs-in-application-insights"></a>Java-traceer logboeken verkennen in Application Insights
 

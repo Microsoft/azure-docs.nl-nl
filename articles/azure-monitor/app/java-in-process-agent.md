@@ -3,12 +3,15 @@ title: Azure Monitor Application Insights java
 description: Bewaking van toepassings prestaties voor Java-toepassingen die worden uitgevoerd in een omgeving zonder dat code hoeft te worden gewijzigd. Gedistribueerde tracering en toepassings toewijzing.
 ms.topic: conceptual
 ms.date: 03/29/2020
-ms.openlocfilehash: 7046e4a1aeeda5e537208c79858c95c79e188348
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+author: MS-jgol
+ms.custom: devx-track-java
+ms.author: jgol
+ms.openlocfilehash: 4b29e5375c10fc3c1aaa203df720fdd24090d11e
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96437198"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96601132"
 ---
 # <a name="java-codeless-application-monitoring-azure-monitor-application-insights"></a>Azure Monitor Application Insights voor de bewaking van Java-toepassingen
 
@@ -22,7 +25,7 @@ U kunt nog steeds aangepaste telemetrie verzenden vanuit uw toepassing. De 3,0-a
 
 De 3,0-agent ondersteunt Java 8 en hoger.
 
-## <a name="quickstart"></a>Snelstart
+## <a name="quickstart"></a>Snelstartgids
 
 **1. de agent downloaden**
 
@@ -140,12 +143,12 @@ De volgende tabel bevat momenteel ondersteunde aangepaste typen telemetrie die u
 
 |                     | Micrometer | Log4j, logback, JUL | 2. x SDK |
 |---------------------|------------|---------------------|---------|
-| **Aangepaste gebeurtenissen**   |            |                     |  Yes    |
+| **Aangepaste gebeurtenissen**   |            |                     |  Ja    |
 | **Aangepaste metrische gegevens**  |  Ja       |                     |  Ja    |
-| **Afhankelijkheden**    |            |                     |  Yes    |
+| **Afhankelijkheden**    |            |                     |  Ja    |
 | **Uitzonderingen**      |            |  Ja                |  Ja    |
-| **Paginaweergaven**      |            |                     |  Yes    |
-| **Aanvragen**        |            |                     |  Yes    |
+| **Paginaweergaven**      |            |                     |  Ja    |
+| **Aanvragen**        |            |                     |  Ja    |
 | **Traceringen**          |            |  Ja                |  Ja    |
 
 Er is op dit moment geen planning voor het vrijgeven van een SDK met Application Insights 3,0.

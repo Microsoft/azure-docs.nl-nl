@@ -3,12 +3,12 @@ title: Aan de slag met Azure Lab Services
 description: In dit artikel wordt beschreven hoe u aan de slag gaat met Azure Lab Services.
 ms.topic: article
 ms.date: 11/18/2020
-ms.openlocfilehash: 6fb0da7f91e0eecdeefecdb6635b657245fda9af
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 44afe13fb6f555b12dfce939ce8e88e3af8dc7ef
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96434427"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602662"
 ---
 # <a name="get-started-with-lab-services"></a>Aan de slag met Lab-Services 
 
@@ -115,12 +115,8 @@ Docenten kunnen student gebruikers toevoegen aan een lab en hun uren quota's bew
 
 1. Klik op de [website van Azure Lab Services](https://labs.azure.com/) op **gebruikers** aan de linkerkant van het venster.
 1. Klik boven in het venster op **gebruikers toevoegen** en selecteer **toevoegen per e-mail adres**. 
-
-    :::image type="content" source="./media/how-to-configure-student-usage/add-users-button.png" alt-text="De knop gebruikers toevoegen":::
 1. In het deel venster **gebruikers toevoegen** dat rechts wordt weer gegeven, voert u de e-mail adressen van studenten in op afzonderlijke regels of op één regel, gescheiden door punt komma's.
 1. Klik op **Opslaan**.
-
-    :::image type="content" source="./media/get-started-manage-labs/add-students.png" alt-text="Studenten toevoegen aan uw Lab":::
 1. Uw lijst met gebruikers wordt nu bijgewerkt met e-mail berichten, status, uitnodiging en quotum uren.
 
     Nadat studenten zijn geregistreerd voor een lab, worden hun namen bijgewerkt met de voor-en achternaam van Azure Active Directory.

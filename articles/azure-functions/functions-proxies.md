@@ -3,12 +3,12 @@ title: Werken met proxy's in Azure Functions
 description: Overzicht van het gebruik van Azure Functions-proxy's
 ms.topic: conceptual
 ms.date: 01/22/2018
-ms.openlocfilehash: 3e08b9cf633162cc7015f47774b043cf58c115a0
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: fb263239f99bcb4ec4c893b700d5c1cce078659f
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96020395"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96601370"
 ---
 # <a name="work-with-azure-functions-proxies"></a>Werken met Azure Functions-proxy's
 
@@ -28,7 +28,7 @@ In deze sectie wordt beschreven hoe u een proxy maakt in de functions-Portal.
 3. Geef een naam op voor uw proxy.
 4. Configureer het eind punt dat wordt weer gegeven in deze functie-app door de **route sjabloon** en **http-methoden** op te geven. Deze para meters gedragen zich op basis van de regels voor [http-triggers].
 5. Stel de **back-end-URL** in op een ander eind punt. Dit eind punt kan een functie zijn in een andere functie-app of een andere API. De waarde hoeft niet statisch te zijn en kan verwijzen naar [Toepassings instellingen] en- [para meters van de oorspronkelijke client aanvraag].
-6. Klik op **Create**.
+6. Klik op **Maken**.
 
 Uw proxy bestaat nu als een nieuw eind punt in uw functie-app. Vanuit een client perspectief is het gelijk aan een http trigger in Azure Functions. U kunt de nieuwe proxy proberen door de proxy-URL te kopiëren en deze te testen met uw favoriete HTTP-client.
 
@@ -55,11 +55,11 @@ De configuratie voor een proxy hoeft niet statisch te zijn. U kunt de voor waard
 ### <a name="reference-local-functions"></a><a name="reference-localhost"></a>Referentie lokale functies
 U kunt gebruiken `localhost` om rechtstreeks naar een functie binnen dezelfde functie-app te verwijzen, zonder een retour proxy-aanvraag.
 
-`"backendurl": "https://localhost/api/httptriggerC#1"` verwijst naar een lokale HTTP-functie die op de route wordt geactiveerd `/api/httptriggerC#1`
+`"backendUri": "https://localhost/api/httptriggerC#1"` verwijst naar een lokale HTTP-functie die op de route wordt geactiveerd `/api/httptriggerC#1`
 
  
 >[!Note]  
->Als uw functie gebruikmaakt van *functie-, beheer-of sys* -autorisatie niveaus, moet u de code en clientId opgeven, conform de oorspronkelijke functie-URL. In dit geval ziet de verwijzing er als volgt uit: `"backendurl": "https://localhost/api/httptriggerC#1?code=<keyvalue>&clientId=<keyname>"` we raden u aan deze sleutels op te slaan in [Toepassings instellingen] en ernaar te verwijzen naar die in uw proxy's. Zo voor komt u dat geheimen worden opgeslagen in de bron code. 
+>Als uw functie gebruikmaakt van *functie-, beheer-of sys* -autorisatie niveaus, moet u de code en clientId opgeven, conform de oorspronkelijke functie-URL. In dit geval ziet de verwijzing er als volgt uit: `"backendUri": "https://localhost/api/httptriggerC#1?code=<keyvalue>&clientId=<keyname>"` we raden u aan deze sleutels op te slaan in [Toepassings instellingen] en ernaar te verwijzen naar die in uw proxy's. Zo voor komt u dat geheimen worden opgeslagen in de bron code. 
 
 ### <a name="reference-request-parameters"></a><a name="request-parameters"></a>Referentie aanvraag parameters
 
@@ -241,7 +241,7 @@ Een voorbeeld configuratie kan er als volgt uitzien:
 > [!NOTE] 
 > In dit voor beeld wordt de hoofd tekst van de reactie direct ingesteld, zodat er geen `backendUri` eigenschap nodig is. In het voor beeld ziet u hoe u Azure Functions-proxy's kunt gebruiken om Api's te model leren.
 
-[Azure Portal]: https://portal.azure.com
+[Azure-portal]: https://portal.azure.com
 [HTTP-triggers]: ./functions-bindings-http-webhook.md
 [Modify the back-end request]: #modify-backend-request
 [Modify the response]: #modify-response

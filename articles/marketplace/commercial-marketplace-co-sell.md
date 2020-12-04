@@ -1,22 +1,22 @@
 ---
-title: Optie voor co-sell in Partner Center | Azure Marketplace
-description: De gegevens die u opgeeft op het tabblad verkopen van uw aanbieding, worden door micro soft Sales-teams gebruikt om meer te weten te komen over uw aanbieding bij de evaluatie van de geschiktheid voor klant behoeften.
+title: Optie voor co-sell in commerciële Marketplace | Azure Marketplace
+description: De gegevens die u verstrekt op het tabblad micro soft-verkoop van uw aanbieding, worden door micro soft Sales teams gebruikt om meer te weten te komen over uw aanbieding bij de evaluatie van de geschiktheid voor klant behoeften.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: palanis-MSFT
 ms.author: palanis
-ms.date: 12/03/2020
-ms.openlocfilehash: f424cd85e26511f8fe3d863b1f2c77bc1e5e7537
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.date: 12/04/2020
+ms.openlocfilehash: baa99518498b05b0a658627d9908298eb58f7775
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96582318"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602730"
 ---
-# <a name="co-sell-option-in-partner-center"></a>Optie voor collectieve verkoop in Partnercentrum
+# <a name="co-sell-option-in-the-commercial-marketplace"></a>Optie voor co-sell in de commerciële Marketplace
 
-Het is volledig optioneel om informatie op het tabblad samen verkopen op te geven. Het is vereist om te kunnen profiteren van de voor bereidingen op de verkoop van [gemotiveerd en de status van het co-sell-object](/legal/marketplace/certification-policies.md#3000-requirements-for-co-sell-status). De gegevens die u verstrekt, worden door micro soft verkoop teams gebruikt om meer te weten te komen over uw aanbieding bij het evalueren van de geschiktheid voor klanten behoeften. Het is niet rechtstreeks beschikbaar voor klanten. Zie [co-sell with micro soft](https://partner.microsoft.com/membership/co-sell-with-microsoft)(Engelstalig) voor meer informatie.
+Het is volledig optioneel om informatie op te geven over het tabblad **samen verkopen met micro soft** . Het is vereist om te kunnen profiteren van de voor bereidingen op de verkoop van [gemotiveerd en de status van het co-sell-object](/legal/marketplace/certification-policies#3000-requirements-for-co-sell-status). De gegevens die u verstrekt, worden door micro soft verkoop teams gebruikt om meer te weten te komen over uw aanbieding bij het evalueren van de geschiktheid voor klanten behoeften. Het is niet rechtstreeks beschikbaar voor klanten. Zie [co-sell with micro soft](https://partner.microsoft.com/membership/co-sell-with-microsoft)(Engelstalig) voor meer informatie.
 
 De optie voor co-selling in Partner Center is momenteel beschikbaar in de volgende aanbiedings typen.
 

@@ -11,18 +11,20 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/06/2020
 ms.author: joflore
-ms.openlocfilehash: 683a6c9f31947355a5415a5b8b57b621f717af91
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 92d440d019942219b322ef084b45317983d04fbe
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91967661"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602237"
 ---
 # <a name="how-objects-and-credentials-are-synchronized-in-an-azure-active-directory-domain-services-managed-domain"></a>Hoe objecten en referenties worden gesynchroniseerd in een Azure Active Directory Domain Services beheerd domein
 
 Objecten en referenties in een door Azure Active Directory Domain Services (Azure AD DS) beheerd domein kunnen lokaal in het domein worden gemaakt of worden gesynchroniseerd vanuit een Azure Active Directory-Tenant (Azure AD). Wanneer u Azure AD DS voor het eerst implementeert, wordt een automatische eenrichtings synchronisatie geconfigureerd en gestart om de objecten te repliceren vanuit Azure AD. Deze eenrichtings synchronisatie blijft actief op de achtergrond om de Azure AD DS beheerde domein up-to-date te houden met eventuele wijzigingen van Azure AD. Er wordt geen synchronisatie uitgevoerd vanuit Azure AD DS terug naar Azure AD.
 
 In een hybride omgeving kunnen objecten en referenties van een on-premises AD DS domein worden gesynchroniseerd met Azure AD met behulp van Azure AD Connect. Zodra deze objecten zijn gesynchroniseerd met Azure AD, maakt de automatische achtergrond synchronisatie deze objecten en referenties beschikbaar voor toepassingen die gebruikmaken van het beheerde domein.
+
+Als on-premises AD DS en Azure AD zijn geconfigureerd voor Federated Authentication met ADFS, is er geen (huidige/geldige) wacht woord-hash beschikbaar in azure DS. Azure AD-gebruikers accounts die zijn gemaakt voordat een verificatie werd uitgevoerd, hebben mogelijk een oude wacht woord-hash, maar dit komt waarschijnlijk niet overeen met een hash van het on-premises wacht woord. Daarom kunnen Azure AD DS de gebruikers referenties niet valideren.
 
 In het volgende diagram ziet u hoe synchronisatie werkt tussen Azure AD DS, Azure AD en een optionele on-premises AD DS omgeving:
 
@@ -40,7 +42,7 @@ Het synchronisatie proces is een manier/unidirectioneel. Er is geen omgekeerde s
 
 De volgende tabel bevat enkele algemene kenmerken en hoe deze worden gesynchroniseerd met Azure AD DS.
 
-| Kenmerk in azure AD DS | Bron | Opmerkingen |
+| Kenmerk in azure AD DS | Bron | Notities |
 |:--- |:--- |:--- |
 | UPN | Het *UPN* -kenmerk van de gebruiker in de Azure AD-Tenant | Het UPN-kenmerk van de Azure AD-Tenant wordt gesynchroniseerd naar Azure AD DS. De meest betrouw bare manier om u aan te melden bij een beheerd domein, is het gebruik van de UPN. |
 | SAMAccountName | Het *mailNickname* -kenmerk van de gebruiker in azure AD-Tenant of automatisch gegenereerd | Het kenmerk *SAMAccountName* wordt afgeleid van het kenmerk *mailNickname* in de Azure AD-Tenant. Als meerdere gebruikers accounts hetzelfde *mailNickname* -kenmerk hebben, wordt de *SAMAccountName* automatisch gegenereerd. Als de *mailNickname* of het *UPN* -voor voegsel van de gebruiker langer is dan 20 tekens, wordt de *SAMAccountName* automatisch gegenereerd om te voldoen aan de limiet van 20 tekens voor *SAMAccountName* -kenmerken. |

@@ -10,12 +10,12 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: pafarley
-ms.openlocfilehash: eb1be4c78be0eb7fb943700b168fa82ede4d3861
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 9a3a6bd6489baea90ed4143b42a09e7d697bbc50
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96458385"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602441"
 ---
 # <a name="form-recognizer-prebuilt-invoice-model"></a>Vooraf gebouwd factuur model voor formulier herkenning
 
@@ -80,8 +80,8 @@ Met de factuur service worden de velden tekst, tabellen en 26 factuur geëxtrahe
 | CustomerId | tekenreeks | Referentie-ID voor de klant | CID-12345 |  |
 | PurchaseOrder | tekenreeks | Een referentie nummer van een inkoop order | IO-3333 | |  |
 | InvoiceId | tekenreeks | Id voor deze specifieke factuur (vaak factuur nummer) | INV-100 | |  |
-| InvoiceDate | date | Datum waarop de factuur is verzonden | 11/15/2019 | 
-| DueDate | date | De verval datum van de betaling voor deze factuur | 12/15/2019 | 2019-12-15 | 2019-11-15 |
+| InvoiceDate | datum | Datum waarop de factuur is verzonden | 11/15/2019 | 
+| DueDate | datum | De verval datum van de betaling voor deze factuur | 12/15/2019 | 2019-12-15 | 2019-11-15 |
 | Leveranciers naam | tekenreeks | Leverancier die deze factuur heeft gemaakt | CONTOSO LTD. | |
 | VendorAddress | tekenreeks | E-mail adres voor de leverancier | 123 456th St New York, NY, 10001 | |
 | VendorAddressRecipient | tekenreeks | De naam die is gekoppeld aan de VendorAddress | Contoso Headquarters | |
@@ -99,8 +99,8 @@ Met de factuur service worden de velden tekst, tabellen en 26 factuur geëxtrahe
 | ServiceAddressRecipient | tekenreeks | De naam die is gekoppeld aan de ServiceAddress | Micro soft-Services | |
 | RemittanceAddress | tekenreeks | Expliciete remise of betalings adres voor de klant | 123 remitte St New York, NY, 10001 |  |
 | RemittanceAddressRecipient | tekenreeks | De naam die is gekoppeld aan de RemittanceAddress | Contoso-facturering |  |
-| ServiceStartDate | date | Eerste datum voor de service periode (bijvoorbeeld een service periode van het hulp programma) | 14-10-2019 | 2019-10-14 |
-| ServiceEndDate | date | De eind datum voor de service periode (bijvoorbeeld een service periode van het hulp programma) | 11/14/2019 | 2019-11-14 |
+| ServiceStartDate | datum | Eerste datum voor de service periode (bijvoorbeeld een service periode van het hulp programma) | 14-10-2019 | 2019-10-14 |
+| ServiceEndDate | datum | De eind datum voor de service periode (bijvoorbeeld een service periode van het hulp programma) | 11/14/2019 | 2019-11-14 |
 | PreviousUnpaidBalance | getal | Expliciet eerder onbetaald saldo | $500,00 | 500 |
 
 
@@ -112,4 +112,4 @@ Met de factuur service worden de velden tekst, tabellen en 26 factuur geëxtrahe
 ## <a name="see-also"></a>Zie ook
 
 * [Wat is Form Recognizer?](./overview.md)
-* [REST API referentie documenten](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/AnalyzeInvoiceAsync)
+* [REST API referentie documenten](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/5ed8c9843c2794cbb1a96291)

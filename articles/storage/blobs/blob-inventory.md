@@ -4,18 +4,18 @@ description: Azure Storage-inventaris is een hulp programma waarmee u een overzi
 services: storage
 author: mhopkins-msft
 ms.service: storage
-ms.date: 11/04/2020
+ms.date: 12/03/2020
 ms.topic: conceptual
 ms.author: mhopkins
 ms.reviewer: yzheng
 ms.subservice: blobs
 ms.custom: references_regions
-ms.openlocfilehash: 149fb9c888c54ea45d273890f3fe2cd59730fa01
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 86ded3dea819702631b1fa04dbc56f727566fc98
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96355010"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602679"
 ---
 # <a name="use-azure-storage-blob-inventory-to-manage-blob-data-preview"></a>Azure Storage BLOB-inventaris gebruiken voor het beheren van BLOB-gegevens (preview)
 
@@ -23,7 +23,7 @@ De functie voor het Azure Storage BLOB-inventaris biedt een overzicht van de BLO
 
 ## <a name="availability"></a>Beschikbaarheid
 
-De BLOB-inventarisatie wordt ondersteund voor GPv2 (General version 2), Premium Block Blob Storage en ADLS Gen2-accounts (Azure DataLake Storage Gen2).
+BLOB-inventarisatie wordt ondersteund voor zowel GPv2 (General version 2) als Premium Block Blob-opslag accounts. Deze functie wordt ondersteund met of zonder de functie voor [hiërarchische naam ruimte](data-lake-storage-namespace.md) ingeschakeld.
 
 ### <a name="preview-regions"></a>Preview-regio's
 
@@ -50,7 +50,7 @@ Schakel de BLOB-inventaris rapporten in door een beleid toe te voegen aan uw ops
 1. De **BLOB-typen** voor uw inventaris rapport selecteren
 1. Een voor voegsel toevoegen die overeenkomt met het filteren van uw inventaris rapport
 1. Selecteer of u **BLOB-versies wilt toevoegen** en **moment opnamen** in uw inventaris rapport wilt toevoegen. Versies en moment opnamen moeten zijn ingeschakeld voor het account om een nieuwe regel op te slaan met de bijbehorende optie ingeschakeld.
-1. Selecteer **Opslaan**
+1. Selecteer **Opslaan**.
 
 :::image type="content" source="./media/blob-inventory/portal-blob-inventory.png" alt-text="Scherm afbeelding die laat zien hoe u een BLOB-inventaris regel toevoegt met behulp van de Azure Portal":::
 

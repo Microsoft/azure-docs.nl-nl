@@ -1,5 +1,5 @@
 ---
-title: Open bare preview van Azure AD Connect v2-eind punt voor synchronisatie} | Microsoft Docs
+title: V2-eind punt Azure AD Connect Sync | Microsoft Docs
 description: Dit document bevat updates voor de API van Azure AD Connect-synchronisatie v2-eind punten.
 services: active-directory
 author: billmath
@@ -12,34 +12,24 @@ ms.date: 05/20/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c4b9b73e30094ed7d07e19f4b93f2fe8ab8f6af3
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: ffb298bca53a06bd1ef14a750648fe6e76fd45ee
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96339418"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602101"
 ---
-# <a name="azure-ad-connect-sync-v2-endpoint-api-public-preview"></a>Azure AD Connect Sync v2-eind punt-API (open bare preview) 
+# <a name="azure-ad-connect-sync-v2-endpoint-api"></a>Eindpunt-API voor Azure AD Connect-synchronisatie v2 
 Micro soft heeft een nieuw eind punt (API) geïmplementeerd voor Azure AD Connect die de prestaties verbetert van de synchronisatie service-bewerkingen naar Azure Active Directory. Door gebruik te maken van het nieuwe v2-eind punt, kunt u zien dat er prestatie verhogingen optreden bij het exporteren en importeren naar Azure AD. Dit nieuwe eind punt ondersteunt het volgende:
     
- -  groepen synchroniseren met Maxi maal 250.000 leden
+ - groepen synchroniseren met Maxi maal 250.000 leden
  - prestatie verbeteringen bij het exporteren en importeren naar Azure AD
  
 > [!NOTE]
 > Op dit moment heeft het nieuwe eind punt geen geconfigureerde limiet voor de groeps grootte voor Microsoft 365 groepen die terug worden geschreven. Dit kan een invloed hebben op uw Active Directory en latentie van de synchronisatie cyclus. Het is raadzaam om de groeps grootten stapsgewijs te verg Roten.  
 
-
 ## <a name="pre-requisites"></a>Vereisten  
 Als u het nieuwe v2-eind punt wilt gebruiken, moet u [Azure AD Connect versie 1.5.30.0](https://www.microsoft.com/download/details.aspx?id=47594) of hoger gebruiken en de volgende implementatie stappen volgen om het v2-eind punt voor uw Azure AD Connect-server in te scha kelen.   
-
->[!NOTE]
->Deze open bare preview is momenteel alleen beschikbaar in de wereld wijde Azure-Cloud en is niet beschikbaar voor [nationale Clouds](../develop/authentication-national-cloud.md).
-
-### <a name="public-preview-limitations"></a>Beperkingen voor openbare preview  
-Hoewel deze release uitgebreide tests heeft ondergaan, kan het zijn dat u nog steeds problemen ondervindt. Een van de doel stellingen van deze open bare preview-versie is het zoeken en oplossen van dergelijke problemen.  
-
->[!IMPORTANT]
-> Hoewel er ondersteuning wordt geboden voor deze open bare preview-versie, is het mogelijk dat micro soft niet altijd alle problemen kan oplossen die u onmiddellijk kunt tegen komen. Daarom is het raadzaam om uw beste beoordeling te gebruiken voordat u deze release in uw productie omgeving implementeert. 
 
 ## <a name="deployment-guidance"></a>Implementatie richtlijnen 
 U moet [Azure AD Connect versie 1.5.30.0](https://www.microsoft.com/download/details.aspx?id=47594) of hoger implementeren om het v2-eind punt te kunnen gebruiken. Gebruik de koppeling die u hebt ontvangen om te downloaden. 
@@ -184,17 +174,9 @@ Als u het v2-eind punt hebt ingeschakeld en wilt terugdraaien, voert u de volgen
 > Wanneer u terugschakelt van de v2 naar v1-eind punten, worden groepen die zijn gesynchroniseerd met meer dan 50.000 leden verwijderd nadat een volledige synchronisatie is uitgevoerd, voor zowel AD-groepen die zijn ingericht voor Azure AD als Microsoft 365 Unified groups die aan AD zijn ingericht. 
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen  
-**V: kan een klant deze functie gebruiken in productie?**  
-</br>Ja, dit kan worden gebruikt in productie omgevingen, met het voor behoud zoals eerder beschreven.
  
-**V: wie kan de klant contact opnemen als er iets mis gaat?**  
-</br>Als u ondersteuning nodig hebt bij het gebruik van deze functie, moet u een ondersteunings aanvraag openen. 
- 
-**V: kan ik veelvoorkomende updates verwachten van de open bare preview?**  
-</br>Er is een beperkte mate van voortdurende veranderingen tijdens een open bare preview.U moet dit risico beoordelen wanneer u open bare preview-functies in productie implementeert.  
- 
-**V: tijd tot volgende mijl paal?**  
-</br>Open bare preview-mogelijkheden kunnen worden ingetrokken en mogelijk opnieuw worden ontworpen voordat verdere mijl palen worden bereikt.  
+**Wanneer wordt het nieuwe eind punt de standaard waarde voor upgrades en nieuwe installaties?**  
+</br>Er wordt een nieuwe release van AADConnect gepland die in januari 2021 moet worden gepubliceerd om te worden gedownload. Deze versie maakt standaard gebruik van het v2-eind punt en schakelt synchronisatie groepen in die groter zijn dan 50.000 withuot aanvullende configuratie. Deze release wordt vervolgens gepubliceerd voor automatische upgrade naar servers die in aanmerking komen.
  
 ## <a name="next-steps"></a>Volgende stappen
 

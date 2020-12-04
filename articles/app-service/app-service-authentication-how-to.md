@@ -4,12 +4,12 @@ description: Meer informatie over het aanpassen van de functie voor verificatie 
 ms.topic: article
 ms.date: 07/08/2020
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: 0e07dc42a45a697b293e2ebc90bdd92aa924f071
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: 85fd7fdba4c62f4837a419af44c83f7e46cb9e39
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96302023"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96601778"
 ---
 # <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Geavanceerd gebruik van verificatie en autorisatie in Azure App Service
 
@@ -24,6 +24,7 @@ Als u snel aan de slag wilt gaan, raadpleegt u een van de volgende zelf studies:
 * [Uw app configureren voor aanmelding met een Microsoft Account](configure-authentication-provider-microsoft.md)
 * [Uw app configureren voor aanmelding met Twitter](configure-authentication-provider-twitter.md)
 * [Uw app configureren voor aanmelding met een OpenID Connect Connect provider (preview-versie)](configure-authentication-provider-openid-connect.md)
+* [Uw app configureren voor aanmelding met een aanmelding met Apple (preview-versie)](configure-authentication-provider-apple.md)
 
 ## <a name="use-multiple-sign-in-providers"></a>Meerdere aanmeldings providers gebruiken
 
@@ -41,6 +42,7 @@ Voeg op de aanmeldings pagina of in de navigatie balk of op een andere locatie v
 <a href="/.auth/login/facebook">Log in with Facebook</a>
 <a href="/.auth/login/google">Log in with Google</a>
 <a href="/.auth/login/twitter">Log in with Twitter</a>
+<a href="/.auth/login/apple">Log in with Apple</a>
 ```
 
 Wanneer de gebruiker op een van de koppelingen klikt, wordt de betreffende aanmeldings pagina geopend om zich aan te melden bij de gebruiker.
@@ -315,7 +317,6 @@ De volgende uitputtende configuratie opties in het bestand:
         "enabled": <true|false>
     },
     "globalValidation": {
-        "requireAuthentication": <true|false>,
         "unauthenticatedClientAction": "RedirectToLoginPage|AllowAnonymous|Return401|Return403",
         "redirectToProvider": "<default provider alias>",
         "excludedPaths": [
@@ -349,13 +350,13 @@ De volgende uitputtende configuratie opties in het bestand:
             }
         },
         "preserveUrlFragmentsForLogins": <true|false>,
-        "allowedExternalRedirectUri": [
+        "allowedExternalRedirectUrls": [
             "https://uri1.azurewebsites.net/",
             "https://uri2.azurewebsites.net/",
             "url_scheme_of_your_app://easyauth.callback"
         ],
         "cookieExpiration": {
-            "convention": "FixedTime|IdentityProviderDerived",
+            "convention": "FixedTime|IdentityDerived",
             "timeToExpiration": "<timespan>"
         },
         "nonce": {
@@ -437,13 +438,26 @@ De volgende uitputtende configuratie opties in het bestand:
                 "consumerSecretSettingName": "APP_SETTING_CONTAINING TWITTER_CONSUMER_SECRET"
             }
         },
+        "apple": {
+            "enabled": <true|false>,
+            "registration": {
+                "clientId": "<client id>",
+                "clientSecretSettingName": "APP_SETTING_CONTAINING_APPLE_SECRET"
+            },
+            "login": {
+                "scopes": [
+                    "profile",
+                    "email"
+                ]
+            }
+        },
         "openIdConnectProviders": {
             "<providerName>": {
                 "enabled": <true|false>,
                 "registration": {
                     "clientId": "<client id>",
                     "clientCredential": {
-                        "secretSettingName": "<name of app setting containing client secret>"
+                        "clientSecretSettingName": "<name of app setting containing client secret>"
                     },
                     "openIdConnectConfiguration": {
                         "authorizationEndpoint": "<url specifying authorization endpoint>",
@@ -455,7 +469,7 @@ De volgende uitputtende configuratie opties in het bestand:
                 },
                 "login": {
                     "nameClaimType": "<name of claim containing name>",
-                    "scope": [
+                    "scopes": [
                         "openid",
                         "profile",
                         "email"
@@ -486,7 +500,7 @@ U kunt de runtime versie die door uw app wordt gebruikt, wijzigen. De nieuwe run
 
 #### <a name="view-the-current-runtime-version"></a>De huidige runtime versie weer geven
 
-U kunt de huidige versie van de platform verificatie-middleware weer geven met behulp van de Azure CLI of via een van de built0-in-versie-HTTP-eind punten in uw app.
+U kunt de huidige versie van de platform verificatie-middleware weer geven met behulp van de Azure CLI of via een van de ingebouwde versie HTTP-eind punten in uw app.
 
 ##### <a name="from-the-azure-cli"></a>Uit de Azure CLI
 

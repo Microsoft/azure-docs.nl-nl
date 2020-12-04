@@ -9,12 +9,12 @@ ms.subservice: monitoring
 ms.date: 11/30/2020
 ms.author: mahi
 ms.reviewer: mahi
-ms.openlocfilehash: f495de13c20aa2953f55e2837fab15a6c62e1083
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 9032fcaf35265c791913f5b69fb0972bada6885f
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96466832"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602458"
 ---
 # <a name="use-azure-monitor-with-your-azure-synapse-analytics-workspace"></a>Azure Monitor gebruiken met uw Azure Synapse Analytics-werk ruimte
 
@@ -36,12 +36,12 @@ Hier volgen enkele van de metrische gegevens die worden verzonden met werk ruimt
 
 | **Meting**                           | **Categorie meet waarde, weergave naam**                  | **Eenheid** | **Aggregatie typen** | **Beschrijving**                |
 |--------------------------------------|------------------------------------------|----------|----------------------|--------------------------------|
-| IntegrationActivityRunsEnded         | De metrische gegevens voor uitvoering van activiteiten                     | Aantal    | Sum (standaard), Count                | Het totale aantal uitgevoerde activiteiten in een venster van één minuut. </br></br> Gebruik de dimensie resultaat van deze metriek om te filteren op geslaagd, mislukt of eind status geannuleerd.|
-| IntegrationPipelineRunsEnded         | De metrische gegevens van de pijplijn uitvoering                     | Aantal    | Sum (standaard), Count                | Het totale aantal uitvoeringen van de pijp lijn dat in een venster van één minuut is opgetreden/beëindigd. </br></br> Gebruik de dimensie resultaat van deze metriek om te filteren op geslaagd, mislukt of eind status geannuleerd. |
-| IntegrationTriggerRunsEnded          | Integratie, metrische gegevens voor triggers uitvoeren                      | Aantal    | Sum (standaard), Count                | Het totale aantal uitgevoerde triggers in een venster van één minuut. </br></br> Gebruik de dimensie resultaat van deze metriek om te filteren op geslaagd, mislukt of eind status geannuleerd. |
+| IntegrationActivityRunsEnded         | De metrische gegevens voor uitvoering van activiteiten                     | Count    | Sum (standaard), Count                | Het totale aantal uitgevoerde activiteiten in een venster van één minuut. </br></br> Gebruik de dimensie resultaat van deze metriek om te filteren op geslaagd, mislukt of eind status geannuleerd.|
+| IntegrationPipelineRunsEnded         | De metrische gegevens van de pijplijn uitvoering                     | Count    | Sum (standaard), Count                | Het totale aantal uitvoeringen van de pijp lijn dat in een venster van één minuut is opgetreden/beëindigd. </br></br> Gebruik de dimensie resultaat van deze metriek om te filteren op geslaagd, mislukt of eind status geannuleerd. |
+| IntegrationTriggerRunsEnded          | Integratie, metrische gegevens voor triggers uitvoeren                      | Count    | Sum (standaard), Count                | Het totale aantal uitgevoerde triggers in een venster van één minuut. </br></br> Gebruik de dimensie resultaat van deze metriek om te filteren op geslaagd, mislukt of eind status geannuleerd. |
 | BuiltinSqlPoolDataProcessedBytes     | Ingebouwde SQL-groep, verwerkte gegevens (bytes) | Byte | Sum (standaard) | De hoeveelheid gegevens die wordt verwerkt door de ingebouwde serverloze SQL-groep. |
-| BuiltinSqlPoolLoginAttempts          | Ingebouwde SQL-groep, aanmeldings pogingen | Aantal | Sum (standaard) | Aantal aanmeldings pogingen voor de ingebouwde serverloze SQL-groep. |
-| BuiltinSqlPoolDataRequestsEnded      | Ingebouwde SQL-groep, aanvragen beëindigd (bytes) | Aantal | Sum (standaard) | Aantal beëindigde SQL-aanvragen voor de ingebouwde serverloze SQL-groep. </br></br> Gebruik de dimensie resultaat van deze metriek om te filteren op eind status. |
+| BuiltinSqlPoolLoginAttempts          | Ingebouwde SQL-groep, aanmeldings pogingen | Count | Sum (standaard) | Aantal aanmeldings pogingen voor de ingebouwde serverloze SQL-groep. |
+| BuiltinSqlPoolDataRequestsEnded      | Ingebouwde SQL-groep, aanvragen beëindigd (bytes) | Count | Sum (standaard) | Aantal beëindigde SQL-aanvragen voor de ingebouwde serverloze SQL-groep. </br></br> Gebruik de dimensie resultaat van deze metriek om te filteren op eind status. |
 
 ### <a name="dedicated-sql-pool-metrics"></a>Metrische gegevens van toegewezen SQL-groep
 
@@ -49,21 +49,21 @@ Hier volgen enkele van de metrische gegevens die worden verzonden door toegeweze
 
 | **Meting**                           | **Display name** (Weergavenaam)                  | **Eenheid** | **Aggregatie typen** | **Beschrijving**                |
 |--------------------------------------|------------------------------------------|----------|----------------------|--------------------------------|
-| DWULimit                            | Limiet voor DWU                       | Aantal   | Max (standaard waarde), min, Gem | Geconfigureerde grootte van de SQL-groep |
-| DWUUsed                             | DWU gebruikt                        | Aantal   | Max (standaard waarde), min, Gem | Vertegenwoordigt een weer gave op hoog niveau van het gebruik in de SQL-groep. Gemeten met DWU-limiet * DWU percentage |
+| DWULimit                            | Limiet voor DWU                       | Count   | Max (standaard waarde), min, Gem | Geconfigureerde grootte van de SQL-groep |
+| DWUUsed                             | DWU gebruikt                        | Count   | Max (standaard waarde), min, Gem | Vertegenwoordigt een weer gave op hoog niveau van het gebruik in de SQL-groep. Gemeten met DWU-limiet * DWU percentage |
 | DWUUsedPercent                      | Percentage gebruikt DWU             | Percentage | Max (standaard waarde), min, Gem | Vertegenwoordigt een weer gave op hoog niveau van het gebruik in de SQL-groep. Gemeten door het maximum te nemen tussen het CPU-percentage en het IO-percentage voor gegevens |
-| ConnectionsBlockedByFirewall        | Verbindingen geblokkeerd door Firewall | Aantal   | Sum (standaard)   | Het aantal verbindingen dat wordt geblokkeerd door firewall regels. Ga naar het toegangs beheer beleid voor uw SQL-groep en controleer deze verbindingen als het aantal hoog is |
+| ConnectionsBlockedByFirewall        | Verbindingen geblokkeerd door Firewall | Count   | Sum (standaard)   | Het aantal verbindingen dat wordt geblokkeerd door firewall regels. Ga naar het toegangs beheer beleid voor uw SQL-groep en controleer deze verbindingen als het aantal hoog is |
 | AdaptiveCacheHitPercent             | Treffer percentage van adaptieve cache   | Percentage | Max (standaard waarde), min, Gem | Meet hoe goed werk belastingen gebruikmaken van de adaptieve cache. Gebruik deze metriek met de metrische gegevens in het cache geheugen om te bepalen of u een extra capaciteit wilt schalen of de werk belasting opnieuw wilt uitvoeren om de cache te hydraten |
 | AdaptiveCacheUsedPercent            | Percentage van adaptief cache gebruik  | Percentage | Max (standaard waarde), min, Gem | Meet hoe goed werk belastingen gebruikmaken van de adaptieve cache. Gebruik deze metriek met de waarde voor het gebruikte percentage van het cache geheugen om te bepalen of u wilt schalen op extra capaciteit of werk belastingen opnieuw wilt uitvoeren voor de cache |
 | LocalTempDBUsedPercent              | Percentage lokaal gebruikte tempdb    | Percentage | Max (standaard waarde), min, Gem | Lokaal TempDB-gebruik voor alle reken knooppunten: de waarden worden elke vijf minuten verzonden |
 | MemoryUsedPercent                   | Percentage gebruikt geheugen          | Percentage | Max (standaard waarde), min, Gem | Geheugen gebruik op alle knoop punten in de SQL-groep |
 | CPUPercent                          | Percentage gebruikt CPU             | Percentage | Max (standaard waarde), min, Gem | CPU-gebruik in alle knoop punten in de SQL-groep |
-| Verbindingen                         | Verbindingen                     | Aantal   | Sum (standaard)  | Totaal aantal aanmeldingen bij de SQL-groep |
-| ActiveQueries                      | Actieve query's                 | Aantal   | Sum (standaard)   | De actieve query's. Als u deze metrische waarde onfilterd en ongesplitst gebruikt, worden alle actieve query's weer gegeven die worden uitgevoerd op het systeem |
-| QueuedQueries                      | Query's in de wachtrij                  | Aantal   | Sum (standaard)   | Cumulatief aantal aanvragen dat in de wachtrij is geplaatst nadat de limiet voor het maximum aantal gelijktijdig is bereikt |
-| WLGActiveQueries                   | Actieve query's voor werkbelasting groep   | Aantal   | Sum (standaard)   | De actieve query's binnen de werkbelasting groep. Als u deze metrische waarde onfilterd en ongesplitst gebruikt, worden alle actieve query's weer gegeven die worden uitgevoerd op het systeem |
-| WLGActiveQueriesTimeouts           | Time-outs query werkbelasting groep   | Aantal   | Sum (standaard)   | Query's voor de werkbelasting groep waarvoor een time-out is opgetreden. Querytime-time-outs die door deze metrische gegevens worden gerapporteerd, worden slechts eenmaal gestart nadat de query is uitgevoerd (de wacht tijd is niet opgenomen als gevolg van vergren deling of wachten op een resource) |
-| WLGQueuedQueries                   | Werkbelasting groep in wachtrij geplaatste query's   | Aantal   | Sum (standaard)   | Cumulatief aantal aanvragen dat in de wachtrij is geplaatst nadat de limiet voor het maximum aantal gelijktijdig is bereikt |
+| Verbindingen                         | Verbindingen                     | Count   | Sum (standaard)  | Totaal aantal aanmeldingen bij de SQL-groep |
+| ActiveQueries                      | Actieve query's                 | Count   | Sum (standaard)   | De actieve query's. Als u deze metrische waarde onfilterd en ongesplitst gebruikt, worden alle actieve query's weer gegeven die worden uitgevoerd op het systeem |
+| QueuedQueries                      | Query's in de wachtrij                  | Count   | Sum (standaard)   | Cumulatief aantal aanvragen dat in de wachtrij is geplaatst nadat de limiet voor het maximum aantal gelijktijdig is bereikt |
+| WLGActiveQueries                   | Actieve query's voor werkbelasting groep   | Count   | Sum (standaard)   | De actieve query's binnen de werkbelasting groep. Als u deze metrische waarde onfilterd en ongesplitst gebruikt, worden alle actieve query's weer gegeven die worden uitgevoerd op het systeem |
+| WLGActiveQueriesTimeouts           | Time-outs query werkbelasting groep   | Count   | Sum (standaard)   | Query's voor de werkbelasting groep waarvoor een time-out is opgetreden. Querytime-time-outs die door deze metrische gegevens worden gerapporteerd, worden slechts eenmaal gestart nadat de query is uitgevoerd (de wacht tijd is niet opgenomen als gevolg van vergren deling of wachten op een resource) |
+| WLGQueuedQueries                   | Werkbelasting groep in wachtrij geplaatste query's   | Count   | Sum (standaard)   | Cumulatief aantal aanvragen dat in de wachtrij is geplaatst nadat de limiet voor het maximum aantal gelijktijdig is bereikt |
 | WLGAllocationBySystemPercent        | Toewijzing van werkbelasting groep per systeem percentage | Percentage | Max (standaard), min, Gem, Sum | Het percentage toewijzing van resources ten opzichte van het hele systeem |
 | WLGAllocationByEffectiveCapResourcePercent   | Toewijzing van werkbelasting groep op Maxi maal resource percentage | Percentage | Max (standaard waarde), min, Gem | Geeft de percentage toewijzing van resources ten opzichte van het resource percentage van de effectief cap per werkbelasting groep. Deze metrische gegevens bieden het effectief gebruik van de werkbelasting groep |
 | WLGEffectiveCapResourcePercent      | Effectief cap-resource percentage  | Percentage | Max (standaard waarde), min, Gem | Het werkelijke Cap-resource percentage voor de werkbelasting groep. Als er andere werkbelasting groepen zijn met min_percentage_resource > 0, wordt de effective_cap_percentage_resource proportioneel verlaagd |
@@ -75,10 +75,10 @@ Hier volgen enkele van de metrische gegevens die worden verzonden door Apache Sp
 
 | **Meting**                           | **Categorie meet waarde, weergave naam**                  | **Eenheid** | **Aggregatie typen** | **Beschrijving**                |
 |--------------------------------------|------------------------------------------|----------|----------------------|--------------------------------|
-| BigDataPoolApplicationsEnded  | Beëindigde Apache Spark toepassingen  | Aantal | Sum (standaard) | Aantal beëindigde Apache Spark groeps toepassingen |
-| BigDataPoolAllocatedCores     | Aantal vCores dat aan de Apache Spark pool is toegewezen                 | Aantal | Max (standaard waarde), min, Gem | Toegewezen vCores voor een Apache Spark groep |
-| BigDataPoolAllocatedMemory    | Hoeveelheid geheugen (GB) die aan de Apache Spark pool is toegewezen            | Aantal | Max (standaard waarde), min, Gem | Toegewezen geheugen voor Apache Spark pool (GB) |
-| BigDataPoolApplicationsActive | Actieve Apache Spark-toepassingen | Aantal | Max (standaard waarde), min, Gem | Aantal actieve Apache Spark groeps toepassingen |
+| BigDataPoolApplicationsEnded  | Beëindigde Apache Spark toepassingen  | Count | Sum (standaard) | Aantal beëindigde Apache Spark groeps toepassingen |
+| BigDataPoolAllocatedCores     | Aantal vCores dat aan de Apache Spark pool is toegewezen                 | Count | Max (standaard waarde), min, Gem | Toegewezen vCores voor een Apache Spark groep |
+| BigDataPoolAllocatedMemory    | Hoeveelheid geheugen (GB) die aan de Apache Spark pool is toegewezen            | Count | Max (standaard waarde), min, Gem | Toegewezen geheugen voor Apache Spark pool (GB) |
+| BigDataPoolApplicationsActive | Actieve Apache Spark-toepassingen | Count | Max (standaard waarde), min, Gem | Aantal actieve Apache Spark groeps toepassingen |
 
 ## <a name="alerts"></a>Waarschuwingen
 
@@ -107,7 +107,6 @@ Dit zijn de logboeken die worden gegenereerd door Azure Synapse Analytics-werk r
 |-------------------------------|-------------------------------------------------|-------------|
 | SynapseGatewayApiRequests     | GatewayApiRequests             | API-aanvragen van Azure Synapse gateway. |
 | SynapseRbacOperations         | SynapseRbacOperations          | Azure Synapse (SRBAC)-bewerkingen op basis van op rollen gebaseerde toegangs beheer. |
-| SynapseBuiltinSqlPoolRequestsEnded   | BuiltInSqlReqsEnded    | De ingebouwde Azure Synapse-serverloze SQL-aanvragen zijn beëindigd. |
 
 ### <a name="dedicated-sql-pool-logs"></a>Exclusieve logboeken van de SQL-groep
 

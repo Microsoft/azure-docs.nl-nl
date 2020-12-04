@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: vincesm
 ms.custom: it-pro, seodec18, contperfq1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 29580564ffa2fed579065e6a8551a6f44597e41a
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: d8825dcb2d8dbcf4a1296d8bace84b3d2716687f
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96433254"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602027"
 ---
 # <a name="what-are-the-default-user-permissions-in-azure-active-directory"></a>Wat zijn de standaard machtigingen voor gebruikers in Azure Active Directory?
 In Azure Active Directory (Azure AD) wordt aan alle gebruikers een reeks standaardmachtigingen verleend. De toegang van een gebruiker bestaat uit het type gebruiker, hun [roltoewijzingen](active-directory-users-assign-role-azure-portal.md)en hun eigendom van afzonderlijke objecten. Dit artikel beschrijft deze standaardmachtigingen en bevat een vergelijking van de standaardinstellingen voor lid- en gastgebruikers. De standaard gebruikers machtigingen kunnen alleen worden gewijzigd in gebruikers instellingen in azure AD.
@@ -30,9 +30,9 @@ De set standaard machtigingen die worden ontvangen, is afhankelijk van het feit 
 
 ## <a name="compare-member-and-guest-default-permissions"></a>Standaardmachtigingen voor leden en gasten vergelijken
 
-**Onderwerp** | **Machtigingen voor lidgebruikers** | **Standaard machtigingen voor gast gebruikers** | **Beperkte gebruikers machtigingen voor gasten (preview-versie)**
+**Gebied** | **Machtigingen voor lidgebruikers** | **Standaard machtigingen voor gast gebruikers** | **Beperkte gebruikers machtigingen voor gasten (preview-versie)**
 ------------ | --------- | ---------- | ----------
-Gebruikers en contactpersonen | <ul><li>Lijst met alle gebruikers en contact personen opsommen<li>Alle openbare eigenschappen lezen van gebruikers en contactpersonen</li><li>Gasten uitnodigen<li>Eigen wachtwoord wijzigen<li>Eigen mobiele nummer beheren<li>Eigen foto beheren<li>Eigen vernieuwingstekens ongeldig verklaren</li></ul> | <ul><li>Eigen eigenschappen lezen<li>Weergave naam, e-mail adres, aanmeldings naam, foto, user principal name en gebruikers type-eigenschappen van andere gebruikers en contact personen lezen<li>Eigen wachtwoord wijzigen<li>Zoeken naar een andere gebruiker op weergave naam, User Principal name of ObjectId (indien toegestaan)<li>Informatie over lees beheer en directe rapporten van andere gebruikers</li></ul> | <ul><li>Eigen eigenschappen lezen<li>Eigen wachtwoord wijzigen</li></ul>
+Gebruikers en contactpersonen | <ul><li>Lijst met alle gebruikers en contact personen opsommen<li>Alle openbare eigenschappen lezen van gebruikers en contactpersonen</li><li>Gasten uitnodigen<li>Eigen wachtwoord wijzigen<li>Eigen mobiele nummer beheren<li>Eigen foto beheren<li>Eigen vernieuwingstekens ongeldig verklaren</li></ul> | <ul><li>Eigen eigenschappen lezen<li>Weergave naam, e-mail adres, aanmeldings naam, foto, user principal name en gebruikers type-eigenschappen van andere gebruikers en contact personen lezen<li>Eigen wachtwoord wijzigen<li>Zoeken naar een andere gebruiker door ObjectId (indien toegestaan)<li>Informatie over lees beheer en directe rapporten van andere gebruikers</li></ul> | <ul><li>Eigen eigenschappen lezen<li>Eigen wachtwoord wijzigen</li></ul>
 Groepen | <ul><li>Beveiligingsgroepen maken<li>Microsoft 365 groepen maken<li>Lijst met alle groepen opsommen<li>Alle eigenschappen van groepen lezen<li>Niet-verborgen groepslidmaatschappen lezen<li>Verborgen Microsoft 365 groepslid maatschappen voor gekoppelde groep lezen<li>Eigenschappen, eigendom en lidmaatschap van groepen beheren waarvan de gebruiker eigenaar is<li>Gasten toevoegen aan groepen in eigendom<li>Instellingen voor dynamisch lidmaatschap beheren<li>Groepen in eigendom verwijderen<li>In eigendom zijn van Microsoft 365 groepen herstellen</li></ul> | <ul><li>Eigenschappen van niet-verborgen groepen lezen, inclusief lidmaatschap en eigendom (zelfs niet-gekoppelde groepen)<li>Verborgen Microsoft 365 groepslid maatschappen voor samengevoegde groepen lezen<li>Zoeken naar groepen op weergave naam of ObjectId (indien toegestaan)</li></ul> | <ul><li>Object-id voor samengevoegde groepen lezen<li>Lidmaatschap en eigendom van gekoppelde groepen in sommige Microsoft 365-apps lezen (indien toegestaan)</li></ul>
 Toepassingen | <ul><li>Nieuwe toepassing registreren (maken)<li>Lijst met alle toepassingen opsommen<li>Eigenschappen van geregistreerde en bedrijfstoepassingen lezen<li>Eigenschappen, toewijzingen en referenties van toepassingen beheren voor toepassingen in eigendom<li>Toepassingswachtwoord voor gebruiker maken of verwijderen<li>Toepassingen in eigendom verwijderen<li>Toepassingen in eigendom herstellen</li></ul> | <ul><li>Eigenschappen van geregistreerde en bedrijfstoepassingen lezen</li></ul> | <ul><li>Eigenschappen van geregistreerde en bedrijfstoepassingen lezen
 Apparaten</li></ul> | <ul><li>Lijst met alle apparaten opsommen<li>Alle eigenschappen van apparaten lezen<li>Alle eigenschappen van apparaten in eigendom lezen</li></ul> | Geen machtigingen | Geen machtigingen

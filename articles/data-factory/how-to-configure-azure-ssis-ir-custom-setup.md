@@ -12,12 +12,12 @@ manager: mflasko
 ms.reviewer: douglasl
 ms.custom: seo-lt-2019
 ms.date: 11/06/2020
-ms.openlocfilehash: 1885dd76a94a7a4a6b91c67735103350c473ba44
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: bc5d2cad7b4fbf1871d2c02dc91db30daf55e855
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93378428"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96600724"
 ---
 # <a name="customize-the-setup-for-an-azure-ssis-integration-runtime"></a>De instellingen voor een Azure-SSIS Integration Runtime aanpassen
 
@@ -28,8 +28,8 @@ U kunt uw Azure-SQL Server Integration Services (SSIS) Integration Runtime (IR) 
 Door aangepaste instellingen te gebruiken, kunt u de standaard configuratie van het besturings systeem of de omgeving van uw Azure-SSIS IR wijzigen. Als u bijvoorbeeld extra Windows-Services wilt starten, moet u toegangs referenties voor bestands shares behouden of gebruikmaken van sterke crypto grafie/veiliger netwerk protocol (TLS 1,2). U kunt ook extra onderdelen, zoals assembly's, stuur Programma's of uitbrei dingen, op elk knoop punt van uw Azure-SSIS IR installeren. Ze kunnen aangepaste onderdelen, open source-of componenten van derden zijn. Zie [Ingebouwde/vooraf geïnstalleerde onderdelen op Azure-SSIS IR](./built-in-preinstalled-components-ssis-integration-runtime.md) voor meer informatie over ingebouwde en vooraf geïnstalleerde onderdelen.
 
 U kunt op twee manieren aangepaste installatie op uw Azure-SSIS IR uitvoeren: 
-* **Aangepaste standaard installatie met een script** : bereid een script en de bijbehorende bestanden voor en upload deze allemaal samen naar een BLOB-container in uw Azure Storage-account. Vervolgens geeft u een Shared Access Signature (SAS) Uniform Resource Identifier (URI) voor uw container op wanneer u uw Azure-SSIS IR instelt of opnieuw configureert. Elk knoop punt van uw Azure-SSIS IR downloadt vervolgens het script en de bijbehorende bestanden uit uw container en voert uw aangepaste installatie uit met verhoogde machtigingen. Wanneer uw aangepaste installatie is voltooid, uploadt elk knoop punt de standaard uitvoer van de uitvoering en andere logboeken naar uw container.
-* **Snelle aangepaste installatie zonder script** : Voer enkele algemene systeem configuraties en Windows-opdrachten uit of installeer populaire of aanbevolen extra onderdelen zonder scripts te gebruiken.
+* **Aangepaste standaard installatie met een script**: bereid een script en de bijbehorende bestanden voor en upload deze allemaal samen naar een BLOB-container in uw Azure Storage-account. Vervolgens geeft u een Shared Access Signature (SAS) Uniform Resource Identifier (URI) voor uw container op wanneer u uw Azure-SSIS IR instelt of opnieuw configureert. Elk knoop punt van uw Azure-SSIS IR downloadt vervolgens het script en de bijbehorende bestanden uit uw container en voert uw aangepaste installatie uit met verhoogde machtigingen. Wanneer uw aangepaste installatie is voltooid, uploadt elk knoop punt de standaard uitvoer van de uitvoering en andere logboeken naar uw container.
+* **Snelle aangepaste installatie zonder script**: Voer enkele algemene systeem configuraties en Windows-opdrachten uit of installeer populaire of aanbevolen extra onderdelen zonder scripts te gebruiken.
 
 U kunt gratis (zonder licentie) en betaalde (gelicentieerde) onderdelen installeren met standaard en snelle aangepaste installatie. Als u een onafhankelijke software leverancier (ISV) bent, raadpleegt u [betaalde of gelicentieerde onderdelen voor Azure-SSIS IR ontwikkelen](how-to-develop-azure-ssis-ir-licensed-components.md).
 
@@ -72,7 +72,7 @@ Voer de volgende stappen uit om uw Azure-SSIS IR in te richten of opnieuw te con
 
    * U moet een script bestand met de naam *Main. cmd* hebben. Dit is het toegangs punt van uw aangepaste installatie.  
    * Om ervoor te zorgen dat het script op de achtergrond kan worden uitgevoerd, moet u het eerst testen op uw lokale machine.  
-   * Als u wilt dat extra logboeken die worden gegenereerd door andere hulpprogram ma's (bijvoorbeeld *msiexec.exe* ) worden geüpload naar uw container, geeft u de vooraf gedefinieerde omgevings variabele op, `CUSTOM_SETUP_SCRIPT_LOG_DIR` als de logboekmap in uw scripts (bijvoorbeeld *msiexec/i xxx.msi/quiet/LV% CUSTOM_SETUP_SCRIPT_LOG_DIR% \ install. log* ).
+   * Als u wilt dat extra logboeken die worden gegenereerd door andere hulpprogram ma's (bijvoorbeeld *msiexec.exe*) worden geüpload naar uw container, geeft u de vooraf gedefinieerde omgevings variabele op, `CUSTOM_SETUP_SCRIPT_LOG_DIR` als de logboekmap in uw scripts (bijvoorbeeld *msiexec/i xxx.msi/quiet/LV% CUSTOM_SETUP_SCRIPT_LOG_DIR% \ install. log*).
 
 1. Down load, installeer en open [Azure Storage Explorer](https://storageexplorer.com/).
 
@@ -88,7 +88,7 @@ Voer de volgende stappen uit om uw Azure-SSIS IR in te richten of opnieuw te con
 
       ![Naam en sleutel van opslag account opgeven](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image3.png)
 
-   d. Klik onder uw verbonden Azure Storage-account met de rechter muisknop op **BLOB-containers** , selecteer **BLOB-container maken** en geef de nieuwe container een naam.
+   d. Klik onder uw verbonden Azure Storage-account met de rechter muisknop op **BLOB-containers**, selecteer **BLOB-container maken** en geef de nieuwe container een naam.
 
       ![Een blobcontainer maken](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image4.png)
 
@@ -127,7 +127,7 @@ Voer de volgende stappen uit om uw Azure-SSIS IR in te richten of opnieuw te con
 
 #### <a name="running-cmdkey-command"></a>Opdracht cmdkey uitvoeren
 
-Als u het **opdracht cmdkey uitvoeren** selecteert voor uw snelle aangepaste installatie, kunt u de Windows cmdkey-opdracht uitvoeren op uw Azure-SSIS IR. Hiertoe voert u de naam van uw doel computer of de domein naam, de gebruikers naam, de accountnaam en het wacht woord of de account sleutel in de tekst vakken **/add** , **/User** en **/Pass** in. Zo kunt u toegangs referenties voor SQL-servers, bestands shares of Azure Files op uw Azure-SSIS IR behouden. Als u bijvoorbeeld toegang wilt krijgen tot Azure Files, kunt `YourAzureStorageAccountName.file.core.windows.net` u `azure\YourAzureStorageAccountName` respectievelijk, en `YourAzureStorageAccountKey` voor **/add** , **/User** en **/Pass** invoeren. Dit is vergelijkbaar met het uitvoeren van de Windows [cmdkey](/windows-server/administration/windows-commands/cmdkey) -opdracht op uw lokale computer. Slechts één snelle aangepaste installatie voor het uitvoeren van de opdracht cmdkey wordt nu ondersteund. Als u meerdere cmdkey-opdrachten wilt uitvoeren, gebruikt u in plaats daarvan een aangepaste standaard installatie.
+Als u het **opdracht cmdkey uitvoeren** selecteert voor uw snelle aangepaste installatie, kunt u de Windows cmdkey-opdracht uitvoeren op uw Azure-SSIS IR. Hiertoe voert u de naam van uw doel computer of de domein naam, de gebruikers naam, de accountnaam en het wacht woord of de account sleutel in de tekst vakken **/add**, **/User** en **/Pass** in. Zo kunt u toegangs referenties voor SQL-servers, bestands shares of Azure Files op uw Azure-SSIS IR behouden. Als u bijvoorbeeld toegang wilt krijgen tot Azure Files, kunt `YourAzureStorageAccountName.file.core.windows.net` u `azure\YourAzureStorageAccountName` respectievelijk, en `YourAzureStorageAccountKey` voor **/add**, **/User** en **/Pass** invoeren. Dit is vergelijkbaar met het uitvoeren van de Windows [cmdkey](/windows-server/administration/windows-commands/cmdkey) -opdracht op uw lokale computer. Slechts één snelle aangepaste installatie voor het uitvoeren van de opdracht cmdkey wordt nu ondersteund. Als u meerdere cmdkey-opdrachten wilt uitvoeren, gebruikt u in plaats daarvan een aangepaste standaard installatie.
 
 #### <a name="adding-environment-variables"></a>Omgevings variabelen toevoegen
 
@@ -157,7 +157,7 @@ Als u het **onderdeel type licenties installeren** selecteert voor uw snelle aan
 
    * Als u het **SSIS-standaard pakket** onderdeel voor CData selecteert, kunt u de [SSIS Standard-pakket](https://www.cdata.com/kb/entries/ssis-adf-packages.rst#standard) suite van de populairste onderdelen van CDATA installeren, zoals micro soft share point-connectors, op uw Azure-SSIS IR. Als u dit wilt doen, voert u de product licentie code die u hebt aangeschaft vooraf in het tekstvak **licentie code** in. De huidige geïntegreerde versie is **19,7354**.
 
-   * Als u het **Extended SSIS-pakket** onderdeel van CDATA selecteert, kunt u de [SSIS Extended package](https://www.cdata.com/kb/entries/ssis-adf-packages.rst#extended) suite van alle onderdelen van CData installeren, zoals micro soft Dynamics 365 Business Central connectors en andere onderdelen in hun **SSIS-standaard pakket** , op uw Azure-SSIS IR. Als u dit wilt doen, voert u de product licentie code die u hebt aangeschaft vooraf in het tekstvak **licentie code** in. De huidige geïntegreerde versie is **19,7354**. Als gevolg van de omvang van de installatie, moet u ervoor zorgen dat uw Azure-SSIS IR ten minste 4 CPU-kernen per knoop punt heeft.
+   * Als u het **Extended SSIS-pakket** onderdeel van CDATA selecteert, kunt u de [SSIS Extended package](https://www.cdata.com/kb/entries/ssis-adf-packages.rst#extended) suite van alle onderdelen van CData installeren, zoals micro soft Dynamics 365 Business Central connectors en andere onderdelen in hun **SSIS-standaard pakket**, op uw Azure-SSIS IR. Als u dit wilt doen, voert u de product licentie code die u hebt aangeschaft vooraf in het tekstvak **licentie code** in. De huidige geïntegreerde versie is **19,7354**. Als gevolg van de omvang van de installatie, moet u ervoor zorgen dat uw Azure-SSIS IR ten minste 4 CPU-kernen per knoop punt heeft.
 
 Uw toegevoegde snelle aangepaste Setup wordt weer gegeven op de pagina **Geavanceerde instellingen** . Als u deze wilt verwijderen, schakelt u de selectie vakjes in en selecteert u **Verwijderen**.
 
@@ -273,7 +273,7 @@ Voer de volgende stappen uit om enkele voor beelden van aangepaste standaard ins
 
 1. Maak verbinding met onze open bare preview-container met behulp van Azure Storage Explorer.
 
-   a. Onder **(lokaal en gekoppeld)** klikt u met de rechter muisknop op **opslag accounts** , selecteert **u verbinding maken met Azure Storage** , selecteert **u een Connection String of een URI voor de hand tekening voor gedeelde toegang gebruiken** en selecteert u vervolgens **volgende**.
+   a. Onder **(lokaal en gekoppeld)** klikt u met de rechter muisknop op **opslag accounts**, selecteert **u verbinding maken met Azure Storage**, selecteert **u een Connection String of een URI voor de hand tekening voor gedeelde toegang gebruiken** en selecteert u vervolgens **volgende**.
 
       ![Verbinding maken met Azure Storage met de Shared Access Signature](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image9.png)
 
@@ -287,67 +287,67 @@ Voer de volgende stappen uit om enkele voor beelden van aangepaste standaard ins
 
    d. Selecteer in het linkerdeel venster de container Connected **publicpreview** en dubbel klik vervolgens op de map *CustomSetupScript* . In deze map zijn de volgende items:
 
-      * Een voor *beeld* van een map, die een aangepaste installatie bevat voor het installeren van een basis taak op elk knoop punt van uw Azure-SSIS IR. De taak heeft niets maar een paar seconden in de slaap stand. De map bevat ook een map *gacutil* , waarvan de volledige inhoud ( *gacutil.exe* , *gacutil.exe.config* en *1033\gacutlrc.dll* ) naar uw container kan worden gekopieerd.
+      * Een voor *beeld* van een map, die een aangepaste installatie bevat voor het installeren van een basis taak op elk knoop punt van uw Azure-SSIS IR. De taak heeft niets maar een paar seconden in de slaap stand. De map bevat ook een map *gacutil* , waarvan de volledige inhoud (*gacutil.exe*, *gacutil.exe.config* en *1033\gacutlrc.dll*) naar uw container kan worden gekopieerd.
 
-      * Een *UserScenarios* -map, die verschillende aangepaste installatie voorbeelden bevat uit echte gebruikers scenario's. Als u meerdere voor beelden op uw Azure-SSIS IR wilt installeren, kunt u de aangepaste installatie script bestanden ( *Main. cmd* ) samen voegen met één en uploaden naar de container met alle bijbehorende bestanden.
+      * Een *UserScenarios* -map, die verschillende aangepaste installatie voorbeelden bevat uit echte gebruikers scenario's. Als u meerdere voor beelden op uw Azure-SSIS IR wilt installeren, kunt u de aangepaste installatie script bestanden (*Main. cmd*) samen voegen met één en uploaden naar de container met alle bijbehorende bestanden.
 
         ![Inhoud van de open bare preview-container](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image11.png)
 
    e. Dubbel klik op de map *UserScenarios* om de volgende items te zoeken:
 
-      * Een *.NET FRAMEWORK 3,5* -map die een aangepast installatie script ( *Main. cmd* ) bevat voor de installatie van een eerdere versie van de .NET Framework op elk knoop punt van uw Azure-SSIS IR. Deze versie is mogelijk vereist voor sommige aangepaste onderdelen.
+      * Een *.NET FRAMEWORK 3,5* -map die een aangepast installatie script (*Main. cmd*) bevat voor de installatie van een eerdere versie van de .NET Framework op elk knoop punt van uw Azure-SSIS IR. Deze versie is mogelijk vereist voor sommige aangepaste onderdelen.
 
-      * Een *bcp* -map die een aangepast installatie script ( *Main. cmd* ) bevat voor het installeren van SQL Server opdracht regel programma's ( *MsSqlCmdLnUtils.msi* ) op elk knoop punt van uw Azure-SSIS IR. Een van deze hulpprogram ma's is het pakket voor bulksgewijs kopiëren ( *bcp* ).
+      * Een *bcp* -map die een aangepast installatie script (*Main. cmd*) bevat voor het installeren van SQL Server opdracht regel programma's (*MsSqlCmdLnUtils.msi*) op elk knoop punt van uw Azure-SSIS IR. Een van deze hulpprogram ma's is het pakket voor bulksgewijs kopiëren (*bcp*).
 
-      * Een *DNS-achtervoegsel* , dat een aangepast installatie script ( *Main. cmd* ) bevat om uw eigen DNS-achtervoegsel (bijvoorbeeld *test.com* ) toe te voegen aan een niet-gekwalificeerde domein naam met één label en deze in te scha kelen in een FQDN-naam (Fully Qualified Domain Name) voordat u deze in DNS-query's van uw Azure-SSIS IR gebruikt.
+      * Een *DNS-achtervoegsel* , dat een aangepast installatie script (*Main. cmd*) bevat om uw eigen DNS-achtervoegsel (bijvoorbeeld *test.com*) toe te voegen aan een niet-gekwalificeerde domein naam met één label en deze in te scha kelen in een FQDN-naam (Fully Qualified Domain Name) voordat u deze in DNS-query's van uw Azure-SSIS IR gebruikt.
 
-      * Een *Excel* -map, die een aangepast installatie script ( *Main. cmd* ) bevat voor het installeren van enkele C#-assembly's en-bibliotheken op elk knoop punt van uw Azure-SSIS IR. U kunt ze gebruiken in script taken om Excel-bestanden dynamisch te lezen en te schrijven. 
+      * Een *Excel* -map, die een aangepast installatie script (*Main. cmd*) bevat voor het installeren van enkele C#-assembly's en-bibliotheken op elk knoop punt van uw Azure-SSIS IR. U kunt ze gebruiken in script taken om Excel-bestanden dynamisch te lezen en te schrijven. 
       
         Down load eerst [*ExcelDataReader.dll*](https://www.nuget.org/packages/ExcelDataReader/) en [*DocumentFormat.OpenXml.dll*](https://www.nuget.org/packages/DocumentFormat.OpenXml/)en upload deze allemaal samen met *Main. cmd* naar uw container. Als u alleen de standaard-Excel-connectors wilt gebruiken (verbindings beheer, bron en doel), is het toegangs herdistribueerte bestand dat deze bevat, al vooraf geïnstalleerd op uw Azure-SSIS IR, zodat u geen aangepaste installatie hoeft te installeren.
       
-      * Een *MySQL ODBC-* map, die een aangepast installatie script ( *Main. cmd* ) bevat voor het installeren van de MySQL ODBC-stuur Programma's op elk knoop punt van uw Azure-SSIS IR. Met deze installatie kunt u de ODBC-connectors (verbindings beheer, bron en doel) gebruiken om verbinding te maken met de MySQL-server. 
+      * Een *MySQL ODBC-* map, die een aangepast installatie script (*Main. cmd*) bevat voor het installeren van de MySQL ODBC-stuur Programma's op elk knoop punt van uw Azure-SSIS IR. Met deze installatie kunt u de ODBC-connectors (verbindings beheer, bron en doel) gebruiken om verbinding te maken met de MySQL-server. 
      
-        [Down load eerst de nieuwste 64-bits en 32-bits versies van de MySQL ODBC-stuur Programma's](https://dev.mysql.com/downloads/connector/odbc/) (bijvoorbeeld *mysql-connector-odbc-8.0.13-winx64.msi* en *mysql-connector-odbc-8.0.13-win32.msi* ) en upload deze allemaal samen met *Main. cmd* naar uw container.
+        [Down load eerst de nieuwste 64-bits en 32-bits versies van de MySQL ODBC-stuur Programma's](https://dev.mysql.com/downloads/connector/odbc/) (bijvoorbeeld *mysql-connector-odbc-8.0.13-winx64.msi* en *mysql-connector-odbc-8.0.13-win32.msi*) en upload deze allemaal samen met *Main. cmd* naar uw container.
 
-      * Een *Oracle Enter prise* -map, die een aangepast installatie script ( *Main. cmd* ) en een installatie configuratie bestand ( *client. RSP* ) bevat waarmee de Oracle-connectors en het OCI-stuur programma kunnen worden geïnstalleerd op elk knoop punt van uw Azure-SSIS IR Enter prise-editie. Met deze installatie kunt u de Oracle-verbindings beheer,-bron en-bestemming gebruiken om verbinding te maken met de Oracle-server. 
+      * Een *Oracle Enter prise* -map, die een aangepast installatie script (*Main. cmd*) en een installatie configuratie bestand (*client. RSP*) bevat waarmee de Oracle-connectors en het OCI-stuur programma kunnen worden geïnstalleerd op elk knoop punt van uw Azure-SSIS IR Enter prise-editie. Met deze installatie kunt u de Oracle-verbindings beheer,-bron en-bestemming gebruiken om verbinding te maken met de Oracle-server. 
       
-        Down load eerst micro soft-connectors v 5.0 voor Oracle ( *AttunitySSISOraAdaptersSetup.msi* en *AttunitySSISOraAdaptersSetup64.msi* ) van het [micro soft Download centrum](https://www.microsoft.com/en-us/download/details.aspx?id=55179) en de nieuwste Oracle-client (bijvoorbeeld *winx64_12102_client.zip* ) van [Oracle](https://www.oracle.com/technetwork/database/enterprise-edition/downloads/database12c-win64-download-2297732.html). Vervolgens uploadt u deze allemaal samen met *Main. cmd* en *client. RSP* naar uw container. Als u gebruikmaakt van TNS om verbinding te maken met Oracle, moet u ook *bestand Tnsnames. ora* downloaden, bewerken en uploaden naar uw container. Op deze manier kan deze tijdens de installatie worden gekopieerd naar de map Oracle-installatie.
+        Down load eerst micro soft-connectors v 5.0 voor Oracle (*AttunitySSISOraAdaptersSetup.msi* en *AttunitySSISOraAdaptersSetup64.msi*) van het [micro soft Download centrum](https://www.microsoft.com/en-us/download/details.aspx?id=55179) en de nieuwste Oracle-client (bijvoorbeeld *winx64_12102_client.zip*) van [Oracle](https://www.oracle.com/database/technologies/oracle19c-windows-downloads.html). Vervolgens uploadt u deze allemaal samen met *Main. cmd* en *client. RSP* naar uw container. Als u gebruikmaakt van TNS om verbinding te maken met Oracle, moet u ook *bestand Tnsnames. ora* downloaden, bewerken en uploaden naar uw container. Op deze manier kan deze tijdens de installatie worden gekopieerd naar de map Oracle-installatie.
 
-      * Een *Oracle STANDARD ADO.net* -map met een aangepast installatie script ( *Main. cmd* ) om het Oracle ODP.net-stuur programma te installeren op elk knoop punt van uw Azure-SSIS IR. Met deze installatie kunt u de ADO.NET-verbindings beheer,-bron en-bestemming gebruiken om verbinding te maken met de Oracle-server. 
+      * Een *Oracle STANDARD ADO.net* -map met een aangepast installatie script (*Main. cmd*) om het Oracle ODP.net-stuur programma te installeren op elk knoop punt van uw Azure-SSIS IR. Met deze installatie kunt u de ADO.NET-verbindings beheer,-bron en-bestemming gebruiken om verbinding te maken met de Oracle-server. 
       
-        [Down load eerst het meest recente Oracle ODP.net-stuur programma](https://www.oracle.com/technetwork/database/windows/downloads/index-090165.html) (bijvoorbeeld *ODP.NET_Managed_ODAC122cR1.zip* ) en upload het vervolgens samen met *Main. cmd* naar uw container.
+        [Down load eerst het meest recente Oracle ODP.net-stuur programma](https://www.oracle.com/technetwork/database/windows/downloads/index-090165.html) (bijvoorbeeld *ODP.NET_Managed_ODAC122cR1.zip*) en upload het vervolgens samen met *Main. cmd* naar uw container.
        
-      * Een *ODBC* -standaardmap voor Oracle, die een aangepast installatie script ( *Main. cmd* ) bevat om het Oracle ODBC-stuur programma te installeren op elk knoop punt van uw Azure-SSIS IR. Met het script wordt ook de naam van de gegevens bron (DSN) geconfigureerd. Met deze installatie kunt u de ODBC-verbindings beheer, de bron, de doel-of Power Query verbindings beheer en de bron met het ODBC-gegevens bron type gebruiken om verbinding te maken met de Oracle-server. 
+      * Een *ODBC* -standaardmap voor Oracle, die een aangepast installatie script (*Main. cmd*) bevat om het Oracle ODBC-stuur programma te installeren op elk knoop punt van uw Azure-SSIS IR. Met het script wordt ook de naam van de gegevens bron (DSN) geconfigureerd. Met deze installatie kunt u de ODBC-verbindings beheer, de bron, de doel-of Power Query verbindings beheer en de bron met het ODBC-gegevens bron type gebruiken om verbinding te maken met de Oracle-server. 
       
         Down load eerst de nieuwste Oracle Instant-client (Basic package of Basic Lite package) en het ODBC-pakket en upload deze allemaal samen met *Main. cmd* naar uw container:
-        * [64-bits pakketten downloaden](https://www.oracle.com/technetwork/topics/winx64soft-089540.html) (Basic-pakket: *instantclient-basic-windows.x64-18.3.0.0.0dbru.zip* ; Basic Lite-pakket: *instantclient-basiclite-windows.x64-18.3.0.0.0dbru.zip* ; ODBC-pakket: *instantclient-odbc-windows.x64-18.3.0.0.0dbru.zip* ) 
-        * [32-bits pakketten downloaden](https://www.oracle.com/technetwork/topics/winsoft-085727.html) (Basic-pakket: *instantclient-basic-nt-18.3.0.0.0dbru.zip* ; Basic Lite-pakket: *instantclient-basiclite-nt-18.3.0.0.0dbru.zip* ; ODBC-pakket: *instantclient-odbc-nt-18.3.0.0.0dbru.zip* )
+        * [64-bits pakketten downloaden](https://www.oracle.com/technetwork/topics/winx64soft-089540.html) (Basic-pakket: *instantclient-basic-windows.x64-18.3.0.0.0dbru.zip*; Basic Lite-pakket: *instantclient-basiclite-windows.x64-18.3.0.0.0dbru.zip*; ODBC-pakket: *instantclient-odbc-windows.x64-18.3.0.0.0dbru.zip*) 
+        * [32-bits pakketten downloaden](https://www.oracle.com/technetwork/topics/winsoft-085727.html) (Basic-pakket: *instantclient-basic-nt-18.3.0.0.0dbru.zip*; Basic Lite-pakket: *instantclient-basiclite-nt-18.3.0.0.0dbru.zip*; ODBC-pakket: *instantclient-odbc-nt-18.3.0.0.0dbru.zip*)
 
-      * Een *Oracle Standard OLEDB* -map, die een aangepast installatie script ( *Main. cmd* ) bevat om het Oracle OLEDB-stuur programma te installeren op elk knoop punt van uw Azure-SSIS IR. Met deze installatie kunt u de OLEDB-verbindings beheer, de bron en de bestemming gebruiken om verbinding te maken met de Oracle-server. 
+      * Een *Oracle Standard OLEDB* -map, die een aangepast installatie script (*Main. cmd*) bevat om het Oracle OLEDB-stuur programma te installeren op elk knoop punt van uw Azure-SSIS IR. Met deze installatie kunt u de OLEDB-verbindings beheer, de bron en de bestemming gebruiken om verbinding te maken met de Oracle-server. 
      
-        [Down load eerst het nieuwste Oracle OLEDB-stuur programma](https://www.oracle.com/partners/campaign/index-090165.html) (bijvoorbeeld *ODAC122010Xcopy_x64.zip* ) en upload het vervolgens samen met *Main. cmd* naar uw container.
+        [Down load eerst het nieuwste Oracle OLEDB-stuur programma](https://www.oracle.com/partners/campaign/index-090165.html) (bijvoorbeeld *ODAC122010Xcopy_x64.zip*) en upload het vervolgens samen met *Main. cmd* naar uw container.
 
-      * Een *POSTGRESQL ODBC* -map, die een aangepast installatie script ( *Main. cmd* ) bevat om de POSTGRESQL ODBC-stuur Programma's te installeren op elk knoop punt van uw Azure-SSIS IR. Met deze installatie kunt u de ODBC-verbindings beheer, bron en bestemming gebruiken om verbinding te maken met de PostgreSQL-server. 
+      * Een *POSTGRESQL ODBC* -map, die een aangepast installatie script (*Main. cmd*) bevat om de POSTGRESQL ODBC-stuur Programma's te installeren op elk knoop punt van uw Azure-SSIS IR. Met deze installatie kunt u de ODBC-verbindings beheer, bron en bestemming gebruiken om verbinding te maken met de PostgreSQL-server. 
      
-        [Down load eerst de nieuwste 64-bits en 32-bits versies van postgresql ODBC-stuur programma-installatie Programma's](https://www.postgresql.org/ftp/odbc/versions/msi/) (bijvoorbeeld *psqlodbc_x64.msi* en *psqlodbc_x86.msi* ) en upload deze allemaal samen met *Main. cmd* naar uw container.
+        [Down load eerst de nieuwste 64-bits en 32-bits versies van postgresql ODBC-stuur programma-installatie Programma's](https://www.postgresql.org/ftp/odbc/versions/msi/) (bijvoorbeeld *psqlodbc_x64.msi* en *psqlodbc_x86.msi*) en upload deze allemaal samen met *Main. cmd* naar uw container.
 
-      * Een *SAP BW* map, die een aangepast installatie script ( *Main. cmd* ) bevat voor het installeren van de SAP .net-connector-Assembly ( *librfc32.dll* ) op elk knoop punt van uw Azure-SSIS IR Enter prise-editie. Met deze installatie kunt u de SAP BW verbindings beheer, bron en bestemming gebruiken om verbinding te maken met de SAP BW-server. 
+      * Een *SAP BW* map, die een aangepast installatie script (*Main. cmd*) bevat voor het installeren van de SAP .net-connector-Assembly (*librfc32.dll*) op elk knoop punt van uw Azure-SSIS IR Enter prise-editie. Met deze installatie kunt u de SAP BW verbindings beheer, bron en bestemming gebruiken om verbinding te maken met de SAP BW-server. 
       
         Upload eerst de 64-bits of de 32-bits versie van *librfc32.dll* vanuit de SAP-installatiemap samen met *Main. cmd* naar uw container. Het script kopieert vervolgens de SAP-assembly naar de map *%windir%\syswow64* of *%windir%\System32* tijdens de installatie.
 
-      * Een *opslagmap* , die een aangepast installatie script ( *Main. cmd* ) bevat om Azure PowerShell te installeren op elk knoop punt van uw Azure-SSIS IR. Met deze installatie kunt u SSIS-pakketten implementeren en uitvoeren die [Azure PowerShell-cmdlets/scripts uitvoeren voor het beheren van uw Azure Storage](../storage/blobs/storage-quickstart-blobs-powershell.md). 
+      * Een *opslagmap* , die een aangepast installatie script (*Main. cmd*) bevat om Azure PowerShell te installeren op elk knoop punt van uw Azure-SSIS IR. Met deze installatie kunt u SSIS-pakketten implementeren en uitvoeren die [Azure PowerShell-cmdlets/scripts uitvoeren voor het beheren van uw Azure Storage](../storage/blobs/storage-quickstart-blobs-powershell.md). 
       
-        Kopieer *Main. cmd* , een voor beeld *AzurePowerShell.msi* (of gebruik de meest recente versie) en *storage.ps1* naar uw container. Gebruik *Power shell. dtsx* als een sjabloon voor uw pakketten. De pakket sjabloon bevat een combi natie van een [Azure Blob-Download taak](/sql/integration-services/control-flow/azure-blob-download-task), waarmee een aanpas bare Power shell-script ( *storage.ps1* ) en een taak voor het uitvoeren van een [proces](https://blogs.msdn.microsoft.com/ssis/2017/01/26/run-powershell-scripts-in-ssis/)worden gedownload, waarmee het script wordt uitgevoerd op elk knoop punt.
+        Kopieer *Main. cmd*, een voor beeld *AzurePowerShell.msi* (of gebruik de meest recente versie) en *storage.ps1* naar uw container. Gebruik *Power shell. dtsx* als een sjabloon voor uw pakketten. De pakket sjabloon bevat een combi natie van een [Azure Blob-Download taak](/sql/integration-services/control-flow/azure-blob-download-task), waarmee een aanpas bare Power shell-script (*storage.ps1*) en een taak voor het uitvoeren van een [proces](https://blogs.msdn.microsoft.com/ssis/2017/01/26/run-powershell-scripts-in-ssis/)worden gedownload, waarmee het script wordt uitgevoerd op elk knoop punt.
 
-      * Een *TERADATA* -map die een aangepast installatie script ( *Main. cmd* ) bevat, het bijbehorende bestand ( *install. cmd* ) en de installatie pakketten ( *. msi* ). Met deze bestanden worden de Teradata-connectors, de TPT-API (parallel trans Porter) en het ODBC-stuur programma geïnstalleerd op elk knoop punt van uw Azure-SSIS IR Enter prise-editie. Met deze installatie kunt u de Teradata-verbindings beheer, bron en bestemming gebruiken om verbinding te maken met de Teradata-server. 
+      * Een *TERADATA* -map die een aangepast installatie script (*Main. cmd*) bevat, het bijbehorende bestand (*install. cmd*) en de installatie pakketten (*. msi*). Met deze bestanden worden de Teradata-connectors, de TPT-API (parallel trans Porter) en het ODBC-stuur programma geïnstalleerd op elk knoop punt van uw Azure-SSIS IR Enter prise-editie. Met deze installatie kunt u de Teradata-verbindings beheer, bron en bestemming gebruiken om verbinding te maken met de Teradata-server. 
       
-        [Down load eerst de Teradata-Hulpprogram ma's en Hulpprogram ma's 15. x zip-bestand](http://partnerintelligence.teradata.com) (bijvoorbeeld *TeradataToolsAndUtilitiesBase__windows_indep.15.10.22.00.zip* ) en upload het vervolgens samen met de eerder genoemde *. cmd* -en *MSI* -bestanden naar de container.
+        [Down load eerst de Teradata-Hulpprogram ma's en Hulpprogram ma's 15. x zip-bestand](http://partnerintelligence.teradata.com) (bijvoorbeeld *TeradataToolsAndUtilitiesBase__windows_indep.15.10.22.00.zip*) en upload het vervolgens samen met de eerder genoemde *. cmd* -en *MSI* -bestanden naar de container.
 
-      * Een *TLS 1,2* -map, die een aangepast installatie script ( *Main. cmd* ) bevat voor het gebruik van sterke crypto grafie en veiliger netwerk protocol (TLS 1,2) op elk knoop punt van uw Azure-SSIS IR. Met het script worden ook oudere SSL/TLS-versies uitgeschakeld.
+      * Een *TLS 1,2* -map, die een aangepast installatie script (*Main. cmd*) bevat voor het gebruik van sterke crypto grafie en veiliger netwerk protocol (TLS 1,2) op elk knoop punt van uw Azure-SSIS IR. Met het script worden ook oudere SSL/TLS-versies uitgeschakeld.
 
-      * Een *ZULU OPENJDK* -map met een aangepast installatie script ( *Main. cmd* ) en Power shell-bestand ( *install_openjdk.ps1* ) voor het installeren van de ZULU OPENJDK op elk knoop punt van uw Azure-SSIS IR. Met deze installatie kunt u Azure Data Lake Store en flexibele bestands connectors gebruiken voor het verwerken van ORC-en Parquet-bestanden. Zie [Azure Feature Pack voor integratie Services](/sql/integration-services/azure-feature-pack-for-integration-services-ssis?view=sql-server-ver15#dependency-on-java)voor meer informatie. 
+      * Een *ZULU OPENJDK* -map met een aangepast installatie script (*Main. cmd*) en Power shell-bestand (*install_openjdk.ps1*) voor het installeren van de ZULU OPENJDK op elk knoop punt van uw Azure-SSIS IR. Met deze installatie kunt u Azure Data Lake Store en flexibele bestands connectors gebruiken voor het verwerken van ORC-en Parquet-bestanden. Zie [Azure Feature Pack voor integratie Services](/sql/integration-services/azure-feature-pack-for-integration-services-ssis?view=sql-server-ver15#dependency-on-java)voor meer informatie. 
       
-        [Down load eerst de nieuwste Zulu-openjdk](https://www.azul.com/downloads/zulu/zulu-windows/) (bijvoorbeeld *zulu8.33.0.1-jdk8.0.192-win_x64.zip* ) en upload deze vervolgens samen met *Main. cmd* en *install_openjdk.ps1* naar uw container.
+        [Down load eerst de nieuwste Zulu-openjdk](https://www.azul.com/downloads/zulu/zulu-windows/) (bijvoorbeeld *zulu8.33.0.1-jdk8.0.192-win_x64.zip*) en upload deze vervolgens samen met *Main. cmd* en *install_openjdk.ps1* naar uw container.
 
         ![Mappen in de map gebruikers scenario's](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image12.png)
 

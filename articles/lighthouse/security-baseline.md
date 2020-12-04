@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/19/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 10ad0b83f3c85b48f9d066e1feec8d8aac4dd057
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: a6a1b41dd4ede055ba81c069c2164bb36da99876
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96533669"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602305"
 ---
 # <a name="azure-security-baseline-for-azure-lighthouse"></a>Azure-beveiligings basislijn voor Azure Lighthouse
 
@@ -306,7 +306,7 @@ Als een service provider wilt toestaan dat hun beveiligings team gedelegeerde kl
 
 ## <a name="logging-and-threat-detection"></a>Logboekregistratie en detectie van bedreigingen
 
-*Zie [Azure Security Benchmark: logboekregistratie en detectie van bedreigingen](/azure/security/benchmarks/security-controls-v2-logging-threat-protection) voor meer informatie.*
+*Zie [Azure Security Benchmark: logboekregistratie en detectie van bedreigingen](/azure/security/benchmarks/security-controls-v2-logging-threat-detection) voor meer informatie.*
 
 ### <a name="lt-1-enable-threat-detection-for-azure-resources"></a>LT-1: detectie van bedreigingen inschakelen voor Azure-resources
 
@@ -676,7 +676,7 @@ Deze strategie moet gedocumenteerde richtlijnen, beleid en standaarden bevatten 
 
 -   Herstelstrategie voor verschillende scenario's met bedreigingen en aanvallen
 
--   Internet-en ingangs-en uitgangs strategie/Azure/Security/benchmarks/Security-Controls-v2-logging-Threat-Protection
+-   Internet-en ingangs-en uitgangs strategie/Azure/Security/benchmarks/Security-Controls-v2-logging-Threat-Detection
 -   Strategie voor hybride cloud- en on-premises interconnectiviteit
 
 -   Up-to-date netwerkbeveiligingsartefacten (zoals netwerkdiagrammen, architectuur van referentienetwerk)
@@ -748,7 +748,7 @@ Raadpleeg de volgende bronnen voor meer informatie:
 
 - [Azure Security Benchmark: logboekregistratie en detectie van bedreigingen](/azure/security/benchmarks/security-controls-v2-logging-threat-detection)
 
-- [Azure Security Benchmark: respons op incidenten](/azure/security/benchmarks/security-benchmark-v2-incident-response)
+- [Azure Security Benchmark: respons op incidenten](/azure/security/benchmarks/security-controls-v2-incident-response)
 
 - [Azure Security Best Practice 4: proces. Processen voor respons op incidenten bijwerken voor de cloud](/azure/cloud-adoption-framework/security/security-top-10#4-process-update-incident-response-ir-processes-for-cloud)
 

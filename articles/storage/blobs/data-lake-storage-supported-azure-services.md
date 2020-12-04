@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: f9b1193a4eb2c7299cbfb0c729673b72d1e8fbad
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 66efc02990c958ba056b6e678cdbf2815f10078c
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96545832"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96600384"
 ---
 # <a name="azure-services-that-support-azure-data-lake-storage-gen2"></a>Azure-Services die ondersteuning bieden voor Azure Data Lake Storage Gen2
 
@@ -44,6 +44,7 @@ Deze tabel geeft een lijst van de Azure-Services die u kunt gebruiken met Azure 
 |Azure Data Explorer|Algemeen beschikbaar|Ja|Ja|[Query's uitvoeren op gegevens in Azure Data Lake met behulp van Azure Data Explorer](/azure/data-explorer/data-lake-query-data)|
 |Azure Cognitive Search|Preview|Ja|Ja|[Index-en zoek Azure Data Lake Storage Gen2 documenten (preview-versie)](../../search/search-howto-index-azure-data-lake-storage.md)|
 |Azure Content Delivery Network|Nog niet ondersteund|Niet van toepassing|Niet van toepassing|[Index-en zoek Azure Data Lake Storage Gen2 documenten (preview-versie)](../../cdn/cdn-overview.md)|
+|Azure SQL Database|Nog niet ondersteund|Niet van toepassing|Niet van toepassing|[Wat is Azure SQL Database?](/azure/azure-sql/database/sql-database-paas-overview.md)|
 
 ## <a name="see-also"></a>Zie ook
 

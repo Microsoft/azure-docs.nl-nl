@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 09/11/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: bf314510a8569a825ccd309ec855e3ff186bba86
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 7a1b178450a1aa06db07d7b1ef525f7f781db9ef
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023374"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602815"
 ---
 # <a name="windows-virtual-desktop-partner-integrations"></a>Integratie van virtuele bureau blad-partners van Windows
 
@@ -114,7 +114,7 @@ deviceTRUST is een Windows-provider voor virtueel bureau blad-toegevoegde servic
 
 deviceTRUST breidt de waarde van Windows virtueel bureau blad uit met hun contextuele beveiligings technologie. deviceTRUST maakt voorwaardelijke toegang mogelijk voor een veilige toegang tot het virtuele bureau blad van Windows, voorwaardelijke toegang tot een toepassing binnen het virtuele bureau blad van Windows en voor het Toep assen van voorwaardelijke Windows-bureaublad beleid zonder extra infra structuur. Met deviceTRUST kunt u een mobiele, flexibele werk ruimte maken die voldoet aan alle vereisten voor beveiliging, naleving en regelgeving.
 
-- [Ga naar de website van de partner](https://devicetrust.com/wvd).
+- [Ga naar de website van de partner](https://devicetrust.com/).
 
 ## <a name="ekran-system"></a>Ekran systeem
 

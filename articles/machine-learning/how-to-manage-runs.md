@@ -9,15 +9,15 @@ ms.author: roastala
 author: rastala
 manager: cgronlun
 ms.reviewer: nibaccam
-ms.date: 01/09/2020
+ms.date: 12/04/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: 921c88f4771fedb910dc41983d559987a8cdfb0c
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: ec006636ed7e975b696aa32300b32089e3209bb5
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96349330"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96600469"
 ---
 # <a name="start-monitor-and-cancel-training-runs-in-python"></a>Trainings uitvoeringen in python starten, controleren en annuleren
 
@@ -76,7 +76,7 @@ U hebt de volgende items nodig:
         notebook_run.log(name="message", value="Hello from run!")
         ```
         
-    # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
     
     Gebruik de volgende stappen om een uitvoering van uw experiment te starten:
     
@@ -158,7 +158,7 @@ U hebt de volgende items nodig:
         print(notebook_run.get_status())
         ```
     
-    # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
     
     * Gebruik de volgende opdracht om een lijst met uitvoeringen voor uw experiment weer te geven. Vervang door `experiment` de naam van uw experiment:
     
@@ -226,7 +226,7 @@ local_run.fail()
 print(local_run.get_status())
 ```
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Als u een uitvoering wilt annuleren met de CLI, gebruikt u de volgende opdracht. Vervangen `runid` door de id van de uitvoering
 
@@ -387,7 +387,7 @@ In Azure Machine Learning kunt u eigenschappen en tags gebruiken om uw uitvoerin
     print(local_run.get_tags())
     ```
     
-    # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
     
     > [!NOTE]
     > Met de CLI kunt u alleen Tags toevoegen of bijwerken.
@@ -417,7 +417,7 @@ In Azure Machine Learning kunt u eigenschappen en tags gebruiken om uw uitvoerin
     list(exp.get_runs(properties={"author":"azureml-user"},tags="worth another look"))
     ```
     
-    # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+    # <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
     
     De Azure CLI ondersteunt [JMESPath](http://jmespath.org) -query's, die kunnen worden gebruikt voor het filteren van uitvoeringen op basis van eigenschappen en labels. Als u een JMESPath-query wilt gebruiken met de Azure CLI, geeft u deze op met de `--query` para meter. In de volgende voor beelden ziet u enkele query's met behulp van eigenschappen en Tags:
     

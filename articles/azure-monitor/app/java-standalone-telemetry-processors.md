@@ -3,12 +3,15 @@ title: Telemetrie-processors (preview)-Azure Monitor Application Insights java
 description: Telemetrie-processors voor Azure Monitor Application Insights java
 ms.topic: conceptual
 ms.date: 10/29/2020
-ms.openlocfilehash: e3c41a7a9968a7de743f0c513b1f2b194501d0df
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+author: MS-jgol
+ms.custom: devx-track-java
+ms.author: jgol
+ms.openlocfilehash: 316243e130345ce1b009e065cf9d8250c501ee84
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94425793"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96601030"
 ---
 # <a name="telemetry-processors-preview-for-azure-monitor-application-insights-java"></a>Telemetrie-processors (preview) voor Azure Monitor Application Insights java
 
@@ -56,10 +59,10 @@ Maak een configuratie bestand met de naam `applicationinsights.json` en plaats h
 
 De kenmerk processor en de bereik processor bieden de optie om een reeks eigenschappen van een reeks te geven die overeenkomen met, om te bepalen of de reeks moet worden opgenomen of uitgesloten van de processor. Als u deze optie wilt configureren, onder `include` en/of `exclude` ten minste één of `matchType` `spanNames` `attributes` is vereist. De configuratie voor opnemen/uitsluiten wordt ondersteund om meer dan één opgegeven voor waarde te hebben. Alle opgegeven voor waarden moeten worden geëvalueerd als waar om een overeenkomst te vinden. 
 
-**Vereist veld** : 
+**Vereist veld**: 
 * `matchType` Hiermee wordt bepaald hoe items in `spanNames` en `attributes` matrices worden geïnterpreteerd. Mogelijke waarden zijn `regexp` en `strict`. 
 
-**Optionele velden** : 
+**Optionele velden**: 
 * `spanNames` moet overeenkomen met ten minste één van de items. 
 * `attributes` Hiermee geeft u de lijst met kenmerken op die moeten worden vergeleken. Al deze kenmerken moeten exact overeenkomen om een overeenkomst te vinden.
 

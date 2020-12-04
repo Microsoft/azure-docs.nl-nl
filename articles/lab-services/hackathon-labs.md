@@ -3,19 +3,19 @@ title: Azure Lab Services gebruiken voor hackathon
 description: In dit artikel wordt beschreven hoe u Azure Lab Services gebruikt voor het maken van Labs die u kunt gebruiken voor het uitvoeren van hackathons trappen.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 561351636a37c2cd5c3070dbfef2a3122e5c29b0
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: a0917ede4502dcbb59d1a30b7985b06c06975599
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96434257"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602577"
 ---
 # <a name="use-azure-lab-services-for-your-next-hackathon"></a>Azure Lab Services gebruiken voor uw volgende hackathon
 Azure Lab Services is lichter ontworpen en eenvoudig te gebruiken, zodat u snel een nieuw Lab van virtuele machines (Vm's) kunt maken voor uw Hackathon.  Gebruik de volgende controle lijst om ervoor te zorgen dat uw hackathon zo soepel mogelijk verloopt. Deze controle lijst moet worden ingevuld door uw IT-afdeling of faculteit die verantwoordelijk is voor het maken en beheren van uw hackathon-Lab. 
 
 Als u Lab-Services voor uw hackathon wilt gebruiken, moet u ervoor zorgen dat zowel een Lab-account als uw Lab ten minste enkele dagen vóór het begin van uw hackathon worden gemaakt. Volg ook de onderstaande instructies:
 
-## <a name="guidance"></a>Hulp
+## <a name="guidance"></a>Richtlijnen
 
 - **Maak het lab in een regio of locatie die het dichtst bij de deel nemers** ligt. 
 
@@ -39,7 +39,7 @@ Als u Lab-Services voor uw hackathon wilt gebruiken, moet u ervoor zorgen dat zo
 
 - **Bepaal of u de toegang tot het Lab wilt beperken**. 
 
-    Wanneer gebruikers aan het lab worden toegevoegd, is er een optie voor het beperken van toegang die standaard is ingeschakeld. Voor deze functie moet u alle e-mail berichten van uw hackathon-deel nemers aan de lijst toevoegen voordat ze het lab kunnen registreren en openen via de registratie koppeling. Als u een hackathon hebt waar u niet weet wie de deel nemers voor de gebeurtenis zullen hebben, kunt u ervoor kiezen de optie toegang beperken uit te scha kelen, waarmee iedereen zich bij het Lab kan registreren met de registratie koppeling. Zie voor meer informatie de [hand leiding voor het toevoegen van gebruikers](how-to-configure-student-usage.md#add-users-to-a-lab).
+    Wanneer gebruikers aan het lab worden toegevoegd, is er een optie voor het beperken van toegang die standaard is ingeschakeld. Voor deze functie moet u alle e-mail berichten van uw hackathon-deel nemers aan de lijst toevoegen voordat ze het lab kunnen registreren en openen via de registratie koppeling. Als u een hackathon hebt waar u niet weet wie de deel nemers voor de gebeurtenis zullen hebben, kunt u ervoor kiezen de optie toegang beperken uit te scha kelen, waarmee iedereen zich bij het Lab kan registreren met de registratie koppeling. Zie voor meer informatie de [hand leiding voor het toevoegen van gebruikers](how-to-configure-student-usage.md).
 
 - **Controleer de instellingen voor schema, quota** en automatisch afsluiten. 
 

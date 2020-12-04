@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 author: iqshahmicrosoft
 ms.author: iqshah
 ms.date: 10/19/2020
-ms.openlocfilehash: eb290b8c154c40388bfb3e7f9cbac7b645aa9609
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: bc1ae4bc2cf64c3e2f996709c086eb23cb8b8385
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452682"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602594"
 ---
 # <a name="troubleshoot-virtual-machine-certification"></a>Problemen met certificering van virtuele machines oplossen
 
@@ -203,7 +203,7 @@ Raadpleeg de volgende regels voor beperkingen op de schijf grootte van het bestu
 
 |Besturingssysteem|Aanbevolen grootte voor VHD|
 |---|---|
-|Linux|30 GB tot 1023 GB|
+|Linux|1 GB tot 1023 GB|
 |Windows|30 GB tot 250 GB|
 
 Omdat Vm's toegang bieden tot het onderliggende besturings systeem, moet u ervoor zorgen dat de VHD groot genoeg is voor de VHD. Schijven zijn niet uitbreidbaar zonder uitval tijd. Gebruik een schijf grootte van 30 GB tot 50 GB.

@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 12/02/2020
 ms.author: aahi
-ms.openlocfilehash: 5985c30973f703b897fa2eedc2be3b939d97900b
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
+ms.openlocfilehash: 3d3c452dd883316520e0c28f01c241af74d597c8
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96558994"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602781"
 ---
 # <a name="how-to-call-the-text-analytics-rest-api"></a>De Text Analytics aanroepen REST API
 
@@ -260,6 +260,8 @@ Als u de asynchrone `/analyze` of eind punten hebt aangeroepen `/health` , contr
 3. Voeg het `Operation-Location` toe aan de aanvraag.
 
 4. Het antwoord is één JSON-document met een item voor elke document-ID die in de aanvraag is gegeven.
+
+Voor zowel asynchroon `/analyze` als `/health` bewerkingen zijn de resultaten van de GET-aanvraag in stap 2 hierboven 24 uur beschikbaar vanaf het moment waarop de taak is gemaakt.  Deze tijd wordt aangegeven door de `expirationDateTime` waarde in het antwoord ophalen.  Na deze periode worden de resultaten opgeschoond en zijn deze niet meer beschikbaar voor ophalen.    
 
 ## <a name="example-api-responses"></a>Voor beeld van API-antwoorden
  

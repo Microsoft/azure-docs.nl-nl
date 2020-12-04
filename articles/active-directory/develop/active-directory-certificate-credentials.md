@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/30/2020
+ms.date: 12/3/2020
 ms.author: hirsin
 ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 77e34e4a18012f15b9e907e3b9efc1965b98f824
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f3222c790ccd0cee936b246253a16b5c434c61c8
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91612117"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602203"
 ---
 # <a name="microsoft-identity-platform-application-authentication-certificate-credentials"></a>Referenties voor verificatie certificaat voor micro soft-identiteits platform
 
@@ -30,13 +30,13 @@ Een van de referenties die een toepassing voor verificatie kan gebruiken is een 
 
 Als u de bewering wilt berekenen, kunt u een van de vele JWT-bibliotheken gebruiken in de taal van uw keuze- [MSAL `.WithCertificate()` ondersteunt dit met ](msal-net-client-assertions.md). De informatie wordt uitgevoerd door het token in de [header](#header), [claims](#claims-payload)en [hand tekening](#signature).
 
-### <a name="header"></a>Koptekst
+### <a name="header"></a>Header
 
 | Parameter |  Opmerkingen |
 | --- | --- |
 | `alg` | Moet **RS256** zijn |
 | `typ` | Moet **JWT** zijn |
-| `x5t` | De X. 509-certificaat-hash (ook wel bekend als de SHA-1- *vinger afdruk*van het certificaat) hexadecimale weer gave die is gecodeerd als een base64-teken reeks waarde. Als u bijvoorbeeld een X. 509-certificaat-hash van `84E05C1D98BCE3A5421D225B140B36E86A3D5534` (hex) hebt opgegeven, zou dit een `x5t` claim zijn `hOBcHZi846VCHSJbFAs26Go9VTQ=` . |
+| `x5t` | De X. 509-certificaat-hash (ook bekend als de SHA-1- *vinger afdruk* van het certificaat) Hex-weer gave gecodeerd als een Base64url teken reeks waarde. Een voor beeld: een 509-certificaat-hash van `84E05C1D98BCE3A5421D225B140B36E86A3D5534` (hex), `x5t` zou de claim zouden zijn `hOBcHZi846VCHSJbFAs26Go9VTQ=` (Base64url). |
 
 ### <a name="claims-payload"></a>Claims (Payload)
 

@@ -3,12 +3,12 @@ title: Testen van Azure Durable Functions-eenheid
 description: Meer informatie over het testen van de eenheids Durable Functions.
 ms.topic: conceptual
 ms.date: 11/03/2019
-ms.openlocfilehash: 86733f8b5b80799bad3e52c643ed27465dfc7641
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7786a0a2e2d31086e1938b70e63fe2374e16fe7f
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74231228"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96601353"
 ---
 # <a name="durable-functions-unit-testing"></a>Testen van Durable Functions eenheid
 
@@ -25,7 +25,7 @@ Voor de voor beelden in dit artikel is kennis van de volgende concepten en frame
 
 * Durable Functions
 
-* [xUnit](https://xunit.github.io/) -test framework
+* [xUnit](https://github.com/xunit/xunit) -test framework
 
 * [MOQ](https://github.com/moq/moq4) : Framework model
 
@@ -179,6 +179,6 @@ En de eenheids tests controleren de indeling van de uitvoer. De eenheids tests k
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Meer informatie over xUnit](https://xunit.github.io/docs/getting-started-dotnet-core)
+> [Meer informatie over xUnit](https://xunit.net/docs/getting-started/netcore/cmdline)
 > 
 > [Meer informatie over MOQ](https://github.com/Moq/moq4/wiki/Quickstart)

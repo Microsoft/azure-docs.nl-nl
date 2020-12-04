@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4075cb71cb4dae7ac506c16e3987070cfa10bb09
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: faa334c21e23ecddad287846d34aaf0d72af66cc
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919555"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602181"
 ---
 # <a name="build-resilience-with-device-states"></a>Een tolerantie bouwen met de status van het apparaat
 
@@ -44,7 +44,7 @@ Wanneer een PRT wordt gebruikt om toegang aan te vragen voor een toepassing, wor
 
 * Voor persoonlijke of bedrijfs eigendom iOS-en Android-apparaten wordt de [Microsoft Authenticator-app](../user-help/user-help-auth-app-overview.md)geïmplementeerd. Naast de mogelijkheden voor multi-factor Authentication en wacht woord-minder aanmelding biedt de Microsoft Authenticator-app eenmalige aanmelding mogelijk via een systeem eigen toepassing via [brokered Authentication](../develop/brokered-auth.md) met minder verificatie vragen voor eind gebruikers.
 
-* Voor persoonlijk of bedrijfs eigendom iOS-en Android-apparaten gebruiken [Mobile Application Management](https://docs.microsoft.com/mem/intune/apps/app-management.md) om veilig toegang te krijgen tot bedrijfs resources met minder verificatie aanvragen. 
+* Voor persoonlijk of bedrijfs eigendom iOS-en Android-apparaten gebruiken [Mobile Application Management](https://docs.microsoft.com/mem/intune/apps/app-management) om veilig toegang te krijgen tot bedrijfs resources met minder verificatie aanvragen. 
 
 * [Gebruik de micro soft Enter PRISE SSO-invoeg toepassing voor Apple-apparaten (preview)](../develop/apple-sso-plugin.md). Hiermee wordt het apparaat geregistreerd en vindt u SSO via browser-en systeem eigen Azure AD-toepassingen. 
 

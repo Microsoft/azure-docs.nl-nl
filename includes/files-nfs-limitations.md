@@ -5,15 +5,15 @@ services: storage
 author: roygara
 ms.service: storage
 ms.topic: include
-ms.date: 09/15/2020
+ms.date: 12/02/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 10177dd949ac531027e13cf633b11c16674fd4ab
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: db4bc51b937535b7b53273bf01057d9b6c5198b3
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94386549"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96584577"
 ---
 In de preview-versie heeft NFS de volgende beperkingen:
 
@@ -21,6 +21,7 @@ In de preview-versie heeft NFS de volgende beperkingen:
 - Als het meren deel van uw aanvragen meta gegevens georiënteerd is, is de latentie verergert in vergelijking met lees-en schrijf-en bijwerk bewerkingen.
 - U moet een nieuw opslag account maken om een NFS-share te kunnen maken.
 - Alleen de REST Api's van het beheer vlak worden ondersteund. REST-Api's voor het gegevens vlak zijn niet beschikbaar. Dit betekent dat hulpprogram ma's zoals Storage Explorer niet werken met NFS-shares en dat u niet kunt bladeren door NFS-share gegevens in de Azure Portal.
+- AzCopy wordt momenteel niet ondersteund.
 - Alleen beschikbaar voor de Premium-laag.
 - Momenteel alleen beschikbaar met lokaal redundante opslag (LRS).
 

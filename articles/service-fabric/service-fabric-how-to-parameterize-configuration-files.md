@@ -1,16 +1,14 @@
 ---
 title: Para meters-configuratie bestanden in azure Service Fabric
 description: Meer informatie over het para meters van configuratie bestanden in Service Fabric, een handige techniek bij het beheer van meerdere omgevingen.
-author: mikkelhegn
 ms.topic: conceptual
 ms.date: 10/09/2018
-ms.author: mikhegn
-ms.openlocfilehash: 4e96a732cffd70b0a5c24e7ebafe214297a72720
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: ca376230c427c47e839b2dee96e8daa83ccedf15
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96006044"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576754"
 ---
 # <a name="how-to-parameterize-configuration-files-in-service-fabric"></a>Configuratie bestanden in Service Fabric para meters
 

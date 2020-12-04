@@ -6,20 +6,20 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 12/01/2020
+ms.date: 12/03/2020
 ms.author: alkohli
-ms.openlocfilehash: 751ac870996fa1a2805bb018c991f85525fd797d
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 90869af032a381cecd3e65f5d5b367156dd047c5
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/03/2020
-ms.locfileid: "96548943"
+ms.locfileid: "96576838"
 ---
 # <a name="use-the-local-web-ui-to-administer-your-data-box-and-data-box-heavy"></a>Gebruik de lokale web-UI voor het beheren van uw Data Box en Data Box Heavy
 
 In dit artikel worden enkele van de configuratie-en beheer taken beschreven die op Data Box en Data Box Heavy apparaten worden uitgevoerd. U kunt de Data Box en Data Box Heavy apparaten beheren via de Azure Portal gebruikers interface en de lokale webgebruikersinterface voor het apparaat. Dit artikel is gericht op taken die worden uitgevoerd met behulp van de lokale webgebruikersinterface.
 
-De lokale web-UI voor Data Box en voor Data Box Heavy wordt gebruikt voor de initiële configuratie van het apparaat. U kunt ook de lokale web-UI gebruiken om het apparaat af te sluiten of opnieuw op te starten, diagnostische tests uit te voeren, software bij te werken, de kopie logboeken te bekijken, lokale gegevens van het apparaat te wissen en een ondersteunings pakket voor Microsoft Ondersteuning te genereren. Op een Data Box Heavy apparaat met twee onafhankelijke knoop punten, hebt u toegang tot twee afzonderlijke lokale web-UIs die overeenkomen met elk knoop punt van het apparaat.
+De lokale web-UI voor de Data Box en voor Data Box Heavy wordt gebruikt voor de initiële configuratie van het apparaat. U kunt ook de lokale web-UI gebruiken om het apparaat af te sluiten of opnieuw op te starten, diagnostische tests uit te voeren, software bij te werken, de kopie logboeken te bekijken, lokale gegevens van het apparaat te wissen en een ondersteunings pakket voor Microsoft Ondersteuning te genereren. Op een Data Box Heavy apparaat met twee onafhankelijke knoop punten, hebt u toegang tot twee afzonderlijke lokale web-UIs die overeenkomen met elk knoop punt van het apparaat.
 
 [!INCLUDE [Data Box feature is in preview](../../includes/data-box-feature-is-preview-info.md)]
 
@@ -29,21 +29,25 @@ Als u problemen met het apparaat ondervindt, kunt u een ondersteuningspakket mak
 
 Als u een ondersteunings pakket wilt genereren, voert u de volgende stappen uit:
 
-1. Ga in de lokale web-UI naar **contact opnemen met ondersteuning** en selecteer **ondersteunings pakket maken**.
+1. Ga in de lokale web-UI naar **contact opnemen met ondersteuning**. Selecteer eventueel **exclusief geheugen dump**. Selecteer vervolgens **ondersteunings pakket maken**.
+
+    Een geheugen dump is de inhoud van het geheugen van uw apparaat, opgeslagen na een systeem fout.
+
+    U moet de optie voor het **toevoegen van geheugen dump** niet selecteren, tenzij ondersteuning om een te vragen. Het duurt lang om een ondersteunings pakket te verzamelen dat een geheugen dump bevat, en gevoelige gegevens worden opgenomen.
 
     ![Ondersteuningspakket maken 1](media/data-box-local-web-ui-admin/create-support-package-1.png)
 
-2. Er wordt een ondersteuningspakket verzameld. Deze bewerking duurt enkele minuten.
+    Er wordt een ondersteuningspakket verzameld. Deze bewerking duurt enkele minuten als u alleen systeem logboeken opneemt. Als u een geheugen dump opneemt, duurt het veel langer.
 
     ![Ondersteuningspakket maken 2](media/data-box-local-web-ui-admin/create-support-package-2.png)
 
-3. Zodra het ondersteunings pakket is gemaakt, selecteert u het **Download ondersteunings pakket**.
+2. Zodra het pakket is gemaakt, selecteert u het **Download ondersteunings pakket**.
+
+    ![Ondersteunings pakket 3 maken](media/data-box-local-web-ui-admin/create-support-package-3.png)
+
+3. Blader naar en kies de downloadlocatie. Open de map om de inhoud weer te geven.
 
     ![Ondersteuningspakket maken 4](media/data-box-local-web-ui-admin/create-support-package-4.png)
-
-4. Blader naar en kies de downloadlocatie. Open de map om de inhoud weer te geven.
-
-    ![Ondersteuningspakket maken 5](media/data-box-local-web-ui-admin/create-support-package-5.png)
 
 ## <a name="erase-local-data-from-your-device"></a>Lokale gegevens van uw apparaat wissen
 
@@ -72,6 +76,7 @@ U kunt het apparaat afsluiten of opnieuw opstarten met behulp van de lokale webg
 Voer de volgende stappen uit om uw apparaat af te sluiten.
 
 1. Ga in de lokale webinterface naar **Afsluiten of opnieuw opstarten**.
+
 2. Selecteer **Afsluiten**.
 
     ![Data Box afsluiten 1](media/data-box-local-web-ui-admin/shut-down-local-web-ui-1.png)
@@ -107,7 +112,7 @@ Voordat u begint, voert u de volgende stappen uit om stuk lijst-of manifest best
 
     <!-- ![Select Download list of files](media/data-box-portal-admin/download-list-of-files.png) -->
 
-3. In Verkenner ziet u dat afzonderlijke lijsten met bestanden worden gegenereerd, afhankelijk van het protocol dat wordt gebruikt om verbinding te maken met het apparaat en het Azure Storage type dat wordt gebruikt.
+3. In Verkenner worden afzonderlijke lijsten met bestanden gegenereerd, afhankelijk van het protocol dat wordt gebruikt om verbinding te maken met het apparaat en het Azure Storage type dat wordt gebruikt.
 
     <!-- ![Files for storage type and connection protocol](media/data-box-portal-admin/files-storage-connection-type.png) -->
     ![Bestanden voor opslagtype en verbindingsprotocol](media/data-box-local-web-ui-admin/prepare-to-ship-5.png)
@@ -184,7 +189,7 @@ Er worden standaard controlesommen gegenereerd voor uw gegevens tijdens de voorb
 
 De berekening van de controlesom tijdens de voor bereiding op verzen ding wordt alleen uitgevoerd voor import orders en niet voor export orders.
 
-We raden u ten zeerste aan om de controlesom niet uit te schakelen, tenzij de prestaties te veel worden beïnvloed.
+We raden u ten zeerste aan de controlesom niet uit te scha kelen, tenzij de prestaties zwaar worden beïnvloed.
 
 1. Ga in de rechter bovenhoek van de lokale web-UI van uw apparaat naar **instellingen**.
 
@@ -261,9 +266,9 @@ De overdracht van Acl's voor Azure files inschakelen:
 
 ## <a name="enable-tls-11"></a>TLS 1,1 inschakelen
 
-Azure Data Box maakt standaard gebruik van Transport Layer Security (TLS) 1,2 voor versleuteling, omdat het veiliger is dan TSL 1,1. Als u of uw clients echter een browser gebruiken om toegang te krijgen tot gegevens die geen ondersteuning bieden voor TLS 1,2, kunt u TLS 1,1 inschakelen.
+Azure Data Box maakt standaard gebruik van Transport Layer Security (TLS) 1,2 voor versleuteling omdat het veiliger is dan TSL 1,1. Als u of uw clients echter een browser gebruiken om toegang te krijgen tot gegevens die geen ondersteuning bieden voor TLS 1,2, kunt u TLS 1,1 inschakelen.
 
-Zie [Azure data Box gateway Security](../databox-online/data-box-gateway-security.md)(Engelstalig) voor meer informatie over TLS.
+Zie [Azure data Box gateway Security](../databox-gateway/data-box-gateway-security.md)(Engelstalig) voor meer informatie over TLS.
 
 TLS 1,1 inschakelen in uw Azure-apparaat:
 

@@ -2,22 +2,22 @@
 title: bestand opnemen
 description: bestand opnemen
 services: container-service
-author: dlepow
+author: mlearned
 ms.service: container-service
 ms.topic: include
 ms.date: 11/22/2019
-ms.author: danlep
+ms.author: mlearned
 ms.custom: include file
-ms.openlocfilehash: 32edd880e5e455393e60c87f4f963d71a3e59a20
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a42bba1b6524825aa571e4c18319b61b97829792
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96027051"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96584481"
 ---
 | Resource | Limiet |
 | --- | :--- |
-| Maximumaantal clusters per abonnement | 100 |
+| Maximumaantal clusters per abonnement | 1000 |
 | Maximumaantal knooppunten per cluster met virtuele-machinebeschikbaarheidssets en basic load balancer-SKU  | 100 |
 | Maximumaantal knooppunten per cluster met virtuele-machineschaalsets en [standaard load balancer-SKU][standard-load-balancer] | 1000 (100 knooppunten per [knooppuntpool][node-pool]) |
 | Maximumaantal pods per knooppunt: [Basisnetwerken][basic-networking] met Kubenet | 110 |

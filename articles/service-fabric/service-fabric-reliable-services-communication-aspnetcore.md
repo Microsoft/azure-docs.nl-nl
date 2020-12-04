@@ -1,17 +1,15 @@
 ---
 title: Service communicatie met de ASP.NET Core
 description: Meer informatie over het gebruik van ASP.NET Core in stateless en stateful Azure Service Fabric Reliable Services-toepassingen.
-author: vturecek
 ms.topic: conceptual
 ms.date: 10/12/2018
-ms.author: vturecek
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 69423e7545178fd74ad44f5cab7b37b6f24b3577
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ba5626d477bbd6aa07d89703cc37b157f4cfd4d5
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89022187"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96576788"
 ---
 # <a name="aspnet-core-in-azure-service-fabric-reliable-services"></a>ASP.NET Core in azure Service Fabric Reliable Services
 
@@ -322,7 +320,7 @@ new KestrelCommunicationListener(serviceContext, "ServiceEndpoint", (url, listen
 Als ServiceManifest.xml geen configuratie gebruikt `Endpoint` , laat u de naam in de `KestrelCommunicationListener` constructor weg. In dit geval wordt een dynamische poort gebruikt. Zie de volgende sectie voor meer informatie hierover.
 
 #### <a name="use-kestrel-with-a-dynamic-port"></a>Kestrel gebruiken met een dynamische poort
-Kestrel kan de automatische poort toewijzing niet gebruiken vanuit de `Endpoint` configuratie in ServiceManifest.xml. Dat komt doordat bij automatische poort toewijzing van een `Endpoint` configuratie een unieke poort per *hostproces*wordt toegewezen en één hostproces meerdere Kestrel-exemplaren kan bevatten. Dit werkt niet met Kestrel omdat het geen ondersteuning biedt voor het delen van poorten. Daarom moet elk Kestrel-exemplaar op een unieke poort worden geopend.
+Kestrel kan de automatische poort toewijzing niet gebruiken vanuit de `Endpoint` configuratie in ServiceManifest.xml. Dat komt doordat bij automatische poort toewijzing van een `Endpoint` configuratie een unieke poort per *hostproces* wordt toegewezen en één hostproces meerdere Kestrel-exemplaren kan bevatten. Dit werkt niet met Kestrel omdat het geen ondersteuning biedt voor het delen van poorten. Daarom moet elk Kestrel-exemplaar op een unieke poort worden geopend.
 
 Als u dynamische poort toewijzing met Kestrel wilt gebruiken, laat u de `Endpoint` configuratie in ServiceManifest.xml volledig weg en geeft u de naam van het eind punt als volgt door aan de `KestrelCommunicationListener` constructor:
 

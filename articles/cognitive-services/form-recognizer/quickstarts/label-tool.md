@@ -11,12 +11,12 @@ ms.date: 09/30/2020
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: documentverwerking
-ms.openlocfilehash: 5df8ced885768308369599d94c5734fa0620c507
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 7671d8d58ffbd0fca444eefe53c46c99a4e76d37
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93360867"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96009327"
 ---
 # <a name="train-a-form-recognizer-model-with-labels-using-the-sample-labeling-tool"></a>Een Form Recognizer-model trainen met behulp van het voorbeeldhulpprogramma voor labelen
 
@@ -42,8 +42,17 @@ U hebt het volgende nodig om deze quickstart te voltooien:
 
 Als u het Form Recognizer-voorbeeldhulpprogramma voor labelen online wilt uitproberen, gaat u naar de [website van FOTT](https://fott-preview.azurewebsites.net/).
 
+# <a name="v20"></a>[v2.0](#tab/v2-0)
 > [!div class="nextstepaction"]
-> [Form Recognizer-voorbeeldhulpprogramma voor labelen](https://fott-preview.azurewebsites.net/)
+> [Vooraf gebouwde modellen uitproberen](https://fott.azurewebsites.net/)
+
+# <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
+> [!div class="nextstepaction"]
+> [Vooraf gebouwde modellen uitproberen](https://fott-preview.azurewebsites.net/)
+
+---
+
+U hebt een Azure-abonnement ([maak gratis een account](https://azure.microsoft.com/free/cognitive-services)) en een eindpunt en sleutel voor de [Form Recognizer-resource](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesFormRecognizer) nodig om de Form Recognizer-service te kunnen uitproberen. 
 
 
 ## <a name="set-up-the-sample-labeling-tool"></a>Het voorbeeldhulpprogramma voor labelen instellen
@@ -68,8 +77,6 @@ U gebruikt de Docker-engine voor het uitvoeren van het voorbeeldhulpprogramma vo
 
 
 
-
-
 1. Haal de container voor het voorbeeldhulpprogramma voor labelen op met de opdracht `docker pull`.
 
     # <a name="v20"></a>[v2.0](#tab/v2-0)    
@@ -78,7 +85,7 @@ U gebruikt de Docker-engine voor het uitvoeren van het voorbeeldhulpprogramma vo
     ```
     # <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)    
     ```
-    docker pull mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:2.1.012970002-amd64-preview
+    docker pull mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:latest-preview
     ```
 
     ---
@@ -91,7 +98,7 @@ U gebruikt de Docker-engine voor het uitvoeren van het voorbeeldhulpprogramma vo
     ```
     # <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)    
     ```
-    docker run -it -p 3000:80 mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:2.1.012970002-amd64-preview eula=accept    
+    docker run -it -p 3000:80 mcr.microsoft.com/azure-cognitive-services/custom-form/labeltool:latest-preview eula=accept    
     ```
 
     --- 
@@ -193,7 +200,7 @@ Vervolgens maakt u tags (labels) en past u ze toe op de tekstelementen die u doo
    1. Klik op **+** om een nieuw label te maken.
    1. Voer de naam van het label in.
    1. Druk op Enter om het label op te slaan.
-1. Klik in de hoofdeditor op woorden in de gemarkeerde tekstelementen. In de _preview van v2.1_ kunt u ook klikken om _Selectiemarkeringen_ zoals keuzerondjes en selectievakjes te selecteren als sleutel-waardeparen. Form Recognizer identificeert of de selectiemarkering de waarde ‘ingeschakeld’ of ‘uitgeschakeld’ is.
+1. Klik in de hoofdeditor op woorden in de gemarkeerde tekstelementen. In de _v2.1 preview.2_ kunt u ook klikken om _Selectiemarkeringen_ zoals keuzerondjes en selectievakjes te selecteren als sleutel-waardeparen. Form Recognizer identificeert of de selectiemarkering de waarde ‘ingeschakeld’ of ‘uitgeschakeld’ is.
 1. Klik op het label dat u wilt toepassen of druk op de bijbehorende toets op het toetsenbord. De numerieke toetsen zijn toegewezen als sneltoetsen voor de eerste tien labels. U kunt de volgorde van de labels wijzigen met behulp van de pijlen omhoog en omlaag in het tageditorvenster.
     > [!Tip]
     > Denk aan de volgende tips wanneer u labels voor uw formulieren gebruikt.

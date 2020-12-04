@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/15/2020
 ms.author: v-demjoh
-ms.openlocfilehash: 6f80d41001d11c52a00454ea2a593f3f1fce32db
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: da88b8554d6c3214da9a386613538c237a318f73
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96027539"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96546897"
 ---
 ## <a name="download-and-install"></a>Downloaden en installeren
 
@@ -53,15 +53,19 @@ Volg deze stappen om de Speech CLI te installeren voor Linux op een x64 CPU:
 
 Typ `spx` om Help weer te geven voor de Speech CLI.
 
-#### <a name="docker-install"></a>[Docker-installatie](#tab/dockerinstall)
-
-> [!NOTE]
-> <a href="https://www.docker.com/get-started" target="_blank">De desktopversie van Docker voor uw platform<span class="docon docon-navigate-external x-hidden-focus"></span></a> moet zijn geïnstalleerd.
+#### <a name="docker-install-windows-linux-macos"></a>[Docker-installatie (Windows, Linux, macOS)](#tab/dockerinstall)
 
 Volg deze stappen om de Speech CLI te installeren in een Docker-container:
 
-1. Typ in een nieuwe opdrachtprompt of terminal de volgende opdracht: `docker pull msftspeech/spx`
-2. Typ deze opdracht. Raadpleeg de Help-informatie voor Speech CLI: `docker run -it --rm msftspeech/spx help`
+1. <a href="https://www.docker.com/get-started" target="_blank">Installeer Docker Desktop<span class="docon docon-navigate-external x-hidden-focus"></span></a> voor uw platform als dat nog niet is geïnstalleerd.
+2. Typ in een nieuwe opdrachtprompt of terminal de volgende opdracht: 
+   ```shell   
+   docker pull msftspeech/spx
+   ```
+3. Typ deze opdracht. Raadpleeg de Help-informatie voor Speech CLI: 
+   ```shell 
+   docker run -it --rm msftspeech/spx help
+   ```
 
 ### <a name="mount-a-directory-in-the-container"></a>Een map koppelen in de container
 
@@ -72,7 +76,7 @@ Typ in Windows deze opdracht om een lokale map te maken die in de container kan 
 
 `mkdir c:\spx-data`
 
-Voor Linux of Mac typt u deze opdracht in een terminal om een map te maken en het bijbehorende absolute pad te zien:
+Voor Linux of macOS typt u deze opdracht in een terminal om een map te maken en het bijbehorende absolute pad te zien:
 
 ```bash
 mkdir ~/spx-data
@@ -86,13 +90,17 @@ U gebruikt het absolute pad wanneer u de Speech CLI aanroept.
 
 In deze documentatie ziet u de Speech CLI-opdracht `spx` die wordt gebruikt in niet-Docker-installaties.
 Wanneer u de opdracht `spx` aanroept in een Docker-container, moet u een map in de container koppelen aan uw bestandssysteem, waarin de Speech CLI configuratiewaarden kan opslaan en vinden, en bestanden kan lezen en schrijven.
+
 In Windows beginnen de opdrachten als volgt:
 
-`docker run -it -v c:\spx-data:/data --rm msftspeech/spx`
+```shell
+docker run -it -v c:\spx-data:/data --rm msftspeech/spx
+```
 
-In Linux of Mac beginnen de opdrachten ongeveer als volgt:
-
-`sudo docker run -it -v /ABSOLUTE_PATH:/data --rm msftspeech/spx`
+In Linux of macOS beginnen de opdrachten ongeveer als volgt:
+```shell   
+sudo docker run -it -v /ABSOLUTE_PATH:/data --rm msftspeech/spx
+```
 
 > [!NOTE]
 > Vervang `/ABSOLUTE_PATH` door het absolute pad dat wordt weergegeven met de opdracht `pwd` in de bovenstaande sectie.
@@ -100,12 +108,43 @@ In Linux of Mac beginnen de opdrachten ongeveer als volgt:
 Als u de opdracht `spx` wilt gebruiken in een container, moet u altijd de volledige opdracht invoeren, zoals hierboven wordt weergegeven, gevolgd door de parameters van uw aanvraag.
 In Windows wordt bijvoorbeeld met deze opdracht de sleutel ingesteld:
 
-`docker run -it -v c:\spx-data:/data --rm msftspeech/spx config @key --set SUBSCRIPTION-KEY`
+```shell
+docker run -it -v c:\spx-data:/data --rm msftspeech/spx config @key --set SUBSCRIPTION-KEY
+```
 
-> [!NOTE]
-> U kunt niet de microfoon of speaker van de computer gebruiken wanneer u de Speech CLI uitvoert in een Docker-container.
-> Als u deze apparaten wilt gebruiken, laat u audiobestanden van en naar de Speech CLI gaan voor opnemen/afspelen buiten de Docker-container.
-> Het hulpprogramma Speech CLI heeft toegang tot de lokale map die u hebt ingesteld in de bovenstaande stappen.
+> [!WARNING]
+> U kunt niet de microfoon van de computer gebruiken wanneer u de Speech CLI uitvoert in een Docker-container. U kunt audiobestanden echter lezen uit en opslaan in uw lokaal gekoppelde map. 
+
+### <a name="optional-create-a-command-line-shortcut"></a>Optioneel: Een opdrachtregelsnelkoppeling maken
+
+Als u de Speech-CLI uitvoert vanuit een Docker-container in Linux of macOS, kunt u een snelkoppeling maken. 
+
+Volg deze instructies om een snelkoppeling te maken:
+1. Open `.bash_profile` met uw favoriete teksteditor. Bijvoorbeeld:
+   ```shell
+   nano ~/.bash_profile
+   ```
+2. Voeg vervolgens deze functie aan uw `.bash_profile`. Zorg ervoor dat u deze functie bijwerkt met het juiste pad naar uw gekoppelde map:
+   ```shell   
+   spx(){
+       sudo docker run -it -v /ABSOLUTE_PATH:/data --rm msftspeech/spx
+   }
+   ```
+3. Uw profiel bewerken:
+   ```shell
+   source ~/.bash_profile
+   ```
+4. In plaats van dat u `sudo docker run -it -v /ABSOLUTE_PATH:/data --rm msftspeech/spx` uitvoert, kunt u gewoon `spx` typen, gevolgd door argumenten. Bijvoorbeeld: 
+   ```shell
+   // Get some help
+   spx help recognize
+
+   // Recognize speech from an audio file 
+   spx recognize --file /mounted/directory/file.wav
+   ```
+
+> [!WARNING]
+> Als u de gekoppelde map wijzigt waarnaar Docker verwijst, moet u de functie in `.bash_profile` bijwerken.
 
 ***
 

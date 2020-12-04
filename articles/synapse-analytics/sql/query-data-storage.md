@@ -1,6 +1,6 @@
 ---
-title: Gegevensopslag doorzoeken met een serverloze SQL-pool (preview-versie)
-description: In dit artikel wordt beschreven hoe u een query uitvoert voor Azure-opslag, met behulp van een serverloze SQL-pool (preview-versie) in Azure Synapse Analytics.
+title: Query's op gegevensopslag uitvoeren met een serverloze SQL-pool
+description: In dit artikel wordt beschreven hoe u een query uitvoert voor Azure-opslag, met behulp van een serverloze SQL-pool in Azure Synapse Analytics.
 services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 81a892b10996686cf58d45867e3d889505b5d3d9
-ms.sourcegitcommit: 5e2f5efba1957ba40bd951c3dcad42f4a00734ff
+ms.openlocfilehash: 967250cf29d1f0248f296cb545a764bd8e611773
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96299578"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462667"
 ---
-# <a name="query-storage-files-with-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Opslagbestanden doorzoeken met een serverloze SQL-pool (preview-versie) in Azure Synapse Analytics
+# <a name="query-storage-files-with-serverless-sql-pool-in-azure-synapse-analytics"></a>Query's op opslagbestanden uitvoeren met een serverloze SQL-pool in Azure Synapse Analytics
 
-Met een serverloze SQL-pool (preview-versie) kunt u een query uitvoeren op uw gegevens in uw data lake. Het biedt een T-SQL query-surface area dat geschikt is voor semi-gestructureerde en ongestructureerde gegevensquery's. Voor het uitvoeren van query's worden de volgende T-SQL-aspecten ondersteund:
+Met een serverloze SQL-pool kunt u query's uitvoeren op uw gegevens in uw data lake. Het biedt een T-SQL query-surface area dat geschikt is voor semi-gestructureerde en ongestructureerde gegevensquery's. Voor het uitvoeren van query's worden de volgende T-SQL-aspecten ondersteund:
 
 - Volledige [SELECT](/sql/t-sql/queries/select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)-surface area, met inbegrip van de meeste [SQL-functies en -operatoren](overview-features.md).
 - Met CREATE EXTERNAL TABLE AS SELECT ([CETAS](develop-tables-cetas.md)) wordt een [externe tabel](develop-tables-external-tables.md) gemaakt en parallel de resultaten van een Transact-SQL SELECT-instructie geëxporteerd naar Azure Storage.
@@ -222,7 +222,7 @@ Met behulp van de voorbeeldquery's kunt u meer leren over het uitvoeren van quer
 ### <a name="tools"></a>Hulpprogramma's
 
 De hulpprogramma's die u nodig hebt om query's uit te voeren:
-    - Azure Synapse Studio (preview)
+    - Azure Synapse Studio 
     - Azure Data Studio
     - SQL Server Management Studio
 

@@ -1305,7 +1305,7 @@
           href: tutorial-setup-ci-cd.md
         - name: Azure Storage Explorer gebruiken
           href: storage-explorer.md
-        - name: Azure Cosmos Explorer gebruiken
+        - name: Azure Cosmos DB Explorer gebruiken
           href: data-explorer.md
     - name: Analyses en BI met Azure Synapse Link
       items:

@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.date: 04/29/2020
 ms.custom: devx-track-csharp, seodec18, devx-track-azurecli
 zone_pivot_groups: app-service-platform-windows-linux
-ms.openlocfilehash: 8620d6bc403882cb308405e8ffb4412917d0c6f1
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8c3fca6cf7782c3aaac91388a8f8395e288f5ea5
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95993455"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558739"
 ---
 # <a name="tutorial-authenticate-and-authorize-users-end-to-end-in-azure-app-service"></a>Zelfstudie: Zelfstudie: Gebruikers eind-tot-eind verifiëren en autoriseren in Azure App Service
 
@@ -55,8 +55,9 @@ U kunt de stappen in deze zelfstudie volgen voor macOS, Linux en Windows.
 
 Vereisten voor het voltooien van deze zelfstudie:
 
-* <a href="https://git-scm.com/" target="_blank">Git installeren</a>
-* <a href="https://dotnet.microsoft.com/download/dotnet-core/3.1" target="_blank">De nieuwste versie van .NET Core 3.1 SDK installeren</a>
+- <a href="https://git-scm.com/" target="_blank">Git installeren</a>
+- <a href="https://dotnet.microsoft.com/download/dotnet-core/3.1" target="_blank">De nieuwste .NET Core 3.1-SDK installeren</a>
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 ## <a name="create-local-net-core-app"></a>Lokale .NET Core-app maken
 
@@ -77,8 +78,6 @@ Ga naar `http://localhost:5000` en voeg taken toe, bewerk deze en verwijder ze.
 ![ASP.NET Core-API lokaal uitvoeren](./media/tutorial-auth-aad/local-run.png)
 
 Druk op `Ctrl+C` in de terminal als u ASP.NET Core wilt stoppen.
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 ## <a name="deploy-apps-to-azure"></a>Apps in Azure implementeren
 

@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 10/05/2020
 ms.author: pafarley
 ms.custom: devx-track-python
-ms.openlocfilehash: 8c4e600e012268337a5e6c63d5b3ce4f532ccec0
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: aaf614846618f3781559ad7f9ce31cb47dd11b63
+ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91970925"
+ms.lasthandoff: 11/23/2020
+ms.locfileid: "96009565"
 ---
 # <a name="quickstart-train-a-form-recognizer-model-and-extract-form-data-by-using-the-rest-api-with-python"></a>Quickstart: Een Form Recognizer-model trainen en formuliergegevens extraheren met behulp van de REST API met Python
 
@@ -50,6 +50,7 @@ Als u een Form Recognizer-model wilt trainen met de documenten in uw Azure Blob-
 1. Vervang `<subscription key>` door de abonnementssleutel die u uit de vorige stap hebt gekopieerd.
 1. Vervang `<endpoint>` door de URL van Form Recognizer-de resource.
 1. Vervang `<Blob folder name>` door het pad naar de map in de blobopslag waar uw formulieren zich bevinden. Als uw formulieren zich in de hoofdmap van de container bevinden, laat u deze tekenreeks leeg.
+1. Vervang eventueel `<your model name>` door de beschrijvende naam die u aan uw model wilt geven.
 
     # <a name="v20"></a>[v2.0](#tab/v2-0)
     ```python
@@ -78,6 +79,7 @@ Als u een Form Recognizer-model wilt trainen met de documenten in uw Azure Blob-
             "prefix": prefix,
             "includeSubFolders": includeSubFolders
         },
+        "modelName":"<your model name>",
         "useLabelFile": useLabelFile
     }
     
@@ -101,7 +103,7 @@ Als u een Form Recognizer-model wilt trainen met de documenten in uw Azure Blob-
     
     # Endpoint URL
     endpoint = r"<endpoint>"
-    post_url = endpoint + r"/formrecognizer/v2.1-preview.1/custom/models"
+    post_url = endpoint + r"/formrecognizer/v2.1-preview.2/custom/models"
     source = r"<SAS URL>"
     prefix = "<Blob folder name>"
     includeSubFolders = False

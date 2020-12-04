@@ -1,37 +1,37 @@
 ---
-title: 'Snelstart: een geregistreerde app verwijderen uit Microsoft Identity Platform | Azure'
+title: 'Procedure: een geregistreerde app verwijderen uit Microsoft Identity Platform | Azure'
 titleSuffix: Microsoft identity platform
-description: In deze quickstart leert u hoe u een toepassing kunt verwijderen die bij Microsoft Identity Platform is geregistreerd.
+description: In deze instructiegids leert u hoe u een toepassing kunt verwijderen die bij Microsoft Identity Platform is geregistreerd.
 services: active-directory
 author: rwike77
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
-ms.topic: quickstart
+ms.topic: how-to
 ms.workload: identity
-ms.date: 05/08/2019
+ms.date: 11/15/2020
 ms.author: ryanwi
 ms.custom: aaddev
-ms.reviewer: aragra, lenalepa, sureshja
-ms.openlocfilehash: 0a0150112602cd34168f64132785faf1f8c33f62
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.reviewer: marsma, aragra, lenalepa, sureshja
+ms.openlocfilehash: edfed8ca361d456e622096e23079d5887f96ab30
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91612384"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452982"
 ---
-# <a name="quickstart-remove-an-application-registered-with-the-microsoft-identity-platform"></a>Quickstart: Een geregistreerde toepassing verwijderen uit het Microsoft Identity Platform
+# <a name="how-to-remove-an-application-registered-with-the-microsoft-identity-platform"></a>Een toepassing verwijderen die bij het Microsoft Identity Platform is geregistreerd
 
 Bedrijfsontwikkelaars en SaaS-providers (software als een dienst) die toepassingen hebben geregistreerd bij het Microsoft Identity Platform moeten mogelijk de registratie van een toepassing verwijderen.
 
-In deze snelstart leert u het volgende:
+In de volgende secties leert u het volgende:
 
 * Een toepassing verwijderen die is geschreven door u of uw organisatie
 * Een toepassing verwijderen die is geschreven door een andere organisatie
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Voltooiing van [quickstart: Een toepassing registreren bij het Microsoft-identiteitsplatform](quickstart-register-app.md)
+* Een [toepassing die in uw Azure Active Directory-tenant is geregistreerd](quickstart-register-app.md)
 
 ## <a name="remove-an-application-authored-by-you-or-your-organization"></a>Een toepassing verwijderen die is geschreven door u of uw organisatie
 
@@ -49,11 +49,8 @@ Als u een toepassing wilt verwijderen, moet u vermeld staan als de eigenaar van 
 
 Als u **App-registraties** bekijkt binnen de context van een tenant, dan is een subset van de toepassingen die onder **Alle apps** wordt weergegeven van een andere tenant en zijn deze tijdens het toestemmingsproces bij uw tenant geregistreerd. Om precies te zijn, worden deze toepassingen alleen vertegenwoordigd door een service-principal-object in uw tenant, zonder bijbehorend toepassingsobject. Zie [Toepassings- en service-principal-objecten in Azure Active Directory](./app-objects-and-service-principals.md) voor meer informatie over de verschillen tussen toepassings- en service-principal-objecten.
 
-Als u de toegang van een toepassing tot uw directory wilt verwijderen (nadat u toestemming hebt verleend), moet de bedrijfsbeheerder de service-principal van de toepassing verwijderen. De beheerder moet globale beheerderstoegang hebben en kan de toepassing verwijderen via de Azure-portal of de [Azure Active Directory PowerShell-cmdlets](https://go.microsoft.com/fwlink/?LinkId=294151) gebruiken om de toegang op te heffen.
+Als u de toegang van een toepassing tot uw directory wilt verwijderen (nadat u toestemming hebt verleend), moet de bedrijfsbeheerder de service-principal van de toepassing verwijderen. De beheerder moet globale beheerderstoegang hebben en kan de toepassing verwijderen via de Azure-portal of de [Azure Active Directory PowerShell-cmdlets](/previous-versions/azure/jj151815(v=azure.100)) gebruiken om de toegang op te heffen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over toepassings- en service-principalobjecten in Microsoft Identity Platform:
-
-> [!div class="nextstepaction"]
-> [Toepassings- en service-principal-objecten in Azure Active Directory](app-objects-and-service-principals.md)
+Meer informatie over [toepassings- en service-principalobjecten](app-objects-and-service-principals.md) in Microsoft Identity Platform.

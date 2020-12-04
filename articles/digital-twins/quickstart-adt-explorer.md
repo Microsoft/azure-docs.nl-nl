@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 9/24/2020
 ms.topic: quickstart
 ms.service: digital-twins
-ms.openlocfilehash: d203cb5ccef90fd09659ba64b7bcbc8b9be9e47a
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: d42a32e236eb73f2aa9f2f61d9708314783564dd
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358072"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187291"
 ---
 # <a name="quickstart---explore-a-sample-azure-digital-twins-scenario-using-adt-explorer"></a>Snelstart - Een voorbeeld van een Azure Digital Twins-scenario verkennen met behulp van ADT Explorer
 
@@ -66,6 +66,7 @@ Als dat niet het geval is, kunt u de lokale Azure CLI installeren met de volgend
 1. Volg het proces op [deze installatiekoppeling](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) om de installatie te voltooien die past bij uw besturingssysteem.
 1. Open een consolevenster op uw computer.
 1. Voer `az login` uit en volg de verificatieprompts om u aan te melden bij uw Azure-account.
+1. Mogelijke laatste stap: Als u meerdere Azure-abonnementen onder dit account gebruikt, stelt u de verificatiecontext in op het Azure-abonnement dat uw Azure Digital Twins-instantie bevat door `az account set --subscription "<your-subscription-name-or-ID>"` uit te voeren (zowel de naam als de id-waarde van het abonnement zijn geschikt).
 
 Nadat u zich hebt aangemeld, zouden uw Azure-referenties automatisch door ADT Explorer moeten worden opgehaald wanneer u deze in de volgende sectie gaat uitvoeren.
 
@@ -90,7 +91,7 @@ Open een consolevenster op de maplocatie **Azure_Digital_Twins__ADT__explorer/cl
 
    :::image type="content" source="media/quickstart-adt-explorer/sign-in.png" alt-text="ADT Explorer met het pictogram Sign In (Aanmelden) gemarkeerd bovenaan het venster. Het pictogram toont een eenvoudige omtrek van een persoon met de omtrek van een sleutel erop." lightbox="media/quickstart-adt-explorer/sign-in.png":::
 
-1. Voer de URL van de Azure Digital Twins-instantie in die u eerder hebt opgehaald uit de sectie [Vereiste](#prerequisites) in de indeling *https://{hostnaam instantie}* .
+1. Voer de URL van de Azure Digital Twins-instantie in die u eerder hebt opgehaald uit de sectie [Een Azure Digital Twins-instantie instellen](#set-up-an-azure-digital-twins-instance) in de indeling *https://{instance host name}* .
 
 >[!NOTE]
 > U kunt deze informatie op elk gewenst moment opnieuw bekijken/bewerken door hetzelfde pictogram te selecteren om het vak **Sign in** (Aanmelden) weer te openen. De waarden die u hebt doorgegeven, blijven bewaard.

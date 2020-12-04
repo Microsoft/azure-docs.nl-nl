@@ -1,22 +1,22 @@
 ---
-title: Azure Cosmos-emulator downloaden en opmerkingen bij de release
-description: Download de opmerkingen bij de release voor de Azure Cosmos-emulator voor verschillende versies en downloadgegevens.
+title: Azure Cosmos DB-emulator downloaden en opmerkingen bij de release
+description: Download de opmerkingen bij de release voor de Azure Cosmos DB-emulator voor verschillende versies en downloadgegevens.
 ms.service: cosmos-db
 ms.topic: conceptual
 author: milismsft
 ms.author: adrianmi
 ms.date: 09/21/2020
-ms.openlocfilehash: e9f28aeb2a47c2ce7b439cbe46dcc39df3011c33
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 42259b36f1a9bfe243df47cc08b33fe8c46d819d
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95997151"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96493063"
 ---
-# <a name="azure-cosmos-emulator---release-notes-and-download-information"></a>Azure Cosmos-emulator - opmerkingen bij de release en downloadgegevens
+# <a name="azure-cosmos-db-emulator---release-notes-and-download-information"></a>Azure Cosmos DB-emulator - opmerkingen bij de release en downloadgegevens
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
-Dit artikel bevat de opmerkingen bij de release voor Azure Cosmos-emulator met een lijst met functie-updates die in elke release zijn uitgevoerd. Ook wordt de meest recente versie van de emulator weergegeven die u kunt downloaden en gebruiken.
+Dit artikel bevat de opmerkingen bij de release voor Azure Cosmos DB-emulator met een lijst met functie-updates die in elke release zijn uitgevoerd. Ook wordt de meest recente versie van de emulator weergegeven die u kunt downloaden en gebruiken.
 
 ## <a name="download"></a>Downloaden
 

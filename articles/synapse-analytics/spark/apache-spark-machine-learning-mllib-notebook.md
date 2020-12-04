@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.subservice: machine-learning
 ms.date: 04/15/2020
 ms.author: euang
-ms.openlocfilehash: 595b3a57594401df6b61db1fcf8ee16be98ef364
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 50429696c4cbe10c4723f6d4bb9c9499d9b775c5
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95900415"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96450425"
 ---
 # <a name="tutorial-build-a-machine-learning-app-with-apache-spark-mllib-and-azure-synapse-analytics"></a>Zelfstudie: Een machine learning-app bouwen met Apache Spark MLlib en Azure Synapse Analytics
 
@@ -71,7 +71,7 @@ In de volgende stappen ontwikkelt u een model om te voorspellen of voor een bepa
 
 Omdat de onbewerkte gegevens de Parquet-indeling hebben, kunt u de Spark-context gebruiken om het bestand rechtstreeks in het geheugen te plaatsen als een gegevensframe. Hoewel voor de code hieronder de standaardopties worden gebruikt, is het mogelijk de toewijzing van gegevenstypen en andere schemakenmerken af te dwingen, indien nodig.
 
-1. Voer de volgende regels uit om een Spark-gegevensframe te maken door de code in een nieuwe cel te plakken. Hiermee haalt u de gegevens op via de Open Datasets-API. Het ophalen van deze gegevens genereert bijna 1,5 miljard rijen. Afhankelijk van de grootte van de serverloze Apache Spark-pool (preview-versie) kan de hoeveelheid onbewerkte gegevens te groot zijn, of kan het bewerken ervan te veel tijd in beslag nemen. U kunt deze gegevens filteren naar een kleinere hoeveelheid. In het volgende codevoorbeeld wordt gebruikgemaakt van start_date en end_date om een filter toe te passen waarmee één maand aan gegevens worden geretourneerd.
+1. Voer de volgende regels uit om een Spark-gegevensframe te maken door de code in een nieuwe cel te plakken. Hiermee haalt u de gegevens op via de Open Datasets-API. Het ophalen van deze gegevens genereert bijna 1,5 miljard rijen. Afhankelijk van de grootte van de serverloze Apache Spark-pool kan de hoeveelheid onbewerkte gegevens te groot zijn, of kan het bewerken ervan te veel tijd in beslag nemen. U kunt deze gegevens filteren naar een kleinere hoeveelheid. In het volgende codevoorbeeld wordt gebruikgemaakt van start_date en end_date om een filter toe te passen waarmee één maand aan gegevens worden geretourneerd.
 
     ```python
     from azureml.opendatasets import NycTlcYellow

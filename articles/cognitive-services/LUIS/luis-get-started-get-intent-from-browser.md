@@ -1,18 +1,18 @@
 ---
-title: "Quickstart: Query's uitvoeren voor voorspellingen met een browser - LUIS"
-description: In deze snelstart gebruikt u een beschikbare openbare LUIS-app om de intentie van een gebruiker te bepalen aan de hand van beschrijvende tekst in een browser.
+title: Query's uitvoeren voor voorspellingen met behulp van een browser - LUIS
+description: In dit artikel gebruikt u een beschikbare openbare LUIS-app om de intentie van een gebruiker te bepalen aan de hand van beschrijvende tekst in een browser.
 ms.service: cognitive-services
 ms.subservice: language-understanding
-ms.topic: quickstart
-ms.date: 04/21/2020
-ms.openlocfilehash: ce7544bee32586aa4cdeeb7f47a84744194db5da
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.topic: conceptual
+ms.date: 11/30/2020
+ms.openlocfilehash: 6aa681c8ea60cb57ac3e6d143c60cc46bc057719
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91316270"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436909"
 ---
-# <a name="quickstart-query-prediction-runtime-with-user-text"></a>Quickstart: Runtime queryvoorspelling met gebruikerstekst
+# <a name="how-to-query-the-prediction-runtime-with-user-text"></a>Query's uitvoeren op de voorspellingsruntime met gebruikerstekst
 
 Om te begrijpen wat een LUIS-voorspellingseindpunt retourneert, kunt u het resultaat van een voorspelling in een webbrowser bekijken.
 

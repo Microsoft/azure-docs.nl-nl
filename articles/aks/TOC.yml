@@ -146,6 +146,8 @@
           href: reduce-latency-ppg.md
         - name: De knooppuntkopie upgraden
           href: node-image-upgrade.md
+        - name: De knooppuntafbeelding automatisch upgraden met GitHub Actions
+          href: node-upgrade-github-actions.md
         - name: OS-updates van knooppunt verwerken
           href: node-updates-kured.md
         - name: Een AKS-cluster configureren

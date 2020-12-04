@@ -7,12 +7,12 @@ ms.service: load-balancer
 ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: anavin
-ms.openlocfilehash: 3a20b69189226486de8cfceb95e2fa79a976cb12
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a30a42e8a8c4049b53274da512089dd29965e775
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91841030"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573150"
 ---
 # <a name="whats-new-in-azure-load-balancer"></a>Wat is er nieuw in Azure Load Balancer?
 
@@ -42,7 +42,7 @@ De productgroep werkt actief aan oplossingen voor de volgende bekende problemen:
 
 |Probleem |Beschrijving  |Oplossing  |
 | ---------- |---------|---------|
-| Log Analytics-export | Log Analytics kan geen metrische gegevens voor Standard Load Balancers of statuslogboeken voor statustesten voor Basic Load Balancers exporteren  | [Gebruik Azure Monitor voor multidimensionale metrische gegevens voor uw Standard Load Balancer](load-balancer-standard-diagnostics.md). Hoewel het niet mogelijk is om Log Analytics te gebruiken voor bewaking, biedt Azure Monitor visualisatie voor een uitgebreide set multidimensionale metrische gegevens. U kunt gebruikmaken van het vooraf geconfigureerde dashboard met metrische gegevens via de subblade Insights van uw Load Balancer. Als u Basic Load Balancer gebruikt, voert u een [upgrade naar Standard](upgrade-basic-standard.md) uit voor bewaking van metrische gegevens op productieniveau.
+| Load Balancer-waarschuwingsgebeurtenis en statuslogboeken | Logboekregistratie werkt niet voor Load Balancer-waarschuwingsgebeurtenissen voor Basic en Standard Load Balancer en ook niet voor de statuslogboeken voor Basic Load Balancer  | [Gebruik Azure Monitor voor multidimensionale metrische gegevens voor uw Standard Load Balancer](load-balancer-standard-diagnostics.md). Azure Monitor biedt visualisatie voor een rijke set multidimensionale metrische gegevens die ook als logboeken kunnen worden geëxporteerd. U kunt gebruikmaken van het vooraf geconfigureerde dashboard met metrische gegevens via de subblade Insights van uw Load Balancer. Als u Basic Load Balancer gebruikt, voert u een [upgrade naar Standard](upgrade-basic-standard.md) uit voor bewaking van metrische gegevens op productieniveau.
 
   
 

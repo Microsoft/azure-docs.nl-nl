@@ -9,12 +9,12 @@ ms.subservice: machine-learning
 ms.date: 06/30/2020
 ms.author: midesa
 ms.reviewer: jrasnick
-ms.openlocfilehash: e6708874fee3e15349b4389f1ecafa3d48a628dd
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: b2fbc74304cdb71d9cb3e1ea476af8c92eb99b7e
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95917177"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96458840"
 ---
 # <a name="tutorial-run-experiments-using-azure-automated-ml-and-apache-spark"></a>Zelfstudie: Experimenten uitvoeren met behulp van Azure Automated ML en Apache Spark
 
@@ -72,7 +72,7 @@ df = spark.read.parquet(wasbs_path)
 
 ```
 
-3. Afhankelijk van de grootte van de Spark-pool (preview) kan de hoeveelheid onbewerkte gegevens te groot zijn, of kan het bewerken ervan te veel tijd in beslag nemen. U kunt deze gegevens filteren naar een kleinere hoeveelheid met behulp van de filters ```start_date``` en ```end_date```. Hiermee wordt een filter toegepast op basis waarvan de gegevens van één maand worden geretourneerd. Zodra we beschikken over het gefilterde gegevensframe, voeren we ook de functie ```describe()``` uit op het nieuwe dataframe om samenvattingsstatistieken voor elk veld weer te geven. 
+3. Afhankelijk van de grootte van de Spark-pool kan de hoeveelheid onbewerkte gegevens te groot zijn, of kan het bewerken ervan te veel tijd in beslag nemen. U kunt deze gegevens filteren naar een kleinere hoeveelheid met behulp van de filters ```start_date``` en ```end_date```. Hiermee wordt een filter toegepast op basis waarvan de gegevens van één maand worden geretourneerd. Zodra we beschikken over het gefilterde gegevensframe, voeren we ook de functie ```describe()``` uit op het nieuwe dataframe om samenvattingsstatistieken voor elk veld weer te geven. 
 
    Op basis van de samenvattingsstatistieken zien we dat er sprake is van wat onregelmatigheden en uitschieters in de gegevens. De statistieken laten bijvoorbeeld zien dat de minimale reisafstand kleiner is dan 0. Deze onregelmatige gegevenspunten moeten worden uitgefilterd.
    

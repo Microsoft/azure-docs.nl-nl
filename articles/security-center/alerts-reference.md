@@ -1,5 +1,5 @@
 ---
-title: Referentietabel voor alle Azure Defender-waarschuwingen in Azure Security Center
+title: Referentietabel voor alle beveiligingswaarschuwingen in Azure Security Center
 description: Dit artikel bevat een overzicht van alle beveiligingswaarschuwingen die worden weergegeven in het Azure Defender-dashboard van Azure Security Center.
 services: security-center
 documentationcenter: na
@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/22/2020
 ms.author: memildin
-ms.openlocfilehash: 6d001e638b00cace1dd81d9631f498a911ca19a4
-ms.sourcegitcommit: 5ae2f32951474ae9e46c0d46f104eda95f7c5a06
+ms.openlocfilehash: c5ee275fb92ff2c3787bef7868665c19fea2109c
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "96014598"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436773"
 ---
 # <a name="security-alerts---a-reference-guide"></a>Referentiegids met beveiligingswaarschuwingen
 
-Dit artikel bevat een overzicht van de beveiligingswaarschuwingen die kunnen worden weergegeven door Azure Defender. Het is mogelijk dat de exacte tekst van de berichten afwijkt of dat een waarschuwing nog niet is vertaald. Om die reden wordt bij veel berichten de Engelse waarschuwing vermeld met een vertaling tussen haakjes. De waarschuwingen die in uw omgeving worden weergegeven, zijn afhankelijk van de resources en services die u beveiligt en uw aangepaste configuratie.
+Dit artikel bevat een overzicht van de beveiligingswaarschuwingen die u kunt ontvangen van Azure Security Center en de Azure Defender-abonnementen die u hebt ingeschakeld. De waarschuwingen die in uw omgeving worden weergegeven, zijn afhankelijk van de resources en services die u beveiligt en uw aangepaste configuratie.
 
 In [Beveiligingswaarschuwingen beheren en erop reageren in Azure Security Center](security-center-managing-and-responding-alerts.md) leest u hoe u op deze beveiligingswaarschuwingen moet reageren.
 

@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: quickstart
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 7aa65cb8e37ce48a59c276fdf2631f75397d3236
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
+ms.openlocfilehash: 23609613cace2f9be90ad5c88d4d51bb1c2f1a9b
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96122517"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573507"
 ---
 #  <a name="connect-your-aws-accounts-to-azure-security-center"></a>Uw AWS-accounts verbinden met Azure Security Center
 
@@ -48,6 +48,8 @@ In de onderstaande schermopname ziet u de AWS-accounts die worden weergegeven in
 
 
 ## <a name="connect-your-aws-account"></a>Verbinding maken met uw AWS-account
+
+Volg de onderstaande stappen om uw AWS-cloudconnector te maken. 
 
 ### <a name="step-1-set-up-aws-security-hub"></a>Stap 1. AWS Security Hub instellen:
 
@@ -160,7 +162,7 @@ AWS Systems Manager is vereist voor het automatiseren van taken in uw AWS-resour
 
         U vindt meer informatie over Azure-tags via [Tags gebruiken om uw Azure-resources en beheerhiërarchie te organiseren](../azure-resource-manager/management/tag-resources.md).
 
-### <a name="step-7-confirmation"></a>Stap 7. Bevestiging
+### <a name="step-6-confirmation"></a>Stap 6. Bevestiging
 
 Wanneer de connector is gemaakt en AWS Security Hub correct is geconfigureerd:
 

@@ -4,13 +4,13 @@ description: In deze quickstart maakt u de basisonderdelen van een app, intentie
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: quickstart
-ms.date: 05/19/2020
-ms.openlocfilehash: 74866c65111fae9e6fb3b79d9b59819b14b03c16
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.date: 11/30/2020
+ms.openlocfilehash: a5443dce9fc8bc028232f66f45b537a46858f35a
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93131479"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436671"
 ---
 # <a name="quickstart-create-a-new-app-in-the-luis-portal"></a>Quickstart: Een nieuwe app maken in de LUIS-portal
 
@@ -20,7 +20,7 @@ In deze quickstart maakt u een nieuwe app in de LUIS-portal. Eerst maakt u de ba
 
 ## <a name="create-an-app"></a>Een app maken
 
-Als u een app wilt maken, klikt u op  **+ Nieuwe app**. 
+Als u een app wilt maken, selecteert u op **+ Nieuwe app**. 
 
 Typ de volgende informatie in het venster dat daarna wordt weergegeven:
 
@@ -133,7 +133,7 @@ De voorbeelduitingen voor de intentie **None** moeten buiten het toepassingsdome
 
 ## <a name="look-at-the-regular-expression-entity-in-the-example-utterances"></a>De reguliere expressie-entiteit in de voor beelduitingen bekijken
 
-1. Controleer of de entiteit zich in de intentie **FindForm** bevindt door **Intents** (Intenties) te selecteren in het menu links. Selecteer de **FindForm** -intentie.
+1. Controleer of de entiteit zich in de intentie **FindForm** bevindt door **Intents** (Intenties) te selecteren in het menu links. Selecteer de **FindForm**-intentie.
 
    De entiteit wordt gemarkeerd waar deze voorkomt in de voorbeelduitingen.
 
@@ -142,7 +142,7 @@ De voorbeelduitingen voor de intentie **None** moeten buiten het toepassingsdome
 
 ## <a name="test-your-new-app-with-the-interactive-test-pane"></a>Uw nieuwe app testen met het interactieve testdeelvenster
 
-Gebruik het interactieve **Test** -deelvenster in de LUIS-portal om te valideren dat de entiteit wordt geëxtraheerd van nieuwe uitingen die de app nog niet heeft gezien.
+Gebruik het interactieve **Test**-deelvenster in de LUIS-portal om te valideren dat de entiteit wordt geëxtraheerd van nieuwe uitingen die de app nog niet heeft gezien.
 
 1. Selecteer **Test** in het menu rechtsboven.
 
@@ -155,7 +155,7 @@ Gebruik het interactieve **Test** -deelvenster in de LUIS-portal om te valideren
    > [!div class="mx-imgBorder"]
    > ![Schermopname van het testen van een nieuwe uiting in het testdeelvenster](./media/get-started-portal-build-app/test-new-utterance.png)
 
-   De hoogst scorende voorspelde intentie is inderdaad **FindForm** , met een betrouwbaarheid van 90% (0.977). De entiteit **FormNumber** wordt geëxtraheerd met de waarde hrf-234098.
+   De hoogst scorende voorspelde intentie is inderdaad **FindForm**, met een betrouwbaarheid van 90% (0.977). De entiteit **FormNumber** wordt geëxtraheerd met de waarde hrf-234098.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

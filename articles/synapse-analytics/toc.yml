@@ -109,6 +109,10 @@
                   displayname: vnet
                 - name: 'Synapse-werkruimte: beheerde privé-eindpunten'
                   href: ./security/synapse-workspace-managed-private-endpoints.md
+                - name: Beveiliging tegen gegevensexfiltratie in Synapse-werkruimte
+                  href: ./security/workspace-data-exfiltration-protection.md
+                - name: Synapse-werkruimte met Private Link-hubs
+                  href: ./security/synapse-private-link-hubs.md
             - name: Verificatie pass-through
               items:
                 - name: Azure Active Directory
@@ -121,8 +125,13 @@
             - name: Toegangsbeheer
               items:
                 - name: Overzicht
-                  href: ./security/access-control.md
-                  displayname: 'access, control'
+                  href: ./security/synapse-workspace-access-control-overview.md
+                - name: Synapse RBAC
+                  href: ./security/synapse-workspace-synapse-rbac.md
+                - name: Synapse RBAC-rollen
+                  href: ./security/synapse-workspace-synapse-rbac-roles.md
+                - name: Inzicht in Synapse RBAC-rollen
+                  href: ./security/synapse-workspace-understand-what-role-you-need.md
                 - name: 'Synapse-werkruimte: beheerde identiteit'
                   href: ./security/synapse-workspace-managed-identity.md
     - name: Instructiegidsen
@@ -135,11 +144,19 @@
           items:
             - name: Toegangsbeheer beheren
               items:
+                - name: Toegangsbeheer instellen
+                  href: ./security/how-to-set-up-access-control.md
+                - name: Synapse-roltoewijzingen beoordelen
+                  href: ./security/how-to-review-synapse-rbac-role-assignments.md
+                - name: Synapse-roltoewijzingen beheren
+                  href: ./security/how-to-manage-synapse-rbac-role-assignments.md
                 - name: Machtigingen instellen voor de beheerde identiteit van de Azure Synapse-werkruimte
                   href: security/how-to-grant-workspace-managed-identity-permissions.md
                   displayname: grant
-                - name: Toegangsbeheer instellen
-                  href: security/how-to-set-up-access-control.md
+            - name: Bescherming tegen gegevensexfiltratie
+              items:
+                - name: Een werkruimte maken en beheren met bescherming tegen gegevensexfiltratie
+                  href: security/how-to-create-a-workspace-with-data-exfiltration-protection.md
             - name: Privé-eindpunten beheren
               items:
                 - name: Beheerde privé-eindpunten instellen voor gegevensbronnen
@@ -565,7 +582,7 @@
               href: ./spark/spark-dotnet.md
         - name: Beveiliging
           items:
-            - name: Referenties bewaren met TokenLibrary
+            - name: Referenties beveiligen met TokenLibrary
               href: ./spark/apache-spark-secure-credentials-with-tokenlibrary.md
         - name: Prestaties optimaliseren
           items:

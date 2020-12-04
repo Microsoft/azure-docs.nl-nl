@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: quickstart
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: bbaa44fb64becee85b29cd44bee44e593ec55bf6
-ms.sourcegitcommit: 65d518d1ccdbb7b7e1b1de1c387c382edf037850
+ms.openlocfilehash: 1095222f332e7a66f684feddf1fdab17704ca658
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94372632"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96573541"
 ---
 #  <a name="connect-your-gcp-accounts-to-azure-security-center"></a>Uw GCP-accounts verbinden met Azure Security Center
 
@@ -43,6 +43,8 @@ In de onderstaande schermopname ziet u de GCP-projecten die worden weergegeven i
 |||
 
 ## <a name="connect-your-gcp-account"></a>Verbinding maken met uw GCP-account
+
+Volg de onderstaande stappen om uw GCP-cloudconnector te maken. 
 
 ### <a name="step-1-set-up-gcp-security-command-center-with-security-health-analytics"></a>Stap 1. GCP Security Command Center instellen met Security Health Analytics
 

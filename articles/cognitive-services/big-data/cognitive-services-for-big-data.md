@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: overview
 ms.date: 07/09/2020
 ms.author: marhamil
-ms.openlocfilehash: 1b08925db12edffdaf5c85f1fa6f5934a412d81f
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: aaade03edbbb109656fb7371a063cdc2512c5a20
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94363303"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461616"
 ---
 # <a name="azure-cognitive-services-for-big-data"></a>Azure Cognitive Services voor Big Data
 
@@ -84,11 +84,11 @@ De Cognitive Services voor Big Data vereisen Apache Spark. Er zijn verschillende
 
 ### <a name="azure-synapse-analytics"></a>Azure Synapse Analytics
 
-[Azure Synapse Analytics](/azure/databricks/data/data-sources/azure/synapse-analytics) (voorheen SQL Data Warehouse) is een zakelijke datawarehouse die parallelle verwerking op grote schaal gebruikt. Met Synapse Analytics kunt u snel complexe query's uitvoeren op petabytes aan gegevens. Azure Synapse Analytics biedt beheerde Spark Pools om Spark-taken uit te voeren met een intuïtieve Jupyter Notebook-interface.
+[Azure Synapse Analytics](/azure/databricks/data/data-sources/azure/synapse-analytics) is een zakelijke datawarehouse die parallelle verwerking op grote schaal gebruikt. Met Synapse Analytics kunt u snel complexe query's uitvoeren op petabytes aan gegevens. Azure Synapse Analytics biedt beheerde Spark Pools om Spark-taken uit te voeren met een intuïtieve Jupyter Notebook-interface.
 
 ### <a name="azure-kubernetes-service"></a>Azure Kubernetes Service
 
-[Azure Kubernetes Service (AKS)](../../aks/index.yml) organiseert Docker-containers en gedistribueerde toepassingen op grote schaal. AKS is een beheerde Kubernetes-aanbieding die het gebruik van Kubernetes in Azure vereenvoudigt. Met Kubernetes kunt u de schaal, latentie en netwerken van Cognitive Service nauwkeurig controleren. We raden u echter aan Azure Databricks of Synapse Analytics te gebruiken als u niet bekend bent met Apache Spark.
+[Azure Kubernetes Service (AKS)](../../aks/index.yml) organiseert Docker-containers en gedistribueerde toepassingen op grote schaal. AKS is een beheerde Kubernetes-aanbieding die het gebruik van Kubernetes in Azure vereenvoudigt. Met Kubernetes kunt u de schaal, latentie en netwerken van Cognitive Service nauwkeurig controleren. We raden u echter aan Azure Databricks of Azure Synapse Analytics te gebruiken als u niet bekend bent met Apache Spark.
 
 ### <a name="data-connectors"></a>Gegevensconnectors
 

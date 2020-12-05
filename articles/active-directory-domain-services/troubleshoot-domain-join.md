@@ -2,20 +2,20 @@
 title: Problemen met domein deelname met Azure AD Domain Services oplossen | Microsoft Docs
 description: Meer informatie over het oplossen van veelvoorkomende problemen wanneer u een VM probeert te koppelen of een toepassing verbindt met Azure Active Directory Domain Services en u geen verbinding kunt maken met of verifiëren voor het beheerde domein.
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 07/06/2020
-ms.author: joflore
-ms.openlocfilehash: ee60b684d64ef49fbb669de8c98203e2df5268bf
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: 86d6ca79a12e4706f558e92c3c83c5bddaa99b3c
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91967508"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96618600"
 ---
 # <a name="troubleshoot-domain-join-problems-with-an-azure-active-directory-domain-services-managed-domain"></a>Problemen met domein deelname oplossen met een door Azure Active Directory Domain Services beheerd domein
 
@@ -43,7 +43,7 @@ Wanneer u een beheerd domein maakt, wordt er ook een netwerk beveiligings groep 
 
 Als er verbindings problemen blijven bestaan, raadpleegt u de volgende stappen voor probleem oplossing:
 
-1. Controleer de integriteits status van uw beheerde domein in het Azure Portal. Als u een waarschuwing voor *AADDS001*hebt, wordt de toegang geblokkeerd door een regel voor de netwerk beveiligings groep.
+1. Controleer de integriteits status van uw beheerde domein in het Azure Portal. Als u een waarschuwing voor *AADDS001* hebt, wordt de toegang geblokkeerd door een regel voor de netwerk beveiligings groep.
 1. Controleer de [vereiste poorten en de regels voor de netwerk beveiligings groep][network-ports]. Zorg ervoor dat er geen regels voor de netwerk beveiligings groep worden toegepast op de virtuele machine of het virtuele netwerk waarmee u verbinding maakt van deze netwerk poorten blok keren.
 1. Zodra er problemen met de configuratie van de netwerk beveiligings groep zijn opgelost, verdwijnt de waarschuwing *AADDS001* in ongeveer 2 uur uit de status pagina. Probeer opnieuw verbinding te maken met de virtuele machine met netwerk connectiviteit die nu beschikbaar is.
 

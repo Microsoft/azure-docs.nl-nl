@@ -7,12 +7,12 @@ ms.service: iot-fundamentals
 ms.topic: conceptual
 ms.date: 11/25/2020
 ms.author: jlian
-ms.openlocfilehash: ddb89f60c9fe380012c299afaafb6046bf6849c9
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: f4438aebcb81d665a19a595ac7ade4fea27fc43f
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602747"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621005"
 ---
 # <a name="transport-layer-security-tls-support-in-iot-hub"></a>Ondersteuning van Transport Layer Security (TLS) in IoT Hub
 
@@ -22,7 +22,7 @@ TLS 1,0 en 1,1 worden beschouwd als verouderd en zijn gepland voor afschaffing. 
 
 ## <a name="iot-hubs-server-tls-certificate"></a>TLS-certificaat van IoT Hub server
 
-Tijdens een TLS-Handshake biedt IoT Hub RSA-versleutelings server certificaten om clients te verbinden. De hoofdmap is de basis-CA van de Baltimore Cyber Trust. Recent was er een wijziging in de certificaat verleners door nieuwe tussenliggende certificerings instanties (ICAs). Zie [IOT hub TLS-certificaat update](https://azure.microsoft.com/updates/iot-hub-tls-certificate-update/) voor meer informatie.
+Tijdens een TLS-Handshake biedt IoT Hub RSA-versleutelings server certificaten om clients te verbinden. De hoofdmap is de basis-CA van de Baltimore Cyber Trust. Onlangs hebben we een wijziging doorgevoerd in ons TLS-server certificaat, zodat dit nu door nieuwe tussenliggende certificerings instanties (ICA) wordt verleend. Zie [IOT hub TLS-certificaat update](https://azure.microsoft.com/updates/iot-hub-tls-certificate-update/)voor meer informatie.
 
 ### <a name="elliptic-curve-cryptography-ecc-server-tls-certificate-preview"></a>TLS-certificaat (voor elliptische curve) (ECC)-server (preview)
 
@@ -31,7 +31,7 @@ IoT Hub TLS-certificaat van de ECC-server is beschikbaar voor open bare preview.
 Voor beeld van het ECC-server certificaat van IoT Hub:
 
 1. [Maak een nieuwe IOT-hub met de preview-modus op](iot-hub-preview-mode.md).
-1. [Configureer uw client](#tls-configuration-for-sdk-and-iot-edge) zo dat deze *alleen* ECDSA-coderings suites bevat en *sluit* alle RSA uit. Dit zijn de coderings suites voor de open bare preview van ECC-certificaten:
+1. [Configureer uw client](#tls-configuration-for-sdk-and-iot-edge) zo dat deze *alleen* ECDSA-coderings suites bevat en *sluit* alle RSA uit. Dit zijn de ondersteunde coderings suites voor de open bare preview van ECC-certificaten:
     - `TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256`
     - `TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384`
     - `TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256`
@@ -133,7 +133,7 @@ Gebruik deze functie om de maximale lengte van de Lees bare tekst op te geven in
 Officiële SDK-ondersteuning voor deze open bare preview-functie is nog niet beschikbaar. Om aan de slag te gaan
 
 1. [Maak een nieuwe IOT-hub met de preview-modus op](iot-hub-preview-mode.md).
-1. Configureer uw client om `SSL_CTX_set_tlsext_max_fragment_length` in te stellen op een van deze waarden: 2 ^ 9, 2 ^ 10, 2 ^ 11 en 2 ^ 12.
+1. Bij gebruik van OpenSSL roept u [SSL_CTX_set_tlsext_max_fragment_length](https://manpages.debian.org/testing/libssl-doc/SSL_CTX_set_max_send_fragment.3ssl.en.html) aan om de fragment grootte op te geven.
 1. Verbind uw client met de preview-IoT Hub.
 
 ## <a name="next-steps"></a>Volgende stappen

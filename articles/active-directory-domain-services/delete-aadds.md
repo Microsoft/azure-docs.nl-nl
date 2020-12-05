@@ -2,7 +2,7 @@
 title: Azure Active Directory Domain Services verwijderen | Microsoft Docs
 description: Meer informatie over het uitschakelen of verwijderen van een Azure Active Directory Domain Services beheerd domein met behulp van de Azure Portal
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 89e407e1-e1e0-49d1-8b89-de11484eee46
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/06/2020
-ms.author: joflore
-ms.openlocfilehash: 30b087bc2c3e68a6ce1302a2266b39399110ce5c
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: a5126abd6643eba7f63b2bf4ca984bb9892b2d7a
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91960861"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96619807"
 ---
 # <a name="delete-an-azure-active-directory-domain-services-managed-domain-using-the-azure-portal"></a>Een door Azure Active Directory Domain Services beheerd domein verwijderen met de Azure Portal
 

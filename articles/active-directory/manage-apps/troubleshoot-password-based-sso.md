@@ -10,14 +10,14 @@ ms.topic: troubleshooting
 ms.date: 07/11/2017
 ms.author: kenwith
 ms.reviewer: asteen
-ms.openlocfilehash: 1823de88597756ba3db9aee0dc29501b1ba914a4
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: d122cedbad41d6984614a0edccb2fd98269710f2
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94646233"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96618073"
 ---
-# <a name="troubleshoot-password-based-single-sign-on-in-azure-ad"></a>Problemen oplossen met eenmalige aanmelding op basis van wacht woorden in azure AD
+# <a name="troubleshoot-password-based-single-sign-on-in-azure-ad"></a>Problemen oplossen met eenmalige aanmelding op basis van wachtwoord in Azure Active Directory
 
 Als u eenmalige aanmelding (SSO) op basis van wacht woorden in mijn apps wilt gebruiken, moet de browser extensie zijn geïnstalleerd. De extensie wordt automatisch gedownload wanneer u een app selecteert die is geconfigureerd voor SSO op basis van een wacht woord. Zie [de Help van mijn apps-Portal](../user-help/my-apps-portal-end-user-access.md)voor meer informatie over het gebruik van mijn apps vanuit het oogpunt van eind gebruikers.
 
@@ -30,7 +30,7 @@ Zorg ervoor dat de eenmalige aanmelding op basis van wacht woorden is geconfigur
 ## <a name="users-not-assigned"></a>Gebruikers niet toegewezen
 Zorg ervoor dat de gebruiker is toegewezen aan de app. Zie [een gebruiker of groep toewijzen aan een app](assign-user-or-group-access-portal.md)voor meer informatie.
 
-## <a name="credentials-are-filled-in-but-the-extension-does-not-submit-them"></a>Referenties zijn ingevuld, maar de extensie verzendt deze niet
+## <a name="credentials-are-filled-in-but-the-extension-does-not-submit-them"></a>Referenties zijn ingevuld, maar deze worden niet verzonden via de extensie
 
 Dit probleem treedt doorgaans op als de leverancier van de toepassing onlangs een veld heeft gewijzigd, een id heeft gewijzigd die wordt gebruikt voor het detecteren van de gebruikers naam en het wacht woord, of het wijzigen van de manier waarop de aanmeldings ervaring werkt voor de toepassing. Gelukkig kan micro soft in veel gevallen samen werken met leveranciers van toepassingen om deze problemen snel op te lossen.
 
@@ -38,7 +38,7 @@ Micro soft heeft technologieën om automatisch te detecteren wanneer integraties
 
 **Als u contact opneemt met de leverancier van deze toepassing, kunt u** ze onze manier sturen zodat micro soft ermee kan samen werken om hun toepassing systeem eigen te integreren met Azure Active Directory. U kunt de leverancier verzenden naar de [vermelding uw toepassing in de galerie met Azure Active Directory toepassingen](../develop/v2-howto-app-gallery-listing.md) om ze te starten.
 
-## <a name="credentials-are-filled-in-and-submitted-but-the-page-indicates-the-credentials-are-incorrect"></a>Referenties worden ingevuld en verzonden, maar de pagina geeft aan dat de referenties onjuist zijn
+## <a name="credentials-are-filled-in-and-submitted-but-the-page-indicates-the-credentials-are-incorrect"></a>Referenties zijn ingevuld en verzonden, maar de pagina geeft aan dat de referenties onjuist zijn
 
 Voer de volgende stappen uit om dit probleem op te lossen:
 
@@ -87,7 +87,7 @@ Over het algemeen kunt u de optie hand matig gebruiken als het vastleggen van au
 ### <a name="automatically-capture-sign-in-fields-for-an-app"></a>Aanmeldings velden automatisch vastleggen voor een app
 
 Voer de volgende stappen uit om eenmalige aanmelding op basis van een wacht woord te configureren met behulp van automatische registratie van het registratie veld:
-1. Open [Azure Portal](https://portal.azure.com/). Meld u aan als globale beheerder of co-beheerder.
+1. Open de [Azure Portal](https://portal.azure.com/). Meld u aan als globale beheerder of co-beheerder.
 2. Selecteer in het navigatie deel venster aan de linkerkant **alle services** om de Azure AD-extensie te openen.
 3. Typ **Azure Active Directory** in het vak Zoek opdracht filteren en selecteer vervolgens **Azure Active Directory**.
 4. Selecteer **bedrijfs toepassingen** in het navigatie deel venster van Azure AD.
@@ -106,7 +106,7 @@ Voer de volgende stappen uit om eenmalige aanmelding op basis van een wacht woor
 Als u hand matig aanmeldings velden wilt vastleggen, moet de browser extensie mijn apps zijn geïnstalleerd. Uw browser kan ook niet worden uitgevoerd in de modus *InPrivate*, *incognito* of *Private* .
 
 Voer de volgende stappen uit om SSO op basis van een wacht woord te configureren voor een app door gebruik te maken van hand matige registratie van het registratie veld:
-1. Open [Azure Portal](https://portal.azure.com/). Meld u aan als globale beheerder of co-beheerder.
+1. Open de [Azure Portal](https://portal.azure.com/). Meld u aan als globale beheerder of co-beheerder.
 2. Selecteer in het navigatie deel venster aan de linkerkant **alle services** om de Azure AD-extensie te openen.
 3. Typ **Azure Active Directory** in het vak Zoek opdracht filteren en selecteer vervolgens **Azure Active Directory**.
 4. Selecteer **bedrijfs toepassingen** in het navigatie deel venster van Azure AD.
@@ -150,6 +150,13 @@ Als u een van deze problemen ondervindt, doet u het volgende:
 - Zorg ervoor dat uw gebruikers zich niet bij de app aanmelden vanuit mijn apps in *incognito*, *InPrivate* of *Private*.
 - Probeer het hand matige vastleg proces opnieuw. Zorg ervoor dat de rode markeringen zich in de juiste velden bevinden.
 - Als het hand matige vastleg proces niet meer reageert of als de aanmeldings pagina niet reageert, kunt u het hand matige vastleg proces opnieuw proberen. Maar deze keer, na het volt ooien van het proces, drukt u op de F12-toets om de ontwikkelaars console van uw browser te openen. Selecteer het tabblad **console** . Typ **Window. Location = "*&lt; de aanmeldings-URL die u hebt opgegeven bij het configureren van &gt; de app*"** en druk op ENTER. Hiermee wordt een omleiding van pagina's afgedwongen waarmee het proces wordt beëindigd en worden de opgenomen velden opgeslagen.
+
+### <a name="i-cant-add-another-user-to-my-password-based-sso-app"></a>Ik kan geen andere gebruiker toevoegen aan mijn op wacht woord gebaseerde SSO-app
+
+SSO-app op basis van wacht woorden heeft een limiet van 48 gebruikers. Daarom heeft het een limiet van 48 sleutels voor de combi natie van gebruikers naam en wacht woord per app.
+Als u extra gebruikers wilt toevoegen, kunt u het volgende doen:
+-   Een extra exemplaar van de app toevoegen
+-   Gebruikers verwijderen die de app het eerst niet meer gebruiken
 
 ## <a name="request-support"></a>Ondersteuning aanvragen 
 Als er een fout bericht wordt weer gegeven wanneer u SSO instelt en gebruikers toewijst, opent u een ondersteunings ticket. Voeg zo veel mogelijk van de volgende gegevens toe:

@@ -2,7 +2,7 @@
 title: Scoped Synchronization for Azure AD Domain Services | Microsoft Docs
 description: Meer informatie over het gebruik van de Azure Portal voor het configureren van scoped Synchronization from Azure AD to a Azure Active Directory Domain Services Managed Domain
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 9389cf0f-0036-4b17-95da-80838edd2225
 ms.service: active-directory
@@ -10,14 +10,14 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/24/2020
-ms.author: joflore
+ms.author: justinha
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 514932726d9283af0c3fb404f787a10057ce8842
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 4e65b47b2a1fd71c69ecb350f60df1fedff66b74
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91967848"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96618906"
 ---
 # <a name="configure-scoped-synchronization-from-azure-ad-to-azure-active-directory-domain-services-using-the-azure-portal"></a>Configureer de synchronisatie van scoped vanuit Azure AD naar Azure Active Directory Domain Services met behulp van de Azure Portal
 
@@ -59,7 +59,7 @@ Voer de volgende stappen uit om scoped synchronisatie in te scha kelen in de Azu
 
 1. Zoek en selecteer **Azure AD Domain Services** in de Azure-portal. Kies uw beheerde domein, bijvoorbeeld *aaddscontoso.com*.
 1. Selecteer **synchronisatie** in het menu aan de linkerkant.
-1. Selecteer **scoped**voor het *synchronisatie type*.
+1. Selecteer **scoped** voor het *synchronisatie type*.
 1. Kies **groepen selecteren**, zoek naar en selecteer de groepen die u wilt toevoegen.
 1. Wanneer alle wijzigingen zijn aangebracht, selecteert u **synchronisatie bereik opslaan**.
 
@@ -83,7 +83,7 @@ Voer de volgende stappen uit als u de synchronisatie op basis van een groep wilt
 
 1. Zoek en selecteer **Azure AD Domain Services** in de Azure-portal. Kies uw beheerde domein, bijvoorbeeld *aaddscontoso.com*.
 1. Selecteer **synchronisatie** in het menu aan de linkerkant.
-1. Wijzig het *synchronisatie type* van **scoped** in **all**en selecteer vervolgens **synchronisatie bereik opslaan**.
+1. Wijzig het *synchronisatie type* van **scoped** in **all** en selecteer vervolgens **synchronisatie bereik opslaan**.
 
 Het wijzigen van het bereik van de synchronisatie zorgt ervoor dat het beheerde domein alle gegevens opnieuw synchroniseert. Objecten die niet meer nodig zijn in het beheerde domein, worden verwijderd en het kan enige tijd duren voordat de synchronisatie is voltooid.
 

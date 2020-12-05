@@ -2,20 +2,20 @@
 title: Voor delen van de migratie van een klassieke implementatie in Azure AD Domain Services | Microsoft Docs
 description: Meer informatie over de voor delen van het migreren van een klassieke implementatie van Azure Active Directory Domain Services naar het Resource Manager-implementatie model
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 05/26/2020
-ms.author: joflore
-ms.openlocfilehash: 35224e6c9a28b1555303c1ae11b6700c1bf419bf
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: 8cc5f5ebf389d35df02474d0561dc7827cde4d0b
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91962493"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96620083"
 ---
 # <a name="benefits-of-migration-from-the-classic-to-resource-manager-deployment-model-in-azure-active-directory-domain-services"></a>De voor delen van de migratie van het klassieke naar het Resource Manager-implementatie model in Azure Active Directory Domain Services
 

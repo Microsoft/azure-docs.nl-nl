@@ -1,20 +1,20 @@
 ---
 title: Een Azure AD Domain Services resource-forest maken met behulp van Azure PowerShell | Microsoft Docs
 description: In dit artikel vindt u informatie over het maken en configureren van een Azure Active Directory Domain Services bron-forest en een uitgaand forest naar een on-premises Active Directory Domain Services omgeving met behulp van Azure PowerShell.
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/27/2020
-ms.author: joflore
-ms.openlocfilehash: 32ec3eface215330aba9e40b46e45b97b5c07091
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.author: justinha
+ms.openlocfilehash: ebfc2476b7955b926f86094de03973155386eb8f
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93041103"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96619964"
 ---
 # <a name="create-an-azure-active-directory-domain-services-resource-forest-and-outbound-forest-trust-to-an-on-premises-domain-using-azure-powershell"></a>Een Azure Active Directory Domain Services resource-forest en een uitgaand forest-vertrouwens relatie met een on-premises domein maken met behulp van Azure PowerShell
 
@@ -74,7 +74,7 @@ Voordat u begint, moet u ervoor zorgen dat u inzicht krijgt in de [netwerk overw
 
 Voor Azure AD DS is een service-principal met gegevens synchronisatie vanuit Azure AD vereist. Deze principal moet worden gemaakt in uw Azure AD-Tenant voordat u het beheerde domein resource-forest maakt.
 
-Een Azure AD-service-principal voor Azure AD DS maken om te communiceren en zichzelf te verifiëren. Een specifieke toepassings-ID wordt gebruikt met de naam *Domain Controller Services* met de id *6ba9a5d4-8456-4118-b521-9c5ca10cdf84* . Wijzig deze toepassings-id niet.
+Een Azure AD-service-principal voor Azure AD DS maken om te communiceren en zichzelf te verifiëren. Er wordt een specifieke toepassings-id gebruikt met de naam *Domeincontrollerservices* met de id *6ba9a5d4-8456-4118-b521-9c5ca10cdf84*. Wijzig deze toepassings-id niet.
 
 Maak een service-principal in Azure AD met behulp van de [New-AzureADServicePrincipal][New-AzureADServicePrincipal]-cmdlet:
 
@@ -86,7 +86,7 @@ New-AzureADServicePrincipal -AppId "6ba9a5d4-8456-4118-b521-9c5ca10cdf84"
 
 Gebruik het script om een resource forest voor een beheerd domein te maken `New-AzureAaddsForest` . Dit script maakt deel uit van een bredere set opdrachten die ondersteuning biedt voor het maken en beheren van beheerde domein resource forests, waaronder het maken van een eenrichtings gebonden forest in een van de volgende secties. Deze scripts zijn beschikbaar via de [PowerShell Gallery](https://www.powershellgallery.com/) en zijn digitaal ondertekend door het technische team van Azure AD.
 
-1. Maak eerst een resource groep met behulp van de cmdlet [New-AzResourceGroup][New-AzResourceGroup] . De resourcegroep in het volgende voorbeeld heet *myResourceGroup* en is gemaakt in de regio *westus* . Gebruik uw eigen naam en gewenste regio:
+1. Maak eerst een resource groep met behulp van de cmdlet [New-AzResourceGroup][New-AzResourceGroup] . De resourcegroep in het volgende voorbeeld heet *myResourceGroup* en is gemaakt in de regio *westus*. Gebruik uw eigen naam en gewenste regio:
 
     ```azurepowershell
     New-AzResourceGroup `
@@ -117,9 +117,9 @@ Gebruik het script om een resource forest voor een beheerd domein te maken `New-
     | Naam van virtueel netwerk              | *-aaddsVnetName*                  | De naam van het virtuele netwerk voor het beheerde domein.|
     | Adresruimte                     | *-aaddsVnetCIDRAddressSpace*      | Het adres bereik van het virtuele netwerk in CIDR-notatie (bij het maken van het virtuele netwerk).|
     | Naam van Azure AD DS subnet           | *-aaddsSubnetName*                | De naam van het subnet van het virtuele *aaddsVnetName* -netwerk dat als host fungeert voor het beheerde domein. Implementeer uw eigen Vm's en workloads niet in dit subnet. |
-    | Adres bereik van Azure AD DS         | *-aaddsSubnetCIDRAddressRange*    | Het adres bereik van het subnet in CIDR-notatie voor het AAD DS-exemplaar, zoals *192.168.1.0/24* . Het adres bereik moet zijn opgenomen in het adres bereik van het virtuele netwerk en verschilt van andere subnetten. |
+    | Adres bereik van Azure AD DS         | *-aaddsSubnetCIDRAddressRange*    | Het adres bereik van het subnet in CIDR-notatie voor het AAD DS-exemplaar, zoals *192.168.1.0/24*. Het adres bereik moet zijn opgenomen in het adres bereik van het virtuele netwerk en verschilt van andere subnetten. |
     | Naam van workload-subnet (optioneel)   | *-workloadSubnetName*             | Een optionele naam van een subnet in het virtuele netwerk van *aaddsVnetName* om te maken voor werk belastingen van uw eigen toepassing. Vm's en toepassingen en zijn ook verbonden met een virtueel Azure Virtual Network. |
-    | Adres bereik van werk belasting (optioneel) | *-workloadSubnetCIDRAddressRange* | Het adres bereik van een optioneel subnet in CIDR-notatie voor de werk belasting van de toepassing, zoals *192.168.2.0/24* . Het adres bereik moet zijn opgenomen in het adres bereik van het virtuele netwerk en verschilt van andere subnetten.|
+    | Adres bereik van werk belasting (optioneel) | *-workloadSubnetCIDRAddressRange* | Het adres bereik van een optioneel subnet in CIDR-notatie voor de werk belasting van de toepassing, zoals *192.168.2.0/24*. Het adres bereik moet zijn opgenomen in het adres bereik van het virtuele netwerk en verschilt van andere subnetten.|
 
 1. Maak nu een forest met een beheerd domein resource met behulp van het `New-AzureAaaddsForest` script. In het volgende voor beeld wordt een forest gemaakt met de naam *addscontoso.com* en wordt een workload-subnet gemaakt. Geef uw eigen parameter namen en IP-adresbereiken of bestaande virtuele netwerken op.
 
@@ -163,7 +163,7 @@ Voordat u begint, moet u ervoor zorgen dat u inzicht krijgt in de [overwegingen 
     * Controleer of de on-premises domein controller bijvoorbeeld verbinding kan maken met de beheerde VM met `ping` of extern bureau blad.
     * Controleer of de virtuele machine van het beheer verbinding kan maken met uw on-premises domein controllers, met een hulp programma zoals `ping` .
 
-1. Zoek en selecteer **Azure AD Domain Services** in de Azure-portal. Kies uw beheerde domein, bijvoorbeeld *aaddscontoso.com* , en wacht totdat de status is gerapporteerd als **actief** .
+1. Zoek en selecteer **Azure AD Domain Services** in de Azure-portal. Kies uw beheerde domein, bijvoorbeeld *aaddscontoso.com* , en wacht totdat de status is gerapporteerd als **actief**.
 
     Bij uitvoering werkt u de [DNS-instellingen voor het virtuele Azure-netwerk](tutorial-create-instance.md#update-dns-settings-for-the-azure-virtual-network) bij en schakelt u vervolgens [gebruikers accounts voor Azure AD DS](tutorial-create-instance.md#enable-user-accounts-for-azure-ad-ds) in om de configuraties voor het forest met het beheerde domein resource te volt ooien.
 
@@ -221,9 +221,9 @@ Add-AaddsResourceForestTrust `
 Als u het beheerde domein correct wilt omzetten vanuit de on-premises omgeving, moet u mogelijk doorstuurservers toevoegen aan de bestaande DNS-server. Als u de on-premises omgeving niet hebt geconfigureerd voor communicatie met het beheerde domein, voltooit u de volgende stappen vanuit een beheerwerkstation voor het on-premises AD DS-domein:
 
 1. Selecteer **Start | Systeembeheer | DNS**
-1. Selecteer met de rechtermuisknop de DNS-server, bijvoorbeeld *myAD01* . Selecteer vervolgens **Eigenschappen**
+1. Selecteer met de rechtermuisknop de DNS-server, bijvoorbeeld *myAD01*. Selecteer vervolgens **Eigenschappen**
 1. Kies **Doorstuurservers** en vervolgens **Bewerken** om extra doorstuurservers toe te voegen.
-1. Voeg de IP-adressen van het beheerde domein toe, zoals *10.0.1.4* en *10.0.1.5* .
+1. Voeg de IP-adressen van het beheerde domein toe, zoals *10.0.1.4* en *10.0.1.5*.
 1. Vanuit een lokale opdracht prompt valideert u naam omzetting met behulp van **nslookup** van de domein naam van het forest van het beheerde domein. `Nslookup aaddscontoso.com`Moet bijvoorbeeld de twee IP-adressen retour neren voor het forest met het beheerde domein resource.
 
 ## <a name="create-inbound-forest-trust-in-the-on-premises-domain"></a>Een binnenkomend forestvertrouwensrelatie maken in het on-premises domein
@@ -233,14 +233,14 @@ Het on-premises AD DS-domein heeft een binnenkomende forestvertrouwensrelatie vo
 Als u een binnenkomende vertrouwensrelatie in het on-premises AD DS-domein wilt configureren, voltooit u de volgende stappen vanuit een beheerwerkstation voor het on-premises AD DS-domein:
 
 1. Selecteer **Start | Systeembeheer | Active Directory: domeinen en vertrouwensrelaties**
-1. Selecteer met de rechtermuisknop het domein, bijvoorbeeld *onprem.contoso.com* . Selecteer vervolgens **Eigenschappen**
+1. Selecteer met de rechtermuisknop het domein, bijvoorbeeld *onprem.contoso.com*. Selecteer vervolgens **Eigenschappen**
 1. Kies het tabblad **Vertrouwensrelaties** en vervolgens **Nieuwe vertrouwensrelatie**
-1. Voer de naam van het beheerde domein in, bijvoorbeeld *aaddscontoso.com* , en selecteer vervolgens **volgende**
-1. Selecteer de optie om een **Forestvertrouwensrelatie** te maken. Maak vervolgens een vertrouwensrelatie van het type **In één richting: binnenkomend** .
-1. Kies ervoor om de vertrouwensrelatie te maken voor **Alleen dit domein** . In de volgende stap maakt u de vertrouwensrelatie in de Azure-portal voor het beheerde domein.
-1. Kies voor het gebruik van **Forestdekkende verificatie** . Voer vervolgens een wachtwoord voor de vertrouwensrelatie in en bevestig dit. Dit wachtwoord wordt ook ingevoerd in de Azure-portal in de volgende sectie.
-1. Doorloop de volgende paar vensters met standaardopties, en kies vervolgens de optie **Nee, uitgaande vertrouwensrelatie niet bevestigen** . U kunt de vertrouwens relatie niet valideren omdat het gedelegeerde beheerders account aan het forest van het beheerde domein niet over de vereiste machtigingen beschikt. Dit gedrag is standaard.
-1. Selecteer **Voltooien** .
+1. Voer de naam van het beheerde domein in, bijvoorbeeld *aaddscontoso.com*, en selecteer vervolgens **volgende**
+1. Selecteer de optie om een **Forestvertrouwensrelatie** te maken. Maak vervolgens een vertrouwensrelatie van het type **In één richting: binnenkomend**.
+1. Kies ervoor om de vertrouwensrelatie te maken voor **Alleen dit domein**. In de volgende stap maakt u de vertrouwensrelatie in de Azure-portal voor het beheerde domein.
+1. Kies voor het gebruik van **Forestdekkende verificatie**. Voer vervolgens een wachtwoord voor de vertrouwensrelatie in en bevestig dit. Dit wachtwoord wordt ook ingevoerd in de Azure-portal in de volgende sectie.
+1. Doorloop de volgende paar vensters met standaardopties, en kies vervolgens de optie **Nee, uitgaande vertrouwensrelatie niet bevestigen**. U kunt de vertrouwens relatie niet valideren omdat het gedelegeerde beheerders account aan het forest van het beheerde domein niet over de vereiste machtigingen beschikt. Dit gedrag is standaard.
+1. Selecteer **Voltooien**.
 
 ## <a name="validate-resource-authentication"></a>Verificatie van resources valideren
 
@@ -288,50 +288,50 @@ Met behulp van de Windows Server-VM die is toegevoegd aan het forest met het beh
     > [!TIP]
     > Als u een beveiligde verbinding wilt maken met uw Vm's die zijn toegevoegd aan Azure AD Domain Services, kunt u de [Azure bastion host-service](../bastion/bastion-overview.md) gebruiken in ondersteunde Azure-regio's.
 
-1. Open **Windows-instellingen** . Zoek en selecteer vervolgens **Netwerkcentrum** .
-1. Kies de optie **Geavanceerde instellingen voor delen wijzigen** .
-1. Selecteer onder het **Domeinprofiel** de optie **Bestands- en printerdeling inschakelen** en vervolgens **Wijzigingen opslaan** .
-1. Sluit het **Netwerkcentrum** .
+1. Open **Windows-instellingen**. Zoek en selecteer vervolgens **Netwerkcentrum**.
+1. Kies de optie **Geavanceerde instellingen voor delen wijzigen**.
+1. Selecteer onder het **Domeinprofiel** de optie **Bestands- en printerdeling inschakelen** en vervolgens **Wijzigingen opslaan**.
+1. Sluit het **Netwerkcentrum**.
 
 #### <a name="create-a-security-group-and-add-members"></a>Een beveiligingsgroep maken en leden toevoegen
 
-1. Open **Active Directory: gebruikers en computers** .
-1. Klik met de rechtermuisknop op de domeinnaam, kies **Nieuw** en selecteer vervolgens **Organisatie-eenheid** .
-1. Typ *LocalObjects* in het naamvak, en selecteer vervolgens **OK** .
-1. Selecteer en klik met de rechtermuisknop op **LocalObjects** in het navigatiedeelvenster. Selecteer **Nieuw** en vervolgens **Groep** .
-1. Typ *FileServerAccess* in het vak **Groepsnaam** . Selecteer voor het **Groepsbereik** de optie **Lokaal domein** en kies vervolgens **OK** .
-1. Dubbelklik in het inhoudsvenster op **FileServerAccess** . Selecteer **Leden** , kies **Toevoegen** en selecteer **Locaties** .
-1. Selecteer uw on-premises Active Directory op de weergave **Locatie** en kies vervolgens **OK** .
-1. Typ *Domeingebruikers* in het vak **Geef de objectnamen op** . Selecteer **Namen controleren** , geef referenties op voor de on-premises Active Directory en selecteer vervolgens **OK** .
+1. Open **Active Directory: gebruikers en computers**.
+1. Klik met de rechtermuisknop op de domeinnaam, kies **Nieuw** en selecteer vervolgens **Organisatie-eenheid**.
+1. Typ *LocalObjects* in het naamvak, en selecteer vervolgens **OK**.
+1. Selecteer en klik met de rechtermuisknop op **LocalObjects** in het navigatiedeelvenster. Selecteer **Nieuw** en vervolgens **Groep**.
+1. Typ *FileServerAccess* in het vak **Groepsnaam**. Selecteer voor het **Groepsbereik** de optie **Lokaal domein** en kies vervolgens **OK**.
+1. Dubbelklik in het inhoudsvenster op **FileServerAccess**. Selecteer **Leden**, kies **Toevoegen** en selecteer **Locaties**.
+1. Selecteer uw on-premises Active Directory op de weergave **Locatie** en kies vervolgens **OK**.
+1. Typ *Domeingebruikers* in het vak **Geef de objectnamen op**. Selecteer **Namen controleren**, geef referenties op voor de on-premises Active Directory en selecteer vervolgens **OK**.
 
     > [!NOTE]
     > U moet referenties opgeven, omdat de vertrouwensrelatie slechts één manier is. Dit betekent dat gebruikers van het beheerde domein geen toegang krijgen tot bronnen of kunnen zoeken naar gebruikers of groepen in het vertrouwde (on-premises) domein.
 
-1. De groep **Domeingebruikers** uit uw on-premises Active Directory moet lid zijn van de groep **FileServerAccess** . Selecteer **OK** om de groep op te slaan, en sluit het venster.
+1. De groep **Domeingebruikers** uit uw on-premises Active Directory moet lid zijn van de groep **FileServerAccess**. Selecteer **OK** om de groep op te slaan, en sluit het venster.
 
 #### <a name="create-a-file-share-for-cross-forest-access"></a>Een bestandsshare maken voor toegang tussen forests
 
-1. Maak op de Windows Server-VM lid van het forest beheerde domein resource een map en geef een naam op, bijvoorbeeld *CrossForestShare* .
-1. Klik met de rechtermuisknop op de map en kies **Eigenschappen** .
-1. Selecteer het tabblad **Beveiliging** en kies vervolgens **Bewerken** .
-1. Selecteer in het dialoogvenster *Machtigingen voor CrossForestShare* de optie **Toevoegen** .
-1. Typ *FileServerAccess* in **Geef de objectnamen op** . Selecteer vervolgens **OK** .
-1. Selecteer *FileServerAccess* in de lijst **Groepen of gebruikersnamen** . Kies in de lijst **Machtigingen voor FileServerAccess** de optie *Toestaan* voor de machtigingen **Wijzigen** en  **Schrijven** . Selecteer vervolgens **OK** .
-1. Selecteer het tabblad **Delen** . Kies vervolgens **Geavanceerd delen...**
-1. Kies **Deze map delen** . Voer vervolgens bij **Naam delen**  een gemakkelijk te onthouden naam in voor de bestandsshare, bijvoorbeeld *CrossForestShare* .
-1. Selecteer **Machtigingen** . Kies in de lijst **Machtigingen voor iedereen** de optie **Toestaan** bij de machtiging voor **Wijzigen** .
-1. Selecteer twee keer **OK** en vervolgens **Sluiten** .
+1. Maak op de Windows Server-VM lid van het forest beheerde domein resource een map en geef een naam op, bijvoorbeeld *CrossForestShare*.
+1. Klik met de rechtermuisknop op de map en kies **Eigenschappen**.
+1. Selecteer het tabblad **Beveiliging** en kies vervolgens **Bewerken**.
+1. Selecteer in het dialoogvenster *Machtigingen voor CrossForestShare* de optie **Toevoegen**.
+1. Typ *FileServerAccess* in **Geef de objectnamen op**. Selecteer vervolgens **OK**.
+1. Selecteer *FileServerAccess* in de lijst **Groepen of gebruikersnamen**. Kies in de lijst **Machtigingen voor FileServerAccess** de optie *Toestaan* voor de machtigingen **Wijzigen** en  **Schrijven**. Selecteer vervolgens **OK**.
+1. Selecteer het tabblad **Delen**. Kies vervolgens **Geavanceerd delen...**
+1. Kies **Deze map delen**. Voer vervolgens bij **Naam delen**  een gemakkelijk te onthouden naam in voor de bestandsshare, bijvoorbeeld *CrossForestShare*.
+1. Selecteer **Machtigingen**. Kies in de lijst **Machtigingen voor iedereen** de optie **Toestaan** bij de machtiging voor **Wijzigen**.
+1. Selecteer twee keer **OK** en vervolgens **Sluiten**.
 
 #### <a name="validate-cross-forest-authentication-to-a-resource"></a>Verificatie tussen forests valideren voor een resource
 
 1. Meld u aan op een Windows-computer die is gekoppeld aan uw on-premises Active Directory, met behulp van een gebruikersaccount uit uw on-premises Active Directory.
 1. Gebruik **Windows Verkenner** om verbinding te maken met de share die u hebt gemaakt, met behulp van de volledig gekwalificeerde hostnaam en de share zoals `\\fs1.aaddscontoso.com\CrossforestShare`.
-1. Als u de schrijfmachtiging wilt valideren, klikt u met de rechtermuisknop in de map, kiest u **Nieuw** , en selecteert u vervolgens **Tekstdocument** . Gebruik de standaardnaam **Nieuw tekstdocument** .
+1. Als u de schrijfmachtiging wilt valideren, klikt u met de rechtermuisknop in de map, kiest u **Nieuw**, en selecteert u vervolgens **Tekstdocument**. Gebruik de standaardnaam **Nieuw tekstdocument**.
 
     Als de schrijfmachtigingen juist zijn ingesteld, wordt er een nieuw tekstdocument gemaakt. Met de volgende stappen kunt u het bestand vervolgens openen, bewerken en verwijderen, indien nodig.
 1. Open **Nieuw tekstdocument** om de leesmachtiging te valideren.
-1. Als u de machtiging voor wijzigen wilt valideren, voegt u tekst toe aan het bestand en sluit u **Kladblok** . Wanneer u wordt gevraagd om de wijzigingen op te slaan, kiest u **Opslaan** .
-1. Als u de machtiging voor verwijderen wilt valideren, klikt u met de rechtermuisknop op **Nieuw tekstdocument** en kiest u **Verwijderen** . Kies **Ja** om het verwijderen van het bestand te bevestigen.
+1. Als u de machtiging voor wijzigen wilt valideren, voegt u tekst toe aan het bestand en sluit u **Kladblok**. Wanneer u wordt gevraagd om de wijzigingen op te slaan, kiest u **Opslaan**.
+1. Als u de machtiging voor verwijderen wilt valideren, klikt u met de rechtermuisknop op **Nieuw tekstdocument** en kiest u **Verwijderen**. Kies **Ja** om het verwijderen van het bestand te bevestigen.
 
 ## <a name="update-or-remove-outbound-forest-trust"></a>Uitgaande forest-vertrouwens relatie bijwerken of verwijderen
 
@@ -349,7 +349,7 @@ In de volgende voorbeeld stappen ziet u hoe u een bestaande vertrouwens relatie 
     Install-Script -Name Get-AaddsResourceForestTrusts,Set-AaddsResourceForestTrust
     ```
 
-1. Voordat u een bestaande vertrouwens relatie kunt bijwerken, moet u eerst de vertrouwens bron ophalen met behulp van het `Get-AaddsResourceForestTrusts` script. In het volgende voor beeld wordt de bestaande vertrouwens relatie toegewezen aan een object met de naam *existingTrust* . Geef de naam van uw eigen beheerde domein-forest en de naam van de on-premises forest op die u wilt bijwerken:
+1. Voordat u een bestaande vertrouwens relatie kunt bijwerken, moet u eerst de vertrouwens bron ophalen met behulp van het `Get-AaddsResourceForestTrusts` script. In het volgende voor beeld wordt de bestaande vertrouwens relatie toegewezen aan een object met de naam *existingTrust*. Geef de naam van uw eigen beheerde domein-forest en de naam van de on-premises forest op die u wilt bijwerken:
 
     ```powershell
     $existingTrust = Get-AaddsResourceForestTrust `
@@ -388,7 +388,7 @@ Als u de eenrichtings vertrouwensrelatie voor uitgaande forests van het beheerde
 Als u de eenrichtings binnenkomende vertrouwens relatie van het on-premises AD DS-forest wilt verwijderen, maakt u verbinding met een beheer computer met toegang tot het on-premises AD DS forest en voert u de volgende stappen uit:
 
 1. Selecteer **Start | Systeembeheer | Active Directory: domeinen en vertrouwensrelaties**
-1. Selecteer met de rechtermuisknop het domein, bijvoorbeeld *onprem.contoso.com* . Selecteer vervolgens **Eigenschappen**
+1. Selecteer met de rechtermuisknop het domein, bijvoorbeeld *onprem.contoso.com*. Selecteer vervolgens **Eigenschappen**
 1. Klik op het tabblad **vertrouwens relaties** en selecteer vervolgens de bestaande binnenkomende vertrouwens relatie in het forest van het beheerde domein.
 1. Selecteer **verwijderen** en bevestig dat u de binnenkomende vertrouwens relatie wilt verwijderen.
 

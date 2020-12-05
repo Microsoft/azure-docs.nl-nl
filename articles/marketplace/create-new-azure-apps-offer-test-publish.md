@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 11/06/2020
-ms.openlocfilehash: b54e965188be51ec54110bb85d8cda8f01256836
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 461f9354bb3a6eae0af186de8fe9f39c6b5fff2c
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94370078"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96620916"
 ---
 # <a name="how-to-test-and-publish-an-azure-application-offer"></a>Een Azure-toepassing-aanbieding testen en publiceren
 
@@ -72,4 +72,4 @@ Als er fouten zijn opgetreden in een of meer van de publicatie stappen, corrigee
 ## <a name="next-step"></a>Volgende stap
 
 - [Toegang krijgen tot analytische rapporten voor de commerciële Marketplace in het partner centrum](partner-center-portal/analytics.md)
-- Meer informatie [over hoe u uw Azure-toepassing-aanbod kunt afhandelen](create-new-azure-apps-offer-marketing.md) via het samen verkopen met micro soft en door verkopen via csp's-Program ma's.
+- Meer informatie [over het verkopen van uw Azure-toepassing-aanbod](create-new-azure-apps-offer-marketing.md) via het samen verkopen met micro soft en door verkopen via csp's-Program ma's.

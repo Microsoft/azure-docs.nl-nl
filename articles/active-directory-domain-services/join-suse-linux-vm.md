@@ -2,20 +2,20 @@
 title: Een SLE-VM toevoegen aan Azure AD Domain Services | Microsoft Docs
 description: Meer informatie over het configureren en koppelen van een SUSE Linux Enter prise-virtuele machine aan een Azure AD Domain Services beheerd domein.
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 08/12/2020
-ms.author: joflore
-ms.openlocfilehash: 607d3bc8eca3bd969f0f47ca95923040fb22591e
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.author: justinha
+ms.openlocfilehash: f2f421d95dfc376aed373c718198db33a870d9dc
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92275869"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96619603"
 ---
 # <a name="join-a-suse-linux-enterprise-virtual-machine-to-an-azure-active-directory-domain-services-managed-domain"></a>Een SUSE Linux Enter prise-virtuele machine toevoegen aan een Azure Active Directory Domain Services beheerd domein
 
@@ -42,7 +42,7 @@ Als u een bestaande virtuele machine met SLE Linux in azure hebt, kunt u er verb
 Als u een virtuele machine met SLE Linux wilt maken of een test-VM wilt maken voor gebruik met dit artikel, kunt u een van de volgende methoden gebruiken:
 
 * [Azure-portal](../virtual-machines/linux/quick-create-portal.md)
-* [Azure-CLI](../virtual-machines/linux/quick-create-cli.md)
+* [Azure CLI](../virtual-machines/linux/quick-create-cli.md)
 * [Azure PowerShell](../virtual-machines/linux/quick-create-powershell.md)
 
 Wanneer u de virtuele machine maakt, moet u aandacht best Eden aan de instellingen voor virtueel netwerk om ervoor te zorgen dat de virtuele machine kan communiceren met het beheerde domein:
@@ -105,7 +105,7 @@ Voer de volgende stappen uit om de virtuele machine toe te voegen aan het beheer
 
 1. Selecteer in het dialoog venster **domein toevoegen**.
 
-1. Geef de juiste *domein naam*op, bijvoorbeeld *aaddscontoso.com*, en geef vervolgens de services op die moeten worden gebruikt voor identiteits gegevens en-authenticatie. Selecteer *micro soft-Active Directory* voor beide.
+1. Geef de juiste *domein naam* op, bijvoorbeeld *aaddscontoso.com*, en geef vervolgens de services op die moeten worden gebruikt voor identiteits gegevens en-authenticatie. Selecteer *micro soft-Active Directory* voor beide.
 
     Zorg ervoor dat de optie voor *het inschakelen van het domein* is geselecteerd.
 
@@ -123,27 +123,27 @@ Voer de volgende stappen uit om de virtuele machine toe te voegen aan het beheer
 
     Om ervoor te zorgen dat het huidige domein is ingeschakeld voor samba, activeert *u Samba-configuratie overschrijven zodat deze AD kan worden gebruikt*.
 
-1. Selecteer **OK**om te registreren.
+1. Selecteer **OK** om te registreren.
 
-1. Er wordt een bericht weer gegeven om te bevestigen dat u bent Inge schreven. Selecteer **OK**om te volt ooien.
+1. Er wordt een bericht weer gegeven om te bevestigen dat u bent Inge schreven. Selecteer **OK** om te volt ooien.
 
 Nadat de virtuele machine is inge schreven in het beheerde domein, configureert u de client met behulp van *domein aanmelding beheren*, zoals wordt weer gegeven in de volgende voorbeeld scherm afbeelding:
 
 ![Voor beeld van een scherm opname van het venster gebruikers aanmelding domein beheren in YaST](./media/join-suse-linux-vm/manage-domain-user-logon-window.png)
 
-1. Als u aanmeldingen wilt toestaan met behulp van gegevens die zijn verschaft door het beheerde domein, schakelt u het selectie vakje *Aanmelden bij domein gebruikers toestaan*in.
+1. Als u aanmeldingen wilt toestaan met behulp van gegevens die zijn verschaft door het beheerde domein, schakelt u het selectie vakje *Aanmelden bij domein gebruikers toestaan* in.
 
-1. Schakel eventueel onder *domein gegevens bron inschakelen*de extra gegevens bronnen in die nodig zijn voor uw omgeving. Deze opties omvatten welke gebruikers **sudo** mogen gebruiken of welke netwerk stations beschikbaar zijn.
+1. Schakel eventueel onder *domein gegevens bron inschakelen* de extra gegevens bronnen in die nodig zijn voor uw omgeving. Deze opties omvatten welke gebruikers **sudo** mogen gebruiken of welke netwerk stations beschikbaar zijn.
 
-1. Als u wilt toestaan dat gebruikers in het beheerde domein hun basis mappen op de VM kunnen hebben, schakelt u het selectie vakje *basis mappen maken*in.
+1. Als u wilt toestaan dat gebruikers in het beheerde domein hun basis mappen op de VM kunnen hebben, schakelt u het selectie vakje *basis mappen maken* in.
 
-1. Selecteer op de balk aan de zijkant **Service opties › naam Switch**en vervolgens *uitgebreide opties*. Selecteer *fallback_homedir* of *override_homedir*in het venster en selecteer vervolgens **toevoegen**.
+1. Selecteer op de balk aan de zijkant **Service opties › naam Switch** en vervolgens *uitgebreide opties*. Selecteer *fallback_homedir* of *override_homedir* in het venster en selecteer vervolgens **toevoegen**.
 
 1. Geef een waarde op voor de locatie van de basismap. Als u wilt dat basis mappen de indeling */home/user_name*, gebruikt u */Home/%u*. Zie voor meer informatie over mogelijke variabelen de pagina SSSD. conf man ( `man 5 sssd.conf` ), sectie *override_homedir*.
 
 1. Selecteer **OK**.
 
-1. Selecteer **OK**om de wijzigingen op te slaan. Controleer vervolgens of de waarden die nu worden weer gegeven juist zijn. Selecteer **Annuleren**om het dialoog venster te sluiten.
+1. Selecteer **OK** om de wijzigingen op te slaan. Controleer vervolgens of de waarden die nu worden weer gegeven juist zijn. Selecteer **Annuleren** om het dialoog venster te sluiten.
 
 1. Als u van plan bent om SSSD en winbind tegelijk uit te voeren (bijvoorbeeld wanneer u verbinding maakt via SSSD, maar vervolgens een samba-Bestands server uitvoert), moet u de samba-optie *Kerberos-methode* instellen op *geheimen en keytab* in SMB. conf. De SSSD-optie *ad_update_samba_machine_account_password* moet ook worden ingesteld op *True* in SSSD. conf. Met deze opties wordt voor komen dat de systeem keytab synchroon gaat.
 
@@ -165,7 +165,7 @@ Voer de volgende stappen uit om lid te worden van het beheerde domein met behulp
 
 1. Als u de UID-en GID-bereiken voor de Samba-gebruikers en-groepen wilt wijzigen, selecteert u *Geavanceerde instellingen*.
 
-1. Configureer tijd synchronisatie van Network Time Protocol (NTP) voor uw beheerde domein door de *configuratie van NTP*te selecteren. Voer de IP-adressen in van het beheerde domein. Deze IP-adressen worden weer gegeven in het venster *Eigenschappen* in de Azure portal voor uw beheerde domein, zoals *10.0.2.4* en *10.0.2.5*.
+1. Configureer tijd synchronisatie van Network Time Protocol (NTP) voor uw beheerde domein door de *configuratie van NTP* te selecteren. Voer de IP-adressen in van het beheerde domein. Deze IP-adressen worden weer gegeven in het venster *Eigenschappen* in de Azure portal voor uw beheerde domein, zoals *10.0.2.4* en *10.0.2.5*.
 
 1. Selecteer **OK** en bevestig de domein deelname wanneer u hierom wordt gevraagd.
 
@@ -187,7 +187,7 @@ Om lid te worden van het beheerde domein met behulp van **winbind** en de *YaST-
 
 ## <a name="join-vm-to-the-managed-domain-using-winbind-from-the-terminal"></a>Virtuele machine toevoegen aan het beheerde domein met behulp van winbind van de Terminal
 
-Om lid te worden van het beheerde domein met behulp van **winbind** en de * `samba net` opdracht*:
+Om lid te worden van het beheerde domein met behulp van **winbind** en de *`samba net` opdracht*:
 
 1. Installeer de Kerberos-client en Samba-winbind:
 

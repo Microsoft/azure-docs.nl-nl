@@ -2,7 +2,7 @@
 title: Een organisatie-eenheid (OE) maken in Azure AD Domain Services | Microsoft Docs '
 description: Meer informatie over het maken en beheren van een aangepaste organisatie-eenheid (OE) in een Azure AD Domain Services beheerd domein.
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 52602ad8-2b93-4082-8487-427bdcfa8126
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/06/2020
-ms.author: joflore
-ms.openlocfilehash: df8d32fb38d9ea6750ef47651e4f660428fd1fbe
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: fbdfcc23553a27aaa4d7bbd4bff9c4f33cb8fd19
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91960997"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96620015"
 ---
 # <a name="create-an-organizational-unit-ou-in-an-azure-active-directory-domain-services-managed-domain"></a>Een organisatie-eenheid (OE) maken in een Azure Active Directory Domain Services beheerd domein
 
@@ -77,7 +77,7 @@ Als u een aangepaste OE wilt maken, gebruikt u de Active Directory-beheer Progra
 
     ![Selecteer de optie voor het maken van een nieuwe organisatie-eenheid in de Active Directory-beheercentrum](./media/create-ou/create-ou-adac-new-ou.png)
 
-1. Geef in het dialoog venster **organisatie-eenheid maken** een **naam** op voor de nieuwe OE, zoals *MyCustomOu*. Geef een korte beschrijving voor de OE, zoals een *aangepaste OE voor service accounts*. Desgewenst kunt u ook het veld **beheerd door** instellen voor de organisatie-eenheid. Selecteer **OK**om de aangepaste OE te maken.
+1. Geef in het dialoog venster **organisatie-eenheid maken** een **naam** op voor de nieuwe OE, zoals *MyCustomOu*. Geef een korte beschrijving voor de OE, zoals een *aangepaste OE voor service accounts*. Desgewenst kunt u ook het veld **beheerd door** instellen voor de organisatie-eenheid. Selecteer **OK** om de aangepaste OE te maken.
 
     ![Een aangepaste OE maken op basis van de Active Directory-beheercentrum](./media/create-ou/create-ou-dialog.png)
 

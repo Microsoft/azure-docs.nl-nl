@@ -2,7 +2,7 @@
 title: Waarschuwingen voor netwerk beveiligings groepen oplossen in azure AD DS | Microsoft Docs
 description: Meer informatie over het oplossen van problemen met configuratie waarschuwingen voor netwerk beveiligings groepen voor Azure Active Directory Domain Services
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 95f970a7-5867-4108-a87e-471fa0910b8c
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 07/06/2020
-ms.author: joflore
-ms.openlocfilehash: f8917d7bd8fc1a4091607b9a405cfefbb51bc188
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: d8f2e77b7225306844cec85363a2971eaac4eebd
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91962782"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96620253"
 ---
 # <a name="known-issues-network-configuration-alerts-in-azure-active-directory-domain-services"></a>Bekende problemen: waarschuwingen voor netwerk configuratie in Azure Active Directory Domain Services
 
@@ -38,7 +38,7 @@ De volgende standaard regels voor binnenkomend en uitgaand verkeer worden toegep
 
 ### <a name="inbound-security-rules"></a>Inkomende beveiligingsregels
 
-| Prioriteit | Naam | Poort | Protocol | Bron | Doel | Bewerking |
+| Prioriteit | Naam | Poort | Protocol | Bron | Doel | Actie |
 |----------|------|------|----------|--------|-------------|--------|
 | 101      | AllowSyncWithAzureAD | 443 | TCP | AzureActiveDirectoryDomainServices | Alle | Toestaan |
 | 201      | AllowRD | 3389 | TCP | CorpNetSaw | Alle | Toestaan |
@@ -52,7 +52,7 @@ De volgende standaard regels voor binnenkomend en uitgaand verkeer worden toegep
 
 ### <a name="outbound-security-rules"></a>Uitgaande beveiligingsregels
 
-| Prioriteit | Naam | Poort | Protocol | Bron | Doel | Bewerking |
+| Prioriteit | Naam | Poort | Protocol | Bron | Doel | Actie |
 |----------|------|------|----------|--------|-------------|--------|
 | 65000    | AllVnetOutBound | Alle | Alle | VirtualNetwork | VirtualNetwork | Toestaan |
 | 65001    | AllowAzureLoadBalancerOutBound | Alle | Alle |  Alle | Internet | Toestaan |
@@ -80,7 +80,7 @@ Als u een ontbrekende beveiligings regel wilt toevoegen, voert u de volgende sta
 1. In de Azure Portal zoekt en selecteert u **netwerk beveiligings groepen**.
 1. Kies de netwerk beveiligings groep die is gekoppeld aan uw beheerde domein, zoals *AADDS-contoso.com-NSG*.
 1. Klik onder **instellingen** in het linkerdeel venster op *inkomende beveiligings regels* of *uitgaande beveiligings regels* , afhankelijk van de regel die u wilt toevoegen.
-1. Selecteer **toevoegen**en maak vervolgens de vereiste regel op basis van de poort, het Protocol, de richting, enzovoort. Wanneer u klaar bent, selecteert u **OK**.
+1. Selecteer **toevoegen** en maak vervolgens de vereiste regel op basis van de poort, het Protocol, de richting, enzovoort. Wanneer u klaar bent, selecteert u **OK**.
 
 Het kan even duren voordat de beveiligings regel is toegevoegd en weer gegeven in de lijst.
 

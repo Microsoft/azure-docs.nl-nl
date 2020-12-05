@@ -2,20 +2,20 @@
 title: Hoe vertrouwens relaties werken voor Azure AD Domain Services | Microsoft Docs
 description: Meer informatie over hoe vertrouwens relaties tussen forests werken met Azure AD Domain Services
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/06/2020
-ms.author: joflore
-ms.openlocfilehash: 50b400ffa047d3865a9df77912da187de1ce9cc9
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: 5c72ab7d085de558ee95f3c602ccc6be6160b322
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91962612"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96620202"
 ---
 # <a name="how-trust-relationships-work-for-resource-forests-in-azure-active-directory-domain-services"></a>Hoe vertrouwens relaties werken voor bron-forests in Azure Active Directory Domain Services
 
@@ -37,7 +37,7 @@ De stroom van beveiligde communicatie via vertrouwens relaties bepaalt de elasti
 
 De communicatie stroom over vertrouwens relaties wordt bepaald door de richting van de vertrouwens relatie. Vertrouwens relaties kunnen een eenrichtings-of twee richting zijn, en kunnen transitief of niet-transitief zijn.
 
-In het volgende diagram ziet u dat alle domeinen in *structuur 1* en *structuur 2* standaard transitieve vertrouwens relaties hebben. Als gevolg hiervan kunnen gebruikers in *structuur 1* toegang krijgen tot bronnen in domeinen in *structuur 2* en kunnen gebruikers in *structuur 1* toegang krijgen tot resources in *structuur 2*wanneer de juiste machtigingen worden toegewezen aan de resource.
+In het volgende diagram ziet u dat alle domeinen in *structuur 1* en *structuur 2* standaard transitieve vertrouwens relaties hebben. Als gevolg hiervan kunnen gebruikers in *structuur 1* toegang krijgen tot bronnen in domeinen in *structuur 2* en kunnen gebruikers in *structuur 1* toegang krijgen tot resources in *structuur 2* wanneer de juiste machtigingen worden toegewezen aan de resource.
 
 ![Diagram van vertrouwens relaties tussen twee forests](./media/concepts-forest-trust/trust-relationships.png)
 
@@ -45,7 +45,7 @@ In het volgende diagram ziet u dat alle domeinen in *structuur 1* en *structuur 
 
 Vertrouwens relaties maken het mogelijk om toegang tot resources in te stellen op één of twee richtingen.
 
-Een eenzijdige vertrouwens relatie is een eenrichtings verificatie-pad tussen twee domeinen. In een eenrichtings vertrouwensrelatie tussen *domein a* en *domein B*hebben gebruikers in *domein a* toegang tot bronnen in *domein B*. Gebruikers in *domein B* hebben echter geen toegang tot bronnen in *domein A*.
+Een eenzijdige vertrouwens relatie is een eenrichtings verificatie-pad tussen twee domeinen. In een eenrichtings vertrouwensrelatie tussen *domein a* en *domein B* hebben gebruikers in *domein a* toegang tot bronnen in *domein B*. Gebruikers in *domein B* hebben echter geen toegang tot bronnen in *domein A*.
 
 Sommige eenrichtings vertrouwensrelaties kunnen niet-transitief of transitief zijn, afhankelijk van het type vertrouwen dat wordt gemaakt.
 
@@ -70,7 +70,7 @@ Met forest-vertrouwens relaties kunt u een gesegmenteerde AD DS-infra structuur 
 
 Met forest-vertrouwens relaties kunt u twee verschillende forests koppelen aan een eenrichtings-of twee richtings vertrouwensrelatie. Met een forestvertrouwensrelatie kunnen beheerders twee AD DS forests verbinden met één vertrouwens relatie om een naadloze verificatie-en autorisatie-ervaring te bieden in de forests.
 
-Een forestvertrouwensrelatie kan alleen worden gemaakt tussen een forest-hoofd domein in een forest en een forest-hoofd domein in een ander forest. Forestvertrouwensrelaties kunnen alleen worden gemaakt tussen twee forests en kunnen niet impliciet worden uitgebreid naar een derde forest. Dit gedrag houdt in dat als een forestvertrouwensrelatie tussen *forest 1* en *forest 2*wordt gemaakt en een andere forest-vertrouwens relatie wordt gemaakt tussen *forest 2* en *forest 3*, *forest 1* geen impliciete vertrouwens relatie heeft met *forest 3*.
+Een forestvertrouwensrelatie kan alleen worden gemaakt tussen een forest-hoofd domein in een forest en een forest-hoofd domein in een ander forest. Forestvertrouwensrelaties kunnen alleen worden gemaakt tussen twee forests en kunnen niet impliciet worden uitgebreid naar een derde forest. Dit gedrag houdt in dat als een forestvertrouwensrelatie tussen *forest 1* en *forest 2* wordt gemaakt en een andere forest-vertrouwens relatie wordt gemaakt tussen *forest 2* en *forest 3*, *forest 1* geen impliciete vertrouwens relatie heeft met *forest 3*.
 
 In het volgende diagram ziet u twee afzonderlijke forest-vertrouwens relaties tussen drie AD DS forests in één organisatie.
 
@@ -88,7 +88,7 @@ Als een eenrichtings vertrouwensrelatie tussen twee forests tot stand is gebrach
 
 Als er bijvoorbeeld een eenrichtings vertrouwensrelatie tussen *forest 1* (het vertrouwde forest) en *forest 2* (het vertrouwende forest) is gemaakt:
 
-* Leden van *forest 1* hebben toegang tot bronnen die zich in *forest 2*bevinden.
+* Leden van *forest 1* hebben toegang tot bronnen die zich in *forest 2* bevinden.
 * Leden van *forest 2* hebben geen toegang tot bronnen die zich in *forest 1* bevinden met dezelfde vertrouwens relatie.
 
 > [!IMPORTANT]
@@ -170,7 +170,7 @@ Het volgende diagram en de stappen bieden een gedetailleerde beschrijving van he
 
 1. *Gebruiker1* meldt zich aan bij *Werkstation1* met behulp van referenties van het domein *Europe.tailspintoys.com* . De gebruiker probeert vervolgens toegang te krijgen tot een gedeelde bron op *FileServer1* die zich in het forest *USA.wingtiptoys.com* bevindt.
 
-2. *Werkstation1* neemt contact op met het Kerberos KDC op een domein controller in het domein *ChildDC1*en vraagt een service ticket aan voor de SPN van *FileServer1* .
+2. *Werkstation1* neemt contact op met het Kerberos KDC op een domein controller in het domein *ChildDC1* en vraagt een service ticket aan voor de SPN van *FileServer1* .
 
 3. *ChildDC1* vindt de SPN niet in de domein database en voert een query uit op de globale catalogus om te zien of er domeinen in het *tailspintoys.com* -forest deze SPN bevatten. Omdat een globale catalogus is beperkt tot een eigen forest, kan de SPN niet worden gevonden.
 
@@ -190,7 +190,7 @@ Het volgende diagram en de stappen bieden een gedetailleerde beschrijving van he
 
 9. *Werkstation1* neemt contact op met het KDC op *ChildDC2* en onderhandelt het ticket voor *gebruiker1* om toegang te krijgen tot *FileServer1*.
 
-10. Zodra *Werkstation1* een service ticket heeft, stuurt het het service ticket naar *FileServer1*, dat de beveiligings referenties van *gebruiker1*leest en een toegangs token dienovereenkomstig bouwt.
+10. Zodra *Werkstation1* een service ticket heeft, stuurt het het service ticket naar *FileServer1*, dat de beveiligings referenties van *gebruiker1* leest en een toegangs token dienovereenkomstig bouwt.
 
 ## <a name="trusted-domain-object"></a>Vertrouwd domein object
 
@@ -253,7 +253,7 @@ De Net Logon-service onderhoudt een beveiligd kanaal van een Windows-computer na
 
 * Het instellen en beheren van vertrouwens relaties: Net Logon helpt bij het onderhouden van vertrouwens wachtwoorden, het verzamelen van vertrouwens informatie en het controleren van vertrouwens relaties door interactie met het LSA-proces en het TDO.
 
-    Voor forest-vertrouwens relaties bevat de vertrouwens informatie de*FTInfo*-record (Forest Trust Information), die de set naam ruimten bevat die een vertrouwd forest claimt om te beheren, aantekeningen maken met een veld dat aangeeft of elke claim wordt vertrouwd door het vertrouwende forest.
+    Voor forest-vertrouwens relaties bevat de vertrouwens informatie de *FTInfo*-record (Forest Trust Information), die de set naam ruimten bevat die een vertrouwd forest claimt om te beheren, aantekeningen maken met een veld dat aangeeft of elke claim wordt vertrouwd door het vertrouwende forest.
 
 * Verificatie: levert gebruikers referenties via een beveiligd kanaal naar een domein controller en retourneert de domein-Sid's en gebruikers rechten voor de gebruiker.
 

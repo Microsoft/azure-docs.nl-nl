@@ -2,7 +2,7 @@
 title: Problemen met Azure Active Directory Domain Services oplossen | Microsoft Docs '
 description: Meer informatie over het oplossen van veelvoorkomende fouten bij het maken of beheren van Azure Active Directory Domain Services
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 4bc8c604-f57c-4f28-9dac-8b9164a0cf0b
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 07/06/2020
-ms.author: joflore
-ms.openlocfilehash: 9593fe71fc4a29678d58d7c67699210a4a39f95e
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: 89b04f86d41f8e4828580f70a9aec8acea3e0053
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91967372"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96618447"
 ---
 # <a name="common-errors-and-troubleshooting-steps-for-azure-active-directory-domain-services"></a>Veelvoorkomende fouten en stappen voor probleem oplossing voor Azure Active Directory Domain Services
 
@@ -59,7 +59,7 @@ Controleer of er een toepassing met de naam *Azure AD Domain Services synchronis
 
 1. Selecteer in de Azure Portal **Azure Active Directory** in het navigatie menu aan de linkerkant.
 1. Selecteer **bedrijfs toepassingen**. Kies *alle toepassingen* in de vervolg keuzelijst **toepassings type** en selecteer vervolgens **Toep assen**.
-1. Voer *Azure AD Domain Services Sync*in het zoekvak in. Als de toepassing bestaat, selecteert u deze en kiest u **verwijderen**.
+1. Voer *Azure AD Domain Services Sync* in het zoekvak in. Als de toepassing bestaat, selecteert u deze en kiest u **verwijderen**.
 1. Nadat u de toepassing hebt verwijderd, probeert u Azure AD DS opnieuw in te scha kelen.
 
 ### <a name="invalid-configuration"></a>Ongeldige configuratie
@@ -120,8 +120,8 @@ Voer de volgende stappen uit om de status van deze toepassing te controleren en 
 
 1. Selecteer in de Azure Portal **Azure Active Directory** in het navigatie menu aan de linkerkant.
 1. Selecteer **bedrijfs toepassingen**. Kies *alle toepassingen* in de vervolg keuzelijst **toepassings type** en selecteer vervolgens **Toep assen**.
-1. Voer *00000002-0000-0000-C000-00000000000*in het zoekvak in. Selecteer de toepassing en kies vervolgens **Eigenschappen**.
-1. Als u deze optie **inschakelt voor gebruikers die zich willen aanmelden** *, stelt u de*waarde in op *Ja*en selecteert u **Opslaan**.
+1. Voer *00000002-0000-0000-C000-00000000000* in het zoekvak in. Selecteer de toepassing en kies vervolgens **Eigenschappen**.
+1. Als u deze optie **inschakelt voor gebruikers die zich willen aanmelden** *, stelt u de* waarde in op *Ja* en selecteert u **Opslaan**.
 1. Nadat u de toepassing hebt ingeschakeld, probeert u Azure AD DS opnieuw in te scha kelen.
 
 ## <a name="users-are-unable-to-sign-in-to-the-azure-ad-domain-services-managed-domain"></a>Gebruikers kunnen zich niet aanmelden bij het in Azure AD Domain Services beheerde domein
@@ -138,7 +138,7 @@ Als een of meer gebruikers in uw Azure AD-Tenant zich niet kunnen aanmelden bij 
       * U hebt de [meest recente aanbevolen versie van Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594)geïmplementeerd of bijgewerkt naar.
       * U hebt Azure AD Connect geconfigureerd om [een volledige synchronisatie uit te voeren][hybrid-phs].
       * Afhankelijk van de grootte van uw map kan het enige tijd duren voordat gebruikers accounts en referentie-hashes beschikbaar zijn in het beheerde domein. Zorg ervoor dat u lang genoeg wacht voordat u probeert te verifiëren op basis van het beheerde domein.
-      * Als het probleem zich blijft voordoen nadat u de vorige stappen hebt gecontroleerd, start u de *Microsoft Azure AD Sync-Service*opnieuw op. Open vanaf uw Azure AD Connect-server een opdracht prompt en voer de volgende opdrachten uit:
+      * Als het probleem zich blijft voordoen nadat u de vorige stappen hebt gecontroleerd, start u de *Microsoft Azure AD Sync-Service* opnieuw op. Open vanaf uw Azure AD Connect-server een opdracht prompt en voer de volgende opdrachten uit:
     
         ```console
         net stop 'Microsoft Azure AD Sync'

@@ -2,7 +2,7 @@
 title: Service-Principal-waarschuwingen in Azure AD Domain Services oplossen | Microsoft Docs
 description: Meer informatie over het oplossen van problemen met de configuratie van service-principals voor Azure Active Directory Domain Services
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: f168870c-b43a-4dd6-a13f-5cfadc5edf2c
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 07/09/2020
-ms.author: joflore
-ms.openlocfilehash: fc980d18a05b18706bb7eeecd907769b80e1b18f
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: 00ab5c85a477c9c4080acf252cbbde9d4ce816a9
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91962714"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96620236"
 ---
 # <a name="known-issues-service-principal-alerts-in-azure-active-directory-domain-services"></a>Bekende problemen: waarschuwingen voor service-principals in Azure Active Directory Domain Services
 
@@ -68,12 +68,12 @@ De status van het beheerde domein wordt automatisch bijgewerkt binnen twee uur e
 
 ### <a name="re-register-the-microsoft-aad-namespace"></a>De micro soft AAD-naam ruimte opnieuw registreren
 
-Als de toepassings-ID *443155a6-77f3-45e3-882b-22b3a8d431fb*, *abba844e-bc0e-44b0-947a-dc74e5d09022*of *D87DCBC6-A371-462E-88E3-28AD15EC4E64* ontbreekt in uw Azure AD-adres lijst, voert u de volgende stappen uit om de *micro soft. Aad* -resource provider opnieuw te registreren:
+Als de toepassings-ID *443155a6-77f3-45e3-882b-22b3a8d431fb*, *abba844e-bc0e-44b0-947a-dc74e5d09022* of *D87DCBC6-A371-462E-88E3-28AD15EC4E64* ontbreekt in uw Azure AD-adres lijst, voert u de volgende stappen uit om de *micro soft. Aad* -resource provider opnieuw te registreren:
 
 1. Zoek in het Azure Portal naar en selecteer **abonnementen**.
 1. Kies het abonnement dat is gekoppeld aan uw beheerde domein.
-1. Kies **resource providers**in de linkernavigatiebalk.
-1. Zoek naar *micro soft. Aad*en selecteer **opnieuw registreren**.
+1. Kies **resource providers** in de linkernavigatiebalk.
+1. Zoek naar *micro soft. Aad* en selecteer **opnieuw registreren**.
 
 De status van het beheerde domein wordt automatisch bijgewerkt binnen twee uur en de waarschuwing wordt verwijderd.
 
@@ -99,8 +99,8 @@ Als u de Azure AD-toepassing die wordt gebruikt voor referentie synchronisatie o
 2. Verwijder nu de oude toepassing en het object met behulp van de volgende Power shell-cmdlets:
 
     ```powershell
-    $app = Get-AzureADApplication -Filter "IdentifierUris eq 'https://sync.aaddc.activedirectory.windowsazure.com'"
-    Remove-AzureADApplication -ObjectId $app.ObjectId
+    $app = Get-AzureADApplication -Filter "IdentifierUris eq 'https://sync.aaddc.activedirectory.windowsazure.com'"
+    Remove-AzureADApplication -ObjectId $app.ObjectId
     $spObject = Get-AzureADServicePrincipal -Filter "DisplayName eq 'Azure AD Domain Services Sync'"
     Remove-AzureADServicePrincipal -ObjectId $spObject
     ```

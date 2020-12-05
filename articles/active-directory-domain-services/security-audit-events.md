@@ -2,7 +2,7 @@
 title: Beveiligings controles inschakelen voor Azure AD Domain Services | Microsoft Docs
 description: Meer informatie over het inschakelen van beveiligings controles voor het centraliseren van de logboek registratie van gebeurtenissen voor analyse en waarschuwingen in Azure AD Domain Services
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 662362c3-1a5e-4e94-ae09-8e4254443697
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/06/2020
-ms.author: joflore
-ms.openlocfilehash: b4fb5c1dcb2bb34b472c2a3eda88ca4c219303d0
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.author: justinha
+ms.openlocfilehash: 13bdc8797af8facaa73d3e43ecfbe504a6bd1dc2
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96175165"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96618872"
 ---
 # <a name="enable-security-audits-for-azure-active-directory-domain-services"></a>Beveiligings controles inschakelen voor Azure Active Directory Domain Services
 
@@ -217,7 +217,7 @@ Azure AD DS-beveiligings controles worden uitgelijnd met traditionele controle v
 
 De volgende controle gebeurtenis categorieën zijn beschikbaar:
 
-| Naam van audit categorie | Description |
+| Naam van audit categorie | Beschrijving |
 |:---|:---|
 | Account aanmelding|Controles proberen account gegevens te verifiëren op een domein controller of op een lokale SAM (Security Accounts Manager).</p>Aanmeldings-en afmeldings beleids instellingen en gebeurtenissen volgen pogingen om toegang te krijgen tot een bepaalde computer. De instellingen en gebeurtenissen in deze categorie zijn gericht op de account database die wordt gebruikt. Deze categorie bevat de volgende subcategorieën:<ul><li>[Validatie van referenties controleren](/windows/security/threat-protection/auditing/audit-credential-validation)</li><li>[De Kerberos-authenticatieservice controleren](/windows/security/threat-protection/auditing/audit-kerberos-authentication-service)</li><li>[Kerberos-serviceticketbewerkingen controleren](/windows/security/threat-protection/auditing/audit-kerberos-service-ticket-operations)</li><li>[Andere gebeurtenissen voor aanmelden/afmelden controleren](/windows/security/threat-protection/auditing/audit-other-logonlogoff-events)</li></ul>|
 | Accountbeheer|Hiermee worden wijzigingen in gebruikers-en computer accounts en-groepen gecontroleerd. Deze categorie bevat de volgende subcategorieën:<ul><li>[Beheer van toepassingsgroepen controleren](/windows/security/threat-protection/auditing/audit-application-group-management)</li><li>[Beheer van computeraccounts controleren](/windows/security/threat-protection/auditing/audit-computer-account-management)</li><li>[Beheer van distributiegroepen controleren](/windows/security/threat-protection/auditing/audit-distribution-group-management)</li><li>[Ander account beheer controleren](/windows/security/threat-protection/auditing/audit-other-account-management-events)</li><li>[Beheer van beveiligingsgroepen controleren](/windows/security/threat-protection/auditing/audit-security-group-management)</li><li>[Gebruikersaccountbeheer controleren](/windows/security/threat-protection/auditing/audit-user-account-management)</li></ul>|

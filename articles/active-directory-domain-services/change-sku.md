@@ -2,20 +2,20 @@
 title: De SKU voor een Azure AD Domain Services wijzigen | Microsoft Docs
 description: Meer informatie over de SKU-laag voor een Azure AD Domain Services beheerd domein als uw bedrijfs vereisten veranderen
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/09/2020
-ms.author: joflore
-ms.openlocfilehash: c85a3f3262da6002e9604b1506552b9188a64460
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: 320bd87aa78d26cee44c48f27365febd1dd426ff
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91962748"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96620287"
 ---
 # <a name="change-the-sku-for-an-existing-azure-active-directory-domain-services-managed-domain"></a>De SKU voor een bestaand Azure Active Directory Domain Services beheerd domein wijzigen
 
@@ -51,7 +51,7 @@ Zie [Azure AD DS SKU-functies en-limieten][concepts-sku]voor meer informatie ove
 
 Voer de volgende stappen uit om de SKU voor een beheerd domein te wijzigen met behulp van de Azure Portal:
 
-1. Zoek en selecteer **Azure AD Domain Services**aan de bovenkant van de Azure Portal. Kies uw beheerde domein in de lijst, zoals *aaddscontoso.com*.
+1. Zoek en selecteer **Azure AD Domain Services** aan de bovenkant van de Azure Portal. Kies uw beheerde domein in de lijst, zoals *aaddscontoso.com*.
 1. Selecteer in het menu aan de linkerkant van de pagina Azure-AD DS **instellingen > SKU**.
 
     ![Selecteer de menu optie van de SKU voor uw Azure AD DS beheerde domein in het Azure Portal](media/change-sku/overview-change-sku.png)

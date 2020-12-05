@@ -2,7 +2,7 @@
 title: Azure AD Domain Services beveiligen | Microsoft Docs
 description: Meer informatie over het uitschakelen van zwakke code ringen, oude protocollen en NTLM-wachtwoord synchronisatie voor een Azure Active Directory Domain Services beheerd domein.
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 6b4665b5-4324-42ab-82c5-d36c01192c2a
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/06/2020
-ms.author: joflore
-ms.openlocfilehash: c5a3a7b6cd43bebccdbfb22bb4c81f376abc15d9
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: a89c898e150facc9860d86e18a7acc42f5e0f441
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91967746"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96618855"
 ---
 # <a name="disable-weak-ciphers-and-password-hash-synchronization-to-secure-an-azure-active-directory-domain-services-managed-domain"></a>Zwakke versleuteling en wachtwoord-hash-synchronisatie uitschakelen om een Azure Active Directory Domain Services beheerd domein te beveiligen
 

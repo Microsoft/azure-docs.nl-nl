@@ -10,12 +10,12 @@ ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 11/08/2020
 ms.custom: azure-synapse, sqldbrb=1
-ms.openlocfilehash: 8cf0652148ad54eeacdec874823ea680f39f670c
-ms.sourcegitcommit: 65d518d1ccdbb7b7e1b1de1c387c382edf037850
+ms.openlocfilehash: b09eb03994098f8cb68033f3c42309a77e15f91c
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94372724"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96620988"
 ---
 # <a name="auditing-for-azure-sql-database-and-azure-synapse-analytics"></a>Controleren op Azure SQL Database en Azure Synapse Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -54,17 +54,29 @@ Er kan een controle beleid worden gedefinieerd voor een specifieke data base of 
 
 - Een server beleid is van toepassing op alle bestaande en nieuw gemaakte data bases op de server.
 
-- Als *Server controle is ingeschakeld* , *is deze altijd van toepassing op de data base*. De data base wordt gecontroleerd, ongeacht de controle-instellingen voor de data base.
+- Als *Server controle is ingeschakeld*, *is deze altijd van toepassing op de data base*. De data base wordt gecontroleerd, ongeacht de controle-instellingen voor de data base.
 
 - Als u controle inschakelt voor de data base en deze op de server inschakelt, worden de instellingen van de server controle *niet* overschreven of gewijzigd. Beide controles bestaan naast elkaar. Met andere woorden, de data base wordt twee keer parallel gecontroleerd. eenmaal door het Server beleid en eenmaal door het database beleid.
 
    > [!NOTE]
    > Vermijd het inschakelen van controle van zowel server controle als data base-blobs, tenzij:
     >
-    > - U wilt een ander *opslag account* , *bewaar periode* of *log Analytics werk ruimte* gebruiken voor een specifieke data base.
+    > - U wilt een ander *opslag account*, *bewaar periode* of *log Analytics werk ruimte* gebruiken voor een specifieke data base.
     > - U wilt controle van gebeurtenis typen of categorieën voor een specifieke data base die verschilt van de rest van de data bases op de server. U kunt bijvoorbeeld tabellen invoegen die alleen moeten worden gecontroleerd voor een specifieke data base.
    >
    > Anders is het raadzaam om alleen controle op server niveau in te scha kelen en de controle op database niveau uitgeschakeld te laten voor alle data bases.
+
+#### <a name="remarks"></a>Opmerkingen
+
+- Audit logboeken worden geschreven om **blobs toe te voegen** in een Azure Blob-opslag in uw Azure-abonnement
+- Audit logboeken hebben de Xel-indeling en kunnen worden geopend met behulp van [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
+- Als u een onveranderbaar logboek archief wilt configureren voor de controle gebeurtenissen op de server of op database niveau, volgt u de [instructies van Azure Storage](../../storage/blobs/storage-blob-immutability-policies-manage.md#enabling-allow-protected-append-blobs-writes). Zorg ervoor dat u **Extra toevoegen toestaan** selecteert wanneer u de onveranderbare Blob-opslag configureert.
+- U kunt audit logboeken schrijven naar een Azure Storage-account achter een VNet of firewall. Zie voor specifieke instructies [audit schrijven naar een opslag account achter VNet en firewall](audit-write-storage-account-behind-vnet-firewall.md).
+- Zie de naslag informatie over de [indeling van BLOB-controle logboeken](./audit-log-format.md)voor meer informatie over de logboek indeling, de hiërarchie van de opslag map en naam conventies.
+- Controle op [alleen-lezen replica's](read-scale-out.md) wordt automatisch ingeschakeld. Voor meer informatie over de hiërarchie van de opslag mappen, naam conventies en logboek indeling raadpleegt u de [SQL database controle logboek indeling](audit-log-format.md).
+- Wanneer u Azure AD-verificatie gebruikt, worden records met mislukte aanmeldingen *niet* weer gegeven in het SQL-controle logboek. Als u mislukte aanmeldings controle records wilt weer geven, gaat u naar de [Azure Active Directory-Portal](../../active-directory/reports-monitoring/reference-sign-ins-error-codes.md), waarin de details van deze gebeurtenissen worden vastgelegd.
+- Aanmeldingen worden door de gateway doorgestuurd naar het specifieke exemplaar waarin de data base zich bevindt.  In het geval van AAD-aanmeldingen worden de referenties gecontroleerd voordat deze wordt gebruikt om u aan te melden bij de aangevraagde data base.  In het geval van een storing wordt de aangevraagde data base nooit geopend, dus wordt er geen controle uitgevoerd.  In het geval van SQL-aanmeldingen worden de referenties gecontroleerd op de aangevraagde gegevens, dus in dit geval kunnen ze worden gecontroleerd.  Geslaagde aanmeldingen die de data base uiteraard bereiken, worden in beide gevallen gecontroleerd.
+- Nadat u de controle-instellingen hebt geconfigureerd, kunt u de nieuwe functie voor het detecteren van bedreigingen inschakelen en e-mail berichten configureren voor het ontvangen van beveiligings waarschuwingen. Wanneer u detectie van dreigingen gebruikt, ontvangt u proactieve waarschuwingen over afwijkende database activiteiten die kunnen wijzen op mogelijke beveiligings dreigingen. Zie aan de slag [met detectie van bedreigingen](threat-detection-overview.md)voor meer informatie.
 
 ## <a name="set-up-auditing-for-your-server"></a><a id="setup-auditing"></a>Controle instellen voor uw server
 
@@ -82,7 +94,7 @@ In de volgende sectie wordt de configuratie van de controle met behulp van de Az
   > [!NOTE]
   > Het is niet mogelijk om controle in te scha kelen op een onderbroken toegewezen SQL-groep. Als u de controle wilt inschakelen, moet u de exclusieve SQL-groep verwijderen. Meer informatie over een [toegewezen SQL-groep](../..//synapse-analytics/sql/best-practices-sql-pool.md).
 
-1. Ga naar [Azure Portal](https://portal.azure.com).
+1. Ga naar de [Azure Portal](https://portal.azure.com).
 2. Navigeer naar **controle** onder de kop beveiliging in het deel venster **SQL database** of **SQL Server** .
 3. Als u liever een server controle beleid instelt, kunt u de koppeling **Server instellingen weer geven** op de pagina database controle selecteren. U kunt vervolgens de instellingen voor de controle van de server weer geven of wijzigen. Het controle beleid voor servers is van toepassing op alle bestaande en nieuw gemaakte data bases op deze server.
 
@@ -120,17 +132,6 @@ Als u het schrijven van audit logboeken naar een opslag account wilt configurere
   - Als u de retentieperiode van 0 (onbeperkte retentie) wijzigt in een andere waarde, moet u er rekening mee houden dat retentie alleen van toepassing is op logboeken die zijn geschreven nadat de waarde is gewijzigd, (logboeken die zijn geschreven tijdens de periode waarin de retentie was ingesteld op onbeperkt, blijven behouden, zelfs nadat retentie is ingeschakeld).
 
   ![opslagaccount](./media/auditing-overview/auditing_select_storage.png)
-
-#### <a name="remarks"></a>Opmerkingen
-
-- Audit logboeken worden geschreven om **blobs toe te voegen** in een Azure Blob-opslag in uw Azure-abonnement
-- Audit logboeken hebben de Xel-indeling en kunnen worden geopend met behulp van [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
-- Als u een onveranderbaar logboek archief wilt configureren voor de controle gebeurtenissen op de server of op database niveau, volgt u de [instructies van Azure Storage](../../storage/blobs/storage-blob-immutability-policies-manage.md#enabling-allow-protected-append-blobs-writes). Zorg ervoor dat u **Extra toevoegen toestaan** selecteert wanneer u de onveranderbare Blob-opslag configureert.
-- U kunt audit logboeken schrijven naar een Azure Storage-account achter een VNet of firewall. Zie voor specifieke instructies [audit schrijven naar een opslag account achter VNet en firewall](audit-write-storage-account-behind-vnet-firewall.md).
-- Nadat u de controle-instellingen hebt geconfigureerd, kunt u de nieuwe functie voor het detecteren van bedreigingen inschakelen en e-mail berichten configureren voor het ontvangen van beveiligings waarschuwingen. Wanneer u detectie van dreigingen gebruikt, ontvangt u proactieve waarschuwingen over afwijkende database activiteiten die kunnen wijzen op mogelijke beveiligings dreigingen. Zie aan de slag [met detectie van bedreigingen](threat-detection-overview.md)voor meer informatie.
-- Zie de naslag informatie over de [indeling van BLOB-controle logboeken](./audit-log-format.md)voor meer informatie over de logboek indeling, de hiërarchie van de opslag map en naam conventies.
-- Wanneer u Azure AD-verificatie gebruikt, worden records met mislukte aanmeldingen *niet* weer gegeven in het SQL-controle logboek. Als u mislukte aanmeldings controle records wilt weer geven, gaat u naar de [Azure Active Directory-Portal](../../active-directory/reports-monitoring/reference-sign-ins-error-codes.md), waarin de details van deze gebeurtenissen worden vastgelegd.
-- Controle op [alleen-lezen replica's](read-scale-out.md) wordt automatisch ingeschakeld. Voor meer informatie over de hiërarchie van de opslag mappen, naam conventies en logboek indeling raadpleegt u de [SQL database controle logboek indeling](audit-log-format.md).
 
 ### <a name="audit-to-log-analytics-destination"></a><a id="audit-log-analytics-destination"></a>Controleren op Log Analytics bestemming
   
@@ -219,11 +220,11 @@ Als u ervoor hebt gekozen om audit logboeken naar een Azure Storage-account te s
 
 ### <a name="auditing-geo-replicated-databases"></a>Geo-gerepliceerde data bases controleren
 
-Bij geo-gerepliceerde data bases, wanneer u controle inschakelt voor de hoofd database, heeft de secundaire Data Base een identiek controle beleid. Het is ook mogelijk om controle in te stellen voor de secundaire data base door controle in te scha kelen op de **secundaire server** , onafhankelijk van de primaire data base.
+Bij geo-gerepliceerde data bases, wanneer u controle inschakelt voor de hoofd database, heeft de secundaire Data Base een identiek controle beleid. Het is ook mogelijk om controle in te stellen voor de secundaire data base door controle in te scha kelen op de **secundaire server**, onafhankelijk van de primaire data base.
 
-- Server niveau ( **Aanbevolen** ): Schakel de controle op zowel de **primaire server** als de **secundaire server** in. de primaire en secundaire data bases worden elk onafhankelijk gecontroleerd op basis van hun respectieve beleid op server niveau.
+- Server niveau (**Aanbevolen**): Schakel de controle op zowel de **primaire server** als de **secundaire server** in. de primaire en secundaire data bases worden elk onafhankelijk gecontroleerd op basis van hun respectieve beleid op server niveau.
 - Database niveau: controle op database niveau voor secundaire data bases kan alleen worden geconfigureerd vanuit de instellingen voor de controle van primaire data bases.
-  - De controle moet worden ingeschakeld op de *primaire data base zelf* , niet op de server.
+  - De controle moet worden ingeschakeld op de *primaire data base zelf*, niet op de server.
   - Nadat de controle is ingeschakeld op de primaire data base, wordt deze ook ingeschakeld op de secundaire data base.
 
     > [!IMPORTANT]
@@ -246,7 +247,7 @@ In productie zult u uw opslag sleutels waarschijnlijk periodiek vernieuwen. Wann
 
 ### <a name="using-azure-powershell"></a>Azure PowerShell gebruiken
 
-**Power shell-cmdlets (inclusief WHERE-component ondersteuning voor aanvullende filters)** :
+**Power shell-cmdlets (inclusief WHERE-component ondersteuning voor aanvullende filters)**:
 
 - [Controle beleid voor data bases maken of bijwerken (set-AzSqlDatabaseAudit)](/powershell/module/az.sql/set-azsqldatabaseaudit)
 - [Controle beleid voor servers maken of bijwerken (set-AzSqlServerAudit)](/powershell/module/az.sql/set-azsqlserveraudit)
@@ -259,7 +260,7 @@ Zie [controle en detectie van bedreigingen configureren met Power shell](scripts
 
 ### <a name="using-rest-api"></a>REST API gebruiken
 
-**rest API** :
+**rest API**:
 
 - [Controle beleid voor data base maken of bijwerken](/rest/api/sql/database%20auditing%20settings/createorupdate)
 - [Controle beleid voor servers maken of bijwerken](/rest/api/sql/server%20auditing%20settings/createorupdate)

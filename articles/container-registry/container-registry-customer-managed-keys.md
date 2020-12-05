@@ -2,14 +2,14 @@
 title: REGI ster versleutelen met een door de klant beheerde sleutel
 description: Meer informatie over het versleutelen van uw Azure container Registry en het versleutelen van uw Premium-REGI ster met een door de klant beheerde sleutel die is opgeslagen in Azure Key Vault
 ms.topic: article
-ms.date: 11/17/2020
+ms.date: 12/03/2020
 ms.custom: ''
-ms.openlocfilehash: 6dac2239f223b5dee6ec728833caa01562873210
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 708a42a4f965f484060d42d89ea4f535c4365a10
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95255017"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96620433"
 ---
 # <a name="encrypt-registry-using-a-customer-managed-key"></a>REGI ster versleutelen met een door de klant beheerde sleutel
 
@@ -45,9 +45,6 @@ Wanneer u register versleuteling configureert met een door de klant beheerde sle
 * **De sleutel versie automatisch bijwerken** : als u een door de klant beheerde sleutel automatisch wilt bijwerken wanneer een nieuwe versie beschikbaar is in azure Key Vault, laat u de sleutel versie weg wanneer u register versleuteling inschakelt met een door de klant beheerde sleutel. Wanneer een REGI ster is versleuteld met een niet-versie sleutel, controleert Azure Container Registry regel matig de sleutel kluis voor een nieuwe sleutel versie en werkt de door de klant beheerde sleutel binnen één uur bij. Azure Container Registry maakt automatisch gebruik van de meest recente versie van de sleutel.
 
 * **De sleutel versie hand matig bijwerken** : als u een specifieke versie van een sleutel voor register versleuteling wilt gebruiken, geeft u die sleutel versie op wanneer u register versleuteling inschakelt met een door de klant beheerde sleutel. Wanneer een REGI ster is versleuteld met een specifieke sleutel versie, Azure Container Registry deze versie gebruiken voor versleuteling totdat u de door de klant beheerde sleutel hand matig roteert.
-
-> [!NOTE]
-> Momenteel kunt u alleen de Azure CLI gebruiken om het REGI ster te configureren om automatisch de door de klant beheerde sleutel versie bij te werken. Wanneer u de portal gebruikt om versleuteling in te scha kelen, moet u de sleutel versie hand matig bijwerken.
 
 Zie voor meer informatie [sleutel-id kiezen met of zonder sleutel versie](#choose-key-id-with-or-without-key-version) en de [sleutel versie bijwerken](#update-key-version)verderop in dit artikel.
 
@@ -112,7 +109,7 @@ az keyvault create --name <key-vault-name> \
   --enable-purge-protection
 ```
 
-Voor gebruik in latere stappen moet u de resource-id van de sleutel kluis ophalen:
+Voor gebruik in latere stappen moet u de resource-ID van de sleutel kluis ophalen:
 
 ```azurecli
 keyvaultID=$(az keyvault show --resource-group <resource-group-name> --name <key-vault-name> --query 'id' --output tsv)
@@ -252,7 +249,7 @@ U gebruikt de naam van de identiteit in latere stappen.
 
 ### <a name="create-a-key-vault"></a>Een sleutelkluis maken
 
-Voor stappen voor het maken van een sleutel kluis raadpleegt u [Quick Start: een Azure Key Vault maken met de Azure Portal](../key-vault/general/quick-create-portal.md).
+Voor stappen voor het maken van een sleutel kluis raadpleegt u [Quick Start: een sleutel kluis maken met behulp van de Azure Portal](../key-vault/general/quick-create-portal.md).
 
 Wanneer u een sleutel kluis maakt voor een door de klant beheerde sleutel, schakelt u op het tabblad **basis beginselen** de instelling **beveiliging opschonen** in. Deze instelling helpt gegevens verlies te voor komen dat wordt veroorzaakt door onopzettelijke sleutel-of sleutel kluis verwijderingen.
 
@@ -279,13 +276,15 @@ U kunt ook [Azure RBAC voor Key Vault](../key-vault/general/rbac-guide.md) (prev
     1. Toegang toewijzen aan door de **gebruiker toegewezen beheerde identiteit**.
     1. Selecteer de resource naam van de door de gebruiker toegewezen beheerde identiteit en selecteer **Opslaan**.
 
-### <a name="create-key"></a>Sleutel maken
+### <a name="create-key-optional"></a>Sleutel maken (optioneel)
+
+Maak eventueel een sleutel in de sleutel kluis die u kunt gebruiken om het REGI ster te versleutelen. Volg deze stappen als u een specifieke sleutel versie als een door de klant beheerde sleutel wilt selecteren. 
 
 1. Navigeer naar uw sleutel kluis.
 1. Selecteer **instellingen**  >  **sleutels**.
 1. Selecteer **+ genereren/importeren** en voer een unieke naam in voor de sleutel.
 1. Accepteer de resterende standaard waarden en selecteer **maken**.
-1. Nadat u hebt gemaakt, selecteert u de sleutel en noteert u de huidige sleutel versie.
+1. Nadat u hebt gemaakt, selecteert u de sleutel en selecteert u vervolgens de huidige versie. Kopieer de **sleutel-id** voor de sleutel versie.
 
 ### <a name="create-azure-container-registry"></a>Azure Container Registry maken
 
@@ -293,10 +292,11 @@ U kunt ook [Azure RBAC voor Key Vault](../key-vault/general/rbac-guide.md) (prev
 1. Op het tabblad **basis beginselen** selecteert of maakt u een resource groep en voert u een register naam in. Selecteer **Premium** in **SKU**.
 1. Selecteer op het tabblad **versleuteling** in door de **klant beheerde sleutel** **ingeschakeld**.
 1. Selecteer in **identiteit** de beheerde identiteit die u hebt gemaakt.
-1. Selecteer bij **versleuteling** de optie **selecteren in Key Vault**.
-1. Selecteer in het venster **sleutel selecteren uit Azure Key Vault** de sleutel kluis, sleutel en versie die u in de voor gaande sectie hebt gemaakt.
+1. Kies in **versleuteling** een van de volgende opties:
+    * Selecteer **selecteren in Key Vault** en selecteer een bestaande sleutel kluis en sleutel, of **Maak een nieuwe**. De sleutel die u selecteert, heeft geen versie en maakt automatische rotatie van de sleutel mogelijk.
+    * Selecteer **sleutel-URI invoeren** en geef rechtstreeks een sleutel-id op. U kunt een sleutel-URI van een versie opgeven (voor een sleutel die hand matig moet worden gedraaid) of een sleutel-URI zonder versie (waardoor het automatisch draaien van sleutels mogelijk wordt). 
 1. Selecteer in het tabblad **versleuteling** de optie **controleren + maken**.
-1. Selecteer **maken** om het register exemplaar te maken.
+1. Selecteer **maken** om het register exemplaar te implementeren.
 
 :::image type="content" source="media/container-registry-customer-managed-keys/create-encrypted-registry.png" alt-text="Versleuteld REGI ster maken in de Azure Portal":::
 
@@ -498,11 +498,11 @@ Als u bijvoorbeeld een nieuwe sleutel wilt configureren:
 
 1. Navigeer in de portal naar het REGI ster.
 1. Selecteer onder **instellingen** de optie **versleutelings**  >  **sleutel wijzigen**.
-1. Selecteer **sleutel selecteren**.
 
     :::image type="content" source="media/container-registry-customer-managed-keys/rotate-key.png" alt-text="De sleutel in de Azure Portal draaien":::
-1. Selecteer in het venster **sleutel selecteren uit Azure Key Vault** de sleutel kluis en de sleutel die u eerder hebt geconfigureerd, en selecteer in **versie** de optie **nieuwe maken**.
-1. Selecteer in het venster **een sleutel maken** de optie **genereren** en vervolgens **maken**.
+1. Kies bij **versleuteling** een van de volgende opties:
+    * Selecteer **selecteren in Key Vault** en selecteer een bestaande sleutel kluis en sleutel, of **Maak een nieuwe**. De sleutel die u selecteert, heeft geen versie en maakt automatische rotatie van de sleutel mogelijk.
+    * Selecteer **sleutel-URI invoeren** en geef rechtstreeks een sleutel-id op. U kunt een sleutel-URI van een versie opgeven (voor een sleutel die hand matig moet worden gedraaid) of een sleutel-URI zonder versie (waardoor het automatisch draaien van sleutels mogelijk wordt).
 1. Voltooi de sleutel selectie en selecteer **Opslaan**.
 
 ## <a name="revoke-key"></a>Sleutel intrekken

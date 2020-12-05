@@ -2,7 +2,7 @@
 title: Veelvoorkomende waarschuwingen en oplossingen in Azure AD Domain Services | Microsoft Docs
 description: Informatie over het oplossen van veelvoorkomende waarschuwingen die zijn gegenereerd als onderdeel van de integriteits status voor Azure Active Directory Domain Services
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 54319292-6aa0-4a08-846b-e3c53ecca483
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 07/09/2020
-ms.author: joflore
-ms.openlocfilehash: 5324018bace0ad530dea8ae94cecdc5b41b618c7
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: 80011b2ae2a70ce4c540ac31897cc8be4a6580c3
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91967593"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96618617"
 ---
 # <a name="known-issues-common-alerts-and-resolutions-in-azure-active-directory-domain-services"></a>Bekende problemen: gemeen schappelijke waarschuwingen en oplossingen in Azure Active Directory Domain Services
 
@@ -73,7 +73,7 @@ U kunt deze waarschuwing oplossen door uw bestaande beheerde domein te verwijder
 
 1. [Verwijder het beheerde domein](delete-aadds.md) uit uw Directory.
 1. Als u het IP-adres bereik van het virtuele netwerk wilt bijwerken, zoekt en selecteert u *virtueel netwerk* in de Azure Portal. Selecteer het virtuele netwerk voor Azure AD DS waarvoor ten onrechte een openbaar IP-adres bereik is ingesteld.
-1. Selecteer bij **instellingen**de optie *adres ruimte*.
+1. Selecteer bij **instellingen** de optie *adres ruimte*.
 1. Werk het adres bereik bij door het bestaande adres bereik te kiezen en te bewerken, of een extra adres bereik toe te voegen. Zorg ervoor dat het nieuwe IP-adres bereik zich in een privé-IP-bereik bevindt. Als u klaar bent, **slaat** u de wijzigingen op.
 1. Selecteer **subnetten** in de linkernavigatiebalk.
 1. Kies het subnet dat u wilt bewerken of maak een extra subnet.
@@ -179,7 +179,7 @@ U kunt deze waarschuwing oplossen door uw bestaande beheerde domein te verwijder
 
 1. [Verwijder het beheerde domein](delete-aadds.md) uit uw Directory.
 1. Als u het IP-adres bereik van het virtuele netwerk wilt bijwerken, zoekt en selecteert u *virtueel netwerk* in de Azure Portal. Selecteer het virtuele netwerk voor het beheerde domein met het kleine IP-adres bereik.
-1. Selecteer bij **instellingen**de optie *adres ruimte*.
+1. Selecteer bij **instellingen** de optie *adres ruimte*.
 1. Werk het adres bereik bij door het bestaande adres bereik te kiezen en te bewerken, of een extra adres bereik toe te voegen. Zorg ervoor dat het nieuwe IP-adres bereik groot genoeg is voor het subnet van het beheerde domein. Als u klaar bent, **slaat** u de wijzigingen op.
 1. Selecteer **subnetten** in de linkernavigatiebalk.
 1. Kies het subnet dat u wilt bewerken of maak een extra subnet.
@@ -221,7 +221,7 @@ Resource vergrendelingen kunnen worden toegepast op Azure-resources om te voor k
 Voer de volgende stappen uit om te controleren op resource vergrendelingen op de onderdelen van Azure AD DS en ze te verwijderen:
 
 1. Controleer de bewerkings Logboeken in de Azure Portal voor elk van de netwerk onderdelen van het beheerde domein in uw resource groep, zoals een virtueel netwerk, een netwerk interface of een openbaar IP-adres. In deze bewerkings logboeken moet worden aangegeven waarom een bewerking mislukt en waar een resource vergrendeling wordt toegepast.
-1. Selecteer de resource waar een vergren deling wordt toegepast en selecteer **vervolgens vergrendelde**vergren deling (en).
+1. Selecteer de resource waar een vergren deling wordt toegepast en selecteer **vervolgens vergrendelde** vergren deling (en).
 
 ## <a name="aadds116-resources-are-unusable"></a>AADDS116: bronnen zijn onbruikbaar
 
@@ -236,7 +236,7 @@ Beleids regels worden toegepast op Azure-resources en-resource groepen die bepal
 Voer de volgende stappen uit om te controleren of er beleid is toegepast op de onderdelen van Azure AD DS en deze bij te werken:
 
 1. Controleer de bewerkings Logboeken in de Azure Portal voor elk van de netwerk onderdelen van het beheerde domein in uw resource groep, zoals een virtueel netwerk, een NIC of een openbaar IP-adres. In deze bewerkings logboeken moet worden aangegeven waarom een bewerking mislukt en waar een beperkend beleid wordt toegepast.
-1. Selecteer de resource waar een beleid wordt toegepast en selecteer vervolgens onder **beleids regels**het beleid en bewerk dit zodat het minder beperkend is.
+1. Selecteer de resource waar een beleid wordt toegepast en selecteer vervolgens onder **beleids regels** het beleid en bewerk dit zodat het minder beperkend is.
 
 ## <a name="aadds500-synchronization-has-not-completed-in-a-while"></a>AADDS500: de synchronisatie is niet in een tijdje voltooid
 

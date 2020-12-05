@@ -3,19 +3,22 @@ title: Lijst met vereiste URL'S voor Windows virtueel bureau blad-Azure
 description: Een lijst met Url's die u moet deblokkeren om ervoor te zorgen dat de implementatie van Windows virtueel bureau blad werkt zoals bedoeld.
 author: Heidilohr
 ms.topic: conceptual
-ms.date: 12/02/2020
+ms.date: 12/04/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 6b3fdc18a04dadf4bf1cf380c7bb51d21f826633
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: 70b7042e4006cc59419d0ea6798fe7626a82c086
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96512338"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621073"
 ---
-# <a name="required-url-list"></a>Lijst met vereiste URL'S
+# <a name="required-url-list"></a>Vereiste URL-lijst
 
-Als u Windows virtueel bureau blad wilt implementeren en gebruiken, moet u bepaalde Url's deblokkeren zodat uw virtuele machines (Vm's) op elk gewenst moment toegang hebben. In dit artikel worden de vereiste Url's vermeld die u nodig hebt om de blok kering op te heffen.
+Als u Windows virtueel bureau blad wilt implementeren en gebruiken, moet u bepaalde Url's deblokkeren zodat uw virtuele machines (Vm's) op elk gewenst moment toegang hebben. Dit artikel bevat een lijst met de vereiste Url's die u moet deblokkeren om ervoor te zorgen dat virtuele Windows-Bureau bladen goed werken. 
+
+>[!IMPORTANT]
+>Windows Virtual Desktop biedt geen ondersteuning voor implementaties die de Url's blok keren die in dit artikel worden vermeld.
 
 ## <a name="virtual-machines"></a>Virtuele machines
 

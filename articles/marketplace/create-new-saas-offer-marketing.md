@@ -1,5 +1,5 @@
 ---
-title: Uw SaaS-aanbieding op de markt brengen in het micro soft Partner Center
+title: Uw SaaS-aanbieding verkopen in het micro soft Partner Center
 description: Meer informatie over het samen verkopen met micro soft en door verkopen via de programma opties van de Cloud Solution Providers (CSP) voor uw software als een service (SaaS)-aanbieding in micro soft Commercial Marketplace.
 author: mingshen-ms
 ms.author: mingshen
@@ -8,22 +8,22 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 09/02/2020
-ms.openlocfilehash: 4ccc5a63da40950fbf9f05e3e029393fce8814d7
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: e61d85b5f02cb73d078888badc2fa24c4506fe64
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576686"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96620881"
 ---
-# <a name="how-to-market-your-saas-offer"></a>Uw SaaS-aanbieding in de handel brengen
+# <a name="how-to-sell-your-saas-offer"></a>Uw SaaS-aanbieding verkopen
 
-In dit artikel worden aanvullende marketing opties beschreven die u kunt kiezen als u uw SaaS-aanbieding (Software as a Service) verkoopt via micro soft. U kunt uw aanbieding samen met micro soft verkopen en deze door verkopen via het [programma voor Cloud Solution Providers (CSP)](cloud-solution-providers.md)of beide.
+In dit artikel worden extra opties beschreven die u kunt kiezen als u uw SaaS-aanbieding (Software as a Service) verkoopt via micro soft. U kunt uw aanbieding samen met micro soft verkopen en deze door verkopen via het [programma voor Cloud Solution Providers (CSP)](cloud-solution-providers.md)of beide.
 
 ## <a name="co-sell-with-microsoft"></a>Collectieve verkoop met Microsoft
 
 Het is volledig optioneel om informatie op te geven over het **samen verkopen met micro soft** pagina. Maar het is wel nodig om de status gereed voor _samen verkoop_ en de voor _bereiding_ van de gecentraliseerde IP te bezorgen. De verkoop teams van micro soft gebruiken deze informatie om meer te weten te komen over uw oplossing bij de evaluatie van de geschiktheid voor klant behoeften. De informatie die u op dit tabblad verstrekt, is niet rechtstreeks beschikbaar voor klanten.
 
-Zie voor meer informatie en instructies voor het configureren **van het samen werken met micro soft** -tabblad de [optie co-sell in Partner Center](commercial-marketplace-co-sell.md).
+Zie voor meer informatie en instructies voor het configureren van het **samen verkopen met micro soft** -tabblad de [optie voor co-sell in de commerciële Marketplace](commercial-marketplace-co-sell.md).
 
 ## <a name="resell-through-csps"></a>Doorverkopen via CSP's
 

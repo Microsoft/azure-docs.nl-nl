@@ -4,16 +4,16 @@ description: Meer informatie over het maken van een Azure-bestands share die kan
 author: roygara
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/15/2020
+ms.date: 12/04/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 7680e251d8411ce154e1f7dfb8af1d66514dd579
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 3cf22ee22c35b850aff33290a59a7043bb57c984
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94629458"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96620938"
 ---
 # <a name="how-to-create-an-nfs-share"></a>Een NFS-share maken
 
@@ -64,7 +64,7 @@ az feature register --name AllowNfsFileShares \
 az provider register --namespace Microsoft.Storage
 ```
 
-## <a name="verify-that-the-feature-is-registered"></a>Controleer of de functie is geregistreerd
+## <a name="verify-feature-registration"></a>Functie registratie controleren
 
 De registratie goedkeuring kan tot een uur duren. Gebruik de volgende opdrachten om te controleren of de registratie is voltooid:
 
@@ -80,6 +80,34 @@ Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName AllowNfs
 az feature show --name AllowNfsFileShares --namespace Microsoft.Storage --subscription <yourSubscriptionIDHere>
 ```
 
+## <a name="verify-storage-account-kind"></a>Type opslag account verifiëren
+
+Op dit moment kunnen alleen FileStorage-accounts NFS-shares maken. 
+
+# <a name="portal"></a>[Portal](#tab/azure-portal)
+
+Als u wilt controleren welk type opslag account u hebt, navigeert u ernaar in de Azure Portal. Selecteer vervolgens vanuit uw opslag account **Eigenschappen**. Controleer op de Blade eigenschappen de waarde onder **soort account**, de waarde moet **FileStorage** zijn.
+
+# <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
+Als u wilt controleren of u een FileStorage-account hebt, kunt u de volgende opdracht gebruiken:
+
+```azurepowershell
+$accountKind=Get-AzStorageAccount -ResourceGroupName "yourResourceGroup" -Name "yourStorageAccountName"
+$accountKind.Kind
+```
+
+De uitvoer moet **FileStorage**, als dat niet het geval is, dan is uw opslag account het verkeerde type. Zie [een Azure Premium-bestands share maken voor meer informatie over](storage-how-to-create-premium-fileshare.md)het maken van een **FileStorage** -account.
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+Als u wilt controleren of u een FileStorage-account hebt, kunt u de volgende opdracht gebruiken:
+
+```azurecli
+az storage account show -g yourResourceGroup -n yourStorageAccountName
+```
+
+De uitvoer moet **' soort ': ' FileStorage '** bevatten. als dit niet het geval is, is uw opslag account het verkeerde type. Zie [een Azure Premium-bestands share maken voor meer informatie over](storage-how-to-create-premium-fileshare.md)het maken van een **FileStorage** -account.
+
+---
 ## <a name="create-an-nfs-share"></a>Een NFS-share maken
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
@@ -143,7 +171,7 @@ Nu u een FileStorage-account hebt gemaakt en het netwerk hebt geconfigureerd, ku
    -Context $storageAcct.Context
   ```
 
-# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Als u een Premium-bestands share wilt maken met de Azure CLI, gebruikt u de opdracht [AZ Storage share Create](/cli/azure/storage/share-rm) .
 

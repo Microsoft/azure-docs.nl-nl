@@ -2,7 +2,7 @@
 title: Wachtwoord beleid maken en gebruiken in Azure AD Domain Services | Microsoft Docs
 description: Meer informatie over hoe en waarom u een nauw keurig wachtwoord beleid kunt gebruiken voor het beveiligen en beheren van wacht woorden in een Azure AD DS beheerd domein.
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 1a14637e-b3d0-4fd9-ba7a-576b8df62ff2
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/06/2020
-ms.author: joflore
-ms.openlocfilehash: 2dbc75ac4f143089db778b260bb2c4bee5b49f6a
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.author: justinha
+ms.openlocfilehash: df132af1675b3f373fe1eab5685c5d2f07813445
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93393163"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96619229"
 ---
 # <a name="password-and-account-lockout-policies-on-azure-active-directory-domain-services-managed-domains"></a>Wacht woord-en account vergrendelings beleid voor Azure Active Directory Domain Services beheerde domeinen
 
@@ -117,7 +117,7 @@ Als u een aangepast wachtwoord beleid wilt maken, gebruikt u de Active Directory
 
     ![Selecteer de gebruikers en groepen waarop u het wachtwoord beleid wilt Toep assen](./media/password-policy/fgpp-applies-to.png)
 
-1. Wachtwoord beleid kan alleen worden toegepast op groepen. Vouw in het dialoog venster **locaties** de domein naam uit, zoals *aaddscontoso.com* , en selecteer vervolgens een OE, zoals **AADDC-gebruikers**. Als u een aangepaste OE hebt die een groep gebruikers bevat die u wilt Toep assen, selecteert u die organisatie-eenheid.
+1. Wachtwoord beleid kan alleen worden toegepast op groepen. Vouw in het dialoog venster **locaties** de domein naam uit, zoals *aaddscontoso.com*, en selecteer vervolgens een OE, zoals **AADDC-gebruikers**. Als u een aangepaste OE hebt die een groep gebruikers bevat die u wilt Toep assen, selecteert u die organisatie-eenheid.
 
     ![Selecteer de organisatie-eenheid waarvan de groep deel uitmaakt](./media/password-policy/fgpp-container.png)
 

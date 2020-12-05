@@ -2,7 +2,7 @@
 title: Een RHEL-VM toevoegen aan Azure AD Domain Services | Microsoft Docs
 description: Meer informatie over het configureren en toevoegen van een Red Hat Enterprise Linux virtuele machine aan een Azure AD Domain Services beheerd domein.
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 16100caa-f209-4cb0-86d3-9e218aeb51c6
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/13/2020
-ms.author: joflore
-ms.openlocfilehash: ffde2317ea66a15936df75c4fe2455f627ea6e98
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: 285a972936bfdf4b173e2a20223143883cd8b7d3
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91962119"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96619552"
 ---
 # <a name="join-a-red-hat-enterprise-linux-virtual-machine-to-an-azure-active-directory-domain-services-managed-domain"></a>Een Red Hat Enterprise Linux virtuele machine toevoegen aan een Azure Active Directory Domain Services beheerd domein
 
@@ -43,7 +43,7 @@ Als u een bestaande virtuele machine met RHEL Linux in azure hebt, kunt u er ver
 Als u een virtuele machine met RHEL Linux wilt maken of een test-VM wilt maken voor gebruik met dit artikel, kunt u een van de volgende methoden gebruiken:
 
 * [Azure-portal](../virtual-machines/linux/quick-create-portal.md)
-* [Azure-CLI](../virtual-machines/linux/quick-create-cli.md)
+* [Azure CLI](../virtual-machines/linux/quick-create-cli.md)
 * [Azure PowerShell](../virtual-machines/linux/quick-create-powershell.md)
 
 Wanneer u de virtuele machine maakt, moet u aandacht best Eden aan de instellingen voor virtueel netwerk om ervoor te zorgen dat de virtuele machine kan communiceren met het beheerde domein:
@@ -96,7 +96,7 @@ Nu de vereiste pakketten zijn geïnstalleerd op de VM, voegt u de virtuele machi
 
 ### <a name="rhel-7"></a>RHEL 7
 
-1. Gebruik de `realm discover` opdracht om het beheerde domein te detecteren. In het volgende voor beeld wordt de realm- *AADDSCONTOSO.com*gedetecteerd. Geef in alle hoofd letters uw eigen beheerde domein naam op:
+1. Gebruik de `realm discover` opdracht om het beheerde domein te detecteren. In het volgende voor beeld wordt de realm- *AADDSCONTOSO.com* gedetecteerd. Geef in alle hoofd letters uw eigen beheerde domein naam op:
 
     ```console
     sudo realm discover AADDSCONTOSO.COM
@@ -130,7 +130,7 @@ Successfully enrolled machine in realm
 
 ### <a name="rhel-6"></a>RHEL 6
 
-1. Gebruik de `adcli info` opdracht om het beheerde domein te detecteren. In het volgende voor beeld wordt de realm- *ADDDSCONTOSO.com*gedetecteerd. Geef in alle hoofd letters uw eigen beheerde domein naam op:
+1. Gebruik de `adcli info` opdracht om het beheerde domein te detecteren. In het volgende voor beeld wordt de realm- *ADDDSCONTOSO.com* gedetecteerd. Geef in alle hoofd letters uw eigen beheerde domein naam op:
 
     ```console
     sudo adcli info aaddscontoso.com

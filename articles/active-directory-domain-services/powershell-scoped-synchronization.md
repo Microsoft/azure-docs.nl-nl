@@ -2,20 +2,20 @@
 title: Scoped synchronisatie met Power shell voor Azure AD Domain Services | Microsoft Docs
 description: Meer informatie over hoe u met Azure AD Power shell scoped Synchronization van Azure AD configureert in een door Azure Active Directory Domain Services beheerd domein
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/24/2020
-ms.author: joflore
-ms.openlocfilehash: dc6ebb88440ecdccc3ea78d85f0b6186100da01a
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: c078117baf84d7dbfaaaa2b569abb8a5f5c67e6d
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91967880"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96619008"
 ---
 # <a name="configure-scoped-synchronization-from-azure-ad-to-azure-active-directory-domain-services-using-azure-ad-powershell"></a>Scoped Synchronization from Azure AD configureren voor Azure Active Directory Domain Services met behulp van Azure AD Power shell
 
@@ -175,7 +175,7 @@ Het wijzigen van het bereik van de synchronisatie zorgt ervoor dat het beheerde 
 
 Als u de lijst met groepen wilt wijzigen waarvan gebruikers moeten worden gesynchroniseerd met het beheerde domein, voert u `Select-GroupsToSync.ps1` het script uit en geeft u de nieuwe lijst met groepen op die u wilt synchroniseren.
 
-In het volgende voor beeld bevat de groepen die worden gesynchroniseerd niet langer *GroupName2*en bevat nu *GroupName3*.
+In het volgende voor beeld bevat de groepen die worden gesynchroniseerd niet langer *GroupName2* en bevat nu *GroupName3*.
 
 > [!WARNING]
 > U moet de groep *Aad DC-Administrators* opnemen in de lijst met groepen voor synchronisatie met een bereik. Als u deze groep niet opneemt, is het beheerde domein onbruikbaar.

@@ -1,7 +1,7 @@
 ---
 title: Groeps beleid maken en beheren in Azure AD Domain Services | Microsoft Docs
 description: Meer informatie over het bewerken van de ingebouwde groeps beleidsobjecten (Gpo's) en het maken van uw eigen aangepaste beleids regels in een Azure Active Directory Domain Services beheerd domein.
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
 ms.service: active-directory
@@ -9,13 +9,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/06/2020
-ms.author: joflore
-ms.openlocfilehash: deefcb66e05199896e8997d707a06e45f397adec
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: f1f2499c49c4adf16b632bc75c246a28330ad27b
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91963734"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96619382"
 ---
 # <a name="administer-group-policy-in-an-azure-active-directory-domain-services-managed-domain"></a>groepsbeleid beheren in een Azure Active Directory Domain Services beheerd domein
 
@@ -51,7 +51,7 @@ U hebt de volgende resources en bevoegdheden nodig om dit artikel te volt ooien:
 Als u groepsbeleid object (Gpo's) wilt maken en configureren, moet u de groepsbeleid-beheer hulpprogramma's installeren. Deze hulpprogram ma's kunnen worden geïnstalleerd als een functie in Windows Server. Zie install [Remote Server Administration Tools (RSAT) (Engelstalig)][install-rsat]voor meer informatie over het installeren van de beheer Programma's op een Windows-client.
 
 1. Meld u aan bij uw beheer-VM. Zie [verbinding maken met een virtuele machine van Windows Server][connect-windows-server-vm]voor stappen voor het maken van verbinding met behulp van de Azure Portal.
-1. **Serverbeheer** moet standaard worden geopend wanneer u zich aanmeldt bij de VM. Als dat niet het geval is, selecteert u **Serverbeheer**in het menu **Start** .
+1. **Serverbeheer** moet standaard worden geopend wanneer u zich aanmeldt bij de VM. Als dat niet het geval is, selecteert u **Serverbeheer** in het menu **Start** .
 1. Selecteer in het deelvenster *Dashboard* van het venster **Serverbeheer** de optie **Functies en onderdelen toevoegen**.
 1. Selecteer op de pagina **Voordat u begint** van de wizard *Functies en onderdelen toevoegen* **Volgende**.
 1. Voor het *installatietype* moet u de optie van het selectievakje **Installatie die op de functie of het onderdeel is gebaseerd** ingeschakeld laten en **Volgende** selecteren.

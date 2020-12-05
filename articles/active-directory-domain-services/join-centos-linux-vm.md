@@ -2,7 +2,7 @@
 title: Een CentOS-VM toevoegen aan Azure AD Domain Services | Microsoft Docs
 description: Meer informatie over het configureren en toevoegen van een virtuele CentOS Linux-machine aan een Azure Active Directory Domain Services beheerd domein.
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 16100caa-f209-4cb0-86d3-9e218aeb51c6
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/13/2020
-ms.author: joflore
-ms.openlocfilehash: 6aa85564390728331f682c31d14655844d68b3c3
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: 76fc11384b55337f581a74239d4a40b90b284f32
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91962170"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96619654"
 ---
 # <a name="join-a-centos-linux-virtual-machine-to-an-azure-active-directory-domain-services-managed-domain"></a>Een virtuele CentOS Linux-machine toevoegen aan een door Azure Active Directory Domain Services beheerd domein
 
@@ -43,7 +43,7 @@ Als u een bestaande virtuele machine met CentOS linux in azure hebt, kunt u er v
 Als u een virtuele machine met CentOS Linux wilt maken of een test-VM wilt maken voor gebruik met dit artikel, kunt u een van de volgende methoden gebruiken:
 
 * [Azure-portal](../virtual-machines/linux/quick-create-portal.md)
-* [Azure-CLI](../virtual-machines/linux/quick-create-cli.md)
+* [Azure CLI](../virtual-machines/linux/quick-create-cli.md)
 * [Azure PowerShell](../virtual-machines/linux/quick-create-powershell.md)
 
 Wanneer u de virtuele machine maakt, moet u aandacht best Eden aan de instellingen voor virtueel netwerk om ervoor te zorgen dat de virtuele machine kan communiceren met het beheerde domein:
@@ -86,7 +86,7 @@ sudo yum install realmd sssd krb5-workstation krb5-libs oddjob oddjob-mkhomedir 
 
 Nu de vereiste pakketten zijn geïnstalleerd op de VM, voegt u de virtuele machine toe aan het beheerde domein.
 
-1. Gebruik de `realm discover` opdracht om het beheerde domein te detecteren. In het volgende voor beeld wordt de realm- *AADDSCONTOSO.com*gedetecteerd. Geef in alle hoofd letters uw eigen beheerde domein naam op:
+1. Gebruik de `realm discover` opdracht om het beheerde domein te detecteren. In het volgende voor beeld wordt de realm- *AADDSCONTOSO.com* gedetecteerd. Geef in alle hoofd letters uw eigen beheerde domein naam op:
 
     ```console
     sudo realm discover AADDSCONTOSO.COM

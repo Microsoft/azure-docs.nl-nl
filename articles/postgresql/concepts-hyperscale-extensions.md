@@ -7,16 +7,16 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: conceptual
 ms.date: 07/09/2020
-ms.openlocfilehash: 2e4a09ba07a5fa5eb3a5af7aa88e092feb3e7efc
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 000f8a1457298901dcfc94bc5e0923e94ba35dc7
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92487973"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96620899"
 ---
 # <a name="postgresql-extensions-in-azure-database-for-postgresql--hyperscale-citus"></a>PostgreSQL-uitbrei dingen in Azure Database for PostgreSQL – grootschalige (Citus)
 
-PostgreSQL biedt de mogelijkheid om de functionaliteit van uw data base uit te breiden met behulp van extensies. Met uitbrei dingen kunt u meerdere gerelateerde SQL-objecten bundelen in één pakket dat kan worden geladen of verwijderd uit uw data base met één opdracht. Nadat de gegevens in de Data Base zijn geladen, kunnen extensies functioneren als ingebouwde functies. Zie [pakket verwante objecten in een uitbrei ding](https://www.postgresql.org/docs/current/static/extend-extensions.html)voor meer informatie over postgresql-extensies.
+PostgreSQL biedt de mogelijkheid om de functionaliteit van uw database uit te breiden met behulp van extensies. Met uitbrei dingen kunt u meerdere gerelateerde SQL-objecten bundelen in één pakket dat kan worden geladen of verwijderd uit uw data base met één opdracht. Nadat de gegevens in de database zijn geladen, kunnen de extensies functioneren als ingebouwde functies. Zie [pakket verwante objecten in een uitbrei ding](https://www.postgresql.org/docs/current/static/extend-extensions.html)voor meer informatie over postgresql-extensies.
 
 ## <a name="use-postgresql-extensions"></a>PostgreSQL-extensies gebruiken
 
@@ -31,12 +31,12 @@ De volgende tabellen geven een lijst van de standaard PostgreSQL-extensies die m
 ### <a name="data-types-extensions"></a>Uitbrei dingen van gegevens typen
 
 > [!div class="mx-tableFixed"]
-> | **Toestelnummer** | **Deschription** (Beschrijving) |
+> | **Extensie** | **Beschrijving** |
 > |---|---|
 > | [citext](https://www.postgresql.org/docs/current/static/citext.html) | Bevat een hoofdletter gevoelig type teken reeks. |
 > | [kubus](https://www.postgresql.org/docs/current/static/cube.html) | Biedt een gegevens type voor multidimensionale kubussen. |
-> | [hstore](https://www.postgresql.org/docs/current/static/hstore.html) | Biedt een gegevens type voor het opslaan van sets sleutel-waardeparen. |
 > | [hll](https://github.com/citusdata/postgresql-hll) | Biedt een HyperLogLog-gegevens structuur. |
+> | [hstore](https://www.postgresql.org/docs/current/static/hstore.html) | Biedt een gegevens type voor het opslaan van sets sleutel-waardeparen. |
 > | [hebben](https://www.postgresql.org/docs/current/static/isn.html) | Biedt gegevens typen voor International product Numbering Standards. |
 > | [laag](https://www.postgresql.org/docs/current/lo.html) | Large Object onderhoud. |
 > | [ltree](https://www.postgresql.org/docs/current/static/ltree.html) | Voorziet in een gegevens type voor hiërarchische structuren op boom structuur. |
@@ -47,7 +47,7 @@ De volgende tabellen geven een lijst van de standaard PostgreSQL-extensies die m
 ### <a name="full-text-search-extensions"></a>Extensies voor zoeken in volledige tekst
 
 > [!div class="mx-tableFixed"]
-> | **Toestelnummer** | **Deschription** (Beschrijving) |
+> | **Extensie** | **Beschrijving** |
 > |---|---|
 > | [dicteren \_ int](https://www.postgresql.org/docs/current/static/dict-int.html) | Voorziet in een woordenlijst sjabloon voor tekst zoeken voor gehele getallen. |
 > | [dict \_ xsyn](https://www.postgresql.org/docs/current/dict-xsyn.html) | Zoek woordenlijst sjabloon voor tekst voor uitgebreide synoniemen verwerking. |
@@ -56,7 +56,7 @@ De volgende tabellen geven een lijst van de standaard PostgreSQL-extensies die m
 ### <a name="functions-extensions"></a>Extensies voor functies
 
 > [!div class="mx-tableFixed"]
-> | **Toestelnummer** | **Deschription** (Beschrijving) |
+> | **Extensie** | **Beschrijving** |
 > |---|---|
 > | [autoinc](https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.45.7) | Functies voor auto incrementele velden. |
 > | [earthdistance](https://www.postgresql.org/docs/current/static/earthdistance.html) | Biedt een manier om grote afstanden te berekenen op het Opper vlak van de aarde. |
@@ -65,9 +65,9 @@ De volgende tabellen geven een lijst van de standaard PostgreSQL-extensies die m
 > | [intagg](https://www.postgresql.org/docs/current/intagg.html) | Geheel getal, aggregator en Enumerator (verouderd). |
 > | [intarray](https://www.postgresql.org/docs/current/static/intarray.html) | Biedt functies en Opera tors voor het bewerken van Null-vrije matrices van gehele getallen. |
 > | [moddatetime](https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.45.9) | Functies voor het bijhouden van de tijd van de laatste wijziging. |
-> | [pgcrypto](https://www.postgresql.org/docs/current/static/pgcrypto.html) | Voorziet in cryptografische functies. |
 > | [PG- \_ deelman](https://pgxn.org/dist/pg_partman/doc/pg_partman.html) | Hiermee beheert u gepartitioneerde tabellen op tijd of ID. |
 > | [pag \_ trgm](https://www.postgresql.org/docs/current/static/pgtrgm.html) | Voorziet in functies en Opera tors voor het bepalen van de gelijkenis van alfanumerieke tekst op basis van het afstemmen van Trigram. |
+> | [pgcrypto](https://www.postgresql.org/docs/current/static/pgcrypto.html) | Voorziet in cryptografische functies. |
 > | [verfijnt](https://www.postgresql.org/docs/current/contrib-spi.html#id-1.11.7.45.5) | Functies voor het implementeren van referentiële integriteit (verouderd). |
 > | sessie \_ analyse | Functies voor het uitvoeren van query's op hstore-matrices. |
 > | [tablefunc](https://www.postgresql.org/docs/current/static/tablefunc.html) | Biedt functies voor het bewerken van hele tabellen, inclusief Kruistabel query's. |
@@ -78,15 +78,14 @@ De volgende tabellen geven een lijst van de standaard PostgreSQL-extensies die m
 ### <a name="hyperscale-citus-extensions"></a>Citus-uitbrei dingen (grootschalige)
 
 > [!div class="mx-tableFixed"]
-> | **Toestelnummer** | **Deschription** (Beschrijving) |
+> | **Extensie** | **Beschrijving** |
 > |---|---|
 > | [citus](https://github.com/citusdata/citus) | Gedistribueerde data base Citus. |
-> | Shard- \_ herbalancer | Gegevens in een server groep veilig opnieuw verdelen in geval van toevoeging of verwijdering van knoop punten. |
 
 ### <a name="index-types-extensions"></a>Extensies van index typen
 
 > [!div class="mx-tableFixed"]
-> | **Toestelnummer** | **Deschription** (Beschrijving) |
+> | **Extensie** | **Beschrijving** |
 > |---|---|
 > | [bloei](https://www.postgresql.org/docs/current/bloom.html) | Toegangs methode voor bloei-index op basis van een hand tekening bestand. |
 > | [btree \_ eginnen](https://www.postgresql.org/docs/current/static/btree-gin.html) | Biedt een voor beeld van EGINNEN-operator klassen waarmee B-structuur-like-gedrag voor bepaalde gegevens typen kan worden geïmplementeerd. |
@@ -95,17 +94,18 @@ De volgende tabellen geven een lijst van de standaard PostgreSQL-extensies die m
 ### <a name="language-extensions"></a>Taal extensies
 
 > [!div class="mx-tableFixed"]
-> | **Toestelnummer** | **Deschription** (Beschrijving) |
+> | **Extensie** | **Beschrijving** |
 > |---|---|
 > | [plpgsql](https://www.postgresql.org/docs/current/static/plpgsql.html) | Door PL/pgSQL geladen procedure taal. |
 
 ### <a name="miscellaneous-extensions"></a>Diverse uitbrei dingen
 
 > [!div class="mx-tableFixed"]
-> | **Toestelnummer** | **Deschription** (Beschrijving) |
+> | **Extensie** | **Beschrijving** |
 > |---|---|
 > | [adminpack](https://www.postgresql.org/docs/current/adminpack.html) | Beheer functies voor PostgreSQL. |
 > | [amcheck](https://www.postgresql.org/docs/current/amcheck.html) | Functies voor het controleren van relatie-integriteit. |
+> | [dblink](https://www.postgresql.org/docs/current/dblink.html) | Een module die verbindingen met andere PostgreSQL-data bases in een database sessie ondersteunt. Zie de sectie ' dblink and postgres_fdw ' voor informatie over deze uitbrei ding. |
 > | [bestands \_ fdw](https://www.postgresql.org/docs/current/file-fdw.html) | Externe-gegevens wrapper voor toegang tot platte bestanden. |
 > | [pageinspect](https://www.postgresql.org/docs/current/pageinspect.html) | De inhoud van database pagina's op een laag niveau controleren. |
 > | [pag \_ buffercache](https://www.postgresql.org/docs/current/static/pgbuffercache.html) | Biedt een manier om te controleren wat er gebeurt in de gedeelde buffer cache in realtime. |
@@ -120,15 +120,13 @@ De volgende tabellen geven een lijst van de standaard PostgreSQL-extensies die m
 > | [sslinfo](https://www.postgresql.org/docs/current/sslinfo.html) | Informatie over TLS/SSL-certificaten. |
 > | [TSM \_ systeem \_ rijen](https://www.postgresql.org/docs/current/tsm-system-rows.html) | Methode TABLESAMPLE, waarmee het aantal rijen als een limiet wordt geaccepteerd. |
 > | [TSM \_ systeem \_ tijd](https://www.postgresql.org/docs/current/tsm-system-time.html) | TABLESAMPLE-methode, waarmee de tijd in milliseconden als limiet wordt geaccepteerd. |
-> | [hypopg](https://hypopg.readthedocs.io/en/latest/) | Biedt een manier om hypothetische indexen te maken die geen CPU of schijf kosten. |
-> | [dblink](https://www.postgresql.org/docs/current/dblink.html) | Een module die verbindingen met andere PostgreSQL-data bases in een database sessie ondersteunt. Zie de sectie ' dblink and postgres_fdw ' voor informatie over deze uitbrei ding. |
 > | [xml2](https://www.postgresql.org/docs/current/xml2.html) | XPath-query's en XSLT. |
 
 
 ### <a name="postgis-extensions"></a>PostGIS-extensies
 
 > [!div class="mx-tableFixed"]
-> | **Toestelnummer** | **Deschription** (Beschrijving) |
+> | **Extensie** | **Beschrijving** |
 > |---|---|
 > | [Postgis](https://www.postgis.net/), postgis- \_ topologie, postgis \_ Tiger \_ geocodeer, postgis \_ sfcgal | Ruimtelijke en geografische objecten voor PostgreSQL. |
 > | adres \_ standaardiserer, adresseer \_ \_ data gegevens \_ | Wordt gebruikt om een adres te parseren in onderdeel elementen. Wordt gebruikt ter ondersteuning van de stap voor het normaliseren van het adres voor geocodering. |

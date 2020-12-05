@@ -2,7 +2,7 @@
 title: Share point-gebruikers profiel service inschakelen met Azure AD DS | Microsoft Docs
 description: Meer informatie over het configureren van een Azure Active Directory Domain Services beheerd domein voor de ondersteuning van profiel synchronisatie voor share Point server
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/09/2020
-ms.author: joflore
-ms.openlocfilehash: 7bd63ece1ec32e5e4cecfd2a458124a4f24ccaa6
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: 8fbde10ccf5a7f083f5fbddaadd6668d880a1fac
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91962476"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96619824"
 ---
 # <a name="configure-azure-active-directory-domain-services-to-support-user-profile-synchronization-for-sharepoint-server"></a>Azure Active Directory Domain Services configureren voor de ondersteuning van synchronisatie van gebruikers profielen voor share Point server
 
@@ -64,7 +64,7 @@ Voer de volgende stappen uit op de virtuele machine met Azure AD DS Management:
 1. Als u groepslid maatschap wilt beheren, selecteert u **Active Directory-beheercentrum** in de lijst met beheer Programma's.
 1. Kies in het linkerdeel venster uw beheerde domein, zoals *aaddscontoso.com*. Er wordt een lijst met bestaande Ou's en resources weer gegeven.
 1. Selecteer de organisatie-eenheid **gebruikers** en kies vervolgens de beveiligings groep *Aad DC-service accounts* .
-1. Selecteer **leden**en klik vervolgens op **toevoegen...**.
+1. Selecteer **leden** en klik vervolgens op **toevoegen...**.
 1. Voer de naam van het share point-service account in en selecteer **OK**. In het volgende voor beeld heeft het share point-service account de naam *SPAdmin*:
 
     ![Het share point-service account toevoegen aan de beveiligings groep van de AAD DC-service accounts](./media/deploy-sp-profile-sync/add-member-to-aad-dc-service-accounts-group.png)

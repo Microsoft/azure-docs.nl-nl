@@ -1,7 +1,7 @@
 ---
 title: DNS beheren voor Azure AD Domain Services | Microsoft Docs
 description: Meer informatie over het installeren van de Hulpprogram Ma's voor DNS-server voor het beheren van DNS en voorwaardelijke doorstuur servers maken voor een Azure Active Directory Domain Services beheerd domein.
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
 ms.service: active-directory
@@ -9,13 +9,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/06/2020
-ms.author: joflore
-ms.openlocfilehash: b347f8043216d4347099d68ff1c62156410582a3
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: afa6920a36a5a7218571239b36815004d8f2d450
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91963173"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96619348"
 ---
 # <a name="administer-dns-and-create-conditional-forwarders-in-an-azure-active-directory-domain-services-managed-domain"></a>DNS beheren en voorwaardelijke doorstuur servers maken in een Azure Active Directory Domain Services beheerd domein
 
@@ -69,7 +69,7 @@ Als u de hulpprogram ma's voor DNS-server hebt geïnstalleerd, kunt u DNS-record
 > Als u DNS in een beheerd domein wilt beheren, moet u zijn aangemeld bij een gebruikers account dat lid is van de groep *Aad DC-Administrators* .
 
 1. Selecteer in het Start scherm de optie **systeem beheer**. Er wordt een lijst met beschik bare beheer hulpprogramma's weer gegeven, inclusief **DNS** die in de vorige sectie is geïnstalleerd. Selecteer **DNS** om de DNS-beheer console te starten.
-1. Selecteer in het dialoog venster **verbinding maken met DNS-server** **de volgende computer**en voer vervolgens de DNS-domein naam in van het beheerde domein, zoals *aaddscontoso.com*:
+1. Selecteer in het dialoog venster **verbinding maken met DNS-server** **de volgende computer** en voer vervolgens de DNS-domein naam in van het beheerde domein, zoals *aaddscontoso.com*:
 
     ![Verbinding maken met het beheerde domein in de DNS-console](./media/manage-dns/connect-dns-server.png)
 
@@ -90,18 +90,18 @@ Als u een voorwaardelijke doorstuur server in uw beheerde domein wilt maken, voe
 
 1. Selecteer uw DNS-zone, bijvoorbeeld *aaddscontoso.com*.
 1. Selecteer **voorwaardelijke doorstuur servers**, klik met de rechter muisknop en kies **nieuwe voorwaardelijke doorstuur server...**
-1. Voer uw andere **DNS-domein**in, bijvoorbeeld *contoso.com*, en voer vervolgens de IP-adressen van de DNS-servers voor die naam ruimte in, zoals wordt weer gegeven in het volgende voor beeld:
+1. Voer uw andere **DNS-domein** in, bijvoorbeeld *contoso.com*, en voer vervolgens de IP-adressen van de DNS-servers voor die naam ruimte in, zoals wordt weer gegeven in het volgende voor beeld:
 
     ![Voorwaardelijke doorstuur servers toevoegen en configureren voor de DNS-server](./media/manage-dns/create-conditional-forwarder.png)
 
-1. Schakel het selectie vakje **in om deze voorwaardelijke doorstuur server op te slaan in Active Directory en repliceer deze als volgt en**Selecteer vervolgens de optie voor *alle DNS-servers in dit domein*, zoals wordt weer gegeven in het volgende voor beeld:
+1. Schakel het selectie vakje **in om deze voorwaardelijke doorstuur server op te slaan in Active Directory en repliceer deze als volgt en** Selecteer vervolgens de optie voor *alle DNS-servers in dit domein*, zoals wordt weer gegeven in het volgende voor beeld:
 
     ![DNS-console: alle DNS-servers in dit domein selecteren](./media/manage-dns/store-in-domain.png)
 
     > [!IMPORTANT]
     > Als de voorwaardelijke doorstuur server wordt opgeslagen in het *forest* in plaats van het *domein*, mislukt de voorwaardelijke doorstuur server.
 
-1. Selecteer **OK**om de voorwaardelijke doorstuur server te maken.
+1. Selecteer **OK** om de voorwaardelijke doorstuur server te maken.
 
 Naam omzetting van de resources in andere naam ruimten van Vm's die zijn verbonden met het beheerde domein moeten nu correct worden omgezet. Query's voor het DNS-domein dat is geconfigureerd in de voorwaardelijke doorstuur server worden door gegeven aan de relevante DNS-servers.
 

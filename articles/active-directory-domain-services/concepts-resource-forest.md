@@ -2,20 +2,20 @@
 title: Concepten van resource-forests voor Azure AD Domain Services | Microsoft Docs
 description: Meer informatie over wat een resource-forest is in Azure Active Directory Domain Services en hoe ze uw organisatie in hybride omgevingen voor delen met beperkte gebruikers verificatie opties of beveiligings problemen.
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/06/2020
-ms.author: joflore
-ms.openlocfilehash: 1f8c09e7e260d22aa6864327d6a890ef3beaa039
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: 79cf408bcb9060c247b97e6a81204c5a5517d384
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91962510"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96619998"
 ---
 # <a name="resource-forest-concepts-and-features-for-azure-active-directory-domain-services"></a>Concepten en functies van het resource-forest voor Azure Active Directory Domain Services
 
@@ -27,7 +27,7 @@ U kunt deze behoeften en beperkingen oplossen door een beheerd domein te maken d
 
 ## <a name="what-are-forests"></a>Wat zijn forests?
 
-Een *forest* is een logische constructie die door Active Directory Domain Services (AD DS) wordt gebruikt om een of meer *domeinen*te groeperen. De domeinen slaan objecten vervolgens op voor gebruikers of groepen en bieden verificatie services.
+Een *forest* is een logische constructie die door Active Directory Domain Services (AD DS) wordt gebruikt om een of meer *domeinen* te groeperen. De domeinen slaan objecten vervolgens op voor gebruikers of groepen en bieden verificatie services.
 
 In een door Azure AD DS beheerd domein bevat het forest slechts één domein. On-premises AD DS bossen bevatten vaak veel domeinen. In grote organisaties, met name na fusies en acquisities, kunt u meerdere on-premises forests gebruiken die elk meerdere domeinen bevatten.
 

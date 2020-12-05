@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7d9c4dff1e4a3ba7c7a2b11311e97eb5e66a1585
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8530b74a63f4e5e2c04ff95a0106b896102dda2c
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994244"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96618090"
 ---
 # <a name="enable-passwordless-security-key-sign-in-preview"></a>Aanmelden zonder wacht woord voor beveiligings sleutel inschakelen (preview)
 
@@ -29,7 +29,7 @@ Dit document is gericht op het inschakelen van op wacht woord gebaseerde verific
 
 ## <a name="requirements"></a>Vereisten
 
-- [Azure AD-Multi-Factor Authentication](howto-mfa-getstarted.md)
+- [Azure AD Multi-Factor Authentication](howto-mfa-getstarted.md)
 - [Voor beeld van registratie van gecombineerde beveiligings gegevens](concept-registration-mfa-sspr-combined.md) inschakelen
 - Compatibele [FIDO2-beveiligings sleutels](concept-authentication-passwordless.md#fido2-security-keys)
 - Webauthn vereist Windows 10 versie 1903 of hoger * *
@@ -38,9 +38,9 @@ Als u beveiligings sleutels wilt gebruiken om u aan te melden bij Web-apps en-se
 
 ## <a name="prepare-devices-for-preview"></a>Apparaten voorbereiden voor de preview-versie
 
-In azure AD gekoppelde apparaten waarvoor u een pilot uitvoert, moeten Windows 10 versie 1909 of hoger worden uitgevoerd. De beste ervaring is met Windows 10 versie 1903 of hoger.
+Voor apparaten die lid zijn van Azure AD is de beste ervaring met Windows 10 versie 1903 of hoger.
 
-Aan hybride Azure AD gekoppelde apparaten moet Windows 10 versie 2004 of nieuwer worden uitgevoerd.
+Voor hybride Azure AD gekoppelde apparaten moet Windows 10 versie 2004 of hoger worden uitgevoerd.
 
 ## <a name="enable-passwordless-authentication-method"></a>Verificatie methode met wacht woord inschakelen
 

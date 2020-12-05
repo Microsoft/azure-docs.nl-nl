@@ -2,7 +2,7 @@
 title: Veilige LDAP-waarschuwingen oplossen in Azure AD Domain Services | Microsoft Docs
 description: Meer informatie over het oplossen van veelvoorkomende waarschuwingen met beveiligde LDAP voor Azure Active Directory Domain Services.
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 81208c0b-8d41-4f65-be15-42119b1b5957
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: troubleshooting
 ms.date: 07/09/2020
-ms.author: joflore
-ms.openlocfilehash: b9bdcc7e338c0dffc97bd05a6ae9b64947542b2e
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: 15c1f3a1731edf7b45061646d43688b4aacc6104
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91962799"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96620304"
 ---
 # <a name="known-issues-secure-ldap-alerts-in-azure-active-directory-domain-services"></a>Bekende problemen: Secure LDAP waarschuwingen in Azure Active Directory Domain Services
 
@@ -38,7 +38,7 @@ Wanneer u beveiligd LDAP inschakelt, is het raadzaam extra regels te maken voor 
 1. Kies de netwerk beveiligings groep die is gekoppeld aan uw beheerde domein, zoals *AADDS-contoso.com-NSG*, en selecteer vervolgens **regels voor binnenkomende beveiliging**
 1. Selecteer **+ toevoegen** om een regel voor TCP-poort 636 te maken. Selecteer, indien nodig, **Geavanceerd** in het venster om een regel te maken.
 1. Kies *IP-adressen* in de vervolg keuzelijst voor de **bron**. Voer de bron-IP-adressen in die u toegang wilt verlenen voor beveiligd LDAP-verkeer.
-1. Kies *een* van de **doel**waarden en voer *636* in als **doel poort bereik**.
+1. Kies *een* van de **doel** waarden en voer *636* in als **doel poort bereik**.
 1. Stel het **protocol** in als *TCP* en de **actie** die moet worden *toegestaan*.
 1. Geef de prioriteit voor de regel op en voer een naam in, zoals *RestrictLDAPS*.
 1. Wanneer u klaar bent, selecteert u **toevoegen** om de regel te maken.

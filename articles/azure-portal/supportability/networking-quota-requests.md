@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.service: azure-supportability
 ms.assetid: ce37c848-ddd9-46ab-978e-6a1445728a3b
 ms.openlocfilehash: acb05da0255445de31e08f2724dcb484a3e05b17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
+ms.lasthandoff: 12/05/2020
 ms.locfileid: "84764262"
 ---
 # <a name="networking-limit-increase"></a>Netwerklimiet verhoogd
@@ -27,7 +27,7 @@ Als u uw huidige netwerk gebruik en-quotum in Azure Portal wilt weer geven, open
 U kunt een verhoging aanvragen met **behulp van Help + ondersteuning** of in **gebruik + quota's** in de portal.
 
 > [!Note]
-> Als u de standaard grootte van **open bare IP-voor voegsels**wilt wijzigen, selecteert u **min. duur openbaar IP-Internet** werk in de vervolg keuzelijst.
+> Als u de standaard grootte van **open bare IP-voor voegsels** wilt wijzigen, selecteert u **min. duur openbaar IP-Internet** werk in de vervolg keuzelijst.
 
 ## <a name="request-networking-quota-increase-at-subscription-level-using-help--support"></a>Netwerk quotum verhoging op abonnements niveau aanvragen met behulp van Help en ondersteuning
 
@@ -49,11 +49,11 @@ Volg de onderstaande instructies om een ondersteunings aanvraag te maken met beh
 
     ![Abonnement-Nieuwsset selecteren](./media/networking-quota-request/select-subscription-support-request.png)
 
-1. Onder **quotum type**selecteert u **netwerken**. Selecteer **volgende: oplossingen**.
+1. Onder **quotum type** selecteert u **netwerken**. Selecteer **volgende: oplossingen**.
 
     ![Quotum type selecteren](./media/networking-quota-request/select-quota-type-network.png)
 
-1. In **Details**van het probleem selecteert u **Details opgeven** en vult u aanvullende informatie in om uw aanvraag te verwerken.
+1. In **Details** van het probleem selecteert u **Details opgeven** en vult u aanvullende informatie in om uw aanvraag te verwerken.
 
     ![Details opgeven](./media/networking-quota-request/provide-details-link.png)
 
@@ -69,7 +69,7 @@ Volg de onderstaande instructies om een ondersteunings aanvraag te maken met beh
 
 Volg deze instructies om een ondersteunings aanvraag te maken met behulp van **gebruik en quotum** in de Azure Portal.
 
-1. In https://portal.azure.com kunt u **abonnementen**zoeken en selecteren.
+1. In https://portal.azure.com kunt u **abonnementen** zoeken en selecteren.
 
     ![Abonnementen](./media/networking-quota-request/search-for-suscriptions.png)
 

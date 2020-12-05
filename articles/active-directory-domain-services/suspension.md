@@ -2,7 +2,7 @@
 title: Onderbroken domeinen in Azure AD Domain Services | Microsoft Docs
 description: Meer informatie over de verschillende statussen voor een beheerd domein van Azure AD DS en hoe u een opgeschort domein herstelt.
 services: active-directory-ds
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.assetid: 95e1d8da-60c7-4fc1-987d-f48fde56a8cb
 ms.service: active-directory
@@ -10,13 +10,13 @@ ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
 ms.date: 07/09/2020
-ms.author: joflore
-ms.openlocfilehash: 9bcecdfaf3121ea024fee567dbe83544229373be
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.author: justinha
+ms.openlocfilehash: b0b48e7ad494386052e6d94c32d7215b3f4f0202
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91967695"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96618821"
 ---
 # <a name="understand-the-health-states-and-resolve-suspended-domains-in-azure-active-directory-domain-services"></a>Meer informatie over de statussen en het oplossen van onderbroken domeinen in Azure Active Directory Domain Services
 
@@ -34,7 +34,7 @@ Een beheerd domein kan een van de volgende statussen hebben:
 
 * [Wordt uitgevoerd](#running-state)
 * [Aandacht vereist](#needs-attention-state)
-* [Onderbroken](#suspended-state)
+* [Gebroken](#suspended-state)
 * [Verwijderd](#deleted-state)
 
 ## <a name="running-state"></a>Uitvoerings status

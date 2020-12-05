@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/24/2018
 ms.author: hermannd
-ms.openlocfilehash: 7cf18e2d375d7a45c3641876b8a3ed5974882927
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 87758100299eb170a7950a1a7a2c6bd2029b27fb
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96010024"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621549"
 ---
 # <a name="verify-and-troubleshoot-sap-hana-scale-out-high-availability-setup-on-sles-12-sp3"></a>Controleren en problemen oplossen SAP HANA scale-out instellingen voor hoge Beschik baarheid in SLES 12 SP3 
 
@@ -46,6 +46,9 @@ SUSE heeft een [gedetailleerde beschrijving gepubliceerd van deze instellingen d
 
 Voor virtuele-machine typen die worden ondersteund voor SAP HANA scale-out, controleert u de [SAP Hana Certified IaaS Directory][sap-hana-iaas-list].
 
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de termen *Master* en *Slave*, termen die micro soft niet meer gebruikt. Wanneer deze voor waarden worden verwijderd uit de software, worden ze uit dit artikel verwijderd.
+
 Er is een technisch probleem met SAP HANA scale-out in combi natie met meerdere subnetten en Vnic's en het instellen van HSR. Het is verplicht om de nieuwste SAP HANA 2,0-patches te gebruiken waarbij dit probleem is opgelost. De volgende SAP HANA versies worden ondersteund: 
 
 * Rev 2.00.024.04 of hoger 
@@ -66,7 +69,7 @@ Wanneer u de opdracht **CRM migreren** gebruikt, moet u ervoor zorgen dat u de c
  Voor SAP HANA scale-out HA-verificatie en-certificering werd een installatie gebruikt. Het bestaat uit twee systemen met drie SAP HANA knoop punten: één master en twee werk rollen. De volgende tabel bevat de namen van virtuele machines en interne IP-adressen. Alle verificatie voorbeelden die volgen, zijn uitgevoerd op deze Vm's. Door gebruik te maken van deze VM-namen en IP-adressen in de voor beelden van de opdracht, kunt u beter inzicht krijgen in de opdrachten en de bijbehorende uitvoer:
 
 
-| Knooppunt type | VM-naam | Het IP-adres |
+| Knooppunt type | VM-naam | IP-adres |
 | --- | --- | --- |
 | Hoofd knooppunt op site 1 | HSO-Hana-VM-S1-0 | 10.0.0.30 |
 | Worker-knoop punt 1 op site 1 | HSO-Hana-VM-S1-1 | 10.0.0.31 |

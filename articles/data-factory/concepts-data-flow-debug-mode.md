@@ -7,13 +7,13 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 09/11/2020
-ms.openlocfilehash: 2cfd498f73646b0021d5fbb3e982dc82871ef35c
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.date: 12/04/2020
+ms.openlocfilehash: 87465ff381c62343a11c54130378b48580ca40e2
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93026986"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621638"
 ---
 # <a name="mapping-data-flow-debug-mode"></a>Fout opsporings modus gegevens stroom toewijzen
 
@@ -25,9 +25,9 @@ Met de modus fout opsporing van gegevens stroom van Azure Data Factory-toewijzin
 
 ![Schuif regelaar voor fout opsporing](media/data-flow/debugbutton.png "Schuif regelaar voor fout opsporing")
 
-Zodra u de schuif regelaar hebt ingeschakeld, wordt u gevraagd om te selecteren welke configuratie voor de integratie-runtime u wilt gebruiken. Als AutoResolveIntegrationRuntime is gekozen, wordt een cluster met acht kernen van algemene berekeningen met een tijd van 60 minuten voor Live. Zie [prestaties van gegevens stroom](concepts-data-flow-performance.md#ir)voor meer informatie over data flow Integration-Runtimes.
+Zodra u de schuif regelaar hebt ingeschakeld, wordt u gevraagd om te selecteren welke configuratie voor de integratie-runtime u wilt gebruiken. Als AutoResolveIntegrationRuntime is gekozen, wordt een cluster met acht kernen van algemene berekeningen met een standaard tijd van 60 minuten live. Als u een langer inactief team wilt toestaan voordat er een time-out optreedt voor uw sessie, kunt u een hogere TTL-instelling kiezen. Zie [prestaties van gegevens stroom](concepts-data-flow-performance.md#ir)voor meer informatie over data flow Integration-Runtimes.
 
-![Fout opsporing IR-selectie](media/data-flow/debugbutton2.png "Fout opsporing IR-selectie")
+![Fout opsporing IR-selectie](media/data-flow/debug-new-1.png "Fout opsporing IR-selectie")
 
 Wanneer de foutopsporingsmodus is ingeschakeld, bouwt u interactief uw gegevens stroom met een actief Spark-cluster. De sessie wordt gesloten zodra u debug uitschakelt in Azure Data Factory. U moet rekening houden met de kosten per uur die zijn gemaakt door Azure Databricks gedurende de periode dat de foutopsporingssessie is ingeschakeld.
 
@@ -36,7 +36,7 @@ In de meeste gevallen is het een goed idee om uw gegevens stromen te bouwen in d
 ![Fout opsporingsgegevens voor gegevens stromen weer geven](media/iterative-development-debugging/view-dataflow-debug-sessions.png)
 
 > [!NOTE]
-> Elke debug-sessie die een gebruiker start vanuit de gebruikers interface van de ADF-browser, is een nieuwe sessie met een eigen Spark-cluster. U kunt de weer gave controle voor debug-sessies hierboven gebruiken voor het weer geven en beheren van debug-sessies per Factory.
+> Elke debug-sessie die een gebruiker start vanuit de gebruikers interface van de ADF-browser, is een nieuwe sessie met een eigen Spark-cluster. U kunt de weer gave controle voor debug-sessies hierboven gebruiken voor het weer geven en beheren van debug-sessies per Factory. Er worden kosten in rekening gebracht voor elk uur dat elke foutopsporingssessie wordt uitgevoerd, inclusief de TTL-tijd.
 
 ## <a name="cluster-status"></a>De clusterstatus
 

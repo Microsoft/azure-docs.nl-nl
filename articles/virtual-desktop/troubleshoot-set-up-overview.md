@@ -3,15 +3,15 @@ title: Overzicht van het oplossen van problemen met Windows virtueel bureau blad
 description: Een overzicht van het oplossen van problemen bij het instellen van een virtuele Windows-desktop omgeving.
 author: Heidilohr
 ms.topic: troubleshooting
-ms.date: 06/05/2020
+ms.date: 12/04/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 171322fbec099aa9fafc36c4f951213b33007976
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d051594572f742b290867d12e0fb148f2abbf370
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88009355"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621311"
 ---
 # <a name="troubleshooting-overview-feedback-and-support-for-windows-virtual-desktop"></a>Probleemoplossings overzicht, feedback en ondersteuning voor virtueel bureau blad van Windows
 
@@ -45,7 +45,7 @@ Gebruik de volgende tabel voor het identificeren en oplossen van problemen die z
 | Clients verbinden                                                                    | Zie [Windows Virtual Desktop Service Connections](troubleshoot-service-connection.md) (Engelstalig) als u het probleem niet kunt oplossen, raadpleegt u de [virtuele machine configuratie](troubleshoot-vm-configuration.md)van de host. |
 | Reactie tijd van externe toepassingen of bureau blad                                      | Neem contact op met het team dat verantwoordelijk is voor het desbetreffende product als er problemen zijn gekoppeld aan een specifieke toepassing of product. |
 | Licentie berichten of-fouten                                                          | Neem contact op met het team dat verantwoordelijk is voor het desbetreffende product als er problemen zijn gekoppeld aan een specifieke toepassing of product. |
-| Problemen met verificatie methoden van derden | Controleer of uw externe provider Windows Virtual Desktop-scenario's ondersteunt en hoe u deze aanpakt met betrekking tot bekende problemen. |
+| Problemen met verificatie methoden of hulpprogram ma's van derden | Controleer of uw externe provider Windows Virtual Desktop-scenario's ondersteunt en hoe u deze aanpakt met betrekking tot bekende problemen. |
 | Problemen met het gebruik van Log Analytics voor virtueel bureau blad van Windows | Voor problemen met het diagnostische schema [opent u een ondersteunings aanvraag voor Azure](https://azure.microsoft.com/support/create-ticket/).<br><br>Voor query's, visualisaties of andere problemen in Log Analytics selecteert u het juiste probleem type onder Log Analytics. |
 | Problemen met het gebruik van M365-apps | Neem contact op met het M365-beheer centrum met een van de Help-opties voor het [M365-beheer centrum](/microsoft-365/admin/contact-support-for-business-products/). |
 

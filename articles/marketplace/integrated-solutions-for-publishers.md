@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: vikrambmsft
 ms.author: vikramb
 ms.date: 04/16/2020
-ms.openlocfilehash: 705b0f02682b6aa41cb5c8e77d8da39faa5edb1f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 70dfccb32389d2f1fb492669c9f84a3e6ae77bbb
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96450131"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621345"
 ---
 # <a name="publish-an-integrated-solution"></a>Een geïntegreerde oplossing publiceren
 
@@ -32,18 +32,17 @@ Bekijk de [overzichts video voor partners](https://partner.microsoft.com/asset/d
 ## <a name="eligibility-criteria"></a>Criteria om in aanmerking te komen
 
 * Deelnemende partners moeten een MPN-ID hebben.
-* Deelnemende dienst verleners moeten klaar zijn voor samen verkopen.
-* Deelnemende software leveranciers moeten klaar zijn voor het samen verkopen van het IP-adres.
+* Deelnemende dienst verleners moeten [klaar zijn voor samen verkopen](https://aka.ms/CertificationPolicies#3000-requirements-for-co-sell-status).
+* Deelnemende software leveranciers moeten klaar zijn voor het [samen verkopen van het IP-adres](https://aka.ms/CertificationPolicies#3000-requirements-for-co-sell-status).
 * Ten minste één deelnemende partner moet een goud competentie hebben op een van de volgende gebieden:
-
-    * Ontwikkeling van toepassingen
-    * Integratie van toepassingen
-    * Beheer van toepassingslevenscyclus
-    * Cloud platform
-    * Data Analytics
-    * Datacenter
-    * Gegevens platform
-    * DevOps
+    - Ontwikkeling van toepassingen
+    - Integratie van toepassingen
+    - Beheer van toepassingslevenscyclus
+    - Cloud platform
+    - Data Analytics
+    - Datacenter
+    - Gegevens platform
+    - DevOps
 
 * De oplossing moet ten minste twee partner organisaties omvatten, waarbij IP en services worden gebruikt voor een volledige oplossing en ervaring van klanten.
 * Het partner-IP-adres moet zijn gebaseerd op Azure, Dynamics 365 of een energie platform.

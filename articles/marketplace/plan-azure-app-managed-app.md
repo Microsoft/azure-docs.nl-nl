@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 11/06/2020
-ms.openlocfilehash: a915b5a348e3167d2cf81906b19abd9850584ce9
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 694f501efc565ed498c1c8d8e2e38326277e8605
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460981"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621413"
 ---
 # <a name="plan-an-azure-managed-application-for-an-azure-application-offer"></a>Een door Azure beheerde toepassing plannen voor een Azure-toepassings aanbieding
 
@@ -90,7 +90,7 @@ Prijzen worden ingesteld in USD (USD = Verenigde Staten dollar) worden omgezet i
 Met JIT-toegang kunt u verhoogde toegang tot de resources van een beheerde toepassing aanvragen voor het oplossen van problemen of onderhoud. U hebt altijd alleen-lezen toegang tot de resources, maar gedurende een bepaalde periode kunt u meer toegang hebben. Zie [just-in-time-toegang inschakelen en aanvragen voor Azure Managed Applications](../azure-resource-manager/managed-applications/request-just-in-time-access.md)voor meer informatie.
 
 > [!NOTE]
-> Informatie die de gebruiker moet zien, zelfs als skimmingBe ervoor zorgt dat u het bestand bijwerkt `createUiDefinition.json` om deze functie te kunnen ondersteunen.
+> Zorg ervoor dat u het bestand bijwerkt `createUiDefinition.json` om deze functie te kunnen ondersteunen.
 
 ## <a name="deployment-mode"></a>Implementatie modus
 

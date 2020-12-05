@@ -7,16 +7,16 @@ ms.topic: conceptual
 author: palanis-MSFT
 ms.author: palanis
 ms.date: 12/04/2020
-ms.openlocfilehash: baa99518498b05b0a658627d9908298eb58f7775
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 7b335c3db5fb52c4323b797556d48e3ed9ae410a
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602730"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621617"
 ---
 # <a name="co-sell-option-in-the-commercial-marketplace"></a>Optie voor co-sell in de commerciële Marketplace
 
-Het is volledig optioneel om informatie op te geven over het tabblad **samen verkopen met micro soft** . Het is vereist om te kunnen profiteren van de voor bereidingen op de verkoop van [gemotiveerd en de status van het co-sell-object](/legal/marketplace/certification-policies#3000-requirements-for-co-sell-status). De gegevens die u verstrekt, worden door micro soft verkoop teams gebruikt om meer te weten te komen over uw aanbieding bij het evalueren van de geschiktheid voor klanten behoeften. Het is niet rechtstreeks beschikbaar voor klanten. Zie [co-sell with micro soft](https://partner.microsoft.com/membership/co-sell-with-microsoft)(Engelstalig) voor meer informatie.
+Het is volledig optioneel om informatie op te geven over het tabblad **samen verkopen met micro soft** . Het is vereist om te kunnen profiteren van de voor bereidingen op de verkoop van [gemotiveerd en de status van het co-sell-object](https://aka.ms/CertificationPolicies#3000-requirements-for-co-sell-status). De gegevens die u verstrekt, worden door micro soft verkoop teams gebruikt om meer te weten te komen over uw aanbieding bij het evalueren van de geschiktheid voor klanten behoeften. Het is niet rechtstreeks beschikbaar voor klanten. Zie [co-sell with micro soft](https://partner.microsoft.com/membership/co-sell-with-microsoft)(Engelstalig) voor meer informatie.
 
 De optie voor co-selling in Partner Center is momenteel beschikbaar in de volgende aanbiedings typen.
 

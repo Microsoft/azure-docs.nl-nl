@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 11/11/2020
 ms.author: anvang
 ms.reviewer: jrasnick
-ms.openlocfilehash: 13716210ae967c9d4a7f21fb5a6c4afdb9033be1
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 8a345c2feaeea933af3fdce591283716443fbfda
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96466793"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621668"
 ---
 # <a name="enabling-synapse-workspace-features-on-a-dedicated-sql-pool-formerly-sql-dw-in-your-region"></a>De functies van de Synapse-werk ruimte inschakelen op een toegewezen SQL-groep (voorheen SQL DW) in uw regio.
 
@@ -30,7 +30,7 @@ De volgende tabel bevat een overzicht van de mogelijkheid om de functies van de 
 | India - zuid |31 maart 2021 |
 | India - west |31 maart 2021 |
 | Zwitserland - west |31 maart 2021 |
-| VAE - noord |1 juni 2020 |1 juli 2020 |
+| VAE - noord |31 maart 2021 |
 
 ## <a name="next-steps"></a>Volgende stappen
 Aan de slag met [Synapse-werk ruimte en Studio](../get-started.md).

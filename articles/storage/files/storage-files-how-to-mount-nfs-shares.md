@@ -4,16 +4,16 @@ description: Meer informatie over het koppelen van een netwerk bestandssysteem s
 author: roygara
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/15/2020
+ms.date: 12/04/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 530ae82720e6b4eb6a3e4d1021c0b37b9f4dbf5c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8a993d9c1de35132198de5e3becc4f16d6a2a437
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90707438"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621294"
 ---
 # <a name="how-to-mount-an-nfs-file-share"></a>Een NFS-bestands share koppelen
 
@@ -43,7 +43,7 @@ ms.locfileid: "90707438"
 ## <a name="disable-secure-transfer"></a>Beveiligde overdracht uitschakelen
 
 1. Meld u aan bij de Azure Portal en open het opslag account met de NFS-share die u hebt gemaakt.
-1. Selecteer **configuratie**.
+1. Selecteer **Configuratie**.
 1. Selecteer **uitgeschakeld** voor **beveiligde overdracht vereist**.
 1. Selecteer **Opslaan**.
 
@@ -55,9 +55,13 @@ ms.locfileid: "90707438"
 1. Voer het koppelingspad in dat u wilt gebruiken en kopieer vervolgens het script.
 1. Maak verbinding met uw client en gebruik het meegeleverde koppelings script.
 
-    :::image type="content" source="media/storage-files-how-to-create-mount-nfs-shares/mount-nfs-file-share-script.png" alt-text="Scherm afbeelding van de configuratie van het opslag account met beveiligde overdracht is uitgeschakeld.":::
+    :::image type="content" source="media/storage-files-how-to-create-mount-nfs-shares/mount-nfs-file-share-script.png" alt-text="Scherm afbeelding van de Blade verbinding met bestands share":::
 
 U hebt nu de NFS-share gekoppeld.
+
+### <a name="validate-connectivity"></a>Connectiviteit valideren
+
+Als uw koppeling is mislukt, is het mogelijk dat uw persoonlijke eind punt niet juist is ingesteld of niet toegankelijk is. Zie de sectie [connectiviteit controleren](storage-files-networking-endpoints.md#verify-connectivity) van het artikel netwerken-eind punten voor meer informatie over het controleren van de verbinding.
 
 ## <a name="next-steps"></a>Volgende stappen
 

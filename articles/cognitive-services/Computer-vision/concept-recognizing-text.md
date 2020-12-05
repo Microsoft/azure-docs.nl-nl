@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/11/2020
 ms.author: pafarley
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: 50cce15d14561bb1c8ebfdbbeeedd99dc8efcda1
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 37a989082b63dc101bb519fea1cc4ef16c76ae49
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96532989"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621532"
 ---
 # <a name="optical-character-recognition-ocr"></a>Optische tekenherkenning (OCR)
 
@@ -147,7 +147,7 @@ De [open bare preview-versie van de lees 3,2-API](https://westus.dev.cognitive.m
 De Lees bewerking biedt momenteel alleen ondersteuning voor het extra heren van handgeschreven tekst in het Engels.
 
 ## <a name="use-the-rest-api-and-sdk"></a>De REST API en SDK gebruiken
-De [rest API 3. x](./QuickStarts/CSharp-hand-text.md) is de voorkeurs optie voor de meeste klanten vanwege het gemak van integratie en snelle productiviteit. Azure en de Computer Vision service-afhandelings schaal, prestaties, gegevens beveiliging en nalevings behoeften terwijl u zich richt op het voldoen aan de behoeften van uw klanten.
+De [rest API 3. x](https://westcentralus.dev.cognitive.microsoft.com/docs/services/computer-vision-v3-1-ga/operations/5d986960601faab4bf452005) is de voorkeurs optie voor de meeste klanten vanwege het gemak van integratie en snelle productiviteit. Azure en de Computer Vision service-afhandelings schaal, prestaties, gegevens beveiliging en nalevings behoeften terwijl u zich richt op het voldoen aan de behoeften van uw klanten.
 
 ## <a name="deploy-on-premise-with-docker-containers"></a>On-premises implementeren met docker-containers
 De [Lees docker-container (preview)](./computer-vision-how-to-install-containers.md) biedt u de mogelijkheid om de nieuwe OCR-mogelijkheden in uw eigen lokale omgeving te implementeren. Containers zijn ideaal voor specifieke vereisten voor beveiliging en gegevensbeheer.

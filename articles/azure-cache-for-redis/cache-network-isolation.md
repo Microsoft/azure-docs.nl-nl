@@ -6,12 +6,12 @@ ms.author: cauribeg
 ms.service: cache
 ms.topic: conceptual
 ms.date: 10/15/2020
-ms.openlocfilehash: 0fda0b659dd2500e811fac1f53c99a9987276185
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: ef284661d44f700cf0b5282efcd2e6f7b94fa3b6
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92537470"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621515"
 ---
 # <a name="azure-cache-for-redis-network-isolation-options"></a>Azure-cache voor redis-netwerk isolatie opties 
 In dit artikel leert u hoe u de beste oplossing voor netwerk isolatie kunt bepalen voor uw behoeften. We gaan de basis beginselen van Azure private link, Azure Virtual Network (VNet)-injectie door nemen en Azure Firewall regels met hun voor delen en beperkingen.  
@@ -22,7 +22,7 @@ Persoonlijke Azure-koppeling biedt persoonlijke connectiviteit vanuit een virtue
 ### <a name="advantages"></a>Voordelen
 * Ondersteund in Basic, Standard en Premium Azure cache voor redis-exemplaren. 
 * Met behulp van een [persoonlijke Azure-koppeling](../private-link/private-link-overview.md)kunt u verbinding maken met een Azure-cache-exemplaar vanuit uw virtuele netwerk via een persoonlijk eind punt, waaraan een persoonlijk IP-adres is toegewezen in een subnet binnen het virtuele netwerk. In dit geval zijn de cache-exemplaren beschikbaar in zowel het VNet als openbaar.  
-* Zodra een persoonlijk eind punt is gemaakt, kan de toegang tot het open bare netwerk worden beperkt via de `publicNetworkAccess` vlag. Deze vlag wordt standaard ingesteld op `Enabled` , zodat de open bare en persoonlijke koppeling toegang kan krijgen tot de cache. Als deze eigenschap is ingesteld op `Disabled` , is toegang tot persoonlijke koppelingen alleen toegestaan. U kunt de waarde instellen op `Disabled` met een patch-aanvraag. Zie [Azure-cache voor redis met Azure private link (preview)](cache-private-link.md)voor meer informatie. 
+* Zodra een persoonlijk eind punt is gemaakt, kan de toegang tot het open bare netwerk worden beperkt via de `publicNetworkAccess` vlag. Deze markering is standaard ingesteld op `Disabled` , zodat alleen toegang tot persoonlijke koppelingen wordt toegestaan. U kunt de waarde instellen op `Enabled` of `Disabled` met een patch-aanvraag. Zie [Azure-cache voor redis met Azure private link (preview)](cache-private-link.md)voor meer informatie. 
 * Alle externe cache afhankelijkheden hebben geen invloed op de NSG-regels van het VNet.
 
 ### <a name="limitations"></a>Beperkingen 

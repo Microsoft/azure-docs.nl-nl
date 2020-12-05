@@ -1,14 +1,14 @@
 ---
 title: Migratie projecten op schaal beheren met Azure Migrate
 description: Meer informatie over het effectief gebruiken van Azure Migrate op gedelegeerde klanten resources.
-ms.date: 12/3/2020
+ms.date: 12/4/2020
 ms.topic: how-to
-ms.openlocfilehash: 184307814bd3ceae6047734946f79b0ba5cb2e10
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: d1a01149c80b30f279f7d68551946c3ffe404d5e
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96603251"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621566"
 ---
 # <a name="manage-migration-projects-at-scale-with-azure-migrate"></a>Migratie projecten op schaal beheren met Azure Migrate
 
@@ -38,7 +38,7 @@ Deze aanpak minimaliseert de context overschakelen voor service providers die ov
 
 De werk stroom voor dit model ziet er ongeveer als volgt uit:
 
-1. De klant is [onboarding van Azure Lighthouse](onboard-customer.md). De ingebouwde rol Inzender is vereist voor de identiteit die wordt gebruikt met Azure Migrate.
+1. De klant is [onboarding van Azure Lighthouse](onboard-customer.md). De ingebouwde rol Inzender is vereist voor de identiteit die wordt gebruikt met Azure Migrate. Zie de voorbeeld sjabloon [gedelegeerde-Management-azmigrate](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/delegated-resource-management-azmigrate) voor een voor beeld met behulp van deze rol.
 1. De aangewezen gebruiker meldt zich aan bij de beheer Tenant in de Azure Portal en gaat vervolgens naar Azure Migrate. Met deze gebruiker [maakt u een Azure migrate project](/migrate/create-manage-projects.md)en selecteert u het juiste gedelegeerde klant abonnement.
 1. De gebruiker [voert vervolgens stappen voor detectie en evaluatie uit](../../migrate/tutorial-discover-vmware.md).
 
@@ -60,13 +60,15 @@ Met deze aanpak kunnen service providers snel migratie-en evaluatie projecten st
 
 De werk stroom voor dit model ziet er ongeveer als volgt uit:
 
-1. De klant is [onboarding van Azure Lighthouse](onboard-customer.md). De ingebouwde rol Inzender is vereist voor de identiteit die wordt gebruikt met Azure Migrate.
+1. De klant is [onboarding van Azure Lighthouse](onboard-customer.md). De ingebouwde rol Inzender is vereist voor de identiteit die wordt gebruikt met Azure Migrate. Zie de voorbeeld sjabloon [gedelegeerde-Management-azmigrate](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/delegated-resource-management-azmigrate) voor een voor beeld met behulp van deze rol.
 1. De aangewezen gebruiker meldt zich aan bij de beheer Tenant in de Azure Portal en gaat vervolgens naar Azure Migrate. Deze gebruiker [maakt een Azure migrate project](/migrate/create-manage-projects.md) in een abonnement dat behoort tot de beheer-Tenant.
 1. De gebruiker [voert vervolgens stappen voor detectie en evaluatie uit](../../migrate/tutorial-discover-vmware.md). De on-premises Vm's worden gedetecteerd en beoordeeld binnen het migratie project dat in de beheer Tenant is gemaakt en vervolgens van daaruit gemigreerd.
 
    Als u meerdere klanten beheert op dezelfde Hyper-V-host, kunt u alle werk belastingen tegelijk ontdekken. Klantspecifieke Vm's kunnen in dezelfde groep worden geselecteerd, een evaluatie kan worden gemaakt en de migratie kan worden uitgevoerd door het juiste abonnement van de klant te selecteren als doel bestemming. U hoeft het detectie bereik niet te beperken en u kunt een volledig overzicht van alle werk belastingen van de klant in één migratie project onderhouden.
 
 1. Als u klaar bent, gaat u verder met de migratie door het gedelegeerte klant abonnement te selecteren als doel doel voor het repliceren en migreren van de werk belastingen. De nieuwe resources bestaan in het abonnement van de klant, terwijl de evaluatie gegevens en resources die deel uitmaken van het migratie project, in de Tenant beheren blijven.
+
+Opmerking: u moet het parameter bestand wijzigen zodat het overeenkomt met uw omgeving voordat u implementeert. https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/delegated-resource-management-azmigrate
 
 ## <a name="partner-recognition-for-customer-migrations"></a>Partner herkenning voor klant migraties
 

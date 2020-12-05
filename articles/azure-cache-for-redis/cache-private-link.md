@@ -6,12 +6,12 @@ ms.author: cauribeg
 ms.service: cache
 ms.topic: conceptual
 ms.date: 10/14/2020
-ms.openlocfilehash: 1a9d5fe69cd9d853d0bf8ec971f31518bbf47c9a
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 31ae4605b6cc9e26c89beea692fe61fcbda49c4c
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94504693"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621498"
 ---
 # <a name="azure-cache-for-redis-with-azure-private-link-public-preview"></a>Azure-cache voor redis met persoonlijke Azure-koppeling (open bare preview)
 In dit artikel leert u hoe u een virtueel netwerk en een Azure-cache maakt voor een redis-exemplaar met een persoonlijk eind punt met behulp van de Azure Portal. U leert ook hoe u een persoonlijk eind punt kunt toevoegen aan een bestaand Azure-cache geheugen voor redis-instantie.
@@ -41,7 +41,7 @@ In deze sectie maakt u een nieuw Azure-cache geheugen voor een redis-exemplaar m
 
 3. Selecteer **toevoegen** om een virtueel netwerk te maken.
 
-4. Typ of selecteer in **Virtueel netwerk maken** de volgende gegevens op het tabblad **Basisinstellingen** :
+4. Typ of selecteer in **Virtueel netwerk maken** de volgende gegevens op het tabblad **Basisinstellingen**:
 
    | Instelling      | Voorgestelde waarde  | Beschrijving |
    | ------------ |  ------- | -------------------------------------------------- |
@@ -111,8 +111,8 @@ Het duurt even voor de cache is gemaakt. U kunt de voortgang bekijken op de **ov
     
 > [!IMPORTANT]
 > 
-> Er is een `publicNetworkAccess` vlag die `Enabled` standaard is. 
-> Deze vlag is bedoeld om u in staat te stellen zowel open bare als privé-eind punten toegang te geven tot de cache als deze is ingesteld op `Enabled` . Als deze eigenschap is ingesteld op `Disabled` , is toegang tot privé-eind punten alleen toegestaan. U kunt de waarde instellen op `Disabled` met de volgende patch-aanvraag.
+> Er is een `publicNetworkAccess` vlag die `Disabled` standaard is. 
+> Deze vlag is bedoeld om u in staat te stellen zowel open bare als privé-eind punten toegang te geven tot de cache als deze is ingesteld op `Enabled` . Als deze eigenschap is ingesteld op `Disabled` , is toegang tot privé-eind punten alleen toegestaan. U kunt de waarde instellen op `Disabled` of `Enabled` met de volgende patch-aanvraag. Bewerk de waarde om aan te geven welke vlag u voor uw cache wilt.
 > ```http
 > PATCH  https://management.azure.com/subscriptions/{subscription}/resourceGroups/{resourcegroup}/providers/Microsoft.Cache/Redis/{cache}?api-version=2020-06-01
 > {    "properties": {
@@ -140,7 +140,7 @@ Voer de volgende stappen uit om een virtueel netwerk te maken.
 
 3. Selecteer **toevoegen** om een virtueel netwerk te maken.
 
-4. Typ of selecteer in **Virtueel netwerk maken** de volgende gegevens op het tabblad **Basisinstellingen** :
+4. Typ of selecteer in **Virtueel netwerk maken** de volgende gegevens op het tabblad **Basisinstellingen**:
 
    | Instelling      | Voorgestelde waarde  | Beschrijving |
    | ------------ |  ------- | -------------------------------------------------- |
@@ -212,8 +212,9 @@ Als uw cache al een VNet-geïnjecteerde cache is, kunnen privé-eind punten niet
 ### <a name="what-features-are-not-supported-with-private-endpoints"></a>Welke functies worden niet ondersteund met persoonlijke eind punten?
 Geo-replicatie, firewall regels, ondersteuning voor de portal console, meerdere eind punten per geclusterde cache, persistentie voor firewall regels en zone redundantie. 
 
-### <a name="how-can-i-change-my-private-endpoint-to-be-disabled-from-public-network-access"></a>Hoe kan ik mijn persoonlijke eind punt wijzigen zodat deze wordt uitgeschakeld via open bare netwerk toegang?
-Er is een `publicNetworkAccess` vlag die `Enabled` standaard is. Deze vlag is bedoeld om u in staat te stellen zowel open bare als privé-eind punten toegang te geven tot de cache als deze is ingesteld op `Enabled` . Als deze eigenschap is ingesteld op `Disabled` , is toegang tot privé-eind punten alleen toegestaan. U kunt de waarde instellen op `Disabled` met de volgende patch-aanvraag.
+### <a name="how-can-i-change-my-private-endpoint-to-be-disabled-or-enabled-from-public-network-access"></a>Hoe kan ik mijn privé-eind punt wijzigen zodat deze wordt uitgeschakeld of ingeschakeld voor open bare netwerk toegang?
+Er is een `publicNetworkAccess` vlag die `Disabled` standaard is. Deze vlag is bedoeld om u in staat te stellen zowel open bare als privé-eind punten toegang te geven tot de cache als deze is ingesteld op `Enabled` . Als deze eigenschap is ingesteld op `Disabled` , is toegang tot privé-eind punten alleen toegestaan. U kunt de waarde instellen op `Disabled` of `Enabled` met de volgende patch-aanvraag. Bewerk de waarde om aan te geven welke vlag u voor uw cache wilt.
+
 ```http
 PATCH  https://management.azure.com/subscriptions/{subscription}/resourceGroups/{resourcegroup}/providers/Microsoft.Cache/Redis/{cache}?api-version=2020-06-01
 {    "properties": {

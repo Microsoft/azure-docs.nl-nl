@@ -7,12 +7,12 @@ ms.service: iot-fundamentals
 ms.topic: conceptual
 ms.date: 11/24/2020
 ms.author: jlian
-ms.openlocfilehash: 5299a049ab2cc2246a861dd3fb81f466b56afad3
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 864870c4392b12477c321c86afd9da848120490c
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96603297"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621702"
 ---
 # <a name="turn-on-preview-mode-for-iot-hub-to-try-select-new-features"></a>Schakel de preview-modus voor IoT Hub om nieuwe functies te selecteren
 
@@ -66,7 +66,7 @@ Wanneer een IoT Hub in de preview-modus is gemaakt, wordt deze banner altijd wee
 
 Gebruik *geen* IOT-hub in de preview-modus voor productie. De preview-modus is *alleen* bedoeld voor een voor beeld van de Select-functies die boven aan deze pagina worden weer gegeven. Enkele andere beperkingen voor IoT Hub preview-modus zijn
 
-- Sommige bestaande IoT Hub functies, zoals een persoonlijke koppeling, beheerde identiteit, streams van apparaten en failover, werken mogelijk onverwacht of helemaal niet.
+- Sommige bestaande IoT Hub functies, zoals IP-filter, persoonlijke koppeling, beheerde identiteit, apparaatgegevens en failover, werken mogelijk onverwacht of helemaal niet.
 - Een IoT-hub in de preview-modus kan niet worden gewijzigd of bijgewerkt naar een normale IoT-hub.
 - Het is niet mogelijk om de normale [IOT hub Sla](https://azure.microsoft.com/support/legal/sla/iot-hub/v1_2/) te garanderen. Gebruik deze niet voor productie.
 

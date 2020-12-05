@@ -8,16 +8,16 @@ editor: ''
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 05/20/2020
+ms.date: 12/04/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ffb298bca53a06bd1ef14a750648fe6e76fd45ee
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 07acd71eb1a77592c82b80aa574d79b98c48f60e
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602101"
+ms.locfileid: "96608296"
 ---
 # <a name="azure-ad-connect-sync-v2-endpoint-api"></a>Eindpunt-API voor Azure AD Connect-synchronisatie v2 
 Micro soft heeft een nieuw eind punt (API) geïmplementeerd voor Azure AD Connect die de prestaties verbetert van de synchronisatie service-bewerkingen naar Azure Active Directory. Door gebruik te maken van het nieuwe v2-eind punt, kunt u zien dat er prestatie verhogingen optreden bij het exporteren en importeren naar Azure AD. Dit nieuwe eind punt ondersteunt het volgende:

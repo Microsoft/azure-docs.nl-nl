@@ -6,12 +6,12 @@ ms.assetid: ff00902b-9858-4bee-ab95-d3406018c688
 ms.topic: article
 ms.date: 10/01/2020
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: 204e087908ff978880966332b4619935dc6f0458
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
+ms.openlocfilehash: 7ade24b6478f78a51e0be68ae69ae0b076ecff1f
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96559113"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96607871"
 ---
 # <a name="configure-premiumv3-tier-for-azure-app-service"></a>PremiumV3-laag configureren voor Azure App Service
 
@@ -82,7 +82,7 @@ Sommige App Service-abonnementen kunnen niet naar de PremiumV3-laag worden gesch
 Als uw app wordt uitgevoerd in een App Service implementatie waarbij **PremiumV3** niet beschikbaar is, of als uw app wordt uitgevoerd in een regio die momenteel geen ondersteuning biedt voor **PremiumV3**, moet u uw app opnieuw implementeren om gebruik te maken van **PremiumV3**.  U hebt hiervoor twee opties:
 
 - Een app maken in een nieuwe resource groep en met een nieuw App Service plan. Wanneer u het App Service plan maakt, selecteert u een **PremiumV3** -laag. Met deze stap zorgt u ervoor dat het App Service plan wordt geïmplementeerd in een implementatie-eenheid die ondersteuning biedt voor **PremiumV3**. Implementeer vervolgens uw toepassings code opnieuw in de zojuist gemaakte app. Zelfs als u het App Service plan naar een lagere laag schaalt om kosten te besparen, kunt u altijd een back-up naar **PremiumV3** maken, omdat de implementatie-eenheid dit ondersteunt.
-- Als uw app al in een bestaande **Premium** -laag wordt uitgevoerd, kunt u uw app klonen met alle app-instellingen, verbindings reeksen en implementatie configuratie in een nieuw app service-plan dat gebruikmaakt van **PremiumV3**.
+- Als uw app al in een bestaande **Premium** -laag wordt uitgevoerd, kunt u uw app klonen met alle app-instellingen, verbindings reeksen en implementatie configuratie in een nieuwe resource groep op een nieuw app service-plan dat gebruikmaakt van **PremiumV3**.
 
     ![Scherm afbeelding die laat zien hoe u uw app kunt klonen.](media/app-service-configure-premium-tier/clone-app.png)
 

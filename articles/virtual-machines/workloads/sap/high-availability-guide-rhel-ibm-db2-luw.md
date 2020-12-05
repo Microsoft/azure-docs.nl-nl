@@ -15,16 +15,19 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 10/16/2020
 ms.author: juergent
-ms.openlocfilehash: fcc247e9e3122515ebe9230f58860df8c6dd3948
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 85f268990ac9e0c04cba1b9c409a232a24ce0d61
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96484325"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608631"
 ---
 # <a name="high-availability-of-ibm-db2-luw-on-azure-vms-on-red-hat-enterprise-linux-server"></a>Hoge beschikbaarheid van IBM Db2 LUW in Azure-VM's in Red Hat Enterprise Linux Server
 
 IBM Db2 voor Linux, UNIX en Windows (LUW) in de [configuratie hoge Beschik baarheid en herstel na nood geval (HADR)](https://www.ibm.com/support/knowledgecenter/en/SSEPGG_10.5.0/com.ibm.db2.luw.admin.ha.doc/doc/c0011267.html) bestaat uit één knoop punt waarop een primair data base-exemplaar wordt uitgevoerd en ten minste één knoop punt waarop een secundair data base-exemplaar wordt uitgevoerd. Wijzigingen in het primaire data base-exemplaar worden synchroon of asynchroon gerepliceerd naar een secundaire data base-instantie, afhankelijk van uw configuratie. 
+
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de termen *Master* en *Slave*, termen die micro soft niet meer gebruikt. Wanneer deze voor waarden worden verwijderd uit de software, worden ze uit dit artikel verwijderd.
 
 In dit artikel wordt beschreven hoe u virtuele Azure-machines (Vm's) implementeert en configureert, het cluster raamwerk installeert en de IBM Db2-LUW installeert met HADR-configuratie. 
 

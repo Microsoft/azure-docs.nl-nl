@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/20/2018
-ms.openlocfilehash: 947b509468857b98b868881bdd48adf67a5d60db
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 7bdea9239faa4ec66fffa236bea40afd5e628e62
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994623"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96607140"
 ---
 # <a name="gather-insights-about-your-dns-infrastructure-with-the-dns-analytics-preview-solution"></a>Inzichten over uw DNS-infra structuur verzamelen met de preview-oplossing van DNS-analyse
 
@@ -35,10 +35,10 @@ De volgende tabel beschrijft de verbonden bronnen die worden ondersteund door de
 
 | **Verbonden bron** | **Ondersteuning** | **Beschrijving** |
 | --- | --- | --- |
-| [Windows-agents](../platform/agent-windows.md) | Yes | De oplossing verzamelt DNS-gegevens van Windows-agents. |
-| [Linux-agents](../learn/quick-collect-linux-computer.md) | No | De oplossing verzamelt geen DNS-gegevens van direct Linux-agents. |
-| [Beheergroep System Center Operations Manager](../platform/om-agents.md) | Yes | De oplossing verzamelt DNS-gegevens van agents in een verbonden Operations Manager-beheer groep. Een directe verbinding van de Operations Manager agent naar Azure Monitor is niet vereist. Gegevens worden doorgestuurd van de beheer groep naar de Log Analytics-werk ruimte. |
-| [Azure Storage-account](../platform/resource-logs.md#send-to-log-analytics-workspace) | No | Azure Storage wordt niet gebruikt door de oplossing. |
+| [Windows-agents](../platform/agent-windows.md) | Ja | De oplossing verzamelt DNS-gegevens van Windows-agents. |
+| [Linux-agents](../learn/quick-collect-linux-computer.md) | Nee | De oplossing verzamelt geen DNS-gegevens van direct Linux-agents. |
+| [Beheergroep System Center Operations Manager](../platform/om-agents.md) | Ja | De oplossing verzamelt DNS-gegevens van agents in een verbonden Operations Manager-beheer groep. Een directe verbinding van de Operations Manager agent naar Azure Monitor is niet vereist. Gegevens worden doorgestuurd van de beheer groep naar de Log Analytics-werk ruimte. |
+| [Azure Storage-account](../platform/resource-logs.md#send-to-log-analytics-workspace) | Nee | Azure Storage wordt niet gebruikt door de oplossing. |
 
 ### <a name="data-collection-details"></a>Details van gegevens verzameling
 
@@ -57,13 +57,13 @@ De oplossing begint met het verzamelen van gegevens zonder dat er verdere config
 
 Klik in het dash board van de oplossing op **configuratie** om de pagina DNS-analyse configuratie te openen. Er zijn twee typen configuratie wijzigingen die u kunt aanbrengen:
 
-- **Domein namen white list**. De oplossing verwerkt niet alle opzoek query's. Het onderhoudt een white list van domein naam achtervoegsels. De opzoek query's die worden omgezet in de domein namen die overeenkomen met de domein naam achtervoegsels in deze white list, worden niet verwerkt door de oplossing. Geen verwerking van white list-domein namen helpt bij het optimaliseren van de gegevens die naar Azure Monitor worden verzonden. De standaard White List bevat populaire open bare domein namen, zoals www.google.com en www.facebook.com. U kunt de volledige standaard lijst weer geven door te schuiven.
+- **Domein namen Allowlisted**. De oplossing verwerkt niet alle opzoek query's. Het onderhoudt een allowlist van domein naam achtervoegsels. De opzoek query's die worden omgezet in de domein namen die overeenkomen met de domein naam achtervoegsels in deze allowlist, worden niet verwerkt door de oplossing. Geen verwerking van allowlisted-domein namen helpt bij het optimaliseren van de gegevens die naar Azure Monitor worden verzonden. De standaard allowlist bevat populaire open bare domein namen, zoals www.google.com en www.facebook.com. U kunt de volledige standaard lijst weer geven door te schuiven.
 
   U kunt de lijst wijzigen om een domein naam achtervoegsel toe te voegen waarvoor u opzoek inzichten wilt weer geven. U kunt ook elk domein naam achtervoegsel verwijderen waarvoor u geen lookup Insights-inzichten wilt weer geven.
 
 - **Drempel waarde voor dremepelwaarde-client**. DNS-clients die de drempel voor het aantal lookup-aanvragen overschrijden, worden gemarkeerd op de Blade **DNS-clients** . De standaard drempel waarde is 1.000. U kunt de drempel waarde bewerken.
 
-    ![White list domein namen](./media/dns-analytics/dns-config.png)
+    ![Allowlisted domein namen](./media/dns-analytics/dns-config.png)
 
 ## <a name="management-packs"></a>Management packs
 
@@ -110,7 +110,7 @@ De informatie helpt u bij het identificeren van het volgende:
 - IP-adressen waarnaar de domein naam wordt omgezet.
 - Schadelijk IP-adres.
 - Ernst van het probleem.
-- De reden voor het op de zwarte lijst brengen van het schadelijke IP-adres.
+- Reden voor het blocklisting van het schadelijke IP-adres.
 - Detectie tijd.
 
 **Query's in domeinen**. Biedt de meest voorkomende domein namen die worden doorzocht door de DNS-clients in uw omgeving. U kunt de lijst weer geven met alle domein namen waarvoor een query is uitgevoerd. U kunt ook inzoomen op de details van de lookup-aanvraag van een specifieke domein naam in Logboeken zoeken.

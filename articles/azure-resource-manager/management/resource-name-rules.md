@@ -2,13 +2,13 @@
 title: Naamgevings beperkingen voor resources
 description: Hier worden de regels en beperkingen voor het benoemen van Azure-resources weer gegeven.
 ms.topic: conceptual
-ms.date: 10/01/2020
-ms.openlocfilehash: 206bd6604ecd9dfece9c946c653b2720e75ff1e3
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.date: 12/04/2020
+ms.openlocfilehash: a6aac03277a11cf671f5a618bc85ff987cfdc2dd
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93347791"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608313"
 ---
 # <a name="naming-rules-and-restrictions-for-azure-resources"></a>Naamgevingsregels en -beperkingen voor Azure-resources
 
@@ -107,7 +107,7 @@ In de volgende tabellen verwijst de term alfanumeriek naar:
 > [!div class="mx-tableFixed"]
 > | Entiteit | Bereik | Lengte | Geldige tekens |
 > | --- | --- | --- | --- |
-> | batchAccounts | Region | 3-24 | Kleine letters en cijfers. |
+> | batchAccounts | Regio | 3-24 | Kleine letters en cijfers. |
 > | batchAccounts/toepassingen | batch-account | 1-64 | Alfanumeriek, onderstrepings tekens en afbreek streepjes. |
 > | batchAccounts/certificaten | batch-account | 5-45 | Alfanumeriek, onderstrepings tekens en afbreek streepjes. |
 > | batchAccounts/Pools | batch-account | 1-64 | Alfanumeriek, onderstrepings tekens en afbreek streepjes. |
@@ -596,6 +596,7 @@ In de volgende tabellen verwijst de term alfanumeriek naar:
 > | ResourceGroups | abonnement | 1-90 | Alfanumeriek, onderstreping, haakjes, afbreek streepjes, punten en Unicode-tekens die overeenkomen met de [regex-documentatie](/rest/api/resources/resourcegroups/createorupdate).<br><br>Kan niet eindigen met een punt. |
 > | tagName | resource | 1-512 | Kan niet gebruiken:<br>`<>%&\?/` |
 > | tagName-tagValues | Label naam | 1-256 | Alle tekens. |
+> | templateSpecs | resourcegroep | 1-90 | Alfanumeriek, onderstrepings tekens, haakjes, afbreek streepjes en punten. |
 
 ## <a name="microsoftservicebus"></a>Microsoft.ServiceBus
 

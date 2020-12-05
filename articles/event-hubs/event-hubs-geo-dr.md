@@ -3,15 +3,15 @@ title: Geo-nood herstel-Azure Event Hubs | Microsoft Docs
 description: Over het gebruik van geografische regio's om een failover uit te voeren en herstel na nood gevallen in azure Event Hubs
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 1807c22645c3246f4cf18d723fc19da475e4d4f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6dd2385a6f6e61136a1284171532aedd70a9cc96
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88934069"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608347"
 ---
 # <a name="azure-event-hubs---geo-disaster-recovery"></a>Azure-Event Hubs-geo-nood herstel 
-Als er voor de hele Azure-regio's of-Data Centers (als er geen [beschikbaarheids zones](../availability-zones/az-overview.md) worden gebruikt) downtime actief is, is het essentieel dat de gegevens worden verwerkt in een andere regio of Data Center. Daarom zijn *geo-nood herstel* en *geo-replicatie* belang rijke functies voor elke onderneming. Azure Event Hubs ondersteunt zowel geo-nood herstel als geo-replicatie op het niveau van de naam ruimte. 
+Als er voor de hele Azure-regio's of-Data Centers (als er geen [beschikbaarheids zones](../availability-zones/az-overview.md) worden gebruikt) downtime actief is, is het essentieel dat de gegevens worden verwerkt in een andere regio of Data Center. Daarom zijn *geo-nood herstel* en *geo-replicatie* belang rijke functies voor elke onderneming. Azure Event Hubs ondersteunt zowel geo-nood herstel als geo-replicatie op het niveau van de naam ruimte. 
 
 > [!NOTE]
 > De functie voor geo-nood herstel is alleen beschikbaar voor de [Standard-en speciale sku's](https://azure.microsoft.com/pricing/details/event-hubs/).  
@@ -65,7 +65,7 @@ U maakt of gebruikt eerst een bestaande primaire naam ruimte en een nieuwe secun
 
 ### <a name="example"></a>Voorbeeld
 
-In een voor beeld van dit scenario moet u een POS-oplossing (Point of Sale) overwegen waarmee berichten of gebeurtenissen worden verzonden. Event Hubs geeft deze gebeurtenissen door aan een toewijzing of het opnieuw Format teren van een oplossing, waarna toegewezen gegevens worden doorgestuurd naar een ander systeem voor verdere verwerking. Op dat moment kunnen al deze systemen worden gehost in dezelfde Azure-regio. De beslissing over wanneer en welk deel failover moet worden uitgevoerd, is afhankelijk van de stroom van gegevens in uw infra structuur. 
+In een voor beeld van dit scenario moet u een POS-oplossing (Point of Sale) overwegen waarmee berichten of gebeurtenissen worden verzonden. Event Hubs geeft deze gebeurtenissen door aan een toewijzing of het opnieuw Format teren van een oplossing, waarna toegewezen gegevens worden doorgestuurd naar een ander systeem voor verdere verwerking. Op dat moment kunnen al deze systemen worden gehost in dezelfde Azure-regio. De beslissing van wanneer en welk deel failover moet worden uitgevoerd, is afhankelijk van de gegevens stroom in uw infra structuur. 
 
 U kunt de failover automatiseren met bewakings systemen of met aangepaste bewakings oplossingen. Een dergelijke automatisering vergt echter wel extra planning en werk, wat buiten het bereik van dit artikel valt.
 
@@ -96,7 +96,7 @@ Het [voor beeld op github](https://github.com/Azure/azure-event-hubs/tree/master
 
 ## <a name="considerations"></a>Overwegingen
 
-Let op de volgende punten als u rekening moet houden met deze release:
+Let op de volgende punten als u rekening moet houden:
 
 1. Event Hubs met geo-nood herstel worden geen gegevens gerepliceerd, waardoor u de oude offset waarde van uw primaire Event Hub niet opnieuw kunt gebruiken op uw secundaire Event Hub. Het wordt aangeraden om de ontvanger van uw gebeurtenis opnieuw te starten met een van de volgende methoden:
 
@@ -106,7 +106,7 @@ Let op de volgende punten als u rekening moet houden met deze release:
 
 2. Bij het plannen van de failover moet u ook rekening houden met de tijds factor. Als u bijvoorbeeld langer dan 15 tot 20 minuten geen verbinding meer hebt, kunt u ervoor kiezen om de failover te initiëren. 
  
-3. Het feit dat er geen gegevens worden gerepliceerd, betekent dat momenteel actieve sessies niet worden gerepliceerd. Bovendien werken duplicaten detectie en geplande berichten mogelijk niet. Nieuwe sessies, geplande berichten en nieuwe duplicaten werken wel. 
+3. Het feit dat er geen gegevens worden gerepliceerd, betekent dat huidige actieve sessies niet worden gerepliceerd. Bovendien werken duplicaten detectie en geplande berichten mogelijk niet. Nieuwe sessies, geplande berichten en nieuwe duplicaten werken wel. 
 
 4. Failover van een complexe gedistribueerde infra structuur moet ten minste één keer worden [gereageerd](/azure/architecture/reliability/disaster-recovery#disaster-recovery-plan) . 
 
@@ -150,7 +150,7 @@ Stel dat u twee virtuele netwerken hebt: VNET-1, VNET-2 en deze primaire en secu
 
 ![Persoonlijke eind punten en virtuele netwerken](./media/event-hubs-geo-dr/private-endpoints-virtual-networks.png)
 
-Voor deel van deze benadering is dat failover kan plaatsvinden op de toepassingslaag, onafhankelijk van Event Hubs naam ruimte. Stel u de volgende scenario's voor: 
+Voor deel van deze benadering is dat failover kan plaatsvinden op de toepassingslaag, onafhankelijk van Event Hubs naam ruimte. Denk eens na over de volgende scenario's: 
 
 **Failover van toepassing:** Hier komt de toepassing niet voor in VNET-1 maar wordt deze verplaatst naar VNET-2. Als beide persoonlijke eind punten zijn geconfigureerd op zowel VNET-1 als VNET-2 voor zowel primaire als secundaire naam ruimten, werkt de toepassing gewoon. 
 

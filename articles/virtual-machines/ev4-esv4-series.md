@@ -9,12 +9,12 @@ ms.service: virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 6/8/2020
-ms.openlocfilehash: 6d8ec3633fec79fc4fdc04986c8b94c671ae9d1a
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 38020b38ebd879bf19c243c2055e73198e9fcc7c
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460318"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96606919"
 ---
 # <a name="ev4-and-esv4-series"></a>Ev4- en Esv4-serie
 
@@ -71,7 +71,7 @@ Esv4-serie-grootten worden uitgevoerd op Intel &reg; Xeon &reg; Platinum 8272CL 
 | Standard_E32s_v4 | 32 | 256 | Alleen externe opslag | 32 | 51200/768  | 8|16000 |
 | Standard_E48s_v4 | 48 | 384 | Alleen externe opslag | 32 | 76800/1152 | 8|24000 |
 | Standard_E64s_v4 <sup>1</sup> | 64 | 504| Alleen externe opslag | 32 | 80000/1200 | 8|30.000 |
-| Standard_E80is_v4 <sup>1, 2</sup> | 80 | 504 | Alleen externe opslag | 32 | 80000/1200 | 8|30.000 |
+| Standard_E80is_v4 <sup>2</sup> | 80 | 504 | Alleen externe opslag | 32 | 80000/1200 | 8|30.000 |
 
 Er zijn <sup>1</sup> [beperkte core-grootten beschikbaar](./constrained-vcpu.md).
 

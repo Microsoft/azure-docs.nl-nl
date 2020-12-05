@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 10/14/2020
 ms.author: maquaran
 ms.custom: devx-track-dotnet, contperfq2
-ms.openlocfilehash: 892d73c2b23a9806cd38b188f594f129fda9303d
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 7901ad4f67f6f3243a2d3b8dc25733ac68b612db
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340716"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608364"
 ---
 # <a name="azure-cosmos-db-sql-sdk-connectivity-modes"></a>Azure Cosmos DB SQL SDK-connectiviteits modi
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -47,7 +47,7 @@ De volgende tabel bevat een samen vatting van de connectiviteits modi die beschi
 |Verbindingsmodus  |Ondersteund protocol  |Ondersteunde Sdk's  |API/service poort  |
 |---------|---------|---------|---------|
 |Gateway  |   HTTPS    |  Alle Sdk's    |   SQL (443), MongoDB (10250, 10255, 10256), Table (443), Cassandra (10350), Graph (443) <br> Poort 10250 wordt toegewezen aan een standaard Azure Cosmos DB-API voor MongoDB-instantie zonder geo-replicatie. Terwijl de poorten 10255 en 10256 worden toegewezen aan het exemplaar met geo-replicatie.   |
-|Direct    |     TCP    |  .NET SDK    | Bij gebruik van open bare/service-eind punten: poorten in het 10000 tot en met 20000-bereik<br>Bij het gebruik van privé-eind punten: poorten in het bereik 0 tot en met 65535 |
+|Direct    |     TCP    |  .NET SDK Java SDK    | Bij gebruik van open bare/service-eind punten: poorten in het 10000 tot en met 20000-bereik<br>Bij het gebruik van privé-eind punten: poorten in het bereik 0 tot en met 65535 |
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -5,12 +5,12 @@ description: Meer informatie over het bijwerken van AKS-knoop punten met behulp 
 services: container-service
 ms.topic: article
 ms.date: 11/27/2020
-ms.openlocfilehash: 7a24911fd771663c7edbbdf0c8d2d763a74fc586
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 504c99a7305a5010f8dbe56a30b53d6fc3a13c5b
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96535188"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96607837"
 ---
 # <a name="apply-security-updates-to-azure-kubernetes-service-aks-nodes-automatically-using-github-actions"></a>Beveiligings updates automatisch Toep assen op knoop punten van Azure Kubernetes service (AKS) met behulp van GitHub-acties
 
@@ -170,8 +170,8 @@ Zodra u de door Voer hebt gemaakt, wordt de werk stroom opgeslagen en gereed voo
 
 > [!NOTE]
 > Als u een groep met één knoop punt wilt bijwerken in plaats van alle knooppunt groepen op het cluster, voegt u de `--name` para meter toe aan de `az aks nodepool upgrade` opdracht om de naam van de knooppunt groep op te geven. Bijvoorbeeld:
-> ```
-> inlineScript: az aks nodepool upgrade -g {resourceGroupName} --cluster-name {aksClusterName} --name {{nodePoolName}} --node-image-only
+> ```azurecli-interactive
+> az aks nodepool upgrade -g {resourceGroupName} --cluster-name {aksClusterName} --name {{nodePoolName}} --node-image-only
 > ```
 
 ## <a name="run-the-github-action-manually"></a>De actie GitHub hand matig uitvoeren

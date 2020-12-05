@@ -7,12 +7,12 @@ ms.service: storsimple
 ms.topic: how-to
 ms.date: 06/12/2019
 ms.author: alkohli
-ms.openlocfilehash: 75ccfe7a8e62e519b1df89792211433260a6abf6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6584b2ecc54efd257bb30c479fd0f22150e8d9e1
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89294710"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608585"
 ---
 # <a name="configure-mpio-on-a-storsimple-host-running-centos"></a>MPIO configureren op een StorSimple-host met CentOS
 In dit artikel worden de stappen beschreven die nodig zijn voor het configureren van MPIO (multipath-i/o) op de CentOS 6,6-hostserver. De hostserver is verbonden met uw Microsoft Azure StorSimple-apparaat voor hoge Beschik baarheid via iSCSI-initia tors. Hierin wordt de automatische detectie van multipath-apparaten en de specifieke installatie van alleen voor StorSimple-volumes beschreven.
@@ -21,6 +21,9 @@ Deze procedure is van toepassing op alle modellen van de StorSimple 8000-serie a
 
 > [!NOTE]
 > Deze procedure kan niet worden gebruikt voor een StorSimple Cloud Appliance. Zie voor meer informatie host-servers configureren voor uw Cloud apparaat.
+
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de term *Black*, een term die micro soft niet meer gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
 
 
 ## <a name="about-multipathing"></a>Over meerdere paden
@@ -39,7 +42,7 @@ Meerdere paden in Linux bestaat uit kernel-onderdelen en onderdelen van de gebru
 * **Gebruikers ruimte**: Dit zijn *meerdere paden* waarmee apparaten met meerdere paden kunnen worden beheerd door de toewijzings module voor het apparaat in te voeren. De hulpprogram ma's bestaan uit:
    
    * **Multipath**: geeft een lijst en configureert apparaten met meerdere paden.
-   * **Meerdere**paden: daemon waarmee meerdere paden worden uitgevoerd en de paden worden bewaakt.
+   * **Meerdere** paden: daemon waarmee meerdere paden worden uitgevoerd en de paden worden bewaakt.
    * **Devmap-name**: biedt een herken bare apparaat-naam voor udev voor devmaps.
    * **Kpartx**: wijst lineaire devmaps toe aan toepassingsmappartities om meerdere paden partitionisch te maken.
    * **Multipath. conf**: configuratie bestand voor multipath daemon dat wordt gebruikt om de ingebouwde configuratie tabel te overschrijven.
@@ -50,7 +53,7 @@ Het configuratie bestand `/etc/multipath.conf` maakt veel van de multipath-funct
 Het multipath. conf heeft vijf secties:
 
 - **Standaard waarden systeem niveau** *(standaard instellingen)*: u kunt de standaard instellingen van het systeem niveau opheffen.
-- **Apparaten in de zwarte** *lijst: u*kunt opgeven welke apparaten moeten worden beheerd door de toewijzing van het apparaat.
+- **Apparaten in de zwarte** *lijst: u* kunt opgeven welke apparaten moeten worden beheerd door de toewijzing van het apparaat.
 - **Black-uitzonde ringen** *(blacklist_exceptions)*: u kunt specifieke apparaten identificeren die moeten worden behandeld als apparaten met meerdere paden, zelfs als ze in de zwarte lijst worden weer gegeven.
 - **Specifieke instellingen voor de opslag controller** *(apparaten)*: u kunt configuratie-instellingen opgeven die worden toegepast op apparaten met leverancier-en product informatie.
 - **Apparaatspecifieke instellingen** *(meerdere paden)*: u kunt deze sectie gebruiken om de configuratie-instellingen voor afzonderlijke lun's te verfijnen.

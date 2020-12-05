@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 11/17/2020
+ms.date: 11/24/2020
 ms.author: alkohli
-ms.openlocfilehash: 5e5cb077868a224620d1a23e1ff1aac9c8d9f095
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: ab9559e1e8265b3adf08b36d1a8097a00297c61a
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94874471"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96606987"
 ---
 # <a name="create-certificates-for-your-azure-stack-edge-pro-using-azure-stack-hub-readiness-checker-tool"></a>Certificaten maken voor uw Azure Stack Edge Pro met behulp van Azure Stack hub-gereedheids controleprogramma 
 
@@ -23,7 +23,7 @@ In dit artikel wordt beschreven hoe u certificaten voor uw Azure Stack Edge Pro 
 
 ## <a name="using-azure-stack-hub-readiness-checker-tool"></a>Azure Stack hub-hulp programma voor de gereedheids controle gebruiken
 
-Gebruik het hulp programma voor de Azure Stack hub-gereedheids controle voor het maken van aanvragen voor certificaat ondertekening (Csr's) voor een Azure Stack Edge Pro-implementatie van apparaten. U kunt deze aanvragen maken nadat u een bestelling voor het Azure Stack Edge Pro-apparaat hebt geplaatst en er wordt gewacht tot het apparaat is aangekomen. 
+Gebruik het hulp programma voor de Azure Stack hub-gereedheids controle voor het maken van aanvragen voor certificaat ondertekening (Csr's) voor een Azure Stack Edge Pro-implementatie van apparaten. U kunt deze aanvragen maken nadat u een bestelling voor het Azure Stack Edge Pro-apparaat hebt geplaatst en wacht totdat het apparaat is aangekomen.
 
 > [!NOTE]
 > Gebruik dit hulp programma alleen voor test-of ontwikkelings doeleinden en niet voor productie apparaten. 
@@ -59,19 +59,19 @@ Volg deze stappen om de Azure Stack Edge Pro-apparaten voor te bereiden:
     Install-Module -Name Microsoft.AzureStack.ReadinessChecker
     ```
 
-    Als u de geïnstalleerde versie wilt controleren, typt u:  
+    Als u de geïnstalleerde versie wilt ophalen, typt u:  
 
     ```azurepowershell
     Get-InstalledModule -Name Microsoft.AzureStack.ReadinessChecker  | ft Name, Version 
     ```
 
-3. Maak een map voor alle certificaten als deze niet bestaat. Type: 
+3. Maak een map voor alle certificaten als u deze nog niet hebt. Type: 
     
     ```azurepowershell
     New-Item "C:\certrequest" -ItemType Directory
     ``` 
     
-4. Als u een certificaat aanvraag wilt maken, geeft u de volgende informatie op. Als u een VPN-certificaat genereert, zijn sommige van deze invoer niet van toepassing. 
+4. Als u een certificaat aanvraag wilt maken, geeft u de volgende informatie op. Als u een VPN-certificaat genereert, zijn sommige van deze invoer niet van toepassing.
     
     |Invoer |Beschrijving  |
     |---------|---------|
@@ -107,7 +107,7 @@ Volg deze stappen om de Azure Stack Edge Pro-apparaten voor te bereiden:
     ```
 
     
-5. U vindt de certificaat aanvraag bestanden in de map die u in de bovenstaande OutputRequestPath-para meter hebt opgegeven. Wanneer u de `MultipleCSR` para meter gebruikt, worden vier bestanden met de `.req` extensie weer geven. De bestanden zijn als volgt:
+5. U vindt de certificaat aanvraag bestanden in de map die u in de bovenstaande OutputRequestPath-para meter hebt opgegeven. Wanneer u de `MultipleCSR` para meter gebruikt, ziet u de volgende vier bestanden met de `.req` extensie:
 
     
     |Bestandsnamen  |Type certificaat aanvraag  |
@@ -115,7 +115,7 @@ Volg deze stappen om de Azure Stack Edge Pro-apparaten voor te bereiden:
     |Beginnen met uw `DeviceName`     |Lokale web UI-certificaat aanvraag      |
     |Beginnen met uw `NodeSerialNumber`     |Knooppunt certificaat aanvraag         |
     |Beginnen met `login`     |Certificaat aanvraag van Azure Resource Manager-eind punt       |
-    |Beginnen met `wildcard`     |Aanvraag van Blob-opslag certificaat; het bevat een Joker teken omdat deze alle opslag accounts omvat die u op het apparaat kunt maken.          |
+    |Beginnen met `wildcard`     |Certificaat aanvraag van Blob-opslag. Het bevat een Joker teken omdat deze alle opslag accounts omvat die u op het apparaat kunt maken.          |
     |Beginnen met `AzureStackEdgeVPNCertificate`     |Aanvraag voor VPN-client certificaat.         |
 
     U ziet ook een map INF. Dit bevat een beheer. <Edge-apparaatnaam> informatie bestand in Lees bare tekst met uitleg over de details van het certificaat.  
@@ -125,7 +125,7 @@ Volg deze stappen om de Azure Stack Edge Pro-apparaten voor te bereiden:
 
 ## <a name="prepare-certificates-for-deployment"></a>Certificaten voorbereiden voor implementatie
 
-De certificaat bestanden die u van uw certificerings instantie (CA) aanschaft, moeten worden geïmporteerd en geëxporteerd met eigenschappen die overeenkomen met de certificaat vereisten van Azure Stack Edge Pro-apparaat. Voer de volgende stappen uit op hetzelfde systeem waarop u de aanvragen voor certificaat ondertekening hebt gegenereerd.
+De certificaat bestanden die u van uw certificerings instantie (CA) ontvangt, moeten worden geïmporteerd en geëxporteerd met eigenschappen die overeenkomen met de certificaat vereisten van het Azure Stack Edge Pro-apparaat. Voer de volgende stappen uit op hetzelfde systeem waarop u de aanvragen voor certificaat ondertekening hebt gegenereerd.
 
 - Volg de stappen in [certificaten importeren op de clients die toegang hebben tot uw Azure stack Edge Pro-apparaat](azure-stack-edge-j-series-manage-certificates.md#import-certificates-on-the-client-accessing-the-device)om de certificaten te importeren.
 

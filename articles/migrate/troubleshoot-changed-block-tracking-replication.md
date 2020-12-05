@@ -6,12 +6,12 @@ ms.manager: bsiva
 ms.author: anvar
 ms.topic: troubleshooting
 ms.date: 08/17/2020
-ms.openlocfilehash: da1f7ce1474513fd9de286495f59aca63d8628b6
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 04dcf8edbce7782e6d196271bfa85f2f8d1c5ba3
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93377199"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608330"
 ---
 # <a name="troubleshooting-replication-issues-in-agentless-vmware-vm-migration"></a>Problemen met replicatie oplossen in VMware VM-migratie zonder agent
 
@@ -59,7 +59,7 @@ Wanneer de-Portal de sleutel kluis maakt, wordt er ook een gebruikers toegangs b
 
 - De andere gevallen waarin dit kan gebeuren, is wanneer een gebruiker (gebruiker1) in eerste instantie replicatie probeerde uit te voeren en een fout heeft aangetroffen, maar de sleutel kluis al is gemaakt (en het beleid voor gebruikers toegang op de juiste wijze is toegewezen aan deze gebruiker). Op een later tijdstip probeert een andere gebruiker (bijvoorbeeld) replicatie te installeren, maar de bewerking beheerd opslag account configureren of de SAS-definitie genereren mislukt omdat er geen gebruikers toegangs beleid is dat overeenkomt met de voor-en achterrichting in de sleutel kluis.
 
-**Oplossing** : om dit probleem te verhelpen, maakt u een beleid voor gebruikers toegang voor de machtiging verlenen van de sleutel kluis die het beheerde opslag account moet configureren en het genereren van SAS-definities. Met de onderstaande cmdlets kunt u dit doen via Azure PowerShell:
+**Oplossing**: om dit probleem te verhelpen, maakt u een beleid voor gebruikers toegang voor de machtiging verlenen van de sleutel kluis die het beheerde opslag account moet configureren en het genereren van SAS-definities. Met de onderstaande cmdlets kunt u dit doen via Azure PowerShell:
 
 $userPrincipalId = $ (Get-AzureRmADUser-UserPrincipalName "user2_email_address"). Id
 
@@ -139,7 +139,7 @@ Het onderdeel dat gegevens probeert te repliceren naar Azure, is niet actief of 
     
     Met deze opdracht wordt geprobeerd een TCP-verbinding uit te voeren en wordt een uitvoer geretourneerd.
     
-     - Controleer in de uitvoer het veld " _TcpTestSucceeded_ ". Als de waarde ' _True_ ' is, is er geen connectiviteits probleem tussen het Azure migrate apparaat en de Azure Key Vault. Als de waarde False is, is er een probleem met de verbinding.
+     - Controleer in de uitvoer het veld "_TcpTestSucceeded_". Als de waarde '_True_' is, is er geen connectiviteits probleem tussen het Azure migrate apparaat en de Azure Key Vault. Als de waarde False is, is er een probleem met de verbinding.
     
     **Oplossing:** Als deze test mislukt, is er een connectiviteits probleem tussen het Azure Migrate apparaat en de Azure Key Vault. Stel uw lokale netwerk team in om verbindings problemen te controleren. Normaal gesp roken kunnen er Firewall-instellingen zijn die de fouten veroorzaken.
     
@@ -225,7 +225,7 @@ De mogelijke oorzaken zijn:
     
     Met deze opdracht wordt geprobeerd een TCP-verbinding uit te voeren en wordt een uitvoer geretourneerd.
     
-    1. Controleer in de uitvoer het veld " _TcpTestSucceeded_ ". Als de waarde ' _True_ ' is, is er geen connectiviteits probleem tussen het Azure migrate apparaat en de Azure Key Vault. Als de waarde False is, is er een probleem met de verbinding.
+    1. Controleer in de uitvoer het veld "_TcpTestSucceeded_". Als de waarde '_True_' is, is er geen connectiviteits probleem tussen het Azure migrate apparaat en de Azure Key Vault. Als de waarde False is, is er een probleem met de verbinding.
     
     **Oplossing:** Als deze test mislukt, is er een connectiviteits probleem tussen het Azure Migrate apparaat en de Azure Key Vault. Stel uw lokale netwerk team in om verbindings problemen te controleren. Normaal gesp roken kunnen er Firewall-instellingen zijn die de fouten veroorzaken.
     
@@ -242,7 +242,7 @@ Deze fout kan op twee manieren worden opgelost:
 
 Een dergelijk bekend probleem dat ertoe kan leiden dat een CBT opnieuw instellen van de virtuele machine op VMware vSphere 5,5 wordt beschreven in [VMware KB 2048201: de gewijzigde blok tracering](https://go.microsoft.com/fwlink/?linkid=2138888) wordt opnieuw ingesteld na een bewerking van de opslag-VMotion in vSphere 5. x. Als u werkt met VMware vSphere 5.5, zorg er dan voor dat u de updates toepast die worden beschreven in dit artikel.
 
-U kunt ook [VMware changed Block tracking opnieuw instellen op een virtuele machine met behulp van VMware PowerCLI.
+U kunt ook VMware-gewijzigde blok tracering opnieuw instellen op een virtuele machine met behulp van VMware PowerCLI.
 
 ## <a name="an-internal-error-occurred"></a>Er is een interne fout opgetreden
 
@@ -276,7 +276,7 @@ Als u een virtuele machine met meerdere schijven hebt, kan deze fout optreden al
 
 Dit probleem treedt op wanneer het genereren van moment opnamen niet meer reageert. Als dit probleem zich voordoet, kunt u de taak moment opname maken stoppen om 95% of 99%. Raadpleeg deze [VMware KB](https://go.microsoft.com/fwlink/?linkid=2138969) om dit probleem op te lossen.
 
-### <a name="error-message-an-internal-error-occurred-failed-to-consolidate-the-disks-on-vm-_reasons_"></a>Fout bericht: er is een interne fout opgetreden. [Kan de schijven niet consolideren op de VM _[redenen]_ ]
+### <a name="error-message-an-internal-error-occurred-failed-to-consolidate-the-disks-on-vm-_reasons_"></a>Fout bericht: er is een interne fout opgetreden. [Kan de schijven niet consolideren op de VM _[redenen]_]
 
 Wanneer we schijven aan het einde van de replicatie cyclus consolideren, mislukt de bewerking. Volg de instructies in [VMware KB](https://go.microsoft.com/fwlink/?linkid=2138970) door de juiste _reden_ te selecteren om het probleem op te lossen.
 

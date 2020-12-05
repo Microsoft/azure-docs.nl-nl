@@ -4,12 +4,12 @@ description: Een Azure Active Directory-service-principal maken en beheren voor 
 services: container-service
 ms.topic: conceptual
 ms.date: 06/16/2020
-ms.openlocfilehash: 7f62c7dc7aacf9be4a59498aa5c556e9991ad578
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e95eae3ab8d992bc169e54700e7e31715e72102e
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85298545"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96607820"
 ---
 # <a name="service-principals-with-azure-kubernetes-service-aks"></a>Service-principals met AKS (Azure Kubernetes Service)
 
@@ -23,7 +23,7 @@ Als u een service-principal voor Azure AD wilt maken, moet u beschikken over mac
 
 Als u een service-principal van een andere Azure AD-Tenant gebruikt, zijn er aanvullende overwegingen rond de beschik bare machtigingen wanneer u het cluster implementeert. Mogelijk beschikt u niet over de juiste machtigingen om mapgegevens te lezen en te schrijven. Zie [Wat zijn de standaard machtigingen voor gebruikers in azure Active Directory?][azure-ad-permissions] voor meer informatie.
 
-Ook moet de Azure CLI-versie 2.0.59 of hoger zijn geïnstalleerd en geconfigureerd. Voer  `az --version` uit om de versie te bekijken. Als u wilt installeren of upgraden, raadpleegt u [Azure cli installeren][install-azure-cli].
+Ook moet de Azure CLI-versie 2.0.59 of hoger zijn geïnstalleerd en geconfigureerd. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren][install-azure-cli] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
 ## <a name="automatically-create-and-use-a-service-principal"></a>Automatisch een service-principal maken en gebruiken
 
@@ -105,7 +105,6 @@ U kunt gebruikmaken van geavanceerde netwerkmogelijkheden als het virtuele netwe
 - Maak een [aangepaste rol][rbac-custom-role] en definieer de volgende rolmachtigingen:
   - *Microsoft.Network/virtualNetworks/subnets/join/action*
   - *Microsoft.Network/virtualNetworks/subnets/read*
-  - *Micro soft. Network/virtualNetworks/subnetten/schrijven*
   - *Microsoft.Network/publicIPAddresses/join/action*
   - *Microsoft.Network/publicIPAddresses/read*
   - *Microsoft.Network/publicIPAddresses/write*

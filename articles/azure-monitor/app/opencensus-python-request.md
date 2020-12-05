@@ -6,18 +6,21 @@ author: lzchen
 ms.author: lechen
 ms.date: 10/15/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: 6cf0998eb4d769f2d1a7891892a5a462cd907e32
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 4b88550ad489607bb66eb737067190d45a466a43
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93422498"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96607072"
 ---
 # <a name="track-incoming-requests-with-opencensus-python"></a>Inkomende aanvragen bijhouden met opentellingen python
 
 Gegevens van binnenkomende aanvragen worden verzameld met opentellingen python en de verschillende integraties. Spoor gegevens op die worden verzonden naar uw webtoepassingen die zijn gemaakt boven op de populaire web Frameworks `django` `flask` en `pyramid` . De gegevens worden vervolgens naar Application Insights onder Azure Monitor als `requests` telemetrie verzonden.
 
 Eerst moet u uw python-toepassing instrumenteren met de nieuwste [Opentellingen PYTHON SDK](./opencensus-python.md).
+
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de term *Black*, een term die micro soft niet meer gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
 
 ## <a name="tracking-django-applications"></a>Django-toepassingen bijhouden
 

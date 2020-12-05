@@ -6,12 +6,12 @@ ms.topic: conceptual
 description: Meer informatie over het configureren van Azure dev Spaces voor het gebruik van een aangepaste NGINX ingress-controller en het configureren van HTTPS met deze ingangs controller
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, servicemesh, servicemeshroutering, kubectl, k8s
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: e1918b5ce9c0fdba81174f0b36fd1ce51d0df70a
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 873057e88809c1aaa8047ac02129d83ca8e9a478
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92748822"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608551"
 ---
 # <a name="use-a-custom-nginx-ingress-controller-and-configure-https"></a>Een aangepaste NGINX ingangs controller gebruiken en HTTPS configureren
 
@@ -100,7 +100,7 @@ cd dev-spaces/samples/BikeSharingApp/charts
 ```
 
 Open [Values. yaml][values-yaml] en voer de volgende updates uit:
-* Alle exemplaren van *<REPLACE_ME_WITH_HOST_SUFFIX>* vervangen door *nginx. MY_CUSTOM_DOMAIN* uw domein gebruiken voor *MY_CUSTOM_DOMAIN* . 
+* Alle exemplaren van *<REPLACE_ME_WITH_HOST_SUFFIX>* vervangen door *nginx. MY_CUSTOM_DOMAIN* uw domein gebruiken voor *MY_CUSTOM_DOMAIN*. 
 * Vervang *kubernetes.io/ingress.class: traefik-azds # dev Spaces-specifiek* met *kubernetes.io/ingress.class: nginx # aangepaste* inkomend verkeer. 
 
 Hieronder ziet u een voor beeld van een bijgewerkt `values.yaml` bestand:
@@ -210,7 +210,7 @@ spec:
 ```
 
 > [!NOTE]
-> Voor het testen kunt u ook een [staging-server][letsencrypt-staging-issuer] gebruiken voor uw *ClusterIssuer* .
+> Voor het testen kunt u ook een [staging-server][letsencrypt-staging-issuer] gebruiken voor uw *ClusterIssuer*.
 
 Gebruiken `kubectl` om toe te passen `letsencrypt-clusterissuer.yaml` .
 
@@ -328,7 +328,7 @@ Meer informatie over hoe Azure Dev Spaces werkt.
 [az-cli]: /cli/azure/install-azure-cli?view=azure-cli-latest
 [az-aks-get-credentials]: /cli/azure/aks?view=azure-cli-latest#az-aks-get-credentials
 [az-network-dns-record-set-a-add-record]: /cli/azure/network/dns/record-set/a?view=azure-cli-latest#az-network-dns-record-set-a-add-record
-[custom-domain]: ../../app-service/manage-custom-dns-buy-domain.md#buy-the-domain
+[custom-domain]: ../../app-service/manage-custom-dns-buy-domain.md#buy-an-app-service-domain
 [dns-zone]: ../../dns/dns-getstarted-cli.md
 [azds-yaml]: https://github.com/Azure/dev-spaces/blob/master/samples/BikeSharingApp/BikeSharingWeb/azds.yaml
 [azure-account-create]: https://azure.microsoft.com/free

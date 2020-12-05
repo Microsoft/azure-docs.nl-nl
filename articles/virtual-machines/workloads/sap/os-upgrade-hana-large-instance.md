@@ -14,18 +14,21 @@ ms.workload: infrastructure
 ms.date: 07/04/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 7c1b09cdcf987c7ed0e489a8a67f77a4099e39a9
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: cdc6dd49fe98085edf3c6fb16606b9f540b5a3a0
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94955460"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608687"
 ---
 # <a name="operating-system-upgrade"></a>Upgrade van besturings systeem
 In dit document worden de details van upgrades van besturings systemen op de HANA grote instanties beschreven.
 
 >[!NOTE]
 >De upgrade van het besturings systeem is de verantwoordelijkheid van de klant. micro soft Operations Support kan u begeleiden bij de belangrijkste gebieden die u tijdens de upgrade kunt bekijken. Neem ook contact op met de leverancier van uw besturings systeem voordat u een upgrade gaat plannen.
+
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de term *Black*, een term die micro soft niet meer gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
 
 Tijdens het inrichten van de HLI-eenheid installeert het micro soft Operations-team het besturings systeem.
 U moet de installatie van het besturings systeem (voor beeld: patches, afstemming, upgrades enz.) op de////-eenheid hand matig uitvoeren.

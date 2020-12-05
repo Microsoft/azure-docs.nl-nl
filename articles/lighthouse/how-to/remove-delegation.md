@@ -1,14 +1,14 @@
 ---
 title: Toegang tot een delegatie verwijderen
 description: Meer informatie over het verwijderen van de toegang tot resources die aan een service provider voor Azure Lighthouse zijn overgedragen.
-ms.date: 08/12/2020
+ms.date: 12/03/2020
 ms.topic: how-to
-ms.openlocfilehash: 72a2c49dde8cccfcc298d4128384a10bb7e8840f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d3442bb9fd2f6e7423fd4bf28cace1f7fd91ad80
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88167221"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608449"
 ---
 # <a name="remove-access-to-a-delegation"></a>Toegang tot een delegatie verwijderen
 
@@ -19,7 +19,7 @@ Het verwijderen van een overdracht kan worden uitgevoerd door een gebruiker in d
 > [!TIP]
 > Hoewel we in dit onderwerp naar service providers en klanten verwijzen, kunnen [bedrijven die meerdere tenants beheren](../concepts/enterprise.md) , dezelfde processen gebruiken.
 
-## <a name="customers"></a>Klanten
+## <a name="customers"></a>Customers
 
 Gebruikers in de Tenant van de klant die de [ingebouwde rol van eigenaar](../../role-based-access-control/built-in-roles.md#owner) voor een abonnement hebben, kunnen de toegang van de service provider tot dat abonnement (of de resource groepen in dat abonnement) verwijderen. Om dit te doen, kan een gebruiker in de Tenant van de klant naar de [pagina service providers](view-manage-service-providers.md#add-or-remove-service-provider-offers) van de Azure portal gaan, de aanbieding op het scherm van de **service provider** vinden en het prullenbak pictogram in de rij voor die aanbieding selecteren.
 
@@ -99,3 +99,4 @@ az managedservices assignment delete --assignment <id or full resourceId>
 
 - Meer informatie over [gedelegeerd Azure-resourcebeheer](../concepts/azure-delegated-resource-management.md).
 - [Bekijk en beheer klanten](view-manage-customers.md) door naar **mijn klanten** te gaan in de Azure Portal.
+- Meer informatie over het [bijwerken van een eerdere delegering](update-delegation.md).

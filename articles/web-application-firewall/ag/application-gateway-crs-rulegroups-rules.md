@@ -8,16 +8,19 @@ ms.service: web-application-firewall
 ms.date: 11/14/2019
 ms.author: victorh
 ms.topic: conceptual
-ms.openlocfilehash: 37e09612491d41887c5945920488569d3620bf0b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 890e2b972818cf9805623d94709ce5631b50aaf5
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85052019"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608602"
 ---
 # <a name="web-application-firewall-crs-rule-groups-and-rules"></a>CRS-regel groepen en-regels voor Web Application firewall
 
 Application Gateway Web Application Firewall (WAF) beschermt webtoepassingen tegen veelvoorkomende beveiligings problemen en aanvallen. Dit doet u door regels die zijn gedefinieerd op basis van de OWASP core Rule sets 3,1, 3,0 of 2.2.9. Deze regels kunnen per regel afzonderlijk worden uitgeschakeld. Dit artikel bevat de huidige regels en regel sets die worden aangeboden.
+
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de term *Black*, een term die micro soft niet meer gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
 
 ## <a name="core-rule-sets"></a>Core Rule Sets
 

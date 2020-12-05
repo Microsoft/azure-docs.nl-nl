@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/16/2020
 ms.author: radeltch
-ms.openlocfilehash: 5976649ee396d897b76713b7863668d92279612e
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 6b0504f5e4199ee3cd8e86660b866fddf2568485
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96484305"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608568"
 ---
 # <a name="high-availability-for-nfs-on-azure-vms-on-suse-linux-enterprise-server"></a>Hoge Beschik baarheid voor NFS op Azure Vm's op SUSE Linux Enterprise Server
 
@@ -53,6 +53,10 @@ ms.locfileid: "96484305"
 
 In dit artikel wordt beschreven hoe u de virtuele machines implementeert, de virtuele machines configureert, het cluster raamwerk installeert en een Maxi maal beschik bare NFS-server installeert die kan worden gebruikt om de gedeelde gegevens van een Maxi maal beschikbaar SAP-systeem op te slaan.
 In deze hand leiding wordt beschreven hoe u een Maxi maal beschik bare NFS-server instelt die wordt gebruikt door twee SAP-systemen, NW1 en NW2. De namen van de resources (bijvoorbeeld virtuele machines, virtuele netwerken) in het voor beeld aannemen dat u de SAP- [Bestands server sjabloon][template-file-server] hebt gebruikt met resource voorvoegsel **Prod**.
+
+
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de voor waarden *Slave* en *Master*, wat micro soft niet meer gebruikt. Wanneer de voor waarden van de software worden verwijderd, worden ze uit dit artikel verwijderd.
 
 Lees eerst de volgende SAP-opmerkingen en-documenten
 

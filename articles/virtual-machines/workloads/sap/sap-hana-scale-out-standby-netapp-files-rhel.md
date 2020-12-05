@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 06/15/2020
 ms.author: radeltch
-ms.openlocfilehash: f4693af9c29a36aad60b7b525fec024509a4d586
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: d2cc8487f9864a27c1a2b02ef6e846bc43727e27
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94958742"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608534"
 ---
 # <a name="deploy-a-sap-hana-scale-out-system-with-standby-node-on-azure-vms-by-using-azure-netapp-files-on-red-hat-enterprise-linux"></a>Een SAP HANA scale-out systeem met stand-by-knoop punt op virtuele Azure-machines implementeren met behulp van Azure NetApp Files op Red Hat Enterprise Linux 
 
@@ -59,6 +59,10 @@ ms.locfileid: "94958742"
 In dit artikel wordt beschreven hoe u een Maxi maal beschikbaar SAP HANA systeem implementeert in een scale-out configuratie met stand-by op Azure Red Hat Enterprise Linux virtuele machines (Vm's) met behulp van [Azure NetApp files](../../../azure-netapp-files/azure-netapp-files-introduction.md) voor de gedeelde opslag volumes.  
 
 In de voorbeeld configuraties, installatie opdrachten, enzovoort, is de HANA-instantie **03** en de Hana-systeem-id **HN1**. De voor beelden zijn gebaseerd op HANA 2,0 SP4 en Red Hat Enterprise Linux voor SAP 7,6. 
+
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de termen *Master* en *Slave*, termen die micro soft niet meer gebruikt. Wanneer deze voor waarden worden verwijderd uit de software, worden ze uit dit artikel verwijderd.
+
 
 Raadpleeg voordat u begint de volgende SAP-opmerkingen en-documenten:
 

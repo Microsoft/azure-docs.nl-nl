@@ -4,12 +4,12 @@ description: Leer hoe u uw functie-app kunt verbinden met Application Insights v
 ms.date: 8/31/2020
 ms.topic: how-to
 ms.custom: contperfq2, devx-track-azurecli
-ms.openlocfilehash: 0b8aae707f0fb055677af111f1e88c0a2e19b227
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 02d5ad2e9697c14818a985325267d7caea80f65e
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96175743"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96607123"
 ---
 # <a name="how-to-configure-monitoring-for-azure-functions"></a>Bewaking voor Azure Functions configureren
 
@@ -38,6 +38,9 @@ De Azure Functions-logboeken bevatten een *categorie* voor elk logboek. De categ
 | **`Host.Results`** | **aanvragen** | Deze door runtime gegenereerde logboeken geven aan dat het slagen of mislukken van een functie is geslaagd. Al deze logboeken worden geschreven op `Information` niveau. Als u filtert op `Warning` of hoger, worden deze gegevens niet weer gegeven. |
 | **`Microsoft`** | **traceringen** | Een volledig gekwalificeerde logboek categorie die een .NET runtime-onderdeel weerspiegelt dat door de host is aangeroepen.  |
 | **`Worker`** | **traceringen** | Logboeken die zijn gegenereerd door het werk proces van de taal voor non-.NET talen. De logboeken van de taal medewerker kunnen ook worden geregistreerd in een `Microsoft.*` categorie, zoals `Microsoft.Azure.WebJobs.Script.Workers.Rpc.RpcFunctionInvocationDispatcher` . Deze logboeken worden geschreven op `Information` niveau.|
+
+> [!NOTE]
+> Voor de functies van de .NET-klassen bibliotheek wordt ervan uitgegaan dat u en niet werkt met deze categorieën `ILogger` `ILogger<T>` . Zie de ILogger-documentatie voor [functies](functions-dotnet-class-library.md#ilogger)voor meer informatie. 
 
 # <a name="v1x"></a>[v1. x](#tab/v1)
 

@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/24/2020
 ms.author: radeltch
-ms.openlocfilehash: 1383db44922a044f5e51075b6e1feafa70c78009
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 13644872fca06ad8fc5806326736aea23e504520
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94958751"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608653"
 ---
 # <a name="deploy-a-sap-hana-scale-out-system-with-standby-node-on-azure-vms-by-using-azure-netapp-files-on-suse-linux-enterprise-server"></a>Een SAP HANA scale-out systeem met stand-by-knoop punt op virtuele Azure-machines implementeren met behulp van Azure NetApp Files op SUSE Linux Enterprise Server 
 
@@ -655,6 +655,9 @@ In dit voor beeld voor de implementatie van SAP HANA in scale-out configuratie m
    > Houd rekening met SAP Note [2631285](https://launchpad.support.sap.com/#/notes/2631285). 
 
 ## <a name="test-sap-hana-failover"></a>SAP HANA failover testen 
+
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de termen *Master* en *Slave*, termen die micro soft niet meer gebruikt. Wanneer deze voor waarden worden verwijderd uit de software, worden ze uit dit artikel verwijderd.
 
 1. Een knoop punt crash simuleren op een SAP HANA worker-knoop punt. Ga als volgt te werk: 
 

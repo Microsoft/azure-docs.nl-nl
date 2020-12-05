@@ -3,22 +3,22 @@ title: Aangepaste container-CI/CD van GitHub-acties
 description: Meer informatie over het gebruik van GitHub-acties voor het implementeren van uw aangepaste Linux-container voor App Service van een CI/CD-pijp lijn.
 ms.devlang: na
 ms.topic: article
-ms.date: 10/03/2020
+ms.date: 12/04/2020
 ms.author: jafreebe
 ms.reviewer: ushan
 ms.custom: github-actions-azure
-ms.openlocfilehash: 068fc9dcb9a4f4a62c2dd879bf8144097452f1e0
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 76d82695f0f43638e840589c52d6713ae36c1608
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93099025"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96607803"
 ---
 # <a name="deploy-a-custom-container-to-app-service-using-github-actions"></a>Een aangepaste container implementeren op App Service met behulp van GitHub-acties
 
 [Github-acties](https://help.github.com/en/articles/about-github-actions) bieden u de flexibiliteit om een geautomatiseerde werk stroom voor het ontwikkelen van software te bouwen. Met de [actie Azure Web Deploy](https://github.com/Azure/webapps-deploy)kunt u uw werk stroom automatiseren om aangepaste containers te implementeren op [app service](overview.md) met behulp van github-acties.
 
-Een werk stroom wordt gedefinieerd door een YAML-bestand (. yml) in het `/.github/workflows/` pad in uw opslag plaats. Deze definitie bevat de verschillende stappen en para meters in de werk stroom.
+Een werkstroom wordt gedefinieerd door een YAML-bestand (.yml) in het pad `/.github/workflows/` in uw opslagplaats. Deze definitie bevat de verschillende stappen en para meters in de werk stroom.
 
 Voor een Azure App Service container werk stroom heeft het bestand drie secties:
 
@@ -31,10 +31,10 @@ Voor een Azure App Service container werk stroom heeft het bestand drie secties:
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-- Een GitHub-account. Als u er nog geen hebt, kunt u zich [gratis](https://github.com/join)aanmelden.  
-- Een werk container register en Azure App Service-app voor containers. In dit voor beeld wordt Azure Container Registry gebruikt. 
+- Een GitHub-account. Als u geen account hebt, kunt u zich registreren voor een [gratis](https://github.com/join) account. U moet code in een GitHub-opslag plaats hebben om te implementeren in Azure App Service. 
+- Een werk container register en Azure App Service-app voor containers. In dit voor beeld wordt Azure Container Registry gebruikt. Zorg ervoor dat u de volledige implementatie voor het Azure App Service van containers hebt voltooid. In tegens telling tot reguliere web apps hebben web apps for containers geen standaard landings pagina. Publiceer de container voor een werkend voor beeld.
     - [Meer informatie over het maken van een container Node.js toepassing met behulp van docker, het pushen van de container installatie kopie naar een REGI ster en het implementeren van de installatie kopie naar Azure App Service](/azure/developer/javascript/tutorial-vscode-docker-node-01)
-
+        
 ## <a name="generate-deployment-credentials"></a>Genereer implementatiereferenties
 
 De aanbevolen manier om te verifiëren met Azure-app Services voor GitHub-acties is met een publicatie profiel. U kunt ook verifiëren met een Service-Principal, maar voor het proces zijn meer stappen vereist. 
@@ -47,10 +47,10 @@ Een publicatie profiel is een referentie op app-niveau. Stel uw publicatie profi
 
 1. Ga naar de app-service in de Azure Portal. 
 
-1. Selecteer op de pagina **overzicht** de optie **publicatie profiel ophalen** .
+1. Selecteer op de pagina **overzicht** de optie **publicatie profiel ophalen**.
 
     > [!NOTE]
-    > Vanaf 2020 oktober moeten voor Linux-web-apps de app-instelling `WEBSITE_WEBDEPLOY_USE_SCM` worden ingesteld op `true` **voordat het bestand wordt gedownload** . Deze vereiste wordt in de toekomst verwijderd.
+    > Vanaf 2020 oktober moeten voor Linux-web-apps de app-instelling `WEBSITE_WEBDEPLOY_USE_SCM` worden ingesteld op `true` **voordat het bestand wordt gedownload**. Deze vereiste wordt in de toekomst verwijderd. Zie [een app service-app configureren in de Azure Portal](/azure/app-service/configure-common)voor meer informatie over het configureren van algemene Web-app-instellingen.  
 
 1. Sla het gedownloade bestand op. U gebruikt de inhoud van het bestand om een GitHub-geheim te maken.
 
@@ -64,7 +64,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
                             --sdk-auth
 ```
 
-Vervang in het voor beeld de tijdelijke aanduidingen door de abonnements-ID, naam van de resource groep en de naam van de app. De uitvoer is een JSON-object met de roltoewijzings referenties die toegang bieden tot uw App Service-app. Kopieer dit JSON-object voor later.
+Vervang in het voor beeld de tijdelijke aanduidingen door de abonnements-ID, naam van de resource groep en de naam van de app. De uitvoer is een JSON-object met de roltoewijzings referenties die toegang bieden tot uw App Service-app. Kopieer dit JSON-object voor later gebruik.
 
 ```output 
   {
@@ -80,26 +80,11 @@ Vervang in het voor beeld de tijdelijke aanduidingen door de abonnements-ID, naa
 > Het is altijd een goed idee om minimale toegang te verlenen. Het bereik in het vorige voor beeld is beperkt tot de specifieke App Service-app en niet de hele resource groep.
 
 ---
-
-## <a name="configure-the-github-secret"></a>Het GitHub-geheim configureren
-
-In [github](https://github.com/)gaat u naar uw opslag plaats, selecteert u **instellingen > geheimen > een nieuw geheim toe te voegen** .
-
-Plak de inhoud van de JSON-uitvoer als de waarde van de geheime variabele. Geef het geheim de naam zoals `AZURE_CREDENTIALS` .
-
-Wanneer u het werkstroombestand later configureert, gebruikt u het geheim voor de invoer `creds` van de Azure-aanmeldingsactie. Bijvoorbeeld:
-
-```yaml
-- uses: azure/login@v1
-  with:
-    creds: ${{ secrets.AZURE_CREDENTIALS }}
-```
-
 ## <a name="configure-the-github-secret-for-authentication"></a>Het GitHub-geheim voor verificatie configureren
 
 # <a name="publish-profile"></a>[Profiel publiceren](#tab/publish-profile)
 
-In [github](https://github.com/)gaat u naar uw opslag plaats, selecteert u **instellingen > geheimen > een nieuw geheim toe te voegen** .
+In [github](https://github.com/)gaat u naar uw opslag plaats, selecteert u **instellingen > geheimen > een nieuw geheim toe te voegen**.
 
 Als u [referenties op app-niveau](#generate-deployment-credentials)wilt gebruiken, plakt u de inhoud van het gedownloade bestand met het publicatie profiel in het veld waarde van het geheim. Geef het geheim een naam `AZURE_WEBAPP_PUBLISH_PROFILE` .
 
@@ -113,7 +98,7 @@ Wanneer u uw GitHub-werk stroom configureert, gebruikt u de `AZURE_WEBAPP_PUBLIS
 
 # <a name="service-principal"></a>[Service-principal](#tab/service-principal)
 
-In [github](https://github.com/)gaat u naar uw opslag plaats, selecteert u **instellingen > geheimen > een nieuw geheim toe te voegen** .
+In [github](https://github.com/)gaat u naar uw opslag plaats, selecteert u **instellingen > geheimen > een nieuw geheim toe te voegen**.
 
 Als u [referenties op gebruikers niveau](#generate-deployment-credentials)wilt gebruiken, plakt u de volledige JSON-uitvoer van de Azure cli-opdracht in het veld waarde van het geheim. Geef het geheim de naam zoals `AZURE_CREDENTIALS` .
 
@@ -129,9 +114,9 @@ Wanneer u het werkstroombestand later configureert, gebruikt u het geheim voor d
 
 ## <a name="configure-github-secrets-for-your-registry"></a>GitHub-geheimen voor uw REGI ster configureren
 
-Geef geheimen op die moeten worden gebruikt met de actie aanmelden bij docker. 
+Geef geheimen op die moeten worden gebruikt met de actie aanmelden bij docker. In het voor beeld in dit document wordt Azure Container Registry gebruikt voor het container register. 
 
-1. Ga in de Azure Portal of docker naar uw container en kopieer de gebruikers naam en het wacht woord. 
+1. Ga in de Azure Portal of docker naar uw container en kopieer de gebruikers naam en het wacht woord. U vindt de Azure container Registry gebruikers naam en het wacht woord in de Azure portal onder **instellingen**  >  **toegangs sleutels** voor uw REGI ster. 
 
 2. Definieer een nieuw geheim voor de register gebruikersnaam met de naam `REGISTRY_USERNAME` . 
 
@@ -163,7 +148,7 @@ jobs:
         docker push mycontainer.azurecr.io/myapp:${{ github.sha }}     
 ```
 
-U kunt [docker-aanmelding](https://github.com/azure/docker-login) ook gebruiken om op hetzelfde moment aan te melden bij meerdere container registers. Dit voor beeld bevat twee nieuwe GitHub-geheimen voor verificatie met docker.io.
+U kunt [docker-aanmelding](https://github.com/azure/docker-login) ook gebruiken om op hetzelfde moment aan te melden bij meerdere container registers. Dit voor beeld bevat twee nieuwe GitHub-geheimen voor verificatie met docker.io. In het voor beeld wordt ervan uitgegaan dat er een Dockerfile is op het hoofd niveau van het REGI ster. 
 
 ```yml
 name: Linux Container Node Workflow
@@ -248,7 +233,7 @@ jobs:
     steps:
     # checkout the repo
     - name: 'Checkout GitHub Action' 
-      uses: actions/checkout@master
+      uses: actions/checkout@main
     
     - name: 'Login via Azure CLI'
       uses: azure/login@v1

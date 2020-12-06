@@ -1,23 +1,14 @@
 ---
 title: Programmatisch Azure-Dash boards maken
 description: Gebruik een dash board in de Azure Portal als sjabloon om programmatisch Azure-Dash boards te maken. Bevat een JSON-verwijzing.
-services: azure-portal
-documentationcenter: ''
-author: mgblythe
-manager: mtillman
-ms.service: azure-portal
-ms.devlang: NA
 ms.topic: how-to
-ms.tgt_pltfrm: NA
-ms.workload: na
 ms.date: 12/4/2020
-ms.author: mblythe
-ms.openlocfilehash: 7e6819b01af3fc9357417a838fefce7f2c73dcce
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
+ms.openlocfilehash: e69d3f3cea0ff63f94e797047eb10b9583678b1b
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96558213"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745805"
 ---
 # <a name="programmatically-create-azure-dashboards"></a>Programmatisch Azure-Dash boards maken
 

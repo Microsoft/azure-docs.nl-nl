@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 11/06/2020
-ms.openlocfilehash: 8a8b04501bf81f41fb87de8fc0ce42eb4e7fda93
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 8469cad02009d054bd8ba97fb4aabfdae84ef842
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94370082"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96744615"
 ---
 # <a name="configure-a-solution-template-plan"></a>Een sjabloon plan voor oplossingen configureren
 
@@ -96,4 +96,4 @@ De acties die beschikbaar zijn in de kolom **actie** van het tabblad **plan over
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Uw Azure-toepassing-aanbieding testen en publiceren](create-new-azure-apps-offer-test-publish.md).
-- Meer informatie [over hoe u uw Azure-toepassing-aanbod kunt afhandelen](create-new-azure-apps-offer-marketing.md) via het samen verkopen met micro soft en door verkopen via csp's-Program ma's.
+- Meer informatie [over het verkopen van uw Azure-toepassing-aanbod](create-new-azure-apps-offer-marketing.md) via het samen verkopen met micro soft en door verkopen via csp's-Program ma's.

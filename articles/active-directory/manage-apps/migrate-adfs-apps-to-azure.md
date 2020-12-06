@@ -14,12 +14,12 @@ ms.date: 04/01/2020
 ms.author: kenwith
 ms.reviewer: baselden
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ab3b655d59e2cb8c6773fa1a34a08638e6926475
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: e15009dd935d91971ce4212ff44b67a1ca6fa363
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96180656"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745371"
 ---
 # <a name="moving-application-authentication-from-active-directory-federation-services-to-azure-active-directory"></a>Toepassingsverificatie verplaatsen van Active Directory Federation Services naar Azure Active Directory
 
@@ -28,7 +28,7 @@ ms.locfileid: "96180656"
 > [!TIP]
 > Dit artikel is geschreven voor een doel groep van ontwikkel aars. Project managers en beheerders die de overstap naar Azure AD van een toepassing plannen, moeten overwegen onze [migratie van verificatie van toepassingen naar Azure AD](https://aka.ms/migrateapps/whitepaper) White Paper (PDF) te lezen.
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 
 Als u een on-premises map hebt die gebruikers accounts bevat, hebt u waarschijnlijk veel toepassingen die gebruikers verifiëren. Elk van deze apps is geconfigureerd voor gebruikers om toegang te krijgen tot het gebruik van hun identiteit.
 
@@ -293,7 +293,7 @@ In de [Azure Portal](https://portal.azure.com/)maakt u eerst [een gebruikers gro
 
 Expliciete gebruikers autorisatie in AD FS:
 
-![Scherm afbeelding toont het dialoog venster regel bewerken voor de claim regel domein Administrators toestaan met een binnenkomend claim type Primary S I D.](media/migrate-adfs-apps-to-azure/authorize-a-specific-user-1.png)
+![Scherm afbeelding toont het dialoog venster regel bewerken voor de regel een specifieke gebruiker claim toestaan met een binnenkomend claim type Primary S I D.](media/migrate-adfs-apps-to-azure/authorize-a-specific-user-1.png)
 
 Dit is hoe de regel wordt toegewezen aan Azure AD:
 

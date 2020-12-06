@@ -1,24 +1,15 @@
 ---
 title: Azure Portal Dash boards delen met behulp van Azure op rollen gebaseerd toegangs beheer
 description: In dit artikel wordt uitgelegd hoe u een dash board kunt delen in de Azure Portal met behulp van Azure op rollen gebaseerd toegangs beheer.
-services: azure-portal
-documentationcenter: ''
-author: mgblythe
-manager: mtillman
 ms.assetid: 8908a6ce-ae0c-4f60-a0c9-b3acfe823365
-ms.service: azure-portal
-ms.devlang: NA
 ms.topic: how-to
-ms.tgt_pltfrm: NA
-ms.workload: na
 ms.date: 03/23/2020
-ms.author: mblythe
-ms.openlocfilehash: b74cae439ce351a4d720f215679cc0802eebe898
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: de2efd75d07c3dc7df771aad1bd9c73453dad212
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92092202"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745975"
 ---
 # <a name="share-azure-dashboards-by-using-azure-role-based-access-control"></a>Azure-Dash boards delen met behulp van Azure op rollen gebaseerd toegangs beheer
 
@@ -41,7 +32,7 @@ Met op rollen gebaseerd toegangs beheer (Azure RBAC) van Azure kunt u gebruikers
 
 De machtigingen die u toewijst, nemen toe van het abonnement tot de resource. Het gepubliceerde dash board is een resource. Mogelijk hebt u al gebruikers die zijn toegewezen aan rollen voor het abonnement dat van toepassing is op het gepubliceerde dash board.
 
-Stel dat u een Azure-abonnement hebt en dat er aan verschillende leden van uw team de rollen van *eigenaar*, *bijdrager*of *lezer* voor het abonnement zijn toegewezen. Gebruikers die eigen aars of mede werkers zijn, kunnen Dash boards in het abonnement weer geven, bekijken, maken, wijzigen of verwijderen. Gebruikers die lezers kunnen weer geven en bekijken, maar deze niet wijzigen of verwijderen. Gebruikers met een lees toegang kunnen lokale bewerkingen op een gepubliceerd dash board maken, zoals bij het oplossen van een probleem, maar ze kunnen deze wijzigingen niet naar de server publiceren. Ze kunnen zelf een persoonlijk exemplaar van het dash board maken.
+Stel dat u een Azure-abonnement hebt en dat er aan verschillende leden van uw team de rollen van *eigenaar*, *bijdrager* of *lezer* voor het abonnement zijn toegewezen. Gebruikers die eigen aars of mede werkers zijn, kunnen Dash boards in het abonnement weer geven, bekijken, maken, wijzigen of verwijderen. Gebruikers die lezers kunnen weer geven en bekijken, maar deze niet wijzigen of verwijderen. Gebruikers met een lees toegang kunnen lokale bewerkingen op een gepubliceerd dash board maken, zoals bij het oplossen van een probleem, maar ze kunnen deze wijzigingen niet naar de server publiceren. Ze kunnen zelf een persoonlijk exemplaar van het dash board maken.
 
 U kunt ook machtigingen toewijzen aan de resource groep die verschillende Dash boards of aan een afzonderlijk dash board bevat. U kunt bijvoorbeeld besluiten dat een groep gebruikers beperkte machtigingen moet hebben voor het abonnement, maar wel meer toegang tot een bepaald dash board. Wijs deze gebruikers toe aan een rol voor dat dash board.
 
@@ -51,11 +42,11 @@ Stel dat u een dash board configureert dat u wilt delen met een groep gebruikers
 
 Voordat u toegang toewijst, moet u het dash board publiceren.
 
-1. Selecteer **delen**in het dash board.
+1. Selecteer **delen** in het dash board.
 
     ![share voor uw dash board selecteren](./media/azure-portal-dashboard-share-access/share-dashboard-for-access-control.png)
 
-1. Selecteer in **delen en toegang beheren**de optie **publiceren**.
+1. Selecteer in **delen en toegang beheren** de optie **publiceren**.
 
     ![uw dash board publiceren](./media/azure-portal-dashboard-share-access/publish-dashboard-for-access-control.png)
 
@@ -69,13 +60,13 @@ U kunt een groep gebruikers toewijzen aan een rol voor dat dash board.
 
 1. Nadat u het dash board hebt gepubliceerd, selecteert u de optie **delen** of **delen ongedaan** maken voor toegang tot **delen en toegangs beheer**.
 
-1. Selecteer in **delen en toegangs beheer**de optie **gebruikers beheren**.
+1. Selecteer in **delen en toegangs beheer** de optie **gebruikers beheren**.
 
     ![gebruikers beheren voor een dash board](./media/azure-portal-dashboard-share-access/manage-users-for-access-control.png)
 
 1. Selecteer **roltoewijzingen** om bestaande gebruikers weer te geven waaraan al een rol is toegewezen voor dit dash board.
 
-1. Selecteer **toevoegen** en **roltoewijzing toevoegen**om een nieuwe gebruiker of groep toe te voegen.
+1. Selecteer **toevoegen** en **roltoewijzing toevoegen** om een nieuwe gebruiker of groep toe te voegen.
 
     ![een gebruiker toevoegen voor toegang tot het dash board](./media/azure-portal-dashboard-share-access/manage-users-existing-users.png)
 

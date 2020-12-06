@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 09/24/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: inbarc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3854bb410aba8da65b47a335bf13f1dcc51a0180
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 40751b7864cc62d17836ab6d57cd106f6904f64a
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94839893"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96744105"
 ---
 # <a name="data-residency-and-customer-data-for-azure-ad-multi-factor-authentication"></a>Gegevens locatie en klant gegevens voor Azure AD-Multi-Factor Authentication
 
@@ -45,7 +45,7 @@ Deze informatie wordt 90 dagen bewaard.
 
 Azure AD Multi-Factor Authentication registreert geen persoonlijke gegevens zoals de gebruikers naam, het telefoon nummer of het IP-adres, maar er is een *UserObjectId* waarmee multi-factor Authentication pogingen voor gebruikers worden geïdentificeerd. Logboek gegevens worden 30 dagen opgeslagen.
 
-### <a name="azure-ad-multi-factor-authentication"></a>Azure AD-Multi-Factor Authentication
+### <a name="azure-ad-multi-factor-authentication"></a>Azure AD Multi-Factor Authentication
 
 Voor open bare Azure-Clouds, met uitzonde ring van Azure B2C-verificatie, NPS-extensie en Windows Server 2016-of 2019 AD FS-adapter, worden de volgende persoons gegevens opgeslagen:
 

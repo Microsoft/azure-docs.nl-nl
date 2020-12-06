@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 11/06/2020
-ms.openlocfilehash: 61ee0b769664d1f574177e27b5b1fb10e9845035
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: a67a721b8d94112347282e1cd9be4d43f4ac85da
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96463106"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96744632"
 ---
 # <a name="configure-a-managed-application-plan"></a>Een beheerd toepassings abonnement configureren
 
@@ -188,4 +188,4 @@ De acties die beschikbaar zijn in de kolom **actie** van het tabblad **plan over
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Uw Azure-toepassing-aanbieding testen en publiceren](create-new-azure-apps-offer-test-publish.md).
-- Meer informatie [over hoe u uw Azure-toepassing-aanbod kunt afhandelen](create-new-azure-apps-offer-marketing.md) via het samen verkopen met micro soft en door verkopen via csp's-Program ma's.
+- Meer informatie [over het verkopen van uw Azure-toepassing-aanbod](create-new-azure-apps-offer-marketing.md) via het samen verkopen met micro soft en door verkopen via csp's-Program ma's.

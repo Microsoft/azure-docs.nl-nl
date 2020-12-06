@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 07/20/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b79eb842105734f0f6c145884d73f886a02dbbbc
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 0874f6aeb74b028e92e10d972757cc5971735e39
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96348155"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96744309"
 ---
 # <a name="self-service-password-reset-frequently-asked-questions"></a>Veelgestelde vragen over self-service voor wachtwoord herstel
 

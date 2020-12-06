@@ -6,15 +6,15 @@ author: jovanpop-msft
 ms.service: synapse-analytics
 ms.topic: how-to
 ms.subservice: sql
-ms.date: 09/15/2020
+ms.date: 12/04/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: a7e9cdb18d109abeef7d7d7237444ac55f9e7da1
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 129534727248ff05b5d38da60dead7903d9a5815
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576346"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96744462"
 ---
 # <a name="query-azure-cosmos-db-data-with-a-serverless-sql-pool-in-azure-synapse-link-preview"></a>Azure Cosmos DB gegevens opvragen met een serverloze SQL-groep in azure Synapse link preview
 
@@ -98,12 +98,13 @@ Volg de instructies in dit artikel voor informatie over het opvragen van Azure C
 
 * Een Azure Cosmos DB database account dat de [koppeling van Azure Synapse is ingeschakeld](../../cosmos-db/configure-synapse-link.md).
 * Een Azure Cosmos DB-Data Base met de naam `covid` .
-* Twee Azure Cosmos DB containers `EcdcCases` `Cord19` met de naam en geladen met de voor gaande voor beelden van gegevens sets.
+* Twee Azure Cosmos DB containers `Ecdc` `Cord19` met de naam en geladen met de voor gaande voor beelden van gegevens sets.
+
+U kunt de volgende connection string gebruiken voor test doeleinden: `Account=synapselink-cosmosdb-sqlsample;Database=covid;Key=s5zarR2pT0JWH9k8roipnWxUYBegOuFGjJpSjGlR36y86cW0GQ6RaaG8kGjsRAQoWMw1QKTkkX8HQtFpJjC8Hg==` . Houd er rekening mee dat deze verbinding geen prestaties garandeert omdat dit account zich mogelijk in de externe regio bevindt in vergelijking met uw Synapse SQL-eind punt.
 
 ## <a name="explore-azure-cosmos-db-data-with-automatic-schema-inference"></a>Azure Cosmos DB gegevens verkennen met een automatische schema-deinterferentie
 
 De gemakkelijkste manier om gegevens in Azure Cosmos DB te verkennen, is door gebruik te maken van de functie voor automatische schema-deinterferentie. Door de `WITH` component van de instructie te weglaten `OPENROWSET` , kunt u het schema van de analytische opslag van de Azure Cosmos DB-container door geven aan de serverloze SQL-groep.
-
 
 ### <a name="openrowset-with-key"></a>[OPENROWSET met sleutel](#tab/openrowset-key)
 
@@ -111,8 +112,8 @@ De gemakkelijkste manier om gegevens in Azure Cosmos DB te verkennen, is door ge
 SELECT TOP 10 *
 FROM OPENROWSET( 
        'CosmosDB',
-       'account=MyCosmosDbAccount;database=covid;region=westus2;key=C0Sm0sDbKey==',
-       EcdcCases) as documents
+       'Account=synapselink-cosmosdb-sqlsample;Database=covid;Key=s5zarR2pT0JWH9k8roipnWxUYBegOuFGjJpSjGlR36y86cW0GQ6RaaG8kGjsRAQoWMw1QKTkkX8HQtFpJjC8Hg==',
+       Ecdc) as documents
 ```
 
 ### <a name="openrowset-with-credential"></a>[OPENROWSET met referentie](#tab/openrowset-credential)
@@ -120,20 +121,20 @@ FROM OPENROWSET(
 ```sql
 /*  Setup - create server-level or database scoped credential with Azure Cosmos DB account key:
     CREATE CREDENTIAL MyCosmosDbAccountCredential
-    WITH IDENTITY = 'SHARED ACCESS SIGNATURE', SECRET = 'C0Sm0sDbKey==';
+    WITH IDENTITY = 'SHARED ACCESS SIGNATURE', SECRET = 's5zarR2pT0JWH9k8roipnWxUYBegOuFGjJpSjGlR36y86cW0GQ6RaaG8kGjsRAQoWMw1QKTkkX8HQtFpJjC8Hg==';
 */
 SELECT TOP 10 *
 FROM OPENROWSET(
       PROVIDER = 'CosmosDB',
-      CONNECTION = 'account=MyCosmosDbAccount;database=covid;region=westus2',
-      OBJECT = 'EcdcCases',
+      CONNECTION = 'Account=synapselink-cosmosdb-sqlsample;Database=covid',
+      OBJECT = 'Ecdc',
       SERVER_CREDENTIAL = 'MyCosmosDbAccountCredential'
     ) with ( date_rep varchar(20), cases bigint, geo_id varchar(6) ) as rows
 ```
 
 ---
 
-In het vorige voor beeld hebben we de serverloze SQL-groep geïnstrueerd om verbinding te maken met de `covid` Data base in het Azure Cosmos DB account dat is `MyCosmosDbAccount` geverifieerd met behulp van de Azure Cosmos DB sleutel (de pop in het vorige voor beeld). Vervolgens hebben we het `EcdcCases` analytische archief van de container in de `West US 2` regio geopend. Omdat er geen projectie van specifieke eigenschappen is, retourneert de `OPENROWSET` functie alle eigenschappen uit de Azure Cosmos DB items.
+In het vorige voor beeld hebben we de serverloze SQL-groep geïnstrueerd om verbinding te maken met de `covid` Data base in het Azure Cosmos DB account dat is `MyCosmosDbAccount` geverifieerd met behulp van de Azure Cosmos DB sleutel (de pop in het vorige voor beeld). Vervolgens hebben we het `Ecdc` analytische archief van de container in de `West US 2` regio geopend. Omdat er geen projectie van specifieke eigenschappen is, retourneert de `OPENROWSET` functie alle eigenschappen uit de Azure Cosmos DB items.
 
 Ervan uitgaande dat de items in de Azure Cosmos DB container `date_rep` , `cases` , en `geo_id` Eigenschappen, de resultaten van deze query worden weer gegeven in de volgende tabel:
 
@@ -149,7 +150,7 @@ Als u gegevens uit de andere container in dezelfde Azure Cosmos DB-Data Base wil
 SELECT TOP 10 *
 FROM OPENROWSET( 
        'CosmosDB',
-       'account=MyCosmosDbAccount;database=covid;region=westus2;key=C0Sm0sDbKey==',
+       'Account=synapselink-cosmosdb-sqlsample;Database=covid;Key=s5zarR2pT0JWH9k8roipnWxUYBegOuFGjJpSjGlR36y86cW0GQ6RaaG8kGjsRAQoWMw1QKTkkX8HQtFpJjC8Hg==',
        Cord19) as cord19
 ```
 
@@ -174,21 +175,21 @@ Deze platte JSON-documenten in Azure Cosmos DB kunnen worden weer gegeven als ee
 SELECT TOP 10 *
 FROM OPENROWSET(
       'CosmosDB',
-      'account=MyCosmosDbAccount;database=covid;region=westus2;key=C0Sm0sDbKey==',
-       EcdcCases
+      'Account=synapselink-cosmosdb-sqlsample;Database=covid;Key=s5zarR2pT0JWH9k8roipnWxUYBegOuFGjJpSjGlR36y86cW0GQ6RaaG8kGjsRAQoWMw1QKTkkX8HQtFpJjC8Hg==',
+       Ecdc
     ) with ( date_rep varchar(20), cases bigint, geo_id varchar(6) ) as rows
 ```
 ### <a name="openrowset-with-credential"></a>[OPENROWSET met referentie](#tab/openrowset-credential)
 ```sql
 /*  Setup - create server-level or database scoped credential with Azure Cosmos DB account key:
     CREATE CREDENTIAL MyCosmosDbAccountCredential
-    WITH IDENTITY = 'SHARED ACCESS SIGNATURE', SECRET = 'C0Sm0sDbKey==';
+    WITH IDENTITY = 'SHARED ACCESS SIGNATURE', SECRET = 's5zarR2pT0JWH9k8roipnWxUYBegOuFGjJpSjGlR36y86cW0GQ6RaaG8kGjsRAQoWMw1QKTkkX8HQtFpJjC8Hg==';
 */
 SELECT TOP 10 *
 FROM OPENROWSET(
       PROVIDER = 'CosmosDB',
-      CONNECTION = 'account=MyCosmosDbAccount;database=covid;region=westus2',
-      OBJECT = 'EcdcCases',
+      CONNECTION = 'Account=synapselink-cosmosdb-sqlsample;Database=covid',
+      OBJECT = 'Ecdc',
       SERVER_CREDENTIAL = 'MyCosmosDbAccountCredential'
     ) with ( date_rep varchar(20), cases bigint, geo_id varchar(6) ) as rows
 ```
@@ -209,14 +210,14 @@ Wanneer u het schema hebt geïdentificeerd, kunt u een weer gave op uw Azure Cos
 
 ```sql
 CREATE CREDENTIAL MyCosmosDbAccountCredential
-WITH IDENTITY = 'SHARED ACCESS SIGNATURE', SECRET = 'C0Sm0sDbKey==';
+WITH IDENTITY = 'SHARED ACCESS SIGNATURE', SECRET = 's5zarR2pT0JWH9k8roipnWxUYBegOuFGjJpSjGlR36y86cW0GQ6RaaG8kGjsRAQoWMw1QKTkkX8HQtFpJjC8Hg==';
 GO
-CREATE OR ALTER VIEW EcdcCases
+CREATE OR ALTER VIEW Ecdc
 AS SELECT *
 FROM OPENROWSET(
       PROVIDER = 'CosmosDB',
-      CONNECTION = 'account=MyCosmosDbAccount;database=covid;region=westus2',
-      OBJECT = 'EcdcCases',
+      CONNECTION = 'Account=synapselink-cosmosdb-sqlsample;Database=covid',
+      OBJECT = 'Ecdc',
       SERVER_CREDENTIAL = 'MyCosmosDbAccountCredential'
     ) with ( date_rep varchar(20), cases bigint, geo_id varchar(6) ) as rows
 ```
@@ -241,41 +242,28 @@ De gegevensset van de [kabel-19](https://azure.microsoft.com/services/open-datas
 }
 ```
 
-De geneste objecten en matrices in Azure Cosmos DB worden weer gegeven als JSON-teken reeksen in het query resultaat wanneer de `OPENROWSET` functie deze leest. Een optie voor het lezen van de waarden van deze complexe typen als SQL-kolommen is het gebruik van SQL JSON-functies:
+De geneste objecten en matrices in Azure Cosmos DB worden weer gegeven als JSON-teken reeksen in het query resultaat wanneer de `OPENROWSET` functie deze leest. U kunt de paden naar geneste waarden in de objecten opgeven wanneer u de- `WITH` component gebruikt:
 
 ```sql
-SELECT
-    title = JSON_VALUE(metadata, '$.title'),
-    authors = JSON_QUERY(metadata, '$.authors'),
-    first_author_name = JSON_VALUE(metadata, '$.authors[0].first')
-FROM
-    OPENROWSET(
-      'CosmosDB',
-      'account=MyCosmosDbAccount;database=covid;region=westus2;key=C0Sm0sDbKey==',
-       Cord19
-    WITH ( metadata varchar(MAX) ) AS docs;
+SELECT TOP 10 *
+FROM OPENROWSET( 
+       'CosmosDB',
+       'Account=synapselink-cosmosdb-sqlsample;Database=covid;Key=s5zarR2pT0JWH9k8roipnWxUYBegOuFGjJpSjGlR36y86cW0GQ6RaaG8kGjsRAQoWMw1QKTkkX8HQtFpJjC8Hg==',
+       Cord19)
+WITH (  paper_id    varchar(8000),
+        title        varchar(1000) '$.metadata.title',
+        metadata     varchar(max),
+        authors      varchar(max) '$.metadata.authors'
+) AS docs;
 ```
 
 Het resultaat van deze query kan eruitzien als in de volgende tabel:
 
-| title | verbergen | first_autor_name |
+| paper_id | title | metagegevens | verbergen |
 | --- | --- | --- |
-| Aanvullende informatie een eco-epidemi... |   `[{"first":"Julien","last":"Mélade","suffix":"","affiliation":{"laboratory":"Centre de Recher…` | Julien |  
-
-Als alternatief kunt u ook de paden naar geneste waarden in de objecten opgeven wanneer u de- `WITH` component gebruikt:
-
-```sql
-SELECT
-    *
-FROM
-    OPENROWSET(
-      'CosmosDB',
-      'account=MyCosmosDbAccount;database=covid;region=westus2;key=C0Sm0sDbKey==',
-       Cord19
-    WITH ( title varchar(1000) '$.metadata.title',
-           authors varchar(max) '$.metadata.authors'
-    ) AS docs;
-```
+| bb11206963e831f... | Aanvullende informatie een eco-epidemi... | `{"title":"Supplementary Informati…` | `[{"first":"Julien","last":"Mélade","suffix":"","af…`| 
+| bb1206963e831f1... | Het gebruik van Convalescent sera in ongestoorde E... | `{"title":"The Use of Convalescent…` | `[{"first":"Antonio","last":"Lavazza","suffix":"", …` |
+| bb378eca9aac649... | Tylosema esculentum (Marama) Buiser en B... | `{"title":"Tylosema esculentum (Ma…` | `[{"first":"Walter","last":"Chingwaru","suffix":"",…` | 
 
 Meer informatie over het analyseren van [complexe gegevens typen in azure Synapse-koppeling](../how-to-analyze-complex-schema.md) en [geneste structuren in een serverloze SQL-pool](query-parquet-nested-types.md).
 
@@ -315,7 +303,7 @@ SELECT
 FROM
     OPENROWSET(
       'CosmosDB',
-      'account=MyCosmosDbAccount;database=covid;region=westus2;key=C0Sm0sDbKey==',
+      'Account=synapselink-cosmosdb-sqlsample;Database=covid;Key=s5zarR2pT0JWH9k8roipnWxUYBegOuFGjJpSjGlR36y86cW0GQ6RaaG8kGjsRAQoWMw1QKTkkX8HQtFpJjC8Hg==',
        Cord19
     ) WITH ( title varchar(1000) '$.metadata.title',
              authors varchar(max) '$.metadata.authors' ) AS docs
@@ -365,7 +353,7 @@ SELECT *
 FROM OPENROWSET(
       'CosmosDB',
       'account=MyCosmosDbAccount;database=covid;region=westus2;key=C0Sm0sDbKey==',
-       EcdcCases
+       Ecdc
     ) as rows
 ```
 
@@ -400,7 +388,7 @@ SELECT geo_id, cases = SUM(cases)
 FROM OPENROWSET(
       'CosmosDB'
       'account=MyCosmosDbAccount;database=covid;region=westus2;key=C0Sm0sDbKey==',
-       EcdcCases
+       Ecdc
     ) WITH ( geo_id VARCHAR(50) '$.geo_id.string',
              cases INT '$.cases.int32'
     ) as rows
@@ -416,7 +404,7 @@ SELECT geo_id, cases = SUM(cases_int) + SUM(cases_bigint) + SUM(cases_float)
 FROM OPENROWSET(
       'CosmosDB',
       'account=MyCosmosDbAccount;database=covid;region=westus2;key=C0Sm0sDbKey==',
-       EcdcCases
+       Ecdc
     ) WITH ( geo_id VARCHAR(50) '$.geo_id.string', 
              cases_int INT '$.cases.int32',
              cases_bigint BIGINT '$.cases.int64',
@@ -430,13 +418,13 @@ In dit voor beeld wordt het aantal cases opgeslagen als `int32` , `int64` of `fl
 ## <a name="known-issues"></a>Bekende problemen
 
 - De query-ervaring die serverloze SQL-pool biedt voor [Azure Cosmos DB volledig beeld schema](#full-fidelity-schema) is tijdelijk gedrag dat wordt gewijzigd op basis van de preview-feedback. Vertrouw niet op het schema dat de `OPENROWSET` functie zonder de- `WITH` component tijdens de open bare preview levert, omdat de query-ervaring mogelijk is uitgelijnd met een goed gedefinieerd schema op basis van feedback van klanten. Als u feedback wilt geven, neemt u contact op met het [Azure Synapse link-product team](mailto:cosmosdbsynapselink@microsoft.com).
-- Een serverloze SQL-groep retourneert geen compilatie fout als de `OPENROWSET` kolom sortering geen UTF-8-code ring heeft. U kunt eenvoudig de standaard sortering wijzigen voor alle `OPENROWSET` functies die worden uitgevoerd in de huidige Data Base met behulp van de T-SQL-instructie `alter database current collate Latin1_General_100_CI_AI_SC_UTF8` .
+- Een serverloze SQL-groep retourneert een compileer tijd waarschuwing als de `OPENROWSET` kolom sortering geen UTF-8-code ring heeft. U kunt eenvoudig de standaard sortering wijzigen voor alle `OPENROWSET` functies die worden uitgevoerd in de huidige Data Base met behulp van de T-SQL-instructie `alter database current collate Latin1_General_100_CI_AS_SC_UTF8` .
 
 In de volgende tabel worden mogelijke fouten en acties voor het oplossen van problemen weer gegeven.
 
 | Fout | Hoofdoorzaak |
 | --- | --- |
-| Syntaxis fouten:<br/> -Onjuiste syntaxis bij OPENROWSET<br/> - `...` is geen herkende optie voor BULKSGEWIJZE OPENROWSET-provider.<br/> -Onjuiste syntaxis bij `...` | Mogelijke hoofd oorzaken:<br/> -Maakt geen gebruik van CosmosDB als de eerste para meter.<br/> -Een letterlijke teken reeks gebruiken in plaats van een id in de derde para meter.<br/> -Niet de derde para meter (container naam) opgeven. |
+| Syntaxis fouten:<br/> -Onjuiste syntaxis bij `Openrowset`<br/> - `...` is geen herkende `BULK OPENROWSET` provider optie.<br/> -Onjuiste syntaxis bij `...` | Mogelijke hoofd oorzaken:<br/> -Maakt geen gebruik van CosmosDB als de eerste para meter.<br/> -Een letterlijke teken reeks gebruiken in plaats van een id in de derde para meter.<br/> -Niet de derde para meter (container naam) opgeven. |
 | Er is een fout opgetreden in de CosmosDB-connection string. | -Het account, de data base of de sleutel is niet opgegeven. <br/> -Er is een optie in een connection string die niet wordt herkend.<br/> -Er `;` wordt aan het einde van een Connection String een punt komma () geplaatst. |
 | Het omzetten van het CosmosDB-pad is mislukt met de fout "onjuiste account naam" of "onjuiste database naam". | De opgegeven account naam, database naam of container kan niet worden gevonden, of de analytische opslag is niet ingeschakeld voor de opgegeven verzameling.|
 | Het omzetten van het CosmosDB-pad is mislukt met de fout "onjuiste geheime waarde" of "geheim is null of leeg." | De account sleutel is ongeldig of ontbreekt. |

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: 96e22beb9f9b088e698f0db12104f526af2b936b
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 5c3bfbdf133777f0bc219d1306f80bd4d38b56ea
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94989450"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96746264"
 ---
 # <a name="configure-ddos-attack-mitigation-reports-and-flow-logs"></a>Rapporten en stroomlogboeken voor DDoS-aanvalsbeperking configureren 
 
@@ -74,7 +74,7 @@ Met deze [sjabloon](https://github.com/Azure/Azure-Network-Security/tree/master/
 
 ### <a name="azure-sentinel-data-connector"></a>Azure Sentinel Data Connector
 
-U kunt verbinding maken met Azure Sentinel, uw gegevens in werkmappen bekijken en analyseren, aangepaste waarschuwingen maken en deze opnemen in onderzoek processen. Zie [verbinding maken met Azure Sentinel](../sentinel/connect-azure-ddos-protection.md)om verbinding te maken met Azure Sentinel. 
+U kunt de stroom logboeken voor aanvals beveiliging verbinden met Azure Sentinel, uw gegevens in werkmappen bekijken en analyseren, aangepaste waarschuwingen maken en deze opnemen in onderzoek processen. Zie [verbinding maken met Azure Sentinel](../sentinel/connect-azure-ddos-protection.md)om verbinding te maken met Azure Sentinel. 
 
 ![Azure Sentinel DDoS-connector](./media/ddos-attack-telemetry/azure-sentinel-ddos.png)
 

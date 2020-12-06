@@ -1,18 +1,18 @@
 ---
-title: Aangepaste handlers Azure Functions (preview-versie)
+title: Aangepaste handlers Azure Functions
 description: Meer informatie over het gebruik van Azure Functions met elke taal of runtime versie.
 author: anthonychu
 ms.author: antchu
-ms.date: 8/18/2020
+ms.date: 12/1/2020
 ms.topic: article
-ms.openlocfilehash: 402ce1e9e92ab87689abe9c18a503a479d7421f9
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 099f90ba8c5d9dabb6c4c505e50d8c077e3eaf0f
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92164547"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96746026"
 ---
-# <a name="azure-functions-custom-handlers-preview"></a>Aangepaste handlers Azure Functions (preview-versie)
+# <a name="azure-functions-custom-handlers"></a>Aangepaste handlers Azure Functions
 
 Elke functions-app wordt uitgevoerd door een taalspecifieke handler. Hoewel Azure Functions veel [taal ingangen](./supported-languages.md) ondersteunt, zijn er situaties waarin u mogelijk andere talen of Runtimes wilt gebruiken.
 
@@ -20,10 +20,12 @@ Aangepaste handlers zijn Lightweight webservers die gebeurtenissen ontvangen van
 
 Aangepaste handlers zijn het meest geschikt voor situaties waar u het volgende wilt doen:
 
-- Implementeer een functie-app in een taal die momenteel niet wordt ondersteund, zoals Go en roest.
+- Implementeer een functie-app in een taal die momenteel niet wordt ondersteund, zoals Go of roest.
 - Implementeer een functie-app in een runtime die momenteel niet wordt ondersteund, zoals Deno.
 
 Met aangepaste handlers kunt u [Triggers en invoer-en uitvoer bindingen](./functions-triggers-bindings.md) gebruiken via [uitbreidings bundels](./functions-bindings-register.md).
+
+Aan de slag met Azure Functions aangepaste handlers met [Quick starts in go en roest](create-first-function-vs-code-other.md).
 
 ## <a name="overview"></a>Overzicht
 
@@ -36,7 +38,7 @@ In het volgende diagram ziet u de relatie tussen de host functions en een webser
 1. De webserver voert de afzonderlijke functie uit en retourneert een nettolading van de [reactie](#response-payload) op de host functions.
 1. Met de functie-host worden gegevens door gegeven van het antwoord op de uitvoer bindingen van de functie voor verwerking.
 
-Een Azure Functions-app die is geïmplementeerd als aangepaste handler moet de *host.jsop*, *local.settings.jsop*en *function.jsop* bestanden configureren volgens een aantal conventies.
+Een Azure Functions-app die is geïmplementeerd als aangepaste handler moet de *host.jsop*, *local.settings.jsop* en *function.jsop* bestanden configureren volgens een aantal conventies.
 
 ## <a name="application-structure"></a>Toepassings structuur
 
@@ -226,7 +228,7 @@ Het scenario dat in dit voor beeld wordt geïmplementeerd, bevat een functie met
 
 #### <a name="implementation"></a>Implementatie
 
-In een map met de naam *order*wordt met de *function.jsin* het bestand de functie http-activering geconfigureerd.
+In een map met de naam *order* wordt met de *function.jsin* het bestand de functie http-activering geconfigureerd.
 
 **order/function.jsop**
 
@@ -415,7 +417,7 @@ In het volgende voor beeld ziet u hoe u een door HTTP geactiveerde functie kunt 
 
 #### <a name="implementation"></a>Implementatie
 
-In een map met de naam *Hello*wordt de functie met http-activering geconfigureerd door het bestand *function.js* .
+In een map met de naam *Hello* wordt de functie met http-activering geconfigureerd door het bestand *function.js* .
 
 **Hallo/function.jsop**
 
@@ -583,3 +585,7 @@ Aangepaste handlers worden uitgevoerd in dezelfde omgeving als een typische Azur
 Als u hulp nodig hebt bij een functie-app met aangepaste handlers, kunt u een aanvraag indienen via reguliere ondersteunings kanalen. Vanwege de grote verscheidenheid aan mogelijke talen die worden gebruikt voor het bouwen van aangepaste handlers-apps, is ondersteuning niet onbeperkt.
 
 Ondersteuning is beschikbaar als de host functions problemen ondervindt met het starten of communiceren met het aangepaste registratie proces. Voor problemen die betrekking hebben op de interne werking van uw aangepaste handler-proces, zoals problemen met de gekozen taal of het Framework, kan het ondersteunings team geen hulp bieden in deze context.
+
+## <a name="next-steps"></a>Volgende stappen
+
+Aan de slag met het bouwen van een Azure Functions-app in go of roest met de [Snelstartgids voor aangepaste handlers](create-first-function-vs-code-other.md).

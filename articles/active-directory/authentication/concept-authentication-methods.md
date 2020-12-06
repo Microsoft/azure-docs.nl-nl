@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 09/15/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: a166a451c405c2321453e02751baad91c2a14c60
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: c5b2003a290152533a0a8c0f88fe8eb1a410ccf9
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94840014"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96744326"
 ---
 # <a name="what-authentication-and-verification-methods-are-available-in-azure-active-directory"></a>Welke authenticatie- en verificatiemethoden zijn er beschikbaar in Azure Active Directory?
 
@@ -60,20 +60,20 @@ De volgende tabel geeft een overzicht van de wijze waarop een verificatie method
 
 | Methode                         | Primaire authenticatie | Secundaire verificatie  |
 |--------------------------------|:----------------------:|:-------------------------:|
-| Windows Hello voor Bedrijven     | Yes                    | MFA                       |
+| Windows Hello voor Bedrijven     | Ja                    | MFA                       |
 | Microsoft Authenticator-app    | Ja (preview-versie)          | MFA en SSPR              |
-| FIDO2-beveiligings sleutel (preview-versie)   | Yes                    | MFA                       |
+| FIDO2-beveiligings sleutel (preview-versie)   | Ja                    | MFA                       |
 | OATH-hardware-tokens (preview-versie) | Nee                     | MFA                       |
 | OATH-software tokens           | Nee                     | MFA                       |
 | Sms                            | Ja (preview-versie)          | MFA en SSPR              |
 | Spraakoproep                     | Nee                     | MFA en SSPR              |
-| Wachtwoord                       | Yes                    |                           |
+| Wachtwoord                       | Ja                    |                           |
 
 Al deze verificatie methoden kunnen worden geconfigureerd in de Azure Portal en het gebruik van de [Microsoft Graph rest API bèta](/graph/api/resources/authenticationmethods-overview?view=graph-rest-beta)wordt steeds vaker gebruikt.
 
 Raadpleeg de volgende afzonderlijke conceptuele artikelen voor meer informatie over de werking van elke verificatie methode:
 
-* [Windows hello voor bedrijven](/windows/security/identity-protection/hello-for-business/hello-overview)
+* [Windows Hello voor Bedrijven](/windows/security/identity-protection/hello-for-business/hello-overview)
 * [Microsoft Authenticator-app](concept-authentication-authenticator-app.md)
 * [FIDO2-beveiligings sleutel (preview-versie)](concept-authentication-passwordless.md#fido2-security-keys)
 * [OATH-hardware-tokens (preview-versie)](concept-authentication-oath-tokens.md#oath-hardware-tokens-preview)
@@ -93,7 +93,7 @@ De volgende aanvullende verificatie methoden kunnen worden gebruikt in bepaalde 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Raadpleeg de [zelf studie voor Self-service voor wachtwoord herstel (SSPR)][tutorial-sspr] en [Azure AD multi-factor Authentication][tutorial-azure-mfa]om aan de slag te gaan.
+Zie de [zelfstudie voor SSPR (self-service voor wachtwoordherstel)][tutorial-sspr] en [Azure AD Multi-Factor Authentication][tutorial-azure-mfa] om aan de slag te gaan.
 
 Zie [hoe Azure AD self-service password reset werkt][concept-sspr]voor meer informatie over SSPR-concepten.
 

@@ -1,24 +1,15 @@
 ---
 title: Dasboards maken en delen in Azure Portal
 description: In dit artikel wordt beschreven hoe u Dash boards kunt maken, aanpassen, publiceren en delen in de Azure Portal.
-services: azure-portal
-documentationcenter: ''
-author: sewatson
-manager: mtillman
 ms.assetid: ff422f36-47d2-409b-8a19-02e24b03ffe7
-ms.service: azure-portal
-ms.devlang: NA
 ms.topic: how-to
-ms.tgt_pltfrm: NA
-ms.workload: na
 ms.date: 03/23/2020
-ms.author: mblythe
-ms.openlocfilehash: b4241e51f186ea973702562ab27bb7f13a77de57
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 10c322c9d9d18f7b79a4419bd9efa2e366a5b7c3
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92089482"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745822"
 ---
 # <a name="create-and-share-dashboards-in-the-azure-portal"></a>Dasboards maken en delen in Azure Portal
 
@@ -40,7 +31,7 @@ In dit voor beeld maken we een nieuw persoonlijk dash board en wijzen we een naa
 
     ![Scherm opname van nieuw dash board](./media/azure-portal-dashboards/create-new-dashboard.png)
 
-    Met deze actie wordt de **tegel galerie**geopend, van waaruit u tegels selecteert en een leeg raster waarin u de tegels rangschikt.
+    Met deze actie wordt de **tegel galerie** geopend, van waaruit u tegels selecteert en een leeg raster waarin u de tegels rangschikt.
 
     ![Scherm opname van Tegel galerie en leeg raster](./media/azure-portal-dashboards/dashboard-name.png)
 
@@ -89,7 +80,7 @@ Als u de grootte van een tegel wilt wijzigen of de tegels op een dash board opni
 
 ### <a name="additional-tile-configuration"></a>Aanvullende tegel configuratie
 
-Voor sommige tegels is mogelijk meer configuratie vereist om de gewenste informatie weer te geven. De tegel grafiek met **metrische gegevens** moet bijvoorbeeld worden ingesteld om een metrische waarde van **Azure monitor**weer te geven. U kunt ook tegel gegevens aanpassen om de standaard tijd instellingen van het dash board te overschrijven.
+Voor sommige tegels is mogelijk meer configuratie vereist om de gewenste informatie weer te geven. De tegel grafiek met **metrische gegevens** moet bijvoorbeeld worden ingesteld om een metrische waarde van **Azure monitor** weer te geven. U kunt ook tegel gegevens aanpassen om de standaard tijd instellingen van het dash board te overschrijven.
 
 Elke tegel die moet worden ingesteld, geeft een **tegel banner configureren** weer totdat u de tegel aanpast. De tegel aanpassen:
 
@@ -142,7 +133,7 @@ Ga als volgt te werk om een bestaand dash board als sjabloon te gebruiken voor e
 
 ## <a name="publish-and-share-a-dashboard"></a>Een dash board publiceren en delen
 
-Wanneer u een dash board maakt, is dit standaard privé, wat betekent dat u het enige kunt zien. Als u Dash boards beschikbaar wilt maken voor anderen, kunt u ze publiceren en delen. Zie [Azure-Dash boards delen met behulp van toegangs beheer op basis van rollen](azure-portal-dashboard-share-access.md)voor meer informatie.
+Wanneer u een dash board maakt, is dit standaard privé, wat betekent dat u het enige kunt zien. Als u Dash boards beschikbaar wilt maken voor anderen, kunt u ze publiceren en delen. Zie [Azure-dashboards delen met behulp van op rollen gebaseerd toegangsbeheer](azure-portal-dashboard-share-access.md) voor meer informatie.
 
 ### <a name="open-a-shared-dashboard"></a>Een gedeeld dash board openen
 

@@ -1,26 +1,16 @@
 ---
-title: Ondersteunde browsers en apparaten voor Azure Portal | Microsoft Docs
+title: Ondersteunde browsers en apparaten voor Azure Portal
 description: U kunt de Azure Portal gebruiken op alle moderne apparaten en met de nieuwste browser versies. Raadpleeg dit artikel om te controleren of uw browser wordt ondersteund.
-services: azure-portal
-documentationcenter: ''
-author: adamabmsft
-manager: lwelicki
-editor: ''
 ms.assetid: 35fa18ec-21d8-41bf-af2b-e5e92703401d
-ms.service: azure-portal
-ms.workload: multiple
-ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.author: mblythe
 ms.custom: accessibility
-ms.openlocfilehash: b900373c7e6a3b3701ae30274ff27629b7f47ef9
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 8009d0d4ac971d81e25b276b19605bc6a70cff02
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94916845"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745669"
 ---
 # <a name="supported-devices"></a>Ondersteunde apparaten
 

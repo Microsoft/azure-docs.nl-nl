@@ -6,16 +6,16 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c11ec8f7592e6ed58398c371df1d80cd50942334
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: d04075b415bace4104a58e8221d764355d3318d0
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91965485"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96744275"
 ---
 # <a name="authentication-methods-in-azure-active-directory---oath-tokens"></a>Verificatie methoden in Azure Active Directory OATH-tokens
 
@@ -33,7 +33,7 @@ Sommige software-tokens van OATH mobiele TOTP zijn programmeerbaar, wat betekent
 
 Azure AD ondersteunt het gebruik van OATH-mobiele TOTP SHA-1-tokens waarmee codes elke 30 of 60 seconden worden vernieuwd. Klanten kunnen deze tokens aanschaffen bij de leverancier van hun keuze.
 
-OATH mobiele TOTP-hardware-tokens worden doorgaans geleverd met een geheime sleutel, of Seed, vooraf geprogrammeerd in het token. Deze sleutels moeten worden ingevoerd in azure AD, zoals beschreven in de volgende stappen. Geheime sleutels zijn beperkt tot 128 tekens, die mogelijk niet compatibel zijn met alle tokens. De geheime sleutel mag alleen de tekens *a-z* of *a-* z en cijfers *1-7*bevatten en moet worden gecodeerd in *Base32*.
+OATH mobiele TOTP-hardware-tokens worden doorgaans geleverd met een geheime sleutel, of Seed, vooraf geprogrammeerd in het token. Deze sleutels moeten worden ingevoerd in azure AD, zoals beschreven in de volgende stappen. Geheime sleutels zijn beperkt tot 128 tekens, die mogelijk niet compatibel zijn met alle tokens. De geheime sleutel mag alleen de tekens *a-z* of *a-* z en cijfers *1-7* bevatten en moet worden gecodeerd in *Base32*.
 
 Programmeer bare OATH-mobiele TOTP die kunnen worden geseedd, kunnen ook worden ingesteld met Azure AD in de instellings stroom van het software token.
 
@@ -51,7 +51,7 @@ Helga@contoso.com,1234567,1234567abcdef1234567abcdef,60,Contoso,HardwareKey
 > [!NOTE]
 > Zorg ervoor dat u de rij met koppen in het CSV-bestand opneemt.
 
-Als een beheerder zich heeft geformatteerd als een CSV-bestand, kunt u zich aanmelden bij de Azure Portal, naar **Azure Active Directory > Security > MFA > OATH-tokens**gaan en het resulterende CSV-bestand uploaden.
+Als een beheerder zich heeft geformatteerd als een CSV-bestand, kunt u zich aanmelden bij de Azure Portal, naar **Azure Active Directory > Security > MFA > OATH-tokens** gaan en het resulterende CSV-bestand uploaden.
 
 Afhankelijk van de grootte van het CSV-bestand kan het enkele minuten duren voordat het proces is uitgevoerd. Selecteer de knop **vernieuwen** om de huidige status op te halen. Als het bestand fouten bevat, kunt u een CSV-bestand downloaden met een lijst met fouten die u moet oplossen. De veld namen in het gedownloade CSV-bestand wijken af van de geüploade versie.
 

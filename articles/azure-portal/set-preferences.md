@@ -1,20 +1,15 @@
 ---
-title: Azure Portal instellingen en voor keuren beheren | Microsoft Docs
+title: Azure-portalinstellingen en -voorkeuren beheren
 description: U kunt Azure Portal standaard instellingen wijzigen om te voldoen aan uw eigen voor keuren. De instellingen omvatten een inactieve sessietime-out, de standaard weergave, de menu modus, het contrast, het thema, de meldingen en de taal-en regionale notaties
-services: azure-portal
 keywords: instellingen, time-out, taal, regionale
-author: mgblythe
-ms.author: mblythe
 ms.date: 08/05/2020
 ms.topic: how-to
-ms.service: azure-portal
-manager: mtillman
-ms.openlocfilehash: 0f94f694163ba836091e522a29f73cabd64e22b5
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
+ms.openlocfilehash: 07dd3eb5cb132adf87852f29d867be772294d189
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93145936"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745635"
 ---
 # <a name="manage-azure-portal-settings-and-preferences"></a>Azure-portalinstellingen en -voorkeuren beheren
 
@@ -33,7 +28,7 @@ U kunt het abonnement dat standaard wordt geopend, wijzigen wanneer u zich aanme
 
 1. Selecteer de abonnementen die u wilt als de standaard abonnementen wanneer u de portal start. 
 
-    :::image type="content" source="media/set-preferences/default-directory-subscription-filter.png" alt-text="Resource lijst filteren op abonnement."::: 
+    :::image type="content" source="media/set-preferences/default-directory-subscription-filter.png" alt-text="Selecteer de abonnementen die u wilt als de standaard abonnementen wanneer u de portal start."::: 
 
 
 ## <a name="choose-your-default-view"></a>Kies uw standaard weergave 
@@ -108,7 +103,7 @@ Als u een globale beheerder bent en u een instelling voor een inactieve time-out
 
 1. Voer vervolgens de **uren** en **minuten** in voor de maximale tijds duur dat een gebruiker inactief mag zijn voordat de sessie automatisch wordt afgemeld.
 
-1. Selecteer **Toepassen** .
+1. Selecteer **Toepassen**.
 
     ![Scherm afbeelding van de pagina voor het instellen van de time-out voor inactiviteit op Directory niveau](./media/set-preferences/configure.png)
 
@@ -118,7 +113,7 @@ Als u wilt controleren of het beleid voor time-out van inactiviteit juist is ing
 
 ## <a name="restore-default-settings"></a>Standaardinstellingen herstellen
 
-Als u wijzigingen hebt aangebracht in de Azure Portal instellingen en deze wilt negeren, selecteert u **standaard instellingen herstellen** . Wijzigingen die u in de Portal instellingen hebt aangebracht, gaan verloren. Deze optie is niet van invloed op aanpassingen van het dash board.
+Als u wijzigingen hebt aangebracht in de Azure Portal instellingen en deze wilt negeren, selecteert u **standaard instellingen herstellen**. Wijzigingen die u in de Portal instellingen hebt aangebracht, gaan verloren. Deze optie is niet van invloed op aanpassingen van het dash board.
 
 ![Scherm opname van het herstellen van standaard instellingen](./media/set-preferences/useful-links-restore-defaults.png)
 
@@ -132,7 +127,7 @@ Informatie over uw aangepaste instellingen wordt opgeslagen in Azure. U kunt de 
 
 Het is een goed idee om uw instellingen te exporteren en te controleren als u deze wilt verwijderen. Het opnieuw opbouwen van Dash boards of het opnieuw uitvoeren van instellingen kan tijdrovend zijn.
 
-Als u uw Portal instellingen wilt exporteren, selecteert u **alle instellingen exporteren** .
+Als u uw Portal instellingen wilt exporteren, selecteert u **alle instellingen exporteren**.
 
 ![Scherm opname van het exporteren van instellingen](./media/set-preferences/useful-links-export-settings.png)
 
@@ -150,7 +145,7 @@ Het is een goed idee om uw instellingen te exporteren en te controleren voordat 
 
 [!INCLUDE [GDPR-related guidance](../../includes/gdpr-intro-sentence.md)]
 
-Als u uw Portal instellingen wilt verwijderen, selecteert u **alle instellingen en persoonlijke Dash boards verwijderen** .
+Als u uw Portal instellingen wilt verwijderen, selecteert u **alle instellingen en persoonlijke Dash boards verwijderen**.
 
 ![Scherm opname van het verwijderen van instellingen](./media/set-preferences/useful-links-delete-settings.png)
 

@@ -12,12 +12,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: Data Analytics'
 - devx-track-azurecli
-ms.openlocfilehash: 8f7baca94d653d9851c506068ccf7ecf84063641
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 3218df4601ef7a5e1b1e04c20c89eefc367b720b
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94832174"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96746451"
 ---
 # <a name="visualize-real-time-sensor-data-from-your-azure-iot-hub-in-a-web-application"></a>Real-time sensor gegevens visualiseren vanuit uw Azure IoT hub in een webtoepassing
 
@@ -184,7 +184,7 @@ In deze sectie maakt u een web-app in App Service en implementeert u uw code hie
 
 5. Als u de code wilt implementeren in App Service, gebruikt u de [referenties voor implementatie op gebruikers niveau](../app-service/deploy-configure-credentials.md). De referenties voor implementatie op gebruikers niveau verschillen van uw Azure-referenties en worden gebruikt voor git lokale en FTP-implementaties naar een web-app. Eenmaal ingesteld zijn ze geldig voor al uw App Service-apps in alle abonnementen in uw Azure-account. Als u eerder implementatie referenties op gebruikers niveau hebt ingesteld, kunt u deze gebruiken.
 
-   Als u geen implementatie referenties op gebruikers niveau hebt ingesteld of als u het wacht woord niet meer weet, voert u de volgende opdracht uit. De gebruikers naam van uw implementatie moet uniek zijn binnen Azure en mag niet het symbool @ bevatten voor lokale Git-pushes. Voer uw nieuwe wacht woord in en bevestig dit wanneer u hierom wordt gevraagd. Het wachtwoord moet ten minste acht tekens lang zijn en minimaal twee van de volgende drie typen elementen bevatten: letters, cijfers en symbolen.
+   Als u geen implementatie referenties op gebruikers niveau hebt ingesteld of als u het wacht woord niet meer weet, voert u de volgende opdracht uit. De gebruikers naam van uw implementatie moet uniek zijn binnen Azure en mag niet het symbool ' \@ ' bevatten voor lokale Git-pushes. Voer uw nieuwe wacht woord in en bevestig dit wanneer u hierom wordt gevraagd. Het wachtwoord moet ten minste acht tekens lang zijn en minimaal twee van de volgende drie typen elementen bevatten: letters, cijfers en symbolen.
 
    ```azurecli-interactive
    az webapp deployment user set --user-name <your deployment user name>

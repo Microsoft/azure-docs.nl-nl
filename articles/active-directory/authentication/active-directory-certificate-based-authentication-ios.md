@@ -6,16 +6,16 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 04/17/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6fa6c28eaa75485e0b45bb4404e685b6ee223b46
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: ffddac13009b84aa8253955d265f11aefe2ce5dd
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91965587"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96744411"
 ---
 # <a name="azure-active-directory-certificate-based-authentication-on-ios"></a>Op certificaten gebaseerde verificatie op iOS Azure Active Directory
 
@@ -75,7 +75,7 @@ Zie [de AD FS-aanmeldings pagina aanpassen](/previous-versions/windows/it-pro/wi
 
 Sommige Office-apps waarvoor moderne verificatie is ingeschakeld, `prompt=login` worden in hun aanvraag verzonden naar Azure AD. Azure AD vertaalt standaard `prompt=login` de aanvraag naar ADFS als `wauth=usernamepassworduri` (vraagt ADFS om u/P-auth te maken) en `wfresh=0` (vraagt ADFS om SSO-status te negeren en een nieuwe verificatie uit te voeren). Als u verificatie op basis van certificaten voor deze apps wilt inschakelen, wijzigt u het standaard gedrag van Azure AD.
 
-Als u het standaard gedrag wilt bijwerken, stelt u de*PromptLoginBehavior*in uw federatieve domein instellingen in op *uitgeschakeld*. U kunt de [MSOLDomainFederationSettings](/powershell/module/msonline/set-msoldomainfederationsettings?view=azureadps-1.0) -cmdlet gebruiken om deze taak uit te voeren, zoals wordt weer gegeven in het volgende voor beeld:
+Als u het standaard gedrag wilt bijwerken, stelt u de *PromptLoginBehavior* in uw federatieve domein instellingen in op *uitgeschakeld*. U kunt de [MSOLDomainFederationSettings](/powershell/module/msonline/set-msoldomainfederationsettings?view=azureadps-1.0) -cmdlet gebruiken om deze taak uit te voeren, zoals wordt weer gegeven in het volgende voor beeld:
 
 ```powershell
 Set-MSOLDomainFederationSettings -domainname <domain> -PromptLoginBehavior Disabled

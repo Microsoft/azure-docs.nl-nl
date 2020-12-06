@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/24/2020
-ms.openlocfilehash: 63bb235dcebc67b753e01dd8b193ef1a2b66787d
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 222106f5838a1eb237987afaa93924f1efe4a1f4
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96553260"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96746281"
 ---
 # <a name="file-extension-insights-about-your-data-from-azure-purview"></a>Inzichten over uw gegevens van Azure controle sfeer liggen 
 
@@ -39,6 +39,9 @@ Zie [gegevens bronnen beheren in azure controle sfeer liggen (preview)](manage-d
 ## <a name="use-purview-file-extension-insights"></a>Inzichten van controle sfeer liggen-bestands extensie gebruiken
 
 Bij het scannen van uw assets kan Azure controle sfeer liggen de bestands typen die worden gevonden in uw data onroerend goed detecteren en krijgt u meer informatie over elk bestands type. Details bevatten het aantal bestanden van elk type dat u hebt, waar deze bestanden zich bevinden en of ze scannable zijn voor gevoelige gegevens.
+
+> [!NOTE]
+> Nadat u uw bron typen hebt gescand, geeft u de **bestands extensie** inzicht in enkele uren om de nieuwe activa weer te geven.
 
 **Inzicht in de bestands extensie weer geven:**
 

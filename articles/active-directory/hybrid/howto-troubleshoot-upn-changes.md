@@ -11,16 +11,16 @@ author: barbaraselden
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 46ecc2cba96b07d9105020e69ae3198a3765be7c
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 59b304505c29f424d85d5b1e16dc83c060ac2ac1
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96172228"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96744595"
 ---
 # <a name="plan-and-troubleshoot-user-principal-name-changes-in-azure-active-directory"></a>Wijzigingen in de principal-naam van gebruikers plannen en oplossen in Azure Active Directory
 
-Een UPN (User Principal Name) is een kenmerk dat een Internet communicatie standaard vormt voor gebruikers accounts. Een UPN bestaat uit een UPN-voor voegsel (de naam van het gebruikers account) en een UPN-achtervoegsel (een DNS-domein naam). Het voor voegsel wordt toegevoegd aan het achtervoegsel met het @-teken. Bijvoorbeeld someone@example.com. Een UPN moet uniek zijn voor alle SPN-objecten in een Directory-forest. 
+Een UPN (User Principal Name) is een kenmerk dat een Internet communicatie standaard vormt voor gebruikers accounts. Een UPN bestaat uit een UPN-voor voegsel (de naam van het gebruikers account) en een UPN-achtervoegsel (een DNS-domein naam). Het voor voegsel wordt toegevoegd aan het achtervoegsel met het \@ symbool ' '. Bijvoorbeeld someone@example.com. Een UPN moet uniek zijn voor alle SPN-objecten in een Directory-forest. 
 
 **In dit artikel wordt ervan uitgegaan dat u UPN gebruikt als de gebruikers-id. Het behandelt het plannen van UPN-wijzigingen en het herstellen van problemen die kunnen voortvloeien uit UPN-wijzigingen.**
 

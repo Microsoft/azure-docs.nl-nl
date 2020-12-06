@@ -1,17 +1,14 @@
 ---
 title: Azure-resourcegegevens bekijken en filteren
 description: Filter gegevens en gebruik verschillende weergaven om uw Azure-resources beter te begrijpen.
-author: mgblythe
-ms.service: azure-portal
 ms.topic: how-to
-ms.author: mblythe
 ms.date: 09/11/2020
-ms.openlocfilehash: f6185e1c4042110f446337c1b2c2904fefdae7a9
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
+ms.openlocfilehash: d1bd00a9e7f8c9c18484378f7c21d3bacdac2d3f
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92280239"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745890"
 ---
 # <a name="view-and-filter-azure-resource-information"></a>Azure-resourcegegevens bekijken en filteren
 
@@ -25,55 +22,55 @@ Het artikel richt zich op het scherm **Alle resources** dat wordt weergegeven in
 
 Begin met het verkennen van **Alle resources** door filters te gebruiken om te focussen op een subset resources. In de volgende schermopname is gefilterd op resourcegroepen en zijn twee van de zes resourcegroepen in een abonnement geselecteerd.
 
-:::image type="content" source="media/manage-filter-resource-views/filter-resource-group.png" alt-text="Weergave van alle resources in de Azure-portal":::
+:::image type="content" source="media/manage-filter-resource-views/filter-resource-group.png" alt-text="Weergave filteren op basis van resourcegroepen":::
 
 U kunt filters combineren, inclusief filters die zijn gebaseerd op zoekopdrachten in tekst, zoals weergegeven in de volgende schermopname. In dit geval ziet u de resultaten voor resources die 'SimpleWinVM' bevatten in een van de twee reeds geselecteerde resourcegroepen.
 
-:::image type="content" source="media/manage-filter-resource-views/filter-simplewinvm.png" alt-text="Weergave van alle resources in de Azure-portal":::
+:::image type="content" source="media/manage-filter-resource-views/filter-simplewinvm.png" alt-text="Weergave filteren op basis van tekstinvoer":::
 
-Als u wilt wijzigen welke kolommen in een weergave worden opgenomen, selecteert u **Weergave beheren** en vervolgens **Kolommen bewerken** .
+Als u wilt wijzigen welke kolommen in een weergave worden opgenomen, selecteert u **Weergave beheren** en vervolgens **Kolommen bewerken**.
 
-:::image type="content" source="media/manage-filter-resource-views/edit-columns.png" alt-text="Weergave van alle resources in de Azure-portal":::
+:::image type="content" source="media/manage-filter-resource-views/edit-columns.png" alt-text="Kolommen bewerken die te zien zijn in de weergave":::
 
 ## <a name="save-use-and-delete-views"></a>Weergaven opslaan, gebruiken en verwijderen
 
 U kunt weergaven opslaan die de filters en kolommen bevatten die u hebt geselecteerd. Een weergave opslaan en gebruiken:
 
-1. Selecteer **Weergave beheren** en **Weergave opslaan** .
+1. Selecteer **Weergave beheren** en **Weergave opslaan**.
 
-1. Voer een naam in voor de weergave en selecteer **OK** . De opgeslagen weergave wordt nu weergegeven in het menu **Weergave beheren** .
+1. Voer een naam in voor de weergave en selecteer **OK**. De opgeslagen weergave wordt nu weergegeven in het menu **Weergave beheren**.
 
-    :::image type="content" source="media/manage-filter-resource-views/simple-view.png" alt-text="Weergave van alle resources in de Azure-portal":::
+    :::image type="content" source="media/manage-filter-resource-views/simple-view.png" alt-text="Opgeslagen weergave":::
 
 1. Als u een weergave wilt gebruiken, schakelt u tussen **Standaard** en een van uw eigen weergaven om te zien hoe dit de weergegeven lijst met resources beïnvloedt.
 
 Een weergave verwijderen:
 
-1. Selecteer **Weergave beheren** en vervolgens **In alle weergaven bladeren** .
+1. Selecteer **Weergave beheren** en vervolgens **In alle weergaven bladeren**.
 
-1. Selecteer de weergave in het deelvenster **Opgeslagen weergaven voor Alle resources** , en selecteer vervolgens het pictogram **Verwijderen** ![pictogram Weergave verwijderen](media/manage-filter-resource-views/icon-delete.png).
+1. Selecteer de weergave in het deelvenster **Opgeslagen weergaven voor Alle resources**, en selecteer vervolgens het pictogram **Verwijderen** ![pictogram Weergave verwijderen](media/manage-filter-resource-views/icon-delete.png).
 
 ## <a name="summarize-resources-with-visuals"></a>Resources samenvatten met visuals
 
-De weergaven die we tot nu toe hebben bekeken, zijn _lijstweergaven_ , maar er zijn ook _samenvattingsweergaven_ die visuals bevatten. U kunt deze weergaven opslaan en gebruiken, net zoals bij lijstweergaven. Filters blijven behouden tussen de twee typen weergaven. Er zijn standaardweergaven, zoals de weergave **Locatie** , die hieronder wordt weergegeven, maar ook weergaven die relevant zijn voor specifieke services, zoals de weergave **Status** voor Azure Storage.
+De weergaven die we tot nu toe hebben bekeken, zijn _lijstweergaven_, maar er zijn ook _samenvattingsweergaven_ die visuals bevatten. U kunt deze weergaven opslaan en gebruiken, net zoals bij lijstweergaven. Filters blijven behouden tussen de twee typen weergaven. Er zijn standaardweergaven, zoals de weergave **Locatie**, die hieronder wordt weergegeven, maar ook weergaven die relevant zijn voor specifieke services, zoals de weergave **Status** voor Azure Storage.
 
-:::image type="content" source="media/manage-filter-resource-views/summary-map.png" alt-text="Weergave van alle resources in de Azure-portal":::
+:::image type="content" source="media/manage-filter-resource-views/summary-map.png" alt-text="Overzicht van resources in een kaartweergave":::
 
 Een samenvattingsweergave opslaan en gebruiken:
 
-1. Selecteer in het weergavemenu de optie **Samenvattingsweergave** .
+1. Selecteer in het weergavemenu de optie **Samenvattingsweergave**.
 
-    :::image type="content" source="media/manage-filter-resource-views/menu-summary-view.png" alt-text="Weergave van alle resources in de Azure-portal":::
+    :::image type="content" source="media/manage-filter-resource-views/menu-summary-view.png" alt-text="Menu Samenvattingsweergave":::
 
-1. In de samenvattingsweergave kunt u samenvatten op basis van verschillende kenmerken, waaronder **Locatie** en **Type** . Selecteer een optie bij **Samenvatten op** en kies een geschikte visual. In de volgende schermopname ziet u het **Samenvattingstype** met een **Staafdiagram** -visual.
+1. In de samenvattingsweergave kunt u samenvatten op basis van verschillende kenmerken, waaronder **Locatie** en **Type**. Selecteer een optie bij **Samenvatten op** en kies een geschikte visual. In de volgende schermopname ziet u het **Samenvattingstype** met een **Staafdiagram**-visual.
 
-    :::image type="content" source="media/manage-filter-resource-views/type-summary-bar-chart.png" alt-text="Weergave van alle resources in de Azure-portal":::
+    :::image type="content" source="media/manage-filter-resource-views/type-summary-bar-chart.png" alt-text="Samenvattingstype met een staafdiagram":::
 
 1. Selecteer **Weergave beheren** en vervolgens **Opslaan** om deze weergave op te slaan, zoals u hebt gedaan bij de lijstweergave.
 
 1. Selecteer in de samenvattingsweergave onder **Samenvattingstype** een staaf in het diagram. Als u de balk selecteert, wordt er een lijst gefilterd op één type resource.
 
-    :::image type="content" source="media/manage-filter-resource-views/all-resources-filtered-type.png" alt-text="Weergave van alle resources in de Azure-portal":::
+    :::image type="content" source="media/manage-filter-resource-views/all-resources-filtered-type.png" alt-text="Alle resources gefilterd op type":::
 
 ## <a name="run-queries-in-azure-resource-graph"></a>Query’s uitvoeren in Azure Resource Graph
 
@@ -81,13 +78,13 @@ Azure Resource Graph biedt efficiënte en goed presterende verkenning van resour
 
 Een Resource Graph-query uitvoeren:
 
-1. Select **Query openen** .
+1. Select **Query openen**.
 
-    :::image type="content" source="media/manage-filter-resource-views/open-query.png" alt-text="Weergave van alle resources in de Azure-portal":::
+    :::image type="content" source="media/manage-filter-resource-views/open-query.png" alt-text="Azure Resource Graph-query openen":::
 
 1. Selecteer in **Azure Resource Graph Explorer** de optie **Query uitvoeren** om de resultaten te zien.
 
-    :::image type="content" source="media/manage-filter-resource-views/run-query.png" alt-text="Weergave van alle resources in de Azure-portal":::
+    :::image type="content" source="media/manage-filter-resource-views/run-query.png" alt-text="Azure Resource Graph-query uitvoeren":::
 
     Zie [Uw eerste Resource Graph-query uitvoeren met Azure Resource Graph Explorer](../governance/resource-graph/first-query-portal.md) voor meer informatie.
 

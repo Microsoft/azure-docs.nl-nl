@@ -8,19 +8,19 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 09/02/2020
-ms.openlocfilehash: ed0c7ef98e70774350c9a3ff12b0cc3f4186e1bb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 041df9b77e85f09d2cf680773edc995c6288acaa
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89380779"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96746417"
 ---
 # <a name="how-to-add-a-preview-audience-for-your-saas-offer"></a>Een preview-doel groep voor uw SaaS-aanbieding toevoegen
 
 Wanneer u uw SaaS-aanbieding (Software as a Service) maakt in het partner centrum, moet u een preview-doel groep definiëren die uw aanbieding kan bekijken voordat deze live gaat. In dit artikel wordt uitgelegd hoe u een preview-doel groep kunt configureren.
 
 > [!NOTE]
-> Als u ervoor kiest om trans acties onafhankelijk te verwerken, wordt deze optie niet weer geven. Ga in plaats daarvan naar [de markt voor uw SaaS-aanbieding](create-new-saas-offer-marketing.md).
+> Als u ervoor kiest om trans acties onafhankelijk te verwerken, wordt deze optie niet weer geven. Ga in plaats daarvan naar [de verkoop van uw SaaS-aanbieding](create-new-saas-offer-marketing.md).
 
 ## <a name="define-a-preview-audience"></a>Een preview-doel groep definiëren
 
@@ -45,7 +45,7 @@ Op het tabblad **voor beeld van doel groep** kunt u een beperkt publiek definië
 1. Voeg in de kolom **type** **MixedAadMsaId** toe aan elke rij met een e-mail adres.
 1. Sla het bestand op als een. CSV-bestand.
 1. Selecteer op de pagina **voor beeld van doel groep** de koppeling **doel groep importeren (CSV)** .
-1. Selecteer **Ja**in het **bevestigings** venster.
+1. Selecteer **Ja** in het **bevestigings** venster.
 1. Selecteer de. CSV-bestand en selecteer **openen**.
 1. Selecteer **concept opslaan** voordat u doorgaat naar het volgende tabblad: **technische configuratie**.
 

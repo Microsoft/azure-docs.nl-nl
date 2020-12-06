@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 09/02/2020
-ms.openlocfilehash: b6b3cac51ffd4ccd138994ac65b4f96b07816970
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 3a47ba2025bcaba542d2dbec0c89643e0900f233
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94368692"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96746145"
 ---
 # <a name="how-to-configure-your-saas-offer-listing-details"></a>Details van uw SaaS-aanbieding configureren
 
@@ -105,4 +105,4 @@ Selecteer **concept opslaan** voordat u doorgaat naar het volgende tabblad: voor
 ## <a name="next-steps"></a>Volgende stappen
 
 - Als u uw aanbieding via micro soft verkoopt, gaat u naar [een preview-doel groep voor uw SaaS-aanbieding toevoegen](create-new-saas-offer-preview.md). 
-- Als dat niet het geval is, gaat u naar [de markt voor uw SaaS-aanbieding](create-new-saas-offer-marketing.md).
+- Als dat niet het geval is, gaat u naar [hoe u uw SaaS-aanbieding kunt verkopen](create-new-saas-offer-marketing.md).

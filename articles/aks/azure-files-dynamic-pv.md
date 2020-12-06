@@ -5,12 +5,12 @@ description: Meer informatie over het dynamisch maken van een permanent volume m
 services: container-service
 ms.topic: article
 ms.date: 07/01/2020
-ms.openlocfilehash: 08752f8aaa76d83e13eeea86db3048a6d29a4d99
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 2ad2affee34348e8c2fc7b734c8b49d0aec8db40
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93126393"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96744906"
 ---
 # <a name="dynamically-create-and-use-a-persistent-volume-with-azure-files-in-azure-kubernetes-service-aks"></a>Dynamisch een permanent volume maken en gebruiken met Azure Files in azure Kubernetes service (AKS)
 
@@ -26,7 +26,7 @@ Ook moet de Azure CLI-versie 2.0.59 of hoger zijn geïnstalleerd en geconfiguree
 
 ## <a name="create-a-storage-class"></a>Een opslag klasse maken
 
-Een opslag klasse wordt gebruikt om te bepalen hoe een Azure-bestands share wordt gemaakt. Er wordt automatisch een opslag account gemaakt in de [knooppunt resource groep][node-resource-group] voor gebruik met de opslag klasse om de Azure-bestands shares op te slaan. Kies een van de volgende [Azure Storage-redundantie][storage-skus] voor *skuName* :
+Een opslag klasse wordt gebruikt om te bepalen hoe een Azure-bestands share wordt gemaakt. Er wordt automatisch een opslag account gemaakt in de [knooppunt resource groep][node-resource-group] voor gebruik met de opslag klasse om de Azure-bestands shares op te slaan. Kies een van de volgende [Azure Storage-redundantie][storage-skus] voor *skuName*:
 
 * *Standard_LRS* -standaard lokaal redundante opslag (LRS)
 * *Standard_GRS* -standaard geo-redundante opslag (GRS)
@@ -40,7 +40,7 @@ Een opslag klasse wordt gebruikt om te bepalen hoe een Azure-bestands share word
 
 Zie [Kubernetes-opslag klassen][kubernetes-storage-classes]voor meer informatie over Kubernetes-opslag klassen voor Azure files.
 
-Maak een bestand `azure-file-sc.yaml` met de naam en kopieer het in het volgende voor beeld-manifest. Zie de sectie [koppelings opties][mount-options] voor meer informatie over *mountOptions* .
+Maak een bestand `azure-file-sc.yaml` met de naam en kopieer het in het volgende voor beeld-manifest. Zie de sectie [koppelings opties][mount-options] voor meer informatie over *mountOptions*.
 
 ```yaml
 kind: StorageClass
@@ -55,6 +55,7 @@ mountOptions:
   - gid=0
   - mfsymlinks
   - cache=strict
+  - actimeo=30
 parameters:
   skuName: Standard_LRS
 ```
@@ -105,7 +106,7 @@ my-azurefile   Bound     pvc-8436e62e-a0d9-11e5-8521-5a8664dc0477   5Gi        R
 
 ## <a name="use-the-persistent-volume"></a>Het permanente volume gebruiken
 
-De volgende YAML maakt een pod die gebruikmaakt van de permanente volume claim *mijn-azurefile* om de Azure-bestands share te koppelen aan het */mnt/Azure* -pad. Voor Windows Server-containers geeft u een *mountPath* op met behulp van de Windows Path-Conventie, zoals *":"* .
+De volgende YAML maakt een pod die gebruikmaakt van de permanente volume claim *mijn-azurefile* om de Azure-bestands share te koppelen aan het */mnt/Azure* -pad. Voor Windows Server-containers geeft u een *mountPath* op met behulp van de Windows Path-Conventie, zoals *":"*.
 
 Maak een bestand `azure-pvc-files.yaml` met de naam en kopieer de volgende YAML. Zorg ervoor dat de *claim* naam overeenkomt met het PVC dat in de laatste stap is gemaakt.
 
@@ -180,6 +181,7 @@ mountOptions:
   - gid=0
   - mfsymlinks
   - cache=strict
+  - actimeo=30
 parameters:
   skuName: Standard_LRS
 ```

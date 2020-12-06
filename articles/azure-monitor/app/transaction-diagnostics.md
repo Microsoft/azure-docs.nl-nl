@@ -4,12 +4,12 @@ description: End-to-end-diagnose van trans acties Application Insights
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.reviewer: sdash
-ms.openlocfilehash: 552e80d6c90a18180ab41dce72e995b6804a91bc
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 7623b7131e6344a67c468d0436884ebfef9b0058
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96002048"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96746094"
 ---
 # <a name="unified-cross-component-transaction-diagnostics"></a>Unified cross-component Trans Action Diagnostics
 
@@ -80,9 +80,7 @@ Mogelijke redenen:
 
 * Bevinden de andere onderdelen zich met behulp van Application Insights?
 * Gebruiken ze de nieuwste stabiele Application Insights SDK?
-* Als deze onderdelen afzonderlijke Application Insights resources zijn, hebt u toegang nodig tot hun telemetrie?
-
-Als u toegang hebt en de onderdelen zijn voorzien van de nieuwste Application Insights Sdk's, laat u ons weten via het feedback kanaal rechtsboven.
+* Als deze onderdelen van elkaar zijn gescheiden Application Insights resources, hebt u [toegang](resources-roles-access-control.md) nodig als u toegang hebt en de onderdelen zijn voorzien van de meest recente Application Insights sdk's. laat het ons weten via het feedback kanaal rechtsboven.
 
 *Er worden dubbele rijen weer geven voor de afhankelijkheden. Wordt dit verwacht?*
 

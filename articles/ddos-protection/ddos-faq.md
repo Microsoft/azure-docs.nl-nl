@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 6c475971f604c951280d0351d593cd5d96879d31
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: c09f8c5ae4a742e6caa489ee29043f500617bb24
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94992400"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96746485"
 ---
 # <a name="azure-ddos-protection-standard-frequent-asked-questions"></a>Veelgestelde vragen over Azure DDoS Protection
 
@@ -29,7 +29,7 @@ Distributed Denial of service, of DDoS, is een type aanval waarbij een aanvaller
 Azure DDoS Protection Standard, gecombineerd met de aanbevolen procedures voor het ontwerpen van toepassingen, biedt verbeterde DDoS-beperkings functies om te beschermen tegen DDoS-aanvallen. Het wordt automatisch afgestemd om uw specifieke Azure-resources in een virtueel netwerk te beveiligen. Beveiliging is eenvoudig in te scha kelen op een nieuw of bestaand virtueel netwerk en er zijn geen wijzigingen in de toepassing of resource. Het heeft verschillende voor delen ten opzichte van de Basic-service, inclusief logboek registratie, waarschuwingen en telemetrie. Zie [Azure DDoS Protection Standard-overzicht](ddos-protection-overview.md) voor meer informatie. 
 
 ## <a name="what-about-protection-at-the-service-layer-layer-7"></a>Hoe zit het met de beveiliging van de service laag (laag 7)?
-Klanten kunnen Azure DDoS Protection Service in combi natie met [Application Gateway WAF SKU](../web-application-firewall/ag/ag-overview.md) voor beveiliging gebruiken op de netwerklaag (laag 3 en 4, aangeboden door Azure DDoS Protection Service) en op de toepassingslaag (laag 7, aangeboden door Application Gateway WAF SKU).
+Klanten kunnen Azure DDoS Protection Service in combi natie met een Web Application firewall (WAF) gebruiken voor de beveiliging op de netwerklaag (laag 3 en 4, aangeboden door Azure DDoS Protection Standard) en op de toepassingslaag (laag 7, aangeboden door een WAF). WAF-aanbiedingen zijn onder andere Azure [Application Gateway WAF-SKU](../web-application-firewall/ag/ag-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) en Web Application firewall aanbiedingen van derden die beschikbaar zijn op de [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps?page=1&search=web%20application%20firewall).
 
 ## <a name="are-services-unsafe-in-azure-without-the-service"></a>Zijn er onveilige Services in azure zonder de service?
 Services die op Azure worden uitgevoerd, worden inherent beschermd door Azure DDoS Protection Basic dat is geïmplementeerd om de infra structuur van Azure te beveiligen. De beveiliging die de infra structuur beveiligt, heeft echter een veel hogere drempel waarde dan de meeste toepassingen de capaciteit hebben om te kunnen omgaan, en biedt geen telemetrie of waarschuwingen, zodat een verkeers volume kan worden aangemerkt als onschadelijk door het platform. 
@@ -41,6 +41,9 @@ Open bare Ip's in op ARM gebaseerde VNETs zijn momenteel het enige type beveilig
 
 ## <a name="are-classicrdfe-protected-resources-supported"></a>Worden klassieke/RDFE beveiligde resources ondersteund?
 In de preview-versie worden alleen beveiligde bronnen op basis van ARM ondersteund. Vm's in klassieke/RDFE-implementaties worden niet ondersteund. Er is momenteel geen ondersteuning gepland voor klassieke/RDFE-resources. Zie [Azure DDoS Protection standaard referentie architecturen](ddos-protection-reference-architectures.md) voor meer informatie.
+
+## <a name="can-i-protect-my-paas-resources-using-ddos-protection"></a>Kan ik mijn PaaS-resources beveiligen met DDoS Protection?
+Open bare Ip's die zijn gekoppeld aan meerdere tenants, single VIP PaaS-services worden momenteel niet ondersteund. Voor beelden van niet-ondersteunde resources zijn opslag-Vip's, Event hub-Vip's en app/Cloud Services-toepassingen. Zie [Azure DDoS Protection standaard referentie architecturen](ddos-protection-reference-architectures.md) voor meer informatie.
 
 ## <a name="can-i-protect-my-on-premise-resources-using-ddos-protection"></a>Kan ik mijn on-premises resources beveiligen met behulp van DDoS Protection?
 U moet de open bare eind punten van uw Service koppelen aan een VNet in azure om de DDoS-beveiliging in te scha kelen. Voor beelden van ontwerpen zijn:

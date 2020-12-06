@@ -7,14 +7,14 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 10/27/2020
+ms.date: 12/04/2020
 ms.reviewer: sngun
-ms.openlocfilehash: b3f7a8fbe2afcf9b5603f288fe6e3bc429b14532
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 674bb67018fcbf7df6285a66c2e0aeb37d24f409
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340189"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96744878"
 ---
 # <a name="change-feed-pull-model-in-azure-cosmos-db"></a>Pull-model voor feed wijzigen in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -52,7 +52,7 @@ Hier volgen enkele belang rijke verschillen tussen de Change feed-processor en h
 | Ondersteunings niveau | Algemeen beschikbaar | Preview |
 
 > [!NOTE]
-> In tegens telling tot bij het lezen van de Change feed-processor moet u expliciet aanvragen afhandelen waarvoor geen nieuwe wijzigingen zijn. 
+> In tegens telling tot bij het lezen van de Change feed-processor moet u expliciet aanvragen afhandelen waarbij er geen nieuwe wijzigingen zijn. 
 
 ## <a name="consuming-an-entire-containers-changes"></a>De wijzigingen van een hele container gebruiken
 

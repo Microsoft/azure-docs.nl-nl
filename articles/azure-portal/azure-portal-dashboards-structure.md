@@ -1,23 +1,14 @@
 ---
-title: De structuur van Azure-Dash boards | Microsoft Docs
+title: Structuur van Azure-dashboards
 description: Door loop de JSON-structuur van een Azure-dash board met behulp van een voorbeeld dashboard. Bevat verwijzingen naar resource-eigenschappen.
-services: azure-portal
-documentationcenter: ''
-author: adamabmsft
-manager: mtillman
-ms.service: azure-portal
-ms.devlang: NA
 ms.topic: conceptual
-ms.tgt_pltfrm: NA
-ms.workload: na
 ms.date: 12/20/2019
-ms.author: mblythe
-ms.openlocfilehash: 014463fb0a5af639ff0da5f8db2805f9796fd928
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: d37e2fd9c9f6ef6e7ddea6dea002f26f20cd66a7
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92072472"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745958"
 ---
 # <a name="the-structure-of-azure-dashboards"></a>Structuur van Azure-dashboards
 In dit document wordt de structuur van een Azure-dash board beschreven, met behulp van het volgende dash board:
@@ -290,7 +281,7 @@ Omdat gedeelde [Azure-Dash boards resources zijn](../azure-resource-manager/mana
 
 ## <a name="common-resource-properties"></a>Algemene bron eigenschappen
 
-Laten we de relevante secties van de JSON opsplitsen.  De eigenschappen van het hoogste niveau, de __id__, de __naam__, het __type__, de __locatie__en de __labels__ worden gedeeld in alle Azure-resource typen. Dat wil zeggen dat ze niet veel te maken hebben met de inhoud van het dash board.
+Laten we de relevante secties van de JSON opsplitsen.  De eigenschappen van het hoogste niveau, de __id__, de __naam__, het __type__, de __locatie__ en de __labels__ worden gedeeld in alle Azure-resource typen. Dat wil zeggen dat ze niet veel te maken hebben met de inhoud van het dash board.
 
 ### <a name="the-id-property"></a>De eigenschap ID
 
@@ -322,10 +313,10 @@ Het object onder de ' 0 ' bevat twee eigenschappen, een __volg orde__ en __delen
 Het object __Parts__ bevat een eigenschap voor elk onderdeel, waarbij de naam van de eigenschap een getal is. Dit getal is niet significant. 
 
 ### <a name="the-part-object"></a>Het onderdeel object
-Elk afzonderlijk onderdeel object heeft een __positie__en __meta gegevens__.
+Elk afzonderlijk onderdeel object heeft een __positie__ en __meta gegevens__.
 
 ### <a name="the-position-object"></a>Het positie object
-De eigenschap __Position__ bevat de grootte-en locatie-informatie voor het onderdeel, uitgedrukt als __x__, __y__, __rowspan__en __colspan__. De waarden zijn qua raster eenheden. Deze raster eenheden zijn zichtbaar wanneer het dash board zich in de aanpassings modus bevindt, zoals hier wordt weer gegeven. Als u wilt dat een tegel een breedte heeft van twee raster eenheden, een hoogte van één raster eenheid en een locatie in de linkerbovenhoek van het dash board, ziet het positie-object er als volgt uit:
+De eigenschap __Position__ bevat de grootte-en locatie-informatie voor het onderdeel, uitgedrukt als __x__, __y__, __rowspan__ en __colspan__. De waarden zijn qua raster eenheden. Deze raster eenheden zijn zichtbaar wanneer het dash board zich in de aanpassings modus bevindt, zoals hier wordt weer gegeven. Als u wilt dat een tegel een breedte heeft van twee raster eenheden, een hoogte van één raster eenheid en een locatie in de linkerbovenhoek van het dash board, ziet het positie-object er als volgt uit:
 
 `location: { x: 0, y: 0, rowSpan: 2, colSpan: 1 }`
 
@@ -340,7 +331,7 @@ Elk onderdeel heeft een eigenschap meta data, een object heeft slechts één ver
 1. `Extension[azure]/HubsExtension/PartType/VideoPart` : Wordt gebruikt voor het weer geven van Video's van YouTube, Channel 9 en elk ander type video dat in een HTML-video code werkt.
 1. `Extension/Microsoft_Azure_Compute/PartType/VirtualMachinePart` : Wordt gebruikt om de naam en status van een virtuele Azure-machine weer te geven.
 
-Elk type onderdeel heeft een eigen configuratie. De mogelijke configuratie-eigenschappen worden __input__, __Settings__en __Asset__genoemd. 
+Elk type onderdeel heeft een eigen configuratie. De mogelijke configuratie-eigenschappen worden __input__, __Settings__ en __Asset__ genoemd. 
 
 ### <a name="the-inputs-object"></a>Het inputs-object
 Het object invoer bevat meestal informatie die een tegel verbindt met een resource-exemplaar.  Het onderdeel van de virtuele machine in het dash board voor beeld bevat één invoer die gebruikmaakt van de Azure-Resource-ID om de binding uit te drukken.  Deze indeling van de resource-ID is consistent voor alle Azure-resources.

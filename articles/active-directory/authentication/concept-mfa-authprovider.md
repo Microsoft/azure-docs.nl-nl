@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d69ba7b4393a815c9f9685d2e2679c6423ac65a
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 2c8454d2ca83d4f406149e7eb73feb19ce59554f
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91965247"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96744122"
 ---
 # <a name="when-to-use-an-azure-multi-factor-authentication-provider"></a>Wanneer een Azure Multi-Factor Authentication provider gebruiken?
 
@@ -52,7 +52,7 @@ Verificatie providers vindt u in de **Azure Portal**  >  **Azure Active Director
 
 Voordat u een verificatie provider verwijdert, moet u rekening houden met de aangepaste instellingen die zijn geconfigureerd in uw provider. Bepaal welke instellingen moeten worden gemigreerd naar algemene MFA-instellingen van uw provider en voltooi de migratie van deze instellingen. 
 
-Azure MFA-servers die zijn gekoppeld aan providers, moeten opnieuw worden geactiveerd met behulp van referenties die zijn gegenereerd onder **Azure Portal**  >  **Azure Active Directory**instellingen voor de  >  **beveiliging**  >  **MFA**-  >  **Server**. Voordat u opnieuw activeert, moeten de volgende bestanden worden verwijderd uit de `\Program Files\Multi-Factor Authentication Server\Data\` Directory op de Azure MFA-servers in uw omgeving:
+Azure MFA-servers die zijn gekoppeld aan providers, moeten opnieuw worden geactiveerd met behulp van referenties die zijn gegenereerd onder **Azure Portal**  >  **Azure Active Directory** instellingen voor de  >  **beveiliging**  >  **MFA**-  >  **Server**. Voordat u opnieuw activeert, moeten de volgende bestanden worden verwijderd uit de `\Program Files\Multi-Factor Authentication Server\Data\` Directory op de Azure MFA-servers in uw omgeving:
 
 - caCert
 - certificaat

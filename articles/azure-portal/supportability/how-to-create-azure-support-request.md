@@ -1,20 +1,15 @@
 ---
-title: Een ondersteunings aanvraag voor Azure maken | Microsoft Docs
+title: Een ondersteuningsaanvraag maken voor Azure
 description: Klanten die hulp nodig hebben, kunnen de Azure Portal gebruiken om self-service oplossingen te vinden en ondersteunings aanvragen te maken en te beheren.
-services: Azure Supportability
-author: mgblythe
-manager: scotthit
 ms.assetid: fd6841ea-c1d5-4bb7-86bd-0c708d193b89
-ms.service: azure-supportability
 ms.topic: how-to
 ms.date: 06/25/2020
-ms.author: mblythe
-ms.openlocfilehash: f937b03b2f838f69f56a4b132d0ea7a7e298b532
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 11ca7925ce1664b5586ab8ec0fb523a2d562ee80
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92372120"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745584"
 ---
 # <a name="create-an-azure-support-request"></a>Een Azure-ondersteuningsaanvraag maken
 
@@ -73,7 +68,7 @@ U wordt begeleid bij een aantal stappen voor het verzamelen van informatie over 
 
 De eerste stap van het proces voor ondersteunings aanvragen verzamelt basis informatie over uw probleem en uw ondersteunings plan.
 
-Op het tabblad **basis beginselen** van de **nieuwe ondersteunings aanvraag**gebruikt u de selecters om ons te laten weten wat het probleem is. Eerst identificeert u enkele algemene categorieën voor het probleem type en kiest u het gerelateerde abonnement. Selecteer de service, bijvoorbeeld **virtuele machine met Windows**. Selecteer de resource, zoals de naam van de virtuele machine. Beschrijf het probleem in uw eigen woorden en selecteer vervolgens **probleem type** en **probleem subtype** om specifiekere informatie te verkrijgen.
+Op het tabblad **basis beginselen** van de **nieuwe ondersteunings aanvraag** gebruikt u de selecters om ons te laten weten wat het probleem is. Eerst identificeert u enkele algemene categorieën voor het probleem type en kiest u het gerelateerde abonnement. Selecteer de service, bijvoorbeeld **virtuele machine met Windows**. Selecteer de resource, zoals de naam van de virtuele machine. Beschrijf het probleem in uw eigen woorden en selecteer vervolgens **probleem type** en **probleem subtype** om specifiekere informatie te verkrijgen.
 
 ![Blade Grondbeginselen](./media/how-to-create-azure-support-request/basics2lower.png)
 
@@ -87,7 +82,7 @@ Vervolgens verzamelen we aanvullende informatie over het probleem. Door in deze 
 
 1. Laat ons, indien mogelijk, weten wanneer het probleem is gestart en alle stappen om het te reproduceren. U kunt een bestand, zoals een logboek bestand of uitvoer van diagnostische gegevens, uploaden. Zie [richt lijnen voor bestands upload](how-to-manage-azure-support-request.md#file-upload-guidelines)voor meer informatie over het uploaden van bestanden.
 
-1. Nadat u alle informatie over het probleem hebt, kiest u hoe u ondersteuning kunt krijgen. Selecteer in de sectie **ondersteunings methode** de **ernst van de**impact. Het maximale Ernst niveau is afhankelijk van uw [ondersteunings plan](https://azure.microsoft.com/support/plans).
+1. Nadat u alle informatie over het probleem hebt, kiest u hoe u ondersteuning kunt krijgen. Selecteer in de sectie **ondersteunings methode** de **ernst van de** impact. Het maximale Ernst niveau is afhankelijk van uw [ondersteunings plan](https://azure.microsoft.com/support/plans).
 
     De optie **Diagnostische gegevens delen** is standaard geselecteerd. Hierdoor kan ondersteuning voor Azure [Diagnostische gegevens](https://azure.microsoft.com/support/legal/support-diagnostic-information-collection/) van uw Azure-resources verzamelen. In sommige gevallen is er een tweede vraag die niet standaard is geselecteerd, zoals het aanvragen van toegang tot het geheugen van een virtuele machine.
 

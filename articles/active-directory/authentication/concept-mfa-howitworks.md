@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 07/14/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9563ed283229eb6f43d036629cfe8b84fcde25fc
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 1cc5227cb4b5de02cba65a60dd469da93d3767e5
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94839876"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96744053"
 ---
 # <a name="how-it-works-azure-ad-multi-factor-authentication"></a>Hoe werkt het? Azure AD-Multi-Factor Authentication
 
@@ -26,13 +26,13 @@ Als u alleen een wachtwoord gebruikt om gebruikers te verifiëren, is dit een on
 
 ![Conceptafbeelding van de verschillende vormen van meervoudige verificatie](./media/concept-mfa-howitworks/methods.png)
 
-Azure AD Multi-Factor Authentication werkt door twee of meer van de volgende verificatie methoden te vereisen:
+Azure AD Multi-Factor Authentication werkt door twee van de volgende verificatiemethoden te vereisen:
 
 * Iets dat u weet, zoals een wachtwoord.
 * Iets dat u hebt, zoals een vertrouwd apparaat dat niet eenvoudig kan worden gedupliceerd, zoals een telefoon of hardwaresleutel.
 * Iets dat u bent: biometrische gegevens zoals een vingerafdruk of gezichtsscan.
 
-Gebruikers kunnen zich registreren voor selfservice voor wachtwoord herstel en Azure AD Multi-Factor Authentication in één stap om de on-board ervaring te vereenvoudigen. Beheerders kunnen definiëren welke vormen van secundaire verificatie kunnen worden gebruikt. Azure AD Multi-Factor Authentication kan ook vereist zijn wanneer gebruikers een selfservice voor wachtwoord herstel moeten uitvoeren om dat proces verder te beveiligen.
+Gebruikers kunnen zich registreren voor zowel de self-service voor wachtwoordherstel als Azure AD Multi-Factor Authentication. Dit gebeurt in één stap, voor een eenvoudigere onboardingervaring. Beheerders kunnen definiëren welke vormen van secundaire verificatie kunnen worden gebruikt. Azure AD Multi-Factor Authentication kan ook vereist zijn wanneer gebruikers een self-service voor wachtwoordherstel uitvoeren om dit proces nog verder te beveiligen.
 
 ![Gebruikte verificatiemethoden op het aanmeldscherm](media/concept-authentication-methods/overview-login.png)
 
@@ -66,4 +66,4 @@ Zie voor meer informatie over licentie verlening de [functies en licenties voor 
 Als u MFA in actie wilt zien, schakelt u Azure AD-Multi-Factor Authentication in voor een set test gebruikers in de volgende zelf studie:
 
 > [!div class="nextstepaction"]
-> [Azure AD-Multi-Factor Authentication inschakelen](./tutorial-enable-azure-mfa.md)
+> [Azure AD Multi-Factor Authentication inschakelen](./tutorial-enable-azure-mfa.md)

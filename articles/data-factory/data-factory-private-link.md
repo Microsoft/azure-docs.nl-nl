@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 09/01/2020
-ms.openlocfilehash: 8d28a1f2040cfec7b81081754a6abd3bc3e14439
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: 5d13a6a77ede6277eebc7fdab7cd42165cb602fa
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96511471"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96746342"
 ---
 # <a name="azure-private-link-for-azure-data-factory"></a>Persoonlijke Azure-koppeling voor Azure Data Factory
 
@@ -96,20 +96,26 @@ Raadpleeg de volgende artikelen voor meer informatie over het configureren van u
 ## <a name="set-up-private-link-for-azure-data-factory"></a>Persoonlijke koppeling instellen voor Azure Data Factory
 U kunt persoonlijke eind punten maken met behulp van [de Azure Portal](../private-link/create-private-endpoint-portal.md).
 
+U kunt kiezen of u uw zelf-hostende Integration runtime wilt verbinden met Azure Data Factory via een openbaar eind punt of een persoonlijk eind punt. 
+
+![Scherm afbeelding van het blok keren van open bare toegang van zelf-hostende Integration Runtime.](./media/data-factory-private-link/disable-public-access-shir.png)
+
+
 U kunt ook naar uw Azure data factory gaan in de Azure Portal en een persoonlijk eind punt maken, zoals hier wordt weer gegeven:
 
 ![Scherm opname van het deel venster "persoonlijke eindpunt verbindingen" voor het maken van een persoonlijk eind punt.](./media/data-factory-private-link/create-private-endpoint.png)
 
+Selecteer in de stap **Resource** van de resource **micro soft. DataFactory/fabrieken** als **resource type**. En als u een persoonlijk eind punt wilt maken voor de opdracht communicatie tussen de zelf-hostende Integration runtime en de Azure Data Factory-Service, selecteert u **DataFactory** als **doel-subresource**.
 
-Als u open bare toegang tot de Azure data factory wilt blok keren en alleen toegang via een persoonlijke koppeling wilt toestaan, schakelt u netwerk toegang tot Azure Data Factory in de Azure Portal uit, zoals hier wordt weer gegeven:
-
-![Scherm opname van het deel venster ' netwerk toegang ' voor het maken van een persoonlijk eind punt.](./media/data-factory-private-link/disable-network-access.png)
+![Scherm opname van het deel venster "persoonlijke eindpunt verbindingen" voor het selecteren van een resource.](./media/data-factory-private-link/private-endpoint-resource.png)
 
 > [!NOTE]
 > Het uitschakelen van open bare netwerk toegang is alleen van toepassing op de zelf-hostende Integration runtime, niet op Azure Integration Runtime en SQL Server Integration Services (SSIS) Integration Runtime.
 
+Als u een persoonlijk eind punt wilt maken voor het ontwerpen en bewaken van de data factory in uw virtuele netwerk, selecteert u **Portal** als **doel-subresource**.
+
 > [!NOTE]
-> U hebt nog steeds toegang tot de Azure Data Factory portal via een openbaar netwerk nadat u open bare netwerk toegang hebt uitgeschakeld.
+> U hebt nog steeds toegang tot de Azure Data Factory portal via een openbaar netwerk nadat u een persoonlijk eind punt voor de portal hebt gemaakt.
 
 ## <a name="next-steps"></a>Volgende stappen
 

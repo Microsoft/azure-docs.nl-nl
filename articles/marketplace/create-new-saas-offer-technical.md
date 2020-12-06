@@ -8,19 +8,19 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
 ms.date: 09/02/2020
-ms.openlocfilehash: d84e1508dec4d4a5802f7a2ac8c0e6ada5a8044c
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 28c0be40387f411286230f94c19fa23a80e650af
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93128688"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96746400"
 ---
 # <a name="how-to-add-technical-details-for-your-saas-offer"></a>Technische gegevens voor uw SaaS-aanbieding toevoegen
 
 In dit artikel wordt beschreven hoe u technische gegevens kunt invoeren waarmee micro soft Commercial Marketplace verbinding kan maken met uw oplossing. Met deze verbinding kunnen wij uw aanbieding voor de klant inrichten als ze ervoor kiezen om deze te verkrijgen en te beheren. Zie [technische informatie](plan-saas-offer.md#technical-information)voor meer informatie over deze instellingen.
 
 > [!NOTE]
-> Als u ervoor kiest om trans acties onafhankelijk te verwerken, wordt deze optie niet weer geven. Ga in plaats daarvan naar [de markt voor uw SaaS-aanbieding](create-new-saas-offer-marketing.md).
+> Als u ervoor kiest om trans acties onafhankelijk te verwerken, wordt deze optie niet weer geven. Ga in plaats daarvan naar [de verkoop van uw SaaS-aanbieding](create-new-saas-offer-marketing.md).
 
 ## <a name="technical-configuration"></a>Technische configuratie
 

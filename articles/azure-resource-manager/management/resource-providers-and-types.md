@@ -2,14 +2,14 @@
 title: Resource providers en resource typen
 description: Hierin worden de resource providers beschreven die Azure Resource Manager ondersteunen. Hierin worden de schema's, beschik bare API-versies en de regio's beschreven die als host kunnen fungeren voor de resources.
 ms.topic: conceptual
-ms.date: 12/01/2020
+ms.date: 12/04/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 6413a1279c9c7a995bb144097e3db55d5f3a90d2
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 6d114fdfae12dd9ee96a23e4dafc3847c6429d0c
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452108"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745107"
 ---
 # <a name="azure-resource-providers-and-types"></a>Azure-resourceproviders en -typen
 
@@ -45,20 +45,28 @@ U kunt de registratie van een resource provider niet ongedaan maken wanneer u no
 
 ## <a name="azure-portal"></a>Azure Portal
 
+### <a name="register-resource-provider"></a>Resourceprovider registreren
+
 Als u alle resource providers en de registratie status voor uw abonnement wilt weer geven:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-2. Selecteer **Alle services** in het menu van Azure Portal.
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Zoek in het menu Azure Portal naar **abonnementen**. Selecteer Tags bij de beschikbare opties.
 
-    ![abonnementen selecteren](./media/resource-providers-and-types/select-all-services.png)
+   :::image type="content" source="./media/resource-providers-and-types/search-subscriptions.png" alt-text="abonnementen zoeken":::
 
-3. Voer in het vak **alle services** het **abonnement** in en selecteer vervolgens **abonnementen**.
-4. Selecteer het abonnement dat u wilt weer geven in de lijst met abonnementen.
-5. **Resource providers** selecteren en de lijst met beschik bare resource providers weer geven.
+1. Selecteer het abonnement dat u wilt weer geven.
 
-    ![resource providers weer geven](./media/resource-providers-and-types/show-resource-providers.png)
+   :::image type="content" source="./media/resource-providers-and-types/select-subscription.png" alt-text="abonnementen selecteren":::
 
-6. Als u een resource provider wilt registreren, selecteert u **registreren**. In de vorige scherm afbeelding is de koppeling **registreren** gemarkeerd voor **micro soft. blauw druk**. Als u de minimale bevoegdheden in uw abonnement wilt behouden, registreert u alleen de resource providers die u kunt gebruiken.
+1. Selecteer onder **Instellingen** in het menu links de optie **Resourceproviders**.
+
+   :::image type="content" source="./media/resource-providers-and-types/select-resource-providers.png" alt-text="resource providers selecteren":::
+
+6. Zoek de resource provider die u wilt registreren en selecteer **registreren**. Als u de minimale bevoegdheden in uw abonnement wilt behouden, registreert u alleen de resource providers die u kunt gebruiken.
+
+   :::image type="content" source="./media/resource-providers-and-types/register-resource-provider.png" alt-text="resource providers registreren":::
+
+### <a name="view-resource-provider"></a>Resource provider weer geven
 
 Informatie weer geven voor een bepaalde resource provider:
 

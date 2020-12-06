@@ -1,18 +1,16 @@
 ---
-title: De regio of SKU-serie is niet beschikbaar-Azure
+title: De regio-of SKU-serie is niet beschikbaar
 description: Sommige SKU-reeksen zijn niet beschikbaar voor het geselecteerde abonnement voor deze regio. hiervoor is mogelijk een ondersteunings aanvraag voor abonnements beheer vereist.
-services: Azure Supportability
 author: stevendotwang
-ms.service: azure-supportability
 ms.topic: troubleshooting
 ms.date: 01/27/2020
 ms.author: xingwan
-ms.openlocfilehash: fccde344a06d39bd4bb8e3178444ec20677e2f50
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 2bbe1dff6bbf8fed481300db95482c46b0e8a7b7
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078507"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745278"
 ---
 # <a name="region-or-sku-unavailable"></a>Regio of SKU is niet beschikbaar
 
@@ -62,13 +60,13 @@ Als u geen geschikte regio of SKU kunt vinden, maakt u een [ondersteunings aanvr
 
 1. In de **basis beginselen**, voor het **type probleem**, selecteert u **abonnements beheer**.
 
-1. Selecteer een **abonnement** en voer een korte beschrijving in **samen vatting**in.
+1. Selecteer een **abonnement** en voer een korte beschrijving in **samen vatting** in.
 
    ![Tabblad basis van nieuwe ondersteunings aanvraag](./media/SKU-series-unavailable/support-request-basics.png)
 
-1. Voor **probleem type**kiest **u probleem type selecteren**.
+1. Voor **probleem type** kiest **u probleem type selecteren**.
 
-1. Kies voor **type probleem selecteren**een optie, bijvoorbeeld, **geen toegang tot mijn abonnement of resource**  >  **mijn probleem niet wordt vermeld**. Selecteer **Opslaan**.
+1. Kies voor **type probleem selecteren** een optie, bijvoorbeeld, **geen toegang tot mijn abonnement of resource**  >  **mijn probleem niet wordt vermeld**. Selecteer **Opslaan**.
 
    ![Geef een probleem op voor de aanvraag](./media/SKU-series-unavailable/support-request-select-problem-type.png)
 
@@ -82,6 +80,6 @@ Als u geen geschikte regio of SKU kunt vinden, maakt u een [ondersteunings aanvr
 
 We zijn altijd te openen voor feedback en suggesties. Stuur ons uw [suggesties](https://feedback.azure.com/forums/266794-support-feedback). Daarnaast kunt u aan de slag met ons op [Twitter](https://twitter.com/azuresupport) of op de [pagina micro soft Q&een vraag](/answers/products/azure).
 
-## <a name="learn-more"></a>Lees meer
+## <a name="learn-more"></a>Meer informatie
 
 [Veelgestelde vragen over ondersteuning voor Azure](https://azure.microsoft.com/support/faq)

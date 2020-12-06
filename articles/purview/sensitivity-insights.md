@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/24/2020
-ms.openlocfilehash: 74f4391fcd071ac510fc66b2f8bc36ec4549dc47
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: e6a92282d2bcd316a771742048dacd9a7181de4f
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96575751"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96746179"
 ---
 # <a name="sensitivity-label-insights-about-your-data-in-azure-purview"></a>Gevoeligheid label inzichten over uw gegevens in azure controle sfeer liggen
 
@@ -48,6 +48,9 @@ Met gevoeligheids labels kunt u aangeven hoe gevoelige bepaalde gegevens zich in
 Hoewel classificaties rechtstreeks overeenkomen (een sociaal-fiscaal nummer heeft een classificatie van het **sofi-nummer**), worden labels van gevoeligheid toegepast wanneer een of meer classificaties en scenario's samen worden gevonden. 
 
 Controle sfeer liggen maakt gebruik van dezelfde classificaties, ook wel aangeduid als gevoelige informatie typen, als Microsoft 365. Op deze manier kunt u uw bestaande gevoelige labels uitbreiden over uw Azure controle sfeer liggen-assets.
+
+> [!NOTE]
+> Nadat u uw bron typen hebt gescand, geeft u met de **gevoeligheid** een aantal uur inzicht in de nieuwe activa.
 
 **Voor het weer geven van gevoeligheid labeling Insights:**
 

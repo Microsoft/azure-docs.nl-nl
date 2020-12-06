@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/24/2020
-ms.openlocfilehash: 34accbf218a782b79579d2f9857c101cc8147ab8
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 553c33b3d5ea2e3f1ee81503cb69fe15db387af6
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96552552"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745023"
 ---
 # <a name="classification-insights-about-your-data-from-azure-purview"></a>Inzicht in de classificatie van uw gegevens vanuit Azure controle sfeer liggen
 
@@ -42,6 +42,9 @@ Zie [gegevens bronnen beheren in azure controle sfeer liggen (preview)](manage-d
 In azure controle sfeer liggen zijn classificaties vergelijkbaar met de label Tags en worden ze gebruikt om gegevens te markeren en te identificeren van een specifiek type dat is gevonden in uw gegevens voor het scannen.
 
 Controle sfeer liggen maakt gebruik van dezelfde gevoelige informatie typen als Microsoft 365, zodat u uw bestaande beveiligings beleid en-beveiliging kunt uitrekken in uw hele data-erfgoed.
+
+> [!NOTE]
+> Nadat u uw bron typen hebt gescand, geeft u de **classificatie** een aantal uur inzicht in de nieuwe activa.
 
 **Classificatie inzichten weer geven:**
 

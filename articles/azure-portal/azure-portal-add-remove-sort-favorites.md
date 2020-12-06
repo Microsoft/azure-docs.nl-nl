@@ -1,25 +1,19 @@
 ---
-title: Favorieten toevoegen, verwijderen en rangschikken in Azure Portal | Microsoft Docs
+title: Favorieten toevoegen, verwijderen en rangschikken in Azure Portal
 description: Meer informatie over het toevoegen of verwijderen van items in de lijst met favorieten en het rangschikken van de volg orde van items
-services: azure-portal
 keywords: Favorieten, portal
-author: mgblythe
-ms.author: mblythe
 ms.date: 12/20/2019
 ms.topic: how-to
-ms.service: azure-portal
-ms.custom: ''
-manager: mtillman
-ms.openlocfilehash: 359a544df906a277a89333e3aee2f6203a707f8c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 01ed34c2e72890c6aeeef9371312825273722ac6
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84764125"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96745788"
 ---
 # <a name="add-remove-and-rearrange-favorites"></a>Favorieten toevoegen, verwijderen en opnieuw ordenen
 
-Items toevoegen aan of verwijderen uit uw lijst met **Favorieten** , zodat u snel naar de Services kunt gaan die u het meest gebruikt. Er zijn al enkele algemene services aan uw lijst met **Favorieten** toegevoegd, maar u wilt deze waarschijnlijk aanpassen. U bent de enige die de wijzigingen die u aanbrengt in **Favorieten**ziet.
+Items toevoegen aan of verwijderen uit uw lijst met **Favorieten** , zodat u snel naar de Services kunt gaan die u het meest gebruikt. Er zijn al enkele algemene services aan uw lijst met **Favorieten** toegevoegd, maar u wilt deze waarschijnlijk aanpassen. U bent de enige die de wijzigingen die u aanbrengt in **Favorieten** ziet.
 
 ## <a name="add-a-favorite"></a>Een favoriet toevoegen
 
@@ -53,7 +47,7 @@ U kunt nu een item rechtstreeks uit de lijst met **Favorieten** verwijderen.
 
 ## <a name="rearrange-favorites"></a>Favorieten opnieuw ordenen
 
-U kunt de volg orde wijzigen waarin uw favoriete services worden weer gegeven. U kunt het menu-item alleen naar een andere locatie onder **Favorieten**slepen en neerzetten.
+U kunt de volg orde wijzigen waarin uw favoriete services worden weer gegeven. U kunt het menu-item alleen naar een andere locatie onder **Favorieten** slepen en neerzetten.
 
 ### <a name="move-cost-management--billing-to-the-top-of-favorites"></a>Cost Management + factuur verplaatsen naar de bovenkant van favorieten
 

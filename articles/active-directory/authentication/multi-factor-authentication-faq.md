@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 07/14/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 909f4b71e07a20abf4af76fecaaf93bb08e4d6b4
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 1dfe99a2ed57ecc953c69d1bad89e2b2c8816ca3
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94837903"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96741442"
 ---
 # <a name="frequently-asked-questions-about-azure-ad-multi-factor-authentication"></a>Veelgestelde vragen over Azure AD Multi-Factor Authentication
 
@@ -46,7 +46,7 @@ Wanneer verificatie aanvragen worden verzonden naar de Cloud service, worden geg
 * **E-mail adres** (optioneel)
 * **Telefoon nummer** (wanneer u een spraak oproep of SMS-verificatie gebruikt)
 * **Apparaat-token** (bij gebruik van verificatie van mobiele apps)
-* **Verificatiemodus**
+* **Verificatie modus**
 * **Verificatieresultaat**
 * **Multi-Factor Authentication-server naam**
 * **Multi-Factor Authentication-server IP-adres**

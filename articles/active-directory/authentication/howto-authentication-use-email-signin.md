@@ -6,16 +6,16 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 10/01/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: calui
-ms.openlocfilehash: c3fcff5673f4498e92f5d66fe96d806a08527197
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: ff6ae6ea6812397e737deb4b97bf1cd15e022c03
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94576016"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96743170"
 ---
 # <a name="sign-in-to-azure-active-directory-using-email-as-an-alternate-login-id-preview"></a>Meld u aan Azure Active Directory gebruik te maken van een e-mail adres als een alternatieve aanmeldings-ID (preview-versie)
 
@@ -30,7 +30,7 @@ Sommige organisaties zijn niet naar hybride verificatie verplaatst om de volgend
 * Als u de UPN van Azure AD wijzigt, wordt er een mis-overeenkomst tussen on-premises en Azure AD-omgevingen gemaakt die problemen met bepaalde toepassingen en services kunnen veroorzaken.
 * Als gevolg van bedrijfs-of nalevings redenen wil de organisatie zich niet aanmelden bij Azure AD door de lokale UPN te gebruiken.
 
-Om u te helpen bij het verplaatsen naar hybride verificatie kunt u Azure AD nu configureren zodat gebruikers zich kunnen aanmelden met een e-mail adres in uw geverifieerde domein als een alternatieve aanmeldings-ID. Als *Contoso* bijvoorbeeld is gebrandt op *fabrikam* , in plaats van zich te blijven aanmelden met de verouderde `balas@contoso.com` UPN, kan e-mail als alternatieve aanmeldings-id nu worden gebruikt. Om toegang te krijgen tot een toepassing of services, melden gebruikers zich aan bij Azure AD via hun toegewezen e-mail adres, zoals `balas@fabrikam.com` .
+Om u te helpen bij het verplaatsen naar hybride verificatie kunt u Azure AD nu configureren zodat gebruikers zich kunnen aanmelden met een e-mail adres in uw geverifieerde domein als een alternatieve aanmeldings-ID. Als *Contoso* bijvoorbeeld is gebrandt op *fabrikam*, in plaats van zich te blijven aanmelden met de verouderde `balas@contoso.com` UPN, kan e-mail als alternatieve aanmeldings-id nu worden gebruikt. Om toegang te krijgen tot een toepassing of services, melden gebruikers zich aan bij Azure AD via hun toegewezen e-mail adres, zoals `balas@fabrikam.com` .
 
 In dit artikel leest u hoe u e-mail kunt inschakelen en gebruiken als een alternatieve aanmeldings-ID. Deze functie is beschikbaar in de Azure AD Free-editie en hoger.
 
@@ -244,7 +244,7 @@ Als gebruikers problemen ondervinden met aanmeldings gebeurtenissen met hun e-ma
 
 1. Zorg ervoor dat het e-mail adres van de gebruikers account is ingesteld voor het kenmerk *proxyAddresses* in de on-premises AD DS omgeving.
 1. Controleer of Azure AD Connect is geconfigureerd en synchroniseert gebruikers accounts uit de on-premises AD DS omgeving in azure AD.
-1. Controleer of het kenmerk *AlternateIdLogin* van het Azure AD *HomeRealmDiscoveryPolicy* -beleid is ingesteld op *' enabled ': True* :
+1. Controleer of het kenmerk *AlternateIdLogin* van het Azure AD *HomeRealmDiscoveryPolicy* -beleid is ingesteld op *' enabled ': True*:
 
     ```powershell
     Get-AzureADPolicy | where-object {$_.Type -eq "HomeRealmDiscoveryPolicy"} | fl *

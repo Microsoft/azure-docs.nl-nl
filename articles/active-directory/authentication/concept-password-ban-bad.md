@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 07/16/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 026f45e715f6d442b27cdd0274f029a68330f7ee
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: b019c12103a0324e21ef7c06b0c7a5d7fe14e6ec
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94839825"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96743884"
 ---
 # <a name="eliminate-bad-passwords-using-azure-active-directory-password-protection"></a>Verwijder ongeldige wacht woorden met Azure Active Directory wachtwoord beveiliging
 

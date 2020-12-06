@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 27075af51c8deb886a060c81927f30bb70b5f638
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 6d5517afe7407da7428d4a83f3d2de67836280c7
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93077656"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96741895"
 ---
 # <a name="azure-ad-password-protection-on-premises-frequently-asked-questions"></a>Veelgestelde vragen over Azure AD-wachtwoord beveiliging
 

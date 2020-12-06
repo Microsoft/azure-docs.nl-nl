@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6aa093411e40b2fc60c52c2a22434658bab78e59
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 978f404aa9b99819460e46ea89df19d27431b8b8
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94839247"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96743136"
 ---
 # <a name="plan-an-azure-ad-multi-factor-authentication-deployment"></a>Een Azure AD Multi-Factor Authentication-implementatie plannen
 
@@ -29,7 +29,7 @@ In deze implementatie handleiding wordt uitgelegd hoe u een Azure AD-Multi-Facto
 Als u snel de Azure AD-Multi-Factor Authentication in actie wilt zien en vervolgens meer wilt weten over aanvullende overwegingen voor de implementatie:
 
 > [!div class="nextstepaction"]
-> [Azure AD-Multi-Factor Authentication inschakelen](tutorial-enable-azure-mfa.md)
+> [Azure AD Multi-Factor Authentication inschakelen](tutorial-enable-azure-mfa.md)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -230,7 +230,7 @@ Het is belang rijk dat u niet per ongeluk uw Azure AD-Tenant kunt vergren delen.
 
 ### <a name="create-conditional-access-policy"></a>Beleid voor voorwaardelijke toegang maken
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com) met een globale-beheerdersaccount.
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com) met een globale-beheerdersaccount.
 1. Blader naar **Azure Active Directory**  >  **beveiligings**  >  **voorwaardelijke toegang**.
 1. Selecteer **Nieuw beleid**.
    ![Een beleid voor voorwaardelijke toegang maken om MFA in te scha kelen voor Azure Portal gebruikers in de test groep](media/howto-mfa-getstarted/conditionalaccess-newpolicy.png)
@@ -250,7 +250,7 @@ Het is belang rijk dat u niet per ongeluk uw Azure AD-Tenant kunt vergren delen.
     * Klik op **Selecteren**.
 1. Sla de **sessie** sectie over.
 1. Stel de wisselknop **Beleid inschakelen** in op **Aan**.
-1. Klik op **Create**.
+1. Klik op **Maken**.
 
 ## <a name="plan-integration-with-on-premises-systems"></a>Integratie met on-premises systemen plannen
 
@@ -370,4 +370,4 @@ Vind oplossingen voor veelvoorkomende problemen met Azure AD MFA in het [artikel
 Als u Azure AD-Multi-Factor Authentication in actie wilt zien, voert u de volgende zelf studie uit:
 
 > [!div class="nextstepaction"]
-> [Azure AD-Multi-Factor Authentication inschakelen](tutorial-enable-azure-mfa.md)
+> [Azure AD Multi-Factor Authentication inschakelen](tutorial-enable-azure-mfa.md)

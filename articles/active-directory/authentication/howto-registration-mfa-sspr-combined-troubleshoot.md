@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: troubleshooting
 ms.date: 04/15/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7ac03ff017f8beefe7cc487cdc32741ac1c5a35
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 5ba1e280e3c14a24e33246799ca0d7ef8221294f
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94838175"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96741691"
 ---
 # <a name="troubleshooting-combined-security-information-registration"></a>Problemen met het registreren van gecombineerde beveiligings gegevens oplossen
 
@@ -32,14 +32,14 @@ De volgende tabel geeft een lijst van alle controle gebeurtenissen die worden ge
 
 | Activiteit | Status | Reden | Beschrijving |
 | --- | --- | --- | --- |
-| Gebruiker heeft alle vereiste beveiligings gegevens geregistreerd | Geslaagd | Gebruiker heeft alle vereiste beveiligings gegevens geregistreerd. | Deze gebeurtenis treedt op wanneer de registratie van een gebruiker is voltooid.|
+| Gebruiker heeft alle vereiste beveiligings gegevens geregistreerd | Success | Gebruiker heeft alle vereiste beveiligings gegevens geregistreerd. | Deze gebeurtenis treedt op wanneer de registratie van een gebruiker is voltooid.|
 | Gebruiker heeft alle vereiste beveiligings gegevens geregistreerd | Fout | De gebruiker heeft de registratie van beveiligings gegevens geannuleerd. | Deze gebeurtenis treedt op wanneer een gebruiker de registratie van de interrupt-modus annuleert.|
-| Geregistreerde beveiligings gegevens van gebruiker | Geslaagd | Geregistreerde *methode* van gebruiker. | Deze gebeurtenis treedt op wanneer een gebruiker een afzonderlijke methode registreert. De *methode* kan de verificatie-app, het telefoon nummer, het e-mail adres, de beveiligings vragen, het app-wacht woord, de alternatieve telefoon, enzovoort zijn.| 
-| Door de gebruiker gecontroleerde beveiligings gegevens | Geslaagd | De gebruiker heeft beveiligings gegevens gecontroleerd. | Deze gebeurtenis treedt op wanneer een gebruiker **ziet** dat deze goed wordt geselecteerd op de pagina beveiligings gegevens controleren.|
+| Geregistreerde beveiligings gegevens van gebruiker | Success | Geregistreerde *methode* van gebruiker. | Deze gebeurtenis treedt op wanneer een gebruiker een afzonderlijke methode registreert. De *methode* kan de verificatie-app, het telefoon nummer, het e-mail adres, de beveiligings vragen, het app-wacht woord, de alternatieve telefoon, enzovoort zijn.| 
+| Door de gebruiker gecontroleerde beveiligings gegevens | Success | De gebruiker heeft beveiligings gegevens gecontroleerd. | Deze gebeurtenis treedt op wanneer een gebruiker **ziet** dat deze goed wordt geselecteerd op de pagina beveiligings gegevens controleren.|
 | Door de gebruiker gecontroleerde beveiligings gegevens | Fout | De gebruiker heeft geen beveiligings gegevens kunnen controleren. | Deze gebeurtenis treedt op wanneer een gebruiker **ziet** dat deze goed wordt geselecteerd op de pagina beveiligings gegevens controleren, maar er is een fout opgetreden op de back-end.|
-| Door gebruiker verwijderde beveiligings gegevens | Geslaagd | De door de gebruiker verwijderde *methode*. | Deze gebeurtenis treedt op wanneer een gebruiker een afzonderlijke methode verwijdert. De *methode* kan de verificatie-app, het telefoon nummer, het e-mail adres, de beveiligings vragen, het app-wacht woord, de alternatieve telefoon, enzovoort zijn.|
+| Door gebruiker verwijderde beveiligings gegevens | Success | De door de gebruiker verwijderde *methode*. | Deze gebeurtenis treedt op wanneer een gebruiker een afzonderlijke methode verwijdert. De *methode* kan de verificatie-app, het telefoon nummer, het e-mail adres, de beveiligings vragen, het app-wacht woord, de alternatieve telefoon, enzovoort zijn.|
 | Door gebruiker verwijderde beveiligings gegevens | Fout | De gebruiker kan de *methode* niet verwijderen. | Deze gebeurtenis treedt op wanneer een gebruiker een methode probeert te verwijderen, maar de poging om een of andere reden mislukt. De *methode* kan de verificatie-app, het telefoon nummer, het e-mail adres, de beveiligings vragen, het app-wacht woord, de alternatieve telefoon, enzovoort zijn.|
-| Door de gebruiker gewijzigde standaard beveiligings gegevens | Geslaagd | De gebruiker heeft de standaard beveiligings gegevens voor de *methode* gewijzigd. | Deze gebeurtenis treedt op wanneer een gebruiker de standaard methode wijzigt. De *methode* kan een verificatie van de verificator-app zijn, een code van mijn verificator-app of-token, roep + x xxxxxxxxxx, tekst een code naar + X xxxxxxxxx, enzovoort.|
+| Door de gebruiker gewijzigde standaard beveiligings gegevens | Success | De gebruiker heeft de standaard beveiligings gegevens voor de *methode* gewijzigd. | Deze gebeurtenis treedt op wanneer een gebruiker de standaard methode wijzigt. De *methode* kan een verificatie van de verificator-app zijn, een code van mijn verificator-app of-token, roep + x xxxxxxxxxx, tekst een code naar + X xxxxxxxxx, enzovoort.|
 | Door de gebruiker gewijzigde standaard beveiligings gegevens | Fout | Gebruiker kan de standaard beveiligings gegevens voor de *methode* niet wijzigen. | Deze gebeurtenis treedt op wanneer een gebruiker de standaard methode probeert te wijzigen, maar de poging om een of andere reden mislukt. De *methode* kan een verificatie van de verificator-app zijn, een code van mijn verificator-app of-token, roep + x xxxxxxxxxx, tekst een code naar + X xxxxxxxxx, enzovoort.|
 
 ## <a name="troubleshooting-interrupt-mode"></a>Problemen met de interrupt-modus oplossen
@@ -139,7 +139,7 @@ De volgende stappen helpen u bij het terugdraaien van een gebruiker of een groep
    }
    ```
 
-#### <a name="rollback"></a>Actie
+#### <a name="rollback"></a>Terugdraaiactie
 
 Voer in een Power shell-venster de volgende opdracht uit, waarbij u het script en de gebruikers bestands locaties opgeeft. Voer de referenties van de globale beheerder in wanneer u hierom wordt gevraagd. Het script voert het resultaat van elke bijwerk bewerking van de gebruiker uit.
 

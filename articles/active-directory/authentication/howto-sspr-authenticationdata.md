@@ -6,18 +6,18 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 10/05/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: ed2366884f53eafe89800e7ae60a6a560dc292b4
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+ms.openlocfilehash: 6b51fe1349b2ece89b97cf9436ad3374374ad309
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92164993"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96741572"
 ---
 # <a name="pre-populate-user-authentication-contact-information-for-azure-active-directory-self-service-password-reset-sspr"></a>Contact gegevens van gebruikers verificatie vooraf invullen voor Azure Active Directory self-service voor wachtwoord herstel (SSPR)
 
@@ -28,7 +28,7 @@ U kunt de contact gegevens van de verificatie vooraf invullen als u aan de volge
 * U hebt de gegevens in uw on-premises Directory juist opgemaakt.
 * U hebt [Azure AD Connect](../hybrid/how-to-connect-install-express.md) geconfigureerd voor uw Azure AD-Tenant.
 
-Telefoon nummers moeten de indeling *+ CountryCode phonenumber*hebben, zoals *+ 1 4251234567*.
+Telefoon nummers moeten de indeling *+ CountryCode phonenumber* hebben, zoals *+ 1 4251234567*.
 
 > [!NOTE]
 > Er moet een spatie zijn tussen de land code en het telefoon nummer.
@@ -69,7 +69,7 @@ Wanneer een gebruiker zich registreert, stelt de registratie pagina de volgende 
 * **E-mail verificatie**
 * **Beveiligings vragen en-antwoorden**
 
-Als u een waarde voor *mobiele telefoon* of *alternatief e-mail adres*hebt gegeven, kunnen gebruikers deze waarden direct gebruiken om hun wacht woord opnieuw in te stellen, zelfs als ze niet zijn geregistreerd voor de service.
+Als u een waarde voor *mobiele telefoon* of *alternatief e-mail adres* hebt gegeven, kunnen gebruikers deze waarden direct gebruiken om hun wacht woord opnieuw in te stellen, zelfs als ze niet zijn geregistreerd voor de service.
 
 Gebruikers zien deze waarden ook wanneer ze zich voor de eerste keer registreren en kunnen ze desgewenst wijzigen. Nadat de registratie is geslaagd, worden deze waarden respectievelijk opgeslagen in de velden *verificatie telefoon* en *verificatie-e* .
 

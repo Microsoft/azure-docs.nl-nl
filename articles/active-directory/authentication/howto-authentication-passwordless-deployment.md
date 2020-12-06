@@ -7,16 +7,16 @@ ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 01/30/2020
 ms.author: baselden
-author: MicrosoftGuyJFlo
+author: justinha
 manager: daveba
 ms.reviewer: baselden, librown
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b4c06e53d3ddfb5f344a759e31d83cb22ce6d4d3
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: a786907c5c954aa45de266b6d92dd47867a8445d
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96174133"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96743612"
 ---
 # <a name="plan-a-passwordless-authentication-deployment-in-azure-active-directory"></a>Een authenticatie-implementatie met een wacht woord plannen in Azure Active Directory
 
@@ -93,7 +93,7 @@ Houd rekening met de behoeften van uw bedrijf en de use cases voor elke verifica
 
 De volgende tabel bevat een overzicht van de use cases die tijdens dit project moeten worden geïmplementeerd.
 
-| Onderwerp | Beschrijving |
+| Gebied | Beschrijving |
 | --- | --- |
 | **Toegang** | Aanmelden met een wacht woord is beschikbaar vanaf een zakelijk of persoonlijk apparaat binnen of buiten het bedrijfs netwerk. |
 | **Controle** | Gebruiks gegevens zijn beschikbaar voor beheerders die bijna in realtime kunnen worden gecontroleerd. <br> Gebruiks gegevens worden minstens elke 29 dagen naar bedrijfs systemen gedownload, of het hulp programma SIEM wordt gebruikt. |
@@ -292,7 +292,7 @@ Volg de stappen die zijn afgestemd op de gekozen methode.
 
 ### <a name="required-administrative-roles"></a>Vereiste beheerders rollen
 
-| Azure AD-rol | Description |
+| Azure AD-rol | Beschrijving |
 | --- | --- |
 | Hoofdbeheerder|De rol met minimale bevoegdheden om gecombineerde registratie-ervaring te kunnen implementeren. |
 | Verificatie beheerder | De functie voor de minste bevoegdheden waarmee verificatie methoden kunnen worden geïmplementeerd en beheerd. |

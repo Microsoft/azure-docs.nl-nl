@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ba0d359079a8999b3c4f2a41f4beadb835ccacc
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 88fe09199cb50d2a3796c3b638dca1a723016dc4
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94838226"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96742014"
 ---
 # <a name="advanced-scenarios-with-azure-mfa-server-and-third-party-vpn-solutions"></a>Geavanceerde scenario's met Azure MFA-server en VPN-oplossingen van derden
 

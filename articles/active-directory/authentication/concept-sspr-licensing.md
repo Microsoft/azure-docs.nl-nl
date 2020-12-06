@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 06/02/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 239e49d287ebf6ad98d1a155219f0d59f6469292
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 8f8f270f740951b95b0d4c00cbcf9b08e20a8e0c
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92366510"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96743721"
 ---
 # <a name="licensing-requirements-for-azure-active-directory-self-service-password-reset"></a>Licentie vereisten voor Azure Active Directory self-service voor wachtwoord herstel
 
@@ -44,7 +44,7 @@ Zie de volgende pagina's voor aanvullende informatie over licenties, inclusief k
 * [Azure Active Directory prijzen](https://azure.microsoft.com/pricing/details/active-directory/)
 * [Azure Active Directory functies en mogelijkheden](https://www.microsoft.com/cloud-platform/azure-active-directory-features)
 * [Enterprise Mobility + Security](https://www.microsoft.com/cloud-platform/enterprise-mobility-security)
-* [Microsoft 365 Enterprise](https://www.microsoft.com/microsoft-365/enterprise)
+* [Microsoft 365 Zakelijk](https://www.microsoft.com/microsoft-365/enterprise)
 * [Microsoft 365 Business](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-business-service-description)
 
 ## <a name="enable-group-or-user-based-licensing"></a>Op groep of gebruiker gebaseerde licentie verlening inschakelen

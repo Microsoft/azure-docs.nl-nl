@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 03/09/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 88cdad5b2b92d9b7449d93e1abeb09c08df89e7b
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: e1459442f7d99d1de88a685eed34493da530c1a4
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91964754"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96743476"
 ---
 # <a name="enable-passwordless-security-key-sign-in-to-on-premises-resources-with-azure-active-directory-preview"></a>Aanmeldings wachtwoord zonder wacht woord inschakelen voor on-premises resources met Azure Active Directory (preview-versie)
 
@@ -115,7 +115,7 @@ Met deze opdracht worden de eigenschappen van de Azure AD Kerberos-server uitgev
 | DomainDnsName | De DNS-domein naam van de Active Directory-domein. |
 | ComputerAccount | Het object computer account van het object van de Azure AD Kerberos-server (de domein controller). |
 | User account | Het uitgeschakelde gebruikers account-object dat de Azure AD Kerberos server TGT-versleutelings sleutel bevat. De DN van dit account is `CN=krbtgt_AzureAD,CN=Users,<Domain-DN>` |
-| Versie | De sleutel versie van de TGT-versleutelings sleutel van de Azure AD Kerberos-server. De versie wordt toegewezen wanneer de sleutel wordt gemaakt. De versie wordt vervolgens verhoogd telkens wanneer de sleutel wordt gedraaid. De stappen zijn gebaseerd op meta gegevens van replicatie en waarschijnlijk meer dan één. De eerste *versie* kan bijvoorbeeld *192272*zijn. De eerste keer dat de sleutel wordt gedraaid, kan de versie worden voortgezet in *212621*. Het is belang rijk om te controleren of de *versie* van het on-premises object en de *CloudKeyVersion* voor het Cloud object hetzelfde zijn. |
+| Versie | De sleutel versie van de TGT-versleutelings sleutel van de Azure AD Kerberos-server. De versie wordt toegewezen wanneer de sleutel wordt gemaakt. De versie wordt vervolgens verhoogd telkens wanneer de sleutel wordt gedraaid. De stappen zijn gebaseerd op meta gegevens van replicatie en waarschijnlijk meer dan één. De eerste *versie* kan bijvoorbeeld *192272* zijn. De eerste keer dat de sleutel wordt gedraaid, kan de versie worden voortgezet in *212621*. Het is belang rijk om te controleren of de *versie* van het on-premises object en de *CloudKeyVersion* voor het Cloud object hetzelfde zijn. |
 | KeyUpdatedOn | De datum en tijd waarop de TGT-versleutelings sleutel van de Azure AD Kerberos-server is bijgewerkt of gemaakt. |
 | KeyUpdatedFrom | De domein controller waarop de TGT-versleutelings sleutel van de Azure AD Kerberos-server voor het laatst is bijgewerkt. |
 | CloudId | De ID van het Azure AD-object. Moet overeenkomen met de bovenstaande ID. |
@@ -190,7 +190,7 @@ U kunt sleutels uit de Azure Portal verwijderen door te navigeren naar de pagina
 
 Bij een schone installatie van een hybride Azure AD-computer, nadat u het domein hebt toegevoegd en opnieuw hebt opgestart, moet u zich aanmelden met een wacht woord en wachten tot het beleid is gesynchroniseerd voordat u FIDO kunt gebruiken om u aan te melden.
 
-- Controleer de huidige status door te typen `dsregcmd /status` in een opdracht venster en controleer of *AzureAdJoined* en *DomainJoined* *Ja*worden weer gegeven.
+- Controleer de huidige status door te typen `dsregcmd /status` in een opdracht venster en controleer of *AzureAdJoined* en *DomainJoined* *Ja* worden weer gegeven.
 - Deze vertraging is een bekende beperking voor apparaten die lid zijn van een domein en is niet FIDO.
 
 ### <a name="im-unable-to-get-sso-to-my-ntlm-network-resource-after-signing-in-with-fido-and-get-a-credential-prompt"></a>Ik kan geen SSO ontvangen van mijn NTLM-netwerk bron na aanmelding bij FIDO en een prompt voor referenties ophalen

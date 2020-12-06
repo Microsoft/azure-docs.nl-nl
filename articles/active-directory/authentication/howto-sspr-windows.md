@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 07/17/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f1cd40b8df0251aee7692df24e9bc3f7186c155d
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 478ae6146caeb8a27cdaf13b7f33e421b8121afc
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91966505"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96741487"
 ---
 # <a name="enable-azure-active-directory-self-service-password-reset-at-the-windows-sign-in-screen"></a>Schakel Azure Active Directory selfservice voor wachtwoord herstel in op het Windows-aanmeldings scherm
 
@@ -75,25 +75,25 @@ Het implementeren van de configuratie wijziging om SSPR in te scha kelen vanuit 
 #### <a name="create-a-device-configuration-policy-in-intune"></a>Een beleid voor apparaatconfiguratie maken in Intune
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) en selecteer **intune**.
-1. Maak een nieuw configuratie profiel voor het apparaat door naar **configuratie**profielen voor apparaten te gaan  >  **Profiles**en vervolgens **+ profiel maken** te selecteren.
+1. Maak een nieuw configuratie profiel voor het apparaat door naar **configuratie** profielen voor apparaten te gaan  >  **Profiles** en vervolgens **+ profiel maken** te selecteren.
    - Kies **Platform** voor platform *Windows 10 en hoger*
-   - Kies bij **profiel type**de optie *aangepast*
-1. Selecteer **maken**en geef een beschrijvende naam op voor het profiel, zoals *Windows 10-aanmeld scherm SSPR*
+   - Kies bij **profiel type** de optie *aangepast*
+1. Selecteer **maken** en geef een beschrijvende naam op voor het profiel, zoals *Windows 10-aanmeld scherm SSPR*
 
     Geef eventueel een duidelijke beschrijving van het profiel op en selecteer vervolgens **volgende**.
-1. Selecteer **toevoegen** onder *configuratie-instellingen*en geef de volgende oma-URI-instelling op om de koppeling wacht woord opnieuw instellen in te scha kelen:
+1. Selecteer **toevoegen** onder *configuratie-instellingen* en geef de volgende oma-URI-instelling op om de koppeling wacht woord opnieuw instellen in te scha kelen:
       - Geef een beschrijvende naam op om uit te leggen wat de instelling doet, zoals het toevoegen van een *SSPR-koppeling*.
       - Geef eventueel een duidelijke beschrijving van de instelling op.
       - **OMA-URI** ingesteld op `./Vendor/MSFT/Policy/Config/Authentication/AllowAadPasswordReset`
       - **Gegevenstype** ingesteld op **Geheel getal**
       - **Waarde** ingesteld op **1**
 
-    Selecteer **toevoegen**en vervolgens **volgende**.
+    Selecteer **toevoegen** en vervolgens **volgende**.
 1. Het beleid kan worden toegewezen aan specifieke gebruikers, apparaten of groepen. Wijs het profiel naar wens aan uw omgeving toe, idea liter eerst naar een test groep apparaten en selecteer vervolgens **volgende**.
 
     Zie [profielen voor gebruikers en apparaten toewijzen in Microsoft intune](/mem/intune/configuration/device-profile-assign)voor meer informatie.
 
-1. Configureer toepas baarheids regels naar wens voor uw omgeving, zoals het *toewijzen van een profiel als OS Edition Windows 10 Enter prise is*en selecteer vervolgens **volgende**.
+1. Configureer toepas baarheids regels naar wens voor uw omgeving, zoals het *toewijzen van een profiel als OS Edition Windows 10 Enter prise is* en selecteer vervolgens **volgende**.
 1. Controleer uw profiel en selecteer vervolgens **maken**.
 
 ### <a name="enable-for-windows-10-using-the-registry"></a>Inschakelen voor Windows 10 met behulp van het REGI ster

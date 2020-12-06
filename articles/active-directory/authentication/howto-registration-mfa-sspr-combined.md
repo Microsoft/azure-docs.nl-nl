@@ -5,25 +5,25 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
-ms.date: 07/20/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.date: 12/04/2020
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8c67f72a7f0d77284dbb34104754793b36bb8d4
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 29a577b50a561cb5b829e453c523e0bd18a70e1a
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94838141"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96741674"
 ---
 # <a name="enable-combined-security-information-registration-in-azure-active-directory"></a>Registratie van gecombineerde beveiligings gegevens inschakelen in Azure Active Directory
 
 Vóór de gecombineerde registratie hebben gebruikers de verificatie methoden voor Azure AD Multi-Factor Authentication en self-service voor wachtwoord herstel (SSPR) afzonderlijk geregistreerd. Het is bekend dat er soort gelijke methoden werden gebruikt voor Azure AD Multi-Factor Authentication en SSPR, maar dat ze voor beide functies moesten registreren. Met gecombineerde registratie kunnen gebruikers zich eenmaal registreren en profiteren van de voor delen van Azure AD-Multi-Factor Authentication en SSPR.
 
 > [!NOTE]
-> Vanaf 15 augustus 2020 worden alle nieuwe Azure AD-tenants automatisch ingeschakeld voor gecombineerde registratie.
+> Vanaf 15 augustus 2020 worden alle nieuwe Azure AD-tenants automatisch ingeschakeld voor gecombineerde registratie. Vanaf 14 december 2020 worden alle Azure AD-tenants met één gebruiker automatisch ingeschakeld voor gecombineerde registratie.
 
 Raadpleeg de [informatie over het registreren van gecombineerde beveiligings gegevens](concept-registration-mfa-sspr-combined.md)om ervoor te zorgen dat u de functionaliteit en effecten begrijpt voordat u de nieuwe ervaring inschakelt.
 

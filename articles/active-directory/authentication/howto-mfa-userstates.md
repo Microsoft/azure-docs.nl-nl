@@ -6,18 +6,18 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 08/17/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 240fb04068f255128f33e79748762305e4d6b704
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 749829f641119273813d3c8ca826daf8b4dc4d11
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94838771"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96742660"
 ---
 # <a name="enable-per-user-azure-ad-multi-factor-authentication-to-secure-sign-in-events"></a>Azure AD-Multi-Factor Authentication per gebruiker inschakelen om aanmeldings gebeurtenissen te beveiligen
 
@@ -41,7 +41,7 @@ Het wijzigen van de gebruikers status wordt niet aanbevolen, tenzij uw Azure AD-
 
 De status van een gebruiker geeft aan of een beheerder deze heeft inge schreven bij Azure AD Multi-Factor Authentication per gebruiker. Gebruikers accounts in azure AD Multi-Factor Authentication hebben de volgende drie statussen:
 
-| Status | Beschrijving | Beïnvloede verouderde verificatie | Browser-apps die worden beïnvloed | Betrokken moderne verificatie |
+| Staat | Beschrijving | Beïnvloede verouderde verificatie | Browser-apps die worden beïnvloed | Betrokken moderne verificatie |
 |:---:| --- |:---:|:--:|:--:|
 | Uitgeschakeld | De standaard status voor een gebruiker die niet is inge schreven bij Azure AD Multi-Factor Authentication per gebruiker. | Nee | Nee | Nee |
 | Ingeschakeld | De gebruiker is inge schreven bij Azure AD Multi-Factor Authentication per gebruiker, maar kan nog steeds hun wacht woord gebruiken voor verouderde verificatie. Als de gebruiker nog geen MFA-verificatie methoden heeft geregistreerd, krijgen ze een prompt om de volgende keer dat ze zich aanmelden te registreren met moderne authenticatie (zoals via een webbrowser). | Nee. Verouderde verificatie blijft werken totdat het registratie proces is voltooid. | Ja. Nadat de sessie is verlopen, is de registratie van Azure AD Multi-Factor Authentication vereist.| Ja. Nadat het toegangs token is verlopen, is de registratie van Azure AD Multi-Factor Authentication vereist. |

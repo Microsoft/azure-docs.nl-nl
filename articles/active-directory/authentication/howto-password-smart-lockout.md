@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 07/20/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: baffe307a560f2668c2d93e36939a695cf963e89
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: b8a57e77ea572f899bf540714e8ac9968988f028
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91968375"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96741725"
 ---
 # <a name="protect-user-accounts-from-attacks-with-azure-active-directory-smart-lockout"></a>Gebruikers accounts beveiligen tegen aanvallen met Azure Active Directory slimme vergren deling
 
@@ -58,7 +58,7 @@ Als u wilt controleren of uw on-premises AD DS account vergrendelings beleid, vo
 
 1. Open het groepsbeleid-beheer programma.
 2. Bewerk het groeps beleid dat het account vergrendelings beleid van uw organisatie bevat, zoals het **standaard domein beleid**.
-3. Bladeren naar **computer configuratie**  >  **beleid**  >  **Windows-instellingen**  >  **beveiligings instellingen**  >  **account beleid**account  >  **vergrendelings beleid**.
+3. Bladeren naar **computer configuratie**  >  **beleid**  >  **Windows-instellingen**  >  **beveiligings instellingen**  >  **account beleid** account  >  **vergrendelings beleid**.
 4. Controleer de **drempel waarde voor account vergrendeling** en **Stel de teller voor account vergrendeling na waarden opnieuw** in.
 
 ![Het vergrendelings beleid voor on-premises Active Directory-account wijzigen](./media/howto-password-smart-lockout/active-directory-on-premises-account-lockout-policy.png)
@@ -70,8 +70,8 @@ Op basis van de vereisten van uw organisatie kunt u de waarden voor de slimme ve
 Voer de volgende stappen uit om de slimme vergrendelings waarden voor uw organisatie te controleren of te wijzigen:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-1. Zoek en selecteer *Azure Active Directory*en selecteer **beveiligings**  >  **verificatie methoden**  >  **wachtwoord beveiliging**.
-1. Stel de **drempel waarde voor vergren deling**in op basis van het aantal mislukte aanmeldingen dat is toegestaan voor een account voordat het voor het eerst wordt vergrendeld.
+1. Zoek en selecteer *Azure Active Directory* en selecteer **beveiligings**  >  **verificatie methoden**  >  **wachtwoord beveiliging**.
+1. Stel de **drempel waarde voor vergren deling** in op basis van het aantal mislukte aanmeldingen dat is toegestaan voor een account voordat het voor het eerst wordt vergrendeld.
 
     De standaard waarde is 10.
 

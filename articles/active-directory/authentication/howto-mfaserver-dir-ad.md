@@ -6,18 +6,18 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: michmcla
 ms.custom: seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2ab61fb57f98f62f2e8e5ca697bb5ef8301cada2
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8b3778ea68edf1fbbb41efb899749e6f35b39bae
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994193"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96742286"
 ---
 # <a name="directory-integration-between-azure-mfa-server-and-active-directory"></a>Adreslijstintegratie tussen Azure MFA-server en Active Directory
 
@@ -51,7 +51,7 @@ De volgende tabel beschrijft de LDAP-configuratie-instellingen.
 
 | Functie | Beschrijving |
 | --- | --- |
-| server |Geef de hostnaam of het IP-adres van de server op waarop de LDAP-directory wordt uitgevoerd.  U kunt ook een back-upserver opgeven, gescheiden door een puntkomma. <br>Opmerking: wanneer het bindings type SSL (TLS) is, is een volledig gekwalificeerde hostnaam vereist. |
+| Server |Geef de hostnaam of het IP-adres van de server op waarop de LDAP-directory wordt uitgevoerd.  U kunt ook een back-upserver opgeven, gescheiden door een puntkomma. <br>Opmerking: wanneer het bindings type SSL (TLS) is, is een volledig gekwalificeerde hostnaam vereist. |
 | Basis-DN |Geef de DN-naam op van het basisdirectory-object waaruit alle directoryquery's starten.  Bijvoorbeeld: dc=abc, dc=com. |
 | Bindingstype query |Selecteer het geschikte bindingstype voor gebruik bij het binden om de LDAP-directory te zoeken.  Dit wordt gebruikt voor import, synchronisatie en gebruikersnaamomzetting. <br><br>  Anoniem: Er wordt een anonieme binding uitgevoerd.  Bindings-DN en bindingswachtwoord worden niet gebruikt.  Dit werkt alleen als de LDAP-directory anonieme binding toestaat en als machtigingen toestaan dat query's naar de betreffende records en kenmerken worden uitgevoerd.  <br><br> Eenvoudig: Bindings-DN en bindingswachtwoord worden doorgegeven als tekst zonder opmaak om een binding te maken met de LDAP-directory.  Dit is bedoeld voor testdoeleinden om te controleren of de server bereikbaar is en of het bindingsaccount de juiste toegang heeft. Nadat het juiste certificaat is geïnstalleerd, gebruikt u voortaan SSL.  <br><br> SSL: Bindings-DN en bindingswachtwoord worden versleuteld met behulp van SSL om een binding te maken met de LDAP-directory.  Installeer lokaal een certificaat dat wordt vertrouwd in de LDAP-directory.  <br><br> Windows: Bind gebruikersnaam en Bindingswachtwoord worden gebruikt om een veilige verbinding te maken met een Active Directory-domeincontroller of ADAM-directory.  Als Bind gebruikersnaam niet wordt ingevuld, wordt voor de binding het aangemelde gebruikersaccount gebruikt. |
 | Bindingstype - Verificaties |Selecteer het geschikte bindingstype voor gebruik bij het uitvoeren van de verificatie van LDAP-bindingen.  Zie de beschrijvingen van de bindingstypen onder Bindingstype query.  Hierdoor kan bijvoorbeeld een anonieme binding worden gebruikt voor query's terwijl voor het beveiligen van verificaties van LDAP-bindingen een SSL-binding wordt gebruikt. |
@@ -92,7 +92,7 @@ Kenmerken kunnen handmatig worden ingevoerd en hoeven niet overeen te komen met 
 | Achternaam |Voer de kenmerknaam in van het kenmerk dat de achternaam in een gebruikersrecord bevat.  De standaardwaarde is sn. |
 | E-mailadres |Voer de kenmerknaam in van het kenmerk dat het e-mailadres in een gebruikersrecord bevat.  Het e-mailadres wordt gebruikt om via e-mail welkomstberichten en updateberichten naar de gebruiker te verzenden.  De standaardwaarde is mail. |
 | Gebruikersgroep |Voer de kenmerknaam in van het kenmerk dat de gebruikersgroep in een gebruikersrecord bevat.  Gebruikersgroep kan worden gebruikt voor het filteren van gebruikers in de agent en in rapporten in de beheerportal van de Multi-Factor Authentication-server. |
-| Description |Voer de kenmerknaam in van het kenmerk dat de beschrijving in een gebruikersrecord bevat.  Beschrijving wordt alleen gebruikt voor zoekopdrachten.  De standaardwaarde is description. |
+| Beschrijving |Voer de kenmerknaam in van het kenmerk dat de beschrijving in een gebruikersrecord bevat.  Beschrijving wordt alleen gebruikt voor zoekopdrachten.  De standaardwaarde is description. |
 | Taal telefoonoproep |Voer de kenmerknaam in van het kenmerk dat de korte naam bevat van de taal die moet worden gebruikt voor telefoonoproepen voor de gebruiker. |
 | Taal sms-bericht |Voer de kenmerknaam in van het kenmerk dat de korte naam bevat van de taal die moet worden gebruikt voor sms-berichten voor de gebruiker. |
 | Taal mobiele app |Voer de kenmerknaam in van het kenmerk dat de korte naam bevat van de taal die moet worden gebruikt voor tekstberichten van mobiele apps voor de gebruiker. |

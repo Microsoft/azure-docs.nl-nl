@@ -5,30 +5,39 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: rarayudu, logicappspm
 ms.topic: conceptual
-ms.date: 05/29/2020
-ms.openlocfilehash: 427b488fe6673bef505fccdaa7185d69437bceaf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/05/2020
+ms.openlocfilehash: 783431c4888a68e24cf3d2603c541c4797ea65d8
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89231313"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96741096"
 ---
-# <a name="create-an-integration-service-environment-ise-by-using-the-logic-apps-rest-api"></a>Maak een integratie service omgeving (ISE) met behulp van de Logic Apps REST API
+# <a name="create-an-integration-service-environment-ise-by-using-the-logic-apps-rest-api"></a>Een integratieserviceomgeving (ISE) maken met behulp van de Logic Apps REST API
 
-In dit artikel wordt beschreven hoe u een [ISE ( *Integration service Environment* )](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) maakt via de Logic apps rest API voor scenario's waarin uw Logic apps en integratie accounts toegang nodig hebben tot een [virtueel Azure-netwerk](../virtual-network/virtual-networks-overview.md). Een ISE is een particuliere en geïsoleerde omgeving die gebruikmaakt van toegewezen opslag en andere bronnen die gescheiden worden gehouden van de "wereldwijde", multi-tenant Logic Apps-service. Deze schei ding vermindert ook de invloed die andere Azure-tenants mogelijk hebben op de prestaties van uw apps. Een ISE biedt u ook uw eigen vaste IP-adressen. Deze IP-adressen zijn gescheiden van de statische IP-adressen die worden gedeeld door de Logic apps in de open bare multi tenant-service.
+Voor scenario's waarbij uw Logic apps en integratie accounts toegang nodig hebben tot een [virtueel Azure-netwerk](../virtual-network/virtual-networks-overview.md), kunt u een [ *integratie service omgeving* (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) maken met behulp van de Logic apps rest API. Zie [toegang tot Azure Virtual Network-resources vanuit Azure Logic apps](connect-virtual-network-vnet-isolated-environment-overview.md)voor meer informatie over ISEs.
 
-U kunt ook een ISE maken met behulp van de voor [beeld-Azure Resource Manager Quick](https://github.com/Azure/azure-quickstart-templates/tree/master/201-integration-service-environment) start-sjabloon of met behulp van de [Azure Portal](../logic-apps/connect-virtual-network-vnet-isolated-environment.md).
+In dit artikel wordt beschreven hoe u een ISE maakt met behulp van de Logic Apps REST API in het algemeen. U kunt eventueel ook een door het [systeem toegewezen of door de gebruiker toegewezen beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) inschakelen op uw ISE, maar alleen met behulp van de Logic apps rest API op dit moment. Met deze identiteit kan uw ISE toegang tot beveiligde bronnen verifiëren, zoals virtuele machines en andere systemen of services, die in of verbonden zijn met een virtueel Azure-netwerk. Op die manier hoeft u zich niet aan te melden met uw referenties.
 
-> [!IMPORTANT]
-> Logic apps, ingebouwde triggers, ingebouwde acties en connectors die worden uitgevoerd in uw ISE, gebruiken een prijs plan dat verschilt van het prijs plan op basis van verbruik. Zie het [Logic apps-prijs model](../logic-apps/logic-apps-pricing.md#fixed-pricing)voor meer informatie over de prijzen en facturerings werkzaamheden voor ISEs. Zie [Logic apps prijzen](../logic-apps/logic-apps-pricing.md)voor prijs tarieven.
+Raadpleeg de volgende artikelen voor meer informatie over andere manieren om een ISE te maken:
+
+* [Een ISE maken met behulp van de Azure Portal](../logic-apps/connect-virtual-network-vnet-isolated-environment.md)
+* [Een ISE maken met behulp van de voor beeld-Azure Resource Manager Quick Start-sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/201-integration-service-environment)
+* [Een ISE maken die ondersteuning biedt voor door de klant beheerde sleutels voor het versleutelen van gegevens in rust](customer-managed-keys-integration-service-environment.md)
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Dezelfde vereisten [prerequisites](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#prerequisites) en [voor waarden om toegang te krijgen tot uw ISE](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#enable-access) als bij het maken van een ISE in de Azure Portal
+* Dezelfde vereisten [prerequisites](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#prerequisites) en [toegangs eisen](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#enable-access) als bij het maken van een ISE in de Azure Portal
+
+* Alle extra resources die u met uw ISE wilt gebruiken, zodat u de informatie in de ISE-definitie kunt toevoegen, bijvoorbeeld: 
+
+  * Als u ondersteuning voor zelfondertekende certificaten wilt inschakelen, moet u in de ISE-definitie informatie over dat certificaat toevoegen.
+
+  * Als u de door de gebruiker toegewezen beheerde identiteit wilt inschakelen, moet u die identiteit vooraf maken en de `objectId` `principalId` Eigenschappen, en de `clientId` bijbehorende waarden in de ISE-definitie toevoegen. Zie [een door de gebruiker toegewezen beheerde identiteit maken in de Azure Portal](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md#create-a-user-assigned-managed-identity)voor meer informatie.
 
 * Een hulp programma dat u kunt gebruiken om uw ISE te maken door de Logic Apps REST API aan te roepen met een HTTPS-aanvraag. U kunt bijvoorbeeld [postman](https://www.getpostman.com/downloads/)gebruiken of u kunt een logische app maken die deze taak uitvoert.
 
-## <a name="send-the-request"></a>De aanvraag verzenden
+## <a name="create-the-ise"></a>De ISE maken
 
 Als u uw ISE wilt maken door de Logic Apps REST API aan te roepen, maakt u deze HTTPS-aanvraag:
 
@@ -58,17 +67,40 @@ Neem de volgende eigenschappen op in de aanvraag header:
 
 ## <a name="request-body"></a>Aanvraagbody
 
-Hier volgt de syntaxis van de hoofd tekst van de aanvraag, waarin de eigenschappen worden beschreven die moeten worden gebruikt bij het maken van uw ISE. Als u een ISE wilt maken die het gebruik van een zelfondertekend certificaat dat is geïnstalleerd op de `TrustedRoot` locatie, neemt u het `certificates` object op in de sectie ISE-definitie `properties` . Voor een bestaande ISE kunt u een PATCH aanvraag alleen voor het object verzenden `certificates` . Zie voor meer informatie over het gebruik van zelfondertekende certificaten [beveiligde toegang en gegevens toegang voor uitgaande oproepen naar andere services en systemen](../logic-apps/logic-apps-securing-a-logic-app.md#secure-outbound-requests).
+Geef in de hoofd tekst van de aanvraag de resource definitie op die moet worden gebruikt voor het maken van uw ISE, met inbegrip van informatie over aanvullende mogelijkheden die u wilt inschakelen voor uw ISE, bijvoorbeeld:
+
+* Als u een ISE wilt maken die het gebruik van een zelfondertekend certificaat dat is geïnstalleerd op de `TrustedRoot` locatie, neemt u het `certificates` object op in de `properties` sectie ISE-definitie, zoals verderop in dit artikel wordt beschreven.
+
+  Als u deze mogelijkheid wilt inschakelen op een bestaande ISE, kunt u een PATCH aanvraag alleen voor het `certificates` object verzenden. Zie voor meer informatie over het gebruik van zelfondertekende certificaten [beveiligde toegang en gegevens toegang voor uitgaande oproepen naar andere services en systemen](../logic-apps/logic-apps-securing-a-logic-app.md#secure-outbound-requests).
+
+* Als u een ISE wilt maken die gebruikmaakt van een door het systeem toegewezen of door de gebruiker toegewezen beheerde identiteit, neemt u het `identity` object op met het beheerde identiteits type en andere vereiste informatie in de ISE-definitie, zoals verderop in dit artikel wordt beschreven.
+
+* Als u een ISE wilt maken die gebruikmaakt van door de klant beheerde sleutels en Azure Key Vault voor het versleutelen van gegevens in rust, neemt u de informatie op die door de [klant beheerde sleutel ondersteuning mogelijk maakt](customer-managed-keys-integration-service-environment.md). U kunt alleen door de klant beheerde sleutels instellen wanneer deze worden *gemaakt*.
+
+### <a name="request-body-syntax"></a>Syntaxis van aanvraag tekst
+
+Hier volgt de syntaxis van de hoofd tekst van de aanvraag, waarin de eigenschappen worden beschreven die moeten worden gebruikt bij het maken van uw ISE:
 
 ```json
 {
-   "id": "/subscriptions/{Azure-subscription-ID/resourceGroups/{Azure-resource-group}/providers/Microsoft.Logic/integrationServiceEnvironments/{ISE-name}",
+   "id": "/subscriptions/{Azure-subscription-ID}/resourceGroups/{Azure-resource-group}/providers/Microsoft.Logic/integrationServiceEnvironments/{ISE-name}",
    "name": "{ISE-name}",
    "type": "Microsoft.Logic/integrationServiceEnvironments",
    "location": "{Azure-region}",
    "sku": {
       "name": "Premium",
       "capacity": 1
+   },
+   // Include the `identity` object to enable the system-assigned identity or user-assigned identity
+   "identity": {
+      "type": <"SystemAssigned" | "UserAssigned">,
+      // When type is "UserAssigned", include the following "userAssignedIdentities" object:
+      "userAssignedIdentities": {
+         "/subscriptions/{Azure-subscription-ID}/resourceGroups/{Azure-resource-group}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{user-assigned-managed-identity-object-ID}": {
+            "principalId": "{principal-ID}",
+            "clientId": "{client-ID}"
+         }
+      }
    },
    "properties": {
       "networkConfiguration": {
@@ -112,6 +144,15 @@ In dit voor beeld van de aanvraag tekst worden de voorbeeld waarden weer gegeven
    "name": "Fabrikam-ISE",
    "type": "Microsoft.Logic/integrationServiceEnvironments",
    "location": "WestUS2",
+   "identity": {
+      "type": "UserAssigned",
+      "userAssignedIdentities": {
+         "/subscriptions/********************/resourceGroups/Fabrikam-RG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/*********************************": {
+            "principalId": "*********************************",
+            "clientId": "*********************************"
+         }
+      }
+   },
    "sku": {
       "name": "Premium",
       "capacity": 1
@@ -150,4 +191,3 @@ In dit voor beeld van de aanvraag tekst worden de voorbeeld waarden weer gegeven
 
 * [Resources toevoegen aan integratieserviceomgevingen](../logic-apps/add-artifacts-integration-service-environment-ise.md)
 * [Integratieserviceomgevingen beheren](../logic-apps/ise-manage-integration-service-environment.md#check-network-health)
-

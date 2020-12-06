@@ -6,17 +6,17 @@ ms.service: active-directory
 ms.subservice: authentication
 ms.topic: how-to
 ms.date: 09/14/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: librown, aakapo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8530b74a63f4e5e2c04ff95a0106b896102dda2c
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 8ac8cf172a13e7198233170634ee4a3954793cd2
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96618090"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96743425"
 ---
 # <a name="enable-passwordless-security-key-sign-in-preview"></a>Aanmelden zonder wacht woord voor beveiligings sleutel inschakelen (preview)
 

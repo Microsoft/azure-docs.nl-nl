@@ -5,25 +5,25 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 11/04/2020
-ms.author: joflore
-author: MicrosoftGuyJFlo
+ms.date: 12/04/2020
+ms.author: justinha
+author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 22f43c5f9848670b9df4b061c5abb6cc30912172
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: c8dce284c0fffe10fe077fcb6c6713ba65c45751
+ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94839791"
+ms.lasthandoff: 12/06/2020
+ms.locfileid: "96743901"
 ---
 # <a name="combined-security-information-registration-for-azure-active-directory-overview"></a>Registratie van gecombineerde beveiligings gegevens voor Azure Active Directory overzicht
 
 Vóór de gecombineerde registratie hebben gebruikers de verificatie methoden voor Azure AD Multi-Factor Authentication en self-service voor wachtwoord herstel (SSPR) afzonderlijk geregistreerd. Het is bekend dat er soort gelijke methoden werden gebruikt voor Multi-Factor Authentication en SSPR, maar dat ze voor beide functies moesten registreren. Met gecombineerde registratie kunnen gebruikers zich eenmaal registreren en profiteren van de voor delen van Multi-Factor Authentication en SSPR.
 
 > [!NOTE]
-> Vanaf 15 augustus 2020 worden alle nieuwe Azure AD-tenants automatisch ingeschakeld voor gecombineerde registratie.
+> Vanaf 15 augustus 2020 worden alle nieuwe Azure AD-tenants automatisch ingeschakeld voor gecombineerde registratie. Vanaf 14 december 2020 worden alle Azure AD-tenants met één gebruiker automatisch ingeschakeld voor gecombineerde registratie.
 
 In dit artikel vindt u een overzicht van de gecombineerde beveiligings registratie. Raadpleeg het volgende artikel om aan de slag te gaan met de gecombineerde beveiligings registratie:
 

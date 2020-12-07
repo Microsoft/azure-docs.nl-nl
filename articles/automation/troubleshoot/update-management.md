@@ -2,15 +2,15 @@
 title: Problemen met Azure Automation Updatebeheer oplossen
 description: In dit artikel leest u hoe u problemen oplost en oplost met Azure Automation Updatebeheer.
 services: automation
-ms.date: 10/14/2020
+ms.date: 12/04/2020
 ms.topic: conceptual
 ms.service: automation
-ms.openlocfilehash: 8818047dd4fef9c495c46b353e68841f83e9677c
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: e8fc2a840ce019282625f286a6d54b132a1806c8
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92217215"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96751254"
 ---
 # <a name="troubleshoot-update-management-issues"></a>Problemen met Updatebeheer oplossen
 
@@ -18,6 +18,40 @@ In dit artikel worden problemen beschreven die u kunt uitvoeren bij het implemen
 
 >[!NOTE]
 >Als u problemen ondervindt bij het implementeren van Updatebeheer op een Windows-computer, opent u de Windows-Logboeken en raadpleegt u het gebeurtenis logboek van **Operations Manager** onder **Logboeken voor toepassingen en services** op de lokale computer. Zoek naar gebeurtenissen met gebeurtenis-ID 4502 en gebeurtenis details die bevatten `Microsoft.EnterpriseManagement.HealthService.AzureAutomation.HybridAgent` .
+
+## <a name="scenario-linux-updates-shown-as-pending-and-those-installed-vary"></a>Scenario: Linux-updates die worden weer gegeven als in behandeling en die zijn geïnstalleerd, zijn afhankelijk
+
+### <a name="issue"></a>Probleem
+
+Voor uw Linux-machine bevat Updatebeheer specifieke updates die beschikbaar zijn onder classificatie **beveiliging** en **andere**. Maar wanneer een update planning op de computer wordt uitgevoerd, bijvoorbeeld om alleen updates te installeren die overeenkomen met de **beveiligings** classificatie, zijn de geïnstalleerde updates anders dan of een subset van de updates die eerder zijn afgestemd op die classificatie.
+
+### <a name="cause"></a>Oorzaak
+
+Wanneer een evaluatie van updates van het besturings systeem die in behandeling zijn voor uw Linux-machine is uitgevoerd, opent u het [beveiligings probleem en](https://oval.mitre.org/) de door de Linux distributie-leverancier verwerkte ovaal bestanden worden gebruikt door updatebeheer voor classificatie. Er wordt gecategoriseerd voor Linux-updates als **beveiliging** of **anderen**, op basis van de ovale bestanden die de updates van beveiligings problemen of beveiligings lekken afhandelen. Maar wanneer de update planning wordt uitgevoerd, wordt deze uitgevoerd op de Linux-machine met behulp van de juiste pakket manager, zoals YUM, APT of ZYPPER om ze te installeren. Pakket beheer voor de Linux-distributie kan een ander mechanisme hebben voor het classificeren van updates, waarbij de resultaten kunnen verschillen van de waarden die zijn verkregen via OVALE bestanden door Updatebeheer.
+
+### <a name="resolution"></a>Oplossing
+
+U kunt de Linux-computer, de toepasselijke updates en de classificatie hand matig controleren volgens de package manager van de distributie. Voer de volgende opdrachten uit om te begrijpen welke updates worden geclassificeerd als **beveiliging** door uw pakket Manager.
+
+Voor YUM retourneert de volgende opdracht een niet-nulwaarde lijst met updates die zijn gecategoriseerd als **beveiliging** door Red Hat. Houd er rekening mee dat in het geval van CentOS altijd een lege lijst wordt geretourneerd en er geen beveiligings classificatie plaatsvindt.
+
+```bash
+sudo yum -q --security check-update
+```
+
+Voor ZYPPER retourneert de volgende opdracht een niet-nulwaarde lijst met updates die zijn gecategoriseerd als **beveiliging** door SuSE.
+
+```bash
+sudo LANG=en_US.UTF8 zypper --non-interactive patch --category security --dry-run
+```
+
+Voor APT retourneert de volgende opdracht een niet-nul lijst met updates die zijn gecategoriseerd als **beveiliging** door canoniek voor Ubuntu Linux distributies.
+
+```bash
+sudo grep security /etc/apt/sources.list > /tmp/oms-update-security.list LANG=en_US.UTF8 sudo apt-get -s dist-upgrade -oDir::Etc::Sourcelist=/tmp/oms-update-security.list
+```
+
+In deze lijst voert u de opdracht uit `grep ^Inst` om alle beveiligings updates in behandeling te ontvangen.
 
 ## <a name="scenario-you-receive-the-error-failed-to-enable-the-update-solution"></a><a name="failed-to-enable-error"></a>Scenario: de fout ' kan de update oplossing niet inschakelen ' wordt weer gegeven
 
@@ -37,7 +71,7 @@ Deze fout kan de volgende oorzaken hebben:
 
 * Updatebeheer doel items zijn onjuist geconfigureerd en de machine ontvangt geen updates zoals verwacht.
 
-* U kunt ook zien dat de machine de status `Non-compliant` onder **naleving**weergeeft. Tegelijkertijd rapporteert **Agent Desktop Analytics** de agent als `Disconnected` .
+* U kunt ook zien dat de machine de status `Non-compliant` onder **naleving** weergeeft. Tegelijkertijd rapporteert **Agent Desktop Analytics** de agent als `Disconnected` .
 
 ### <a name="resolution"></a>Oplossing
 
@@ -87,7 +121,7 @@ Uw machines hebben de volgende symptomen:
 
 * Uw computers ontbreken in de Updatebeheer weer gave van uw Azure Automation-account.
 
-* U hebt computers die als `Not assessed` onder **naleving**worden weer gegeven. U ziet echter heartbeat-gegevens in Azure Monitor logboeken voor de Hybrid Runbook Worker maar niet voor Updatebeheer.
+* U hebt computers die als `Not assessed` onder **naleving** worden weer gegeven. U ziet echter heartbeat-gegevens in Azure Monitor logboeken voor de Hybrid Runbook Worker maar niet voor Updatebeheer.
 
 ### <a name="cause"></a>Oorzaak
 
@@ -146,11 +180,11 @@ De resource provider voor Automation is niet geregistreerd in het abonnement.
 
 Voer de volgende stappen uit in de Azure Portal om de resource provider Automation te registreren.
 
-1. Selecteer in de lijst van de Azure-service aan de onderkant van de portal **alle services**en selecteer vervolgens **abonnementen** in de algemene service groep.
+1. Selecteer in de lijst van de Azure-service aan de onderkant van de portal **alle services** en selecteer vervolgens **abonnementen** in de algemene service groep.
 
 2. Selecteer uw abonnement.
 
-3. Onder **instellingen**selecteert u **resource providers**.
+3. Onder **instellingen** selecteert u **resource providers**.
 
 4. Controleer in de lijst met resource providers of de resource provider micro soft. Automation is geregistreerd.
 
@@ -178,11 +212,11 @@ Als uw abonnement niet is geconfigureerd voor de Automation-resource provider, k
 
 1. Open de lijst met Azure-Services in het [Azure Portal](../../azure-resource-manager/management/resource-providers-and-types.md#azure-portal).
 
-2. Selecteer **alle services**en selecteer vervolgens **abonnementen** in de algemene service groep.
+2. Selecteer **alle services** en selecteer vervolgens **abonnementen** in de algemene service groep.
 
 3. Zoek het abonnement dat is gedefinieerd in het bereik voor uw implementatie.
 
-4. Kies onder **instellingen**de optie **resource providers**.
+4. Kies onder **instellingen** de optie **resource providers**.
 
 5. Controleer of de resource provider micro soft. Automation is geregistreerd.
 
@@ -497,7 +531,7 @@ Zie [updates installeren](../update-management/deploy-updates.md#schedule-an-upd
 
 ### <a name="issue"></a>Probleem
 
-* U hebt computers die `Not assessed` onder **naleving**zien en er wordt een uitzonderings bericht weer gegeven.
+* U hebt computers die `Not assessed` onder **naleving** zien en er wordt een uitzonderings bericht weer gegeven.
 * Er wordt een HRESULT-fout code weer geven in de portal.
 
 ### <a name="cause"></a>Oorzaak

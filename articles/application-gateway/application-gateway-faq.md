@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/26/2020
 ms.author: victorh
 ms.custom: references_regions
-ms.openlocfilehash: 8df24b44d648343c46532eed443717f444bd0058
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: dc262e133f6e91271d7e9848bdca9d3a6062fc66
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95975629"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96751696"
 ---
 # <a name="frequently-asked-questions-about-application-gateway"></a>Veelgestelde vragen over Application Gateway
 
@@ -466,12 +466,9 @@ U kunt ook een resource manager-sjabloon gebruiken waarmee de populaire [GoAcces
 
 Normaal gesp roken ziet u een onbekende status wanneer de toegang tot de back-end wordt geblokkeerd door een netwerk beveiligings groep (NSG), aangepaste DNS of door de gebruiker gedefinieerde route ring (UDR) op het toepassings gateway-subnet. Zie voor meer informatie [status van back-end, diagnostische logboek registratie en metrische gegevens voor Application Gateway](application-gateway-diagnostics.md).
 
-### <a name="is-there-any-case-where-nsg-flow-logs-wont-show-allowed-traffic"></a>Is er een geval waarin NSG-stroom logboeken geen toegestaan verkeer weer geven?
+### <a name="are-nsg-flow-logs-supported-on-nsgs-associated-to-application-gateway-v2-subnet"></a>Worden NSG-stroom logboeken ondersteund op Nsg's die zijn gekoppeld aan Application Gateway v2-subnet?
 
-Ja. Als uw configuratie overeenkomt met het volgende scenario, ziet u geen toegestaan verkeer in uw NSG-stroom logboeken:
-- U hebt Application Gateway v2 geïmplementeerd
-- U hebt een NSG op het toepassings gateway-subnet
-- U hebt NSG-stroom logboeken ingeschakeld op die NSG
+Als gevolg van de beperkingen van het huidige platform, als u een NSG hebt op het Application Gateway v2-subnet (Standard_v2, WAF_v2) en als u NSG-stroom Logboeken hebt ingeschakeld, ziet u niet-deterministisch gedrag. dit scenario wordt momenteel niet ondersteund.
 
 ### <a name="does-application-gateway-store-customer-data"></a>Worden klant gegevens Application Gateway opgeslagen?
 

@@ -3,14 +3,13 @@ title: Beheerde identiteiten gebruiken in azure Kubernetes service
 description: Meer informatie over het gebruik van beheerde identiteiten in azure Kubernetes service (AKS)
 services: container-service
 ms.topic: article
-ms.date: 07/17/2020
-ms.author: thomasge
-ms.openlocfilehash: 96a1eebbdcbf269b06d2ece77987ce7813f1d5f5
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.date: 12/06/2020
+ms.openlocfilehash: e2a80ea869e17665e8a6d4fbd6960c3ccc8c1042
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96571059"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96751271"
 ---
 # <a name="use-managed-identities-in-azure-kubernetes-service"></a>Beheerde identiteiten gebruiken in azure Kubernetes service
 
@@ -22,14 +21,13 @@ Op dit moment vereist een Azure Kubernetes service (AKS)-cluster (met name de Ku
 
 U moet de volgende bron hebben geïnstalleerd:
 
-- De Azure CLI, versie 2.8.0 of hoger
+- De Azure CLI, versie 2.15.1 of hoger
 
 ## <a name="limitations"></a>Beperkingen
 
-* AKS-clusters met beheerde identiteiten kunnen alleen worden ingeschakeld tijdens het maken van het cluster.
 * Tijdens de **upgrade** bewerkingen van het cluster is de beheerde identiteit tijdelijk niet beschikbaar.
 * Tenants verplaatsen/migreren van beheerde identiteits clusters worden niet ondersteund.
-* Als het cluster is `aad-pod-identity` ingeschakeld, wijzigt NMI (node Managed Identity) het knoop punt ' iptables ' om aanroepen naar het eind punt van de meta gegevens van het Azure-exemplaar te onderscheppen. Deze configuratie houdt in dat elke aanvraag voor het eind punt van de meta gegevens wordt onderschept door NMI, zelfs als de pod niet wordt gebruikt `aad-pod-identity` . AzurePodIdentityException CRD kan zodanig worden geconfigureerd `aad-pod-identity` dat alle aanvragen voor het eind punt van de meta gegevens die afkomstig zijn van een pod die overeenkomt met de labels die zijn gedefinieerd in CRD, via een proxy moeten worden gewaarschuwd zonder enige verwerking in NMI. Het systeem van het `kubernetes.azure.com/managedby: aks` label in de naam ruimte _uitvoeren_ moet worden uitgesloten in `aad-pod-identity` door de AzurePodIdentityException CRD te configureren. Zie [Aad-pod-Identity voor een specifieke Pod of toepassing uitschakelen](https://azure.github.io/aad-pod-identity/docs/configure/application_exception)voor meer informatie.
+* Als het cluster is `aad-pod-identity` ingeschakeld, wijzigt Node-Managed identiteit (NMI) peul de knoop punten iptables om aanroepen naar het eind punt van de meta gegevens van het Azure-exemplaar te onderscheppen. Deze configuratie houdt in dat elke aanvraag voor het eind punt van de meta gegevens wordt onderschept door NMI, zelfs als de pod niet wordt gebruikt `aad-pod-identity` . AzurePodIdentityException CRD kan zodanig worden geconfigureerd `aad-pod-identity` dat alle aanvragen voor het eind punt van de meta gegevens die afkomstig zijn van een pod die overeenkomt met de labels die zijn gedefinieerd in CRD, via een proxy moeten worden gewaarschuwd zonder enige verwerking in NMI. Het systeem van het `kubernetes.azure.com/managedby: aks` label in de naam ruimte _uitvoeren_ moet worden uitgesloten in `aad-pod-identity` door de AzurePodIdentityException CRD te configureren. Zie [Aad-pod-Identity voor een specifieke Pod of toepassing uitschakelen](https://azure.github.io/aad-pod-identity/docs/configure/application_exception)voor meer informatie.
   Als u een uitzonde ring wilt configureren, installeert u de YAML van de [Mic-uitzonde ring](https://github.com/Azure/aad-pod-identity/blob/master/deploy/infra/mic-exception.yaml).
 
 ## <a name="summary-of-managed-identities"></a>Samen vatting van beheerde identiteiten
@@ -38,12 +36,12 @@ AKS maakt gebruik van verschillende beheerde identiteiten voor ingebouwde servic
 
 | Identiteit                       | Naam    | Toepassing | Standaard machtigingen | Uw eigen identiteit meenemen
 |----------------------------|-----------|----------|
-| Besturingsvlak | niet zichtbaar | Gebruikt door AKS voor beheerde netwerk bronnen, waaronder binnenloads voor binnenkomend verkeer en AKS beheerde open bare Ip's | Rol Inzender voor knooppunt resource groep | Preview
+| Besturingsvlak | niet zichtbaar | Wordt gebruikt door AKS-besturings vlak onderdelen voor het beheren van cluster bronnen, waaronder inkomend netwerk taak verdelers en door AKS beheerde open bare Ip's en bewerkingen voor het automatisch schalen van clusters | Rol Inzender voor knooppunt resource groep | Preview
 | Kubelet | AKS-cluster naam-agent pool | Verificatie met Azure Container Registry (ACR) | N.V.T. (voor kubernetes v 1.15 +) | Momenteel niet ondersteund
 | Invoeg toepassing | AzureNPM | Geen identiteit vereist | NA | Nee
 | Invoeg toepassing | AzureCNI netwerk bewaking | Geen identiteit vereist | NA | Nee
-| Invoeg toepassing | azurepolicy (gate keeper) | Geen identiteit vereist | NA | Nee
-| Invoeg toepassing | azurepolicy | Geen identiteit vereist | NA | Nee
+| Invoeg toepassing | Azure-Policy (gate keeper) | Geen identiteit vereist | NA | Nee
+| Invoeg toepassing | Azure-beleid | Geen identiteit vereist | NA | Nee
 | Invoeg toepassing | Calico | Geen identiteit vereist | NA | Nee
 | Invoeg toepassing | Dashboard | Geen identiteit vereist | NA | Nee
 | Invoeg toepassing | HTTPApplicationRouting | Hiermee worden de vereiste netwerk bronnen beheerd | Rol van lezer voor knooppunt resource groep, rol Inzender voor DNS-zone | Nee
@@ -135,44 +133,14 @@ az aks update -g <RGName> -n <AKSName> --enable-managed-identity --assign-identi
 > [!NOTE]
 > Zodra de door het systeem toegewezen of door de gebruiker toegewezen identiteiten zijn bijgewerkt naar een beheerde identiteit, voert u een `az nodepool upgrade --node-image-only` op uw knoop punten uit om de update te volt ooien voor de beheerde identiteit.
 
-## <a name="bring-your-own-control-plane-mi-preview"></a>Uw eigen besturings vlak instellen MI (preview-versie)
-De identiteit van een aangepast besturings element biedt toegang tot de bestaande identiteit voordat het cluster wordt gemaakt. Dit maakt scenario's mogelijk, zoals het gebruik van een aangepast VNET of outboundType van UDR met een beheerde identiteit.
+## <a name="bring-your-own-control-plane-mi"></a>Stel uw eigen besturings vlak op MI
+De identiteit van een aangepast besturings element biedt toegang tot de bestaande identiteit voordat het cluster wordt gemaakt. Deze functie maakt scenario's mogelijk, zoals het gebruik van een aangepast VNET of outboundType van UDR met een vooraf gemaakte beheerde identiteit.
 
-[!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
+U moet de Azure CLI, versie 2.15.1 of hoger hebben geïnstalleerd.
 
-U moet de volgende resources hebben geïnstalleerd:
-- De Azure CLI, versie 2.9.0 of hoger
-- De 0.4.57-uitbrei ding AKS-preview
-
-Beperkingen voor het maken van uw eigen besturings vlak MI (preview):
+### <a name="limitations"></a>Beperkingen
 * Azure Government wordt momenteel niet ondersteund.
 * Azure China 21Vianet wordt momenteel niet ondersteund.
-
-```azurecli-interactive
-az extension add --name aks-preview
-az extension list
-```
-
-```azurecli-interactive
-az extension update --name aks-preview
-az extension list
-```
-
-```azurecli-interactive
-az feature register --name UserAssignedIdentityPreview --namespace Microsoft.ContainerService
-```
-
-Het kan enkele minuten duren voordat de status als **geregistreerd** wordt weer gegeven. U kunt de registratiestatus controleren met behulp van de opdracht [az feature list](/cli/azure/feature?view=azure-cli-latest#az-feature-list&preserve-view=true):
-
-```azurecli-interactive
-az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/UserAssignedIdentityPreview')].{Name:name,State:properties.state}"
-```
-
-Wanneer de status wordt weer gegeven als geregistreerd, vernieuwt u de registratie van de `Microsoft.ContainerService` resource provider met behulp van de opdracht [AZ provider REGI ster](/cli/azure/provider?view=azure-cli-latest#az-provider-register&preserve-view=true) :
-
-```azurecli-interactive
-az provider register --namespace Microsoft.ContainerService
-```
 
 Als u nog geen beheerde identiteit hebt, moet u er een voor beeld maken met behulp van [AZ Identity cli][az-identity-create].
 

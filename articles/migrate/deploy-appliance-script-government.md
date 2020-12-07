@@ -1,14 +1,17 @@
 ---
 title: Een Azure Migrate apparaat instellen in Azure Government
 description: Meer informatie over het instellen van een Azure Migrate apparaat in Azure Government
-ms.topic: article
+author: vikram1988
+ms.author: vibansa
+ms.manager: abhemraj
+ms.topic: how-to
 ms.date: 04/16/2020
-ms.openlocfilehash: 1060bda13cc593980850bc6563555cf5dd4b7fd9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f31211c4448ad5bbe8d839b2ec86b0b61970f568
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91450023"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96752189"
 ---
 # <a name="set-up-an-appliance-in-azure-government"></a>Een apparaat instellen in Azure Government 
 
@@ -35,7 +38,7 @@ Als u het apparaat voor VMware wilt instellen, downloadt u een zip-bestand van d
 
 1.  In **Migratiedoelen** > **Servers** > **Azure Migrate: Serverevaluatie** klikt u op **Ontdekken**.
 2.  In **Machines ontdekken** > **Zijn de machines gevirtualiseerd?** selecteert u **Ja, met VMware vSphere-hypervisor**.
-3.  Klik op **downloaden**om het zip-bestand te downloaden. 
+3.  Klik op **downloaden** om het zip-bestand te downloaden. 
 
 
 ### <a name="verify-file-security"></a>Bestands beveiliging controleren
@@ -71,12 +74,12 @@ Het script uitvoeren:
 1. Pak het zip-bestand uit naar een map op de computer die als host moet fungeren voor het apparaat. Zorg ervoor dat u het script niet uitvoert op een machine op een bestaand Azure Migrate-apparaat.
 2. Start Power shell op de computer met Administrator bevoegdheden (met verhoogde bevoegdheden).
 3. Wijzig de Power shell-map in de map met de inhoud die is geëxtraheerd uit het gedownloade zip-bestand.
-4. Voer het script **AzureMigrateInstaller.ps1**als volgt uit: 
+4. Voer het script **AzureMigrateInstaller.ps1** als volgt uit: 
     
     ``` PS C:\Users\Administrators\Desktop\AzureMigrateInstaller-VMWare-USGov>.\AzureMigrateInstaller.ps1 ```
 1. Nadat het script is uitgevoerd, wordt de web-app voor het toestel gestart, zodat u het apparaat kunt instellen. Als u problemen ondervindt, controleert u de script logboeken op C:\ProgramData\Microsoft Azure\Logs\ AzureMigrateScenarioInstaller_<em>Time Stamp</em>. log.
 
-### <a name="verify-access"></a>Toegang controleren
+### <a name="verify-access"></a>Toegang verifiëren
 
 Zorg ervoor dat het apparaat verbinding kan maken met Azure-Url's voor [overheids Clouds](migrate-appliance.md#government-cloud-urls).
 
@@ -89,7 +92,7 @@ Als u het apparaat voor Hyper-V wilt instellen, downloadt u een zip-bestand van 
 
 1.  In **Migratiedoelen** > **Servers** > **Azure Migrate: Serverevaluatie** klikt u op **Ontdekken**.
 2.  In **Machines ontdekken** > **Zijn de machines gevirtualiseerd?** selecteert u **Ja, met Hyper-V**.
-3.  Klik op **downloaden**om het zip-bestand te downloaden. 
+3.  Klik op **downloaden** om het zip-bestand te downloaden. 
 
 
 ### <a name="verify-file-security"></a>Bestands beveiliging controleren
@@ -126,12 +129,12 @@ Het script uitvoeren:
 1. Pak het zip-bestand uit naar een map op de computer die als host moet fungeren voor het apparaat. Zorg ervoor dat u het script niet uitvoert op een machine op een bestaand Azure Migrate-apparaat.
 2. Start Power shell op de computer met Administrator bevoegdheden (met verhoogde bevoegdheden).
 3. Wijzig de Power shell-map in de map met de inhoud die is geëxtraheerd uit het gedownloade zip-bestand.
-4. Voer het script **AzureMigrateInstaller.ps1**als volgt uit: 
+4. Voer het script **AzureMigrateInstaller.ps1** als volgt uit: 
 
     ``` PS C:\Users\Administrators\Desktop\AzureMigrateInstaller-HyperV-USGov>.\AzureMigrateInstaller.ps1 ``` 
 1. Nadat het script is uitgevoerd, wordt de web-app voor het toestel gestart, zodat u het apparaat kunt instellen. Als u problemen ondervindt, controleert u de script logboeken op C:\ProgramData\Microsoft Azure\Logs\ AzureMigrateScenarioInstaller_<em>Time Stamp</em>. log.
 
-### <a name="verify-access"></a>Toegang controleren
+### <a name="verify-access"></a>Toegang verifiëren
 
 Zorg ervoor dat het apparaat verbinding kan maken met Azure-Url's voor [overheids Clouds](migrate-appliance.md#government-cloud-urls).
 
@@ -144,7 +147,7 @@ Als u het apparaat voor VMware wilt instellen, downloadt u een zip-bestand van d
 
 1.  In **Migratiedoelen** > **Servers** > **Azure Migrate: Serverevaluatie** klikt u op **Ontdekken**.
 2.  In **Discover-machines**  >  **zijn uw machines gevirtualiseerd?**, selecteer **niet gevirtualiseerd/Overig**.
-3.  Klik op **downloaden**om het zip-bestand te downloaden. 
+3.  Klik op **downloaden** om het zip-bestand te downloaden. 
 
 
 ### <a name="verify-file-security"></a>Bestands beveiliging controleren
@@ -158,7 +161,7 @@ Controleer of het zip-bestand veilig is voordat u het implementeert.
 
 3. Controleer de meest recente versie van het apparaat en de hash-waarde:
 
-    **Scenario** | **Downloaden*** | **Hash-waarde**
+    **Scenario** | **Downloaden** _ | _ *Hash-waarde**
     --- | --- | ---
     Fysiek (85 MB) | [Nieuwste versie](https://go.microsoft.com/fwlink/?linkid=2140338) | cfed44bb52c9ab3024a628dc7a5d0df8c624f156ec1ecc3507116bae330b257f
           
@@ -180,12 +183,12 @@ Het script uitvoeren:
 1. Pak het zip-bestand uit naar een map op de computer die als host moet fungeren voor het apparaat. Zorg ervoor dat u het script niet uitvoert op een machine op een bestaand Azure Migrate-apparaat.
 2. Start Power shell op de computer met Administrator bevoegdheden (met verhoogde bevoegdheden).
 3. Wijzig de Power shell-map in de map met de inhoud die is geëxtraheerd uit het gedownloade zip-bestand.
-4. Voer het script **AzureMigrateInstaller.ps1**als volgt uit: 
+4. Voer het script **AzureMigrateInstaller.ps1** als volgt uit: 
 
     ``` PS C:\Users\Administrators\Desktop\AzureMigrateInstaller-Server-USGov>.\AzureMigrateInstaller.ps1 ```
 1. Nadat het script is uitgevoerd, wordt de web-app voor het toestel gestart, zodat u het apparaat kunt instellen. Als u problemen ondervindt, controleert u de script logboeken op C:\ProgramData\Microsoft Azure\Logs\ AzureMigrateScenarioInstaller_<em>Time Stamp</em>. log.
 
-### <a name="verify-access"></a>Toegang controleren
+### <a name="verify-access"></a>Toegang verifiëren
 
 Zorg ervoor dat het apparaat verbinding kan maken met Azure-Url's voor [overheids Clouds](migrate-appliance.md#government-cloud-urls).
 

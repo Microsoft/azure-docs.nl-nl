@@ -8,12 +8,12 @@ ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 9e613331760a1715c3821bdc7dbbf0469e8bfd97
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 5d160c46b235c6890426cab9de52ec7b827efe4a
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337607"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96750710"
 ---
 # <a name="prepare-an-application-for-deployment-in-azure-spring-cloud"></a>Een toepassing voorbereiden voor implementatie in azure lente-Cloud
 
@@ -128,7 +128,7 @@ Voordat u dit voorbeeld kunt uitvoeren, kunt u de [eenvoudige quickstart](spring
 
 Andere voor beelden wordt uitgelegd hoe u een toepassing implementeert in azure lente-Cloud wanneer het POM-bestand wordt geconfigureerd. 
 * [Uw eerste app starten](spring-cloud-quickstart.md)
-* [Micro services bouwen en uitvoeren](spring-cloud-quickstart-sample-app-introduction.md)
+* [Microservices bouwen en uitvoeren](spring-cloud-quickstart-sample-app-introduction.md)
 
 In dit artikel worden de vereiste afhankelijkheden beschreven en wordt uitgelegd hoe u deze toevoegt aan het POM-bestand.
 
@@ -149,6 +149,9 @@ Spring boot-versie | Lente-Cloud versie
 2.1 | Greenwich. RELEASE
 2.2 | Hoxton.SR8
 2.3 | Hoxton.SR8
+
+> [!NOTE]
+> We hebben vastgesteld dat er een probleem is met lente boot 2,4 op TLS-verificatie tussen uw apps en Eureka en momenteel met de lente-Community werkt om deze op te lossen. Raadpleeg onze [Veelgestelde vragen](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-faq?pivots=programming-language-java#development) voor de tijdelijke oplossing.
 
 ### <a name="dependencies-for-spring-boot-version-21"></a>Afhankelijkheden voor Spring boot versie 2,1
 

@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 3/20/2020
+ms.date: 12/07/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 98c33d4b9e749e804f70d9dccb7198884c80dfe7
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 85030285810433dc77d1f466d160c50d1f89770e
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94952698"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96750404"
 ---
 # <a name="user-profile-attributes"></a>Kenmerken van gebruikersprofiel
 
@@ -75,16 +75,22 @@ In de volgende tabel worden de kenmerken van het [bron type](/graph/api/resource
 |streetAddress   |Tekenreeks|Het adres van de bedrijfs locatie van de gebruiker. Maximale lengte van 1024.|Ja|Ja|Persistent gemaakt, uitvoer|
 |strongAuthentication AlternativePhoneNumber<sup>1</sup>|Tekenreeks|Het secundaire telefoon nummer van de gebruiker die wordt gebruikt voor multi-factor Authentication.|Ja|Nee|Persistent gemaakt, uitvoer|
 |strongAuthenticationEmailAddress<sup>1</sup>|Tekenreeks|Het SMTP-adres voor de gebruiker. Voor beeld: " bob@contoso.com " dit kenmerk wordt gebruikt voor aanmelding met gebruikers naam beleid, om het e-mail adres van de gebruiker op te slaan. Het e-mail adres wordt vervolgens gebruikt in een stroom voor het opnieuw instellen van een wacht woord.|Ja|Nee|Persistent gemaakt, uitvoer|
-|strongAuthenticationPhoneNumber<sup>1</sup>|Tekenreeks|Het primaire telefoon nummer van de gebruiker die wordt gebruikt voor multi-factor Authentication.|Ja|Nee|Persistent gemaakt, uitvoer|
+|strongAuthenticationPhoneNumber<sup>2</sup>|Tekenreeks|Het primaire telefoon nummer van de gebruiker die wordt gebruikt voor multi-factor Authentication.|Ja|Nee|Persistent gemaakt, uitvoer|
 |surname         |Tekenreeks|De voor naam van de gebruiker (familie naam of achternaam). Maximale lengte van 64.|Ja|Ja|Persistent gemaakt, uitvoer|
 |telephoneNumber (eerste vermelding van businessPhones)|Tekenreeks|Het primaire telefoon nummer van de bedrijfs plaats van de gebruiker.|Ja|Nee|Persistent gemaakt, uitvoer|
 |userPrincipalName    |Tekenreeks|De UPN (user Principal name) van de gebruiker. De UPN is een aanmeldings naam voor Internet-stijl voor de gebruiker op basis van Internet Standard RFC 822. Het domein moet aanwezig zijn in de verzameling van geverifieerde domeinen van de Tenant. Deze eigenschap is vereist wanneer een account wordt gemaakt. Onveranderbare.|Nee|Nee|Invoer, persistent, uitvoer|
 |usageLocation   |Tekenreeks|Vereist voor gebruikers aan wie licenties moeten worden toegewezen als gevolg van wettelijke vereisten om te controleren of de services beschikbaar zijn in landen/regio's. Geen Null-waarden. Een land/regio code van twee letters (ISO-standaard 3166). Voor beelden: "US", "JP" en "GB".|Ja|Nee|Persistent gemaakt, uitvoer|
 |userType        |Tekenreeks|Een teken reeks waarde die kan worden gebruikt voor het classificeren van gebruikers typen in uw Directory. Waarde moet lid zijn. Alleen-lezen.|Alleen-lezen|Nee|Persistent gemaakt, uitvoer|
-|userState (externalUserState)<sup>2</sup>|Tekenreeks|Alleen voor Azure AD B2B-account geeft aan of de uitnodiging wordt PendingAcceptance of geaccepteerd.|Nee|Nee|Persistent gemaakt, uitvoer|
+|userState (externalUserState)<sup>3</sup>|Tekenreeks|Alleen voor Azure AD B2B-account geeft aan of de uitnodiging wordt PendingAcceptance of geaccepteerd.|Nee|Nee|Persistent gemaakt, uitvoer|
 |userStateChangedOn (externalUserStateChangeDateTime)<sup>2</sup>|DateTime|Toont de tijds tempel voor de laatste wijziging van de eigenschap UserState.|Nee|Nee|Persistent gemaakt, uitvoer|
-|<sup>1 </sup> Niet ondersteund door Microsoft Graph<br><sup>2 </sup> Mag niet worden gebruikt met Azure AD B2C||||||
 
+<sup>1 </sup> Niet ondersteund door Microsoft Graph<br><sup>2 </sup> Zie voor meer informatie [MFA-telefoon nummer kenmerk](#mfa-phone-number-attribute)<br><sup>3 </sup> Mag niet worden gebruikt met Azure AD B2C
+
+## <a name="mfa-phone-number-attribute"></a>Kenmerk MFA-telefoon nummer
+
+Wanneer u een telefoon gebruikt voor multi-factor Authentication (MFA), wordt de mobiele telefoon gebruikt voor het verifiëren van de identiteit van de gebruiker. Als u een nieuw telefoon nummer wilt [toevoegen](https://docs.microsoft.com/graph/api/authentication-post-phonemethods) via programma code, het telefoon nummer [bijwerken](https://docs.microsoft.com/graph/api/b2cauthenticationmethodspolicy-update), [ophalen](https://docs.microsoft.com/graph/api/b2cauthenticationmethodspolicy-get)of [verwijderen](https://docs.microsoft.com/graph/api/phoneauthenticationmethod-delete) , gebruikt u MS Graph API [methode voor telefonische verificatie](https://docs.microsoft.com/graph/api/resources/phoneauthenticationmethod).
+
+In Azure AD B2C [aangepast beleid](custom-policy-overview.md), het telefoon nummer is beschikbaar via `strongAuthenticationPhoneNumber` claim type.
 
 ## <a name="extension-attributes"></a>Extensie kenmerken
 

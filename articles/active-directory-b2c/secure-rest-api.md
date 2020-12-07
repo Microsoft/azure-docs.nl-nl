@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 10/15/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 18979ba8cbc4e68bf79275059c6c1c976578c407
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 3e3245053fcc9943814268835fa5ac0f40a6f94c
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94953369"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96750506"
 ---
 # <a name="secure-your-restful-services"></a>Uw REST-services beveiligen 
 
@@ -358,6 +358,69 @@ Hier volgt een voor beeld van een onderliggend technisch profiel dat is geconfig
       </Metadata>
       <CryptographicKeys>
         <Key Id="BearerAuthenticationToken" StorageReferenceId="B2C_1A_RestApiBearerToken" />
+      </CryptographicKeys>
+      ...
+    </TechnicalProfile>
+  </TechnicalProfiles>
+</ClaimsProvider>
+```
+
+## <a name="api-key-authentication"></a>API-sleutel verificatie
+
+API-sleutel is een unieke id die wordt gebruikt om een gebruiker te verifiëren voor toegang tot een REST API-eind punt. De sleutel wordt in een aangepaste HTTP-header verzonden. Zo gebruikt de [HTTP-trigger van Azure functions](../azure-functions/functions-bindings-http-webhook-trigger.md#authorization-keys) de `x-functions-key` http-header om de aanvrager te identificeren.  
+
+### <a name="add-api-key-policy-keys"></a>API-sleutel beleids sleutels toevoegen
+
+Als u een REST API technisch profiel met API-sleutel verificatie wilt configureren, maakt u de volgende cryptografische sleutel om de API-sleutel op te slaan:
+
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C-Tenant bevat. Selecteer het filter **Directory + abonnement** in het bovenste menu en kies uw Azure AD B2C Directory.
+1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
+1. Selecteer op de pagina overzicht **identiteits ervaring-Framework**.
+1. Selecteer **beleids sleutels** en selecteer vervolgens **toevoegen**.
+1. Voor **Opties** selecteert u **hand matig**.
+1. Typ **RestApiKey** voor **naam**.
+    De prefix *B2C_1A_* kan automatisch worden toegevoegd.
+1. Voer in het vak **geheim** de rest API sleutel in.
+1. Voor **sleutel gebruik** selecteert u **versleuteling**.
+1. Selecteer **Maken**.
+
+
+### <a name="configure-your-rest-api-technical-profile-to-use-api-key-authentication"></a>Uw REST API technische profiel configureren om API-sleutel verificatie te gebruiken
+
+Nadat u de benodigde sleutel hebt gemaakt, moet u de meta gegevens van uw REST API technische profiel configureren om te verwijzen naar de referenties.
+
+1. Open in uw werkmap het extensie beleids bestand (TrustFrameworkExtensions.xml).
+1. Zoek het technische profiel van REST API. Bijvoorbeeld `REST-ValidateProfile` of `REST-GetProfile` .
+1. Zoek het `<Metadata>` element op.
+1. Wijzig de *AuthenticationType* in `ApiKeyHeader` .
+1. Wijzig de *AllowInsecureAuthInProduction* in `false` .
+1. Voeg direct na het afsluitende `</Metadata>` element het volgende XML-fragment toe:
+    ```xml
+    <CryptographicKeys>
+        <Key Id="x-functions-key" StorageReferenceId="B2C_1A_RestApiKey" />
+    </CryptographicKeys>
+    ```
+
+De **id** van de cryptografische sleutel definieert de http-header. In dit voor beeld wordt de API-sleutel verzonden als **x-functions-sleutel**.
+
+Hier volgt een voor beeld van een onderliggend technisch profiel dat is geconfigureerd voor het aanroepen van een Azure-functie met API-sleutel verificatie:
+
+```xml
+<ClaimsProvider>
+  <DisplayName>REST APIs</DisplayName>
+  <TechnicalProfiles>
+    <TechnicalProfile Id="REST-GetProfile">
+      <DisplayName>Get user extended profile Azure Function web hook</DisplayName>
+      <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.RestfulProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+      <Metadata>
+        <Item Key="ServiceUrl">https://your-account.azurewebsites.net/api/GetProfile?code=your-code</Item>
+        <Item Key="SendClaimsIn">Body</Item>
+        <Item Key="AuthenticationType">ApiKeyHeader</Item>
+        <Item Key="AllowInsecureAuthInProduction">false</Item>
+      </Metadata>
+      <CryptographicKeys>
+        <Key Id="x-functions-key" StorageReferenceId="B2C_1A_RestApiKey" />
       </CryptographicKeys>
       ...
     </TechnicalProfile>

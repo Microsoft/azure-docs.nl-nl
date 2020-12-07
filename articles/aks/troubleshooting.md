@@ -4,12 +4,12 @@ description: Meer informatie over het oplossen van veelvoorkomende problemen bij
 services: container-service
 ms.topic: troubleshooting
 ms.date: 06/20/2020
-ms.openlocfilehash: aefb33325c1a5bf8e94d47106147d4c7c4f0f1ca
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: d157dd6b3347c8fbfd8712fa20d52cedb425f47f
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94684165"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96751475"
 ---
 # <a name="aks-troubleshooting"></a>AKS-problemen oplossen
 
@@ -24,41 +24,36 @@ Er is ook een [hand leiding](https://github.com/feiskyer/kubernetes-handbook/blo
 
  [Vraag meer kernen](../azure-portal/supportability/resource-manager-core-quotas-request.md)aan.
 
-## <a name="what-is-the-maximum-pods-per-node-setting-for-aks"></a>Wat is het maximum aantal instellingen per knoop punt voor AKS?
-
-De maximale instelling per knoop punt is 30 standaard als u een AKS-cluster implementeert in de Azure Portal.
-De maximale instelling per knoop punt is standaard 110 als u een AKS-cluster implementeert in de Azure CLI. (Zorg ervoor dat u de nieuwste versie van de Azure CLI gebruikt). Deze instelling kan worden gewijzigd met behulp van de `–-max-pods` vlag in de `az aks create` opdracht.
-
 ## <a name="im-getting-an-insufficientsubnetsize-error-while-deploying-an-aks-cluster-with-advanced-networking-what-should-i-do"></a>Er wordt een insufficientSubnetSize-fout opgetreden tijdens het implementeren van een AKS-cluster met een geavanceerd netwerk. Wat moet ik doen?
 
 Deze fout geeft aan dat een subnet dat wordt gebruikt voor een cluster niet langer beschik bare Ip's in de CIDR heeft voor een succes volle resource toewijzing. Voor Kubenet-clusters is de vereiste voldoende IP-adres ruimte voor elk knoop punt in het cluster. Voor Azure CNI-clusters is de vereiste voldoende IP-adres ruimte voor elk knoop punt en pod in het cluster.
 Lees meer over het [ontwerp van Azure cni om ip's toe te wijzen aan een Peul](configure-azure-cni.md#plan-ip-addressing-for-your-cluster).
 
-Deze fouten worden ook weer gegeven in [AKS Diagnostics](./concepts-diagnostics.md) , die proactief problemen ondervinden, zoals een ontoereikende subnet-grootte.
+Deze fouten worden ook weer gegeven in [AKS Diagnostics](concepts-diagnostics.md), die proactief problemen ondervinden, zoals een ontoereikende subnet-grootte.
 
 In de volgende drie (3) gevallen treedt er een fout op onvoldoende subnet-grootte op:
 
-1. Schaal van AKS of AKS Nodepool
-   1. Als Kubenet wordt gebruikt, treedt dit op wanneer de `number of free IPs in the subnet` is **kleiner dan** de `number of new nodes requested` .
-   1. Als u Azure CNI gebruikt, treedt dit op wanneer de `number of free IPs in the subnet` is **kleiner dan** de `number of nodes requested times (*) the node pool's --max-pod value` .
+1. Schaal van AKS-of AKS-knooppunt pool
+   1. Als Kubenet wordt gebruikt, `number of free IPs in the subnet` is de waarde **kleiner dan** de `number of new nodes requested` .
+   1. Als u Azure CNI gebruikt, wanneer de `number of free IPs in the subnet` is **kleiner dan** de `number of nodes requested times (*) the node pool's --max-pod value` .
 
-1. AKS-upgrade of AKS Nodepool-upgrade
-   1. Als Kubenet wordt gebruikt, treedt dit op wanneer de `number of free IPs in the subnet` is **kleiner dan** de `number of buffer nodes needed to upgrade` .
-   1. Als u Azure CNI gebruikt, treedt dit op wanneer de `number of free IPs in the subnet` is **kleiner dan** de `number of buffer nodes needed to upgrade times (*) the node pool's --max-pod value` .
+1. Upgrade van AKS-of AKS-knooppunt groep
+   1. Als Kubenet wordt gebruikt, `number of free IPs in the subnet` is de waarde **kleiner dan** de `number of buffer nodes needed to upgrade` .
+   1. Als u Azure CNI gebruikt, wanneer de `number of free IPs in the subnet` is **kleiner dan** de `number of buffer nodes needed to upgrade times (*) the node pool's --max-pod value` .
    
-   Standaard hebben AKS-clusters een maximale piek waarde (upgrade buffer) van één (1), maar dit upgrade gedrag kan worden aangepast door de [maximale piek waarde van een knooppunt groep](upgrade-cluster.md#customize-node-surge-upgrade) in te stellen, waardoor het aantal beschik bare ip's dat nodig is voor het volt ooien van een upgrade, wordt verhoogd.
+   Standaard hebben AKS-clusters een maximale piek waarde (upgrade buffer) van één (1), maar dit upgrade gedrag kan worden aangepast door de [maximale piek waarde van een knooppunt groep in te stellen, waardoor het aantal beschik bare Ip's dat nodig is om een upgrade te volt ooien, wordt verhoogd.
 
-1. AKS maken of AKS Nodepool toevoegen
-   1. Als Kubenet wordt gebruikt, treedt dit op wanneer de `number of free IPs in the subnet` is **kleiner dan** de `number of nodes requested for the node pool` .
-   1. Als u Azure CNI gebruikt, treedt dit op wanneer de `number of free IPs in the subnet` is **kleiner dan** de `number of nodes requested times (*) the node pool's --max-pod value` .
+1. AKS maken of AKS van knooppunt groep toevoegen
+   1. Als Kubenet wordt gebruikt, `number of free IPs in the subnet` is de waarde **kleiner dan** de `number of nodes requested for the node pool` .
+   1. Als u Azure CNI gebruikt, wanneer de `number of free IPs in the subnet` is **kleiner dan** de `number of nodes requested times (*) the node pool's --max-pod value` .
 
 De volgende beperking kan worden gemaakt door nieuwe subnetten te maken. De machtiging voor het maken van een nieuw subnet is vereist voor de oplossing omdat het CIDR-bereik van een bestaand subnet kan worden bijgewerkt.
 
 1. Bouw een nieuw subnet met een groter CIDR-bereik dat voldoende is voor de bewerkings doelen:
    1. Maak een nieuw subnet met een nieuw, niet-overlappend bereik.
-   1. Maak een nieuwe nodepool op het nieuwe subnet.
-   1. Verwerkings alles uit de oude nodepool die zich in het oude subnet bevinden dat moet worden vervangen.
-   1. Verwijder het oude subnet en de oude nodepool.
+   1. Maak een nieuwe knooppunt groep in het nieuwe subnet.
+   1. Het afvoer verschil van de oude knooppunt groep die zich in het oude subnet bevindt, wordt vervangen.
+   1. Verwijder het oude subnet en de oude knooppunt groep.
 
 ## <a name="my-pod-is-stuck-in-crashloopbackoff-mode-what-should-i-do"></a>Mijn Pod is vastgelopen in de CrashLoopBackOff-modus. Wat moet ik doen?
 
@@ -89,10 +84,6 @@ Deze time-outs kunnen betrekking hebben op het interne verkeer tussen knoop punt
 ## <a name="im-trying-to-enable-kubernetes-role-based-access-control-kubernetes-rbac-on-an-existing-cluster-how-can-i-do-that"></a>Ik probeer op Kubernetes (op rollen gebaseerd toegangs beheer) in te scha kelen op een bestaand cluster. Hoe kan ik dat doen?
 
 Het inschakelen van Kubernetes op basis van op rollen gebaseerd toegangs beheer (Kubernetes RBAC) op bestaande clusters wordt op dit moment niet ondersteund, moet worden ingesteld bij het maken van nieuwe clusters. Kubernetes RBAC is standaard ingeschakeld bij gebruik van CLI, portal of een API-versie die hoger is dan `2020-03-01` .
-
-## <a name="i-created-a-cluster-with-kubernetes-rbac-enabled-and-now-i-see-many-warnings-on-the-kubernetes-dashboard-the-dashboard-used-to-work-without-any-warnings-what-should-i-do"></a>Ik heb een cluster gemaakt waarop Kubernetes RBAC is ingeschakeld en nu ziet u veel waarschuwingen op het Kubernetes-dash board. Het dash board dat wordt gebruikt om zonder waarschuwingen te werken. Wat moet ik doen?
-
-De reden voor de waarschuwingen is dat op het cluster Kubernetes RBAC is ingeschakeld en dat toegang tot het dash board nu standaard wordt beperkt. Over het algemeen is deze aanpak goed, omdat de standaard belichting van het dash board aan alle gebruikers van het cluster kan leiden tot beveiligings Risico's. Als u het dash board nog steeds wilt inschakelen, volgt u de stappen in [dit blog bericht](https://pascalnaber.wordpress.com/2018/06/17/access-dashboard-on-aks-with-rbac-enabled/).
 
 ## <a name="i-cant-get-logs-by-using-kubectl-logs-or-i-cant-connect-to-the-api-server-im-getting-error-from-server-error-dialing-backend-dial-tcp-what-should-i-do"></a>Ik kan geen logboeken ophalen met behulp van kubectl-Logboeken of ik kan geen verbinding maken met de API-server. Ik krijg de fout melding van server: fout bij het kiezen van de back-end: Dial TCP.... Wat moet ik doen?
 
@@ -182,11 +173,11 @@ Gebruik de volgende tijdelijke oplossingen voor dit probleem:
 
 ## <a name="im-getting-aadsts7000215-invalid-client-secret-is-provided-when-using-aks-api-what-should-i-do"></a>Ik krijg het `"AADSTS7000215: Invalid client secret is provided."` gebruik van AKS-API. Wat moet ik doen?
 
-Dit wordt meestal veroorzaakt door het vervallen van de referenties van de Service-Principal. [Werk de referenties voor een AKS-cluster bij.](update-credentials.md)
+Dit probleem wordt veroorzaakt door de verval datum van de Service-Principal-referenties. [Werk de referenties voor een AKS-cluster bij.](update-credentials.md)
 
 ## <a name="i-cant-access-my-cluster-api-from-my-automationdev-machinetooling-when-using-api-server-authorized-ip-ranges-how-do-i-fix-this-problem"></a>Ik heb geen toegang tot mijn cluster-API vanaf mijn Automation/dev-computer/-hulp programma bij het gebruik van een API server-toegestaan IP-bereik. Dit probleem Hoe kan ik oplossen?
 
-Hiervoor moet `--api-server-authorized-ip-ranges` u de IP (s) of IP-bereik (en) van de gebruikte automatiserings-/dev/hulp programma-systemen bevatten. Zie de sectie ' mijn IP zoeken ' in [beveiligde toegang tot de API-server met behulp van geautoriseerde IP-](api-server-authorized-ip-ranges.md)adresbereiken.
+Om dit probleem op te lossen, moet u ervoor zorgen dat er `--api-server-authorized-ip-ranges` een of meer IP-adressen of IP-bereik (en) van Automation/dev/tool-systemen worden gebruikt. Zie de sectie ' mijn IP zoeken ' in [beveiligde toegang tot de API-server met behulp van geautoriseerde IP-](api-server-authorized-ip-ranges.md)adresbereiken.
 
 ## <a name="im-unable-to-view-resources-in-kubernetes-resource-viewer-in-azure-portal-for-my-cluster-configured-with-api-server-authorized-ip-ranges-how-do-i-fix-this-problem"></a>Ik kan geen resources weer geven in de Kubernetes-resource viewer in Azure Portal voor mijn cluster dat is geconfigureerd met de API-server geautoriseerde IP-adresbereiken. Dit probleem Hoe kan ik oplossen?
 
@@ -208,11 +199,11 @@ Service returned an error. Status=429 Code=\"OperationNotAllowed\" Message=\"The
 
 Deze beperkings fouten worden [hier](../azure-resource-manager/management/request-limits-and-throttling.md) gedetailleerd beschreven [here](../virtual-machines/troubleshooting/troubleshooting-throttling-errors.md)
 
-De heropdracht van het technische team van AKS is om ervoor te zorgen dat u versie ten minste 1.18. x gebruikt, die veel verbeteringen bevat. Meer informatie vindt u [hier](https://github.com/Azure/AKS/issues/1413) in deze [verbeteringen.](https://github.com/kubernetes-sigs/cloud-provider-azure/issues/247)
+De aanbeveling van het technische team van AKS is om ervoor te zorgen dat u versie ten minste 1.18. x gebruikt, die veel verbeteringen bevat. Meer informatie vindt u [hier](https://github.com/Azure/AKS/issues/1413) in deze [verbeteringen.](https://github.com/kubernetes-sigs/cloud-provider-azure/issues/247)
 
 Deze beperkings fouten worden op abonnements niveau gemeten, maar kunnen ook worden uitgevoerd als:
-- Er zijn toepassingen van derden die GET-aanvragen maken (bijvoorbeeld toepassingen bewaken, enzovoort...). De aanbeveling is de frequentie van deze aanroepen te verlagen.
-- Er zijn veel AKS-clusters/nodepools in de VMSS. De gebruikelijke aanbeveling is dat er minder dan 20-30 clusters in een bepaald abonnement zijn.
+- Er zijn toepassingen van derden die GET-aanvragen maken (bijvoorbeeld toepassingen bewaken, enzovoort). De aanbeveling is de frequentie van deze aanroepen te verlagen.
+- Er zijn talloze AKS-clusters/-knooppunt groepen die gebruikmaken van virtuele-machine schaal sets. Probeer het aantal clusters te splitsen in verschillende abonnementen, met name als u verwacht dat ze zeer actief zijn (bijvoorbeeld een actieve cluster autoscaleer) of meerdere clients hebben (bijvoorbeeld Rancher, terraform, enzovoort).
 
 ## <a name="my-clusters-provisioning-status-changed-from-ready-to-failed-with-or-without-me-performing-an-operation-what-should-i-do"></a>De inrichtings status van mijn cluster is gewijzigd van gereed in mislukt met of zonder dat er een bewerking wordt uitgevoerd. Wat moet ik doen?
 
@@ -220,46 +211,13 @@ Als de inrichtings status van uw cluster wordt gewijzigd van *gereed* in *misluk
 
 Als de inrichtings status van uw cluster *niet* actief blijft of als de toepassingen op uw cluster niet meer werken, [dient u een ondersteunings aanvraag](https://azure.microsoft.com/support/options/#submit)in.
 
+## <a name="my-watch-is-stale-or-azure-ad-pod-identity-nmi-is-returning-status-500"></a>Mijn horloge is verouderd of de Azure AD pod-identiteit NMI retourneert de status 500
+
+Als u gebruikmaakt van Azure Firewall zoals in dit [voor beeld](limit-egress-traffic.md#restrict-egress-traffic-using-azure-firewall), kunt u dit probleem tegen komen als de lange levens duur van de TCP-verbindingen via een firewall met toepassings regels die momenteel een bug hebben (om te worden opgelost in Q1CY21) die ervoor zorgt dat de go `keepalives` wordt beëindigd op de firewall. Totdat dit probleem is opgelost, kunt u dit oplossen door een netwerk regel (in plaats van een toepassings regel) toe te voegen aan het IP-adres van de AKS-API-server.
 
 ## <a name="azure-storage-and-aks-troubleshooting"></a>Problemen met Azure Storage en AKS oplossen
 
-### <a name="what-are-the-recommended-stable-versions-of-kubernetes-for-azure-disk"></a>Wat zijn de aanbevolen stabiele versies van Kubernetes voor Azure Disk? 
-
-| Kubernetes-versie | Aanbevolen versie |
-|--|:--:|
-| 1.12 | 1.12.9 of hoger |
-| 1.13 | 1.13.6 of hoger |
-| 1,14 | 1.14.2 of hoger |
-
-
-### <a name="waitforattach-failed-for-azure-disk-parsing-devdiskazurescsi1lun1-invalid-syntax"></a>WaitForAttach is mislukt voor Azure-schijf: het parseren van "/dev/disk/Azure/SCSI1/lun1": ongeldige syntaxis
-
-In Kubernetes versie 1,10 kan MountVolume. WaitForAttach mislukken met het opnieuw koppelen van een Azure-schijf.
-
-Op Linux ziet u mogelijk een onjuiste fout in de DevicePath-indeling. Bijvoorbeeld:
-
-```console
-MountVolume.WaitForAttach failed for volume "pvc-f1562ecb-3e5f-11e8-ab6b-000d3af9f967" : azureDisk - Wait for attach expect device path as a lun number, instead got: /dev/disk/azure/scsi1/lun1 (strconv.Atoi: parsing "/dev/disk/azure/scsi1/lun1": invalid syntax)
-  Warning  FailedMount             1m (x10 over 21m)   kubelet, k8s-agentpool-66825246-0  Unable to mount volumes for pod
-```
-
-In Windows ziet u mogelijk een onjuiste fout code voor DevicePath (LUN). Bijvoorbeeld:
-
-```console
-Warning  FailedMount             1m    kubelet, 15282k8s9010    MountVolume.WaitForAttach failed for volume "disk01" : azureDisk - WaitForAttach failed within timeout node (15282k8s9010) diskId:(andy-mghyb
-1102-dynamic-pvc-6c526c51-4a18-11e8-ab5c-000d3af7b38e) lun:(4)
-```
-
-Dit probleem is opgelost in de volgende versies van Kubernetes:
-
-| Kubernetes-versie | Vaste versie |
-|--|:--:|
-| 1,10 | 1.10.2 of hoger |
-| 1.11 | 1.11.0 of hoger |
-| 1,12 en hoger | N.v.t. |
-
-
-### <a name="failure-when-setting-uid-and-gid-in-mountoptions-for-azure-disk"></a>Fout bij het instellen van UID en GID in mountOptions voor Azure-schijf
+### <a name="failure-when-setting-uid-and-gid-in-mountoptions-for-azure-disk"></a>Fout bij het instellen van UID en `GID` in mountOptions voor Azure Disk
 
 Azure Disk maakt gebruik van het ext4-, xfs-bestands systeem standaard en mountOptions, zoals UID = x, GID = x kan niet worden ingesteld op koppel tijd. Als u bijvoorbeeld probeert mountOptions UID = 999, GID = 999, wordt een fout weer geven als:
 
@@ -290,7 +248,7 @@ spec:
   >[!NOTE]
   > Aangezien GID en UID standaard als root of 0 zijn gekoppeld. Als GID of UID als niet-basis is ingesteld, bijvoorbeeld 1000, wordt Kubernetes gebruikt `chown` om alle mappen en bestanden op die schijf te wijzigen. Deze bewerking kan veel tijd in beslag nemen en kan het koppelen van de schijf erg traag maken.
 
-* Gebruik `chown` in initContainers om GID en UID in te stellen. Bijvoorbeeld:
+* Gebruik `chown` in initContainers om in te stellen `GID` en `UID` . Bijvoorbeeld:
 
 ```yaml
 initContainers:
@@ -387,8 +345,8 @@ parameters:
 
 Enkele aanvullende nuttige *mountOptions* -instellingen:
 
-* *mfsymlinks* zorgt ervoor dat Azure files mount (CIFS) symbolische koppelingen ondersteunt
-* met *nobrl* wordt voor komen dat aanvragen voor het vergren delen van bytes naar de server worden verzonden. Deze instelling is nood zakelijk voor bepaalde toepassingen die worden onderbroken met de CIFS-stijl vergren delingen van een verplicht byte bereik. De meeste CIFS-servers bieden nog geen ondersteuning voor het aanvragen van advies-byte bereik vergrendelingen. Als u *nobrl* niet gebruikt, kunnen toepassingen die worden onderbroken met de CIFS-stijl die verplicht byte bereik zijn, fout berichten veroorzaken die vergelijkbaar zijn met:
+* `mfsymlinks` maakt het Azure Files koppelen (CIFS) ondersteuning voor symbolische koppelingen
+* `nobrl` Hiermee wordt voor komen dat aanvragen voor het vergren delen van bytes naar de server worden verzonden. Deze instelling is nood zakelijk voor bepaalde toepassingen die worden onderbroken met de CIFS-stijl vergren delingen van een verplicht byte bereik. De meeste CIFS-servers bieden nog geen ondersteuning voor het aanvragen van advies-byte bereik vergrendelingen. Als u *nobrl* niet gebruikt, kunnen toepassingen die worden onderbroken met de CIFS-stijl die verplicht byte bereik zijn, fout berichten veroorzaken die vergelijkbaar zijn met:
     ```console
     Error: SQLITE_BUSY: database is locked
     ```
@@ -404,7 +362,7 @@ fixing permissions on existing directory /var/lib/postgresql/data
 
 Deze fout wordt veroorzaakt door de Azure Files-invoeg toepassing met behulp van het CIFS/SMB-protocol. Wanneer u het CIFS/SMB-protocol gebruikt, kunnen de machtigingen voor bestanden en mappen niet worden gewijzigd na het koppelen.
 
-U kunt dit probleem oplossen door *subpad* samen met de Azure Disk-invoeg toepassing te gebruiken. 
+U kunt dit probleem oplossen door `subPath` samen met de Azure Disk-invoeg toepassing te gebruiken. 
 
 > [!NOTE] 
 > Voor ext3/4-schijf type is er een map gevonden die niet meer bestaat dan waar de schijf is geformatteerd.
@@ -474,7 +432,7 @@ E1114 09:58:55.367731 1 static_autoscaler.go:239] Failed to fix node group sizes
 
 Deze fout wordt veroorzaakt door een upstream voor de race van het cluster voor automatisch schalen. In een dergelijk geval eindigt cluster-automatisch schalen met een andere waarde dan die van het cluster. Als u deze status wilt weer geven, schakelt u de automatische [cluster-Scaler][cluster-autoscaler]uit en opnieuw in.
 
-### <a name="slow-disk-attachment-getazuredisklun-takes-10-to-15-minutes-and-you-receive-an-error"></a>Een trage schijf bijlage duurt 10 tot 15 minuten en er wordt een fout bericht weer gegeven
+### <a name="slow-disk-attachment-getazuredisklun-takes-10-to-15-minutes-and-you-receive-an-error"></a>Een trage schijf bijlage `GetAzureDiskLun` duurt 10 tot 15 minuten en er wordt een fout bericht weer gegeven
 
 Bij Kubernetes-versies **ouder dan 1.15.0**, wordt er mogelijk een fout bericht weer gegeven, zoals **fout WaitForAttach kan geen LUN vinden voor de schijf**.  De tijdelijke oplossing voor dit probleem is om ongeveer 15 minuten te wachten en probeer het opnieuw.
 
@@ -483,13 +441,13 @@ Bij Kubernetes-versies **ouder dan 1.15.0**, wordt er mogelijk een fout bericht 
 
 Vanaf Kubernetes [1,16](https://v1-16.docs.kubernetes.io/docs/setup/release/notes/) kan [alleen een gedefinieerde subset van labels met het voor voegsel kubernetes.io](https://github.com/kubernetes/enhancements/blob/master/keps/sig-auth/0000-20170814-bounding-self-labeling-kubelets.md#proposal) worden toegepast door de kubelet op knoop punten. AKS kan geen actieve labels namens u zonder toestemming worden verwijderd, omdat dit kan leiden tot uitval tijd voor werk belastingen.
 
-Als gevolg hiervan kunt u het volgende doen:
+Als gevolg hiervan kunt u het volgende doen om dit probleem te verhelpen:
 
 1. Upgrade uw cluster besturings vlak naar 1,16 of hoger
 2. Een nieuwe nodepoool toevoegen aan 1,16 of hoger zonder de niet-ondersteunde kubernetes.io-labels
-3. De oudere nodepool verwijderen
+3. De oude knooppunt groep verwijderen
 
-AKS onderzoekt de mogelijkheid om actieve labels op een nodepool te mutate om deze oplossing te verbeteren.
+AKS onderzoekt de mogelijkheid om actieve labels in een knooppunt groep te mutate om deze beperking te verbeteren.
 
 
 

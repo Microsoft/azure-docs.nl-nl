@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: conceptual
 ms.date: 09/15/2020
 ms.author: ambapat
-ms.openlocfilehash: 48f223a55e4a1e4db4ac7057065d67ae64fa0f2c
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 58616b647affd33e96357e556ab61f85d1c62129
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93288470"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96752274"
 ---
 # <a name="authentication-requests-and-responses"></a>Verificatie, vragen en antwoorden
 
@@ -134,3 +134,6 @@ WWW-Authenticate: Bearer authorization="…", resource="…"
 -   autorisatie: het adres van de OAuth2-autorisatie service dat kan worden gebruikt om een toegangs token voor de aanvraag te verkrijgen.  
 
 -   resource: de naam van de resource ( `https://vault.azure.net` ) die in de autorisatie aanvraag moet worden gebruikt.
+
+> [!NOTE]
+> Key Vault SDK-clients voor geheimen, certificaten en sleutels in de eerste aanroep van Key Vault bieden geen toegangs token om Tenant gegevens op te halen. Het is naar verwachting een HTTP 401 te ontvangen met behulp van Key Vault SDK-client, waarbij de Key Vault laat zien dat de toepassing de WWW-Authenticate-header met de resource en de Tenant bevat, waar deze zich moet bezoeken en om het token te vragen. Als alles correct is geconfigureerd, zal de tweede aanroep van de toepassing naar Key Vault een geldig token bevatten en slagen. 

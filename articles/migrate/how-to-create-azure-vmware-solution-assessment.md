@@ -2,16 +2,16 @@
 title: Een AVS-evaluatie met Azure Migrate server evaluatie maken | Microsoft Docs
 description: Hierin wordt beschreven hoe u een AVS-evaluatie maakt met het hulp programma voor het evalueren van Azure Migrate-servers
 author: rashi-ms
-ms.service: azure-migrate
-ms.topic: article
-ms.date: 06/26/2020
 ms.author: rajosh
-ms.openlocfilehash: f9fdff54cbd795c6aeda1708dcae8d00022a6a43
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.manager: abhemraj
+ms.topic: how-to
+ms.date: 06/26/2020
+ms.openlocfilehash: 93d17ec2a4fb5c191ce02c73a7a3532e9c854b00
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96483501"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96752070"
 ---
 # <a name="create-an-azure-vmware-solution-avs-assessment"></a>Een evaluatie van een Azure VMware-oplossing (AVS) maken
 

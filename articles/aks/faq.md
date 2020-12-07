@@ -3,12 +3,12 @@ title: Veelgestelde vragen over Azure Kubernetes service (AKS)
 description: Vind antwoorden op enkele veelgestelde vragen over Azure Kubernetes service (AKS).
 ms.topic: conceptual
 ms.date: 08/06/2020
-ms.openlocfilehash: bbe4d43fde3746e6c992b7f03927f081d3814597
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 1ca342c1ea4134f4d9d8f1dbcae4e61bf2a75eaf
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92745759"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96751381"
 ---
 # <a name="frequently-asked-questions-about-azure-kubernetes-service-aks"></a>Veelgestelde vragen over AKS (Azure Kubernetes Service)
 
@@ -39,13 +39,11 @@ Ja, u kunt verschillende groottes van virtuele machines in uw AKS-cluster gebrui
 
 ## <a name="are-security-updates-applied-to-aks-agent-nodes"></a>Worden beveiligings updates toegepast op agent knooppunten van AKS?
 
-Azure past automatisch beveiligings patches toe op de Linux-knoop punten in uw cluster volgens een nacht planning. U bent echter verantwoordelijk om ervoor te zorgen dat deze Linux-knoop punten zo nodig opnieuw worden opgestart. U hebt verschillende opties voor het opnieuw opstarten van knoop punten:
+Azure past automatisch beveiligings patches toe op de Linux-knoop punten in uw cluster volgens een nacht planning. U bent echter zelf verantwoordelijk om ervoor te zorgen dat deze Linux-knoop punten zo nodig opnieuw worden opgestart. U hebt verschillende opties voor het opnieuw opstarten van knoop punten:
 
 - Hand matig, via de Azure Portal of de Azure CLI.
 - Door uw AKS-cluster bij te werken. Met het cluster worden automatisch de [Cordon-en afvoer knooppunten][cordon-drain] bijgewerkt en vervolgens een nieuw knoop punt online met de meest recente Ubuntu-installatie kopie en een nieuwe patch versie of een secundaire Kubernetes-versie. Zie [een AKS-cluster upgraden][aks-upgrade]voor meer informatie.
-- Met behulp van [Kured](https://github.com/weaveworks/kured), een open source-daemon voor opnieuw opstarten voor Kubernetes. Kured wordt uitgevoerd als een [daemonset](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) en bewaakt elk knoop punt voor de aanwezigheid van een bestand dat aangeeft dat de computer opnieuw moet worden opgestart. In het hele cluster worden het besturings systeem opnieuw opgestart en wordt het proces voor het uitvoeren van een cluster upgrade uitgevoerd door hetzelfde [Cordon en een afwaterproces][cordon-drain] .
-
-Zie [beveiliging en kernel-updates Toep assen op knoop punten in AKS][node-updates-kured]voor meer informatie over het gebruik van kured.
+- Door een [upgrade van de knooppunt installatie kopie](node-image-upgrade.md)te gebruiken.
 
 ### <a name="windows-server-nodes"></a>Windows Server-knoop punten
 
@@ -57,14 +55,14 @@ AKS bouwt voort op een aantal Azure-infrastructuur resources, zoals schaal sets 
 
 Om deze architectuur in te scha kelen, omvat elke AKS-implementatie twee resource groepen:
 
-1. U maakt de eerste resource groep. Deze groep bevat alleen de Kubernetes-service resource. De resource provider AKS maakt automatisch de tweede resource groep tijdens de implementatie. Een voor beeld van de tweede resource groep is *MC_myResourceGroup_myAKSCluster_eastus* . Zie de volgende sectie voor meer informatie over het opgeven van de naam van deze tweede resource groep.
-1. De tweede resource groep, ook wel de *resource groep knoop punt* genoemd, bevat alle infrastructuur resources die zijn gekoppeld aan het cluster. Deze resources omvatten de Kubernetes-knoop punt-Vm's, virtuele netwerken en opslag. De resource groep van het knoop punt heeft standaard een naam als *MC_myResourceGroup_myAKSCluster_eastus* . AKS verwijdert automatisch de knooppunt resource wanneer het cluster wordt verwijderd. dit moet daarom alleen worden gebruikt voor resources die de levens cyclus van het cluster delen.
+1. U maakt de eerste resource groep. Deze groep bevat alleen de Kubernetes-service resource. De resource provider AKS maakt automatisch de tweede resource groep tijdens de implementatie. Een voor beeld van de tweede resource groep is *MC_myResourceGroup_myAKSCluster_eastus*. Zie de volgende sectie voor meer informatie over het opgeven van de naam van deze tweede resource groep.
+1. De tweede resource groep, ook wel de *resource groep knoop punt* genoemd, bevat alle infrastructuur resources die zijn gekoppeld aan het cluster. Deze resources omvatten de Kubernetes-knoop punt-Vm's, virtuele netwerken en opslag. De resource groep van het knoop punt heeft standaard een naam als *MC_myResourceGroup_myAKSCluster_eastus*. AKS verwijdert automatisch de knooppunt resource wanneer het cluster wordt verwijderd. dit moet daarom alleen worden gebruikt voor resources die de levens cyclus van het cluster delen.
 
 ## <a name="can-i-provide-my-own-name-for-the-aks-node-resource-group"></a>Kan ik mijn eigen naam opgeven voor de resource groep van het AKS-knoop punt?
 
-Ja. AKS krijgt standaard de naam van de knooppunt resource groep *MC_resourcegroupname_clustername_location* , maar u kunt ook uw eigen naam opgeven.
+Ja. AKS krijgt standaard de naam van de knooppunt resource groep *MC_resourcegroupname_clustername_location*, maar u kunt ook uw eigen naam opgeven.
 
-Als u de naam van uw eigen resource groep wilt opgeven, installeert u de [AKS-preview][aks-preview-cli] Azure cli-extensie versie *0.3.2* of hoger. Wanneer u een AKS-cluster maakt met behulp van de opdracht [AZ AKS Create][az-aks-create] , gebruikt u de para meter *--node-Resource-Group* en geeft u een naam op voor de resource groep. Als u [een Azure Resource Manager-sjabloon gebruikt][aks-rm-template] om een AKS-cluster te implementeren, kunt u de naam van de resource groep definiëren met behulp van de eigenschap *nodeResourceGroup* .
+Als u de naam van uw eigen resource groep wilt opgeven, installeert u de [AKS-preview][aks-preview-cli] Azure cli-extensie versie *0.3.2* of hoger. Wanneer u een AKS-cluster maakt met behulp van de opdracht [AZ AKS Create][az-aks-create] , gebruikt u de `--node-resource-group` para meter en geeft u een naam op voor de resource groep. Als u [een Azure Resource Manager-sjabloon gebruikt][aks-rm-template] om een AKS-cluster te implementeren, kunt u de naam van de resource groep definiëren met behulp van de eigenschap *nodeResourceGroup* .
 
 * De secundaire resource groep wordt automatisch gemaakt door de Azure-resource provider in uw eigen abonnement.
 * U kunt alleen een aangepaste resource groeps naam opgeven wanneer u het cluster maakt.
@@ -79,7 +77,7 @@ Houd er bij het werken met de knooppunt resource groep voor dat u niet:
 
 ## <a name="can-i-modify-tags-and-other-properties-of-the-aks-resources-in-the-node-resource-group"></a>Kan ik tags en andere eigenschappen van de AKS-resources in de knooppunt resource groep wijzigen?
 
-Als u door Azure gemaakte Tags en andere bron eigenschappen in de knooppunt resource groep wijzigt of verwijdert, kunt u onverwachte resultaten krijgen, zoals het schalen en upgraden van fouten. Met AKS kunt u aangepaste tags maken en wijzigen die door eind gebruikers zijn gemaakt. u kunt deze Tags toevoegen wanneer u [een knooppunt groep maakt](use-multiple-node-pools.md#specify-a-taint-label-or-tag-for-a-node-pool). Het is raadzaam om aangepaste labels te maken of te wijzigen, bijvoorbeeld om een bedrijfs eenheid of kosten plaats toe te wijzen. Dit kan ook worden bereikt door Azure-beleids regels te maken met een bereik voor de beheerde resource groep.
+Als u door Azure gemaakte Tags en andere bron eigenschappen in de knooppunt resource groep wijzigt of verwijdert, kunt u onverwachte resultaten krijgen, zoals het schalen en upgraden van fouten. Met AKS kunt u aangepaste tags maken en wijzigen die zijn gemaakt door eind gebruikers, en kunt u deze Tags toevoegen wanneer u [een groep van knoop punten maakt](use-multiple-node-pools.md#specify-a-taint-label-or-tag-for-a-node-pool). Het is raadzaam om aangepaste labels te maken of te wijzigen, bijvoorbeeld om een bedrijfs eenheid of kosten plaats toe te wijzen. Dit kan ook worden bereikt door Azure-beleids regels te maken met een bereik voor de beheerde resource groep.
 
 Het wijzigen van door **Azure gemaakte Tags** op resources onder de knooppunt resource groep in het AKS-cluster is echter een niet-ondersteunde actie, waardoor de serviceniveau doelstelling (SLO) wordt verbroken. Zie voor meer informatie [AKS biedt een service overeenkomst?](#does-aks-offer-a-service-level-agreement)
 
@@ -103,7 +101,7 @@ Op dit moment kunt u de lijst met toegangs controllers in AKS niet wijzigen.
 
 ## <a name="can-i-use-admission-controller-webhooks-on-aks"></a>Kan ik de webhooks van de toegangs controller gebruiken op AKS?
 
-Ja, u kunt toegangs beheer-webhooks gebruiken op AKS. U kunt het beste interne AKS-naam ruimten die zijn gemarkeerd met het **Label Control-vlak uitsluiten.** U kunt bijvoorbeeld het onderstaande toevoegen aan de configuratie van de webhook:
+Ja, u kunt toegangs beheer-webhooks gebruiken op AKS. Het is raadzaam om interne AKS-naam ruimten, die zijn gemarkeerd met het **label van het besturings element** , uit te sluiten. U kunt bijvoorbeeld het onderstaande toevoegen aan de configuratie van de webhook:
 
 ```
 namespaceSelector:
@@ -112,7 +110,7 @@ namespaceSelector:
       operator: DoesNotExist
 ```
 
-AKS firewalls de API-server uitkomend, zodat u toegangs beheer webhooks vanuit het cluster toegankelijk moet zijn.
+AKS firewallt de API-server uit, zodat de toegangs beheer-webhooks toegankelijk moeten zijn vanuit het cluster.
 
 ## <a name="can-admission-controller-webhooks-impact-kube-system-and-internal-aks-namespaces"></a>Kan de toegangs beheer-webhooks invloed hebben op uitvoeren-System en interne AKS-naam ruimten?
 
@@ -134,7 +132,7 @@ Windows Server-ondersteuning voor de knooppunt groep bevat enkele beperkingen di
 
 ## <a name="does-aks-offer-a-service-level-agreement"></a>Biedt AKS een service overeenkomst?
 
-AKS biedt SLA garanties als een optionele functie add on met een [Sla voor uptime][uptime-sla].
+AKS biedt SLA-garanties als een optionele invoeg functie met [Sla voor uptime][uptime-sla].
 
 ## <a name="can-i-apply-azure-reservation-discounts-to-my-aks-agent-nodes"></a>Kan ik Azure-reserverings kortingen Toep assen op mijn AKS-agent knooppunten?
 
@@ -158,15 +156,15 @@ Het verplaatsen of hernoemen van uw AKS-cluster en de bijbehorende resources wor
 
 ## <a name="why-is-my-cluster-delete-taking-so-long"></a>Waarom duurt het verwijderen van een cluster? 
 
-De meeste clusters worden verwijderd bij de gebruikers aanvraag; in sommige gevallen, met name waarbij klanten hun eigen resource groep halen of het verwijderen van cross-RG taken, kan het langer duren of mislukken. Als u een probleem met verwijderingen ondervindt, controleert u of er geen vergren delingen zijn op de RG, waardoor bronnen buiten de RG worden ontkoppeling van de RG, enzovoort.
+De meeste clusters worden verwijderd bij de gebruikers aanvraag; in sommige gevallen, met name waarbij klanten hun eigen resource groep halen of het verwijderen van cross-RG taken, kan het langer duren of mislukken. Als u een probleem met verwijderingen ondervindt, controleert u of u geen vergren delingen op de RG hebt, of bronnen buiten de RG zijn ontkoppeling van de RG, enzovoort.
 
 ## <a name="if-i-have-pod--deployments-in-state-nodelost-or-unknown-can-i-still-upgrade-my-cluster"></a>Als ik pod/Deployments heb in de status NodeLost of Unknown, kan ik mijn cluster nog steeds bijwerken?
 
-Dit kan, maar AKS wordt dit niet aanbevolen. Upgrades moeten in het ideale geval worden uitgevoerd wanneer de status van het cluster bekend en in orde is.
+Dit kan, maar AKS wordt dit niet aanbevolen. Upgrades moeten worden uitgevoerd wanneer de status van het cluster bekend en in orde is.
 
 ## <a name="if-i-have-a-cluster-with-one-or-more-nodes-in-an-unhealthy-state-or-shut-down-can-i-perform-an-upgrade"></a>Als ik een cluster met een of meer knoop punten met een slechte status of computer heb afgesloten, kan ik dan een upgrade uitvoeren?
 
-Nee, verwijder alle knoop punten met de status mislukt of verwijder deze uit het cluster voordat u een upgrade uitvoert.
+Nee, verwijderen/verwijderen van knoop punten met een mislukte status of anderszins verwijderd uit het cluster vóór de upgrade.
 
 ## <a name="i-ran-a-cluster-delete-but-see-the-error-errno-11001-getaddrinfo-failed"></a>Ik heb een cluster verwijderd, maar zie de fout `[Errno 11001] getaddrinfo failed` 
 
@@ -174,31 +172,31 @@ Dit wordt meestal veroorzaakt door gebruikers die een of meer netwerk beveiligin
 
 ## <a name="i-ran-an-upgrade-but-now-my-pods-are-in-crash-loops-and-readiness-probes-fail"></a>Ik heb een upgrade uitgevoerd, maar nu zijn mijn peulen in de loop van een crash, en mislukt de gereedheids tests?
 
-Controleer of uw Service-Principal niet is verlopen.  Zie de referenties van de [AKS-Service-Principal](./kubernetes-service-principal.md) en de AKS- [Update](./update-credentials.md).
+Bevestig dat uw Service-Principal niet is verlopen.  Zie: [AKS Service Principal](./kubernetes-service-principal.md) and [AKS update credentials](./update-credentials.md).
 
-## <a name="my-cluster-was-working-but-suddenly-cannot-provision-loadbalancers-mount-pvcs-etc"></a>Mijn cluster werkte, maar u kunt plotseling geen LoadBalancers, Mount-Pvc's, enzovoort inrichten. 
+## <a name="my-cluster-was-working-but-suddenly-cant-provision-loadbalancers-mount-pvcs-etc"></a>Mijn cluster werkte, maar kan plotseling geen LoadBalancers, Mount-Pvc's, enzovoort inrichten? 
 
-Controleer of uw Service-Principal niet is verlopen.  Zie de referenties van de [AKS-Service-Principal](./kubernetes-service-principal.md)  en de AKS- [Update](./update-credentials.md).
+Bevestig dat uw Service-Principal niet is verlopen.  Zie: [AKS Service Principal](./kubernetes-service-principal.md)  and [AKS update credentials](./update-credentials.md).
 
 ## <a name="can-i-scale-my-aks-cluster-to-zero"></a>Kan ik mijn AKS-cluster op nul schalen?
-U kunt [een actief AKS-cluster volledig stoppen](start-stop-cluster.md)en besparen op de respectieve reken kosten. Daarnaast kunt u ook kiezen voor het [schalen of automatisch schalen van alle of specifieke `User` knooppunt groepen](scale-cluster.md#scale-user-node-pools-to-0) naar 0, waarbij alleen de benodigde cluster configuratie behouden blijft.
-U kunt [systeem knooppunt groepen](use-system-pools.md) niet rechtstreeks schalen naar 0.
+U kunt [een actief AKS-cluster volledig stoppen](start-stop-cluster.md)en besparen op de respectieve reken kosten. Daarnaast kunt u ook kiezen om [alle of specifieke `User` knooppunt groepen te schalen of automatisch te schalen](scale-cluster.md#scale-user-node-pools-to-0) op 0, zodat alleen de benodigde cluster configuratie behouden blijft.
+U kunt [systeem knooppunt groepen](use-system-pools.md) niet rechtstreeks schalen naar nul.
 
 ## <a name="can-i-use-the-virtual-machine-scale-set-apis-to-scale-manually"></a>Kan ik de Api's voor de schaalset van de virtuele machine gebruiken om hand matig te schalen?
 
 Nee, schaal bewerkingen met behulp van de virtuele-machine Scale set-Api's worden niet ondersteund. Gebruik de AKS-Api's ( `az aks scale` ).
 
-## <a name="can-i-use-virtual-machine-scale-sets-to-manually-scale-to-0-nodes"></a>Kan ik de schaal sets van virtuele machines gebruiken om hand matig te schalen naar 0 knoop punten?
+## <a name="can-i-use-virtual-machine-scale-sets-to-manually-scale-to-zero-nodes"></a>Kan ik schaal sets voor virtuele machines gebruiken om hand matig te schalen naar nul knoop punten?
 
-Nee, schaal bewerkingen met behulp van de virtuele-machine Scale set-Api's worden niet ondersteund.
+Nee, schaal bewerkingen met behulp van de virtuele-machine Scale set-Api's worden niet ondersteund. U kunt de AKS-API gebruiken om te schalen naar nul niet-systeem knooppunt groepen of [het cluster stoppen](start-stop-cluster.md) .
 
 ## <a name="can-i-stop-or-de-allocate-all-my-vms"></a>Kan ik al mijn Vm's stoppen of de toewijzing ervan ongedaan maken?
 
-Hoewel AKS de mechanismen voor flexibiliteit heeft om een dergelijke configuratie te verkrijgen en te herstellen, is dit geen aanbevolen configuratie.
+Hoewel AKS de mechanismen voor flexibiliteit heeft om een dergelijke configuratie te verkrijgen en hiervan te herstellen, is dit geen ondersteunde configuratie. [Stop het cluster](start-stop-cluster.md) .
 
 ## <a name="can-i-use-custom-vm-extensions"></a>Kan ik aangepaste VM-extensies gebruiken?
 
-De Log Analytics-agent wordt ondersteund omdat het een extensie is die door micro soft wordt beheerd. Anders Nee, AKS is een beheerde service, en manipulatie van de IaaS-resources wordt niet ondersteund. Als u aangepaste onderdelen, enzovoort, wilt installeren, gebruikt u de Kubernetes-Api's en-mechanismen. Gebruik bijvoorbeeld DaemonSets om de vereiste onderdelen te installeren.
+De Log Analytics-agent wordt ondersteund omdat het een extensie is die door micro soft wordt beheerd. Anders Nee, AKS is een beheerde service, en manipulatie van de IaaS-resources wordt niet ondersteund. Als u aangepaste onderdelen wilt installeren, gebruikt u de Kubernetes-Api's en-mechanismen. Gebruik bijvoorbeeld DaemonSets om de vereiste onderdelen te installeren.
 
 ## <a name="does-aks-store-any-customer-data-outside-of-the-clusters-region"></a>Slaat AKS klant gegevens buiten de regio van het cluster op?
 
@@ -210,6 +208,52 @@ Met uitzonde ring van de volgende twee installatie kopieën hoeven AKS-installat
 
 - *mcr.microsoft.com/oss/kubernetes/coredns*
 - *mcr.microsoft.com/azuremonitor/containerinsights/ciprod*
+
+## <a name="what-is-azure-cni-transparent-mode-vs-bridge-mode"></a>Wat is de transparante modus van Azure CNI versus de modus brug?
+
+Van v 1.2.0 Azure CNI heeft de transparante modus als standaard voor de implementaties van één pacht Linux-CNI. In de transparante modus wordt de brug modus vervangen. In deze sectie bespreken we meer over de verschillen in beide modi en wat zijn de voor delen/beperking voor het gebruik van de transparante modus in azure CNI.
+
+### <a name="bridge-mode"></a>Brug modus
+
+Zoals de naam suggereert, maakt de brug modus van Azure CNI, in een ' just-in-time ' mode, een L2-brug met de naam ' azure0 '. Alle interfaces van de pod-koppeling aan de host zijde `veth` worden verbonden met deze brug. Pod-Pod intra VM-communicatie is daarom via deze brug. De desbetreffende Bridge is een virtueel apparaat van laag 2 dat op zichzelf niets kan ontvangen of verzenden, tenzij u een of meer echte apparaten verbindt. Daarom moet eth0 van de virtuele Linux-machine worden geconverteerd naar een ondergeschikte Bridge-brug (' azure0 '). Hiermee maakt u een complexe netwerk topologie in de Linux-VM en als symptoom CNI moet u zorgen maken voor andere netwerk functies zoals DNS-Server Update, enzovoort.
+
+:::image type="content" source="media/faq/bridge-mode.png" alt-text="Topologie van de brug modus":::
+
+Hieronder ziet u een voor beeld van hoe de configuratie van de IP-route eruitziet in de modus brug. Ongeacht het aantal peulen dat het knoop punt heeft, is er slechts twee routes. De eerste keer dat alle verkeer met uitzonde ring van lokaal op azure0 via de interface met het IP-adres 10.240.0.4 (de primaire IP van het knoop punt) en de tweede met de waarde "10.20. x. x" Pod ruimte voor de kernel wordt beslist.
+
+```bash
+default via 10.240.0.1 dev azure0 proto dhcp src 10.240.0.4 metric 100
+10.240.0.0/12 dev azure0 proto kernel scope link src 10.240.0.4
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown
+root@k8s-agentpool1-20465682-1:/#
+```
+
+### <a name="transparent-mode"></a>Transparante modus
+De transparante modus heeft een rechte benadering voor het instellen van Linux-netwerken. In deze modus wijzigt Azure CNI geen eigenschappen van de eth0-interface in de Linux-VM. Deze minimale benadering van het wijzigen van de Linux-netwerk eigenschappen vermindert het aantal complexe hoek problemen die clusters kunnen oplopen met de brug modus. In de transparante modus maakt Azure CNI de pod- `veth` koppel interfaces aan de host zijde die worden toegevoegd aan het hostnetwerkadapter. De intra VM Pod-to-pod-communicatie is via IP-routes die de CNI gaat toevoegen. De intra Pod-to-pod-VM is in wezen lager dan laag 3-netwerk verkeer.
+
+:::image type="content" source="media/faq/transparent-mode.png" alt-text="Topologie van transparante modus":::
+
+Hieronder ziet u een voor beeld van een configuratie van een IP-route van de transparante modus. elke pod-interface krijgt een statische route die is gekoppeld zodat verkeer met het doel-IP-adres als pod rechtstreeks naar de interface van de host-Side van het Pod wordt verzonden `veth` .
+
+### <a name="benefits-of-transparent-mode"></a>Voor delen van transparante modus
+
+- Voorziet in een oplossing voor de `conntrack` parallelle race voorwaarde en het vermijden van 5 sec. DNS-latentie problemen zonder dat u lokaal knoop punt-DNS hoeft in te stellen (u kunt nog steeds lokale DNS gebruiken om prestatie redenen).
+- Elimineert de eerste 5-sec. CNI Bridge-modus van de DNS-latentie wordt vandaag geïntroduceerd door de brug installatie van ' just-in-time '.
+- Een van de hoek gevallen in de brug modus is dat de Azure CNI de aangepaste DNS-Server lijsten die gebruikers toevoegen aan VNET of NIC niet kunnen blijven bijwerken. Dit leidt ertoe dat de CNI alleen de eerste instantie van de lijst met DNS-servers ophaalt. Opgelost in de transparante modus als CNI geen eth0-eigenschappen wijzigt. Meer informatie [vindt u hier](https://github.com/Azure/azure-container-networking/issues/713).
+- Biedt een betere afhandeling van UDP-verkeer en-beperking voor UDP-flood Storm wanneer er een time-out optreedt voor ARP. Als Bridge in de brug modus geen MAC-adres van de doel-pod in de intra-VM-Pod-to-pod-communicatie kent, resulteert dit in een ontwerp van het pakket naar alle poorten. Opgelost in de transparante modus omdat er geen L2-apparaten aanwezig zijn in het pad. Meer informatie vindt u [hier](https://github.com/Azure/azure-container-networking/issues/704).
+- De transparante modus voert betere Pod-to-pod-communicatie binnen de virtuele machine uit met betrekking tot de door Voer en latentie in vergelijking met de brug modus.
+
+```bash
+10.240.0.216 dev azv79d05038592 proto static
+10.240.0.218 dev azv8184320e2bf proto static
+10.240.0.219 dev azvc0339d223b9 proto static
+10.240.0.222 dev azv722a6b28449 proto static
+10.240.0.223 dev azve7f326f1507 proto static
+10.240.0.224 dev azvb3bfccdd75a proto static
+168.63.129.16 via 10.240.0.1 dev eth0 proto dhcp src 10.240.0.4 metric 100
+169.254.169.254 via 10.240.0.1 dev eth0 proto dhcp src 10.240.0.4 metric 100
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown
+```
 
 <!-- LINKS - internal -->
 

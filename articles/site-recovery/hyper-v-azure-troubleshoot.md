@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 04/14/2019
 ms.author: sharrai
-ms.openlocfilehash: 721e09c2bc0562ba833115361cf33c3daaef380b
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: c804e13029dcec42a43885cbf0d9b227b3d0338f
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92364028"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96750799"
 ---
 # <a name="troubleshoot-hyper-v-to-azure-replication-and-failover"></a>Problemen oplossen met replicatie en failover voor Hyper-V naar Azure
 
@@ -34,7 +34,21 @@ Als u problemen ondervindt bij het inschakelen van beveiliging voor virtuele Hyp
 6. Zorg ervoor dat op de gast-VM de meest recente versie van Integration Services wordt uitgevoerd.
     - [Controleer](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services) of u de meest recente versie hebt.
     - [Blijven](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services#keep-integration-services-up-to-date) Integratie Services zijn bijgewerkt.
-    
+
+### <a name="cannot-enable-protection-as-the-virtual-machine-is-not-highly-available-error-code-70094"></a>Kan de beveiliging niet inschakelen omdat de virtuele machine niet Maxi maal beschikbaar is (fout code 70094)
+
+Wanneer u replicatie voor een machine inschakelt en er zich een fout voordoet met de melding dat de replicatie niet kan worden ingeschakeld omdat de computer niet Maxi maal beschikbaar is, voert u de volgende stappen uit om dit probleem op te lossen:
+
+- Start de VMM-service op de VMM-server opnieuw op.
+- Verwijder de virtuele machine uit het cluster en voeg deze opnieuw toe.
+
+### <a name="the-vss-writer-ntds-failed-with-status-11-and-writer-specific-failure-code-0x800423f4"></a>De VSS Writer NTDS is mislukt met de status 11 en Writer-specifieke fout code 0x800423F4
+
+Wanneer u probeert replicatie in te scha kelen, kunt u een fout melding krijgen dat het inschakelen van replicatie is mislukt AST NTDS is mislukt. Een van de mogelijke oorzaken voor dit probleem is dat het besturings systeem van de virtuele machine in Windows Server 2012 en niet Windows Server 2012 R2. Voer de onderstaande stappen uit om dit probleem op te lossen:
+
+- Voer een upgrade uit naar Windows Server R2 met 4072650.
+- Zorg ervoor dat Hyper-V host ook Windows 2016 of hoger is.
+
 ## <a name="replication-issues"></a>Replicatieproblemen
 
 Problemen met eerste en doorlopende replicatie kunt u als volgt oplossen:
@@ -53,8 +67,8 @@ Problemen met eerste en doorlopende replicatie kunt u als volgt oplossen:
     - Als u repliceert met VMM in de omgeving, controleert u of deze services worden uitgevoerd:
         - Controleer op de Hyper-V-host of de Virtual Machine Management-service, de Microsoft Azure Recovery Services agent en de WMI provider host-service worden uitgevoerd.
         - Zorg ervoor dat de System Center Virtual Machine Manager-service wordt uitgevoerd op de VMM-server.
-4. Controleer de connectiviteit tussen de Hyper-V-server en Azure. Als u de connectiviteit wilt controleren, opent u taak beheer op de Hyper-V-host. Klik op het tabblad **prestaties** op **Broncontrole openen**. Controleer op het tabblad **netwerk** > **proces met netwerk activiteit**of cbengine.exe bezig is met het verzenden van grote hoeveel heden gegevens.
-5. Controleer of de Hyper-V-hosts verbinding kunnen maken met de URL van de Azure Storage-blob. Selecteer en controleer de **cbengine.exe**om te controleren of de hosts verbinding kunnen maken. **TCP-verbindingen** weer geven om de connectiviteit van de host naar de Azure Storage-BLOB te controleren.
+4. Controleer de connectiviteit tussen de Hyper-V-server en Azure. Als u de connectiviteit wilt controleren, opent u taak beheer op de Hyper-V-host. Klik op het tabblad **prestaties** op **Broncontrole openen**. Controleer op het tabblad **netwerk** > **proces met netwerk activiteit** of cbengine.exe bezig is met het verzenden van grote hoeveel heden gegevens.
+5. Controleer of de Hyper-V-hosts verbinding kunnen maken met de URL van de Azure Storage-blob. Selecteer en controleer de **cbengine.exe** om te controleren of de hosts verbinding kunnen maken. **TCP-verbindingen** weer geven om de connectiviteit van de host naar de Azure Storage-BLOB te controleren.
 6. Controleer de prestatie problemen, zoals hieronder wordt beschreven.
     
 ### <a name="performance-issues"></a>Prestatieproblemen
@@ -124,7 +138,7 @@ Een app-consistente momentopname is een momentopname van de toepassingsgegevens 
 ### <a name="vss-failing-inside-the-hyper-v-host"></a>VSS mislukt in de Hyper-V-host
 
 1. Controleer de gebeurtenis logboeken op VSS-fouten en aanbevelingen:
-    - Open op de hyper-v-Hostserver het gebeurtenis logboek van Hyper-v-beheer in **Logboeken**  >  **toepassingen en services**  >  **micro soft**  >  **Windows**  >  **hyper-v-**  >  **beheer**registreert.
+    - Open op de hyper-v-Hostserver het gebeurtenis logboek van Hyper-v-beheer in **Logboeken**  >  **toepassingen en services**  >  **micro soft**  >  **Windows**  >  **hyper-v-**  >  **beheer** registreert.
     - Controleer of er gebeurtenissen zijn die fouten in de app-consistente moment opnamen aangeven.
     - Een typische fout is: ' Hyper-V kan geen VSS-momentopnameset genereren voor de virtuele machine ' XYZ ': er is een niet-tijdelijke fout opgetreden in de schrijver. Het opnieuw starten van de VSS-service kan problemen oplossen als de service niet reageert. "
 
@@ -135,7 +149,7 @@ Een app-consistente momentopname is een momentopname van de toepassingsgegevens 
 
 ### <a name="common-errors"></a>Algemene fouten
 
-**Fout code** | **Bericht** | **Details**
+**Foutcode** | **Bericht** | **Details**
 --- | --- | ---
 **0x800700EA** | Hyper-V kan geen VSS-momentopnameset genereren voor de virtuele machine: er zijn meer gegevens beschikbaar. (0x800700EA). Het genereren van VSS-moment opnamen kan mislukken als er een back-upbewerking wordt uitgevoerd.<br/><br/> De replicatie bewerking voor de virtuele machine is mislukt: er zijn meer gegevens beschikbaar. | Controleer of er een dynamische schijf is ingeschakeld op de virtuele machine. Nee, dit wordt niet ondersteund.
 **0x80070032** | "Hyper-V-aanvrager van volume schaduw kopie kan geen verbinding maken met de virtuele machine <./VMname> omdat de versie niet overeenkomt met de versie die wordt verwacht door Hyper-V | Controleer of de meest recente Windows-updates zijn geïnstalleerd.<br/><br/> Voer een [upgrade uit](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services#keep-integration-services-up-to-date) naar de nieuwste versie van Integration Services.
@@ -146,7 +160,7 @@ Een app-consistente momentopname is een momentopname van de toepassingsgegevens 
 
 Alle replicatie gebeurtenissen van Hyper-V worden vastgelegd in het Hyper-V-VMMS\Admin-logboek in **toepassingen en services**  >  **micro soft**  >  **Windows**. Daarnaast kunt u een analytisch logboek inschakelen voor de Hyper-V virtual machine Management-service, als volgt:
 
-1. Maak de logboeken voor analyse en fout opsporing zichtbaar in de Logboeken. Als u de logboeken beschikbaar wilt maken, klikt u in het logboeken op **weer**geven  >  **analyse logboeken en fout opsporing.**. Het analytische logboek wordt weer gegeven onder **Hyper-V-VMMS**.
+1. Maak de logboeken voor analyse en fout opsporing zichtbaar in de Logboeken. Als u de logboeken beschikbaar wilt maken, klikt u in het logboeken op **weer** geven  >  **analyse logboeken en fout opsporing.**. Het analytische logboek wordt weer gegeven onder **Hyper-V-VMMS**.
 2. Klik in het deel venster **acties** op **logboek inschakelen**. 
 
     ![Logboek inschakelen](media/hyper-v-azure-troubleshoot/enable-log.png)

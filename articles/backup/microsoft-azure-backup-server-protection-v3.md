@@ -3,12 +3,12 @@ title: Wat Azure Backup Server v3 RTM back-ups kan maken?
 description: Dit artikel bevat een beveiligings matrix met alle werk belastingen, gegevens typen en installaties die Azure Backup voor v3 RTM beveiligt.
 ms.date: 11/13/2018
 ms.topic: conceptual
-ms.openlocfilehash: 21c5fbcdf8aa3454a9af968509cb4cbf76b31f9e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c1a1a876a9249a32c87c50d7f320a62b9c478caf
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88763606"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96752376"
 ---
 # <a name="azure-backup-server-v3-rtm-protection-matrix"></a>Azure Backup Server v3 RTM-beveiligings matrix
 
@@ -19,7 +19,7 @@ In de volgende matrix ziet u wat kan worden beveiligd met Azure Backup Server v3
 |Workload|Versie|Azure Backup-server</br> installation|Ondersteund Azure Backup Server|Beveiliging en herstel|
 |------------|-----------|---------------|--------------|--------------|
 |Client-computers (64-bit en 32-bit)|Windows 10|Fysieke server<br /><br />Virtuele Hyper-V-machine <br /><br />Virtuele VMware-machine|V3, V2|Volume, share, map, bestanden, ontdubbelde volumes<br /><br />Beveiligde volumes moeten NTFS zijn. FAT en FAT32 worden niet ondersteund.<br /><br />Volumes moeten minimaal 1 GB zijn. Azure Backup Server gebruikt Volume Shadow Copy Service (VSS) om de moment opname van de gegevens te maken en de moment opname werkt alleen als het volume ten minste 1 GB is.|
-|Client-computers (64-bit en 32-bit)|Windows 8.1|Fysieke server<br /><br />Virtuele Hyper-V-machine |V3, V2|Files<br /><br />Beveiligde volumes moeten NTFS zijn. FAT en FAT32 worden niet ondersteund.<br /><br />Volumes moeten minimaal 1 GB zijn. Azure Backup Server gebruikt Volume Shadow Copy Service (VSS) om de moment opname van de gegevens te maken en de moment opname werkt alleen als het volume ten minste 1 GB is.|
+|Client-computers (64-bit en 32-bit)|Windows 8.1|Fysieke server<br /><br />Virtuele Hyper-V-machine |V3, V2|Bestanden<br /><br />Beveiligde volumes moeten NTFS zijn. FAT en FAT32 worden niet ondersteund.<br /><br />Volumes moeten minimaal 1 GB zijn. Azure Backup Server gebruikt Volume Shadow Copy Service (VSS) om de moment opname van de gegevens te maken en de moment opname werkt alleen als het volume ten minste 1 GB is.|
 |Client-computers (64-bit en 32-bit)|Windows 8.1|Virtuele Windows-machine in VMware (beveiligt workloads die worden uitgevoerd in de virtuele Windows-machine in VMware)|V3, V2|Volume, share, map, bestanden, ontdubbelde volumes<br /><br />Beveiligde volumes moeten NTFS zijn. FAT en FAT32 worden niet ondersteund.<br /><br />Volumes moeten minimaal 1 GB zijn. Azure Backup Server gebruikt Volume Shadow Copy Service (VSS) om de moment opname van de gegevens te maken en de moment opname werkt alleen als het volume ten minste 1 GB is.|
 |Client-computers (64-bit en 32-bit)|Windows 8|Fysieke server<br /><br />Lokale Hyper-V virtuele machine|V3, V2|Volume, share, map, bestanden, ontdubbelde volumes<br /><br />Beveiligde volumes moeten NTFS zijn. FAT en FAT32 worden niet ondersteund.<br /><br />Volumes moeten minimaal 1 GB zijn. Azure Backup Server gebruikt Volume Shadow Copy Service (VSS) om de moment opname van de gegevens te maken en de moment opname werkt alleen als het volume ten minste 1 GB is.|
 |Client-computers (64-bit en 32-bit)|Windows 8|Virtuele Windows-machine in VMware (beveiligt workloads die worden uitgevoerd in de virtuele Windows-machine in VMware)|V3, V2|Volume, share, map, bestanden, ontdubbelde volumes<br /><br />Beveiligde volumes moeten NTFS zijn. FAT en FAT32 worden niet ondersteund.<br /><br />Volumes moeten minimaal 1 GB zijn. Azure Backup Server gebruikt Volume Shadow Copy Service (VSS) om de moment opname van de gegevens te maken en de moment opname werkt alleen als het volume ten minste 1 GB is.|
@@ -78,7 +78,7 @@ In de volgende matrix ziet u wat kan worden beveiligd met Azure Backup Server v3
 |Hyper-V host-MABS Protection-agent op de Hyper-V-hostserver, het cluster of de virtuele machine|Windows Server 2008 SP2|Fysieke server<br /><br />Lokale Hyper-V virtuele machine|Niet ondersteund|Beveiligen: Hyper-V-computers, CSV's (gedeelde clustervolumes)<br /><br />Herstellen: virtuele machine, het herstel op itemniveau van bestanden en mappen, volumes, virtuele harde schijven|
 |Virtuele VMware-machines|VMware vCenter/vSphere ESX/ESXi versie 5.5/6.0/6.5 |Fysieke server, <br/>On-premises Hyper-V-VM, <br/> Windows-VM in VMware|V3, V2|VMware-Vm's op cluster Shared volumes (Csv's), NFS en SAN-opslag<br /> Herstel op item niveau van bestanden en mappen is alleen beschikbaar voor Windows-Vm's, VMware-vApps worden niet ondersteund.|
 |Virtuele VMware-machines|[VMware vSphere versie 6,7](backup-azure-backup-server-vmware.md#vmware-vsphere-67) |Fysieke server, <br/>On-premises Hyper-V-VM, <br/> Windows-VM in VMware|V3|VMware-Vm's op cluster Shared volumes (Csv's), NFS en SAN-opslag<br /> Herstel op item niveau van bestanden en mappen is alleen beschikbaar voor Windows-Vm's, VMware-vApps worden niet ondersteund.|
-|Linux|Linux wordt uitgevoerd als Hyper-V-of VMware-gast|Fysieke server, <br/>On-premises Hyper-V-VM, <br/> Windows-VM in VMware|V3, V2|Hyper-V moet worden uitgevoerd op Windows Server 2012 R2 of Windows Server 2016. Beveiligen: volledige virtuele machine<br /><br />Herstellen: volledige virtuele machine <br/><br/> Alleen bestandsconsistente momentopnamen worden ondersteund. <br/><br/> Zie het artikel [Linux op distributies die zijn goedgekeurd door Azure](../virtual-machines/linux/endorsed-distros.md)voor een volledige lijst met ondersteunde Linux-distributies en-versies.|
+|Linux|Linux wordt uitgevoerd als [Hyper-V-](back-up-hyper-v-virtual-machines-mabs.md) of [VMware](backup-azure-backup-server-vmware.md) -gast|Fysieke server, <br/>On-premises Hyper-V-VM, <br/> Windows-VM in VMware|V3, V2|Hyper-V moet worden uitgevoerd op Windows Server 2012 R2 of Windows Server 2016. Beveiligen: volledige virtuele machine<br /><br />Herstellen: volledige virtuele machine <br/><br/> Alleen bestandsconsistente momentopnamen worden ondersteund. <br/><br/> Zie het artikel [Linux op distributies die zijn goedgekeurd door Azure](../virtual-machines/linux/endorsed-distros.md)voor een volledige lijst met ondersteunde Linux-distributies en-versies.|
 
 ## <a name="azure-expressroute-support"></a>Ondersteuning voor Azure ExpressRoute
 

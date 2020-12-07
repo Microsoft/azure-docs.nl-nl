@@ -7,12 +7,12 @@ ms.date: 11/06/2020
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 992fb4422974dad7a48e5fea953ac4530bb52d5c
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
+ms.openlocfilehash: a517f7a796b6543c8d60f0d1ebdba16afa0bc4b7
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96122595"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96751424"
 ---
 # <a name="use-properties-in-an-azure-iot-central-solution"></a>Eigenschappen in een Azure IoT Central-oplossing gebruiken
 
@@ -35,12 +35,12 @@ De volgende tabel bevat de configuratie-instellingen voor een eigenschaps mogeli
 | Veld           | Beschrijving                                                                                                                                                                                                                        |
 |-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Weergavenaam    | De weergave naam voor de waarde van de eigenschap die wordt gebruikt in dash boards en formulieren.                                                                                                                                                              |
-| Name            | De naam van de eigenschap. Azure IoT Central genereert een waarde voor dit veld van de weergave naam, maar u kunt indien nodig uw eigen waarde kiezen. Dit veld moet alfanumeriek zijn.                                                 |
+| Naam            | De naam van de eigenschap. Azure IoT Central genereert een waarde voor dit veld van de weergave naam, maar u kunt indien nodig uw eigen waarde kiezen. Dit veld moet alfanumeriek zijn.                                                 |
 | Type capaciteit | Eigenschap.                                                                                                                                                                                                                          |
 | Semantisch type   | Het semantische type van de eigenschap, zoals de Tempe ratuur, de status of de gebeurtenis. De keuze van semantisch type bepaalt welke van de volgende velden beschikbaar zijn.                                                                       |
 | Schema          | Het gegevens type van de eigenschap, zoals double, String of vector. Welke opties beschikbaar zijn, wordt bepaald door het semantische type. Schema is niet beschikbaar voor de semantische typen gebeurtenis en status.                                               |
 | Beschrijfbaar       | Als de eigenschap niet schrijfbaar is, kan het apparaat eigenschaps waarden rapporteren aan Azure IoT Central. Als de eigenschap schrijfbaar is, kan het apparaat eigenschaps waarden rapporteren aan Azure IoT Central. Vervolgens kan Azure IoT Central bijgewerkte eigenschappen verzenden naar het apparaat. |
-| Ernst        | Alleen beschikbaar voor het semantische gebeurtenis type. De ernst is **fout**, **informatie** of **waarschuwing**.                                                                                                                         |
+| Severity        | Alleen beschikbaar voor het semantische gebeurtenis type. De ernst is **fout**, **informatie** of **waarschuwing**.                                                                                                                         |
 | Status waarden    | Alleen beschikbaar voor het semantische type status. Definieer de mogelijke status waarden, die elk een weergave naam, naam, opsommings type en waarde hebben.                                                                                   |
 | Eenheid            | Een eenheid voor de waarde van de eigenschap, zoals **mph**, **%** of **&deg; C**.                                                                                                                                                              |
 | Eenheid weer geven    | Een weergave-eenheid voor gebruik in dash boards en formulieren.                                                                                                                                                                                    |
@@ -79,7 +79,7 @@ In dit voor beeld worden twee eigenschappen weer gegeven. Deze eigenschappen heb
 
 * `@type` Hiermee geeft u het type mogelijkheid op: `Property` . In het vorige voor beeld wordt ook het semantische type `Temperature` voor beide eigenschappen weer gegeven.
 * `name` voor de eigenschap.
-* `schema` Hiermee geeft u het gegevens type voor de eigenschap op. Deze waarde kan een primitief type zijn, zoals double, integer, Boolean of string. Complexe object typen, matrices en Maps worden ook ondersteund.
+* `schema` Hiermee geeft u het gegevens type voor de eigenschap op. Deze waarde kan een primitief type zijn, zoals double, integer, Boolean of string. Complexe object typen en Maps worden ook ondersteund.
 * `writable` Eigenschappen zijn standaard alleen-lezen. U kunt een eigenschap markeren als beschrijfbaar met behulp van dit veld.
 
 Met optionele velden, zoals weergave naam en-beschrijving, kunt u meer details toevoegen aan de interface en de mogelijkheden.

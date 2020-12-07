@@ -1,17 +1,20 @@
 ---
 title: Virtuele Hyper-V-machines naar Azure migreren met Azure Migrate Server Migration
 description: Ontdek hoe u virtuele Hyper-V-machines naar Azure migreert met Azure Migrate Server Migration
+author: bsiva
+ms.author: bsiva
+ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 06/08/2020
 ms.custom:
 - MVC
 - fasttrack-edit
-ms.openlocfilehash: 2d31c5b90f37f336b48118e4f4adde4777f8cf4a
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 48fe0c737cf7005676a5c803107b4402c7039141
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96493131"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96752746"
 ---
 # <a name="migrate-hyper-v-vms-to-azure"></a>Virtuele Hyper-V-machines naar Azure migreren 
 

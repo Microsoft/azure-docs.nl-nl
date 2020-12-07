@@ -1,17 +1,17 @@
 ---
 title: Machines groeperen voor evaluatie met Azure Migrate | Microsoft Docs
 description: Hierin wordt beschreven hoe u machines groepeert voordat u een evaluatie uitvoert met de Azure Migrate-service.
-author: rayne-wiselman
-ms.service: azure-migrate
-ms.topic: article
+author: rashi-ms
+ms.author: rajosh
+ms.manager: abhemraj
+ms.topic: how-to
 ms.date: 07/17/2019
-ms.author: hamusa
-ms.openlocfilehash: 420259929afc50b2884bf075212402d80b6b52f4
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 364b5949e944a4317aa25f1f1b12545122881cec
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96483535"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96752104"
 ---
 # <a name="create-a-group-for-assessment"></a>Een groep maken voor evaluatie
 

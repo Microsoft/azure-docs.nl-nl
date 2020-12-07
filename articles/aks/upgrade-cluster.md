@@ -4,12 +4,12 @@ description: Meer informatie over hoe u een AKS-cluster (Azure Kubernetes servic
 services: container-service
 ms.topic: article
 ms.date: 11/17/2020
-ms.openlocfilehash: 30ad80727c238ae7e415039adf3e4eb75dbbc1b5
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: c5de1a02a077ccb5f46b685572c6c43f5951b224
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96531340"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96751492"
 ---
 # <a name="upgrade-an-azure-kubernetes-service-aks-cluster"></a>Een AKS-cluster (Azure Kubernetes Service) upgraden
 
@@ -93,7 +93,7 @@ az aks nodepool update -n mynodepool -g MyResourceGroup --cluster-name MyManaged
 
 ## <a name="upgrade-an-aks-cluster"></a>Een AKS-cluster upgraden
 
-Met een lijst met beschik bare versies voor uw AKS-cluster gebruikt u de opdracht [AZ AKS upgrade][az-aks-upgrade] . Tijdens het upgrade proces voegt AKS een nieuw buffer knooppunt toe (of net als veel knoop punten die zijn geconfigureerd voor [maximale piek spanning](#customize-node-surge-upgrade)) aan het cluster waarop de opgegeven Kubernetes-versie wordt uitgevoerd. Vervolgens wordt een van de oude knoop punten [Cordon en][kubernetes-drain] verwerkt om de onderbreking van het uitvoeren van toepassingen tot een minimum te beperken (als u de maximale piek gebruikt, wordt de [Cordon en][kubernetes-drain] het verwerkings Stop net zo veel knoop punten als het aantal opgegeven buffer knooppunten). Wanneer het oude knoop punt volledig is ontslagen, wordt de installatie kopie van de nieuwe versie geschaald en wordt het knoop punt de buffer voor het volgende knoop punt wordt bijgewerkt. Dit proces wordt herhaald totdat alle knoop punten in het cluster zijn bijgewerkt. Aan het einde van het proces wordt het laatste geleegde knoop punt verwijderd, waarbij het bestaande aantal agent knooppunten behouden blijft.
+Met een lijst met beschik bare versies voor uw AKS-cluster gebruikt u de opdracht [AZ AKS upgrade][az-aks-upgrade] . Tijdens het upgrade proces voegt AKS een nieuw buffer knooppunt toe (of net als veel knoop punten die zijn geconfigureerd voor [maximale piek spanning](#customize-node-surge-upgrade)) aan het cluster waarop de opgegeven Kubernetes-versie wordt uitgevoerd. Vervolgens wordt een van de oude knoop punten [Cordon en][kubernetes-drain] verwerkt om de onderbreking van het uitvoeren van toepassingen tot een minimum te beperken (als u de maximale piek gebruikt, wordt de [Cordon en][kubernetes-drain] het verwerkings Stop net zo veel knoop punten als het aantal opgegeven buffer knooppunten). Wanneer het oude knoop punt volledig is ontslagen, wordt de installatie kopie van de nieuwe versie geschaald en wordt het knoop punt de buffer voor het volgende knoop punt wordt bijgewerkt. Dit proces wordt herhaald totdat alle knoop punten in het cluster zijn bijgewerkt. Aan het einde van het proces wordt het laatste buffer knooppunt verwijderd, waarbij het bestaande aantal agent knooppunten en de zone balans behouden blijft.
 
 ```azurecli-interactive
 az aks upgrade \
@@ -104,8 +104,9 @@ az aks upgrade \
 
 Het duurt enkele minuten om het cluster bij te werken, afhankelijk van het aantal knoop punten dat u hebt.
 
-> [!NOTE]
-> Er is een totale toegestane tijd voor het volt ooien van een cluster upgrade. Deze tijd wordt berekend door het product van te nemen `10 minutes * total number of nodes in the cluster` . Voor beeld: in een cluster met 20 knoop punten moeten upgrade bewerkingen in 200 minuten slagen of AKS de bewerking mislukken om een onherstelbare cluster status te voor komen. Als u het probleem wilt herstellen tijdens de upgrade, voert u de upgrade bewerking opnieuw uit nadat de time-out is bereikt.
+> [!IMPORTANT]
+> Zorg ervoor dat elke `PodDisruptionBudgets` (PDBs) ten minste één pod replica mag worden verplaatst per keer, anders mislukt de bewerking voor afvoer/verwijdering.
+> Als de afvoer bewerking mislukt, zal de upgrade bewerking mislukken door het ontwerp om te controleren of de toepassingen niet worden onderbroken. Corrigeer wat heeft geleid tot het stoppen van de bewerking (onjuiste PDBs, gebrek aan quota, enzovoort) en voer de bewerking opnieuw uit.
 
 Als u wilt controleren of de upgrade is voltooid, gebruikt u de opdracht [AZ AKS show][az-aks-show] :
 

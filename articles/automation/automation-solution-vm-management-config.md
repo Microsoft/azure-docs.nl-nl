@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 06/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: 3fdb3b2b23d07b79a8e9979450bee653d646196c
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 552cac01cd492229a19bdbc297665eb7d3ccb401
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182798"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96751288"
 ---
 # <a name="configure-startstop-vms-during-off-hours"></a>VM's buiten bedrijfsuren starten/stoppen configureren
 
@@ -48,7 +48,7 @@ U kunt de actie richten op een abonnement en resource groep, of een specifieke l
 
 2. Voeg een door komma's gescheiden lijst met Vm's (zonder spaties) toe in het parameter veld **VMList** . Een voor beeld van een lijst is `vm1,vm2,vm3` .
 
-3. Stel het parameter veld **WHATIF** in op waar.
+3. Stel het parameter veld **WHATIF** in op True om een voor beeld van de wijzigingen weer te geven.
 
 4. Configureer de `External_ExcludeVMNames` variabele met een door komma's gescheiden lijst met virtuele machines (VM1, VM2, VM3), zonder spaties tussen door komma's gescheiden waarden.
 
@@ -79,7 +79,7 @@ In een omgeving met twee of meer onderdelen op meerdere Vm's die een gedistribue
 
 3. Voeg een door komma's gescheiden lijst met Vm's (zonder spaties) toe in het parameter veld **VMList** . Een voor beeld van een lijst is `vm1,vm2,vm3` .
 
-4. Stel **WHATIF** in op True. 
+4. Stel **WHATIF** in op True om een voor beeld van de wijzigingen weer te geven. 
 
 5. Configureer de `External_ExcludeVMNames` variabele met een door komma's gescheiden lijst met vm's, zonder spaties tussen door komma's gescheiden waarden.
 

@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 11/25/2020
-ms.openlocfilehash: f9a7623fd27178e8b9c213a1759bb09863d16c72
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 7063452d23d2975cf0c26a89e7a08a422de54942
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030693"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96751934"
 ---
 # <a name="train-model-module"></a>Train model-module
 
@@ -63,7 +63,9 @@ In Azure Machine Learning is het maken en gebruiken van een machine learning mod
 1.  Verzend de pijp lijn. Als u veel gegevens hebt, kan dit enige tijd duren.
 
     > [!IMPORTANT] 
-    > Als u een ID-kolom hebt die de ID van elke rij is, kan het **Train-model** een fout aanraken zoals ' aantal unieke waarden in kolom: ' {COLUMN_NAME} ' groter is dan toegestaan. ' Dit komt doordat de kolom ID de drempel van unieke waarden bereikt, waardoor er onvoldoende geheugen beschikbaar is. De kolom ID bevat meestal een betekenis tijdens de training. U kunt [meta gegevens bewerken](edit-metadata.md) gebruiken om die kolom als **heldere functie** te markeren en deze wordt niet gebruikt in de training. Raadpleeg de [fout code](././designer-error-codes.md) van de Designer voor meer informatie over fouten.
+    > Als u een ID-kolom hebt die de ID is van elke rij of een tekst kolom die te veel unieke waarden bevat, kan het **Train-model** een fout aanduiden zoals ' aantal unieke waarden in kolom: ' {COLUMN_NAME} ' groter is dan toegestaan.
+    >
+    > Dit komt doordat de kolom de drempel waarde van unieke waarden bereikt en er mogelijk onvoldoende geheugen beschikbaar is. U kunt [meta gegevens bewerken](edit-metadata.md) gebruiken om die kolom als **heldere functie** te markeren en deze wordt niet gebruikt in de training, of de [N-gram-functies uit de tekst module extra heren](extract-n-gram-features-from-text.md) om de tekst kolom vooraf te verwerken. Raadpleeg de [fout code](././designer-error-codes.md) van de Designer voor meer informatie over fouten.
 
 ## <a name="results"></a>Resultaten
 

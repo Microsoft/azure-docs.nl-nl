@@ -3,12 +3,12 @@ title: Offline back-ups met behulp van Azure Data Box
 description: Meer informatie over hoe u Azure Data Box kunt gebruiken om grote initiële back-upgegevens offline te brengen van de MARS-agent naar een Recovery Services kluis.
 ms.topic: conceptual
 ms.date: 1/27/2020
-ms.openlocfilehash: 5a4aeebeddcca4adcac511c7c225c8809dd29c93
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e789b6c9f4ff2e8cd168e6b5c138d423911d4743
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89180929"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96752580"
 ---
 # <a name="azure-backup-offline-backup-by-using-azure-data-box"></a>Offline back-up Azure Backup met behulp van Azure Data Box
 
@@ -116,7 +116,7 @@ Azure PowerShell kan ook zijn geïnstalleerd met behulp van een MSI-bestand. Als
 Het offline back-upproces met MARS en Azure Data Box vereist dat de Data Box apparaten de status bezorgd hebben voordat u offline back-ups met behulp van de MARS-agent gaat activeren. Als u de meest geschikte SKU voor uw vereiste wilt best Ellen, raadpleegt u [Data Size van back-up en ondersteunde data Box sku's](#backup-data-size-and-supported-data-box-skus). Volg de stappen in de [zelf studie: bestel een Azure data Box schijf](../databox/data-box-disk-deploy-ordered.md) om de data Box-apparaten te best Ellen en te ontvangen.
 
 > [!IMPORTANT]
-> Selecteer *BlobStorage* voor het **soort account**niet. De MARS-agent vereist een account dat pagina-blobs ondersteunt. dit wordt niet ondersteund wanneer *BlobStorage* is geselecteerd. Selecteer **opslag v2 (algemeen gebruik v2)** als het **soort account** wanneer u het doel opslag account voor uw Azure data Box-taak maakt.
+> Selecteer *BlobStorage* voor het **soort account** niet. De MARS-agent vereist een account dat pagina-blobs ondersteunt. dit wordt niet ondersteund wanneer *BlobStorage* is geselecteerd. Selecteer **opslag v2 (algemeen gebruik v2)** als het **soort account** wanneer u het doel opslag account voor uw Azure data Box-taak maakt.
 
 ![Account type kiezen in details van exemplaar](./media/offline-backup-azure-data-box/instance-details.png)
 
@@ -124,7 +124,7 @@ Het offline back-upproces met MARS en Azure Data Box vereist dat de Data Box app
 
 1. Zorg ervoor dat u eerdere installaties van de MARS-agent verwijdert.
 1. Down load de nieuwste MARS-agent van [deze website](https://aka.ms/azurebackup_agent).
-1. Voer *MARSAgentInstaller.exe*uit en voer *alleen* de stappen uit om [de agent te installeren en te registreren](./install-mars-agent.md#install-and-register-the-agent) bij de Recovery Services kluis waar u uw back-ups wilt opslaan.
+1. Voer *MARSAgentInstaller.exe* uit en voer *alleen* de stappen uit om [de agent te installeren en te registreren](./install-mars-agent.md#install-and-register-the-agent) bij de Recovery Services kluis waar u uw back-ups wilt opslaan.
 
    > [!NOTE]
    > De Recovery Services kluis moet zich in hetzelfde abonnement benemen als de Azure Data Box taak.
@@ -208,7 +208,7 @@ Om ervoor te zorgen dat u uw Data Box-apparaat als lokaal systeem kunt koppelen 
     ![Voer het netwerkpad in](./media/offline-backup-azure-data-box/enter-network-path.png)
 
     >[!IMPORTANT]
-    > Geef het netwerkpad naar de hoofdmap van de Azure Data Box schijf op. Deze map moet een map met de naam *PageBlob*bevatten.
+    > Geef het netwerkpad naar de hoofdmap van de Azure Data Box schijf op. Deze map moet een map met de naam *PageBlob* bevatten.
     >
     >![Hoofdmap van Azure Data Box schijf](./media/offline-backup-azure-data-box/root-directory.png)
     >
@@ -216,7 +216,7 @@ Om ervoor te zorgen dat u uw Data Box-apparaat als lokaal systeem kunt koppelen 
     >
     >Als u [een apparaat met een Azure Data Box 100-TB instelt](#set-up-azure-data-box-devices), voert u `\\<DeviceIPAddress>\<StorageAccountName>_PageBlob` het netwerkpad naar het apparaat in.
 
-1. Selecteer **volgende**en selecteer **volt ooien** op de volgende pagina om het back-up-en bewaar beleid met de configuratie van offline back-up op te slaan met behulp van Azure data box.
+1. Selecteer **volgende** en selecteer **volt ooien** op de volgende pagina om het back-up-en bewaar beleid met de configuratie van offline back-up op te slaan met behulp van Azure data box.
 
    Op de volgende pagina wordt bevestigd dat het beleid is opgeslagen.
 
@@ -277,7 +277,7 @@ Als tijdelijke oplossing om dit probleem op te lossen, voert u de volgende stapp
 
 #### <a name="step-1-of-workaround"></a>Stap 1 van de tijdelijke oplossing
 
-Meld u aan bij Power shell die wordt weer gegeven in de gebruikers interface van MAB met behulp van een ander account met beheerders toegang voor het abonnement waarop de import-of export taak wordt gemaakt.
+Meld u aan bij Power shell die wordt weer gegeven in de gebruikers interface van MAB met behulp van een ander account met beheerders toegang voor het abonnement dat de Data Box-taak heeft gemaakt.
 
 #### <a name="step-2-of-workaround"></a>Stap 2 van de tijdelijke oplossing
 
@@ -294,15 +294,15 @@ Voer de volgende acties uit vanaf de-server die u wilt configureren voor offline
 
 1. Ga naar het tabblad **computer certificaat toepassing beheren**  >  **Personal** en zoek naar het certificaat met de naam `CB_AzureADCertforOfflineSeeding_<ResourceId>` .
 
-2. Selecteer het certificaat, klik met de rechter muisknop op **alle taken**en selecteer **exporteren** zonder persoonlijke sleutel in de. CER-indeling.
+2. Selecteer het certificaat, klik met de rechter muisknop op **alle taken** en selecteer **exporteren** zonder persoonlijke sleutel in de. CER-indeling.
 
-3. Ga naar de Azure offline back-uptoepassing die u in stap 2 hebt genoemd. **Instellingen**  >  **sleutels**selecteren  >  **open bare sleutel uploaden**. Upload het certificaat dat u in de vorige stap hebt geëxporteerd.
+3. Ga naar de Azure offline back-uptoepassing die u in stap 2 hebt genoemd. **Instellingen**  >  **sleutels** selecteren  >  **open bare sleutel uploaden**. Upload het certificaat dat u in de vorige stap hebt geëxporteerd.
 
     ![Open bare sleutel uploaden](./media/offline-backup-azure-data-box/upload-public-key.png)
 
 4. Open het REGI ster in de-server door in het venster uitvoeren **regedit** in te voeren.
 
-5. Ga naar het REGI ster *Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Config\CloudBackupProvider.* Klik met de rechter muisknop op **CloudBackupProvider**en voeg een nieuwe teken reeks waarde toe met de naam `AzureADAppCertThumbprint_<Azure User Id>` .
+5. Ga naar het REGI ster *Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Config\CloudBackupProvider.* Klik met de rechter muisknop op **CloudBackupProvider** en voeg een nieuwe teken reeks waarde toe met de naam `AzureADAppCertThumbprint_<Azure User Id>` .
 
     >[!NOTE]
     > Voer een van de volgende acties uit om de gebruikers-ID van Azure op te halen:
@@ -312,7 +312,7 @@ Voer de volgende acties uit vanaf de-server die u wilt configureren voor offline
 
 6. Klik met de rechter muisknop op de teken reeks die u in de vorige stap hebt toegevoegd en selecteer **wijzigen**. Geef in de waarde de vinger afdruk op van het certificaat dat u in stap 2 hebt geëxporteerd. Selecteer **OK**.
 
-7. Als u de waarde van de vinger afdruk wilt ophalen, dubbelklikt u op het certificaat. Selecteer het tabblad **Details** en schuif omlaag totdat u het veld vinger afdruk ziet. Selecteer **vinger afdruk**en kopieer de waarde.
+7. Als u de waarde van de vinger afdruk wilt ophalen, dubbelklikt u op het certificaat. Selecteer het tabblad **Details** en schuif omlaag totdat u het veld vinger afdruk ziet. Selecteer **vinger afdruk** en kopieer de waarde.
 
     ![Vingerafdruk veld van certificaat](./media/offline-backup-azure-data-box/thumbprint-field.png)
 

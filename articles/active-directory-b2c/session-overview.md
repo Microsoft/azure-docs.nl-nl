@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 05/07/2020
+ms.date: 12/01/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 0004c874a2011a78bb5cfe67ff0a840224d47bbb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5e02323df3a12c4a74de1fb62b36762fc739e9e5
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91258962"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96750436"
 ---
 # <a name="azure-ad-b2c-session"></a>Azure AD B2C sessie
 
@@ -96,8 +96,12 @@ Bij een afmeldings aanvraag Azure AD B2C:
 1. Hiermee wordt de Azure AD B2C cookie op basis van cookies ongeldig gemaakt.
 1. Pogingen om u af te melden bij federatieve id-providers:
    - OpenID Connect Connect-als het-eind punt van de ID-provider met de bekende configuratie een `end_session_endpoint` locatie aangeeft.
-   - SAML: als de meta gegevens van de identiteits provider de `SingleLogoutService` locatie bevatten.
+   - OAuth2: als de [meta gegevens van de identiteits provider](oauth2-technical-profile.md#metadata) de `end_session_endpoint` locatie bevatten.
+   - SAML: als de [meta gegevens van de identiteits provider](saml-identity-provider-technical-profile.md#metadata) de `SingleLogoutService` locatie bevatten.
 1. U kunt zich optioneel afmelden bij andere toepassingen. Zie de sectie voor [eenmalige afmelding](#single-sign-out) voor meer informatie.
+
+> [!NOTE]
+> Met [aangepaste beleids regels](custom-policy-overview.md)kunt u afmelden bij federatieve id-providers uitschakelen door de meta gegevens van het technische profiel van de identiteits provider `SingleLogoutEnabled` in te stellen op `false` .
 
 Met de afmelding wordt de status voor eenmalige aanmelding van de gebruiker met Azure AD B2C gewist, maar de gebruiker kan de gebruikers naam niet van de provider sessie van de sociale id ondertekenen. Als de gebruiker tijdens een volgende aanmelding dezelfde id-provider selecteert, kunnen ze opnieuw worden geverifieerd zonder hun referenties in te voeren. Als een gebruiker zich wil afmelden bij de toepassing, betekent dit niet noodzakelijkerwijs dat ze zich willen afmelden bij hun Facebook-account. Als lokale accounts echter worden gebruikt, wordt de sessie van de gebruiker op de juiste wijze beëindigd.
 

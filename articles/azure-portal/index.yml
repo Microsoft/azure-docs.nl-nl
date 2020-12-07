@@ -5,19 +5,15 @@ metadata:
   title: Documentatie voor Azure Portal
   description: Meer informatie over het beheren van uw Azure-abonnementen en -resources met behulp van de webconsole in de Azure-portal. De Azure-portal is een alternatief voor het gebruik van opdrachtregelprogramma's.
   services: Azure portal
-  ms.service: azure-portal
-  ms.subservice: 
   ms.topic: landing-page
   ms.collection: collection
-  author: mblythe
-  ms.author: mblythe
   ms.date: 08/05/2020
-  ms.openlocfilehash: 4a491a2924af90afc43ddb4aa097f9967c8f156a
-  ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+  ms.openlocfilehash: c1617f295a101ae645743d60fdbe82a09d936ea2
+  ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 10/15/2020
-  ms.locfileid: "92089278"
+  ms.lasthandoff: 12/07/2020
+  ms.locfileid: "96749008"
 landingContent:
 - title: Over de Azure-portal
   linkLists:

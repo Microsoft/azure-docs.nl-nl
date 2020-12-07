@@ -4,7 +4,7 @@
   items:
     - name: Wat is IoT Hub Device Provisioning Service?
       href: about-iot-dps.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Een DPS instellen
@@ -13,7 +13,7 @@
           href: quick-setup-auto-provision.md
         - name: Azure CLI
           href: quick-setup-auto-provision-cli.md
-        - name: Azure RM-sjabloon
+        - name: ARM-sjabloon
           href: quick-setup-auto-provision-rm.md
     - name: Een apparaat met een symmetrische sleutel inrichten
       items:

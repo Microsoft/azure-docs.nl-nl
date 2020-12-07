@@ -39,6 +39,8 @@
       href: audit-logs.md
 - name: Referenties
   items:
+    - name: Regionale beschikbaarheid
+      href: 'https://azure.microsoft.com/global-infrastructure/services/?products=azure-attestation'
     - name: Veelgestelde vragen
       href: faq.md
     - name: REST

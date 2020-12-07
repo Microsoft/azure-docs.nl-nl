@@ -74,7 +74,9 @@
       items:
         - name: Azure Migrate-ondersteuning
           href: migrate-support-matrix.md
-        - name: Beveiligingsbasislijn voor Azure Migrate
+    - name: Beveiliging
+      items:
+        - name: Beveiligingsbasislijn
           href: security-baseline.md
     - name: Ontdekken
       items:

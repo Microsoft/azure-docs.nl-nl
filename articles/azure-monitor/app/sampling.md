@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.reviewer: vitalyg
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 87e33940d927fc9116c03345011e21398384d484
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 3ec9718d313e7e8d757eb41c230225bdcf9ebd49
+ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95024412"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96749042"
 ---
 # <a name="sampling-in-application-insights"></a>Steekproeven in Application Insights
 
@@ -34,7 +34,7 @@ De volgende tabel bevat een overzicht van de beschik bare bemonsterings typen vo
 |-|-|-|-|
 | ASP.NET | [Ja (standaard ingeschakeld)](#configuring-adaptive-sampling-for-aspnet-applications) | [Ja](#configuring-fixed-rate-sampling-for-aspnet-applications) | Alleen als er geen andere steek proeven van kracht zijn |
 | ASP.NET Core | [Ja (standaard ingeschakeld)](#configuring-adaptive-sampling-for-aspnet-core-applications) | [Ja](#configuring-fixed-rate-sampling-for-aspnet-core-applications) | Alleen als er geen andere steek proeven van kracht zijn |
-| Azure Functions | [Ja (standaard ingeschakeld)](#configuring-adaptive-sampling-for-azure-functions) | No | Alleen als er geen andere steek proeven van kracht zijn |
+| Azure Functions | [Ja (standaard ingeschakeld)](#configuring-adaptive-sampling-for-azure-functions) | Nee | Alleen als er geen andere steek proeven van kracht zijn |
 | Java | Nee | [Ja](#configuring-fixed-rate-sampling-for-java-applications) | Alleen als er geen andere steek proeven van kracht zijn |
 | Node.JS | Nee | [Ja](./nodejs.md#sampling) | Alleen als er geen andere steek proeven van kracht zijn
 | Python | Nee | [Ja](#configuring-fixed-rate-sampling-for-opencensus-python-applications) | Alleen als er geen andere steek proeven van kracht zijn |
@@ -54,7 +54,7 @@ Er zijn drie verschillende bemonsterings methoden:
 * **Steek proeven voor opname** gebeurt op het Application Insights service-eind punt. Er wordt een deel van de telemetrie verwijderd uit uw app, met een sampling frequentie die u hebt ingesteld. Het vermindert niet het telemetrie verkeer dat vanuit uw app wordt verzonden, maar helpt u binnen uw maandelijkse quotum te houden. Het belangrijkste voor deel van opname sampling is dat u de sampling frequentie kunt instellen zonder uw app opnieuw te implementeren. De steek proef van opname werkt op uniforme wijze voor alle servers en clients, maar is niet van toepassing wanneer er andere soorten steek proeven worden uitgevoerd.
 
 > [!IMPORTANT]
-> Als er een adaptieve of vaste bemonsterings methode wordt uitgevoerd, worden de steek proeven voor opname uitgeschakeld.
+> Als er voor een type telemetrie methoden voor het bemonsteren van adaptieve of vaste frequentie zijn ingeschakeld, worden de steek proeven voor opname uitgeschakeld voor deze telemetrie. Voor typen telemetrie die zijn uitgesloten van steek proeven op het niveau van de SDK, zullen echter nog steeds steek proeven worden genomen op basis van de snelheid die in de portal is ingesteld.
 
 ## <a name="adaptive-sampling"></a>Adaptieve steek proef
 

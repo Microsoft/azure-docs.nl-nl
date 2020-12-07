@@ -4,12 +4,12 @@ description: Voeg een paar regels code toe aan de apparaat-of bureau blad-app, d
 ms.topic: conceptual
 ms.date: 05/11/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: e9f175e2585a5254922c9e859cf5ece2afbbc3e3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d1ed05cd7337a7e82a02b25a2f29d54567b9f9a3
+ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011338"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96748889"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>Application Insights-API voor aangepaste gebeurtenissen en metrische gegevens
 
@@ -530,6 +530,9 @@ Als er [steek proeven](./sampling.md) worden uitgevoerd, wordt in de eigenschap 
 ## <a name="trackdependency"></a>TrackDependency
 
 Gebruik de aanroep TrackDependency om de reactie tijden en succes percentages van aanroepen naar een externe code te volgen. De resultaten worden weer gegeven in de afhankelijkheids grafieken in de portal. Het onderstaande code fragment moet worden toegevoegd wanneer een afhankelijkheids aanroep wordt gedaan.
+
+> [!NOTE]
+> Voor .NET en .NET Core kunt u ook de `TelemetryClient.StartOperation` methode (Extension) gebruiken om de eigenschappen te vullen `DependencyTelemetry` die nodig zijn voor correlatie en enkele andere eigenschappen, zoals de start tijd en de duur, zodat u geen aangepaste timer hoeft te maken, zoals in de onderstaande voor beelden. Raadpleeg de [sectie over het bijhouden van uitgaande afhankelijkheden](https://docs.microsoft.com/azure/azure-monitor/app/custom-operations-tracking#outgoing-dependencies-tracking)voor meer informatie.
 
 *C#*
 

@@ -4,12 +4,12 @@ description: Ziet u geen gegevens in Azure-toepassing Insights? Probeer het hier
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 05/21/2020
-ms.openlocfilehash: 9c053796dd887722d1d767229621c0a1ae004b5c
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: c3f0350152ece32829291012d583be87a90227cf
+ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93083164"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96748930"
 ---
 # <a name="troubleshooting-no-data---application-insights-for-netnet-core"></a>Problemen met geen gegevens Application Insights voor .NET/.NET core oplossen
 
@@ -39,12 +39,40 @@ ms.locfileid: "93083164"
 
 * Zie [probleem oplossing status monitor](./monitor-performance-live-website-now.md#troubleshoot).
 
+## <a name="filenotfoundexception-could-not-load-file-or-assembly-microsoftaspnet-telemetrycorrelation"></a>FileNotFoundException: kan het bestand of de assembly micro soft. AspNet TelemetryCorrelation niet laden
+
+Zie [GitHub issue 1610] (voor meer informatie over deze fout https://github.com/microsoft/ApplicationInsights-dotnet/issues/1610) .
+
+Wanneer u een upgrade uitvoert van Sdk's die ouder zijn dan (2,4), moet u ervoor zorgen dat de volgende wijzigingen worden toegepast op `web.config` en `ApplicationInsights.config` :
+
+1. Twee HTTP-modules in plaats van één. In `web.config` moet u twee HTTP-modules hebben. De volg orde is belang rijk voor bepaalde scenario's:
+
+    ``` xml
+    <system.webServer>
+      <modules>
+          <add name="TelemetryCorrelationHttpModule" type="Microsoft.AspNet.TelemetryCorrelation.TelemetryCorrelationHttpModule, Microsoft.AspNet.TelemetryCorrelation" preCondition="integratedMode,managedHandler" />
+          <add name="ApplicationInsightsHttpModule" type="Microsoft.ApplicationInsights.Web.ApplicationInsightsHttpModule, Microsoft.AI.Web" preCondition="managedHandler" />
+      </modules>
+    </system.webServer>
+    ```
+
+2. `ApplicationInsights.config`Daarnaast `RequestTrackingTelemetryModule` moet u de volgende telemetrie-module hebben:
+
+    ``` xml
+    <TelemetryModules>
+      <Add Type="Microsoft.ApplicationInsights.Web.AspNetDiagnosticTelemetryModule, Microsoft.AI.Web"/>
+    </TelemetryModules>
+    ```
+
+***Fout bij het uitvoeren van een upgrade kan leiden tot onverwachte uitzonde ringen of telemetrie niet worden verzameld.** _
+
+
 ## <a name="no-add-application-insights-option-in-visual-studio"></a><a name="q01"></a>Geen optie voor het toevoegen van Application Insights in Visual Studio
-*Wanneer ik met de rechter muisknop op een bestaand project in Solution Explorer, zie ik geen Application Insights opties.*
+_When ik met de rechter muisknop op een bestaand project in Solution Explorer, zie ik geen Application Insights opties. *
 
 * Niet alle typen .NET-projecten worden ondersteund door de hulpprogram ma's. Web-en WCF-projecten worden ondersteund. Voor andere project typen, zoals bureau blad-of service toepassingen, kunt u nog steeds [een Application INSIGHTS SDK hand matig toevoegen aan uw project](./windows-desktop.md).
 * Zorg ervoor dat u [Visual Studio 2013 update 3 of hoger](/visualstudio/releasenotes/vs2013-update3-rtm-vs)hebt. Dit is vooraf geïnstalleerd met Developer Analytics-hulpprogram ma's, die de Application Insights SDK bieden.
-* Selecteer **extra** , **uitbrei dingen en updates** en controleer of **Developer Analytics-hulpprogram ma's** zijn geïnstalleerd en ingeschakeld. Als dit het geval is, klikt u op **updates** om te zien of er een update beschikbaar is.
+* Selecteer **extra**, **uitbrei dingen en updates** en controleer of **Developer Analytics-hulpprogram ma's** zijn geïnstalleerd en ingeschakeld. Als dit het geval is, klikt u op **updates** om te zien of er een update beschikbaar is.
 * Open het dialoog venster New project en kies ASP.NET Web Application. Als u de optie Application Insights ziet, worden de hulpprogram ma's geïnstalleerd. Als dat niet het geval is, kunt u proberen de Hulpprogram Ma's voor ontwikkel aars te verwijderen en vervolgens opnieuw te installeren.
 
 ## <a name="adding-application-insights-failed"></a><a name="q02"></a>Application Insights toevoegen is mislukt
@@ -65,7 +93,7 @@ Holpen
 ## <a name="i-get-an-error-instrumentation-key-cannot-be-empty"></a><a name="emptykey"></a>Er wordt een fout bericht weer geven dat de instrumentatie sleutel mag niet leeg zijn
 Er is een fout opgetreden tijdens de installatie van Application Insights of mogelijk een logboek registratie adapter.
 
-Klik in Solution Explorer met de rechter muisknop op het project en kies **Application Insights > Application Insights configureren** . U krijgt een dialoog venster waarin u wordt gevraagd om u aan te melden bij Azure, een Application Insights resource te maken of een bestaand item opnieuw te gebruiken.
+Klik in Solution Explorer met de rechter muisknop op het project en kies **Application Insights > Application Insights configureren**. U krijgt een dialoog venster waarin u wordt gevraagd om u aan te melden bij Azure, een Application Insights resource te maken of een bestaand item opnieuw te gebruiken.
 
 ## <a name="nuget-packages-are-missing-on-my-build-server"></a><a name="NuGetBuild"></a> Er ontbreken een of meer NuGet-pakketten op mijn build-server
 *Alles bouwt op OK wanneer ik fout opsporing op mijn ontwikkel computer, maar er wordt een NuGet-fout op de build-server weer geven.*
@@ -84,7 +112,7 @@ Mogelijke oorzaken:
 Holpen
 
 * Zorg ervoor dat uw versie van Visual Studio 2013 update 3 of hoger is.
-* Selecteer **extra** , **uitbrei dingen en updates** en controleer of **Developer Analytics-hulpprogram ma's** zijn geïnstalleerd en ingeschakeld. Als dit het geval is, klikt u op **updates** om te zien of er een update beschikbaar is.
+* Selecteer **extra**, **uitbrei dingen en updates** en controleer of **Developer Analytics-hulpprogram ma's** zijn geïnstalleerd en ingeschakeld. Als dit het geval is, klikt u op **updates** om te zien of er een update beschikbaar is.
 * Klik met de rechtermuisknop op uw project in Solution Explorer. Als u de opdracht **Application Insights > Application Insights configureren** ziet, gebruikt u deze om uw project te koppelen aan de resource in de Application Insights-service.
 
 Anders wordt het project type niet rechtstreeks ondersteund door de Developer Analytics-hulpprogram ma's. Als u uw telemetrie wilt zien, meldt u zich aan bij de [Azure Portal](https://portal.azure.com), kiest u Application Insights op de linkernavigatiebalk en selecteert u uw toepassing.
@@ -128,7 +156,7 @@ Holpen
   ![Scherm opname van de uitvoering van uw toepassing in de foutopsporingsmodus in Visual Studio.](./media/asp-net-troubleshoot-no-data/output-window.png)
 * Open in de Application Insights-Portal [Diagnostische gegevens zoeken](./diagnostic-search.md). Gegevens worden doorgaans als eerste weer gegeven.
 * Klik op de knop Vernieuwen. De Blade wordt regel matig vernieuwd, maar u kunt dit ook hand matig doen. Het Vernieuwings interval is langer voor grotere Peri Oden.
-* Controleer of de instrumentatie sleutels overeenkomen. Bekijk op de hoofd Blade voor uw app in de Application Insights-Portal in de vervolg keuzelijst **Essentials** de **instrumentatie sleutel** . Open vervolgens in het project in Visual Studio ApplicationInsights.config en zoek de `<instrumentationkey>` . Controleer of de twee sleutels gelijk zijn. Zo niet:  
+* Controleer of de instrumentatie sleutels overeenkomen. Bekijk op de hoofd Blade voor uw app in de Application Insights-Portal in de vervolg keuzelijst **Essentials** de **instrumentatie sleutel**. Open vervolgens in het project in Visual Studio ApplicationInsights.config en zoek de `<instrumentationkey>` . Controleer of de twee sleutels gelijk zijn. Zo niet:  
   * Klik in de portal op Application Insights en zoek de app-resource met de juiste sleutel. of
   * Klik in Visual Studio Solution Explorer met de rechter muisknop op het project en kies Application Insights, configureren. Stel de app opnieuw in om telemetrie naar de juiste resource te verzenden.
   * Als u de overeenkomende sleutels niet kunt vinden, controleert u of u dezelfde aanmeldings referenties in Visual Studio gebruikt als in voor de portal.
@@ -239,9 +267,9 @@ PerfView.exe collect -MaxCollectSec:300 -NoGui /onlyProviders=*Microsoft-Applica
 ```
 
 U kunt deze para meters naar behoefte wijzigen:
-- **MaxCollectSec** . Stel deze para meter in om te voor komen dat PerfView voor onbepaalde tijd worden uitgevoerd en de prestaties van uw server worden beïnvloed.
-- **OnlyProviders** . Stel deze para meter in op alleen logboeken van de SDK verzamelen. U kunt deze lijst aanpassen op basis van uw specifieke onderzoek. 
-- **NoGui** . Stel deze para meter in op het verzamelen van Logboeken zonder de GUI.
+- **MaxCollectSec**. Stel deze para meter in om te voor komen dat PerfView voor onbepaalde tijd worden uitgevoerd en de prestaties van uw server worden beïnvloed.
+- **OnlyProviders**. Stel deze para meter in op alleen logboeken van de SDK verzamelen. U kunt deze lijst aanpassen op basis van uw specifieke onderzoek. 
+- **NoGui**. Stel deze para meter in op het verzamelen van Logboeken zonder de GUI.
 
 
 Meer informatie

@@ -3,12 +3,12 @@ title: IP-adressen die worden gebruikt door Application Insights en Log Analytic
 description: Uitzonde ringen voor Server firewalls vereist voor Application Insights
 ms.topic: conceptual
 ms.date: 09/15/2020
-ms.openlocfilehash: c1ccb40a9b8d8080da416aeb920ed016a231f697
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 10328efa9b8b9cdbe1e57e1e982653aea7e39574
+ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96547930"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96748872"
 ---
 # <a name="ip-addresses-used-by-application-insights-and-log-analytics"></a>IP-adressen die worden gebruikt door Application Insights en Log Analytics
 De [Azure-toepassing Insights](./app-insights-overview.md) -service gebruikt een aantal IP-adressen. Mogelijk moet u deze adressen weten als de app die u bewaakt, wordt gehost achter een firewall.
@@ -46,6 +46,10 @@ Status Monitor configuratie: alleen nodig als u wijzigingen aanbrengt.
 
 ## <a name="availability-tests"></a>Beschikbaarheidstests
 Dit is de lijst met adressen waarvan de [webtesten voor Beschik baarheid](./monitor-web-app-availability.md) worden uitgevoerd. Als u webtests wilt uitvoeren voor uw app, maar uw webserver is beperkt tot het leveren van specifieke clients, moet u inkomend verkeer via onze beschikbaarheids test servers toestaan.
+
+
+> [!NOTE]
+> Voor bronnen die zich in particuliere virtuele netwerken bevinden en geen directe inkomende communicatie met de beschikbaarheids test agents in open bare Azure kunnen toestaan, is de enige optie om [uw eigen aangepaste beschikbaarheids tests te maken en te hosten](availability-azure-functions.md).
 
 ### <a name="service-tag"></a>Servicetag
 

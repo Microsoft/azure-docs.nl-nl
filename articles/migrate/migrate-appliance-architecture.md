@@ -1,14 +1,17 @@
 ---
 title: Azure Migrate-apparaatarchitectuur
 description: Biedt een overzicht van het Azure Migrate apparaat dat in Server evaluatie en-migratie wordt gebruikt.
+author: vikram1988
+ms.author: vibansa
+ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 06/09/2020
-ms.openlocfilehash: d38796d4c4a1149d096f5bb06f7a11bc71b33cc5
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 42d4a722be25eec4b3e27012350346018fdba0f3
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92428152"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96754110"
 ---
 # <a name="azure-migrate-appliance-architecture"></a>Azure Migrate-apparaatarchitectuur
 

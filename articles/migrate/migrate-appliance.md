@@ -1,14 +1,17 @@
 ---
 title: Azure Migrate-apparaat
 description: Biedt een samen vatting van de ondersteuning voor het Azure Migrate apparaat.
+author: vikram1988
+ms.author: vibansa
+ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 05/04/2020
-ms.openlocfilehash: ac3c90f1c09d290d5112a0e0d7abc5218788caf7
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f3357fcc070ca4ca2212cf0424e4baf8208a3ca1
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96008698"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96754127"
 ---
 # <a name="azure-migrate-appliance"></a>Azure Migrate-apparaat
 
@@ -180,7 +183,7 @@ IPv6-adressen | vm.Guest.Net
 Lees doorvoer (MB per seconde) | net. received. Average
 Schrijf doorvoer (MB per seconde) | net. verzonden. gemiddeld
 **Details van configuratiepad** | 
-Name | verpakking. GetType (). Naam
+Naam | verpakking. GetType (). Naam
 Type onderliggend object | verpakking. ChildType
 Referentie Details | verpakking. MoRef
 Details van bovenliggend item | Container. Parent
@@ -227,7 +230,7 @@ Dit zijn de functies die het apparaat verzamelt van elke virtuele machine die is
 
 **Gegevens**  | **Power shell-cmdlet** | **Eigenschap**
 --- | --- | ---
-Name  | Get-WindowsFeature  | Name
+Naam  | Get-WindowsFeature  | Naam
 Onderdeel type | Get-WindowsFeature  | FeatureType
 Bovenliggend  | Get-WindowsFeature  | Bovenliggend
 
@@ -237,7 +240,7 @@ Dit zijn de SQL Server-meta gegevens die het apparaat verzamelt van Vm's waarop 
 
 **Gegevens**  | **Registerlocatie**  | **Sleutel**
 --- | --- | ---
-Name  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL  | installedInstance
+Naam  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server\Instance Names\SQL  | installedInstance
 Editie  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \Setup  | Editie 
 Service Pack  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \Setup  | SP
 Versie  | HKLM: \ SOFTWARE\Microsoft\Microsoft SQL Server \\ \<InstanceName> \Setup  | Versie 
@@ -248,7 +251,7 @@ Hier ziet u de gegevens van het besturings systeem die door het apparaat worden 
 
 Gegevens  | WMI-klasse  | WMI-klasse-eigenschap
 --- | --- | ---
-Name  | Win32_operatingsystem  | Caption
+Naam  | Win32_operatingsystem  | Caption
 Versie  | Win32_operatingsystem  | Versie
 Architectuur  | Win32_operatingsystem  | OSArchitecture
 
@@ -258,7 +261,7 @@ Hier zijn de geïnstalleerde toepassings gegevens die het apparaat verzamelt van
 
 Gegevens  | Opdracht
 --- | --- 
-Name | rpm, met dpkg-query, uitlijnen
+Naam | rpm, met dpkg-query, uitlijnen
 Versie | rpm, met dpkg-query, uitlijnen
 Provider | rpm, met dpkg-query, uitlijnen
 
@@ -268,7 +271,7 @@ Hier ziet u de gegevens van het besturings systeem die door het apparaat worden 
 
 **Gegevens**  | **Opdracht** 
 --- | --- | ---
-Name <br/> versie | Verzameld van een of meer van de volgende bestanden:<br/> <br/>/etc/os-release  <br> /usr/lib/os-release  <br> /etc/enterprise-release  <br> /etc/redhat-release  <br> /etc/oracle-release  <br> /etc/SuSE-release  <br> /etc/lsb-release  <br> /etc/debian_version 
+Naam <br/> versie | Verzameld van een of meer van de volgende bestanden:<br/> <br/>/etc/os-release  <br> /usr/lib/os-release  <br> /etc/enterprise-release  <br> /etc/redhat-release  <br> /etc/oracle-release  <br> /etc/SuSE-release  <br> /etc/lsb-release  <br> /etc/debian_version 
 Architectuur | uname
 
 

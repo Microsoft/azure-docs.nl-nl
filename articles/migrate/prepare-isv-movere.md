@@ -1,14 +1,17 @@
 ---
 title: Azure Migrate voorbereiden om met een ISV-hulp programma te werken/overzetten
 description: In dit artikel wordt beschreven hoe u Azure Migrate voorbereidt op samen werking met een ISV-hulp programma of door te verplaatsen, en hoe u het hulp programma kunt gebruiken.
+author: ms-psharma
+ms.author: panshar
+ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 06/10/2020
-ms.openlocfilehash: 885e64536e516e4fd96233c37a68f6e77fb84e33
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 1716db0476169e12822b3f47f7199bf6e2c4ee92
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92369145"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753770"
 ---
 # <a name="prepare-to-work-with-an-isv-tool-or-movere"></a>Bereid u voor op het werken met een ISV-hulp programma of-overwerker
 
@@ -36,7 +39,7 @@ Uw account heeft in uw Azure-abonnement **micro soft. Authorization/*/write** Ac
 1. Open in Azure Portal **Abonnementen**.
 2. Selecteer het betreffende abonnement. Als u deze niet ziet, selecteert u het **Filter globale abonnementen**. 
 3. Selecteer **Mijn machtigingen**. Selecteer vervolgens **Klik hier om de volledige toegangs gegevens voor dit abonnement weer te geven**.
-4. **Role assignments**  >  Controleer in de**weer gave**roltoewijzingen de machtigingen. Als uw account geen machtigingen heeft, vraagt u de abonnements beheerder om u toe te voegen aan de rol van [beheerder voor gebruikers toegang](../role-based-access-control/built-in-roles.md#user-access-administrator) of de rol [eigenaar](../role-based-access-control/built-in-roles.md#owner) .
+4. **Role assignments**  >  Controleer in de **weer gave** roltoewijzingen de machtigingen. Als uw account geen machtigingen heeft, vraagt u de abonnements beheerder om u toe te voegen aan de rol van [beheerder voor gebruikers toegang](../role-based-access-control/built-in-roles.md#user-access-administrator) of de rol [eigenaar](../role-based-access-control/built-in-roles.md#owner) .
 
 ## <a name="allow-access-to-urls"></a>Toegang tot URL's toestaan
 
@@ -53,7 +56,7 @@ management.azure.com | Azure Resource Manager aanroepen naar het Azure Migrate-p
 
 ## <a name="start-using-the-tool"></a>Beginnen met het gebruik van het hulp programma
 
-1. Als u nog geen licentie of gratis proef versie voor het hulp programma hebt, selecteert u in het onderdeel **registreren**in azure migrate **meer informatie**.
+1. Als u nog geen licentie of gratis proef versie voor het hulp programma hebt, selecteert u in het onderdeel **registreren** in azure migrate **meer informatie**.
 2. Volg de instructies in het hulp programma om een koppeling te maken van het hulp programma naar het Azure Migrate project en om gegevens te verzenden naar Azure Migrate.
 
 ## <a name="next-steps"></a>Volgende stappen

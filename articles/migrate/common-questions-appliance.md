@@ -1,14 +1,17 @@
 ---
 title: Veelgestelde vragen over Azure Migrate apparaat
 description: Krijg antwoorden op veelgestelde vragen over het Azure Migrate-apparaat.
+author: vikram1988
+ms.author: vibansa
+ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 09/15/2020
-ms.openlocfilehash: 7be6260a7d3eb25ce2854f6949554e2c66019980
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 9badbfe6cfe12d67e07f0889d175ed32bc455321
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93337588"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753872"
 ---
 # <a name="azure-migrate-appliance-common-questions"></a>Azure Migrate apparaat: veelgestelde vragen
 
@@ -66,9 +69,9 @@ Het apparaat moet toegang hebben tot Azure-Url's. [Controleer](migrate-appliance
 
 Raadpleeg de volgende artikelen voor informatie over gegevens die het Azure Migrate apparaat verzamelt op Vm's:
 
-- **VMware-VM** : [Controleer](migrate-appliance.md#collected-data---vmware) de verzamelde gegevens.
-- **Hyper-V VM** : [Controleer](migrate-appliance.md#collected-data---hyper-v) de verzamelde gegevens.
-- **Fysieke of virtuele servers** : [Controleer](migrate-appliance.md#collected-data---physical) verzamelde gegevens.
+- **VMware-VM**: [Controleer](migrate-appliance.md#collected-data---vmware) de verzamelde gegevens.
+- **Hyper-V VM**: [Controleer](migrate-appliance.md#collected-data---hyper-v) de verzamelde gegevens.
+- **Fysieke of virtuele servers**:[Controleer](migrate-appliance.md#collected-data---physical) verzamelde gegevens.
 
 ## <a name="how-is-data-stored"></a>Hoe worden gegevens opgeslagen?
 

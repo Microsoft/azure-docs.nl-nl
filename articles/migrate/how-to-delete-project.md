@@ -1,17 +1,17 @@
 ---
 title: Een Azure Migrate-project verwijderen
 description: In dit artikel leest u hoe u een Azure Migrate project kunt verwijderen met behulp van de Azure Portal.
-author: rayne-wiselman
-ms.service: azure-migrate
-ms.topic: article
+author: ms-psharma
+ms.author: panshar
+ms.manager: abhemraj
+ms.topic: how-to
 ms.date: 10/22/2019
-ms.author: raynew
-ms.openlocfilehash: c58081e7cf88ac4820aa7d4f367b7344f3340a77
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: face3d02ee72d1e05c6c08330dae4fffc2fd0e0b
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91307871"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96754246"
 ---
 # <a name="delete-an-azure-migrate-project"></a>Een Azure Migrate-project verwijderen
 
@@ -59,9 +59,9 @@ ProjectName | Micro soft. migrate/migrateprojects
 Project ProjectName | Micro soft. migrate/assessmentProjects
 ' ProjectName ' rsvault | Recovery Services-kluis
 "ProjectName"-MigrateVault-* | Recovery Services-kluis
-migrateappligwsa* | Storage-account
-migrateapplilsa* | Storage-account
-migrateapplicsa* | Storage-account
+migrateappligwsa* | Opslagaccount
+migrateapplilsa* | Opslagaccount
+migrateapplicsa* | Opslagaccount
 migrateapplikv* | Key Vault
 migrateapplisbns16041 | Service Bus-naamruimte
 

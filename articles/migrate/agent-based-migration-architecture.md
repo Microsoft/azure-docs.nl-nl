@@ -1,17 +1,17 @@
 ---
 title: Migratie op basis van een agent in Azure Migrate server migratie
 description: Biedt een overzicht van de virtuele machine migratie op basis van agents in Azure Migrate.
-author: rayne-wiselman
-ms.service: azure-migrate
+author: rahulg1190
+ms.author: rahugup
+ms.manager: bsiva
 ms.topic: conceptual
 ms.date: 02/17/2020
-ms.author: raynew
-ms.openlocfilehash: 90e499b436a3ae44fa29cec1138d939a106a4db7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1389b03d87beb24cba50fec0a782de8b7f935557
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91357162"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753889"
 ---
 # <a name="agent-based-migration-architecture"></a>Migratiearchitectuur op basis van een agent
 
@@ -120,7 +120,7 @@ VMware-verkeer dat wordt gerepliceerd naar Azure, loopt via een specifieke proce
 
     1. Open de Azure Backup MMC-module op de computer met de proces server. Er is een snelkoppeling op het bureau blad of in de map C:\Program Files\Microsoft Azure Recovery Services Agent\bin. 
     2. Selecteer in de module **Eigenschappen wijzigen**.
-    3. Selecteer in **beperking**de optie **beperking van Internet bandbreedte gebruik inschakelen voor back-upbewerkingen**. Stel de limieten voor werk-en niet-werk uren in. Geldige bereiken zijn van 512 Kbps tot 1.023 Mbps.
+    3. Selecteer in **beperking** de optie **beperking van Internet bandbreedte gebruik inschakelen voor back-upbewerkingen**. Stel de limieten voor werk-en niet-werk uren in. Geldige bereiken zijn van 512 Kbps tot 1.023 Mbps.
 
 
 ## <a name="next-steps"></a>Volgende stappen

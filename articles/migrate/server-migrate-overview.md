@@ -1,14 +1,17 @@
 ---
-title: Selecteer een optie voor VMware-migratie met Azure Migrate server migratie | Microsoft Docs
+title: Selecteer een optie voor VMware-migratie met Azure Migrate server migratie
 description: Biedt een overzicht van de opties voor het migreren van virtuele VMware-machines naar Azure met Azure Migrate server migratie
+author: anvar-ms
+ms.author: anvar
+ms.manager: bsiva
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: ac08075212d885a1aca755f94906b50754e23b9d
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 5e4aaea5b565e126f633b04215bbc3a24faf2cde
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92534104"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753600"
 ---
 # <a name="select-a-vmware-migration-option"></a>Selecteer een VMware-migratie optie
 
@@ -39,13 +42,13 @@ Nadat u de beperkingen hebt bekeken, kunt u aan de hand van de stappen in de imp
 
 **Taak** | **Details** |**Zonder agent** | **Op basis van een agent**
 --- | --- | --- | ---
-**Het Azure Migrate apparaat implementeren** | Een licht gewicht apparaat dat wordt uitgevoerd op een virtuele VMware-machine.<br/><br/> Het apparaat wordt gebruikt om computers te detecteren en te beoordelen en om machines te migreren met migratie zonder agent. | Vereist.<br/><br/> Als u het apparaat al voor beoordeling hebt ingesteld, kunt u hetzelfde apparaat gebruiken voor migratie zonder agent. | Niet vereist.<br/><br/> Als u een apparaat voor beoordeling hebt ingesteld, kunt u dit op de juiste plaats laten of het verwijderen als u klaar bent met de evaluatie.
+**Het Azure Migrate-apparaat implementeren** | Een licht gewicht apparaat dat wordt uitgevoerd op een virtuele VMware-machine.<br/><br/> Het apparaat wordt gebruikt om computers te detecteren en te beoordelen en om machines te migreren met migratie zonder agent. | Vereist.<br/><br/> Als u het apparaat al voor beoordeling hebt ingesteld, kunt u hetzelfde apparaat gebruiken voor migratie zonder agent. | Niet vereist.<br/><br/> Als u een apparaat voor beoordeling hebt ingesteld, kunt u dit op de juiste plaats laten of het verwijderen als u klaar bent met de evaluatie.
 **Het hulp programma voor Server evaluatie gebruiken** | Beoordeel computers met het Azure Migrate: Server assessment tool. | U kunt computers beoordelen voordat u ze migreert, maar u hoeft dit niet te doen. | Evaluatie is optioneel | De evaluatie is optioneel.
 **Het hulp programma voor server migratie gebruiken** | Voeg het hulp programma voor migratie van Azure Migrate-server toe in het Azure Migrate-project. | Vereist | Vereist
 **VMware voorbereiden voor migratie** | Configureer instellingen op VMware-servers en virtuele machines. | Vereist | Vereist
 **De Mobility-service installeren op Vm's** | Mobility service wordt uitgevoerd op elke virtuele machine die u wilt repliceren | Niet vereist | Vereist
 **Het replicatie apparaat implementeren** | Het [replicatie apparaat](migrate-replication-appliance.md) wordt gebruikt voor migratie op basis van een agent. Het maakt verbinding tussen de Mobility-service die wordt uitgevoerd op Vm's en server migratie. | Niet vereist | Vereist
-**Virtuele machines repliceren** . Schakel VM-replicatie in. | Configureer de replicatie-instellingen en selecteer de Vm's die u wilt repliceren | Vereist | Vereist
+**Virtuele machines repliceren**. Schakel VM-replicatie in. | Configureer de replicatie-instellingen en selecteer de Vm's die u wilt repliceren | Vereist | Vereist
 **Een testmigratie uitvoeren** | Voer een testmigratie uit om te controleren of alles goed werkt. | Vereist | Vereist
 **Een volledige migratie uitvoeren** | Migreer de Vm's. | Vereist | Vereist
 

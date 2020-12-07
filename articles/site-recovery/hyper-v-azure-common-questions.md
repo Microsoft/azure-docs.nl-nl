@@ -3,12 +3,12 @@ title: Veelgestelde vragen over herstel na nood gevallen voor Hyper-V met Azure 
 description: In dit artikel vindt u een overzicht van algemene vragen over het instellen van herstel na nood gevallen voor on-premises virtuele Hyper-V-machines naar Azure met behulp van de Azure Site Recovery-site.
 ms.date: 11/12/2019
 ms.topic: conceptual
-ms.openlocfilehash: c168ba9ff14e57f238069e8ca5b0c34a8fb58015
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e4f5ee71fc56cad247b57f94bf08a68bed8775f9
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87799885"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96754348"
 ---
 # <a name="common-questions---hyper-v-to-azure-disaster-recovery"></a>Algemene vragen - Herstel na noodgevallen van Hyper-V naar Azure
 
@@ -78,7 +78,7 @@ Ja, zowel versleuteling als transit en [versleuteling in azure](../storage/commo
 
 ### <a name="what-can-i-do-with-hyper-v-to-azure-replication"></a>Wat kan ik doen met replicatie van Hyper-V naar Azure?
 
-- **Herstel na nood**geval: u kunt volledige nood herstel instellen. In dit scenario repliceert u on-premises virtuele Hyper-V-machines naar Azure Storage:
+- **Herstel na nood** geval: u kunt volledige nood herstel instellen. In dit scenario repliceert u on-premises virtuele Hyper-V-machines naar Azure Storage:
     - U kunt Vm's repliceren naar Azure. Als uw on-premises infra structuur niet beschikbaar is, kunt u een failover uitvoeren naar Azure.
     - Wanneer u een failover hebt uitgevoerd, worden er Azure-Vm's gemaakt met de gerepliceerde gegevens. U hebt toegang tot apps en werk belastingen op de virtuele machines van Azure.
     - Als uw on-premises Data Center weer beschikbaar is, kunt u een failback uitvoeren van Azure naar uw on-premises site.
@@ -164,6 +164,10 @@ Wanneer u uw on-premises virtuele machines/fysieke servers naar Premium Storage 
 ### <a name="how-often-can-i-replicate-to-azure"></a>Hoe vaak kan ik repliceren naar Azure?
 
 Virtuele Hyper-V-machines kunnen elke 30 seconden worden gerepliceerd (met uitzonde ring van Premium-opslag) of 5 minuten.
+
+### <a name="can-azure-site-recovery-and-hyper-v-replica-be-configured-together-on-a-hyper-v-machine"></a>Kunnen Azure Site Recovery en Hyper-V replica samen worden geconfigureerd op een Hyper-V-computer?
+
+Ja, zowel Azure Site Recovery als Hyper-V replica kunnen samen worden geconfigureerd voor een machine. Maar de machine moet worden beveiligd als een fysieke machine en wordt gerepliceerd naar Azure met een configuratie/proces server. Meer informatie over het beveiligen van [fysieke machines.](https://docs.microsoft.com/azure/site-recovery/physical-azure-architecture)
 
 ### <a name="can-i-extend-replication"></a>Kan ik replicatie uitbreiden?
 Uitgebreide of gekoppelde replicatie wordt niet ondersteund. Deze functie aanvragen in het [Feedback forum](https://feedback.azure.com/forums/256299-site-recovery/suggestions/6097959).

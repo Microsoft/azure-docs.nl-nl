@@ -1,18 +1,18 @@
 ---
 title: Problemen met Azure Migrate oplossen | Microsoft Docs
 description: Hierin wordt een overzicht gegeven van bekende problemen in de Azure Migrate-service en tips voor het oplossen van veelvoorkomende fouten.
-author: musa-57
+author: ms-psharma
+ms.author: panshar
 ms.manager: abhemraj
 ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 11/21/2019
-ms.author: hamusa
-ms.openlocfilehash: 1e7c54f47db645f218ea68ea475146143f806de1
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 00802f53f973ad9b5a80b265006943121a0fa763
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92912987"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753396"
 ---
 # <a name="troubleshoot-azure-migrate"></a>Problemen met Azure Migrate oplossen
 

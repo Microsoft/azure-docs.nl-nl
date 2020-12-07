@@ -1,18 +1,17 @@
 ---
 title: Problemen met de visualisatie van analyses en afhankelijkheden in Azure Migrate oplossen
-description: Krijg hulp bij het oplossen van problemen met de evaluatie en afhankelijkheids visualisatie in Azure Migrate.
-ms.service: azure-migrate
-ms.topic: troubleshooting
-author: musa-57
+description: Krijg hulp bij de visualisatie van beoordeling en afhankelijkheid in Azure Migrate.
+author: rashi-ms
+ms.author: rajosh
 ms.manager: abhemraj
-ms.author: hamusa
+ms.topic: troubleshooting
 ms.date: 01/02/2020
-ms.openlocfilehash: 4da0f40c25d322953fea968396ef33924877c2e1
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: cefcd4ce287eecfe2c764d88d5d2233cc8ac0a5c
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94505220"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753442"
 ---
 # <a name="troubleshoot-assessmentdependency-visualization"></a>Problemen met de evaluatie/afhankelijkheid oplossen
 
@@ -23,7 +22,7 @@ Dit artikel helpt u bij het oplossen van problemen met de visualisatie van evalu
 
 Los problemen met de voorbereidings voorbereiding op als volgt:
 
-**Probleem** | **Holpen**
+**Probleem** | **Herstellen**
 --- | ---
 Niet-ondersteund opstart type | Azure biedt geen ondersteuning voor Vm's met een EFI-opstart type. U wordt aangeraden het opstart type te converteren naar BIOS voordat u een migratie uitvoert. <br/><br/>U kunt Azure Migrate server migratie gebruiken om de migratie van dergelijke Vm's te verwerken. Tijdens de migratie wordt het opstart type van de VM naar het BIOS geconverteerd.
 Voorwaardelijk ondersteund Windows-besturings systeem | Het besturings systeem heeft de eind datum van de ondersteuning door gegeven en heeft een aangepaste ondersteunings overeenkomst (CSA) nodig voor [ondersteuning in azure](/troubleshoot/azure/virtual-machines/server-software-support). Overweeg om te upgraden voordat u naar Azure migreert. [Lees]() de informatie over het [voorbereiden van computers met Windows Server 2003](prepare-windows-server-2003-migration.md) voor migratie naar Azure.
@@ -91,8 +90,8 @@ We hebben een on-premises VM met vier kernen en acht GB geheugen, met een CPU-ge
 
 Azure Migrate server beoordeling kan een grotere schijf aanbevelen op basis van het type evaluatie.
 - De schijf grootte in Server analyse is afhankelijk van twee evaluatie-eigenschappen: grootte criteria en opslag type.
-- Als de grootte criteria **op basis van prestaties** zijn en het opslag type is ingesteld op **automatisch** , worden de IOPS-en doorvoer waarden van de schijf beschouwd bij het identificeren van het doel schijf type (Standard-HDD, Standard-SSD of Premium). Er wordt vervolgens een schijf-SKU van het schijf type aanbevolen en de aanbeveling houdt rekening met de grootte vereisten van de on-premises schijf.
-- Als de grootte criteria **op basis van prestaties** zijn en het opslag type **Premium** is, wordt een Premium-schijf-SKU in azure aanbevolen op basis van de IOPS-, doorvoer-en grootte vereisten van de on-premises schijf. Dezelfde logica wordt gebruikt voor het uitvoeren van schijf grootte wanneer de grootte criteria **op locatie** zijn en het opslag type is **Standard-HDD** , **Standard-SSD** of **Premium**.
+- Als de grootte criteria **op basis van prestaties** zijn en het opslag type is ingesteld op **automatisch**, worden de IOPS-en doorvoer waarden van de schijf beschouwd bij het identificeren van het doel schijf type (Standard-HDD, Standard-SSD of Premium). Er wordt vervolgens een schijf-SKU van het schijf type aanbevolen en de aanbeveling houdt rekening met de grootte vereisten van de on-premises schijf.
+- Als de grootte criteria **op basis van prestaties** zijn en het opslag type **Premium** is, wordt een Premium-schijf-SKU in azure aanbevolen op basis van de IOPS-, doorvoer-en grootte vereisten van de on-premises schijf. Dezelfde logica wordt gebruikt voor het uitvoeren van schijf grootte wanneer de grootte criteria **op locatie** zijn en het opslag type is **Standard-HDD**, **Standard-SSD** of **Premium**.
 
 Als u bijvoorbeeld een on-premises schijf met 32 GB geheugen hebt, maar de geaggregeerde Lees-en schrijf-IOPS voor de schijf 800 IOPS is, raadt de server bepaling een Premium-schijf aan (vanwege de hogere IOPS-vereisten). vervolgens wordt een schijf-SKU aanbevolen die de vereiste IOPS en grootte kan ondersteunen. In dit voorbeeld komen we dan uit bij P15 (256 GB, 1100 IOPS). Hoewel de grootte die de on-premises schijf vereist, 32 GB was, raadt server evaluatie een grotere schijf aan vanwege de hoge IOPS-vereiste van de on-premises schijf.
 
@@ -165,8 +164,8 @@ Voor virtuele Linux-machines moet u ervoor zorgen dat de installatie opdrachten 
 
 ## <a name="supported-operating-systems"></a>Ondersteunde besturingssystemen
 
-- **MMS-agent** : Bekijk de ondersteunde [Windows](../azure-monitor/platform/agents-overview.md#supported-operating-systems)-en [Linux](../azure-monitor/platform/agents-overview.md#supported-operating-systems) -besturings systemen.
-- **Afhankelijkheids agent** : de ondersteunde [Windows-en Linux](../azure-monitor/insights/vminsights-enable-overview.md#supported-operating-systems) -besturings systemen.
+- **MMS-agent**: Bekijk de ondersteunde [Windows](../azure-monitor/platform/agents-overview.md#supported-operating-systems)-en [Linux](../azure-monitor/platform/agents-overview.md#supported-operating-systems) -besturings systemen.
+- **Afhankelijkheids agent**: de ondersteunde [Windows-en Linux](../azure-monitor/insights/vminsights-enable-overview.md#supported-operating-systems) -besturings systemen.
 
 ## <a name="visualize-dependencies-for--hour"></a>Afhankelijkheden voor > uur visualiseren
 
@@ -209,7 +208,7 @@ Verzamel logboeken voor netwerk verkeer als volgt:
    - Klik in Chrome met de rechter muisknop en selecteer **Opslaan als har met inhoud**. Met deze actie worden de logboeken gecomprimeerd en geëxporteerd als een. har-bestand.
    - Selecteer in micro soft Edge of Internet Explorer de optie **vastgelegd verkeer exporteren** . Met deze actie wordt het logboek gecomprimeerd en geëxporteerd.
 6. Selecteer het tabblad **console** om te controleren of er waarschuwingen of fouten zijn. Het console logboek opslaan:
-   - Klik in Chrome met de rechter muisknop op een wille keurige plaats in het console logboek. Selecteer **Opslaan als** , om het logboek te exporteren en uit te voeren.
+   - Klik in Chrome met de rechter muisknop op een wille keurige plaats in het console logboek. Selecteer **Opslaan als**, om het logboek te exporteren en uit te voeren.
    - Klik in micro soft Edge of Internet Explorer met de rechter muisknop op de fouten en selecteer **Alles kopiëren**.
 7. Ontwikkelhulpprogramma's sluiten.
 

@@ -2,16 +2,16 @@
 title: Automatische AVS-evaluatie berekeningen in Azure Migrate | Microsoft Docs
 description: Hierin wordt een overzicht gegeven van de AVS-evaluatie berekeningen in de Azure Migrate-service.
 author: rashi-ms
-ms.service: azure-migrate
+ms.author: rajosh
+ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 06/25/2020
-ms.author: mahain
-ms.openlocfilehash: 400c2d91383b5f21fcd40fdbbe279bd83fcef51a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 67d4137a21753b221e17a1effde35bc1b89600d3
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91576537"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753804"
 ---
 # <a name="server-assessment-overview-migrate-to-azure-vmware-solution"></a>Overzicht van server evaluatie (migreren naar Azure VMware-oplossing)
 
@@ -119,12 +119,12 @@ Dit is what's opgenomen in een AVS-evaluatie in Server evaluatie:
 | **Eigenschap** | **Details** 
 | - | - 
 | **Doellocatie** | Hiermee geeft u de automatische AVS-Cloud locatie op waarnaar u wilt migreren.<br/><br/> AVS-evaluatie in Server evaluatie ondersteunt momenteel deze doel regio's: VS-Oost, Europa-west, VS-West. 
-| **Opslag type** | Hiermee geeft u de opslag engine moet worden gebruikt in AVS.<br/><br/> AVS-evaluaties ondersteunen alleen vSAN als een standaard type opslag. 
+| **Opslagtype** | Hiermee geeft u de opslag engine moet worden gebruikt in AVS.<br/><br/> AVS-evaluaties ondersteunen alleen vSAN als een standaard type opslag. 
 **Gereserveerde instanties (RIs)** | Met deze eigenschap kunt u gereserveerde instanties in AVS opgeven. RIs wordt momenteel niet ondersteund voor AVS-knoop punten. 
 **Knooppunt type** | Hiermee geeft u het [AVS-knooppunt type](../azure-vmware/concepts-private-clouds-clusters.md) op dat wordt gebruikt om de on-premises vm's toe te wijzen. Het standaard knooppunttype is AV36. <br/><br/> Azure Migrate wordt een vereist aantal knoop punten aanbevolen voor de virtuele machines die moeten worden gemigreerd naar AVS. 
 **FTT-instelling, RAID-niveau** | Hiermee geeft u de toepasselijke fout op voor verdragen en RAID-combi Naties. De geselecteerde FTT-optie in combi natie met de on-premises VM-schijf vereiste bepaalt de totale vSAN-opslag die is vereist in AVS. 
 **Criterium voor het aanpassen van de grootte** | Hiermee stelt u de criteria in die moeten worden gebruikt voor de *juiste grootte* van VM'S voor AVS. U kunt kiezen voor een hoge grootte op *basis van prestaties* of *als on-premises,* zonder rekening te houden met de prestatie geschiedenis. 
-**Prestatiegeschiedenis** | Hiermee stelt u de duur in waarmee rekening moet worden gehouden bij het evalueren van de prestatie gegevens van machines. Deze eigenschap is alleen van toepassing wanneer de grootte criteria *op basis van prestaties*zijn. 
+**Prestatiegeschiedenis** | Hiermee stelt u de duur in waarmee rekening moet worden gehouden bij het evalueren van de prestatie gegevens van machines. Deze eigenschap is alleen van toepassing wanneer de grootte criteria *op basis van prestaties* zijn. 
 **Percentiel gebruik** | Hiermee geeft u de percentiel waarde van de voorbereidings Voorbeeldset op die in aanmerking komt voor de juiste grootte. Deze eigenschap is alleen van toepassing wanneer de grootte van het formaat op basis van prestaties is gebaseerd.
 **Comfortfactor** | Bij het evalueren van Azure Migrate-server wordt een buffer (comfort factor) in rekening gehouden tijdens de evaluatie. Deze buffer wordt toegepast boven op de gegevens over machinegebruik voor VM's (CPU, geheugen, schijf en netwerk). De comfortfactor houdt rekening met factoren zoals seizoensgebonden gebruik, een korte prestatiegeschiedenis en een mogelijke gebruikstoename in de toekomst.<br/><br/> Een VM met 10 kernen en een gebruik van 20% komt bijvoorbeeld gewoonlijk overeen met een VM met 2 kernen. Met een comfortfactor van 2,0x is het resultaat echter een VM met 4 kernen. 
 **Aanbieding** | Hier wordt de [Azure-aanbieding](https://azure.microsoft.com/support/legal/offer-details/) weer gegeven die u hebt Inge schreven. Azure Migrate maakt dienovereenkomstig een schatting van de kosten.

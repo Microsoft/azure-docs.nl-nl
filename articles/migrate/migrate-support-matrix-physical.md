@@ -1,14 +1,17 @@
 ---
 title: Ondersteuning voor de beoordeling van fysieke servers in Azure Migrate
 description: Meer informatie over ondersteuning voor fysieke server beoordeling met Azure Migrate server-evaluatie
+author: rashi-ms
+ms.author: rajosh
+ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 06/03/2020
-ms.openlocfilehash: 58ecba6bcedc036e31046aef292e482085ad7cc6
-ms.sourcegitcommit: 8ad5761333b53e85c8c4dabee40eaf497430db70
+ms.openlocfilehash: cfbbc1d218f590241fab804e389acd689c009dac
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93148402"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96754008"
 ---
 # <a name="support-matrix-for-physical-server-assessment"></a>Ondersteunings matrix voor fysieke server evaluatie 
 
@@ -36,15 +39,15 @@ Meer [informatie](concepts-assessment-calculation.md) over evaluaties.
 **Besturings systeem:** Alle Windows-en Linux-besturings systemen kunnen worden geëvalueerd voor migratie.
 
 **Machtigingen:**
-- Voor Windows-servers gebruikt u een domein account voor computers die lid zijn van een domein en een lokaal account voor computers die geen lid zijn van een domein. Het gebruikersaccount moet worden toegevoegd aan deze groepen: Gebruikers van extern beheer, prestatiemetergebruikers en gebruikers van prestatielogboeken.
-- Voor Linux-servers hebt u een hoofdaccount nodig op de Linux-servers die u wilt detecteren. U kunt ook een niet-hoofd account instellen met de vereiste mogelijkheden met behulp van de volgende opdrachten:
+- Gebruik voor Windows-servers een domeinaccount voor computer die lid zijn van een domein, en een lokaal account voor computers die geen lid zijn van een domein. Het gebruikersaccount moet worden toegevoegd aan deze groepen: Gebruikers van extern beheer, prestatiemetergebruikers en gebruikers van prestatielogboeken.
+- Voor Linux-servers hebt u een hoofdaccount nodig op de Linux-servers die u wilt detecteren. U kunt ook een zich niet in de hoofdmap bevindend account met de vereiste mogelijkheden instellen met behulp van de volgende opdrachten:
 
 **Opdracht** | **Doel**
 --- | --- |
-setcap CAP_DAC_READ_SEARCH+eip /usr/sbin/fdisk <br></br> setcap CAP_DAC_READ_SEARCH + EIP/sbin/fdisk _(als/usr/sbin/fdisk niet aanwezig is)_ | Schijf configuratie gegevens verzamelen
-setcap "cap_dac_override, cap_dac_read_search, cap_fowner, cap_fsetid, cap_setuid,<br>cap_setpcap, cap_net_bind_service, cap_net_admin, cap_sys_chroot, cap_sys_admin,<br>cap_sys_resource, cap_audit_control, cap_setfcap = + EIP "/sbin/lvm | Prestatie gegevens van de schijf verzamelen
-setcap CAP_DAC_READ_SEARCH + EIP/usr/sbin/dmidecode | Het serie nummer van het BIOS verzamelen
-chmod a + r/sys/class/DMI/id/product_uuid | BIOS-GUID verzamelen
+setcap CAP_DAC_READ_SEARCH+eip /usr/sbin/fdisk <br></br> setcap CAP_DAC_READ_SEARCH+eip /sbin/fdisk _(als /usr/sbin/fdisk niet aanwezig is)_ | Gegevens over de schijfconfiguratie verzamelen
+setcap "cap_dac_override,cap_dac_read_search,cap_fowner,cap_fsetid,cap_setuid,<br>cap_setpcap,cap_net_bind_service,cap_net_admin,cap_sys_chroot,cap_sys_admin,<br>cap_sys_resource,cap_audit_control,cap_setfcap=+eip" /sbin/lvm | Gegevens van de schijfprestaties verzamelen
+setcap CAP_DAC_READ_SEARCH+eip /usr/sbin/dmidecode | Het BIOS-serienummer verzamelen
+chmod a+r /sys/class/dmi/id/product_uuid | BIOS-GUID verzamelen
 
 
 

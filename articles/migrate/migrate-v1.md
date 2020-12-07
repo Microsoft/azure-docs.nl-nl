@@ -1,18 +1,18 @@
 ---
 title: Werken met de vorige versie van Azure Migrate
 description: Hierin wordt beschreven hoe u kunt werken met de vorige versie van Azure Migrate.
-author: rayne-wiselman
-ms.service: azure-migrate
-ms.topic: overview
+author: ms-psharma
+ms.author: panshar
+ms.manager: abhemraj
+ms.topic: conceptual
 ms.date: 11/19/2019
-ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: c87290b36ec77e834a0d0fcd99e9a8bdb05675b5
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 4fda6c51121838bfa1f3624759b1230d8554d573
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96494695"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753940"
 ---
 # <a name="work-with-the-previous-version-of-azure-migrate"></a>Werken met de vorige versie van Azure Migrate
 

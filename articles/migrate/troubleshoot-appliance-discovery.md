@@ -1,17 +1,17 @@
 ---
 title: Problemen met de implementatie en detectie van Azure Migrate-apparaten oplossen
-description: Krijg hulp bij het implementeren van het Azure Migrate apparaat en het detecteren van computers.
-author: musa-57
+description: Hulp bij de implementatie van het apparaat en detectie van machines.
+author: vineetvikram
+ms.author: vivikram
 ms.manager: abhemraj
-ms.author: hamusa
 ms.topic: troubleshooting
 ms.date: 01/02/2020
-ms.openlocfilehash: 0d4630cad94a30e0dd53785c512e452d7b4a7d38
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 26bb61e0c5a473a56c57391b53009419453956fd
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96494440"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753413"
 ---
 # <a name="troubleshoot-the-azure-migrate-appliance-and-discovery"></a>Problemen met het Azure Migrate apparaat en de detectie oplossen
 

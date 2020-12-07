@@ -10,12 +10,12 @@ ms.custom: troubleshooting
 author: likebupt
 ms.author: keli19
 ms.date: 11/25/2020
-ms.openlocfilehash: af7ac49fd6c1a31a8363c4ba0bf925787613ecc2
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: 846c5519dced06ed16f5a0d12b0bb25443961f93
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030404"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753906"
 ---
 # <a name="exceptions-and-error-codes-for-the-designer"></a>Uitzonde ringen en fout codes voor de ontwerper
 
@@ -279,7 +279,7 @@ Als het model is getraind met een van de gespecialiseerde trainings modules, kop
 ## <a name="error-0014"></a>Fout 0014  
  Uitzonde ring treedt op als het aantal kolom unieke waarden groter is dan is toegestaan.  
 
- Deze fout treedt op wanneer een kolom te veel unieke waarden bevat.  U ziet deze fout bijvoorbeeld als u opgeeft dat een kolom moet worden verwerkt als categorische-gegevens, maar er zijn te veel unieke waarden in de kolom om te voor komen dat de verwerking is voltooid. Deze fout kan ook worden weer geven als het aantal unieke waarden in twee invoer niet overeenkomt.   
+ Deze fout treedt op wanneer een kolom te veel unieke waarden bevat, zoals een ID-kolom of een tekst kolom. Deze fout kan optreden als u opgeeft dat een kolom moet worden verwerkt als categorische-gegevens, maar er zijn te veel unieke waarden in de kolom om de verwerking te kunnen volt ooien. Deze fout kan ook worden weer geven als het aantal unieke waarden in twee invoer niet overeenkomt.   
 
 De fout van unieke waarden is groter dan is toegestaan als aan **beide** volgende voor waarden wordt voldaan:
 
@@ -292,7 +292,9 @@ Open de module die de fout heeft gegenereerd en Identificeer de kolommen die als
 
 Voor kolommen die u wilt gebruiken voor groepering of categorisatie, neemt u stappen om het aantal unieke waarden in kolommen te verminderen. U kunt op verschillende manieren beperken, afhankelijk van het gegevens type van de kolom. 
 
-Normaal gesp roken heeft de kolom de fout melding als een functie voor het trainen van modellen. Daarom kunt u [meta gegevens bewerken](../algorithm-module-reference/edit-metadata.md) gebruiken om die kolom als **heldere functie** te markeren. deze wordt niet gebruikt tijdens de training van een model. 
+Voor ID-kolommen die geen betekenis volle functies hebben tijdens het trainen van een model, kunt u [meta gegevens bewerken](../algorithm-module-reference/edit-metadata.md) gebruiken om die kolom te markeren als een **duidelijke functie** en deze niet worden gebruikt tijdens de training van een model. 
+
+Voor tekst kolommen kunt u functie- [hashing](../algorithm-module-reference/feature-hashing.md) gebruiken of [N-gram functies uit de tekst module extra heren](../algorithm-module-reference/extract-n-gram-features-from-text.md) om tekst kolommen vooraf te verwerken.
 <!--
 + For text data, you might be able to use [Preprocess Text](preprocess-text.md) to collapse similar entries. 
 + For numeric data, you can create a smaller number of bins using [Group Data into Bins](group-data-into-bins.md), remove or truncate values using [Clip Values](clip-values.md), or use machine learning methods such as [Principal Component Analysis](principal-component-analysis.md) or [Learning with Counts](data-transformation-learning-with-counts.md) to reduce the dimensionality of the data.  

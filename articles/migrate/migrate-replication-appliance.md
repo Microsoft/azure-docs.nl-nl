@@ -1,14 +1,17 @@
 ---
 title: Azure Migrate-replicatieapparaat
 description: Meer informatie over het Azure Migrate replicatie apparaat voor VMWare-migratie op basis van agents.
+author: anvar-ms
+ms.author: anvar
+ms.manager: bsiva
 ms.topic: conceptual
 ms.date: 01/30/2020
-ms.openlocfilehash: af9e45e47c2f0645d81a571161f15f7d69cfec61
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ec277bcc3e361561f54e72c54526d65487c113b4
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90532117"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96754093"
 ---
 # <a name="replication-appliance"></a>Replicatie apparaat
 
@@ -136,7 +139,7 @@ Proces server | De proces server ontvangt replicatie gegevens, optimaliseert en 
 Het apparaat wordt hand matig geüpgraded vanuit de Azure Migrate hub. U wordt aangeraden altijd de meest recente versie uit te voeren.
 
 1. In Azure Migrate > servers > Azure Migrate: Server evaluatie, infrastructuur servers, klik op **configuratie servers**.
-2. In **configuratie servers**wordt een koppeling weer gegeven in de **Agent versie** wanneer er een nieuwe versie van het replicatie apparaat beschikbaar is. 
+2. In **configuratie servers** wordt een koppeling weer gegeven in de **Agent versie** wanneer er een nieuwe versie van het replicatie apparaat beschikbaar is. 
 3. Down load het installatie programma naar de replicatie apparaat computer en installeer de upgrade. Het installatie programma detecteert de versie die momenteel wordt uitgevoerd op het apparaat.
  
 ## <a name="next-steps"></a>Volgende stappen

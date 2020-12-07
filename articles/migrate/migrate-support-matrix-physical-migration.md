@@ -1,15 +1,17 @@
 ---
 title: Ondersteuning voor de migratie van fysieke servers in Azure Migrate
 description: Meer informatie over ondersteuning voor de migratie van fysieke servers in Azure Migrate.
+author: rahulg1190
+ms.author: rahugup
+ms.manager: bsiva
 ms.topic: conceptual
-ms.custom: fasttrack-edit
 ms.date: 06/14/2020
-ms.openlocfilehash: 95456298b3275c83152115d700a4539cab2d2a67
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c549cae0b7bdc5e237ec3cf704a1ead53db91449
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91318157"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96754025"
 ---
 # <a name="support-matrix-for-physical-server-migration"></a>Ondersteunings matrix voor de migratie van fysieke servers
 
@@ -46,7 +48,7 @@ De tabel bevat een overzicht van de ondersteuning voor fysieke servers die u wil
 **UEFI-opstart** | Ondersteund. UEFI-machines worden gemigreerd naar virtuele machines van Azure Generation 2.  <br/><br/> De besturingssysteem schijf moet Maxi maal vier partities hebben en volumes moeten worden geformatteerd met NTFS.
 **UEFI-beveiligd opstarten**         | Niet ondersteund voor migratie.
 **Doel schijf** | Machines kunnen alleen worden gemigreerd naar Managed disks (standaard HDD, standaard SSD, Premium SSD) in Azure.
-**Schijf grootte** | 2 TB besturingssysteem schijf (BIOS-opstart); 4 TB besturingssysteem schijf (UEFI boot); 8 TB voor gegevens schijven.
+**Schijfgrootte** | 2 TB besturingssysteem schijf (BIOS-opstart); 4 TB besturingssysteem schijf (UEFI boot); 8 TB voor gegevens schijven.
 **Schijf limieten** |  Maxi maal 63 schijven per computer.
 **Versleutelde schijven/volumes** |  Machines met versleutelde schijven/volumes worden niet ondersteund voor migratie.
 **Gedeeld schijf cluster** | Niet ondersteund.

@@ -1,14 +1,17 @@
 ---
 title: Azure Migrate-projecten maken en beheren
 description: U kunt projecten vinden, maken, beheren en verwijderen in Azure Migrate.
+author: ms-psharma
+ms.author: panshar
+ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 11/23/2020
-ms.openlocfilehash: c352c06a5e5b798563b4543122f66a302017bc8a
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 445e08b255e5b4dd67dd1c6a47c8df6ce59df5bd
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500832"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96753821"
 ---
 # <a name="create-and-manage-azure-migrate-projects"></a>Azure Migrate-projecten maken en beheren
 

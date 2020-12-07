@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 11/04/2020
+ms.date: 12/07/2020
 ms.author: alexeyo
-ms.openlocfilehash: a304628e05054124fde6ffe5c2b63177991d8cfd
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 9b923ba208dd2a5111a59f67401b1e4f080b7187
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93345394"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96754161"
 ---
 # <a name="speech-services-quotas-and-limits"></a>Quota en limieten voor Speech Services
 
@@ -104,25 +104,25 @@ Gelijktijdige aanvraag limieten voor **basis** -en **aangepaste** modellen moete
 De bestaande waarde van de para meter voor gelijktijdige aanvraag limiet is **niet** zichtbaar via Azure Portal, Command-Line-hulpprogram MA'S of API-aanvragen. Als u de bestaande waarde wilt verifiëren, maakt u een ondersteunings aanvraag voor Azure.
 
 >[!NOTE]
->Voor [spraak containers](speech-container-howto.md) is geen verhoging van de limiet van gelijktijdige aanvragen vereist, omdat containers alleen worden beperkt door de cpu's van de hardware waarop ze worden gehost.
+>Voor [spraak containers](speech-container-howto.md) is geen verhoging van de limiet van gelijktijdige aanvragen vereist, omdat containers alleen worden beperkt door de cpu's van de hardware waarop ze worden gehost. Spraak containers hebben echter hun eigen capaciteits beperkingen die moeten worden opgenomen in het account. Zie de vraag *"kunt u helpen met capaciteits planning en kosten schatting van on-premises spraak-naar-tekst containers?"* uit de [Veelgestelde vragen over spraak containers](speech-container-faq.md).
 
 #### <a name="have-the-required-information-ready"></a>De vereiste gegevens zijn gereed:
-- Voor **basis model** :
+- Voor **basis model**:
   - Spraak Resource-ID
-  - Region
-- Voor **aangepast model** : 
-  - Region
+  - Regio
+- Voor **aangepast model**: 
+  - Regio
   - Aangepaste eind punt-ID
 
-- **Informatie over het ophalen van gegevens (basis model)** :  
+- **Informatie over het ophalen van gegevens (basis model)**:  
   - Ga naar [Azure Portal](https://portal.azure.com/)
   - Selecteer de spraak bron waarvoor u de limiet voor gelijktijdige aanvragen wilt verhogen
-  - *Eigenschappen* selecteren ( *resource beheer* groep) 
+  - *Eigenschappen* selecteren (*resource beheer* groep) 
   - Kopieer de waarden van de volgende velden en sla deze op:
     - **Resource-id**
     - **Locatie** (uw eindpunt regio)
 
-- **Informatie over het ophalen van gegevens (aangepast model)** :
+- **Informatie over het ophalen van gegevens (aangepast model)**:
   - Ga naar de [Speech Studio](https://speech.microsoft.com/) -Portal
   - Aanmelden indien nodig
   - Ga naar Custom Speech
@@ -139,7 +139,7 @@ Begin met het verhogen van de limiet voor gelijktijdige aanvragen voor uw resour
 - Zorg ervoor dat u de [vereiste gegevens](#have-the-required-information-ready) hebt
 - Ga naar [Azure Portal](https://portal.azure.com/)
 - Selecteer de spraak bron waarvan u wilt verg Roten (of om te controleren) de limiet voor gelijktijdige aanvragen
-- *Nieuwe ondersteunings aanvraag* selecteren ( *ondersteuning en groep voor probleem oplossing* ) 
+- *Nieuwe ondersteunings aanvraag* selecteren (*ondersteuning en groep voor probleem oplossing* ) 
 - Er wordt een nieuw venster weer gegeven met automatisch gevulde informatie over uw Azure-abonnement en Azure-resource
 - Voer een *samen vatting* in (bijvoorbeeld ' verg Roten STT gelijktijdigheids aanvraag limiet ')
 - Selecteer bij *probleem type* de optie quotum-of abonnements problemen
@@ -191,7 +191,7 @@ Begin met het verhogen van de limiet voor gelijktijdige aanvragen voor uw resour
 - Zorg ervoor dat u de [vereiste gegevens](#prepare-the-required-information) hebt
 - Ga naar [Azure Portal](https://portal.azure.com/)
 - Selecteer de spraak bron waarvan u wilt verg Roten (of om te controleren) de limiet voor gelijktijdige aanvragen
-- *Nieuwe ondersteunings aanvraag* selecteren ( *ondersteuning en groep voor probleem oplossing* ) 
+- *Nieuwe ondersteunings aanvraag* selecteren (*ondersteuning en groep voor probleem oplossing* ) 
 - Er wordt een nieuw venster weer gegeven met automatisch gevulde informatie over uw Azure-abonnement en Azure-resource
 - Geef een *samen vatting* op (bijvoorbeeld ' Verhoog het aantal aangepaste TTS-aanvragen voor het afrekenen van een aangepast eind punt)
 - Selecteer bij *probleem type* de optie quotum-of abonnements problemen

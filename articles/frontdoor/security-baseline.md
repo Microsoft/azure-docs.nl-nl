@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 87e7f959dd932c874604df43fa61112d181ac581
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 53324709e2d3dd11160ee0b7837d86d9e9594571
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96531697"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763924"
 ---
 # <a name="azure-security-baseline-for-azure-front-door"></a>Azure-beveiligings basislijn voor Azure front deur
 
@@ -206,7 +206,7 @@ Het is raadzaam dat de klant een proces maakt om het kenmerk en de wijzigingen i
 
 ### <a name="lt-3-enable-logging-for-azure-network-activities"></a>LT-3: Logboekregistratie inschakelen voor Azure-netwerkactiviteiten
 
-**Richt lijnen**: Azure Frond endnetwerkverbindingener is niet bedoeld voor implementatie in virtuele netwerken; door deze klanten kan stroom registratie door de netwerk beveiligings groep niet worden ingeschakeld, verkeer via een firewall worden doorgestuurd of pakket opnames worden uitgevoerd.
+**Richt lijnen**: Azure front deur is niet bedoeld voor implementatie in virtuele netwerken. door deze klanten kan stroom registratie door de netwerk beveiligings groep niet worden ingeschakeld, verkeer via een firewall worden doorgestuurd of pakket opnames worden uitgevoerd.
 
 Azure front deur registreert al het netwerk verkeer dat IT voor de toegang van klanten verwerkt. Schakel de functie netwerk stroom Logboeken in en configureer deze logboeken om te worden verzonden naar een opslag account voor lange termijn retentie en controle.
 

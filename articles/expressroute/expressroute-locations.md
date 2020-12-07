@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 11/25/2020
 ms.author: duau
-ms.openlocfilehash: 8b344f38dd5effb34adec7943a444ce51ed513a9
-ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
+ms.openlocfilehash: fdb5b06a7e0b0001728954c1cdff37aa8e2484f4
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96122537"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763567"
 ---
 # <a name="expressroute-connectivity-partners-and-peering-locations"></a>Partners en peeringlocaties voor ExpressRoute-connectiviteit
 
@@ -86,7 +86,7 @@ De volgende tabel toont de locaties per serviceprovider. Als u alle beschikbare 
 | **[BBIX](https://www.bbix.net/en/service/ix/)** | Ondersteund | Ondersteund | Tokio |
 | **[BCX](https://www.bcx.co.za/solutions/connectivity/data-networks)** |Ondersteund |Ondersteund |Kaapstad, Johannesburg|
 | **[Bell Canada](https://business.bell.ca/shop/enterprise/cloud-connect-access-to-cloud-partner-services)** |Ondersteund |Ondersteund |Montreal, Toronto, Quebec |
-| **[British Telecom](https://www.globalservices.bt.com/en/solutions/products/cloud-connect-azure)** |Ondersteund |Ondersteund |Amsterdam, Amsterdam2, Hongkong SAR, Johannes Burg, Londen, Newport (Wales), Parijs, Sao Paulo, silicone dal, Singapore, Sydney, Tokio, Washington DC |
+| **[British Telecom](https://www.globalservices.bt.com/en/solutions/products/cloud-connect-azure)** |Ondersteund |Ondersteund |Amsterdam, Amsterdam2, Hongkong SAR, Johannes Burg, Londen, London2, Newport (Wales), Parijs, Sao Paulo, silicone dal, Singapore, Sydney, Tokio, Washington DC |
 | **[C3ntro](https://www.c3ntro.com/data1/express-route1.php)** |Ondersteund |Ondersteund |Miami |
 | **CDC** | Ondersteund | Ondersteund | Canberra, Canberra2 |
 | **[CenturyLink Cloud Connect](https://www.centurylink.com/cloudconnect)** |Ondersteund |Ondersteund |Amsterdam2, Chicago, Dublin, Frankfurt, Hongkong, Las London2, New York, Parijs, San Antonio, Silicon dal, Tokio, Toronto, Washington DC, Washington DC2 |

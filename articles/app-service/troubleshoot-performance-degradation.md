@@ -7,12 +7,12 @@ ms.assetid: b8783c10-3a4a-4dd6-af8c-856baafbdde5
 ms.topic: article
 ms.date: 08/03/2016
 ms.custom: seodec18
-ms.openlocfilehash: 82373dcd9e1d55e0c4a5867ddaff6875ee57da5a
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: cf8b0e1fda03a74d30ec77c911d705bf12cf0126
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92147502"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763805"
 ---
 # <a name="troubleshoot-slow-app-performance-issues-in-azure-app-service"></a>Problemen met prestatie problemen met langzame apps in Azure App Service oplossen
 Dit artikel helpt u bij het oplossen van problemen met prestatie problemen met langzame apps in [Azure app service](./overview.md).
@@ -82,7 +82,7 @@ Elke App Service-app biedt een uitbreidbaar beheer eindpunt waarmee u een kracht
 - Bron code-editors zoals [Azure DevOps](https://www.visualstudio.com/products/what-is-visual-studio-online-vs.aspx). 
 - Beheer hulpprogramma's voor verbonden resources, zoals een MySQL-data base die is verbonden met een app.
 
-[Azure-toepassing Insights](https://azure.microsoft.com/services/application-insights/) is een site-uitbrei ding voor prestatie bewaking die ook beschikbaar is. Als u Application Insights wilt gebruiken, bouwt u uw code opnieuw met een SDK. U kunt ook een extensie installeren die toegang biedt tot aanvullende gegevens. Met de SDK kunt u code schrijven om het gebruik en de prestaties van uw app in meer detail te bewaken. Zie [prestaties van webtoepassingen controleren](../azure-monitor/app/web-monitor-performance.md)voor meer informatie.
+[Azure-toepassing Insights](https://azure.microsoft.com/services/application-insights/) is een site-uitbrei ding voor prestatie bewaking die ook beschikbaar is. Als u Application Insights wilt gebruiken, bouwt u uw code opnieuw met een SDK. U kunt ook een extensie installeren die toegang biedt tot aanvullende gegevens. Met de SDK kunt u code schrijven om het gebruik en de prestaties van uw app in meer detail te bewaken. Zie [prestaties van webtoepassingen controleren](../azure-monitor/app/app-insights-overview.md)voor meer informatie.
 
 <a name="collect"></a>
 
@@ -161,4 +161,4 @@ Het opnieuw starten is vaak de eenvoudigste manier om te herstellen vanuit eenma
 
  ![app opnieuw starten om prestatie problemen op te lossen](./media/app-service-web-troubleshoot-performance-degradation/2-restart.png)
 
-U kunt uw app ook beheren met Azure Power shell. Zie [Azure PowerShell gebruiken met Azure Resource Manager](../azure-resource-manager/management/manage-resources-powershell.md) voor meer informatie.
+U kunt uw app ook beheren met behulp van Azure PowerShell. Zie [Azure PowerShell gebruiken met Azure Resource Manager](../azure-resource-manager/management/manage-resources-powershell.md) voor meer informatie.

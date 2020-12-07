@@ -4,12 +4,12 @@ description: Hiermee wordt een overzicht gegeven van de ondersteuning voor herst
 ms.topic: article
 ms.date: 11/29/2020
 ms.author: raynew
-ms.openlocfilehash: f0aebd09c06677aeba7cddda246e3e37992e0d9e
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 8123dbc18ad2fc162b9b92ae40920417e6b874ce
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96485277"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763278"
 ---
 # <a name="support-matrix-for-azure-vm-disaster-recovery-between-azure-regions"></a>Ondersteuningsmatrix voor herstel na noodgeval van Azure-VM's tussen Azure-regio's
 
@@ -102,7 +102,7 @@ Red Hat Enterprise Linux | 6,7, 6,8, 6,9, 6,10, 7,0, 7,1, 7,2, 7,3, 7,4, 7,5, 7,
 CentOS | 6,5, 6,6, 6,7, 6,8, 6,9, 6,10 </br> 7,0, 7,1, 7,2, 7,3, 7,4, 7,5, 7,6, 7,7, [7,8](https://support.microsoft.com/help/4564347/), [7,9 pre-GA versie](https://support.microsoft.com/help/4578241/), 7,9 ga-versie wordt ondersteund vanuit 9,37 Hot Fix patch * * </br> 8,0, 8,1, [8,2](https://support.microsoft.com/en-us/help/4570609), [8,3](https://support.microsoft.com/help/4597409/)
 Ubuntu 14,04 LTS-server | Biedt ondersteuning voor alle 14,04. *x* -versies; [Ondersteunde kernel-versies](#supported-ubuntu-kernel-versions-for-azure-virtual-machines); 
 Ubuntu 16,04 LTS-server | Biedt ondersteuning voor alle 16,04. *x* -versies; [Ondersteunde kernel-versie](#supported-ubuntu-kernel-versions-for-azure-virtual-machines)<br/><br/> Ubuntu-servers die gebruikmaken van verificatie op basis van wacht woorden en aanmelden en het pakket Cloud-init om Cloud-Vm's te configureren, hebben mogelijk een op wacht woord gebaseerde aanmelding uitgeschakeld bij failover (afhankelijk van de cloudinit-configuratie). Aanmelden op basis van wacht woorden kan opnieuw worden ingeschakeld op de virtuele machine door het wacht woord opnieuw in te stellen in het menu > ondersteuning voor het oplossen van problemen met de >-instellingen (van de VM waarvoor een failover is uitgevoerd in de Azure Portal.
-Ubuntu 18,04 LTS-server | Biedt ondersteuning voor alle 18,04. *x* -versies; [Ondersteunde kernel-versie](#supported-ubuntu-kernel-versions-for-azure-virtual-machines) |
+Ubuntu 18,04 LTS-server | Biedt ondersteuning voor alle 18,04. *x* -versies; [Ondersteunde kernel-versie](#supported-ubuntu-kernel-versions-for-azure-virtual-machines)<br/><br/> Ubuntu-servers die gebruikmaken van verificatie op basis van wacht woorden en aanmelden en het pakket Cloud-init om Cloud-Vm's te configureren, hebben mogelijk een op wacht woord gebaseerde aanmelding uitgeschakeld bij failover (afhankelijk van de cloudinit-configuratie). Aanmelden op basis van wacht woorden kan opnieuw worden ingeschakeld op de virtuele machine door het wacht woord opnieuw in te stellen in het menu > ondersteuning voor het oplossen van problemen met de >-instellingen (van de VM waarvoor een failover is uitgevoerd in de Azure Portal.
 Ubuntu 20,04 LTS-server | Biedt ondersteuning voor alle 20,04. *x* -versies; [Ondersteunde kernel-versie](#supported-ubuntu-kernel-versions-for-azure-virtual-machines)
 Debian 7 | Biedt ondersteuning voor alle 7. [ondersteunde versies](#supported-debian-kernel-versions-for-azure-virtual-machines) van de kernel voor *x* -versies
 Debian 8 | Biedt ondersteuning voor alle 8. [ondersteunde versies](#supported-debian-kernel-versions-for-azure-virtual-machines) van de kernel voor *x* -versies
@@ -196,7 +196,7 @@ Azure Gallery-installatie kopieën-derde partij gepubliceerd | Ondersteund | Wor
 Aangepaste installatie kopieën-externe partij gepubliceerd | Ondersteund | Wordt ondersteund als de virtuele machine wordt uitgevoerd op een ondersteund besturings systeem.
 Vm's die zijn gemigreerd met behulp van Site Recovery | Ondersteund | Als een VMware-VM of fysieke machine met Site Recovery is gemigreerd naar Azure, moet u de oudere versie van Mobility service op de computer verwijderen en de computer opnieuw opstarten voordat u deze naar een andere Azure-regio repliceert.
 Azure RBAC-beleid | Niet ondersteund | Beleid voor toegangs beheer op basis van rollen (Azure RBAC) op Vm's wordt niet gerepliceerd naar de failover-VM in de doel regio.
-Extensies | Niet ondersteund | Uitbrei dingen worden niet gerepliceerd naar de failover-VM in de doel regio. Deze moet hand matig worden geïnstalleerd na een failover.
+Uitbreidingen | Niet ondersteund | Uitbrei dingen worden niet gerepliceerd naar de failover-VM in de doel regio. Deze moet hand matig worden geïnstalleerd na een failover.
 Proximity-plaatsings groepen | Ondersteund | Virtuele machines die zich in een proximity-plaatsings groep bevinden, kunnen worden beveiligd met Site Recovery.
 
 

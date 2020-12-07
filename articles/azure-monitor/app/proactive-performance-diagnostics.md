@@ -4,12 +4,12 @@ description: Application Insights voert een slimme analyse uit van de telemetrie
 ms.topic: conceptual
 ms.date: 05/04/2017
 ms.reviewer: antonfr
-ms.openlocfilehash: 28a32c714618a3b6b0c3126d8060295f134ddc7c
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: ead71a5ac6e2cfa0df6654c7ba9aa7b5b9238d04
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186232"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763771"
 ---
 # <a name="smart-detection---performance-anomalies"></a>Slimme detectie-prestatie afwijkingen
 
@@ -99,7 +99,7 @@ Waar is het probleem? Reageert de server traag, is de pagina erg lang, of heeft 
 
 Open de Blade metric voor browsers. De gesegmenteerde weer gave van de laad tijd van een browser pagina geeft aan waar de tijd naartoe gaat. 
 
-* Als de **aanvraag tijd** hoog is, reageert de server langzaam of de aanvraag is een bericht dat veel gegevens bevat. Bekijk de [metrische gegevens voor prestaties](./web-monitor-performance.md#metrics) om reactie tijden te onderzoeken.
+* Als de **aanvraag tijd** hoog is, reageert de server langzaam of de aanvraag is een bericht dat veel gegevens bevat. Bekijk de [metrische gegevens voor prestaties](./performance-counters.md) om reactie tijden te onderzoeken.
 * Stel het [bijhouden van afhankelijkheden](./asp-net-dependencies.md) in om te zien of de vertraging wordt veroorzaakt door externe services of uw data base.
 * Als **antwoord wordt ontvangen** , zijn uw pagina en de afhankelijke onderdelen: Java script, CSS, afbeeldingen enzovoort (maar niet asynchroon geladen gegevens) lang. Stel een [beschikbaarheids test](./monitor-web-app-availability.md)in en zorg ervoor dat u de optie voor het laden van afhankelijke onderdelen hebt ingesteld. Wanneer u een aantal resultaten krijgt, opent u de details van een resultaat en vouwt u het uit om de laad tijden van verschillende bestanden weer te geven.
 * De hoge **client verwerkings tijd** voor komt dat scripts langzaam worden uitgevoerd. Als dit niet het geval is, kunt u een timing code toevoegen en de tijden in trackMetric-aanroepen verzenden.

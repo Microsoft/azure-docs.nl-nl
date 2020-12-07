@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/14/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: 85fd5a4246e891ef6640438b07e12a9c32ad12fa
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: ac75a5b0b59a06855b7ee88d971c269ca915e429
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92094442"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763160"
 ---
 # <a name="azure-digital-twins-high-availability-and-disaster-recovery"></a>Azure Digital Apparaatdubbels hoge Beschik baarheid en herstel na nood gevallen
 
@@ -28,7 +28,7 @@ U kunt ook het gedeelte [*Aanbevolen procedures*](#best-practices) voor algemene
 
 ## <a name="intra-region-ha"></a>Binnenste regio HA
  
-Azure Digital Apparaatdubbels voorziet in een binnenste regio HA door redundantie in de service te implementeren. **Voor de ontwikkel aars van een Azure Digital Apparaatdubbels-oplossing is geen extra werk vereist om deze HA-functies te benutten.** Hoewel Azure Digital Apparaatdubbels een redelijk hoge uptime biedt, kunnen tijdelijke fouten nog steeds worden verwacht, net zoals bij een gedistribueerd computing platform. Het juiste beleid voor opnieuw proberen moet zijn ingebouwd in de onderdelen die communiceren met een Cloud toepassing om te kunnen omgaan met tijdelijke fouten.
+Azure Digital Apparaatdubbels voorziet in een binnenste regio HA door redundantie in de service te implementeren. Dit wordt weer gegeven in de [service-Sla](https://azure.microsoft.com/support/legal/sla/digital-twins) voor de actieve tijds duur. **Voor de ontwikkel aars van een Azure Digital Apparaatdubbels-oplossing is geen extra werk vereist om deze HA-functies te benutten.** Hoewel Azure Digital Apparaatdubbels een redelijk hoge uptime biedt, kunnen tijdelijke fouten nog steeds worden verwacht, net zoals bij een gedistribueerd computing platform. Het juiste beleid voor opnieuw proberen moet zijn ingebouwd in de onderdelen die communiceren met een Cloud toepassing om te kunnen omgaan met tijdelijke fouten.
 
 ## <a name="cross-region-dr"></a>DR-regio tussen regio's
 

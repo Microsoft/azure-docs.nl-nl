@@ -6,12 +6,12 @@ ms.topic: conceptual
 description: Meer informatie over het configureren van Azure dev Spaces voor het gebruik van een aangepaste traefik ingress-controller en het configureren van HTTPS met deze ingangs controller
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, servicemesh, servicemeshroutering, kubectl, k8s
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: a3afa43556bbab29f69b496e46a5e19dc833cd3a
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: d19dc409f4d57a114b5937e6ce3718315e550a08
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96607106"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763584"
 ---
 # <a name="use-a-custom-traefik-ingress-controller-and-configure-https"></a>Een aangepaste traefik ingangs controller gebruiken en HTTPS configureren
 
@@ -47,7 +47,7 @@ aks-nodepool1-12345678-vmssfedcba   Ready    agent   13m    v1.14.1
 Voeg de [officiële stabiele helm-opslag plaats][helm-stable-repo]toe, die de helm-grafiek van de traefik ingress-controller bevat.
 
 ```console
-helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+helm repo add stable https://charts.helm.sh/stable
 ```
 
 Maak een Kubernetes-naam ruimte voor de traefik ingangs controller en installeer deze met behulp van `helm` .

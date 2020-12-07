@@ -8,12 +8,12 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: how-to
 ms.date: 11/10/2020
-ms.openlocfilehash: 5dbe161af172b65919328fca0b272f3b658f1b32
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: fe79797aeef2b0c148aece0319d6b340b663b184
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96600486"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763720"
 ---
 # <a name="how-to-use-postman-to-send-requests-to-the-azure-digital-twins-apis"></a>Postman gebruiken om aanvragen te verzenden naar de Azure Digital Apparaatdubbels-Api's
 
@@ -130,7 +130,7 @@ Als u een postman-aanvraag naar een van de Azure Digital Apparaatdubbels-Api's w
 
 Om door te gaan met een voorbeeld query, wordt in dit artikel de query-API (en de bijbehorende [referentie documentatie](/rest/api/digital-twins/dataplane/query/querytwins)) gebruikt om een query uit te voeren voor alle digitale apparaatdubbels in een exemplaar.
 
-1. Haal de aanvraag-URL en het type van de referentie documentatie op. Dit is een *bericht `https://digitaltwins-name.digitaltwins.azure.net/query?api-version=2020-10-31`* voor de query-API.
+1. Haal de aanvraag-URL en het type van de referentie documentatie op. Voor de query-API is dit momenteel *een `https://digitaltwins-hostname/query?api-version=2020-10-31` bericht*.
 1. Stel in postman het type voor de aanvraag in en voer de aanvraag-URL in, waarbij tijdelijke aanduidingen in de URL worden ingevuld zoals vereist. Hier gebruikt u de **hostnaam** van uw exemplaar in het gedeelte [*vereisten*](#prerequisites) .
     
    :::image type="content" source="media/how-to-use-postman/postman-request-url.png" alt-text="In de details van de nieuwe aanvraag is de query-URL uit de referentie documentatie ingevuld in het vak aanvraag-URL." lightbox="media/how-to-use-postman/postman-request-url.png":::

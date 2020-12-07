@@ -9,12 +9,12 @@ ms.date: 04/26/2019
 ms.topic: how-to
 ms.custom: devx-track-azurecli
 manager: carmonm
-ms.openlocfilehash: 3c5e19a948298dead5ab3fc1183fb11b09acf455
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 2388d4be0f7d51f9d5897998049b445595648c0a
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91976127"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763975"
 ---
 # <a name="run-powershell-scripts-in-your-windows-vm-by-using-run-command"></a>Power shell-scripts uitvoeren in uw Windows-VM met behulp van de opdracht uitvoeren
 
@@ -85,7 +85,7 @@ Ga naar een virtuele machine in de [Azure Portal](https://portal.azure.com) en s
 
 ![Lijst met opdrachten](./media/run-command/run-command-list.png)
 
-Kies een opdracht die moet worden uitgevoerd. Sommige van de opdrachten hebben mogelijk optionele of vereiste invoer parameters. Voor deze opdrachten worden de para meters als tekst velden weer gegeven, zodat u de invoer waarden kunt opgeven. Voor elke opdracht kunt u het script bekijken dat wordt uitgevoerd door een uitgebreid **weergave script**uit te voeren. **RunPowerShellScript** wijkt af van de andere opdrachten, omdat u hiermee uw eigen aangepaste script kunt opgeven.
+Kies een opdracht die moet worden uitgevoerd. Sommige van de opdrachten hebben mogelijk optionele of vereiste invoer parameters. Voor deze opdrachten worden de para meters als tekst velden weer gegeven, zodat u de invoer waarden kunt opgeven. Voor elke opdracht kunt u het script bekijken dat wordt uitgevoerd door een uitgebreid **weergave script** uit te voeren. **RunPowerShellScript** wijkt af van de andere opdrachten, omdat u hiermee uw eigen aangepaste script kunt opgeven.
 
 > [!NOTE]
 > De ingebouwde opdrachten kunnen niet worden bewerkt.
@@ -104,7 +104,7 @@ Invoke-AzVMRunCommand -ResourceGroupName '<myResourceGroup>' -Name '<myVMName>' 
 
 ## <a name="limiting-access-to-run-command"></a>Toegang beperken tot de opdracht uitvoeren
 
-Voor het weer geven van de uitvoerings opdrachten of het weer geven van de details van een opdracht is de `Microsoft.Compute/locations/runCommands/read` machtiging vereist. De ingebouwde rol [lezer](../../role-based-access-control/built-in-roles.md#reader) en hogere niveaus hebben deze machtiging.
+Voor het weer geven van de uitvoerings opdrachten of het weer geven van de details van een opdracht is de `Microsoft.Compute/locations/runCommands/read` machtiging vereist voor het abonnements niveau. De ingebouwde rol [lezer](../../role-based-access-control/built-in-roles.md#reader) en hogere niveaus hebben deze machtiging.
 
 Voor het uitvoeren van een opdracht is de `Microsoft.Compute/virtualMachines/runCommand/action` machtiging vereist. De rol [Inzender voor virtuele machines](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor) en hogere niveaus hebben deze machtiging.
 

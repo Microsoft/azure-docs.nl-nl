@@ -4,12 +4,12 @@ description: Gebruik de Ethereum Block Chain-connector met Azure Logic Apps om s
 ms.date: 08/31/2020
 ms.topic: how-to
 ms.reviewer: caleteet
-ms.openlocfilehash: 4364d2f616c8eaadedf12baf4bf77810eec69fdb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 411337908553e58c252a0ed1a42d17f76195c720
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89230531"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763788"
 ---
 # <a name="use-the-ethereum-blockchain-connector-with-azure-logic-apps"></a>De Ethereum Block Chain-connector gebruiken met Azure Logic Apps
 
@@ -25,7 +25,7 @@ Gebruik de [Ethereum Block Chain-connector](/connectors/blockchainethereum/) met
 Azure Logic Apps helpt u bij het plannen en automatiseren van bedrijfsprocessen en werkstromen wanneer u systemen en services moet integreren. Eerst maakt u een logica die gebruikmaakt van de Ethereum Block Chain-connector.
 
 1. Selecteer in [Azure Portal](https://portal.azure.com)**Een resource maken** > **Integratie** > **Logische app**.
-1. Geef onder **logische app maken**Details op over waar u uw logische app maakt. Selecteer **Maken** als u klaar bent.
+1. Geef onder **logische app maken** Details op over waar u uw logische app maakt. Selecteer **Maken** als u klaar bent.
 
     Zie [Automatische werkstromen maken met Azure Logic Apps](../../logic-apps/quickstart-create-first-logic-app-workflow.md) voor meer informatie over het maken van logische apps.
 
@@ -109,7 +109,7 @@ Met de volgende stappen wordt bijvoorbeeld een op REST gebaseerde micro service 
     ![Venster Visual Studio code met de selectie micro Services voor slimme contracten genereren](./media/ethereum-logic-app/generate-logic-app.png)
 
 1. Selecteer in het opdracht palet **Logic app**.
-1. Voer het **contract adres**in. Zie [het contract adres ophalen](#get-the-contract-address)voor meer informatie.
+1. Voer het **contract adres** in. Zie [het contract adres ophalen](#get-the-contract-address)voor meer informatie.
 1. Selecteer het Azure-abonnement en de resource groep voor de logische app.
 
     De configuratie van de logische app en de code bestanden worden gegenereerd in de **generatedLogicApp** -map.
@@ -182,7 +182,7 @@ Het RPC-eindpunt adres van de Azure Block Chain-service is vereist om verbinding
 
     ![Pagina transactie knooppunten met de (standaard knooppunt) selectie](./media/ethereum-logic-app/transaction-nodes.png)
 
-1. Selecteer **Connection strings**  >  **toegangs sleutels**voor verbindings reeksen.
+1. Selecteer **Connection strings**  >  **toegangs sleutels** voor verbindings reeksen.
 1. Kopieer het eindpunt adres van **https (toegangs sleutel 1)** of **https (toegangs sleutel 2)**.
 
     ![Azure Portal met de connection string toegangs sleutels](./media/ethereum-logic-app/connection-string.png)
@@ -194,7 +194,7 @@ Het RPC-eindpunt adres van de Azure Block Chain-service is vereist om verbinding
 U kunt de persoonlijke sleutel van het Ethereum-account gebruiken om te verifiëren bij het verzenden van een trans actie naar de Block chain. De open bare en persoonlijke sleutels van uw Ethereum-account worden gegenereerd op basis van een webinstructie van 12 woorden. De Azure Block Chain Development Kit voor Ethereum genereert een instructie wanneer u verbinding maakt met een Azure Block Chain Service consortium-lid. U kunt het eindpunt adres ophalen met de uitbrei ding Development Kit.
 
 1. Open in Visual Studio code het opdracht palet (F1).
-1. Selecteer **Azure Block chain: persoonlijke sleutel ophalen**.
+1. Selecteer **Block chain: persoonlijke sleutel ophalen**.
 1. Selecteer de door u opgeslagen instructie wanneer u verbinding maakt met het consortium.
 
     ![Opdracht palet met een optie voor het selecteren van de instructie](./media/ethereum-logic-app/private-key.png)

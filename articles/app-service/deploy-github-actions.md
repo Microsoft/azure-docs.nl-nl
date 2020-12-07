@@ -7,12 +7,12 @@ ms.date: 09/14/2020
 ms.author: jafreebe
 ms.reviewer: ushan
 ms.custom: devx-track-python, github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: e2432ca4cecb3c36d2fae19907c1ad17d9ef2505
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 16a21acabfd199ba16068e507919b564f01a76d5
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94833500"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96763907"
 ---
 # <a name="deploy-to-app-service-using-github-actions"></a>Implementeren naar App Service met behulp van GitHub-acties
 
@@ -21,7 +21,7 @@ Aan de slag met [github-acties](https://help.github.com/en/articles/about-github
 ## <a name="prerequisites"></a>Vereisten 
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-- Een GitHub-account. Als u er nog geen hebt, kunt u zich [gratis](https://github.com/join)aanmelden.  
+- Een GitHub-account. Als u geen account hebt, kunt u zich registreren voor een [gratis](https://github.com/join) account.  
 - Een werkende Azure App Service-app. 
     - .NET: [een ASP.net core-web-app maken in azure](quickstart-dotnetcore.md)
     - ASP.NET: [een ASP.NET Framework-web-app maken in azure](quickstart-dotnet-framework.md)
@@ -31,7 +31,7 @@ Aan de slag met [github-acties](https://help.github.com/en/articles/about-github
 
 ## <a name="workflow-file-overview"></a>Overzicht van werkstroom bestand
 
-Een werk stroom wordt gedefinieerd door een YAML-bestand (. yml) in het `/.github/workflows/` pad in uw opslag plaats. Deze definitie bevat de verschillende stappen en parameters die deel uitmaken van de werkstroom.
+Een werkstroom wordt gedefinieerd door een YAML-bestand (.yml) in het pad `/.github/workflows/` in uw opslagplaats. Deze definitie bevat de verschillende stappen en parameters die deel uitmaken van de werkstroom.
 
 Het bestand heeft drie secties:
 
@@ -55,7 +55,7 @@ U kunt snel aan de slag met GitHub-acties met behulp van het App Service Deploym
 
 Hiermee wordt het werk stroom bestand door doorgevoerd naar de opslag plaats. De werk stroom voor het maken en implementeren van uw app wordt onmiddellijk gestart.
 
-## <a name="set-up-a-work-manually"></a>Hand matig een werk instellen
+## <a name="set-up-a-workflow-manually"></a>Een werk stroom hand matig instellen
 
 U kunt ook een werk stroom implementeren zonder het implementatie centrum te gebruiken. Hiervoor moet u eerst implementatie referenties genereren. 
 
@@ -88,7 +88,7 @@ az ad sp create-for-rbac --name "myApp" --role contributor \
                             --sdk-auth
 ```
 
-In het bovenstaande voor beeld vervangt u de tijdelijke aanduidingen door de abonnements-ID, naam van de resource groep en de naam van de app. De uitvoer is een JSON-object met de roltoewijzings referenties die toegang bieden tot uw App Service-app, vergelijkbaar met hieronder. Kopieer dit JSON-object voor later.
+In het bovenstaande voor beeld vervangt u de tijdelijke aanduidingen door de abonnements-ID, naam van de resource groep en de naam van de app. De uitvoer is een JSON-object met de roltoewijzingsreferenties die toegang bieden tot uw App Service-app, vergelijkbaar met hieronder. Kopieer dit JSON-object voor later gebruik.
 
 ```output 
   {

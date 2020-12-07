@@ -4,12 +4,12 @@ description: Bewaak ASP.NET Core webtoepassingen voor Beschik baarheid, prestati
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 04/30/2020
-ms.openlocfilehash: 404e820168c64bd47b6e94598ad5bb13faf32a86
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 8505e67e3db7460308d208ce4f83d29a1fb4d862
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/07/2020
-ms.locfileid: "96751339"
+ms.locfileid: "96763193"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights voor ASP.NET Core toepassingen
 
@@ -142,7 +142,7 @@ De afhankelijkheids verzameling is standaard ingeschakeld. In [Dit](asp-net-depe
 
 ### <a name="performance-counters"></a>Prestatiemeteritems
 
-De ondersteuning voor [prestatie meter items](./web-monitor-performance.md) in ASP.net Core is beperkt:
+De ondersteuning voor [prestatie meter items](./performance-counters.md) in ASP.net Core is beperkt:
 
 * Met SDK-versies 2.4.1 en hoger worden prestatie meter items verzameld als de toepassing wordt uitgevoerd in azure Web Apps (Windows).
 * Met SDK-versies 2.7.1 en hoger worden prestatie meter items verzameld als de toepassing wordt uitgevoerd in Windows en doelen `NETSTANDARD2.0` of hoger.

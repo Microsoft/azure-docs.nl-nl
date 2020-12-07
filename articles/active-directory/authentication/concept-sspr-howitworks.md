@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 07/14/2020
+ms.date: 12/07/2020
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eaa8b586b7d1ae073d0746569d61de837eec3b7d
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 620b696be0b9a06cf0d68145b06e3cacf2bedff2
+ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96743867"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96762547"
 ---
 # <a name="how-it-works-azure-ad-self-service-password-reset"></a>How it works: Azure AD self-service password reset (Hoe het werkt: selfservice voor wachtwoordherstel in Azure AD)
 
@@ -69,11 +69,8 @@ Voltooi de volgende zelf studie om aan de slag te gaan met SSPR:
 > [!div class="nextstepaction"]
 > [Zelf studie: Self-service voor wacht woord opnieuw instellen inschakelen (SSPR)](tutorial-enable-sspr.md)
 
-## <a name="registration-options"></a>Registratie opties
 
-Voordat gebruikers hun wacht woord opnieuw kunnen instellen of wijzigen met behulp van SSPR, moeten ze zich registreren en de te gebruiken verificatie methoden. Zoals vermeld in de vorige sectie, moet een gebruiker zijn geregistreerd voor SSPR en moeten er een juiste licentie worden toegepast.
-
-### <a name="require-users-to-register-when-they-sign-in"></a>Vereisen dat gebruikers zich registreren wanneer ze zich aanmelden
+## <a name="require-users-to-register-when-they-sign-in"></a>Vereisen dat gebruikers zich registreren wanneer ze zich aanmelden
 
 U kunt de optie inschakelen om een gebruiker verplicht te maken de SSPR-registratie te volt ooien als deze zich aanmeldt bij alle toepassingen die gebruikmaken van Azure AD. Deze werk stroom omvat de volgende toepassingen:
 
@@ -92,7 +89,7 @@ Wanneer u geen registratie nodig hebt, wordt gebruikers niet gevraagd tijdens he
 >
 > Deze interrupt die moet worden geregistreerd voor SSPR, verbreekt de verbinding van de gebruiker niet als ze al zijn aangemeld.
 
-### <a name="set-the-number-of-days-before-users-are-asked-to-reconfirm-their-authentication-information"></a>Het aantal dagen instellen waarna gebruikers wordt gevraagd om de verificatie gegevens opnieuw te bevestigen
+## <a name="set-the-number-of-days-before-users-are-asked-to-reconfirm-their-authentication-information"></a>Het aantal dagen instellen waarna gebruikers wordt gevraagd om de verificatie gegevens opnieuw te bevestigen
 
 Om ervoor te zorgen dat de verificatie methoden juist zijn wanneer ze nodig zijn om het wacht woord opnieuw in te stellen of te wijzigen, kunt u vereisen dat gebruikers hun informatie over de geregistreerde gegevens na een bepaalde periode bevestigen. Deze optie is alleen beschikbaar als u de optie **gebruikers moeten zich registreren wanneer ze zich aanmelden** inschakelen.
 
@@ -106,7 +103,7 @@ De volgende verificatie methoden zijn beschikbaar voor SSPR:
 
 * Meldingen via mobiele app
 * Code van mobiele app
-* E-mail
+* Email
 * Mobiele telefoon
 * Zakelijke telefoon
 * Beveiligingsvragen

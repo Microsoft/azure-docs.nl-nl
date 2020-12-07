@@ -1,0 +1,75 @@
+### YamlMime:Landing
+title: Documentatie voor Azure Data Box Gateway - Online overdracht
+summary: Gebruik Azure Data Box Gateway-apparaten voor gegevensoverdracht over het netwerk voor cloudarchivering, herstel na noodgevallen of om gegevens te verwerken op cloudschaal.
+metadata:
+  title: Documentatie voor Azure Data Box Gateway - Online overdracht
+  description: Documentatie over Data Box Gateway Edge voor gegevensoverdracht met hoge prestaties via het netwerk naar Azure.
+  services: databox
+  ms.service: databox
+  ms.subservice: gateway
+  ms.topic: landing-page
+  ms.collection: collection
+  author: v-dalc
+  ms.author: alkohli
+  ms.date: 10/29/2020
+  ms.openlocfilehash: 811d0555e6fd39f372b4742501a3114bbc9a25b4
+  ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+  ms.translationtype: HT
+  ms.contentlocale: nl-NL
+  ms.lasthandoff: 12/03/2020
+  ms.locfileid: "96579922"
+landingContent:
+- title: Over Data Box Gateway
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Wat is Data Box Gateway?
+      url: data-box-gateway-overview.md
+  - linkListType: architecture
+    links:
+    - text: Opties voor gegevensoverdracht kiezen
+      url: /azure/storage/common/storage-choose-data-transfer-solution
+    - text: Netwerk- of offline-overdracht gebruiken
+      url: /azure/storage/common/storage-solution-large-dataset-low-network#offline-transfer-or-network-transfer
+  - linkListType: whats-new
+    links:
+    - text: 2007-releaseopmerkingen - Actueel
+      url: data-box-gateway-2007-release-notes.md
+- title: Vereisten en limieten
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Vereisten
+      url: data-box-gateway-system-requirements.md
+    - text: Limieten
+      url: data-box-gateway-limits.md
+- title: Implementeren
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Implementatie voorbereiden
+      url: data-box-gateway-deploy-prep.md
+    - text: Inrichten in Hyper-V
+      url: data-box-gateway-deploy-provision-hyperv.md
+    - text: Verbinden, instellen, activeren
+      url: data-box-gateway-deploy-connect-setup-activate.md
+    - text: Gegevens overdragen
+      url: data-box-gateway-deploy-add-shares.md
+- title: Beheren
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Shares beheren
+      url: data-box-gateway-manage-shares.md
+    - text: Beheren met behulp van PowerShell
+      url: data-box-gateway-connect-powershell-interface.md
+- title: Problemen oplossen
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Problemen oplossen
+      url: data-box-gateway-troubleshoot.md
+    - text: Bijhouden
+      url: data-box-gateway-monitor.md
+    - text: Ondersteuningsticket openen
+      url: ../databox-online/azure-stack-edge-contact-microsoft-support.md

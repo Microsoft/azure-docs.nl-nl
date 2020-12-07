@@ -1,0 +1,116 @@
+### YamlMime:Landing
+title: Documentatie voor Azure Purview
+summary: Meer informatie over hoe u Azure Purview gebruikt, zodat uw organisatie gegevensbronnen vindt, begrijpt en gebruikt.
+metadata:
+  title: Documentatie voor Azure Purview
+  description: Meer informatie over hoe u Azure Purview gebruikt, waar uw organisatie gegevensbronnen vindt, begrijpt en gebruikt. Zelfstudies, REST-API-referentiemateriaal en andere documentatie laten zien hoe u uw gegevensopslagplaats kunt plannen en configureren, waar gegevensgebruikers beschikbare gegevensbronnen kunnen vinden en kennis kunnen opdoen die ter beschikking is gesteld door deskundigen.
+  ms.service: purview
+  ms.topic: landing-page
+  author: hrasheed-msft
+  ms.author: hrasheed
+  ms.date: 11/29/2020
+  ms.openlocfilehash: 378a335653acf31275c312bcf4fa53b36bfa614e
+  ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+  ms.translationtype: HT
+  ms.contentlocale: nl-NL
+  ms.lasthandoff: 12/03/2020
+  ms.locfileid: "96549419"
+landingContent:
+- title: Over Azure Purview
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Wat is Azure Purview?
+      url: overview.md
+  - linkListType: concept
+    links:
+    - text: Aanbevolen best practices voor implementatie
+      url: deployment-best-practices.md
+    - text: Data Catalog-machtigingen
+      url: catalog-permissions.md
+    - text: Ondersteunde gegevensbronnen en bestandstypen
+      url: sources-and-scans.md
+- title: Aan de slag
+  linkLists:
+  - linkListType: quickstart
+    links:
+    - text: Een Purview-account maken - Portal
+      url: create-catalog-portal.md
+    - text: Een Purview-account maken - PowerShell/CLI
+      url: create-catalog-powershell.md
+  - linkListType: tutorial
+    links:
+    - text: Starterskist downloaden
+      url: https://download.microsoft.com/download/9/7/9/979db3b1-0916-4997-a7fb-24e3d8f83174/PurviewStarterKitV4.zip
+    - text: Starterskit uitvoeren en gegevens scannen
+      url: tutorial-scan-data.md
+    - text: Door Purview-startpagina en -zoekopdrachten navigeren
+      url: tutorial-asset-search.md
+    - text: Door assets bladeren en gegevensherkomst bekijken
+      url: tutorial-browse-and-view-lineage.md
+    - text: Resourcesets, assets, schema's en classificaties verkennen
+      url: tutorial-schemas-and-classifications.md
+    - text: Woordenlijsttermen maken
+      url: tutorial-import-create-glossary-terms.md
+- title: Azure-gegevensbronnen scannen
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Starterskit uitvoeren en gegevens scannen
+      url: tutorial-scan-data.md
+  - linkListType: how-to-guide
+    links:
+    - text: Azure SQL Database scannen
+      url: register-scan-azure-sql-database.md
+    - text: Azure Data Lake Storage Gen 2 scannen
+      url: register-scan-adls-gen2.md
+    - text: Azure Cosmos DB scannen
+      url: register-scan-azure-cosmos-database.md
+    - text: Power BI-tenant
+      url: register-scan-power-bi-tenant.md
+    - text: Azure Blob Storage registreren en scannen
+      url: register-scan-azure-blob-storage-source.md
+- title: Niet-Azure-gegevensbronnen scannen
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: On-premises SQL-server scannen
+      url: register-scan-on-premises-sql-server.md
+- title: Meer informatie over uw gegevens
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Asset Insights weergeven
+      url: asset-insights.md
+    - text: Woordenlijstinzichten weergeven
+      url: glossary-insights.md
+    - text: Scaninzichten weergeven
+      url: scan-insights.md
+    - text: Classificatie-inzichten weergeven
+      url: classification-insights.md
+- title: Gegevens cureren
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Resourcesets, assets, schema's en classificaties
+      url: tutorial-schemas-and-classifications.md
+    - text: Woordenlijsttermen
+      url: tutorial-import-create-glossary-terms.md
+  - linkListType: how-to-guide
+    links:
+    - text: Aangepaste classificaties en regels maken, bewerken en verwijderen
+      url: create-a-custom-classification-and-classification-rule.md
+    - text: Een woordenlijst maken, importeren en exporteren
+      url: how-to-create-import-export-glossary.md
+- title: Gegevens verkennen
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Bladeren en herkomst
+      url: tutorial-browse-and-view-lineage.md
+  - linkListType: how-to-guide
+    links:
+    - text: Bladeren op type asset
+      url: how-to-browse-catalog.md
+    - text: Zoeken naar assets, termen, annotaties en contacten
+      url: how-to-search-catalog.md

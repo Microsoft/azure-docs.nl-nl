@@ -54,12 +54,18 @@
     - name: Uw partner-ID koppelen
       displayName: 'partner earned credit, pec, mpn'
       href: ./how-to/partner-earned-credit.md
+    - name: Een delegatie bijwerken
+      displayName: upgrade
+      href: ./how-to/update-delegation.md
     - name: Toegang tot een delegatie verwijderen
       displayName: 'delete, undelegate'
       href: ./how-to/remove-delegation.md
     - name: Azure Arc-integratie
       displayName: 'server, kubernetes, hybrid, infrastructure'
       href: ./how-to/manage-hybrid-infrastructure-arc.md
+    - name: Azure Migrate-integratie
+      displayName: 'migration, project, on-prem'
+      href: ./how-to/migration-at-scale.md
     - name: Azure Monitor-integratie
       items:
         - name: Azure Monitor-logboeken op schaal gebruiken

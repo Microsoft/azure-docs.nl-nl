@@ -52,6 +52,8 @@
       items:
         - name: Transformaties
           href: how-to-transformation.md
+        - name: Inkomende synchronisatie met de MS Graph API
+          href: how-to-inbound-synch-ms-graph.md
         - name: Synchronisatie-API voor Azure AD
           href: /graph/api/resources/synchronization-overview
     - name: Problemen oplossen

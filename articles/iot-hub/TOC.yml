@@ -4,7 +4,7 @@
   items:
     - name: Wat is Azure IoT Hub?
       href: about-iot-hub.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Telemetrie verzenden
@@ -167,6 +167,12 @@
           href: iot-hub-devguide-sdks.md
         - name: MQTT-ondersteuning
           href: iot-hub-mqtt-support.md
+        - name: MQTT 5-ondersteuning (preview)
+          items:
+            - name: Overzicht van MQTT 5
+              href: iot-hub-mqtt-5.md
+            - name: MQTT 5 API-verwijzing
+              href: iot-hub-mqtt-5-reference.md
         - name: AMQP-ondersteuning
           href: iot-hub-amqp-support.md
         - name: Woordenlijst

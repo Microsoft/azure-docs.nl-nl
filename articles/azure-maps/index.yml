@@ -9,12 +9,12 @@ metadata:
   author: anastasia-ms
   ms.author: v-stharr
   ms.date: 1/15/2020
-  ms.openlocfilehash: 0038fff540df95f6c6e24275eb39ef6bc1ecbe75
-  ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+  ms.openlocfilehash: 49de6739fe4d084bc119ffeaa0ffb3e8156f935b
+  ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 11/26/2020
-  ms.locfileid: "96186317"
+  ms.lasthandoff: 12/03/2020
+  ms.locfileid: "96546298"
 landingContent:
 - title: Over Azure Maps
   linkLists:
@@ -172,6 +172,16 @@ landingContent:
       url: /rest/api/maps/traffic
     - text: Service voor tijdzones
       url: /rest/api/maps/timezone
+- title: Ontwikkelen met Elevation Service
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Verhogingsgegevens ophalen en gebruiken
+      url: how-to-request-elevation-data.md
+  - linkListType: reference
+    links:
+    - text: Elevation Service
+      url: /rest/api/maps/elevation/
 - title: Ruimtelijke analyse
   linkLists:
   - linkListType: concept

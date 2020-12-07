@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 10/07/2020
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: d04f689dec3a3c182c0da23007247c20c4f8063d
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 8573e45270dfd1ff984eae3dc5fbf1dc5f2fc6da
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94504387"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96600860"
 ---
 # <a name="always-on-availability-group-on-sql-server-on-azure-vms"></a>AlwaysOn-beschikbaarheidsgroep op SQL Server op Azure-VM's
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -37,9 +37,11 @@ In het volgende diagram ziet u een beschikbaarheidsgroep voor SQL Server op Azur
 
 ## <a name="vm-redundancy"></a>VM-redundantie 
 
-Om redundantie en de maximale beschikbaarheid te vergroten, moeten de SQL Server-VM's zich in dezelfde [beschikbaarheidsset](../../../virtual-machines/windows/tutorial-availability-sets.md#availability-set-overview) bevinden of in verschillende [beschikbaarheidszones](../../../availability-zones/az-overview.md).
+Om redundantie en de maximale beschikbaarheid te vergroten, moeten SQL Server-VM's zich in dezelfde [beschikbaarheidsset](../../../virtual-machines/windows/tutorial-availability-sets.md#availability-set-overview) bevinden of in verschillende [beschikbaarheidszones](../../../availability-zones/az-overview.md).
 
-Een beschikbaarheidsset is een groep resources die zodanig zijn geconfigureerd dat er nooit twee resources in dezelfde beschikbaarheidszone belanden. Dit voorkomt dat er tijdens implementatielanceringen meerdere resources in de groep worden beïnvloed. 
+Het plaatsen van een set VM's in dezelfde beschikbaarheidsset, beschermt deze tegen storingen in een datacentrum door apparatuuruitval (VM's binnen een beschikbaarheidsset delen geen resources) of updates (VM's binnen een beschikbaarheidsset worden niet op hetzelfde moment bijgewerkt). Beschikbaarheidszones beschermen tegen storingen in een heel datacentrum, waar elke zone een set datacentra binnen een regio vertegenwoordigt.  Door ervoor te zorgen dat resources in verschillende beschikbaarheidszones worden geplaatst, kan geen storing al uw VM's offline halen.
+
+Wanneer u Azure-VM's maakt, met u kiezen tussen het configureren van beschikbaarheidssets en beschikbaarheidszones.  Een Azure-VM kan niet in beide wordt geplaatst.
 
 
 ## <a name="connectivity"></a>Connectiviteit 

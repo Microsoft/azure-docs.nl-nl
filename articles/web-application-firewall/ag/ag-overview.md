@@ -5,15 +5,15 @@ description: Dit artikel geeft een overzicht van Web Application Firewall (WAF) 
 services: web-application-firewall
 author: vhorne
 ms.service: web-application-firewall
-ms.date: 09/16/2020
+ms.date: 12/04/2020
 ms.author: victorh
 ms.topic: conceptual
-ms.openlocfilehash: f15a739904c28361a60210a0cc4606c7048d0f53
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: 36f04b02774a01814811ea131388629de27e9f07
+ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96518971"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96621022"
 ---
 # <a name="what-is-azure-web-application-firewall-on-azure-application-gateway"></a>Wat is Azure Web Application Firewall voor Azure Application Gateway?
 
@@ -143,7 +143,7 @@ In de modus Anomaliescore wordt verkeer dat voldoet aan een regel niet onmiddell
 Als de anomaliescore een drempel van 5 heeft bereikt, wordt het verkeer geblokkeerd. Dus één overeenkomst met een regel van de ernst *Kritiek* is voldoende voor de Application Gateway WAF om een aanvraag te blokkeren, zelfs in de preventiemodus. Maar bij één overeenkomst met een regel met het ernstniveau *Waarschuwing*, wordt de score alleen met 3 verhoogd, wat niet voldoende is om het verkeer te blokkeren.
 
 > [!NOTE]
-> Het bericht dat wordt vastgelegd wanneer verkeer voldoet aan een WAF-regel bevat de actiewaarde 'Geblokkeerd'. Het verkeer wordt echter alleen daadwerkelijk geblokkeerd bij een anomaliescore van 5 of hoger.  
+> Het bericht dat wordt vastgelegd wanneer verkeer voldoet aan een WAF-regel bevat de actiewaarde 'Geblokkeerd'. Het verkeer wordt echter alleen daadwerkelijk geblokkeerd bij een anomaliescore van 5 of hoger. Raadpleeg [Problemen met Web Application Firewall (WAF) voor Azure Application Gateway oplossen](web-application-firewall-troubleshoot.md#understanding-waf-logs) voor meer informatie. 
 
 ### <a name="waf-monitoring"></a>Bewaking van WAF
 

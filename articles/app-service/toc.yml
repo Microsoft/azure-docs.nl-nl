@@ -223,6 +223,8 @@
               href: configure-authentication-provider-twitter.md
             - name: Verifiëren met een OpenID Connect-provider (Preview)
               href: configure-authentication-provider-openid-connect.md
+            - name: Verifiëren met Aanmelden met Apple (preview)
+              href: configure-authentication-provider-apple.md
         - name: Geavanceerde verificatie
           href: app-service-authentication-how-to.md
         - name: Toegang beperken

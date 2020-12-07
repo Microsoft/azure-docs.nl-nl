@@ -4,7 +4,7 @@
   items:
     - name: Wat is Azure Load Balancer?
       href: load-balancer-overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: Een openbare load balancer maken - Portal
       href: quickstart-load-balancer-standard-public-portal.md
@@ -61,7 +61,7 @@
           href: load-balancer-insights.md
         - name: Metrische en diagnostische gegevens voor een load balancer van het type Standard
           href: load-balancer-standard-diagnostics.md
-        - name: Azure Monitor-logboeken voor Basic Azure Load Balancer
+        - name: Azure Monitor-logboeken voor Load Balancer
           href: load-balancer-monitor-log.md
         - name: Metrische gegevens over load balancer ophalen met REST
           href: load-balancer-query-metrics-rest-api.md

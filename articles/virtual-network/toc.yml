@@ -4,7 +4,7 @@
   items:
     - name: Over Virtual Network
       href: virtual-networks-overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: Een virtueel netwerk maken - Portal
       href: quick-create-portal.md
@@ -71,12 +71,18 @@
           href: ../expressroute/cross-network-connectivity.md?toc=%2fazure%2fvirtual-network%2ftoc.json
         - name: Peering
           href: virtual-network-peering-overview.md
-    - name: Integratie voor Azure-services
+    - name: Azure-services integreren
       items:
-        - name: Service-eindpunten
-          href: virtual-network-service-endpoints-overview.md
+        - name: Overzicht
+          href: vnet-integration-for-azure-services.md
         - name: Een speciale service implementeren
           href: virtual-network-for-azure-services.md
+        - name: Private Link
+          href: ../private-link/private-link-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+        - name: Service-eindpunten
+          href: virtual-network-service-endpoints-overview.md
+        - name: Servicetags
+          href: service-tags-overview.md
     - name: IP-services
       items:
         - name: Openbare IP-adressen
@@ -99,6 +105,8 @@
           href: security-baseline.md
         - name: Virtual Network NAT-beveiligingsbasislijn
           href: nat-security-baseline.md
+        - name: Netwerkisolatie van Azure-services
+          href: vnet-integration-for-azure-services.md
         - name: Netwerkbeveiligingsgroepen
           items:
             - name: Overzicht

@@ -6,7 +6,7 @@
       href: intro-kubernetes.md
     - name: Oplossingsarchitecturen
       href: /azure/architecture/reference-architectures/containers/aks-start-here?bc=%2fazure%2faks%2fbreadcrumb%2ftoc.json&toc=%2fazure%2faks%2ftoc.json
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Een AKS-cluster implementeren
@@ -152,6 +152,8 @@
           href: node-updates-kured.md
         - name: Een AKS-cluster configureren
           href: cluster-configuration.md
+        - name: Aangepaste knooppuntconfiguratie (preview)
+          href: custom-node-configuration.md
         - name: ACR integreren met een AKS-cluster
           href: cluster-container-registry-integration.md
         - name: Virtuele knooppunten maken

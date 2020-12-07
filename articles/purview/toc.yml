@@ -1,0 +1,153 @@
+items:
+  - name: Documentatie voor Azure Purview
+    href: index.yml
+  - name: Overzicht
+    items:
+      - name: Wat is Azure Purview?
+        href: overview.md
+  - name: Snelstartgidsen
+    expanded: true
+    items:
+      - name: Een Purview-account maken - Azure Portal
+        href: create-catalog-portal.md
+      - name: Een Purview-account maken - Azure PowerShell
+        href: create-catalog-powershell.md
+  - name: Zelfstudies
+    items:
+      - name: Starterskit
+        items:
+          - name: Gegevens scannen
+            href: tutorial-scan-data.md
+          - name: Door startpagina en zoekopdrachten navigeren
+            href: tutorial-asset-search.md
+          - name: Door assets bladeren en gegevensherkomst bekijken
+            href: tutorial-browse-and-view-lineage.md
+          - name: 'Resourcesets, assets, schema''s en classificaties verkennen'
+            href: tutorial-schemas-and-classifications.md
+          - name: Woordenlijsttermen maken
+            href: tutorial-import-create-glossary-terms.md
+      - name: Een on-premises SQL-server registreren en scannen
+        href: register-scan-on-premises-sql-server.md
+  - name: Concepten
+    items:
+      - name: Purview Studio gebruiken
+        href: use-purview-studio.md
+      - name: Aanbevolen best practices voor implementatie
+        href: deployment-best-practices.md
+      - name: Azure Purview-limieten
+        href: how-to-manage-quotas.md
+      - name: Hoe scans verwijderde assets detecteren
+        href: concept-detect-deleted-assets.md
+      - name: Informatie over resourcesets
+        href: concept-resource-sets.md
+      - name: Gegevensherkomst
+        href: concept-data-lineage.md
+      - name: Ondersteunde gegevensbronnen en bestandstypen
+        href: sources-and-scans.md
+      - name: Catalogusmachtigingen
+        href: catalog-permissions.md
+      - name: Cataloguszoekopdrachten
+        href: concept-search.md
+      - name: Zakelijke woordenlijst
+        href: concept-business-glossary.md
+      - name: Gegevensinzichten
+        href: concept-insights.md
+      - name: Veelgestelde vragen
+        href: frequently-asked-questions.md
+  - name: Instructiegidsen
+    items:
+      - name: Registreren en scannen
+        items:
+          - name: Referenties beheren
+            href: manage-credentials.md
+            displayName: Create and manage Credentials
+          - name: Een scanregelset maken
+            href: create-a-scan-rule-set.md
+          - name: Integratieruntime beheren
+            href: manage-integration-runtimes.md
+          - name: Verbindingsproblemen oplossen
+            href: troubleshoot-connections.md
+          - name: Bronnen
+            items:
+              - name: Gegevensbronnen beheren
+                href: manage-data-sources.md
+              - name: Overzicht van Purview-connectors
+                href: purview-connector-overview.md
+              - name: Azure Blob Storage
+                href: register-scan-azure-blob-storage-source.md
+                displayName: Register and scan azure blob storage
+              - name: Azure Cosmos DB
+                href: register-scan-azure-cosmos-database.md
+                displayName: Register and scan Azure Cosmos DB
+              - name: Azure Data Explorer
+                href: register-scan-azure-data-explorer.md
+                displayName: Register and scan Azure Data Explorer Kusto
+              - name: Azure Data Lake Storage Gen 1
+                href: register-scan-adls-gen1.md
+                displayName: Register and scan Azure Data Lake Storage Gen 1 ADLS
+              - name: Azure Data Lake Storage Gen 2
+                href: register-scan-adls-gen2.md
+                displayName: Register and scan Azure Data Lake Storage Gen 2 ADLS
+              - name: Azure SQL Database
+                href: register-scan-azure-sql-database.md
+                displayName: Register and scan Azure SQL DB
+              - name: Azure SQL DB met een firewall
+                href: scan-sqlresource-firewall.md
+                displayName: Register and scan Azure SQL DB with a firewall
+              - name: Beheerd exemplaar van Azure SQL Database
+                href: register-scan-azure-sql-database-managed-instance.md
+                displayName: Register and scan Azure SQL DB Managed Instance
+              - name: Azure Synapse Analytics
+                href: register-scan-azure-synapse-analytics.md
+              - name: Power BI-tenant - Portal
+                href: register-scan-power-bi-tenant.md
+              - name: Power BI-tenant - PowerShell
+                href: powershell-register-scan-power-bi.md
+              - name: On-premises SQL-server
+                href: register-scan-on-premises-sql-server.md
+      - name: Zakelijke woordenlijst
+        items:
+          - name: 'Woordenlijsttermen maken, importeren en exporteren'
+            href: how-to-create-import-export-glossary.md
+          - name: Termsjablonen beheren
+            href: how-to-manage-term-templates.md
+      - name: Classificeren
+        items:
+          - name: Aangepaste classificatie en classificatieregel maken
+            href: create-a-custom-classification-and-classification-rule.md
+          - name: Classificaties toepassen
+            href: apply-classifications.md
+          - name: Uw inhoud automatisch labelen
+            href: create-sensitivity-label.md
+      - name: Zoeken en bladeren
+        items:
+          - name: Door Data Catalog bladen
+            href: how-to-browse-catalog.md
+          - name: Data Catalog doorzoeken
+            href: how-to-search-catalog.md
+      - name: Herkomst
+        items:
+          - name: Gebruikershandleiding voor gegevensherkomst
+            href: catalog-lineage-user-guide.md
+          - name: Azure Data Factory-gegevensherkomst
+            href: how-to-link-azure-data-factory.md
+          - name: Azure Data Share-gegevensherkomst
+            href: how-to-link-azure-data-share.md
+      - name: Inzichten
+        items:
+          - name: Asset Insights weergeven
+            href: asset-insights.md
+          - name: Woordenlijstinzichten weergeven
+            href: glossary-insights.md
+          - name: Scaninzichten weergeven
+            href: scan-insights.md
+          - name: Classificatie-inzichten weergeven
+            href: classification-insights.md
+          - name: Inzicht in gevoeligheidslabels weergeven
+            href: sensitivity-insights.md
+          - name: Inzichten in bestandsextensies weergeven
+            href: file-extension-insights.md
+  - name: Naslaginformatie
+    items:
+      - name: Ondersteunde classificaties
+        href: supported-classifications.md

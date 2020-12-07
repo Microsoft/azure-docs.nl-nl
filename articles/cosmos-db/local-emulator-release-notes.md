@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: milismsft
 ms.author: adrianmi
 ms.date: 09/21/2020
-ms.openlocfilehash: 42259b36f1a9bfe243df47cc08b33fe8c46d819d
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 5d105ad4c2aff03dae52b340037e4c193bf82ca1
+ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96493063"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96608432"
 ---
 # <a name="azure-cosmos-db-emulator---release-notes-and-download-information"></a>Azure Cosmos DB-emulator - opmerkingen bij de release en downloadgegevens
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -26,6 +26,12 @@ Dit artikel bevat de opmerkingen bij de release voor Azure Cosmos DB-emulator me
 |**Aan de slag**|[Lokaal ontwikkelen met Azure Cosmos DB-emulator](local-emulator.md)|
 
 ## <a name="release-notes"></a>Releaseopmerkingen
+
+### <a name="2119-3-december-2020"></a>2.11.9 (3 december 2020)
+
+ - In deze release wordt een aantal problemen met de Azure Cosmos DB Emulator-functionaliteit aangepakt, naast de algemene inhoudsupdate waarin de nieuwste functies en verbeteringen in Azure Cosmos DB zijn omvat:
+ * Een oplossing voor een probleem waarbij grote documentpayloadaanvragen mislukken bij gebruik van de directe modus en Java-clienttoepassingen.
+ * Een oplossing voor een connectiviteitsprobleem met MongoDB-eindpuntversie 3.6 wanneer deze is gericht op toepassingen die zijn gebaseerd op .NET.
 
 ### <a name="2118-6-november-2020"></a>2.11.8 (6 november 2020)
 

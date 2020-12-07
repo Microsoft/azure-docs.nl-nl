@@ -4,7 +4,7 @@
   items:
     - name: Wat is Azure Maps?
       href: about-azure-maps.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Een webtoepassing maken
@@ -134,6 +134,8 @@
           href: how-to-request-real-time-data.md
         - name: Realtime en voorspelde weersgegevens opvragen
           href: how-to-request-weather-data.md
+        - name: Verhogingsgegevens aanvragen
+          href: how-to-request-elevation-data.md
     - name: Ontwikkelen met de Web SDK
       items:
         - name: Kaartbesturingselement

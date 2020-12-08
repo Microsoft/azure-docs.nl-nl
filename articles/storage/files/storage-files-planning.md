@@ -8,12 +8,12 @@ ms.date: 09/15/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 650ee1fc9e0e1941a7a3655bca1c75950ab878dd
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 98cc72f85499481ba3841ce82fe307740d5e9fab
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492111"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96842700"
 ---
 # <a name="planning-for-an-azure-files-deployment"></a>Planning voor de implementatie van Azure Files
 [Azure files](storage-files-introduction.md) kunnen op twee manieren worden geïmplementeerd: door de Serverloze Azure-bestands shares rechtstreeks te koppelen of door Azure-bestands shares on-premises in de cache op te maken met behulp van Azure file sync. Welke implementatie optie u kiest, wijzigt de dingen die u moet overwegen bij het plannen van uw implementatie. 
@@ -114,23 +114,6 @@ Zie [Advanced Threat Protection voor Azure Storage](../common/azure-defender-sto
 
 ## <a name="storage-tiers"></a>Opslaglagen
 [!INCLUDE [storage-files-tiers-overview](../../../includes/storage-files-tiers-overview.md)]
-
-Over het algemeen zijn Azure Files functies en interoperabiliteit met andere services hetzelfde als die van Premium-bestands shares en standaard bestands shares (inclusief geoptimaliseerde, hot en coole bestands shares). er zijn echter enkele belang rijke verschillen:
-- **Factureringsmodel**
-    - Premium-bestands shares worden gefactureerd met behulp van een ingericht facturerings model, wat betekent dat u vaste prijs betaalt voor de opslag ruimte die u in plaats van de hoeveelheid opslag ruimte die u gebruikt. Er zijn geen extra kosten voor trans acties en meta gegevens op rest.
-    - Standaard bestands shares worden gefactureerd op basis van een betalen per gebruik-model, dat een basis kosten voor opslag bevat voor de hoeveelheid opslag die u daad werkelijk verbruikt en vervolgens een extra transactie kosten op basis van hoe u de share gebruikt. Bij standaard bestands shares neemt uw factuur toe als u de Azure-bestands share gebruikt (lezen/schrijven/koppelen).
-- **Redundantie opties**
-    - Premium-bestands shares zijn alleen beschikbaar voor lokaal redundante (LRS) en zone redundante opslag (ZRS).
-    - Standaard bestands shares zijn beschikbaar voor lokaal redundante, zone redundante, geo-redundante (GRS) en geo-zone redundante opslag (GZRS).
-- **Maximale grootte van bestands share**
-    - Premium-bestands shares kunnen Maxi maal 100 TiB worden ingericht zonder verdere werkzaamheden.
-    - Standaard kunnen standaard bestands shares slechts tot 5 TiB groot zijn, hoewel de limiet voor delen kan worden verhoogd tot 100 TiB door u aan te melden bij de functie vlag voor het opslag account voor *grote bestands shares* . Standaard bestands shares kunnen Maxi maal 100 TiB zijn voor lokaal redundante of zone redundante opslag accounts. Zie [grote bestands shares inschakelen en maken](./storage-files-how-to-create-large-file-share.md)voor meer informatie over het verhogen van de grootte van de bestands share.
-- **Regionale Beschik baarheid**
-    - Premium-bestands shares zijn beschikbaar in de meeste Azure-regio's, met uitzonde ring van enkele regio's. Zone redundante ondersteuning is beschikbaar in een subset van regio's. Zie de pagina [producten beschikbaar per regio](https://azure.microsoft.com/global-infrastructure/services/?products=storage) voor Azure als u wilt weten of Premium-bestands shares op dit moment beschikbaar zijn in uw regio. Zie [zone-redundante opslag](../common/storage-redundancy.md#zone-redundant-storage)als u wilt weten welke regio's ZRS ondersteunen. Vul deze [enquête](https://aka.ms/pfsfeedback)in om u te helpen bij het bepalen van de prioriteit van nieuwe regio's en de functies van de Premium-laag.
-    - Standaard bestands shares zijn beschikbaar in elke Azure-regio.
-- Azure Kubernetes service (AKS) biedt ondersteuning voor Premium-bestands shares in versie 1,13 en hoger.
-
-Als een bestands share is gemaakt als een Premium-of een standaard bestands share, kunt u deze niet automatisch converteren naar de andere laag. Als u wilt overschakelen naar de andere laag, moet u een nieuwe bestands share in die laag maken en de gegevens van de oorspronkelijke share hand matig kopiëren naar de nieuwe share die u hebt gemaakt. `robocopy`U kunt het beste voor Windows of `rsync` voor MacOS en Linux gebruiken om die kopie uit te voeren.
 
 ### <a name="understanding-provisioning-for-premium-file-shares"></a>Informatie over het inrichten voor Premium-bestands shares
 Premium-bestands shares worden ingericht op basis van een vaste GiB/IOPS/doorvoer ratio. De grootte van alle shares wordt Mini maal volgens basis lijn/door Voer en toegestaan voor burst. Voor elke GiB-inrichting wordt de share minimale IOPS/door Voer en een IOPS-en 0,1-door Voer tot Maxi maal maximum aantal limieten per share verleend. De mini maal toegestane inrichting is 100 GiB met minimale IOPS/door voer. 

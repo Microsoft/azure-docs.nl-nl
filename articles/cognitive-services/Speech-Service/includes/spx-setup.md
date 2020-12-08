@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/15/2020
 ms.author: v-demjoh
-ms.openlocfilehash: da88b8554d6c3214da9a386613538c237a318f73
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 6011bf90d5a97dcc027f8a9a0916c28226c5c354
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/03/2020
-ms.locfileid: "96546897"
+ms.locfileid: "96584538"
 ---
 ## <a name="download-and-install"></a>Downloaden en installeren
 
@@ -97,13 +97,12 @@ In Windows beginnen de opdrachten als volgt:
 docker run -it -v c:\spx-data:/data --rm msftspeech/spx
 ```
 
-In Linux of macOS beginnen de opdrachten ongeveer als volgt:
-```shell   
-sudo docker run -it -v /ABSOLUTE_PATH:/data --rm msftspeech/spx
-```
+In Linux of macOS zien uw opdrachten eruit als in het onderstaande voorbeeld. Vervang `ABSOLUTE_PATH` door het absoluut pad van uw gekoppelde map. Dit pad is geretourneerd door de opdracht `pwd` in het vorige gedeelte. 
 
-> [!NOTE]
-> Vervang `/ABSOLUTE_PATH` door het absolute pad dat wordt weergegeven met de opdracht `pwd` in de bovenstaande sectie.
+Als u deze opdracht uitvoert voordat u uw sleutel en regio instelt, krijgt u een fout waarin staat dat u uw sleutel en regio moet instellen:
+```shell   
+sudo docker run -it -v ABSOLUTE_PATH:/data --rm msftspeech/spx
+```
 
 Als u de opdracht `spx` wilt gebruiken in een container, moet u altijd de volledige opdracht invoeren, zoals hierboven wordt weergegeven, gevolgd door de parameters van uw aanvraag.
 In Windows wordt bijvoorbeeld met deze opdracht de sleutel ingesteld:
@@ -115,26 +114,28 @@ docker run -it -v c:\spx-data:/data --rm msftspeech/spx config @key --set SUBSCR
 > [!WARNING]
 > U kunt niet de microfoon van de computer gebruiken wanneer u de Speech CLI uitvoert in een Docker-container. U kunt audiobestanden echter lezen uit en opslaan in uw lokaal gekoppelde map. 
 
-### <a name="optional-create-a-command-line-shortcut"></a>Optioneel: Een opdrachtregelsnelkoppeling maken
+<!-- Need to troubleshoot issues with docker pull image
 
-Als u de Speech-CLI uitvoert vanuit een Docker-container in Linux of macOS, kunt u een snelkoppeling maken. 
+### Optional: Create a command line shortcut
 
-Volg deze instructies om een snelkoppeling te maken:
-1. Open `.bash_profile` met uw favoriete teksteditor. Bijvoorbeeld:
+If you're running the the Speech CLI from a Docker container on Linux or macOS you can create a shortcut. 
+
+Follow these instructions to create a shortcut:
+1. Open `.bash_profile` with your favorite text editor. For example:
    ```shell
    nano ~/.bash_profile
    ```
-2. Voeg vervolgens deze functie aan uw `.bash_profile`. Zorg ervoor dat u deze functie bijwerkt met het juiste pad naar uw gekoppelde map:
+2. Next, add this function to your `.bash_profile`. Make sure you update this function with the correct path to your mounted directory:
    ```shell   
    spx(){
-       sudo docker run -it -v /ABSOLUTE_PATH:/data --rm msftspeech/spx
+       sudo docker run -it -v ABSOLUTE_PATH:/data --rm msftspeech/spx
    }
    ```
-3. Uw profiel bewerken:
+3. Source your profile:
    ```shell
    source ~/.bash_profile
    ```
-4. In plaats van dat u `sudo docker run -it -v /ABSOLUTE_PATH:/data --rm msftspeech/spx` uitvoert, kunt u gewoon `spx` typen, gevolgd door argumenten. Bijvoorbeeld: 
+4. Now instead of running `sudo docker run -it -v ABSOLUTE_PATH:/data --rm msftspeech/spx`, you can just type `spx` followed by arguments. For example: 
    ```shell
    // Get some help
    spx help recognize
@@ -144,8 +145,8 @@ Volg deze instructies om een snelkoppeling te maken:
    ```
 
 > [!WARNING]
-> Als u de gekoppelde map wijzigt waarnaar Docker verwijst, moet u de functie in `.bash_profile` bijwerken.
-
+> If you change the mounted directory that Docker is referencing, you need to update the function in `.bash_profile`.
+--->
 ***
 
 ## <a name="create-subscription-config"></a>Abonnementsconfiguratie maken

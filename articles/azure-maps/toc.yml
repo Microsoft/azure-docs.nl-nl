@@ -87,10 +87,12 @@
       href: supported-map-styles.md
     - name: Zoomniveaus en tegelraster
       href: zoom-levels-and-tile-grid.md
-    - name: Gegevensstructuur van de Mobility Service
+    - name: Mobility-services
       href: mobility-service-data-structure.md
-    - name: Serviceconcepten voor weer
+    - name: Concepten voor Weather-services
       href: weather-services-concepts.md
+    - name: Veelgestelde vragen over Weather-services
+      href: weather-services-faq.md
 - name: Instructiegidsen
   items:
     - name: Maps-accounts beheren

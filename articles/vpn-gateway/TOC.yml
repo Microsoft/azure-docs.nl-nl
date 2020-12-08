@@ -8,11 +8,9 @@
   expanded: true
   items:
     - name: Een VPN-gateway maken en beheren
-      items:
-        - name: Azure Portal
-          href: tutorial-create-gateway-portal.md
-        - name: Azure PowerShell
-          href: vpn-gateway-tutorial-create-gateway-powershell.md
+      href: tutorial-create-gateway-portal.md
+    - name: Een site-naar-site-verbinding configureren
+      href: tutorial-site-to-site-portal.md
 - name: Voorbeelden
   items:
     - name: Azure PowerShell
@@ -88,7 +86,7 @@
         - name: Een S2S-verbinding configureren
           items:
             - name: Azure Portal
-              href: vpn-gateway-howto-site-to-site-resource-manager-portal.md
+              href: tutorial-site-to-site-portal.md
             - name: Azure PowerShell
               href: vpn-gateway-create-site-to-site-rm-powershell.md
             - name: Azure CLI

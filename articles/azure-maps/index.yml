@@ -9,12 +9,12 @@ metadata:
   author: anastasia-ms
   ms.author: v-stharr
   ms.date: 1/15/2020
-  ms.openlocfilehash: 49de6739fe4d084bc119ffeaa0ffb3e8156f935b
-  ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+  ms.openlocfilehash: 1b1752db80f99c35e2b1b0876eef7a15184c6abf
+  ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/03/2020
-  ms.locfileid: "96546298"
+  ms.lasthandoff: 12/06/2020
+  ms.locfileid: "96745839"
 landingContent:
 - title: Over Azure Maps
   linkLists:
@@ -214,7 +214,7 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: Gegevensstructuur van de Mobility-service
+    - text: Mobility-services
       url: mobility-service-data-structure.md
   - linkListType: how-to-guide
     links:
@@ -224,14 +224,16 @@ landingContent:
       url: how-to-request-real-time-data.md
   - linkListType: reference
     links:
-    - text: Mobility-service
+    - text: Mobility-services
       url: /rest/api/maps/mobility
-- title: Ontwikkelen met weerservices
+- title: Ontwikkelen met Weather-services
   linkLists:
   - linkListType: concept
     links:
-    - text: Concept voor weerservice
+    - text: Concepten voor Weather-services
       url: weather-services-concepts.md
+    - text: Veelgestelde vragen over Weather-services
+      url: weather-services-faq.md
   - linkListType: tutorial
     links:
     - text: Weergegevens analyseren met Azure Notebooks (Python)
@@ -242,5 +244,5 @@ landingContent:
       url: how-to-request-weather-data.md
   - linkListType: reference
     links:
-    - text: Weerservices
+    - text: Weather-services
       url: /rest/api/maps/weather

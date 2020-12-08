@@ -10,12 +10,12 @@ metadata:
   author: mingshen-ms
   ms.author: mingshen
   ms.date: 09/02/2020
-  ms.openlocfilehash: d3c1c87f85c048a6572eb48f0d1709fb9f0d21df
-  ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+  ms.openlocfilehash: 95903c1068d64545ae025fb5899a80014b8f26f2
+  ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/03/2020
-  ms.locfileid: "96572742"
+  ms.lasthandoff: 12/06/2020
+  ms.locfileid: "96746383"
 landingContent:
 - title: Werken in de commerciële marketplace
   linkLists:
@@ -45,7 +45,7 @@ landingContent:
     links:
     - text: Leads van klanten van uw marketplace-aanbieding
       url: ./partner-center-portal/commercial-marketplace-get-customer-leads.md
-    - text: Optie voor collectieve verkoop in Partnercentrum
+    - text: Optie voor collectieve verkoop in de commerciële marketplace
       url: commercial-marketplace-co-sell.md
     - text: Betrokkenheid van partner bij collectieve verkoop
       url: ./marketplace-co-sell.md

@@ -28,6 +28,8 @@ items:
             href: tutorial-import-create-glossary-terms.md
       - name: Een on-premises SQL-server registreren en scannen
         href: register-scan-on-premises-sql-server.md
+      - name: De REST API's voor de catalogus aanroepen
+        href: tutorial-using-rest-apis.md
   - name: Concepten
     items:
       - name: Purview Studio gebruiken
@@ -133,6 +135,10 @@ items:
             href: how-to-link-azure-data-factory.md
           - name: Azure Data Share-gegevensherkomst
             href: how-to-link-azure-data-share.md
+      - name: Controleren
+        items:
+          - name: Controleren met Azure Monitor
+            href: how-to-monitor-with-azure-monitor.md
       - name: Inzichten
         items:
           - name: Asset Insights weergeven

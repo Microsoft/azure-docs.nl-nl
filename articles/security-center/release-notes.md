@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/30/2020
 ms.author: memildin
-ms.openlocfilehash: f26fffe8e6b2be6ede064b4750d012b3e4535c66
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 0dbd208cea64a3b2dc22f7603f654127e5b46294
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96433322"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96511760"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -30,6 +30,44 @@ Zie [Belangrijke aanstaande wijzigingen aan Azure Security Center](upcoming-chan
 > [!TIP]
 > Als u op zoek bent naar items die ouder zijn dan zes maanden, vindt u deze in het [Archief voor nieuwe functies in Azure AD in Azure Security Center](release-notes-archive.md).
 
+
+## <a name="december-2020"></a>December 2020
+
+Updates in december omvatten:
+
+- [Azure Defender voor SQL-servers op computers is algemeen beschikbaar](#azure-defender-for-sql-servers-on-machines-is-generally-available)
+- [Azure Defender voor SQL-ondersteuning voor een toegewezen SQL-pool in Azure Synapse Analytics is algemeen beschikbaar](#azure-defender-for-sql-support-for-azure-synapse-analytics-dedicated-sql-pool-is-generally-available)
+
+### <a name="azure-defender-for-sql-servers-on-machines-is-generally-available"></a>Azure Defender voor SQL-servers op computers is algemeen beschikbaar
+
+Azure Security Center biedt twee Azure Defender-abonnementen voor SQL-servers:
+
+- **Azure Defender voor Azure SQL-databaseservers**: hiermee beveiligt u uw systeemeigen SQL-servers in Azure 
+- **Azure Defender voor SQL-servers op computers**: hiermee breidt u dezelfde beveiliging uit naar SQL-servers in hybride, multicloud- en on-premises omgevingen
+
+Voortaan beveiligt **Azure Defender voor SQL** uw databases en de bijbehorende gegevens, waar ze zich ook bevinden.
+
+Azure Defender voor SQL bevat functies voor de evaluatie van beveiligingsproblemen. Het hulpprogramma voor de evaluatie van beveiligingsproblemen biedt de volgende geavanceerde functies:
+
+- **Basislijnconfiguratie** (nieuw!) om de resultaten van het scannen naar beveiligingsproblemen op intelligente wijze te verfijnen, zodat alleen de problemen overblijven die een daadwerkelijk beveiligingsrisico vormen. Nadat u de beveiligingsstatus van uw basislijn hebt ingesteld, worden door het hulpprogramma voor de evaluatie van beveiligingsproblemen alleen afwijkingen van die basislijnstatus gerapporteerd. Resultaten die overeenkomen met de basislijn, worden niet meer meegenomen in vervolgscans. Zo kunnen u en uw analisten zich volledig richten op de belangrijkste problemen.
+- **Gedetailleerde benchmarkgegevens** om u *meer inzicht te geven* in de gedetecteerde problemen en in hoe deze gerelateerd zijn aan uw resources.
+- **Herstelscripts** om u te helpen bij het oplossen van geïdentificeerde risico's.
+
+Lees meer informatie over [Azure Defender voor SQL](defender-for-sql-introduction.md).
+
+
+### <a name="azure-defender-for-sql-support-for-azure-synapse-analytics-dedicated-sql-pool-is-generally-available"></a>Azure Defender voor SQL-ondersteuning voor een toegewezen SQL-pool in Azure Synapse Analytics is algemeen beschikbaar
+
+Azure Synapse Analytics (voorheen SQL DW) is een analyseservice die datawarehousing voor ondernemingen en big data-analyses combineert. In Azure Synapse bieden toegewezen SQL-pools de functionaliteit voor datawarehousing voor ondernemingen. Meer informatie leest u in [Wat is Azure Synapse Analytics (voorheen SQL DW)?](../synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is.md).
+
+Azure Defender voor SQL beveiligt uw toegewezen SQL-pools met:
+
+- **Geavanceerde bescherming tegen bedreigingen** om bedreigingen en aanvallen te detecteren 
+- **Functionaliteit voor de evaluatie van beveiligingsproblemen** om onjuiste beveiligingsconfiguraties te identificeren en te herstellen
+
+Azure Defender voor SQL-ondersteuning voor SQL-pools in Azure Synapse Analytics wordt automatisch toegevoegd aan de bundel Azure SQL-databases in Azure Security Center. Op de pagina met de Synapse-werkruimte in Azure Portal ziet u een nieuw tabblad Azure Defender voor SQL.
+
+Lees meer informatie over [Azure Defender voor SQL](defender-for-sql-introduction.md).
 
 ## <a name="november-2020"></a>November 2020
 
@@ -129,7 +167,7 @@ De aanbeveling **Er moeten systeemupdates worden geïnstalleerd op uw computers*
 
 - Uitgebreide gegevens voor de aanbeveling van Azure Resource Graph (ARG). ARG is een Azure-service die is ontworpen voor efficiëntere resourceverkenning. U kunt ARG gebruiken om op schaal een query uit te voeren in een bepaalde set abonnementen, zodat u uw omgeving effectief kunt beheren. 
 
-    Voor Azure Security Center kunt u gebruikmaken van ARG en de [Kusto Query Language (KQL)](https://docs.microsoft.com/azure/data-explorer/kusto/query/) om query's uit te voeren op een breed scala aan postuurgegevens.
+    Voor Azure Security Center kunt u gebruikmaken van ARG en de [Kusto Query Language (KQL)](/azure/data-explorer/kusto/query/) om query's uit te voeren op een breed scala aan postuurgegevens.
 
     Als u in ARG eerder deze query uitvoerde op deze aanbeveling, was de enige beschikbare informatie dat de aanbeveling moet worden herstel op een machine. De volgende query van de verbeterde versie retourneert elke ontbrekende systeemupdate, gegroepeerd op machine.
 
@@ -172,7 +210,7 @@ Belangrijkste functies:
 
 [Meer informatie over het implementeren van de geïntegreerde scanner voor beveiligings problemen op uw hybride machines](deploy-vulnerability-assessment-vm.md#deploy-the-integrated-scanner-to-your-azure-and-hybrid-machines).
 
-[Meer informatie over servers met Azure Arc](https://docs.microsoft.com/azure/azure-arc/servers/).
+[Meer informatie over servers met Azure Arc](../azure-arc/servers/index.yml).
 
 
 ### <a name="azure-firewall-recommendation-added-preview"></a>Azure Firewall-aanbeveling toegevoegd (preview)
@@ -206,7 +244,7 @@ Meer informatie vindt u in [Removing a standard from your dashboard](update-regu
 
 Azure Resource Graph is een service in Azure. Het is ontworpen voor een efficiënte resourceverkenning en biedt de mogelijkheid query's op schaal uit te voeren binnen een bepaalde groep abonnementen, zodat u uw omgeving effectief kunt beheren. 
 
-Voor Azure Security Center kunt u gebruikmaken van ARG en de [Kusto Query Language (KQL)](https://docs.microsoft.com/azure/data-explorer/kusto/query/) om query's uit te voeren op een breed scala aan postuurgegevens. Bijvoorbeeld:
+Voor Azure Security Center kunt u gebruikmaken van ARG en de [Kusto Query Language (KQL)](/azure/data-explorer/kusto/query/) om query's uit te voeren op een breed scala aan postuurgegevens. Bijvoorbeeld:
 
 - De assetvoorraad maakt gebruik van ARG
 - Er is een voorbeeld van een ARG-query gedocumenteerd voor het [identificeren van accounts zonder dat MFA (meervoudige verificatie) is ingeschakeld](security-center-identity-access.md#identify-accounts-without-multi-factor-authentication-mfa-enabled)
@@ -295,7 +333,7 @@ extract("^(.+)/providers/Microsoft.Security/assessments/.+$",1,id)))))
 
 Meer informatie vindt u via de volgende koppelingen:
 - [Query's maken met Azure Resource Graph Explorer](../governance/resource-graph/first-query-portal.md)
-- [Kusto-querytaal (KQL)](https://docs.microsoft.com/azure/data-explorer/kusto/query/)
+- [Kusto-querytaal (KQL)](/azure/data-explorer/kusto/query/)
 
 
 ## <a name="september-2020"></a>September 2020
@@ -740,119 +778,3 @@ Er worden zes beleidsregels met betrekking tot geavanceerde gegevensbeveiliging 
 - E-mailmeldingen aan beheerders en abonnementseigenaren moeten zijn ingeschakeld in de Advanced Data Security-instellingen van de SQL-server
 
 Meer informatie over [ingebouwd beleid](./policy-reference.md).
-
-
-
-
-
-## <a name="june-2020"></a>Juni 2020
-
-De updates in juni zijn onder meer:
-- [Beveiligingsscore-API (preview)](#secure-score-api-preview)
-- [Geavanceerde gegevensbeveiliging voor SQL-machines (Azure, andere clouds en on-premises) (preview)](#advanced-data-security-for-sql-machines-azure-other-clouds-and-on-prem-preview)
-- [Twee nieuwe aanbevelingen voor het implementeren van de Log Analytics-agent op Azure Arc-machines (preview)](#two-new-recommendations-to-deploy-the-log-analytics-agent-to-azure-arc-machines-preview)
-- [Nieuw beleid voor het maken van configuraties voor continue export en werkstroomautomatisering op schaal](#new-policies-to-create-continuous-export-and-workflow-automation-configurations-at-scale)
-- [Nieuwe aanbeveling voor het gebruik van netwerkbeveiligingsgroepen om niet op internet gerichte virtuele machines te beveiligen](#new-recommendation-for-using-nsgs-to-protect-non-internet-facing-virtual-machines)
-- [Nieuw beleid voor het inschakelen van beveiliging tegen bedreigingen en geavanceerde gegevensbeveiliging](#new-policies-for-enabling-threat-protection-and-advanced-data-security)
-
-
-
-### <a name="secure-score-api-preview"></a>Beveiligingsscore-API (preview)
-
-U hebt nu toegang tot uw score via de [Beveiligingsscore-API](/rest/api/securitycenter/securescores/) (momenteel als preview). De API-methoden bieden de flexibiliteit om query's uit te voeren op de gegevens en uw eigen rapportagemechanisme te bouwen van uw beveiligingsscores in de loop van de tijd. U kunt bijvoorbeeld de **Beveiligingsscore**-API gebruiken om de score voor een specifiek abonnement op te halen. Daarnaast kunt u de API voor **besturingselementen van de beveiligingsscore** gebruiken om de besturingselementen voor beveiliging en de huidige score van uw abonnementen weer te geven.
-
-Zie [het gebied voor beveiligingsscores van onze GitHub-community](https://github.com/Azure/Azure-Security-Center/tree/master/Secure%20Score) voor voorbeelden van externe hulpprogramma's die mogelijk zijn gemaakt met de Beveiligingsscore-API.
-
-Meer informatie over [beveiligingsscore en besturingselementen voor beveiliging in Azure Security Center](secure-score-security-controls.md).
-
-
-
-### <a name="advanced-data-security-for-sql-machines-azure-other-clouds-and-on-prem-preview"></a>Geavanceerde gegevensbeveiliging voor SQL-machines (Azure, andere clouds en on-premises) (preview)
-
-De geavanceerde gegevensbeveiliging van Azure Security Center voor SQL-machines biedt nu beveiliging voor SQL-servers die worden gehost op Azure, in andere cloudomgevingen en zelfs op on-premises machines. Hiermee wordt de beveiliging voor uw systeemeigen SQL-servers van Azure uitgebreid om hybride omgevingen volledig te ondersteunen.
-
-Geavanceerde gegevensbeveiliging biedt evaluatie van beveiligingsproblemen en geavanceerde beveiliging tegen bedreigingen voor uw SQL-machines, waar ze zich ook bevinden.
-
-Het instellen bestaat uit twee stappen:
-
-1. De Log Analytics-agent implementeren op de hostcomputer van uw SQL Server om verbinding te maken met het Azure-account.
-
-1. Het inschakelen van de optionele bundel op de pagina met prijzen en instellingen van Security Center.
-
-Meer informatie over [geavanceerde gegevensbeveiliging voor SQL-machines](defender-for-sql-usage.md).
-
-
-
-### <a name="two-new-recommendations-to-deploy-the-log-analytics-agent-to-azure-arc-machines-preview"></a>Twee nieuwe aanbevelingen voor het implementeren van de Log Analytics-agent op Azure Arc-machines (preview)
-
-Er zijn twee nieuwe aanbevelingen toegevoegd om de [Log Analytics-agent](../azure-monitor/platform/log-analytics-agent.md) te implementeren op uw Azure Arc-machines en ervoor te zorgen dat ze worden beveiligd door Azure Security Center:
-
-- **De Log Analytics-agent moet zijn geïnstalleerd op uw Windows Azure Arc-machines (preview)**
-- **De Log Analytics-agent moet zijn geïnstalleerd op uw Linux Azure Arc-machines (preview)**
-
-Deze nieuwe aanbevelingen worden weergegeven in dezelfde vier besturingselementen voor beveiliging als de bestaande (gerelateerde) aanbeveling, **De bewakingsagent moet op uw computers worden geïnstalleerd**: beveiligingsconfiguraties herstellen, adaptieve toepassingsregelaars toepassen, systeemupdates toepassen en eindpuntbeveiliging inschakelen.
-
-De aanbevelingen omvatten ook de mogelijkheid voor snelle oplossingen om het implementatieproces te versnellen. 
-
-Meer informatie over deze twee nieuwe aanbevelingen vindt u in de tabel [Compute- en app-aanbevelingen](recommendations-reference.md#recs-computeapp).
-
-Meer informatie over hoe Azure Security Center de agent gebruikt, vindt u in [Wat is de Log Analytics-agent?](faq-data-collection-agents.md#what-is-the-log-analytics-agent).
-
-Meer informatie over [extensies voor Azure Arc-machines](../azure-arc/servers/manage-vm-extensions.md).
-
-
-### <a name="new-policies-to-create-continuous-export-and-workflow-automation-configurations-at-scale"></a>Nieuw beleid voor het maken van configuraties voor continue export en werkstroomautomatisering op schaal
-
-Het automatiseren van de processen voor bewaking en reageren op incidenten van uw organisatie kan de tijd die nodig is om beveiligingsincidenten te onderzoeken en te verhelpen aanzienlijk verbeteren.
-
-Als u uw automatiseringsconfiguraties in uw organisatie wilt implementeren, gebruikt u deze ingebouwde DeployIfdNotExist-beleidsregels van Azure voor het maken en configureren van procedures voor [continue export](continuous-export.md) en [werkstroomautomatisering](workflow-automation.md):
-
-Het beleid is te vinden in Azure Policy:
-
-
-|Doel  |Beleid  |Beleids-id  |
-|---------|---------|---------|
-|Continue export naar Event Hub|[Export implementeren in Event Hub voor Azure Security Center-waarschuwingen en -aanbevelingen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fcdfcce10-4578-4ecd-9703-530938e4abcb)|cdfcce10-4578-4ecd-9703-530938e4abcb|
-|Continue export naar Log Analytics-werkruimte|[Export implementeren in Log Analytics-werkruimte voor Azure Security Center-waarschuwingen en -aanbevelingen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fffb6f416-7bd2-4488-8828-56585fef2be9)|ffb6f416-7bd2-4488-8828-56585fef2be9|
-|Werkstroomautomatisering voor beveiligingswaarschuwingen|[Werkstroomautomatisering implementeren voor Azure Security Center-waarschuwingen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2ff1525828-9a90-4fcf-be48-268cdd02361e)|f1525828-9a90-4fcf-be48-268cdd02361e|
-|Werkstroomautomatisering voor beveiligingsaanbevelingen|[Werkstroomautomatisering implementeren voor Azure Security Center-aanbevelingen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f73d6ab6c-2475-4850-afd6-43795f3492ef)|73d6ab6c-2475-4850-afd6-43795f3492ef|
-||||
-
-Aan de slag met [sjablonen voor werkstroomautomatisering](https://github.com/Azure/Azure-Security-Center/tree/master/Workflow%20automation).
-
-Meer informatie over het gebruik van de twee exportbeleidsregels vindt u in [Configure workflow automation at scale using the supplied policies](workflow-automation.md#configure-workflow-automation-at-scale-using-the-supplied-policies) (Werkstroomautomatisering op schaal configureren met de meegeleverde beleidsregels) en [Set up a continuous export](continuous-export.md#set-up-a-continuous-export) (Continue export instellen).
-
-
-### <a name="new-recommendation-for-using-nsgs-to-protect-non-internet-facing-virtual-machines"></a>Nieuwe aanbeveling voor het gebruik van netwerkbeveiligingsgroepen om niet op internet gerichte virtuele machines te beveiligen
-
-Het besturingselement voor beveiliging 'aanbevolen procedures voor beveiliging implementeren' bevat nu de volgende nieuwe aanbeveling:
-
-- **Niet-internetgerichte virtuele machines moeten worden beveiligd met netwerkbeveiligingsgroepen**
-
-In een bestaande aanbeveling, **Op internet gerichte virtuele machines moeten worden beveiligd met netwerkbeveiligingsgroepen**, werd geen onderscheid gemaakt tussen op internet gerichte en niet op internet gerichte virtuele machines. Voor beide werd een aanbeveling met een hoge urgentie gegenereerd als een virtuele machine niet aan een netwerkbeveiligingsgroep was toegewezen. In deze nieuwe aanbeveling wordt een onderscheid gemaakt met niet op internet gerichte machines om de fout-positieven te verminderen en onnodige waarschuwingen met hoge urgentie te voorkomen.
-
-Meer informatie vindt u in de tabel [Aanbevelingen voor netwerken](recommendations-reference.md#recs-network).
-
-
-
-
-### <a name="new-policies-for-enabling-threat-protection-and-advanced-data-security"></a>Nieuw beleid voor het inschakelen van beveiliging tegen bedreigingen en geavanceerde gegevensbeveiliging
-
-De onderstaande nieuwe beleidsregels zijn toegevoegd aan het ASC-standaardinitiatief en zijn ontworpen om te helpen bij het inschakelen van beveiliging tegen bedreigingen of geavanceerde gegevensbeveiliging voor de relevante resourcetypen.
-
-Het beleid is te vinden in Azure Policy:
-
-
-| Beleid                                                                                                                                                                                                                                                                | Beleids-id                            |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
-| [Advanced Data Security moet zijn ingeschakeld voor Azure SQL Database-servers](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f7fe3b40f-802b-4cdd-8bd4-fd799c948cc2)     | 7fe3b40f-802b-4cdd-8bd4-fd799c948cc2 |
-| [Advanced Data Security moet zijn ingeschakeld voor SQL-servers op computers](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f6581d072-105e-4418-827f-bd446d56421b) | 6581d072-105e-4418-827f-bd446d56421b |
-| [Advanced Threat Protection moet zijn ingeschakeld voor Azure Storage-accounts](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f308fbb08-4ab8-4e67-9b29-592e93fb94fa)           | 308fbb08-4ab8-4e67-9b29-592e93fb94fa |
-| [Advanced Threat Protection moet zijn ingeschakeld voor Azure Key Vault-kluizen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f0e6763cc-5078-4e64-889d-ff4d9a839047)           | 0e6763cc-5078-4e64-889d-ff4d9a839047 |
-| [Advanced Threat Protection moet zijn ingeschakeld voor Azure App Service-plannen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f2913021d-f2fd-4f3d-b958-22354e2bdbcb)                | 2913021d-f2fd-4f3d-b958-22354e2bdbcb |
-| [Advanced Threat Protection moet zijn ingeschakeld voor Azure Container Registry-registers](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2fc25d9a16-bc35-4e15-a7e5-9db606bf9ed4)   | c25d9a16-bc35-4e15-a7e5-9db606bf9ed4 |
-| [Advanced Threat Protection moet zijn ingeschakeld voor Azure Kubernetes Service-clusters](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f523b5cd1-3e23-492f-a539-13118b6d1e3a)   | 523b5cd1-3e23-492f-a539-13118b6d1e3a |
-| [Advanced Thread Protection moet zijn ingeschakeld op virtuele machines](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2fproviders%2fMicrosoft.Authorization%2fpolicyDefinitions%2f4da35fc9-c9e7-4960-aec9-797fe7d9051d)           | 4da35fc9-c9e7-4960-aec9-797fe7d9051d |
-|                                                                                                                                                                                                                                                                       |                                      |
-
-Meer informatie over [bescherming tegen bedreigingen in Azure Security Center](azure-defender.md).

@@ -890,8 +890,6 @@
               items:
                 - name: Diepe diagnostische gegevens voor web-apps en services
                   href: app/devops.md
-                - name: Prestaties in webtoepassingen controleren
-                  href: app/web-monitor-performance.md
                 - name: 'Ontwikkelings-, test- en productiegegevens scheiden'
                   href: app/separate-resources.md
                 - name: Hoe kan ik ... in Application Insights?

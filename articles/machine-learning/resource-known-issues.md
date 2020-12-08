@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: troubleshooting
 ms.custom: troubleshooting, contperfq4
 ms.date: 11/09/2020
-ms.openlocfilehash: 46763bddd0f173ccf73edc54e5f2688d3bf6efc0
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 55ac11b7888a8e351b52554f76fb44af35633c16
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445388"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780974"
 ---
 # <a name="known-issues-and-troubleshooting-in-azure-machine-learning"></a>Bekende problemen en probleemoplossing in Azure Machine Learning
 
@@ -143,13 +143,13 @@ Soms kan het nuttig zijn als u Diagnostische gegevens kunt opgeven wanneer u om 
 
     U kunt ook init-scripts gebruiken als u problemen ondervindt bij de installatie van python-bibliotheken. Deze aanpak wordt niet officieel ondersteund. Zie voor meer informatie [cluster-scoped init-scripts](https://docs.azuredatabricks.net/user-guide/clusters/init-scripts.html#cluster-scoped-init-scripts).
 
-* **Databricks import-fout: kan naam niet importeren `Timedelta` van `pandas._libs.tslibs`** : als u deze fout ziet wanneer u automatische machine learning gebruikt, voert u de twee volgende regels uit in uw notitie blok:
+* **Databricks import-fout: kan naam niet importeren `Timedelta` van `pandas._libs.tslibs`**: als u deze fout ziet wanneer u automatische machine learning gebruikt, voert u de twee volgende regels uit in uw notitie blok:
     ```
     %sh rm -rf /databricks/python/lib/python3.7/site-packages/pandas-0.23.4.dist-info /databricks/python/lib/python3.7/site-packages/pandas
     %sh /databricks/python/bin/pip install pandas==0.23.4
     ```
 
-* **Databricks-import fout: geen module met de naam ' Pandas. core. indices '** : als u deze fout ziet wanneer u gebruikmaakt van automatische machine learning:
+* **Databricks-import fout: geen module met de naam ' Pandas. core. indices '**: als u deze fout ziet wanneer u gebruikmaakt van automatische machine learning:
 
     1. Voer deze opdracht uit om twee pakketten te installeren in uw Azure Databricks cluster:
     
@@ -162,7 +162,7 @@ Soms kan het nuttig zijn als u Diagnostische gegevens kunt opgeven wanneer u om 
     
     Als u met deze stappen het probleem niet kunt oplossen, probeert u het cluster opnieuw op te starten.
 
-* **Databricks FailToSendFeather** : als er een `FailToSendFeather` fout wordt weer gegeven bij het lezen van gegevens op Azure Databricks cluster, raadpleegt u de volgende oplossingen:
+* **Databricks FailToSendFeather**: als er een `FailToSendFeather` fout wordt weer gegeven bij het lezen van gegevens op Azure Databricks cluster, raadpleegt u de volgende oplossingen:
     
     * Upgrade `azureml-sdk[automl]` pakket naar de nieuwste versie.
     * Voeg `azureml-dataprep` versie 1.1.8 of hoger toe.
@@ -173,11 +173,11 @@ Soms kan het nuttig zijn als u Diagnostische gegevens kunt opgeven wanneer u om 
 > [!WARNING]
 > Het verplaatsen van uw Azure Machine Learning-werk ruimte naar een ander abonnement of het verplaatsen van het abonnement dat eigenaar is naar een nieuwe Tenant, wordt niet ondersteund. Dit kan fouten veroorzaken.
 
-* **Azure Portal** : 
+* **Azure Portal**: 
   * Als u rechtstreeks naar uw werk ruimte gaat vanuit een koppeling voor delen vanuit de SDK of de Azure Portal, kunt u de standaard **overzichts** pagina met abonnements gegevens in de uitbrei ding niet weer geven. In dit scenario kunt u ook niet overschakelen naar een andere werk ruimte. Als u een andere werk ruimte wilt weer geven, gaat u rechtstreeks naar [Azure machine learning Studio](https://ml.azure.com) en zoekt u naar de naam van de werk ruimte.
   * Alle assets (gegevens sets, experimenten, reken processen, enzovoort) zijn alleen beschikbaar in [Azure machine learning Studio](https://ml.azure.com). Deze zijn *niet* beschikbaar via de Azure Portal.
 
-* **Ondersteunde browsers in azure machine learning Studio-webportal** : we raden u aan om de meest recente browser te gebruiken die compatibel is met uw besturings systeem. De volgende browsers worden ondersteund:
+* **Ondersteunde browsers in azure machine learning Studio-webportal**: we raden u aan om de meest recente browser te gebruiken die compatibel is met uw besturings systeem. De volgende browsers worden ondersteund:
   * Micro soft Edge (de nieuwe micro soft Edge, nieuwste versie. Geen micro soft Edge verouderd)
   * Safari (meest recente versie, alleen Mac)
   * Chrome (meest recente versie)
@@ -187,7 +187,7 @@ Soms kan het nuttig zijn als u Diagnostische gegevens kunt opgeven wanneer u om 
 
 * **Problemen** met het maken van AmlCompute: er is een zeldzame kans dat sommige gebruikers die hun Azure machine learning werk ruimte hebben gemaakt vanaf de Azure Portal vóór de Ga-release mogelijk geen AmlCompute in die werk ruimte kunnen maken. U kunt een ondersteunings aanvraag voor de service verhogen of een nieuwe werk ruimte maken via de portal of de SDK om uzelf direct te deblokkeren.
 
-* **Azure container Registry biedt momenteel geen ondersteuning voor Unicode-tekens in namen van resource groepen** : het is mogelijk dat ACR-aanvragen mislukken omdat de naam van de resource groep Unicode-tekens bevat. Om dit probleem te verhelpen, raden we u aan om een ACR te maken in een resource groep met een andere naam.
+* **Azure container Registry biedt momenteel geen ondersteuning voor Unicode-tekens in namen van resource groepen**: het is mogelijk dat ACR-aanvragen mislukken omdat de naam van de resource groep Unicode-tekens bevat. Om dit probleem te verhelpen, raden we u aan om een ACR te maken in een resource groep met een andere naam.
 
 ## <a name="work-with-data"></a>Werken met gegevens
 
@@ -199,7 +199,7 @@ Als u bestands share gebruikt voor andere werk belastingen, zoals gegevens overd
 
 ### <a name="passing-data-as-input"></a>Gegevens door geven als invoer
 
-*  **TypeError: FileNotFound: bestand of map** : deze fout treedt op als het bestandspad dat u opgeeft niet waar het bestand zich bevindt. U moet ervoor zorgen dat de manier waarop u naar het bestand verwijst consistent is met de locatie waar u uw gegevensset op het reken doel hebt gekoppeld. We raden u aan het abstracte pad te gebruiken bij het koppelen van een gegevensset aan een reken doel om te zorgen voor een deterministische status. In de volgende code koppelen we bijvoorbeeld de gegevensset aan onder de hoofdmap van het bestands systeem van het berekenings doel `/tmp` . 
+*  **TypeError: FileNotFound: bestand of map**: deze fout treedt op als het bestandspad dat u opgeeft niet waar het bestand zich bevindt. U moet ervoor zorgen dat de manier waarop u naar het bestand verwijst consistent is met de locatie waar u uw gegevensset op het reken doel hebt gekoppeld. We raden u aan het abstracte pad te gebruiken bij het koppelen van een gegevensset aan een reken doel om te zorgen voor een deterministische status. In de volgende code koppelen we bijvoorbeeld de gegevensset aan onder de hoofdmap van het bestands systeem van het berekenings doel `/tmp` . 
     
     ```python
     # Note the leading / in '/tmp/dataset'
@@ -211,7 +211,10 @@ Als u bestands share gebruikt voor andere werk belastingen, zoals gegevens overd
     Als u de voorloop back slash (/) niet opneemt, moet u voor voegsel van de werkmap opgeven, bijvoorbeeld `/mnt/batch/.../tmp/dataset` op het berekenings doel om aan te geven waar u de gegevensset wilt koppelen.
 
 ### <a name="mount-dataset"></a>Gegevensset koppelen
-* De **gegevensset kan niet worden geïnitialiseerd: er is een time-out opgetreden tijdens het wachten op het koppelen van het koppel punt** : opnieuw proberen logica is toegevoegd in `azureml-sdk >=1.12.0` om het probleem te verhelpen. Als u zich in eerdere versies van azureml-SDK bevindt, moet u een upgrade uitvoeren naar de nieuwste versie. Als u al bent aangemeld `azureml-sdk>=1.12.0` , moet u de omgeving opnieuw maken zodat u over de nieuwste patch beschikt met de oplossing.
+* **Het initialiseren van de gegevensset is mislukt: er is een time-out opgetreden bij het wachten op een koppelings punt**: 
+  * Als u geen regels voor uitgaande [netwerk beveiligings groepen](https://docs.microsoft.com/azure/virtual-network/network-security-groups-overview) hebt en deze wilt gebruiken, moet u `azureml-sdk>=1.12.0` bijwerken `azureml-dataset-runtime` en zijn afhankelijkheden het meest recent voor de specifieke secundaire versie, of als u deze in een uitvoering gebruikt, moet u de omgeving opnieuw maken zodat deze de meest recente patch kan hebben met de oplossing. 
+  * Als u gebruikt, moet u een `azureml-sdk<1.12.0` upgrade uitvoeren naar de nieuwste versie.
+  * Als u regels voor uitgaande NSG hebt, moet u ervoor zorgen dat er een regel voor uitgaande verbindingen is waarmee al het verkeer voor de servicetag kan worden toegestaan `AzureResourceMonitor` .
 
 ### <a name="data-labeling-projects"></a>Projecten voor gegevenslabels
 
@@ -233,7 +236,7 @@ Beperkingen en bekende problemen voor gegevens drift-monitors:
 * De monitors van de gegevensset werken alleen voor gegevens sets die 50 rijen of meer bevatten.
 * Kolommen, of functies, worden in de gegevensset geclassificeerd als categorische of numeriek op basis van de voor waarden in de volgende tabel. Als de functie niet aan deze voor waarden voldoet, bijvoorbeeld een kolom van het type teken reeks met de unieke waarden van >100, wordt de functie verwijderd uit onze data drift-algoritme, maar is nog steeds profileeerd. 
 
-    | Onderdeel type | Gegevenstype | Conditie | Beperkingen | 
+    | Onderdeel type | Gegevenstype | Voorwaarde | Beperkingen | 
     | ------------ | --------- | --------- | ----------- |
     | Categorische gegevens | teken reeks, BOOL, int, float | Het aantal unieke waarden in de functie is kleiner dan 100 en minder dan 5% van het aantal rijen. | NULL wordt beschouwd als een eigen categorie. | 
     | Cijfer | int, float | De waarden in de functie zijn van een numeriek gegevens type en voldoen niet aan de voor waarde voor een categorische-functie. | De functie is verwijderd als >15% van de waarden null zijn. | 
@@ -305,7 +308,7 @@ interactive_auth = InteractiveLoginAuthentication(tenant_id="the tenant_id in wh
 
 ## <a name="train-models"></a>Modellen trainen
 
-* **ModuleErrors (geen module met de naam)** : als u in ModuleErrors uitvoert terwijl experimenten in azure ml worden ingediend, betekent dit dat het trainings script verwacht dat er een pakket wordt geïnstalleerd, maar dit wordt niet toegevoegd. Wanneer u de naam van het pakket opgeeft, installeert Azure ML het pakket in de omgeving die wordt gebruikt voor de uitvoering van uw training. 
+* **ModuleErrors (geen module met de naam)**: als u in ModuleErrors uitvoert terwijl experimenten in azure ml worden ingediend, betekent dit dat het trainings script verwacht dat er een pakket wordt geïnstalleerd, maar dit wordt niet toegevoegd. Wanneer u de naam van het pakket opgeeft, installeert Azure ML het pakket in de omgeving die wordt gebruikt voor de uitvoering van uw training. 
 
     Als u schattingen gebruikt om experimenten in te dienen, kunt u een pakket naam opgeven via `pip_packages` of `conda_packages` para meter in de Estimator op basis van de bron die u wilt installeren van het pakket. U kunt ook een yml-bestand met al uw afhankelijkheden opgeven `conda_dependencies_file` of al uw PIP-vereisten in een txt-bestand met behulp van `pip_requirements_file` para meter. Als u uw eigen Azure ML-omgevings object hebt dat u de standaard installatie kopie wilt overschrijven die wordt gebruikt door de Estimator, kunt u die omgeving opgeven via de `environment` para meter van de Estimator-constructor.
 
@@ -317,15 +320,15 @@ interactive_auth = InteractiveLoginAuthentication(tenant_id="the tenant_id in wh
     > [!Note]
     > Als u denkt dat een bepaald pakket algemeen genoeg is om te worden toegevoegd aan de bewaarde afbeeldingen en omgevingen van Azure ML, kunt u een GitHub-probleem veroorzaken in [AzureML-containers](https://github.com/Azure/AzureML-Containers). 
  
-* **NameError (naam niet gedefinieerd), AttributeError (object heeft geen kenmerk)** : Deze uitzonde ring moet afkomstig zijn uit uw trainings scripts. U kunt de logboek bestanden van Azure Portal bekijken voor meer informatie over de specifieke naam niet gedefinieerd of kenmerk fout. U kunt de SDK gebruiken `run.get_details()` om het fout bericht te bekijken. Hiermee worden ook alle logboek bestanden weer geven die zijn gegenereerd voor de uitvoering. Bekijk uw trainings script en los het probleem op voordat u de uitvoering opnieuw verzendt. 
+* **NameError (naam niet gedefinieerd), AttributeError (object heeft geen kenmerk)**: Deze uitzonde ring moet afkomstig zijn uit uw trainings scripts. U kunt de logboek bestanden van Azure Portal bekijken voor meer informatie over de specifieke naam niet gedefinieerd of kenmerk fout. U kunt de SDK gebruiken `run.get_details()` om het fout bericht te bekijken. Hiermee worden ook alle logboek bestanden weer geven die zijn gegenereerd voor de uitvoering. Bekijk uw trainings script en los het probleem op voordat u de uitvoering opnieuw verzendt. 
 
-* **Horovod is uitgeschakeld** : in de meeste gevallen is het mogelijk dat er een onderliggende uitzonde ring is opgetreden in een van de processen waardoor Horovod werd afgesloten als u problemen ondervindt met ' AbortedError: Horovod is afgesloten '. Elke classificatie in de MPI-taak krijgt een eigen toegewezen logboekbestand in Azure ML. Deze logboeken hebben de naam `70_driver_logs`. In het geval van gedistribueerde trainingen worden de logboeknamen aangevuld met het achtervoegsel `_rank` om het onderscheiden van de logboeken gemakkelijker te maken. Als u de exacte fout wilt vinden die ervoor heeft gezorgd dat Horovod wordt afgesloten, gaat u naar alle logboek bestanden en zoekt u `Traceback` aan het einde van de driver_log bestanden. Met een van deze bestanden krijgt u de daad werkelijke onderliggende uitzonde ring. 
+* **Horovod is uitgeschakeld**: in de meeste gevallen is het mogelijk dat er een onderliggende uitzonde ring is opgetreden in een van de processen waardoor Horovod werd afgesloten als u problemen ondervindt met ' AbortedError: Horovod is afgesloten '. Elke classificatie in de MPI-taak krijgt een eigen toegewezen logboekbestand in Azure ML. Deze logboeken hebben de naam `70_driver_logs`. In het geval van gedistribueerde trainingen worden de logboeknamen aangevuld met het achtervoegsel `_rank` om het onderscheiden van de logboeken gemakkelijker te maken. Als u de exacte fout wilt vinden die ervoor heeft gezorgd dat Horovod wordt afgesloten, gaat u naar alle logboek bestanden en zoekt u `Traceback` aan het einde van de driver_log bestanden. Met een van deze bestanden krijgt u de daad werkelijke onderliggende uitzonde ring. 
 
-* **Verwijdering van de uitvoering of het experiment** : experimenten kunnen worden gearchiveerd met behulp van de methode [experiment. Archive](/python/api/azureml-core/azureml.core.experiment%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truearchive--) of vanuit de weer gave van het tabblad experiment in azure machine learning Studio-client via de knop ' Archief experiment '. Met deze actie wordt het experiment verborgen in lijst query's en weer gaven, maar wordt het niet verwijderd.
+* **Verwijdering van de uitvoering of het experiment**: experimenten kunnen worden gearchiveerd met behulp van de methode [experiment. Archive](/python/api/azureml-core/azureml.core.experiment%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truearchive--) of vanuit de weer gave van het tabblad experiment in azure machine learning Studio-client via de knop ' Archief experiment '. Met deze actie wordt het experiment verborgen in lijst query's en weer gaven, maar wordt het niet verwijderd.
 
     Het definitief verwijderen van afzonderlijke experimenten of uitvoeringen wordt momenteel niet ondersteund. Zie [uw machine learning service-werkruimte gegevens exporteren of verwijderen](how-to-export-delete-data.md)voor meer informatie over het verwijderen van werk ruimte-assets.
 
-* Het **metrieke document is te groot** : Azure machine learning heeft interne limieten voor de grootte van metrische objecten die tegelijk kunnen worden geregistreerd vanuit een training-uitvoering. Als er een foutbericht wordt weergegeven dat het metrische document te groot is bij het vastleggen van een metrische waarde voor een lijst, kunt u de lijst in kleinere segmenten splitsen, bijvoorbeeld:
+* Het **metrieke document is te groot**: Azure machine learning heeft interne limieten voor de grootte van metrische objecten die tegelijk kunnen worden geregistreerd vanuit een training-uitvoering. Als er een foutbericht wordt weergegeven dat het metrische document te groot is bij het vastleggen van een metrische waarde voor een lijst, kunt u de lijst in kleinere segmenten splitsen, bijvoorbeeld:
 
     ```python
     run.log_list("my metric name", my_metric[:N])
@@ -356,9 +359,9 @@ interactive_auth = InteractiveLoginAuthentication(tenant_id="the tenant_id in wh
     pip install --upgrade scikit-learn==0.20.3
   ```
  
-* **Forecasting R2-Score is altijd nul** : dit probleem doet zich voor als de verstrekte trainings gegevens een tijd reeks hebben die dezelfde waarde voor de laatste `n_cv_splits`  +  `forecasting_horizon` gegevens punten bevat. Als dit patroon in uw tijd reeks wordt verwacht, kunt u de primaire metriek overschakelen naar een genormaliseerd wortel fout.
+* **Forecasting R2-Score is altijd nul**: dit probleem doet zich voor als de verstrekte trainings gegevens een tijd reeks hebben die dezelfde waarde voor de laatste `n_cv_splits`  +  `forecasting_horizon` gegevens punten bevat. Als dit patroon in uw tijd reeks wordt verwacht, kunt u de primaire metriek overschakelen naar een genormaliseerd wortel fout.
  
-* **Tensor flow** : vanaf versie 1.5.0 van de SDK installeert automatische machine learning standaard geen tensor flow-modellen. Als u tensor flow wilt installeren en wilt gebruiken met uw geautomatiseerde ML experimenten, installeert u tensor flow = = 1.12.0 via CondaDependecies. 
+* **Tensor flow**: vanaf versie 1.5.0 van de SDK installeert automatische machine learning standaard geen tensor flow-modellen. Als u tensor flow wilt installeren en wilt gebruiken met uw geautomatiseerde ML experimenten, installeert u tensor flow = = 1.12.0 via CondaDependecies. 
  
    ```python
    from azureml.core.runconfig import RunConfiguration
@@ -366,18 +369,18 @@ interactive_auth = InteractiveLoginAuthentication(tenant_id="the tenant_id in wh
    run_config = RunConfiguration()
    run_config.environment.python.conda_dependencies = CondaDependencies.create(conda_packages=['tensorflow==1.12.0'])
   ```
-* **Experimenteer grafieken** : binaire classificatie grafieken (Precision-intrekken, Roc, winst curve enz.) die worden weer gegeven in automatische ml-experimenten, worden niet correct gerenderd in de gebruikers interface sinds 4/12. In grafiek grafieken worden momenteel inverse resultaten weer gegeven, waarbij betere modellen worden weer gegeven met lagere resultaten. Een oplossing wordt onderzocht.
+* **Experimenteer grafieken**: binaire classificatie grafieken (Precision-intrekken, Roc, winst curve enz.) die worden weer gegeven in automatische ml-experimenten, worden niet correct gerenderd in de gebruikers interface sinds 4/12. In grafiek grafieken worden momenteel inverse resultaten weer gegeven, waarbij betere modellen worden weer gegeven met lagere resultaten. Een oplossing wordt onderzocht.
 
-* **Databricks annuleren automatische uitvoering van een machine learning** : wanneer u gebruikmaakt van geautomatiseerde machine learning mogelijkheden op Azure Databricks, kunt u een uitvoering annuleren en een nieuwe uitvoering van het experiment starten door het Azure Databricks-cluster opnieuw op te starten.
+* **Databricks annuleren automatische uitvoering van een machine learning**: wanneer u gebruikmaakt van geautomatiseerde machine learning mogelijkheden op Azure Databricks, kunt u een uitvoering annuleren en een nieuwe uitvoering van het experiment starten door het Azure Databricks-cluster opnieuw op te starten.
 
 * **Databricks >tien herhalingen voor automatische machine learning** machine learning: als u meer dan 10 iteraties hebt, moet u instellen `show_output` op `False` Wanneer u de uitvoering verzendt.
 
-* **Databricks-widget voor de Azure machine learning SDK en geautomatiseerde machine learning** : de SDK-widget Azure machine learning wordt niet ondersteund in een Databricks-notebook omdat de notebooks geen HTML-widgets kunnen parseren. U kunt de widget in de portal weer geven met behulp van deze python-code in uw Azure Databricks notebook-cel:
+* **Databricks-widget voor de Azure machine learning SDK en geautomatiseerde machine learning**: de SDK-widget Azure machine learning wordt niet ondersteund in een Databricks-notebook omdat de notebooks geen HTML-widgets kunnen parseren. U kunt de widget in de portal weer geven met behulp van deze python-code in uw Azure Databricks notebook-cel:
 
     ```
     displayHTML("<a href={} target='_blank'>Azure Portal: {}</a>".format(local_run.get_portal_url(), local_run.id))
     ```
-* **automl_setup mislukt** : 
+* **automl_setup mislukt**: 
     * Voer automl_setup uit vanaf een Anaconda-prompt in Windows. Gebruik deze koppeling om [Miniconda te installeren](https://docs.conda.io/en/latest/miniconda.html).
     * Zorg ervoor dat de Conda 64-bits is geïnstalleerd in plaats van 32-bits door de opdracht uit te voeren `conda info` . De `platform` moet `win-64` voor Windows of `osx-64` voor Mac zijn.
     * Zorg ervoor dat Conda 4.4.10 of hoger is geïnstalleerd. U kunt de versie controleren met de opdracht `conda -V` . Als u een vorige versie hebt geïnstalleerd, kunt u deze bijwerken met behulp van de opdracht: `conda update conda` .
@@ -385,28 +388,28 @@ interactive_auth = InteractiveLoginAuthentication(tenant_id="the tenant_id in wh
       *  Als de `gcc: error trying to exec 'cc1plus': execvp: No such file or directory` fout is opgetreden, installeert u build Essentials met behulp van de opdracht `sudo apt-get install build-essential` .
       * Geef een nieuwe naam als de eerste para meter op automl_setup om een nieuwe Conda-omgeving te maken. Bekijk bestaande Conda-omgevingen met `conda env list` en verwijder ze met `conda env remove -n <environmentname>` .
       
-* **automl_setup_linux. sh mislukt** : als automl_setup_linus. sh mislukt bij Ubuntu Linux met de fout: `unable to execute 'gcc': No such file or directory`-
+* **automl_setup_linux. sh mislukt**: als automl_setup_linus. sh mislukt bij Ubuntu Linux met de fout: `unable to execute 'gcc': No such file or directory`-
   1. Zorg ervoor dat de uitgaande poorten 53 en 80 zijn ingeschakeld. Op een virtuele machine van Azure kunt u dit doen vanuit de Azure Portal door de virtuele machine te selecteren en op netwerken te klikken.
   2. Voer de volgende opdracht uit: `sudo apt-get update`
   3. Voer de volgende opdracht uit: `sudo apt-get install build-essential --fix-missing`
   4. `automl_setup_linux.sh`Opnieuw uitvoeren
 
-* **Configuration. ipynb mislukt** :
+* **Configuration. ipynb mislukt**:
   * Voor lokale Conda moet u er eerst voor zorgen dat automl_setup is uitgevoerd.
   * Zorg ervoor dat de subscription_id juist is. Zoek de subscription_id in het Azure Portal door alle services te selecteren en vervolgens op abonnementen. De tekens ' < ' en ' > ' mogen niet worden opgenomen in de subscription_id waarde. `subscription_id = "12345678-90ab-1234-5678-1234567890abcd"`Heeft bijvoorbeeld een geldige indeling.
   * Zorg ervoor dat Inzender of eigenaar toegang heeft tot het abonnement.
   * Controleer of de regio een van de ondersteunde regio's is: `eastus2` , `eastus` , `westcentralus` , `southeastasia` , `westeurope` , `australiaeast` , `westus2` , `southcentralus` .
   * Zorg ervoor dat u toegang tot de regio hebt met behulp van de Azure Portal.
   
-* **importeren AutoMLConfig mislukt** : er zijn pakket wijzigingen in de geautomatiseerde machine learning versie 1.0.76, waarvoor de vorige versie moet worden verwijderd voordat u de nieuwe versie bijwerkt. Als de `ImportError: cannot import name AutoMLConfig` is aangetroffen na een upgrade van een SDK-versie vóór v 1.0.76 naar v 1.0.76 of hoger, lost u de fout op door het volgende uit te voeren: `pip uninstall azureml-train automl` en vervolgens `pip install azureml-train-auotml` . Het script automl_setup. cmd doet dit automatisch. 
+* **importeren AutoMLConfig mislukt**: er zijn pakket wijzigingen in de geautomatiseerde machine learning versie 1.0.76, waarvoor de vorige versie moet worden verwijderd voordat u de nieuwe versie bijwerkt. Als de `ImportError: cannot import name AutoMLConfig` is aangetroffen na een upgrade van een SDK-versie vóór v 1.0.76 naar v 1.0.76 of hoger, lost u de fout op door het volgende uit te voeren: `pip uninstall azureml-train automl` en vervolgens `pip install azureml-train-auotml` . Het script automl_setup. cmd doet dit automatisch. 
 
-* **Workspace.from_config mislukt** : als de aanroepen ws = Workspace.from_config () mislukken
+* **Workspace.from_config mislukt**: als de aanroepen ws = Workspace.from_config () mislukken
   1. Controleer of de configuratie. ipynb-notebook is uitgevoerd.
   2. Als het notitie blok wordt uitgevoerd vanuit een map die zich niet in de map bevindt waar de `configuration.ipynb` was uitgevoerd, kopieert u de map aml_config en het bestand config.jsop dat item zich in de nieuwe map. Workspace.from_config leest de config.jsop voor de notitieblokmap of de bovenliggende map.
   3. Als er een nieuw abonnement, een resource groep, werk ruimte of regio wordt gebruikt, moet u ervoor zorgen dat u het `configuration.ipynb` notitie blok opnieuw uitvoert. Het is niet mogelijk om config.jsrechtstreeks te wijzigen als de werk ruimte al bestaat in de opgegeven resource groep onder het opgegeven abonnement.
   4. Als u de regio wilt wijzigen, wijzigt u de werk ruimte, de resource groep of het abonnement. `Workspace.create` Er wordt geen werk ruimte gemaakt of bijgewerkt als deze al bestaat, zelfs als de opgegeven regio verschillend is.
   
-* **Voorbeeld notitieblok mislukt** : als een voor beeld van een notebook mislukt met een fout die eigenschap, methode of bibliotheek niet bestaat:
+* **Voorbeeld notitieblok mislukt**: als een voor beeld van een notebook mislukt met een fout die eigenschap, methode of bibliotheek niet bestaat:
   * Zorg ervoor dat de juiste kernel is geselecteerd in de jupyter-notebook. De kernel wordt weer gegeven in de rechter bovenhoek van de notitie blok pagina. De standaard waarde is azure_automl. Houd er rekening mee dat de kernel wordt opgeslagen als onderdeel van het notitie blok. Als u overschakelt naar een nieuwe Conda-omgeving, moet u dus de nieuwe kernel in het notitie Blok selecteren.
       * Voor Azure Notebooks moet het python 3,6 zijn. 
       * Voor lokale Conda-omgevingen moet dit de Conda-omgevings naam zijn die u hebt opgegeven in automl_setup.
@@ -414,7 +417,7 @@ interactive_auth = InteractiveLoginAuthentication(tenant_id="the tenant_id in wh
 
 * **Numpy importeren mislukt in Windows: in** sommige Windows-omgevingen wordt een fout weer geven bij het laden van numpy met de laatste python-versie 3.6.8. Als u dit probleem ziet, probeert u met python-versie 3.6.7.
 
-* **Numpy importeren mislukt** : Controleer de tensor flow-versie in de omgeving Automated ml Conda. Ondersteunde versies zijn < 1,13. Tensor flow uit de omgeving verwijderen als versie >= 1,13, kunt u de versie van tensor flow controleren en als volgt verwijderen:
+* **Numpy importeren mislukt**: Controleer de tensor flow-versie in de omgeving Automated ml Conda. Ondersteunde versies zijn < 1,13. Tensor flow uit de omgeving verwijderen als versie >= 1,13, kunt u de versie van tensor flow controleren en als volgt verwijderen:
   1. Start een opdracht shell, activeer de Conda-omgeving waar automatisch ml-pakketten worden geïnstalleerd.
   2. Voer `pip freeze` in en zoek naar `tensorflow` , indien gevonden, de weer gegeven versie moet < 1,13
   3. Als de vermelde versie een niet-ondersteunde versie is, `pip uninstall tensorflow` typt u in de opdracht shell en voert u y in voor bevestiging.

@@ -9,12 +9,12 @@ ms.author: jeanyd
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: df0620308fab2e813fe3802dc7effb9dc1ce226c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 17bdae658c7095c44a7ae9f30fd85a6c45bf1546
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91285380"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96779971"
 ---
 # <a name="scale-out-your-azure-arc-enabled-postgresql-hyperscale-server-group-by-adding-more-worker-nodes"></a>Uw Azure-PostgreSQL grootschalige-Server groep uitschalen door meer worker-knoop punten toe te voegen
 In dit document wordt uitgelegd hoe u een PostgreSQL grootschalige-Server groep voor Azure-Arc kunt schalen. Dit doet u door een scenario te maken. **Als u geen gebruik wilt maken van het scenario en alleen meer wilt weten over hoe u kunt uitschalen, gaat u naar de alinea [uitschalen](#scale-out)**.
@@ -252,5 +252,4 @@ Noteer de uitvoerings tijd.
  > \* In de bovenstaande documenten slaat u de secties **voor het aanmelden bij de Azure Portal**, & **een Azure database for PostgreSQL-grootschalige maken (Citus)**. Implementeer de resterende stappen in de implementatie van Azure Arc. Deze secties zijn specifiek voor de Azure Database for PostgreSQL grootschalige (Citus) die worden aangeboden als een PaaS-service in de Azure-Cloud, maar de andere onderdelen van de documenten zijn rechtstreeks van toepassing op uw PostgreSQL grootschalige van Azure Arc.
 
 - [Opslag configuraties en Kubernetes opslag concepten](storage-configuration.md)
-- [Claims voor permanente volumes uitbreiden](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#expanding-persistent-volumes-claims)
 - [Kubernetes-resource model](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/scheduling/resources.md#resource-quantities)

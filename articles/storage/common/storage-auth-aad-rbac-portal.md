@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/23/2020
+ms.date: 12/07/2020
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: e2d577261a1cea0bad9aab549b3669f8fdef5751
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 96f316b1ca6a7684630c1ab14d722651c1f3ffbc
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91715855"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96778901"
 ---
 # <a name="use-the-azure-portal-to-assign-an-azure-role-for-access-to-blob-and-queue-data"></a>De Azure Portal gebruiken om een Azure-rol toe te wijzen voor toegang tot Blob-en wachtrij gegevens
 
@@ -39,12 +39,14 @@ Nadat u het juiste bereik voor een roltoewijzing hebt bepaald, navigeert u naar 
 
 1. Wijs de juiste Azure Storage Azure-rol toe om toegang te verlenen aan een Azure AD-beveiligings-principal.
 
-1. Wijs de rol van Azure Resource Manager [lezer](../../role-based-access-control/built-in-roles.md#reader) toe aan gebruikers die toegang moeten hebben tot containers of wacht rijen via de Azure Portal met hun Azure AD-referenties. 
+1. Wijs de rol van Azure Resource Manager [lezer](../../role-based-access-control/built-in-roles.md#reader) toe aan gebruikers die toegang moeten hebben tot containers of wacht rijen via de Azure Portal met hun Azure AD-referenties.
 
 In de volgende secties worden deze stappen uitvoeriger beschreven.
 
 > [!NOTE]
-> Als eigenaar van uw Azure Storage-account, worden er niet automatisch machtigingen toegewezen voor toegang tot gegevens. U moet uzelf expliciet een Azure-rol toewijzen voor Azure Storage. U kunt deze toewijzen op het niveau van uw abonnement, resource groep, opslag account of een container of wachtrij.
+> Wanneer u een Azure Storage-account maakt, worden er niet automatisch machtigingen toegewezen om toegang te krijgen tot gegevens via Azure AD. U moet uzelf expliciet een Azure-rol toewijzen voor Azure Storage. U kunt deze toewijzen op het niveau van uw abonnement, resource groep, opslag account of container of wachtrij.
+>
+> Voordat u een rol toewijst voor toegang tot gegevens, kunt u via de Azure Portal toegang krijgen tot gegevens in uw opslag account, omdat de Azure Portal ook de account sleutel kan gebruiken voor toegang tot gegevens. Zie [kiezen hoe u de toegang tot BLOB-gegevens in de Azure Portal autoriseren](../blobs/authorize-data-operations-portal.md)voor meer informatie.
 >
 > U kunt geen rollen bereik toewijzen aan een container of wachtrij als uw opslag account een hiërarchische naam ruimte heeft ingeschakeld.
 
@@ -64,11 +66,11 @@ Met de procedure die hier wordt weer gegeven, wordt een rol binnen een container
 1. Klik op de knop roltoewijzing **toevoegen** om een nieuwe rol toe te voegen.
 1. Selecteer in het venster **roltoewijzing toevoegen** de Azure Storage rol die u wilt toewijzen. Zoek vervolgens naar de beveiligingsprincipal waaraan u de rol wilt toewijzen.
 
-    :::image type="content" source="media/storage-auth-aad-rbac-portal/add-rbac-role.png" alt-text="Scherm opname van instellingen voor toegangs beheer voor container":::
+    :::image type="content" source="media/storage-auth-aad-rbac-portal/add-rbac-role.png" alt-text="Scherm afbeelding die laat zien hoe een Azure-rol kan worden toegewezen":::
 
 1. Klik op **Opslaan**. De identiteit waaraan u de rol hebt toegewezen, wordt weer gegeven onder die rol. In de volgende afbeelding ziet u bijvoorbeeld dat de gebruiker die nu heeft toegevoegd, lees machtigingen heeft voor de gegevens in de container *sample-container*.
 
-    :::image type="content" source="media/storage-auth-aad-rbac-portal/container-scoped-role.png" alt-text="Scherm opname van instellingen voor toegangs beheer voor container":::
+    :::image type="content" source="media/storage-auth-aad-rbac-portal/container-scoped-role.png" alt-text="Scherm afbeelding met een lijst met gebruikers die zijn toegewezen aan een rol":::
 
 U kunt vergelijk bare stappen volgen om een rollen bereik toe te wijzen aan het opslag account, de resource groep of het abonnement.
 
@@ -93,7 +95,7 @@ Volg deze stappen om de rol van **lezer** toe te wijzen, zodat een gebruiker toe
 Het toewijzen van de rol **lezer** is alleen nodig voor gebruikers die toegang moeten hebben tot blobs of wacht rijen met behulp van de Azure Portal.
 
 > [!IMPORTANT]
-> De preview-versie van Storage Explorer in het Azure Portal biedt geen ondersteuning voor het gebruik van Azure AD-referenties om BLOB-of wachtrij gegevens te bekijken en te wijzigen. Storage Explorer in de Azure Portal maakt altijd gebruik van de account sleutels om toegang te krijgen tot gegevens. Als u Storage Explorer in het Azure Portal wilt gebruiken, moet u een rol toewijzen die **micro soft. Storage/Storage accounts/listkeys ophalen/Action**bevat.
+> De preview-versie van Storage Explorer in het Azure Portal biedt geen ondersteuning voor het gebruik van Azure AD-referenties om BLOB-of wachtrij gegevens te bekijken en te wijzigen. Storage Explorer in de Azure Portal maakt altijd gebruik van de account sleutels om toegang te krijgen tot gegevens. Als u Storage Explorer in het Azure Portal wilt gebruiken, moet u een rol toewijzen die **micro soft. Storage/Storage accounts/listkeys ophalen/Action** bevat.
 
 ## <a name="next-steps"></a>Volgende stappen
 

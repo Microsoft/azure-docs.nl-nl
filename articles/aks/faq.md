@@ -3,12 +3,12 @@ title: Veelgestelde vragen over Azure Kubernetes service (AKS)
 description: Vind antwoorden op enkele veelgestelde vragen over Azure Kubernetes service (AKS).
 ms.topic: conceptual
 ms.date: 08/06/2020
-ms.openlocfilehash: 1ca342c1ea4134f4d9d8f1dbcae4e61bf2a75eaf
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 94cbaf417413b3e11071fb8c7237cbb3ac7b9a37
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/07/2020
-ms.locfileid: "96751381"
+ms.locfileid: "96780345"
 ---
 # <a name="frequently-asked-questions-about-azure-kubernetes-service-aks"></a>Veelgestelde vragen over AKS (Azure Kubernetes Service)
 
@@ -215,7 +215,7 @@ Van v 1.2.0 Azure CNI heeft de transparante modus als standaard voor de implemen
 
 ### <a name="bridge-mode"></a>Brug modus
 
-Zoals de naam suggereert, maakt de brug modus van Azure CNI, in een ' just-in-time ' mode, een L2-brug met de naam ' azure0 '. Alle interfaces van de pod-koppeling aan de host zijde `veth` worden verbonden met deze brug. Pod-Pod intra VM-communicatie is daarom via deze brug. De desbetreffende Bridge is een virtueel apparaat van laag 2 dat op zichzelf niets kan ontvangen of verzenden, tenzij u een of meer echte apparaten verbindt. Daarom moet eth0 van de virtuele Linux-machine worden geconverteerd naar een ondergeschikte Bridge-brug (' azure0 '). Hiermee maakt u een complexe netwerk topologie in de Linux-VM en als symptoom CNI moet u zorgen maken voor andere netwerk functies zoals DNS-Server Update, enzovoort.
+Zoals de naam suggereert, maakt de brug modus van Azure CNI, in een ' just-in-time ' mode, een L2-brug met de naam ' azure0 '. Alle interfaces van de pod-koppeling aan de host zijde `veth` worden verbonden met deze brug. Pod-Pod intra VM-communicatie en het resterende verkeer passeren deze brug. De desbetreffende Bridge is een virtueel apparaat van laag 2 dat op zichzelf niets kan ontvangen of verzenden, tenzij u een of meer echte apparaten verbindt. Daarom moet eth0 van de virtuele Linux-machine worden geconverteerd naar een ondergeschikte Bridge-brug (' azure0 '). Hiermee maakt u een complexe netwerk topologie in de Linux-VM en als symptoom CNI moet u zorgen maken voor andere netwerk functies zoals DNS-Server Update, enzovoort.
 
 :::image type="content" source="media/faq/bridge-mode.png" alt-text="Topologie van de brug modus":::
 
@@ -229,19 +229,11 @@ root@k8s-agentpool1-20465682-1:/#
 ```
 
 ### <a name="transparent-mode"></a>Transparante modus
-De transparante modus heeft een rechte benadering voor het instellen van Linux-netwerken. In deze modus wijzigt Azure CNI geen eigenschappen van de eth0-interface in de Linux-VM. Deze minimale benadering van het wijzigen van de Linux-netwerk eigenschappen vermindert het aantal complexe hoek problemen die clusters kunnen oplopen met de brug modus. In de transparante modus maakt Azure CNI de pod- `veth` koppel interfaces aan de host zijde die worden toegevoegd aan het hostnetwerkadapter. De intra VM Pod-to-pod-communicatie is via IP-routes die de CNI gaat toevoegen. De intra Pod-to-pod-VM is in wezen lager dan laag 3-netwerk verkeer.
+De transparante modus heeft een rechte benadering voor het instellen van Linux-netwerken. In deze modus wijzigt Azure CNI geen eigenschappen van de eth0-interface in de Linux-VM. Deze minimale benadering van het wijzigen van de Linux-netwerk eigenschappen vermindert het aantal complexe hoek problemen die clusters kunnen oplopen met de brug modus. In de transparante modus maakt Azure CNI de pod- `veth` koppel interfaces aan de host zijde die worden toegevoegd aan het hostnetwerkadapter. De intra VM Pod-to-pod-communicatie is via IP-routes die de CNI gaat toevoegen. In wezen Pod-to-pod-communicatie is meer dan laag 3 en pod verkeer wordt gerouteerd door N3-routerings regels.
 
 :::image type="content" source="media/faq/transparent-mode.png" alt-text="Topologie van transparante modus":::
 
 Hieronder ziet u een voor beeld van een configuratie van een IP-route van de transparante modus. elke pod-interface krijgt een statische route die is gekoppeld zodat verkeer met het doel-IP-adres als pod rechtstreeks naar de interface van de host-Side van het Pod wordt verzonden `veth` .
-
-### <a name="benefits-of-transparent-mode"></a>Voor delen van transparante modus
-
-- Voorziet in een oplossing voor de `conntrack` parallelle race voorwaarde en het vermijden van 5 sec. DNS-latentie problemen zonder dat u lokaal knoop punt-DNS hoeft in te stellen (u kunt nog steeds lokale DNS gebruiken om prestatie redenen).
-- Elimineert de eerste 5-sec. CNI Bridge-modus van de DNS-latentie wordt vandaag geïntroduceerd door de brug installatie van ' just-in-time '.
-- Een van de hoek gevallen in de brug modus is dat de Azure CNI de aangepaste DNS-Server lijsten die gebruikers toevoegen aan VNET of NIC niet kunnen blijven bijwerken. Dit leidt ertoe dat de CNI alleen de eerste instantie van de lijst met DNS-servers ophaalt. Opgelost in de transparante modus als CNI geen eth0-eigenschappen wijzigt. Meer informatie [vindt u hier](https://github.com/Azure/azure-container-networking/issues/713).
-- Biedt een betere afhandeling van UDP-verkeer en-beperking voor UDP-flood Storm wanneer er een time-out optreedt voor ARP. Als Bridge in de brug modus geen MAC-adres van de doel-pod in de intra-VM-Pod-to-pod-communicatie kent, resulteert dit in een ontwerp van het pakket naar alle poorten. Opgelost in de transparante modus omdat er geen L2-apparaten aanwezig zijn in het pad. Meer informatie vindt u [hier](https://github.com/Azure/azure-container-networking/issues/704).
-- De transparante modus voert betere Pod-to-pod-communicatie binnen de virtuele machine uit met betrekking tot de door Voer en latentie in vergelijking met de brug modus.
 
 ```bash
 10.240.0.216 dev azv79d05038592 proto static
@@ -254,6 +246,15 @@ Hieronder ziet u een voor beeld van een configuratie van een IP-route van de tra
 169.254.169.254 via 10.240.0.1 dev eth0 proto dhcp src 10.240.0.4 metric 100
 172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown
 ```
+
+### <a name="benefits-of-transparent-mode"></a>Voor delen van transparante modus
+
+- Voorziet in een oplossing voor de `conntrack` parallelle race voorwaarde en het vermijden van 5 sec. DNS-latentie problemen zonder dat u lokaal knoop punt-DNS hoeft in te stellen (u kunt nog steeds lokale DNS gebruiken om prestatie redenen).
+- Elimineert de eerste 5-sec. CNI Bridge-modus van de DNS-latentie wordt vandaag geïntroduceerd door de brug installatie van ' just-in-time '.
+- Een van de hoek gevallen in de brug modus is dat de Azure CNI de aangepaste DNS-Server lijsten die gebruikers toevoegen aan VNET of NIC niet kunnen blijven bijwerken. Dit leidt ertoe dat de CNI alleen de eerste instantie van de lijst met DNS-servers ophaalt. Opgelost in de transparante modus als CNI geen eth0-eigenschappen wijzigt. Meer informatie vindt u [hier](https://github.com/Azure/azure-container-networking/issues/713).
+- Biedt een betere afhandeling van UDP-verkeer en-beperking voor UDP-flood Storm wanneer er een time-out optreedt voor ARP. Als Bridge in de brug modus geen MAC-adres van de doel-pod in de intra-VM-Pod-to-pod-communicatie kent, resulteert dit in een ontwerp van het pakket naar alle poorten. Opgelost in de transparante modus omdat er geen L2-apparaten aanwezig zijn in het pad. Meer informatie vindt u [hier](https://github.com/Azure/azure-container-networking/issues/704).
+- De transparante modus voert betere Pod-to-pod-communicatie binnen de virtuele machine uit met betrekking tot de door Voer en latentie in vergelijking met de brug modus.
+
 
 <!-- LINKS - internal -->
 

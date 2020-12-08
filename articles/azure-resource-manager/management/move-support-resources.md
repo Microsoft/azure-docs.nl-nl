@@ -2,13 +2,13 @@
 title: Ondersteuning voor het verplaatsen van bewerkingen per resource type
 description: Een lijst met de Azure-resource typen die kunnen worden verplaatst naar een nieuwe resource groep of een nieuw abonnement.
 ms.topic: conceptual
-ms.date: 11/06/2020
-ms.openlocfilehash: 5b71c991136533096604c8a35af7989a227b6d2a
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.date: 12/07/2020
+ms.openlocfilehash: 226686e51c8b59b6963609a95a2cb3c2cc03d621
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94364226"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780991"
 ---
 # <a name="move-operation-support-for-resources"></a>Ondersteuning voor het verplaatsen van resources voor bronnen
 
@@ -1026,7 +1026,7 @@ Ga naar de naam ruimte van een resource provider:
 > | Resourcetype | Resourcegroep | Abonnement |
 > | ------------- | ----------- | ---------- |
 > | hanainstances | Nee | Nee |
-> | sapmonitors | Ja | Ja |
+> | sapmonitors | Nee | Nee |
 
 ## <a name="microsofthardwaresecuritymodules"></a>Micro soft. HardwareSecurityModules
 

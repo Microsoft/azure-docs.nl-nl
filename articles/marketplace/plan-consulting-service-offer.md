@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 ms.date: 10/27/2020
-ms.openlocfilehash: c56d83e551265f3fb4de106cb8fa77efd6dcbabc
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 7f56ff94c4dcf276accc56e8d1076266099d635d
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452113"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780702"
 ---
 # <a name="how-to-plan-a-consulting-service-offer-in-the-commercial-marketplace"></a>Een advies service-aanbieding plannen in de commerciële Marketplace
 
@@ -27,10 +27,24 @@ Aanbiedingen voor advies services worden gepubliceerd als **contact** gegevens. 
 
 ## <a name="primary-products-and-online-stores"></a>Primaire producten en online winkels
 
-Elk advies service-aanbod moet zich richten op een micro soft-product met de naam **primair product**. Het primaire product dat u in Partner Center selecteert, bepaalt of uw aanbieding wordt gepubliceerd naar Microsoft AppSource of Azure Marketplace.
+Elke consulting-service moet zich richten op een van deze micro soft-producten, het **primaire product** van de aanbieding.
 
-* Als het primaire product van uw Consulting Service Azure is, wordt de aanbieding vermeld in azure Marketplace.
-* Als het primaire product niet Azure is, wordt de aanbieding vermeld in AppSource.
+|Primair product                               |                   |
+|-------------------------------|-------------------|
+|Azure                          |Dynamics 365 project Service Automation |
+|Dynamics 365 Business Central  |Dynamics 365 Sales |
+|Dynamics 365 commerce          |Dynamics 365 Supply Chain Management |
+|Dynamics 365 Customer Insights |Microsoft 365 |
+|Dynamics 365-klanten service  |Power Apps |
+|Dynamics 365-veld Service     |Power Automate |
+|Dynamics 365-Financiën           |Power BI |
+|Dynamics 365-marketing         |Power Virtual Agents |
+|    |    |
+
+Het primaire product dat u in Partner Center selecteert, bepaalt of uw aanbieding wordt gepubliceerd naar Microsoft AppSource of Azure Marketplace.
+
+* Als het primaire product van uw Consulting Service Azure is, wordt de aanbieding vermeld op Azure Marketplace.
+* Als het primaire product niet Azure is, wordt de aanbieding vermeld op AppSource.
 
 Zie [online winkels voor commerciële Marketplace](./overview.md#commercial-marketplace-online-stores)voor meer informatie over de verschillen tussen AppSource en Azure Marketplace.
 
@@ -91,6 +105,7 @@ Om uw aanbieding gemakkelijker te maken, moet u enkele van deze items vooraf voo
 |Aan de slag met Azure IoT in productie |Productie IoT: evaluatie van 2 dagen |
 |Workshop op slimme geroosterers |Slimme geroosterers: 1 week workshop |
 |SQL Server voor de migratie door contoso |SQL-migratie: 3-WK testen van concept |
+| | |
 
 **Samen vatting van zoek resultaten**: Beschrijf het doel of doel van uw aanbieding in 200 tekens of minder. Deze samen vatting wordt gebruikt in de zoek resultaten van de commerciële Marketplace-vermelding. Het mag niet identiek zijn aan de titel. Houd rekening met uw beste SEO-tref woorden.
 
@@ -105,6 +120,7 @@ Wanneer u de beschrijving schrijft, volgt u deze criteria volgens uw service typ
 |Implementatie |Neem een gedetailleerde agenda op voor implementaties die langer dan een dag zijn en beschrijf wat technische wijzigingen, technische artefacten of andere artefacten die een klant kan verwachten als resultaat van de betrokkenheid. |
 |Werkbaar concept |Beschrijf wat technische wijzigingen, technische artefacten of andere artefacten die een klant kan verwachten als resultaat van de betrokkenheid. |
 |Workshop |Neem een gedetailleerde dagelijkse, wekelijkse of maandelijkse agenda op, afhankelijk van de duur van uw aanbieding. Stel de leer doelen of andere producten van uw workshop in. |
+| | |
 
 Hier volgen enkele tips voor het schrijven van uw beschrijving:
 
@@ -142,6 +158,11 @@ Volg deze richt lijnen voor uw logo's:
 **Marketplace-media – scherm** afbeeldingen: Voeg ten minste één en Maxi maal vijf installatie kopieën toe die uw aanbieding aantonen. Alle afbeeldingen moeten 1280 x 720 pixels groot zijn en in. PNG-indeling.
 
 **Marketplace-media – Video's** (optioneel): u kunt Maxi maal vier Video's toevoegen die uw aanbieding aantonen. De Video's moeten worden gehost op YouTube of Vimeo en hebben een miniatuur (1280 x 720 PNG-bestand).
+
+## <a name="pricing-and-availability"></a>Prijzen en beschikbaarheid
+
+Uw advies service-aanbieding kan beschikbaar worden gesteld in een of meer landen of regio's. In Partner Center kunt u de prijs bepalen voor elke markt die u selecteert. Zie [geografische Beschik baarheid en valuta ondersteuning voor de commerciële Marketplace](./marketplace-geo-availability-currencies.md)voor een volledige lijst met ondersteunde markten en valuta's.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -9,18 +9,82 @@ ms.topic: reference
 ms.author: jmartens
 author: j-martens
 ms.date: 09/10/2020
-ms.openlocfilehash: 03825e0f091df01b98355dd6789eb5c9cb2897b0
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 4998469fa353fef9e8a91d078349150d9f739ac2
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96444537"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96779410"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
 In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga voor de volledige SDK-referentie-inhoud naar de hoofd pagina van de hand leiding van de Azure Machine Learning van de [**SDK voor python**](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) .
 
 Zie [de lijst met bekende problemen](resource-known-issues.md) met bekende bugs en tijdelijke oplossingen.
+
+## <a name="2020-12-07"></a>2020-12-07
+
+### <a name="azure-machine-learning-sdk-for-python-v1190"></a>Azure Machine Learning SDK voor python v-1.19.0
++ **Oplossingen en verbeteringen voor oplossingen**
+  + **azureml-automl-core**
+    + Experimentele ondersteuning voor test gegevens is toegevoegd aan AutoMLStep.
+    + De initiële basis implementatie van de opname functie voor test sets is toegevoegd.
+    + Verwijzingen naar sklearn. Externals. joblib zijn verplaatst naar de joblib.
+    + een nieuw AutoML-taak type van "installatie kopie-exemplaar-segmentatie" introduceren.
+  + **azureml-automl-runtime**
+    + De initiële basis implementatie van de opname functie voor test sets is toegevoegd.
+    + Wanneer alle teken reeksen in een tekst kolom een lengte van precies één teken hebben, werkt de TfIdf woord-gram featurizer niet omdat de Tokenizer de teken reeksen van minder dan twee tekens negeert. Met de huidige code wijziging kan AutoML deze use-case verwerken.
+    + een nieuw AutoML-taak type van "installatie kopie-exemplaar-segmentatie" introduceren.
+  + **azureml-contrib-automl-DNN-NLP**
+    + Eerste PR voor nieuw DNN-NLP-pakket
+  + **azureml-contrib-automl-DNN-Vision**
+    + een nieuw AutoML-taak type van "installatie kopie-exemplaar-segmentatie" introduceren.
+  + **azureml-contrib-automl-pijp lijn-stappen**
+    + Dit nieuwe pakket is verantwoordelijk voor het maken van stappen die vereist zijn voor veel modellen trein/Afleidings scenario. -Het verplaatst de code van de trein/afleiding naar het pakket azureml. Train. automl. runtime, zodat toekomstige oplossingen automatisch beschikbaar zijn via software releases met de status.
+  + **azureml-contrib-dataset**
+    + een nieuw AutoML-taak type van "installatie kopie-exemplaar-segmentatie" introduceren.
+  + **azureml-core**
+    + De initiële basis implementatie van de opname functie voor test sets is toegevoegd.
+    + De XREF-waarschuwingen voor documentatie in het azureml core-pakket herstellen
+    + Doc-teken reeks oplossingen voor de functie opdracht ondersteuning in SDK
+    + Opdracht eigenschap toevoegen aan RunConfiguration. Met deze functie kunnen gebruikers een daad werkelijke opdracht of uitvoer bare bestanden uitvoeren op de compute via de AzureML-SDK.
+    + Gebruikers kunnen een leeg experiment verwijderen, gezien de id van het experiment.
+  + **azureml-dataprep**
+    + Er is ondersteuning toegevoegd voor de gegevensset voor Spark die is gebouwd met scala 2,12. Hiermee wordt de bestaande 2,11-ondersteuning toegevoegd.
+  + **azureml-mlflow**
+    + AzureML-MLflow voegt veilige beveiligings beveiligingen in externe scripts toe om te voor komen dat verzonden uitvoeringen vroegtijdig worden beëindigd.
+  + **azureml-pipeline-core**
+    + Er is een fout opgelost in het instellen van een standaard pijplijn voor het pijp lijn-eind punt dat is gemaakt via de gebruikers interface
+  + **azureml-pipeline-steps**
+    + Experimentele ondersteuning voor test gegevens is toegevoegd aan AutoMLStep.
+  + **azureml-tensorboard**
+    + De XREF-waarschuwingen voor documentatie in het azureml core-pakket herstellen
+  + **azureml-train-automl-client**
+    + Experimentele ondersteuning voor test gegevens is toegevoegd aan AutoMLStep.
+    + De initiële basis implementatie van de opname functie voor test sets is toegevoegd.
+    + een nieuw AutoML-taak type van "installatie kopie-exemplaar-segmentatie" introduceren.
+  + **azureml-train-automl-runtime**
+    + De initiële basis implementatie van de opname functie voor test sets is toegevoegd.
+    + Los de berekening van de onbewerkte uitleg voor het beste AutoML-model op als de AutoML-modellen zijn getraind met validation_size instelling.
+    + Verwijzingen naar sklearn. Externals. joblib zijn verplaatst naar de joblib.
+  + **azureml-train-core**
+    + HyperDriveRun.get_children_sorted_by_primary_metric () moet nu sneller worden voltooid
+    + Verbeterde fout afhandeling in de HyperDrive-SDK.
+    +  Alle Estimator-klassen zijn afgeschaft in het voor deel van het gebruik van ScriptRunConfig voor het configureren van experimenten. Afgeschafte klassen zijn:
+        + MMLBaseEstimator
+        + Estimator
+        + PyTorch 
+        + TensorFlow 
+        + Chainer 
+        + SKLearn
+    + Het gebruik van Nccl en Gloo is afgeschaft als geldige invoer typen voor Estimator-klassen in het voor deel van het gebruik van PyTorchConfiguration met ScriptRunConfig.
+    + Het gebruik van MPI is afgeschaft als een geldig invoer type voor Estimator-klassen in het voor deel van het gebruik van MpiConfiguration met ScriptRunConfig.
+    + Opdracht eigenschap toevoegen aan runconfiguration. Met deze functie kunnen gebruikers een daad werkelijke opdracht of uitvoer bare bestanden uitvoeren op de compute via de AzureML-SDK.
+
+    +  Alle Estimator-klassen zijn afgeschaft in het voor deel van het gebruik van ScriptRunConfig voor het configureren van experimenten. Afgeschafte klassen zijn: + MMLBaseEstimator + Estimator + PyTorch + tensor flow + Chainer + SKLearn
+    + Het gebruik van Nccl en Gloo is afgeschaft als een geldig type invoer voor Estimator-klassen in het voor deel van het gebruik van PyTorchConfiguration met ScriptRunConfig. 
+    + Het gebruik van MPI is afgeschaft als een geldig type invoer voor Estimator-klassen in het voor deel van het gebruik van MpiConfiguration met ScriptRunConfig.
+
 
 
 ## <a name="2020-11-09"></a>2020-11-09
@@ -47,12 +111,6 @@ Zie [de lijst met bekende problemen](resource-known-issues.md) met bekende bugs 
     + De API van de gekoppelde service is verfijnd. In plaats van een resource-id op te geven, hebben we drie afzonderlijke para meters sub_id, RG en de naam gedefinieerd in de configuratie.
     + Als u wilt dat klanten zelf problemen met token beschadiging kunnen oplossen, kunt u de synchronisatie van werk ruimte-tokens op een open bare manier inschakelen.
     + Met deze wijziging kan een lege teken reeks worden gebruikt als waarde voor een script_param
-  + **azureml-pipeline-core**
-    + SDK ter ondersteuning van SynapseCompute-type en SynapseSparkStep. Klanten kunnen experimenteren en pijplijn uitvoeringen uitvoeren op Synapse Spark-pool.
-  + **azureml-pipeline-steps**
-    + SDK ter ondersteuning van SynapseCompute-type en SynapseSparkStep. Klanten kunnen experimenteren en pijplijn uitvoeringen uitvoeren op Synapse Spark-pool.
-  + **azureml-Synapse**
-    + Voeg Synapse Magic en SparkMonitor toe om Syanpse-taak te verzenden in te scha kelen en de taak voortgang in notebook te bekijken.
   + **azureml-train-automl-client**
     +  Verbeterde verwerking van korte tijd reeksen door opvullingen met Gaussiaans ruis toe te staan.
   + **azureml-train-automl-runtime**
@@ -90,7 +148,6 @@ Meer informatie over de [segmentatie van afbeeldings instanties](how-to-label-im
     + Er is een probleem opgelost waarbij VotingRegressor-voor spellingen mogelijk onnauwkeurig zijn na het aanpassen van het model.
   + **azureml-core**
     + Aanvullende details toegevoegd over de relatie tussen de AKS-implementatie configuratie en Azure Kubernetes service-concepten.
-    + De klant kan de gekoppelde Service-SDK gebruiken om de Synapse-werk ruimte te koppelen aan de AML-werk ruimte. RUW worden ondersteund.
     + Ondersteuning voor de client labels van de omgeving. De gebruiker kan een label omgeving geven en ernaar verwijzen.
   + **azureml-dataprep**
     + Er is een beter fout bericht bij het gebruik van momenteel niet-ondersteunde Spark met scala 2,12.

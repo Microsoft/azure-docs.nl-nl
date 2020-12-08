@@ -11,17 +11,17 @@ ms.service: active-directory
 ms.subservice: fundamentals
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 11/30/2020
+ms.date: 12/03/2020
 ms.author: ajburnle
 ms.reviewer: dhanyahk
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b836c28443790466084b1840edcf08dc09dcf4cc
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: 2999fb8b3c3687c68e7eb38a60f128e24028871f
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96518274"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96779699"
 ---
 # <a name="whats-new-in-azure-active-directory"></a>Wat is er nieuw in Azure Active Directory?
 
@@ -311,7 +311,7 @@ Zie [externe identiteiten uitschakelen en verwijderen met Azure AD-toegangs beoo
 **Service categorie:** Toegangs beoordelingen  
 **Product mogelijkheden:** Identity governance
  
-In azure AD-toegangs beoordelingen kunnen beheerders die recensies maken, nu een aangepast bericht naar de revisors schrijven. Revisoren zien het bericht in de e-mail die ze ontvangen en vragen om de beoordeling te volt ooien. Zie stap 6 van de sectie [Geavanceerde instellingen](../governance/create-access-review.md#advanced-settings) voor meer informatie over het gebruik van deze functie.
+In azure AD-toegangs beoordelingen kunnen beheerders die recensies maken, nu een aangepast bericht naar de revisors schrijven. Revisoren zien het bericht in de e-mail die ze ontvangen en vragen om de beoordeling te volt ooien. Zie stap 14 van de sectie [een of meer toegangs beoordelingen maken](../governance/create-access-review.md#create-one-or-more-access-reviews) voor meer informatie over het gebruik van deze functie.
 
 ---
 

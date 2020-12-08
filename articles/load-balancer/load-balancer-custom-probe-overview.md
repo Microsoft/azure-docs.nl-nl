@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/17/2019
 ms.author: allensu
-ms.openlocfilehash: 605692d15a08246dd574b0724a550b4543a237a3
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: a008d7b26738b9552a7a43ab026391bd9afe0aa8
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94695517"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780940"
 ---
 # <a name="load-balancer-health-probes"></a>Status van Load Balancer testen
 
@@ -66,7 +66,7 @@ De opgegeven time-outwaarde en interval waarden bepalen of een exemplaar wordt g
 
 We kunnen het gedrag verder met een voor beeld illustreren. Als u het aantal test reacties op 2 en het interval tot vijf seconden hebt ingesteld, betekent dit 2 time-outstoringen van de test binnen een interval van 10 seconden.  Omdat het tijdstip waarop een test wordt verzonden, niet is gesynchroniseerd wanneer uw toepassing de status kan wijzigen, kunnen we de tijd voor het detecteren van twee scenario's binden:
 
-1. Als uw toepassing begint met het produceren van een time-outtest respons voordat de eerste test arriveert, duurt het detecteren van deze gebeurtenissen tien seconden (2 x 5 seconde intervallen), plus de duur van de toepassing die begint met een time-out voor het moment waarop de eerste test arriveert.  U kunt ervan uitgaan dat deze detectie iets langer duurt dan tien seconden.
+1. Als uw toepassing begint met het produceren van een time-outtest respons voordat de eerste test arriveert, duurt het detecteren van deze gebeurtenissen tien seconden (2 x 5 seconde intervallen), plus de duur van de toepassing die begint met een time-out op het moment dat de eerste test arriveert.  U kunt ervan uitgaan dat deze detectie iets langer duurt dan tien seconden.
 2. Als uw toepassing begint met het produceren van een time-outtest respons op het moment dat de eerste test arriveert, begint de detectie van deze gebeurtenissen pas wanneer de volgende test (en een time-out) plus een andere 10 seconden (2 x 5 seconden) is bereikt.  U kunt ervan uitgaan dat deze detectie net minder dan 15 seconden duurt.
 
 Voor dit voor beeld neemt het platform een korte tijd in beslag om te reageren op deze wijziging.  Dit betekent een afhankelijk van 
@@ -92,7 +92,7 @@ De beschik bare protocollen zijn afhankelijk van de gebruikte Load Balancer SKU:
 
 || TCP | HTTP | HTTPS |
 | --- | --- | --- | --- |
-| **Standard-SKU** |    &#9989; |   &#9989; |   &#9989; |
+| **Standaard SKU** |    &#9989; |   &#9989; |   &#9989; |
 | **Basis-SKU** |   &#9989; |   &#9989; | &#10060; |
 
 ### <a name="tcp-probe"></a><a name="tcpprobe"></a> TCP-test

@@ -8,27 +8,27 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 09/09/2020
-ms.openlocfilehash: dafb4485ae9b10d89fa36bd790dcf3a799054de3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b2cd50b1b35b87b1a11301ddc36ac355bef20dc4
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90064134"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780612"
 ---
 # <a name="manage-spark-application-dependencies"></a>Spark-toepassingsafhankelijkheden beheren
 
 In dit artikel vindt u informatie over het beheren van afhankelijkheden voor uw Spark-toepassingen die worden uitgevoerd op HDInsight. We beslaan zowel scala als PySpark op Spark-toepassing en cluster bereik.
 
 Gebruik snelle koppelingen om naar de sectie te gaan op basis van uw gebruikers Case:
-* [Spark-taak jar-afhankelijkheden instellen met behulp van Jupyter notebook](#use-jupyter-notebook)
+* [Spark-taak jar-afhankelijkheden instellen met behulp van Jupyter Notebook](#use-jupyter-notebook)
 * [Spark-taak jar-afhankelijkheden instellen met behulp van Azure-toolkit voor IntelliJ](#use-azure-toolkit-for-intellij)
 * [Jar-afhankelijkheden configureren voor Spark-cluster](#jar-libs-for-cluster)
 * [Jar-afhankelijkheden veilig beheren](#safely-manage-jar-dependencies)
-* [Een Spark-taak python-pakket instellen met behulp van Jupyter notebook](#use-jupyter-notebook-1)
+* [Een Spark-taak python-pakket instellen met behulp van Jupyter Notebook](#use-jupyter-notebook-1)
 * [Python-pakketten veilig beheren voor Spark-cluster](#python-packages-for-cluster)
 
 ## <a name="jar-libs-for-one-spark-job"></a>Jar bibliotheken voor een Spark-taak
-### <a name="use-jupyter-notebook"></a>Jupyter notebook gebruiken
+### <a name="use-jupyter-notebook"></a>Jupyter Notebook gebruiken
 Wanneer een Spark-sessie wordt gestart in Jupyter Notebook in Spark kernel voor scala, kunt u pakketten configureren van:
 
 * [Maven-opslag plaats](https://search.maven.org/)of door de Community bijgedragen pakketten bij [Spark-pakketten](https://spark-packages.org/).
@@ -42,7 +42,7 @@ U gebruikt de `%%configure` Magic om het notitie blok te configureren voor het g
 
 **Voor beeld voor pakketten uit maven-opslag plaats of Spark-pakketten**
 
-Nadat u het pakket hebt gevonden vanuit de Maven-opslag plaats, moet u de waarden voor **GroupId**, **ArtifactId**en **Version**verzamelen. De drie waarden samen voegen, gescheiden door een dubbele punt (**:**).
+Nadat u het pakket hebt gevonden vanuit de Maven-opslag plaats, moet u de waarden voor **GroupId**, **ArtifactId** en **Version** verzamelen. De drie waarden samen voegen, gescheiden door een dubbele punt (**:**).
 
    ![Pakket schema samen voegen](./media/apache-spark-manage-dependencies/spark-package-schema.png "Pakket schema samen voegen")
 
@@ -102,8 +102,8 @@ U kunt de stappen automatiseren met [script acties](../hdinsight-hadoop-customiz
 HDInsight-cluster heeft ingebouwde jar-afhankelijkheden en de updates voor deze jar-versies worden van tijd tot tijd uitgevoerd. Als u wilt voor komen dat versie conflicten optreden tussen ingebouwde potten en de potten die u ter referentie brengt, kunt u overwegen om [uw toepassings afhankelijkheden te arceren](./safely-manage-jar-dependency.md).
 
 ## <a name="python-packages-for-one-spark-job"></a>Python-pakketten voor een Spark-taak
-### <a name="use-jupyter-notebook"></a>Jupyter notebook gebruiken
-De Jupyter notebook PySpark-kernel van HDInsight biedt geen ondersteuning voor het installeren van Python-pakketten vanuit de PyPi-of Anaconda-pakket opslagplaats rechtstreeks. Als u `.zip` , `.egg` of `.py` afhankelijkheden hebt en u deze wilt raadplegen voor een Spark-sessie, volgt u de onderstaande stappen:
+### <a name="use-jupyter-notebook"></a>Jupyter Notebook gebruiken
+HDInsight Jupyter Notebook PySpark kernel biedt geen ondersteuning voor het rechtstreeks installeren van Python-pakketten van PyPi of Anaconda-pakket opslagplaats. Als u `.zip` , `.egg` of `.py` afhankelijkheden hebt en u deze wilt raadplegen voor een Spark-sessie, volgt u de onderstaande stappen:
 
 1. Voer de onderstaande voorbeeld script acties uit om te kopiëren naar `.zip` `.egg` of `.py` bestanden van de primaire opslag `wasb://mycontainer@mystorageaccount.blob.core.windows.net/libs/*` naar het lokale cluster bestands systeem `/usr/libs/pylibs` . De stap is vereist omdat Linux wordt gebruikt `:` voor het scheiden van een lijst met zoek paden, maar HDInsight ondersteunt alleen opslag paden met schema als `wasb://` . Het externe opslagpad werkt niet naar behoren wanneer u gebruikt `sys.path.insert` .
 

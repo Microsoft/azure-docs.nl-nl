@@ -1,22 +1,22 @@
 ---
 title: Galerie-installatie kopieën delen via tenants in azure
-description: Meer informatie over het delen van VM-installatie kopieën in azure-tenants met behulp van gedeelde afbeeldings galerieën met Windows-voor beelden.
+description: Meer informatie over het delen van VM-installatie kopieën in azure-tenants met behulp van de galerie met gedeelde afbeeldingen en Power shell.
 author: axayjo
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.subservice: imaging
 ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 07/15/2019
 ms.author: akjosh
 ms.reviewer: cynthn
-ms.openlocfilehash: 89987ccc975f5d473a493c48be61094de1177c1b
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 84998182081c6a681668fbd9bc05446357beb959
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94832412"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96781042"
 ---
-# <a name="share-gallery-vm-images-across-azure-tenants"></a>Galerie-VM-installatie kopieën delen in azure-tenants
+# <a name="share-gallery-vm-images-across-azure-tenants-using-powershell"></a>Galerie-VM-installatie kopieën delen in azure-tenants met behulp van Power shell
 
 Met de galerie met gedeelde afbeeldingen kunt u afbeeldingen delen met behulp van Azure RBAC. U kunt Azure RBAC gebruiken om installatie kopieën te delen binnen uw Tenant, en zelfs voor personen buiten uw Tenant. Zie de [Galerie delen](./shared-images-portal.md#share-the-gallery)voor meer informatie over deze eenvoudige optie voor delen.
 

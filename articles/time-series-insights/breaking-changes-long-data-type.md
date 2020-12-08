@@ -8,14 +8,14 @@ ms.author: dpalled
 manager: diviso
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 10/01/2020
+ms.date: 12/07/2020
 ms.custom: dpalled
-ms.openlocfilehash: 3460cd8a88733ede041f6c0635ba40797675ed03
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 0f7ac9844bfe7eac7094d3b7fdf653e07f236599
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95025324"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780821"
 ---
 # <a name="adding-support-for-long-data-type-in-azure-time-series-insights-gen2"></a>Ondersteuning toevoegen voor lang gegevens type in Azure Time Series Insights Gen2
 

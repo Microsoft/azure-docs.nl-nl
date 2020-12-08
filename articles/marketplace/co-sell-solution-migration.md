@@ -4,15 +4,15 @@ description: Meer informatie over het migreren van oplossingen voor co-sell van 
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: how-to
-author: keferna
-ms.author: keferna
-ms.date: 12/04/2020
-ms.openlocfilehash: 6af7095dbb57c5ceb17989b2d6106a42e1d23fb9
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+author: vamahtan
+ms.author: vamahtan
+ms.date: 12/07/2020
+ms.openlocfilehash: 6ad58283ad9078088f241a67426657eb7a538e10
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/07/2020
-ms.locfileid: "96772023"
+ms.locfileid: "96781127"
 ---
 # <a name="migration-of-co-sell-solutions-from-ocp-gtm-to-the-commercial-marketplace"></a>Migratie van oplossingen voor co-sell van een OCP-GTM naar de commerciële Marketplace
 
@@ -79,7 +79,8 @@ Selecteer deze optie als de oplossing al is gepubliceerd in de commerciële Mark
 1. De bestaande aanbieding identificeren.
     1. Selecteer **Ik wil deze oplossing samen voegen met een vergelijkbaar aanbod in de commerciële Marketplace** (Zie **actie vereist** afbeelding [hierboven](#beginmigration)).
     1. Op het tabblad **actie 1** ziet u live commerciële Marketplace-aanbiedingen waarmee uw OCP gtm-oplossing kan worden gekoppeld. Selecteer de Live-aanbieding in de lijst als u er een hebt. Als er geen lijst met aanbiedingen waaruit u kunt kiezen, voert u het adres van de klant (URL) in Microsoft AppSource of Azure Marketplace.
-        [![Het tabblad actie 1 van het samenvoeg proces.](media/co-sell-migrate/action-1-merge.png)](media/co-sell-migrate/action-1-merge.png#lightbox)    1. Selecteer **Doorgaan**.
+        [![Het tabblad actie 1 van het samenvoeg proces.](media/co-sell-migrate/action-1-merge.png)](media/co-sell-migrate/action-1-merge.png#lightbox)
+    1. Selecteer **Doorgaan**.
 1. Vraag de samen voeging aan.
     1. Op het tabblad **actie 2** worden instructies weer gegeven voor het aanvragen van het samen voegen van uw OCP gtm-oplossing met de naam die u hebt opgegeven. Als u het samen voegen wilt aanvragen, selecteert u **opslaan & contact opnemen met ondersteuning**, waarmee de pagina partner ondersteuning wordt geopend in een browser.
     1. Selecteer **Details van probleem opgeven** en voer het volgende [ ![ in: het tabblad actie 2 van het samenvoeg proces.](media/co-sell-migrate/action-2-merge.png)](media/co-sell-migrate/action-2-merge.png#lightbox)
@@ -93,7 +94,7 @@ Selecteer deze optie als u een OCP GTM-oplossing hebt die nog geen correspondere
 1. Selecteer **Ik wil deze oplossing migreren van OCP gtm naar de commerciële Marketplace** (Zie **actie vereist** afbeelding [hierboven](#beginmigration)) en ga vervolgens **door**.
 1. Op het tabblad **actie 1** selecteert u het [type aanbieding](publisher-guide-by-offer-type.md)en **gaat u verder**.
 
-    [![Het tabblad actie 1 van het migratie proces.](media/co-sell-migrate/action-1-migrate.png)](media/co-sell-migrate/action-1-migrate.png#lightbox)    1. Selecteer **Doorgaan**.
+    [![Het tabblad actie 1 van het migratie proces.](media/co-sell-migrate/action-1-migrate.png)](media/co-sell-migrate/action-1-migrate.png#lightbox)
 
 1. Selecteer op het tabblad **actie 2** het profiel van de [Uitgever](partner-center-portal/create-account.md) in de lijst die wordt weer gegeven. Als u geen uitgevers account hebt, maakt u er een in het [partner centrum](https://partner.microsoft.com/solutions/migration)en selecteert u dit hier.
 

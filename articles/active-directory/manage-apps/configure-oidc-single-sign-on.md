@@ -12,12 +12,12 @@ ms.date: 10/19/2020
 ms.author: kenwith
 ms.reviewer: arajpathak7
 ms.custom: contperfq2
-ms.openlocfilehash: 5fc0156b9b832f44fd38292ef2b9a25e39401610
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 487bf3c83be16ee80838b3bbe8bf8532eb6ffe12
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348658"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780056"
 ---
 # <a name="understand-oidc-based-single-sign-on"></a>Informatie over eenmalige aanmelding op basis van OIDC
 In de [Quick](view-applications-portal.md) start-serie op toepassings beheer hebt u geleerd hoe u Azure AD als id-provider (IDP) gebruikt voor een toepassing. In dit artikel vindt u meer informatie over apps die gebruikmaken van de OpenID Connect Connect-standaard voor het implementeren van eenmalige aanmelding. 
@@ -34,6 +34,8 @@ Het mooie van het toevoegen van een app die gebruikmaakt van de OIDC-standaard v
 Een op OIDC gebaseerde app toevoegen in Azure Active Directory
 
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE4HoNI]
+
+Zie [Wat is toestemming van gebruikers en beheerders](../develop/howto-convert-app-to-be-multi-tenant.md#understand-user-and-admin-consent)? voor meer informatie over de toestemming van de gebruiker en de beheerder.
 
 ## <a name="next-steps"></a>Volgende stappen
 

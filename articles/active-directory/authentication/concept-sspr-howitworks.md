@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 620b696be0b9a06cf0d68145b06e3cacf2bedff2
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+ms.openlocfilehash: e5bcc6503af5f5f685ee589ed7671b4715834fef
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/07/2020
-ms.locfileid: "96762547"
+ms.locfileid: "96779359"
 ---
 # <a name="how-it-works-azure-ad-self-service-password-reset"></a>How it works: Azure AD self-service password reset (Hoe het werkt: selfservice voor wachtwoordherstel in Azure AD)
 
@@ -89,7 +89,7 @@ Wanneer u geen registratie nodig hebt, wordt gebruikers niet gevraagd tijdens he
 >
 > Deze interrupt die moet worden geregistreerd voor SSPR, verbreekt de verbinding van de gebruiker niet als ze al zijn aangemeld.
 
-## <a name="set-the-number-of-days-before-users-are-asked-to-reconfirm-their-authentication-information"></a>Het aantal dagen instellen waarna gebruikers wordt gevraagd om de verificatie gegevens opnieuw te bevestigen
+## <a name="reconfirm-authentication-information"></a>Verificatie gegevens opnieuw bevestigen
 
 Om ervoor te zorgen dat de verificatie methoden juist zijn wanneer ze nodig zijn om het wacht woord opnieuw in te stellen of te wijzigen, kunt u vereisen dat gebruikers hun informatie over de geregistreerde gegevens na een bepaalde periode bevestigen. Deze optie is alleen beschikbaar als u de optie **gebruikers moeten zich registreren wanneer ze zich aanmelden** inschakelen.
 

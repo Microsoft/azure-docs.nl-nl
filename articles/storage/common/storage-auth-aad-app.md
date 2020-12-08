@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 09/21/2020
+ms.date: 12/07/2020
 ms.author: tamram
 ms.subservice: common
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 6dacb1cd910c6569d94f365b34a15494dde70a4c
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 6d6a152096ce4e16849542c26d1c7a675a972b89
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92787683"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96779070"
 ---
 # <a name="acquire-a-token-from-azure-ad-for-authorizing-requests-from-a-client-application"></a>Een token van Azure AD verkrijgen voor het machtigen van aanvragen van een client toepassing
 
@@ -44,9 +44,9 @@ De volgende afbeelding toont algemene instellingen voor het registreren van een 
 > [!NOTE]
 > Als u uw toepassing registreert als een systeem eigen toepassing, kunt u een geldige URI voor de **omleidings-URI** opgeven. Voor systeem eigen toepassingen hoeft deze waarde geen echte URL te zijn. Voor webtoepassingen moet de omleidings-URI een geldige URI zijn, omdat deze de URL specificeert waarnaar de tokens worden opgegeven.
 
-Nadat u uw toepassing hebt geregistreerd, ziet u de toepassings-ID (of client-ID) onder **instellingen** :
+Nadat u uw toepassing hebt geregistreerd, ziet u de toepassings-ID (of client-ID) onder **instellingen**:
 
-:::image type="content" source="media/storage-auth-aad-app/app-registration-client-id.png" alt-text="Scherm afbeelding die laat zien hoe u uw opslag toepassing registreert bij Azure AD":::
+:::image type="content" source="media/storage-auth-aad-app/app-registration-client-id.png" alt-text="Scherm opname met de client-ID":::
 
 Zie [toepassingen integreren met Azure Active Directory](../../active-directory/develop/quickstart-register-app.md)voor meer informatie over het registreren van een toepassing met Azure AD.
 
@@ -54,18 +54,18 @@ Zie [toepassingen integreren met Azure Active Directory](../../active-directory/
 
 Verleen vervolgens de machtigingen van uw toepassing om Azure Storage-Api's aan te roepen. Met deze stap kan uw toepassing aanvragen voor Azure Storage met Azure AD autoriseren.
 
-1. Selecteer op de pagina **API-machtigingen** voor uw geregistreerde toepassing **een machtiging toevoegen** .
+1. Selecteer op de pagina **API-machtigingen** voor uw geregistreerde toepassing **een machtiging toevoegen**.
 1. Selecteer **Azure Storage** op het tabblad **micro soft-api's** .
-1. In het deel venster **API-machtigingen voor aanvragen** , onder **welk type machtigingen uw toepassing vereist?** , moet u nagaan of het beschik bare machtigings type **gedelegeerde machtigingen** is. Deze optie is standaard voor u geselecteerd.
+1. In het deel venster **API-machtigingen voor aanvragen** , onder **welk type machtigingen uw toepassing vereist?**, moet u nagaan of het beschik bare machtigings type **gedelegeerde machtigingen** is. Deze optie is standaard voor u geselecteerd.
 1. Schakel onder **machtigingen** het selectie vakje in naast **user_impersonation** en selecteer vervolgens de knop **machtigingen toevoegen** .
 
-    :::image type="content" source="media/storage-auth-aad-app/registered-app-permissions-1.png" alt-text="Scherm afbeelding die laat zien hoe u uw opslag toepassing registreert bij Azure AD":::
+    :::image type="content" source="media/storage-auth-aad-app/registered-app-permissions-1.png" alt-text="Scherm opname met machtigingen voor de opslag-API":::
 
-1. Verleen vervolgens toestemming van de beheerder voor deze machtigingen door te klikken op **toestemming van beheerder geven voor de standaard directory** .
+1. Verleen vervolgens toestemming van de beheerder voor deze machtigingen door te klikken op **toestemming van beheerder geven voor de standaard directory**.
 
 In het deel venster **API-machtigingen** ziet u nu dat uw geregistreerde Azure AD-toepassing toegang heeft tot de Microsoft Graph-en Azure Storage-api's en dat toestemming wordt verleend voor de standaard directory. Er worden automatisch machtigingen verleend aan Microsoft Graph wanneer u uw app voor het eerst registreert bij Azure AD.
 
-:::image type="content" source="media/storage-auth-aad-app/registered-app-permissions-2.png" alt-text="Scherm afbeelding die laat zien hoe u uw opslag toepassing registreert bij Azure AD":::
+:::image type="content" source="media/storage-auth-aad-app/registered-app-permissions-2.png" alt-text="Scherm afbeelding met API-machtigingen voor de geregistreerde app":::
 
 ### <a name="create-a-client-secret"></a>Een clientgeheim maken
 
@@ -87,7 +87,7 @@ Configureer vervolgens impliciete toekennings stroom voor uw toepassing. Volg de
 1. Selecteer de **verificatie** -instelling in de sectie **beheren** .
 1. Schakel in de sectie **impliciete toekenning** het selectie vakje in om id-tokens in te scha kelen, zoals wordt weer gegeven in de volgende afbeelding:
 
-    :::image type="content" source="media/storage-auth-aad-app/enable-implicit-grant-flow.png" alt-text="Scherm afbeelding die laat zien hoe u uw opslag toepassing registreert bij Azure AD":::
+    :::image type="content" source="media/storage-auth-aad-app/enable-implicit-grant-flow.png" alt-text="Scherm afbeelding die laat zien hoe instellingen voor impliciete toekennings stroom worden ingeschakeld":::
 
 ## <a name="client-libraries-for-token-acquisition"></a>Client bibliotheken voor het verkrijgen van tokens
 
@@ -131,6 +131,8 @@ Wijs vervolgens expliciet de rol **Storage BLOB data Inzender** toe aan het gebr
 
 > [!NOTE]
 > Wanneer u een Azure Storage-account maakt, worden er niet automatisch machtigingen toegewezen om toegang te krijgen tot gegevens via Azure AD. U moet uzelf expliciet een Azure-rol toewijzen voor Azure Storage. U kunt deze toewijzen op het niveau van uw abonnement, resource groep, opslag account of container of wachtrij.
+>
+> Voordat u een rol toewijst voor toegang tot gegevens, kunt u via de Azure Portal toegang krijgen tot gegevens in uw opslag account, omdat de Azure Portal ook de account sleutel kan gebruiken voor toegang tot gegevens. Zie [kiezen hoe u de toegang tot BLOB-gegevens in de Azure Portal autoriseren](../blobs/authorize-data-operations-portal.md)voor meer informatie.
 
 ### <a name="create-a-web-application-that-authorizes-access-to-blob-storage-with-azure-ad"></a>Een webtoepassing maken die de toegang tot Blob Storage machtigt met Azure AD
 
@@ -140,7 +142,7 @@ Een voltooide voor beeld-webtoepassing waarmee een token wordt opgehaald en word
 
 #### <a name="add-references-and-using-statements"></a>Referenties toevoegen en instructies gebruiken  
 
-Installeer de Azure Storage-client bibliotheek vanuit Visual Studio. Selecteer in het menu **Tools** de optie **NuGet Package Manager** en vervolgens **Package Manager Console** . Typ de volgende opdrachten in het console venster om de benodigde pakketten te installeren vanuit de Azure Storage-client bibliotheek voor .NET:
+Installeer de Azure Storage-client bibliotheek vanuit Visual Studio. Selecteer in het menu **Tools** de optie **NuGet Package Manager** en vervolgens **Package Manager Console**. Typ de volgende opdrachten in het console venster om de benodigde pakketten te installeren vanuit de Azure Storage-client bibliotheek voor .NET:
 
 # <a name="net-v12-sdk"></a>[.NET V12-SDK](#tab/dotnet)
 

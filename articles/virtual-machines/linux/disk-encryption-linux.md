@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.author: mbaldwin
 ms.date: 08/06/2019
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: d2c9d810fb3bd86d68518e1ad20088a57d538bbe
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 70ebe8ede75935bcc8d8db8729fef165a5616fe7
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500577"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96779801"
 ---
 # <a name="azure-disk-encryption-scenarios-on-linux-vms"></a>Azure Disk Encryption-scenario's voor virtuele Linux-machines
 
@@ -416,6 +416,7 @@ Azure Disk Encryption werkt niet voor de volgende Linux-scenario's,-functies en-
 - ADE Toep assen op een virtuele machine met schijven die zijn versleuteld met versleuteling aan de [server zijde met door de klant beheerde sleutels](../disk-encryption.md) (SSE + CMK). Het Toep assen van SSE en CMK op een gegevens schijf op een virtuele machine die is versleuteld met ADE, is ook een niet-ondersteund scenario.
 - Migratie van een VM die is versleuteld met ADE of **ooit** is versleuteld met ADE, voor versleuteling aan de [server zijde met door de klant beheerde sleutels](../disk-encryption.md).
 - [Azure VM-grootten zonder lokale tijdelijke schijf](../azure-vms-no-temp-disk.md); met name Dv4, Dsv4, Ev4 en Esv4.
+- Vm's in failoverclusters versleutelen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

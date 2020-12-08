@@ -2,18 +2,18 @@
 title: bestand opnemen
 description: bestand opnemen
 services: active-directory
-author: rolyon
+author: barclayn
 ms.service: active-directory
 ms.topic: include
-ms.date: 05/26/2020
+ms.date: 12/07/2020
 ms.author: barclayn
 ms.custom: include file
-ms.openlocfilehash: ee02200f1fb32d430a858d218e27534561ebc24a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cbcd4b459faa3bf67f591cc7afab0bf0027062e1
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83868032"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96842280"
 ---
 ## <a name="create-one-or-more-access-reviews"></a>Een of meer toegangs beoordelingen maken
 
@@ -23,13 +23,13 @@ ms.locfileid: "83868032"
 
     ![Een toegangs beoordeling maken-naam en beschrijving van de beoordeling](./media/active-directory-privileged-identity-management-access-reviews/name-description.png)
 
-1. Stel de **begin datum**in. Een toegangs beoordeling vindt standaard plaats, start de tijd die wordt gemaakt en eindigt in één maand. U kunt de begin-en eind datum wijzigen zodat een toegangs beoordeling in de toekomst wordt gestart en het laatste aantal dagen dat u wilt.
+1. Stel de **begin datum** in. Een toegangs beoordeling vindt standaard plaats, start de tijd die wordt gemaakt en eindigt in één maand. U kunt de begin-en eind datum wijzigen zodat een toegangs beoordeling in de toekomst wordt gestart en het laatste aantal dagen dat u wilt.
 
     ![Begin datum, frequentie, duur, einde, aantal keren en eind datum](./media/active-directory-privileged-identity-management-access-reviews/start-end-dates.png)
 
-1. Als u de toegangs beoordeling wilt herhalen, wijzigt u de **frequentie** -instelling van **één keer** in **wekelijks**, **maandelijks**, **per kwar taal**, **jaarlijks**of per **jaar**. Gebruik de schuif regelaar **duur** of het tekstvak om te bepalen hoeveel dagen elke beoordeling van de terugkerende serie wordt geopend voor de invoer van revisors. De maximale duur die u voor een maandelijkse beoordeling kunt instellen is bijvoorbeeld 27 dagen, om overlappende beoordelingen te voor komen.
+1. Als u de toegangs beoordeling wilt herhalen, wijzigt u de **frequentie** -instelling van **één keer** in **wekelijks**, **maandelijks**, **per kwar taal**, **jaarlijks** of per **jaar**. Gebruik de schuif regelaar **duur** of het tekstvak om te bepalen hoeveel dagen elke beoordeling van de terugkerende serie wordt geopend voor de invoer van revisors. De maximale duur die u voor een maandelijkse beoordeling kunt instellen is bijvoorbeeld 27 dagen, om overlappende beoordelingen te voor komen.
 
-1. Gebruik de **eind** instelling om op te geven hoe de terugkerende toegangs beoordelings reeks moet worden beëindigd. De reeks kan op drie manieren eindigen: de serie wordt continu uitgevoerd om te beginnen met beoordelingen, tot een bepaalde datum, of nadat een gedefinieerd aantal exemplaren is voltooid. U, een andere gebruikers beheerder of een andere globale beheerder kunnen de serie na het maken stoppen door de datum in de **instellingen**te wijzigen, zodat deze op die datum eindigt.
+1. Gebruik de **eind** instelling om op te geven hoe de terugkerende toegangs beoordelings reeks moet worden beëindigd. De reeks kan op drie manieren eindigen: de serie wordt continu uitgevoerd om te beginnen met beoordelingen, tot een bepaalde datum, of nadat een gedefinieerd aantal exemplaren is voltooid. U, een andere gebruikers beheerder of een andere globale beheerder kunnen de serie na het maken stoppen door de datum in de **instellingen** te wijzigen, zodat deze op die datum eindigt.
 
 1. Selecteer in de sectie **gebruikers** een of meer rollen waarvan u het lidmaatschap wilt controleren.
 
@@ -39,11 +39,11 @@ ms.locfileid: "83868032"
     > - Rollen die hier zijn geselecteerd [, zijn zowel permanente als in aanmerking komende rollen](../articles/active-directory/privileged-identity-management/pim-how-to-add-role-to-user.md).
     > - Als u meerdere rollen selecteert, worden er meerdere toegangs beoordelingen gemaakt. Als u bijvoorbeeld vijf rollen selecteert, worden er vijf afzonderlijke toegangs beoordelingen gemaakt.
 
-    Als u een toegangs beoordeling van **Azure AD-rollen**maakt, ziet u een voor beeld van de lijst lidmaatschap controleren.
+    Als u een toegangs beoordeling van **Azure AD-rollen** maakt, ziet u een voor beeld van de lijst lidmaatschap controleren.
 
     ![Bekijk het deel venster lidmaatschap van de Azure AD-rollen die u kunt selecteren](./media/active-directory-privileged-identity-management-access-reviews/review-membership.png)
 
-    Als u een toegangs beoordeling van Azure- **resource rollen**maakt, ziet u in de volgende afbeelding een voor beeld van de lijst lidmaatschap controleren.
+    Als u een toegangs beoordeling van Azure- **resource rollen** maakt, ziet u in de volgende afbeelding een voor beeld van de lijst lidmaatschap controleren.
 
     ![Deel venster lidmaatschap weer geven Azure-resource rollen bekijken die u kunt selecteren](./media/active-directory-privileged-identity-management-access-reviews/review-membership-azure-resource-roles.png)
 
@@ -53,6 +53,7 @@ ms.locfileid: "83868032"
 
     - **Geselecteerde gebruikers** : gebruik deze optie als u niet weet wie er toegang moet hebben. Met deze optie kunt u de beoordeling toewijzen aan een resource-eigenaar of groeps Manager om te volt ooien.
     - **Leden (zelf)** : gebruik deze optie om de gebruikers hun eigen roltoewijzingen te laten beoordelen.
+    - **(Preview) Manager** : gebruik deze optie om ervoor te hebben dat de Manager van de gebruiker de roltoewijzing controleert. Wanneer u (preview) Manager selecteert, hebt u ook de optie om een terugval revisor op te geven. Terugval controleurs wordt gevraagd een gebruiker te controleren wanneer de gebruiker geen beheerder heeft opgegeven in de map.
 
 ### <a name="upon-completion-settings"></a>Bij voltooiings instellingen
 
@@ -82,3 +83,6 @@ ms.locfileid: "83868032"
 1. Stel **e-mail meldingen** in om ervoor te **zorgen** dat Azure AD e-mail meldingen naar revisoren verzendt wanneer een toegangs beoordeling wordt gestart en aan beheerders wanneer een controle is voltooid.
 
 1. Stel **herinneringen** in om ervoor te **zorgen** dat Azure AD herinneringen voor toegangs beoordelingen verzendt naar revisoren die hun beoordeling nog niet hebben voltooid.
+1. De inhoud van het e-mail bericht dat naar revisoren wordt verzonden, wordt automatisch gegenereerd op basis van de details van de beoordeling, zoals de naam van de beoordeling, de resource naam, de verval datum, enzovoort. Als u aanvullende informatie wilt communiceren, zoals aanvullende instructies of contact gegevens, kunt u deze gegevens opgeven in de **aanvullende inhoud voor de e-mail van de revisor** , die wordt opgenomen in de uitnodiging en herinneringen die zijn verzonden aan toegewezen revisoren. Deze informatie wordt weer gegeven in de gemarkeerde sectie hieronder.
+
+    ![Inhoud van het e-mail bericht dat wordt verzonden naar revisoren met accenten](./media/active-directory-privileged-identity-management-access-reviews/email-info.png)

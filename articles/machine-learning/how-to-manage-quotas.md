@@ -11,12 +11,12 @@ ms.author: nigup
 ms.date: 12/1/2020
 ms.topic: conceptual
 ms.custom: troubleshooting,contperfq4, contperfq2
-ms.openlocfilehash: 18eb952d06d83b4604625a795be3c8512c3f90d7
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 30859593e240c4143dc298cff446ce8bc116a993
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576584"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780583"
 ---
 # <a name="manage-and-increase-quotas-for-resources-with-azure-machine-learning"></a>Quota voor resources beheren en verg Roten met Azure Machine Learning
 
@@ -67,10 +67,10 @@ De volgende limieten gelden voor assets per werk ruimte.
 
 Daarnaast is de maximale **uitvoerings tijd** 30 dagen en het maximum aantal **metrische gegevens dat per run wordt geregistreerd** , 1.000.000.
 
-#### <a name="azure-machine-learning-compute"></a>Azure Machine Learning compute
-[Azure machine learning Compute](concept-compute-target.md#azure-machine-learning-compute-managed) heeft een standaard quotum limiet op het aantal kernen en het aantal unieke reken resources dat per regio in een abonnement is toegestaan. Dit quotum is gescheiden van het kern quotum van de virtuele machine uit de vorige sectie.
+### <a name="azure-machine-learning-compute"></a>Azure Machine Learning Compute
+[Azure machine learning Compute](concept-compute-target.md#azure-machine-learning-compute-managed) heeft een standaard quotum limiet op het aantal kernen (gesplitst door elke VM-serie en cumulatieve totale kernen), evenals het aantal unieke reken resources dat per regio in een abonnement is toegestaan. Dit quotum is gescheiden van het VM-kern quotum dat wordt weer gegeven in de vorige sectie, aangezien het alleen van toepassing is op beheerde reken resources van Azure Machine Learning.
 
-[Vraag een quotum verhoging](#request-quota-increases) aan om de limieten in deze sectie te verhogen tot de maximum limiet die in de tabel wordt weer gegeven.
+[Vraag een quotum toename](#request-quota-increases) aan om de limieten voor verschillende kern quota van de VM-serie, het totale aantal quota's en bronnen van het abonnement in deze sectie te verhogen.
 
 Beschik bare resources:
 + **Toegewezen kern geheugens per regio** hebben een standaard limiet van 24 tot 300, afhankelijk van het type abonnement. U kunt het aantal toegewijde kernen per abonnement verg Roten voor elke VM-serie. Gespecialiseerde VM-families zoals NCv2, NCv3, of ND Series beginnen met een standaard waarde van nul kernen.
@@ -79,12 +79,19 @@ Beschik bare resources:
 
 + **Clusters per regio** hebben een standaard limiet van 200. Deze worden gedeeld tussen een trainings cluster en een reken instantie. (Een reken instantie wordt beschouwd als een cluster met één knoop punt voor quotum doeleinden.)
 
-De volgende tabel bevat extra limieten die u niet meer kunt overschrijden.
+> [!TIP]
+> Bekijk de [grootte van virtuele machines in azure](https://docs.microsoft.com/azure/virtual-machines/sizes)voor meer informatie over de VM-serie waarvoor een quotum verhoging moet worden aangevraagd. Voor instance GPU VM-families beginnen met een ' N ' in hun familie naam (bijvoorbeeld NCv3-serie)
 
-| **Resource** | **Maximumlimiet** |
+In de volgende tabel worden extra limieten in het platform weer gegeven. Neem contact op met het AzureML-product team via een **technische** ondersteunings ticket om een uitzonde ring aan te vragen.
+
+| **Resource of actie** | **Maximumlimiet** |
 | --- | --- |
 | Werk ruimten per resource groep | 800 |
-| Knoop punten in één Azure Machine Learning Compute-resource (AmlCompute) | 100 knoop punten |
+| Knoop punten in een AmlCompute- **cluster** installatie (single Azure machine learning Compute) als een niet-communicatie voorziening (d.w.z. kan geen mpi-taken uitvoeren) | 100-knoop punten, maar kunnen worden geconfigureerd met Maxi maal 65000 knoop punten |
+| Knoop punten in één parallelle uitvoerings stap worden **uitgevoerd** op een AmlCompute-cluster (Azure machine learning Compute) | 100-knoop punten, maar kunnen worden geconfigureerd met Maxi maal 65000 knoop punten als het cluster zo is ingesteld dat het kan worden geschaald. |
+| Knoop punten in een AmlCompute- **cluster** installatie (single Azure machine learning Compute) als een groep met communicatie mogelijkheden | 300-knoop punten, maar kunnen worden geconfigureerd met Maxi maal 4000 knoop punten |
+| Knoop punten in een AmlCompute- **cluster** installatie (single Azure machine learning Compute) als een groep met communicatie mogelijkheden voor een VM-serie met RDMA-functionaliteit | 100 knoop punten |
+| Knoop punten in één MPI worden **uitgevoerd** op een AmlCompute-cluster (Azure machine learning Compute) | 100-knoop punten, maar kunnen worden verhoogd tot 300-knoop punten |
 | GPU MPI-processen per knoop punt | 1-4 |
 | GPU-werk nemers per knoop punt | 1-4 |
 | Taak levensduur | 21 dagen<sup>1</sup> |
@@ -115,7 +122,7 @@ U kunt geen limieten genereren voor virtuele machines boven de waarden die in de
 
 Zie [container instances limieten](../azure-resource-manager/management/azure-subscription-service-limits.md#container-instances-limits)voor meer informatie.
 
-### <a name="storage"></a>Opslag
+### <a name="storage"></a>Storage
 Azure Storage heeft een limiet van 250 opslag accounts per regio, per abonnement. Deze limiet is inclusief standaard-en Premium-opslag accounts.
 
 Als u de limiet wilt verhogen, kunt u een aanvraag indienen via [ondersteuning voor Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest/). Het Azure Storage team controleert uw aanvraag en kan Maxi maal 250 opslag accounts voor een regio goed keuren.

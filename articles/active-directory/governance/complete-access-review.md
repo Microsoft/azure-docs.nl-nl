@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
 ms.subservice: compliance
-ms.date: 06/18/2020
+ms.date: 12/07/2020
 ms.author: ajburnle
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 23266043d5efd65a4e6e79dd515a54a2c321b077
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e6491de18e65c5071ac0972e7ff49d1253cbd402
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87798831"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96779537"
 ---
 # <a name="complete-an-access-review-of-groups-and-applications-in-azure-ad-access-reviews"></a>Een toegangs beoordeling van groepen en toepassingen in azure AD-toegangs beoordelingen volt ooien
 
@@ -46,11 +46,19 @@ U kunt de voortgang volgen wanneer de revisoren hun beoordelingen hebben voltooi
 
 1. Klik in de lijst op een toegangs beoordeling.
 
-    Als u een reeks toegangs beoordelingen wilt weer geven, gaat u naar de toegangs beoordeling en vindt u in geplande beoordelingen een aantal toekomstige instanties.
+    Als u toekomstige exemplaren van een toegangs beoordeling wilt weer geven, gaat u naar de toegangs beoordeling en selecteert u geplande Beoordelingen.
 
     Op de pagina **overzicht** ziet u de voortgang. Er worden geen toegangs rechten gewijzigd in de map totdat de controle is voltooid.
 
     ![Voortgang van toegangs beoordeling](./media/complete-access-review/overview-progress.png)
+    
+    Als u een toegangs beoordeling bekijkt die de gast toegang bekijkt in Microsoft 365 groepen (preview), wordt in de Blade overzicht elke groep in de beoordeling weer gegeven.  
+
+   ![gast toegang over Microsoft 365 groepen controleren](./media/complete-access-review/review-guest-access-across-365-groups.png)
+
+    Klik op een groep om de voortgang van de beoordeling voor die groep weer te geven.
+
+   ![de toegang tot de gast over Microsoft 365 groepen gedetailleerd bekijken](./media/complete-access-review/progress-group-review.png)
 
 1. Als u een toegangs beoordeling wilt stoppen voordat de geplande eind datum is bereikt, klikt u op de knop **stoppen** .
 
@@ -62,7 +70,7 @@ U kunt de voortgang volgen wanneer de revisoren hun beoordelingen hebben voltooi
 
 Als **automatisch Toep assen van resultaten op resource** is ingeschakeld en op basis van uw selecties tijdens de **voltooiings instellingen**, wordt automatisch Toep assen na de eind datum van de beoordeling of wanneer u de controle hand matig stopt.
 
-Als **automatisch Toep assen van resultaten op resource** niet is ingeschakeld voor de beoordeling, klikt u op **Toep assen** om de wijzigingen hand matig toe te passen. Als de toegang van een gebruiker bij de controle is geweigerd, worden de lidmaatschaps-of toepassings toewijzing van Azure AD verwijderd als u op **Toep assen**klikt.
+Als **automatisch Toep assen van resultaten op resource** niet is ingeschakeld voor de beoordeling, klikt u op **Toep assen** om de wijzigingen hand matig toe te passen. Als de toegang van een gebruiker bij de controle is geweigerd, worden de lidmaatschaps-of toepassings toewijzing van Azure AD verwijderd als u op **Toep assen** klikt.
 
 ![Wijzigingen in toegangs beoordeling Toep assen](./media/complete-access-review/apply-changes.png)
 
@@ -74,11 +82,11 @@ Een geconfigureerde automatische beoordeling of het selecteren van **Apply** hee
 
 Als u de resultaten voor een eenmalige toegangs beoordeling wilt weer geven, klikt u op de pagina **resultaten** . Als u alleen de toegang van een gebruiker wilt weer geven, typt u in het zoekvak de weergave naam of user principal name van een gebruiker van wie de toegang is gecontroleerd.
 
-![Resultaten ophalen voor een toegangs beoordeling](./media/complete-access-review/retrieve-results.png)
+![Resultaten ophalen voor een toegangs beoordeling](./media/complete-access-review/retrieve-results.png) 
 
 Als u de voortgang van een terugkerende actieve toegangs beoordeling wilt weer geven, klikt u op de pagina **resultaten** .
 
-Als u de resultaten wilt weer geven van een voltooid exemplaar van een terugkerende toegangs beoordeling, klikt u op **controle geschiedenis**en selecteert u vervolgens de specifieke instantie in de lijst met voltooide instanties voor toegangs controle, op basis van de begin-en eind datum van het exemplaar. U kunt de resultaten van deze instantie verkrijgen op de pagina met **resultaten** .
+Als u de resultaten wilt weer geven van een voltooid exemplaar van een terugkerende toegangs beoordeling, klikt u op **controle geschiedenis** en selecteert u vervolgens de specifieke instantie in de lijst met voltooide instanties voor toegangs controle, op basis van de begin-en eind datum van het exemplaar. U kunt de resultaten van deze instantie verkrijgen op de pagina met **resultaten** .
 
 Als u alle resultaten van een toegangs beoordeling wilt ophalen, klikt u op de knop **downloaden** . Het resulterende CSV-bestand kan worden weer gegeven in Excel of in andere Program ma's waarmee CSV-bestanden met UTF-8-code ring worden geopend.
 

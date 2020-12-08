@@ -4,12 +4,12 @@ description: Meer informatie over het oplossen van veelvoorkomende problemen wan
 ms.topic: article
 ms.date: 06/25/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: ac75fff3b088a7d595de2b27c92126ce592aff47
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: d8e7fb85e369f5f278436370944eafeb1fb6a50e
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746921"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96779512"
 ---
 # <a name="troubleshoot-common-issues-in-azure-container-instances"></a>Veelvoorkomende problemen in Azure Container Instances oplossen
 
@@ -187,7 +187,7 @@ Een andere manier om de impact van de installatie kopie op de opstart tijd van d
 
 #### <a name="cached-images"></a>Afbeeldingen in cache
 
-Azure Container Instances gebruikt een cache mechanisme om de opstart tijd van de container te versnellen voor installatie kopieën die zijn gebaseerd op algemene [Windows-basis installatie kopieën](container-instances-faq.md#what-windows-base-os-images-are-supported), waaronder `nanoserver:1809` , `servercore:ltsc2019` en `servercore:1809` . Veelgebruikte Linux-installatie kopieën, zoals `ubuntu:1604` en `alpine:3.6` , worden ook in de cache opgeslagen. Voor een bijgewerkte lijst met afbeeldingen en tags in de cache gebruikt u de API-afbeelding van de [lijst in cache][list-cached-images] .
+Azure Container Instances gebruikt een cache mechanisme om de opstart tijd van de container te versnellen voor installatie kopieën die zijn gebaseerd op algemene [Windows-basis installatie kopieën](container-instances-faq.md#what-windows-base-os-images-are-supported), waaronder `nanoserver:1809` , `servercore:ltsc2019` en `servercore:1809` . Veelgebruikte Linux-installatie kopieën, zoals `ubuntu:1604` en `alpine:3.6` , worden ook in de cache opgeslagen. Vermijd het gebruik van de tag voor zowel Windows-als Linux-installatie kopieën `latest` . Bekijk de [Aanbevolen procedures voor de beeld code](../container-registry/container-registry-image-tag-version.md) van container Registry voor hulp. Voor een bijgewerkte lijst met afbeeldingen en tags in de cache gebruikt u de API-afbeelding van de [lijst in cache][list-cached-images] .
 
 > [!NOTE]
 > Het gebruik van installatiekopieën op basis van Windows Server 2019 in Azure Container Instances bevindt zich nog in de preview-fase.
@@ -213,7 +213,7 @@ Als u wilt bevestigen dat Azure Container Instances kan Luis teren op de poort d
     --ip-address Public --ports 9000 \
     --environment-variables 'PORT'='9000'
     ```
-1. Zoek het IP-adres van de container groep in de uitvoer van de opdracht van `az container create` . Zoek de waarde van **IP** . 
+1. Zoek het IP-adres van de container groep in de uitvoer van de opdracht van `az container create` . Zoek de waarde van **IP**. 
 1. Nadat de container is ingericht, bladert u naar het IP-adres en de poort van de container-app in uw browser, bijvoorbeeld: `192.0.2.0:9000` . 
 
     U ziet de ' Welkom bij Azure Container Instances! ' het bericht dat wordt weer gegeven door de web-app.

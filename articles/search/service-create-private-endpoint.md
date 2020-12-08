@@ -8,12 +8,12 @@ ms.author: mcarter
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/19/2020
-ms.openlocfilehash: 043020abd44bc1f8e671cf386149d6a818136de9
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 6ee72a25fc8435159ae75ac3296742eda58617b6
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96014360"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96779937"
 ---
 # <a name="create-a-private-endpoint-for-a-secure-connection-to-azure-cognitive-search"></a>Een persoonlijk eind punt maken voor een beveiligde verbinding met Azure Cognitive Search
 
@@ -22,7 +22,7 @@ In dit artikel gebruikt u de Azure Portal voor het maken van een nieuw exemplaar
 Privé-eind punten worden als een afzonderlijke service verzorgd door een [persoonlijke Azure-koppeling](../private-link/private-link-overview.md). Zie de [pagina met prijzen](https://azure.microsoft.com/pricing/details/private-link/)voor meer informatie over de kosten.
 
 > [!Important]
-> Ondersteuning voor privé-eind punten voor Azure Cognitive Search kan worden geconfigureerd met behulp van de Azure Portal of het [beheer rest API versie 2020-03-13](/rest/api/searchmanagement/). Wanneer het service-eind punt privé is, zijn sommige Portal functies uitgeschakeld. U kunt informatie over het service niveau weer geven en beheren, maar de toegang tot de portal voor het indexeren van gegevens en de verschillende onderdelen in de service, zoals de definities index, Indexer en vaardigheids, is beperkt om veiligheids redenen.
+> Ondersteuning voor privé-eind punten voor Azure Cognitive Search kan worden geconfigureerd met behulp van de Azure Portal of het [beheer rest API versie 2020-03-13](/rest/api/searchmanagement/). Wanneer het service-eind punt privé is, zijn sommige Portal functies uitgeschakeld. U kunt informatie over het service niveau weer geven en beheren, maar de toegang tot de portal voor het indexeren van gegevens en de verschillende onderdelen in de service, zoals de definities index, Indexer en vaardigheids, is beperkt om veiligheids redenen. Als alternatief voor de portal kunt u de [VS code-extensie](https://aka.ms/vscode-search) gebruiken om te communiceren met de verschillende onderdelen in de service.
 
 ## <a name="why-use-a-private-endpoint-for-secure-access"></a>Waarom een persoonlijk eind punt gebruiken voor beveiligde toegang?
 
@@ -46,7 +46,7 @@ In deze sectie maakt u een virtueel netwerk en een subnet voor het hosten van de
     | ------- | ----- |
     | Abonnement | Selecteer uw abonnement|
     | Resourcegroep | Selecteer **nieuwe maken**, Voer *myResourceGroup* in en selecteer **OK** . |
-    | Name | *MyVirtualNetwork* invoeren |
+    | Naam | *MyVirtualNetwork* invoeren |
     | Regio | Selecteer de gewenste regio |
     |||
 

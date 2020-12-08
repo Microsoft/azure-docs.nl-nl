@@ -10,12 +10,12 @@ ms.reviewer: veyalla
 ms.service: iot-edge
 ms.custom: devx-track-azurecli
 services: iot-edge
-ms.openlocfilehash: dccb734ef4eaa9f22b70488918f14ad94f723453
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: abd30c22aa2b4df20cdb795013768cd175cfef4c
+ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96437130"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96780736"
 ---
 # <a name="retrieve-logs-from-iot-edge-deployments"></a>Logboeken ophalen uit IoT Edge-implementaties
 
@@ -33,7 +33,7 @@ Hoewel dit niet vereist is, voor de beste compatibiliteit met deze functie is de
 <{Log Level}> {Timestamp} {Message Text}
 ```
 
-`{Log Level}` moet de indeling voor het [Ernst niveau van syslog](https://wikipedia.org/wiki/Syslog#Severity_level) volgen en `{Timestamp}` moet worden opgemaakt als `yyyy-mm-dd hh:mm:ss.fff zzz` .
+`{Log Level}` moet de indeling voor het [Ernst niveau van syslog](https://wikipedia.org/wiki/Syslog#Severity_level) volgen en `{Timestamp}` moet worden opgemaakt als `yyyy-MM-dd hh:mm:ss.fff zzz` .
 
 De [logger-klasse in IOT Edge](https://github.com/Azure/iotedge/blob/master/edge-util/src/Microsoft.Azure.Devices.Edge.Util/Logger.cs) fungeert als een canonieke implementatie.
 
@@ -63,7 +63,7 @@ Met deze methode wordt een JSON-nettolading met het volgende schema geaccepteerd
     }
 ```
 
-| Naam | Type | Description |
+| Naam | Type | Beschrijving |
 |-|-|-|
 | schemaVersion | tekenreeks | Ingesteld op `1.0` |
 | vermeldingen | JSON-matrix | Een matrix met `id` en `filter` Tuples. |
@@ -172,7 +172,7 @@ Deze methode accepteert een JSON-nettolading vergelijkbaar met **GetModuleLogs**
     }
 ```
 
-| Naam | Type | Description |
+| Naam | Type | Beschrijving |
 |-|-|-|
 | sasURL | teken reeks (URI) | [Shared Access Signature URL met schrijf toegang tot de Azure Blob Storage-container](/archive/blogs/jpsanders/easily-create-a-sas-to-download-a-file-from-azure-storage-using-azure-storage-explorer). |
 
@@ -186,7 +186,7 @@ Een geslaagde aanvraag voor het uploaden van Logboeken retourneert een **' statu
     }
 ```
 
-| Naam | Type | Description |
+| Naam | Type | Beschrijving |
 |-|-|-|
 | status | tekenreeks | Een van `NotStarted` ,,, `Running` `Completed` `Failed` of `Unknown` . |
 | message | tekenreeks | Bericht als fout, lege teken reeks. |
@@ -289,7 +289,7 @@ Met deze methode wordt een JSON-nettolading met het volgende schema geaccepteerd
     }
 ```
 
-| Naam | Type | Description |
+| Naam | Type | Beschrijving |
 |-|-|-|
 | schemaVersion | tekenreeks | Ingesteld op `1.0` |
 | sasURL | teken reeks (URI) | [Shared Access Signature URL met schrijf toegang tot de Azure Blob Storage-container](/archive/blogs/jpsanders/easily-create-a-sas-to-download-a-file-from-azure-storage-using-azure-storage-explorer) |
@@ -310,7 +310,7 @@ Een geslaagde aanvraag voor het uploaden van Logboeken retourneert een **' statu
     }
 ```
 
-| Naam | Type | Description |
+| Naam | Type | Beschrijving |
 |-|-|-|
 | status | tekenreeks | Een van `NotStarted` ,,, `Running` `Completed` `Failed` of `Unknown` . |
 | message | tekenreeks | Bericht als fout, lege teken reeks. |
@@ -368,7 +368,7 @@ Een geslaagde aanvraag voor het uploaden van Logboeken retourneert een **' statu
     }
 ```
 
-| Naam | Type | Description |
+| Naam | Type | Beschrijving |
 |-|-|-|
 | status | tekenreeks | Een van `NotStarted` ,,, `Running` `Completed` `Failed` of `Unknown` . |
 | message | tekenreeks | Bericht als fout, lege teken reeks. |

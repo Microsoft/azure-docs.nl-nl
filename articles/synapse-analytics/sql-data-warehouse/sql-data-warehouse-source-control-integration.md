@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 08/23/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 766837cacb4ef2acf874c2872b347b6d35633faa
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 862fa839c56746042c072ae3100832fb2b78451a
+ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94700994"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96296904"
 ---
 # <a name="source-control-integration-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Integratie van broncodebeheer voor toegewezen SQL-pools in Azure Synapse Analytics
 
@@ -38,11 +38,13 @@ In deze zelfstudie leert u hoe u uw SSDT-databaseproject (SQL Server Data Tools)
    ![Verbindingen beheren](./media/sql-data-warehouse-source-control-integration/2-manage-connections.png "Verbindingen beheren")
 
 3. Maak verbinding met uw project door **Verbindingen beheren** te selecteren en daarna **Verbinding maken met een project**.
- ![Verbinding maken1](./media/sql-data-warehouse-source-control-integration/3-connect-project.png "Verbinding maken")
+ 
+    ![Verbinding maken1](./media/sql-data-warehouse-source-control-integration/3-connect-project.png "Verbinding maken")
 
 
 4. Zoek het project dat u hebt gemaakt in stap één en selecteer **Verbinding maken**.
-![Verbinding maken2](./media/sql-data-warehouse-source-control-integration/3.5-connect.png "Verbinding maken")
+ 
+    ![Verbinding maken2](./media/sql-data-warehouse-source-control-integration/3.5-connect.png "Verbinding maken")
 
 
 3. Uw Azure DevOps-opslagplaats klonen vanuit uw project naar uw lokale machine.
@@ -85,7 +87,7 @@ Voor meer informatie over het verbinden van projecten met Visual Studio, gaat u 
 
    ![Verifiëren](./media/sql-data-warehouse-source-control-integration/10-verify-column-change-pushed.png "Wijzigingen controleren")
 
-4. (**Optioneel**) Gebruik schemavergelijking en werk de wijzigingen in uw doel-datawarehouse bij met SSDT om ervoor te zorgen dat de objectdefinities in uw Azure-opslagplaats en lokale opslagplaats overeenkomen met uw datawarehouse.
+4. (**Optioneel**) Gebruik schemavergelijking en werk de wijzigingen in de toegewezen doel-SQL-pool bij met SSDT om ervoor te zorgen dat de objectdefinities in uw Azure-opslagplaats en lokale opslagplaats overeenkomen met uw toegewezen SQL-pool.
 
 ## <a name="next-steps"></a>Volgende stappen
 

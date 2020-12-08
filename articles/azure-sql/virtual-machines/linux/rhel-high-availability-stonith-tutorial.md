@@ -8,12 +8,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: jroth
 ms.date: 06/25/2020
-ms.openlocfilehash: 06442e861a247f545ca6f22ecc82e5f5dc910553
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 9a6faec2542337eedbe4aafb69f1061582f92cc7
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790233"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96531561"
 ---
 # <a name="tutorial-configure-availability-groups-for-sql-server-on-rhel-virtual-machines-in-azure"></a>Zelfstudie: Beschikbaarheidsgroepen voor SQL Server configureren op virtuele RHEL-machines in Azure 
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -263,7 +263,7 @@ Wanneer de opdracht voor elke virtuele machine is voltooid, moet u ongeveer de v
 > [!IMPORTANT]
 > Met de standaardinstallatiekopie die met bovenstaande opdracht is gemaakt, wordt standaard een besturingssysteemschijf van 32 GB gemaakt. Met deze standaardinstallatie komt u mogelijk ruimte tekort. U kunt de volgende parameter aan bovenstaande `az vm create`-opdracht toevoegen om bijvoorbeeld een besturingssysteemschijf met 128 GB te maken: `--os-disk-size-gb 128`.
 >
-> Daarna kunt u [LVM (Logical Volume Manager) configureren](../../../virtual-machines/linux/configure-lvm.md) als u de juiste mapvolumes moet uitbreiden om uw installatie te kunnen voltooien.
+> Daarna kunt u [LVM (Logical Volume Manager) configureren](/previous-versions/azure/virtual-machines/linux/configure-lvm) als u de juiste mapvolumes moet uitbreiden om uw installatie te kunnen voltooien.
 
 ### <a name="test-connection-to-the-created-vms"></a>Verbinding met de gemaakte VM's testen
 
@@ -324,7 +324,7 @@ Maak verbinding met elk VM-knooppunt en volg de onderstaande gids om hoge beschi
     sudo vi /etc/hosts
     ```
 
-    Voer in de **vi** -editor `i` in om tekst in te voegen en typ op een lege regel het **particuliere IP-adres** van de bijbehorende virtuele machine. Voeg vervolgens een spatie en de naam van de virtuele machine toe achter het IP-adres. Elke regel moet een afzonderlijke vermelding bevatten.
+    Voer in de **vi**-editor `i` in om tekst in te voegen en typ op een lege regel het **particuliere IP-adres** van de bijbehorende virtuele machine. Voeg vervolgens een spatie en de naam van de virtuele machine toe achter het IP-adres. Elke regel moet een afzonderlijke vermelding bevatten.
 
     ```output
     <IP1> <VM1>
@@ -333,9 +333,9 @@ Maak verbinding met elk VM-knooppunt en volg de onderstaande gids om hoge beschi
     ```
 
     > [!IMPORTANT]
-    > U wordt aangeraden hierboven uw **particuliere IP** -adres te gebruiken. Als u in deze configuratie het openbare IP-adres gebruikt, zal de installatie mislukken; bovendien is het niet raadzaam om uw VM open te stellen voor externe netwerken.
+    > U wordt aangeraden hierboven uw **particuliere IP**-adres te gebruiken. Als u in deze configuratie het openbare IP-adres gebruikt, zal de installatie mislukken; bovendien is het niet raadzaam om uw VM open te stellen voor externe netwerken.
 
-    Als u de **vi** -editor wilt afsluiten, drukt u eerst op de **ESC** -toets en voert u vervolgens de opdracht `:wq` in om het bestand te schrijven en af te sluiten.
+    Als u de **vi**-editor wilt afsluiten, drukt u eerst op de **ESC**-toets en voert u vervolgens de opdracht `:wq` in om het bestand te schrijven en af te sluiten.
 
 ## <a name="create-the-pacemaker-cluster"></a>Het Pacemaker-cluster maken
 
@@ -360,7 +360,7 @@ In deze sectie gaat u de pcsd-service inschakelen en starten. Daarna gaat u het 
 
 1. Voer op het primaire knooppunt de volgende opdrachten uit om het cluster in te stellen.
 
-    - Wanneer u de opdracht `pcs cluster auth` uitvoert om de clusterknooppunten te verifiëren, wordt u gevraagd een wachtwoord op te geven. Voer het wachtwoord in voor de **hacluster** -gebruiker die u eerder hebt gemaakt.
+    - Wanneer u de opdracht `pcs cluster auth` uitvoert om de clusterknooppunten te verifiëren, wordt u gevraagd een wachtwoord op te geven. Voer het wachtwoord in voor de **hacluster**-gebruiker die u eerder hebt gemaakt.
 
     **RHEL7**
 
@@ -489,11 +489,11 @@ Description : The fence-agents-azure-arm package contains a fence agent for Azur
  3. Klik op [**App-registraties**](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade)
  4. Klik op **Nieuwe registratie**
  5. Voer een **Naam** in, bijvoorbeeld `<resourceGroupName>-app` en selecteer **Alleen accounts in deze organisatiemap**
- 6. Selecteer het toepassingstype **Web** , voer een aanmeldings-URL in (bijvoorbeeld http://localhost) ) en klik op Toevoegen. De aanmeldings-URL wordt niet gebruikt en kan elke geldige URL zijn. Als u klaar bent, klikt u op **Registreren**
+ 6. Selecteer het toepassingstype **Web**, voer een aanmeldings-URL in (bijvoorbeeld http://localhost) ) en klik op Toevoegen. De aanmeldings-URL wordt niet gebruikt en kan elke geldige URL zijn. Als u klaar bent, klikt u op **Registreren**
  7. Selecteer **Certificaten en geheimen** voor uw nieuwe app-registratie en klik vervolgens op **Nieuw clientgeheim**
  8. Voer een beschrijving in voor een nieuwe sleutel (clientgeheim), selecteer **Verloopt nooit** en klik op **Toevoegen**
  9. Noteer de waarde van het geheim. Dit wordt gebruikt als het wachtwoord van de service-principal
-10. Selecteer **Overzicht** . Noteer de toepassings-id. Deze wordt gebruikt als de gebruikersnaam (aanmeldings-id in de onderstaande stappen) van de service-principal
+10. Selecteer **Overzicht**. Noteer de toepassings-id. Deze wordt gebruikt als de gebruikersnaam (aanmeldings-id in de onderstaande stappen) van de service-principal
  
 ### <a name="create-a-custom-role-for-the-fence-agent"></a>Een aangepaste rol maken voor de fencing-agent
 
@@ -571,7 +571,7 @@ Wijs de aangepaste rol `Linux Fence Agent Role-<username>` die in de laatste sta
 5. Klik op **Een roltoewijzing toevoegen**
 6. Selecteer de rol `Linux Fence Agent Role-<username>` in de lijst **Rol**
 7. Voer in de lijst **Selecteren** de naam in van de toepassing die u hierboven hebt gemaakt, `<resourceGroupName>-app`
-8. Klik op **Opslaan** .
+8. Klik op **Opslaan**.
 9. Herhaal bovenstaande stappen voor alle clusterknooppunten.
 
 ### <a name="create-the-stonith-devices"></a>STONITH-apparaten maken
@@ -868,7 +868,7 @@ Sla op alle SQL Server-exemplaren de referenties op die voor de SQL Server aanme
     <password>
     ```
 
-    Als u de **vi** -editor wilt afsluiten, drukt u eerst op de **ESC** -toets en voert u vervolgens de opdracht `:wq` in om het bestand te schrijven en af te sluiten.
+    Als u de **vi**-editor wilt afsluiten, drukt u eerst op de **ESC**-toets en voert u vervolgens de opdracht `:wq` in om het bestand te schrijven en af te sluiten.
 
 1. Zo maakt u het bestand alleen leesbaar voor de hoofdmap:
 
@@ -1132,6 +1132,34 @@ We gaan een failover testen om er zeker van te zijn dat de configuratie tot dusv
     sudo pcs resource move ag_cluster-clone <VM2> --master
     ```
 
+   U kunt ook een extra optie opgeven, zodat de tijdelijke beperking die wordt gemaakt om de resource te verplaatsen naar een gewenst knooppunt, automatisch wordt uitgeschakeld. U hoeft de stappen 2 en 3 hieronder niet uit te voeren.
+
+   **RHEL 7**
+
+    ```bash
+    sudo pcs resource move ag_cluster-master <VM2> --master lifetime=30S
+    ```
+
+   **RHEL 8**
+
+    ```bash
+    sudo pcs resource move ag_cluster-clone <VM2> --master lifetime=30S
+    ```
+
+   Een ander alternatief voor het automatiseren van stappen 2 en 3 hieronder waarmee de tijdelijke beperking voor de opdracht voor het verplaatsen van de resource wordt gewist, is door meerdere opdrachten op één regel te combineren. 
+
+   **RHEL 7**
+
+    ```bash
+    sudo pcs resource move ag_cluster-master <VM2> --master && sleep 30 && pcs resource clear ag_cluster-master
+    ```
+
+   **RHEL 8**
+
+    ```bash
+    sudo pcs resource move ag_cluster-clone <VM2> --master && sleep 30 && pcs resource clear ag_cluster-clone
+    ```
+    
 2. Als u de beperkingen opnieuw controleert, ziet u dat er vanwege de handmatige failover een andere beperking is toegevoegd:
     
     **RHEL 7**

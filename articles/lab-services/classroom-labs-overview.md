@@ -1,19 +1,19 @@
 ---
-title: Informatie over leslokaallabs in Azure Lab Services | Microsoft Docs
+title: Informatie over labs in Azure Lab Services | Microsoft Docs
 description: 'Meer informatie over hoe u snel een leslokaallabomgeving kunt instellen in de cloud: een lab kunt configureren met een sjabloon-VM met de software die is vereist voor de klas en een kopie van de VM beschikbaar kunt maken voor elke student in de klas.'
 ms.topic: overview
 ms.date: 06/26/2020
-ms.openlocfilehash: e6ff56a831282c3abf5eec644573b9a3e88c6543
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 79d6f1cc9f2a6d8d8be872359a4677b36602eea5
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "85445624"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96434801"
 ---
-# <a name="introduction-to-classroom-labs"></a>Inleiding tot leslokaallabs
+# <a name="introduction-to-labs"></a>Kennismaking met labs
 Met Azure Lab Services kunt u snel een omgeving voor een leslokaallab in de cloud instellen. Een docent maakt een leslokaallab, richt virtuele machines met Windows of Linux in, installeert de benodigde software en labhulpprogramma's in het leslokaal en maakt deze beschikbaar voor studenten. De studenten in het leslokaal maken verbinding met virtuele machines (VM's) in het lab en gebruiken deze voor hun projecten, opdrachten en klassikale oefeningen. 
 
-De leslokaallabs zijn beheerde labtypen die worden beheerd door Azure. De service zelf is verantwoordelijk voor het volledige beheer van de infrastructuur voor een beheerd labtype, van het inrichten van VM's (virtuele machines) tot de afhandeling van fouten, en het schalen van de infrastructuur. U geeft op welke infrastructuur u nodig hebt en installeert alle hulpprogramma's of software die in het leslokaal nodig zijn. 
+De labs zijn beheerde labtypen die worden beheerd door Azure. De service zelf is verantwoordelijk voor het volledige beheer van de infrastructuur voor een beheerd labtype, van het inrichten van VM's (virtuele machines) tot de afhandeling van fouten, en het schalen van de infrastructuur. U geeft op welke infrastructuur u nodig hebt en installeert alle hulpprogramma's of software die in het leslokaal nodig zijn. 
 
 ## <a name="automatic-management-of-azure-infrastructure-and-scale"></a>Automatisch beheer van de infrastructuur en schaal van Azure 
 Azure Lab Services is een beheerde service. Dit betekent dat de service automatisch zorgt voor inrichting en beheer van de onderliggende infrastructuur van een lab. Zo hoeft u zich alleen bezig te houden met het voorbereiden van de juiste lab-ervaring voor uw gebruikers. Laat de service de rest afhandelen en implementeer de virtuele machines van uw lab voor uw doelgroep. Schaal uw testomgeving tot honderden virtuele machines met een enkele klik.

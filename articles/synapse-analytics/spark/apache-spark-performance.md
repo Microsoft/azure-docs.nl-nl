@@ -9,14 +9,14 @@ ms.subservice: spark
 ms.date: 04/15/2020
 ms.author: euang
 ms.reviewer: euang
-ms.openlocfilehash: bb64fb3c9e25e629a0bcb36fe60fd5ae2d7fc906
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: b94ece73d5f9dc9b8343e45fb1f616599b9a1c1f
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92368601"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96450929"
 ---
-# <a name="optimize-apache-spark-jobs-preview-in-azure-synapse-analytics"></a>Apache Spark-taken optimaliseren in Azure Synapse Analytics (preview)
+# <a name="optimize-apache-spark-jobs-in-azure-synapse-analytics"></a>Apache Spark-taken optimaliseren in Azure Synapse Analytics
 
 Leer hoe u een [Apache Spark](https://spark.apache.org/)-clusterconfiguratie kunt optimaliseren voor uw specifieke workload.  De meest voorkomende uitdaging is geheugenbelasting vanwege onjuiste configuraties (met name uitvoeringen met verkeerde indeling), langlopende bewerkingen en taken die resulteren in Cartesische bewerkingen. U kunt taken versnellen met de juiste caching en door [gegevensverschil](#optimize-joins-and-shuffles) toe te staan. Bewaak en controleer uitvoeringen van Spark-taken die lang lopen en veel resources verbruiken, voor de beste prestaties.
 
@@ -103,7 +103,7 @@ U kunt partitionering en bucketing gelijktijdig gebruiken.
 
 ## <a name="optimize-joins-and-shuffles"></a>Joins en shuffles optimaliseren
 
-Als er sprake is van langzame taken voor een join of shuffle, wordt dit waarschijnlijk veroorzaakt door *gegevensverschil* , wat asymmetrie is in uw taakgegevens. Een toewijzingstaak kan bijvoorbeeld 20 seconden duren, maar het duurt uren om een taak uit te voeren waarvan de gegevens zijn gekoppeld (join) of in een willekeurige volgorde geplaatst (shuffle). Als u gegevensverschil wilt oplossen, moet u salt toevoegen aan de hele sleutel, of een *geïsoleerde salt* gebruiken voor slechts enkele sleutelsubsets. Als u een geïsoleerde salt gebruikt, moet u verder filteren om uw sleutelsubset waaraan salt is toegevoegd, te isoleren in toewijzings-joins. Een andere optie is om eerst een bucketkolom en een samenvoeging vooraf te introduceren in buckets.
+Als er sprake is van langzame taken voor een join of shuffle, wordt dit waarschijnlijk veroorzaakt door *gegevensverschil*, wat asymmetrie is in uw taakgegevens. Een toewijzingstaak kan bijvoorbeeld 20 seconden duren, maar het duurt uren om een taak uit te voeren waarvan de gegevens zijn gekoppeld (join) of in een willekeurige volgorde geplaatst (shuffle). Als u gegevensverschil wilt oplossen, moet u salt toevoegen aan de hele sleutel, of een *geïsoleerde salt* gebruiken voor slechts enkele sleutelsubsets. Als u een geïsoleerde salt gebruikt, moet u verder filteren om uw sleutelsubset waaraan salt is toegevoegd, te isoleren in toewijzings-joins. Een andere optie is om eerst een bucketkolom en een samenvoeging vooraf te introduceren in buckets.
 
 Een andere factor die langzame joins veroorzaakt, kan het jointype zijn. Spark maakt standaard gebruik van het jointype `SortMerge`. Dit jointype is het meest geschikt voor grote gegevenssets, maar zorgt wel voor hoge rekenkosten, omdat eerst de linker- en rechterzijden van gegevens moeten worden geordend voordat u ze samenvoegt.
 

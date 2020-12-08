@@ -9,14 +9,14 @@ ms.reviewer: jrasnick, garye
 ms.date: 09/25/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: f5c5edc067b3f7b525fd129462c48ca50fdafc8f
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 605a5f2f74ca6fb46d851c41f60001c48a95be95
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93314047"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96450884"
 ---
-# <a name="tutorial-machine-learning-model-scoring-wizard-for-dedicated-sql-pools"></a>Zelfstudie: Wizard voor scoren van het Machine learning-model voor toegewezen SQL-pools
+# <a name="tutorial-machine-learning-model-scoring-wizard-preview-for-dedicated-sql-pools"></a>Zelfstudie: Wizard voor scoren van het Machine learning-model voor toegewezen SQL-pools
 
 Meer informatie over hoe u uw gegevens in toegewezen SQL-pools eenvoudig kunt verrijken met voorspellende Machine Learning-modellen.  De modellen die uw gegevensanalisten maken, zijn nu eenvoudig toegankelijk voor gegevensprofessionals voor predictive analytics. Een gegevensprofessional kan in Synapse eenvoudigweg een model selecteren uit het register voor Azure Machine Learning-modellen voor implementatie in Synapse SQL-pools en voorspellingen starten om de gegevens te verrijken.
 
@@ -31,8 +31,8 @@ Als u geen Azure-abonnement hebt, [maakt u een gratis account voordat u begint](
 ## <a name="prerequisites"></a>Vereisten
 
 - [Synapse Analytics-werkruimte](../get-started-create-workspace.md) met een ADLS Gen2-opslagaccount dat is geconfigureerd als de standaard opslag. U moet de **Inzender van de Storage Blob-gegevens** zijn van het ADLS Gen2-bestandssysteem waar u mee werkt.
-- Toegewezen SQL-pool in uw Synapse Analytics-werkruimte. Zie [Een toegewezen SQL-pool maken](../quickstart-create-sql-pool-studio.md) voor meer informatie.
-- Azure Machine Learning-gekoppelde service in uw Synapse Analytics-werkruimte. Zie [Een Azure Machine Learning-gekoppelde service maken in Synapse](quickstart-integrate-azure-machine-learning.md) voor meer informatie.
+- Toegewezen SQL-pool in uw Azure Synapse Analytics-werkruimte. Zie [Een toegewezen SQL-pool maken](../quickstart-create-sql-pool-studio.md) voor meer informatie.
+- Met Azure Machine Learning gekoppelde service in uw Azure Synapse Analytics-werkruimte. Zie [Een Azure Machine Learning-gekoppelde service maken in Synapse](quickstart-integrate-azure-machine-learning.md) voor meer informatie.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Aanmelden bij Azure Portal
 
@@ -149,4 +149,4 @@ Voordat u alle cellen in het notebook uitvoert, controleert u of het rekenproces
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Snelstart: Een nieuwe gekoppelde Azure Machine Learning-service maken in Synapse](quickstart-integrate-azure-machine-learning.md)
-- [Machine Learning-mogelijkheden in Azure Synapse Analytics (preview van werkruimten)](what-is-machine-learning.md)
+- [Mogelijkheden voor machine learning in Azure Synapse Analytics](what-is-machine-learning.md)

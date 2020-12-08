@@ -1,6 +1,6 @@
 ---
-title: Zelfondersteuning voor serverloze SQL-pools (preview)
-description: Deze sectie bevat informatie die u kan helpen bij het oplossen van problemen met een serverloze SQL-pool (preview).
+title: Zelfondersteuning voor serverloze SQL-pools
+description: Deze sectie bevat informatie die u kan helpen bij het oplossen van problemen met een serverloze SQL-pool.
 services: synapse analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 05/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: aefdb90c3e6c8d3abc3924ecebb2aa46739e99ad
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 12ff369cb931eb36014b7c9598b036afdc158750
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94682618"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96457179"
 ---
-# <a name="self-help-for-serverless-sql-pool-preview"></a>Zelfondersteuning voor serverloze SQL-pools (preview)
+# <a name="self-help-for-serverless-sql-pool"></a>Zelfondersteuning voor serverloze SQL-pools
 
-Dit artikel bevat informatie over het oplossen van de meest voorkomende problemen met een serverloze SQL-pool (preview) in Azure Synapse Analytics.
+Dit artikel bevat informatie over het oplossen van de meest voorkomende problemen met een serverloze SQL-pool in Azure Synapse Analytics.
 
 ## <a name="serverless-sql-pool-is-grayed-out-in-synapse-studio"></a>Serverloze SQL-pool is niet beschikbaar in Synapse Studio
 
@@ -37,7 +37,7 @@ Als uw query mislukt met het foutbericht 'Deze query kan niet worden uitgevoerd 
 
 - Zorg dat u gegevenstypen van redelijke grootte gebruikt. Geef ook een schema op voor Parquet-bestanden voor kolommen met tekenreeksen, omdat deze standaard VARCHAR(8000) zijn. 
 
-- Als uw query CSV-bestanden aanroept, kunt u overwegen om [statistieken te maken](develop-tables-statistics.md#statistics-in-serverless-sql-pool-preview). 
+- Als uw query CSV-bestanden aanroept, kunt u overwegen om [statistieken te maken](develop-tables-statistics.md#statistics-in-serverless-sql-pool). 
 
 - Raadpleeg de pagina over [best practices voor prestaties voor uw serverloze SQL-pool](best-practices-sql-on-demand.md) om uw query te optimaliseren.  
 

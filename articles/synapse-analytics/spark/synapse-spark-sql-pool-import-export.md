@@ -1,30 +1,33 @@
 ---
-title: Gegevens importeren en exporteren tussen serverloze Apache Spark-pools (preview) en SQL-pools
-description: Dit artikel bevat informatie over het gebruik van de aangepaste connector voor het overdragen van gegevens tussen toegewezen SQL-pools en serverloze Apache Spark-pools (preview).
+title: Gegevens importeren en exporteren tussen serverloze Apache Spark-pools en SQL-pools
+description: Dit artikel bevat informatie over het gebruik van de aangepaste connector voor het overdragen van gegevens tussen toegewezen SQL-pools en serverloze Apache Spark-pools.
 services: synapse-analytics
 author: euangMS
 ms.service: synapse-analytics
 ms.topic: overview
 ms.subservice: spark
-ms.date: 04/15/2020
+ms.date: 11/19/2020
 ms.author: prgomata
 ms.reviewer: euang
-ms.openlocfilehash: ee82fbaa9687e064747908600c7e5c9017f8f1a9
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: e0bdfa4a451269e82b73194e921f9067d848868e
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93323894"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96511080"
 ---
 # <a name="introduction"></a>Inleiding
 
-De Azure Synapse Apache Spark naar Synapse SQL-connector is ontworpen om efficiënt gegevens over te dragen tussen serverloze Apache Spark-pools (preview) en SQL-pools in Azure Synapse. De Azure Synapse Apache Spark naar Synapse SQL-connector werkt alleen in toegewezen SQL-pools en werkt niet met een serverloze SQL-pool.
+De Azure Synapse Apache Spark naar Synapse SQL-connector is ontworpen om efficiënt gegevens over te dragen tussen serverloze Apache Spark-pools en toegewezen SQL-pools in Azure Synapse. De Azure Synapse Apache Spark naar Synapse SQL-connector werkt alleen in toegewezen SQL-pools en werkt niet met een serverloze SQL-pool.
+
+> [!WARNING]
+> De naam van de functie **sqlanalytics()** is gewijzigd in **synapsesql()** . De functie sqlanalytics kan gebruikt blijven worden, maar wordt afgeschaft.  Wijzig alle verwijzingen van **sqlanalytics()** in **synapsesql()** om onderbrekingen in de toekomst te voorkomen.
 
 ## <a name="design"></a>Ontwerp
 
 Het overbrengen van gegevens tussen Spark-pools en SQL-pools kan worden uitgevoerd met JDBC. Maar op twee gedistribueerde systemen, zoals Spark en SQL-pools, is JDBC meestal een knelpunt wat betreft seriële gegevensoverdracht.
 
-De Azure Synapse Apache Spark pool naar Synapse SQL-connector is een gegevensbronimplementatie voor Apache Spark. De Azure Data Lake Storage Gen2 en Polybase in toegewezen SQL-pools worden gebruikt om efficiënt gegevens over te dragen tussen het Spark-cluster en het Synapse SQL-exemplaar.
+De Azure Synapse Apache Spark pool naar Synapse SQL-connector is een gegevensbronimplementatie voor Apache Spark. De Azure Data Lake Storage Gen2 en Polybase in toegewezen SQL-pools worden gebruikt om efficiënt gegevens over te dragen tussen het Apache Spark-cluster en de aan Synapse toegewezen SQL-instantie.
 
 ![Connectorarchitectuur](./media/synapse-spark-sqlpool-import-export/arch1.png)
 
@@ -37,6 +40,8 @@ Daarom is het niet nodig om referenties te maken of op te geven in de connector-
 ## <a name="constraints"></a>Beperkingen
 
 - Deze connector werkt alleen in Scala.
+- Zie de sectie [Python gebruiken](#use-pyspark-with-the-connector) voor details over pySpark.
+- Deze connector biedt geen ondersteuning voor het uitvoeren van query's op SQL-weergaven.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -80,7 +85,7 @@ De instructies voor importeren zijn niet vereist, ze worden vooraf geïmporteerd
 #### <a name="read-api"></a>API lezen
 
 ```scala
-val df = spark.read.sqlanalytics("<DBName>.<Schema>.<TableName>")
+val df = spark.read.synapsesql("<DBName>.<Schema>.<TableName>")
 ```
 
 De bovenstaande API werkt zowel voor interne (beheerde) als voor externe tabellen in de SQL-pool.
@@ -88,7 +93,7 @@ De bovenstaande API werkt zowel voor interne (beheerde) als voor externe tabelle
 #### <a name="write-api"></a>API schrijven
 
 ```scala
-df.write.sqlanalytics("<DBName>.<Schema>.<TableName>", <TableType>)
+df.write.synapsesql("<DBName>.<Schema>.<TableName>", <TableType>)
 ```
 
 De schrijf-API maakt de tabel in de toegewezen SQL-pool en roept vervolgens Polybase aan om de gegevens te laden.  De tabel mag niet voorkomen in de toegewezen SQL-pool, anders wordt er een foutbericht geretourneerd met de mededeling dat er al een object met die naam bestaat.
@@ -101,7 +106,7 @@ TableType-waarden
 Beheerde tabel in SQL-pool
 
 ```scala
-df.write.sqlanalytics("<DBName>.<Schema>.<TableName>", Constants.INTERNAL)
+df.write.synapsesql("<DBName>.<Schema>.<TableName>", Constants.INTERNAL)
 ```
 
 Externe tabel in SQL-pool
@@ -130,7 +135,7 @@ Een EXTERN REFERENTIEOBJECT is niet nodig bij het gebruik van Azure Active Direc
 df.write.
     option(Constants.DATA_SOURCE, <DataSourceName>).
     option(Constants.FILE_FORMAT, <FileFormatName>).
-    sqlanalytics("<DBName>.<Schema>.<TableName>", Constants.EXTERNAL)
+    synapsesql("<DBName>.<Schema>.<TableName>", Constants.EXTERNAL)
 
 ```
 
@@ -149,7 +154,7 @@ df.write.
 ```scala
 val df = spark.read.
 option(Constants.SERVER, "samplews.database.windows.net").
-sqlanalytics("<DBName>.<Schema>.<TableName>")
+synapsesql("<DBName>.<Schema>.<TableName>")
 ```
 
 #### <a name="write-api"></a>API schrijven
@@ -157,7 +162,7 @@ sqlanalytics("<DBName>.<Schema>.<TableName>")
 ```scala
 df.write.
 option(Constants.SERVER, "samplews.database.windows.net").
-sqlanalytics("<DBName>.<Schema>.<TableName>", <TableType>)
+synapsesql("<DBName>.<Schema>.<TableName>", <TableType>)
 ```
 
 ### <a name="use-sql-auth-instead-of-azure-ad"></a>SQL Auth gebruiken in plaats van Azure AD
@@ -171,7 +176,7 @@ val df = spark.read.
 option(Constants.SERVER, "samplews.database.windows.net").
 option(Constants.USER, <SQLServer Login UserName>).
 option(Constants.PASSWORD, <SQLServer Login Password>).
-sqlanalytics("<DBName>.<Schema>.<TableName>")
+synapsesql("<DBName>.<Schema>.<TableName>")
 ```
 
 #### <a name="write-api"></a>API schrijven
@@ -181,10 +186,10 @@ df.write.
 option(Constants.SERVER, "samplews.database.windows.net").
 option(Constants.USER, <SQLServer Login UserName>).
 option(Constants.PASSWORD, <SQLServer Login Password>).
-sqlanalytics("<DBName>.<Schema>.<TableName>", <TableType>)
+synapsesql("<DBName>.<Schema>.<TableName>", <TableType>)
 ```
 
-### <a name="use-the-pyspark-connector"></a>De PySpark-connector gebruiken
+### <a name="use-pyspark-with-the-connector"></a>pySpark gebruiken met de connector
 
 > [!NOTE]
 > In dit voorbeeld is alleen gericht op de notebookervaring.
@@ -203,7 +208,7 @@ Voer een Scala-cel in het PySpark-notebook uit met behulp van magics:
 %%spark
 val scala_df = spark.sqlContext.sql ("select * from pysparkdftemptable")
 
-scala_df.write.sqlanalytics("sqlpool.dbo.PySparkTable", Constants.INTERNAL)
+scala_df.write.synapsesql("sqlpool.dbo.PySparkTable", Constants.INTERNAL)
 ```
 
 Lees in het leesscenario de gegevens met behulp van Scala en schrijf deze in een tijdelijke tabel, en gebruik Spark SQL in PySpark om de tijdelijke tabel in een dataframe aan te vragen.
@@ -234,6 +239,7 @@ U moet de eigenaar van de opslagblobgegevens zijn op het ADLS Gen2-opslagaccount
 
 > [!IMPORTANT]
 > Zorg ervoor dat u niet "Standaard" selecteert als u dit niet wilt.
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

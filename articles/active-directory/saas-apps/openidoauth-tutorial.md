@@ -12,20 +12,20 @@ ms.topic: tutorial
 ms.date: 05/30/2019
 ms.author: jeedes
 ms.custom: has-adal-ref
-ms.openlocfilehash: ce4cccba678a934780dc987f1441ea658a70f8eb
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
+ms.openlocfilehash: 17d78b4d6db9e65868995d8ea7835a0d911e8589
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91996616"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348688"
 ---
 # <a name="configure-an-openidoauth-application-from-the-azure-ad-app-gallery"></a>Een OpenID/OAuth-toepassing uit de Azure AD-app-galerie configureren
 
 ## <a name="process-of-adding-an-openid-application-from-the-gallery"></a>Proces voor het toevoegen van een OpenID-toepassing vanuit de galerie
 
-1. In de [Azure-portal](https://portal.azure.com), selecteert u in het linkerdeelvenster **Azure Active Directory**.
+1. Selecteer **Azure Active Directory** in de [Azure-portal](https://portal.azure.com).
 
-    ![De knop Azure Active Directory](common/select-azuread.png))
+    ![De knop Azure Active Directory](common/select-azuread.png)
 
 2. Ga naar **Bedrijfstoepassingen** > **Alle toepassingen**.
 
@@ -39,17 +39,23 @@ ms.locfileid: "91996616"
 
     ![Openid in de lijst met resultaten](common/search-new-app.png)
 
-    > [!NOTE]
-    > Voor OpenID Connect- en OAuth-apps is de knop **Toevoegen** standaard uitgeschakeld. De tenantbeheerder moet hier de registratieknop selecteren en toestemming geven voor de toepassing. De toepassing wordt vervolgens toegevoegd aan de klanttenant, waar u configuraties kunt uitvoeren. Het is niet nodig om de toepassing expliciet toe te voegen.
+
+1. Klik op de pagina Naam van toepassing op de knop **Registreren**.
 
     ![Knop Toevoegen](./media/openidoauth-tutorial/addbutton.png)
 
-5. Wanneer u de registratiekoppeling selecteert, wordt u naar de Azure Active Directory-pagina (Azure AD) geleid voor aanmeldingsreferenties.
+    > [!NOTE]
+    > De tenantbeheerder moet hier de registratieknop selecteren en toestemming geven voor de toepassing. De toepassing wordt vervolgens toegevoegd aan de klanttenant, waar u configuraties kunt uitvoeren. Het is niet nodig om de toepassing expliciet toe te voegen.
+
+5. U wordt omgeleid naar de aanmeldingspagina van de toepassing of van Azure Active Directory (Azure AD) om aanmeldingsreferenties op te geven.
 
 6. Wanneer de verificatie is voltooid, accepteert u toestemming op de toestemmingspagina. Hierna wordt de startpagina van de toepassing weergegeven.
 
     > [!NOTE]
     > U kunt slechts één exemplaar van de toepassing toevoegen. Als u er al een hebt toegevoegd en u opnieuw hebt geprobeerd om toestemming te geven, wordt deze niet opnieuw toegevoegd aan de tenant. Logisch gezien kunt u dus maar één app-exemplaar gebruiken in de tenant.
+
+1. Volg de onderstaande video om een OpenID Connect-toepassing toe te voegen vanuit de galerie.
+    >[!VIDEO https://www.microsoft.com/videoplayer/embed/RE4HoNI]
 
 ## <a name="authentication-flow-using-openid-connect"></a>Verificatiestroom waarbij OpenID Connect wordt gebruikt
 
@@ -151,3 +157,7 @@ Tenantbeheerders kunnen uitschakelen dat normale gebruikers toestemming kunnen g
 De parameter *prompt=admin_consent* kan ook worden gebruikt door toepassingen die machtigingen aanvragen waarvoor geen beheerderstoestemming nodig is. Een voorbeeld is een toepassing waarbij de tenantbeheerder zich één keer registreert. Andere gebruikers wordt vervolgens nooit meer om toestemming gevraagd.
 
 Stel dat een toepassing beheerderstoestemming vereist en een beheerder zich aanmeldt zonder dat de parameter *prompt=admin_consent* wordt verzonden. Als de beheerder toestemming geeft voor de toepassing, is dit alleen van toepassing op zijn of haar eigen gebruikersaccount. Gewone gebruikers kunnen zich nog altijd niet aanmelden en geen toestemming geven voor de toepassing. Deze functie is handig als u de tenantbeheerder de mogelijkheid wilt bieden om uw toepassing te bekijken voordat andere gebruikers toegang wordt geboden.
+
+## <a name="next-steps"></a>Volgende stappen
+
+[Eenmalige aanmelding (SSO) op basis van OIDC instellen voor een toepassing in uw Azure Active Directory-tenant (Azure AD)](https://docs.microsoft.com/azure/active-directory/manage-apps/add-application-portal-setup-oidc-sso)

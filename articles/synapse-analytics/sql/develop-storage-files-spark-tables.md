@@ -1,6 +1,6 @@
 ---
-title: Apache Spark synchroniseren voor externe tabeldefinities in een serverloze SQL-pool (preview)
-description: Overzicht van hoe u query’s kunt uitvoeren op Spark-tabellen met behulp van een serverloze SQL-pool (preview)
+title: Apache Spark synchroniseren voor externe tabeldefinities in een serverloze SQL-pool
+description: Overzicht van hoe u query’s kunt uitvoeren op Spark-tabellen met behulp van een serverloze SQL-pool
 services: synapse-analytics
 author: julieMSFT
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: ea4e7cd009be8a78faa0dcfab44371a350b6a200
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 057a69881b8b407e5d75fa3510ca1c3eb1830bc7
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93315833"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96446489"
 ---
-# <a name="synchronize-apache-spark-for-azure-synapse-external-table-definitions-in-serverless-sql-pool-preview"></a>Apache Spark synchroniseren voor externe tabeldefinities van Azure Synapse in een serverloze SQL-pool (preview)
+# <a name="synchronize-apache-spark-for-azure-synapse-external-table-definitions-in-serverless-sql-pool"></a>Apache Spark synchroniseren voor externe tabeldefinities van Azure Synapse in een serverloze SQL-pool
 
-Met een serverloze SQL-pool (preview) kunnen automatisch metagegevens worden gesynchroniseerd van Apache Spark. Er wordt een serverloze SQL-pooldatabase gemaakt voor elke database in serverloze Apache Spark-pools (preview). 
+Met een serverloze SQL-pool kunnen automatisch metagegevens worden gesynchroniseerd van Apache Spark. Er wordt een serverloze SQL-pooldatabase gemaakt voor elke database in serverloze Apache Spark-pools. 
 
 Voor elke externe Spark-tabel die is gebaseerd op Parquet en zich in Azure Storage bevindt, wordt een externe tabel gemaakt in een serverloze SQL-pooldatabase. Op deze manier kunt u uw Spark-pools afsluiten en nog steeds query’s uitvoeren op externe Spark-tabellen vanuit een serverloze SQL-pool.
 

@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 4239b5400e919621dfff001ca7e6cb9de1626658
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: da698a1a8d91273321d4633abd683a06cb4cf403
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686205"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96451625"
 ---
 # <a name="connect-to-synapse-sql-with-sql-server-management-studio-ssms"></a>Verbinding maken met Synapse SQL met behulp van SQL Server Management Studio (SSMS)
 > [!div class="op_single_selector"]
@@ -26,9 +26,9 @@ ms.locfileid: "94686205"
 > 
 > 
 
-U kunt [SSMS (SQL Server Management Studio)](/sql/ssms/download-sql-server-management-studio-ssms) gebruiken om verbinding te maken met Synapse SQL en query's uit te voeren op Azure Synapse Analytics via serverloze SQL-pools (preview-versie) of toegewezen SQL-pools. 
+U kunt [SSMS (SQL Server Management Studio)](/sql/ssms/download-sql-server-management-studio-ssms) gebruiken om verbinding te maken met Synapse SQL en query's uit te voeren op Azure Synapse Analytics via serverloze SQL-pools of toegewezen SQL-pools. 
 
-### <a name="supported-tools-for-serverless-sql-pool-preview"></a>Ondersteunde hulpprogramma's voor serverloze SQL-pools (preview-versie)
+### <a name="supported-tools-for-serverless-sql-pool"></a>Ondersteunde hulpprogramma's voor serverloze SQL-pools
 
 [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) wordt volledig ondersteund vanaf versie 1.18.0. SSMS wordt gedeeltelijk ondersteund vanaf versie 18.5, maar u kunt het hulpprogramma gebruiken om alleen verbinding te maken en query's uit te voeren.
 
@@ -63,7 +63,7 @@ Voer de volgende stappen uit om verbinding te maken met Synapse SQL met behulp v
     ![AdventureWorksDW 1 verkennen](../sql-data-warehouse/media/sql-data-warehouse-query-ssms/explore-tables.png)
 
 
-### <a name="serverless-sql-pool-preview"></a>Serverloze SQL-pool (preview-versie)
+### <a name="serverless-sql-pool"></a>Serverloze SQL-pool
 
 Voer de volgende stappen uit om verbinding te maken met Synapse SQL met behulp van een serverloze SQL-pool: 
 

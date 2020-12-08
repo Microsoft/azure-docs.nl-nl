@@ -7,12 +7,12 @@ ms.service: iot-central
 ms.subservice: iot-central-retail
 ms.topic: tutorial
 ms.date: 10/20/2019
-ms.openlocfilehash: a76df67d1ef9d203d5e5d54cb95bb8fc90f70180
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d19310dbd54c8bd5f9854ff86af051b68c5cd378
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90980751"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96463313"
 ---
 # <a name="tutorial-deploy-and-walk-through-a-digital-distribution-center-application-template"></a>Zelfstudie: Een toepassingssjabloon voor een digitaal distributiecentrum implementeren en doorlopen
 
@@ -34,8 +34,7 @@ U kunt een toepassing maken met behulp van de volgende stappen
 
 1. Navigeer naar de website Azure IoT Central-toepassingsbeheer. Selecteer **Bouwen** in de navigatiebalk aan de linkerkant en klik vervolgens op het tabblad **Detailhandel**.
 
-    > [!div class="mx-imgBorder"]
-    > ![Schermopname waarin wordt getoond hoe u de toepassingssjabloon voor het digitale distributiecentrum selecteert](./media/tutorial-iot-central-ddc/iotc-retail-homepage.png)
+    :::image type="content" source="media/tutorial-iot-central-ddc/iotc-retail-homepage.png" alt-text="Een toepassingssjabloon voor een digitaal distributiecentrum":::
 
 2. Selecteer het tabblad **Detailhandel** en selecteer **App maken** onder de toepassing **Digital Distribution Center** (Digitaal distributiecentrum)
 
@@ -45,11 +44,9 @@ U kunt een toepassing maken met behulp van de volgende stappen
    **Factureringsgegevens**: De map, het Azure-abonnement en de locatiegegevens zijn vereist voor het inrichten van de resources.
    **Maken**: Selecteer Maken onderin de pagina om uw app te implementeren.
 
-    > [!div class="mx-imgBorder"]
-    > ![Schermopname waarin wordt getoond hoe u een app maakt met de toepassingssjabloon voor het digitale distributiecentrum](./media/tutorial-iot-central-ddc/ddc-create.png)
+   :::image type="content" source="media/tutorial-iot-central-ddc/ddc-create.png" alt-text="Schermopname waarin wordt getoond hoe u een app maakt met de toepassingssjabloon voor het digitale distributiecentrum":::
 
-    > [!div class="mx-imgBorder"]
-    > ![Schermopname met de factureringsopties wanneer u de app maakt](./media/tutorial-iot-central-ddc/ddc-create-billinginfo.png)
+   :::image type="content" source="media/tutorial-iot-central-ddc/ddc-create-billinginfo.png" alt-text="Schermopname met de factureringsopties wanneer u de app maakt":::
 
 ## <a name="walk-through-the-application-dashboard"></a>Het toepassingsdashboard doorlopen 
 

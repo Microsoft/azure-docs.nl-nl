@@ -11,14 +11,14 @@ ms.date: 05/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 691cdcb525f8e9e3d1fb914372b9f62366f4bfba
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 4c761404ab5a95bc0189407cc97ce779b66356fe
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "85213020"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460649"
 ---
-# <a name="quickstart-create-a-synapse-sql-pool-workload-classifier-using-the-azure-portal"></a>Quickstart: Een workloadclassificatie voor een Synapse SQL-pool maken met behulp van de Azure Portal
+# <a name="quickstart-create-a-dedicated-sql-pool-workload-classifier-using-the-azure-portal"></a>Quickstart: Een workloadclassificatie voor een toegewezen SQL-pool maken met behulp van de Azure Portal
 
 In deze quickstart maakt u een [workloadclassificatie](sql-data-warehouse-workload-classification.md) voor het toewijzen van query’s aan een workloadgroep.  De workloadclassificatie wijst aanvragen van SQL-gebruiker `ELTLogin` toe aan workloadgroep `DataLoads`.   Volg het artikel [Quickstart: Isolatie van workload configureren](quickstart-configure-workload-isolation-portal.md) voor het maken van de workloadgroep `DataLoads`.  In deze zelfstudie maakt u een workloadclassificatie met de optie WLM_LABEL voor het correct verder classificeren van aanvragen.  Met deze classificatie wordt ook de [workloadurgentie](sql-data-warehouse-workload-importance.md) `HIGH` toegewezen aan deze aanvragen.
 
@@ -31,16 +31,16 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
 Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
 > [!NOTE]
-> Het maken van een SQL-poolexemplaar in Azure Synapse Analytics kan resulteren in een nieuwe factureerbare service.  Zie [Prijzen voor Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/sql-data-warehouse/) voor meer informatie.
+> Het maken van een instantie van een toegewezen SQL-pool in Azure Synapse Analytics kan resulteren in een nieuwe factureerbare service.  Zie [Prijzen voor Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/sql-data-warehouse/) voor meer informatie.
 
 ## <a name="prerequisites"></a>Vereisten
 
-In deze quickstart wordt ervan uitgegaan dat u al een SQL-poolexemplaar in Synapse SQL en CONTROL DATABASE-rechten hebt. Gebruik [Maken en verbinden - portal](create-data-warehouse-portal.md) om een datawarehouse met de naam **mySampleDataWarehouse** te maken.
+In deze quickstart wordt ervan uitgegaan dat u al een instantie van een toegewezen SQL-pool hebt, met CONTROL DATABASE-rechten voor de pool. Gebruik [Maken en koppelen - portal](create-data-warehouse-portal.md) om een toegewezen SQL-pool met de naam **mySampleDataWarehouse** te maken als dat nodig is.
 <br><br>
 Er bestaat een workloadgroep `DataLoads`.  Zie de zelfstudie [Quickstart: Isolatie van workload configureren](quickstart-configure-workload-isolation-portal.md) voor het maken van de workloadgroep.
 <br><br>
 >[!IMPORTANT] 
->Uw SQL-pool moet online zijn als u workloadbeheer wilt configureren. 
+>Uw toegewezen SQL-pool moet online zijn als u workloadbeheer wilt configureren. 
 
 
 ## <a name="create-a-login-for-eltlogin"></a>Aanmeldingsgegevens maken voor ELTLogin
@@ -72,18 +72,17 @@ END
 Met classificaties kunt u aanvragen routeren naar een workloadgroep op basis van een set regels.  In de zelfstudie [Quickstart: Isolatie van workload configureren](quickstart-configure-workload-isolation-portal.md) hebt u de workloadgroep `DataLoads` gemaakt.  U gaat nu een workloadclassificatie maken voor het routeren van aanvragen naar de workloadgroep `DataLoads`.
 
 
-1.  Klik op **Azure Synapse Analytics (voorheen SQL DW)** op de linkerpagina van de Azure Portal.
-2.  Selecteer **mySampleDataWarehouse** op de pagina **Azure Synapse Analytics (voorheen SQL DW)** . De SQL-pool wordt geopend.
-3.  Klik op **Workloadbeheer**.
+1.  Ga naar de pagina met de toegewezen SQL-pool **mySampleDataWarehouse**.
+3.  Selecteer **Workloadbeheer**.
 
     ![Klik op Menu](./media/quickstart-create-a-workload-classifier-portal/menu.png)
 
-4.  Klik op **Instellingen en classificaties** aan de rechterkant van de workloadgroep `DataLoads`.
+4.  Selecteer **Instellingen en classificaties** aan de rechterkant van de workloadgroep `DataLoads`.
 
     ![Klik op Maken](./media/quickstart-create-a-workload-classifier-portal/settings-classifiers.png)
 
-5. Klik op **Classificaties**.
-6. Klik op **Classificatie toevoegen**.
+5. Selecteer **Niet geconfigureerd** onder de kolom Classificaties.
+6. Selecteer **+ Classificatie toevoegen**.
 
     ![Klik op Add.](./media/quickstart-create-a-workload-classifier-portal/add-wc.png)
 
@@ -91,8 +90,8 @@ Met classificaties kunt u aanvragen routeren naar een workloadgroep op basis van
 8.  Voer `ELTLogin` in bij **Lid**.
 9.  Kies `High` voor **Urgentie van aanvraag**.  *Optioneel*, normale urgentie is de standaardinstelling.
 10. Voer `fact_loads` in bij **Label**.
-11. Klik op **Add**.
-12. Klik op **Opslaan**.
+11. Selecteer **Toevoegen**.
+12. Selecteer **Opslaan**.
 
     ![Klik op Configureren](./media/quickstart-create-a-workload-classifier-portal/config-wc.png)
 
@@ -135,8 +134,6 @@ WHERE [label] = 'fact_loads'
 ORDER BY submit_time DESC
 ```
 
-
-
 ## <a name="clean-up-resources"></a>Resources opschonen
 
 Als u de workloadclassificatie `ELTLoginDataLoads` die u in deze zelfstudie hebt gemaakt, wilt verwijderen:
@@ -152,24 +149,20 @@ Als u de workloadclassificatie `ELTLoginDataLoads` die u in deze zelfstudie hebt
 
     ![Op Opslaan klikken](./media/quickstart-create-a-workload-classifier-portal/delete-save-wc.png)
 
-Er worden kosten in rekening gebracht voor datawarehouse-eenheden en gegevens die zijn opgeslagen in uw datawarehouse. Deze compute- en opslagresources worden apart in rekening gebracht.
+Er worden kosten in rekening gebracht voor datawarehouse-eenheden en gegevens die zijn opgeslagen in uw toegewezen SQL-pool. Deze compute- en opslagresources worden apart in rekening gebracht.
 
-- Als u de gegevens in de opslag wilt houden, kunt u het berekenen onderbreken wanneer u het datawarehouse niet gebruikt. Als u het berekenen onderbreekt, worden er alleen kosten in rekening gebracht voor de gegevensopslag. Wanneer u klaar bent om met de gegevens te werken, hervat u de berekening.
-- Als u in de toekomst geen kosten meer wilt hebben, kunt u de datawarehouse verwijderen.
+- Als u de gegevens in de opslag wilt houden, kunt u het berekenen onderbreken wanneer u de toegewezen SQL-pool niet gebruikt. Als u het berekenen onderbreekt, worden er alleen kosten in rekening gebracht voor de gegevensopslag. Wanneer u klaar bent om met de gegevens te werken, hervat u de berekening.
+- Als u in de toekomst geen kosten meer wilt maken, kunt u de toegewezen SQL-pool verwijderen.
 
 Volg deze stappen om de resources op te schonen.
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com) en selecteer uw datawarehouse.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com) en selecteer uw toegewezen SQL-pool.
 
     ![Resources opschonen](./media/load-data-from-azure-blob-storage-using-polybase/clean-up-resources.png)
 
-2. Als u het berekenen wilt onderbreken, selecteert u de knop **Onderbreken**. Als het datawarehouse is onderbroken, ziet u een knop **Start**.  Als u de berekening wilt hervatten, selecteert u **Starten**.
+2. Als u het berekenen wilt onderbreken, selecteert u de knop **Onderbreken**. Wanneer de toegewezen SQL-pool is onderbroken, ziet u een knop **Starten**.  Als u de berekening wilt hervatten, selecteert u **Starten**.
 
-3. Als u de datawarehouse wilt verwijderen zodat er geen kosten in rekening worden gebracht voor berekenen of opslaan, selecteert u **Verwijderen**.
-
-4. Als u de door u gemaakte SQL-server wilt verwijderen, klikt u op **select sqlpoolservername.database.windows.net** in de vorige afbeelding. Selecteer vervolgens **Verwijderen**.  Wees voorzichtig met verwijderen. Als u de server verwijdert, worden ook alle databases verwijderd die zijn toegewezen aan de server.
-
-5. Als u de resourcegroep wilt verwijderen, selecteert u **myResourceGroup**. Selecteer vervolgens **Resourcegroep verwijderen**.
+3. Als u de toegewezen SQL-pool wilt verwijderen zodat er geen kosten in rekening worden gebracht voor berekenen of opslaan, selecteert u **Verwijderen**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

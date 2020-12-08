@@ -1,6 +1,6 @@
 ---
-title: Externe tabellen maken en gebruiken in een serverloze SQL-pool (preview-versie)
-description: In deze sectie leert u hoe u externe tabellen kunt maken en gebruiken in een serverloze SQL-pool (preview-versie).
+title: Externe tabellen maken en gebruiken in een serverloze SQL-pool
+description: In deze sectie leert u hoe u externe tabellen kunt maken en gebruiken in een serverloze SQL-pool.
 services: synapse-analytics
 author: vvasic-msft
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: vvasic
 ms.reviewer: jrasnick
-ms.openlocfilehash: 0a52db131311d9956cf7217d910f22c3a4f07738
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 5dcd4b7b76752ca5396fc68afc8d4c8e4e1edca5
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93314717"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462307"
 ---
-# <a name="create-and-use-external-tables-using-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Externe tabellen maken en gebruiken met behulp van een serverloze SQL-pool (preview-versie) in Azure Synapse Analytics
+# <a name="create-and-use-external-tables-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Externe tabellen maken en gebruiken met behulp van een serverloze SQL-pool in Azure Synapse Analytics
 
-In deze sectie leert u hoe u [externe tabellen](develop-tables-external-tables.md) kunt maken en gebruiken in een serverloze SQL-pool (preview-versie). Externe tabellen zijn handig als u de toegang tot externe gegevens in serverloze SQL-pools wilt beheren, en als u hulpprogramma's, zoals Power BI, wilt gebruiken in combinatie met een serverloze SQL-pool. Externe tabellen hebben toegang tot twee soorten opslag:
+In deze sectie leert u hoe u [externe tabellen](develop-tables-external-tables.md) kunt maken en gebruiken in een serverloze SQL-pool. Externe tabellen zijn handig als u de toegang tot externe gegevens in serverloze SQL-pools wilt beheren, en als u hulpprogramma's, zoals Power BI, wilt gebruiken in combinatie met een serverloze SQL-pool. Externe tabellen hebben toegang tot twee soorten opslag:
 - Openbare opslag waar gebruikers toegang hebben tot openbare opslagbestanden.
 - Beveiligde opslag waar gebruikers toegang hebben tot opslagbestanden met behulp van SAS-referenties, een Azure AD-identiteit of een beheerde identiteit van een Synapse-werkruimte.
 

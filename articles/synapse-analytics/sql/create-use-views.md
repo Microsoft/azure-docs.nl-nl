@@ -1,6 +1,6 @@
 ---
-title: Weergaven maken en gebruiken in een serverloze SQL-pool (preview-versie)
-description: In deze sectie leert u hoe u weergaven kunt maken en gebruiken in om query's voor serverloze SQL-pools (preview-versie) te verpakken. Weergaven stellen u in staat deze query's opnieuw te gebruiken. Weergaven zijn ook nodig als u hulpprogramma’s, zoals Power BI, wilt gebruiken samen met een serverloze SQL-pool.
+title: Weergaven maken en gebruiken in een serverloze SQL-pool
+description: In deze sectie leert u hoe u weergaven kunt maken en gebruiken in om query's voor serverloze SQL-pools te verpakken. Weergaven stellen u in staat deze query's opnieuw te gebruiken. Weergaven zijn ook nodig als u hulpprogramma’s, zoals Power BI, wilt gebruiken samen met een serverloze SQL-pool.
 services: synapse-analytics
 author: azaricstefan
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 302cf97db7c1d2ba489a84b6be912816d20f6091
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 0948c7c82d7577bae07057bff9d1be4d7e09f978
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94685559"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462278"
 ---
-# <a name="create-and-use-views-using-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Weergaven maken en gebruiken met behulp van een serverloze SQL-pool (preview-versie) in Azure Synapse Analytics
+# <a name="create-and-use-views-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Weergaven maken en gebruiken met behulp van een serverloze SQL-pool in Azure Synapse Analytics
 
-In deze sectie leert u hoe u weergaven kunt maken en gebruiken in om query's voor serverloze SQL-pools (preview-versie) te verpakken. Weergaven stellen u in staat deze query's opnieuw te gebruiken. Weergaven zijn ook nodig als u hulpprogramma’s, zoals Power BI, wilt gebruiken samen met een serverloze SQL-pool.
+In deze sectie leert u hoe u weergaven kunt maken en gebruiken in om query's voor serverloze SQL-pools te verpakken. Weergaven stellen u in staat deze query's opnieuw te gebruiken. Weergaven zijn ook nodig als u hulpprogramma’s, zoals Power BI, wilt gebruiken samen met een serverloze SQL-pool.
 
 ## <a name="prerequisites"></a>Vereisten
 

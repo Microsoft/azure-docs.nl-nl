@@ -9,16 +9,16 @@ ms.reviewer: jrasnick, garye
 ms.date: 09/25/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: 2597aa1f0589fea75af0a3ac41244e3718d5eb3e
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: a5d84b936679cdd5ebd5bec4938d6db7fcb641e7
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93307968"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96455498"
 ---
 # <a name="quickstart-create-a-new-azure-machine-learning-linked-service-in-synapse"></a>Quickstart: Een nieuwe gekoppelde Azure Machine Learning-service maken in Synapse
 
-In deze quickstart koppelt u een Synapse Analytics-werkruimte aan een Azure Machine Learning-werkruimte. Als u deze werkruimten koppelt, kunt u Azure Machine Learning gebruiken vanuit verschillende ervaringen in Synapse.
+In deze quickstart koppelt u een Azure Synapse Analytics-werkruimte aan een Azure Machine Learning-werkruimte. Als u deze werkruimten koppelt, kunt u Azure Machine Learning gebruiken vanuit verschillende ervaringen in Synapse.
 
 Met deze koppeling naar een Azure Machine Learning-werkruimte kunt u bijvoorbeeld het volgende doen:
 
@@ -80,4 +80,4 @@ Met deze stap maakt u een nieuwe service-principal. Als u een bestaande service-
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Zelfstudie: Wizard voor scoren van het Machine learning-model - toegewezen SQL-pool](tutorial-sql-pool-model-scoring-wizard.md)
-- [Machine Learning-mogelijkheden in Azure Synapse Analytics (preview van werkruimten)](what-is-machine-learning.md)
+- [Mogelijkheden voor machine learning in Azure Synapse Analytics](what-is-machine-learning.md)

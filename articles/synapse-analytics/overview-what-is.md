@@ -9,20 +9,18 @@ ms.subservice: overview
 ms.date: 10/28/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: 2052e27cde3427986dbf7784dcd5dbb179c5b209
-ms.sourcegitcommit: 8a1ba1ebc76635b643b6634cc64e137f74a1e4da
+ms.openlocfilehash: c315dae7e5f02f112dfdfbec02e1ebaaa5e48a9f
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94380926"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96445786"
 ---
-# <a name="what-is-azure-synapse-analytics-workspaces-preview"></a>Wat is Azure Synapse Analytics (preview van werkruimten)?
-
-[!INCLUDE [preview](includes/note-preview.md)]
+# <a name="what-is-azure-synapse-analytics"></a>Wat is Azure Synapse Analytics?
 
 Zakelijke analyses moeten op grote schaal worden uitgevoerd op elk soort gegevens, ongeacht of het gaat om onbewerkte, precieze of zeer samengestelde gegevens. Hiervoor moeten ondernemingen meestal technologieën voor big data en datawarehousing samenvoegen in complexe gegevenspijplijnen, die werken met de gegevens in relationele opslag en data lakes. Dit soort oplossingen is moeilijk te compileren, te onderhouden en te beveiligen. De complexiteit ervan zorgt voor vertraging in de levering van het inzicht dat ondernemingen nodig hebben.
 
-**Azure Synapse** is een geïntegreerde analyse-service die sneller inzicht biedt in alle datawarehouses en systemen voor big data. Azure Synapse combineert het beste van de **SQL**-technologieën die worden gebruikt in zakelijke datawarehousing, **Spark**-technologieën die worden gebruikt voor big data, en **Pipelines** voor gegevensintegratie en ETL/ELT. **Synapse Studio** biedt een uniforme ervaring voor beheer, bewaking, codering en beveiliging. Synapse bevat een diepgaande integratie met andere Azure-services, zoals **PowerBI**, **CosmosDB** en **AzureML**.
+**Azure Synapse** is een geïntegreerde analyse-service die sneller inzicht biedt in alle datawarehouses en systemen voor big data. Azure Synapse combineert het beste van de **SQL**-technologieën die worden gebruikt in zakelijke datawarehousing, **Spark**-technologieën die worden gebruikt voor big data, en **Pipelines** voor gegevensintegratie en ETL/ELT. **Synapse Studio** biedt een uniforme ervaring voor beheer, bewaking, codering en beveiliging. Synapse bevat een diepgaande integratie met andere Azure-services, zoals **Power BI**, **CosmosDB** en **AzureML**.
 
 ## <a name="key-features--benefits"></a>Belangrijkste functies en voordelen
 
@@ -53,7 +51,7 @@ Azure Synapse verwijdert de traditionele technologische barrières tussen het ge
 
 ### <a name="built-in-data-integration-via-pipelines"></a>Ingebouwde gegevensintegratie via pijplijnen
 
-Azure Synapse is ingebouwd met dezelfde gegevensintegratie-engine en ervaring als Azure Data Factory, zodat u uitgebreide ETL-pijplijnen op schaal kunt maken zonder Synapse Analytics te verlaten.
+Azure Synapse is ingebouwd met dezelfde gegevensintegratie-engine en ervaring als Azure Data Factory, zodat u uitgebreide ETL-pijplijnen op schaal kunt maken zonder Azure Synapse Analytics te verlaten.
 
 * Gegevens opnemen uit meer dan 90 gegevensbronnen
 * Code-Free ETL met gegevensstroomactiviteiten

@@ -1,5 +1,5 @@
 ---
-title: OPENROWSET gebruiken in een serverloze SQL-pool (preview)
+title: OPENROWSET gebruiken in een serverloze SQL-pool
 description: In dit artikel wordt de syntaxis beschreven van OPENROWSET in serverloze SQL-pool en wordt uitgelegd hoe u argumenten gebruikt.
 services: synapse-analytics
 author: filippopovic
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 2458b5f3f0c0091bb6ec24e62a1d5614e4e1ecd8
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 97ee6c17d62a924686e3e4f4717d7bb7f4375988
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94888586"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96446674"
 ---
-# <a name="how-to-use-openrowset-using-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>OPENROWSET gebruiken met behulp van serverloze SQL-pool (preview) in Azure Synapse Analytics
+# <a name="how-to-use-openrowset-using-serverless-sql-pool-in-azure-synapse-analytics"></a>OPENROWSET gebruiken met behulp van serverloze SQL-pool in Azure Synapse Analytics
 
-Met de functie `OPENROWSET(BULK...)` kunt u toegang krijgen tot bestanden in Azure Storage. `OPENROWSET` leest de inhoud van een externe gegevensbron (bijvoorbeeld een bestand) en retourneert de inhoud als een set rijen. Binnen de resource van serverloze SQL-pool (preview) wordt de bulksgewijze rijensetprovider van OPENROWSET benaderd door het aanroepen van de functie OPENROWSET en het opgeven van de optie BULK.  
+Met de functie `OPENROWSET(BULK...)` kunt u toegang krijgen tot bestanden in Azure Storage. `OPENROWSET` leest de inhoud van een externe gegevensbron (bijvoorbeeld een bestand) en retourneert de inhoud als een set rijen. Binnen de resource van serverloze SQL-pool wordt de bulksgewijze rijensetprovider van OPENROWSET benaderd door het aanroepen van de functie OPENROWSET en het opgeven van de optie BULK.  
 
 Naar de functie `OPENROWSET` kan worden verwezen in de `FROM`-component van een query alsof het een tabelnaam `OPENROWSET` is. De functie ondersteunt bulkbewerkingen via een ingebouwde BULK-provider waarmee gegevens uit een bestand kunnen worden gelezen om deze vervolgens te retourneren als een rijenset.
 
@@ -147,7 +147,7 @@ Als in het onderstaande voorbeeld unstructured_data_path=`https://mystorageaccou
 
 Met de WITH-component kunt u opgeven welke kolommen u uit bestanden wilt lezen.
 
-- Als u wilt dat alle kolommen worden gelezen uit CSV-gegevensbestanden, geeft u de kolomnamen en de bijbehorende gegevenstypen op. Als u een subset van deze kolommen wilt opvragen, gebruikt u rangtelwoorden om de kolommen uit de oorspronkelijke gegevensbestanden te kiezen op rangtelwoord. Kolommen worden gebonden op aanduiding via rangnummer. 
+- Als u wilt dat alle kolommen worden gelezen uit CSV-gegevensbestanden, geeft u de kolomnamen en de bijbehorende gegevenstypen op. Als u een subset van deze kolommen wilt opvragen, gebruikt u rangtelwoorden om de kolommen uit de oorspronkelijke gegevensbestanden te kiezen op rangtelwoord. Kolommen worden gebonden op aanduiding via rangnummer. Als HEADER_ROW = TRUE wordt gebruikt, vindt kolombinding plaats op kolomnaam in plaats van rangnummer.
     > [!TIP]
     > U kunt ook de WITH-component voor CSV-bestanden weglaten. Gegevenstypen worden automatisch afgeleid van bestandsinhoud. U kunt het argument HEADER_ROW gebruiken om het bestaan van headerrij op te geven. In dat geval worden de kolomnamen afgelezen uit de headerrij. Bekijk [automatische schemadetectie](#automatic-schema-discovery) voor meer informatie.
     
@@ -231,7 +231,7 @@ Kenmerken van parser-versie 2.0 voor CSV:
 
 HEADER_ROW = { TRUE | FALSE }
 
-Hiermee wordt opgegeven of het CSV-bestand een headerrij bevat. Standaard is FALSE. Wordt ondersteund in PARSER_VERSION='2.0'. Indien RUE, worden kolomnamen uit de eerste rij gelezen aan de hand van het argument FIRSTROW.
+Hiermee wordt opgegeven of het CSV-bestand een headerrij bevat. Standaard is FALSE. Wordt ondersteund in PARSER_VERSION='2.0'. Indien RUE, worden kolomnamen uit de eerste rij gelezen aan de hand van het argument FIRSTROW. Als TRUE en schema worden opgegeven met behulp van WITH, wordt de binding van kolomnamen uitgevoerd op kolomnaam, niet op rangnummer.
 
 DATAFILETYPE = { 'char' | 'widechar' }
 

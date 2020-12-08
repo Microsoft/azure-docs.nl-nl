@@ -1,6 +1,6 @@
 ---
-title: 'Quickstart: Rekenkracht opschalen in Azure Synapse Analytics - T-SQL'
-description: Schaal de rekenkracht op in Azure Synapse Analytics met behulp van T-SQL en SSMS (SQL Server Management Studio). De schaal van rekenkracht vergroten voor betere prestaties of de schaal juist verkleinen om kosten te besparen.
+title: 'Quickstart: Rekenkracht schalen in toegewezen SQL-pool (voorheen SQL DW) - T-SQL'
+description: Schaal de rekenkracht in toegewezen SQL-pool (voorheen SQL DW) met behulp van T-SQL en SQL Server Management Studio (SSMS). De schaal van rekenkracht vergroten voor betere prestaties of de schaal juist verkleinen om kosten te besparen.
 services: synapse-analytics
 author: Antvgski
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 04/17/2018
 ms.author: anvang
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: d11474a3f3b5d8c314f67260fddbbe0a98fe5196
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 37033e3c5f388d1a55a122899114914e661565f6
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91569898"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460228"
 ---
-# <a name="quickstart-scale-compute-in-azure-synapse-analytics-using-t-sql"></a>Quickstart: Rekenschaal aanpassen in Azure Synapse Analytics met T-SQL
+# <a name="quickstart-scale-compute-for-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-using-t-sql"></a>Quickstart: Schaal de rekenkracht voor toegewezen SQL-pool (voorheen SQL DW) in Azure Synapse Analytics met behulp van T-SQL
 
-Pas de rekenkracht aan in Azure Synapse Analytics (voorheen SQL DW) met behulp van T-SQL en SQL Server Management Studio (SSMS). [Vergroot de schaal van Compute](sql-data-warehouse-manage-compute-overview.md) voor betere prestaties of verklein de schaal juist om kosten te besparen.
+Schaal de rekenkracht in toegewezen SQL-pool (voorheen SQL DW) met behulp van T-SQL en SQL Server Management Studio (SSMS). [Vergroot de schaal van Compute](sql-data-warehouse-manage-compute-overview.md) voor betere prestaties of verklein de schaal juist om kosten te besparen.
 
 Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 
@@ -28,9 +28,9 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
 
 Download en installeer de nieuwste versie van [SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SQL Server Management Studio).
 
-## <a name="create-a-data-warehouse"></a>Een datawarehouse maken
+## <a name="create-a-dedicated-sql-pool-formerly-sql-dw"></a>Een toegewezen SQL-pool (voorheen SQL DW) maken
 
-Gebruik [Quickstart: Create and Connect - portal](create-data-warehouse-portal.md) (Quickstart: maken en verbinden - portal) om een datawarehouse te maken met de naam **mySampleDataWarehouse**. Voltooi de quickstart om ervoor te zorgen dat u een firewallregel hebt en dat u vanuit SQL Server Management Studio verbinding kunt maken met uw datawarehouse.
+Gebruik [Quickstart: maken en verbinden - portal](create-data-warehouse-portal.md) om een toegewezen SQL-pool (voorheen SQL DW) te maken met de naam **mySampleDataWarehouse**. Voltooi de quickstart om ervoor te zorgen dat u een firewallregel hebt en dat u vanuit SQL Server Management Studio verbinding kunt maken met uw toegewezen SQL-pool (voorheen SQL DW).
 
 ## <a name="connect-to-the-server-as-server-admin"></a>Als serverbeheerder verbinding maken met de server
 
@@ -58,9 +58,9 @@ In deze sectie wordt gebruikgemaakt van [SSMS](/sql/ssms/download-sql-server-man
 
 ## <a name="view-service-objective"></a>Servicedoelstelling weergeven
 
-De instelling voor de servicedoelstelling bevat het aantal DWU’s voor de datawarehouse.
+De instelling voor de servicedoelstelling bevat het aantal DWU’s voor de toegewezen SQL-pool (voorheen SQL DW).
 
-De huidige DWU’s voor uw datawarehouse bekijken:
+De huidige DWU’s voor uw toegewezen SQL-pool (voorheen SQL DW) bekijken:
 
 1. Vouw onder de verbinding met **mySampleDataWarehouseservername.database.windows.net** de optie **Systeemdatabases** uit.
 2. Klik met de rechtermuisknop op **master** en selecteer **Nieuwe query**. Een nieuwe queryvenster wordt geopend.
@@ -85,7 +85,7 @@ De huidige DWU’s voor uw datawarehouse bekijken:
 
 ## <a name="scale-compute"></a>De schaal van Compute aanpassen
 
-In Azure Synapse kunt u het aantal rekenresources verhogen of verlagen door de DWU's aan te passen. Met behulp van [Maken en verbinden - portal](create-data-warehouse-portal.md) is **mySampleDataWarehouse** gemaakt en vervolgens gestart met 400 DWU's. In de volgende stappen wordt het aantal DWU’s voor **mySampleDataWarehouse** aangepast.
+In de toegewezen SQL-pool (voorheen SQL DW) kunt u het aantal rekenresources verhogen of verlagen door de datawarehouse-eenheden aan te passen. Met behulp van [Maken en verbinden - portal](create-data-warehouse-portal.md) is **mySampleDataWarehouse** gemaakt en vervolgens gestart met 400 DWU's. In de volgende stappen wordt het aantal DWU’s voor **mySampleDataWarehouse** aangepast.
 
 DWU’s wijzigen:
 
@@ -130,13 +130,13 @@ Op de volgende manier peilt u de aanpassingsstatus van het serviceobject:
 
     ![Bewerkingsstatus](./media/quickstart-scale-compute-tsql/polling-output.png)
 
-## <a name="check-data-warehouse-state"></a>Status van datawarehouse controleren
+## <a name="check-dedicated-sql-pool-formerly-sql-dw-state"></a>De status van de toegewezen SQL-pool (voorheen SQL DW) controleren
 
-Als een datawarehouse wordt onderbroken, kunt u deze niet verbinden met T-SQL. Als u de huidige status van de datawarehouse wilt zien, kunt u een PowerShell-cmdlet gebruiken. Zie [Check data warehouse state - Powershell](quickstart-scale-compute-powershell.md#check-data-warehouse-state) (Status van datawarehouse controleren - PowerShell) voor een voorbeeld.
+Wanneer een toegewezen SQL-pool (voorheen SQL DW) wordt onderbroken, kunt u geen verbinding maken met T-SQL. Als u de huidige status van de toegewezen SQL-pool (voorheen SQL DW) wilt zien, kunt u een PowerShell-cmdlet gebruiken. Zie [De status van de toegewezen SQL-pool (voorheen SQL DW) controleren - Powershell](quickstart-scale-compute-powershell.md#check-data-warehouse-state) voor een voorbeeld.
 
 ## <a name="check-operation-status"></a>Bewerkingsstatus controleren
 
-Voer de volgende query uit in de DMV [sys.dm_operation_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) om informatie te krijgen over de verschillende beheerbewerkingen in uw Azure Synapse. Zo wordt bijvoorbeeld de bewerking en de status van de bewerking (IN_PROGRESS of COMPLETED) geretourneerd.
+Voer de volgende query uit in de DMV [sys.dm_operation_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) om informatie te krijgen over de verschillende beheerbewerkingen in uw toegewezen SQL-pool (voorheen SQL DW). Zo wordt bijvoorbeeld de bewerking en de status van de bewerking (IN_PROGRESS of COMPLETED) geretourneerd.
 
 ```sql
 SELECT *
@@ -150,7 +150,7 @@ AND
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U hebt nu geleerd hoe u de rekenkracht voor uw datawarehouse wijzigt. Voor meer informatie over Azure Synapse gaat u verder met de zelfstudie voor het laden van gegevens.
+U hebt nu geleerd hoe u de rekenkracht voor uw toegewezen SQL-pool (voorheen SQL DW) kunt schalen. Voor meer informatie over Azure Synapse Analytics gaat u verder met de zelfstudie voor het laden van gegevens.
 
 > [!div class="nextstepaction"]
->[Gegevens in een Azure Synapse Analytics laden](load-data-from-azure-blob-storage-using-polybase.md)
+>[Gegevens laden in een toegewezen SQL-pool](load-data-from-azure-blob-storage-using-polybase.md)

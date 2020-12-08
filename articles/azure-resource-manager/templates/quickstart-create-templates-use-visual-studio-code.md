@@ -1,20 +1,20 @@
 ---
 title: Sjabloon maken - Visual Studio Code
-description: Gebruik Visual Studio Code en de Azure Resource Manager-extensie voor hulpprogramma's om te werken met Resource Manager-sjablonen.
+description: Gebruik Visual Studio Code en de Azure Resource Manager-extensie voor hulpprogramma's om te werken met Azure Resource Manager-sjablonen (ARM-sjablonen).
 author: neilpeterson
 ms.date: 08/09/2020
 ms.topic: quickstart
 ms.author: nepeters
-ms.openlocfilehash: 5375fedcd05aefa5d23ee872325373ce631d43bb
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: d8fd44a1e4c1ddfd78b2afa3280bb05c8fde91e3
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88034975"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350140"
 ---
-# <a name="quickstart-create-azure-resource-manager-templates-with-visual-studio-code"></a>Quickstart: Azure Resource Manager-sjablonen maken met Visual Studio Code
+# <a name="quickstart-create-arm-templates-with-visual-studio-code"></a>Quickstart: ARM-sjablonen maken met Visual Studio Code
 
-De Azure Resource Manager-hulpprogramma's voor Visual Studio Code bieden taalondersteuning, resourcefragmenten en automatisch voltooien van resources. Met deze hulpprogramma's kunt u Azure Resource Manager-sjablonen maken en valideren. In deze snelstart gebruikt u de extensie om een Azure Resource Manager-sjabloon te maken. Daarbij ervaart u de extensiemogelijkheden, zoals ARM-sjabloonfragmenten, validatie, voltooiingen en ondersteuning van parameterbestanden.
+De Azure Resource Manager-hulpprogramma's voor Visual Studio Code bieden taalondersteuning, resourcefragmenten en automatisch voltooien van resources. Met deze hulpprogramma's kunt u Azure Resource Manager-sjablonen (ARM-sjablonen) maken en valideren. In deze snelstart gebruikt u de extensie om helemaal zelf een ARM-sjabloon te maken. Daarbij ervaart u de extensiemogelijkheden, zoals ARM-sjabloonfragmenten, validatie, voltooiingen en ondersteuning van parameterbestanden.
 
 Om deze quickstart af te ronden, moet u [Visual Studio Code](https://code.visualstudio.com/) met de [Azure Resource Manager-hulpprogramma-extensie](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools) geïnstalleerd hebben. De [Azure CLI](/cli/azure/?view=azure-cli-latest) of de [Azure PowerShell-module](/powershell/azure/new-azureps-module-az?view=azps-3.7.0) moeten ook zijn geïnstalleerd en geverifieerd.
 
@@ -54,7 +54,7 @@ U kunt de **tab**-toets gebruiken om door de configureerbare eigenschapen in het
 
 ## <a name="completion-and-validation"></a>Voltooiing en validatie
 
-Een van de krachtigste mogelijkheden van de extensie is de integratie met Azure-schema's. Azure-schema's voorzien de extensie van mogelijkheden voor validatie en resourcebewuste voltooiing. We gaan het opslagaccount wijzigen om validatie en voltooiing in actie te zien. 
+Een van de krachtigste mogelijkheden van de extensie is de integratie met Azure-schema's. Azure-schema's voorzien de extensie van mogelijkheden voor validatie en resourcebewuste voltooiing. We gaan het opslagaccount wijzigen om validatie en voltooiing in actie te zien.
 
 Werk eerst het type opslagaccount bij naar een ongeldige waarde, zoals `megaStorage`. U ziet dat met deze actie een waarschuwing wordt gegenereerd die aangeeft dat `megaStorage` geen geldige waarde is.
 
@@ -80,7 +80,7 @@ Namen van Azure-opslagaccounts hebben een minimumlengte van 3 en een maximumleng
 
 ![Afbeelding van minLength en maxLength die worden toegevoegd aan een ARM-sjabloonparameter](./media/quickstart-create-templates-use-visual-studio-code/11.png)
 
-Wijzig nu in de opslagresource de naam van de eigenschap om de parameter te gebruiken. Als u dit wilt doen, verwijdert u de huidige naam. Voer een dubbel aanhalingsteken en een vierkant haakje openen in `[` in. Hierdoor wordt een lijst met ARM-sjabloonfuncties geopend. Selecteer *parameters* in de lijst. 
+Wijzig nu in de opslagresource de naam van de eigenschap om de parameter te gebruiken. Als u dit wilt doen, verwijdert u de huidige naam. Voer een dubbel aanhalingsteken en een vierkant haakje openen in `[` in. Hierdoor wordt een lijst met ARM-sjabloonfuncties geopend. Selecteer *parameters* in de lijst.
 
 ![Afbeelding van automatische voltooiing bij het gebruik van parameters in ARM-sjabloonresources](./media/quickstart-create-templates-use-visual-studio-code/12.png)
 

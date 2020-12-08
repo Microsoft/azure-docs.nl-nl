@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: overview
 ms.date: 11/24/2020
 ms.custom: contperfq1
-ms.openlocfilehash: 19be1155476ca7c295e2d0311e8285bc2128dd1d
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: c36a88317f71d08094b43d06cc7ba86985a73ca0
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030761"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96511845"
 ---
 # <a name="what-is-azure-cognitive-search"></a>Wat is Azure Cognitive Search?
 
@@ -23,9 +23,10 @@ Azure Cognitive Search ([voorheen 'Azure Search'](whats-new.md#new-service-name)
 Wanneer u een Cognitive Search-service maakt, krijgt u:
 
 + een zoekprogramma dat indexering en query's uitvoert
-+ op AI gebaseerde analyse en transformatie van afbeeldingen en niet-gedifferentieerde tekst tijdens het indexeren
 + permanente opslag van zoekindexen die u maakt en beheert
 + een querytaal voor het opstellen van eenvoudige tot complexe query's
++ op AI-gebaseerde analyse, het maken van doorzoekbare inhoud van afbeeldingen, onbewerkte tekst, toepassingsbestanden
++ integratie met Azure-gegevens via zoekindexen, automatisch importeren en vernieuwen van gegevens
 
 In de architectuur wordt een zoekservice geplaatst tussen de externe gegevensarchieven die uw niet-geïndexeerde gegevens bevatten en een client-app die query-aanvragen naar een zoekindex verzendt en het antwoord verwerkt.
 
@@ -70,7 +71,7 @@ Een end-to-end-onderzoek van de belangrijkste zoekfuncties kan in vier stappen w
 1. [**Vraag een index op**](search-query-overview.md) met behulp van [Search Explorer](search-explorer.md) in de portal, [REST API](search-get-started-rest.md), [.NET SDK](/dotnet/api/azure.search.documents.searchclient.search) of een andere SDK.
 
 > [!TIP]
-> Consolideer stappen door te beginnen met de [**wizard Gegevens importeren**](search-get-started-portal.md) en een Azure-gegevensbron om in een paar minuten een index te maken, te laden en op te vragen.
+> Beperk het aantal stappen door te beginnen met de [**wizard Gegevens importeren**](search-get-started-portal.md) en een Azure-gegevensbron om in een paar minuten een index te maken, te laden en op te vragen.
 
 ## <a name="how-it-compares"></a>Vergelijking
 
@@ -78,7 +79,7 @@ Klanten vragen vaak wat de verschillen zijn tussen Azure Cognitive Search en and
 
 | Vergeleken met | Belangrijke verschillen |
 |-------------|-----------------|
-| Microsoft Search | [Microsoft Search](https://docs.microsoft.com/microsoftsearch/overview-microsoft-search) is voor geverifieerde Microsoft 365-gebruikers die query's willen uitvoeren op inhoud in SharePoint. Het wordt aangeboden als een kant-en-klare zoekervaring die is ingeschakeld en geconfigureerd door beheerders, met de mogelijkheid om externe inhoud te accepteren via connectors van Microsoft en andere bronnen. Als dit uw situatie omschrijft, is Microsoft Search met Microsoft 365 een aantrekkelijke optie om te verkennen.<br/><br/>Met Azure Cognitive Search daarentegen worden query's uitgevoerd op een door u gedefinieerde index, die is gevuld met gegevens en documenten waarvan u de eigenaar bent, vaak afkomstig uit verschillende bronnen. Azure Cognitive Search heeft verkenningsmogelijkheden voor bepaalde Azure-gegevensbronnen via [indexeerfuncties](search-indexer-overview.md), maar u kunt elk JSON-document dat overeenkomt met uw indexschema naar een enkele geconsolideerde, doorzoekbare resource pushen. U kunt ook de indexeerpijplijn aanpassen zodat deze machine learning en lexicale analysefuncties bevat. Omdat Cognitive Search is gebouwd als invoegonderdeel voor grotere oplossingen, kunt u de zoekfunctie integreren in vrijwel elke app en op elk platform.|
+| Microsoft Search | [Microsoft Search](/microsoftsearch/overview-microsoft-search) is voor geverifieerde Microsoft 365-gebruikers die query's willen uitvoeren op inhoud in SharePoint. Het wordt aangeboden als een kant-en-klare zoekervaring die is ingeschakeld en geconfigureerd door beheerders, met de mogelijkheid om externe inhoud te accepteren via connectors van Microsoft en andere bronnen. Als dit uw situatie omschrijft, is Microsoft Search met Microsoft 365 een aantrekkelijke optie om te verkennen.<br/><br/>Met Azure Cognitive Search daarentegen worden query's uitgevoerd op een door u gedefinieerde index, die is gevuld met gegevens en documenten waarvan u de eigenaar bent, vaak afkomstig uit verschillende bronnen. Azure Cognitive Search heeft verkenningsmogelijkheden voor bepaalde Azure-gegevensbronnen via [indexeerfuncties](search-indexer-overview.md), maar u kunt elk JSON-document dat overeenkomt met uw indexschema naar een enkele geconsolideerde, doorzoekbare resource pushen. U kunt ook de indexeerpijplijn aanpassen zodat deze machine learning en lexicale analysefuncties bevat. Omdat Cognitive Search is gebouwd als invoegonderdeel voor grotere oplossingen, kunt u de zoekfunctie integreren in vrijwel elke app en op elk platform.|
 |Bing | Met [Bing Webzoekopdrachten-API](../cognitive-services/bing-web-search/index.yml) wordt in de indexen op Bing.com gezocht naar overeenkomsten voor termen die u hebt ingediend. Indexen zijn gebouwd uit HTML, XML en andere webinhoud op openbare sites. [Bing Aangepaste zoekopdrachten](/azure/cognitive-services/bing-custom-search/), dat op dezelfde basis is gebouwd, biedt dezelfde verkenningstechnologie voor typen webinhoud, met een bereik dat is ingesteld op afzonderlijke websites.<br/><br/>In Cognitive Search kunt u de index definiëren en invullen. U kunt [indexeerfuncties](search-indexer-overview.md) gebruiken om gegevens te verkennen in Azure-gegevensbronnen of een indexconform JSON-document naar uw zoekservice te pushen. |
 |Zoeken in database | Veel databaseplatforms beschikken over een ingebouwde zoekfunctie. SQL Server heeft een functie voor [zoeken in volledige tekst](/sql/relational-databases/search/full-text-search). Cosmos DB en soortgelijke technologieën hebben indexen waarop kan worden gezocht. Bij de evaluatie van producten die zoeken en opslag combineren, is het soms lastig om te bepalen wat u moet kiezen. Veel oplossingen gebruiken beide: DBMS voor opslag en Azure Cognitive Search voor gespecialiseerde zoekfuncties.<br/><br/>Vergeleken met DBMS slaat Azure Cognitive Search de inhoud van heterogene bronnen op en biedt het gespecialiseerde tekstverwerkingsfuncties, zoals linguïstische tekstverwerking (woordstammen, lemmata, woordvormen) in [56 talen](/rest/api/searchservice/language-support). Het ondersteunt ook automatische correctie van verkeerd gespelde woorden, [synoniemen](/rest/api/searchservice/synonym-map-operations), [suggesties](/rest/api/searchservice/suggestions), [scoringsbesturingselementen](/rest/api/searchservice/add-scoring-profiles-to-a-search-index), [facetten](./search-filters-facets.md) en [aangepaste tokenisering](/rest/api/searchservice/custom-analyzers-in-azure-search). De [engine voor zoekopdrachten in volledige tekst](search-lucene-query-architecture.md) in Azure Cognitive Search is gebouwd op Apache Lucene, een industrienorm op het gebied van het ophalen van gegevens. Hoewel Azure Cognitive Search gegevens bewaart in de vorm van een omgekeerde index, is het geen vervanging voor echte gegevensopslag en raden we niet aan om Azure Cognitive Search op die manier te gebruiken. Zie dit [forumbericht](https://stackoverflow.com/questions/40101159/can-azure-search-be-used-as-a-primary-database-for-some-data) voor meer informatie. <br/><br/>Een ander belangrijk punt in deze categorie is het gebruik van resources. Indexering en bepaalde querybewerkingen zijn vaak rekenintensief. Door de zoekopdracht van de DBMS naar een toegewezen oplossing in de cloud te verplaatsen, blijven systeemresources beschikbaar voor transactieverwerking. En door de zoekfunctie te externaliseren, kunt u eenvoudig schalen naar het juiste queryvolume.|
 |Toegewezen zoekoplossing | Ervan uitgaande dat u hebt gekozen voor een toegewezen zoekoplossing met het volledige spectrum aan functies, dan is er nog een essentieel onderscheid tussen on-premises oplossingen en een cloudservice. Veel zoektechnologieën bieden controle over het indexeren en doorzoeken van pijplijnen, toegang tot rijkere syntaxis voor filteren en het uitvoeren van query’s, beheer van rangen en relevantie, en functies voor zelfgestuurde en intelligente zoekopdrachten. <br/><br/>Als u op zoek bent naar een pasklare oplossing met minimale overhead, minimaal onderhoud en aanpasbare schaling is een cloudservice de juiste keuze voor u. <br/><br/>Binnen het cloudmodel bieden verschillende providers vergelijkbare basisfuncties, met Zoekopdracht in volledige tekst, op geografische locaties zoeken en de mogelijkheid om te gaan met een zekere dubbelzinnigheid van zoekinvoergegevens. Meestal bepaalt een [gespecialiseerde functie](search-features-list.md), of het gemak en de algehele eenvoud van de API’s, de hulpprogramma’s en het beheer, welke oplossing het meest geschikt voor u is. |

@@ -10,16 +10,16 @@ ms.service: synapse-analytics
 ms.subservice: workspace
 ms.topic: tutorial
 ms.date: 11/17/2020
-ms.openlocfilehash: f55e266b548ea3b43a50d9500a427dfe1199b73f
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: b1339a0ab5be9004643cf2e9f86203eba9a2cc72
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94699760"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96445069"
 ---
 # <a name="get-started-with-azure-synapse-analytics"></a>Aan de slag met Azure Synapse Analytics
 
-Deze zelfstudie is een stapsgewijze gids door de belangrijkste functiegebieden van Azure Synapse Analytics. De zelfstudie is het ideale startpunt voor iemand die een rondleiding wil door de belangrijkste scenario's van Azure Synapse Analytics. Nadat u de stappen in de zelfstudie hebt uitgevoerd, hebt u een volledig functionele Synapse-werkruimte waarin u gegevens kunt analyseren met behulp van een toegewezen SQL-pool, een serverloze SQL-pool of Apache Spark.
+Deze zelfstudie is een stapsgewijze gids door de belangrijkste functiegebieden van Azure Synapse Analytics. De zelfstudie is het ideale startpunt voor iemand die een rondleiding wil door de belangrijkste scenario's van Azure Synapse Analytics. Als u de stappen in de zelfstudie hebt uitgevoerd, beschikt u over een Synapse-werkruimte. Deze zelfstudie bevat ook stappen om [een werkruimte in te schakelen voor uw toegewezen SQL-pool (voorheen SQL DW)](./sql-data-warehouse/workspace-connected-create.md). Als uw werkruimte is gemaakt, kunt u beginnen met het analyseren van gegevens met behulp van een toegewezen SQL-pool, een serverloze SQL-pool of een serverloze Apache Spark-pool.
 
 Volg de stappen *in onderstaande volgorde* om een rondleiding te krijgen door veel van de mogelijkheden en te leren hoe u de kernfuncties kunt gebruiken.
 

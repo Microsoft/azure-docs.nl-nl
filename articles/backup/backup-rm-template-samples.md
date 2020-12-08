@@ -4,12 +4,12 @@ description: Azure Resource Manager-sjablonen voor gebruik bij Recovery Services
 ms.topic: sample
 ms.date: 01/31/2019
 ms.custom: mvc
-ms.openlocfilehash: 29a2499bfd3125cad98e72f7543bb9a29293f624
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a4c2f444cb821f7979571b9d777895a59450e7c2
+ms.sourcegitcommit: ac7029597b54419ca13238f36f48c053a4492cb6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88755191"
+ms.lasthandoff: 11/29/2020
+ms.locfileid: "96309576"
 ---
 # <a name="azure-resource-manager-templates-for-azure-backup"></a>Azure Resource Manager-sjablonen voor Azure Backup
 
@@ -29,4 +29,6 @@ De volgende tabel bevat koppelingen naar Azure Resource Manager-sjablonen voor g
 | [Logboeken van Azure Monitor gebruiken met Azure Backup](https://github.com/Azure/azure-quickstart-templates/tree/master/101-backup-oms-monitoring) | Met de sjabloon worden Azure Monitor-logboeken voor Azure Backup geïmplementeerd, waarmee u back-up- en hersteltaken, back-upwaarschuwingen en de cloudopslag in uw Recovery Services-kluizen kunt controleren.|  
 |**Een back-up maken van SQL Server op Azure-VM** |  |
 | [Een back-up maken van SQL Server op Azure-VM](https://github.com/Azure/azure-quickstart-templates/tree/master/101-recovery-services-vm-workload-backup) | Met de sjabloon wordt een Recovery Services-kluis en een back-upbeleid voor specifieke workloads gemaakt. De virtuele machine wordt geregistreerd bij de Azure Backup-service en de beveiliging wordt op die VM geconfigureerd. Op dit moment werkt dit alleen voor SQL-Galerie-installatiekopieën. |
+|**Een back-up maken van Azure-bestandsshares** |  |
+| [Een back-up maken van Azure-bestandsshares](https://github.com/Azure/azure-quickstart-templates/tree/master/101-recovery-services-backup-file-share) | Met deze sjabloon wordt beveiliging geconfigureerd voor een bestaande Azure-bestandsshare door de juiste gegevens op te geven voor de Recovery Services-kluis en het back-upbeleid. Er wordt optioneel een nieuwe Recovery Services-kluis en een nieuw back-upbeleid gemaakt, en het opslagaccount met de bestandsshare wordt geregistreerd bij de Recovery Services-kluis. |
 |   |   |

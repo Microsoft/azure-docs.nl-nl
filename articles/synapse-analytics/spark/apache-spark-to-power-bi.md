@@ -9,12 +9,12 @@ ms.service: synapse-analytics
 ms.subservice: spark
 ms.topic: tutorial
 ms.date: 11/16/2020
-ms.openlocfilehash: ea8fcb602f49dec61187260e08d3ccd1b148cee8
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 791cab369dcbf9cab8d1256377cfee4a433c21b9
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95918914"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96450896"
 ---
 # <a name="tutorial-create-a-power-bi-report-using-apache-spark-and-azure-synapse-analytics"></a>Zelfstudie: Een Power BI-rapport maken met behulp van Apache Spark en Azure Synapse Analytics
 
@@ -69,9 +69,12 @@ In dit voorbeeld gebruikt u Apache Spark om een analyse uit te voeren voor gegev
                                     & (filtered_df.paymentType.isin({"1", "2"})))
     ```
 4. Ten slotte gaan we ons dataframe opslaan met behulp van de Apache Spark-methode ```saveAsTable```. Hierdoor kunt u later een query uitvoeren en verbinding maken met dezelfde tabel met behulp van serverloze SQL-pools.
+  ```python
+     taxi_df.write.mode("overwrite").saveAsTable("NycTlcTutorial.nyctaxi")
+  ```
    
 ## <a name="query-data-using-serverless-sql-pools"></a>Query's uitvoeren op gegevens met serverloze SQL-pools
-Met Azure Synapse Analytics kunnen de verschillende rekenengines voor de werkruimte databases en tabellen delen tussen de serverloze Apache Spark-pools (preview) en serverloze SQL-pools (preview). Dit wordt mogelijk gemaakt via de Synapse-functie [beheren van gedeelde metagegevens](../metadata/overview.md). Als gevolg hiervan worden de door Apache Spark gemaakte databases en de door Parquet ondersteunde tabellen zichtbaar in de werkruimte-serverloze SQL-pool.
+Met Azure Synapse Analytics kunnen de verschillende rekenengines voor de werkruimte databases en tabellen delen tussen de serverloze Apache Spark-pools en serverloze SQL-pools. Dit wordt mogelijk gemaakt via de Synapse-functie [beheren van gedeelde metagegevens](../metadata/overview.md). Als gevolg hiervan worden de door Apache Spark gemaakte databases en de door Parquet ondersteunde tabellen zichtbaar in de werkruimte-serverloze SQL-pool.
 
 Een query uitvoeren op uw Apache Spark-tabel met behulp van een serverloze SQL-pool:
    1. Nadat u de Apache Spark-tabel hebt opgeslagen, gaat u naar het tabblad **Gegevens**.

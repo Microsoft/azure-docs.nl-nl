@@ -5,12 +5,12 @@ author: emaher
 ms.topic: overview
 ms.date: 09/16/2020
 ms.author: enewman
-ms.openlocfilehash: ac390fb6624ffc762f77b676c778165e7382f73f
-ms.sourcegitcommit: 32c521a2ef396d121e71ba682e098092ac673b30
+ms.openlocfilehash: 71d59e8bcf7b4078255d6b119e9d62f366e46033
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91334035"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437317"
 ---
 # <a name="architecture-fundamentals-in-azure-lab-services"></a>Basisprincipes van architectuur in Azure Lab Services
 
@@ -20,7 +20,7 @@ Azure Lab Services biedt een aantal gebieden waarmee u uw eigen resources in com
 
 Hieronder vindt u de basisarchitectuur van een leslokaallab.  Het labaccount wordt in uw abonnement gehost. De VM's van studenten worden samen met de resources die nodig zijn om de VM's te ondersteunen, in een abonnement van Lab Services gehost. Laten we eens wat dieper ingaan op de inhoud van Lab Services-abonnementen.
 
-![Basisarchitectuur van leslokaallabs](./media/classroom-labs-fundamentals/labservices-basic-architecture.png)
+![Basisarchitectuur van labs](./media/classroom-labs-fundamentals/labservices-basic-architecture.png)
 
 ## <a name="hosted-resources"></a>Gehoste resources
 

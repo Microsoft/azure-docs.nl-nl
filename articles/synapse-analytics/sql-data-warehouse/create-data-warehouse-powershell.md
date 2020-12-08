@@ -1,6 +1,6 @@
 ---
-title: 'Quickstart: Een Synapse SQL-pool maken met Azure PowerShell'
-description: Met een firewallregel op serverniveau en Azure PowerShell kunt u snel een Synapse SQL-pool maken.
+title: 'Quickstart: Een toegewezen SQL-pool (voorheen SQL DW) maken met Azure PowerShell'
+description: Met een firewallregel op serverniveau en Azure PowerShell kunt u snel een toegewezen SQL-pool (voorheen SQL DW) maken.
 services: synapse-analytics
 author: XiaoyuMSFT
 manager: craigg
@@ -11,23 +11,23 @@ ms.date: 4/11/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse    , devx-track-azurepowershell
-ms.openlocfilehash: 5408944f16509f83c30b9ee066d6f0a93dab95f0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 0ce94b62d67048896cdf7355043ec2dde7f2df79
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91567652"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96456581"
 ---
-# <a name="quickstart-create-a-synapse-sql-pool-with-azure-powershell"></a>Quickstart: Een Synapse SQL-pool maken met Azure PowerShell
+# <a name="quickstart-create-a-dedicated-sql-pool-formerly-sql-dw-with-azure-powershell"></a>Quickstart: Een toegewezen SQL-pool (voorheen SQL DW) maken met Azure PowerShell
 
-Maak een Synapse SQL-pool (datawarehouse) in Azure Synapse Analytics met behulp van Azure PowerShell.
+Maak een toegewezen SQL-pool (voorheen SQL DW) in Azure Synapse Analytics met behulp van Azure PowerShell.
 
 ## <a name="prerequisites"></a>Vereisten
 
 Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 
 > [!IMPORTANT]
-> Het maken van een SQL-pool leidt mogelijk tot een nieuwe factureerbare service.  Zie [Prijzen voor Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/sql-data-warehouse/) voor meer informatie.
+> Het maken van een toegewezen SQL-pool (voorheen SQL DW) kan resulteren in een nieuwe factureerbare service.  Zie [Prijzen voor Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/sql-data-warehouse/) voor meer informatie.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -93,7 +93,7 @@ New-AzSqlServer -ResourceGroupName $resourcegroupname `
 
 ## <a name="configure-a-server-level-firewall-rule"></a>Een serverfirewallregel configureren
 
-Maak een [firewallregel op serverniveau](../../azure-sql/database/firewall-configure.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) met de opdracht [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). Een firewallregel op serverniveau kan een externe toepassing, zoals SQL Server Management Studio of het hulpprogramma SQLCMD, via de firewall van de SQL-poolservice verbinding laten maken met een SQL-pool.
+Maak een [firewallregel op serverniveau](../../azure-sql/database/firewall-configure.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) met de opdracht [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). Een firewallregel op serverniveau kan een externe toepassing, zoals SQL Server Management Studio of het hulpprogramma SQLCMD, via de firewall van de toegewezen SQL-poolservice verbinding laten maken met een toegewezen SQL-pool (voorheen SQL DW).
 
 In het volgende voorbeeld wordt de firewall alleen geopend voor andere Azure-resources. Voor externe connectiviteit wijzigt u het IP-adres in een correct adres voor uw omgeving. Als u alle IP-adressen wilt openen, gebruikt u 0.0.0.0 als beginadres en 255.255.255.255 als eindadres.
 
@@ -107,9 +107,9 @@ New-AzSqlServerFirewallRule -ResourceGroupName $resourcegroupname `
 > SQL-eindpunten communiceren via poort 1433. Als u verbinding probeert te maken vanuit een bedrijfsnetwerk, wordt uitgaand verkeer via poort 1433 mogelijk niet toegestaan door de firewall van uw netwerk. In dat geval kunt u alleen verbinding maken met uw server als uw IT-afdeling poort 1433 openstelt.
 >
 
-## <a name="create-a-sql-pool"></a>Een SQL-pool maken
+## <a name="create-a-dedicated-sql-pool-formerly-sql-dw"></a>Een toegewezen SQL-pool (voorheen SQL DW) maken
 
-In het volgende voorbeeld wordt een SQL-pool gemaakt met behulp van de eerder gedefinieerde variabelen.  De opgegeven servicedoelstelling is DW100c. Dit is een goedkoper startpunt voor uw SQL-pool.
+In het volgende voorbeeld wordt een toegewezen SQL-pool gemaakt met behulp van de eerder gedefinieerde variabelen.  De opgegeven servicedoelstelling is DW100c. Dit is een goedkoper startpunt voor uw toegewezen SQL-pool (voorheen SQL DW).
 
 ```Powershell
 New-AzSqlDatabase `
@@ -125,10 +125,10 @@ New-AzSqlDatabase `
 De vereiste parameters zijn:
 
 * **RequestedServiceObjectiveName**: De hoeveelheid [datawarehouse-eenheden](what-is-a-data-warehouse-unit-dwu-cdwu.md) die u aanvraagt. Als u deze waarde verhoogt, verhogen ook de rekenkosten. Zie [Geheugen- en gelijktijdigheidslimieten](memory-concurrency-limits.md) voor een lijst met ondersteunde waarden.
-* **DatabaseName**: De naam van de SQL-pool die u maakt.
+* **DatabaseName**: De naam van de toegewezen SQL-pool (voorheen SQL DW) die u maakt.
 * **ServerName**: De naam van de server die u bij het maken gebruikt.
 * **ResourceGroupName**: De resourcegroep die u gebruikt. Gebruik Get-AzureResource om beschikbare resourcegroepen in uw abonnement te zoeken.
-* **Edition**: Moet DataWarehouse zijn als u een SQL-pool wilt maken.
+* **Edition**: Moet 'DataWarehouse' zijn om een toegewezen SQL-pool (voorheen SQL DW) te kunnen maken.
 
 De optionele parameters zijn:
 
@@ -151,4 +151,4 @@ Remove-AzResourceGroup -ResourceGroupName $resourcegroupname
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U hebt nu een SQL-pool gemaakt, een firewallregel gemaakt en deze verbonden met uw SQL-pool. Ga voor meer informatie naar het artikel [Gegevens in een SQL-pool laden](load-data-from-azure-blob-storage-using-polybase.md).
+U hebt nu een toegewezen SQL-pool (voorheen SQL DW) gemaakt, een firewallregel gemaakt en deze verbonden met uw toegewezen SQL-pool. Ga voor meer informatie naar het artikel [Gegevens in een toegewezen SQL-pool laden](load-data-from-azure-blob-storage-using-polybase.md).

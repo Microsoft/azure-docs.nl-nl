@@ -7,15 +7,16 @@ manager: CelesteDG
 ms.service: app-service-web
 ms.topic: tutorial
 ms.workload: identity
-ms.date: 11/09/2020
+ms.date: 11/30/2020
 ms.author: ryanwi
 ms.reviewer: stsoneff
-ms.openlocfilehash: d3706c26d9b15e9ea607996ace222b29ccd84458
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.custom: azureday1
+ms.openlocfilehash: e07ec17a4e14f0099d82bd444f2ee8d37abe9908
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95999651"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96434988"
 ---
 # <a name="tutorial-access-microsoft-graph-from-a-secured-app-as-the-user"></a>Zelfstudie: Toegang tot Microsoft Graph krijgen vanuit een beveiligde app als de gebruiker
 
@@ -75,10 +76,12 @@ Sla de instellingen op door **PUT** te selecteren. Het kan enkele minuten duren 
 
 Uw web-app heeft nu de vereiste machtigingen en voegt tevens de client-id van Microsoft Graph toe aan de aanmeldingsparameters. De web-app maakt gebruik van de [Microsoft.Identity.Web-bibliotheek](https://github.com/AzureAD/microsoft-identity-web/) om een toegangstoken op te halen voor verificatie bij Microsoft Graph. In versie 1.2.0 en later integreert de Microsoft.Identity.Web-bibliotheek met de module App Service-verificatie/-autorisatie en kan de bibliotheek daarnaast worden uitgevoerd. Microsoft.Identity.Web detecteert dat de web-app in App Service wordt gehost en haalt het toegangstoken op uit de module App Service-verificatie/-autorisatie. Het toegangstoken wordt vervolgens aan geverifieerde aanvragen doorgegeven met de Microsoft Graph-API.
 
+Zie het [voorbeeld op GitHub](https://github.com/Azure-Samples/ms-identity-easyauth-dotnet-storage-graphapi/tree/main/2-WebApp-graphapi-on-behalf) als u deze code wilt bekijken als onderdeel van een voorbeeldtoepassing.
+
 > [!NOTE]
 > De Microsoft.Identity.Web-bibliotheek is niet vereist in de web-app voor basisverificatie/-autorisatie of om aanvragen te verifiëren met Microsoft Graph. Het is mogelijk om [downstream-API's veilig aan te roepen](tutorial-auth-aad.md#call-api-securely-from-server-code) terwijl alleen de module App Service-verificatie/-autorisatie is ingeschakeld.
 > 
-> De module App Service-verificatie/-autorisatie is echter ontworpen voor eenvoudigere verificatiescenario's. Voor ingewikkeldere scenario's (bijvoorbeeld de verwerking van aangepaste claims) hebt u de Microsoft.Identity.Web-bibliotheek of [Microsoft Authentication Library](/azure/active-directory/develop/msal-overview) nodig. Aan het begin is er wat meer instellings- en configuratiewerk, maar de Microsoft.Identity.Web-bibliotheek kan naast de module App Service-verificatie/-autorisatie worden uitgevoerd. Later, wanneer uw web-app ingewikkeldere scenario's moet verwerken, kunt u de module App Service-verificatie/-autorisatie uitschakelen en zal Microsoft.Identity.Web al onderdeel van uw app zijn.
+> De module App Service-verificatie/-autorisatie is echter ontworpen voor eenvoudigere verificatiescenario's. Voor ingewikkeldere scenario's (bijvoorbeeld de verwerking van aangepaste claims) hebt u de Microsoft.Identity.Web-bibliotheek of [Microsoft Authentication Library](../active-directory/develop/msal-overview.md) nodig. Aan het begin is er wat meer instellings- en configuratiewerk, maar de Microsoft.Identity.Web-bibliotheek kan naast de module App Service-verificatie/-autorisatie worden uitgevoerd. Later, wanneer uw web-app ingewikkeldere scenario's moet verwerken, kunt u de module App Service-verificatie/-autorisatie uitschakelen en zal Microsoft.Identity.Web al onderdeel van uw app zijn.
 
 ### <a name="install-client-library-packages"></a>Clientbibliotheekpakketten installeren
 

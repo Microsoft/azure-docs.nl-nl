@@ -5,12 +5,12 @@ ms.devlang: Java
 ms.topic: quickstart
 ms.date: 06/23/2020
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 68d8270c4ca3cff07f3a70c6022b963f750ad4e9
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 774f9e485c58712ea8648a148c92b6f9ef6a58c0
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96022099"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452616"
 ---
 # <a name="quickstart-use-azure-service-bus-queues-with-java-to-send-and-receive-messages"></a>Quickstart: Azure Service Bus-wachtrijen met Java gebruiken om berichten te verzenden en te ontvangen
 
@@ -18,7 +18,8 @@ ms.locfileid: "96022099"
 In deze zelfstudie leert u hoe u Java-toepassingen kunt maken om berichten te verzenden naar en te ontvangen van een Azure Service Bus-wachtrij. 
 
 > [!WARNING]
->  Deze quickstart maakt gebruik van het huidige, algemeen beschikbare (GA) Azure-servicebuspakket. Zie [Berichten verzenden en ontvangen met azure-messaging-servicebus](service-bus-java-how-to-use-queues.md) voor een quickstart waarbij gebruik wordt gemaakt van het nieuwe azure-messaging-servicebus-pakket in **preview**. 
+>  Deze quickstart maakt gebruik van de oude azure-servicebus-pakketten. Zie [Berichten verzenden en ontvangen met azure-messaging-servicebus](service-bus-java-how-to-use-queues.md) voor een quickstart waarbij gebruik wordt gemaakt van het nieuwste azure-messaging-servicebus-pakket. 
+
 
 ## <a name="prerequisites"></a>Vereisten
 1. Een Azure-abonnement. U hebt een Azure-account nodig om deze zelfstudie te voltooien. U kunt uw [voordelen als MSDN-abonnee](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) activeren of u aanmelden voor een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).

@@ -7,14 +7,14 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: conceptual
-ms.date: 11/09/2020
+ms.date: 12/01/2020
 ms.author: banders
-ms.openlocfilehash: f90d1fe22ae2f46fdc6d764ce98db8e0f48b8b35
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 3182da0d04d61d5bad4ce3e41f213ecc3be7ecaf
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94408019"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96444447"
 ---
 # <a name="cancel-your-azure-subscription"></a>Uw Azure-abonnement opzeggen
 
@@ -38,6 +38,9 @@ Als u een betaald Azure-ondersteuningsplan annuleert, wordt u gefactureerd voor 
     ![Schermopname waarin de knop ‘Abonnement annuleren’ wordt weergegeven](./media/cancel-azure-subscription/cancel_ibiza.png)
 1. Volg de aanwijzingen om de opzegging te voltooien.
 
+> [!NOTE]
+> Partners kunnen een abonnement opschorten of annuleren indien dit wordt aangevraagd door een klant of in geval van niet-betaling of fraude. Zie [Een abonnement onderbreken of annuleren](/partner-center/create-a-new-subscription#suspend-or-cancel-a-subscription) voor meer informatie.
+
 ## <a name="who-can-cancel-a-subscription"></a>Wie kan een abonnement annuleren?
 
 In de onderstaande tabel worden de machtigingen beschreven die zijn vereist voor het opzeggen van een abonnement.
@@ -48,7 +51,7 @@ In de onderstaande tabel worden de machtigingen beschreven die zijn vereist voor
 |[Microsoft Enterprise Agreement](https://azure.microsoft.com/pricing/enterprise-agreement/) en [Enterprise Dev/Test](https://azure.microsoft.com/offers/ms-azr-0148p/)     |  Eigenaar van het account en eigenaars van het abonnement       |
 |[Azure-plan](https://azure.microsoft.com/offers/ms-azr-0017g/) en [Azure-plan voor DevTest](https://azure.microsoft.com/offers/ms-azr-0148g/)     |  Eigenaars van het abonnement      |
 
-## <a name="what-happens-after-i-cancel-my-subscription"></a>Wat gebeurt er nadat ik mijn abonnement heb opgezegd?
+## <a name="what-happens-after-subscription-cancellation"></a>Wat gebeurt er nadat het abonnement is opgezegd?
 
 Nadat u uw abonnement hebt opgezegd, wordt de facturering onmiddellijk stopgezet. Het kan echter wel maximaal 10 minuten duren voordat de opzegging in de portal wordt weergegeven. Als u uw abonnement halverwege een factureringsperiode opzegt, verzenden we de laatste factuur op de gebruikelijke factuurdatum, na afloop van de periode.
 
@@ -65,7 +68,7 @@ Als u een gratis proefabonnement hebt, hoeft u niet 30 dagen te wachten tot het 
 1. Selecteer het abonnement dat u wilt verwijderen.
 1. Selecteer **Overzicht** en **Abonnement verwijderen**.
 
-## <a name="reactivate-subscription"></a>Abonnement opnieuw activeren
+## <a name="reactivate-a-subscription"></a>Een abonnement opnieuw activeren
 
 Als u per ongeluk uw abonnement met tarieven voor betalen per gebruik opzegt, kunt u [het opnieuw activeren in het accountcentrum](subscription-disabled.md).
 
@@ -73,7 +76,7 @@ Als uw abonnement geen abonnement is met tarieven voor betalen per gebruik, neem
 
 ## <a name="why-dont-i-see-the-cancel-subscription-option-on-the-azure-portal"></a>Waarom zie ik de optie Abonnement opzeggen niet in de Azure-portal? 
 
-U hebt mogelijk niet de vereiste machtigingen om een abonnement op te zeggen. Zie [Wie kan een abonnement opzeggen?](https://docs.microsoft.com/azure/cost-management-billing/manage/cancel-azure-subscription#who-can-cancel-a-subscription) voor een beschrijving van wie verschillende soorten abonnementen kan opzeggen.
+U hebt mogelijk niet de vereiste machtigingen om een abonnement op te zeggen. Zie [Wie kan een abonnement opzeggen?](#who-can-cancel-a-subscription) voor een beschrijving van wie verschillende soorten abonnementen kan opzeggen.
 
 ## <a name="how-do-i-delete-my-azure-account"></a>Hoe verwijder ik mijn Azure-account?
 
@@ -85,7 +88,7 @@ U hebt mogelijk niet de vereiste machtigingen om een abonnement op te zeggen. Zi
 
 ## <a name="how-do-i-cancel-a-visual-studio-professional-account"></a>Hoe annuleer ik een Visual Studio Professional-account?
 
-Zie het artikel [Verlenging en opzegging](https://docs.microsoft.com/visualstudio/subscriptions/faq/admin/renewal-cancellation). Als u Visual Studio Azure-abonnementen hebt, moeten ze worden opgezegd en ook worden verwijderd.
+Zie het artikel [Verlenging en opzegging](/visualstudio/subscriptions/faq/admin/renewal-cancellation). Als u Visual Studio Azure-abonnementen hebt, moeten ze worden opgezegd en ook worden verwijderd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

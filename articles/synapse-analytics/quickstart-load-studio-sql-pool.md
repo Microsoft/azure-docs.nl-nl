@@ -9,20 +9,20 @@ ms.topic: quickstart
 ms.date: 11/16/2020
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: 8d70a45b89142f6f9c6990fdbb4b79751c82275f
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 312c57c103bf733bc72c5de1d22ab3239d5b5e96
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95237473"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96484666"
 ---
 # <a name="quickstart-bulk-loading-with-synapse-sql"></a>Snelstart: Bulksgewijs laden met Synapse SQL
 
-Met de wizard voor bulksgewijs laden in Synapse Studio kunt u nu heel eenvoudig gegevens laden. In deze wizard maakt u een T-SQL-script met de [COPY-instructie](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true) om gegevens bulksgewijs te laden. 
+U kunt eenvoudig gegevens laden met de wizard Bulksgewijs laden van Synapse Studio. In deze wizard maakt u een T-SQL-script met de [COPY-instructie](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true) om gegevens bulksgewijs te laden. 
 
 ## <a name="entry-points-to-the-bulk-load-wizard"></a>Invoerpunten voor de wizard Bulksgewijs laden
 
-U kunt gegevens nu eenvoudig bulksgewijs laden met toegewezen SQL-pools. Klik hiervoor met de rechtermuisknop op de volgende gebieden in Synapse Studio:
+U kunt gegevens eenvoudig bulksgewijs laden met toegewezen SQL-pools. Klik hiervoor met de rechtermuisknop op de volgende gebieden in Synapse Studio:
 
 - Een bestand of map uit een Azure-opslagaccount, toegevoegd aan uw werkruimte ![Met de rechtermuisknop klikken op een bestand of map uit een opslagaccount](./sql/media/bulk-load/bulk-load-entry-point-0.png)
 

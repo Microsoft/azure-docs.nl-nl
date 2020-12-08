@@ -6,14 +6,14 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: conceptual
-ms.date: 08/20/2020
+ms.date: 11/30/2020
 ms.author: banders
-ms.openlocfilehash: 0049efda603532099cc9bf24dc9d9411b5aaa389
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 3df6b694f3a40cef17c6e0114464ad4aa2fa30ce
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132122"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96344331"
 ---
 # <a name="billing-accounts-and-scopes-in-the-azure-portal"></a>Factureringsaccounts en -bereiken in de Azure-portal
 
@@ -33,6 +33,12 @@ Zie [Het type van uw factureringsaccount controleren](#check-the-type-of-your-ac
 
 ## <a name="scopes-for-billing-accounts"></a>Bereiken voor factureringsaccounts
 Een bereik is een knooppunt binnen een factureringsaccount waar u facturen kunt weergeven en beheren. Dit de plek waar u factureringsgegevens, betalingen en facturen beheert en algemeen accountbeheer uitvoert.
+
+Als u geen toegang hebt om factureringsaccounts weer te geven of te beheren, hebt u waarschijnlijk geen toegang. U kunt de beheerder van uw factureringsaccount vragen om u toegang te geven. Raadpleeg voor meer informatie de volgende artikelen:
+
+- [Toegang tot Microsoft Online Services Program](manage-billing-access.md)
+- [Toegang tot Microsoft-klantovereenkomst](understand-mca-roles.md)
+- [Toegang tot Enterprise Agreement](understand-ea-roles.md)
 
 ### <a name="microsoft-online-services-program"></a>Microsoft Online Services-programma
 

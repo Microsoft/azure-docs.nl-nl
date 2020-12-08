@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: 3a523421c128ea26503c0848ad8fcf7d74636a04
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: bd8c5c31579ac22cd6c77dffd31103680e393f69
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92341326"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96187167"
 ---
 # <a name="quickstart-setting-up-azure-security-center"></a>Quickstart: Azure Security Center instellen
 
@@ -63,7 +63,7 @@ Voor de quickstarts en zelfstudies van Security Center moet u Azure Defender ins
 
 1. Selecteer **Aan de slag** in de zijbalk van Security Center.
 
-    :::image type="content" source="./media/security-center-get-started/get-started-upgrade-tab.png" alt-text="Overzichtsdashboard van Security Center"::: 
+    :::image type="content" source="./media/security-center-get-started/get-started-upgrade-tab.png" alt-text="Tabblad Upgrade van de pagina Aan de slag"::: 
 
     Op het tabblad **Upgrade** worden abonnementen en werkruimten vermeld die in aanmerking komen voor onboarding.
 
@@ -81,10 +81,10 @@ Automatische inrichting van de Log Analytics-agent inschakelen:
 
 1. Selecteer **Prijzen en instellingen** in het hoofdmenu van Security Center.
 1. Selecteer het betreffende abonnement.
-1. Stel op de pagina **Gegevensverzameling** **Automatische inrichting** in op **Aan** .
-1. Selecteer **Opslaan** .
+1. Stel op de pagina **Gegevensverzameling** **Automatische inrichting** in op **Aan**.
+1. Selecteer **Opslaan**.
 
-    :::image type="content" source="./media/security-center-enable-data-collection/enable-automatic-provisioning.png" alt-text="Overzichtsdashboard van Security Center":::
+    :::image type="content" source="./media/security-center-enable-data-collection/enable-automatic-provisioning.png" alt-text="Automatische inrichting van de Log Analytics-agent inschakelen":::
 
 >[!TIP]
 > Als een werkruimte moet worden ingericht, kan de installatie van de agent tot wel 25 minuten duren.
@@ -92,7 +92,7 @@ Automatische inrichting van de Log Analytics-agent inschakelen:
 Als de agent is geïmplementeerd op uw machines, kan Security Center extra aanbevelingen doen met betrekking tot de updatestatus van het systeem, de beveiligingsconfiguraties van het besturingssysteem en de eindpuntbeveiliging. Ook kan Security Center aanvullende beveiligingswaarschuwingen genereren.
 
 >[!NOTE]
-> Wanneer u automatische inrichting instelt op **Uit** , wordt de Log Analytics-agent niet verwijderd van Azure-VM's waarop de agent al is ingericht. Door automatische inrichting uit te schakelen, wordt de beveiligingsbewaking voor uw resources beperkt.
+> Wanneer u automatische inrichting instelt op **Uit**, wordt de Log Analytics-agent niet verwijderd van Azure-VM's waarop de agent al is ingericht. Door automatische inrichting uit te schakelen, wordt de beveiligingsbewaking voor uw resources beperkt.
 
 
 

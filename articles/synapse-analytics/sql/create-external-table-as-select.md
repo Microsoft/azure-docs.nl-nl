@@ -1,6 +1,6 @@
 ---
 title: Queryresultaten uit een serverloze SQL-pool opslaan
-description: In dit artikel leert u hoe u queryresultaten opslaat met behulp van een serverloze SQL-pool (preview-versie).
+description: In dit artikel leert u hoe u queryresultaten opslaat met behulp van een serverloze SQL-pool.
 services: synapse-analytics
 author: vvasic-msft
 ms.service: synapse-analytics
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: vvasic
 ms.reviewer: jrasnick
-ms.openlocfilehash: 50897d81ed5ef2fc33e458bd46d9229f6184fea8
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: dd989d5925da864728e944e84962086c0cfb08ea
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322613"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462327"
 ---
-# <a name="store-query-results-to-storage-using-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Queryresultaten opslaan met behulp van een serverloze SQL-pool (preview-versie) in Azure Synapse Analytics
+# <a name="store-query-results-to-storage-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Queryresultaten opslaan met behulp van een serverloze SQL-pool in Azure Synapse Analytics
 
-In dit artikel leert u hoe u queryresultaten opslaat met behulp van een serverloze SQL-pool (preview-versie).
+In dit artikel leert u hoe u queryresultaten opslaat met behulp van een serverloze SQL-pool.
 
 ## <a name="prerequisites"></a>Vereisten
 

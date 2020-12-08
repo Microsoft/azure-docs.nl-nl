@@ -9,12 +9,12 @@ ms.subservice: workspace
 ms.date: 09/03/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: fa7faf64e1889ef2d1abe644f23f0be363709a6b
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: fb7672a0d7bdd14415a51f2296c281e92cf5542a
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322718"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96450650"
 ---
 # <a name="quickstart-create-a-synapse-workspace"></a>Quickstart: Een Synapse-werkruimte maken
 In deze quickstart wordt stapsgewijs beschreven hoe u een Azure Synapse-werkruimte maakt met Azure Portal.
@@ -22,7 +22,7 @@ In deze quickstart wordt stapsgewijs beschreven hoe u een Azure Synapse-werkruim
 ## <a name="create-a-synapse-workspace"></a>Een Synapse-werkruimte maken
 
 1. Open de [Azure-portal](https://portal.azure.com) en zoek bovenin naar **Synapse**.
-1. Selecteer in de zoekresultaten onder **Services** de optie **Azure Synapse Analytics (voorbeeld van werkruimten)** .
+1. Selecteer in de zoekresultaten onder **Services** de optie **Azure Synapse Analytics**.
 1. Selecteer **Toevoegen** om een werkruimte te maken.
 1. Geef op het tabblad **Basisinformatie** een unieke naam voor de werkruimte op. In dit document gebruiken we **myworkspace**
 1. U hebt een ADLSGEN2-account nodig om een werkruimte te maken. Het meest eenvoudige is om een nieuw account te maken. Als u een bestaand account opnieuw wilt gebruiken, moet u een aantal extra configuratiestappen uitvoeren. 
@@ -33,6 +33,9 @@ In deze quickstart wordt stapsgewijs beschreven hoe u een Azure Synapse-werkruim
 1. De Azure Synapse-werkruimte gebruikt dit opslagaccount als primair opslagaccount en de container als opslag voor werkruimtegegevens. In de werkruimte worden gegevens opgeslagen in Apache Spark-tabellen. Het slaat Apache Spark-toepassingslogboeken op in een map met de naam **/synapse/workspacename**.
 1. Selecteer **Beoordelen en maken** > **Maken**. Uw werkruimte is binnen een paar minuten klaar.
 
+> [!NOTE]
+> Nadat u de Azure Synapse-werkruimte hebt gemaakt, kunt u de werkruimte niet verplaatsen naar een andere Azure Active Directory-tenant. Als u dit doet via een migratie van abonnementen of een andere actie, verliest u mogelijk de toegang tot de artefacten in de werkruimte.  
+
 ## <a name="open-synapse-studio"></a>Synapse Studio openen
 
 Wanneer uw Azure Synapse-werkruimte is gemaakt, kunt u Synapse Studio op twee manieren openen:
@@ -40,7 +43,7 @@ Wanneer uw Azure Synapse-werkruimte is gemaakt, kunt u Synapse Studio op twee ma
 * Open de Synapse-werkruimte in de [Azure-portal](https://portal.azure.com). Selecteer bovenaan de sectie **Overzicht** de optie **Synapse Studio starten**.
 * Ga naar `https://web.azuresynapse.net` en meld u aan bij uw werkruimte.
 
-## <a name="prepare-an-existing-storage-account-for-use-with-synapse-analytics"></a>Een bestaand opslagaccount voorbereiden voor gebruik met Synapse Analytics
+## <a name="prepare-an-existing-storage-account-for-use-with-azure-synapse-analytics"></a>Een bestaand opslagaccount voorbereiden voor gebruik met Azure Synapse Analytics
 
 1. Open [Azure Portal](https://portal.azure.com).
 1. Ga naar een bestaand ADLSGEN2-opslagaccount

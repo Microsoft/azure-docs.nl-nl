@@ -9,16 +9,16 @@ ms.subservice: business-intelligence
 ms.date: 10/27/2020
 ms.author: jocaplan
 ms.reviewer: jrasnick
-ms.openlocfilehash: 36334142595d4a6bd4865a690f154279967a70d5
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 996233e2526b8b69c13abd4340ead4c5e2175916
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746360"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96450677"
 ---
 # <a name="quickstart-linking-a-power-bi-workspace-to-a-synapse-workspace"></a>Quickstart: Een Power BI-werkruimte koppelen aan een Synapse-werkruimte
 
-In deze quickstart leert u hoe u een Power BI-werkruimte koppelt aan een Synapse Analytics-werkruimte om nieuwe Power BI-rapporten en -gegevenssets te maken vanuit Synapse Studio (preview-versie).
+In deze quickstart leert u hoe u een Power BI-werkruimte koppelt aan een Azure Synapse Analytics-werkruimte om nieuwe Power BI-rapporten en -gegevenssets te maken vanuit Synapse Studio.
 
 Als u geen Azure-abonnement hebt, [maakt u een gratis account voordat u begint](https://azure.microsoft.com/free/).
 
@@ -29,19 +29,19 @@ Als u geen Azure-abonnement hebt, [maakt u een gratis account voordat u begint](
 
 ## <a name="link-power-bi-workspace-to-your-synapse-workspace"></a>Uw Power BI-werkruimte koppelen aan uw Synapse-werkruimte
 
-1. Klik in Synapse Studio op **Manage** .
+1. Klik in Synapse Studio op **Manage**.
 
     ![Klik op Manage in Synapse Studio.](media/quickstart-link-powerbi/synapse-studio-click-manage.png)
 
-2. Klik onder **External Connections** op **Linked services** .
+2. Klik onder **External Connections** op **Linked services**.
 
     ![Linked services is gemarkeerd.](media/quickstart-link-powerbi/manage-click-linked-services.png)
 
-3. Klik op **+ New** .
+3. Klik op **+ New**.
 
     ![+ New Linked services is gemarkeerd.](media/quickstart-link-powerbi/new-highlighted.png)
 
-4. Klik op **Power BI** en klik op **Continue** .
+4. Klik op **Power BI** en klik op **Continue**.
 
     ![De gekoppelde Power BI-service wordt weergegeven.](media/quickstart-link-powerbi/powerbi-linked-service.png)
 
@@ -49,13 +49,13 @@ Als u geen Azure-abonnement hebt, [maakt u een gratis account voordat u begint](
 
     ![De installatie van de gekoppelde Power BI-service wordt weergegeven.](media/quickstart-link-powerbi/workspace-link-dialog.png)
 
-6. Klik op **Create** .
+6. Klik op **Create**.
 
 ## <a name="view-power-bi-workspace-in-synapse-studio"></a>Power BI-werkruimte weergeven in Synapse Studio
 
 Zodra uw werkruimten zijn gekoppeld, kunt u door de Power BI-gegevenssets bladeren en nieuwe Power BI-rapporten bewerken en maken vanuit Synapse Studio.
 
-1. Klik op **Develop** .
+1. Klik op **Develop**.
 
     ![Klik op Develop in Synapse Studio.](media/quickstart-link-powerbi/synapse-studio-click-develop.png)
 
@@ -63,7 +63,7 @@ Zodra uw werkruimten zijn gekoppeld, kunt u door de Power BI-gegevenssets blader
 
     ![Power BI en de werkruimte uitvouwen.](media/quickstart-link-powerbi/develop-expand-powerbi.png)
 
-U kunt nieuwe rapporten maken door te klikken op **+** boven in het tabblad **Develop** . Bestaande rapporten kunnen worden bewerkt door te klikken op de naam van het rapport. Opgeslagen wijzigingen worden teruggeschreven naar de Power BI-werkruimte.
+U kunt nieuwe rapporten maken door te klikken op **+** boven in het tabblad **Develop**. Bestaande rapporten kunnen worden bewerkt door te klikken op de naam van het rapport. Opgeslagen wijzigingen worden teruggeschreven naar de Power BI-werkruimte.
 
 ![Power BI-rapport weergeven en bewerken.](media/quickstart-link-powerbi/powerbi-report.png)
 

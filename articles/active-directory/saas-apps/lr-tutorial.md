@@ -11,16 +11,17 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/14/2019
 ms.author: jeedes
-ms.openlocfilehash: 70e423cdd8a5c4e4903a9c111b19a91b29fd7e56
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 1376dcb76c22bcd70937f533d337ee9679e9dc59
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92458372"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96455845"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-loginradius"></a>Zelfstudie: Azure Active Directory-integratie met LoginRadius
 
 In deze zelfstudie leert u hoe u LoginRadius kunt integreren met Azure Active Directory (Azure AD).
+
 De integratie van LoginRadius met Azure AD biedt u de volgende voordelen:
 
 * U kunt in Azure AD beheren wie toegang heeft tot LoginRadius.
@@ -28,6 +29,7 @@ De integratie van LoginRadius met Azure AD biedt u de volgende voordelen:
 * U kunt uw accounts vanaf één centrale locatie beheren: de Azure-portal.
 
 Zie [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?) als u wilt graag meer wilt weten over de integratie van SaaS-apps met Azure AD.
+
 Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 
 ## <a name="prerequisites"></a>Vereisten
@@ -47,21 +49,21 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 Voor het configureren van de integratie van LoginRadius in Azure AD moet u LoginRadius vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-**Voer de volgende stappen uit om LoginRadius vanuit de galerie toe te voegen:**
+**Om LoginRadius toe te voegen vanuit de galerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Selecteer het pictogram van de **Azure Active Directory** in **[Azure Portal](https://portal.azure.com)** in het navigatiepaneel aan de linkerkant.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
+2. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-3. Als u de nieuwe toepassing wilt toevoegen, klikt u op de knop **Nieuwe toepassing** boven aan het dialoogvenster.
+3. Selecteer de knop **Nieuwe toepassing** om een nieuwe toepassing toe te voegen:
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ in het zoekvak **LoginRadius** , selecteer **LoginRadius** in het deelvenster met resultaten en klik vervolgens op **Toevoegen** om de toepassing toe te voegen.
+4. Voer **LoginRadius** in het zoekvak in, selecteer **LoginRadius** in het resultatenvenster en selecteer vervolgens de knop **Toevoegen** om de toepassing toe te voegen.
 
     ![LoginRadius in de resultatenlijst](common/search-new-app.png)
 
@@ -89,48 +91,90 @@ Voer de volgende stappen uit om eenmalige aanmelding in Azure AD te configureren
 
     ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
 
-2. In het dialoogvenster **Een methode voor eenmalige aanmelding selecteren** selecteert u de modus **SAML/WS-Federation** om eenmalige aanmelding in te schakelen.
+2. In het deelvenster **Een methode voor eenmalige aanmelding selecteren** selecteert u de modus **SAML/WS-Fed** om eenmalige aanmelding in te schakelen.
 
     ![De modus Eenmalige aanmelding selecteren](common/select-saml-option.png)
 
-3. Op de pagina **Eenmalige aanmelding met SAML instellen** klikt u op het pictogram **Bewerken** om het dialoogvenster **Standaard SAML-configuratie** te openen.
+3. Selecteer op de pagina **Eenmalige aanmelding instellen met SAML** het pictogram voor **Bewerken** om het deelvenster **Standaard SAML-configuratie** te openen.
 
     ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
-4. In de sectie **Standaard SAML-configuratie** voert u de volgende stappen uit:
+4. In de sectie **Standaard SAML-configuratie**:
 
-    ![Informatie over eenmalige aanmelding voor LoginRadius-domein en -URL's](common/sp-identifier.png)
+   ![Informatie over eenmalige aanmelding voor LoginRadius-domein en -URL's](common/sp-identifier.png)
 
-    a. In het tekstvak **Aanmeldings-URL** typt u een URL: `https://secure.loginradius.com/login`
+   1. Voer in het tekstvak **Aanmeldings-URL** de URL `https://secure.loginradius.com/login` in
 
-    b. Typ een URL in het vak **Id (Entiteits-id)** : `https://LoginRadius.hub.loginradius.com/`
+   1. Voer in het tekstvak **Id (entiteits-id)** de URL `https://lr.hub.loginradius.com/` in
 
-    > [!NOTE]
-    > Open de pagina Aanmeldings-URL. Klik op het tabblad **Eenmalige aanmelding** en voer de **naam van de invoegtoepassing** in die u hebt verkregen van het [ondersteuningsteam van LoginRadius](mailto:support@loginradius.com). Klik vervolgens op de knop **Aanmelden**. U wordt omgeleid naar de aanmeldingspagina van Azure AD.
+   1. Voer in het tekstvak **Antwoord-URL (Assertion Consumer Service-URL)** de ACS-URL `https://lr.hub.loginradius.com/saml/serviceprovider/AdfsACS.aspx` van de LoginRadius in 
 
-5. Op de pagina **Eenmalige aanmelding met SAML instellen** in het gedeelte **SAML-handtekeningcertificaat** klikt u op **Downloaden** om het **XML-bestand met federatieve metagegevens**  te downloaden uit de gegeven opties overeenkomstig met wat u nodig hebt, en slaat u dit op uw computer op.
+5. Op de pagina **Eenmalige aanmelding met SAML instellen** in het gedeelte **SAML-handtekeningcertificaat** selecteert u **Downloaden** om het **XML-bestand met federatieve metagegevens**  te downloaden uit de gegeven opties overeenkomstig met wat u nodig hebt, en slaat u dit op uw computer op.
 
     ![De link om het certificaat te downloaden](common/metadataxml.png)
 
 6. In de sectie **LoginRadius instellen** kopieert u de juiste URL('s) op basis van uw behoeften.
 
-    ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
+   ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
-    a. Aanmeldings-URL
+   - Aanmeldings-URL
 
-    b. Azure AD-id
+   - Azure AD-id
 
-    c. Afmeldings-URL
+   - Afmeldings-URL
 
-### <a name="configure-loginradius-single-sign-on"></a>Eenmalige aanmelding voor LoginRadius configureren
+## <a name="configure-loginradius-single-sign-on"></a>Eenmalige aanmelding voor LoginRadius configureren
 
-Als u eenmalige aanmelding aan de zijde van **LoginRadius** -zijde wilt configureren, moet u het gedownloade **XML-bestand met metagegevens** en de juiste uit de Azure-portal gekopieerde URL's verzenden naar het [ondersteuningsteam van LoginRadius](mailto:support@loginradius.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+In deze sectie gaat u Azure AD-eenmalige aanmelding inschakelen in de LoginRadius-beheerconsole.
+
+1. Meld u aan bij de account van uw LoginRadius-[beheerconsole](https://adminconsole.loginradius.com/login).
+
+2. Ga naar de sectie **Teambeheer** in de [LoginRadius-beheerconsole](https://secure.loginradius.com/account/team).
+
+3. Selecteer het tabblad **Eenmalige aanmelding** en selecteer vervolgens **Azure AD**:
+
+   ![Schermopname van het menu voor eenmalige aanmelding in de teambeheerconsole van LoginRadius](./media/loginradius-tutorial/azure-ad.png)
+4. Voer op de pagina Instellen Azure AD de volgende stappen uit:
+
+   ![Schermopname van Azure Active Directory-configuratie in de LoginRadius-teambeheerconsole](./media/loginradius-tutorial/single-sign-on.png)
+
+    1. In **Locatie van id-provider** voert u het SIGN-ON ENDPOINT in dat u van uw Azure AD-account ontvangt.
+
+    1. In **Afmeldings-URL van id-provider** voert u het SIGN-OUT ENDPOINT in dat u van uw Azure AD-account ontvangt.
+ 
+    1. In **Certificaat van id-provider** voert u het Azure AD-certificaat in dat u van uw Azure AD-account ontvangt. Voer de certificaatwaarde in met de kop- en voettekst. Voorbeeld: `-----BEGIN CERTIFICATE-----<certifciate value>-----END CERTIFICATE-----`
+
+    1. Voer uw certificaat en sleutel in **Certificaat van service-provider certificaat** en **Sleutel van certificaat van serverprovider** in. 
+
+       U kunt een zelfondertekend certificaat maken door de volgende opdrachten uit te voeren op de opdrachtregel (Linux/Mac):
+
+       - Opdracht voor het ophalen van de certificaatsleutel voor SP: `openssl genrsa -out lr.hub.loginradius.com.key 2048`
+
+       - Opdracht voor het ophalen van het certificaat voor SP: `openssl req -new -x509 -key lr.hub.loginradius.com.key -out lr.hub.loginradius.com.cert -days 3650 -subj /CN=lr.hub.loginradius.com`
+     
+       > [!NOTE]
+       > Zorg ervoor dat u het certificaat en de waarden van de certificaatsleutel opgeeft met de kop- en voettekst:
+       > - Voorbeeldindeling van certificaatwaarden: `-----BEGIN CERTIFICATE-----<certifciate value>-----END CERTIFICATE-----`
+       > - Voorbeeldindeling van certificaatsleutelwaarden: `-----BEGIN RSA PRIVATE KEY-----<certifciate key value>-----END RSA PRIVATE KEY-----`
+
+5. Selecteer in de sectie **Toewijzen van gegevens** de velden (SP-velden) en voer de bijbehorende Azure AD-velden (IdP-velden) in.
+
+    Hier volgen enkele veldnamen die worden vermeld voor Azure AD.
+
+    | Velden    | Profielsleutel                                                          |
+    | --------- | -------------------------------------------------------------------- |
+    | Email     | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` |
+    | FirstName | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`    |
+    | LastName  | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`      |
+
+    > [!NOTE]
+    > De toewijzing van het veld **E-mail** is vereist. De toewijzing van de velden **Voornaam** en **Achternaam** is optioneel.
 
 ### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
 
-Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
+Het doel van deze sectie is om in de Azure Portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 
@@ -138,23 +182,23 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     ![Knop Nieuwe gebruiker](common/new-user.png)
 
-3. In Gebruikerseigenschappen voert u de volgende stappen uit.
+3. In **Gebruikers** eigenschappen voert u de volgende stappen uit.
 
-    ![Het dialoogvenster Gebruiker](common/user-properties.png)
+   ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
-    a. Voer in het veld **Naam** **Britta Simon** in.
+   1. Voer in het veld **Naam** **Britta Simon** in.
   
-    b. In het veld **Gebruikersnaam** typt u `brittasimon@yourcompanydomain.extension`. Bijvoorbeeld: BrittaSimon@contoso.com
+   1. Voer `brittasimon@yourcompanydomain.extension` in in het veld **Gebruikersnaam**. Bijvoorbeeld BrittaSimon@contoso.com.
 
-    c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
 
-    d. Klik op **Create**.
+   1. Selecteer **Maken**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie stelt u Britta Simon in staat gebruik te maken van eenmalige aanmelding via Azure door haar toegang te geven tot LoginRadius.
 
-1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen** , **Alle toepassingen** en **LoginRadius**.
+1. Selecteer in de Azure-portal achtereenvolgens **Bedrijfstoepassingen**, **Alle toepassingen** en **LoginRadius**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -166,25 +210,35 @@ In deze sectie stelt u Britta Simon in staat gebruik te maken van eenmalige aanm
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+4. Selecteer de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het deelvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
-5. Selecteer in het dialoogvenster **Gebruikers en groepen** **Britta Simon** in de lijst met gebruikers en klik op de knop **Selecteren** onder aan het scherm.
+5. Selecteer in het deelvenster **Gebruikers en groepen** **Britta Simon** in de lijst **Gebruikers** en kies de knop **Selecteren** onder aan het scherm.
 
-6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
+6. Als u een rolwaarde verwacht in de SAML-assertie, selecteert u in het deelvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst. Kies vervolgens onderaan het scherm de knop **Selecteren**.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
+7. Selecteer in het deelvenster **Toewijzing toevoegen** de knop **Toewijzen**.
 
 ### <a name="create-loginradius-test-user"></a>Testgebruiker voor LoginRadius maken
 
-In deze sectie maakt u een gebruiker met de naam Britta Simon in LoginRadius. Neem contact op met het [ondersteuningsteam van LoginRadius](mailto:support@loginradius.com) om de gebruikers toe te voegen in het LoginRadius-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
+1. Meld u aan bij de account van uw LoginRadius-[beheerconsole](https://adminconsole.loginradius.com/login).
+
+2. Ga naar de sectie Teambeheer in de LoginRadius-beheerconsole.
+
+   ![Schermopname van LoginRadius-beheerconsole](./media/loginradius-tutorial/team-management.png)
+3. Selecteer **Teamlid toevoegen** in het menu aan de zijkant om het formulier te openen. 
+
+4. In het formulier **Teamlid toevoegen**, maakt u een gebruiker met de naam Britta Simon op uw LoginRadius-site door de gebruikersgegevens op te geven en de machtigingen toe te wijzen die u aan de gebruiker wilt geven. Voor meer informatie over de machtigingen op basis van rollen, zie de sectie [Toegangsmachtigingen voor rollen](https://www.loginradius.com/docs/api/v2/admin-console/team-management/manage-team-members#roleaccesspermissions0) van het gedeelte [Teamleden beheren](https://www.loginradius.com/docs/api/v2/admin-console/team-management/manage-team-members#roleaccesspermissions0) van het LoginRadius-document. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen 
 
 In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
 
-Wanneer u op de tegel LoginRadius in het toegangsvenster klikt, wordt u automatisch aangemeld bij de instantie van LoginRadius waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+1. Ga in een browser naar https://accounts.loginradius.com/auth.aspx en selecteer **Aanmelden met federatieve eenmalige aanmelding**.
+2. Voer de naam van uw LoginRadius-app in en selecteer **Aanmelden**.
+3. Er wordt een pop-upvenster geopend waarin u wordt gevraagd om u aan te melden bij uw Azure AD-account.
+4. Na de verificatie wordt het pop-upvenster gesloten en wordt u aangemeld bij de LoginRadius-beheerconsole.
 
 ## <a name="additional-resources"></a>Aanvullende resources
 

@@ -1,5 +1,5 @@
 ---
-title: 'Quickstart: Een serverloze Apache Spark-pool maken (preview-versie) met behulp van Synapse Studio'
+title: 'Quickstart: Een serverloze Apache Spark-pool maken met behulp van Synapse Studio'
 description: Maak een serverloze Apache Spark-pool met behulp van Synapse Studio door de stappen in deze handleiding uit te voeren.
 services: synapse-analytics
 author: saveenr
@@ -9,14 +9,14 @@ ms.subservice: spark
 ms.date: 10/16/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: 313ad0c620fe06158e96c208ae265702134b58d1
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: d280e96b354f38a86545ed5f6bcaa6c9a314c46b
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324184"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462027"
 ---
-# <a name="quickstart-create-a-serverless-apache-spark-pool-preview-using-synapse-studio"></a>Quickstart: Een serverloze Apache Spark-pool maken (preview-versie) met behulp van Synapse Studio
+# <a name="quickstart-create-a-serverless-apache-spark-pool-using-synapse-studio"></a>Quickstart: Een serverloze Apache Spark-pool maken met behulp van Synapse Studio
 
 Azure Synapse Analytics biedt diverse analyse-engines waarmee u uw gegevens kunt opnemen, transformeren, modelleren, analyseren en gebruiken. Een Apache Spark-pool biedt opensource-rekenmogelijkheden voor big data. Nadat u een Apache Spark-pool in uw Synapse-werkruimte hebt gemaakt, kunnen gegevens worden geladen, gemodelleerd, verwerkt en gebruikt om inzichten te verkrijgen.  
 
@@ -63,7 +63,7 @@ Selecteer de **web-URL voor de werkruimte** in het werkruimteoverzicht om Synaps
 
 1. Selecteer **+ Nieuw**. De wizard Nieuwe Apache Spark-pool maken wordt weergegeven. 
 
-1. Voer de volgende gegevens in op het tabblad **Basisinformatie** :
+1. Voer de volgende gegevens in op het tabblad **Basisinformatie**:
 
     | Instelling | Voorgestelde waarde | Beschrijving |
     | :------ | :-------------- | :---------- |
@@ -100,7 +100,7 @@ Volg de onderstaande stappen om de Apache Spark-pool uit de werkruimte te verwij
 Ga als volgt te werk om de Apache Spark-pool te verwijderen:
 
 1. Navigeer naar de Apache Spark-pools in de Beheerhub in Synapse Studio.
-1. Selecteer het beletselteken naast de Apache-pool die u wilt verwijderen (in dit geval **contosospark** ) om de opdrachten voor de Apache Spark-pool weer te geven.
+1. Selecteer het beletselteken naast de Apache-pool die u wilt verwijderen (in dit geval **contosospark**) om de opdrachten voor de Apache Spark-pool weer te geven.
 
     ![Lijst met Apache Spark-pools, waarbij de zojuist gemaakte groep is geselecteerd.](media/quickstart-create-apache-spark-pool/create-spark-pool-studio-29.png)
 

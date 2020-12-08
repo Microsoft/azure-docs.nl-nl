@@ -1,24 +1,24 @@
 ---
-title: 'Zelfstudie: een Azure Spring Cloud-exemplaar inrichten met Terraform'
+title: Een Azure Spring Cloud-exemplaar inrichten met terraform
 description: Richt een Azure Spring Cloud-exemplaar in met Terraform.
 author: MikeDodaro
 ms.author: brendm
 ms.service: spring-cloud
-ms.topic: tutorial
+ms.topic: how-to
 ms.date: 06/26/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: ed66da991df4dbe89c327a9a28ee28527c3da87b
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: 060ef2d08b849706b47b24748142c608292971b5
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92091641"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96533788"
 ---
-# <a name="tutorial-provision-an-azure-spring-cloud-instance-with-terraform"></a>Zelfstudie: Een Azure Spring Cloud-exemplaar inrichten met Terraform
+# <a name="provision-an-azure-spring-cloud-instance-with-terraform"></a>Een Azure Spring Cloud-exemplaar inrichten met Terraform
 
 **Dit artikel is van toepassing op:** ✔️ Java ✔️ C#
 
-In deze zelfstudie maakt u een Azure Spring Cloud-exemplaar met behulp van Terraform. Aan de hand van de procedures maakt u de volgende resources:
+In dit voorbeeld maakt u een Azure Spring Cloud-exemplaar met behulp van Terraform. Aan de hand van de procedures maakt u de volgende resources:
 
 > [!div class="checklist"]
 > * Resourcegroep
@@ -161,7 +161,7 @@ In deze sectie wordt beschreven hoe u de configuratie bijwerkt om logboeken en m
 
 Verwijder de resources die u in dit artikel hebt gemaakt als u ze niet meer nodig hebt.
 
-Voer de opdracht [terraform destroy](https://www.terraform.io/docs/commands/destroy.html) uit om de Azure-resources te verwijderen die in deze zelfstudie zijn gemaakt:
+Voer de opdracht [terraform destroy](https://www.terraform.io/docs/commands/destroy.html) uit om de Azure-resources te verwijderen die in deze oefening zijn gemaakt:
 
 ```bash
 terraform destroy -auto-approve

@@ -5,18 +5,19 @@ ms.devlang: Java
 ms.topic: quickstart
 ms.date: 11/09/2020
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: a91ed2a358a9595a4d22dd629b8d470423b786d6
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 041229ffb047c922e1f1f97993fada3841133d35
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95909523"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96489646"
 ---
 # <a name="send-messages-to-and-receive-messages-from-azure-service-bus-queues-java"></a>Berichten verzenden naar en berichten ontvangen van Azure Service Bus-wachtrijen (Java)
 In deze quickstart maakt u een Java-app om berichten te verzenden naar en te ontvangen van een Azure Service Bus-wachtrij. 
 
 > [!IMPORTANT]
-> Deze quickstart maakt gebruik van het nieuwe pakket azure.messaging.servicebus, wat momenteel een **preview** is. Raadpleeg [Berichten verzenden en ontvangen met azure-servicebus](service-bus-java-how-to-use-queues-legacy.md) voor een quickstart die gebruikmaakt van het algemeen beschikbare azure-servicebus-pakket.
+> Deze quickstart maakt gebruik van het nieuwe pakket azure.messaging-servicebus. Raadpleeg [Berichten verzenden en ontvangen met azure-servicebus](service-bus-java-how-to-use-queues-legacy.md) voor een quickstart die gebruikmaakt van het oude azure-servicebus-pakket.
+
 
 ## <a name="prerequisites"></a>Vereisten
 - Een Azure-abonnement. U hebt een Azure-account nodig om deze zelfstudie te voltooien. U kunt uw [voordelen als MSDN-abonnee](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A85619ABF) activeren of u aanmelden voor een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
@@ -37,7 +38,7 @@ Voeg een verwijzing naar de Azure Service Bus-bibliotheek toe. De Java-clientbib
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-messaging-servicebus</artifactId>
-    <version>7.0.0-beta.7</version>
+    <version>7.0.0</version>
 </dependency>
 ```
 
@@ -220,7 +221,7 @@ Raadpleeg de volgende documentatie en voorbeelden:
 
 - [Azure Service Bus-clientbibliotheek voor Java - Leesmij](https://github.com/Azure/azure-sdk-for-java/blob/master/sdk/servicebus/azure-messaging-servicebus/README.md)
 - [Voorbeelden op GitHub](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/servicebus/azure-messaging-servicebus/src/samples)
-- [Naslaginformatie over de Java-API](https://docs.microsoft.com/java/api/overview/azure/servicebus?view=azure-java-preview&preserve-view=true)
+- [Naslaginformatie over de Java-API](/java/api/overview/azure/servicebus?preserve-view=true&view=azure-java-preview)
 
 Bekijk [meer voorbeelden in GitHub](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/servicebus/azure-messaging-servicebus). 
 

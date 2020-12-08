@@ -1,6 +1,6 @@
 ---
 title: 'Quickstart: Isolatie van werkbelastingen configureren - Portal'
-description: Gebruik de Azure-portal om isolatie van werkbelastingen te configureren.
+description: Gebruik Azure Portal om isolatie van workloads te configureren voor een toegewezen SQL-pool.
 services: synapse-analytics
 author: ronortloff
 manager: craigg
@@ -11,14 +11,14 @@ ms.date: 05/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 30862a0c16995e143df72f2a243419819941f54e
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 302249b7d8490e43b841116c52500e686626433d
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "85213037"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460561"
 ---
-# <a name="quickstart-configure-synapse-sql-pool-workload-isolation-using-a-workload-group-in-the-azure-portal"></a>Quickstart: Isolatie van werkbelastingen in Synapse SQL-pool configureren met een werkbelastinggroep in de Azure Portal
+# <a name="quickstart-configure-dedicated-sql-pool-workload-isolation-using-a-workload-group-in-the-azure-portal"></a>Quickstart: Isolatie van workloads in een toegewezen SQL-pool configureren met een workloadgroep in Azure Portal
 
 In deze quickstart configureert u [isolatie van werkbelastingen](sql-data-warehouse-workload-isolation.md) door een werkbelastinggroep te maken voor het reserveren van resources.  Voor deze zelfstudie maken we de werkbelastinggroep voor het laden van gegevens met de naam `DataLoads`. Voor de werkbelastinggroep wordt 20% van de systeembronnen gereserveerd.  Met een isolatie van 20% voor gegevenswerkbelastingen, zijn er gegarandeerd resources om te voldoen aan de SLA's.  Nadat u de werkbelastinggroep hebt gemaakt, [maakt u een werkbelastingclassificatie](quickstart-create-a-workload-classifier-portal.md) om query's toe te wijzen aan deze werkbelastinggroep.
 
@@ -31,24 +31,24 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
 Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
 > [!NOTE]
-> Het maken van een SQL-poolexemplaar in Azure Synapse Analytics kan resulteren in een nieuwe factureerbare service.  Zie [Prijzen voor Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/sql-data-warehouse/) voor meer informatie.
+> Het maken van een instantie van een toegewezen SQL-pool in Azure Synapse Analytics kan resulteren in een nieuwe factureerbare service.  Zie [Prijzen voor Azure Synapse Analytics](https://azure.microsoft.com/pricing/details/sql-data-warehouse/) voor meer informatie.
 
 ## <a name="prerequisites"></a>Vereisten
 
-In deze quickstart wordt ervan uitgegaan dat u al een SQL-poolexemplaar in Synapse SQL en CONTROL DATABASE-rechten hebt. Gebruik [Maken en verbinden - portal](create-data-warehouse-portal.md) om een datawarehouse met de naam **mySampleDataWarehouse** te maken.
+In deze quickstart wordt ervan uitgegaan dat u al een instantie van een toegewezen SQL-pool in Synapse SQL en CONTROL DATABASE-rechten hebt. Als u er een wilt maken, raadpleegt u [Quickstart: Een toegewezen SQL-pool maken - portal](../quickstart-create-sql-pool-portal.md) om een toegewezen SQL-pool met de naam **mySampleDataWarehouse** te maken.
 
 >[!IMPORTANT] 
->Uw SQL-pool moet online zijn als u werkbelastingbeheer wilt configureren. 
+>Uw toegewezen SQL-pool moet online zijn als u workloadbeheer wilt configureren. 
 
 ## <a name="configure-workload-isolation"></a>Isolatie van werkbelastingen configureren
-Resources van SQL-pools kunnen worden geïsoleerd en gereserveerd voor specifieke werkbelastingen door werkbelastinggroepen te maken.  Zie de conceptdocumentatie [Isolatie van werkbelastingen](sql-data-warehouse-workload-isolation.md) voor meer informatie over hoe u uw werkbelasting kunt beheren met werkbelastinggroepen.  In de quickstart [Maken en verbinden - portal](create-data-warehouse-portal.md) is **mySampleDataWarehouse** gemaakt en vervolgens gestart met 400 DWU's. In de volgende stappen maakt u een werkbelastinggroep in **mySampleDataWarehouse**.
+
+Resources van toegewezen SQL-pools kunnen worden geïsoleerd en gereserveerd voor specifieke werkbelastingen door workloadgroepen te maken.  Zie de conceptdocumentatie [Isolatie van werkbelastingen](sql-data-warehouse-workload-isolation.md) voor meer informatie over hoe u uw werkbelasting kunt beheren met werkbelastinggroepen.  In de quickstart [Maken en verbinden - portal](create-data-warehouse-portal.md) is **mySampleDataWarehouse** gemaakt en vervolgens gestart met DW100c. In de volgende stappen maakt u een werkbelastinggroep in **mySampleDataWarehouse**.
 
 Een werkbelastinggroep maken met een isolatie van 20%:
-1.  Klik op **Azure Synapse Analytics (voorheen SQL DW)** op de linkerpagina van de Azure Portal.
-2.  Selecteer **mySampleDataWarehouse** op de pagina **Azure Synapse Analytics (voorheen SQL DW)** . De SQL-pool wordt geopend.
-3.  Klik op **Werkbelastingbeheer**.
-4.  Klik op **Nieuwe werkbelastinggroep**.
-5.  Klik op **Aangepast**.
+1.  Ga naar de pagina met de toegewezen SQL-pool **mySampleDataWarehouse**.
+1.  Klik op **Workloadbeheer**.
+1.  Klik op **Nieuwe workloadgroep**.
+1.  selecteer **Aangepast**.
 
     ![Klik op Aangepast](./media/quickstart-configure-workload-isolation-portal/create-wg.png)
 
@@ -56,7 +56,7 @@ Een werkbelastinggroep maken met een isolatie van 20%:
 7.  Voer `20` in voor **Min. perc. resources**.
 8.  Voer `5` in voor **Min. perc. resources per aanvraag**.
 9.  Voer `100` in voor **Perc. cap. resources**.
-10.   Klik op **Opslaan**.
+10. Voer **Opslaan** in.
 
    ![Op Opslaan klikken](./media/quickstart-configure-workload-isolation-portal/configure-wg.png)
 
@@ -83,17 +83,13 @@ Er worden kosten in rekening gebracht voor datawarehouse-eenheden en gegevens di
 
 Volg deze stappen om de resources op te schonen.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com) en selecteer uw datawarehouse.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com) en selecteer uw toegewezen SQL-pool.
 
     ![Resources opschonen](./media/load-data-from-azure-blob-storage-using-polybase/clean-up-resources.png)
 
 2. Als u het berekenen wilt onderbreken, selecteert u de knop **Onderbreken**. Als het datawarehouse is onderbroken, ziet u een knop **Start**.  Als u de berekening wilt hervatten, selecteert u **Starten**.
 
 3. Als u de datawarehouse wilt verwijderen zodat er geen kosten in rekening worden gebracht voor berekenen of opslaan, selecteert u **Verwijderen**.
-
-4. Als u de door u gemaakte SQL-server wilt verwijderen, klikt u op **select sqlpoolservername.database.windows.net** in de vorige afbeelding. Selecteer vervolgens **Verwijderen**.  Wees voorzichtig met verwijderen. Als u de server verwijdert, worden ook alle databases verwijderd die zijn toegewezen aan de server.
-
-5. Als u de resourcegroep wilt verwijderen, selecteert u **myResourceGroup**. Selecteer vervolgens **Resourcegroep verwijderen**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

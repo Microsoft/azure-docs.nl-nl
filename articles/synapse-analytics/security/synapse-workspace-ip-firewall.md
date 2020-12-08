@@ -8,14 +8,14 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 00b4f38f4a2a44b88718224db2b2442033816f83
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 3cbd9fd697bbae8779f5b2b9fa4ab817efce30ac
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93313897"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96454637"
 ---
-# <a name="azure-synapse-analytics-ip-firewall-rules-preview"></a>IP-firewallregels voor Azure Synapse Analytics (preview-versie)
+# <a name="azure-synapse-analytics-ip-firewall-rules"></a>IP-firewallregels voor Azure Synapse Analytics
 
 In dit artikel worden de IP-firewallregels uitgelegd en leert u hoe u deze regels configureert in Azure Synapse Analytics.
 

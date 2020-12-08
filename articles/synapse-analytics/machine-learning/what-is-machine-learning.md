@@ -9,16 +9,14 @@ ms.reviewer: jrasnick, garye
 ms.date: 09/25/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: 382ba871f95b3b36c3f819de8d582ba2c5dc358a
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 20f095a058434c36373c30ed2a633db12643814d
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93316079"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96448275"
 ---
-# <a name="machine-learning-capabilities-in-azure-synapse-analytics-workspaces-preview"></a>Machine Learning-mogelijkheden in Azure Synapse Analytics (preview van werkruimten)
-
-[!INCLUDE [preview](../includes/note-preview.md)]
+# <a name="machine-learning-capabilities-in-azure-synapse-analytics"></a>Mogelijkheden voor machine learning in Azure Synapse Analytics
 
 Azure Synapse Analytics biedt verschillende machine learning-mogelijkheden Dit artikel geeft een overzicht van hoe u machine learning kunt toepassen in de context van Azure Synapse.
 
@@ -48,11 +46,11 @@ Dankzij [Azure Data Factory](/azure/data-factory/introduction), een native geïn
 
 Een belangrijk onderdeel van het machine learning-proces is om inzicht te krijgen in de gegevens via verkenning en visualisatie.
 
-Afhankelijk van waar de gegevens zijn opgeslagen, biedt Synapse een aantal verschillende hulpmiddelen om deze te verkennen en voor te bereiden voor analyse en machine learning. Een van de snelste manieren om aan de slag te gaan met het verkennen van gegevens, is door serverloze pools van Apache Spark of Synapse SQL rechtstreeks te gebruiken op de gegevens in het data lake.
+Afhankelijk van waar de gegevens zijn opgeslagen, biedt Synapse een aantal verschillende hulpmiddelen om deze te verkennen en voor te bereiden voor analyse en machine learning. Een van de snelste manieren om aan de slag te gaan met het verkennen van gegevens, is door serverloze pools van Apache Spark of SQL rechtstreeks te gebruiken op de gegevens in het data lake.
 
 * [Apache Spark voor Azure Synapse](../spark/apache-spark-overview.md) biedt mogelijkheden om uw gegevens op schaal te transformeren, voor te bereiden en te verkennen. Deze Spark-pools bevatten tools zoals PySpark/Python, Scala en .NET voor gegevensverwerking op schaal. Met krachtige visualisatiebibliotheken kunt u de gegevens beter verkennen en begrijpen. [Meer informatie over gegevens verkennen en visualiseren in Synapse met behulp van Spark](../get-started-analyze-spark.md).
 
-* [Serverloze Synapse SQL-pools](../sql/on-demand-workspace-overview.md) bieden een manier om gegevens rechtstreeks via het data lake te verkennen met behulp van TSQL. Serverloze Synapse SQL-pools bieden ook een aantal ingebouwde visualisaties in Synapse Studio. [Meer informatie over hoe u gegevens kunt verkennen met serverloze Synapse SQL-pools](../get-started-analyze-sql-on-demand.md).
+* [Serverloze SQL-pools](../sql/on-demand-workspace-overview.md) bieden een manier om gegevens rechtstreeks via het data lake te verkennen met behulp van TSQL. Serverloze SQL-pools bieden ook een aantal ingebouwde visualisaties in Synapse Studio. [Meer informatie over hoe u gegevens kunt verkennen met serverloze SQL-pools](../get-started-analyze-sql-on-demand.md).
 
 ### <a name="modeling"></a>Modellen maken
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 1/11/2019
 ms.author: jeedes
-ms.openlocfilehash: ad6a4d075ea861068ad0c929d92cd2f12efa6121
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 78324cfa58a8ac015b085052bdec7e3793befc1b
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92516100"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348395"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-signagelive"></a>Zelfstudie: Azure Active Directory-integratie met Signagelive
 
@@ -105,7 +105,7 @@ Voer de volgende taken uit om Azure AD-eenmalige aanmelding te configureren met 
     Voer bij het tekstvak **Aanmeldings-URL** een URL in die het volgende patroon heeft: `https://login.signagelive.com/sso/<ORGANIZATIONALUNITNAME>`
 
     > [!NOTE]
-    > De waarde is niet echt. Vervang de waarde door de werkelijke aanmeldings-URL. Neem contact op met het [Signagelive Client-ondersteuningsteam](mailto:support@signagelive.com) om de waarde op te halen. U kunt ook verwijzen naar de patronen die worden weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > De waarde is niet echt. Vervang de waarde door de werkelijke aanmeldings-URL. Neem contact op met het [Signagelive-ondersteuningsteam](mailto:support@signagelive.com) om de waarde op te vragen. U kunt ook verwijzen naar de patronen die worden weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
 5. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** selecteert u **Downloaden** om het **Certificaat (Raw)** te downloaden uit de opgegeven opties, overeenkomstig uw behoeften. Sla het vervolgens op uw computer op.
 
@@ -129,7 +129,7 @@ Als u eenmalige aanmelding aan de Signagelive-zijde wilt configureren, verzend u
 
 Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
 
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 
     ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
 

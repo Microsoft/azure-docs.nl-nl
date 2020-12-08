@@ -9,12 +9,12 @@ ms.topic: overview
 ms.custom: sqldbrb=1
 ms.reviewer: vanto
 ms.date: 03/09/2020
-ms.openlocfilehash: 088300d4b6f92886310315b67763536e39cbb019
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 5109139c7168026c74a475128832fbb0733ce832
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92789519"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96447117"
 ---
 # <a name="azure-private-link-for-azure-sql-database-and-azure-synapse-analytics"></a>Azure Private Link voor Azure SQL Database en Azure Synapse Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -22,7 +22,7 @@ ms.locfileid: "92789519"
 Met een Private Link kunt u via een **privé-eindpunt** verbinding maken met verschillende PaaS-services in Azure. Raadpleeg de pagina [Documentatie over Private Link](../../private-link/index.yml) voor een lijst van PaaS-services die de Private Link-functionaliteit ondersteunen. Een privé-eindpunt is een privé-IP-adres binnen een specifiek [VNet](../../virtual-network/virtual-networks-overview.md) en subnet.
 
 > [!IMPORTANT]
-> Dit artikel is van toepassing op zowel Azure SQL Database als Azure Synapse Analytics (voorheen SQL Data Warehouse). Ter vereenvoudiging verwijst de term “database” naar beide databases in Azure SQL Database en Azure Synapse Analytics. Alle verwijzingen naar “server” verwijzen ook naar de [logische SQL Server](logical-servers.md) die als host fungeert voor Azure SQL Database en Azure Synapse Analytics. Dit artikel is *niet* van toepassing op **Azure SQL Managed Instance** .
+> Dit artikel is van toepassing op zowel Azure SQL Database als Azure Synapse Analytics. Ter vereenvoudiging verwijst de term “database” naar beide databases in Azure SQL Database en Azure Synapse Analytics. Alle verwijzingen naar “server” verwijzen ook naar de [logische SQL Server](logical-servers.md) die als host fungeert voor Azure SQL Database en Azure Synapse Analytics. Dit artikel is *niet* van toepassing op **Azure SQL Managed Instance**.
 
 ## <a name="how-to-set-up-private-link-for-azure-sql-database"></a>Private Link instellen voor Azure SQL Database 
 
@@ -149,7 +149,7 @@ Overweeg een scenario met een gebruiker die SQL Server Management Studio (SSMS) 
 1. Alleen verkeer naar de database in SQL Database toestaan met behulp van het privé-IP-adres van de VM. Zie de artikelen over [Service-eindpunt](vnet-service-endpoint-rule-overview.md) en [firewallregels voor virtuele netwerken](firewall-configure.md)voor meer informatie.
 1. Op de Azure VM beperkt u het bereik van de uitgaande verbinding met behulp van [Netwerkbeveiligingsgroepen (NSG's)](../../virtual-network/manage-network-security-group.md) en servicetags als volgt
     - Geef een NSG-regel op om verkeer voor Service Tag = SQL.WestUs toe te staan – alleen verbinding toestaan met SQL Database in US – West
-    - Geef een NSG-regel (met een **hogere prioriteit** ) op om verkeer te weigeren voor Service Tag = SQL – verbindingen met SQL Database in alle regio's weigeren
+    - Geef een NSG-regel (met een **hogere prioriteit**) op om verkeer te weigeren voor Service Tag = SQL – verbindingen met SQL Database in alle regio's weigeren
 
 Aan het einde van deze installatie kan de Azure-VM alleen verbinding maken met een database in SQL Database in de regio US - west. De connectiviteit is echter niet beperkt tot één database in SQL Database. De VM kan nog steeds verbinding maken met elke database in de regio US - west, met inbegrip van de databases die geen onderdeel zijn van het abonnement. Hoewel we het bereik van de gegevensexfiltratie in het bovenstaande scenario naar een bepaalde regio hebben gereduceerd, hebben we het niet geheel verwijderd.
 

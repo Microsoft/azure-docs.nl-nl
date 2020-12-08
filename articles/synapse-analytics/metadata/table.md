@@ -1,6 +1,6 @@
 ---
 title: Gedeelde metagegevenstabellen
-description: Azure Synapse Analytics biedt een gedeeld metagegevensmodel. Wanneer u een tabel in een serverloze Apache Spark-pool maakt, is deze toegankelijk vanuit de serverloze SQL-pool (preview-versie) en de toegewezen SQL-pool zonder dat de gegevens worden gedupliceerd.
+description: Azure Synapse Analytics biedt een gedeeld metagegevensmodel. Wanneer u een tabel in een serverloze Apache Spark-pool maakt, is deze toegankelijk vanuit de serverloze SQL-pool en de toegewezen SQL-pool zonder dat de gegevens worden gedupliceerd.
 services: sql-data-warehouse
 author: MikeRys
 ms.service: synapse-analytics
@@ -10,18 +10,17 @@ ms.date: 05/01/2020
 ms.author: mrys
 ms.reviewer: jrasnick
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f269217908bea4b5e8ef3c0004a9cec9d5d682c7
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 9ee18edd563d94a85dedf48b7a4d6df394c09707
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93314546"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96461385"
 ---
 # <a name="azure-synapse-analytics-shared-metadata-tables"></a>Gedeelde Azure Synapse Analytics-metagegevenstabellen
 
-[!INCLUDE [synapse-analytics-preview-terms](../../../includes/synapse-analytics-preview-terms.md)]
 
-Met Azure Synapse Analytics kunnen de verschillende rekenengines voor de werkruimte databases en door Parquet ondersteunde tabellen delen tussen de Apache Spark-pools (preview-versie) en de serverloze SQL-pool (preview-versie).
+Met Azure Synapse Analytics kunnen de verschillende rekenengines voor de werkruimte databases en door Parquet ondersteunde tabellen delen tussen de Apache Spark-pools en de serverloze SQL-pool.
 
 Wanneer een database is gemaakt met een Spark-taak, kunt u er tabellen in maken met Spark waarin Parquet als de opslagindeling wordt gebruikt. Deze tabellen zijn direct beschikbaar voor het uitvoeren van query's door een Spark-pool van de Azure Synapse-werkruimte. Ze kunnen ook worden gebruikt vanuit een van de Spark-taken waarvoor machtigingen gelden.
 

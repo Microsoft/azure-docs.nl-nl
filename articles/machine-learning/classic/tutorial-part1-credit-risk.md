@@ -9,17 +9,16 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: tutorial
 ms.date: 02/11/2019
-ms.openlocfilehash: 946435175ea5cd366103bc1254bae0d9afe0926e
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 62cecc011980c2d11e6f99895c90b0ced744039a
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325800"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325346"
 ---
 # <a name="tutorial-1-predict-credit-risk---azure-machine-learning-studio-classic"></a>Zelfstudie 1: Kredietrisico voorspellen – Azure Machine Learning Studio (klassiek)
 
-**VAN TOEPASSING OP:** ![ja](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![nee ](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
-
+**VAN TOEPASSING OP:**  ![Dit is een vinkje, wat betekent dat dit artikel van toepassing is op Machine Learning Studio (klassiek).](../../../includes/media/aml-applies-to-skus/yes.png) Machine Learning Studio (klassiek)   ![dit is een X, wat betekent dat dit artikel van toepassing is op Azure Machine Learning.](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 [!INCLUDE [Designer notice](../../../includes/designer-notice.md)]
 
@@ -75,7 +74,7 @@ Voor het ontwikkelen van een voorspellend model voor kredietrisico hebt u gegeve
 
 U gebruikt het bestand met de naam **german.data**. Download dit bestand naar uw lokale vaste schijf.  
 
-De gegevensset **german.data** bevat rijen met 20 variabelen voor 1000 kredietaanvragers uit het verleden. Deze 20 variabelen vertegenwoordigen de set kenmerken van de gegevensset (de *functievector* ), die identificerende eigenschappen bevat voor elke kredietaanvrager. Een extra kolom in elke rij vertegenwoordigt het berekende kredietrisico van de aanvrager, met 700 aanvragers geïdentificeerd als een laag kredietrisico en 300 als een hoog risico.
+De gegevensset **german.data** bevat rijen met 20 variabelen voor 1000 kredietaanvragers uit het verleden. Deze 20 variabelen vertegenwoordigen de set kenmerken van de gegevensset (de *functievector*), die identificerende eigenschappen bevat voor elke kredietaanvrager. Een extra kolom in elke rij vertegenwoordigt het berekende kredietrisico van de aanvrager, met 700 aanvragers geïdentificeerd als een laag kredietrisico en 300 als een hoog risico.
 
 De UCI-website bevat een beschrijving van de kenmerken van de functievector voor deze gegevens. Deze gegevens omvatten financiële gegevens, kredietgeschiedenis, werknemersstatus en persoonlijke gegevens. Voor elke aanvrager is een binaire beoordeling gegeven die aangeeft of deze een laag of een hoog kredietrisico heeft. 
 
@@ -119,7 +118,7 @@ Nadat de gegevens zijn geconverteerd naar CSV-indeling, moet u deze uploaden naa
 
 1. Open de startpagina van Machine Learning Studio (klassiek) ([https://studio.azureml.net](https://studio.azureml.net)). 
 
-2. Klik in het menu ![Menu](./media/tutorial-part1-credit-risk/menu.png) in de linkerbovenhoek van het venster, klik op **Azure Machine Learning** , selecteer **Studio** en meld u aan.
+2. Klik op het menu ![Dit het menupictogram; drie gestapelde lijnen.](./media/tutorial-part1-credit-risk/menu.png) in de linkerbovenhoek van het venster, klik op **Azure Machine Learning**, selecteer **Studio** en meld u aan.
 
 3. Klik onderaan het venster op **+NEW** (+nieuw).
 
@@ -137,7 +136,7 @@ Nadat de gegevens zijn geconverteerd naar CSV-indeling, moet u deze uploaden naa
 
 9. Voeg desgewenst een beschrijving toe.
 
-10. Klik op het **OK** -selectievakje.  
+10. Klik op het **OK**-selectievakje.  
 
     ![De gegevensset uploaden](./media/tutorial-part1-credit-risk/upload-dataset.png)
 
@@ -179,7 +178,7 @@ De volgende stap in deze zelfstudie is om een experiment te maken in Machine Lea
 
 U kunt de eerste 100 rijen van de gegevens en enkele statistische gegevens voor de hele gegevensset weergeven: Klik op de uitvoerpoort van de gegevensset (het rondje aan de onderkant) en selecteer **Visualize** (visualiseren).  
 
-Omdat het gegevensbestand geen kolomkoppen had, heeft Studio (klassiek) generieke koppen (Col1, Col2, *enzovoort* ) gemaakt. Goede koppen zijn niet essentieel voor het maken van een model, maar ze maken het gemakkelijker om met de gegevens in het experiment te werken. Wanneer u dit model uiteindelijk publiceert in een webservice, helpen de koppen u ook bij het identificeren van de kolommen voor de gebruiker van de service.  
+Omdat het gegevensbestand geen kolomkoppen had, heeft Studio (klassiek) generieke koppen (Col1, Col2, *enzovoort*) gemaakt. Goede koppen zijn niet essentieel voor het maken van een model, maar ze maken het gemakkelijker om met de gegevens in het experiment te werken. Wanneer u dit model uiteindelijk publiceert in een webservice, helpen de koppen u ook bij het identificeren van de kolommen voor de gebruiker van de service.  
 
 U kunt kolomkoppen toevoegen met behulp van de module [Edit Metadata][edit-metadata] (metagegevens bewerken).
 
@@ -213,7 +212,7 @@ Om [Edit Metadata][edit-metadata] (metagegevens bewerken) te gebruiken, geeft u 
    ![Kolomkiezer met alle kolommen geselecteerd](./media/tutorial-part1-credit-risk/select-columns.png)
 
 
-1. Klik op het **OK** -selectievakje.
+1. Klik op het **OK**-selectievakje.
 
 1. Zoek in het deelvenster **Properties** de parameter **New column names** (nieuwe kolomnamen). Voer in dit veld een lijst met namen in voor de 21 kolommen in de gegevensset, gescheiden door komma's, in de volgorde van de kolommen. U kunt de kolomnamen verkrijgen uit de datasetdocumentatie op de UCI-website, of voor het gemak kunt u de volgende lijst kopiëren en plakken:  
 
@@ -239,7 +238,7 @@ U doet dit met behulp van de module [Split Data][split] (gegevens splitsen).
 
 1. Zoek de module [Split Data][split] (gegevens splitsen), sleep deze naar het canvas en verbindt deze met de module [Edit Metadata][edit-metadata] (metagegevens bewerken).
 
-1. Standaard is de splitsingsverhouding 0,5 en is de **Randomized split** -parameter ingesteld. Dit betekent dat een willekeurige helft van de gegevens wordt uitgevoerd via één poort van de module [Split Data][split] (gegevens splitsen), en de andere helft door de andere. U kunt deze parameters aanpassen, evenals de parameter **Random seed** (willekeurige seed), om de verdeling in trainings- en testgegevens te wijzigen. In dit voorbeeld laat u staan zoals ze zijn.
+1. Standaard is de splitsingsverhouding 0,5 en is de **Randomized split**-parameter ingesteld. Dit betekent dat een willekeurige helft van de gegevens wordt uitgevoerd via één poort van de module [Split Data][split] (gegevens splitsen), en de andere helft door de andere. U kunt deze parameters aanpassen, evenals de parameter **Random seed** (willekeurige seed), om de verdeling in trainings- en testgegevens te wijzigen. In dit voorbeeld laat u staan zoals ze zijn.
    
    > [!TIP]
    > De eigenschap **Fraction of rows in the first output dataset** (fractie van rijen in de eerste uitgevoerde gegevensset) bepaalt welk deel van de gegevens wordt uitgevoerd via de *linker* uitvoerpoort. Als u bijvoorbeeld de verhouding instelt op 0,7, wordt 70% van de gegevens uitgevoerd via de linker poort en 30% via de rechter poort.  

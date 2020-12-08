@@ -1,6 +1,6 @@
 ---
 title: Wat is Azure Security Center?| Microsoft Docs
-description: 'Op deze pagina worden de belangrijkste voordelen van Security Center besproken: uw beveiligingsstatus detecteren en deze verbeteren met dekking voor cloudresources en resources op locatie.'
+description: 'Op deze pagina worden de belangrijkste voordelen van Security Center besproken: uw beveiligingsstatus detecteren en deze verbeteren met dekking voor cloudresources en on-premises resources.'
 services: security-center
 documentationcenter: na
 author: memildin
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: d62ed31a68d9469a1bd1fc66e479b0f91db2f916
-ms.sourcegitcommit: 65d518d1ccdbb7b7e1b1de1c387c382edf037850
+ms.openlocfilehash: 0a1cac0fe61ea13a18224ea5992b5c7c1ba69d8a
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/09/2020
-ms.locfileid: "94372265"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96510332"
 ---
 # <a name="what-is-azure-security-center"></a>Wat is Azure Security Center?
 

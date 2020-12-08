@@ -11,14 +11,14 @@ ms.date: 04/27/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 9132c9609961053e7f60344dc387b2a8d01bd6b9
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: ae21368269a2c098b4e35bf83b8c9fdf2749a297
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "85212986"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460548"
 ---
-# <a name="quickstart-configure-workload-isolation-using-t-sql"></a>Quickstart: Isolatie van werkbelastingen configureren met behulp van T-SQL
+# <a name="quickstart-configure-workload-isolation-in-a-dedicated-sql-pool-using-t-sql"></a>Quickstart: Isolatie van werkbelastingen configureren in een toegewezen SQL-pool met behulp van T-SQL
 
 In deze quickstart maakt u snel een werkbelastinggroep en classificatie voor het reserveren van resources voor het laden van gegevens. De werkbelastinggroep wijst 20% van de systeemresources toe aan de gegevensladingen.  De werkbelastingclassificatie wijst aanvragen toe aan de werkbelastinggroep voor de gegevensladingen.  Met een isolatie van 20% voor gegevensladingen, zijn er gegarandeerd resources om te voldoen aan de SLA's.
 
@@ -29,7 +29,7 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
 
 ## <a name="prerequisites"></a>Vereisten
 
-In deze quickstart wordt ervan uitgegaan dat u al een Synapse SQL-exemplaar in Azure Synapse hebt, en dat u CONTROL DATABASE-rechten hebt. Gebruik [Maken en verbinden - portal](create-data-warehouse-portal.md) om een datawarehouse met de naam **mySampleDataWarehouse** te maken.
+In deze quickstart wordt ervan uitgegaan dat u al een Synapse SQL-exemplaar in Azure Synapse hebt, en dat u CONTROL DATABASE-rechten hebt. Gebruik [Maken en koppelen - portal](create-data-warehouse-portal.md) om een toegewezen SQL-pool met de naam **mySampleDataWarehouse** te maken als dat nodig is.
 
 ## <a name="create-login-for-dataloads"></a>Aanmelding maken voor DataLoads
 
@@ -103,10 +103,10 @@ DROP USER [ELTLogin]
 ;
 ```
 
-Er worden kosten in rekening gebracht voor datawarehouse-eenheden en gegevens die zijn opgeslagen in uw datawarehouse. Deze compute- en opslagresources worden apart in rekening gebracht.
+Er worden kosten in rekening gebracht voor datawarehouse-eenheden en gegevens die zijn opgeslagen in uw toegewezen SQL-pool. Deze compute- en opslagresources worden apart in rekening gebracht.
 
-- Als u de gegevens in de opslag wilt houden, kunt u het berekenen onderbreken wanneer u de SQL-pool niet gebruikt. Als u het berekenen onderbreekt, worden er alleen kosten in rekening gebracht voor de gegevensopslag. Wanneer u klaar bent om met de gegevens te werken, hervat u de berekening.
-- Als u in de toekomst geen kosten meer wilt hebben, kunt u de datawarehouse verwijderen.
+- Als u de gegevens in de opslag wilt houden, kunt u het berekenen onderbreken wanneer u de toegewezen SQL-pool niet gebruikt. Als u het berekenen onderbreekt, worden er alleen kosten in rekening gebracht voor de gegevensopslag. Wanneer u klaar bent om met de gegevens te werken, hervat u de berekening.
+- Als u in de toekomst geen kosten meer wilt maken, kunt u de toegewezen SQL-pool verwijderen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

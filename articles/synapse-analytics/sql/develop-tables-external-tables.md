@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: a9f58a9cdf8dea9631443d499548f2aee61eda69
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: c2daef64b110e59da76d8342508c19c7f1b3cd08
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94553672"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96452778"
 ---
 # <a name="use-external-tables-with-synapse-sql"></a>Externe tabellen gebruiken met Synapse SQL
 
-Een externe tabel verwijst naar gegevens die zich in Hadoop, Azure Storage Blob of Azure Data Lake Storage bevinden. Externe tabellen worden gebruikt voor het lezen van gegevens uit bestanden of het schrijven van gegevens naar bestanden in Azure Storage. Met Synapse SQL kunt u externe tabellen gebruiken om gegevens te lezen uit en te schrijven naar een toegewezen SQL-pool of serverloze SQL-pool (preview).
+Een externe tabel verwijst naar gegevens die zich in Hadoop, Azure Storage Blob of Azure Data Lake Storage bevinden. Externe tabellen worden gebruikt voor het lezen van gegevens uit bestanden of het schrijven van gegevens naar bestanden in Azure Storage. Met Synapse SQL kunt u externe tabellen gebruiken om gegevens te lezen uit en te schrijven naar een toegewezen SQL-pool of serverloze SQL-pool.
 
 ## <a name="external-tables-in-dedicated-sql-pool-and-serverless-sql-pool"></a>Externe tabellen in een toegewezen SQL-pool en een serverloze SQL-pool
 

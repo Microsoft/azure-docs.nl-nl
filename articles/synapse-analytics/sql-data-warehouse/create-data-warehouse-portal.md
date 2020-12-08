@@ -1,6 +1,6 @@
 ---
-title: 'Quickstart: Een Synapse SQL-pool maken en query uitvoeren (Azure-portal)'
-description: Een Synapse SQL-pool maken en query uitvoeren met behulp van de Azure-portal
+title: 'Quickstart: Een toegewezen SQL-pool maken en bevragen (Azure-portal)'
+description: Een toegewezen SQL-pool maken en bevragen met de Azure-portal
 services: synapse-analytics
 author: kevinvngo
 manager: craigg
@@ -11,16 +11,16 @@ ms.date: 05/28/2019
 ms.author: pimorano
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 470892aa46d3f75ce8e17200f7d0549ae14b0e86
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 3d4884fd64c773647f78a98dc7aeb1063d539edf
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023783"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96456736"
 ---
-# <a name="quickstart-create-and-query-a-synapse-sql-pool-using-the-azure-portal"></a>Quickstart: Een Synapse SQL-pool maken en query uitvoeren met behulp van de Azure-portal
+# <a name="quickstart-create-and-query-a-dedicated-sql-pool-in-azure-synapse-analytics-using-the-azure-portal"></a>Quickstart: Een toegewezen SQL-pool maken en een query uitvoeren in Azure Synapse Analytics met behulp van de Azure-portal
 
-Maak en zoek snel een Synapse SQL-pool (Data Warehouse) in Azure Synapse Analytics (voorheen SQL DW) met behulp van de Azure-portal.
+Maak en zoek snel een Synapse SQL-pool (Data Warehouse) in Azure Synapse Analytics met behulp van de Azure-portal.
 
 ## <a name="prerequisites"></a>Vereisten
 

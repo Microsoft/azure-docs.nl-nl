@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 08/11/2020
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: acb08d5430f13ad9a339b2cdd072fce9c196d05f
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 021550598452516d45ae67c1139c2f891629a875
+ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92451479"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96296570"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-fortigate-ssl-vpn"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met FortiGate SSL VPN
 
@@ -75,7 +75,7 @@ Voltooi de volgende stappen van hoog niveau om eenmalige aanmelding van Azure AD
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in de Azure-portal:
 
-1. Selecteer in [Azure Portal](https://portal.azure.com/), op de integratiepagina van de toepassing **FortiGate SSL VPN** , het gedeelte **Beheren** en selecteer **eenmalige aanmelding**.
+1. Selecteer in [Azure Portal](https://portal.azure.com/), op de integratiepagina van de toepassing **FortiGate SSL VPN**, het gedeelte **Beheren** en selecteer **eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Selecteer op de pagina **Eenmalige aanmelding instellen met SAML** het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken:
 
@@ -92,7 +92,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in de Azu
     d. Voer in het vak **Afmeldings-URL** een URL met het patroon `https://<FQDN>/remote/saml/logout` in.
 
     > [!NOTE]
-    > Deze waarden zijn slechts patronen. U moet de werkelijke **Aanmeldings-id** , **Id** , **Antwoord-URL** en **Afmeldings-URL** gebruiken. Neem contact op met het [ondersteuningsteam van FortiGate SSL VPN](mailto:tac_amer@fortinet.com) om de werkelijke waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > Deze waarden zijn slechts patronen. U moet de werkelijke **Aanmeldings-id**, **Id**, **Antwoord-URL** en **Afmeldings-URL** gebruiken. Neem contact op met de [Fortinet-ondersteuning](https://support.fortinet.com) bij vragen. U kunt ook verwijzen naar de voorbeeldpatronen die zijn opgenomen in de documentatie van Fortinet en naar het gedeelte **Standaard-SAML-configuratie** in Azure Portal.
 
 1. In de FortiGate SSL VPN-toepassing worden SAML-asserties in een specifieke indeling verwacht. Hiervoor moet u aangepaste kenmerktoewijzingen aan de configuratie toevoegen. In de volgende schermafbeelding wordt de lijst met standaardkenmerken weergegeven.
 
@@ -144,11 +144,11 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 1. Selecteer in de Azure-portal **Bedrijfstoepassingen** en selecteer **Alle toepassingen**.
 1. Selecteer in de lijst toepassingen de optie **FortiGate SSL VPN**.
-1. Selecteer op de overzichtspagina van de app in de sectie **Beheren** de optie **Gebruikers en groepen** :
+1. Selecteer op de overzichtspagina van de app in de sectie **Beheren** de optie **Gebruikers en groepen**:
 
    ![Schermopname van de optie Gebruikers en groepen.](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** :
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**:
 
     ![Schermopname van de knop Gebruiker toevoegen.](common/add-assign-user.png)
 
@@ -185,7 +185,7 @@ Nadat u de SAML-configuratie van de FortiGate-app in uw tenant hebt voltooid, he
 1. Selecteer **Import** > **Remote Certificate**.
 1. Blader naar het certificaat dat u hebt gedownload uit de implementatie van de FortiGate-app in de Azure-tenant, selecteer het certificaat en selecteer vervolgens **OK**.
 
-Nadat het certificaat is geüpload, noteert u de naam onder **System** > **Certificates** > **Remote Certificate**. Het krijgt standaard de naam REMOTE_Cert_ *N* , waarbij *N* een geheel getal is.
+Nadat het certificaat is geüpload, noteert u de naam onder **System** > **Certificates** > **Remote Certificate**. Het krijgt standaard de naam REMOTE_Cert_ *N*, waarbij *N* een geheel getal is.
 
 #### <a name="complete-fortigate-command-line-configuration"></a>FortiGate-opdrachtregelconfiguratie voltooien
 
@@ -199,7 +199,7 @@ Als u deze stappen wilt uitvoeren, hebt u de eerder genoteerde waarden nodig:
 - URL voor aanmelden bij Azure
 - Azure AD-id
 - URL voor afmelden bij Azure
-- Base64 SAML-certificaatnaam (REMOTE_Cert_ *N* )
+- Base64 SAML-certificaatnaam (REMOTE_Cert_ *N*)
 
 1. Breng een SSH-sessie tot stand met het FortiGate-apparaat en meld u aan met een FortiGate-administratoraccount.
 1. Voer deze opdrachten uit:

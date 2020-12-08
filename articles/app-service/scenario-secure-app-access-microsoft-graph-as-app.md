@@ -7,15 +7,16 @@ manager: CelesteDG
 ms.service: app-service-web
 ms.topic: tutorial
 ms.workload: identity
-ms.date: 11/09/2020
+ms.date: 11/30/2020
 ms.author: ryanwi
 ms.reviewer: stsoneff
-ms.openlocfilehash: a7b8ca309bf5710ddbd88413935bef5e97a1ed9f
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.custom: azureday1
+ms.openlocfilehash: facc6a4ab8344f9f72fc7abc27433c18ab435504
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95999668"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96436535"
 ---
 # <a name="tutorial-access-microsoft-graph-from-a-secured-app-as-the-app"></a>Zelfstudie: Toegang tot Microsoft Graph krijgen vanuit een beveiligde app als de app
 
@@ -23,7 +24,7 @@ Ontdek hoe u toegang tot Microsoft Graph krijgt vanuit een web-app die wordt uit
 
 :::image type="content" alt-text="Diagram waarin de toegang tot Microsoft Graph wordt weergegeven." source="./media/scenario-secure-app-access-microsoft-graph/web-app-access-graph.svg" border="false":::
 
-U wilt Microsoft Graph aanroepen voor de web-app. Een veilige manier om uw web-app toegang tot gegevens te geven, is een [door het systeem toegewezen beheerde identiteit](/azure/active-directory/managed-identities-azure-resources/overview) te gebruiken. Met een beheerde identiteit van Azure Active Directory kan App Services toegang tot resources krijgen via RBAC (op rollen gebaseerd toegangsbeheer), zonder dat daar app-referenties voor nodig zijn. Nadat een beheerde identiteit aan uw web-app is toegewezen, wordt er in Azure een certificaat gemaakt en gedistribueerd. U hoeft zich geen zorgen te maken over het beheren van geheimen of app-referenties.
+U wilt Microsoft Graph aanroepen voor de web-app. Een veilige manier om uw web-app toegang tot gegevens te geven, is een [door het systeem toegewezen beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md) te gebruiken. Met een beheerde identiteit van Azure Active Directory kan App Services toegang tot resources krijgen via RBAC (op rollen gebaseerd toegangsbeheer), zonder dat daar app-referenties voor nodig zijn. Nadat een beheerde identiteit aan uw web-app is toegewezen, wordt er in Azure een certificaat gemaakt en gedistribueerd. U hoeft zich geen zorgen te maken over het beheren van geheimen of app-referenties.
 
 In deze zelfstudie leert u het volgende:
 
@@ -120,6 +121,8 @@ In **Overzicht** selecteert u **Machtigingen**. U ziet dan de toegevoegde machti
 ## <a name="call-microsoft-graph-net"></a>Microsoft Graph (.NET) aanroepen
 
 De klasse [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential) wordt gebruikt om een tokenreferentie voor uw code op te halen om aanvragen voor Microsoft Graph te autoriseren. Maak een exemplaar van de klasse [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential), die gebruikmaakt van de beheerde identiteit om tokens op te halen en aan de serviceclient te koppelen. Met het volgende codevoorbeeld wordt de geverifieerde tokenreferentie opgehaald en gebruikt om een serviceclientobject te maken, waarmee de gebruikers in de groep worden opgehaald.
+
+Zie het [voorbeeld op GitHub](https://github.com/Azure-Samples/ms-identity-easyauth-dotnet-storage-graphapi/tree/main/3-WebApp-graphapi-managed-identity) als u deze code wilt bekijken als onderdeel van een voorbeeldtoepassing.
 
 ### <a name="install-the-microsoftgraph-client-library-package"></a>Het Microsoft.Graph-clientbibliotheekpakket installeren
 

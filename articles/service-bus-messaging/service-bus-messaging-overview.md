@@ -2,48 +2,82 @@
 title: Overzicht van Azure Service Bus-berichtenservice | Microsoft Docs
 description: Dit artikel bevat een overzicht op hoog niveau van Azure Service Bus, een volledig beheerde berichtenbroker die binnen ondernemingen kan worden geïntegreerd.
 ms.topic: overview
-ms.date: 06/23/2020
-ms.openlocfilehash: 478dd0debb5117e76cf8d0ab6599dcf363c12ab3
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.date: 11/20/2020
+ms.openlocfilehash: ca04b4a41489fba61e7c0ee2bb3f4f7f0b8b80f4
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87501471"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96489476"
 ---
 # <a name="what-is-azure-service-bus"></a>Wat is Azure Service Bus?
+Microsoft Azure Service Bus is een volledig beheerde zakelijke berichtenbroker met berichtwachtrijen en onderwerpen voor een openbaar abonnement. Service Bus wordt gebruikt om toepassingen en services van elkaar los te koppelen, waardoor de volgende voordelen worden geboden:
 
-Microsoft Azure Service Bus is een volledig beheerde berichtenbroker die binnen ondernemingen kan worden geïntegreerd. Service Bus kan toepassingen en services loskoppelen. Service Bus biedt een betrouwbaar en veilig platform voor asynchrone overdracht van gegevens en status.
+- Taakverdeling tussen concurrerende werkrollen
+- Veilig routeren en overdragen van gegevens en controle over de grenzen van services en toepassingen heen
+- Transactionele werkzaamheden coördineren waarvoor een hoge mate van betrouwbaarheid vereist is 
 
-Gegevens worden uitgewisseld tussen verschillende toepassingen en services met behulp van *berichten*. Een bericht heeft een binaire indeling en kan JSON, XML of alleen tekst bevatten. Zie [Integration Services](https://azure.com/integration) voor meer informatie.
+## <a name="overview"></a>Overzicht
+Gegevens worden uitgewisseld tussen verschillende toepassingen en services met behulp van *berichten*. Een bericht is een container die is voorzien van metagegevens en gegevens bevat. De gegevens kunnen elk soort informatie zijn, inclusief gestructureerde gegevens die zijn gecodeerd in algemene indelingen, zoals de volgende: JSON, XML, Apache Avro, tekst zonder opmaak.
 
 Enkele algemene berichtenscenario's:
 
 * *Berichtenuitwisseling*. Draag bedrijfsgegevens over, zoals verkoop- of inkooporders, dagboeken of voorraadverplaatsingen.
-* *Toepassingen loskoppelen*. Verbeter de betrouwbaarheid en schaalbaarheid van toepassingen en services. Client en service hoeven niet tegelijkertijd online te zijn.
-* *Onderwerpen en abonnementen*. 1:*n*-relaties mogelijk maken tussen uitgevers en abonnees.
-* *Berichtsessies*. Werkstromen implementeren waarvoor het ordenen of uitstellen van berichten vereist is.
+* *Toepassingen loskoppelen*. Verbeter de betrouwbaarheid en schaalbaarheid van toepassingen en services. Producent en consument hoeven niet tegelijkertijd online of onmiddellijk beschikbaar te zijn. De [belasting wordt verdeeld](/azure/architecture/patterns/queue-based-load-leveling), zodat verkeerspieken een service niet overbelasten. 
+* *Taakverdeling*. Meerdere [concurrerende consumenten](/azure/architecture/patterns/competing-consumers) kunnen tegelijk lezen uit een wachtrij, waarbij elk veilig exclusief eigendom van specifieke berichten verkrijgt. 
+* *Onderwerpen en abonnementen*. Schakel 1:*n*-relaties tussen [uitgevers en abonnees](/azure/architecture/patterns/publisher-subscriber) in, zodat abonnees bepaalde berichten uit een stroom met gepubliceerde berichten kunnen selecteren.
+* *Transacties*. Hiermee kunt u verschillende bewerkingen uitvoeren, allemaal binnen het bereik van een atomische transactie. De volgende bewerkingen kunnen bijvoorbeeld worden uitgevoerd binnen het bereik van een transactie.  
 
-## <a name="namespaces"></a>Naamruimten
+    1. Een bericht uit één wachtrij ophalen.
+    2. Resultaten van verwerking naar een of meer verschillende wachtrijen verzenden.
+    3. Het invoerbericht vanuit de oorspronkelijke wachtrij verplaatsen. 
+    
+    Alleen bij geslaagde resultaten zijn deze zichtbaar voor downstreamconsumenten, inclusief de geslaagde afwikkeling van invoerberichten, waardoor er slechts één verwerking nodig is. Dit transactiemodel is een robuuste basis voor het patroon van [compenserende transacties](https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction.md) in de grotere oplossingscontext. 
+* *Berichtsessies*. Implementeer een grootschalige coördinatie van werkstromen en gemultiplexte overdrachten waarvoor strikte berichtordening of berichtuitstel vereist is.
 
-Een naamruimte is een container voor alle berichtenonderdelen. Er kunnen zich meerdere wachtrijen en onderwerpen in één naamruimte bevinden, en naamruimten fungeren vaak als toepassingscontainers.
+Als u bekend bent met andere berichtenbrokers zoals Apache ActiveMQ, zijn Service Bus-concepten vergelijkbaar met wat u al kent. Omdat Service Bus een PaaS-product (Platform-as-a-Service) is, is een belangrijk verschil dat u zich geen zorgen hoeft te maken over de volgende acties. Azure voert deze taken voor u uit. 
 
-## <a name="queues"></a>Wachtrijen
+- Logboeken plaatsen en schijfruimte beheren
+- Back-ups afhandelen
+- Patches toepassen op de besturingssystemen of de producten
+- Hardwarestoringen afhandelen 
+- Failover naar een reservecomputer uitvoeren
 
+## <a name="compliance-with-standards-and-protocols"></a>Naleving van standaarden en protocollen
+
+Het primaire wire-protocol voor Service Bus is [Advanced Messaging Queueing Protocol (AMQP) 1.0](service-bus-amqp-overview.md), een open ISO/IEC-standaard. Hiermee kunnen klanten toepassingen schrijven die werken met Service Bus en on-premises brokers, zoals ActiveMQ of RabbitMQ. De [AMQP-protocolhandleiding](service-bus-amqp-protocol-guide.md) bevat gedetailleerde informatie voor het geval u een dergelijke abstractie wilt maken.
+
+[Service Bus Premium](service-bus-premium-messaging.md) is volledig compatibel met de API van Java/Jakarta EE [Java Message Service (JMS) 2.0](how-to-use-java-message-service-20.md). En Service Bus Standard biedt ondersteuning voor de JMS 1.1-subset die op wachtrijen gericht is. JMS is een algemene abstractie voor berichtenbrokers en kan worden geïntegreerd met veel toepassingen en frameworks, waaronder het populaire Spring-framework. Als u van een andere broker wilt overschakelen naar Azure Service Bus, hoeft u alleen de topologie van wachtrijen en onderwerpen opnieuw te maken en de afhankelijkheden en configuratie van de clientprovider te wijzigen. Zie de [ActiveMQ-migratiehandleiding](migrate-jms-activemq-to-servicebus.md) voor een voorbeeld.
+
+## <a name="concepts-and-terminology"></a>Concepten en terminologie 
+In deze sectie worden de concepten en terminologie van Service Bus besproken.
+
+### <a name="namespaces"></a>Naamruimten
+Een naamruimte is een container voor alle berichtenonderdelen. Er kunnen zich meerdere wachtrijen en onderwerpen in één naamruimte bevinden, en naamruimten fungeren vaak als toepassingscontainers. 
+
+Een naamruimte kan worden vergeleken met een "server" in de terminologie van andere brokers, maar de concepten zijn niet volledig gelijkwaardig. Een Service Bus-naamruimte is uw eigen capaciteitssegment van een groot cluster dat uit tientallen allemaal actieve virtuele machines bestaat. Deze kan eventueel drie [Azure-beschikbaarheidszones](../availability-zones/az-overview.md) omvatten. Daarom krijgt u alle voordelen van beschikbaarheid en robuustheid van het uitvoeren van de berichtenbroker op een enorme schaal. En u hoeft zich geen zorgen te maken over de onderliggende complexiteiten. Service Bus is "serverloze" berichtafhandeling.
+
+### <a name="queues"></a>Wachtrijen
 Berichten worden verzonden naar en ontvangen van *wachtrijen*. Wachtrijen slaan berichten op totdat de ontvangende toepassing ze kan ontvangen en verwerken.
 
 ![Wachtrij](./media/service-bus-messaging-overview/about-service-bus-queue.png)
 
-Berichten in wachtrijen worden bij ontvangst geordend en voorzien van een tijdstempel. Als een bericht is geaccepteerd, wordt het veilig ondergebracht in redundante opslag. Berichten worden bezorgd in *pull*-modus, waarbij berichten alleen op aanvraag worden geleverd.
+Berichten in wachtrijen worden bij ontvangst geordend en voorzien van een tijdstempel. Als het bericht eenmaal door de broker is geaccepteerd, wordt het altijd opgeslagen in drievoudig-redundante opslag, verspreid over beschikbaarheidszones als de naamruimtezone is ingeschakeld. Service Bus houdt berichten nooit in het geheugen of vluchtige opslag nadat deze aan de client als geaccepteerd zijn gerapporteerd.
 
-## <a name="topics"></a>Onderwerpen
+Berichten worden bezorgd in *pull*-modus, waarbij berichten alleen op aanvraag worden geleverd. In tegenstelling tot het busy-pollingmodel van sommige andere cloudwachtrijen, kan de pull-bewerking lang duren en pas worden voltooid als er een bericht beschikbaar is. 
+
+### <a name="topics"></a>Onderwerpen
 
 U kunt ook *onderwerpen* gebruiken voor het verzenden en ontvangen van berichten. Daar waar een wachtrij vaak wordt gebruikt voor punt-naar-punt communicatie, zijn onderwerpen handig in scenario's met publiceren/abonneren.
 
 ![Onderwerp](./media/service-bus-messaging-overview/about-service-bus-topic.png)
 
-Onderwerpen kunnen meerdere, onafhankelijke abonnementen hebben. Een abonnee van een onderwerp kan een kopie ontvangen van elk bericht dat naar dat onderwerp wordt verzonden. Abonnementen worden entiteiten genoemd. De abonnementen blijven behouden, maar kunnen verlopen of automatisch worden verwijderd.
+Onderwerpen kunnen meerdere, onafhankelijke abonnementen hebben, die aan het onderwerp worden gekoppeld en anders exact als wachtrijen van de ontvangerzijde werken. Een abonnee van een onderwerp kan een kopie ontvangen van elk bericht dat naar dat onderwerp wordt verzonden. Abonnementen worden entiteiten genoemd. Abonnementen duren standaard lang, maar kunnen worden geconfigureerd om te verlopen en vervolgens automatisch te worden verwijderd. Met behulp van de JMS-API biedt Service Bus Premium u ook de mogelijkheid om kortlopende abonnementen te maken die bestaan voor de duur van de verbinding.
 
-Mogelijk wilt u niet dat afzonderlijke abonnementen alle berichten ontvangen die naar een onderwerp worden gestuurd. Als dat het geval is, kunt u *regels* en *filters* gebruiken om voorwaarden te definiëren waarmee optionele *acties* worden geactiveerd. U kunt opgegeven berichten filteren en berichteigenschappen instellen of wijzigen. Zie [Onderwerpfilters en acties](topic-filters.md) voor meer informatie.
+U kunt regels definiëren voor een abonnement. Een abonnementsregel bevat een *filter* om een voorwaarde te definiëren voor het bericht dat moet worden gekopieerd naar het abonnement en een optionele *actie* die metagegevens van berichten kan wijzigen. Zie [Onderwerpfilters en acties](topic-filters.md) voor meer informatie. Deze functie is handig in de volgende scenario's:
+
+- U wilt niet dat een abonnement alle berichten ontvangt die naar een onderwerp worden gestuurd.
+- U wilt berichten met extra metagegevens markeren wanneer deze via een abonnement worden doorgegeven.
 
 ## <a name="advanced-features"></a>Geavanceerde functies
 
@@ -51,68 +85,77 @@ Service Bus beschikt over geavanceerde functies waarmee u complexere problemen m
 
 ### <a name="message-sessions"></a>Berichtsessies
 
-Als u er zeker van wilt zijn dat berichten in Service Bus op basis van FIFO (first in, first out) worden verwerkt, moet u sessies gebruiken. Berichtsessies maken gezamenlijke en geordende verwerking van niet-gekoppelde reeksen gerelateerde berichten mogelijk. Zie [Message sessions: first in, first out (FIFO)](message-sessions.md) (Berichtensessies: first in, first out (FIFO)) voor meer informatie.
+Als u er zeker van wilt zijn dat berichten in Service Bus op basis van FIFO (first in, first out) worden verwerkt, moet u sessies gebruiken. Berichtsessies maken exclusieve, geordende verwerking van niet-gekoppelde reeksen gerelateerde berichten mogelijk. Voor het afhandelen van sessies in grootschalige systemen met hoge beschikbaarheid biedt de sessiefunctie ook de mogelijkheid om de sessiestatus op te slaan, zodat sessies veilig tussen handlers kunnen worden verplaatst. Zie [Message sessions: first in, first out (FIFO)](message-sessions.md) (Berichtensessies: first in, first out (FIFO)) voor meer informatie.
 
 ### <a name="autoforwarding"></a>Automatisch doorsturen
 
-De functie voor automatisch doorsturen koppelt een wachtrij of abonnement aan een andere wachtrij of een ander onderwerp. Ze moeten deel uitmaken van dezelfde naamruimte. Met automatisch doorsturen verwijdert Service Bus berichten uit een wachtrij of abonnement, en verplaatst deze naar een andere wachtrij of een ander onderwerp. Zie [Chaining Service Bus entities with autoforwarding](service-bus-auto-forwarding.md) (Service Bus-entiteiten koppelen met automatisch doorsturen) voor meer informatie.
+De functie voor automatisch doorsturen koppelt een wachtrij of abonnement aan een andere wachtrij of een ander onderwerp binnen dezelfde naamruimte. Wanneer u deze functie gebruikt, verplaatst Service Bus berichten van een wachtrij of abonnement automatisch naar een doelwachtrij of -onderwerp. Alle dergelijke verplaatsingen worden transactioneel uitgevoerd. Zie [Chaining Service Bus entities with autoforwarding](service-bus-auto-forwarding.md) (Service Bus-entiteiten koppelen met automatisch doorsturen) voor meer informatie.
 
 ### <a name="dead-letter-queue"></a>Wachtrij voor onbestelbare berichten
 
-Service Bus ondersteunt een wachtrij voor onbestelbare berichten (DLQ). Een DLQ bevat berichten die niet aan een ontvanger kunnen worden geleverd. De wachtrij bevat berichten die niet kunnen worden verwerkt. Met Service Bus kunt u berichten uit de DLQ verwijderen en deze controleren. Zie [Overview of Service Bus dead-letter queues](service-bus-dead-letter-queues.md) (Overzicht van Service Bus-wachtrijen voor onbestelbare berichten) voor meer informatie.
+Aan alle Service Bus-wachtrijen en -onderwerpabonnementen is een wachtrij met onbestelbare berichten (DLQ) gekoppeld. Een DLQ bevat berichten die voldoen aan de volgende criteria: 
+
+- Ze kunnen niet bij elke ontvanger worden afgeleverd.
+- Er is een time-out opgetreden.
+- Ze worden expliciet door de ontvangende toepassing ter zijde geplaatst. 
+
+Berichten in de wachtrij met onbestelbare meldingen worden vermeld met de reden waarom ze daar zijn geplaatst. De wachtrij voor onbestelbare berichten heeft een speciaal eindpunt, maar is verder zoals een gewone wachtrij. Een toepassing of een hulpprogramma kan door een DLQ bladeren of een bericht eruit verwijderen. U kunt een wachtrij met onbestelbare berichten ook automatisch doorsturen. Zie [Overview of Service Bus dead-letter queues](service-bus-dead-letter-queues.md) (Overzicht van Service Bus-wachtrijen voor onbestelbare berichten) voor meer informatie.
 
 ### <a name="scheduled-delivery"></a>Geplande bezorging
 
-U kunt berichten naar een wachtrij of onderwerp verzenden voor een vertraagde verwerking. U kunt plannen dat een taak op een bepaald moment beschikbaar is voor verwerking in een systeem. Zie [Geplande berichten](message-sequencing.md#scheduled-messages) voor meer informatie.
+U kunt berichten verzenden naar een wachtrij of onderwerp voor vertraagde verwerking, waarbij een tijd wordt ingesteld wanneer het bericht beschikbaar wordt voor gebruik. Geplande berichten kunnen ook worden geannuleerd. Zie [Geplande berichten](message-sequencing.md#scheduled-messages) voor meer informatie.
 
 ### <a name="message-deferral"></a>Berichten uitstellen
 
-Een wachtrij- of abonnementsclient kan het ophalen van een bericht tot een later tijdstip uitstellen. Dit uitstel kan worden veroorzaakt door speciale omstandigheden in de toepassing. Het bericht blijft in de wachtrij of het abonnement staan, maar wordt nog niet verwerkt. Zie [Berichten uitstellen](message-deferral.md) voor meer informatie.
+Een wachtrij- of abonnementsclient kan het ophalen van een ontvangen bericht tot een later tijdstip uitstellen. Het bericht is mogelijk buiten een verwachte volgorde geplaatst en de client wil wachten totdat er een ander bericht wordt ontvangen. Uitgestelde berichten blijven in de wachtrij of het abonnement en moeten expliciet opnieuw worden geactiveerd met behulp van het door de service toegewezen volgnummer. Zie [Berichten uitstellen](message-deferral.md) voor meer informatie.
 
 ### <a name="batching"></a>Batchverwerking
 
-Batchverwerking aan de clientzijde zorgt ervoor dat een wachtrij- of onderwerpclient het verzenden van een bericht voor een bepaalde tijd kan vertragen. Als de client aanvullende berichten verstuurt tijdens deze periode, worden de berichten in één batch verstuurd. Zie [Client-side batching](service-bus-performance-improvements.md#client-side-batching) (Batchverwerking aan de clientzijde) voor meer informatie.
+Met batchverwerking aan clientzijde kan een wachtrij of een onderwerpclient een set berichten verzamelen en deze gezamenlijk overdragen. Vaak wordt dit gedaan om bandbreedte te besparen of de doorvoer te vergroten. Zie [Client-side batching](service-bus-performance-improvements.md#client-side-batching) (Batchverwerking aan de clientzijde) voor meer informatie.
 
 ### <a name="transactions"></a>Transacties
 
-Een transactie groepeert twee of meer bewerkingen in een *uitvoeringsbereik*. Service Bus biedt ondersteuning voor het groeperen van bewerkingen voor één berichtentiteit binnen het bereik van één transactie. Een berichtentiteit kan een wachtrij, onderwerp of abonnement zijn. Zie [Overview of Service Bus transaction processing](service-bus-transactions.md) (Overzicht van transactieverwerking in Service Bus) voor meer informatie.
-
-### <a name="filtering-and-actions"></a>Filteren en acties
-
-Abonnees kunnen definiëren welke berichten ze willen ontvangen van een onderwerp. Deze berichten worden opgegeven in de vorm van een of meer benoemde abonnementsregels. Voor elke regelvoorwaarde waaraan wordt voldaan, produceert het abonnement een kopie van het bericht, dat voor elke overeenkomende regel anders kan worden geannoteerd. Zie [Onderwerpfilters en acties](topic-filters.md) voor meer informatie.
+Een transactie groepeert twee of meer bewerkingen in een *uitvoeringsbereik*. Service Bus biedt u de mogelijkheid bewerkingen te groeperen voor meerdere berichtentiteiten binnen het bereik van één transactie. Een berichtentiteit kan een wachtrij, onderwerp of abonnement zijn. Zie [Overview of Service Bus transaction processing](service-bus-transactions.md) (Overzicht van transactieverwerking in Service Bus) voor meer informatie.
 
 ### <a name="autodelete-on-idle"></a>Automatisch verwijderen bij inactiviteit
 
-Automatisch verwijderen bij inactiviteit houdt in dat u een interval voor inactiviteit kunt opgeven waarna de wachtrij automatisch wordt verwijderd. De minimale duur is vijf minuten. Zie [QueueDescription.AutoDeleteOnIdle Property](/dotnet/api/microsoft.servicebus.messaging.queuedescription.autodeleteonidle) (Eigenschap QueueDescription.AutoDeleteOnIdle) voor meer informatie.
+Automatisch verwijderen bij inactiviteit houdt in dat u een interval voor inactiviteit kunt opgeven waarna de wachtrij of het onderwerpabonnement automatisch wordt verwijderd. De minimale duur is vijf minuten. Zie [QueueDescription.AutoDeleteOnIdle Property](/dotnet/api/microsoft.servicebus.messaging.queuedescription.autodeleteonidle) (Eigenschap QueueDescription.AutoDeleteOnIdle) voor meer informatie.
 
 ### <a name="duplicate-detection"></a>Detectie van duplicaten
-
-Een fout kan ertoe leiden dat de client twijfelt over het resultaat van een verzendbewerking. Met detectie van duplicaten kan de afzender hetzelfde bericht opnieuw verzenden. Ook kan de wachtrij of het onderwerp dubbele kopieën verwijderen. Zie [Detectie van duplicaten](duplicate-detection.md) voor meer informatie.
-
-### <a name="security-protocols"></a>Beveiligingsprotocollen
-<a name="sas-rbac-and-managed-identities-for-azure-resources"></a>
-
-Service Bus ondersteunt beveiligingsprotocollen, zoals [Shared Access Signatures](service-bus-sas.md) (SAS), [Op rollen gebaseerd toegangsbeheer van Azure (Azure RBAC)](authenticate-application.md) en [Beheerde identiteiten voor Azure-resources](service-bus-managed-service-identity.md).
+Met de functie voor detectie van duplicaten kan de afzender hetzelfde bericht opnieuw verzenden en moet de broker een mogelijk duplicaat verwijderen. De functie voor detectie van duplicaten is gebaseerd op het volgen van de `message-id`-eigenschap van een bericht, wat betekent dat de toepassing ervoor moet zorgen dat dezelfde waarde wordt gebruikt wanneer het bericht opnieuw wordt verzonden. Dit kan rechtstreeks worden afgeleid van een toepassingsspecifieke context. Zie [Detectie van duplicaten](duplicate-detection.md) voor meer informatie.
 
 ### <a name="geo-disaster-recovery"></a>Geo-noodherstel
 
-Wanneer er sprake is van uitval in Azure-regio's of -datacenters, zorgt geo-herstel na noodgeval ervoor dat de gegevensverwerking kan plaatsvinden in een andere regio of in een ander datacenter. Zie [Azure Service Bus Geo-disaster recovery](service-bus-geo-dr.md) (Geo-herstel na noodgeval in Azure Service Bus) voor meer informatie.
+Wanneer er sprake is van uitval in een Azure-regio, zorgt de functie voor geo-herstel na een noodgeval ervoor dat de gegevensverwerking kan plaatsvinden in een andere regio of in een ander datacentrum. De functie houdt een structurele mirror bij van een naamruimte die beschikbaar is in de secundaire regio en staat toe dat de naamruimte-id naar de secundaire naamruimte overschakelt. Berichten die al zijn geplaatst, blijven in de voormalige primaire naamruimte voor herstel als de beschikbaarheid is hersteld. Zie [Azure Service Bus Geo-disaster recovery](service-bus-geo-dr.md) (Geo-herstel na noodgeval in Azure Service Bus) voor meer informatie.
 
 ### <a name="security"></a>Beveiliging
 
-Service Bus ondersteunt standaard [AMQP 1.0](service-bus-amqp-overview.md) en [HTTP/REST](/rest/api/servicebus/)-protocollen.
+Service Bus biedt standaard ondersteuning voor [AMQP 1.0](service-bus-amqp-overview.md) en [HTTP- of REST](/rest/api/servicebus/)-protocollen en hun respectieve beveiligingsfaciliteiten, met inbegrip van beveiliging op transportniveau (Transport Level Security, TLS). Clients kunnen worden gemachtigd voor toegang met behulp van [Shared Access Signature](service-bus-sas.md)- of [Azure Active Directory](service-bus-authentication-and-authorization.md)-beveiliging op basis van rollen. 
+
+Service Bus biedt [beveiligingsfuncties](network-security.md) zoals IP-firewall en integratie met virtuele netwerken voor beveiliging tegen ongewenst verkeer. 
 
 ## <a name="client-libraries"></a>Clientbibliotheken
 
-Service Bus ondersteunt clientbibliotheken voor [.NET](https://github.com/Azure/azure-service-bus-dotnet/tree/master), [Java](https://github.com/Azure/azure-service-bus-java/tree/master) en [JMS](https://github.com/Azure/azure-service-bus/tree/master/samples/Java/qpid-jms-client).
+Volledig ondersteunde Service Bus-clientbibliotheken zijn beschikbaar via de Azure SDK.
+
+- [Azure Service Bus voor .NET](/dotnet/api/overview/azure/service-bus?preserve-view=true&view=azure-dotnet)
+- [Azure Service Bus-bibliotheken voor Java](/java/api/overview/azure/servicebus?preserve-view=true&view=azure-java-stable)
+- [Azure Service Bus-provider voor Java JMS 2.0](how-to-use-java-message-service-20.md)
+- [Azure Service Bus-modules voor JavaScript en TypeScript](/javascript/api/overview/azure/service-bus?preserve-view=true&view=azure-node-latest)
+- [Azure Service Bus-bibliotheken voor Python](/python/api/overview/azure/servicebus?preserve-view=true&view=azure-python)
+
+[Het primaire protocol van Azure Service Bus is AMQP 1.0](service-bus-amqp-overview.md) en kan worden gebruikt vanuit elke client die compatibel is met het AMQP 1.0-protocol. Verschillende open source AMQP-clients bevatten voorbeelden die expliciet interoperabiliteit met Service Bus illustreren. Raadpleeg de [Handleiding bij het AMQP 1.0-protocol](service-bus-amqp-protocol-guide.md) voor meer informatie over het rechtstreeks gebruiken van Service Bus-functies met AMQP 1.0-clients.
+
+[!INCLUDE [messaging-oss-amqp-stacks.md](../../includes/messaging-oss-amqp-stacks.md)]
 
 ## <a name="integration"></a>Integratie
 
-Service Bus kan volledig worden geïntegreerd met de volgende Azure-services:
+Service Bus is volledig geïntegreerd met veel Microsoft- en Azure-services, bijvoorbeeld:
 
 * [Event Grid](https://azure.microsoft.com/services/event-grid/)
 * [Logic Apps](https://azure.microsoft.com/services/logic-apps/)
 * [Azure Functions](https://azure.microsoft.com/services/functions/)
+* [Power Platform](https://powerplatform.microsoft.com/)
 * [Dynamics 365](https://dynamics.microsoft.com)
 * [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/)
 

@@ -1,6 +1,6 @@
 ---
-title: Toegang tot opslagaccounts beheren voor serverloze SQL-pools (preview-versie)
-description: Lees hier hoe een serverloze SQL-pool (preview-versie) toegang krijgt tot Azure Storage, en hoe u de toegang tot opslag kunt beheren voor serverloze SQL-pools in Azure Synapse Analytics.
+title: Toegang tot opslagaccounts beheren voor serverloze SQL-pools
+description: Lees hier hoe een serverloze SQL-pool toegang krijgt tot Azure Storage, en hoe u de toegang tot opslag kunt beheren voor serverloze SQL-pools in Azure Synapse Analytics.
 services: synapse-analytics
 author: filippopovic
 ms.service: synapse-analytics
@@ -9,18 +9,18 @@ ms.subservice: sql
 ms.date: 06/11/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 958f371a0018d20331e73d0eabba9354614d121c
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 631aaf3c6a99e093f6ed59089f7ce99803f3f054
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93315726"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96446627"
 ---
-# <a name="control-storage-account-access-for-serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Toegang tot opslagaccounts beheren voor serverloze SQL-pools (preview-versie) in Azure Synapse Analytics
+# <a name="control-storage-account-access-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Toegang tot opslagaccounts beheren voor serverloze SQL-pools in Azure Synapse Analytics
 
 Bij een query van een serverloze SQL-pool worden bestanden rechtstreeks gelezen uit Azure Storage. Machtigingen voor toegang tot de bestanden in Azure Storage worden op twee niveaus bepaald:
-- **Opslagniveau** : de gebruiker moet toegang hebben tot onderliggende opslagbestanden. Uw opslagbeheerder moet de Azure AD-principal toestemming geven om bestanden te lezen/schrijven, of een SAS-sleutel genereren die wordt gebruikt voor toegang tot de opslag.
-- **Niveau van SQL-service** : de gebruiker moet de machtiging `SELECT` hebben om gegevens te lezen uit een [externe tabel](develop-tables-external-tables.md) of de machtiging `ADMINISTER BULK ADMIN` voor het uitvoeren van `OPENROWSET` evenals toestemming om referenties te gebruiken die worden gebruikt voor toegang tot de opslag.
+- **Opslagniveau**: de gebruiker moet toegang hebben tot onderliggende opslagbestanden. Uw opslagbeheerder moet de Azure AD-principal toestemming geven om bestanden te lezen/schrijven, of een SAS-sleutel genereren die wordt gebruikt voor toegang tot de opslag.
+- **Niveau van SQL-service**: de gebruiker moet de machtiging `SELECT` hebben om gegevens te lezen uit een [externe tabel](develop-tables-external-tables.md) of de machtiging `ADMINISTER BULK ADMIN` voor het uitvoeren van `OPENROWSET` evenals toestemming om referenties te gebruiken die worden gebruikt voor toegang tot de opslag.
 
 In dit artikel worden de typen referenties beschreven die u kunt gebruiken en hoe het opzoeken van referenties voor SQL- en Azure AD-gebruikers in zijn werk gaat.
 
@@ -33,7 +33,7 @@ Een gebruiker die zich heeft aangemeld bij een serverloze SQL-pool, moet zijn ge
 
 ### <a name="user-identity"></a>[Gebruikersidentiteit](#tab/user-identity)
 
-**Gebruikersidentiteit** , ook wel 'Azure AD-pass-through' genoemd, is een type autorisatie waarbij de identiteit van de Azure AD-gebruiker die is aangemeld bij een serverloze SQL-pool, wordt gebruikt om toegang tot gegevens te autoriseren. Voordat de gegevens worden vrijgegeven, moet de Azure Storage-beheerder machtigingen verlenen aan de Azure AD-gebruiker. Zoals aangegeven in de tabel hierna, wordt dit niet ondersteund voor het SQL-gebruikerstype.
+**Gebruikersidentiteit**, ook wel 'Azure AD-pass-through' genoemd, is een type autorisatie waarbij de identiteit van de Azure AD-gebruiker die is aangemeld bij een serverloze SQL-pool, wordt gebruikt om toegang tot gegevens te autoriseren. Voordat de gegevens worden vrijgegeven, moet de Azure Storage-beheerder machtigingen verlenen aan de Azure AD-gebruiker. Zoals aangegeven in de tabel hierna, wordt dit niet ondersteund voor het SQL-gebruikerstype.
 
 > [!IMPORTANT]
 > U moet beschikken over de rol van eigenaar/inzender/lezer van Storage-blobgegevens om via uw identiteit toegang te krijgen tot de gegevens.
@@ -144,7 +144,7 @@ SQL-gebruikers kunnen niet gebruikmaken van Azure AD-verificatie voor toegang to
 
 Met het volgende script maakt u een referentie op serverniveau die kan worden gebruikt door de functie `OPENROWSET` om met behulp van een SAS-token toegang te krijgen tot ieder bestand in Azure-opslag. Maak deze referentie om de SQL-principal in te schakelen die de functie `OPENROWSET` uitvoert om bestanden te lezen die zijn beveiligd met een SAS-sleutel in de Azure-opslag die overeenkomt met de URL in de referentienaam.
 
-U moet < *mystorageaccountname* > vervangen door de werkelijke naam van uw opslagaccount en < *mystorageaccountcontainername* > door de naam van de container:
+U moet <*mystorageaccountname*> vervangen door de werkelijke naam van uw opslagaccount en <*mystorageaccountcontainername*> door de naam van de container:
 
 ```sql
 CREATE CREDENTIAL [https://<storage_account>.dfs.core.windows.net/<container>]

@@ -10,12 +10,12 @@ services: iot-central
 ms.custom:
 - mvc
 - device-developer
-ms.openlocfilehash: 82818c8db326889079948cd2b32b2ed0be6ab50d
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: e33f48c9496ffa3cca9d8b1aa71d524be9a311bb
+ms.sourcegitcommit: b8a175b6391cddd5a2c92575c311cc3e8c820018
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94990751"
+ms.lasthandoff: 11/25/2020
+ms.locfileid: "96122258"
 ---
 # <a name="iot-central-device-development-overview"></a>Overzicht van het ontwikkelen van IoT Central-apparaten
 
@@ -135,7 +135,7 @@ Gebruik een van de [SDK's voor Azure IoT-apparaten](#languages-and-sdks) om het 
 
 Zie [Wat zijn apparaatsjablonen?](./concepts-device-templates.md) voor meer informatie over de rol van apparaatsjablonen.
 
-Zie [Een Node.js-clienttoepassing maken en verbinden](./tutorial-connect-device-nodejs.md) of [Een Python-clienttoepassing maken en verbinden](./tutorial-connect-device-python.md) voor een voorbeeld van code.
+Zie [Een clienttoepassing maken en er verbinding mee maken](./tutorial-connect-device.md)voor voorbeeldcode.
 
 ### <a name="languages-and-sdks"></a>Talen en SDK's
 
@@ -143,6 +143,6 @@ Zie [Understand and use Azure IoT Hub device SDKs](../../iot-hub/iot-hub-devguid
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u apparaatontwikkelaar bent en u meer wilt weten over coderen, kunt u het beste de stap [Create and connect a client application to your Azure IoT Central application](./tutorial-connect-device-nodejs.md) (Een clienttoepassing maken en verbinden met uw Azure IoT Central-toepassing) volgen.
+Als u apparaatontwikkelaar bent en u meer wilt weten over coderen, kunt u het beste de stap [Create and connect a client application to your Azure IoT Central application](./tutorial-connect-device.md) (Een clienttoepassing maken en verbinden met uw Azure IoT Central-toepassing) volgen.
 
 Als u meer wilt weten over het gebruik van IoT Central, kunt u de volgende stappen uitvoeren om de quickstarts te proberen, te beginnen met [Een Azure IoT Central-toepassing maken](./quick-deploy-iot-central.md).

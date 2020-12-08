@@ -14,12 +14,12 @@ ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev
 ROBOTS: NOINDEX
-ms.openlocfilehash: 484a44a7a9840409e3f5770c743e5cd62e0cef66
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 824ae8d39d934ebc58fc75185e36f5faa11109a9
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92910301"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325363"
 ---
 # <a name="azure-active-directory-code-samples-v10-endpoint"></a>Codevoorbeelden voor Azure Active Directory (v1.0-eindpunt)
 
@@ -65,7 +65,7 @@ De volgende voorbeelden laten zien hoe u op rollen gebaseerd toegangsbeheer (RBA
 
 Platform | Voorbeeld |
  -------- | ------------------- |
-![In deze afbeelding ziet u het ASP.NET Framework-logo](media/sample-v2-code/logo-netframework.png)</p> ASP.NET 4.5 | [dotnet-webapp-groupclaims](https://github.com/Azure-Samples/active-directory-dotnet-webapp-groupclaims) </p>  [dotnet-webapp-roleclaims](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims) | Een .NET 4.5 MVC-web-app die gebruikmaakt van Azure AD- **rollen** voor autorisatie
+![In deze afbeelding ziet u het ASP.NET Framework-logo](media/sample-v2-code/logo-netframework.png)</p> ASP.NET 4.5 | [dotnet-webapp-groupclaims](https://github.com/Azure-Samples/active-directory-dotnet-webapp-groupclaims) </p>  [dotnet-webapp-roleclaims](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims) | Een .NET 4.5 MVC-web-app die gebruikmaakt van Azure AD-**rollen** voor autorisatie
 
 ## <a name="desktop-and-mobile-public-client-applications-calling-microsoft-graph-or-a-web-api"></a>Openbare bureaublad- en mobiele clienttoepassingen die Microsoft Graph of een web-API aanroepen
 
@@ -102,7 +102,7 @@ ASP.NET-web-app  | ![In deze afbeelding ziet u het .NET Framework-logo](media/sa
 
 In het volgende voorbeeld ziet u hoe u een Node.js-web-API beveiligt met Azure AD.
 
-In de vorige secties van dit artikel vindt u ook andere voorbeelden van een clienttoepassing die een ASP.NET- of ASP.NET Core- **web-API** **aanroept**. Deze voorbeelden worden niet opnieuw vermeld in deze sectie, maar u vindt ze in de laatste kolom van de boven- of onderstaande tabellen
+In de vorige secties van dit artikel vindt u ook andere voorbeelden van een clienttoepassing die een ASP.NET- of ASP.NET Core-**web-API** **aanroept**. Deze voorbeelden worden niet opnieuw vermeld in deze sectie, maar u vindt ze in de laatste kolom van de boven- of onderstaande tabellen
 
 | Platform | Voorbeeld |
 |--------|-------------------|

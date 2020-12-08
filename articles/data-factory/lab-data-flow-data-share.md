@@ -1,18 +1,18 @@
 ---
 title: Gegevensintegratie met behulp van Azure Data Factory en Azure Data Share
 description: Gegevens kopiëren, transformeren en delen met behulp van Azure Data Factory en Azure Data Share
-author: djpmsft
-ms.author: daperlov
+author: dcstwh
+ms.author: weetok
 ms.service: data-factory
 ms.topic: tutorial
 ms.custom: seo-lt-2019
 ms.date: 01/08/2020
-ms.openlocfilehash: 11f4e7c50acc8256722949a50760c574d3b9d9e9
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 0a578f1edb51efd5f0905e663d42bf5a6fbfc783
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93318237"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96489034"
 ---
 # <a name="data-integration-using-azure-data-factory-and-azure-data-share"></a>Gegevensintegratie met behulp van Azure Data Factory en Azure Data Share
 
@@ -22,23 +22,23 @@ Als klanten hun moderne datawarehouse- en analyseprojecten starten, hebben ze ni
 
 Van het inschakelen van codevrije ETL/ELT tot het maken van een uitgebreide weergave van uw gegevens, met verbeteringen in Azure Data Factory krijgen uw gegevensengineers de mogelijkheid om meer gegevens, en dus meer waarde, aan uw onderneming toe te voegen. Met Azure Data Share kunt u op een beheerste manier gegevens tussen bedrijven delen.
 
-In deze workshop gebruikt u Azure Data Factory (ADF) om gegevens van Azure SQL Database op te nemen in Azure Data Lake Storage Gen2 (ADLS Gen2). Zodra u de gegevens in het lake hebt opgenomen, kunt u deze transformeren via toewijzingsgegevensstroom, de systeemeigen transformatieservice van Data factory, en deze opvangen in Azure Synapse Analytics (voorheen SQL DW). Vervolgens deelt u de tabel met getransformeerde gegevens, samen met enkele aanvullende gegevens met behulp van de Azure Data Share. 
+In deze workshop gebruikt u Azure Data Factory (ADF) om gegevens van Azure SQL Database op te nemen in Azure Data Lake Storage Gen2 (ADLS Gen2). Zodra u de gegevens in het lake hebt opgenomen, kunt u deze transformeren via toewijzingsgegevensstroom, de systeemeigen transformatieservice van Data Dactory, en deze opvangen in Azure Synapse Analytics. Vervolgens deelt u de tabel met getransformeerde gegevens, samen met enkele aanvullende gegevens met behulp van de Azure Data Share. 
 
 De gegevens die in dit lab worden gebruikt, zijn gegevens van New York City-taxi. Als u deze wilt importeren in uw database in SQL Database, moet u het [taxi-data bacpac-bestand](https://github.com/djpmsft/ADF_Labs/blob/master/sample-data/taxi-data.bacpac) downloaden.
 
 ## <a name="prerequisites"></a>Vereisten
 
-* **Azure-abonnement** : Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
+* **Azure-abonnement**: Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
 
-* **Azure SQL Database** : Als u geen SQL DB hebt, leert u hoe u [een SQL DB-account maakt](../azure-sql/database/single-database-create-quickstart.md?tabs=azure-portal)
+* **Azure SQL Database**: Als u geen SQL DB hebt, leert u hoe u [een SQL DB-account maakt](../azure-sql/database/single-database-create-quickstart.md?tabs=azure-portal)
 
-* **Azure Data Lake Storage Gen2-opslagaccount** : Als u geen ADLS Gen2-opslagaccount hebt, leert u hoe u [een ADLS Gen2-opslagaccount kunt maken](../storage/common/storage-account-create.md).
+* **Azure Data Lake Storage Gen2-opslagaccount**: Als u geen ADLS Gen2-opslagaccount hebt, leert u hoe u [een ADLS Gen2-opslagaccount kunt maken](../storage/common/storage-account-create.md).
 
 * **Azure Synapse Analytics (voorheen SQL DW)** : Als u geen Azure Synapse Analytics (voorheen SQL DW) hebt, leert u hoe u [een Azure Synapse Analytics-instantie kunt maken](../synapse-analytics/sql-data-warehouse/create-data-warehouse-portal.md).
 
-* **Azure Data Factory** : Als u nog geen data factory hebt gemaakt, ziet u hoe u [een data factory kunt maken](./quickstart-create-data-factory-portal.md).
+* **Azure Data Factory**: Als u nog geen data factory hebt gemaakt, ziet u hoe u [een data factory kunt maken](./quickstart-create-data-factory-portal.md).
 
-* **Azure Data Share** : Als u nog geen gegevensshare hebt gemaakt, ziet u hoe u [een gegevensshare kunt maken](../data-share/share-your-data.md#create-a-data-share-account).
+* **Azure Data Share**: Als u nog geen gegevensshare hebt gemaakt, ziet u hoe u [een gegevensshare kunt maken](../data-share/share-your-data.md#create-a-data-share-account).
 
 ## <a name="set-up-your-azure-data-factory-environment"></a>Uw Azure Data Factory-omgeving instellen
 
@@ -308,7 +308,7 @@ U hebt nu het gedeelte data factory van dit lab voltooid. Publiceer uw resources
 
 ## <a name="share-data-using-azure-data-share"></a>Gegevens delen met Azure Data Share
 
-In dit gedeelte leert u hoe u een nieuwe gegevensshare instelt met behulp van de Azure-portal. Hiervoor moet u een nieuwe gegevensshare maken die gegevenssets bevat van Azure Data Lake Store Gen2 en Azure Synapse Analytics (voorheen Azure SQL Data Warehouse). Vervolgens configureert u een schema voor momentopnamen, zodat de gegevensgebruikers een optie hebben om de gegevens die met hen worden gedeeld automatisch te vernieuwen. Vervolgens nodigt u ontvangers uit voor uw gegevensshare. 
+In dit gedeelte leert u hoe u een nieuwe gegevensshare instelt met behulp van de Azure-portal. Hiervoor moet u een nieuwe gegevensshare maken die gegevenssets bevat van Azure Data Lake Store Gen2 en Azure Synapse Analytics. Vervolgens configureert u een schema voor momentopnamen, zodat de gegevensgebruikers een optie hebben om de gegevens die met hen worden gedeeld automatisch te vernieuwen. Vervolgens nodigt u ontvangers uit voor uw gegevensshare. 
 
 Zodra u een gegevensshare hebt gemaakt, schakelt u over van rol en wordt u de *gegevensgebruiker*. Als gegevensgebruiker loopt u door de stroom van het accepteren van een gegevensshare-uitnodiging, het configureren van de locatie waar de gegevens moeten worden ontvangen en het toewijzen van gegevenssets aan verschillende opslaglocaties. Vervolgens wordt een momentopname geactiveerd, waarmee de met u gedeelde gegevens worden gekopieerd naar de opgegeven bestemming. 
 

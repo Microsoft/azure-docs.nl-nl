@@ -5,14 +5,14 @@ author: christopheranderson
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.topic: overview
-ms.date: 07/10/2020
+ms.date: 11/25/2020
 ms.author: chrande
-ms.openlocfilehash: d0bd94037a75db8d69cfd44820a80ae8b403c9ea
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: c2165ea6273ad90cfb95242dfe72538c0a5ef64c
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93357076"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350055"
 ---
 # <a name="introduction-to-gremlin-api-in-azure-cosmos-db"></a>Inleiding tot de Gremlin-API in Azure Cosmos DB
 [!INCLUDE[appliesto-gremlin-api](includes/appliesto-gremlin-api.md)]
@@ -24,6 +24,9 @@ ms.locfileid: "93357076"
 Dit artikel biedt een overzicht van de Azure Cosmos DB Gremlin API en legt uit hoe u ze kunt gebruiken om zeer grote grafieken met miljarden hoekpunten en randen op te slaan. U kunt query's uitvoeren voor de grafieken met een latentie van milliseconden en eenvoudig de grafiekstructuur ontwikkelen. De Gremlin-API van Azure Cosmos DB is ontworpen op basis van de [Apache TinkerPop](https://tinkerpop.apache.org), een rekenframework voor grafieken. De Gremlin-API in Azure Cosmos DB maakt gebruik van de Gremlin-querytaal.
 
 De Gremlin-API van Azure Cosmos DB combineert de kracht van graafdatabase-algoritmen met een uiterst schaalbare, beheerde infrastructuur om een unieke, flexibele oplossing te bieden voor de meeste algemene gegevensproblemen die het gevolg zijn van gebrek aan flexibiliteit en relationele methoden.
+
+> [!NOTE]
+> De [modus met serverloze capaciteit](serverless.md) is nu beschikbaar in de Gremlin-API van Azure Cosmos DB.
 
 ## <a name="features-of-azure-cosmos-dbs-gremlin-api"></a>Functies van de Gremlin-API van Azure Cosmos DB
  
@@ -53,7 +56,7 @@ De volgende functies zijn de gedifferentieerde functies die beschikbaar zijn met
 
 * **Automatisch indexeren**
 
-  In Azure Cosmos DB worden standaard alle eigenschappen in de knooppunten (ook hoekpunten genoemd) en randen van de grafiek geïndexeerd. Er wordt geen schema verwacht of vereist en er hoeven geen secundaire indexen te worden gemaakt. Meer informatie over [indexeren in Azure Cosmos DB](/azure/cosmos-db/index-overview).
+  In Azure Cosmos DB worden standaard alle eigenschappen in de knooppunten (ook hoekpunten genoemd) en randen van de grafiek geïndexeerd. Er wordt geen schema verwacht of vereist en er hoeven geen secundaire indexen te worden gemaakt. Meer informatie over [indexeren in Azure Cosmos DB](./index-overview.md).
 
 * **Compatibiliteit met Apache TinkerPop**
 
@@ -93,13 +96,13 @@ De graafdatabasemethode is in plaats daarvan gebaseerd op permanente relaties in
 
 Een [eigenschappengrafiek](http://mathworld.wolfram.com/Graph.html) is een structuur die is samengesteld uit [hoekpunten](http://mathworld.wolfram.com/GraphVertex.html) en [randen](http://mathworld.wolfram.com/GraphEdge.html). Voor beide objecten kan een willekeurig aantal sleutel-waardeparen als eigenschappen worden gebruikt. 
 
-* **Hoekpunten/knooppunten** : hoekpunten duiden afzonderlijke entiteiten aan, zoals een persoon, plaats of gebeurtenis.
+* **Hoekpunten/knooppunten**: hoekpunten duiden afzonderlijke entiteiten aan, zoals een persoon, plaats of gebeurtenis.
 
-* **Kanten/relaties** : Kanten duiden relaties tussen hoekpunten aan. Bijvoorbeeld, een persoon kent mogelijk een andere persoon, is betrokken bij een gebeurtenis, en is onlangs op een bepaalde locatie geweest.
+* **Kanten/relaties**: Kanten duiden relaties tussen hoekpunten aan. Bijvoorbeeld, een persoon kent mogelijk een andere persoon, is betrokken bij een gebeurtenis, en is onlangs op een bepaalde locatie geweest.
 
-* **Eigenschappen** : Eigenschappen geven informatie over de hoekpunten en kanten. Er kan een willekeurig aantal eigenschappen worden gebruikt in hoekpunten of randen en ze kunnen worden gebruikt voor het beschrijven en filteren van de objecten in een query. Voorbeeldeigenschappen omvatten een hoekpunt met een naam en een leeftijd, of een rand, die een tijdstempel en/of gewicht kan hebben.
+* **Eigenschappen**: Eigenschappen geven informatie over de hoekpunten en kanten. Er kan een willekeurig aantal eigenschappen worden gebruikt in hoekpunten of randen en ze kunnen worden gebruikt voor het beschrijven en filteren van de objecten in een query. Voorbeeldeigenschappen omvatten een hoekpunt met een naam en een leeftijd, of een rand, die een tijdstempel en/of gewicht kan hebben.
 
-* **Label** : een label is een naam of de id van een hoekpunt of een rand. Labels kunnen meerdere hoekpunten of randen samenbrengen, zodat alle hoekpunten/randen in een groep een bepaald label hebben. Een grafiek kan bijvoorbeeld meerdere hoekpunten met het label 'persoon' hebben.
+* **Label**: een label is een naam of de id van een hoekpunt of een rand. Labels kunnen meerdere hoekpunten of randen samenbrengen, zodat alle hoekpunten/randen in een groep een bepaald label hebben. Een grafiek kan bijvoorbeeld meerdere hoekpunten met het label 'persoon' hebben.
 
 Graafdatabases worden vaak opgenomen in de NoSQL- of niet-relationele databasecategorie, omdat deze niet afhankelijk zijn van een schema of beperkt gegevensmodel. Door dit ontbreken van een schema kunnen verbonden structuren natuurlijk en efficiënt worden gemodelleerd en opgeslagen.
 
@@ -111,19 +114,19 @@ Laten we een voorbeeldgrafiek gebruiken om te zien hoe query’s kunnen worden u
 
 Deze grafiek heeft de volgende types van *hoekpunten* (in Gremlin ook wel 'labels' genoemd):
 
-* **Personen** : In de grafiek komen drie personen voor: Robin, Thomas en Ben
-* **Interesses** : In dit voorbeeld is hun interesse voetbal
-* **Apparaten** : De apparaten die de personen gebruiken
-* **Besturingssystemen** : De besturingssystemen op de apparaten
-* **Plaats** : De locaties van waaruit de apparaten worden geopend
+* **Personen**: In de grafiek komen drie personen voor: Robin, Thomas en Ben
+* **Interesses**: In dit voorbeeld is hun interesse voetbal
+* **Apparaten**: De apparaten die de personen gebruiken
+* **Besturingssystemen**: De besturingssystemen op de apparaten
+* **Plaats**: De locaties van waaruit de apparaten worden geopend
 
-We laten de relaties tussen deze entiteiten zien via de volgende *rand* -types:
+We laten de relaties tussen deze entiteiten zien via de volgende *rand*-types:
 
-* **Kent** : Bijvoorbeeld 'Thomas kent Robin'
-* **Is geïnteresseerd in** : Geeft de interesses weer van de personen in de grafiek, bijvoorbeeld 'Ben is geïnteresseerd in voetbal'
-* **RunsOS** : Op de laptop wordt het Windows-besturingssysteem uitgevoerd
-* **Gebruikt** : Geeft aan welk apparaat een persoon gebruikt. Robin gebruikt bijvoorbeeld een Motorola-telefoon met serienummer 77
-* **In** : Om de locatie van waaruit de apparaten worden geopend weer te geven
+* **Kent**: Bijvoorbeeld 'Thomas kent Robin'
+* **Is geïnteresseerd in**: Geeft de interesses weer van de personen in de grafiek, bijvoorbeeld 'Ben is geïnteresseerd in voetbal'
+* **RunsOS**: Op de laptop wordt het Windows-besturingssysteem uitgevoerd
+* **Gebruikt**: Geeft aan welk apparaat een persoon gebruikt. Robin gebruikt bijvoorbeeld een Motorola-telefoon met serienummer 77
+* **In**: Om de locatie van waaruit de apparaten worden geopend weer te geven
 
 De Gremlin-console is een interactieve terminal die wordt aangeboden door de Apache TinkerPop. Via deze terminal kunt u werken met de grafiekgegevens. Meer informatie vindt u in het quickstartdocument over [hoe u de Gremlin-console kunt gebruiken](create-graph-gremlin-console.md). U kunt deze bewerkingen ook uitvoeren met behulp van Gremlin-stuurprogramma’s op een platform naar keuze (Java, Node.js, Python of NET). In de volgende voorbeelden ziet u hoe u query's kunt uitvoeren op deze grafiekgegevens met behulp van de Gremlin-console.
 

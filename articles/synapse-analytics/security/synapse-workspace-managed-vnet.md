@@ -8,14 +8,14 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 00920f30061832bd1d685f04113a63781df718b4
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: b605c2c9f3c7468d0fe1f2cccd8c3602c556714b
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93313692"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96501070"
 ---
-# <a name="azure-synapse-analytics-managed-virtual-network-preview"></a>Beheerd virtueel netwerk in Azure Synapse Analytics (preview)
+# <a name="azure-synapse-analytics-managed-virtual-network"></a>Beheerd virtueel netwerk in Azure Synapse Analytics
 
 In dit artikel wordt het beheerde virtuele netwerk in Azure Synapse Analytics toegelicht.
 
@@ -52,8 +52,6 @@ Als u het selectievakje uitgeschakeld laat, wordt er geen virtueel netwerk gekop
 
 ![Een beheerd, aan werkruimte gekoppeld virtueel netwerk inschakelen](./media/synapse-workspace-managed-vnet/enable-managed-vnet-1.png)
 
->[!NOTE]
->Al het uitgaande verkeer van het beheerde, aan uw werkruimte gekoppelde virtuele netwerk, met uitzondering van verkeer van beheerde privé-eindpunten, wordt in de toekomst geblokkeerd. Het wordt aanbevolen dat u beheerde privé-eindpunten maakt om verbinding te maken met al uw Azure-gegevensbronnen die zich buiten de werkruimte bevinden. 
 
 U kunt controleren of uw Azure Synapse-werkruimte is gekoppeld aan een beheerd virtueel netwerk door in Azure Portal **Overzicht** te selecteren.
 

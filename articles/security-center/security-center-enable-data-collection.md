@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: quickstart
 ms.date: 11/15/2020
 ms.author: memildin
-ms.openlocfilehash: 7d96b03598f90b45b7ecf88027be7408d8f161ea
-ms.sourcegitcommit: 18046170f21fa1e569a3be75267e791ca9eb67d0
+ms.openlocfilehash: f5cf432e3824ca0bb441a458a08fc7353291cf1f
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/16/2020
-ms.locfileid: "94638764"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96490054"
 ---
 # <a name="auto-provisioning-agents-and-extensions-from-azure-security-center"></a>Automatische inrichting van agents en extensies van Azure Security Center
 
@@ -138,7 +138,7 @@ Azure Defender is vereist voor het opslaan van gegevens van Windows-beveiligings
 Voor het opslaan van gegevens in Log Analytics worden mogelijk extra kosten voor gegevensopslag in rekening gebracht. Zie de pagina [prijzen](https://azure.microsoft.com/pricing/details/security-center/) voor meer informatie.
 
 ### <a name="information-for-azure-sentinel-users"></a>Informatie voor Azure Sentinel-gebruikers 
-Gebruikers van Azure Sentinel: houd er rekening mee dat de verzameling van beveiligingsgebeurtenissen binnen de context van één werkruimte kan worden geconfigureerd vanuit Azure Security Center of Azure Sentinel, maar niet beide. Als u van plan bent om Azure Sentinel toe te voegen aan een werkruimte die al Azure Defender-waarschuwingen van Azure Security Center ontvangt en is ingesteld op het verzamelen van beveiligingsgebeurtenissen, hebt u twee opties:
+Gebruikers van Azure Sentinel: houd er rekening mee dat de verzameling van beveiligingsgebeurtenissen binnen de context van één werkruimte kan worden geconfigureerd vanuit Azure Security Center of Azure Sentinel, maar niet beide. Als u van plan bent om Azure Sentinel toe te voegen aan een werkruimte die al waarschuwingen van Azure Security Center ontvangt en is ingesteld op het verzamelen van beveiligingsgebeurtenissen, hebt u twee opties:
 - Laat de verzameling van beveiligingsgebeurtenissen in Azure Security Center ongewijzigd. U kunt deze gebeurtenissen in Azure Sentinel en in Azure Defender doorzoeken en analyseren. U kunt echter niet de verbindingsstatus van de connector controleren of de configuratie ervan wijzigen in Azure Sentinel. Als dit belangrijk voor u is, kunt u de tweede optie overwegen.
 - Schakel het verzamelen van beveiligingsgebeurtenissen in Azure Security Center uit (door **Windows-beveiligingsgebeurtenissen** in te stellen op **Geen** in de configuratie van uw Log Analytics-agent). Voeg vervolgens de connector voor beveiligingsgebeurtenissen toe aan Azure Sentinel. Net zoals bij de eerste optie, kunt u gebeurtenissen in Azure Sentinel en Azure Defender/ASC opvragen en analyseren, maar u kunt nu de verbindingsstatus van de connector bewaken of de configuratie ervan wijzigen in (en alleen in) Azure Sentinel.
 
@@ -211,8 +211,8 @@ De Log Analytics-agent handmatig installeren:
 
 1. Als u PowerShell wilt gebruiken om de agents te implementeren, gebruikt u de instructies in de documentatie voor virtuele machines:
 
-    - [Voor Windows-machines](../virtual-machines/extensions/oms-windows.md?toc=%252fazure%252fazure-monitor%252ftoc.json#powershell-deployment)
-    - [Voor Linux-machines](../virtual-machines/extensions/oms-linux.md?toc=%252fazure%252fazure-monitor%252ftoc.json#azure-cli-deployment)
+    - [Voor Windows-machines](../virtual-machines/extensions/oms-windows.md?toc=%2fazure%2fazure-monitor%2ftoc.json#powershell-deployment)
+    - [Voor Linux-machines](../virtual-machines/extensions/oms-linux.md?toc=%2fazure%2fazure-monitor%2ftoc.json#azure-cli-deployment)
 
 > [!TIP]
 > Voor instructies over het onboarden van Security Center met behulp van PowerShell raadpleegt u [Het onboarden van Azure Security Center automatiseren met PowerShell](security-center-powershell-onboarding.md).

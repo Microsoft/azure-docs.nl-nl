@@ -1,6 +1,6 @@
 ---
-title: Aangepaste beheerdersrollen in Azure Active Directory | Microsoft Docs
-description: Ontdek hoe u aangepaste Azure AD-rollen in Azure Active Directory (Azure AD) gebruikt met op rollen gebaseerd toegangsbeheer en resourcebereiken.
+title: Overzicht van op rollen gebaseerd toegangsbeheer in Azure Active Directory (RBAC)
+description: Uitleg van de onderdelen van een roltoewijzing en van een beperkt bereik in Azure Active Directory.
 services: active-directory
 author: curtand
 manager: daveba
@@ -8,25 +8,26 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: roles
 ms.topic: overview
-ms.date: 11/05/2020
+ms.date: 11/20/2020
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0785d8070a60ae7594ea0b182a0238bf6b4b6a58
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 4f694a46fddbc84968b3267842aa19108d051590
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95899459"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96499234"
 ---
-# <a name="custom-administrator-roles-in-azure-active-directory-preview"></a>Aangepaste beheerdersrollen in Azure Active Directory (preview)
+# <a name="overview-of-role-based-access-control-in-azure-active-directory"></a>Overzicht van op rollen gebaseerd toegangsbeheer in Azure Active Directory
 
-In dit artikel wordt uitleg gegeven over aangepaste Azure AD-rollen in Azure AD (Active Directory) met op rollen gebaseerd toegangsbeheer en resourcebereiken. Aangepaste Azure AD-rollen brengen de onderliggende machtigingen van de [ingebouwde rollen](permissions-reference.md) naar boven, zodat u uw eigen aangepaste rollen kunt maken en organiseren. Met deze benadering kunt u op een meer verfijnde manier toegang verlenen dan via ingebouwde rollen, wanneer dit nodig is. Deze eerste release van aangepaste Azure AD-rollen omvat de mogelijkheid om een rol te maken om machtigingen toe te wijzen voor het beheer van app-registraties. In de loop van de tijd worden extra machtigingen voor organisatieresources toegevoegd, zoals bedrijfstoepassingen, gebruikers en apparaten.  
+In dit artikel wordt uitleg gegeven over Azure AD-rollen (Azure Active Directory) met op rollen gebaseerd toegangsbeheer. Met Azure AD-rollen kunt u gedetailleerde machtigingen verlenen aan uw beheerders, overeenkomstig het principe van minimale bevoegdheden. De werking van ingebouwde Azure AD-rollen en aangepaste rollen is vergelijkbaar met die in [het op rollen gebaseerd toegangsbeheer voor Azure resources](../../role-based-access-control/overview.md) (Azure-rollen). Het [verschil tussen deze twee op rollen gebaseerde systemen voor toegangsbeheer](../../role-based-access-control/rbac-and-directory-admin-roles.md) is als volgt:
 
-Daarnaast bieden aangepaste Azure AD-rollen ook toewijzingen per resource, naast de meer traditionele toewijzingen in de hele organisatie. Deze benadering biedt u de mogelijkheid om toegang te verlenen voor het beheren van bepaalde resources (bijvoorbeeld één app-registratie), zonder dat u toegang verleent tot alle resources (alle app-registraties).
+- Met Azure AD-rollen wordt de toegang tot Azure AD-resources beheerd, zoals gebruikers, groepen en toepassingen, met behulp van Graph API
+- Met Azure-rollen wordt de toegang tot Azure-resources beheerd, zoals virtuele machines of opslag, met behulp van Azure Resource Management
 
-Op rollen gebaseerd toegangsbeheer van Azure AD is een openbare preview-functie van Azure AD en is beschikbaar met elk betaald Azure AD-licentieplan. Zie [Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+Beide systemen maken op een soortgelijke manier gebruik van roldefinities en roltoewijzingen. Machtigingen voor Azure AD-rollen kunnen echter niet worden gebruikt in aangepaste Azure-rollen en omgekeerd.
 
 ## <a name="understand-azure-ad-role-based-access-control"></a>Uitleg over op rollen gebaseerd toegangsbeheer van Azure AD
 
@@ -41,22 +42,18 @@ De werking van ingebouwde Azure AD-rollen en aangepaste rollen is vergelijkbaar 
 Hier volgen de stappen op hoog niveau die in Azure AD worden gebruikt om te bepalen of u toegang hebt tot een beheerresource. Gebruik deze informatie om problemen met toegang op te lossen.
 
 1. Een gebruiker (of service-principal) verkrijgt een token voor het Microsoft Graph- of Azure AD Graph-eindpunt.
-
 1. De gebruiker doet een API-aanroep naar Azure AD (Active Directory) via Microsoft Graph of Azure AD Graph met behulp van het uitgegeven token.
-
 1. Afhankelijk van de omstandigheden wordt in Azure AD een van de volgende acties uitgevoerd:
-
-    - Evalueren van de rollidmaatschappen van de gebruiker op basis van de [wids-claim](../../active-directory-b2c/access-tokens.md) in het toegangstoken van de gebruiker.
-    - Ophalen van alle roltoewijzingen die van toepassing zijn op de gebruiker, hetzij rechtstreeks of via groepslidmaatschap, voor de resource waarvoor de actie wordt uitgevoerd.
-
+   - Evalueren van de rollidmaatschappen van de gebruiker op basis van de [wids-claim](../../active-directory-b2c/access-tokens.md) in het toegangstoken van de gebruiker.
+   - Ophalen van alle roltoewijzingen die van toepassing zijn op de gebruiker, hetzij rechtstreeks of via groepslidmaatschap, voor de resource waarvoor de actie wordt uitgevoerd.
 1. Azure AD bepaalt of de actie in de API-aanroep is opgenomen in de rollen die de gebruiker heeft voor deze resource.
 1. Als de gebruiker geen rol met de actie heeft in het aangevraagde bereik, wordt er geen toegang verleend. Anders wordt toegang verleend.
 
-### <a name="role-assignments"></a>Roltoewijzingen
+## <a name="role-assignment"></a>Roltoewijzing
 
-Een roltoewijzing is het object op basis waarvan een roldefinitie is gekoppeld aan een gebruiker voor een bepaald bereik, om toegang tot een Azure AD-resource te verlenen. Toegang wordt verleend door een roltoewijzing te maken en toegang kan worden ingetrokken door een roltoewijzing te verwijderen. De kern van een roltoewijzing bestaat uit drie elementen:
+Een roltoewijzing is een Azure AD-resource op basis waarvan een *roldefinitie* is gekoppeld aan een *gebruiker* voor een bepaald *bereik*, om toegang tot een Azure AD-resource te verlenen. Toegang wordt verleend door een roltoewijzing te maken en toegang kan worden ingetrokken door een roltoewijzing te verwijderen. De kern van een roltoewijzing bestaat uit drie elementen:
 
-- Gebruiker (een persoon met een gebruikersprofiel in Azure Active Directory)
+- Azure AD-gebruiker
 - Roldefinitie
 - Resourcebereik
 
@@ -68,7 +65,7 @@ Het volgende diagram toont een voorbeeld van een roltoewijzing. In dit voorbeeld
 
 ### <a name="security-principal"></a>Beveiligings-principal
 
-Een beveiligingsprincipal vertegenwoordigt de gebruiker die toegang moet krijgen tot Azure AD-resources. Een *gebruiker* is een persoon met een gebruikersprofiel in Azure Active Directory.
+Een beveiligingsprincipal vertegenwoordigt de gebruiker die toegang moet krijgen tot Azure AD-resources. Een gebruiker is een persoon met een gebruikersprofiel in Azure Active Directory.
 
 ### <a name="role"></a>Rol
 
@@ -81,15 +78,12 @@ Een roldefinitie, of rol, is een verzameling machtigingen. Een roldefinitie besc
 
 Een bereik is de beperking van toegestane acties voor een bepaalde Azure AD-resource als onderdeel van een roltoewijzing. Wanneer u een rol toewijst, kunt u een bereik opgeven waarmee de toegang van een beheerder tot een specifieke resource wordt beperkt. Als u bijvoorbeeld aan een ontwikkelaar een aangepaste rol wilt verlenen, maar alleen om een specifieke toepassingsregistratie te beheren, kunt u de specifieke toepassingsregistratie als een bereik opnemen in de roltoewijzing.
 
-  > [!Note]
-  > Aangepaste rollen kunnen worden toegewezen voor een mapbereik en voor een resourcebereik. Ze kunnen nog niet worden toegewezen voor het bereik van een beheereenheid.
-  > Ingebouwde rollen kunnen worden toegewezen voor een mapbereik, en in sommige gevallen ook voor het bereik van een beheereenheid. Ze kunnen nog niet worden toegewezen voor een Azure AD-resourcebereik.
-
 ## <a name="required-license-plan"></a>Vereiste licentieplan
 
 [!INCLUDE [License requirement for using custom roles in Azure AD](../../../includes/active-directory-p1-license.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 
+- [Inzicht in Azure AD-rollen](concept-understand-roles.md)
 - Aangepaste roltoewijzingen maken met behulp van [Azure Portal, Azure AD PowerShell, en Graph API](custom-create.md)
 - [De toewijzingen voor een aangepaste rol bekijken](custom-view-assignments.md)

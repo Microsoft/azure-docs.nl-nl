@@ -9,16 +9,16 @@ ms.service: synapse-analytics
 ms.subservice: spark
 ms.topic: quickstart
 ms.date: 10/16/2020
-ms.openlocfilehash: b20f2ce88695cb68de496d126c5e3cd52f9eb6c8
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 38b0f23a44a16125726e7810b2045d244a2e6b06
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93316140"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96454657"
 ---
 # <a name="quickstart-create-a-serverless-apache-spark-pool-in-azure-synapse-analytics-using-web-tools"></a>Quickstart: Een serverloze Apache Spark-pool maken in Azure Synapse Analytics met behulp van webhulpprogramma's
 
-In deze quickstart leert u hoe u een serverloze Apache Spark-pool (preview-versie) maakt in Azure Synapse met behulp van webhulpprogramma's. Vervolgens leert u hoe u verbinding maakt met de Apache Spark-pool en Spark SQL-query's uitvoert op bestanden en tabellen. Apache Spark maakt het mogelijk om snelle gegevensanalyses en clusterberekeningen uit te voeren met behulp van verwerking in het geheugen. Informatie over Spark in Azure Synapse kunt u lezen in [Wat is Apache Spark in Azure Synapse Azure Synapse Analytics](./spark/apache-spark-overview.md).
+In deze quickstart leert u hoe u een serverloze Apache Spark-pool maakt in Azure Synapse met behulp van webhulpprogramma's. Vervolgens leert u hoe u verbinding maakt met de Apache Spark-pool en Spark SQL-query's uitvoert op bestanden en tabellen. Apache Spark maakt het mogelijk om snelle gegevensanalyses en clusterberekeningen uit te voeren met behulp van verwerking in het geheugen. Informatie over Spark in Azure Synapse kunt u lezen in [Wat is Apache Spark in Azure Synapse Azure Synapse Analytics](./spark/apache-spark-overview.md).
 
 > [!IMPORTANT]
 > Spark-instanties worden pro rato per minuut gefactureerd, ongeacht of u ze wel of niet gebruikt. Zorg er daarom voor dat u de Spark-instantie afsluit wanneer u deze niet meer nodig hebt of stel een korte time-out in. Zie voor meer informatie de sectie **Resources opschonen** van dit artikel.

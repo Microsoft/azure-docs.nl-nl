@@ -9,12 +9,12 @@ ms.subservice: spark
 ms.date: 04/15/2020
 ms.author: euang
 ms.reviewer: euang
-ms.openlocfilehash: d29fa6454839b0c34830374282b8abb5fa6e4c51
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 8df7a2ecd2a6732a011267eb0efe00e8eaf2bef4
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93313393"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96458745"
 ---
 # <a name="apache-spark-in-azure-synapse-analytics-core-concepts"></a>Basisconcepten van Apache Spark in Azure Synapse Analytics
 
@@ -22,15 +22,15 @@ Apache Spark is een framework voor parallelle verwerking dat ondersteuning biedt
 
 Met Azure Synapse kunt u eenvoudig Spark-functies maken en configureren in Azure. Azure Synapse biedt een andere implementatie van de Spark-functies die hier worden beschreven.
 
-## <a name="spark-pools-preview"></a>Spark-pools (preview)
+## <a name="spark-pools"></a>Spark-pools
 
-Er wordt een serverloze Apache Spark-pool (preview-versie) gemaakt in Azure Portal. Een Spark-pool wordt, wanneer deze wordt geïnstantieerd, standaard gebruikt voor het maken van een Spark-exemplaar dat gegevens verwerkt. Wanneer er een Spark-pool wordt gemaakt, bestaat deze alleen als een set metagegevens;en er geen resources worden verbruikt, uitgevoerd of in rekening gebracht. Een Spark-groep bevat een reeks eigenschappen die de kenmerken van een Spark-exemplaar bepalen. Deze kenmerken omvatten, maar zijn niet beperkt tot naam, grootte, schaalgedrag, time to live.
+Een serverloze Apache Spark-pool maakt u in Azure Portal. Een Spark-pool wordt, wanneer deze wordt geïnstantieerd, standaard gebruikt voor het maken van een Spark-exemplaar dat gegevens verwerkt. Wanneer er een Spark-pool wordt gemaakt, bestaat deze alleen als een set metagegevens;en er geen resources worden verbruikt, uitgevoerd of in rekening gebracht. Een Spark-groep bevat een reeks eigenschappen die de kenmerken van een Spark-exemplaar bepalen. Deze kenmerken omvatten, maar zijn niet beperkt tot naam, grootte, schaalgedrag, time to live.
 
 Omdat er geen resourcekosten zijn verbonden aan het maken van Spark-pools, kunt u een onbeperkt aantal met verschillende configuraties maken. Er kunnen ook machtigingen op Spark-pools worden toegepast, zodat gebruikers alleen toegang hebben tot sommige pools.
 
 U kunt het beste kleinere Spark-pools maken die kunnen worden gebruikt voor ontwikkeling en foutopsporing en vervolgens grotere maken voor het uitvoeren van productieworkloads.
 
-In [Get started with Spark pools in Synapse Analytics](../quickstart-create-apache-spark-pool-portal.md) (Aan de slag met Spark-pools in Synapse Analytics) kunt u lezen hoe u een Spark-pool maakt en alle bijbehorende eigenschappen bekijkt
+In [Get started with Spark pools in Azure Synapse Analytics](../quickstart-create-apache-spark-pool-portal.md) (Aan de slag met Spark-pools in Azure Synapse Analytics) kunt u lezen hoe u een Spark-pool maakt en alle bijbehorende eigenschappen bekijkt
 
 ## <a name="spark-instances"></a>Spark-exemplaren
 

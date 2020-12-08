@@ -7,12 +7,12 @@ ms.service: iot-central
 ms.subservice: iot-central-retail
 ms.topic: tutorial
 ms.date: 10/20/2019
-ms.openlocfilehash: 827d571a6545d0aaffb0f96134fcf094eaa5f26b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b1b7069cb723bffd758c3603cc957329dd6d2a9b
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90980615"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96463267"
 ---
 # <a name="tutorial-deploy-and-walk-through-a-smart-inventory-management-application-template"></a>Zelfstudie: Een toepassingssjabloon voor slim voorraadbeheer implementeren en doorlopen
 
@@ -35,22 +35,19 @@ U kunt een toepassing maken met behulp van de volgende stappen
 
 1. Navigeer naar de website Azure IoT Central-toepassingsbeheer. Selecteer **Bouwen** in de navigatiebalk aan de linkerkant en klik vervolgens op het tabblad **Detailhandel**.
 
-    > [!div class="mx-imgBorder"]
-    > ![Schermopname waarin wordt getoond hoe u de toepassingssjabloon voor slim voorraadbeheer](./media/tutorial-iot-central-smart-inventory-management/iotc_retail_homepage.png)
+    :::image type="content" source="media/tutorial-iot-central-smart-inventory-management/iotc_retail_homepage.png" alt-text="Schermopname waarin wordt getoond hoe u de toepassingssjabloon voor slim voorraadbeheer":::
 
 2. Selecteer het tabblad **Detailhandel** en selecteer **App maken** onder **slim voorraadbeheer**
 
 3. Met **App maken** wordt het formulier Nieuwe toepassing geopend en worden de aangevraagde gegevens ingevuld zoals hieronder wordt weergegeven.
-   **Naam van de app**: u kunt de voorgestelde standaardnaam gebruiken of een beschrijvende naam invoeren voor uw app.
-   **URL**: u kunt de aanbevolen standaard-URL gebruiken of een beschrijvende en unieke URL opgeven die u goed kunt onthouden. Als u al een Azure-abonnement hebt, wordt vervolgens de standaardinstelling aanbevolen. U kunt beginnen met een gratis proefabonnement van 7 dagen en ervoor kiezen om dit op elk gewenst moment om te zetten naar een Standard-prijsplan voordat het gratis proefabonnement verloopt.
-   **Factureringsgegevens**: De map, het Azure-abonnement en de locatiegegevens zijn vereist voor het inrichten van de resources.
-   **Maken**: Selecteer Maken onderin de pagina om uw app te implementeren.
+    **Naam van de app**: u kunt de voorgestelde standaardnaam gebruiken of een beschrijvende naam invoeren voor uw app.
+    **URL**: u kunt de aanbevolen standaard-URL gebruiken of een beschrijvende en unieke URL opgeven die u goed kunt onthouden. Als u al een Azure-abonnement hebt, wordt vervolgens de standaardinstelling aanbevolen. U kunt beginnen met een gratis proefabonnement van 7 dagen en ervoor kiezen om dit op elk gewenst moment om te zetten naar een Standard-prijsplan voordat het gratis proefabonnement verloopt.
+    **Factureringsgegevens**: De map, het Azure-abonnement en de locatiegegevens zijn vereist voor het inrichten van de resources.
+    **Maken**: Selecteer Maken onderin de pagina om uw app te implementeren.
 
-    > [!div class="mx-imgBorder"]
-    > ![Schermopname waarin wordt getoond hoe u een app maakt op basis van de toepassingssjabloon voor slim voorraadbeheer](./media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_app_create.png)
+    :::image type="content" source="media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_app_create.png" alt-text="Schermopname waarin wordt getoond hoe u een app maakt op basis van de toepassingssjabloon voor slim voorraadbeheer":::
 
-    > [!div class="mx-imgBorder"]
-    > ![Schermopname met de factureringsopties wanneer u de app maakt](./media/tutorial-iot-central-smart-inventory-management/smart-inventory-management-app-create-billinginfo.png)
+    :::image type="content" source="media/tutorial-iot-central-smart-inventory-management/smart-inventory-management-app-create-billinginfo.png" alt-text="Schermopname met de factureringsopties wanneer u de app maakt":::
 
 ## <a name="walk-through-the-application"></a>De toepassing doorlopen 
 

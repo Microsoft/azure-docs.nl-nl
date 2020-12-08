@@ -9,17 +9,16 @@ ms.service: machine-learning
 ms.subservice: studio
 ms.topic: tutorial
 ms.date: 02/11/2019
-ms.openlocfilehash: 59567cf2dc03952a78852f3288e78ba06aa769ee
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 557c624b6ed683f701b6a8d38854cd8604e05b31
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325678"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96325261"
 ---
 # <a name="tutorial-2-train-credit-risk-models---azure-machine-learning-studio-classic"></a>Zelfstudie 2: Modellen voor kredietrisico trainen - Azure Machine Learning Studio (klassiek)
 
-**VAN TOEPASSING OP:** ![ja](../../../includes/media/aml-applies-to-skus/yes.png)Machine Learning Studio (klassiek) ![nee ](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
-
+**VAN TOEPASSING OP:**  ![Dit is een vinkje, wat betekent dat dit artikel van toepassing is op Machine Learning Studio (klassiek).](../../../includes/media/aml-applies-to-skus/yes.png) Machine Learning Studio (klassiek)   ![dit is een X, wat betekent dat dit artikel van toepassing is op Azure Machine Learning.](../../../includes/media/aml-applies-to-skus/no.png)[Azure Machine Learning](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 In deze zelfstudie wordt uitgebreid ingegaan op het ontwikkelingsproces van een predictive analytics-oplossing. U ontwikkelt een eenvoudig model in Machine Learning Studio (klassiek).  Vervolgens implementeert u het model als een Azure Machine Learning-webservice.  Dit geïmplementeerde model kan voorspellingen doen op basis van nieuwe gegevens. Deze zelfstudie is **deel twee van een driedelige reeks**.
 
@@ -50,7 +49,7 @@ Een van de voordelen van het gebruik van Azure Machine Learning Studio (klassiek
 
 In het experiment dat we ontwikkelen in deze zelfstudie, maakt u twee verschillende soorten modellen en vergelijkt vervolgens hun scoreresultaten om te beslissen welk algoritme u wilt gebruiken in ons laatste experiment.  
 
-Er zijn verschillende modellen waaruit u kunt kiezen. Als u de beschikbare modellen wilt zien, vouwt u het **Machine Learning** -knooppunt uit in het modulepalet en vervolgens **Initialize Model** en de knooppunten eronder. Voor dit experiment selecteert u de modules [Ondersteuningsvectormachine met twee klassen][two-class-support-vector-machine] (SVM) en de module [Versterkte beslissingsstructuur met twee klassen][two-class-boosted-decision-tree].
+Er zijn verschillende modellen waaruit u kunt kiezen. Als u de beschikbare modellen wilt zien, vouwt u het **Machine Learning**-knooppunt uit in het modulepalet en vervolgens **Initialize Model** en de knooppunten eronder. Voor dit experiment selecteert u de modules [Ondersteuningsvectormachine met twee klassen][two-class-support-vector-machine] (SVM) en de module [Versterkte beslissingsstructuur met twee klassen][two-class-boosted-decision-tree].
 
 > [!TIP]
 > Raadpleeg [Algoritmen kiezen voor Microsoft Azure Machine Learning Studio (klassiek)](../how-to-select-algorithms.md) als u informatie nodig hebt om te bepalen welk Machine Learning-algoritme het beste tegemoetkomt aan het specifieke probleem dat u probeert om op te lossen.
@@ -84,11 +83,11 @@ Nu moet u de module [Trainingsmodel][train-model] vertellen dat u wilt dat het m
 
 1. Selecteer de module [Train Model][train-model]. Klik in het deelvenster **Properties** op **Launch column selector**.
 
-1. In het dialoogvenster **Select a single column** typt u "Kredietrisico" in het zoekveld onder **Available Columns** , selecteert u "Kredietrisico" hieronder en klikt u op de rechter pijlknop ( **>** ) om "Kredietrisico’s" naar **Selected Columns** te verplaatsen. 
+1. In het dialoogvenster **Select a single column** typt u "Kredietrisico" in het zoekveld onder **Available Columns**, selecteert u "Kredietrisico" hieronder en klikt u op de rechter pijlknop ( **>** ) om "Kredietrisico’s" naar **Selected Columns** te verplaatsen. 
 
     ![Selecteer de kolom Kredietrisico voor de module Train Model](./media/tutorial-part2-credit-risk-train/train-model-select-column.png)
 
-1. Klik op het **OK** -selectievakje.
+1. Klik op het **OK**-selectievakje.
 
 ### <a name="two-class-support-vector-machine"></a>Two-Class Support Vector Machine
 
@@ -100,7 +99,7 @@ Als u het SVM-model instelt, doe dan het volgende:
 
 1. Zoek de module [Ondersteuningsvectormachine met twee klassen][two-class-support-vector-machine] in het modulepalet en sleep deze naar het canvas.
 
-1. Klik met de rechtermuisknop op de module [Trainingsmodel][train-model], selecteer **Kopiëren** , klik vervolgens met de rechtermuisknop op het canvas en selecteer **Plakken**. De kopie van de module [Trainingsmodel][train-model] bevat dezelfde kolomselectie als het origineel.
+1. Klik met de rechtermuisknop op de module [Trainingsmodel][train-model], selecteer **Kopiëren**, klik vervolgens met de rechtermuisknop op het canvas en selecteer **Plakken**. De kopie van de module [Trainingsmodel][train-model] bevat dezelfde kolomselectie als het origineel.
 
 1. Koppel de uitvoer van de module [Ondersteuningsvectormachine met twee klassen][two-class-support-vector-machine] aan de linkerinvoerpoort van de tweede [Trainingsmodel][train-model]-module.
 
@@ -116,13 +115,13 @@ Zo ziet dit deel van het experiment er ongeveer uit nadat het is uitgevoerd:
 
 Configureer nu de module [Gegevens normaliseren][normalize-data]:
 
-1. Selecteer de module [Gegevens normaliseren][normalize-data]. Selecteer in het **Properties** -venster **Tanh** als parameter voor **Transformation method**.
+1. Selecteer de module [Gegevens normaliseren][normalize-data]. Selecteer in het **Properties**-venster **Tanh** als parameter voor **Transformation method**.
 
-1. Klik op **Launch column selector** , selecteer "No columns" voor **Begin With** , selecteer **Include** in de eerste vervolgkeuzelijst, selecteer **column type** in de tweede vervolgkeuzelijst en selecteer **Numeric** in de derde vervolgkeuzelijst. Hiermee wordt aangegeven dat alle numerieke kolommen (en alleen numerieke) worden getransformeerd.
+1. Klik op **Launch column selector**, selecteer "No columns" voor **Begin With**, selecteer **Include** in de eerste vervolgkeuzelijst, selecteer **column type** in de tweede vervolgkeuzelijst en selecteer **Numeric** in de derde vervolgkeuzelijst. Hiermee wordt aangegeven dat alle numerieke kolommen (en alleen numerieke) worden getransformeerd.
 
 1. Klik op het plusteken (+) aan de rechterkant van deze rij. Hiermee maakt u een rij van de vervolgkeuzelijsten. Selecteer **Exclude** in de eerste vervolgkeuzelijst, selecteer **column names** in de tweede vervolgkeuzelijst en voer "Kredietrisico" in het tekstveld in. Hiermee wordt aangegeven dat de kolom Kredietrisico's moet worden genegeerd (u moet dit doen omdat deze kolom numeriek is en zou worden omgezet als u deze niet uitsluit).
 
-1. Klik op het **OK** -selectievakje.  
+1. Klik op het **OK**-selectievakje.  
 
     ![Selecteer de module Normalize Data](./media/tutorial-part2-credit-risk-train/normalize-data-select-column.png)
 
@@ -195,7 +194,7 @@ De wetenschap en kunst van het interpreteren van deze resultaten en het afstemme
 - [Modelresultaten in Azure Machine Learning Studio (klassiek) interpreteren](interpret-model-results.md)
 
 > [!TIP]
-> Telkens wanneer u het experiment uitvoert, wordt een record van deze iteratie opgeslagen in de uitvoeringsgeschiedenis. U kunt deze iteraties bekijken en ze opnieuw bekijken door te klikken op **VIEW RUN HISTORY** onder het canvas. U kunt ook klikken op **Prior Ru** in het **Properties** -venster om terug te keren naar de iteratie direct vóór de versie die u hebt geopend.
+> Telkens wanneer u het experiment uitvoert, wordt een record van deze iteratie opgeslagen in de uitvoeringsgeschiedenis. U kunt deze iteraties bekijken en ze opnieuw bekijken door te klikken op **VIEW RUN HISTORY** onder het canvas. U kunt ook klikken op **Prior Ru** in het **Properties**-venster om terug te keren naar de iteratie direct vóór de versie die u hebt geopend.
 > 
 > U kunt een kopie van de iteraties van uw experiment maken door te klikken op **SAVE AS** onder het canvas. 
 > Gebruik de eigenschappen **Summary** en **Description** van het experiment om bij te houden wat u hebt geprobeerd in uw iteraties.

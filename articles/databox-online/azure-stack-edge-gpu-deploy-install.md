@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/02/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to install Azure Stack Edge Pro in datacenter so I can use it to transfer data to Azure.
-ms.openlocfilehash: ba903793844e44b26931a70183860c983adaf18a
-ms.sourcegitcommit: a07a01afc9bffa0582519b57aa4967d27adcf91a
+ms.openlocfilehash: 52f0bcbb332b5d5e47440accff9d9895dcef7056
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91743400"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96449364"
 ---
 # <a name="tutorial-install-azure-stack-edge-pro-with-gpu"></a>Zelfstudie: Azure Stack Edge Pro met GPU installeren
 
@@ -228,7 +228,7 @@ Voer de volgende stappen uit om uw apparaat te bekabelen voor stroom en verbindi
 7. Verbind één of meer interfaces, bijvoorbeeld PORT 2, PORT 3, PORT 4, PORT 5 of PORT 6 aan het netwerk van het datacenter of internet.
 
     - Gebruik de 1-GbE RJ-45-netwerkkabel als u PORT 2 verbindt.
-    - Gebruik de koperen SFP+-kabels voor de 10/25-GbE-netwerkinterfaces.
+    - Gebruik de koperen SFP+-kabels of glasvezel voor de 10/25-GbE-netwerkinterfaces. Gebruik bij glasvezel een optische naar SFP-adapter.
 
 ## <a name="next-steps"></a>Volgende stappen
 

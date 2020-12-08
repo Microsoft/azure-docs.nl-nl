@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.subservice: monitoring
 ms.topic: tutorial
 ms.date: 10/15/2020
-ms.openlocfilehash: 2970bb58bb73d52c75729b00a8209a9c576d4ec0
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: c2260cc0d2c6b889b44c738576e33abceebe23f1
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94427408"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96444394"
 ---
 # <a name="monitor-your-synapse-workspace"></a>Uw Synapse-werkruimte bewaken
 
@@ -47,6 +47,9 @@ Ga in Synapse Studio naar de **monitorhub**. Hier ziet u een geschiedenis van al
 1. Selecteer de **Pool** die u wilt bewaken. Nu ziet u alle SQL-aanvragen die worden uitgevoerd of zijn uitgevoerd in uw werkruimte in die pool.
 1. Zoek een specifieke SQL-aanvraag en wijs het desbetreffende item aan met de muis. Zodra u de muisaanwijzer op het item hebt geplaatst, wordt er een SQL-scriptpictogram weergegeven.
 1. Klik op het pictogram SQL-script om de volledige tekst van de SQL-aanvraag te bekijken.
+
+    > [!NOTE] 
+    > SQL-aanvragen die worden ingediend via Synapse Studio in een toegewezen SQL-pool (voorheen SQL DW) met ondersteuning voor werkruimten, kunnen worden weergegeven in de Monitor-hub. Voor alle andere controleactiviteiten kunt u de controlefunctie voor toegewezen SQL-pools (voorheen SQL DW) van de Azure-portal gebruiken.
 
 ## <a name="next-steps"></a>Volgende stappen
 

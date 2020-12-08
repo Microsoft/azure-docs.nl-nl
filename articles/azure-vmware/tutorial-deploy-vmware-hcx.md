@@ -2,13 +2,13 @@
 title: 'Zelfstudie: VMware HCX implementeren en configureren'
 description: Meer informatie over het implementeren en configureren van een VMware HCX-oplossing voor de privécloud van uw Azure VMware Solution.
 ms.topic: tutorial
-ms.date: 11/18/2020
-ms.openlocfilehash: afb5c653ce7c4b4a453a4031c5664042357de6c0
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.date: 11/25/2020
+ms.openlocfilehash: e50454c2299ed0f7e249563eecac1935a29a9c47
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95999621"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96352457"
 ---
 # <a name="deploy-and-configure-vmware-hcx"></a>VMware HCX implementeren en configureren
 
@@ -16,8 +16,8 @@ In dit artikel wordt uitgelegd hoe de implementatie en configuratie van de on-pr
 
 VMware HCX Advanced Connector is vooraf geïmplementeerd in Azure VMware Solution. De connector ondersteunt maximaal drie siteverbindingen (on-premises naar de cloud of van cloud naar cloud). Als u meer dan drie site verbindingen nodig hebt, dient u een [ondersteuningsaanvraag](https://portal.azure.com/#create/Microsoft.Support) in om de invoegtoepassing [VMware HCX Enterprise](https://cloud.vmware.com/community/2019/08/08/introducing-hcx-enterprise/) in te schakelen. Deze invoegtoepassing is momenteel in preview. 
 
->[!Note]
->Hoewel het hulpprogramma VMware Configuration Maximum 25 aangeeft als het maximale aantal siteparen tussen de on-premises-connector en Cloud Manager, beperkt de licentie die tot 3 voor Advanced en 10 voor Enterprise Edition.
+>[!TIP]
+>Hoewel het hulpprogramma VMware Configuration Maximum 25 aangeeft als het maximale aantal siteparen tussen de on-premises-connector en Cloud Manager, beperkt de licentie die tot drie voor Advanced en 10 voor Enterprise Edition.
 
 >[!NOTE]
 >VMware HCX Enterprise is beschikbaar bij Azure VMware Solution als een preview-service. Het is gratis en de voorwaarden voor een preview-service zijn van toepassing. Nadat de VMware HCX Enterprise-service algemeen beschikbaar is, krijgt u een melding dat de facturering over 30 dagen wordt omgeschakeld. U hebt ook de mogelijkheid om de service uit te schakelen of op te zeggen. Er is geen eenvoudig pad om van VMware HCX Enterprise naar VMware HCX Advanced te downgraden. Als u besluit om te downgraden, moet u de implementatie opnieuw uitvoeren. Dit brengt downtime met zich mee.
@@ -79,7 +79,7 @@ Voordat u het virtuele apparaat in uw on-premises vCenter implementeert, moet u 
 1. Selecteer **Manage** > **Identity** en selecteer **Center admin password** om te achterhalen wat het wachtwoord is.
 
    > [!TIP]
-   > Het wachtwoord voor vCenter is gedefinieerd toen u het wachtwoord van de privécloud instelde. Het is hetzelfde wachtwoord dat u gebruikt om u aan te melden bij Azure VMware Solution HCX Manager.
+   > Het vCenter-wachtwoord is gedefinieerd tijdens het instellen van de privécloud. Het is hetzelfde wachtwoord dat u gebruikt om u aan te melden bij de Azure VMware Solution HCX Manager.
 
    :::image type="content" source="media/tutorial-vmware-hcx/hcx-admin-password.png" alt-text="hcx-wachtwoord zoeken." lightbox="media/tutorial-vmware-hcx/hcx-admin-password.png":::
 
@@ -91,7 +91,7 @@ Voordat u het virtuele apparaat in uw on-premises vCenter implementeert, moet u 
 
 ## <a name="deploy-the-vmware-hcx-connector-ova-on-premises"></a>De VMware HCX Connector OVA on-premises implementeren
 
-1. Selecteer in het on-premises vCenter een [OVF-sjabloon](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vm_admin.doc/GUID-17BEDA21-43F6-41F4-8FB2-E01D275FE9B4.html) om de HCX-connector te implementeren in uw on-premises vCenter. 
+1. Selecteer in het on-premises vCenter een [OVF-sjabloon](https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vm_admin.doc/GUID-17BEDA21-43F6-41F4-8FB2-E01D275FE9B4.html) om de VMware HCX-connector te implementeren in uw on-premises vCenter. 
 
    > [!TIP]
    > U gaat het OVA-bestand selecteren dat u in de vorige sectie hebt gedownload.  
@@ -111,12 +111,12 @@ Voordat u het virtuele apparaat in uw on-premises vCenter implementeert, moet u 
 
    :::image type="content" source="media/tutorial-vmware-hcx/customize-template.png" alt-text="Schermopname van de vakken voor het aanpassen van een sjabloon." lightbox="media/tutorial-vmware-hcx/customize-template.png":::
 
-1. Controleer de configuratie en selecteer **Finish** om de HCX-connector OVA te implementeren.
+1. Controleer de configuratie en selecteer **Finish** om de VMware HCX-connector OVA te implementeren.
    
    > [!IMPORTANT]
    > U moet het virtuele apparaat handmatig inschakelen.  Wacht, nadat u het hebt ingeschakeld, 10 tot 15 minuten voordat u verdergaat met de volgende stap.
 
-Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Solution: HCX Appliance Deployment](https://www.youtube.com/embed/BwSnQeefnso). 
+Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Solution: HCX Appliance Deployment](https://www.youtube.com/embed/UKmSTYrL6AY). 
 
 
 ## <a name="activate-vmware-hcx"></a>VMware HCX activeren
@@ -152,7 +152,7 @@ Nadat u de VMware HCX-connector OVA on-premises hebt geïmplementeerd en het app
 1. Geef in **Configure SSO/PSC** de FQDN of het IP-adres van uw Platform Services Controller op en selecteer **Continue**.
    
    > [!NOTE]
-   > Normaal gesproken is de invoer hier hetzelfde als uw FQDN of uw IP-adres voor vCenter.
+   > Normaal gesproken is dit hetzelfde als uw FQDN of uw IP-adres voor vCenter.
 
 1. Controleer of de ingevoerde gegevens juist zijn en selecteer **Restart**.
     
@@ -163,7 +163,7 @@ Nadat de services opnieuw zijn gestart, zult u zien dat vCenter groen wordt weer
 
 :::image type="content" source="media/tutorial-vmware-hcx/activation-done.png" alt-text="Schermopname van het dashboard met de status groen voor vCenter." lightbox="media/tutorial-vmware-hcx/activation-done.png":::  
 
-Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Solution: Activeer de video over HCX ](https://www.youtube.com/embed/BkAV_TNYxdE).
+Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Solution: Activeer de video over HCX ](https://www.youtube.com/embed/jzQZawslF8w).
 
    > [!IMPORTANT]
    > Of u nu VMware HCX Advanced of VMware HCX Enterprise gebruikt, u moet waarschijnlijk toch de patch installeren uit het [KB-artikel 81558](https://kb.vmware.com/s/article/81558) over VMware. 
@@ -174,7 +174,7 @@ Nu bent u klaar om een sitekoppeling toe te voegen, een netwerk- en rekenprofiel
 
 ### <a name="add-a-site-pairing"></a>Een sitekoppeling toevoegen
 
-U kunt de VMware HCX-cloudbeheerder in Azure VMware Solution verbinden (koppelen) met de VMware HCX-connector in uw datacentrum. 
+U kunt de VMware HCX-cloudbeheerder in Azure VMware Solution verbinden met de VMware HCX-connector in uw datacentrum. 
 
 1. Meld u aan bij uw on-premises vCenter en selecteer onder **Home** de optie **HCX**.
 
@@ -183,15 +183,16 @@ U kunt de VMware HCX-cloudbeheerder in Azure VMware Solution verbinden (koppelen
 1. Voer de eerder genoteerde URL van Azure VMware Solution HCX Cloud Manager of het eerder genoteerde IP-adres `https://x.x.x.9`, de gebruikersnaam cloudadmin@vsphere.local en het wachtwoord van Azure VMware Solution in. Selecteer vervolgens **Connect**.
 
    > [!NOTE]
-   > Voor het tot stand brengen van een goede sitekoppeling moet uw HCX-connector het IP-adres van uw HCX-cloudbeheerder kunnen omleiden via poort 443.
+   > Een site-paar maken:
+   > * Uw VMware HCX-connector moet het IP-adres van uw HCX-cloudbeheerder kunnen omleiden via poort 443.
    >
-   > Het wachtwoord is hetzelfde dat u hebt gebruikt om u aan te melden bij vCenter. U hebt dit wachtwoord op het eerste implementatiescherm gedefinieerd.
+   > * Gebruik hetzelfde wachtwoord dat u hebt gebruikt om u aan te melden bij vCenter. U hebt dit wachtwoord op het eerste implementatiescherm gedefinieerd.
 
-   Er wordt een scherm weergegeven met een verbinding (koppeling) tussen uw HCX-cloudbeheerder in Azure VMware Solution en uw on-premises HCX-connector.
+   Er wordt een scherm weergegeven met een verbinding (koppeling) tussen uw VMware HCX-cloudbeheerder in Azure VMware Solution en uw on-premises VMware HCX-connector.
 
-   :::image type="content" source="media/tutorial-vmware-hcx/site-pairing-complete.png" alt-text="Schermopname van de koppeling van HCX manager in Azure VMware Solution en de HCX-connector.":::
+   :::image type="content" source="media/tutorial-vmware-hcx/site-pairing-complete.png" alt-text="Schermopname van de koppeling van HCX manager in Azure VMware Solution en de VMware HCX-connector.":::
 
-Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Solution: Video over HCX-sitekoppeling](https://www.youtube.com/embed/sKizDCRHOko).
+Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Solution: Video over HCX-sitekoppeling](https://www.youtube.com/embed/iTJtjbiwvsw).
 
 ### <a name="create-network-profiles"></a>Netwerkprofielen maken
 
@@ -212,7 +213,7 @@ U gaat vier netwerkprofielen maken:
 
    :::image type="content" source="media/tutorial-vmware-hcx/example-configurations-network-profile.png" alt-text="Schermopname van details voor een nieuw netwerkprofiel.":::
 
-Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Solution: Video voor HCX-netwerkprofiel](https://www.youtube.com/embed/NhyEcLco4JY).
+Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Solution: Video voor HCX-netwerkprofiel](https://www.youtube.com/embed/O0rU4jtXUxc).
 
 
 ### <a name="create-a-compute-profile"></a>Een rekenprofiel maken
@@ -274,18 +275,20 @@ Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Sol
 
    :::image type="content" source="media/tutorial-vmware-hcx/compute-profile-done.png" alt-text="Schermopname van gegevens van een rekenprofiel." lightbox="media/tutorial-vmware-hcx/compute-profile-done.png":::
 
-Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Solution: Video van rekenprofiel](https://www.youtube.com/embed/qASXi5xrFzM).
+Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Solution: Video van rekenprofiel](https://www.youtube.com/embed/e02hsChI3b8).
 
 ### <a name="create-a-service-mesh"></a>Een service-mesh maken
 
 Het is nu tijd om een service-mesh tussen on-premises en Azure VMware Solution SDDC te configureren.
 
-   > [!NOTE]
-   > Een service-mesh maken met Azure VMware Solution:
-   >
-   > Poorten UDP 500/4500 zijn geopend tussen uw on-premises HCX-connector-gedefinieerde 'uplink'-netwerkprofieladressen en de 'uplink'-netwerkprofieladressen voor Azure VMware Solution HCX Cloud.
-   >
-   > Vergeet niet [De voor HCX vereiste poorten](https://ports.vmware.com/home/VMware-HCX) te raadplegen.
+
+
+> [!NOTE]
+> Een service-mesh maken met Azure VMware Solution:
+>
+> * Poorten UDP 500/4500 zijn geopend tussen uw on-premises VMware HCX-connector 'uplink'-netwerkprofieladressen en de 'uplink'-netwerkprofieladressen voor Azure VMware Solution HCX Cloud.
+>
+> * Vergeet niet [De voor VMware HCX vereiste poorten](https://ports.vmware.com/home/VMware-HCX) te raadplegen.
 
 1. Selecteer onder **Infrastructure** achtereenvolgens **Interconnect** > **Service Mesh** > **Create Service Mesh**.    
 
@@ -312,6 +315,10 @@ Het is nu tijd om een service-mesh tussen on-premises en Azure VMware Solution S
   
 1. Controleer de gegevens in **Advanced Configuration - Network Extension Appliance Scale Out** en selecteer **Continue**. 
 
+   U kunt maximaal acht VLAN's per apparaat hebben, maar u kunt een ander apparaat implementeren om nog acht VLAN's toe te voegen. U moet ook over de IP-ruimte beschikken voor de extra apparaten en er geldt één IP per apparaat.  Zie [Limieten voor VMware HCX-configuratie](https://configmax.vmware.com/guest?vmwareproduct=VMware%20HCX&release=VMware%20HCX&categories=41-0,42-0,43-0,44-0,45-0) voor meer informatie.
+   
+   :::image type="content" source="media/tutorial-vmware-hcx/extend-networks-increase-vlan.png" alt-text="Schermopname die laat zien waar het aantal VLAN's moet worden verhoogd." lightbox="media/tutorial-vmware-hcx/extend-networks-increase-vlan.png":::
+
 1. Controleer de gegevens in **Advanced Configuration - Traffic Engineering**, breng de benodigde wijzigingen aan en selecteer **Continue**.
 
 1. Bekijk de preview van de topologie en selecteer **Continue**.
@@ -332,7 +339,7 @@ Het is nu tijd om een service-mesh tussen on-premises en Azure VMware Solution S
 
    :::image type="content" source="media/tutorial-vmware-hcx/interconnect-appliance-state.png" alt-text="Schermopname met selecties voor het controleren van de status van het apparaat." lightbox="media/tutorial-vmware-hcx/interconnect-appliance-state.png":::
 
-Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Solution: Video over service-mesh](https://www.youtube.com/embed/FyZ0d3P_T24).
+Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Solution: Video over service-mesh](https://www.youtube.com/embed/COY3oIws108).
 
 ### <a name="optional-create-a-network-extension"></a>(Optioneel) Een netwerkextensie maken
 
@@ -354,7 +361,7 @@ Als u netwerken van uw on-premises omgeving wilt uitbreiden naar Azure VMware-op
 
    :::image type="content" source="media/tutorial-vmware-hcx/extension-complete.png" alt-text="Schermopname van de status van Extensie voltooid." lightbox="media/tutorial-vmware-hcx/extension-complete.png":::
 
-Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Solution: Video van netwerkextensie](https://www.youtube.com/embed/cNlp0f_tTr0).
+Bekijk voor een volledig overzicht van deze procedure de video [Azure VMware Solution: Video van netwerkextensie](https://www.youtube.com/embed/gYR0nftKui0).
 
 
 ## <a name="next-steps"></a>Volgende stappen
@@ -364,5 +371,5 @@ Als de interconnect-tunnelstatus van het apparaat **UP** en groen is, kunt u vir
 Ga naar de technische documentatie voor VMware voor meer informatie over het gebruik van HCX:
 
 * [Documentatie voor VMware HCX](https://docs.vmware.com/en/VMware-HCX/index.html)
-* [Virtuele machines migreren met VMware HCX](https://docs.vmware.com/en/VMware-HCX/services/user-guide/GUID-D0CD0CC6-3802-42C9-9718-6DA5FEC246C6.html?hWord=N4IghgNiBcIBIGEAaACAtgSwOYCcwBcMB7AOxAF8g).
+* [Virtuele machines migreren met VMware HCX](https://docs.vmware.com/en/VMware-HCX/services/user-guide/GUID-D0CD0CC6-3802-42C9-9718-6DA5FEC246C6.html?hWord=N4IghgNiBcIBIGEAaACAtgSwOYCcwBcMB7AOxAF8g)
 * [Vereiste poorten voor HCX](https://ports.vmware.com/home/VMware-HCX)

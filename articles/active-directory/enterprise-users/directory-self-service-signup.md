@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 846059c5c20255f9bddba59673458e12e1f354d3
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 01de8ab86ff5f511fd5e45c4a6e88febdb4fbb15
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95503575"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96340863"
 ---
 # <a name="what-is-self-service-sign-up-for-azure-active-directory"></a>Wat is de selfservice voor aanmelden voor Azure Active Directory?
 
@@ -76,7 +76,7 @@ In het volgende stroomdiagram worden de verschillende combinaties voor deze para
 
 ![Stroomdiagram met de besturingselementen voor de selfservice voor aanmelden](./media/directory-self-service-signup/SelfServiceSignUpControls.png)
 
-De details van deze instelling kunnen worden opgehaald met de volgende PowerShell-cmdlet Get-MsolCompanyInformation. Zie [Get-MsolCompanyInformation](/powershell/module/msonline/get-msolcompanyinformation?view=azureadps-1.0) voor meer informatie
+De details van deze instelling kunnen worden opgehaald met de volgende PowerShell-cmdlet Get-MsolCompanyInformation. Zie [Get-MsolCompanyInformation](/powershell/module/msonline/get-msolcompanyinformation?view=azureadps-1.0) voor meer informatie.
 
 ```powershell
     Get-MsolCompanyInformation | Select AllowEmailVerifiedUsers, AllowAdHocSubscriptions

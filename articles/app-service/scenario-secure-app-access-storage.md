@@ -7,15 +7,16 @@ manager: CelesteDG
 ms.service: app-service-web
 ms.topic: tutorial
 ms.workload: identity
-ms.date: 11/09/2020
+ms.date: 11/30/2020
 ms.author: ryanwi
 ms.reviewer: stsoneff
-ms.openlocfilehash: 250e95b33b985aedcc1b1537f57338d29e848451
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.custom: azureday1
+ms.openlocfilehash: 72b1d4fe864c23c0ac065e47d96ab0c78866defa
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96020208"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96435838"
 ---
 # <a name="tutorial-access-azure-storage-from-a-web-app"></a>Zelfstudie: Toegang tot Azure Storage krijgen vanuit een web-app
 
@@ -23,7 +24,7 @@ Leer hoe u voor een web-app (in plaats van een aangemelde gebruiker) die wordt u
 
 :::image type="content" alt-text="Diagram dat laat zien hoe u toegang krijgt tot opslag." source="./media/scenario-secure-app-access-storage/web-app-access-storage.svg" border="false":::
 
-U wilt toegang toevoegen aan het Azure-gegevensvlak (Azure Storage, Azure SQL Database, Azure Key Vault of andere services) vanuit uw web-app. U zou een gedeelde sleutel kunnen gebruiken, maar dan zit u met het probleem van operationele beveiliging en wie het geheim kan maken, implementeren en beheren. Het is ook mogelijk de sleutel in te checken bij GitHub, maar hackers weten hoe ze daarop kunnen scannen. Een veiligere manier om uw web-app toegang tot gegevens te geven, is [beheerde identiteiten](/azure/active-directory/managed-identities-azure-resources/overview) te gebruiken.
+U wilt toegang toevoegen aan het Azure-gegevensvlak (Azure Storage, Azure SQL Database, Azure Key Vault of andere services) vanuit uw web-app. U zou een gedeelde sleutel kunnen gebruiken, maar dan zit u met het probleem van operationele beveiliging en wie het geheim kan maken, implementeren en beheren. Het is ook mogelijk de sleutel in te checken bij GitHub, maar hackers weten hoe ze daarop kunnen scannen. Een veiligere manier om uw web-app toegang tot gegevens te geven, is [beheerde identiteiten](../active-directory/managed-identities-azure-resources/overview.md) te gebruiken.
 
 Met een beheerde identiteit van Azure Active Directory (Azure AD) kan App Service toegang tot resources krijgen via RBAC (op rollen gebaseerd toegangsbeheer), zonder dat daar app-referenties voor nodig zijn. Nadat een beheerde identiteit aan uw web-app is toegewezen, wordt er in Azure een certificaat gemaakt en gedistribueerd. Mensen hoeven zich geen zorgen te maken over het beheren van geheimen of app-referenties.
 
@@ -210,6 +211,8 @@ az role assignment create --assignee $spID --role 'Storage Blob Data Contributor
 ## <a name="access-blob-storage-net"></a>Toegang tot Blob Storage krijgen (.NET)
 
 De klasse [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential) wordt gebruikt om een tokenreferentie voor uw code op te halen om aanvragen voor Azure Storage te autoriseren. Maak een exemplaar van de klasse [DefaultAzureCredential](/dotnet/api/azure.identity.defaultazurecredential), die gebruikmaakt van de beheerde identiteit om tokens op te halen en aan de serviceclient te koppelen. Met het volgende codevoorbeeld wordt de geverifieerde tokenreferentie opgehaald en gebruikt om een serviceclientobject te maken, waarmee een nieuwe blob wordt geüpload.
+
+Zie het [voorbeeld op GitHub](https://github.com/Azure-Samples/ms-identity-easyauth-dotnet-storage-graphapi/tree/main/1-WebApp-storage-managed-identity) als u deze code wilt bekijken als onderdeel van een voorbeeldtoepassing.
 
 ### <a name="install-client-library-packages"></a>Clientbibliotheekpakketten installeren
 

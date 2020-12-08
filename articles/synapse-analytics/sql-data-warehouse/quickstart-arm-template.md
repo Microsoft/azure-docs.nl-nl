@@ -1,5 +1,5 @@
 ---
-title: Een SQL-pool maken met een Azure Resource Manager-sjabloon
+title: Een toegewezen SQL-pool (voorheen SQL DW) maken met behulp van Azure Resource Manager sjabloon
 description: Meer informatie over het maken van een Azure Synapse Analytics SQL-pool met behulp van een Azure Resource Manager-sjabloon.
 services: azure-resource-manager
 author: julieMSFT
@@ -8,16 +8,16 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: jrasnick
 ms.date: 06/09/2020
-ms.openlocfilehash: 29d4e4d696b34aa493714c870ebb466f491c47fe
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 70adb7409c44a79345a192df173a1a073cc9b7dd
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88641871"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460746"
 ---
-# <a name="quickstart-create-an-azure-synapse-analytics-sql-pool-by-using-an-arm-template"></a>Quickstart: Een Azure Synapse Analytics SQL-pool maken met een ARM-sjabloon
+# <a name="quickstart-create-an-azure-synapse-analytics-dedicated-sql-pool-formerly-sql-dw-by-using-an-arm-template"></a>Quickstart: Een toegewezen SQL-pool (voorheen SQL DW) van Azure Synapse Analytics maken met behulp van een ARM-sjabloon.
 
-Met deze Azure Resource Manager-sjabloon (ARM-sjabloon) wordt een Azure Synapse Analytics SQL-pool gemaakt waarvoor Transparent Data Encryption is ingeschakeld. Synapse SQL-pool verwijst naar de functies voor datawarehousing voor ondernemingen, die algemeen beschikbaar zijn in Azure Synapse.
+Met deze Azure Resource Manager-sjabloon (ARM-sjabloon) wordt een toegewezen SQL-pool (voorheen SQL DW) gemaakt waarvoor Transparent Data Encryption is ingeschakeld. Toegewezen SQL-pool (voorheen SQL DW) verwijst naar de functies voor datawarehousing voor ondernemingen die algemeen beschikbaar zijn in Azure Synapse.
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
@@ -41,7 +41,7 @@ In de sjabloon is een resource gedefinieerd:
 
 ## <a name="deploy-the-template"></a>De sjabloon implementeren
 
-1. Selecteer de volgende afbeelding om u aan te melden bij Azure en de sjabloon te openen. Met deze sjabloon maakt u een Synapse SQL-pool.
+1. Selecteer de volgende afbeelding om u aan te melden bij Azure en de sjabloon te openen. Met deze sjabloon maakt u een toegewezen SQL-pool (voorheen SQL DW).
    
    [![Implementeren in Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-sql-data-warehouse-transparent-encryption-create%2Fazuredeploy.json)
 
@@ -53,7 +53,7 @@ In de sjabloon is een resource gedefinieerd:
    * **SQL-servernaam**: Accepteer de standaardnaam of voer een naam in voor de SQL-servernaam.
    * **Aanmeldgegevens van SQL-beheerder**: Geef de gebruikersnaam van de beheerder voor de SQL-server op.
    * **Wachtwoord van SQL-beheerder**: Geef het beheerderswachtwoord voor de SQL-server op.
-   * **Naam van datawarehouse**: Voer de naam van de SQL-pool in.
+   * **Naam van datawarehouse**: Geef een naam op voor de toegewezen SQL-pool.
    * **Transparent Data Encryption**: Accepteer de standaardwaarde Ingeschakeld. 
    * **Service Level Objective**: Accepteer de standaardwaarde DW400c.
    * **Locatie**: Accepteer de standaardlocatie van de resourcegroep.
@@ -67,7 +67,7 @@ U kunt de Azure-portal gebruiken om de geïmplementeerde resources te controlere
 # <a name="cli"></a>[CLI](#tab/CLI)
 
 ```azurecli-interactive
-echo "Enter the resource group where your Synapse SQL pool exists:" &&
+echo "Enter the resource group where your dedicated SQL pool (formerly SQL DW) exists:" &&
 read resourcegroupName &&
 az resource list --resource-group $resourcegroupName 
 ```
@@ -75,7 +75,7 @@ az resource list --resource-group $resourcegroupName
 # <a name="powershell"></a>[PowerShell](#tab/PowerShell)
 
 ```azurepowershell-interactive
-$resourceGroupName = Read-Host -Prompt "Enter the resource group name where your SQL pool account exists"
+$resourceGroupName = Read-Host -Prompt "Enter the resource group name where your dedicated SQL pool (formerly SQL DW) account exists"
 (Get-AzResource -ResourceType "Microsoft.Sql/servers/databases" -ResourceGroupName $resourceGroupName).Name
  Write-Host "Press [ENTER] to continue..."
 ```
@@ -107,7 +107,7 @@ Write-Host "Press [ENTER] to continue..."
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze quickstart hebt u een Azure Synapse Analytics SQL-pool gemaakt met behulp van een ARM-sjabloon en de implementatie gevalideerd. Als u meer wilt weten over Azure Synapse Analytics en Azure Resource Manager, vindt u meer informatie in de onderstaande artikelen.
+In deze quickstart hebt u een toegewezen SQL-pool (voorheen SQL DW) gemaakt met behulp van een ARM-sjabloon en de implementatie gevalideerd. Als u meer wilt weten over Azure Synapse Analytics en Azure Resource Manager, vindt u meer informatie in de onderstaande artikelen.
 
 - Lees een [Overzicht van Azure Synapse Analytics](sql-data-warehouse-overview-what-is.md)
 - Meer informatie over [Azure Resource Manager](../../azure-resource-manager/management/overview.md)

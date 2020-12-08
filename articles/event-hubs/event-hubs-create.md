@@ -1,17 +1,17 @@
 ---
 title: 'Azure-quickstart: Een event hub maken met behulp van de Azure-portal'
-description: In deze snelstart leert u hoe u een Azure event hub maakt met behulp van Azure Portal en vervolgens gebeurtenissen verzendt en ontvangt met behulp van .NET Standard SDK.
+description: In deze quickstart leert u hoe u met Azure Portal een Azure-event hub maakt.
 ms.topic: quickstart
 ms.date: 06/23/2020
-ms.openlocfilehash: 84cafcc86142cb9b97639c023971e7d290fc79fc
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: c1244317655815da91429585eff9ffbcc16662d4
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88927881"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96435498"
 ---
 # <a name="quickstart-create-an-event-hub-using-azure-portal"></a>Quickstart: Een event hub maken met behulp van Azure Portal
-Azure Event Hubs is een big data-platform voor het streamen van gegevens en een gebeurtenisopneemservice die miljoenen gebeurtenissen per seconde kan opnemen en verwerken. Event Hubs kan gebeurtenissen, gegevens of telemetrie die wordt geproduceerd door gedistribueerde software en apparaten verwerken en opslaan. Gegevens die naar een Event Hub worden verzonden, kunnen worden omgezet en opgeslagen via een provider voor realtime analytische gegevens of batchverwerking/opslagadapters. Zie [Overzicht van Event Hubs](event-hubs-about.md) en [Functies van Event Hubs](event-hubs-features.md) voor een gedetailleerd overzicht van Event Hubs.
+Azure Event Hubs is een big data-platform voor het streamen van gegevens en een gebeurtenisopneemservice die miljoenen gebeurtenissen per seconde kan ontvangen en verwerken. Event Hubs kan gebeurtenissen, gegevens of telemetrie die wordt geproduceerd door gedistribueerde software en apparaten verwerken en opslaan. Gegevens die naar een Event Hub worden verzonden, kunnen worden omgezet en opgeslagen via een provider voor realtime analytische gegevens of batchverwerking/opslagadapters. Zie [Overzicht van Event Hubs](event-hubs-about.md) en [Functies van Event Hubs](event-hubs-features.md) voor een gedetailleerd overzicht van Event Hubs.
 
 In deze snelstart maakt u een Event Hub met behulp van de [Azure-portal](https://portal.azure.com).
 
@@ -26,7 +26,7 @@ Zorg ervoor dat u over het volgende beschikt om deze snelstart te voltooien:
 Een resourcegroep is een logische verzameling Azure-resources. Alle resources worden geïmplementeerd en beheerd in een resourcegroep. Een resourcegroep maken:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-1. Kik in het linkernavigatievenster op **Resourcegroepen**. Klik vervolgens op **Toevoegen**.
+1. Selecteer **Resourcegroepen** in het linkernavigatievenster. Selecteer vervolgens **Toevoegen**.
 
    ![Resourcegroepen - Knop Toevoegen](./media/event-hubs-quickstart-portal/resource-groups1.png)
 
@@ -40,7 +40,7 @@ Een resourcegroep is een logische verzameling Azure-resources. Alle resources wo
 
 ## <a name="create-an-event-hubs-namespace"></a>Een Event Hubs-naamruimte maken
 
-Een Event Hubs-naamruimte biedt een unieke scopingcontainer, waarnaar wordt verwezen met de volledig gekwalificeerde domeinnaam (FQDN), waarin u een of meer Event Hubs maakt. Ga als volgt te werk om een ​​naamruimte in uw resourcegroep te maken met behulp van de portal:
+Een Event Hubs-naamruimte biedt een unieke scopingcontainer waarin u een of meer event hubs kunt maken. Ga als volgt te werk om een ​​naamruimte in uw resourcegroep te maken met behulp van de portal:
 
 1. Open de Azure-portal en klik op **Een resource maken** linksboven in het scherm.
 1. Selecteer **Alle services** in het menu aan de linkerkant en selecteer de **ster (`*`)** naast **Event Hubs** in de categorie **Analyse**. Controleer of **Event Hubs** is toegevoegd aan **FAVORIETEN** in het navigatiemenu aan de linkerkant. 
@@ -53,9 +53,9 @@ Een Event Hubs-naamruimte biedt een unieke scopingcontainer, waarnaar wordt verw
    1. Selecteer het **abonnement** waarin u de naamruimte wilt maken.  
    1. Selecteer de **resourcegroep** die u in de vorige stap hebt gemaakt.   
    1. Voer een **naam** in voor de naamruimte. In het systeem wordt onmiddellijk gecontroleerd of de naam beschikbaar is.  
-   1. Selecteer een **locatie** voor de naamruimte.      
-   1. Kies de **prijscategorie** (Basic of Standard).    
-   1. Laat de instellingen voor **doorvoereenheden** ongewijzigd. Zie [Schaalbaarheid van Event Hubs](event-hubs-scalability.md#throughput-units) voor meer informatie over doorvoereenheden.  
+   1. Selecteer een **locatie** voor de naamruimte.
+   1. Kies de **prijscategorie** (Basic of Standard). Zie [Prijzen van Event Hubs](https://azure.microsoft.com/pricing/details/event-hubs/), [Verschillen tussen lagen](event-hubs-faq.md#what-is-the-difference-between-event-hubs-basic-and-standard-tiers) en [Quota en limieten](event-hubs-quotas.md) voor meer informatie over enkele van de verschillen tussen de lagen Basic en Standard. 
+   1. Laat de instellingen voor **doorvoereenheden** ongewijzigd. Doorvoereenheden zijn vooraf aangeschafte capaciteitseenheden. Zie [Schaalbaarheid van Event Hubs](event-hubs-scalability.md#throughput-units) voor meer informatie over doorvoereenheden.  
    1. Selecteer **Controleren en maken** onderaan de pagina.
       
       ![Een Event Hub-naamruimte maken](./media/event-hubs-quickstart-portal/create-event-hub1.png)
@@ -78,19 +78,23 @@ Een Event Hubs-naamruimte biedt een unieke scopingcontainer, waarnaar wordt verw
 Ga als volgt te werk om een Event Hub in de naamruimte te maken:
 
 1. Op de pagina Event Hubs-naamruimte selecteert u **Event Hubs** in het menu links.
-1. Klik op **+ Event Hub** bovenaan in het venster.
+1. Selecteer **+ Event Hub** boven aan het venster.
    
     ![Event Hub toevoegen - Knop](./media/event-hubs-quickstart-portal/create-event-hub4.png)
-1. Typ een naam voor uw Event Hub en klik vervolgens op **Maken**.
+1. Typ een naam voor uw event hub en selecteer vervolgens op **Maken**.
    
     ![Event hub maken](./media/event-hubs-quickstart-portal/create-event-hub5.png)
-1. U kunt de status van het Event Hub-creatieproces bekijken in de waarschuwingen. Wanneer de Event Hub is gemaakt, wordt deze weergegeven in de lijst Event Hubs, zoals in de volgende afbeelding is te zien:
+
+    Met de instelling **Aantal partities** kunt u het verbruik van verschillende gebruikers parallelliseren. Zie [Partities](event-hubs-scalability.md#partitions) voor meer informatie.
+
+    De instelling **Bewaarperiode van berichten** duidt aan hoe lang de Event Hubs-service gegevens bewaart. Zie [Quota en limieten](event-hubs-quotas.md) als u wilt weten wat de maximumlimieten voor deze instelling zijn.
+1. U kunt de status van het Event Hub-creatieproces bekijken in de waarschuwingen. Nadat de event hub is gemaakt, wordt deze weergegeven in de lijst met event hubs.
 
     ![Event Hub gemaakt](./media/event-hubs-quickstart-portal/event-hub-created.png)
-
+    
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u een resourcegroep, een Event Hubs-naamruimte en een Event Hub gemaakt. Zie de zelfstudies **Gebeurtenissen verzenden en ontvangen** voor stapsgewijze instructies voor het verzenden van gebeurtenissen naar of ontvangen van gebeurtenissen vanuit een Event Hub: 
+In dit artikel hebt u een resourcegroep, een Event Hubs-naamruimte en een Event Hub gemaakt. Zie de volgende zelfstudies voor stapsgewijze instructies voor het verzenden van gebeurtenissen naar of ontvangen van gebeurtenissen vanuit een event hub: 
 
 - [.NET Core](event-hubs-dotnet-standard-getstarted-send.md)
 - [Java](event-hubs-java-get-started-send.md)

@@ -1,6 +1,6 @@
 ---
-title: Cheatsheet voor Azure Synapse Analytics (voorheen SQL DW)
-description: Vind koppelingen en best practices om snel uw Azure Synapse Analytics-oplossingen (voorheen SQL DW) te maken.
+title: Cheatsheet voor toegewezen SQL-pool (voorheen SQL DW)
+description: Vind koppelingen en best practices om snel uw toegewezen SQL-pool (voorheen SQL DW) in Azure Synapse Analytics-te maken.
 services: synapse-analytics
 author: mlee3gsd
 manager: craigg
@@ -10,18 +10,18 @@ ms.subservice: sql-dw
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 648f06ef1af5d6dce9fa3583c6358d3bd173f209
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: a236cf99d3131e83619cfab06e8ec028938a87ba
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93319677"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96454610"
 ---
-# <a name="cheat-sheet-for-azure-synapse-analytics-formerly-sql-dw"></a>Cheatsheet voor Azure Synapse Analytics (voorheen SQL DW)
+# <a name="cheat-sheet-for-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytic"></a>Cheatsheet voor toegewezen SQL-pool (voorheen SQL DW) in Azure Synapse Analytics
 
-Dit overzicht biedt nuttige tips en best practices voor het maken van Azure Synapse Analytics-oplossingen.
+Dit cheatsheet biedt nuttige tips en best practices voor het maken van uw toegewezen SQL-pooloplossingen (voorheen SQL DW).
 
-De volgende afbeelding geeft het proces weer voor het ontwerpen van een datawarehouse:
+De volgende afbeelding geeft het proces weer voor het ontwerpen van een datawarehouse met behulp van een toegewezen SQL-pool (voorheen SQL DW):
 
 ![Schema](./media/cheat-sheet/picture-flow.png)
 
@@ -121,13 +121,13 @@ Resourcegroepen worden gebruikt om geheugen toe te wijzen aan query’s. Als u m
 
 Als u merkt dat query's te lang duren, controleert u of uw gebruikers niet in grote resourceklassen worden uitgevoerd. Grote resourceklassen nemen veel gelijktijdigheidssleuven in beslag. Ze kunnen ervoor zorgen dat andere query's in de wachtrij komen.
 
-Door het gebruik van Gen2 van [SQL-pool](sql-data-warehouse-overview-what-is.md#dedicated-sql-pool-in-azure-synapse) krijgt iedere resourceklasse uiteindelijk 2,5 keer zoveel geheugen als Gen1.
+Door het gebruik van Gen2 van een [toegewezen SQL-pool (voorheen SQL DW) ](sql-data-warehouse-overview-what-is.md) krijgt iedere resourceklasse uiteindelijk 2,5 keer zoveel geheugen als Gen1.
 
 Meer informatie over het werken met [resourceklassen en gelijktijdigheid](resource-classes-for-workload-management.md).
 
 ## <a name="lower-your-cost"></a>Uw kosten verlagen
 
-Een belangrijke functie van Azure Synapse is de mogelijkheid om [rekenresources te beheren](sql-data-warehouse-manage-compute-overview.md). U kunt de SQL-pool onderbreken wanneer u deze niet gebruikt, zodat er geen rekenresources in rekening worden gebracht. U kunt de schaal van resources aanpassen om te voldoen aan uw prestatievereisten. Voor onderbreken gebruikt u [Azure Portal](pause-and-resume-compute-portal.md) of [PowerShell](pause-and-resume-compute-powershell.md). Voor schaal aanpassen gebruikt u [Azure Portal](quickstart-scale-compute-portal.md), [PowerShell](quickstart-scale-compute-powershell.md), [T-SQL](quickstart-scale-compute-tsql.md) of een [REST API](sql-data-warehouse-manage-compute-rest-api.md#scale-compute).
+Een belangrijke functie van Azure Synapse is de mogelijkheid om [rekenresources te beheren](sql-data-warehouse-manage-compute-overview.md). U kunt de toegewezen SQL-pool (voorheen SQL DW) onderbreken wanneer u deze niet gebruikt, zodat er geen rekenresources in rekening worden gebracht. U kunt de schaal van resources aanpassen om te voldoen aan uw prestatievereisten. Voor onderbreken gebruikt u [Azure Portal](pause-and-resume-compute-portal.md) of [PowerShell](pause-and-resume-compute-powershell.md). Voor schaal aanpassen gebruikt u [Azure Portal](quickstart-scale-compute-portal.md), [PowerShell](quickstart-scale-compute-powershell.md), [T-SQL](quickstart-scale-compute-tsql.md) of een [REST API](sql-data-warehouse-manage-compute-rest-api.md#scale-compute).
 
 U kunt nu op elk moment automatisch de schaal aanpassen met Azure Functions:
 
@@ -137,8 +137,8 @@ U kunt nu op elk moment automatisch de schaal aanpassen met Azure Functions:
 
 We raden u aan SQL Database en Azure Analysis Services in een hub-en-spoke-architectuur te gebruiken. Deze oplossing kan workloadisolatie bieden tussen verschillende gebruikersgroepen en tegelijkertijd geavanceerde beveiligingsfuncties van SQL Database en Azure Analysis Services gebruiken. Dit is ook een manier om grenzeloze gelijktijdigheid te bieden aan uw gebruikers.
 
-Meer informatie over [typische architecturen die profiteren van Azure Synapse](https://blogs.msdn.microsoft.com/sqlcat/20../../common-isv-application-patterns-using-azure-sql-data-warehouse/).
+Meer informatie over [veelvoorkomende architecturen die profiteren van toegewezen SQL-pools (voorheen SQL DW) in Azure Synapse Analytics](https://blogs.msdn.microsoft.com/sqlcat/20../../common-isv-application-patterns-using-azure-sql-data-warehouse/).
 
-Met één muisklik uw spokes van de SQL-pool naar SQL-databases implementeren:
+Met één muisklik uw spokes van de toegewezen SQL-pool (voorheen SQL DW) in SQL-databases implementeren:
 
 [![Afbeelding met een knop met het label Implementeren naar Azure.](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://ms.portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoft%2Fsql-data-warehouse-samples%2Fmaster%2Farm-templates%2FsqlDwSpokeDbTemplate%2Fazuredeploy.json)

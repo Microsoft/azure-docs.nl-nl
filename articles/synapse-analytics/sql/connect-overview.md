@@ -10,17 +10,17 @@ ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 0897ca35dd5ae1b7209a36aee4bd5335d4ea4d25
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 2ff2d9708642c347a829de290d45849d8629807f
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94681528"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96462347"
 ---
 # <a name="connect-to-synapse-sql"></a>Verbinding maken met Synapse SQL
 Maak verbinding met de Synapse-SQL-optie in Azure Synapse Analytics.
 
-## <a name="supported-tools-for-serverless-sql-pool-preview"></a>Ondersteunde hulpprogramma's voor serverloze SQL-pools (preview-versie)
+## <a name="supported-tools-for-serverless-sql-pool"></a>Ondersteunde hulpprogramma's voor serverloze SQL-pools
 
 [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) wordt volledig ondersteund vanaf versie 1.18.0. SSMS wordt gedeeltelijk ondersteund vanaf versie 18.5, maar u kunt de tool gebruiken om alleen verbinding te maken en query's uit te voeren.
 

@@ -9,16 +9,16 @@ ms.topic: overview
 ms.date: 04/15/2020
 ms.author: vvasic
 ms.reviewer: jrasnick
-ms.openlocfilehash: 1a78142ded7be46bdc06c49d6e0a26ef8b266300
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 0e3bbb2532340664d0fc54b29bea3ef3af75f9b6
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93318398"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96459156"
 ---
 # <a name="synapse-sql-resource-consumption"></a>Synapse SQL-resourceverbruik
 
-In dit artikel worden resourceverbruiksmodellen van Synapse SQL (preview) beschreven.
+In dit artikel worden resourceverbruiksmodellen van Synapse SQL beschreven.
 
 ## <a name="serverless-sql-pool"></a>Serverloze SQL-pool
 

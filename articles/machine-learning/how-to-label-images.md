@@ -8,12 +8,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 07/27/2020
-ms.openlocfilehash: b138b3eb52a0bfb6dca2ec6fdf0b855223bab698
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 1f4d0d5c2d5442d14d68922c4d0c27b45b2b841e
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94984444"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96324717"
 ---
 # <a name="tag-images-in-a-labeling-project"></a>Tags toevoegen aan afbeeldingen in een labelproject 
 
@@ -119,7 +119,7 @@ U kunt de tag van een bestaand begrenzingsvak niet wijzigen. Als u bij het toewi
 
 Standaard kunt u bestaande begrenzingsvakken bewerken. U kunt dit gedrag veranderen met behulp van het hulpprogramma **Regio's vergrendelen/ontgrendelen** ![hulpprogramma Regio's vergrendelen/ontgrendelen](./media/how-to-label-images/lock-bounding-boxes-tool.png) of met de 'L'-toets. Als regio's zijn vergrendeld, kunt u alleen de vorm of locatie van een nieuw begrenzingsvak wijzigen.
 
-Gebruik het hulpprogramma **Manipulatie van regio's** ![hulpprogramma Manipulatie van regio's](./media/how-to-label-images/regions-tool.png) of 'M' om een bestaand begrenzingsvak aan te passen. Sleep de randen of hoeken om de vorm aan te passen. Klik in de binnenkant van het vak om het hele begrenzingsvak te verslepen. Als u een regio niet kunt bewerken, hebt u waarschijnlijk het hulpprogramma **Regio's vergrendelen/ontgrendelen** ingeschakeld.
+Gebruik het hulpprogramma voor het **bewerken van regio's** ![Dit is het pictogram voor het hulpprogramma voor het bewerken van regio's; vier pijlen die vanuit het midden naar boven, rechts, beneden en links wijzen.](./media/how-to-label-images/regions-tool.png) of 'M' om een bestaand begrenzingsvak aan te passen. Sleep de randen of hoeken om de vorm aan te passen. Klik in de binnenkant van het vak om het hele begrenzingsvak te verslepen. Als u een regio niet kunt bewerken, hebt u waarschijnlijk het hulpprogramma **Regio's vergrendelen/ontgrendelen** ingeschakeld.
 
 Gebruik het hulpprogramma **Op een sjabloon gebaseerd vak** ![hulpprogramma Op een sjabloon gebaseerd vak](./media/how-to-label-images/template-box-tool.png) of 'T' om meerdere begrenzingsvakken van dezelfde grootte te maken. Als de afbeelding geen begrenzingsvakken heeft en u vakken op sjabloonbasis activeert, worden in het hulpprogramma vakken van 50 x 50 pixels gemaakt. Als u een begrenzingsvak maakt en vervolgens vakken op sjabloonbasis activeert, krijgen alle nieuwe begrenzingsvakken dezelfde grootte als het laatste vak dat u hebt gemaakt. De grootte van vakken op sjabloonbasis kan worden aangepast nadat u het vak hebt geplaatst. Met het aanpassen van de grootte van een vak op sjabloonbasis wordt alleen de grootte van dat specifieke vak aangepast.
 
@@ -143,7 +143,7 @@ Als u het label voor een veelhoek wilt wijzigen, selecteert u de tool **Gebied v
 
 U kunt bestaande veelhoeken bewerken. U kunt dit gedrag veranderen met behulp van de tool **Regio's vergrendelen/ontgrendelen** ![Veelhoeken bewerken met de tool Regio's vergrendelen/ontgrendelen](./media/how-to-label-images/lock-bounding-boxes-tool.png) of met de 'L'-toets. Als regio's zijn vergrendeld, kunt u alleen de vorm of locatie van een nieuwe veelhoek wijzigen.
 
-Gebruik de tool **Veelhoekpunten toevoegen of verwijderen** ![tool Veelhoekpunten toevoegen of verwijderen](./media/how-to-label-images/add-remove-points-tool.png) om druk op 'U' om een bestaande veelhoek te wijzigen. Klik op de veelhoek om een punt toe te voegen of te verwijderen. Als u een regio niet kunt bewerken, hebt u waarschijnlijk het hulpprogramma **Regio's vergrendelen/ontgrendelen** ingeschakeld.
+Gebruik het hulpprogramma **Veelhoekpunten toevoegen of verwijderen** ![Dit is het pictogram voor het hulpprogramma Veelhoekpunten toevoegen of verwijderen.](./media/how-to-label-images/add-remove-points-tool.png) of druk op 'U' om een bestaande veelhoek te wijzigen. Klik op de veelhoek om een punt toe te voegen of te verwijderen. Als u een regio niet kunt bewerken, hebt u waarschijnlijk het hulpprogramma **Regio's vergrendelen/ontgrendelen** ingeschakeld.
 
 Als u *alle* veelhoeken in de huidige afbeelding wilt verwijderen, selecteert u het hulpprogramma **Alle regio's verwijderen** ![hulpprogramma Alle regio's verwijderen](./media/how-to-label-images/delete-regions-tool.png).
 

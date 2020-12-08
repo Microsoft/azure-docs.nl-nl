@@ -11,12 +11,12 @@ ms.author: anumamah
 ms.reviewer: nibaccam
 ms.date: 08/14/2020
 ms.custom: devx-track-python, automl
-ms.openlocfilehash: 4f6e194f04789fbcaf24d69965dfa8ac61b20a38
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: e1a5370501fe73fb783db9a039d9f060acdb0a35
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94886325"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96511029"
 ---
 # <a name="tutorial-use-automated-machine-learning-to-predict-taxi-fares"></a>Zelfstudie: Geautomatiseerde machine learning gebruiken om taxitarieven te voorspellen
 
@@ -210,7 +210,7 @@ Definieer de experimentparameter en modelinstellingen voor training. Bekijk de v
 
 |Eigenschap| Waarde in deze zelfstudie |Beschrijving|
 |----|----|---|
-|**iteration_timeout_minutes**|2|Tijdslimiet in minuten voor elke iteratie. Verklein deze waarde als u de totale uitvoeringstijd wilt verminderen.|
+|**iteration_timeout_minutes**|10|Tijdslimiet in minuten voor elke iteratie. Verhoog deze waarde voor grotere gegevenssets die meer tijd nodig hebben voor elke iteratie.|
 |**experiment_timeout_hours**|0,3|Maximale tijdsduur in uren dat de combinatie van alle iteraties voordat het experiment wordt beëindigd, kan duren.|
 |**enable_early_stopping**|True|Vlag om vroegtijdige beëindiging in te schakelen als de score niet op korte termijn verbetert.|
 |**primary_metric**| spearman_correlation | De metrische gegevens die u wilt optimaliseren. Het optimale model wordt gekozen op basis van deze metrische waarde.|
@@ -222,7 +222,7 @@ Definieer de experimentparameter en modelinstellingen voor training. Bekijk de v
 import logging
 
 automl_settings = {
-    "iteration_timeout_minutes": 2,
+    "iteration_timeout_minutes": 10,
     "experiment_timeout_hours": 0.3,
     "enable_early_stopping": True,
     "primary_metric": 'spearman_correlation',

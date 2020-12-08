@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: chnwamba
 ms.custom: devx-track-js
-ms.openlocfilehash: 20a3337ab054ca1feefc2f5f08f8e6398417fb9e
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 6f96b74726684d37795c94be74e48611b4145402
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94441610"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350208"
 ---
 # <a name="deploy-static-rendered-nextjs-websites-on-azure-static-web-apps-preview"></a>Statisch weergegeven Next.js-websites implementeren in Azure Static Web Apps (preview)
 
@@ -29,9 +29,9 @@ In deze zelfstudie leert u hoe u een met [Next.js](https://nextjs.org) gegeneree
 
 In plaats van de Next.js-CLI te gebruiken voor het maken van een app, kunt u een starter-opslagplaats gebruiken die een bestaande Next.js-app bevat. Deze opslagplaats bevat een Next.js-app met dynamische routes, wat een veelvoorkomend implementatieprobleem met zich meebrengt. Dynamische routes hebben een extra implementatieconfiguratie nodig. Hierover krijgt u zo dadelijk meer informatie.
 
-Maak om te beginnen een nieuwe opslagplaats onder uw GitHub-account, met behulp van een opslagplaatssjabloon. 
+Maak om te beginnen een nieuwe opslagplaats onder uw GitHub-account, met behulp van een opslagplaatssjabloon.
 
-1. Ga naar <http://github.com/staticwebdev/nextjs-starter/generate>
+1. Ga naar [https://github.com/staticwebdev/nextjs-starter/generate](https://github.com/login?return_to=/staticwebdev/nextjs-starter/generate)
 1. Geef de opslagplaats de naam **nextjs-starter**
 1. Kloon de nieuwe opslagplaats vervolgens naar de computer. Zorg ervoor dat u `<YOUR_GITHUB_ACCOUNT_NAME>` vervangt door de naam van uw account.
 

@@ -1,5 +1,5 @@
 ---
-title: Serverloze SQL-pool (preview)
+title: Serverloze SQL-pool
 description: Meer informatie over serverloze SQL-pool in Azure Synapse Analytics.
 services: synapse analytics
 author: filippopovic
@@ -9,16 +9,16 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: e0d47567c3bc0b05c47efafa3bdc8b297a7bdbea
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 34ce36f0ff348f896b7c2ea680c113b5e9e4ea09
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93306866"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96463169"
 ---
-# <a name="serverless-sql-pool-preview-in-azure-synapse-analytics"></a>Serverloze SQL-pool (preview) in Azure Synapse Analytics 
+# <a name="serverless-sql-pool-in-azure-synapse-analytics"></a>Serverloze SQL-pool in Azure Synapse Analytics 
 
-Elke Azure Synapse Analytics-werkruimte (preview) wordt geleverd met serverloze SQL-pool-eindpunten (preview) die u kunt gebruiken om een query uit te voeren op gegevens in de lake.
+Elke Azure Synapse Analytics-werkruimte wordt geleverd met serverloze SQL-pool-eindpunten die u kunt gebruiken om een query uit te voeren op gegevens in de lake.
 
 Serverloze SQL-pool is een queryservice voor de gegevens in uw data lake. De service biedt op de volgende manieren toegang tot uw gegevens:
  
@@ -123,7 +123,7 @@ Verificatie van de serverloze SQL-pool verwijst naar hoe gebruikers hun identite
 
   Bij deze verificatiemethode wordt een combinatie van gebruikersnaam en wachtwoord gebruikt.
 
-- **Azure Active Directory-verificatie** :
+- **Azure Active Directory-verificatie**:
 
   Bij deze verificatiemethode worden identiteiten gebruikt die worden beheerd door Azure Active Directory. Voor Azure AD-gebruikers kan meervoudige verificatie worden ingeschakeld. Gebruik [waar mogelijk](/sql/relational-databases/security/choose-an-authentication-mode?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) Active Directory-verificatie (geïntegreerde beveiliging).
 
@@ -141,7 +141,7 @@ Een gebruiker die is aangemeld bij de service serverloze SQL-pool moet gemachtig
 
 - **SAS (Shared Access Signature; handtekening voor gedeelde toegang)** biedt gedelegeerde toegang tot resources in een opslagaccount. Met behulp van een SAS kunt u clients toegang geven tot resources in een opslagaccount zonder dat u de sleutels van het account hoeft te delen. Een SAS geeft u nauwkeurige controle over het type toegang dat u verleent aan clients die een SAS hebben: geldigheidsinterval, verleende machtigingen, acceptabel bereik van IP-adressen en acceptabel protocol (https/http).
 
-- **Gebruikersidentiteit** , ook wel 'passthrough' genoemd, is een type autorisatie waarbij de identiteit van de Azure AD-gebruiker die is aangemeld bij de serverloze SQL-pool wordt gebruikt om toegang tot de gegevens te autoriseren. Voordat de gegevens worden vrijgegeven, moet de Azure Storage-beheerder machtigingen verlenen aan de Azure AD-gebruiker voor toegang tot de gegevens. Dit type autorisatie maakt gebruik van de Azure AD-gebruiker die is aangemeld bij de serverloze SQL-pool en wordt daarom niet ondersteund voor SQL-gebruikerstypen.
+- **Gebruikersidentiteit**, ook wel 'passthrough' genoemd, is een type autorisatie waarbij de identiteit van de Azure AD-gebruiker die is aangemeld bij de serverloze SQL-pool wordt gebruikt om toegang tot de gegevens te autoriseren. Voordat de gegevens worden vrijgegeven, moet de Azure Storage-beheerder machtigingen verlenen aan de Azure AD-gebruiker voor toegang tot de gegevens. Dit type autorisatie maakt gebruik van de Azure AD-gebruiker die is aangemeld bij de serverloze SQL-pool en wordt daarom niet ondersteund voor SQL-gebruikerstypen.
 
 ## <a name="next-steps"></a>Volgende stappen
 Meer informatie over de verbinding met eindpunten en het uitvoeren van query's op bestanden vindt u in de volgende artikelen: 

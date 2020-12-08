@@ -12,12 +12,12 @@ ms.date: 09/10/2018
 ms.author: ajburnle
 ms.custom: it-pro, seodec18, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2c7225adcfe970d17f8f86afdd15e36e2ba76de3
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: eeea88d8c21ba754fbeadbb24891126b639616c7
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91287012"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96437231"
 ---
 # <a name="quickstart-create-a-new-tenant-in-azure-active-directory"></a>Quickstart: Een nieuwe tenant maken in Azure Active Directory
 U kunt al uw administratieve taken uitvoeren met behulp van de portal van Azure Active Directory (Azure AD), met inbegrip van het maken van een nieuwe tenant voor uw organisatie. 
@@ -33,25 +33,29 @@ Nadat u zich bij Azure Portal aanmeldt, kunt u een nieuwe tenant maken voor uw o
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com/) van uw organisatie.
 
-1. Selecteer **Een resource maken** in het menu van de Azure-portal.  
+1. In het Azure Portal-menu selecteert u **Azure Active Directory**.  
 
-    ![De pagina Resource maken van Azure Active Directory](media/active-directory-access-create-new-tenant/azure-ad-portal.png)
+    <kbd>![Azure Active Directory - Overzichtspagina - Een tenant maken](media/active-directory-access-create-new-tenant/azure-ad-portal.png)</kbd>  
 
-1. Zoek en selecteer de optie **Azure Active Directory**.
+1. Selecteer **Een tenant maken**.
 
-    De pagina **Map maken** wordt weergegeven.
+1. Selecteer op het tabblad Basis het type tenant dat u wilt maken, dat is tenzij **Azure Active Directory** of **Azure Active Directory (B2C)** .
 
-    ![De pagina Maken voor Azure Active Directory](media/active-directory-access-create-new-tenant/azure-ad-create-new-tenant.png)
+1. Selecteer **Volgende: Configuratie** om naar het tabblad Configuratie te gaan.
 
-1.  Op de pagina **Map maken**, voer de volgende informatie in:
+    <kbd>![Azure Active Directory - pagina Een tenant maken - tabblad Configuratie ](media/active-directory-access-create-new-tenant/azure-ad-create-new-tenant.png)</kbd>
+
+1.  Geef op het tabblad Configuratie de volgende gegevens op:
     
-    - Type _Contoso_ in het vak **Organisatienaam**.
+    - Typ _Contoso-organisatie_ in het vak **Organisatienaam**.
 
-    - Type _Contoso_ in het vak **Initiële domeinnaam**.
+    - Typ _Contosoorg_ in het vak **Initiële domeinnaam**.
 
     - Laat de optie _Verenigde Staten_ in het vak **Land of regio**.
 
-1. Selecteer **Maken**.
+1. Selecteer **Volgende: Beoordelen en maken**. Controleer de informatie die u hebt ingevoerd en selecteer **Maken** als de gegevens juist zijn.
+
+    <kbd>![Azure Active Directory - pagina Tenant controleren en maken](media/active-directory-access-create-new-tenant/azure-ad-review.png)</kbd>
 
 De nieuwe tenant wordt gemaakt met het domein contoso.onmicrosoft.com.
 
@@ -63,7 +67,7 @@ Als u deze app niet meer gebruikt, kunt u de tenant met de volgende stappen verw
 
     De tenant en de bijbehorende informatie wordt verwijderd.
 
-    ![Overzichtspagina, waarop de knop Map verwijderen is gemarkeerd](media/active-directory-access-create-new-tenant/azure-ad-delete-new-tenant.png)
+    <kbd>![Overzichtspagina, waarop de knop Map verwijderen is gemarkeerd](media/active-directory-access-create-new-tenant/azure-ad-delete-new-tenant.png)</kbd>
 
 ## <a name="next-steps"></a>Volgende stappen
 - Zie [Een aangepaste domeinnaam toevoegen aan Azure Active Directory](add-custom-domain.md) voor het wijzigen of toevoegen van meer informatie over extra domeinnamen

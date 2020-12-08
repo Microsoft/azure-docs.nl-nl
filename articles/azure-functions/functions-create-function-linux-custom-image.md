@@ -5,12 +5,12 @@ ms.date: 03/30/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp, mvc, devx-track-python, devx-track-azurepowershell, devx-track-azurecli
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: 846599414c0bca95a3f41e127dc01e06d0fd43f9
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: af63eb68ec82a0725befed723298c079e82bdfdb
+ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747106"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96327097"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-container"></a>Een functie in Linux maken met een aangepaste container
 
@@ -18,7 +18,7 @@ In deze zelfstudie maakt en implementeert u uw code in Azure Functions als een a
 
 Om uw functiecode te implementeren in een aangepaste Linux-container is hosting met een [Premium-abonnement](functions-premium-plan.md#features) of een [Dedicated (App Service)-abonnement](functions-scale.md#app-service-plan) vereist. Bij het voltooien van deze zelfstudie worden er kosten ter hoogte van een paar Amerikaanse dollars in rekening gebracht op uw Azure-account. U kunt deze kosten minimaliseren door [resources op te schonen](#clean-up-resources) wanneer u klaar bent.
 
-U kunt ook een standaardcontainer van Azure App Service gebruiken, zoals wordt beschreven in [Create your first function hosted on Linux](./functions-create-first-azure-function-azure-cli.md?pivots=programming-language-python) (Uw eerste functie maken die wordt gehost in Linux). Ondersteunde basisinstallatie kopieën voor Azure Functions vindt u in de [opslagplaats voor basisinstallatiekopieën van Azure Functions](https://hub.docker.com/_/microsoft-azure-functions-base).
+U kunt ook een standaardcontainer van Azure App Service gebruiken, zoals wordt beschreven in [Create your first function hosted on Linux](./create-first-function-cli-csharp.md?pivots=programming-language-python) (Uw eerste functie maken die wordt gehost in Linux). Ondersteunde basisinstallatie kopieën voor Azure Functions vindt u in de [opslagplaats voor basisinstallatiekopieën van Azure Functions](https://hub.docker.com/_/microsoft-azure-functions-base).
 
 In deze zelfstudie leert u het volgende:
 
@@ -54,34 +54,34 @@ U kunt deze zelfstudie volgen op elke computer met Windows, macOS of Linux.
 Voer in een terminal of bij een opdrachtprompt de volgende opdracht uit voor de taal die u hebt gekozen om een functie-app-project te maken in een map met de naam `LocalFunctionsProject`.  
 ::: zone-end  
 ::: zone pivot="programming-language-csharp"  
-```
+```console
 func init LocalFunctionsProject --worker-runtime dotnet --docker
 ```
 ::: zone-end  
 ::: zone pivot="programming-language-javascript"  
-```
+```console
 func init LocalFunctionsProject --worker-runtime node --language javascript --docker
 ```
 ::: zone-end  
 ::: zone pivot="programming-language-powershell"  
-```
+```console
 func init LocalFunctionsProject --worker-runtime powershell --docker
 ```
 ::: zone-end  
 ::: zone pivot="programming-language-python"  
-```
+```console
 func init LocalFunctionsProject --worker-runtime python --docker
 ```
 ::: zone-end  
 ::: zone pivot="programming-language-typescript"  
-```
+```console
 func init LocalFunctionsProject --worker-runtime node --language typescript --docker
 ```
 ::: zone-end
 ::: zone pivot="programming-language-java"  
 Voer in een lege map de volgende opdracht uit om het Functions-project te genereren op basis van een [Maven-archetype](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html).
 
-# <a name="bash"></a>[bash](#tab/bash)
+# <a name="bash"></a>[Bash](#tab/bash)
 ```bash
 mvn archetype:generate -DarchetypeGroupId=com.microsoft.azure -DarchetypeArtifactId=azure-functions-archetype -DjavaVersion=8 -Ddocker
 ```
@@ -112,47 +112,47 @@ Geef de volgende waarden op als daarom wordt gevraagd:
 
 Typ `Y` of druk op Enter om te bevestigen.
 
-Maven maakt de projectbestanden in een nieuwe map met de naam van _artifactId_ ; in dit voorbeeld is dat `fabrikam-functions`. 
+Maven maakt de projectbestanden in een nieuwe map met de naam van _artifactId_; in dit voorbeeld is dat `fabrikam-functions`. 
 ::: zone-end
 Met de optie `--docker` wordt een `Dockerfile` voor het project gegenereerd. Hiermee wordt een geschikte aangepaste container gedefinieerd voor gebruik met Azure Functions en de geselecteerde runtime.
 
 Navigeer naar de projectmap:
 ::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-typescript,programming-language-powershell,programming-language-python"  
-```
+```console
 cd LocalFunctionsProject
 ```
 ::: zone-end  
 ::: zone pivot="programming-language-java"  
-```
+```console
 cd fabrikam-functions
 ```
 ::: zone-end  
 ::: zone pivot="programming-language-csharp,programming-language-javascript,programming-language-typescript,programming-language-powershell,programming-language-python" 
 Voeg een functie toe aan uw project met behulp van de volgende opdracht, waarbij het argument `--name` de unieke naam van de functie is en het argument `--template` de trigger van de functie. Maak met `func new` een submap met de naam van de functie die een codebestand bevat dat geschikt is voor de taal van het project en een configuratiebestand met de naam *function.json*.
 
-```
+```console
 func new --name HttpExample --template "HTTP trigger"
 ```
 ::: zone-end  
 Als u de functie lokaal wilt testen, start u de lokale runtimehost van Azure Functions in de hoofdmap van de projectmap: 
 ::: zone pivot="programming-language-csharp"  
-```
+```console
 func start --build  
 ```
 ::: zone-end  
 ::: zone pivot="programming-language-javascript,programming-language-powershell,programming-language-python"   
-```
+```console
 func start  
 ```
 ::: zone-end  
 ::: zone pivot="programming-language-typescript"  
-```
+```console
 npm install
 npm start
 ```
 ::: zone-end  
 ::: zone pivot="programming-language-java"  
-```
+```console
 mvn clean package  
 mvn azure-functions:run
 ```
@@ -167,7 +167,7 @@ Gebruik **Ctrl**-**C** om de host te stoppen.
     
 Voer in de hoofdmap van het project de opdracht [docker build](https://docs.docker.com/engine/reference/commandline/build/) uit en geef een naam, `azurefunctionsimage` en een tag, `v1.0.0`, op. Vervang `<DOCKER_ID>` door de ID van uw Docker Hub-account. Met deze opdracht wordt de Docker-installatiekopie voor de container gebouwd.
 
-```
+```console
 docker build --tag <DOCKER_ID>/azurefunctionsimage:v1.0.0 .
 ```
 
@@ -175,7 +175,7 @@ Wanneer de opdracht is voltooid, kunt u de nieuwe container lokaal uitvoeren.
     
 Als u de build wilt testen, voert u de installatiekopie uit in een lokale container met behulp van de opdracht [docker run](https://docs.docker.com/engine/reference/commandline/run/), waarbij u `<DOCKER_ID` opnieuw vervangt door de Docker-ID en het argument poorten toevoegt, `-p 8080:80`:
 
-```
+```console
 docker run -p 8080:80 -it <docker_id>/azurefunctionsimage:v1.0.0
 ```
 
@@ -197,13 +197,13 @@ Docker Hub is een containerregister die als host fungeert voor installatiekopie�
 
 1. Als u zich nog niet hebt aangemeld bij Docker, doet u dit met de opdracht [docker login](https://docs.docker.com/engine/reference/commandline/login/), waarbij u `<docker_id>` vervangt door uw Docker-ID. Voor deze opdracht moet u uw gebruikersnaam en wachtwoord opgeven. Het bericht 'Login Succeeded' verschijnt als u bent aangemeld.
 
-    ```
+    ```console
     docker login
     ```
     
 1. Nadat u zich hebt aangemeld, pusht u de installatiekopie naar Docker Hub met behulp van de opdracht [docker push](https://docs.docker.com/engine/reference/commandline/push/). Vervang ook hier `<docker_id>` door uw Docker-ID.
 
-    ```
+    ```console
     docker push <docker_id>/azurefunctionsimage:v1.0.0
     ```
 
@@ -279,7 +279,7 @@ Een functie-app in Azure beheert de uitvoering van uw functies in uw hostingabon
 1. De functie kan deze verbindingsreeks nu gebruiken om toegang te krijgen tot het opslagaccount.
 
     > [!TIP]
-    > In bash kunt u een shell-variabele gebruiken om de verbindingsreeks vast te leggen in plaats van het klembord te gebruiken. Gebruik eerst de volgende opdracht om een variabele te maken met de verbindingsreeks:
+    > In Bash kunt u een shell-variabele gebruiken om de verbindingsreeks vast te leggen in plaats van het klembord te gebruiken. Gebruik eerst de volgende opdracht om een variabele te maken met de verbindingsreeks:
     > 
     > ```bash
     > storageConnectionString=$(az storage account show-connection-string --resource-group AzureFunctionsContainers-rg --name <storage_name> --query connectionString --output tsv)
@@ -350,7 +350,7 @@ Als de installatiekopie is geïmplementeerd in de functie-app in Azure, kunt u d
     1. De uitvoer van de opdracht is de functiesleutel. De volledige functie-URL wordt dan `https://<app_name>.azurewebsites.net/api/<function_name>?code=<key>`, waarbij `<app_name>`, `<function_name>`en `<key>` moeten worden vervangen door uw specifieke waarden.
     
         > [!NOTE]
-        > De sleutel die hier wordt opgehaald, is de *host* -sleutel die werkt voor alle functies in de functie-app. Met de methode die wordt weergegeven voor de portal wordt de sleutel voor slechts één functie opgehaald.
+        > De sleutel die hier wordt opgehaald, is de *host*-sleutel die werkt voor alle functies in de functie-app. Met de methode die wordt weergegeven voor de portal wordt de sleutel voor slechts één functie opgehaald.
 
     ---
 
@@ -375,7 +375,7 @@ U kunt instellen dat Azure Functions uw implementatie van een installatiekopie a
 
 1. Kopieer de webhook-URL van de implementatie naar het klembord.
 
-1. Open [Docker Hub](https://hub.docker.com/), meld u aan en selecteer **Repositories** op de navigatiebalk. Zoek en selecteer de installatiekopie, selecteer het tabblad **Webhooks** , geef een waarde op voor **Webhook name** , plak uw URL in **Webhook URL** en selecteer ten slotte **Maken** :
+1. Open [Docker Hub](https://hub.docker.com/), meld u aan en selecteer **Repositories** op de navigatiebalk. Zoek en selecteer de installatiekopie, selecteer het tabblad **Webhooks**, geef een waarde op voor **Webhook name**, plak uw URL in **Webhook URL** en selecteer ten slotte **Maken**:
 
     ![De webhook toevoegen aan de opslagplaats van Docker Hub](./media/functions-create-function-linux-custom-image/dockerhub-set-continuous-webhook.png)  
 
@@ -419,13 +419,13 @@ SSH maakt veilige communicatie tussen een container en een client mogelijk. Als 
     
 1. Bouw de installatiekopie opnieuw op met behulp van de opdracht `docker build`, waarbij u `<docker_id>` vervangt door uw Docker-ID:
 
-    ```
+    ```console
     docker build --tag <docker_id>/azurefunctionsimage:v1.0.0 .
     ```
     
 1. Push de bijgewerkte installatiekopie naar Docker Hub. Dit moet een stuk sneller gaan dan bij eerste push omdat alleen de bijgewerkte segmenten van de installatiekopie moeten worden geüpload.
 
-    ```
+    ```console
     docker push <docker_id>/azurefunctionsimage:v1.0.0
     ```
     
@@ -441,7 +441,7 @@ SSH maakt veilige communicatie tussen een container en een client mogelijk. Als 
 
 ## <a name="write-to-an-azure-storage-queue"></a>Wegschrijven naar Azure Storage-wachtrij
 
-Met Azure Functions kunt u uw functies verbinden met andere Azure-services en -resources zonder dat u uw eigen integratiecode hoeft te schrijven. Deze zogenaamde *bindingen* , die zowel invoer als uitvoer vertegenwoordigen, worden gedeclareerd binnen de functiedefinitie. Gegevens van bindingen worden als parameters doorgegeven aan de functie. Een *trigger* is een speciaal type invoerbinding. Hoewel een functie slechts één trigger heeft, kan deze meerdere invoer- en uitvoerbindingen hebben. Zie [Azure Functions triggers and bindings concepts](functions-triggers-bindings.md) (Concepten van Azure Functions-triggers en -bindingen) voor meer informatie.
+Met Azure Functions kunt u uw functies verbinden met andere Azure-services en -resources zonder dat u uw eigen integratiecode hoeft te schrijven. Deze zogenaamde *bindingen*, die zowel invoer als uitvoer vertegenwoordigen, worden gedeclareerd binnen de functiedefinitie. Gegevens van bindingen worden als parameters doorgegeven aan de functie. Een *trigger* is een speciaal type invoerbinding. Hoewel een functie slechts één trigger heeft, kan deze meerdere invoer- en uitvoerbindingen hebben. Zie [Azure Functions triggers and bindings concepts](functions-triggers-bindings.md) (Concepten van Azure Functions-triggers en -bindingen) voor meer informatie.
 
 In dit gedeelte wordt beschreven hoe u uw functie integreert met een Azure Storage-wachtrij. De uitvoerbinding die u aan deze functie toevoegt, schrijft gegevens van een HTTP-aanvraag naar een bericht in de wachtrij.
 
@@ -492,13 +492,13 @@ Als de wachtrijbinding is gedefinieerd, kunt u de functie bijwerken om de uitvoe
 
 1. Voer `docker build` opnieuw uit in de hoofdmap en werk deze keer de versie in de tag bij naar `v1.0.1`. Vervang `<docker_id>` zoals eerder door de id van uw Docker Hub-account:
 
-    ```
+    ```console
     docker build --tag <docker_id>/azurefunctionsimage:v1.0.1 .
     ```
     
 1. Push de bijgewerkte installatiekopie terug naar de opslagplaats met `docker push`:
 
-    ```
+    ```console
     docker push <docker_id>/azurefunctionsimage:v1.0.1
     ```
 

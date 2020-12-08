@@ -8,12 +8,12 @@ ms.subservice: general
 ms.topic: tutorial
 ms.date: 09/15/2020
 ms.author: ambapat
-ms.openlocfilehash: 08c1b415ac075429a9bc89098233fffb8c25b710
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 69a0272061d8518119114e8fe7b023c889639844
+ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94369253"
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "96171555"
 ---
 # <a name="managed-hsm-disaster-recovery"></a>Herstel na noodgeval van beheerde HSM
 
@@ -35,7 +35,7 @@ Dit zijn de stappen van de procedure voor herstel na noodgeval:
 1. Maak een back-up van de nieuwe HSM. Er is een back-up vereist voordat een herstelbewerking kan worden uitgevoerd, ook wanneer de HSM leeg is. Met back-ups kan er eenvoudig worden teruggedraaid.
 1. De recente back-up van de bron-HSM herstellen
 
-De inhoud van uw sleutelkluis wordt binnen de regio en naar een secundaire regio op ten minste 150 mijl afstand gerepliceerd, maar binnen dezelfde geografische locatie. Met deze functie wordt een hoge duurzaamheid van uw sleutels en geheimen gehandhaafd. Raadpleeg het document [Azure-gekoppelde regio's](../../best-practices-availability-paired-regions.md) voor meer informatie over specifieke regioparen.
+Met deze stappen kunt u de inhoud van de HSM handmatig repliceren naar een andere regio. De HSM-naam (en de URI van het service-eindpunt) wijken af, dus u moet mogelijk de configuratie van de toepassing aanpassen om deze sleutels vanaf een andere locatie te gebruiken.
 
 ## <a name="create-a-new-managed-hsm"></a>Een nieuwe beheerde HSM maken
 
@@ -48,7 +48,7 @@ U dient de volgende invoer op te geven om een beheerde HSM-resource te maken:
 - De Azure-locatie.
 - Een lijst met initiële beheerders.
 
-In het volgende voorbeeld wordt een HSM met de naam **ContosoMHSM** gemaakt in resourcegroep **ContosoResourceGroup** , die zich op locatie **US - oost 2** bevindt met **de huidige aangemelde gebruiker** als enige beheerder.
+In het volgende voorbeeld wordt een HSM met de naam **ContosoMHSM** gemaakt in resourcegroep **ContosoResourceGroup**, die zich op locatie **US - oost 2** bevindt met **de huidige aangemelde gebruiker** als enige beheerder.
 
 ```azurecli-interactive
 oid=$(az ad signed-in-user show --query objectId -o tsv)
@@ -60,8 +60,8 @@ az keyvault create --hsm-name "ContosoMHSM" --resource-group "ContosoResourceGro
 
 In de uitvoer van deze opdracht worden de eigenschappen weergegeven van de beheerde HSM die u hebt gemaakt. De twee belangrijkste eigenschappen zijn:
 
-* **name** : In het voorbeeld is ContosoMHSM de naam. U gebruikt deze naam voor andere Key Vault-opdrachten.
-* **hsmUri** : In het voorbeeld is de URI https://contosohsm.managedhsm.azure.net. Toepassingen die via de REST API gebruikmaken van uw HSM, moeten deze URI gebruiken.
+* **name**: In het voorbeeld is ContosoMHSM de naam. U gebruikt deze naam voor andere Key Vault-opdrachten.
+* **hsmUri**: In het voorbeeld is de URI https://contosohsm.managedhsm.azure.net. Toepassingen die via de REST API gebruikmaken van uw HSM, moeten deze URI gebruiken.
 
 Uw Azure-account is nu gemachtigd om alle bewerkingen op deze beheerde HSM uit te voeren. Op dit moment is nog niemand anders gemachtigd.
 
@@ -86,7 +86,7 @@ Met de opdracht `az keyvault security-domain upload` worden de volgende bewerkin
 - Maken van een uploadblob van het beveiligingsdomein die is versleuteld met de uitwisselingssleutel van het beveiligingsdomein die in de vorige stap is gedownload en vervolgens
 - Uploaden van de uploadblob van het beveiligingsdomein naar de HSM om het herstel van het beveiligingsdomein te voltooien
 
-In het onderstaande voorbeeld wordt gebruikgemaakt van het beveiligingsdomein van de **ContosoMHSM** , de 2 van de bijbehorende persoonlijke sleutels. Deze worden geüpload naar **ContosoMHSM2** , die wacht op het ontvangen van een beveiligingsdomein. 
+In het onderstaande voorbeeld wordt gebruikgemaakt van het beveiligingsdomein van de **ContosoMHSM**, de 2 van de bijbehorende persoonlijke sleutels. Deze worden geüpload naar **ContosoMHSM2**, die wacht op het ontvangen van een beveiligingsdomein. 
 
 ```azurecli-interactive
 az keyvault security-domain upload --hsm-name ContosoMHSM2 --sd-exchange-key ContosoMHSM-SDE.cer --sd-file ContosoMHSM-SD.json --sd-wrapping-keys cert_0.key cert_1.key
@@ -102,7 +102,7 @@ Als u een back-up van de HSM wilt maken, hebt u het volgende nodig
 - Een opslagaccount waarin de back-up wordt opgeslagen
 - Een container voor blob-opslag in dit opslagaccount, waar door het back-upproces een nieuwe map wordt gemaakt voor de versleutelde back-up
 
-We gebruiken de opdracht `az keyvault backup` voor de back-up van de HSM in de opslagcontainer **mhsmbackupcontainer** , die zich voor het onderstaande voorbeeld in het opslagaccount **ContosoBackup** bevindt. Er wordt een SAS-token gemaakt dat binnen dertig minuten verloopt. Dit token wordt aan de beheerde HSM verstrekt om de back-up te schrijven.
+We gebruiken de opdracht `az keyvault backup` voor de back-up van de HSM in de opslagcontainer **mhsmbackupcontainer**, die zich voor het onderstaande voorbeeld in het opslagaccount **ContosoBackup** bevindt. Er wordt een SAS-token gemaakt dat binnen dertig minuten verloopt. Dit token wordt aan de beheerde HSM verstrekt om de back-up te schrijven.
 
 ```azurecli-interactive
 end=$(date -u -d "30 minutes" '+%Y-%m-%dT%H:%MZ')

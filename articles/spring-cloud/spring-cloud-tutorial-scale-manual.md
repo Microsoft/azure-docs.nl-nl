@@ -1,24 +1,24 @@
 ---
-title: 'Zelfstudie: Een toepassing schalen in Azure Spring Cloud | Microsoft Docs'
+title: Een toepassing schalen in Azure Spring Cloud | Microsoft Docs
 description: Leer hoe u een toepassing kunt schalen met Azure Spring Cloud in de Azure-portal
 ms.service: spring-cloud
-ms.topic: tutorial
+ms.topic: how-to
 ms.author: brendm
 author: bmitchell287
 ms.date: 10/06/2019
 ms.custom: devx-track-java
-ms.openlocfilehash: 33d25edafa9249300406365699930ded1c8ec75b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5632f9a6126615255306cc89425bd08a9ffa9753
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90906848"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96531799"
 ---
-# <a name="tutorial-scale-an-application-in-azure-spring-cloud"></a>Zelfstudie: Een toepassing schalen in Azure Spring Cloud
+# <a name="scale-an-application-in-azure-spring-cloud"></a>Een toepassing schalen in Azure Spring Cloud
 
 **Dit artikel is van toepassing op:** ✔️ Java ✔️ C#
 
-In deze zelfstudie wordt gedemonstreerd hoe u een microservicetoepassing kunt schalen met behulp van het Azure Spring Cloud-dashboard in de Azure-portal.
+In deze documentatie wordt beschreven hoe u een microservicetoepassing kunt schalen met behulp van het Azure Spring Cloud-dashboard in de Azure-portal.
 
 Schaal uw toepassing omhoog en omlaag door het aantal virtuele CPU's (vCPU's) en de hoeveelheid geheugen aan te passen. Schaal uw toepassing in en uit door het aantal toepassingsexemplaren te wijzigen.
 
@@ -67,7 +67,7 @@ Als u zich in de Basic-laag bevindt en bent beperkt door een of meer van deze [L
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie hebt u geleerd hoe u een Azure Spring Cloud-toepassingen handmatig kunt schalen. Ga door naar de volgende zelfstudie voor informatie over het bewaken van een toepassing door meldingen in te stellen.
+In dit voorbeeld hebt u gezien hoe u een Azure Spring Cloud-toepassing handmatig kunt schalen. Zie [Automatische schaalaanpassing instellen](spring-cloud-tutorial-setup-autoscale.md) voor informatie over het bewaken van een toepassing door meldingen in te stellen.
 
 > [!div class="nextstepaction"]
 > [Meer informatie over het instellen van meldingen](spring-cloud-tutorial-alerts-action-groups.md)

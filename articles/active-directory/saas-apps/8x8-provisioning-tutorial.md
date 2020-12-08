@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 05/15/2020
 ms.author: Zhchia
-ms.openlocfilehash: 0ed56d200c2b5a472dbf93d45ad25156ea02a884
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 90e3464ac9ddf1e839c3a731f79ac2c0771c37ea
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96181149"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96532695"
 ---
 # <a name="tutorial-configure-8x8-for-automatic-user-provisioning"></a>Zelfstudie: 8x8 configureren voor automatische gebruikersinrichting
 
@@ -50,17 +50,17 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van 8x8 om 
 
 ### <a name="to-configure-a-user-provisioning-access-token-in-8x8-configuration-manager"></a>Een toegangstoken voor het inrichten van gebruikers configureren in 8x8 Configuration Manager gaat als volgt:
 
-1. Meld u aan bij [Configuration Manager](https://vo-cm.8x8.com). Selecteer **Identiteitsbeheer**.
+1. Meld u aan bij de [beheerconsole](https://admin.8x8.com). Selecteer **Identiteitsbeheer**.
 
-   ![Identiteitsbeheer](./media/8x8-provisioning-tutorial/8x8-identity-management.png)
+   ![Beheerder](./media/8x8-provisioning-tutorial/8x8-identity-management.png)
 
 2. Klik op de koppeling **Gegevens voor gebruikersinrichting weergeven** om een token te genereren.
 
-   ![Gebruikersinrichting weergeven](./media/8x8-provisioning-tutorial/8x8-show-user-provisioning.png)
+   ![Weergeven](./media/8x8-provisioning-tutorial/8x8-show-user-provisioning.png)
 
 3. Kopieer de waarden van **8x8-URL** en **8x8-API-token**. Deze waarden worden ingevoerd in de velden **Tenant-URL** en **Token voor geheim** op het tabblad Inrichten van uw 8x8-toepassing in Azure Portal.
 
-   ![URL en token kopiëren](./media/8x8-provisioning-tutorial/8x8-copy-url-token.png)
+   ![Token](./media/8x8-provisioning-tutorial/8x8-copy-url-token.png)
 
 ## <a name="step-3-add-8x8-from-the-azure-ad-application-gallery"></a>Stap 3. 8x8 toevoegen vanuit de galerie met Azure AD-toepassingen
 
@@ -94,7 +94,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 3. Selecteer het tabblad **Inrichten**. Klik op **Aan de slag**.
 
-    ![Schermopname van de beheeropties met de optie Inrichten gemarkeerd.](common/provisioning.png)
+    ![Schermopname van de opties onder Beheren met de optie Inrichten gemarkeerd.](common/provisioning.png)
 
    ![Blade Aan de slag](./media/8x8-provisioning-tutorial/get-started.png)
 

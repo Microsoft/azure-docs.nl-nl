@@ -3,17 +3,17 @@ title: Wat is Azure IoT Central? | Microsoft Docs
 description: Azure IoT Central is een platform voor IoT-toepassingen dat het maken van IoT-oplossingen vereenvoudigt en dat helpt om de overhead en kosten van bewerkingen voor IoT-beheer en-ontwikkeling te verminderen. In dit artikel vindt u een overzicht van de functies van Azure IoT Central.
 author: dominicbetts
 ms.author: dobett
-ms.date: 12/10/2019
+ms.date: 11/23/2020
 ms.topic: overview
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
-ms.openlocfilehash: b62a0da7074676787b7e1c0182ca7588b83cdbe0
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 55f187781a0f11417b0c918034dcfe3362be4468
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94985039"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96457658"
 ---
 # <a name="what-is-azure-iot-central"></a>Wat is Azure IoT Central?
 
@@ -137,7 +137,7 @@ IoT Central-toepassingen worden volledig gehost door Microsoft, waardoor de over
 U kunt IoT Central-toepassingen maken met een gratis proefversie van zeven dagen of u kunt een betaald abonnement gebruiken.
 
 - Toepassingen die u maakt met het *gratis* abonnement zijn gratis gedurende zeven dagen en ondersteunen maximaal vijf apparaten. U kunt ze op enig moment voor het aflopen van het abonnement overzetten naar een betaald abonnement.
-- Toepassingen die u maakt met een *Standard*-abonnement worden gefactureerd per apparaat. U kunt kiezen tussen **Standard-Laag 1** en **Standard-Laag 2** waarbij de eerste twee apparaten gratis zijn. Ga voor meer informatie naar [Prijzen voor IoT Central](https://aka.ms/iotcentral-pricing).
+- Toepassingen die u maakt met een *Standard*-abonnement worden gefactureerd per apparaat. U kunt kiezen tussen **Standard 0**, **Standard 1** en **Standard 2**, waarbij de eerste twee apparaten gratis zijn. Ga voor meer informatie naar [Prijzen voor IoT Central](https://aka.ms/iotcentral-pricing).
 
 ## <a name="quotas"></a>Quota
 
@@ -157,7 +157,7 @@ Voor elk Azure-abonnement gelden standaardquota die invloed kunnen hebben op het
 Nu u een overzicht van IoT Central hebt, zijn dit mogelijke volgende stappen:
 
 - Lees wat de beschikbare [Azure-technologieën en -services zijn voor het maken van IoT-oplossingen](../../iot-fundamentals/iot-services-and-technologies.md).
-- Als u apparaatontwikkelaar bent en u meer wilt weten over coderen, kunt u het beste de stap [Create and connect a client application to your Azure IoT Central application](./tutorial-connect-device-nodejs.md) (Een clienttoepassing maken en verbinden met uw Azure IoT Central-toepassing) volgen.
+- Als u apparaatontwikkelaar bent en u meer wilt weten over coderen, kunt u het beste de stap [Create and connect a client application to your Azure IoT Central application](./tutorial-connect-device.md) (Een clienttoepassing maken en verbinden met uw Azure IoT Central-toepassing) volgen.
 - Raak vertrouwd met de [gebruikersinterface van Azure IoT Central](overview-iot-central-tour.md).
 - Ga aan de slag door [een Azure IoT Central-toepassing te maken](quick-deploy-iot-central.md).
 - Lees hoe u [een Azure IoT Edge-apparaat verbindt](./tutorial-add-edge-as-leaf-device.md).

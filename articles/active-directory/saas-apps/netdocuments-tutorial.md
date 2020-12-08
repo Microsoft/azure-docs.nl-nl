@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/03/2019
 ms.author: jeedes
-ms.openlocfilehash: f07aaa3b1d133d8011b7e98df5c36a8bac1b5f29
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: b9a85c7093d0f42ac97c4a548ba6f0feebae8b89
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92506885"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96350718"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-netdocuments"></a>Zelfstudie: Eenmalige aanmelding (SSO) van Azure Active Directory integreren met NetDocuments
 
@@ -46,15 +46,15 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 Als u de integratie van NetDocuments met Azure AD wilt configureren, moet u NetDocuments vanuit de galerie toevoegen aan uw lijst van beheerde SaaS-apps.
 
 1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
 1. Typ in de sectie **Toevoegen vanuit de galerie** **NetDocuments** in het zoekvak.
 1. Selecteer **NetDocuments** in het resultatenvenster en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 ## <a name="configure-and-test-azure-ad-single-sign-on-for-netdocuments"></a>Eenmalige aanmelding van Azure AD configureren en testen voor NetDocuments
 
-Configureer en test eenmalige aanmelding van Azure AD met NetDocuments met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in NetDocuments.
+Configureer en test eenmalige aanmelding van Azure AD met NetDocuments met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in NetDocuments.
 
 Als u eenmalige aanmelding van Azure AD wilt configureren en testen met NetDocuments, voert u de volgende stappen uit:
 
@@ -69,8 +69,8 @@ Als u eenmalige aanmelding van Azure AD wilt configureren en testen met NetDocum
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **NetDocuments** de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Zoek in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **NetDocuments** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
@@ -86,7 +86,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     > [!NOTE]
     > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL en antwoord-URL. Opslagplaats-id is een waarde die begint met **CA-** , gevolgd door een code van 8 tekens die aan uw NetDocuments-opslagplaats is gekoppeld. Raadpleeg het [ondersteuningsdocument NetDocuments Federated Identity](https://support.netdocuments.com/hc/en-us/articles/205220410-Federated-Identity-Login) voor meer informatie. Ook kunt u contact opnemen met het [klantondersteuningsteam van NetDocuments](https://support.netdocuments.com/hc/) om deze waarden te verkrijgen als u de configuratie niet kunt uitvoeren met behulp van de bovenstaande gegevens. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
-1. In de NetDocuments-toepassing worden de SAML-asserties in een specifieke indeling verwacht. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van uw SAML-tokenkenmerken. In de volgende schermafbeelding ziet u de lijst met standaardkenmerken, waarbij **nameidentifier** is toegewezen aan **user.userprincipalname** . De NetDocuments-toepassing verwacht dat **nameidentifier** wordt toegewezen met **employeeid** of een andere claim die als **nameidentifier** van toepassing is op uw organisatie, dus u moet de kenmerktoewijzing bewerken door te klikken op het pictogram **Bewerken** en de kenmerktoewijzing wijzigen.
+1. In de NetDocuments-toepassing worden de SAML-asserties in een specifieke indeling verwacht. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van uw SAML-tokenkenmerken. In de volgende schermafbeelding ziet u de lijst met standaardkenmerken, waarbij **nameidentifier** is toegewezen aan **user.userprincipalname**. De NetDocuments-toepassing verwacht dat **nameidentifier** wordt toegewezen met **employeeid** of een andere claim die als **nameidentifier** van toepassing is op uw organisatie, dus u moet de kenmerktoewijzing bewerken door te klikken op het pictogram **Bewerken** en de kenmerktoewijzing wijzigen.
 
     ![image](common/edit-attribute.png)
 
@@ -102,43 +102,43 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot NetDocuments.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **NetDocuments** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 
    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
 
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-netdocuments-sso"></a>Eenmalige aanmelding van NetDocuments configureren
 
 1. Meld u in een ander browservenster als beheerder aan bij uw NetDocuments-bedrijfssite.
 
-2. Selecteer in de rechterbovenhoek uw naam > **Beheerder** .
+2. Selecteer in de rechterbovenhoek uw naam > **Beheerder**.
 
-3. Selecteer **Beveiligingscentrum** .
+3. Selecteer **Beveiligingscentrum**.
    
     ![Schermopname met Security Center geselecteerd in Juridische documenten.](./media/netdocuments-tutorial/security-center.png "Beveiligingscentrum")
 
-4. Selecteer **Geavanceerde verificatie** .
+4. Selecteer **Geavanceerde verificatie**.
     
     ![Opties voor geavanceerde verificatie configureren](./media/netdocuments-tutorial/advance-authentication.png "Opties voor geavanceerde verificatie configureren")
 
@@ -146,7 +146,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
    
     ![Federatieve identiteit](./media/netdocuments-tutorial/federated-id.png "Federatieve identiteit")
    
-    a. Selecteer **Active Directory Federation Services** als **Federatief identiteitsservertype** .
+    a. Selecteer **Active Directory Federation Services** als **Federatief identiteitsservertype**.
     
     b.  Selecteer **Bestand kiezen** om het gedownloade XML-bestand met metagegevens, dat u hebt gedownload vanuit Azure Portal, te uploaden.
     
@@ -158,17 +158,17 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij NetDocuments, moete
 
 **Als u een gebruikersaccount wilt inrichten, voert u de volgende stappen uit:**
 
-1. Meld u als beheerder aan bij uw **NetDocuments** -bedrijfssite.
+1. Meld u als beheerder aan bij uw **NetDocuments**-bedrijfssite.
 
-2. Selecteer in de rechterbovenhoek uw naam > **Beheerder** .
+2. Selecteer in de rechterbovenhoek uw naam > **Beheerder**.
    
     ![Beheerder](./media/netdocuments-tutorial/user-admin.png "Beheerder")
 
-3. Selecteer **Gebruikers en groepen** .
+3. Selecteer **Gebruikers en groepen**.
    
     ![Schermopname met Gebruikers en groepen geselecteerd in Juridische documenten.](./media/netdocuments-tutorial/users-groups.png "Opslagplaats")
 
-4. Typ in het tekstvak **E-mailadres** het e-mailadres van een geldig Azure Active Directory-account dat u wilt inrichten en klik vervolgens op **Gebruiker toevoegen** .
+4. Typ in het tekstvak **E-mailadres** het e-mailadres van een geldig Azure Active Directory-account dat u wilt inrichten en klik vervolgens op **Gebruiker toevoegen**.
    
     ![Email Address (E-mailadres)](./media/netdocuments-tutorial/user-mail.png "E-mailadres")
    

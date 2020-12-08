@@ -3,12 +3,12 @@ title: Opzetten van een leslokaallab met Azure Lab Services | Microsoft Docs
 description: In deze zelfstudie gebruikt u Azure Lab Services om een leslokaallab in te stellen met virtuele machines die worden gebruikt door studenten in uw les.
 ms.topic: tutorial
 ms.date: 06/26/2020
-ms.openlocfilehash: 1155646d31ddb8a0a3abce025acde5c4cb645f54
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8981a03b53b1cfb67b03d89f8a1468511d9b1b93
+ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91336731"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96434852"
 ---
 # <a name="tutorial-set-up-a-classroom-lab"></a>Zelfstudie: Een leslokaallab instellen 
 In deze zelfstudie stelt u een leslokaallab in met virtuele machines die worden gebruikt door studenten in het leslokaal.  
@@ -116,7 +116,7 @@ Maak een geplande gebeurtenis voor het lab, zodat VM's in het lab op opgegeven m
     
     ![Planning in de agenda](./media/how-to-create-schedules/schedule-calendar.png)
 
-    Voor meer informatie over het maken en beheren van planningen voor een klas, raadpleegt u [Planning maken en beheren voor leslokaallabs](how-to-create-schedules.md).
+    Voor meer informatie over het maken en beheren van planningen voor een klas, raadpleegt u [Planning maken en beheren voor labs](how-to-create-schedules.md).
 
 
 ## <a name="add-users-to-the-lab"></a>Gebruikers toevoegen aan het lab

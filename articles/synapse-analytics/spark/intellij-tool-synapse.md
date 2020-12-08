@@ -1,6 +1,6 @@
 ---
 title: Zelfstudie - Azure-toolkit voor IntelliJ (Spark-toepassing)
-description: 'Zelfstudie: met behulp van de Azure-toolkit voor IntelliJ om Spark-toepassingen, die in Scala worden geschreven, ontwikkelen en naar een serverloze Apache Spark-pool verzenden (preview).'
+description: 'Zelfstudie: met behulp van de Azure-toolkit voor IntelliJ om Spark-toepassingen, die in Scala worden geschreven, ontwikkelen en naar een serverloze Apache Spark-pool verzenden.'
 services: synapse-analytics
 author: hrasheed-msft
 ms.author: jejiang
@@ -9,16 +9,16 @@ ms.service: synapse-analytics
 ms.topic: tutorial
 ms.subservice: spark
 ms.date: 04/15/2020
-ms.openlocfilehash: 5a9fcf3e13c2f86a11e9626be486a585ec659044
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 75cc23df41741a95e87ad64d168aea4fa4f45733
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96013765"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96451042"
 ---
 # <a name="tutorial-create-an-apache-spark-application-with-intellij-using-a-synapse-workspace"></a>Zelfstudie: een Apache Spark-toepassing met IntelliJ maken met behulp van een Synapse-werkruimte
 
-In deze zelfstudie ziet u hoe u de invoegtoepassing Azure-toolkit voor IntelliJ gebruikt om Apache Spark-toepassingen, die in [Scala](https://www.scala-lang.org/) worden geschreven, te ontwikkelen en naar een serverloze Apache Spark-pool te verzenden (preview), rechtstreeks vanuit de IntelliJ-IDE (Integrated Development Environment). U kunt de invoegtoepassing op een paar manieren gebruiken:
+In deze zelfstudie ziet u hoe u de invoegtoepassing Azure-toolkit voor IntelliJ gebruikt om Apache Spark-toepassingen, die in [Scala](https://www.scala-lang.org/) worden geschreven, te ontwikkelen en naar een serverloze Apache Spark-pool te verzenden, rechtstreeks vanuit de IntelliJ-IDE (Integrated Development Environment). U kunt de invoegtoepassing op een paar manieren gebruiken:
 
 - Ontwikkel een Scala Spark-toepassing en verzend deze naar een Spark-pool.
 - Verkrijg toegang tot de resources van uw Spark-pools.

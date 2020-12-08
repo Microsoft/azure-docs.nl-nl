@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/11/2020
 ms.author: memildin
-ms.openlocfilehash: 3108dd32b9d7338e418a1d10684115ad7265702e
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: bbc36dbb2a17d379d31a9a235898500aea36247d
+ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91951193"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96533907"
 ---
 # <a name="tutorial-improve-your-regulatory-compliance"></a>Zelfstudie: Uw regelnaleving verbeteren
 
@@ -34,7 +34,10 @@ Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://az
 
 ## <a name="prerequisites"></a>Vereisten
 
-Om de functies in deze zelfstudie te doorlopen, moet [Azure Defender](azure-defender.md) zijn ingeschakeld. U kunt Azure Defender gratis uitproberen gedurende 30 dagen.
+Om de functies uit deze zelfstudie te doorlopen:
+
+- [Azure Defender](azure-defender.md) moet zijn ingeschakeld. U kunt Azure Defender gratis uitproberen gedurende 30 dagen.
+- U moet zijn aangemeld met een account dat leestoegang heeft tot de beleidsnalevingsgegevens (**Beveiligingslezer** is niet voldoende). De rol van **globale lezer** voor het abonnement werkt wel. U moet ten minste over de rollen **Inzender voor resourcebeleid** en **Beveiligingsbeheerder** beschikken.
 
 ##  <a name="assess-your-regulatory-compliance"></a>Naleving van uw regelgeving beoordelen
 
@@ -54,13 +57,13 @@ Boven aan het scherm ziet u een dashboard met een overzicht van de nalevingsstat
 
 1. Selecteer een tabblad voor een nalevingsstandaard die voor u relevant is (1). U ziet op welke abonnementen de standaard wordt toegepast (2) en de lijst met alle besturingselementen voor die standaard (3). Voor de van toepassing zijnde besturingselementen kunt u de details bekijken van positieve en negatieve beoordelingen met betrekking tot dat besturingselement (4), evenals de aantallen betrokken resources (5). Sommige besturingselementen zijn grijs weergegeven. Op deze besturingselementen zijn geen beoordelingen van het Azure Security Center van toepassing. Controleer de vereisten hiervoor en ze zelf in uw omgeving te beoordelen. Sommige hiervan kunnen procesgerelateerd zijn in plaats van technisch.
 
-    :::image type="content" source="./media/security-center-compliance-dashboard/compliance-drilldown.png" alt-text="Dashboard voor naleving van regelgeving":::
+    :::image type="content" source="./media/security-center-compliance-dashboard/compliance-drilldown.png" alt-text="De details van naleving met een specifieke standaard verkennen":::
 
 1. Als u een samenvattend PDF-rapport van uw nalevingsstatus voor een bepaalde norm wilt genereren en downloaden, klikt u op **Rapport downloaden**.
 
     Het rapport biedt een samenvatting op hoog niveau van uw nalevingsstatus voor de geselecteerde standaard op basis van uw Security Center-beoordelingsgegevens en is geordend overeenkomstig de controles van die bepaalde standaard. Het rapport kan worden gedeeld met relevante belanghebbenden en dient mogelijk als bewijs voor interne en externe auditeurs.
 
-    :::image type="content" source="./media/security-center-compliance-dashboard/download-report.png" alt-text="Dashboard voor naleving van regelgeving":::
+    :::image type="content" source="./media/security-center-compliance-dashboard/download-report.png" alt-text="Nalevingsrapport downloaden":::
 
 ## <a name="improve-your-compliance-posture"></a>De nalevingspostuur verbeteren
 
@@ -70,11 +73,11 @@ Met de informatie in het dashboard naleving van regelgeving kunt u uw nalevingsp
 
 1.  U kunt een bepaalde resource selecteren om meer details te zien en de aanbeveling voor die resource op te lossen. <br>In de **Azure CIS 1.1.0 (nieuw) standaard** kunt u bijvoorbeeld de aanbeveling **Schijfversleuteling moet worden toegepast op virtuele machines** selecteren.
 
-    :::image type="content" source="./media/security-center-compliance-dashboard/sample-recommendation.png" alt-text="Dashboard voor naleving van regelgeving":::
+    :::image type="content" source="./media/security-center-compliance-dashboard/sample-recommendation.png" alt-text="Het selecteren van een aanbeveling van een standaard leidt rechtstreeks naar de pagina met aanbevelingsgegevens":::
 
 1. In dit voorbeeld selecteert u **Actie ondernemen** van de pagina aanbevelingsgegevens, dan komt u bij de pagina's van de virtuele Azure-machine van de Azure-portal, waar u het tabblad **Beveiliging** kunt openen en encryptie kunt inschakelen:
 
-    :::image type="content" source="./media/security-center-compliance-dashboard/encrypting-vm-disks.png" alt-text="Dashboard voor naleving van regelgeving":::
+    :::image type="content" source="./media/security-center-compliance-dashboard/encrypting-vm-disks.png" alt-text="De knop actie uitvoeren op de pagina aanbevelingsgegevens leidt naar de herstelopties":::
 
     Zie [Beveiligingsaanbevelingen implementeren in Azure Security Center](security-center-recommendations.md) voor meer informatie over het toepassen van aanbevelingen.
 

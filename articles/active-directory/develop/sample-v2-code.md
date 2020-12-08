@@ -12,12 +12,12 @@ ms.date: 11/04/2020
 ms.author: marsma
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: de25aafcfefee195e8d674c60ebdbaf79cb1ae10
-ms.sourcegitcommit: 1d366d72357db47feaea20c54004dc4467391364
+ms.openlocfilehash: a3f2eb8fe3da9b272c5fe61ef5dd66726cf7764d
+ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95406885"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96348426"
 ---
 # <a name="microsoft-identity-platform-code-samples-v20-endpoint"></a>Codevoorbeelden voor Microsoft identity platform (v2.0-eindpunt)
 
@@ -48,6 +48,7 @@ In deze voorbeelden ziet u hoe u een toepassing met één pagina (SPA) schrijft 
 | ![In deze afbeelding ziet u het React-logo](media/sample-v2-code/logo_react.png) [React (MSAL.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-core)| SPA roept aangepaste web-API aan, die op zijn beurt Microsoft Graph aanroept  | [ms-identity-javascript-react-spa-dotnetcore-webapi-obo](https://github.com/Azure-Samples/ms-identity-javascript-react-spa-dotnetcore-webapi-obo) |
 | ![In deze afbeelding ziet u het JavaScript-logo](media/sample-v2-code/logo_js.png) [JavaScript (MSAL.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser) | SPA roept de aangepaste web-API aan, die op zijn beurt Microsoft Graph aanroept  | [ms-identity-javascript-tutorial-chapter4-obo](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/4-AdvancedGrants/4-1-call-api-graph) |
 | ![In deze afbeelding ziet u het Angular-logo](media/sample-v2-code/logo_angular.png) [Angular (MSAL-Angular)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular) | SPA roept aangepaste web-API met app-rollen en beveiligingsgroepen aan |[ms-identity-javascript-angular-spa-dotnetcore-webapi-roles-groups](https://github.com/Azure-Samples/ms-identity-javascript-angular-spa-dotnetcore-webapi-roles-groups) |
+| ![Deze afbeelding toont het Blazor-logo](media/sample-v2-code/logo-blazor.png) [Blazor WebAssembly (MSAL-JS)](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-browser) | Zelfstudie voor Blazor WebAssembly voor het aanmelden van gebruikers en het aanroepen van API's met Azure Active Directory |[ms-identity-blazor-wasm](https://github.com/Azure-Samples/ms-identity-blazor-wasm) |
 
 ## <a name="web-applications"></a>Webtoepassingen
 
@@ -64,7 +65,7 @@ De volgende voorbeelden illustreren webtoepassingen waarmee gebruikers worden aa
 | ![In deze afbeelding ziet u het Python-logo](media/sample-v2-code/logo_python.png)  | Zelfstudie: gebruikers aanmelden met [Python Flask-web-app](https://github.com/Azure-Samples/ms-identity-python-flask-tutorial/blob/main/README.md)                   | Zelfstudie: gebruikers aanmelden en Graph aanroepen met [Python Flask-web-app](https://github.com/Azure-Samples/ms-identity-python-flask-tutorial/blob/main/README.md) |
 | ![In deze afbeelding ziet u het Python-logo](media/sample-v2-code/logo_python.png)  | Gebruikers aanmelden met [Python Flask-web-app](https://github.com/Azure-Samples/ms-identity-b2c-python-flask-webapp-authentication/blob/main/README.md) met B2C                    |  |
 | ![In deze afbeelding ziet u het Ruby-logo](media/sample-v2-code/logo_ruby.png) |                   | [msgraph-training-rubyrailsapp](https://github.com/microsoftgraph/msgraph-training-rubyrailsapp) |
-
+| ![Deze afbeelding toont het Blazor-logo](media/sample-v2-code/logo-blazor.png)</p>Blazor Server | [Zelfstudie: gebruikers aanmelden met Blazor Server-app](https://github.com/Azure-Samples/ms-identity-blazor-server/tree/main/WebApp-OIDC) | [Aanroepen van Microsoft Graph door Blazor Server-app](https://github.com/Azure-Samples/ms-identity-blazor-server/tree/main/WebApp-graph-user/Call-MSGraph)</p>Zelfstudie voor Chapterwise: [Blazor Server-app gebruiken voor het aanmelden van gebruikers en het aanroepen van API's met Azure Active Directory](https://github.com/Azure-Samples/ms-identity-blazor-server) |
 
 ## <a name="desktop-and-mobile-public-client-apps"></a>Openbare client-apps voor bureaublad en mobiel
 

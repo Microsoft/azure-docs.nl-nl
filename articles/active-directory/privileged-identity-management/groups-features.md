@@ -12,20 +12,23 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/27/2020
+ms.date: 12/01/2020
 ms.author: curtand
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 30724edafdee0c04f0c8b004ce335072b4ce0fd4
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 759781fd61cd42d05f2823d390e99d128dd2fcac
+ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92367445"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96512389"
 ---
 # <a name="management-capabilities-for-privileged-access-azure-ad-groups-preview"></a>Mogelijkheden voor het beheer van Azure AD-groepen met uitgebreide toegang (preview-versie)
 
 In Privileged Identity Management (PIM) kunt u nu de geschiktheid voor lidmaatschap of eigendom van groepen met uitgebreide toegang toewijzen. Met deze preview-versie kunt u ingebouwde Azure AD-rollen (Azure Active Directory) toewijzen aan cloudgroepen en PIM gebruiken voor het beheren van de geschiktheid en activering van groepsleden en eigenaren. Zie [Cloudgroepen gebruiken voor het beheren van roltoewijzingen in Azure Active Directory (preview)](../roles/groups-concept.md) voor meer informatie over groepen waarin in Azure AD rollen kunnen worden toegewezen.
+
+>[!Important]
+> Als u een bevoorrechte toegangsgroep wilt toewijzen aan een rol voor beheerderstoegang tot Exchange, het beveiligings- en nalevingscentrum of SharePoint, gebruikt u de Azure AD-portal **Rollen en beheerders** en niet de interface voor bevoorrechte toegangsgroepen om ervoor te zorgen dat de gebruiker of groep in aanmerking komt voor activering in de groep.
 
 ## <a name="require-different-policies-for-each-role-assignable-group"></a>Verschillende beleidsregels vereisen voor elke groep waaraan rollen kunnen worden toegewezen
 

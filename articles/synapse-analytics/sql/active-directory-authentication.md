@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 04/15/2020
 ms.author: vvasic
 ms.reviewer: jrasnick
-ms.openlocfilehash: 7518d6ac8bc0cde515ab8da2f3d9c1496cb93f08
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: b8b0ac002cb52acdc043e4e8ca4fa91daae4e665
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93311717"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96457989"
 ---
 # <a name="use-azure-active-directory-authentication-for-authentication-with-synapse-sql"></a>Azure Active Directory-verificatie gebruiken voor verificatie met Synapse SQL
 
@@ -36,7 +36,7 @@ De configuratiestappen omvatten de volgende procedures voor het configureren en 
 
 1. Maak en vul Azure AD.
 2. Een Azure Active Directory-identiteit maken
-3. Een rol aan gemaakte Azure Active Directory-identiteit toewijzen in Synapse-werkruimte (preview)
+3. Een rol aan gemaakte Azure Active Directory-identiteit toewijzen in Synapse-werkruimte
 4. Maak verbinding met Synapse Studio met behulp van Azure AD-identiteiten.
 
 ## <a name="azure-ad-pass-through-in-azure-synapse-analytics"></a>Azure AD-doorvoer in Azure Synapse Analytics
@@ -65,7 +65,7 @@ Wanneer u Azure AD-verificatie gebruikt, zijn er twee beheerdersaccounts voor de
 
 De aanmelding van de Azure AD-beheerder kan een Azure AD-gebruiker of een Azure AD-groep zijn. Wanneer de beheerder een groepsaccount is, kan dit worden gebruikt door elk groepslid. Er kunnen dus meerdere Azure AD-beheerders voor het Synapse SQL-exemplaar worden ingeschakeld. 
 
-Het gebruik van een groepsaccount als beheerder verbetert de beheerbaarheid, omdat u groepsleden in Azure AD centraal kunt toevoegen en verwijderen zonder de gebruikers of machtigingen in de Synapse Analytics-werkruimte te wijzigen. Er kan maar één Azure AD-beheerder (een gebruiker of groep) tegelijk worden geconfigureerd.
+Het gebruik van een groepsaccount als beheerder verbetert de beheerbaarheid, omdat u groepsleden in Azure AD centraal kunt toevoegen en verwijderen zonder de gebruikers of machtigingen in de Azure Synapse Analytics-werkruimte te wijzigen. Er kan maar één Azure AD-beheerder (een gebruiker of groep) tegelijk worden geconfigureerd.
 
 ![beheerdersstructuur](./media/aad-authentication/3-admin-structure.png)
 
@@ -109,7 +109,7 @@ Azure Active Directory-verificatie ondersteunt de volgende methoden om verbindin
 - Azure Active Directory – Universal met MFA
 - Verificatie van toepassingstoken gebruiken
 
-De volgende verificatiemethoden worden ondersteund voor Azure AD-server-principals (aanmeldingen) ( **openbare preview** ):
+De volgende verificatiemethoden worden ondersteund voor Azure AD-server-principals (aanmeldingen):
 
 - Azure Active Directory – wachtwoord
 - Azure Active Directory – geïntegreerd
@@ -119,10 +119,10 @@ De volgende verificatiemethoden worden ondersteund voor Azure AD-server-principa
 
 - Voor een betere beheerbaarheid raden wij u aan een toegewezen Azure AD-groep in te richten als beheerder.
 - Er kan maar één Azure AD-beheerder (een gebruiker of groep) tegelijk voor een Synapse SQL-pool worden geconfigureerd.
-  - Door Azure AD-server-principals (aanmeldingen) voor Synapse SQL (preview-versie) toe te voegen, wordt het mogelijk om meerdere Azure AD-server-principals (aanmeldingen) te maken die kunnen worden toegevoegd aan de rol `sysadmin`.
+  - Door Azure AD-server-principals (aanmeldingen) voor Synapse SQL toe te voegen, wordt het mogelijk om meerdere Azure AD-server-principals (aanmeldingen) te maken die kunnen worden toegevoegd aan de rol `sysadmin`.
 - Alleen een Azure AD-beheerder voor Synapse SQL kan in eerste instantie verbinding maken met Synapse SQL met een Azure Active Directory-account. De Active Directory-beheerder kan vervolgens nieuwe Azure AD-databasegebruikers configureren.
 - Het is raadzaam om de time-out voor de verbinding in te stellen op 30 seconden.
-- SQL Server 2016 Management Studio en SQL Server Data Tools voor Visual Studio 2015 (versie 14.0.60311.1 van april 2016 of later) ondersteunen Azure Active Directory-verificatie. (Azure AD-verificatie wordt ondersteund door de **.NET Framework-gegevensprovider voor SqlServer** ; minimaal .NET Framework versie 4.6). Daardoor kunnen de nieuwste versies van deze hulpprogramma's en toepassingen met een gegevenslaag (DAC en .BACPAC) gebruik maken van Azure AD-verificatie.
+- SQL Server 2016 Management Studio en SQL Server Data Tools voor Visual Studio 2015 (versie 14.0.60311.1 van april 2016 of later) ondersteunen Azure Active Directory-verificatie. (Azure AD-verificatie wordt ondersteund door de **.NET Framework-gegevensprovider voor SqlServer**; minimaal .NET Framework versie 4.6). Daardoor kunnen de nieuwste versies van deze hulpprogramma's en toepassingen met een gegevenslaag (DAC en .BACPAC) gebruik maken van Azure AD-verificatie.
 - Vanaf versie 15.0.1 ondersteunen de hulpprogramma's [sqlcmd](/sql/tools/sqlcmd-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) en [bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) Active Directory interactieve verificatie met MFA.
 - SQL Server Data Tools voor Visual Studio 2015 vereist minimaal de versie van april 2016 van de hulpmiddelen voor gegevens (versie 14.0.60311.1). Momenteel worden Azure AD-gebruikers niet weergegeven in SSDT Objectverkenner. Als tijdelijke oplossing kunt u de gebruikers weergeven in [sys.database_principals](/sql/relational-databases/system-catalog-views/sys-database-principals-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 - [Microsoft JDBC Driver 6.0 voor SQL Server](https://www.microsoft.com/download/details.aspx?id=11774) ondersteunt Azure AD-verificatie. Zie ook [De verbindingseigenschappen instellen](/sql/connect/jdbc/setting-the-connection-properties?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).

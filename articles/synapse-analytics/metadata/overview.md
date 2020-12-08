@@ -1,6 +1,6 @@
 ---
 title: Gedeeld metagegevensmodel
-description: Met Azure Synapse Analytics kunnen de verschillende rekenengines voor de werkruimte databases en tabellen delen tussen de serverloze Apache Spark-pools (preview), de serverloze SQL-pool (preview) en toegewezen SQL-pools.
+description: Met Azure Synapse Analytics kunnen de verschillende rekenengines voor de werkruimte databases en tabellen delen tussen de serverloze Apache Spark-pools, de serverloze SQL-pool en toegewezen SQL-pools.
 services: synapse-analytics
 author: MikeRys
 ms.service: synapse-analytics
@@ -9,18 +9,16 @@ ms.subservice: metadata
 ms.date: 05/01/2020
 ms.author: mrys
 ms.reviewer: jrasnick
-ms.openlocfilehash: 64c19f3331be8ffda433207da88ebf22c546ee4e
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: b10b6f011fa7daee4094f0cc7b819d36127fedcd
+ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93324669"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96460348"
 ---
 # <a name="azure-synapse-analytics-shared-metadata"></a>Gedeelde Azure Synapse Analytics-metagegevens
 
-Met Azure Synapse Analytics kunnen de verschillende rekenengines voor de werkruimte databases en tabellen delen tussen de serverloze Apache Spark-pools (preview) en serverloze SQL-pools (preview).
-
-[!INCLUDE [preview](../includes/note-preview.md)]
+Met Azure Synapse Analytics kunnen de verschillende rekenengines voor de werkruimte databases en tabellen delen tussen de serverloze Apache Spark-pools en serverloze SQL-pools.
 
 Het delen ondersteunt het zogenaamde moderne datawarehousepatroon en biedt de werkruimte-SQL-engines toegang tot databases en tabellen die zijn gemaakt met Spark. Ook kunnen de SQL-engines hun eigen objecten maken die niet worden gedeeld met de andere engines.
 

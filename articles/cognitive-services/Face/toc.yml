@@ -5,7 +5,7 @@
   items:
     - name: Wat is de Face-service?
       href: Overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: De clientbibliotheek gebruiken
       href: Quickstarts/client-libraries.md
@@ -15,8 +15,6 @@
           items:
             - name: C#
               href: QuickStarts/CSharp.md
-            - name: cURL
-              href: QuickStarts/curl.md
             - name: Aan de slag
               href: QuickStarts/go.md
             - name: Java
@@ -95,7 +93,7 @@
           href: /java/api/overview/azure/cognitiveservices/client/faceapi?view=azure-java-stable
         - name: Node.js
           href: /javascript/api/@azure/cognitiveservices-face
-        - name: Go
+        - name: Aan de slag
           href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/face'
 - name: Resources
   items:

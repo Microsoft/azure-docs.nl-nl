@@ -6,7 +6,7 @@
       href: overview.md
     - name: Verschillen met de vorige versie
       href: overview-differences.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Een voorbeeldscenario verkennen
@@ -251,5 +251,7 @@
       items:
         - name: Prijzen
           href: 'https://azure.microsoft.com/pricing/details/digital-twins'
+        - name: SLA
+          href: 'https://azure.microsoft.com/support/legal/sla/digital-twins'
         - name: Regio’s en beschikbaarheid
           href: 'https://azure.microsoft.com/global-infrastructure/services/?products=digital-twins'

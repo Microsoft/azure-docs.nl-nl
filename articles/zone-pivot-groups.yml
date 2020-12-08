@@ -416,6 +416,18 @@ groups:
     title: Aan de slag
   - id: programming-language-python
     title: Python
+- id: programming-languages-set-face
+  title: Programmeertalen
+  prompt: Een programmeertaal kiezen
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-go
+    title: Aan de slag
+  - id: programming-language-python
+    title: Python
+  - id: programming-language-rest-api
+    title: REST-API
 - id: programming-languages-set-two-with-js
   title: Programmeertalen
   prompt: Een programmeertaal kiezen
@@ -429,7 +441,7 @@ groups:
   - id: programming-language-python
     title: Python
   - id: programming-language-javascript
-    title: JavaScript
+    title: Javascript
   - id: programming-language-more
     title: Meer talen...
 - id: programming-languages-set-two-with-js-spx
@@ -463,7 +475,7 @@ groups:
   - id: programming-language-python
     title: Python
   - id: programming-language-javascript
-    title: Javascript
+    title: JavaScript
   - id: programming-language-more
     title: Meer talen...
 - id: programming-languages-set-two-with-js-go-spx
@@ -729,7 +741,7 @@ groups:
   - id: programming-language-csharp
     title: C#
   - id: programming-language-javascript
-    title: JavaScript
+    title: Javascript
   - id: programming-language-java
     title: Java
   - id: programming-language-python
@@ -875,9 +887,9 @@ groups:
   - id: programming-languages-objectivec-swift
     title: Objective-C/Swift
 metadata:
-  ms.openlocfilehash: 23b11aa4d6726294c7f4482f53e5ce99d04eddd3
-  ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+  ms.openlocfilehash: 3fd451bb34d4a0a83821018cc8a6ab519c55e12d
+  ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/02/2020
-  ms.locfileid: "96532870"
+  ms.lasthandoff: 12/07/2020
+  ms.locfileid: "96763533"

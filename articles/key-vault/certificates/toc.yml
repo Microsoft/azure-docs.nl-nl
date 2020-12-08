@@ -6,7 +6,7 @@
       href: about-certificates.md
     - name: Over certificaatverlenging
       href: overview-renew-certificate.md
-- name: Snelstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: CLI
@@ -17,6 +17,8 @@
       href: quick-create-portal.md
     - name: .NET
       href: quick-create-net.md
+    - name: Node.js
+      href: quick-create-node.md
     - name: Python
       href: quick-create-python.md
 - name: Voorbeelden

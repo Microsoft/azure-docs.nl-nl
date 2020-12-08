@@ -4,7 +4,7 @@
   items:
     - name: Informatie over virtuele machines
       href: overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: Virtuele machine maken - Portal
       href: quick-create-portal.md
@@ -54,7 +54,7 @@
 - name: Concepten
   items:
     - name: Installatiekopieën
-      href: shared-image-galleries.md
+      href: ../shared-image-galleries.md
     - name: Azure Resource Manager
       href: ../../azure-resource-manager/management/overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
       items:
@@ -419,7 +419,7 @@
         - name: Functie voor het maken van installatiekopieën (preview)
           items:
             - name: Overzicht
-              href: ../linux/image-builder-overview.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
+              href: ../image-builder-overview.md
             - name: Image Builder gebruiken
               items:
                 - name: CLI

@@ -4,7 +4,7 @@
   items:
     - name: Informatie over virtuele machines
       href: overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: Virtuele machine maken - Azure CLI
       href: quick-create-cli.md
@@ -71,9 +71,9 @@
         - name: Inrichten
           href: provisioning.md
         - name: Gedeelde installatiekopiegalerieën
-          href: shared-image-galleries.md
+          href: ../shared-image-galleries.md
         - name: Image Builder
-          href: image-builder-overview.md
+          href: ../image-builder-overview.md
     - name: Azure Resource Manager
       href: ../../azure-resource-manager/management/overview.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
     - name: Regio's

@@ -38,7 +38,7 @@
         - name: De API voor transcriptie in batch gebruiken
           href: batch-transcription.md
         - name: Migreren van v2.0 naar v3.0
-          url: migrate-v2-to-v3.md
+          href: migrate-v2-to-v3.md
         - name: Uitspraak evalueren
           href: how-to-pronunciation-assessment.md
     - name: Zelfstudies

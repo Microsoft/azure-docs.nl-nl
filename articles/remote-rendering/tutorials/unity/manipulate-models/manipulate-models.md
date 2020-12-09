@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 003203ef1a25102f9fd3c50001603dbd5d33ce5a
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 48c835070329b5cb0892b10760d37708e46bfa1d
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94565967"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96559130"
 ---
 # <a name="tutorial-manipulating-models"></a>Zelfstudie: Modellen bewerken
 
@@ -176,7 +176,7 @@ In deze zelfstudie wordt MRTK gebruikt voor interactie met objecten. Het grootst
 1. Druk op de Afspeelknop van Unity om de scène af te spelen en open het menu **Hulpprogramma's voor modellen** in het **AppMenu**.
 ![Controller weergeven](./media/model-with-view-controller.png)
 
-Het **AppMenu** heeft een submenu **Hulpprogramma's voor modellen** dat een weergavecontroller implementeert voor binding met het model. Wanneer het GameObject een **RemoteBounds**-component bevat, wordt door de weergavecontroller een [**BoundingBox**](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html)-onderdeel toegevoegd. Dit is een MRTK-component dat een begrenzingsvak rond een object met een **BoxCollider** genereert. Een [**ObjectManipulator**](https://microsoft.github.io/MixedRealityToolkit-Unity/version/releases/2.3.0/api/Microsoft.MixedReality.Toolkit.Experimental.UI.ObjectManipulator.html?q=ObjectManipulator), verantwoordelijk is voor interacties met de hand. Met deze scripts gecombineerd kunnen we het extern gegenereerde modellen verplaatsen, draaien en schalen.
+Het **AppMenu** heeft een submenu **Hulpprogramma's voor modellen** dat een weergavecontroller implementeert voor binding met het model. Wanneer het GameObject een **RemoteBounds**-component bevat, wordt door de weergavecontroller een [**BoundingBox**](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/README_BoundingBox.html)-onderdeel toegevoegd. Dit is een MRTK-component dat een begrenzingsvak rond een object met een **BoxCollider** genereert. Een [**ObjectManipulator**](https://microsoft.github.io/MixedRealityToolkit-Unity/version/releases/2.5.1/api/Microsoft.MixedReality.Toolkit.UI.ObjectManipulator.html), verantwoordelijk is voor interacties met de hand. Met deze scripts gecombineerd kunnen we het extern gegenereerde modellen verplaatsen, draaien en schalen.
 
 1. Verplaats uw muis naar het deelvenster Game en klik erin voor focus.
 1. Gebruik de [Handsimulatie van MRTK](https://microsoft.github.io/MixedRealityToolkit-Unity/Documentation/InputSimulation/InputSimulationService.html#hand-simulation) en houd de Shift-toets aande linkerzijde ingedrukt.

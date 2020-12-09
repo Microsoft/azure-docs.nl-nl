@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 10/15/2020
 ms.author: trbye
-ms.openlocfilehash: 0e2324f7e524567b07f0228e046605b781bc4916
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: d50d4c554f47629f6e04adf957e02f8ffcc48fe5
+ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94425145"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96509332"
 ---
 In deze gids ontdekt u hoe u de [Speech SDK](~/articles/cognitive-services/speech-service/speech-sdk.md) kunt installeren voor Python. Als u enkel de pakketnaam nodig heeft om zelf aan de slag te gaan, voer dan `pip install azure-cognitiveservices-speech` uit.
 
@@ -79,7 +79,7 @@ import azure.cognitiveservices.speech as speechsdk
    ![De Python-extensie installeren](~/articles/cognitive-services/speech-service/media/sdk/qs-python-vscode-python-extension.png)
 
 1. U kunt het Python Speech-SDK-pakket ook installeren vanuit Visual Studio Code met de geïntegreerde opdrachtregel:
-   1. Open een terminal (in de vervolgkeuzelijsten **Terminal** > **Nieuwe terminal** )
+   1. Open een terminal (in de vervolgkeuzelijsten **Terminal** > **Nieuwe terminal**)
    1. Voer in de terminal die wordt geopend de opdracht `python -m pip install azure-cognitiveservices-speech` in
 
 Als Visual Studio Code nieuw is voor u, bekijk dan de uitgebreide [Documentatie voor Visual Studio Code](https://code.visualstudio.com/docs). Zie [Zelfstudie voor Visual Studio Code Python](https://code.visualstudio.com/docs/python/python-tutorial) voor meer informatie over Visual Studio Code en Python.
@@ -90,7 +90,7 @@ Updates voor het Python Speech-SDK-pakket worden gedistribueerd via PyPI en aang
 Als een nieuwe versie beschikbaar is, kunt u een update naar deze versie uitvoeren met behulp van de opdracht `pip install --upgrade azure-cognitiveservices-speech`.
 U kunt controleren welke versie momenteel is geïnstalleerd door de variabele `azure.cognitiveservices.speech.__version__` te bekijken.
 
-Zie [opties voor ondersteuning en hulp](../../../../cognitive-services-support-options.md?context=%252fazure%252fcognitive-services%252fspeech-service%252fcontext%252fcontext%253fcontext%253d%252fazure%252fcognitive-services%252fspeech-service%252fcontext%252fcontext) als er een probleem is of als er een functie ontbreekt.
+Zie [opties voor ondersteuning en hulp](../../../../cognitive-services-support-options.md?context=%2fazure%2fcognitive-services%2fspeech-service%2fcontext%2fcontext%253fcontext%253d%2fazure%2fcognitive-services%2fspeech-service%2fcontext%2fcontext) als er een probleem is of als er een functie ontbreekt.
 
 ## <a name="next-steps"></a>Volgende stappen
 

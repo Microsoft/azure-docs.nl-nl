@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 09/15/2020
 ms.author: trbye
-ms.openlocfilehash: f3a3d897d5cc5a22340dccf3aeeac8d52158a3a0
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: f87db54b43f0ece49b940521bea34737da676a31
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94425089"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96912314"
 ---
 Een van de belangrijkste functies van de Speech-service is de mogelijkheid om menselijke spraak te herkennen en te transcriberen (ook wel spraak-naar-tekst genoemd). In deze quickstart leert u meer over het gebruik van de Speech-SDK in uw apps en producten om spraak-naar-tekst-conversie van hoge kwaliteit uit te voeren.
 
@@ -30,6 +30,8 @@ Voordat u iets kunt doen, moet u de [Speech-SDK voor Go](../../../quickstarts/se
 Gebruik het volgende codevoorbeeld om spraakherkenning uit te voeren met de standaardmicrofoon van het apparaat. Vervang de variabelen `subscription` en `region` door de sleutels voor uw abonnement en regio. Wanneer het script wordt uitgevoerd, wordt er een herkenningssessie gestart op de standaardmicrofoon en wordt er tekst uitgevoerd.
 
 ```go
+package main
+
 import (
     "bufio"
     "fmt"
@@ -104,6 +106,8 @@ Zie de referentiedocumenten voor gedetailleerde informatie over de klassen [`Spe
 Gebruik het volgende voorbeeld om spraakherkenning uit te voeren met een audiobestand. Vervang de variabelen `subscription` en `region` door de sleutels voor uw abonnement en regio. Vervang ook de variabele `file` door een pad naar een WAV-bestand. Als u het script uitvoert, wordt spraak uit het bestand herkend en het tekstresultaat uitgevoerd.
 
 ```go
+package main
+
 import (
     "fmt"
     "time"

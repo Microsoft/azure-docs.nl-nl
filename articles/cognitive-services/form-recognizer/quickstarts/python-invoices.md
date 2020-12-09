@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 11/12/2020
 ms.author: pafarley
 ms.custom: devx-track-python
-ms.openlocfilehash: 7c6b5406728817c3dd700ec285d9af77c9d3cf60
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 2ed8bdd167814ea21fced89042bdcf80fd3a73df
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96009310"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602645"
 ---
 # <a name="quickstart-extract-invoice-data-using-the-form-recognizer-rest-api-with-python"></a>Quickstart: Factuurgegevens ophalen met behulp van de Form Recognizer REST API met Python
 
@@ -30,7 +30,7 @@ U hebt het volgende nodig om deze quickstart te voltooien:
 - Een factuurdocument. U kunt deze [voorbeeldfactuur](../media/sample-invoice.jpg) gebruiken voor deze quickstart.
 
 > [!NOTE]
-> In deze quickstart wordt een lokaal bestand gebruikt. Raadpleeg de [referentiedocumentatie](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeInvoiceAsync) als u een factuurdocument wilt gebruiken dat via URL wordt geopend.
+> In deze quickstart wordt een lokaal bestand gebruikt. Raadpleeg de [referentiedocumentatie](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeLayoutAsync) als u een factuurdocument wilt gebruiken dat via URL wordt geopend.
 
 ## <a name="create-a-form-recognizer-resource"></a>Een Form Recognizer-resource maken
 
@@ -290,6 +290,6 @@ if __name__ == '__main__':
 In deze quickstart hebt u de Form Recognizer REST API met Python gebruikt om de inhoud van facturen te extraheren. Raadpleeg hierna de referentiedocumentatie om de Form Recognizer API verder te verkennen.
 
 > [!div class="nextstepaction"]
-> [REST API-referentiedocumentatie](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeInvoiceAsync)
+> [REST API-referentiedocumentatie](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2/operations/AnalyzeLayoutAsync)
 
    

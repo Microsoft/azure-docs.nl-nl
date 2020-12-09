@@ -28,6 +28,10 @@
           href: resource-network-topologies.md
         - name: Aangepaste rollen
           href: resource-custom-roles-sql-db-managed-instance.md
+    - name: Beveiliging
+      items:
+        - name: Beveiligingsbasislijn
+          href: security-baseline.md
 - name: Zelfstudies
   expanded: true
   items:

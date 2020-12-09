@@ -11,12 +11,12 @@ metadata:
   author: PatrickFarley
   ms.author: pafarley
   ms.date: 10/24/2019
-  ms.openlocfilehash: 0edc567695c95b7cf0a93a12724d9e21e1839c51
-  ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+  ms.openlocfilehash: cc985f910120c814cd4eedb8275100d6831335f5
+  ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 10/29/2020
-  ms.locfileid: "92912970"
+  ms.lasthandoff: 12/09/2020
+  ms.locfileid: "96905227"
 landingContent:
 - title: Over Content Moderator
   linkLists:
@@ -42,6 +42,8 @@ landingContent:
       url: client-libraries.md?pivots=programming-language-python
     - text: De Java-SDK gebruiken
       url: client-libraries.md?pivots=programming-language-java
+    - text: De REST API gebruiken
+      url: client-libraries.md?pivots=programming-language-rest-api
   - linkListType: how-to-guide
     links:
     - text: De API-console gebruiken
@@ -74,6 +76,8 @@ landingContent:
       url: ./client-libraries.md?pivots=programming-language-csharp%253fpivots%253dprogramming-language-csharp
     - text: De Python-SDK gebruiken
       url: ./client-libraries.md?pivots=programming-language-python%253fpivots%253dprogramming-language-python
+    - text: De REST API gebruiken
+      url: ./client-libraries.md?pivots=programming-language-rest-api
   - linkListType: how-to-guide
     links:
     - text: De API-console gebruiken
@@ -92,14 +96,14 @@ landingContent:
       url: try-terms-list-api.md
 - title: Video-inhoud analyseren
   linkLists:
+  - linkListType: concept
+    links:
+    - text: Video's en transcripties beoordelen
+      url: video-moderation-human-review.md
   - linkListType: how-to-guide
     links:
     - text: De .NET SDK gebruiken
       url: video-moderation-api.md
-  - linkListType: tutorial
-    links:
-    - text: Video's en transcripties beoordelen
-      url: video-transcript-moderation-review-tutorial-dotnet.md
   - linkListType: video
     links:
     - text: Videotoezicht met Content Moderator

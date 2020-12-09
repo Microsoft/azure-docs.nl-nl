@@ -166,6 +166,18 @@ groups:
     title: Java
   - id: programming-language-python
     title: Python
+- id: programming-languages-set-conmod
+  title: Programmeertalen
+  prompt: Een programmeertaal kiezen
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-python
+    title: Python
+  - id: programming-language-rest-api
+    title: REST-API
 - id: programming-languages-set-fifteen
   title: Programmeertalen
   prompt: Een programmeertaal kiezen
@@ -181,7 +193,7 @@ groups:
   - id: programming-language-csharp
     title: C#
   - id: programming-language-javascript
-    title: JavaScript
+    title: Javascript
   - id: programming-language-python
     title: Python
   - id: programming-language-java
@@ -215,7 +227,7 @@ groups:
   - id: programming-language-java
     title: Java
   - id: programming-language-javascript
-    title: JavaScript
+    title: Javascript
   - id: programming-languages-objectivec-swift
     title: Objective-C/Swift
   - id: programming-language-python
@@ -298,6 +310,24 @@ groups:
     title: Python
   - id: programming-language-typescript
     title: TypeScript
+- id: programming-languages-set-functions-full
+  title: Programmeertalen
+  prompt: Een programmeertaal kiezen
+  pivots:
+  - id: programming-language-csharp
+    title: C#
+  - id: programming-language-java
+    title: Java
+  - id: programming-language-javascript
+    title: Javascript
+  - id: programming-language-powershell
+    title: PowerShell
+  - id: programming-language-python
+    title: Python
+  - id: programming-language-typescript
+    title: TypeScript
+  - id: programming-language-other
+    title: Anders
 - id: programming-languages-metrics-monitor
   title: Programmeertalen
   prompt: Een programmeertaal kiezen.
@@ -475,7 +505,7 @@ groups:
   - id: programming-language-python
     title: Python
   - id: programming-language-javascript
-    title: JavaScript
+    title: Javascript
   - id: programming-language-more
     title: Meer talen...
 - id: programming-languages-set-two-with-js-go-spx
@@ -541,7 +571,7 @@ groups:
   - id: programming-language-python
     title: Python
   - id: programming-language-javascript
-    title: Javascript
+    title: JavaScript
   - id: programming-language-objectivec
     title: Objective-C
 - id: programming-languages-set-nineteen
@@ -699,7 +729,7 @@ groups:
   - id: programming-language-java
     title: Java
   - id: programming-language-javascript
-    title: Javascript
+    title: JavaScript
   - id: programming-language-go
     title: Aan de slag
   - id: programming-language-python
@@ -887,9 +917,9 @@ groups:
   - id: programming-languages-objectivec-swift
     title: Objective-C/Swift
 metadata:
-  ms.openlocfilehash: 3fd451bb34d4a0a83821018cc8a6ab519c55e12d
-  ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+  ms.openlocfilehash: 2938edac331faf56e5ba8dc380c01db281b3eb07
+  ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/07/2020
-  ms.locfileid: "96763533"
+  ms.lasthandoff: 12/09/2020
+  ms.locfileid: "96905856"

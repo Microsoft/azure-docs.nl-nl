@@ -4,7 +4,7 @@
   items:
     - name: Wat is Video Indexer?
       href: video-indexer-overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   expanded: true
   items:
     - name: Aan de slag
@@ -73,7 +73,7 @@
     - name: Inhoudsmodellen aanpassen
       items:
         - name: Geanimeerde tekens
-          href: animated-characters-recognition.md
+          href: animated-characters-recognition-how-to.md
         - name: Person
           items:
             - name: met de Video Indexer-website

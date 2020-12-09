@@ -280,7 +280,7 @@
     - name: Werken met de Microsoft Authentication Library
       displayName: MSAL
       items:
-        - Name: Alle platforms
+        - name: Alle platforms
           items:
             - name: Ondersteunde verificatiestromen
               href: msal-authentication-flows.md

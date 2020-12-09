@@ -10,12 +10,12 @@ metadata:
   author: philmea
   ms.author: philmea
   ms.date: 09/04/2019
-  ms.openlocfilehash: 06f84e9c24c7ba76420b3d033cb3f1436730ba8c
-  ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+  ms.openlocfilehash: a7c956bc1716eb50775e44d57703ddc1e0f9ccc3
+  ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/01/2020
-  ms.locfileid: "96453044"
+  ms.lasthandoff: 12/08/2020
+  ms.locfileid: "96854764"
 highlightedContent:
   items:
   - title: Wat is Azure IoT?
@@ -166,9 +166,6 @@ conceptualContent:
     - url: ../iot-accelerators/about-iot-accelerators.md
       itemType: overview
       text: Wat zijn Azure IoT-oplossingsversnellers?
-    - url: ../iot-accelerators/quickstart-remote-monitoring-deploy.md
-      itemType: quickstart
-      text: Een externe bewakingsoplossing uitproberen
     - url: ../iot-accelerators/quickstart-connected-factory-deploy.md
       itemType: quickstart
       text: Een oplossing voor een verbonden fabriek uitproberen

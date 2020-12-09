@@ -2,17 +2,17 @@
 title: Instellingen pushen naar app-configuratie met Azure-pijp lijnen
 description: Meer informatie over het gebruik van Azure-pijp lijnen om sleutel waarden naar een app-configuratie archief te pushen
 services: azure-app-configuration
-author: lisaguthrie
+author: AlexandraKemperMS
 ms.service: azure-app-configuration
 ms.topic: how-to
 ms.date: 07/27/2020
-ms.author: lcozzens
-ms.openlocfilehash: 7c0f886f23bc24eeed54043e9a7ee5fb1f645172
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.author: alkemper
+ms.openlocfilehash: fd3f7dbfd824360dcba9f8a166c579e3b55527ba
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96572504"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932112"
 ---
 # <a name="push-settings-to-app-configuration-with-azure-pipelines"></a>Instellingen pushen naar app-configuratie met Azure-pijp lijnen
 
@@ -66,7 +66,7 @@ Deze sectie bevat informatie over het gebruik van de Azure-app configuratie push
 
 Deze sectie bevat informatie over het gebruik van de Azure-app configuratie push taak in een Azure DevOps-release pijplijn.
 
-1. Navigeer naar de pagina release pijplijn door **pijp lijnen** te selecteren  >  **Releases**. Documentatie voor release pijplijnen vindt u [hier](/azure/devops/pipelines/release?view=azure-devops).
+1. Navigeer naar de pagina release pijplijn door **pijp lijnen** te selecteren  >  . Documentatie voor release pijplijnen vindt u [hier](/azure/devops/pipelines/release?view=azure-devops).
 1. Kies een bestaande release pijplijn. Als u er nog geen hebt, selecteert u **+ Nieuw** om een nieuw item te maken.
 1. Selecteer de knop **bewerken** in de rechter bovenhoek om de release pijplijn te bewerken.
 1. Kies het **stadium** om de taak toe te voegen. Meer informatie over de stadia vindt u [hier](/azure/devops/pipelines/release/environments?view=azure-devops).

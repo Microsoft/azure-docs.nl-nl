@@ -1,17 +1,17 @@
 ---
 title: Azure-app configuratie REST API
 description: Referentie pagina's voor de Azure-app configuratie REST API
-author: lisaguthrie
-ms.author: lcozzens
+author: AlexandraKemperMS
+ms.author: alkemper
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: e2753f0f8926ac15f5d32020c8891d1b612d2bb3
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 27befc2417444c62493548acbcdacd9f7db28a65
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182594"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96931993"
 ---
 # <a name="azure-app-configuration-rest-api"></a>Azure-app configuratie REST API
 

@@ -11,12 +11,12 @@ ms.author: abnarain
 manager: anandsub
 ms.custom: seo-lt-2019
 ms.date: 11/25/2020
-ms.openlocfilehash: 4a58f25e6183c674990d1d7722ce3196cce0f47c
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 04efb7bcae11ef6cf377d821b49f9b07d41d347f
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350463"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932588"
 ---
 # <a name="create-and-configure-a-self-hosted-integration-runtime"></a>Zelf-hostende Integration Runtime maken en configureren
 
@@ -102,29 +102,28 @@ Dmgcmd.exe is opgenomen in het zelf-hostende installatie programma. Het bevindt 
 Gebruik de toepassing als volgt:
 
 ```powershell
-dmgcmd [ -RegisterNewNode "<AuthenticationKey>" -EnableRemoteAccess "<port>" ["<thumbprint>"] -EnableRemoteAccessInContainer "<port>" ["<thumbprint>"] -DisableRemoteAccess -Key "<AuthenticationKey>" -GenerateBackupFile "<filePath>" "<password>" -ImportBackupFile "<filePath>" "<password>" -Restart -Start -Stop -StartUpgradeService -StopUpgradeService -TurnOnAutoUpdate -TurnOffAutoUpdate -SwitchServiceAccount "<domain\user>" ["<password>"] -Loglevel <logLevel> ]
+dmgcmd ACTION args...
 ```
 
-Hier volgen de details van de para meters en eigenschappen van de toepassing: 
+Hier volgen de details van de acties en argumenten van de toepassing: 
 
-| Eigenschap                                                    | Beschrijving                                                  | Vereist |
-| ----------------------------------------------------------- | ------------------------------------------------------------ | -------- |
-| **RegisterNewNode** "`<AuthenticationKey>`"                     | Registreer een zelf-hostend Integration runtime-knoop punt met de opgegeven verificatie sleutel. | Nee       |
-| **RegisterNewNode** "`<AuthenticationKey>`" "`<NodeName>`"      | Registreer een zelf-hostend Integration runtime-knoop punt met de opgegeven verificatie sleutel en knooppunt naam. | Nee       |
-| **EnableRemoteAccess** "`<port>`" ["`<thumbprint>`"]            | Schakel externe toegang op het huidige knoop punt in om een cluster met hoge Beschik baarheid in te stellen. Of schakel referenties rechtstreeks in voor de zelf-hostende IR zonder Azure Data Factory te passeren. U doet dit met behulp van de cmdlet **New-AzDataFactoryV2LinkedServiceEncryptedCredential** van een externe computer in hetzelfde netwerk. | Nee       |
-| **EnableRemoteAccessInContainer** "`<port>`" ["`<thumbprint>`"] | Externe toegang tot het huidige knoop punt inschakelen wanneer het knoop punt in een container wordt uitgevoerd. | Nee       |
-| **DisableRemoteAccess**                                         | Externe toegang tot het huidige knoop punt uitschakelen. Externe toegang is vereist voor het instellen van een configuratie met meer knoop punten. De Power shell **-cmdlet New-AzDataFactoryV2LinkedServiceEncryptedCredential** werkt nog steeds, zelfs wanneer externe toegang is uitgeschakeld. Dit gedrag is waar, zolang de cmdlet wordt uitgevoerd op dezelfde computer als het zelf-hostende IR-knoop punt. | Nee       |
-| **Sleutel** "`<AuthenticationKey>`"                                 | De vorige verificatie sleutel overschrijven of bijwerken. Wees voorzichtig met deze actie. Het vorige zelf-hostende IR-knoop punt kan offline gaan als de sleutel een nieuwe Integration runtime is. | Nee       |
-| **GenerateBackupFile** "`<filePath>`" "`<password>`"            | Genereer een back-upbestand voor het huidige knoop punt. Het back-upbestand bevat de referenties van de knooppunt sleutel en de gegevens opslag. | Nee       |
-| **ImportBackupFile** "`<filePath>`" "`<password>`"              | Herstel het knoop punt uit een back-upbestand.                          | Nee       |
-| **Opnieuw starten**                                                     | Start de zelf-hostende Integration runtime host-service opnieuw.   | Nee       |
-| **Begin**                                                       | Start de zelf-hostende integratie runtime host service.     | Nee       |
-| **Stoppen**                                                        | Stop de zelf-hostende integratie runtime host service.        | Nee       |
-| **StartUpgradeService**                                         | Start de zelf-hostende Integration runtime upgrade-service.       | Nee       |
-| **StopUpgradeService**                                          | Stop de zelf-hostende Integration runtime upgrade-service.        | Nee       |
-| **TurnOnAutoUpdate**                                            | Schakel automatisch bijwerken van de zelf-hostende Integration runtime in.        | Nee       |
-| **TurnOffAutoUpdate**                                           | Schakel automatisch bijwerken van de zelf-hostende Integration runtime uit.       | Nee       |
-| **SwitchServiceAccount** "`<domain\user>`" ["`<password>`"]           | Stel DIAHostService in om te worden uitgevoerd als een nieuw account. Gebruik het lege wacht woord voor systeem accounts en virtuele accounts. | Nee       |
+|OPTREDEN|argumenten|Description|
+|------|----|-----------|
+|RN<br/>-RegisterNewNode|"`<AuthenticationKey>`" ["`<NodeName>`"]|Registreer een zelf-hostend Integration runtime-knoop punt met de opgegeven verificatie sleutel en knooppunt naam.|
+|Europese<br/>-EnableRemoteAccess|"`<port>`" ["`<thumbprint>`"]|Schakel externe toegang op het huidige knoop punt in om een cluster met hoge Beschik baarheid in te stellen. Of schakel referenties rechtstreeks in voor de zelf-hostende IR zonder Azure Data Factory te passeren. U doet dit met behulp van de cmdlet **New-AzDataFactoryV2LinkedServiceEncryptedCredential** van een externe computer in hetzelfde netwerk.|
+|-erac,<br/>-EnableRemoteAccessInContainer|"`<port>`" ["`<thumbprint>`"]|Externe toegang tot het huidige knoop punt inschakelen wanneer het knoop punt in een container wordt uitgevoerd.|
+|gedane<br/>-DisableRemoteAccess||Externe toegang tot het huidige knoop punt uitschakelen. Externe toegang is vereist voor het instellen van een configuratie met meer knoop punten. De Power shell **-cmdlet New-AzDataFactoryV2LinkedServiceEncryptedCredential** werkt nog steeds, zelfs wanneer externe toegang is uitgeschakeld. Dit gedrag is waar, zolang de cmdlet wordt uitgevoerd op dezelfde computer als het zelf-hostende IR-knoop punt.|
+|middel<br/>-Sleutel|"`<AuthenticationKey>`"|De vorige verificatie sleutel overschrijven of bijwerken. Wees voorzichtig met deze actie. Het vorige zelf-hostende IR-knoop punt kan offline gaan als de sleutel een nieuwe Integration runtime is.|
+|-gbf,<br/>-GenerateBackupFile|"`<filePath>`" "`<password>`"|Genereer een back-upbestand voor het huidige knoop punt. Het back-upbestand bevat de referenties van de knooppunt sleutel en de gegevens opslag.|
+|-ibf,<br/>-ImportBackupFile|"`<filePath>`" "`<password>`"|Herstel het knoop punt uit een back-upbestand.|
+|n<br/>-Restart||Start de zelf-hostende Integration runtime host-service opnieuw.|
+|z<br/>-Start||Start de zelf-hostende integratie runtime host service.|
+|t<br/>-Stoppen||Stop de zelf-hostende integratie runtime host service.|
+|WSUS<br/>-StartUpgradeService||Start de zelf-hostende Integration runtime upgrade-service.|
+|-tus,<br/>-StopUpgradeService||Stop de zelf-hostende Integration runtime upgrade-service.|
+|-tonau,<br/>-TurnOnAutoUpdate||Schakel automatisch bijwerken van de zelf-hostende Integration runtime in.|
+|-toffau,<br/>-TurnOffAutoUpdate||Schakel automatisch bijwerken van de zelf-hostende Integration runtime uit.|
+|SSA<br/>-SwitchServiceAccount|"`<domain\user>`" ["`<password>`"]|Stel DIAHostService in om te worden uitgevoerd als een nieuw account. Gebruik het lege wacht woord voor systeem accounts en virtuele accounts.|
 
 
 ## <a name="command-flow-and-data-flow"></a>Opdracht stroom en gegevens stroom
@@ -331,7 +330,7 @@ Op het niveau van Windows Firewall of op computer niveau worden deze uitgaande p
 
 Zorg ervoor dat u firewall regels correct inschakelt op de firewall van het bedrijf, Windows Firewall van de zelf-hostende Integration runtime-computer en het gegevens archief zelf. Door deze regels in te scha kelen, kan de zelf-hostende Integration runtime verbinding maken met zowel de bron-als de sink. Schakel regels in voor elk gegevens archief dat is betrokken bij de Kopieer bewerking.
 
-Als u bijvoorbeeld vanuit een on-premises gegevens archief wilt kopiëren naar een SQL Database sink of een Azure Synapse Analytics-Sink (voorheen SQL Data Warehouse), voert u de volgende stappen uit:
+Als u bijvoorbeeld vanuit een on-premises gegevens archief wilt kopiëren naar een SQL Database sink of een Azure Synapse Analytics-sink, voert u de volgende stappen uit:
 
 1. Uitgaande TCP-communicatie toestaan op poort 1433 voor zowel Windows Firewall als de firewall van het bedrijf.
 1. Configureer de firewall instellingen van de SQL Database om het IP-adres van de zelf-hostende Integration runtime-machine toe te voegen aan de lijst met toegestane IP-adressen.

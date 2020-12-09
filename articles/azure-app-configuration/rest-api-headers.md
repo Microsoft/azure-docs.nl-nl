@@ -1,17 +1,17 @@
 ---
 title: Azure-app configuratie REST API-headers
 description: Naslag pagina's voor kopteksten die worden gebruikt met de Azure-app configuratie REST API
-author: lisaguthrie
-ms.author: lcozzens
+author: AlexandraKemperMS
+ms.author: alkemper
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: 5e1f92c68004d0197391ab72df775913c0940fec
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 80b20b0b55219766872166685c0b1257f3c39c55
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424322"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932571"
 ---
 # <a name="headers"></a>Kopteksten
 
@@ -21,7 +21,7 @@ Dit artikel bevat koppelingen naar naslag pagina's voor kopteksten die worden ge
 
 In de volgende tabel worden algemene aanvraag headers beschreven die worden gebruikt in Azure-app configuratie.
 
-| Koptekst | Beschrijving | Voorbeeld |
+| Header | Beschrijving | Voorbeeld |
 |--|--|--|
 | **Autorisatie** | Wordt gebruikt om een aanvraag voor de service te [verifiëren](./rest-api-authentication-index.md) . Zie [sectie 14,8](https://tools.ietf.org/html/rfc2616#section-14.8) | `Authorization: HMAC-SHA256 Credential=<Credential>&SignedHeaders=Host;x-ms-date;x-ms-content-sha256&Signature=<Signature>` |
 | **Accepteren** | De server informeert welk media type de client zal accepteren in een HTTP-antwoord. Zie [sectie 14,1](https://tools.ietf.org/html/rfc2616#section-14.1) | `Accept: application/vnd.microsoft.appconfig.kv+json;` |
@@ -41,7 +41,7 @@ In de volgende tabel worden algemene aanvraag headers beschreven die worden gebr
 
 De-server kan de volgende HTTP-headers in de reacties bevatten.
 
-| Koptekst | Beschrijving | Voorbeeld |
+| Header | Beschrijving | Voorbeeld |
 |--|--|--|
 | **Content-Type** | Bevat het media type van de inhoud in de hoofd tekst van het HTTP-antwoord. Zie [sectie 14,17](https://tools.ietf.org/html/rfc2616#section-14.17) | `Content-Type: application/vnd.microsoft.appconfig.kv+json; charset=utf-8;` |
 | **ETag** | Een ondoorzichtige token die de status van een bepaalde resource weergeeft. Kan worden gebruikt in voorwaardelijke bewerkingen. Zie [sectie 14,19](https://tools.ietf.org/html/rfc2616#section-14.19) | `ETag: "4f6dd610dd5e4deebc7fbaef685fb903"` |

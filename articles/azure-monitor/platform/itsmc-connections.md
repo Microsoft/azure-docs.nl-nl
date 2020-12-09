@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 05/12/2020
-ms.openlocfilehash: 410281ce67faf345539701389d4b03351d403b99
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 502d5a5c4b3d13d32fece648ce1de6763d012096
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186062"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932282"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>ITSM-producten/-services verbinden met IT-servicebeheerconnector
 Dit artikel bevat informatie over het configureren van de verbinding tussen uw ITSM-product/-service en de IT Service Management-connector (ITSMC) in Log Analytics om uw werk items centraal te beheren. Zie [overzicht](./itsmc-overview.md)voor meer informatie over ITSMC.
@@ -25,8 +25,7 @@ De volgende ITSM-producten/-services worden ondersteund. Selecteer het product o
 
 > [!NOTE]
 > 
-> Met ingang van 1-okt-2020 Cher well-en Provance ITSM-integratie met Azure-waarschuwing wordt niet langer ingeschakeld voor nieuwe klanten. Nieuwe ITSM-verbindingen worden niet ondersteund. 
-> Bestaande ITSM-verbindingen worden ondersteund.
+> We stellen onze klanten van Cher well en Provance voor om de [actie webhook](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups#webhook) te gebruiken voor Cher well en Provance eind punt als een andere oplossing voor de integratie.
 
 ## <a name="connect-system-center-service-manager-to-it-service-management-connector-in-azure"></a>System Center Service Manager verbinding maken met IT Service Management-connector in azure
 

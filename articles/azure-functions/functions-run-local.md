@@ -5,12 +5,12 @@ ms.assetid: 242736be-ec66-4114-924b-31795fd18884
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.custom: devx-track-csharp, 80e4ff38-5174-43
-ms.openlocfilehash: 3cf495ca0687e6fa37f619615fb1529659a462dc
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: efb91c7b26c67a3672abb3f9cc8992fd45971a25
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96020342"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932452"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Werken met Azure Functions Core Tools
 
@@ -65,7 +65,7 @@ In de volgende stappen wordt een Windows-installatie programma (MSI) gebruikt om
 
 1. Als u geen [uitbreidings bundels](functions-bindings-register.md#extension-bundles)wilt gebruiken, installeert u de [.net Core 3. x SDK voor Windows](https://dotnet.microsoft.com/download).
 
-# <a name="macos"></a>[macOS](#tab/macos)
+# <a name="macos"></a>[MacOS](#tab/macos)
 
 In de volgende stappen wordt homebrew gebruikt om de belangrijkste Hulpprogram Ma's voor macOS te installeren.
 
@@ -593,7 +593,7 @@ Meer informatie over het ontwikkelen, testen en publiceren van Azure Functions m
 <!-- LINKS -->
 
 [Azure Functions Core Tools]: https://www.npmjs.com/package/azure-functions-core-tools
-[Azure Portal]: https://portal.azure.com 
+[Azure-portal]: https://portal.azure.com 
 [Node.js]: https://docs.npmjs.com/getting-started/installing-node#osx-or-windows
 [`FUNCTIONS_WORKER_RUNTIME`]: functions-app-settings.md#functions_worker_runtime
 ['AzureWebJobsStorage']: functions-app-settings.md#azurewebjobsstorage

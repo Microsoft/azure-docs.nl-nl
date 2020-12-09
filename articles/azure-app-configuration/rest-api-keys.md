@@ -1,17 +1,17 @@
 ---
 title: Azure-app configuratie REST API-sleutels
 description: Naslag pagina's voor het werken met sleutels met behulp van de Azure-app configuratie REST API
-author: lisaguthrie
-ms.author: lcozzens
+author: AlexandraKemperMS
+ms.author: alkemper
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: f44ecdf571791d54a78d25dde514d57053b59160
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 65ca190d7fbd6d8d4df473fbe2112eafbd031fde
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93424313"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932537"
 ---
 # <a name="keys"></a>Sleutels
 
@@ -25,7 +25,7 @@ De volgende syntaxis vertegenwoordigt een sleutel Bron:
 }
 ```
 
-## <a name="operations"></a>Bewerkingen
+## <a name="operations"></a>Operations
 
 Belangrijkste resources ondersteunen de volgende bewerking:
 

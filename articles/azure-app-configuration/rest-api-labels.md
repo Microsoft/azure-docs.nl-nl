@@ -1,17 +1,17 @@
 ---
 title: Azure-app configuratie REST API-labels
 description: Naslag pagina's voor het werken met labels met behulp van de Azure-app configuratie REST API
-author: lisaguthrie
-ms.author: lcozzens
+author: AlexandraKemperMS
+ms.author: alkemper
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: e6fcc8399c1dbc36a5b2e915c726f1c2496ee2f9
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 5a59f5910d44f2a2b4cd75e7a1d51c2ed5dd51a4
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93423990"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932503"
 ---
 # <a name="labels"></a>Labels
 

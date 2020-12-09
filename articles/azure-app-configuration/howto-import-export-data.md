@@ -2,17 +2,17 @@
 title: Gegevens importeren of exporteren met Azure-app configuratie
 description: Meer informatie over het importeren of exporteren van configuratie gegevens naar of van Azure-app configuratie. Gegevens uitwisselen tussen uw app-configuratie archief en het code project.
 services: azure-app-configuration
-author: lisaguthrie
+author: AlexandraKemperMS
 ms.service: azure-app-configuration
 ms.topic: conceptual
 ms.date: 02/25/2020
-ms.author: lcozzens
-ms.openlocfilehash: 0e127a11f3821325602a78d46c69b2330bfb8293
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.author: alkemper
+ms.openlocfilehash: 5e4eeb37bb5efa11a656600072e4aa364fc71500
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92074614"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96931789"
 ---
 # <a name="import-or-export-configuration-data"></a>Configuratiegegevens importeren of exporteren
 
@@ -28,7 +28,7 @@ Gegevens importeren met behulp van de [Azure Portal](https://portal.azure.com) o
 
 1. Blader naar het configuratie archief van uw app en selecteer **importeren/exporteren** in het menu **bewerkingen** .
 
-1. Selecteer **Import** **bron service**  >  **configuratie bestand**op het tabblad importeren.
+1. Selecteer  **bron service**  >  **configuratie bestand** op het tabblad importeren.
 
 1. Selecteer **voor taal** en selecteer het gewenste invoer type.
 
@@ -36,7 +36,7 @@ Gegevens importeren met behulp van de [Azure Portal](https://portal.azure.com) o
 
     ![Bestand importeren](./media/import-file.png)
 
-1. Selecteer een **scheidings teken**en geef eventueel een **voor voegsel** op dat moet worden gebruikt voor geïmporteerde sleutel namen.
+1. Selecteer een **scheidings teken** en geef eventueel een **voor voegsel** op dat moet worden gebruikt voor geïmporteerde sleutel namen.
 
 1. Selecteer desgewenst een **Label**.
 
@@ -52,11 +52,11 @@ Gegevens exporteren met behulp van de [Azure Portal](https://portal.azure.com) o
 
 1. Blader naar het configuratie archief van uw app en selecteer **importeren/exporteren**.
 
-1. Selecteer op het tabblad **exporteren** het **Target service**  >  **configuratie bestand**van de doel service.
+1. Selecteer op het tabblad **exporteren** het   >  **configuratie bestand** van de doel service.
 
 1. Geef eventueel een **voor voegsel** op en selecteer een **Label** en een tijdstip voor de sleutels die moeten worden geëxporteerd.
 
-1. Selecteer een **File type**  >  **scheidings teken**voor het bestands type.
+1. Selecteer een   >  **scheidings teken** voor het bestands type.
 
 1. Selecteer **Toep assen** om de export te volt ooien.
 

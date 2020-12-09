@@ -1,18 +1,18 @@
 ---
 title: Sjabloonfuncties
-description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon om waarden op te halen, te werken met teken reeksen en cijfers en implementatie gegevens op te halen.
+description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon (ARM-sjabloon) om waarden op te halen, te werken met teken reeksen en cijfers en implementatie gegevens op te halen.
 ms.topic: conceptual
 ms.date: 10/12/2020
-ms.openlocfilehash: a479b81d0f0bc378f77885cbd644e70d7be1d857
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 2d124893cbe1694671231fd206f8e44cc20f6204
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91961167"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96931704"
 ---
 # <a name="arm-template-functions"></a>ARM-sjabloon functies
 
-In dit artikel worden alle functies beschreven die u kunt gebruiken in een Azure Resource Manager-sjabloon (ARM). Zie de [syntaxis van sjablonen](template-expressions.md)voor meer informatie over het gebruik van functies in uw sjabloon.
+In dit artikel worden alle functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon (ARM-sjabloon). Zie de [syntaxis van sjablonen](template-expressions.md)voor meer informatie over het gebruik van functies in uw sjabloon.
 
 Zie door de [gebruiker gedefinieerde functies](template-syntax.md#functions)om uw eigen functies te maken.
 
@@ -38,17 +38,17 @@ De meeste functies werken hetzelfde wanneer ze worden geïmplementeerd in een re
 
 Resource Manager biedt verschillende functies voor het werken met matrices.
 
-* [matrix](template-functions-array.md#array)
+* [array](template-functions-array.md#array)
 * [concat](template-functions-array.md#concat)
 * [daarin](template-functions-array.md#contains)
 * [createArray](template-functions-array.md#createarray)
-* [leeg](template-functions-array.md#empty)
+* [gelaten](template-functions-array.md#empty)
 * [instantie](template-functions-array.md#first)
 * [Snij punt](template-functions-array.md#intersection)
 * [duren](template-functions-array.md#last)
 * [length](template-functions-array.md#length)
-* [Haal](template-functions-array.md#min)
-* [aantal](template-functions-array.md#max)
+* [min.](template-functions-array.md#min)
+* [max](template-functions-array.md#max)
 * [bereik](template-functions-array.md#range)
 * [verdergaan](template-functions-array.md#skip)
 * [take](template-functions-array.md#take)
@@ -66,8 +66,8 @@ Resource Manager biedt verschillende functies voor het werken met matrices.
 Resource Manager biedt verschillende functies voor het maken van vergelijkingen in uw sjablonen.
 
 * [Voeg](template-functions-comparison.md#coalesce)
-* [is gelijk aan](template-functions-comparison.md#equals)
-* [less](template-functions-comparison.md#less)
+* [gelijk is aan](template-functions-comparison.md#equals)
+* [jonge](template-functions-comparison.md#less)
 * [lessOrEquals](template-functions-comparison.md#lessorequals)
 * [groter](template-functions-comparison.md#greater)
 * [greaterOrEquals](template-functions-comparison.md#greaterorequals)
@@ -104,11 +104,11 @@ Resource Manager biedt de volgende functies voor het werken met logische voor wa
 
 * [and](template-functions-logical.md#and)
 * [booleaans](template-functions-logical.md#bool)
-* [onjuist](template-functions-logical.md#false)
+* [terecht](template-functions-logical.md#false)
 * [If](template-functions-logical.md#if)
 * [ten](template-functions-logical.md#not)
 * [or](template-functions-logical.md#or)
-* [true](template-functions-logical.md#true)
+* [echte](template-functions-logical.md#true)
 
 <a id="add" aria-hidden="true"></a>
 <a id="copyindex" aria-hidden="true"></a>
@@ -130,8 +130,8 @@ Resource Manager biedt de volgende functies voor het werken met gehele getallen:
 * [div](template-functions-numeric.md#div)
 * [float](template-functions-numeric.md#float)
 * [int](template-functions-numeric.md#int)
-* [Haal](template-functions-numeric.md#min)
-* [aantal](template-functions-numeric.md#max)
+* [min.](template-functions-numeric.md#min)
+* [max](template-functions-numeric.md#max)
 * [mod](template-functions-numeric.md#mod)
 * [mul](template-functions-numeric.md#mul)
 * [sub](template-functions-numeric.md#sub)
@@ -144,7 +144,7 @@ Resource Manager biedt verschillende functies voor het werken met objecten.
 
 * [daarin](template-functions-object.md#contains)
 * [createObject](template-functions-object.md#createobject)
-* [leeg](template-functions-object.md#empty)
+* [gelaten](template-functions-object.md#empty)
 * [Snij punt](template-functions-object.md#intersection)
 * [JSON](template-functions-object.md#json)
 * [length](template-functions-object.md#length)
@@ -222,7 +222,7 @@ Resource Manager biedt de volgende functies voor het werken met teken reeksen:
 * [daarin](template-functions-string.md#contains)
 * [dataUri](template-functions-string.md#datauri)
 * [dataUriToString](template-functions-string.md#datauritostring)
-* [leeg](template-functions-string.md#empty)
+* [gelaten](template-functions-string.md#empty)
 * [endsWith](template-functions-string.md#endswith)
 * [instantie](template-functions-string.md#first)
 * [Formatteer](template-functions-string.md#format)
@@ -250,7 +250,7 @@ Resource Manager biedt de volgende functies voor het werken met teken reeksen:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [arm-sjablonen ontwerpen](template-syntax.md) voor een beschrijving van de secties in een arm-sjabloon
-* Zie voor het samen voegen van meerdere sjablonen [gekoppelde sjablonen gebruiken met Azure Resource Manager](linked-templates.md)
-* Als u een bepaald aantal keer wilt herhalen bij het maken van een type resource, raadpleegt u [meerdere exemplaren van resources maken in azure Resource Manager](copy-resources.md).
-* Zie [een toepassing implementeren met arm-sjablonen](deploy-powershell.md) voor meer informatie over het implementeren van de sjabloon die u hebt gemaakt.
+* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor een beschrijving van de secties in een arm-sjabloon.
+* Zie voor het samen voegen [van meerdere sjablonen gekoppelde en geneste sjablonen gebruiken bij het implementeren van Azure-resources](linked-templates.md).
+* Als u een bepaald aantal keer wilt herhalen bij het maken van een resource type, raadpleegt u [resource-iteratie in arm-sjablonen](copy-resources.md).
+* Zie [resources implementeren met arm-sjablonen en Azure PowerShell](deploy-powershell.md)voor meer informatie over het implementeren van de sjabloon die u hebt gemaakt.

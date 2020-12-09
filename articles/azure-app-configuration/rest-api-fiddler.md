@@ -1,24 +1,24 @@
 ---
 title: Azure Active Directory REST API-testen met Fiddler
 description: Gebruik Fiddler om de Azure-app configuratie te testen REST API
-author: lisaguthrie
-ms.author: lcozzens
+author: AlexandraKemperMS
+ms.author: alkemper
 ms.service: azure-app-configuration
 ms.topic: reference
 ms.date: 08/17/2020
-ms.openlocfilehash: 3766567fe58e8d2eb86556d3defa7a85efd9b2fb
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 1142aa25212d87c5484963cda4e172df3d1fbafc
+ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93423998"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96932605"
 ---
 # <a name="test-the-azure-app-configuration-rest-api-using-fiddler"></a>De configuratie van de Azure-app-REST API testen met Fiddler
 
 Als u de REST API wilt testen met behulp van [Fiddler](https://www.telerik.com/fiddler), moet u de HTTP-headers opgeven die vereist zijn voor [verificatie](./rest-api-authentication-hmac.md) in uw aanvragen. U kunt als volgt Fiddler configureren voor het testen van de REST API, waarbij de verificatie headers automatisch worden gegenereerd:
 
 1. Zorg ervoor dat TLS 1,2 een toegestaan protocol is:
-    1. Ga naar **extra**  >  **Opties**  >  **https** ).
+    1. Ga naar **extra**  >  **Opties**  >  **https**).
     1. Zorg ervoor dat het **versleutelen van HTTPS-verkeer** wordt gecontroleerd.
     1. Voeg **TLS 1.2** toe aan de lijst met protocollen als deze niet aanwezig is.
 1. Open **Fiddler-script editor** of druk op **CTRL-R** in Fiddler

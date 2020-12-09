@@ -9,19 +9,16 @@ ms.date: 08/04/2020
 ms.author: normesta
 ms.reviewer: yzheng
 ms.custom: references_regions
-ms.openlocfilehash: 7419e8667f07eec03e860634c7b3fddcac0e186b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 97b52159684eca9be59ccc711f6d2f19b5eb8d49
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95901550"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96906111"
 ---
 # <a name="mount-blob-storage-by-using-the-network-file-system-nfs-30-protocol-preview"></a>Blob Storage koppelen met behulp van het NFS-protocol (Network File System) 3,0 (preview)
 
 U kunt een container in Blob Storage koppelen vanaf een op Windows of Linux gebaseerde Azure virtual machine (VM) of een Windows-of Linux-systeem dat on-premises wordt uitgevoerd met het NFS 3,0-protocol. In dit artikel vindt u stapsgewijze richt lijnen. Zie [Network File System (NFS) 3,0-protocol ondersteuning in Azure Blob-opslag (preview)](network-file-system-protocol-support.md)voor meer informatie over NFS 3,0-protocol ondersteuning in Blob Storage.
-
-> [!NOTE]
-> Ondersteuning voor NFS 3,0-protocol in Azure Blob-opslag is in open bare preview en is beschikbaar in de volgende regio's: VS Oost, VS centraal, VS-West-Centraal, Australië-zuidoost, Europa-noord, UK-west, Korea-centraal, Korea-zuid en Canada-centraal.
 
 ## <a name="step-1-register-the-nfs-30-protocol-feature-with-your-subscription"></a>Stap 1: de functie NFS 3,0-protocol registreren bij uw abonnement
 
@@ -48,13 +45,7 @@ U kunt een container in Blob Storage koppelen vanaf een op Windows of Linux geba
    Register-AzProviderFeature -FeatureName AllowNFSV3 -ProviderNamespace Microsoft.Storage 
    ```
 
-5. Registreer de `PremiumHns` functie ook door de volgende opdracht te gebruiken.
-
-   ```powershell
-   Register-AzProviderFeature -FeatureName PremiumHns -ProviderNamespace Microsoft.Storage  
-   ```
-
-6. Registreer de resource provider met behulp van de volgende opdracht.
+5. Registreer de resource provider met behulp van de volgende opdracht.
     
    ```powershell
    Register-AzResourceProvider -ProviderNamespace Microsoft.Storage   
@@ -66,7 +57,6 @@ De registratie goedkeuring kan tot een uur duren. Gebruik de volgende opdrachten
 
 ```powershell
 Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName AllowNFSV3
-Get-AzProviderFeature -ProviderNamespace Microsoft.Storage -FeatureName PremiumHns  
 ```
 
 ## <a name="step-3-create-an-azure-virtual-network-vnet"></a>Stap 3: een Azure-Virtual Network maken (VNet)
@@ -86,20 +76,20 @@ Als u de gegevens in uw account wilt beveiligen, raadpleegt u de volgende aanbev
 
 Als u een container wilt koppelen met behulp van NFS 3,0, moet u een opslag account maken **nadat** u de functie hebt geregistreerd bij uw abonnement. U kunt geen accounts inschakelen die bestonden voordat u de functie registreerde. 
 
-In de preview-versie van deze functie wordt het NFS 3,0-protocol alleen ondersteund in [BlockBlobStorage](../blobs/storage-blob-create-account-block-blob.md) -accounts.
+In de preview-versie van deze functie wordt het NFS 3,0-protocol ondersteund in [BlockBlobStorage](../blobs/storage-blob-create-account-block-blob.md) -en [algemene v2](../common/storage-account-overview.md#general-purpose-v2-accounts) -accounts.
 
 Kies bij het configureren van het account deze waarden:
 
-|Instelling | Waarde|
-|----|---|
-|Locatie|Een van de volgende regio's: VS Oost, VS centraal, VS-West-Centraal, Australië-zuidoost, Europa-noord, UK-west, Korea-centraal, Korea-zuid en Canada-centraal |
-|Prestaties|Premium|
-|Soort account|BlockBlobStorage|
-|Replicatie|Lokaal redundante opslag (LRS)|
-|Verbindingsmethode|Openbaar eind punt (geselecteerde netwerken) of persoonlijk eind punt|
-|Veilige overdracht vereist|Uitgeschakeld|
-|Hiërarchische naamruimte|Ingeschakeld|
-|NFS V3|Ingeschakeld|
+|Instelling | Premium-prestaties | Standaard prestaties  
+|----|---|---|
+|Locatie|Alle beschik bare regio's |Een van de volgende regio's: Australië-oost, Korea-centraal en Zuid-Centraal VS   
+|Prestaties|Premium| Standard
+|Soort account|BlockBlobStorage| Algemeen v2
+|Replicatie|Lokaal redundante opslag (LRS)| Lokaal redundante opslag (LRS)
+|Verbindingsmethode|Openbaar eind punt (geselecteerde netwerken) of persoonlijk eind punt |Openbaar eind punt (geselecteerde netwerken) of persoonlijk eind punt
+|Veilige overdracht vereist|Uitgeschakeld|Uitgeschakeld
+|Hiërarchische naamruimte|Ingeschakeld|Ingeschakeld
+|NFS V3|Ingeschakeld |Ingeschakeld 
 
 U kunt de standaard waarden voor alle andere instellingen accepteren. 
 
@@ -112,7 +102,7 @@ Maak een container in uw opslag account met behulp van een van deze hulpprogram 
 |[Azure-portal](https://portal.azure.com)|[.NET](data-lake-storage-directory-file-acl-dotnet.md#create-a-container)|
 |[AzCopy](../common/storage-use-azcopy-blobs.md#create-a-container)|[Java](data-lake-storage-directory-file-acl-java.md#create-a-container)|
 |[PowerShell](data-lake-storage-directory-file-acl-powershell.md#create-a-container)|[Python](data-lake-storage-directory-file-acl-python.md#create-a-container)|
-|[Azure CLI](data-lake-storage-directory-file-acl-cli.md#create-a-container)|[JavaScript](data-lake-storage-directory-file-acl-javascript.md)|
+|[Azure-CLI](data-lake-storage-directory-file-acl-cli.md#create-a-container)|[JavaScript](data-lake-storage-directory-file-acl-javascript.md)|
 ||[REST](/rest/api/storageservices/create-container)|
 
 ## <a name="step-7-mount-the-container"></a>Stap 7: de container koppelen

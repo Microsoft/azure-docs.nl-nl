@@ -14,12 +14,12 @@ ms.subservice: roles
 ms.custom: it-pro
 ms.reviewer: martincoetzer; MarkMorow
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b0a62aafd8073b5f1a35ba340c48c80f498be2c2
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 3a7304ffbb7718205ead48e27989d4a169375997
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94834452"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861983"
 ---
 # <a name="securing-privileged-access-for-hybrid-and-cloud-deployments-in-azure-ad"></a>Bevoegde toegang beveiligen voor hybride implementaties en cloudimplementaties in Azure AD
 
@@ -93,7 +93,7 @@ Nadat u Azure AD Privileged Identity Management hebt ingeschakeld, bekijkt u de 
 * Exchange-beheerder
 * SharePoint-beheerder
 
-Als u geen Azure AD Privileged Identity Management hebt in uw organisatie, kunt u de [Power shell-API](/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)gebruiken. Begin met de rol van globale beheerder omdat een globale beheerder dezelfde machtigingen heeft voor alle Cloud Services waarvoor uw organisatie een abonnement heeft. Deze machtigingen worden verleend, ongeacht waar ze zijn toegewezen: in het Microsoft 365-beheer centrum, de Azure Portal of de Azure AD-module voor micro soft power shell.
+Als u geen Azure AD Privileged Identity Management hebt in uw organisatie, kunt u de [Power shell-API](/powershell/module/azuread/get-azureaddirectoryrolemember)gebruiken. Begin met de rol van globale beheerder omdat een globale beheerder dezelfde machtigingen heeft voor alle Cloud Services waarvoor uw organisatie een abonnement heeft. Deze machtigingen worden verleend, ongeacht waar ze zijn toegewezen: in het Microsoft 365-beheer centrum, de Azure Portal of de Azure AD-module voor micro soft power shell.
 
 Verwijder alle accounts die niet meer nodig zijn voor deze rollen. Vervolgens categoriseert u de overige accounts die zijn toegewezen aan beheerders rollen:
 

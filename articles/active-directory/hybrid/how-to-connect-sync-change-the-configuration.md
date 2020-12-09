@@ -12,12 +12,12 @@ ms.date: 08/30/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8a2036086cfb6da0d7807d4752a5911a358d3c47
-ms.sourcegitcommit: 7cc10b9c3c12c97a2903d01293e42e442f8ac751
+ms.openlocfilehash: 2044653673da10de59d5ff125da44ac1f89e22f9
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93420645"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861847"
 ---
 # <a name="azure-ad-connect-sync-make-a-change-to-the-default-configuration"></a>Azure AD Connect synchronisatie: een wijziging in de standaard configuratie aanbrengen
 Het doel van dit artikel is om u te laten zien hoe u wijzigingen aanbrengt in de standaard configuratie in Azure Active Directory (Azure AD) Connect Sync. Het bevat stappen voor enkele veelvoorkomende scenario's. Met deze kennis moet u eenvoudige wijzigingen in uw eigen configuratie kunnen aanbrengen op basis van uw eigen bedrijfs regels.
@@ -56,13 +56,13 @@ De [scheduler](how-to-connect-sync-feature-scheduler.md) wordt standaard elke 30
 1. Klik op **nieuwe regel toevoegen**.
 2. Voer op de pagina **Beschrijving** het volgende in:  
    ![Binnenkomende regel filtering](./media/how-to-connect-sync-change-the-configuration/description2.png)  
-   * **Naam** : Geef de regel een beschrijvende naam.
-   * **Beschrijving** : Geef een uitleg zodat iemand anders kan begrijpen waarvoor de regel geldt.
-   * **Verbonden systeem** : dit is het systeem waarin het object kan worden gevonden. Selecteer in dit geval **Active Directory-Connector**.
-   * **Verbonden systeem/omgekeerd object type** : Selecteer respectievelijk **gebruiker** en **persoon**.
-   * **Koppelings type** : Wijzig deze waarde om **samen te voegen**.
-   * **Prioriteit** : Geef een waarde op die uniek is in het systeem. Een lagere numerieke waarde duidt op een hogere prioriteit.
-   * **Tag** : laat dit leeg. Alleen out-of-Box-regels van micro soft moeten in dit vak zijn ingevuld met een waarde.
+   * **Naam**: Geef de regel een beschrijvende naam.
+   * **Beschrijving**: Geef een uitleg zodat iemand anders kan begrijpen waarvoor de regel geldt.
+   * **Verbonden systeem**: dit is het systeem waarin het object kan worden gevonden. Selecteer in dit geval **Active Directory-Connector**.
+   * **Verbonden systeem/omgekeerd object type**: Selecteer respectievelijk **gebruiker** en **persoon**.
+   * **Koppelings type**: Wijzig deze waarde om **samen te voegen**.
+   * **Prioriteit**: Geef een waarde op die uniek is in het systeem. Een lagere numerieke waarde duidt op een hogere prioriteit.
+   * **Tag**: laat dit leeg. Alleen out-of-Box-regels van micro soft moeten in dit vak zijn ingevuld met een waarde.
 3. Voer op de pagina **bereik filteren** de **opgegeven naam ISNOTNULL** in.  
    ![Bereik van binnenkomende regel filter](./media/how-to-connect-sync-change-the-configuration/scopingfilter.png)  
    Deze sectie wordt gebruikt om te definiëren op welke objecten de regel moet worden toegepast. Als deze leeg is, is de regel van toepassing op alle gebruikers objecten. Dit omvat echter wel Vergader ruimten, service accounts en andere gebruikers objecten die geen persoon zijn.
@@ -150,7 +150,7 @@ In deze expressie neemt alles links van het eerste @-sign (woord) en samen voege
 Sommige kenmerken in Active Directory zijn meerdere waarden in het schema, zelfs als ze in Active Directory gebruikers en computers met één waarde worden weer geven. Een voor beeld is het kenmerk Beschrijving:  
 `description` <- `IIF(IsNullOrEmpty([description]),NULL,Left(Trim(Item([description],1)),448))`.
 
-Als in deze expressie het kenmerk een waarde heeft, neemt u het eerste item ( *item* ) in het kenmerk op, verwijdert u voor loop-en volg spaties ( *Trim* ) en behoudt u de eerste 448 tekens ( *links* ) in de teken reeks.
+Als in deze expressie het kenmerk een waarde heeft, neemt u het eerste item (*item*) in het kenmerk op, verwijdert u voor loop-en volg spaties (*Trim*) en behoudt u de eerste 448 tekens (*links*) in de teken reeks.
 
 ### <a name="do-not-flow-an-attribute"></a>Geen kenmerk stroomt
 Zie [het kenmerk flow-proces beheren](concept-azure-ad-connect-sync-declarative-provisioning.md#control-the-attribute-flow-process)voor achtergrond informatie over het scenario voor deze sectie.
@@ -166,7 +166,7 @@ In dit scenario van Fabrikam hebben we gerealiseerd dat sommige kenmerken die wo
   ![Beschreven](./media/how-to-connect-sync-change-the-configuration/syncruledescription.png)
 2. Maak kenmerk stromen met de **expressie** voor **FlowType** en met **AuthoritativeNull** voor de **bron**. De letterlijke **AuthoritativeNull** geeft aan dat de waarde leeg moet zijn in het omgekeerde, zelfs als een regel voor een synchronisatie met een lagere prioriteit probeert de waarde in te vullen.
   ![Trans formatie voor extensie kenmerken](./media/how-to-connect-sync-change-the-configuration/syncruletransformations.png)
-3. Sla de synchronisatie regel op. Start de **synchronisatie service** , zoek de connector, selecteer **uitvoeren** en selecteer **volledige synchronisatie**. Met deze stap worden alle kenmerk stromen opnieuw berekend.
+3. Sla de synchronisatie regel op. Start de **synchronisatie service**, zoek de connector, selecteer **uitvoeren** en selecteer **volledige synchronisatie**. Met deze stap worden alle kenmerk stromen opnieuw berekend.
 4. Controleer of de bedoelde wijzigingen worden geëxporteerd door de connector ruimte te doorzoeken.
   ![Gefaseerd verwijderen](./media/how-to-connect-sync-change-the-configuration/deletetobeexported.png)
 
@@ -181,7 +181,7 @@ De out-of-Box Sync-regels beginnen met een prioriteits waarde van 100. Als u vee
 
 U kunt de synchronisatie-engine instrueren dat u aanvullende regels wilt invoegen vóór de out-of-Box-regels. Voer de volgende stappen uit om dit gedrag te verkrijgen:
 
-1. Markeer de eerste out-of-Box-synchronisatie regel ( **in vanuit AD-User-koppeling** ) in de editor voor synchronisatie regels en selecteer **exporteren**. Kopieer de waarde voor de SR-id.  
+1. Markeer de eerste out-of-Box-synchronisatie regel (**in vanuit AD-User-koppeling**) in de editor voor synchronisatie regels en selecteer **exporteren**. Kopieer de waarde voor de SR-id.  
 ![Power shell vóór wijziging](./media/how-to-connect-sync-change-the-configuration/powershell1.png)  
 2. Maak de nieuwe synchronisatie regel. U kunt de editor voor synchronisatie regels gebruiken om deze te maken. Exporteer de regel naar een Power shell-script.
 3. In de eigenschap **PrecedenceBefore** voert u de id-waarde in van de out-of-Box-regel. Stel de **prioriteit** in op **0**. Zorg ervoor dat het kenmerk Identifier uniek is en dat u geen GUID van een andere regel opnieuw gebruikt. Zorg er ook voor dat de eigenschap **ImmutableTag** niet is ingesteld. Deze eigenschap moet alleen worden ingesteld voor een out-of-Box-regel.
@@ -200,7 +200,7 @@ Het kenmerk User type is standaard niet ingeschakeld voor synchronisatie omdat e
 
 - Azure AD accepteert alleen twee waarden voor het kenmerk User type: **lid** en **gast**.
 - Als het kenmerk User type niet is ingeschakeld voor synchronisatie in Azure AD Connect, zou de Azure AD-gebruikers die zijn gemaakt via Directory-synchronisatie, het kenmerk User type hebben ingesteld op **lid**.
-- Vóór versie 1.5.30.0 heeft Azure AD het kenmerk User type op bestaande Azure AD-gebruikers niet toegestaan door Azure AD Connect. In oudere versies kan deze alleen worden ingesteld tijdens het maken van de Azure AD-gebruikers en [gewijzigd via Power shell](/powershell/module/azuread/set-azureaduser?view=azureadps-2.0).
+- Vóór versie 1.5.30.0 heeft Azure AD het kenmerk User type op bestaande Azure AD-gebruikers niet toegestaan door Azure AD Connect. In oudere versies kan deze alleen worden ingesteld tijdens het maken van de Azure AD-gebruikers en [gewijzigd via Power shell](/powershell/module/azuread/set-azureaduser).
 
 Voordat u synchronisatie van het kenmerk User type inschakelt, moet u eerst bepalen hoe het kenmerk wordt afgeleid van on-premises Active Directory. Hier volgen de meest voorkomende benaderingen:
 
@@ -265,7 +265,7 @@ De regel voor binnenkomende synchronisatie maakt het mogelijk dat de kenmerk waa
     | Kenmerk | Waarde | Details |
     | --- | --- | --- |
     | Name | *Geef een naam op* | Bijvoorbeeld *in van AD: gebruiker user type* |
-    | Beschrijving | *Geef een beschrijving op* |  |
+    | Description | *Geef een beschrijving op* |  |
     | Verbonden systeem | *Kies de on-premises AD-connector* |  |
     | Type verbonden systeem object | **Gebruiker** |  |
     | Omgekeerd object type | **Person** |  |
@@ -307,7 +307,7 @@ De regel voor uitgaande synchronisatie maakt het mogelijk dat de waarde van het 
     | Kenmerk | Waarde | Details |
     | ----- | ------ | --- |
     | Name | *Geef een naam op* | Bijvoorbeeld voor *Aad: gebruiker user type* |
-    | Beschrijving | *Geef een beschrijving op* ||
+    | Description | *Geef een beschrijving op* ||
     | Verbonden systeem | *De AAD-connector selecteren* ||
     | Type verbonden systeem object | **Gebruiker** ||
     | Omgekeerd object type | **Person** ||
@@ -319,7 +319,7 @@ De regel voor uitgaande synchronisatie maakt het mogelijk dat de waarde van het 
     | Kenmerk | Operator | Waarde |
     | --- | --- | --- |
     | sourceObjectType | WAARD | Gebruiker |
-    | cloudMastered | NOTEQUAL | Waar |
+    | cloudMastered | NOTEQUAL | True |
 
     Het bereik filter bepaalt op welke Azure AD-objecten deze regel voor uitgaande synchronisatie wordt toegepast. In dit voor beeld gebruiken we dezelfde bereik filter van de out-of-Box-synchronisatie regel *out to AD* . Hiermee wordt voor komen dat de synchronisatie regel wordt toegepast op gebruikers objecten die niet zijn gesynchroniseerd vanuit on-premises Active Directory. Mogelijk moet u het bereik filter aanpassen op basis van uw Azure AD Connect-implementatie.
 
@@ -338,7 +338,7 @@ In het algemeen is een volledige synchronisatie cyclus vereist omdat we nieuwe k
 
 U kunt de volgende stappen gebruiken om de wijzigingen te controleren terwijl u de stappen voor een volledige synchronisatie cyclus hand matig uitvoert.
 
-1. Een **volledige import** bewerking uitvoeren op de **on-premises AD-connector** :
+1. Een **volledige import** bewerking uitvoeren op de **on-premises AD-connector**:
 
    1. Ga naar het tabblad **connectors** in de Synchronization Service Manager.
    2. Klik met de rechter muisknop op de **on-premises AD-connector** en selecteer **uitvoeren**.
@@ -348,7 +348,7 @@ U kunt de volgende stappen gebruiken om de wijzigingen te controleren terwijl u 
       > [!NOTE]
       > U kunt een volledige import bewerking overs laan voor de on-premises AD-connector als het bron kenmerk al is opgenomen in de lijst met geïmporteerde kenmerken. Met andere woorden, u hoeft geen wijzigingen aan te brengen tijdens [stap 2: Voeg het bron kenmerk toe aan het on-premises AD-connector schema](#step-2-add-the-source-attribute-to-the-on-premises-ad-connector-schema).
 
-2. Een **volledige import** bewerking uitvoeren op de **Azure AD-connector** :
+2. Een **volledige import** bewerking uitvoeren op de **Azure AD-connector**:
 
    1. Klik met de rechter muisknop op de **Azure AD-connector** en selecteer **uitvoeren**.
    2. Selecteer in het pop-updialoogvenster **volledige import** en klik vervolgens op **OK**.
@@ -360,7 +360,7 @@ U kunt de volgende stappen gebruiken om de wijzigingen te controleren terwijl u 
     
     Een geslaagde **Preview** met de User type die in de tekst is ingevuld, is een goede indicatie dat u de synchronisatie regels correct hebt geconfigureerd. Raadpleeg de sectie [de wijziging controleren](#verify-the-change)voor meer informatie over het uitvoeren van een **Preview-versie**.
 
-4. Een **volledige synchronisatie** uitvoeren op de **on-premises AD-connector** :
+4. Een **volledige synchronisatie** uitvoeren op de **on-premises AD-connector**:
 
    1. Klik met de rechter muisknop op de **on-premises AD-connector** en selecteer **uitvoeren**.
    2. Selecteer in het pop-updialoogvenster **volledige synchronisatie** en klik vervolgens op **OK**.
@@ -372,11 +372,11 @@ U kunt de volgende stappen gebruiken om de wijzigingen te controleren terwijl u 
    2. In het pop-upvenster **ruimte zoeken in Zoek connector** :
 
       - Stel het **bereik** in op **in behandeling zijnde export**.
-      - Schakel alle drie de selectie vakjes in: **toevoegen** , **wijzigen** en **verwijderen**.
+      - Schakel alle drie de selectie vakjes in: **toevoegen**, **wijzigen** en **verwijderen**.
       - Klik op de knop **zoeken** om de lijst met objecten te verkrijgen met de wijzigingen die moeten worden geëxporteerd. Als u de wijzigingen voor een bepaald object wilt onderzoeken, dubbelklikt u op het object.
       - Controleer of de wijzigingen worden verwacht.
 
-6. **Export** uitvoeren op de **Azure AD-connector** :
+6. **Export** uitvoeren op de **Azure AD-connector**:
 
    1. Klik met de rechter muisknop op de **Azure AD-connector** en selecteer **uitvoeren**.
    2. Selecteer in het pop-upvenster **Connector uitvoeren** de optie **exporteren** en klik vervolgens op **OK**.
@@ -398,5 +398,5 @@ De ingebouwde synchronisatie planner opnieuw inschakelen:
 
 **Overzichts onderwerpen**
 
-* [Azure AD Connect synchronisatie: synchronisatie begrijpen en aanpassen](how-to-connect-sync-whatis.md)
+* [Azure AD Connect synchroniseren: Synchronisatie begrijpen en aanpassen](how-to-connect-sync-whatis.md)
 * [Integrating your on-premises identities with Azure Active Directory (Engelstalig)](whatis-hybrid-identity.md)

@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 11/24/2020
-ms.openlocfilehash: c0d0e3154360d787bfc2072c5ae1fe878fa1d138
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.date: 12/08/2020
+ms.openlocfilehash: 49e4a6f7f8c268669a94796257d5740ec6f4e6ff
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96003651"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96902082"
 ---
 # <a name="copy-and-transform-data-in-snowflake-by-using-azure-data-factory"></a>Gegevens kopiëren en transformeren in sneeuw met behulp van Azure Data Factory
 
@@ -159,7 +159,7 @@ Als u gegevens van sneeuw vlokken wilt kopiëren, worden de volgende eigenschapp
 
 Als uw Sink-gegevens archief en-indeling voldoen aan de criteria die in deze sectie zijn beschreven, kunt u de Kopieer activiteit gebruiken om rechtstreeks te kopiëren van sneeuw naar sink. Data Factory controleert de instellingen en mislukt de uitvoering van de Kopieer activiteit als niet aan de volgende criteria wordt voldaan:
 
-- De **gekoppelde Sink-service** is [**Azure Blob-opslag**](connector-azure-blob-storage.md) met verificatie van de **Shared Access-hand tekening** .
+- De **gekoppelde Sink-service** is [**Azure Blob-opslag**](connector-azure-blob-storage.md) met verificatie van de **Shared Access-hand tekening** . Als u gegevens rechtstreeks naar Azure Data Lake Storage Gen2 wilt kopiëren in de volgende ondersteunde indeling, kunt u een gekoppelde Azure Blob-service met SAS-verificatie op basis van uw ADLS Gen2-account maken om te voor komen dat het gebruik [van een gefaseerde kopie van sneeuw](#staged-copy-from-snowflake).
 
 - De **sink-gegevens indeling** is **Parquet**, **tekst met scheidings tekens** of **JSON** met de volgende configuraties:
 
@@ -173,7 +173,6 @@ Als uw Sink-gegevens archief en-indeling voldoen aan de criteria die in deze sec
         - `compression` kan **geen compressie**, **gzip**, **bzip2** of **Deflate** zijn.
         - `encodingName` is standaard ingesteld op **UTF-8**.
         - `filePattern` de Sink voor kopieer activiteiten is standaard ingesteld op **setOfObjects**.
-
 - De bron van de Kopieer activiteit `additionalColumns` is niet opgegeven.
 - Er is geen kolom toewijzing opgegeven.
 
@@ -290,7 +289,7 @@ Als u gegevens wilt kopiëren naar sneeuw vlokken, worden de volgende eigenschap
 
 Als uw bron gegevens opslag en-indeling voldoen aan de criteria die in deze sectie zijn beschreven, kunt u de Kopieer activiteit gebruiken om rechtstreeks te kopiëren van bron naar sneeuw vlokken. Azure Data Factory controleert de instellingen en mislukt de uitvoering van de Kopieer activiteit als niet aan de volgende criteria wordt voldaan:
 
-- De **gekoppelde bron service** is [**Azure Blob-opslag**](connector-azure-blob-storage.md) met verificatie van de **hand tekening voor gedeelde toegang** .
+- De **gekoppelde bron service** is [**Azure Blob-opslag**](connector-azure-blob-storage.md) met verificatie van de **hand tekening voor gedeelde toegang** . Als u gegevens rechtstreeks wilt kopiëren van Azure Data Lake Storage Gen2 in de volgende ondersteunde indeling, kunt u een gekoppelde Azure Blob-service met SAS-verificatie op basis van uw ADLS Gen2 account maken om te voor komen dat u een  [gefaseerde kopie naar sneeuw vlokken](#staged-copy-to-snowflake)gebruikt.
 
 - De **indeling van de bron gegevens** is **Parquet**, **tekst met scheidings tekens** of **JSON** met de volgende configuraties:
 
@@ -412,7 +411,7 @@ De onderstaande tabel geeft een lijst van de eigenschappen die worden ondersteun
 | Naam | Beschrijving | Vereist | Toegestane waarden | Eigenschap gegevens stroom script |
 | ---- | ----------- | -------- | -------------- | ---------------- |
 | Tabel | Als u tabel als invoer selecteert, haalt de gegevens stroom alle gegevens op uit de tabel die is opgegeven in de data-gegevensset met sneeuw vlokken of in de bron opties bij gebruik van inline DataSet. | Nee | Tekenreeks | *(alleen voor inline-gegevensset)*<br>tableName<br>schemaName |
-| Query | Als u query als invoer selecteert, voert u een query in om gegevens op te halen uit sneeuw vlokken. Deze instelling heeft voor rang op elke tabel die u in dataset hebt gekozen.<br>Als de namen van het schema, de tabel en de kolommen een kleine letter bevatten, wordt de object-id in query als aanhalings teken genoteerd, bijvoorbeeld `select * from "schema"."myTable"` . | Nee | Tekenreeks | query |
+| Query’s uitvoeren | Als u query als invoer selecteert, voert u een query in om gegevens op te halen uit sneeuw vlokken. Deze instelling heeft voor rang op elke tabel die u in dataset hebt gekozen.<br>Als de namen van het schema, de tabel en de kolommen een kleine letter bevatten, wordt de object-id in query als aanhalings teken genoteerd, bijvoorbeeld `select * from "schema"."myTable"` . | Nee | Tekenreeks | query |
 
 #### <a name="snowflake-source-script-examples"></a>Voor beelden van het bron script sneeuw vlokken
 

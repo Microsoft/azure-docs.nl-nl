@@ -1,5 +1,5 @@
 ---
-title: De module voor kaarten van Azure Maps gebruiken
+title: De module voor het Azure Maps van binnenste kaarten gebruiken met micro soft Creator Services (preview)
 description: Meer informatie over het gebruik van de module Microsoft Azure kaarten in de kaart om kaarten weer te geven door de Java script-bibliotheken van de module in te sluiten.
 author: anastasia-ms
 ms.author: v-stharr
@@ -9,21 +9,25 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: devx-track-js
-ms.openlocfilehash: d852d17bdf11ea45f833e3d59cacb435166827fe
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: bc80b7dfd433911ef13906db38f59a76827db258
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895457"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905278"
 ---
 # <a name="use-the-azure-maps-indoor-maps-module"></a>De module voor kaarten van Azure Maps gebruiken
 
-De Azure Maps Web-SDK bevat de module *Azure Maps binnenshuis* . Met de module  *Azure Maps binnen* kunt u kaarten weer geven die zijn gemaakt in azure Maps Maker.
+> [!IMPORTANT]
+> Azure Maps Creator-Services zijn momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+De Azure Maps Web-SDK bevat de module *Azure Maps binnenshuis* . Met de module  *Azure Maps binnenshuis* kunt u kaarten weer geven die zijn gemaakt in azure Maps Creator-Services (preview) 
 
 ## <a name="prerequisites"></a>Vereisten
 
 1. [Een Azure Maps-account maken](quick-demo-map-app.md#create-an-azure-maps-account)
-2. [Een Creator-resource maken](how-to-manage-creator.md)
+2. [Een bron voor het maken van een maker (preview-resource)](how-to-manage-creator.md)
 3. [Een primaire sleutel voor een abonnement verkrijgen](quick-demo-map-app.md#get-the-primary-key-for-your-account), ook wel bekend als de primaire sleutel of de abonnementssleutel.
 4. Vraag a `tilesetId` en a `statesetId` aan de hand van de [zelf studie voor het maken van plattegronden](tutorial-creator-indoor-maps.md).
  U moet deze id's gebruiken om kaarten weer te geven met de module Azure Maps kaarten.
@@ -56,7 +60,7 @@ Als u de wereld wijd gehoste versie van Azure Content Delivery Network van de mo
 
 ## <a name="instantiate-the-map-object"></a>Het kaart object instantiëren
 
-Maak eerst een *kaart object* . Het *kaart object* wordt in de volgende stap gebruikt om het object voor de *binnenste Manager* te instantiëren.  De volgende code laat zien hoe u een exemplaar van het *kaart object* maakt:
+Maak eerst een *kaart object*. Het *kaart object* wordt in de volgende stap gebruikt om het object voor de *binnenste Manager* te instantiëren.  De volgende code laat zien hoe u een exemplaar van het *kaart object* maakt:
 
 ```javascript
 const subscriptionKey = "<Your Azure Maps Primary Subscription Key>";
@@ -77,7 +81,7 @@ const map = new atlas.Map("map-id", {
 
 ## <a name="instantiate-the-indoor-manager"></a>Instantiëren van de manager in de binnenshuis
 
-Als u de tilesets en kaart stijl van de tegels wilt laden, moet u een exemplaar maken van de *binnenste Manager* . Maak een exemplaar van de *binnenste Manager* door het *kaart object* en de bijbehorende te voorzien `tilesetId` . Als u de stijl van [dynamische kaarten](indoor-map-dynamic-styling.md)wilt ondersteunen, moet u de door geven `statesetId` . De `statesetId` naam van de variabele is hoofdletter gevoelig. Uw code moet zoals hieronder de Java script.
+Als u de tilesets en kaart stijl van de tegels wilt laden, moet u een exemplaar maken van de *binnenste Manager*. Maak een exemplaar van de *binnenste Manager* door het *kaart object* en de bijbehorende te voorzien `tilesetId` . Als u de stijl van [dynamische kaarten](indoor-map-dynamic-styling.md)wilt ondersteunen, moet u de door geven `statesetId` . De `statesetId` naam van de variabele is hoofdletter gevoelig. Uw code moet zoals hieronder de Java script.
 
 ```javascript
 const tilesetId = "";
@@ -89,7 +93,7 @@ const indoorManager = new atlas.indoor.IndoorManager(map, {
 });
 ```
 
-Als u polling van door u verstrekte status gegevens wilt inschakelen, moet u de `statesetId` aanroep en aanroepen `indoorManager.setDynamicStyling(true)` . Met polling status gegevens kunt u de status van dynamische eigenschappen of *statussen* dynamisch bijwerken. Zo kan een functie zoals room een dynamische eigenschap ( *State* ) met de naam hebben `occupancy` . Het kan voor komen dat uw toepassing een *status* wijziging doorvoert om de wijziging in de visuele kaart weer te geven. De volgende code laat zien hoe u status polling inschakelt:
+Als u polling van door u verstrekte status gegevens wilt inschakelen, moet u de `statesetId` aanroep en aanroepen `indoorManager.setDynamicStyling(true)` . Met polling status gegevens kunt u de status van dynamische eigenschappen of *statussen* dynamisch bijwerken. Zo kan een functie zoals room een dynamische eigenschap (*State*) met de naam hebben `occupancy` . Het kan voor komen dat uw toepassing een *status* wijziging doorvoert om de wijziging in de visuele kaart weer te geven. De volgende code laat zien hoe u status polling inschakelt:
 
 ```javascript
 const tilesetId = "";
@@ -116,7 +120,7 @@ indoorManager.setOptions({ levelControl });
 
 ## <a name="indoor-events"></a>Gebeurtenissen in de binnenshuis
 
- De module *Azure Maps binnen* in ondersteunt *kaart object* gebeurtenissen. De Event listeners van het *kaart object* worden aangeroepen wanneer een niveau of faciliteit is gewijzigd. Als u code wilt uitvoeren wanneer een niveau of een faciliteit is gewijzigd, plaatst u de code in de gebeurtenislistener. De volgende code laat zien hoe gebeurtenislisteners kunnen worden toegevoegd aan het *kaart object* .
+ De module *Azure Maps binnen* in ondersteunt *kaart object* gebeurtenissen. De Event listeners van het *kaart object* worden aangeroepen wanneer een niveau of faciliteit is gewijzigd. Als u code wilt uitvoeren wanneer een niveau of een faciliteit is gewijzigd, plaatst u de code in de gebeurtenislistener. De volgende code laat zien hoe gebeurtenislisteners kunnen worden toegevoegd aan het *kaart object*.
 
 ```javascript
 map.events.add("levelchanged", indoorManager, (eventData) => {
@@ -144,7 +148,7 @@ In dit voor beeld ziet u hoe u de module *Azure Maps binnenshuis* gebruikt in uw
 
 3. In de HTML-header verwijzen we naar de *Azure Maps* module-java script en stijl blad stijlen.
 
-4. Initialiseer een *kaart object* . Het *kaart-object* ondersteunt de volgende opties:
+4. Initialiseer een *kaart object*. Het *kaart-object* ondersteunt de volgende opties:
     - `Subscription key` is uw Azure Maps primaire abonnements sleutel.
     - `center` Hiermee definieert u een breedte graad en lengte graad voor de locatie van het kaarten centrum. Geef een waarde op `center` Als u geen waarde wilt opgeven voor `bounds` . De notatie moet er als volgt uitzien `center` : [-122,13315, 47,63637].
     - `bounds` is de kleinste rechthoekige vorm die de kaart gegevens van de tegelset omsluit. Stel een waarde in voor `bounds` Als u geen waarde wilt instellen voor `center` . U kunt de toewijzings grenzen vinden door de List-API van de [tegelset](/rest/api/maps/tileset/listpreview)aan te roepen. De listing-API van de Tegelset retourneert de `bbox` , die u kunt parseren en toewijzen `bounds` . De notatie moet er als volgt uitzien `bounds` : [# West, # Zuid, # East, # Noord].
@@ -249,7 +253,7 @@ Meer informatie over de Api's die zijn gerelateerd aan de module *Azure Maps bin
 > [Vereisten voor tekenpakketten](drawing-requirements.md)
 
 >[!div class="nextstepaction"]
-> [Maker voor kaarten in de binnenste](creator-indoor-maps.md)
+> [Creator (preview) voor kaarten in de binnenste](creator-indoor-maps.md)
 
 Meer informatie over het toevoegen van meer gegevens aan uw kaart:
 

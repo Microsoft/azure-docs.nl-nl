@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: annaba
 ms.collection: M365-identity-device-management
 ms.custom: has-adal-ref
-ms.openlocfilehash: 6db7037cbcad335db77784ecfa624f08e88b1e83
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 3ba84bb3ee38981217e72f8372a836b03647083d
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96744428"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861337"
 ---
 # <a name="get-started-with-certificate-based-authentication-in-azure-active-directory"></a>Aan de slag met verificatie op basis van certificaten in Azure Active Directory
 
@@ -93,7 +93,7 @@ Het schema voor een certificerings instantie ziet er als volgt uit:
     }
 ```
 
-Voor de configuratie kunt u de [Azure Active Directory Power shell versie 2](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0)gebruiken:
+Voor de configuratie kunt u de [Azure Active Directory Power shell versie 2](/powershell/azure/active-directory/install-adv2)gebruiken:
 
 1. Start Windows Power shell met beheerders bevoegdheden.
 2. Installeer de Azure AD-module versie [2.0.0.33](https://www.powershellgallery.com/packages/AzureAD/2.0.0.33) of hoger.
@@ -106,7 +106,7 @@ Als eerste configuratie stap moet u een verbinding maken met uw Tenant. Zodra er
 
 ### <a name="connect"></a>Verbinding maken
 
-Gebruik de cmdlet [Connect-AzureAD](/powershell/module/azuread/connect-azuread?view=azureadps-2.0) om verbinding te maken met uw Tenant:
+Gebruik de cmdlet [Connect-AzureAD](/powershell/module/azuread/connect-azuread) om verbinding te maken met uw Tenant:
 
 ```azurepowershell
     Connect-AzureAD
@@ -114,7 +114,7 @@ Gebruik de cmdlet [Connect-AzureAD](/powershell/module/azuread/connect-azuread?v
 
 ### <a name="retrieve"></a>Ophalen
 
-Gebruik de cmdlet [Get-AzureADTrustedCertificateAuthority](/powershell/module/azuread/get-azureadtrustedcertificateauthority?view=azureadps-2.0) om de vertrouwde certificerings instanties op te halen die in uw Directory zijn gedefinieerd.
+Gebruik de cmdlet [Get-AzureADTrustedCertificateAuthority](/powershell/module/azuread/get-azureadtrustedcertificateauthority) om de vertrouwde certificerings instanties op te halen die in uw Directory zijn gedefinieerd.
 
 ```azurepowershell
     Get-AzureADTrustedCertificateAuthority
@@ -122,7 +122,7 @@ Gebruik de cmdlet [Get-AzureADTrustedCertificateAuthority](/powershell/module/az
 
 ### <a name="add"></a>Toevoegen
 
-Als u een vertrouwde certificerings instantie wilt maken, gebruikt u de cmdlet [New-AzureADTrustedCertificateAuthority](/powershell/module/azuread/new-azureadtrustedcertificateauthority?view=azureadps-2.0) en stelt u het kenmerk **crlDistributionPoint** in op een juiste waarde:
+Als u een vertrouwde certificerings instantie wilt maken, gebruikt u de cmdlet [New-AzureADTrustedCertificateAuthority](/powershell/module/azuread/new-azureadtrustedcertificateauthority) en stelt u het kenmerk **crlDistributionPoint** in op een juiste waarde:
 
 ```azurepowershell
     $cert=Get-Content -Encoding byte "[LOCATION OF THE CER FILE]"
@@ -135,7 +135,7 @@ Als u een vertrouwde certificerings instantie wilt maken, gebruikt u de cmdlet [
 
 ### <a name="remove"></a>Verwijderen
 
-Als u een vertrouwde certificerings instantie wilt verwijderen, gebruikt u de cmdlet [Remove-AzureADTrustedCertificateAuthority](/powershell/module/azuread/remove-azureadtrustedcertificateauthority?view=azureadps-2.0) :
+Als u een vertrouwde certificerings instantie wilt verwijderen, gebruikt u de cmdlet [Remove-AzureADTrustedCertificateAuthority](/powershell/module/azuread/remove-azureadtrustedcertificateauthority) :
 
 ```azurepowershell
     $c=Get-AzureADTrustedCertificateAuthority
@@ -144,7 +144,7 @@ Als u een vertrouwde certificerings instantie wilt verwijderen, gebruikt u de cm
 
 ### <a name="modify"></a>Wijzigen
 
-Als u een vertrouwde certificerings instantie wilt wijzigen, gebruikt u de cmdlet [set-AzureADTrustedCertificateAuthority](/powershell/module/azuread/set-azureadtrustedcertificateauthority?view=azureadps-2.0) :
+Als u een vertrouwde certificerings instantie wilt wijzigen, gebruikt u de cmdlet [set-AzureADTrustedCertificateAuthority](/powershell/module/azuread/set-azureadtrustedcertificateauthority) :
 
 ```azurepowershell
     $c=Get-AzureADTrustedCertificateAuthority

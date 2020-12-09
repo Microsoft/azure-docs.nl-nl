@@ -3,17 +3,17 @@ title: Kies de juiste prijs categorie voor Microsoft Azure kaarten
 description: Meer informatie over Azure Maps prijs categorieën. Bekijk welke functies worden aangeboden in welke lagen en Bekijk de belangrijkste aandachtspunten voor het kiezen van een prijs categorie.
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 08/12/2020
+ms.date: 12/07/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 3603a4f5d103987b25bd5f976b89f943f98565a8
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: cb57e424642141e73588a61d026d1ff2f1a8b096
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96003681"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905295"
 ---
 # <a name="choose-the-right-pricing-tier-in-azure-maps"></a>De juiste prijscategorie kiezen in Azure Maps
 
@@ -48,6 +48,7 @@ Als de belangrijkste georuimtelijke Api's voldoen aan uw service vereisten, kies
 | Mobiliteit (preview-versie)                       |                     | ✓        |
 | Weer (preview-versie)                        |✓                    |✓        |
 |  Maker (preview-versie)                         |                   |✓        |
+|  Uitbrei ding (preview-versie)                        |                   |✓        |
 
 Houd rekening met de volgende extra punten:
 

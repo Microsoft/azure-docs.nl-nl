@@ -14,12 +14,12 @@ ms.date: 07/13/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2cd95d01c9b49bb6002c00c805dc82dcf30941e3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 20088ccc79abe978eb5b3f1c98e958f6c26bcb86
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91295035"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861796"
 ---
 #  <a name="use-a-saml-20-identity-provider-idp-for-single-sign-on"></a>Een SAML 2.0-id-provider (IdP) gebruiken voor eenmalige aanmelding
 
@@ -250,7 +250,7 @@ Voordat u uw gebruikers kunt verifiëren voor Microsoft 365, moet u Azure AD inr
 
 Azure AD Connect kan worden gebruikt om principals in uw domeinen in uw Azure AD-Directory in te richten op de on-premises Active Directory. Zie [uw on-premises Directory's integreren met Azure Active Directory](whatis-hybrid-identity.md)voor meer gedetailleerde informatie.
 
-Windows Power shell kan ook worden gebruikt om nieuwe gebruikers toe te voegen aan Azure AD en wijzigingen te synchroniseren vanuit de on-premises Directory. Als u de Windows Power shell-cmdlets wilt gebruiken, moet u de [Azure Active Directory-modules](/powershell/azure/active-directory/install-adv2?view=azureadps-2.0)downloaden.
+Windows Power shell kan ook worden gebruikt om nieuwe gebruikers toe te voegen aan Azure AD en wijzigingen te synchroniseren vanuit de on-premises Directory. Als u de Windows Power shell-cmdlets wilt gebruiken, moet u de [Azure Active Directory-modules](/powershell/azure/active-directory/install-adv2)downloaden.
 
 In deze procedure wordt uitgelegd hoe u één gebruiker toevoegt aan Azure AD.
 

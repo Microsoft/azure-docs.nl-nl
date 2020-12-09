@@ -4,12 +4,12 @@ description: De maximale hoeveelheid Beschik baarheid en consistentie bieden met
 ms.topic: article
 ms.date: 06/23/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 774332b8f2d5c336f1a22d717516ae35a62b341f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 81bacd5507396352bb814310979498234ee35347
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89000631"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96902898"
 ---
 # <a name="availability-and-consistency-in-event-hubs"></a>Beschikbaarheid en consistentie in Event Hubs
 
@@ -40,7 +40,9 @@ Als u een nieuw **[EventHubClient](/dotnet/api/microsoft.azure.eventhubs.eventhu
 Voor use-cases waarvoor de maximale hoeveelheid tijd is vereist, heeft dit model de voor keur.
 
 ## <a name="consistency"></a>Consistentie
-In sommige scenario's kan de volg orde van gebeurtenissen belang rijk zijn. Het is bijvoorbeeld mogelijk dat u wilt dat uw back-end-systeem een update opdracht verwerkt vóór een opdracht verwijderen. In dit geval kunt u de partitie sleutel instellen voor een gebeurtenis of een `PartitionSender` object gebruiken (als u de oude bibliotheek van micro soft. Azure. Messa ging gebruikt) om alleen gebeurtenissen naar een bepaalde partitie te verzenden. Dit zorgt ervoor dat wanneer deze gebeurtenissen worden gelezen uit de partitie, ze in de juiste volg orde worden gelezen. Als u de bibliotheek **Azure. Messa ging. Event hubs** gebruikt en voor meer informatie raadpleegt u [code migreren van PartitionSender naar EventHubProducerClient voor het publiceren van gebeurtenissen naar een partitie](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MigrationGuide.md#migrating-code-from-partitionsender-to-eventhubproducerclient-for-publishing-events-to-a-partition).
+In sommige scenario's kan de volg orde van gebeurtenissen belang rijk zijn. Het is bijvoorbeeld mogelijk dat u wilt dat uw back-end-systeem een update opdracht verwerkt vóór een opdracht verwijderen. In dit geval kunt u de partitie sleutel instellen voor een gebeurtenis of een `PartitionSender` object gebruiken (als u de oude bibliotheek van micro soft. Azure. Messa ging gebruikt) om alleen gebeurtenissen naar een bepaalde partitie te verzenden. Dit zorgt ervoor dat wanneer deze gebeurtenissen worden gelezen uit de partitie, ze in de juiste volg orde worden gelezen. 
+
+Zie [code migreren van PartitionSender naar EventHubProducerClient voor het publiceren van gebeurtenissen naar een partitie](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MigrationGuide.md#migrating-code-from-partitionsender-to-eventhubproducerclient-for-publishing-events-to-a-partition)als u gebruikmaakt van de nieuwere **Azure. Messa ging. Event hubs** -bibliotheek.
 
 #### <a name="azuremessagingeventhubs-500-or-later"></a>[Azure. Messa ging. Event hubs (5.0.0 of hoger)](#tab/latest)
 

@@ -1,5 +1,5 @@
 ---
-title: Verbindings monitor maken-Power shell
+title: Een verbindings monitor maken-Power shell
 titleSuffix: Azure Network Watcher
 description: Meer informatie over het maken van een verbindings monitor met behulp van Power shell.
 services: network-watcher
@@ -12,33 +12,33 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/23/2020
 ms.author: vinigam
-ms.openlocfilehash: 1a554177bf7084b9a7f4c413dbe82271b3ab6b3a
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 1d5f879ead35ef6d47b993ff833dc0b0595e3c6c
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95545530"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861915"
 ---
-# <a name="create-a-connection-monitor-using-powershell"></a>Een verbindings monitor maken met behulp van Power shell
+# <a name="create-a-connection-monitor-by-using-powershell"></a>Een verbindings monitor maken met behulp van Power shell
 
-Meer informatie over het maken van een verbindings monitor om de communicatie tussen uw resources te bewaken met behulp van Power shell.
+Meer informatie over het gebruik van de functie verbindings controle van Azure Network Watcher om de communicatie tussen uw resources te bewaken.
 
 
-## <a name="before-you-begin"></a>Voordat u begint 
+## <a name="before-you-begin"></a>Voordat u begint
 
-In verbindings monitors die u maakt in verbindings beheer, kunt u on-premises machines en Azure-Vm's als bronnen toevoegen. Deze verbindings monitors kunnen ook de connectiviteit met eind punten bewaken. De eind punten kunnen zich op Azure of een andere URL of een ander IP-adres bevindt.
+In verbindings monitors die u maakt met verbindings beheer, kunt u on-premises machines en virtuele machines (Vm's) van Azure als bronnen toevoegen. Deze verbindings monitors kunnen ook de connectiviteit met eind punten bewaken. De eind punten kunnen zich op Azure of een andere URL of een ander IP-adres bevindt.
 
-De verbindings monitor bevat de volgende entiteiten:
+Een verbindings monitor bevat de volgende entiteiten:
 
-* **Bron van de verbindings monitor** : een regio-specifieke Azure-resource. Alle volgende entiteiten zijn eigenschappen van een verbindingscontrole resource.
-* **Eind punt** – een bron of doel die deel uitmaakt van connectiviteits controles. Voor beelden van eind punten zijn Azure-Vm's, on-premises agents, Url's en Ip's.
-* **Test configuratie** : een protocol-specifieke configuratie voor een test. Op basis van het protocol dat u hebt gekozen, kunt u de poort, drempel waarden, test frequentie en andere para meters definiëren.
-* **Test groep** : de groep die bron-eind punten, bestemmings eindpunten en test configuraties bevat. Een verbindings monitor kan meer dan één test groep bevatten.
-* **Testen** : de combi natie van een bron eindpunt, bestemmings eindpunt en test configuratie. Een test is het meest gedetailleerde niveau waarmee bewakings gegevens beschikbaar zijn. De bewakings gegevens omvatten het percentage controles dat is mislukt en de round-trip tijd (RTT).
+* **Verbindingscontrole resource**: een regio-specifieke Azure-resource. Alle volgende entiteiten zijn eigenschappen van de bron van de verbindings monitor.
+* **Eind punt**: een bron of doel die deel uitmaakt van connectiviteits controles. Voor beelden van eind punten zijn Azure-Vm's, on-premises agents, Url's en Ip's.
+* **Test configuratie**: een protocol-specifieke configuratie voor een test. Op basis van het protocol dat u kiest, kunt u de poort, drempel waarden, test frequentie en andere para meters definiëren.
+* **Test groep**: de groep die bron-eind punten, bestemmings eindpunten en test configuraties bevat. Een verbindings monitor kan meer dan één test groep bevatten.
+* **Test**: de combi natie van een bron eindpunt, bestemmings eindpunt en test configuratie. Een test is het meest gedetailleerde niveau waarmee bewakings gegevens beschikbaar zijn. De bewakings gegevens omvatten het percentage controles dat is mislukt en de round-trip tijd (RTT).
 
-    ![Diagram van een verbindings monitor, waarbij de relatie tussen test groepen en tests wordt gedefinieerd](./media/connection-monitor-2-preview/cm-tg-2.png)
+    ![Diagram van een verbindings monitor, waarbij de relatie tussen test groepen en tests wordt gedefinieerd.](./media/connection-monitor-2-preview/cm-tg-2.png)
 
-## <a name="steps-to-create-with-powershell"></a>Stappen om te maken met Power shell
+## <a name="steps-to-create-a-connection-monitor"></a>Stappen voor het maken van een verbindings monitor
 
 Gebruik de volgende opdrachten om een verbindings monitor te maken met behulp van Power shell.
 
@@ -71,43 +71,42 @@ New-AzNetworkWatcherConnectionMonitor -NetworkWatcherName $nw -ResourceGroupName
 
 ## <a name="description-of-properties"></a>Beschrijving van eigenschappen
 
-* connectionMonitorName: naam van de bron van de verbindings monitor
+* **ConnectionMonitorName**: naam van de bron van de verbindings monitor.
 
-* Subabonnement-ID van het abonnement waarvoor u de verbindings monitor wilt maken
+* **Sub**: abonnements-id van het abonnement waarvoor u een verbindings monitor wilt maken.
 
-* NW-Network Watcher Resource-ID waarin CM wordt gemaakt 
+* **NW**: Network Watcher bron-id waarin een verbindings monitor is gemaakt.
 
-* locatie-regio waarin de verbindings monitor wordt gemaakt
+* **Locatie**: regio waarin een verbindings monitor is gemaakt.
 
-* Eindpunten
-    * naam: unieke naam voor elk eind punt
-    * resourceId: voor Azure-eind punten verwijst de resource-ID naar de Azure Resource Manager Resource-ID voor virtuele machines. Voor niet-Azure-eind punten verwijst Resource-ID naar de Azure Resource Manager Resource-ID voor de Log Analytics-werk ruimte die is gekoppeld aan niet-Azure-agents.
-    * adres: alleen van toepassing als de resource-ID niet is opgegeven of als de resource-ID Log Analytics werk ruimte is. Als dit wordt gebruikt in combi natie met Log Analytics Resource-ID, verwijst dit naar de FQDN van de agent die kan worden gebruikt voor de bewaking. Als u zonder Resource-ID gebruikt, kan dit de URL of het IP-adres van een openbaar eind punt zijn.
-    * filter: voor niet-Azure-eind punten gebruikt u filter om agents te selecteren uit Log Analytics werk ruimte die wordt gebruikt voor de bewaking van de bron van de verbindings monitor. Als er geen filters zijn ingesteld, kunnen alle agents die deel uitmaken van de Log Analytics-werk ruimte worden gebruikt voor de bewaking
-        * type: Stel type in als agent adres
-        * adres: Stel adres in als de FQDN van uw on-premises agent
+* **Eindpunten**
+    * **Naam**: unieke naam voor elk eind punt.
+    * **Resource-id**: voor Azure-eind punten verwijst resource-id naar de Azure Resource Manager resource-id voor vm's. Voor niet-Azure-eind punten verwijst Resource-ID naar de Azure Resource Manager Resource-ID voor de Log Analytics-werk ruimte die is gekoppeld aan niet-Azure-agents.
+    * **Adres**: alleen van toepassing als de resource-id niet is opgegeven of als de resource-id zich in de werk ruimte log Analytics bevindt. Als u geen Resource-ID gebruikt, kan dit de URL of het IP-adres van een openbaar eind punt zijn. Als deze wordt gebruikt met een Log Analytics Resource-ID, wordt hiermee verwezen naar de FQDN-naam van de bewakings agent.
+    * **Filter**: voor niet-Azure-eind punten gebruikt u filters om bewakings agenten te selecteren in de log Analytics werk ruimte in de bron van de verbindings monitor. Als er geen filters zijn ingesteld, kunnen alle agents die deel uitmaken van de Log Analytics-werk ruimte worden gebruikt voor de bewaking.
+        * **Type**: instellen als **Agent adres**.
+        * **Adres**: ingesteld als de FQDN van uw on-premises agent.
 
-* Test groepen
-    * name: naam van de test groep.
-    * testConfigurations-test configuraties op basis waarvan de bron-eind punten verbinding maken met doel eindpunten
-    * bronnen: Kies uit de hierboven gemaakte eind punten. Op Azure-bron eindpunten moet Azure Network Watcher-extensie zijn geïnstalleerd en op niet-Azure gebaseerde bron-eind punten moet Log Analytics agent zijn geïnstalleerd. Zie [bewakings agenten installeren](./connection-monitor-overview.md#install-monitoring-agents)voor informatie over het installeren van een agent voor uw bron.
-    * doelen: Kies uit de hierboven gemaakte eind punten. U kunt de verbinding met virtuele machines van Azure of een eind punt (een openbaar IP-adres, URL of FQDN) bewaken door ze als bestemming op te geven. In één test groep kunt u Azure-Vm's, Office 365 Url's, Dynamics 365-Url's en aangepaste eind punten toevoegen.
-    * uitschakelen: gebruik dit veld om de bewaking uit te scha kelen voor alle bronnen en doelen die door de test groep worden opgegeven.
+* **Test groepen**
+    * **Naam**: Geef een naam op voor de test groep.
+    * **Bronnen**: Kies uit de eind punten die u eerder hebt gemaakt. Azure Network Watcher-extensie moet zijn geïnstalleerd op Azure-bron eindpunten. een Azure Log Analytics-agent moet zijn geïnstalleerd op bron-eind punten die niet op Azure zijn gebaseerd. Zie [bewakings agenten installeren](./connection-monitor-overview.md#install-monitoring-agents)voor informatie over het installeren van een agent voor uw bron.
+    * **Doelen**: Kies uit de eind punten die u eerder hebt gemaakt. U kunt de verbinding met virtuele machines van Azure of een eind punt (een openbaar IP-adres, URL of FQDN) bewaken door ze als bestemming op te geven. In één test groep kunt u Azure-Vm's, Office 365 Url's, Dynamics 365-Url's en aangepaste eind punten toevoegen.
+    * **Uitschakelen**: bewaking uitschakelen voor alle bronnen en doelen die door de test groep worden opgegeven.
 
-* Test configuraties
-    * naam: naam van de test configuratie.
-    * testFrequencySec: Geef op hoe vaak bronnen worden gepingd op het protocol en de poort die u hebt opgegeven. U kunt kiezen uit 30 seconden, 1 minuut, 5 minuten, 15 minuten of 30 minuten. Bronnen testen de connectiviteit met bestemmingen op basis van de waarde die u kiest. Als u bijvoorbeeld 30 seconden selecteert, wordt de verbinding met de bestemming ten minste eenmaal in een periode van 30 seconden gecontroleerd.
-    * Protocol: u kunt TCP, ICMP, HTTP of HTTPS kiezen. Afhankelijk van het protocol kunt u bepaalde configuraties van specifieke protocollen uitvoeren
-        * preferHTTPS: Geef op of HTTPS via HTTP moet worden gebruikt
-        * poort: Geef de doel poort van uw keuze op.
-        * disableTraceRoute: dit is van toepassing op test groepen waarvan het protocol TCP of ICMP is. Het stoppen van bronnen van het detecteren van topologie en hop-by-Hop RTT wordt gestopt.
-        * methode: dit is van toepassing op test configuraties waarvan het Protocol HTTP is. Selecteer de HTTP-aanvraag methode: GET of POST
-        * pad-Geef para meters op die moeten worden toegevoegd aan de URL
-        * validStatusCodes: Kies toepasselijke status codes. Als de antwoord code niet overeenkomt met deze lijst, wordt een diagnostisch bericht weer gegeven
-        * requestHeaders: Geef aangepaste aanvraag header teken reeksen op die worden door gegeven aan de bestemming
-    * successThreshold-u kunt drempels instellen voor de volgende netwerk parameters:
-        * checksFailedPercent: Stel het percentage controles in dat kan mislukken wanneer bronnen de connectiviteit met bestemmingen controleren met behulp van de criteria die u hebt opgegeven. Voor het TCP-of ICMP-protocol kan het percentage mislukte controles worden vergeleken met het percentage pakket verlies. Voor het HTTP-protocol vertegenwoordigt dit veld het percentage HTTP-aanvragen dat geen antwoord heeft ontvangen.
-        * roundTripTimeMs: Stel de RTT in milliseconden in om te bepalen hoe lang bronnen kunnen worden verbonden met het doel via de test configuratie.
+* **Test configuraties**
+    * **Naam**: Geef de test configuratie een naam.
+    * **TestFrequencySec**: Geef op hoe vaak bronnen ping-bestemmingen hebben op het protocol en de poort die u hebt opgegeven. U kunt kiezen uit 30 seconden, 1 minuut, 5 minuten, 15 minuten of 30 minuten. Bronnen testen de connectiviteit met bestemmingen op basis van de waarde die u kiest. Als u bijvoorbeeld 30 seconden selecteert, controleren bronnen de connectiviteit met de bestemming ten minste één keer in een periode van dertig seconden.
+    * **Protocol**: Kies TCP, ICMP, http of https. Afhankelijk van het protocol kunt u ook de volgende protocolspecifieke configuraties selecteren:
+        * **preferHTTPS**: Geef op of HTTPS via http moet worden gebruikt.
+        * **poort**: Geef de gewenste doel poort op.
+        * **disableTraceRoute**: bronnen stoppen van het detecteren van topologie en hop-by-Hop RTT. Dit geldt voor test groepen met TCP of ICMP.
+        * **methode**: Selecteer de HTTP-aanvraag methode (Get of post). Dit is van toepassing op test configuraties met HTTP.
+        * **pad**: Geef de para meters voor het pad op om toe te voegen aan de URL.
+        * **validStatusCodes**: Kies toepasselijke status codes. Als de antwoord code niet overeenkomt, wordt een diagnostisch bericht weer gegeven.
+        * **RequestHeaders**: Geef de teken reeks voor aangepaste aanvraag headers op die aan het doel worden door gegeven.
+    * **Drempel waarde voor geslaagde pogingen**: Stel drempel waarden in voor de volgende netwerk parameters:
+        * **checksFailedPercent**: Stel het percentage controles in dat kan mislukken wanneer bronnen de connectiviteit met bestemmingen controleren met behulp van de criteria die u hebt opgegeven. Voor het TCP-of ICMP-protocol is het percentage mislukte controles mogelijk gelijk aan het percentage pakket verlies. Voor het HTTP-protocol vertegenwoordigt dit veld het percentage HTTP-aanvragen dat geen antwoord heeft ontvangen.
+        * **roundTripTimeMs**: Stel in hoe lang bronnen kunnen duren om verbinding te maken met de bestemming via de test configuratie in milliseconden.
 
 ## <a name="scale-limits"></a>Schaal limieten
 
@@ -120,5 +119,5 @@ Verbindings monitors hebben de volgende schaal limieten:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Meer informatie [over het analyseren van bewakings gegevens en het instellen van waarschuwingen](./connection-monitor-overview.md#analyze-monitoring-data-and-set-alerts)
-* Meer informatie [over het vaststellen van problemen in uw netwerk](./connection-monitor-overview.md#diagnose-issues-in-your-network)
+* Meer informatie [over het analyseren van bewakings gegevens en het instellen van waarschuwingen](./connection-monitor-overview.md#analyze-monitoring-data-and-set-alerts).
+* Meer informatie [over het vaststellen van problemen in uw netwerk](./connection-monitor-overview.md#diagnose-issues-in-your-network).

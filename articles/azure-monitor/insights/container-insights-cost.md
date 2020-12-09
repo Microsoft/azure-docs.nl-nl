@@ -3,14 +3,14 @@ title: Bewaken van de kosten voor Azure Monitor voor containers | Microsoft Docs
 description: In dit artikel worden de bewakings kosten beschreven voor metrische gegevens & door Azure Monitor voor containers verzamelde inventaris van de bewerkings capaciteit, zodat klanten hun gebruik en de bijbehorende kosten kunnen beheren.
 ms.topic: conceptual
 ms.date: 05/29/2020
-ms.openlocfilehash: a03e94fa7650c56a4d3b3beda3c27283329aebbe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 81a20f564af68c3da6d63394e4cffe7caed91b46
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84204647"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96903212"
 ---
-# <a name="understand-monitoring-costs-for-azure-monitor-for-containers"></a>Inzicht in de berekenings kosten voor Azure Monitor voor containers
+# <a name="understand-monitoring-costs-for-azure-monitor-for-containers"></a>Inzicht in het bijhouden van de kosten voor Azure Monitor voor containers
 
 In dit artikel vindt u de richt lijnen voor het Azure Monitor van containers voor meer informatie over het volgende:
 
@@ -127,19 +127,21 @@ Met de standaard [prijzen](https://azure.microsoft.com/pricing/details/monitor/)
 
 ## <a name="controlling-ingestion-to-reduce-cost"></a>Opname controleren om de kosten te verlagen
 
-Bekijk een scenario waarin de verschillende Business Unit van uw organisatie Kubernetes-infra structuur en een Log Analytics-werk ruimte delen. Elke bedrijfs eenheid gescheiden door een Kubernetes-naam ruimte. U kunt visualiseren hoeveel gegevens worden opgenomen in elke werk ruimte met behulp van een onlangs uitgebrachte werkmap. De **container Insights-gebruiks** werkmap, gevonden in de [Galerie met werkmappen](../platform/workbooks-overview.md#getting-started), helpt u bij het visualiseren van de bron van uw gegevens, zonder dat u uw eigen bibliotheek met query's hoeft te bouwen op basis van wat we in onze documentatie delen. In deze werkmap zijn er grafieken waarmee u factureer bare gegevens uit deze perspectieven kunt weer geven als:
+Bekijk een scenario waarin de verschillende Business Unit van uw organisatie Kubernetes-infra structuur en een Log Analytics-werk ruimte delen. Elke bedrijfs eenheid gescheiden door een Kubernetes-naam ruimte. U kunt visualiseren hoeveel gegevens worden opgenomen in elke werk ruimte met behulp van het runbook voor **gegevens gebruik** dat beschikbaar is via de vervolg keuzelijst **werkmappen weer geven** .
+
+[![Vervolg keuzelijst werkmappen weer geven](media/container-insights-cost/workbooks-dropdown.png)](media/container-insights-cost/workbooks-dropdown.png#lightbox)
+
+
+Deze werkmap helpt u bij het visualiseren van de bron van uw gegevens zonder dat u uw eigen bibliotheek met query's hoeft te bouwen op basis van wat we in onze documentatie delen. In deze werkmap zijn er grafieken waarmee u factureer bare gegevens uit deze perspectieven kunt weer geven als:
 
 - Totale factureer bare gegevens die zijn opgenomen in GB per oplossing
-
 - Factureer bare gegevens die zijn opgenomen door container Logboeken (toepassings Logboeken)
-
 - Ontvangen container logboek gegevens die zijn opgenomen per Kubernetes-naam ruimte
-
 - Ontvangen container logboek gegevens die zijn opgenomen in gescheiden door de cluster naam
-
 - Ontvangen container logboek gegevens die zijn opgenomen door de logsource-vermelding
-
 - Factureer bare diagnostische gegevens die zijn opgenomen door de logboeken van de diagnostische hoofd knooppunten
+
+[![Data Usage-werkmap](media/container-insights-cost/data-usage-workbook.png)](media/container-insights-cost/data-usage-workbook.png#lightbox)
 
 Raadpleeg [Access Control](../platform/workbooks-access-control.md)voor meer informatie over het beheren van rechten en machtigingen voor de werkmap.
 

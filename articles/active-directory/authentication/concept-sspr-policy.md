@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.custom: contperfq4
-ms.openlocfilehash: 344fee9482cd935375d25fab80b1f365d72586f8
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: a53b193d16a2cefbde7877fd930e5fa73b0c6a36
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96743663"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861269"
 ---
 # <a name="password-policies-and-account-restrictions-in-azure-active-directory"></a>Wachtwoord beleid en account beperkingen in Azure Active Directory
 
@@ -72,8 +72,8 @@ Voor het twee-poort beleid zijn twee soorten verificatie gegevens vereist, zoals
   * Helpdesk beheerder
   * Serviceondersteuningsbeheerder
   * Factureringsbeheerder
-  * Ondersteuning voor partner Tier1
-  * Ondersteuning voor partner Tier2
+  * Laag1-ondersteuning voor partner
+  * Laag2-ondersteuning voor partner
   * Exchange-beheerder
   * Skype voor Bedrijven-beheerder
   * Gebruikersbeheerder
@@ -95,7 +95,7 @@ Voor het twee-poort beleid zijn twee soorten verificatie gegevens vereist, zoals
 * Er is een aangepast domein geconfigureerd voor uw Azure AD-Tenant, zoals *contoso.com*. of
 * De identiteiten van de on-premises Directory Azure AD Connect worden gesynchroniseerd
 
-U kunt het gebruik van SSPR voor beheerders accounts uitschakelen met de Power shell [-cmdlet Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0) . De `-SelfServePasswordResetEnabled $False` para meter schakelt SSPR voor beheerders uit.
+U kunt het gebruik van SSPR voor beheerders accounts uitschakelen met de Power shell [-cmdlet Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings) . De `-SelfServePasswordResetEnabled $False` para meter schakelt SSPR voor beheerders uit.
 
 ### <a name="exceptions"></a>Uitzonderingen
 
@@ -107,7 +107,7 @@ Voor een one-Gate-beleid is één verificatie gegevens vereist, zoals een e-mail
 
 ## <a name="password-expiration-policies"></a><a name="set-password-expiration-policies-in-azure-ad"></a>Wachtwoord verloop beleid
 
-Een *globale beheerder* of *gebruikers beheerder* kan de [Microsoft Azure ad-module voor Windows PowerShell](/powershell/module/Azuread/?view=azureadps-2.0) gebruiken om gebruikers wachtwoorden in te stellen die niet verlopen.
+Een *globale beheerder* of *gebruikers beheerder* kan de [Microsoft Azure ad-module voor Windows PowerShell](/powershell/module/Azuread/) gebruiken om gebruikers wachtwoorden in te stellen die niet verlopen.
 
 U kunt ook Power shell-cmdlets gebruiken om de configuratie nooit-expires te verwijderen of om te zien welke gebruikers wachtwoorden zijn ingesteld op nooit verlopen.
 
@@ -118,13 +118,13 @@ Deze richt lijnen zijn van toepassing op andere providers, zoals intune en Micro
 
 ### <a name="set-or-check-the-password-policies-by-using-powershell"></a>Set or check the password policies by using PowerShell (Wachtwoordbeleid instellen of controleren met behulp van PowerShell)
 
-Als u aan de slag wilt gaan, [downloadt en installeert u de Azure AD Power shell-module](/powershell/module/Azuread/?view=azureadps-2.0) en [verbindt u deze met uw Azure AD-Tenant](/powershell/module/azuread/connect-azuread?view=azureadps-2.0#examples).
+Als u aan de slag wilt gaan, [downloadt en installeert u de Azure AD Power shell-module](/powershell/module/Azuread/) en [verbindt u deze met uw Azure AD-Tenant](/powershell/module/azuread/connect-azuread#examples).
 
 Nadat de module is geïnstalleerd, voert u de volgende stappen uit om elke taak als nodig uit te voeren.
 
 ### <a name="check-the-expiration-policy-for-a-password"></a>Het verloop beleid voor een wacht woord controleren
 
-1. Open een Power shell-prompt en [Maak verbinding met uw Azure AD-Tenant](/powershell/module/azuread/connect-azuread?view=azureadps-2.0#examples) met behulp van een *globale beheerder* of een beheerders account voor de *gebruiker* .
+1. Open een Power shell-prompt en [Maak verbinding met uw Azure AD-Tenant](/powershell/module/azuread/connect-azuread#examples) met behulp van een *globale beheerder* of een beheerders account voor de *gebruiker* .
 1. Voer een van de volgende opdrachten uit voor een afzonderlijke gebruiker of voor alle gebruikers:
 
    * Voer de volgende cmdlet uit om te controleren of het wacht woord van een enkele gebruiker is ingesteld op nooit verlopen. Vervang door `<user ID>` de gebruikers-id van de gebruiker die u wilt controleren, bijvoorbeeld *driley \@ contoso.onmicrosoft.com*:
@@ -141,7 +141,7 @@ Nadat de module is geïnstalleerd, voert u de volgende stappen uit om elke taak 
 
 ### <a name="set-a-password-to-expire"></a>Wacht woord instellen op verlopen
 
-1. Open een Power shell-prompt en [Maak verbinding met uw Azure AD-Tenant](/powershell/module/azuread/connect-azuread?view=azureadps-2.0#examples) met behulp van een *globale beheerder* of een beheerders account voor de *gebruiker* .
+1. Open een Power shell-prompt en [Maak verbinding met uw Azure AD-Tenant](/powershell/module/azuread/connect-azuread#examples) met behulp van een *globale beheerder* of een beheerders account voor de *gebruiker* .
 1. Voer een van de volgende opdrachten uit voor een afzonderlijke gebruiker of voor alle gebruikers:
 
    * Voer de volgende cmdlet uit om het wacht woord van een gebruiker in te stellen, zodat het wacht woord is verlopen. Vervang door `<user ID>` de gebruikers-id van de gebruiker die u wilt controleren, bijvoorbeeld *driley \@ contoso.onmicrosoft.com*
@@ -158,7 +158,7 @@ Nadat de module is geïnstalleerd, voert u de volgende stappen uit om elke taak 
 
 ### <a name="set-a-password-to-never-expire"></a>Stel een wacht woord in om nooit te verlopen
 
-1. Open een Power shell-prompt en [Maak verbinding met uw Azure AD-Tenant](/powershell/module/azuread/connect-azuread?view=azureadps-2.0#examples) met behulp van een *globale beheerder* of een beheerders account voor de *gebruiker* .
+1. Open een Power shell-prompt en [Maak verbinding met uw Azure AD-Tenant](/powershell/module/azuread/connect-azuread#examples) met behulp van een *globale beheerder* of een beheerders account voor de *gebruiker* .
 1. Voer een van de volgende opdrachten uit voor een afzonderlijke gebruiker of voor alle gebruikers:
 
    * Voer de volgende cmdlet uit om het wacht woord van een gebruiker in te stellen op nooit verlopen. Vervang door `<user ID>` de gebruikers-id van de gebruiker die u wilt controleren, bijvoorbeeld *driley \@ contoso.onmicrosoft.com*

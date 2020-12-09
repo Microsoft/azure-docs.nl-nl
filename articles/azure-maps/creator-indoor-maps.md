@@ -1,21 +1,27 @@
 ---
-title: Werken met kaarten voor binnen Azure Maps Maker
-description: In dit artikel worden concepten geïntroduceerd die van toepassing zijn op Azure Maps Creator-Services
+title: Werken met kaarten voor binnen Azure Maps Maker (preview-versie)
+description: In dit artikel worden concepten geïntroduceerd die van toepassing zijn op Azure Maps Creator-Services (preview-versie)
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 05/18/2020
+ms.date: 12/07/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 558903ead572363c5545a4a3121f7cf61f549df6
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 4ab00317e71f832bb677c4c7587e2356a37cb7a1
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895899"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96903561"
 ---
-# <a name="creator-for-indoor-maps"></a>Maker voor kaarten in de binnenste
+# <a name="creator-preview-for-indoor-maps"></a>Creator (preview) voor kaarten in de binnenste
+
+
+> [!IMPORTANT]
+> Azure Maps Creator-Services zijn momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
 
 In dit artikel worden de concepten en hulpprogram ma's geïntroduceerd die van toepassing zijn op Azure Maps Maker. We raden u aan dit artikel te lezen voordat u begint met het gebruik van de Azure Maps Creator-API en SDK.
 
@@ -23,15 +29,15 @@ U kunt Creator gebruiken om toepassingen te ontwikkelen met kaart functies op ba
 
 ![Werk stroom voor gegevens van Maker kaart](./media/creator-indoor-maps/workflow.png)
 
-## <a name="create-azure-maps-creator"></a>Azure Maps Maker maken
+## <a name="create-azure-maps-creator-preview"></a>Azure Maps Maker maken (preview) 
 
-Als u Creator-Services wilt gebruiken, moet u Azure Maps Maker maken in een Azure Maps-account. Zie [Azure Maps Maker beheren](how-to-manage-creator.md)voor meer informatie over het maken van Azure Maps maker in azure Maps.
+Als u Creator-Services (preview) wilt gebruiken, moet u Azure Maps Maker maken in een Azure Maps-account. Zie [Azure Maps Maker beheren](how-to-manage-creator.md)voor meer informatie over het maken van Azure Maps maker in azure Maps.
 
 ## <a name="upload-a-drawing-package"></a>Een tekenpakket uploaden
 
-De maker verzamelt gegevens over de binnenste kaart door een geüpload teken pakket te converteren. Het teken pakket vertegenwoordigt een geconstrueerde of opnieuw gemodelleerde faciliteit. Zie [pakket vereisten](drawing-requirements.md)voor meer informatie over het opstellen van pakket vereisten.
+Creator (preview) verzamelt gegevens over de binnenste kaart door een geüpload teken pakket te converteren. Het teken pakket vertegenwoordigt een geconstrueerde of opnieuw gemodelleerde faciliteit. Zie [pakket vereisten](drawing-requirements.md)voor meer informatie over het opstellen van pakket vereisten.
 
-Gebruik de [Azure Maps Data upload API](/rest/api/maps/data/uploadpreview) om een teken pakket te uploaden.  Wanneer het uploaden is gelukt, retourneert de API voor het uploaden van gegevens een gebruikers gegevens-id ( `udid` ). De `udid` wordt in de volgende stap gebruikt om het geüploade pakket te converteren naar binnenste kaart gegevens.
+Gebruik de [Upload-API voor Azure Maps gegevens (preview)](/rest/api/maps/data/uploadpreview) om een teken pakket te uploaden.  Wanneer het uploaden is gelukt, retourneert de API voor het uploaden van gegevens een gebruikers gegevens-id ( `udid` ). De `udid` wordt in de volgende stap gebruikt om het geüploade pakket te converteren naar binnenste kaart gegevens.
 
 ## <a name="convert-a-drawing-package"></a>Een tekenpakket converteren
 
@@ -41,7 +47,7 @@ Als er een fout optreedt, biedt de conversie service een koppeling naar de [Azur
 
 ## <a name="create-indoor-map-data"></a>Toewijzings gegevens in een binnenshuis maken
 
-Azure Maps Maker biedt drie services:
+Azure Maps Creator (preview) biedt drie services:
 
 * [Gegevenssetservice](/rest/api/maps/dataset/createpreview).
 De DataSet-service gebruiken om een gegevensset te maken op basis van geconverteerde gegevens voor tekenpakketen.
@@ -72,9 +78,9 @@ Als een tegelset verouderd is en niet langer handig is, kunt u de tegelset verwi
 
 ### <a name="feature-statesets"></a>Functie statesets
 
-Functie-statesets zijn verzamelingen van dynamische eigenschappen ( *statussen* ) die zijn toegewezen aan functies van gegevensset, zoals kamers of apparatuur. Een voor beeld van een *status* kan een Tempe ratuur of bezetting zijn. Elke *status* is een sleutel/waarde-paar met de naam van de eigenschap, de waarde en de tijds tempel van de laatste update.
+Functie-statesets zijn verzamelingen van dynamische eigenschappen (*statussen*) die zijn toegewezen aan functies van gegevensset, zoals kamers of apparatuur. Een voor beeld van een *status* kan een Tempe ratuur of bezetting zijn. Elke *status* is een sleutel/waarde-paar met de naam van de eigenschap, de waarde en de tijds tempel van de laatste update.
 
-Met de [functie status service](/rest/api/maps/featurestate/createstatesetpreview) kunt u een functie statusset voor een gegevensset maken en beheren. De statusset wordt gedefinieerd door een of meer *statussen* . Aan elke functie, zoals een ruimte, kan één *status* zijn gekoppeld.
+Met de [functie status service](/rest/api/maps/featurestate/createstatesetpreview) kunt u een functie statusset voor een gegevensset maken en beheren. De statusset wordt gedefinieerd door een of meer *statussen*. Aan elke functie, zoals een ruimte, kan één *status* zijn gekoppeld.
 
 De waarde van elke *status* in een statusset kan worden bijgewerkt of opgehaald door IOT-apparaten of andere toepassingen.  Als u bijvoorbeeld de API voor de [functie status update](/rest/api/maps/featurestate/updatestatespreview)gebruikt, kunnen apparaten die ruimte vrijmaken de status wijziging van een kamer systematisch plaatsen.
 
@@ -87,9 +93,9 @@ Een toepassing kan een functie statusset gebruiken om de functies in een facilit
 
 ### <a name="render-v2-service"></a>V2-service weer geven
 
-De Azure Maps [render v2-service: de tegel-API ophalen](/rest/api/maps/renderv2/getmaptilepreview) is uitgebreid ter ondersteuning van de maker tilesets.
+De Azure Maps [render v2-service voor het ophalen van de tegel-API (preview)](/rest/api/maps/renderv2/getmaptilepreview) is uitgebreid ter ondersteuning van de maker-tilesets (preview-versie).
 
-[Rendering v2-service: met de tegel-API van de kaart ophalen](/rest/api/maps/renderv2/getmaptilepreview) kunnen toepassingen tilesets aanvragen. De tilesets kan vervolgens worden geïntegreerd in een kaart besturings element of SDK. Voor een voor beeld van een kaart besturings element dat gebruikmaakt van de rendering v2-service, raadpleegt u [module voor binnenste kaarten](#indoor-maps-module).
+Rendering v2-service: met de tegel-API van de kaart ophalen kunnen toepassingen tilesets aanvragen. De tilesets kan vervolgens worden geïntegreerd in een kaart besturings element of SDK. Voor een voor beeld van een kaart besturings element dat gebruikmaakt van de rendering v2-service, raadpleegt u [module voor binnenste kaarten](#indoor-maps-module).
 
 ### <a name="web-feature-service-api"></a>API voor web-functie Service
 
@@ -97,7 +103,7 @@ Gegevens sets kunnen worden opgevraagd met behulp van de [WFS-API (Web Feature S
 
 ### <a name="indoor-maps-module"></a>Plattegrondmodule
 
-De [Azure Maps Web-SDK](./index.yml) bevat de module kaarten van de kaart. Deze module biedt uitgebreide functionaliteiten voor de Azure Maps *map control* bibliotheek. Met de module binnenste kaarten worden de kaarten weer gegeven die zijn gemaakt in de maker. Het integreert widgets als *vloer kiezer* , waarmee gebruikers de verschillende vloeren kunnen visualiseren.
+De [Azure Maps Web-SDK](./index.yml) bevat de module kaarten van de kaart. Deze module biedt uitgebreide functionaliteiten voor de Azure Maps *map control* bibliotheek. In de module voor de binnenste kaarten worden de kaarten weer gegeven die zijn gemaakt in de maker (preview-versie). Het integreert widgets als *vloer kiezer*, waarmee gebruikers de verschillende vloeren kunnen visualiseren.
 
 Met de module binnenste kaarten kunt u webtoepassingen maken voor het integreren van kaart gegevens met andere [Azure Maps Services](./index.yml). De meest voorkomende toepassings instellingen zijn bijvoorbeeld het toevoegen van kennis aan kaarten van andere kaarten, zoals de weg, afbeelding, weer en door voer.
 
@@ -109,7 +115,7 @@ Wanneer u begint met het ontwikkelen van oplossingen voor kaarten over een binne
 
 ### <a name="data-maintenance"></a>Gegevens onderhoud
 
- Met Azure Maps Maker lijst, update en delete API kunt u uw gegevens sets, tilesets en functie-statesets weer geven, bijwerken en verwijderen.
+ Met Azure Maps Maker-lijst (preview-versie), update en delete API kunt u uw gegevens sets, tilesets en functie-statesets weer geven, bijwerken en verwijderen.
 
 >[!NOTE]
 >Wanneer u een lijst met items bekijkt en besluit deze te verwijderen, moet u rekening houden met de impact van die verwijdering op alle afhankelijke API'S of toepassingen. Als u bijvoorbeeld een-tegelset verwijdert die momenteel door een toepassing wordt gebruikt door middel van de [weer gave-API voor de tegel v2-kaart ophalen](/rest/api/maps/renderv2/getmaptilepreview), zou het verwijderen van die tegelset resulteren in een toepassings fout waardoor die tegelset wordt weer gegeven.
@@ -129,4 +135,4 @@ In het volgende voor beeld ziet u hoe u een gegevensset bijwerkt, een nieuwe teg
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Zelf studie: een kaart maken voor een koppeling binnen](tutorial-creator-indoor-maps.md)
+> [Zelf studie: een koppeling maken (preview) in het binnenste](tutorial-creator-indoor-maps.md)

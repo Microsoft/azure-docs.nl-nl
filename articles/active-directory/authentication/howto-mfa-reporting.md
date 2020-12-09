@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: e2a02ae7bd89e99dc2eee013394a1f85139c1c00
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 5f78b70599d6d0ae8825accf4cc55cdc1c01d9ce
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96742773"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861235"
 ---
 # <a name="use-the-sign-ins-report-to-review-azure-ad-multi-factor-authentication-events"></a>Het rapport aanmeldingen gebruiken om Azure AD-Multi-Factor Authentication gebeurtenissen te controleren
 
@@ -91,7 +91,7 @@ De volgende details worden weer gegeven in het venster *verificatie Details* voo
 
 ## <a name="powershell-reporting-on-users-registered-for-mfa"></a>Power shell-rapportage voor gebruikers die zijn geregistreerd voor MFA
 
-Controleer eerst of de [MSOnline v1 Power shell-module](/powershell/azure/active-directory/overview?view=azureadps-1.0) is geïnstalleerd.
+Controleer eerst of de [MSOnline v1 Power shell-module](/powershell/azure/active-directory/overview) is geïnstalleerd.
 
 Identificeer gebruikers die zijn geregistreerd voor MFA met behulp van de volgende Power shell. Met deze reeks opdrachten worden uitgeschakelde gebruikers uitgesloten, omdat deze accounts niet kunnen worden geverifieerd bij Azure AD:
 
@@ -119,7 +119,7 @@ Get-MsolUser -All | Select-Object @{N='UserPrincipalName';E={$_.UserPrincipalNam
 
 De volgende tabel kan helpen bij het oplossen van gebeurtenissen die gebruikmaken van de gedownloade versie van het activiteiten rapport uit de vorige Portal-stappen of Power shell-opdrachten. Deze resultaat codes worden niet direct weer gegeven in de Azure Portal.
 
-| Aanroep resultaat | Beschrijving | Uitgebreide beschrijving |
+| Aanroep resultaat | Description | Uitgebreide beschrijving |
 | --- | --- | --- |
 | SUCCESS_WITH_PIN | PINCODE ingevoerd | De gebruiker heeft een pincode ingevoerd.  Als de verificatie is geslaagd, wordt de juiste pincode ingevoerd.  Als verificatie is geweigerd, wordt er een onjuiste pincode ingevoerd of is de gebruiker ingesteld op de standaard modus. |
 | SUCCESS_NO_PIN | Alleen # ingevoerd | Als de gebruiker is ingesteld op pincode modus en de verificatie wordt geweigerd, betekent dit dat de gebruiker de pincode niet heeft ingevoerd en alleen #.  Als de gebruiker is ingesteld op de standaard modus en de verificatie slaagt, betekent dit dat de gebruiker alleen de waarde # heeft opgegeven als in de standaard modus. |
@@ -171,7 +171,7 @@ De volgende tabel kan helpen bij het oplossen van gebeurtenissen die gebruikmake
 
 De volgende aanvullende informatie en rapporten zijn beschikbaar voor MFA-gebeurtenissen, waaronder die voor MFA server:
 
-| Rapport | Locatie | Beschrijving |
+| Rapport | Locatie | Description |
 |:--- |:--- |:--- |
 | Geschiedenis van geblokkeerde gebruikers | Azure AD > Security > MFA > blok keren/deblokkeren van gebruikers | Toont de geschiedenis van aanvragen om gebruikers te blok keren of deblokkeren. |
 | Gebruik voor on-premises onderdelen | Activiteiten rapport van Azure AD > Security > MFA > | Bevat informatie over algemeen gebruik voor MFA-server via de NPS-extensie, ADFS en MFA-server. |

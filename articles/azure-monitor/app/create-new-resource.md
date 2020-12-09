@@ -3,12 +3,12 @@ title: Een nieuwe Azure-toepassing Insights-resource maken | Microsoft Docs
 description: Stel Application Insights bewaking hand matig in voor een nieuwe Live-toepassing.
 ms.topic: conceptual
 ms.date: 12/02/2019
-ms.openlocfilehash: d2e367e84aed7abac70d803f28d26070f7b0a85e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3fd05e6bd68be89b964fe1ad32029bf44f3352ea
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87323125"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96906366"
 ---
 # <a name="create-an-application-insights-resource"></a>Een Application Insights-resource maken
 
@@ -44,7 +44,8 @@ Als uw app is gemaakt, wordt er een nieuw deel venster geopend. In dit deel vens
 
 De instrumentatie sleutel identificeert de resource waaraan u de telemetriegegevens wilt koppelen. U moet de instrumentatie sleutel kopiëren en toevoegen aan de code van uw toepassing.
 
-![Klik en kopieer de instrumentatie sleutel](./media/create-new-resource/instrumentation-key.png)
+> [!IMPORTANT]
+> Nieuwe Azure-regio's **vereisen** het gebruik van verbindings reeksen in plaats van instrumentatie sleutels. Met de [verbindings reeks](./sdk-connection-string.md?tabs=net) wordt de resource geïdentificeerd waaraan u de telemetriegegevens wilt koppelen. U kunt ook de eind punten wijzigen die door de resource worden gebruikt als een bestemming voor uw telemetrie. U moet de connection string kopiëren en toevoegen aan de code van uw toepassing of aan een omgevings variabele.
 
 ## <a name="install-the-sdk-in-your-app"></a>De SDK installeren in uw app
 

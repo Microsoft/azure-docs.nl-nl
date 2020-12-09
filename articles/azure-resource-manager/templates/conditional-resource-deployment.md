@@ -1,18 +1,18 @@
 ---
 title: Voorwaardelijke implementatie met sjablonen
-description: Hierin wordt beschreven hoe u een resource voorwaardelijk kunt implementeren in een Azure Resource Manager sjabloon.
+description: Hierin wordt beschreven hoe u een resource voorwaardelijk kunt implementeren in een Azure Resource Manager sjabloon (ARM-sjabloon).
 ms.topic: conceptual
 ms.date: 06/01/2020
-ms.openlocfilehash: effa7fe6ee1393e44a124bc087609da5d4898210
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0a31bd1fbf755046f331542b4d5952b27a793360
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84259317"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905992"
 ---
 # <a name="conditional-deployment-in-arm-templates"></a>Voorwaardelijke implementatie in ARM-sjablonen
 
-Soms moet u optioneel een resource implementeren in een Azure Resource Manager ARM-sjabloon. Gebruik het- `condition` element om op te geven of de resource is geïmplementeerd. De waarde voor dit element wordt omgezet in True of false. Als de waarde True is, wordt de resource gemaakt. Als de waarde False is, wordt de resource niet gemaakt. De waarde kan alleen worden toegepast op de hele resource.
+Soms moet u optioneel een resource implementeren in een Azure Resource Manager sjabloon (ARM-sjabloon). Gebruik het- `condition` element om op te geven of de resource is geïmplementeerd. De waarde voor dit element wordt omgezet in True of false. Als de waarde True is, wordt de resource gemaakt. Als de waarde False is, wordt de resource niet gemaakt. De waarde kan alleen worden toegepast op de hele resource.
 
 > [!NOTE]
 > Voorwaardelijke implementatie kan niet worden gecascaded op [onderliggende resources](child-resource-name-type.md). Als u een resource en de onderliggende resources voorwaardelijk wilt implementeren, moet u dezelfde voor waarde Toep assen op elk resource type.

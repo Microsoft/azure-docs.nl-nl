@@ -10,12 +10,12 @@ services: iot-edge
 ms.custom:
 - amqp
 - contperfq1
-ms.openlocfilehash: ae0c4c69cf500fb352cc889e068888084d1d8f8b
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: c39ce2bed63b6efb6224e0e27fdb1104ef7a5ec8
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92045955"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862391"
 ---
 # <a name="configure-an-iot-edge-device-to-communicate-through-a-proxy-server"></a>Een IoT Edge-apparaat configureren om te communiceren via een proxyserver
 
@@ -270,6 +270,12 @@ Als u de omgevings variabele **UpstreamProtocol** in het bestand config. yaml op
     }
 }
 ```
+
+## <a name="working-with-traffic-inspecting-proxies"></a>Werken met verkeer-proxy's inspecteren
+
+Als de proxy die u probeert te gebruiken, verkeer inspectie uitvoert op met TLS beveiligde verbindingen, is het belang rijk te weten dat verificatie met X. 509-certificaten niet werkt. IoT Edge een TLS-kanaal met de versleutelde end-to-end-verbinding tot stand brengen met het certificaat en de sleutel. Als dat kanaal is verbroken voor verkeers inspectie, kan de proxy het kanaal niet opnieuw instellen met de juiste referenties en IoT Hub en de IoT Hub Device Provisioning Service een `Unauthorized` fout retour neren.
+
+Als u een proxy wilt gebruiken die verkeer inspectie uitvoert, moet u verificatie van de Shared Access-hand tekening gebruiken of IoT Hub hebben en de IoT Hub Device Provisioning Service is toegevoegd aan een allowlist om inspectie te voor komen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

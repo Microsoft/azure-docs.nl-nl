@@ -3,12 +3,12 @@ title: Gereedheid van productie en aanbevolen procedures-Azure
 description: Dit artikel bevat richt lijnen voor het configureren en implementeren van de live video-analyse op IoT Edge module in productie omgevingen.
 ms.topic: conceptual
 ms.date: 04/27/2020
-ms.openlocfilehash: c34e05e184cfa6f0933701a76177fae3eed70c0a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 215427e3524861a842349b197668d92167960e5c
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87071929"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96906332"
 ---
 # <a name="production-readiness-and-best-practices"></a>Productiegereedheid en best practices
 
@@ -62,7 +62,7 @@ Vervolgens kunt u in het implementatie manifest de LOCAL_USER_ID en LOCAL_GROUP_
 
 De live video Analytics on IoT Edge-module vereist dat er bestanden naar het lokale bestands systeem kunnen worden geschreven wanneer:
 
-* Met behulp van een module dubbele eigenschap [[applicationDataDirectory](module-twin-configuration-schema.md#module-twin-properties)], waarin u een map in het lokale bestands systeem moet opgeven voor het opslaan van configuratie gegevens.
+* Het gebruik van een module dubbele eigenschap [`applicationDataDirectory`](module-twin-configuration-schema.md#module-twin-properties) , waarbij u een map in het lokale bestands systeem moet opgeven voor het opslaan van configuratie gegevens.
 * Als u een media grafiek wilt gebruiken om video op te nemen in de Cloud, vereist de module het gebruik van een map op het edge-apparaat als een cache (Zie [doorlopend video-opname](continuous-video-recording-concept.md) artikel voor meer informatie).
 * [Vastleggen in een lokaal bestand](event-based-video-recording-concept.md#video-recording-based-on-events-from-other-sources), waarbij u een bestandspad voor de opgenomen video moet opgeven.
 
@@ -124,7 +124,7 @@ Voor op gebeurtenissen gebaseerde video-opnames gegenereerde assets is het aanbe
 Als u meerdere exemplaren van dezelfde grafiek uitvoert, kunt u de naam van de grafiek topologie en de naam van het exemplaar gebruiken om onderscheid te maken. Zo kunt u de assetNamePattern op de Asset Sink als volgt instellen:
 
 ```
-"assetNamePattern": "sampleAssetFromEVR-${System.GraphTopologyName}-${System.GraphInstanceName} -${System.DateTime}"
+"assetNamePattern": "sampleAssetFromEVR-${System.GraphTopologyName}-${System.GraphInstanceName}-${System.DateTime}"
 ```
 
 Voor op gebeurtenissen gebaseerde video-opnames gegenereerde MP4 video clips aan de rand moet het aanbevolen naamgevings patroon DateTime bevatten en voor meerdere exemplaren van dezelfde grafiek wordt aanbevolen de systeem variabelen GraphTopologyName en GraphInstanceName te gebruiken. U kunt bijvoorbeeld filePathPattern op bestands Sink als volgt instellen: 

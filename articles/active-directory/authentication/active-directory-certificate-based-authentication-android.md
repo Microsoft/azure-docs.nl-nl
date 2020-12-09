@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: annaba
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd9f59dd75620f3a7b5c9142a4b8f73f75c5ee7b
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 1001d5524fe99783cda4d5b77bdaceacc6791848
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96744479"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861370"
 ---
 # <a name="azure-active-directory-certificate-based-authentication-on-android"></a>Verificatie op basis van certificaten op Android Azure Active Directory
 
@@ -67,7 +67,7 @@ Als best practice moet u de ADFS-fout pagina's van uw organisatie bijwerken met 
 Zie [de AD FS-aanmeldings pagina's aanpassen](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn280950(v=ws.11))voor meer informatie.
 
 Sommige Office-apps (waarvoor moderne verificatie is ingeschakeld) verzenden '*prompt = login*' naar Azure AD in de aanvraag. Standaard vertaalt Azure AD '*prompt = login*' in de aanvraag bij ADFS als '*wauth = usernamepassworduri*' (vraagt ADFS om u/P-verificatie te doen) en '*wfresh = 0*' (vraagt ADFS de SSO-status te negeren en een nieuwe verificatie uit te voeren). Als u verificatie op basis van certificaten voor deze apps wilt inschakelen, moet u het standaard gedrag van Azure AD wijzigen. Stel de *PromptLoginBehavior* in uw federatieve domein instellingen in op *uitgeschakeld*.
-U kunt de [MSOLDomainFederationSettings](/powershell/module/msonline/set-msoldomainfederationsettings?view=azureadps-1.0) -cmdlet gebruiken om deze taak uit te voeren:
+U kunt de [MSOLDomainFederationSettings](/powershell/module/msonline/set-msoldomainfederationsettings) -cmdlet gebruiken om deze taak uit te voeren:
 
 `Set-MSOLDomainFederationSettings -domainname <domain> -PromptLoginBehavior Disabled`
 

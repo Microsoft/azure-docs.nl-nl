@@ -8,39 +8,48 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 02/15/2018
 ms.author: dobett
-ms.openlocfilehash: 40c1fb314a2dea653740e7f87b5caa14c759fffb
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 1fd2b8461bd66c826dc4890c331b740c4703f896
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078218"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96903986"
 ---
 # <a name="frequently-asked-questions-for-iot-solution-accelerators"></a>Veelgestelde vragen over IoT-oplossingsversnellers
 
-Zie ook de [verbonden specifieke, vooraf](iot-accelerators-faq-cf.md) gevraagde en [specifieke veelgestelde vragen](iot-accelerators-faq-rm-v2.md) .
+Zie ook de [verbonden specifieke, vooraf gedefinieerde standaard Veelgestelde vragen](iot-accelerators-faq-cf.md).
 
 ### <a name="where-can-i-find-the-source-code-for-the-solution-accelerators"></a>Waar vind ik de bron code voor de oplossings Accelerators?
 
 De bron code wordt opgeslagen in de volgende GitHub-opslag plaatsen:
 
-* [Oplossings versneller voor externe controle (.NET)](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet)
-* [Oplossings versneller voor externe controle (Java)](https://github.com/Azure/azure-iot-pcs-remote-monitoring-java)
-* [Oplossings versneller voor voorspellend onderhoud](https://github.com/Azure/azure-iot-predictive-maintenance)
 * [Oplossings versneller Connected Factory](https://github.com/Azure/azure-iot-connected-factory)
+* [Versneller oplossing apparaat simulatie](https://github.com/Azure/device-simulation-dotnet)
+
+### <a name="where-can-i-find-the-remote-monitoring-and-predictive-maintenance-solution-accelerators"></a>Waar vind ik de oplossings versnellers voor controle op afstand en voorspellende onderhoud?
+
+Vanaf 10 december 2020 zijn de Accelerators voor controle op afstand en voor speld onderhoud verwijderd van de site met [accelerators van Azure IOT-oplossingen](https://www.azureiotsolutions.com/Accelerators) en zijn ze niet langer beschikbaar voor nieuwe implementaties. De GitHub-opslag plaatsen voor beide Accelerators zijn gearchiveerd. De code is nog steeds beschikbaar voor iedereen om toegang te krijgen, maar de opslag plaatsen nemen geen nieuwe bijdragen in rekening.
+
+### <a name="what-happens-to-my-existing-remote-monitoring-and-predictive-maintenance-deployments"></a>Wat gebeurt er met mijn bestaande externe bewakings-en voorspellende onderhouds implementaties?
+
+Bestaande implementaties worden niet beïnvloed door het verwijderen van de oplossings Accelerators voor externe controle en voorspellende onderhoud en blijven werken. Gevorkte opslag plaatsen worden ook niet beïnvloed. De hoofd opslagplaatsen op GitHub zijn gearchiveerd.
+
+### <a name="how-do-i-deploy-device-simulation-solution-accelerator"></a>De oplossings versneller voor het simuleren van apparaten Hoe kan ik?
+
+Zie de [device simulatie](https://github.com/Azure/device-simulation-dotnet/blob/master/README.md) github-opslag plaats voor het implementeren van de apparaat simulatie oplossings versneller.
+
+### <a name="where-can-i-find-information-about-the-removed-solution-accelerators"></a>Waar vind ik informatie over de verwijderde oplossings Accelerators?
+
+Zie de volgende pagina's op de site van de vorige versie:
+
+* [Externe bewaking](/previous-versions/azure/iot-accelerators/about-iot-accelerators)
+* [Voorspellend onderhoud](/previous-versions/azure/iot-accelerators/about-iot-accelerators)
 
 ### <a name="what-sdks-can-i-use-to-develop-device-clients-for-the-solution-accelerators"></a>Welke Sdk's kan ik gebruiken om apparaatclients te ontwikkelen voor de oplossings Accelerators?
 
 U vindt koppelingen naar de verschillende talen (C, .NET, Java, Node.js, python) IoT-apparaat-Sdk's in de [Microsoft Azure IOT sdk's](https://github.com/Azure/azure-iot-sdks) github-opslag plaatsen.
 
 Als u het DevKit-apparaat gebruikt, kunt u bronnen en voor beelden vinden in de DevKit-opslag plaats van [IOT](https://github.com/Microsoft/devkit-sdk) github.
-
-### <a name="is-the-new-microservices-architecture-available-for-all-the-three-solution-accelerators"></a>Is de nieuwe architectuur voor micro services beschikbaar voor alle drie oplossings Accelerators?
-
-Op dit moment gebruikt alleen de oplossing voor externe controle de architectuur van micro Services, aangezien deze het breedste scenario omvat.
-
-### <a name="what-advantages-does-the-new-open-sourced-microservices-based-architecture-provide-in-the-new-update"></a>Welke voor delen biedt de nieuwe open source-architectuur op basis van micro Services in de nieuwe update?
-
-In de afgelopen twee jaar is de Cloud architectuur aanzienlijk ontwikkeld. Micro Services zijn opgegroeid als een geweldig patroon voor schaal baarheid en flexibiliteit, zonder dat dit tot een betere ontwikkelings snelheid kan leiden. Dit architectuur patroon wordt intern in verschillende micro soft-Services gebruikt met uitstekende betrouw baarheid en schaal baarheid. Micro soft zet deze informatie in de praktijk in de oplossings accelerators, zodat klanten hiervan profiteren.
 
 ### <a name="im-a-service-administrator-and-id-like-to-change-the-directory-mapping-between-my-subscription-and-a-specific-azure-ad-tenant-how-do-i-complete-this-task"></a>Ik ben een service beheerder en ik wil de adreslijst toewijzing wijzigen tussen mijn abonnement en een specifieke Azure AD-Tenant. Wilt u deze taak Hoe kan ik volt ooien?
 
@@ -63,14 +72,6 @@ Bekijk het volgende diagram voor hulp:
 
 Als u zeker weet dat u een Azure-abonnement hebt, valideert u de Tenant toewijzing voor uw abonnement en controleert u of de juiste Tenant is geselecteerd in de vervolg keuzelijst. Als u de Tenant juist hebt gevalideerd, volgt u het voor gaande diagram en valideert u de toewijzing van uw abonnement en deze Azure AD-Tenant.
 
-### <a name="where-can-i-find-information-about-the-previous-version-of-the-remote-monitoring-solution"></a>Waar vind ik informatie over de vorige versie van de oplossing voor bewaking op afstand?
-
-De vorige versie van de oplossing voor controle op afstand van externe bewaking heette de IoT Suite vooraf geconfigureerde oplossing voor externe controle. U kunt de gearchiveerde documentatie vinden op [https://docs.microsoft.com/previous-versions/azure/iot-suite/](/previous-versions/azure/iot-suite/) .
-
-### <a name="is-the-new-solution-accelerator-available-in-the-same-geographic-region-as-the-existing-solution"></a>Is de nieuwe oplossings versneller beschikbaar in dezelfde geografische regio als de bestaande oplossing?
-
-Ja, de nieuwe controle op afstand is beschikbaar in dezelfde geografische regio's.
-
 ### <a name="whats-the-difference-between-deleting-a-resource-group-in-the-azure-portal-and-clicking-delete-on-a-solution-accelerator-in-azureiotsolutionscom"></a>Wat is het verschil tussen het verwijderen van een resource groep in de Azure Portal en het klikken op verwijderen in een oplossings versneller in azureiotsolutions.com?
 
 * Als u de oplossings versneller in [azureiotsolutions.com](https://www.azureiotsolutions.com/)verwijdert, verwijdert u alle resources die zijn geïmplementeerd tijdens het maken van de oplossings versneller. Als u extra resources aan de resource groep hebt toegevoegd, worden deze resources ook verwijderd.
@@ -88,10 +89,6 @@ U kunt standaard [10 IOT-hubs inrichten per abonnement](../azure-resource-manage
 
 50. U kunt een [ondersteunings ticket voor Azure](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade) maken om deze limiet te verhogen, maar standaard kunt u maxi maal 50 exemplaren van Cosmos DB per abonnement inrichten.
 
-### <a name="how-many-free-bing-maps-apis-can-i-provision-in-a-subscription"></a>Hoeveel gratis Bing Kaarten-API's kan ik inrichten met een abonnement?
-
-Twee. U kunt slechts twee interne trans actie Level 1 Bing Kaarten maken voor Enter prise-abonnementen in een Azure-abonnement. De oplossing voor controle op afstand wordt standaard ingericht met het abonnement voor interne trans acties niveau 1. Als gevolg hiervan kunt u Maxi maal twee externe bewakings oplossingen inrichten in een abonnement zonder wijzigingen.
-
 ### <a name="can-i-create-a-solution-accelerator-if-i-have-microsoft-azure-for-dreamspark"></a>Kan ik een oplossings versneller maken als ik Microsoft Azure heb voor DreamSpark?
 
 > [!NOTE]
@@ -107,7 +104,5 @@ Zie het blog bericht over het [verwijderen van een Azure AD-Tenant met](/archive
 
 U kunt ook enkele van de andere functies en mogelijkheden van de IoT-oplossingsversnellers bekijken:
 
-* [Bekijk de mogelijkheden van de oplossings versneller voor externe controle](quickstart-remote-monitoring-deploy.md)
-* [Overzicht van de oplossingsversneller Voorspeld onderhoud](./iot-accelerators-predictive-walkthrough.md)
 * [Connected Factory Solution Accelerator implementeren](quickstart-connected-factory-deploy.md)
 * [Fundamentele IoT-beveiliging](../iot-fundamentals/iot-security-ground-up.md)

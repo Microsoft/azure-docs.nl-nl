@@ -1,27 +1,27 @@
 ---
-title: Een gegevens bron maken voor een kaart | Microsoft Azure kaarten
+title: Een gegevens bron voor een kaart maken in Microsoft Azure Maps
 description: 'Meer informatie over het maken van een gegevens bron voor een kaart. Meer informatie over de gegevens bronnen die worden gebruikt door de Azure Maps Web-SDK: geojson-bronnen en vector tegels.'
 author: rbrundritt
 ms.author: richbrun
-ms.date: 08/08/2019
+ms.date: 12/07/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: codepen, devx-track-js
-ms.openlocfilehash: 9c82b74ffdc8672dc3d84a98a036c6083bc6c309
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: d09dddbceed773cd723897cc9730198b68be0ff7
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895916"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96903612"
 ---
 # <a name="create-a-data-source"></a>Een gegevensbron maken
 
 De Azure Maps Web-SDK slaat gegevens op in gegevens bronnen. Het gebruik van gegevens bronnen optimaliseert de gegevens bewerkingen voor het uitvoeren van query's en rendering. Er zijn momenteel twee soorten gegevens bronnen:
 
-- **GEOjson-bron** : Hiermee worden gegevens van onbewerkte locaties lokaal beheerd in geojson-indeling. Geschikt voor kleine tot middel grote gegevens sets (van honderden duizenden vormen).
-- **Vector tegel bron** : laadt gegevens die zijn opgemaakt als vector tegels voor de huidige kaart weergave, op basis van het Maps-systeem. Ideaal voor grote tot enorme gegevens sets (miljoenen of miljarden vormen).
+- **GEOjson-bron**: Hiermee worden gegevens van onbewerkte locaties lokaal beheerd in geojson-indeling. Geschikt voor kleine tot middel grote gegevens sets (van honderden duizenden vormen).
+- **Vector tegel bron**: laadt gegevens die zijn opgemaakt als vector tegels voor de huidige kaart weergave, op basis van het Maps-systeem. Ideaal voor grote tot enorme gegevens sets (miljoenen of miljarden vormen).
 
 ## <a name="geojson-data-source"></a>Geojson-gegevens bron
 
@@ -86,7 +86,7 @@ Azure Maps voldoet aan de [tegel specificatie Mapbox vector](https://github.com/
 - Details van [documentation](/rest/api/maps/renderv2/getmaptilepreview)de  |  [gegevens indeling](https://developer.tomtom.com/maps-api/maps-api-documentation-vector/tile) voor wegtegels in de documentatie
 - Details van [documentatie](/rest/api/maps/traffic/gettrafficincidenttile)voor verkeers incidenten  |  [gegevens indeling](https://developer.tomtom.com/traffic-api/traffic-api-documentation-traffic-incidents/vector-incident-tiles)
 - Details van [documentation](/rest/api/maps/traffic/gettrafficflowtile)de  |  [gegevens indeling](https://developer.tomtom.com/traffic-api/traffic-api-documentation-traffic-flow/vector-flow-tiles) van de verkeers stroom
-- Azure Maps Maker kunnen ook aangepaste vector tegels maken en openen via de [weer gave tegel ophalen v2](/rest/api/maps/renderv2/getmaptilepreview)
+- Met Azure Maps Creator (preview) kunnen aangepaste vector tegels worden gemaakt en geopend via de [weer gave tegel ophalen v2](/rest/api/maps/renderv2/getmaptilepreview)
 
 > [!TIP]
 > Wanneer u gebruikmaakt van vector-of raster afbeeldings tegels van de Azure Maps render-service met de Web-SDK, kunt u vervangen door `atlas.microsoft.com` de tijdelijke aanduiding `{azMapsDomain}` . Deze tijdelijke aanduiding wordt vervangen door het domein dat wordt gebruikt door de kaart en zal ook automatisch dezelfde verificatie gegevens toevoegen. Dit vereenvoudigt de verificatie met de render-service aanzienlijk wanneer u Azure Active Directory-verificatie gebruikt.
@@ -233,10 +233,10 @@ Raadpleeg de volgende artikelen voor meer code voorbeelden om toe te voegen aan 
 > [Gegevensgestuurde stijlexpressies gebruiken](data-driven-style-expressions-web-sdk.md)
 
 > [!div class="nextstepaction"]
-> [Een symbool laag toevoegen](map-add-pin.md)
+> [Een symboollaag toevoegen](map-add-pin.md)
 
 > [!div class="nextstepaction"]
-> [Een Bubble laag toevoegen](map-add-bubble-layer.md)
+> [Een bubbellaag toevoegen](map-add-bubble-layer.md)
 
 > [!div class="nextstepaction"]
 > [Een lijnlaag toevoegen](map-add-line-layer.md)

@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 07/27/2020
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: 022b6eb6595f25af4189d783a6a91031f95c7216
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 07a8d2b394e8ca690925c677af676643064a9ba8
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92479354"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96901827"
 ---
 # <a name="copy-data-from-amazon-s3-to-azure-storage-by-using-azcopy"></a>Gegevens van Amazon S3 naar Azure Storage kopiëren met behulp van AzCopy
 
@@ -38,13 +38,13 @@ Zie het artikel aan de [slag met AzCopy](storage-use-azcopy-v10.md) om AzCopy te
 
 ### <a name="authorize-with-aws-s3"></a>Autoriseren met AWS S3
 
-Verzamel uw AWS-toegangs sleutel en geheime toegangs sleutel en stel de volgende omgevings variabelen in:
+Verzamel uw AWS-toegangs sleutel en geheime toegangs sleutel en stel deze omgevings variabelen in:
 
 | Besturingssysteem | Opdracht  |
 |--------|-----------|
 | **Windows** | `set AWS_ACCESS_KEY_ID=<access-key>`<br>`set AWS_SECRET_ACCESS_KEY=<secret-access-key>` |
 | **Linux** | `export AWS_ACCESS_KEY_ID=<access-key>`<br>`export AWS_SECRET_ACCESS_KEY=<secret-access-key>` |
-| **macOS** | `export AWS_ACCESS_KEY_ID=<access-key>`<br>`export AWS_SECRET_ACCESS_KEY=<secret-access-key>`|
+| **MacOS** | `export AWS_ACCESS_KEY_ID=<access-key>`<br>`export AWS_SECRET_ACCESS_KEY=<secret-access-key>`|
 
 ## <a name="copy-objects-directories-and-buckets"></a>Objecten, directory's en buckets kopiëren
 
@@ -139,7 +139,7 @@ AWS S3 en Azure staan verschillende sets tekens toe aan de namen van object sleu
 
 Als onderdeel van een AzCopy `copy` -opdracht kunt u een waarde opgeven voor de optionele `s2s-handle-invalid-metadata` vlag waarmee wordt aangegeven hoe u bestanden wilt afhandelen waarin de meta gegevens van het bestand incompatibele sleutel namen bevatten. De volgende tabel beschrijft de waarde van elke vlag.
 
-| Vlag waarde | Beschrijving  |
+| Vlag waarde | Description  |
 |--------|-----------|
 | **ExcludeIfInvalid** | (Standaard optie) De meta gegevens zijn niet opgenomen in het overgezette object. AzCopy registreert een waarschuwing. |
 | **FailIfInvalid** | Objecten worden niet gekopieerd. AzCopy registreert een fout en bevat een fout in het aantal mislukte overzichten dat wordt weer gegeven in het overzicht van de overdracht.  |
@@ -155,10 +155,10 @@ AzCopy voert de volgende stappen uit:
 
 2. De teken reeks wordt `rename_` aan het begin van een nieuwe geldige sleutel toegevoegd.
 
-   Deze sleutel wordt gebruikt om de oorspronkelijke meta gegevens **waarde**op te slaan.
+   Deze sleutel wordt gebruikt om de oorspronkelijke meta gegevens **waarde** op te slaan.
 
 3. De teken reeks wordt `rename_key_` aan het begin van een nieuwe geldige sleutel toegevoegd.
-   Deze sleutel wordt gebruikt om de oorspronkelijke ongeldige **sleutel**van de meta gegevens op te slaan.
+   Deze sleutel wordt gebruikt om de oorspronkelijke ongeldige **sleutel** van de meta gegevens op te slaan.
    U kunt deze sleutel gebruiken om de meta gegevens in azure Side te herstellen omdat de meta gegevens sleutel wordt behouden als een waarde in de Blob Storage-service.
 
 ## <a name="next-steps"></a>Volgende stappen
@@ -167,8 +167,8 @@ Meer voor beelden vindt u in een van deze artikelen:
 
 - [Aan de slag met AzCopy](storage-use-azcopy-v10.md)
 
-- [Gegevens overdragen met AzCopy en blob-opslag](storage-use-azcopy-blobs.md)
+- [Gegevens overdragen](storage-use-azcopy-v10.md#transfer-data)
 
-- [Gegevens overdragen met AzCopy en bestandopslag](storage-use-azcopy-files.md)
+- [Gegevens overdragen met AzCopy en bestandsopslag](storage-use-azcopy-files.md)
 
 - [Configureren, optimaliseren en problemen oplossen in AzCopy](storage-use-azcopy-configure.md)

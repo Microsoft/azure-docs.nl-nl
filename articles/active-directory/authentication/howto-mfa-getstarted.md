@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 978f404aa9b99819460e46ea89df19d27431b8b8
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: c9ee81abd7cd0268a7cbd6b16aa6065ec7b54bef
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96743136"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861303"
 ---
 # <a name="plan-an-azure-ad-multi-factor-authentication-deployment"></a>Een Azure AD Multi-Factor Authentication-implementatie plannen
 
@@ -165,7 +165,7 @@ Met behulp van de volgende stappen kan een beleid voor voorwaardelijke toegang e
 2. Gebruik voorwaardelijke toegang voor het afdwingen van multi-factor Authentication voor deze groep voor toegang tot alle resources.
 3. Evalueer het groepslid maatschap regel matig en verwijder gebruikers die zijn geregistreerd bij de groep.
 
-U kunt geregistreerde en niet-geregistreerde Azure AD MFA-gebruikers identificeren met Power shell-opdrachten die afhankelijk zijn van de [MSOnline Power shell-module](/powershell/azure/active-directory/install-msonlinev1?view=azureadps-1.0).
+U kunt geregistreerde en niet-geregistreerde Azure AD MFA-gebruikers identificeren met Power shell-opdrachten die afhankelijk zijn van de [MSOnline Power shell-module](/powershell/azure/active-directory/install-msonlinev1).
 
 #### <a name="identify-registered-users"></a>Geregistreerde gebruikers identificeren
 
@@ -250,7 +250,7 @@ Het is belang rijk dat u niet per ongeluk uw Azure AD-Tenant kunt vergren delen.
     * Klik op **Selecteren**.
 1. Sla de **sessie** sectie over.
 1. Stel de wisselknop **Beleid inschakelen** in op **Aan**.
-1. Klik op **Maken**.
+1. Klik op **Create**.
 
 ## <a name="plan-integration-with-on-premises-systems"></a>Integratie met on-premises systemen plannen
 
@@ -357,7 +357,7 @@ Rapporten voor Azure AD MFA
 
 Azure AD Multi-Factor Authentication biedt rapporten via de Azure Portal:
 
-| Rapport | Locatie | Beschrijving |
+| Rapport | Locatie | Description |
 | --- | --- | --- |
 | Gebruiks-en fraude waarschuwingen | Aanmeldingen bij Azure AD-> | Bevat informatie over het algehele gebruik, de gebruikers samenvatting en de gebruikers gegevens. en een geschiedenis van fraude waarschuwingen die zijn ingediend tijdens het opgegeven datum bereik. |
 

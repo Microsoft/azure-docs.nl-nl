@@ -6,27 +6,31 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: palanis-MSFT
 ms.author: palanis
-ms.date: 12/04/2020
-ms.openlocfilehash: 7b335c3db5fb52c4323b797556d48e3ed9ae410a
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.date: 12/08/2020
+ms.openlocfilehash: b5001898fa18834ce7c04403de70879084df85f1
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96621617"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96904905"
 ---
-# <a name="co-sell-option-in-the-commercial-marketplace"></a>Optie voor co-sell in de commerciële Marketplace
+# <a name="co-sell-option-in-the-commercial-marketplace"></a>Optie voor collectieve verkoop in de commerciële marketplace
 
 Het is volledig optioneel om informatie op te geven over het tabblad **samen verkopen met micro soft** . Het is vereist om te kunnen profiteren van de voor bereidingen op de verkoop van [gemotiveerd en de status van het co-sell-object](https://aka.ms/CertificationPolicies#3000-requirements-for-co-sell-status). De gegevens die u verstrekt, worden door micro soft verkoop teams gebruikt om meer te weten te komen over uw aanbieding bij het evalueren van de geschiktheid voor klanten behoeften. Het is niet rechtstreeks beschikbaar voor klanten. Zie [co-sell with micro soft](https://partner.microsoft.com/membership/co-sell-with-microsoft)(Engelstalig) voor meer informatie.
 
-De optie voor co-selling in Partner Center is momenteel beschikbaar in de volgende aanbiedings typen.
+De optie voor co-sell in Partner Center is beschikbaar voor de volgende aanbiedings typen.
 
 - Azure Application
+- Azure-container
+- Virtuele Azure-machine
+- Consulting Service
 - Dynamics 365 voor klant betrokkenheid & PowerApps
-- Dynamics 365 for Operations
+- Dynamics 365 voor bewerkingen
 - Dynamics 365 Business Central
+- Module IoT Edge
+- Beheerde service
+- Power BI-app
 - Software as a Service (SaaS)
-
-Ondersteuning voor aanvullende aanbiedings typen wordt na verloop van tijd beschikbaar gesteld.
 
 ## <a name="listing"></a>Vermelding
 

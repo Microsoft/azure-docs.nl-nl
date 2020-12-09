@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2cdf89fa3281e070d6b1ac762d30d7c391f4126f
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: bf91c9e081bff9860153b342648fedc0990b68b9
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94963637"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96862054"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Machtigingen voor beheerrol in Azure Active Directory
 
@@ -67,14 +67,14 @@ Deze rol verleent ook de mogelijkheid om _toestemming_ te geven aan gedelegeerde
 
 Gebruikers met deze rol kunnen toepassings registraties maken wanneer de instelling ' gebruikers kunnen toepassingen registreren ' is ingesteld op Nee. Deze rol verleent ook toestemming om de toestemming te geven aan de hand van een eigen naam wanneer de instelling ' gebruikers kunnen toestemming geven voor het openen van Bedrijfs gegevens namens hun naam ' is ingesteld op Nee. Gebruikers die aan deze rol zijn toegewezen, worden toegevoegd als eigen aren bij het maken van nieuwe toepassings registraties of zakelijke toepassingen.
 
-### <a name="authentication-administrator"></a>[Verificatie beheerder](#authentication-administrator-permissions)
+### <a name="authentication-administrator"></a>[Verificatiebeheerder](#authentication-administrator-permissions)
 
 Gebruikers met deze rol kunnen referenties voor niet-wacht woord instellen of opnieuw instellen voor sommige gebruikers en kunnen wacht woorden voor alle gebruikers bijwerken. Verificatie beheerders kunnen vereisen dat gebruikers die niet-beheerders zijn of aan sommige rollen zijn toegewezen, zich opnieuw registreren bij bestaande referenties zonder wacht woord (bijvoorbeeld MFA of FIDO), en kunnen ook **MFA op het apparaat** intrekken, waarbij wordt gevraagd om MFA bij de volgende aanmelding. Deze acties gelden alleen voor gebruikers die niet-beheerders zijn of aan een of meer van de volgende rollen zijn toegewezen:
 
-* Verificatie beheerder
-* Adreslijst lezers
-* Gast uitnodiging
-* Berichten centrum-lezer
+* Verificatiebeheerder
+* Lezers van mappen
+* Afzender van gastuitnodigingen
+* Berichtencentrum-lezer
 * Rapportenlezer
 
 Met de rol [bevoorrechte verificatie beheerder](#privileged-authentication-administrator) kunt u de registratie en multi-factor Authentication afdwingen voor alle gebruikers.
@@ -94,18 +94,18 @@ Gebruikers met deze rol kunnen het Azure DevOps-beleid beheren om het maken van 
 
 Alle Azure DevOps-beleids regels voor ondernemingen kunnen worden beheerd door gebruikers met deze rol.
 
-### <a name="azure-information-protection-administrator"></a>[Azure Information Protection beheerder](#azure-information-protection-administrator-permissions)
+### <a name="azure-information-protection-administrator"></a>[Azure Information Protection-beheerder](#azure-information-protection-administrator-permissions)
 
 Gebruikers met deze rol hebben alle machtigingen in de Azure Information Protection-Service. Deze rol staat het configureren van labels toe voor het Azure Information Protection beleid, het beheren van beveiligings sjablonen en het activeren van de beveiliging. Met deze rol worden geen machtigingen verleend in Identity Protection Center, Privileged Identity Management, Microsoft 365 Service Health of Office 365 Security & compliance Center.
 
-### <a name="b2c-ief-keyset-administrator"></a>[B2C IEF sleutelsetcursor](#b2c-ief-keyset-administrator-permissions)
+### <a name="b2c-ief-keyset-administrator"></a>[Beheerder van B2C IEF-sleutelset](#b2c-ief-keyset-administrator-permissions)
 
 Gebruiker kan beleids sleutels en geheimen maken en beheren voor token versleuteling, token handtekeningen en claim versleuteling/ontsleuteling. Door nieuwe sleutels aan bestaande sleutel containers toe te voegen, kan deze beperkte beheerder geheimen naar behoefte overzetten zonder dat dit van invloed is op bestaande toepassingen. Deze gebruiker kan de volledige inhoud van deze geheimen en de verval datums bekijken, zelfs na het maken ervan.
 
 > [!IMPORTANT]
 > Dit is een gevoelige rol. De rol sleutelsetcursor moet zorgvuldig worden gecontroleerd en worden toegewezen tijdens de pre-productie en productie.
 
-### <a name="b2c-ief-policy-administrator"></a>[B2C IEF-beleids beheerder](#b2c-ief-policy-administrator-permissions)
+### <a name="b2c-ief-policy-administrator"></a>[Beheerder van B2C IEF-beleid](#b2c-ief-policy-administrator-permissions)
 
 Gebruikers met deze rol kunnen alle aangepaste beleids regels maken, lezen, bijwerken en verwijderen in Azure AD B2C en hebben daarom volledige controle over het Framework voor identiteits ervaring in de relevante Azure AD B2C organisatie. Door beleid te bewerken, kan deze gebruiker directe Federatie tot stand brengen met externe ID-providers, het Directory-schema wijzigen, alle gebruikers inhoud wijzigen (HTML, CSS, java script), de vereisten wijzigen voor het volt ooien van een verificatie, het maken van nieuwe gebruikers, het verzenden van gebruikers gegevens naar externe systemen, inclusief wacht woorden en telefoon nummers. Deze rol kan de versleutelings sleutels daarentegen niet wijzigen of de geheimen bewerken die worden gebruikt voor Federatie in de organisatie.
 
@@ -124,7 +124,7 @@ Gebruikers met deze rol hebben dezelfde machtigingen als de rol toepassings behe
 > Deze rol biedt de mogelijkheid om toepassings referenties te beheren. Gebruikers aan wie deze rol is toegewezen, kunnen referenties toevoegen aan een toepassing en deze referenties gebruiken om de identiteit van de toepassing te imiteren. Als de identiteit van de toepassing toegang heeft gekregen tot een resource, zoals de mogelijkheid om gebruikers of andere objecten te maken of bij te werken, kan een gebruiker die is toegewezen aan deze rol deze acties uitvoeren tijdens het imiteren van de toepassing. Deze mogelijkheid om de identiteit van de toepassing te imiteren, kan een uitbrei ding van bevoegdheden hebben ten opzichte van wat de gebruiker via hun roltoewijzingen kan doen. Het is belang rijk om te begrijpen dat het toewijzen van een gebruiker aan de rol van de Cloud toepassings beheerder de mogelijkheid biedt om de identiteit van een toepassing te imiteren.
 
 
-### <a name="cloud-device-administrator"></a>[Beheerder van Cloud apparaat](#cloud-device-administrator-permissions)
+### <a name="cloud-device-administrator"></a>[Cloudapparaatbeheerder](#cloud-device-administrator-permissions)
 
 Gebruikers met deze rol kunnen apparaten in azure AD inschakelen, uitschakelen en verwijderen en Windows 10 BitLocker-sleutels (indien aanwezig) in de Azure Portal lezen. De rol verleent geen machtigingen voor het beheren van andere eigenschappen op het apparaat.
 
@@ -142,7 +142,7 @@ In | Wel
 
 ### <a name="compliance-data-administrator"></a>[Beheerder voor nalevingsgegevens](#compliance-data-administrator-permissions)
 
-Gebruikers met deze rol hebben machtigingen voor het bijhouden van gegevens in het Microsoft 365 compliance Center, Microsoft 365 beheer centrum en Azure. Gebruikers kunnen ook nalevings gegevens volgen in het Exchange-beheer centrum, nalevings beheer en teams & het beheer centrum van Skype voor bedrijven en ondersteunings tickets maken voor Azure en Microsoft 365. [Deze documentatie](/microsoft-365/security/office-365-security/permissions-in-the-security-and-compliance-center?view=o365-worldwide#permissions-needed-to-use-features-in-the-security--compliance-center) bevat informatie over de verschillen tussen de beheerder van de naleving en de compatibiliteit van de gegevens.
+Gebruikers met deze rol hebben machtigingen voor het bijhouden van gegevens in het Microsoft 365 compliance Center, Microsoft 365 beheer centrum en Azure. Gebruikers kunnen ook nalevings gegevens volgen in het Exchange-beheer centrum, nalevings beheer en teams & het beheer centrum van Skype voor bedrijven en ondersteunings tickets maken voor Azure en Microsoft 365. [Deze documentatie](/microsoft-365/security/office-365-security/permissions-in-the-security-and-compliance-center#permissions-needed-to-use-features-in-the-security--compliance-center) bevat informatie over de verschillen tussen de beheerder van de naleving en de compatibiliteit van de gegevens.
 
 In | Wel
 ----- | ----------
@@ -160,7 +160,7 @@ Gebruikers met deze rol kunnen Azure Active Directory instellingen voor voorwaar
 
 Beheert [klanten-lockbox-aanvragen](/office365/admin/manage/customer-lockbox-requests) in uw organisatie. Ze ontvangen e-mail meldingen voor Klanten-lockbox aanvragen en kunnen aanvragen goed keuren en weigeren vanuit het Microsoft 365-beheer centrum. Ze kunnen ook de Klanten-lockbox functie in-of uitschakelen. Alleen globale beheerders kunnen de wacht woorden van personen die aan deze rol zijn toegewezen, opnieuw instellen.
 
-### <a name="desktop-analytics-administrator"></a>[Beheerder van Desktop Analytics](#desktop-analytics-administrator-permissions)
+### <a name="desktop-analytics-administrator"></a>[Desktop Analytics-beheerder](#desktop-analytics-administrator-permissions)
 
 
 Gebruikers met deze rol kunnen de bureau blad Analytics en de aanpassing van Office-&-beleids Services beheren. Voor desktop Analytics is dit onder andere de mogelijkheid om inventarisatie van assets te bekijken, implementatie plannen te maken, implementatie en status weer te geven. Voor Office Customization & Policy service kunnen gebruikers met deze rol Office-beleid beheren.
@@ -169,7 +169,7 @@ Gebruikers met deze rol kunnen de bureau blad Analytics en de aanpassing van Off
 
 Deze rol is alleen beschikbaar voor toewijzing als extra lokale beheerder in [Apparaatinstellingen](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/DevicesMenuBlade/DeviceSettings/menuId/). Gebruikers met deze rol worden lokale computer beheerders op alle Windows 10-apparaten die lid zijn van Azure Active Directory. Ze kunnen geen apparaten objecten in Azure Active Directory beheren.
 
-### <a name="directory-readers"></a>[Adreslijst lezers](#directory-readers-permissions)
+### <a name="directory-readers"></a>[Lezers van mappen](#directory-readers-permissions)
 
 Gebruikers met deze rol kunnen basis informatie over de Directory lezen. Deze rol moet worden gebruikt voor:
 
@@ -177,11 +177,11 @@ Gebruikers met deze rol kunnen basis informatie over de Directory lezen. Deze ro
 * Het verlenen van een specifieke set gebruikers die geen beheerder zijn, heeft toegang tot Azure Portal wanneer de toegang tot de Azure AD-Portal beperken tot beheerders alleen is ingesteld op Ja.
 * Verlenen van service-principals toegang tot Directory waarbij Directory. Read. all geen optie is.
 
-### <a name="directory-synchronization-accounts"></a>[Directory-synchronisatie accounts](#directory-synchronization-accounts-permissions)
+### <a name="directory-synchronization-accounts"></a>[Adreslijstsynchronisatieaccounts](#directory-synchronization-accounts-permissions)
 
 Niet gebruiken. Deze rol wordt automatisch toegewezen aan de Azure AD Connect-service en is niet bedoeld of wordt niet ondersteund voor andere gebruik.
 
-### <a name="directory-writers"></a>[Schrijvers van mappen](#directory-writers-permissions)
+### <a name="directory-writers"></a>[Adreslijstschrijvers](#directory-writers-permissions)
 Gebruikers met deze rol kunnen basis informatie van gebruikers, groepen en service-principals lezen en bijwerken. Wijs deze rol alleen toe aan toepassingen die het [toestemmings raamwerk](../develop/quickstart-register-app.md)niet ondersteunen. Het mag niet worden toegewezen aan gebruikers.
 
 ### <a name="dynamics-365-administrator--crm-administrator"></a>[Dynamics 365-beheerder/CRM-beheerder](#crm-service-administrator-permissions)
@@ -199,11 +199,11 @@ Gebruikers met deze rol hebben algemene machtigingen in micro soft Exchange Onli
 > In de Microsoft Graph-API en Azure AD Power shell wordt deze rol aangeduid als de Exchange-service beheerder. Het is ' Exchange Administrator ' in de [Azure Portal](https://portal.azure.com). Het is ' Exchange Online Administrator ' in het [Exchange-beheer centrum](https://go.microsoft.com/fwlink/p/?LinkID=529144).
 
 
-### <a name="external-id-user-flow-administrator"></a>[Externe ID gebruikers stroom beheerder](#external-id-user-flow-administrator-permissions)
+### <a name="external-id-user-flow-administrator"></a>[Beheerder van externe id-gebruikersstromen](#external-id-user-flow-administrator-permissions)
 
 Gebruikers met deze rol kunnen gebruikers stromen maken en beheren (ook wel ' ingebouwde ' beleid ' genoemd) in het Azure Portal. Deze gebruikers kunnen inhoud van HTML/CSS/java script aanpassen, MFA-vereisten wijzigen, claims selecteren in het token, API-connectors beheren en sessie-instellingen configureren voor alle gebruikers stromen in de Azure AD-organisatie. Aan de andere kant omvat deze rol niet de mogelijkheid om gebruikers gegevens te controleren of wijzigingen aan te brengen in de kenmerken die zijn opgenomen in het schema van de organisatie. Wijzigingen in Framework-beleids regels voor identiteiten (ook wel aangepast beleid genoemd) zijn ook buiten het bereik van deze rol.
 
-### <a name="external-id-user-flow-attribute-administrator"></a>[Externe ID gebruikers stroom kenmerk beheerder](#external-id-user-flow-attribute-administrator-permissions)
+### <a name="external-id-user-flow-attribute-administrator"></a>[Beheerder van externe id-gebruikersstroomkenmerken](#external-id-user-flow-attribute-administrator-permissions)
 
 Gebruikers met deze rol kunnen aangepaste kenmerken die beschikbaar zijn voor alle gebruikers stromen in de Azure AD-organisatie toevoegen of verwijderen. Als zodanig kunnen gebruikers met deze rol nieuwe elementen wijzigen of toevoegen aan het schema van de eind gebruiker en de invloed hebben op de werking van alle gebruikers stromen en indirect als gevolg van wijzigingen in welke gegevens kunnen worden gesteld aan eind gebruikers en uiteindelijk worden verzonden als claims naar toepassingen. Deze rol kan geen gebruikers stromen bewerken.
 
@@ -240,23 +240,23 @@ Gebruikers met deze rol kunnen instellingen en beheer informatie lezen over Micr
 > Deze functies zijn momenteel in ontwikkeling.
 >
 
-### <a name="groups-administrator"></a>[Groeps beheerder](#groups-administrator-permissions)
+### <a name="groups-administrator"></a>[Groepsbeheerder](#groups-administrator-permissions)
 
 Gebruikers met deze rol kunnen groepen en de bijbehorende instellingen maken/beheren, zoals het naamgevings-en verloop beleid. Het is belang rijk om te begrijpen dat het toewijzen van een gebruiker aan deze rol de mogelijkheid biedt om alle groepen in de organisatie te beheren in verschillende werk belastingen, zoals teams, share point, Yammer en Outlook. Daarnaast kan de gebruiker de verschillende groeps instellingen beheren voor verschillende beheerders portals, zoals micro soft-beheer centrum, Azure Portal, en werk belasting-specifieke taken als teams en share point-beheer centrums.
 
-### <a name="guest-inviter"></a>[Gast uitnodiging](#guest-inviter-permissions)
+### <a name="guest-inviter"></a>[Afzender van gastuitnodigingen](#guest-inviter-permissions)
 
 Gebruikers met deze rol kunnen uitnodigingen van Azure Active Directory B2B-gast gebruiker beheren wanneer de leden de gebruikers instelling **kunnen uitnodigen** is ingesteld op Nee. Meer informatie over B2B-samen werking bij de [samen werking met Azure AD B2B](../external-identities/what-is-b2b.md). Het bevat geen andere machtigingen.
 
-### <a name="helpdesk-administrator"></a>[Helpdesk beheerder](#helpdesk-administrator-permissions)
+### <a name="helpdesk-administrator"></a>[Helpdeskbeheerder](#helpdesk-administrator-permissions)
 
 Gebruikers met deze rol kunnen wacht woorden wijzigen, tokens voor vernieuwen ongeldig maken, service aanvragen beheren en de service status controleren. Wanneer een vernieuwings token ongeldig is, wordt de gebruiker gedwongen zich opnieuw aan te melden. Helpdesk beheerders kunnen wacht woorden opnieuw instellen en vernieuwings tokens van andere gebruikers die niet-beheerders zijn, alleen toewijzen aan de volgende rollen:
 
-* Adreslijst lezers
-* Gast uitnodiging
-* Helpdesk beheerder
-* Berichten centrum-lezer
-* Wachtwoord beheerder
+* Lezers van mappen
+* Afzender van gastuitnodigingen
+* Helpdeskbeheerder
+* Berichtencentrum-lezer
+* Wachtwoordbeheerder
 * Rapportenlezer
 
 > [!IMPORTANT]
@@ -272,14 +272,14 @@ Het overdragen van beheerders machtigingen via subsets van gebruikers en het Toe
 
 Deze rol heette voorheen ' Wachtwoord beheerder ' in de [Azure Portal](https://portal.azure.com/). De naam van de "helpdesk beheerder" in azure AD komt nu overeen met de naam in azure AD Power shell en de Microsoft Graph-API.
 
-### <a name="hybrid-identity-administrator"></a>[Hybride identiteits beheerder](#hybrid-identity-administrator-permissions)
+### <a name="hybrid-identity-administrator"></a>[Hybrid Identity-beheerder](#hybrid-identity-administrator-permissions)
 
 Gebruikers met deze rol kunnen configuratie-instellingen voor het inrichten van AD naar Azure AD maken, beheren en implementeren met behulp van Cloud inrichting en Federatie-instellingen beheren. Gebruikers kunnen ook logboeken met deze rol oplossen en controleren.  
 
 ### <a name="insights-administrator"></a>[Insights-beheerder](#insights-administrator-permissions)
 Gebruikers met deze rol hebben toegang tot de volledige set beheer mogelijkheden in de [M365 Insights-toepassing](https://go.microsoft.com/fwlink/?linkid=2129521). Deze rol heeft de mogelijkheid om mapgegevens te lezen, de service status te bewaken, tickets voor bestands ondersteuning en toegang te krijgen tot de aspecten van de Insights-beheer instellingen.
 
-### <a name="insights-business-leader"></a>[Zakelijke leider inzichten](#insights-business-leader-permissions)
+### <a name="insights-business-leader"></a>[Insights-bedrijfsleider](#insights-business-leader-permissions)
 Gebruikers met deze rol hebben toegang tot een set Dash boards en inzichten via de [M365 Insights-toepassing](https://go.microsoft.com/fwlink/?linkid=2129521). Dit omvat volledige toegang tot alle Dash boards en weer gegeven inzicht in de functionaliteit voor het verkennen van gegevens. Gebruikers met deze rol hebben geen toegang tot de configuratie-instellingen van het product. Dit is de verantwoordelijkheid van de rol Insights-beheerder.
 
 ### <a name="intune-administrator"></a>[InTune-beheerder](#intune-service-administrator-permissions)
@@ -295,19 +295,19 @@ Deze rol kan alle beveiligings groepen maken en beheren. De intune-beheerder hee
 
 Gebruikers met deze rol hebben algemene machtigingen voor het beheren van instellingen in micro soft Kaizala, wanneer de service aanwezig is, en de mogelijkheid om ondersteunings tickets te beheren en de service status te controleren. Daarnaast heeft de gebruiker toegang tot rapporten met betrekking tot de acceptatie & gebruik van Kaizala door organisatie leden en zakelijke rapporten die zijn gegenereerd met behulp van de Kaizala-acties.
 
-### <a name="license-administrator"></a>[Licentie beheerder](#license-administrator-permissions)
+### <a name="license-administrator"></a>[Licentiebeheerder](#license-administrator-permissions)
 
 Gebruikers met deze rol kunnen licentie toewijzingen toevoegen, verwijderen en bijwerken voor gebruikers, groepen (met behulp van groeps licenties) en de gebruiks locatie van gebruikers beheren. De rol biedt geen mogelijkheid om abonnementen te kopen of te beheren, groepen te maken of te beheren, of gebruikers te maken of te beheren buiten de gebruiks locatie. Deze rol heeft geen toegang voor het weer geven, maken of beheren van ondersteunings tickets.
 
-### <a name="message-center-privacy-reader"></a>[Berichten centrum-privacy-lezer](#message-center-privacy-reader-permissions)
+### <a name="message-center-privacy-reader"></a>[Berichtencentrum-privacylezer](#message-center-privacy-reader-permissions)
 
 Gebruikers met deze rol kunnen alle meldingen in het berichten centrum bewaken, inclusief gegevens privacy-berichten. Berichten centrum privacy lezers ontvangen e-mail meldingen met inbegrip van de privacy van gegevens en ze kunnen zich afmelden met behulp van de voor keuren voor berichten centrum. Alleen de globale beheerder en de privacy-lezer van het berichten centrum kunnen gegevens privacy-berichten lezen. Daarnaast bevat deze rol de mogelijkheid om groepen, domeinen en abonnementen weer te geven. Deze rol heeft geen machtiging om service aanvragen weer te geven, te maken of te beheren.
 
-### <a name="message-center-reader"></a>[Berichten centrum-lezer](#message-center-reader-permissions)
+### <a name="message-center-reader"></a>[Berichtencentrum-lezer](#message-center-reader-permissions)
 
 Gebruikers met deze rol kunnen meldingen en advies status updates in [berichten centrum](https://support.office.com/article/Message-center-in-Office-365-38FB3333-BFCC-4340-A37B-DEDA509C2093) bewaken voor hun organisatie over geconfigureerde services zoals Exchange, intune en micro soft teams. Berichten centrum lezers ontvangen wekelijkse e-mail samenvattingen van berichten, updates en kunnen berichten centrum berichten delen in Microsoft 365. In azure AD hebben gebruikers die aan deze rol zijn toegewezen alleen alleen-lezen toegang tot Azure AD-services zoals gebruikers en groepen. Deze rol heeft geen toegang voor het weer geven, maken of beheren van ondersteunings tickets.
 
-### <a name="modern-commerce-user"></a>[Moderne commerce gebruiker](#modern-commerce-user-permissions)
+### <a name="modern-commerce-user"></a>[Moderne Commerce-gebruiker](#modern-commerce-user-permissions)
 
 Niet gebruiken. Deze rol wordt automatisch toegewezen vanuit commerce en is niet bedoeld of wordt niet ondersteund voor andere gebruik. Zie hieronder voor meer informatie.
 
@@ -317,35 +317,35 @@ Gebruikers met de moderne commerce-gebruikersrol hebben doorgaans beheerders mac
 
 **Wanneer is de moderne commerce-gebruikersrol toegewezen?**
 
-* **Self-service aankopen in Microsoft 365-beheer centrum** : met self-service aankopen kunnen gebruikers nieuwe producten uitproberen door ze te kopen of zich zelf aan te melden. Deze producten worden beheerd in het beheer centrum. Gebruikers die een self-service aankoop doen, krijgen een rol in het commerce-systeem en de moderne commerce gebruikersrol, zodat ze hun aankopen kunnen beheren in het beheer centrum. Beheerders kunnen de inkopen van self-service (voor Power BI, Power apps, energie automatisering) blok keren via [Power shell](/microsoft-365/commerce/subscriptions/allowselfservicepurchase-powershell?view=o365-worldwide). Zie [Veelgestelde vragen over aankopen via self-service](/microsoft-365/commerce/subscriptions/self-service-purchase-faq?view=o365-worldwide) voor meer informatie.  
+* **Self-service aankopen in Microsoft 365-beheer centrum** : met self-service aankopen kunnen gebruikers nieuwe producten uitproberen door ze te kopen of zich zelf aan te melden. Deze producten worden beheerd in het beheer centrum. Gebruikers die een self-service aankoop doen, krijgen een rol in het commerce-systeem en de moderne commerce gebruikersrol, zodat ze hun aankopen kunnen beheren in het beheer centrum. Beheerders kunnen de inkopen van self-service (voor Power BI, Power apps, energie automatisering) blok keren via [Power shell](/microsoft-365/commerce/subscriptions/allowselfservicepurchase-powershell). Zie [Veelgestelde vragen over aankopen via self-service](/microsoft-365/commerce/subscriptions/self-service-purchase-faq) voor meer informatie.  
 * **Aankopen van micro soft Commercial Marketplace**  : net als bij self-service aankopen, wanneer een gebruiker een product of service koopt van Microsoft AppSource of Azure Marketplace, wordt de moderne commerce-gebruikersrol toegewezen als deze niet de rol van globale beheerder of facturerings beheerder hebben. In sommige gevallen kunnen gebruikers worden geblokkeerd voor het aanbrengen van deze aankopen. Zie [micro soft Commercial Marketplace](../../marketplace/marketplace-faq-publisher-guide.md#what-could-block-a-customer-from-completing-a-purchase)(Engelstalig) voor meer informatie.
 * **Voorst Ellen van micro soft**  : een voor stel is een formeel aanbod van micro soft voor uw organisatie om micro soft-producten en-services te kopen. Wanneer de persoon die het voor stel accepteert, geen globale beheerder of facturerings beheerdersrol heeft in azure AD, krijgen ze zowel een bedrijfsspecifieke rol toegewezen om het voor stel als de moderne commerce-gebruikersrol voor toegang tot het beheer centrum te volt ooien. Wanneer ze toegang krijgen tot het beheer centrum, kunnen ze alleen functies gebruiken die zijn geautoriseerd door hun specifieke commerce rol.
 * **Commerce-specifieke rollen** : aan sommige gebruikers worden commerce-specifieke rollen toegewezen. Als een gebruiker geen globale of facturerings beheerder is, krijgen ze de moderne commerce-gebruikersrol, zodat ze toegang hebben tot het beheer centrum.  
 
 Als de moderne commerce-gebruikersrol niet is toegewezen aan een gebruiker, verliest deze toegang tot Microsoft 365-beheer centrum. Als ze producten voor zichzelf of voor uw organisatie beheren, kunnen ze deze niet beheren. Dit kunnen bijvoorbeeld het toewijzen van licenties zijn, het wijzigen van de betalings methoden, het betalen van facturen of andere taken voor het beheren van abonnementen.
 
-### <a name="network-administrator"></a>[Netwerk beheerder](#network-administrator-permissions)
+### <a name="network-administrator"></a>[Netwerkbeheerder](#network-administrator-permissions)
 
 Gebruikers met deze rol kunnen aanbevelingen van de netwerk architectuur beoordelen van micro soft die zijn gebaseerd op telemetrie van het netwerk vanaf hun gebruikers locaties. De netwerk prestaties voor Microsoft 365 zijn gebaseerd op een zorgvuldige netwerk verbindings architectuur van het bedrijf, die doorgaans specifiek is voor de gebruiker. Deze rol staat het bewerken van gedetecteerde gebruikers locaties en configuratie van netwerk parameters voor die locaties toe om verbeterde telemetriegegevens en ontwerp aanbevelingen te vergemakkelijken.
-### <a name="office-apps-administrator"></a>[Office-Apps beheerder](#office-apps-administrator-permissions)
+### <a name="office-apps-administrator"></a>[Beheerder van Office-apps](#office-apps-administrator-permissions)
 
 Gebruikers met deze rol kunnen Cloud instellingen van Microsoft 365-apps beheren. Dit omvat het beheer van Cloud beleid, self-service Download beheer en de mogelijkheid om aan Office-apps gerelateerde rapporten weer te geven. Deze rol biedt daarnaast de mogelijkheid om ondersteunings tickets te beheren en de service status in het hoofd beheer centrum te bewaken. Gebruikers die aan deze rol zijn toegewezen, kunnen ook de communicatie van nieuwe functies in Office-apps beheren. 
 
-### <a name="partner-tier1-support"></a>[Ondersteuning voor partner Tier1](#partner-tier1-support-permissions)
+### <a name="partner-tier1-support"></a>[Laag1-ondersteuning voor partner](#partner-tier1-support-permissions)
 
 Niet gebruiken. Deze rol is afgeschaft en wordt in de toekomst verwijderd uit Azure AD. Deze rol is bedoeld voor gebruik door een klein aantal micro soft-verkoop partners en is niet bedoeld voor algemeen gebruik.
 
-### <a name="partner-tier2-support"></a>[Ondersteuning voor partner Tier2](#partner-tier2-support-permissions)
+### <a name="partner-tier2-support"></a>[Laag2-ondersteuning voor partner](#partner-tier2-support-permissions)
 
 Niet gebruiken. Deze rol is afgeschaft en wordt in de toekomst verwijderd uit Azure AD. Deze rol is bedoeld voor gebruik door een klein aantal micro soft-verkoop partners en is niet bedoeld voor algemeen gebruik.
 
-### <a name="password-administrator"></a>[Wachtwoord beheerder](#password-administrator-permissions)
+### <a name="password-administrator"></a>[Wachtwoordbeheerder](#password-administrator-permissions)
 
 Gebruikers met deze rol hebben beperkte mogelijkheden voor het beheren van wacht woorden. Deze rol biedt geen mogelijkheid om service aanvragen te beheren of de service status te controleren. Wachtwoord beheerders kunnen wacht woorden van andere gebruikers die niet-beheerders zijn of alleen leden van de volgende rollen opnieuw instellen:
 
-* Adreslijst lezers
-* Gast uitnodiging
-* Wachtwoord beheerder
+* Lezers van mappen
+* Afzender van gastuitnodigingen
+* Wachtwoordbeheerder
 
 ### <a name="power-bi-administrator"></a>[Power BI beheerder](#power-bi-service-administrator-permissions)
 
@@ -354,29 +354,29 @@ Gebruikers met deze rol hebben algemene machtigingen in micro soft Power BI, wan
 > [!NOTE]
 > In de Microsoft Graph-API en Azure AD Power shell wordt deze rol aangeduid als Power BI-service beheerder. Het is ' Power BI Administrator ' in de [Azure Portal](https://portal.azure.com).
 
-### <a name="power-platform-administrator"></a>[Power platform-beheerder](#power-platform-administrator-permissions)
+### <a name="power-platform-administrator"></a>[Power Platform-beheerder](#power-platform-administrator-permissions)
 
 Gebruikers met deze rol kunnen alle aspecten van omgevingen, PowerApps, stromen en beleids regels voor preventie van gegevens verlies maken en beheren. Daarnaast hebben gebruikers met deze rol de mogelijkheid om ondersteunings tickets te beheren en de service status te controleren.
 
-### <a name="printer-administrator"></a>[Printer beheerder](#printer-administrator-permissions)
+### <a name="printer-administrator"></a>[Printerbeheerder](#printer-administrator-permissions)
 
 Gebruikers met deze rol kunnen printers registreren en alle aspecten van alle printer configuraties in de universele afdruk oplossing van micro soft beheren, met inbegrip van de instellingen voor de universele afdruk connector. Ze kunnen toestemming geven voor alle gedelegeerde afdruk machtigings aanvragen. Printer beheerders hebben ook toegang tot het afdrukken van rapporten.
 
-### <a name="printer-technician"></a>[Printer technicus](#printer-technician-permissions)
+### <a name="printer-technician"></a>[Printertechnicus](#printer-technician-permissions)
 
 Gebruikers met deze rol kunnen printers registreren en de printer status beheren in de micro soft Universal Print-oplossing. Ze kunnen ook alle connector gegevens lezen. Sleutel taak een printer technicus kan geen gebruikers machtigingen voor printers instellen en printers delen.
 
-### <a name="privileged-authentication-administrator"></a>[Beheerder voor geprivilegieerde authenticatie](#privileged-authentication-administrator-permissions)
+### <a name="privileged-authentication-administrator"></a>[Bevoorrechte verificatiebeheerder](#privileged-authentication-administrator-permissions)
 
 Gebruikers met deze rol kunnen referenties voor niet-wacht woord instellen of opnieuw instellen voor alle gebruikers, met inbegrip van globale beheerders, en kunnen wacht woorden voor alle gebruikers bijwerken. Bevoegde authenticatie beheerders kunnen gebruikers dwingen om zich opnieuw te registreren bij bestaande niet-wachtwoord referenties (zoals MFA of FIDO) en ' MFA onthouden op het apparaat ' in te trekken bij de volgende aanmelding van alle gebruikers. De rol [verificatie beheerder](#authentication-administrator) kan opnieuw registreren en MFA afdwingen voor alleen niet-beheerders en gebruikers die zijn toegewezen aan de volgende Azure AD-rollen:
 
-* Verificatie beheerder
-* Adreslijst lezers
-* Gast uitnodiging
-* Berichten centrum-lezer
+* Verificatiebeheerder
+* Lezers van mappen
+* Afzender van gastuitnodigingen
+* Berichtencentrum-lezer
 * Rapportenlezer
 
-### <a name="privileged-role-administrator"></a>[Beheerder van geprivilegieerde rol](#privileged-role-administrator-permissions)
+### <a name="privileged-role-administrator"></a>[Beheerder voor bevoorrechte rollen](#privileged-role-administrator-permissions)
 
 Gebruikers met deze rol kunnen roltoewijzingen in Azure Active Directory beheren, en in Azure AD Privileged Identity Management. Ze kunnen groepen maken en beheren die kunnen worden toegewezen aan Azure AD-rollen. Daarnaast kunt u met deze rol alle aspecten van Privileged Identity Management en administratieve eenheden beheren.
 
@@ -387,11 +387,11 @@ Gebruikers met deze rol kunnen roltoewijzingen in Azure Active Directory beheren
 
 Gebruikers met deze rol kunnen gegevens over gebruiks rapportage en het dash board rapporten weer geven in Microsoft 365 beheer centrum en het pakket voor de acceptatie context in Power BI. Daarnaast biedt de rol toegang tot aanmeldings rapporten en activiteiten in azure AD en gegevens die zijn geretourneerd door de Microsoft Graph rapportage-API. Een gebruiker die is toegewezen aan de rol van de rapport lezer heeft alleen toegang tot de metrische gegevens over het gebruik en de juiste aanneming. Ze hebben geen beheerders machtigingen om instellingen te configureren of om toegang te krijgen tot de productspecifieke beheer centra zoals Exchange. Deze rol heeft geen toegang voor het weer geven, maken of beheren van ondersteunings tickets.
 
-### <a name="search-administrator"></a>[Beheerder zoeken](#search-administrator-permissions)
+### <a name="search-administrator"></a>[Zoekbeheerder](#search-administrator-permissions)
 
 Gebruikers met deze rol hebben volledige toegang tot alle micro soft Search-beheer functies in het Microsoft 365-beheer centrum. Daarnaast kunnen deze gebruikers het berichten centrum bekijken, service status bewaken en service aanvragen maken.
 
-### <a name="search-editor"></a>[Zoek editor](#search-editor-permissions)
+### <a name="search-editor"></a>[Zoekredacteur](#search-editor-permissions)
 
 Gebruikers met deze rol kunnen inhoud voor micro soft Search maken, beheren en verwijderen in het beheer centrum van Microsoft 365, waaronder blad wijzers, Q&als en locaties.
 
@@ -445,7 +445,7 @@ Windows Defender ATP en EDR | Waarschuwingen weer geven en onderzoeken. Wanneer 
 [Azure Security Center](../../key-vault/managed-hsm/built-in-roles.md) | Kan aanbevelingen en waarschuwingen weer geven, beveiligings beleid weer geven, beveiligings status weer geven, maar kan geen wijzigingen aanbrengen
 [Status van Microsoft 365-service](/office365/enterprise/view-service-health) | De status van Microsoft 365 services weer geven
 
-### <a name="service-support-administrator"></a>[Ondersteunings beheerder voor service](#service-support-administrator-permissions)
+### <a name="service-support-administrator"></a>[Serviceondersteuningsbeheerder](#service-support-administrator-permissions)
 
 Gebruikers met deze rol kunnen ondersteunings aanvragen openen met micro soft voor Azure en Microsoft 365 Services, en het service dashboard en berichten centrum weer geven in de [Azure Portal](https://portal.azure.com) en [Microsoft 365 beheer centrum](https://admin.microsoft.com). Meer informatie [over beheerders rollen](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
 
@@ -469,23 +469,23 @@ Gebruikers met deze rol hebben algemene machtigingen in micro soft Skype voor be
 > [!NOTE]
 > In de Microsoft Graph-API en Azure AD Power shell wordt deze rol aangeduid als Lync-service beheerder. Het is "Skype voor bedrijven-beheerder" in de [Azure Portal](https://portal.azure.com/).
 
-### <a name="teams-communications-administrator"></a>[Teams communicatie beheerder](#teams-communications-administrator-permissions)
+### <a name="teams-communications-administrator"></a>[Teams-communicatiebeheerder](#teams-communications-administrator-permissions)
 
 Gebruikers met deze rol kunnen aspecten van de werk belasting van micro soft teams beheren die betrekking hebben op spraak & telefonie. Dit omvat de beheer hulpprogramma's voor telefoon nummer toewijzing, spraak-en Vergader beleid en volledige toegang tot de Call Analytics-hulp programmaset.
 
-### <a name="teams-communications-support-engineer"></a>[Mede werker communicatie technicus voor teams](#teams-communications-support-engineer-permissions)
+### <a name="teams-communications-support-engineer"></a>[Ondersteuningstechnicus voor Teams-communicatie](#teams-communications-support-engineer-permissions)
 
 Gebruikers met deze rol kunnen communicatie problemen in micro soft-teams oplossen & Skype voor bedrijven met behulp van de hulp middelen voor het oplossen van problemen met gebruikers aanroepen in het micro soft teams & Skype voor bedrijven-beheer centrum. Gebruikers met deze rol kunnen volledige informatie over de oproep record voor alle betrokken deel nemers weer geven. Deze rol heeft geen toegang voor het weer geven, maken of beheren van ondersteunings tickets.
 
-### <a name="teams-communications-support-specialist"></a>[Specialist communicatie ondersteuning teams](#teams-communications-support-specialist-permissions)
+### <a name="teams-communications-support-specialist"></a>[Ondersteuningsspecialist voor Teams-communicatie](#teams-communications-support-specialist-permissions)
 
 Gebruikers met deze rol kunnen communicatie problemen in micro soft-teams oplossen & Skype voor bedrijven met behulp van de hulp middelen voor het oplossen van problemen met gebruikers aanroepen in het micro soft teams & Skype voor bedrijven-beheer centrum. Gebruikers met deze rol kunnen alleen gebruikers details weer geven in de aanroep voor de specifieke gebruiker die ze hebben gezocht. Deze rol heeft geen toegang voor het weer geven, maken of beheren van ondersteunings tickets.
 
-### <a name="teams-devices-administrator"></a>[Team apparaten-beheerder](#teams-devices-administrator-permissions)
+### <a name="teams-devices-administrator"></a>[Teams-apparaatbeheerder](#teams-devices-administrator-permissions)
 
 Gebruikers met deze rol kunnen [teams met gecertificeerde apparaten](https://www.microsoft.com/microsoft-365/microsoft-teams/across-devices/devices) beheren vanuit het teams beheer centrum. Met deze rol kunnen alle apparaten in één oogopslag worden weer gegeven, met de mogelijkheid om apparaten te zoeken en te filteren. De gebruiker kan de details van elk apparaat controleren, inclusief het aangemelde account, het merk en het model van het apparaat. De gebruiker kan de instellingen op het apparaat wijzigen en de software versies bijwerken. Deze rol verleent geen machtigingen om de activiteit teams te controleren en de kwaliteit van het apparaat aan te roepen. 
 
-### <a name="teams-service-administrator"></a>[Teams service-beheerder](#teams-service-administrator-permissions)
+### <a name="teams-service-administrator"></a>[Teams-servicebeheerder](#teams-service-administrator-permissions)
 
 Gebruikers met deze rol kunnen alle aspecten van de werk belasting van micro soft teams beheren via micro soft teams & het beheer centrum van Skype voor bedrijven en de respectieve Power shell-modules. Dit omvat onder andere alle beheer hulpprogramma's die betrekking hebben op telefonie, berichten, vergaderingen en de teams zelf. Met deze rol verleent u ook de mogelijkheid om alle Microsoft 365 groepen te maken en beheren, ondersteunings tickets te beheren en de service status te controleren.
 
@@ -497,7 +497,7 @@ Gebruikers met deze rol kunnen gebruikers maken en alle aspecten van gebruikers 
 | --- | --- |
 |Algemene machtigingen|<p>Gebruikers en groepen maken</p><p>Gebruikersweergaven maken en beheren</p><p>Office-ondersteunings tickets beheren<p>Verloop beleid voor wacht woorden bijwerken|
 | <p>Voor alle gebruikers, inclusief alle beheerders</p>|<p>Licenties beheren</p><p>Alle gebruikers eigenschappen beheren, met uitzonde ring van Principal-naam van gebruiker</p>
-| Alleen voor gebruikers die niet-beheerders zijn of in een van de volgende beperkte beheerders rollen:<ul><li>Adreslijst lezers<li>Groeps beheerder<li>Gast uitnodiging<li>Helpdesk beheerder<li>Berichten centrum-lezer<li>Wachtwoord beheerder<li>Rapportenlezer<li>Gebruikersbeheerder|<p>Verwijderen en herstellen</p><p>Uitschakelen en inschakelen</p><p>Vernieuwings tokens ongeldig maken</p><p>Alle gebruikers eigenschappen beheren, met inbegrip van Principal-naam van gebruiker</p><p>Wachtwoord opnieuw instellen</p><p>Apparaatinstellingen bijwerken (FIDO)</p>|
+| Alleen voor gebruikers die niet-beheerders zijn of in een van de volgende beperkte beheerders rollen:<ul><li>Lezers van mappen<li>Groepsbeheerder<li>Afzender van gastuitnodigingen<li>Helpdeskbeheerder<li>Berichtencentrum-lezer<li>Wachtwoordbeheerder<li>Rapportenlezer<li>Gebruikersbeheerder|<p>Verwijderen en herstellen</p><p>Uitschakelen en inschakelen</p><p>Vernieuwings tokens ongeldig maken</p><p>Alle gebruikers eigenschappen beheren, met inbegrip van Principal-naam van gebruiker</p><p>Wachtwoord opnieuw instellen</p><p>Apparaatinstellingen bijwerken (FIDO)</p>|
 
 > [!IMPORTANT]
 > Gebruikers met deze rol kunnen wacht woorden wijzigen voor personen die mogelijk toegang hebben tot gevoelige of persoonlijke informatie of een kritieke configuratie binnen en buiten Azure Active Directory. Het wijzigen van het wacht woord van een gebruiker kan betekenen dat de identiteit en machtigingen van de gebruiker worden aangenomen. Bijvoorbeeld:
@@ -1904,72 +1904,72 @@ Grafiek weergave naam | Weergave naam Azure Portal | directoryRoleTemplateId
 ----------------- | ------------------------- | -------------------------
 Toepassingsbeheerder | Toepassings beheerder | 9B895D92-2CD3-44C7-9D02-A6AC2D5EA5C3
 Toepassingsontwikkelaar | Toepassingsontwikkelaar | CF1C38E5-3621-4004-A7CB-879624DCED7C
-Verificatie beheerder | Verificatie beheerder | c4e39bd9-1100-46d3-8c65-fb160da0071f
+Verificatiebeheerder | Verificatie beheerder | c4e39bd9-1100-46d3-8c65-fb160da0071f
 Azure DevOps-beheerder | Azure DevOps-beheerder | e3973bdf-4987-49ae-837a-ba8e231c7286
-Azure Information Protection beheerder | Azure Information Protection beheerder | 7495fdc4-34c4-4d15-a289-98788ce399fd
-B2C IEF sleutelsetcursor | B2C IEF sleutelsetcursor | aaf43236-0c0d-4d5f-883a-6955382ac081
-B2C IEF-beleids beheerder | B2C IEF-beleids beheerder | 3edaf663-341e-4475-9f94-5c398ef6c070
+Azure Information Protection-beheerder | Azure Information Protection beheerder | 7495fdc4-34c4-4d15-a289-98788ce399fd
+Beheerder van B2C IEF-sleutelset | Beheerder van B2C IEF-sleutelset | aaf43236-0c0d-4d5f-883a-6955382ac081
+Beheerder van B2C IEF-beleid | Beheerder van B2C IEF-beleid | 3edaf663-341e-4475-9f94-5c398ef6c070
 Factureringsbeheerder | Factureringsbeheerder | b0f54661-2d74-4c50-afa3-1ec803f12efe
 Beheerder van de cloudtoepassing | Beheerder van de Cloud toepassing | 158c047a-c907-4556-b7ef-446551a6b5f7
-Beheerder van Cloud apparaat | Beheerder van Cloud apparaat | 7698a772-787b-4ac8-901f-60d6b08affd2
+Cloudapparaatbeheerder | Beheerder van Cloud apparaat | 7698a772-787b-4ac8-901f-60d6b08affd2
 Company Administratoristrain opr | Globale beheerder | 62e90394-69f5-4237-9190-012177145e10
 Beheerder voor naleving | Beheerder voor naleving | 17315797-102d-40b4-93e0-432062caca18
 Beheerder voor nalevingsgegevens | Beheerder van nalevings gegevens | e6d1a23a-da11-4be4-9570-befc86d067a7
 Beheerder van voorwaardelijke toegang | Beheerder van voorwaardelijke toegang | b1be1c3e-b65d-4f19-8427-f6fa0d97feb9
-CRM Service-beheerder | Dynamics 365-beheerder | 44367163-eba1-44c3-98af-f5787879f96a
-Toegangs fiatteur voor klanten-LockBox | Klanten-lockbox Access-fiatteur | 5c4f9dcd-47dc-4cf7-8c9a-9e4207cbfc91
-Beheerder van Desktop Analytics | Beheerder van Desktop Analytics | 38a96431-2bdf-4b4c-8b6e-5d3d8abac1a4
+CRM-servicebeheerder | Dynamics 365-beheerder | 44367163-eba1-44c3-98af-f5787879f96a
+Toegangsfiatteur voor Klanten-lockbox | Klanten-lockbox Access-fiatteur | 5c4f9dcd-47dc-4cf7-8c9a-9e4207cbfc91
+Desktop Analytics-beheerder | Desktop Analytics-beheerder | 38a96431-2bdf-4b4c-8b6e-5d3d8abac1a4
 Apparaatbeheerders | Beheerders van apparaten | 9f06204d-73c1-4d4c-880a-6edb90606fd8
 Apparaat toevoegen | Afgeschaft | 9c094953-4995-41c8-84c8-3ebb9b32c93f
 Apparaatbeheer | Afgeschaft | 2b499bcd-da44-4968-8aec-78e1674fa64d
 Gebruikers van het apparaat | Afgeschaft | d405c6df-0af8-4e3b-95e4-4d06e542189e
-Adreslijst lezers | Adreslijst lezers | 88d8e3e3-8f55-4a1e-953a-9b9898b8876b
-Directory-synchronisatie accounts | Niet weer gegeven omdat deze niet mag worden gebruikt | d29b2b05-8046-44ba-8758-1e26182fcf32
-Schrijvers van mappen | Schrijvers van mappen | 9360feb5-f418-4baa-8175-e2a00bac4301
-Exchange service-beheerder | Exchange-beheerder | 29232cdf-9323-42fd-ade2-1d097af3e4de
+Lezers van mappen | Adreslijst lezers | 88d8e3e3-8f55-4a1e-953a-9b9898b8876b
+Adreslijstsynchronisatieaccounts | Niet weer gegeven omdat deze niet mag worden gebruikt | d29b2b05-8046-44ba-8758-1e26182fcf32
+Adreslijstschrijvers | Adreslijstschrijvers | 9360feb5-f418-4baa-8175-e2a00bac4301
+Exchange-servicebeheerder | Exchange-beheerder | 29232cdf-9323-42fd-ade2-1d097af3e4de
 Externe ID gebruikers stroom beheerder | Externe ID gebruikers stroom beheerder | 6e591065-9bad-43ed-90f3-e9424366d2f0
 Externe ID gebruikers stroom kenmerk beheerder | Externe ID gebruikers stroom kenmerk beheerder | 0f971eea-41eb-4569-a71e-57bb8a3eff1e
-Beheerder van externe ID-provider | Beheerder van externe ID-provider | be2f45a1-457d-42af-a067-6ec1fa63bc45
+Beheerder van externe id-providers | Beheerder van externe id-providers | be2f45a1-457d-42af-a067-6ec1fa63bc45
 Algemene lezer | Algemene lezer | f2ef992c-3afb-46b9-b7cf-a126ee74c451
-Groeps beheerder | Groeps beheerder | fdd7a751-b60b-444a-984c-02652fe8fa1c 
-Gast uitnodiging | Gast uitnodiging | 95e79109-95c0-4d8e-aee3-d01accf2d47b
-Helpdesk beheerder | Helpdesk beheerder | 729827e3-9c14-49f7-bb1b-9608f156bbb8
-Hybride identiteits beheerder | Hybride identiteits beheerder | 8ac3fc64-6eca-42ea-9e69-59f4c7b60eb2
+Groepsbeheerder | Groeps beheerder | fdd7a751-b60b-444a-984c-02652fe8fa1c 
+Afzender van gastuitnodigingen | Gast uitnodiging | 95e79109-95c0-4d8e-aee3-d01accf2d47b
+Helpdeskbeheerder | Helpdesk beheerder | 729827e3-9c14-49f7-bb1b-9608f156bbb8
+Hybrid Identity-beheerder | Hybride identiteits beheerder | 8ac3fc64-6eca-42ea-9e69-59f4c7b60eb2
 Insights-beheerder | Insights-beheerder | eb1f4a8d-243a-41f0-9fbd-c7cdf6c5ef7c
-Zakelijke leider inzichten | Zakelijke leider inzichten | 31e939ad-9672-4796-9c2e-873181342d2d
+Insights-bedrijfsleider | Zakelijke leider inzichten | 31e939ad-9672-4796-9c2e-873181342d2d
 Intune-servicebeheerder | Intune-beheerder | 3a2c62db-5318-420d-8d74-23affee5d9d5
 Kaizala-beheerder | Kaizala-beheerder | 74ef975b-6605-40af-a5d2-b9539d836353
-Licentie beheerder | Licentiebeheerder | 4d6ac14f-3453-41d0-bef9-a3e0c569773a
-Lync-service beheerder | Skype voor Bedrijven-beheerder | 75941009-915a-4869-abe7-691bff18279e
-Berichten centrum-privacy-lezer | Berichten centrum-privacy-lezer | ac16e43d-7b2d-40e0-ac05-243ff356ab5b
-Berichten centrum-lezer | Berichten centrum-lezer | 790c1fb9-7f7d-4f88-86a1-ef1f95c05c1b
-Moderne commerce gebruiker | Moderne commerce gebruiker | d24aef57-1500-4070-84db-2666f29cf966
-Netwerk beheerder | Netwerk beheerder | d37c8bed-0711-4417-ba38-b4abe66ce4c2
-Office-Apps beheerder | Office-Apps beheerder | 2b745bdf-0803-4d80-aa65-822c4493daac
-Ondersteuning voor partner Tier1 | Niet weer gegeven omdat deze niet mag worden gebruikt | 4ba39ca4-527c-499a-b93d-d9b492c50246
-Ondersteuning voor partner Tier2 | Niet weer gegeven omdat deze niet mag worden gebruikt | e00e864a-17c5-4a4b-9c06-f5b95a8d5bd8
-Wachtwoord beheerder | Wachtwoordbeheerder | 966707d0-3269-4727-9be2-8c3a10f19b9d
+Licentiebeheerder | Licentiebeheerder | 4d6ac14f-3453-41d0-bef9-a3e0c569773a
+Lync Service-beheerder | Skype voor Bedrijven-beheerder | 75941009-915a-4869-abe7-691bff18279e
+Berichtencentrum-privacylezer | Berichten centrum-privacy-lezer | ac16e43d-7b2d-40e0-ac05-243ff356ab5b
+Berichtencentrum-lezer | Berichten centrum-lezer | 790c1fb9-7f7d-4f88-86a1-ef1f95c05c1b
+Moderne Commerce-gebruiker | Moderne Commerce-gebruiker | d24aef57-1500-4070-84db-2666f29cf966
+Netwerkbeheerder | Netwerk beheerder | d37c8bed-0711-4417-ba38-b4abe66ce4c2
+Beheerder van Office-apps | Office-Apps beheerder | 2b745bdf-0803-4d80-aa65-822c4493daac
+Laag1-ondersteuning voor partner | Niet weer gegeven omdat deze niet mag worden gebruikt | 4ba39ca4-527c-499a-b93d-d9b492c50246
+Laag2-ondersteuning voor partner | Niet weer gegeven omdat deze niet mag worden gebruikt | e00e864a-17c5-4a4b-9c06-f5b95a8d5bd8
+Wachtwoordbeheerder | Wachtwoordbeheerder | 966707d0-3269-4727-9be2-8c3a10f19b9d
 Power BI-servicebeheerder | Power BI beheerder | a9ea8996-122f-4c74-9520-8edcd192826c
-Power platform-beheerder | Power-platform beheerder | 11648597-926c-4cf3-9c36-bcebb0ba8dcc
-Printer beheerder | Printer beheerder | 644ef478-e28f-4e28-b9dc-3fdde9aa0b1f
-Printer technicus | Printer technicus | e8cef6f1-e4bd-4ea8-bc07-4b8d950f4477
-Beheerder voor geprivilegieerde authenticatie | Beheerder voor geprivilegieerde authenticatie | 7be44c8a-adaf-4e2a-84d6-ab2649e08a13
-Beheerder van geprivilegieerde rol | Beheerder voor bevoorrechte rollen | e8611ab8-c189-46e8-94e1-60213ab1f814
+Power Platform-beheerder | Power-platform beheerder | 11648597-926c-4cf3-9c36-bcebb0ba8dcc
+Printerbeheerder | Printer beheerder | 644ef478-e28f-4e28-b9dc-3fdde9aa0b1f
+Printertechnicus | Printer technicus | e8cef6f1-e4bd-4ea8-bc07-4b8d950f4477
+Bevoorrechte verificatiebeheerder | Beheerder voor geprivilegieerde authenticatie | 7be44c8a-adaf-4e2a-84d6-ab2649e08a13
+Beheerder voor bevoorrechte rollen | Beheerder voor bevoorrechte rollen | e8611ab8-c189-46e8-94e1-60213ab1f814
 Rapportenlezer | Rapport lezer | 4a5d8f65-41da-4de4-8968-e035b65339cf
-Beheerder zoeken | Beheerder zoeken | 0964bb5e-9bdb-4d7b-ac29-58e794862a40
-Zoek editor | Zoek editor | 8835291a-918c-4fd7-a9ce-faa49f0cf7d9
+Zoekbeheerder | Beheerder zoeken | 0964bb5e-9bdb-4d7b-ac29-58e794862a40
+Zoekredacteur | Zoek editor | 8835291a-918c-4fd7-a9ce-faa49f0cf7d9
 Beveiligingsbeheer | Beveiligingsbeheerder | 194ae4cb-b126-40b2-bd5b-6091b380977d
 Beveiligingsoperator | Beveiligingsoperator | 5f2222b1-57c3-48ba-8ad5-d4759f1fde6f
 Beveiligingslezer | Beveiligingslezer | 5d6b6bb7-de71-4623-b4af-96380a352509
-Ondersteunings beheerder voor service | Serviceondersteuningsbeheerder | f023fd81-a637-4b56-95fd-791ac0226033
-Share point-service beheerder | SharePoint-beheerder | f28a1f50-f6e7-4571-818b-6a12f2af6b6c
-Teams communicatie beheerder | Teams communicatie beheerder | baf37b3a-610e-45da-9e62-d9d1e5e8914b
-Mede werker communicatie technicus voor teams | Mede werker communicatie technicus voor teams | f70938a0-fc10-4177-9e90-2178f8765737
-Specialist communicatie ondersteuning teams | Specialist communicatie ondersteuning teams | fcf91098-03e3-41a9-b5ba-6f0ec8188a12
-Team apparaten-beheerder | Team apparaten-beheerder | 3d762c5a-1b6c-493f-843e-55a3b42923d4
-Teams service-beheerder | Teams service-beheerder | 69091246-20e8-4a56-aa4d-066075b2a7a8
+Serviceondersteuningsbeheerder | Serviceondersteuningsbeheerder | f023fd81-a637-4b56-95fd-791ac0226033
+SharePoint-servicebeheerder | SharePoint-beheerder | f28a1f50-f6e7-4571-818b-6a12f2af6b6c
+Teams-communicatiebeheerder | Teams-communicatiebeheerder | baf37b3a-610e-45da-9e62-d9d1e5e8914b
+Ondersteuningstechnicus voor Teams-communicatie | Ondersteuningstechnicus voor Teams-communicatie | f70938a0-fc10-4177-9e90-2178f8765737
+Ondersteuningsspecialist voor Teams-communicatie | Ondersteuningsspecialist voor Teams-communicatie | fcf91098-03e3-41a9-b5ba-6f0ec8188a12
+Teams-apparaatbeheerder | Teams-apparaatbeheerder | 3d762c5a-1b6c-493f-843e-55a3b42923d4
+Teams-servicebeheerder | Teams-servicebeheerder | 69091246-20e8-4a56-aa4d-066075b2a7a8
 Gebruiker | Niet weer gegeven omdat deze niet kan worden gebruikt | a0b1b346-4d3e-4e8b-98f8-753987be4970
-Beheerder van gebruikers account | Gebruikersbeheerder | fe930be7-5e62-47db-91af-98c3a49a38b1
+Gebruikersaccountbeheerder | Gebruikersbeheerder | fe930be7-5e62-47db-91af-98c3a49a38b1
 Werkplek apparaat toevoegen | Afgeschaft | c34f683f-4d5a-4403-affd-6615e00e3a7f
 
 ## <a name="deprecated-roles"></a>Afgeschafte functies
@@ -1988,17 +1988,17 @@ De volgende rollen mogen niet worden gebruikt. Ze zijn afgeschaft en worden in d
 
 Niet elke rol die wordt geretourneerd door Power shell of MS Graph API is zichtbaar in Azure Portal. In de volgende tabel worden deze verschillen ingedeeld.
 
-API-naam | Azure-portaalnaam | Opmerkingen
+API-naam | Azure-portaalnaam | Notities
 -------- | ------------------- | -------------
 Company Administratoristrain opr | Hoofdbeheerder | [De naam is gewijzigd voor betere duidelijkheid](permissions-reference.md#role-template-ids)
-CRM Service-beheerder | Dynamics 365-beheerder | [Weerspiegelt huidige product huisstijl](permissions-reference.md#role-template-ids)
+CRM-servicebeheerder | Dynamics 365-beheerder | [Weerspiegelt huidige product huisstijl](permissions-reference.md#role-template-ids)
 Apparaat toevoegen | Afgeschaft | [Documentatie over afgeschafte functies](permissions-reference.md#deprecated-roles)
 Apparaatbeheer | Afgeschaft | [Documentatie over afgeschafte functies](permissions-reference.md#deprecated-roles)
 Gebruikers van het apparaat | Afgeschaft | [Documentatie over afgeschafte functies](permissions-reference.md#deprecated-roles)
-Directory-synchronisatie accounts | Niet weer gegeven omdat deze niet mag worden gebruikt | [Documentatie voor Directory Synchronization accounts](permissions-reference.md#directory-synchronization-accounts)
-Schrijvers van mappen | Niet weer gegeven omdat deze niet mag worden gebruikt | [Documentatie over Directory schrijvers](permissions-reference.md#directory-writers)
+Adreslijstsynchronisatieaccounts | Niet weer gegeven omdat deze niet mag worden gebruikt | [Documentatie voor Directory Synchronization accounts](permissions-reference.md#directory-synchronization-accounts)
+Adreslijstschrijvers | Niet weer gegeven omdat deze niet mag worden gebruikt | [Documentatie over Directory schrijvers](permissions-reference.md#directory-writers)
 Gastgebruiker | Niet weer gegeven omdat deze niet kan worden gebruikt  | NA
-Lync-service beheerder | Skype voor Bedrijven-beheerder | [Weerspiegelt huidige product huisstijl](permissions-reference.md#role-template-ids)
+Lync Service-beheerder | Skype voor Bedrijven-beheerder | [Weerspiegelt huidige product huisstijl](permissions-reference.md#role-template-ids)
 Ondersteuning voor partner Tier 1 | Niet weer gegeven omdat deze niet mag worden gebruikt | [Documentatie voor partner Tier1-ondersteuning](permissions-reference.md#partner-tier1-support)
 Ondersteuning voor partner Tier 2 | Niet weer gegeven omdat deze niet mag worden gebruikt | [Documentatie voor partner Tier2-ondersteuning](permissions-reference.md#partner-tier2-support)
 Beperkte gast gebruiker | Niet weer gegeven omdat deze niet kan worden gebruikt | NA

@@ -16,12 +16,12 @@ ms.author: kenwith
 ms.reviewer: asteen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c208da657d30d4a0f5b6f171693c5c6abc2b358b
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 0671d3dec963c0b475133881b00224cfe11e8370
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94649175"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861641"
 ---
 # <a name="disable-user-sign-ins-for-an-enterprise-app-in-azure-active-directory"></a>Aanmeldingen van gebruikers voor een bedrijfs-app in Azure Active Directory uitschakelen
 
@@ -39,7 +39,7 @@ Het is eenvoudig om een bedrijfs toepassing uit te scha kelen zodat gebruikers z
 
 ## <a name="use-azure-ad-powershell-to-disable-an-unlisted-app"></a>Azure AD Power shell gebruiken om een niet-gevermelde app uit te scha kelen
 
-Als u de AppId kent van een app die niet wordt weer gegeven in de lijst met zakelijke apps (bijvoorbeeld omdat u de app hebt verwijderd of als de Service-Principal nog niet is gemaakt door de app die door micro soft wordt geautoriseerd), kunt u de Service-Principal hand matig voor de app maken en deze vervolgens uitschakelen met behulp van de [AzureAD Power shell-cmdlet](/powershell/module/azuread/New-AzureADServicePrincipal?view=azureadps-2.0).
+Als u de AppId kent van een app die niet wordt weer gegeven in de lijst met zakelijke apps (bijvoorbeeld omdat u de app hebt verwijderd of als de Service-Principal nog niet is gemaakt door de app die door micro soft wordt geautoriseerd), kunt u de Service-Principal hand matig voor de app maken en deze vervolgens uitschakelen met behulp van de [AzureAD Power shell-cmdlet](/powershell/module/azuread/New-AzureADServicePrincipal).
 
 ```PowerShell
 # The AppId of the app to be disabled

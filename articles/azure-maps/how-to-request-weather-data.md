@@ -1,24 +1,28 @@
 ---
-title: Real-time en geraamde weers gegevens aanvragen met behulp van Azure Maps weer Services
-description: Meer informatie over het aanvragen van real-time (huidige) en geraamde (minuut, uur, dagelijks) weer gegeven gegevens met Microsoft Azure kaarten weer Services
+title: Real-time en geraamde weers gegevens aanvragen met Azure Maps-weer Services (preview)
+description: Meer informatie over het aanvragen van real-time (huidige) en geraamde (minuut, uur, dagelijks) weer gegeven gegevens met Microsoft Azure kaarten weer Services (preview)
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 10/27/2020
+ms.date: 12/07/2020
 ms.topic: how-to
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: c11f20286c514056d14b8faa941315345fea71f2
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: a5ae262d2882bd76e31666f058fa9a7a703a9e1e
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186334"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96906009"
 ---
-# <a name="request-real-time-and-forecasted-weather-data-using-azure-maps-weather-services"></a>Real-time en geraamde weers gegevens aanvragen met behulp van Azure Maps weer Services
+# <a name="request-real-time-and-forecasted-weather-data-using-azure-maps-weather-services-preview"></a>Real-time en geraamde weers gegevens aanvragen met Azure Maps-weer Services (preview) 
 
-De Azure Maps- [weer service](/rest/api/maps/weather) is een reeks rest api's waarmee ontwikkel aars zeer dynamische historische, realtime en geraamde weers gegevens en visualisaties in hun oplossingen kunnen integreren. In dit artikel wordt uitgelegd hoe u realtime en geraamde weers gegevens kunt opvragen.
+> [!IMPORTANT]
+> Azure Maps weer Services zijn momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+Azure Maps [weer Services](/rest/api/maps/weather) zijn een reeks rest-api's waarmee ontwikkel aars zeer dynamische historische, realtime en geraamde weers gegevens en visualisaties in hun oplossingen kunnen integreren. In dit artikel wordt uitgelegd hoe u realtime en geraamde weers gegevens kunt opvragen.
 
 In dit artikel leert u het volgende:
 
@@ -28,7 +32,7 @@ In dit artikel leert u het volgende:
 * Vraag per uur prognoses aan met de API voor het ophalen van een [uur](/rest/api/maps/weather/gethourlyforecastpreview).
 * Vraag minuut per minuut prognoses met behulp van de API voor het [ophalen van minuten](/rest/api/maps/weather/getminuteforecastpreview).
 
-In deze video vindt u een overzicht van de weers-Services in de Azure Maps met voor beelden voor REST-oproep.
+In deze video vindt u voor beelden voor het maken van REST-aanroepen naar Azure Maps weer Services.
 
 <br/>
 
@@ -751,8 +755,7 @@ In dit voor beeld gebruikt u de [API Get Minute](/rest/api/maps/weather/getminut
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Concepten van Azure Maps weer service](./weather-services-concepts.md)
+> [Concepten van Azure Maps weer Services (preview)](./weather-services-concepts.md)
 
 > [!div class="nextstepaction"]
-> [Azure Maps weer service REST API](/rest/api/maps/weather
-)
+> [Azure Maps weer Services (preview) REST API](/rest/api/maps/weather)

@@ -8,12 +8,12 @@ ms.date: 10/12/2020
 ms.author: tisande
 ms.subservice: cosmosdb-sql
 ms.reviewer: sngun
-ms.openlocfilehash: 012e155737b9251827c668b3a9cacbbe8d59ae77
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 42f01b140a44d7aa6d75dece9a4398fd7b41bf5a
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94411351"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905108"
 ---
 # <a name="troubleshoot-query-issues-when-using-azure-cosmos-db"></a>Query-problemen bij het gebruik van Azure Cosmos DB oplossen
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -51,7 +51,7 @@ Wanneer u een query in Azure Cosmos DB optimaliseert, is de eerste stap altijd o
 
 Nadat u de metrische gegevens van de query hebt opgehaald, vergelijkt u het **opgehaalde aantal documenten** met het **aantal uitvoer documenten** voor uw query. Gebruik deze vergelijking om de relevante secties te identificeren die u in dit artikel kunt controleren.
 
-Het **opgehaalde document telt** het aantal documenten dat de query-engine nodig heeft om te laden. Het **uitvoer document telt** het aantal documenten dat nodig was voor de resultaten van de query. Als het **aantal opgehaalde documenten** aanzienlijk hoger is dan het **aantal uitvoer documenten** , was er ten minste één deel van de query die geen index kon gebruiken en dat nodig is om een scan uit te voeren.
+Het **opgehaalde document telt** het aantal documenten dat de query-engine nodig heeft om te laden. Het **uitvoer document telt** het aantal documenten dat nodig was voor de resultaten van de query. Als het **aantal opgehaalde documenten** aanzienlijk hoger is dan het **aantal uitvoer documenten**, was er ten minste één deel van de query die geen index kon gebruiken en dat nodig is om een scan uit te voeren.
 
 Raadpleeg de volgende secties om inzicht te krijgen in de relevante query optimalisaties voor uw scenario.
 
@@ -93,7 +93,7 @@ Raadpleeg de volgende secties om inzicht te krijgen in de relevante query optima
 
 ## <a name="queries-where-retrieved-document-count-exceeds-output-document-count"></a>Query's waarbij het aantal opgehaalde documenten groter is dan het aantal uitvoer documenten
 
- Het **opgehaalde document telt** het aantal documenten dat de query-engine nodig heeft om te laden. Het **uitvoer document telt** het aantal documenten dat door de query wordt geretourneerd. Als het **aantal opgehaalde documenten** aanzienlijk hoger is dan het **aantal uitvoer documenten** , was er ten minste één deel van de query die geen index kon gebruiken en dat nodig is om een scan uit te voeren.
+ Het **opgehaalde document telt** het aantal documenten dat de query-engine nodig heeft om te laden. Het **uitvoer document telt** het aantal documenten dat door de query wordt geretourneerd. Als het **aantal opgehaalde documenten** aanzienlijk hoger is dan het **aantal uitvoer documenten**, was er ten minste één deel van de query die geen index kon gebruiken en dat nodig is om een scan uit te voeren.
 
 Hier volgt een voor beeld van een scan query die niet volledig door de index is geleverd:
 
@@ -142,7 +142,7 @@ Het indexerings beleid moet betrekking hebben op alle eigenschappen in `WHERE` c
 
 Als u de volgende eenvoudige query uitvoert op de [voedings](https://github.com/CosmosDB/labs/blob/master/dotnet/setup/NutritionData.json) gegevensset, ziet u een veel lagere ru-kosten wanneer de eigenschap in de `WHERE` component wordt geïndexeerd:
 
-#### <a name="original"></a>Origineel
+#### <a name="original"></a>Oorspronkelijk
 
 Query:
 
@@ -196,9 +196,7 @@ U kunt op elk gewenst moment eigenschappen toevoegen aan het indexerings beleid,
 
 ### <a name="understand-which-system-functions-use-the-index"></a>Begrijpen welke systeem functies de index gebruiken
 
-Als een expressie kan worden omgezet in een bereik teken reeks waarden, kan deze de index gebruiken. Als dat niet het geval is, kan dat niet.
-
-Hier volgt een lijst met enkele veelgebruikte teken reeks functies die de index kunnen gebruiken:
+De meeste systeem functies gebruiken indexen. Hier volgt een lijst met enkele veelgebruikte teken reeks functies die gebruikmaken van indexen:
 
 - STARTSWITH (str_expr1, str_expr2 bool_expr)  
 - CONTAINs (str_expr, str_expr, bool_expr)
@@ -214,7 +212,26 @@ Hieronder volgen enkele algemene systeem functies die de index niet gebruiken en
 
 ------
 
-Andere onderdelen van de query kunnen de index nog steeds gebruiken hoewel het systeem niet werkt.
+Als een systeem functie indexen gebruikt en nog steeds een hoge RU-kosten heeft, kunt u proberen `ORDER BY` de query toe te voegen. In sommige gevallen `ORDER BY` kan het toevoegen van het systeem functie-index worden verbeterd, met name als de query lange tijd wordt uitgevoerd of meerdere pagina's omvat.
+
+Denk bijvoorbeeld aan de onderstaande query met `CONTAINS` . `CONTAINS` u moet een index gebruiken, maar stel dat u na het toevoegen van de relevante index nog steeds een zeer hoge RU-kosten ziet wanneer u de onderstaande query uitvoert:
+
+Oorspronkelijke query:
+
+```sql
+SELECT *
+FROM c
+WHERE CONTAINS(c.town, "Sea")
+```
+
+De query is bijgewerkt met `ORDER BY` :
+
+```sql
+SELECT *
+FROM c
+WHERE CONTAINS(c.town, "Sea")
+ORDER BY c.town
+```
 
 ### <a name="understand-which-aggregate-queries-use-the-index"></a>Begrijpen welke statistische query's de index gebruiken
 
@@ -277,7 +294,7 @@ Als u van plan bent om dezelfde statistische query's vaak uit te voeren, is het 
 
 Hoewel query's met een filter en een `ORDER BY` component normaal gesp roken gebruikmaken van een bereik index, zijn ze efficiënter als ze kunnen worden bediend vanuit een samengestelde index. Naast het wijzigen van het indexerings beleid, moet u alle eigenschappen in de samengestelde index toevoegen aan de- `ORDER BY` component. Met deze wijziging in de query wordt ervoor gezorgd dat de samengestelde index wordt gebruikt.  U kunt het effect observeren door een query uit te voeren op de [voedings](https://github.com/CosmosDB/labs/blob/master/dotnet/setup/NutritionData.json) gegevensset:
 
-#### <a name="original"></a>Origineel
+#### <a name="original"></a>Oorspronkelijk
 
 Query:
 
@@ -385,7 +402,7 @@ Stel dat er slechts één item in de matrix Tags overeenkomt met het filter en d
 
 ## <a name="queries-where-retrieved-document-count-is-equal-to-output-document-count"></a>Query's waarbij het aantal opgehaalde documenten gelijk is aan het aantal uitvoer documenten
 
-Als het **aantal opgehaalde documenten** ongeveer gelijk is aan het **aantal uitvoer documenten** , moet de query-engine veel onnodige documenten niet scannen. Voor veel query's, zoals die van het `TOP` tref woord, kan het aantal **opgehaalde documenten** groter zijn dan het **aantal uitvoer documenten** door 1. U hoeft hiervoor geen zorgen te maken.
+Als het **aantal opgehaalde documenten** ongeveer gelijk is aan het **aantal uitvoer documenten**, moet de query-engine veel onnodige documenten niet scannen. Voor veel query's, zoals die van het `TOP` tref woord, kan het aantal **opgehaalde documenten** groter zijn dan het **aantal uitvoer documenten** door 1. U hoeft hiervoor geen zorgen te maken.
 
 ### <a name="minimize-cross-partition-queries"></a>Kruis partitie query's minimaliseren
 

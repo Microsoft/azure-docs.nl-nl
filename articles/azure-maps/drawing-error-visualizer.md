@@ -1,21 +1,26 @@
 ---
 title: Fout visualiseren bij het gebruik van Azure Maps-tekening
-description: In dit artikel vindt u informatie over het visualiseren van waarschuwingen en fouten die zijn geretourneerd door de API voor het converteren van ontwikkel aars.
+description: In dit artikel vindt u informatie over het visualiseren van waarschuwingen en fouten die zijn geretourneerd door de API voor het maken van de maker (preview-versie).
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 06/12/2020
+ms.date: 12/07/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 99821e51364eb9ffd75cda291c526c3c0b8c8f0e
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: db88e347e12783205ea8c31fed0bb374fccb4736
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895848"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96903578"
 ---
-# <a name="using-the-azure-maps-drawing-error-visualizer"></a>Fout visualiseren met behulp van de Azure Maps voor het tekenen van fouten
+# <a name="using-the-azure-maps-drawing-error-visualizer-with-creator-preview"></a>De Azure Maps voor het ontwikkelen van fouten met de Maker gebruiken (preview-versie)
+
+> [!IMPORTANT]
+> Azure Maps Creator-Services zijn momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
 
 De tekening fout Visualer is een zelfstandige webtoepassing waarin de waarschuwingen voor het [teken pakket](drawing-conversion-error-codes.md) worden weer gegeven en de fouten die tijdens het conversie proces zijn gedetecteerd. De webtoepassing voor het visualiseren van fouten bestaat uit een statische pagina die u kunt gebruiken zonder verbinding met Internet te maken.  U kunt de fout Visualer gebruiken om fouten en waarschuwingen op te lossen in overeenstemming met de vereisten voor het [teken pakket](drawing-requirements.md). De [Azure Maps Conversion API](/rest/api/maps/conversion) retourneert alleen een antwoord met een koppeling naar de error visualer alleen wanneer er een fout wordt gedetecteerd.
 
@@ -25,13 +30,13 @@ Voordat u de fout Visualer voor het tekenen van een tekening kunt downloaden, mo
 
 1. [Een Azure Maps-account maken](quick-demo-map-app.md#create-an-azure-maps-account)
 2. [Een primaire sleutel voor een abonnement verkrijgen](quick-demo-map-app.md#get-the-primary-key-for-your-account), ook wel bekend als de primaire sleutel of de abonnementssleutel.
-3. [Een Creator-resource maken](how-to-manage-creator.md)
+3. [Een bron voor het maken van een maker (preview-resource)](how-to-manage-creator.md)
 
 In deze zelfstudie wordt gebruikgemaakt van de [Postman](https://www.postman.com/)-toepassing, maar u kunt ook een andere API-ontwikkelomgeving kiezen.
 
 ## <a name="download"></a>Downloaden
 
-1. Upload uw tekening pakket naar de Azure Maps Creator-service om een `udid` voor het geüploade pakket te verkrijgen. Zie [een tekening pakket uploaden](tutorial-creator-indoor-maps.md#upload-a-drawing-package)voor stappen voor het uploaden van een pakket.
+1. Upload uw tekening pakket naar de Azure Maps Creator-service (preview) om een `udid` voor het geüploade pakket te verkrijgen. Zie [een tekening pakket uploaden](tutorial-creator-indoor-maps.md#upload-a-drawing-package)voor stappen voor het uploaden van een pakket.
 
 2. Als het tekenpakket is geüpload, wordt de `udid` voor het geüploade pakket gebruikt om het pakket te converteren naar plattegrondgegevens. Zie [een tekening pakket converteren](tutorial-creator-indoor-maps.md#convert-a-drawing-package)voor stappen voor het converteren van een pakket.
 
@@ -58,8 +63,8 @@ In deze zelfstudie wordt gebruikgemaakt van de [Postman](https://www.postman.com
 
 In het gedownloade gezipte pakket van de `diagnosticPackageLocation` koppeling vindt u twee bestanden.
 
-* _VisualizationTool.zip_ : bevat de bron code, de media en de webpagina voor de fout visualer voor het tekenen van een tekening.
-* _ConversionWarningsAndErrors.jsop_ : bevat een lijst met waarschuwingen, fouten en aanvullende details die worden gebruikt door de tekening fout visualiseren.
+* _VisualizationTool.zip_: bevat de bron code, de media en de webpagina voor de fout visualer voor het tekenen van een tekening.
+* _ConversionWarningsAndErrors.jsop_: bevat een lijst met waarschuwingen, fouten en aanvullende details die worden gebruikt door de tekening fout visualiseren.
 
 Unzip de map _VisualizationTool.zip_ . Het bevat de volgende items:
 
@@ -82,11 +87,11 @@ Nadat u het hulp programma voor het visualiseren van de teken fouten hebt gestar
 
 De  _ConversionWarningsAndErrors.jsin_ het bestand is geplaatst in de hoofdmap van de gedownloade map. Als u de _ConversionWarningsAndErrors.jsop_ wilt laden, kunt u slepen & het bestand neerzetten op het vak of klikken op het vak, het bestand in het dialoog venster bestanden Verkenner zoeken en het bestand vervolgens uploaden.
 
-:::image type="content" source="./media/drawing-errors-visualizer/loading-data.gif" alt-text="Fout bij het visualiseren van de app-start pagina van de tekening":::
+:::image type="content" source="./media/drawing-errors-visualizer/loading-data.gif" alt-text="Fout bij het visualiseren van fouten met de app-slepen en neerzetten om gegevens te laden":::
 
 Zodra de _ConversionWarningsAndErrors.jsvoor_ het laden van bestanden wordt weer gegeven, ziet u een lijst met fouten en waarschuwingen in het tekening pakket. Elke fout of waarschuwing wordt opgegeven door de laag, het niveau en een gedetailleerd bericht. Als u gedetailleerde informatie over een fout of waarschuwing wilt weer geven, klikt u op de koppeling **Details** . Een sectie die kan worden tegengevoerd, wordt weer gegeven onder de lijst. U kunt nu naar elke fout navigeren voor meer informatie over het oplossen van de fout.
 
-:::image type="content" source="./media/drawing-errors-visualizer/errors.png" alt-text="Fout bij het visualiseren van de app-start pagina van de tekening":::
+:::image type="content" source="./media/drawing-errors-visualizer/errors.png" alt-text="Fout bij het visualiseren van problemen met app-fouten en waarschuwingen":::
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -96,7 +101,7 @@ Zodra het [teken pakket aan de vereisten voldoet](drawing-requirements.md), kunt
 > [Fout codes voor teken conversie](drawing-conversion-error-codes.md)
 
 > [!div class="nextstepaction"]
-> [Maker voor kaarten in de binnenste](creator-indoor-maps.md)
+> [Creator (preview) voor kaarten in de binnenste](creator-indoor-maps.md)
 
 > [!div class="nextstepaction"]
 > [De module Indoor Maps gebruiken](how-to-use-indoor-module.md)

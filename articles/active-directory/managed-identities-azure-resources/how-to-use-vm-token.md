@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 11/03/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0769366ad56e1b7431dbfa7c95f1256c509d24fa
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: bed64df921326ad4d219f934f7a7bc6860bfc7d8
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93358164"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861898"
 ---
 # <a name="how-to-use-managed-identities-for-azure-resources-on-an-azure-vm-to-acquire-an-access-token"></a>Beheerde identiteiten voor Azure-resources gebruiken op een Azure VM om een toegangs token te verkrijgen 
 
@@ -64,7 +64,7 @@ Een client toepassing kan beheerde identiteiten aanvragen voor de Azure [-resour
 
 De fundamentele interface voor het verkrijgen van een toegangs token is gebaseerd op REST, waardoor deze toegankelijk is voor elke client toepassing die op de virtuele machine wordt uitgevoerd en die HTTP REST-aanroepen kan maken. Dit is vergelijkbaar met het Azure AD-programmeer model, met uitzonde ring van de client gebruikt een eind punt op de virtuele machine (VS een Azure AD-eind punt).
 
-Voorbeeld aanvraag met behulp van het Azure Instance Metadata Service (IMDS)-eind punt *(aanbevolen)* :
+Voorbeeld aanvraag met behulp van het Azure Instance Metadata Service (IMDS)-eind punt *(aanbevolen)*:
 
 ```
 GET 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://management.azure.com/' HTTP/1.1 Metadata: true
@@ -81,7 +81,7 @@ GET 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-0
 | `client_id` | Beschrijving Een query reeks parameter, waarmee de client_id van de beheerde identiteit wordt aangegeven waarvoor u het token wilt voor. Vereist als uw virtuele machine meerdere door de gebruiker toegewezen beheerde identiteiten heeft.|
 | `mi_res_id` | Beschrijving Een query teken reeks parameter, waarmee de mi_res_id (Azure-Resource-ID) wordt aangegeven van de beheerde identiteit waarvoor u het token wilt voor. Vereist als uw virtuele machine meerdere door de gebruiker toegewezen beheerde identiteiten heeft. |
 
-Voorbeeld aanvraag met behulp van het eind punt voor beheerde identiteiten voor Azure-resources VM extension *(gepland voor afschaffing in januari 2019)* :
+Voorbeeld aanvraag met behulp van het eind punt voor beheerde identiteiten voor Azure-resources VM extension *(gepland voor afschaffing in januari 2019)*:
 
 ```http
 GET http://localhost:50342/oauth2/token?resource=https%3A%2F%2Fmanagement.azure.com%2F HTTP/1.1
@@ -125,7 +125,7 @@ Content-Type: application/json
 
 ## <a name="get-a-token-using-the-microsoftazureservicesappauthentication-library-for-net"></a>Een Token ophalen met behulp van de micro soft. Azure. Services. AppAuthentication-bibliotheek voor .NET
 
-Voor .NET-toepassingen en-functies is de eenvoudigste manier om te werken met beheerde identiteiten voor Azure-resources via het pakket micro soft. Azure. Services. AppAuthentication. Met deze bibliotheek kunt u uw code ook lokaal op uw ontwikkel computer testen met behulp van uw gebruikers account uit Visual Studio, de [Azure cli](/cli/azure?view=azure-cli-latest)of Active Directory geïntegreerde verificatie. Zie de [referentie micro soft. Azure. Services. AppAuthentication](../../key-vault/general/service-to-service-authentication.md)voor meer informatie over de lokale ontwikkelings opties voor deze bibliotheek. In deze sectie wordt beschreven hoe u aan de slag kunt met de bibliotheek in uw code.
+Voor .NET-toepassingen en-functies is de eenvoudigste manier om te werken met beheerde identiteiten voor Azure-resources via het pakket micro soft. Azure. Services. AppAuthentication. Met deze bibliotheek kunt u uw code ook lokaal op uw ontwikkel computer testen met behulp van uw gebruikers account uit Visual Studio, de [Azure cli](/cli/azure)of Active Directory geïntegreerde verificatie. Zie de [referentie micro soft. Azure. Services. AppAuthentication](../../key-vault/general/service-to-service-authentication.md)voor meer informatie over de lokale ontwikkelings opties voor deze bibliotheek. In deze sectie wordt beschreven hoe u aan de slag kunt met de bibliotheek in uw code.
 
 1. Voeg referenties toe aan de [micro soft. Azure. Services. AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication) -en [micro soft. Azure.](https://www.nuget.org/packages/Microsoft.Azure.KeyVault) NuGet-pakketten voor uw toepassing.
 
@@ -393,7 +393,7 @@ Voor opnieuw proberen wordt de volgende strategie aanbevolen:
 
 | **Strategie voor opnieuw proberen** | **Instellingen** | **Waarden** | **Uitleg** |
 | --- | --- | --- | --- |
-|ExponentialBackoff |Aantal pogingen<br />Min. uitstel<br />Max. uitstel<br />Delta-uitstel<br />Eerste snelle poging |5<br />0 sec.<br />60 sec.<br />2 sec.<br />false |Poging 1, vertraging 0 sec.<br />Poging 2, vertraging ~2 sec.<br />Poging 3, vertraging ~6 sec.<br />Poging 4, vertraging ~14 sec.<br />Poging 5, vertraging ~30 sec. |
+|ExponentialBackoff |Aantal pogingen<br />Min. uitstel<br />Max. uitstel<br />Delta-uitstel<br />Eerste snelle poging |5<br />0 sec.<br />60 sec.<br />2 sec.<br />onjuist |Poging 1, vertraging 0 sec.<br />Poging 2, vertraging ~2 sec.<br />Poging 3, vertraging ~6 sec.<br />Poging 4, vertraging ~14 sec.<br />Poging 5, vertraging ~30 sec. |
 
 ## <a name="resource-ids-for-azure-services"></a>Resource-Id's voor Azure-Services
 

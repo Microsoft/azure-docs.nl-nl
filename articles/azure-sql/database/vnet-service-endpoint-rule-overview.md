@@ -11,12 +11,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto, genemi
 ms.date: 11/14/2019
-ms.openlocfilehash: 2ff8f6134f74e0eda355342a7282e8be81a3d8df
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: c5839589c35ea5a9c52303801a8767fc598434fc
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96450235"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905873"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-servers-in-azure-sql-database"></a>Virtuele netwerk service-eind punten en-regels gebruiken voor servers in Azure SQL Database
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -95,7 +95,7 @@ Wanneer u service-eind punten voor Azure SQL Database gebruikt, raadpleegt u de 
 ### <a name="expressroute"></a>ExpressRoute
 
 Als u [ExpressRoute](../../expressroute/expressroute-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json) gebruikt vanuit uw on-premises netwerk voor openbare peering of Microsoft-peering, moet u de NAT IP-adressen opgeven die worden gebruikt. Voor openbare peering gebruikt elk ExpressRoute-circuit standaard twee NAT IP-adressen. Deze worden toegepast op Azure-serviceverkeer wanneer het verkeer het Microsoft Azure-backbone-netwerk binnenkomt. Voor Microsoft-peering worden de NAT IP-adressen die worden gebruikt opgegeven door de klant of de serviceprovider. Voor toegang tot uw serviceresources moet u deze openbare IP-adressen toestaan in de instelling voor IP-firewall voor de resource. Wanneer u op zoek bent naar de IP-adressen van uw ExpressRoute-circuit voor openbare peering, opent u [een ondersteuningsticket met ExpressRoute](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview) via de Azure-portal. Meer informatie over [NAT voor openbare peering en Microsoft-peering met ExpressRoute.](../../expressroute/expressroute-nat.md?toc=%2fazure%2fvirtual-network%2ftoc.json#nat-requirements-for-azure-public-peering)
-  
+
 Als u communicatie vanuit uw circuit naar Azure SQL Database wilt toestaan, moet u IP-netwerk regels maken voor de open bare IP-adressen van uw NAT.
 
 <!--
@@ -122,7 +122,7 @@ Poly base en de instructie COPY worden meestal gebruikt voor het laden van gegev
 
 #### <a name="steps"></a>Stappen
 
-1. Registreer in Power shell **uw server** die als host fungeert voor Azure Synapse met Azure Active Directory (Aad):
+1. Als u een zelfstandige toegewezen SQL-groep hebt, registreert u uw SQL Server met Azure Active Directory (AAD) met behulp van Power shell: 
 
    ```powershell
    Connect-AzAccount
@@ -130,6 +130,14 @@ Poly base en de instructie COPY worden meestal gebruikt voor het laden van gegev
    Set-AzSqlServer -ResourceGroupName your-database-server-resourceGroup -ServerName your-SQL-servername -AssignIdentity
    ```
 
+   Deze stap is niet vereist voor toegewezen SQL-groepen in een Synapse-werk ruimte.
+
+1. Als u een Synapse-werk ruimte hebt, registreert u de door het systeem beheerde identiteit van uw werk ruimte:
+
+   1. Ga naar uw Synapse-werk ruimte in de Azure Portal
+   2. Ga naar de Blade Managed Identities 
+   3. Zorg ervoor dat de optie pijp lijnen toestaan is ingeschakeld
+   
 1. **Een opslagaccount voor algemeen gebruik v2 maken** met deze [gids](../../storage/common/storage-account-create.md).
 
    > [!NOTE]
@@ -137,7 +145,7 @@ Poly base en de instructie COPY worden meestal gebruikt voor het laden van gegev
    > - Als u een v1-of blob-opslagaccount voor algemeen gebruik hebt, moet u **eerst een upgrade uitvoeren naar de v2** voor algemeen gebruik met behulp van deze [gids](../../storage/common/storage-account-upgrade.md).
    > - Raadpleeg deze [hand leiding](../../storage/blobs/data-lake-storage-known-issues.md)voor bekende problemen met Azure data Lake Storage Gen2.
 
-1. Navigeer onder uw opslagaccount naar **Access Control (IAM)** en selecteer **Roltoewijzing toevoegen**. Wijs de Azure-rol **Storage BLOB data Inzender** toe aan de server die als host fungeert voor uw Azure Synapse Analytics, die u bij Azure Active Directory (Aad) hebt geregistreerd, zoals in stap #1.
+1. Navigeer onder uw opslagaccount naar **Access Control (IAM)** en selecteer **Roltoewijzing toevoegen**. Wijs de Azure-rol **Storage BLOB data Inzender** toe aan de server of werk ruimte die als host fungeert voor uw toegewezen SQL-groep die u hebt geregistreerd bij Azure Active Directory (Aad).
 
    > [!NOTE]
    > Deze stap kan alleen worden uitgevoerd door leden met de bevoegdheid eigenaar van het opslag account. Raadpleeg deze [gids](../../role-based-access-control/built-in-roles.md) voor verschillende ingebouwde Azure-rollen.

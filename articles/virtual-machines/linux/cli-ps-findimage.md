@@ -6,12 +6,12 @@ ms.service: virtual-machines-linux
 ms.topic: how-to
 ms.date: 01/25/2019
 ms.author: cynthn
-ms.openlocfilehash: 34f43d51bf0df488e04605f7f7c77e9c6dcfe9a4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 56d2aa9f7aa36808774876ac0f5cfc596887ff26
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87374079"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96906383"
 ---
 # <a name="find-linux-vm-images-in-the-azure-marketplace-with-the-azure-cli"></a>Linux-VM-installatiekopieën zoeken in de Azure Marketplace met de Azure CLI
 
@@ -23,6 +23,45 @@ Zorg ervoor dat u de nieuwste [Azure cli](/cli/azure/install-azure-cli) hebt ge�
 
 [!INCLUDE [virtual-machines-common-image-terms](../../../includes/virtual-machines-common-image-terms.md)]
 
+
+## <a name="deploy-from-a-vhd-using-purchase-plan-parameters"></a>Implementeren vanaf een VHD met behulp van de para meters van het aankoop plan
+
+Als u een bestaande VHD hebt die is gemaakt met een betaalde Azure Marketplace-installatie kopie, moet u mogelijk de informatie van het aankoop plan opgeven wanneer u een nieuwe virtuele machine maakt op basis van die VHD. 
+
+Als u nog steeds de oorspronkelijke virtuele machine hebt, of een andere virtuele machine die is gemaakt met dezelfde Marketplace-installatie kopie, kunt u de naam van het abonnement, de uitgever en de product informatie ophalen via [AZ VM Get-instance-View](/cli/azure/vm#az_vm_get_instance_view). In dit voor beeld wordt een virtuele machine met de naam *myVM* in de resource groep *myResourceGroup* opgehaald en worden de gegevens van het aankoop plan weer gegeven.
+
+```azurepowershell-interactive
+az vm get-instance-view -g myResourceGroup -n myVM --query plan
+```
+
+Als u de informatie over het abonnement niet hebt opgehaald voordat de oorspronkelijke VM werd verwijderd, kunt u een [ondersteunings aanvraag](https://ms.portal.azure.com/#create/Microsoft.Support)indienen. Ze moeten de VM-naam, abonnements-id en het tijds tempel van de verwijderings bewerking hebben.
+
+Zodra u de plannings gegevens hebt, kunt u de nieuwe VM maken met behulp van de `--attach-os-disk` para meter om de VHD op te geven.
+
+```azurecli-interactive
+az vm create \
+   --resource-group myResourceGroup \
+  --name myNewVM \
+  --nics myNic \
+  --size Standard_DS1_v2 --os-type Linux \
+  --attach-os-disk myVHD \
+  --plan-name planName \
+  --plan-publisher planPublisher \
+  --plan-product planProduct 
+```
+
+## <a name="deploy-a-new-vm-using-purchase-plan-parameters"></a>Een nieuwe VM implementeren met behulp van de para meters van het aankoop plan
+
+Als u al informatie over de installatie kopie hebt, kunt u deze implementeren met behulp van de `az vm create` opdracht. In dit voor beeld implementeren we een virtuele machine met de RabbitMQ-installatie kopie gecertificeerd door BitNami:
+
+```azurecli
+az group create --name myResourceGroupVM --location westus
+
+az vm create --resource-group myResourceGroupVM --name myVM --image bitnami:rabbitmq:rabbitmq:latest --plan-name rabbitmq --plan-product rabbitmq --plan-publisher bitnami
+```
+
+Als u een bericht ontvangt over het accepteren van de voor waarden van de afbeelding, raadpleegt u de sectie [akkoord met de voor waarden](#accept-the-terms) verderop in dit artikel.
+
 ## <a name="list-popular-images"></a>Populaire installatie kopieën weer geven
 
 Voer de opdracht [AZ VM Image List](/cli/azure/vm/image) uit zonder de `--all` optie om een lijst met populaire VM-installatie kopieën in azure Marketplace weer te geven. Voer bijvoorbeeld de volgende opdracht uit om een lijst met populaire afbeeldingen in de cache weer te geven in tabel indeling:
@@ -31,7 +70,7 @@ Voer de opdracht [AZ VM Image List](/cli/azure/vm/image) uit zonder de `--all` o
 az vm image list --output table
 ```
 
-De uitvoer bevat de afbeelding URN (de waarde in de kolom *urn* ). Bij het maken van een virtuele machine met een van deze populaire Marketplace-installatie kopieën kunt u ook de *UrnAlias*opgeven, een Inge kort formulier, zoals *UbuntuLTS*.
+De uitvoer bevat de afbeelding URN (de waarde in de kolom *urn* ). Bij het maken van een virtuele machine met een van deze populaire Marketplace-installatie kopieën kunt u ook de *UrnAlias* opgeven, een Inge kort formulier, zoals *UbuntuLTS*.
 
 ```
 You are viewing an offline list of images, use --all to retrieve an up-to-date list
@@ -325,7 +364,7 @@ Uitvoer:
 }
 ```
 
-### <a name="accept-the-terms"></a>De gebruiksvoorwaarden accepteren
+## <a name="accept-the-terms"></a>De gebruiksvoorwaarden accepteren
 
 Als u de licentie voorwaarden wilt weer geven en accepteren, gebruikt u de opdracht [AZ VM image Accept-Terms](/cli/azure/vm/image?) . Wanneer u de voor waarden accepteert, schakelt u programmatische implementatie in voor uw abonnement. U hoeft slechts één keer per abonnement voor de installatie kopie te accepteren. Bijvoorbeeld:
 
@@ -350,16 +389,6 @@ De uitvoer bevat een `licenseTextLink` aan de licentie voorwaarden en geeft aan 
   "signature": "XXXXXXLAZIK7ZL2YRV5JYQXONPV76NQJW3FKMKDZYCRGXZYVDGX6BVY45JO3BXVMNA2COBOEYG2NO76ONORU7ITTRHGZDYNJNXXXXXX",
   "type": "Microsoft.MarketplaceOrdering/offertypes"
 }
-```
-
-### <a name="deploy-using-purchase-plan-parameters"></a>Implementeren met behulp van Purchase Plan-para meters
-
-Nadat u de voor waarden voor de installatie kopie hebt geaccepteerd, kunt u een virtuele machine in het abonnement implementeren. Als u de installatie kopie wilt implementeren met behulp van de `az vm create` opdracht, geeft u para meters voor het inkoop plan op naast een URN voor de installatie kopie. Als u bijvoorbeeld een virtuele machine wilt implementeren met de installatie kopie RabbitMQ gecertificeerd door BitNami:
-
-```azurecli
-az group create --name myResourceGroupVM --location westus
-
-az vm create --resource-group myResourceGroupVM --name myVM --image bitnami:rabbitmq:rabbitmq:latest --plan-name rabbitmq --plan-product rabbitmq --plan-publisher bitnami
 ```
 
 ## <a name="next-steps"></a>Volgende stappen

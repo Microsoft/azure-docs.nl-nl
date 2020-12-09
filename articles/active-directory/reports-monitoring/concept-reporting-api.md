@@ -17,12 +17,12 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cf2e3f98bd96c09fe741a24a1332443c876e2e61
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: af448d5d28c5add39176500b988824b17f85b9fb
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89225907"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861966"
 ---
 # <a name="get-started-with-the-azure-active-directory-reporting-api"></a>Aan de slag met de API voor Azure Active Directory rapportage
 
@@ -47,7 +47,7 @@ Zie voor gedetailleerde instructies de [vereisten voor toegang tot de Azure Acti
 
 ## <a name="api-endpoints"></a>API-eind punten 
 
-Het Microsoft Graph API-eind punt voor audit Logboeken is `https://graph.microsoft.com/v1.0/auditLogs/directoryAudits` en het Microsoft Graph API-eind punt voor aanmeldingen is `https://graph.microsoft.com/v1.0/auditLogs/signIns` . Zie de naslag informatie over de [controle-API](/graph/api/resources/directoryaudit?view=graph-rest-1.0) en [aanmeldings-API](/graph/api/resources/signIn?view=graph-rest-1.0)voor meer gegevens.
+Het Microsoft Graph API-eind punt voor audit Logboeken is `https://graph.microsoft.com/v1.0/auditLogs/directoryAudits` en het Microsoft Graph API-eind punt voor aanmeldingen is `https://graph.microsoft.com/v1.0/auditLogs/signIns` . Zie de naslag informatie over de [controle-API](/graph/api/resources/directoryaudit) en [aanmeldings-API](/graph/api/resources/signIn)voor meer gegevens.
 
 Daarnaast kunt u de [API voor risico detectie van identiteits beveiliging](/graph/api/resources/identityriskevent?view=graph-rest-beta) gebruiken om programmatisch toegang te krijgen tot beveiligings detecties met behulp van Microsoft Graph. Zie [aan de slag met Azure Active Directory Identity Protection en Microsoft Graph](../identity-protection/howto-identity-protection-graph-api.md)voor meer informatie. 
   

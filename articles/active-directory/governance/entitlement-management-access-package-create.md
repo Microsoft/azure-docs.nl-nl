@@ -16,12 +16,12 @@ ms.date: 06/18/2020
 ms.author: ajburnle
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f6c30dffbc8f97273ee59ce33ae3fe75ed730763
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: b2ce3b362d02e7acb0a11e6d93b8e94ca8e4d04e
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93356634"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96903527"
 ---
 # <a name="create-a-new-access-package-in-azure-ad-entitlement-management"></a>Een nieuw toegangs pakket maken in het beheer van rechten van Azure AD
 
@@ -67,7 +67,7 @@ Dit zijn de stappen op hoog niveau voor het maken van een nieuw toegangs pakket.
    
     ![Rechtenbeheer in de Azure-portal](./media/entitlement-management-shared/access-packages-list.png)
 
-## <a name="basics"></a>Basisinstellingen
+## <a name="basics"></a>Basisbeginselen
 
 Op het tabblad **basis beginselen** geeft u het toegangs pakket een naam en geeft u op in welke catalogus u het toegangs pakket wilt maken.
 
@@ -89,7 +89,7 @@ Op het tabblad **basis beginselen** geeft u het toegangs pakket een naam en geef
 
 Op het tabblad **resource rollen** selecteert u de resources die u wilt toevoegen in het toegangs pakket. Gebruikers die het toegangs pakket aanvragen en ontvangen, ontvangen alle resource rollen in het toegangs pakket.
 
-1. Klik op het resource type dat u wilt toevoegen ( **groepen en teams** , **toepassingen** of **share point-sites** ).
+1. Klik op het resource type dat u wilt toevoegen (**groepen en teams**, **toepassingen** of **share point-sites**).
 
 1. Selecteer in het deel venster selecteren dat wordt weer gegeven een of meer resources uit de lijst.
 
@@ -106,6 +106,9 @@ Op het tabblad **resource rollen** selecteert u de resources die u wilt toevoege
     ![Toegangs pakket-resource functie selecteren](./media/entitlement-management-access-package-create/resource-roles-role.png)
 
 1. Klik op **Volgende**.
+
+>[!NOTE]
+>U kunt dynamische groepen toevoegen aan een catalogus en aan een toegangs pakket. U kunt echter alleen de rol eigenaar selecteren bij het beheren van een dynamische groeps bron in een toegangs pakket.
 
 ## <a name="requests"></a>Aanvragen
 

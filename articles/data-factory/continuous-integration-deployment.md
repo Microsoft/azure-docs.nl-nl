@@ -11,12 +11,12 @@ ms.reviewer: maghan
 manager: jroth
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: a7d392412aa481d9541cd4987cfb4c18d04dafa0
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 84e156074d6db837556ba4ed9febdb43bcdf3318
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500152"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96902297"
 ---
 # <a name="continuous-integration-and-delivery-in-azure-data-factory"></a>Continue integratie en levering in Azure Data Factory
 
@@ -235,7 +235,7 @@ Hieronder vindt u enkele richt lijnen die u moet volgen wanneer u het bestand me
       * `-` houdt in dat de standaard waarde voor de para meter niet wordt bewaard.
       * `|` is een speciaal geval voor geheimen van Azure Key Vault voor verbindings reeksen of sleutels.
    * `<name>` is de naam van de para meter. Als deze leeg is, wordt de naam van de eigenschap gebruikt. Als de waarde begint met een `-` teken, wordt de naam Inge kort. Zo wordt bijvoorbeeld `AzureStorage1_properties_typeProperties_connectionString` Inge kort tot `AzureStorage1_connectionString` .
-   * `<stype>` is het type para meter. Als `<stype>` deze leeg is, is het standaard type `string` . Ondersteunde waarden: `string` , `bool` , `number` , `object` en `securestring` .
+   * `<stype>` is het type para meter. Als `<stype>` deze leeg is, is het standaard type `string` . Ondersteunde waarden: `string` , `securestring` , `int` , `bool` , `object` `secureobject` en `array` .
 * Het opgeven van een matrix in het definitie bestand geeft aan dat de overeenkomende eigenschap in de sjabloon een matrix is. Data Factory doorloopt alle objecten in de matrix door gebruik te maken van de definitie die is opgegeven in het object Integration runtime van de matrix. Het tweede object, een teken reeks, wordt de naam van de eigenschap, die wordt gebruikt als de naam voor de para meter voor elke iteratie.
 * Een definitie kan niet specifiek zijn voor een resource-exemplaar. Elke wille keurige definitie is van toepassing op alle resources van dat type.
 * Standaard zijn alle beveiligde teken reeksen, zoals Key Vault geheimen en beveiligde teken reeksen, zoals verbindings reeksen, sleutels en tokens, para meters.
@@ -250,7 +250,7 @@ Hier volgt een voor beeld van hoe een parameterisering-sjabloon eruit kan zien:
         "properties": {
             "activities": [{
                 "typeProperties": {
-                    "waitTimeInSeconds": "-::number",
+                    "waitTimeInSeconds": "-::int",
                     "headers": "=::object"
                 }
             }]
@@ -268,7 +268,7 @@ Hier volgt een voor beeld van hoe een parameterisering-sjabloon eruit kan zien:
             "typeProperties": {
                 "recurrence": {
                     "*": "=",
-                    "interval": "=:triggerSuffix:number",
+                    "interval": "=:triggerSuffix:int",
                     "frequency": "=:-freq"
                 },
                 "maxConcurrency": "="
@@ -317,7 +317,7 @@ Hier volgt een uitleg van de manier waarop de vorige sjabloon is samengesteld, o
 #### <a name="triggers"></a>Triggers
 
 * Onder `typeProperties` zijn twee eigenschappen para meters. De eerste is `maxConcurrency` , die is opgegeven om een standaard waarde te hebben en van het type is `string` . Deze heeft de standaard parameter naam `<entityName>_properties_typeProperties_maxConcurrency` .
-* De `recurrence` eigenschap is ook para meters. Hieronder worden alle eigenschappen op dat niveau opgegeven om para meters te worden ingesteld als teken reeksen, met standaard waarden en parameter namen. Een uitzonde ring is de `interval` eigenschap, die als type wordt para meter `number` . De parameter naam is met een achtervoegsel `<entityName>_properties_typeProperties_recurrence_triggerSuffix` . Op dezelfde manier `freq` is de eigenschap een teken reeks en wordt de para meter als teken reeks. De `freq` eigenschap is echter para meters zonder standaard waarde. De naam is inge kort en achtervoegsel. Bijvoorbeeld `<entityName>_freq`.
+* De `recurrence` eigenschap is ook para meters. Hieronder worden alle eigenschappen op dat niveau opgegeven om para meters te worden ingesteld als teken reeksen, met standaard waarden en parameter namen. Een uitzonde ring is de `interval` eigenschap, die als type wordt para meter `int` . De parameter naam is met een achtervoegsel `<entityName>_properties_typeProperties_recurrence_triggerSuffix` . Op dezelfde manier `freq` is de eigenschap een teken reeks en wordt de para meter als teken reeks. De `freq` eigenschap is echter para meters zonder standaard waarde. De naam is inge kort en achtervoegsel. Bijvoorbeeld `<entityName>_freq`.
 
 #### <a name="linkedservices"></a>LinkedServices
 
@@ -668,7 +668,7 @@ Als u gebruik wilt maken van Git-integratie met uw data factory en een CI/CD-pij
     - Data Factory-entiteiten zijn afhankelijk van elkaar. Triggers zijn bijvoorbeeld afhankelijk van pijp lijnen, en pijp lijnen zijn afhankelijk van gegevens sets en andere pijp lijnen. Selectief publiceren van een subset van bronnen kan leiden tot onverwacht gedrag en fouten.
     - In zeldzame gevallen wanneer u selectief publiceren nodig hebt, kunt u overwegen om een hotfix te gebruiken. Zie [hotfix production environment](#hotfix-production-environment)(Engelstalig) voor meer informatie.
 
-- Het Azure Data Factory team adviseert geen Azure RBAC-besturings elementen toe te wijzen aan afzonderlijke entiteiten (pijp lijnen, gegevens sets, enzovoort) in een data factory. Als een ontwikkelaar bijvoorbeeld toegang heeft tot een pijp lijn of een gegevensset, moeten ze toegang hebben tot alle pijp lijnen of gegevens sets in de data factory. Als u van mening bent dat u veel Azure-rollen moet implementeren in een data factory, raadpleegt u de implementatie van een tweede data factory.
+- Het Azure Data Factory team adviseert geen Azure RBAC-besturings elementen toe te wijzen aan afzonderlijke entiteiten (pijp lijnen, gegevens sets, enzovoort) in een data factory. Als een ontwikkelaar bijvoorbeeld toegang heeft tot een pijplijn of gegevensset, heeft deze toegang tot alle pijplijnen en gegevenssets in de data factory. Als u van mening bent dat u veel Azure-rollen moet implementeren in een data factory, raadpleegt u de implementatie van een tweede data factory.
 
 -   U kunt niet publiceren vanuit privé-filialen.
 

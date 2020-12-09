@@ -1,39 +1,39 @@
 ---
 title: Veelgestelde vragen over ARM-sjablonen
-description: Veelgestelde vragen over Azure Resource Manager sjablonen.
+description: Veelgestelde vragen over Azure Resource Manager sjablonen (ARM-sjablonen).
 ms.topic: conceptual
 ms.date: 09/17/2020
 ms.author: tomfitz
 author: tfitzmac
-ms.openlocfilehash: af6a46e16cd888e3ff6a382be2b1a4264fcc2941
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 5a23cf031b5d7cf40e2077f2e5287e10de563207
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96184005"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96903000"
 ---
 # <a name="frequently-asked-questions-about-arm-templates"></a>Veelgestelde vragen over ARM-sjablonen
 
-In dit artikel vindt u antwoorden op veelgestelde vragen over de sjablonen van Azure Resource Manager (ARM).
+In dit artikel vindt u antwoorden op veelgestelde vragen over Azure Resource Manager sjablonen (ARM-sjablonen).
 
 ## <a name="getting-started"></a>Aan de slag
 
 * **Wat zijn ARM-sjablonen en waarom moet ik deze gebruiken?**
 
   ARM-sjablonen zijn JSON-bestanden waarin u definieert wat u wilt implementeren in Azure. Met sjablonen kunt u een infra structuur-as-code-oplossing voor Azure implementeren. Uw organisatie kan de vereiste infra structuur herhaaldelijk en betrouwbaar implementeren voor verschillende omgevingen.
-  
+
   Zie [Wat zijn arm-sjablonen?](overview.md) voor meer informatie over hoe arm-sjablonen u helpen bij het beheren van uw Azure-infra structuur.
 
 * **Hoe kan ik aan de slag met sjablonen?**
 
-  Om het ontwerpen van ARM-sjablonen te vereenvoudigen, hebt u de juiste hulpprogram ma's nodig. U kunt het beste [Visual Studio code](https://code.visualstudio.com/) en de [uitbrei ding voor de Azure Resource Manager-hulpprogram ma's](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)installeren. Zie [Quick Start: Create Azure Resource Manager Templates with Visual Studio code](quickstart-create-templates-use-visual-studio-code.md)(Engelstalig) voor een korte inleiding tot deze hulpprogram ma's.
+  Om het ontwerpen van ARM-sjablonen te vereenvoudigen, hebt u de juiste hulpprogram ma's nodig. U kunt het beste [Visual Studio code](https://code.visualstudio.com/) en de [uitbrei ding voor de Azure Resource Manager-hulpprogram ma's](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools)installeren. Voor een korte inleiding tot deze hulpprogram ma's raadpleegt u [Quick Start: arm-sjablonen maken met Visual Studio code](quickstart-create-templates-use-visual-studio-code.md).
 
   Als u klaar bent voor het maken van ARM-sjablonen, start u de [zelf studie reeks voor beginners op arm-sjablonen](template-tutorial-create-first-template.md). In deze zelf studies gaat u stapsgewijs door de procedure voor het maken van een ARM-sjabloon. Meer informatie over de verschillende onderdelen van de sjabloon en hoe deze samen werken. Deze inhoud is ook beschikbaar als een [Microsoft Learn module](/learn/modules/authoring-arm-templates/).
 
 * **Moet ik ARM-sjablonen of-terraform gebruiken om te implementeren in azure?**
 
   Gebruik de optie die u het beste vindt. Beide services helpen u bij het automatiseren van implementaties naar Azure.
-  
+
   We geloven dat er voor delen zijn voor het gebruik van ARM-sjablonen over andere infrastructuur services. Zie voor meer informatie over deze voor delen [Waarom arm-sjablonen kiezen?](overview.md#why-choose-arm-templates)
 
 ## <a name="build-2020"></a>Build 2020
@@ -59,7 +59,7 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over de sjablonen van A
 * **Ik heb mijn omgeving ingesteld via de portal. Is er een manier om de sjabloon op te halen uit een bestaande resource groep?**
 
   Ja, u kunt [de sjabloon exporteren](export-template-portal.md) vanuit een resource groep. De geëxporteerde sjabloon is een goed uitgangs punt voor het leren over sjablonen, maar u wilt deze waarschijnlijk herzien voordat u het in een productie omgeving gebruikt.
-  
+
   Wanneer u de sjabloon exporteert, kunt u selecteren welke resources u wilt toevoegen in de sjabloon.
 
 * **Kan ik een resource groep maken in een ARM-sjabloon en daar resources op implementeren?**
@@ -182,11 +182,11 @@ In dit artikel vindt u antwoorden op veelgestelde vragen over de sjablonen van A
 
 * **Kan ik ARM-sjablonen integreren in azure-pijp lijnen?**
 
-  Ja. Zie [zelf studie: doorlopende integratie van Azure Resource Manager sjablonen met Azure-pijp lijnen](deployment-tutorial-pipeline.md) en [arm-sjablonen integreren met Azure-pijp](add-template-to-azure-pipelines.md)lijnen voor een uitleg over het gebruik van sjablonen en pijp lijnen.
+  Ja. Zie [zelf studie: doorlopende integratie van arm-sjablonen met Azure-pijp lijnen](deployment-tutorial-pipeline.md) en [arm-sjablonen integreren met Azure-pijp](add-template-to-azure-pipelines.md)lijnen voor een uitleg over het gebruik van sjablonen en pijp lijnen.
 
 * **Kan ik GitHub-acties gebruiken om een sjabloon te implementeren?**
 
-  Ja, Zie [Azure Resource Manager sjablonen implementeren met behulp van github-acties](deploy-github-actions.md).
+  Ja, Zie [arm-sjablonen implementeren met behulp van github-acties](deploy-github-actions.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

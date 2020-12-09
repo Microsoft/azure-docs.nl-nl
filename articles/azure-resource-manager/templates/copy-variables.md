@@ -1,18 +1,18 @@
 ---
 title: Meerdere exemplaren van een variabele definiëren
-description: Kopieer bewerking in een Azure Resource Manager sjabloon gebruiken om meerdere keren te herhalen bij het maken van een variabele.
+description: Kopieer bewerking in een Azure Resource Manager sjabloon (ARM-sjabloon) gebruiken om meerdere keren te herhalen bij het maken van een variabele.
 ms.topic: conceptual
 ms.date: 02/13/2020
-ms.openlocfilehash: aca69dd858c7a940592e74123b97b8d364d9e11c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b8acd85659b843cb482e1ccc61e28da03431db1b
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84678440"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905890"
 ---
 # <a name="variable-iteration-in-arm-templates"></a>Variabele herhaling in ARM-sjablonen
 
-In dit artikel wordt beschreven hoe u meer dan één waarde voor een variabele in uw Azure Resource Manager-sjabloon (ARM) kunt maken. Door het element **kopiëren** toe te voegen aan de sectie variabelen van uw sjabloon, kunt u het aantal items voor een variabele tijdens de implementatie dynamisch instellen. U hoeft ook geen sjabloon syntaxis te herhalen.
+In dit artikel wordt beschreven hoe u meer dan één waarde voor een variabele in uw Azure Resource Manager-sjabloon maakt (ARM-sjabloon). Door het element toe te voegen `copy` aan de sectie variabelen van uw sjabloon, kunt u het aantal items voor een variabele tijdens de implementatie dynamisch instellen. U hoeft ook geen sjabloon syntaxis te herhalen.
 
 U kunt ook kopiëren met [resources](copy-resources.md), [Eigenschappen in een resource](copy-properties.md)en [uitvoer](copy-outputs.md)gebruiken.
 
@@ -30,9 +30,9 @@ Het element Copy heeft de volgende algemene indeling:
 ]
 ```
 
-De eigenschap **name** is een wille keurige waarde die de lus identificeert. De eigenschap **Count** geeft het aantal iteraties op dat u voor de variabele wilt.
+De `name` eigenschap is een wille keurige waarde die de lus identificeert. De `count` eigenschap geeft het aantal iteraties op dat u voor de variabele wilt.
 
-De eigenschap **input** geeft de eigenschappen aan die u wilt herhalen. U maakt een matrix van elementen die zijn gemaakt op basis van de waarde in de eigenschap **input** . Dit kan één eigenschap zijn (zoals een teken reeks) of een object met verschillende eigenschappen.
+`input`Met de eigenschap geeft u de eigenschappen op die u wilt herhalen. U maakt een matrix van elementen die zijn gemaakt op basis van de waarde in de `input` eigenschap. Dit kan één eigenschap zijn (zoals een teken reeks) of een object met verschillende eigenschappen.
 
 ## <a name="copy-limits"></a>Limieten kopiëren
 
@@ -92,7 +92,7 @@ De vorige sjabloon retourneert een matrix met de volgende waarden:
 ]
 ```
 
-In het volgende voor beeld ziet u hoe u een matrix met objecten maakt met drie eigenschappen: name, diskSizeGB en diskIndex.
+In het volgende voor beeld ziet u hoe u een matrix met objecten maakt met drie eigenschappen: `name` , `diskSizeGB` en `diskIndex` .
 
 ```json
 {
@@ -160,10 +160,10 @@ In het voor gaande voor beeld wordt een matrix met de volgende waarden geretourn
 ```
 
 > [!NOTE]
-> Variabele herhaling ondersteunt het argument Offset. De offset moet worden opgegeven na de naam van de iteratie, zoals functie copyindex (' diskNames ', 1). Als u geen offset waarde opgeeft, wordt het standaard ingesteld op 0 voor het eerste exemplaar.
+> Variabele herhaling ondersteunt het argument Offset. De offset moet worden opgegeven na de naam van de herhaling, zoals `copyIndex('diskNames', 1)` . Als u geen offset waarde opgeeft, wordt het standaard ingesteld op 0 voor het eerste exemplaar.
 >
 
-U kunt ook het element Copy binnen een variabele gebruiken. In het volgende voor beeld wordt een object gemaakt dat een matrix heeft als een van de waarden.
+U kunt ook het `copy` element binnen een variabele gebruiken. In het volgende voor beeld wordt een object gemaakt dat een matrix heeft als een van de waarden.
 
 ```json
 {
@@ -236,7 +236,7 @@ In het voor gaande voor beeld wordt een object geretourneerd met de volgende waa
 }
 ```
 
-In het volgende voor beeld ziet u de verschillende manieren waarop u kopiëren met variabelen kunt gebruiken.
+In het volgende voor beeld ziet u de verschillende manieren waarop u `copy` met variabelen kunt werken.
 
 ```json
 {
@@ -326,6 +326,5 @@ In de volgende voor beelden ziet u algemene scenario's voor het maken van meer d
   * [Resource iteratie in ARM-sjablonen](copy-resources.md)
   * [Eigenschaps herhaling in ARM-sjablonen](copy-properties.md)
   * [Uitvoer herhaling in ARM-sjablonen](copy-outputs.md)
-* Zie [arm-sjablonen ontwerpen](template-syntax.md)als u meer wilt weten over de secties van een sjabloon.
-* Zie [een toepassing implementeren met een arm-sjabloon](deploy-powershell.md)voor meer informatie over het implementeren van uw sjabloon.
-
+* Zie [inzicht in de structuur en syntaxis van arm-sjablonen](template-syntax.md)als u meer wilt weten over de secties van een sjabloon.
+* Zie [resources implementeren met arm-sjablonen en Azure PowerShell](deploy-powershell.md)voor meer informatie over het implementeren van uw sjabloon.

@@ -3,22 +3,26 @@ title: API van Long-Running-bewerking Azure Maps
 description: Meer informatie over langlopende asynchrone achtergrond verwerking in Azure Maps
 author: anastasia-ms
 ms.author: v-stharr
-ms.date: 05/18/2020
+ms.date: 12/07/2020
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 69c5b9d15c0ba3c7c8b6b01643beac1905c404ad
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: f5fb7c8059c8b98e8ec514a4159e96f48db7b1ad
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895865"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96906196"
 ---
-# <a name="creator-long-running-operation-api"></a>API voor Maker Long-Running-bewerking
+# <a name="creator-preview-long-running-operation-api"></a>Creator (preview) Long-Running bewerkings-API
 
-Sommige API'S in Azure Maps gebruiken een [asynchroon Request-Reply patroon](/azure/architecture/patterns/async-request-reply). Met dit patroon kan Azure Maps Maxi maal beschik bare en responsieve services bieden. In dit artikel wordt uitgelegd hoe u de specifieke implementatie van langlopende asynchrone achtergrond verwerking van Azure-kaarten uitvoert.
+> [!IMPORTANT]
+> Azure Maps Creator-Services zijn momenteel beschikbaar als open bare preview.
+> Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
+
+Sommige Api's in Azure Maps gebruiken een [asynchroon Request-Reply patroon](/azure/architecture/patterns/async-request-reply). Met dit patroon kan Azure Maps Maxi maal beschik bare en responsieve services bieden. In dit artikel wordt uitgelegd hoe u de specifieke implementatie van langlopende asynchrone achtergrond verwerking van Azure-kaarten uitvoert.
 
 ## <a name="submitting-a-request"></a>Een aanvraag verzenden
 

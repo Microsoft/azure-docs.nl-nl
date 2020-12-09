@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e16f33cb8aa7c6ceeb1398dd23ccba31b5f936b1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5367e5027bfae2fa3ed7e87a779e50e4048ba608
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91776133"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861728"
 ---
 # <a name="get-started-with-azure-active-directory-identity-protection-and-microsoft-graph"></a>Aan de slag met Azure Active Directory Identity Protection en Microsoft Graph
 
@@ -39,7 +39,7 @@ Er zijn vier stappen voor het verkrijgen van toegang tot identiteits beveiliging
 
 ### <a name="retrieve-your-domain-name"></a>Domein naam ophalen 
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).  
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).  
 1. Blader naar **Azure Active Directory**  >  **aangepaste domein namen**. 
 1. Noteer het `.onmicrosoft.com` domein, u hebt deze informatie nodig in een latere stap.
 
@@ -49,16 +49,16 @@ Er zijn vier stappen voor het verkrijgen van toegang tot identiteits beveiliging
 1. Selecteer **Nieuwe registratie**.
 1. Voer de volgende stappen uit op de pagina **maken** :
    1. Typ in het tekstvak **naam** een naam voor de toepassing (bijvoorbeeld: Azure AD-risico detectie-API).
-   1. Selecteer onder **ondersteunde account typen**het type accounts dat de api's gaat gebruiken.
+   1. Selecteer onder **ondersteunde account typen** het type accounts dat de api's gaat gebruiken.
    1. Selecteer **Registreren**.
 1. Kopieer de **toepassings-id**.
 
 ### <a name="configure-api-permissions"></a>API-machtigingen configureren
 
-1. Selecteer de **API-machtigingen**van de **toepassing** die u hebt gemaakt.
+1. Selecteer de **API-machtigingen** van de **toepassing** die u hebt gemaakt.
 1. Klik op de pagina **geconfigureerde machtigingen** in de werk balk aan de bovenkant op **een machtiging toevoegen**.
 1. Klik op de pagina **API-toegang toevoegen** op **een API selecteren**.
-1. Selecteer **Microsoft Graph**op de pagina **een API selecteren** en klik vervolgens op **selecteren**.
+1. Selecteer **Microsoft Graph** op de pagina **een API selecteren** en klik vervolgens op **selecteren**.
 1. Op de pagina **API-machtigingen voor aanvragen** : 
    1. Selecteer **Toepassingsmachtigingen**.
    1. Schakel de selectie vakjes naast `IdentityRiskEvent.Read.All` en in `IdentityRiskyUser.Read.All` .
@@ -67,8 +67,8 @@ Er zijn vier stappen voor het verkrijgen van toegang tot identiteits beveiliging
 
 ### <a name="configure-a-valid-credential"></a>Een geldige referentie configureren
 
-1. Selecteer **certificaten & geheimen**uit de **toepassing** die u hebt gemaakt.
-1. Onder **client geheimen**selecteert u **Nieuw client geheim**.
+1. Selecteer **certificaten & geheimen** uit de **toepassing** die u hebt gemaakt.
+1. Onder **client geheimen** selecteert u **Nieuw client geheim**.
    1. Geef het client geheim een **Beschrijving** en stel de verval periode in op basis van het beleid van uw organisatie.
    1. Selecteer **Toevoegen**.
 
@@ -173,4 +173,4 @@ Zie voor verwante informatie:
 - [Typen risico detecties gedetecteerd door Azure Active Directory Identity Protection](./overview-identity-protection.md)
 - [Microsoft Graph](https://developer.microsoft.com/graph/)
 - [Overzicht van Microsoft Graph](https://developer.microsoft.com/graph/docs)
-- [Hoofdmap van Azure AD Identity Protection-Service](/graph/api/resources/identityprotectionroot?view=graph-rest-1.0)
+- [Hoofdmap van Azure AD Identity Protection-Service](/graph/api/resources/identityprotectionroot)

@@ -4,12 +4,12 @@ description: Hier vindt u antwoorden op enkele veelgestelde vragen over de Azure
 ms.topic: conceptual
 ms.date: 11/19/2020
 ms.author: dikamath
-ms.openlocfilehash: 0bc3e0ab5b3017c2d051113a57d79214ffce0836
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 3033df2021a8d1780caf9b0b7cd4dbe8de2a6050
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94967343"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96861405"
 ---
 # <a name="frequently-asked-questions-about-azure-vmware-solution"></a>Veelgestelde vragen over de Azure VMware-oplossing
 
@@ -188,7 +188,7 @@ Schakel in het Azure Portal Internet connectiviteit in voor een privécloud. Maa
 
 #### <a name="do-i-need-to-restrict-access-from-the-internet-to-vms-on-logical-networks-in-a-private-cloud"></a>Moet ik de toegang van Internet tot Vm's op logische netwerken in een privécloud beperken?
 
-Nee. Netwerk verkeer van het Internet rechtstreeks naar persoonlijke Clouds is niet toegestaan.
+Nee. Netwerk verkeer binnenkomend van het Internet rechtstreeks naar persoonlijke Clouds is standaard niet toegestaan.  U kunt echter Azure VMware-oplossings-Vm's beschikbaar maken op Internet via de [open bare IP-](public-ip-usage.md) optie in uw Azure portal voor uw Azure VMware-oplossing privécloud.
 
 #### <a name="do-i-need-to-restrict-internet-access-from-vms-on-logical-networks-to-the-internet"></a>Moet ik Internet toegang beperken van Vm's op logische netwerken naar het Internet?
 

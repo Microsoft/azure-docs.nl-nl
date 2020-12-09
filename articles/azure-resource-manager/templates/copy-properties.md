@@ -1,20 +1,20 @@
 ---
 title: Meerdere exemplaren van een eigenschap definiëren
-description: Gebruik een Kopieer bewerking in een Azure Resource Manager sjabloon om meerdere keren te herhalen bij het maken van een eigenschap in een resource.
+description: Kopieer bewerkingen gebruiken in een Azure Resource Manager sjabloon (ARM-sjabloon) om meerdere keren te herhalen bij het maken van een eigenschap in een resource.
 ms.topic: conceptual
 ms.date: 09/15/2020
-ms.openlocfilehash: f199872d5bb8a0333bf7bedb9501a6ca1b884691
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 446a303104e6b538129cd22d1f1fbbba6282b2ee
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90605240"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905924"
 ---
 # <a name="property-iteration-in-arm-templates"></a>Eigenschaps herhaling in ARM-sjablonen
 
-In dit artikel wordt beschreven hoe u meer dan één exemplaar van een eigenschap in uw Azure Resource Manager sjabloon maakt (ARM-sjabloon). Door het element **copy** toe te voegen aan de sectie eigenschappen van een resource in uw sjabloon, kunt u het aantal items voor een eigenschap tijdens de implementatie dynamisch instellen. U hoeft ook geen sjabloon syntaxis te herhalen.
+In dit artikel wordt beschreven hoe u meer dan één exemplaar van een eigenschap in uw Azure Resource Manager sjabloon maakt (ARM-sjabloon). Door het element toe te voegen `copy` aan de sectie eigenschappen van een resource in uw sjabloon, kunt u het aantal items voor een eigenschap tijdens de implementatie dynamisch instellen. U hoeft ook geen sjabloon syntaxis te herhalen.
 
-U kunt alleen kopiëren gebruiken met resources op het hoogste niveau, zelfs wanneer u een kopie op een eigenschap toepast. Zie [iteratie voor een onderliggende resource](copy-resources.md#iteration-for-a-child-resource)voor meer informatie over het wijzigen van een onderliggende resource in een resource op het hoogste niveau.
+U kunt alleen gebruiken `copy` met resources op het hoogste niveau, zelfs wanneer ze `copy` op een eigenschap worden toegepast. Zie [iteratie voor een onderliggende resource](copy-resources.md#iteration-for-a-child-resource)voor meer informatie over het wijzigen van een onderliggende resource in een resource op het hoogste niveau.
 
 U kunt ook kopiëren met [resources](copy-resources.md), [variabelen](copy-variables.md)en [uitvoer](copy-outputs.md)gebruiken.
 
@@ -32,11 +32,11 @@ Het element Copy heeft de volgende algemene indeling:
 ]
 ```
 
-Geef bij **naam**de naam op van de resource-eigenschap die u wilt maken.
+`name`Geef voor de naam op van de resource-eigenschap die u wilt maken.
 
-De eigenschap **Count** geeft het aantal iteraties op dat u voor de eigenschap wilt.
+De `count` eigenschap geeft het aantal iteraties op dat u voor de eigenschap wilt.
 
-De eigenschap **input** geeft de eigenschappen aan die u wilt herhalen. U maakt een matrix van elementen die zijn gemaakt op basis van de waarde in de eigenschap **input** .
+`input`Met de eigenschap geeft u de eigenschappen op die u wilt herhalen. U maakt een matrix van elementen die zijn gemaakt op basis van de waarde in de `input` eigenschap.
 
 ## <a name="copy-limits"></a>Limieten kopiëren
 
@@ -53,7 +53,7 @@ Eerdere versies van Power shell, CLI en de REST API bieden geen ondersteuning vo
 
 ## <a name="property-iteration"></a>Eigenschaps herhaling
 
-In het volgende voor beeld ziet u hoe u kunt Toep assen `copy` op de eigenschap data disks op een virtuele machine:
+In het volgende voor beeld ziet u hoe u kunt Toep assen op `copy` de `dataDisks` eigenschap op een virtuele machine:
 
 ```json
 {
@@ -97,7 +97,7 @@ In het volgende voor beeld ziet u hoe u kunt Toep assen `copy` op de eigenschap 
 }
 ```
 
-U ziet dat wanneer `copyIndex` u een eigenschaps herhaling gebruikt, de naam van de herhaling moet opgeven. Eigenschaps herhaling ondersteunt ook een argument Offset. De offset moet worden opgegeven na de naam van de iteratie, zoals functie copyindex (' data disks ', 1).
+U ziet dat wanneer `copyIndex` u een eigenschaps herhaling gebruikt, de naam van de herhaling moet opgeven. Eigenschaps herhaling ondersteunt ook een argument Offset. De offset moet worden opgegeven na de naam van de herhaling, zoals `copyIndex('dataDisks', 1)` .
 
 Resource Manager breidt de `copy` matrix uit tijdens de implementatie. De naam van de matrix wordt de naam van de eigenschap. De invoer waarden worden de object eigenschappen. De geïmplementeerde sjabloon wordt:
 
@@ -188,7 +188,7 @@ Met de volgende voorbeeld sjabloon wordt een failovergroep gemaakt voor data bas
 }
 ```
 
-Het element Copy is een matrix, zodat u meer dan één eigenschap voor de resource kunt opgeven.
+Het `copy` element is een matrix, zodat u meer dan één eigenschap voor de resource kunt opgeven.
 
 ```json
 {
@@ -265,6 +265,5 @@ In het volgende voor beeld ziet u een veelvoorkomend scenario voor het maken van
   * [Resource iteratie in ARM-sjablonen](copy-resources.md)
   * [Variabele herhaling in ARM-sjablonen](copy-variables.md)
   * [Uitvoer herhaling in ARM-sjablonen](copy-outputs.md)
-* Zie [arm-sjablonen ontwerpen](template-syntax.md)als u meer wilt weten over de secties van een sjabloon.
-* Zie [een toepassing implementeren met een arm-sjabloon](deploy-powershell.md)voor meer informatie over het implementeren van uw sjabloon.
-
+* Zie [inzicht in de structuur en syntaxis van arm-sjablonen](template-syntax.md)als u meer wilt weten over de secties van een sjabloon.
+* Zie [resources implementeren met arm-sjablonen en Azure PowerShell](deploy-powershell.md)voor meer informatie over het implementeren van uw sjabloon.

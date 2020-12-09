@@ -1,32 +1,32 @@
 ---
 title: Resource Manager-sjablonen implementeren met behulp van GitHub-acties
-description: Hierin wordt beschreven hoe u Azure Resource Manager-sjablonen implementeert met behulp van GitHub-acties.
+description: Hierin wordt beschreven hoe u Azure Resource Manager sjablonen (ARM-sjablonen) implementeert met behulp van GitHub-acties.
 ms.topic: conceptual
 ms.date: 10/13/2020
 ms.custom: github-actions-azure, devx-track-azurecli
-ms.openlocfilehash: cf705f68544c4c4e0db55d4a375e1e50530c8957
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 4cda8307d417880469e6043b84c3ac55ed30071c
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185705"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905839"
 ---
-# <a name="deploy-azure-resource-manager-templates-by-using-github-actions"></a>Azure Resource Manager sjablonen implementeren met behulp van GitHub-acties
+# <a name="deploy-arm-templates-by-using-github-actions"></a>ARM-sjablonen implementeren met behulp van GitHub-acties
 
 [Github-acties](https://help.github.com/actions/getting-started-with-github-actions/about-github-actions) is een reeks functies in github voor het automatiseren van uw werk stromen voor software ontwikkeling op dezelfde locatie waar u code opslaat en samen werken aan pull-aanvragen en-problemen.
 
-Gebruik de [actie Azure Resource Manager sjabloon implementeren](https://github.com/marketplace/actions/deploy-azure-resource-manager-arm-template) om de implementatie van een resource manager-sjabloon naar Azure te automatiseren. 
+Gebruik de [actie Azure Resource Manager sjabloon implementeren](https://github.com/marketplace/actions/deploy-azure-resource-manager-arm-template) om de implementatie van een Azure Resource Manager sjabloon (arm-sjabloon) naar Azure te automatiseren.
 
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-- Een GitHub-account. Als u er nog geen hebt, kunt u zich [gratis](https://github.com/join)aanmelden.  
+- Een GitHub-account. Als u geen account hebt, kunt u zich registreren voor een [gratis](https://github.com/join) account.
     - Een GitHub-opslag plaats voor het opslaan van uw Resource Manager-sjablonen en uw werk stroom bestanden. Zie [een nieuwe opslag plaats maken](https://help.github.com/en/enterprise/2.14/user/articles/creating-a-new-repository)om er een te maken.
 
 
 ## <a name="workflow-file-overview"></a>Overzicht van werkstroom bestand
 
-Een werk stroom wordt gedefinieerd door een YAML-bestand (. yml) in het `/.github/workflows/` pad in uw opslag plaats. Deze definitie bevat de verschillende stappen en parameters die deel uitmaken van de werkstroom.
+Een werkstroom wordt gedefinieerd door een YAML-bestand (.yml) in het pad `/.github/workflows/` in uw opslagplaats. Deze definitie bevat de verschillende stappen en parameters die deel uitmaken van de werkstroom.
 
 Het bestand heeft twee secties:
 
@@ -40,21 +40,21 @@ Het bestand heeft twee secties:
 
 U kunt een [service-principal](../../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) maken met de opdracht [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac&preserve-view=true) in de [Azure CLI](/cli/azure/). Voer deze opdracht uit met [Azure Cloud Shell](https://shell.azure.com/) in de Azure Portal of door de knop **Uitproberen** te selecteren.
 
-Maak een resource groep als u deze nog niet hebt. 
+Maak een resource groep als u deze nog niet hebt.
 
 ```azurecli-interactive
     az group create -n {MyResourceGroup}
 ```
 
-Vervang de tijdelijke aanduiding door `myApp` de naam van uw toepassing. 
+Vervang de plaatsaanduiding `myApp` door de naam van uw toepassing.
 
 ```azurecli-interactive
    az ad sp create-for-rbac --name {myApp} --role contributor --scopes /subscriptions/{subscription-id}/resourceGroups/{MyResourceGroup} --sdk-auth
 ```
 
-In het bovenstaande voor beeld vervangt u de tijdelijke aanduidingen door de abonnements-ID en de naam van de resource groep. De uitvoer is een JSON-object met de roltoewijzings referenties die toegang bieden tot uw App Service-app, vergelijkbaar met hieronder. Kopieer dit JSON-object voor later. U hebt de secties alleen nodig met de `clientId` waarden,, `clientSecret` `subscriptionId` en `tenantId` . 
+In het bovenstaande voorbeeld vervangt u de plaatsaanduidingen door uw abonnements-id en resourcegroepsnaam. De uitvoer is een JSON-object met de roltoewijzingsreferenties die toegang bieden tot uw App Service-app, vergelijkbaar met hieronder. Kopieer dit JSON-object voor later gebruik. U hebt alleen de secties nodig met de waarden `clientId`, `clientSecret`, `subscriptionId` en `tenantId`.
 
-```output 
+```output
   {
     "clientId": "<GUID>",
     "clientSecret": "<GUID>",
@@ -71,7 +71,7 @@ In het bovenstaande voor beeld vervangt u de tijdelijke aanduidingen door de abo
 
 ## <a name="configure-the-github-secrets"></a>De GitHub-geheimen configureren
 
-U moet geheimen maken voor uw Azure-referenties, resource groep en abonnementen. 
+U moet geheimen maken voor uw Azure-referenties, resource groep en abonnementen.
 
 1. In [GitHub](https://github.com/), bladert u in uw opslagplaats.
 
@@ -79,9 +79,9 @@ U moet geheimen maken voor uw Azure-referenties, resource groep en abonnementen.
 
 1. Plak de volledige JSON-uitvoer van de Azure CLI-opdracht in het waardeveld van het geheim. Geef het geheim de naam `AZURE_CREDENTIALS`.
 
-1. Maak nog een geheim met de naam `AZURE_RG` . Voeg de naam van uw resource groep toe aan het veld waarde van het geheim (bijvoorbeeld: `myResourceGroup` ). 
+1. Maak nog een geheim met de naam `AZURE_RG` . Voeg de naam van uw resource groep toe aan het veld waarde van het geheim (bijvoorbeeld: `myResourceGroup` ).
 
-1. Maak een aanvullend geheim met de naam `AZURE_SUBSCRIPTION` . Voeg uw abonnements-ID toe aan het veld waarde van het geheim (bijvoorbeeld: `90fd3f9d-4c61-432d-99ba-1273f236afa2` ). 
+1. Maak een aanvullend geheim met de naam `AZURE_SUBSCRIPTION` . Voeg uw abonnements-ID toe aan het veld waarde van het geheim (bijvoorbeeld: `90fd3f9d-4c61-432d-99ba-1273f236afa2` ).
 
 ## <a name="add-resource-manager-template"></a>Resource Manager-sjabloon toevoegen
 
@@ -118,7 +118,7 @@ Het werk stroom bestand moet worden opgeslagen in de map **. github/werk stromen
         - uses: azure/login@v1
           with:
             creds: ${{ secrets.AZURE_CREDENTIALS }}
-     
+
           # Deploy ARM template
         - name: Run ARM deploy
           uses: azure/arm-deploy@v1
@@ -126,13 +126,13 @@ Het werk stroom bestand moet worden opgeslagen in de map **. github/werk stromen
             subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
             resourceGroupName: ${{ secrets.AZURE_RG }}
             template: ./azuredeploy.json
-            parameters: storageAccountType=Standard_LRS 
-        
+            parameters: storageAccountType=Standard_LRS
+
           # output containerName variable from template
         - run: echo ${{ steps.deploy.outputs.containerName }}
     ```
     > [!NOTE]
-    > U kunt in plaats daarvan een JSON-indelings parameter bestand opgeven in de actie ARM implementeren (bijvoorbeeld: `.azuredeploy.parameters.json` ).  
+    > U kunt in plaats daarvan een JSON-indelings parameter bestand opgeven in de actie ARM implementeren (bijvoorbeeld: `.azuredeploy.parameters.json` ).
 
     De eerste sectie van het werk stroom bestand bevat:
 
@@ -152,7 +152,7 @@ Omdat de werk stroom zo is geconfigureerd dat deze wordt geactiveerd door het we
 1. Selecteer **arm implementeren** in het menu om de implementatie te controleren.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
-Als uw resource groep en opslag plaats niet meer nodig zijn, moet u de resources opschonen die u hebt geïmplementeerd door de resource groep en de GitHub-opslag plaats te verwijderen. 
+Als uw resource groep en opslag plaats niet meer nodig zijn, moet u de resources opschonen die u hebt geïmplementeerd door de resource groep en de GitHub-opslag plaats te verwijderen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -1,26 +1,26 @@
 ---
 title: Meerdere exemplaren van bronnen implementeren
-description: Gebruik kopieer bewerkingen en matrices in een Azure Resource Manager sjabloon om het resource type meermaals te implementeren.
+description: Gebruik kopieer bewerkingen en matrices in een Azure Resource Manager sjabloon (ARM-sjabloon) om het resource type meerdere keren te implementeren.
 ms.topic: conceptual
 ms.date: 09/21/2020
-ms.openlocfilehash: 411c92061826a6e8bc59380d0440fb69816557a4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 47f3d693b84347973889a6003360d7113c427f4d
+ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91293965"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96905907"
 ---
 # <a name="resource-iteration-in-arm-templates"></a>Resource iteratie in ARM-sjablonen
 
-In dit artikel wordt beschreven hoe u meer dan één exemplaar van een resource in uw Azure Resource Manager-sjabloon (ARM) kunt maken. Door het element **kopiëren** toe te voegen aan de sectie resources van uw sjabloon, kunt u het aantal resources dat moet worden geïmplementeerd, dynamisch instellen. U hoeft ook geen sjabloon syntaxis te herhalen.
+In dit artikel wordt beschreven hoe u meer dan één exemplaar van een resource in uw Azure Resource Manager-sjabloon maakt (ARM-sjabloon). Door het element toe te voegen `copy` aan de sectie resources van uw sjabloon, kunt u het aantal resources dat moet worden geïmplementeerd, dynamisch instellen. U hoeft ook geen sjabloon syntaxis te herhalen.
 
-U kunt ook kopiëren met [Eigenschappen](copy-properties.md), [variabelen](copy-variables.md)en [uitvoer](copy-outputs.md)gebruiken.
+U kunt ook gebruiken `copy` met [Eigenschappen](copy-properties.md), [variabelen](copy-variables.md)en [uitvoer](copy-outputs.md).
 
 Zie [voor waarde-element](conditional-resource-deployment.md)als u wilt opgeven of een resource helemaal moet worden geïmplementeerd.
 
 ## <a name="syntax"></a>Syntax
 
-Het element Copy heeft de volgende algemene indeling:
+Het `copy` element heeft de volgende algemene indeling:
 
 ```json
 "copy": {
@@ -31,9 +31,9 @@ Het element Copy heeft de volgende algemene indeling:
 }
 ```
 
-De eigenschap **name** is een wille keurige waarde die de lus identificeert. De eigenschap **Count** geeft het aantal iteraties op dat u voor het resource type wilt.
+De `name` eigenschap is een wille keurige waarde die de lus identificeert. De `count` eigenschap geeft het aantal iteraties op dat u voor het resource type wilt.
 
-Gebruik de eigenschappen **mode** en **BatchSize** om op te geven of de resources parallel of sequentieel worden geïmplementeerd. Deze eigenschappen worden beschreven in [serieel of parallel](#serial-or-parallel).
+Gebruik de `mode` `batchSize` Eigenschappen en om op te geven of de resources parallel of sequentieel worden geïmplementeerd. Deze eigenschappen worden beschreven in [serieel of parallel](#serial-or-parallel).
 
 ## <a name="copy-limits"></a>Limieten kopiëren
 
@@ -52,7 +52,7 @@ Wees voorzichtig met het gebruik van de implementatie van de [volledige modus](d
 
 ## <a name="resource-iteration"></a>Resource herhaling
 
-In het volgende voor beeld wordt het aantal opslag accounts gemaakt dat is opgegeven in de para meter **storageCount** .
+In het volgende voor beeld wordt het aantal opslag accounts gemaakt dat is opgegeven in de `storageCount` para meter.
 
 ```json
 {
@@ -97,7 +97,7 @@ Hiermee maakt u deze namen:
 * storage1
 * storage2.
 
-Als u de indexwaarde wilt verschuiven, kunt u een waarde doorgeven in de functie copyIndex(). Het aantal iteraties is nog steeds opgegeven in het copy-element, maar de waarde van functie copyindex wordt gecompenseerd door de opgegeven waarde. Het volgende voor beeld:
+Als u de index waarde wilt verschuiven, kunt u een waarde in de functie door geven `copyIndex()` . Het aantal iteraties is nog steeds opgegeven in het exemplaar element, maar de waarde van `copyIndex` wordt verrekend met de opgegeven waarde. Het volgende voor beeld:
 
 ```json
 "name": "[concat('storage', copyIndex(1))]",
@@ -187,7 +187,7 @@ Als u opslag accounts bijvoorbeeld twee keer tegelijk wilt implementeren, gebrui
 }
 ```
 
-De eigenschap mode kan ook **parallel**worden geaccepteerd. Dit is de standaard waarde.
+De `mode` eigenschap accepteert ook **parallel**, wat de standaard waarde is.
 
 ## <a name="depend-on-resources-in-a-loop"></a>Is afhankelijk van resources in een lus
 
@@ -297,6 +297,5 @@ In de volgende voor beelden ziet u algemene scenario's voor het maken van meer d
   * [Variabele herhaling in ARM-sjablonen](copy-variables.md)
   * [Uitvoer herhaling in ARM-sjablonen](copy-outputs.md)
 * Zie [using Copy](linked-templates.md#using-copy)voor informatie over het gebruik van kopiëren met geneste sjablonen.
-* Zie [arm-sjablonen ontwerpen](template-syntax.md)als u meer wilt weten over de secties van een sjabloon.
-* Zie [een toepassing implementeren met een arm-sjabloon](deploy-powershell.md)voor meer informatie over het implementeren van uw sjabloon.
-
+* Zie [inzicht in de structuur en syntaxis van arm-sjablonen](template-syntax.md)als u meer wilt weten over de secties van een sjabloon.
+* Zie [resources implementeren met arm-sjablonen en Azure PowerShell](deploy-powershell.md)voor meer informatie over het implementeren van uw sjabloon.

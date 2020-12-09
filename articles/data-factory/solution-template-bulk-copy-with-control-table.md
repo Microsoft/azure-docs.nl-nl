@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 12/14/2018
-ms.openlocfilehash: 8d1ff372009c6158f2148847dd77126bcb4d189f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.date: 12/09/2020
+ms.openlocfilehash: d89fd8b4102333603fa71b2cc28a49b732b91b08
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461232"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920884"
 ---
 # <a name="bulk-copy-from-a-database-with-a-control-table"></a>Bulksgewijs kopiëren van een Data Base met een controle tabel
 
@@ -44,7 +44,7 @@ De sjabloon definieert de volgende para meters:
 - *Data_Destination_Container* is het pad naar de hoofdmap waarnaar de gegevens worden gekopieerd in uw doel archief. 
 - *Data_Destination_Directory* het mappad is in de hoofdmap waar de gegevens naar het doel archief worden gekopieerd. 
 
-De laatste drie para meters, waarmee het pad in uw doel archief wordt gedefinieerd, zijn alleen zichtbaar als de bestemming die u kiest, opslag ruimte op basis van bestanden is. Als u ' Azure Synapse Analytics (voorheen SQL DW) ' als doel archief kiest, zijn deze para meters niet vereist. Maar de tabel namen en het schema in azure Synapse Analytics moeten gelijk zijn aan die in de bron database.
+De laatste drie para meters, waarmee het pad in uw doel archief wordt gedefinieerd, zijn alleen zichtbaar als de bestemming die u kiest, opslag ruimte op basis van bestanden is. Als u ' Azure Synapse Analytics ' als doel archief kiest, zijn deze para meters niet vereist. Maar de tabel namen en het schema in azure Synapse Analytics moeten gelijk zijn aan die in de bron database.
 
 ## <a name="how-to-use-this-solution-template"></a>Deze oplossings sjabloon gebruiken
 
@@ -94,7 +94,7 @@ De laatste drie para meters, waarmee het pad in uw doel archief wordt gedefiniee
 
     ![Bekijk het resultaat](media/solution-template-bulk-copy-with-control-table/BulkCopyfromDB_with_ControlTable8.png)
 
-9. Beschrijving Als u de gegevens bestemming ' Azure Synapse Analytics (voorheen SQL DW) ' hebt gekozen, moet u een verbinding met Azure Blob Storage voor fase ring invoeren, zoals vereist door Azure Synapse Analytics poly base. Met de sjabloon wordt automatisch een pad naar een container gegenereerd voor de Blob-opslag. Controleer of de container is gemaakt na de uitvoering van de pijp lijn.
+9. Beschrijving Als u de gegevens bestemming ' Azure Synapse Analytics ' hebt gekozen, moet u een verbinding met Azure Blob Storage voor fase ring opgeven, zoals vereist door Azure Synapse Analytics poly base. Met de sjabloon wordt automatisch een pad naar een container gegenereerd voor de Blob-opslag. Controleer of de container is gemaakt na de uitvoering van de pijp lijn.
     
     ![Poly base-instelling](media/solution-template-bulk-copy-with-control-table/BulkCopyfromDB_with_ControlTable9.png)
        

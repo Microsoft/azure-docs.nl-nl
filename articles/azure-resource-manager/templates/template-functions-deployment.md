@@ -1,18 +1,18 @@
 ---
 title: Sjabloon functies-implementatie
-description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon om implementatie gegevens op te halen.
+description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon (ARM-sjabloon) om implementatie gegevens op te halen.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: 9d6a1783bcd6d84c181edae84063ed7c0964c3d8
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: e63caef669a2c28d29cd0bbd649b0997cea14ee1
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96004565"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920512"
 ---
 # <a name="deployment-functions-for-arm-templates"></a>Implementatie functies voor ARM-sjablonen
 
-Resource Manager biedt de volgende functies voor het ophalen van waarden die betrekking hebben op de huidige implementatie van uw Azure Resource Manager ARM-sjabloon:
+Resource Manager biedt de volgende functies voor het ophalen van waarden die betrekking hebben op de huidige implementatie van uw Azure Resource Manager sjabloon (ARM-sjabloon):
 
 * [inhoudsdistributiepad](#deployment)
 * [omgeving](#environment)
@@ -434,7 +434,7 @@ De uitvoer van het vorige voor beeld met de standaard waarden is:
 | arrayOutput | Matrix | [1, 2, 3] |
 | crossOutput | Tekenreeks | optie 1 |
 
-Zie [para meters in azure Resource Manager sjabloon](template-parameters.md)voor meer informatie over het gebruik van para meters.
+Zie [para meters in arm-sjablonen](template-parameters.md)voor meer informatie over het gebruik van para meters.
 
 ## <a name="variables"></a>variabelen
 
@@ -571,8 +571,8 @@ De uitvoer van het vorige voor beeld met de standaard waarden is:
 | exampleOutput3 | Tekenreeks | myVariable |
 | exampleOutput4 |  Object | {"property1": "waarde1", "property2": "Value2"} |
 
-Zie [variabelen in azure Resource Manager sjabloon](template-variables.md)voor meer informatie over het gebruik van variabelen.
+Zie [variabelen in arm-sjabloon](template-variables.md)voor meer informatie over het gebruik van variabelen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor een beschrijving van de secties in een Azure Resource Manager sjabloon.
+* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor een beschrijving van de secties in een arm-sjabloon.

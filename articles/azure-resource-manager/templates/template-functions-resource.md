@@ -1,18 +1,18 @@
 ---
 title: 'Sjabloon functies: bronnen'
-description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon om waarden over resources op te halen.
+description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon (ARM-sjabloon) om waarden over resources op te halen.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: 3b5a2642ebbabac61e46f4d9b0a2dfec9610a673
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 166e9104a9d791ac6d82ed0e8e2d3659efd2ae0d
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/09/2020
-ms.locfileid: "96902660"
+ms.locfileid: "96919986"
 ---
 # <a name="resource-functions-for-arm-templates"></a>Resource functies voor ARM-sjablonen
 
-Resource Manager biedt de volgende functies voor het ophalen van resource waarden in uw Azure Resource Manager-sjabloon (ARM):
+Resource Manager biedt de volgende functies voor het ophalen van resource waarden in uw Azure Resource Manager-sjabloon (ARM-sjabloon):
 
 * [extensionResourceId](#extensionresourceid)
 * [orderverzamellijst](#list)
@@ -1632,7 +1632,7 @@ resource myPolicyAssignment 'Microsoft.Authorization/policyAssignments@2019-09-0
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [Azure Resource Manager sjablonen ontwerpen](template-syntax.md)voor een beschrijving van de secties in een Azure Resource Manager sjabloon.
-* Zie [gekoppelde sjablonen gebruiken met Azure Resource Manager](linked-templates.md)om meerdere sjablonen samen te voegen.
-* Als u een bepaald aantal keer wilt herhalen bij het maken van een type resource, raadpleegt u [meerdere exemplaren van resources maken in azure Resource Manager](copy-resources.md).
-* Zie [een toepassing implementeren met Azure Resource Manager sjabloon](deploy-powershell.md)voor meer informatie over het implementeren van de sjabloon die u hebt gemaakt.
+* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor een beschrijving van de secties in een arm-sjabloon.
+* Zie voor het samen voegen [van meerdere sjablonen gekoppelde en geneste sjablonen gebruiken bij het implementeren van Azure-resources](linked-templates.md).
+* Als u een bepaald aantal keer wilt herhalen bij het maken van een resource type, raadpleegt u [resource-iteratie in arm-sjablonen](copy-resources.md).
+* Zie [resources implementeren met arm-sjablonen en Azure PowerShell](deploy-powershell.md)voor meer informatie over het implementeren van de sjabloon die u hebt gemaakt.

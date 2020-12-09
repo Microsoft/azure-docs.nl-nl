@@ -11,12 +11,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto, genemi
 ms.date: 11/14/2019
-ms.openlocfilehash: c5839589c35ea5a9c52303801a8767fc598434fc
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 96030f0e74c29848f675ae2e0867eefa2e79a8a7
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905873"
+ms.locfileid: "96920409"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-servers-in-azure-sql-database"></a>Virtuele netwerk service-eind punten en-regels gebruiken voor servers in Azure SQL Database
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -52,8 +52,8 @@ Elke regel voor het virtuele netwerk is van toepassing op uw hele server en niet
 
 Er is een schei ding van beveiligings rollen in het beheer van Virtual Network Service-eind punten. Actie is vereist voor elk van de volgende rollen:
 
-- **Netwerk beheerder:** &nbsp; Schakel het eind punt in.
-- **Database beheerder:** &nbsp; Werk de toegangs beheer lijst (ACL) bij om het opgegeven subnet toe te voegen aan de-server.
+- **Netwerk beheerder (rol [netwerk bijdrager](../../role-based-access-control/built-in-roles.md#network-contributor) ):** &nbsp; Schakel het eind punt in.
+- **Database beheerder ([SQL Server rol Inzender](../../role-based-access-control/built-in-roles.md#sql-server-contributor) ):** &nbsp; Werk de toegangs beheer lijst (ACL) bij om het opgegeven subnet toe te voegen aan de-server.
 
 *Alternatief voor Azure RBAC:*
 
@@ -247,7 +247,7 @@ U moet al een subnet hebben dat is gelabeld met de specifieke naam van het Virtu
 
 ## <a name="azure-portal-steps"></a>Azure Portal stappen
 
-1. Meld u aan bij de [Azure-portal][http-azure-portal-link-ref-477t].
+1. Meld u aan bij [Azure Portal][http-azure-portal-link-ref-477t].
 
 2. Zoek en selecteer **SQL-servers** en selecteer vervolgens uw server. Onder **beveiliging** selecteert u **firewalls en virtuele netwerken**.
 

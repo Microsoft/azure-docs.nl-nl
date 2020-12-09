@@ -1,18 +1,18 @@
 ---
 title: 'Sjabloon functies: teken reeks'
-description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon om te werken met teken reeksen.
+description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon (ARM-sjabloon) om met teken reeksen te werken.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: e94037b40f4937a40e00215aa7a3f99fd3280b49
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: a70aaff91f701c0ba8d26db2488b82e052dd905d
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96005993"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920004"
 ---
 # <a name="string-functions-for-arm-templates"></a>Teken reeks functies voor ARM-sjablonen
 
-Resource Manager biedt de volgende functies voor het werken met teken reeksen in uw Azure Resource Manager-sjablonen (ARM):
+Resource Manager biedt de volgende functies voor het werken met teken reeksen in uw Azure Resource Manager-sjabloon (ARM-sjabloon):
 
 * [base64](#base64)
 * [base64ToJson](#base64tojson)
@@ -37,7 +37,7 @@ Resource Manager biedt de volgende functies voor het werken met teken reeksen in
 * [verdergaan](#skip)
 * [delen](#split)
 * [startsWith](#startswith)
-* [tekenreeks](#string)
+* [tekenreeksexpressie](#string)
 * [subtekenreeks](#substring)
 * [take](#take)
 * [toLower](#tolower)
@@ -529,11 +529,11 @@ De uitvoer van het vorige voor beeld met de standaard waarden is:
 | Naam | Type | Waarde |
 | ---- | ---- | ----- |
 | stringTrue | Booleaanse waarde | True |
-| stringFalse | Booleaanse waarde | False |
+| stringFalse | Booleaanse waarde | Niet waar |
 | objectTrue | Booleaanse waarde | True |
-| objectFalse | Booleaanse waarde | False |
+| objectFalse | Booleaanse waarde | Niet waar |
 | arrayTrue | Booleaanse waarde | True |
-| arrayFalse | Booleaanse waarde | False |
+| arrayFalse | Booleaanse waarde | Niet waar |
 
 ## <a name="datauri"></a>dataUri
 
@@ -830,10 +830,10 @@ De uitvoer van het vorige voor beeld met de standaard waarden is:
 | ---- | ---- | ----- |
 | startsTrue | Booleaanse waarde | True |
 | startsCapTrue | Booleaanse waarde | True |
-| startsFalse | Booleaanse waarde | False |
+| startsFalse | Booleaanse waarde | Niet waar |
 | endsTrue | Booleaanse waarde | True |
 | endsCapTrue | Booleaanse waarde | True |
-| endsFalse | Booleaanse waarde | False |
+| endsFalse | Booleaanse waarde | Niet waar |
 
 ## <a name="first"></a>instantie
 
@@ -1923,7 +1923,7 @@ De uitvoer van het vorige voor beeld met de standaard waarden is:
 | ---- | ---- | ----- |
 | startsTrue | Booleaanse waarde | True |
 | startsCapTrue | Booleaanse waarde | True |
-| startsFalse | Booleaanse waarde | False |
+| startsFalse | Booleaanse waarde | Niet waar |
 | endsTrue | Booleaanse waarde | True |
 | endsCapTrue | Booleaanse waarde | True |
 | endsFalse | Booleaanse waarde | False |
@@ -2535,7 +2535,7 @@ Hiermee maakt u een absolute URI door het combi neren van de baseUri en de relat
 
    * Als **baseUri** een paar schuine strepen heeft, maar niet eindigt met een schuine streep, wordt alles vanaf de laatste schuine streep verwijderd uit **baseuri** en wordt het resultaat **baseuri** gevolgd door **relativeUri**.
 
-Hier volgen enkele voorbeelden:
+Enkele voorbeelden:
 
 ```
 uri('http://contoso.org/firstpath', 'myscript.sh') -> http://contoso.org/myscript.sh
@@ -2761,7 +2761,7 @@ De uitvoer van het vorige voor beeld met de standaard waarden is:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [Azure Resource Manager sjablonen ontwerpen](template-syntax.md)voor een beschrijving van de secties in een Azure Resource Manager sjabloon.
-* Zie [gekoppelde sjablonen gebruiken met Azure Resource Manager](linked-templates.md)om meerdere sjablonen samen te voegen.
-* Als u een bepaald aantal keer wilt herhalen bij het maken van een type resource, raadpleegt u [meerdere exemplaren van resources maken in azure Resource Manager](copy-resources.md).
-* Zie [een toepassing implementeren met Azure Resource Manager sjabloon](deploy-powershell.md)voor meer informatie over het implementeren van de sjabloon die u hebt gemaakt.
+* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor een beschrijving van de secties in een arm-sjabloon.
+* Zie voor het samen voegen [van meerdere sjablonen gekoppelde en geneste sjablonen gebruiken bij het implementeren van Azure-resources](linked-templates.md).
+* Als u een bepaald aantal keer wilt herhalen bij het maken van een resource type, raadpleegt u [resource-iteratie in arm-sjablonen](copy-resources.md).
+* Zie [resources implementeren met arm-sjablonen en Azure PowerShell](deploy-powershell.md)voor meer informatie over het implementeren van de sjabloon die u hebt gemaakt.

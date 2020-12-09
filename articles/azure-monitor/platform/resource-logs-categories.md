@@ -4,12 +4,12 @@ description: Verwijzing van Azure Monitor inzicht krijgen in de ondersteunde ser
 ms.subservice: logs
 ms.topic: reference
 ms.date: 06/03/2020
-ms.openlocfilehash: 1fd6f07151c93b64c150f01e5c0b5c7f4cffed85
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 463b1d9d9c3ed1d94728874ba814554deb4f97c6
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94593005"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920828"
 ---
 # <a name="supported-categories-for-azure-resource-logs"></a>Ondersteunde categorieën voor Azure-resource logboeken
 
@@ -20,6 +20,11 @@ ms.locfileid: "94593005"
 
 Een combi natie van het resource type (beschikbaar in de `resourceId` eigenschap) en de `category` unieke identificatie van een schema. Er is een gemeen schappelijk schema voor alle resource logboeken met servicespecifieke velden en vervolgens toegevoegd voor verschillende logboek categorieën. Zie [common en service-specifiek schema voor Azure-resource logboeken]() voor meer informatie.
 
+
+## <a name="costs"></a>Kosten
+
+ Er zijn kosten verbonden aan het verzenden en opslaan van gegevens in Log Analytics en/of event hub. Bron logboeken zijn één type gegevens dat u naar deze locaties kunt verzenden. Er zijn extra [kosten verbonden aan het exporteren van sommige categorieën resource logboeken](https://azure.microsoft.com/pricing/details/monitor/). Andere kosten zijn gratis voor de export. In de onderstaande tabel worden de details weer gegeven.
+
 ## <a name="supported-log-categories-per-resource-type"></a>Ondersteunde logboek categorieën per resource type
 
 Hieronder volgt een lijst met de typen logboeken die beschikbaar zijn voor elk resource type. 
@@ -27,17 +32,11 @@ Hieronder volgt een lijst met de typen logboeken die beschikbaar zijn voor elk r
 Sommige categorieën worden mogelijk alleen ondersteund voor specifieke typen resources. Raadpleeg de resource-specifieke documentatie als u denkt dat er een resource ontbreekt. Bijvoorbeeld: categorieën van micro soft. SQL/servers/data bases zijn niet beschikbaar voor alle typen data bases. Zie [informatie over SQL database diagnostische logboek registratie](../../azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure.md)voor meer informatie. 
 
 Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerking openen.
-
-## <a name="microsoftaadiamtenants"></a>micro soft. aadiam/tenants
-
-|Categorie|Weergave naam categorie|
-|---|---|
-|Aanmelding|Aanmelding|
-
-
 ## <a name="microsoftanalysisservicesservers"></a>Micro soft. AnalysisServices/servers
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |Engine|Engine|
 |Service|Service|
@@ -45,14 +44,18 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftapimanagementservice"></a>Microsoft.ApiManagement/service
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |Gateway logs|Logboeken gerelateerd aan de ApiManagement-gateway|
 
 
 ## <a name="microsoftappplatformspring"></a>Micro soft. AppPlatform/lente
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |ApplicationConsole|Toepassings console|
 |SystemLogs|Systeem logboeken|
@@ -60,23 +63,29 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftautomationautomationaccounts"></a>Micro soft. Automation/automationAccounts
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
+|DscNodeStatus|DSC-knooppunt status|
 |JobLogs|Taak logboeken|
 |JobStreams|Taak stromen|
-|DscNodeStatus|DSC-knooppunt status|
 
 
 ## <a name="microsoftbatchbatchaccounts"></a>Microsoft.Bat-CH/batchAccounts
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |ServiceLog|Service logboeken|
 
 
 ## <a name="microsoftbatchaiworkspaces"></a>Microsoft.BatchAI/werk ruimten
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |BaiClusterEvent|BaiClusterEvent|
 |BaiClusterNodeEvent|BaiClusterNodeEvent|
@@ -85,58 +94,77 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftblockchainblockchainmembers"></a>Microsoft.Blockchain/blockchainMembers
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |BlockchainApplication|Block Chain-toepassing|
+|FabricOrderer|Fabric-Orderer|
+|FabricPeer|Infrastructuur peer|
 |Proxy|Proxy|
 
 
 ## <a name="microsoftblockchaincordamembers"></a>Micro soft. Block Chain/cordaMembers
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |BlockchainApplication|Block Chain-toepassing|
 
 
 ## <a name="microsoftcdncdnwebapplicationfirewallpolicies"></a>Micro soft. CDN/cdnwebapplicationfirewallpolicies
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
-|WebApplicationFirewallLogs|Web Application firewall-logboeken|
+|WebApplicationFirewallLogs|Web-webtoepassingsbestanden firewall-logboeken|
 
 
 ## <a name="microsoftcdnprofiles"></a>Microsoft.Cdn/profiles
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |AzureCdnAccessLog|Azure CDN-toegangs logboek|
 
 
 ## <a name="microsoftcdnprofilesendpoints"></a>Micro soft. CDN/profielen/eind punten
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |CoreAnalytics|Hiermee worden de metrische gegevens van het eind punt opgehaald, bijvoorbeeld band breedte, uitgaand verkeer enzovoort.|
 
 
 ## <a name="microsoftclassicnetworknetworksecuritygroups"></a>Micro soft. ClassicNetwork/networksecuritygroups
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |Stroom gebeurtenis van regel voor netwerk beveiligings groep|Stroom gebeurtenis van regel voor netwerk beveiligings groep|
 
 
 ## <a name="microsoftcognitiveservicesaccounts"></a>Micro soft. CognitiveServices/accounts
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |Controleren|Auditlogboeken|
 |RequestResponse|Aanvraag-en antwoord logboeken|
+|Tracering|Traceer logboeken|
 
 
 ## <a name="microsoftcontainerregistryregistries"></a>Micro soft. ContainerRegistry/registers
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |ContainerRegistryLoginEvents|Aanmeldings gebeurtenissen|
 |ContainerRegistryRepositoryEvents|RepositoryEvent-logboeken|
@@ -144,7 +172,9 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftcontainerservicemanagedclusters"></a>Micro soft. container service/managedClusters
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |cluster-automatisch schalen|Kubernetes-cluster automatisch schalen|
 |uitvoeren-apiserver|Kubernetes-API-server|
@@ -155,14 +185,18 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftcustomprovidersresourceproviders"></a>Micro soft. CustomProviders/resourceproviders
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |Audit logs bevat|Controle logboeken voor MiniRP-aanroepen|
 
 
 ## <a name="microsoftdatabricksworkspaces"></a>Micro soft. Databricks/werk ruimten
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |accounts|Databricks-accounts|
 |clusters|Databricks-clusters|
@@ -176,16 +210,11 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 |werkruimte|Databricks-werk ruimte|
 
 
-## <a name="microsoftdatacatalogdatacatalogs"></a>Micro soft. DataCatalog/datacatalogs
-
-|Categorie|Weergave naam categorie|
-|---|---|
-|ScanStatusLogEvent|ScanStatus|
-
-
 ## <a name="microsoftdatafactoryfactories"></a>Micro soft. DataFactory/fabrieken
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |ActivityRuns|Logboek voor uitvoering van pijplijn activiteit|
 |PipelineRuns|Logboek voor uitvoering van pijp lijn|
@@ -194,31 +223,70 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftdatalakestoreaccounts"></a>Micro soft. data Lake Store/accounts
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |Controleren|Auditlogboeken|
 |Aanvragen|Logboeken aanvragen|
 
 
+## <a name="microsoftdatashareaccounts"></a>Microsoft.DataShare/accounts
+
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
+|---|---|
+|ReceivedShareSnapshots|Ontvangen moment opnamen van shares|
+|SentShareSnapshots|Verzonden moment opnamen van shares|
+|Shares|Shares|
+|ShareSubscriptions|Abonnementen delen|
+
+
 ## <a name="microsoftdbformariadbservers"></a>Microsoft.DBforMariaDB/servers
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |MySqlAuditLogs|Controle logboeken voor MariaDB|
 |MySqlSlowLogs|MariaDB-server logboeken|
 
 
+## <a name="microsoftdbformysqlflexibleservers"></a>Microsoft.DBforMySQL/flexibleServers
+
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
+|---|---|
+|MySqlAuditLogs|MySQL-controle logboeken|
+|MySqlSlowLogs|Langzame logboeken voor MySQL|
+
+
 ## <a name="microsoftdbformysqlservers"></a>Microsoft.DBforMySQL/servers
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |MySqlAuditLogs|MySQL-controle logboeken|
 |MySqlSlowLogs|MySQL-server logboeken|
 
 
+## <a name="microsoftdbforpostgresqlflexibleservers"></a>Microsoft.DBforPostgreSQL/flexibleServers
+
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
+|---|---|
+|PostgreSQLLogs|PostgreSQL-server logboeken|
+
+
 ## <a name="microsoftdbforpostgresqlservers"></a>Microsoft.DBforPostgreSQL/servers
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |PostgreSQLLogs|PostgreSQL-server logboeken|
 |QueryStoreRuntimeStatistics|Runtime statistieken voor PostgreSQL query Store|
@@ -227,21 +295,18 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftdbforpostgresqlserversv2"></a>Micro soft. DBforPostgreSQL/serversv2
 
-|Categorie|Weergave naam categorie|
-|---|---|
-|PostgreSQLLogs|PostgreSQL-server logboeken|
+Kosten: gratis 
 
-
-## <a name="microsoftdbforpostgresqlsingleservers"></a>Micro soft. DBforPostgreSQL/singleservers
-
-|Categorie|Weergave naam categorie|
+|Categorie |Weergave naam categorie|
 |---|---|
 |PostgreSQLLogs|PostgreSQL-server logboeken|
 
 
 ## <a name="microsoftdesktopvirtualizationapplicationgroups"></a>Micro soft. DesktopVirtualization/applicationgroups
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |Controlepunt|Controlepunt|
 |Fout|Fout|
@@ -250,7 +315,9 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftdesktopvirtualizationhostpools"></a>Micro soft. DesktopVirtualization/hostpools
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |Controlepunt|Controlepunt|
 |Verbinding|Verbinding|
@@ -261,7 +328,9 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftdesktopvirtualizationworkspaces"></a>Micro soft. DesktopVirtualization/werk ruimten
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |Controlepunt|Controlepunt|
 |Fout|Fout|
@@ -271,7 +340,9 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftdevicesiothubs"></a>Microsoft.Devices/IotHubs
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |C2DCommands|C2D-opdrachten|
 |C2DTwinOperations|Dubbele C2D-bewerkingen|
@@ -291,7 +362,9 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftdevicesprovisioningservices"></a>Micro soft. devices/provisioningServices
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |DeviceOperations|Bewerkingen voor apparaten|
 |ServiceOperations|Service bewerkingen|
@@ -299,28 +372,25 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftdocumentdbdatabaseaccounts"></a>Microsoft.DocumentDB/databaseAccounts
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |CassandraRequests|CassandraRequests|
 |ControlPlaneRequests|ControlPlaneRequests|
 |DataPlaneRequests|DataPlaneRequests|
+|GremlinRequests|GremlinRequests|
 |MongoRequests|MongoRequests|
 |PartitionKeyRUConsumption|PartitionKeyRUConsumption|
 |PartitionKeyStatistics|PartitionKeyStatistics|
 |QueryRuntimeStatistics|QueryRuntimeStatistics|
 
 
-## <a name="microsoftenterpriseknowledgegraphservices"></a>Micro soft. EnterpriseKnowledgeGraph/Services
-
-|Categorie|Weergave naam categorie|
-|---|---|
-|Audit event|Audit event-logboek|
-|DataIssue|DataIssue-logboek|
-|Aanvragen|Configuratie logboek|
-
 ## <a name="microsofteventgriddomains"></a>Micro soft. EventGrid/domeinen
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |DeliveryFailures|Fout logboeken voor bezorging|
 |PublishFailures|Fout logboeken publiceren|
@@ -328,14 +398,18 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsofteventgridsystemtopics"></a>Micro soft. EventGrid/systemTopics
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |DeliveryFailures|Fout logboeken voor bezorging|
 
 
 ## <a name="microsofteventgridtopics"></a>Micro soft. EventGrid/topics
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |DeliveryFailures|Fout logboeken voor bezorging|
 |PublishFailures|Fout logboeken publiceren|
@@ -343,11 +417,13 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsofteventhubnamespaces"></a>Microsoft.EventHub/namespaces
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |ArchiveLogs|Archief logboeken|
 |AutoScaleLogs|Logboeken automatisch schalen|
-|CustomerManagedKeyUserLogs|Sleutel logboeken Customer-Managed|
+|CustomerManagedKeyUserLogs|Door de klant beheerde sleutel logboeken|
 |EventHubVNetConnectionEvent|Logboeken voor VNet/IP-filtering verbindingen|
 |KafkaCoordinatorLogs|Kafka Coordinator-logboeken|
 |KafkaUserErrorLogs|Fout logboeken van Kafka-gebruikers|
@@ -356,14 +432,18 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsofthealthcareapisservices"></a>Microsoft.HealthcareApis/services
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |Audit logs bevat|Auditlogboeken|
 
 
 ## <a name="microsoftinsightsautoscalesettings"></a>Micro soft. Insights/AutoscaleSettings
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |AutoscaleEvaluations|Evaluaties automatisch schalen|
 |AutoscaleScaleActions|Schaal acties automatisch schalen|
@@ -371,7 +451,9 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftinsightscomponents"></a>Micro soft. Insights/onderdelen
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |AppAvailabilityResults|Beschikbaarheids resultaten|
 |AppBrowserTimings|Browser timing|
@@ -386,50 +468,53 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 |AppTraces|Traceringen|
 
 
-## <a name="microsoftiotspacesgraph"></a>Micro soft. IoTSpaces/Graph
-
-|Categorie|Weergave naam categorie|
-|---|---|
-|Controleren|Controleren|
-|Uitgaand verkeer|Uitgaand verkeer|
-|Inkomend verkeer|Inkomend verkeer|
-|Operationeel|Operationeel|
-|Tracering|Tracering|
-|UserDefinedFunction|UserDefinedFunction|
-
-
 ## <a name="microsoftkeyvaultvaults"></a>Microsoft.KeyVault/vaults
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |Audit event|Auditlogboeken|
 
 
 ## <a name="microsoftkustoclusters"></a>Micro soft. Kusto/clusters
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
+|Opdracht|Opdracht|
 |FailedIngestion|Mislukte opname bewerkingen|
+|IngestionBatching|Opnamebatchverwerking|
+|Query’s uitvoeren|Query’s uitvoeren|
 |SucceededIngestion|Geslaagde opname bewerkingen|
+|TableDetails|Tabel Details|
+|TableUsageStatistics|Statistieken voor tabel gebruik|
 
 
 ## <a name="microsoftlogicintegrationaccounts"></a>Micro soft. Logic/integrationAccounts
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |IntegrationAccountTrackingEvents|Spoor gebeurtenissen voor integratie account|
 
 
 ## <a name="microsoftlogicworkflows"></a>Microsoft.Logic/workflows
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |WorkflowRuntime|Diagnostische gebeurtenissen voor workflowruntime|
 
 
 ## <a name="microsoftmachinelearningservicesworkspaces"></a>Micro soft. MachineLearningServices/werk ruimten
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |AmlComputeClusterEvent|AmlComputeClusterEvent|
 |AmlComputeClusterNodeEvent|AmlComputeClusterNodeEvent|
@@ -440,14 +525,18 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftmediamediaservices"></a>Micro soft. Media/Media Services
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |KeyDeliveryRequests|Aanvragen voor sleutel levering|
 
 
 ## <a name="microsoftnetworkapplicationgateways"></a>Micro soft. Network/applicationGateways
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |ApplicationGatewayAccessLog|Application Gateway Access-logboek|
 |ApplicationGatewayFirewallLog|Application Gateway firewall-logboek|
@@ -456,7 +545,9 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftnetworkazurefirewalls"></a>Micro soft. Network/azurefirewalls
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |AzureFirewallApplicationRule|Toepassings regel Azure Firewall|
 |AzureFirewallNetworkRule|Azure Firewall netwerk regel|
@@ -464,21 +555,27 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftnetworkbastionhosts"></a>Micro soft. Network/bastionHosts
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |BastionAuditLogs|Controle logboeken voor Bastion|
 
 
 ## <a name="microsoftnetworkexpressroutecircuits"></a>Microsoft.Network/expressRouteCircuits
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |PeeringRouteLog|Logboeken voor peering route tabel|
 
 
 ## <a name="microsoftnetworkfrontdoors"></a>Micro soft. Network/frontdoors
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |FrontdoorAccessLog|-Ingang-toegangs logboek|
 |FrontdoorWebApplicationFirewallLog|-Ingang Web Application firewall-logboek|
@@ -486,7 +583,9 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftnetworkloadbalancers"></a>Microsoft.Network/loadBalancers
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |LoadBalancerAlertEvent|Load Balancer waarschuwings gebeurtenissen|
 |LoadBalancerProbeHealthStatus|Load Balancer test status|
@@ -494,15 +593,20 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftnetworknetworksecuritygroups"></a>Micro soft. Network/networksecuritygroups
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |NetworkSecurityGroupEvent|Gebeurtenis netwerk beveiligings groep|
+|NetworkSecurityGroupFlowEvent|Stroom gebeurtenis van regel voor netwerk beveiligings groep|
 |NetworkSecurityGroupRuleCounter|Teller van regel voor netwerk beveiligings groep|
 
 
 ## <a name="microsoftnetworkpublicipaddresses"></a>Micro soft. Network/publicIPAddresses
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |DDoSMitigationFlowLogs|Stroom logboeken van DDoS-oplossings beslissingen|
 |DDoSMitigationReports|Rapporten met DDoS-oplossingen|
@@ -511,14 +615,18 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftnetworktrafficmanagerprofiles"></a>Microsoft.Network/trafficManagerProfiles
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |ProbeHealthStatusEvents|Gebeurtenis met resultaten van Traffic Manager test status|
 
 
 ## <a name="microsoftnetworkvirtualnetworkgateways"></a>Microsoft.Network/virtualNetworkGateways
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |GatewayDiagnosticLog|Diagnostische logboeken van de gateway|
 |IKEDiagnosticLog|Diagnostische logboeken voor IKE|
@@ -529,21 +637,27 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftnetworkvirtualnetworks"></a>Microsoft.Network/virtualNetworks
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |VMProtectionAlerts|Waarschuwingen voor VM-beveiliging|
 
 
 ## <a name="microsoftpowerbidedicatedcapacities"></a>Micro soft. PowerBIDedicated/capaciteiten
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |Engine|Engine|
 
 
 ## <a name="microsoftrecoveryservicesvaults"></a>Micro soft. Recovery Services/kluizen
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |AddonAzureBackupAlerts|Azure Backup waarschuwings gegevens van invoeg toepassing|
 |AddonAzureBackupJobs|Taak gegevens van invoeg toepassing Azure Backup|
@@ -563,35 +677,45 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftrelaynamespaces"></a>Micro soft. relay/naam ruimten
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |HybridConnectionsEvent|HybridConnections-gebeurtenissen|
 
 
 ## <a name="microsoftsearchsearchservices"></a>Micro soft. Search/searchServices
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |OperationLogs|Bewerkings logboeken|
 
 
 ## <a name="microsoftservicebusnamespaces"></a>Microsoft.ServiceBus/namespaces
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |OperationalLogs|Operationele logboeken|
 
 
 ## <a name="microsoftsignalrservicesignalr"></a>Microsoft.SignalRService/SignalR
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |AllLogs|Logboeken van de Azure signalerings service.|
 
 
 ## <a name="microsoftsqlmanagedinstances"></a>Micro soft. SQL/managedInstances
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |DevOpsOperationsAudit|Audit logboeken voor Devops-bewerkingen|
 |ResourceUsageStats|Resource gebruiks statistieken|
@@ -600,7 +724,9 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftsqlmanagedinstancesdatabases"></a>Micro soft. SQL/managedInstances/data bases
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |Fouten|Fouten|
 |QueryStoreRuntimeStatistics|Runtime statistieken voor query Store|
@@ -610,7 +736,9 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftsqlserversdatabases"></a>Microsoft.Sql/servers/databases
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |AutomaticTuning|Automatisch instellen|
 |Block|Block|
@@ -632,7 +760,9 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftstoragestorageaccountsblobservices"></a>Micro soft. Storage/Storage accounts/blobServices
 
-|Categorie|Weergave naam categorie|
+Kosten: betaald zoals beschreven in de sectie platform logs van [Azure monitor-pagina met prijzen.](https://azure.microsoft.com/pricing/details/monitor/) 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |StorageDelete|StorageDelete|
 |StorageRead|StorageRead|
@@ -641,7 +771,9 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftstoragestorageaccountsfileservices"></a>Micro soft. Storage/Storage accounts/fileServices
 
-|Categorie|Weergave naam categorie|
+Kosten: betaald zoals beschreven in de sectie platform logs van [Azure monitor-pagina met prijzen.](https://azure.microsoft.com/pricing/details/monitor/) 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |StorageDelete|StorageDelete|
 |StorageRead|StorageRead|
@@ -650,7 +782,9 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftstoragestorageaccountsqueueservices"></a>Micro soft. Storage/Storage accounts/queueServices
 
-|Categorie|Weergave naam categorie|
+Kosten: betaald zoals beschreven in de sectie platform logs van [Azure monitor-pagina met prijzen.](https://azure.microsoft.com/pricing/details/monitor/) 
+ 
+|Categorie |Weergave naam categorie|
 |---|---|
 |StorageDelete|StorageDelete|
 |StorageRead|StorageRead|
@@ -659,7 +793,9 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftstoragestorageaccountstableservices"></a>Micro soft. Storage/Storage accounts/tableServices
 
-|Categorie|Weergave naam categorie|
+Kosten: betaald zoals beschreven in de sectie platform logs van [Azure monitor-pagina met prijzen.](https://azure.microsoft.com/pricing/details/monitor/) 
+ 
+|Categorie |Weergave naam categorie|
 |---|---|
 |StorageDelete|StorageDelete|
 |StorageRead|StorageRead|
@@ -668,22 +804,64 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 
 ## <a name="microsoftstreamanalyticsstreamingjobs"></a>Micro soft. StreamAnalytics/streamingjobs
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |Ontwerpen|Ontwerpen|
 |Uitvoering|Uitvoering|
 
 
+## <a name="microsoftsynapseworkspaces"></a>Micro soft. Synapse/werk ruimten
+
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
+|---|---|
+|BuiltinSqlReqsEnded|De ingebouwde aanvragen van SQL-groep zijn beëindigd|
+|GatewayApiRequests|Synapse Gateway-API-aanvragen|
+|SQLSecurityAuditEvents|SQL-beveiligings controle gebeurtenis|
+|SynapseRbacOperations|Synapse RBAC-bewerkingen|
+
+
+## <a name="microsoftsynapseworkspacesbigdatapools"></a>Micro soft. Synapse/werk ruimten/bigDataPools
+
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
+|---|---|
+|BigDataPoolAppsEnded|Toepassingen voor Big Data-groep gestopt|
+
+
+## <a name="microsoftsynapseworkspacessqlpools"></a>Micro soft. Synapse/werk ruimten/sqlPools
+
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
+|---|---|
+|DmsWorkers|DMS-werk rollen|
+|ExecRequests|Exec-aanvragen|
+|RequestSteps|Stappen voor aanvragen|
+|SqlRequests|SQL-aanvragen|
+|SQLSecurityAuditEvents|SQL-beveiligings controle gebeurtenis|
+|Wacht|Wacht|
+
+
 ## <a name="microsoftwebhostingenvironments"></a>micro soft. Web/hostingenvironments
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |AppServiceEnvironmentPlatformLogs|App Service Environment-platform logboeken|
 
 
 ## <a name="microsoftwebsites"></a>micro soft. web/sites
 
-|Categorie|Weergave naam categorie|
+Kosten: gratis 
+
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |AppServiceAppLogs|Toepassings logboeken App Service|
 |AppServiceAuditLogs|Access-controle logboeken|
@@ -691,13 +869,14 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 |AppServiceFileAuditLogs|Controle logboeken voor het wijzigen van de site-inhoud|
 |AppServiceHTTPLogs|HTTP-logboeken|
 |FunctionAppLogs|Toepassings logboeken van functie|
-|ScanLogs|Virus scan logboeken|
 
 
 ## <a name="microsoftwebsitesslots"></a>micro soft. web/sites/sleuven
 
+Kosten: gratis 
 
-|Categorie|Weergave naam categorie|
+
+|Categorie |Weergave naam categorie|
 |---|---|
 |AppServiceAppLogs|Toepassings logboeken App Service|
 |AppServiceAuditLogs|Access-controle logboeken|
@@ -705,7 +884,6 @@ Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerk
 |AppServiceFileAuditLogs|Controle logboeken voor het wijzigen van de site-inhoud|
 |AppServiceHTTPLogs|HTTP-logboeken|
 |FunctionAppLogs|Toepassings logboeken van functie|
-|ScanLogs|Virus scan logboeken|
 
 
 ## <a name="next-steps"></a>Volgende stappen

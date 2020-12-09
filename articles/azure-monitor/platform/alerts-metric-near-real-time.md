@@ -7,12 +7,12 @@ services: monitoring
 ms.topic: conceptual
 ms.date: 12/3/2020
 ms.subservice: alerts
-ms.openlocfilehash: dfcc1f15ebec1337cfa7d484319c7b942ff052b2
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 0e4674c9e0513a0b8dae29f5868b1da79da8ab84
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96548236"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920560"
 ---
 # <a name="supported-resources-for-metric-alerts-in-azure-monitor"></a>Ondersteunde resources voor metrische waarschuwingen in Azure Monitor
 
@@ -46,7 +46,7 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 |Micro soft. ClassicStorage/Storage accounts/queueServices | Ja | Nee | |
 |Micro soft. ClassicStorage/Storage accounts/tableServices | Ja | Nee | |
 |Micro soft. CognitiveServices/accounts | Ja | Nee | [Cognitive Services](./metrics-supported.md#microsoftcognitiveservicesaccounts) |
-|Microsoft.Compute/virtualMachines | Ja | Ja<sup>1</sup> | [Virtual Machines](./metrics-supported.md#microsoftcomputevirtualmachines) |
+|Microsoft.Compute/virtualMachines | Yes | Ja<sup>1</sup> | [Virtual Machines](./metrics-supported.md#microsoftcomputevirtualmachines) |
 |Microsoft.Compute/virtualMachineScaleSets | Ja | Nee |[Schaal sets voor virtuele machines](./metrics-supported.md#microsoftcomputevirtualmachinescalesets) |
 |Micro soft. ContainerInstance/containerGroups | Ja| Nee | [Containergroepen](./metrics-supported.md#microsoftcontainerinstancecontainergroups) |
 |Micro soft. ContainerRegistry/registers | Nee | Nee | [Container registers](./metrics-supported.md#microsoftcontainerregistryregistries) |
@@ -60,7 +60,7 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 |Microsoft.DBforPostgreSQL/flexibleServers | Ja | Nee | |
 |Microsoft.DBforPostgreSQL/servers | Nee | Nee | [DB voor PostgreSQL](./metrics-supported.md#microsoftdbforpostgresqlservers)|
 |Micro soft. DBforPostgreSQL/serversv2 | Nee | Nee | [DB voor PostgreSQL v2](./metrics-supported.md#microsoftdbforpostgresqlserversv2)|
-|Micro soft. DBforPostgreSQL/singleservers | Nee | Nee | [DB voor PostgreSQL (enkelvoudige servers)](./metrics-supported.md#microsoftdbforpostgresqlsingleservers)|
+|Micro soft. DBforPostgreSQL/flexibel | Nee | Nee | [DB voor PostgreSQL (flexiable-servers)](./metrics-supported.md#microsoftdbforpostgresqlflexibleservers)|
 |Microsoft.Devices/IotHubs | Ja | Nee |[IoT Hub](./metrics-supported.md#microsoftdevicesiothubs) |
 |Micro soft. devices/provisioningServices| Ja | Nee | [Services voor het inrichten van apparaten](./metrics-supported.md#microsoftdevicesprovisioningservices) |
 |Micro soft. DigitalTwins/digitalTwinsInstances | Ja | Nee | |
@@ -103,7 +103,7 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 |Micro soft. SQL/managedInstances | Nee | Ja | [Beheerde SQL-exemplaren](./metrics-supported.md#microsoftsqlmanagedinstances) |
 |Microsoft.Sql/servers/databases | Nee | Ja | [SQL Databases](./metrics-supported.md#microsoftsqlserversdatabases) |
 |Micro soft. SQL/servers/elasticPools | Nee | Ja | [Elastische SQL-Pools](./metrics-supported.md#microsoftsqlserverselasticpools) |
-|Microsoft.Storage/storageAccounts |Ja | Nee | [Opslag accounts](./metrics-supported.md#microsoftstoragestorageaccounts)|
+|Microsoft.Storage/storageAccounts |Ja | Nee | [Storage Accounts](./metrics-supported.md#microsoftstoragestorageaccounts)|
 |Micro soft. Storage/Storage accounts/Services | Ja| Nee | [BLOB Services](./metrics-supported.md#microsoftstoragestorageaccountsblobservices), [Bestands Services](./metrics-supported.md#microsoftstoragestorageaccountsfileservices), [wachtrij Services](./metrics-supported.md#microsoftstoragestorageaccountsqueueservices) en [tabel Services](./metrics-supported.md#microsoftstoragestorageaccountstableservices)|
 |Micro soft. StorageCache/caches | Ja | Nee | |
 |Micro soft. StorageSync/storageSyncServices | Ja | Nee | [Opslag synchronisatie Services](./metrics-supported.md#microsoftstoragesyncstoragesyncservices) |
@@ -115,7 +115,7 @@ Dit is de volledige lijst met Azure Monitor metrische bronnen die worden onderst
 |Micro soft. Web/hostingEnvironments/multiRolePools | Ja | Nee | [Groepen met meerdere rollen App Service Environment](./metrics-supported.md#microsoftwebhostingenvironmentsmultirolepools)|
 |Micro soft. Web/hostingEnvironments/workerPools | Ja | Nee | [Werk groepen App Service Environment](./metrics-supported.md#microsoftwebhostingenvironmentsworkerpools)|
 |Micro soft. web/server farms | Ja | Nee | [App Service plannen](./metrics-supported.md#microsoftwebserverfarms)|
-|Micro soft. web/sites | Ja | Nee | [App Services](./metrics-supported.md#microsoftwebsites-excluding-functions) en [functions](./metrics-supported.md#microsoftwebsites-functions)|
+|Micro soft. web/sites | Ja | Nee | [App Services en functions](./metrics-supported.md#microsoftwebsites)|
 |Micro soft. web/sites/sleuven | Ja | Nee | [App Service sleuven](./metrics-supported.md#microsoftwebsitesslots)|
 
 <sup>1</sup> wordt niet ondersteund voor metrische gegevens van het netwerk van de virtuele machine (netwerk in totaal, totale netwerk uitgaand, inkomende stromen, uitgaande stromen, maximum aanmaak frequentie voor inkomende stromen, maximum aanmaak snelheden voor uitgaande stromen) en aangepaste metrische gegevens.

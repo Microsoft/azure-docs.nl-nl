@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf91c9e081bff9860153b342648fedc0990b68b9
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 1d634978333e2b833324228fb0908cfba61a786d
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96862054"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96919742"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Machtigingen voor beheerrol in Azure Active Directory
 
@@ -1016,6 +1016,7 @@ Kan basis informatie over de Directory lezen & schrijven. Voor het verlenen van 
 | micro soft. Directory/Users/appRoleAssignments/update | Werk de eigenschap users. appRoleAssignments bij in Azure Active Directory. |
 | micro soft. Directory/gebruikers/assignLicense | Licenties op gebruikers beheren in Azure Active Directory. |
 | micro soft. map/gebruikers/basis/bijwerken | Basis eigenschappen van gebruikers in Azure Active Directory bijwerken. |
+| micro soft. map/gebruikers/maken | Maak gebruikers in Azure Active Directory. |
 | micro soft. map/gebruikers/uitschakelen | Een gebruikers account uitschakelen in Azure Active Directory. |
 | micro soft. map/gebruikers/inschakelen | Een gebruikers account inschakelen in Azure Active Directory |
 | micro soft. Directory/gebruikers/invalidateAllRefreshTokens | Alle gebruikers vernieuwings tokens in Azure Active Directory ongeldig maken, zodat gebruikers zich opnieuw moeten verifiëren bij de volgende aanmelding |

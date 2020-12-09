@@ -1,19 +1,19 @@
 ---
-title: Actie groepen maken en beheren in de Azure Portal
+title: Actiegroepen maken en beheren in Azure Portal
 description: Meer informatie over het maken en beheren van actie groepen in de Azure Portal.
 author: dkamstra
 ms.topic: conceptual
 ms.date: 07/28/2020
 ms.author: dukek
 ms.subservice: alerts
-ms.openlocfilehash: a2144827cd27c0af6610dabdf5ad205359f550cc
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: fd773ade0173fc1c238a5ce44e864e1255ed9044
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96435481"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920657"
 ---
-# <a name="create-and-manage-action-groups-in-the-azure-portal"></a>Actie groepen maken en beheren in de Azure Portal
+# <a name="create-and-manage-action-groups-in-the-azure-portal"></a>Actiegroepen maken en beheren in Azure Portal
 Een actie groep is een verzameling voor keuren voor meldingen die zijn gedefinieerd door de eigenaar van een Azure-abonnement. Azure Monitor-en Service Health-waarschuwingen gebruiken actie groepen om gebruikers te laten weten dat een waarschuwing is geactiveerd. Verschillende waarschuwingen kunnen dezelfde actie groep of verschillende actie groepen gebruiken, afhankelijk van de vereisten van de gebruiker. 
 
 In dit artikel wordt beschreven hoe u actie groepen maakt en beheert in de Azure Portal.
@@ -250,7 +250,9 @@ Mogelijk hebt u een beperkt aantal SMS-acties in een actie groep.
 > Als de gebruikers interface van de Azure Portal actie groep niet toestaat dat u uw land-/regiocode selecteert, wordt SMS niet ondersteund voor uw land/regio.  Als uw land-/regiocode niet beschikbaar is, kunt u stemmen om uw land/regio toe te voegen op de stem van de [gebruiker](https://feedback.azure.com/forums/913690-azure-monitor/suggestions/36663181-add-more-country-codes-for-sms-alerting-and-voice). In afwachting van een tijdelijke oplossing is het aan te bieden dat uw actie groep een webhook aanroept aan een SMS-provider van derden met ondersteuning in uw land/regio.  
 
 Prijzen voor ondersteunde landen/regio's worden vermeld op de [pagina met Azure monitor prijzen](https://azure.microsoft.com/pricing/details/monitor/).
-  
+
+**Lijst met landen waarin SMS-meldingen worden ondersteund** 
+| **Land code**  |  **Land naam** | | 61 | Australië | | 43 | Oosten rijk | | 32 | België | | 55 | Brazilië | | 1 | Canada | | 56 | Chili | | 86 | China | | 420 | Tsjechië | | 45 | Denemarken | | 372 | Estland | | 358 | Finland | | 33 | Frank rijk | | 49 | Duitsland | | 852 | Hongkong | | 91 | India | | 353 | Ierland | | 972 | Israël | | 39 | Italië | | 81 | Japan | | 352 | Luxemburg | | 60 | Maleisië | | 52 | Mexico | | 31 | Nederland | | 64 | Nieuw-Zeeland | | 47 | Noor wegen | | 351 | Portugal | | 1 | Puerto Rico | | 40 | Roemenië | | 65 | Singapore | | 27 | Zuid-Afrika | | 82 | Zuid-Korea | | 34 | Spanje | | 41 | Zwitser land | | 886 | Taiwan | | 44 |  Verenigd Konink rijk | | 1 | Verenigde Staten |
 
 ### <a name="voice"></a>Spraak
 Zie het artikel [informatie over de frequentie beperking](./alerts-rate-limiting.md) voor meer belang rijk gedrag.
@@ -259,6 +261,7 @@ Mogelijk hebt u een beperkt aantal spraak acties in een actie groep.
 
 > [!NOTE]
 > Als de gebruikers interface van de Azure Portal actie groep niet toestaat dat u uw land-/regiocode selecteert, worden telefoon gesprekken niet ondersteund voor uw land/regio. Als uw land-/regiocode niet beschikbaar is, kunt u stemmen om uw land/regio toe te voegen op de stem van de [gebruiker](https://feedback.azure.com/forums/913690-azure-monitor/suggestions/36663181-add-more-country-codes-for-sms-alerting-and-voice).  In de tussen tijd is het een goed hulp om uw actie groep een webhook te laten aanroepen naar een aanbieder van een telefoon oproep van derden met ondersteuning voor uw land/regio.  
+> De land code die nu wordt ondersteund in Azure Portal actie groep voor spraak meldingen is + 1 (Verenigde Staten). 
 
 Prijzen voor ondersteunde landen/regio's worden vermeld op de [pagina met Azure monitor prijzen](https://azure.microsoft.com/pricing/details/monitor/).
 

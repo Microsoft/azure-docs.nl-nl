@@ -1,20 +1,20 @@
 ---
 title: Sjabloon functies-matrices
-description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon voor het werken met matrices.
+description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon (ARM-sjabloon) voor het werken met matrices.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: 85f910f6143fd16f996a200172d0efd852897d8c
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 40a6815bb10ce9725405d68498b9a554706f3af8
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96004616"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920547"
 ---
 # <a name="array-functions-for-arm-templates"></a>Matrix functies voor ARM-sjablonen
 
-Resource Manager biedt verschillende functies voor het werken met matrices in uw Azure Resource Managerer-sjabloon (ARM).
+Resource Manager biedt verschillende functies voor het werken met matrices in uw Azure Resource Manager sjabloon (ARM-sjabloon):
 
-* [matrix](#array)
+* [array](#array)
 * [concat](#concat)
 * [daarin](#contains)
 * [createArray](#createarray)
@@ -23,7 +23,7 @@ Resource Manager biedt verschillende functies voor het werken met matrices in uw
 * [Snij punt](#intersection)
 * [duren](#last)
 * [length](#length)
-* [aantal](#max)
+* [max](#max)
 * [min.](#min)
 * [bereik](#range)
 * [verdergaan](#skip)
@@ -350,11 +350,11 @@ De uitvoer van het vorige voor beeld met de standaard waarden is:
 | Naam | Type | Waarde |
 | ---- | ---- | ----- |
 | stringTrue | Booleaanse waarde | True |
-| stringFalse | Booleaanse waarde | False |
+| stringFalse | Booleaanse waarde | Niet waar |
 | objectTrue | Booleaanse waarde | True |
-| objectFalse | Booleaanse waarde | False |
+| objectFalse | Booleaanse waarde | Niet waar |
 | arrayTrue | Booleaanse waarde | True |
-| arrayFalse | Booleaanse waarde | False |
+| arrayFalse | Booleaanse waarde | Niet waar |
 
 ## <a name="createarray"></a>createArray
 
@@ -889,7 +889,7 @@ U kunt deze functie gebruiken met een matrix om het aantal iteraties op te geven
 
 ---
 
-Zie [meerdere exemplaren van resources maken in azure Resource Manager](copy-resources.md)voor meer informatie over het gebruik van deze functie met een matrix.
+Zie [resource-iteratie in arm-sjablonen](copy-resources.md)voor meer informatie over het gebruik van deze functie met een matrix.
 
 ## <a name="max"></a>max
 
@@ -1381,4 +1381,4 @@ De uitvoer van het vorige voor beeld met de standaard waarden is:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor een beschrijving van de secties in een Azure Resource Manager sjabloon.
+* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor een beschrijving van de secties in een arm-sjabloon.

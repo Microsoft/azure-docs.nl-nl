@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/13/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 092320db9b7fe2b1f3fe142f84ad201d40dc6e2e
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 1318aaf50d4f05b8a999e5661318dc83997a2f02
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492281"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920784"
 ---
 # <a name="azure-data-encryption-at-rest"></a>Azure-gegevens versleuteling in rust
 
@@ -33,7 +33,7 @@ Versleuteling op rest is een gemeen schappelijke beveiligings vereiste. In azure
 
 ## <a name="what-is-encryption-at-rest"></a>Wat is versleuteling in rust?
 
-Versleuteling bij rest is de code ring (versleuteling) van gegevens wanneer deze persistent wordt gemaakt. De versleuteling bij rest-ontwerpen in azure gebruikt symmetrische versleuteling om grote hoeveel heden gegevens snel te versleutelen en te ontsleutelen op basis van een eenvoudig conceptueel model:
+Versleuteling is de veilige code ring van gegevens die worden gebruikt om de vertrouwelijkheid van gegevens te beveiligen. De versleuteling bij rest-ontwerpen in azure gebruikt symmetrische versleuteling om grote hoeveel heden gegevens snel te versleutelen en te ontsleutelen op basis van een eenvoudig conceptueel model:
 
 - Een symmetrische versleutelings sleutel wordt gebruikt voor het versleutelen van gegevens die naar opslag worden geschreven.
 - Dezelfde versleutelings sleutel wordt gebruikt om die gegevens te ontsleutelen wanneer deze gereed is voor gebruik in het geheugen.

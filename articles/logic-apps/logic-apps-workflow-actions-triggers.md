@@ -7,12 +7,12 @@ ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 3dbfcacb6ea5922a01d52dfe39189f09f48d4b4a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 7423f8d8f2a566801048457ad5f5c44f3c1097ec
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96006078"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920047"
 ---
 # <a name="schema-reference-guide-for-trigger-and-action-types-in-azure-logic-apps"></a>Naslag Gids voor schema's voor trigger-en actie typen in Azure Logic Apps
 
@@ -823,11 +823,11 @@ Hier volgen enkele veelgebruikte actie typen:
 | [**Java script-code uitvoeren**](#run-javascript-code) | Java script-code fragmenten uitvoeren die binnen specifieke criteria passen. Zie [code fragmenten toevoegen en uitvoeren met inline code](../logic-apps/logic-apps-add-run-inline-code.md)voor code vereisten en meer informatie. |
 | [**Functieassembly**](#function-action) | Hiermee wordt een Azure-functie aangeroepen. | 
 | [**HTTP**](#http-action) | Hiermee wordt een HTTP-eind punt aangeroepen. | 
-| [**Koppelen**](#join-action) | Hiermee maakt u een teken reeks van alle items in een matrix en scheidt u deze items met een opgegeven scheidings teken. | 
+| [**Jointypen**](#join-action) | Hiermee maakt u een teken reeks van alle items in een matrix en scheidt u deze items met een opgegeven scheidings teken. | 
 | [**JSON parseren**](#parse-json-action) | Maakt gebruikers vriendelijke tokens van eigenschappen in JSON-inhoud. U kunt vervolgens naar die eigenschappen verwijzen door de tokens in uw logische app op te nemen. | 
-| [**Query**](#query-action) | Maakt een matrix van items in een andere matrix op basis van een voor waarde of filter. | 
-| [**Beantwoord**](#response-action) | Hiermee wordt een reactie op een binnenkomende oproep of aanvraag gemaakt. | 
-| [**Selecteer**](#select-action) | Hiermee maakt u een matrix met JSON-objecten door items van een andere matrix te transformeren op basis van de opgegeven kaart. | 
+| [**Query’s uitvoeren**](#query-action) | Maakt een matrix van items in een andere matrix op basis van een voor waarde of filter. | 
+| [**Antwoord**](#response-action) | Hiermee wordt een reactie op een binnenkomende oproep of aanvraag gemaakt. | 
+| [**Uitgeschakeld**](#select-action) | Hiermee maakt u een matrix met JSON-objecten door items van een andere matrix te transformeren op basis van de opgegeven kaart. | 
 | [**Tabel**](#table-action) | Hiermee maakt u een CSV-of HTML-tabel op basis van een matrix. | 
 | [**Terminate**](#terminate-action) | Stopt een actief actieve werk stroom. | 
 | [**Bewerking**](#wait-action) | Hiermee wordt uw werk stroom onderbroken voor een opgegeven duur of tot de opgegeven datum en tijd. | 
@@ -1506,7 +1506,7 @@ In tegens telling tot andere acties heeft de **reactie** actie speciale beperkin
 
 * Uw werk stroom kan de **reactie** actie overal gebruiken, *behalve* binnen **foreach** -lussen, **tot** lussen, inclusief sequentiële lussen en parallelle vertakkingen. 
 
-* De oorspronkelijke HTTP-aanvraag haalt de reactie van uw werk stroom alleen op wanneer alle acties die zijn vereist door de **reactie** actie, worden voltooid binnen de [time-outlimiet van de HTTP-aanvraag](../logic-apps/logic-apps-limits-and-config.md#request-limits).
+* De oorspronkelijke aanvraag haalt de reactie van uw werk stroom alleen op wanneer alle acties die zijn vereist door de **reactie** actie, binnen de [http-time-outlimiet](../logic-apps/logic-apps-limits-and-config.md#http-limits)zijn voltooid.
 
   Als uw werk stroom echter een andere logische app aanroept als een geneste werk stroom, wacht de bovenliggende werk stroom totdat de geneste werk stroom is voltooid, ongeacht hoeveel tijd verstrijkt voordat de geneste werk stroom is voltooid.
 

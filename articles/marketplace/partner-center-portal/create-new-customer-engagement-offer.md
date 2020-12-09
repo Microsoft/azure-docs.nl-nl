@@ -7,12 +7,12 @@ ms.topic: how-to
 author: navits09
 ms.author: navits
 ms.date: 06/17/2020
-ms.openlocfilehash: 96bdfc513023cafb2d94a68c06f1065cf20c3ba8
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: f20405add698c64ecedfd7375063ba934a98e158
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130167"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96922441"
 ---
 # <a name="create-a-dynamics-365-for-customer-engagement--powerapps-offer"></a>Een Dynamics 365 for Customer Engagement- en PowerApps-aanbieding maken
 
@@ -23,8 +23,8 @@ Voordat u begint, moet u [een commercieel Marketplace-account maken in Partner C
 ## <a name="create-a-new-offer"></a>Een nieuwe aanbieding maken
 
 1. Meld u aan bij [Partner Center](https://partner.microsoft.com/dashboard/home).
-2. Selecteer in het menu links de optie **commerciële Marketplace** -  >  **overzicht** .
-3. Selecteer op de pagina overzicht **+ nieuw aanbod**  >  **Dynamics 365 voor klant betrokkenheid & PowerApps** .
+2. Selecteer in het menu links de optie **commerciële Marketplace**-  >  **overzicht**.
+3. Selecteer op de pagina overzicht **+ nieuw aanbod**  >  **Dynamics 365 voor klant betrokkenheid & PowerApps**.
 
     ![Illustreert het navigatie menu.](./media/new-offer-dynamics-365-customer-engagement-powerapps.png)
 
@@ -95,7 +95,7 @@ Op deze pagina kunt u de categorieën en industrieën definiëren die worden geb
 Selecteer categorieën en subcategorieën om uw aanbieding te plaatsen in de juiste Zoek gebieden voor Marketplace. Zorg ervoor dat u beschrijft hoe uw aanbod deze categorieën ondersteunt in de beschrijving van de aanbieding. Selecteer:
 
 - Ten minste één en Maxi maal twee categorieën, met inbegrip van een primaire en secundaire categorie (optioneel).
-- Maxi maal twee subcategorieën voor elke primaire en/of secundaire categorie. Als er geen subcategorie van toepassing is op uw aanbieding, selecteert u **niet van toepassing** .
+- Maxi maal twee subcategorieën voor elke primaire en/of secundaire categorie. Als er geen subcategorie van toepassing is op uw aanbieding, selecteert u **niet van toepassing**.
 
 Bekijk de volledige lijst met categorieën en subcategorieën in [Aanbevolen procedures voor aanbiedingen](../gtm-offer-listing-best-practices.md).
 
@@ -138,10 +138,10 @@ Hier volgt een voor beeld van hoe de aanbiedings gegevens worden weer gegeven in
 4. Ondersteunings adres (koppeling)
 5. Gebruiksvoorwaarden adres (koppeling)
 6. Naam van aanbieding
-7. Beschrijving
+7. Description
 8. Scherm afbeeldingen/Video's
 
-### <a name="name"></a>Naam
+### <a name="name"></a>Name
 
 De naam die u hier invoert, wordt aan klanten weer gegeven als de titel van de aanbieding. Dit veld is vooraf ingevuld met de tekst die u hebt ingevoerd voor de **aanbiedings alias** tijdens het maken van de aanbieding, maar u kunt deze waarde wijzigen. Deze naam kan worden aangemerkt (en u kunt symbolen van het handels merk of copyright bevatten). De naam mag niet langer zijn dan 50 tekens en mag geen emojis bevatten.
 
@@ -149,7 +149,7 @@ De naam die u hier invoert, wordt aan klanten weer gegeven als de titel van de a
 
 Geef een korte beschrijving van uw aanbieding, Maxi maal 100 tekens. Deze beschrijving kan worden gebruikt in Zoek resultaten voor Marketplace.
 
-### <a name="description"></a>Beschrijving
+### <a name="description"></a>Description
 
 [!INCLUDE [Long description-1](./includes/long-description-1.md)]
 
@@ -179,7 +179,7 @@ Voer het adres in voor het privacybeleid van uw organisatie. U bent verantwoorde
 
 ### <a name="contacts"></a>Contactpersonen
 
-Geef de naam, het e-mail adres en het telefoon nummer op voor een **ondersteunings contact** en een **technische contact persoon** . Deze informatie wordt niet weer gegeven aan klanten, maar is beschikbaar voor micro soft en kan worden verschaft aan CSP-partners.
+Geef de naam, het e-mail adres en het telefoon nummer op voor een **ondersteunings contact** en een **technische contact persoon**. Deze informatie wordt niet weer gegeven aan klanten, maar is beschikbaar voor micro soft en kan worden verschaft aan CSP-partners.
 
 In het gedeelte **ondersteuning voor contact opnemen** moet u ook de **ondersteunings-URL** opgeven waar CSP-partners ondersteuning voor uw aanbieding kunnen vinden.
 
@@ -240,7 +240,7 @@ Uw selecties zijn hier alleen van toepassing op nieuwe verwervingen; Als iemand 
 
 ### <a name="preview-audience"></a>Voor beeld van doel groep
 
-Voordat u uw aanbieding naar de bredere Marketplace-aanbieding publiceert, moet u deze eerst beschikbaar maken voor een beperkte preview- **doel groep** . Voer hier een **Hide-toets** (wille keurige teken reeks met alleen kleine letters en/of cijfers) in. Leden van uw preview-doel groep kunnen deze verbergen sleutel als een token gebruiken om een voor beeld van uw aanbieding op Marketplace te bekijken.
+Voordat u uw aanbieding naar de bredere Marketplace-aanbieding publiceert, moet u deze eerst beschikbaar maken voor een beperkte preview- **doel groep**. Voer hier een **Hide-toets** (wille keurige teken reeks met alleen kleine letters en/of cijfers) in. Leden van uw preview-doel groep kunnen deze verbergen sleutel als een token gebruiken om een voor beeld van uw aanbieding op Marketplace te bekijken.
 
 Wanneer u klaar bent om uw aanbieding beschikbaar te maken en de preview-beperking te verwijderen, moet u de **sleutel verbergen** verwijderen en opnieuw publiceren.
 
@@ -260,7 +260,7 @@ Schakel dit selectie vakje in om de configuratie van de beveiligde Store van CRM
 
 ### <a name="application-configuration-url"></a>Configuratie-URL van de toepassing
 
-Geef de URL op voor de configuratie webpagina waarmee de klant uw app kan configureren.
+Zorg ervoor dat dit veld leeg blijft. Dit wordt gebruikt voor toekomstig gebruik. 
 
 ### <a name="crm-package"></a>CRM-pakket
 
@@ -269,7 +269,7 @@ Voer in het veld **URL van uw pakket locatie** de URL in van een Azure Blob Stor
 > [!IMPORTANT]
 > Als u een publicatie blok wilt voor komen, moet u ervoor zorgen dat de verval datum in de URL van de Blob-opslag nog niet is verlopen. U kunt de datum wijzigen door toegang tot uw beleid te krijgen. We raden u aan de **verloop tijd** ten minste één maand in de toekomst te hebben.
 
-Selecteer het vak met het label **Er is meer dan één CRM-pakket in het pakket bestand** , indien van toepassing. Als dat het geval is, moet u alle pakketten in uw zip-bestand toevoegen.
+Selecteer het vak met het label **Er is meer dan één CRM-pakket in het pakket bestand**, indien van toepassing. Als dat het geval is, moet u alle pakketten in uw zip-bestand toevoegen.
 
 Zie [stap 3: een AppSource-pakket maken voor uw app](/powerapps/developer/common-data-service/create-package-app-appsource)voor meer informatie over het bouwen van uw pakket en het bijwerken van de structuur.
 

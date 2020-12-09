@@ -4,12 +4,12 @@ description: Controleer uw web- en werkrollen op een effectieve manier met Appli
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 09/05/2018
-ms.openlocfilehash: 29482403358936b95fc5e814b68238cc8c25f7a8
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: ccd863db55ef0ff9f4051947321321c8b01430c4
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186351"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920679"
 ---
 # <a name="application-insights-for-azure-cloud-services"></a>Application Insights voor Azure Cloud Services
 [Application Insights][start] kunt [Azure Cloud service-apps](https://azure.microsoft.com/services/cloud-services/) bewaken voor Beschik baarheid, prestaties, fouten en gebruik door gegevens van Application Insights sdk's te combi neren met [Azure Diagnostics](../platform/diagnostics-extension-overview.md) gegevens uit uw Cloud Services. Op basis van de feedback die u krijgt over de prestaties en de effectiviteit van uw app tijdens het gebruik, kunt u weldoordachte beslissingen nemen over de richting van het ontwerp in elke fase van de ontwikkelingslevenscyclus.
@@ -110,15 +110,14 @@ Gebruik Visual Studio om de Application Insights-SDK voor elk cloudtoepassingspr
 
     b. Voeg [Application Insights voor Windows Servers](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/) toe.
 
-    ![Naar Application Insights zoeken](./media/cloudservices/04-ai-nuget.png)
-
 1. De SDK configureren voor het verzenden van gegevens naar de Application Insights-resource:
 
     a. Stel in een geschikte opstart functie de instrumentatie sleutel in van de configuratie-instelling in het *cscfg* -bestand:
  
     ```csharp
-   
-     TelemetryConfiguration.Active.InstrumentationKey = RoleEnvironment.GetConfigurationSettingValue("APPINSIGHTS_INSTRUMENTATIONKEY");
+        TelemetryConfiguration configuration = TelemetryConfiguration.CreateDefault();
+        configuration.InstrumentationKey = RoleEnvironment.GetConfigurationSettingValue("APPINSIGHTS_INSTRUMENTATIONKEY");
+        var telemetryClient = new TelemetryClient(configuration);
     ```
    
     b. Herhaal stap a voor elke rol in uw app. Zie de voorbeelden:

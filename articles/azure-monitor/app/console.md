@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 05/21/2020
 ms.custom: devx-track-csharp
 ms.reviewer: lmolkova
-ms.openlocfilehash: 98f1ea8a4994515b437841174ae95563ea53ed88
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aa39a1eca04621fc4db75f755402d3679403e814
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88933338"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920600"
 ---
 # <a name="application-insights-for-net-console-applications"></a>Application Insights voor .NET-console toepassingen
 
@@ -22,6 +22,9 @@ U hebt een abonnement met [Microsoft Azure](https://azure.com)nodig. Meld u aan 
 > Het is *raadzaam* om het pakket [micro soft. ApplicationInsights. WorkerService](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WorkerService) en de bijbehorende instructies van [hier](./worker-service.md) te gebruiken voor alle console toepassingen. Deze pakket doelen [`NetStandard2.0`](/dotnet/standard/net-standard) en kunnen daarom worden gebruikt in .net Core 2,1 of hoger, en .NET Framework 4.7.2 of hoger.
 
 ## <a name="getting-started"></a>Aan de slag
+
+> [!IMPORTANT]
+> Nieuwe Azure-regio's **vereisen** het gebruik van verbindings reeksen in plaats van instrumentatie sleutels. Met de [verbindings reeks](./sdk-connection-string.md?tabs=net) wordt de resource geïdentificeerd waaraan u de telemetriegegevens wilt koppelen. U kunt ook de eind punten wijzigen die door de resource worden gebruikt als een bestemming voor uw telemetrie. U moet de connection string kopiëren en toevoegen aan de code van uw toepassing of aan een omgevings variabele.
 
 * Maak in de [Azure Portal](https://portal.azure.com)[een Application Insights-resource](./create-new-resource.md). Voor toepassings type kiest u **Algemeen**.
 * Kopieer de instrumentatiesleutel. Zoek de sleutel in de vervolg keuzelijst **Essentials** van de nieuwe resource die u hebt gemaakt.

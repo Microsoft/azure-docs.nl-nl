@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 08/20/2019
-ms.openlocfilehash: b23b5a81fdff8a05742092f517128e08723103fc
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 55fa106f0515405dcad969f05d28e0bc7b975b40
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96531136"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96922273"
 ---
 # <a name="what-is-sql-data-sync-for-azure"></a>Wat is SQL Data Sync voor Azure?
 
@@ -66,7 +66,7 @@ Gegevens synchronisatie is niet de aanbevolen oplossing voor de volgende scenari
 | Migratie van SQL Server naar Azure SQL Database. SQL Data Sync kunnen echter worden gebruikt nadat de migratie is voltooid, om ervoor te zorgen dat de bron en het doel synchroon blijven.  | [Azure Database Migration Service](https://azure.microsoft.com/services/database-migration/) |
 |||
 
-## <a name="how-it-works"></a>Hoe werkt het?
+## <a name="how-it-works"></a>Uitleg
 
 - **Wijzigingen in de gegevens bijhouden:** Gegevens synchronisatie houdt wijzigingen bij met behulp van INSERT-, update-en delete-triggers. De wijzigingen worden vastgelegd in een tabel aan de kant van de gebruikers database. Houd er rekening mee dat BULK INSERT triggers niet standaard wordt geactiveerd. Als FIRE_TRIGGERS niet is opgegeven, worden er geen invoeg triggers uitgevoerd. Voeg de FIRE_TRIGGERS optie toe, zodat gegevens synchronisatie deze toevoegingen kan bijhouden. 
 - **Gegevens synchroniseren:** Gegevens synchronisatie is ontworpen in een hub-en spoke-model. De hub wordt met elk lid afzonderlijk gesynchroniseerd. Wijzigingen van de hub worden gedownload naar het lid en vervolgens worden wijzigingen van het lid geüpload naar de hub.
@@ -80,6 +80,14 @@ Gegevens synchronisatie is niet de aanbevolen oplossing voor de volgende scenari
 |---|---|---|
 | **Voordelen** | -Actief-actief ondersteuning<br/>-Bi-richting tussen on-premises en Azure SQL Database | -Laagste latentie<br/>-Transactionele consistentie<br/>-Bestaande topologie na migratie opnieuw gebruiken <br/>-Ondersteuning voor Azure SQL Managed instance |
 | **Nadelen** | -Geen transactionele consistentie<br/>-Hogere gevolgen voor de prestaties | -Kan niet publiceren vanaf Azure SQL Database <br/>-Hoge onderhouds kosten |
+
+## <a name="private-link-for-data-sync-preview"></a>Persoonlijke koppeling voor gegevens synchronisatie (preview-versie)
+Met de nieuwe functie voor persoonlijke koppelingen (preview) kunt u een privé-Service beheer-eind punt kiezen voor het maken van een beveiligde verbinding tussen de synchronisatie service en uw leden-of hub-data base tijdens het gegevens synchronisatie proces. Een privé-eind punt dat door een service wordt beheerd, is een privé-IP-adres binnen een specifiek virtueel netwerk en subnet. Binnen de gegevens synchronisatie wordt het door de service beheerde privé-eind punt gemaakt door micro soft en wordt het exclusief door de gegevens synchronisatie service gebruikt voor een bepaalde synchronisatie bewerking. Lees de [algemene vereisten](sql-data-sync-data-sql-server-sql-database.md#general-requirements) voor de functie voordat u de persoonlijke koppeling instelt. 
+
+![Persoonlijke koppeling voor gegevens synchronisatie](./media/sql-data-sync-data-sql-server-sql-database/sync-private-link-overview.png)
+
+> [!NOTE]
+> U moet het door de service beheerde privé-eind punt hand matig goed keuren op de pagina **verbindingen met privé-eind punten** van de Azure Portal tijdens de implementatie van de synchronisatie groep of door Power shell te gebruiken.
 
 ## <a name="get-started"></a>Aan de slag 
 
@@ -126,6 +134,8 @@ Het inrichten en verwijderen van de inrichting tijdens het maken van een synchro
 
 - Snap shot-isolatie moet zijn ingeschakeld voor synchronisatie leden en-hub. Voor meer informatie zie [Snapshot-isolatie in SQL Server](/dotnet/framework/data/adonet/sql/snapshot-isolation-in-sql-server).
 
+- Als u een persoonlijke koppeling wilt gebruiken met de gegevens synchronisatie, moeten zowel de leden-als de hub-data bases worden gehost in azure (dezelfde of verschillende regio's), in hetzelfde Cloud type (bijvoorbeeld zowel in de open bare Cloud als in beide in de overheids Cloud). Daarnaast moeten micro soft. Network resource providers worden geregistreerd voor de abonnementen die fungeren als host voor de hub en lidservers om een persoonlijke koppeling te gebruiken. Ten slotte moet u de persoonlijke koppeling voor gegevens synchronisatie hand matig goed keuren tijdens de synchronisatie configuratie, in de sectie ' persoonlijke eindpunt verbindingen ' in de Azure Portal of via Power shell. Zie [SQL Data Sync instellen](./sql-data-sync-sql-server-configure.md)voor meer informatie over het goed keuren van de persoonlijke koppeling. Zodra u het door de service beheerde privé-eind punt hebt goedgekeurd, wordt alle communicatie tussen de synchronisatie service en de member/hub-data bases uitgevoerd via de privé koppeling. Bestaande synchronisatie groepen kunnen worden bijgewerkt om deze functie in te scha kelen.
+
 ### <a name="general-limitations"></a>Algemene beperkingen
 
 - Een tabel kan geen identiteits kolom hebben die niet de primaire sleutel is.
@@ -169,6 +179,9 @@ Met gegevens synchronisatie kunnen alleen-lezen of door het systeem gegenereerde
 > Er kunnen Maxi maal 30 eind punten in één synchronisatie groep bestaan als er slechts één synchronisatie groep is. Als er meer dan één synchronisatie groep is, kan het totale aantal eind punten voor alle synchronisatie groepen niet meer dan 30 zijn. Als een Data Base deel uitmaakt van meerdere synchronisatie groepen, wordt deze als meerdere eind punten geteld, niet een.
 
 ### <a name="network-requirements"></a>Netwerkvereisten
+
+> [!NOTE]
+> Als u een persoonlijke koppeling gebruikt, zijn deze netwerk vereisten niet van toepassing. 
 
 Wanneer de synchronisatie groep tot stand is gebracht, moet de Data Sync-service verbinding maken met de hub-data base. Op het moment dat u de synchronisatie groep instelt, moet de Azure SQL-Server de volgende configuratie hebben in de `Firewalls and virtual networks` instellingen:
 
@@ -248,7 +261,7 @@ Moet u het schema van een data base in een synchronisatie groep bijwerken? Wijzi
 - [De replicatie van schema wijzigingen automatiseren met SQL Data Sync in azure](./sql-data-sync-update-sync-schema.md)
 - [PowerShell gebruiken voor het bijwerken van het synchronisatieschema in een bestaande synchronisatiegroep](scripts/update-sync-schema-in-sync-group.md)
 
-### <a name="monitor-and-troubleshoot"></a>Controleren en problemen oplossen
+### <a name="monitor-and-troubleshoot"></a>Bewaken en problemen oplossen
 
 Wordt SQL Data Sync als verwachting uitgevoerd? Raadpleeg de volgende artikelen voor informatie over het bewaken van activiteiten en het oplossen van problemen:
 

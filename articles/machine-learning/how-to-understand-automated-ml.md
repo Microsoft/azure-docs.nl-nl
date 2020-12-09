@@ -3,90 +3,90 @@ title: Resultaten van AutoML-experiment evalueren
 titleSuffix: Azure Machine Learning
 description: Meer informatie over het weer geven en evalueren van grafieken en metrische gegevens voor elk van uw geautomatiseerde machine learning experimenten.
 services: machine-learning
-author: aniththa
-ms.author: anumamah
+author: gregorybchris
+ms.author: chgrego
 ms.reviewer: nibaccam
 ms.service: machine-learning
 ms.subservice: core
-ms.date: 10/09/2020
+ms.date: 11/30/2020
 ms.topic: conceptual
 ms.custom: how-to, contperfq2, automl
-ms.openlocfilehash: fcbe0fc5049f6e892f80f048a885c75420bc636e
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 43ce1c4865b3458ccd9c0ac17589f8ca5d77d92f
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93359082"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96922075"
 ---
 # <a name="evaluate-automated-machine-learning-experiment-results"></a>Resultaten van automatische machine learning experimenten evalueren
 
-In dit artikel vindt u informatie over het weer geven en evalueren van de resultaten van uw geautomatiseerde machine learning, automatische ML, experimenten. Deze experimenten bestaan uit meerdere uitvoeringen, waarbij elke uitvoering een model maakt. Om u te helpen elk model te evalueren, genereert automatische ML automatisch metrische gegevens over prestaties en grafieken die specifiek zijn voor uw soort experiment. 
+In dit artikel vindt u informatie over het evalueren en vergelijken van modellen die zijn getraind door uw geautomatiseerde machine learning-experiment (geautomatiseerd ML). Tijdens de uitvoering van een geautomatiseerd ML experiment worden veel uitgevoerd en wordt er een model gemaakt. Voor elk model genereert automatische ML evaluatie-metrische gegevens en grafieken die u helpen de prestaties van het model te meten. 
 
-Automatische ML biedt bijvoorbeeld verschillende grafieken voor classificatie-en regressie modellen. 
+Zo genereren automatische ML de volgende diagrammen op basis van het type experiment.
 
-|Classificatie|Regressie
-|---|---|
-|<li> [Verwarringsmatrix](#confusion-matrix) <li>[Nauw keurigheid: grafiek intrekken](#precision-recall-chart) <li> [Bewerkings kenmerken van ontvanger (of ROC)](#roc) <li> [Bocht](#lift-curve)<li> [Toename curve](#gains-curve)<li> [Kalibratie tekening](#calibration-plot) | <li> [Voorspeld versus waar](#pvt) <li> [Histogram van verschillen](#histo)|
+| Classificatie| Regressie/prognose |
+| ----------------------------------------------------------- | ---------------------------------------- |
+| [Verwarringsmatrix](#confusion-matrix)                       | [Residuenhistogram](#residuals)        |
+| [De curve van de ontvanger van het besturings kenmerk (ROC)](#roc-curve) | [Voorspeld versus waar](#predicted-vs-true) |
+| [Precisie-intrekken (PR)-curve](#precision-recall-curve)      |                                          |
+| [Bocht](#lift-curve)                                   |                                          |
+| [Cumulatieve toename-curve](#cumulative-gains-curve)           |                                          |
+| [Kalibratie curve](#calibration-curve)                     |                     
+
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Een Azure-abonnement. Als u geen Azure-abonnement hebt, maakt u een gratis account voordat u begint. Probeer vandaag nog de [gratis of betaalde versie van Azure Machine Learning](https://aka.ms/AMLFree).
-
-* Maak een experiment voor uw geautomatiseerde machine learning uitvoeren, hetzij met de SDK, hetzij in Azure Machine Learning Studio.
-
-    * De SDK gebruiken om een [classificatie model](how-to-auto-train-remote.md) of [regressie model](tutorial-auto-train-models.md) te bouwen
-    * Gebruik [Azure machine learning Studio](how-to-use-automated-ml-for-ml-models.md) om een classificatie of regressie model te maken door de juiste gegevens te uploaden.
+- Een Azure-abonnement. (Als u nog geen abonnement op Azure hebt, [Maak dan een gratis account](https://aka.ms/AMLFree) aan voordat u begint)
+- Een Azure Machine Learning experiment gemaakt met een van de volgende opties:
+  - De [Azure machine learning Studio](how-to-use-automated-ml-for-ml-models.md) (geen code vereist)
+  - De [Azure machine learning PYTHON SDK](how-to-configure-auto-train.md)
 
 ## <a name="view-run-results"></a>Uitvoerings resultaten weer geven
 
-Nadat uw geautomatiseerde machine learning-experiment is voltooid, kunt u een overzicht van de uitvoeringen vinden in uw machine learning-werk ruimte via de [Azure machine learning Studio](overview-what-is-machine-learning-studio.md). 
+Nadat het experiment voor automatische ML is voltooid, kunt u een overzicht van de uitvoeringen vinden via:
+  - Een browser met [Azure machine learning Studio](overview-what-is-machine-learning-studio.md)
+  - Een Jupyter-notebook met behulp van de [RunDetails Jupyter-widget](/python/api/azureml-widgets/azureml.widgets.rundetails?view=azure-ml-py&preserve-view=true)
 
-Voor SDK-experimenten ziet u dezelfde resultaten tijdens het uitvoeren wanneer u de `RunDetails` [Jupyter-widget](/python/api/azureml-widgets/azureml.widgets?preserve-view=true&view=azure-ml-py)gebruikt.
-
-In de volgende stappen en animatie ziet u hoe u de uitvoerings geschiedenis en de metrische gegevens over prestaties en grafieken van een specifiek model in Studio kunt weer geven.
-
-![Stappen voor het weer geven van uitvoerings geschiedenis en statistieken en grafieken voor model prestaties](./media/how-to-understand-automated-ml/view-run-metrics-ui.gif)
-
-Bekijk de uitvoerings geschiedenis en de metrische gegevens voor de model prestaties in de studio: 
+In de volgende stappen en video kunt u zien hoe u de uitvoerings geschiedenis en de metrische gegevens voor de model evaluatie weergeeft in de studio:
 
 1. Meld u aan bij [de Studio](https://ml.azure.com/) en navigeer naar uw werk ruimte.
-1. Selecteer in het linkerdeel venster van de werk ruimte de optie **uitvoeren**.
-1. Selecteer in de lijst met experimenten het abonnement dat u wilt verkennen.
-1. Selecteer in de onderste tabel de **uitvoeren**.
-1. Selecteer op het tabblad **modellen** de naam van het **algoritme** voor het model dat u wilt verkennen.
-1. Selecteer op het tabblad **metrieken** de metrische gegevens en grafieken die u voor het model wilt evalueren. 
+1. Selecteer in het menu links **experimenten**.
+1. Selecteer uw experiment in de lijst met experimenten.
+1. Selecteer in de tabel onder aan de pagina een automatische ML-uitvoering.
+1. Selecteer op het tabblad **modellen** de naam van het **algoritme** voor het model dat u wilt evalueren.
+1. Gebruik op het tabblad **metrieken** de selectie vakjes aan de linkerkant om metrische gegevens en grafieken weer te geven.
 
+![Stappen voor het weer geven van metrische gegevens in Studio](./media/how-to-understand-automated-ml/how-to-studio-metrics.gif)
 
-<a name="classification"></a> 
+## <a name="classification-metrics"></a>Metrische classificaties
 
-## <a name="classification-performance-metrics"></a>Metrische classificatie prestaties
+Automatische ML berekent metrische prestatie gegevens voor elk classificatie model dat is gegenereerd voor uw experiment. Deze metrische gegevens zijn gebaseerd op de scikit-leer implementatie. 
 
-De volgende tabel bevat een overzicht van de prestatie gegevens van het model die geautomatiseerd ML berekent voor elk classificatie model dat voor uw experiment wordt gegenereerd. 
+Er zijn veel classificatie gegevens gedefinieerd voor binaire classificaties op twee klassen, en voor het genereren van gemiddelden over klassen is een score voor classificatie met meerdere klassen vereist. Scikit-Learn biedt verschillende methoden voor het berekenen, drie van de geautomatiseerde ML: **macro**, **micro** en **gewogen**.
 
-Gegevens|Beschrijving|Berekening|Extra para meters
---|--|--|--
-AUC_macro| AUC is het gebied onder de ontvanger van het besturings systeem. Macro is het reken kundige gemiddelde van de AUC voor elke klasse.  | [Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html) | Gem = "macro"|
-AUC_micro| AUC is het gebied onder de ontvanger van het besturings systeem. Micro wordt wereld wijd berekend door de werkelijke positieven en onwaare positieven van elke klasse te combi neren.| [Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html) | gemiddelde = "micro"|
-AUC_weighted  | AUC is het gebied onder de ontvanger van het besturings systeem. Gewogen is het reken kundige gemiddelde van de score voor elke klasse, gewogen op basis van het aantal werkelijke instanties in elke klasse.| [Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html)|gemiddeld = "gewogen"
-accuracy|Nauw keurigheid is het percentage voorspelde labels dat exact overeenkomt met de werkelijke labels. |[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html) |Geen|
-average_precision_score_macro|De gemiddelde nauw keurigheid van een curve is een gebogen lijn die het gewogen gemiddelde van de nauw keurigheid van elke drempel waarde bereikt, waarbij de toename van de vorige drempel waarde die als gewicht wordt gebruikt, wordt ingetrokken. Macro is het reken kundige gemiddelde van de gemiddelde precisie Score van elke klasse.|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.average_precision_score.html)|Gem = "macro"|
-average_precision_score_micro|De gemiddelde nauw keurigheid van een curve is een gebogen lijn die het gewogen gemiddelde van de nauw keurigheid van elke drempel waarde bereikt, waarbij de toename van de vorige drempel waarde die als gewicht wordt gebruikt, wordt ingetrokken. Micro wordt wereld wijd berekend door de werkelijke positieven en de fout-positieven bij elke afsluit proces te combi neren.|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.average_precision_score.html)|gemiddelde = "micro"|
-average_precision_score_weighted|De gemiddelde nauw keurigheid van een curve is een gebogen lijn die het gewogen gemiddelde van de nauw keurigheid van elke drempel waarde bereikt, waarbij de toename van de vorige drempel waarde die als gewicht wordt gebruikt, wordt ingetrokken. Gewogen is het reken kundige gemiddelde van de gemiddelde precisie score voor elke klasse, gewogen op basis van het aantal werkelijke instanties in elke klasse.|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.average_precision_score.html)|gemiddeld = "gewogen"|
-balanced_accuracy|Nauw keurigheid in evenwicht is het reken kundige gemiddelde van intrekken voor elke klasse.|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.recall_score.html)|Gem = "macro"|
-f1_score_macro|F1-Score is het harmonische gemiddelde van Precision en intrekken. Macro is het reken kundige gemiddelde van de F1-score voor elke klasse.|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html)|Gem = "macro"|
-f1_score_micro|F1-Score is het harmonische gemiddelde van Precision en intrekken. Micro wordt wereld wijd berekend door het totale aantal positieve, onwaare negatieven en valse positieven te tellen.|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html)|gemiddelde = "micro"|
-f1_score_weighted|F1-Score is het harmonische gemiddelde van Precision en intrekken. Gewogen gemiddelde per klasse frequentie van F1-score voor elke klasse|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html)|gemiddeld = "gewogen"|
-log_loss|Dit is de functie verlies die wordt gebruikt in (MultiNomial) logistiek regressie en uitbrei dingen van IT, zoals Neural-netwerken, gedefinieerd als de negatieve kans op Logboeken van de werkelijke labels op basis van de voor spellingen van een Probabilistic-classificatie. Voor één steek proef met True label YT in {0,1} en geschatte waarschijnlijkheid YP die YT = 1 is, is het logboek verlies van log P (yt&#124;YP) =-(YT log (YP) + (1-YT) logboek (1-YP)).|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.log_loss.html)|Geen|
-norm_macro_recall|Genormaliseerde macro intrekken is macro intrekken genormaliseerd, zodat wille keurige prestaties een Score van 0 hebben en de perfecte prestaties een Score van 1 hebben. Dit wordt bereikt door norm_macro_recall: = (recall_score_macro-R)/(1-R), waarbij R de verwachte waarde is van recall_score_macro voor wille keurige voor spellingen (R = 0,5 voor binaire classificatie en R = (1/C) voor problemen met de classificatie van C-klasse).|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.recall_score.html)|Gem = "macro" |
-precision_score_macro|Precisie is het percentage positieve voorspelde elementen met een juiste label. Macro is het reken kundige gemiddelde van de precisie voor elke klasse.|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html)|Gem = "macro"|
-precision_score_micro|Precisie is het percentage positieve voorspelde elementen met een juiste label. Micro wordt wereld wijd berekend door het totale aantal positieve en foutieve positieven te tellen.|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html)|gemiddelde = "micro"|
-precision_score_weighted|Precisie is het percentage positieve voorspelde elementen met een juiste label. Gewogen is het reken kundige gemiddelde van de precisie voor elke klasse, gewogen op basis van het aantal werkelijke instanties in elke klasse.|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html)|gemiddeld = "gewogen"|
-recall_score_macro|Intrekken is het percentage van de juiste label elementen van een bepaalde klasse. Macro is het reken kundige gemiddelde van intrekken voor elke klasse.|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.recall_score.html)|Gem = "macro"|
-recall_score_micro|Intrekken is het percentage van de juiste label elementen van een bepaalde klasse. Micro wordt wereld wijd berekend door het totale aantal positieve, onwaare negatieven en foutieve positieven te tellen|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.recall_score.html)|gemiddelde = "micro"|
-recall_score_weighted|Intrekken is het percentage van de juiste label elementen van een bepaalde klasse. Gewogen is het reken kundige gemiddelde van intrekken voor elke klasse, gewogen op basis van het aantal werkelijke instanties in elke klasse.|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.recall_score.html)|gemiddeld = "gewogen"|
-weighted_accuracy|Gewogen nauw keurigheid is nauw keurig wanneer het gewicht dat aan elk voor beeld is gegeven, gelijk is aan het aandeel van de werkelijke instanties in dat voor beeld van de klasse waar.|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html)|sample_weight is een vector die gelijk is aan het aandeel van die klasse voor elk element in het doel|
+- **Macro** -de metrische gegevens voor elke klasse berekenen en het niet-gewogen gemiddelde nemen
+- **Micro** -de metrische gegevens globaal berekenen door het totale aantal positieve, onwaare negatieven en foutieve positieven (onafhankelijk van klassen) te tellen.
+- **Gewogen** : berekent de metriek voor elke klasse en nemen het gewogen gemiddelde op basis van het aantal steek proeven per klasse.
 
-### <a name="binary-vs-multiclass-metrics"></a>Binaire en metrische gegevens met meer klassen
+Hoewel elke methode voor het berekenen van de voor delen een gemeen schappelijke overweging heeft wanneer de juiste methode wordt geselecteerd, is de klasse onevenwichtig. Als klassen een verschillend aantal voor beelden hebben, is het wellicht meer informatie over het gebruik van een macro gemiddeld waarbij minderheids klassen gelijk zijn aan de meerderheid van de klassen. Meer informatie over [metrische gegevens van het binaire element en de multiklassewaarde in automatische milliliters](#binary-vs-multiclass-classification-metrics). 
+
+De volgende tabel bevat een overzicht van de prestatie gegevens van het model die geautomatiseerd ML berekent voor elk classificatie model dat voor uw experiment wordt gegenereerd. Zie de documentatie voor scikit-Learn die is gekoppeld in het veld **berekening** van elke metriek voor meer informatie. 
+
+|Gegevens|Beschrijving|Berekening|
+|--|--|---|
+|AUC | AUC is het gebied onder de [ontvanger van het besturings systeem](#roc-curve).<br><br> **Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** [0, 1]<br> <br>Ondersteunde metrische namen zijn onder andere, <li>`AUC_macro`, het reken kundige gemiddelde van de AUC voor elke klasse.<li> `AUC_micro`, berekend door het combi neren van de werkelijke positieven en de fout-positieven van elke klasse. <li> `AUC_weighted`, reken kundig gemiddelde van de score voor elke klasse, gewogen op basis van het aantal werkelijke instanties in elke klasse.   |[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html) | 
+|accuracy| Nauw keurigheid is de verhouding van voor spellingen die exact overeenkomen met de echte klassen labels. <br> <br>**Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** [0, 1]|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html)|
+|average_precision|De gemiddelde nauw keurigheid van een curve is een gebogen lijn die het gewogen gemiddelde van de nauw keurigheid van elke drempel waarde bereikt, waarbij de toename van de vorige drempel waarde die als gewicht wordt gebruikt, wordt ingetrokken. <br><br> **Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** [0, 1]<br> <br>Ondersteunde metrische namen zijn onder andere,<li>`average_precision_score_macro`, het reken kundige gemiddelde van de gemiddelde precisie Score van elke klasse.<li> `average_precision_score_micro`, berekend door het combi neren van de werkelijke positieven en de fout-positieven bij elke afsluit proces.<li>`average_precision_score_weighted`, het reken kundige gemiddelde van de gemiddelde precisie score voor elke klasse, gewogen op basis van het aantal werkelijke instanties in elke klasse.|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.average_precision_score.html)|
+balanced_accuracy|Nauw keurigheid in evenwicht is het reken kundige gemiddelde van intrekken voor elke klasse.<br> <br>**Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** [0, 1]|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.recall_score.html)|
+f1_score|F1-Score is het harmonische gemiddelde van Precision en intrekken. Het is een goede evenwichtige maat eenheid voor zowel fout-positieve als onjuiste negatieven. Er wordt echter geen rekening gehouden met de waarde voor het account. <br> <br>**Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** [0, 1]<br> <br>Ondersteunde metrische namen zijn onder andere,<li>  `f1_score_macro`: het reken kundige gemiddelde van de F1-score voor elke klasse. <li> `f1_score_micro`: berekend door het totale aantal positieve, onwaare negatieven en fout-positieven te tellen. <li> `f1_score_weighted`: gewogen gemiddelde per klasse frequentie van de F1-score voor elke klasse.|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html)|
+log_loss|Dit is de functie verlies die wordt gebruikt in (MultiNomial) logistiek regressie en uitbrei dingen van IT, zoals Neural-netwerken, gedefinieerd als de negatieve kans op Logboeken van de werkelijke labels op basis van de voor spellingen van een Probabilistic-classificatie. <br><br> **Doel stelling:** Dichter bij 0 hoe beter <br> **Bereik:** [0, inf)|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.log_loss.html)|
+norm_macro_recall| Genormaliseerde macro intrekken is een terugroep macro: gemiddeld en genormaliseerd, zodat wille keurige prestaties een Score van 0 hebben en de perfecte prestaties een Score van 1 hebben. <br> <br>**Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** [0, 1] |`(recall_score_macro - R)`&nbsp;/&nbsp;`(1 - R)` <br><br>waar, `R` de verwachte waarde van `recall_score_macro` voor wille keurige voor spellingen.<br><br>`R = 0.5`&nbsp;voor &nbsp; binaire &nbsp; classificatie. <br>`R = (1 / C)` voor problemen met de classificatie van C-klasse.|
+Matthews-correlatie coëfficiënt | Matthews-correlatie coëfficiënt is een evenwichtige meet nauwkeurigheid, die zelfs kan worden gebruikt als één klasse veel meer steek proeven heeft dan de andere. Een coëfficiënt van 1 geeft perfecte voor spelling, 0 wille keurige voor spelling en-1 inverse voor spelling.<br><br> **Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** [-1, 1]|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.matthews_corrcoef.html)|
+precisie|Precision is de mogelijkheid van een model om te voor komen dat negatieve steek proeven als positief worden gelabeld. <br><br> **Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** [0, 1]<br> <br>Ondersteunde metrische namen zijn onder andere, <li> `precision_score_macro`, het reken kundige gemiddelde van de precisie voor elke klasse. <li> `precision_score_micro`, globaal berekend door het totale aantal positieve en foutieve positieven te tellen. <li> `precision_score_weighted`, het reken kundige gemiddelde van de precisie voor elke klasse, gewogen op basis van het aantal werkelijke instanties in elke klasse.|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_score.html)|
+relevante overeenkomsten| Intrekken is de mogelijkheid van een model voor het detecteren van alle positieve voor beelden. <br><br> **Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** [0, 1]<br> <br>Ondersteunde metrische namen zijn onder andere, <li>`recall_score_macro`: het reken kundige gemiddelde van het intrekken van elke klasse. <li> `recall_score_micro`: globaal berekend door het totale aantal positieve, onwaare negatieven en foutieve positieven te tellen.<li> `recall_score_weighted`: het reken kundige gemiddelde van het intrekken van elke klasse, gewogen op het aantal werkelijke instanties in elke klasse.|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.recall_score.html)|
+weighted_accuracy|Gewogen nauw keurigheid is nauw keurig wanneer elk voor beeld wordt gewogen door het totale aantal steek proeven dat tot dezelfde klasse behoort. <br><br>**Doel stelling:** Dichter bij 1 hoe beter <br>**Bereik:** [0, 1]|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html)|
+
+### <a name="binary-vs-multiclass-classification-metrics"></a>Binaire gegevens en classificaties voor klassen met meer dan een klasse
 
 Automatische ML maakt geen onderscheid tussen binaire en multimetrische metrische gegevens. Dezelfde validatie gegevens worden gerapporteerd, of een gegevensset twee klassen of meer dan twee klassen heeft. Sommige metrische gegevens zijn echter bedoeld voor de classificatie van verschillende klassen. Wanneer dit wordt toegepast op een binaire gegevensset, worden deze metrische gegevens niet als `true` klasse beschouwd, zoals u mogelijk verwacht. Metrische gegevens die duidelijk bedoeld zijn voor multi class, worden met `micro` ,, of geachtervoegseld `macro` `weighted` . Voor beelden zijn `average_precision_score` , `f1_score` ,, en `precision_score` `recall_score` `AUC` .
 
@@ -94,180 +94,161 @@ In plaats van intrekken te berekenen als `tp / (tp + fn)` , wordt het gemiddelde
 
 ## <a name="confusion-matrix"></a>Verwarringsmatrix
 
-Een Verwar ring matrix beschrijft de prestaties van een classificatie model. Elke rij geeft de instanties van de echte of werkelijke klasse in uw gegevensset weer, en elke kolom vertegenwoordigt de exemplaren van de klasse die door het model is voor speld. 
+Verwar ring matrices bieden een visuele manier om te bepalen hoe een machine learning model systematische fouten in de voor spellingen van classificatie modellen maakt. Het woord ' Verwar ring ' in de naam is afkomstig uit een model met ' verwarren ' of verkeerd gelabelde voor beelden. Een cel in rij `i` en kolom `j` in een Verwar ring-matrix bevat het aantal steek proeven in de evaluatie-gegevensset die bij een klasse horen `C_i` en die door het model als klasse zijn geclassificeerd `C_j` .
 
-Voor elke Verwar ring-matrix toont automatische ML de frequentie van elk voorspeld label (kolom) vergeleken met het werkelijke label (rij). Hoe donkerder de kleur, hoe hoger het aantal in het betreffende deel van de matrix. 
+In de Studio duidt een donkerdere cel op een hoger aantal steek proeven. Als u de **genormaliseerde** weer gave in de vervolg keuzelijst selecteert, wordt er voor elke matrix regel genormaliseerd dat het percentage van de klasse `C_i` wordt voorspeld als klasse `C_j` . Het voor deel van de standaard weergave van **RAW** is dat u kunt zien of onevenwichtigheid in de verdeling van werkelijke klassen het model heeft veroorzaakt om voor beelden te classificeren van de minderheids klasse, een gemeen schappelijk probleem in gegevens sets die niet in balans zijn.
 
-### <a name="what-does-a-good-model-look-like"></a>Hoe ziet een goed model eruit?
+De Verwar ring matrix van een goed model bevat de meeste steek proeven langs de diagonale richting.
 
-Een Verwar ring matrix vergelijkt de werkelijke waarde van de gegevensset met de voorspelde waarden die het model heeft gekregen. Als gevolg hiervan hebben machine learning modellen een grotere nauw keurigheid als het model de meeste waarden in de diagonaal heeft, wat betekent dat het model de juiste waarde voor speld heeft. Als een model klasse onevenwichtig heeft, helpt de Verwar ring matrix bij het detecteren van een verduidelijkend model.
+### <a name="confusion-matrix-for-a-good-model"></a>Verwar ring matrix voor een goed model 
+![Verwar ring matrix voor een goed model ](./media/how-to-understand-automated-ml/chart-confusion-matrix-good.png)
 
-#### <a name="example-1-a-classification-model-with-poor-accuracy"></a>Voor beeld 1: een classificatie model met een slechte nauw keurigheid
-![Een classificatie model met een slechte nauw keurigheid](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-confusion-matrix1.png)
+### <a name="confusion-matrix-for-a-bad-model"></a>Verwar ring matrix voor een onjuist model
+![Verwar ring matrix voor een onjuist model](./media/how-to-understand-automated-ml/chart-confusion-matrix-bad.png)
 
-#### <a name="example-2-a-classification-model-with-high-accuracy"></a>Voor beeld 2: een classificatie model met hoge nauw keurigheid 
-![Een classificatie model met hoge nauw keurigheid](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-confusion-matrix2.png)
+## <a name="roc-curve"></a>ROC-curve
 
-##### <a name="example-3-a-classification-model-with-high-accuracy-and-high-bias-in-model-predictions"></a>Voor beeld 3: een classificatie model met hoge nauw keurigheid en hoge afwijking in model voorspellingen
-![Een classificatie model met hoge nauw keurigheid en hoge afwijking in model voorspellingen](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-biased-model.png)
+De curve van de ontvanger heeft de relatie tussen de werkelijke positieve frequentie (TPR) en de fout positief (voor) als de drempel waarde voor de beslissing verandert. De ROC-curve kan minder informatieve zijn bij het trainen van modellen op gegevens sets met een hoge onevenwichtige klasse, aangezien de meerderheids klasse bijdragen kan verdrinken van minderheids klassen.
 
-<a name="precision-recall-chart"></a>
+Het gebied onder de curve (AUC) kan worden geïnterpreteerd als het aandeel van de juiste geclassificeerde steek proeven. Nauw keuriger is de AUC de kans dat de classificatie een wille keurig positief voor beeld krijgt dat groter is dan een wille keurig gekozen negatief voor beeld. De vorm van de curve geeft een Intuition voor de relatie tussen TPR en voor als functie van de classificatie drempel of beslissings grens.
 
-## <a name="precision-recall-chart"></a>Nauw keurigheid: grafiek intrekken
+Een curve die de linkerbovenhoek van de grafiek nadert, is een 100% TPR en 0% voor, het best mogelijke model. Een wille keurig model produceert een ROC curve langs de `y = x` lijn van de linkerbenedenhoek naar de rechter bovenhoek. Een erger dan een wille keurig model zou een ROC-curve hebben die spannings dips onder de `y = x` regel.
+> [!TIP]
+> Voor classificatie experimenten kan elk van de lijn diagrammen die worden geproduceerd voor geautomatiseerde ML modellen worden gebruikt om het model per klasse of gemiddeld in alle klassen te evalueren. U kunt scha kelen tussen deze verschillende weer gaven door te klikken op klassen labels in de legenda rechts van de grafiek.
+### <a name="roc-curve-for-a-good-model"></a>ROC-curve voor een goed model
+![ROC-curve voor een goed model](./media/how-to-understand-automated-ml/chart-roc-curve-good.png)
 
-De curve voor het intrekken van precisie toont de relatie tussen Precision en intrekken van een model. De term Precision vertegenwoordigt de mogelijkheid voor een model om alle exemplaren correct te labelen. Intrekken vertegenwoordigt de mogelijkheid voor een classificatie om alle exemplaren van een bepaald label te vinden.
+### <a name="roc-curve-for-a-bad-model"></a>ROC curve voor een onjuist model
+![ROC curve voor een onjuist model](./media/how-to-understand-automated-ml/chart-roc-curve-bad.png)
 
-Met deze grafiek kunt u de curven voor het intrekken van precisie vergelijken voor elk model om te bepalen welk model een acceptabele relatie heeft tussen Precision en intrekken voor uw specifieke bedrijfs probleem. Dit diagram toont de gemiddelde precisie van Macro's: terughalen, gemiddelde precisie van micron-terughalen en de nauwkeurigheids intrekken die zijn gekoppeld aan alle klassen voor een model. 
+## <a name="precision-recall-curve"></a>Nauw keurigheid-intrekken curve
 
-**Macro:** berekent de metrische gegevens onafhankelijk van elke klasse en neemt vervolgens het gemiddelde over, waarbij alle klassen gelijkmatig worden behandeld. **Micro-Gem** aggregeert echter de bijdragen van alle klassen om het gemiddelde te berekenen. Micro-Gem is de voor keur als er sprake is van een klasse-onevenwichtigheid in de gegevensset.
+Met de curve voor het terugroepen van precisie wordt de relatie tussen de precisie en de intrekking van de beslissings drempel geplot. Intrekken is de mogelijkheid van een model om alle positieve voor beelden te detecteren en precisie is de mogelijkheid van een model om te voor komen dat negatieve steek proeven als positief worden gelabeld. Voor sommige zakelijke problemen is het intrekken en wat een grotere nauw keurigheid nodig, afhankelijk van het relatieve belang van het voor komen van onjuiste negatieven versus valse positieven.
+> [!TIP]
+> Voor classificatie experimenten kan elk van de lijn diagrammen die worden geproduceerd voor geautomatiseerde ML modellen worden gebruikt om het model per klasse of gemiddeld in alle klassen te evalueren. U kunt scha kelen tussen deze verschillende weer gaven door te klikken op klassen labels in de legenda rechts van de grafiek.
+### <a name="precision-recall-curve-for-a-good-model"></a>Curve voor het intrekken van precisie voor een goed model
+![Curve voor het intrekken van precisie voor een goed model](./media/how-to-understand-automated-ml/chart-precision-recall-curve-good.png)
 
-### <a name="what-does-a-good-model-look-like"></a>Hoe ziet een goed model eruit?
-Afhankelijk van het doel van het bedrijfs probleem, kan de perfecte nauw keurigheid voor het intrekken van de precisie verschillen. 
+### <a name="precision-recall-curve-for-a-bad-model"></a>Curve voor het intrekken van een precisie voor een onjuist model
+![Curve voor het intrekken van een precisie voor een onjuist model](./media/how-to-understand-automated-ml/chart-precision-recall-curve-bad.png)
 
-##### <a name="example-1-a-classification-model-with-low-precision-and-low-recall"></a>Voor beeld 1: een classificatie model met lage precisie en weinig intrekken
-![Een classificatie model met lage precisie en weinig intrekken](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-precision-recall1.png)
+## <a name="cumulative-gains-curve"></a>Cumulatieve toename-curve
 
-##### <a name="example-2-a-classification-model-with-100-precision-and-100-recall"></a>Voor beeld 2: een classificatie model met ~ 100% Precision en ~ 100% intrekken 
-![Een classificatie model met hoge precisie en intrekken](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-precision-recall2.png)
+Met de cumulatieve winst curve wordt het percentage positieve steek proeven correct geclassificeerd als een functie van het percentage steek proeven dat wordt overwogen, waarbij de voor spellingen van voor speld resultaat worden onderzocht.
 
-<a name="roc"></a>
+Als u de winst wilt berekenen, moet u eerst alle voor beelden van de hoogste naar de laagste waarschijnlijkheid van het model sorteren. Ga vervolgens naar `x%` de hoogste betrouw baarheid. Deel het aantal positieve steek proeven dat is gedetecteerd op `x%` basis van het totale aantal positieve steek proeven om de winst te krijgen. Cumulatieve toename is het percentage positieve steek proeven dat wordt gedetecteerd bij het overwegen van een percentage van de gegevens die waarschijnlijk tot de positieve klasse behoren.
 
-## <a name="roc-chart"></a>ROC diagram
+Bij een perfecte model worden alle positieve steek proeven genoteerd boven alle negatieve steek proeven, met een cumulatieve toename kromme die bestaat uit twee rechte segmenten. De eerste is een lijn met helling `1 / x` van `(0, 0)` tot `(x, 1)` waar `x` is de Fractie van steek proeven die bij de positieve klasse horen ( `1 / num_classes` als de klassen evenwichtig zijn). De tweede is een horizontale lijn van `(x, 1)` tot `(1, 1)` . In het eerste segment worden alle positieve steek proeven correct geclassificeerd en wordt cumulatief gewonnen `100%` binnen de eerste `x%` van de overwogen steek proeven.
 
-Het besturings kenmerk van de ontvanger (of ROC) is een tekening van de juist geclassificeerde labels versus de onjuist geclassificeerde labels voor een bepaald model. De ROC-curve kan minder informatieve zijn bij het trainen van modellen op gegevens sets met een hoge onevenwichtige klasse, aangezien de meerderheids klasse de bijdrage van minderheids klassen kan verdrinken.
+Het model voor wille keurige basis lijn heeft een gepaarde verdeling van de cumulatieve winst, volgend `y = x` op waar voor `x%` steek proeven die alleen over `x%` de totale positieve steek proeven worden beschouwd. Een perfecte model heeft een micro gemiddelde kromme die de linkerbovenhoek en een regel voor het gemiddelde van een macro die de helling heeft `1 / num_classes` tot de cumulatieve toename 100% en vervolgens horizon taal tot het percentage van de gegevens 100.
+> [!TIP]
+> Voor classificatie experimenten kan elk van de lijn diagrammen die worden geproduceerd voor geautomatiseerde ML modellen worden gebruikt om het model per klasse of gemiddeld in alle klassen te evalueren. U kunt scha kelen tussen deze verschillende weer gaven door te klikken op klassen labels in de legenda rechts van de grafiek.
+### <a name="cumulative-gains-curve-for-a-good-model"></a>Cumulatieve toename van de curve voor een goed model
+![Cumulatieve toename van de curve voor een goed model](./media/how-to-understand-automated-ml/chart-cumulative-gains-curve-good.png)
 
-U kunt het gebied onder het ROC diagram visualiseren als het aandeel van de juiste geclassificeerde steek proeven. Een ervaren gebruiker van de ROC grafiek kan er meer uitzien dan het gebied onder de curve en een Intuition ophalen voor de echte positieve en onjuiste positieve tarieven als functie van de classificatie drempel of beslissings grens.
+### <a name="cumulative-gains-curve-for-a-bad-model"></a>Cumulatieve toename van de kromme voor een onjuist model
+![Cumulatieve toename van de kromme voor een onjuist model](./media/how-to-understand-automated-ml/chart-cumulative-gains-curve-bad.png)
 
-### <a name="what-does-a-good-model-look-like"></a>Hoe ziet een goed model eruit?
-Een ROC-curve die de linkerbovenhoek benadert met 100% True positief percentage en 0% false positief percentage is het beste model. Een wille keurig model wordt weer gegeven als een platte lijn van linksonder naar de rechter bovenhoek. Erger dan wille keurig zou dip onder de lijn y = x.
+## <a name="lift-curve"></a>Bocht
 
-#### <a name="example-1-a-classification-model-with-low-true-labels-and-high-false-labels"></a>Voor beeld 1: een classificatie model met lage labels en hoge onwaar labels
-![Classificatie model met lage labels en hoog/onwaar labels](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-roc-1.png)
+In de lift kromme ziet u hoe vaak een model beter presteert ten opzichte van een wille keurig model. Lift is gedefinieerd als de verhouding van de cumulatieve toename van de cumulatieve toename van een wille keurig model.
 
-#### <a name="example-2-a-classification-model-with-high-true-labels-and-low-false-labels"></a>Voor beeld 2: een classificatie model met hoogwaardige labels en laagloze labels
+Bij deze relatieve prestaties wordt rekening gehouden met het feit dat de classificatie moeilijker wordt naarmate u het aantal klassen verhoogt. (Een wille keurig model wordt onjuist voor speld op basis van een hogere Fractie van voor beelden van een gegevensset met 10 klassen vergeleken met een gegevensset met twee klassen)
 
-![een classificatie model met hoogwaardige labels en lage labels met onwaar](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-roc-2.png)
+De kromme voor de basis lijn is de `y = 1` lijn waar de prestaties van het model consistent zijn met die van een wille keurig model. Over het algemeen is de lift-curve voor een goed model groter dan die grafiek en verder van de x-as, wat aangeeft dat wanneer het model het meest betrouwbaar is in de voor spellingen die het veel beter is dan een wille keurige schatting.
 
+> [!TIP]
+> Voor classificatie experimenten kan elk van de lijn diagrammen die worden geproduceerd voor geautomatiseerde ML modellen worden gebruikt om het model per klasse of gemiddeld in alle klassen te evalueren. U kunt scha kelen tussen deze verschillende weer gaven door te klikken op klassen labels in de legenda rechts van de grafiek.
+### <a name="lift-curve-for-a-good-model"></a>Bocht voor een goed model
+![Bocht voor een goed model](./media/how-to-understand-automated-ml/chart-lift-curve-good.png)
+ 
+### <a name="lift-curve-for-a-bad-model"></a>Lift curve voor een onjuist model
+![Lift curve voor een onjuist model](./media/how-to-understand-automated-ml/chart-lift-curve-bad.png)
 
-<a name="lift-curve"></a>
+## <a name="calibration-curve"></a>Kalibratie curve
 
-## <a name="lift-chart"></a>Lift-grafiek
+Met de kalibratie curve wordt de vertrouwens verhouding van een model in de voor spellingen van het aantal positieve steek proeven op elk betrouwbaarheids niveau getekend. Een goed gekalibreerd model classificeert 100% van de voor spellingen waaraan het 100% betrouw baarheid, 50% van de voor spellingen toewijst 50% betrouw baarheid, 20% van de voor spellingen die een 20% betrouw baarheid toewijst, enzovoort. Een volledig gekalibreerd model heeft een kalibratie kromme `y = x` die volgt op de regel waarin het model perfect voor spelt op de kans dat er steek proeven bij elke klasse horen.
 
-Met een lift diagram worden de prestaties van classificatie modellen geëvalueerd. In een lift diagram ziet u hoe vaak een model beter presteert vergeleken met een wille keurig model. Dit geeft u een relatieve prestaties waarbij rekening wordt gehouden met het feit dat de classificatie moeilijker wordt naarmate u het aantal klassen verhoogt. Een wille keurig model voor spelt onjuist een grotere fractie van voor beelden van een gegevensset met tien klassen vergeleken met een gegevensset met twee klassen.
-
-U kunt de lift van het model dat automatisch is gebouwd met Azure Machine Learning vergelijken met de basis lijn (wille keurig model) om de waarde van het betreffende model te bekijken.
-
-### <a name="what-does-a-good-model-look-like"></a>Hoe ziet een goed model eruit?
-
-Een beter model voor het uitvoeren van modellen heeft een lift curve die hoger is in de grafiek en verder van de basis lijn. 
-
-#### <a name="example-1-a-classification-model-that-performs-poorly-compared-to-a-random-selection-model"></a>Voor beeld 1: een classificatie model dat slecht presteert ten opzichte van een wille keurig selectie model
-![Een classificatie model dat erger is dan een wille keurig selectie model](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-lift-curve1.png)
-
-#### <a name="example-2-a-classification-model-that-performs-better-than-a-random-selection-model"></a>Voor beeld 2: een classificatie model dat beter presteert dan een wille keurig selectie model
-![Een classificatie model dat beter presteert](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-lift-curve2.png)
-
-<a name="gains-curve"></a>
-
-## <a name="cumulative-gains-chart"></a>Grafiek met cumulatieve toename
-
-Een cumulatieve toename diagram evalueert de prestaties van een classificatie model door elk deel van de gegevens. In de grafiek wordt voor elk percentiel van de gegevensset weer gegeven hoeveel meer steek proeven nauw keurig zijn geclassificeerd in vergelijking met een model dat altijd onjuist is. Deze informatie biedt een andere manier om de resultaten in de bijbehorende Lift-grafiek te bekijken.
-
-De cumulatieve toename grafiek helpt u bij het kiezen van de indelings beperking met behulp van een percentage dat overeenkomt met een gewenste toename van het model. U kunt het diagram van de cumulatieve toename vergelijken met de basis lijn (onjuist model) om het percentage van de voor beelden die goed zijn ingedeeld op elk betrouw bare percentiel te bekijken.
-
-#### <a name="what-does-a-good-model-look-like"></a>Hoe ziet een goed model eruit?
-
-Net als bij een lift diagram, is het hoger uw cumulatieve toename-curve boven de basis lijn, hoe beter uw model presteert. Daarnaast is de gebogen lijn nauw keuriger dan de linkerbovenhoek van de grafiek, hoe groter uw model het beste wordt vergeleken met de basis lijn. 
-
-##### <a name="example-1-a-classification-model-with-minimal-gain"></a>Voor beeld 1: een classificatie model met minimale toename
-![een classificatie model met minimale toename](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-gains-curve2.png)
-
-##### <a name="example-2-a-classification-model-with-significant-gain"></a>Voor beeld 2: een classificatie model met aanzienlijke winst
-![Een classificatie model met aanzienlijke winst](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-gains-curve1.png)
-
-<a name="calibration-plot"></a>
-
-## <a name="calibration-chart"></a>Kalibratie diagram
-
-In een kalibratie plot wordt het vertrouwen van een voorspellend model weer gegeven. Dit doet u door de relatie tussen de voorspelde waarschijnlijkheid en de werkelijke kans weer te geven, waarbij ' kans ' staat voor de kans dat een bepaalde instantie tot een bepaald label behoort.
-
-Voor alle classificatie problemen kunt u de kalibratie lijn voor micro-Average, macro-Gem en elke klasse in een bepaald voorspellend model controleren.
-
-**Macro-gemiddelde** berekent de metrische gegevens onafhankelijk van elke klasse en nemen vervolgens het gemiddelde uit, waarbij alle klassen gelijkmatig worden behandeld. **Micro-Gem** aggregeert echter de bijdragen van alle klassen om het gemiddelde te berekenen. 
-
-### <a name="what-does-a-good-model-look-like"></a>Hoe ziet een goed model eruit?
-Een goed gekalibreerd model wordt uitgelijnd met de lijn y = x, waarbij de kans wordt gedicteerd dat steek proeven bij elke klasse horen. Een over-vertrouwen model zal de waarschijnlijkheid voors pellen die bijna gelijk zijn aan nul en één, wat zelden duidelijk is over de klasse van elk voor beeld.
-
-#### <a name="example-1-a-well-calibrated-model"></a>Voor beeld 1: een goed gekalibreerd model
-![ meer goed gekalibreerd model](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-calib-curve1.png)
-
-#### <a name="example-2-an-over-confident-model"></a>Voor beeld 2: een over-vertrouwen model
-![Een over-vertrouwen model](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-calib-curve2.png)
-
-
-<a name="regression"></a> 
-
-## <a name="regression-performance-metrics"></a>Gegevens over regressie prestaties
-
-De volgende tabel bevat een overzicht van de prestatie gegevens van het model die geautomatiseerd ML berekent voor elk regressie-of prognose model dat voor uw experiment wordt gegenereerd. 
-
-|Gegevens|Beschrijving|Berekening|Extra para meters
---|--|--|--|
-explained_variance|De uitleg afwijking is de verhouding waarmee een wiskundig model account voor de variatie van een bepaalde gegevensset is gedefinieerd. Het is het percentage afname van de oorspronkelijke gegevens tot de variantie van de fouten. Wanneer het gemiddelde van de fouten 0 is, is het gelijk aan het kwadraat van de berekening (Zie r2_score hieronder).|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.explained_variance_score.html)|Geen|
-r2_score|R ^ 2 is de determinatie coëfficiënt of het percentage verlaging in kwadratische fouten ten opzichte van een basislijn model dat het gemiddelde uitvoert. |[Berekening](https://scikit-learn.org/0.16/modules/generated/sklearn.metrics.r2_score.html)|Geen|
-spearman_correlation|' Spearman correlatie ' is een niet-parametrische meting van de monotonicity van de relatie tussen twee gegevens sets. In tegens telling tot de correlatie van Pearson, neemt de ' Spearman-correlatie niet in dat beide gegevens sets normaal gesp roken worden gedistribueerd. Net als bij andere correlatie coëfficiënten is dit een verschil tussen-1 en + 1 en 0 voor geen correlatie. Correlaties van-1 of + 1 impliceren een nauw keurige monotone relatie. Positieve correlaties impliceren dat als x stijgt, dus y. Negatieve correlaties impliceren dat x stijgt, y afneemt.|[Berekening](https://docs.scipy.org/doc/scipy-0.16.1/reference/generated/scipy.stats.spearmanr.html)|Geen|
-mean_absolute_error|De gemiddelde absolute fout is de verwachte waarde van de absolute waarde van het verschil tussen het doel en de voor spelling|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_absolute_error.html)|Geen|
-normalized_mean_absolute_error|De genormaliseerde gemiddelde absolute fout is een absolute fout gedeeld door het bereik van de gegevens|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_absolute_error.html)|Delen door bereik van de gegevens|
-median_absolute_error|Mediaan absolute fout is de mediaan van alle absolute verschillen tussen het doel en de voor spelling. Dit verlies is robuust voor uitbijters.|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.median_absolute_error.html)|Geen|
-normalized_median_absolute_error|Genormaliseerde mediaan absolute fout is de gemiddelde absolute fout gedeeld door het bereik van de gegevens|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.median_absolute_error.html)|Delen door bereik van de gegevens|
-root_mean_squared_error|Root mean error is de vierkantswortel van het verwachte verschil in kwadraat tussen het doel en de voor spelling|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html)|Geen|
-normalized_root_mean_squared_error|Genormaliseerd root-kwadraat fout is het root-kwadraat fout gedeeld door het bereik van de gegevens|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html)|Delen door bereik van de gegevens|
-root_mean_squared_log_error|Het wortel gemiddelde van het logaritmische fout is de vierkantswortel van de verwachte kwadratische fout|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_log_error.html)|Geen|
-normalized_root_mean_squared_log_error|Genormaliseerde logaritmische fout in kwadraat is het belangrijkste gemiddelde logboek fout gedeeld door het bereik van de gegevens|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_log_error.html)|Delen door bereik van de gegevens|
-
-<a name="pvt"></a>
-
-## <a name="predicted-vs-true-chart"></a>Voor speld versus waar grafiek
-
-Voor speld versus waar ziet u de relatie tussen een voorspelde waarde en de bijbehorende waarde voor het correleren van een regressie probleem. 
-
-Na elke uitvoering ziet u een voorspelde versus ware grafiek voor elk regressie model. Ter bescherming van de privacy van gegevens zijn waarden binning samen en de grootte van elke bin wordt weer gegeven als een staaf diagram in het onderste gedeelte van het grafiek gebied. U kunt het voorspellende model vergelijken met het lichtere scha kering van de fout marges, vergeleken met de ideale waarde van waar het model moet zijn.
-
-### <a name="what-does-a-good-model-look-like"></a>Hoe ziet een goed model eruit?
-Deze grafiek kan worden gebruikt om de prestaties van een model te meten als dichter bij de y = x-lijn de voorspelde waarden, de betere prestaties van een voorspellend model.
-
-#### <a name="example-1-a-regression-model-with-low-performance"></a>Voor beeld 1: een regressie model met lage prestaties
-![Een regressie model met lage nauw keurigheid in voor spellingen](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-regression1.png)
-
-#### <a name="example-2-a-regression-model-with-high-performance"></a>Voor beeld 2: een regressie model met hoge prestaties
-![Een regressie model met hoge nauw keurigheid in de voor spellingen](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-regression2.png)
-
-<a name="histo"></a> 
-
-## <a name="histogram-of-residuals-chart"></a>Grafiek met het histogram van verschillen
-
-Automatische MILLILITERs bieden automatisch een grafiek van verschillen om de verdeling van fouten in de voor spellingen van een regressie model weer te geven. Een rest is het verschil tussen de voor spelling en de werkelijke waarde ( `y_pred - y_true` ). 
-
-### <a name="what-does-a-good-model-look-like"></a>Hoe ziet een goed model eruit?
-Als u een fout marge met een lage afwijking wilt weer geven, moet het histogram van de resten worden gevormd als klok curve, gecentreerd rond nul.
-
-#### <a name="example-1-a-regression-model-with-bias-in-its-errors"></a>Voor beeld 1: een regressie model met afwijking van fouten
-![SA-regressie model met afwijking van fouten](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-regression3.png)
-
-#### <a name="example-2-a-regression-model-with-a-more-even-distribution-of-errors"></a>Voor beeld 2: een regressie model met een meer gelijkmatige verdeling van fouten
-![Een regressie model met een meer gelijkmatige verdeling van fouten](./media/how-to-understand-automated-ml/azure-machine-learning-auto-ml-regression4.png)
-
-<a name="explain-model"></a>
-
-## <a name="model-interpretability-and-feature-importance"></a>De interpretatie van modellen en de urgentie van het onderdeel
-Automated ML biedt een machine learning interpretable dash board voor uw uitvoeringen.
-
-Zie voor meer informatie over het inschakelen van functies voor het maken van voorzieningen [interpretive: model uitleg in automatische machine learning](how-to-machine-learning-interpretability-automl.md).
+Een over-vertrouwbaar model heeft meer voor speld dat de waarschijnlijkheid gelijk is aan nul en één, wat zelden duidelijk is over de klasse van elk voor beeld en de kalibratie curve ziet er ongeveer uit als achterwaarts. Een onder-vertrouwend model wijst een lagere kans op gemiddelde toe aan de klasse die het voor spelt, en de bijbehorende kalibratie curve ziet er ongeveer uit als een ' S '. In de kalibratie curve wordt niet de mogelijkheid van een model op de juiste wijze geclassificeerd, maar in plaats daarvan wordt het vertrouwen aan de voor spellingen toegewezen. Een onjuist model kan nog steeds een goede kalibratie curve hebben als het model goed vertrouwen en hoge onzekerheid toewijst.
 
 > [!NOTE]
-> Het ForecastTCN-model wordt momenteel niet ondersteund door de uitleg-client. Dit model retourneert geen uitleg-dash board als het wordt geretourneerd als het beste model en biedt geen ondersteuning voor uitleg over de uitvoering van een on-demand.
+> De kalibratie curve is gevoelig voor het aantal steek proeven, dus een kleine validatieset kan ruis resultaten opleveren die moeilijk te interpreteren kunnen zijn. Dit betekent niet noodzakelijkerwijs dat het model niet goed is gekalibreerd.
+
+### <a name="calibration-curve-for-a-good-model"></a>Kalibratie curve voor een goed model
+![Kalibratie curve voor een goed model](./media/how-to-understand-automated-ml/chart-calibration-curve-good.png)
+
+### <a name="calibration-curve-for-a-bad-model"></a>Kalibratie curve voor een onjuist model
+![Kalibratie curve voor een onjuist model](./media/how-to-understand-automated-ml/chart-calibration-curve-bad.png)
+
+## <a name="regressionforecasting-metrics"></a>Metrische gegevens voor regressie/prognose
+
+Automatische ML berekent dezelfde metrische gegevens over prestaties voor elk gegenereerd model, ongeacht of het gaat om een regressie-of prognose-experiment. Deze metrische gegevens worden ook Norma Lise ring voor het maken van een vergelijking tussen modellen die zijn getraind voor gegevens met verschillende bereiken. Zie [metrische gegevens normalisatie](#metric-normalization) voor meer informatie  
+
+De volgende tabel bevat een overzicht van de prestatie gegevens voor modellen die zijn gegenereerd voor regressie-en prognose experimenten. Net als bij classificatie-metrische gegevens zijn deze metrische gegevens ook gebaseerd op de scikit leer implementaties. De relevante scikit-documentatie is dienovereenkomstig gekoppeld in het veld **berekening** .
+
+|Gegevens|Beschrijving|Berekening|
+--|--|--|
+explained_variance|De uitleg afwijking meet de mate waarin een model accounts voor de variatie in de doel variabele. Het is het percentage afname van de oorspronkelijke gegevens tot de variantie van de fouten. Wanneer het gemiddelde van de fouten 0 is, is het gelijk aan het kwadraat van de berekening (Zie r2_score hieronder). <br> <br> **Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** (-inf, 1]|[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.explained_variance_score.html)|
+mean_absolute_error|De gemiddelde absolute fout is de verwachte waarde van de absolute waarde van het verschil tussen het doel en de voor spelling.<br><br> **Doel stelling:** Dichter bij 0 hoe beter <br> **Bereik:** [0, inf) <br><br> Dergelijke <br>`mean_absolute_error` <br>  `normalized_mean_absolute_error`, de mean_absolute_error gedeeld door het bereik van de gegevens. | [Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_absolute_error.html)|
+median_absolute_error|Mediaan absolute fout is de mediaan van alle absolute verschillen tussen het doel en de voor spelling. Dit verlies is robuust voor uitbijters.<br><br> **Doel stelling:** Dichter bij 0 hoe beter <br> **Bereik:** [0, inf)<br><br>Dergelijke <br> `median_absolute_error`<br> `normalized_median_absolute_error`: de median_absolute_error gedeeld door het bereik van de gegevens. |[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.median_absolute_error.html)|
+r2_score|R ^ 2 is de determinatie coëfficiënt of het percentage verlaging in kwadratische fouten ten opzichte van een basislijn model dat het gemiddelde uitvoert. <br> <br> **Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** (-inf, 1]|[Berekening](https://scikit-learn.org/0.16/modules/generated/sklearn.metrics.r2_score.html)|
+root_mean_squared_error |Root mean error (RMSE) is de vierkantswortel van het verwachte verschil in kwadraat tussen het doel en de voor spelling. Voor een onzuivere Estimator is RMSE gelijk aan de standaard deviatie.<br> <br> **Doel stelling:** Dichter bij 0 hoe beter <br> **Bereik:** [0, inf)<br><br>Dergelijke<br> `root_mean_squared_error` <br> `normalized_root_mean_squared_error`: de root_mean_squared_error gedeeld door het bereik van de gegevens. |[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html)|
+root_mean_squared_log_error|Het wortel gemiddelde van het logaritmische fout is de vierkantswortel van de verwachte kwadratische fout.<br><br>**Doel stelling:** Dichter bij 0 hoe beter <br> **Bereik:** [0, inf) <br> <br>Dergelijke <br>`root_mean_squared_log_error` <br> `normalized_root_mean_squared_log_error`: de root_mean_squared_log_error gedeeld door het bereik van de gegevens.  |[Berekening](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_log_error.html)|
+spearman_correlation| ' Spearman correlatie ' is een niet-parametrische meting van de monotonicity van de relatie tussen twee gegevens sets. In tegens telling tot de correlatie van Pearson, neemt de ' Spearman-correlatie niet in dat beide gegevens sets normaal gesp roken worden gedistribueerd. Net als andere correlatie coëfficiënten varieert ' Spearman ' tussen-1 en 1 met 0 voor geen correlatie. De correlaties van-1 of 1 impliceren een nauw keurige monotone relatie. <br><br> ' Spearman ' is een rang orde correlatie-metriek, wat betekent dat wijzigingen in voor spelling of werkelijke waarden het resultaat van de taak ' Spearman ' niet wijzigen als de rang orde van voor spelling of werkelijke waarden niet wordt gewijzigd.<br> <br> **Doel stelling:** Dichter bij 1 hoe beter <br> **Bereik:** [-1, 1]|[Berekening](https://docs.scipy.org/doc/scipy-0.16.1/reference/generated/scipy.stats.spearmanr.html)|
+
+### <a name="metric-normalization"></a>Metrische gegevens normalisatie
+
+Automated ML maakt regressies en prognoses van metrische gegevens die kunnen worden vergeleken tussen modellen die zijn getraind met verschillende bereiken. Een model dat is getraind voor een gegevens met een groter bereik heeft een hogere fout dan hetzelfde model dat is getraind voor gegevens met een kleiner bereik, tenzij deze fout wordt genormaliseerd.
+
+Hoewel er geen standaard methode is voor het normaliseren van metrische fout gegevens, neemt geautomatiseerd ML de gemeen schappelijke aanpak voor het delen van de fout op uit het bereik van de gegevens: `normalized_error = error / (y_max - y_min)`
+
+Bij het evalueren van een prognose model voor tijdreeks gegevens neemt geautomatiseerde ML extra stappen om ervoor te zorgen dat normalisatie plaatsvindt per time series-ID (korrel), omdat elke tijd reeks waarschijnlijk een andere distributie van doel waarden heeft.
+## <a name="residuals"></a>Residuen
+
+De grafiek verschilt is een histogram met de Voorspellings fouten (verschillen) die zijn gegenereerd voor regressie-en prognose experimenten. Verschillen worden berekend als `y_predicted - y_true` voor alle voor beelden en vervolgens weer gegeven als een histogram om de model afwijking weer te geven.
+
+In dit voor beeld ziet u dat beide modellen enigszins worden verlicht om lager te voors pellen dan de werkelijke waarde. Dit is niet ongebruikelijk voor een gegevensset met een scheefe verdeling van werkelijke doelen, maar geeft slechtere model prestaties. Een goed model heeft een verdeelde verdeling van de grootste waarde bij nul met een paar resten in de meeste jaren. Een erger model heeft een verdeling van de verdeelde verschillen met minder steek proeven rond nul.
+
+### <a name="residuals-chart-for-a-good-model"></a>Diagram van de rest van een goed model
+![Diagram van de rest van een goed model](./media/how-to-understand-automated-ml/chart-residuals-good.png)
+
+### <a name="residuals-chart-for-a-bad-model"></a>Diagram van verschillen voor een onjuist model
+![Diagram van verschillen voor een onjuist model](./media/how-to-understand-automated-ml/chart-residuals-bad.png)
+
+## <a name="predicted-vs-true"></a>Voorspeld versus waar
+
+Voor regressie-en Voorspellings experimenten wordt de relatie tussen de doel functie (True/actual values) en de voor spellingen van het model in de grafiek getekend. De werkelijke waarden zijn binning langs de x-as en voor elke bin wordt de gemiddelde voorspelde waarde getekend met fout balken. Zo kunt u zien of een model is gericht op het voors pellen van bepaalde waarden. De lijn geeft de gemiddelde voor spelling en het gearceerde gebied de variantie van voor spellingen rond dat gemiddelde aan.
+
+Vaak heeft de meest voorkomende waarde de meest nauw keurige voor spelling met de laagste variantie. De afstand van de trend lijn van de ideale `y = x` lijn waar enkele echte waarden zijn, is een goede meting van de model prestaties op uitschieters. U kunt het histogram onder aan de grafiek gebruiken om de werkelijke gegevens distributie te omraden. Met meer voor beelden van gegevens, waarbij de distributie verspreid is, kunnen de prestaties van het model worden verbeterd op ongeziene gegevens.
+
+In dit voor beeld ziet u dat het betere model een voorspelde en ware lijn heeft die dichter bij de ideale `y = x` lijn staat.
+
+### <a name="predicted-vs-true-chart-for-a-good-model"></a>Voor speld versus waar grafiek voor een goed model
+![Voor speld versus waar grafiek voor een goed model](./media/how-to-understand-automated-ml/chart-predicted-true-good.png)
+
+### <a name="predicted-vs-true-chart-for-a-bad-model"></a>Voor speld versus waar-diagram voor een onjuist model
+![Voor speld versus waar-diagram voor een onjuist model](./media/how-to-understand-automated-ml/chart-predicted-true-bad.png)
+
+## <a name="model-explanations-and-feature-importances"></a>Uitleg bij het model en belang rijke functies
+
+Hoewel de metrische gegevens voor de evaluatie van modellen en grafieken geschikt zijn voor het meten van de algemene kwaliteit van een model, kunt u controleren welke gegevensset functies een model gebruikt om de voor spellingen te maken. Daarom biedt geautomatiseerd ML een dash board voor het interpreteren van modellen om de relatieve bijdragen van gegevensset-functies te meten en te rapporteren.
+
+![Functie urgentie](./media/how-to-understand-automated-ml/how-to-feature-importance.gif)
+
+Als u het dash board voor interpretaties wilt weer geven in de studio:
+
+1. Meld u aan bij [de Studio](https://ml.azure.com/) en navigeer naar uw werk ruimte
+2. Selecteer in het menu links **experimenten**
+3. Selecteer uw experiment in de lijst met experimenten
+4. Selecteer in de tabel aan de onderkant van de pagina een AutoML-uitvoering
+5. Selecteer op het tabblad **modellen** de **algoritme naam** voor het model dat u wilt uitleggen
+6. Op het tabblad **uitleg** ziet u mogelijk een uitleg die al is gemaakt als het model het beste is
+7. Als u een nieuwe uitleg wilt maken, selecteert u **model uitleggen** en selecteert u de externe Compute waarmee uitleg moet worden berekend.
+
+> [!NOTE]
+> Het ForecastTCN-model wordt momenteel niet ondersteund door automatische ML-uitleg en andere prognose modellen hebben mogelijk beperkte toegang tot hulpprogram ma's voor interpretatie.
 
 ## <a name="next-steps"></a>Volgende stappen
-
-+ Meer informatie over [automatische ml](concept-automated-ml.md) in azure machine learning.
-+ Probeer de voorbeeld notitieblokken voor [automatische machine learning-modellen](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/explain-model) .
+* Probeer de [voorbeeld notitieblokken voor automatische machine learning-modellen](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/explain-model).
+* Meer informatie over de [verantwoordelijke AI-aanbiedingen in automatische milliliters](how-to-machine-learning-interpretability-automl.md).
+* Neem voor automatische ML specifieke vragen contact op met askautomatedml@microsoft.com .

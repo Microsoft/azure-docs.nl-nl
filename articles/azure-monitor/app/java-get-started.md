@@ -6,14 +6,14 @@ ms.date: 11/22/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 25d0d409c8112292afd20f052e82494dd8e656ea
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 6bdad71f0b36995abdeb3b1edb87cbef32df8b67
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96601302"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96919426"
 ---
-# <a name="quickstart-get-started-with-application-insights-in-a-java-web-project"></a>Snelstartgids: aan de slag met Application Insights in een Java-webproject
+# <a name="quickstart-get-started-with-application-insights-in-a-java-web-project"></a>Quickstart: Aan de slag met Application Insights in een Java-webproject
 
 
 > [!CAUTION]
@@ -30,7 +30,9 @@ Application Insights is een uitbreidbare analyseservice voor webontwikkelaars di
 
 ## <a name="get-an-application-insights-instrumentation-key"></a>Een Application Insights-instrumentatiesleutel ophalen
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+> [!IMPORTANT]
+> Nieuwe Azure-regio's **vereisen** het gebruik van verbindings reeksen in plaats van instrumentatie sleutels. Met de [verbindings reeks](./sdk-connection-string.md?tabs=java) wordt de resource geïdentificeerd waaraan u de telemetriegegevens wilt koppelen. U kunt ook de eind punten wijzigen die door de resource worden gebruikt als een bestemming voor uw telemetrie. U moet de connection string kopiëren en toevoegen aan de code van uw toepassing of aan een omgevings variabele.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 2. Maak in de Azure Portaleen Application Insights-resource. Stel het toepassingstype in op Java-webtoepassing.
 
 3. Zoek de instrumentatiesleutel van de nieuwe resource. U moet deze sleutel zo dadelijk in de code van uw project plakken.

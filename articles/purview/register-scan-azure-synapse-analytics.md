@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 10/22/2020
-ms.openlocfilehash: a0b0dc8c29bcdb51f7b348dd62e3d27796819a7d
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: e0a1d8dba9ea284322584de3b4be2ae390d15fdf
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96552972"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920259"
 ---
 # <a name="register-and-scan-azure-synapse-analytics"></a>Azure Synapse Analytics registreren en controleren
 
@@ -21,6 +21,10 @@ In dit artikel wordt beschreven hoe u een exemplaar van Azure Synapse Analytics 
 ## <a name="supported-capabilities"></a>Ondersteunde mogelijkheden
 
 Azure Synapse Analytics (voorheen SQL DW) biedt ondersteuning voor volledige en incrementele scans voor het vastleggen van de meta gegevens en het schema. Met scans worden de gegevens ook automatisch geclassificeerd op basis van systeem-en aangepaste classificatie regels.
+
+### <a name="known-limitations"></a>Bekende beperkingen
+
+Azure controle sfeer liggen biedt geen ondersteuning voor het scannen van [weer gaven](https://docs.microsoft.com/sql/relational-databases/views/views?view=sql-server-ver15) in azure Synapse Analytics
 
 ## <a name="prerequisites"></a>Vereisten
 

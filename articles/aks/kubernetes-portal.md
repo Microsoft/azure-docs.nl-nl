@@ -1,23 +1,21 @@
 ---
-title: Toegang tot Kubernetes-resources via de Azure Portal (preview-versie)
+title: Toegang tot Kubernetes-resources via de Azure Portal
 description: Meer informatie over hoe u met Kubernetes-resources een Azure Kubernetes service-cluster (AKS) kunt beheren vanuit de Azure Portal.
 services: container-service
 ms.topic: article
-ms.date: 09/21/2020
-ms.openlocfilehash: cfd09e469de68a1eee7440773347e9fe58bf8619
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.date: 12/09/2020
+ms.openlocfilehash: 8e31c41573ced403a034999de71a5595a54281df
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96571620"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96921578"
 ---
-# <a name="access-kubernetes-resources-from-the-azure-portal-preview"></a>Toegang tot Kubernetes-resources via de Azure Portal (preview-versie)
+# <a name="access-kubernetes-resources-from-the-azure-portal"></a>Toegang tot Kubernetes-resources via de Azure Portal
 
-De Azure Portal bevat een Kubernetes resource Viewer (preview) voor eenvoudige toegang tot de Kubernetes-resources in uw Azure Kubernetes service (AKS)-cluster. Het weer geven van Kubernetes-resources in de Azure Portal reduceert de context wisseling tussen de Azure Portal en het `kubectl` opdracht regel programma, waarmee u de ervaring voor het weer geven en bewerken van uw Kubernetes-resources kunt stroom lijnen. De resource Viewer bevat momenteel meerdere resource typen, zoals implementaties, peulen en replica sets.
+De Azure Portal bevat een Kubernetes resource weergave voor eenvoudige toegang tot de Kubernetes-resources in uw Azure Kubernetes service-cluster (AKS). Het weer geven van Kubernetes-resources in de Azure Portal reduceert de context wisseling tussen de Azure Portal en het `kubectl` opdracht regel programma, waarmee u de ervaring voor het weer geven en bewerken van uw Kubernetes-resources kunt stroom lijnen. De resource Viewer bevat momenteel meerdere resource typen, zoals implementaties, peulen en replica sets.
 
 De resource weergave Kubernetes van de Azure Portal vervangt de [AKS dashboard-invoeg toepassing][kubernetes-dashboard], die is afgeschaft.
-
-[!INCLUDE [preview features callout](./includes/preview/preview-callout.md)]
 
 ## <a name="prerequisites"></a>Vereisten
 

@@ -1,18 +1,18 @@
 ---
 title: 'Sjabloon functies: objecten'
-description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon voor het werken met objecten.
+description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon (ARM-sjabloon) voor het werken met objecten.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: 7ed317b3506f00e71bbf97d5564cacec05032744
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 5e13177db1a7cf2f19a822363cb3884474566add
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96004514"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920462"
 ---
 # <a name="object-functions-for-arm-templates"></a>Object functies voor ARM-sjablonen
 
-Resource Manager biedt verschillende functies voor het werken met objecten in uw Azure Resource Manager-sjabloon (ARM).
+Resource Manager biedt verschillende functies voor het werken met objecten in uw Azure Resource Manager-sjabloon (ARM-sjabloon):
 
 * [daarin](#contains)
 * [createObject](#createobject)
@@ -131,11 +131,11 @@ De uitvoer van het vorige voor beeld met de standaard waarden is:
 | Naam | Type | Waarde |
 | ---- | ---- | ----- |
 | stringTrue | Booleaanse waarde | True |
-| stringFalse | Booleaanse waarde | False |
+| stringFalse | Booleaanse waarde | Niet waar |
 | objectTrue | Booleaanse waarde | True |
-| objectFalse | Booleaanse waarde | False |
+| objectFalse | Booleaanse waarde | Niet waar |
 | arrayTrue | Booleaanse waarde | True |
-| arrayFalse | Booleaanse waarde | False |
+| arrayFalse | Booleaanse waarde | Niet waar |
 
 ## <a name="createobject"></a>createObject
 
@@ -792,4 +792,4 @@ De uitvoer van het vorige voor beeld met de standaard waarden is:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor een beschrijving van de secties in een Azure Resource Manager sjabloon.
+* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor een beschrijving van de secties in een arm-sjabloon.

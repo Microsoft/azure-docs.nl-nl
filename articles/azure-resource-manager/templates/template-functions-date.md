@@ -1,18 +1,18 @@
 ---
 title: Sjabloon functies-datum
-description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon om met datums te werken.
+description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon (ARM-sjabloon) om met datums te werken.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: 83e601adb649098f7a4e19cb71170b96a3287d9b
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 58d865f109ecca2629b89eeb55e554743824c195
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96004582"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920492"
 ---
 # <a name="date-functions-for-arm-templates"></a>Datum functies voor ARM-sjablonen
 
-Resource Manager biedt de volgende functies voor het werken met datums in uw Azure Resource Manager ARM-sjablonen:
+Resource Manager biedt de volgende functies voor het werken met datums in uw Azure Resource Manager sjabloon (ARM-sjabloon):
 
 * [dateTimeAdd](#datetimeadd)
 * [utcNow](#utcnow)
@@ -182,7 +182,7 @@ resource scheduler 'Microsoft.Automation/automationAccounts/schedules@2015-10-31
 
 `utcNow(format)`
 
-Retourneert de huidige (UTC) datum/tijd-waarde in de opgegeven notatie. Als er geen indeling wordt gegeven, wordt de ISO 8601-indeling (yyyyMMddTHHmmssZ) gebruikt. **Deze functie kan alleen worden gebruikt in de standaard waarde voor een para meter.**
+Retourneert de huidige (UTC) datum/tijd-waarde in de opgegeven notatie. Als er geen indeling wordt gegeven, wordt de ISO 8601 ( `yyyyMMddTHHmmssZ` )-indeling gebruikt. **Deze functie kan alleen worden gebruikt in de standaard waarde voor een para meter.**
 
 ### <a name="parameters"></a>Parameters
 
@@ -326,4 +326,4 @@ output utcShortOutput string = utcShort
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor een beschrijving van de secties in een Azure Resource Manager sjabloon.
+* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor een beschrijving van de secties in een arm-sjabloon.

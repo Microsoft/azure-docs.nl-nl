@@ -1,21 +1,21 @@
 ---
 title: Sjabloon functies-vergelijking
-description: Hierin worden de functies beschreven die in een Azure Resource Manager sjabloon kunnen worden gebruikt om waarden te vergelijken.
+description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon (ARM-sjabloon) om waarden te vergelijken.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: c5ffcfe7688935da6ea5602cdb2c66a8b86a8d88
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 1b7192db361f510e0246a737de47930534a1cb9d
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96004599"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920522"
 ---
 # <a name="comparison-functions-for-arm-templates"></a>Vergelijkingsfuncties voor ARM-sjablonen
 
-Resource Manager biedt verschillende functies voor het maken van vergelijkingen in uw Azure Resource Manager-sjablonen (ARM).
+Resource Manager biedt verschillende functies voor het maken van vergelijkingen in uw Azure Resource Manager sjabloon (ARM-sjabloon):
 
 * [Voeg](#coalesce)
-* [is gelijk aan](#equals)
+* [gelijk is aan](#equals)
 * [groter](#greater)
 * [greaterOrEquals](#greaterorequals)
 * [jonge](#less)
@@ -387,7 +387,7 @@ De uitvoer van het vorige voor beeld met de standaard waarden is:
 
 | Naam | Type | Waarde |
 | ---- | ---- | ----- |
-| checkInts | Booleaanse waarde | False |
+| checkInts | Booleaanse waarde | Niet waar |
 | checkStrings | Booleaanse waarde | True |
 
 ## <a name="greaterorequals"></a>greaterOrEquals
@@ -468,7 +468,7 @@ De uitvoer van het vorige voor beeld met de standaard waarden is:
 
 | Naam | Type | Waarde |
 | ---- | ---- | ----- |
-| checkInts | Booleaanse waarde | False |
+| checkInts | Booleaanse waarde | Niet waar |
 | checkStrings | Booleaanse waarde | True |
 
 ## <a name="less"></a>less
@@ -550,7 +550,7 @@ De uitvoer van het vorige voor beeld met de standaard waarden is:
 | Naam | Type | Waarde |
 | ---- | ---- | ----- |
 | checkInts | Booleaanse waarde | True |
-| checkStrings | Booleaanse waarde | False |
+| checkStrings | Booleaanse waarde | Niet waar |
 
 ## <a name="lessorequals"></a>lessOrEquals
 
@@ -631,8 +631,8 @@ De uitvoer van het vorige voor beeld met de standaard waarden is:
 | Naam | Type | Waarde |
 | ---- | ---- | ----- |
 | checkInts | Booleaanse waarde | True |
-| checkStrings | Booleaanse waarde | False |
+| checkStrings | Booleaanse waarde | Niet waar |
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor een beschrijving van de secties in een Azure Resource Manager sjabloon.
+* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor een beschrijving van de secties in een arm-sjabloon.

@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 10/19/2020
-ms.openlocfilehash: ee9bcedea15b039982e73304a25073c85b496635
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 56c3475ae6a03600723e7a12b3f3809f003ce7c4
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92780050"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96922263"
 ---
 # <a name="hyperscale-service-tier"></a>Hyperscale-servicelaag
 
@@ -67,11 +67,11 @@ De grootschalige-servicelaag ondersteunt een breed scala aan SQL Server workload
 
 Grootschalige is alleen beschikbaar in het [vCore-model](service-tiers-vcore.md). Als u wilt uitlijnen met de nieuwe architectuur, is het prijs model iets anders dan Algemeen of Bedrijfskritiek service lagen:
 
-- **Berekenen** :
+- **Berekenen**:
 
   De grootschalige reken eenheids prijs is per replica. De [Azure Hybrid Benefit](https://azure.microsoft.com/pricing/hybrid-benefit/) prijs wordt toegepast om automatisch schaal replica's te lezen. Er wordt standaard een primaire replica en één alleen-lezen replica per grootschalige-data base gemaakt.  Gebruikers kunnen het totaal aantal replica's aanpassen, met inbegrip van de primaire van 1-5.
 
-- **Opslag** :
+- **Opslag**:
 
   U hoeft niet de maximale gegevens grootte op te geven bij het configureren van een grootschalige-data base. In de grootschalige-laag worden er kosten in rekening gebracht voor de opslag voor uw Data Base op basis van de werkelijke toewijzing. Opslag wordt automatisch toegewezen tussen 40 GB en 100 TB, in stappen van 10 GB. Meerdere gegevens bestanden kunnen op hetzelfde moment worden uitgebreid als dat nodig is. Een grootschalige-data base wordt gemaakt met een begin grootte van 10 GB en deze wordt met 10 GB elke 10 minuten verg root totdat de grootte van 40 GB wordt bereikt.
 
@@ -202,7 +202,7 @@ Ingeschakelde regio's:
 - Noorwegen - oost
 - Noorwegen - west
 - Zuid-Afrika - noord
-- VS - zuid-centraal
+- South Central US
 - Azië - zuidoost
 - Zwitserland - west
 - Verenigd Koninkrijk Zuid
@@ -231,7 +231,6 @@ Dit zijn de huidige beperkingen voor het grootschalige van de service tier.  We 
 | Migratie van data bases met In-Memory OLTP-objecten | Grootschalige ondersteunt een subset van In-Memory OLTP-objecten, waaronder door het geheugen geoptimaliseerde tabel typen, tabel variabelen en systeem eigen, gecompileerde modules. Wanneer echter een soort In-Memory OLTP-objecten aanwezig zijn in de data base die wordt gemigreerd, wordt de migratie van Premium-en Bedrijfskritiek-service lagen naar grootschalige niet ondersteund. Als u een dergelijke Data Base wilt migreren naar grootschalige, moeten alle In-Memory OLTP-objecten en de bijbehorende afhankelijkheden worden verwijderd. Nadat de data base is gemigreerd, kunnen deze objecten opnieuw worden gemaakt. Duurzame en niet-duurzame tabellen die zijn geoptimaliseerd voor geheugen, worden momenteel niet ondersteund in grootschalige en moeten opnieuw worden gemaakt als schijf tabellen.|
 | Geo-replicatie  | U kunt geo-replicatie voor Azure SQL Database grootschalige nog niet configureren. |
 | Data base kopiëren | Het kopiëren van de Data Base op grootschalige is nu beschikbaar als open bare preview. |
-| TDE/Azure-integratie | Transparante database versleuteling met behulp van Azure Key Vault (vaak uw eigen sleutel of BYOK genoemd) is momenteel beschikbaar als open bare preview. |
 | Intelligente database functies | Met uitzonde ring van de optie ' plan forceren ' worden alle andere opties voor automatisch afstemmen nog niet ondersteund op grootschalige: mogelijk lijkt het alsof de opties zijn ingeschakeld, maar zijn er geen aanbevelingen of acties gedaan. |
 | Inzicht in queryprestaties | Query performance Insights wordt momenteel niet ondersteund voor grootschalige-data bases. |
 | Data base verkleinen | DBCC SHRINKDATABASE of DBCC SHRINKFILE wordt momenteel niet ondersteund voor grootschalige-data bases. |

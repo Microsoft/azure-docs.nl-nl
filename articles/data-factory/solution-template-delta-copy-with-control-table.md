@@ -11,13 +11,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 12/24/2018
-ms.openlocfilehash: e7b7acb7e67d809229825b3d393fe49af12b3642
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.date: 12/09/2020
+ms.openlocfilehash: 3f15ffd6f7ed784cce398d419e013a69c60289d8
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461211"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96921805"
 ---
 # <a name="delta-copy-from-a-database-with-a-control-table"></a>Delta kopie van een Data Base met een controle tabel
 
@@ -45,7 +45,7 @@ De sjabloon definieert de volgende para meters:
 - *Data_Source_WaterMarkColumn* is de naam van de kolom in de bron tabel die wordt gebruikt om nieuwe of bijgewerkte rijen te identificeren. Het type van deze kolom is doorgaans *DateTime*, *int* of soortgelijk.
 - *Data_Destination_Container* is het hoofdpad van de locatie waarnaar de gegevens worden gekopieerd in uw doel archief.
 - *Data_Destination_Directory* het mappad is in de hoofdmap van de locatie waarnaar de gegevens worden gekopieerd in uw doel archief.
-- *Data_Destination_Table_Name* is de plek waar de gegevens worden gekopieerd naar in uw doel archief (van toepassing wanneer ' Azure Synapse Analytics (voorheen SQL DW) ' is geselecteerd als de gegevens bestemming).
+- *Data_Destination_Table_Name* is de plaats waar de gegevens naar worden gekopieerd in uw doel archief (van toepassing als ' Azure Synapse Analytics ' is geselecteerd als de bestemming van de gegevens).
 - *Data_Destination_Folder_Path* is de plaats waar de gegevens naar worden gekopieerd in uw doel archief (van toepassing als ' bestands systeem ' of ' Azure data Lake Storage gen1 ' is geselecteerd als de bestemming van de gegevens).
 - *Control_Table_Table_Name* is de tabel voor externe controle waarin de waarde met een hoog watermerk niveau wordt opgeslagen.
 - *Control_Table_Column_Name* is de kolom in de tabel voor externe controle waarin de waarde met een hoog watermerk niveau wordt opgeslagen.

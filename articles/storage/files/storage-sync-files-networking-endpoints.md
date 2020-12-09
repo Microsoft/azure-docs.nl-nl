@@ -8,12 +8,12 @@ ms.date: 5/11/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 02d9e65f5422b7b12900d051f01c1d6f55e8685b
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 61ff5d05eb74804af69b90d839115a8468619275
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844673"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96921713"
 ---
 # <a name="configuring-azure-file-sync-network-endpoints"></a>Azure Files Sync-netwerkeindpunten configureren
 Azure Files en Azure File Sync bieden twee hoofdtypen eindpunten voor toegang tot Azure-bestandsshares: 
@@ -34,7 +34,7 @@ In dit artikel wordt ervan uitgegaan dat:
 
 Aanvullend:
 - Als u van plan bent om Azure PowerShell te gebruiken, [installeert u de nieuwste versie](/powershell/azure/install-az-ps).
-- Als u van plan bent om de Artikel CLI te gebruiken, [installeert u de nieuwste versie](/cli/azure/install-azure-cli?view=azure-cli-latest).
+- Als u van plan bent om de Artikel CLI te gebruiken, [installeert u de nieuwste versie](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true).
 
 ## <a name="create-the-private-endpoints"></a>De privé-eindpunten aanmaken
 Wanneer u een privé-eindpunt maakt voor een Azure-resource, worden de volgende resources geïmplementeerd:
@@ -588,7 +588,7 @@ Wanneer u de toegang tot het opslagaccount beperkt tot bepaalde virtuele netwerk
 Met Azure File Sync kunt u de toegang tot specifieke virtuele netwerken enkel beperken via privé-eindpunten. Azure File Sync biedt geen ondersteuning voor service-eindpunten voor het beperken van de toegang tot specifieke virtuele netwerken via openbare eindpunten. Dit betekent dat het openbare eindpunt van de opslagsynchronisatieservice de status ingeschakeld en uitgeschakeld kan hebben.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
-Dit is niet mogelijk via het Azure-portal. Selecteer de instructies voor het Azure PowerShell- of Azure CLI-tabblad voor instructies over het uitschakelen van het openbare eindpunt voor de opslagsynchronisatieservice. 
+Dit is niet mogelijk via het Azure-portal. Selecteer het tabblad Azure PowerShell om instructies te krijgen over het uitschakelen van het open bare eind punt van de opslag synchronisatie service. 
 
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 Om toegang tot het openbare eindpunt van de opslagsynchronisatieservice uit te schakelen, stellen we de eigenschap `incomingTrafficPolicy` van de opslagsynchronisatieservice in op `AllowVirtualNetworksOnly`. Als u de toegang tot het openbare eindpunt van de opslagsynchronisatieservice wilt inschakelen, stelt u `incomingTrafficPolicy` in op `AllowAllTraffic`. Vergeet niet om `<storage-sync-service-resource-group>` en `<storage-sync-service>` te vervangen.
@@ -603,25 +603,13 @@ $storageSyncService = Get-AzResource `
         -ResourceType "Microsoft.StorageSync/storageSyncServices"
 
 $storageSyncService.Properties.incomingTrafficPolicy = "AllowVirtualNetworksOnly"
-$storageSyncService = $storageSyncService | Set-AzResource -Confirm:$false -Force
+$storageSyncService = $storageSyncService | Set-AzResource -Confirm:$false -Force -UsePatchSemantics
 ```
 
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
-Om toegang tot het openbare eindpunt van de opslagsynchronisatieservice uit te schakelen, stellen we de eigenschap `incomingTrafficPolicy` van de opslagsynchronisatieservice in op `AllowVirtualNetworksOnly`. Als u de toegang tot het openbare eindpunt van de opslagsynchronisatieservice wilt inschakelen, stelt u `incomingTrafficPolicy` in op `AllowAllTraffic`. Vergeet niet om `<storage-sync-service-resource-group>` en `<storage-sync-service>` te vervangen.
-
-```bash
-storageSyncServiceResourceGroupName="<storage-sync-service-resource-group>"
-storageSyncServiceName="<storage-sync-service>"
-
-az resource update \
-        --resource-group $storageSyncServiceResourceGroupName \
-        --name $storageSyncServiceName \
-        --resource-type "Microsoft.StorageSync/storageSyncServices" \
-        --set "properties.incomingTrafficPolicy=AllowVirtualNetworksOnly" \
-        --output none
-```
+<a name="azure-cli-does-not-support-setting-the-incomingtrafficpolicy-property-on-the-storage-sync-service-please-select-the-azure-powershell-tab-to-get-instructions-on-how-to-disable-the-storage-sync-service-public-endpoint"></a>Azure CLI biedt geen ondersteuning voor het instellen `incomingTrafficPolicy` van de eigenschap op de opslag synchronisatie service. Selecteer het tabblad Azure PowerShell om instructies te krijgen over het uitschakelen van het open bare eind punt van de opslag synchronisatie service.
 ---
 
 ## <a name="see-also"></a>Zie ook
 - [Planning voor een Azure Files Sync-implementatie](storage-sync-files-planning.md)
-- [Azure Files SYNC implementeren](storage-sync-files-deployment-guide.md)
+- [Azure File Sync implementeren](storage-sync-files-deployment-guide.md)

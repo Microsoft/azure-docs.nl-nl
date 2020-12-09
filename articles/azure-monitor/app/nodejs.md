@@ -4,12 +4,12 @@ description: Prestaties bewaken en problemen detecteren in Node.js-services met 
 ms.topic: conceptual
 ms.date: 06/01/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 4c350cbfdf92d19a084940941351cf1f028c93d2
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 7aea6c03b0ce35fa0e74c39ff5f94f714447ad6f
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186276"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920582"
 ---
 # <a name="monitor-your-nodejs-services-and-apps-with-application-insights"></a>Node.js-services en -apps bewaken met Application Insights
 
@@ -34,12 +34,15 @@ Voordat u begint, moet u ervoor zorgen dat u een Azure-abonnement hebt of moet u
 
 ### <a name="set-up-an-application-insights-resource"></a><a name="resource"></a> Een Application Insights resource instellen
 
-1. Meld u aan bij de [Azure-portal][portal].
+1. Meld u aan bij [Azure Portal][portal].
 2. [Create an Application Insights resource](create-new-resource.md) (Een Application Insights-resource maken)
 
 ### <a name="set-up-the-nodejs-sdk"></a><a name="sdk"></a> De Node.ja SDK instellen
 
 Neem de SKD op in de app zodat gegevens kunnen worden verzameld.
+
+> [!IMPORTANT]
+> Nieuwe Azure-regio's **vereisen** het gebruik van verbindings reeksen in plaats van instrumentatie sleutels. Met de [verbindings reeks](./sdk-connection-string.md?tabs=nodejs) wordt de resource geïdentificeerd waaraan u de telemetriegegevens wilt koppelen. U kunt ook de eind punten wijzigen die door de resource worden gebruikt als een bestemming voor uw telemetrie. U moet de connection string kopiëren en toevoegen aan de code van uw toepassing of aan een omgevings variabele.
 
 1. Kopieer de instrumentatie sleutel van uw resource (ook wel *iKey* genoemd) van de zojuist gemaakte resource. Application Insights gebruikt de iKey om de gegevens toe te wijzen aan de Azure-resource. Voordat de SDK uw iKey kan gebruiken, moet u de iKey opgeven in een omgevingsvariabele of in uw code.  
 

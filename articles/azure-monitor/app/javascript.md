@@ -4,12 +4,12 @@ description: Het ophalen van de pagina weergave en aantal sessies, webclientgege
 ms.topic: conceptual
 ms.date: 08/06/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: b109aaea1ae5e751f40b55a3c703f0739661e10d
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: f5f81fe5d3f7f7d24e5e6618ba3956b80451570c
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91876206"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96921871"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights voor webpagina’s
 
@@ -19,8 +19,11 @@ Application Insights kan met elke webpagina worden gebruikt. Het enige wat u hie
 
 ## <a name="adding-the-javascript-sdk"></a>De Java script-SDK toevoegen
 
+> [!IMPORTANT]
+> Nieuwe Azure-regio's **vereisen** het gebruik van verbindings reeksen in plaats van instrumentatie sleutels. Met de [verbindings reeks](./sdk-connection-string.md?tabs=js) wordt de resource geïdentificeerd waaraan u de telemetriegegevens wilt koppelen. U kunt ook de eind punten wijzigen die door de resource worden gebruikt als een bestemming voor uw telemetrie. U moet de connection string kopiëren en toevoegen aan de code van uw toepassing of aan een omgevings variabele.
+
 1. Eerst hebt u een Application Insights resource nodig. Als u nog geen resource en instrumentatie sleutel hebt, volgt u de [instructies een nieuwe resource maken](create-new-resource.md).
-2. Kopieer de _instrumentatie sleutel_ (ook wel ' iKey ' genoemd) voor de resource waar u uw Java script-telemetrie wilt verzenden (uit stap 1.) U voegt deze toe aan de `instrumentationKey` instelling van de Application Insights java script SDK.
+2. Kopieer de _instrumentatie sleutel_ (ook wel ' iKey ' genoemd) of [Connection String](#connection-string-setup) voor de resource waar u uw Java script-telemetrie wilt verzenden (uit stap 1.) U voegt deze toe aan de `instrumentationKey` of `connectionString` instelling van de Application Insights java script-SDK.
 3. Voeg de Application Insights java script-SDK toe aan uw webpagina of app via een van de volgende twee opties:
     * [NPM-installatie](#npm-based-setup)
     * [Java script-fragment](#snippet-based-setup)
@@ -102,9 +105,9 @@ Alle configuratie opties zijn nu aan het einde van het script geplaatst om te vo
 
 Elke configuratie optie wordt hierboven op een nieuwe regel weer gegeven. Als u de standaard waarde van een item dat wordt weer gegeven als [Optioneel] niet wilt overschrijven, kunt u die regel verwijderen om de resulterende grootte van de geretourneerde pagina te minimaliseren.
 
-De beschik bare configuratie opties zijn 
+De beschik bare configuratie opties zijn
 
-| Naam | Type | Beschrijving
+| Naam | Type | Description
 |------|------|----------------
 | src | teken reeks **[vereist]** | De volledige URL van waaruit de SDK moet worden geladen. Deze waarde wordt gebruikt voor het kenmerk src van een dynamisch toegevoegd &lt; script/ &gt; label. U kunt de open bare CDN-locatie of uw eigen privé-hostserver gebruiken.
 | naam | teken reeks *[Optioneel]* | De globale naam voor de geïnitialiseerde SDK, wordt standaard ingesteld op `appInsights` . Dit is dus ```window.appInsights``` een verwijzing naar het geïnitialiseerde exemplaar. Opmerking: als u een naam waarde opgeeft of een vorige instantie lijkt te zijn toegewezen (via de globale naam appInsightsSDK), wordt deze naam ook gedefinieerd in de globale naam ruimte, omdat ```window.appInsightsSDK=<name value>``` Dit vereist is voor de SDK-initialisatie code om ervoor te zorgen dat deze de juiste skelet-en proxy methoden van het fragment initialiseert en bijwerkt.
@@ -112,6 +115,20 @@ De beschik bare configuratie opties zijn
 | useXhr | Booleaanse waarde *[Optioneel]* | Deze instelling wordt alleen gebruikt voor het rapporteren van SDK-laad fouten. Reporting probeert eerst fetch (), indien beschikbaar en vervolgens terug te gebruiken naar XHR, om deze waarde in te stellen op True, alleen de ophaal controle te omzeilen. Het gebruik van deze waarde is alleen vereist als uw toepassing wordt gebruikt in een omgeving waarin ophalen de fout gebeurtenissen niet zou kunnen verzenden.
 | crossOrigin | teken reeks *[Optioneel]* | Door deze instelling op te nemen, neemt de script code die is toegevoegd voor het downloaden van de SDK het kenmerk crossOrigin met deze teken reeks waarde. Wanneer niet gedefinieerd (de standaard instelling), wordt er geen crossOrigin-kenmerk toegevoegd. Er zijn geen aanbevolen waarden gedefinieerd (de standaard instelling). ""; of anoniem (voor alle geldige waarden raadpleegt u [HTML-kenmerk `crossorigin` :](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin) documentatie)
 | configuratie | object **[vereist]** | De configuratie die wordt door gegeven aan de Application Insights SDK tijdens de initialisatie.
+
+### <a name="connection-string-setup"></a>Verbindingsteken reeks instellen
+
+Voor de installatie van NPM of fragment kunt u uw exemplaar van Application Insights ook configureren met behulp van een verbindings reeks. Vervang gewoon het `instrumentationKey` veld door het `connectionString` veld.
+```js
+import { ApplicationInsights } from '@microsoft/applicationinsights-web'
+
+const appInsights = new ApplicationInsights({ config: {
+  connectionString: 'YOUR_CONNECTION_STRING_GOES_HERE'
+  /* ...Other Configuration Options... */
+} });
+appInsights.loadAppInsights();
+appInsights.trackPageView();
+```
 
 ### <a name="sending-telemetry-to-the-azure-portal"></a>Telemetrie verzenden naar de Azure Portal
 
@@ -153,7 +170,7 @@ appInsights.trackTrace({message: 'this message will not be sent'}); // Not sent
 ## <a name="configuration"></a>Configuratie
 De meeste configuratie velden hebben de naam zo, dat ze standaard kunnen worden ingesteld op ONWAAR. Alle velden zijn optioneel, behalve voor `instrumentationKey` .
 
-| Naam | Standaard | Beschrijving |
+| Name | Standaard | Beschrijving |
 |------|---------|-------------|
 | instrumentationKey | null | **Vereist**<br>Instrumentatie sleutel die u hebt verkregen van de Azure Portal. |
 | accountId | null | Een optionele account-ID als uw app gebruikers in accounts groepeert. Geen spaties, komma's, punt komma's, is gelijk aan of verticale balken |
@@ -163,8 +180,8 @@ De meeste configuratie velden hebben de naam zo, dat ze standaard kunnen worden 
 | maxBatchInterval | 15.000 | Hoe lang batch-telemetrie voor verzen ding (in milliseconden) |
 | disableExceptionTracking | onjuist | Als deze eigenschap waar is, worden uitzonde ringen niet verzameld. De standaardinstelling is onwaar. |
 | disableTelemetry | onjuist | Indien waar, wordt de telemetrie niet verzameld of verzonden. De standaardinstelling is onwaar. |
-| enableDebug | onjuist | Indien waar, worden **interne** fout opsporingsgegevens gegenereerd als een uitzonde ring **in plaats** van vastgelegd, ongeacht de instellingen voor de logboek registratie van de SDK. De standaardinstelling is onwaar. <br>***Opmerking:*** Als u deze instelling inschakelt, wordt de telemetrie verwijderd wanneer er een interne fout optreedt. Dit kan handig zijn voor het snel identificeren van problemen met uw configuratie of het gebruik van de SDK. Als u geen telemetriegegevens wilt verliezen tijdens het opsporen van fouten, kunt u overwegen `consoleLoggingLevel` of `telemetryLoggingLevel` in plaats van te gebruiken `enableDebug` . |
-| loggingLevelConsole | 0 | Registreert **interne** Application Insights fouten in de console. <br>0: uit, <br>1: alleen kritieke fouten, <br>2: alles (fouten & waarschuwingen) |
+| enableDebug | onjuist | Indien waar, worden **interne** fout opsporingsgegevens gegenereerd als een uitzonde ring **in plaats** van vastgelegd, ongeacht de instellingen voor de logboek registratie van de SDK. De standaardinstelling is onwaar. <br>**_Opmerking:_* _ als u deze instelling inschakelt, wordt de telemetrie verwijderd wanneer er een interne fout optreedt. Dit kan handig zijn voor het snel identificeren van problemen met uw configuratie of het gebruik van de SDK. Als u geen telemetriegegevens wilt verliezen tijdens het opsporen van fouten, kunt u overwegen `consoleLoggingLevel` of `telemetryLoggingLevel` in plaats van te gebruiken `enableDebug` . |
+| loggingLevelConsole | 0 | Logboeken _ *interne** Application Insights fouten naar de console. <br>0: uit, <br>1: alleen kritieke fouten, <br>2: alles (fouten & waarschuwingen) |
 | loggingLevelTelemetry | 1 | Hiermee worden **interne** Application Insights-fouten als telemetriegegevens verzonden. <br>0: uit, <br>1: alleen kritieke fouten, <br>2: alles (fouten & waarschuwingen) |
 | diagnosticLogInterval | 10.000 | binnen Polling-interval (in MS) voor interne logboek registratie wachtrij |
 | samplingPercentage | 100 | Het percentage gebeurtenissen dat wordt verzonden. De standaard waarde is 100, wat betekent dat alle gebeurtenissen worden verzonden. Stel deze waarde in als u uw gegevens limiet voor grootschalige toepassingen wilt behouden. |

@@ -1,17 +1,17 @@
 ---
-title: Aan de slag met automatische schaalaanpassing in Azure
+title: Aan de slag met automatisch schalen in azure
 description: Meer informatie over het schalen van uw resource web-app, Cloud service, virtuele machine of virtuele-machine schaal sets in Azure.
 ms.topic: conceptual
 ms.date: 07/07/2017
 ms.subservice: autoscale
-ms.openlocfilehash: 364309301b403234936da1bac6e1b74af24c2fdb
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 95f94bd1e80c05658d9033047950d4b49fca4643
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96573303"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920664"
 ---
-# <a name="get-started-with-autoscale-in-azure"></a>Aan de slag met automatisch schalen in azure
+# <a name="get-started-with-autoscale-in-azure"></a>Aan de slag met Automatische schaalaanpassing in Azure
 In dit artikel wordt beschreven hoe u uw instellingen voor automatisch schalen instelt voor uw resource in de Microsoft Azure-portal.
 
 Azure Monitor automatisch schalen is alleen van toepassing op [Virtual Machine Scale sets](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [Cloud Services](https://azure.microsoft.com/services/cloud-services/), [app service-Web apps](https://azure.microsoft.com/services/app-service/web/)en [API Management Services](../../api-management/api-management-key-concepts.md).
@@ -59,7 +59,7 @@ We gaan nu een eenvoudige stapsgewijze procedure volgen om uw eerste instelling 
    ![Schalen op basis van CPU][8]
 1. Klik op **Opslaan**.
 
-Gefeliciteerd! U hebt nu uw eerste schaal instelling gemaakt om uw web-app automatisch te schalen op basis van het CPU-gebruik.
+Gefeliciteerd U hebt nu uw eerste schaal instelling gemaakt om uw web-app automatisch te schalen op basis van het CPU-gebruik.
 
 > [!NOTE]
 > Dezelfde stappen zijn van toepassing om aan de slag te gaan met een virtuele-machine schaalset of een Cloud service-rol.
@@ -121,7 +121,7 @@ Als u de functie wilt inschakelen met ARM-sjablonen, stelt `healthcheckpath` u d
 
 ### <a name="health-check-path"></a>Pad voor status controle
 
-Het pad moet binnen één minuut reageren met een status code tussen 200 en 299 (inclusief). Als het pad niet binnen één minuut reageert of een status code buiten het bereik retourneert, wordt het exemplaar als ' beschadigd ' beschouwd. App Service volgt niet 302 omleidingen op het Health Check-pad. Status controle kan worden geïntegreerd met de functies voor verificatie en autorisatie van App Service. het systeem bereikt het eind punt zelfs als deze secuity-functies zijn ingeschakeld. Als u uw eigen verificatie systeem gebruikt, moet het Health Check-pad anonieme toegang toestaan. Als de site HTTP **s**-only heeft ingeschakeld, wordt de status controle-aanvraag verzonden via http **s**.
+Het pad moet binnen één minuut reageren met een status code tussen 200 en 299 (inclusief). Als het pad niet binnen één minuut reageert of een status code buiten het bereik retourneert, wordt het exemplaar als ' beschadigd ' beschouwd. App Service volgt niet 302 omleidingen op het Health Check-pad. Status controle kan worden geïntegreerd met de functies voor verificatie en autorisatie van App Service. het systeem bereikt het eind punt zelfs als deze beveiligings functies zijn ingeschakeld. Als u uw eigen verificatie systeem gebruikt, moet het Health Check-pad anonieme toegang toestaan. Als de site HTTP **s**-only heeft ingeschakeld, wordt de status controle-aanvraag verzonden via http **s**.
 
 Het controle traject voor de status moet de essentiële onderdelen van uw toepassing controleren. Als uw toepassing bijvoorbeeld afhankelijk is van een Data Base en een berichten systeem, moet het eind punt van de status controle verbinding maken met deze onderdelen. Als de toepassing geen verbinding kan maken met een kritiek onderdeel, moet het pad een respons code op 500-niveau retour neren om aan te geven dat de app een slechte status heeft.
 
@@ -140,7 +140,7 @@ De resterende in orde zijnde instanties kunnen een grotere belasting hebben. Om 
 
 Als een exemplaar gedurende één uur niet in orde is, wordt het vervangen door een nieuw exemplaar. Er wordt Maxi maal één exemplaar per uur vervangen, met een maximum van drie exemplaren per dag per App Service plan.
 
-### <a name="monitoring"></a>Controleren
+### <a name="monitoring"></a>Bewaking
 
 Nadat u het Health Check-pad van uw toepassing hebt opgegeven, kunt u de status van uw site bewaken met behulp van Azure Monitor. Klik op de Blade **status controle** in de portal op de **metrische gegevens** in de bovenste werk balk. Hiermee opent u een nieuwe blade waar u de historische status van de site kunt zien en een nieuwe waarschuwings regel maakt. [Zie de gids over Azure monitor](../../app-service/web-sites-monitor.md)voor meer informatie over het bewaken van uw sites.
 

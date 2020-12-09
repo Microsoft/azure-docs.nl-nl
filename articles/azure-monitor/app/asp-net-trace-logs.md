@@ -4,12 +4,12 @@ description: Zoek logboeken die zijn gegenereerd door Trace, NLog of Log4Net.
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 05/08/2019
-ms.openlocfilehash: ab3b12bf0401c4060823c6ed1d20dd6385cc397f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 90777da4d0b67587afebaa7111e3503af2afcb9a
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90973845"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920338"
 ---
 # <a name="explore-netnet-core-and-python-trace-logs-in-application-insights"></a>.NET/.NET core-en python-traceer Logboeken in Application Insights verkennen
 
@@ -97,7 +97,7 @@ U kunt [System. Diagnostics. tracing. Event source](/dotnet/api/system.diagnosti
 
 Voor elke bron kunt u de volgende para meters instellen:
  * **Naam** geeft de naam aan van de Event source die moet worden verzameld.
- * **Niveau** geeft het logboek registratie niveau aan dat moet worden verzameld: *kritiek*, *fout*, *informatief*, *LogAlways*, *uitgebreid*of *waarschuwing*.
+ * **Niveau** geeft het logboek registratie niveau aan dat moet worden verzameld: *kritiek*, *fout*, *informatief*, *LogAlways*, *uitgebreid* of *waarschuwing*.
  * **Tref woorden** (optioneel) Geef de integere waarde op van trefwoord combinaties die moeten worden gebruikt.
 
 ## <a name="use-diagnosticsource-events"></a>DiagnosticSource-gebeurtenissen gebruiken
@@ -130,7 +130,7 @@ U kunt Event Tracing for Windows (ETW)-gebeurtenissen configureren die naar Appl
 Voor elke bron kunt u de volgende para meters instellen:
  * **ProviderName** is de naam van de etw-provider die moet worden verzameld.
  * **ProviderGuid** Hiermee geeft u de GUID op van de etw-provider die u wilt verzamelen. Het kan worden gebruikt in plaats van `ProviderName` .
- * **Niveau** stelt het logboek registratie niveau in dat moet worden verzameld. Dit kan *kritiek*, *fout*, *informatief*, *LogAlways*, *uitgebreid*of *waarschuwing*zijn.
+ * **Niveau** stelt het logboek registratie niveau in dat moet worden verzameld. Dit kan *kritiek*, *fout*, *informatief*, *LogAlways*, *uitgebreid* of *waarschuwing* zijn.
  * **Tref woorden** (optioneel) Stel de gehele waarde van trefwoord combinaties in op gebruik.
 
 ## <a name="use-the-trace-api-directly"></a>De tracerings-API rechtstreeks gebruiken
@@ -139,7 +139,8 @@ U kunt de Application Insights Trace-API rechtstreeks aanroepen. De logboek regi
 Bijvoorbeeld:
 
 ```csharp
-var telemetry = new Microsoft.ApplicationInsights.TelemetryClient();
+TelemetryConfiguration configuration = TelemetryConfiguration.CreateDefault();
+var telemetryClient = new TelemetryClient(configuration);
 telemetry.TrackTrace("Slow response - database01");
 ```
 
@@ -148,10 +149,11 @@ Een voor deel van TrackTrace is dat u relatief lange gegevens in het bericht kun
 U kunt ook een Ernst niveau aan uw bericht toevoegen. En, net als bij andere telemetrie, kunt u eigenschaps waarden toevoegen om te helpen bij het filteren of zoeken naar verschillende sets traceringen. Bijvoorbeeld:
 
   ```csharp
-  var telemetry = new Microsoft.ApplicationInsights.TelemetryClient();
-  telemetry.TrackTrace("Slow database response",
-                 SeverityLevel.Warning,
-                 new Dictionary<string,string> { {"database", db.ID} });
+  TelemetryConfiguration configuration = TelemetryConfiguration.CreateDefault();
+  var telemetryClient = new TelemetryClient(configuration);
+  telemetryClient.TrackTrace("Slow database response",
+                              SeverityLevel.Warning,
+                              new Dictionary<string, string> { { "database", "db.ID" } });
   ```
 
 Zo kunt u eenvoudig filteren op het [zoeken][diagnostic] in alle berichten van een bepaald Ernst niveau die betrekking hebben op een bepaalde data base.
@@ -196,16 +198,16 @@ In Java-instrumentatie zonder code (aanbevolen) de logboeken worden verzameld ui
 Als u de Java-SDK gebruikt, gebruikt u de [Java-logboek adapters](./java-trace-logs.md).
 
 ### <a name="theres-no-application-insights-option-on-the-project-context-menu"></a>Er is geen optie Application Insights in het context menu van het project
-* Zorg ervoor dat Developer Analytics-Hulpprogram Ma's op de ontwikkel computer zijn geïnstalleerd. Zoek in de **Tools**  >  **extensies en updates**van Visual Studio-hulpprogram ma's naar **Developer Analytics-hulpprogram ma's**. Als dit **niet het geval** is, opent u het tabblad **online** en installeert u het.
+* Zorg ervoor dat Developer Analytics-Hulpprogram Ma's op de ontwikkel computer zijn geïnstalleerd. Zoek in de **Tools**  >  **extensies en updates** van Visual Studio-hulpprogram ma's naar **Developer Analytics-hulpprogram ma's**. Als dit **niet het geval** is, opent u het tabblad **online** en installeert u het.
 * Dit kan een project type zijn dat niet wordt ondersteund door Developer Analytics tools. [Hand matige installatie](#manual-installation)gebruiken.
 
 ### <a name="theres-no-log-adapter-option-in-the-configuration-tool"></a>Er is geen optie voor de logboek adapter in het configuratie hulpprogramma
 * Installeer eerst het Framework voor logboek registratie.
-* Als u System. Diagnostics. trace gebruikt, zorg er dan voor dat u deze [in *web.config*hebt geconfigureerd ](/dotnet/api/system.diagnostics.eventlogtracelistener?view=dotnet-plat-ext-3.1).
-* Zorg ervoor dat u beschikt over de nieuwste versie van Application Insights. Ga in Visual Studio naar **hulpprogram ma's**voor  >  **uitbrei dingen en updates**en open het tabblad **updates** . Als **Developer Analytics-Hulpprogram ma's** er is, selecteert u deze om het bij te werken.
+* Als u System. Diagnostics. trace gebruikt, zorg er dan voor dat u deze [in *web.config* hebt geconfigureerd](/dotnet/api/system.diagnostics.eventlogtracelistener?view=dotnet-plat-ext-3.1).
+* Zorg ervoor dat u beschikt over de nieuwste versie van Application Insights. Ga in Visual Studio naar **hulpprogram ma's** voor  >  **uitbrei dingen en updates** en open het tabblad **updates** . Als **Developer Analytics-Hulpprogram ma's** er is, selecteert u deze om het bij te werken.
 
 ### <a name="i-get-the-instrumentation-key-cannot-be-empty-error-message"></a><a name="emptykey"></a>Fout bericht ' de instrumentatie sleutel mag niet leeg zijn '
-Waarschijnlijk hebt u het NuGet-pakket voor de logboek registratie adapter geïnstalleerd zonder Application Insights te installeren. Klik in Solution Explorer met de rechter muisknop op *ApplicationInsights.config*en selecteer **Update Application Insights**. U wordt gevraagd om u aan te melden bij Azure en een Application Insights resource te maken of een bestaande te hergebruiken. Dat het probleem moet oplossen.
+Waarschijnlijk hebt u het NuGet-pakket voor de logboek registratie adapter geïnstalleerd zonder Application Insights te installeren. Klik in Solution Explorer met de rechter muisknop op *ApplicationInsights.config* en selecteer **Update Application Insights**. U wordt gevraagd om u aan te melden bij Azure en een Application Insights resource te maken of een bestaande te hergebruiken. Dat het probleem moet oplossen.
 
 ### <a name="i-can-see-traces-but-not-other-events-in-diagnostic-search"></a>Ik zie traceringen maar geen andere gebeurtenissen in diagnostische Zoek opdrachten
 Het kan even duren voordat alle gebeurtenissen en aanvragen worden ontvangen via de pijp lijn.

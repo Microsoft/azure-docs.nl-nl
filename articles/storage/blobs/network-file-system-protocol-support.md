@@ -9,19 +9,19 @@ ms.date: 08/04/2020
 ms.author: normesta
 ms.reviewer: yzheng
 ms.custom: references_regions
-ms.openlocfilehash: b4146f11804dd11f7dd0f5536bc040cb30e25b03
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: c48a7f4b5b1512ec5bcd289e4fb8bd7884ca7394
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/09/2020
-ms.locfileid: "96902728"
+ms.locfileid: "96922546"
 ---
 # <a name="network-file-system-nfs-30-protocol-support-in-azure-blob-storage-preview"></a>Ondersteuning voor het protocol Network File System (NFS) 3,0 in Azure Blob-opslag (preview-versie)
 
 Blob-opslag ondersteunt nu het NFS-protocol (Network File System) 3,0. Met deze ondersteuning kunnen Windows-of Linux-clients een container koppelen in Blob Storage vanaf een virtuele Azure-machine (VM) of een computer on-premises. 
 
 > [!NOTE]
-> Ondersteuning voor NFS 3,0-protocol in Azure Blob-opslag is in open bare preview. Het biedt ondersteuning voor GPV2-opslag accounts met de prestaties van de Standard-laag in de volgende regio's: Australië-oost, Korea-centraal en Zuid-Centraal vs. De preview-versie ondersteunt ook blok-blob met de Premium-prestatie tier in alle open bare regio's.
+> Ondersteuning voor NFS 3,0-protocol in Azure Blob-opslag is in open bare preview. Het biedt ondersteuning voor GPV2-opslag accounts met de prestaties van de Standard-laag in de volgende regio's: Australië-oost, Korea-centraal en Zuid-Centraal vs. De preview biedt ook ondersteuning voor blok-blobs met een Premium-prestatie niveau in alle open bare regio's.
 
 ## <a name="general-workflow-mounting-a-storage-account-container"></a>Algemene werk stroom: een opslag account container koppelen
 

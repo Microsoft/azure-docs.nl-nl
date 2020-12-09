@@ -1,18 +1,18 @@
 ---
 title: Sjabloon functies-logisch
-description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon om logische waarden te bepalen.
+description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon (ARM-sjabloon) om logische waarden te bepalen.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: b54c104c8af5bb742b2c82d8a075515b8696501b
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 27d94f10374daf0b9a351469579a5eb659cf5445
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96004548"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920482"
 ---
 # <a name="logical-functions-for-arm-templates"></a>Logische functies voor ARM-sjablonen
 
-Resource Manager biedt verschillende functies voor het maken van vergelijkingen in uw Azure Resource Manager-sjablonen (ARM).
+Resource Manager biedt verschillende functies voor het maken van vergelijkingen in uw Azure Resource Manager sjabloon (ARM-sjabloon):
 
 * [and](#and)
 * [booleaans](#bool)
@@ -84,9 +84,9 @@ De uitvoer van het vorige voor beeld is:
 
 | Naam | Type | Waarde |
 | ---- | ---- | ----- |
-| andExampleOutput | Booleaanse waarde | False |
+| andExampleOutput | Booleaanse waarde | Niet waar |
 | orExampleOutput | Booleaanse waarde | True |
-| notExampleOutput | Booleaanse waarde | False |
+| notExampleOutput | Booleaanse waarde | Niet waar |
 
 ## <a name="bool"></a>booleaans
 
@@ -155,9 +155,9 @@ De uitvoer van het vorige voor beeld met de standaard waarden is:
 | Naam | Type | Waarde |
 | ---- | ---- | ----- |
 | trueString | Booleaanse waarde | True |
-| falseString | Booleaanse waarde | False |
+| falseString | Booleaanse waarde | Niet waar |
 | trueInt | Booleaanse waarde | True |
-| falseInt | Booleaanse waarde | False |
+| falseInt | Booleaanse waarde | Niet waar |
 
 ## <a name="false"></a>onjuist
 
@@ -205,7 +205,7 @@ De uitvoer van het vorige voor beeld is:
 
 | Naam | Type | Waarde |
 | ---- | ---- | ----- |
-| falseOutput | Booleaanse waarde | False |
+| falseOutput | Booleaanse waarde | Niet waar |
 
 ## <a name="if"></a>if
 
@@ -227,7 +227,7 @@ Retourneert een tweede para meter wanneer de eerste para meter **True** is; ande
 
 ### <a name="remarks"></a>Opmerkingen
 
-Als de voor waarde **waar** is, wordt alleen de waarde True geëvalueerd. Als de voor waarde **Onwaar** is, wordt alleen de waarde ONWAAR geëvalueerd. Met de functie **als** kunt u expressies toevoegen die alleen voorwaarde geldig zijn. U kunt bijvoorbeeld verwijzen naar een resource die zich onder één voor waarde bevindt, maar niet onder de andere voor waarde. In de volgende sectie ziet u een voor beeld van een conditioneel evalueren van expressies.
+Als de voor waarde **waar** is, wordt alleen de waarde True geëvalueerd. Als de voor waarde **Onwaar** is, wordt alleen de waarde ONWAAR geëvalueerd. Met de `if` functie kunt u expressies toevoegen die alleen voorwaardelijk geldig zijn. U kunt bijvoorbeeld verwijzen naar een resource die zich onder één voor waarde bevindt, maar niet onder de andere voor waarde. In de volgende sectie ziet u een voor beeld van een conditioneel evalueren van expressies.
 
 ### <a name="examples"></a>Voorbeelden
 
@@ -391,9 +391,9 @@ De uitvoer van het vorige voor beeld is:
 
 | Naam | Type | Waarde |
 | ---- | ---- | ----- |
-| andExampleOutput | Booleaanse waarde | False |
+| andExampleOutput | Booleaanse waarde | Niet waar |
 | orExampleOutput | Booleaanse waarde | True |
-| notExampleOutput | Booleaanse waarde | False |
+| notExampleOutput | Booleaanse waarde | Niet waar |
 
 De volgende [voorbeeld sjabloon](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/not-equals.json) gebruikt **niet** met [gelijk aan](template-functions-comparison.md#equals).
 
@@ -488,11 +488,11 @@ De uitvoer van het vorige voor beeld is:
 
 | Naam | Type | Waarde |
 | ---- | ---- | ----- |
-| andExampleOutput | Booleaanse waarde | False |
+| andExampleOutput | Booleaanse waarde | Niet waar |
 | orExampleOutput | Booleaanse waarde | True |
-| notExampleOutput | Booleaanse waarde | False |
+| notExampleOutput | Booleaanse waarde | Niet waar |
 
-## <a name="true"></a>waar
+## <a name="true"></a>true
 
 `true()`
 
@@ -542,4 +542,4 @@ De uitvoer van het vorige voor beeld is:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor een beschrijving van de secties in een Azure Resource Manager sjabloon.
+* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor een beschrijving van de secties in een arm-sjabloon.

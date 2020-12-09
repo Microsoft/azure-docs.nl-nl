@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: article
-ms.date: 11/19/2020
-ms.openlocfilehash: dc09edee08e97e354ef006416e2d5c0a333a3980
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.date: 12/07/2020
+ms.openlocfilehash: 154be7e4340c798ba1d014b210361f666864797e
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917814"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96921515"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Informatie over limieten en configuratie voor Azure Logic Apps
 
@@ -19,7 +19,7 @@ In dit artikel worden de limieten en configuratie gegevens voor het maken en uit
 
 <a name="definition-limits"></a>
 
-## <a name="definition-limits"></a>Definitielimieten
+## <a name="logic-app-definition-limits"></a>Definitie limieten van logische apps
 
 Dit zijn de limieten voor een definitie van een enkele logische app:
 
@@ -37,7 +37,9 @@ Dit zijn de limieten voor een definitie van een enkele logische app:
 | Maximum aantal `parameters` | 50 | |
 | Maximum aantal `outputs` | 10 | |
 | Maximale grootte voor `trackedProperties` | 16.000 tekens |
-| Inline code actie-maximum aantal code tekens | 1.024 tekens <p>Voor een limiet van 100.000 tekens maakt u uw logische apps met Visual Studio code en de [Preview- **Azure Logic apps** extensie](../logic-apps/create-stateful-stateless-workflows-visual-studio-code.md). |
+| Inline code actie-maximum aantal code tekens | 1.024 tekens | Als u deze limiet wilt uitbreiden tot 100.000 tekens, maakt u uw logische apps met het resource type **Logic app (preview)** , hetzij met [behulp van de Azure Portal](create-stateful-stateless-workflows-azure-portal.md) , hetzij met behulp van [Visual Studio code en de uitbrei ding **Azure Logic apps (preview)**](create-stateful-stateless-workflows-visual-studio-code.md). |
+| Inline code actie-maximale duur voor het uitvoeren van code | 5 seconden | Als u deze limiet wilt uitbreiden naar een 15 seconden, maakt u uw Logic apps met het resource type **Logic app (preview)** , [door gebruik te maken van de Azure Portal](create-stateful-stateless-workflows-azure-portal.md) of [door middel van Visual Studio code en de uitbrei ding **Azure Logic apps (preview)**](create-stateful-stateless-workflows-visual-studio-code.md). |
+||||
 
 <a name="run-duration-retention-limits"></a>
 
@@ -45,7 +47,7 @@ Dit zijn de limieten voor een definitie van een enkele logische app:
 
 Dit zijn de limieten voor het uitvoeren van een enkele logische app:
 
-| Name | Limiet voor meerdere tenants | Limiet voor de integratie service omgeving | Opmerkingen |
+| Name | Limiet voor meerdere tenants | Limiet voor de integratie service omgeving | Notities |
 |------|--------------------|---------------------------------------|-------|
 | Uitvoeringsduur | 90 dagen | 366 dagen | De uitvoerings duur wordt berekend met behulp van de begin tijd van de uitvoering en de limiet die is opgegeven in de werk stroom instelling, [**uitvoerings geschiedenis in dagen**](#change-duration) op die begin tijd. <p><p>Als u de standaard limiet wilt wijzigen, raadpleegt u de [uitvoerings duur en de retentie van de geschiedenis in de opslag ruimte wijzigen](#change-duration). |
 | Bewaar periode voor geschiedenis in opslag | 90 dagen | 366 dagen | Als de duur van een uitvoering de huidige Bewaar limiet voor de uitvoerings geschiedenis overschrijdt, wordt de uitvoering verwijderd uit de uitvoerings geschiedenis in de opslag. Of de uitvoering is voltooid of er een time-out optreedt, de retentie van de uitvoerings geschiedenis wordt altijd berekend met behulp van de begin tijd van de uitvoering en de huidige limiet die is opgegeven in de werk stroom instelling, de [**Bewaar periode voor de geschiedenis in dagen**](#change-retention). Ongeacht de vorige limiet wordt de huidige limiet altijd gebruikt voor het berekenen van de Bewaar periode. <p><p>Als u de standaard limiet wilt wijzigen en meer informatie wilt, raadpleegt u de [duur en de retentie van de uitvoerings geschiedenis in de opslag ruimte wijzigen](#change-retention). Als u de maximum limiet wilt verhogen, [neemt u contact op met het Logic apps team](mailto://logicappsemail@microsoft.com) voor hulp bij uw vereisten. |
@@ -211,27 +213,29 @@ Dit zijn de doorvoer limieten voor de [Premium ISE-SKU](../logic-apps/connect-vi
 
 Azure Logic Apps ondersteunt schrijf bewerkingen, met inbegrip van invoeg acties en updates via de gateway. Deze bewerkingen hebben echter [limieten voor de grootte van de nettolading](/data-integration/gateway/service-gateway-onprem#considerations).
 
-<a name="request-limits"></a>
+<a name="http-limits"></a>
 
 ## <a name="http-limits"></a>HTTP-limieten
 
-Dit zijn de limieten voor één uitgaande of inkomende HTTP-oproep:
+Dit zijn de limieten voor één binnenkomende of uitgaande oproep:
 
-#### <a name="timeout"></a>Time-out
+<a name="http-timeout-limits"></a>
+
+#### <a name="timeout-duration"></a>Time-outperiode
 
 Sommige connector bewerkingen maken asynchrone aanroepen of Luis teren naar webhook-aanvragen, zodat de time-out voor deze bewerkingen mogelijk langer is dan deze limieten. Zie de technische Details voor de specifieke connector en ook [werk stroom triggers en acties](../logic-apps/logic-apps-workflow-actions-triggers.md#http-action)voor meer informatie.
 
-| Name | Limiet voor meerdere tenants | Limiet voor de integratie service omgeving | Opmerkingen |
-|------|--------------------|---------------------------------------|-------|
-| Uitgaande aanvraag | 120 seconden <br>(2 minuten) | 240 seconden <br>(4 minuten) | Voor beelden van uitgaande aanvragen zijn aanroepen van HTTP-triggers. <p><p>**Tip**: gebruik een [asynchroon polling-patroon](../logic-apps/logic-apps-create-api-app.md#async-pattern) of een [until-lus](../logic-apps/logic-apps-workflow-actions-triggers.md#until-action)voor het uitvoeren van bewerkingen die langer worden uitgevoerd. Als u de time-outlimieten wilt omzeilen wanneer u een andere logische app aanroept die een [aanroepbaar eind punt](logic-apps-http-endpoint.md)heeft, kunt u in plaats daarvan de ingebouwde Azure Logic apps actie gebruiken, die u kunt vinden in de connector kiezer onder **ingebouwde**. |
-| Inkomende aanvraag | 120 seconden <br>(2 minuten) | 240 seconden <br>(4 minuten) | Voor beelden van inkomende aanvragen zijn oproepen die worden ontvangen door de aanvraag triggers en webhook-triggers. <p><p>**Opmerking**: voor de oorspronkelijke beller om het antwoord te krijgen, moeten alle stappen in het antwoord binnen de limiet worden voltooid, tenzij u een andere logische app als geneste werk stroom aanroept. Zie [Logic apps aanroepen, activeren of nesten](../logic-apps/logic-apps-http-endpoint.md)voor meer informatie. |
-|||||
+| Name | Logic Apps (multi tenant) | Logic Apps (preview-versie) | Integratie service omgeving | Notities |
+|------|---------------------------|----------------------|---------------------------------|-------|
+| Uitgaande aanvraag | 120 seconden <br>(2 minuten) | 230 seconden <br>(3,9 minuten) | 240 seconden <br>(4 minuten) | Voor beelden van uitgaande aanvragen zijn aanroepen van de HTTP-trigger of actie. Zie [Azure Logic Apps Preview](logic-apps-overview-preview.md)voor meer informatie over de preview-versie. <p><p>**Tip**: gebruik een [asynchroon polling-patroon](../logic-apps/logic-apps-create-api-app.md#async-pattern) of een [until-lus](../logic-apps/logic-apps-workflow-actions-triggers.md#until-action)voor het uitvoeren van bewerkingen die langer worden uitgevoerd. Als u de time-outlimieten wilt omzeilen wanneer u een andere logische app aanroept die een [aanroepbaar eind punt](logic-apps-http-endpoint.md)heeft, kunt u in plaats daarvan de ingebouwde Azure Logic apps actie gebruiken, die u kunt vinden in de connector kiezer onder **ingebouwde**. |
+| Inkomende aanvraag | 120 seconden <br>(2 minuten) | 230 seconden <br>(3,9 minuten) | 240 seconden <br>(4 minuten) | Voor beelden van binnenkomende aanvragen zijn onder andere aanroepen die zijn ontvangen door de aanvraag trigger, de HTTP-webhook-trigger en de HTTP-webhook-actie. Zie [Azure Logic Apps Preview](logic-apps-overview-preview.md)voor meer informatie over de preview-versie. <p><p>**Opmerking**: voor de oorspronkelijke beller om het antwoord te krijgen, moeten alle stappen in het antwoord binnen de limiet worden voltooid, tenzij u een andere logische app als geneste werk stroom aanroept. Zie [Logic apps aanroepen, activeren of nesten](../logic-apps/logic-apps-http-endpoint.md)voor meer informatie. |
+||||||
 
 <a name="message-size-limits"></a>
 
 #### <a name="message-size"></a>Berichtgrootte
 
-| Name | Limiet voor meerdere tenants | Limiet voor de integratie service omgeving | Opmerkingen |
+| Name | Limiet voor meerdere tenants | Limiet voor de integratie service omgeving | Notities |
 |------|--------------------|---------------------------------------|-------|
 | Berichtgrootte | 100 MB | 200 MB | Zie [grote berichten verwerken met Chunking](../logic-apps/logic-apps-handle-large-messages.md)om deze limiet te omzeilen. Sommige connectors en Api's ondersteunen echter mogelijk geen Chunking of zelfs de standaard limiet. <p><p>-Connectors zoals AS2, X12 en EDIFACT hebben hun eigen [B2B-bericht limieten](#b2b-protocol-limits). <br>-ISE-connectors maken gebruik van de ISE-limiet, niet de limieten voor niet-ISE-connectors. |
 | Bericht grootte met Chunking | 1 GB | 5 GB | Deze limiet geldt voor acties die systeem eigen ondersteuning bieden voor Chunking of waarmee u Chunking in de runtime configuratie kunt inschakelen. <p><p>Als u een ISE gebruikt, wordt deze limiet door de Logic Apps-Engine ondersteund, maar de connectors hebben hun eigen segment beperking tot de limiet van de engine. Zie de [API-naslag informatie voor de Azure Blob Storage-connector](/connectors/azureblob/). Zie [grote berichten afhandelen met Chunking](../logic-apps/logic-apps-handle-large-messages.md)voor meer informatie over segmenteren. |
@@ -239,7 +243,7 @@ Sommige connector bewerkingen maken asynchrone aanroepen of Luis teren naar webh
 
 #### <a name="character-limits"></a>Teken limieten
 
-| Name | Opmerkingen |
+| Name | Notities |
 |------|-------|
 | Limiet voor evaluatie van expressie | 131.072 tekens | De `@concat()` , `@base64()` , `@string()` expressies mogen niet langer zijn dan deze limiet. |
 | Maximum aantal tekens van aanvraag-URL | 16.384 tekens |
@@ -266,6 +270,7 @@ Dit zijn de limieten voor een logische app die begint met een trigger voor aanvr
 | ---- | ----- | ----- |
 | Autorisatie beleid voor Azure AD | 5 | |
 | Claims per autorisatie beleid | 10 | |
+| Claim waarde-maximum aantal tekens | 150 |
 ||||
 
 <a name="custom-connector-limits"></a>
@@ -274,7 +279,7 @@ Dit zijn de limieten voor een logische app die begint met een trigger voor aanvr
 
 Dit zijn de limieten voor aangepaste connectors die u kunt maken op basis van web-Api's.
 
-| Name | Limiet voor meerdere tenants | Limiet voor de integratie service omgeving | Opmerkingen |
+| Name | Limiet voor meerdere tenants | Limiet voor de integratie service omgeving | Notities |
 |------|--------------------|---------------------------------------|-------|
 | Aantal aangepaste connectors | 1000 per Azure-abonnement | 1000 per Azure-abonnement ||
 | Aantal aanvragen per minuut voor een aangepaste connector | 500 aanvragen per minuut per verbinding | 2.000 aanvragen per minuut per *aangepaste connector* ||
@@ -304,7 +309,7 @@ Elk Azure-abonnement heeft deze limieten voor het integratie account:
 
   | ISE SKU | Limieten voor integratieaccounts |
   |---------|----------------------------|
-  | **Ultieme** | 20 totaal- [standaard](../logic-apps/logic-apps-pricing.md#integration-accounts) accounts, met inbegrip van één standaard account gratis. Er zijn geen gratis of basis accounts toegestaan. |
+  | **Premium** | 20 totaal- [standaard](../logic-apps/logic-apps-pricing.md#integration-accounts) accounts, met inbegrip van één standaard account gratis. Er zijn geen gratis of basis accounts toegestaan. |
   | **Developer** | 20 totaal- [gratis](../logic-apps/logic-apps-pricing.md#integration-accounts) (beperkt tot 1 account) en [standaard](../logic-apps/logic-apps-pricing.md#integration-accounts) gecombineerd, of alle standaard accounts. Er zijn geen basis accounts toegestaan. Gebruik de [Developer-SKU](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md#ise-level) voor experimenteren, ontwikkelen en testen, maar niet voor productie-of prestatie testen. |
   |||
 
@@ -338,7 +343,7 @@ Zie [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps/
 | Artefact | Limiet | Notities |
 | -------- | ----- | ----- |
 | Assembly | 8 MB | Als u bestanden wilt uploaden die groter zijn dan 2 MB, gebruikt u een [Azure-opslag account en een BLOB-container](../logic-apps/logic-apps-enterprise-integration-schemas.md). |
-| Kaart (XSLT-bestand) | 8 MB | Als u bestanden wilt uploaden die groter zijn dan 2 MB, gebruikt u de [Azure Logic apps-rest API-kaarten](/rest/api/logic/maps/createorupdate). <p><p>**Opmerking**: de hoeveelheid gegevens of records die een kaart kan verwerken is gebaseerd op de grootte van het bericht en de time-outlimieten van de actie in azure Logic apps. Als u bijvoorbeeld een HTTP-actie gebruikt, op basis van de grootte van het [http-bericht en time-outlimieten](#request-limits), kan een toewijzing gegevens verwerken tot de maximale grootte van de HTTP-berichten als de bewerking is voltooid binnen de time-outlimiet van http. |
+| Kaart (XSLT-bestand) | 8 MB | Als u bestanden wilt uploaden die groter zijn dan 2 MB, gebruikt u de [Azure Logic apps-rest API-kaarten](/rest/api/logic/maps/createorupdate). <p><p>**Opmerking**: de hoeveelheid gegevens of records die een kaart kan verwerken is gebaseerd op de grootte van het bericht en de time-outlimieten van de actie in azure Logic apps. Als u bijvoorbeeld een HTTP-actie gebruikt, op basis van de grootte van het [http-bericht en time-outlimieten](#http-limits), kan een toewijzing gegevens verwerken tot de maximale grootte van de HTTP-berichten als de bewerking is voltooid binnen de time-outlimiet van http. |
 | Schema | 8 MB | Als u bestanden wilt uploaden die groter zijn dan 2 MB, gebruikt u een [Azure-opslag account en een BLOB-container](../logic-apps/logic-apps-enterprise-integration-schemas.md). |
 ||||
 
@@ -346,7 +351,7 @@ Zie [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps/
 
 ### <a name="throughput-limits"></a>Doorvoerlimieten
 
-| Runtime-eind punt | Gratis | Basic | Standard | Opmerkingen |
+| Runtime-eind punt | Gratis | Basic | Standard | Notities |
 |------------------|------|-------|----------|-------|
 | Lees aanroepen per 5 minuten | 3000 | 30.000 | 60.000 | Deze limiet is van toepassing op aanroepen die de onbewerkte invoer en uitvoer ophalen uit de uitvoerings geschiedenis van een logische app. U kunt de werk belasting naar meerdere accounts distribueren als dat nodig is. |
 | Aanroepen starten per 5 minuten | 3000 | 30.000 | 45.000 | U kunt de werk belasting naar meerdere accounts distribueren als dat nodig is. |
@@ -360,7 +365,7 @@ Zie [Logic apps prijzen](https://azure.microsoft.com/pricing/details/logic-apps/
 
 Dit zijn de limieten voor de bericht grootte die van toepassing zijn op B2B-protocollen:
 
-| Name | Limiet voor meerdere tenants | Limiet voor de integratie service omgeving | Opmerkingen |
+| Name | Limiet voor meerdere tenants | Limiet voor de integratie service omgeving | Notities |
 |------|--------------------|---------------------------------------|-------|
 | AS2 | v2-100 MB<br>v1-25 MB | v2-200 MB <br>v1-25 MB | Van toepassing op decoderen en coderen |
 | X12 | 50 MB | 50 MB | Van toepassing op decoderen en coderen |
@@ -379,7 +384,7 @@ Wanneer u een logische app verwijdert, worden geen nieuwe uitvoeringen gemaakt. 
 
 ## <a name="firewall-configuration-ip-addresses-and-service-tags"></a>Firewall configuratie: IP-adressen en service Tags
 
-De IP-adressen die Azure Logic Apps gebruikt voor binnenkomende en uitgaande aanroepen, zijn afhankelijk van de regio waar uw logische app zich bevindt. *Alle* Logic apps in dezelfde regio gebruiken dezelfde IP-adresbereiken. Sommige [Energiebeheer](/power-automate/getting-started) aanroepen, zoals **http-** en **http + OpenAPI** -aanvragen, gaan rechtstreeks via de Azure Logic apps-service en komen van de IP-adressen die hier worden vermeld. Zie [limieten en configuratie in energie automatisering](/flow/limits-and-config#ip-address-configuration)voor meer informatie over IP-adressen die worden gebruikt door automatische energie automatisering.
+De IP-adressen die Azure Logic Apps gebruikt voor binnenkomende en uitgaande aanroepen, zijn afhankelijk van de regio waar de logische app zich bevindt. *Alle* Logic apps in dezelfde regio gebruiken dezelfde IP-adresbereiken. Sommige [Energiebeheer](/power-automate/getting-started) aanroepen, zoals **http-** en **http + OpenAPI** -aanvragen, gaan rechtstreeks via de Azure Logic apps-service en komen van de IP-adressen die hier worden vermeld. Zie [limieten en configuratie in energie automatisering](/flow/limits-and-config#ip-address-configuration)voor meer informatie over IP-adressen die worden gebruikt door automatische energie automatisering.
 
 > [!TIP]
 > Om de complexiteit te verminderen bij het maken van beveiligings regels, kunt u optioneel [service Tags](../virtual-network/service-tags-overview.md)gebruiken, in plaats van de Logic apps IP-adressen voor elke regio op te geven, verderop in deze sectie.
@@ -425,7 +430,7 @@ In deze sectie worden alleen de inkomende IP-adressen voor de Azure Logic Apps-s
 | Central US | 13.67.236.76, 40.77.111.254, 40.77.31.87, 104.43.243.39 |
 | Azië - oost | 168.63.200.173, 13.75.89.159, 23.97.68.172, 40.83.98.194 |
 | VS - oost | 137.135.106.54, 40.117.99.79, 40.117.100.228, 137.116.126.165 |
-| US - oost 2 | 40.84.25.234, 40.79.44.7, 40.84.59.136, 40.70.27.253 |
+| VS - oost 2 | 40.84.25.234, 40.79.44.7, 40.84.59.136, 40.70.27.253 |
 | Frankrijk - centraal | 52.143.162.83, 20.188.33.169, 52.143.156.55, 52.143.158.203 |
 | Frankrijk - zuid | 52.136.131.145, 52.136.129.121, 52.136.130.89, 52.136.131.4 |
 | Duitsland - noord | 51.116.211.29, 51.116.208.132, 51.116.208.37, 51.116.208.64 |
@@ -489,7 +494,7 @@ In deze sectie vindt u de uitgaande IP-adressen voor de Azure Logic Apps-service
 | Central US | 13.67.236.125, 104.208.25.27, 40.122.170.198, 40.113.218.230, 23.100.86.139, 23.100.87.24, 23.100.87.56, 23.100.82.16 | 52.173.241.27, 52.173.245.164, 13.89.171.80 - 13.89.171.95, 13.89.178.64 - 13.89.178.95 |
 | Azië - oost | 13.75.94.173, 40.83.127.19, 52.175.33.254, 40.83.73.39, 65.52.175.34, 40.83.77.208, 40.83.100.69, 40.83.75.165 | 13.75.110.131, 52.175.23.169, 13.75.36.64 - 13.75.36.79, 104.214.164.0 - 104.214.164.31 |
 | VS - oost | 13.92.98.111, 40.121.91.41, 40.114.82.191, 23.101.139.153, 23.100.29.190, 23.101.136.201, 104.45.153.81, 23.101.132.208 | 40.71.249.139, 40.71.249.205, 40.114.40.132, 40.71.11.80 - 40.71.11.95, 40.71.15.160 - 40.71.15.191 |
-| US - oost 2 | 40.84.30.147, 104.208.155.200, 104.208.158.174, 104.208.140.40, 40.70.131.151, 40.70.29.214, 40.70.26.154, 40.70.27.236 | 52.225.129.144, 52.232.188.154, 104.209.247.23, 40.70.146.208 - 40.70.146.223, 40.70.151.96 - 40.70.151.127 |
+| VS - oost 2 | 40.84.30.147, 104.208.155.200, 104.208.158.174, 104.208.140.40, 40.70.131.151, 40.70.29.214, 40.70.26.154, 40.70.27.236 | 52.225.129.144, 52.232.188.154, 104.209.247.23, 40.70.146.208 - 40.70.146.223, 40.70.151.96 - 40.70.151.127 |
 | Frankrijk - centraal | 52.143.164.80, 52.143.164.15, 40.89.186.30, 20.188.39.105, 40.89.191.161, 40.89.188.169, 40.89.186.28, 40.89.190.104 | 40.89.186.239, 40.89.135.2, 40.79.130.208 - 40.79.130.223, 40.79.148.96 - 40.79.148.127 |
 | Frankrijk - zuid | 52.136.132.40, 52.136.129.89, 52.136.131.155, 52.136.133.62, 52.136.139.225, 52.136.130.144, 52.136.140.226, 52.136.129.51 | 52.136.142.154, 52.136.133.184, 40.79.178.240 - 40.79.178.255, 40.79.180.224 - 40.79.180.255 |
 | Duitsland - noord | 51.116.211.168, 51.116.208.165, 51.116.208.175, 51.116.208.192, 51.116.208.200, 51.116.208.222, 51.116.208.217, 51.116.208.51 | 51.116.60.192, 51.116.211.212, 51.116.59.16 - 51.116.59.31, 51.116.60.192 - 51.116.60.223 |

@@ -1,25 +1,25 @@
 ---
 title: Sjabloon functies-numeriek
-description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon om te werken met getallen.
+description: Hierin worden de functies beschreven die u kunt gebruiken in een Azure Resource Manager sjabloon (ARM-sjabloon) om met getallen te werken.
 ms.topic: conceptual
 ms.date: 11/18/2020
-ms.openlocfilehash: 26f4b846c67ee7b926ea984ceefd84bf9ea56952
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 1484826b2377fe2adb2ac6ae2ab3ee6243b26c2c
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96004531"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920449"
 ---
 # <a name="numeric-functions-for-arm-templates"></a>Numerieke functies voor ARM-sjablonen
 
-Resource Manager biedt de volgende functies voor het werken met gehele getallen in uw Azure Resource Manager ARM-sjabloon:
+Resource Manager biedt de volgende functies voor het werken met gehele getallen in uw Azure Resource Manager-sjabloon (ARM-sjabloon):
 
 * [add](#add)
 * [Functie copyindex](#copyindex)
 * [div](#div)
 * [float](#float)
 * [int](#int)
-* [aantal](#max)
+* [max](#max)
 * [min.](#min)
 * [mod](#mod)
 * [mul](#mul)
@@ -700,5 +700,5 @@ De uitvoer van het vorige voor beeld met de standaard waarden is:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor een beschrijving van de secties in een Azure Resource Manager sjabloon.
-* Als u een bepaald aantal keer wilt herhalen bij het maken van een type resource, raadpleegt u [meerdere exemplaren van resources maken in azure Resource Manager](copy-resources.md).
+* Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor een beschrijving van de secties in een arm-sjabloon.
+* Als u een bepaald aantal keer wilt herhalen bij het maken van een resource type, raadpleegt u [resource-iteratie in arm-sjablonen](copy-resources.md).

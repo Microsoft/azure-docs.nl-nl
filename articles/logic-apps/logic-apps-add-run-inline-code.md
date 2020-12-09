@@ -5,18 +5,18 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: deli, logicappspm
 ms.topic: article
-ms.date: 11/19/2020
+ms.date: 12/07/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 589420d96a3a6dfcc1c17a1b204765022b1ce412
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: 1736a1d22ccfb0f00061534d1c733ab72da4c7b0
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94916641"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96922507"
 ---
 # <a name="add-and-run-code-snippets-by-using-inline-code-in-azure-logic-apps"></a>Code fragmenten toevoegen en uitvoeren met inline code in Azure Logic Apps
 
-Als u een stukje code in uw logische app wilt uitvoeren, kunt u de ingebouwde **inline code** actie toevoegen als een stap in de werk stroom van uw logische app. Deze actie werkt het beste als u code wilt uitvoeren die in dit scenario past:
+Als u een stukje code in uw logische app wilt uitvoeren, kunt u de ingebouwde inline code actie toevoegen als een stap in de werk stroom van uw logische app. Deze actie werkt het beste als u code wilt uitvoeren die in dit scenario past:
 
 * Wordt uitgevoerd in Java script. Meer talen binnenkort beschikbaar.
 
@@ -29,13 +29,13 @@ Als u een stukje code in uw logische app wilt uitvoeren, kunt u de ingebouwde **
 * Maakt gebruik van Node.js versie 8.11.1. Zie [standaard ingebouwde objecten](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects)voor meer informatie.
 
   > [!NOTE]
-  > De `require()` functie wordt niet ondersteund door de **inline code** actie voor het uitvoeren van Java script.
+  > De `require()` functie wordt niet ondersteund door de inline code actie voor het uitvoeren van Java script.
 
-Met deze actie wordt het code fragment uitgevoerd en wordt de uitvoer van het fragment geretourneerd als een token met de naam **Result**, dat u in de volgende acties in uw logische app kunt gebruiken. Voor andere scenario's waarin u een functie voor uw code wilt maken, probeert u [een Azure-functie te maken en](../logic-apps/logic-apps-azure-functions.md) aan te roepen in uw logische app.
+Met deze actie wordt het code fragment uitgevoerd en wordt de uitvoer van het fragment geretourneerd als een token met de naam `Result` . U kunt dit token gebruiken met de volgende acties in de werk stroom van de logische app. Voor andere scenario's waarin u een functie voor uw code wilt maken, probeert u in [plaats daarvan een Azure-functie te maken en](../logic-apps/logic-apps-azure-functions.md) aan te roepen in uw logische app.
 
 In dit artikel wordt de logische app geactiveerd wanneer een nieuwe e-mail binnenkomt in een werk-of school account. Het code fragment extraheert en retourneert alle e-mail adressen die worden weer gegeven in de hoofd tekst van de e-mail.
 
-![Voor beeld-overzicht](./media/logic-apps-add-run-inline-code/inline-code-example-overview.png)
+![Scherm afbeelding van een voor beeld van een logische app](./media/logic-apps-add-run-inline-code/inline-code-example-overview.png)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -43,38 +43,55 @@ In dit artikel wordt de logische app geactiveerd wanneer een nieuwe e-mail binne
 
 * De logische app waaraan u het code fragment wilt toevoegen, inclusief een trigger. Als u geen logische app hebt, raadpleegt u [Quick Start: uw eerste logische app maken](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
-   In het voor beeld van een logische app in dit onderwerp wordt deze Office 365 Outlook-trigger gebruikt: **wanneer er een nieuwe e-mail binnenkomt**
+   In het voor beeld in dit onderwerp wordt gebruikgemaakt van de Office 365 Outlook-trigger die wordt genoemd **Wanneer een nieuwe e-mail binnenkomt**.
 
-* Een [integratie account](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md) dat is gekoppeld aan uw logische app. Als u geen integratie account wilt maken of gebruiken, maakt u een logische app in het Azure Portal met behulp van het nieuwe **logische app-resource type (preview)** of in Visual Studio code met behulp van de nieuwe [uitbrei ding voor Azure Logic Apps Preview](../logic-apps/create-stateful-stateless-workflows-visual-studio-code.md).
+* Een [integratie account](../logic-apps/logic-apps-enterprise-integration-create-integration-account.md) dat is gekoppeld aan uw logische app.
 
-  > [!NOTE]
-  > Zorg ervoor dat u een integratie account gebruikt dat geschikt is voor uw use-case of-scenario. Zo zijn accounts met een [gratis laag](../logic-apps/logic-apps-pricing.md#integration-accounts) integratie alleen bedoeld voor verkennende scenario's en workloads, niet voor productie scenario's, zijn beperkt in het gebruik en de door Voer en worden niet ondersteund door een Sla (Service Level Agreement). Andere lagen nemen kosten in beslag, maar bevatten SLA-ondersteuning, bieden meer door Voer en hebben hogere limieten. Meer informatie over de integratie-en [prijs](https://azure.microsoft.com/pricing/details/logic-apps/) [Categorieën](../logic-apps/logic-apps-pricing.md#integration-accounts)en- [limieten](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits).
+  * Zorg ervoor dat u een integratie account gebruikt dat geschikt is voor uw use-case of-scenario.
+
+    Zo zijn accounts met een [gratis laag](../logic-apps/logic-apps-pricing.md#integration-accounts) integratie alleen bedoeld voor verkennende scenario's en workloads, niet voor productie scenario's, zijn beperkt in het gebruik en de door Voer en worden niet ondersteund door een Sla (Service Level Agreement). Andere lagen nemen kosten in beslag, maar bevatten SLA-ondersteuning, bieden meer door Voer en hebben hogere limieten. Meer informatie over de integratie-en [prijs](https://azure.microsoft.com/pricing/details/logic-apps/) [Categorieën](../logic-apps/logic-apps-pricing.md#integration-accounts)en- [limieten](../logic-apps/logic-apps-limits-and-config.md#integration-account-limits).
+
+   * Als u geen integratie account wilt gebruiken, kunt u proberen [Azure Logic Apps Preview](logic-apps-overview-preview.md)te gebruiken en een logische app te maken op basis van het resource type van de **logische app (preview)** .
+
+     In Azure Logic Apps voor beeld is **inline code** nu **inline-bewerkingen** genoemd, samen met de volgende verschillen:
+
+     * Run **Java script-code** heet nu **in-line java script uitvoeren**.
+
+     * Als u macOS of Linux gebruikt, zijn de acties voor inline code bewerkingen op dit moment niet beschikbaar wanneer u de extensie Azure Logic Apps (preview) in Visual Studio code gebruikt.
+
+     * Acties voor inline code bewerkingen hebben [bijgewerkte limieten](logic-apps-overview-preview.md#inline-code-limits).
+
+     U kunt hier beginnen met een van de volgende opties:
+
+     * Maak de logische app vanuit het resource type **Logic app (preview)** met [behulp van de Azure Portal](create-stateful-stateless-workflows-azure-portal.md).
+
+     * Een project voor de logische app maken met [behulp van Visual Studio code en de uitbrei ding Azure Logic apps (preview)](create-stateful-stateless-workflows-visual-studio-code.md)
 
 ## <a name="add-inline-code"></a>Inline code toevoegen
 
 1. Als u dat nog niet hebt gedaan, opent u in de [Azure Portal](https://portal.azure.com)de logische app in de ontwerp functie voor logische apps.
 
-1. Voeg in de ontwerp functie de **inline code** actie toe op de locatie die u wilt in de werk stroom van uw logische app.
+1. Kies in de ontwerp functie waar u de inline code actie wilt toevoegen in de werk stroom van uw logische app.
 
-   * Als u de actie aan het einde van uw werk stroom wilt toevoegen, kiest u **nieuwe stap**.
+   * Als u de actie aan het einde van uw werk stroom wilt toevoegen, selecteert u **nieuwe stap**.
 
-   * Als u de actie wilt toevoegen aan de hand van de bestaande stappen, plaatst u de muis aanwijzer op de pijl die de stappen verbindt. Kies het plus teken ( **+** ) en selecteer **een actie toevoegen**.
+   * Als u de actie tussen stappen wilt toevoegen, plaatst u de muis aanwijzer op de pijl die de stappen verbindt. Selecteer het plus teken ( **+** ) dat wordt weer gegeven en selecteer **een actie toevoegen**.
 
-   In dit voor beeld wordt de **inline code** actie toegevoegd onder de Office 365 Outlook-trigger.
+   In dit voor beeld wordt de inline code actie toegevoegd onder de Office 365 Outlook-trigger.
 
-   ![Nieuwe stap toevoegen](./media/logic-apps-add-run-inline-code/add-new-step.png)
+   ![Voeg de nieuwe stap onder de trigger toe](./media/logic-apps-add-run-inline-code/add-new-step.png)
 
-1. Voer onder **Kies een actie** in het zoekvak ' inline code ' in als uw filter. Selecteer in de lijst acties deze actie: **Java script-code uitvoeren**
+1. Voer in het zoekvak onder **Kies een actie** `inline code` in. Selecteer in de lijst acties de actie met de naam **Java script-code uitvoeren**.
 
-   ![Selecteer Java script-code uitvoeren](./media/logic-apps-add-run-inline-code/select-inline-code-action.png)
+   ![Selecteer de actie java script-code uitvoeren](./media/logic-apps-add-run-inline-code/select-inline-code-action.png)
 
-   De actie wordt weer gegeven in de ontwerp functie en bevat een standaard voorbeeld code, inclusief een instructie return.
+   De actie wordt weer gegeven in de ontwerp functie en bevat standaard een voorbeeld code, inclusief een- `return` instructie.
 
    ![Inline code actie met standaard voorbeeld code](./media/logic-apps-add-run-inline-code/inline-code-action-default.png)
 
-1. Verwijder in het vak **code** de voorbeeld code en voer de code in die u wilt uitvoeren. Schrijf code die u in een methode zou plaatsen, maar zonder de methode handtekening te definiëren.
+1. Verwijder in het vak **code** de voorbeeld code en voer uw code in. Schrijf de code die u in een methode zou plaatsen, maar zonder de hand tekening van de methode.
 
-   Wanneer u een herkend tref woord typt, wordt de lijst automatisch aanvullen weer gegeven, zodat u kunt kiezen uit beschik bare tref woorden, bijvoorbeeld:
+   Als u begint met het typen van een herkend tref woord, wordt de lijst automatisch aanvullen weer gegeven, zodat u kunt kiezen uit beschik bare tref woorden, bijvoorbeeld:
 
    ![Lijst met tref woorden voor automatisch aanvullen](./media/logic-apps-add-run-inline-code/auto-complete.png)
 
@@ -82,16 +99,15 @@ In dit artikel wordt de logische app geactiveerd wanneer een nieuwe e-mail binne
 
    ![Variabelen maken](./media/logic-apps-add-run-inline-code/save-email-body-variable.png)
 
-   De lijst met dynamische inhoud wordt weer gegeven wanneer de cursor zich in het vak **code** bevindt, zodat de resultaten van de trigger en eerdere acties gemakkelijker te verwijzen zijn. In dit voor beeld toont de lijst beschik bare resultaten van de trigger, met inbegrip van het **hoofdtekst** token, dat u nu kunt selecteren.
+   De lijst met dynamische inhoud wordt weer gegeven wanneer de cursor zich in het vak **code** bevindt om de resultaten van de trigger en eerdere acties gemakkelijker te laten verwijzen. In dit voor beeld toont de lijst beschik bare resultaten van de trigger, met inbegrip van het **hoofdtekst** token, dat u nu kunt selecteren.
 
    Nadat u het **hoofdtekst** token hebt geselecteerd, wordt met de actie inline code het token omgezet in een `workflowContext` object dat verwijst naar de eigenschaps waarde van het e-mail bericht `Body` :
 
    ![Resultaat selecteren](./media/logic-apps-add-run-inline-code/inline-code-example-select-outputs.png)
 
-   In het vak **code** kan het fragment het object alleen-lezen gebruiken `workflowContext` als invoer. Dit object heeft subeigenschappen die uw code toegang geven tot de resultaten van de trigger en eerdere acties in uw werk stroom. Zie deze sectie verderop in dit onderwerp voor meer informatie: [verwijzings trigger en actie resulteert in uw code](#workflowcontext).
+   In het vak **code** kan het fragment het object alleen-lezen gebruiken `workflowContext` als invoer. Dit object bevat eigenschappen die uw code toegang geven tot de resultaten van de trigger en eerdere acties in uw werk stroom. Zie [Naslag informatie over triggers en actie-resultaten in uw code](#workflowcontext) verderop in dit onderwerp.
 
    > [!NOTE]
-   >
    > Als uw code fragment verwijst naar actie namen die gebruikmaken van de punt operator (.), moet u deze actie namen toevoegen aan de [para meter **Actions**](#add-parameters). Deze verwijzingen moeten ook de actie namen tussen vier Kante haken ([]) en aanhalings tekens bevatten, bijvoorbeeld:
    >
    > `// Correct`</br> 
@@ -131,7 +147,7 @@ Het `workflowContext` object heeft deze structuur, die de `actions` `trigger` su
 
 Deze tabel bevat meer informatie over deze subeigenschappen:
 
-| Eigenschap | Type | Beschrijving |
+| Eigenschap | Type | Description |
 |----------|------|-------|
 | `actions` | Object verzameling | Resultaat objecten van acties die worden uitgevoerd voordat uw code fragment wordt uitgevoerd. Elk object heeft een *sleutel/waarde-* paar waarbij de sleutel de naam van een actie is en de waarde komt overeen met het aanroepen van de [functie Actions ()](../logic-apps/workflow-definition-language-functions-reference.md#actions) met `@actions('<action-name>')` . De naam van de actie gebruikt dezelfde actie naam die wordt gebruikt in de onderliggende werk stroom definitie, waardoor spaties ("") in de naam van de actie worden vervangen door onderstrepings tekens (_). Dit object biedt toegang tot actie-eigenschaps waarden van het huidige werk stroom exemplaar dat wordt uitgevoerd. |
 | `trigger` | Object | Resultaat object van de trigger en komt overeen met het aanroepen van de [trigger ()-functie](../logic-apps/workflow-definition-language-functions-reference.md#trigger). Dit object biedt toegang tot trigger eigenschaps waarden van het huidige werk stroom exemplaar dat wordt uitgevoerd. |
@@ -210,12 +226,12 @@ In het voor beeld van dit onderwerp `workflowContext` heeft het object de volgen
 
 ## <a name="add-parameters"></a>Parameters toevoegen
 
-In sommige gevallen moet u er wellicht expliciet voor zorgen dat de **inline code** actie resultaten van de trigger of specifieke acties bevat die door uw code worden verwezen als afhankelijkheden door de para meters voor **trigger** of **acties** toe te voegen. Deze optie is handig voor scenario's waarbij de resultaten niet worden gevonden tijdens de uitvoering.
+In sommige gevallen moet u er wellicht expliciet voor zorgen dat de inline code actie resultaten van de trigger of specifieke acties bevat die door uw code worden verwezen als afhankelijkheden door de para meters voor **trigger** of **acties** toe te voegen. Deze optie is handig voor scenario's waarbij de resultaten niet worden gevonden tijdens de uitvoering.
 
 > [!TIP]
 > Als u van plan bent om de code opnieuw te gebruiken, voegt u verwijzingen naar eigenschappen toe met behulp van het vak **code** , zodat uw code de omgezette token verwijzingen bevat, in plaats van de trigger of acties als expliciete afhankelijkheden toe te voegen.
 
-Stel dat u code hebt die verwijst naar het **token** resultaat van de actie **e-mail goed keuren verzenden** voor de Office 365 Outlook-Connector. Tijdens het maken analyseert de Logic Apps Engine uw code om te bepalen of er al dan niet naar een trigger of actie resultaat wordt verwezen en dat deze resultaten automatisch worden opgenomen. Bij de uitvoering moet u een fout melding krijgen dat de trigger of actie resultaat waarnaar wordt verwezen, niet beschikbaar is in het opgegeven `workflowContext` object. u kunt deze trigger of actie als een expliciete afhankelijkheid toevoegen. In dit voor beeld voegt u de para meter **acties** toe en geeft u op dat de **inline code** actie expliciet het resultaat van de actie **E-mail voor goed keuring verzenden** bevat.
+Stel dat u code hebt die verwijst naar het **token** resultaat van de actie **e-mail goed keuren verzenden** voor de Office 365 Outlook-Connector. Tijdens het maken analyseert de Logic Apps Engine uw code om te bepalen of er al dan niet naar een trigger of actie resultaat wordt verwezen en dat deze resultaten automatisch worden opgenomen. Bij de uitvoering moet u een fout melding krijgen dat de trigger of actie resultaat waarnaar wordt verwezen, niet beschikbaar is in het opgegeven `workflowContext` object. u kunt deze trigger of actie als een expliciete afhankelijkheid toevoegen. In dit voor beeld voegt u de para meter **acties** toe en geeft u op dat de inline code actie expliciet het resultaat van de actie **e-mail voor goed keuring verzenden** bevat.
 
 Als u deze para meters wilt toevoegen, opent u de lijst **nieuwe para meter toevoegen** en selecteert u de gewenste para meters:
 
@@ -249,21 +265,21 @@ Als u **acties** selecteert, wordt u gevraagd naar de acties die u wilt toevoege
 
   `My.Action.Name`
 
-1. Kies op de werk balk ontwerpen de optie **code weergave** en zoek in het- `actions` kenmerk naar de naam van de actie.
+1. Selecteer op de werk balk ontwerpen de optie **code weergave** en zoek in het- `actions` kenmerk naar de naam van de actie.
 
    `Send_approval_email_`Is bijvoorbeeld de JSON-naam voor de actie **e-mail goed keuren verzenden** .
 
    ![Actie naam in JSON zoeken](./media/logic-apps-add-run-inline-code/find-action-name-json.png)
 
-1. Als u wilt terugkeren naar de ontwerp weergave, kiest u op de werk balk van de code weergave de optie **ontwerper**.
+1. Als u wilt terugkeren naar de ontwerp weergave, selecteert u op de werk balk van de code weergave **Designer**.
 
 1. Als u de eerste actie wilt toevoegen, voert u in het vak **actie-item-1** de JSON-naam van de actie in.
 
    ![Eerste actie invoeren](./media/logic-apps-add-run-inline-code/add-action-parameter.png)
 
-1. Kies **Nieuw item toevoegen** om een andere actie toe te voegen.
+1. Selecteer **Nieuw item toevoegen** om een andere actie toe te voegen.
 
-## <a name="reference"></a>Verwijzing
+## <a name="reference"></a>Referentie
 
 Voor meer informatie over de structuur en syntaxis van de actie **Java script-code uitvoeren** in de onderliggende werk stroom definitie van uw logische app met de werk stroom definitie taal, zie de [sectie referentie](../logic-apps/logic-apps-workflow-actions-triggers.md#run-javascript-code)van deze actie.
 

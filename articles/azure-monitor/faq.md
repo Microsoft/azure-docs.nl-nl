@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2020
-ms.openlocfilehash: b770e4488b6edb1c2d3749066315b552c0b5b40a
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 7336078d1f04b9dcb6c2f229654f1c36d9b3114b
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186164"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96919969"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Veelgestelde vragen over Azure Monitor
 
@@ -65,7 +65,7 @@ Inzichten en oplossingen bieden een aangepaste ervaring voor het werken met gege
 ## <a name="solutions-and-insights"></a>Oplossingen en inzichten
 
 ### <a name="what-is-an-insight-in-azure-monitor"></a>Wat is een inzicht in Azure Monitor?
-Inzichten bieden een aangepaste bewakings ervaring voor bepaalde Azure-Services. Ze gebruiken dezelfde metrische gegevens en Logboeken als andere functies in Azure Monitor, maar kunnen er ook extra informatie verzamelen en een unieke ervaring bieden in de Azure Portal. Zie [inzichten in azure monitor](./monitor-reference.md).
+Inzichten bieden een aangepaste bewakingservaring voor bepaalde Azure-services. Ze gebruiken dezelfde metrische gegevens en Logboeken als andere functies in Azure Monitor, maar kunnen er ook extra informatie verzamelen en een unieke ervaring bieden in de Azure Portal. Zie [inzichten in azure monitor](./monitor-reference.md).
 
 Als u inzichten wilt weer geven in de Azure Portal, raadpleegt u de sectie **inzichten** in het menu **monitor** of in het gedeelte **bewaking** van het menu van de service.
 
@@ -268,6 +268,10 @@ Zie de [release opmerkingen](app/release-notes.md) voor de SDK die geschikt is v
 
 ### <a name="how-can-i-change-which-azure-resource-my-project-sends-data-to"></a><a name="update"></a>Hoe kan ik wijzigen met welke Azure-resource mijn project gegevens verzendt?
 Klik in Solution Explorer met de rechter muisknop `ApplicationInsights.config` en kies **Application Insights bijwerken**. U kunt de gegevens verzenden naar een bestaande of nieuwe resource in Azure. De update wizard wijzigt de instrumentatie sleutel in ApplicationInsights.config, wat bepaalt waar de server-SDK uw gegevens verzendt. Tenzij u ' Alles bijwerken ' uitschakelt, wordt ook de sleutel gewijzigd waar deze wordt weer gegeven op uw webpagina's.
+
+### <a name="do-new-azure-regions-require-the-use-of-connection-strings"></a>Is het gebruik van verbindings reeksen vereist voor nieuwe Azure-regio's?
+
+Nieuwe Azure-regio's **vereisen** het gebruik van verbindings reeksen in plaats van instrumentatie sleutels. Met de [verbindings reeks](./app/sdk-connection-string.md) wordt de resource geïdentificeerd waaraan u de telemetriegegevens wilt koppelen. U kunt ook de eind punten wijzigen die door de resource worden gebruikt als een bestemming voor uw telemetrie. U moet de connection string kopiëren en toevoegen aan de code van uw toepassing of aan een omgevings variabele.
 
 ### <a name="can-i-use-providersmicrosoftinsights-componentsapiversions0-in-my-azure-resource-manager-deployments"></a>Kan ik gebruiken `providers('Microsoft.Insights', 'components').apiVersions[0]` in mijn Azure Resource Manager-implementaties?
 

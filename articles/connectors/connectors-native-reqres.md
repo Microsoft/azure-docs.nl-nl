@@ -7,12 +7,12 @@ ms.reviewers: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 11/19/2020
 tags: connectors
-ms.openlocfilehash: b8f95e7e173dd6d1ad43301aab8ff3ec7cf78018
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.openlocfilehash: 4997853fea97d14491bd9e9101f79f324807a6a1
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94980997"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96920818"
 ---
 # <a name="receive-and-respond-to-inbound-https-requests-in-azure-logic-apps"></a>Inkomende HTTPS-aanvragen ontvangen en erop reageren in Azure Logic Apps
 
@@ -42,9 +42,9 @@ Voor meer informatie over beveiliging, autorisatie en versleuteling voor inkomen
 
 Deze ingebouwde trigger maakt een hand matig aanroepbaar eind punt dat *alleen* binnenkomende aanvragen via https kan verwerken. Wanneer een beller een aanvraag naar dit eind punt verzendt, wordt de trigger voor de [aanvraag](../logic-apps/logic-apps-workflow-actions-triggers.md#request-trigger) geactiveerd en wordt de logische app uitgevoerd. Zie [werk stromen aanroepen, activeren of nesten met https-eind punten in azure Logic apps](../logic-apps/logic-apps-http-endpoint.md)voor meer informatie over het aanroepen van deze trigger.
 
-Uw logische app houdt een binnenkomende aanvraag alleen gedurende een [beperkte periode](../logic-apps/logic-apps-limits-and-config.md#request-limits)open. Ervan uitgaande dat uw logische app een [reactie actie](#add-response)bevat, als uw logische app na deze tijd niet terugstuurt naar de aanroeper, retourneert uw logische app een `504 GATEWAY TIMEOUT` status naar de aanroeper. Als uw logische app geen reactie actie bevat, retourneert uw logische app onmiddellijk een `202 ACCEPTED` status naar de aanroeper.
+Uw logische app houdt een binnenkomende aanvraag alleen gedurende een [beperkte periode](../logic-apps/logic-apps-limits-and-config.md#http-limits)open. Ervan uitgaande dat uw logische app een [reactie actie](#add-response)bevat, als uw logische app na deze tijd niet terugstuurt naar de aanroeper, retourneert uw logische app een `504 GATEWAY TIMEOUT` status naar de aanroeper. Als uw logische app geen reactie actie bevat, retourneert uw logische app onmiddellijk een `202 ACCEPTED` status naar de aanroeper.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Een lege, logische app maken.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). Een lege, logische app maken.
 
 1. Wanneer Logic app Designer wordt geopend, voert u in het zoekvak in `http request` als uw filter. Selecteer in de lijst triggers de trigger **Wanneer een HTTP-aanvraag wordt ontvangen** .
 
@@ -56,8 +56,8 @@ Uw logische app houdt een binnenkomende aanvraag alleen gedurende een [beperkte 
 
    | Naam van eigenschap | JSON-eigenschaps naam | Vereist | Beschrijving |
    |---------------|--------------------|----------|-------------|
-   | **HTTP POST-URL** | geen | Ja | De eind punt-URL die wordt gegenereerd na het opslaan van de logische app en wordt gebruikt voor het aanroepen van uw logische app |
-   | **JSON-schema van aanvraag tekst** | `schema` | Nee | Het JSON-schema dat de eigenschappen en waarden in de hoofd tekst van de binnenkomende aanvraag beschrijft |
+   | **HTTP POST-URL** | geen | Yes | De eind punt-URL die wordt gegenereerd na het opslaan van de logische app en wordt gebruikt voor het aanroepen van uw logische app |
+   | **JSON-schema van aanvraag tekst** | `schema` | No | Het JSON-schema dat de eigenschappen en waarden in de hoofd tekst van de binnenkomende aanvraag beschrijft |
    |||||
 
 1. Voer desgewenst in het vak **JSON-schema van aanvraag tekst** een JSON-schema in dat de hoofd tekst in de binnenkomende aanvraag beschrijft, bijvoorbeeld:
@@ -163,8 +163,8 @@ Uw logische app houdt een binnenkomende aanvraag alleen gedurende een [beperkte 
 
    | Naam van eigenschap | JSON-eigenschaps naam | Vereist | Beschrijving |
    |---------------|--------------------|----------|-------------|
-   | **Methode** | `method` | Nee | De methode die de inkomende aanvraag moet gebruiken om de logische app aan te roepen |
-   | **Relatief pad** | `relativePath` | Nee | Het relatieve pad voor de para meter die door de eind punt-URL van de logische app kan worden geaccepteerd |
+   | **Methode** | `method` | No | De methode die de inkomende aanvraag moet gebruiken om de logische app aan te roepen |
+   | **Relatief pad** | `relativePath` | No | Het relatieve pad voor de para meter die door de eind punt-URL van de logische app kan worden geaccepteerd |
    |||||
 
    In dit voor beeld wordt de eigenschap **Method** toegevoegd:
@@ -179,7 +179,7 @@ Uw logische app houdt een binnenkomende aanvraag alleen gedurende een [beperkte 
 
    U kunt bijvoorbeeld reageren op de aanvraag door [een reactie actie toe te voegen](#add-response), die u kunt gebruiken om een aangepast antwoord te retour neren en dit later in dit onderwerp wordt beschreven.
 
-   Uw logische app houdt de inkomende aanvraag alleen gedurende een [beperkte periode](../logic-apps/logic-apps-limits-and-config.md#request-limits)open. Ervan uitgaande dat uw logische app-werk stroom een reactie actie bevat, als de logische app geen antwoord retourneert nadat deze tijd is verstreken, retourneert uw logische app een `504 GATEWAY TIMEOUT` naar de aanroeper. Als uw logische app geen reactie actie bevat, retourneert uw logische app onmiddellijk een `202 ACCEPTED` antwoord op de aanroeper.
+   Uw logische app houdt de inkomende aanvraag alleen gedurende een [beperkte periode](../logic-apps/logic-apps-limits-and-config.md#http-limits)open. Ervan uitgaande dat uw logische app-werk stroom een reactie actie bevat, als de logische app geen antwoord retourneert nadat deze tijd is verstreken, retourneert uw logische app een `504 GATEWAY TIMEOUT` naar de aanroeper. Als uw logische app geen reactie actie bevat, retourneert uw logische app onmiddellijk een `202 ACCEPTED` antwoord op de aanroeper.
 
 1. Wanneer u klaar bent, slaat u de logische app op. Selecteer **Opslaan** op de werkbalk van de ontwerper.
 
@@ -255,9 +255,9 @@ Wanneer u de aanvraag trigger gebruikt voor het verwerken van inkomende aanvrage
 
    | Naam van eigenschap | JSON-eigenschaps naam | Vereist | Beschrijving |
    |---------------|--------------------|----------|-------------|
-   | **Status code** | `statusCode` | Ja | De status code die in het antwoord moet worden geretourneerd |
-   | **Kopteksten** | `headers` | Nee | Een JSON-object dat een of meer headers beschrijft die in het antwoord moeten worden meegenomen |
-   | **Hoofdtekst** | `body` | Nee | De antwoord tekst |
+   | **Status code** | `statusCode` | Yes | De status code die in het antwoord moet worden geretourneerd |
+   | **Kopteksten** | `headers` | No | Een JSON-object dat een of meer headers beschrijft die in het antwoord moeten worden meegenomen |
+   | **Hoofdtekst** | `body` | No | De antwoord tekst |
    |||||
 
 1. Als u aanvullende eigenschappen, zoals een JSON-schema voor de antwoord tekst, wilt opgeven, opent u de lijst **nieuwe para meter toevoegen** en selecteert u de para meters die u wilt toevoegen.

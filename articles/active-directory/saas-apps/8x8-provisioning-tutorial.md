@@ -11,16 +11,16 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 05/15/2020
 ms.author: Zhchia
-ms.openlocfilehash: 90e3464ac9ddf1e839c3a731f79ac2c0771c37ea
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: a6aa4ad009d037e6ea0d1ade3cc9735351bd634a
+ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96532695"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96558858"
 ---
 # <a name="tutorial-configure-8x8-for-automatic-user-provisioning"></a>Zelfstudie: 8x8 configureren voor automatische gebruikersinrichting
 
-In deze zelfstudie worden de stappen beschreven die u moet uitvoeren in zowel 8x8 Configuration Manager als Azure Active Directory (Azure AD) voor het configureren van automatische inrichting van gebruikers. Wanneer de configuratie is voltooid, wordt inrichting en ongedaan maken van inrichting van gebruikers en groepen door Azure AD automatisch uitgevoerd op [8x8](https://www.8x8.com) met behulp van de Azure AD-inrichtingsservice. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md). 
+In deze zelfstudie worden de stappen beschreven die u moet uitvoeren in zowel 8x8 Admin Console als Azure Active Directory (Azure AD) voor het configureren van automatische inrichting van gebruikers. Wanneer de configuratie is voltooid, wordt inrichting en ongedaan maken van inrichting van gebruikers en groepen door Azure AD automatisch uitgevoerd op [8x8](https://www.8x8.com) met behulp van de Azure AD-inrichtingsservice. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md). 
 
 ## <a name="capabilities-supported"></a>Ondersteunde mogelijkheden
 > [!div class="checklist"]
@@ -36,7 +36,7 @@ In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan d
 * [Een Azure AD-tenant](../develop/quickstart-create-new-tenant.md) 
 * Een gebruikersaccount in Azure AD met [machtigingen](../roles/permissions-reference.md) voor het configureren van inrichting (bijvoorbeeld toepassingsbeheerder, cloud-toepassingsbeheerder, toepassingseigenaar of globale beheerder).
 * Een abonnement op 8x8 X-serie van elk niveau.
-* Een 8x8-gebruikersaccount met beheerdersmachtiging in [Configuration Manager](https://vo-cm.8x8.com).
+* Een 8x8-gebruikersaccount met beheerdersmachtiging in [Admin Console](https://vo-cm.8x8.com).
 * [Eenmalige aanmelding met Azure AD](./8x8virtualoffice-tutorial.md) is al geconfigureerd.
 
 ## <a name="step-1-plan-your-provisioning-deployment"></a>Stap 1. Implementatie van de inrichting plannen
@@ -48,7 +48,7 @@ In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan d
 
 In deze sectie wordt u begeleid bij de stappen voor het configureren van 8x8 om ondersteuning te bieden voor het inrichten met Azure AD.
 
-### <a name="to-configure-a-user-provisioning-access-token-in-8x8-configuration-manager"></a>Een toegangstoken voor het inrichten van gebruikers configureren in 8x8 Configuration Manager gaat als volgt:
+### <a name="to-configure-a-user-provisioning-access-token-in-8x8-admin-console"></a>Een toegangstoken voor het inrichten van gebruikers configureren in 8x8 Admin Console gaat als volgt:
 
 1. Meld u aan bij de [beheerconsole](https://admin.8x8.com). Selecteer **Identiteitsbeheer**.
 
@@ -102,7 +102,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
     ![Schermopname van de vervolgkeuzelijst Inrichtingsmodus met de optie Automatisch gemarkeerd.](common/provisioning-automatic.png)
 
-5. Kopieer de **8x8-URL** van Configuration Manager naar **Tenant-URL** in de sectie **Referenties voor beheerder**. Kopieer de **8x8-API-token** van Configuration Manager naar **Token voor geheim**. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met 8x8. Als de verbinding mislukt, moet u controleren of uw 8x8-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
+5. Kopieer de **8x8-URL** van Admin Console naar **Tenant-URL** in de sectie **Referenties voor beheerder**. Kopieer de **8x8-API-token** van Admin Console naar **Token voor geheim**. Klik op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met 8x8. Als de verbinding mislukt, moet u controleren of uw 8x8-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
     ![Schermopname met het dialoogvenster Referenties voor beheerder, waarin u uw tenant-URL en het token voor het geheim kunt invoeren.](./media/8x8-provisioning-tutorial/provisioning.png)
 

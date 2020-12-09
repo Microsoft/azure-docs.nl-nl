@@ -8,12 +8,12 @@ ms.date: 12/08/2020
 ms.author: normesta
 ms.subservice: common
 ms.reviewer: dineshm
-ms.openlocfilehash: f09e30d6bf68cfb11d9bf808838f6cc029ed942a
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 0a2490a104d18f77a0ec326933f463eb4ebb4339
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 12/09/2020
-ms.locfileid: "96907564"
+ms.locfileid: "96923966"
 ---
 # <a name="download-blobs-from-azure-blob-storage-by-using-azcopy-v10"></a>Blobs downloaden van Azure Blob-opslag met behulp van AzCopy V10 toevoegen
 
@@ -139,13 +139,18 @@ Maak eerst een tekst bestand dat een lijst met versie- [id's](../blobs/versionin
 
 Gebruik vervolgens de azcopy-opdracht [copy](storage-ref-azcopy-copy.md) met de `--list-of-versions` optie. Geef de locatie van het tekst bestand op dat de lijst met versies bevat (bijvoorbeeld: `D:\\list-of-versions.txt` ).  
 
+#### <a name="download-a-blob-snapshot"></a>Een blob-momentopname downloaden
+
+U kunt een [BLOB-moment opname](/azure/storage/blobs/snapshots-overview.md) downloaden door te verwijzen naar de waarde **DateTime** van een BLOB-moment opname. 
+
 |    |     |
 |--------|-----------|
-| **Syntaxis** | `azcopy copy 'https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>/<blob-path>' '<local-directory-path>' --list-of-versions '<list-of-versions-file>'`|
-| **Voorbeeld** | `azcopy copy 'https://mystorageaccount.blob.core.windows.net/mycontainer/myTextFile.txt' 'C:\myDirectory\myTextFile.txt' --list-of-versions 'D:\\list-of-versions.txt'` |
-| **Voor beeld** (hiërarchische naam ruimte) | `azcopy copy 'https://mystorageaccount.dfs.core.windows.net/mycontainer/myTextFile.txt' 'C:\myDirectory\myTextFile.txt' --list-of-versions 'D:\\list-of-versions.txt'` |
+| **Syntaxis** | `azcopy copy 'https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>/<blob-path>?sharesnapshot=<DateTime-of-snapshot>' '<local-file-path>'` |
+| **Voorbeeld** | `azcopy copy 'https://mystorageaccount.blob.core.windows.net/mycontainer/myTextFile.txt?sharesnapshot=2020-09-23T08:21:07.0000000Z' 'C:\myDirectory\myTextFile.txt'` |
+| **Voor beeld** (hiërarchische naam ruimte) | `azcopy copy 'https://mystorageaccount.dfs.core.windows.net/mycontainer/myTextFile.txt?sharesnapshot=2020-09-23T08:21:07.0000000Z' 'C:\myDirectory\myTextFile.txt'` |
 
-De naam van elk gedownload bestand begint met de versie-ID gevolgd door de naam van de blob. 
+> [!NOTE]
+> Als u een SAS-token gebruikt om toegang te verlenen tot blobgegevens, voegt u de **datum/tijd** van de moment opname na het SAS-token toe. Bijvoorbeeld: `'https://mystorageaccount.blob.core.windows.net/mycontainer/myTextFile.txt?sv=2018-03-28&ss=bjqt&srs=sco&sp=rjklhjup&se=2019-05-10T04:37:48Z&st=2019-05-09T20:37:48Z&spr=https&sig=%2FSOVEFfsKDqRry4bk3qz1vAQFwY5DDzp2%2B%2F3Eykf%2FJLs%3D&sharesnapshot=2020-09-23T08:21:07.0000000Z'`.
 
 ## <a name="download-with-optional-flags"></a>Downloaden met optionele vlaggen
 

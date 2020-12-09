@@ -3,17 +3,17 @@ title: Toegangs lagen voor Azure Blob Storage-hot, cool en Archive
 description: Meer informatie over de toegangs lagen hot, cool en Archive voor Azure Blob Storage. Bekijk opslag accounts die ondersteuning bieden voor lagen. Vergelijkings opties voor blok-Blob-opslag.
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 10/29/2020
+ms.date: 12/08/2020
 ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
 ms.reviewer: clausjor
-ms.openlocfilehash: 87106cce018a2b2663de2a9abbb43b31ab58c125
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 51998c159018b614ab519766c54fdddf7437e95b
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96007321"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96923977"
 ---
 # <a name="access-tiers-for-azure-blob-storage---hot-cool-and-archive"></a>Toegangs lagen voor Azure Blob Storage-hot, cool en Archive
 
@@ -112,6 +112,11 @@ Wanneer een BLOB wordt verplaatst naar een warmere laag (archief->cool, Archive-
 
 Elke blob die wordt verplaatst naar de cool-laag (alleen GPv2-accounts), is onderhevig aan een leuke verwijderings periode van 30 dagen. Elke blob die wordt verplaatst naar de laag van het archief, is onderhevig aan een vroegtijdige verwijderings periode van 180 dagen van een archief. Deze kosten zijn evenredig verdeeld. Als een BLOB bijvoorbeeld wordt verplaatst naar Archive en vervolgens na 45 dagen wordt verwijderd of verplaatst naar de warme laag, worden de kosten voor vroegtijdige verwijdering in rekening gebracht die gelijk zijn aan 135 (180 min 45) dagen waarin de blob is opgeslagen in archief.
 
+Er zijn enkele details bij het verplaatsen tussen de coole en archief lagen:
+
+1. Als een BLOB wordt afgeleid van de standaard Access-laag van het opslag account en de BLOB wordt verplaatst naar Archive, worden er geen kosten voor vroegtijdige verwijdering in rekening gebracht.
+1. Als een BLOB expliciet wordt verplaatst naar de cool-laag en vervolgens wordt verplaatst naar Archive, worden de kosten voor vroegtijdig verwijderen van toepassing.
+
 U kunt de vroege verwijdering berekenen met behulp van de eigenschap blob, **Laatst gewijzigd**, als er geen wijzigingen zijn aangebracht in de laag. Anders kunt u gebruiken wanneer de Access-laag voor het laatst is gewijzigd in Cool of Archive door de BLOB-eigenschap te bekijken: **toegangs lagen-wijzigings tijd**. Zie [Eigenschappen van BLOB ophalen](/rest/api/storageservices/get-blob-properties)voor meer informatie over blob-eigenschappen.
 
 ## <a name="comparing-block-blob-storage-options"></a>Vergelijkings opties voor blok-Blob-opslag
@@ -144,7 +149,7 @@ In deze sectie worden de volgende scenario's geïllustreerd met behulp van de Az
 ### <a name="change-the-default-account-access-tier-of-a-gpv2-or-blob-storage-account"></a>De toegangs laag van het standaard account van een GPv2-of Blob Storage-account wijzigen
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 1. Zoek in het Azure Portal **alle resources** en selecteer deze.
 
@@ -172,7 +177,7 @@ Set-AzStorageAccount -ResourceGroupName $rgName -Name $accountName -AccessTier H
 
 ### <a name="change-the-tier-of-a-blob-in-a-gpv2-or-blob-storage-account"></a>De laag van een BLOB in een GPv2-of Blob Storage-account wijzigen
 # <a name="portal"></a>[Portal](#tab/azure-portal)
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 
 1. Zoek in het Azure Portal **alle resources** en selecteer deze.
 

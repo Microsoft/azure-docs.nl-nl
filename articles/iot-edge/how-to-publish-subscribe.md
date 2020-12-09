@@ -10,12 +10,12 @@ ms.date: 11/09/2020
 ms.topic: conceptual
 ms.service: iot-edge
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: acde6f401404596212b713f248bb6d11c25b4671
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 005830575ba7f45d30fed71a73e7a419e4d98220
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461422"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96922582"
 ---
 # <a name="publish-and-subscribe-with-azure-iot-edge"></a>Publiceren en abonneren met Azure IoT Edge
 
@@ -31,7 +31,7 @@ U kunt Azure IoT Edge MQTT Broker gebruiken voor het publiceren en abonneren van
 - Een **IOT hub** van de SKU F1, S1, S2 of S3.
 - Een **IOT edge apparaat hebben met versie 1,2 of hoger**. Omdat IoT Edge MQTT Broker momenteel beschikbaar is in de open bare preview, stelt u de volgende omgevings variabelen in op True in de edgeHub-container om de MQTT Broker in te scha kelen:
 
-   | Naam | Waarde |
+   | Name | Waarde |
    | - | - |
    | `experimentalFeatures__enabled` | `true` |
    | `experimentalFeatures__mqttBrokerEnabled` | `true` |
@@ -177,7 +177,6 @@ Autorisaties voor IoT hub-onderwerpen worden enigszins anders behandeld dan door
 
 - Azure IoT-apparaten of-modules hebben een expliciete autorisatie regel nodig om verbinding te maken met IoT Edge hub MQTT Broker. Hieronder vindt u een standaard beleid voor verbindings autorisatie.
 - Azure IoT-apparaten of-modules hebben standaard toegang tot hun eigen IoT hub-onderwerpen zonder enige expliciete autorisatie regel. Autorisaties zijn echter afkomstig van bovenliggende/onderliggende relaties in dat geval en deze relaties moeten worden ingesteld. IoT Edge modules worden automatisch ingesteld als onderliggende items van hun IoT Edge apparaat, maar apparaten moeten expliciet worden ingesteld als onderliggende items van hun IoT Edge gateway.
-- Azure IoT-apparaten of-modules hebben toegang tot de onderwerpen, waaronder IoT hub-onderwerpen, van andere apparaten of modules die voorzien in de juiste expliciete autorisatie regels worden gedefinieerd.
 
 Hier volgt een standaard autorisatie beleid dat kan worden gebruikt om alle Azure IoT-apparaten of-modules in te scha kelen om **verbinding te maken** met de Broker:
 
@@ -275,7 +274,7 @@ Als u de uitgever en de abonnee wilt autoriseren, bewerkt u de IoT Edge hub, het
                },
                {
                   "identities": [
-                     "sub_client"
+                     "<iot_hub_name>.azure-devices.net/sub_client"
                   ],
                   "allow":[
                      {
@@ -284,13 +283,13 @@ Als u de uitgever en de abonnee wilt autoriseren, bewerkt u de IoT Edge hub, het
                         ],
                         "resources":[
                            "test_topic"
-                        ],
+                        ]
                      }
                   ],
                },
                {
                   "identities": [
-                     "pub_client"
+                     "<iot_hub_name>.azure-devices.net/pub_client"
                   ],
                   "allow":[
                      {
@@ -299,9 +298,9 @@ Als u de uitgever en de abonnee wilt autoriseren, bewerkt u de IoT Edge hub, het
                         ],
                         "resources":[
                            "test_topic"
-                        ],
+                        ]
                      }
-                  ],
+                  ]
                }
             ]
          }

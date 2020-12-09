@@ -10,12 +10,12 @@ ms.reviewer: nibaccam
 author: nibaccam
 ms.author: nibaccam
 ms.date: 04/09/2020
-ms.openlocfilehash: 77b5b52153c552008406b4b85083bcba5542cebe
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ba85bda1e322d3efd467527b48bd4cd90eb7ce8c
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87012719"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96922622"
 ---
 # <a name="prevent-overfitting-and-imbalanced-data-with-automated-machine-learning"></a>Voor komen dat gegevens met automatische machine learning worden verdeeld en gebalanceerd.
 
@@ -33,9 +33,9 @@ Bekijk de volgende getrainde modellen en de bijbehorende trein-en test keurighed
 | B | 87% | 87% |
 | C | 99,9% | 45% |
 
-Als model **a**wordt overwogen, is er sprake van een veelvoorkomende, niet-gemeen schappelijke gegevens. De nauw keurigheid van de test moet echter altijd kleiner zijn dan de nauw keurigheid van de training, en het onderscheid voor meer informatie over de juiste aanpassing is afhankelijk van *wat* nauw keuriger is. 
+Als model **a** wordt overwogen, is er sprake van een veelvoorkomende, niet-gemeen schappelijke gegevens. De nauw keurigheid van de test moet echter altijd kleiner zijn dan de nauw keurigheid van de training, en het onderscheid voor meer informatie over de juiste aanpassing is afhankelijk van *wat* nauw keuriger is. 
 
-Bij het vergelijken van modellen **a** en **B**is model **a** een beter model omdat het een hogere nauw keurigheid voor de test heeft en hoewel de nauw keurigheid van de test op 95% iets lager is. U hebt model **B** niet gewoon gekozen, omdat de keurigheden van de trein en test dichter bij elkaar komen.
+Bij het vergelijken van modellen **a** en **B** is model **a** een beter model omdat het een hogere nauw keurigheid voor de test heeft en hoewel de nauw keurigheid van de test op 95% iets lager is. U hebt model **B** niet gewoon gekozen, omdat de keurigheden van de trein en test dichter bij elkaar komen.
 
 Model **C** staat voor een duidelijk beeld van over-montage; de nauw keurigheid van de training is zeer hoog, maar de nauw keurigheid van de test is nergens bijna zo hoog. Dit onderscheid is subjectief, maar komt van kennis van uw probleem en gegevens, en van de omvang van de fout zijn acceptabel.
 
@@ -56,7 +56,7 @@ In de context van automatische ML zijn de eerste drie bovenstaande items de **Be
 
 ### <a name="best-practices-you-implement"></a>Aanbevolen procedures voor het implementeren van
 
-Het gebruik van **meer gegevens** is de eenvoudigste en best mogelijke manier om te voor komen dat u aan de slag gaat, en naarmate een extra bonus doorgaans nauw keuriger wordt. Wanneer u meer gegevens gebruikt, is het moeilijker voor het model om exacte patronen te onthouden. het is ook mogelijk om oplossingen te bereiken die flexibeler zijn om meer voor waarden te bieden. Het is ook belang rijk om **statistische afwijking**te herkennen, om ervoor te zorgen dat uw trainings gegevens geen geïsoleerde patronen bevatten die niet voor komen in Live-Voorspellings gegevens. Dit scenario kan moeilijk worden opgelost, omdat er mogelijk geen verdere aanpassing is tussen uw Train-en test sets, maar er mogelijk sprake is van een overmatige installatie van gegevens in vergelijking met live test.
+Het gebruik van **meer gegevens** is de eenvoudigste en best mogelijke manier om te voor komen dat u aan de slag gaat, en naarmate een extra bonus doorgaans nauw keuriger wordt. Wanneer u meer gegevens gebruikt, is het moeilijker voor het model om exacte patronen te onthouden. het is ook mogelijk om oplossingen te bereiken die flexibeler zijn om meer voor waarden te bieden. Het is ook belang rijk om **statistische afwijking** te herkennen, om ervoor te zorgen dat uw trainings gegevens geen geïsoleerde patronen bevatten die niet voor komen in Live-Voorspellings gegevens. Dit scenario kan moeilijk worden opgelost, omdat er mogelijk geen verdere aanpassing is tussen uw Train-en test sets, maar er mogelijk sprake is van een overmatige installatie van gegevens in vergelijking met live test.
 
 Het **doel lekkage** is een soortgelijk probleem, waar u mogelijk geen overmatige installatie van de sets voor Train/Test ziet, maar deze wordt weer gegeven bij voor spellingen. Lekkage van het doel treedt op wanneer uw model ' vals speelt ' tijdens de training wordt uitgevoerd door toegang te hebben tot gegevens die niet normaal gesp roken bij voor spelling moeten zijn. Als het probleem zich bijvoorbeeld voordoet om op maandag te voors pellen wat een basisproduct prijs op vrijdag is, maar een van uw functies per ongeluk opgenomen gegevens uit donderdag, worden de gegevens in het model niet in de toekomst weer gegeven. Lekkage van het doel is een eenvoudige fout om te missen, maar wordt vaak gekenmerkt door een abnormaal hoge nauw keurigheid van uw probleem. Als u probeert aandelen koers te voors pellen en een model met een nauw keurigheid van 95% hebt getraind, is er waarschijnlijk ergens in uw functies lekkage opgetreden.
 
@@ -81,17 +81,17 @@ Gegevens die in het algemeen worden gebalanceerd, worden doorgaans gevonden in g
 
 Daarnaast worden automatisch de volgende grafieken gegenereerd, die u kunnen helpen inzicht te krijgen in de juistheid van de classificaties van uw model en modellen te identificeren die mogelijk van invloed zijn op gegevens die niet in evenwicht zijn.
 
-Grafiek| Beschrijving
+Grafiek| Description
 ---|---
 [Verwar ring matrix](how-to-understand-automated-ml.md#confusion-matrix)| Hiermee worden de juist geclassificeerde labels geëvalueerd op basis van de daad werkelijke labels van de gegevens. 
-[Precisie-intrekken](how-to-understand-automated-ml.md#precision-recall-chart)| Evalueert de verhouding van de juiste labels op basis van de verhouding van gevonden label exemplaren van de gegevens 
-[ROC curven](how-to-understand-automated-ml.md#roc)| Evalueert de verhouding van de juiste labels op basis van de verhouding van ONWAAR-positieve labels.
+[Precisie-intrekken](how-to-understand-automated-ml.md#precision-recall-curve)| Evalueert de verhouding van de juiste labels op basis van de verhouding van gevonden label exemplaren van de gegevens 
+[ROC curven](how-to-understand-automated-ml.md#roc-curve)| Evalueert de verhouding van de juiste labels op basis van de verhouding van ONWAAR-positieve labels.
 
 ## <a name="handle-imbalanced-data"></a>Niet-sluitende gegevens verwerken 
 
 Als onderdeel van het vereenvoudigen van de machine learning-werk stroom, **heeft geautomatiseerd ml ingebouwde mogelijkheden** voor het oplossen van niet-sluitende gegevens zoals, 
 
-- Een **kolom**met het gewicht: automatische ml biedt ondersteuning voor een kolom met gewichten als invoer, waardoor rijen in de gegevens kunnen worden gewogen of waarmee een klasse meer of minder ' belang rijk ' kan worden gemaakt.
+- Een **kolom** met het gewicht: automatische ml biedt ondersteuning voor een kolom met gewichten als invoer, waardoor rijen in de gegevens kunnen worden gewogen of waarmee een klasse meer of minder ' belang rijk ' kan worden gemaakt.
 
 - De algoritmen die door automatische MILLILITERs worden gebruikt, kunnen niet worden geevenwichtd wanneer het aantal steek proeven in de klasse minderheid gelijk is aan of minder is dan 20% van het aantal steek proeven in de meerderheids klasse, waarbij de minderheids klasse naar de enige steek proef verwijst. Vervolgens voert AutoML een experiment uit met subvoorbeeld gegevens om te controleren of het gebruik van klasse-gewichten dit probleem verhelpt en de prestaties te verbeteren. Als er tijdens dit experiment een betere prestaties worden vastgesteld, wordt deze oplossing toegepast.
 

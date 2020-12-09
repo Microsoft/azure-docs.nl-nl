@@ -7,12 +7,12 @@ ms.service: virtual-wan
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: cherylmc
-ms.openlocfilehash: 29f5b549bd5f5dbc421487739bb1eb8c7f120bb0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: eb31bb09c1e09e4799715fc5a1cbca4b216b28a2
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91441036"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96922957"
 ---
 # <a name="connect-a-vpn-gateway-virtual-network-gateway-to-virtual-wan"></a>Een VPN Gateway (virtuele netwerk gateway) verbinden met een virtueel WAN
 
@@ -45,7 +45,7 @@ Schakel op de pagina **configuratie** van virtuele netwerk gateway de modus acti
 
 ### <a name="bgp-setting"></a><a name="BGP"></a>BGP-instelling
 
-Op de pagina **configuratie** van virtuele netwerk gateway kunt u de **BGP ASN**configureren. Wijzig de BGP ASN. De BGP-ASN kan niet 65515 zijn. 66515 wordt gebruikt door virtuele WAN van Azure.
+Op de pagina **configuratie** van virtuele netwerk gateway kunt u de **BGP ASN** configureren. Wijzig de BGP ASN. De BGP-ASN kan niet 65515 zijn. 65515 wordt gebruikt door virtuele WAN van Azure.
 
 ![Scherm afbeelding toont de configuratie pagina van een virtuele netwerk gateway met BGP ASN configureren geselecteerd.](./media/connect-virtual-network-gateway-vwan/bgp.png "BGP")
 
@@ -57,7 +57,7 @@ Wanneer de gateway is gemaakt, gaat u naar de pagina **Eigenschappen** . De eige
 
 ## <a name="2-create-virtual-wan-vpn-sites"></a><a name="vwansite"></a>2. virtuele WAN-sites maken
 
-Als u virtuele WAN-sites wilt maken, navigeert u naar uw virtuele WAN en selecteert u onder **connectiviteit**de optie **VPN-sites**. In deze sectie maakt u twee virtuele WAN-VPN-sites die overeenkomen met de virtuele netwerk gateways die u in de vorige sectie hebt gemaakt.
+Als u virtuele WAN-sites wilt maken, navigeert u naar uw virtuele WAN en selecteert u onder **connectiviteit** de optie **VPN-sites**. In deze sectie maakt u twee virtuele WAN-VPN-sites die overeenkomen met de virtuele netwerk gateways die u in de vorige sectie hebt gemaakt.
 
 1. Selecteer **+ site maken**.
 2. Typ op de pagina **VPN-sites maken** de volgende waarden:
@@ -67,7 +67,7 @@ Als u virtuele WAN-sites wilt maken, navigeert u naar uw virtuele WAN en selecte
    * **Persoonlijke adres ruimte** : Voer een waarde in of laat het veld leeg wanneer BGP is ingeschakeld.
    * **Border Gateway Protocol** : Stel in **dat moet worden ingeschakeld als** BGP is ingeschakeld voor de Azure VPN gateway virtuele netwerk gateway.
    * **Verbinding maken met hubs** : Selecteer de hub die u hebt gemaakt in de vereisten in de vervolg keuzelijst. Als u geen hub ziet, controleert u of u een site-naar-site-VPN-gateway hebt gemaakt voor uw hub.
-3. Voer onder **koppelingen**de volgende waarden in:
+3. Voer onder **koppelingen** de volgende waarden in:
 
    * **Provider naam** : Voer een naam in voor de koppeling en een provider naam (elke naam).
    * **Snelheid** snelheid (wille keurig getal).
@@ -81,7 +81,7 @@ Als u virtuele WAN-sites wilt maken, navigeert u naar uw virtuele WAN en selecte
 
 In deze sectie downloadt u het VPN-configuratie bestand voor elk van de sites die u hebt gemaakt in de vorige sectie.
 
-1. Selecteer boven aan de pagina virtuele WAN **-VPN-sites** de **site**en selecteer vervolgens **site-naar-site-VPN-configuratie downloaden**. Azure maakt een configuratie bestand met de instellingen.
+1. Selecteer boven aan de pagina virtuele WAN **-VPN-sites** de **site** en selecteer vervolgens **site-naar-site-VPN-configuratie downloaden**. Azure maakt een configuratie bestand met de instellingen.
 
    ![Scherm opname van de pagina ' VPN-sites ' met de actie ' site-naar-site-VPN-configuratie downloaden ' geselecteerd.](./media/connect-virtual-network-gateway-vwan/download.png "downloadenen")
 2. Down load en open het configuratie bestand.
@@ -121,7 +121,7 @@ In deze sectie maakt u een verbinding tussen de VPN Gateway lokale netwerk gatew
 
    ![Verbinding](./media/connect-virtual-network-gateway-vwan/connect.png "verbinding")
 5. Herhaal de voor gaande stappen om een tweede verbinding te maken. Selecteer voor de tweede verbinding de andere lokale netwerk gateway die u hebt gemaakt.
-6. Als de verbindingen via BGP zijn, gaat u nadat u uw verbindingen hebt gemaakt naar een verbinding en selecteert u **configuratie**. Selecteer op de pagina **configuratie** voor **BGP**de optie **ingeschakeld**. Klik vervolgens op **Opslaan**. Herhaal dit voor de tweede verbinding.
+6. Als de verbindingen via BGP zijn, gaat u nadat u uw verbindingen hebt gemaakt naar een verbinding en selecteert u **configuratie**. Selecteer op de pagina **configuratie** voor **BGP** de optie **ingeschakeld**. Klik vervolgens op **Opslaan**. Herhaal dit voor de tweede verbinding.
 
 ## <a name="6-test-connections"></a><a name="test"></a>6. verbindingen testen
 
@@ -129,7 +129,7 @@ U kunt de connectiviteit testen door twee virtuele machines te maken, één aan 
 
 1. Maak een virtuele machine in het virtuele netwerk (test1-VNet) voor Azure VPN Gateway (test1-VNG). Maak de virtuele machine niet in de GatewaySubnet.
 2. Maak een ander virtueel netwerk om verbinding te maken met het virtuele WAN. Maak een virtuele machine in een subnet van dit virtuele netwerk. Dit virtuele netwerk kan geen virtuele netwerk gateways bevatten. U kunt snel een virtueel netwerk maken met behulp van de Power shell-stappen in het artikel [site-naar-site-verbinding](virtual-wan-site-to-site-portal.md#vnet) . Zorg ervoor dat u de waarden wijzigt voordat u de cmdlets uitvoert.
-3. Verbind het VNet met de virtuele WAN-hub. Op de pagina voor uw virtuele WAN selecteert u **virtuele netwerk verbindingen**en vervolgens **+ verbinding toevoegen**. Vul de volgende velden in op de pagina **Verbinding toevoegen**:
+3. Verbind het VNet met de virtuele WAN-hub. Op de pagina voor uw virtuele WAN selecteert u **virtuele netwerk verbindingen** en vervolgens **+ verbinding toevoegen**. Vul de volgende velden in op de pagina **Verbinding toevoegen**:
 
     * **Verbindingsnaam** - voer een naam in voor uw verbinding.
     * **Hubs** - selecteer de hub die u wilt koppelen aan deze verbinding.

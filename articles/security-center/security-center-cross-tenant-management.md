@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/11/2019
 ms.author: memildin
-ms.openlocfilehash: 68338341d47b8fa15d0bd88ea23e951210105fc4
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: d76ecc55c2e156199b2db789721946fd1f36de27
+ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92340781"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96922915"
 ---
 # <a name="cross-tenant-management-in-security-center"></a>Beheer van meerdere tenants in Security Center
 
@@ -30,10 +30,8 @@ Met beheer op meerdere tenants kunt u de beveiligings postuur van meerdere tenan
 
 ## <a name="set-up-cross-tenant-management"></a>Beheer van meerdere tenants instellen
 
-Stel beheer van meerdere tenants in door de toegang tot resources van beheerde tenants over te dragen naar uw eigen Tenant met behulp van [Azure delegated resource management](../lighthouse/concepts/azure-delegated-resource-management.md).
+Azure delegated resource management is een van de belangrijkste onderdelen van Azure Lighthouse. Stel beheer van meerdere tenants in door de toegang tot resources van beheerde tenants over te dragen aan uw eigen Tenant met behulp van de instructies in de documentatie van Azure Lighthouse: [Azure delegated resource management](../lighthouse/concepts/azure-delegated-resource-management.md).
 
-> [!NOTE]
-> Azure delegated resource management is een van de belangrijkste onderdelen van Azure Lighthouse.
 
 ## <a name="how-does-cross-tenant-management-work-in-security-center"></a>Hoe werkt het beheer van cross-tenants in Security Center
 

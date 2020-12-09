@@ -1,15 +1,18 @@
 ---
 title: Over Azure Migrate
 description: Meer informatie over de Azure Migrate-service.
+author: ms-psharma
+ms.author: panshar
+ms.manager: abhemraj
 ms.topic: overview
 ms.date: 04/15/2020
 ms.custom: mvc
-ms.openlocfilehash: 5a003fc740d08c24af301a6c7ad06cc342530c56
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: b42aa3bfaeaa454b5d870dbae3bce539b682028f
+ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95746877"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96754076"
 ---
 # <a name="about-azure-migrate"></a>Over Azure Migrate
 

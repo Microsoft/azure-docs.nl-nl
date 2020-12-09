@@ -3,12 +3,12 @@ title: Overzicht van Azure Service Bus-berichtenservice | Microsoft Docs
 description: Dit artikel bevat een overzicht op hoog niveau van Azure Service Bus, een volledig beheerde berichtenbroker die binnen ondernemingen kan worden geïntegreerd.
 ms.topic: overview
 ms.date: 11/20/2020
-ms.openlocfilehash: ca04b4a41489fba61e7c0ee2bb3f4f7f0b8b80f4
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: b795d0c5b429a812d90e0759fbcde3d348b86e22
+ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96489476"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96602713"
 ---
 # <a name="what-is-azure-service-bus"></a>Wat is Azure Service Bus?
 Microsoft Azure Service Bus is een volledig beheerde zakelijke berichtenbroker met berichtwachtrijen en onderwerpen voor een openbaar abonnement. Service Bus wordt gebruikt om toepassingen en services van elkaar los te koppelen, waardoor de volgende voordelen worden geboden:
@@ -32,7 +32,7 @@ Enkele algemene berichtenscenario's:
     2. Resultaten van verwerking naar een of meer verschillende wachtrijen verzenden.
     3. Het invoerbericht vanuit de oorspronkelijke wachtrij verplaatsen. 
     
-    Alleen bij geslaagde resultaten zijn deze zichtbaar voor downstreamconsumenten, inclusief de geslaagde afwikkeling van invoerberichten, waardoor er slechts één verwerking nodig is. Dit transactiemodel is een robuuste basis voor het patroon van [compenserende transacties](https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction.md) in de grotere oplossingscontext. 
+    Alleen bij geslaagde resultaten zijn deze zichtbaar voor downstreamconsumenten, inclusief de geslaagde afwikkeling van invoerberichten, waardoor er slechts één verwerking nodig is. Dit transactiemodel is een robuuste basis voor het patroon van [compenserende transacties](https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction) in de grotere oplossingscontext. 
 * *Berichtsessies*. Implementeer een grootschalige coördinatie van werkstromen en gemultiplexte overdrachten waarvoor strikte berichtordening of berichtuitstel vereist is.
 
 Als u bekend bent met andere berichtenbrokers zoals Apache ActiveMQ, zijn Service Bus-concepten vergelijkbaar met wat u al kent. Omdat Service Bus een PaaS-product (Platform-as-a-Service) is, is een belangrijk verschil dat u zich geen zorgen hoeft te maken over de volgende acties. Azure voert deze taken voor u uit. 

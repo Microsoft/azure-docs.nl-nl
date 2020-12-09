@@ -5,12 +5,12 @@ ms.topic: quickstart
 ms.date: 11/16/2020
 ms.reviewer: astay; kraigb
 ms.custom: mvc, seodec18, devx-track-python, devx-track-azurecli
-ms.openlocfilehash: f12ed42755af64f024fdcb0452173134f7b58482
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 7589b5c66bf4fa86db243574f551ec585ccccea1
+ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183733"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96855053"
 ---
 # <a name="configure-a-linux-python-app-for-azure-app-service"></a>Een Linux Python-app voor Azure App Service configureren
 
@@ -101,19 +101,19 @@ Bestaande webtoepassingen kunnen als volgt opnieuw worden geïmplementeerd in Az
 1. **Bronopslagplaats**: Onderhoud uw broncode in een geschikte opslagplaats zoals GitHub, zodat u later in dit proces doorlopende implementatie kunt instellen.
     1. Het bestand *requirements.txt* moet zich in de hoofdmap van uw opslagplaats voor App Service bevinden, zodat de benodigde pakketten automatisch kunnen worden geïnstalleerd.    
 
-1. **Database**: Als uw app afhankelijk is van een database, moet u ook de benodigde resources in Azure inrichten. Zie [Zelfstudie: Een Django-web-app implementeren met PostgreSQL - een database maken](tutorial-python-postgresql-app.md#create-postgres-database-in-azure) voor een voorbeeld hiervan.
+1. **Database**: Als uw app afhankelijk is van een database, moet u ook de benodigde resources in Azure inrichten. Zie [Zelfstudie: Een Django-web-app implementeren met PostgreSQL - een database maken](tutorial-python-postgresql-app.md#3-create-postgres-database-in-azure) voor een voorbeeld hiervan.
 
-1. **App Service-resources**: Maak een resourcegroep, een App Service-plan en een App Service-web-app om uw toepassing te hosten. U kunt dit het eenvoudigst doen door een eerste implementatie van uw code uit te voeren via de Azure CLI-opdracht `az webapp up`, zoals wordt weergegeven in [Zelfstudie: Een Django-web-app implementeren met PostgreSQL - de code implementeren](tutorial-python-postgresql-app.md#deploy-the-code-to-azure-app-service). Vervang de namen van de resourcegroep, het App Service plan en de web-app in waarden die geschikt zijn voor uw toepassing.
+1. **App Service-resources**: Maak een resourcegroep, een App Service-plan en een App Service-web-app om uw toepassing te hosten. U kunt dit het eenvoudigst doen door een eerste implementatie van uw code uit te voeren via de Azure CLI-opdracht `az webapp up`, zoals wordt weergegeven in [Zelfstudie: Een Django-web-app implementeren met PostgreSQL - de code implementeren](tutorial-python-postgresql-app.md#4-deploy-the-code-to-azure-app-service). Vervang de namen van de resourcegroep, het App Service plan en de web-app in waarden die geschikt zijn voor uw toepassing.
 
 1. **Omgevingsvariabelen**: Als voor uw toepassing omgevingsvariabelen zijn vereist, maakt u gelijkwaardige [App Service-toepassingsinstellingen](configure-common.md#configure-app-settings). Deze App Service-instellingen worden weergegeven in uw code als omgevingsvariabelen, zoals wordt beschreven in [Omgevingsvariabelen voor toegang](#access-app-settings-as-environment-variables).
-    - Databaseverbindingen worden bijvoorbeeld vaak beheerd via dergelijke instellingen, zoals wordt weergegeven in [Zelfstudie: Een Django-web-app implementeren met PostgreSQL - variabelen configureren om verbinding te maken met de database](tutorial-python-postgresql-app.md#configure-environment-variables-to-connect-the-database).
+    - Databaseverbindingen worden bijvoorbeeld vaak beheerd via dergelijke instellingen, zoals wordt weergegeven in [Zelfstudie: Een Django-web-app implementeren met PostgreSQL - variabelen configureren om verbinding te maken met de database](tutorial-python-postgresql-app.md#42-configure-environment-variables-to-connect-the-database).
     - Zie [Productie-instellingen voor Django-apps](#production-settings-for-django-apps) voor specifieke instellingen voor typische Django-apps.
 
 1. **App-opstartproces**: Raadpleeg de sectie [Opstartproces met container](#container-startup-process) verderop in dit artikel voor meer informatie over hoe App Service probeert om uw app uit te voeren. App Service maakt standaard gebruik van de Gunicorn-webserver, die de map met uw app-object of *wsgi.py* moet kunnen vinden. U kunt zo nodig [de opstartopdracht aanpassen](#customize-startup-command).
 
 1. **Doorlopende implementatie**: Stel continue implementatie in, zoals beschreven in [continue implementatie naar Azure App Service](deploy-continuous-deployment.md) als u Azure-pijplijnen of Kudu-implementatie gebruikt, of kies voor een [implementatie naar App Service met GitHub Actions](deploy-github-actions.md) als u GitHub Actions gebruikt.
 
-1. **Aangepaste acties**: Als u acties wilt uitvoeren in de App Service-container die als host fungeert voor uw app, zoals Django-databasemigraties, kunt u [verbinding maken met de container via SSH](configure-linux-open-ssh-session.md). Zie voor een voorbeeld van het uitvoeren van Django-databasemigraties [Zelfstudie: Een Django-web-app implementeren met PostgreSQL - databasemigraties uitvoeren](tutorial-python-postgresql-app.md#run-django-database-migrations).
+1. **Aangepaste acties**: Als u acties wilt uitvoeren in de App Service-container die als host fungeert voor uw app, zoals Django-databasemigraties, kunt u [verbinding maken met de container via SSH](configure-linux-open-ssh-session.md). Zie voor een voorbeeld van het uitvoeren van Django-databasemigraties [Zelfstudie: Een Django-web-app implementeren met PostgreSQL - databasemigraties uitvoeren](tutorial-python-postgresql-app.md#43-run-django-database-migrations).
     - Wanneer u continue implementatie gebruikt, kunt u deze acties uitvoeren met achteraf gebouwde opdrachten, zoals beschreven in [De automatisering van bouwbewerkingen aanpassen](#customize-build-automation).
 
 Als deze stappen zijn voltooid, kunt u wijzigingen in uw bronopslagplaats doorvoeren en deze updates automatisch implementeren in App Service.

@@ -6,12 +6,12 @@ ms.author: nimag
 ms.date: 08/11/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: 652566efda4d4f274dc5700d35bcf45c1ebfb9e2
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: d35e51d097c2d5e0b66c23efa27ae70c065d547c
+ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92347304"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96584525"
 ---
 In deze snelstart leert u hoe u de clientbibliotheek voor oproepen van Azure Communication Services voor JavaScript.
 
@@ -32,7 +32,7 @@ Open uw terminal of opdrachtvenster, maak een nieuwe map voor uw app en navigeer
 mkdir calling-quickstart && cd calling-quickstart
 ```
 
-Voer `npm init -y` uit om een **package.json** -bestand te maken met de standaardinstellingen.
+Voer `npm init -y` uit om een **package.json**-bestand te maken met de standaardinstellingen.
 
 ```console
 npm init -y
@@ -55,17 +55,17 @@ De volgende versies van webpack worden aanbevolen voor deze quickstart:
 "webpack-dev-server": "^3.10.3"
 ```
 
-De optie `--save` geeft de bibliotheek weer als afhankelijkheid in het **package.json** -bestand.
+De optie `--save` geeft de bibliotheek weer als afhankelijkheid in het **package.json**-bestand.
 
 ### <a name="set-up-the-app-framework"></a>Het app-framework instellen
 
-In deze snelstart wordt webpack gebruikt om de toepassingsassets te bundelen. Voer de volgende opdracht uit om de webpack-, webpack-CLI- en webpack-dev-server npm-pakketten te installeren en deze weer te geven als ontwikkelingsafhankelijkheden in uw **package.json** :
+In deze snelstart wordt webpack gebruikt om de toepassingsassets te bundelen. Voer de volgende opdracht uit om de webpack-, webpack-CLI- en webpack-dev-server npm-pakketten te installeren en deze weer te geven als ontwikkelingsafhankelijkheden in uw **package.json**:
 
 ```console
-npm install webpack webpack-cli webpack-dev-server --save-dev
+npm install webpack@4.42.0 webpack-cli@3.3.11 webpack-dev-server@3.10.3 --save-dev
 ```
 
-Maak een **index. html** -bestand in de hoofdmap van uw project. Dit bestand wordt gebruikt voor het configureren van een basisindeling waarmee de gebruiker een oproep naar een Azure Communications-bot kan plaatsen.
+Maak een **index. html**-bestand in de hoofdmap van uw project. Dit bestand wordt gebruikt voor het configureren van een basisindeling waarmee de gebruiker een oproep naar een Azure Communications-bot kan plaatsen.
 
 Dit is de code:
 
@@ -124,7 +124,7 @@ De volgende klassen en interfaces verwerken enkele van de belangrijkste functies
 
 ## <a name="authenticate-the-client"></a>De client verifiëren
 
-U moet `<USER_ACCESS_TOKEN>` vervangen door een geldig gebruikerstoegangstoken voor uw bron. Raadpleeg de documentatie inzake [Token voor gebruikerstoegang](../../access-tokens.md) als u nog geen token hebt. Met behulp van de `CallClient`initialiseert u een `CallAgent`-instantie met een `CommunicationUserCredential` waarmee we oproepen kunnen doen en ontvangen. Voeg de volgende code toe aan **client.js** :
+U moet `<USER_ACCESS_TOKEN>` vervangen door een geldig gebruikerstoegangstoken voor uw bron. Raadpleeg de documentatie inzake [Token voor gebruikerstoegang](../../access-tokens.md) als u nog geen token hebt. Met behulp van de `CallClient`initialiseert u een `CallAgent`-instantie met een `CommunicationUserCredential` waarmee we oproepen kunnen doen en ontvangen. Voeg de volgende code toe aan **client.js**:
 
 ```javascript
 async function init() {

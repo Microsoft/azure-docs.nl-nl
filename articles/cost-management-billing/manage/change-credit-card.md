@@ -45,7 +45,7 @@ U kunt de standaardcreditcard van uw abonnement als volgt vervangen door een and
     ![Schermopname van de zoekopdracht](./media/change-credit-card/search.png)
 1. Selecteer het abonnement waar u de creditcard aan wilt toevoegen.
 1. Selecteer **Betalingswijzen**.  
-    ](./media/change-credit-card/payment-methods-blade-x.png)Schermopname waarin de optie voor 'Betalingswijzen beheren' geselecteerd is![
+    ![Schermopname waarin de optie voor 'Betalingswijzen beheren' geselecteerd is](./media/change-credit-card/payment-methods-blade-x.png)
 1. Selecteer '+' In de linkerbovenhoek om een kaart toe te voegen Een creditcardformulier wordt aan de rechterkant weergegeven.
 1. Voer de creditcardgegevens in.  
     ![Schermopname van het toevoegen van een nieuwe creditcard](./media/change-credit-card/sub-add-new-x.png)
@@ -61,7 +61,7 @@ U kunt ook de standaardcreditcard van uw abonnement wijzigen in een creditcard d
     ![Schermopname van de zoekopdracht](./media/change-credit-card/search.png)
 1. Selecteer het abonnement waar u de creditcard aan wilt toevoegen.
 1. Selecteer **Betalingswijzen**.
-    ](./media/change-credit-card/payment-methods-blade-x.png)Schermopname waarin de optie voor 'Betalingswijzen beheren' geselecteerd is![
+    ![Schermopname waarin de optie voor 'Betalingswijzen beheren' geselecteerd is](./media/change-credit-card/payment-methods-blade-x.png)
 1. Selecteer het vakje naast de creditcard waarvan u de actieve betalingswijze wilt maken.
 1. Klik op **Als actief instellen**.
     ![Schermopname van een geselecteerde creditcard die is ingesteld als actief](./media/change-credit-card/sub-change-active-x.png)
@@ -74,7 +74,7 @@ Als uw creditcard wordt vernieuwd en het nummer blijft hetzelfde, werkt u de bes
 1. Zoek naar **Kostenbeheer en facturering**.
     ![Schermopname van de zoekopdracht](./media/change-credit-card/search.png)
 1. Selecteer **Betalingswijzen**.
-    ](./media/change-credit-card/payment-methods-blade-x.png)Schermopname waarin de optie voor 'Betalingswijzen beheren' geselecteerd is![
+    ![Schermopname waarin de optie voor 'Betalingswijzen beheren' geselecteerd is](./media/change-credit-card/payment-methods-blade-x.png)
 1. Klik op de creditcard die u wilt bewerken. Een creditcardformulier wordt aan de rechterkant weergegeven.
     ![Schermopname waarin een creditcard is geselecteerd](./media/change-credit-card/edit-card-x.png)
 1. Werk de creditcardgegevens bij.

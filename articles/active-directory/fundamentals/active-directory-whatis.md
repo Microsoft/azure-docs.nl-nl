@@ -11,12 +11,12 @@ ms.date: 06/05/2020
 ms.author: ajburnle
 ms.custom: it-pro, seodec18, seo-update-azuread-jan, contperfq4
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1709bd42fb77bd4f18b8a5e9d1af6e07be67b6c4
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: 101a2071d4f7c78d1a8df392172dc83c4028af1e
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93043082"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96859212"
 ---
 # <a name="what-is-azure-active-directory"></a>What is Azure Active Directory? (Engelstalig)
 
@@ -26,7 +26,7 @@ Azure Active Directory (Azure AD) is de identiteits- en toegangsbeheerservice in
 
 - Interne resources, zoals apps op het bedrijfsnetwerk en intranet, samen met cloud-apps die door uw eigen organisatie zijn ontwikkeld. Voor meer informatie over het maken van een tenant voor uw organisatie leest u [Quickstart: Een nieuwe tenant maken in Azure Active Directory](active-directory-access-create-new-tenant.md).
 
-Zie [Active Directory vergelijken met Azure Active Directory](active-directory-compare-azure-ad-to-ad.md) om te ontdekken wat het verschil is tussen Azure AD en Active Directory Domain Services. U kunt ook gebruikmaken van de diverse posters van [Microsoft Cloud for Enterprise Architects Series](/microsoft-365/solutions/cloud-architecture-models?view=o365-worldwide) voor een beter begrip van de kernidentiteitsservices in Azure, Azure AD en Microsoft 365.
+Zie [Active Directory vergelijken met Azure Active Directory](active-directory-compare-azure-ad-to-ad.md) om te ontdekken wat het verschil is tussen Azure AD en Active Directory Domain Services. U kunt ook gebruikmaken van de diverse posters van [Microsoft Cloud for Enterprise Architects Series](/microsoft-365/solutions/cloud-architecture-models) voor een beter begrip van de kernidentiteitsservices in Azure, Azure AD en Microsoft 365.
 
 ## <a name="who-uses-azure-ad"></a>Wie gebruikt Azure AD?
 

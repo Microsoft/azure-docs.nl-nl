@@ -7,19 +7,20 @@ author: curtand
 manager: daveba
 editor: ''
 ms.service: active-directory
+ms.subservice: enterprise-users
 ms.topic: overview
 ms.workload: identity
-ms.date: 11/15/2020
+ms.date: 12/02/2020
 ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 01de8ab86ff5f511fd5e45c4a6e88febdb4fbb15
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 95625886ed11256a40e5993540d7e545134d6dd6
+ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96340863"
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "96860861"
 ---
 # <a name="what-is-self-service-sign-up-for-azure-active-directory"></a>Wat is de selfservice voor aanmelden voor Azure Active Directory?
 
@@ -76,13 +77,13 @@ In het volgende stroomdiagram worden de verschillende combinaties voor deze para
 
 ![Stroomdiagram met de besturingselementen voor de selfservice voor aanmelden](./media/directory-self-service-signup/SelfServiceSignUpControls.png)
 
-De details van deze instelling kunnen worden opgehaald met de volgende PowerShell-cmdlet Get-MsolCompanyInformation. Zie [Get-MsolCompanyInformation](/powershell/module/msonline/get-msolcompanyinformation?view=azureadps-1.0) voor meer informatie.
+De details van deze instelling kunnen worden opgehaald met de volgende PowerShell-cmdlet Get-MsolCompanyInformation. Zie [Get-MsolCompanyInformation](/powershell/module/msonline/get-msolcompanyinformation) voor meer informatie.
 
 ```powershell
     Get-MsolCompanyInformation | Select AllowEmailVerifiedUsers, AllowAdHocSubscriptions
 ```
 
-Zie [Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0) voor meer informatie en voorbeelden van het gebruik van deze parameters.
+Zie [Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings) voor meer informatie en voorbeelden van het gebruik van deze parameters.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -90,5 +91,5 @@ Zie [Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysetting
 * [Azure PowerShell installeren en configureren](/powershell/azure/)
 * [Azure PowerShell](/powershell/azure/)
 * [Azure-cmdlet-naslaginformatie](/powershell/azure/get-started-azureps)
-* [Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings?view=azureadps-1.0)
+* [Set-MsolCompanySettings](/powershell/module/msonline/set-msolcompanysettings)
 * [Uw werk- of schoolaccount in een niet-beheerde map sluiten](users-close-account.md)

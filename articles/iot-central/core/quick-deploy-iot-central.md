@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: iot-central
 services: iot-central
 manager: corywink
-ms.openlocfilehash: a156150c2cd28964658fa8529181a70ef546b78f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: a2d48a6f4e451e2a9b4140618c7c590293cb5ef5
+ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96457314"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96548525"
 ---
 # <a name="quickstart---create-an-azure-iot-central-application"></a>Snelstart - Een Azure IoT Central-app maken
 
@@ -29,7 +29,7 @@ Ga als volgt te werk om een nieuwe Azure IoT Central-toepassing wilt maken op ba
 
 1. Ga naar de pagina **Bouwen**:
 
-    ![Pagina voor het bouwen van uw IoT-toepassing](media/quick-deploy-iot-central/iotcentralcreate-new-application.png)
+    :::image type="content" source="media/quick-deploy-iot-central/iotcentralcreate-new-application.png" alt-text="Pagina voor het bouwen van uw IoT-toepassing":::
 
 1. Kies **Aangepaste apps** en zorg ervoor dat de sjabloon **Aangepaste toepassing** is geselecteerd.
 
@@ -37,9 +37,9 @@ Ga als volgt te werk om een nieuwe Azure IoT Central-toepassing wilt maken op ba
 
 1. Azure IoT Central genereert ook een uniek voorvoegsel voor de **toepassings-URL** voor u op basis van de naam van de toepassing. U gebruikt deze URL voor de toegang tot uw toepassing. Wijzig dit URL-voorvoegsel in iets dat gemakkelijker te onthouden is als u dat wilt.
 
-    ![Pagina Een toepassing maken van Azure IoT Central](media/quick-deploy-iot-central/iotcentralcreate-custom.png)
+    :::image type="content" source="media/quick-deploy-iot-central/iotcentralcreate-custom.png" alt-text="Pagina Een toepassing maken van Azure IoT Central":::
 
-    ![Factureringsgegevens van Azure IoT Central](media/quick-deploy-iot-central/iotcentralcreate-billinginfo.png)
+    :::image type="content" source="media/quick-deploy-iot-central/iotcentralcreate-billinginfo.png" alt-text="Factureringsgegevens van Azure IoT Central":::
 
     > [!NOTE]
     > Als u op de vorige pagina **Aangepaste app** hebt gekozen, ziet u een vervolgkeuzelijst voor een **toepassingssjabloon**. In de vervolgkeuzelijst kunnen andere sjablonen worden weergegeven die voor u beschikbaar zijn gesteld door uw organisatie.
@@ -57,7 +57,7 @@ Ga als volgt te werk om een nieuwe Azure IoT Central-toepassing wilt maken op ba
 
 1. Controleer de voorwaarden en selecteer **Maken** onder aan de pagina. Na een paar minuten is uw IoT Central-toepassing klaar voor gebruik:
 
-    ![Azure IoT Central-toepassing](media/quick-deploy-iot-central/iotcentral-application.png)
+    :::image type="content" source="media/quick-deploy-iot-central/iotcentral-application.png" alt-text="Azure IoT Central-toepassing":::
 
 ## <a name="next-steps"></a>Volgende stappen
 
